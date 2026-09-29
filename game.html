@@ -3724,7 +3724,7 @@ function moodOf(c,k){
 function people(c){return c.suspects.concat(c.witnesses||[])}
 function isWit(c,k){return (c.witnesses||[]).indexOf(k)>=0}
 function visibleTalk(c,k){return c.talk[k].filter(function(t){if(t.id===CONFESS[c.id]&&t.q==="")return false;if(t.after)return G.asked.indexOf(t.after)>=0;return !t.hidden||G.unlocked.indexOf(t.id)>=0})}
-function pendingTalk(c){var n=0;people(c).forEach(function(k){visibleTalk(c,k).forEach(function(t){if(G.asked.indexOf(t.id)<0)n++})});return n}
+function pendingTalk(c){var n=0;__met(c,people(c)).forEach(function(k){visibleTalk(c,k).forEach(function(t){if(G.asked.indexOf(t.id)<0)n++})});return n}
 
 var TABS=["scene","move","talk","note","final"];
 function locOpen(c,i){var l=c.locations[i];return !l.req||G.unlocked.indexOf(l.req)>=0}
@@ -3917,7 +3917,7 @@ function openRecord(c,mode,opts){opts=opts||{};
   SFX.page();var old=document.querySelector(".crec2");if(old)old.remove();
   var st={tab:"ev",sel:null,who:G.who,tid:null};
   function stms(k){return visibleTalk(c,k).filter(function(t){return t.q!==""&&t.id!==CONFESS[c.id]&&G.asked.indexOf(t.id)>=0&&!G.broken[t.id]})}
-  if(mode==="present"&&people(c).indexOf(st.who)<0)st.who=c.suspects[0];
+  if(mode==="present"&&__met(c,people(c)).indexOf(st.who)<0)st.who=__met(c,people(c))[0]||c.suspects[0];
   if(mode==="present"&&G.lastT&&stms(st.who).some(function(t){return t.id===G.lastT}))st.tid=G.lastT;
   if(opts.tid){st.who=opts.who;st.tid=opts.tid}
   var el=document.createElement("div");el.className="crec2";document.body.appendChild(el);
@@ -3928,7 +3928,7 @@ function openRecord(c,mode,opts){opts=opts||{};
     var nE=G.found.length,nT=recItems(c,"t").length;
     var h='<div class="cr-in"><div class="cr-top"><b>'+(mode==="battle"?'증거로 반박':mode==="present"?'제시한다':'법정기록')+'</b><div class="crtab"><button data-crt="ev" aria-pressed="'+(st.tab==="ev")+'">증거 '+nE+'</button><button data-crt="t" aria-pressed="'+(st.tab==="t")+'">증언 '+nT+'</button></div><button class="cr-x" aria-label="닫기">✕</button></div>';
     if(mode==="present"&&opts.tid){var lx=tById(c,st.tid);h+='<div class="cr-claim"><small>'+esc(CAST[lx.who].name)+'의 말</small>"'+esc(lx.t.a)+'"</div>'}
-    else if(mode==="present"){h+='<div class="cr-who"><small>누구의</small>'+people(c).map(function(k){return '<button data-crw="'+k+'" aria-pressed="'+(st.who===k)+'">'+pf(k,moodOf(c,k))+'<span>'+esc(CAST[k].name)+'</span></button>'}).join("")+'</div>';
+    else if(mode==="present"){h+='<div class="cr-who"><small>누구의</small>'+__met(c,people(c)).map(function(k){return '<button data-crw="'+k+'" aria-pressed="'+(st.who===k)+'">'+pf(k,moodOf(c,k))+'<span>'+esc(CAST[k].name)+'</span></button>'}).join("")+'</div>';
       var sl=stms(st.who);if(!sl.some(function(t){return t.id===st.tid}))st.tid=null;
       h+='<div class="cr-stm"><small>어떤 말에</small>'+(sl.length?sl.map(function(t){return '<button data-crm="'+t.id+'" aria-pressed="'+(st.tid===t.id)+'">"'+esc(t.a)+'"</button>'}).join(""):'<p>아직 깨뜨릴 말이 없어요.</p>')+'</div>'}
     if(mode==="battle"){var stt=stmsOf(rOf(c));h+='<div class="cr-claim"><small>'+esc(CAST[G.battle.cul].name)+'의 말</small>"'+esc(stt[(G.battle.si||0)%stt.length].t)+'"</div>'}
@@ -4498,7 +4498,7 @@ function renderNote(c){
       h+='</section>';
     });
   }else if(nt==="ppl"){
-    people(c).forEach(function(k){
+    __met(c,people(c)).forEach(function(k){
       var ps=psyOf(c,k),lk=lockCount(c,k),mine=c.talk[k].filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q!==""});
       var rel=[];c.contra.forEach(function(x){if(tById(c,x.t).who===k)x.items.forEach(function(it){if(G.found.indexOf(it)>=0&&rel.indexOf(it)<0&&evById(c,it))rel.push(it)})});
       h+='<section class="pcard"><div class="ph">'+pf(k,moodOf(c,k))+'<div><h4>'+CAST[k].name+(isWit(c,k)?' <i class="tag f">증인</i>':'')+'</h4><small>'+CAST[k].kind+' · 마음: '+ps.label+'</small>'+(lk?lockRow(lk):'')+'</div></div>'+
@@ -4510,7 +4510,7 @@ function renderNote(c){
     });
   }else{
     h+='<section class="panel"><div class="label">용의자 표시판 · 눌러서 의심 / 아니야</div><div class="suspects">';
-    c.suspects.forEach(function(k){var p=CAST[k],m=G.marks[k]||"",st=m==="sus"?"의심":m==="no"?"아니야":"모름";
+    __met(c,c.suspects).forEach(function(k){var p=CAST[k],m=G.marks[k]||"",st=m==="sus"?"의심":m==="no"?"아니야":"모름";
       h+='<button class="sus" data-mark-who="'+k+'" data-mark="'+esc(m)+'" aria-label="'+p.name+', '+st+'">'+pf(k,moodOf(c,k))+'<span class="name">'+p.name+'</span><span class="state">'+st+'</span></button>'});
     h+='</div></section><section class="panel"><div class="label">받은 힌트 · 코인 '+(G.coins|0)+'개</div><div class="hints">';
     (G.hintLog||[]).forEach(function(k){h+='<p class="hint">'+hintText(c,k)+'</p>'});
@@ -4624,7 +4624,7 @@ function renderFinal(c){
     h+='<section class="panel"><h3 style="font-size:24px">최종 대결</h3><ol class="rule3"><li><b>1</b><span>범인을 골라요</span></li><li><b>2</b><span>◀ ▶로 범인의 말을 넘겨 봐요</span></li><li><b>3</b><span>증거랑 안 맞는 말에서 <em>증거로 반박</em>!</span></li></ol><p class="soft">틀리면 신뢰도 ●가 하나 줄어요.</p>'+
        ((missing||unbroken)?'<p class="soft" style="color:var(--stamp)">아직 못 찾은 증거 '+missing+'개, 깨뜨리지 못한 거짓말 '+unbroken+'개가 있어요.</p>':'')+'</section>';
     h+='<section class="fq"><h4>범인은 누구일까?</h4><div class="opts">';
-    c.suspects.forEach(function(k){h+='<button class="opt face" data-acc="'+k+'" aria-pressed="'+(G.accuse===k)+'">'+pf(k,moodOf(c,k))+CAST[k].name+'</button>'});
+    __met(c,c.suspects).forEach(function(k){h+='<button class="opt face" data-acc="'+k+'" aria-pressed="'+(G.accuse===k)+'">'+pf(k,moodOf(c,k))+CAST[k].name+'</button>'});
     h+='</div></section><button class="btn red wide" id="accuse"'+(G.accuse?'':' disabled')+'>'+(G.accuse?jo(CAST[G.accuse].name,'을','를')+' 몰아붙이기!':'범인을 골라요')+'</button>';
     return h;
   }
@@ -4647,7 +4647,7 @@ function renderFinal(c){
     h+='<section class="fq"><h4>'+f.q+'</h4>';
     if(f.type==="place")h+=placePicker(c,i,f)+(G.answers[i]?'<p class="soft">고른 곳: <b>'+ansLabel(c,f,G.answers[i])+'</b></p>':'<p class="soft">지도에서 장소를 눌러 짚어요.</p>');
     else{h+='<div class="opts">';
-      if(f.type==="suspect")c.suspects.forEach(function(k){h+='<button class="opt face" data-fq="'+i+'" data-v="'+k+'" aria-pressed="'+(G.answers[i]===k)+'">'+pf(k)+CAST[k].name+'</button>'});
+      if(f.type==="suspect")__met(c,c.suspects).forEach(function(k){h+='<button class="opt face" data-fq="'+i+'" data-v="'+k+'" aria-pressed="'+(G.answers[i]===k)+'">'+pf(k)+CAST[k].name+'</button>'});
       else f.opts.forEach(function(o){h+='<button class="opt" data-fq="'+i+'" data-v="'+esc(o)+'" aria-pressed="'+(G.answers[i]===o)+'">'+o+'</button>'});
       h+='</div>'}
     h+='</section>';
@@ -7420,7 +7420,7 @@ function showDossier(c,done){
   var no=String(CASES.indexOf(c)+1).padStart(3,"0"),mem=(G.mem||[]).filter(function(id){return MEMTXT[id]});
   var h='<div class="dossier"><div class="dz-top"><small>사건 파일 No. '+no+'</small><b>'+c.title+'</b></div>'+
     '<dl><dt>일시</dt><dd>'+c.time+'</dd><dt>장소</dt><dd>'+c.place+'</dd><dt>개요</dt><dd>'+c.teaser+'</dd></dl>'+
-    '<div class="dz-sus"><small>관련 인물</small><div>'+c.suspects.map(function(k){return '<span>'+pf(k,moodOf(c,k))+'<i>'+CAST[k].name+'</i></span>'}).join("")+'</div></div>'+
+    '<div class="dz-sus"><small>관련 인물</small><div>'+(__met(c,c.suspects).map(function(k){return '<span>'+pf(k,moodOf(c,k))+'<i>'+CAST[k].name+'</i></span>'}).join("")||'<em style="font-style:normal;opacity:.75">현장에서 한 명씩 만나게 돼요</em>')+'</div></div>'+
     (MOMENT[c.id]?'<div class="dz-mem"><small>그 순간의 기억 · '+mem.length+'</small>'+(mem.length?'<ul>'+mem.map(function(id){return '<li>'+MEMTXT[id]+'</li>'}).join("")+'</ul>':'<p>아무것도 기억하지 못했다.</p>')+'</div>':'')+
     '<span class="dz-stamp">수사 개시</span></div><button class="btn" id="dzgo">수사 시작</button>';
   SFX.stamp();
@@ -7942,7 +7942,7 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
   SFX.page();var old=document.querySelector(".crec2");if(old)old.remove();
   var st={tab:"ev",sel:null,who:G.who,tid:null,fil:"all",comb:null,msg:"",bad:false,fresh:null};
   function stms(k){return visibleTalk(c,k).filter(function(t){return t.q!==""&&t.id!==CONFESS[c.id]&&G.asked.indexOf(t.id)>=0&&!G.broken[t.id]})}
-  if(mode==="present"&&people(c).indexOf(st.who)<0)st.who=c.suspects[0];
+  if(mode==="present"&&__met(c,people(c)).indexOf(st.who)<0)st.who=__met(c,people(c))[0]||c.suspects[0];
   if(mode==="present"&&G.lastT&&stms(st.who).some(function(t){return t.id===G.lastT}))st.tid=G.lastT;
   if(opts.tid){st.who=opts.who;st.tid=opts.tid}
   var el=document.createElement("div");el.className="crec2";document.body.appendChild(el);
@@ -7979,7 +7979,7 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
    el.classList.toggle("combining",!!st.comb);
    var h='<div class="cr-in"><div class="cr-top"><b>'+(mode==="battle"?'증거로 반박':mode==="present"?'제시한다':'법정기록')+'</b><div class="crtab"><button data-crt="ev" aria-pressed="'+(st.tab==="ev")+'">증거 '+nE+'</button><button data-crt="t" aria-pressed="'+(st.tab==="t")+'">증언 '+nT+'</button></div><button class="cr-x" aria-label="닫기">✕</button></div>';
    if(mode==="present"&&opts.tid){var lx=tById(c,st.tid);h+='<div class="cr-claim"><small>'+esc(CAST[lx.who].name)+'의 말</small>"'+esc(lx.t.a)+'"</div>'}
-   else if(mode==="present"){h+='<div class="cr-who"><small>누구의</small>'+people(c).map(function(k){return '<button data-crw="'+k+'" aria-pressed="'+(st.who===k)+'">'+pf(k,moodOf(c,k))+'<span>'+esc(CAST[k].name)+'</span></button>'}).join("")+'</div>';
+   else if(mode==="present"){h+='<div class="cr-who"><small>누구의</small>'+__met(c,people(c)).map(function(k){return '<button data-crw="'+k+'" aria-pressed="'+(st.who===k)+'">'+pf(k,moodOf(c,k))+'<span>'+esc(CAST[k].name)+'</span></button>'}).join("")+'</div>';
     var sl=stms(st.who);if(!sl.some(function(t){return t.id===st.tid}))st.tid=null;
     h+='<div class="cr-stm"><small>어떤 말에</small>'+(sl.length?sl.map(function(t){return '<button data-crm="'+t.id+'" aria-pressed="'+(st.tid===t.id)+'">"'+esc(t.a)+'"</button>'}).join(""):'<p>아직 깨뜨릴 말이 없어요.</p>')+'</div>'}
    if(mode==="battle"){var stt=stmsOf(rOf(c));h+='<div class="cr-claim"><small>'+esc(CAST[G.battle.cul].name)+'의 말</small>"'+esc(stt[(G.battle.si||0)%stt.length].t)+'"</div>'}
@@ -11172,6 +11172,7 @@ function metOf(c){
 function allOn(){return !!(window.__ADM&&window.__ADM.on)}
 function meet(c,k){var m=metOf(c);if(m.indexOf(k)<0&&people(c).indexOf(k)>=0&&c.talk[k]){m.push(k);return true}return false}
 window.__metOf=metOf;
+window.__met=function(c,arr){if(!G||S.screen!=="case"||CASES[G.ci]!==c)return arr;var m=metOf(c);return arr.filter(function(k){return m.indexOf(k)>=0})};
 
 var css=document.createElement("style");
 css.textContent='.who.who-unk .unk{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:2px dashed #8E97AD;color:#C9CFE6;font:22px Jua,sans-serif;margin:0 auto 2px;box-sizing:border-box}'+
@@ -11202,7 +11203,6 @@ var EMPTY=false;
 var _rt=renderTalk;
 renderTalk=function(c){
   EMPTY=false;
-  if(allOn())return _rt(c);
   var m=metOf(c),pp=people(c),rest=pp.filter(function(k){return m.indexOf(k)<0&&c.talk[k]});
   if(!m.length){
     EMPTY=true;
