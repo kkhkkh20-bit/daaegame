@@ -12119,6 +12119,70 @@ Object.assign(window.MEETX,{
 
 // ================= v77: voice reading off by default again (undo the v76 one-time switch) =================
 (function(){try{if(localStorage.getItem("daae:ttsv2")&&!localStorage.getItem("daae:ttsv3")){localStorage.setItem("daae:ttsv3","1");if(S.tts){S.tts=false;persist()}}}catch(e){}})();
+// ================= v78: lie-break reactions per character =================
+(function(){
+var RX={
+ nabi:["냐, 냐앙?! 그게 왜 거기서…","흥, 그, 그런 건 아무 증거도…!","꼬리가… 꼬리가 멋대로 떨려…!","냐아아! 그만, 그만해!"],
+ bori:["어? 어어?! 그, 그건…","꿀꺽… 배, 배가 갑자기 아파…","으으… 머리가 하얘졌어…","으아앙! 몰라, 몰라!"],
+ buri:["부, 부엉?! 그건 계산에 없던…","침착하자, 침착… 부엉…","깃털이… 깃털이 다 서 버렸어…!","부엉… 이, 이럴 수가…!"],
+ karo:["…후후. 제법이시군요.","까, 까악?! 그걸 어디서…!","반짝이는 건 제 눈을 속인 적이 없는데…!","까아아악! 후, 후후… 후…"],
+ sling:["어이쿠, 이거 참…!","그, 그건 오해라니까요!","발, 발이 미끄러졌을 뿐이…!","으아아! 이럴 리가 없어!"],
+ luka:["…규정에 없는 증거로군요.","이, 이의… 아니, 절차상 문제가…!","안경이… 서류가… 규정이…!","규정상, 규정상 이럴 수는…!"],
+ momo:["어머, 어머나?!","쿠, 쿠키 드실래요…? 아니, 그게 아니라…","메에… 손이, 손이 떨려서…","메에에! 제 박물관이…!"],
+ mungchi:["…뭐? 그게 뭐. 뭐, 그렇다는 거야.","그, 그건 우연이야! 뭐, 그렇다는… 거야…","엄마가… 아니, 몰라! 몰라!","…뭐, 그렇다는… 거…"],
+ madam:["…어머.","찻잔이… 식어 버렸네요.","그 증거, 참… 무례하군요.","…내 컬렉션이. 내 것이었는데."],
+ siluk:["어이쿠, 탐정님들 눈썰미 하곤…!","하, 하하… 그건 그냥 우연입죠!","모, 모자가… 땀이…!","조금만, 조금만 더였는데…!"]
+};
+var BIRDS=["owl","crow","duck","woodpecker","peacock","crane"],HATS=["beret","dhat","hood","ribbon","goggles","villain"];
+function sig(k){var p=CAST[k]||{};if(BIRDS.indexOf(p.animal)>=0)return "feather";if(p.acc==="glasses")return "glasses";if(HATS.indexOf(p.acc)>=0)return "hat";return "fur"}
+function col(k){var c=(CAST[k]&&CAST[k].color)||"#FFFFFF",m=/^#([0-9a-f]{6})$/i.exec(c);if(!m)return c;var v=parseInt(m[1],16),l=(0.299*(v>>16)+0.587*((v>>8)&255)+0.114*(v&255))/255;return l<0.45?"#E8ECF8":c}
+var HATC={beret:"#D0463B",dhat:"#6B4A32",hood:"#2A2F45",ribbon:"#E86A92",goggles:"#8E97AD",villain:"#1B1F3A"};
+
+var css=document.createElement("style");
+css.textContent=
+'.rx{position:absolute;inset:0;pointer-events:none}'+
+'.rx i{position:absolute;left:50%;top:40%;display:block}'+
+'.rx-feather i{width:18px;height:34px;border-radius:50% 50% 50% 50%/70% 70% 30% 30%;background:var(--rc);border:2px solid #0A0D24;animation:rxfly .9s cubic-bezier(.2,.8,.3,1) forwards}'+
+'.rx-feather i:nth-child(1){--dx:-150px;--dy:-120px;--r:-80deg}.rx-feather i:nth-child(2){--dx:140px;--dy:-130px;--r:70deg}.rx-feather i:nth-child(3){--dx:-170px;--dy:20px;--r:-140deg}'+
+'.rx-feather i:nth-child(4){--dx:165px;--dy:40px;--r:150deg}.rx-feather i:nth-child(5){--dx:-60px;--dy:-190px;--r:-20deg}.rx-feather i:nth-child(6){--dx:70px;--dy:-185px;--r:30deg}'+
+'@keyframes rxfly{0%{transform:translate(-50%,-50%) rotate(0) scale(.4);opacity:0}15%{opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) rotate(var(--r)) scale(1);opacity:0}}'+
+'.rx-glasses svg{position:absolute;left:18%;top:26%;width:64%;opacity:0;animation:rxcrack .35s steps(3) .15s forwards}'+
+'@keyframes rxcrack{to{opacity:1}}'+
+'.rx-hat b{position:absolute;left:50%;top:6%;width:70px;height:30px;margin-left:-35px;border-radius:40% 40% 10% 10%;background:var(--rc);border:3px solid #0A0D24;animation:rxhat 1s cubic-bezier(.2,.9,.3,1) forwards}'+
+'@keyframes rxhat{0%{transform:translateY(0) rotate(0)}40%{transform:translateY(-120px) rotate(-25deg)}100%{transform:translate(90px,-60px) rotate(200deg);opacity:0}}'+
+'.rx-fur svg{position:absolute;left:-12%;top:-10%;width:124%;opacity:0;animation:rxfur .5s ease-out forwards}'+
+'@keyframes rxfur{0%{opacity:0;transform:scale(.8)}40%{opacity:1;transform:scale(1.05)}100%{opacity:.9;transform:scale(1)}}'+
+'.ovr.rxz .ppor{animation:pjolt .5s cubic-bezier(.2,1.7,.4,1),ptrem .09s linear .5s infinite,rxzoom 1.4s ease-out forwards}'+
+'@keyframes rxzoom{0%{scale:1}35%{scale:1.18}100%{scale:1.12}}'+
+'.ovr .rxflash{position:absolute;inset:0;background:var(--rc);mix-blend-mode:screen;opacity:0;animation:rxfl .45s ease-out}'+
+'@keyframes rxfl{0%{opacity:.55}100%{opacity:0}}'+
+'@media (prefers-reduced-motion:reduce){.rx i,.rx b,.rx svg,.ovr .rxflash{animation:none!important;opacity:0}.ovr.rxz .ppor{animation:none}}';
+document.head.appendChild(css);
+
+function fx(k,level){
+  var o=document.querySelectorAll(".ovr");o=o[o.length-1];if(!o)return;
+  var por=o.querySelector(".ppor");if(!por)return;
+  o.style.setProperty("--rc",col(k));
+  var fl=document.createElement("div");fl.className="rxflash";o.insertBefore(fl,o.firstChild);
+  if(level>=1)o.classList.add("rxz");
+  var s=sig(k),d=document.createElement("div");d.className="rx rx-"+s;
+  if(s==="feather")d.innerHTML="<i></i><i></i><i></i><i></i><i></i><i></i>";
+  else if(s==="glasses")d.innerHTML='<svg viewBox="0 0 100 40"><path d="M22 6 L28 18 L20 24 L27 36 M28 18 L38 14 M74 4 L70 16 L80 22 L72 34 M70 16 L60 20" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>';
+  else if(s==="hat")d.innerHTML='<b style="background:'+(HATC[CAST[k].acc]||col(k))+'"></b>';
+  else d.innerHTML='<svg viewBox="0 0 100 100">'+[0,30,60,90,120,150,180,210,240,270,300,330].map(function(a){var r=a*Math.PI/180,x1=50+Math.cos(r)*40,y1=50+Math.sin(r)*40,x2=50+Math.cos(r)*49,y2=50+Math.sin(r)*49;return '<path d="M'+x1.toFixed(1)+' '+y1.toFixed(1)+' L'+x2.toFixed(1)+' '+y2.toFixed(1)+'" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>'}).join("")+'</svg>';
+  por.appendChild(d);
+}
+
+var _pf=panicFx;
+panicFx=function(who,kind,level,cb){
+  var lines=kind==="culprit"&&RX[who],saved=null;
+  if(lines){saved=PANIC.culprit;PANIC.culprit=lines.map(function(t,i){return [t,(saved[Math.min(i,saved.length-1)]||[])[1]||""]})}
+  try{_pf(who,kind,level,cb)}finally{if(saved)PANIC.culprit=saved}
+  try{fx(who,level||0)}catch(e){}
+};
+window.__RX=RX;
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
