@@ -37,17 +37,23 @@
     <a id="kakaoOut" href="#" style="display:inline-block;background:#F2C230;color:#1B2447;border-radius:12px;padding:12px 20px;text-decoration:none;font-size:17px">브라우저로 열기</a>
     <p style="margin:16px 0 0;font-size:14px;opacity:.8">안 열리면 오른쪽 위(또는 아래) 메뉴에서<br>"다른 브라우저로 열기"를 눌러 주세요.</p>
     <p id="kakaoUrl" style="margin:12px 0 0;font-size:13px;opacity:.7;word-break:break-all;user-select:all"></p>
+    <button id="kakaoStay" type="button" style="margin-top:18px;background:transparent;border:1.5px solid #4A5490;color:#C9CFE6;border-radius:999px;padding:8px 16px;font-size:14px">이미 사파리·크롬이에요. 여기서 계속하기</button>
   </div>
 </div>
 <div id="stage"><iframe id="frame" src="game.html" title="다애 탐정 사무소" allow="autoplay; fullscreen"></iframe></div>
 <script>
 // KakaoTalk's in-app browser wipes storage: send the player to the real browser
 (function(){
-  if(!/KAKAOTALK/i.test(navigator.userAgent))return;
-  var url=location.href,out="kakaotalk://web/openExternal?url="+encodeURIComponent(url);
+  var q=new URLSearchParams(location.search),stay=false;
+  try{stay=localStorage.getItem("daae:stay")==="1"}catch(e){}
+  var standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+  if(q.get("ext")==="1"){try{localStorage.setItem("daae:stay","1")}catch(e){}history.replaceState(null,"",location.pathname);return}
+  if(stay||standalone||!/KAKAOTALK/i.test(navigator.userAgent))return;
+  var base=location.origin+location.pathname,url=base+"?ext=1",out="kakaotalk://web/openExternal?url="+encodeURIComponent(url);
   var k=document.getElementById("kakao");k.hidden=false;
   document.getElementById("kakaoOut").href=out;
-  document.getElementById("kakaoUrl").textContent=url;
+  document.getElementById("kakaoUrl").textContent=base;
+  document.getElementById("kakaoStay").onclick=function(){try{localStorage.setItem("daae:stay","1")}catch(e){}k.hidden=true};
   try{location.href=out}catch(e){}
 })();
 (function(){
