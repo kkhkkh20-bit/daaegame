@@ -3085,7 +3085,7 @@ function load(){try{return JSON.parse(localStorage.getItem(SKEY))||{}}catch(e){r
 function persist(){try{localStorage.setItem(SKEY,JSON.stringify({players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master,ach:S.ach,rec:S.rec,trayOpen:S.trayOpen,tts:S.tts,tspeed:S.tspeed,big:S.big}))}catch(e){}}
 function saveProg(){if(!G)return;var id=CASES[G.ci].id;if(G.result&&G.result.solved){delete S.prog[id]}else if(G.introDone){var g=JSON.parse(JSON.stringify(G));g.result=null;g.notice=null;S.prog[id]=g}persist()}
 var saved=load();
-var S={screen:"title",players:saved.players||["아빠 탐정","다애 탐정"],best:saved.best||{},sound:saved.sound!==false,prog:saved.prog||{},tut:saved.tut||{},story:saved.story||{pro:false,read:{},finale:false},aff:saved.aff||{},chat:saved.chat||{},master:saved.master||0,ach:saved.ach||{},rec:saved.rec||{},trayOpen:!!saved.trayOpen,tts:!!saved.tts,tspeed:saved.tspeed||"f",big:!!saved.big};
+var S={screen:"title",players:saved.players||["아빠 탐정","다애 탐정"],best:saved.best||{},sound:saved.sound!==false,prog:saved.prog||{},tut:saved.tut||{},story:saved.story||{pro:false,read:{},finale:false},aff:saved.aff||{},chat:saved.chat||{},master:saved.master||0,ach:saved.ach||{},rec:saved.rec||{},trayOpen:!!saved.trayOpen,tts:saved.tts!==false,tspeed:saved.tspeed||"f",big:!!saved.big};
 var G=null;
 function fresh(i){return {mem:[],coins:1,hintLog:[],dtries:0,ci:i,tab:"scene",loc:0,found:[],asked:[],unlocked:[],broken:{},marks:{},who:CASES[i].suspects[0],notice:null,wrong:0,hints:0,actions:0,answers:{},result:null,introDone:false,target:null,trayTab:"ev",seen:[],battle:null,accuse:null,hp:CASES[i].lives||5,exam:{},tf:"all"}}
 function curPlayer(){return S.players[G.actions%2]}
@@ -7090,7 +7090,7 @@ function sanitizeState(d){
     master:d.master?1:0,
     ach:map(d.ach,function(k){return ACH.some(function(a){return a.id===k})},function(v){return int(v,1,8.64e15,0)||null}),
     rec:map(d.rec,isCase,function(o){return isObj(o)?map(o,function(k){return ["w","h","e","l","uv","lg","rd","night"].indexOf(k)>=0}):null}),
-    trayOpen:!!d.trayOpen,tts:!!d.tts,tspeed:(typeof d.tspeed==="string"&&own(TSPD,d.tspeed))?d.tspeed:"f",big:!!d.big,
+    trayOpen:!!d.trayOpen,tts:d.tts!==false,tspeed:(typeof d.tspeed==="string"&&own(TSPD,d.tspeed))?d.tspeed:"f",big:!!d.big,
     v:3,savedAt:int(d.savedAt,0,8.64e15,0)
   };
 }
@@ -12117,6 +12117,8 @@ Object.assign(window.MEETX,{
  (function(){var _ev=evIcon;var M={c8uv_box:"uvw",g9uv_blot:"uvw",f10uv_grip:"uvw"};evIcon=function(id){return _ev(M[id]||id)}})();
 })();
 
+// ================= v76: voice reading on by default (one-time switch for existing saves) =================
+(function(){try{if(!localStorage.getItem("daae:ttsv2")){localStorage.setItem("daae:ttsv2","1");if(!S.tts){S.tts=true;persist()}}}catch(e){}})();
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
