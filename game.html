@@ -7052,6 +7052,7 @@ function sanitizeState(d){
     n.found=ids(g.found,isEv);n.asked=ids(g.asked,isT);n.seen=ids(g.seen,isItem);n.pins=ids(g.pins,isEv);
     n.unlocked=ids(g.unlocked,null,100);n.obsSeen=ids(g.obsSeen,null,200);n.confirmed=ids(g.confirmed,null,200);
     n.visited=ints(g.visited,c.locations.length-1);n.logic=ints(g.logic,99);
+    if(Array.isArray(g.met))n.met=ids(g.met,function(k){return people(c).indexOf(k)>=0},40);
     n.broken=map(g.broken,isT,function(v,k){var x=c.contra.filter(function(x){return x.t===k})[0];return v&&x?x.say:null});
     n.exam=map(g.exam,isEv,function(v){return v?true:null});
     n.miss=map(g.miss,isT,function(v){return int(v,0,99,0)||null});
@@ -10595,6 +10596,7 @@ function disable(){ADM.on=false;lsSet(KEY,null);paintDot();close();render()}
 // ---------- case tools ----------
 function cur(){return G&&S.screen==="case"?CASES[G.ci]:null}
 function gather(c,breakAll){
+  G.met=people(c).slice();
   if(!G.exam)G.exam={};if(!G.logic)G.logic=[];
   for(var round=0;round<12;round++){
     var n=0;
@@ -11159,6 +11161,71 @@ Object.assign(window.FLAV,{
   {x:207,y:95,r:7,n:"촛불",t:["촛농이 수북하다. 밤늦게까지 불을 켰나 보다.","여기서 뭘 그렇게 오래 한 걸까."]}
  ]
 });
+
+// ================= v71: meet people on site before talking =================
+(function(){
+function metOf(c){
+  if(!G)return [];
+  if(!Array.isArray(G.met))G.met=people(c).filter(function(k){return (c.talk[k]||[]).some(function(t){return G.asked.indexOf(t.id)>=0})});
+  return G.met;
+}
+function allOn(){return !!(window.__ADM&&window.__ADM.on)}
+function meet(c,k){var m=metOf(c);if(m.indexOf(k)<0&&people(c).indexOf(k)>=0&&c.talk[k]){m.push(k);return true}return false}
+window.__metOf=metOf;
+
+var css=document.createElement("style");
+css.textContent='.who.who-unk .unk{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:2px dashed #8E97AD;color:#C9CFE6;font:22px Jua,sans-serif;margin:0 auto 2px;box-sizing:border-box}'+
+'.talkempty{margin:28px 16px;padding:22px 18px;border-radius:16px;background:rgba(14,17,40,.55);border:1.5px dashed #4A5490;text-align:center;color:#E6E8F2;font:15px/1.6 "Gowun Dodum",sans-serif}'+
+'.talkempty b{display:block;font:400 19px Jua,sans-serif;color:#F2C230;margin-bottom:6px}.talkempty button{margin-top:14px}'+
+'.metto{position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:60;background:#F2C230;color:#1B2447;font:16px Jua,sans-serif;padding:8px 16px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.35);animation:metin .25s ease-out;white-space:nowrap}'+
+'.metto small{font-size:12px;opacity:.75;margin-right:6px}@keyframes metin{from{opacity:0;transform:translate(-50%,-8px)}}';
+document.head.appendChild(css);
+
+function toast(k){
+  var o=document.querySelector(".metto");if(o)o.remove();
+  var d=document.createElement("div");d.className="metto";d.setAttribute("role","status");
+  d.innerHTML='<small>새 인물</small>'+esc(CAST[k].name);
+  document.body.appendChild(d);setTimeout(function(){d.remove()},1900);
+  try{SFX.ping()}catch(e){}
+}
+
+var _gt=goTab;
+goTab=function(t,o){
+  var fresh=null;
+  if(G&&t==="talk"&&o&&o.who){var c=CASES[G.ci];if(meet(c,o.who))fresh=o.who}
+  var r=_gt.apply(this,arguments);
+  if(fresh){try{saveProg()}catch(e){}setTimeout(function(){toast(fresh)},120)}
+  return r;
+};
+
+var EMPTY=false;
+var _rt=renderTalk;
+renderTalk=function(c){
+  EMPTY=false;
+  if(allOn())return _rt(c);
+  var m=metOf(c),pp=people(c),rest=pp.filter(function(k){return m.indexOf(k)<0&&c.talk[k]});
+  if(!m.length){
+    EMPTY=true;
+    return '<div class="fstalk"><div class="talkempty"><b>아직 만난 사람이 없어요</b>현장을 둘러보다가 누군가를 만나면<br>그때부터 이야기를 나눌 수 있어요.<br><button class="btn" type="button" id="gosite">현장 조사하러 가기</button></div></div>';
+  }
+  if(m.indexOf(G.who)<0)G.who=m[0];
+  var _p=people,h;
+  people=function(cc){var r=_p(cc);return cc===c?r.filter(function(k){return m.indexOf(k)>=0}):r};
+  try{h=_rt(c)}finally{people=_p}
+  if(rest.length){
+    var i=h.indexOf('<div class="tstage'),j=i>0?h.lastIndexOf('</div>',i):-1;
+    if(j>0)h=h.slice(0,j)+'<button class="who who-unk" type="button" id="whounk"><span class="unk">?</span><span>더 찾기</span></button>'+h.slice(j);
+  }
+  return h;
+};
+var _bt=bindTalk;
+bindTalk=function(c){
+  if(EMPTY){var g=document.getElementById("gosite");if(g)g.onclick=function(){SFX.tap();goTab("scene")};return}
+  _bt(c);
+  var u=document.getElementById("whounk");
+  if(u)u.onclick=function(){SFX.tap();say([["think","아직 못 만난 사람이 있을지도 몰라. 현장 곳곳을 더 둘러보자.","",curPlayer()]],function(){render()})};
+};
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
