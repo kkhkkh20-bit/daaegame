@@ -3603,7 +3603,7 @@ function renderBoard(){
   function tile(id,icon,label,sub,dot){return '<button class="ftile" id="'+id+'">'+(dot?'<i class="nd"></i>':'')+'<span class="fi">'+icon+'</span><b>'+label+'</b><small>'+sub+'</small></button>'}
   h+='<nav class="files" aria-label="수사 파일">'+tile("detlook",pf("det1","happy"),"탐정","꾸미기")+tile("achbook",achIcon(achN?"gold":"off"),"배지",achN+" / "+ACH.length)+
      (S.best[CASES[0].id]?tile("friends",pf(friendIds()[0]||"tori","happy"),"친구",friendIds().length+"명"):'')+
-     tile("letters",ENV,"편지",got+"통",unread>0)+
+     tile("letters",ENV,"편지",got+"통",unread>0)+(window.__traceTile?window.__traceTile(tile):'')+
      (vfN?tile("vfile",pf("shadow","smug"),"망토단",vfN+" / "+VFILE.length):'')+'</nav>';
   h+='<div class="cgrid">';
   CASES.forEach(function(c,i){
@@ -3619,7 +3619,7 @@ function renderBoard(){
   document.getElementById("snd").onclick=openSettings;
   document.getElementById("achbook").onclick=openAchBook;var dlk=document.getElementById("detlook");if(dlk)dlk.onclick=function(){if(window.__openLook)window.__openLook()};
   var frb=document.getElementById("friends");if(frb)frb.onclick=openFriends;
-  document.getElementById("letters").onclick=openLetters;
+  document.getElementById("letters").onclick=openLetters;var trb=document.getElementById("traces");if(trb)trb.onclick=window.__openTraces;
   var vfb=document.getElementById("vfile");if(vfb)vfb.onclick=function(){SFX.page();modal(renderVFile()+'<button class="btn" id="vfclose">닫기</button>',function(){document.getElementById("vfclose").onclick=function(){SFX.tap();closeModal()}})};
   app.querySelectorAll("[data-case]").forEach(function(b){b.onclick=function(){openCase(+b.dataset.case)}});
   var fn=document.getElementById("finale");if(fn)fn.onclick=function(){SFX.tap();startFinale()};
@@ -10717,8 +10717,9 @@ function show(host,key,f){
   var d=document.createElement("div");d.className="flavb";d.setAttribute("role","status");
   d.innerHTML='<b>'+esc(f.n)+'</b>'+lines.map(function(s){return '<span>'+esc(s)+'</span>'}).join("");
   d.onclick=function(e){e.stopPropagation();drop()};
+  if(f.secret&&window.__secretOpen){var sb=document.createElement("button");sb.className="secbtn";sb.type="button";sb.textContent="더 살펴보기";sb.onclick=function(e){e.stopPropagation();drop();window.__secretOpen(f.secret)};d.appendChild(sb)}
   host.appendChild(d);
-  timer=setTimeout(drop,Math.max(3200,1400+lines.join("").length*70));
+  timer=setTimeout(drop,f.secret?9000:Math.max(3200,1400+lines.join("").length*70));
 }
 function hitAt(c,scn,ev){
   if(!G||S.screen!=="case")return null;var l=c.locations[G.loc];if(!l)return null;
@@ -12883,6 +12884,345 @@ var ADD={
 Object.keys(ADD).forEach(function(k){var f=SCENES[k];if(!f)return;SCENES[k]=function(){var s=f.apply(this,arguments);return String(s).replace(/<\/svg>\s*$/,ADD[k]+"</svg>")}});
 })();
 
+// ================= v86: secret rooms (escape-room side puzzles) + traces of the hidden mastermind =================
+(function(){
+window.SECRET=window.SECRET||{};
+window.TRACEX=window.TRACEX||{};   // {total, title, final:{title,text,sign}, suspects:[castIds]}
+var GKEY="daae:guess";
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function done(cid){return !!(S.story&&S.story.read&&S.story.read["trace_"+cid])}
+function traceIds(){return Object.keys(window.SECRET)}
+function nFound(){return traceIds().filter(done).length}
+var ready=false;
+function prep(){
+  if(ready)return;ready=true;
+  traceIds().forEach(function(cid){
+    var s=window.SECRET[cid];
+    LETTERS["trace_"+cid]={title:s.trace.title,body:s.trace.text,sign:s.trace.sign||"",text:s.trace.text};
+    var key=cid+"-"+s.loc;window.FLAV[key]=window.FLAV[key]||[];
+    window.FLAV[key].push({x:s.entrance.x,y:s.entrance.y,r:s.entrance.r||16,n:s.entrance.n,t:s.entrance.t,secret:cid});
+  });
+  if(window.TRACEX.final)LETTERS["trace_final"]={title:window.TRACEX.final.title,body:window.TRACEX.final.text,sign:window.TRACEX.final.sign||"",text:window.TRACEX.final.text};
+}
+setTimeout(prep,0);
+window.__secretPrep=prep;
+
+var css=document.createElement("style");
+css.textContent=
+'.flavb .secbtn{display:inline-block;margin-top:7px;border:0;border-radius:999px;padding:6px 14px;background:#F2C230;color:#1B2447;font:14px Jua,sans-serif;cursor:pointer}'+
+'.secv{position:fixed;inset:0;z-index:90;background:#05060F;display:flex;flex-direction:column;font-family:Jua,"Gowun Dodum",sans-serif;color:#F4F1E6}'+
+'.secv .sart{position:relative;flex:0 0 auto;width:100%;max-width:560px;margin:0 auto;aspect-ratio:360/200}'+
+'.secv .sart>svg{width:100%;height:100%;display:block}.secv .sart>svg:first-child{filter:brightness(.5) saturate(.7)}'+
+'.secv .sart .sx{position:absolute;inset:0;width:100%;height:100%}'+
+'.secv .sart .sdark{position:absolute;inset:0;box-shadow:inset 0 0 80px 40px rgba(0,0,0,.8);pointer-events:none}'+
+'.secv .tgt{position:absolute;transform:translate(-50%,-50%);min-width:44px;min-height:44px;border-radius:50%;border:2px dashed rgba(242,194,48,.8);background:rgba(242,194,48,.12);color:#F2C230;font:12px Jua,sans-serif;cursor:pointer;padding:0 6px}'+
+'.secv .tgt.on{background:#F2C230;color:#1B2447;border-style:solid}'+
+'.secv .uvt{position:absolute;transform:translate(-50%,-50%);color:#B98BFF;font:18px Jua,sans-serif;letter-spacing:.08em;text-shadow:0 0 10px #8A5CFF,0 0 22px #8A5CFF;opacity:0;transition:opacity .5s;pointer-events:none;white-space:nowrap}'+
+'.secv.uvon .uvt{opacity:1}.secv.uvon .sart>svg:first-child{filter:brightness(.35) hue-rotate(220deg) saturate(1.6)}'+
+'.secv .spn{flex:1;overflow:auto;padding:14px 16px calc(16px + env(safe-area-inset-bottom,0px));max-width:560px;width:100%;margin:0 auto;box-sizing:border-box}'+
+'.secv h3{margin:0 0 2px;font-weight:400;color:#F2C230;font-size:19px}.secv .sstep{font-size:12px;color:#A9B0C8}'+
+'.secv p.q{font:15px/1.6 "Gowun Dodum",sans-serif;margin:8px 0 10px}'+
+'.secv .row{display:flex;gap:8px;flex-wrap:wrap}.secv input{flex:1;min-width:0;font:18px Jua,sans-serif;padding:9px 12px;border-radius:10px;border:2px solid #3A4480;background:#0E1128;color:#F4F1E6}'+
+'.secv button.b{font:15px Jua,sans-serif;border:0;border-radius:10px;padding:10px 14px;background:#2E3A6E;color:#F4F1E6;cursor:pointer}.secv button.b.pri{background:#F2C230;color:#1B2447}'+
+'.secv .msg{min-height:22px;margin-top:8px;font:14px "Gowun Dodum",sans-serif;color:#FFB4B4}.secv .msg.ok{color:#9BE3A8}'+
+'.secv .hint{margin-top:10px;font:13px/1.5 "Gowun Dodum",sans-serif;color:#C9CFE6;opacity:.9}'+
+'.secv .x{position:absolute;top:calc(8px + env(safe-area-inset-top,0px));right:10px;z-index:3;background:rgba(0,0,0,.5);border:0;color:#fff;border-radius:999px;width:36px;height:36px;font-size:18px;cursor:pointer}'+
+'.trc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}'+
+'.trc button{min-height:74px;border-radius:12px;border:1.5px solid #3A4480;background:#141833;color:#E6E8F2;font:13px Jua,sans-serif;padding:8px 6px;cursor:pointer}'+
+'.trc button.off{opacity:.45;border-style:dashed;cursor:default}'+
+'.gsl{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.gsl button{border:1.5px solid #3A4480;background:transparent;color:inherit;border-radius:999px;padding:5px 10px;font:13px Jua,sans-serif;cursor:pointer}.gsl button[aria-pressed="true"]{background:#F2C230;color:#1B2447;border-color:#F2C230}';
+document.head.appendChild(css);
+
+function fixThink(lines){return (lines||[]).map(function(l){if(l[0]==="think"&&(l[3]==="det0"||l[3]==="det1")){l=l.slice();l[3]=S.players[l[3]==="det0"?0:1]}return l})}
+function norm(s){return String(s||"").replace(/\s+/g,"").toLowerCase()}
+
+function openRoom(cid){
+  prep();
+  var s=window.SECRET[cid];if(!s)return;
+  var st={i:0,picked:[],uv:false};
+  var el=document.createElement("div");el.className="secv";document.body.appendChild(el);
+  try{SFX.door()}catch(e){}
+  function close(){el.remove();render()}
+  function art(step){
+    var bg=SCENES[s.bg||(cid+"-"+s.loc)];var h=bg?bg():"";
+    h+='<svg class="sx" viewBox="0 0 360 200">'+(s.art||"")+'</svg><div class="sdark"></div>';
+    if(step&&step.type==="order")h+=step.targets.map(function(t){return '<button type="button" class="tgt'+(st.picked.indexOf(t.id)>=0?' on':'')+'" data-t="'+t.id+'" style="left:'+(t.x/3.6)+'%;top:'+(t.y/2)+'%">'+esc(t.n)+'</button>'}).join("");
+    if(step&&step.type==="uv")h+='<span class="uvt" style="left:'+(step.x/3.6)+'%;top:'+(step.y/2)+'%">'+esc(step.text)+'</span>';
+    return h;
+  }
+  function draw(msg,ok){
+    var step=s.steps[st.i];
+    el.classList.toggle("uvon",!!st.uv);
+    var h='<button class="x" type="button" aria-label="닫기">✕</button><div class="sart">'+art(step)+'</div><div class="spn">';
+    if(!step){
+      h+='<h3>'+esc(s.title)+'</h3><p class="q">'+esc(s.done||"비밀 공간을 모두 풀었다.")+'</p><div class="row"><button class="b pri" type="button" id="sfin">흔적 챙기기</button></div>';
+    }else{
+      h+='<h3>'+esc(s.title)+'</h3><div class="sstep">'+(st.i+1)+' / '+s.steps.length+'</div><p class="q">'+esc(step.q)+'</p>';
+      if(step.type==="order")h+='<div class="row"><button class="b" type="button" id="sreset">처음부터</button></div>';
+      if(step.type==="uv")h+='<div class="row"><button class="b" type="button" id="suv">'+(st.uv?'자외선 끄기':'자외선 등 비추기')+'</button></div>';
+      if(step.type==="code"||step.type==="uv")h+='<form class="row" id="sform" style="margin-top:8px"><input id="sin" autocomplete="off" maxlength="12" placeholder="답을 적어요"><button class="b pri" type="submit">확인</button></form>';
+      h+='<div class="msg'+(ok?' ok':'')+'">'+esc(msg||"")+'</div>';
+      if(step.hint)h+=(st.hint?'<p class="hint">'+esc(step.hint)+'</p>':'<button class="b" type="button" id="shint" style="margin-top:8px">힌트 보기</button>');
+    }
+    el.innerHTML=h+'</div>';
+    el.querySelector(".x").onclick=function(){try{SFX.tap()}catch(e){}close()};
+    var hb=el.querySelector("#shint");if(hb)hb.onclick=function(){st.hint=true;draw()};
+    var ub=el.querySelector("#suv");if(ub)ub.onclick=function(){st.uv=!st.uv;try{SFX.select()}catch(e){}draw()};
+    var rb=el.querySelector("#sreset");if(rb)rb.onclick=function(){st.picked=[];draw()};
+    el.querySelectorAll("[data-t]").forEach(function(b){b.onclick=function(){
+      var id=b.dataset.t;if(st.picked.indexOf(id)>=0)return;st.picked.push(id);try{SFX.select()}catch(e){}
+      var ord=step.order,k=st.picked.length-1;
+      if(ord[k]!==id){try{SFX.ng()}catch(e){}st.picked=[];draw("순서가 틀렸나 봐. 다시 처음부터.");return}
+      if(st.picked.length===ord.length){next()}else draw();
+    }});
+    var f=el.querySelector("#sform");if(f)f.onsubmit=function(e){e.preventDefault();
+      var v=norm(el.querySelector("#sin").value),ans=[].concat(step.answer).map(norm);
+      if(ans.indexOf(v)>=0)next();else{try{SFX.ng()}catch(e2){}draw("아니야. 다시 생각해 보자.")}
+    };
+    var fb=el.querySelector("#sfin");if(fb)fb.onclick=finish;
+  }
+  function next(){try{SFX.unlock()}catch(e){}st.i++;st.picked=[];st.hint=false;st.uv=false;draw("열렸다!",true)}
+  function finish(){
+    S.story.read["trace_"+cid]=true;
+    if(G&&CASES[G.ci]&&CASES[G.ci].id===cid){G.coins=Math.min(30,(G.coins|0)+(s.coins||2))}
+    persist();try{saveProg()}catch(e){}
+    el.remove();
+    var n=nFound(),tot=window.TRACEX.total||traceIds().length;
+    var lines=fixThink(s.outro||[]).concat([["narr","흑막의 흔적 "+n+" / "+tot+" · 힌트 코인 +"+(s.coins||2)+" · 게시판의 '흑막 파일'에 기록됐다."]]);
+    if(n>=tot&&window.TRACEX.final)lines.push(["narr","흔적이 모두 모였다. 흑막 파일에 무언가가 도착했다…"]);
+    say(lines,function(){render()});
+  }
+  if(s.intro&&s.intro.length)say(fixThink(s.intro),function(){draw()});else draw();
+}
+window.__secretOpen=function(cid){if(done(cid)){say([["think","여긴 이미 다 살펴본 비밀 공간이야."]],function(){render()});return}openRoom(cid)};
+
+// board tile + traces file
+window.__traceTile=function(tile){prep();var n=nFound();if(!n&&!(window.ADMIN_SHOW))return "";return tile("traces",'<svg viewBox="0 0 40 40" class="evic"><rect x="7" y="6" width="26" height="30" rx="3" fill="#2A2F45" stroke="#0A0D24" stroke-width="2"/><circle cx="20" cy="19" r="7" fill="#1B1F3A" stroke="#F2C230" stroke-width="2"/><path d="M17 17 h1 M22 17 h1" stroke="#F2C230" stroke-width="2" stroke-linecap="round"/></svg>',"흑막",n+" / "+(window.TRACEX.total||traceIds().length))};
+window.__openTraces=function(){
+  prep();try{SFX.page()}catch(e){}
+  var ids=traceIds(),tot=window.TRACEX.total||ids.length,n=nFound(),g=lsGet(GKEY)||"";
+  var h='<span class="kicker">흑막 파일</span><h3>'+esc(window.TRACEX.title||"그림자 속의 누군가")+'</h3><p class="soft" style="text-align:center">사건마다 숨은 비밀 공간에서 같은 사람의 흔적을 찾았다. '+n+' / '+tot+'</p><div class="trc">';
+  ids.forEach(function(cid){var c=CASES.filter(function(x){return x.id===cid})[0];h+=done(cid)?'<button type="button" data-tr="'+cid+'">'+esc(window.SECRET[cid].trace.title)+'</button>':'<button type="button" class="off" disabled>'+(c?esc(c.title):"?")+'<br>?</button>'});
+  h+='</div>';
+  if(n>=tot&&window.TRACEX.final)h+='<button class="btn" type="button" data-tr="final">'+esc(window.TRACEX.final.title)+'</button>';
+  var sus=(window.TRACEX.suspects||[]).filter(function(k){return CAST[k]});
+  if(n&&sus.length)h+='<div class="panel" style="margin-top:12px"><div class="label">내 추리 · 흑막은 누구일까?</div><div class="gsl">'+sus.map(function(k){return '<button type="button" data-gs="'+k+'" aria-pressed="'+(g===k)+'">'+esc(CAST[k].name)+'</button>'}).join("")+'<button type="button" data-gs="" aria-pressed="'+(g==="")+'">아직 모름</button></div><p class="soft">정답은 다음 이야기에서 밝혀져요. 먼저 맞히면 특별한 장면이 기다려요.</p></div>';
+  h+='<button class="btn ghost" type="button" id="trclose">닫기</button>';
+  modal(h,function(){
+    document.getElementById("trclose").onclick=function(){SFX.tap();closeModal()};
+    document.querySelectorAll("[data-tr]").forEach(function(b){b.onclick=function(){var k=b.dataset.tr,L=LETTERS[k==="final"?"trace_final":"trace_"+k];if(!L)return;SFX.page();
+      modal('<span class="kicker">흔적</span><h3>'+esc(L.title)+'</h3><p style="white-space:pre-line;line-height:1.7">'+esc(pname(L.body))+'</p>'+(L.sign?'<p style="text-align:right;opacity:.8">— '+esc(L.sign)+'</p>':'')+'<button class="btn" type="button" id="trback">돌아가기</button>',function(){document.getElementById("trback").onclick=function(){window.__openTraces()}})}});
+    document.querySelectorAll("[data-gs]").forEach(function(b){b.onclick=function(){lsSet(GKEY,b.dataset.gs);SFX.select();window.__openTraces()}});
+  });
+};
+window.__traceGuess=function(){return lsGet(GKEY)||""};
+})();
+
+// ================= v86: secret rooms data =================
+// ================= secret rooms data (ch5~ch10) : traces of the hidden mastermind =================
+// Author bible: /home/claude/daae/work/mastermind.md  (truth: 토끼 할머니 = '등불 관리국' = 토끼풀 꽃 도장)
+// Data only. Engine: secret_engine.js (window.SECRET / window.TRACEX), flav_engine.js (window.FLAV)
+
+// ---- extra clue flavors (answers for the rooms must be findable inside each case) ----
+window.FLAV["dark-office"].push({x:52,y:50,r:10,n:"게시판의 옛 사진",t:["할아버지가 맡겨 둔 빛바랜 사진. 젊은 부엉이 탐정 옆에 누군가 서 있는데, 등불 빛에 얼굴이 하얗게 날아갔다. 어깨 위로 삐죽 솟은 그림자 두 가닥만 보인다.","뒷면의 글씨. '1985년 별빛 축제 밤. 순찰 짝과.'"]});
+window.FLAV["glove-pond"].push({x:45,y:118,r:10,n:"버드나무 줄기",t:["줄기에 삐뚤빼뚤 새긴 글씨. '꽥순 수영 연습! 매일 밤 11시 40분부터 자정까지. 끝까지 가기!'","매일 같은 시각, 같은 자리. 이 글씨를 읽은 사람은 꽥순이 언제 혼자인지 알 수 있었다."]});
+window.FLAV["festival-road"].push({x:234,y:140,r:9,n:"이정표 기둥의 노선표",t:["기둥에 붙은 낡은 노선표. '도시행 마차가 서는 곳: ① 마을 어귀, 당근밭 옆 빨간 우체통 ② 언덕 고개 ③ 도시 보석상 거리.'","도시까지 가는 동안 마차는 세 번 선다. 첫 번째는 아직 마을 안이다."]});
+
+// ---- 5장 달빛 종이 멎은 밤 : 종탑 지하실, 쇠문의 시계판 ----
+window.SECRET.bell={
+  loc:"cellar",
+  entrance:{x:275,y:118,r:13,n:"쇠문의 시계판",t:["커다란 쇠문에 붙은 시계판. 바늘이 멈춘 게 아니라, 처음부터 숫자를 가리키는 다이얼 같아.","숫자판 가장자리가 반들반들해. 누군가 이걸 여러 번 돌렸어."]},
+  art:'<circle cx="180" cy="100" r="82" fill="#F2C230" opacity=".07"/>'+
+   '<rect x="104" y="26" width="152" height="150" rx="6" fill="#39415F" stroke="#0A0D24" stroke-width="3"/>'+
+   '<rect x="116" y="38" width="128" height="126" rx="4" fill="#12152B" stroke="#0A0D24" stroke-width="2"/>'+
+   '<path d="M104 28 L62 42 L62 160 L104 174 Z" fill="#4A5478" stroke="#0A0D24" stroke-width="3" stroke-linejoin="round"/>'+
+   '<ellipse cx="83" cy="101" rx="13" ry="26" fill="#E9DFC8" stroke="#0A0D24" stroke-width="2"/>'+
+   '<path d="M83 101 L83 86 M83 101 L90 106" stroke="#0A0D24" stroke-width="2" stroke-linecap="round"/>'+
+   '<g transform="rotate(-3 180 78)"><rect x="136" y="52" width="88" height="54" rx="2" fill="#F4EEDF" stroke="#0A0D24" stroke-width="2"/><path d="M146 64h50M146 72h62M146 80h40M146 88h54" stroke="#DDD5C2" stroke-width="2"/></g>'+
+   '<g fill="#C9A96A" stroke="#0A0D24" stroke-width="2"><circle cx="152" cy="136" r="11"/><circle cx="180" cy="136" r="11"/><circle cx="208" cy="136" r="11"/></g>'+
+   '<g stroke="#0A0D24" stroke-width="2" stroke-linecap="round"><path d="M152 136v-7"/><path d="M180 136l5 -5"/><path d="M208 136l-6 -4"/></g>'+
+   '<text x="180" y="158" text-anchor="middle" font-size="7" fill="#C9CFE6">마지막 종소리대로</text>'+
+   '<path d="M232 110 q12 8 2 20 q-8 10 4 18" stroke="#EEF1FA" stroke-width="1.6" fill="none"/>',
+  title:"시계판 뒤의 벽장",
+  intro:[["narr","시계판을 꾹 누르자 딸깍. 쇠문 한가운데 손바닥만 한 판이 열리고, 벽 속 작은 벽장이 드러났다."],
+   ["det1","{p0}, 이거 시계가 아니라 자물쇠야. 누가 종탑 지하에 비밀 벽장을 숨겨 뒀어.","nervous","shock"],
+   ["det0","촌장님 열쇠로 이 지하실에 들어온 사람은 한 명이었다. 새로 온 배달부."],
+   ["think","숫자 다이얼이 세 개. 그 아래 칼끝으로 긁은 글씨가 있어.","","det1"]],
+  steps:[
+   {type:"code",q:"다이얼 아래 긁힌 글씨. '마지막 종소리대로.' 세 자리 숫자를 맞춰야 열린다.",answer:["314","3-1-4","3,1,4","3.1.4"],hint:"그날 밤 종은 열 번을 다 못 울리고 끊겨서 울렸어. 톡의 메아리 상자 기록이나 설이의 증언을 떠올려 봐. 세 번, 한 번, 네 번."},
+   {type:"uv",q:"벽장 안에는 아무것도 안 적힌 편지지 한 장뿐. 배달부라면 남의 눈에 안 띄는 잉크쯤은 쓸 줄 알았겠지. 자외선 등을 비추고, 떠오른 물음에 답을 적자.",x:180,y:78,text:"추는 무엇의 조각?",answer:["별빛돌","별빛돌조각","별빛의돌"],hint:"설이만 안다던 달빛 종 추의 비밀. 모두 은추라고 알지만 사실은… 설이의 두 번째 증언, 또는 지하 궤짝에서 나온 진짜 추를 봐."}
+  ],
+  done:"물음에 답하자 빈 편지지 뒤에서 또 한 장이 스르르 미끄러져 나왔다. 반으로 접힌 쪽지.",
+  outro:[["det1","'두목에게는 말하지 말 것'…? 슬링은 네로 몰래 다른 사람한테도 명령을 받았던 거야.","nervous","shock"],
+   ["det0","네로는 '종만 멎으면 된다'고 했다. 그런데 이 쪽지는 추를 원한다. 슬링의 주인은 둘이었다."],
+   ["think","설이 씨는 추의 비밀을 아는 사람이 자기뿐이라고 했어. 그럼 이 쪽지를 쓴 사람은 어떻게 알았지?","","det1"],
+   ["det0","쪽지 끝의 도장을 봐라. 잎이 셋, 동그란 흰 꽃. 토끼풀 꽃이다."],
+   ["det1","'관리국'… 처음 듣는 이름이야. 근데 왜 이렇게 등이 서늘하지.","nervous"]],
+  trace:{title:"슬링의 두 번째 지령",text:"보름밤, 종이 멎거든 추를 챙길 것.\n추는 은이 아니다. 백 년 전 부엉이 탐정의 스승이 별빛 돌을 쪼개 만든 것이다.\n두목은 종만 멎으면 된다고 하겠지. 그건 두목의 일. 추는 우리 몫이다.\n두목에게는 말하지 말 것. 추는 '관리국'으로. 품삯은 그때.",sign:"관리국 · 토끼풀 꽃 도장"},
+  coins:2
+};
+
+// ---- 6장 빛을 훔치는 자 : 학교 기록실, 작은 책장 아래 서랍 ----
+window.SECRET.dark={
+  loc:"school",
+  entrance:{x:19,y:136,r:10,n:"작은 책장 아래 서랍",t:["책장 맨 아래 잿빛 서랍. 손잡이만 먼지가 없어. 최근에 누가 열었어.","서랍 앞판에 자물쇠 구멍 대신 단추 같은 게 박혀 있어."]},
+  art:'<rect x="34" y="36" width="292" height="136" rx="8" fill="#6B5040" stroke="#0A0D24" stroke-width="3"/>'+
+   '<rect x="46" y="48" width="268" height="112" rx="4" fill="#2A1E16"/>'+
+   '<g fill="#C9A96A" stroke="#0A0D24" stroke-width="2.5"><circle cx="80" cy="82" r="15"/><circle cx="145" cy="82" r="15"/><circle cx="210" cy="82" r="15"/><circle cx="275" cy="82" r="15"/></g>'+
+   '<g transform="rotate(4 92 132)"><rect x="56" y="112" width="74" height="42" fill="#E9DFC8" stroke="#0A0D24" stroke-width="1.5"/><text x="93" y="125" text-anchor="middle" font-size="6" fill="#2A2F45">등불 관리 검사 통지서</text><path d="M64 134h56M64 141h42M64 148h48" stroke="#B9B0A0" stroke-width="1.5"/></g>'+
+   '<rect x="150" y="118" width="134" height="36" rx="4" fill="#8E97AD" stroke="#0A0D24" stroke-width="2"/>'+
+   '<g fill="#1B1F3A"><rect x="168" y="127" width="17" height="18" rx="2"/><rect x="191" y="127" width="17" height="18" rx="2"/><rect x="214" y="127" width="17" height="18" rx="2"/><rect x="237" y="127" width="17" height="18" rx="2"/></g>'+
+   '<text x="217" y="165" text-anchor="middle" font-size="6.5" fill="#C9CFE6">아이가 등불 밑에서 떨던 해</text>',
+  title:"기록실의 이중 서랍",
+  intro:[["narr","서랍을 당기자 앞판 안쪽에 놋쇠 단추 네 개가 나란히 박혀 있었다. 단추마다 작은 글씨."],
+   ["det1","'사무소', '언덕', '숲', '우체국'… 이번 사건에 나온 장소들이야.","confused"],
+   ["det0","단추 위에 쪽지가 있다. '열쇠가 걸어간 길대로.'"]],
+  steps:[
+   {type:"order",q:"단추를 '열쇠가 걸어간 길' 순서대로 누르자. 등불 열쇠는 어디서 사라지고, 어디서 쓰이고, 어디서 발견됐지?",targets:[{id:"office",x:80,y:82,n:"사무소"},{id:"hill",x:145,y:82,n:"언덕"},{id:"forest",x:210,y:82,n:"숲"},{id:"post",x:275,y:82,n:"우체국"}],order:["office","hill","forest"],hint:"열쇠는 사무소 열쇠 걸이에서 사라졌고, 언덕 위 등불 자물쇠를 열었고, 숲의 작은 등불 속에서 나왔어. 우체국은 발톱 도장이 있던 곳일 뿐이야."},
+   {type:"code",q:"서랍 안에는 '등불 관리 검사 통지서' 빈 양식 뭉치. 그런데 바닥이 이중이다. 바닥 판에 네 자리 숫자 자물쇠, 그리고 새긴 글. '아이가 등불 밑에서 떨던 해.'",answer:["1985","1985년"],hint:"30년 전 그 밤은 몇 년도였을까? 기록 책장의 빨간 사건 상자 앞면, 그리고 탐정 사무소 게시판에 꽂힌 옛 사진 뒷면을 봐."}
+  ],
+  done:"이중 바닥이 열리자, 누렇게 바랜 먹지 한 장이 나왔다. 30년 동안 아무도 몰랐던 한 장이었다.",
+  outro:[["det0","먹지 사본이다. 할아버지는 기록을 늘 두 장씩 쓰셨지. 파일에서 2쪽은 사라졌는데, 사본은 이 바닥 밑에 남아 있었다."],
+   ["det1","'그날 밤 등불 열쇠를 지닌 사람: 부엉이 탐정, 그리고 순찰 짝 한 명'… 할아버지 말고도 한 명 더 있었어! 근데 이름 칸만 번졌어.","nervous","shock"],
+   ["det0","그리고 사본 위에 꽂힌 새 쪽지. 누군가 이 서랍을 우편함처럼 썼다. 네로를 '검사관'으로 만든 서류도 여기서 나갔다."],
+   ["think","'관리국'. 은빛 마을엔 그런 곳이 없다고 했지. 네로가 지어낸 이름이 아니었던 거야.","","det1"],
+   ["det1","{p0}, 30년 전 네로가 덮고 떨던 망토는 어른 거였대. 안감에 작은 흰 꽃.","nervous"],
+   ["det0","…쪽지의 도장도 흰 꽃이다. 토끼풀 꽃."]],
+  trace:{title:"먹지 사본 한 장",text:"[30년 전 사건 파일 2쪽 · 먹지 사본]\n별빛 축제 밤. 등불 자물쇠는 열쇠로 열려 있었음. 아이에게 열쇠 없음. 별빛 돌은 아이 힘으로 들 수 없는 무게. → 훈방.\n아이가 덮고 떨던 검은 망토는 어른 것. 안감에 작은 흰 꽃 자수.\n그날 밤 등불 열쇠를 지닌 사람: 부엉이 탐정, 그리고 순찰 짝 한 명. 짝의 진술: '반대편 길을 돌고 있었다.'\n(짝의 이름 칸만 먹지가 번져 읽을 수 없다.)\n\n[사본 위에 꽂혀 있던 새 쪽지]\n검사관님께. 서류 양식은 이 서랍에. 부엉이 손자의 탐정 수첩은 둘째 선반에 있습니다. 열쇠 걸이 자리가 적혀 있지요.",sign:"관리국 · 토끼풀 꽃 도장"},
+  coins:2
+};
+
+// ---- 7장 뒤집힌 등불 : 우체국 앞, 빨간 우체통 아래 칸 ----
+window.SECRET.museum={
+  loc:"post",
+  entrance:{x:92,y:127,r:11,n:"우체통 아래 칸",t:["빨간 우체통 아래쪽에 작은 문이 하나 더 있어. 편지 넣는 구멍과는 따로.","문에 붙은 쪽지. '주인 없는 편지 — 우체국은 편지를 버리지 않아요. 나비.'"]},
+  art:'<rect x="62" y="18" width="236" height="170" rx="16" fill="#D23A34" stroke="#0A0D24" stroke-width="3"/>'+
+   '<rect x="80" y="40" width="200" height="132" rx="6" fill="#2A1416" stroke="#0A0D24" stroke-width="2"/>'+
+   '<rect x="128" y="23" width="104" height="13" rx="2" fill="#F4EEDF" stroke="#0A0D24" stroke-width="1.5"/><text x="180" y="32.5" text-anchor="middle" font-size="7.5" fill="#2A2F45">주인 없는 편지</text>'+
+   '<rect x="146" y="50" width="68" height="46" fill="#F4EEDF" stroke="#0A0D24" stroke-width="2" stroke-dasharray="3 2"/><circle cx="180" cy="73" r="12" fill="none" stroke="#D8D0BD" stroke-width="2"/>'+
+   '<g stroke="#0A0D24" stroke-width="1.5"><g fill="#E9DFC8"><rect x="82" y="118" width="36" height="24" rx="2"/><rect x="137" y="138" width="36" height="24" rx="2"/><rect x="192" y="118" width="36" height="24" rx="2"/><rect x="247" y="138" width="36" height="24" rx="2"/></g>'+
+   '<path d="M82 118l18 12 18 -12M137 138l18 12 18 -12M192 118l18 12 18 -12M247 138l18 12 18 -12" fill="none"/></g>',
+  title:"주인 없는 편지 칸",
+  intro:[["narr","작은 문 안쪽에는 자물쇠 대신 우표 모양의 판이 붙어 있었다. 아무 글씨도 없는 하얀 판."],
+   ["det1","나비 글씨다. 받는 사람도 보낸 사람도 못 찾은 편지를 여기 모아 두나 봐.","confused"],
+   ["det0","이번 사건엔 눈에 안 보이는 도장이 있었다. 진열장 바닥의 형광 도장처럼."]],
+  steps:[
+   {type:"uv",q:"우표 판에 자외선 등을 비춰 보자. 떠오른 문장의 빈칸을 채우면 문이 열릴 것 같다.",x:180,y:74,text:"흔적은 ○○○에게",answer:["까마귀","까로"],hint:"관장실에서 나온 하얀 장갑의 편지를 떠올려 봐. '약속한 물건은 오늘 밤 소포로. 흔적은 ○○○에게.'"},
+   {type:"order",q:"안에는 봉투 네 통. 겉에 한 단어씩 적혀 있고, 맨 위에 '이 순서대로 했습니까?'. 모모 관장이 한 일을 일어난 순서대로 집자.",targets:[{id:"set",x:100,y:130,n:"진열"},{id:"buy",x:155,y:150,n:"유리돌"},{id:"dark",x:210,y:130,n:"정전"},{id:"parcel",x:265,y:150,n:"소포"}],order:["buy","parcel","set","dark"],hint:"유리돌 영수증은 '어제 날짜'. 소포 기록부는 6시 50분. 관장은 '저녁 7시에 진열장에 넣었다'고 했고, 불이 꺼진 건 9시 정각."}
+  ],
+  done:"봉투 네 통을 순서대로 집자, 맨 아래에서 누렇게 바랜 편지 한 통이 드러났다. 받는 곳 칸에 '주소 불명' 도장.",
+  outro:[["det1","이거… 모모 관장님이 받은 하얀 장갑 편지랑 문장이 똑같아. 근데 이건 하얀 장갑한테 보내는 편지야!","nervous","shock"],
+   ["det0","'그대로 옮겨 적기만 하면 됩니다.' 하얀 장갑은 남이 써 준 문장을 베껴 썼다. 모모 관장의 순서표까지 이 편지에 다 있었다."],
+   ["det1","관장님이 문 닫는 날 혼자 우는 것까지 알고 있어. 그건 매일 오는 피코나 알 법한 이야기인데.","sad"],
+   ["think","보낸 곳은 비어 있어. 그런데 소인은 숲속 마을 우체국이야. 이 편지를 쓴 사람은 우리 마을에서 부쳤어.","","det0"],
+   ["det0","그리고 또 그 도장이다. 토끼풀 꽃."]],
+  trace:{title:"주소 불명의 편지",text:"(받는 곳: 도시, 백합 저택 하얀 장갑 부인 — 주소 불명. 보낸 곳: 없음. 소인: 숲속 마을 우체국.)\n\n부인. 박물관 관장에게는 이렇게 쓰십시오. 그대로 옮겨 적기만 하면 됩니다.\n'약속한 물건은 오늘 밤 소포로. 흔적은 까마귀에게. 그러면 당신의 박물관은 세상에서 제일 빛날 겁니다.'\n관장은 외로운 사람입니다. 문 닫는 날마다 혼자 울지요. 외로운 사람은 빛을 약속하면 무엇이든 합니다.\n순서: 어제 유리돌. 6시 50분 소포. 7시 진열. 9시 정전. 깃털은 관장실 먼지털이에서.\n일이 끝나면 부인은 우리 마을로 오십시오. 언덕 위 하얀 집이 비어 있습니다.",sign:"토끼풀 꽃 도장"},
+  coins:2
+};
+
+// ---- 8장 멈춘 우편 마차 : 백 부인 저택 앞, 1층 서재 창문 ----
+window.SECRET.cart={
+  loc:"mansion",
+  entrance:{x:97,y:116,r:11,n:"1층 서재 창문",t:["1층 창문. 커튼 틈으로 책상과 작은 무쇠 난로가 보여. 창틀 걸쇠가 풀려 있어.","2층은 밤새 불이 켜져 있었다고 했지. 1층은 캄캄해. 누가 급히 뭔가를 태운 냄새가 나."]},
+  art:'<rect x="14" y="8" width="332" height="186" rx="4" fill="#20243F" stroke="#0A0D24" stroke-width="4"/>'+
+   '<rect x="24" y="18" width="312" height="166" fill="#4A3F60"/><path d="M24 152h312v32H24z" fill="#3A2A22"/>'+
+   '<rect x="80" y="28" width="200" height="88" fill="#E9DFC8" stroke="#0A0D24" stroke-width="2"/>'+
+   '<path d="M105 62 Q128 96 160 92 T215 58" stroke="#8E7A5A" stroke-width="2" stroke-dasharray="4 3" fill="none"/>'+
+   '<rect x="99" y="52" width="12" height="16" rx="2" fill="#D23A34" stroke="#0A0D24" stroke-width="1.2"/>'+
+   '<g fill="#4F7A4A" stroke="#0A0D24" stroke-width="1.2"><path d="M150 100l6 -14 6 14z"/><path d="M160 102l6 -16 6 16z"/></g>'+
+   '<path d="M205 64v-8l10 -8 10 8v8z" fill="#F4F1E6" stroke="#0A0D24" stroke-width="1.2"/>'+
+   '<path d="M254 100v-9l8 -6 8 6v9z" fill="#8C6A4A" stroke="#0A0D24" stroke-width="1.2"/>'+
+   '<rect x="36" y="134" width="150" height="10" fill="#6B4A32" stroke="#0A0D24" stroke-width="2"/><rect x="44" y="144" width="8" height="32" fill="#5A3A22"/><rect x="170" y="144" width="8" height="32" fill="#5A3A22"/>'+
+   '<rect x="80" y="113" width="58" height="22" rx="3" fill="#7A4E9A" stroke="#0A0D24" stroke-width="2"/><rect x="101" y="119" width="16" height="10" rx="2" fill="#C9A96A" stroke="#0A0D24" stroke-width="1.2"/>'+
+   '<rect x="296" y="30" width="9" height="94" fill="#2E2D3D" stroke="#0A0D24" stroke-width="1.5"/>'+
+   '<rect x="232" y="120" width="82" height="54" rx="6" fill="#2E2D3D" stroke="#0A0D24" stroke-width="3"/><rect x="244" y="132" width="58" height="28" rx="3" fill="#E9853A" opacity=".5"/>'+
+   '<path d="M248 150h40l-5 10h-35z" fill="#F4EEDF" stroke="#0A0D24" stroke-width="1.5"/><path d="M278 150q7 5 3 10" stroke="#3A2616" stroke-width="3" fill="none"/>',
+  title:"불 꺼진 서재",
+  intro:[["narr","풀린 걸쇠를 살짝 밀자 창문이 소리 없이 열렸다. 1층 서재. 책상 위엔 잠긴 편지함, 구석엔 아직 따뜻한 무쇠 난로."],
+   ["det1","{p0}, 우리 이래도 돼? 남의 집 창문인데.","nervous"],
+   ["det0","들어가진 않는다. 창틀에서 보이는 것, 손이 닿는 것만. …벽에 지도가 붙어 있다. 핀이 네 개."]],
+  steps:[
+   {type:"order",q:"지도 위 핀 네 개. 여백에 '자루가 지나갈 길'. 숲 어귀에서 찾은 흑백 털 발자국이 간 길 그대로 핀을 짚어 보자.",targets:[{id:"mailbox",x:105,y:62,n:"우체통"},{id:"forest",x:160,y:92,n:"숲 어귀"},{id:"mansion",x:215,y:58,n:"저택"},{id:"shed",x:262,y:92,n:"창고"}],order:["mailbox","forest","mansion"],hint:"흑백 털 발자국은 언덕 꼭대기 우체통 앞에서 시작해 숲 어귀를 지나 저택으로 이어졌어. 창고는 지렛대를 가져온 곳이지, 자루가 간 길이 아니야."},
+   {type:"uv",q:"난로 문틈에 반쯤 탄 편지. 타다 남은 자리엔 글씨가 없다. 마차 창고 공구함의 기름 손자국처럼, 자외선에만 보이는 줄이 있을지도 몰라.",x:236,y:176,text:"등불 자루는 좌석 ○",answer:["밑","아래","좌석밑","좌석아래"],hint:"마차 창고의 짐 기록판을 떠올려 봐. '작은 등불 자루는 까로가 직접, 좌석 ○에.'"},
+   {type:"code",q:"편지함 뚜껑에 네 자리 숫자 자물쇠. 반듯한 글씨로 '바퀴가 풀린 시각.'",answer:["0907","907","9:07","09:07","9시7분"],hint:"도토는 마차에 치이는 순간에도 초시계를 눌렀어. 탐정 사무소에 있는 도토의 초시계 기록을 봐. 네 자리로 적어."}
+  ],
+  done:"편지함 안에는 편지 대신, 난로에서 미처 다 타지 않은 나머지 반쪽이 고이 접혀 있었다. 태우려다 차마 못 태운 것처럼.",
+  outro:[["det1","'도련님께는 쐐기 이야기만 하십시오'… 뭉치한테 쐐기를 뽑게 한 사람이 따로 있었어.","angry"],
+   ["det0","그리고 이 사람이 원한 건 자루가 아니다. '30년 전 축제 밤'을 적은 편지 한 장. 특히 '하얀 손'이라는 말."],
+   ["det1","30년 전 축제 밤… 네로가 등불 밑에서 떨던 그 밤이야. 네로가 그날 뭘 봤는지가 무서웠던 거야, 이 사람.","nervous"],
+   ["think","편지 귀퉁이에 말라붙은 하얀 얼룩. 달콤한 냄새. 생크림이다.","","det0"],
+   ["det0","도장은 또 토끼풀 꽃. 이 사람은 백 부인보다 한 칸 위에 있다."]],
+  trace:{title:"난로 속의 지시서",text:"부인. 자루째 가져오되, 부인께 필요한 건 자루가 아닙니다.\n그 안에 '30년 전 축제 밤' 이야기를 적은 편지가 있거든 그 장만 골라 태우십시오. 특히 '하얀 손'이라는 말이 적힌 장은 반드시.\n작은 등불 자루는 까로가 직접 좌석 밑에 둡니다. 우체통 앞에서 편지를 걷느라 꺼내 놓을 때가 기회지요.\n도련님께는 쐐기 이야기만 하십시오. 나머지는 모르는 편이 도련님께 좋습니다.\n(귀퉁이에 말라붙은 생크림 얼룩. 달콤한 냄새가 아직 난다.)",sign:"토끼풀 꽃 도장"},
+  coins:2
+};
+
+// ---- 9장 하얀 장갑의 밤 : 저택 응접실, 진열장 가운데 칸 ----
+window.SECRET.glove={
+  loc:"parlor",
+  entrance:{x:57,y:93,r:9,n:"진열장 가운데 칸",t:["진열장 가운데 칸. 보석이 네 개 놓여 있는데, 받침 자국은 다섯 개야.","빈 받침 자리 뒤 판자가 살짝 들떠 있어. 손가락 하나 들어갈 만큼."]},
+  art:'<rect x="150" y="24" width="176" height="156" rx="6" fill="#3E3250" stroke="#0A0D24" stroke-width="3"/>'+
+   '<text x="238" y="42" text-anchor="middle" font-size="7" fill="#C9CFE6">아가가 물에 들어가는 시각</text>'+
+   '<rect x="178" y="50" width="120" height="104" rx="8" fill="#8E97AD" stroke="#0A0D24" stroke-width="3"/><rect x="188" y="60" width="100" height="84" rx="5" fill="#6E7894"/>'+
+   '<circle cx="238" cy="102" r="21" fill="#C9A96A" stroke="#0A0D24" stroke-width="3"/><circle cx="238" cy="102" r="6" fill="#0A0D24"/>'+
+   '<g stroke="#0A0D24" stroke-width="1.5" stroke-linecap="round"><path d="M238 81v5M238 118v5M217 102h5M254 102h5"/></g>'+
+   '<g transform="rotate(-6 95 150)"><rect x="34" y="120" width="124" height="60" fill="#EDE6D6" stroke="#0A0D24" stroke-width="2"/><path d="M46 134h92M46 144h70M46 154h84" stroke="#D0C8B6" stroke-width="2"/></g>',
+  title:"컬렉션 뒤의 금고",
+  intro:[["narr","빈 받침 자리 뒤 판자를 손끝으로 밀자, 진열장 뒤쪽이 문처럼 열렸다. 벽 속에 작은 금고."],
+   ["det1","컬렉션 뒤에 또 컬렉션이야? 이 집은 숨기는 게 끝이 없어.","confused"],
+   ["det0","다이얼 위에 긁어 쓴 글씨가 있다. 백 부인의 보랏빛 잉크가 아니다."]],
+  steps:[
+   {type:"code",q:"네 자리 다이얼. 긁어 쓴 글씨. '아가가 물에 들어가는 시각.'",answer:["1140","11:40","11시40분"],hint:"꽥순은 매일 밤 같은 시각에 연못에서 연습했어. 연못가 버드나무 줄기에 꽥순이 직접 새겨 둔 글씨가 있어."},
+   {type:"uv",q:"금고 안에는 백합 편지지가 아닌 흔한 종이 한 장. '스라소니는 반드시 뒤쫓을 겁니다…' 다음 줄이 비어 있다. 압지의 글씨처럼, 자외선에만 보이는 줄이 있을 거야.",x:100,y:158,text:"그를 가둘 곳은?",answer:["사무소지하","지하","철창","지하철창","사무소지하철창","사무소철창"],hint:"네로가 마을 사람들에게 붙잡혀 간 곳. 30년 된 철창이 있는 곳이야."}
+  ],
+  done:"마지막 줄이 떠오르자, 종이 아래 여백에 찍힌 도장도 함께 희미하게 빛났다.",
+  outro:[["det1","'털끝 하나 다치게 하지 마십시오'… 꽥순이를 데려가라고 해 놓고, 다치게 하지는 말래. 이게 무슨…","angry"],
+   ["det0","'지난번 언덕길처럼'. 도토가 다친 걸 알고 있다. 그리고 그게 싫었던 모양이다. 아이들을 아끼면서, 아이들을 쓴다."],
+   ["det1","네로를 가두는 것까지 계획이었어. '부엉이가 그 문을 제 손으로 잠그는 걸 보고 싶군요'…","nervous"],
+   ["think","이 사람은 백 부인 편에 선 게 아니야. 할아버지를 노리고 있어. 30년 동안.","","det0"],
+   ["det1","근데 '아가'라니. 이 말투, 어디서 들어 본 것 같은데…","confused"]],
+  trace:{title:"금고 속 흔한 종이",text:"부인. 연못의 아이는 매일 밤 11시 40분에 혼자 연습합니다. 그 아가를 데려가되, 털끝 하나 다치게 하지 마십시오. 지난번 언덕길처럼 아이가 다치는 일은 다시는 없어야 합니다.\n쪽지엔 '하얀 장갑'이라고만 쓰십시오. 스라소니는 반드시 뒤쫓을 겁니다. 그자는 등불 없는 곳에서도 길을 찾으니까요.\n마을은 그를 사무소 지하, 30년 된 철창에 가둘 겁니다. 부엉이가 그 문을 제 손으로 잠그는 걸 보고 싶군요.\n돌은 부인 몫. 스라소니는 제 몫입니다.",sign:"토끼풀 꽃 도장"},
+  coins:2
+};
+
+// ---- 10장 별빛 축제의 밤 : 저택 다락, 책상 밑 마룻바닥 ----
+window.SECRET.festival={
+  loc:"attic",
+  entrance:{x:150,y:176,r:12,n:"책상 밑 마룻바닥",t:["책상 밑 판자 하나만 못이 없어. 가장자리에 손톱자국이 나 있어.","마부는 짐을 다 싸 두었어. 그런데 이 밑에 뭔가 두고 가려던 걸까?"]},
+  art:'<rect x="96" y="12" width="168" height="34" rx="2" fill="#F4EEDF" stroke="#0A0D24" stroke-width="1.5"/><path d="M106 22h60M106 36h40M200 22h54" stroke="#DDD5C2" stroke-width="2"/>'+
+   '<rect x="44" y="54" width="272" height="132" fill="#140E0A" stroke="#0A0D24" stroke-width="3"/>'+
+   '<g transform="rotate(-9 60 60)"><rect x="22" y="52" width="120" height="13" fill="#7A5A3E" stroke="#0A0D24" stroke-width="2"/></g>'+
+   '<rect x="70" y="68" width="220" height="110" rx="8" fill="#9A8A66" stroke="#0A0D24" stroke-width="3"/><rect x="80" y="78" width="200" height="90" rx="5" fill="#B5A57E"/>'+
+   '<g fill="#C9A96A" stroke="#0A0D24" stroke-width="2.5"><circle cx="125" cy="98" r="14"/><circle cx="235" cy="98" r="14"/><circle cx="125" cy="148" r="14"/><circle cx="235" cy="148" r="14"/></g>'+
+   '<rect x="166" y="112" width="28" height="22" rx="3" fill="#8E97AD" stroke="#0A0D24" stroke-width="2"/><rect x="173" y="118" width="14" height="10" rx="2" fill="#1B1F3A"/>',
+  title:"마룻바닥 밑의 양철 상자",
+  intro:[["narr","못 없는 판자를 들어 올리자, 마룻바닥 밑에 납작한 양철 상자가 숨겨져 있었다."],
+   ["det1","마부 아저씨 보따리엔 옷이랑 채찍뿐이었어. 진짜 중요한 건 여기 뒀구나.","nervous"],
+   ["det0","뚜껑에 둥근 단추 넷. '광장', '마차 창고', '정류장', '도시'. 그리고 긁은 글씨. '돌이 간 길.'"]],
+  steps:[
+   {type:"order",q:"단추를 '돌이 실제로 간 길' 순서대로 누르자. 돌은 어디서 사라져, 어디에 잠깐 숨었다가, 어디서 기다리고 있었지?",targets:[{id:"square",x:125,y:98,n:"광장"},{id:"coach",x:235,y:98,n:"마차 창고"},{id:"stop",x:125,y:148,n:"정류장"},{id:"city",x:235,y:148,n:"도시"}],order:["square","coach","stop"],hint:"돌은 광장 등불 받침에서 사라졌고, 저택 마차 좌석함에 벨벳 실오라기를 남겼고, 아침 10시 상자에 담겨 정류장으로 갔어. 도시에는 끝내 닿지 못했지."},
+   {type:"code",q:"상자 안쪽 뚜껑에 작은 숫자 자물쇠. 새긴 글. '짐이 떠날 시각.'",answer:["4","4시","16","16시","1600","16:00","4:00","0400","오후4시"],hint:"정류장 예약판을 봐. 도시행 마차는 하루 한 번, 오후 몇 시에 떠나지?"},
+   {type:"uv",q:"상자 안에는 도시 보석상의 답장. 그런데 한 줄이 통째로 비어 있다. 보석상도 보이지 않는 잉크를 썼나 봐.",x:180,y:30,text:"첫 정거장 ○○밭 우체통",answer:["당근","당근밭"],hint:"도시로 가는 길, 이정표 기둥에 붙은 노선표를 봐. 도시행 마차가 처음 서는 곳이 적혀 있어."}
+  ],
+  done:"보이지 않던 줄이 떠오르자, 편지 맨 아래 보석상 도장 위에 덧찍힌 작은 도장도 빛났다.",
+  outro:[["det1","상자는 도시에 안 가는 거였어! 첫 정거장에서 내려서, '관리국'이 먼저 본다고…","nervous","shock"],
+   ["det0","보석상도 얼굴을 모른다. 편지만 받는다. 실룩은 보석상을 믿었고, 보석상은 관리국을 믿었고, 관리국은… 아무도 모른다."],
+   ["det1","마을 어귀, 당근밭 옆 빨간 우체통… 어디서 본 것 같은데.","confused"],
+   ["det0","섣불리 정하지 말자. 증거 없이 누구도 의심하지 않기. 우리 첫 번째 규칙이다."],
+   ["think","여섯 번째 토끼풀 꽃. 30년 전 축제 밤부터 오늘 축제까지, 같은 도장이 계속 따라오고 있어.","","det0"]],
+  trace:{title:"보석상의 답장",text:"마부 양반.\n돌은 상자째로, 축제 날 오후 4시 마차에 실으시오. 값은 도시에서 넉넉히 치르겠소.\n다만 상자는 도시에 닿지 않소. 첫 번째 서는 곳, 마을 어귀 당근밭 옆 우체통 앞에서 내리시오. '관리국'께서 먼저 보시겠다 하셨소.\n나도 그분 얼굴은 모르오. 편지만 받을 뿐이오. 그분 편지엔 늘 이 도장이 찍혀 있소.\n— 도시 보석상 거리, 관리국 창구",sign:"보석상 도장 위에 덧찍힌 토끼풀 꽃 도장"},
+  coins:2
+};
+
+// ---- 흑막 파일 ----
+window.TRACEX={
+  title:"그림자 뒤의 그림자",
+  total:6,
+  suspects:["owlgp","seol","karo","teacher","grandma","nero"],
+  final:{title:"관리국의 예고장",text:"숲속 마을의 두 탐정에게.\n여섯 개의 흔적을 모으셨군요. 부엉이가 30년 동안 하지 못한 일을.\n그러니 이제 정식으로 인사드리지요. 우리는 등불 관리국입니다. 은빛 마을에도, 숲속 마을에도 없는 곳. 지도에서 이름이 지워진 마을에 있으니까요.\n다음 검사는 첫눈 오는 밤. 검사 대상은 이름 없는 마을의 등불, 그리고 두 분의 등불입니다.\n빛은 누구의 것입니까? 답을 찾으시면 저를 찾아오세요. 문은 늘 조금 열어 두지요.\n추신. 두 분의 첫 사건, 참 달콤했지요.",sign:"등불 관리국 · 토끼풀 꽃 도장"}
+};
+
+window.__secretPrep&&window.__secretPrep();
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
