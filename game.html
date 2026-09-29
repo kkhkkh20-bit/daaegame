@@ -10512,6 +10512,185 @@ BOOK.festival={pre:[
 VFILE.push({req:function(){return S.best.festival},t:"별빛 축제 사건 종결: 별빛 돌을 훔치고 뭉치에게 죄를 씌운 건 백 부인의 전 마부 실룩. 손수레 자국, 박물관 보자기의 금실, 글씨 버릇으로 밝혀냄. 뭉치, 무혐의. 큰 등불은 제시간에 켜짐."});
 })();
 
+// ================= v69: admin mode (hidden corner button + PIN) =================
+(function(){
+var PIN="0929",KEY="daae:adm",BAK="daae:admbak";
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){}}
+var ADM={on:lsGet(KEY)==="1"};
+window.__ADM=ADM;
+
+// every case playable while admin mode is on
+var _co=caseOpen;
+caseOpen=function(i){return ADM.on||_co(i)};
+
+var css=document.createElement("style");
+css.textContent=
+'#admdot{position:fixed;top:0;right:0;width:18px;height:18px;z-index:2147483000;border:0;padding:0;margin:0;background:transparent;cursor:default;-webkit-tap-highlight-color:transparent}'+
+'#admdot::after{content:"";position:absolute;top:5px;right:5px;width:4px;height:4px;border-radius:50%;background:#8E97AD;opacity:.22}'+
+'#admdot.on{width:auto;height:auto;top:2px;right:2px;padding:2px 7px;border-radius:9px;background:#F2C230;color:#1B2447;font:700 10px/1.4 Jua,sans-serif;cursor:pointer}'+
+'#admdot.on::after{display:none}'+
+'.admv{position:fixed;inset:0;z-index:2147483001;background:rgba(8,10,28,.86);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;font-family:Jua,"Gowun Dodum",sans-serif;color:#F4F1E6}'+
+'.admbox{background:#1B2447;border:2px solid #2E3A6E;border-radius:18px;width:100%;max-width:380px;max-height:100%;overflow:auto;padding:16px;box-sizing:border-box;box-shadow:0 20px 60px rgba(0,0,0,.5)}'+
+'.admbox h3{margin:0 0 4px;font-size:18px;color:#F2C230;font-weight:400}.admbox small{color:#A9B0C8;font-size:12px}'+
+'.admsec{margin-top:14px}.admsec>b{display:block;font-weight:400;font-size:13px;color:#C9CFE6;margin-bottom:6px;letter-spacing:.02em}'+
+'.admgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}'+
+'.admbox button{font:inherit;font-size:13px;border:0;border-radius:10px;padding:9px 8px;background:#2E3A6E;color:#F4F1E6;cursor:pointer;text-align:center}'+
+'.admbox button.pri{background:#F2C230;color:#1B2447}.admbox button.warn{background:#5A2230;color:#FFD7DC}.admbox button:disabled{opacity:.35;cursor:default}'+
+'.admcase{display:grid;grid-template-columns:1fr auto auto auto;gap:5px;align-items:center;padding:6px 0;border-top:1px solid #2A3360}'+
+'.admcase span{font-size:13px;line-height:1.25}.admcase span i{font-style:normal;color:#F2C230;font-size:11px;margin-left:4px}.admcase button{padding:6px 8px;font-size:12px}'+
+'.admpin{display:flex;justify-content:center;gap:12px;margin:14px 0}.admpin i{width:14px;height:14px;border-radius:50%;border:2px solid #8E97AD}.admpin i.f{background:#F2C230;border-color:#F2C230}'+
+'.admpad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.admpad button{font-size:20px;padding:12px 0}'+
+'.admshake{animation:admsh .3s}@keyframes admsh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}';
+document.head.appendChild(css);
+
+var dot=document.createElement("button");
+dot.id="admdot";dot.type="button";dot.setAttribute("aria-label","설정");
+document.body.appendChild(dot);
+function paintDot(){dot.className=ADM.on?"on":"";dot.textContent=ADM.on?"관리":""}
+paintDot();
+dot.onclick=function(e){e.stopPropagation();if(ADM.on)openPanel();else openPin()};
+
+var layer=null;
+function close(){if(layer){layer.remove();layer=null}document.removeEventListener("keydown",onKey,true)}
+function show(inner){close();layer=document.createElement("div");layer.className="admv";layer.innerHTML='<div class="admbox">'+inner+'</div>';
+  layer.addEventListener("click",function(e){if(e.target===layer)close()});document.body.appendChild(layer);return layer}
+
+// ---------- PIN ----------
+var typed="";
+function onKey(e){
+  if(!layer||!layer.querySelector(".admpin"))return;
+  if(/^[0-9]$/.test(e.key)){e.preventDefault();e.stopPropagation();press(e.key)}
+  else if(e.key==="Backspace"){e.preventDefault();e.stopPropagation();typed=typed.slice(0,-1);drawPin()}
+  else if(e.key==="Escape"){e.preventDefault();close()}
+}
+function drawPin(){var p=layer&&layer.querySelector(".admpin");if(!p)return;p.innerHTML=[0,1,2,3].map(function(i){return '<i class="'+(i<typed.length?"f":"")+'"></i>'}).join("")}
+function press(d){
+  if(typed.length>=4)return;typed+=d;drawPin();
+  if(typed.length===4){
+    if(typed===PIN){typed="";enable();close();openPanel()}
+    else{var b=layer.querySelector(".admbox");b.classList.remove("admshake");void b.offsetWidth;b.classList.add("admshake");setTimeout(function(){typed="";drawPin()},250)}
+  }
+}
+function openPin(){
+  typed="";
+  show('<h3>설정</h3><small>번호 네 자리를 눌러 주세요</small><div class="admpin"></div><div class="admpad">'+
+    [1,2,3,4,5,6,7,8,9].map(function(n){return '<button type="button" data-d="'+n+'">'+n+'</button>'}).join("")+
+    '<button type="button" data-x="c">닫기</button><button type="button" data-d="0">0</button><button type="button" data-x="b">지움</button></div>');
+  drawPin();
+  layer.querySelectorAll("[data-d]").forEach(function(b){b.onclick=function(){press(b.dataset.d)}});
+  layer.querySelector('[data-x="c"]').onclick=close;
+  layer.querySelector('[data-x="b"]').onclick=function(){typed=typed.slice(0,-1);drawPin()};
+  document.addEventListener("keydown",onKey,true);
+}
+
+function enable(){
+  ADM.on=true;lsSet(KEY,"1");
+  if(!lsGet(BAK)){try{lsSet(BAK,JSON.stringify(snapshot()))}catch(e){}}
+  paintDot();if(!G||S.screen!=="case")render();
+}
+function disable(){ADM.on=false;lsSet(KEY,null);paintDot();close();render()}
+
+// ---------- case tools ----------
+function cur(){return G&&S.screen==="case"?CASES[G.ci]:null}
+function gather(c,breakAll){
+  if(!G.exam)G.exam={};if(!G.logic)G.logic=[];
+  for(var round=0;round<12;round++){
+    var n=0;
+    c.locations.forEach(function(l,i){if(!locOpen(c,i))return;l.spots.forEach(function(s){if(G.found.indexOf(s.ev.id)<0){G.found.push(s.ev.id);n++}if(s.ev.check&&!G.exam[s.ev.id]){G.exam[s.ev.id]=true;n++}})});
+    people(c).forEach(function(k){visibleTalk(c,k).forEach(function(t){if(t.q!==""&&G.asked.indexOf(t.id)<0){G.asked.push(t.id);n++}})});
+    (COMBO[c.id]||[]).forEach(function(x,i){var id="cx_"+c.id+"_"+i;if(G.found.indexOf(id)<0&&haveItem(c,x.a)&&haveItem(c,x.b)){G.found.push(id);if(G.logic.indexOf(i)<0)G.logic.push(i);n++}});
+    if(breakAll)c.contra.forEach(function(x){
+      if(G.broken[x.t])return;
+      if(G.asked.indexOf(x.t)<0)G.asked.push(x.t);
+      G.broken[x.t]=true;n++;
+      if(x.unlock&&G.unlocked.indexOf(x.unlock)<0)G.unlocked.push(x.unlock);
+    });
+    if(!n)break;
+  }
+}
+function openLocs(c){c.locations.forEach(function(l){if(l.req&&G.unlocked.indexOf(l.req)<0)G.unlocked.push(l.req)})}
+function done(msg){G.introDone=true;try{saveProg()}catch(e){}close();render();if(msg&&typeof floater==="function")try{floater(".hpbar",msg,"good")}catch(e){}}
+function battleStep(c){
+  if(!(G.battle&&G.battle.phase==="fight"))return false;
+  var st=stmsOf(rOf(c));
+  for(var i=0;i<st.length;i++){var it=(st[i].a||[]).filter(function(x){return haveItem(c,x)})[0];if(it){G.battle.si=i;close();render();judgeBattle(c,it);return true}}
+  gather(c,true);
+  for(var j=0;j<st.length;j++){var it2=(st[j].a||[]).filter(function(x){return haveItem(c,x)})[0];if(it2){G.battle.si=j;close();render();judgeBattle(c,it2);return true}}
+  return false;
+}
+function startBattle(c){gather(c,true);openLocs(c);G.introDone=true;G.hp=hpMax(c);G.tab="final";close();render();accuse(c,culOf(c))}
+function fillDeduce(c){if(!G.answers)G.answers={};c.final.forEach(function(f,i){if(i&&f.answer!==undefined)G.answers[i]=f.answer});done()}
+
+function jumpCase(i,skipIntro){
+  close();var id=CASES[i].id;
+  if(!skipIntro){openCase(i,true);return}
+  delete S.prog[id];
+  G=fresh(i);G.introDone=true;S.screen="case";G.tab="scene";
+  try{bgm("sneak")}catch(e){}
+  saveProg();persist();render();
+}
+function setSolved(i,on){var id=CASES[i].id;if(on)S.best[id]=3;else delete S.best[id];if(on&&CASES[i].part===2)S.story.finale=true;persist()}
+
+// ---------- panel ----------
+function openPanel(){
+  var c=cur(),h='<h3>관리자 모드</h3><small>이 기기에서만 켜져 있어요. 끄면 평소대로 돌아가요.</small>';
+  if(c){
+    var fight=G.battle&&G.battle.phase==="fight";
+    h+='<div class="admsec"><b>지금 사건 · '+esc(c.title)+'</b><div class="admgrid">'+
+      '<button type="button" data-a="gather">증거·증언 다 모으기</button>'+
+      '<button type="button" data-a="break">거짓말까지 다 깨기</button>'+
+      '<button type="button" data-a="locs">모든 장소 열기</button>'+
+      '<button type="button" data-a="hp">신뢰도 가득</button>'+
+      '<button type="button" class="pri" data-a="battle">바로 대결</button>'+
+      '<button type="button" data-a="step"'+(fight?'':' disabled')+'>대결 한 수 넘기기</button>'+
+      '<button type="button" data-a="deduce">추리 답 채우기</button>'+
+      '<button type="button" data-a="restart">이 사건 처음부터</button>'+
+      '</div></div>';
+  }
+  h+='<div class="admsec"><b>사건 이동</b>';
+  CASES.forEach(function(k,i){
+    var b=S.best[k.id];
+    h+='<div class="admcase"><span>'+(i+1)+'. '+esc(k.title)+(b?'<i>해결</i>':S.prog[k.id]?'<i>진행 중</i>':'')+'</span>'+
+      '<button type="button" data-go="'+i+'">처음</button><button type="button" data-skip="'+i+'">수사</button>'+
+      '<button type="button" data-sol="'+i+'">'+(b?'해결 취소':'해결 처리')+'</button></div>';
+  });
+  h+='<small>처음: 그림책부터 · 수사: 도입 건너뛰고 현장부터</small></div>';
+  h+='<div class="admsec"><b>이야기 · 기록</b><div class="admgrid">'+
+    '<button type="button" data-a="story">모든 이야기 열기</button>'+
+    '<button type="button" data-a="allsol">전부 해결 처리</button>'+
+    '<button type="button" data-a="board">게시판으로</button>'+
+    '<button type="button" class="warn" data-a="restore"'+(lsGet(BAK)?'':' disabled')+'>관리자 전 기록으로</button>'+
+    '</div></div>';
+  h+='<div class="admsec admgrid"><button type="button" data-a="close">닫기</button><button type="button" class="warn" data-a="off">관리자 끄기</button></div>';
+  show(h);
+
+  layer.querySelectorAll("[data-a]").forEach(function(b){b.onclick=function(){
+    var a=b.dataset.a,c=cur();
+    if(a==="close")return close();
+    if(a==="off")return disable();
+    if(a==="board"){close();if(G)saveProg();G=null;S.screen="board";render();return}
+    if(a==="story"){S.story.pro=true;S.story.finale=true;persist();close();render();return}
+    if(a==="allsol"){CASES.forEach(function(k,i){setSolved(i,true)});S.story.finale=true;persist();close();if(!G)render();return}
+    if(a==="restore"){var raw=lsGet(BAK);if(!raw)return;var d;try{d=sanitizeState(JSON.parse(raw))}catch(e){d=null}if(!d)return;
+      if(b.dataset.arm!=="1"){b.dataset.arm="1";b.textContent="한 번 더 누르면 되돌려요";return}
+      close();applySnap(d);lsSet(BAK,null);S.screen="board";G=null;render();return}
+    if(!c)return;
+    if(a==="gather"){gather(c,false);done("다 모았어요")}
+    else if(a==="break"){gather(c,true);done("거짓말 다 깼어요")}
+    else if(a==="locs"){openLocs(c);gather(c,false);done("장소가 모두 열렸어요")}
+    else if(a==="hp"){G.hp=hpMax(c);if(G.battle)G.battle.lives=hpMax(c);done()}
+    else if(a==="battle")startBattle(c);
+    else if(a==="step")battleStep(c);
+    else if(a==="deduce")fillDeduce(c);
+    else if(a==="restart")jumpCase(G.ci,false);
+  }});
+  layer.querySelectorAll("[data-go]").forEach(function(b){b.onclick=function(){jumpCase(+b.dataset.go,false)}});
+  layer.querySelectorAll("[data-skip]").forEach(function(b){b.onclick=function(){jumpCase(+b.dataset.skip,true)}});
+  layer.querySelectorAll("[data-sol]").forEach(function(b){b.onclick=function(){var i=+b.dataset.sol;setSolved(i,!S.best[CASES[i].id]);openPanel()}});
+}
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
