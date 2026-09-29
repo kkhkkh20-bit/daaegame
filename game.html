@@ -12339,6 +12339,214 @@ css.textContent=
 document.head.appendChild(css);
 })();
 
+// ================= v84: culprit's counterattack (twist round before the final rebuttal) =================
+(function(){
+window.TWIST=window.TWIST||{};
+PAT.twist={bpm:84,lead:"triangle",lv:.42,mel:[57,null,null,60,null,null,59,null,56,null,null,null,57,null,null,null,57,null,null,60,null,63,62,null,59,null,null,null,56,null,null,null],bass:[33,33,32,32,33,33,28,28],dr:"k.......h...h...",dv:.3};
+var CARDS={};
+function tw(c){return c&&window.TWIST[c.id]||null}
+function prep(){
+  Object.keys(window.TWIST).forEach(function(cid){
+    var t=window.TWIST[cid],R=BATTLE[cid];if(!R||t._idx!=null||!t.stm||!t.card)return;
+    var at=R.length-1;R.splice(at,0,{stm:t.stm,hit:t.hit||"…!",twist:true});t._idx=at;
+    t.card.check=t.card.check||{};if(!t.card.check.label)t.card.check.label="자세히 살펴보기";t.card.check.gate=true;
+    CARDS[t.card.id]=t.card;
+  });
+}
+window.__twPrep=prep;
+setTimeout(prep,0);
+function isTw(c,round){var t=tw(c);prep();return !!(t&&t._idx===round)}
+function fixThink(lines){return lines.map(function(l){if(l[0]==="think"&&(l[3]==="det0"||l[3]==="det1")){l=l.slice();l[3]=S.players[l[3]==="det0"?0:1]}return l})}
+
+var _ev=evById;evById=function(c,id){var e=_ev(c,id);if(e)return e;var t=tw(c);return (t&&t.card&&t.card.id===id)?t.card:null};
+var _ic=evIcon;evIcon=function(id){var k=CARDS[id];return _ic(k?(k.icon||"anon"):id)};
+
+var _fst=window.__fst;window.__fst=function(round,n){if(G&&G.battle&&isTw(CASES[G.ci],round))return 0;return _fst(round,n)};
+var _bm=window.__bmode;window.__bmode=function(B,c){if(isTw(c,B.round))return "twist";return _bm(B,c)};
+var _fm=window.__fmood;window.__fmood=function(md,round,n){if(G&&G.battle&&isTw(CASES[G.ci],round))return "smug";return _fm(md,round,n)};
+
+var _acc=accuse;accuse=function(c,k){prep();return _acc.apply(this,arguments)};
+
+var _bn=banner;
+banner=function(text,sub){
+  if(G&&G.battle&&G.battle.phase==="fight"){
+    var c=CASES[G.ci],t=tw(c);
+    if(t&&isTw(c,G.battle.round)&&!G.battle.twShown){
+      G.battle.twShown=true;G.battle.miss=0;
+      if(G.found.indexOf(t.card.id)<0)G.found.push(t.card.id);
+      render();
+      try{SFX.hush()}catch(e){}
+      return _bn("범인의 반격!",CAST[G.battle.cul].name).then(function(){
+        return new Promise(function(res){say(fixThink(t.lines||[]),function(){try{floater(".lives","위기! 새 증거가 나왔다","bad")}catch(e){}res()})});
+      });
+    }
+  }
+  return _bn(text,sub);
+};
+
+var _jb=judgeBattle;
+judgeBattle=function(c,item){
+  var B=G&&G.battle,t=tw(c),r0=B&&B.round;
+  var out=_jb.apply(this,arguments);
+  if(B&&t&&t.help&&B.phase==="fight"&&B.round===r0&&isTw(c,B.round)&&(B.miss||0)>=2&&!B.twHelp){
+    B.twHelp=true;setTimeout(function(){say(fixThink(t.help),function(){render()})},1700);
+  }
+  return out;
+};
+})();
+
+// ================= v84: twist data (5~10장) =================
+// ================= v84 twist data B: culprit's counterattack for bell(5장) / dark(6장) / museum(7장) =================
+window.TWIST=window.TWIST||{};
+Object.assign(window.TWIST,{
+ bell:{
+  lines:[
+   ["sling","…후후. 후후후. 좋아요, 제가 챙긴 게 가짜였다고 쳐요. 그럼 진짜 추는 누가 빼돌렸을까요?","smug"],
+   ["sling","배달부는 편지를 다 만져요. 오늘 저녁 마차에 이런 편지가 들어왔더군요. 받는 분, 네로 님.","smug"],
+   ["sling","'네로 님께. 보름밤, 달빛 종의 추는 제가 맡을게요. 어른들은 아무도 모를 거예요. — 밤'","smug"],
+   ["det1","밤이가…? 밤이가 검은 망토단 편이었다고? {p0}, 우리 추리가 틀렸어…?","shock"],
+   ["det0","…가짜 추를 걸자고 한 게 밤이라는 건 톡도 인정했다. 편지 내용과 맞아떨어지는군.","think"],
+   ["sling","아이라고 다 착한 건 아니랍니다. 제가 도와드릴까요? 이 편지, 증거로 드릴게요.","happy"],
+   ["think","서명은 분명 '밤'이다. 그런데 이 편지, 그냥 믿어도 될까. 좀 더 자세히 들여다봐야 해.","","det0"]
+  ],
+  card:{id:"tw_bell",name:"'밤'이 서명한 편지",icon:"invite",
+   desc:"슬링이 내민 편지. '네로 님께. 보름밤, 달빛 종의 추는 제가 맡을게요. 어른들은 아무도 모를 거예요. — 밤'",
+   check:{label:"글씨 살펴보기",
+    text:"편지 글씨가 전부 오른쪽으로 비스듬히 누운 날림 글씨다. 글자 끝마다 꼬리가 길게 늘어진다. 서명 '— 밤'까지 똑같이 흘려 썼다.",
+    desc2:"'— 밤' 서명의 편지. 하지만 서명까지 전부 비스듬히 흘려 쓴 날림 글씨다. 밤이가 남긴 다른 글씨와 비교해 볼 것."}},
+  stm:[
+   {t:"그러니 진짜 추는 꼬마가 네로 님께 넘겼겠죠. 저는 가짜를 든 심부름꾼일 뿐이에요.",p:"아이라고 다 착한 건 아니랍니다. 후후."},
+   {t:"보세요, 서명까지 '— 밤'. 박쥐 꼬마가 제 손으로 쓴 편지예요.",p:"배달부는 글씨만 봐도 누가 썼는지 알아요. 이건 틀림없이 꼬마 글씨죠.",a:["tw_bell","cx_bell_3"]}
+  ],
+  hit:"또박또박한 글씨…? 꼬마 글씨가 그렇게 반듯할 줄 누가 알았겠어요…!",
+  help:[
+   ["tok","잠깐! 딸깍… 잠깐만요, 탐정님들!","nervous"],
+   ["tok","밤이 글씨라면 제가 알아요. 그 애는 어른보다 글씨를 잘 써요. 오늘 밤 밤이가 직접 남긴 글씨가 어디 어디 있었는지 떠올려 보세요.","think"],
+   ["think","밤이가 직접 남긴 글씨… 우리가 이미 손에 넣었을지도 몰라.","","det1"]
+  ]
+ },
+ dark:{
+  lines:[
+   ["luka","…규정상, 한 가지 정정하겠습니다.","smug"],
+   ["luka","등불을 끈 건 저입니다. 하지만 사무소에서 열쇠를 들고 나온 건 제가 아니죠. 열쇠 걸이 자리를 아는 사람은 넷뿐이었습니다. 두 분, 부엉이 탐정, 그리고…","smug"],
+   ["luka","부리 군의 탐정 수첩입니다. 기록실에서 주웠죠. 마지막 장을 읽어 드리겠습니다. '8시, 사무소 열쇠는 내가 챙긴다. — 부리'","smug"],
+   ["det1","부리가…? 할아버지의 하나뿐인 손자가 열쇠를 넘겼다고? {p0}, 우리 추리가 틀렸어…?","shock"],
+   ["det0","…그 자리를 아는 건 우리와 할아버지, 그리고 부리뿐. 할아버지가 직접 하신 말씀이다.","think"],
+   ["luka","빛은 언제나 가장 가까운 사람이 넘깁니다. 규정상, 저는 판단하지 않습니다만.","smug"],
+   ["think","부리가 그럴 리 없어. …이 수첩, 이대로 받아들이면 안 돼. 마지막 장을 제대로 들여다봐야 해.","","det0"]
+  ],
+  card:{id:"tw_dark",name:"부리의 탐정 수첩",icon:"log",
+   desc:"루카가 내민 부리의 수첩. 첫 장에 두 탐정의 이름, 마지막 장에 '8시, 사무소 열쇠는 내가 챙긴다. — 부리'.",
+   check:{label:"마지막 장 살펴보기",
+    text:"앞 장들은 전부 뭉툭한 연필 글씨다. 그런데 마지막 줄만 까만 잉크로 적혀 있다. 손끝으로 문지르자 까맣게 번진다. 아직 마르지 않았다. 벽의 발톱 자국을 문질렀을 때와 똑같은 냄새가 난다.",
+    desc2:"부리의 수첩. 앞 장은 모두 연필인데, 마지막 줄만 아직 덜 마른 까만 잉크. 벽의 발톱 자국과 같은 잉크 냄새."}},
+  stm:[
+   {t:"이 마지막 줄은 부리 군이 제 손으로 적은 겁니다. 제가 기록실에서 주웠을 땐 이미 쓰여 있었죠.",p:"규정상, 저는 주운 물건에 손대지 않습니다.",a:["tw_dark","n_stamp"]},
+   {t:"그러니 열쇠를 사무소에서 가져간 건 부리 군입니다. 저는 등불을 껐을 뿐이죠.",p:"손자가 할아버지의 빛을 넘기다니. 슬픈 서류입니다."}
+  ],
+  hit:"…잉크가 아직 젖어 있다. 규정상… 마를 때까지 기다렸어야 했군요.",
+  help:[
+   ["kongi","잠깐! 킁킁! 탐정님들, 그 수첩 마지막 장에서 부리 냄새가 안 나!","shock"],
+   ["kongi","오늘 밤 코가 찡하게 맡았던 냄새야. 도장이 잔뜩 있던 데서… 아직 축축했던 그거랑 똑같아!","nervous"]
+  ]
+ },
+ museum:{
+  lines:[
+   ["momo","…호, 호호. 그래요, 소포는 보냈어요. 하지만 탐정님들, 쿠키 하나 드시고 이것 좀 보세요.","nervous"],
+   ["narr","모모 관장이 관장실 금고에서 무언가를 꺼내 두 손으로 받쳐 들었다. 은은하게 빛나는 돌이었다.","smug","momo"],
+   ["momo","별빛 돌이에요. 진짜는 처음부터 제 금고에 얌전히 있었어요. 가짜를 전시한 건 사과할게요. 하지만 도둑맞은 건 아무것도 없어요!","smug"],
+   ["det1","돌이… 여기 있다고? 그럼 우리가 쫓던 건 뭐였지? {p0}, 우리 추리가 틀렸어…?","shock"],
+   ["det0","…진짜가 여기 있다면 이건 도둑 사건이 아니게 된다. 까로에게 씌운 누명만 흐지부지 남겠지.","think"],
+   ["momo","자, 사건 끝이에요. 다들 쿠키 드시고 돌아가세요. 호호. 호호호…","happy"],
+   ["think","관장님 손이 떨리고 있다. 빛나는 것만 보고 믿어도 될까. 이 돌, 가까이서 살펴봐야 해.","","det1"]
+  ],
+  card:{id:"tw_museum",name:"금고 속 별빛 돌",icon:"realstone",
+   desc:"모모 관장이 관장실 금고에서 꺼낸 돌. 은은하게 빛난다. '진짜는 처음부터 금고에 있었다'고 한다.",
+   check:{label:"돌 뒤집어 보기",
+    text:"빛은 겉에 얇게 바른 반짝이 칠이다. 손톱에 살짝 벗겨진다. 한쪽 모서리가 깨져 투명한 유리 속살이 보인다. 돌을 뒤집어 자외선 등을 비추자, 밑바닥에 '까로 상회' 도장이 떠오른다.",
+    desc2:"금고 속 '별빛 돌'. 빛은 반짝이 칠, 깨진 모서리는 유리. 밑바닥에 '까로 상회' 형광 도장."}},
+  stm:[
+   {t:"이 돌이 진짜 별빛 돌이에요. 처음부터 제 금고에 있었다니까요!",p:"보세요, 이렇게 반짝이잖아요. 쿠키 하나 더 드실래요?",a:["tw_museum","cx_museum_4"]},
+   {t:"소포엔 별 모양 쿠키를 잔뜩 담아 보냈어요. 하얀 장갑님께 드리는 감사 선물이죠.",p:"두 손으로 겨우 들 만큼 구웠거든요. 호호."}
+  ],
+  hit:"까, 까로 상회 도장…? 아, 안 돼요, 그건 뒤집으면 안 되는데…!",
+  help:[
+   ["yeoni","잠깐! 탐정님들, 저 진열장 덮개 뜨려고 크기 잴 때 그 돌 바로 옆에 있었어요. 이 돌이랑 모양이 똑같아요!","nervous"],
+   ["yeoni","돌은 밑바닥이 제일 정직하대요. 진열장 바닥에 남은 흔적이랑, 어제 누가 누구한테 무슨 돌을 팔았는지 맞춰 보세요!","think"]
+  ]
+ }
+});
+
+// ================= v84 twist C: culprit's counterattack for 8장 cart, 9장 glove, 10장 festival =================
+Object.assign(window.TWIST,{
+ cart:{
+  lines:[
+   ["narr","뭉치가 입을 꾹 다물었다. 그리고 천천히, 다시 턱을 치켜들었다.","smug","mungchi"],
+   ["mungchi","…방금 건 말이 헛나온 거야. 촌 동네 탐정들, 너희 추리의 기둥이 '쐐기는 지렛대로 뽑혔다'였지? 좋아. 그 지렛대가 어디서 나왔는지 알려 줄게.","smug"],
+   ["mungchi","오늘 아침 연못가 갈대밭에서 누가 주워 왔어. 연못. 그 딱따구리가 8시 55분에 날아간 데. 뭐, 그렇다는 거야.","smug"],
+   ["det1","연못…? 따닥이 날아간 데잖아. {p0}, 설마… 우리 추리가 틀렸어…?","shock"],
+   ["det0","…침착해. 마을 사람들이 또 따닥을 보기 시작했어.","nervous"],
+   ["think","하필 연못에서. 너무 딱 맞아떨어져. 이 지렛대, 겉만 보지 말고 구석구석 들여다봐야 해.","","det0"]
+  ],
+  card:{id:"tw_cart",name:"연못가에서 나온 지렛대",icon:"glasscase",
+   desc:"뭉치가 내민 창고의 지렛대(쐐기 뽑개). 오늘 아침 연못가 갈대밭에서 나왔다. 납작한 쇠날이 쐐기 자국과 딱 맞는다. 따닥이 날아간 바로 그 연못.",
+   check:{text:"쇠날엔 축 기름이 번들거려요. 그런데 손잡이에도 기름 묻은 작은 손자국이 겹겹이 찍혀 있어요. 자국마다 촘촘한 짜임 무늬. 장갑 낀 손이에요. 부리로 쪼거나 문 자국은 하나도 없어요.",
+    desc2:"연못가에서 나온 지렛대. 손잡이에 기름 묻은 작은 장갑 손자국, 촘촘한 짜임 무늬. 부리 자국은 하나도 없다."}},
+  stm:[{t:"쐐기를 뽑은 지렛대가 딱따구리가 날아간 연못에서 나왔어. 그 애가 뽑아서 던진 거야.",p:"그 밤에 연못에 간 건 그 애뿐이잖아.",a:["tw_cart","cx_cart_2"]},
+       {t:"그 애는 밤새 아무 말도 안 했어. 찔리는 게 있으니까 입 다문 거지.",p:"말을 못 하는 게 아니라 안 하는 거야. 뭐, 그렇다는 거야."}],
+  hit:"짜, 짜임 무늬…? 딱따구리가 장갑을 낄 리가… 아니, 그러니까 그건…!",
+  help:[
+   ["narr","그때 사무소 문틀이 울렸다. 따닥, 따닥. 밤새 한 번도 두드리지 않던 부리였다.","nervous","ttadak"],
+   ["ttadak","잠깐! …내 부리는, 쪼기만 해. 쥐지는 못해. 그 지렛대… 누가 쥐었는지, 봐 줘. 따닥.","nervous"],
+   ["det1","{p0}! 지렛대를 쥐는 자리, 거기를 다시 보자!","think"]
+  ]
+ },
+ glove:{
+  lines:[
+   ["narr","백 부인이 찻잔을 들어 한 모금 마셨다. 잔을 내려놓는 소리는 이번에도 나지 않았다.","","madam"],
+   ["madam","장부는 수집가가 꿈을 적는 공책일 뿐이에요. 그보다 탐정님들, 추리의 기둥은 '백합 편지지는 이 저택에만 있다'였죠?","smug"],
+   ["madam","은빛 마을 문구점의 영수증이에요. 백합 편지지 한 묶음. 사 간 손님은 '검은 망토를 두른 큰 고양이'. 누구 이야기인지는 아시겠죠.","smug"],
+   ["det1","검은 망토… 네로? 네로가 그 종이를 샀다고? {p0}, 우리 추리가 틀렸던 거야…?","shock"],
+   ["det0","…아직 모른다. 네로는 우리한테 증거를 믿으라고 했어.","nervous"],
+   ["think","영수증 한 장에 네로가 다시 철창 안으로 밀려 들어가고 있어. 적힌 글자를 하나도 빼놓지 말고 읽어 봐야 해.","","det0"]
+  ],
+  card:{id:"tw_glove",name:"문구점 영수증",icon:"order",
+   desc:"백 부인이 내민 은빛 마을 문구점 영수증. '백합 편지지 한 묶음 · 손님: 검은 망토의 큰 고양이'. 백합 편지지는 누구나 살 수 있었다?",
+   check:{text:"영수증 맨 아래 날짜 칸에 '별빛 축제 전날 아침'. 바로 오늘이에요. 쪽지는 축제 이틀 전 밤 11시 40분에 이미 연못가 말뚝에 꽂혀 있었어요. 그리고 오늘 아침 네로는 사무소 지하 철창 안에 있었어요.",
+    desc2:"문구점 영수증. 날짜는 '축제 전날 아침', 바로 오늘. 쪽지는 그 전날 밤에 이미 연못가 말뚝에 있었다."}},
+  stm:[{t:"그 손님이 이 영수증의 종이로 쪽지를 써서 연못가 말뚝에 꽂은 거예요.",p:"종이를 산 사람이 쪽지를 쓴 사람이죠. 당연한 순서 아닌가요?",a:["tw_glove","g9_note"]},
+       {t:"백합 편지지는 은빛 마을에선 흔한 물건이랍니다. 제 책상에 있다고 특별할 것도 없죠.",p:"흔한 걸 가졌다고 범인이 되지는 않아요."}],
+  hit:"…날짜 칸이라니. 제가 이런 걸 놓치다니요.",
+  help:[
+   ["narr","응접실 문이 열리고 까만 날개가 퍼덕였다.","nervous","karo"],
+   ["karo","잠깐만요! 우체국에서 종이를 받으면 저는 맨 먼저 딱 한 군데부터 봐요. 후후, 그 영수증도 거기부터 보세요.","nervous"],
+   ["det1","맨 먼저 보는 데… 영수증 맨 아래 칸 말이야?","think"]
+  ]
+ },
+ festival:{
+  lines:[
+   ["narr","실룩이 모자를 벗어 가슴에 댔다. 그리고 다시 눌러쓰며, 공손하게 웃었다.","","siluk"],
+   ["siluk","말털이요, 장갑이요. 다 좋습니다. 그런데 탐정님들 추리의 기둥은 '쪽지는 도련님 글씨가 아니다'였지요?","smug"],
+   ["siluk","등불 받침 옆 풀밭에서 이걸 주웠습니다. 도련님 편지지요. 삐딱한 글씨, 벌어진 ㅁ. 이번엔 진짜 도련님 손입니다. '미안'. 돌을 가져가며 남긴 사과 아니겠습니까.","smug"],
+   ["det1","뭉치의 진짜 글씨가… 등불 옆에서? {p0}, 우리 추리가 틀렸어…?","shock"],
+   ["narr","광장 쪽이 웅성거렸다. '거봐, 범인의 아들이 범인이지.' 창고 창살 너머에서는 아무 소리도 나지 않았다."],
+   ["think","글씨는 진짜야. 그래서 더 이상해. 편지 한 통, 구석구석 다시 들여다보자.","","det0"]
+  ],
+  card:{id:"tw_festival",name:"등불 옆에서 주웠다는 편지",icon:"invite",
+   desc:"실룩이 등불 받침 옆 풀밭에서 주웠다는 뭉치의 편지. 삐딱한 글씨, 벌어진 ㅁ. '미안'. 이번엔 진짜 뭉치의 글씨다.",
+   check:{text:"봉투를 뒤집자 받는 이 칸에 '도토'. 그리고 귀퉁이에 우체국 도장(소인)이 찍혀 있어요. '오늘 아침 9:20 접수'. 우체국 창구에 맡겨진 편지예요. 봉투 입구는 누군가 뜯었다가 다시 붙인 자국이 있어요.",
+    desc2:"뭉치의 진짜 편지. 받는 이는 도토. 봉투에 '9:20 접수' 우체국 소인. 이미 우체국에 부쳐진 편지다."}},
+  stm:[{t:"이 편지는 도련님이 돌을 꺼내 가다 받침 옆에 흘린 겁니다. 제가 풀밭에서 직접 주웠지요.",p:"주머니에서 흘러나온 거겠지요. 급했을 테니까요.",a:["tw_festival","f10_slip"]},
+       {t:"삐딱한 글씨, 벌어진 ㅁ. 탐정님들이 말한 그대로, 이건 도련님 글씨입니다.",p:"진짜 손으로 쓴 사과지요. 뭘 사과했는지는 뻔하고요."}],
+  hit:"…우체국 도장. 봉투까지 뒤집어 보셨군요.",
+  help:[
+   ["narr","\"잠깐!\" 초시계를 쥔 다람쥐가 사람들 사이를 비집고 뛰어들었다.","nervous","doto"],
+   ["doto","정확히 말하면, 그 편지 받는 사람이 나잖아. 나한테 오는 편지는 어디를 거쳐서 와? 거기를 지나면 편지에 뭐가 남지?","nervous"],
+   ["det1","편지가 거쳐 오는 곳… {p0}, 봉투를 한 번 더 보자!","think"]
+  ]
+ }
+});
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
