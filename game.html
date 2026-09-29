@@ -12284,6 +12284,17 @@ bindScene=function(c){
 };
 })();
 
+// ================= v82: picture-book slow camera on backgrounds =================
+(function(){
+var css=document.createElement("style");
+css.textContent='.sb2bg{overflow:hidden}.sb2bg svg{transform-origin:55% 45%;animation:kbcam 16s ease-in-out infinite alternate}'+
+'@keyframes kbcam{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.09) translate(-1.5%,-1%)}}'+
+'.sb2stage.pgin .sb2bg svg{animation:kbin 1.2s cubic-bezier(.2,.7,.3,1),kbcam 16s ease-in-out 1.2s infinite alternate}'+
+'@keyframes kbin{from{transform:scale(1.14)}to{transform:scale(1)}}'+
+'@media (prefers-reduced-motion:reduce){.sb2bg svg,.sb2stage.pgin .sb2bg svg{animation:none}}';
+document.head.appendChild(css);
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
