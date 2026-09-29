@@ -30,8 +30,26 @@
 </style>
 </head>
 <body>
+<div id="kakao" hidden style="position:fixed;inset:0;z-index:5;display:grid;place-items:center;padding:24px;background:#0E1128;color:#F4F1E6;font:16px/1.6 sans-serif;text-align:center">
+  <div style="max-width:340px">
+    <p style="font-size:20px;color:#F2C230;margin:0 0 10px">카카오톡 안에서는 기록이 지워져요</p>
+    <p style="margin:0 0 16px">카카오톡 안의 화면은 닫으면 저장이 사라질 수 있어요. 크롬이나 사파리로 열어서 이어 하세요.</p>
+    <a id="kakaoOut" href="#" style="display:inline-block;background:#F2C230;color:#1B2447;border-radius:12px;padding:12px 20px;text-decoration:none;font-size:17px">브라우저로 열기</a>
+    <p style="margin:16px 0 0;font-size:14px;opacity:.8">안 열리면 오른쪽 위(또는 아래) 메뉴에서<br>"다른 브라우저로 열기"를 눌러 주세요.</p>
+    <p id="kakaoUrl" style="margin:12px 0 0;font-size:13px;opacity:.7;word-break:break-all;user-select:all"></p>
+  </div>
+</div>
 <div id="stage"><iframe id="frame" src="game.html" title="다애 탐정 사무소" allow="autoplay; fullscreen"></iframe></div>
 <script>
+// KakaoTalk's in-app browser wipes storage: send the player to the real browser
+(function(){
+  if(!/KAKAOTALK/i.test(navigator.userAgent))return;
+  var url=location.href,out="kakaotalk://web/openExternal?url="+encodeURIComponent(url);
+  var k=document.getElementById("kakao");k.hidden=false;
+  document.getElementById("kakaoOut").href=out;
+  document.getElementById("kakaoUrl").textContent=url;
+  try{location.href=out}catch(e){}
+})();
 (function(){
   var f=document.getElementById("frame");
   f.addEventListener("load",function(){try{f.contentWindow.focus()}catch(e){}});
