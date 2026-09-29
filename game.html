@@ -12246,6 +12246,44 @@ setInterval(function(){
 },90);
 })();
 
+// ================= v81: scene ambience (dust, mist, rain, lanterns) darkening by chapter =================
+(function(){
+var OUT=["yard","under","field","bush","pond","alley","hill","ladder","square","pine","tower","street","roof","forest","woods","road","window"];
+function mode(c,l){
+  var i=CASES.indexOf(c),out=OUT.indexOf(l.id)>=0;
+  if(c.id==="festival")return out?"lantern":"dust";
+  if(c.part===3)return out?"rain":"dust";
+  if(c.part===2)return out?"mist":"dust";
+  return "dust";
+}
+function dark(c){var i=CASES.indexOf(c);if(c.id==="festival")return .22;return Math.min(.42,Math.max(0,(i-1)*0.055))}
+var css=document.createElement("style");
+css.textContent=
+'.amb{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;border-radius:inherit}'+
+'.amb .vg{position:absolute;inset:0;box-shadow:inset 0 0 90px 30px rgba(4,5,18,var(--dk))}'+
+'.amb .ly{position:absolute;inset:-50% -10%}'+
+'.amb-dust .ly{background-image:radial-gradient(circle,rgba(255,244,210,.55) 0 1.2px,transparent 2px),radial-gradient(circle,rgba(255,244,210,.35) 0 1px,transparent 1.6px);background-size:90px 110px,140px 130px;background-position:0 0,40px 60px;animation:ambdrift 28s linear infinite}'+
+'@keyframes ambdrift{to{transform:translate(-40px,-110px)}}'+
+'.amb-mist .ly{background:radial-gradient(ellipse 40% 12% at 30% 60%,rgba(200,210,240,.16),transparent 70%),radial-gradient(ellipse 45% 10% at 75% 75%,rgba(200,210,240,.13),transparent 70%);animation:ambmist 18s ease-in-out infinite alternate}'+
+'@keyframes ambmist{to{transform:translateX(-12%)}}'+
+'.amb-rain .ly{inset:-100% -20%;background:repeating-linear-gradient(105deg,transparent 0 22px,rgba(190,205,255,.22) 22px 23.5px),repeating-linear-gradient(100deg,transparent 0 37px,rgba(190,205,255,.14) 37px 38px);animation:ambrain .55s linear infinite}'+
+'@keyframes ambrain{to{transform:translate(-24px,110px)}}'+
+'.amb-lantern .ly{background-image:radial-gradient(circle,rgba(255,196,90,.85) 0 2.2px,rgba(255,170,60,.25) 3px,transparent 6px),radial-gradient(circle,rgba(255,220,140,.7) 0 1.6px,transparent 4px);background-size:120px 160px,170px 190px;background-position:10px 40px,70px 0;animation:amblan 16s linear infinite}'+
+'@keyframes amblan{to{transform:translate(20px,-160px)}}'+
+'@media (prefers-reduced-motion:reduce){.amb .ly{animation:none}}';
+document.head.appendChild(css);
+var _bs=bindScene;
+bindScene=function(c){
+  _bs(c);
+  var scn=document.getElementById("bigscene");if(!scn||!G)return;
+  var l=c.locations[G.loc];if(!l)return;
+  if(getComputedStyle(scn).position==="static")scn.style.position="relative";
+  var d=document.createElement("div");d.className="amb amb-"+mode(c,l);d.style.setProperty("--dk",dark(c).toFixed(2));
+  d.innerHTML='<div class="ly"></div><div class="vg"></div>';
+  var svg=scn.querySelector("svg");if(svg&&svg.nextSibling)scn.insertBefore(d,svg.nextSibling);else scn.appendChild(d);
+};
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
