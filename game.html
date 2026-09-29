@@ -12181,6 +12181,43 @@ panicFx=function(who,kind,level,cb){
   try{fx(who,level||0)}catch(e){}
 };
 window.__RX=RX;
+// ---- final breakdown after the last battle proof ----
+var BRK={nabi:"냐아… 내 완벽한 발자국이…",bori:"으아앙… 다 들켰어…",buri:"부엉… 계산이… 틀렸어…",karo:"후후… 반짝이는 건 결국 빛에 들키는군요…",sling:"미끄러진 건… 나였군…",luka:"규정이… 무너진다…!",momo:"메에… 내 박물관…",mungchi:"…뭐, 그렇다는… 거야.",madam:"장갑이… 더러워졌어요.",siluk:"조금만… 조금만 더였는데…!"};
+var css2=document.createElement("style");
+css2.textContent=
+'.brk{position:fixed;inset:0;z-index:76;background:#05040E;display:grid;place-items:center;overflow:hidden;animation:fade .2s}'+
+'.brk .bline{position:absolute;inset:-20%;background:repeating-linear-gradient(115deg,rgba(200,40,60,.0) 0 26px,rgba(200,40,60,.28) 26px 30px);animation:brkln .9s linear infinite}'+
+'@keyframes brkln{to{transform:translateX(56px)}}'+
+'.brk .bst{position:relative;width:min(70vw,320px);aspect-ratio:1}'+
+'.brk .sh{position:absolute;inset:0}.brk .sh svg{width:100%;height:100%}'+
+'.brk.go .sh{animation:brkfall 1.3s cubic-bezier(.5,0,.8,.4) forwards;animation-delay:var(--d)}'+
+'@keyframes brkfall{0%{transform:none;opacity:1}15%{transform:translate(calc(var(--x)*.15),-6px) rotate(calc(var(--r)*.1))}100%{transform:translate(var(--x),520px) rotate(var(--r));opacity:0}}'+
+'.brk .btx{position:absolute;left:16px;right:16px;bottom:16%;text-align:center;font:clamp(20px,6vw,30px)/1.35 Jua,sans-serif;color:#F4F1E6;text-shadow:0 0 18px rgba(200,40,60,.8);opacity:0;animation:brktx .6s ease-out .9s forwards}'+
+'.brk .btx small{display:block;font-size:13px;letter-spacing:.2em;color:#E86A7A;margin-bottom:6px}'+
+'@keyframes brktx{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}'+
+'.brk.out{animation:fadeout .35s forwards}'+
+'@media (prefers-reduced-motion:reduce){.brk .bline,.brk.go .sh{animation:none}.brk .btx{animation:none;opacity:1}}';
+document.head.appendChild(css2);
+var SH=[[0,0,50,0,40,35,0,30],[50,0,100,0,100,28,62,40,40,35],[0,30,40,35,30,65,0,70],[40,35,62,40,58,70,30,65],[62,40,100,28,100,62,58,70],[0,70,30,65,35,100,0,100],[30,65,58,70,66,100,35,100],[58,70,100,62,100,100,66,100]];
+function breakdown(who,cb){
+  var p=CAST[who];if(!p){cb&&cb();return}
+  var d=document.createElement("div");d.className="brk";
+  var fig=pf(who,"cry");
+  d.innerHTML='<div class="bline"></div><div class="bst">'+SH.map(function(s,i){var pts=[];for(var j=0;j<s.length;j+=2)pts.push(s[j]+"% "+s[j+1]+"%");var cx=0;for(var j2=0;j2<s.length;j2+=2)cx+=s[j2];cx=cx/(s.length/2);
+    return '<div class="sh" style="clip-path:polygon('+pts.join(",")+');--x:'+Math.round((cx-50)*3)+'px;--r:'+((i%2?1:-1)*(20+i*9))+'deg;--d:'+(i*0.06).toFixed(2)+'s">'+fig+'</div>'}).join("")+'</div>'+
+    '<div class="btx"><small>'+esc(p.name)+'</small>'+esc(BRK[who]||"끝이다…")+'</div>';
+  document.body.appendChild(d);
+  try{SFX.crash()}catch(e){}
+  setTimeout(function(){d.classList.add("go");try{SFX.slam()}catch(e){}},550);
+  var done=false;function fin(){if(done)return;done=true;d.classList.add("out");setTimeout(function(){d.remove();cb&&cb()},330)}
+  setTimeout(fin,2900);d.onclick=function(){if(d.classList.contains("go"))fin()};
+}
+var _pf2=panicFx;
+panicFx=function(who,kind,level,cb){
+  if(kind==="culprit"&&level>=3&&G&&G.battle)return _pf2(who,kind,level,function(){breakdown(who,cb)});
+  return _pf2(who,kind,level,cb);
+};
+window.__breakdown=breakdown;
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
