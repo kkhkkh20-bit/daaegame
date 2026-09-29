@@ -56,6 +56,13 @@
   document.getElementById("kakaoUrl").textContent=base;
   document.getElementById("kakaoStay").onclick=function(){try{localStorage.setItem("daae:stay","1")}catch(e){}k.hidden=true};
   try{location.href=out}catch(e){}
+  window.__kakaoShown=true;
+})();
+// Phones: open the game directly (no frame) so iPhone sound and storage behave normally
+(function(){
+  if(window.__kakaoShown)return;
+  var wide=matchMedia("(min-width:600px) and (min-aspect-ratio:3/4)").matches;
+  if(!wide){location.replace("game.html");}
 })();
 (function(){
   var f=document.getElementById("frame");
