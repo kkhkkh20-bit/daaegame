@@ -4315,7 +4315,7 @@ function judgePresent(c,tid,item){
       var help=missHelp(c,tid,G.miss[tid]);
       var wr=(window.__WRONG&&window.__WRONG[who])||'"'+iname+'"? 그게 내 말이랑 무슨 상관이야?';if(typeof wr==="function")wr=wr(iname);
       var ml=[[who,wr,"","",c.contra.some(function(z){return z.t===tid})?"smug":"huh"],
-           ["think",help||("잠깐, 다시 생각해 보자. \""+tq.slice(0,24)+(tq.length>24?"…":"")+"\"라는 말이 사실이어도 "+jo(iname,"은","는")+" 있을 수 있어. 이 말이 사실이라면 절대 있을 수 없는 걸 찾아야 해."),"",curPlayer()]];
+           ["think",(window.__trap&&window.__trap(c,tid,item))||help||("잠깐, 다시 생각해 보자. \""+tq.slice(0,24)+(tq.length>24?"…":"")+"\"라는 말이 사실이어도 "+jo(iname,"은","는")+" 있을 수 있어. 이 말이 사실이라면 절대 있을 수 없는 걸 찾아야 해."),"",curPlayer()]];
       say(ml,function(){G.target=tid;render()});
     });
   }
@@ -4801,7 +4801,8 @@ function judgeBattle(c,item){
     flash("헛짚었다!",true).then(function(){
       B.smug=true;B.crack=B.lives;render();floater(".lives","신뢰도 -1","bad");
       var taunts=["흥, "+itemName(c,item)+"? 그게 뭐 어쨌다는 거야?","후후, 그걸로는 어림없지!","그게 내 말이랑 무슨 상관인데? 탐정 맞아?"];
-      var lines=[[cul,taunts[B.lives%3],"smug","","smug"]];
+      var bt=window.__bait&&window.__bait(c,s,item);
+      var lines=bt?bt.map(function(l){return l[0]==="think"&&!l[3]?[l[0],l[1],"",curPlayer()]:l}):[[cul,taunts[B.lives%3],"smug","","smug"]];
       lines.push(["think",elsewhere?"증거는 맞는 것 같은데… 부딪치는 문장이 달라! ◀ ▶로 다른 문장을 넘겨 보자.":"아니야, 그건 이 문장이랑 부딪치지 않아.","",curPlayer()]);
       if(B.miss>=2&&B.lives>0){var hh=autoHint(c,st);if(hh)lines.push(["think",hh,"",curPlayer()])}
       if(B.lives<=0){
@@ -12546,6 +12547,341 @@ Object.assign(window.TWIST,{
   ]
  }
 });
+
+// ================= v85: smarter culprits (battle bait retorts, planted-evidence traps) =================
+(function(){
+window.BAIT=window.BAIT||{};window.TRAP=window.TRAP||{};
+window.__bait=function(c,s,item){var L=window.BAIT[c.id]||[];for(var i=0;i<L.length;i++){var b=L[i];if(s&&s.t&&s.t.indexOf(b.t)===0&&b.items.indexOf(item)>=0)return b.lines}return null};
+window.__trap=function(c,tid,item){var T=window.TRAP[c.id];if(!T)return null;for(var i=0;i<T.length;i++)if(T[i].items.indexOf(item)>=0)return T[i].think;return null};
+})();
+
+// ================= v85: smarter culprit data (5~10장) =================
+// ================= v85 smart data B: smarter culprits for bell(5장) / dark(6장) / museum(7장) =================
+// BAIT: evidence the culprit turns against the detectives in the final battle.
+// TRAP: planted evidence (dark: new s6x_snack / museum: m7_feather).
+// Alibi: museum - momo's witness alibi (kongi misreads the clock) s7x_*.
+window.BAIT=window.BAIT||{};window.TRAP=window.TRAP||{};
+
+Object.assign(window.BAIT,{
+ bell:[
+  {t:"사다리 근처엔 얼씬도 안 했고요.",items:["seol3"],lines:[
+   ["sling","설이 씨 말이요? 후후. 설이 씨는 종 아래 어둠 속이라 얼굴은 못 봤다고 했죠.","smug"],
+   ["sling","쇠붙이 딸깍 소리요? 종탑은 쇠붙이 천지예요. 종도 쇠, 사다리 못도 쇠. 소리에 이름표라도 붙어 있나요? 그 시각에 저는 마차에서 편지를 정리하고 있었어요.","smug"],
+   ["det1","…얼굴을 못 봤으면 누군지 모르는 게 맞긴 한데.","confused"],
+   ["think","설이의 말은 '누군가 올랐다'는 것까지만이야. 그게 누구였는지 이름을 붙여 줄 흔적과 기록을 겹쳐서 보여 줘야 해."]
+  ]},
+  {t:"하지만 지하 열쇠는 본 적도 없어요.",items:["m_safe"],lines:[
+   ["sling","금고 얘기요? 좋아요, 같이 따져 보죠. 열쇠 자리가 비었고, 촌장님 목걸이 줄이 걸려 있었다면서요?","smug"],
+   ["sling","그 금고를 열 수 있는 건 목걸이를 가진 촌장님뿐이에요. 열쇠를 꺼낸 것도 촌장님, 잃어버린 것도 촌장님. 그건 저한테가 아니라 촌장님께 물으셔야죠. 후후.","smug"],
+   ["det1","…이러면 촌장님이 제일 수상해 보이는데?","confused"],
+   ["think","아니야. 빈 금고는 열쇠가 '금고 밖으로 나갔다'는 것만 말해 줘. 그 열쇠가 누구 손으로 건너갔는지, 누군가 털어놓은 말이 있었을 거야."]
+  ]}
+ ],
+ dark:[
+  {t:"규정상 말씀드리자면, 저는 등불 관리국 검사관입니다.",items:["n_badge","n_paper"],lines:[
+   ["luka","규정상, 감사드립니다. 제 신분을 대신 증명해 주시는군요.","smug"],
+   ["luka","검사관 배지, 그리고 관리국 양식 그대로의 통지서. 우편 마차 도장이 찍힌 건 은빛 마을에서 정식으로 부쳤기 때문이죠. 서류가 이렇게 가지런한데 무엇을 더 원하십니까?","smug"],
+   ["det1","…서류만 보면 진짜 검사관 같아.","confused"],
+   ["think","배지도 서류도 겉모양은 얼마든지 꾸밀 수 있어. 따져야 할 건 서류의 모양이 아니라, 그런 관리국이 정말 있느냐야."]
+  ]},
+  {t:"좋습니다. 검사관은 아닙니다. 하지만 열쇠는 까마귀가 가져갔죠.",items:["s6x_snack"],lines:[
+   ["luka","그 과자 봉지 말입니까? 좋은 걸 찾아 오셨군요. 규정상, 제가 정리해 드리죠.","smug"],
+   ["luka","사무소 벽엔 까마귀 발톱 자국, 꺼진 등불 밑엔 까로표 생선 과자. 이 마을에서 그 과자를 달고 사는 까마귀는 한 명뿐이죠. 이 정도면 충분합니다.","smug"],
+   ["det1","…듣고 보니 전부 까로 아저씨를 가리키고 있어, {p0}.","nervous"],
+   ["think","전부 까로 아저씨를 가리킨다… 그게 오히려 이상해. 너무 가지런하게 놓인 증거는 누군가 가지런히 놓았다는 뜻일지도 몰라. 이 문장은 벽 자국부터 제대로 따져 보자."]
+  ]}
+ ],
+ museum:[
+  {t:"게다가 콩이가 봤어요.",items:["s7x_clock","s7x_kongi1"],lines:[
+   ["momo","호호, 바로 그거예요! 입구 시계는 9시 정각에 멈췄고, 콩이는 그 시계를 보면서 제 쿠키를 받았어요.","happy"],
+   ["momo","시계도 9시, 콩이도 9시. 증인이 둘이나 되잖아요. 불이 꺼지던 순간 저는 입구에 있었어요. 전기실엔 그다음에 불을 켜러 간 거고요.","smug"],
+   ["det1","시계랑 콩이가 둘 다 관장님 편이라니…","confused"],
+   ["think","시계는 불이 꺼진 시각만 알려 줘. 콩이가 쿠키를 받은 게 정말 그 순간이었을까? 콩이는 시계 보는 게 서툴렀는데…"]
+  ]},
+  {t:"진열장 돌은 제가 7시에 넣은 그대로, 진짜였어요.",items:["m7_lock","m7_smudge"],lines:[
+   ["momo","진열장에 남은 흔적이요? 어머나, 그럼 7시 뒤에 누군가 진열장에 손을 댔다는 거네요!","nervous"],
+   ["momo","제 돌은 7시엔 분명 진짜였어요. 그 뒤에 진열장을 만진 누군가가 바꿔치기한 거예요. 여니일까요, 피코일까요? 호호, 쿠키 드실래요?","smug"],
+   ["det1","듣고 보니… 진열장을 만진 건 관장님이 아니라 다른 친구들이잖아?","confused"],
+   ["think","흔적은 누가 진열장을 '만졌는지'만 알려 줘. 돌이 7시에 이미 어땠는지는 말해 주지 않아. 관장님은 우리 시선을 친구들 쪽으로 돌리고 있어."]
+  ]}
+ ]
+});
+
+Object.assign(window.TRAP,{
+ dark:[{items:["s6x_snack"],think:"잠깐. 이 과자 봉지는 까로 아저씨를 가리키라고 놓인 것 같아. 하필 등불 바로 밑, 제일 잘 보이는 자리에 있었거든. 누구 물건인지보다 누가 두고 갔는지를 봐야 해. 수첩에서 봉지를 자세히 살펴보자."}],
+ museum:[{items:["m7_feather"],think:"까만 깃털이 까로 아저씨를 가리키는 건 맞아. 그런데 그게 바로 범인이 바라는 거라면? 깃털이 정말 새에게서 빠진 건지, 어디서 왔는지부터 확인하자."}]
+});
+
+(function(){
+ function C(id){return CASES.filter(function(x){return x.id===id})[0]}
+ function L(c,id){return c.locations.filter(function(l){return l.id===id})[0]}
+ function T(c,id){var r=null;Object.keys(c.talk).forEach(function(k){c.talk[k].forEach(function(t){if(t.id===id)r=t})});return r}
+ function X(c,tid){return c.contra.filter(function(x){return x.t===tid})[0]}
+ function S(c,id){var r=null;c.locations.forEach(function(l){l.spots.forEach(function(s){if(s.ev.id===id)r=s})});return r}
+
+ var _ic=evIcon,M={s6x_snack:"fishsnack",s7x_clock:"clock"};
+ evIcon=function(id){return _ic(M[id]||id)};
+ Object.assign(HOTS,{s6x_snackspot:[208,150],s7x_clockspot:[44,112]});
+ Object.assign(THINK,{
+  s6x_snack:"까로 아저씨가 늘 먹는 생선 과자…? 까로 아저씨가 언덕에 왔었다는 걸까. 그런데 왜 하필 등불 바로 밑, 제일 잘 보이는 자리에 있지?",
+  s7x_clock:"입구 시계가 멈춰 있어. 정전 때 전기가 끊겨서 멈췄구나. 짧은 바늘 9, 긴 바늘 12. 불이 꺼진 건 9시 정각이야."
+ });
+
+ // ---------- 6장 dark: planted fish-snack bag (frames karo) ----------
+ var d=C("dark");
+ if(d){
+  L(d,"hill").spots.push({id:"s6x_snackspot",name:"등불 기둥 밑",
+   text:"꺼진 등불 기둥 바로 밑에 생선 과자 봉지가 떨어져 있어요. 까로표 생선 과자. 까로 아저씨가 하루에 다섯 봉지씩 먹는 그 과자예요.",
+   ev:{id:"s6x_snack",name:"등불 밑 생선 과자 봉지",
+    desc:"꺼진 등불 기둥 바로 밑. 까로 아저씨가 늘 달고 사는 까로표 생선 과자 봉지. 이 마을에서 이 과자를 하루에 다섯 봉지씩 먹는 건 까로 아저씨뿐이다.",
+    check:{label:"봉지 살펴보기",
+     text:"봉지가 뜯기지도 않았다. 속이 꽉 차 있고 흙 한 톨 묻지 않았다. 먹다 흘린 게 아니라 새 봉지를 여기 '놓고' 간 것이다. 봉지 모서리 주름에 하얀 장갑 실밥이 끼어 있다.",
+     desc2:"뜯지도 않은 새 생선 과자 봉지. 먹다 흘린 게 아니라 일부러 놓고 간 것. 모서리에 하얀 장갑 실밥.",gate:true}}});
+  var x2=X(d,"luka2");if(x2&&x2.items.indexOf("s6x_snack")<0)x2.items.push("s6x_snack");
+  var bd=BATTLE.dark;if(bd&&bd[2]){var s0=bd[2].stm[0];if(s0.t.indexOf("그렇다 해도, 저는 언덕에")===0)s0.a=["s6x_snack"]}
+  var tld=d.timeline||TIMELINE.dark;
+  if(tld)tld.push({s:2021,t:"밤 8:20",who:"luka",loc:"hill",txt:"등불 기둥 밑에 뜯지도 않은 생선 과자 봉지. 모서리에 하얀 장갑 실밥",src:["s6x_snack!"],vs:"l"});
+ }
+
+ // ---------- 7장 museum: momo's witness alibi + planted feather ----------
+ var m=C("museum");
+ if(m){
+  var fe=S(m,"m7_feather");
+  if(fe)fe.ev.desc="진열장 받침 위. 까마귀 깃털처럼 까맣고 반들반들하다. 이 마을 까마귀는 까로 아저씨뿐이다.";
+  L(m,"hall").spots.push({id:"s7x_clockspot",name:"입구 벽시계",
+   text:"전시실 입구의 큰 벽시계. 정전 때 전기가 끊기면서 멈춰 버렸어요. 짧은 바늘은 9, 긴 바늘은 12.",
+   ev:{id:"s7x_clock",name:"멈춘 입구 시계",
+    desc:"전시실 입구의 큰 벽시계. 정전 순간 멈췄다. 짧은 바늘 9, 긴 바늘 12. 불이 꺼진 건 9시 정각."}});
+  m.talk.kongi.push(
+   {id:"s7x_kongi1",q:"정전 때 관장님 봤어?",
+    a:"봤어! 불 꺼지기 바로 전에 입구에서 관장님이 별 모양 쿠키를 주셨어. 입구 큰 시계도 봤다? 긴 바늘이 9에 딱 있었어. 그러니까 9시! 킁킁, 나 이제 시계 볼 줄 알아."},
+   {id:"s7x_kongi2",hidden:true,q:"쿠키 받은 시각, 다시 생각해 볼래?",
+    a:"…긴 바늘이 9면 45분이라고? 그럼 쿠키 받은 건 8시 45분이었구나. 입구 계단에 앉아서 냄새만 한참 맡다가 아껴 먹었거든. 그러다 깜깜해져서 금방인 줄 알았어. 아, 그리고 생각났어! 관장님은 나한테 쿠키를 주고 바구니를 든 채 박물관 뒤쪽 복도로 가셨어. 그 뒤로 입구엔 아무도 없었어."}
+  );
+  var mc=T(m,"momo_conf"),mi=m.talk.momo.indexOf(mc);
+  var mom={id:"s7x_momo1",hidden:true,q:"불이 꺼진 순간엔 어디 계셨어요?",
+   a:"호, 호호. 전기실엔 불을 다시 켜러 간 거예요. 불이 꺼지던 그 순간엔 분명 입구에 있었어요. 콩이한테 쿠키를 건네고 있었거든요. 콩이가 입구 시계를 봤대요, 9시 정각이었다고. 증인이 있으니 이제 됐죠? 쿠키 하나 더 드세요."};
+  if(mi>=0)m.talk.momo.splice(mi,0,mom);else m.talk.momo.push(mom);
+  var x1=X(m,"momo1");if(x1)x1.unlock="s7x_momo1";
+  m.contra.push(
+   {t:"s7x_kongi1",items:["s7x_clock"],kind:"mistake",say:'콩이가 멈춘 시계를 한참 올려다봤다. "긴 바늘이 12에 있어야 정각이야? 그럼 내가 본 긴 바늘 9는… 어, 어라?"',unlock:"s7x_kongi2"},
+   {t:"s7x_momo1",items:["s7x_kongi2"],kind:"culprit",say:'모모 관장의 쿠키 바구니가 덜그럭 흔들렸다. "8, 8시 45분이요…? 콩이는 시계를 잘 못 보잖아요. 아, 아니, 그러니까…"',unlock:null}
+  );
+  var bm=BATTLE.museum;
+  if(bm&&bm[0]){
+   bm[0].stm.splice(1,0,{t:"게다가 콩이가 봤어요. 불이 꺼지던 순간, 저는 입구에서 콩이한테 쿠키를 건네고 있었어요.",p:"콩이가 입구 시계를 봤대요. 9시 정각이었다고요. 호호.",a:["s7x_kongi2"]});
+   bm[0].hit="그, 그 시각에 제가 입구에 없었다고요…? 호, 호호… 쿠키가 목에 걸렸네요…";
+  }
+  var tlm=m.timeline||TIMELINE.museum;
+  if(tlm)tlm.push(
+   {s:2045,t:"밤 8:45",who:"momo",loc:"hall",txt:"입구에서 콩이에게 쿠키를 주고, 바구니를 든 채 박물관 뒤쪽 복도로 감 (콩이)",src:["s7x_kongi2"],vs:"mm"},
+   {s:2099,t:"밤 9:00?",who:"kongi",loc:"hall",claim:"s7x_kongi1",txt:"콩이: 불 꺼지기 바로 전 입구에서 쿠키를 받았다. 긴 바늘이 9였으니 9시",src:["s7x_kongi1"],vs:"kc"},
+   {s:2099.5,t:"밤 9:00",who:"",loc:"hall",txt:"입구 벽시계가 정전으로 멈춤. 짧은 바늘 9, 긴 바늘 12",src:["s7x_clock"],vs:"kc"},
+   {s:2101.5,t:"밤 9:00",who:"momo",loc:"hall",claim:"s7x_momo1",txt:"모모: 불이 꺼지던 순간 입구에서 콩이에게 쿠키를 주고 있었다",src:["s7x_momo1"],vs:"mm"}
+  );
+ }
+})();
+
+// ================= v85-C: smarter culprits for 8~10장 (cart, glove, festival) =================
+// BAIT: 최종 반론에서 범인이 우리 증거를 역이용한다.  TRAP: 범인이 심어 둔 가짜 증거.
+// 알리바이: 증인이 정직하게, 하지만 잘못 알고 범인의 알리바이를 받쳐 준다 -> 증인의 착각부터 깨야 한다.
+window.BAIT=window.BAIT||{};window.TRAP=window.TRAP||{};
+
+BAIT.cart=[
+ {t:"난 그 시간에 마을 회관 앞 벤치에 있었어.",items:["c8_glove"],lines:[
+  ["mungchi","그 장갑? 우리 집 계단에서 나왔다며. 우리 집 계단에 우리 집 도련님 장갑이 떨어져 있는 게 뭐가 이상해? 벤치에서 별 보고 돌아와서 벗어 던진 거야. 오히려 내가 얌전히 집에 갔다는 증거지. 뭐, 그렇다는 거야.","smug","","smug"],
+  ["think","…분하지만 맞는 말이야. 계단의 장갑은 뭉치가 '집에' 있었다는 것뿐이야. 그 시각 벤치가 아니라 다른 곳에 있었다는 걸 보여 줘야 해."]]},
+ {t:"그 애가 두드리고 바로 마차가 굴렀어.",items:["c8_tnote"],lines:[
+  ["mungchi","그 나무 조각? '두드렸는데.' 봐, 자기 부리로 두드렸다고 새겼잖아. 두드렸다, 쐐기가 빠졌다, 마차가 굴렀다. 순서까지 딱 맞네. 네 증거가 내 편을 들어 주는데? 뭐, 그렇다는 거야.","smug","","smug"],
+  ["think","나무 조각은 따닥이 두드렸다는 것만 말해 줘. 그건 뭉치도 인정하는 거야. 이 문장에서 진짜 수상한 말은 따로 있어."]]},
+ {t:"쐐기를 뽑은 지렛대가 딱따구리가 날아간 연못에서",items:["owlgp_c1"],lines:[
+  ["mungchi","할아버지 증언? 좋지. '8시 55분쯤 따닥이가 연못 쪽으로 날아갔다.' 지렛대가 나온 데도 연못. 은퇴한 탐정이 직접 봤다잖아. 내 말에 증인까지 붙여 줘서 고마워. 뭐, 그렇다는 거야.","smug","","smug"],
+  ["think","할아버지는 따닥이 연못으로 '날아간' 걸 봤을 뿐이야. 그 지렛대를 누가 쥐었는지는 할아버지 말 어디에도 없어."]]}
+];
+BAIT.glove=[
+ {t:"어젯밤 저는 저택 밖으로 한 발짝도",items:["g9_cap"],lines:[
+  ["madam","꽥순 양의 수영 모자군요. 가엾기도 하지. 그런데 그 모자에 제 이름이라도 수놓여 있나요? 모자는 아이가 연못가에서 끌려갔다는 걸 말해 줄 뿐, 끌고 간 손이 누구 것인지는 말해 주지 않는답니다.","smug","","smug"],
+  ["think","…모자엔 누구의 흔적도 없어. 백 부인이 저택 밖에 나갔다는 걸 보여 줄 다른 게 필요해."]]},
+ {t:"저택 마차는 밤새 마구간에 있었어요.",items:["g9_bag"],lines:[
+  ["madam","백합 문양 주머니요? 은빛 마을 가게마다 파는 흔한 자수랍니다. 게다가 그게 숲에 놓여 있었다면, 누군가 걸어가서 두고 온 거겠죠. 주머니엔 바퀴가 없잖아요? 마차가 움직였다는 증거는 되지 못해요.","smug","","smug"],
+  ["think","주머니가 수상한 건 맞아. 하지만 이 문장은 '마차'에 대한 말이야. 주머니만으로는 마차가 마구간을 나갔는지 알 수 없어."]]},
+ {t:"그 손님이 이 영수증의 종이로 쪽지를 써서",items:["s9x_thread"],lines:[
+  ["madam","말뚝에 묶인 검은 실이요? 어머, 고마워라. 검은 망토를 두른 손님이 쪽지를 꽂다가 남긴 실이겠죠. 벨벳이라고요? 멋을 아는 손님이라면 망토 안감쯤은 벨벳으로 대지 않을까요. 영수증도, 실도, 같은 손님을 가리키네요.","smug","","smug"],
+  ["think","실은 누군가 네로에게 죄를 씌우려 했다는 흔적이야. 하지만 그걸로는 백 부인이 방금 내민 이야기를 뒤집을 수 없어. 이 문장에서 제일 수상한 걸 다시 찾아보자."]]}
+];
+BAIT.festival=[
+ {t:"등불 근처요? 축제 준비하는 사람이 스무 명은",items:["doto_f2"],lines:[
+  ["siluk","도토 양 말씀 그대로입니다. 스무 명이 오갔고, 손수레는 열 대. 그중에 제 손수레가 있었는지는 아무도 모른다는 거지요. 탐정님들이 제 편을 들어 주시니 황송할 따름입니다.","smug","","smug"],
+  ["think","'아무도 모른다'는 말로는 아무것도 증명할 수 없어. 실룩이 등불 앞까지 갔다는 건, 그 자리에 남은 흔적으로 보여 줘야 해."]]},
+ {t:"장갑이요? 도련님이 흘렸겠지요.",items:["wanggu_f2"],lines:[
+  ["siluk","위원장님 말씀 들으셨지요? '내가 직접 찾았어!' 장갑을 찾은 것도, 주운 것도 위원장님입니다. 저는 손끝 하나 대지 않았지요. 증인이 저 대신 말해 주는군요.","smug","","smug"],
+  ["think","주운 사람이 누구인지는 중요하지 않아. 장갑이 어떻게 그 풀밭에 있게 됐는지를 따져야 해."]]},
+ {t:"이 편지는 도련님이 돌을 꺼내 가다",items:["f10_drafts"],lines:[
+  ["siluk","도련님의 편지 초안이군요. 삐딱한 글씨, 벌어진 ㅁ, '미안'을 쓰다 지운 자국. 제가 주운 편지와 똑같은 손이지요? 쓰다 버린 사과, 흘리고 간 사과. 탐정님들이 제 말을 증명해 주셨습니다.","smug","","smug"],
+  ["think","초안은 이 편지가 뭉치 글씨라는 걸 확인해 줄 뿐이야. 글씨가 진짜라는 건 실룩도 인정했어. 문제는 이 편지가 정말 등불 옆에 떨어져 있었느냐야."]]}
+];
+
+TRAP.cart=[{items:["s8x_feather"],
+ think:"축 밑에 따닥의 깃털이 딱… 너무 쉽게 찾은 증거야. 누가 일부러 둔 건 아닐까? 수첩에서 자세히 살펴보자.",
+ think2:"이 깃털은 마차가 구른 뒤에 누가 장갑 낀 손으로 놓아 둔 거였어. 따닥이 아니라, 따닥에게 죄를 미루는 사람의 말에 들이대야 해."}];
+TRAP.glove=[{items:["s9x_thread"],
+ think:"쪽지 말뚝에 검은 망토 실이 딱… 너무 쉽게 찾은 증거야. 누가 일부러 둔 건 아닐까? 수첩에서 자세히 살펴보자.",
+ think2:"이 실은 누가 네로를 범인으로 몰려고 묶어 둔 거였어. 네로가 아니라, 실을 묶은 사람의 말과 부딪쳐 봐야 해."}];
+TRAP.festival=[{items:["f10_glove"],
+ think:"풀밭에서 뭉치 장갑이 딱… 너무 쉽게 찾은 증거야. 누가 일부러 둔 건 아닐까? 수첩에서 자세히 살펴보자.",
+ think2:"이 장갑은 누가 풀밭에 일부러 둔 거였어. 뭉치가 아니라, 장갑을 '찾게 만든' 사람 쪽 말과 맞춰 보자."}];
+
+(function(){
+ function cs(id){for(var i=0;i<CASES.length;i++)if(CASES[i].id===id)return CASES[i];return null}
+ function loc(c,id){return c.locations.filter(function(l){return l.id===id})[0]}
+ function talk(c,id){var r=null;Object.keys(c.talk).forEach(function(k){c.talk[k].forEach(function(t){if(t.id===id)r=t})});return r}
+ function ctr(c,t){return c.contra.filter(function(x){return x.t===t})[0]}
+ function before(c,t,x){var i=-1;c.contra.forEach(function(z,k){if(z.t===t&&i<0)i=k});if(i<0)c.contra.push(x);else c.contra.splice(i,0,x)}
+ function acc(cid,prefix,ids){(BATTLE[cid]||[]).forEach(function(r){stmsOf(r).forEach(function(s){if(s.t&&s.t.indexOf(prefix)===0){s.a=s.a||[];ids.forEach(function(i){if(s.a.indexOf(i)<0)s.a.push(i)})}})})}
+ var ICON={s8x_feather:"feather",s9x_thread:"lace",s9x_dummy:"hanky",s10x_receipt:"order"};
+ var _ev=evIcon;evIcon=function(id){return _ev(ICON[id]||id)};
+
+ // ---------------- 8장 · 멈춘 우편 마차 (범인: 뭉치) ----------------
+ var c8=cs("cart");
+ if(c8){
+  // TRAP: 뭉치가 마차가 구른 뒤 축 밑에 놓아 둔 따닥의 깃털
+  loc(c8,"hill").spots.push({id:"s8x_s_feather",name:"축 밑의 빨간 깃털",text:"마차가 멈춘 자리, 쐐기가 사라진 바퀴 축 바로 밑 흙 위에 빨간 깃털 하나가 놓여 있어요. 딱따구리 깃털이에요.",
+   ev:{id:"s8x_feather",name:"축 밑의 딱따구리 깃털",desc:"쐐기가 사라진 바퀴 축 바로 밑에 떨어진 빨간 딱따구리 깃털. 따닥이 여기서 쐐기를 쪼았다는 걸까? 마을 사람들은 이걸 보고 더 수군댄다.",
+    check:{label:"깃털 들어 보기",text:"깃털을 들어 보니 밑에 바퀴 자국이 그대로 찍혀 있어요. 마차가 굴러간 9시 7분 '뒤에' 그 위에 놓인 거예요. 따닥은 8시 55분에 이미 연못으로 떠났는데. 그리고 깃털 줄기에 기름 묻은 촘촘한 짜임 무늬가 꾹 눌려 있어요. 장갑 낀 손가락으로 집어다 놓은 거예요.",
+     desc2:"따닥의 깃털. 마차가 구른 9시 7분 뒤에 바퀴 자국 위에 놓였고, 줄기엔 기름 묻은 장갑 짜임 자국. 누군가 따닥을 범인으로 보이게 하려고 일부러 둔 것.",gate:true}}});
+  HOTS.s8x_s_feather=[178,176];
+  THINK.s8x_feather="빨간 딱따구리 깃털… 쐐기 구멍 바로 밑이야. 역시 콩이 말대로 따닥이 쐐기를 쪼았던 걸까?";
+  acc("cart","쐐기는 딱따구리가 쪼아 대서 빠진 거잖아.",["s8x_feather"]);
+
+  // 알리바이: 시계를 못 보는 콩이에게 '지금 9시'라고 심어 둔 증인
+  var m1=talk(c8,"mungchi_c1");
+  if(m1)m1.a="마을 회관 앞 벤치. 별 보고 있었어. 9시 딱. 콩이도 봤어, 가서 물어봐. 언덕? 그 촌스러운 흙길을 내가 왜 밟아. 뭐, 그렇다는 거야.";
+  c8.talk.kongi.push(
+   {id:"s8x_kongi_a",after:"mungchi_c1",q:"회관 벤치에서 뭉치를 봤어?",a:"킁킁! 응, 봤어! 회관 앞 벤치에서 망원경 들고 별 보고 있었어. 뭉치 형이 '지금 딱 9시야, 기억해 둬' 그랬어! 그다음에 나는 언덕으로 갔고, 따닥이 바퀴를 따닥따닥 두드리고 있었어. 그러니까 뭉치 형은 9시에 벤치에 있었던 거야!"},
+   {id:"s8x_kongi_b",hidden:true,q:"벤치에서 뭉치가 또 뭘 했어?",a:"…킁. 뭉치 형이 망원경을 벤치에 세워 두고 일어났어. '누가 물으면 9시에 나 여기 있었다고 해. 넌 어차피 시계 못 보잖아.' 그러고 새 장갑을 끼면서 창고 쪽으로 갔어. 망원경은 그대로 두고. …나, 이용당한 거야?"});
+  before(c8,"mungchi_c1",{t:"s8x_kongi_a",items:["c8_watch","doto_c1"],kind:"mistake",
+   say:"콩이가 손가락을 꼽다가 멈췄다. \"따닥이 두드린 게 8시 52분부터…? 그럼 난 그보다 먼저 벤치를 지나온 거네. 9시가 아니었어! …뭉치 형이 9시라고 해서 그런 줄 알았어. 나 시계 못 보니까.\"",unlock:"s8x_kongi_b"});
+  var x8=ctr(c8,"mungchi_c1");if(x8&&x8.items.indexOf("s8x_kongi_b")<0)x8.items.push("s8x_kongi_b");
+  acc("cart","난 그 시간에 마을 회관 앞 벤치에 있었어.",["s8x_kongi_b"]);
+  c8.timeline.push(
+   {s:2040,t:"밤 8:40쯤",who:"mungchi",place:"마을 회관 앞",txt:"뭉치가 벤치에서 콩이에게 '지금 9시야, 기억해 둬' 하고, 망원경을 세워 둔 채 장갑을 끼며 창고 쪽으로 감",src:["s8x_kongi_b"],vs:"kb"},
+   {s:2051,t:"밤 8:50쯤",who:"kongi",loc:"hill",txt:"콩이가 벤치를 지나 언덕에 도착. 따닥이 바퀴를 두드리는 중(8:52~8:55)",src:["c8_watch"],vs:"kb"},
+   {s:2058,t:"밤 9:00",who:"kongi",place:"마을 회관 앞",claim:"s8x_kongi_a",txt:"콩이: 9시에 회관 벤치에서 뭉치를 봤다",src:["s8x_kongi_a"],vs:"kb"});
+ }
+
+ // ---------------- 9장 · 하얀 장갑의 밤 (범인: 백 부인) ----------------
+ var c9=cs("glove");
+ if(c9){
+  // TRAP: 네로에게 죄를 씌우려 말뚝에 묶어 둔 검은 벨벳 실
+  loc(c9,"pond").spots.push({id:"s9x_s_thread",name:"말뚝의 검은 실",text:"쪽지가 꽂혀 있던 말뚝 아래쪽에 검은 실오라기가 걸려 있어요.",
+   ev:{id:"s9x_thread",name:"말뚝에 걸린 검은 실",desc:"쪽지 말뚝에 걸린 검은 실오라기. 검은 망토의 실일까? 마을 사람들은 네로가 쪽지를 꽂다가 남긴 거라고 수군댄다.",
+    check:{label:"실 만져 보기",text:"만져 보니 매끈한 벨벳 실이에요. 네로의 망토는 거친 모직인데. 그리고 걸린 게 아니라 말뚝에 매듭으로 단단히 묶여 있어요. 연못물에 흠뻑 젖은 네로 망토와 달리 실은 바싹 말랐어요. 매듭에서 달콤한 향수 냄새가 희미하게 나요.",
+     desc2:"말뚝에 매듭으로 묶인 검은 벨벳 실. 네로의 모직 망토 실이 아니고, 젖지도 않았다. 매듭에 달콤한 향수 냄새. 누군가 네로가 범인처럼 보이게 일부러 묶어 둔 것.",gate:true}}});
+  HOTS.s9x_s_thread=[258,140];
+  THINK.s9x_thread="쪽지 말뚝에 검은 실오라기. 검은 망토… 네로? 마을 사람들 말대로일까.";
+  var xm1=ctr(c9,"madam1");if(xm1&&xm1.items.indexOf("s9x_thread")<0)xm1.items.push("s9x_thread");
+  acc("glove","연못가라니요.",["s9x_thread"]);
+
+  // 알리바이: 창가의 마네킹 + 미리 심어 둔 증인(부엉이 할아버지)
+  loc(c9,"parlor").spots.push({id:"s9x_s_dummy",name:"창가의 마네킹",text:"창가 의자에 모자 쓴 마네킹이 앉아 있어요. 멀리서 보면 사람 같아요.",
+   ev:{id:"s9x_dummy",name:"창가의 진열 마네킹",desc:"응접실 창가 의자에 앉힌 수집품 진열용 마네킹. 백 부인의 챙 넓은 모자와 숄을 걸쳤고, 무릎에 책이 펼쳐져 있다.",
+    check:{label:"마네킹 살펴보기",text:"바닥에 받침대가 끌린 자국이 진열장에서 창가까지 새로 나 있어요. 모자 챙엔 창가 등불 그을음이 얇게 앉았어요. 밤새 등불 옆에서 꼼짝도 안 한 거예요. 펼친 책은 첫 쪽 그대로예요.",
+     desc2:"백 부인 옷을 입힌 진열 마네킹. 진열장에서 창가로 새로 끌려 왔고, 모자 챙엔 밤새 쌓인 등불 그을음, 책은 첫 쪽 그대로. 창밖에서 보면 창가에서 책 읽는 부인처럼 보인다.",gate:true}}});
+  HOTS.s9x_s_dummy=[288,112];
+  THINK.s9x_dummy="백 부인 옷을 입은 마네킹이 창가에… 진열장에 있어야 할 게 왜 창가 의자에 앉아 있지?";
+  var md=talk(c9,"madam1");
+  if(md)md.a="저택에서 컬렉션을 정리했답니다. 밤바람은 피부에 좋지 않아서, 문밖에는 한 발짝도 나가지 않았어요. 11시 40분쯤엔 창가에서 책을 읽고 있었죠. 마침 산책하시던 부엉이 어르신께서 보셨을 거예요.";
+  c9.talk.owlgp.push(
+   {id:"s9x_owl_a",after:"madam1",q:"11시 40분쯤 저택 창가를 보셨어요?",a:"그래, 봤다. 밤 산책길에 올려다보니 환한 창가에 백 부인이 챙 넓은 모자를 쓰고 앉아 책을 읽고 있더구나. 한참을 지켜봤지. 늙은이 눈이지만 그건 확실하다. 그 시각 부인은 연못가에 없었어."},
+   {id:"s9x_owl_b",hidden:true,q:"그 밤, 창가 말고 본 건 없으세요?",a:"…있다. 창가의 '부인'을 올려다보고 있을 때, 저택 뒷문으로 새하얀 장갑 두 짝이 등불도 없이 스르르 나가더구나. 하인인 줄 알았지. 그리고 생각해 보니, 어제 낮에 부인이 먼저 내게 말을 걸었다. '어르신, 저는 밤마다 창가에서 책을 읽어요. 산책길에 한번 올려다보세요.' 나를 증인으로 쓰려고 미리 심어 둔 게야."});
+  before(c9,"madam1",{t:"s9x_owl_a",items:["s9x_dummy","bami_g1"],kind:"mistake",
+   say:"부엉이 할아버지가 안경을 벗어 천천히 닦았다. \"…마네킹이라. 그러고 보니 그 그림자는 한 시간 내내 책장을 한 번도 넘기지 않았다. 모자도 벗지 않았고. 은퇴한 탐정이 창문 하나에 속았구나.\"",unlock:"s9x_owl_b"});
+  if(xm1&&xm1.items.indexOf("s9x_owl_b")<0)xm1.items.push("s9x_owl_b");
+  acc("glove","어젯밤 저는 저택 밖으로 한 발짝도",["s9x_owl_b"]);
+  c9.timeline.push(
+   {s:2330,t:"밤 11:30",who:"madam",loc:"parlor",txt:"백 부인 옷을 입힌 마네킹이 창가에 놓이고, 하얀 장갑 두 짝이 등불 없이 뒷문으로 나감 (부엉이 할아버지)",src:["s9x_dummy","s9x_owl_b"],vs:"ow"},
+   {s:2339,t:"밤 11:40",who:"owlgp",loc:"parlor",claim:"s9x_owl_a",txt:"부엉이 할아버지: 창가에서 책 읽는 백 부인을 봤다",src:["s9x_owl_a"],vs:"ow"});
+ }
+
+ // ---------------- 10장 · 별빛 축제의 밤 (범인: 실룩) ----------------
+ var c10=cs("festival");
+ if(c10){
+  // TRAP: 실룩이 풀밭에 심어 둔 뭉치의 장갑(f10_glove). 확인하면 말털과 마른 장갑이 드러난다.
+  // 알리바이: 빈 확인증에 받아 둔 보리의 발도장 + 나중에 적은 시각
+  loc(c10,"square").spots.push({id:"s10x_s_receipt",name:"손수레의 확인증",text:"기름 손수레 손잡이에 종이 한 장이 끼워져 있어요. 곰 발도장이 크게 찍혀 있어요.",
+   ev:{id:"s10x_receipt",name:"기름 배달 확인증",desc:"기름 손수레에 끼워진 실룩의 확인증. '9:12 광장 입구 배달 완료 · 9:15~9:35 마차 창고 세차 · 확인: 보리(발도장)'. 곰 발도장이 또렷하다.",
+    check:{label:"글씨와 발도장 살펴보기",text:"시각 글씨가 발도장 '위에' 겹쳐 적혀 있어요. 발도장 잉크는 말라서 번졌는데, 그 위로 시각 글씨가 또렷해요. 발도장을 먼저 받고 시각은 나중에 적은 거예요. 글씨는 반듯하고 힘주어 눌러 써서 뒷면이 볼록해요.",
+     desc2:"보리의 발도장을 먼저 받고, 시각은 그 위에 나중에 적은 확인증. 반듯하고 힘주어 눌러 쓴 실룩의 글씨.",gate:true}}});
+  HOTS.s10x_s_receipt=[38,118];
+  THINK.s10x_receipt="실룩의 배달 확인증. 시각에 보리 발도장까지… 알리바이치고는 너무 꼼꼼한데?";
+  var xf3=ctr(c10,"siluk_f3");if(xf3&&xf3.items.indexOf("s10x_receipt")<0)xf3.items.push("s10x_receipt");
+  c10.talk.siluk.push(
+   {id:"s10x_siluk_a",after:"siluk_f1",q:"손수레를 세워 두고 돌아와서는요?",a:"마차 창고에서 마차를 닦았지요. 9시 15분부터 35분까지 쭉. 손수레에 끼워 둔 확인증 보셨습니까? 보리 군이 창고 앞을 지나가다 발도장까지 찍어 줬답니다. 곰은 거짓말을 못 하지요."});
+  c10.talk.bori.push(
+   {id:"s10x_bori_a",after:"s10x_siluk_a",q:"마부 아저씨 확인증에 발도장 찍었어?",a:"응! 내 발도장이야. 돌 다 나르고 집에 가는 길에 마차 창고 앞을 지나는데, 마부 아저씨가 쓱싹쓱싹 마차 닦다가 찍어 달랬어. 확인증에 9시 15분이라고 적혀 있잖아. 그때 찍은 거야. 헤헤."},
+   {id:"s10x_bori_b",hidden:true,q:"발도장 찍을 때 종이에 뭐라고 적혀 있었어?",a:"…아무것도. 칸이 다 비어 있었어. 아저씨가 '시간은 내가 나중에 적을게. 누가 물으면 네가 본 대로만 말해 주면 돼' 했어. 그래서 난 본 대로 말한 건데… 음냐, 나 이용당한 거야?"});
+  before(c10,"siluk_f1",{t:"s10x_bori_a",items:["f10_log","momo_f1","bori_f2"],kind:"mistake",
+   say:"보리가 발가락을 꼼지락거리며 셈을 했다. \"돌 나른 게 8시… 그러고 바로 집에 가는 길이었으니까… 9시 15분이 아니라 8시 조금 넘어서였네? 음냐… 그땐 종이에 시간 같은 거 안 적혀 있었는데.\"",unlock:"s10x_bori_b"});
+  c10.contra.push({t:"s10x_siluk_a",items:["s10x_receipt","s10x_bori_b"],kind:"culprit",
+   say:"실룩의 공손한 웃음이 입가에 그대로 굳었다. \"…빈칸에 받은 발도장. 곰 군이 그렇게 꼼꼼히 기억할 줄은 몰랐군요.\"",unlock:null});
+  c10.timeline.push(
+   {s:805,t:"아침 8:05",who:"bori",loc:"square",txt:"보리가 별빛 돌을 등불 받침까지 나름 (이송 기록 '운반: 보리')",src:["f10_log"],vs:"sb"},
+   {s:810,t:"아침 8:10쯤",who:"bori",place:"저택 마차 창고 앞",txt:"집에 가던 보리가 마부의 빈 확인증에 발도장을 찍어 줌. 시각 칸은 비어 있었음",src:["s10x_bori_b"],vs:"sb"},
+   {s:915,t:"아침 9:15",who:"siluk",place:"저택 마차 창고",claim:"s10x_siluk_a",txt:"실룩: 9시 15분부터 35분까지 마차 창고에서 마차를 닦았다 (확인: 보리)",src:["s10x_siluk_a"],vs:"sb"},
+   {s:916,t:"아침 9:15",who:"bori",place:"저택 마차 창고",claim:"s10x_bori_a",txt:"보리: 확인증에 적힌 9시 15분에 발도장을 찍어 줬다",src:["s10x_bori_a"],vs:"sb"});
+ }
+
+ // ---------------- 알리바이 방패: 증인의 착각을 깨기 전엔 범인이 증인을 내세워 버틴다 ----------------
+ var ALIBI={
+  cart:{t:"mungchi_c1",w:"s8x_kongi_a",lines:[
+   ["mungchi","\"{item}\"? 흥. 콩이가 봤어. 9시에 내가 회관 벤치에 있는 거. 증인이 있는 알리바이를 그런 걸로 깨겠다고? 뭐, 그렇다는 거야.","smug","","smug"],
+   ["think","뭉치에겐 증인이 있어. 콩이가 정말 9시에 뭉치를 봤는지, 콩이의 말부터 확인해야 해."]]},
+  glove:{t:"madam1",w:"s9x_owl_a",lines:[
+   ["madam","\"{item}\"… 흥미롭네요. 하지만 부엉이 어르신께서 그 시각 창가의 저를 보셨는걸요. 은퇴하셨어도 탐정이셨던 분의 눈을 의심하시는 건가요?","smug","","smug"],
+   ["think","백 부인에겐 증인이 있어. 부엉이 할아버지가 창가에서 본 게 정말 백 부인이었는지부터 확인해야 해."]]},
+  festival:{t:"s10x_siluk_a",w:"s10x_bori_a",lines:[
+   ["siluk","\"{item}\"이요? 확인증에 보리 군 발도장이 찍혀 있지 않습니까. 설마 저 순한 곰 군이 거짓말을 했다는 말씀은 아니시겠지요.","smug","","smug"],
+   ["think","실룩의 알리바이엔 보리의 발도장이 있어. 보리가 정말 그 시각에 발도장을 찍었는지부터 확인해야 해."]]}
+ };
+ function shield(c,tid,item,r){
+  var iname=itemName(c,item);
+  G.wrong++;SFX.wrong();G.hp=(G.hp==null?hpMax(c):G.hp)-1;
+  flash("헛짚었다!",true).then(function(){
+   render();floater(".hpbar","신뢰도 -1","bad");
+   if(G.hp<=0){G.hp=hpMax(c);G.wrong+=2;say([["narr","신뢰도가 바닥났다! 탐정들은 잠시 숨을 고르고 수첩을 처음부터 다시 정리했다. (신뢰도 회복, 대신 별이 줄 수 있다)"]],function(){render()});return}
+   var ls=r.lines.map(function(l){l=l.slice();l[1]=l[1].replace("{item}",iname);if(l[0]==="think"&&!l[3])l=["think",l[1],"",curPlayer()];return l});
+   say(ls,function(){G.target=tid;render()});
+  });
+ }
+ var _jp=judgePresent;judgePresent=function(c,tid,item){
+  var r=ALIBI[c.id];
+  if(r&&tid===r.t&&G&&!G.broken[r.w]&&!G.broken[tid]){
+   var x=contraOf(c,tid);
+   if(!(x&&x.items.indexOf(item)>=0&&gated(c,item))){shield(c,tid,item,r);return}
+  }
+  return _jp.apply(this,arguments);
+ };
+ // 심어 둔 증거: 살펴보기 전/후로 속마음이 달라진다
+ var _tr=window.__trap;window.__trap=function(c,tid,item){
+  var T=window.TRAP[c.id];if(!T)return _tr?_tr(c,tid,item):null;
+  for(var i=0;i<T.length;i++)if(T[i].items.indexOf(item)>=0)return (G&&G.exam&&G.exam[item]&&T[i].think2)?T[i].think2:T[i].think;
+  return null;
+ };
+})();
+
+// ================= v85: small props for the new clue spots =================
+(function(){
+var O='stroke="#0A0D24" stroke-width="1.6"';
+var ADD={
+ "dark-hill":'<g transform="translate(208 150)"><rect x="-9" y="-6" width="18" height="12" rx="2" fill="#E9A93A" '+O+'/><path d="M-5 0 Q0 -4 4 0 Q0 4 -5 0 Z M4 0 L7 -3 L7 3 Z" fill="#4A7FB5"/></g>',
+ "museum-hall":'<g transform="translate(44 112)"><circle r="10" fill="#F4EFD0" '+O+'/><path d="M0 0 L-6 0 M0 0 L0 -8" stroke="#0A0D24" stroke-width="1.8" stroke-linecap="round"/><circle r="1.4" fill="#0A0D24"/></g>',
+ "cart-hill":'<g transform="translate(178 176) rotate(-25)"><path d="M0 -9 Q5 -2 1 9 Q-4 1 0 -9 Z" fill="#B8323A" '+O+'/><path d="M0 -8 L0.6 9" stroke="#0A0D24" stroke-width="1"/></g>',
+ "glove-pond":'<path d="M246 128 q6 6 4 12 q-2 6 6 8 q6 1 8 -4" fill="none" stroke="#0E0E14" stroke-width="2.2" stroke-linecap="round"/><circle cx="258" cy="140" r="2.2" fill="#0E0E14"/>',
+ "glove-parlor":'<g transform="translate(288 112)"><path d="M-7 -8 L7 -8 L10 14 L-10 14 Z" fill="#C9C3D9" '+O+'/><circle cy="-13" r="5.5" fill="#E9E4F2" '+O+'/><path d="M-10 -16 L10 -16 L6 -21 L-6 -21 Z" fill="#6B4A7A" '+O+'/><path d="M0 14 V22 M-6 22 H6" stroke="#5A3A22" stroke-width="2"/></g>',
+ "festival-square":'<g transform="translate(38 118) rotate(-8)"><rect x="-8" y="-10" width="16" height="20" fill="#FFFDF4" '+O+'/><path d="M-5 -5 H5 M-5 -1 H5 M-5 3 H2" stroke="#8E97AD" stroke-width="1.4"/><circle cx="3" cy="6" r="2.4" fill="#8B5E3C"/></g>'
+};
+Object.keys(ADD).forEach(function(k){var f=SCENES[k];if(!f)return;SCENES[k]=function(){var s=f.apply(this,arguments);return String(s).replace(/<\/svg>\s*$/,ADD[k]+"</svg>")}});
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
