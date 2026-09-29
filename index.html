@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>다애 탐정 사무소</title>
+<meta name="description" content="다애와 함께 푸는 동물 마을 추리 게임">
+<meta name="theme-color" content="#0E1128">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="다애 탐정">
+<style>
+  :root{--bg:#0E1128;--glow:#2B3170}
+  html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;color-scheme:dark}
+  body{background:radial-gradient(ellipse at 50% 30%,var(--glow) 0%,var(--bg) 70%) fixed}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #frame{display:block;border:0;background:#141833;width:100vw;height:100vh;height:100dvh}
+  /* Wide screens (PC, tablet landscape): lock the game to a portrait phone-shaped column */
+  @media (min-width:600px) and (min-aspect-ratio:3/4){
+    #frame{height:calc(100vh - 32px);height:calc(100dvh - 32px);max-height:980px;width:auto;aspect-ratio:9/18;
+      border-radius:26px;box-shadow:0 0 0 2px #2A3060,0 24px 80px rgba(0,0,0,.55),0 0 120px rgba(242,194,48,.08)}
+  }
+  @media (min-width:600px) and (min-aspect-ratio:3/4) and (max-height:520px){
+    #frame{height:100vh;height:100dvh;border-radius:0}
+  }
+</style>
+</head>
+<body>
+<div id="stage"><iframe id="frame" src="game.html" title="다애 탐정 사무소" allow="autoplay; fullscreen"></iframe></div>
+<script>
+(function(){
+  var f=document.getElementById("frame");
+  f.addEventListener("load",function(){try{f.contentWindow.focus()}catch(e){}});
+  document.addEventListener("keydown",function(){try{f.contentWindow.focus()}catch(e){}});
+  // Installed app on a desktop: open the window once in a portrait size (the user can resize afterwards)
+  try{
+    var standalone=matchMedia("(display-mode: standalone)").matches||matchMedia("(display-mode: window-controls-overlay)").matches;
+    var desktop=matchMedia("(pointer: fine)").matches;
+    if(standalone&&desktop&&!localStorage.getItem("daae:sized")){
+      var h=Math.min(screen.availHeight-40,1000),w=Math.round((h-32)*9/18)+48;
+      window.resizeTo(w,h);window.moveTo(Math.round((screen.availWidth-w)/2),Math.round((screen.availHeight-h)/2));
+      localStorage.setItem("daae:sized","1");
+    }
+  }catch(e){}
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
+  }
+})();
+</script>
+</body>
+</html>
