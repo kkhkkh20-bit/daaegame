@@ -13401,6 +13401,110 @@ window.__fixText([
  ["도토 양 말씀 그대로입니다.","도토의 말 그대로입니다."]
 ]);
 
+// ================= v88: grandma cameos (5~10장 foreshadowing) =================
+// cameo_data.js — 흑막(토끼 할머니) 복선 카메오, 5~10장 (서사 전용 · 퍼즐/증거/용의자 변경 없음)
+// 장마다 따뜻한 짧은 등장 1회 + '다시 보면 걸리는' 단서 1개. 설정은 work/mastermind.md 참고.
+//  5 bell     BOOK.pre 새 첫 페이지   — 은빛 마을의 '새로 온 배달부'(=슬링)를 먼저 소개한다
+//  6 dark     BOOK.pre 새 첫 페이지   — 당근 케이크를 건넨 직후, 열쇠가 사라진 사무소
+//  7 museum   STORY.intro 끝 직전     — 흰 꽃 한 송이 + 잎 셋, 눌러 말린 책갈피 (도장과 같은 모양)
+//  8 cart     STORY.outro 회의 장면   — 편지 자루 속 편지가 '한 장도 안 빠졌는지' 콕 집어 묻는다
+//  9 glove    LETTERS 추신(꽥순)      — "순찰대는 등불 열쇠도 짝끼리 하나씩"
+// 10 festival BOOK.post 새 끝 페이지   — 별빛 돌을 안아 든 팔의 무게를 안다 + det1의 작은 서늘함(전체 1회)
+(function(){
+  if(window.__cameoDone)return;window.__cameoDone=true;
+  var HAS_BOOK=typeof BOOK!=="undefined",HAS_STORY=typeof STORY!=="undefined",HAS_LET=typeof LETTERS!=="undefined";
+  if(typeof CAST==="undefined"||!CAST.grandma)return;
+  function arr(x){return Object.prototype.toString.call(x)==="[object Array]"}
+  function bookOf(id,part){return HAS_BOOK&&BOOK[id]&&arr(BOOK[id][part])?BOOK[id][part]:null}
+  function storyOf(id,part){return HAS_STORY&&STORY[id]&&arr(STORY[id][part])?STORY[id][part]:null}
+  function scene(k,fb){return (typeof SCENES!=="undefined"&&SCENES[k])?k:fb}
+
+  // ---------- 5장 달빛 종이 멎은 밤: 떠나기 전날 밤 ----------
+  // 단서: 옆 마을에 '새로 온 배달부'가 있다는 걸 어떻게 알았을까. 그리고 그 배달부가 바로 슬링이다.
+  (function(){
+    var pre=bookOf("bell","pre");if(!pre)return;
+    pre.unshift({bg:scene("office","dark-office"),time:"떠나기 전날 밤 · 탐정 사무소",cast:{det0:70,det1:130},lines:[
+      ["narr","은빛 마을로 떠나기 전날 밤. 짐을 꾸리던 사무소 문이 똑똑 울렸다."],
+      ["enter","grandma",280,"happy"],
+      ["grandma","아이고, 우리 탐정님들. 내일 먼 길 간다길래 간식 좀 싸 왔어요. 딸기잼 쿠키예요.","happy"],
+      ["det1","우와, 할머니 쿠키! 마차에서 아껴 먹을게요.","happy"],
+      ["grandma","은빛 마을은 낯선 데라 길 묻기도 어려울 거예요. 요즘 거기 새로 온 배달부 청년이 있다던데, 아주 싹싹하대요. 모르는 건 그 청년한테 물어봐요."],
+      ["det0","새로 온 배달부요. 기억해 둘게요, 할머니."],
+      ["grandma","부엉이 영감 무릎도 좀 챙겨 주고요. 조심히 다녀와요, 아가들.","happy"],
+      ["exit","grandma"]
+    ]});
+  })();
+
+  // ---------- 6장 빛을 훔치는 자: 돌아온 밤, 사무소 가는 길 ----------
+  // 단서: 당근 케이크가 도착하고, 곧바로 나쁜 일이 터진다. (11장에서 한 번 더 반복될 패턴)
+  (function(){
+    var pre=bookOf("dark","pre");if(!pre)return;
+    if(pre[0]&&arr(pre[0].lines)&&pre[0].lines[0]&&pre[0].lines[0][0]==="narr")
+      pre[0].lines[0]=["narr","스무 걸음 뒤. 사무소 문 앞에 마을 사람들이 모여 있었다."];
+    pre.unshift({bg:scene("star-square","dark-office"),time:"밤 8시 30분 · 마을 광장",cast:{det0:70,det1:130},lines:[
+      ["narr","은빛 마을에서 돌아온 밤. 사무소로 가는 광장 모퉁이에서 누군가 두 탐정에게 손을 흔들었다."],
+      ["enter","grandma",270,"happy"],
+      ["grandma","아이고, 우리 아가들 이제 오는구나. 고생했다고 당근 케이크 하나 구웠어요. 아직 따끈해요.","happy"],
+      ["det1","당근 케이크! 할머니, 은빛 마을 얘기 잔뜩 해 드릴게요.","happy"],
+      ["grandma","얘기는 내일 들려줘요. 오늘 밤은 사무소 들어가서 한 조각씩 먹고 푹 자요. 알았지요?","happy"],
+      ["det0","네, 할머니. 잘 먹겠습니다."],
+      ["exit","grandma"],
+      ["narr","케이크 상자는 아직 따뜻했다. 사무소까지는 스무 걸음이었다."]
+    ]});
+  })();
+
+  // ---------- 7장 뒤집힌 등불: 재판 시작 직전 방청석 ----------
+  // 단서: 눌러 말린 흰 꽃 한 송이, 잎 셋. '관리국' 도장과 같은 모양이다. (둘 다 이름은 부르지 않는다)
+  (function(){
+    var si=storyOf("museum","intro");if(!si)return;
+    var at=si.length&&si[si.length-1][0]==="think"?si.length-1:si.length;
+    si.splice(at,0,
+      ["narr","방청석 맨 앞줄에서 토끼 할머니가 두 탐정을 손짓해 불렀다.","happy","grandma"],
+      ["grandma","아가, 이거 받아요. 재판 기록할 때 수첩에 끼워 두렴. 마당에서 딴 꽃을 눌러 말린 책갈피예요.","happy"],
+      ["det1","동그란 하얀 꽃 한 송이에 잎이 셋… 예뻐요, 할머니. 꼭 들고 다닐게요.","happy"],
+      ["grandma","까로 씨가 억울한 일 당하면 안 되지요. 우리 탐정님들만 믿어요.","happy"]
+    );
+  })();
+
+  // ---------- 8장 멈춘 우편 마차: 마을 회의 끝자락 ----------
+  // 단서: 자루가 아니라 '자루 속 편지가 한 장도 안 빠졌는지'를 콕 집어 묻는다.
+  (function(){
+    var so=storyOf("cart","outro");if(!so)return;
+    var at=-1;so.forEach(function(l,i){if(at<0&&l[0]==="narr"&&String(l[1]).indexOf("회의가 끝나고")===0)at=i});
+    if(at<0)at=Math.max(0,so.length-2);
+    so.splice(at,0,
+      ["narr","회의 자리 뒤편에서 토끼 할머니가 도토의 다친 다리에 담요를 덮어 주고 있었다.","sad","grandma"],
+      ["grandma","까로 씨, 머리는 좀 괜찮아요? 그 편지 자루는 이제 어디 있고요?","sad"],
+      ["grandma","그 안에 든 편지들… 한 장도 안 빠지고 다 무사하대요?"],
+      ["karo","네, 할머니. 한 장도 빠짐없이요. 주인한테 그대로 돌려보낼 거예요. 후후.","happy"],
+      ["grandma","그래요, 그래. …다행이네요.","happy"]
+    );
+  })();
+
+  // ---------- 9장 하얀 장갑의 밤: 꽥순의 편지 추신 ----------
+  // 단서: 옛 순찰대는 '등불 열쇠를 짝끼리 하나씩' 나눠 가졌다는 걸 안다.
+  (function(){
+    var L=HAS_LET&&LETTERS.glove;if(!L||!arr(L.body))return;
+    L.body.push("추신: 토끼 할머니가 내 머리를 쓰다듬으면서 그러셨어. '밤길은 늘 짝이랑 다니는 거란다. 옛날 밤 순찰대는 등불 열쇠도 짝끼리 하나씩 나눠 들었어.' 그래서 이제 연습은 보리 오빠랑 같이 할 거야. 꽥!");
+  })();
+
+  // ---------- 10장 별빛 축제의 밤: 등불이 켜진 뒤 ----------
+  // 단서: 진짜 별빛 돌을 안아 들었을 때의 무게를 '팔'로 안다. det1이 전체 중 딱 한 번 작게 서늘해진다.
+  (function(){
+    var post=bookOf("festival","post");if(!post)return;
+    post.push({bg:scene("festival-squarelit","festival-square"),time:"밤 · 큰 등불 아래 벤치",cast:{det0:60,det1:120,grandma:270},lines:[
+      ["narr","축제의 밤이 깊어 갈 무렵. 등불 아래 벤치에 토끼 할머니가 앉아 불빛을 올려다보고 있었다."],
+      ["grandma","아이고, 우리 아가들. 오늘도 수고 많았어요. 돌이 제자리에 돌아와서 참 다행이야.","happy"],
+      ["grandma","그 돌은 보기보다 무겁지요. 두 팔로 꼭 안아 들어도 팔이 후들후들한다니까."],
+      ["det1","할머니도 그 돌을 들어 보셨어요?","confused"],
+      ["grandma","…아이고, 내가 뭐라고 했더라. 요즘은 들은 얘기랑 겪은 얘기가 자꾸 섞여요. 늙으면 다 그래요, 아가.","happy"],
+      ["narr","할머니는 웃으며 다시 등불을 올려다보았다. 그 순간 {p1}의 가슴 한쪽이 아주 조금, 이유 없이 서늘해졌다. 축제 음악이 다시 커지자 그 느낌은 금세 잊혔다."],
+      ["det0","{p1}, 가자. 꽥순이 자정 수영 시작한대."],
+      ["det1","응! 할머니, 내일 봬요!","happy"]
+    ]});
+  })();
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
