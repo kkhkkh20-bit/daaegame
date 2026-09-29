@@ -3246,12 +3246,13 @@ function openSettings(){
     row("글자 속도","대사가 나오는 빠르기",seg("tspeed",[["n","보통"],["f","빠르게"],["i","바로"]]))+
     row("글자 크기","대사창 글씨",seg("big",[[false,"보통"],[true,"크게"]]))+
     (TTS.ok?'<p class="note">읽어주기 목소리는 기기에 설치된 한국어 음성을 써요. 대사창 구석의 <b>기록</b>으로 지난 대사를 다시 볼 수 있어요.</p>':'<p class="note">대사창 구석의 <b>기록</b>으로 지난 대사를 다시 볼 수 있어요.</p>')+
-    '</div><button class="btn ghost" id="setsave">저장 · 불러오기</button><button class="btn" id="setclose">닫기</button>';
+    '</div><button class="btn ghost" id="setsave">저장 · 불러오기</button><button class="btn" id="setclose">닫기</button><button type="button" id="setadm" style="display:block;margin:14px auto 0;background:transparent;border:0;color:inherit;opacity:.45;font-size:12px;text-decoration:underline;cursor:pointer">관리자</button>';
   modal(h,function(){
     document.getElementById("mveil").onclick=function(e){if(e.target.id==="mveil"){closeModal();render()}};
     document.getElementById("setclose").onclick=function(){SFX.tap();closeModal();render()};
     ["p0","p1"].forEach(function(id,k){var inp=document.getElementById(id);if(inp)inp.addEventListener("input",function(e){S.players[k]=e.target.value.replace(/[<>"'&`]/g,"").trim().slice(0,10)||(k?"두 번째 탐정":"첫 번째 탐정");persist()})});
     var ssv=document.getElementById("setsave");if(ssv)ssv.onclick=function(){SFX.tap();closeModal();openSaveMenu()};
+    var sad=document.getElementById("setadm");if(sad)sad.onclick=function(){SFX.tap();closeModal();if(window.__admOpen)window.__admOpen()};
     ov.querySelectorAll("[data-set]").forEach(function(b){b.onclick=function(){
       var k=b.dataset.set,raw=b.dataset.v,v=raw==="true"?true:raw==="false"?false:raw;
       if(k==="sound"){setSound(v);if(v&&!BGM.timer)bgm(S.screen==="case"?"sneak":"calm")}
@@ -10522,7 +10523,7 @@ VFILE.push({req:function(){return S.best.festival},t:"별빛 축제 사건 종�
 
 // ================= v69: admin mode (hidden corner button + PIN) =================
 (function(){
-var PIN="0929",KEY="daae:adm",BAK="daae:admbak";
+var PIN="4861",KEY="daae:adm",BAK="daae:admbak";
 function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function lsSet(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){}}
 var ADM={on:lsGet(KEY)==="1"};
@@ -10535,7 +10536,7 @@ caseOpen=function(i){return ADM.on||_co(i)};
 var css=document.createElement("style");
 css.textContent=
 '#admdot{position:fixed;top:0;right:0;width:18px;height:18px;z-index:2147483000;border:0;padding:0;margin:0;background:transparent;cursor:default;-webkit-tap-highlight-color:transparent}'+
-'#admdot::after{content:"";position:absolute;top:5px;right:5px;width:4px;height:4px;border-radius:50%;background:#8E97AD;opacity:.22}'+
+'#admdot:not(.on){display:none}'+
 '#admdot.on{width:auto;height:auto;top:2px;right:2px;padding:2px 7px;border-radius:9px;background:#F2C230;color:#1B2447;font:700 10px/1.4 Jua,sans-serif;cursor:pointer}'+
 '#admdot.on::after{display:none}'+
 '.admv{position:fixed;inset:0;z-index:2147483001;background:rgba(8,10,28,.86);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;font-family:Jua,"Gowun Dodum",sans-serif;color:#F4F1E6}'+
@@ -10597,6 +10598,7 @@ function enable(){
   if(!lsGet(BAK)){try{lsSet(BAK,JSON.stringify(snapshot()))}catch(e){}}
   paintDot();if(!G||S.screen!=="case")render();
 }
+window.__admOpen=function(){if(ADM.on)openPanel();else openPin()};
 function disable(){ADM.on=false;lsSet(KEY,null);paintDot();close();render()}
 
 // ---------- case tools ----------
@@ -17556,6 +17558,20 @@ window.__fixText([
 ]);
 
 window.__fixText([["이번엔 할아버지가 제 손으로 문을 잠그라고 한다.","이번엔 마을이 할아버지의 손으로 문을 잠그게 했다."],["새벽 다섯 시, 사무소 지하의 철창이 열렸다.","동이 틀 무렵, 사무소 지하의 철창이 열렸다."],["새벽 다섯 시. 붕대를 감은 부엉이 할아버지가","동이 틀 무렵. 붕대를 감은 부엉이 할아버지가"],["자정 무렵 · 사무소 지하","밤 11시 40분 · 사무소 지하"],["새벽 · 부엉이 할아버지 댁","아침 · 부엉이 할아버지 댁"],["새벽. 눈이 그쳤다. 부엉이 할아버지 댁 창문에 등불이 켜져 있었다.","아침. 눈이 그쳤다. 부엉이 할아버지 댁 창문엔 아직 등불이 켜져 있었다."],["눈 내리는 새벽 · 마을 어귀","이튿날 새벽 · 마을 어귀"],["눈 내리는 새벽, 마을 어귀. 빨간 우체통의 소포 칸은 비어 있었다.","이튿날 새벽, 다시 눈이 내렸다. 마을 어귀. 빨간 우체통의 소포 칸은 비어 있었다."],["털실 올 사이에 까만 털 몇 가닥이 남아 있었다.","털실 올 사이마다 스라소니 털이 잔뜩 묻어 있었다."],["열린 문 문설주에 스라소니 발톱 자국 세 줄이 선명해요. 마을 사람들은 이걸 보자마자 '역시 네로'라고 했대요.","열린 문 문설주에 발톱 자국 세 줄이 선명해요. 마을 사람들은 스라소니 발톱이라며 보자마자 '역시 네로'라고 했대요."],["작은 등불 문설주에 난 스라소니 발톱 자국 세 줄. 마을 사람들은 네로의 자국이라고 한다.","작은 등불 문설주에 난 발톱 자국 세 줄. 마을 사람들은 스라소니 발톱, 네로의 자국이라고 한다."],["루카 검사관 사건 때 까로 아저씨에게 누명을 씌우던 그 발톱 도장이에요.","루카 검사관 사건 때 까로 아저씨에게 누명을 씌우던 그 발톱 도장이에요. 그땐 까마귀 발톱으로, 오늘은 스라소니 발톱으로 보였을 뿐이에요."],["꽥순의 편지 추신에도 나왔고, 할머니도 할아버지 곁에서 그렇게 말씀하셨지.","꽥순의 편지 추신에도 나왔지."],["증거 없이 누구도 의심하지 않기. 오늘은 네로 차례야.","증거 없이 누구도 의심하지 않기. 이번엔 우리가 네로를 믿어 볼 차례야."],["이런, 은빛 마을의 탐정 양반들! 오랜만이오.","이런, 은빛 마을에서 뵌 탐정 양반들! 오랜만이오."],["저를 30년 동안 키운 게 이 망토의 주인이었습니까.","저를 여기까지 이끈 게 이 망토의 주인이었습니까."],["그리고 30년 동안 저에게 편지를 썼군요.","그리고 저에게도 편지를 썼군요."],["풀려난 날 곱게 개어서 돌려드렸습니다. 사흘 밤을 그걸로 났으니","풀려난 날 곱게 개어서 돌려드렸습니다. 철창에서 하룻밤을 그걸로 났으니"],["그 새벽에 본 거, 말해 줄래?","심부름하던 새벽에 본 거, 말해 줄래?"],["…그 새벽, 헛간에 소포 두고 돌아가다가","…전에 심부름하던 새벽에, 헛간에 소포 두고 돌아가다가"],["헛간 선반. 며칠 전 새벽 토리가 소포를 갖다 두던 자리.","헛간 선반. 토리가 심부름 소포를 갖다 두던 자리."],["며칠 전 새벽, 소포를 싣던 그 썰매예요.","며칠 전 새벽, 우체통 앞에서 본 그 썰매예요."],["그 밤, 산길에서 등불을 보고 걷던 토끼 청년이 있었습니다. 저보다 앞서 걸었지요.","그 밤, 산길에서 등불을 보고 걷던 토끼 청년이 있었습니다. 고개에서 쉬던 그 사람을 지나쳐, 저는 먼저 언덕 덤불에 닿았지요."],["등불이 꺼지자 그 사람은 멈춰 섰습니다. 한참 서 있다가, 돌아섰습니다.","등불이 꺼졌을 때, 저는 망토 밑에서 고개를 올려다보았습니다. 고개 위의 작은 손등불 하나가 멈춰 섰습니다. 한참 서 있다가, 돌아섰습니다."],["저는 계속 걸었습니다. 돌아갈 곳이 없었으니까요.","저는 그 자리에 남았습니다. 돌아갈 곳이 없었으니까요."],["세 번 남의 손으로 실패했습니다.","이 마을의 돌만은 세 번이나 남의 손으로 실패했습니다."],["추신: 탐정님들이 이 편지를 두 분의 수첩 맨 뒤에 붙여 두겠다고 했다. 부끄럽지만, 그러라고 했다.","추신: 받는 곳도 모르는 편지인데, 까로 씨가 들고 가 주겠다고 했다. 탐정님들은 부치기 전에 한 번 읽어 두겠다고 했다. 부끄럽지만, 그러라고 했다."],["새해 첫날 · 감시소","며칠 뒤 · 감시소"],["새해 첫날. 감시소 창살 안에서 할머니가 편지 한 장을 썼다.","며칠 뒤. 감시소 창살 안에서 할머니가 편지 한 장을 썼다."],["1985년 가을, 밤 순찰대","1985년 별빛 축제 밤. 순찰 짝과"],["할머니 집 작은 창. 불이 꺼져 있다.","할머니 집 다락의 작은 창. 불이 꺼져 있다. 불이 켜진 건 부엌 창문뿐이다."],["30년 동안 할아버지가 지키던 불을, 오늘 처음 두 탐정이 켜기로 했었다.","30년 동안 할아버지가 지키던 불. 올해 동지 등불은 두 탐정이 처음으로 켜기로 했었다."],["해 지기 전, 5시에요.","해 지기 전, 5시예요."],["깡총! 내가 썰매로 날랐어. 냄비가 엄청 무거웠어.","깡총… 내, 내가 썰매로 날랐어. 냄비가 엄청 무거웠어."],["응! 헛간에 세워 둘게. 깡총.","…응. 헛간에 세워 둘게."],["그래도 소리는 틀리지 않아요. 그 목소리를 다시 들으면… 한 번 더 세어 볼게요.","그래도 소리는 틀리지 않아요. 요즘 들은 목소리 중에 닮은 소리가 있어요. 서두르지 않을게요. 한 번 더 세어 볼게요."]]);
+
+// ================= v92: iOS sound unlock (silent switch, gesture resume) =================
+(function(){
+try{if(navigator.audioSession)navigator.audioSession.type="playback"}catch(e){}
+var SIL="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=";
+var el=null,done=false;
+function unlock(){
+  try{var a=ac();if(a){if(a.state!=="running")a.resume();var b=a.createBuffer(1,1,22050),s=a.createBufferSource();s.buffer=b;s.connect(a.destination);s.start(0)}}catch(e){}
+  try{if(!el){el=document.createElement("audio");el.src=SIL;el.loop=true;el.setAttribute("playsinline","");el.setAttribute("x-webkit-airplay","deny");el.preload="auto";el.volume=0.01}var p=el.play();if(p&&p.catch)p.catch(function(){})}catch(e){}
+  if(AC&&AC.state==="running"&&!done){done=true;if(S.sound&&BGM&&BGM.mode&&!BGM.timer){var m=BGM.mode;BGM.mode=null;bgm(m)}}
+}
+["touchend","pointerup","click","keydown"].forEach(function(t){document.addEventListener(t,unlock,true)});
+document.addEventListener("visibilitychange",function(){if(!document.hidden)setTimeout(unlock,50)});
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
