@@ -4483,6 +4483,7 @@ function renderNote(c){
   if(nt==="time")h+='<section class="panel">'+renderTimeline(c)+'</section>';
   else if(nt==="ev"){
     var f=G.evf||"all",pins=G.pins||[];
+    if(c.story)h+='<section class="panel"><div class="label">사건 개요</div><p class="casesum">'+pname(c.story)+'</p>'+(STORY[c.id]&&STORY[c.id].intro?'<button type="button" class="remeet" id="restory">도입 이야기 다시 보기</button>':'')+'</section>';
     if((G.mem||[]).length)h+='<section class="panel"><div class="label">그 순간의 기억</div><ul class="memo">'+G.mem.map(function(id){return '<li>'+esc(MEMTXT[id]||"")+'</li>'}).join("")+'</ul></section>';
     if(toolOn("logic"))h+=renderLogic(c);
     h+='<div class="evfil">'+[["all","전체"],["pin","별표"],["exam","살펴볼 것"]].map(function(x){return '<button data-evf="'+x[0]+'" aria-pressed="'+(f===x[0])+'">'+x[1]+'</button>'}).join("")+'</div>';
@@ -4494,7 +4495,7 @@ function renderNote(c){
       if(l.info&&l.info.length&&f==="all")h+='<ul class="memo">'+l.info.map(function(m){return '<li>'+m+'</li>'}).join("")+(l.obs||[]).filter(function(o){return !o.zoom&&obsSeen(o.id)}).map(function(o){return '<li class="ob"><b>관찰</b> '+o.text+'</li>'}).join("")+'</ul>';
       if(!items.length)h+='<p class="empty">'+(f==="all"?'아직 찾은 증거가 없어요.':'해당하는 증거가 없어요.')+'</p>';
       items.forEach(function(s){var id=s.ev.id,pin=pins.indexOf(id)>=0,cx=s.ev.check&&!(G.exam&&G.exam[id]);
-        h+='<div class="evrow'+(pin?' pinned':'')+'"><button class="evopen" data-open="'+id+'">'+evIcon(id)+'<div><h4>'+s.ev.name+(cx?' <i class="exq2">살펴볼 곳 있음</i>':'')+'</h4><p>'+evDesc(s.ev)+'</p></div></button><button class="pinbtn" data-pin="'+id+'" aria-pressed="'+pin+'" aria-label="별표">'+(pin?'★':'☆')+'</button></div>'});
+        h+='<div class="evrow'+(pin?' pinned':'')+'"><button class="evopen" data-open="'+id+'">'+evIcon(id)+'<div><h4>'+s.ev.name+(cx?' <i class="exq2">살펴볼 곳 있음</i>':'')+'</h4><p>'+evDesc(s.ev)+'</p>'+(THINK[id]?'<p class="evth">'+esc(pname(THINK[id]))+'</p>':'')+'</div></button><button class="pinbtn" data-pin="'+id+'" aria-pressed="'+pin+'" aria-label="별표">'+(pin?'★':'☆')+'</button></div>'});
       h+='</section>';
     });
   }else if(nt==="ppl"){
@@ -4502,8 +4503,8 @@ function renderNote(c){
       var ps=psyOf(c,k),lk=lockCount(c,k),mine=c.talk[k].filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q!==""});
       var rel=[];c.contra.forEach(function(x){if(tById(c,x.t).who===k)x.items.forEach(function(it){if(G.found.indexOf(it)>=0&&rel.indexOf(it)<0&&evById(c,it))rel.push(it)})});
       h+='<section class="pcard"><div class="ph">'+pf(k,moodOf(c,k))+'<div><h4>'+CAST[k].name+(isWit(c,k)?' <i class="tag f">증인</i>':'')+'</h4><small>'+CAST[k].kind+' · 마음: '+ps.label+'</small>'+(lk?lockRow(lk):'')+'</div></div>'+
-         '<p class="bio">'+(BIO[k]||"")+'</p>'+(k==="karo"&&G.night&&G.night.fakehint?'<p class="fakehint"><b>까로가 판 힌트</b> "'+esc(G.night.fakehint)+'"<small>신뢰도 1칸을 주고 산 말. 사실인지 증거로 확인할 것.</small></p>':'')+personaBox(k);
-      if(mine.length)h+='<ul class="plines">'+mine.map(function(t){var br=G.broken[t.id],kd=br?kindOf(c,t.id):null;return '<li class="'+(br?'br':'')+'"><small>'+t.q+'</small>"'+t.a+'"'+(br?'<i class="tag x">'+kd.note+'</i>':'')+'</li>'}).join("")+'</ul>';
+         '<p class="bio">'+(BIO[k]||"")+'</p><button type="button" class="remeet" data-remeet="'+k+'">첫 만남 다시 보기</button>'+(k==="karo"&&G.night&&G.night.fakehint?'<p class="fakehint"><b>까로가 판 힌트</b> "'+esc(G.night.fakehint)+'"<small>신뢰도 1칸을 주고 산 말. 사실인지 증거로 확인할 것.</small></p>':'')+personaBox(k);
+      if(mine.length)h+='<ul class="plines">'+mine.map(function(t){var br=G.broken[t.id],kd=br?kindOf(c,t.id):null;return '<li class="'+(br?'br':'')+'"><small>'+t.q+'</small>"'+t.a+'"'+(br?'<i class="tag x">'+kd.note+'</i><em class="plrev">'+esc(pname(br))+'</em>':'')+'</li>'}).join("")+'</ul>';
       else h+='<p class="empty">아직 이야기를 나누지 않았어요.</p>';
       if(rel.length)h+='<div class="prel"><small>관련 증거</small>'+rel.map(function(it){return '<button data-open="'+it+'">'+evIcon(it)+'<span>'+evById(c,it).name+'</span></button>'}).join("")+'</div>';
       h+='</section>';
@@ -4527,6 +4528,8 @@ function bindNote(c){
   app.querySelectorAll("[data-tsrc]").forEach(function(li){li.onclick=function(){var id=li.dataset.tsrc;if(!id||id==="undefined")return;id=id.replace("!","");if(evById(c,id)||tById(c,id))openItem(c,id)}});
   app.querySelectorAll("[data-mark-who]").forEach(function(b){b.onclick=function(){SFX.tap();var k=b.dataset.markWho,m=G.marks[k]||"";G.marks[k]=m===""?"sus":m==="sus"?"no":"";render()}});
   bindRiddles(c);bindLogic(c);
+  app.querySelectorAll("[data-remeet]").forEach(function(b){b.onclick=function(){SFX.page();var k=b.dataset.remeet;say(window.__meetLines?window.__meetLines(c,k,true):[[k,(PERSONA[k]&&PERSONA[k].say)||"",""]],function(){render()},true)}});
+  var rsb=document.getElementById("restory");if(rsb)rsb.onclick=function(){SFX.page();say(STORY[c.id].intro.slice(),function(){render()},true)};
   var hb=document.getElementById("hint");if(hb)hb.onclick=function(){SFX.page();G.hints++;render()};
   var rs=document.getElementById("restart");if(rs)rs.onclick=function(){
     document.getElementById("rstwrap").innerHTML='<div class="confirm"><p>찾은 증거와 진술이 모두 지워져요.</p><div class="row"><button class="btn ghost" id="rsNo">취소</button><button class="btn red" id="rsYes">처음부터</button></div></div>';
@@ -11179,6 +11182,10 @@ css.textContent='.who.who-unk .unk{display:flex;align-items:center;justify-conte
 '.talkempty{margin:28px 16px;padding:22px 18px;border-radius:16px;background:rgba(14,17,40,.55);border:1.5px dashed #4A5490;text-align:center;color:#E6E8F2;font:15px/1.6 "Gowun Dodum",sans-serif}'+
 '.talkempty b{display:block;font:400 19px Jua,sans-serif;color:#F2C230;margin-bottom:6px}.talkempty button{margin-top:14px}'+
 '.metto{position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:60;background:#F2C230;color:#1B2447;font:16px Jua,sans-serif;padding:8px 16px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.35);animation:metin .25s ease-out;white-space:nowrap}'+
+'.evth{margin:3px 0 0;font-size:12.5px;line-height:1.45;opacity:.78;font-style:italic}.evth::before{content:"생각 · ";font-style:normal;font-weight:700;opacity:.8}'+
+'.plrev{display:block;margin-top:4px;font-style:normal;font-size:12.5px;line-height:1.45;opacity:.85;border-left:3px solid #F2C230;padding-left:7px}'+
+'.remeet{display:inline-block;margin-top:6px;border:1.5px solid rgba(128,136,180,.55);background:transparent;color:inherit;border-radius:999px;padding:5px 12px;font:13px Jua,sans-serif;cursor:pointer}'+
+'.casesum{margin:4px 0 0;font-size:14px;line-height:1.6}'+
 '.metto small{font-size:12px;opacity:.75;margin-right:6px}@keyframes metin{from{opacity:0;transform:translate(-50%,-8px)}}';
 document.head.appendChild(css);
 
@@ -11191,11 +11198,19 @@ function toast(k){
 }
 
 window.MEETX=window.MEETX||{};
-function meetLines(c,k){
-  var x=window.MEETX[c.id]&&window.MEETX[c.id][k];if(x&&x.length)return x.map(function(l){if(l[0]==="think"&&(l[3]==="det0"||l[3]==="det1")){l=l.slice();l[3]=S.players[l[3]==="det0"?0:1]}return l});
+function meetLines(c,k,full){
+  var x=window.MEETX[c.id]&&window.MEETX[c.id][k];if(x&&x.length)return shortMeet(x,k,full).map(function(l){if(l[0]==="think"&&(l[3]==="det0"||l[3]==="det1")){l=l.slice();l[3]=S.players[l[3]==="det0"?0:1]}return l});
   var ps=PERSONA[k];
   return [[k,(ps&&ps.say)||"안녕하세요.","happy"],["narr",CAST[k].name+". "+(CAST[k].kind||"")+"."]];
 }
+function shortMeet(x,k,full){
+  if(full||x.length<=3)return x;
+  var out=[x[0]];
+  for(var i=1;i<x.length&&out.length<3;i++){var l=x[i];if(l[0]===k||(l[0]==="narr"&&l[3]===k))out.push(l)}
+  if(out.length<2)out.push(x[1]);
+  return out;
+}
+window.__meetLines=meetLines;
 var _gt=goTab;
 goTab=function(t,o){
   if(G&&t==="talk"&&o&&o.who){
@@ -11204,7 +11219,7 @@ goTab=function(t,o){
       try{saveProg()}catch(e){}
       toast(k);
       var self=this,args=arguments;
-      say(meetLines(c,k),function(){if(G&&CASES[G.ci]===c)_gt.apply(self,args)});
+      say(meetLines(c,k),function(){if(G&&CASES[G.ci]===c)_gt.apply(self,args)},true);
       return;
     }
   }
