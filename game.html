@@ -12220,6 +12220,32 @@ panicFx=function(who,kind,level,cb){
 window.__breakdown=breakdown;
 })();
 
+// ================= v80: talking mouth + bob while a line is typing =================
+(function(){
+var BIRDS=["owl","crow","duck","woodpecker","peacock","crane"];
+var css=document.createElement("style");
+css.textContent='.vnfig .mo{opacity:0}.vnfig.talk .mo{animation:moflap .2s steps(1) infinite}'+
+'@keyframes moflap{0%{opacity:1}50%{opacity:0}}'+
+'.vnfig.talk svg{animation:breathe 3.2s ease-in-out infinite,talkbob .2s ease-in-out infinite alternate}'+
+'@keyframes talkbob{from{translate:0 0}to{translate:0 -3px}}'+
+'@media (prefers-reduced-motion:reduce){.vnfig.talk svg{animation:none}.vnfig.talk .mo{animation:none}}';
+document.head.appendChild(css);
+function who(){if(!DL||!DL.lines)return null;var l=DL.lines[DL.i];if(!l)return null;var k=l[0];if(k==="narr"||k==="think"||k==="det")return null;return k}
+setInterval(function(){
+  var f=document.querySelector(".vnfig");if(!f)return;
+  var k=who(),on=!!(k&&DL.timer);
+  if(on&&!f.querySelector(".mo")){
+    var p=CAST[k],svg=f.querySelector("svg");
+    if(svg&&p&&BIRDS.indexOf(p.animal)<0&&k!=="det0"&&k!=="det1"){
+      var e=document.createElementNS("http://www.w3.org/2000/svg","ellipse");
+      e.setAttribute("class","mo");e.setAttribute("cx","50");e.setAttribute("cy",p.animal==="panda"||p.animal==="bear"?"73":"71");
+      e.setAttribute("rx","4.5");e.setAttribute("ry","3.2");e.setAttribute("fill","#3A1A22");svg.appendChild(e);
+    }
+  }
+  f.classList.toggle("talk",on);
+},90);
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
