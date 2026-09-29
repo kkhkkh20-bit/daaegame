@@ -17587,6 +17587,67 @@ add("meta",{name:"theme-color",content:"#0E1128"});
 if("serviceWorker" in navigator&&window.top===window)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
 })();
 
+/* v95: 1~4장 결합 완화 + 결합 짝 힌트 */
+(function(){
+ // 1~4장: 결합으로만 깨지던 말을 핵심 증거 하나로도 깨지게 한다. 결합은 그대로 쓸 수 있다.
+ var KEY={
+  cake:{0:"sill",1:"bell"},
+  window:{1:"foot",3:"ball"},
+  crown:{0:"rehearsal",1:"feather",3:"uvc"},
+  star:{0:"receipt",1:"fakestone"}
+ };
+ function widen(cid,list){if(!list)return;var k=KEY[cid];
+  list.slice().forEach(function(v){var m=/^cx_([a-z]+)_(\d+)$/.exec(v);if(!m||m[1]!==cid)return;var key=k[+m[2]];if(key&&list.indexOf(key)<0)list.push(key)})}
+ Object.keys(KEY).forEach(function(cid){var c=caseById(cid);if(!c)return;
+  c.contra.forEach(function(x){widen(cid,x.items)});
+  (BATTLE[cid]||[]).forEach(function(r){try{stmsOf(r).forEach(function(s){widen(cid,s.a)})}catch(e){}});
+ });
+ // 힌트 문구도 맞춘다
+ var H={
+  cake:"나비의 말은 마당 풀숲에서 나온 것, 창틀 틈을 '?'로 살펴본 것으로 깰 수 있어요. 둘을 결합하면 더 확실해져요.",
+  window:"보리의 \"공 없어\"에는 공을 '?'로 굴려 본 글씨를, \"창문 근처엔 안 갔어\"에는 창문 앞 발자국을 '?'로 살펴본 것을 내밀어 보세요.",
+  crown:"부리의 \"분장실엔 안 들어갔어\"에는 거울 앞 반짝이 가루를 '?'로 헤쳐 본 것을 내밀어 보세요. \"나비가 가져갔어\"에는 리허설 기록이 답해 줘요."
+ };
+ try{caseById("cake").hints[2]=H.cake;caseById("window").hints[2]=H.window;caseById("crown").hints[2]=H.crown}catch(e){}
+
+ // 결합 짝 힌트: 두 반쪽을 다 모았는데 아직 안 이었으면 알려 준다
+ function openPairs(c){var L=COMBO[c.id]||[],out=[];
+  L.forEach(function(x,i){var id="cx_"+c.id+"_"+i;if(G.found.indexOf(id)>=0)return;
+   var has=function(v){return G.found.indexOf(v)>=0||G.asked.indexOf(v)>=0};
+   if(has(x.a)&&has(x.b))out.push(x)});return out}
+ window.__openPairs=openPairs;
+ var _rl=renderLogic;renderLogic=function(c){var h=_rl(c);if(!h)return h;var n=openPairs(c).length;
+  if(!n)return h;return h.replace('</section>','<p class="cxpair">이어 볼 수 있는 게 '+n+'개 있어요. 기록에서 골라 결합해 보세요.</p></section>')};
+ // 한쪽만 내밀어 "뭔가 걸리는데"를 들은 뒤엔, 결합할 때 그 짝이 반짝인다
+ var _jp=judgePresent;judgePresent=function(c,tid,item){window.__cxHalf=item;return _jp.apply(this,arguments)};
+ var _jb=judgeBattle;judgeBattle=function(c,item){window.__cxHalf=item;return _jb.apply(this,arguments)};
+ function partnersOf(c,item){var r=[];(COMBO[c.id]||[]).forEach(function(x,i){if(G.found.indexOf("cx_"+c.id+"_"+i)>=0)return;
+  if(x.a===item)r.push(x.b);else if(x.b===item)r.push(x.a)});return r}
+ function mark(el,c){
+  // 선택한 증거에 아직 안 이은 짝이 모여 있으면 결합 버튼이 반짝인다
+  var sel=el.querySelector(".cr-th.on"),id=sel&&sel.dataset.crs,cb=el.querySelector("#crcomb");
+  if(cb&&id){var ps=partnersOf(c,id).filter(function(p){return G.found.indexOf(p)>=0||G.asked.indexOf(p)>=0});cb.classList.toggle("cxglow",ps.length>0)}
+  // 결합 중: 방금 한쪽만 내밀었던 증거라면 짝이 반짝인다
+  var comb=el.classList.contains("combining"),cs=el.querySelector(".cr-comb");
+  el.querySelectorAll(".cr-th.cxmate").forEach(function(b){b.classList.remove("cxmate")});
+  if(comb&&window.__cxNudged){var ps2=partnersOf(c,window.__cxNudged);
+   el.querySelectorAll(".cr-th").forEach(function(b){if(ps2.indexOf(b.dataset.crs)>=0)b.classList.add("cxmate")})}
+ }
+ var _or=openRecord;openRecord=function(c){var r=_or.apply(this,arguments);var el=document.querySelector(".crec2");
+  if(el){var busy=false;mark(el,c);new MutationObserver(function(){if(busy)return;busy=true;try{mark(el,c)}finally{busy=false}}).observe(el,{childList:true})}
+  return r};
+ // "뭔가 걸리는데"가 뜬 순간을 기억한다
+ var _say=say;say=function(lines){try{if(lines&&lines[0]&&lines[0][0]==="think"&&String(lines[0][1]).indexOf("결합하면 확실해질 것 같아")>=0&&window.__cxHalf){window.__cxNudged=window.__cxHalf;
+    lines=lines.slice();lines[0]=lines[0].slice();lines[0][1]+=" 기록에서 '결합'을 누르면 이어 볼 짝이 반짝일 거야."}}catch(e){}
+  return _say.apply(this,[lines].concat([].slice.call(arguments,1)))};
+ var css=document.createElement("style");
+ css.textContent='.cxpair{margin:8px 0 0;font-size:14px;color:#8A5A00;background:#FFF1C9;border-radius:10px;padding:6px 10px}'
+  +'#crcomb.cxglow{animation:cxg 1.2s ease-in-out infinite;box-shadow:0 0 0 2px #F2C230}'
+  +'.cr-th.cxmate{animation:cxg 1s ease-in-out infinite;box-shadow:0 0 0 3px #F2C230,0 0 14px #F2C230}'
+  +'@keyframes cxg{50%{box-shadow:0 0 0 3px #FFD84D,0 0 18px #FFD84D}}';
+ document.head.appendChild(css);
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
