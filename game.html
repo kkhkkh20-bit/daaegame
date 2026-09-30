@@ -4186,7 +4186,7 @@ function renderTalk(c){
   h+='<div class="tstage'+(G.enter?' enter':'')+'" id="bigp"><div class="tbg">'+(bgf?bgf():'')+'</div><div class="tfig'+(ps.cls==="panic"?' tremble':'')+(window.QUIRK&&QUIRK[k]?' '+QUIRK[k].cls:'')+'">'+pf(k,moodOf(c,k))+'</div><span class="tname">'+esc(CAST[k].name)+'<small>'+esc(ps.label)+'</small></span>'+(lk?'<span class="tlock">'+lockRow(lk)+'</span>':'')+'</div>';G.enter=false;
   var ts=visibleTalk(c,k).filter(function(t){return t.q!==""});
   h+='<div class="tpanel"><div class="topics">'+ts.map(function(t){var asked=G.asked.indexOf(t.id)>=0,br=G.broken[t.id],kd=br?(contraOf(c,t.id).kind||"culprit"):null;
-    return '<button class="topic'+(asked?' done':'')+'" data-'+(asked?'replay':'ask')+'="'+t.id+'">'+(asked?'':'<i class="tn"></i>')+'<span>'+esc(t.q)+'</span>'+(br?'<em class="tk k-'+kd+'">'+({culprit:"거짓",shy:"비밀",mistake:"착각"}[kd])+'</em>':'')+'</button>'}).join("")+'</div>';
+    return '<button class="topic'+(asked?' done':'')+'" data-'+(asked?'replay':'ask')+'="'+t.id+'">'+(asked?'':'<i class="tn"></i>')+'<span>'+esc(t.q)+'</span>'+(br?'<em class="tk k-culprit">모순</em>':'')+'</button>'}).join("")+'</div>';
   var cn=toolOn("chat")?chatNext(c,k):null;
   if(cn)h+='<button class="chatbtn'+(cn.fresh?' new':'')+'" data-chat="'+k+'"><b>수다</b><span>'+(cn.fresh?'사건 말고 다른 이야기':'오늘은 다 했어요')+'</span>'+hearts(k)+'</button>';
   return h+'</div></div>';
@@ -4289,8 +4289,7 @@ function judgePresent(c,tid,item){
       var lines=[["narr",x.say,kd.mood,who,fx]];
       var nCul=c.contra.filter(function(z){return (z.kind||"culprit")==="culprit"&&G.broken[z.t]}).length;
       var _say=say;say=function(l,d,k){say=_say;panicFx(who,x.kind||"culprit",x.kind==="culprit"?Math.min(nCul-1,2):0,function(){_say(l,d,k)})};
-      if(x.kind!=="culprit")lines.push(["think",x.kind==="shy"?"거짓말을 했다고 다 범인은 아니구나. "+jo(name,"은","는")+" 사정이 있어서 숨긴 거였어.":"거짓말이 아니라 착각이었구나. "+jo(name,"은","는")+" 정말 몰랐던 거야.","",curPlayer()]);
-      else lines.push(["think",name+"… 확실히 뭔가 숨기고 있어. 표정이 점점 굳어 가.","",curPlayer()]);
+      lines.push(["think",window.__brThink(name,tid),"",curPlayer()]);
       var isDoor=x.unlock&&String(x.unlock).indexOf("door:")===0;if(x.unlock&&!isDoor)lines.push(["narr",name+"에게 물어볼 새 질문이 생겼어요.",kd.mood,who]);
       say(lines,function(){
         G.notice={good:true,title:kd.title,text:(x.unlock&&!isDoor)?jo(name,'이','가')+' 숨기던 이야기를 물어보세요.':jo(name,'이','가')+' 말을 바꿨어요.'};render();if(x.unlock&&!isDoor)setTimeout(function(){var q=app.querySelector('[data-ask="'+x.unlock+'"]');if(q)q.scrollIntoView({block:"center",behavior:"smooth"})},150);
@@ -18021,47 +18020,40 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
     {w:"buri",t:"저는 나비가 수상해요. 왕 역할이니까 왕관이 제일 탐났을 거예요.",m:"nervous",s:{nabi:25}},
     {w:"nabi",t:"흥. 난 부리가 수상해. 아까부터 가방을 꼭 끌어안고 안 놓잖아.",m:"smug",s:{buri:20}},
     {w:"yeoni",t:"난… 토리가 조금 마음에 걸려. 리허설 중에 갑자기 사라졌거든.",m:"sad",s:{tori:25}},
-    {w:"tori",t:"나, 난 아니야…! 난 그냥… 그냥…",m:"cry",s:{tori:10}},
+    {w:"tori",t:"나, 난 아니야…! 난 그냥… 그냥…",m:"sad",s:{tori:10}},
     {w:"teacher",t:"그리고 소품실 창틀엔 까만 깃털도 있었어요. 밖에서 누가 들어왔을지도 몰라요.",m:"nervous"},
-    {w:"det1",t:"다들 생각이 제각각이야. 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
-   {type:"debate",topic:"토리는 사라진 10분 동안 어디 있었을까?",bullets:["rehearsal","hanky","order","glitter"],
-    hint:"토리가 사라진 동안 어디 있었는지 알려 주는 물건이 있어. 무대 옆에서 찾은 것 중에.",
+    {w:"det1",t:"다들 생각이 제각각이야. 하나씩 증거로 정리해 보자!"}]},
+   {type:"debate",mode:"no",topic:"토리는 사라진 10분 동안 어디 있었을까?",bullets:["rehearsal","hanky","order","glitter"],
+    hint:"토리가 그 10분 동안 어디 있었는지 알려 주는 물건이 있어. 무대 옆 커튼 뒤에서 찾은 것.",
     stms:[
-     {w:"yeoni",t:"리허설 기록에 토리가 {10분 만에 사라졌다}고 적혀 있어.",k:"no",a:[]},
-     {w:"buri",t:"10분이면 {소품 상자}까지 다녀오고도 남아요.",k:"no",a:[],m:"nervous"},
-     {w:"teacher",t:"그 10분 동안 토리가 {어디 있었는지} 아무도 몰라요.",k:"no",a:["hanky","tori3"],ok:[
-      {w:"det1",t:"아니야, 알 수 있어! 토리는 무대 옆 커튼 뒤에 있었어. 여기 젖은 손수건이 떨어져 있었거든."},
-      {w:"tori",t:"…응. 무대가 너무 떨려서 커튼 뒤에 숨어서 울었어. 창피해서 말 못 했어…",m:"cry",s:{tori:-35}},
+     {w:"yeoni",t:"리허설 기록에 토리가 {10분 만에 무대에서 사라졌다}고 적혀 있어."},
+     {w:"buri",t:"토리는 그 10분 동안 {소품 상자에서 왕관을 꺼냈을} 거예요.",k:"no",a:["hanky","tori3"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 토리는 그때 무대 옆 커튼 뒤에 있었어. 커튼 뒤에 토리의 젖은 손수건이 떨어져 있었거든."},
+      {w:"tori",t:"…응. 무대가 너무 떨려서 커튼 뒤에 숨어서 울었어. 창피해서 말 못 했어…",m:"sad",s:{tori:-35}},
       {w:"yeoni",t:"토리야…! 그럼 말해 주지. 바보.",m:"sad"},
-      {w:"teacher",t:"그럼 토리는 소품 상자 근처엔 없었던 거네요."}]}]},
-   {type:"debate",topic:"왕 역할인 나비가 가져갔을까?",bullets:["rehearsal","order","roles","crowfeather"],
-    hint:"나비가 리허설 동안 어디 있었는지 적어 둔 기록이 있어.",
+      {w:"teacher",t:"그럼 토리는 소품 상자 근처엔 가지 않았던 거네요."}]},
+     {w:"teacher",t:"왕관은 {소품 상자}에 넣어 두었었어요."}]},
+   {type:"debate",mode:"yes",topic:"왕 역할인 나비가 가져갔을까?",bullets:["rehearsal","order","roles","glitter"],
+    hint:"리허설 동안 누가 어디 있었는지 곰 선생님이 적어 둔 기록이 있어.",
     stms:[
-     {w:"buri",t:"나비는 리허설이 끝나자마자 {무대 뒤로 갔어요}. 제가 봤어요.",k:"no",a:["rehearsal","teacher1"],m:"nervous",ok:[
-      {w:"det0",t:"리허설 기록에는 나비가 무대를 한 번도 떠나지 않았다고 적혀 있다. 곰 선생님이 옆에서 직접 쓴 기록이지."},
-      {w:"buri",t:"그, 그건… 제가 잘못 봤나 봐요…",m:"nervous",s:{buri:20}},
-      {w:"nabi",t:"흥. 이제야 알겠어?",m:"smug",s:{nabi:-30}}]},
-     {w:"teacher",t:"왕관은 공연 직전에 소품 담당이 나비에게 건네기로 했었죠."},
+     {w:"buri",t:"나비는 리허설이 끝나자마자 {무대 뒤로 갔어요}. 제가 봤어요.",m:"nervous"},
      {w:"nabi",t:"흥. 난 리허설 내내 {무대 위에 있었어}. 한 발짝도 안 내려갔다고.",k:"yes",a:["rehearsal","teacher1"],m:"smug",ok:[
-      {w:"det1",t:"그 말이 맞아! 리허설 기록에도 나비는 계속 무대 위였다고 적혀 있어."},
+      {w:"det1",t:"그 말이 맞아! 곰 선생님의 리허설 기록에 '나비는 계속 무대 위'라고 적혀 있어."},
       {w:"nabi",t:"흥. 거봐.",m:"smug",s:{nabi:-30}},
-      {w:"yeoni",t:"그럼 부리가 '나비가 가져갔다'고 한 건…?"},
-      {w:"buri",t:"부, 부엉…?!",m:"nervous",s:{buri:20}}]}]},
-   {type:"debate",topic:"창틀의 까만 깃털, 밖에서 누가 들어왔을까?",bullets:["crowfeather","bag","earmuff","sequin"],
-    hint:"왕관이 창밖으로 날아가지 않았다는 걸 보여 주는 게 있어. 복도에서 본 불룩한 것.",
+      {w:"yeoni",t:"그럼 부리가 '나비가 무대 뒤로 갔다'고 한 건…?"},
+      {w:"buri",t:"부, 부엉…?! 제가 잘못 봤나 봐요…",m:"nervous",s:{buri:20}}]},
+     {w:"yeoni",t:"나비는 왕 역할이니까 {왕관을 미리 받아 갔을지도} 몰라."}]},
+   {type:"debate",mode:"no",topic:"왕관은 창밖으로 사라졌을까?",bullets:["crowfeather","bag","earmuff","sequin"],
+    hint:"왕관이 아직 이 안에 있다는 걸 보여 주는 게 있어. 복도에서 본 불룩한 것.",
     stms:[
-     {w:"teacher",t:"소품실 창틀에 {까만 깃털}이 있었어요. 밖에서 누가 들어온 게 분명해요.",k:"no",a:[],m:"nervous"},
-     {w:"buri",t:"맞아요! 까마귀가 {왕관을 물고 날아갔을} 거예요!",k:"no",a:["bag","feather","uvc","cx_crown_3"],m:"nervous",ok:[
-      {w:"det1",t:"아니야, 왕관은 날아가지 않았어! 부리 가방 지퍼 틈으로 왕관 끝이 보였거든."},
+     {w:"teacher",t:"소품실 창틀에 {까만 깃털과 단추}가 떨어져 있었어요.",m:"nervous"},
+     {w:"buri",t:"까마귀가 {왕관을 물고 창밖으로 날아갔을} 거예요!",k:"no",a:["bag","feather","uvc","cx_crown_3"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 왕관은 날아가지 않았어. 부리 가방 지퍼 틈으로 반짝이 가루와 왕관 끝이 보였거든."},
       {w:"buri",t:"부, 부엉?!",m:"nervous",s:{buri:35}},
       {w:"yeoni",t:"거봐! 가방에서 금색으로 반짝였다니까!"},
       {w:"teacher",t:"부리야… 가방을 한번 열어 볼 수 있겠니?",m:"sad"},
       {w:"buri",t:"아, 안 돼요! 이 가방은…!",m:"nervous"}]},
-     {w:"nabi",t:"창틀엔 {반짝이 단추}도 떨어져 있었어. 그 까마귀는 작은 반짝이를 노린 거야.",k:"yes",a:["crowfeather","sequin"],ok:[
-      {w:"det0",t:"나비 말이 맞다. 창틀엔 까만 깃털과 단추뿐이었어. 작은 반짝이를 노린 흔적이지, 커다란 왕관이 아니야."},
-      {w:"det1",t:"그럼 왕관은 아직 이 안 어딘가에 있어!"},
-      {w:"yeoni",t:"…부리 가방, 아까 금색으로 반짝였는데."},
-      {w:"buri",t:"부, 부엉?!",m:"nervous",s:{buri:35}}]}]},
+     {w:"nabi",t:"창틀 단추는 {작은 반짝이}야. 까마귀는 그런 걸 좋아하잖아."}]},
    {type:"vote",q:"왕관을 가져간 사람은?",votes:{teacher:"buri",yeoni:"buri",tori:"buri",nabi:"buri",buri:"nabi"},ok:[
     {w:"det0",t:"모두의 추리가 한 사람을 가리키고 있다."},
     {w:"det1",t:"부리. 이제 네 이야기를 들어야겠어."},
@@ -18078,7 +18070,8 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function curPh(){return DEBATE[C.id].phases[stt().pi]}
  function susOf(k){var s=stt().sus;return s[k]==null?10:s[k]}
  function addSus(d){if(!d)return;var s=stt().sus;Object.keys(d).forEach(function(k){s[k]=Math.max(0,Math.min(100,susOf(k)+d[k]))})}
- function words(t,st){var i=0;return esc(t).replace(/\{([^}]*)\}/g,function(m,w){return '<button class="wk '+(st.k==="yes"?"yes":"no")+'" type="button" data-wk="1">'+w+'</button>'})}
+ function modeOf(ph){if(ph.mode)return ph.mode;var s=(ph.stms||[]).filter(function(x){return x.k&&x.a&&x.a.length})[0];return s?s.k:"no"}
+ function words(t,st){var i=0;return esc(t).replace(/\{([^}]*)\}/g,function(m,w){return '<button class="wk" type="button" data-wk="1">'+w+'</button>'})}
  function seats(spk,vote){var D=DEBATE[C.id];
   return '<div class="rt-seats">'+D.seats.map(function(k){var v=susOf(k),p=prev[k]==null?v:prev[k];
    return '<div class="rs'+(k===spk?' on':'')+(vote?' pick':'')+'" data-seat="'+k+'">'+pf(k,k===spk&&Q?(Q[qi]||{}).m||"":"")+'<b>'+esc(nm(k))+'</b>'
@@ -18087,31 +18080,33 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function draw(){if(!el)return;var D=DEBATE[C.id],ph=curPh(),h='';
   h+='<div class="rt-top"><b>'+esc(D.title)+'</b><span>'+esc(ph.topic||ph.q||D.sub)+'</span><span class="rt-hp">'+Array.apply(null,{length:hpMax(C)}).map(function(_,i){return '<i class="'+(i<(G.hp==null?hpMax(C):G.hp)?'on':'')+'"></i>'}).join("")+'</span></div>';
   if(Q){var L=Q[qi];h+=seats(L.w)+'<div class="rt-mid talk" id="rtnext"><div class="rt-big">'+pf(L.w,L.m||"")+'</div><div class="rt-bub"><small>'+esc(nm(L.w))+'</small><p>'+hl(pname(L.t))+'</p><span class="nx">▼</span></div></div>'}
-  else if(ph.type==="debate"){var st=ph.stms[si];
-   h+=seats(st.w)+'<div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div>'
-    +'<div class="rt-nav"><button type="button" id="rtprev">◀</button><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span><button type="button" id="rtnx">▶</button></div></div>'
+  else if(ph.type==="debate"){var st=ph.stms[si],md=modeOf(ph),ev=sel&&evById(C,sel);
+   h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div>'
+    +'<div class="rt-nav"><button type="button" id="rtprev">◀</button><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span><button type="button" id="rtnx">▶</button></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p></div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
     +'<div class="rt-bul">'+ph.bullets.filter(has).map(function(id){return '<button type="button" class="bl'+(sel===id?' on':'')+'" data-bl="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(C,id))+'</span></button>'}).join("")+'</div>'
-    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button><span><i class="kno"></i>노란 말: "그건 아니야!" <i class="kyes"></i>파란 말: "그 말이 맞아!"</span></div>'}
+    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button><span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
   else if(ph.type==="vote"){var V=ph.votes||{};h+=seats(null,false)+'<div class="rt-mid vote"><p class="rt-q">'+esc(ph.q)+'</p><p class="rt-sub">모두의 표가 나왔어요. 범인이라고 생각하는 사람을 눌러요.</p><div class="rt-vg">'+C.suspects.map(function(k){var by=Object.keys(V).filter(function(v){return V[v]===k});return '<button type="button" class="vc" data-seat="'+k+'">'+pf(k,by.length>1?"nervous":"")+'<b>'+esc(nm(k))+'</b><span class="vby">'+by.map(function(v){return '<i>'+pf(v,"")+'</i>'}).join("")+'</span><em>'+by.length+'표</em></button>'}).join("")+'</div></div>'}
   el.innerHTML='<div class="rt-in">'+h+'</div>';
   requestAnimationFrame(function(){el.querySelectorAll(".sm u").forEach(function(u){u.style.width=u.dataset.v+"%"});D.seats.forEach(function(k){prev[k]=susOf(k)})});
   bind()}
  function sayQ(lines,done){Q=lines;qi=0;Q.done=done;applyLine();draw()}
  function applyLine(){var L=Q&&Q[qi];if(!L)return;addSus(L.s);try{SFX.blip(VOICE[L.w]||0)}catch(e){}}
- function nextQ(){if(busy)return;qi++;if(qi>=Q.length){var d=Q.done;Q=null;qi=0;d&&d();return}applyLine();draw()}
+ function nextQ(){if(busy||!Q)return;qi++;if(qi>=Q.length){var d=Q.done;Q=null;qi=0;d&&d();return}applyLine();draw()}
  function nextPh(){var s=stt();s.pi++;si=0;sel=null;try{saveProg()}catch(e){}start()}
  function start(){var ph=curPh();
   if(!ph){finish();return}
-  if(ph.type==="talk"){sayQ(ph.lines,nextPh);return}
-  if(ph.type==="debate"){try{banner("토론 개시",ph.topic)}catch(e){}draw();return}
+  if(ph.type==="talk"){el.classList.toggle("shaken",!!ph.ban);if(ph.ban){try{SFX.shock()}catch(e){}banner(ph.ban,DEBATE[C.id].sub).then(function(){sayQ(ph.lines,nextPh)});return}sayQ(ph.lines,nextPh);return}
+  el.classList.remove("shaken");
+  if(ph.type==="debate"){try{banner(modeOf(ph)==="no"?"토론 개시 · 틀린 말 찾기":"토론 개시 · 맞는 말 찾기",ph.topic)}catch(e){}draw();return}
   if(ph.type==="vote"){try{banner("투표",ph.q)}catch(e){}draw();return}}
  function hurt(msg){G.wrong=(G.wrong|0)+1;if(G.hp==null)G.hp=hpMax(C);G.hp=Math.max(1,G.hp-1);try{saveProg()}catch(e){}
   flash("헛짚었다!",true).then(function(){sayQ([{w:"det1",t:msg}],function(){draw()})})}
  function fire(){var ph=curPh(),st=ph.stms[si];if(!sel){try{SFX.huh()}catch(e){}var n=el.querySelector(".rt-nav span");if(n){n.classList.remove("shake");void n.offsetWidth;n.classList.add("shake")}return}
   busy=true;
-  if(st.a&&st.a.indexOf(sel)>=0){SFX.gotcha();
-   (window.__hush?window.__hush(false):Promise.resolve()).then(function(){return flash(st.k==="yes"?"그 말이 맞아!":"그건 아니야!",false,true)}).then(function(){busy=false;if(window.__crowd)window.__crowd();sayQ(st.ok||[],nextPh)})}
-  else{busy=false;hurt(st.a&&st.a.length?"이 증거로는 그 말을 어떻게 할 수 없어. 다른 증거를 골라 보자.":"그 말은 사실인 것 같아. 다른 문장의 빛나는 말을 살펴보자.")}}
+  var md=modeOf(ph),hit=st.k===md&&st.a&&st.a.length;
+  if(hit&&st.a.indexOf(sel)>=0){SFX.gotcha();
+   (window.__hush?window.__hush(false):Promise.resolve()).then(function(){return flash(md==="yes"?"그 말이 맞아!":"그건 아니야!",false,true)}).then(function(){busy=false;if(window.__crowd)window.__crowd();sayQ(st.ok||[],nextPh)})}
+  else{busy=false;hurt(hit?(md==="yes"?"이 증거로는 그 말이 맞다고 증명할 수 없어. 다른 증거를 골라 보자.":"이 증거로는 그 말을 반박할 수 없어. 다른 증거를 골라 보자."):(md==="yes"?"그 말은 편들 수 없어. 증거가 없는 말이야. 다른 문장을 살펴보자.":"그 말은 사실이야. 틀린 말을 찾아야 해. 다른 문장을 살펴보자."))}}
  function vote(k){var ph=curPh(),cul=culOf(C);
   if(k!==cul){hurt("그렇게 보기엔 증거가 부족해. 지금까지 나온 이야기를 다시 떠올려 보자.");return}
   SFX.gotcha();flash("범인은 너다!",false,true).then(function(){sayQ(ph.ok||[],nextPh)})}
@@ -18144,7 +18139,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  var css=document.createElement("style");
  css.textContent=
  '.rt{position:fixed;inset:0;z-index:55;background:radial-gradient(ellipse at 50% 38%,#3A2E6E 0%,#151233 62%,#0A0920 100%);color:#fff;display:flex;justify-content:center;overflow:auto}'+
- '.rt-in{width:100%;max-width:520px;display:flex;flex-direction:column;gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) 14px calc(14px + env(safe-area-inset-bottom,0px))}'+
+ '.rt.shaken{background:radial-gradient(ellipse at 50% 38%,#6E2E3E 0%,#2A1224 62%,#12080F 100%)}.rt.shaken .rt-big svg{animation:hjit .12s linear infinite}'+'.rt-in{width:100%;max-width:520px;display:flex;flex-direction:column;gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) 14px calc(14px + env(safe-area-inset-bottom,0px))}'+
  '.rt-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.rt-top b{font-family:var(--display);font-weight:400;font-size:20px;color:#FFD84D}.rt-top>span:not(.rt-hp){flex:1;font-size:14px;color:#D9D6F5}'+
  '.rt-hp{display:flex;gap:3px}.rt-hp i{width:12px;height:12px;border-radius:50%;background:#3A3566;border:2px solid #0A0920}.rt-hp i.on{background:#FFD84D}'+
  '.rt-seats{display:flex;justify-content:space-between;gap:4px;background:rgba(10,9,32,.45);border-radius:999px 999px 18px 18px;padding:8px 8px 10px;border-bottom:4px solid #6B4A2E}'+
@@ -18154,13 +18149,692 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  '.rt-mid{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:250px}.rt-mid.talk{cursor:pointer}'+
  '.rt-big svg{width:150px;height:auto;filter:drop-shadow(0 8px 0 rgba(0,0,0,.35));animation:breathe 3.2s ease-in-out infinite}'+
  '.rt-bub{width:100%;background:#FFFCF3;color:#1B2447;border:3px solid #1B2447;border-radius:16px;padding:10px 14px;position:relative;box-shadow:0 6px 0 rgba(0,0,0,.35)}.rt-bub small{display:block;font-family:var(--display);font-size:14px;color:#8A5A00}.rt-bub small em{font-style:normal;color:#6B7390;font-size:12px;margin-left:6px}.rt-bub p{margin:4px 0 0;font-size:17px;line-height:1.6}.rt-bub .nx{position:absolute;right:12px;bottom:6px;font-size:12px;color:#6B7390}'+
- '.wk{border:none;border-radius:6px;padding:0 4px;margin:0 1px;font:inherit;cursor:pointer;animation:wkg 1.2s ease-in-out infinite}.wk.no{background:#FFD84D;color:#1B2447;box-shadow:0 0 0 2px #E0A800}.wk.yes{background:#8FC8FF;color:#0B2447;box-shadow:0 0 0 2px #2F6FD6}'+
+ '.rt-goal{display:flex;flex-direction:column;align-items:center;gap:2px;border-radius:14px;padding:6px 12px;font-size:13px;text-align:center;border:3px solid #0A0920}.rt-goal b{font-family:var(--display);font-weight:400;font-size:19px}.rt-goal.no{background:#FFD84D;color:#1B2447}.rt-goal.yes{background:#8FC8FF;color:#0B2447}'+
+ '.rt-evd{display:flex;gap:10px;align-items:flex-start;background:#FFFCF3;color:#1B2447;border:2px solid #0A0920;border-radius:12px;padding:8px 10px;font-size:13px;line-height:1.5}.rt-evd .evic{width:36px;height:36px;flex:none}.rt-evd b{font-family:var(--display);font-weight:400;font-size:15px}.rt-evd p{margin:2px 0 0}.rt-evd.empty{display:block;background:rgba(255,252,243,.12);color:#D9D6F5;border-style:dashed;text-align:center}'+
+ '.wk{border:none;border-radius:6px;padding:0 4px;margin:0 1px;font:inherit;cursor:pointer;animation:wkg 1.2s ease-in-out infinite}.wk{background:#FFB547;color:#1B2447;box-shadow:0 0 0 2px #C9701A}'+
  '@keyframes wkg{50%{filter:brightness(1.25);transform:translateY(-1px)}}'+
  '.rt-nav{display:flex;align-items:center;gap:8px;width:100%}.rt-nav button{width:44px;height:40px;border-radius:12px;border:2px solid #0A0920;background:#EDE6CF;color:#1B2447;font-size:18px}.rt-nav span{flex:1;text-align:center;font-size:13px;color:#D9D6F5}.rt-nav span.shake{animation:shake .4s}'+
  '.rt-bul{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.rt-bul .bl{display:flex;gap:6px;align-items:center;border:2px solid #0A0920;border-radius:12px;background:#2C2760;color:#fff;padding:6px;text-align:left;font-size:13px}.rt-bul .bl .evic{width:30px;height:30px;flex:none}.rt-bul .bl.on{background:#FFD84D;color:#1B2447;box-shadow:0 0 0 3px #fff}'+
  '.rt-foot{display:flex;align-items:center;gap:10px;font-size:11px;color:#B9B5E0}.rt-foot button{border:2px solid #0A0920;border-radius:999px;background:#EDE6CF;color:#1B2447;padding:4px 12px;font-size:13px}.rt-foot i{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 3px 0 6px;vertical-align:-1px}.rt-foot .kno{background:#FFD84D}.rt-foot .kyes{background:#8FC8FF}'+
  '.rt-sub{font-size:13px;color:#D9D6F5;margin:0}.rt-vg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:100%}.vc{display:flex;flex-direction:column;align-items:center;gap:2px;border:3px solid #0A0920;border-radius:16px;background:#FFFCF3;color:#1B2447;padding:8px}.vc>svg{width:64px;height:auto}.vc b{font-family:var(--display);font-weight:400;font-size:16px}.vc .vby{display:flex;gap:2px;min-height:22px}.vc .vby i{width:22px;height:22px;display:block}.vc .vby svg{width:100%;height:100%}.vc em{font-style:normal;font-size:12px;color:#D23A34}.vc:active{transform:scale(.97)}'+'.rt-mid.vote{justify-content:flex-start}.rt-q{font-family:var(--display);font-size:24px;color:#FFD84D;margin:20px 0 4px}'+
  '@media (prefers-reduced-motion:reduce){.wk,.rt-big svg{animation:none}}';
+ document.head.appendChild(css);
+})();
+
+/* v103: 원탁 회의 4~15장 데이터 */
+(function(){var DEBATE=window.DEBATE;
+DEBATE.star={
+  title:"원탁 회의",sub:"별빛 돌을 바꿔치기한 사람은?",seats:["owlgp","kongi","bori","yeoni","karo","nabi","kkwak"],need:["owlfeather","dancelamp","receipt"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"owlgp",t:"허허… 다들 모여 주었구나. 9시까지 등불을 되살리려면, 먼저 누가 그랬는지 알아야겠지.",m:"sad"},
+    {w:"karo",t:"후후, 저는 할아버지가 수상해요. 낮에 등불을 닦으셨다면서요? 그때 돌을 만지셨겠죠.",m:"smug",s:{owlgp:25}},
+    {w:"kongi",t:"킁킁! 나도 할아버지가 수상했어. 6시 57분에 등불에서 커다란 까만 날개가 날아갔거든!",s:{owlgp:20}},
+    {w:"owlgp",t:"허허… 할 말이 없구나.",m:"sad"},
+    {w:"yeoni",t:"난 보리가 좀 마음에 걸려. 부러진 사다리 발판에 갈색 털이랑 꿀 자국이 묻어 있었대.",s:{bori:20}},
+    {w:"bori",t:"헤헤… 사, 사다리는 내가 부러뜨린 게 맞아. 그래도 등불엔 손도 안 댔어!",m:"nervous"},
+    {w:"nabi",t:"흥. 난 까로 아저씨가 수상해. 6시 반에 우체국에 와서 반짝이 우표 있냐고 물었거든.",m:"smug",s:{karo:20}},
+    {w:"karo",t:"후후, 우표를 묻는 게 죄인가요? 전 그저 성실한 장사꾼이에요.",m:"smug"},
+    {w:"kkwak",t:"꽥… 9시에 엄마랑 동생들이 와. 등불이 없으면 연못을 못 찾아…",m:"sad"},
+    {w:"det1",t:"9시까지 시간이 없어. 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
+   {type:"debate",mode:"no",topic:"등불에서 날아간 까만 날개, 부엉이 할아버지였을까?",bullets:["owlfeather","glasscase","ladder","dancelamp"],
+    hint:"할아버지 깃털은 무슨 색이었지? 사다리길 덤불에서 찾은 할아버지 깃털을 떠올려 봐.",
+    stms:[
+     {w:"bori",t:"할아버지는 날개가 있으니까, {사다리 없이도} 언덕에 올라갈 수 있잖아…",m:"nervous"},
+     {w:"kongi",t:"6시 57분에 등불에서 날아간 까만 날개는 {부엉이 할아버지}였어! 틀림없어!",k:"no",a:["owlfeather","feather_black","owlgp2","kongi3"],ok:[
+      {w:"det1",t:"그건 아니야! 사다리길 덤불에서 찾은 할아버지 깃털은 갈색 점무늬였어. 까만 날개일 수 없어."},
+      {w:"kongi",t:"어? 킁킁… 맞다, 할아버지는 갈색이잖아! 어두워서 착각했나 봐.",m:"confused",s:{kongi:-5}},
+      {w:"owlgp",t:"나는 7시 5분에야 허겁지겁 올라갔단다. 그땐 이미 빛이 없었지.",m:"sad",s:{owlgp:-30}},
+      {w:"det0",t:"그렇다면 6시 57분에 날아간 까만 새는 따로 있다는 거다."}]},
+     {w:"owlgp",t:"풀밭에 떨어진 {안경집은 내 것이 맞단다}. 부끄러워서 말을 못 했구나.",m:"sad"}]},
+   {type:"debate",mode:"yes",topic:"그 시각, 여니는 어디서 무엇을 했을까?",bullets:["dancelamp","fishsnack","glassjar","torn"],
+    hint:"연못가에 빙글빙글 원을 그린 발자국이 있었어. 그 옆에 놓여 있던 건?",
+    stms:[
+     {w:"karo",t:"여니 양은 저녁 내내 광장에 없었다지요? 그 사이 {언덕에 올라갔을}지도 모르죠.",m:"smug"},
+     {w:"kongi",t:"킁킁, 여니는 {연못 쪽엔 안 갔어}. 아까 그렇게 말했잖아."},
+     {w:"kkwak",t:"여니 언니는 그때 연못가에서 {작은 등불을 들고 춤 연습을 하고 있었어}!",k:"yes",a:["dancelamp","kkwak1","yeoni2"],ok:[
+      {w:"det1",t:"그 말이 맞아! 연못가 주황 리본 등불 둘레에 발자국이 빙글빙글 원을 그렸어. 거기서 춤을 춘 거야."},
+      {w:"yeoni",t:"아이참, 비밀이었는데! 할아버지 은퇴식에서 보여 드릴 등불 춤을 연습했어.",m:"shy",s:{yeoni:-30}},
+      {w:"kkwak",t:"그때 까만 새 그림자가 연못 위를 휙 지나갔어. 발에 반짝이는 걸 꽉 쥐고!"},
+      {w:"det0",t:"등불에서 날아간 까만 날개, 반짝이는 걸 쥐고 연못을 지난 까만 새. 같은 새일 거다."},
+      {w:"nabi",t:"흥. 까맣고 반들반들한 새라… 이 자리에 딱 한 명 있지 않아?",m:"smug",s:{karo:15}}]}]},
+   {type:"debate",mode:"yes",topic:"'범인은 부엉이' 쪽지, 누가 썼을까?",bullets:["receipt","fishsnack","claw","glasscase"],
+    hint:"쪽지 종이에서 나는 냄새를 떠올려 봐. 같은 냄새가 나는 종이가 광장에 또 있었어.",
+    stms:[
+     {w:"karo",t:"쪽지를 쓴 분은 {할아버지를 직접 본} 친절한 시민이겠죠. 후후.",m:"smug"},
+     {w:"bori",t:"쪽지 말대로 할아버지가 {돌을 빼돌렸을}지도… 모르잖아…",m:"nervous"},
+     {w:"kongi",t:"킁킁! 그 쪽지 냄새, {인쇄소 종이 냄새랑 똑같아}! 축제 음식 냄새랑은 완전 달라.",k:"yes",a:["receipt","anon"],ok:[
+      {w:"det1",t:"그 말이 맞아! 인쇄소 영수증 종이에서도 똑같은 인쇄 잉크 냄새가 났어."},
+      {w:"det0",t:"그 영수증의 받는 곳은 까로 상회였지. 쪽지 글씨도 유난히 각져 있고."},
+      {w:"kongi",t:"이번엔 내 코, 착각 아니야! 킁킁.",m:"smug"},
+      {w:"karo",t:"자, 잠깐만요. 인쇄 잉크 냄새야 인쇄소에 가 본 사람이면 다 나지요!",m:"nervous",s:{karo:25}}]}]},
+   {type:"vote",q:"별빛 돌을 바꿔치기한 사람은?",votes:{owlgp:"karo",kongi:"karo",bori:"karo",yeoni:"karo",nabi:"karo",kkwak:"karo",karo:"owlgp"},ok:[
+    {w:"det0",t:"까만 새, 반짝이는 것, 인쇄 잉크 냄새가 나는 쪽지. 모두 한 사람을 가리키고 있다."},
+    {w:"det1",t:"까로 아저씨. 이제 아저씨 이야기를 들어야겠어."},
+    {w:"karo",t:"후후… 냄새랑 그림자뿐이잖아요? 좋아요, 그럼 증거로 증명해 보시죠!",m:"smug"}]}
+  ]};
+DEBATE.bell={
+  title:"원탁 회의",sub:"달빛 종의 추를 가져간 사람은?",seats:["ppul","tok","bami","sling","seol","owlgp"],need:["m_speech","m_safe","m_rope"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"ppul",t:"에헴! 촌장으로서 말하건대, 백 년 만에 달빛 종이 멎었소. 오늘 밤 안에 범인을 찾아야 하오.",m:"nervous"},
+    {w:"ppul",t:"나는 톡이 수상하오. 작업대에 덜 마른 은색 페인트가 있었다지 않소? 추도 은빛이오!",s:{tok:25}},
+    {w:"tok",t:"딸깍… 저는 촌장님이 마음에 걸려요. 금고 손잡이에 촌장님 목걸이 줄이 걸려 있었다던데요.",m:"nervous",s:{ppul:25}},
+    {w:"sling",t:"제가 도와드릴까요? 저는 밤이가 수상해요. 종탑 처마에 매달려 살잖아요. 종이랑 제일 가깝죠.",m:"happy",s:{bami:25}},
+    {w:"bami",t:"…어른들은 늘 그래. 제일 작은 애부터 의심하지.",m:"smug"},
+    {w:"bami",t:"난 배달부가 수상해. 한 달 전에 왔는데, 어디서 왔는지 아무도 모르잖아.",s:{sling:20}},
+    {w:"seol",t:"…10시 정각에 종이 마지막으로 울렸어요. 그리고 10시 10분쯤, 누가 사다리를 올라갔어요.",m:"nervous"},
+    {w:"seol",t:"…종 아래 어둠 속이라 얼굴은 못 봤어요. 한 번 더 떠올려 봐도요.",m:"sad"},
+    {w:"owlgp",t:"허허… 종이 멎은 밤, 모두가 서로를 의심하는구나.",m:"sad"},
+    {w:"det1",t:"우린 이 마을에선 낯선 사람이지만… 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
+   {type:"debate",mode:"yes",topic:"촌장님의 연설문, 누가 썼을까?",bullets:["m_speech","m_echo","m_flake","m_safe"],
+    hint:"회관에서 찾은 촌장님 연설문, 누구 글씨였더라? 여백에 적힌 말도 떠올려 봐.",
+    stms:[
+     {w:"ppul",t:"에헴, 10시엔 회관에서 연설문을 썼소. {내가 직접}, 한 글자 한 글자.",m:"smug"},
+     {w:"sling",t:"글씨가 평소와 다르다면 {촌장님이 급하게 쓰셔서}겠죠. 바쁘신 분이니까요.",m:"happy"},
+     {w:"bami",t:"…그 연설문, {촌장이 쓴 거 아니야}. 어른들은 늘 그래.",k:"yes",a:["m_speech","ppul4"],m:"smug",ok:[
+      {w:"det1",t:"그 말이 맞아! 연설문은 밤이의 글씨였어. 여백엔 '이 부분은 거짓말이에요'라고도 적혀 있었고."},
+      {w:"ppul",t:"에, 에헴… 그렇소. 연설문은 밤이가 쓰오. 이건 비밀이오, 정말로!",m:"shy",s:{ppul:10}},
+      {w:"bami",t:"…흥. 이제야 말하네.",m:"smug"},
+      {w:"seol",t:"…그럼 촌장님이 '직접' 쓰고 있었다는 말은 맞지 않네요.",s:{ppul:10}},
+      {w:"det0",t:"촌장님은 뭔가 더 감추고 있다. 다음은 금고 이야기다."}]}]},
+   {type:"debate",mode:"no",topic:"종탑 지하 열쇠는 아직 금고에 있을까?",bullets:["m_safe","m_speech","m_paint","m_echo"],
+    hint:"회관 금고를 열어 봤을 때, 열쇠 자리는 어땠지? 손잡이에 걸려 있던 것도 떠올려 봐.",
+    stms:[
+     {w:"seol",t:"…종탑 지하는 {열쇠가 있어야} 들어갈 수 있어요.",m:"nervous"},
+     {w:"ppul",t:"에헴, 지하 열쇠는 지금도 {금고에 잘 있소}. 금고 열쇠는 내가 늘 목에 걸고 다니니까.",k:"no",a:["m_safe","ppul3"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 금고 속 '종탑 지하 열쇠' 자리는 텅 비어 있었어."},
+      {w:"det0",t:"촌장님 목걸이 줄은 금고 손잡이에 풀린 채 걸려 있었다. 직접 벗어서 금고를 연 거다."},
+      {w:"ppul",t:"에, 에헴… 그게 말이오…",m:"nervous",s:{ppul:15}},
+      {w:"ppul",t:"누, 누구에게 줬는지는… 촌장 체면이 있어서 여기선 말 못 하오!",m:"nervous"},
+      {w:"sling",t:"하하, 촌장님도 참. 천천히 떠올리시면 돼요.",m:"nervous",s:{sling:20}}]}]},
+   {type:"debate",mode:"no",topic:"종줄은 어떻게 끊어졌을까?",bullets:["m_rope","m_echo","m_flake","m_speech"],
+    hint:"종탑에서 본 종줄 끝을 떠올려 봐. 끊긴 자리가 어떻게 생겼었지?",
+    stms:[
+     {w:"seol",t:"…이 종줄은 {백 년 동안} 한 번도 쉬지 않고 종을 울려 왔어요.",m:"sad"},
+     {w:"ppul",t:"에헴, 종줄은 백 년이나 됐소. {낡아서 저절로 끊어진} 게 틀림없소.",k:"no",a:["m_rope"],ok:[
+      {w:"det1",t:"그건 아니야! 종줄 끝은 칼로 자른 것처럼 매끈했어. 낡아서 끊어진 게 아니야."},
+      {w:"det0",t:"끊긴 자리엔 갈색 털도 끼어 있었다. 누군가 칼을 준비해서 올라간 거다."},
+      {w:"tok",t:"딸깍… 칼을 준비해 왔다면, 처음부터 계획한 거네요.",s:{tok:-10}},
+      {w:"seol",t:"…10시 10분에 사다리를 오른 그 사람일까요.",m:"nervous",s:{sling:15}},
+      {w:"sling",t:"왜, 왜 다들 저를 보세요? 저는 배달부일 뿐인걸요.",m:"nervous",s:{sling:10}}]}]},
+   {type:"vote",q:"종줄을 끊고 추를 가져간 사람은?",votes:{ppul:"sling",tok:"sling",bami:"sling",seol:"sling",owlgp:"sling",sling:"bami"},ok:[
+    {w:"det0",t:"10시 10분의 발소리, 칼로 자른 종줄, 금고 밖으로 나간 열쇠. 모두의 눈이 한 사람을 향하고 있다."},
+    {w:"det1",t:"슬링 아저씨. 이제 아저씨 이야기를 들어야겠어."},
+    {w:"sling",t:"후후, 저요? 전 그저 배달부인걸요. 그렇게 확신하시면 증거로 증명해 보세요!",m:"smug"}]}
+  ]};
+DEBATE.dark={
+  title:"원탁 회의",sub:"별빛 등불을 끈 사람은?",seats:["luka","karo","buri","kongi","owlgp","bami"],need:["n_log","n_file","s6x_snack"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"luka",t:"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열쇠는 탐정 사무소에서 사라졌지요.",m:"smug"},
+    {w:"luka",t:"사무소 벽엔 까마귀 발톱 자국이 있었습니다. 이 마을에 까마귀는 한 마리뿐이라고 들었고요.",m:"smug",s:{karo:25}},
+    {w:"luka",t:"물론, 열쇠를 맡았던 두 탐정도 예외는 아닙니다.",m:"smug"},
+    {w:"kongi",t:"킁킁! 나도 까로 아저씨가 수상해. 8시쯤 사무소 앞에서 우체국 잉크 냄새가 났거든!",s:{karo:20}},
+    {w:"karo",t:"…다들 저를 보는 눈이 예전 같네요.",m:"sad"},
+    {w:"buri",t:"부엉… 저, 저도 콩이 코를 믿어요. 우체국 잉크라면 까로 아저씨가 일하는 곳이잖아요.",m:"nervous",s:{karo:10}},
+    {w:"bami",t:"…어른들은 늘 그래. 난 서류 든 스라소니가 수상해. 은빛 마을 종탑 지붕에서 본 망토랑 냄새가 같거든.",s:{luka:20}},
+    {w:"luka",t:"규정상, 냄새는 증거가 아닙니다.",m:"smug"},
+    {w:"owlgp",t:"…다들 그만. 서로를 의심하라고 등불이 꺼진 게 아니란다.",m:"sad"},
+    {w:"det1",t:"우리도 의심받는 처지지만… 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
+   {type:"debate",mode:"yes",topic:"8시쯤, 까로 아저씨는 어디 있었을까?",bullets:["n_log","n_claw","n_window","n_paper"],
+    hint:"우체국 뒷방에서 까로 아저씨의 오늘 저녁 기록을 봤지? 누구 서명이 있었더라?",
+    stms:[
+     {w:"kongi",t:"8시쯤 사무소 앞 잉크 냄새는 {까로 아저씨 냄새}였어! 우체국 잉크였거든!",m:"nervous"},
+     {w:"luka",t:"규정상, 저는 판단하지 않습니다만… {까로 씨가 사무소에 다녀간} 것 같군요.",m:"smug"},
+     {w:"karo",t:"저는 7시부터 8시 반까지 {나비 선배님과 배달을 나갔어요}. 기록도 있어요.",k:"yes",a:["n_log","karo_d1"],m:"sad",ok:[
+      {w:"det1",t:"그 말이 맞아! 까로 아저씨 근무 기록에 7시부터 8시 반까지 나비와 배달, 나비 서명까지 있어."},
+      {w:"kongi",t:"어? 킁킁… 잉크 냄새는 맞는데, 까로 아저씨 냄새는 아니었어. 생선 과자 냄새가 안 났거든.",m:"confused",s:{kongi:-10}},
+      {w:"kongi",t:"대신… 종이 냄새랑 흰 장갑 냄새였어.",m:"nervous"},
+      {w:"karo",t:"…믿어 주셔서 고마워요.",m:"shy",s:{karo:-25}},
+      {w:"luka",t:"규정상, 장갑은 누구나 낄 수 있습니다.",m:"smug",s:{luka:15}}]}]},
+   {type:"debate",mode:"no",topic:"부리는 학교 기록실에서 무엇을 했을까?",bullets:["n_file","n_window","n_lock","n_claw"],
+    hint:"기록실 선반에 먼지 없는 자리가 있었지? 거기서 꺼낸 게 뭐였더라?",
+    stms:[
+     {w:"luka",t:"규정상, 거짓말을 한 사람부터 살펴보는 게 순서입니다.",m:"smug",s:{buri:15}},
+     {w:"owlgp",t:"…사무소 열쇠 걸이 자리를 아는 건 {너희와 나, 그리고 부리뿐}이란다.",m:"sad"},
+     {w:"buri",t:"저는 연극 대본만 찾았어요. {옛날 사건 파일 같은 건 안 봤어요}.",k:"no",a:["n_file","buri_d3"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 기록실 선반에서 막 꺼낸 30년 전 사건 파일이 나왔어. 그 자리만 먼지가 없었거든."},
+      {w:"buri",t:"부엉… 대본 찾다가… 그, 그냥 보게 됐어요.",m:"shy"},
+      {w:"buri",t:"할아버지가 네로한테 지는 걸 보고 싶지 않았어요. 뭔가 돕고 싶어서…",m:"sad",s:{buri:-20}},
+      {w:"owlgp",t:"…부리야. 이 할아비 걱정을 했구나.",m:"sad"}]}]},
+   {type:"debate",mode:"no",topic:"등불 밑 생선 과자 봉지, 까로 아저씨가 떨어뜨린 걸까?",bullets:["s6x_snack","n_lock","n_window","n_paper"],
+    hint:"그 과자 봉지, 먹다 흘린 봉지였을까? 수첩에서 봉지를 자세히 살펴봤던 걸 떠올려 봐.",
+    stms:[
+     {w:"kongi",t:"까로 아저씨는 {생선 과자를 정말 좋아해}. 킁킁, 늘 그 냄새가 나."},
+     {w:"luka",t:"등불 밑 과자 봉지는 {까로 씨가 먹다 떨어뜨린} 것이겠지요. 하루 다섯 봉지씩 드신다던데.",k:"no",a:["s6x_snack"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 그 봉지는 뜯지도 않은 새 봉지였어. 먹다 흘린 게 아니라 일부러 놓고 간 거야."},
+      {w:"det0",t:"누군가 까로를 가리키도록 거기 둔 거다."},
+      {w:"karo",t:"…누가 제 과자를 거기 둔 거군요.",m:"sad",s:{karo:-20}},
+      {w:"bami",t:"…어른들은 늘 그래. 제일 눈에 띄는 데 놓인 걸 제일 먼저 믿지.",m:"smug"},
+      {w:"luka",t:"규정상, 흥미로운 추리입니다.",m:"smug",s:{luka:20}}]}]},
+   {type:"vote",q:"별빛 등불을 끈 사람은?",votes:{karo:"luka",buri:"luka",kongi:"luka",owlgp:"luka",bami:"luka",luka:"karo"},ok:[
+    {w:"det0",t:"까로가 아니라면, 까로를 범인처럼 보이게 하고 싶은 누군가가 있다는 거다."},
+    {w:"owlgp",t:"…탐정들, 부탁하마.",m:"sad"},
+    {w:"det1",t:"루카 검사관님. 이제 검사관님 이야기를 들어야겠어요."},
+    {w:"luka",t:"규정상, 추측으로는 아무도 벌할 수 없습니다. 증거로 증명해 보시죠.",m:"smug"}]}
+  ]};
+DEBATE.museum={
+  title:"원탁 회의",sub:"별빛 돌을 빼돌린 사람은?",seats:["owlgp","karo","nero","yeoni","momo","piko","kongi"],need:["cx_museum_0","m7_sack","m7_lock"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"owlgp",t:"허허, 다들 모였구나. 재판 전에 여기서 한 번 차근차근 짚어 보자.",m:""},
+    {w:"owlgp",t:"한 명씩, 누가 수상한지 이유를 붙여 말해 보거라."},
+    {w:"momo",t:"…말하기 싫지만, 진열장에 까만 깃털이 있었어요. 까로 씨는 옛날 일도 있고요.",m:"sad",s:{karo:25}},
+    {w:"yeoni",t:"난 네로가 수상해. 쪽지 끝에 'N'이라고 적혀 있었잖아.",m:"nervous",s:{nero:25}},
+    {w:"kongi",t:"킁킁! 난 피코! 진열장 유리에 파란 깃털 가루가 묻어 있었대!",s:{piko:20}},
+    {w:"piko",t:"피, 피코는 아름다울 뿐이야! 아름다운 건 죄가 아니라고!",m:"nervous"},
+    {w:"karo",t:"저, 저는 아니에요… 이번엔 정말로요…",m:"sad"},
+    {w:"nero",t:"…다들 깃털과 쪽지 반쪽만 보는군요.",m:"smug"},
+    {w:"det1",t:"모든 증거가 까로 아저씨를 가리켜. 너무 깔끔하게. 하나씩 다시 보자!"}]},
+   {type:"debate",mode:"no",topic:"'N' 쪽지는 네로의 범행 예고일까?",bullets:["m7_note","cx_museum_0","m7_paw","m7_receipt"],
+    hint:"쪽지는 반쪽만 보면 뜻이 뒤집혀. 나머지 반쪽을 이어 붙였잖아.",
+    stms:[
+     {w:"yeoni",t:"쪽지 끝에 {'N'}이라고 적혀 있어. 네로 이름 첫 글자야.",m:"nervous"},
+     {w:"momo",t:"'오늘 밤 누군가 빛을…' 네로 씨가 {훔치겠다고 미리 알린} 거예요. 무서워라.",k:"no",a:["cx_museum_0","m7_note2","nero_m2"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 두 반쪽을 이으면 '오늘 밤 누군가 빛을 판다. 박물관을 지켜라.' 예고가 아니라 경고야."},
+      {w:"det0",t:"네로는 훔치겠다고 한 게 아니라, 박물관을 지키라고 알린 거다."},
+      {w:"nero",t:"…반쪽을 찾았군요. 나는 쪽지를 남겼지만, 결국 막지 못했습니다.",m:"sad",s:{nero:-30}},
+      {w:"yeoni",t:"경고…? 그럼 네로는 막으려던 거였어?",m:"confused"}]},
+     {w:"nero",t:"도둑질 예고 같은 건 하수들이나 하는 짓입니다."}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"momo",t:"어머, 네로 씨가 아니라면… 역시 까로 씨밖에 없네요.",m:"sad",s:{karo:15}},
+    {w:"momo",t:"9시엔 가게에 있었다더니, 우체국에 자루를 맡겼다면서요? 그 속엔 뭐가 들었을까요.",m:"nervous",s:{karo:20}},
+    {w:"piko",t:"까만 깃털, 몰래 맡긴 자루… 피코가 봐도 수상해.",m:"smug",s:{karo:10}},
+    {w:"karo",t:"그, 그건 말할 수 없어요. 돌은 절대 아니에요!",m:"nervous"},
+    {w:"kongi",t:"킁킁… 말을 못 한다니까 더 수상해 보여…",m:"confused"},
+    {w:"det1",t:"잠깐! 그 자루, 우리가 직접 봤잖아. 누구 말이 맞는지 확인해 보자!"}]},
+   {type:"debate",mode:"yes",topic:"까로의 자루에 별빛 돌이 들어 있었을까?",bullets:["m7_sack","m7_parcel","m7_feather","m7uv_stamp"],
+    hint:"우체국에서 까로가 맡겨 둔 자루를 봤어. 그 안에 뭐가 있었지?",
+    stms:[
+     {w:"momo",t:"까로 씨가 그 자루에 {별빛 돌을 숨겨} 맡겨 둔 거예요.",m:"sad"},
+     {w:"piko",t:"피코 생각엔 그 자루, {전시실에서 몰래 들고 나온} 거야.",m:"smug"},
+     {w:"karo",t:"자루에 든 건 {돌은 절대 아니에요}! 정말이에요!",k:"yes",a:["m7_sack","owlgp_m2"],m:"nervous",ok:[
+      {w:"det1",t:"그 말이 맞아! 자루엔 '숲의 작은 등불 앞' 편지 뭉치만 있었어. 돌은 하나도 없었어."},
+      {w:"owlgp",t:"…허허. 그건 내 편지란다. 까로가 숲의 작은 등불까지 심부름을 해 줬지.",m:"sad"},
+      {w:"karo",t:"할아버지… 들키면 다들 저를 또 그 눈으로 볼 테니까요.",m:"sad",s:{karo:-30}},
+      {w:"nero",t:"…그 편지들은 내가 받는 편지입니다.",m:""},
+      {w:"karo",t:"…믿어 주셔서 고마워요. 후후.",m:"shy",s:{karo:-20}}]}]},
+   {type:"debate",mode:"no",topic:"진열장은 부서져서 열렸을까?",bullets:["m7_lock","m7_smudge","m7_glass","m7_duster"],
+    hint:"진열장 자물쇠를 떠올려 봐. 부서졌었나, 열렸었나?",
+    stms:[
+     {w:"piko",t:"피코는 진열장 {유리에 코를 박고} 한참 봤어! 비친 피코가 너무 아름다워서!",m:"shy"},
+     {w:"momo",t:"불이 꺼진 30초 사이에 누군가 {진열장을 부수고} 돌을 꺼낸 거예요.",k:"no",a:["m7_lock","momo2"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 자물쇠엔 부순 흔적이 하나도 없어. 열쇠로 열린 거야."},
+      {w:"det0",t:"관장님, 진열장 열쇠는 어디 있었지요?"},
+      {w:"momo",t:"여, 여기… 제 주머니에 밤새 있었어요. 호, 호호.",m:"nervous",s:{momo:30}},
+      {w:"yeoni",t:"걸쇠의 주황 털실은 내 거야. 쉿, 덮개 떠 드리려고 몰래 크기만 쟀어.",m:"shy",s:{yeoni:-10}},
+      {w:"piko",t:"열쇠라니, 피코한텐 없어! 피코는 코 자국만 남겼다고!",m:"shy",s:{piko:-25}}]},
+     {w:"kongi",t:"전시실에선 깃털 냄새랑 먼지 냄새, 그리고 {달콤한 쿠키 냄새}가 났어!"}]},
+   {type:"vote",q:"별빛 돌을 빼돌린 사람은?",votes:{owlgp:"momo",karo:"momo",nero:"momo",yeoni:"momo",piko:"momo",kongi:"momo",momo:"karo"},ok:[
+    {w:"det0",t:"부서지지 않은 자물쇠. 열쇠를 가진 사람은 한 명뿐이었다."},
+    {w:"yeoni",t:"관장님은… 마을에서 제일 친절하신데…",m:"sad"},
+    {w:"det1",t:"관장님. 이제 관장님 이야기를 들어야겠어요."},
+    {w:"momo",t:"…호, 호호. 쿠키 하나 드시면서, 증거로 증명해 보세요.",m:"nervous"}]}
+  ]};
+DEBATE.cart={
+  title:"원탁 회의",sub:"우편 마차의 쐐기를 뽑은 사람은?",seats:["owlgp","ttadak","mungchi","karo","bori","kongi","doto"],need:["c8_honey","c8_watch","c8_load"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"owlgp",t:"허허, 다들 모였구나. 따닥이가 밤새 한 번도 두드리지 않았다. 오늘은 제대로 들어 보자.",m:"sad"},
+    {w:"owlgp",t:"한 명씩, 누가 수상한지 이유를 붙여 말해 보거라."},
+    {w:"kongi",t:"킁킁! 난 따닥이! 바퀴를 따닥따닥 두드리고 나서 마차가 굴러갔어!",m:"nervous",s:{ttadak:25}},
+    {w:"mungchi",t:"딱따구리 탓이지. 말도 제대로 못 하는 애가 두드리기는 잘하더라. 뭐, 그렇다는 거야.",m:"smug",s:{ttadak:15}},
+    {w:"karo",t:"저는… 보리 씨가 조금 마음에 걸려요. 8시 반에 자루를 실은 게 보리 씨였으니까요.",m:"sad",s:{bori:20}},
+    {w:"bori",t:"헤, 헤헤… 난 바퀴 근처엔 손도 안 댔어. 진짜야.",m:"nervous"},
+    {w:"doto",t:"정확히 말하면, 다들 '바로'라고만 하지 몇 분인지는 안 말해. (딸깍)",m:"confused"},
+    {w:"ttadak",t:"……(부리가 창틀 위에서 멈춘다.)",m:"sad"},
+    {w:"det1",t:"다들 생각이 달라. 빛나는 말을 증거로 쏘아서 하나씩 풀어 보자!"}]},
+   {type:"debate",mode:"no",topic:"보리는 짐을 싣고 곧장 집에 갔을까?",bullets:["c8_honey","c8_load","c8_grease","c8_toolbox"],
+    hint:"창고 선반에서 어젯밤 누가 만진 흔적이 있었지. 창고에서 그걸 먹는 건 한 명뿐이야.",
+    stms:[
+     {w:"karo",t:"기록판에도 {8시 반, 자루 3개 보리가 실음}이라고 적혀 있어요."},
+     {w:"bori",t:"짐 싣고 {곧장 집에 가서} 잤어. 창고엔 다시 안 갔어. …헤헤.",k:"no",a:["c8_honey","kongi_c2"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 창고 꿀단지를 어젯밤 누가 만져서 꿀이 흘렀어. 창고에서 꿀 먹는 건 보리뿐이잖아."},
+      {w:"kongi",t:"킁킁! 맞아, 창고 바닥에서 꿀 냄새랑 보리 냄새 났어. 어젯밤 냄새야!"},
+      {w:"bori",t:"헤헤… 꿀단지 두고 와서 다시 갔어. 혼날까 봐 말 못 했어…",m:"shy",s:{bori:-20}},
+      {w:"bori",t:"8시 45분쯤이었어. 공구함이 열려 있고 지렛대 자리가 비어 있었어.",m:"nervous"},
+      {w:"bori",t:"창고 앞에서 누구랑 부딪힐 뻔했어. 나보다 한참 작았어. '비켜' 하고 언덕 쪽으로 뛰어갔어.",m:"sad"}]},
+     {w:"mungchi",t:"곰이 {8시 반에 마차 옆에} 있었던 건 맞잖아. 뭐, 그렇다는 거야.",m:"smug"}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"mungchi",t:"지렛대가 없어졌다고? 그럼 쐐기를 뽑은 거네. 근데 곰보다 작은 애? 딱따구리도 작잖아.",m:"smug",s:{ttadak:20}},
+    {w:"mungchi",t:"게다가 그 애가 두드리고 바로 마차가 굴렀다며. 다들 봤잖아. 뭐, 그렇다는 거야.",m:"smug",s:{ttadak:15}},
+    {w:"kongi",t:"마, 맞아! 두드리고 바로였어! 나 봤어!",m:"nervous"},
+    {w:"ttadak",t:"……내가, 그랬나 봐. 내가 두드려서… 빠진 거야.",m:"sad",s:{ttadak:10}},
+    {w:"karo",t:"따닥 씨… 그 소리가 제 마지막 기억이긴 한데요…",m:"confused"},
+    {w:"det1",t:"잠깐! '바로'가 정말 바로였는지부터 보자. 도토는 늘 시간을 재잖아!"}]},
+   {type:"debate",mode:"yes",topic:"따닥이 두드리고 '바로' 마차가 굴렀을까?",bullets:["c8_watch","c8_tnote","s8x_feather","c8_axle"],
+    hint:"도토는 늘 시간을 재지. 두드린 시각과 마차가 구른 시각을 나란히 놓아 봐.",
+    stms:[
+     {w:"mungchi",t:"그 애가 두드리고 {바로 마차가 굴렀어}. 다들 봤잖아. 뭐, 그렇다는 거야.",m:"smug"},
+     {w:"kongi",t:"따닥이가 {두드려서 쐐기가 빠진} 거야! 다들 그렇게 말해!",m:"nervous"},
+     {w:"doto",t:"정확히 말하면, 두드림이 끝나고 마차가 구르기까지 {12분이 비어} 있어. (딸깍)",k:"yes",a:["c8_watch","doto_c1","owlgp_c1"],ok:[
+      {w:"det1",t:"그 말이 맞아! 초시계엔 '8:52~8:55 두드림, 9:07 정지'. 두드림이 끝나고 12분 뒤에 굴렀어!"},
+      {w:"owlgp",t:"허허, 8시 55분쯤 따닥이가 연못 쪽으로 날아가는 걸 나도 봤다.",m:""},
+      {w:"kongi",t:"…바로가 아니었어? 난 시계를 못 보니까 그냥… 따닥아, 미안해.",m:"sad",s:{ttadak:-20}},
+      {w:"ttadak",t:"…바퀴 축 소리가, 비어 있었어. 말하려 했는데, 말이… 안 나왔어. …따닥.",m:"sad",s:{ttadak:-30}},
+      {w:"doto",t:"정확히 말하면, 그 12분 동안 마차 옆엔 다른 누군가가 있었다는 뜻이야.",m:""}]}]},
+   {type:"debate",mode:"no",topic:"자루 숨긴 자리를 아는 건 까로뿐이었을까?",bullets:["c8_load","c8_sack","c8_handle","c8_grease"],
+    hint:"자루를 어디 두는지, 창고 벽에 누가 적어 뒀는지 떠올려 봐.",
+    stms:[
+     {w:"owlgp",t:"되찾은 자루는 {저택 울타리 덤불}에서 나왔다. 봉투 몇 통은 뜯겨 있었지.",m:"sad"},
+     {w:"mungchi",t:"덤불이야 어디에나 있잖아. 촌구석 편지 따위 누가 탐내. 뭐, 그렇다는 거야.",m:"smug"},
+     {w:"karo",t:"좌석 밑에 자루를 숨겨 두는 건 {저만 알았어요}. 그런데 어떻게…",k:"no",a:["c8_load"],m:"sad",ok:[
+      {w:"det1",t:"그건 아니야! 창고 기록판에 '작은 등불 자루는 까로가 직접 좌석 밑에'라고 적혀 있어. 창고에 온 누구나 읽을 수 있어."},
+      {w:"karo",t:"…제 글씨로 벽에 적어 뒀군요. 저만 안 게 아니었어요.",m:"confused"},
+      {w:"kongi",t:"킁킁! 창고 공구함 근처에서 낯선 냄새 났어. 새 실 냄새. 도시 가게에서 갓 나온 냄새!",m:"nervous"},
+      {w:"karo",t:"그리고… 흐릿하지만, 하얗고 까만 누군가가 또 자루 얘기를 했어요.",m:"nervous",s:{mungchi:25}},
+      {w:"mungchi",t:"…창고 기록판 같은 걸 내가 왜 읽어. 뭐, 그렇다는 거야.",m:"nervous",s:{mungchi:10}}]}]},
+   {type:"vote",q:"우편 마차의 쐐기를 뽑은 사람은?",votes:{owlgp:"mungchi",ttadak:"mungchi",karo:"mungchi",bori:"mungchi",kongi:"mungchi",doto:"mungchi",mungchi:"ttadak"},ok:[
+    {w:"det0",t:"기록판을 읽을 수 있는 창고, 곰보다 작은 그림자, 새 실 냄새, 하얗고 까만 목소리."},
+    {w:"det1",t:"뭉치. 이제 네 이야기를 들어야겠어."},
+    {w:"mungchi",t:"촌스러운 마차 사고에 왜 내가 끼어야 하는데? 증거 있으면 가져와 봐. 뭐, 그렇다는 거야.",m:"smug"}]}
+  ]};
+DEBATE.glove={
+  title:"원탁 회의",sub:"꽥순이를 데려간 하얀 장갑은?",seats:["owlgp","madam","mungchi","nero","momo","bami","kongi"],need:["s9x_thread","g9_found"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"owlgp",t:"허허, 자정까지 하루도 안 남았다. 꽥순이를 데려간 게 누군지 여기서 짚어 보자.",m:"sad"},
+    {w:"owlgp",t:"한 명씩, 누가 수상한지 이유를 붙여 말해 보거라."},
+    {w:"momo",t:"저는… 네로 씨가 마음에 걸려요. 연못가 진흙에 큰 고양잇과 발자국이 있었다면서요.",m:"nervous",s:{nero:20}},
+    {w:"madam",t:"어머, 저도 누굴 의심하고 싶진 않아요. 다만 말뚝에 검은 실이 묶여 있었다죠. 검은 망토 색이던데요.",m:"sad",s:{nero:20}},
+    {w:"kongi",t:"킁킁! 난 뭉치 형! 저택 뒤 계단에서 별 모양 쿠키 냄새가 났어. 형네 집이잖아.",s:{mungchi:20}},
+    {w:"mungchi",t:"난 열 시부터 아침까지 방에서 잤어. 뭐, 그렇다는 거야.",m:"smug"},
+    {w:"bami",t:"어른들은 늘 그래. 제일 수상해 보이는 애부터 가둬 놓지.",m:"smug"},
+    {w:"nero",t:"…마을은 이미 답을 정했더군요. 저는 아무 말도 하지 않겠습니다.",m:""},
+    {w:"det1",t:"네로는 말을 안 해도, 증거는 말해 줘. 하나씩 쏘아서 확인하자!"}]},
+   {type:"debate",mode:"no",topic:"말뚝의 검은 실은 네로 망토에서 풀린 걸까?",bullets:["s9x_thread","g9_prints","g9_cap","g9_note"],
+    hint:"말뚝에 걸린 실을 다시 봐. 무슨 실이었고, 어떻게 걸려 있었지?",
+    stms:[
+     {w:"momo",t:"연못가 진흙에 {큰 고양잇과 발자국}이 있었어요.",m:"nervous"},
+     {w:"madam",t:"그 검은 실은 {네로 씨 망토에서 풀린} 거겠지요.",k:"no",a:["s9x_thread"],m:"sad",ok:[
+      {w:"det1",t:"그건 아니야! 네로 망토는 모직인데, 말뚝의 실은 검은 벨벳 실이야. 게다가 매듭으로 묶여 있었어."},
+      {w:"det0",t:"풀린 게 아니라 누군가 일부러 묶어 둔 거다. 네로가 범인처럼 보이게."},
+      {w:"kongi",t:"킁킁! 그 매듭에서 달콤한 향수 냄새 났어!",m:"nervous"},
+      {w:"madam",t:"어머… 향수라니요.",m:"nervous",s:{nero:-30,madam:15}}]},
+     {w:"bami",t:"스라소니는 {한참 뒤에야} 뛰어왔어. 늦게.",m:"smug"}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"madam",t:"어머, 네로 씨가 아니라면… 탐정님들, 지하 창고 앞 별 모양 쿠키 부스러기 보셨죠?",m:"smug"},
+    {w:"madam",t:"별 모양 쿠키를 굽는 분은 마을에 한 분뿐이잖아요. 관장님은 전에도 하얀 장갑 부탁을 들어주셨고요.",m:"sad",s:{momo:30}},
+    {w:"kongi",t:"킁킁… 맞아, 계단에서 별 쿠키 냄새 났어. 관장님 쿠키 냄새야…",m:"confused",s:{momo:10}},
+    {w:"momo",t:"아, 아니에요! 이번엔 밤새 금고 앞을 지켰어요. 두 번 속지는 않아요!",m:"nervous"},
+    {w:"mungchi",t:"……",m:"nervous"},
+    {w:"det1",t:"잠깐! 쿠키를 지하 창고까지 가져간 게 누군지부터 보자. 맞는 말을 한 사람이 있어!"}]},
+   {type:"debate",mode:"yes",topic:"지하 창고로 쿠키를 가져간 사람은?",bullets:["g9_crumbs","g9_found","g9_box","g9_cap"],
+    hint:"지하 창고에서 무사히 찾은 꽥순이가 뭐라고 했는지 떠올려 봐.",
+    stms:[
+     {w:"madam",t:"관장님이 밤새 {지하 창고에 쿠키를 날라다} 준 거예요. 누가 봐도요.",m:"smug"},
+     {w:"mungchi",t:"나는 몰라. 방에서 잤다니까. 뭐, 그렇다는 거야.",m:"nervous"},
+     {w:"bami",t:"쿠키를 나른 건 {판다 쪽}이야. 접시 들고 저택 뒤 계단으로 내려가더라. 두 번이나.",k:"yes",a:["g9_found","bami_g2","mungchi3"],m:"smug",ok:[
+      {w:"det1",t:"그 말이 맞아! 꽥순이가 직접 말했어. '판다 오빠가 밤새 쿠키랑 담요를 갖다줬어.'"},
+      {w:"bami",t:"…밤눈 밝은 애 말을 제대로 믿어 준 건 너희가 처음이야.",m:"shy"},
+      {w:"momo",t:"…저, 저 아니었어요. 다행이다…",m:"sad",s:{momo:-30}},
+      {w:"mungchi",t:"…배고플까 봐. 무섭기도 할 거고. 나 이런 거 잘 못해. 뭐, 그렇다는 거야.",m:"shy",s:{mungchi:-10}}]}]},
+   {type:"talk",lines:[
+    {w:"owlgp",t:"허허… 실 매듭의 향수, 쿠키를 나른 아이. 그럼 연못가엔 누가 있었을꼬.",m:""},
+    {w:"bami",t:"말했잖아. 흑백 무늬가 둘. 하나는 작고 넓적했고, 하나는 키가 크고 손이 새하얬어.",m:"smug",s:{madam:20}},
+    {w:"kongi",t:"킁킁… 마을에서 향수 뿌리는 사람은 한 명뿐인데…",m:"nervous",s:{madam:20}},
+    {w:"madam",t:"어머, 어린아이 말을 너무 믿으시네요.",m:"smug"},
+    {w:"bami",t:"…거봐. 어른들은 늘 그래.",m:"sad"}]},
+   {type:"vote",q:"꽥순이를 데려간 사람은?",votes:{owlgp:"madam",mungchi:"madam",nero:"madam",momo:"madam",bami:"madam",kongi:"madam",madam:"momo"},ok:[
+    {w:"det0",t:"매듭의 향수, 연못가의 새하얀 손, 그리고 꽥순이가 있던 곳은 저택 지하 창고."},
+    {w:"det1",t:"백 부인. 이제 부인의 이야기를 들어야겠어요."},
+    {w:"madam",t:"어머, 탐정님들. 저는 어젯밤 저택 밖으로 한 발짝도 나가지 않았어요. 증거로 보여 주시겠어요?",m:"smug"}]}
+  ]};
+DEBATE.festival={
+  title:"원탁 회의",sub:"별빛 돌을 가져간 사람은?",seats:["wanggu","siluk","mungchi","karo","kongi","bori"],need:["f10_slip","f10_log","f10_glove"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"wanggu",t:"다 모였지? 해 지기 전에 등불 켜야 해! 도련님도 창고에서 데려왔어."},
+    {w:"wanggu",t:"한 명씩, 누가 수상한지 이유 붙여서 말해! 난 당연히 도련님이야. 장갑이랑 쪽지가 나왔잖아!",s:{mungchi:30}},
+    {w:"siluk",t:"…마부가 드릴 말씀은 아니지만. '뭐, 그렇다는 거야.' 그 말버릇은 도련님뿐이지요.",m:"sad",s:{mungchi:15}},
+    {w:"kongi",t:"킁킁… 난 왕구 아저씨가 좀 이상해. 장갑 주운 자리에 뭉치 형 냄새가 하나도 없었거든.",m:"confused",s:{wanggu:15}},
+    {w:"wanggu",t:"뭐?! 난 주웠을 뿐이야! 내 말이 맞지?!",m:"nervous"},
+    {w:"bori",t:"음냐… 난 까로 아저씨가 조금 걸려. 9시 40분에야 광장에 왔대. 그 전엔 어디 있었는지 몰라.",m:"confused",s:{karo:20}},
+    {w:"karo",t:"저, 저는 우체국에 있었어요. 후후… 웃을 일이 아닌데.",m:"nervous"},
+    {w:"mungchi",t:"…… (무릎에 얼굴을 묻은 채, 아무 말도 하지 않는다.)",m:"sad"},
+    {w:"det1",t:"뭉치가 말을 안 하면, 우리가 증거로 대신 말해 주자. 빛나는 말을 쏘는 거야!"}]},
+   {type:"debate",mode:"no",topic:"돌이 사라질 때, 뭉치는 등불 옆에 있었을까?",bullets:["f10_slip","f10_glove","f10_note","f10_cradle"],
+    hint:"돌이 사라진 9시 10분에서 31분 사이, 뭉치가 다른 곳에 있었다는 종이가 있어. 우체국 창구에서 쓰는 종이.",
+    stms:[
+     {w:"siluk",t:"돌이 사라진 건 {9시 10분에서 31분 사이}라지요. 도토 군이 재 두었다더군요."},
+     {w:"kongi",t:"킁킁… 우체국 앞에서 뭉치 형 냄새가 진했어. 오래 서 있던 냄새야. 언제인지는 몰라.",m:"confused"},
+     {w:"wanggu",t:"돌이 없어질 때 뭉치는 {등불 옆에 있었어}! 9시 반쯤 흑백 무늬를 이 두 눈으로 봤다고!",k:"no",a:["f10_slip","kongi_f2","karo_f3"],ok:[
+      {w:"det1",t:"그건 아니야! 우편 접수표에 9시 20분, 이름 없는 편지 세 통. 그걸 부친 뭉치는 그때 우체국에 있었어."},
+      {w:"kongi",t:"킁킁! 우체국 앞 그 냄새가 바로 그때 거였구나!",m:"happy"},
+      {w:"karo",t:"…네. 도련님은 9시 10분쯤 와서 35분까지 창구 앞에 있었어요. 말하지 말라고 해서… 후후.",m:"shy",s:{mungchi:-30,karo:-10}},
+      {w:"wanggu",t:"그, 그럼 내가 본 흑백 무늬는… 등불 그림자였나. 내 말이… 맞지…?",m:"sad"},
+      {w:"mungchi",t:"…… (아주 작게, 한 번 고개를 끄덕인다.)",m:"sad"}]},
+     {w:"bori",t:"쪽지엔 {'뭐, 그렇다는 거야'}라고 적혀 있었대. 도련님 말버릇이잖아.",m:"confused"}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"siluk",t:"잠깐 여쭙겠습니다. 까로 씨는 아까 도련님을 '못 봤다'고 하지 않았습니까.",m:"sad",s:{karo:25}},
+    {w:"siluk",t:"말이 한 번 바뀐 분의 이야기를 믿어도 되는 겁니까. 도련님을 감싸는 걸 수도 있지요.",s:{karo:10,mungchi:15}},
+    {w:"wanggu",t:"그래! 접수표 받는 이에 까마귀 이름도 있잖아! 한통속이야!",s:{karo:15}},
+    {w:"karo",t:"그, 그건… 약속을 해서…",m:"nervous"},
+    {w:"siluk",t:"저야 9시 15분부터 35분까지 마차 창고에 있었고요. 확인증에 보리 군 발도장도 있지요.",m:"happy",s:{siluk:-5}},
+    {w:"bori",t:"응! 그거 내 발도장이야. 헤헤.",m:"happy"},
+    {w:"kongi",t:"킁킁… 그럼 다시 뭉치 형이야? 모르겠어…",m:"confused"},
+    {w:"det0",t:"흔들리지 마라. 누구 말이 바뀌었는지보다, 종이에 무엇이 먼저 찍혔는지를 보자."}]},
+   {type:"debate",mode:"no",topic:"보리는 정말 9시 15분에 발도장을 찍었을까?",bullets:["f10_log","f10_scale","f10_ticket","f10_handcart"],
+    hint:"보리는 '돌 다 나르고 집에 가는 길'에 발도장을 찍었대. 돌을 나른 시각이 적힌 기록이 있지?",
+    stms:[
+     {w:"siluk",t:"확인증엔 {보리 군 발도장}이 또렷하지요. 창고 앞에서 받아 둔 겁니다.",m:"happy"},
+     {w:"bori",t:"돌 다 나르고 집에 가는 길에 찍었어. {그게 9시 15분}이었어!",k:"no",a:["f10_log","momo_f1","bori_f2"],ok:[
+      {w:"det1",t:"그건 아니야! 박물관 이송 기록에 돌을 나른 건 아침 8시래. 나르고 바로 갔으면 9시 15분일 수 없어."},
+      {w:"bori",t:"음냐… 그럼 8시 조금 넘어서였네? 그땐 종이에 시간 같은 거 안 적혀 있었는데.",m:"confused"},
+      {w:"det0",t:"빈 종이에 발도장부터 받고, 시각은 나중에 적었다. 그 확인증은 알리바이가 못 된다."},
+      {w:"siluk",t:"…빈칸에 먼저 받은 발도장이라. 곰 군이 순서를 기억하고 있었군요.",m:"sad",s:{siluk:30,karo:-15}},
+      {w:"bori",t:"나… 이용당한 거야? 음냐.",m:"sad"}]},
+     {w:"karo",t:"후후… 저는 {9시 40분쯤} 광장에 나왔어요. 그땐 벌써 난리였고요.",m:"nervous"}]},
+   {type:"debate",mode:"yes",topic:"하얀 장갑은 정말 풀밭에 떨어져 있었을까?",bullets:["f10_glove","f10_rut","f10_bread","f10_drafts"],
+    hint:"장갑을 뒤집어 봤던 거 기억나? 이슬 젖은 풀밭에서 나왔다는데, 장갑은 어땠지?",
+    stms:[
+     {w:"wanggu",t:"등불 옆 풀밭에서 {내가 직접 찾아냈어}! 증거는 내가 잘 보관하고 있지!"},
+     {w:"siluk",t:"도시 맞춤 장갑이지요. {도련님이 돌을 꺼내다 떨어뜨리신} 겁니다.",m:"sad"},
+     {w:"kongi",t:"풀밭엔 뭉치 형 냄새가 없었어. 그 장갑, {풀밭에 떨어져 있던 게 아니야}!",k:"yes",a:["f10_glove","kongi_f1","bori_f1"],m:"confused",ok:[
+      {w:"det1",t:"그 말이 맞아! 이슬 젖은 풀밭에서 나왔다는 장갑이 바싹 말라 있었어. 거기 떨어져 있던 게 아니야."},
+      {w:"det0",t:"안쪽엔 말털과 마구간 냄새. 누군가 나중에 풀밭에 갖다 놓은 거다."},
+      {w:"kongi",t:"킁킁! 거봐, 내 코는 못 속여!",m:"happy",s:{mungchi:-20}},
+      {w:"wanggu",t:"말털? 이슬? 그, 그런 건 안 봤지… 난 주웠을 뿐인데.",m:"nervous",s:{wanggu:-10}},
+      {w:"siluk",t:"…말털이라. 도련님도 마차는 자주 타셨지요.",m:"sad",s:{siluk:15}}]}]},
+   {type:"vote",q:"별빛 돌을 가져간 사람은?",votes:{wanggu:"siluk",mungchi:"siluk",karo:"siluk",kongi:"siluk",bori:"siluk",siluk:"mungchi"},ok:[
+    {w:"wanggu",t:"…내가 너무 서둘렀나. 마부 양반, 이번엔 당신 얘기를 들어야겠어.",m:"sad"},
+    {w:"det1",t:"실룩 아저씨. 이제 아저씨 이야기를 들을 차례야."},
+    {w:"siluk",t:"…마부야 시키는 대로 할 뿐이지요. 도둑이라 하시려면, 증거로 증명해 보시지요.",m:"smug"}]}
+  ]};
+DEBATE.snow={
+  title:"원탁 회의",sub:"갱도 등불의 돌을 가져간 사람은?",seats:["seori","ubak","karo","musoe","nubi","bori"],need:["e11_blanket","e11_hoof","e11_coat"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"seori",t:"규정상 이 회의는 수석 검사원이 진행합니다. 눈이 발자국을 덮기 전에 끝내지요.",m:"smug"},
+    {w:"seori",t:"제 의견부터. 봉인에 까만 깃털이 박혀 있었습니다. 이 마을에 까만 깃털은 하나뿐이지요.",s:{karo:30}},
+    {w:"ubak",t:"저, 저는 규정대로… 증거가 가리키는 쪽이 맞다고 봐요. 깃털이니까… 까로 씨요.",m:"nervous",s:{karo:10}},
+    {w:"nubi",t:"어머나, 난 무쇠 영감이 걸려요. 등불 곁에 있었다더니, 6시 50분쯤 집 쪽으로 가던걸요.",m:"confused",s:{musoe:25}},
+    {w:"musoe",t:"…나는 저녁 내내 등불 곁을 지켰다. …눈은 다 덮는다.",m:"sad"},
+    {w:"bori",t:"음냐… 난 까로 아저씨가 걸려. 난롯가에 있었다는데, 나 거기서 고구마 굽는 동안 한 번도 안 왔어.",m:"confused",s:{karo:20}},
+    {w:"karo",t:"저, 저는… 후후, 웃을 일이 아닌데.",m:"nervous"},
+    {w:"det1",t:"까로한테 의심이 몰리고 있어. 그래도 증거 없이 의심은 안 해. 하나씩 확인하자!"}]},
+   {type:"debate",mode:"no",topic:"등불이 흐려지던 6시 반, 까로는 어디 있었을까?",bullets:["e11_blanket","e11_sack","e11_seal","e11_milk"],
+    hint:"까로가 난롯가에 없었다면 어딘가 숨어 있었을 거야. 까만 깃털이 붙어 있던, 아직 따뜻한 곳.",
+    stms:[
+     {w:"seori",t:"등불은 6시 반부터 흐려지다가 {7시 20분}에 꺼졌습니다.",m:"smug"},
+     {w:"karo",t:"저는 그때 {여관 난롯가에 있었어요}. 추운 밤엔 따뜻한 데가 제일이잖아요.",k:"no",a:["e11_blanket","bori11_1"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 우편 마차 짐칸 담요에 까만 깃털이 있었고 아직 따뜻했어. 까로는 거기 있었던 거야."},
+      {w:"karo",t:"…밤이 무서워서요. 마차 담요 속에 숨어 있었어요. 밖이 너무 까매서. 후후.",m:"shy",s:{karo:-15}},
+      {w:"karo",t:"그런데 그때 들었어요. 6시 35분쯤, 광산 쪽으로 가는 무거운 발굽 소리. 딱, 딱.",m:"nervous"},
+      {w:"bori",t:"아, 그래서 고구마 먹으러 안 왔구나. 헤헤, 남겨 둔 거 줄게.",m:"happy"}]},
+     {w:"ubak",t:"까로 씨 우편 자루는 {내일 아침 첫 마차}로 떠난대요. 규정상 확인했어요.",m:"nervous"}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"seori",t:"숨어 있었다. 좋습니다. 그런데 그 담요, 둥글게 파여 있었지요. 돌 하나 앉힐 만한 크기로.",m:"smug",s:{karo:25}},
+    {w:"seori",t:"그 마차는 내일 아침 우편 자루를 싣고 떠납니다. 숨기기에도, 가져가기에도 딱 좋은 자리지요.",s:{karo:15}},
+    {w:"seori",t:"게다가 발굽 소리. 숨어 있던 자만 들은 소리를 믿으라는 건, 규정에 없습니다."},
+    {w:"ubak",t:"규, 규정상… 말이 바뀐 증언은 조심하라고 되어 있긴 해요…",m:"nervous"},
+    {w:"nubi",t:"어머나… 그럼 정말 까로 씨가…?",m:"confused"},
+    {w:"seori",t:"그리고 등불지기. 곁을 지켰다더니 자리를 비웠지요. 그사이였을지도 모릅니다.",s:{musoe:20}},
+    {w:"musoe",t:"……",m:"sad"},
+    {w:"det0",t:"그럴듯하다. 하지만 그럴듯한 것과 사실은 다르다. 눈 위에 남은 것부터 보자."}]},
+   {type:"debate",mode:"yes",topic:"6시 35분의 발굽 소리, 까로가 지어낸 걸까?",bullets:["e11_hoof","e11_mitten","e11_sack","e11_hooks"],
+    hint:"갈림길 눈 위에 남은 자국을 떠올려 봐. 한 시간쯤 전에 광산 쪽으로 간 무거운 것.",
+    stms:[
+     {w:"seori",t:"까로 씨는 그때 {광산 쪽으로 날아가 돌을 숨겼을} 겁니다.",m:"smug"},
+     {w:"nubi",t:"어머나, 그 소리 {무쇠 영감 발소리}였겠지요. 집 쪽으로 가던걸요.",m:"confused"},
+     {w:"karo",t:"정말 들었어요. {광산 쪽으로 가는 무거운 발굽 소리}를요. 딱, 딱.",k:"yes",a:["e11_hoof","karo11_1"],m:"nervous",ok:[
+      {w:"det1",t:"그 말이 맞아! 갈림길 눈 위에 광산 쪽으로 간 무거운 발굽 자국이 있었어. 한 시간쯤 전 자국이야."},
+      {w:"det0",t:"가는 자국만 있고 오는 자국은 없다. 그리고 까마귀에겐 발굽이 없지."},
+      {w:"karo",t:"…믿어 주는 거예요? 후후. 이번엔 웃어도 되는 거죠?",m:"happy",s:{karo:-35}},
+      {w:"nubi",t:"어머나, 그럼 발굽 소리의 주인은 따로 있다는 거네!",m:"confused"},
+      {w:"seori",t:"…딱, 딱. 그 발굽이 누구 것인지는, 아직 아무도 모릅니다.",m:"smug",s:{seori:10}}]}]},
+   {type:"debate",mode:"no",topic:"6시 반부터, 서리 검사원은 여관 창가에 있었을까?",bullets:["e11_coat","e11_record","e11_mold","e11_milk"],
+    hint:"창가의 '큰 분'은 한 번도 움직이지 않았대. 창가 의자에서 본 것을 떠올려 봐.",
+    stms:[
+     {w:"seori",t:"5시 검사 기록부엔 {무쇠 영감 도장}이 찍혀 있습니다.",m:"smug"},
+     {w:"ubak",t:"저, 저는 창가 책상에서 {보고서를 베껴 쓰고} 있었어요. 규정대로요.",m:"nervous"},
+     {w:"nubi",t:"6시 40분에 창가에 {검사원 두 분이 나란히 앉아} 있었어요. 큰 분, 작은 분.",k:"no",a:["e11_coat","nubi11_b"],m:"happy",ok:[
+      {w:"det1",t:"그건 아니야! 창가 의자엔 회색 코트가 걸려 있었어. 등받이 쪽에서 보면 앉은 사람처럼 보이는 코트."},
+      {w:"nubi",t:"어머나… 고개 한 번 안 돌리던 큰 분이… 코트였어요? 내가 코트한테 부지런하다고 했네.",m:"confused",s:{seori:20}},
+      {w:"ubak",t:"…선배님이 '펜 소리를 계속 내라'고 하셨어요. 그래서 저는 창밖을 안 보고 펜만 움직였어요.",m:"sad",s:{seori:15}},
+      {w:"ubak",t:"선배님이 거기 계셨는지는… 몰라요.",m:"sad",s:{seori:10,ubak:-10}},
+      {w:"seori",t:"…코트는 벗어 두는 것이 규정상 원칙이라.",m:"smug"}]}]},
+   {type:"talk",lines:[
+    {w:"seori",t:"자리를 잠시 비웠다고, 돌을 가져갔다는 증거가 되지는 않습니다.",m:"smug"},
+    {w:"seori",t:"봉인의 까만 깃털은 그대로입니다. 등불을 비운 등불지기도요.",s:{karo:10,musoe:10}},
+    {w:"nubi",t:"어머나, 머리가 빙글빙글하네. 대체 누구 말이 맞는 거예요?",m:"confused"}]},
+   {type:"vote",q:"갱도 등불의 돌을 가져간 사람은?",votes:{seori:"karo",ubak:"karo",nubi:"musoe",musoe:"seori",karo:"seori",bori:"seori"},ok:[
+    {w:"det0",t:"표는 갈렸다. 하지만 빈 코트와 눈 위의 발굽 자국은 한 사람을 가리킨다."},
+    {w:"det1",t:"서리 검사원님. 이제 검사원님 차례예요."},
+    {w:"seori",t:"…검사는 검사일 뿐입니다. 규정상, 주장은 증거로 증명하십시오.",m:"smug"}]}
+  ]};
+DEBATE.clapper={
+  title:"원탁 회의",sub:"달빛 종의 추를 가져간 사람은?",seats:["ppul","seol","sling","bami","tok","karo","ttadak"],need:["e12_visitor","cx_clapper_3","e12_rental"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"ppul",t:"에헴! 촌장으로서 이 회의를 열겠소. 한 사람씩, 이유를 대고 말하시오.",m:"smug"},
+    {w:"ppul",t:"촌장으로서 말하건대, 종지기요. 추의 비밀을 아는 건 설이뿐이고, 종 안엔 흰 깃털이 있었소.",s:{seol:30}},
+    {w:"ppul",t:"쪽지는 밤이 글씨고. 둘이 짜고 한 일이오.",s:{bami:20}},
+    {w:"bami",t:"…역시. 어른들은 늘 그래. 난 촌장이 수상해. 사흘 전부터 회관 불을 밤새 켜 뒀거든.",s:{ppul:15}},
+    {w:"sling",t:"후후, 이번엔 저 아닙니다. 창살이 증인이지요. 굳이 고르라면… 쪽지 글씨의 주인이겠지요.",m:"smug",s:{bami:15}},
+    {w:"ttadak",t:"따닥! 난 슬링이 수상해. 지난번에 종을 멎게 한 게 슬링이잖아.",s:{sling:20}},
+    {w:"tok",t:"딸깍… 저는 작업실에 있었어요. 오늘 밤은 아주 조용했어요.",m:"nervous"},
+    {w:"seol",t:"…저는 아니에요. 한 번 더 세어 볼게요… 10시에 울린 횟수, 영.",m:"sad"},
+    {w:"det1",t:"의심이 여기저기 흩어졌어. 빛나는 말을 하나씩 확인하자!"}]},
+   {type:"debate",mode:"no",topic:"설이는 밤새 종탑을 지켰을까?",bullets:["e12_visitor","e12_door","e12_sweep","e12_hook"],
+    hint:"감시소에 오늘 밤 기록이 남아 있어. 면회 온 사람은 딱 한 명이었지.",
+    stms:[
+     {w:"ttadak",t:"종을 두드려 봤어. {속이 텅}! 추가 없어. 따닥."},
+     {w:"seol",t:"…저는 {밤새 종탑을 떠나지 않았어요}. 9시엔 아홉 번, 제가 세었어요.",k:"no",a:["e12_visitor","sling12_3"],m:"sad",ok:[
+      {w:"det1",t:"그건 아니야! 감시소 면회 기록에 '9:35 설이 — 9:50'이라고 적혀 있어. 그때 감시소에 갔던 거야."},
+      {w:"seol",t:"…한 번 더 세어 볼게요. 9시 35분에 나갔고, 9시 50분에 돌아왔어요. 열다섯 분. 종탑이 비었어요.",m:"sad",s:{seol:15}},
+      {w:"bami",t:"…왜 말 안 했어. 그러니까 더 의심받잖아.",m:"sad"},
+      {w:"sling",t:"후후, 그 표정이란. 이번엔 정말 저 아니라니까요.",m:"smug"}]},
+     {w:"tok",t:"9시엔 {아홉 번}, 맑은 은소리였어요. 하나도 안 틀렸어요. 딸깍.",m:"nervous"}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"ppul",t:"에헴! 들었소? 종지기가 종탑을 비운 사이에 추가 사라졌소. 누구한테 자리를 내준 거요?",m:"smug",s:{seol:15}},
+    {w:"ppul",t:"쪽지 글씨의 주인, 밤이요! 날개가 있으니 가파른 계단도 필요 없지.",s:{bami:20}},
+    {w:"ppul",t:"나야 9시 반부터 회관에서 연설 연습을 했소. 밤이가 창밑에서 들었지 않소?",s:{ppul:-10}},
+    {w:"bami",t:"…들었어. '에헴, 은빛 마을 주민 여러분.' 유치하게. 그건 맞아.",m:"confused"},
+    {w:"sling",t:"후후. 아이가 촌장님 편을 서 주는군요. 재미있네요.",m:"smug"},
+    {w:"tok",t:"딸깍… 그럼 종탑에 올라간 건, 설이 씨가 자리를 비워 준 누군가…?",m:"nervous",s:{seol:10}},
+    {w:"det0",t:"말은 그럴듯하다. 하지만 종 안에 남은 것부터 다시 보자."}]},
+   {type:"debate",mode:"yes",topic:"종 안의 흰 깃털은 어떻게 거기 들어갔을까?",bullets:["cx_clapper_3","e12_hoofprint","e12_note","e12_cloth"],
+    hint:"깃털 끝에 뭐가 묻어 있었지? 설이가 매일 저녁 쓸어 모으는 계단 구석도 떠올려 봐.",
+    stms:[
+     {w:"ppul",t:"에헴! 종지기가 {추를 빼다가 깃털을 흘린} 거요!",m:"smug"},
+     {w:"sling",t:"후후. 밤이는 날개가 있으니 {쪽지를 들고 날아 올라갔겠지요}.",m:"smug"},
+     {w:"ttadak",t:"9시 45분쯤 종탑 안에서 난간이 끼익 두 번. 무거운 발굽 소리도 났어. 따닥."},
+     {w:"seol",t:"…저는 종 안에 들어간 적 없어요. 그 깃털은 {누가 주워다 넣은} 거예요.",k:"yes",a:["cx_clapper_3","e12_feather","e12_sweep"],m:"sad",ok:[
+      {w:"det1",t:"그 말이 맞아! 깃털엔 계단 먼지랑 거미줄, 깃대는 바싹 말랐어. 계단 깃털 더미에선 한 줌이 비었고."},
+      {w:"seol",t:"…제가 매일 저녁 쓸어 모은 더미예요. 한 번 더 세어 볼게요… 정말 한 줌이 없어요.",m:"sad",s:{seol:-30}},
+      {w:"ttadak",t:"따닥! 그리고 그 발굽 소리. 두루미 발은 가벼워서 그렇게 안 울려.",m:"happy",s:{seol:-15,bami:-10}},
+      {w:"bami",t:"…거봐. 난 계단 같은 거 안 써.",m:"smug"},
+      {w:"ppul",t:"에, 에헴! 발굽 달린 짐승이 이 마을에 하나뿐이오?",m:"nervous",s:{ppul:15}}]}]},
+   {type:"debate",mode:"no",topic:"촌장이 연습했다는 그때, 메아리 상자는 어디 있었을까?",bullets:["e12_rental","e12_speech","e12_door","e12_visitor"],
+    hint:"톡은 소리를 담는 상자를 만들었지. 톡의 장부에 오늘 밤 적힌 줄이 있어.",
+    stms:[
+     {w:"ppul",t:"에헴! 나는 9시 반부터 10시 반까지 회관에 있었소. 연설 연습이오."},
+     {w:"tok",t:"딸깍… 메아리 상자는 {작업실 늘 있던 자리에} 있어요.",k:"no",a:["e12_rental","e12_echo","tok12_2"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 톡 씨 대여 장부에 '메아리 상자 — 촌장님, 9:00'이라고 적혀 있어. 촌장님이 빌려 갔어."},
+      {w:"tok",t:"딸깍… '비밀'에 두 번이나 줄을 그었는데. 들켰네요. 상자는 여기 없어요.",m:"shy"},
+      {w:"tok",t:"녹음 한 번이면 두 번까지 틀 수 있어요. 태엽 한 번 감으면요."},
+      {w:"bami",t:"…두 번? 그럼 내가 들은 그 목소리는…",m:"confused",s:{ppul:20}},
+      {w:"ppul",t:"에, 에헴! 연습이오, 연습! 체면 때문에 비밀로 했을 뿐이오!",m:"nervous",s:{ppul:10}}]},
+     {w:"karo",t:"저는 9시부터 10시까지 {우체국 등불 밑}에 있었어요. 탐정님들이랑요. 후후.",m:"nervous"}]},
+   {type:"talk",lines:[
+    {w:"ppul",t:"상자를 빌린 게 죄요? 종탑을 비운 건 종지기요. 열다섯 분이나!",m:"smug",s:{seol:15}},
+    {w:"tok",t:"딸깍… 그건 맞아요. 종탑이 빈 건 설이 씨 쪽이에요…",m:"confused"}]},
+   {type:"vote",q:"달빛 종의 추를 가져간 사람은?",votes:{ppul:"seol",tok:"seol",sling:"bami",seol:"ppul",bami:"ppul",karo:"ppul",ttadak:"ppul"},ok:[
+    {w:"det0",t:"표는 갈렸다. 하지만 종탑에 남은 흔적도, 빌려 간 상자도 한 사람 곁에 모인다."},
+    {w:"det1",t:"촌장님. 이제 촌장님 이야기를 들어야겠어요."},
+    {w:"ppul",t:"에헴! 촌장으로서 말하건대, 말로는 안 되오. 증거로 증명해 보시오!",m:"smug"}]}
+  ]};
+DEBATE.bureau={
+  title:"원탁 회의",sub:"7번지의 편지를 없앤 사람은?",seats:["badook","eunho","guseul","piko","mungchi","lamplighter"],need:["e13_route","cx_bureau_2","e13_mirror"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"badook",t:"삐익! 모두 모였소. 불난 7번지, 열린 금고, 사라진 편지. 누가 수상한지 까닭을 붙여 말하시오!"},
+    {w:"eunho",t:"나는 판다 소년이오. 금고 앞에 백합 브로치가 떨어져 있었소. 그 아이 어미가 감시소에 있다지.",m:"smug",s:{mungchi:25}},
+    {w:"mungchi",t:"…난 저 사장이 수상해. 도둑이 들었다는데 진열장엔 손자국 하나 없잖아. 뭐, 그렇다는 거야.",m:"shy",s:{eunho:15}},
+    {w:"piko",t:"피코는~ 구슬이가 궁금해. 금고 계단에 쓰러져 있었잖아? 금고랑 제일 가까웠던 건 구슬이야.",s:{guseul:20}},
+    {w:"guseul",t:"저, 저는 목도리를 가지러 갔을 뿐이에요… 뒷문을 여니까 연기가 가득했어요.",m:"nervous"},
+    {w:"lamplighter",t:"누굴 탓하긴 싫어요. 다만 7시 반에 거리를 켤 때, 가게 안에 사장님이 계셨어요.",m:"shy",s:{eunho:10}},
+    {w:"eunho",t:"그건 잠깐이오. 곧장 광장 모임에 갔소. 야경꾼이 봤잖소.",m:"smug"},
+    {w:"badook",t:"삐익! 맞소. 광장 가로등이 켜질 때 들어오셨소. 이상 무!",m:"happy",s:{eunho:-10}},
+    {w:"det1",t:"다들 생각이 달라. 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
+   {type:"debate",mode:"yes",topic:"뒤창은 누가, 왜 깼을까?",bullets:["e13_route","e13_backdoor","e13_stairs","e13_roll"],
+    hint:"등불지기 아저씨가 오늘 밤 몇 시에, 어디서 불 켜기를 멈췄는지 적힌 게 있어.",
+    stms:[
+     {w:"eunho",t:"검은 망토 도둑이 {뒤창을 깨고 들어왔소}. 유리가 박살 나 있지 않소.",m:"smug"},
+     {w:"badook",t:"삐익! 아니오. 도둑은 {열린 뒷문으로 들어온} 거요!"},
+     {w:"lamplighter",t:"저는 {7시 52분에 옆 골목에서 불 켜기를 멈췄어요}. 연기가 보여서요.",k:"yes",a:["e13_route","lamplighter13_1"],m:"shy",ok:[
+      {w:"det1",t:"그 말이 맞아! 점등 기록판에 '7:52 옆 골목 — 불난 집, 중단'이라고 적혀 있어."},
+      {w:"lamplighter",t:"…네. 사다리에서 뛰어 내려가 뒤창을 깼어요. 안에 아이가 있었거든요.",m:"shy"},
+      {w:"guseul",t:"눈을 떴을 땐 아저씨 등이었어요. 그래서 하나도 안 무서웠어요.",m:"happy",s:{guseul:-20}},
+      {w:"det0",t:"뒤창을 깬 건 도둑이 아니라, 아이를 구하러 온 손이었군."},
+      {w:"eunho",t:"…그렇다면 도둑은 문으로 들어왔겠지.",m:"nervous",s:{eunho:10}}]}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"eunho",t:"좋소. 그럼 금고 거울 문을 보시오. 부리 끝 자국과 볏 자국이 찍혀 있소.",m:"smug"},
+    {w:"eunho",t:"견습생이 가게를 나서기 전 마지막으로 닦는 문이오. 그 뒤에 누가 코를 박았겠소?",m:"smug",s:{piko:30}},
+    {w:"eunho",t:"공작새가 망을 보고, 판다가 브로치를 흘렸겠지. 둘이 한패요.",m:"smug",s:{piko:10,mungchi:15}},
+    {w:"piko",t:"피, 피코는…! 피코는 그런 거 안 해!",m:"nervous"},
+    {w:"mungchi",t:"…웃기지 마. 난 저 공작새랑 말도 안 해 봤어.",m:"shy"},
+    {w:"badook",t:"삐익… 둘이 짰다? 듣고 보니 말이 되는 것 같기도 하오.",m:"confused",s:{piko:5,mungchi:5}}]},
+   {type:"debate",mode:"no",topic:"금고 앞 브로치는 판다 소년이 흘린 걸까?",bullets:["cx_bureau_2","e13_stairs","e13_roll","e13_stove"],
+    hint:"그 브로치가 오늘 몇 시에, 누구 손으로 넘어갔는지 떠올려 봐.",
+    stms:[
+     {w:"badook",t:"삐익! 브로치는 {금고 앞 바닥에} 떨어져 있었소. 이상 무!"},
+     {w:"eunho",t:"그 판다 소년이 {금고 앞에 브로치를 흘린} 거요. 볼 것도 없소.",k:"no",a:["cx_bureau_2","e13_tray","e13_brooch","mungchi13_2"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 그 브로치는 6시 40분에 이 가게가 사들인 물건이야. 꼬리표도 매입 장부도 똑같이 말해."},
+      {w:"mungchi",t:"…맞아. 할머니 거였던 거. 엄마 담요 사려고 팔았어. 뭐, 그렇다는 거야.",m:"sad",s:{mungchi:-35}},
+      {w:"badook",t:"삐익… 가게가 사들인 브로치가 어떻게 금고 앞까지 가 있소?",m:"confused"},
+      {w:"eunho",t:"…누가 쟁반을 뒤졌는지 내 어찌 알겠소.",m:"nervous",s:{eunho:20}}]},
+     {w:"mungchi",t:"…그 브로치, {백합 문양}이잖아. 우리 할머니 거였어.",m:"shy"}]},
+   {type:"debate",mode:"yes",topic:"금고 거울 문의 부리 자국은 무슨 자국일까?",bullets:["e13_mirror","e13_stairs","e13_brooch","e13_roll"],
+    hint:"금고 문에 남은 자국이 정확히 어떤 자국들이었는지 떠올려 봐.",
+    stms:[
+     {w:"eunho",t:"그 자국은 공작새가 {금고 문을 열려다} 남긴 거요.",m:"smug"},
+     {w:"badook",t:"삐익! 공작새는 {망을 보려고} 금고 앞에 선 거요!",m:"confused"},
+     {w:"piko",t:"피코는 금고 문에 {비친 피코 얼굴을 보고 있었을} 뿐이야~",k:"yes",a:["e13_mirror","piko13_2"],m:"shy",ok:[
+      {w:"det1",t:"그 말이 맞아! 금고 문엔 부리 끝, 볏 자국, 입김 얼룩뿐이야. 얼굴을 바짝 대고 비춰 본 자국이야."},
+      {w:"piko",t:"피, 피코의 부리 자국이… 금고 문에 아름답게… 찍혀 버렸네…",m:"shy",s:{piko:-30}},
+      {w:"guseul",t:"그, 그 문은… 제가 7시에 나가기 전에 마지막으로 닦았어요.",m:"nervous"},
+      {w:"eunho",t:"…견습생, 쓸데없는 말은 하지 마라.",m:"nervous",s:{eunho:15}}]}]},
+   {type:"vote",q:"7번지의 편지를 없앤 사람은?",votes:{badook:"piko",eunho:"mungchi",guseul:"piko",piko:"eunho",mungchi:"eunho",lamplighter:"eunho"},ok:[
+    {w:"det0",t:"표가 갈렸다. 하지만 증거가 가리키는 쪽은 하나다."},
+    {w:"det1",t:"은호 사장님. 불이 났을 때 정말 어디 계셨는지, 이제 들어야겠어요."},
+    {w:"guseul",t:"사, 사장님…?",m:"sad"},
+    {w:"eunho",t:"허, 견습생 앞에서 이런 망신을. 좋소. 증거로 증명해 보시오.",m:"smug"}]}
+  ]};
+DEBATE.lining={
+  title:"원탁 회의",sub:"할아버지 앞에 나타난 검은 망토는 누구?",seats:["buri","sling","nero","karo","wanggu","doto","ttadak"],need:["e14_wick","e14_fiber"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"buri",t:"부엉… 할아버지 대신 제가 회의를 열게요. 누가 수상한지, 까닭도 꼭 말해 주세요.",m:"sad"},
+    {w:"wanggu",t:"볼 것도 없어! 네로야! 영감이 '검은 망토'라고 했고, 영감 곁에 서 있었잖아! 내 말이 맞지?!",s:{nero:30}},
+    {w:"sling",t:"후후, 저는 까로 군이 마음에 걸리오. 편지함 속 편지를 다 나른 게 까로 군이라던데.",m:"smug",s:{karo:20}},
+    {w:"karo",t:"후후… 그래서 제가 의심받는 거겠죠. 저는 왕구 아저씨요. 언덕 등불 받침에 너구리 털이 있었대요.",m:"nervous",s:{wanggu:20}},
+    {w:"wanggu",t:"나, 나는 언덕 근처에도 안 갔다고! 내 말이 맞지?!",m:"nervous"},
+    {w:"doto",t:"정확히 말하면, 난 슬링 아저씨가 궁금해. 8시 3분 마차에서 내렸는데 가방이 유난히 불룩했거든. (딸깍)",s:{sling:15}},
+    {w:"sling",t:"여행 가방이 불룩한 게 죄요? 나는 10시부터 대합실에서 잤소. 딱따구리 군이 들었지.",m:"smug"},
+    {w:"ttadak",t:"따닥! 맞아, 10시 20분에 코 고는 소리 들었어! 내 귀는 틀린 적 없어!",m:"smug",s:{sling:-15}},
+    {w:"det1",t:"다들 생각이 달라. 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
+   {type:"debate",mode:"yes",topic:"왕구는 그 밤 언덕에서 무엇을 했을까?",bullets:["e14_wick","e14_steps","e14_glasses","e14_cups"],
+    hint:"언덕 등불에 오늘 밤 누가 몰래 손을 댄 흔적이 있었어. 너구리 털이 있던 곳.",
+    stms:[
+     {w:"sling",t:"후후, 너구리 양반은 {망토와 한패}였을지도 모르오.",m:"smug"},
+     {w:"karo",t:"후후… 받침의 너구리 털은 {할아버지를 기다리다} 떨어진 걸 거예요.",m:"nervous"},
+     {w:"wanggu",t:"나는… 그냥 {등불을 고치러} 갔을 뿐이야! 내 말이 맞지?!",k:"yes",a:["e14_wick","wanggu14_1"],m:"nervous",ok:[
+      {w:"det1",t:"그 말이 맞아! 언덕 등불엔 방금 끼운 새 심지랑, 거꾸로 끼워져 있던 헌 심지가 있었어."},
+      {w:"wanggu",t:"…작년에 심지를 거꾸로 끼웠어. 창피해서 몰래 고치러 갔다가, 망토가 튀어나와서 도망쳤어.",m:"shy",s:{wanggu:-30}},
+      {w:"doto",t:"정확히 말하면, 망토를 보고 도망친 사람이 망토일 수는 없지. (딸깍)"},
+      {w:"karo",t:"후후… 괜히 의심해서 죄송해요, 왕구 아저씨.",m:"shy"}]}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"sling",t:"좋소, 좋소. 그럼 작은 등불의 찻잔 둘은 보셨소? 한 모금도 줄지 않았다지.",m:"smug"},
+    {w:"sling",t:"스라소니는 처음부터 차 마실 생각이 없었던 거요. 영감이 오는 길목을 기다린 거지.",m:"smug",s:{nero:25}},
+    {w:"sling",t:"덤불엔 검은 털실까지. 이 마을에서 검은 망토를 두르는 자가 누구요?",m:"smug",s:{nero:15}},
+    {w:"wanggu",t:"거봐! 역시 네로잖아! 내 말이 맞지?!",s:{nero:10}},
+    {w:"nero",t:"…저는 찻잔 둘을 놓고 할아버지를 기다렸을 뿐입니다.",m:"sad"},
+    {w:"buri",t:"부엉… 하지만 저, 멀어지던 망토를 봤어요. 그 망토는…",m:"nervous"}]},
+   {type:"debate",mode:"no",topic:"할아버지 앞의 검은 망토는 네로의 망토일까?",bullets:["e14_fiber","e14_cups","e14_claw","e14_glasses"],
+    hint:"덤불에 걸린 털실이 어떤 색 실로만 되어 있었는지 떠올려 봐. 네로 망토 안쪽은 어땠지?",
+    stms:[
+     {w:"sling",t:"작은 등불 찻잔 둘은 {한 모금도 줄지 않았소}.",m:"smug"},
+     {w:"wanggu",t:"덤불의 검은 털실은 {네로 망토에서 뜯긴} 거야! 내 말이 맞지?!",k:"no",a:["e14_fiber","buri14_1"],ok:[
+      {w:"det1",t:"그건 아니야! 덤불 털실은 처음부터 끝까지 새까맣고 흰 실이 한 올도 없어. 네로 망토 안감은 흰 꽃 자수투성이잖아."},
+      {w:"nero",t:"…30년 동안 아무에게도 안쪽을 보인 적이 없습니다.",m:"sad"},
+      {w:"buri",t:"부엉…! 제가 본 망토도 안쪽까지 새까맸어요. 네로 씨 망토가 아니에요.",m:"nervous",s:{nero:-35}},
+      {w:"wanggu",t:"어, 어…? 그럼 영감이 본 망토는…",m:"confused"},
+      {w:"sling",t:"…후후. 검은 망토가 한 벌뿐이란 법은 없지.",m:"smug",s:{sling:15}}]},
+     {w:"buri",t:"부엉… 멀어지던 망토는 {안쪽까지 새까맸어요}. 밤눈은 제가 좋아요.",m:"shy"}]},
+   {type:"vote",q:"할아버지 앞에 나타난 검은 망토는 누구?",votes:{buri:"sling",sling:"nero",nero:"sling",karo:"sling",wanggu:"nero",doto:"sling",ttadak:"nero"},ok:[
+    {w:"det0",t:"표가 갈렸다. 그래도 증거는 한쪽을 가리킨다."},
+    {w:"det1",t:"슬링 아저씨. 10시 20분에 정말 대합실에서 자고 있었어요?"},
+    {w:"ttadak",t:"따닥…? 난 분명히 들었는데…",m:"confused"},
+    {w:"sling",t:"후후, 제가 도와드릴까요? …증거로 증명해 보시오, 탐정 양반들.",m:"smug"}]}
+  ]};
+DEBATE.kitchen={
+  title:"원탁 회의",sub:"동지 등불의 별빛 돌을 가져간 사람은?",seats:["owlgp","grandma","nero","karo","momo","tori","buri"],need:["e15_hook","cx_kitchen_4"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"owlgp",t:"허허, 모두 모였구나. 동지 등불이 비었다. 누가 돌을 가져갔는지, 까닭을 붙여 말해 다오.",m:"sad"},
+    {w:"karo",t:"후후… 저는 모모 관장님이 마음에 걸려요. 꽃 쿠키 틀이 관리국 도장이랑 닮았대요.",m:"nervous",s:{momo:20}},
+    {w:"momo",t:"어머, 또 저예요? 저는 오후 내내 박물관에서 쿠키만 구웠어요. 피코가 봤어요.",m:"nervous"},
+    {w:"momo",t:"저는 차라리 까로 씨가 궁금해요. 관리국 편지 소인이 전부 우체국 거라면서요.",s:{karo:15}},
+    {w:"grandma",t:"아이고, 이 늙은이가 무슨 말을 하겠어요. …그래도 자물쇠에 스라소니 털이 있었다지요.",m:"sad",s:{nero:25}},
+    {w:"nero",t:"털이 제 것이라면, 증거가 저를 부르겠지요. 저는 4시 반에 숲의 작은 등불에 있었습니다.",m:"sad"},
+    {w:"owlgp",t:"달래는 4시 15분부터 한 번도 내 곁을 뜨지 않았다. 팥죽을 한 숟갈씩 떠 주더구나.",s:{grandma:-10}},
+    {w:"tori",t:"……깡총.",m:"nervous"},
+    {w:"det1",t:"다들 생각이 달라. 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
+   {type:"debate",mode:"yes",topic:"사무소 1번 열쇠는 오후 내내 어디 있었을까?",bullets:["e15_hook","e15_lock","e15_fur","e15_file"],
+    hint:"우리 사무소 열쇠 걸이를 떠올려 봐. 1번 열쇠가 오후 내내 어디 있었지?",
+    stms:[
+     {w:"grandma",t:"사무소 문이야 늘 열려 있잖아요. 누구든 {1번 열쇠를 꺼내 갈 수} 있었지요.",m:"sad"},
+     {w:"momo",t:"어머, 그럼 누가 {자물쇠를 부수고} 연 거네요!",m:"nervous"},
+     {w:"buri",t:"부엉… 1번 열쇠는 오후 내내 {걸이에서 한 번도 안 내려왔어요}.",k:"yes",a:["e15_hook","buri15_3"],m:"shy",ok:[
+      {w:"det1",t:"그 말이 맞아! 사무소 1번 열쇠는 오후 내내 걸이 제자리에 있었어."},
+      {w:"buri",t:"부, 부엉! 제가 지켰어요. 잠깐 나갈 때도 문은 꼭 잠갔고요.",m:"nervous"},
+      {w:"det1",t:"그럼 언덕 자물쇠를 연 건… 1번이 아닌 다른 열쇠야."},
+      {w:"owlgp",t:"…다른 열쇠라.",m:"sad"},
+      {w:"grandma",t:"아이고, 우리 부리 장하네. 그래도 다른 열쇠라니, 무서운 소리네.",m:"sad"}]}]},
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"grandma",t:"아이고, 다른 열쇠라… 30년 전 그 밤에도 등불은 열쇠로 열렸다지요.",m:"sad"},
+    {w:"grandma",t:"그 밤 등불 밑에 있던 게 누구였더라. 불쌍한 것… 아이고, 내가 괜한 소리를 했네.",m:"sad",s:{nero:30}},
+    {w:"grandma",t:"모모 관장님 꽃 쿠키 틀도 그 도장이랑 닮았다면서요. 할머니는 모르겠다, 아가들.",s:{momo:20}},
+    {w:"karo",t:"할머니 말씀을 들으니… 후후, 웃을 일이 아닌데 자꾸 이 소리가 나요.",m:"nervous"},
+    {w:"momo",t:"어머, 할머니까지…!",m:"nervous"},
+    {w:"nero",t:"…30년 전에도, 오늘도. 저는 또 등불 밑에 서 있군요.",m:"sad"}]},
+   {type:"debate",mode:"no",topic:"할머니 말대로, 네로일까 모모 관장일까?",bullets:["cx_kitchen_4","e15_cutter","e15_tracks","e15_lamp"],
+    hint:"자물쇠의 털이 무엇에 엉켜 있었는지 떠올려 봐.",
+    stms:[
+     {w:"grandma",t:"자물쇠 고리엔 {그 아이 몸에서 빠진} 털이 걸려 있었다지요. 불쌍한 것.",k:"no",a:["cx_kitchen_4","e15_fur"],m:"sad",ok:[
+      {w:"det1",t:"그건 아니야! 그 털은 주황 털실에 엉켜 있었어. 몸에서 빠진 게 아니라 뜨개 목도리에서 실째 뜯긴 거야."},
+      {w:"det0",t:"누군가 목도리에서 뜯어 고리에 걸어 둔 거지."},
+      {w:"nero",t:"…철창에서 둘렀던 목도리가 있었습니다. 풀려난 날 곱게 개어 돌려드렸지요.",m:"sad",s:{nero:-30}},
+      {w:"owlgp",t:"허허… 털 한 줌으로 또 그 아이를 몰 뻔했구나.",m:"sad"},
+      {w:"grandma",t:"아이고, 이 늙은이가 괜한 소리를 했네. 그래도 쿠키 틀은 어떻고요…",m:"sad",s:{momo:10}}]},
+     {w:"momo",t:"제 쿠키 틀은 {잎이 넷}이에요. 행운의 네잎이요!",m:"nervous"},
+     {w:"nero",t:"저는 4시 반에 {숲의 작은 등불에서} 불을 켜고 있었습니다.",m:"sad"}]},
+   {type:"vote",q:"동지 등불의 별빛 돌을 가져간 사람은?",votes:{owlgp:"momo",grandma:"momo",nero:"momo",karo:"momo",momo:"karo",tori:"momo",buri:"grandma"},ok:[
+    {w:"det0",t:"표가 모모 관장에게 몰렸다. 모두가 할머니 말을 믿고 있으니까."},
+    {w:"owlgp",t:"…달래?",m:"confused"},
+    {w:"det1",t:"할머니… 4시 15분부터 5시까지, 정말 한 번도 자리를 안 뜨셨어요?",m:"sad"},
+    {w:"grandma",t:"아이고, 우리 아가들이 할머니를? …그래요. 그럼 증거로 말해 봐요. 다 들어 줄게요."}]}
+  ]};
+})();
+/* v103: 거짓말이 깨져도 바로 '범인 아님'으로 단정하지 않기 + 팝업 겹침·두 번 눌림 방지 */
+(function(){
+ ["culprit","shy","mistake"].forEach(function(k){var x=KIND[k];if(!x)return;x.title="말이 달라졌어요";x.tag="말이 바뀜";x.box="모순 발견!";x.note="말이 바뀜";x.flash="딱 걸렸어!"});
+ window.__brThink=function(name,tid){var n1=jo(name,"이","가"),P=[
+  n1+" 말을 바꿨어. 왜 사실과 다르게 말했을까? 범인이라서일까, 다른 이유가 있어서일까…",
+  "숨기던 게 하나 드러났어. 그렇다고 "+n1+" 범인인지 아닌지는 아직 몰라.",
+  "말이 달라졌어. 이게 사건이랑 어떻게 이어지는지 더 살펴봐야겠어."],h=0;String(tid||name).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%97});return P[h%P.length]};
+ // 대화창 넘김: 짧은 시간에 두 번 눌리는 것 막기
+ var _adv=advance,last=0;advance=function(){var t=Date.now();if(t-last<220)return;last=t;return _adv.apply(this,arguments)};
+ // 대화창·팝업이 닫힌 직후 같은 손가락의 클릭이 아래 버튼에 떨어지는 것 막기
+ var until=0;function guard(){until=Date.now()+320}
+ var _end=endDlg;endDlg=function(){guard();return _end.apply(this,arguments)};
+ var _cm=closeModal;closeModal=function(){guard();return _cm.apply(this,arguments)};
+ document.addEventListener("click",function(e){if(Date.now()<until&&!(e.target.closest&&e.target.closest("#ov,.rt,.crec2,.modal"))){e.stopPropagation();e.preventDefault()}},true);
+ var css=document.createElement("style");
+ css.textContent='.notice.toast{pointer-events:none}.notice.toast #closeNotice{pointer-events:auto}';
  document.head.appendChild(css);
 })();
 
