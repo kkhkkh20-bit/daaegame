@@ -7076,7 +7076,8 @@ function sanitizeState(d){
     n.uv=!!g.uv;n.nt_seen_conf=!!g.nt_seen_conf;
     n.coins=int(g.coins,0,30,1);n.zst=map(g.zst,null,function(v){return int(v,0,9,0)||null},200);n.mem=ids(g.mem,function(v){return own(MEMTXT,v)},20);n.dtries=int(g.dtries,0,99,0);n.hintLog=ids(g.hintLog,function(v){return /^(case:\d|scene|talk|battle|won)$/.test(v)},20);
     var b=g.battle;
-    n.battle=isObj(b)&&sus(b.cul)&&(b.phase==="fight"||b.phase==="won")?{cul:b.cul,phase:b.phase,round:int(b.round,0,20,0),si:int(b.si,0,50,0),miss:int(b.miss,0,99,0),lives:int(b.lives,0,hm,hm),max:hm,smug:!!b.smug}:null;
+    n.battle=isObj(b)&&sus(b.cul)&&(b.phase==="fight"||b.phase==="won")?{cul:b.cul,phase:b.phase,round:int(b.round,0,20,0),si:int(b.si,0,50,0),miss:int(b.miss,0,99,0),lives:int(b.lives,0,hm,hm),max:hm,smug:!!b.smug,rev:isObj(b.rev)?map(b.rev,null,function(v){return v?1:null},30):undefined}:null;
+    if(isObj(g.debate)){var gd=g.debate,hd=isObj(gd.hold)&&Array.isArray(gd.hold.need)?{need:gd.hold.need.filter(function(v){return typeof v==="string"&&v.length<40}).slice(0,5),task:txt(gd.hold.task,300)||""}:null;n.debate={pi:int(gd.pi,0,99,0),sus:map(gd.sus,sus,function(v){return int(v,0,100,10)}),done:!!gd.done,hold:hd}}
     if(isObj(g.night)){n.night={bought:int(g.night.bought,0,9,0),bargain:g.night.bargain?1:0,blackout:g.night.blackout?1:0};var fh=txt(g.night.fakehint,200);if(fh)n.night.fakehint=fh}
     return n;   // result, notice, slide, enter, arrive, justBroke stay at fresh() defaults
   }
@@ -17863,7 +17864,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(s>=3)g+=drop(70,24,1.9,.8)+drop(32,28,1.8,.25)+drop(94,44,1.1,.1,"fly r")+drop(6,48,1.1,.55,"fly l")+drop(50,18,1.2,.35,"fly u");
   if(s>=3)g+='<g fill="none" stroke="#E0413A" stroke-width="2.6" stroke-linecap="round" transform="translate(74 16) scale(1.2)"><path d="M-6 -2 Q-2 0 -2 -6"/><path d="M6 -2 Q2 0 2 -6"/><path d="M-6 2 Q-2 0 -2 6"/><path d="M6 2 Q2 0 2 6"/></g>';
   return g+'</g>'}
- function tic(k){var h=0;String(k).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%997});return "tic"+(h%3)}
+ window.__distress=distress;function tic(k){var h=0;String(k).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%997});return "tic"+(h%3)}
  var DST=null;
  var _pf=pf;pf=function(k,mood){var r=_pf.apply(this,arguments);if(DST&&k===DST.k&&DST.s){var i=r.lastIndexOf("</svg>");if(i>0)r=r.slice(0,i)+distress(k,DST.s)+r.slice(i)}return r};
  window.__foefx=function(s){return ""};
@@ -18082,7 +18083,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(Q){var L=Q[qi];h+=seats(L.w)+'<div class="rt-mid talk" id="rtnext"><div class="rt-big">'+pf(L.w,L.m||"")+'</div><div class="rt-bub"><small>'+esc(nm(L.w))+'</small><p>'+hl(pname(L.t))+'</p><span class="nx">▼</span></div></div>'}
   else if(ph.type==="debate"){var st=ph.stms[si],md=modeOf(ph),ev=sel&&evById(C,sel);
    h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div>'
-    +'<div class="rt-nav"><button type="button" id="rtprev">◀</button><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span><button type="button" id="rtnx">▶</button></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p></div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
+    +'<div class="rt-nav"><button type="button" id="rtprev">◀</button><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span><button type="button" id="rtnx">▶</button></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p>'+(gated(C,sel)&&ev.check?'<button type="button" class="rt-exam" id="rtexam">'+esc(ev.check.label||"자세히 살펴보기")+'</button>':'')+'</div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
     +'<div class="rt-bul">'+ph.bullets.filter(has).map(function(id){return '<button type="button" class="bl'+(sel===id?' on':'')+'" data-bl="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(C,id))+'</span></button>'}).join("")+'</div>'
     +'<div class="rt-foot"><button type="button" id="rthint">힌트</button><span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
   else if(ph.type==="vote"||ph.type==="mob"){var V=ph.votes||{},mob=ph.type==="mob";h+=seats(null,false)+'<div class="rt-mid vote"><p class="rt-q">'+esc(ph.q)+'</p><p class="rt-sub">'+(mob?'모두의 표가 나왔어요…':'모두의 표가 나왔어요. 범인이라고 생각하는 사람을 눌러요.')+'</p><div class="rt-vg'+(mob?' mob':'')+'">'+C.suspects.map(function(k){var by=Object.keys(V).filter(function(v){return V[v]===k});return '<button type="button" class="vc'+(mob&&mobHit&&k===ph.target?' hitm':'')+'" data-seat="'+k+'"'+(mob?' disabled':'')+'>'+(mob&&mobHit&&k===ph.target?'<span class="mstamp">다수결</span>':'')+pf(k,by.length>1?"nervous":"")+'<b>'+esc(nm(k))+'</b><span class="vby">'+by.map(function(v){return '<i>'+pf(v,"")+'</i>'}).join("")+'</span><em>'+by.length+'표</em></button>'}).join("")+'</div></div>'}
@@ -18114,6 +18115,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function fire(){var ph=curPh(),st=ph.stms[si];if(!sel){try{SFX.huh()}catch(e){}var n=el.querySelector(".rt-nav span");if(n){n.classList.remove("shake");void n.offsetWidth;n.classList.add("shake")}return}
   busy=true;
   var md=modeOf(ph),hit=st.k===md&&st.a&&st.a.length;
+  if(hit&&st.a.indexOf(sel)>=0&&gated(C,sel)){busy=false;try{SFX.huh()}catch(e){}sayQ([{w:"det1",t:"이 증거가 맞는 것 같은데… 아직 자세히 안 봤어. 증거 설명 아래 버튼으로 먼저 살펴보자."}],function(){draw()});return}
   if(hit&&st.a.indexOf(sel)>=0){SFX.gotcha();
    (window.__hush?window.__hush(false):Promise.resolve()).then(function(){return flash(md==="yes"?"그 말이 맞아!":"그건 아니야!",false,true)}).then(function(){busy=false;if(window.__crowd)window.__crowd();sayQ(st.ok||[],nextPh)})}
   else{busy=false;hurt(hit?(md==="yes"?"이 증거로는 그 말이 맞다고 증명할 수 없어. 다른 증거를 골라 보자.":"이 증거로는 그 말을 반박할 수 없어. 다른 증거를 골라 보자."):(md==="yes"?"그 말은 편들 수 없어. 증거가 없는 말이야. 다른 문장을 살펴보자.":"그 말은 사실이야. 틀린 말을 찾아야 해. 다른 문장을 살펴보자."))}}
@@ -18128,6 +18130,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   el.querySelectorAll("[data-wk]").forEach(function(b){b.onclick=function(e){e.stopPropagation();fire()}});
   var p=el.querySelector("#rtprev");if(p)p.onclick=function(){var ph=curPh();si=(si-1+ph.stms.length)%ph.stms.length;SFX.page();draw()};
   var x=el.querySelector("#rtnx");if(x)x.onclick=function(){var ph=curPh();si=(si+1)%ph.stms.length;SFX.page();draw()};
+  var ex=el.querySelector("#rtexam");if(ex)ex.onclick=function(){if(!G.exam)G.exam={};G.exam[sel]=true;try{SFX.found()}catch(e){}try{saveProg()}catch(e){}draw()};
   var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();sayQ([{w:"det0",t:curPh().hint}],function(){draw()})};
   if(curPh()&&curPh().type==="vote"&&!Q)el.querySelectorAll(".vc[data-seat]").forEach(function(b){b.onclick=function(){vote(b.dataset.seat)}});
  }
@@ -18166,6 +18169,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  '.rt-bub{width:100%;background:#FFFCF3;color:#1B2447;border:3px solid #1B2447;border-radius:16px;padding:10px 14px;position:relative;box-shadow:0 6px 0 rgba(0,0,0,.35)}.rt-bub small{display:block;font-family:var(--display);font-size:14px;color:#8A5A00}.rt-bub small em{font-style:normal;color:#6B7390;font-size:12px;margin-left:6px}.rt-bub p{margin:4px 0 0;font-size:17px;line-height:1.6}.rt-bub .nx{position:absolute;right:12px;bottom:6px;font-size:12px;color:#6B7390}'+
  '.rt-goal{display:flex;flex-direction:column;align-items:center;gap:2px;border-radius:14px;padding:6px 12px;font-size:13px;text-align:center;border:3px solid #0A0920}.rt-goal b{font-family:var(--display);font-weight:400;font-size:19px}.rt-goal.no{background:#FFD84D;color:#1B2447}.rt-goal.yes{background:#8FC8FF;color:#0B2447}'+
  '.rt-evd{display:flex;gap:10px;align-items:flex-start;background:#FFFCF3;color:#1B2447;border:2px solid #0A0920;border-radius:12px;padding:8px 10px;font-size:13px;line-height:1.5}.rt-evd .evic{width:36px;height:36px;flex:none}.rt-evd b{font-family:var(--display);font-weight:400;font-size:15px}.rt-evd p{margin:2px 0 0}.rt-evd.empty{display:block;background:rgba(255,252,243,.12);color:#D9D6F5;border-style:dashed;text-align:center}'+
+ '.rt-exam{margin-top:6px;border:2px solid #0A0920;border-radius:999px;background:#FFD84D;color:#1B2447;padding:4px 12px;font-size:13px;font-family:var(--display)}'+
  '.wk{border:none;border-radius:6px;padding:0 4px;margin:0 1px;font:inherit;cursor:pointer;animation:wkg 1.2s ease-in-out infinite}.wk{background:#FFB547;color:#1B2447;box-shadow:0 0 0 2px #C9701A}'+
  '@keyframes wkg{50%{filter:brightness(1.25);transform:translateY(-1px)}}'+
  '.rt-nav{display:flex;align-items:center;gap:8px;width:100%}.rt-nav button{width:44px;height:40px;border-radius:12px;border:2px solid #0A0920;background:#EDE6CF;color:#1B2447;font-size:18px}.rt-nav span{flex:1;text-align:center;font-size:13px;color:#D9D6F5}.rt-nav span.shake{animation:shake .4s}'+
@@ -18176,7 +18180,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  document.head.appendChild(css);
 })();
 
-/* v104: 원탁 회의 4~15장 데이터 */
+/* v106: 원탁 회의 4~15장 데이터 */
 (function(){var DEBATE=window.DEBATE;
 DEBATE.star={
   title:"원탁 회의",sub:"별빛 돌을 바꿔치기한 사람은?",seats:["owlgp","kongi","bori","yeoni","karo","nabi","kkwak"],need:["owlfeather","dancelamp","receipt"],
@@ -18270,7 +18274,7 @@ DEBATE.bell={
     {w:"seol",t:"…네. 해 질 녘에 밤이가 올라갔어요. 그건… 맞아요.",m:"sad",s:{bami:10}},
     {w:"tok",t:"딸깍… 잠, 잠깐만요! 밤이는…!",m:"nervous"},
     {w:"sling",t:"그럼 다수결로 정해요. 마을 일은 마을 사람들이 정하는 거니까요.",m:"happy"}]},
-   {type:"mob",q:"종을 멎게 하고 추를 빼 간 사람은?",votes:{ppul:"bami",sling:"bami",seol:"bami",owlgp:"bami",tok:"ppul",bami:"sling"},target:"bami",lines:[
+   {type:"mob",q:"종줄을 끊고 추를 가져간 사람은?",votes:{ppul:"bami",sling:"bami",seol:"bami",owlgp:"sling",tok:"ppul",bami:"sling"},target:"bami",lines:[
     {w:"bami",t:"…봐. 어른들은 늘 그래. 제일 작은 애부터 의심하지.",m:"sad"},
     {w:"ppul",t:"에헴! 다수결이오. 촌장으로서 말하건대, 밤이는 오늘부터 종탑 출입 금지요!",m:"smug",s:{bami:10}},
     {w:"sling",t:"밤이 양, 지금 털어놓으면 다들 용서해 주실 거예요. 제가 도와드릴까요?",m:"happy",s:{bami:10}},
@@ -18292,11 +18296,11 @@ DEBATE.bell={
     stms:[
      {w:"seol",t:"…10시 정각, 종이 {세 번, 한 번, 네 번} 울리고 멎었어요.",m:"nervous"},
      {w:"ppul",t:"에헴, 해 질 녘에 밤이가 {종탑에 올라간} 건 설이가 봤소.",m:"smug"},
-     {w:"sling",t:"10시 정각, {밤이 양이 추를 빼는 바람에} 종이 멎은 거예요. 후후.",k:"no",a:["m_echo"],m:"happy",ok:[
-      {w:"det1",t:"그건 아니야! 메아리 상자 속 마지막 종소리는 헐거워진 추가 덜컹거린 소리야. 추는 그때 아직 종 안에 있었어!"},
+     {w:"sling",t:"10시 정각, {밤이 양이 종에서 추를 빼 갔어요}. 그래서 종이 멎은 거죠. 후후.",k:"no",a:["m_echo"],m:"happy",ok:[
+      {w:"det1",t:"그건 아니야! 마지막 종소리는 헐거워진 추가 덜컹거린 소리야. 10시엔 추가 아직 종 안에 매달려 있었어!"},
       {w:"seol",t:"…그럼 추가 사라진 건 그 뒤예요. 10시 10분, 사다리를 삐걱삐걱 오른 그 사람 때.",m:"nervous",s:{bami:-15}},
       {w:"bami",t:"…난 날개가 있어. 사다리 같은 거 안 타.",m:"smug",s:{bami:-30}},
-      {w:"seol",t:"…밤이야, 미안해. 한 번 더 셌어야 했는데.",m:"sad"},
+      {w:"seol",t:"…밤이야, 미안해. 소리를 끝까지 들었어야 했는데.",m:"sad"},
       {w:"sling",t:"후, 후후… 사다리 타는 사람이야 마을에 많잖아요.",m:"nervous",s:{sling:10}}]}]},
    {type:"debate",mode:"no",topic:"종줄은 어떻게 끊어졌을까?",bullets:["m_rope","m_echo","m_flake","m_speech"],
     hint:"종탑에서 본 종줄 끝을 떠올려 봐. 끊긴 자리가 어떻게 생겼었지?",
@@ -18368,7 +18372,7 @@ DEBATE.dark={
      {w:"owlgp",t:"…등불은 {열쇠로 열어야만} 끌 수 있단다.",m:"sad"},
      {w:"luka",t:"까로 씨는 날아왔으니, 등불 밑엔 {발자국 하나 남지 않았을} 겁니다.",k:"no",a:["n_print"],m:"smug",ok:[
       {w:"det1",t:"그건 아니야! 등불 아래엔 스라소니 발자국이 찍혀 있었어. 언덕 반대편 숲까지 이어져 있었고."},
-      {w:"bami",t:"…스라소니라. 이 마을에 스라소니는 한 명뿐이지.",m:"smug",s:{luka:25}},
+      {w:"bami",t:"…스라소니 발자국이라. 날개 달린 까마귀 건 아니네.",m:"smug",s:{luka:25}},
       {w:"karo",t:"…날개 달린 누군가가 아니라, 걸어서 온 누군가였군요.",m:"sad",s:{karo:-25}},
       {w:"luka",t:"…규정상, 발자국은 말을 하지 않습니다.",m:"smug",s:{luka:10}}]},
      {w:"bami",t:"…등불이 꺼진 건 {열쇠가 사라진 뒤}야. 열쇠 없인 못 끄니까.",m:"smug"}]},
@@ -18539,7 +18543,7 @@ DEBATE.glove={
   title:"원탁 회의",sub:"꽥순이를 데려간 하얀 장갑은?",seats:["owlgp","madam","mungchi","nero","momo","bami","kongi"],need:["s9x_thread","g9_found"],
   phases:[
    {type:"talk",lines:[
-    {w:"owlgp",t:"허허, 자정까지 하루도 안 남았다. 꽥순이를 데려간 게 누군지 여기서 짚어 보자.",m:"sad"},
+    {w:"owlgp",t:"허허, 꽥순이는 무사히 찾았다. 이제 누가 데려갔는지 여기서 짚어 보자.",m:"sad"},
     {w:"owlgp",t:"한 명씩, 누가 수상한지 이유를 붙여 말해 보거라."},
     {w:"momo",t:"저는… 네로 씨가 마음에 걸려요. 연못가 진흙에 큰 고양잇과 발자국이 있었다면서요.",m:"nervous",s:{nero:20}},
     {w:"madam",t:"어머, 저도 누굴 의심하고 싶진 않아요. 다만 말뚝에 검은 실이 묶여 있었다죠. 검은 망토 색이던데요.",m:"sad",s:{nero:20}},
@@ -18599,18 +18603,18 @@ DEBATE.festival={
     {w:"karo",t:"저, 저는 우체국에 있었어요. 후후… 웃을 일이 아닌데.",m:"nervous"},
     {w:"mungchi",t:"…… (무릎에 얼굴을 묻은 채, 아무 말도 하지 않는다.)",m:"sad"},
     {w:"det1",t:"뭉치가 말을 안 하면, 우리가 증거로 대신 말해 주자. 빛나는 말을 쏘는 거야!"}]},
-   {type:"debate",mode:"no",topic:"돌이 사라질 때, 뭉치는 등불 옆에 있었을까?",bullets:["f10_slip","f10_glove","f10_note","f10_cradle"],
-    hint:"돌이 사라진 9시 10분에서 31분 사이, 뭉치가 다른 곳에 있었다는 종이가 있어. 우체국 창구에서 쓰는 종이.",
+   {type:"debate",mode:"yes",topic:"돌이 사라질 때, 뭉치는 어디 있었을까?",bullets:["f10_slip","f10_glove","f10_note","f10_cradle"],
+    hint:"돌이 사라진 9시 10분에서 31분 사이, 뭉치가 다른 곳에 있었다는 걸 보여 주는 종이가 있어. 우체국 창구에서 쓰는 종이.",
     stms:[
-     {w:"siluk",t:"돌이 사라진 건 {9시 10분에서 31분 사이}라지요. 도토 군이 재 두었다더군요."},
-     {w:"kongi",t:"킁킁… 우체국 앞에서 뭉치 형 냄새가 진했어. 오래 서 있던 냄새야. 언제인지는 몰라.",m:"confused"},
-     {w:"wanggu",t:"돌이 없어질 때 뭉치는 {등불 옆에 있었어}! 9시 반쯤 흑백 무늬를 이 두 눈으로 봤다고!",k:"no",a:["f10_slip","kongi_f2","karo_f3"],ok:[
-      {w:"det1",t:"그건 아니야! 우편 접수표에 9시 20분, 이름 없는 편지 세 통. 그걸 부친 뭉치는 그때 우체국에 있었어."},
-      {w:"kongi",t:"킁킁! 우체국 앞 그 냄새가 바로 그때 거였구나!",m:"happy"},
-      {w:"karo",t:"…네. 도련님은 9시 10분쯤 와서 35분까지 창구 앞에 있었어요. 말하지 말라고 해서… 후후.",m:"shy",s:{mungchi:-30,karo:-10}},
+     {w:"siluk",t:"도련님은 그 시간에 {다락방에서 글씨 연습을 하셨지요}. 제가 다 압니다."},
+     {w:"wanggu",t:"돌이 없어질 때 뭉치는 {등불 옆에 있었어}! 9시 반쯤 흑백 무늬를 이 두 눈으로 봤다고!"},
+     {w:"karo",t:"…도련님은 그때 {우체국에서 편지 세 통을 부쳤어요}. 9시 20분에요.",k:"yes",a:["f10_slip","karo_f3"],m:"shy",ok:[
+      {w:"det1",t:"그 말이 맞아! 우편 접수표에 9시 20분, 편지 세 통이라고 찍혀 있어. 까로 아저씨 말이랑 시각이 딱 맞아."},
+      {w:"kongi",t:"킁킁! 우체국 앞에서 맡은 뭉치 형 냄새가 바로 그때 거였구나!",m:"happy",s:{mungchi:-30}},
+      {w:"karo",t:"말하지 말라고 해서… 이름도 안 쓰고 부쳤어요. 후후.",m:"shy"},
       {w:"wanggu",t:"그, 그럼 내가 본 흑백 무늬는… 등불 그림자였나. 내 말이… 맞지…?",m:"sad"},
       {w:"mungchi",t:"…… (아주 작게, 한 번 고개를 끄덕인다.)",m:"sad"}]},
-     {w:"bori",t:"쪽지엔 {'뭐, 그렇다는 거야'}라고 적혀 있었대. 도련님 말버릇이잖아.",m:"confused"}]},
+     {w:"bori",t:"도련님은 그때 {광장 등불 뒤에 숨어 있었대}. 다들 그러던데.",m:"confused"}]},
    {type:"talk",ban:"회의가 흔들린다",lines:[
     {w:"siluk",t:"잠깐 여쭙겠습니다. 까로 씨는 아까 도련님을 '못 봤다'고 하지 않았습니까.",m:"sad",s:{karo:25}},
     {w:"siluk",t:"말이 한 번 바뀐 분의 이야기를 믿어도 되는 겁니까. 도련님을 감싸는 걸 수도 있지요.",s:{karo:10,mungchi:15}},
@@ -18807,21 +18811,21 @@ DEBATE.bureau={
    {type:"talk",lines:[
     {w:"badook",t:"삐익! 모두 모였소. 불난 7번지, 열린 금고, 사라진 편지. 누가 수상한지 까닭을 붙여 말하시오!"},
     {w:"eunho",t:"나는 판다 소년이오. 금고 앞에 백합 브로치가 떨어져 있었소. 그 아이 어미가 감시소에 있다지.",m:"smug",s:{mungchi:25}},
-    {w:"mungchi",t:"…난 저 사장이 수상해. 도둑이 들었다는데 진열장엔 손자국 하나 없잖아. 뭐, 그렇다는 거야.",m:"shy",s:{eunho:15}},
+    {w:"mungchi",t:"…난 저 사장이 수상해. 도둑이 들었다는데 돈 자루랑 보석은 그대로래. 뭐, 그렇다는 거야.",m:"shy",s:{eunho:15}},
     {w:"piko",t:"피코는~ 구슬이가 궁금해. 금고 계단에 쓰러져 있었잖아? 금고랑 제일 가까웠던 건 구슬이야.",s:{guseul:20}},
     {w:"guseul",t:"저, 저는 목도리를 가지러 갔을 뿐이에요… 뒷문을 여니까 연기가 가득했어요.",m:"nervous"},
     {w:"lamplighter",t:"누굴 탓하긴 싫어요. 다만 7시 반에 거리를 켤 때, 가게 안에 사장님이 계셨어요.",m:"shy",s:{eunho:10}},
     {w:"eunho",t:"그건 잠깐이오. 곧장 광장 모임에 갔소. 야경꾼이 봤잖소.",m:"smug"},
     {w:"badook",t:"삐익! 맞소. 광장 가로등이 켜질 때 들어오셨소. 이상 무!",m:"happy",s:{eunho:-10}},
     {w:"det1",t:"다들 생각이 달라. 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
-   {type:"debate",mode:"yes",topic:"뒤창은 누가, 왜 깼을까?",bullets:["e13_route","e13_backdoor","e13_stairs","e13_roll"],
+   {type:"debate",mode:"yes",topic:"뒤창은 누가, 왜 깼을까?",bullets:["e13_route","e13_backdoor","e13_stairs","e13_rescue"],
     hint:"등불지기 아저씨가 오늘 밤 몇 시에, 어디서 불 켜기를 멈췄는지 적힌 게 있어.",
     stms:[
      {w:"eunho",t:"검은 망토 도둑이 {뒤창을 깨고 들어왔소}. 유리가 박살 나 있지 않소.",m:"smug"},
      {w:"badook",t:"삐익! 아니오. 도둑은 {열린 뒷문으로 들어온} 거요!"},
-     {w:"lamplighter",t:"저는 {7시 52분에 옆 골목에서 불 켜기를 멈췄어요}. 연기가 보여서요.",k:"yes",a:["e13_route","lamplighter13_1"],m:"shy",ok:[
+     {w:"lamplighter",t:"저는 7시 52분에 {불 켜기를 멈추고 뒤창을 깼어요}. 안에 아이가 있었거든요.",k:"yes",a:["e13_route","e13_rescue","lamplighter13_1"],m:"shy",ok:[
       {w:"det1",t:"그 말이 맞아! 점등 기록판에 '7:52 옆 골목 — 불난 집, 중단'이라고 적혀 있어."},
-      {w:"lamplighter",t:"…네. 사다리에서 뛰어 내려가 뒤창을 깼어요. 안에 아이가 있었거든요.",m:"shy"},
+      {w:"lamplighter",t:"…네. 연기가 보여서 사다리에서 뛰어 내려갔어요.",m:"shy"},
       {w:"guseul",t:"눈을 떴을 땐 아저씨 등이었어요. 그래서 하나도 안 무서웠어요.",m:"happy",s:{guseul:-20}},
       {w:"det0",t:"뒤창을 깬 건 도둑이 아니라, 아이를 구하러 온 손이었군."},
       {w:"eunho",t:"…그렇다면 도둑은 문으로 들어왔겠지.",m:"nervous",s:{eunho:10}}]}]},
@@ -18892,8 +18896,8 @@ DEBATE.lining={
     hint:"덤불에 걸린 털실이 어떤 색 실로만 되어 있었는지 떠올려 봐. 네로 망토 안쪽은 어땠지?",
     stms:[
      {w:"sling",t:"작은 등불 찻잔 둘은 {한 모금도 줄지 않았소}.",m:"smug"},
-     {w:"wanggu",t:"덤불의 검은 털실은 {네로 망토에서 뜯긴} 거야! 내 말이 맞지?!",k:"no",a:["e14_fiber","buri14_1"],ok:[
-      {w:"det1",t:"그건 아니야! 덤불 털실은 처음부터 끝까지 새까맣고 흰 실이 한 올도 없어. 네로 망토 안감은 흰 꽃 자수투성이잖아."},
+     {w:"wanggu",t:"덤불 털실은 {네로 망토 안쪽에서 뜯긴} 거야! 내 말이 맞지?!",k:"no",a:["e14_fiber","buri14_1"],ok:[
+      {w:"det1",t:"그건 아니야! 네로 망토 안쪽은 흰 꽃 자수투성이인데, 덤불 털실엔 흰 실이 한 올도 없어."},
       {w:"nero",t:"…30년 동안 아무에게도 안쪽을 보인 적이 없습니다.",m:"sad"},
       {w:"buri",t:"부엉…! 제가 본 망토도 안쪽까지 새까맸어요. 네로 씨 망토가 아니에요.",m:"nervous",s:{nero:-35}},
       {w:"wanggu",t:"어, 어…? 그럼 영감이 본 망토는…",m:"confused"},
@@ -19008,6 +19012,7 @@ DEBATE.kitchen={
     {w:"grandma",t:"아이고, 우리 아가들이 할머니를? …그래요. 그럼 증거로 말해 봐요. 다 들어 줄게요."}]}
   ]};
 })();
+
 /* v103: 거짓말이 깨져도 바로 '범인 아님'으로 단정하지 않기 + 팝업 겹침·두 번 눌림 방지 */
 (function(){
  ["culprit","shy","mistake"].forEach(function(k){var x=KIND[k];if(!x)return;x.title="말이 달라졌어요";x.tag="말이 바뀜";x.box="모순 발견!";x.note="말이 바뀜";x.flash="딱 걸렸어!"});
@@ -19092,6 +19097,45 @@ DEBATE.kitchen={
  '.dlock .dopen:active{transform:translateY(3px);box-shadow:0 1px 0 #3A2A0A}'+
  '.dlock.jam{animation:djam .45s}@keyframes djam{20%{transform:rotate(-4deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-2deg)}100%{transform:none}}'+
  '.rbox.open .dlock .dsh{transform:translateY(-14px) rotate(-12deg)}';
+ document.head.appendChild(css);
+})();
+
+/* v106: 대결 문장은 한 장씩 넘겨 보기(긴 문장 대응) + 대결 중 대화창에서도 범인 얼굴이 무너진 채로 */
+(function(){
+ // ---- 1) 반대 심문 문장: 현재 문장만 크게, 좌우로 밀어서 넘기기 ----
+ var _rf=renderFinal;renderFinal=function(c){var h=_rf.apply(this,arguments),B=G&&G.battle;
+  if(B&&B.phase==="fight"&&h.indexOf('class="stmlist"')>=0){
+   var st=stmsOf(rOf(c)),si=(B.si||0)%st.length,t=String((st[si]||{}).t||"");
+   h=h.replace('<li class="claim pop" id="claim">','<li class="claim pop'+(t.length>44?' long':'')+(t.length>70?' xlong':'')+'" id="claim">');
+   var dots='<div class="stdots" aria-hidden="true">'+st.map(function(_,i){return '<i class="'+(i===si?'on':'')+'"></i>'}).join("")+'<span>옆으로 밀어서 다음 문장</span></div>';
+   h=h.replace('</ol>','</ol>'+dots)}
+  return h};
+ var _bf=bindFinal;bindFinal=function(c){_bf.apply(this,arguments);
+  var cl=document.getElementById("claim");if(!cl)return;var x0=null,y0=null;
+  cl.addEventListener("pointerdown",function(e){x0=e.clientX;y0=e.clientY});
+  cl.addEventListener("pointerup",function(e){if(x0==null)return;var dx=e.clientX-x0,dy=e.clientY-y0;x0=null;
+   if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){var b=document.getElementById(dx<0?"nextst":"prevst");if(b)b.click()}});
+  cl.addEventListener("pointercancel",function(){x0=null});
+  cl.style.touchAction="pan-y"};
+ // ---- 2) 대결 중엔 대화창 얼굴에도 무너진 모습이 그대로 ----
+ var _pf=pf;pf=function(k,mood){var r=_pf.apply(this,arguments);
+  try{var B=G&&G.battle;if(B&&B.phase==="fight"&&k===B.cul&&window.__distress&&r.indexOf('class="dst"')<0){
+   var R=BATTLE[CASES[G.ci].id]||[],s=window.__fst(Math.min(B.round,R.length-1),R.length);if(B.lives<=1&&s>0&&s<3)s=2;
+   if(s){var i=r.lastIndexOf("</svg>");r=r.slice(0,i)+window.__distress(k,s)+r.slice(i);r=r.replace('<svg class="','<svg class="dzs'+s+' ')}}}catch(e){}
+  return r};
+ // ---- 3) 몰린 범인은 여유 부리는 말버릇(후후 등)을 붙이지 않는다 ----
+ var _q=window.quirkLine;if(_q)window.quirkLine=function(who,txt,testi,idx){try{var B=G&&G.battle;if(B&&B.phase==="fight"&&who===B.cul){var R=BATTLE[CASES[G.ci].id]||[];if(window.__fst(Math.min(B.round,R.length-1),R.length)>0)return {txt:txt,hit:false}}}catch(e){}return _q.apply(this,arguments)};
+ var css=document.createElement("style");
+ css.textContent=
+ '.arena .stmlist li:not(.claim){display:none}'+
+ '.arena .stmlist li.claim{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;touch-action:pan-y;user-select:none;-webkit-user-select:none}'+
+ '.arena .stmlist li.claim.long{font-size:.92em;line-height:1.45}.arena .stmlist li.claim.xlong{font-size:.84em}'+
+ '.stdots{display:flex;align-items:center;justify-content:center;gap:6px;margin:6px 0 2px}.stdots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3)}.stdots i.on{background:#FFD84D;width:18px;border-radius:4px}.stdots span{margin-left:8px;font-size:11px;color:rgba(255,255,255,.55)}'+
+ 'svg.dzs1 .eyes,svg.dzs2 .eyes,svg.dzs3 .eyes{transform-box:fill-box;transform-origin:50% 50%}svg.dzs1 .eyes{animation:blink 2.2s infinite}svg.dzs2 .eyes{animation:blink 1.1s infinite}svg.dzs3 .eyes{animation:blink2 .5s infinite}'+
+ 'svg.dzs2 .ears,svg.dzs3 .ears{transform-box:fill-box;transform-origin:50% 100%}svg.dzs2 .ears{animation:earf 1.4s ease-in-out infinite}svg.dzs3 .ears{animation:earf .6s ease-in-out infinite}'+
+ 'svg.dzs2 .paw,svg.dzs3 .paw{transform-box:fill-box;transform-origin:50% 100%;animation:pawsh .1s linear infinite alternate}'+
+ '#vnfig svg.dzs3,.vface svg.dzs3{animation:hjit .12s linear infinite}'+
+ '@media (prefers-reduced-motion:reduce){svg[class*="dzs"] *,#vnfig svg.dzs3{animation:none!important}}';
  document.head.appendChild(css);
 })();
 
