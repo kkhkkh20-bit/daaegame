@@ -4351,7 +4351,7 @@ function openZoom(c,zk){
   var cap="";
   function zStep(it){
     if(it.kind==="lock"){
-      modal('<span class="kicker">자물쇠</span><div class="bigic">'+LOCKSVG+'</div><h3>'+it.name+'</h3><p>'+it.lockHint+'</p><div class="rdl" style="align-self:stretch"><form class="rform" id="zlf"><input type="text" maxlength="8" placeholder="비밀번호" autocomplete="off" aria-label="비밀번호"><button class="btn small" type="submit">열기</button></form></div><button class="btn ghost" id="zlx">그만두기</button>',function(){
+      modal('<span class="kicker">자물쇠</span>'+(window.__dialN(it.code)?'':'<div class="bigic">'+LOCKSVG+'</div>')+'<h3>'+it.name+'</h3><p>'+it.lockHint+'</p><div class="rdl" style="align-self:stretch"><form class="rform" id="zlf" data-dial="'+window.__dialN(it.code)+'"><input type="text" maxlength="8" placeholder="비밀번호" autocomplete="off" aria-label="비밀번호"><button class="btn small" type="submit">열기</button></form></div><button class="btn ghost" id="zlx">그만두기</button>',function(){
         document.getElementById("zlx").onclick=function(){SFX.tap();closeModal()};
         var f=document.getElementById("zlf");f.onsubmit=function(e){e.preventDefault();var v=normA(f.querySelector("input").value);if(!v)return;
           if(it.code.some(function(x){return normA(x)===v})){closeModal();SFX.unlock();zSet(it,1);cap="";draw();setTimeout(function(){var b=el.querySelector('[data-zi="'+it.id+'"]');if(b)b.click()},380)}
@@ -6037,13 +6037,13 @@ function renderRiddles(c){
     var mir=r.mirror&&!open;
     h+='<div class="rbox'+(open?' open':'')+(mir?' mirror':'')+'"><div class="rq"><span class="rlock">'+(open?'<svg viewBox="0 0 20 20"><path d="M4 10 l4 4 l8 -8" fill="none" stroke="currentColor" stroke-width="3"/></svg>':LOCKSVG)+'</span><p class="rqt'+(mir&&!(G.mirror&&G.mirror[i])?' flip':'')+'">'+r.q+'</p>'+(mir?'<button class="minib" data-mirror="'+i+'">'+(G.mirror&&G.mirror[i]?'거울 치우기':'거울로 보기')+'</button>':'')+'</div>'+(mir?'<p class="soft">거울에 비친 것처럼 뒤집힌 쪽지다. 거울로 보면 읽을 수 있다.</p>':'');
     if(open)h+='<p class="rhint">'+coinIc()+' 코인을 받았어요</p>';
-    else h+='<form class="rform" data-ri="'+i+'"><input type="text" maxlength="8" placeholder="답을 적어요" autocomplete="off" aria-label="암호"><button class="btn small" type="submit">열기</button></form>';
+    else h+='<form class="rform" data-ri="'+i+'" data-dial="'+window.__dialN(r.a)+'"><input type="text" maxlength="8" placeholder="답을 적어요" autocomplete="off" aria-label="암호"><button class="btn small" type="submit">열기</button></form>';
     h+='</div>';
   });
   if(S.best.cake&&S.best.window&&S.best.crown&&S.best.star){
     var mo=S.master;
     h+='<div class="rbox master'+(mo?' open':'')+'"><div class="rq"><span class="rlock">'+(mo?'<svg viewBox="0 0 20 20"><path d="M4 10 l4 4 l8 -8" fill="none" stroke="currentColor" stroke-width="3"/></svg>':LOCKSVG)+'</span><p><b>검은 봉투의 비밀번호</b><br>'+MCODE.hint+'</p></div>';
-    h+=mo?'<p class="rhint"><b>열림</b> 봉투 안에는 지도 조각이 있었어요. 옆 마을 달빛 종탑에 X 표시… 5탄에서 계속.</p>':'<form class="rform" data-ri="master"><input type="tel" maxlength="4" placeholder="숫자 4자리" autocomplete="off" aria-label="비밀번호"><button class="btn small" type="submit">열기</button></form>';
+    h+=mo?'<p class="rhint"><b>열림</b> 봉투 안에는 지도 조각이 있었어요. 옆 마을 달빛 종탑에 X 표시… 5탄에서 계속.</p>':'<form class="rform" data-ri="master" data-dial="4"><input type="tel" maxlength="4" placeholder="숫자 4자리" autocomplete="off" aria-label="비밀번호"><button class="btn small" type="submit">열기</button></form>';
     h+='</div>';
   }
   return h+'</section>';
@@ -12964,7 +12964,7 @@ function openRoom(cid){
       h+='<h3>'+esc(s.title)+'</h3><div class="sstep">'+(st.i+1)+' / '+s.steps.length+'</div><p class="q">'+esc(step.q)+'</p>';
       if(step.type==="order")h+='<div class="row"><button class="b" type="button" id="sreset">처음부터</button></div>';
       if(step.type==="uv")h+='<div class="row"><button class="b" type="button" id="suv">'+(st.uv?'자외선 끄기':'자외선 등 비추기')+'</button></div>';
-      if(step.type==="code"||step.type==="uv")h+='<form class="row" id="sform" style="margin-top:8px"><input id="sin" autocomplete="off" maxlength="12" placeholder="답을 적어요"><button class="b pri" type="submit">확인</button></form>';
+      if(step.type==="code"||step.type==="uv")h+='<form class="row" id="sform" style="margin-top:8px" data-dial="'+window.__dialN(step.answer)+'"><input id="sin" autocomplete="off" maxlength="12" placeholder="답을 적어요"><button class="b pri" type="submit">확인</button></form>';
       h+='<div class="msg'+(ok?' ok':'')+'">'+esc(msg||"")+'</div>';
       if(step.hint)h+=(st.hint?'<p class="hint">'+esc(step.hint)+'</p>':'<button class="b" type="button" id="shint" style="margin-top:8px">힌트 보기</button>');
     }
@@ -19034,6 +19034,64 @@ DEBATE.kitchen={
    fx.onscroll=function(){if(Date.now()-(fx._user||0)<1500&&!DL&&G&&G.tab==="scene"&&fx.isConnected&&fx.scrollWidth>fx.clientWidth+10&&parseFloat(sc.style.getPropertyValue("--u"))>0)FSX[key]=fx.scrollLeft;fsArrows()}}};
  var css=document.createElement("style");
  css.textContent='.notice.toast{pointer-events:none}.notice.toast #closeNotice{pointer-events:auto}'+'.modal .rform{width:100%}.modal .rform .btn{width:auto;flex:none;padding-left:20px;padding-right:20px}.rform input{min-width:120px;font-size:18px;text-align:center;letter-spacing:.1em}';
+ document.head.appendChild(css);
+})();
+
+/* v105: 숫자 비밀번호는 돌리는 번호 자물쇠로 */
+(function(){
+ window.__dialN=function(arr){var a=[].concat(arr||[])[0];a=String(a==null?"":a);return /^\d{1,6}$/.test(a)?a.length:0};
+ function tick(){try{SFX.tick2?SFX.tick2():SFX.select()}catch(e){}}
+ function build(f){
+  var n=+f.dataset.dial;if(!n||f.classList.contains("dialized"))return;f.classList.add("dialized");
+  var vals=[];for(var i=0;i<n;i++)vals.push(0);
+  var d=document.createElement("div");d.className="dlock";
+  d.innerHTML='<svg class="dsh" viewBox="0 0 100 60" aria-hidden="true"><path d="M26 60 V32 a24 24 0 0 1 48 0 V60" fill="none" stroke="#3A3F52" stroke-width="12"/><path d="M26 60 V32 a24 24 0 0 1 48 0 V60" fill="none" stroke="#B9BFCC" stroke-width="6"/></svg>'
+   +'<div class="dbody"><div class="dwin">'+vals.map(function(_,i){return '<div class="wh" data-w="'+i+'"><button type="button" class="wu" aria-label="올리기">▲</button><div class="wc"><i class="p"></i><b>0</b><i class="nx"></i></div><button type="button" class="wd" aria-label="내리기">▼</button></div>'}).join("")+'</div>'
+   +'<button type="button" class="dopen">열기</button></div>';
+  f.insertBefore(d,f.firstChild);
+  function paint(i,dir){var w=d.querySelector('[data-w="'+i+'"]'),c=w.querySelector(".wc"),v=vals[i];
+   c.querySelector("b").textContent=v;c.querySelector(".p").textContent=(v+9)%10;c.querySelector(".nx").textContent=(v+1)%10;
+   if(dir){c.classList.remove("ru","rd");void c.offsetWidth;c.classList.add(dir>0?"ru":"rd")}}
+  function roll(i,dir){vals[i]=(vals[i]+dir+10)%10;paint(i,dir);tick()}
+  for(var i=0;i<n;i++)paint(i,0);
+  d.querySelectorAll(".wh").forEach(function(w){var i=+w.dataset.w,y0=null,acc=0;
+   w.querySelector(".wu").onclick=function(e){e.preventDefault();roll(i,1)};
+   w.querySelector(".wd").onclick=function(e){e.preventDefault();roll(i,-1)};
+   var c=w.querySelector(".wc");
+   c.addEventListener("pointerdown",function(e){y0=e.clientY;acc=0;try{c.setPointerCapture(e.pointerId)}catch(x){}});
+   c.addEventListener("pointermove",function(e){if(y0==null)return;var dy=e.clientY-y0;if(Math.abs(dy)>22){roll(i,dy<0?1:-1);y0=e.clientY;acc=1}});
+   c.addEventListener("pointerup",function(e){if(y0!=null&&!acc){var r=c.getBoundingClientRect();roll(i,e.clientY<r.top+r.height/2?1:-1)}y0=null});
+   c.addEventListener("pointercancel",function(){y0=null});
+   c.addEventListener("wheel",function(e){e.preventDefault();roll(i,e.deltaY<0?1:-1)},{passive:false});
+  });
+  d.querySelector(".dopen").onclick=function(e){e.preventDefault();
+   var inp=f.querySelector("input");if(!inp)return;inp.value=vals.join("");
+   var before=document.body.contains(f);
+   d.classList.remove("pop");void d.offsetWidth;
+   var ev=new Event("submit",{cancelable:true,bubbles:true});f.dispatchEvent(ev);
+   // 틀렸으면 폼이 그대로 남아 흔들린다 → 자물쇠도 덜컹
+   setTimeout(function(){if(document.body.contains(f)&&f.classList.contains("shake")){d.classList.remove("jam");void d.offsetWidth;d.classList.add("jam")}},30)};
+ }
+ function scan(root){(root||document).querySelectorAll("form[data-dial]").forEach(function(f){if(+f.dataset.dial>0)build(f)})}
+ window.__dialScan=scan;
+ new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){if(ms[i].addedNodes.length){scan(document);break}}}).observe(document.body,{childList:true,subtree:true});
+ var css=document.createElement("style");
+ css.textContent=
+ 'form.dialized{display:flex;flex-direction:column;align-items:center}form.dialized>input,form.dialized>button{display:none!important}'+
+ '.dlock{display:flex;flex-direction:column;align-items:center;margin:4px auto 0;user-select:none;-webkit-user-select:none}'+
+ '.dlock .dsh{width:96px;height:58px;margin-bottom:-14px;position:relative;z-index:0;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}'+
+ '.dlock .dbody{position:relative;z-index:1;background:linear-gradient(180deg,#E7C467 0%,#C9A24A 45%,#8A6A20 100%);border:3px solid #3A2A0A;border-radius:18px;padding:12px 12px 10px;box-shadow:inset 0 3px 0 rgba(255,255,255,.45),0 6px 0 rgba(0,0,0,.3);display:flex;flex-direction:column;align-items:center;gap:10px}'+
+ '.dlock .dwin{display:flex;gap:6px;background:#1B1F2E;border:3px solid #3A2A0A;border-radius:10px;padding:4px 6px}'+
+ '.dlock .wh{display:flex;flex-direction:column;align-items:center;width:44px}'+
+ '.dlock .wu,.dlock .wd{width:44px;height:26px;border:none;background:none;color:#FFE7A0;font-size:14px;line-height:1;cursor:pointer}'+
+ '.dlock .wc{position:relative;width:40px;height:62px;border-radius:6px;background:linear-gradient(180deg,#5A5F70 0%,#F4F1E6 30%,#FFFFFF 50%,#F4F1E6 70%,#5A5F70 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;touch-action:none;cursor:ns-resize}'+
+ '.dlock .wc b{font-family:var(--display);font-weight:400;font-size:30px;color:#1B2447;line-height:1}.dlock .wc i{font-style:normal;font-size:14px;color:#6B7390;opacity:.55;line-height:1.1}'+
+ '.dlock .wc.ru b,.dlock .wc.ru i{animation:dru .16s ease-out}.dlock .wc.rd b,.dlock .wc.rd i{animation:drd .16s ease-out}'+
+ '@keyframes dru{from{transform:translateY(12px)}}@keyframes drd{from{transform:translateY(-12px)}}'+
+ '.dlock .dopen{border:3px solid #3A2A0A;border-radius:999px;background:#D23A34;color:#fff;font-family:var(--display);font-size:17px;padding:6px 26px;box-shadow:0 4px 0 #3A2A0A}'+
+ '.dlock .dopen:active{transform:translateY(3px);box-shadow:0 1px 0 #3A2A0A}'+
+ '.dlock.jam{animation:djam .45s}@keyframes djam{20%{transform:rotate(-4deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-2deg)}100%{transform:none}}'+
+ '.rbox.open .dlock .dsh{transform:translateY(-14px) rotate(-12deg)}';
  document.head.appendChild(css);
 })();
 
