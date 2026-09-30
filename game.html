@@ -4294,7 +4294,7 @@ function judgePresent(c,tid,item){
       var isDoor=x.unlock&&String(x.unlock).indexOf("door:")===0;if(x.unlock&&!isDoor)lines.push(["narr",name+"에게 물어볼 새 질문이 생겼어요.",kd.mood,who]);
       say(lines,function(){
         G.notice={good:true,title:kd.title,text:(x.unlock&&!isDoor)?jo(name,'이','가')+' 숨기던 이야기를 물어보세요.':jo(name,'이','가')+' 말을 바꿨어요.'};render();if(x.unlock&&!isDoor)setTimeout(function(){var q=app.querySelector('[data-ask="'+x.unlock+'"]');if(q)q.scrollIntoView({block:"center",behavior:"smooth"})},150);
-        var nb=Object.keys(G.broken).length;setTimeout(function(){if(nb>=c.contra.length)beat(c,"lieAll");else if(nb===1)beat(c,"lie1")},x.loc?1700:250);
+        var nb=Object.keys(G.broken).length;setTimeout(function(){if(nb>=c.contra.length)window.__toFight(c);else if(nb===1)beat(c,"lie1")},x.loc?1700:250);
         if(x.loc){var li=-1;c.locations.forEach(function(l,i){if(l.id===x.loc)li=i});if(li>=0){banner("새 장소 발견",c.locations[li].name).then(function(){G.notice={good:true,title:"지도에 새 장소가 열렸어요",text:c.locations[li].name+"(으)로 가 보세요. 현장 탭 지도에서 갈 수 있어요."};render()})}}
       });
     });
@@ -4830,7 +4830,7 @@ async function runWrap(c){
   var sq=document.getElementById("sq");
   function w(ms){return skip?Promise.resolve():sleep(ms)}
   await w(600);
-  for(var j=0;j<qs.length;j++){
+  for(var j=0;j<0;j++){
     var i=qs[j],f=c.final[i],mine=G.answers[i],shown=ansLabel(c,f,mine);
     sq.innerHTML='<div class="qq">'+(j+1)+' / '+qs.length+' · '+f.q+'</div>';SFX.page();await w(800);
     sq.innerHTML+='<div class="aa">'+esc(jo(S.players[j%2],"의","의"))+' 답: '+esc(shown)+'</div>';
@@ -4845,7 +4845,7 @@ async function runWrap(c){
   stars=Math.max(1,stars-(qs.length-n));
   if((G.dtries|0)>=2)stars=Math.max(1,stars-1);
   var rkBefore=rankOf(totalStars()).name,firstSolve=!S.best[c.id];
-  G.result={qs:qs,correct:correct,n:n,stars:stars,solved:true,first:firstSolve};
+  G.result={qs:null,correct:correct,n:n,stars:stars,solved:true,first:firstSolve};
   var prev=S.best[c.id]||0;if(stars>prev)S.best[c.id]=stars;persist();
   G.result.rankUp=rankOf(totalStars()).name!==rkBefore?rankOf(totalStars()).name:null;
   bgm("win");say(STORY[c.id].outro.concat([["narr",c.ending]]),function(){reconstruct(c,function(){
@@ -17745,6 +17745,40 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   ["거기서 나온 것과, 커튼 뒤에서 누군가 본 장면을 결합해 봐.","거기서 나온 게 누구 것인지 떠올려 봐."],
   ["둘을 결합하면 더 확실해져요.","창틀 틈 조각의 빈 곳을 채우면 더 확실해져요."]
  ]);
+})();
+
+/* v97: 조사 끝 → 대결 안내, 자백 뒤 빈칸 추리 없이 바로 사건 해결 */
+(function(){
+ function busy(){return DL||ov.innerHTML||document.querySelector(".zoomv,.sbook,.banner,.flash,.lens,.ovr,.crec2,.show")}
+ function allBroken(c){return Object.keys(G.broken||{}).length>=c.contra.length}
+ function ask(c){
+  var miss=Math.max(0,liveSpots(c).length-nFound());
+  modal('<span class="kicker">조사 완료</span><h3>이제 범인과 대결할까요?</h3><p style="text-align:center">거짓말은 모두 깨뜨렸어요.'+(miss?'<br><span class="soft">아직 못 찾은 증거가 '+miss+'개 있어요. 대결하다가 수사로 돌아올 수도 있어요.</span>':'')+'</p>'
+   +'<button class="btn red wide" id="tofight">대결하러 가기</button><button class="btn ghost wide" id="tostay" style="margin-top:8px">조금 더 조사하기</button>',function(){
+   document.getElementById("tofight").onclick=function(){closeModal();SFX.gotcha();goTab("final");window.scrollTo(0,0)};
+   document.getElementById("tostay").onclick=function(){SFX.tap();closeModal();render()}});
+ }
+ window.__toFight=function(c,n){
+  if(!G||G.battle||CASES[G.ci]!==c)return;if(!G.beats)G.beats={};if(G.beats.toFight)return;
+  if(busy()){if((n||0)<20)setTimeout(function(){window.__toFight(c,(n||0)+1)},700);return}
+  G.beats.toFight=1;try{saveProg()}catch(e){}
+  var b=(BEATS[c.id]||{}).lieAll,lines;
+  if(b&&!G.beats.lieAll){G.beats.lieAll=1;lines=b}
+  else lines=[["det1","거짓말은 전부 깨뜨렸어. 조사는 이제 다 끝난 것 같아.","happy"],["det0","그래. 남은 건 범인과의 정면 대결이다."]];
+  say(lines,function(){render();setTimeout(function(){ask(c)},150)});
+ };
+ // 다른 경로로 마지막 거짓말이 깨져도 한 번은 안내한다
+ var _rc=renderCase;renderCase=function(){var r=_rc.apply(this,arguments);
+  try{var c=G&&CASES[G.ci];if(c&&S.screen==="case"&&!G.result&&!G.battle&&allBroken(c)&&!(G.beats&&G.beats.toFight))setTimeout(function(){window.__toFight(c)},400)}catch(e){}
+  return r};
+ // 자백이 끝나면 빈칸 추리 없이 바로 사건 해결로
+ var going={};
+ var _rf=renderFinal;renderFinal=function(c){var B=G.battle;
+  if(B&&B.phase==="won"&&!G.result){
+   c.final.forEach(function(f,i){if(i)G.answers[i]=f.answer});
+   var key=c.id+"|"+G.ci;if(!going[key]){going[key]=1;setTimeout(function(){going[key]=0;if(G&&!G.result)runWrap(c)},350)}
+   return '<section class="panel"><h3 style="font-size:24px">사건 해결</h3><p class="soft">'+esc(CAST[B.cul].name)+'의 이야기를 정리하고 있어요.</p></section>'}
+  return _rf.apply(this,arguments)};
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
