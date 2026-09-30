@@ -19115,7 +19115,10 @@ DEBATE.kitchen={
    var st=stmsOf(rOf(c)),si=(B.si||0)%st.length,t=String((st[si]||{}).t||"");
    h=h.replace('<li class="claim pop" id="claim">','<li class="claim pop'+(t.length>44?' long':'')+(t.length>70?' xlong':'')+'" id="claim">');
    var dots='<div class="stdots" aria-hidden="true">'+st.map(function(_,i){return '<i class="'+(i===si?'on':'')+'"></i>'}).join("")+'<span>옆으로 밀어서 다음 문장</span></div>';
-   h=h.replace('</ol>','</ol>'+dots)}
+   h=h.replace('<button class="btn ghost nav" id="prevst" aria-label="이전 문장">◀</button>','').replace('<button class="btn ghost nav" id="nextst" aria-label="다음 문장">▶</button>','').replace('<div class="acts x">','<div class="acts x x2">');
+   var one=st.length<2?' disabled':'';
+   h=h.replace('<ol class="stmlist">','<div class="strow"><button class="stnav" id="prevst" aria-label="이전 문장"'+one+'>◀</button><ol class="stmlist">');
+   h=h.replace('</ol>','</ol><button class="stnav" id="nextst" aria-label="다음 문장"'+one+'>▶</button></div>'+dots.replace('옆으로 밀어서 다음 문장',st.length<2?'문장 1개':'◀ ▶ 또는 옆으로 밀어서 넘기기'))}
   return h};
  var _bf=bindFinal;bindFinal=function(c){_bf.apply(this,arguments);
   var cl=document.getElementById("claim");if(!cl)return;var x0=null,y0=null;
@@ -19137,6 +19140,9 @@ DEBATE.kitchen={
  '.arena .stmlist li:not(.claim){display:none}'+
  '.arena .stmlist li.claim{white-space:normal;word-break:keep-all;overflow-wrap:anywhere;touch-action:pan-y;user-select:none;-webkit-user-select:none}'+
  '.arena .stmlist li.claim.long{font-size:.92em;line-height:1.45}.arena .stmlist li.claim.xlong{font-size:.84em}'+
+ '.strow{display:flex;align-items:stretch;gap:6px;margin-top:10px}.strow .stmlist{flex:1;min-width:0;margin:0}.strow .stmlist li.claim{margin-top:0}'+
+ '.stnav{flex:none;width:34px;border:3px solid #EDE6CF;border-radius:12px;background:rgba(12,18,50,.9);color:#FFD84D;font-size:15px;padding:0;box-shadow:0 0 0 3px #0C1330;cursor:pointer}.stnav:active{transform:scale(.94)}.stnav:disabled{opacity:.25}'+
+ '.acts.x.x2{grid-template-columns:1fr 1fr}'+
  '.stdots{display:flex;align-items:center;justify-content:center;gap:6px;margin:6px 0 2px}.stdots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3)}.stdots i.on{background:#FFD84D;width:18px;border-radius:4px}.stdots span{margin-left:8px;font-size:11px;color:rgba(255,255,255,.55)}'+
  'svg.dzs1 .eyes,svg.dzs2 .eyes,svg.dzs3 .eyes{transform-box:fill-box;transform-origin:50% 50%}svg.dzs1 .eyes{animation:blink 2.2s infinite}svg.dzs2 .eyes{animation:blink 1.1s infinite}svg.dzs3 .eyes{animation:blink2 .5s infinite}'+
  'svg.dzs2 .ears,svg.dzs3 .ears{transform-box:fill-box;transform-origin:50% 100%}svg.dzs2 .ears{animation:earf 1.4s ease-in-out infinite}svg.dzs3 .ears{animation:earf .6s ease-in-out infinite}'+
