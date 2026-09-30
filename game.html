@@ -4758,7 +4758,7 @@ function accuse(c,k){
     if(G.hp==null||G.hp<1)G.hp=hpMax(c);
     G.battle={cul:cul,round:0,si:0,miss:0,lives:G.hp,max:hpMax(c),phase:"fight"};G.target=null;G.pick=null;G.tf="all";render();window.scrollTo(0,0);
     banner("반론 개시",CAST[cul].name+"의 반론").then(function(){
-      say([["narr","반대 심문 시작! "+CAST[cul].name+"의 반론은 여러 문장이에요. ◀ ▶로 넘겨 보며 증거와 부딪치는 문장을 찾아요.","",cul],[cul,stmsOf(BATTLE[c.id][0])[0].t,"","testi"]],function(){render();coach("xexam","◀ ▶로 반론 <b>문장을 하나씩</b> 넘겨 봐요. 수상한 문장에서 <b>추궁하기</b>로 더 캐묻거나, 아래 수첩에서 증거를 올려 <b>이의 있음!</b>",".claim")});
+      say(window.__testi(c,cul,0,true),function(){render();coach("xexam","◀ ▶로 반론 <b>문장을 하나씩</b> 넘겨 봐요. 수상한 문장에서 <b>추궁하기</b>로 더 캐묻거나, 아래 수첩에서 증거를 올려 <b>이의 있음!</b>",".claim")});
     });
   });
 }
@@ -4782,12 +4782,12 @@ function judgeBattle(c,item){
   if(ok){
     var last=B.round===R.length-1;
     SFX.gotcha();SFX.present();
-    flash(last?"결정적 증거!":"이의 있음!",false,true).then(function(){
-      B.round++;B.si=0;B.miss=0;render();floater(".comp","여유 -1","bad");
+    window.__hush(last).then(function(){return flash(last?"결정적 증거!":"이의 있음!",false,true)}).then(function(){
+      B.round++;B.si=0;B.miss=0;render();floater(".comp","여유 -1","bad");if(!last&&window.__crowd)setTimeout(function(){window.__crowd()},250);
       var foe=document.getElementById("foe");if(foe){foe.classList.add("hit")}
       var _s2=say;say=function(l,d,k){say=_s2;panicFx(cul,"culprit",last?3:Math.min(B.round,2),function(){_s2(l,d,k)})};
       if(!last){
-        var nx=function(){say([[cul,stmsOf(R[B.round])[0].t,"nervous","testi"]],function(){render()})};
+        var nx=function(){say(window.__testi(c,cul,B.round,false),function(){render()},true)};
         say([[cul,r.hit,"nervous","","shock"]],function(){if(B.round===R.length-1)banner("최후의 반론",name).then(nx);else banner("새 반론",name+"의 반론 "+(B.round+1)).then(nx)});
       }else{
         SFX.stamp();
@@ -4839,7 +4839,7 @@ async function runWrap(c){
     correct[j]?SFX.ok():SFX.ng();await w(correct[j]?1000:1700);
   }
   SFX.gavel();await w(900);
-  sq.innerHTML='<div class="stamp">사건 해결</div>';SFX.stamp();await w(1300);
+  await window.__verdict(sq,w);
   el.remove();
   var stars=3;if(G.wrong>3)stars--;if(G.hints>=2)stars--;stars=Math.max(stars,2);if(G.wrong===0&&G.hints===0)stars=3;
   stars=Math.max(1,stars-(qs.length-n));
@@ -17891,6 +17891,81 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   '.foe.dz1>svg,.foe.dz2>svg,.foe.dz3>svg{transform-origin:50% 90%}'+
   '@media (prefers-reduced-motion:reduce){.dst *,.foe>svg,.foe .eyes,.foe .ears,.foe .paw{animation:none!important}}';
  document.head.appendChild(css2);
+})();
+
+/* v100: 역전재판식 흐름 — 증언 후 반대 심문, 외침 전 정적, 웅성웅성, 증거 보여 주기, 사건 해결 쾅쾅 */
+(function(){
+ // ---------- 1) 증언 개시: 범인이 반론 문장을 먼저 전부 말하고, 그다음 반대 심문 ----------
+ window.__testi=function(c,cul,r,first){
+  var R=BATTLE[c.id]||[],st=stmsOf(R[Math.min(r,R.length-1)]),n=R.length,md=r===0?"":window.__fmood("",r,n);
+  var L=[["narr","— 증언 개시 —","",cul]];
+  st.forEach(function(s){L.push([cul,s.t,md,"testi"])});
+  L.push(["narr",first?"반대 심문 시작! ◀ ▶로 문장을 하나씩 넘겨 보며, 증거와 부딪치는 문장에 이의 있음!":"— 반대 심문 —","",cul]);
+  return L};
+ var css=document.createElement("style");
+ // ---------- 2) 이의 있음 직전의 정적 ----------
+ window.__hush=function(last){try{bgm(null)}catch(e){}return new Promise(function(r){setTimeout(r,last?520:260)})};
+ // ---------- 3) 구경꾼 웅성웅성 ----------
+ var HEADS=[["#C9A77C","bear"],["#F2F2F2","rabbit"],["#E8894A","fox"],["#8E7B6A","owl"],["#B9B9C4","cat"],["#D9B98C","dog"],["#7A6E66","raccoon"]];
+ function head(col,kind,x){var e="";
+  if(kind==="rabbit")e='<ellipse cx="'+(x-6)+'" cy="18" rx="4" ry="12"/><ellipse cx="'+(x+6)+'" cy="18" rx="4" ry="12"/>';
+  else if(kind==="bear"||kind==="raccoon"||kind==="dog")e='<circle cx="'+(x-11)+'" cy="30" r="6"/><circle cx="'+(x+11)+'" cy="30" r="6"/>';
+  else if(kind==="fox"||kind==="cat")e='<path d="M'+(x-14)+' 34 L'+(x-10)+' 18 L'+(x-3)+' 30 Z"/><path d="M'+(x+14)+' 34 L'+(x+10)+' 18 L'+(x+3)+' 30 Z"/>';
+  else if(kind==="owl")e='<path d="M'+(x-13)+' 30 L'+(x-11)+' 20 L'+(x-4)+' 28 Z"/><path d="M'+(x+13)+' 30 L'+(x+11)+' 20 L'+(x+4)+' 28 Z"/>';
+  return '<g class="ch">'+e+'<circle cx="'+x+'" cy="44" r="16"/></g>'}
+ window.__crowd=function(txt){
+  var d=document.createElement("div");d.className="crowd";
+  var s='<svg viewBox="0 0 360 64" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#0B1030" stroke="#2E3A74" stroke-width="2">';
+  for(var i=0;i<9;i++){var h=HEADS[(i*5+3)%HEADS.length];s+=head(h[0],h[1],20+i*40)}
+  d.innerHTML=s+'</g></svg><b class="c1">'+(txt||"웅성웅성")+'</b><b class="c2">'+(txt?"":"술렁술렁")+'</b>';
+  document.body.appendChild(d);try{SFX.murmur?SFX.murmur():SFX.page()}catch(e){}
+  setTimeout(function(){d.remove()},1900)};
+ // ---------- 4) 사건 해결: 한 글자씩 쾅쾅 + 꽃가루 ----------
+ window.__verdict=async function(sq,w){
+  var t="사건 해결".split(""),h='<div class="verd">'+t.map(function(ch,i){return ch===" "?'<i class="sp"></i>':'<b style="animation-delay:'+(i*.32)+'s">'+ch+'</b>'}).join("")+'</div>';
+  sq.innerHTML=h;
+  for(var i=0;i<t.length;i++){if(t[i]!==" ")setTimeout(function(){try{SFX.slam()}catch(e){}try{quake()}catch(e){}},i*320)}
+  await w(t.length*320+200);
+  try{SFX.stamp()}catch(e){}
+  try{if(window.__burst){var r=sq.getBoundingClientRect();window.__burst(r.left+r.width/2,r.top+r.height/2,60)}}catch(e){}
+  await w(1300)};
+ // ---------- 5) 증거 보여 주기(조사 중 누구에게나) ----------
+ function polite(c,k){var n=0,p=0;(c.talk[k]||[]).forEach(function(t){if(!t.a)return;n++;if(/(요|니다|세요|죠)[.!?…]*\s*$/.test(t.a.replace(/\)$/,"")))p++});return n&&p/n>=.5}
+ var GEN={p:["음… 그건 처음 보는 거예요.","그게 이번 일이랑 상관이 있나요?","글쎄요, 잘 모르겠어요."],c:["음… 그건 처음 보는데?","그게 이번 일이랑 상관있어?","글쎄, 잘 모르겠어."]};
+ function react(c,k,id){
+  var mine=c.contra.filter(function(x){var t=tById(c,x.t);return t&&t.who===k}),pl=polite(c,k),nm=itemName(c,id);
+  var hot=mine.filter(function(x){return !G.broken[x.t]&&x.items.indexOf(id)>=0});
+  var done=mine.filter(function(x){return G.broken[x.t]&&x.items.indexOf(id)>=0});
+  if(hot.length){var heard=hot.some(function(x){return G.asked.indexOf(x.t)>=0});
+   return [[k,pl?"…그, 그걸 왜 저한테 보여 주세요?":"…그, 그걸 왜 나한테 보여 줘?","nervous","","tell"],
+    ["think",heard?"눈이 흔들렸어. '"+nm+"', 이 친구가 한 말 중 어딘가와 부딪치는 것 같아.":"눈이 흔들렸어. 이 친구에게 아직 안 물어본 게 있는 것 같아.","",curPlayer()]]}
+  if(done.length)return [[k,pl?"그 얘기는 아까 다 했잖아요…":"그 얘기는 아까 다 했잖아…","sad"]];
+  var g=GEN[pl?"p":"c"],h=0;(k+id).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%97});
+  return [[k,g[h%g.length],""],["think","이 친구한테는 별 반응이 없네.","",curPlayer()]]}
+ function openShow(c,k){SFX.tap();
+  var ev=G.found.filter(function(id){return !!evById(c,id)});
+  var h='<span class="kicker">증거 보여 주기</span><h3>'+esc(CAST[k].name)+'에게 무엇을 보여 줄까요?</h3><p class="soft" style="text-align:center">말과 부딪치게 하는 게 아니라, 그냥 보여 주고 반응을 살펴요.</p>';
+  h+=ev.length?'<div class="pgrid">'+ev.map(function(id){return '<button data-show="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(c,id))+'</span></button>'}).join("")+'</div>':'<p class="empty">아직 찾은 증거가 없어요.</p>';
+  h+='<button class="btn ghost" id="showx">그만두기</button>';
+  modal(h,function(){document.getElementById("showx").onclick=closeModal;
+   ov.querySelectorAll("[data-show]").forEach(function(b){b.onclick=function(){var id=b.dataset.show;closeModal();
+    flash("이걸 봐!",false,true).then(function(){say([["det","이거, 본 적 있어?"]].concat(react(c,k,id)),function(){render()})})}})})}
+ var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);
+  try{if(G.who&&h.indexOf('class="topics"')>=0&&G.found.some(function(id){return !!evById(c,id)})){
+   h=h.replace(/(<div class="topics">[\s\S]*?<\/div>)/,function(m){return m+'<button class="showev" type="button" id="showev"><b>증거 보여 주기</b><span>찾은 증거를 보여 주고 반응을 살펴요</span></button>'})}}catch(e){}
+  return h};
+ var _bt=bindTalk;bindTalk=function(c){_bt.apply(this,arguments);var b=document.getElementById("showev");if(b)b.onclick=function(){openShow(c,G.who)}};
+ css.textContent=
+ '.crowd{position:fixed;left:0;right:0;bottom:0;height:120px;z-index:64;pointer-events:none;animation:crwd 1.9s ease-in-out forwards}'+
+ '.crowd svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:84px}.crowd .ch{animation:chbob .28s ease-in-out infinite alternate}.crowd .ch:nth-child(2n){animation-delay:.14s}'+
+ '.crowd b{position:absolute;font-family:var(--display);font-weight:400;color:#FFF1C9;font-size:26px;text-shadow:0 3px 0 #0B1030,0 0 8px #0B1030;letter-spacing:.1em}'+
+ '.crowd .c1{left:12%;bottom:84px;transform:rotate(-8deg)}.crowd .c2{right:10%;bottom:70px;transform:rotate(7deg)}'+
+ '@keyframes crwd{0%{transform:translateY(100%)}15%,80%{transform:none}100%{transform:translateY(100%)}}@keyframes chbob{to{transform:translateY(-4px)}}'+
+ '.verd{display:flex;justify-content:center;gap:4px}.verd b{display:inline-block;font-family:var(--display);font-weight:400;font-size:56px;color:#FFD84D;text-shadow:0 4px 0 #1B2447,0 0 18px rgba(255,216,77,.5);animation:vslam .34s cubic-bezier(.2,1.6,.4,1) both}.verd .sp{width:16px}'+
+ '@keyframes vslam{0%{transform:scale(3);opacity:0}100%{transform:scale(1);opacity:1}}'+
+ '.showev{display:flex;flex-direction:column;align-items:flex-start;width:100%;margin-top:8px;padding:8px 14px;border:2px solid #2F6FD6;border-radius:14px;background:#EAF2FF;color:#1B2447;text-align:left}.showev b{font-family:var(--display);font-weight:400;font-size:16px}.showev span{font-size:12px;opacity:.75}'+
+ '@media (prefers-reduced-motion:reduce){.crowd,.crowd .ch,.verd b{animation:none}}';
+ document.head.appendChild(css);
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
