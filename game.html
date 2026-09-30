@@ -4755,9 +4755,9 @@ function accuse(c,k){
   SFX.gotcha();bgm("battle");
   flash("범인은 너다!",false,true).then(function(){
     if(G.hp==null||G.hp<1)G.hp=hpMax(c);
-    G.battle={cul:cul,round:0,si:0,miss:0,lives:G.hp,max:hpMax(c),phase:"fight"};G.target=null;G.pick=null;G.tf="all";render();window.scrollTo(0,0);
+    G.battle={cul:cul,round:(window.__startRound?window.__startRound(c):0),si:0,miss:0,lives:G.hp,max:hpMax(c),phase:"fight"};G.target=null;G.pick=null;G.tf="all";render();window.scrollTo(0,0);
     banner("반론 개시",CAST[cul].name+"의 반론").then(function(){
-      say(window.__testi(c,cul,0,true),function(){render();coach("xexam","◀ ▶로 반론 <b>문장을 하나씩</b> 넘겨 봐요. 수상한 문장에서 <b>추궁하기</b>로 더 캐묻거나, 아래 수첩에서 증거를 올려 <b>이의 있음!</b>",".claim")});
+      say(window.__testi(c,cul,G.battle.round,true),function(){render();coach("xexam","◀ ▶로 반론 <b>문장을 하나씩</b> 넘겨 봐요. 수상한 문장에서 <b>추궁하기</b>로 더 캐묻거나, 아래 수첩에서 증거를 올려 <b>이의 있음!</b>",".claim")});
     });
   });
 }
@@ -7076,7 +7076,7 @@ function sanitizeState(d){
     n.uv=!!g.uv;n.nt_seen_conf=!!g.nt_seen_conf;
     n.coins=int(g.coins,0,30,1);n.zst=map(g.zst,null,function(v){return int(v,0,9,0)||null},200);n.mem=ids(g.mem,function(v){return own(MEMTXT,v)},20);n.dtries=int(g.dtries,0,99,0);n.hintLog=ids(g.hintLog,function(v){return /^(case:\d|scene|talk|battle|won)$/.test(v)},20);
     var b=g.battle;
-    n.battle=isObj(b)&&sus(b.cul)&&(b.phase==="fight"||b.phase==="won")?{cul:b.cul,phase:b.phase,round:int(b.round,0,20,0),si:int(b.si,0,50,0),miss:int(b.miss,0,99,0),lives:int(b.lives,0,hm,hm),max:hm,smug:!!b.smug,rev:isObj(b.rev)?map(b.rev,null,function(v){return v?1:null},30):undefined}:null;
+    n.battle=isObj(b)&&sus(b.cul)&&(b.phase==="fight"||b.phase==="won")?{cul:b.cul,phase:b.phase,round:int(b.round,0,20,0),si:int(b.si,0,50,0),miss:int(b.miss,0,99,0),lives:int(b.lives,0,hm,hm),max:hm,smug:!!b.smug,rev:isObj(b.rev)?map(b.rev,null,function(v){return v?1:null},30):undefined,brDone:!!b.brDone||undefined,hold:isObj(b.hold)&&Array.isArray(b.hold.need)?{need:b.hold.need.filter(function(v){return typeof v==="string"&&v.length<40}).slice(0,5),task:txt(b.hold.task,300)||"",told:b.hold.told?1:0}:undefined}:null;
     if(isObj(g.debate)){var gd=g.debate,hd=isObj(gd.hold)&&Array.isArray(gd.hold.need)?{need:gd.hold.need.filter(function(v){return typeof v==="string"&&v.length<40}).slice(0,5),task:txt(gd.hold.task,300)||""}:null;n.debate={pi:int(gd.pi,0,99,0),sus:map(gd.sus,sus,function(v){return int(v,0,100,10)}),done:!!gd.done,hold:hd}}
     if(isObj(g.night)){n.night={bought:int(g.night.bought,0,9,0),bargain:g.night.bargain?1:0,blackout:g.night.blackout?1:0};var fh=txt(g.night.fakehint,200);if(fh)n.night.fakehint=fh}
     return n;   // result, notice, slide, enter, arrive, justBroke stay at fresh() defaults
@@ -18066,19 +18066,21 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function has(id){return G.found.indexOf(id)>=0||G.asked.indexOf(id)>=0}
  function ready(c){var D=DEBATE[c.id];return !D.need||D.need.every(has)}
  function isSus(c,k){return c.suspects.indexOf(k)>=0}
- function stt(){if(!G.debate)G.debate={pi:0,sus:{}};return G.debate}
+ var SPEC=null,SKEY="debate";
+ function stt(){if(!G[SKEY])G[SKEY]={pi:0,sus:SKEY==="debate"?{}:JSON.parse(JSON.stringify((G.debate&&G.debate.sus)||{}))};return G[SKEY]}
  var el=null,C=null,Q=null,qi=0,sel=null,si=0,prev={},busy=false;
- function curPh(){return DEBATE[C.id].phases[stt().pi]}
+ function curPh(){return SPEC.phases[stt().pi]}
+ window.__rtReady=function(c){return !!DEBATE[c.id]&&ready(c)};
  function susOf(k){var s=stt().sus;return s[k]==null?10:s[k]}
  function addSus(d){if(!d)return;var s=stt().sus;Object.keys(d).forEach(function(k){s[k]=Math.max(0,Math.min(100,susOf(k)+d[k]))})}
  function modeOf(ph){if(ph.mode)return ph.mode;var s=(ph.stms||[]).filter(function(x){return x.k&&x.a&&x.a.length})[0];return s?s.k:"no"}
  function words(t,st){var i=0;return esc(t).replace(/\{([^}]*)\}/g,function(m,w){return '<button class="wk" type="button" data-wk="1">'+w+'</button>'})}
- function seats(spk,vote){var D=DEBATE[C.id];
+ function seats(spk,vote){var D=SPEC;
   return '<div class="rt-seats">'+D.seats.map(function(k){var v=susOf(k),p=prev[k]==null?v:prev[k];
    return '<div class="rs'+(k===spk?' on':'')+(vote?' pick':'')+'" data-seat="'+k+'">'+pf(k,k===spk&&Q?(Q[qi]||{}).m||"":"")+'<b>'+esc(nm(k))+'</b>'
     +(isSus(C,k)?'<i class="sm"><u data-v="'+v+'" style="width:'+p+'%"></u></i>':'<i class="sm none"></i>')
     +(vote&&curPh().votes&&curPh().votes[k]?'<em>→ '+esc(nm(curPh().votes[k]))+'</em>':'')+'</div>'}).join("")+'</div>'}
- function draw(){if(!el)return;var D=DEBATE[C.id],ph=curPh(),h='';
+ function draw(){if(!el)return;var D=SPEC,ph=curPh(),h='';
   h+='<div class="rt-top"><b>'+esc(D.title)+'</b><span>'+esc(ph.topic||ph.q||D.sub)+'</span><span class="rt-hp">'+Array.apply(null,{length:hpMax(C)}).map(function(_,i){return '<i class="'+(i<(G.hp==null?hpMax(C):G.hp)?'on':'')+'"></i>'}).join("")+'</span></div>';
   if(Q){var L=Q[qi];h+=seats(L.w)+'<div class="rt-mid talk" id="rtnext"><div class="rt-big">'+pf(L.w,L.m||"")+'</div><div class="rt-bub"><small>'+esc(nm(L.w))+'</small><p>'+hl(pname(L.t))+'</p><span class="nx">▼</span></div></div>'}
   else if(ph.type==="debate"){var st=ph.stms[si],md=modeOf(ph),ev=sel&&evById(C,sel);
@@ -18098,7 +18100,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function nextPh(){var s=stt();s.pi++;si=0;sel=null;try{saveProg()}catch(e){}start()}
  function start(){var ph=curPh();
   if(!ph){finish();return}
-  if(ph.type==="talk"){el.classList.toggle("shaken",!!ph.ban);if(ph.ban){try{SFX.shock()}catch(e){}banner(ph.ban,DEBATE[C.id].sub).then(function(){sayQ(ph.lines,nextPh)});return}sayQ(ph.lines,nextPh);return}
+  if(ph.type==="talk"){el.classList.toggle("shaken",!!ph.ban);if(ph.ban){try{SFX.shock()}catch(e){}banner(ph.ban,SPEC.sub).then(function(){sayQ(ph.lines,nextPh)});return}sayQ(ph.lines,nextPh);return}
   el.classList.remove("shaken");
   if(ph.type==="debate"){try{banner(modeOf(ph)==="no"?"토론 개시 · 틀린 말 찾기":"토론 개시 · 맞는 말 찾기",ph.topic)}catch(e){}draw();return}
   if(ph.type==="vote"){try{banner("투표",ph.q)}catch(e){}draw();return}
@@ -18108,7 +18110,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function adjourn(ph){var s=stt();
   if((ph.need||[]).every(has)){sayQ([{w:"det1",t:"잠깐! 그거라면 우리가 이미 찾아 뒀어!"}].concat(ph.resume||[]),nextPh);return}
   s.pi++;s.hold={need:ph.need||[],task:ph.task||""};try{saveProg()}catch(e){}
-  banner("회의 중단","증거를 더 찾아 와야 해요").then(function(){if(el){el.remove();el=null}try{bgm("sneak")}catch(e){}
+  banner("회의 중단","증거를 더 찾아 와야 해요").then(function(){if(el){el.remove();el=null}window.__inMeeting=false;try{bgm("sneak")}catch(e){}
    G.tab="scene";G.notice={title:"회의가 중단됐어요",text:esc(ph.task||"증거를 더 찾아 오세요.")+" 찾으면 대결 탭에서 회의를 다시 열 수 있어요."};render()})}
  function hurt(msg){G.wrong=(G.wrong|0)+1;if(G.hp==null)G.hp=hpMax(C);G.hp=Math.max(1,G.hp-1);try{saveProg()}catch(e){}
   flash("헛짚었다!",true).then(function(){sayQ([{w:"det1",t:msg}],function(){draw()})})}
@@ -18122,7 +18124,9 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function vote(k){var ph=curPh(),cul=culOf(C);
   if(k!==cul){hurt("그렇게 보기엔 증거가 부족해. 지금까지 나온 이야기를 다시 떠올려 보자.");return}
   SFX.gotcha();flash("범인은 너다!",false,true).then(function(){sayQ(ph.ok||[],nextPh)})}
- function finish(){var s=stt();s.done=true;try{saveProg()}catch(e){}if(el){el.remove();el=null}
+ function finish(){var s=stt();s.done=true;try{saveProg()}catch(e){}if(el){el.remove();el=null}window.__inMeeting=false;
+  if(SPEC.onDone){var f=SPEC.onDone;f();return}
+  if(window.__onMeetDone)try{window.__onMeetDone(C)}catch(e){}
   G.tab="final";G.accuse=culOf(C);render();setTimeout(function(){accuse(C,culOf(C))},200)}
  function bind(){
   var n=el.querySelector("#rtnext");if(n)n.onclick=nextQ;
@@ -18134,13 +18138,16 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();sayQ([{w:"det0",t:curPh().hint}],function(){draw()})};
   if(curPh()&&curPh().type==="vote"&&!Q)el.querySelectorAll(".vc[data-seat]").forEach(function(b){b.onclick=function(){vote(b.dataset.seat)}});
  }
- function open(c){C=c;Q=null;qi=0;sel=null;si=0;prev={};
+ function open(c,spec){C=c;Q=null;qi=0;sel=null;si=0;prev={};
+  if(spec){SPEC=spec;SKEY=spec.key||"debate2";G[SKEY]=null}else{SPEC=DEBATE[c.id];SKEY="debate"}
+  window.__inMeeting=true;
   el=document.createElement("div");el.className="rt";document.body.appendChild(el);
   try{bgm("battle")}catch(e){}
-  var s=stt();if(s.hold){var adj=DEBATE[c.id].phases[s.pi-1];s.hold=null;try{saveProg()}catch(e){}
-   banner("회의 재개",DEBATE[c.id].sub).then(function(){sayQ((adj&&adj.resume)||[],start)});return}
-  banner("원탁 회의",DEBATE[c.id].sub).then(start)}
+  var s=stt();if(s.hold){var adj=SPEC.phases[s.pi-1];s.hold=null;try{saveProg()}catch(e){}
+   banner("회의 재개",SPEC.sub).then(function(){sayQ((adj&&adj.resume)||[],start)});return}
+  banner(SPEC.ban||"원탁 회의",SPEC.sub).then(start)}
  window.__rtOpen=open;
+ window.__rtCur=function(){if(!el||!SPEC)return null;var ph=curPh();return ph?ph.type:null};window.__rtPh=function(){return SPEC&&curPh()};
  // 대결 탭: 범인 지목 대신 원탁 회의
  var _rf=renderFinal;renderFinal=function(c){
   if(DEBATE[c.id]&&!G.battle&&!(G.debate&&G.debate.done)&&!G.result){
@@ -18180,7 +18187,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  document.head.appendChild(css);
 })();
 
-/* v106: 원탁 회의 4~15장 데이터 */
+/* v107: 원탁 회의 4~15장 데이터 */
 (function(){var DEBATE=window.DEBATE;
 DEBATE.star={
   title:"원탁 회의",sub:"별빛 돌을 바꿔치기한 사람은?",seats:["owlgp","kongi","bori","yeoni","karo","nabi","kkwak"],need:["owlfeather","dancelamp","receipt"],
@@ -19139,6 +19146,343 @@ DEBATE.kitchen={
  document.head.appendChild(css);
 })();
 
+/* v107: 새 흐름(3장부터) — 조사는 모으기만, 원탁 회의에서 추리, 결판은 짧게 + 반전 뒤 갈림길 */
+(function(){
+ var TWBR=window.TWBR=window.TWBR||{};
+ function NEWc(c){return !!c&&CASES.indexOf(c)>=2&&!!(window.DEBATE&&window.DEBATE[c.id])}
+ window.__isNew=NEWc;
+ function busy(){return DL||ov.innerHTML||document.querySelector(".zoomv,.sbook,.banner,.flash,.lens,.ovr,.crec2,.show,.rt")}
+ function nm(k){if(k==="det0")return S.players[0];if(k==="det1")return S.players[1];return (CAST[k]||{}).name||k}
+
+ // ---------- 1) 조사에서는 말을 깨지 않는다 ----------
+ var _pt=presTid;presTid=function(){var c=G&&CASES[G.ci];if(NEWc(c)&&!(G.battle&&G.battle.phase==="fight"))return null;return _pt.apply(this,arguments)};
+ var _jp=judgePresent;judgePresent=function(c,tid,item){
+  if(NEWc(c)&&!window.__inMeeting&&!(G.battle&&G.battle.phase==="fight")){
+   say([["think","수상한 말이긴 해. 그래도 증거로 따지는 건 원탁 회의에서 다 같이 하자. 지금은 증거랑 증언을 모아 두는 거야.","",curPlayer()]],function(){render()});return}
+  return _jp.apply(this,arguments)};
+ // 거짓말의 단서를 손에 넣으면, 그 뒤로 물어볼 것·갈 곳은 자연스럽게 열린다
+ function autoUnlock(c){var news=[];
+  c.contra.forEach(function(x){if(!x.unlock||G.unlocked.indexOf(x.unlock)>=0)return;if(G.asked.indexOf(x.t)<0)return;
+   if(x.items.some(function(id){return G.found.indexOf(id)>=0||G.asked.indexOf(id)>=0})){G.unlocked.push(x.unlock);news.push(x)}});
+  return news}
+ var pending=[];
+ function announce(c){if(!pending.length)return;if(busy()){setTimeout(function(){announce(c)},700);return}
+  var x=pending.shift(),who=tById(c,x.t)&&tById(c,x.t).who,li=-1;
+  if(x.loc)c.locations.forEach(function(l,i){if(l.id===x.loc)li=i});
+  if(li>=0){banner("새 장소 발견",c.locations[li].name).then(function(){G.notice={good:true,title:"지도에 새 장소가 열렸어요",text:esc(c.locations[li].name)+"(으)로 가 보세요."};render();setTimeout(function(){announce(c)},400)})}
+  else{G.notice={good:true,title:"새로 물어볼 게 생겼어요",text:(who?esc(nm(who))+"에게 ":"")+"모은 증거를 보니 더 물어볼 게 떠올랐어요."};render();setTimeout(function(){announce(c)},400)}}
+
+ // ---------- 2) 모을 만큼 모이면 회의로 ----------
+ function askMeet(c){
+  modal('<span class="kicker">증거 수집</span><h3>원탁 회의를 열까요?</h3><p style="text-align:center">회의에 필요한 증거가 모였어요.<br><span class="soft">더 둘러봐도 되고, 회의 중에 다시 조사하러 나올 수도 있어요.</span></p>'
+   +'<button class="btn red wide" id="tomeet">모두 불러 원탁 회의 열기</button><button class="btn ghost wide" id="tostay2" style="margin-top:8px">조금 더 조사하기</button>',function(){
+   document.getElementById("tomeet").onclick=function(){closeModal();SFX.gotcha();goTab("final");setTimeout(function(){if(window.__rtOpen&&G&&!G.battle)window.__rtOpen(c)},250)};
+   document.getElementById("tostay2").onclick=function(){SFX.tap();closeModal();render()}})}
+ function meetPrompt(c,n){if(!G||CASES[G.ci]!==c)return;if(busy()){if((n||0)<20)setTimeout(function(){meetPrompt(c,(n||0)+1)},700);return}
+  if(!G.beats)G.beats={};if(G.beats.toMeet)return;G.beats.toMeet=1;G.beats.toFight=1;try{saveProg()}catch(e){}
+  say([["det1","{p0}, 증거가 꽤 모였어! 이 정도면 다들 불러서 이야기해 볼 만해.","happy"],["det0","좋다. 모두 한자리에 모아 원탁 회의를 열자."]],function(){render();setTimeout(function(){askMeet(c)},150)})}
+ var _rc=renderCase;renderCase=function(){
+  var c=G&&CASES[G.ci];
+  if(NEWc(c)&&!G.result){var n=autoUnlock(c);if(n.length){pending=pending.concat(n);try{saveProg()}catch(e){}}}
+  var r=_rc.apply(this,arguments);
+  try{document.body.classList.toggle("nx",NEWc(c));
+   if(NEWc(c)&&!G.result){
+    if(pending.length)setTimeout(function(){announce(c)},500);
+    var HB=G.battle;if(HB&&HB.hold&&!HB.hold.told&&HB.hold.need.every(function(id){return G.found.indexOf(id)>=0})){HB.hold.told=1;try{saveProg()}catch(e){}setTimeout(function(){if(busy())return;say([["det1","{p0}, 찾았어! 이거면 다시 결판을 낼 수 있어!","happy"]],function(){G.notice={good:true,title:"결판을 다시 열 수 있어요",text:"대결 탭에서 결판을 다시 여세요."};render()})},700)}
+    var pb=document.getElementById("presentbtn");if(pb){pb.innerHTML=pb.innerHTML.replace("제시한다","회의한다");pb.onclick=function(){if(DL||busy())return;SFX.tap();goTab("final")}}
+    if(!G.battle&&!(G.debate&&G.debate.done)&&!(G.beats&&G.beats.toMeet)&&window.__rtReady&&window.__rtReady(c)&&S.screen==="case")setTimeout(function(){meetPrompt(c)},600);
+   }}catch(e){}
+  return r};
+ // 힌트: 조사 중엔 '말을 깨라' 대신 '모아서 회의로'
+ var _ns=nextStep;nextStep=function(c){var r=_ns.apply(this,arguments);
+  if(NEWc(c)&&!G.battle&&r&&(r.tab==="final"||(r.tab==="talk"&&/증거랑 안 맞는/.test(r.say||""))))
+   return window.__rtReady(c)?{say:"모을 건 거의 다 모았어. 이제 원탁 회의에서 다 같이 따져 보자!",tab:"final"}:{say:"회의를 열려면 증거가 조금 더 필요해. 아직 안 가 본 곳이나 안 살펴본 곳이 있는지 보자.",tab:"scene"};
+  return r};
+ // 회의가 끝나면 숨긴 말들은 모두 드러난 것으로
+ window.__onMeetDone=function(c){c.contra.forEach(function(x){if(!G.broken[x.t])G.broken[x.t]=x.say;if(x.unlock&&G.unlocked.indexOf(x.unlock)<0)G.unlocked.push(x.unlock)});if(!G.beats)G.beats={};G.beats.toFight=1;G.beats.toMeet=1};
+
+ // ---------- 3) 결판은 마지막 세 라운드만 ----------
+ window.__startRound=function(c){if(!NEWc(c))return 0;var R=BATTLE[c.id]||[];return Math.max(0,R.length-3)};
+ var _t=window.__testi;window.__testi=function(c,cul,r,first){var L=_t.apply(this,arguments);
+  if(first&&NEWc(c)&&r>0)L.unshift(["narr","원탁 회의에서 이미 무너진 반론은 건너뛰어요. 남은 건 "+nm(cul)+"의 마지막 반론들.","",cul]);
+  return L};
+
+ // ---------- 4) 반전 뒤 갈림길: 다시 조사 / 회의 재소집 / 회의 실패 ----------
+ function twIdx(c){var t=window.TWIST&&window.TWIST[c.id];return t&&t._idx!=null?t._idx:-1}
+ function subSpec(c,br,done){var D=window.DEBATE[c.id];return {key:"debate2",title:"원탁 회의",ban:br.type==="fail"?"긴급 회의":"회의 재소집",sub:"범인의 반격",seats:D.seats,phases:br.phases,onDone:done}}
+ function afterTwist(c,res){var B=G.battle,br=TWBR[c.id];
+  if(!B||!br){res();return}
+  if(br.type==="re"){
+   if((br.need||[]).every(function(id){return G.found.indexOf(id)>=0})){say(fixP([["det1","잠깐! 그거라면 우리가 이미 찾아 뒀어!","happy"]].concat(br.resume||[])),function(){render();res()});return}
+   say(fixP(br.lines||[]),function(){B.hold={need:br.need||[],task:br.task||""};B.holdRes=res;try{saveProg()}catch(e){}
+    banner("결판 중단","증거를 찾아 다시 오자").then(function(){G.tab="scene";G.notice={title:"결판이 멈췄어요",text:esc(br.task||"")+" 찾으면 대결 탭에서 결판을 다시 열 수 있어요."};render()})});return}
+  // 회의 재소집 / 회의 실패: 반전은 회의에서 깨고, 결판은 최후 라운드로
+  window.__rtOpen(c,subSpec(c,br,function(){
+   var R=BATTLE[c.id]||[],r=R[B.round];B.round=Math.min(B.round+1,R.length-1);B.si=0;B.miss=0;G.tab="final";render();
+   try{floater(".comp","여유 -1","bad")}catch(e){}
+   say([[B.cul,(r&&r.hit)||"…!","nervous","","shock"]],function(){render();banner("최후의 반론",nm(B.cul)).then(function(){res()})})}))}
+ function fixP(lines){return (lines||[]).map(function(l){if(Array.isArray(l))return l;return [l.w,l.t,l.m||"",l.w==="think"?curPlayer():""]})}
+ var _bn=banner;banner=function(text,sub){
+  var c=G&&CASES[G.ci],B=G&&G.battle;
+  if(NEWc(c)&&B&&B.phase==="fight"&&TWBR[c.id]&&B.round===twIdx(c)&&!B.twShown&&!B.brDone){
+   B.brDone=true;
+   return _bn(text,sub).then(function(){return new Promise(function(res){afterTwist(c,res)})})}
+  return _bn(text,sub)};
+ // 결판 중단 화면
+ var _rf=renderFinal;renderFinal=function(c){var B=G&&G.battle;
+  if(B&&B.hold&&B.phase==="fight"){var ok=B.hold.need.every(function(id){return G.found.indexOf(id)>=0});
+   return '<section class="panel rtpanel"><h3 style="font-size:24px">결판 중단</h3><p>'+esc(B.hold.task)+'</p>'+(ok?'<button class="btn red wide" id="bdgo">결판 다시 열기</button>':'<p class="soft" style="color:var(--stamp)">아직 필요한 증거를 못 찾았어요.</p><button class="btn wide" id="bdback">수사로 돌아가기</button>')+'</section>'}
+  return _rf.apply(this,arguments)};
+ var _bf=bindFinal;bindFinal=function(c){_bf.apply(this,arguments);var B=G&&G.battle;
+  var g=document.getElementById("bdgo");if(g)g.onclick=function(){var br=TWBR[c.id]||{},res=B.holdRes;B.hold=null;B.holdRes=null;SFX.gotcha();render();
+   banner("결판 재개",nm(B.cul)).then(function(){say(fixP(br.resume||[]).concat(window.__testi(c,B.cul,B.round,false)),function(){render()})})};
+  var b=document.getElementById("bdback");if(b)b.onclick=function(){SFX.tap();goTab("scene")}};
+ var css=document.createElement("style");
+ css.textContent='body.nx .odd{display:none!important}';
+ document.head.appendChild(css);
+})();
+
+/* v107: 결판 반전 갈림길 데이터 */
+(function(){var TWBR=window.TWBR;
+TWBR.bell={type:"re",
+  lines:[
+   {w:"bami",t:"…그런 편지, 쓴 적 없어. 근데 말해 봤자 어른들은 또 안 믿겠지.",m:"sad"},
+   {w:"sling",t:"후후, 서명이 '— 밤'인걸요. 이보다 확실한 증거가 있을까요?",m:"smug",s:{bami:15}},
+   {w:"tok",t:"딸깍… 밤이는 그런 애가 아니에요! 밤이 글씨라면 제가 알아요!",m:"nervous"},
+   {w:"det0",t:"편지와 견줄 밤이의 글씨가 더 필요하다. 결판은 잠시 멈추고, 현장을 다시 보자."},
+   {w:"det1",t:"밤이야, 조금만 기다려. 금방 돌아올게!"}],
+  need:["uvb"],
+  task:"밤이가 진짜 추를 숨겨 둔 종탑 지하실로 돌아가 벽을 샅샅이 살펴보자. 평소엔 안 보이는 흔적도 놓치지 말 것.",
+  resume:[
+   {w:"det1",t:"이거야! 밤이가 제 손으로 남긴 글씨. 이제 편지랑 나란히 놓고 보자!"},
+   {w:"sling",t:"후후, 꼬마 글씨야 다 거기서 거기 아닌가요?",m:"smug"},
+   {w:"tok",t:"딸깍… 아니요. 밤이 글씨는 어른보다 반듯해요. 잘 보세요.",m:"happy"}]
+};
+TWBR.dark={type:"conv",
+  phases:[
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"owlgp",t:"…부리야. 정말 네가 적은 게냐?",m:"sad"},
+    {w:"buri",t:"아, 아니에요! 부엉… 저는 그런 거 안 적었어요!",m:"nervous"},
+    {w:"kongi",t:"킁킁… 근데 부리는 할아버지 파일도 몰래 꺼냈잖아…",m:"confused",s:{buri:15}},
+    {w:"luka",t:"규정상, 서류는 거짓말을 하지 않습니다.",m:"smug",s:{buri:10}},
+    {w:"karo",t:"…아까 저한테도 이랬어요. 그럴듯한 증거일수록 한 번 더 봐야 해요.",m:"sad"},
+    {w:"bami",t:"…어른들은 늘 그래. 종이에 적혀 있으면 다 믿지.",m:"smug"},
+    {w:"det0",t:"다시 모이자. 그 마지막 줄이 정말 부리가 쓴 것인지부터 확인하겠다."},
+    {w:"det1",t:"좋아, 원탁 회의 한 번 더! 빛나는 말을 증거로 쏘아 보자!"}]},
+   {type:"debate",mode:"no",topic:"수첩 마지막 줄은 부리가 쓴 걸까?",bullets:["tw_dark","n_claw","n_log","n_paper"],
+    hint:"루카가 내민 수첩, 마지막 장을 자세히 살펴봤지? 앞 장이랑 뭐가 달랐더라?",
+    stms:[
+     {w:"owlgp",t:"…열쇠 걸이 자리를 아는 건 {너희와 나, 그리고 부리뿐}이란다.",m:"sad"},
+     {w:"luka",t:"이 마지막 줄은 {부리 군이 제 손으로 적은} 겁니다. 주웠을 땐 이미 쓰여 있었죠.",k:"no",a:["tw_dark","n_stamp"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 수첩 앞 장은 전부 연필인데, 마지막 줄만 덜 마른 까만 잉크야. 누가 나중에 덧쓴 거야!"},
+      {w:"kongi",t:"킁킁! 그 잉크, 벽 발톱 자국이랑 우체국 뒷방 도장 냄새랑 똑같아!",m:"happy",s:{buri:-15,luka:15}},
+      {w:"buri",t:"부엉… 제 수첩은 처음부터 끝까지 연필로 썼어요.",m:"shy",s:{buri:-20}},
+      {w:"owlgp",t:"…부리야. 이 할아비가 잠깐이라도 너를 의심했구나.",m:"sad"},
+      {w:"luka",t:"…잉크가 아직 젖어 있군요. 규정상… 마를 때까지 두었어야 했는데.",m:"nervous",s:{luka:20}}]},
+     {w:"buri",t:"그 수첩은 {늘 기록실 둘째 선반에} 꽂아 둬요. 오늘도 거기 두고 나왔어요.",m:"nervous"},
+     {w:"kongi",t:"킁킁, 수첩 {첫 장엔 탐정님들 이름}이 적혀 있어!"}]}
+  ]};
+TWBR.museum={type:"fail",
+  phases:[
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"momo",t:"호호, 보셨죠? 진짜는 여기 있어요. 도둑맞은 건 아무것도 없어요.",m:"happy"},
+    {w:"momo",t:"사라진 건 진열장의 가짜 유리돌뿐. 그 유리돌, 어느 가게 물건이었죠?",m:"smug",s:{karo:15}},
+    {w:"momo",t:"까로 상회요. 가짜가 들통날까 봐 불 꺼진 틈에 도로 가져간 거예요.",m:"sad",s:{karo:20}},
+    {w:"piko",t:"가짜를 판 가게 주인이 가짜를 챙겨 갔다! 피코도 그 정도는 알아!",m:"smug",s:{karo:10}},
+    {w:"kongi",t:"킁킁… 까로 아저씨, 9시에 가게에 있었다는 것도 거짓말이었잖아…",m:"confused",s:{karo:10}},
+    {w:"karo",t:"저, 저는 아니에요… 이번엔 정말로요…",m:"sad"},
+    {w:"yeoni",t:"관장님이 그렇다면… 그런 거 아닐까?",m:"confused"}]},
+   {type:"mob",q:"진열장의 돌을 가져간 사람은?",votes:{momo:"karo",piko:"karo",kongi:"karo",yeoni:"karo",owlgp:"momo",nero:"momo",karo:"momo"},target:"karo",lines:[
+    {w:"piko",t:"다수결이야! 피코의 한 표도 아름답게 들어갔어!",m:"smug"},
+    {w:"momo",t:"호호, 까로 씨. 유리돌 값만 물어 주시면 조용히 넘어갈게요.",m:"happy",s:{karo:10}},
+    {w:"karo",t:"…또 그 눈이네요. 다들 저를 보는 눈이…",m:"sad"},
+    {w:"owlgp",t:"…7시에 들어 본 그 돌은 이상하게 가벼웠다. 그 말은 아무도 안 듣는구나.",m:"sad"},
+    {w:"det1",t:"잠깐! 다수결로 정하면 안 돼. 관장님 금고에서 나온 그 돌부터 제대로 보자!",m:"nervous"}]},
+   {type:"debate",mode:"no",topic:"금고에서 나온 돌은 진짜 별빛 돌일까?",bullets:["tw_museum","m7_lock","m7_feather","m7_crumbs"],
+    hint:"관장님이 내민 돌, 뒤집어서 밑바닥까지 살펴봤지? 거기 뭐가 찍혀 있었더라?",
+    stms:[
+     {w:"yeoni",t:"내가 크기 잴 때 본 진열장 돌이랑 {모양이 똑같아}.",m:"nervous"},
+     {w:"momo",t:"이 돌이 {진짜 별빛 돌}이에요. 처음부터 제 금고에 있었다니까요!",k:"no",a:["tw_museum","m7uv_stamp","m7_receipt"],m:"happy",ok:[
+      {w:"det1",t:"그건 아니야! 이 돌의 빛은 반짝이 칠이고, 깨진 모서리는 유리야. 밑바닥엔 '까로 상회' 도장까지 있어!"},
+      {w:"det0",t:"영수증엔 유리돌 딱 1개, 받는 분 모모. 이 돌이 진열장에서 사라진 바로 그 가짜다."},
+      {w:"karo",t:"제가 판 유리돌이… 관장님 금고에 있었다고요?",m:"confused",s:{karo:-30}},
+      {w:"piko",t:"그, 그럼 까로가 가져간 게 아니잖아! 피코 표 물러!",m:"nervous",s:{karo:-10,momo:20}},
+      {w:"momo",t:"도, 돌을 뒤집으셨어요…? 그, 그 밑바닥은 보면 안 되는데…!",m:"nervous",s:{momo:20}}]},
+     {w:"kongi",t:"킁킁, 그 돌 {은은하게 빛나}! 반짝반짝!"}]}
+  ]};
+TWBR.cart={type:"re",
+  lines:[
+   {w:"kongi",t:"킁킁… 연못이면 따닥이 날아간 데잖아. 그럼 역시 따닥이…?",m:"confused",s:{ttadak:15}},
+   {w:"mungchi",t:"거봐. 딱따구리가 뽑아서 연못에 던진 거야. 뭐, 그렇다는 거야.",m:"smug",s:{ttadak:10}},
+   {w:"ttadak",t:"……(부리를 꾹 다문 채 고개를 숙인다.)",m:"sad"},
+   {w:"det0",t:"어디서 나왔는지보다 누가 쥐었는지가 중요하다. 결판은 잠시 멈추고, 현장을 다시 보자."},
+   {w:"det1",t:"따닥아, 조금만 기다려. 지렛대가 원래 있던 데부터 다시 볼게!"}],
+  need:["c8uv_box"],
+  task:"지렛대가 원래 놓여 있던 우편 마차 창고로 돌아가 보자. 눈에 안 보이는 흔적까지 빛을 비춰 찾아볼 것.",
+  resume:[
+   {w:"det1",t:"이거야! 창고에서 지렛대를 꺼낸 손이 남긴 흔적. 연못 지렛대랑 나란히 놓고 보자!"},
+   {w:"mungchi",t:"흥, 창고 먼지나 뒤지고 왔어? 촌스럽게. 뭐, 그렇다는 거야.",m:"smug"},
+   {w:"ttadak",t:"……따닥.",m:"shy"}]
+};
+TWBR.glove={type:"conv",
+  phases:[
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"kongi",t:"킁킁… 네로 아저씨가 그 종이를 샀다고? 그럼 역시…",m:"confused",s:{nero:15}},
+    {w:"momo",t:"어, 어머… 검은 망토라면… 저도 이젠 모르겠어요.",m:"nervous",s:{nero:10}},
+    {w:"madam",t:"영수증 한 장이면 충분하지 않나요? 차라도 한 잔 드시겠어요?",m:"smug",s:{nero:10}},
+    {w:"owlgp",t:"…흔적을 남기는 스라소니는 훔치는 게 아니라 찾고 있는 게야.",m:"sad"},
+    {w:"mungchi",t:"…종이 한 장 샀다고 범인이면, 이 동네 다 범인이겠네. 뭐, 그렇다는 거야.",m:"nervous"},
+    {w:"nero",t:"…저는 아무 말도 하지 않겠습니다. 증거가 말하게 두십시오."},
+    {w:"det0",t:"다시 모이자. 영수증에 적힌 글자를 하나도 빼놓지 말고 확인하겠다."},
+    {w:"det1",t:"좋아, 원탁 회의 한 번 더! 빛나는 말을 증거로 쏘아 보자!"}]},
+   {type:"debate",mode:"no",topic:"네로가 그 종이로 쪽지를 썼을까?",bullets:["tw_glove","g9_prints","g9_cloak","g9_cap"],
+    hint:"백 부인이 내민 영수증, 자세히 읽어 봤지? 맨 아래 칸에 언제라고 적혀 있었더라?",
+    stms:[
+     {w:"momo",t:"영수증엔 {은빛 마을 문구점}이라고 찍혀 있어요.",m:"nervous"},
+     {w:"madam",t:"그 손님이 이 영수증의 종이로 {쪽지를 써서 말뚝에 꽂은} 거예요.",k:"no",a:["tw_glove","g9_note"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 영수증 날짜는 '축제 전날 아침', 바로 오늘이야. 쪽지는 그 전날 밤에 벌써 말뚝에 있었어!"},
+      {w:"det0",t:"종이를 사기도 전에 쪽지가 먼저 있었다. 그 종이로는 쪽지를 쓸 수 없다."},
+      {w:"kongi",t:"어? 오늘 산 종이로 어젯밤 쪽지를 쓸 순 없잖아!",m:"happy",s:{nero:-20}},
+      {w:"nero",t:"…증거를 끝까지 읽어 주셨군요.",s:{nero:-15}},
+      {w:"madam",t:"…날짜 칸이라니. 제가 그런 칸을…",m:"nervous",s:{madam:20}}]},
+     {w:"kongi",t:"쪽지 종이엔 {백합 무늬}가 숨어 있었어! 킁킁."}]}
+  ]};
+TWBR.festival={type:"fail",
+  phases:[
+   {type:"talk",ban:"회의가 흔들린다",lines:[
+    {w:"wanggu",t:"거봐! 범인의 아들이 범인이지! 내 말이 맞지?!",m:"smug",s:{mungchi:25}},
+    {w:"siluk",t:"저도 믿고 싶지 않았습니다. 하지만 이번엔 진짜 도련님 손이지요.",m:"sad",s:{mungchi:15}},
+    {w:"kongi",t:"킁킁… 뭉치 형 진짜 글씨는 삐딱하다고 했잖아. 이것도 삐딱해…",m:"confused",s:{mungchi:10}},
+    {w:"bori",t:"음냐… 그럼 뭉치가 정말…?",m:"confused"},
+    {w:"karo",t:"잠, 잠깐만요. 도련님은 그때…",m:"nervous"},
+    {w:"siluk",t:"까로 씨 마음은 압니다. 그래도 글씨는 거짓말을 못 하지요.",m:"sad",s:{mungchi:10}},
+    {w:"wanggu",t:"다수결로 하자! 다 그렇게 말하면 그게 맞는 거야!",m:"smug"}]},
+   {type:"mob",q:"별빛 돌을 가져간 사람은?",votes:{wanggu:"mungchi",siluk:"mungchi",kongi:"mungchi",bori:"mungchi",karo:"siluk",mungchi:"siluk"},target:"mungchi",lines:[
+    {w:"wanggu",t:"봐! 다수결이야! 범인의 아들이 범인이지!",m:"smug"},
+    {w:"mungchi",t:"…… (뭉치가 고개를 숙인 채 아무 말도 하지 않는다.)",m:"sad"},
+    {w:"karo",t:"…도련님, 이번에도 고개를 저으실 건가요.",m:"sad"},
+    {w:"det1",t:"잠깐! 다수결로 범인을 정하면 안 돼. 그 편지, 아직 제대로 안 봤잖아!",m:"nervous"},
+    {w:"det0",t:"글씨는 진짜 뭉치의 것이다. 그렇다면 물어야 할 건, 이 편지가 어디를 거쳐 왔느냐다."}]},
+   {type:"debate",mode:"no",topic:"뭉치의 편지는 등불 옆에 떨어져 있었을까?",bullets:["tw_festival","f10_drafts","f10_glove","f10_rut"],
+    hint:"실룩이 내민 편지, 봉투까지 살펴봤지? 받는 사람이 누구고, 봉투에 뭐가 찍혀 있었더라?",
+    stms:[
+     {w:"kongi",t:"편지 글씨는 {삐딱하고 ㅁ이 벌어져} 있어. 뭉치 형 글씨 맞아.",m:"confused"},
+     {w:"siluk",t:"이 편지는 도련님이 돌을 꺼내 가다 {받침 옆에 흘린} 겁니다. 제가 직접 주웠지요.",k:"no",a:["tw_festival","f10_slip"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 이 편지는 받는 이가 도토고, 봉투엔 '9:20 접수' 소인이 있어. 이미 우체국에 부친 편지야!"},
+      {w:"det0",t:"우체국에 부친 편지가 등불 받침 옆 풀밭에 떨어져 있을 리 없다."},
+      {w:"karo",t:"맞아요. 9시 20분에 도련님이 편지 세 통을 부쳤어요. 도토, 꽥순, 그리고 저한테요.",m:"sad",s:{mungchi:-25}},
+      {w:"mungchi",t:"…… (뭉치가 아주 작게, 한 번 고개를 끄덕였다.)",m:"shy",s:{mungchi:-15}},
+      {w:"siluk",t:"…우체국 소인이라. 봉투까지 뒤집어 보실 줄은…",m:"nervous",s:{siluk:25}}]},
+     {w:"wanggu",t:"편지엔 {'미안'}이라고 적혀 있잖아! 내가 똑똑히 봤어!",m:"smug"}]}
+  ]};
+TWBR.snow={type:"re",
+  lines:[
+   {w:"det1",t:"무쇠 할아버지가 솜이를 가뒀다고…? 그럴 리 없어!",m:"nervous"},
+   {w:"musoe",t:"……",m:"sad"},
+   {w:"seori",t:"규정상 자물쇠는 거짓말을 하지 않습니다. 열쇠는 영감 허리춤에 하나뿐이지요.",m:"smug"},
+   {w:"det0",t:"자물쇠 하나가 너무 딱 맞는다. 결판을 잠시 멈추자. 그 문이 정말 어떻게 막혀 있었는지 봐야 한다."},
+   {w:"det1",t:"할아버지, 조금만 기다려요! 눈이 다 덮기 전에 보고 올게!"}],
+  need:["e11_shovel"],
+  task:"대피소 문은 정말 자물쇠로 잠겨 있었을까? 광산 대피소 문 앞을 다시 살펴보자.",
+  resume:[
+   {w:"bori",t:"헤헤… 나 그 문 열 때 자물쇠 안 풀었는데? 뭘 빼니까 열렸더라…",m:"confused"},
+   {w:"seori",t:"…규정상, 반론은 증거로 하십시오.",m:"smug"},
+   {w:"det1",t:"좋아. 이번엔 문을 진짜로 막은 물건으로 말할게!"}]};
+TWBR.clapper={type:"conv",phases:[
+  {type:"talk",ban:"회의가 흔들린다",lines:[
+   {w:"ppul",t:"에헴! 다시 모이시오. 추를 찾았으니 이번 회의로 끝을 냅시다.",m:"smug"},
+   {w:"ppul",t:"종탑 지붕, 종지기 둥지 속에서 나온 추요. 은빛으로 번쩍이지 않소?",m:"smug",s:{seol:30}},
+   {w:"tok",t:"딸깍… 설이 씨 둥지에서요? 그럼 정말…",m:"nervous",s:{seol:10}},
+   {w:"sling",t:"후후. 이번엔 촌장님 말이 그럴듯하군요. 둥지가 거짓말을 하겠소?",m:"smug",s:{seol:10}},
+   {w:"seol",t:"…저는 몰라요. 한 번 더 세어 볼게요… 아니, 셀 것도 없네요.",m:"sad"},
+   {w:"ttadak",t:"따닥! 그냥 두드려 보면 되잖아. 소리는 거짓말 안 해."},
+   {w:"bami",t:"…저 추. 어디서 많이 본 것 같은데.",m:"confused"},
+   {w:"det1",t:"번쩍인다고 진짜는 아니야. 그 추를 증거로 다시 따져 보자!"}]},
+  {type:"debate",mode:"no",topic:"설이 둥지에서 나온 추는 달빛 종의 추일까?",bullets:["tw_clapper","e12_feather","e12_door","e12_hook"],
+   hint:"촌장님이 내민 추를 두드려 보고, 밑바닥도 뒤집어 봐.",
+   stms:[
+    {w:"ttadak",t:"따닥! 달빛 종은 {속만 텅 비었어}. 종은 멀쩡해."},
+    {w:"seol",t:"…제 둥지는 {종탑 지붕 위}에 있어요. 다들 알아요.",m:"sad"},
+    {w:"ppul",t:"에헴! 둥지에서 나온 이 추가 {달빛 종의 진짜 추}요!",k:"no",a:["tw_clapper","e12_fakecase","s12x_mold"],m:"smug",ok:[
+     {w:"det1",t:"그건 아니야! 그 추는 두드리면 소리가 둔하고, 밑바닥에 거푸집 번호 '2'랑 '밤' 자가 긁혀 있어. 가짜 추야."},
+     {w:"bami",t:"…거봐. 내 이름 긁어 놨잖아. 회관 기념 진열함에 있던 거야.",m:"smug",s:{seol:-30}},
+     {w:"tok",t:"딸깍… 2번 거푸집이면 제 작업실 틀이에요. 저희가 부은 추예요.",m:"nervous"},
+     {w:"seol",t:"…제 둥지에 그런 추는 없었어요. 이제 셀 수 있어요. 가짜 하나.",m:"sad",s:{seol:-10}},
+     {w:"ppul",t:"…기념 진열함. 에, 에헴… 거기 둔 걸 잊고 있었소.",m:"nervous",s:{ppul:30}}]}]}
+ ]};
+TWBR.bureau={type:"fail",phases:[
+  {type:"talk",ban:"회의가 흔들린다",lines:[
+   {w:"eunho",t:"보시오. 도장까지 찍힌 관리국의 협박장이오. 나는 협박당한 피해자란 말이오.",m:"smug",s:{eunho:-25}},
+   {w:"badook",t:"삐익… 토끼풀 꽃 도장이오. 진짜 관리국 편지 같소.",m:"confused"},
+   {w:"eunho",t:"'편지를 거두겠소'라 했지. 그럼 오늘 밤 누가 가게에 몰래 숨어들었소?",m:"smug",s:{piko:15}},
+   {w:"eunho",t:"공작새요. 들어간 적 없다고 거짓말까지 했지. 관리국이 보낸 손이 바로 저자요.",m:"smug",s:{piko:25}},
+   {w:"piko",t:"피, 피코는 거울을 본 것뿐이야! 피코는 관리국 같은 거 몰라!",m:"nervous"},
+   {w:"guseul",t:"사, 사장님이 피해자라면… 다행이에요…",m:"sad"},
+   {w:"lamplighter",t:"누굴 탓하긴 싫지만… 도장까지 찍혀 있으니 할 말이 없네요.",m:"shy",s:{piko:5}},
+   {w:"mungchi",t:"…공작새가 몰래 들어가 있던 건 맞잖아. 뭐, 그렇다는 거야.",m:"shy",s:{piko:5}}]},
+  {type:"mob",q:"관리국이 보낸 손은 누구일까?",votes:{badook:"piko",eunho:"piko",guseul:"piko",lamplighter:"piko",mungchi:"piko",piko:"eunho"},target:"piko",lines:[
+   {w:"badook",t:"삐익! 다수결이오. 공작새는 여기서 한 발짝도 못 나가오!",s:{piko:15}},
+   {w:"piko",t:"피코는… 이렇게 아름다운데… 아무도 안 믿어 줘…",m:"sad"},
+   {w:"eunho",t:"이제 엉뚱한 사람을 붙잡지 마시오, 탐정 양반들.",m:"smug"},
+   {w:"det1",t:"잠깐! 도장이 찍혔다고 진짜 편지인 건 아니야!",m:"nervous"},
+   {w:"det0",t:"서두르지 마라. 편지 한 통이 언제, 어디서 어디로 왔는지부터 보자."}]},
+  {type:"debate",mode:"no",topic:"은호 사장의 협박장은 어젯밤 관리국이 보낸 편지일까?",bullets:["tw_bureau","e13uv_ash","e13_vault","e13_roll"],
+   hint:"협박장의 도장 잉크와 봉투 귀퉁이를 다시 살펴봐. 우체국을 거쳐 온 편지라면 남는 게 있지.",
+   stms:[
+    {w:"badook",t:"삐익! 협박장엔 {토끼풀 꽃 도장}이 찍혀 있소."},
+    {w:"piko",t:"피코는 7시쯤 {금고 문 앞에 들어가 있었어}… 거울 보려고.",m:"shy"},
+    {w:"guseul",t:"사장님은 7시에 {저를 일찍 보내셨어요}. 처음이었어요.",m:"nervous"},
+    {w:"eunho",t:"이 협박장은 {어젯밤 관리국이 보내온 편지}요!",k:"no",a:["tw_bureau","e13_stamp"],m:"smug",ok:[
+     {w:"det1",t:"그건 아니야! 협박장 도장 잉크가 아직 덜 말라 번지고, 봉투엔 소인이 없어. 어젯밤 온 편지가 아니야."},
+     {w:"det0",t:"부쳐진 적 없는 봉투, 오늘 밤 찍은 도장이다. 서재 책상의 새 도장 잉크도 아직 촉촉했지."},
+     {w:"badook",t:"삐익…! 소인 없는 편지가 어떻게 배달됐단 말이오?",m:"confused",s:{eunho:25}},
+     {w:"piko",t:"피, 피코는 억울했어… 꽁지깃까지 다 떨렸잖아.",m:"shy",s:{piko:-35}},
+     {w:"eunho",t:"…소인이라. 봉투 귀퉁이까지 볼 줄은 몰랐소.",m:"nervous",s:{eunho:20}}]}]}
+ ]};
+TWBR.lining={type:"re",
+  lines:[
+   {w:"wanggu",t:"거봐, 협박장이잖아! 네로가 영감을 협박한 거야! 내 말이 맞지?!",m:"smug"},
+   {w:"nero",t:"…제 글씨가 맞습니다. 그 편지는 제가 할아버지께 드린 편지입니다.",m:"sad"},
+   {w:"sling",t:"후후, 글씨 주인이 인정했소. 제가 더 도와드릴 게 있소?",m:"smug"},
+   {w:"det0",t:"글씨가 진짜라서 더 이상하다. 결판을 잠시 멈추자. 그 편지가 원래 어디 있어야 했는지 확인해야 한다."},
+   {w:"det1",t:"네로, 조금만 기다려! 금방 다녀올게!"}],
+  need:["e14_shelf"],
+  task:"네로와 할아버지가 30년 동안 주고받은 편지는 원래 어디에 놓여 있었을까? 숲의 작은 등불 안을 다시 살펴보자.",
+  resume:[
+   {w:"karo",t:"후후… 할아버지는 네로 님 편지를 전부 그 편지함에 넣으셨어요. 제가 날랐으니 알아요.",m:"nervous"},
+   {w:"sling",t:"후후, 대합실 바닥에서 주운 편지요. 주운 게 죄요?",m:"smug"},
+   {w:"det1",t:"좋아. 그 편지가 어디서 나왔는지, 이번엔 증거로 말할게!"}]};
+TWBR.kitchen={type:"fail",phases:[
+  {type:"talk",ban:"회의가 흔들린다",lines:[
+   {w:"grandma",t:"아이고, 영감 짝은 염소 뿔순 아가씨였다니까요. 이 늙은이는 가끔 같이 걸었을 뿐이에요.",m:"sad",s:{grandma:-25}},
+   {w:"owlgp",t:"…뿔순이라. 허허, 명부에 그리 적혀 있다면…",m:"confused"},
+   {w:"karo",t:"후후… 명부까지 있으면, 할머니는 짝이 아니었던 거네요.",m:"nervous"},
+   {w:"grandma",t:"뿔순 아가씨는 그 밤 풀숲에서 열쇠를 잃어버렸다지요. 그 밤 등불 밑엔 누가 있었더라…",m:"sad",s:{nero:30}},
+   {w:"grandma",t:"아이고, 내가 또 괜한 소리를 했네. 불쌍한 것.",m:"sad",s:{nero:10}},
+   {w:"momo",t:"어머… 30년 전 그 밤도, 오늘도 열쇠로 열렸다면서요…",m:"confused",s:{nero:10}},
+   {w:"tori",t:"……깡총.",m:"nervous"},
+   {w:"nero",t:"…또 등불 밑이군요.",m:"sad"}]},
+  {type:"mob",q:"동지 등불의 별빛 돌을 가져간 사람은?",votes:{owlgp:"nero",grandma:"nero",karo:"nero",momo:"nero",buri:"nero",nero:"nero",tori:"grandma"},target:"nero",lines:[
+   {w:"grandma",t:"아이고, 다들 그렇다니 어쩌겠어요. 할머니 마음이 더 아파요.",m:"sad"},
+   {w:"nero",t:"…30년 전에도 이렇게 손이 올라갔지요. 괜찮습니다.",m:"sad",s:{nero:15}},
+   {w:"owlgp",t:"…허허. 종이 한 장에 늙은이 손이 또 먼저 올라가는구나.",m:"sad"},
+   {w:"tori",t:"…어, 어떡해.",m:"nervous"},
+   {w:"det1",t:"잠깐만요! 명부 한 장으로 또 네로를 몰면 안 돼요!",m:"nervous"},
+   {w:"det0",t:"종이는 말을 바꾸지 않아도, 종이를 만든 손은 바꾼다. 그 명부부터 다시 보자."}]},
+  {type:"debate",mode:"no",topic:"할머니가 내민 명부는 정말 1985년 그때의 명부일까?",bullets:["tw_kitchen","e15_carbon","e15_hook","e15_lock"],
+   hint:"할머니가 내민 명부를 종이 결부터 글씨 한 자까지 다시 살펴봐.",
+   stms:[
+    {w:"owlgp",t:"그 밤 등불 열쇠는 {둘이었다}. 1번은 나, 2번은 순찰 짝.",m:"sad"},
+    {w:"buri",t:"부엉… 먹지 사본엔 짝 이름 칸이 {번져서 안 보였어요}.",m:"nervous"},
+    {w:"grandma",t:"이건 영감이 1985년에 맡긴 {그때 그 명부}예요. 짝은 염소 뿔순이고요.",k:"no",a:["tw_kitchen","e15uv_name","e15_photo","cx_kitchen_3"],m:"sad",ok:[
+     {w:"det1",t:"그건 아니야! 그 명부는 새 종이에 찻물을 들여서 누렇게 만든 거야. 1985년 종이가 아니야."},
+     {w:"det0",t:"먹지 사본의 눌린 글씨엔 '순찰 짝: 달래'. 사진 그림자도 뿔이 아니라 꺾여 내려앉은 귀다."},
+     {w:"owlgp",t:"…달래. 증거가 먼저 말해 주었구나.",m:"sad"},
+     {w:"nero",t:"…그럼 그 밤, 열쇠를 가진 또 한 사람은.",m:"sad",s:{nero:-40,grandma:30}},
+     {w:"tori",t:"……할머니.",m:"sad"},
+     {w:"grandma",t:"…아이고. 요즘 아가들은 종이 결까지 들여다보는구나.",m:"sad",s:{grandma:10}}]}]}
+ ]};
+})();
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
