@@ -44,10 +44,8 @@ for(let ci=0;ci<n;ci++){const cid=await T(`CASES[${ci}].id`);if(only.length&&onl
   await clear();
  }
  const ph=await T('G.battle&&G.battle.phase');if(ph!=='won')log.push('battle not won, phase '+ph+' lives '+await T('G.battle&&G.battle.lives'));
- // deduce
- await T(`(function(){var c=CASES[${ci}];c.final.forEach(function(f,i){if(i)G.answers[i]=f.answer});render()})()`);await p.waitForTimeout(200);
- const dd=await T(`!!document.getElementById("dcheck")||!!document.getElementById("submit")`);if(!dd)log.push('no deduce/submit button');
- await T(`runWrap(CASES[${ci}]);0`);await p.waitForTimeout(600);await T('var s=document.getElementById("showskip");if(s)s.click();0');
+ // wrap starts by itself after the confession
+ await T(`render();0`);await p.waitForTimeout(900);await T('var s=document.getElementById("showskip");if(s)s.click();0');
  for(let k=0;k<80;k++){await p.waitForTimeout(400);const d=await T('!!DL||!!document.querySelector(".show,.recon,.sbook,.banner,.flash,.ovr")');if(!d)break;await T('if(DL)endDlg();var s=document.querySelector("#showskip,#reconskip,#sbskip");if(s)s.click();0')}
  await clear();await p.waitForTimeout(300);
  const res=await T('JSON.stringify({solved:!!(G&&G.result&&G.result.solved),stars:G&&G.result&&G.result.stars,best:S.best})');
