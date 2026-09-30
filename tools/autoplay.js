@@ -1,14 +1,14 @@
-// Full in-page playthrough of every case: find all, ask all, break all contras via judgePresent, battle via judgeBattle, deduce, wrap.
+// (v107: 3장부터 새 흐름은 끄고 옛 흐름으로 데이터 무결성만 검사) Full in-page playthrough of every case: find all, ask all, break all contras via judgePresent, battle via judgeBattle, deduce, wrap.
 const { chromium } = require('/home/claude/.npm-global/lib/node_modules/playwright');
 const file=process.argv[2], only=(process.argv[3]||"").split(",").filter(Boolean);
 (async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome'});const p=await b.newPage({viewport:{width:390,height:844},hasTouch:true});
 const errs=[];p.on('pageerror',e=>errs.push('PAGE '+e.message));p.on('console',m=>{if(m.type()==='error')errs.push('CON '+m.text())});
-await p.goto('file://'+file);await p.waitForTimeout(400);await p.evaluate(()=>{window.__T('window.__revAll=true;0')});const T=c=>p.evaluate(x=>window.__T(x),c);
+await p.goto('file://'+file);await p.waitForTimeout(400);await p.evaluate(()=>{window.__T('window.__revAll=true;window.__inMeeting=true;window.__startRound=function(){return 0};if(window.TWBR)for(var k in TWBR)delete TWBR[k];0')});const T=c=>p.evaluate(x=>window.__T(x),c);
 const clear=async()=>{await T('while(DL)endDlg();closeModal();document.querySelectorAll(".ovr,.flash,.banner,.crec2,.sbook,.zoomv,.recon,.show,.moment,.cutin,.stampfx,.coach,.lens,.flyev").forEach(function(x){x.remove()});0');};
 const n=await T('CASES.length');
 for(let ci=0;ci<n;ci++){const cid=await T(`CASES[${ci}].id`);if(only.length&&only.indexOf(cid)<0)continue;
  const log=[];
- await T(`S.tspeed="i";S.story.pro=true;S.story.finale=true;CASES.forEach(function(c,k){if(k<${ci})S.best[c.id]=3});G=fresh(${ci});G.introDone=true;S.screen="case";G.tab="scene";render();0`);await p.waitForTimeout(200);await clear();
+ await T(`S.tspeed="i";S.story.pro=true;S.story.finale=true;CASES.forEach(function(c,k){if(k<${ci})S.best[c.id]=3});G=fresh(${ci});G.introDone=true;G.beats={toMeet:1,toFight:1};S.screen="case";G.tab="scene";render();0`);await p.waitForTimeout(200);await clear();
  // find everything reachable, ask everything, break contras, iterate
  for(let round=0;round<8;round++){
   const st=await T(`(function(){var c=CASES[${ci}];var f=0;c.locations.forEach(function(l,i){if(!locOpen(c,i))return;l.spots.forEach(function(s){if(G.found.indexOf(s.ev.id)<0){G.found.push(s.ev.id);f++}})});
