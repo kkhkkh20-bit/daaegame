@@ -4672,7 +4672,7 @@ function bindFinal(c){
   app.querySelectorAll("[data-si]").forEach(function(b){b.onclick=function(){G.battle.si=+b.dataset.si;SFX.page();render()}});
   var pr=document.getElementById("press");if(pr)pr.onclick=function(){
     var B=G.battle,st=stmsOf(rOf(c)),s=st[(B.si||0)%st.length];
-    flash("잠깐!",false,true).then(function(){say([["det","방금 그 말, 좀 더 자세히 말해 봐!"],[B.cul,s.p,B.round?"nervous":"","testi",s.a?"tell":""],["think",s.a?"지금 움찔했어… 이 문장, 수상해.":"음… 이 문장은 딱히 걸리는 데가 없네. 다른 문장도 넘겨 보자.","",curPlayer()]],function(){render()})});
+    flash("잠깐!",false,true).then(function(){window.__press(c,B,s)});
   };
   var ah=document.getElementById("aimhint");if(ah)ah.onclick=function(){if(DL||document.querySelector(".ovr,.flash,.banner"))return;openRecord(c,"battle")};
   var rt=document.getElementById("retreat");if(rt)rt.onclick=function(){SFX.tap();goTab("scene")};
@@ -17966,6 +17966,46 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  '.showev{display:flex;flex-direction:column;align-items:flex-start;width:100%;margin-top:8px;padding:8px 14px;border:2px solid #2F6FD6;border-radius:14px;background:#EAF2FF;color:#1B2447;text-align:left}.showev b{font-family:var(--display);font-weight:400;font-size:16px}.showev span{font-size:12px;opacity:.75}'+
  '@media (prefers-reduced-motion:reduce){.crowd,.crowd .ch,.verd b{animation:none}}';
  document.head.appendChild(css);
+})();
+
+/* v101: 추궁하면 증언이 추가된다 (각 장 한 라운드) */
+(function(){
+ // r: 라운드, y: 추궁할 문장, x: 처음엔 숨어 있다가 추가되는 문장, q: 탐정이 캐묻는 말
+ var ADD={
+  cake:{r:0,y:0,x:1,q:"잠들었다고? 깨고 나서는 뭐 했는데?"},
+  window:{r:0,y:2,x:1,q:"소리도 못 들을 만큼 멀리 있었다고? 그럼 오늘 운동장 쪽엔?"},
+  crown:{r:0,y:0,x:1,q:"왕관을 봤다고? 그럼 그다음에 왕관은 어떻게 됐는데?"},
+  star:{r:2,y:0,x:1,q:"누가 샀는지는 모른다 치고요. 까로 씨는 등불 일을 언제 처음 아셨어요?"},
+  bell:{r:1,y:0,x:1,q:"편지만 전했다고요? 종탑 지하 쪽은요?"},
+  dark:{r:3,y:0,x:1,q:"먼 곳이라니요. 열쇠가 영영 안 나오면 어떻게 되는데요?"},
+  museum:{r:0,y:2,x:1,q:"불이 꺼진 순간 입구에 계셨다는 걸 본 사람이 있어요?"},
+  cart:{r:0,y:1,x:0,q:"끼기 싫으면 알리바이부터 말해. 그 시간에 어디 있었어?"},
+  glove:{r:5,y:0,x:1,q:"그 아이 얘기는 됐고요. 지금 저택엔 누가 있습니까?"},
+  festival:{r:0,y:1,x:0,q:"그럼 실룩 씨는 그때 어디서 뭘 하고 있었습니까?"},
+  snow:{r:1,y:2,x:1,q:"펜 소리만으론 모르죠. 그 시간 옷차림은요?"},
+  clapper:{r:2,y:0,x:1,q:"종지기가 가져갔다니, 무슨 근거로요?"},
+  bureau:{r:0,y:1,x:0,q:"가게에 없었다면, 어디에 몇 시부터 계셨습니까?"},
+  lining:{r:2,y:0,x:1,q:"만난 적이 없다고요? 그 밤, 언덕 쪽엔 가셨습니까?"},
+  kitchen:{r:3,y:0,x:1,q:"그럼 편지는요? 할머니가 쓰신 편지는 정말 없어요?"}
+ };
+ Object.keys(ADD).forEach(function(cid){var a=ADD[cid],R=BATTLE[cid],r=R&&R[a.r];if(!r||!r.stm)return;
+  var y=r.stm[a.y],x=r.stm[a.x];if(!y||!x||y===x)return;x.hide=true;y.rev={x:x,q:a.q}});
+ function shown(s){return !s.hide||window.__revAll||!(G&&G.battle)||(G.battle.rev&&G.battle.rev[s.t])}
+ var _so=stmsOf;stmsOf=function(r){var st=_so(r);if(!r||!r.stm)return st;var out=[];
+  st.forEach(function(s){if(s.hide)return;out.push(s);if(s.rev&&shown(s.rev.x))out.push(s.rev.x)});
+  st.forEach(function(s){if(s.hide&&out.indexOf(s)<0&&shown(s))out.push(s)});return out};
+ window.__hasHidden=function(r){return !!(r&&r.stm&&r.stm.some(function(s){return s.hide&&!shown(s)}))};
+ window.__press=function(c,B,s){
+  var L=[["det","방금 그 말, 좀 더 자세히 말해 봐!"],[B.cul,s.p,B.round?"nervous":"","testi",s.a?"tell":""]];
+  if(s.rev&&!shown(s.rev.x)){var x=s.rev.x;
+   L.push(["det",s.rev.q],[B.cul,x.t,"nervous","testi","tell"],["narr","— 증언에 새 문장이 추가됐다! —","",B.cul]);
+   say(L,function(){if(!B.rev)B.rev={};B.rev[x.t]=1;var st=stmsOf(rOf(c));B.si=Math.max(0,st.indexOf(x));try{SFX.found()}catch(e){}render();try{saveProg()}catch(e){}});return}
+  L.push(["think",s.a?"지금 움찔했어… 이 문장, 수상해.":"음… 이 문장은 딱히 걸리는 데가 없네. 다른 문장도 넘겨 보자.","",curPlayer()]);
+  say(L,function(){render()})};
+ // 증언 끝에, 숨은 문장이 있는 라운드라면 한마디
+ var _t=window.__testi;window.__testi=function(c,cul,r,first){var L=_t.apply(this,arguments),R=BATTLE[c.id]||[];
+  if(window.__hasHidden(R[Math.min(r,R.length-1)]))L.push(["think","…말이 너무 매끄러워. 일부러 빼먹은 얘기가 있는 것 같아. 걸리는 문장은 추궁해 보자.","",curPlayer()]);
+  return L};
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
