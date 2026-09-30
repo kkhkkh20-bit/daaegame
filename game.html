@@ -3784,14 +3784,13 @@ function nextHintKey(c){
   return "none";
 }
 function coinIc(){return '<svg class="coin" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#F2C230" stroke="#8A6A12" stroke-width="2"/><path d="M10 5.5v9M7.5 8h4a1.8 1.8 0 0 1 0 3.6H8.5" fill="none" stroke="#8A6A12" stroke-width="1.8" stroke-linecap="round"/></svg>'}
-function addCoin(n,why){G.coins=Math.min(30,(G.coins|0)+(n||1));SFX.ding?SFX.ding():SFX.select();setTimeout(function(){floater("#nextstep","코인 +"+(n||1)+(why?" · "+why:""),"")},60)}
+function addCoin(n,why){G.coins=Math.min(30,(G.coins|0)+(n||1))}
 function useHint(c){
   SFX.tap();
-  if((G.coins|0)<=0){say([["think","힌트 코인이 없어. 현장을 더 꼼꼼히 관찰하거나 암호 상자를 풀면 코인이 나올지도 몰라.","",curPlayer()]],function(){render()});return}
-  modal('<span class="kicker">힌트</span><div class="bigic">'+coinIc()+'</div><h3>코인 1개로 힌트를 볼까요?</h3><p class="soft" style="text-align:center">남은 코인 '+(G.coins|0)+'개 · 힌트를 쓰면 별이 줄 수 있어요.</p><div class="row"><button class="btn ghost" id="hno">그만두기</button><button class="btn" id="hyes">쓰기</button></div>',function(){
+  modal('<span class="kicker">힌트</span><div class="bigic">'+IC.bulb+'</div><h3>힌트를 볼까요?</h3><p class="soft" style="text-align:center">힌트는 몇 번이든 쓸 수 있어요.<br>'+((G.hints|0)?'지금까지 '+(G.hints|0)+'번 썼어요. ':'')+'2번 이상 쓰면 별이 1개 줄어요.</p><div class="row"><button class="btn ghost" id="hno">그만두기</button><button class="btn" id="hyes">쓰기</button></div>',function(){
     document.getElementById("hno").onclick=function(){SFX.tap();closeModal()};
     document.getElementById("hyes").onclick=function(){
-      closeModal();var k=nextHintKey(c);G.coins=(G.coins|0)-1;G.hints=(G.hints|0)+1;if(!G.hintLog)G.hintLog=[];if(k!=="none"&&G.hintLog.indexOf(k)<0)G.hintLog.push(k);
+      closeModal();var k=nextHintKey(c);G.hints=(G.hints|0)+1;if(!G.hintLog)G.hintLog=[];if(k!=="none"&&G.hintLog.indexOf(k)<0)G.hintLog.push(k);
       SFX.page();render();say([["think",hintText(c,k),"",curPlayer()]],function(){render()});
     };
   });
@@ -3811,7 +3810,7 @@ function renderCase(){
   var c=CASES[G.ci];if(G){G.target=null;G.sceneTalk=null}
   if(G.result){document.body.classList.remove("fs");renderResultScreen(c);return}
   var h='<header class="hud hud2"><button class="ib" id="menu" aria-label="게시판으로">'+IC.back+'</button><div class="ht"><small>사건 '+(G.ci+1)+' · '+esc(curPlayer())+' 차례</small>'+c.title+'</div>'+
-        '<button class="pill" id="nextstep" aria-label="힌트">'+IC.bulb+'힌트 <b class="cn">'+(G.coins|0)+'</b></button><button class="ib" id="snd" aria-label="설정">'+IC.set+'</button></header>';
+        '<button class="pill" id="nextstep" aria-label="힌트">'+IC.bulb+'힌트'+((G.hints|0)?' <b class="cn">'+(G.hints|0)+'</b>':'')+'</button><button class="ib" id="snd" aria-label="설정">'+IC.set+'</button></header>';
   var fight=G.battle&&G.battle.phase==="fight"&&G.tab==="final",danger=fight&&G.battle.lives<=2;
   bgm(G.battle&&G.battle.phase==="fight"?window.__bmode(G.battle,CASES[G.ci]):(G.tab==="talk"?"talk":"sneak"));
   heartbeat(danger);document.body.classList.toggle("danger",!!danger);document.body.classList.toggle("blackout",!!(isNight(c)&&G.night&&G.night.blackout&&G.tab==="scene"));
@@ -4047,10 +4046,9 @@ function bindScene(c){
     });
   }});
   var blb=document.getElementById("blinkbtn");if(blb)blb.onclick=function(e){e.stopPropagation();SFX.tap();
-    if((G.coins|0)<=0){say([["think","코인이 없어. 그림을 이곳저곳 직접 눌러 보자.","",curPlayer()]],function(){render()});return}
-    modal('<span class="kicker">찾기</span><div class="bigic">'+coinIc()+'</div><h3>코인 1개로 숨은 곳을 잠깐 비춰 볼까요?</h3><p class="soft" style="text-align:center">남은 코인 '+(G.coins|0)+'개</p><div class="row"><button class="btn ghost" id="bno">그만두기</button><button class="btn" id="byes">비추기</button></div>',function(){
+    modal('<span class="kicker">찾기</span><div class="bigic">'+IC.bulb+'</div><h3>숨은 곳을 잠깐 비춰 볼까요?</h3><p class="soft" style="text-align:center">몇 번이든 쓸 수 있어요. 별은 줄지 않아요.</p><div class="row"><button class="btn ghost" id="bno">그만두기</button><button class="btn" id="byes">비추기</button></div>',function(){
       document.getElementById("bno").onclick=function(){SFX.tap();closeModal()};
-      document.getElementById("byes").onclick=function(){closeModal();G.coins=(G.coins|0)-1;render();setTimeout(blinkScene,120)};
+      document.getElementById("byes").onclick=function(){closeModal();render();setTimeout(blinkScene,120)};
     })};
   var scn=document.getElementById("bigscene");if(scn)scn.addEventListener("pointerdown",function(ev){if(ev.target.closest&&ev.target.closest(".hot,.npc"))return;var r=scn.getBoundingClientRect(),d=document.createElement("span");d.className="tapr";d.style.left=(ev.clientX-r.left)+"px";d.style.top=(ev.clientY-r.top)+"px";scn.appendChild(d);setTimeout(function(){d.remove()},500)});
   var mmb=document.getElementById("memobtn");if(mmb)mmb.onclick=function(e){e.stopPropagation();SFX.page();var l=c.locations[G.loc],so=(l.obs||[]).filter(function(o){return !o.zoom&&obsSeen(o.id)});
@@ -4536,7 +4534,7 @@ function renderNote(c){
     h+='<section class="panel"><div class="label">용의자 표시판 · 눌러서 의심 / 아니야</div><div class="suspects">';
     __met(c,c.suspects).forEach(function(k){var p=CAST[k],m=G.marks[k]||"",st=m==="sus"?"의심":m==="no"?"아니야":"모름";
       h+='<button class="sus" data-mark-who="'+k+'" data-mark="'+esc(m)+'" aria-label="'+p.name+', '+st+'">'+pf(k,moodOf(c,k))+'<span class="name">'+p.name+'</span><span class="state">'+st+'</span></button>'});
-    h+='</div></section><section class="panel"><div class="label">받은 힌트 · 코인 '+(G.coins|0)+'개</div><div class="hints">';
+    h+='</div></section><section class="panel"><div class="label">받은 힌트</div><div class="hints">';
     (G.hintLog||[]).forEach(function(k){h+='<p class="hint">'+hintText(c,k)+'</p>'});
     h+='</div>'+((G.hintLog||[]).length?'':'<p class="soft">아직 받은 힌트가 없어요.</p>')+'</section>'+
        (toolOn("riddle")?renderRiddles(c):'')+'<div id="rstwrap"><button class="btn ghost" id="restart">이 사건 처음부터 다시</button></div>';
@@ -6052,12 +6050,12 @@ function normA(t){return String(t||"").replace(/\s+/g,"").toLowerCase()}
 function riddleState(c){if(!G.riddle)G.riddle={};return G.riddle}
 function renderRiddles(c){
   var rs=RIDDLES[c.id]||[],st=riddleState(c),solved=rs.filter(function(r,i){return st[i]}).length;
-  var h='<section class="panel rdl"><div class="label">암호 상자 · '+solved+' / '+rs.length+' 열림</div><p class="soft">맞히면 힌트 코인이 나와요.</p>';
+  var h='<section class="panel rdl"><div class="label">암호 상자 · '+solved+' / '+rs.length+' 열림</div><p class="soft">풀어 보면 사건이 조금 더 재미있어져요.</p>';
   rs.forEach(function(r,i){
     var open=!!st[i];
     var mir=r.mirror&&!open;
     h+='<div class="rbox'+(open?' open':'')+(mir?' mirror':'')+'"><div class="rq"><span class="rlock">'+(open?'<svg viewBox="0 0 20 20"><path d="M4 10 l4 4 l8 -8" fill="none" stroke="currentColor" stroke-width="3"/></svg>':LOCKSVG)+'</span><p class="rqt'+(mir&&!(G.mirror&&G.mirror[i])?' flip':'')+'">'+r.q+'</p>'+(mir?'<button class="minib" data-mirror="'+i+'">'+(G.mirror&&G.mirror[i]?'거울 치우기':'거울로 보기')+'</button>':'')+'</div>'+(mir?'<p class="soft">거울에 비친 것처럼 뒤집힌 쪽지다. 거울로 보면 읽을 수 있다.</p>':'');
-    if(open)h+='<p class="rhint">'+coinIc()+' 코인을 받았어요</p>';
+    if(open)h+='<p class="rhint">열었어요!</p>';
     else h+='<form class="rform" data-ri="'+i+'" data-dial="'+window.__dialN(r.a)+'"><input type="text" maxlength="8" placeholder="답을 적어요" autocomplete="off" aria-label="암호"><button class="btn small" type="submit">열기</button></form>';
     h+='</div>';
   });
@@ -13016,7 +13014,7 @@ function openRoom(cid){
     persist();try{saveProg()}catch(e){}
     el.remove();
     var n=nFound(),tot=traceIds().length,six=["bell","dark","museum","cart","glove","festival"].every(done);
-    var lines=fixThink(s.outro||[]).concat([["narr","흑막의 흔적 "+n+" / "+tot+" · 힌트 코인 +"+(s.coins||2)+" · 게시판의 '흑막 파일'에 기록됐다."]]);
+    var lines=fixThink(s.outro||[]).concat([["narr","흑막의 흔적 "+n+" / "+tot+" · 게시판의 '흑막 파일'에 기록됐다."]]);
     if(six&&window.TRACEX.final&&!S.story.read.trace_finalseen&&(S.story.read.trace_finalseen=true))lines.push(["narr","흔적이 모두 모였다. 흑막 파일에 무언가가 도착했다…"]);
     say(lines,function(){render()});
   }
