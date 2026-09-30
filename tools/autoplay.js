@@ -3,7 +3,7 @@ const { chromium } = require('/home/claude/.npm-global/lib/node_modules/playwrig
 const file=process.argv[2], only=(process.argv[3]||"").split(",").filter(Boolean);
 (async()=>{const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome'});const p=await b.newPage({viewport:{width:390,height:844},hasTouch:true});
 const errs=[];p.on('pageerror',e=>errs.push('PAGE '+e.message));p.on('console',m=>{if(m.type()==='error')errs.push('CON '+m.text())});
-await p.goto('file://'+file);await p.waitForTimeout(400);const T=c=>p.evaluate(x=>window.__T(x),c);
+await p.goto('file://'+file);await p.waitForTimeout(400);await p.evaluate(()=>{window.__T('window.__revAll=true;0')});const T=c=>p.evaluate(x=>window.__T(x),c);
 const clear=async()=>{await T('while(DL)endDlg();closeModal();document.querySelectorAll(".ovr,.flash,.banner,.crec2,.sbook,.zoomv,.recon,.show,.moment,.cutin,.stampfx,.coach,.lens,.flyev").forEach(function(x){x.remove()});0');};
 const n=await T('CASES.length');
 for(let ci=0;ci<n;ci++){const cid=await T(`CASES[${ci}].id`);if(only.length&&only.indexOf(cid)<0)continue;
