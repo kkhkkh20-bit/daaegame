@@ -1775,6 +1775,9 @@ body.fs .fsbar i{position:absolute;top:0;bottom:0;border-radius:3px;background:#
 .cr-th .cr-nm{width:100%;font-family:var(--body);font-size:11px;line-height:1.25;font-weight:700;color:#1B2447;text-align:center;word-break:keep-all;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.5em}
 .cr-th .cr-nm b{color:#2F6FD6}
 .cr-in>*{flex-shrink:0}.cr-in>.cr-grid{flex-shrink:1;min-height:96px}
+
+.banner.lg .mid b{font-size:clamp(24px,7vw,46px);letter-spacing:.06em}
+.banner.xl .mid b{font-size:clamp(20px,5.6vw,38px);letter-spacing:.02em}
 </style>
 
 <div class="wrap" id="app"></div>
@@ -3473,7 +3476,7 @@ function cutin(k,text){
 }
 function banner(text,sub){
   return new Promise(function(res){
-    var d=document.createElement("div");d.className="banner";
+    var d=document.createElement("div");var tl=String(text||"").replace(/<[^>]+>/g,"").length;d.className="banner"+(tl>10?" xl":tl>6?" lg":"");
     d.innerHTML='<div class="bars"><div class="bar1"></div><div class="mid">'+(sub?'<small>'+sub+'</small>':'')+'<b>'+text+'</b></div><div class="bar2"></div></div>';
     document.body.appendChild(d);SFX.swoosh();
     setTimeout(function(){SFX.slam()},180);
@@ -17829,7 +17832,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  function lkHtml(lk,tot,cls){var locks="",w=17,x0=50-w*(tot-1)/2,open=tot-lk;
   for(var i=0;i<tot;i++){var isOpen=i<open,c=isOpen?(cls==="crack"&&i===open-1?"just":"opened"):"shut";if(cls==="free")c="just";locks+=padlock(x0+w*i,88,isOpen,c,cls==="snap"?.35+i*.12:0)}
   return '<div class="lkov '+cls+'"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="lc1">'+CH1+'</g><g class="lc2">'+CH2+'</g>'+locks+'</svg></div>'}
- function lkChip(n,tot){return '<span class="lkchip" aria-label="마음의 자물쇠 '+n+'개"><b>숨기는 말 '+n+'개</b></span>'}
+ function lkChip(n,tot){return '<span class="lkchip" aria-label="마음의 자물쇠 '+n+'개"><b>숨기는 말 '+n+'개</b>'+(window.__isNew&&G&&window.__isNew(CASES[G.ci])?'<small>원탁 회의에서 밝혀요</small>':'')+'</span>'}
  var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);
   try{var k=G.who;if(!k||h.indexOf('id="bigp"')<0||h.indexOf('class="tstage')<0)return h;
    var lk=lockCount(c,k),tot=lockTotal(c,k),key=c.id+"|"+k,prev=seen[key];seen[key]=lk;
@@ -18104,8 +18107,8 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   h+='<div class="rt-top"><b>'+esc(D.title)+'</b><span>'+esc(ph.topic||ph.q||D.sub)+'</span><span class="rt-hp">'+Array.apply(null,{length:hpMax(C)}).map(function(_,i){return '<i class="'+(i<(G.hp==null?hpMax(C):G.hp)?'on':'')+'"></i>'}).join("")+'</span></div>';
   if(Q){var L=Q[qi];h+=seats(L.w)+'<div class="rt-mid talk" id="rtnext"><div class="rt-big">'+pf(L.w,L.m||"")+'</div><div class="rt-bub"><small>'+esc(nm(L.w))+'</small><p>'+hl(pname(L.t))+'</p><span class="nx">▼</span></div></div>'}
   else if(ph.type==="debate"){var st=ph.stms[si],md=modeOf(ph),ev=sel&&evById(C,sel);
-   h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div>'
-    +'<div class="rt-nav"><button type="button" id="rtprev">◀</button><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span><button type="button" id="rtnx">▶</button></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p>'+(gated(C,sel)&&ev.check?'<button type="button" class="rt-exam" id="rtexam">'+esc(ev.check.label||"자세히 살펴보기")+'</button>':'')+'</div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
+   h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-srow"><button type="button" class="rt-sn" id="rtprev" aria-label="이전 말"'+(ph.stms.length<2?' disabled':'')+'>◀</button><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div><button type="button" class="rt-sn" id="rtnx" aria-label="다음 말"'+(ph.stms.length<2?' disabled':'')+'>▶</button></div>'
+    +'<div class="rt-nav"><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p>'+(gated(C,sel)&&ev.check?'<button type="button" class="rt-exam" id="rtexam">'+esc(ev.check.label||"자세히 살펴보기")+'</button>':'')+'</div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
     +'<div class="rt-bul">'+ph.bullets.filter(has).map(function(id){return '<button type="button" class="bl'+(sel===id?' on':'')+'" data-bl="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(C,id))+'</span></button>'}).join("")+'</div>'
     +'<div class="rt-foot"><button type="button" id="rthint">힌트</button><span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
   else if(ph.type==="vote"||ph.type==="mob"){var V=ph.votes||{},mob=ph.type==="mob";h+=seats(null,false)+'<div class="rt-mid vote"><p class="rt-q">'+esc(ph.q)+'</p><p class="rt-sub">'+(mob?'모두의 표가 나왔어요…':'모두의 표가 나왔어요. 범인이라고 생각하는 사람을 눌러요.')+'</p><div class="rt-vg'+(mob?' mob':'')+'">'+C.suspects.map(function(k){var by=Object.keys(V).filter(function(v){return V[v]===k});return '<button type="button" class="vc'+(mob&&mobHit&&k===ph.target?' hitm':'')+'" data-seat="'+k+'"'+(mob?' disabled':'')+'>'+(mob&&mobHit&&k===ph.target?'<span class="mstamp">다수결</span>':'')+pf(k,by.length>1?"nervous":"")+'<b>'+esc(nm(k))+'</b><span class="vby">'+by.map(function(v){return '<i>'+pf(v,"")+'</i>'}).join("")+'</span><em>'+by.length+'표</em></button>'}).join("")+'</div></div>'}
@@ -18154,11 +18157,12 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   el.querySelectorAll("[data-wk]").forEach(function(b){b.onclick=function(e){e.stopPropagation();fire()}});
   var p=el.querySelector("#rtprev");if(p)p.onclick=function(){var ph=curPh();si=(si-1+ph.stms.length)%ph.stms.length;SFX.page();draw()};
   var x=el.querySelector("#rtnx");if(x)x.onclick=function(){var ph=curPh();si=(si+1)%ph.stms.length;SFX.page();draw()};
+  var sb=el.querySelector(".rt-bub.stm");if(sb){var sx0=null,sy0=null;sb.style.touchAction="pan-y";sb.addEventListener("pointerdown",function(e){sx0=e.clientX;sy0=e.clientY});sb.addEventListener("pointerup",function(e){if(sx0==null)return;var dx=e.clientX-sx0,dy=e.clientY-sy0;sx0=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){var b=el.querySelector(dx<0?"#rtnx":"#rtprev");if(b&&!b.disabled)b.click()}});sb.addEventListener("pointercancel",function(){sx0=null})}
   var ex=el.querySelector("#rtexam");if(ex)ex.onclick=function(){if(!G.exam)G.exam={};G.exam[sel]=true;try{SFX.found()}catch(e){}try{saveProg()}catch(e){}draw()};
   var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();sayQ([{w:"det0",t:curPh().hint}],function(){draw()})};
   if(curPh()&&curPh().type==="vote"&&!Q)el.querySelectorAll(".vc[data-seat]").forEach(function(b){b.onclick=function(){vote(b.dataset.seat)}});
  }
- function open(c,spec){C=c;Q=null;qi=0;sel=null;si=0;prev={};
+ function open(c,spec){C=c;Q=null;qi=0;sel=null;si=0;prev={};try{if(document.getElementById("tomeet"))closeModal()}catch(e){}if(G){if(!G.beats)G.beats={};G.beats.toMeet=1}
   if(spec){SPEC=spec;SKEY=spec.key||"debate2";G[SKEY]=null}else{SPEC=DEBATE[c.id];SKEY="debate"}
   window.__inMeeting=true;
   el=document.createElement("div");el.className="rt";document.body.appendChild(el);
@@ -18199,6 +18203,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  '.rt-exam{margin-top:6px;border:2px solid #0A0920;border-radius:999px;background:#FFD84D;color:#1B2447;padding:4px 12px;font-size:13px;font-family:var(--display)}'+
  '.wk{border:none;border-radius:6px;padding:0 4px;margin:0 1px;font:inherit;cursor:pointer;animation:wkg 1.2s ease-in-out infinite}.wk{background:#FFB547;color:#1B2447;box-shadow:0 0 0 2px #C9701A}'+
  '@keyframes wkg{50%{filter:brightness(1.25);transform:translateY(-1px)}}'+
+ '.rt-srow{display:flex;align-items:stretch;gap:6px;width:100%}.rt-srow .rt-bub{flex:1;min-width:0}.rt-sn{flex:none;width:34px;border-radius:12px;border:3px solid #1B2447;background:#EDE6CF;color:#1B2447;font-size:15px;padding:0;box-shadow:0 4px 0 rgba(0,0,0,.35)}.rt-sn:active{transform:translateY(2px)}.rt-sn:disabled{opacity:.3}'+
  '.rt-nav{display:flex;align-items:center;gap:8px;width:100%}.rt-nav button{width:44px;height:40px;border-radius:12px;border:2px solid #0A0920;background:#EDE6CF;color:#1B2447;font-size:18px}.rt-nav span{flex:1;text-align:center;font-size:13px;color:#D9D6F5}.rt-nav span.shake{animation:shake .4s}'+
  '.rt-bul{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.rt-bul .bl{display:flex;gap:6px;align-items:center;border:2px solid #0A0920;border-radius:12px;background:#2C2760;color:#fff;padding:6px;text-align:left;font-size:13px}.rt-bul .bl .evic{width:30px;height:30px;flex:none}.rt-bul .bl.on{background:#FFD84D;color:#1B2447;box-shadow:0 0 0 3px #fff}'+
  '.rt-foot{display:flex;align-items:center;gap:10px;font-size:11px;color:#B9B5E0}.rt-foot button{border:2px solid #0A0920;border-radius:999px;background:#EDE6CF;color:#1B2447;padding:4px 12px;font-size:13px}.rt-foot i{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 3px 0 6px;vertical-align:-1px}.rt-foot .kno{background:#FFD84D}.rt-foot .kyes{background:#8FC8FF}'+
@@ -19191,31 +19196,32 @@ DEBATE.kitchen={
   c.contra.forEach(function(x){if(!x.unlock||G.unlocked.indexOf(x.unlock)>=0)return;if(G.asked.indexOf(x.t)<0)return;
    if(x.items.some(function(id){return G.found.indexOf(id)>=0||G.asked.indexOf(id)>=0})){G.unlocked.push(x.unlock);news.push(x)}});
   return news}
- var pending=[];
- function announce(c){if(!pending.length)return;if(busy()){setTimeout(function(){announce(c)},700);return}
+ var pending=[],pendC=null;
+ function announce(c){if(!G||CASES[G.ci]!==c||S.screen!=="case"){pending=[];return}if(!pending.length)return;if(busy()){setTimeout(function(){announce(c)},700);return}
   var x=pending.shift(),who=tById(c,x.t)&&tById(c,x.t).who,li=-1;
   if(x.loc)c.locations.forEach(function(l,i){if(l.id===x.loc)li=i});
   if(li>=0){banner("새 장소 발견",c.locations[li].name).then(function(){G.notice={good:true,title:"지도에 새 장소가 열렸어요",text:esc(c.locations[li].name)+"(으)로 가 보세요."};render();setTimeout(function(){announce(c)},400)})}
   else{G.notice={good:true,title:"새로 물어볼 게 생겼어요",text:(who?esc(nm(who))+"에게 ":"")+"모은 증거를 보니 더 물어볼 게 떠올랐어요."};render();setTimeout(function(){announce(c)},400)}}
 
  // ---------- 2) 모을 만큼 모이면 회의로 ----------
- function askMeet(c){
+ function askMeet(c){if(!G||CASES[G.ci]!==c||G.battle||(G.debate&&(G.debate.done||G.debate.pi>0))||window.__inMeeting||document.querySelector(".rt"))return;
   modal('<span class="kicker">증거 수집</span><h3>원탁 회의를 열까요?</h3><p style="text-align:center">회의에 필요한 증거가 모였어요.<br><span class="soft">더 둘러봐도 되고, 회의 중에 다시 조사하러 나올 수도 있어요.</span></p>'
    +'<button class="btn red wide" id="tomeet">모두 불러 원탁 회의 열기</button><button class="btn ghost wide" id="tostay2" style="margin-top:8px">조금 더 조사하기</button>',function(){
    document.getElementById("tomeet").onclick=function(){closeModal();SFX.gotcha();goTab("final");setTimeout(function(){if(window.__rtOpen&&G&&!G.battle)window.__rtOpen(c)},250)};
    document.getElementById("tostay2").onclick=function(){SFX.tap();closeModal();render()}})}
- function meetPrompt(c,n){if(!G||CASES[G.ci]!==c)return;if(busy()){if((n||0)<20)setTimeout(function(){meetPrompt(c,(n||0)+1)},700);return}
+ function meetPrompt(c,n){if(!G||CASES[G.ci]!==c||(G.debate&&G.debate.pi>0)||window.__inMeeting||document.querySelector(".rt"))return;if(busy()){if((n||0)<20)setTimeout(function(){meetPrompt(c,(n||0)+1)},700);return}
   if(!G.beats)G.beats={};if(G.beats.toMeet)return;G.beats.toMeet=1;G.beats.toFight=1;try{saveProg()}catch(e){}
   say([["det1","{p0}, 증거가 꽤 모였어! 이 정도면 다들 불러서 이야기해 볼 만해.","happy"],["det0","좋다. 모두 한자리에 모아 원탁 회의를 열자."]],function(){render();setTimeout(function(){askMeet(c)},150)})}
  var _rc=renderCase;renderCase=function(){
   var c=G&&CASES[G.ci];
+  if(pendC!==(c&&c.id)){pending=[];pendC=c&&c.id}
   if(NEWc(c)&&!G.result){var n=autoUnlock(c);if(n.length){pending=pending.concat(n);try{saveProg()}catch(e){}}}
   var r=_rc.apply(this,arguments);
   try{document.body.classList.toggle("nx",NEWc(c));
    if(NEWc(c)&&!G.result){
     if(pending.length)setTimeout(function(){announce(c)},500);
     var HB=G.battle;if(HB&&HB.hold&&!HB.hold.told&&HB.hold.need.every(function(id){return G.found.indexOf(id)>=0})){HB.hold.told=1;try{saveProg()}catch(e){}setTimeout(function(){if(busy())return;say([["det1","{p0}, 찾았어! 이거면 다시 결판을 낼 수 있어!","happy"]],function(){G.notice={good:true,title:"결판을 다시 열 수 있어요",text:"대결 탭에서 결판을 다시 여세요."};render()})},700)}
-    var pb=document.getElementById("presentbtn");if(pb){pb.innerHTML=pb.innerHTML.replace("제시한다","회의한다");pb.onclick=function(){if(DL||busy())return;SFX.tap();goTab("final")}}
+    var pb=document.getElementById("presentbtn");if(pb){pb.innerHTML=pb.innerHTML.replace("제시한다","회의한다");pb.classList.toggle("go",!G.battle&&!(G.debate&&G.debate.done)&&!!(window.__rtReady&&window.__rtReady(c)));pb.onclick=function(){if(DL||busy())return;SFX.tap();goTab("final")}}
     if(!G.battle&&!(G.debate&&G.debate.done)&&!(G.beats&&G.beats.toMeet)&&window.__rtReady&&window.__rtReady(c)&&S.screen==="case")setTimeout(function(){meetPrompt(c)},600);
    }}catch(e){}
   return r};
@@ -19264,7 +19270,7 @@ DEBATE.kitchen={
    banner("결판 재개",nm(B.cul)).then(function(){say(fixP(br.resume||[]).concat(window.__testi(c,B.cul,B.round,false)),function(){render()})})};
   var b=document.getElementById("bdback");if(b)b.onclick=function(){SFX.tap();goTab("scene")}};
  var css=document.createElement("style");
- css.textContent='body.nx .odd{display:none!important}';
+ css.textContent='body.nx .odd{display:none!important}body.nx .stb.fight{display:none!important}body.nx #presentbtn.go{animation:mtgo 1.6s ease-in-out infinite}@keyframes mtgo{0%,100%{box-shadow:0 0 0 0 rgba(255,216,77,0)}50%{box-shadow:0 0 0 4px rgba(255,216,77,.9),0 0 18px rgba(255,216,77,.7)}}@media (prefers-reduced-motion:reduce){body.nx #presentbtn.go{animation:none;box-shadow:0 0 0 3px #FFD84D}}.lkchip small{display:block;font-size:10px;opacity:.85;margin-top:1px;font-weight:700}';
  document.head.appendChild(css);
 })();
 
