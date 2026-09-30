@@ -3810,7 +3810,7 @@ function renderCase(){
   var c=CASES[G.ci];if(G){G.target=null;G.sceneTalk=null}
   if(G.result){document.body.classList.remove("fs");renderResultScreen(c);return}
   var h='<header class="hud hud2"><button class="ib" id="menu" aria-label="게시판으로">'+IC.back+'</button><div class="ht"><small>사건 '+(G.ci+1)+' · '+esc(curPlayer())+' 차례</small>'+c.title+'</div>'+
-        '<button class="pill" id="nextstep" aria-label="힌트">'+IC.bulb+'힌트'+((G.hints|0)?' <b class="cn">'+(G.hints|0)+'</b>':'')+'</button><button class="ib" id="snd" aria-label="설정">'+IC.set+'</button></header>';
+        '<button class="pill" id="nextstep" aria-label="힌트">'+IC.bulb+'힌트</button><button class="ib" id="snd" aria-label="설정">'+IC.set+'</button></header>';
   var fight=G.battle&&G.battle.phase==="fight"&&G.tab==="final",danger=fight&&G.battle.lives<=2;
   bgm(G.battle&&G.battle.phase==="fight"?window.__bmode(G.battle,CASES[G.ci]):(G.tab==="talk"?"talk":"sneak"));
   heartbeat(danger);document.body.classList.toggle("danger",!!danger);document.body.classList.toggle("blackout",!!(isNight(c)&&G.night&&G.night.blackout&&G.tab==="scene"));
@@ -4859,7 +4859,7 @@ async function runWrap(c){
   SFX.gavel();await w(900);
   await window.__verdict(sq,w);
   el.remove();
-  var stars=3;if(G.wrong>3)stars--;if(G.hints>=2)stars--;stars=Math.max(stars,2);if(G.wrong===0&&G.hints===0)stars=3;
+  var stars=3;if(G.wrong>3)stars--;stars=Math.max(stars,2);
   stars=Math.max(1,stars-(qs.length-n));
   if((G.dtries|0)>=2)stars=Math.max(1,stars-1);
   var rkBefore=rankOf(totalStars()).name,firstSolve=!S.best[c.id];
@@ -18157,7 +18157,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   var x=el.querySelector("#rtnx");if(x)x.onclick=function(){var ph=curPh();si=(si+1)%ph.stms.length;SFX.page();draw()};
   var sb=el.querySelector(".rt-bub.stm");if(sb){var sx0=null,sy0=null;sb.style.touchAction="pan-y";sb.addEventListener("pointerdown",function(e){sx0=e.clientX;sy0=e.clientY});sb.addEventListener("pointerup",function(e){if(sx0==null)return;var dx=e.clientX-sx0,dy=e.clientY-sy0;sx0=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){var b=el.querySelector(dx<0?"#rtnx":"#rtprev");if(b&&!b.disabled)b.click()}});sb.addEventListener("pointercancel",function(){sx0=null})}
   var ex=el.querySelector("#rtexam");if(ex)ex.onclick=function(){if(!G.exam)G.exam={};G.exam[sel]=true;try{SFX.found()}catch(e){}try{saveProg()}catch(e){}draw()};
-  var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();sayQ([{w:"det0",t:curPh().hint}],function(){draw()})};
+  var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();var t=window.__rtHint?window.__rtHint(C,curPh(),has,function(i){si=i}):curPh().hint;try{saveProg()}catch(e){}sayQ([{w:"det0",t:t}],function(){draw()})};
   if(curPh()&&curPh().type==="vote"&&!Q)el.querySelectorAll(".vc[data-seat]").forEach(function(b){b.onclick=function(){vote(b.dataset.seat)}});
  }
  function open(c,spec){C=c;Q=null;qi=0;sel=null;si=0;prev={};try{if(document.getElementById("tomeet"))closeModal()}catch(e){}if(G){if(!G.beats)G.beats={};G.beats.toMeet=1}
@@ -19513,6 +19513,63 @@ TWBR.kitchen={type:"fail",phases:[
      {w:"grandma",t:"…아이고. 요즘 아가들은 종이 결까지 들여다보는구나.",m:"sad",s:{grandma:10}}]}]}
  ]};
 })();
+/* v113: 힌트는 무료·무제한 · 별 감점 없음 · 같은 곳에서 또 누르면 더 구체적으로 */
+(function(){
+ function nmK(k){if(k==="det0")return S.players[0];if(k==="det1")return S.players[1];return (CAST[k]||{}).name||k}
+ function bump(k){if(!G.hlv||G.hlv.k!==k)G.hlv={k:k,n:0};G.hlv.n++;return G.hlv.n}
+ function sayT(t,cb){say([["think",t,"",curPlayer()]],cb||function(){render()})}
+ function obj(n){return jo(n,"을","를")}
+ function locOf(c,id){for(var i=0;i<c.locations.length;i++){var l=c.locations[i];for(var j=0;j<l.spots.length;j++)if(l.spots[j].ev.id===id)return {i:i,s:l.spots[j]}}return null}
+ // 회의에 모자란 증거를 하나 골라 구체적으로 알려 준다
+ function needTip(c){var D=window.DEBATE&&DEBATE[c.id];if(!D||!D.need)return null;
+  for(var k=0;k<D.need.length;k++){var id=D.need[k];if(haveItem(c,id))continue;
+   var m=/^cx_[a-z]+_(\d+)$/.exec(id);
+   if(m){var x=(COMBO[c.id]||[])[+m[1]];if(x){if(haveItem(c,x.a)&&haveItem(c,x.b))return {say:"'기록'을 열어 '"+itemName(c,x.a)+"'와(과) '"+itemName(c,x.b)+"'"+"을(를) 결합해 봐. 둘을 합치면 새 단서가 나와.",tab:"scene"};
+     var miss=haveItem(c,x.a)?x.b:x.a,L2=locOf(c,miss);if(L2&&locOpen(c,L2.i))return {say:c.locations[L2.i].name+"에서 '"+itemName(c,miss)+"'"+"을(를) 찾아야 해.",tab:"scene",loc:L2.i,blink:true,uv:!!L2.s.uv};}
+     continue}
+   var L=locOf(c,id);if(!L)continue;
+   if(!locOpen(c,L.i))return {say:"아직 못 가 본 장소가 있어. 사람들에게 안 물어본 질문을 끝까지 물어보면 길이 열릴 거야.",tab:"talk"};
+   if(L.s.uv&&!uvOn())return {say:c.locations[L.i].name+"에서 '자외선' 버튼을 켜고 살펴봐. 눈에 안 보이던 게 나타나.",tab:"scene",loc:L.i,blink:true,uv:true};
+   return {say:c.locations[L.i].name+"에 아직 못 찾은 게 있어. 반짝이는 곳을 눌러 봐.",tab:"scene",loc:L.i,blink:true}}
+  return null}
+ function go(r){var o={};if(r.loc!=null)o.loc=r.loc;if(r.who)o.who=r.who;if(r.nt)G.nt=r.nt;
+  if(r.tab&&(r.tab!==G.tab||r.loc!=null&&r.loc!==G.loc||r.who&&r.who!==G.who))goTab(r.tab,o);else render();
+  if(r.blink&&r.tab==="scene")setTimeout(function(){try{blinkScene()}catch(e){}},350)}
+ useHint=function(c){SFX.page();G.hints=(G.hints|0)+1;try{saveProg()}catch(e){}
+  var B=G.battle;
+  if(B&&B.phase==="fight"){
+   if(B.hold){sayT(B.hold.task||"필요한 증거를 찾아 다시 오자.");return}
+   var st=stmsOf(rOf(c)),i=-1,it=null;
+   for(var j=0;j<st.length;j++){var a=(st[j].a||[]).filter(function(x){return haveItem(c,x)})[0];if(a){i=j;it=a;break}}
+   var n=bump("b"+B.round);
+   if(i<0){sayT("지금 들은 말만으로는 부족해. '추궁하기'로 범인의 말을 더 끌어내 봐.");return}
+   if(n===1){sayT("범인의 말 중에 "+(i+1)+"번째 문장이 수상해. 잘 읽어 봐.",function(){B.si=i;render()});return}
+   sayT((i+1)+"번째 문장에서 '이의 있음!'을 누르고 '"+itemName(c,it)+"'"+obj(itemName(c,it)).slice(-1)+" 골라 봐!",function(){B.si=i;render()});return}
+  if(B&&B.phase==="won"){sayT(SHINT.won);return}
+  var r=nextStep(c)||{say:SHINT.none},n2=bump("s|"+r.say);
+  if(n2===1){sayT(r.say+(r.tab&&r.tab!==G.tab?" 그쪽으로 데려다줄게.":""),function(){go(r)});return}
+  // 두 번째부터는 더 구체적으로
+  var d=null;
+  if(r.tab==="talk"&&r.who){var q=visibleTalk(c,r.who).filter(function(t){return t.q&&G.asked.indexOf(t.id)<0})[0];
+   if(q)d={say:nmK(r.who)+"에게 \""+q.q+"\" 하고 물어봐.",tab:"talk",who:r.who};
+   else{var x=c.contra.filter(function(x){return !G.broken[x.t]&&G.asked.indexOf(x.t)>=0})[0];
+    if(x){var tt=tById(c,x.t),it2=x.items.filter(function(id){return haveItem(c,id)})[0];
+     d={say:nmK(tt.who)+"의 \""+tt.t.a+"\" 이 말이 이상해. "+(it2?"'"+itemName(c,it2)+"'"+obj(itemName(c,it2)).slice(-1)+" 보여 주면 돼.":"이 말과 부딪치는 증거를 먼저 찾아야 해."),tab:"talk",who:tt.who}}}}
+  if(!d&&r.tab==="scene")d=needTip(c)||{say:r.say+" 반짝이는 곳을 비춰 줄게!",tab:"scene",loc:r.loc,blink:true};
+  if(!d&&window.__isNew&&window.__isNew(c)&&!G.battle){d=window.__rtReady&&window.__rtReady(c)?{say:"아래 '회의한다'를 눌러 원탁 회의를 열자!",tab:"final"}:(needTip(c)||r)}
+  if(!d)d=r;
+  sayT(d.say,function(){go(d)})};
+ // 원탁 회의 힌트도 두 번째부터는 정답 쪽으로
+ window.__rtHint=function(C,ph,has,setSi){G.hints=(G.hints|0)+1;var n=bump("rt|"+(ph.topic||""));
+  if(n===1)return ph.hint;
+  for(var i=0;i<ph.stms.length;i++){var s=ph.stms[i];if(!s.a||!s.k)continue;
+   var it=(ph.bullets||[]).filter(function(x){return has(x)&&s.a.indexOf(x)>=0})[0],w=(/\{([^}]*)\}/.exec(s.t)||[])[1]||"";
+   setSi(i);
+   if(!it)return nmK(s.w)+"의 이 말이 핵심이야. 그런데 맞는 증거가 아직 없어. 회의를 잠깐 멈추고 더 조사해 보자.";
+   return nmK(s.w)+"의 말에서 '"+w+"' 부분을 봐. '"+itemName(C,it)+"'"+obj(itemName(C,it)).slice(-1)+" 골라서 거기를 눌러!"}
+  return ph.hint};
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
