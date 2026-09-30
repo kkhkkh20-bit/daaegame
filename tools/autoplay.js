@@ -13,7 +13,7 @@ for(let ci=0;ci<n;ci++){const cid=await T(`CASES[${ci}].id`);if(only.length&&onl
  for(let round=0;round<8;round++){
   const st=await T(`(function(){var c=CASES[${ci}];var f=0;c.locations.forEach(function(l,i){if(!locOpen(c,i))return;l.spots.forEach(function(s){if(G.found.indexOf(s.ev.id)<0){G.found.push(s.ev.id);f++}})});
    var a=0;people(c).forEach(function(k){visibleTalk(c,k).forEach(function(t){if(t.q!==""&&G.asked.indexOf(t.id)<0){G.asked.push(t.id);a++}})});
-   (COMBO[c.id]||[]).forEach(function(x,i){var id="cx_"+c.id+"_"+i;if(G.found.indexOf(id)<0&&haveItem(c,x.a)&&haveItem(c,x.b)){G.found.push(id);if(!G.logic)G.logic=[];G.logic.push(i);f++}});
+   (COMBO[c.id]||[]).forEach(function(x,i){if(x.off)return;var id="cx_"+c.id+"_"+i;if(G.found.indexOf(id)<0&&haveItem(c,x.a)&&haveItem(c,x.b)){G.found.push(id);if(!G.logic)G.logic=[];G.logic.push(i);f++}});
    allSpots(c).forEach(function(s){if(s.ev.check){if(!G.exam)G.exam={};G.exam[s.ev.id]=true}});
    return {f:f,a:a}})()`);
   const todo=await T(`JSON.stringify(CASES[${ci}].contra.filter(function(x){return !G.broken[x.t]&&G.asked.indexOf(x.t)>=0}).map(function(x){return [x.t,x.items.filter(function(i){return haveItem(CASES[${ci}],i)})[0]]}))`);
