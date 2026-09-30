@@ -17749,7 +17749,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
 
 /* v97: 조사 끝 → 대결 안내, 자백 뒤 빈칸 추리 없이 바로 사건 해결 */
 (function(){
- function busy(){return DL||ov.innerHTML||document.querySelector(".zoomv,.sbook,.banner,.flash,.lens,.ovr,.crec2,.show")}
+ function busy(){return DL||ov.innerHTML||document.querySelector(".zoomv,.sbook,.banner,.flash,.lens,.ovr,.crec2,.show,.rt")}
  function allBroken(c){return Object.keys(G.broken||{}).length>=c.contra.length}
  function ask(c){
   var miss=Math.max(0,liveSpots(c).length-nFound());
@@ -18006,6 +18006,162 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  var _t=window.__testi;window.__testi=function(c,cul,r,first){var L=_t.apply(this,arguments),R=BATTLE[c.id]||[];
   if(window.__hasHidden(R[Math.min(r,R.length-1)]))L.push(["think","…말이 너무 매끄러워. 일부러 빼먹은 얘기가 있는 것 같아. 걸리는 문장은 추궁해 보자.","",curPlayer()]);
   return L};
+})();
+
+/* v102: 원탁 회의 (단간론파식 토론) — 엔진 + 3장 시험판 */
+(function(){
+ var DEBATE=window.DEBATE=window.DEBATE||{};
+ // ---------------- 3장 왕관 ----------------
+ DEBATE.crown={
+  title:"원탁 회의",sub:"왕관을 가져간 사람은?",seats:["teacher","yeoni","buri","tori","nabi"],need:["hanky","rehearsal","bag"],
+  phases:[
+   {type:"talk",lines:[
+    {w:"teacher",t:"다들 모였네요. 공연까지 20분! 왕관을 가져간 사람을 지금 여기서 찾아야 해요.",m:"nervous"},
+    {w:"teacher",t:"먼저 한 명씩, 누가 수상한지 이유와 함께 말해 볼까요?"},
+    {w:"buri",t:"저는 나비가 수상해요. 왕 역할이니까 왕관이 제일 탐났을 거예요.",m:"nervous",s:{nabi:25}},
+    {w:"nabi",t:"흥. 난 부리가 수상해. 아까부터 가방을 꼭 끌어안고 안 놓잖아.",m:"smug",s:{buri:20}},
+    {w:"yeoni",t:"난… 토리가 조금 마음에 걸려. 리허설 중에 갑자기 사라졌거든.",m:"sad",s:{tori:25}},
+    {w:"tori",t:"나, 난 아니야…! 난 그냥… 그냥…",m:"cry",s:{tori:10}},
+    {w:"teacher",t:"그리고 소품실 창틀엔 까만 깃털도 있었어요. 밖에서 누가 들어왔을지도 몰라요.",m:"nervous"},
+    {w:"det1",t:"다들 생각이 제각각이야. 빛나는 말을 증거로 쏘아서 하나씩 정리해 보자!"}]},
+   {type:"debate",topic:"토리는 사라진 10분 동안 어디 있었을까?",bullets:["rehearsal","hanky","order","glitter"],
+    hint:"토리가 사라진 동안 어디 있었는지 알려 주는 물건이 있어. 무대 옆에서 찾은 것 중에.",
+    stms:[
+     {w:"yeoni",t:"리허설 기록에 토리가 {10분 만에 사라졌다}고 적혀 있어.",k:"no",a:[]},
+     {w:"buri",t:"10분이면 {소품 상자}까지 다녀오고도 남아요.",k:"no",a:[],m:"nervous"},
+     {w:"teacher",t:"그 10분 동안 토리가 {어디 있었는지} 아무도 몰라요.",k:"no",a:["hanky","tori3"],ok:[
+      {w:"det1",t:"아니야, 알 수 있어! 토리는 무대 옆 커튼 뒤에 있었어. 여기 젖은 손수건이 떨어져 있었거든."},
+      {w:"tori",t:"…응. 무대가 너무 떨려서 커튼 뒤에 숨어서 울었어. 창피해서 말 못 했어…",m:"cry",s:{tori:-35}},
+      {w:"yeoni",t:"토리야…! 그럼 말해 주지. 바보.",m:"sad"},
+      {w:"teacher",t:"그럼 토리는 소품 상자 근처엔 없었던 거네요."}]}]},
+   {type:"debate",topic:"왕 역할인 나비가 가져갔을까?",bullets:["rehearsal","order","roles","crowfeather"],
+    hint:"나비가 리허설 동안 어디 있었는지 적어 둔 기록이 있어.",
+    stms:[
+     {w:"buri",t:"나비는 리허설이 끝나자마자 {무대 뒤로 갔어요}. 제가 봤어요.",k:"no",a:["rehearsal","teacher1"],m:"nervous",ok:[
+      {w:"det0",t:"리허설 기록에는 나비가 무대를 한 번도 떠나지 않았다고 적혀 있다. 곰 선생님이 옆에서 직접 쓴 기록이지."},
+      {w:"buri",t:"그, 그건… 제가 잘못 봤나 봐요…",m:"nervous",s:{buri:20}},
+      {w:"nabi",t:"흥. 이제야 알겠어?",m:"smug",s:{nabi:-30}}]},
+     {w:"teacher",t:"왕관은 공연 직전에 소품 담당이 나비에게 건네기로 했었죠."},
+     {w:"nabi",t:"흥. 난 리허설 내내 {무대 위에 있었어}. 한 발짝도 안 내려갔다고.",k:"yes",a:["rehearsal","teacher1"],m:"smug",ok:[
+      {w:"det1",t:"그 말이 맞아! 리허설 기록에도 나비는 계속 무대 위였다고 적혀 있어."},
+      {w:"nabi",t:"흥. 거봐.",m:"smug",s:{nabi:-30}},
+      {w:"yeoni",t:"그럼 부리가 '나비가 가져갔다'고 한 건…?"},
+      {w:"buri",t:"부, 부엉…?!",m:"nervous",s:{buri:20}}]}]},
+   {type:"debate",topic:"창틀의 까만 깃털, 밖에서 누가 들어왔을까?",bullets:["crowfeather","bag","earmuff","sequin"],
+    hint:"왕관이 창밖으로 날아가지 않았다는 걸 보여 주는 게 있어. 복도에서 본 불룩한 것.",
+    stms:[
+     {w:"teacher",t:"소품실 창틀에 {까만 깃털}이 있었어요. 밖에서 누가 들어온 게 분명해요.",k:"no",a:[],m:"nervous"},
+     {w:"buri",t:"맞아요! 까마귀가 {왕관을 물고 날아갔을} 거예요!",k:"no",a:["bag","feather","uvc","cx_crown_3"],m:"nervous",ok:[
+      {w:"det1",t:"아니야, 왕관은 날아가지 않았어! 부리 가방 지퍼 틈으로 왕관 끝이 보였거든."},
+      {w:"buri",t:"부, 부엉?!",m:"nervous",s:{buri:35}},
+      {w:"yeoni",t:"거봐! 가방에서 금색으로 반짝였다니까!"},
+      {w:"teacher",t:"부리야… 가방을 한번 열어 볼 수 있겠니?",m:"sad"},
+      {w:"buri",t:"아, 안 돼요! 이 가방은…!",m:"nervous"}]},
+     {w:"nabi",t:"창틀엔 {반짝이 단추}도 떨어져 있었어. 그 까마귀는 작은 반짝이를 노린 거야.",k:"yes",a:["crowfeather","sequin"],ok:[
+      {w:"det0",t:"나비 말이 맞다. 창틀엔 까만 깃털과 단추뿐이었어. 작은 반짝이를 노린 흔적이지, 커다란 왕관이 아니야."},
+      {w:"det1",t:"그럼 왕관은 아직 이 안 어딘가에 있어!"},
+      {w:"yeoni",t:"…부리 가방, 아까 금색으로 반짝였는데."},
+      {w:"buri",t:"부, 부엉?!",m:"nervous",s:{buri:35}}]}]},
+   {type:"vote",q:"왕관을 가져간 사람은?",votes:{teacher:"buri",yeoni:"buri",tori:"buri",nabi:"buri",buri:"nabi"},ok:[
+    {w:"det0",t:"모두의 추리가 한 사람을 가리키고 있다."},
+    {w:"det1",t:"부리. 이제 네 이야기를 들어야겠어."},
+    {w:"buri",t:"…부엉. 좋아요. 그럼 증거로 증명해 보세요!",m:"smug"}]}
+  ]};
+
+ // ---------------- 엔진 ----------------
+ function nm(k){if(k==="det0")return S.players[0];if(k==="det1")return S.players[1];return (CAST[k]||{}).name||k}
+ function has(id){return G.found.indexOf(id)>=0||G.asked.indexOf(id)>=0}
+ function ready(c){var D=DEBATE[c.id];return !D.need||D.need.every(has)}
+ function isSus(c,k){return c.suspects.indexOf(k)>=0}
+ function stt(){if(!G.debate)G.debate={pi:0,sus:{}};return G.debate}
+ var el=null,C=null,Q=null,qi=0,sel=null,si=0,prev={},busy=false;
+ function curPh(){return DEBATE[C.id].phases[stt().pi]}
+ function susOf(k){var s=stt().sus;return s[k]==null?10:s[k]}
+ function addSus(d){if(!d)return;var s=stt().sus;Object.keys(d).forEach(function(k){s[k]=Math.max(0,Math.min(100,susOf(k)+d[k]))})}
+ function words(t,st){var i=0;return esc(t).replace(/\{([^}]*)\}/g,function(m,w){return '<button class="wk '+(st.k==="yes"?"yes":"no")+'" type="button" data-wk="1">'+w+'</button>'})}
+ function seats(spk,vote){var D=DEBATE[C.id];
+  return '<div class="rt-seats">'+D.seats.map(function(k){var v=susOf(k),p=prev[k]==null?v:prev[k];
+   return '<div class="rs'+(k===spk?' on':'')+(vote?' pick':'')+'" data-seat="'+k+'">'+pf(k,k===spk&&Q?(Q[qi]||{}).m||"":"")+'<b>'+esc(nm(k))+'</b>'
+    +(isSus(C,k)?'<i class="sm"><u data-v="'+v+'" style="width:'+p+'%"></u></i>':'<i class="sm none"></i>')
+    +(vote&&curPh().votes&&curPh().votes[k]?'<em>→ '+esc(nm(curPh().votes[k]))+'</em>':'')+'</div>'}).join("")+'</div>'}
+ function draw(){if(!el)return;var D=DEBATE[C.id],ph=curPh(),h='';
+  h+='<div class="rt-top"><b>'+esc(D.title)+'</b><span>'+esc(ph.topic||ph.q||D.sub)+'</span><span class="rt-hp">'+Array.apply(null,{length:hpMax(C)}).map(function(_,i){return '<i class="'+(i<(G.hp==null?hpMax(C):G.hp)?'on':'')+'"></i>'}).join("")+'</span></div>';
+  if(Q){var L=Q[qi];h+=seats(L.w)+'<div class="rt-mid talk" id="rtnext"><div class="rt-big">'+pf(L.w,L.m||"")+'</div><div class="rt-bub"><small>'+esc(nm(L.w))+'</small><p>'+hl(pname(L.t))+'</p><span class="nx">▼</span></div></div>'}
+  else if(ph.type==="debate"){var st=ph.stms[si];
+   h+=seats(st.w)+'<div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div>'
+    +'<div class="rt-nav"><button type="button" id="rtprev">◀</button><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span><button type="button" id="rtnx">▶</button></div></div>'
+    +'<div class="rt-bul">'+ph.bullets.filter(has).map(function(id){return '<button type="button" class="bl'+(sel===id?' on':'')+'" data-bl="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(C,id))+'</span></button>'}).join("")+'</div>'
+    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button><span><i class="kno"></i>노란 말: "그건 아니야!" <i class="kyes"></i>파란 말: "그 말이 맞아!"</span></div>'}
+  else if(ph.type==="vote"){var V=ph.votes||{};h+=seats(null,false)+'<div class="rt-mid vote"><p class="rt-q">'+esc(ph.q)+'</p><p class="rt-sub">모두의 표가 나왔어요. 범인이라고 생각하는 사람을 눌러요.</p><div class="rt-vg">'+C.suspects.map(function(k){var by=Object.keys(V).filter(function(v){return V[v]===k});return '<button type="button" class="vc" data-seat="'+k+'">'+pf(k,by.length>1?"nervous":"")+'<b>'+esc(nm(k))+'</b><span class="vby">'+by.map(function(v){return '<i>'+pf(v,"")+'</i>'}).join("")+'</span><em>'+by.length+'표</em></button>'}).join("")+'</div></div>'}
+  el.innerHTML='<div class="rt-in">'+h+'</div>';
+  requestAnimationFrame(function(){el.querySelectorAll(".sm u").forEach(function(u){u.style.width=u.dataset.v+"%"});D.seats.forEach(function(k){prev[k]=susOf(k)})});
+  bind()}
+ function sayQ(lines,done){Q=lines;qi=0;Q.done=done;applyLine();draw()}
+ function applyLine(){var L=Q&&Q[qi];if(!L)return;addSus(L.s);try{SFX.blip(VOICE[L.w]||0)}catch(e){}}
+ function nextQ(){if(busy)return;qi++;if(qi>=Q.length){var d=Q.done;Q=null;qi=0;d&&d();return}applyLine();draw()}
+ function nextPh(){var s=stt();s.pi++;si=0;sel=null;try{saveProg()}catch(e){}start()}
+ function start(){var ph=curPh();
+  if(!ph){finish();return}
+  if(ph.type==="talk"){sayQ(ph.lines,nextPh);return}
+  if(ph.type==="debate"){try{banner("토론 개시",ph.topic)}catch(e){}draw();return}
+  if(ph.type==="vote"){try{banner("투표",ph.q)}catch(e){}draw();return}}
+ function hurt(msg){G.wrong=(G.wrong|0)+1;if(G.hp==null)G.hp=hpMax(C);G.hp=Math.max(1,G.hp-1);try{saveProg()}catch(e){}
+  flash("헛짚었다!",true).then(function(){sayQ([{w:"det1",t:msg}],function(){draw()})})}
+ function fire(){var ph=curPh(),st=ph.stms[si];if(!sel){try{SFX.huh()}catch(e){}var n=el.querySelector(".rt-nav span");if(n){n.classList.remove("shake");void n.offsetWidth;n.classList.add("shake")}return}
+  busy=true;
+  if(st.a&&st.a.indexOf(sel)>=0){SFX.gotcha();
+   (window.__hush?window.__hush(false):Promise.resolve()).then(function(){return flash(st.k==="yes"?"그 말이 맞아!":"그건 아니야!",false,true)}).then(function(){busy=false;if(window.__crowd)window.__crowd();sayQ(st.ok||[],nextPh)})}
+  else{busy=false;hurt(st.a&&st.a.length?"이 증거로는 그 말을 어떻게 할 수 없어. 다른 증거를 골라 보자.":"그 말은 사실인 것 같아. 다른 문장의 빛나는 말을 살펴보자.")}}
+ function vote(k){var ph=curPh(),cul=culOf(C);
+  if(k!==cul){hurt("그렇게 보기엔 증거가 부족해. 지금까지 나온 이야기를 다시 떠올려 보자.");return}
+  SFX.gotcha();flash("범인은 너다!",false,true).then(function(){sayQ(ph.ok||[],nextPh)})}
+ function finish(){var s=stt();s.done=true;try{saveProg()}catch(e){}if(el){el.remove();el=null}
+  G.tab="final";G.accuse=culOf(C);render();setTimeout(function(){accuse(C,culOf(C))},200)}
+ function bind(){
+  var n=el.querySelector("#rtnext");if(n)n.onclick=nextQ;
+  el.querySelectorAll("[data-bl]").forEach(function(b){b.onclick=function(){sel=b.dataset.bl;SFX.select();draw()}});
+  el.querySelectorAll("[data-wk]").forEach(function(b){b.onclick=function(e){e.stopPropagation();fire()}});
+  var p=el.querySelector("#rtprev");if(p)p.onclick=function(){var ph=curPh();si=(si-1+ph.stms.length)%ph.stms.length;SFX.page();draw()};
+  var x=el.querySelector("#rtnx");if(x)x.onclick=function(){var ph=curPh();si=(si+1)%ph.stms.length;SFX.page();draw()};
+  var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();sayQ([{w:"det0",t:curPh().hint}],function(){draw()})};
+  if(curPh()&&curPh().type==="vote"&&!Q)el.querySelectorAll(".vc[data-seat]").forEach(function(b){b.onclick=function(){vote(b.dataset.seat)}});
+ }
+ function open(c){C=c;Q=null;qi=0;sel=null;si=0;prev={};
+  el=document.createElement("div");el.className="rt";document.body.appendChild(el);
+  try{bgm("battle")}catch(e){}
+  banner("원탁 회의",DEBATE[c.id].sub).then(start)}
+ window.__rtOpen=open;
+ // 대결 탭: 범인 지목 대신 원탁 회의
+ var _rf=renderFinal;renderFinal=function(c){
+  if(DEBATE[c.id]&&!G.battle&&!(G.debate&&G.debate.done)&&!G.result){
+   var ok=ready(c),miss=(DEBATE[c.id].need||[]).filter(function(id){return !has(id)}).length;
+   return '<section class="panel rtpanel"><h3 style="font-size:24px">원탁 회의</h3><p>모두 한자리에 모여 서로의 생각을 말해요. 빛나는 말에 증거를 쏘아 틀린 추리는 깨고, 맞는 말은 편들어 주세요. 마지막엔 투표로 범인을 가려요.</p>'
+    +(ok?'<button class="btn red wide" id="rtgo">원탁 회의 열기</button>':'<p class="soft" style="color:var(--stamp)">회의를 열기엔 아직 증거가 '+miss+'개 모자라요. 수사를 조금 더 해 봐요.</p><button class="btn wide" id="rtback">수사로 돌아가기</button>')+'</section>'}
+  return _rf.apply(this,arguments)};
+ var _bf=bindFinal;bindFinal=function(c){_bf.apply(this,arguments);
+  var g=document.getElementById("rtgo");if(g)g.onclick=function(){SFX.gotcha();open(c)};
+  var b=document.getElementById("rtback");if(b)b.onclick=function(){SFX.tap();goTab("scene")}};
+ var css=document.createElement("style");
+ css.textContent=
+ '.rt{position:fixed;inset:0;z-index:55;background:radial-gradient(ellipse at 50% 38%,#3A2E6E 0%,#151233 62%,#0A0920 100%);color:#fff;display:flex;justify-content:center;overflow:auto}'+
+ '.rt-in{width:100%;max-width:520px;display:flex;flex-direction:column;gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) 14px calc(14px + env(safe-area-inset-bottom,0px))}'+
+ '.rt-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.rt-top b{font-family:var(--display);font-weight:400;font-size:20px;color:#FFD84D}.rt-top>span:not(.rt-hp){flex:1;font-size:14px;color:#D9D6F5}'+
+ '.rt-hp{display:flex;gap:3px}.rt-hp i{width:12px;height:12px;border-radius:50%;background:#3A3566;border:2px solid #0A0920}.rt-hp i.on{background:#FFD84D}'+
+ '.rt-seats{display:flex;justify-content:space-between;gap:4px;background:rgba(10,9,32,.45);border-radius:999px 999px 18px 18px;padding:8px 8px 10px;border-bottom:4px solid #6B4A2E}'+
+ '.rs{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;opacity:.7;transition:transform .2s,opacity .2s}.rs svg{width:100%;max-width:58px;height:auto}.rs b{font-size:11px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}'+
+ '.rs.on{opacity:1;transform:translateY(-4px) scale(1.12)}.rs.pick{opacity:1;cursor:pointer}.rs.pick:hover{transform:scale(1.1)}.rs em{font-style:normal;font-size:10px;color:#FFB3B3}'+
+ '.rs .sm{display:block;width:80%;height:6px;border-radius:3px;background:#2A2550;overflow:hidden}.rs .sm.none{background:none}.rs .sm u{display:block;height:100%;background:linear-gradient(90deg,#FFB547,#E0413A);transition:width .8s ease}'+
+ '.rt-mid{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:250px}.rt-mid.talk{cursor:pointer}'+
+ '.rt-big svg{width:150px;height:auto;filter:drop-shadow(0 8px 0 rgba(0,0,0,.35));animation:breathe 3.2s ease-in-out infinite}'+
+ '.rt-bub{width:100%;background:#FFFCF3;color:#1B2447;border:3px solid #1B2447;border-radius:16px;padding:10px 14px;position:relative;box-shadow:0 6px 0 rgba(0,0,0,.35)}.rt-bub small{display:block;font-family:var(--display);font-size:14px;color:#8A5A00}.rt-bub small em{font-style:normal;color:#6B7390;font-size:12px;margin-left:6px}.rt-bub p{margin:4px 0 0;font-size:17px;line-height:1.6}.rt-bub .nx{position:absolute;right:12px;bottom:6px;font-size:12px;color:#6B7390}'+
+ '.wk{border:none;border-radius:6px;padding:0 4px;margin:0 1px;font:inherit;cursor:pointer;animation:wkg 1.2s ease-in-out infinite}.wk.no{background:#FFD84D;color:#1B2447;box-shadow:0 0 0 2px #E0A800}.wk.yes{background:#8FC8FF;color:#0B2447;box-shadow:0 0 0 2px #2F6FD6}'+
+ '@keyframes wkg{50%{filter:brightness(1.25);transform:translateY(-1px)}}'+
+ '.rt-nav{display:flex;align-items:center;gap:8px;width:100%}.rt-nav button{width:44px;height:40px;border-radius:12px;border:2px solid #0A0920;background:#EDE6CF;color:#1B2447;font-size:18px}.rt-nav span{flex:1;text-align:center;font-size:13px;color:#D9D6F5}.rt-nav span.shake{animation:shake .4s}'+
+ '.rt-bul{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.rt-bul .bl{display:flex;gap:6px;align-items:center;border:2px solid #0A0920;border-radius:12px;background:#2C2760;color:#fff;padding:6px;text-align:left;font-size:13px}.rt-bul .bl .evic{width:30px;height:30px;flex:none}.rt-bul .bl.on{background:#FFD84D;color:#1B2447;box-shadow:0 0 0 3px #fff}'+
+ '.rt-foot{display:flex;align-items:center;gap:10px;font-size:11px;color:#B9B5E0}.rt-foot button{border:2px solid #0A0920;border-radius:999px;background:#EDE6CF;color:#1B2447;padding:4px 12px;font-size:13px}.rt-foot i{display:inline-block;width:10px;height:10px;border-radius:3px;margin:0 3px 0 6px;vertical-align:-1px}.rt-foot .kno{background:#FFD84D}.rt-foot .kyes{background:#8FC8FF}'+
+ '.rt-sub{font-size:13px;color:#D9D6F5;margin:0}.rt-vg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:100%}.vc{display:flex;flex-direction:column;align-items:center;gap:2px;border:3px solid #0A0920;border-radius:16px;background:#FFFCF3;color:#1B2447;padding:8px}.vc>svg{width:64px;height:auto}.vc b{font-family:var(--display);font-weight:400;font-size:16px}.vc .vby{display:flex;gap:2px;min-height:22px}.vc .vby i{width:22px;height:22px;display:block}.vc .vby svg{width:100%;height:100%}.vc em{font-style:normal;font-size:12px;color:#D23A34}.vc:active{transform:scale(.97)}'+'.rt-mid.vote{justify-content:flex-start}.rt-q{font-family:var(--display);font-size:24px;color:#FFD84D;margin:20px 0 4px}'+
+ '@media (prefers-reduced-motion:reduce){.wk,.rt-big svg{animation:none}}';
+ document.head.appendChild(css);
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
