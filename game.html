@@ -2724,7 +2724,7 @@ function face(animal,color,cls){
   }else if(has("sad")){
     m+='<path d="M32 38 L44 43 M56 43 L68 38" stroke="'+o+'" stroke-width="3" stroke-linecap="round"/><path d="M36 58 Q39 66 36 70 Q33 66 36 58 Z" fill="#7EC8F0" stroke="'+o+'" stroke-width="1.5"/>';
   }
-  return '<svg class="'+(cls||"")+'" viewBox="0 0 100 100" aria-hidden="true">'+ears+head+extra+cheeks+'<g class="eyes">'+eyes+'</g>'+nose+m+'</svg>';
+  return '<svg class="'+(cls||"")+'" viewBox="0 0 100 100" aria-hidden="true">'+(ears?'<g class="ears">'+ears+'</g>':'')+head+extra+cheeks+'<g class="eyes">'+eyes+'</g>'+nose+m+'</svg>';
 }
 window.face=face;
 // ---- full-body figures for people standing in scenes ----
@@ -17793,17 +17793,23 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   after("nabi","nabi1",{id:"nabi1b",q:"왜 부리가 거짓말한다고 생각해?",a:"흥. 부리가 날 가리켰잖아. 난 리허설 내내 무대에서 한 발짝도 안 내려갔어. 곰 선생님이 옆에서 다 적었다고. 못 믿겠으면 기록 봐."});
  })();
 
- // ---------- 2) 마음의 자물쇠: 얼굴에 사슬, 채워질 때·풀릴 때 연출 ----------
+ // ---------- 2) 마음의 자물쇠: 얼굴 아래쪽을 감는 사슬 + 자물쇠 개수만큼 빨간 자물쇠 ----------
  function chain(x1,y1,x2,y2,n){var s="",dx=(x2-x1)/n,dy=(y2-y1)/n,ang=Math.atan2(dy,dx)*180/Math.PI;
-  for(var i=0;i<=n;i++){var x=x1+dx*i,y=y1+dy*i,rot=ang+(i%2?90:0),rx=i%2?3.2:5.6,ry=i%2?5.6:3.2;
-   s+='<ellipse cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" rx="'+(i%2?2.6:5.2)+'" ry="'+(i%2?5.2:2.6)+'" transform="rotate('+ang.toFixed(1)+' '+x.toFixed(1)+' '+y.toFixed(1)+')" fill="none" stroke="#1B2447" stroke-width="4.2"/>'
-    +'<ellipse cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" rx="'+(i%2?2.6:5.2)+'" ry="'+(i%2?5.2:2.6)+'" transform="rotate('+ang.toFixed(1)+' '+x.toFixed(1)+' '+y.toFixed(1)+')" fill="none" stroke="#C9CFDD" stroke-width="2"/>'}
+  for(var i=0;i<=n;i++){var x=(x1+dx*i).toFixed(1),y=(y1+dy*i).toFixed(1),rx=i%2?2.4:4.8,ry=i%2?4.8:2.4,tr=' transform="rotate('+ang.toFixed(1)+' '+x+' '+y+')"';
+   s+='<ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'"'+tr+' fill="none" stroke="#1B2447" stroke-width="3.8"/><ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'"'+tr+' fill="none" stroke="#C9CFDD" stroke-width="1.8"/>'}
   return s}
- var CH1=chain(4,22,96,86,14),CH2=chain(96,22,4,86,14);
- var BIGLOCK='<g transform="translate(38 50)"><path d="M6 12 V7 a6 6 0 0 1 12 0 V12" fill="none" stroke="#1B2447" stroke-width="5"/><path d="M6 12 V7 a6 6 0 0 1 12 0 V12" fill="none" stroke="#C9CFDD" stroke-width="2.4"/><rect x="0" y="11" width="24" height="18" rx="4" fill="#D23A34" stroke="#1B2447" stroke-width="2.6"/><circle cx="12" cy="19" r="2.8" fill="#FFD84D"/><path d="M12 21 V25" stroke="#FFD84D" stroke-width="2.4" stroke-linecap="round"/></g>';
+ var CH1=chain(-6,66,106,92,18),CH2=chain(106,66,-6,92,18);
+ function padlock(x,y,open,cls,d){
+  var sh='<path d="M-5 -1 V-5 a5 5 0 0 1 10 0 V-1" fill="none" stroke="#1B2447" stroke-width="4"/><path d="M-5 -1 V-5 a5 5 0 0 1 10 0 V-1" fill="none" stroke="#C9CFDD" stroke-width="1.8"/>';
+  if(open)sh='<g transform="translate(0 -4) rotate(-35 5 -1)">'+sh+'</g>';
+  return '<g class="lkp '+cls+'" style="animation-delay:'+(d||0)+'s"><g transform="translate('+x+' '+y+')">'+sh
+   +'<rect x="-8" y="-2" width="16" height="13" rx="3" fill="'+(open?'#9AA3B8':'#D23A34')+'" stroke="#1B2447" stroke-width="2.2"/>'
+   +(open?'':'<circle cx="0" cy="3.5" r="2" fill="#FFD84D"/><path d="M0 5 V8" stroke="#FFD84D" stroke-width="1.8" stroke-linecap="round"/>')+'</g></g>'}
  var seen={};
- function lkHtml(n,tot,cls){return '<div class="lkov '+cls+'"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g class="lc1">'+CH1+'</g><g class="lc2">'+CH2+'</g></svg><svg class="lkp" viewBox="30 44 40 40" aria-hidden="true">'+BIGLOCK+'</svg></div>'}
- function lkChip(n,tot){var h='<span class="lkchip" aria-label="마음의 자물쇠 '+n+'개"><span class="lks">';for(var i=0;i<tot;i++)h+='<i class="'+(i<tot-n?'off':'')+'">'+LOCKSVG+'</i>';return h+'</span><b>숨기는 말 '+n+'개</b></span>'}
+ function lkHtml(lk,tot,cls){var locks="",w=17,x0=50-w*(tot-1)/2,open=tot-lk;
+  for(var i=0;i<tot;i++){var isOpen=i<open,c=isOpen?(cls==="crack"&&i===open-1?"just":"opened"):"shut";if(cls==="free")c="just";locks+=padlock(x0+w*i,88,isOpen,c,cls==="snap"?.35+i*.12:0)}
+  return '<div class="lkov '+cls+'"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="lc1">'+CH1+'</g><g class="lc2">'+CH2+'</g>'+locks+'</svg></div>'}
+ function lkChip(n,tot){return '<span class="lkchip" aria-label="마음의 자물쇠 '+n+'개"><b>숨기는 말 '+n+'개</b></span>'}
  var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);
   try{var k=G.who;if(!k||h.indexOf('id="bigp"')<0||h.indexOf('class="tstage')<0)return h;
    var lk=lockCount(c,k),tot=lockTotal(c,k),key=c.id+"|"+k,prev=seen[key];seen[key]=lk;
@@ -17812,35 +17818,32 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
    if(lk||cls==="free"){
     var ov=lkHtml(lk,tot,cls||"stay");
     h=h.replace(/(<div class="tfig[^"]*">)([\s\S]*?<\/svg>)(<\/div>)/,function(m,a,b,d){return a+b+ov+d});
-    if(lk)h=h.replace('<span class="tname">','<span class="tname">').replace(/(<span class="tname">[\s\S]*?<\/small>)/,function(m){return m+lkChip(lk,tot)});
+    if(lk)h=h.replace(/(<span class="tname">[\s\S]*?<\/small>)/,function(m){return m+lkChip(lk,tot)});
    }
   }catch(e){}
   return h};
- // 처음 채워질 때 한 번 설명
- var _say=say;
  var css=document.createElement("style");
  css.textContent=
- '.tfig .lkov{position:absolute;left:-8%;right:-8%;top:4%;bottom:6%;pointer-events:none}'+
- '.tfig .lkov svg{position:absolute;inset:0;width:100%;height:100%;animation:none;filter:drop-shadow(0 2px 0 rgba(0,0,0,.35))}'+
- '.tfig .lkov .lkp{position:absolute;inset:auto;left:36%;top:40%;width:28%;height:auto}'+
- '.lkov.stay .lc1,.lkov.stay .lc2{opacity:.92}'+
+ '.tfig .lkov{position:absolute;inset:0;pointer-events:none}'+
+ '.tfig .lkov svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;animation:none;filter:drop-shadow(0 2px 0 rgba(0,0,0,.35))}'+
+ '.lkov .lc1,.lkov .lc2{opacity:.95}.lkov .lkp{transform-box:fill-box;transform-origin:50% 0}'+
+ '.lkov.stay .lkp.shut{animation:lksway 2.4s ease-in-out infinite}@keyframes lksway{50%{transform:rotate(6deg)}}'+
  '.lkov.snap .lc1{animation:lkin1 .45s cubic-bezier(.2,.8,.3,1.2) both}.lkov.snap .lc2{animation:lkin2 .45s .08s cubic-bezier(.2,.8,.3,1.2) both}'+
- '.lkov.snap .lkp{animation:lkdrop .6s .3s cubic-bezier(.3,1.6,.5,1) both}'+
- '@keyframes lkin1{from{transform:translate(-60%,-40%);opacity:0}to{transform:none;opacity:.92}}@keyframes lkin2{from{transform:translate(60%,-40%);opacity:0}to{transform:none;opacity:.92}}'+
- '@keyframes lkdrop{0%{transform:translateY(-120%) scale(1.4);opacity:0}60%{transform:translateY(6%) scale(1);opacity:1}75%{transform:rotate(-8deg)}90%{transform:rotate(6deg)}100%{transform:none}}'+
- '.lkov.crack .lkp{animation:lkshake .5s ease-in-out both}@keyframes lkshake{20%{transform:rotate(-14deg) scale(1.1)}40%{transform:rotate(12deg)}60%{transform:rotate(-8deg)}100%{transform:none}}'+
- '.lkov.free .lc1{animation:lkfall1 .9s ease-in both}.lkov.free .lc2{animation:lkfall2 .9s ease-in both}.lkov.free .lkp{animation:lkpop .7s ease-out both}'+
- '@keyframes lkfall1{to{transform:translate(-30%,70%) rotate(-12deg);opacity:0}}@keyframes lkfall2{to{transform:translate(30%,70%) rotate(12deg);opacity:0}}'+
- '@keyframes lkpop{0%{transform:scale(1)}30%{transform:scale(1.35)}100%{transform:scale(.2) translateY(-120%);opacity:0}}'+
- '.tstage .lkchip{margin-top:4px;align-self:flex-start;display:flex;align-items:center;gap:6px;background:#D23A34;color:#fff;border:2px solid #1B2447;border-radius:999px;padding:2px 10px 2px 6px;font-size:13px;box-shadow:0 3px 0 rgba(0,0,0,.35)}'+
- '.tstage .lkchip .lks{display:flex;gap:2px}.tstage .lkchip i{display:block;width:14px;height:15px;background:#FFF1C9;border-radius:4px;padding:1px}.tstage .lkchip i svg{width:100%;height:100%;display:block}.tstage .lkchip i.off{opacity:.3}'+
+ '.lkov.snap .lkp{animation:lkdrop .55s cubic-bezier(.3,1.6,.5,1) both}'+
+ '@keyframes lkin1{from{transform:translate(-60%,0);opacity:0}}@keyframes lkin2{from{transform:translate(60%,0);opacity:0}}'+
+ '@keyframes lkdrop{0%{transform:translateY(-160%) scale(1.5);opacity:0}60%{transform:translateY(8%);opacity:1}80%{transform:rotate(-10deg)}100%{transform:none}}'+
+ '.lkov .lkp.just{animation:lkjust .8s ease-out both}@keyframes lkjust{0%{transform:scale(1)}25%{transform:scale(1.5) rotate(-14deg)}50%{transform:scale(1.3) rotate(10deg)}100%{transform:scale(1)}}'+
+ '.lkov.free .lc1{animation:lkfall1 .9s ease-in both}.lkov.free .lc2{animation:lkfall2 .9s ease-in both}.lkov.free .lkp{animation:lkpop .8s ease-out both}'+
+ '@keyframes lkfall1{to{transform:translate(-30%,40%) rotate(-12deg);opacity:0}}@keyframes lkfall2{to{transform:translate(30%,40%) rotate(12deg);opacity:0}}'+
+ '@keyframes lkpop{0%{transform:scale(1)}30%{transform:scale(1.5)}100%{transform:scale(.3) translateY(-200%);opacity:0}}'+
+ '.tstage .lkchip{margin-top:4px;align-self:flex-start;background:#D23A34;color:#fff;border:2px solid #1B2447;border-radius:999px;padding:1px 10px;font-size:13px}'+
  '@media (prefers-reduced-motion:reduce){.lkov *{animation:none!important}}';
  document.head.appendChild(css);
 
- // ---------- 3) 대결 상대의 무너지는 얼굴: 다크서클, 그늘, 땀, 핏대 ----------
- var OWLISH={owl:1};
+ // ---------- 3) 대결 상대가 무너지는 얼굴: 다크서클·그늘·큰 땀·떨리는 손·깜빡임·접히는 귀·고개 흔들기 ----------
+ var OWLISH={owl:1},BIRD={owl:1,crow:1,duck:1,woodpecker:1,peacock:1,crane:1};
  function lum(c){var m=/^#([0-9a-f]{6})$/i.exec(c||"");if(!m)return 1;var v=parseInt(m[1],16);return (0.299*(v>>16)+0.587*((v>>8)&255)+0.114*(v&255))/255}
- function distress(k,s){if(!s)return "";var a=(CAST[k]||{}).animal,big=!!OWLISH[a],y=big?65:59,op=[0,.28,.5,.72][s],dk=lum((CAST[k]||{}).color)<.42,P=dk?"#C9BBFF":"#3B2A78",Q=dk?"#D4C8FF":"#4A3A6E";if(dk)op=Math.min(.95,op+.2);
+ function distress(k,s){if(!s)return "";var p=CAST[k]||{},a=p.animal,big=!!OWLISH[a],y=big?65:59,op=[0,.3,.55,.78][s],dk=lum(p.color)<.42,P=dk?"#C9BBFF":"#3B2A78",Q=dk?"#D4C8FF":"#4A3A6E";if(dk)op=Math.min(.95,op+.2);
   var g='<g class="dst" pointer-events="none">';
   if(s>=2)g+='<defs><linearGradient id="dstg'+s+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+P+'" stop-opacity="'+(s>=3?.55:.35)+'"/><stop offset="1" stop-color="'+P+'" stop-opacity="0"/></linearGradient></defs>'
    +(dk?'':'<ellipse cx="50" cy="40" rx="27" ry="16" fill="url(#dstg'+s+')"/>')
@@ -17848,22 +17851,45 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   g+='<g fill="none" stroke="'+Q+'" stroke-linecap="round" opacity="'+op+'" stroke-width="'+(s>=3?4.2:3.2)+'">'
    +(big?'<path d="M27 '+y+' Q38 '+(y+7)+' 49 '+y+'"/><path d="M51 '+y+' Q62 '+(y+7)+' 73 '+y+'"/>':'<path d="M31 '+y+' Q39 '+(y+5)+' 47 '+y+'"/><path d="M53 '+y+' Q61 '+(y+5)+' 69 '+y+'"/>')+'</g>';
   if(s>=3)g+='<g fill="none" stroke="'+Q+'" stroke-linecap="round" stroke-width="2" opacity=".45">'+(big?'<path d="M29 '+(y+4)+' Q38 '+(y+10)+' 47 '+(y+4)+'"/><path d="M53 '+(y+4)+' Q62 '+(y+10)+' 71 '+(y+4)+'"/>':'<path d="M33 '+(y+4)+' Q39 '+(y+8)+' 45 '+(y+4)+'"/><path d="M55 '+(y+4)+' Q61 '+(y+8)+' 67 '+(y+4)+'"/>')+'</g>';
-  function drop(x,yy,sc,d){return '<g class="dsw" style="animation-delay:'+d+'s" transform="translate('+x+' '+yy+') scale('+sc+')"><path d="M0 -8 Q-5 0 -4 3 Q0 7 4 3 Q5 0 0 -8 Z" fill="#8FD3FF" stroke="#1D2B53" stroke-width="1.6"/><path d="M-1.5 -2 Q-2.5 1 -1 2.5" stroke="#fff" stroke-width="1.3" fill="none" stroke-linecap="round"/></g>'}
-  g+=drop(76,40,1,0);if(s>=2)g+=drop(23,46,.9,.5);if(s>=3)g+=drop(70,30,.8,.9)+drop(30,34,.75,.3);
-  if(s>=3)g+='<g fill="none" stroke="#E0413A" stroke-width="2.4" stroke-linecap="round" transform="translate(74 18)"><path d="M-6 -2 Q-2 0 -2 -6"/><path d="M6 -2 Q2 0 2 -6"/><path d="M-6 2 Q-2 0 -2 6"/><path d="M6 2 Q2 0 2 6"/></g>';
+  // 손(날개 끝): 턱 아래에서 덜덜
+  if(s>=2){var col=p.color||"#E8ECF8";
+   function paw(x,side){return BIRD[a]
+    ?'<g class="paw '+side+'"><path d="M'+x+' 90 Q'+(x+(side==="l"?-10:10))+' 76 '+(x+(side==="l"?4:-4))+' 68 Q'+(x+(side==="l"?8:-8))+' 80 '+(x+(side==="l"?6:-6))+' 90 Z" fill="'+col+'" stroke="#1B2447" stroke-width="2.4" stroke-linejoin="round"/></g>'
+    :'<g class="paw '+side+'"><ellipse cx="'+x+'" cy="80" rx="8" ry="7" fill="'+col+'" stroke="#1B2447" stroke-width="2.4"/><path d="M'+(x-3)+' 75 V79 M'+x+' 74 V79 M'+(x+3)+' 75 V79" stroke="#1B2447" stroke-width="1.6" stroke-linecap="round"/></g>'}
+   g+=paw(16,"l")+paw(84,"r")}
+  // 땀: 크게, 단계가 오를수록 많이
+  function drop(x,yy,sc,d,cl){return '<g class="dsw'+(cl?' '+cl:'')+'" style="animation-delay:'+d+'s"><g transform="translate('+x+' '+yy+') scale('+sc+')"><path d="M0 -8 Q-5 0 -4 3 Q0 7 4 3 Q5 0 0 -8 Z" fill="#8FD3FF" stroke="#1D2B53" stroke-width="1.3"/><path d="M-1.5 -2 Q-2.5 1 -1 2.5" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/></g></g>'}
+  g+=drop(80,36,1.7,0);
+  if(s>=2)g+=drop(20,42,1.6,.45)+drop(88,24,1,.2,"fly r")+drop(12,30,1,.7,"fly l");
+  if(s>=3)g+=drop(70,24,1.9,.8)+drop(32,28,1.8,.25)+drop(94,44,1.1,.1,"fly r")+drop(6,48,1.1,.55,"fly l")+drop(50,18,1.2,.35,"fly u");
+  if(s>=3)g+='<g fill="none" stroke="#E0413A" stroke-width="2.6" stroke-linecap="round" transform="translate(74 16) scale(1.2)"><path d="M-6 -2 Q-2 0 -2 -6"/><path d="M6 -2 Q2 0 2 -6"/><path d="M-6 2 Q-2 0 -2 6"/><path d="M6 2 Q2 0 2 6"/></g>';
   return g+'</g>'}
+ function tic(k){var h=0;String(k).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%997});return "tic"+(h%3)}
  var DST=null;
  var _pf=pf;pf=function(k,mood){var r=_pf.apply(this,arguments);if(DST&&k===DST.k&&DST.s){var i=r.lastIndexOf("</svg>");if(i>0)r=r.slice(0,i)+distress(k,DST.s)+r.slice(i)}return r};
  window.__foefx=function(s){return ""};
- var _rf=renderFinal;renderFinal=function(c){var B=G&&G.battle;
-  if(B&&B.phase==="fight"){var R=BATTLE[c.id]||[],s=window.__fst(Math.min(B.round,R.length-1),R.length);if(B.lives<=1&&s<3)s=Math.max(s,2);DST={k:B.cul,s:s}}
+ var _rf=renderFinal;renderFinal=function(c){var B=G&&G.battle,s=0;
+  if(B&&B.phase==="fight"){var R=BATTLE[c.id]||[];s=window.__fst(Math.min(B.round,R.length-1),R.length);if(B.lives<=1&&s>0&&s<3)s=Math.max(s,2);DST={k:B.cul,s:s}}
   try{var h=_rf.apply(this,arguments)}finally{DST=null}
-  if(B&&B.phase==="fight"){var s2=window.__fst(Math.min(B.round,(BATTLE[c.id]||[]).length-1),(BATTLE[c.id]||[]).length);if(s2>=3)h=h.replace('class="foe ','class="foe dstr ')}
+  if(s)h=h.replace('class="foe ','class="foe dz'+s+' '+tic(B.cul)+' ');
   return h};
  var css2=document.createElement("style");
- css2.textContent='.dst .dsw{animation:dswd 1.3s ease-in infinite}@keyframes dswd{0%{transform-box:fill-box;opacity:0}15%{opacity:1}100%{opacity:0;translate:0 14px}}'+
-  '.foe.dstr>svg{animation:dstr .12s linear infinite}@keyframes dstr{0%{transform:translate(0,0)}25%{transform:translate(-1.5px,.5px)}50%{transform:translate(1px,-.5px)}75%{transform:translate(1.5px,.5px)}}'+
-  '@media (prefers-reduced-motion:reduce){.dst .dsw,.foe.dstr>svg{animation:none}}';
+ css2.textContent=
+  '.dst .dsw{animation:dswd 1.2s ease-in infinite}@keyframes dswd{0%{opacity:0}15%{opacity:1}100%{opacity:0;translate:0 16px}}'+
+  '.dst .dsw.fly.r{animation-name:dsfr}.dst .dsw.fly.l{animation-name:dsfl}.dst .dsw.fly.u{animation-name:dsfu}'+
+  '@keyframes dsfr{0%{opacity:0;translate:-8px 6px}20%{opacity:1}100%{opacity:0;translate:10px -8px}}@keyframes dsfl{0%{opacity:0;translate:8px 6px}20%{opacity:1}100%{opacity:0;translate:-10px -8px}}@keyframes dsfu{0%{opacity:0;translate:0 8px}20%{opacity:1}100%{opacity:0;translate:0 -12px}}'+
+  '.foe .paw{transform-box:fill-box;transform-origin:50% 100%}.foe.dz2 .paw{animation:pawsh .14s linear infinite alternate}.foe.dz3 .paw{animation:pawsh .07s linear infinite alternate}.foe .paw.r{animation-direction:alternate-reverse}'+
+  '@keyframes pawsh{from{transform:translate(-1.4px,0) rotate(-6deg)}to{transform:translate(1.4px,-1px) rotate(6deg)}}'+
+  '.foe .eyes{transform-box:fill-box;transform-origin:50% 50%}.foe.dz1 .eyes{animation:blink 2.2s infinite}.foe.dz2 .eyes{animation:blink 1.1s infinite}.foe.dz3 .eyes{animation:blink2 .5s infinite}'+
+  '@keyframes blink{0%,84%,100%{transform:scaleY(1)}90%{transform:scaleY(.08)}}@keyframes blink2{0%,60%,100%{transform:scaleY(1)}75%{transform:scaleY(.08)}}'+
+  '.foe .ears{transform-box:fill-box;transform-origin:50% 100%}.foe.dz2 .ears{animation:earf 1.4s ease-in-out infinite}.foe.dz3 .ears{animation:earf .6s ease-in-out infinite}'+
+  '@keyframes earf{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.55) skewX(8deg)}}'+
+  '.foe.dz2>svg{animation:hd2 .9s ease-in-out infinite}@keyframes hd2{50%{transform:translateY(2px) rotate(-2deg)}}'+
+  '.foe.dz3.tic0>svg{animation:hno .42s ease-in-out infinite}@keyframes hno{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}'+
+  '.foe.dz3.tic1>svg{animation:hbob .18s linear infinite}@keyframes hbob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px) scaleY(.97)}}'+
+  '.foe.dz3.tic2>svg{animation:hjit .1s linear infinite}@keyframes hjit{0%{transform:translate(0,0)}25%{transform:translate(-2.5px,1px)}50%{transform:translate(2px,-1px)}75%{transform:translate(2.5px,1px)}}'+
+  '.foe.dz1>svg,.foe.dz2>svg,.foe.dz3>svg{transform-origin:50% 90%}'+
+  '@media (prefers-reduced-motion:reduce){.dst *,.foe>svg,.foe .eyes,.foe .ears,.foe .paw{animation:none!important}}';
  document.head.appendChild(css2);
 })();
 
