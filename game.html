@@ -3130,10 +3130,10 @@ function rankOf(n){var r=RANKS[0],nx=null;RANKS.forEach(function(x,i){if(n>=x[0]
 // ---------- state ----------
 var SKEY="daae-detective-v3";
 function load(){try{return JSON.parse(localStorage.getItem(SKEY))||{}}catch(e){return {}}}
-function persist(){try{localStorage.setItem(SKEY,JSON.stringify({players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master,ach:S.ach,rec:S.rec,trayOpen:S.trayOpen,tts:S.tts,tspeed:S.tspeed,big:S.big,circ:S.circ}))}catch(e){}}
+function persist(){try{localStorage.setItem(SKEY,JSON.stringify({players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master,ach:S.ach,rec:S.rec,trayOpen:S.trayOpen,tts:S.tts,tspeed:S.tspeed,big:S.big,circ:S.circ===true,circv:2}))}catch(e){}}
 function saveProg(){if(!G)return;var id=CASES[G.ci].id;if(G.result&&G.result.solved){delete S.prog[id]}else if(G.introDone){var g=JSON.parse(JSON.stringify(G));g.result=null;g.notice=null;S.prog[id]=g}persist()}
 var saved=load();
-var S={screen:"title",players:saved.players||["아빠 탐정","다람 탐정"],best:saved.best||{},sound:saved.sound!==false,prog:saved.prog||{},tut:saved.tut||{},story:saved.story||{pro:false,read:{},finale:false},aff:saved.aff||{},chat:saved.chat||{},master:saved.master||0,ach:saved.ach||{},rec:saved.rec||{},trayOpen:!!saved.trayOpen,tts:!!saved.tts,tspeed:saved.tspeed||"f",big:!!saved.big,circ:saved.circ!==false};
+var S={screen:"title",players:saved.players||["아빠 탐정","다람 탐정"],best:saved.best||{},sound:saved.sound!==false,prog:saved.prog||{},tut:saved.tut||{},story:saved.story||{pro:false,read:{},finale:false},aff:saved.aff||{},chat:saved.chat||{},master:saved.master||0,ach:saved.ach||{},rec:saved.rec||{},trayOpen:!!saved.trayOpen,tts:!!saved.tts,tspeed:saved.tspeed||"f",big:!!saved.big,circ:saved.circv===2&&saved.circ===true,circv:2};
 var G=null;
 function fresh(i){return {mem:[],coins:1,hintLog:[],dtries:0,ci:i,tab:"scene",loc:0,found:[],asked:[],unlocked:[],broken:{},marks:{},who:CASES[i].suspects[0],notice:null,wrong:0,hints:0,actions:0,answers:{},result:null,introDone:false,target:null,trayTab:"ev",seen:[],battle:null,accuse:null,hp:CASES[i].lives||5,exam:{},tf:"all"}}
 function curPlayer(){return S.players[G.actions%2]}
@@ -3282,7 +3282,7 @@ function openLog(){
   d.onclick=function(e){e.stopPropagation()};
   d.querySelector("#logx").onclick=function(e){e.stopPropagation();SFX.tap();d.remove()};
 }
-function applyPrefs(){document.body.classList.toggle("bigtxt",!!S.big);document.body.classList.toggle("circ",S.circ!==false)}
+function applyPrefs(){document.body.classList.toggle("bigtxt",!!S.big);document.body.classList.toggle("circ",S.circ===true)}
 function openSettings(){
   SFX.tap();
   function seg(key,opts){return '<div class="seg" role="group">'+opts.map(function(o){return '<button type="button" data-set="'+key+'" data-v="'+o[0]+'" class="'+(String(S[key])===String(o[0])?'on':'')+'" aria-pressed="'+(String(S[key])===String(o[0]))+'">'+o[1]+'</button>'}).join("")+'</div>'}
@@ -3294,7 +3294,7 @@ function openSettings(){
     (TTS.ok?row("읽어주기","대사를 소리 내어 읽어 줘요",seg("tts",onoff)):'')+
     row("글자 속도","대사가 나오는 빠르기",seg("tspeed",[["n","보통"],["f","빠르게"],["i","바로"]]))+
     row("글자 크기","대사창 글씨",seg("big",[[false,"보통"],[true,"크게"]]))+
-    row("조사 동그라미","살펴볼 곳을 동그라미로 보여 줘요",seg("circ",[[true,"보이기"],[false,"숨기기"]]))+
+    row("조사 동그라미","숨기면 힌트를 눌렀을 때만 알려 줘요",seg("circ",[[true,"보이기"],[false,"숨기기"]]))+
     (TTS.ok?'<p class="note">읽어주기 목소리는 기기에 설치된 한국어 음성을 써요. 대사창 구석의 <b>기록</b>으로 지난 대사를 다시 볼 수 있어요.</p>':'<p class="note">대사창 구석의 <b>기록</b>으로 지난 대사를 다시 볼 수 있어요.</p>')+
     '</div><button class="btn ghost" id="setsave">저장 · 불러오기</button><button class="btn" id="setclose">닫기</button><button type="button" id="setadm" style="display:block;margin:14px auto 0;background:transparent;border:0;color:inherit;opacity:.45;font-size:12px;text-decoration:underline;cursor:pointer">관리자</button>';
   modal(h,function(){
@@ -3865,7 +3865,7 @@ function renderCase(){
   var pend=pendingTalk(c),unx=unexplored(c),ready=!G.battle&&Object.keys(G.broken).length>=c.contra.length;
   if(!fight)h+='<nav class="bnav bnav2" aria-label="수사 메뉴"><div class="in verbs">'+[["scene","조사한다",NAVIC.scene],["move","이동한다",IC.move],["talk","대화한다",NAVIC.talk],["present","제시한다",IC.present]].map(function(t){
     var dot=t[0]==="talk"&&pend?'<i class="vdot"></i>':'';
-    return t[0]==="present"?'<button class="vb" id="presentbtn">'+t[2]+t[1]+'</button>':'<button class="vb" data-tab="'+t[0]+'" aria-selected="'+(G.tab===t[0])+'">'+dot+t[2]+t[1]+'</button>'}).join("")+'<button class="vb helpnav" id="helpnav" aria-label="도와줘"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="#FFF6C8" stroke="#1B2447" stroke-width="2" stroke-linejoin="round"/></svg>도와줘</button></div></nav>';
+    return t[0]==="present"?'<button class="vb" id="presentbtn">'+t[2]+t[1]+'</button>':'<button class="vb" data-tab="'+t[0]+'" aria-selected="'+(G.tab===t[0])+'">'+dot+t[2]+t[1]+'</button>'}).join("")+'<button class="vb helpnav" id="helpnav" aria-label="힌트"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="#FFF6C8" stroke="#1B2447" stroke-width="2" stroke-linejoin="round"/></svg>힌트</button></div></nav>';
   app.innerHTML=h;
   var hnv=document.getElementById("helpnav");if(hnv)hnv.onclick=function(){if(DL)return;useHint(c)};
   document.getElementById("menu").onclick=function(){SFX.tap();saveProg();bgm("calm");document.body.classList.remove("blackout");iris(function(){S.screen="board";G=null;render()})};
@@ -7144,7 +7144,7 @@ function sanitizeState(d){
     master:d.master?1:0,
     ach:map(d.ach,function(k){return ACH.some(function(a){return a.id===k})},function(v){return int(v,1,8.64e15,0)||null}),
     rec:map(d.rec,isCase,function(o){return isObj(o)?map(o,function(k){return ["w","h","e","l","uv","lg","rd","night"].indexOf(k)>=0}):null}),
-    trayOpen:!!d.trayOpen,tts:!!d.tts,tspeed:(typeof d.tspeed==="string"&&own(TSPD,d.tspeed))?d.tspeed:"f",big:!!d.big,circ:d.circ!==false,
+    trayOpen:!!d.trayOpen,tts:!!d.tts,tspeed:(typeof d.tspeed==="string"&&own(TSPD,d.tspeed))?d.tspeed:"f",big:!!d.big,circ:d.circv===2&&d.circ===true,
     v:3,savedAt:int(d.savedAt,0,8.64e15,0)
   };
 }
@@ -9855,8 +9855,8 @@ var MK=SKEY+":sync",mk={};try{mk=JSON.parse(localStorage.getItem(MK))||{}}catch(
 var SYNC={db:null,ref:null,ready:false,st:"",last:+mk.last||0,dirty:mk.dirty,lastBody:null,timer:0,busy:false,pullAt:0,off:false};
 window.__SYNC=SYNC;
 function saveMk(){try{localStorage.setItem(MK,JSON.stringify({last:SYNC.last,dirty:!!SYNC.dirty}))}catch(e){}}
-var LOCALK=["sound","tts","tspeed","big","trayOpen","circ"];
-function body(){return {players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master,ach:S.ach,rec:S.rec,trayOpen:S.trayOpen,tts:S.tts,tspeed:S.tspeed,big:S.big,look:S.look,flash:S.flash|0,circ:S.circ!==false}}
+var LOCALK=["sound","tts","tspeed","big","trayOpen","circ","circv"];
+function body(){return {players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master,ach:S.ach,rec:S.rec,trayOpen:S.trayOpen,tts:S.tts,tspeed:S.tspeed,big:S.big,look:S.look,flash:S.flash|0,circ:S.circ===true,circv:2}}
 function bodyStr(){try{return JSON.stringify(body())}catch(e){return null}}
 function writeLS(b,at){try{var o=JSON.parse(b);o.savedAt=at||0;localStorage.setItem(SKEY,JSON.stringify(o))}catch(e){}}
 persist=function(){
@@ -18162,7 +18162,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
    h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-srow"><button type="button" class="rt-sn" id="rtprev" aria-label="이전 말"'+(ph.stms.length<2?' disabled':'')+'>◀</button><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div><button type="button" class="rt-sn" id="rtnx" aria-label="다음 말"'+(ph.stms.length<2?' disabled':'')+'>▶</button></div>'
     +'<div class="rt-nav"><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p>'+(gated(C,sel)&&ev.check?'<button type="button" class="rt-exam" id="rtexam">'+esc(ev.check.label||"자세히 살펴보기")+'</button>':'')+'</div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
     +'<div class="rt-bul">'+ph.bullets.filter(has).map(function(id){return '<button type="button" class="bl'+(sel===id?' on':'')+'" data-bl="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(C,id))+'</span></button>'}).join("")+'</div>'
-    +'<div class="rt-foot"><button type="button" id="rthint">도와줘</button><span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
+    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button><span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
   else if(ph.type==="vote"||ph.type==="mob"){var V=ph.votes||{},mob=ph.type==="mob";h+=seats(null,false)+'<div class="rt-mid vote"><p class="rt-q">'+esc(ph.q)+'</p><p class="rt-sub">'+(mob?'모두의 표가 나왔어요…':'모두의 표가 나왔어요. 범인이라고 생각하는 사람을 눌러요.')+'</p><div class="rt-vg'+(mob?' mob':'')+'">'+C.suspects.map(function(k){var by=Object.keys(V).filter(function(v){return V[v]===k});return '<button type="button" class="vc'+(mob&&mobHit&&k===ph.target?' hitm':'')+'" data-seat="'+k+'"'+(mob?' disabled':'')+'>'+(mob&&mobHit&&k===ph.target?'<span class="mstamp">다수결</span>':'')+pf(k,by.length>1?"nervous":"")+'<b>'+esc(nm(k))+'</b><span class="vby">'+by.map(function(v){return '<i>'+pf(v,"")+'</i>'}).join("")+'</span><em>'+by.length+'표</em></button>'}).join("")+'</div></div>'}
   el.innerHTML='<div class="rt-in">'+h+'</div>';
   requestAnimationFrame(function(){el.querySelectorAll(".sm u").forEach(function(u){u.style.width=u.dataset.v+"%"});D.seats.forEach(function(k){prev[k]=susOf(k)})});
@@ -19658,8 +19658,8 @@ TWBR.kitchen={type:"fail",phases:[
  document.addEventListener("pointerdown",function(e){if(!PT)return;if(e.target.closest&&e.target.closest(".helpfab"))return;setTimeout(clearPt,250)},true);
 
  // ---- 떠 있는 도와줘 버튼 ----
- var fab=document.createElement("button");fab.className="helpfab";fab.type="button";fab.setAttribute("aria-label","도와줘");
- fab.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="#FFF6C8" stroke="#1B2447" stroke-width="2" stroke-linejoin="round"/></svg><b>도와줘</b>';
+ var fab=document.createElement("button");fab.className="helpfab";fab.type="button";fab.setAttribute("aria-label","힌트");
+ fab.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="#FFF6C8" stroke="#1B2447" stroke-width="2" stroke-linejoin="round"/></svg><b>힌트</b>';
  document.body.appendChild(fab);
  fab.onclick=function(){if(!G||S.screen!=="case")return;var c=CASES[G.ci];if(!c||G.result)return;try{useHint(c)}catch(e){}};
  function upd(){var on=!!(G&&S.screen==="case"&&!G.result&&CASES[G.ci]&&!DL&&!document.getElementById("helpnav")&&!document.querySelector(".rt,.crec2,.modal,.zoomv,.sbook,.sbook2,.show,.recon,.moment,.banner,.ovr"));
@@ -19751,7 +19751,7 @@ TWBR.kitchen={type:"fail",phases:[
   h+='<div class="flq-card'+(solved?' solved':'')+'"><p class="flq-q">'+esc(p.q).replace(/\n/g,"<br>")+'</p>'+(solved?'<div class="flq-stamp">번뜩!</div>':'')+'</div>';
   h+='<div class="flq-opts'+(faces?' flqf':'')+'">'+p.o.map(function(o,j){var cls=solved&&j===p.a?' right':tried[j]?' wrong':'';return '<button type="button" class="flqo'+cls+'" data-fo="'+j+'"'+(solved||tried[j]?' disabled':'')+'>'+faceOpt(o)+'</button>'}).join("")+'</div>';
   if(solved){h+='<p class="flq-why">'+esc(p.w)+'</p>'+(window.__flashMsg?'<p class="flq-gift">'+window.__flashMsg+'</p>':'')+(cur+1<Q.length?'<button class="btn red wide" id="flqnext">다음 문제</button>':'<p class="flq-why"><b>모든 문제를 풀었어요! 새 문제가 곧 더 생길 거예요.</b></p><button class="btn wide" id="fqlist">목록으로</button>')}
-  else h+=(hintOn?'<p class="flq-hint">'+esc(p.h)+'</p>':'<button type="button" class="flq-help" id="fqhelp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="#FFF6C8" stroke="#1B2447" stroke-width="2" stroke-linejoin="round"/></svg>도와줘</button>')+(Object.keys(tried).length?'<p class="flq-again">다시 생각해 봐!</p>':'');
+  else h+=(hintOn?'<p class="flq-hint">'+esc(p.h)+'</p>':'<button type="button" class="flq-help" id="fqhelp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="#FFF6C8" stroke="#1B2447" stroke-width="2" stroke-linejoin="round"/></svg>힌트</button>')+(Object.keys(tried).length?'<p class="flq-again">다시 생각해 봐!</p>':'');
   window.__flashMsg=null;
   el.innerHTML='<div class="flq-in">'+h+'</div>';
   el.querySelector("#fqx").onclick=function(){SFX.tap();close()};
