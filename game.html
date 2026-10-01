@@ -3540,7 +3540,7 @@ function renderTitle(){
   var ev=0,li=0;CASES.forEach(function(c){ev+=liveSpots(c).length;li+=c.contra.length});
   var solved=Object.keys(S.best).length,going=Object.keys(S.prog).length;
   app.innerHTML='<div class="tfull"><div class="tbg">'+officePortrait()+'</div><div class="tveil"></div>'+
-    '<div class="tlogo"><small>DETECTIVE AGENCY</small><h1>'+agName()+'</h1><p>현장을 뒤지고, 거짓말을 깨뜨리고, 범인을 몰아붙여라</p></div>'+
+    '<div class="tlogo"><small>DETECTIVE AGENCY</small><h1>다람 탐정 사무소</h1><p>현장을 뒤지고, 거짓말을 깨뜨리고, 범인을 몰아붙여라</p></div>'+
     '<div class="tui"><div class="tstats"><span><b>'+CASES.length+'</b>개의 사건</span><span><b>'+ev+'</b>개의 증거</span><span><b>'+li+'</b>개의 거짓말</span></div>'+
     '<button class="btn bigstart" id="go">'+(solved||going?'이어서 수사하기':'수사 시작')+'</button>'+
     '<button class="btn ghost" id="loadbtn">저장 불러오기 · 다른 기기에서 옮기기</button>'+
@@ -3630,7 +3630,7 @@ function totalStars(){var n=0;Object.keys(S.best).forEach(function(k){n+=(+S.bes
 function renderBoard(){
   var st=totalStars(),rk=rankOf(st),max=CASES.length*3;
   var p1=CASES.filter(function(c){return c.part!==2}),allSolved=p1.every(function(c){return S.best[c.id]});
-  var h='<header class="btop"><div class="bt"><div class="label">'+agName()+'</div><h1>사건 게시판</h1><p>'+rk.name+' · 별 '+st+' / '+max+(S.story.finale?' · 진짜 탐정':'')+'</p></div><button class="ib big" id="snd" aria-label="설정">'+IC.set+'</button></header>';
+  var h='<header class="btop"><div class="bt"><div class="label">다람 탐정 사무소</div><h1>사건 게시판</h1><p>'+rk.name+' · 별 '+st+' / '+max+(S.story.finale?' · 진짜 탐정':'')+'</p></div><button class="ib big" id="snd" aria-label="설정">'+IC.set+'</button></header>';
   var nci=nextCaseIdx();
   if(allSolved&&!S.story.finale){
     h+='<button class="hero fin" id="finale"><div class="hart">'+SCENES.office()+'</div><div class="htx"><small>1부 마지막 사건</small><b>편지의 주인 찾기</b><span>세 사건에서 모은 힌트로 수수께끼 편지를 보낸 X의 정체를 밝혀요.</span></div><i class="cta">시작</i></button>';
