@@ -24158,6 +24158,93 @@ REI2("kitchen",{
  var css=document.createElement("style");css.textContent='.secv:empty{display:none!important}';document.head.appendChild(css);
 })();
 
+/* v139: 글자를 적는 주관식 답 → 4지선다 버튼 (암호 상자 · 비밀 공간 자외선 문제). 숫자 다이얼은 그대로 */
+(function(){
+ function num(a){return window.__dialN&&window.__dialN(a)>0}
+ function nrm(t){return String(t||"").replace(/\s+/g,"").toLowerCase()}
+ function disp(arr){arr=[].concat(arr);var sp=arr.filter(function(x){return /\s/.test(x)})[0];return sp||arr[0]}
+ function seed(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+ function shuf(a,s){var r=seed(s);a=a.slice();for(var i=a.length-1;i>0;i--){r=(Math.imul(r,1103515245)+12345)>>>0;var j=r%(i+1);var t=a[i];a[i]=a[j];a[j]=t}return a}
+ var POOL=null;function pool(){if(POOL)return POOL;POOL=[];try{Object.keys(RIDDLES).forEach(function(id){(RIDDLES[id]||[]).forEach(function(r){if(!num(r.a))POOL.push(disp(r.a))})})}catch(e){}return POOL}
+ function opts(ans,key){var right=disp(ans),rn=nrm(right),L=nrm(right).length;
+  var cand=pool().filter(function(x){return nrm(x)!==rn&&[].concat(ans).map(nrm).indexOf(nrm(x))<0});
+  var same=shuf(cand.filter(function(x){return nrm(x).length===L}),key),other=shuf(cand.filter(function(x){return nrm(x).length!==L}),key+"o");
+  var picks=same.concat(other).filter(function(x,i,a){return a.map(nrm).indexOf(nrm(x))===i}).slice(0,3);
+  return shuf([right].concat(picks),key+"m")}
+ var UV={bell:["은 조각","쇳덩이","유리 구슬"],museum:["부엉이","딱따구리","공작새"],cart:["위","옆","뒤"],glove:["종탑 지하","마을 회관","박물관 창고"],festival:["감자","딸기","배추"],snow:["여관","우체국","마구간"],clapper:["울던","졸던","화난"],bureau:["월요일","수요일","일요일"],lining:["적","손님","이웃"]};
+ var UVR={bell:"별빛 돌",glove:"사무소 지하",bureau:"금요일"};
+ var css=document.createElement("style");
+ css.textContent='.rchoice{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.rchoice button{font:inherit;font-size:15px;padding:8px 6px;border-radius:10px;border:2px solid #1B2447;background:#FFFCF3;color:#1B2447;cursor:pointer}.rchoice button:hover{background:#FFE9A8}.rform.chosen{display:none!important}'+
+  '.secv .rchoice button{background:#1B2447;color:#F4F1E6;border-color:#F2D49B}.secv form.chosen{display:none!important}';
+ document.head.appendChild(css);
+ function bar(list,cls){return '<div class="rchoice '+(cls||"")+'">'+list.map(function(o){return '<button type="button" data-ch="'+esc(o)+'">'+esc(o)+'</button>'}).join("")+'</div>'}
+ // 암호 상자
+ var _rr=renderRiddles;renderRiddles=function(c){var h=_rr.apply(this,arguments),rs=RIDDLES[c.id]||[];
+  return h.replace(/<form class="rform" data-ri="(\d+)" data-dial="0">[\s\S]*?<\/form>/g,function(m,i){var r=rs[+i];if(!r||num(r.a))return m;
+   return m.replace('class="rform"','class="rform chosen"')+bar(opts(r.a,c.id+"#"+i))})};
+ var _br=bindRiddles;bindRiddles=function(c){_br.apply(this,arguments);
+  app.querySelectorAll(".rchoice [data-ch]").forEach(function(b){b.onclick=function(){var box=b.closest(".rbox"),f=box&&box.querySelector(".rform");if(!f||!f.onsubmit)return;
+   f.querySelector("input").value=b.dataset.ch;f.onsubmit({preventDefault:function(){}});
+   if(box.querySelector(".rform")&&!box.classList.contains("open")){b.disabled=true;b.style.opacity=".4"}}})};
+ // 비밀 공간 자외선 문제
+ new MutationObserver(function(){var el=document.querySelector(".secv");if(!el)return;var f=el.querySelector("#sform");if(!f||f.classList.contains("chosen")||f.dataset.dial!=="0")return;
+  var q=(el.querySelector(".q")||{}).textContent||"",cid=null,step=null;
+  try{Object.keys(window.SECRET||{}).forEach(function(id){(SECRET[id].steps||[]).forEach(function(s){if(s.q&&q.indexOf(s.q)>=0&&(s.type==="uv"||s.type==="code")){cid=id;step=s}})})}catch(e){}
+  if(!step||num(step.answer))return;
+  var right=UVR[cid]||disp(step.answer),list=UV[cid]?shuf([right].concat(UV[cid]),cid+"uv"):opts(step.answer,cid+"uv");
+  f.classList.add("chosen");f.insertAdjacentHTML("afterend",bar(list,"sec"));
+  el.querySelectorAll(".rchoice.sec [data-ch]").forEach(function(b){b.onclick=function(){var inp=f.querySelector("#sin");if(!inp||!f.onsubmit)return;inp.value=b.dataset.ch;f.onsubmit({preventDefault:function(){}})}})
+ }).observe(document.body,{childList:true,subtree:true});
+})();
+
+/* v140: 대화 화면 정리 — 위 인물 줄 대신 작은 ◀ 명단 ▶, 증거 보여 주기 버튼 작게, 증거를 주고받을 때 얼굴 오른쪽 위에 증거 그림 */
+(function(){
+ var css=document.createElement("style");
+ css.textContent=
+ '.fstalk .who-row{display:none!important}'+
+ '.whonav{position:absolute;right:8px;top:8px;z-index:4;display:flex;gap:4px}'+
+ '.whonav button{position:relative;min-width:40px;height:36px;padding:0 10px;border-radius:10px;border:2px solid #F2D49B;background:rgba(14,20,48,.88);color:#F4F1E6;font:inherit;font-size:14px;cursor:pointer}'+
+ '.whonav button i{position:absolute;top:-4px;right:-4px;width:10px;height:10px;border-radius:50%;background:#E8485E;border:2px solid #0E1430}'+
+ '.wlist{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}.wlist button{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;border-radius:12px;border:2px solid #1B2447;background:#FFFCF3;color:#1B2447;font:inherit;font-size:13px;cursor:pointer}.wlist button[aria-pressed="true"]{background:#FFE9A8}.wlist svg{width:56px;height:56px}.wlist i{position:absolute;top:4px;right:6px;width:10px;height:10px;border-radius:50%;background:#E8485E}'+
+ '.showev{padding:8px 12px!important;min-height:0!important}.showev span{display:none!important}.showev b{font-size:15px}'+
+ '.evpop{position:absolute;right:2%;top:2%;z-index:6;width:clamp(56px,18vw,84px);aspect-ratio:1;border-radius:12px;background:#FFFCF3;border:3px solid #F2C230;box-shadow:0 0 0 3px #1B2447,0 0 18px rgba(255,216,77,.7);display:grid;place-items:center;animation:evpop .45s cubic-bezier(.2,1.6,.4,1)}'+
+ '.evpop svg{width:78%;height:78%}.evpop b{position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);white-space:nowrap;font-size:11px;background:#1B2447;color:#FFE27A;padding:1px 6px;border-radius:6px;max-width:150px;overflow:hidden;text-overflow:ellipsis}'+
+ '.evpop .dir{position:absolute;left:-14px;top:50%;transform:translateY(-50%);font-size:16px;color:#FFE27A;text-shadow:0 0 4px #1B2447}'+
+ '.tstage .evpop{top:52px}'+
+ '@keyframes evpop{0%{transform:scale(.2) rotate(-20deg);opacity:0}100%{transform:none;opacity:1}}';
+ document.head.appendChild(css);
+ // 인물 바꾸기
+ function hiddenBtns(){return [].slice.call(document.querySelectorAll(".fstalk .who-row [data-who]"))}
+ function pend(c,k){try{return visibleTalk(c,k).some(function(t){return t.q&&G.asked.indexOf(t.id)<0})}catch(e){return false}}
+ var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);
+  try{var m=window.__metOf?window.__metOf(c):[];if(m.length>1||document.getElementById("whounk")||h.indexOf("whounk")>=0){
+   var others=m.filter(function(k){return k!==G.who&&pend(c,k)}).length;
+   var nav='<div class="whonav"><button type="button" data-wn="-1" aria-label="이전 사람">◀</button><button type="button" data-wn="list">명단'+(others?'<i></i>':'')+'</button><button type="button" data-wn="1" aria-label="다음 사람">▶</button></div>';
+   h=h.replace(/(<div class="tstage[^"]*"[^>]*>)/,"$1"+nav)}}catch(e){}
+  return h};
+ var _bt=bindTalk;bindTalk=function(c){_bt.apply(this,arguments);
+  document.querySelectorAll("[data-wn]").forEach(function(b){b.onclick=function(e){e.stopPropagation();var bs=hiddenBtns(),ks=bs.map(function(x){return x.dataset.who});
+   if(b.dataset.wn==="list"){SFX.tap();var unk=document.getElementById("whounk");
+    var h='<span class="kicker">대화</span><h3>누구와 이야기할까요?</h3><div class="wlist">'+ks.map(function(k){return '<button type="button" data-wl="'+k+'" aria-pressed="'+(k===G.who)+'">'+pf(k,"")+'<span>'+esc(CAST[k].name)+'</span>'+(pend(c,k)?'<i></i>':'')+'</button>'}).join("")+(unk?'<button type="button" data-wl="?"><span style="font-size:28px;line-height:56px">?</span><span>더 찾기</span></button>':'')+'</div><button class="btn ghost" id="wlx">닫기</button>';
+    modal(h,function(){document.getElementById("wlx").onclick=closeModal;ov.querySelectorAll("[data-wl]").forEach(function(x){x.onclick=function(){var k=x.dataset.wl;closeModal();if(k==="?"){var u=document.getElementById("whounk");u&&u.click();return}var t=hiddenBtns().filter(function(y){return y.dataset.who===k})[0];t&&t.click()}})});return}
+   var i=ks.indexOf(G.who),d=+b.dataset.wn;if(ks.length<2)return;var k=ks[(i+d+ks.length)%ks.length];SFX.page();var t=bs.filter(function(y){return y.dataset.who===k})[0];t&&t.click()}})};
+ // 증거 주고받기 표시
+ window.__evShow=null;
+ function show(id,who,dir){window.__evShow={id:id,who:who,dir:dir||"give",until:Date.now()+7000}}
+ window.__evShowSet=show;
+ document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-show]");if(b&&G)show(b.dataset.show,G.who,"give")},true);
+ var _jp=judgePresent;judgePresent=function(c,tid,item){try{var t=tById(c,tid);if(t)show(item,t.who,"give")}catch(e){}return _jp.apply(this,arguments)};
+ var _rc=renderCase;renderCase=function(){var before=G&&G.found?G.found.length:0,r=_rc.apply(this,arguments);
+  try{var c=CASES[G.ci],o=window.__REI2&&window.__REI2[c.id];if(o&&G.notice&&/레이에게서 증거를 넘겨받았어요/.test(G.notice.title||"")&&!(window.__evShow&&window.__evShow.id===o.holds))show(o.holds,"rei","get")}catch(e){}
+  return r};
+ setInterval(function(){var s=window.__evShow;var tgt=document.querySelector(".vnfig")||document.querySelector(".fstalk .tstage");
+  document.querySelectorAll(".evpop").forEach(function(e){if(!s||Date.now()>s.until||e.parentNode!==tgt||e.dataset.id!==s.id)e.remove()});
+  if(!s||Date.now()>s.until||!tgt||!G)return;if(tgt.querySelector(".evpop"))return;
+  var c=CASES[G.ci];if(!c)return;var d=document.createElement("div");d.className="evpop";d.dataset.id=s.id;
+  try{d.innerHTML=evIcon(s.id)+'<b>'+esc(itemName(c,s.id))+'</b><span class="dir">'+(s.dir==="get"?"◀":"▶")+'</span>'}catch(e){return}
+  if(getComputedStyle(tgt).position==="static")tgt.style.position="relative";tgt.appendChild(d)},250);
+})();
+
 /* 시그니처: badook 바둑이 — 가로등으로 시각을 재는 열혈 야경꾼 (점박이 흰 개, 남색 야경꾼 모자와 등불 배지, 놋쇠 단추 외투, 목에 건 은색 호루라기, 한쪽 눈 검은 점)
    기억에 남는 특징: 호루라기. angry/shock 땐 호루라기를 입에 물고 "삐익!" */
 (function(){
