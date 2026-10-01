@@ -22560,31 +22560,60 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  document.body.classList.add("dotmode");
  // ---- 1) 그림 픽셀화 ----
  var RULES=[
-  {vb:"0 0 360 200",w:240,h:133,lv:9},
-  {vb:"0 0 360 160",w:240,h:107,lv:7},
-  {vb:"0 0 360 640",w:120,h:213,lv:7},
-  {vb:"0 0 320 200",w:213,h:133,lv:7},
-  {vb:"0 0 300 180",w:200,h:120,lv:7},
-  {vb:"0 0 100 100",w:52,h:52,lv:6,minpx:26},
-  {vb:"-8 -4 116 164",w:52,h:74,lv:6},
-  {vb:"0 0 40 40",w:26,h:26,lv:6,minpx:22},
-  {vb:"0 0 64 64",w:32,h:32,lv:6,minpx:22},
-  {vb:"0 0 60 60",w:32,h:32,lv:6,minpx:22}
+  {vb:"0 0 360 200",w:176,h:98,ink:84},
+  {vb:"0 0 360 160",w:176,h:78,ink:84},
+  {vb:"0 0 360 640",w:96,h:171,ink:84},
+  {vb:"0 0 320 200",w:160,h:100,ink:84},
+  {vb:"0 0 300 180",w:150,h:90,ink:84},
+  {vb:"0 0 100 100",w:40,h:40,sprite:1,ink:70,minpx:26},
+  {vb:"-8 -4 116 164",w:40,h:57,sprite:1,ink:70},
+  {vb:"0 0 40 40",w:22,h:22,sprite:1,ink:90,minpx:22},
+  {vb:"0 0 64 64",w:26,h:26,sprite:1,ink:90,minpx:22},
+  {vb:"0 0 60 60",w:26,h:26,sprite:1,ink:90,minpx:22}
  ];
- var BAYER=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
- var cache={},pend={},seq=0;
+ // 카툰 도트 팔레트 (ENDESGA 32 기반 + 밤하늘 남색 몇 가지)
+ var PAL=["#181425","#262b44","#3a4466","#5a6988","#8b9bb4","#c0cbdc","#ffffff","#3e2731","#733e39","#b86f50","#e4a672","#ead4aa","#c28569","#e8b796","#be4a2f","#d77643","#f77622","#feae34","#fee761","#a22633","#e43b44","#ff0044","#f6757a","#b55088","#68386c","#193c3e","#265c42","#3e8948","#63c74d","#124e89","#0099db","#2ce8f5","#1f2a5c","#2d3f86","#4b5bab","#f2e6c9","#9a6b4a","#5b4a3a","#e9e9ef","#d3cfc7","#a9a2a0","#6e6a74"].map(function(h){return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)]});
+ var LUM=PAL.map(function(c){return .299*c[0]+.587*c[1]+.114*c[2]});
+ // 각 색의 '한 단계 어두운 색'
+ var DARK=PAL.map(function(c,i){var best=0,bd=1e9;PAL.forEach(function(q,j){if(LUM[j]>=LUM[i]-12)return;var dl=LUM[i]-LUM[j];var hue=Math.abs((c[0]-q[0])*.6)+Math.abs((c[1]-q[1])*.6)+Math.abs((c[2]-q[2])*.6);var sc=hue+Math.abs(dl-55)*1.2;if(sc<bd){bd=sc;best=j}});return bd<1e9?best:0});
+ var NC={};
+ function near(r,g,b){var k=(r>>3)<<10|(g>>3)<<5|(b>>3);var v=NC[k];if(v!=null)return v;var bi=0,bd=1e12;
+  for(var i=0;i<PAL.length;i++){var c=PAL[i],rm=(r+c[0])/2,dr=r-c[0],dg=g-c[1],db=b-c[2];var d=(2+rm/256)*dr*dr+4*dg*dg+(2+(255-rm)/256)*db*db;if(d<bd){bd=d;bi=i}}NC[k]=bi;return bi}
+ var cache={},pend={},K=4;
  function hash(s){var h=5381,i=s.length;while(i)h=(h*33)^s.charCodeAt(--i);return (h>>>0).toString(36)+"_"+s.length}
  function ruleOf(svg){var vb=(svg.getAttribute("viewBox")||"").trim().replace(/\s+/g," ");for(var i=0;i<RULES.length;i++)if(RULES[i].vb===vb)return RULES[i];return null}
- function quant(cv,lv){var ctx=cv.getContext("2d"),W=cv.width,H=cv.height,im=ctx.getImageData(0,0,W,H),d=im.data,st=255/(lv-1);
-  for(var y=0;y<H;y++)for(var x=0;x<W;x++){var i=(y*W+x)*4;if(d[i+3]<24){d[i+3]=0;continue}d[i+3]=255;
-   var t=(BAYER[(y&3)*4+(x&3)]/16-.5)*st*.32;
-   for(var k=0;k<3;k++){var v=d[i+k]+t;v=Math.round(v/st)*st;d[i+k]=v<0?0:v>255?255:v}}
-  ctx.putImageData(im,0,0)}
+ function toon(img,R){var W=R.w,H=R.h,HW=W*K,HH=H*K;
+  var hc=document.createElement("canvas");hc.width=HW;hc.height=HH;var hx=hc.getContext("2d");hx.imageSmoothingEnabled=true;hx.drawImage(img,0,0,HW,HH);
+  var hd=hx.getImageData(0,0,HW,HH).data,idx=new Int16Array(HW*HH);
+  for(var i=0,p=0;i<idx.length;i++,p+=4){if(hd[p+3]<128){idx[i]=-1;continue}
+   var r=hd[p],g=hd[p+1],b=hd[p+2],m=(r+g+b)/3,sb=m>190?1.0:1.18;r=m+(r-m)*sb;g=m+(g-m)*sb;b=m+(b-m)*sb;
+   idx[i]=near(r<0?0:r>255?255:r,g<0?0:g>255?255:g,b<0?0:b>255?255:b)}
+  var lo=new Int16Array(W*H),cnt=new Int16Array(PAL.length+1);
+  for(var y=0;y<H;y++)for(var x=0;x<W;x++){cnt.fill(0);for(var yy=0;yy<K;yy++){var row=(y*K+yy)*HW+x*K;for(var xx=0;xx<K;xx++)cnt[idx[row+xx]+1]++}
+   var best=-1,bc=-1;for(var j=0;j<cnt.length;j++)if(cnt[j]>bc){bc=cnt[j];best=j-1}
+   if(best===-1&&cnt[0]<=K*K/2){bc=-1;for(var j2=1;j2<cnt.length;j2++)if(cnt[j2]>bc){bc=cnt[j2];best=j2-1}}
+   lo[y*W+x]=best}
+  function at(x,y){return x<0||y<0||x>=W||y>=H?-1:lo[y*W+x]}
+  // 외톨이 점 정리
+  var out=lo.slice();
+  for(var y2=0;y2<H;y2++)for(var x2=0;x2<W;x2++){var c0=at(x2,y2),n=[at(x2-1,y2),at(x2+1,y2),at(x2,y2-1),at(x2,y2+1)];var same=n.filter(function(v){return v===c0}).length;
+   if(same===0){var f={},mx=-2,mc=0;n.forEach(function(v){f[v]=(f[v]||0)+1;if(f[v]>mc){mc=f[v];mx=v}});if(mc>=3)out[y2*W+x2]=mx}}
+  lo=out;out=lo.slice();
+  // 카툰 잉크선: 밝기 차이가 큰 경계의 어두운 쪽을 한 단계 더 어둡게
+  for(var y3=0;y3<H;y3++)for(var x3=0;x3<W;x3++){var c=at(x3,y3);if(c<0)continue;var nb=[at(x3+1,y3),at(x3,y3+1),at(x3-1,y3),at(x3,y3-1)];
+   for(var q=0;q<4;q++){var o=nb[q];if(o<0||o===c)continue;if(LUM[o]-LUM[c]>R.ink){out[y3*W+x3]=DARK[c];break}}}
+  lo=out;
+  // 스프라이트는 바깥 윤곽선
+  if(R.sprite){out=lo.slice();for(var y4=0;y4<H;y4++)for(var x4=0;x4<W;x4++){if(at(x4,y4)!==-1)continue;if(at(x4-1,y4)>=0||at(x4+1,y4)>=0||at(x4,y4-1)>=0||at(x4,y4+1)>=0)out[y4*W+x4]=0}lo=out}
+  var cv=document.createElement("canvas");cv.width=W;cv.height=H;var cx=cv.getContext("2d"),im=cx.createImageData(W,H),d=im.data;
+  for(var i2=0,p2=0;i2<lo.length;i2++,p2+=4){var v=lo[i2];if(v<0){d[p2+3]=0;continue}var cc=PAL[v];d[p2]=cc[0];d[p2+1]=cc[1];d[p2+2]=cc[2];d[p2+3]=255}
+  cx.putImageData(im,0,0);return cv.toDataURL("image/png")}
+ window.__toon=toon;
  function raster(src,R,cb){var key=hash(src)+R.w;if(cache[key]){cb(cache[key]);return}
   if(pend[key]){pend[key].push(cb);return}pend[key]=[cb];
   var full=src.indexOf("xmlns=")<0?src.replace("<svg","<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\""):src;
-  full=full.replace(/<svg([^>]*?)\swidth="[^"]*"/,"<svg$1").replace(/<svg([^>]*?)\sheight="[^"]*"/,"<svg$1").replace("<svg","<svg width=\""+R.w*2+"\" height=\""+R.h*2+"\"");
-  var img=new Image();img.onload=function(){try{var cv=document.createElement("canvas");cv.width=R.w;cv.height=R.h;var ctx=cv.getContext("2d");ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality="high";ctx.drawImage(img,0,0,R.w,R.h);quant(cv,R.lv);var u=cv.toDataURL("image/png");cache[key]=u;var q=pend[key];delete pend[key];q.forEach(function(f){f(u)})}catch(e){var q2=pend[key];delete pend[key];q2.forEach(function(f){f(null)})}};
+  full=full.replace(/<svg([^>]*?)\swidth="[^"]*"/,"<svg$1").replace(/<svg([^>]*?)\sheight="[^"]*"/,"<svg$1").replace("<svg","<svg width=\""+R.w*K+"\" height=\""+R.h*K+"\"");
+  var img=new Image();img.onload=function(){var u=null;try{u=toon(img,R)}catch(e){}if(u)cache[key]=u;var q=pend[key];delete pend[key];q.forEach(function(f){f(u)})};
   img.onerror=function(){var q=pend[key];delete pend[key];q.forEach(function(f){f(null)})};
   img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(full)}
  function apply(svg){if(svg.__dot||!svg.isConnected)return;var R=ruleOf(svg);if(!R)return;if(svg.closest(".rc-map,.nodot")||svg.querySelector("g[id],path[id],circle[id],rect[id],text[id],ellipse[id]")){svg.__dot=1;return}
