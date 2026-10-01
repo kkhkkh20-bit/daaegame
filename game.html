@@ -3515,11 +3515,15 @@ function banner(text,sub){
   });
 }
 function iris(mid){
-  var d=document.createElement("div");d.className="iris";document.body.appendChild(d);
+  if(window.__irisBusy&&Date.now()-window.__irisBusy<1500)return;
+  var d=document.createElement("div");d.className="iris";d.style.pointerEvents="auto";document.body.appendChild(d);
   var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(reduce||!d.animate){mid();d.remove();return}
+  if(reduce||!d.animate){window.__irisBusy=0;mid();d.remove();return}
+  window.__irisBusy=Date.now();var ran=false;
+  function runMid(){if(ran)return;ran=true;window.__irisBusy=0;d.style.pointerEvents="none";mid()}
+  setTimeout(function(){if(!ran){runMid();d.remove()}},1200);
   d.animate([{clipPath:"circle(0% at 50% 50%)"},{clipPath:"circle(75% at 50% 50%)"}],{duration:320,easing:"ease-in",fill:"forwards"}).onfinish=function(){
-    mid();window.scrollTo(0,0);
+    if(ran)return;runMid();window.scrollTo(0,0);
     d.animate([{clipPath:"circle(75% at 50% 50%)"},{clipPath:"circle(0% at 50% 50%)"}],{duration:380,easing:"ease-out",fill:"forwards"}).onfinish=function(){d.remove()};
   };
 }
@@ -3600,7 +3604,7 @@ var SLOTKEY="daae-detective-slots";
 function readSlots(){var a;try{a=JSON.parse(localStorage.getItem(SLOTKEY))}catch(e){a=null}if(!Array.isArray(a))a=[];var o=[];for(var i=0;i<3;i++){var x=a[i];try{o.push(x&&typeof x==="object"?sanitizeState(x):null)}catch(e){o.push(null)}}return o}
 function writeSlots(a){try{localStorage.setItem(SLOTKEY,JSON.stringify(a));return true}catch(e){return false}}
 function snapshot(){if(G)saveProg();return {v:3,players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master||0,ach:S.ach||{},rec:S.rec||{},savedAt:Date.now()}}
-function applySnap(d){S.players=d.players||S.players;S.best=d.best||{};S.prog=d.prog||{};S.story=d.story||{pro:false,read:{},finale:false};S.tut=d.tut||{};S.aff=d.aff||S.aff||{};S.chat=d.chat||S.chat||{};S.master=d.master||S.master||0;S.ach=d.ach||S.ach||{};S.rec=d.rec||S.rec||{};persist();G=null;S.screen="board";closeModal();iris(function(){render()})}
+function applySnap(d){S.players=d.players||S.players;S.best=d.best||{};S.prog=d.prog||{};S.story=d.story||{pro:false,read:{},finale:false};S.tut=d.tut||{};S.aff=d.aff||S.aff||{};S.chat=d.chat||S.chat||{};S.master=d.master||S.master||0;S.ach=d.ach||S.ach||{};S.rec=d.rec||S.rec||{};persist();closeModal();iris(function(){leaveCase();G=null;S.screen="board";render()})}
 function snapInfo(d){if(!d)return "비어 있음";var t=new Date(d.savedAt),n=Object.keys(d.best||{}).length,st=0;Object.keys(d.best||{}).forEach(function(k){st+=(+d.best[k]||0)});
   var ing=Object.keys(d.prog||{}).map(function(k){var c=CASES.filter(function(x){return x.id===k})[0];return c?c.title:""}).filter(Boolean);
   return (t.getMonth()+1)+"월 "+t.getDate()+"일 "+t.getHours()+":"+String(t.getMinutes()).padStart(2,"0")+" · "+esc((d.players||[]).join(", "))+" · 해결 "+n+"건 · 별 "+st+"개"+(ing.length?" · 진행 중: "+esc(ing[0]):"")}
@@ -3625,7 +3629,7 @@ function openSaveMenu(){
     document.getElementById("closeit").onclick=function(){closeModal();render()};
     ov.querySelectorAll("[data-save]").forEach(function(b){b.onclick=function(){var i=+b.dataset.save;
       if(slots[i]&&!arm["s"+i]){arm={};arm["s"+i]=1;draw();return}
-      slots[i]=snapshot();var ok=writeSlots(slots);arm={};SFX.stamp();draw();msg(ok?"슬롯 "+(i+1)+"에 저장했어요.":"이 브라우저는 저장을 막고 있어요. 저장 코드를 만들어 보관해 주세요.")}});
+      var prevS=slots[i];slots[i]=snapshot();var ok=writeSlots(slots);if(!ok)slots[i]=prevS;arm={};SFX.stamp();draw();msg(ok?"슬롯 "+(i+1)+"에 저장했어요.":"이 브라우저는 저장을 막고 있어요. 저장 코드를 만들어 보관해 주세요.")}});
     ov.querySelectorAll("[data-load]").forEach(function(b){b.onclick=function(){var i=+b.dataset.load;if(!slots[i])return;
       if(!arm["l"+i]){arm={};arm["l"+i]=1;draw();return}
       SFX.door();applySnap(slots[i])}});
@@ -3709,11 +3713,11 @@ function openCase(i,restart){
   SFX.tap();bgm("sneak");
   var id=CASES[i].id;
   if(!restart&&S.prog[id]){
-    iris(function(){G=S.prog[id];CASES[i].contra.forEach(function(x){if(G.broken&&G.broken[x.t]&&x.unlock&&G.unlocked.indexOf(x.unlock)<0)G.unlocked.push(x.unlock)});G.notice={good:true,title:"지난 수사를 이어서 해요",text:"찾은 증거와 진술이 그대로 있어요. 처음부터 하려면 수첩 맨 아래 버튼을 눌러요."};S.screen="case";render()});
+    iris(function(){leaveCase();G=S.prog[id];CASES[i].contra.forEach(function(x){if(G.broken&&G.broken[x.t]&&x.unlock&&G.unlocked.indexOf(x.unlock)<0)G.unlocked.push(x.unlock)});G.notice={good:true,title:"지난 수사를 이어서 해요",text:"찾은 증거와 진술이 그대로 있어요. 처음부터 하려면 수첩 맨 아래 버튼을 눌러요."};S.screen="case";render()});
     return;
   }
   delete S.prog[id];persist();
-  iris(function(){G=fresh(i);S.screen="case";render();startIntro(i)});
+  iris(function(){leaveCase();G=fresh(i);S.screen="case";render();startIntro(i)});
 }
 function startIntro(i){
   var c=CASES[i],intro=STORY[c.id].intro.slice();
@@ -3871,7 +3875,7 @@ function renderCase(){
     return t[0]==="present"?'<button class="vb" id="presentbtn">'+t[2]+t[1]+'</button>':'<button class="vb" data-tab="'+t[0]+'" aria-selected="'+(G.tab===t[0])+'">'+dot+t[2]+t[1]+'</button>'}).join("")+'<button class="vb helpnav" id="helpnav" aria-label="힌트"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="#FFF6C8" stroke="#1B2447" stroke-width="2" stroke-linejoin="round"/></svg>힌트</button></div></nav>';
   app.innerHTML=h;
   var hnv=document.getElementById("helpnav");if(hnv)hnv.onclick=function(){if(DL)return;useHint(c)};
-  document.getElementById("menu").onclick=function(){SFX.tap();saveProg();bgm("calm");document.body.classList.remove("blackout");iris(function(){S.screen="board";G=null;render()})};
+  document.getElementById("menu").onclick=function(){SFX.tap();saveProg();bgm("calm");document.body.classList.remove("blackout");iris(function(){leaveCase();S.screen="board";G=null;render()})};
   document.getElementById("snd").onclick=openSettings;
   var cn=document.getElementById("closeNotice");if(cn)cn.onclick=function(){G.notice=null;render()};
   app.querySelectorAll("[data-tab]").forEach(function(b){b.onclick=function(){if(DL||document.querySelector(".ovr,.flash,.banner"))return;if(b.dataset.tab!==G.tab)goTab(b.dataset.tab)}});
@@ -4047,17 +4051,18 @@ function fsLayout(){
 window.addEventListener("resize",function(){try{fsLayout()}catch(e){}});
 var MOVING=false;
 function moveTo(c,i,pp){
-  if(MOVING||G.loc===i||!locOpen(c,i))return;MOVING=true;
+  if(MOVING||G.loc===i||!locOpen(c,i))return;MOVING=true;var g0=G;
   var pt=pp||locPt(c,i),tok=document.getElementById("tok");
   SFX.steps();setTimeout(SFX.steps,420);
   if(tok)tok.style.transform='translate('+pt[0]+'px,'+(pt[1]-30)+'px)';
   setTimeout(function(){
-    G.loc=i;G.arrive=true;if(!G.visited)G.visited=[];var first=G.visited.indexOf(i)<0;if(first)G.visited.push(i);
-    render();G.arrive=false;MOVING=false;
+    if(G!==g0||S.screen!=="case"){MOVING=false;return}
+    try{G.loc=i;G.arrive=true;if(!G.visited)G.visited=[];var first=G.visited.indexOf(i)<0;if(first)G.visited.push(i);
+    render();G.arrive=false}finally{MOVING=false}
     var sc=document.getElementById("bigscene");if(sc&&!document.body.classList.contains("fs"))sc.scrollIntoView({block:"center",behavior:"smooth"});
     var l=c.locations[i],left=l.spots.filter(function(s){return G.found.indexOf(s.ev.id)<0&&!(s.uv&&!uvOn())}).length;
     placeCard(l.name,left?"수상한 곳 "+left+"군데":"모두 조사한 곳");
-    if(first){var bk2=(BEATS[c.id]||{})["loc:"+l.id];if(bk2&&!(G.beats&&G.beats["loc:"+l.id]))setTimeout(function(){beat(c,"loc:"+l.id)},350)}
+    if(first){var bk2=(BEATS[c.id]||{})["loc:"+l.id];if(bk2&&!(G.beats&&G.beats["loc:"+l.id]))setTimeout(function(){if(G===g0)beat(c,"loc:"+l.id)},350)}
   },820);
 }
 function placeCard(name,sub){
@@ -4070,11 +4075,12 @@ function bindScene(c){
   app.querySelectorAll("[data-spot]").forEach(function(b){b.onclick=function(){
     var id=b.dataset.spot,sc=document.getElementById("bigscene");
     lensAt(sc,+b.dataset.px,+b.dataset.py,function(){
+      if(!G||G.found.indexOf(id)>=0){render();return}
       var sp=allSpots(c).filter(function(s){return s.ev.id===id})[0];
       var finder=curPlayer();
       G.found.push(id);G.actions++;SFX.found();
       modal('<span class="kicker">증거 발견! · '+esc(finder)+'</span><div class="bigic">'+evIcon(id)+'</div><h3>'+sp.ev.name+'</h3><p>'+sp.text+'</p><button class="btn" id="okfind">확인</button>',
-        function(){document.getElementById("okfind").onclick=function(){SFX.tap();closeModal();render();var ab=function(){if(G.found.length===1)beat(c,"ev1")};if(THINK[id])say([["think",THINK[id],"",finder]],function(){render();ab()});else ab()}});
+        function(){document.getElementById("okfind").onclick=function(){SFX.tap();closeModal();render();var ab=function(){if(G&&G.found.length===1)beat(c,"ev1")};if(THINK[id])say([["think",THINK[id],"",finder]],function(){render();ab()});else ab()}});
       render();
     });
   }});
@@ -4253,7 +4259,7 @@ function talkStage(c,k){
     if(G.asked.indexOf(t.id)<0){h+='<button class="askbtn" data-ask="'+t.id+'"><b>질문</b>'+t.q+'</button>';return}
     var br=G.broken[t.id];
     var kd=br?kindOf(c,t.id):null;
-    h+='<div class="qa"><span class="q">'+t.q+'</span><div class="a'+(br?' broken':'')+(G.target===t.id?' aim':'')+'"'+(br||t.id===CONFESS[c.id]?'':' data-aim="'+t.id+'"')+'>"'+hl(t.a)+'"'+(br?'<span class="tag">'+kd.tag+'</span><span class="lie-stamp k-'+(contraOf(c,t.id).kind||"culprit")+(G.justBroke===t.id?' new':'')+'">'+({culprit:"거짓!",shy:"비밀!",mistake:"착각!"}[contraOf(c,t.id).kind||"culprit"])+'</span>':'')+'</div>';
+    h+='<div class="qa"><span class="q">'+t.q+'</span><div class="a'+(br?' broken':'')+(G.target===t.id?' aim':'')+'"'+(br||t.id===CONFESS[c.id]?'':' data-aim="'+t.id+'"')+'>"'+hl(t.a)+'"'+(br?'<span class="tag">'+kd.tag+'</span><span class="lie-stamp k-'+(contraOf(c,t.id).kind||"culprit")+(G.justBroke===t.id?' new':'')+'">'+({culprit:"거짓!",shy:"비밀!",mistake:"착각!",side:"딴 잘못!",cover:"감싸기!"}[contraOf(c,t.id).kind||"culprit"]||"거짓!")+'</span>':'')+'</div>';
     if(br)h+='<div class="reveal"><b>'+kd.box+'</b>'+br+'</div>';
     else if(t.id!==CONFESS[c.id])h+='<div class="a-row"><button class="odd'+(G.target===t.id?' on':'')+'" data-odd="'+t.id+'">'+(G.target===t.id?'지목 중 · 아래 수첩에서 고르기':'이상해! 지목하기')+'</button></div>';
     h+='</div>';
@@ -4346,7 +4352,7 @@ function judgePresent(c,tid,item){
       say(lines,function(){
         G.notice={good:true,title:kd.title,text:(x.unlock&&!isDoor)?jo(name,'이','가')+' 숨기던 이야기를 물어보세요.':jo(name,'이','가')+' 말을 바꿨어요.'};render();if(x.unlock&&!isDoor)setTimeout(function(){var q=app.querySelector('[data-ask="'+x.unlock+'"]');if(q)q.scrollIntoView({block:"center",behavior:"smooth"})},150);
         var nb=Object.keys(G.broken).length;setTimeout(function(){if(nb>=c.contra.length)window.__toFight(c);else if(nb===1)beat(c,"lie1")},x.loc?1700:250);
-        if(x.loc){var li=-1;c.locations.forEach(function(l,i){if(l.id===x.loc)li=i});if(li>=0){banner("새 장소 발견",c.locations[li].name).then(function(){G.notice={good:true,title:"지도에 새 장소가 열렸어요",text:c.locations[li].name+"(으)로 가 보세요. 현장 탭 지도에서 갈 수 있어요."};render()})}}
+        if(x.loc){var li=-1;c.locations.forEach(function(l,i){if(l.id===x.loc)li=i});if(li>=0){banner("새 장소 발견",c.locations[li].name).then(function(){if(!G||CASES[G.ci]!==c)return;G.notice={good:true,title:"지도에 새 장소가 열렸어요",text:c.locations[li].name+"(으)로 가 보세요. 현장 탭 지도에서 갈 수 있어요."};render()})}}
       });
     });
   }else if(confirmOf(c,tid,item)){
@@ -4390,15 +4396,16 @@ var EYE='<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16 Q16 4 29 16 
 function obsSeen(id){return (G.obsSeen||[]).indexOf(id)>=0}
 function markObs(id){if(!G.obsSeen)G.obsSeen=[];if(G.obsSeen.indexOf(id)<0){G.obsSeen.push(id);if(String(id).indexOf("zoom:")!==0&&G.obsSeen.filter(function(x){return String(x).indexOf("zoom:")!==0}).length%2===0)addCoin(1,"관찰")}}
 function lensAt(sc,px,py,cb){
-  var svg=sc.querySelector("svg");if(!svg){cb();return}
+  if(window.__lensBusy)return;var g0=G;
+  var svg=sc&&sc.querySelector("svg");if(!svg){cb();return}window.__lensBusy=true;
   var r=sc.getBoundingClientRect(),x=px/360*r.width,y=py/200*r.height;
   var d=document.createElement("div");d.className="lens";d.style.left=x+"px";d.style.top=y+"px";
   var inner=svg.cloneNode(true);inner.setAttribute("class","lensart");inner.style.width=r.width+"px";inner.style.height=r.height+"px";inner.style.transformOrigin=x+"px "+y+"px";inner.style.left=(-x+60)+"px";inner.style.top=(-y+60)+"px";
   d.appendChild(inner);sc.appendChild(d);SFX.tap();
-  setTimeout(function(){d.remove();cb()},520);
+  setTimeout(function(){d.remove();window.__lensBusy=false;if(G!==g0||!G||S.screen!=="case")return;cb()},520);
 }
 function openZoom(c,zk){
-  var z=window.__ZOOM[zk];if(!z)return;markObs("zoom:"+zk);SFX.page();
+  var z=window.__ZOOM[zk];if(!z||!G)return;var oz=document.querySelector(".zoomv");if(oz)oz.remove();markObs("zoom:"+zk);SFX.page();
   var el=document.createElement("div");el.className="zoomv";
   var cap="";
   function zStep(it){
@@ -4522,7 +4529,7 @@ function renderTimeline(c){
     h+='<li class="'+(e.claim?'tclaim':'tfact')+(x.conflict?' conflict':'')+(x.broken?' broken':'')+'" data-tsrc="'+e.src.filter(function(s){return s!=="*"})[0]+'">'+
        '<span class="tt">'+(e.t!==last?e.t:'')+'</span><span class="tdot"></span><div class="tb">'+
        '<div class="tmeta">'+(e.who&&CAST[e.who]?pf(e.who).replace('<svg ','<svg class="tfic" ')+'<b>'+CAST[e.who].name+'</b>':'')+(loc?'<em>'+loc.name+'</em>':(e.place?'<em>'+e.place+'</em>':''))+(e.claim?'<i class="tag c">주장</i>':'<i class="tag f">사실</i>')+(x.conflict?'<i class="tag x">안 맞음</i>':'')+'</div>'+
-       '<p>'+(e.claim?'"'+e.txt+'"':e.txt)+'</p>'+(x.broken?'<span class="lie-stamp k-'+(contraOf(c,e.claim).kind||"culprit")+'">'+({culprit:"거짓!",shy:"비밀!",mistake:"착각!"}[contraOf(c,e.claim).kind||"culprit"])+'</span>':'')+'</div></li>';
+       '<p>'+(e.claim?'"'+e.txt+'"':e.txt)+'</p>'+(x.broken?'<span class="lie-stamp k-'+(contraOf(c,e.claim).kind||"culprit")+'">'+({culprit:"거짓!",shy:"비밀!",mistake:"착각!",side:"딴 잘못!",cover:"감싸기!"}[contraOf(c,e.claim).kind||"culprit"]||"거짓!")+'</span>':'')+'</div></li>';
     last=e.t;
   });
   h+='</ol>';
@@ -4932,7 +4939,7 @@ function renderResultScreen(c){
   }
   h+='</section>';
   app.innerHTML=h;
-  document.getElementById("menu").onclick=function(){bgm("calm");iris(function(){S.screen="board";G=null;render()})};
+  document.getElementById("menu").onclick=function(){bgm("calm");iris(function(){leaveCase();S.screen="board";G=null;render()})};
   document.getElementById("snd").onclick=openSettings;
   saveProg();
   var rcb=document.getElementById("recon");if(rcb)rcb.onclick=function(){reconstruct(c,function(){render()})};
@@ -6919,6 +6926,14 @@ function uvOn(){return !!(G&&G.uv&&toolOn("uv"))}
   Object.keys(M).forEach(function(cid){var r=RIDDLES[cid]&&RIDDLES[cid][M[cid]];if(r)r.mirror=true});
 })();
 // --- recovery: never leave the player stuck ---
+function leaveCase(){
+  try{clearInterval(DL&&DL.timer)}catch(e){}
+  DL=null;VNBG=null;try{ov.innerHTML=""}catch(e){}
+  document.querySelectorAll(".crec2,.zoomv,.rt,.lens,.placecard,.sbook,.ovr,.cutin,.stampfx,.flash,.banner,.coach,.flyev,.evpop").forEach(function(e){e.remove()});
+  document.body.classList.remove("blackout","aiming","danger");
+  MOVING=false;window.__inMeeting=false;window.__lensBusy=false;
+}
+window.__leaveCase=leaveCase;
 function recoverScreen(){
   try{clearInterval(DL&&DL.timer)}catch(e){}
   DL=null;VNBG=null;ov.innerHTML="";
@@ -7129,8 +7144,8 @@ function sanitizeState(d){
     n.uv=!!g.uv;n.nt_seen_conf=!!g.nt_seen_conf;
     n.coins=int(g.coins,0,30,1);n.zst=map(g.zst,null,function(v){return int(v,0,9,0)||null},200);n.mem=ids(g.mem,function(v){return own(MEMTXT,v)},20);n.dtries=int(g.dtries,0,99,0);n.hintLog=ids(g.hintLog,function(v){return /^(case:\d|scene|talk|battle|won)$/.test(v)},20);
     var b=g.battle;
-    n.battle=isObj(b)&&sus(b.cul)&&(b.phase==="fight"||b.phase==="won")?{cul:b.cul,phase:b.phase,round:int(b.round,0,20,0),si:int(b.si,0,50,0),miss:int(b.miss,0,99,0),lives:int(b.lives,0,hm,hm),max:hm,smug:!!b.smug,rev:isObj(b.rev)?map(b.rev,null,function(v){return v?1:null},30):undefined,brDone:!!b.brDone||undefined,hold:isObj(b.hold)&&Array.isArray(b.hold.need)?{need:b.hold.need.filter(function(v){return typeof v==="string"&&v.length<40}).slice(0,5),task:txt(b.hold.task,300)||"",told:b.hold.told?1:0}:undefined}:null;
-    if(isObj(g.debate)){var gd=g.debate,hd=isObj(gd.hold)&&Array.isArray(gd.hold.need)?{need:gd.hold.need.filter(function(v){return typeof v==="string"&&v.length<40}).slice(0,5),task:txt(gd.hold.task,300)||""}:null;n.debate={pi:int(gd.pi,0,99,0),sus:map(gd.sus,sus,function(v){return int(v,0,100,10)}),done:!!gd.done,hold:hd}}
+    n.battle=isObj(b)&&(sus(b.cul)||(b.cul==="rei"&&sus(b.cul0)))&&(b.phase==="fight"||b.phase==="won")?{cul:b.cul,cul0:sus(b.cul0)?b.cul0:undefined,v134:b.v134?1:undefined,twShown:b.twShown?1:undefined,kPre:b.kPre?1:undefined,twHelp:b.twHelp?1:undefined,dal:b.dal?1:undefined,crack:b.crack!=null?int(b.crack,0,hm,0):undefined,phase:b.phase,round:int(b.round,0,20,0),si:int(b.si,0,50,0),miss:int(b.miss,0,99,0),lives:int(b.lives,0,hm,hm),max:hm,smug:!!b.smug,rev:isObj(b.rev)?map(b.rev,null,function(v){return v?1:null},30):undefined,brDone:!!b.brDone||undefined,hold:isObj(b.hold)&&Array.isArray(b.hold.need)?{need:b.hold.need.filter(function(v){return typeof v==="string"&&v.length<40}).slice(0,5),task:txt(b.hold.task,300)||"",told:b.hold.told?1:0}:undefined}:null;
+    if(isObj(g.debate)){var gd=g.debate,hd=isObj(gd.hold)&&Array.isArray(gd.hold.need)?{need:gd.hold.need.filter(function(v){return typeof v==="string"&&v.length<40}).slice(0,5),task:txt(gd.hold.task,300)||""}:null;n.debate={pi:int(gd.pi,0,99,0),sus:map(gd.sus,function(k){var D=window.DEBATE&&DEBATE[c.id];return sus(k)||!!(D&&D.seats&&D.seats.indexOf(k)>=0)},function(v){return int(v,0,100,10)}),done:!!gd.done,hold:hd}}
     if(isObj(g.night)){n.night={bought:int(g.night.bought,0,9,0),bargain:g.night.bargain?1:0,blackout:g.night.blackout?1:0};var fh=txt(g.night.fakehint,200);if(fh)n.night.fakehint=fh}
     return n;   // result, notice, slide, enter, arrive, justBroke stay at fresh() defaults
   }
@@ -9865,7 +9880,12 @@ function saveMk(){try{localStorage.setItem(MK,JSON.stringify({last:SYNC.last,dir
 var LOCALK=["sound","tts","tspeed","big","trayOpen","circ","circv"];
 function body(){return {players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master,ach:S.ach,rec:S.rec,trayOpen:S.trayOpen,tts:S.tts,tspeed:S.tspeed,big:S.big,look:S.look,flash:S.flash|0,circ:S.circ===true,circv:2}}
 function bodyStr(){try{return JSON.stringify(body())}catch(e){return null}}
-function writeLS(b,at){try{var o=JSON.parse(b);o.savedAt=at||0;localStorage.setItem(SKEY,JSON.stringify(o))}catch(e){}}
+var lsWarned=false;
+function writeLS(b,at){var s;try{var o=JSON.parse(b);o.savedAt=at||0;s=JSON.stringify(o)}catch(e){return false}
+  try{localStorage.setItem(SKEY,s);return true}catch(e){}
+  try{for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&k.indexOf("dc1:")===0)localStorage.removeItem(k)}localStorage.setItem(SKEY,s);return true}catch(e){}
+  if(!lsWarned){lsWarned=true;try{toast("기기에 저장하지 못했어요. 설정 › 저장 · 불러오기에서 저장 코드를 만들어 두세요.")}catch(e){}}
+  return false}
 persist=function(){
   var b=bodyStr();if(b===null)return;
   if(SYNC.lastBody!==null&&b!==SYNC.lastBody){SYNC.lastBody=b;S.savedAt=Date.now();if(!SYNC.dirty){SYNC.dirty=true;saveMk()}}
@@ -9928,6 +9948,8 @@ function pull(force){
   return SYNC.ref.get().then(function(snap){
     var d=snap&&snap.exists?snap.data():null,cs=d?(+d.savedAt||0):0,obj=null;
     if(d){try{obj=JSON.parse(d.json)}catch(e){}}
+    var isO=function(x){return !!x&&typeof x==="object"&&!Array.isArray(x)};
+    if(!isO(obj)||(obj.best!=null&&!isO(obj.best))||(obj.prog!=null&&!isO(obj.prog)))obj=null;
     if(obj&&cs!==SYNC.last){
       if(!SYNC.dirty&&!(S.screen==="case"&&G)){adopt(keepLocalPrefs(obj),cs,"다른 기기의 기록을 이어왔어요");SYNC.last=cs;saveMk();setSt("연결됨 · "+when(cs)+" 저장")}
       else{var mine=JSON.parse(bodyStr());adopt(merge(mine,obj),Date.now(),"다른 기기 기록과 합쳤어요");SYNC.dirty=true;SYNC.last=cs;saveMk();SYNC.ready=true;return push()}
@@ -9955,7 +9977,7 @@ function init(){
       try{SYNC.ref=db.doc("data/users/"+uid+"/save")}catch(e){setSt("연결할 수 없어요");return}
       setSt("연결 중…");return pull(true);
     });
-  }).catch(function(){});
+  }).catch(function(){try{setSt("지금은 연결할 수 없어요 · 기기에는 저장됨")}catch(e){}});
   document.addEventListener("visibilitychange",function(){if(!SYNC.ref)return;if(document.visibilityState==="hidden"){if(SYNC.dirty)push()}else pull(false)});
 }
 setTimeout(init,0);
@@ -18229,9 +18251,10 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   window.__inMeeting=true;
   el=document.createElement("div");el.className="rt";document.body.appendChild(el);
   try{bgm("battle")}catch(e){}
+  var g0=G,me=el;function alive(){if(G&&G===g0&&S.screen==="case"&&el===me)return true;if(me)me.remove();if(el===me)el=null;window.__inMeeting=false;return false}
   var s=stt();if(s.hold){var adj=SPEC.phases[s.pi-1];s.hold=null;try{saveProg()}catch(e){}
-   banner("회의 재개",SPEC.sub).then(function(){sayQ((adj&&adj.resume)||[],start)});return}
-  banner(SPEC.ban||"원탁 회의",SPEC.sub).then(start)}
+   banner("회의 재개",SPEC.sub).then(function(){if(alive())sayQ((adj&&adj.resume)||[],start)});return}
+  banner(SPEC.ban||"원탁 회의",SPEC.sub).then(function(){if(alive())start()})}
  window.__rtOpen=open;
  window.__rtCur=function(){if(!el||!SPEC)return null;var ph=curPh();return ph?ph.type:null};window.__rtPh=function(){return SPEC&&curPh()};
  // 대결 탭: 범인 지목 대신 원탁 회의
@@ -19262,7 +19285,7 @@ DEBATE.kitchen={
  function announce(c){if(!G||CASES[G.ci]!==c||S.screen!=="case"){pending=[];return}if(!pending.length)return;if(busy()){setTimeout(function(){announce(c)},700);return}
   var x=pending.shift(),who=tById(c,x.t)&&tById(c,x.t).who,li=-1;
   if(x.loc)c.locations.forEach(function(l,i){if(l.id===x.loc)li=i});
-  if(li>=0){banner("새 장소 발견",c.locations[li].name).then(function(){G.notice={good:true,title:"지도에 새 장소가 열렸어요",text:esc(c.locations[li].name)+"(으)로 가 보세요."};render();setTimeout(function(){announce(c)},400)})}
+  if(li>=0){banner("새 장소 발견",c.locations[li].name).then(function(){if(!G||CASES[G.ci]!==c)return;G.notice={good:true,title:"지도에 새 장소가 열렸어요",text:esc(c.locations[li].name)+"(으)로 가 보세요."};render();setTimeout(function(){announce(c)},400)})}
   else{G.notice={good:true,title:"새로 물어볼 게 생겼어요",text:(who?esc(nm(who))+"에게 ":"")+"모은 증거를 보니 더 물어볼 게 떠올랐어요."};render();setTimeout(function(){announce(c)},400)}}
 
  // ---------- 2) 모을 만큼 모이면 회의로 ----------
@@ -19596,7 +19619,7 @@ TWBR.kitchen={type:"fail",phases:[
    if(L.s.uv&&!uvOn())return {say:c.locations[L.i].name+"에서 '자외선' 버튼을 켜고 살펴봐. 눈에 안 보이던 게 나타나.",tab:"scene",loc:L.i,pt:"#uvbtn"};
    return {say:c.locations[L.i].name+"에 아직 못 찾은 게 있어. 빨간 동그라미를 눌러 봐.",tab:"scene",loc:L.i,blink:true,pt:'[data-spot="'+id+'"]'}}
   return null}
- function go(r){var o={};if(r.loc!=null)o.loc=r.loc;if(r.who)o.who=r.who;if(r.nt)G.nt=r.nt;
+ function go(r){if(!G||S.screen!=="case")return;var o={};if(r.loc!=null)o.loc=r.loc;if(r.who)o.who=r.who;if(r.nt)G.nt=r.nt;
   if(r.tab&&(r.tab!==G.tab||r.loc!=null&&r.loc!==G.loc||r.who&&r.who!==G.who))goTab(r.tab,o);else render();
   if(r.blink&&r.tab==="scene")setTimeout(function(){try{blinkScene()}catch(e){}},350);
   var pt=r.pt;if(typeof pt==="function")pt=pt();
@@ -22519,7 +22542,7 @@ CHAIN("kitchen",{nodes:[
  {who:"owlgp",t:"오후 4:52",kind:"mistake",did:"잠에서 깨, '나는 계속 있었지'라는 짝의 말을 그대로 믿었다",so:"그 바람에 할머니에게 오후 내내 곁에 있었다는 증인이 생겼다"}
 ],end:"등불은 할머니 손이 두 번 껐다. 그 사이 30년은 닿지 못한 편지 한 통이 이었다.",who_end:"det0"});
 
- var KL={culprit:["범인","#D23A34"],side:["딴 잘못","#E8862A"],cover:["감싸기","#7A5BD6"],mistake:["착각","#3A7BD5"],chance:["우연","#7A8099"],victim:["사정","#2E9E6A"]};
+ var KL={shy:["비밀","#D6457F"],culprit:["범인","#D23A34"],side:["딴 잘못","#E8862A"],cover:["감싸기","#7A5BD6"],mistake:["착각","#3A7BD5"],chance:["우연","#7A8099"],victim:["사정","#2E9E6A"]};
  var THING='<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="#EDE6CF" stroke="#1B2447" stroke-width="2.5"/><path d="M14 22a6 6 0 1 1 12 0" fill="none" stroke="#1B2447" stroke-width="2.5"/><circle cx="20" cy="27" r="2" fill="#1B2447"/></svg>';
  function face2(w){return w&&w!=="thing"&&CAST[w]?pf(w,""):THING}
  function show(c,done,again){var C=CH[c.id];if(!C||!C.nodes||!C.nodes.length){done&&done();return}
@@ -23921,7 +23944,8 @@ REI2("kitchen",{
   pl.lines.forEach(function(l){if(l[0]==="narr"&&/셋은 나란히/.test(l[1]))l[1]=l[1].replace("셋은 나란히","넷은 나란히")})}}catch(e){}
  // 5장을 레이 없이 지나온 경우: 처음 만나는 장에서 자기소개
  var X=window.__REI2||{};
- function seen(){try{return localStorage.getItem("daae:reiMet")==="1"}catch(e){return true}}
+ function seen(){try{if(localStorage.getItem("daae:reiMet")==="1")return true}catch(e){}
+  try{return !!(S.best&&S.best.bell)||Object.keys(S.prog||{}).some(function(k){var g=S.prog[k];return g&&g.met&&g.met.indexOf("rei")>=0})}catch(e){return false}}
  function mark(){try{localStorage.setItem("daae:reiMet","1")}catch(e){}}
  Object.keys(X).forEach(function(id){var o=X[id];if(!o.intro)return;var orig=o.intro;
   Object.defineProperty(o,"intro",{configurable:true,get:function(){var first=!seen();mark();if(!first||id==="bell")return orig;
@@ -29878,6 +29902,22 @@ REI2("kitchen",{
   return r};
 })();
 
+/* v144: 법정기록(증거 고르기) 화면 — 증거 목록이 한 줄로 눌리지 않게 화면 높이에 맞춰 여러 줄 격자로 */
+(function(){
+ var css=document.createElement("style");
+ css.textContent=
+ '.crec2{height:100vh;height:100dvh;overflow:hidden!important}'+
+ '.crec2 .cr-in{height:100%;min-height:0}'+
+ '.crec2 .cr-in>*{flex-shrink:0}'+
+ '.crec2 .cr-in>.cr-det{flex-shrink:1;min-height:84px;max-height:34vh;max-height:34dvh;overflow-y:auto;-webkit-overflow-scrolling:touch}'+
+ '.crec2 .cr-in>.cr-grid{flex:1 1 0!important;min-height:150px!important;max-height:none!important;overflow-y:auto;align-content:start;grid-template-columns:repeat(auto-fill,minmax(66px,1fr))!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}'+
+ '.crec2 .cr-in{gap:6px!important}.crec2 .crtab2 button{padding-top:5px!important;padding-bottom:5px!important;min-height:0!important}'+
+ '.crec2 .cr-th{padding:3px 2px 4px!important;gap:2px!important}.crec2 .cr-th .cr-ic2{max-width:48px!important}.crec2 .cr-th span{font-size:11px!important;line-height:1.15!important}'+
+ '.crec2 .cr-in>.cr-det{min-height:72px}'+
+ '@media (max-width:420px){.crec2 .cr-in>.cr-grid{grid-template-columns:repeat(5,1fr)!important;gap:4px}}';
+ document.head.appendChild(css);
+})();
+
 (function(){window.__FIXQA=[];function FIX(id,a,b){window.__FIXQA.push({id:id,a:a,b:b})}
 // 2장 window
 FIX("window","…들켰네. 콩이 코 앞에서 알리바이는 무의미하구나.","…아이스크림은 들켰네. 콩이 코 앞에서 알리바이는 무의미하구나.");   // 따닥 대사가 끼어 '들켰네'가 앞 대사(두드리기)와 이어지지 않음 → 무엇이 들켰는지 밝힘
@@ -30017,6 +30057,827 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
  L.forEach(function(f){var hit={n:0},seen=new Set();scope(f.id).forEach(function(o){walk(o,f.a,f.b,seen,hit)});if(!hit.n)window.__fixMiss.push(f.id+": "+f.a.slice(0,30))});
 })();
 
+/* v144 story144: 5~15장 이야기 이음새 보강 + 이야기 점검(story.md) 대사 수정
+   - 런타임 데이터(BOOK/STORY/CASES/BATTLE/DEBATE/MEETX/CHAT/THINK…)에 대사를 끼워 넣거나 문자열을 정확히 바꾼다.
+   - 원문을 못 찾으면 바꾸지 않고 window.__s144Miss 에 경고만 남긴다. 적용 내역은 window.__s144Log.
+   - 새로 넣은 줄/쪽에는 숨은 표시 _s144("new" | "fix")를 단다(화면에는 영향 없음).
+   - 위치: fixqa_engine.js 뒤(번들 맨 끝). 다른 모듈이 BOOK을 다 만든 다음에 돌아야 한다. */
+(function(){
+ if(window.__s144done)return;window.__s144done=true;
+ var MISS=window.__s144Miss=[],LOG=window.__s144Log=[];
+ function G(n){try{return eval(n)}catch(e){return undefined}}
+ var _BOOK=G("BOOK"),_STORY=G("STORY"),_BATTLE=G("BATTLE"),_THINK=G("THINK"),_CHAT=G("CHAT"),_DEDUCE=G("DEDUCE"),_ACH=G("ACH"),_TL=G("TIMELINE"),_RC=G("RECON");
+ var _DEB=window.DEBATE||G("DEBATE"),_MEETX=window.MEETX||G("MEETX"),_SECRET=window.SECRET||G("SECRET"),_REI2=window.__REI2||{};
+ function C(id){try{return caseById(id)}catch(e){return null}}
+ function mark(x,v){try{Object.defineProperty(x,"_s144",{value:v||"new",configurable:true})}catch(e){}return x}
+ function T(tag,f){try{f()}catch(e){MISS.push(tag+": 오류 "+e.message)}}
+ function at(lines,frag,who){for(var i=0;i<(lines||[]).length;i++){var l=lines[i];if(Array.isArray(l)&&String(l[1]||"").indexOf(frag)>=0&&(!who||l[0]===who))return i}return -1}
+ function page(pages,bg,tf){for(var i=0;i<(pages||[]).length;i++){var p=pages[i];if(p&&p.bg===bg&&(!tf||String(p.time||"").indexOf(tf)>=0))return i}return -1}
+ // 줄 끼워 넣기: frag가 든 줄 앞/뒤에. frag=null이면 맨 앞(after=false) 또는 맨 끝(after=true)
+ function ins(lines,frag,add,after,tag){
+  if(!lines){MISS.push(tag+": 대상 없음");return false}
+  if(lines.some(function(l){return l&&l._s144==="new"&&l._tag===tag})){return true}
+  var i;if(frag==null)i=after?lines.length:0;else{i=at(lines,frag);if(i<0){MISS.push(tag+": 원문 없음 '"+frag.slice(0,24)+"'");return false}if(after)i++}
+  add.forEach(function(l){mark(l,"new");try{Object.defineProperty(l,"_tag",{value:tag})}catch(e){}});
+  lines.splice.apply(lines,[i,0].concat(add));LOG.push(tag+" (+"+add.length+"줄)");return true}
+ // 새 쪽 끼워 넣기: (bg,tf)로 찾은 쪽 앞에
+ function insPage(pages,bg,tf,pg,tag){
+  if(!pages){MISS.push(tag+": BOOK 없음");return false}
+  if(pages.some(function(p){return p&&p._s144tag===tag}))return true;
+  var i=page(pages,bg,tf);if(i<0){MISS.push(tag+": 기준 쪽 없음 "+bg+"/"+(tf||""));return false}
+  mark(pg,"new");try{Object.defineProperty(pg,"_s144tag",{value:tag})}catch(e){}
+  pg.lines.forEach(function(l){mark(l,"new")});
+  pages.splice(i,0,pg);LOG.push(tag+" (새 쪽 "+pg.lines.length+"줄)");return true}
+ // 대사 한 줄의 문장 일부를 정확히 바꾸기 (lines 배열 안)
+ function sub(lines,a,b,tag,who){
+  var i=at(lines,a,who);if(i<0){MISS.push(tag+": 원문 없음 '"+a.slice(0,24)+"'");return false}
+  lines[i][1]=String(lines[i][1]).split(a).join(b);mark(lines[i],"fix");LOG.push(tag);return true}
+ // 객체 아래 모든 문자열에서 a→b (정확 일치 부분 문자열). 하나도 없으면 경고만
+ function rep(roots,a,b,tag){var n=0,seen=new Set();
+  function walk(x,d){if(!x||typeof x!=="object"||seen.has(x)||d>12)return;seen.add(x);
+   Object.keys(x).forEach(function(k){var v,ds=Object.getOwnPropertyDescriptor(x,k);if(ds&&ds.get)return;v=x[k];
+    if(typeof v==="string"){if(v.indexOf(a)>=0){try{x[k]=v.split(a).join(b);n++;if(Array.isArray(x))mark(x,"fix")}catch(e){}}}
+    else if(v&&typeof v==="object")walk(v,d+1)})}
+  [].concat(roots).forEach(function(r){walk(r,0)});
+  if(!n)MISS.push(tag+": 원문 없음 '"+a.slice(0,24)+"'");else LOG.push(tag+" ×"+n);return n}
+ function B(id){return _BOOK&&_BOOK[id]}
+ function S(id){return _STORY&&_STORY[id]}
+
+ // =====================================================================
+ // 5장 bell — 4장 검은 봉투 → 출발 결심 → 할머니 배웅 → 도착
+ // =====================================================================
+ T("5장",function(){var b=B("bell");if(!b)return;
+  // 냉정한 도입(COLD) 마지막 줄: '50분 전'이 바로 '떠나기 전날 밤'으로 이어져 시간이 두 번 거꾸로 가던 곳
+  if(b.pre&&b.pre[0])sub(b.pre[0].lines,"— 그보다 50분 전. 마을 어귀에 숲속 마을에서 온 손님 셋이 내렸다.","— 그 밤보다 사흘 전. 숲속 마을의 작은 탐정 사무소.","5장 도입 끝줄(시간 순서)");
+  insPage(b.pre,"office","떠나기 전날 밤",{bg:"office",time:"사흘 전 아침 · 탐정 사무소",cast:{det0:120,det1:200},lines:[
+   ["narr","까로가 반짝이를 모두 돌려주던 밤, 사무소 문틈에 끼어 있던 검은 봉투. 작은 탐정은 아침 내내 그 한 줄만 들여다보았다."],
+   ["det1","'옆 마을 달빛 종은 곧 우리 것이 된다.' {p0}, 이거 그냥 겁주는 거겠지?","nervous"],
+   ["det0","겁만 주려는 사람은 지도까지 그려 보내지 않는다. 종탑 지하에 X 표시. 와서 보라는 뜻이다."],
+   ["enter","owlgp",290,"sad"],
+   ["owlgp","…그 봉투, 나도 봤다. 은빛 마을 종지기에게 급히 편지를 띄웠다만, 편지보다 우리 걸음이 빠르겠지.","sad"],
+   ["det1","할아버지도 가세요? 무릎은요?","confused"],
+   ["owlgp","무릎은 늙었어도 날개는 아직 쓸 만하다. 허허.","happy"],
+   ["det0","사흘 뒤가 보름입니다. 그날 밤 은빛 마을에 닿도록 떠나죠."],
+   ["det1","좋아, 첫 출장이다! …근데 출장비는 누가 줘?","happy"],
+   ["det0","…쿠키로 받자."]]},"5장 출발 결심");
+  // story.md 16: 아빠 탐정의 아이 말투
+  var p1=page(b.pre,"office","떠나기 전날 밤");if(p1>=0)sub(b.pre[p1].lines,"네, 할아버지 곁에 꼭 붙어 다닐게요, 할머니.","네, 할머니. 할아버지 곁에서 떨어지지 않겠습니다.","[16] 5장 det0 말투","det0");
+ });
+
+ // =====================================================================
+ // 6장 dark — 은빛 마을에서 돌아오는 마차(밤이 합류) → 광장 → 사무소
+ // =====================================================================
+ T("6장",function(){var b=B("dark"),c=C("dark"),st=S("dark");if(!b)return;
+  insPage(b.pre,"star-square","8시 30분",{bg:"bell-street",time:"이튿날 해 질 녘 · 은빛 마을 어귀",cast:{det0:100,det1:170,owlgp:240},lines:[
+   ["narr","이튿날 해 질 녘. 마을 회의가 끝나고, 숲속 마을로 돌아가는 우편 마차가 덜컹 출발했다."],
+   ["det1","{p0}, 슬링이 그랬잖아. 숲속 마을엔 30년 동안 네로의 눈이 있다고. 그 말이 자꾸 귀에 걸려.","nervous"],
+   ["det0","나도다. 돌아가면 사무소 문단속부터 다시 하자. 열쇠 걸이도."],
+   ["narr","부엉이 할아버지는 아침부터 말이 없었다. 밤새 어딘가에 서 있었던 사람처럼 눈 밑이 까맸다."],
+   ["narr","똑, 똑. 마차 지붕에서 무언가 두드리는 소리가 났다."],
+   ["enter","bami",320,"smug"],
+   ["bami","…거꾸로 보니까 숲속 마을 가는 길도 별거 없네.","smug"],
+   ["det1","밤이?! 너 언제 탔어?","confused","shock"],
+   ["bami","편지 써서 이 마차 우편 자루에 넣었거든. '검은 망토 나타나면 나도 불러 줘.' …근데 어른들은 편지를 늦게 읽잖아. 그래서 나도 같이 왔어.","smug"],
+   ["det1","그럼 편지랑 쓴 사람이 같이 도착하는 거야?","confused"],
+   ["bami","…유치해.","shy"],
+   ["narr","고개를 넘자 숲속 마을 언덕 위 등불이 보였다. 할아버지는 그제야 조금 숨을 내쉬었다. 밤이는 '잘 데는 내가 찾아' 하고 마을 어귀 나무로 날아가 거꾸로 매달렸다."]]},"6장 돌아오는 마차");
+  // 도입 대사: BOOK에서 본 장면을 그대로 되풀이하던 첫 줄
+  if(st){sub(st.intro,"은빛 마을에서 돌아온 밤. 탐정 사무소의 열쇠 걸이가 비어 있었다.","은빛 마을에서 돌아온 그 밤. 언덕에서 다시 사무소로 내려오자, 빈 열쇠 걸이 앞에 부엉이 할아버지가 서 있었다.","6장 도입 반복 정리");
+   sub(st.intro,"마을 사람들이 사무소 앞에 모여 있었다. 처음으로, 두 탐정을 의심하는 눈으로.","마을 사람들은 아직 사무소 앞을 떠나지 않았다. 처음으로, 두 탐정을 의심하는 눈으로.","6장 도입 반복 정리2")}
+  // 후일담: 엔딩(다음 날 아침)에서 다시 그 밤으로 돌아가는 곳 + 같은 문장 반복
+  var p0=page(b.post,"dark-hill","밤 9시");
+  if(p0>=0){var L0=b.post[p0].lines;
+   ins(L0,null,[["narr","등불이 다시 켜지고 얼마 지나지 않았을 때의 일이다."]],false,"6장 후일담 시간 표시");
+   var k=-1;L0.forEach(function(l,i){if(k<0&&l[0]==="narr"&&l[1]==="네로는 망토를 두르지 않은 채 숲으로 걸어갔다. 아무도 그를 붙잡지 않았다.")k=i});
+   if(k>=0){L0[k][1]="망토 없는 등이 숲 그림자 속으로 천천히 지워졌다.";mark(L0[k],"fix");LOG.push("6장 후일담 반복 문장")}else MISS.push("6장 후일담 반복 문장: 원문 없음")}
+  var p1=page(b.post,"dark-office","새벽");
+  if(p1>=0){sub(b.post[p1].lines,"…미해결 메모 첫 장. '네로는 왜 열쇠를 등불 속에 두고 갔을까.' 이건 내가 풀 거야.","아까 적은 메모, 한 번 더 읽을래. '네로는 왜 열쇠를 등불 속에 두고 갔을까.' …이건 진짜 내가 풀 거야.","6장 메모 반복 정리+[13]","det1");
+   sub(b.post[p1].lines,"그럼 두 번째 메모는 내가 쓰지.","그럼 그다음 장은 내가 쓰지.","[13] 6장 메모 번호")}
+  var p2=page(b.post,"dark-forest","며칠 뒤");
+  if(p2>=0)sub(b.post[p2].lines,"미해결 메모 두 번째 장, 해결. 첫 번째 장은… 언젠가 직접 물어보자.","기름 메모는 해결. 열쇠 메모는… 언젠가 직접 물어보자.","[13] 6장 메모 번호2");
+  if(st)sub(st.outro,"…미해결 메모 첫 장. '네로는 왜","…미해결 메모 새 장. '네로는 왜","[13] 6장 메모 번호3");
+  if(c)rep([c],"{AG}의 미해결 메모 첫 장에는","{AG}의 미해결 메모 새 장에는","[13] 6장 엔딩 메모 번호");
+  // story.md 11, 15, 12
+  if(c)rep([c.locations],"'등불 관리 검사 통지서'. 도장이 찍혀 있지만 발신처가 없다.","'등불 관리 검사 통지서'. 동그란 흰 꽃 도장이 찍혀 있지만 발신처가 없다.","[11] 6장 루카 서류 흰 꽃 도장");
+  if(_DEB&&_DEB.dark)rep([_DEB.dark],"나비 선배랑 같이 배달했어. 근무 기록에 나비 선배 서명까지 있어!","나비랑 같이 배달했어. 근무 기록에 나비 서명까지 있어!","[15] 다람의 '나비 선배'");
+  if(_ACH)rep([_ACH],"마지막 사건을 해결했다","빛을 훔치는 자 사건을 해결했다","[12] 업적 설명");
+ });
+
+ // =====================================================================
+ // 7장 museum — 한 달 사이 → 특별전 → 정전 → 그날 밤 재판
+ // =====================================================================
+ T("7장",function(){var b=B("museum");if(!b)return;
+  var p0=page(b.pre,"museum-hall","8시 30분");
+  if(p0>=0)ins(b.pre[p0].lines,"네로가 숲으로 걸어간 지 한 달",[
+   ["narr","그 한 달 동안 사무소엔 작은 의뢰만 들어왔다. 바뀐 우산, 사라진 도토리 한 자루. 그리고 밤마다 언덕 등불에 기름 채우기."],
+   ["det1","{p0}, 특별전엔 쿠키도 준대. 사건 없는 날의 탐정은 쿠키를 먹는 거야.","happy"],
+   ["det0","그런 규칙은 처음 듣는다. …오늘만이다."]],true,"7장 한 달 사이");
+  var p1=page(b.pre,"museum-hall","9시 정각");
+  if(p1>=0)ins(b.pre[p1].lines,null,[
+   ["narr","마을 사람들은 아침까지 기다려 주지 않았다. 광장에 탁자와 의자가 끌려 나오고, 누군가 처음으로 '재판'이라는 말을 꺼냈다."],
+   ["det1","{p0}, 재판이래. 까로 아저씨 편에 서겠다는 사람이 아무도 없어.","nervous"],
+   ["det0","그럼 우리가 서자. 변호는 처음이지만, 증거를 끝까지 보는 건 늘 하던 일이다."]],true,"7장 재판으로");
+ });
+
+ // =====================================================================
+ // 8장 cart — 왜 그 밤 언덕길에 있었나 (기름 채우기)
+ // =====================================================================
+ T("8장",function(){var b=B("cart"),st=S("cart");if(!b)return;
+  var p0=page(b.pre,"cart-hillpre");
+  if(p0>=0)ins(b.pre[p0].lines,"박물관 재판에서 한 달",[
+   ["narr","두 탐정은 언덕 등불에 기름을 채우고 내려오던 길이었다. 부엉이 할아버지와 약속한 뒤로 하루도 거르지 않은 일이었다."],
+   ["det1","오늘도 기름 가득. 할아버지한테 보고할 거야. '측정 결과, 아주 밝음.'","happy"]],true,"8장 언덕길에 있던 이유");
+  if(st)sub(st.intro,"사고 다음 날 아침. 탐정 사무소 창가에 딱따구리 한 마리가 앉아 있다. 밤새 한 번도 두드리지 않은 채.","사고 다음 날 아침. 사무소 창가의 딱따구리는 여전히 아무것도 두드리지 않았다. 머리에 붕대를 감은 까로가 문간에 기대섰다.","8장 도입 반복 정리");
+  // story.md 3
+  if(_DEB&&_DEB.cart)rep([_DEB.cart],"그때 따닥은 언덕에서 바퀴를 두드리고 있었고.","따닥이 바퀴를 두드린 건 그보다 뒤, 8시 50분이 넘어서였고.","[3] 8장 반박 시각");
+  // 레이가 왜 숲속 마을에 있나
+  var r=_REI2.cart;if(r&&r.intro)ins(r.intro,"…또 만났네요.",[["rei","협회 의뢰로 첫 마차를 타고 왔어요. 와 보니 다친 아이가 먼저 보이더라고요.","sad"]],true,"8장 레이 등장 이유");
+ });
+
+ // =====================================================================
+ // 9장 glove — 축제 준비 → 자정 전 콩이의 호출 → 연못
+ // =====================================================================
+ T("9장",function(){var b=B("glove");if(!b)return;
+  insPage(b.pre,"glove-pond","11시 50분",{bg:"office",time:"축제 이틀 전 밤 11시 40분 · 탐정 사무소",cast:{det0:120,det1:200},lines:[
+   ["narr","따닥이 다시 창틀을 두드리기 시작하고 몇 주. 마을은 별빛 축제 준비로 들떠 있었다. 언덕 위 저택의 창문만은 늘 커튼이 쳐져 있었다."],
+   ["det1","{p0}, 하얀 장갑은 그 뒤로 조용하네. 너무 조용해.","nervous"],
+   ["det0","조용한 상대가 제일 바쁜 법이다. …그만 자자. 내일도 기름 채워야지."],
+   ["fx","쾅쾅쾅!","door"],
+   ["enter","kongi",280,"nervous"],
+   ["kongi","킁킁! 탐정님들! 꽥순이가 연못에서 수영 연습한다고 나갔는데 안 와! 엄마가 연못가를 다 뒤졌대!","nervous"],
+   ["det0","등불 챙겨라, {p1}. 연못까지 뛰자."]]},"9장 콩이의 호출");
+ });
+
+ // =====================================================================
+ // 10장 festival — 밤샘 뒤 비상 종 / 4장 '별빛 축제'와 구분
+ // =====================================================================
+ T("10장",function(){var b=B("festival");if(!b)return;
+  insPage(b.pre,"festival-square","10시",{bg:"office",time:"축제 날 아침 · 탐정 사무소",cast:{det0:120,det1:200},lines:[
+   ["narr","별빛 축제 날 아침. 꽥순을 찾느라 밤을 꼬박 새운 두 탐정은 사무소 소파에서 막 눈을 붙인 참이었다."],
+   ["narr","봄에 철새 가족을 맞던 언덕의 작은 별빛 잔치와 달리, 한 해를 마무리하는 이 별빛 축제는 숲속 마을에서 가장 큰 날이다. 이날만은 별빛 돌도 박물관을 나와 광장의 큰 등불에 들어간다."],
+   ["narr","땡, 땡, 땡. 광장 쪽에서 종이 울렸다. 축제 종이 아니라, 다급한 비상 종이었다."],
+   ["det1","{p0}… 축제 날 아침부터 비상 종이야?","nervous"],
+   ["det0","신발부터 신어라. …그건 내 신발이다."],
+   ["det1","급하니까! 광장 갔다가 바꿔 신을게!","happy"]]},"10장 비상 종 + 축제 구분[4]");
+  // story.md 7
+  var p0=page(b.post,"festival-road");
+  if(p0>=0)sub(b.post[p0].lines,"도시로 가는 4시 마차는 그를 태우지 않고 떠난 뒤였다.","도시로 가는 4시 마차는 상자도 그도 싣지 못한 채 떠난 뒤였다.","[7] 10장 4시 마차");
+ });
+
+ // =====================================================================
+ // 11장 snow — 무쇠의 편지 → 동행(까로·보리) → 할머니 → 네로 합류 → 갈림길
+ // =====================================================================
+ T("11장",function(){var b=B("snow"),st=S("snow");if(!b)return;
+  insPage(b.pre,"office","출발 전날 밤",{bg:"office",time:"축제 한 달 반 뒤 · 탐정 사무소",cast:{det0:120,det1:200},lines:[
+   ["narr","별빛 축제가 끝나고 한 달 반. 사무소 책상 위 마차 시간표엔 연필 동그라미가 아직 그대로였다."],
+   ["enter","owlgp",290,"sad"],
+   ["owlgp","산 너머에서 편지가 왔다. 옛 광산 마을의 등불지기, 무쇠라는 이가 보냈구나. 지도엔 이름도 없는 마을이다.","sad"],
+   ["det1","…지도에 없는 마을? {p0}!","nervous","shock"],
+   ["det0","'등불 관리국이 첫눈 오는 밤 우리 등불을 검사하겠다고 합니다. 도와주십시오.' …통지서가 한 장 같이 들어 있군."],
+   ["owlgp","내 무릎으론 그 고개를 못 넘는다. 까로가 우편 마차를 몰고, 보리가 짐꾼을 하겠다더구나. 눈길엔 곰이 제일이라고.","sad"],
+   ["det1","케이크 상자도 들어 주는 짐꾼이면 좋겠다.","happy"],
+   ["det0","…짐 목록에 케이크는 없다."],
+   ["exit","owlgp"]]},"11장 무쇠의 편지");
+  var pf=page(b.pre,"snow-fork");
+  if(pf>=0){ins(b.pre[pf].lines,null,[["narr","숲속 마을을 떠나던 아침, 마차 지붕엔 어느새 검은 망토가 앉아 있었다. '관리국이라는 이름이 들리면, 저도 가 봐야 합니다.' 네로가 한 말은 그것뿐이었다."]],false,"11장 네로 합류");
+   sub(b.pre[pf].lines,"네로 아저씨가 여길 어떻게…?","네로가 여길 어떻게…?","[17] 11장 호칭","det1")}
+  if(st){sub(st.intro,"첫눈 오는 밤 7시 20분. 이름 없는 마을의 갱도 등불이 꺼졌다. 언덕 위가 한순간에 캄캄해졌다.","첫눈 오는 밤 7시 30분. 꺼진 갱도 등불 둘레로 마을 사람들의 손등불이 동그랗게 모였다. 눈은 그칠 기미가 없었다.","11장 도입 반복 정리");
+   sub(st.intro,"관리 소홀. 이 등불은 규정상 폐지 대상입니다.","몇 번을 물으셔도 같습니다. 관리 소홀. 이 등불은 규정상 폐지 대상입니다.","11장 도입 반복 정리2","seori");
+   var mi=at(st.intro,"…솜이. 솜이가 없다.","musoe");if(mi>=0&&st.intro[mi][1]==="…솜이. 솜이가 없다."){st.intro[mi][1]="…솜이가 아직 없다. 데워 온 우유가 다 식었다.";mark(st.intro[mi],"fix");LOG.push("11장 도입 반복 정리3")}else MISS.push("11장 도입 반복 정리3: 원문 없음");
+   // story.md 9: 솜이는 누구 품에서 잠들었나 (후일담 9시 40분 장면과 맞춘다)
+   sub(st.outro,"솜이가 무쇠 할아버지 품에서 잠든 밤.","솜이가 곰 오빠 등에서 잠든 밤.","[9] 11장 솜이 잠든 곳")}
+  var ps=page(b.post,"snow-shelter","9시 40분");
+  if(ps>=0){var P=b.post[ps];if(P.time==="밤 9시 40분 · 광산 대피소 앞"){P.time="밤 9시 40분 · 대피소 아랫길";LOG.push("[9] 11장 후일담 장소")}
+   sub(P.lines,"대피소 앞. 솜이가 보리 등에 업힌 채 꾸벅꾸벅 졸고 있었다.","대피소에서 여관으로 내려가는 눈길. 솜이가 보리 등에 업힌 채 꾸벅꾸벅 졸고 있었다.","[9] 11장 후일담 첫 줄")}
+  // story.md 8: 30년째 비워 둔 방(네로 몫)과 엄마가 묵은 2층 끝방을 나눈다
+  if(_CHAT&&_CHAT.snow)rep([_CHAT.snow],"2층 끝방은 비워 둬요. 30년째. 누가 돌아오면 쓰라고요.","1층 끝방은 비워 둬요. 30년째. 누가 돌아오면 쓰라고요.","[8] 11장 비워 둔 방");
+ });
+
+ // =====================================================================
+ // 12장 clapper — 밤이의 편지(소인부터) → 동행(까로·따닥) → 할머니 → 도착
+ // =====================================================================
+ T("12장",function(){var b=B("clapper");if(!b)return;
+  insPage(b.pre,"clapper-stop",null,{bg:"office",time:"이름 없는 마을에서 돌아온 지 엿새 · 탐정 사무소",cast:{det0:120,det1:200},lines:[
+   ["narr","이름 없는 마을에서 돌아온 지 엿새. 작은 탐정은 하루에도 몇 번씩 엄마의 편지를 꺼내 읽고, 다시 반듯하게 접었다."],
+   ["enter","karo",290,"happy"],
+   ["karo","탐정님들, 편지요. 후후, 글씨가 이렇게 삐뚤빼뚤한 걸 보니…","happy"],
+   ["det1","밤이다! …잠깐, 소인부터 보기로 했지. 은빛 마을 우체국. 흰 꽃 도장은 없어.","nervous"],
+   ["det0","읽어 봐라."],
+   ["det1","'촌장이 이상해. 와 줘.' …밤이가 먼저 와 달라고 한 건 처음이야.","nervous"],
+   ["det0","할아버지는 겨울 무릎 때문에 이번엔 못 가신다. 둘이서 가자."],
+   ["karo","셋이요. 마차는 제가 몰게요. 따닥 씨도 따라온대요. 종탑 나무 계단은 두드려 봐야 안다나요. 후후.","happy"],
+   ["det1","그럼 넷이네. 밤이가 '유치해' 하겠다.","happy"]]},"12장 밤이의 편지");
+ });
+
+ // =====================================================================
+ // 13장 bureau — 같은 답장 주소 → 동행(까로·뭉치) → 할머니 / 후일담: 레이가 객원 탐정이 된다
+ // =====================================================================
+ T("13장",function(){var b=B("bureau"),c=C("bureau");if(!b)return;
+  insPage(b.pre,"bureau-stop",null,{bg:"office",time:"은빛 마을에서 돌아온 밤 · 탐정 사무소",cast:{det0:120,det1:200},lines:[
+   ["narr","은빛 마을에서 돌아온 밤. 사무소 책상 위에 편지 두 장이 나란히 놓였다."],
+   ["det1","이름 없는 마을 우박 아저씨가 받은 채용 편지. 그리고 뿔이 촌장님이 받은 편지. 답장 주소가… 똑같아.","nervous"],
+   ["det0","'도시 보석상 거리 7번지, 관리국 창구.' 슬링을 꺼내 간 서류도 그 이름을 달고 있었다."],
+   ["enter","karo",280,"happy"],
+   ["karo","도시행 마차는 내일 아침이에요. 후후, 이번에도 제가 몰게요.","happy"],
+   ["enter","mungchi",330,"shy"],
+   ["mungchi","…나도 타도 돼? 도시 감시소. 엄마 있는 데.","shy"],
+   ["det1","…처음 가 보는 거야?","sad"],
+   ["mungchi","감시소는 춥대. 담요 하나 사 가려고. 돈은 내가 마련할 거야. 뭐, 그렇다는 거야.","shy"]]},"13장 같은 답장 주소");
+  insPage(b.post,"festival-road","숲속 마을행 마차",{bg:"bureau-square",time:"이튿날 밤 · 시계탑 광장 정류장",cast:{det0:100,det1:170,karo:240},lines:[
+   ["narr","숲속 마을행 마차가 떠나기 직전. 정류장 벤치에 레이가 작은 가방 하나를 무릎에 올려놓고 앉아 있었다."],
+   ["enter","rei",310,"sad"],
+   ["det1","레이? 배웅 나왔어?","confused"],
+   ["rei","아니요. 협회 숙소를 비웠어요. 배지가 없으면 방도 없대요. 규정상.","sad"],
+   ["rei","…숲속 마을 사무소에 빈 책상 있어요? 창가 쪽이면 좋겠어요. 측정하기 좋게.","shy"],
+   ["det1","뭐어? 우리 사무소에서 같이 일한다고?","confused","shock"],
+   ["det0","책상은 하나 남는다. 월급은 없다. 홍차는 식은 걸로."],
+   ["rei","…객원 탐정으로 할게요. 정식 배지는 0점에서 다시 딸 거니까요.","smug"],
+   ["det1","객원이 뭔데?","confused"],
+   ["rei","손님인데 일은 하는 사람이요. 잠은 따로 구할게요. 책상만 빌려요.","smug"],
+   ["karo","후후, 승객 한 분 추가요. 짐은 가방 하나, 홍차 병 하나.","happy"],
+   ["narr","레이는 마차 맨 뒷자리에 앉자마자 수첩을 펴더니, 숲속 마을에 닿을 때까지 한 번도 고개를 들지 않았다."]]},"13장 레이 객원 탐정");
+  // story.md 2: 편지가 탄 시각
+  if(c&&c.timeline){var e=null;c.timeline.forEach(function(x){if(x&&x.t==="저녁 7:35~7:45")e=x});
+   if(e){e.t="저녁 7:00~7:45";e.s=1903;var a="뒷방 난로에서 편지 수백 통이 봉투째 탐. 금고가 번호로 열리고 돈은 그대로";
+    if(e.txt===a)e.txt="뒷방 난로에서 편지 수백 통이 봉투째 탐. 7시 35분쯤 금고가 번호로 열리고 돈은 그대로";else MISS.push("[2] 13장 타임라인 문장: 원문 다름");
+    if(c.timeline.sort)c.timeline.sort(function(x,y){return x.s-y.s});LOG.push("[2] 13장 타임라인 시각")}else MISS.push("[2] 13장 타임라인: 원문 없음")}
+  if(c&&c.recon)rep([c.recon],"편지는 봉투째 불 속으로 들어갔다.","마지막 편지 묶음까지 봉투째 불 속으로 들어갔다.","[2] 13장 재구성 문장");
+  // story.md 5: 11장 비밀 공간에서 이미 본 이름 (getter 결과만 바꾼다)
+  T("[5] 13장 비밀 공간",function(){var sc=_SECRET&&_SECRET.bureau;if(!sc)return MISS.push("[5] SECRET.bureau 없음");
+   var d=Object.getOwnPropertyDescriptor(sc,"outro");var A="초롱… 처음 듣는 이름이야.",Bt="초롱… 어디서 본 이름 같아.";
+   function fix(L){return (L||[]).map(function(l){if(Array.isArray(l)&&typeof l[1]==="string"&&l[1].indexOf(A)>=0){l=l.slice();l[1]=l[1].split(A).join(Bt)}return l})}
+   if(d&&d.get){var g=d.get;Object.defineProperty(sc,"outro",{enumerable:true,configurable:true,get:function(){return fix(g.call(this))}});LOG.push("[5] 13장 비밀 공간 '초롱'")}
+   else if(Array.isArray(sc.outro)){sc.outro=fix(sc.outro);LOG.push("[5] 13장 비밀 공간 '초롱'")}});
+ });
+
+ // =====================================================================
+ // 14장 lining — 열흘 사이(객원 레이) → 그 밤 / story.md 1
+ // =====================================================================
+ T("14장",function(){var b=B("lining"),c=C("lining"),st=S("lining");if(!b)return;
+  insPage(b.pre,"lining-basement","11시 30분",{bg:"office",time:"동지 사흘 전 저녁 · 탐정 사무소",cast:{det0:100,det1:170,rei:270},lines:[
+   ["narr","도시에서 돌아오고 열흘 가까이. 사무소 창가 책상엔 레이가 붙인 종이 팻말 하나가 생겼다. '객원.'"],
+   ["rei","창가 등잔 밝기, 어제보다 3퍼센트 어두워요. 심지 갈아요, 시골 탐정.","smug"],
+   ["det1","여기 내 사무소거든! …심지는 갈게.","angry"],
+   ["det0","열흘 만에 규칙이 하나 늘었군. 레이 말은 일단 재 보고 따지기."],
+   ["rei","신문은 '등불 관리국장 체포'래요. 마을 사람들도 다 끝났다고 하고요. 그런데 끝난 사건치고는 숫자가 안 맞아요.","nervous"],
+   ["narr","그날 밤 10시 반이 다 되어 갈 무렵. 언덕 돌계단 쪽에서 부리의 다급한 부엉 소리가 들려왔다."]]},"14장 열흘 사이");
+  if(st){sub(st.intro,"끝나긴 뭐가 끝나! 국장은 잡혔어도 오른팔이 남았지! 관리국 서류 들고 다니던 그 검은 망토! 내 말이 맞지?!","끝나긴 뭐가 끝나! 몇 번을 말해! 국장은 잡혔어도 오른팔, 관리국 서류 들고 다니던 그 검은 망토가 남았다니까! 내 말이 맞지?!","14장 도입 반복 정리","wanggu");
+   sub(st.intro,"부엉… 할아버지가 정신을 잃기 전에 한 말은 하나였어요. '…검은 망토.'","부엉… 몇 번을 떠올려 봐도, 할아버지가 정신을 잃기 전에 한 말은 그것 하나였어요. '…검은 망토.'","14장 도입 반복 정리2","buri")}
+  // story.md 1: 슬링은 5장 원탁회의에서 부엉이 할아버지와 마주쳤다 (BAIT 앞부분 '부엉이 영감은 만난' 유지)
+  if(c)rep([c.talk],"부엉이 영감은 만난 적도 없소. 이름이야 들었지. 은빛 마을 종탑 이야기엔 늘 그 영감이 나오니까.","부엉이 영감은 만난 지 오래요. 은빛 마을 회의에서 한 번 본 게 다지. 오늘 밤엔 그림자도 못 봤소.","[1] 14장 슬링 진술(talk)");
+  var bl=_BATTLE&&_BATTLE.lining&&_BATTLE.lining[2],s0=bl&&bl.stm&&bl.stm[0];
+  if(s0){if(s0.t==="부엉이 영감은 만난 적도 없소."){s0.t="부엉이 영감은 만난 지 오래요. 오늘 밤엔 본 적도 없소.";LOG.push("[1] 14장 대결 진술")}else MISS.push("[1] 14장 대결 진술: 원문 다름");
+   if(s0.p==="이름만 들었지. 얼굴은 모르오."){s0.p="은빛 마을 회의 뒤로는 얼굴 한 번 못 봤소.";LOG.push("[1] 14장 대결 추궁")}else MISS.push("[1] 14장 대결 추궁: 원문 다름");
+   if(s0.rev&&typeof s0.rev.q==="string"&&s0.rev.q.indexOf("만난 적이 없다고요?")===0){s0.rev.q=s0.rev.q.replace("만난 적이 없다고요?","오늘 밤엔 못 보셨다고요?");LOG.push("[1] 14장 대결 질문")}else MISS.push("[1] 14장 대결 질문: 원문 다름")}
+  else MISS.push("[1] BATTLE.lining[2] 없음");
+  if(c)rep([c.solution],"할아버지를 만난 적도 없다던","오늘 밤 할아버지를 본 적도 없다던","[1] 14장 해답");
+  if(_THINK&&typeof _THINK.e14_lens==="string"){if(_THINK.e14_lens.indexOf("할아버지를 만난 적도 없다는 사람이")>=0){_THINK.e14_lens=_THINK.e14_lens.split("할아버지를 만난 적도 없다는 사람이").join("오늘 밤 할아버지를 못 봤다는 사람이");LOG.push("[1] 14장 THINK")}else MISS.push("[1] 14장 THINK: 원문 없음")}
+ });
+
+ // =====================================================================
+ // 15장 kitchen — 이틀 사이 / 도입 반복 / story.md 6
+ // =====================================================================
+ T("15장",function(){var b=B("kitchen"),c=C("kitchen"),st=S("kitchen");if(!b)return;
+  var p0=page(b.pre,"kitchen-officeam");
+  if(p0>=0)ins(b.pre[p0].lines,"동짓날. 1년 중 밤이 가장 긴 날.",[["narr","네로가 철창에서 나오고 이틀. 할아버지 날개엔 아직 붕대가 감겨 있었고, 언덕 등불 심지는 마을 회의에서 그 일을 맡은 왕구가 투덜대며 새로 갈았다."]],false,"15장 이틀 사이");
+  if(st){sub(st.intro,"동짓날 오후 5시. 해가 산 너머로 넘어가기 직전, 언덕 등불의 받침은 비어 있었다.","동짓날 저녁. 할아버지 댁에서 다시 언덕으로 올라오니, 빈 등불 받침 위로 눈이 얇게 쌓이고 있었다.","15장 도입 시간 되돌림 정리");
+   var wi=at(st.intro,"자물쇠에 스라소니 털! 또 네로다!","wanggu");
+   if(wi>=0){st.intro[wi][1]="그래도 털은 털이지! 또 네로… …아, 아니. 알아, 직접 본 건 아니야. 이번엔 끝까지 안 외칠게.";st.intro[wi][2]="nervous";mark(st.intro[wi],"fix");LOG.push("15장 도입 반복 정리(왕구)")}else MISS.push("15장 도입 반복 정리(왕구): 원문 없음");
+   sub(st.intro,"밤 9시에 도시 우편 마차가 눈길 고개를 넘어와요. 언덕 등불 하나 보고 내려오는 길이에요.","우체국에서 확인했어요. 9시 도시 우편 마차, 오늘도 언덕 등불 하나 보고 눈길 고개를 넘어온대요.","15장 도입 반복 정리(까로)","karo")}
+  if(c)rep([c.talk],"은빛 마을에서 마차로 꼬박 하루.","눈길이라 은빛 마을에서 마차로 꼬박 하루.","[6] 15장 은빛 마을 거리");
+ });
+
+ // =====================================================================
+ // 그 밖의 story.md 하 항목 (대사·문장만)
+ // =====================================================================
+ T("[10] 4장 부리 연극",function(){if(_CHAT&&_CHAT.star)rep([_CHAT.star],"우리 손자 부리가 다음 연극에선 왕을 한다는구나. 매일 거울 앞에서 연습한단다. 허허.","우리 손자 부리가 다음 연극에서도 소품 담당을 하겠다는구나. 이번엔 하나도 안 잃어버리겠다고. 허허.","[10] 4장 부리 연극")});
+ T("[20] 4장 추리 문장",function(){if(_DEDUCE&&typeof _DEDUCE.star==="string"){if(_DEDUCE.star.indexOf("1장의 초대장이 끼었던 건")>=0){_DEDUCE.star=_DEDUCE.star.split("1장의 초대장이 끼었던 건").join("나비 초대장이 끼었던 건");LOG.push("[20] 4장 추리 문장")}else MISS.push("[20] 4장 추리 문장: 원문 없음")}else if(_DEDUCE&&_DEDUCE.star)rep([_DEDUCE.star],"1장의 초대장이 끼었던 건","나비 초대장이 끼었던 건","[20] 4장 추리 문장")});
+ T("[14] 까로 호칭",function(){var M=_MEETX||{};
+  [["cart","까로, 머리는 좀 어때? 박물관 재판 때보다 얼굴이 더 하얘.","까로 아저씨, 머리는 좀 어때요? 박물관 재판 때보다 얼굴이 더 하얘요."],
+   ["glove","까로, 머리는 이제 괜찮아? 우편 마차 일 뒤로.","까로 아저씨, 머리는 이제 괜찮아요? 우편 마차 일 뒤로."],
+   ["festival","까로, 어젯밤엔 백 부인 모시고 가느라 고생했지.","까로 아저씨, 어젯밤엔 백 부인 모시고 가느라 고생했죠."],
+   ["snow","까로, 우린 증거 없이 안 믿어. 그러니까 증거 없이 의심도 안 해.","까로 아저씨, 우린 증거 없이 안 믿어요. 그러니까 증거 없이 의심도 안 해요."],
+   ["clapper","까로, 마차 모느라 고생했어. 오늘은 우리 옆에 붙어 있어.","까로 아저씨, 마차 모느라 고생했어요. 오늘은 우리 옆에 붙어 있어요."],
+   ["lining","까로, 여기서 뭐 해?","까로 아저씨, 여기서 뭐 해요?"]].forEach(function(x){
+    var L=M[x[0]]&&M[x[0]].karo,i=-1;(L||[]).forEach(function(l,k){if(Array.isArray(l)&&l[0]==="det1"&&l[1]===x[1])i=k});
+    if(i>=0){L[i][1]=x[2];mark(L[i],"fix");LOG.push("[14] 까로 호칭 "+x[0])}else MISS.push("[14] 까로 호칭 "+x[0]+": 원문 없음")});
+  if(_DEB&&_DEB.snow)rep([_DEB.snow],"까로, 조금만 기다려! 딱, 딱 소리가 간 쪽을 보고 올게!","까로 아저씨, 조금만 기다려요! 딱, 딱 소리가 간 쪽을 보고 올게요!","[14] 까로 호칭 snow 원탁");
+ });
+
+ if(MISS.length&&window.console)console.warn("[story144] 적용 못 한 항목",MISS);
+})();
+
+/* v144: 소리 전면 보강 — 화면별 BGM 디렉터 · 원탁 회의 전용 테마 · 웅성웅성 군중 소리 · 효과음 정리
+   외부 파일 없이 Web Audio 합성만 사용. 메인 IIFE 안(ux142.js·fixqa_engine.js 뒤)에 붙여야 한다(bgm/SFX/S/G 클로저 접근).
+   디버그: window.__AUD = {cur, want, hush, stats:{made,live,ended,voices}, songs(), render(key,secs)} */
+(function(){
+ if(typeof SFX==="undefined"||typeof bgm!=="function")return;
+ var A=window.__AUD={ver:"144",cur:null,want:null,hush:null,exp:null,duck:1,stats:{made:0,live:0,ended:0,voices:0,inst:0},log:[],sfx:[]};
+ function lg(s){A.log.push((Date.now()%100000)+" "+s);if(A.log.length>80)A.log.shift()}
+ function q(s){return document.querySelector(s)}
+
+ // ---------------- 0) 첫 입력 전에는 AudioContext를 만들지 않는다 ----------------
+ var GEST=false;
+ ["pointerdown","touchstart","touchend","mousedown","keydown","click"].forEach(function(t){window.addEventListener(t,function(){GEST=true},true)});
+ function hasGest(){if(GEST)return true;try{if(navigator.userActivation&&navigator.userActivation.hasBeenActive)return true}catch(e){}return false}
+ var _ac=ac;ac=function(){if(A.ovr)return A.ovr;if(!AC&&!hasGest())return null;if(document.hidden&&AC&&AC.state!=="running")return null;return _ac.apply(this,arguments)};
+ function live(){if(!S.sound)return null;var a=ac();return a||null}
+
+ // ---------------- 1) 음량 설정 (선택: localStorage daae:musvol / daae:sfxvol 0~1) ----------------
+ var MUSV=1,SFXV=1;
+ try{var v1=parseFloat(localStorage.getItem("daae:musvol"));if(v1>=0&&v1<=1)MUSV=v1;var v2=parseFloat(localStorage.getItem("daae:sfxvol"));if(v2>=0&&v2<=1)SFXV=v2}catch(e){}
+ var MBASE=.16;
+ A.setVol=function(m,s){if(m!=null)MUSV=Math.max(0,Math.min(1,+m));if(s!=null)SFXV=Math.max(0,Math.min(1,+s));try{localStorage.setItem("daae:musvol",MUSV);localStorage.setItem("daae:sfxvol",SFXV)}catch(e){}if(SFXG&&AC)try{SFXG.gain.setTargetAtTime(.42*SFXV,AC.currentTime,.05)}catch(e){}duckNow(true)};
+
+ // ---------------- 2) 합성 도구 ----------------
+ function mf(n){return 440*Math.pow(2,(n-69)/12)}
+ var WH={clar:[0,1,0,.42,0,.22,0,.12,0,.06],ep:[0,1,.3,.09,.05,.02],organ:[0,1,.55,.3,.18,0,.1,0,.06],reed:[0,1,.65,.5,.34,.24,.17,.11,.07],kalimba:[0,1,0,0,.18,0,0,0,.05]};
+ function RS(ctx){if(ctx.__a144)return ctx.__a144;var n=ctx.sampleRate,b=ctx.createBuffer(1,n,n),d=b.getChannelData(0);for(var i=0;i<n;i++)d[i]=Math.random()*2-1;ctx.__a144={noise:b,waves:{}};return ctx.__a144}
+ function pwave(ctx,k){var r=RS(ctx);if(r.waves[k])return r.waves[k];var H=WH[k],re=new Float32Array(H.length),im=new Float32Array(H.length);for(var i=0;i<H.length;i++)im[i]=H[i];return r.waves[k]=ctx.createPeriodicWave(re,im)}
+ var LIVE=A.liveSet=new Set();function track(src,nodes){var st=A.stats;LIVE.add(src);src.__t=Date.now();st.made+=nodes.length;st.live+=nodes.length;st.voices++;
+  src.onended=function(){for(var i=0;i<nodes.length;i++){try{nodes[i].disconnect()}catch(e){}}st.live-=nodes.length;st.ended+=nodes.length;st.voices--;src.onended=null;LIVE.delete(src)}}
+ // 노이즈 한 방
+ function nz(ctx,dest,t,dur,vol,type,f0,f1,qv,att){
+  var s=ctx.createBufferSource();s.buffer=RS(ctx).noise;var f=ctx.createBiquadFilter();f.type=type||"lowpass";f.frequency.setValueAtTime(f0||1200,t);if(qv)f.Q.value=qv;
+  if(f1)f.frequency.exponentialRampToValueAtTime(f1,t+dur);var g=ctx.createGain();
+  if(att){g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+att)}else g.gain.setValueAtTime(vol,t);
+  g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(f);f.connect(g);g.connect(dest);s.loop=true;s.start(t,Math.random()*.5);s.stop(t+dur+.02);track(s,[s,f,g])}
+ // 단순 톤
+ function tn(ctx,dest,t,f,dur,type,vol,to,att){
+  var o=ctx.createOscillator(),g=ctx.createGain();o.type=type||"sine";o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+dur);
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+(att||.006));g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  o.connect(g);g.connect(dest);o.start(t);o.stop(t+dur+.03);track(o,[o,g])}
+
+ // 악기 정의: env "pl"=타악/뜯는 소리(dec), "sus"=지속음(a,r)
+ var INS={
+  pluck:{w:"triangle",env:"pl",dec:.38},
+  pizz:{w:"triangle",env:"pl",dec:.22,lp:2400},
+  bell:{w:"sine",env:"pl",dec:1.3,p2:[3.01,.22],wet:1},
+  mbox:{w:"sine",env:"pl",dec:.95,p2:[4.0,.2],wet:1},
+  vibe:{w:"sine",env:"pl",dec:1.5,p2:[4.0,.12],wet:1},
+  marimba:{w:"sine",env:"pl",dec:.34,p2:[3.93,.28]},
+  kal:{pw:"kalimba",env:"pl",dec:.7,wet:1},
+  ep:{pw:"ep",env:"pl",dec:1.2,wet:1},
+  clar:{pw:"clar",env:"sus",a:.03,r:.14,lp:2700},
+  flute:{w:"sine",env:"sus",a:.05,r:.16,p2:[2,.14],wet:1},
+  brass:{w:"sawtooth",env:"sus",a:.035,r:.14,lpEnv:[600,2900,1300],det:7},
+  saw:{w:"sawtooth",env:"sus",a:.01,r:.08,lp:2300,det:8},
+  square:{w:"square",env:"sus",a:.005,r:.06,lp:2500},
+  chip:{w:"square",env:"sus",a:.002,r:.03,lp:5200},
+  string:{w:"sawtooth",env:"sus",a:.1,r:.3,lp:1800,det:6,wet:1},
+  stac:{w:"sawtooth",env:"pl",dec:.13,lp:2600},
+  reed:{pw:"reed",env:"sus",a:.02,r:.1,lp:1900},
+  organ:{pw:"organ",env:"sus",a:.02,r:.12},
+  glass:{w:"sine",env:"sus",a:.22,r:.7,p2:[2,.28],wet:1},
+  tri:{w:"triangle",env:"sus",a:.02,r:.12},
+  sub:{w:"sine",env:"sus",a:.01,r:.1,k:.45},
+  bpl:{w:"triangle",env:"pl",dec:.45},
+  bsyn:{w:"sawtooth",env:"pl",dec:.24,lpEnv:[180,1500,260],q:4},
+  bsq:{w:"square",env:"sus",a:.005,r:.05,lp:520},
+  pad:{w:"sawtooth",env:"sus",a:.45,r:.8,lp:1050,det:9,wet:1},
+  warm:{w:"triangle",env:"sus",a:.35,r:.7},
+  choir:{w:"sawtooth",env:"sus",a:.35,r:.6,formant:[700,1150],det:6,wet:1}
+ };
+ function voice(ctx,dest,wet,ins,f,t,d,v){
+  var I=INS[ins]||INS.pluck,nodes=[],o=ctx.createOscillator();if(I.k)v*=I.k;
+  if(I.pw)o.setPeriodicWave(pwave(ctx,I.pw));else o.type=I.w||"sine";
+  o.frequency.setValueAtTime(f,t);
+  var g=ctx.createGain(),inp=g;nodes.push(o,g);
+  if(I.formant){var b1=ctx.createBiquadFilter(),b2=ctx.createBiquadFilter();b1.type=b2.type="bandpass";b1.frequency.value=I.formant[0];b2.frequency.value=I.formant[1];b1.Q.value=5;b2.Q.value=7;b1.connect(g);b2.connect(g);nodes.push(b1,b2);
+   inp={connect:function(){},_b:[b1,b2]};}
+  var fl=null;
+  if(I.lp||I.lpEnv){fl=ctx.createBiquadFilter();fl.type="lowpass";fl.Q.value=I.q||.7;
+   if(I.lpEnv){fl.frequency.setValueAtTime(I.lpEnv[0],t);fl.frequency.linearRampToValueAtTime(I.lpEnv[1],t+.03);fl.frequency.exponentialRampToValueAtTime(I.lpEnv[2],t+Math.max(.09,Math.min(d,.6)*.8))}else fl.frequency.value=I.lp;
+   fl.connect(g);nodes.push(fl)}
+  function link(src){if(fl)src.connect(fl);else if(I.formant){src.connect(inp._b[0]);src.connect(inp._b[1])}else src.connect(g)}
+  link(o);
+  var o2=null;
+  if(I.det){o2=ctx.createOscillator();if(I.pw)o2.setPeriodicWave(pwave(ctx,I.pw));else o2.type=I.w;o2.frequency.setValueAtTime(f,t);o2.detune.value=I.det;link(o2);nodes.push(o2)}
+  else if(I.p2){o2=ctx.createOscillator();o2.type="sine";o2.frequency.setValueAtTime(f*I.p2[0],t);var g2=ctx.createGain();g2.gain.value=I.p2[1];o2.connect(g2);g2.connect(g);nodes.push(o2,g2)}
+  var end;
+  if(I.env==="pl"){var dec=I.dec*(d>.6?1.25:1);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.005);g.gain.exponentialRampToValueAtTime(.0001,t+dec);end=t+dec}
+  else{var a=Math.min(I.a,d*.6+.005),hold=Math.max(a+.01,d);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+a);g.gain.setValueAtTime(v,t+hold);g.gain.exponentialRampToValueAtTime(.0001,t+hold+I.r);end=t+hold+I.r}
+  g.connect(dest);if(wet&&I.wet)g.connect(wet);
+  o.start(t);o.stop(end+.02);if(o2){o2.start(t);o2.stop(end+.02)}
+  track(o,nodes)}
+ // 드럼 키트
+ function drum(ctx,dest,ch,t,v){
+  var acc=ch!==ch.toLowerCase();if(acc){ch=ch.toLowerCase();v*=1.45}
+  switch(ch){
+   case "k":tn(ctx,dest,t,150,.22,"sine",v*.95,44,.003);nz(ctx,dest,t,.025,v*.18,"lowpass",2500);break;
+   case "s":nz(ctx,dest,t,.15,v*.42,"highpass",1500);tn(ctx,dest,t,195,.09,"triangle",v*.28,140);break;
+   case "c":for(var i=0;i<3;i++)nz(ctx,dest,t+i*.011,.03,v*.34,"bandpass",1250,0,1.2);nz(ctx,dest,t+.033,.14,v*.3,"bandpass",1150,0,1.1);break;
+   case "h":nz(ctx,dest,t,.038,v*.17,"highpass",7200);break;
+   case "o":nz(ctx,dest,t,.24,v*.13,"highpass",6200);break;
+   case "r":tn(ctx,dest,t,1750,.03,"square",v*.08);nz(ctx,dest,t,.025,v*.22,"bandpass",2600,0,2);break;
+   case "t":tn(ctx,dest,t,135,.28,"sine",v*.7,85);break;
+   case "m":tn(ctx,dest,t,205,.22,"sine",v*.6,140);break;
+   case "x":nz(ctx,dest,t,.07,v*.13,"bandpass",6400,0,.9,.012);break;
+   case "p":tn(ctx,dest,t,1180,.06,"triangle",v*.32,1050,.002);nz(ctx,dest,t,.015,v*.12,"bandpass",3000,0,3);break;
+   case "b":tn(ctx,dest,t,800,.22,"square",v*.06);tn(ctx,dest,t,540,.22,"square",v*.06);break;
+   case "j":nz(ctx,dest,t,.16,v*.12,"bandpass",9000,0,2.5,.01);tn(ctx,dest,t+.01,5274,.09,"sine",v*.025);break;
+   case "d":tn(ctx,dest,t,72,.7,"sine",v*.75,64,.004);tn(ctx,dest,t,144,.35,"triangle",v*.15,128);break;
+   case "g":nz(ctx,dest,t,1.3,v*.2,"highpass",4200);break;
+   case "q":tn(ctx,dest,t,2400,.018,"sine",v*.16,0,.001);break;
+   case "w":tn(ctx,dest,t,1700,.018,"sine",v*.13,0,.001);break;
+   case "u":tn(ctx,dest,t,62,.16,"sine",v*.9,44,.004);break;
+  }}
+
+ // ---------------- 3) 악보 해석 ----------------
+ var PC={C:0,D:2,E:4,F:5,G:7,A:9,B:11};
+ var QL={"":[0,4,7],m:[0,3,7],"7":[0,4,7,10],m7:[0,3,7,10],M7:[0,4,7,11],dim:[0,3,6],dim7:[0,3,6,9],aug:[0,4,8],sus4:[0,5,7],sus2:[0,2,7],add9:[0,4,7,14],madd9:[0,3,7,14],"6":[0,4,7,9],m6:[0,3,7,9],m9:[0,3,7,10,14],"9":[0,4,7,10,14],"7sus4":[0,5,7,10],"5":[0,7,12]};
+ function pcOf(s){return (PC[s[0]]+(s[1]==="#"?1:s[1]==="b"?-1:0)+12)%12}
+ function chordP(s){var m=/^([A-G][#b]?)([^/]*)(?:\/([A-G][#b]?))?$/.exec(s);if(!m)return {r:0,iv:[0,4,7],b:0};var r=pcOf(m[1]);return {r:r,iv:QL[m[2]]||QL[""],b:m[3]?pcOf(m[3]):r}}
+ function nn(s){var m=/^([A-G][#b]?)(-?\d)$/.exec(s);if(!m)return null;return 12*(+m[2]+1)+pcOf(m[1])}
+ function mparse(str,mr){var tk=String(str).split(/\s+/).filter(function(x){return x&&x!=="|"}),ev={};
+  for(var i=0;i<tk.length;i++){var x=tk[i];if(x==="."||x==="_")continue;var n=nn(x);if(n==null)continue;var j=i+1;while(j<tk.length&&tk[j]==="_")j++;ev[i*mr]=[n,(j-i)*mr]}
+  return {ev:ev,len:Math.max(1,tk.length*mr)}}
+ function tparse(str,mr){var tk=String(str).split(/\s+/).filter(function(x){return x&&x!=="|"}),ev={};
+  for(var i=0;i<tk.length;i++){var x=tk[i];if(x==="."||x==="_")continue;var j=i+1;while(j<tk.length&&tk[j]==="_")j++;ev[i*mr]=[x,(j-i)*mr]}
+  return {ev:ev,len:Math.max(1,tk.length*mr)}}
+ function degree(ch,tok,base){
+  var root=base+((ch.r-base%12+24)%12),bass=base+((ch.b-base%12+24)%12),iv=ch.iv;
+  switch(tok){case "1":return bass;case "R":return root;case "3":return root+iv[1];case "5":return root+iv[2];case "7":return root+(iv[3]!=null&&iv[3]<12?iv[3]:12);
+   case "8":return root+12;case "L":return root+iv[2]-12;case "9":return root+14;case "10":return root+12+iv[1];case "12":return root+12+iv[2];case "2":return root+2;case "4":return root+5;case "6":return root+9}
+  return null}
+ function prep(s){if(s._p)return s;var spb=s.spb||16,mr=s.mr||2;s._p=true;s._spb=spb;
+  s._prog=(s.prog||["C"]).map(function(b){var parts=String(b).split(/\s*,\s*|\s+/);return parts.map(chordP)});
+  (s.mel||[]).forEach(function(L){L.p=L.abs||mparse(L.n,L.mr||mr)});
+  if(s.bass)s.bass.p=s.bass.abs||tparse(s.bass.n,s.bass.mr||mr);
+  if(s.arp)s.arp.p=tparse(s.arp.n,s.arp.r||1);
+  if(s.comp)s.comp.p=tparse(s.comp.n,1);
+  s._dr=(s.dr||[]).map(function(x){return x});
+  return s}
+ function chordAt(s,st){var spb=s._spb,bar=Math.floor(st/spb),parts=s._prog[bar%s._prog.length],k=Math.min(parts.length-1,Math.floor((st%spb)/(spb/parts.length)));return parts[k]}
+ function chordStart(s,st){var spb=s._spb,parts=s._prog[Math.floor(st/spb)%s._prog.length],seg=spb/parts.length;return (st%spb)%seg===0}
+
+ // ---------------- 4) 곡 목록 ----------------
+ // mel:[{n:"악보",i:악기,v:음량,o:옥타브이동,leg:길이배율}], bass:{n:"1 . 5 .",i,v,o(기준 midi)}, arp:{n:"1 5 8 5",r:간격,i,v,o}, pad:{i,v,o}, comp:{n:"x...",i,v,o}, dr:["k...","..s."], fx:"clock|wind|drone|heart"
+ var SONGS={
+  title:{bpm:112,sw:.16,vol:1,prog:["Dm","Dm","Gm","A7","Dm","Bb","Gm A7","Dm"],
+   mel:[{n:"D5 _ F5 A5 _ G5 F5 E5 | D5 _ _ A4 D5 E5 F5 _ | G5 _ Bb5 _ A5 G5 F5 E5 | E5 _ C#5 _ A4 _ . . | D5 _ F5 A5 _ D6 C6 A5 | Bb5 _ A5 G5 F5 _ D5 _ | G5 F5 E5 D5 C#5 _ E5 _ | D5 _ _ _ . A4 D5 .",i:"clar",v:.34},
+        {n:". . . . . . . . | . . . . . . A5 . | . . . . . . . . | . . . . C#6 . E6 . | . . . . . . . . | . . . . . . F6 . | . . . . . . . . | . . . . D6 . . .",i:"bell",v:.16}],
+   bass:{n:"1 . 5 . 8 . 5 .",i:"bpl",v:.7,o:38},pad:{i:"string",v:.07,o:57},
+   dr:["k.......k.....k.","....r.......r...","x.x.x.x.x.x.x.x."],echo:.18},
+  board:{bpm:90,sw:.22,vol:1,prog:["FM7","Em7 A7","Dm7","Cm7 F7","BbM7","Bbm6","Am7 D7","Gm7 C7"],
+   mel:[{n:"A5 _ _ G5 A5 C6 _ . | G5 _ E5 _ C#5 _ E5 . | F5 _ _ E5 F5 A5 _ D5 | Eb5 _ D5 C5 A4 _ . . | D5 _ F5 A5 _ G5 F5 D5 | Db5 _ _ C5 Bb4 _ G4 . | C5 _ E5 G5 F#5 _ A5 . | G5 _ F5 E5 . C5 _ .",i:"vibe",v:.3}],
+   bass:{n:"1 . . 5 8 . 5 .",i:"bpl",v:.62,o:36},comp:{n:"..x.....x.x.....",i:"ep",v:.1,o:58},
+   dr:["k.....k...k.....","....r.......r...","h.h.h.h.h.h.h.h."],fx:"clock",echo:.22},
+  inv_day:{bpm:104,vol:1,prog:["Am","Am","Dm","E","Am","F","Dm E","Am"],
+   mel:[{n:"A4 . C5 . E5 . D5 C5 | B4 . A4 . G#4 . A4 . | D5 . F5 . A5 . G5 F5 | E5 . G#4 . B4 . E5 . | A5 . E5 . C5 . A4 . | F5 . E5 . D5 . C5 . | D5 . F5 . E5 . G#5 . | A5 _ . . . . . .",i:"pizz",v:.5},
+        {n:". . . . . . . . | . . . . . . . . | . . . . . . . . | . . . . . . . . | . . . . . . . . | . . . . . . . . | . . . . . . . . | . . . . E6 . A6 .",i:"bell",v:.12}],
+   bass:{n:"1 . . . 5 . . .",i:"bsq",v:.55,o:33},
+   dr:["k.......k.......","..p...p...p...pp","x...x...x...x..."],echo:.1},
+  inv_room:{bpm:96,spb:12,vol:1,prog:["G","Em","C","D","G","Bm","C","D7"],
+   mel:[{n:"B5 _ D6 _ B5 A5 | G5 _ _ _ E5 _ | E5 _ G5 _ E5 D5 | F#5 _ _ _ A5 _ | B5 _ D6 _ G6 F#6 | F#6 _ D6 _ B5 _ | C6 _ B5 _ A5 G5 | A5 _ _ _ . .",i:"mbox",v:.3}],
+   bass:{n:"1 _ 5 _ 8 _",i:"sub",v:.42,o:36},pad:{i:"warm",v:.08,o:55},
+   dr:["............","....x.......x"],fx:"clock",echo:.25},
+  inv_night:{bpm:76,vol:1,prog:["Em","CM7","Am7","B7","Em","G","Am C","B7"],
+   mel:[{n:"B5 _ _ _ G5 _ E5 _ | E5 _ _ _ D5 _ B4 _ | C5 _ E5 _ A5 _ G5 _ | F#5 _ _ _ D#5 _ _ _ | E5 _ G5 _ B5 _ E6 _ | D6 _ _ B5 _ _ G5 _ | A5 _ C6 _ E6 _ D6 _ | D#6 _ _ _ _ _ . .",i:"kal",v:.3}],
+   arp:{n:"1 5 8 10 8 5 . .",r:2,i:"pluck",v:.1,o:52},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.45,o:36},pad:{i:"glass",v:.05,o:60},
+   dr:["k...............","..........t....."],echo:.3},
+  inv_cellar:{bpm:70,vol:1,prog:["Am","Bb","Am","E"],
+   mel:[{n:"A4 _ _ _ . . Bb4 _ | A4 _ _ _ . . . . | C5 _ B4 _ Bb4 _ A4 _ | G#4 _ _ _ _ _ . .",i:"clar",v:.26},
+        {n:". . . . . . . . | . . . . . . E6 . | . . . . . . . . | . . . . . . . F6",i:"bell",v:.08}],
+   bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.5,o:33},
+   dr:["d.......d.d.....","..............w."],fx:"drone",echo:.35},
+  inv_tense:{bpm:108,vol:1,prog:["Cm","Cm","Ab","G","Cm","Fm","Ab Bb","G"],
+   mel:[{n:"G5 _ _ _ Ab5 _ G5 _ | Eb5 _ _ _ _ _ D5 _ | C5 _ _ _ Eb5 _ D5 C5 | B4 _ _ _ D5 _ _ _ | G5 _ _ _ C6 _ Bb5 _ | Ab5 _ _ _ G5 _ F5 _ | Eb5 _ F5 _ G5 _ Ab5 _ | B5 _ _ _ _ _ . .",i:"brass",v:.17}],
+   arp:{n:"1 5 8 5",r:1,i:"stac",v:.06,o:48},bass:{n:"1 . 1 . 1 . 5 .",i:"bsq",v:.5,o:36},
+   dr:["k.....k...k.....","........s.......","h.h.h.h.h.h.h.h."],echo:.12},
+  inv_fest:{bpm:132,spb:12,vol:1,prog:["G","C","G","D","G","C","Em D","G"],
+   mel:[{n:"D5 G5 A5 B5 _ G5 | E5 _ G5 C6 _ B5 | A5 G5 F#5 G5 _ D5 | F#5 A5 D6 A5 _ F#5 | B5 _ D6 G6 _ F#6 | E6 _ D6 C6 B5 A5 | G5 _ B5 A5 _ F#5 | G5 _ _ . . .",i:"flute",v:.26}],
+   bass:{n:"1 . 5 8 . 5",i:"bpl",v:.6,o:36},comp:{n:"...x.....x..",i:"reed",v:.06,o:55},
+   dr:["k.....k.....","...j.....j..","......t....."],echo:.15},
+  inv_snow:{bpm:72,vol:1,prog:["Bm","G","D","A","Bm","Em","G","F#"],
+   mel:[{n:"F#5 _ _ _ D5 _ _ _ | B5 _ _ _ A5 _ G5 _ | F#5 _ _ _ _ _ E5 _ | C#5 _ _ _ E5 _ _ _ | D6 _ _ _ C#6 _ B5 _ | G5 _ _ _ B5 _ E6 _ | D6 _ _ _ B5 _ A5 _ | A#5 _ _ _ _ _ . .",i:"bell",v:.26}],
+   arp:{n:"1 5 8 5",r:2,i:"mbox",v:.06,o:66},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.4,o:35},pad:{i:"glass",v:.06,o:57},
+   dr:["...............","j.......j......."],fx:"wind",echo:.32},
+  inv_final:{bpm:84,vol:1,prog:["Am","F","C","G","Am","F","Dm","E"],
+   mel:[{n:"E5 _ _ _ A5 _ G5 E5 | F5 _ _ _ E5 _ C5 _ | G5 _ _ _ C6 _ B5 G5 | D5 _ _ _ _ _ . . | E5 _ _ _ C6 _ B5 A5 | A5 _ _ _ G5 _ F5 _ | F5 _ E5 _ D5 _ C5 _ | B4 _ _ _ G#4 _ . .",i:"ep",v:.3}],
+   arp:{n:"1 5 8 5",r:2,i:"pluck",v:.08,o:48},bass:{n:"1 _ _ _ 5 _ _ _",i:"sub",v:.42,o:33},pad:{i:"string",v:.05,o:55},
+   dr:["k.......k.......","........r......."],fx:"clock",echo:.25},
+  talk:{bpm:108,vol:1,prog:["Bb","Gm","Eb","F","Bb","Gm","Cm F","Bb"],
+   mel:[{n:"D5 . F5 . Bb5 _ A5 . | G5 . F5 . D5 _ . . | Eb5 . G5 . Bb5 _ C6 . | A5 _ G5 . F5 _ . . | D6 . C6 . Bb5 . F5 . | G5 . A5 . Bb5 _ D5 . | C5 . Eb5 . A4 . C5 . | Bb4 _ _ . . . . .",i:"marimba",v:.42}],
+   bass:{n:"1 . 5 . 8 . 5 3",i:"bpl",v:.6,o:34},
+   dr:["k.......k.......","....r.......r..r","..x...x...x...x."],echo:.12},
+  talk_dark:{bpm:100,vol:1,prog:["Gm","Eb","Cm","D","Gm","Eb","Cm D","Gm"],
+   mel:[{n:"D5 _ . G5 . Bb5 A5 G5 | G5 _ . Eb5 . . . . | C5 _ . Eb5 . G5 F#5 G5 | F#5 _ _ _ A5 _ . . | Bb5 _ . A5 . G5 F5 D5 | Eb5 _ . G5 . Bb5 _ . | C6 _ Bb5 A5 F#5 _ A5 . | G5 _ _ _ . . . .",i:"vibe",v:.3}],
+   bass:{n:"1 . . 1 . . 5 .",i:"pizz",v:.7,o:31},pad:{i:"pad",v:.04,o:55},
+   dr:["k.........k.....","....r.......r...","h...h...h...h..."],echo:.15},
+  deduce:{bpm:96,vol:1,prog:["Em","C","G","D","Em","C","Am","B"],
+   mel:[{n:"B4 _ E5 _ G5 _ F#5 _ | E5 _ _ _ G5 _ _ _ | D5 _ G5 _ B5 _ A5 _ | F#5 _ _ _ D5 _ _ _ | B5 _ A5 _ G5 _ F#5 _ | E5 _ _ _ G5 _ C6 _ | B5 _ A5 _ G5 _ E5 _ | D#5 _ _ _ F#5 _ _ _",i:"flute",v:.2}],
+   arp:{n:"1 5 8 5",r:1,i:"pluck",v:.07,o:52},bass:{n:"1 _ _ _ _ _ 5 _",i:"sub",v:.42,o:36},
+   dr:["k.......k.......","......x.......x."],echo:.2},
+  // --- 원탁 회의: F#단조, 7/8박자 토론곡 (기존 곡들과 다른 박자·음색) ---
+  rt_talk:{bpm:92,vol:1,prog:["F#m","D","Bm","C#sus4 C#"],
+   mel:[{n:"C#5 _ _ _ F#5 _ _ _ | A5 _ _ _ F#5 _ _ _ | B5 _ _ _ D6 _ C#6 _ | B5 _ _ _ G#5 _ _ _",i:"vibe",v:.26}],
+   bass:{n:"1 1 1 1 1 1 1 1",i:"bsyn",v:.32,o:30},pad:{i:"string",v:.05,o:54},
+   dr:["k.......k.......","..........d.....","q.w.q.w.q.w.q.w."],echo:.2},
+  rt_debate:{bpm:150,spb:14,vol:1,prog:["F#m","F#m","D","E","F#m","F#m","Bm","C#"],
+   mel:[{n:"F#5 _ A5 _ C#6 B5 A5 | G#5 _ A5 _ E5 _ _ | F#5 _ A5 _ D6 C#6 A5 | B5 _ G#5 _ E5 _ _ | C#6 _ B5 _ A5 G#5 A5 | C#6 _ E6 _ F#6 _ _ | D6 _ C#6 _ B5 A5 B5 | G#5 _ E#5 _ C#5 _ _",i:"chip",v:.12},
+        {n:"F#4 _ . . . . . | E4 _ . . . . . | F#4 _ . . . . . | G#4 _ . . . . . | A4 _ . . . . . | C#5 _ . . . . . | B4 _ . . . . . | G#4 _ . . . . .",i:"brass",v:.12}],
+   bass:{n:"1 8 1 8 1 5 8",i:"bsyn",v:.42,o:30},arp:{n:"1 5 8 5 1 5 8 5 1 5 8 5 10 8",r:1,i:"stac",v:.045,o:54},
+   dr:["k...k...k.k...","....c.......c.","h.h.h.h.h.h.h.","........b....."],echo:.1},
+  rt_vote:{bpm:120,vol:1,prog:["F#m","F#m","Gm","Gm","G#m","G#m","Am","C#7"],
+   mel:[{n:"C#6 _ _ _ _ _ _ _ | D6 _ _ _ C#6 _ _ _ | D6 _ _ _ _ _ _ _ | Eb6 _ _ _ D6 _ _ _ | D#6 _ _ _ _ _ _ _ | E6 _ _ _ D#6 _ _ _ | E6 _ _ _ _ _ _ _ | E#6 _ _ _ G#5 _ _ _",i:"string",v:.09}],
+   arp:{n:"1 3 5 3",r:1,i:"stac",v:.05,o:57},bass:{n:"1 _ _ _ 1 _ _ _",i:"sub",v:.45,o:30},
+   dr:["u..u............","q.w.q.w.q.w.q.w.","..............d."],echo:.15},
+  rei_talk:{bpm:112,vol:1,prog:["Am","F","G","E"],
+   mel:[{n:"A5 _ C6 E6 _ D6 C6 _ | B5 _ C6 D6 _ E6 _ _ | F6 _ E6 D6 _ C6 B5 _ | A5 _ B5 C6 _ G#5 _ _",i:"string",v:.15},
+        {n:"A4 _ _ _ C5 _ _ _ | A4 _ _ _ C5 _ _ _ | B4 _ _ _ D5 _ _ _ | B4 _ _ _ G#4 _ _ _",i:"flute",v:.1}],
+   arp:{n:"1 5 8 10",r:2,i:"pluck",v:.08,o:52},bass:{n:"1 . 1 . 5 . 8 .",i:"bpl",v:.6,o:33},
+   dr:["k.......k.k.....","....s.......s...","..h...h...h...h."],echo:.2},
+  victory:{bpm:126,vol:1,prog:["C","F","G","C","Am","F","D7 G","C"],
+   mel:[{n:"C5 _ E5 G5 _ C6 _ G5 | A5 _ _ F5 A5 C6 _ . | B5 _ A5 G5 _ D5 _ G5 | E5 _ _ _ C5 _ . . | A5 _ C6 _ E6 _ D6 C6 | C6 _ A5 _ F5 _ A5 _ | F#5 _ A5 _ G5 _ B5 _ | C6 _ _ _ . G5 C6 .",i:"brass",v:.18}],
+   bass:{n:"1 . 5 . 1 . 5 .",i:"bpl",v:.62,o:36},comp:{n:"x...x...x...x...",i:"organ",v:.035,o:55},
+   dr:["k...k...k...k...","....s.......s.s.","h.h.h.h.h.h.h.h."],echo:.15},
+  ending:{bpm:72,vol:1,prog:["F","C/E","Dm","Bb","F/A","Gm","Bb C","F"],
+   mel:[{n:"A5 _ _ _ G5 _ F5 _ | E5 _ _ _ G5 _ C6 _ | D6 _ _ _ C6 _ A5 _ | Bb5 _ _ _ _ _ A5 G5 | A5 _ _ _ C6 _ F6 _ | D6 _ _ _ Bb5 _ G5 _ | F5 _ G5 _ Bb5 _ C6 _ | A5 _ _ _ _ _ . .",i:"flute",v:.22}],
+   arp:{n:"1 5 8 10 12 10 8 5",r:2,i:"ep",v:.07,o:48},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.4,o:33},pad:{i:"string",v:.05,o:57},echo:.3},
+  secret:{bpm:66,vol:1,prog:["EbM7","DM7","EbM7","DM7"],
+   mel:[{n:"G6 _ _ D6 _ _ Bb5 _ | F#6 _ _ _ A5 _ _ _ | G6 _ _ Bb6 _ _ D7 _ | C#7 _ _ _ _ _ . .",i:"mbox",v:.18}],
+   arp:{n:"1 3 5 7",r:2,i:"kal",v:.07,o:55},pad:{i:"choir",v:.05,o:55},fx:"drone",echo:.45},
+  story:{bpm:100,spb:12,vol:1,prog:["C","Am","F","G","C","Em","F","G7"],
+   mel:[{n:"E5 _ G5 _ C6 _ | B5 _ A5 _ E5 _ | F5 _ A5 _ C6 _ | D6 _ B5 _ G5 _ | E6 _ D6 C6 G5 _ | B5 _ G5 _ E5 _ | A5 _ C6 _ F6 _ | D6 _ _ _ . .",i:"mbox",v:.28}],
+   bass:{n:"1 _ _ _ _ _",i:"bpl",v:.55,o:36},comp:{n:"....x...x...",i:"pluck",v:.07,o:55},pad:{i:"warm",v:.05,o:57},echo:.25},
+  story_dark:{bpm:84,spb:12,vol:1,prog:["Am","Dm","E","Am","F","Dm","E","E7"],
+   mel:[{n:"A5 _ C6 _ E6 _ | D6 _ _ _ A5 _ | G#5 _ B5 _ E6 _ | C6 _ _ _ A5 _ | A5 _ C6 _ F6 _ | F6 _ E6 _ D6 _ | B5 _ _ _ G#5 _ | E5 _ _ _ . .",i:"mbox",v:.26}],
+   bass:{n:"1 _ _ _ _ _",i:"bpl",v:.55,o:33},comp:{n:"....x...x...",i:"pluck",v:.06,o:52},pad:{i:"pad",v:.035,o:52},echo:.3},
+  memory:{bpm:60,vol:1,prog:["Dmadd9","Bb","Gm","A"],
+   mel:[{n:"A5 _ _ _ E6 _ _ _ | D6 _ _ _ _ _ _ _ | Bb5 _ _ _ D6 _ _ _ | C#6 _ _ _ _ _ _ _",i:"bell",v:.18}],
+   pad:{i:"glass",v:.07,o:55},fx:"clock",echo:.45}
+ };
+ // 곡별 음량(오프라인 렌더로 맞춤: 저역 제외 RMS 기준 조사곡 약 -25dB, 회의·대결 약 -23.5dB)
+ var VOLS={"title":0.32,"board":0.87,"inv_day":0.7,"inv_room":0.71,"inv_night":0.77,"inv_cellar":0.39,"inv_tense":0.45,"inv_fest":0.47,"inv_snow":0.68,"inv_final":0.79,"talk":1.5,"talk_dark":0.86,"deduce":0.5,"rt_talk":0.94,"rt_debate":0.93,"rt_vote":1.29,"rei_talk":0.69,"victory":0.88,"ending":0.41,"secret":1.37,"story":0.92,"story_dark":1.06,"memory":0.65};
+ Object.keys(VOLS).forEach(function(k){if(SONGS[k])SONGS[k].vol=VOLS[k]});
+ A.SONGS=SONGS;
+
+ // 기존 대결 패턴(PAT)을 새 엔진용으로 변환 + 보강(화음 패드·심벌)
+ function fromPAT(p,k){
+  var ev={},n=p.mel.length;p.mel.forEach(function(x,i){if(x)ev[i*2]=[x,3]});
+  var lead=p.lead==="square"?"square":p.lead==="sawtooth"?"saw":"tri";
+  var mel=[{abs:{ev:ev,len:n*2},i:lead,v:p.lv*.42}];
+  if(p.lead!=="triangle")mel.push({abs:{ev:ev,len:n*2},i:"tri",v:p.lv*.26,o:-12});
+  var bev={},blen;
+  if(p.bass8){p.bass8.forEach(function(x,i){bev[i*2]=[x,2]});blen=p.bass8.length*2}
+  else{p.bass.forEach(function(x,i){bev[i*8]=[x,7]});blen=p.bass.length*8}
+  var lanes={k:"",s:"",h:""};for(var i=0;i<p.dr.length;i++){var d=p.dr[i];lanes.k+=(d==="k"?"k":".")+".";lanes.s+=(d==="s"?"s":".")+".";lanes.h+=(d==="h"?"h":p.hats?"h":".")+"."}
+  var pev={},plen=blen;for(var b=0;b<blen;b+=16){var bn=null;for(var j=b;j<b+16&&bn==null;j++)if(bev[j])bn=bev[j][0];if(bn!=null)pev[b]=[bn,16]}
+  return {bpm:p.bpm,vol:k==="dal"?1.55:k==="twist"?1.3:1,prog:["C"],mel:mel,bassAbs:{ev:bev,len:blen,i:"bpl",v:.6},padAbs:{ev:pev,len:plen,i:"pad",v:.045},dr:[lanes.k,lanes.s,lanes.h],dv:(p.dv||.4)*1.25,crash:k==="climax"||k==="pursuit"||k==="dal",echo:.08,_pat:k}}
+ function songOf(k){if(SONGS[k])return prep(SONGS[k]);if(typeof PAT!=="undefined"&&PAT[k]){if(!PAT[k]._a144)PAT[k]._a144=prep(fromPAT(PAT[k],k));return PAT[k]._a144}return null}
+ A.songs=function(){return Object.keys(SONGS).concat(typeof PAT!=="undefined"?Object.keys(PAT).filter(function(k){return !SONGS[k]}):[])};
+
+ // ---------------- 5) 재생 인스턴스 + lookahead 스케줄러 ----------------
+ function fxStart(ctx,I){var s=I.s,nodes=[];
+  if(s.fx==="wind"){var src=ctx.createBufferSource();src.buffer=RS(ctx).noise;src.loop=true;var f=ctx.createBiquadFilter();f.type="bandpass";f.frequency.value=520;f.Q.value=.8;
+   var lfo=ctx.createOscillator(),lg2=ctx.createGain();lfo.frequency.value=.13;lg2.gain.value=260;lfo.connect(lg2);lg2.connect(f.frequency);var g=ctx.createGain();g.gain.value=.05;src.connect(f);f.connect(g);g.connect(I.g);
+   src.start(I.t0);lfo.start(I.t0);nodes=[src,f,lfo,lg2,g];I.persist=[src,lfo]}
+  if(s.fx==="drone"){var o1=ctx.createOscillator(),o2=ctx.createOscillator(),gd=ctx.createGain(),fl=ctx.createBiquadFilter();var r=s._prog[0][0].r;o1.type="sawtooth";o2.type="sawtooth";o1.frequency.value=mf(33+((r-9+12)%12));o2.frequency.value=mf(40+((r-9+12)%12));o2.detune.value=5;
+   fl.type="lowpass";fl.frequency.value=320;gd.gain.value=.05;o1.connect(fl);o2.connect(fl);fl.connect(gd);gd.connect(I.g);o1.start(I.t0);o2.start(I.t0);nodes=[o1,o2,fl,gd];I.persist=[o1,o2]}
+  if(nodes.length){A.stats.made+=nodes.length;A.stats.live+=nodes.length;I.pnodes=nodes}}
+ function fxStop(I,t){if(!I.persist)return;I.persist.forEach(function(n){try{n.stop(t)}catch(e){}});var nodes=I.pnodes;I.persist=null;
+  var done=function(){nodes.forEach(function(n){try{n.disconnect()}catch(e){}});A.stats.live-=nodes.length;A.stats.ended+=nodes.length};
+  if(nodes[0])nodes[0].onended=done;else done()}
+ function Inst(ctx,key,s,bus,wetIn,t0){
+  var I={key:key,s:s,ctx:ctx,t0:t0,next:t0,step:0,stopAt:0,sd:60/s.bpm/4};
+  I.g=ctx.createGain();I.g.gain.value=.0001;I.g.connect(bus);
+  I.w=ctx.createGain();I.w.gain.value=s.echo||0;I.w.connect(wetIn);
+  A.stats.made+=2;A.stats.live+=2;A.stats.inst++;fxStart(ctx,I);return I}
+ function instKill(I){if(I.dead)return;I.dead=true;fxStop(I,I.ctx.currentTime);try{I.g.disconnect();I.w.disconnect()}catch(e){}A.stats.live-=2;A.stats.ended+=2;A.stats.inst--}
+ function stepAt(I,st,t){
+  var s=I.s,ctx=I.ctx,sd=I.sd,dest=I.g,wet=I.w,spb=s._spb;
+  if(s.sw&&st%4===2)t+=s.sw*sd*2;
+  var ch=chordAt(s,st),dv=s.dv||1;
+  (s.mel||[]).forEach(function(L){var e=L.p.ev[st%L.p.len];if(e)voice(ctx,dest,wet,L.i,mf(e[0]+(L.o||0)),t,e[1]*sd*(L.leg||.92),L.v)});
+  if(s.bass){var b=s.bass,be=b.p.ev[st%b.p.len];if(be){var bn=degree(ch,be[0],b.o||36);if(bn!=null)voice(ctx,dest,null,b.i,mf(bn),t,be[1]*sd*.9,b.v)}}
+  if(s.bassAbs){var ba=s.bassAbs,e2=ba.ev[st%ba.len];if(e2)voice(ctx,dest,null,ba.i,mf(e2[0]),t,e2[1]*sd*.9,ba.v)}
+  if(s.padAbs){var pa=s.padAbs,e3=pa.ev[st%pa.len];if(e3){var r=e3[0];[r+12,r+19,r+24].forEach(function(n){voice(ctx,dest,wet,pa.i,mf(n),t,e3[1]*sd,pa.v)})}}
+  if(s.arp){var ar=s.arp,ae=ar.p.ev[st%ar.p.len];if(ae&&A.stats.live<700){var an=degree(ch,ae[0],ar.o||60);if(an!=null)voice(ctx,dest,wet,ar.i,mf(an),t,ae[1]*sd,ar.v)}}
+  if(s.pad&&chordStart(s,st)){var pd=s.pad,parts=s._prog[Math.floor(st/spb)%s._prog.length],len=spb/parts.length;
+   var root=(pd.o||55)+((ch.r-(pd.o||55)%12+24)%12);ch.iv.slice(0,4).forEach(function(iv,i){if(i===3&&ch.iv.length<4)return;var n=root+(iv>=12?iv-12:iv);if(n>(pd.o||55)+14)n-=12;voice(ctx,dest,wet,pd.i,mf(n),t,len*sd*.98,pd.v)})}
+  if(s.comp){var cp=s.comp,ce=cp.p.ev[st%cp.p.len];if(ce&&ce[0]==="x"){var r2=(cp.o||57)+((ch.r-(cp.o||57)%12+24)%12);ch.iv.slice(0,4).forEach(function(iv){var n=r2+(iv>=12?iv-12:iv);if(n>(cp.o||57)+13)n-=12;voice(ctx,dest,wet,cp.i,mf(n),t,sd*2,cp.v)})}}
+  for(var i=0;i<s._dr.length;i++){var ln=s._dr[i],c=ln[st%ln.length];if(c&&c!==".")drum(ctx,dest,c,t,.5*dv)}
+  if(s.crash&&st%(spb*4)===0)drum(ctx,dest,"g",t,.5);
+  if(s.fx==="clock"&&st%4===0)drum(ctx,dest,(st/4)%2?"w":"q",t,.32);
+  if(s.fx==="heart"&&st%16===0){drum(ctx,dest,"u",t,.5);drum(ctx,dest,"u",t+.18,.35)}
+ }
+ function schedule(I,until){var n=0,now=I.ctx.currentTime;if(I.next<now-.05&&!(I.ctx instanceof (window.OfflineAudioContext||Object))){var sk=Math.ceil((now-I.next)/I.sd);I.step+=sk;I.next+=sk*I.sd}while(I.next<until&&(!I.stopAt||I.next<I.stopAt)&&n<64){stepAt(I,I.step,I.next);I.next+=I.sd;I.step++;n++}}
+
+ // ---------------- 6) 라이브 출력 (버스 · 에코 · 크로스페이드) ----------------
+ var L={bus:null,wet:null,cur:null,old:[],timer:null};
+ function echoChain(ctx,out){var d=ctx.createDelay(1),fb=ctx.createGain(),lp=ctx.createBiquadFilter(),wo=ctx.createGain(),inp=ctx.createGain();
+  d.delayTime.value=.32;fb.gain.value=.36;lp.type="lowpass";lp.frequency.value=2600;wo.gain.value=.55;inp.gain.value=1;
+  inp.connect(d);d.connect(lp);lp.connect(fb);fb.connect(d);lp.connect(wo);wo.connect(out);return inp}
+ function ensureBus(){var a=live();if(!a)return null;
+  if(!L.bus||L.ctx!==a){L.ctx=a;L.bus=a.createGain();L.bus.gain.value=MBASE*MUSV*A.duck;L.bus.connect(MASTER);L.wet=echoChain(a,L.bus);A.stats.made+=7;try{SFXG.gain.value=.42*SFXV}catch(e){}}
+  return a}
+ var XF=1.1;
+ function play(key){
+  if(L.cur&&L.cur.key===key&&!L.cur.stopAt)return;
+  var a=key?ensureBus():(L.ctx||null);
+  if(L.cur){fadeOut(L.cur,key?XF:.6);L.cur=null}
+  A.cur=key||null;if(!key||!a)return;
+  var s=songOf(key);if(!s){A.cur=null;return}
+  var t0=a.currentTime+.08,I=Inst(a,key,s,L.bus,L.wet,t0);
+  I.g.gain.setValueAtTime(.0001,t0);I.g.gain.exponentialRampToValueAtTime(s.vol||1,t0+(L.old.length?.9:.35));
+  L.cur=I;lg("play "+key);startTimer()}
+ function fadeOut(I,dur){var a=I.ctx,t=a.currentTime;I.stopAt=t+dur;try{I.g.gain.cancelScheduledValues(t);I.g.gain.setValueAtTime(Math.max(.0001,I.g.gain.value),t);I.g.gain.exponentialRampToValueAtTime(.0001,t+dur);I.w.gain.setTargetAtTime(0,t+dur*.6,.2)}catch(e){}
+  L.old.push(I);setTimeout(function(){instKill(I);var k=L.old.indexOf(I);if(k>=0)L.old.splice(k,1)},(dur+2.6)*1000)}
+ function pump(){if(!L.ctx||L.ctx.state!=="running")return;var until=L.ctx.currentTime+.32;if(L.cur)schedule(L.cur,until);L.old.forEach(function(I){if(!I.dead)schedule(I,until)})}
+ function startTimer(){if(L.timer||document.hidden)return;L.timer=setInterval(pump,100);pump()}
+ function stopTimer(){if(L.timer){clearInterval(L.timer);L.timer=null}}
+ function stopAll(){if(L.cur){fadeOut(L.cur,.25);L.cur=null}A.cur=null}
+
+ // ---------------- 7) 디렉터: 지금 화면에 맞는 곡 고르기 ----------------
+ var INDOOR=/^(kitchen|lib|props|dressing|hall|post|shop|office|school|parlor|inn|postoffice|study|station|owlhouse|museum|coach|stage)$/,
+     CELLAR=/^(cellar|basement|fuse|jail|backroom|attic|storeroom|shelter|stable|shed|vault)$/;
+ function invKey(c,lid){var id=c.id;
+  if(id==="snow")return "inv_snow";
+  if(CELLAR.test(lid))return "inv_cellar";
+  if(id==="festival")return (lid==="square"||lid==="road")?"inv_fest":"inv_tense";
+  if(id==="lining"||id==="kitchen")return "inv_final";
+  if(id==="museum"||id==="cart"||id==="glove"||id==="clapper"||id==="bureau")return "inv_tense";
+  if(INDOOR.test(lid))return "inv_room";
+  if(id==="star"||id==="bell"||id==="dark")return "inv_night";
+  return "inv_day"}
+ A.invKey=invKey;
+ function sig(){return S.screen+"|"+(G?G.ci:"")+"|"+(G&&G.result?1:0)}
+ function rtKey(){var ph=null;try{ph=window.__rtCur&&window.__rtCur()}catch(e){}
+  var tt=q(".rt .rt-top b"),rival=tt&&/맞수/.test(tt.textContent||"");
+  if(ph==="debate")return rival?"rei":"rt_debate";
+  if(ph==="vote"||ph==="mob")return "rt_vote";
+  return "rt_talk"}
+ function caseKey(){
+  var c=G&&CASES[G.ci];if(!c)return "board";
+  if(G.result)return G.result.solved?(c.id==="kitchen"?"ending":"victory"):"memory";
+  if(G.battle&&G.battle.phase==="fight"){try{return window.__bmode(G.battle,c)||"battle"}catch(e){return "battle"}}
+  if(DL){var w=DL.lastWho||"",st=DL.stageWho||"";if(w==="rei"||st==="rei")return "rei_talk"}
+  if(G.battle&&G.battle.phase==="won")return "deduce";
+  if(G.tab==="talk")return (c.part>=3)?"talk_dark":"talk";
+  if(G.tab==="final")return "deduce";
+  var l=c.locations[G.loc]||c.locations[0];return invKey(c,l?l.id:"")}
+ function wantKey(){
+  if(!S.sound)return null;
+  if(q(".secv"))return "secret";
+  if(q(".moment"))return "memory";
+  var sb=q(".sbook");if(sb){var bg=sb.dataset&&sb.dataset.bg||"";return (sb.classList.contains("dark")||/night|dark|cellar|basement|jail|woods|snow/.test(bg))?"story_dark":"story"}
+  if(q(".rt"))return rtKey();
+  if(q(".show,.recon"))return "deduce";
+  if(A.exp&&A.exp.sig===sig()&&Date.now()-A.exp.t<150000){if(A.exp.mode==="win")return (G&&CASES[G.ci]&&CASES[G.ci].id==="kitchen")?"ending":"victory";if(A.exp.mode==="dal")return "dal"}
+  if(S.screen==="title")return "title";
+  if(S.screen==="board"||!G)return "board";
+  return caseKey()}
+ var HUSHBUSY=".flash,.ovr,.cutin,.banner,.stampfx,.verd";
+ function hushOn(k){var h=A.hush;if(!h)return false;var el=(Date.now()-h.t)/1000;
+  if(DL&&DL!==h.dl0)h.dlg=true;
+  if(h.dlg&&!DL){A.hush=null;return false}
+  if(!h.dlg&&el>1.6&&!q(HUSHBUSY)){A.hush=null;return false}
+  if(el>(h.dlg?150:12)){A.hush=null;return false}
+  return k===h.key}
+ // 기존 bgm()을 "요청"으로 바꾼다: null=잠깐 정적, win/dal=명시 곡, 나머지는 디렉터가 화면을 보고 고른다
+ var INR=0;
+ bgm=function(mode){
+  if(typeof BGM!=="undefined"){BGM.mode=null;BGM.timer=null}
+  if(INR)return;
+  if(!mode){A.exp=null;A.hush={t:Date.now(),key:A.cur||A.want,dlg:false,dl0:DL};lg("hush "+A.hush.key);tick();return}
+  A.hush=null;
+  if(mode==="win"||mode==="dal")A.exp={mode:mode,sig:sig(),t:Date.now()};
+  tick()};
+ var _rc=renderCase;renderCase=function(){INR++;try{return _rc.apply(this,arguments)}finally{INR--;setTimeout(tick,0)}};
+ var _ss=setSound;setSound=function(on){INR++;var r;try{r=_ss.apply(this,arguments)}finally{INR--}if(!on)stopAll();tick();return r};
+
+ // ---------------- 8) 덕킹(대사·TTS) ----------------
+ var lastDuck=-1;
+ function duckNow(force){var d=1;
+  try{if(window.speechSynthesis&&speechSynthesis.speaking)d=.38}catch(e){}
+  if(d===1){if(DL)d=.62;else if(q(".sbook"))d=.85;else if(q(".modal,.zoomv"))d=.72;else if(q(".rt .rt-mid.talk"))d=.8}
+  A.duck=d;if(!L.bus||!L.ctx)return;if(!force&&Math.abs(d-lastDuck)<.01)return;lastDuck=d;
+  try{L.bus.gain.setTargetAtTime(MBASE*MUSV*d,L.ctx.currentTime,.25)}catch(e){}}
+
+ // ---------------- 9) 효과음: 새 소리 + 정리(중복 차단·과한 음량 낮춤) ----------------
+ var TRIM={impact:.6,heart:.55,lock:.6,unlock:.72,knock:.75,crash:.75,gavel:.8,gulp:.7,confetti:.7,slam:.85,hold:.85,cutin:.85,stamp:.85};
+ var TG={};
+ function sfxDest(k){var a=AC;if(!a)return null;var tv=(TRIM[k]||1);if(tv===1)return SFXG;if(!TG[k]||TG[k].context!==a){TG[k]=a.createGain();TG[k].gain.value=tv;TG[k].connect(SFXG)}return TG[k]}
+ var NEW={
+  // 군중 웅성웅성: 여러 목소리(톱니파+포먼트 필터, 무작위 음높이·음절) + 숨소리 노이즈
+  murmur:function(ctx,dest,t,dur,amt){dur=dur||2.2;amt=amt||1;
+   var bus=ctx.createGain(),lp=ctx.createBiquadFilter();lp.type="lowpass";lp.frequency.value=2300;bus.gain.setValueAtTime(.0001,t);bus.gain.exponentialRampToValueAtTime(.55*amt,t+.25);bus.gain.setValueAtTime(.55*amt,t+dur-.5);bus.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   bus.connect(lp);lp.connect(dest);
+   var V=[[320,800],[500,900],[600,1000],[350,750],[450,1300],[700,1150]],nv=5+(Math.random()*3|0),end=t+dur+.05;
+   for(var k=0;k<nv;k++){
+    var o=ctx.createOscillator();o.type=k%2?"sawtooth":"square";var base=95+Math.random()*190;
+    var f1=ctx.createBiquadFilter(),f2=ctx.createBiquadFilter(),g=ctx.createGain(),g2=ctx.createGain();f1.type=f2.type="bandpass";f1.Q.value=6;f2.Q.value=8;g2.gain.value=.55;
+    var pn=ctx.createStereoPanner?ctx.createStereoPanner():null;
+    o.connect(f1);o.connect(f2);f1.connect(g);f2.connect(g2);g2.connect(g);if(pn){pn.pan.value=Math.random()*1.6-.8;g.connect(pn);pn.connect(bus)}else g.connect(bus);
+    g.gain.setValueAtTime(.0001,t);var tt=t+Math.random()*.35,amp=(o.type==="square"?.36:.5)*(.6+Math.random()*.5);
+    o.frequency.setValueAtTime(base,t);
+    while(tt<t+dur-.15){var syl=.09+Math.random()*.15,vw=V[(Math.random()*V.length)|0],p=base*Math.pow(2,(Math.random()*4-2)/12);
+     o.frequency.setValueAtTime(p,tt);o.frequency.linearRampToValueAtTime(p*.93,tt+syl);
+     f1.frequency.setValueAtTime(vw[0]*(base>200?1.15:1),tt);f2.frequency.setValueAtTime(vw[1]*(base>200?1.15:1),tt);
+     g.gain.setTargetAtTime(amp*(.5+Math.random()*.5),tt,.018);g.gain.setTargetAtTime(.0001,tt+syl,.03);
+     tt+=syl+.02+Math.random()*.1;if(Math.random()<.12)tt+=.25+Math.random()*.2}
+    g.gain.setTargetAtTime(.0001,t+dur-.1,.03);
+    o.start(t);o.stop(end);track(o,pn?[o,f1,f2,g,g2,pn]:[o,f1,f2,g,g2])}
+   nz(ctx,bus,t,dur,.22*amt,"bandpass",850,0,.7,.3);
+   var keep=ctx.createOscillator(),kg=ctx.createGain();kg.gain.value=0;keep.connect(kg);kg.connect(bus);keep.start(t);keep.stop(end+.05);track(keep,[keep,kg,bus,lp])},
+  ssok:function(ctx,d,t){nz(ctx,d,t,.05,.16,"highpass",5200);tn(ctx,d,t+.035,520,.11,"sine",.42,1500,.004);tn(ctx,d,t+.15,2093,.16,"sine",.07)},
+  tok:function(ctx,d,t){tn(ctx,d,t,1650,.07,"triangle",.42,1380,.002);nz(ctx,d,t,.02,.22,"bandpass",3200,0,3);tn(ctx,d,t+.07,2637,.14,"sine",.07);tn(ctx,d,t+.13,3136,.18,"sine",.06)},
+  click:function(ctx,d,t){tn(ctx,d,t,1050,.035,"sine",.12,820,.002);nz(ctx,d,t,.012,.05,"highpass",4000)},
+  tabsw:function(ctx,d,t){tn(ctx,d,t,660,.05,"sine",.16,700,.003);tn(ctx,d,t+.05,990,.07,"sine",.13,1040,.003);nz(ctx,d,t,.06,.05,"bandpass",2400,4200,1.2)},
+  hint:function(ctx,d,t){[1047,1319,1568,2093].forEach(function(f,i){tn(ctx,d,t+i*.07,f,.5,"sine",.11);tn(ctx,d,t+i*.07,f*3,.2,"sine",.02)})},
+  vote:function(ctx,d,t,i){i=i||0;nz(ctx,d,t,.05,.12,"bandpass",1800,900,1.5);tn(ctx,d,t+.02,500+i*70,.09,"triangle",.24,360+i*60,.002)},
+  susUp:function(ctx,d,t){tn(ctx,d,t,300,.22,"square",.1,620);tn(ctx,d,t,600,.22,"sine",.14,1240)},
+  susDown:function(ctx,d,t){tn(ctx,d,t,620,.25,"sine",.16,300)},
+  pageTurn:function(ctx,d,t){nz(ctx,d,t,.2,.2,"bandpass",700,3400,1.1,.03);nz(ctx,d,t+.12,.08,.12,"highpass",3000);tn(ctx,d,t+.16,180,.08,"sine",.1,120)},
+  doorOpen:function(ctx,d,t){var o=ctx.createOscillator(),f=ctx.createBiquadFilter(),g=ctx.createGain();o.type="sawtooth";o.frequency.setValueAtTime(95,t);
+   for(var i=1;i<8;i++)o.frequency.linearRampToValueAtTime(90+Math.random()*60,t+i*.08);f.type="bandpass";f.frequency.value=950;f.Q.value=7;
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.35,t+.06);g.gain.setValueAtTime(.3,t+.5);g.gain.exponentialRampToValueAtTime(.0001,t+.72);o.connect(f);f.connect(g);g.connect(d);o.start(t);o.stop(t+.75);track(o,[o,f,g]);
+   tn(ctx,d,t+.7,110,.25,"sine",.4,60);nz(ctx,d,t+.7,.1,.25,"lowpass",600)},
+  stab:function(ctx,d,t){[0,3,7,12].forEach(function(iv){var o=ctx.createOscillator(),f=ctx.createBiquadFilter(),g=ctx.createGain();o.type="sawtooth";o.frequency.value=mf(55+iv);f.type="lowpass";f.frequency.setValueAtTime(3400,t);f.frequency.exponentialRampToValueAtTime(500,t+.35);
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.09,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+.4);o.connect(f);f.connect(g);g.connect(d);o.start(t);o.stop(t+.42);track(o,[o,f,g])})},
+  correct:function(ctx,d,t){[1319,1568,2093].forEach(function(f,i){tn(ctx,d,t+i*.06,f,.3,"triangle",.1);tn(ctx,d,t+i*.06,f*2,.15,"sine",.03)})}
+ };
+ A.NEW=NEW;
+ Object.keys(NEW).forEach(function(k){SFX[k]=function(a1,a2){var a=live();if(!a)return;var d=sfxDest(k)||SFXG;try{NEW[k](a,d,a.currentTime+.005,a1,a2)}catch(e){}}});
+ // 중복 재생 차단 + 음량 정리 래퍼
+ var LAST={},GAP={blip:22,letter:20,type:22,tick:30,tick2:30,heart:300,murmur:2400},TAPSUB=null;A.lastSfx=0;
+ Object.keys(SFX).forEach(function(k){var f=SFX[k];if(typeof f!=="function"||f.__a144)return;
+  var w=function(){if(!S.sound)return;var now=performance.now(),gap=GAP[k]!=null?GAP[k]:45;if(LAST[k]&&now-LAST[k]<gap)return;
+   if(k==="tap"&&TAPSUB&&SFX[TAPSUB]&&TAPSUB!=="tap"){var s=TAPSUB;TAPSUB=null;return SFX[s]()}
+   LAST[k]=now;A.lastSfx=now;A.sfx.push(k);if(A.sfx.length>40)A.sfx.shift();
+   if(TRIM[k]&&!NEW[k]&&typeof SFXG!=="undefined"&&SFXG){var keep=SFXG,dd=sfxDest(k);if(dd){SFXG=dd;try{return f.apply(this,arguments)}finally{SFXG=keep}}}
+   return f.apply(this,arguments)};
+  w.__a144=1;SFX[k]=w});
+ // 대결: 증거 내밀기에 짧은 브라스 히트, 외침 뒤 정답 반짝
+ var _got=SFX.gotcha;SFX.gotcha=function(){_got.apply(this,arguments);try{SFX.stab()}catch(e){}};SFX.gotcha.__a144=1;
+ var _fl=flash;flash=function(text,bad,point){var p=_fl.apply(this,arguments);if(!bad)setTimeout(function(){try{SFX.correct()}catch(e){}},1000);return p};
+ // 숨긴 도토리: 대화 화면에서 생길 땐 '쏙', 열릴 땐 '톡' (장소 잠금의 철컥 SFX.lock은 그대로)
+ var _lock=SFX.lock,PL=0;SFX.lock=function(){PL++;var me=PL,self=this,args=arguments;setTimeout(function(){if(me===PL&&PL>0){PL=0;_lock.apply(self,args)}},0)};SFX.lock.__a144=1;
+ var _fx=floater;floater=function(sel,text,kind){try{var t=String(text||"");if(/도토리/.test(t)){if(/쏙/.test(t)&&PL){PL=0;SFX.ssok()}else if(/톡|열림/.test(t))SFX.tok()}}catch(e){}return _fx.apply(this,arguments)};
+ // 탭 전환 · 힌트 · 책장 넘김 · 일반 버튼
+ var _gt=goTab;goTab=function(){TAPSUB="tabsw";try{return _gt.apply(this,arguments)}finally{TAPSUB=null}};
+ var _uh=useHint;useHint=function(){var t0=A.lastSfx;TAPSUB="hint";try{return _uh.apply(this,arguments)}finally{TAPSUB=null;if(A.lastSfx===t0)try{SFX.hint()}catch(e){}}};
+ var evT=0;
+ window.addEventListener("click",function(e){evT=performance.now();var t=e.target;if(!t||!t.closest)return;
+  if(t.closest(".sbook"))TAPSUB="pageTurn";else if(t.closest("#nextstep"))TAPSUB="hint";
+  setTimeout(function(){if(TAPSUB==="pageTurn"||TAPSUB==="hint")TAPSUB=null},0)},true);
+ window.addEventListener("click",function(e){var t=e.target;if(!t||!t.closest||!S.sound||!AC)return;
+  var b=t.closest("button,.btn,[role=button],.vc,.bl,.st4");if(!b||b.disabled)return;
+  setTimeout(function(){if(A.lastSfx<evT)try{SFX.click()}catch(er){}},0)},false);
+
+ // ---------------- 10) 웅성웅성 감지 + 원탁 회의 효과음 ----------------
+ var MUR=/웅성|술렁|웅얼|와글|시끌/,MURN=/수군/,lastMurKey="",lastMurAt=0;
+ function murmur(dur,amt){var now=Date.now();if(now-lastMurAt<2200)return;lastMurAt=now;var tts=false;try{tts=window.speechSynthesis&&speechSynthesis.speaking}catch(e){}
+  var a=live();if(!a)return;try{NEW.murmur(a,sfxDest("murmur")||SFXG,a.currentTime+.02,dur||2.2,(amt||1)*(tts?.5:1))}catch(e){}A.lastSfx=performance.now();A.sfx.push("murmur");lg("murmur "+(dur||2.2))}
+ SFX.murmur=function(){murmur(1.9,.9)};SFX.murmur.__a144=1;
+ A.murmur=murmur;
+ function scanText(){
+  var txt="",key="",narr=false;
+  if(DL&&DL.full){var raw=DL.lines&&DL.lines[DL.i];txt=DL.full;narr=raw&&raw[0]==="narr";key="dl"+DL.i+":"+txt.slice(0,24)}
+  else{var p=q(".sbook #sbp,.sbook .sbtext,.rt .rt-mid.talk .rt-bub p");if(p){txt=p.textContent||"";key="el:"+txt.slice(0,10)}}
+  if(!txt)return;
+  if((MUR.test(txt)||(narr&&MURN.test(txt)))&&key!==lastMurKey){lastMurKey=key;murmur(/웅성웅성|술렁술렁/.test(txt)?2.8:2.2,1)}}
+ var RT={ph:null,sus:""};
+ function scanRt(){var ph=null;try{ph=q(".rt")&&window.__rtCur?window.__rtCur():null}catch(e){}
+  if(ph!==RT.ph){var was=RT.ph;RT.ph=ph;
+   if(ph==="vote"||ph==="mob"){var n=4;try{var P=window.__rtPh&&window.__rtPh();if(P&&P.votes)n=Object.keys(P.votes).length}catch(e){}
+    setTimeout(function(){murmur(2.6,.8)},300);for(var i=0;i<n;i++)(function(i){setTimeout(function(){try{SFX.vote(i)}catch(e){}},1700+i*190)})(i)}
+   if(ph==="debate"&&was&&was!=="debate")setTimeout(function(){murmur(1.6,.6)},200)}
+  if(!ph){RT.susMap=null;return}
+  var us=document.querySelectorAll(".rt .rs[data-seat] .sm u[data-v]"),cur={},up=0,dn=0,old=RT.susMap||{};
+  for(var i=0;i<us.length;i++){var k=us[i].closest(".rs").dataset.seat,v=+us[i].dataset.v;cur[k]=v;if(old[k]!=null){if(v>old[k])up++;else if(v<old[k])dn++}}
+  RT.susMap=cur;if(up)SFX.susUp();else if(dn)SFX.susDown()}
+ var OVL={secv:0,sbook:0};
+ function scanOverlays(){var s=!!q(".secv");if(s&&!OVL.secv)try{SFX.doorOpen()}catch(e){}OVL.secv=s;var b=!!q(".sbook");if(b&&!OVL.sbook)try{SFX.pageTurn()}catch(e){}OVL.sbook=b}
+
+ // ---------------- 11) 메인 루프 ----------------
+ function tick(){
+  try{
+   var k=wantKey();A.want=k;
+   if(k&&hushOn(k))k=null;
+   if(!S.sound||!AC||document.hidden){if(!S.sound&&L.cur)stopAll();return}
+   if(k!==A.cur)play(k);
+   duckNow(false);
+  }catch(e){lg("err "+e.message)}}
+ A.tick=tick;
+ setInterval(function(){if(document.hidden)return;tick();if(!AC||!S.sound)return;try{scanText();scanRt();scanOverlays()}catch(e){}},220);
+ document.addEventListener("visibilitychange",function(){if(document.hidden){stopTimer();try{if(AC&&AC.state==="running")AC.suspend()}catch(e){}}else{setTimeout(function(){if(L.cur||L.old.length)startTimer();tick()},120)}});
+ window.addEventListener("pagehide",stopTimer);
+
+ // ---------------- 12) 테스트용 오프라인 렌더 ----------------
+ A.render=function(key,secs,withMur){secs=secs||8;var s=songOf(key);if(!s)return Promise.resolve(null);
+  var sr=44100,ctx=new OfflineAudioContext(2,Math.ceil(sr*secs),sr);
+  var master=ctx.createGain();master.gain.value=MGAIN;var cmp=ctx.createDynamicsCompressor();cmp.threshold.value=-16;cmp.knee.value=10;cmp.ratio.value=5;cmp.attack.value=.004;cmp.release.value=.22;master.connect(cmp);cmp.connect(ctx.destination);
+  var bus=ctx.createGain();bus.gain.value=MBASE*MUSV*(withMur==="duck"?.62:1);bus.connect(master);var wet=echoChain(ctx,bus);
+  var I=Inst(ctx,key,s,bus,wet,0.02);I.g.gain.setValueAtTime(s.vol||1,0);for(var gd=0;I.next<secs-.05&&gd<200;gd++)schedule(I,secs-.05);
+  if(withMur==="murmur"){var sg=ctx.createGain();sg.gain.value=.42;sg.connect(master);NEW.murmur(ctx,sg,.3,2.8,1)}
+  return ctx.startRendering().then(function(buf){instKill(I);return buf})};
+ A.renderSfx=function(k,secs){var sr=44100,ctx=new OfflineAudioContext(2,Math.ceil(sr*(secs||3)),sr);var master=ctx.createGain();master.gain.value=MGAIN;var cmp=ctx.createDynamicsCompressor();cmp.threshold.value=-16;cmp.knee.value=10;cmp.ratio.value=5;cmp.attack.value=.004;cmp.release.value=.22;master.connect(cmp);cmp.connect(ctx.destination);
+  var sg=ctx.createGain();sg.gain.value=.42;sg.connect(master);NEW[k](ctx,sg,.05,k==="murmur"?2.6:0,1);return ctx.startRendering()};
+ lg("ready");
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
@@ -30149,7 +31010,7 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
    var q=(y*W+x)*4;if(n<5){d[q+3]=0;continue}var c=sum[best];d[q]=c[0]/bc;d[q+1]=c[1]/bc;d[q+2]=c[2]/bc;d[q+3]=255}
   cx.putImageData(im,0,0);return cv.toDataURL("image/png")}
  window.__toon=toon;
- var LSOK=true,LSP="dc1:"+STYLE+":";
+ var LSOK=true,LSP="dc1:b144:"+STYLE+":";
  function lsGet(k){if(!LSOK)return null;try{return localStorage.getItem(LSP+k)}catch(e){return null}}
  var LSUSED=0,LSCAP=1200000;try{for(var li=localStorage.length-1;li>=0;li--){var lk=localStorage.key(li);if(lk&&lk.indexOf("dc1:")===0){if(lk.indexOf(LSP)!==0)localStorage.removeItem(lk);else LSUSED+=(localStorage.getItem(lk)||"").length}}}catch(e){LSOK=false}
  // 그림 캐시는 저장 공간의 일부만 쓴다(게임 저장이 밀려나지 않게)
