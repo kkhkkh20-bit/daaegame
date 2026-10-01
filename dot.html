@@ -24003,37 +24003,83 @@ REI2("kitchen",{
  var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
  function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
  function clover(x,y,r){return '<g><circle cx="'+x+'" cy="'+(y-r)+'" r="'+r+'" fill="'+WHITE+'"/><circle cx="'+(x-r*.9)+'" cy="'+(y+r*.5)+'" r="'+r+'" fill="'+WHITE+'"/><circle cx="'+(x+r*.9)+'" cy="'+(y+r*.5)+'" r="'+r+'" fill="'+WHITE+'"/><circle cx="'+x+'" cy="'+y+'" r="'+(r*.55)+'" fill="#E8D86A"/></g>'}
- function inner(mood){var g='';
-  // 보랏빛 기운
-  g+='<circle cx="50" cy="56" r="47" fill="'+GLOW+'" opacity=".22"/>';
-  // 두건 뒤판
-  g+='<path d="M12 100 Q8 54 22 36 Q50 14 78 36 Q92 54 88 100 Z" fill="'+HOOD+'" '+s+'/>';
-  // 귀 (두건을 뚫고)
-  g+='<g class="ears"><path d="M34 34 Q28 4 38 2 Q46 4 44 32 Z" fill="'+SH+'" '+s+'/><path d="M66 34 Q72 4 62 2 Q54 4 56 32 Z" fill="'+SH+'" '+s+'/><path d="M37 28 Q34 10 38 8 Q41 10 41 28 Z" fill="#7A3A5E"/><path d="M63 28 Q66 10 62 8 Q59 10 59 28 Z" fill="#7A3A5E"/></g>';
+ function inner(mood){ // v138: 평소 모습(sig_grandma.js)과 같은 귀·쪽머리·안경(39/61,56 r8.5)·앞니 — '등불 관리국'의 주인으로 돌변
+  var g='',F="#D6CDD8",F2="#F3EEF4",EIN="#A65A82",HR="#FFFFFF",HR2="#BDB2CF",GD="#D4A23A",BRW="#2A1E30",RED="#E8284E",DRS="#3A2448",LT="#F4E9FF";
+  var ner=has(mood,"nervous")||has(mood,"sad")||has(mood,"cry"),shk=has(mood,"shock"),ang=has(mood,"angry"),hap=has(mood,"happy");
+  function wc(x,y,r){return clover(x,y,r)} // 흰 토끼풀 꽃 자수
+  function bc(x,y,r,line){ // 검은 토끼풀 (비녀 장식)
+   var a='',k=[[0,-1],[-.95,.55],[.95,.55]];for(var i=0;i<3;i++)a+='<circle cx="'+(x+k[i][0]*r)+'" cy="'+(y+k[i][1]*r)+'" r="'+r+'" fill="'+O+'" stroke="'+line+'" stroke-width="1.6"/>';
+   for(i=0;i<3;i++)a+='<circle cx="'+(x+k[i][0]*r)+'" cy="'+(y+k[i][1]*r)+'" r="'+(r-.9)+'" fill="'+O+'"/>';
+   return a+'<circle cx="'+x+'" cy="'+y+'" r="'+(r*.5)+'" fill="'+RED+'"/>'}
+  // 보랏빛 기운 (불꽃처럼 일렁이는 테두리 + 떠다니는 불티)
+  var ao=ang?"#8A48A8":ner?"#55386E":"#6A3E8C",LN="#7A2438",PG="#9A4FB0";
+  g+='<path d="M50 1 Q58 9 64 4 Q68 12 76 8 Q78 18 88 16 Q86 28 96 32 Q90 42 99 50 Q91 58 99 68 Q90 74 98 86 Q90 90 96 100 H4 Q10 90 2 86 Q10 74 1 68 Q9 58 1 50 Q10 42 4 32 Q14 28 12 16 Q22 18 24 8 Q32 12 36 4 Q42 9 50 1 Z" fill="'+ao+'"/>';
+  g+='<path d="M8 22 l2 -4 l2 4 l-2 4 Z M90 24 l2 -4 l2 4 l-2 4 Z M95 60 l1.6 -3 l1.6 3 l-1.6 3 Z" fill="'+LT+'" opacity=".85"/>';
+  // 두건 달린 검은 망토: 바깥 천 → 검붉은 안감 → 흰 토끼풀 꽃 자수
+  g+='<path d="M3 101 Q2 72 11 52 Q14 27 33 18 Q50 11 67 18 Q86 27 89 52 Q98 72 97 101 Z" fill="'+HOOD+'" '+s+'/>';
+  g+='<path d="M7 98 Q7 73 15 54 Q18 31 35 22.5 Q50 16.5 65 22.5 Q82 31 85 54 Q93 73 93 98" fill="none" stroke="#5E3A7E" stroke-width="2.4"/>';
+  g+='<path d="M13 101 Q12 74 19 56 Q22 34 38 27 Q50 23 62 27 Q78 34 81 56 Q88 74 87 101 Z" fill="'+LN+'" stroke="'+O+'" stroke-width="2"/>';
+  g+=wc(83,62,2.4)+wc(84.5,79,2.4)+wc(16,80,2.4)+wc(74,34,2.2)+wc(26.5,33.5,2.2);
+  // 망토 앞자락 (어깨) + 뒤집힌 안감 깃
+  g+='<path d="M50 101 V86" stroke="'+O+'" stroke-width="2"/><path d="M38 82 Q50 87 62 82 L62 101 H38 Z" fill="'+DRS+'" '+s+'/>';
+  g+='<path d="M3 101 Q4 86 20 80 Q32 76 40 80 L44 101 Z" fill="'+HOOD+'" '+s+'/><path d="M97 101 Q96 86 80 80 Q68 76 60 80 L56 101 Z" fill="'+HOOD+'" '+s+'/>';
+  g+='<path d="M30 78.5 Q37 77 41 80 L45 101 L36 101 Q36 88 30 78.5 Z" fill="'+LN+'" '+s+'/><path d="M70 78.5 Q63 77 59 80 L55 101 L64 101 Q64 88 70 78.5 Z" fill="'+LN+'" '+s+'/>';
+  g+=wc(39.5,93,2.2)+wc(60.5,93,2.2);
+  g+='<path d="M12 92 Q18 87 24 88 M88 92 Q82 87 76 88" fill="none" stroke="'+HOOD2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  // 등불 브로치 (망토 여밈)
+  g+='<path d="M40 85 Q50 89 60 85" fill="none" stroke="'+GD+'" stroke-width="1.8"/>';
+  g+='<path d="M45 89.5 H55 L53.6 98.5 H46.4 Z" fill="'+GLOW+'" '+s.replace('3"','2"')+'/><path d="M50 90.5 Q53 94 50 97 Q47 94 50 90.5 Z" fill="'+LT+'"/>';
+  g+='<rect x="44" y="87.5" width="12" height="3" rx="1" fill="'+GD+'" stroke="'+O+'" stroke-width="1.6"/><rect x="45.5" y="97.5" width="9" height="2.6" rx="1" fill="'+GD+'" stroke="'+O+'" stroke-width="1.6"/><circle cx="50" cy="85.6" r="1.8" fill="none" stroke="'+GD+'" stroke-width="1.6"/>';
+  // 귀 (평소 모습과 같은 길쭉한 모양, 두건을 뚫고)
+  g+='<g class="ears"><path d="M32 38 Q22 6 33 3 Q43 5 43 36 Z" fill="'+F+'" '+s+'/><path d="M68 38 Q78 6 67 3 Q57 5 57 36 Z" fill="'+F+'" '+s+'/><path d="M34.5 30 Q30 12 33.5 9 Q38 12 38.5 30 Z" fill="'+EIN+'"/><path d="M65.5 30 Q70 12 66.5 9 Q62 12 61.5 30 Z" fill="'+EIN+'"/></g>';
+  g+='<path d="M28.5 22.5 Q37 18 45 21 M71.5 22.5 Q63 18 55 21" fill="none" stroke="'+HOOD+'" stroke-width="3.4" stroke-linecap="round"/>';
+  // 하얀 쪽머리 + 검은 토끼풀 비녀
+  g+='<circle cx="17" cy="51" r="11" fill="'+HR+'" '+s+'/><path d="M17 45.5 Q10.5 46.5 11 52 Q12 58 18 57.5 Q23 56.5 22.5 51.5 Q21.5 48 17.5 49" fill="none" stroke="'+HR2+'" stroke-width="2" stroke-linecap="round"/>';
+  g+='<path d="M4 41 L30 60" stroke="'+PG+'" stroke-width="5.8" stroke-linecap="round"/><path d="M4 41 L30 60" stroke="'+O+'" stroke-width="3.6" stroke-linecap="round"/>';
+  g+=bc(5.5,40.5,3.2,PG);
   // 얼굴
-  g+='<ellipse cx="50" cy="58" rx="26" ry="25" fill="'+FUR+'" '+s+'/><path d="M28 64 Q50 86 72 64 Q70 80 50 83 Q30 80 28 64 Z" fill="'+SH+'" opacity=".55"/>';
-  // 두건 앞 테
-  g+='<path d="M20 52 Q24 30 50 28 Q76 30 80 52" fill="none" stroke="'+HOOD+'" stroke-width="9" stroke-linecap="round"/><path d="M22 50 Q26 33 50 31 Q74 33 78 50" fill="none" stroke="'+HOOD2+'" stroke-width="2"/>';
-  // 눈썹 (날카롭게)
-  g+='<path d="M31 44 L45 49 M69 44 L55 49" stroke="'+O+'" stroke-width="3.6" stroke-linecap="round"/>';
-  // 안경: 빛이 번쩍 반사되어 눈이 안 보인다 (놀라면 금이 간다)
-  var lens=has(mood,"nervous")?'#CFE0F2':'#EEF6FF';
-  g+='<g class="eyes"><circle cx="39" cy="56" r="8.5" fill="'+lens+'" stroke="'+O+'" stroke-width="3"/><circle cx="61" cy="56" r="8.5" fill="'+lens+'" stroke="'+O+'" stroke-width="3"/><path d="M47.5 56 H52.5" stroke="'+O+'" stroke-width="3"/>'
-   +'<path d="M34 59 L42 51 M56 59 L64 51" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>'
-   +(has(mood,"nervous")?'<circle cx="39" cy="57" r="2" fill="'+O+'"/><circle cx="61" cy="57" r="2" fill="'+O+'"/>':'<circle cx="41" cy="58" r="1.6" fill="#E23A5A"/><circle cx="63" cy="58" r="1.6" fill="#E23A5A"/>')
-   +(has(mood,"shock")?'<path d="M56 50 L60 56 L57 60 L63 64" fill="none" stroke="'+O+'" stroke-width="1.6"/>':'')+'</g>';
-  // 코와 얇은 미소, 앞니 두 개
-  g+='<ellipse cx="50" cy="66" rx="3" ry="2.2" fill="#C86A86"/>';
-  if(has(mood,"nervous")||has(mood,"shock"))g+='<path d="M43 72 Q50 69 57 72" fill="none" stroke="'+O+'" stroke-width="2.4" stroke-linecap="round"/>';
-  else g+='<path d="M40 70 Q50 77 61 69" fill="none" stroke="'+O+'" stroke-width="2.4" stroke-linecap="round"/><rect x="47.4" y="72" width="2.6" height="3.4" fill="'+WHITE+'" stroke="'+O+'" stroke-width="1"/><rect x="50.2" y="72" width="2.6" height="3.4" fill="'+WHITE+'" stroke="'+O+'" stroke-width="1"/>';
-  // 망토 안감: 검붉은 천에 흰 토끼풀 꽃 자수
-  g+='<path d="M24 100 Q30 86 40 84 L50 92 L60 84 Q70 86 76 100 Z" fill="'+LIN+'" '+s+'/>'+clover(36,94,2.6)+clover(64,94,2.6)+clover(50,99,2.2);
-  if(has(mood,"nervous"))g+='<path d="M80 40 q4 6 0 9 q-4-3 0-9z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  g+='<ellipse cx="50" cy="59" rx="26" ry="24" fill="'+F+'" '+s+'/>';
+  g+='<ellipse cx="50" cy="71" rx="12" ry="8.6" fill="'+F2+'"/>';
+  g+='<path d="M27 63 Q30 76 42 81 Q30 80 26 70 Z M73 63 Q70 76 58 81 Q70 80 74 70 Z" fill="'+GLOW+'" opacity=".28"/>';
+  // 하얀 머리 (평소와 같은 가르마)
+  g+='<path d="M25 57 Q17 50 20 42 Q22 31 36 30 Q43 27.5 50 29.5 Q57 27.5 64 30 Q78 31 80 42 Q83 50 75 57 Q74 46 66 41 Q58 37.5 50 40 Q42 37.5 34 41 Q26 46 25 57 Z" fill="'+HR+'" '+s+'/>';
+  g+='<path d="M50 30.5 V38 M24 48 Q25 38 35 35 Q41 33.5 46 35 M76 48 Q75 38 65 35 Q59 33.5 54 35" fill="none" stroke="'+HR2+'" stroke-width="2" stroke-linecap="round"/>';
+  // 눈썹: 날카롭게 내려꽂힌 쐐기
+  if(ner)g+='<path d="M31 46.5 L44 41 L45 43.5 L32 49 Z M69 46.5 L56 41 L55 43.5 L68 49 Z" fill="'+BRW+'" stroke="'+BRW+'" stroke-width="1.6" stroke-linejoin="round"/>';
+  else if(shk)g+='<path d="M30 42 Q37 35 45 39 L44 41.5 Q37 38.5 31 44.5 Z M70 42 Q63 35 55 39 L56 41.5 Q63 38.5 69 44.5 Z" fill="'+BRW+'" stroke="'+BRW+'" stroke-width="1.6" stroke-linejoin="round"/>';
+  else if(ang)g+='<path d="M29 37 L47 46 L45 49 L29 41.5 Z M71 37 L53 46 L55 49 L71 41.5 Z" fill="'+BRW+'" stroke="'+BRW+'" stroke-width="1.8" stroke-linejoin="round"/>';
+  else g+='<path d="M29.5 39 L46 45.5 L44.5 48 L30 43 Z M70.5 39 L54 45.5 L55.5 48 L70 43 Z" fill="'+BRW+'" stroke="'+BRW+'" stroke-width="1.6" stroke-linejoin="round"/>';
+  // 안경알: 하얗게 번쩍여 눈이 안 보인다 (당황하면 속눈이 비친다)
+  if(ner)g+='<circle cx="39" cy="56" r="8.5" fill="#FFFFFF" fill-opacity=".28"/><circle cx="61" cy="56" r="8.5" fill="#FFFFFF" fill-opacity=".28"/>';
+  else g+='<circle cx="39" cy="56" r="8.5" fill="#F6F1FF"/><circle cx="61" cy="56" r="8.5" fill="#F6F1FF"/><path d="M31.5 58 L39 48.5 L42.5 49 L33 61 Z M53.5 58 L61 48.5 L64.5 49 L55 61 Z M41.5 61.5 L46 55.5 L46.8 58 L44 62.5 Z M63.5 61.5 L68 55.5 L68.8 58 L66 62.5 Z" fill="#DCCDF8"/>';
+  g+='<g class="eyes">';
+  if(ner)g+='<ellipse cx="38" cy="57.5" rx="2.6" ry="3" fill="'+O+'"/><ellipse cx="60" cy="57.5" rx="2.6" ry="3" fill="'+O+'"/><circle cx="39" cy="56.3" r="1" fill="#FFFFFF"/><circle cx="61" cy="56.3" r="1" fill="#FFFFFF"/>';
+  else if(shk)g+='<circle cx="39" cy="57" r="1.5" fill="'+RED+'"/><circle cx="61" cy="57" r="1.5" fill="'+RED+'"/>';
+  else{var rr=ang?3:2.6;g+='<ellipse cx="39.5" cy="57.5" rx="'+(rr+1.2)+'" ry="'+(rr*.7+1.1)+'" fill="#F6757A"/><ellipse cx="60.5" cy="57.5" rx="'+(rr+1.2)+'" ry="'+(rr*.7+1.1)+'" fill="#F6757A"/><ellipse cx="39.5" cy="57.5" rx="'+rr+'" ry="'+(rr*.7)+'" fill="'+RED+'"/><ellipse cx="60.5" cy="57.5" rx="'+rr+'" ry="'+(rr*.7)+'" fill="'+RED+'"/>'}
+  g+='</g>';
+  // 금테 (평소와 같은 위치·크기)
+  g+='<circle cx="39" cy="56" r="8.5" fill="none" stroke="'+O+'" stroke-width="4.2"/><circle cx="61" cy="56" r="8.5" fill="none" stroke="'+O+'" stroke-width="4.2"/>'
+   +'<circle cx="39" cy="56" r="8.5" fill="none" stroke="'+GD+'" stroke-width="2.4"/><circle cx="61" cy="56" r="8.5" fill="none" stroke="'+GD+'" stroke-width="2.4"/>'
+   +'<path d="M47.5 55 Q50 53 52.5 55" fill="none" stroke="'+GD+'" stroke-width="2.4"/><path d="M30.5 54 L25 52 M69.5 54 L75 52" stroke="'+GD+'" stroke-width="2.2" stroke-linecap="round"/>';
+  if(shk)g+='<path d="M55 50.5 L59.5 55 L57 57.5 L62.5 61.5 L61 64 M59.5 55 L65.5 53 M33 51 L37 55.5 L35.5 59 M37 55.5 L43 57" fill="none" stroke="'+O+'" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+  if(!ner&&!shk)g+='<path d="M31 48.5 l1.5 -4 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 Z" fill="#FFFFFF" stroke="'+GLOW+'" stroke-width="1.2" stroke-linejoin="round"/>';
+  // 코, 입과 앞니
+  g+='<ellipse cx="50" cy="66" rx="3.4" ry="2.4" fill="#B8577A"/>';
+  function tth(y){return '<rect x="47.4" y="'+y+'" width="2.6" height="3.4" fill="#FFFFFF" stroke="'+O+'" stroke-width="1"/><rect x="50.2" y="'+y+'" width="2.6" height="3.4" fill="#FFFFFF" stroke="'+O+'" stroke-width="1"/>'}
+  if(ang)g+='<path d="M40 71 Q50 67 60 71 Q58 79 50 79 Q42 79 40 71 Z" fill="#4A1426" '+s.replace('3"','2.6"')+'/>'+tth(69.6)+'<path d="M50 68 V69.6" stroke="'+O+'" stroke-width="2"/>';
+  else if(shk)g+='<ellipse cx="50" cy="74.5" rx="4" ry="4.6" fill="#4A1426" stroke="'+O+'" stroke-width="2.4"/>'+tth(70.4);
+  else if(ner)g+='<path d="M41 73 Q44 70 47 72.5 Q50 75 53 72.5 Q56 70 59 73" fill="none" stroke="'+O+'" stroke-width="2.4" stroke-linecap="round"/>'+tth(72.6);
+  else if(hap)g+='<path d="M39 69 Q50 72 62 67 Q60 79 50 79.5 Q42 79 39 69 Z" fill="#4A1426" '+s.replace('3"','2.6"')+'/>'+tth(70.2);
+  else g+='<path d="M50 68 V70 M39.5 70 Q45 73.5 50 70.5 Q56 73.5 62.5 67.5 M62.5 67.5 l1.6 -1.4" fill="none" stroke="'+O+'" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>'+tth(71);
+  // 표정 덧그림
+  if(ner)g+='<path d="M80 40 q4.5 6.5 0 9.5 q-4.5-3 0-9.5z M84 54 q3.4 5 0 7.4 q-3.4-2.4 0-7.4z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  if(shk)g+='<path d="M86 30 l-4 4 M90 40 l-6 2 M14 22 l4 5" stroke="'+LT+'" stroke-width="2.4" stroke-linecap="round"/>';
+  if(ang)g+='<path d="M74 36 q3 1 3 4 M80 36 q-3 1 -3 4 M74 46 q3 -1 3 -4 M80 46 q-3 -1 -3 -4" fill="none" stroke="'+RED+'" stroke-width="2.2" stroke-linecap="round"/>';
   return g}
  function on(){try{if(window.__dalOff)return false;if(window.__dalForce)return true;var c=G&&CASES[G.ci],B=G&&G.battle;return !!(c&&c.id==="kitchen"&&B&&B.phase==="fight"&&B.dal&&!B.bk2)}catch(e){return false}}
  window.__dalOn=on;
  var GC=CAST.grandma&&CAST.grandma.color;
- var _face=face;face=function(animal,color,cls){if(animal==="rabbit"&&color===GC&&on())return '<svg class="'+(cls||"")+'" viewBox="0 0 100 100" aria-hidden="true">'+inner(arguments[3]||"")+'</svg>';return _face.apply(this,arguments)};
+ var _face=face;face=function(animal,color,cls){if(animal==="rabbit"&&color===GC&&on())return '<svg class="'+(cls||"")+'" viewBox="0 0 100 101" aria-hidden="true">'+inner(arguments[3]||"")+'</svg>';return _face.apply(this,arguments)};
  // 이름표도 바뀐다
  try{var gp=CAST.grandma,nm0=gp.name;Object.defineProperty(gp,"name",{configurable:true,enumerable:true,get:function(){return on()?"관리국의 주인":nm0},set:function(v){nm0=v}})}catch(e){}
  // 악당 테마
@@ -24075,6 +24121,938 @@ REI2("kitchen",{
   if(text==="반론 개시"&&c&&c.id==="kitchen"&&B&&B.phase==="fight"&&!B.dal){var self=this,args=arguments;B.dal=1;try{saveProg()}catch(e){}
    return new Promise(function(res){cin(function(){render();_bn.call(self,text,CAST.grandma.name+"의 반론").then(res)})})}
   return _bn.apply(this,arguments)};
+})();
+
+/* v137: 주요 인물 시그니처 디자인 — window.__SIG[key]={face(mood)->0 0 100 101 내부 SVG, fig(mood)->-8 -4 116 164 내부 SVG(선택)} */
+(function(){
+ window.__SIG=window.__SIG||{};
+ var DEFL={d0:{a:"raccoon",c:"#A9A2A0",acc:"dhat",eye:"none",ext:"none"},d1:{a:"flyingsq",c:"#D9A47A",acc:"ribbon",eye:"none",ext:"none"}};
+ function isDef(slot){try{var L=S.look&&S.look[slot],D=DEFL[slot];if(!L)return true;return L.a===D.a&&L.c===D.c&&L.acc===D.acc&&L.eye===D.eye&&L.ext===D.ext}catch(e){return true}}
+ function use(k){var g=window.__SIG[k];if(!g||!g.face)return false;
+  if(k==="det0")return isDef("d0");if(k==="det1")return isDef("d1");
+  if(k==="grandma"&&window.__dalOn&&window.__dalOn())return false;
+  return true}
+ window.__sigUse=use;
+ var _pf=pf;pf=function(k,mood){if(use(k)){try{return '<svg class="sig sig-'+k+'" viewBox="0 0 100 101" aria-hidden="true">'+window.__SIG[k].face(mood||"")+'</svg>'}catch(e){}}return _pf.apply(this,arguments)};
+ var _nf=npcFig;npcFig=function(k,mood){var g=window.__SIG[k];if(use(k)&&g.fig){try{return '<svg class="fig sig sig-'+k+'" viewBox="-8 -4 116 164" aria-hidden="true">'+g.fig(mood||"")+'</svg>'}catch(e){}}return _nf.apply(this,arguments)};
+})();
+
+/* v137 시그니처: det0 아빠 탐정 — 말수 적은 베테랑 하드보일드 너구리 (트렌치코트 세운 깃, 갈색 중절모, 귀 뒤 연필, 졸린 듯 다정한 눈) */
+(function(){
+ var O="#1D2B53",FUR="#A9A2A0",FUR2="#C9C3C0",MASK="#4F4546",MUZ="#F4EFEA",
+     HAT="#946644",HAT2="#6A4228",BAND="#2E2633",COAT="#E6CC98",COAT2="#A07A50",SHIRT="#F6F2E8",TIE="#B8323A",
+     PEN="#FFC93C",PINK="#E58A9C",TEAR="#8FD0FF",WH="#FFFFFF";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ function P(d,f,extra){return '<path d="'+d+'" fill="'+(f||"none")+'" '+(extra||s)+'/>'}
+ function L(d,c,w){return '<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round" stroke-linejoin="round"/>'}
+
+ // 눈: 기본은 반쯤 감긴 졸린 눈(위 눈꺼풀이 일자로 덮음)
+ function eye(cx,mood){var y=53,x0=cx-7,x1=cx+7,g='';
+  if(has(mood,"happy"))return L('M'+(cx-7)+' 55 Q'+cx+' 47 '+(cx+7)+' 55',WH,5)+L('M'+(cx-7)+' 55 Q'+cx+' 47 '+(cx+7)+' 55',O,3.2);
+  if(has(mood,"shock")){return '<ellipse cx="'+cx+'" cy="'+y+'" rx="7.5" ry="8.5" fill="'+WH+'" '+s+'/><circle cx="'+cx+'" cy="'+(y+.5)+'" r="2.2" fill="'+O+'"/>'}
+  if(has(mood,"nervous")||has(mood,"confused")){
+   return '<ellipse cx="'+cx+'" cy="'+y+'" rx="7" ry="7.5" fill="'+WH+'" '+s+'/><circle cx="'+(cx+(cx<50?1.5:-1.5))+'" cy="'+(y+1)+'" r="3.4" fill="'+O+'"/><circle cx="'+(cx+(cx<50?2.6:-.4))+'" cy="'+(y-.4)+'" r="1.2" fill="'+WH+'"/>'}
+  if(has(mood,"angry")){var Lf=cx<50,ya=Lf?49.5:53.5,yb=Lf?53.5:49.5,xa=cx-8,xb=cx+8;
+   return P('M'+xa+' '+ya+' L'+xb+' '+yb+' Q'+(xb-1)+' 61 '+cx+' 61 Q'+(xa+1)+' 61 '+xa+' '+ya+' Z',WH)+'<circle cx="'+(cx+(Lf?1:-1))+'" cy="57" r="3" fill="'+O+'"/>'+L('M'+xa+' '+ya+' L'+xb+' '+yb,O,3.8)}
+  // 기본/슬픔/우쭐: 반쯤 감은 졸린 눈 (바깥쪽이 살짝 처진 다정한 눈꺼풀)
+  var sad=has(mood,"sad")||has(mood,"cry"),Lf=cx<50;
+  var yo=sad?54:53,yi=sad?50.5:52;           // 바깥/안쪽 눈꼬리 높이
+  var xa=Lf?x0:x1,xb=Lf?x1:x0;
+  var lid='M'+xa+' '+yo+' Q'+cx+' '+(sad?49:49.4)+' '+xb+' '+yi;
+  g+=P(lid+' Q'+xb+' 60.5 '+cx+' 60.5 Q'+xa+' 60.5 '+xa+' '+yo+' Z',WH);
+  g+='<circle cx="'+cx+'" cy="'+(sad?56:55.6)+'" r="3.6" fill="'+O+'"/><circle cx="'+(cx+1.5)+'" cy="'+(sad?55.6:55)+'" r="1.2" fill="'+WH+'"/>';
+  if(sad)g+='<circle cx="'+(cx-1.6)+'" cy="58" r=".8" fill="'+WH+'"/>';
+  g+=L(lid,O,3.8)+L('M'+xa+' '+yo+' l'+(Lf?-2.4:2.4)+' 1.6',O,2.4);
+  return g}
+ function brows(mood){var c=O,w=4;
+  if(has(mood,"angry"))return L('M29 41 L46 47 M71 41 L54 47',c,w+.4);
+  if(has(mood,"sad")||has(mood,"cry"))return L('M30 46 L45 41 M70 46 L55 41',c,w);
+  if(has(mood,"nervous"))return L('M30 45 Q38 39 45 41 M70 45 Q62 39 55 41',c,w);
+  if(has(mood,"shock"))return L('M30 39 Q37 34 45 37 M55 37 Q63 34 70 39',c,w);
+  if(has(mood,"confused"))return L('M30 41 Q37 36 45 39 M55 45 L70 44',c,w);
+  if(has(mood,"happy"))return L('M30 44 Q37 40 45 43 M55 43 Q63 40 70 44',c,w);
+  if(has(mood,"smug"))return L('M30 45 L45 45 M55 42 Q63 37 70 41',c,w);
+  // 기본: 무겁고 일자, 한쪽만 살짝 올라감(엉뚱함)
+  return L('M30 45 Q37 42.5 45 44 M55 43.5 Q63 39.5 70 42',c,w)}
+ function mouth(mood){
+  if(has(mood,"happy"))return P('M43 70 Q50 77 57 69 Q50 72 43 70 Z',"#7A2E3A",'stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"');
+  if(has(mood,"shock"))return '<ellipse cx="50" cy="73" rx="4" ry="4.6" fill="#7A2E3A" stroke="'+O+'" stroke-width="2.4"/>';
+  if(has(mood,"sad")||has(mood,"cry"))return L('M44 73 Q50 68.5 56 73',O,2.8);
+  if(has(mood,"nervous"))return L('M42 72 Q44.5 69.5 47 72 Q49.5 74.5 52 72 Q54.5 69.5 57 72',O,2.6);
+  if(has(mood,"angry"))return L('M43 72 Q50 69 57 72',O,3)+L('M46 71.2 L54 71.2',WH,1.4);
+  if(has(mood,"confused"))return L('M44 72 Q47 70 50 72 Q53 74 56 71',O,2.6);
+  if(has(mood,"smug"))return L('M44 71 Q51 73 58 67',O,2.8);
+  // 기본: 무표정에 가까운 한쪽 입꼬리
+  return L('M45 71.5 Q50 72.5 55 70',O,2.8)}
+ function inner(mood,F){var g='';
+  function open(d,f){return P(d+' Z',f,'stroke="none"')+P(d,null)}
+  var hatUp=has(mood,"shock")?-7:0;
+  // 코트 어깨 + 셔츠/넥타이
+  g+=F?open('M8 101 Q10 84 30 79 L50 88 L70 79 Q90 84 92 101',COAT):P('M8 101 Q10 84 30 79 L50 88 L70 79 Q90 84 92 101 Z',COAT);
+  g+=P(F?'M38 79 L50 90 L62 79 L58 104 L50 111 L42 104 Z':'M38 79 L50 90 L62 79 L60 101 L40 101 Z',SHIRT);
+  g+=P(F?'M47 86 L53 86 L55 103 L50 108 L45 103 Z':'M47 86 L53 86 L55 101 L45 101 Z',TIE)+P('M46.5 84 L53.5 84 L52 89 L48 89 Z',TIE,'stroke="'+O+'" stroke-width="2" stroke-linejoin="round"');
+  g+=L('M18 90 Q22 86 28 86 M82 90 Q78 86 72 86',COAT2,2.6); // 견장 느낌
+  g+='<circle cx="30" cy="96" r="2.4" fill="'+COAT2+'" stroke="'+O+'" stroke-width="1.6"/><circle cx="70" cy="96" r="2.4" fill="'+COAT2+'" stroke="'+O+'" stroke-width="1.6"/>';
+  // 연필 (오른쪽 귀 뒤)
+  g+='<g transform="rotate(32 84 30)"><rect x="80.5" y="10" width="7" height="30" fill="'+PEN+'" '+s+'/><path d="M80.5 40 L84 47 L87.5 40 Z" fill="#F2D8B0" '+s+'/><path d="M83 44 L84 47 L85 44 Z" fill="'+O+'"/><rect x="80.5" y="6" width="7" height="5" fill="'+PINK+'" '+s+'/></g>';
+  // 귀
+  g+='<g class="ears"><path d="M25 38 L18 10 L40 26 Z" fill="'+FUR+'" '+s+'/><path d="M75 38 L82 10 L60 26 Z" fill="'+FUR+'" '+s+'/><path d="M26 30 L22 17 L33 26 Z" fill="'+MASK+'"/><path d="M74 30 L78 17 L67 26 Z" fill="'+MASK+'"/></g>';
+  // 머리 (너구리 볼털 뾰족)
+  g+=P('M24 50 Q24 30 50 30 Q76 30 76 50 Q78 56 84 62 Q78 64 76 66 Q80 70 74 72 Q66 82 50 82 Q34 82 26 72 Q20 70 24 66 Q22 64 16 62 Q22 56 24 50 Z',FUR);
+  // 눈가 위 하얀 털, 마스크
+  g+=P('M28 44 Q38 38 48 43 L52 43 Q62 38 72 44 Q70 48 62 47 Q55 47 50 49 Q45 47 38 47 Q30 48 28 44 Z',FUR2,'stroke="none"');
+  g+=P('M22 52 Q28 46 38 47 Q46 48 50 52 Q54 48 62 47 Q72 46 78 52 Q78 62 66 63 Q57 63 52 58 L48 58 Q43 63 34 63 Q22 62 22 52 Z',MASK,'stroke="none"');
+  // 주둥이
+  g+=P('M39.5 69 Q40 61 50 61 Q60 61 60.5 69 Q59 77.5 50 79 Q41 77.5 39.5 69 Z',MUZ,'stroke="'+O+'" stroke-width="2.2"');
+  g+='<path d="M46 63.4 Q50 61.8 54 63.4 Q53.6 66.4 50 67 Q46.4 66.4 46 63.4 Z" fill="'+O+'"/><ellipse cx="48.4" cy="63.5" rx="1.2" ry=".7" fill="'+WH+'" opacity=".75"/>'+L('M50 67 V69.4',O,2);
+  // 볼
+  var bl=has(mood,"shy")||has(mood,"blush");
+  g+='<ellipse cx="30" cy="68" rx="4.6" ry="2.6" fill="'+PINK+'" opacity="'+(bl?".95":".5")+'"/><ellipse cx="70" cy="68" rx="4.6" ry="2.6" fill="'+PINK+'" opacity="'+(bl?".95":".5")+'"/>';
+  // 세운 트렌치코트 깃
+  g+=(F?open('M12 101 L14 78 L26 66 L32 80 L38 79 L33 101',COAT):P('M12 101 L14 78 L26 66 L32 80 L38 79 L33 101 Z',COAT))+L('M26 66 L32 80',COAT2,2);
+  g+=(F?open('M88 101 L86 78 L74 66 L68 80 L62 79 L67 101',COAT):P('M88 101 L86 78 L74 66 L68 80 L62 79 L67 101 Z',COAT))+L('M74 66 L68 80',COAT2,2);
+  // 중절모
+  g+='<g transform="translate(0 '+hatUp+') rotate(-5 50 28)">';
+  g+=P('M27 32 Q26 14 36 11 Q43 15 50 12 Q57 15 64 11 Q74 14 73 32 Z',HAT);
+  g+=P('M27.5 25 L72.5 25 L73 32 L27 32 Z',BAND,'stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"');
+  g+=L('M44 15.5 Q50 22 56 15.5',HAT2,2.4);
+  g+=P('M10 34 Q30 26 50 28 Q70 26 90 34 Q82 39 50 37.5 Q18 39 10 34 Z',HAT2);
+  g+=L('M31 27.5 Q35 21 41 19',"#B88A62",2.2);
+  g+='</g>';
+  if(has(mood,"shock"))g+=L('M18 18 l-5 -4 M82 18 l5 -4 M50 2 v-3',O,2.4);
+  g+=brows(mood);
+  g+='<g class="eyes">'+eye(39,mood)+eye(61,mood)+'</g>';
+  g+=mouth(mood);
+  if(has(mood,"nervous"))g+='<path d="M80 42 q4.5 6.5 0 9.5 q-4.5 -3 0 -9.5z" fill="'+TEAR+'" stroke="'+O+'" stroke-width="1.6"/>';
+  if(has(mood,"cry"))g+=L('M34 60 q-2 7 0 11 M66 60 q2 7 0 11',TEAR,3);
+  if(has(mood,"angry"))g+=L('M78 40 l4 -4 M80 44 l5 -1',O,2.2);
+  return g}
+
+ function fig(mood){var g='<ellipse cx="50" cy="153" rx="32" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 줄무늬 꼬리
+  g+=L('M66 136 Q100 136 94 100',O,15)+L('M66 136 Q100 136 94 100',FUR,10);
+  g+=L('M80 134 l3 -6 M90 126 l5 -3 M95 114 l5 0 M94 104 l5 2',MASK,5);
+  // 다리·신발
+  g+=P('M38 136 L37 148 L48 148 L48 136 Z',"#4A4040")+P('M52 136 L52 148 L63 148 L62 136 Z',"#4A4040");
+  g+='<ellipse cx="41" cy="149.5" rx="9.4" ry="4.8" fill="#3A2A22" '+s+'/><ellipse cx="59" cy="149.5" rx="9.4" ry="4.8" fill="#3A2A22" '+s+'/>';
+  // 트렌치코트 몸판 (어깨에서 자연스럽게 내려와 아래로 퍼짐)
+  g+=P('M14 96 L86 96 L90 141 Q50 146 10 141 Z',COAT);
+  g+=L('M50 108 L50 143',O,2.2)+L('M52 100 L60 142',COAT2,2);
+  [113].forEach(function(y){g+='<circle cx="42" cy="'+y+'" r="2.3" fill="'+COAT2+'" stroke="'+O+'" stroke-width="1.4"/><circle cx="58" cy="'+y+'" r="2.3" fill="'+COAT2+'" stroke="'+O+'" stroke-width="1.4"/>'});
+  // 벨트
+  g+=P('M12 120 Q50 125 88 120 L88.6 127 Q50 132 11.4 127 Z',COAT2,'stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"');
+  g+='<rect x="45" y="121.5" width="10" height="8" rx="1.5" fill="none" stroke="'+O+'" stroke-width="2.2"/>';
+  g+=L('M66 128 L70 138 M70 128 L75 137',COAT2,2.4);
+  // 소매: 주머니에 손을 찔러 넣은 자세
+  g+=P('M14 98 Q6 106 9 124 L22 124 Q20 110 24 102 Z',COAT)+P('M86 98 Q94 106 91 124 L78 124 Q80 110 76 102 Z',COAT);
+  g+=P('M8 121 L23 121 L24 127 L9 127 Z',COAT2,'stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"')+P('M92 121 L77 121 L76 127 L91 127 Z',COAT2,'stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"');
+  g+='<circle cx="42" cy="135" r="2.3" fill="'+COAT2+'" stroke="'+O+'" stroke-width="1.4"/><circle cx="58" cy="135" r="2.3" fill="'+COAT2+'" stroke="'+O+'" stroke-width="1.4"/>';
+  return g+'<g>'+inner(mood,1)+'</g>'}
+
+ window.__SIG=window.__SIG||{};
+ window.__SIG["det0"]={face:function(mood){return inner(mood||"")},fig:function(mood){return fig(mood||"")}};
+})();
+
+/* v137 시그니처: det1 다람 탐정 — 엄마를 닮은 꼬마 과학자 탐정 날다람쥐 (올려 쓴 엄마의 비행 고글, 큰 빨간 리본, 별 브로치 빨간 망토, 주근깨) */
+(function(){
+ var O="#1D2B53",FUR="#D9A47A",FUR2="#C08458",CREAM="#FBE8D0",INNER="#F4B7B0",
+     RED="#E23B44",RED2="#A22633",GOLD="#F2C230",BRASS="#B87A3A",STRAP="#7A4A2A",LENS="#FFE27A",GLASS="#BFEFFA",
+     IRIS="#7A3E1E",FRK="#B5683C",PINK="#F28A94",TEAR="#8FD0FF",WH="#FFFFFF";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ function P(d,f,extra){return '<path d="'+d+'" fill="'+(f||"none")+'" '+(extra||s)+'/>'}
+ function L(d,c,w){return '<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round" stroke-linejoin="round"/>'}
+ function star(cx,cy,R,r){var p="";for(var i=0;i<10;i++){var rr=i%2?r:R,a=(-90+i*36)*Math.PI/180;p+=(i?"L":"M")+(cx+Math.cos(a)*rr).toFixed(1)+" "+(cy+Math.sin(a)*rr).toFixed(1)}return p+"Z"}
+
+ // 눈: 크고 반짝이는 눈
+ function eye(cx,mood){var y=54,Lf=cx<50,g='';
+  if(has(mood,"happy"))return L('M'+(cx-7.5)+' 56 Q'+cx+' 46 '+(cx+7.5)+' 56',O,3.6)+L('M'+(Lf?cx-7.5:cx+7.5)+' 56 l'+(Lf?-2.5:2.5)+' -2',O,2.4);
+  if(has(mood,"shock"))return '<ellipse cx="'+cx+'" cy="'+y+'" rx="7.6" ry="9" fill="'+WH+'" '+s+'/><circle cx="'+cx+'" cy="'+(y+.5)+'" r="2.6" fill="'+O+'"/>';
+  var ry=9,rx=7.6;
+  if(has(mood,"angry")){
+   var ya=Lf?48:51,yb=Lf?51:48;
+   return P('M'+(cx-7.6)+' '+ya+' L'+(cx+7.6)+' '+yb+' Q'+(cx+7.6)+' 63 '+cx+' 63 Q'+(cx-7.6)+' 63 '+(cx-7.6)+' '+ya+' Z',IRIS)
+    +'<circle cx="'+cx+'" cy="57" r="3.6" fill="'+O+'"/><circle cx="'+(cx+2)+'" cy="55" r="1.8" fill="'+WH+'"/>'+L('M'+(cx-8.5)+' '+(ya-.4)+' L'+(cx+8.5)+' '+(yb-.4),O,3.8)}
+  var sad=has(mood,"sad")||has(mood,"cry");
+  g+='<ellipse cx="'+cx+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'" fill="'+IRIS+'" '+s+'/>';
+  g+='<ellipse cx="'+cx+'" cy="'+(y+1)+'" rx="4.6" ry="5.8" fill="'+O+'"/>';
+  g+='<circle cx="'+(cx+2.6)+'" cy="'+(y-3.4)+'" r="3" fill="'+WH+'"/><circle cx="'+(cx-2.6)+'" cy="'+(y+4)+'" r="1.5" fill="'+WH+'"/>';
+  if(!sad&&!has(mood,"nervous"))g+='<path d="'+star(cx-2.8,y-3.6,2.2,.8)+'" fill="'+WH+'"/>';
+  if(sad)g+=L('M'+(cx-8.5)+' '+(Lf?47:44)+' L'+(cx+8.5)+' '+(Lf?44:47),FUR,4.5)+L('M'+(cx-8)+' '+(Lf?48:45.4)+' L'+(cx+8)+' '+(Lf?45.4:48),O,2.6);
+  // 속눈썹 (바깥 눈꼬리)
+  g+=Lf?L('M'+(cx-7)+' 49.5 l-3.6 -2.4',O,2.4):L('M'+(cx+7)+' 49.5 l3.6 -2.4',O,2.4);
+  return g}
+ function brows(mood){var c=O,w=3.6;
+  if(has(mood,"angry"))return L('M29 40 L45 45.5 M71 40 L55 45.5',c,w+.4);
+  if(has(mood,"sad")||has(mood,"cry"))return L('M31 43 L45 38.5 M69 43 L55 38.5',c,w);
+  if(has(mood,"nervous"))return L('M31 42 Q38 37 45 39 M69 42 Q62 37 55 39',c,w);
+  if(has(mood,"shock"))return L('M31 38 Q38 33 45 36 M55 36 Q62 33 69 38',c,w);
+  if(has(mood,"confused"))return L('M31 39 Q38 35 45 38 M55 43 L69 42',c,w);
+  if(has(mood,"happy"))return L('M31 42 Q38 38 45 41 M55 41 Q62 38 69 42',c,w);
+  // 기본: 자신만만 — 한쪽 눈썹 치켜올림
+  return L('M31 42 Q38 39.5 45 41.5 M55 40 Q62 34.5 69 38',c,w)}
+ function teeth(x,y){return '<path d="M'+(x-3.4)+' '+y+' L'+(x+3.4)+' '+y+' L'+(x+3.2)+' '+(y+4)+' L'+(x-3.2)+' '+(y+4)+' Z" fill="'+WH+'" stroke="'+O+'" stroke-width="1.6" stroke-linejoin="round"/>'+L('M'+x+' '+y+' V'+(y+4),O,1.2)}
+ function mouth(mood){
+  if(has(mood,"happy"))return P('M40 68 Q50 67 60 68 Q59 80 50 80 Q41 80 40 68 Z',"#8A2E3A",'stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"')+'<path d="M45 76.5 Q50 74 55 76.5 Q53 79.6 50 79.6 Q47 79.6 45 76.5 Z" fill="#F07A86"/>'+teeth(50,68.3);
+  if(has(mood,"shock"))return '<ellipse cx="50" cy="73" rx="4.6" ry="5.4" fill="#8A2E3A" stroke="'+O+'" stroke-width="2.6"/>'+teeth(50,68.4).replace(/fill="#FFFFFF"/,'fill="#FFFFFF"');
+  if(has(mood,"sad")||has(mood,"cry"))return L('M43 74 Q50 68.5 57 74',O,2.8)+teeth(50,70.8);
+  if(has(mood,"nervous"))return L('M42 72 Q44.7 69.5 47.4 72 Q50 74.5 52.6 72 Q55.3 69.5 58 72',O,2.6);
+  if(has(mood,"angry"))return P('M42 70 Q50 67.6 58 70 Q57 75 50 75 Q43 75 42 70 Z',"#8A2E3A",'stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"')+teeth(50,68.6);
+  if(has(mood,"confused"))return L('M43 72 Q46.5 69.5 50 72 Q53.5 74.5 57 71',O,2.6);
+  if(has(mood,"smug"))return L('M43 70.5 Q51 74 59 67',O,2.8)+teeth(50,71.4);
+  // 기본: 자신만만한 한쪽 올라간 웃음 + 앞니
+  return P('M41 68.6 Q50 70 60 66.4 Q58.5 76.5 50 77 Q42.5 76.5 41 68.6 Z',"#8A2E3A",'stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"')+'<path d="M45 74.4 Q50 72.6 55.6 73.6 Q53.6 76.4 50 76.6 Q46.6 76.4 45 74.4 Z" fill="#F07A86"/>'+teeth(49.6,68.9)}
+
+ function goggles(){var g='';
+  // 머리 위로 올려 쓴 엄마의 비행 고글
+  g+=L('M21 36 Q24 24 30 22',STRAP,5.5)+L('M79 36 Q74 24 68 22',STRAP,5.5);
+  g+=P('M29 18.6 Q48 13.8 68 18.6 L68 26 Q48 21.6 29 26 Z',STRAP,'stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"');
+  [37,59].forEach(function(x){
+   g+='<circle cx="'+x+'" cy="21" r="9.4" fill="'+BRASS+'" '+s+'/><circle cx="'+x+'" cy="21" r="6.2" fill="'+LENS+'" stroke="'+O+'" stroke-width="2"/>';
+   g+=L('M'+(x-3.4)+' 19.4 Q'+(x-2.4)+' 16.6 '+(x+.4)+' 16.2',WH,2.2)+'<circle cx="'+(x+2.6)+'" cy="23.6" r="1" fill="'+WH+'"/>';
+  });
+  g+=P('M45.6 19 L50.4 19 L50.4 23.6 L45.6 23.6 Z',BRASS,'stroke="'+O+'" stroke-width="2"');
+  return g}
+ function bow(){
+  return '<g transform="translate(80 15) rotate(20)">'
+   +P('M-1 3 L-7 15 L-1.5 13.5 Z',RED2,'stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"')+P('M1 3 L7 15 L1.5 13.5 Z',RED2,'stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"')
+   +P('M0 0 Q-8 -13 -16 -9 Q-20 0 -16 9 Q-8 13 0 0 Z',RED)+P('M0 0 Q8 -13 16 -9 Q20 0 16 9 Q8 13 0 0 Z',RED)
+   +'<rect x="-4.5" y="-5" width="9" height="10" rx="3" fill="'+RED+'" stroke="'+O+'" stroke-width="2.4"/>'+L('M-12 -5 Q-14 -1 -13 3',"#FF8A90",2)+'</g>'}
+
+ function inner(mood,F){var g='';
+  // 망토 어깨 + 하얀 깃 + 별 브로치
+  if(F){ // 전신: 앞이 트인 짧은 케이프(캐플릿)
+   g+=P('M10 106 Q8 84 28 79 Q40 84 50 86 Q44 96 34 103 Q22 108 10 106 Z',RED)+P('M90 106 Q92 84 72 79 Q60 84 50 86 Q56 96 66 103 Q78 108 90 106 Z',RED);
+   g+=L('M18 100 Q22 90 30 86 M82 100 Q78 90 70 86',RED2,2.4);
+  }else{
+   g+=P('M8 101 Q8 84 28 79 Q50 86 72 79 Q92 84 92 101 Z',RED);
+   g+=L('M20 94 Q24 88 30 86 M80 94 Q76 88 70 86',RED2,2.4);
+  }
+  g+=P('M33 79 Q36 92 48 88 L50 84 L52 88 Q64 92 67 79 Q50 86 33 79 Z',WH,'stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"');
+  g+='<path d="'+star(50,91,9.4,4.2)+'" fill="'+GOLD+'" stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"/><circle cx="50" cy="91" r="1.6" fill="#FFF3C4"/>';
+  // 귀
+  g+='<g class="ears"><ellipse cx="25" cy="36" rx="9" ry="11" fill="'+FUR+'" '+s+' transform="rotate(-18 25 36)"/><ellipse cx="75" cy="36" rx="9" ry="11" fill="'+FUR+'" '+s+' transform="rotate(18 75 36)"/><ellipse cx="25.6" cy="37" rx="4.4" ry="6.2" fill="'+INNER+'" transform="rotate(-18 25.6 37)"/><ellipse cx="74.4" cy="37" rx="4.4" ry="6.2" fill="'+INNER+'" transform="rotate(18 74.4 37)"/></g>';
+  // 머리 (볼 통통, 볼털)
+  g+=P('M23 52 Q23 28 50 28 Q77 28 77 52 Q80 58 81 63 Q77 63 76 66 Q72 81 50 82 Q28 81 24 66 Q23 63 19 63 Q20 58 23 52 Z',FUR);
+  // 아래 얼굴 크림
+  g+=P('M33 66 Q36 59.5 50 60 Q64 59.5 67 66 Q66 79 50 80.5 Q34 79 33 66 Z',CREAM,'stroke="none"');
+  // 이마 털 무늬 (눈 위 어두운 줄)
+  g+=L('M42 32 Q46 37 50 36 Q54 37 58 32',FUR2,3);
+  // 고글
+  g+=goggles();
+  // 리본
+  g+=bow();
+  // 볼터치 + 주근깨
+  var bl=has(mood,"shy")||has(mood,"blush");
+  g+='<ellipse cx="29" cy="66" rx="5.4" ry="3.2" fill="'+PINK+'" opacity="'+(bl?".95":".6")+'"/><ellipse cx="71" cy="66" rx="5.4" ry="3.2" fill="'+PINK+'" opacity="'+(bl?".95":".6")+'"/>';
+  [[27,63.5],[31.6,62.6],[29.4,66.6],[73,63.5],[68.4,62.6],[70.6,66.6]].forEach(function(p){g+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="1.25" fill="'+FRK+'"/>'});
+  g+=brows(mood);
+  g+='<g class="eyes">'+eye(38,mood)+eye(62,mood)+'</g>';
+  // 코
+  g+='<path d="M46.6 63.2 Q50 61.6 53.4 63.2 Q52.6 65.8 50 66.2 Q47.4 65.8 46.6 63.2 Z" fill="#5A3A2A" stroke="'+O+'" stroke-width="1.4"/><ellipse cx="48.8" cy="63.3" rx="1" ry=".6" fill="'+WH+'" opacity=".8"/>';
+  g+=mouth(mood);
+  if(has(mood,"nervous"))g+='<path d="M82 44 q4.5 6.5 0 9.5 q-4.5 -3 0 -9.5z" fill="'+TEAR+'" stroke="'+O+'" stroke-width="1.6"/>';
+  if(has(mood,"cry"))g+=L('M32 62 q-2 7 0 11 M68 62 q2 7 0 11',TEAR,3);
+  if(has(mood,"shock"))g+=L('M14 40 l-5 -3 M86 40 l5 -3 M13 48 l-6 0 M87 48 l6 0',O,2.4);
+  if(has(mood,"angry"))g+=L('M84 46 l5 -4 M86 51 l6 -1',O,2.4);
+  if(has(mood,"happy"))g+='<path d="'+star(88,46,4.6,1.8)+'" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.4" stroke-linejoin="round"/><path d="'+star(13,52,3.4,1.3)+'" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.2" stroke-linejoin="round"/>';
+  return g}
+
+ function fig(mood){var g='<ellipse cx="50" cy="153" rx="30" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 꼬리 (넓고 납작한 날다람쥐 꼬리)
+  g+=P('M60 138 Q106 144 100 102 Q96 82 84 90 Q96 112 66 124 Z',FUR)+L('M84 132 Q96 120 92 102',FUR2,3);
+  // 망토 뒷자락
+  g+=P('M12 96 Q50 88 88 96 L94 146 Q78 140 68 147 Q50 141 32 147 Q22 140 6 146 Z',RED)+L('M20 108 L14 140 M80 108 L86 140',RED2,2.4);
+  // 다리·신발
+  g+=P('M39 134 L39 146 L48 146 L48 134 Z',FUR)+P('M52 134 L52 146 L61 146 L61 134 Z',FUR);
+  g+='<ellipse cx="42" cy="148.5" rx="8.6" ry="4.6" fill="#7A3A22" '+s+'/><ellipse cx="58" cy="148.5" rx="8.6" ry="4.6" fill="#7A3A22" '+s+'/>';
+  // 몸: 크림 블라우스 + 남색 멜빵 반바지
+  g+=P('M32 98 Q50 94 68 98 L68 124 Q50 128 32 124 Z',CREAM);
+  g+=P('M31 120 Q50 125 69 120 L70 137 L52 137 L50 131 L48 137 L30 137 Z',"#2D3F86");
+  g+=L('M40 99 L41 121 M60 99 L59 121',"#2D3F86",3.4);
+  g+='<circle cx="41" cy="119" r="1.8" fill="'+GOLD+'"/><circle cx="59" cy="119" r="1.8" fill="'+GOLD+'"/>';
+  g+='<g>'+inner(mood,1)+'</g>';
+  // 왼팔: 허리에 손 (망토 밑에서 나옴, 비막 살짝)
+  g+=P('M22 99 Q14 112 26 121 Q31 117 30 114 Q24 110 29 101 Z',FUR);
+  g+='<circle cx="29" cy="118.6" r="4.4" fill="'+FUR+'" '+s+'/>';
+  // 오른팔: 돋보기를 높이 든 손
+  g+=P('M73 99 Q84 98 86 88 L80 86 Q78 93 70 94 Z',FUR);
+  g+=L('M84 86 L89 76',"#7A4A2A",4.6);
+  g+='<circle cx="92" cy="68" r="9.4" fill="'+GLASS+'" stroke="'+GOLD+'" stroke-width="3.6"/><circle cx="92" cy="68" r="11.2" fill="none" stroke="'+O+'" stroke-width="1.8"/><circle cx="92" cy="68" r="7.6" fill="none" stroke="'+O+'" stroke-width="1.4"/>'+L('M87.6 64 Q89.4 61.4 92.4 61.2',WH,2.2);
+  g+='<circle cx="83.6" cy="87" r="4.6" fill="'+FUR+'" '+s+'/>';
+  return g}
+
+ window.__SIG=window.__SIG||{};
+ window.__SIG["det1"]={face:function(mood){return inner(mood||"")},fig:function(mood){return fig(mood||"")}};
+})();
+
+/* v137: 토끼 할머니(평소 모습) — 모두의 다정한 할머니 (하얀 쪽머리와 비녀, 동그란 금테 안경, 연보라 숄, 딸기 무늬 앞치마, 발그레한 볼, 눈웃음)
+   ※ 15장 흑막(dalface.js)과 같은 사람으로 보이도록 귀 모양·동그란 안경 위치(39/61,56 r8.5)·앞니 두 개를 맞춘다. */
+(function(){
+ var O="#2E2430",FUR="#DAD5CC",FUR2="#F7F3EC",EARIN="#F2B3C0",HAIR="#FFFFFF",HAIR2="#C9C1B6",
+  GOLD="#D4A23A",SHAWL="#A86BB8",SHAWL2="#C9A0DC",APRON="#FFF6E6",APRON2="#E79AAE",DRESS="#6FB27A",
+  JADE="#5AA86A",PLUM="#F07C9A",BLUSH="#F28FA2",BROW="#8A7C74";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ function clover(x,y,r){return '<path d="M'+(x-r*1.1)+' '+(y-r*.4)+' Q'+x+' '+(y+r*2.2)+' '+(x+r*1.1)+' '+(y-r*.4)+' Q'+x+' '+(y-r*1.2)+' '+(x-r*1.1)+' '+(y-r*.4)+' Z" fill="#E8485E"/><path d="M'+(x-r*.9)+' '+(y-r*.7)+' L'+x+' '+(y-r*.2)+' L'+(x+r*.9)+' '+(y-r*.7)+' L'+x+' '+(y-r*1.3)+' Z" fill="#5AA86A"/>'}  // 딸기 무늬 (1장 딸기 케이크)
+ function eye(cx,mood){var y=56;
+  if(has(mood,"shock"))return '<circle cx="'+cx+'" cy="'+y+'" r="5" fill="#FFFFFF" stroke="'+O+'" stroke-width="2.6"/><circle cx="'+cx+'" cy="'+y+'" r="1.9" fill="'+O+'"/>';
+  if(has(mood,"nervous")||has(mood,"confused"))return '<ellipse cx="'+cx+'" cy="'+y+'" rx="2.8" ry="3.4" fill="'+O+'"/><circle cx="'+(cx+1)+'" cy="'+(y-1.2)+'" r="1" fill="#FFFFFF"/>';
+  if(has(mood,"angry"))return '<ellipse cx="'+cx+'" cy="'+(y+.5)+'" rx="3" ry="3.2" fill="'+O+'"/><path d="M'+(cx-5)+' '+(cx<50?y-4:y-2)+' L'+(cx+5)+' '+(cx<50?y-2:y-4)+'" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>';
+  if(has(mood,"sad")||has(mood,"cry"))return '<path d="M'+(cx-5)+' '+(y-1)+' Q'+cx+' '+(y+4)+' '+(cx+5)+' '+(y-1)+'" fill="none" stroke="'+O+'" stroke-width="3.8" stroke-linecap="round"/>';
+  if(has(mood,"happy"))return '<path d="M'+(cx-5.5)+' '+(y+2.5)+' Q'+cx+' '+(y-6.5)+' '+(cx+5.5)+' '+(y+2.5)+'" fill="none" stroke="'+O+'" stroke-width="4.2" stroke-linecap="round"/><path d="M'+(cx<50?cx-9:cx+9)+' '+(y+1)+' l'+(cx<50?-3:3)+' 1.5" stroke="'+O+'" stroke-width="1.8" stroke-linecap="round"/>';
+  // 기본: 다정한 눈웃음
+  return '<path d="M'+(cx-5.4)+' '+(y+2)+' Q'+cx+' '+(y-5)+' '+(cx+5.4)+' '+(y+2)+'" fill="none" stroke="'+O+'" stroke-width="4" stroke-linecap="round"/>'}
+ function glasses(mood){ // 동그란 금테 안경 (렌즈는 투명, 반짝)
+  return '<circle cx="39" cy="56" r="8.5" fill="#FFFFFF" fill-opacity=".22" stroke="'+O+'" stroke-width="4.2"/><circle cx="61" cy="56" r="8.5" fill="#FFFFFF" fill-opacity=".22" stroke="'+O+'" stroke-width="4.2"/>'
+   +'<circle cx="39" cy="56" r="8.5" fill="none" stroke="'+GOLD+'" stroke-width="2.4"/><circle cx="61" cy="56" r="8.5" fill="none" stroke="'+GOLD+'" stroke-width="2.4"/>'
+   +'<path d="M47.5 55 Q50 53 52.5 55" fill="none" stroke="'+GOLD+'" stroke-width="2.4"/><path d="M30.5 54 L25 52 M69.5 54 L75 52" stroke="'+GOLD+'" stroke-width="2.2" stroke-linecap="round"/>'
+   +'<path d="M33.5 52 l3 -3 M55.5 52 l3 -3" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".9"/>'}
+ function brows(mood){var st='fill="none" stroke="'+BROW+'" stroke-width="3.6" stroke-linecap="round"';
+  if(has(mood,"angry"))return '<path d="M32 42 L45 46 M68 42 L55 46" '+st+'/>';
+  if(has(mood,"sad")||has(mood,"cry")||has(mood,"nervous"))return '<path d="M32 46 L44 41.5 M68 46 L56 41.5" '+st+'/>';
+  if(has(mood,"shock"))return '<path d="M32 41 Q38 37 44 40 M56 40 Q62 37 68 41" '+st+'/>';
+  if(has(mood,"confused"))return '<path d="M32 43 L44 44 M56 42 Q62 38 68 42" '+st+'/>';
+  return '<path d="M33 44.5 Q38.5 41.5 44 43.5 M56 43.5 Q61.5 41.5 67 44.5" '+st+'/>'}
+ function teeth(y){return '<rect x="47.4" y="'+y+'" width="2.6" height="3.4" fill="#FFFFFF" stroke="'+O+'" stroke-width="1"/><rect x="50.2" y="'+y+'" width="2.6" height="3.4" fill="#FFFFFF" stroke="'+O+'" stroke-width="1"/>'}
+ function mouth(mood){var nose='<ellipse cx="50" cy="66" rx="3.4" ry="2.4" fill="#E07A8E"/>';
+  if(has(mood,"happy"))return nose+'<path d="M42 70 Q50 69 58 70 Q57 79 50 79 Q43 79 42 70 Z" fill="#7A2E3A" '+s+'/><path d="M45.5 76 Q50 73.5 54.5 76 Q52 79 50 79 Q48 79 45.5 76 Z" fill="#F08A96"/>'+teeth(70.2);
+  if(has(mood,"shock"))return nose+'<ellipse cx="50" cy="73.5" rx="3.6" ry="4.2" fill="#7A2E3A" '+s+'/>';
+  if(has(mood,"sad")||has(mood,"cry"))return nose+'<path d="M44 74 Q50 69.5 56 74" fill="none" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>';
+  if(has(mood,"nervous"))return nose+'<path d="M43 72 Q46 69 49 72 Q52 75 55 72 Q57 70 59 72" fill="none" stroke="'+O+'" stroke-width="2.4" stroke-linecap="round"/>';
+  if(has(mood,"angry"))return nose+'<path d="M45 73 Q50 70.5 55 73" fill="none" stroke="'+O+'" stroke-width="2.8" stroke-linecap="round"/>';
+  if(has(mood,"confused"))return nose+'<path d="M45 72.5 L55 71.5" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>';
+  // 기본: 토끼 입 + 포근한 미소, 앞니 두 개
+  return nose+'<path d="M50 68 V70 M41 69.5 Q45.5 74 50 70 Q54.5 74 59 69.5" fill="none" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'+teeth(71)}
+ function bust(){var g='';
+  // 꽃무늬 앞치마 (가운데)
+  g+='<path d="M34 82 Q50 88 66 82 L68 101 L32 101 Z" fill="'+APRON+'" '+s+'/>';
+  g+='<path d="M36 85 Q38 82 40 85 Q42 82 44 85 Q46 82 48 85 Q50 82 52 85 Q54 82 56 85 Q58 82 60 85 Q62 82 64 85" fill="none" stroke="'+APRON2+'" stroke-width="2"/>';
+  g+=clover(42,93,2.4)+clover(57,96,2.4)+clover(50,100,2);
+  // 연보라 숄 (양 어깨, 앞에서 브로치로 여밈)
+  g+='<path d="M8 101 Q8 84 26 78 Q38 80 44 90 L40 101 Z" fill="'+SHAWL+'" '+s+'/><path d="M92 101 Q92 84 74 78 Q62 80 56 90 L60 101 Z" fill="'+SHAWL+'" '+s+'/>';
+  g+='<path d="M14 92 Q22 86 30 88 M18 99 Q26 92 34 95 M86 92 Q78 86 70 88 M82 99 Q74 92 66 95" fill="none" stroke="'+SHAWL2+'" stroke-width="2.2" stroke-linecap="round"/>';
+  g+='<circle cx="50" cy="90" r="4.4" fill="'+PLUM+'" stroke="'+O+'" stroke-width="2"/><circle cx="50" cy="90" r="1.6" fill="#FFE27A"/>';
+  return g}
+ function head(mood){var g='';
+  // 귀 (흑막과 같은 길쭉한 모양)
+  g+='<g class="ears"><path d="M32 38 Q22 6 33 3 Q43 5 43 36 Z" fill="'+FUR+'" '+s+'/><path d="M68 38 Q78 6 67 3 Q57 5 57 36 Z" fill="'+FUR+'" '+s+'/><path d="M34.5 30 Q30 12 33.5 9 Q38 12 38.5 30 Z" fill="'+EARIN+'"/><path d="M65.5 30 Q70 12 66.5 9 Q62 12 61.5 30 Z" fill="'+EARIN+'"/></g>';
+  // 쪽진 머리 (뒤통수에서 옆으로 보이는 동그란 쪽) + 옥비녀와 매화 장식
+  g+='<circle cx="17" cy="51" r="11" fill="'+HAIR+'" '+s+'/><path d="M17 45.5 Q10.5 46.5 11 52 Q12 58 18 57.5 Q23 56.5 22.5 51.5 Q21.5 48 17.5 49" fill="none" stroke="'+HAIR2+'" stroke-width="2" stroke-linecap="round"/>';
+  g+='<path d="M4 41 L30 60" stroke="'+O+'" stroke-width="5.6" stroke-linecap="round"/><path d="M4 41 L30 60" stroke="'+JADE+'" stroke-width="2.6" stroke-linecap="round"/>';
+  g+='<circle cx="5" cy="40" r="5.4" fill="'+PLUM+'" stroke="'+O+'" stroke-width="2"/><circle cx="5" cy="40" r="1.8" fill="#FFE27A"/>';
+  // 얼굴
+  g+='<ellipse cx="50" cy="59" rx="26" ry="24" fill="'+FUR+'" '+s+'/>';
+  g+='<ellipse cx="50" cy="71" rx="12" ry="8.6" fill="'+FUR2+'"/>';
+  // 하얀 머리 (가운데 가르마, 뒤로 곱게 빗어 넘김)
+  g+='<path d="M25 57 Q17 50 20 42 Q22 31 36 30 Q43 27.5 50 29.5 Q57 27.5 64 30 Q78 31 80 42 Q83 50 75 57 Q74 46 66 41 Q58 37.5 50 40 Q42 37.5 34 41 Q26 46 25 57 Z" fill="'+HAIR+'" '+s+'/>';
+  g+='<path d="M50 30.5 V38 M24 48 Q25 38 35 35 Q41 33.5 46 35 M76 48 Q75 38 65 35 Q59 33.5 54 35" fill="none" stroke="'+HAIR2+'" stroke-width="2" stroke-linecap="round"/>';
+  // 볼
+  var bo=(has(mood,"shy")||has(mood,"blush"))?".95":".7";
+  g+='<ellipse cx="29.5" cy="68" rx="5.4" ry="3.6" fill="'+BLUSH+'" opacity="'+bo+'"/><ellipse cx="70.5" cy="68" rx="5.4" ry="3.6" fill="'+BLUSH+'" opacity="'+bo+'"/>';
+  g+=brows(mood);
+  g+='<g class="eyes">'+eye(39,mood)+eye(61,mood)+'</g>';
+  g+=glasses(mood);
+  g+=mouth(mood);
+  if(has(mood,"nervous"))g+='<path d="M80 40 q4.5 6.5 0 9.5 q-4.5-3 0-9.5z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  if(has(mood,"cry"))g+='<path d="M34 64 q-2 6 0 10 M66 64 q2 6 0 10" fill="none" stroke="#8FD0FF" stroke-width="3" stroke-linecap="round"/>';
+  if(has(mood,"shock"))g+='<path d="M16 22 l4 5 M12 33 l6 2 M86 30 l-4 4" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>';
+  return g}
+ function face(mood){return head(mood||"")+bust()}
+ function fig(mood){var g='<ellipse cx="50" cy="153" rx="28" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 동그란 꼬리
+  g+='<circle cx="75" cy="134" r="8" fill="#FFFFFF" '+s+'/>';
+  // 치마·발
+  g+='<path d="M26 96 Q50 88 74 96 L80 146 Q50 152 20 146 Z" fill="'+DRESS+'" '+s+'/>';
+  g+='<ellipse cx="40" cy="149" rx="9" ry="5" fill="'+FUR+'" '+s+'/><ellipse cx="60" cy="149" rx="9" ry="5" fill="'+FUR+'" '+s+'/>';
+  // 앞치마
+  g+='<path d="M35 90 H65 L68 142 Q50 146 32 142 Z" fill="'+APRON+'" '+s+'/><path d="M33 137.5 Q50 141.5 67 137.5" fill="none" stroke="'+APRON2+'" stroke-width="2.4"/>';
+  g+=clover(42,112,2.6)+clover(58,116,2.6)+clover(44,132,2.6)+clover(57,134,2.2);
+  // 숄 (어깨에서 팔꿈치까지)
+  g+='<path d="M20 88 Q50 70 80 88 Q88 104 82 118 Q68 106 58 106 L50 96 L42 106 Q32 106 18 118 Q12 104 20 88 Z" fill="'+SHAWL+'" '+s+'/>';
+  g+='<path d="M20 114 l-1 5 M25 111 l-1 5 M80 114 l1 5 M75 111 l1 5" stroke="'+SHAWL2+'" stroke-width="2" stroke-linecap="round"/><path d="M26 96 Q34 92 40 96 M74 96 Q66 92 60 96" fill="none" stroke="'+SHAWL2+'" stroke-width="2.2" stroke-linecap="round"/>';
+  g+='<circle cx="50" cy="96" r="4.2" fill="'+PLUM+'" stroke="'+O+'" stroke-width="2"/><circle cx="50" cy="96" r="1.5" fill="#FFE27A"/>';
+  // 손: 앞에서 모아 쥔 작은 쿠키 바구니
+  g+='<path d="M37 120 Q50 116 63 120 L60 133 Q50 136 40 133 Z" fill="#D9A45E" '+s+'/><path d="M40 120 Q50 103 60 120" fill="none" stroke="'+O+'" stroke-width="2.4"/><path d="M41 125 H59 M42 129.5 H58" stroke="#B07A3A" stroke-width="1.6"/>';
+  g+='<circle cx="45" cy="118.5" r="3.4" fill="#F2C27A" stroke="'+O+'" stroke-width="1.6"/><circle cx="54" cy="117.5" r="3.4" fill="#E8A860" stroke="'+O+'" stroke-width="1.6"/>';
+  g+='<ellipse cx="35" cy="122" rx="4.8" ry="4.4" fill="'+FUR+'" '+s+'/><ellipse cx="65" cy="122" rx="4.8" ry="4.4" fill="'+FUR+'" '+s+'/>';
+  return g+'<g>'+head(mood||"")+'</g>'}
+ window.__SIG=window.__SIG||{};
+ window.__SIG["grandma"]={face:face,fig:fig};
+})();
+
+/* v137 시그니처: 까로 — 수상하지만 미워할 수 없는 떠돌이 장사꾼 까마귀 (챙 넓은 여행자 모자+깃털, 외알 안경, 금 귀걸이, 주머니 코트, 별빛 램프) */
+(function(){
+ var O="#17152A",HEAD="#2E2D3D",HEAD2="#55537A",MASK="#AEA9CC",MASK2="#C9C5E2",BEAK="#F0C04E",BEAK2="#C9932E",
+     IRIS="#3FC98E",GOLD="#F2C230",HAT="#7E2E48",HAT2="#5E1F35",FEA="#3BB7AA",FEA2="#9BE6DA",COAT="#D99A3A",COAT2="#A86F22",COAT3="#F2C878",SCARF="#3B8C86";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ // ── 눈 ──
+ function eyeBall(cx,o){o=o||{};var y=52,rx=o.rx||7.4,ry=o.ry||8.2,dx=o.dx||0,dy=o.dy||0,ir=o.ir||4.8;
+  var g='<ellipse cx="'+cx+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'" fill="#FFFFFF" stroke="'+O+'" stroke-width="2.6"/>';
+  if(o.tiny)return g+'<circle cx="'+(cx+dx)+'" cy="'+(y+dy)+'" r="2" fill="'+O+'"/>';
+  g+='<circle cx="'+(cx+dx)+'" cy="'+(y+1+dy)+'" r="'+ir+'" fill="'+IRIS+'"/><circle cx="'+(cx+dx)+'" cy="'+(y+1+dy)+'" r="'+(ir*.52)+'" fill="'+O+'"/>';
+  g+='<circle cx="'+(cx+dx+1.8)+'" cy="'+(y-1.2+dy)+'" r="1.8" fill="#FFFFFF"/>';
+  if(o.star)g+='<path d="M'+(cx+dx+1.6)+' '+(y-4+dy)+' l1 2.6 2.6 1 -2.6 1 -1 2.6 -1 -2.6 -2.6 -1 2.6 -1z" fill="#FFFFFF"/>';
+  return g}
+ function lid(cx,kind){var y=52,x0=cx-7.6,x1=cx+7.6,inner=cx<50?x1:x0,outer=cx<50?x0:x1;
+  if(kind==="half")return '<path d="M'+x0+' '+y+' A7.4 8.2 0 0 1 '+x1+' '+y+' Q'+cx+' 48 '+x0+' '+y+' Z" fill="'+HEAD+'"/><path d="M'+(x0-1)+' '+(y+.5)+' Q'+cx+' 47.5 '+(x1+1)+' '+(y+.5)+'" fill="none" stroke="'+O+'" stroke-width="3.2" stroke-linecap="round"/>';
+  if(kind==="angry")return '<path d="M'+outer+' 47 L'+inner+' 52 L'+inner+' 42 L'+outer+' 42 Z" fill="'+MASK+'"/><path d="M'+(outer)+' 46.5 L'+inner+' 51.5" stroke="'+O+'" stroke-width="3" stroke-linecap="round"/>';
+  if(kind==="sad")return '<path d="M'+inner+' 46.5 L'+outer+' 51.5 L'+outer+' 42 L'+inner+' 42 Z" fill="'+MASK+'"/><path d="M'+inner+' 46 L'+outer+' 51" stroke="'+O+'" stroke-width="3" stroke-linecap="round"/>';
+  return ''}
+ function eyes(mood){var L=39,R=61,g='';
+  if(has(mood,"happy")){
+   g+='<path d="M'+(L-7.5)+' 54 Q'+L+' 45 '+(L+7.5)+' 54" fill="none" stroke="'+O+'" stroke-width="3.4" stroke-linecap="round"/>';
+   g+=eyeBall(R,{star:1});return g}
+  if(has(mood,"shock"))return eyeBall(L,{rx:8.4,ry:9.4,tiny:1})+eyeBall(R,{rx:8.4,ry:9.4,tiny:1});
+  if(has(mood,"cry")||has(mood,"sad"))return eyeBall(L,{dy:1.6})+lid(L,"sad")+eyeBall(R,{dy:1.6})+lid(R,"sad");
+  if(has(mood,"angry"))return eyeBall(L,{dx:1})+lid(L,"angry")+eyeBall(R,{dx:-1})+lid(R,"angry");
+  if(has(mood,"nervous"))return eyeBall(L,{dx:-2.4,ir:3.8})+eyeBall(R,{dx:-2.4,ir:3.8});
+  if(has(mood,"confused"))return eyeBall(L,{rx:6,ry:6.6,ir:3.6})+eyeBall(R,{rx:8.2,ry:9,dy:-.5});
+  if(has(mood,"shy")||has(mood,"blush"))return eyeBall(L,{dx:2,dy:1.5})+lid(L,"half")+eyeBall(R,{dx:2,dy:1.5})+lid(R,"half");
+  if(has(mood,"smug"))return eyeBall(L,{dx:1.5})+lid(L,"half")+eyeBall(R,{dx:1.5})+lid(R,"half");
+  // 기본: 왼눈은 능청스럽게 반쯤, 오른눈은 외알 안경 너머로 반짝
+  return eyeBall(L,{dx:1.5})+lid(L,"half")+eyeBall(R,{dx:1})}
+ function monocle(mood){
+  if(has(mood,"shock"))// 놀라면 외알 안경이 툭 떨어져 줄에 대롱대롱
+   return '<path d="M70 52 Q76 60 74 68" fill="none" stroke="'+GOLD+'" stroke-width="1.8"/><circle cx="73" cy="74" r="6" fill="none" stroke="'+O+'" stroke-width="4.6"/><circle cx="73" cy="74" r="6" fill="none" stroke="'+GOLD+'" stroke-width="2.4"/><path d="M70 72 l2.4 -2.4" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>';
+  if(has(mood,"happy"))return '<circle cx="61" cy="52" r="11" fill="none" stroke="'+O+'" stroke-width="4.2"/><circle cx="61" cy="52" r="11" fill="none" stroke="'+GOLD+'" stroke-width="2.2"/><path d="M72 54 Q77 62 74 72" fill="none" stroke="'+GOLD+'" stroke-width="1.8"/>'
+   +'<path d="M76 36 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6z" fill="#FFF6C8" stroke="'+O+'" stroke-width="1.2" stroke-linejoin="round"/>';
+  return '<circle cx="61" cy="52" r="11" fill="none" stroke="'+O+'" stroke-width="4.2"/><circle cx="61" cy="52" r="11" fill="none" stroke="'+GOLD+'" stroke-width="2.2"/><path d="M53.5 46.5 l3 -3" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><path d="M72 54 Q77 62 74 72" fill="none" stroke="'+GOLD+'" stroke-width="1.8"/>'}
+ function brows(mood){var w='stroke="'+O+'" stroke-width="3.8" stroke-linecap="round" fill="none"';
+  if(has(mood,"angry"))return '<path d="M30 39.5 L46 45 M70 39.5 L54 45" '+w+'/>';
+  if(has(mood,"sad")||has(mood,"cry")||has(mood,"nervous"))return '<path d="M31 43.5 L45 39.5 M69 43.5 L55 39.5" '+w+'/>';
+  if(has(mood,"shock"))return '<path d="M30 39 Q38 34.5 46 38 M54 38 Q62 34.5 70 39" '+w+'/>';
+  if(has(mood,"happy"))return '<path d="M31 42 Q38 38.5 45 41.5 M55 40.5 Q62 36 70 39.5" '+w+'/>';
+  if(has(mood,"confused"))return '<path d="M31 43 L45 43 M55 38 Q62 35 70 39" '+w+'/>';
+  // 기본: 한쪽 눈썹만 쓱 (능청)
+  return '<path d="M31 43 L45 44.5 M55 41 Q62 36.5 70 40" '+w+'/>'}
+ // ── 부리(입) ──
+ function beak(mood){var g='';
+  var open=has(mood,"happy")?1:has(mood,"shock")?2:0;
+  if(open){var low=open===2?84:78,mo=open===2?82:75;
+   g+='<path d="M41 64 Q51 70 61 64 Q58 '+(low-4)+' 51 '+low+' Q44 '+(low-4)+' 41 64 Z" fill="'+BEAK2+'" '+s+'/>';
+   g+='<path d="M43 64.5 Q51 69 59 64.5 Q56 '+(mo-4)+' 51 '+mo+' Q46 '+(mo-4)+' 43 64.5 Z" fill="#5A1E2E"/>';
+   g+='<path d="M46 '+(mo-5)+' Q51 '+(mo-8)+' 56 '+(mo-5)+' Q54 '+(mo-1)+' 51 '+(mo-.5)+' Q48 '+(mo-1)+' 46 '+(mo-5)+' Z" fill="#E87A8A"/>';
+   g+='<path d="M38 60 Q51 54 64 60 Q62 66 51 68 Q40 66 38 60 Z" fill="'+BEAK+'" '+s+'/>';
+   g+='<path d="M45 58.5 Q49 57.5 52 58" stroke="#FFF2B8" stroke-width="2" stroke-linecap="round" fill="none"/>';
+   return g}
+  g+='<path d="M37 60 Q51 53 65 60 Q64 71 51 83 Q39 71 37 60 Z" fill="'+BEAK+'" '+s+'/>';
+  g+='<path d="M44 58.5 Q48 57 52 57.5" stroke="#FFF2B8" stroke-width="2" stroke-linecap="round" fill="none"/><ellipse cx="56" cy="59.5" rx="1.6" ry="1" fill="'+BEAK2+'"/>';
+  var ln='fill="none" stroke="'+O+'" stroke-linecap="round"';
+  if(has(mood,"sad")||has(mood,"cry"))g+='<path d="M41 69 Q51 64 61 69" '+ln+' stroke-width="2.6"/>';
+  else if(has(mood,"nervous"))g+='<path d="M41 66 Q44 63 47 66 Q50 69 53 66 Q56 63 59 66 Q60.5 67.5 62 66" '+ln+' stroke-width="2.4"/>';
+  else if(has(mood,"angry"))g+='<path d="M41 66 L61 66" '+ln+' stroke-width="2.8"/><path d="M45 66 v3 M50 66 v3.4 M55 66 v3" '+ln+' stroke-width="1.6"/>';
+  else if(has(mood,"confused"))g+='<path d="M42 66 Q47 68 52 66 Q57 64 61 67" '+ln+' stroke-width="2.4"/>';
+  else g+='<path d="M41 65 Q51 70 61 63 L65.5 60.5" '+ln+' stroke-width="2.6"/>';// 능청 미소: 오른쪽 끝이 쓱 올라감
+  return g}
+ // ── 모자 ──
+ function hat(){var g='<g transform="rotate(-9 50 28)">';
+  g+='<ellipse cx="50" cy="31" rx="43" ry="8" fill="'+HAT+'" '+s+'/>';
+  g+='<path d="M28 31 Q27 14 33 10 Q42 6 50 11 Q58 6 67 10 Q73 14 72 31 Q50 36 28 31 Z" fill="'+HAT+'" '+s+'/>';
+  g+='<path d="M43 9.5 Q50 15 57 9.5" fill="none" stroke="'+HAT2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  g+='<path d="M28.5 24 Q50 29 71.5 24 L72 30.5 Q50 35.5 28 30.5 Z" fill="'+GOLD+'" stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"/>';
+  g+='<circle cx="40" cy="28.5" r="2.2" fill="#D9534F" stroke="'+O+'" stroke-width="1.2"/>';
+  // 꽂은 깃털
+  g+='<path d="M64 27 Q72 6 92 -2 Q86 14 70 28 Z" fill="'+FEA+'" '+s+'/><path d="M67 26 Q77 10 89 1" fill="none" stroke="'+FEA2+'" stroke-width="2" stroke-linecap="round"/><path d="M76 13 l4 1 M80 9 l4 .6" stroke="'+O+'" stroke-width="1.4" stroke-linecap="round"/>';
+  g+='<path d="M14 33 Q50 41 86 33" fill="none" stroke="'+HAT2+'" stroke-width="2" opacity=".8"/>';
+  return g+'</g>'}
+ function inner(mood){var g='';
+  // 코트 깃 + 스카프 + 금 목걸이
+  g+='<path d="M8 101 Q10 84 28 78 L50 88 L72 78 Q90 84 92 101 Z" fill="'+COAT+'" '+s+'/>';
+  g+='<path d="M28 78 L22 68 L40 82 Z M72 78 L78 68 L60 82 Z" fill="'+COAT3+'" '+s+'/>';
+  g+='<path d="M14 92 h10 v9 M86 92 h-10 v9" fill="none" stroke="'+COAT2+'" stroke-width="2.2"/>';
+  g+='<path d="M36 82 Q50 92 64 82 L60 92 Q50 96 40 92 Z" fill="'+SCARF+'" '+s+'/>';
+  g+='<path d="M38 86 Q50 99 62 86" fill="none" stroke="'+GOLD+'" stroke-width="2"/><circle cx="50" cy="96" r="4" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.6"/><path d="M48.6 94.6 h2.8 M48.6 97.4 h2.8" stroke="'+COAT2+'" stroke-width="1"/>';
+  // 머리깃 (ears) — 모자 아래 삐죽 튀어나온 깃
+  g+='<g class="ears"><path d="M25 48 L9 40 L20 39 L11 30 L24 34 L22 26 L32 36 Z" fill="'+HEAD+'" '+s+'/><path d="M75 48 L91 41 L80 39 L88 31 L76 34 L79 27 L68 36 Z" fill="'+HEAD+'" '+s+'/>'
+   +'<path d="M14 38 L23 40 M86 39 L77 40" stroke="'+HEAD2+'" stroke-width="2" stroke-linecap="round"/></g>';
+  // 머리
+  g+='<path d="M22 56 Q22 30 50 30 Q78 30 78 56 Q78 80 50 82 Q22 80 22 56 Z" fill="'+HEAD+'" '+s+'/>';
+  g+='<path d="M27 66 Q29 74 36 78" fill="none" stroke="'+HEAD2+'" stroke-width="3" stroke-linecap="round"/><path d="M73 66 Q72 72 67 76" fill="none" stroke="'+HEAD2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  // 밝은 눈가 (안경테처럼 이어진 두 동그라미)
+  g+='<circle cx="38.5" cy="51.5" r="13" fill="'+MASK+'"/><circle cx="61.5" cy="51.5" r="13" fill="'+MASK+'"/>';
+  g+='<path d="M28 59 Q32 63 38 63.5" fill="none" stroke="'+MASK2+'" stroke-width="2" stroke-linecap="round"/>';
+  // 금 귀걸이 (한쪽)
+  g+='<circle cx="22.5" cy="70" r="4.6" fill="none" stroke="'+O+'" stroke-width="4.4"/><circle cx="22.5" cy="70" r="4.6" fill="none" stroke="'+GOLD+'" stroke-width="2.4"/><circle cx="22.5" cy="75.5" r="1.8" fill="#E8603C" stroke="'+O+'" stroke-width="1"/>';
+  g+=brows(mood);
+  g+='<g class="eyes">'+eyes(mood)+'</g>';
+  g+=monocle(mood);
+  g+=beak(mood);
+  if(has(mood,"shy")||has(mood,"blush"))g+='<ellipse cx="31" cy="66" rx="5" ry="2.6" fill="#E58A9C" opacity=".85"/><ellipse cx="70" cy="66" rx="5" ry="2.6" fill="#E58A9C" opacity=".85"/>';
+  g+=hat();
+  if(has(mood,"nervous"))g+='<path d="M82 46 q4 6 0 9 q-4-3 0-9z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/><path d="M16 52 q3 4.5 0 7 q-3-2.5 0-7z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.2"/>';
+  if(has(mood,"cry"))g+='<path d="M33 60 q-2 8 1 12 M67 60 q2 8 -1 12" fill="none" stroke="#8FD0FF" stroke-width="3" stroke-linecap="round"/>';
+  if(has(mood,"angry"))g+='<path d="M80 50 l5 -3 M82 55 l6 0 M80 60 l5 3" stroke="#E8603C" stroke-width="2.4" stroke-linecap="round"/>';
+  return g}
+ function fig(mood){var g='<ellipse cx="50" cy="153" rx="30" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 꼬리깃
+  g+='<path d="M60 132 L84 150 L74 151 L82 156 L64 150 Z" fill="'+HEAD+'" '+s+'/><path d="M66 138 L78 148" stroke="'+HEAD2+'" stroke-width="2" stroke-linecap="round"/>';
+  // 새 다리
+  g+='<path d="M41 138 V150 M59 138 V150" stroke="'+O+'" stroke-width="5.4" stroke-linecap="round"/><path d="M41 138 V150 M59 138 V150" stroke="'+BEAK2+'" stroke-width="2.6" stroke-linecap="round"/>';
+  g+='<path d="M41 150 l-6 3 M41 150 l1 4 M41 150 l6 2.4 M59 150 l-6 2.4 M59 150 l-1 4 M59 150 l6 3" stroke="'+O+'" stroke-width="4.2" stroke-linecap="round"/><path d="M41 150 l-6 3 M41 150 l1 4 M41 150 l6 2.4 M59 150 l-6 2.4 M59 150 l-1 4 M59 150 l6 3" stroke="'+BEAK2+'" stroke-width="1.8" stroke-linecap="round"/>';
+  // 주머니 많은 긴 코트
+  g+='<path d="M28 94 Q50 86 72 94 L82 142 Q66 146 50 140 Q34 146 18 142 Z" fill="'+COAT+'" '+s+'/>';
+  g+='<path d="M50 92 V140" stroke="'+O+'" stroke-width="2"/><path d="M50 92 L40 108 M50 92 L60 108" stroke="'+COAT2+'" stroke-width="2.2"/>';
+  g+='<path d="M24 117 H76" stroke="'+COAT2+'" stroke-width="5"/><path d="M24 117 H76" stroke="#6B4318" stroke-width="2.4"/><rect x="45" y="113.5" width="10" height="7" rx="1.5" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.6"/>';
+  [[26,122],[60,122],[30,102],[57,101]].forEach(function(p,i){var w=i<2?14:11,h=i<2?12:9;
+   g+='<rect x="'+p[0]+'" y="'+p[1]+'" width="'+w+'" height="'+h+'" rx="2" fill="'+COAT2+'" stroke="'+O+'" stroke-width="2"/><path d="M'+p[0]+' '+(p[1]+3.5)+' H'+(p[0]+w)+'" stroke="'+O+'" stroke-width="1.6"/>'});
+  g+='<path d="M33 128 l3 -6 M34 129 l5 -5" stroke="'+GOLD+'" stroke-width="1.6" stroke-linecap="round"/>';// 주머니 밖으로 삐져나온 반짝이
+  g+='<circle cx="44" cy="131" r="2.2" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1"/><path d="M44 120.5 Q44 128 44 129" stroke="'+GOLD+'" stroke-width="1.4"/>';
+  // 왼날개 (소매) — 허리에 척
+  g+='<path d="M28 98 Q14 108 22 124 L30 122 Q24 110 32 104 Z" fill="'+COAT+'" '+s+'/><path d="M20 122 L16 132 L22 128 L24 134 L30 124 Z" fill="'+HEAD+'" '+s+'/>';
+  // 오른날개 — 별빛 램프를 번쩍 들어 보임
+  g+='<path d="M72 98 Q86 100 88 112 L80 116 Q78 108 70 106 Z" fill="'+COAT+'" '+s+'/><path d="M80 114 L84 120 L90 112 Z" fill="'+HEAD+'" '+s+'/>';
+  g+='<path d="M86 116 V122" stroke="'+O+'" stroke-width="2"/>';
+  g+='<path d="M80 122 H94 L92 126 H82 Z" fill="'+GOLD+'" '+s+'/><rect x="81" y="126" width="12" height="13" rx="2" fill="#FFF3A8" '+s+'/><path d="M87 128.5 l1.3 2.8 3 .4 -2.2 2 .6 3 -2.7 -1.5 -2.7 1.5 .6 -3 -2.2 -2 3 -.4z" fill="'+GOLD+'"/><path d="M80 139 H94 L92 142 H82 Z" fill="'+GOLD+'" '+s+'/>';
+  g+='<path d="M98 124 l3 -2 M99 131 h4 M98 138 l3 2" stroke="#FFF3A8" stroke-width="2" stroke-linecap="round"/>';
+  return g+'<g>'+inner(mood)+'</g>'}
+ window.__SIG=window.__SIG||{};
+ window.__SIG["karo"]={face:function(mood){return inner(mood||"")},fig:function(mood){return fig(mood||"")}};
+})();
+
+/* v137: 엄마 — 별빛 과학자이자 하늘을 나는 모험가 (가죽 비행모·고글, 털 깃 비행 재킷, 날리는 하늘색 목도리, 별빛 돌 펜던트) */
+(function(){
+ var O="#2A1C16",FUR="#C99E78",FUR2="#F6E2CB",EARIN="#F4B7B0",HAIR="#B4552F",HAIR2="#DE8458",
+  CAP="#5E3820",CAP2="#7E4E2E",FLEECE="#F3DDB4",JK="#8E5631",JK2="#6E3F22",SCARF="#3FA3D6",SCARF2="#BFE6F7",
+  BRASS="#D69A3C",LENS="#FFD772",IRIS="#8E4C1F",STAR="#FFF2A6",GLOW="#FFF7C9",BLUSH="#F29A92";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ function lash(cx){return cx<50?'<path d="M'+(cx-7)+' 50 l-4.5 -2.5" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>':'<path d="M'+(cx+7)+' 50 l4.5 -2.5" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>'}
+ function eye(cx,mood){var y=55;
+  if(has(mood,"happy"))return '<path d="M'+(cx-7)+' 57 Q'+cx+' 47 '+(cx+7)+' 57" fill="none" stroke="'+O+'" stroke-width="3.6" stroke-linecap="round"/>'+lash(cx);
+  if(has(mood,"shock"))return '<ellipse cx="'+cx+'" cy="'+y+'" rx="6.4" ry="7.4" fill="#FFFFFF" '+s+'/><circle cx="'+cx+'" cy="'+y+'" r="2.4" fill="'+O+'"/>';
+  if(has(mood,"sad")||has(mood,"cry"))return '<ellipse cx="'+cx+'" cy="'+(y+1)+'" rx="6" ry="6.4" fill="'+IRIS+'" '+s+'/><ellipse cx="'+cx+'" cy="'+(y+2)+'" rx="3" ry="3.8" fill="'+O+'"/><circle cx="'+(cx+2)+'" cy="'+(y+1)+'" r="1.8" fill="#FFFFFF"/>'
+   +'<path d="M'+(cx-8)+' '+(y-3)+' Q'+cx+' '+(y-7)+' '+(cx+8)+' '+(y-1)+' L'+(cx+8)+' '+(y-8)+' L'+(cx-8)+' '+(y-8)+' Z" fill="'+FUR+'"/><path d="M'+(cx-7.5)+' '+(cx<50?y-1:y-3)+' Q'+cx+' '+(y-5)+' '+(cx+7.5)+' '+(cx<50?y-3:y-1)+'" fill="none" stroke="'+O+'" stroke-width="3" stroke-linecap="round"/>';
+  if(has(mood,"nervous")||has(mood,"confused"))return '<ellipse cx="'+cx+'" cy="'+y+'" rx="6.2" ry="7.2" fill="#FFFFFF" '+s+'/><ellipse cx="'+(cx-1.5)+'" cy="'+(y+1)+'" rx="3.4" ry="4.2" fill="'+IRIS+'"/><circle cx="'+(cx-1.5)+'" cy="'+(y+1)+'" r="1.8" fill="'+O+'"/>'+lash(cx);
+  var base='<ellipse cx="'+cx+'" cy="'+y+'" rx="6.4" ry="7.6" fill="'+IRIS+'" '+s+'/><ellipse cx="'+cx+'" cy="'+(y+1)+'" rx="3.4" ry="4.6" fill="'+O+'"/><circle cx="'+(cx+2.2)+'" cy="'+(y-2.4)+'" r="2.4" fill="#FFFFFF"/><circle cx="'+(cx-2.2)+'" cy="'+(y+3.4)+'" r="1.1" fill="#FFFFFF"/>';
+  if(has(mood,"angry"))return base+'<path d="M'+(cx-8)+' '+(cx<50?y-9:y-4)+' L'+(cx+8)+' '+(cx<50?y-4:y-9)+' L'+(cx+8)+' '+(y-12)+' L'+(cx-8)+' '+(y-12)+' Z" fill="'+FUR+'"/><path d="M'+(cx-7)+' '+(cx<50?y-7.5:y-3.5)+' L'+(cx+7)+' '+(cx<50?y-3.5:y-7.5)+'" stroke="'+O+'" stroke-width="3" stroke-linecap="round"/>';
+  if(has(mood,"smug"))return base+'<path d="M'+(cx-8)+' '+(y-1)+' L'+(cx+8)+' '+(y-1)+' L'+(cx+8)+' '+(y-10)+' L'+(cx-8)+' '+(y-10)+' Z" fill="'+FUR+'"/><path d="M'+(cx-7)+' '+(y-1)+' Q'+cx+' '+(y-3)+' '+(cx+7)+' '+(y-1)+'" fill="none" stroke="'+O+'" stroke-width="3.2" stroke-linecap="round"/>'+lash(cx);
+  return base+'<path d="M'+(cx-6.8)+' '+(y-.5)+' C'+(cx-6.8)+' '+(y-10.2)+' '+(cx+6.8)+' '+(y-10.2)+' '+(cx+6.8)+' '+(y-.5)+'" fill="none" stroke="'+O+'" stroke-width="3.8" stroke-linecap="round"/>'+lash(cx)}
+ function brows(mood){var st='fill="none" stroke="#4A2616" stroke-width="3.6" stroke-linecap="round"';
+  if(has(mood,"angry"))return '<path d="M31 41 L45 46 M69 41 L55 46" '+st+'/>';
+  if(has(mood,"sad")||has(mood,"cry")||has(mood,"nervous"))return '<path d="M31 45 L45 40.5 M69 45 L55 40.5" '+st+'/>';
+  if(has(mood,"shock"))return '<path d="M31 41 Q38 36 45 39.5 M55 39.5 Q62 36 69 41" '+st+'/>';
+  if(has(mood,"confused"))return '<path d="M31 42 L45 44 M55 41 Q62 37 69 41" '+st+'/>';
+  return '<path d="M31 44 Q38 39.5 45 42.5 M55 42.5 Q62 39.5 69 44" '+st+'/>'}
+ function mouth(mood){
+  if(has(mood,"happy"))return '<path d="M42 66 Q50 64.5 58 66 Q57 75 50 75.5 Q43 75 42 66 Z" fill="#7A2E2A" '+s+'/><path d="M45.5 72 Q50 69.5 54.5 72 Q52 75 50 75 Q48 75 45.5 72 Z" fill="#F08A86"/>';
+  if(has(mood,"shock"))return '<ellipse cx="50" cy="70" rx="3.8" ry="4.6" fill="#7A2E2A" '+s+'/>';
+  if(has(mood,"sad")||has(mood,"cry"))return '<path d="M44 71 Q50 66.5 56 71" fill="none" stroke="'+O+'" stroke-width="2.8" stroke-linecap="round"/>';
+  if(has(mood,"nervous"))return '<path d="M43 69 Q46 66 49 69 Q52 72 55 69 Q57 67 59 69" fill="none" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>';
+  if(has(mood,"angry"))return '<path d="M43 70 Q50 66 57 70" fill="none" stroke="'+O+'" stroke-width="3" stroke-linecap="round"/>';
+  if(has(mood,"confused"))return '<path d="M44 69 L56 67.5" stroke="'+O+'" stroke-width="2.8" stroke-linecap="round"/>';
+  if(has(mood,"smug"))return '<path d="M44 68 Q52 71 59 65" fill="none" stroke="'+O+'" stroke-width="3" stroke-linecap="round"/>';
+  // 기본: 따뜻하고 당당한 미소 (한쪽이 살짝 더 올라간)
+  return '<path d="M43.5 67 Q50 73 57 66" fill="none" stroke="'+O+'" stroke-width="3" stroke-linecap="round"/>'}
+ function star(x,y,r){var p='',i;for(i=0;i<10;i++){var a=-Math.PI/2+i*Math.PI/5,rr=i%2?r*.45:r;p+=(i?'L':'M')+(x+Math.cos(a)*rr).toFixed(1)+' '+(y+Math.sin(a)*rr).toFixed(1)+' '}return p+'Z'}
+ function scarfTail(){ // 바람에 날리는 긴 목도리 꼬리 (오른쪽 뒤로)
+  return '<path d="M60 82 Q74 80 84 72 Q92 66 101 68 L101 80 Q92 78 86 84 Q76 92 62 90 Z" fill="'+SCARF+'" '+s+'/>'
+   +'<path d="M88 70.5 L91 81 M95 68 L97 79" stroke="'+SCARF2+'" stroke-width="3"/>'}
+ function bust(){var g='';
+  // 재킷 몸판
+  g+='<path d="M8 101 Q10 86 28 81 L50 88 L72 81 Q90 86 92 101 Z" fill="'+JK+'" '+s+'/>';
+  g+='<path d="M50 90 V101" stroke="'+JK2+'" stroke-width="2.4"/><path d="M16 94 Q20 90 26 90 M84 94 Q80 90 74 90" fill="none" stroke="'+JK2+'" stroke-width="2"/>';
+  // 털 깃 (양 어깨 위로 크게, 뭉게뭉게)
+  g+='<path d="M14 90 Q14 80 24 78 Q30 74 36 78 Q44 80 46 88 Q46 95 42 101 L33 101 Q35 94 30 91 Q22 95 14 90 Z" fill="'+FLEECE+'" '+s+'/>';
+  g+='<path d="M86 90 Q86 80 76 78 Q70 74 64 78 Q56 80 54 88 Q54 95 58 101 L67 101 Q65 94 70 91 Q78 95 86 90 Z" fill="'+FLEECE+'" '+s+'/>';
+  // 목도리 고리 (턱 아래를 감싼다)
+  g+='<path d="M30 76 Q50 86 70 76 Q73 82 70 87 Q50 96 30 87 Q27 82 30 76 Z" fill="'+SCARF+'" '+s+'/><path d="M34 83 Q50 90 66 83" fill="none" stroke="'+SCARF2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  // 별빛 돌 펜던트
+  g+='<circle cx="50" cy="95" r="8" fill="'+GLOW+'" opacity=".4"/><path d="'+star(50,95,6.4)+'" fill="'+STAR+'" stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"/><circle cx="48.4" cy="93.4" r="1.3" fill="#FFFFFF"/>';
+  return g}
+ function head(mood){var g='';
+  // 바람에 날리는 긴 머리 (오른쪽으로 휘날림)
+  g+='<path d="M26 44 Q14 58 18 76 Q20 84 14 90 Q26 90 30 80 Q32 68 32 56 Z" fill="'+HAIR+'" '+s+'/>';
+  g+='<path d="M70 40 Q84 44 90 56 Q94 64 101 64 Q96 70 88 68 Q92 76 99 80 Q88 84 80 76 Q74 68 70 62 Z" fill="'+HAIR+'" '+s+'/>';
+  g+='<path d="M78 50 Q86 56 90 64 M20 66 Q19 76 18 82" fill="none" stroke="'+HAIR2+'" stroke-width="2.2" stroke-linecap="round"/>';
+  // 얼굴
+  g+='<ellipse cx="50" cy="58" rx="26" ry="23" fill="'+FUR+'" '+s+'/>';
+  g+='<ellipse cx="50" cy="69" rx="12.5" ry="8.6" fill="'+FUR2+'"/>';
+  // 비행모: 가죽 돔 + 털 테두리
+  g+='<path d="M23 44 Q20 16 50 14 Q80 16 77 44 Q64 36 50 36 Q36 36 23 44 Z" fill="'+CAP+'" '+s+'/>';
+  g+='<path d="M50 15 V34" stroke="'+O+'" stroke-width="2" stroke-dasharray="2.4 2.4" opacity=".6"/><path d="M33 20 Q30 28 31 36 M67 20 Q70 28 69 36" fill="none" stroke="'+CAP2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  // 귀덮개 (위로 접어 올린, 단추)
+  g+='<path d="M24 40 Q14 42 12 52 Q18 56 26 50 Z" fill="'+CAP+'" '+s+'/><path d="M76 40 Q86 42 88 52 Q82 56 74 50 Z" fill="'+CAP+'" '+s+'/>';
+  g+='<circle cx="17" cy="49" r="1.8" fill="'+BRASS+'"/><circle cx="83" cy="49" r="1.8" fill="'+BRASS+'"/>';
+  // 이마 앞머리 (옆으로 흘러내린 한 가닥)
+  g+='<path d="M28 44 Q30 36 42 36 Q36 40 36 46 Q32 44 28 47 Z" fill="'+HAIR+'" '+s+'/><path d="M58 36 Q70 36 73 43 Q68 40 64 41 Z" fill="'+HAIR+'" '+s+'/>';
+  // 귀 (모자 구멍 사이로)
+  g+='<g class="ears"><ellipse cx="25" cy="24" rx="8.5" ry="10.5" fill="'+FUR+'" '+s+' transform="rotate(-18 25 24)"/><ellipse cx="75" cy="24" rx="8.5" ry="10.5" fill="'+FUR+'" '+s+' transform="rotate(18 75 24)"/><ellipse cx="25" cy="25" rx="4" ry="6" fill="'+EARIN+'" transform="rotate(-18 25 25)"/><ellipse cx="75" cy="25" rx="4" ry="6" fill="'+EARIN+'" transform="rotate(18 75 25)"/></g>';
+  g+='<path d="M18 32 Q25 36 32 31 M82 32 Q75 36 68 31" fill="none" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>';
+  // 고글 (모자 위로 올려 쓴)
+  g+='<path d="M27 29 Q50 22 73 29" fill="none" stroke="#3E2414" stroke-width="5"/>';
+  g+='<circle cx="40" cy="26.5" r="7.4" fill="'+LENS+'" stroke="'+BRASS+'" stroke-width="3.6"/><circle cx="40" cy="26.5" r="9.2" fill="none" stroke="'+O+'" stroke-width="1.8"/><circle cx="60" cy="26.5" r="7.4" fill="'+LENS+'" stroke="'+BRASS+'" stroke-width="3.6"/><circle cx="60" cy="26.5" r="9.2" fill="none" stroke="'+O+'" stroke-width="1.8"/>';
+  g+='<path d="M48.8 25.5 H51.2" stroke="'+O+'" stroke-width="3"/><path d="M36.5 24 l3 -2.4 M56.5 24 l3 -2.4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>';
+  // 볼터치
+  var bo=(has(mood,"shy")||has(mood,"blush"))?".95":".6";
+  g+='<ellipse cx="31" cy="64" rx="5" ry="3" fill="'+BLUSH+'" opacity="'+bo+'"/><ellipse cx="69" cy="64" rx="5" ry="3" fill="'+BLUSH+'" opacity="'+bo+'"/>';
+  if(has(mood,"shy")||has(mood,"blush"))g+='<path d="M28 63 l2 2 M32 63 l2 2 M66 63 l2 2 M70 63 l2 2" stroke="#C8605A" stroke-width="1.4" stroke-linecap="round"/>';
+  g+=brows(mood);
+  g+='<g class="eyes">'+eye(39,mood)+eye(61,mood)+'</g>';
+  g+='<ellipse cx="50" cy="63.5" rx="3.2" ry="2.3" fill="#5A3A2A"/>';
+  g+=mouth(mood);
+  if(has(mood,"nervous"))g+='<path d="M84 58 q4.5 6.5 0 9.5 q-4.5-3 0-9.5z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  if(has(mood,"cry"))g+='<path d="M33 60 q-2 8 1 12 M67 60 q2 8 -1 12" fill="none" stroke="#8FD0FF" stroke-width="3" stroke-linecap="round"/>';
+  if(has(mood,"shock"))g+='<path d="M12 18 l4 5 M8 28 l6 2 M88 18 l-4 5 M92 28 l-6 2" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>';
+  return g}
+ function face(mood){return scarfTail()+head(mood||"")+bust()}
+ function fig(mood){var g='<ellipse cx="50" cy="153" rx="28" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 꼬리 (넓적한 날다람쥐 꼬리)
+  g+='<path d="M62 140 Q104 142 98 100 Q94 82 80 92 Q92 112 64 126 Z" fill="'+FUR+'" '+s+'/><path d="M80 132 Q94 118 90 100" fill="none" stroke="#A8784E" stroke-width="3" stroke-linecap="round" opacity=".7"/>';
+  // 목도리 긴 꼬리 (바람에)
+  g+='<path d="M58 96 Q78 92 92 80 Q100 74 110 78 L108 90 Q100 88 94 94 Q80 106 60 104 Z" fill="'+SCARF+'" '+s+'/><path d="M96 79 L98 91 M103 77 L104 89" stroke="'+SCARF2+'" stroke-width="3"/>';
+  // 다리·부츠
+  g+='<path d="M37 132 L36 146 L48 146 L48 132 Z M52 132 L52 146 L64 146 L63 132 Z" fill="#5C6A54" '+s+'/>';
+  g+='<path d="M33 142 Q33 152 42 152 L49 152 L49 141 Z M51 141 L51 152 L58 152 Q67 152 67 142 Z" fill="#4A2A18" '+s+'/><path d="M35 145 H48 M52 145 H65" stroke="'+BRASS+'" stroke-width="1.8"/>';
+  // 날개막 (재킷 소매 아래로)
+  g+='<path d="M26 102 Q8 114 14 140 Q22 134 32 132 Z M74 102 Q92 114 86 140 Q78 134 68 132 Z" fill="#B88A62" '+s+'/>';
+  // 비행 재킷
+  g+='<path d="M27 98 Q50 90 73 98 L76 136 Q50 142 24 136 Z" fill="'+JK+'" '+s+'/>';
+  g+='<path d="M50 98 V138" stroke="'+O+'" stroke-width="2"/><path d="M25 128 Q50 134 75 128 L75.6 136 Q50 142 24.4 136 Z" fill="'+FLEECE+'" stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"/>';
+  g+='<rect x="31" y="110" width="12" height="9" rx="1.5" fill="'+JK2+'" stroke="'+O+'" stroke-width="2"/><rect x="57" y="110" width="12" height="9" rx="1.5" fill="'+JK2+'" stroke="'+O+'" stroke-width="2"/>';
+  // 별 지도 두루마리 (과학자의 소품)
+  g+='<g transform="rotate(-18 80 120)"><rect x="72" y="110" width="20" height="9" rx="4.5" fill="#F4EAD2" '+s+'/><path d="'+star(82,114.5,3)+'" fill="'+BRASS+'"/></g>';
+  // 팔
+  g+='<ellipse cx="25" cy="116" rx="6.5" ry="14" fill="'+JK+'" '+s+' transform="rotate(16 25 116)"/><ellipse cx="75" cy="116" rx="6.5" ry="14" fill="'+JK+'" '+s+' transform="rotate(-24 75 116)"/>';
+  g+='<path d="M17 126 Q22 131 28 128 M70 128 Q76 132 82 127" fill="none" stroke="'+FLEECE+'" stroke-width="3.4"/>';
+  g+='<circle cx="21" cy="130" r="4.6" fill="'+FUR+'" '+s+'/><circle cx="80" cy="129" r="4.6" fill="'+FUR+'" '+s+'/>';
+  return g+'<g>'+head(mood||"").replace(/^/,'')+'</g>'+'<g>'+neckFig()+'</g>'}
+ function neckFig(){ // 전신용 목 장식(목도리·펜던트)은 얼굴 아래에 겹쳐 그린다
+  return '<path d="M30 76 Q50 86 70 76 Q73 82 70 87 Q50 96 30 87 Q27 82 30 76 Z" fill="'+SCARF+'" '+s+'/><path d="M34 83 Q50 90 66 83" fill="none" stroke="'+SCARF2+'" stroke-width="2.4" stroke-linecap="round"/>'
+   +'<path d="M20 92 Q24 84 33 84 Q42 90 44 98 L36 100 Q30 94 20 92 Z M80 92 Q76 84 67 84 Q58 90 56 98 L64 100 Q70 94 80 92 Z" fill="'+FLEECE+'" '+s+'/>'
+   +'<path d="M45 91 L50 95 L55 91" fill="none" stroke="'+O+'" stroke-width="1.6"/><circle cx="50" cy="100" r="7.5" fill="'+GLOW+'" opacity=".35"/><path d="'+star(50,100,6)+'" fill="'+STAR+'" stroke="'+O+'" stroke-width="2" stroke-linejoin="round"/><circle cx="48.6" cy="98.6" r="1.2" fill="#FFFFFF"/>'}
+ window.__SIG=window.__SIG||{};
+ window.__SIG["mom"]={face:face,fig:fig};
+})();
+
+/* v137 시그니처: 나비 — 도도한 우체국 고양이 (빨간 우체국 모자, 목 방울, 가방끈, 새침한 아몬드 눈, 귀 옆 회색 얼룩) */
+(function(){
+ var O="#2E2747",FUR="#FBFAF7",FUR2="#E4E1EC",PATCH="#A9B0C2",PINK="#F4A0B5",NOSE="#EE7F9A",IRIS="#6CC24A",IRIS2="#B9E68A",
+     CAP="#D9473C",CAP2="#A8302B",BAND="#2F3E6E",GOLD="#F2C230",JACK="#2F5C7A",JACK2="#244A63",STRAP="#B87444",STRAP2="#8A5230",LETTER="#FFF8E8";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ // ── 눈: 고양이 아몬드 눈 + 눈꼬리 ──
+ function almond(cx,o){o=o||{};var L=cx<50,y=53,x0=cx-9,x1=cx+9,top=o.top||42.5,bot=o.bot||62,dx=o.dx||0,dy=o.dy||0;
+  // 바깥 눈꼬리가 살짝 올라간 아몬드
+  var xo=L?x0:x1,xi=L?x1:x0;
+  var path='M'+xi+' '+(y+1)+' Q'+cx+' '+top+' '+xo+' '+(y-2.5)+' Q'+cx+' '+bot+' '+xi+' '+(y+1)+' Z';
+  var g='<path d="'+path+'" fill="#FFFFFF" stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"/>';
+  var ir=o.ir||5.5,py=y+.5+dy;
+  if(o.tiny)g+='<ellipse cx="'+(cx+dx)+'" cy="'+py+'" rx="1.8" ry="2.4" fill="'+O+'"/>';
+  else{g+='<circle cx="'+(cx+dx)+'" cy="'+py+'" r="'+ir+'" fill="'+IRIS+'"/><path d="M'+(cx+dx-ir*.8)+' '+(py-ir*.3)+' Q'+(cx+dx)+' '+(py-ir*1.05)+' '+(cx+dx+ir*.8)+' '+(py-ir*.3)+'" fill="none" stroke="'+IRIS2+'" stroke-width="1.6"/>'
+   +'<ellipse cx="'+(cx+dx)+'" cy="'+py+'" rx="'+(ir*.36)+'" ry="'+(ir*.8)+'" fill="'+O+'"/><circle cx="'+(cx+dx+1.8)+'" cy="'+(py-2)+'" r="1.6" fill="#FFFFFF"/>'}
+  return g}
+ function lidLine(cx,kind){var L=cx<50,y=53,x0=cx-9,x1=cx+9,xo=L?x0:x1,xi=L?x1:x0,fl=L?-5:5;
+  var w='fill="none" stroke="'+O+'" stroke-width="3.4" stroke-linecap="round"';
+  if(kind==="half")// 반쯤 내리깐 눈꺼풀(새침)
+   return '<path d="M'+xi+' '+(y+1)+' Q'+cx+' 42.5 '+xo+' '+(y-2.5)+' Q'+cx+' 49 '+xi+' '+(y+1)+' Z" fill="'+FUR+'"/><path d="M'+(xi+(L?.6:-.6))+' '+(y+1)+' Q'+cx+' 49 '+xo+' '+(y-2.5)+' l'+fl+' -3" '+w+'/>';
+  if(kind==="angry")return '<path d="M'+xo+' 45 L'+xi+' 51 L'+xi+' 43 Z" fill="'+FUR+'"/><path d="M'+xo+' '+(y-3)+' L'+xi+' 50.5" '+w+'/>';
+  if(kind==="sad")return '<path d="M'+xi+' 46 L'+xo+' 51 L'+xo+' 43 Z" fill="'+FUR+'"/><path d="M'+xi+' 47.5 L'+xo+' 51.5" '+w+'/>';
+  // 기본 윗눈꺼풀 + 눈꼬리 플릭
+  return '<path d="M'+xi+' '+(y+1)+' Q'+cx+' 42.5 '+xo+' '+(y-2.5)+' l'+fl+' -3" '+w+'/>'}
+ function eyes(mood){var L=37.5,R=62.5;
+  if(has(mood,"happy"))return '<path d="M29.5 55 Q37.5 46 45.5 55 M54.5 55 Q62.5 46 70.5 55" fill="none" stroke="'+O+'" stroke-width="3.4" stroke-linecap="round"/><path d="M29.5 55 l-4 -2.6 M70.5 55 l4 -2.6" stroke="'+O+'" stroke-width="2.6" stroke-linecap="round"/>';
+  if(has(mood,"shock")){var e='';[37.5,62.5].forEach(function(c){e+='<ellipse cx="'+c+'" cy="53" rx="8" ry="8.6" fill="#FFFFFF" stroke="'+O+'" stroke-width="2.6"/><circle cx="'+c+'" cy="53.5" r="3.4" fill="'+IRIS+'"/><circle cx="'+c+'" cy="53.5" r="1.6" fill="'+O+'"/><circle cx="'+(c+2.6)+'" cy="50" r="1.4" fill="#FFFFFF"/>'});return e}
+  if(has(mood,"cry")||has(mood,"sad"))return almond(L,{dy:1.5,dx:.5})+lidLine(L,"sad")+almond(R,{dy:1.5,dx:-.5})+lidLine(R,"sad");
+  if(has(mood,"angry"))return almond(L,{dx:1})+lidLine(L,"angry")+almond(R,{dx:-1})+lidLine(R,"angry");
+  if(has(mood,"nervous"))return almond(L,{dx:2.5,ir:3.8,top:42})+lidLine(L)+almond(R,{dx:2.5,ir:3.8,top:42})+lidLine(R);
+  if(has(mood,"confused"))return almond(L,{dx:-1})+lidLine(L,"half")+almond(R,{top:41,dx:-1})+lidLine(R);
+  if(has(mood,"shy")||has(mood,"blush"))return almond(L,{dx:3,dy:1.5})+lidLine(L,"half")+almond(R,{dx:3,dy:1.5})+lidLine(R,"half");
+  // 기본·smug: 고개 돌린 듯 옆으로 흘긴 새침한 반눈
+  return almond(L,{dx:-2.6,dy:.8})+lidLine(L,"half")+almond(R,{dx:-2.6,dy:.8})+lidLine(R,"half")}
+ function brows(mood){var w='stroke="'+O+'" stroke-width="3.4" stroke-linecap="round" fill="none"';
+  if(has(mood,"angry"))return '<path d="M31 38 L45 43 M69 38 L55 43" '+w+'/>';
+  if(has(mood,"sad")||has(mood,"cry")||has(mood,"nervous"))return '<path d="M32 41.5 L44 37.5 M68 41.5 L56 37.5" '+w+'/>';
+  if(has(mood,"shock"))return '<path d="M31 39 Q38 35 45 38 M55 38 Q62 35 69 39" '+w+'/>';
+  if(has(mood,"happy"))return '<path d="M32 40.5 Q38 37.5 44 40 M56 40 Q62 37.5 68 40.5" '+w+'/>';
+  if(has(mood,"shy")||has(mood,"blush"))return '<path d="M32 41 L44 39 M56 39 L68 41" '+w+'/>';
+  // 기본: 한쪽 눈썹을 치켜든 도도함
+  return '<path d="M31 39.5 Q38 35 45 38 M56 40.5 L68 39.5" '+w+'/>'}
+ function mouth(mood){var ln='fill="none" stroke="'+O+'" stroke-linecap="round" stroke-linejoin="round"';
+  var nose='<path d="M47 61 L53 61 L50 64 Z" fill="'+NOSE+'" stroke="'+O+'" stroke-width="1.6" stroke-linejoin="round"/>';
+  if(has(mood,"happy"))return nose+'<path d="M50 64 V65.5 M43 65 Q46.5 69 50 65.5 Q53.5 69 57 65" '+ln+' stroke-width="2.4"/><path d="M45 67.5 Q50 75 55 67.5 Q50 69.5 45 67.5 Z" fill="#E86A86" stroke="'+O+'" stroke-width="2" stroke-linejoin="round"/>';
+  if(has(mood,"shock"))return nose+'<ellipse cx="50" cy="70" rx="3.6" ry="4.4" fill="'+O+'"/><ellipse cx="50" cy="72" rx="2" ry="1.4" fill="#E86A86"/>';
+  if(has(mood,"sad")||has(mood,"cry"))return nose+'<path d="M50 64 V66 M44 70 Q47 66 50 66 Q53 66 56 70" '+ln+' stroke-width="2.4"/>';
+  if(has(mood,"nervous"))return nose+'<path d="M50 64 V66 M43 69 Q45 66.5 47 69 Q49 71.5 51 69 Q53 66.5 55 69 Q56 70 57 69" '+ln+' stroke-width="2.2"/>';
+  if(has(mood,"angry"))return nose+'<path d="M50 64 V66 M44 68.5 Q50 64.5 56 68.5" '+ln+' stroke-width="2.6"/><path d="M47 67 l1.2 2.6 1.2 -2.2" fill="#FFFFFF" stroke="'+O+'" stroke-width="1.2" stroke-linejoin="round"/>';
+  if(has(mood,"smug"))return nose+'<path d="M50 64 V65.5 M43 65 Q46.5 69.5 50 65.5 Q53.5 69.5 58 64" '+ln+' stroke-width="2.4"/>';
+  // 기본: 입을 앙 다문 'ω' + 한쪽이 살짝 삐죽
+  return nose+'<path d="M50 64 V65.5 M44 66 Q47 69 50 65.5 Q53 68.5 56.5 66.5" '+ln+' stroke-width="2.4"/>'}
+ function cap(){var g='<g transform="translate(0 -3) rotate(6 50 28)">';
+  g+='<path d="M33 31 L35.5 14 Q50 9 64.5 14 L67 31 Z" fill="'+CAP+'" '+s+'/>';
+  g+='<path d="M38 15 Q50 12 62 15" fill="none" stroke="#F07A6E" stroke-width="2" stroke-linecap="round"/>';
+  g+='<path d="M34.2 23.5 H65.8 L67 31 H33 Z" fill="'+BAND+'" stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"/>';
+  // 편지 봉투 휘장
+  g+='<rect x="44.5" y="16" width="11" height="8" rx="1" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.6"/><path d="M44.8 16.4 L50 21 L55.2 16.4" fill="none" stroke="'+O+'" stroke-width="1.4" stroke-linejoin="round"/>';
+  g+='<path d="M30 31 Q50 39 71 31 Q68 37 50 37.5 Q34 37 30 31 Z" fill="'+O+'" stroke="'+O+'" stroke-width="2" stroke-linejoin="round"/><path d="M38 34 Q46 36 52 35.6" fill="none" stroke="#6C6290" stroke-width="1.6" stroke-linecap="round"/>';
+  return g+'</g>'}
+ function inner(mood){var g='';
+  // 제복 어깨 + 깃 + 가방끈
+  g+='<path d="M10 101 Q12 84 30 79 L50 88 L70 79 Q88 84 90 101 Z" fill="'+JACK+'" '+s+'/>';
+  g+='<path d="M30 79 L38 92 L50 88 Z M70 79 L62 92 L50 88 Z" fill="#FFFFFF" '+s+'/>';
+  g+='<path d="M14 92 Q20 86 28 86 M86 92 Q80 86 72 86" fill="none" stroke="'+CAP+'" stroke-width="2"/>';
+  g+='<path d="M72 80 L82 80 L40 101 L28 101 Z" fill="'+STRAP+'" '+s+'/><path d="M74 83 L36 101" stroke="'+STRAP2+'" stroke-width="1.4" stroke-dasharray="3 2"/><rect x="57" y="85" width="7" height="6" rx="1" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.4" transform="rotate(-27 60.5 88)"/>';
+  // 귀
+  g+='<g class="ears"><path d="M21 48 L22 12 L45 32 Z" fill="'+FUR+'" '+s+'/><path d="M79 48 L78 12 L55 32 Z" fill="'+PATCH+'" '+s+'/><path d="M26 38 L26.5 21 L38 31 Z" fill="'+PINK+'"/><path d="M74 38 L73.5 21 L62 31 Z" fill="'+PINK+'"/>'
+   +'<path d="M27 26 l3 4 M73 26 l-3 4" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/></g>';
+  // 얼굴 (볼 털 뾰족)
+  g+='<path d="M23 56 Q23 31 50 31 Q77 31 77 56 Q78 64 85 69 Q79 70.5 76 72 Q80 75 77 77 Q68 83 50 83 Q32 83 23 77 Q20 75 24 72 Q21 70.5 15 69 Q22 64 23 56 Z" fill="'+FUR+'" '+s+'/>';
+  // 오른쪽 위 회색 얼룩 (기존 나비 특징)
+  g+='<path d="M58 32.5 Q72 32 76.5 46 Q70 48 64 42 Q59 38 58 32.5 Z" fill="'+PATCH+'"/>';
+  g+='<path d="M30 74 Q40 79 50 79 Q60 79 70 74" fill="none" stroke="'+FUR2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  var bl=has(mood,"shy")||has(mood,"blush")||has(mood,"angry");
+  g+='<ellipse cx="31" cy="64" rx="5.4" ry="3" fill="#F48FA8" opacity="'+(bl?".95":".5")+'"/><ellipse cx="69" cy="64" rx="5.4" ry="3" fill="#F48FA8" opacity="'+(bl?".95":".5")+'"/>';
+  if(bl)g+='<path d="M28 63 l2 -2 M32 63 l2 -2 M66 63 l2 -2 M70 63 l2 -2" stroke="#D85A7A" stroke-width="1.2" stroke-linecap="round"/>';
+  // 수염
+  g+='<path d="M24 62 L13 59.5 M24 66 L12 66.5 M76 62 L87 59.5 M76 66 L88 66.5" stroke="'+O+'" stroke-width="1.8" stroke-linecap="round"/>';
+  g+=brows(mood);
+  g+='<g class="eyes">'+eyes(mood)+'</g>';
+  g+=mouth(mood);
+  // 목 방울 (빨간 리본 목줄)
+  g+='<path d="M34 80 Q50 87 66 80" fill="none" stroke="'+O+'" stroke-width="6.4" stroke-linecap="round"/><path d="M34 80 Q50 87 66 80" fill="none" stroke="'+CAP+'" stroke-width="3.4" stroke-linecap="round"/>';
+  g+='<circle cx="50" cy="90" r="6" fill="'+GOLD+'" stroke="'+O+'" stroke-width="2.4"/><path d="M44.5 89 H55.5" stroke="'+O+'" stroke-width="1.6"/><circle cx="50" cy="93" r="1.4" fill="'+O+'"/><path d="M47 87 Q48 85.6 50 85.4" stroke="#FFF6C8" stroke-width="1.6" fill="none" stroke-linecap="round"/>';
+  if(has(mood,"happy")||has(mood,"shock"))g+='<path d="M40 88 l-4 -1 M40 93 l-4 1.6 M60 88 l4 -1 M60 93 l4 1.6" stroke="'+GOLD+'" stroke-width="2" stroke-linecap="round"/>';// 딸랑
+  g+=cap();
+  if(has(mood,"nervous"))g+='<path d="M83 44 q4 6 0 9 q-4-3 0-9z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  if(has(mood,"cry"))g+='<path d="M33 60 q-2 8 1 11 M67 60 q2 8 -1 11" fill="none" stroke="#8FD0FF" stroke-width="3" stroke-linecap="round"/>';
+  if(has(mood,"angry"))g+='<path d="M80 30 l4 4 M84 30 l-4 4 M82 28 v8 M78 32 h8" stroke="#E8505A" stroke-width="2.2" stroke-linecap="round"/>';
+  return g}
+ function fig(mood){var g='<ellipse cx="50" cy="153" rx="28" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 꼬리 (끝이 살짝 말린, 회색 끝)
+  g+='<path d="M64 138 Q92 140 94 116 Q95 100 86 98 Q80 98 82 104 Q88 106 86 118 Q84 130 64 128 Z" fill="'+FUR+'" '+s+'/><path d="M86 98 Q80 98 82 104 Q85 104.5 87 107 Q91 101 86 98 Z" fill="'+PATCH+'"/>';
+  // 다리
+  g+='<path d="M37 136 L36 150 Q42 153 47 150 L47 136 Z M53 136 L53 150 Q58 153 64 150 L63 136 Z" fill="'+FUR+'" '+s+'/>';
+  // 제복 재킷
+  g+='<path d="M27 98 Q50 88 73 98 L78 140 Q50 145 22 140 Z" fill="'+JACK+'" '+s+'/><path d="M50 95 V141" stroke="'+O+'" stroke-width="2"/>';
+  [110,121,132].forEach(function(y){g+='<circle cx="45" cy="'+y+'" r="2" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1"/>'});
+  g+='<path d="M23 133 H77" stroke="'+CAP+'" stroke-width="2.2"/>';
+  // 가방끈 + 우편 가방
+  g+='<path d="M70 96 L78 98 L34 132 L27 128 Z" fill="'+STRAP+'" '+s+'/>';
+  g+='<path d="M14 122 H40 L39 144 H15 Z" fill="'+STRAP+'" '+s+'/><rect x="17" y="117" width="18" height="11" rx="1" fill="'+LETTER+'" stroke="'+O+'" stroke-width="2" transform="rotate(-8 26 122)"/><path d="M18 118 L26 124 L34 116" fill="none" stroke="'+O+'" stroke-width="1.4" transform="rotate(-8 26 122)"/>';
+  g+='<path d="M14 122 H40 L38 132 Q27 136 16 132 Z" fill="'+STRAP2+'" '+s+'/><circle cx="27" cy="132" r="2.4" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.2"/>';
+  // 왼팔: 가방 위에 얹음 / 오른팔: 편지를 새침하게 들어 올림
+  g+='<ellipse cx="27" cy="113" rx="6" ry="12" fill="'+JACK+'" '+s+' transform="rotate(18 27 113)"/><circle cx="22" cy="122" r="5" fill="'+FUR+'" '+s+'/>';
+  g+='<path d="M74 100 Q88 102 92 90 L86 86 Q84 94 74 96 Z" fill="'+JACK+'" '+s+'/>';
+  g+='<g transform="translate(-4 0) rotate(-14 98 74)"><rect x="88" y="66" width="20" height="14" rx="1.5" fill="'+LETTER+'" '+s+'/><path d="M89 67 L98 74 L107 67" fill="none" stroke="'+O+'" stroke-width="1.6" stroke-linejoin="round"/><rect x="101" y="69" width="4.4" height="4.4" fill="'+CAP+'"/></g>';
+  g+='<circle cx="92" cy="84" r="5" fill="'+FUR+'" '+s+'/>';
+  return g+'<g>'+inner(mood)+'</g>'}
+ window.__SIG=window.__SIG||{};
+ window.__SIG["nabi"]={face:function(mood){return inner(mood||"")},fig:function(mood){return fig(mood||"")}};
+})();
+
+/* v137 시그니처: 네로 — 빛을 쫓는 고독한 괴도 (검은 두건 망토+남색 안감, 귀 끝 털, 날카로운 금빛 눈, 붉은 목수건, 초승달 브로치, 흰 장갑) */
+(function(){
+ var O="#22203A",FUR="#3B3F52",FUR2="#2A2D3D",LIGHT="#D9DCEA",EAR="#8C91B0",CLOAK="#1E1F2C",LINING="#33418C",LINE2="#4D5DB0",
+  RED="#D9434B",RED2="#A82E3A",GOLD="#F2C14E",EYE="#F7C935",SUIT="#3A4170",PINK="#E8848F";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ var EY=57;
+ function almond(cx,d,oy,iy,up,lo){ // d: 바깥쪽 방향(-1 왼눈, 1 오른눈)
+  var y=EY;return 'M'+(cx+10*d)+' '+(y+oy)+' Q'+cx+' '+(y+up)+' '+(cx-9*d)+' '+(y+iy)+' Q'+cx+' '+(y+lo)+' '+(cx+10*d)+' '+(y+oy)+' Z'}
+ function eye(cx,mood){var d=cx<50?-1:1,y=EY,g='';
+  if(has(mood,"happy")&&d>0) // 윙크
+   return '<path d="M'+(cx-8)+' '+(y+1)+' Q'+cx+' '+(y-6)+' '+(cx+8)+' '+(y+1)+' L'+(cx+11)+' '+(y-3)+'" fill="none" stroke="'+O+'" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>';
+  if(has(mood,"shock"))return '<circle cx="'+cx+'" cy="'+y+'" r="6.6" fill="'+EYE+'" '+s+'/><circle cx="'+cx+'" cy="'+y+'" r="1.9" fill="'+O+'"/>';
+  var sh,px=cx,py=y,pr='rx="1.9" ry="3.8"',lid=true;
+  if(has(mood,"sad")||has(mood,"cry")){sh=almond(cx,d,2,-2,-6,6);py=y+1}
+  else if(has(mood,"angry")){sh=almond(cx,d,-4,1,-4,5);pr='rx="1.6" ry="3.6"'}
+  else if(has(mood,"nervous")||has(mood,"confused")){sh=almond(cx,d,-1,0,-9,7);pr='rx="2.3" ry="2.6"';px=cx+2.5;lid=false}
+  else sh=almond(cx,d,-3,1,-10,7);
+  g+='<path d="'+sh+'" fill="'+EYE+'" '+s+'/>';
+  g+='<ellipse cx="'+px+'" cy="'+py+'" '+pr+' fill="'+O+'"/><circle cx="'+(px+1.8)+'" cy="'+(py-2.2)+'" r="1.5" fill="#FFFFFF"/>';
+  if(lid){ // 아이라인 + 바깥 꼬리
+   var oy=has(mood,"sad")||has(mood,"cry")?2:has(mood,"angry")?-4:-3,iy=has(mood,"sad")||has(mood,"cry")?-2:1,up=has(mood,"sad")||has(mood,"cry")?-6:has(mood,"angry")?-4:-10;
+   g+='<path d="M'+(cx-9*d)+' '+(y+iy)+' Q'+cx+' '+(y+up)+' '+(cx+10*d)+' '+(y+oy)+' L'+(cx+12.5*d)+' '+(y+oy-2.5)+'" fill="none" stroke="'+O+'" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>';
+  }
+  return g}
+ function brows(mood){var b=brows0(mood);return b.replace(/STROKE/g,'stroke="'+O+'" stroke-width="5.4" stroke-linecap="round" fill="none"')+b.replace(/STROKE/g,'stroke="'+LIGHT+'" stroke-width="3.2" stroke-linecap="round" fill="none"')}
+ function brows0(mood){var w='STROKE';
+  if(has(mood,"angry"))return '<path d="M30 41 L46 47 M70 41 L54 47" '+w+'/>';
+  if(has(mood,"sad")||has(mood,"cry"))return '<path d="M31 47 L45 42 M69 47 L55 42" '+w+'/>';
+  if(has(mood,"nervous")||has(mood,"confused"))return '<path d="M31 45 Q38 40 45 43 M69 44 L55 41" '+w+'/>';
+  if(has(mood,"shock"))return '<path d="M31 42 Q38 37 45 40 M55 40 Q62 37 69 42" '+w+'/>';
+  if(has(mood,"happy"))return '<path d="M31 45 Q38 41 45 44 M55 43 Q62 39 70 42" '+w+'/>';
+  return '<path d="M30 44 L46 46 M54 45 Q62 39 71 41" '+w+'/>'}
+ function mouth(mood){var w='fill="none" stroke="'+O+'" stroke-linecap="round" stroke-linejoin="round"';
+  var g='<path d="M46.5 63 L53.5 63 L50 66.5 Z" fill="'+O+'" stroke="'+O+'" stroke-width="1.6" stroke-linejoin="round"/>';
+  if(has(mood,"happy"))return g+'<path d="M42 68 Q50 76 59 66 Q50 71 42 68 Z" fill="#4A2236" stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"/><path d="M46 69.4 L47.5 72.4 L49 70" fill="#FFFFFF"/>';
+  if(has(mood,"shock"))return g+'<ellipse cx="50" cy="72" rx="3.4" ry="4.3" fill="'+O+'"/>';
+  if(has(mood,"sad")||has(mood,"cry"))return g+'<path d="M50 66.5 V68.5 M44 72 Q50 67.5 56 72" '+w+' stroke-width="2.6"/>';
+  if(has(mood,"nervous")||has(mood,"confused"))return g+'<path d="M43 71 Q46 68 49 71 Q52 74 55 71 Q57 69 59 71" '+w+' stroke-width="2.4"/>';
+  if(has(mood,"angry"))return g+'<path d="M50 66.5 V69 M43 71 L57 70" '+w+' stroke-width="2.8"/><path d="M53 70.2 L54.5 73 L56 70" fill="#FFFFFF" stroke="'+O+'" stroke-width="1"/>';
+  // 기본: 비스듬한 미소
+  return g+'<path d="M50 66.5 V68.5 M42.5 69.5 Q52 72 58.5 65" '+w+' stroke-width="2.6"/>'}
+ function inner(mood){var g='';
+  // 두건 뒤판 + 안감
+  g+='<path d="M12 101 L14 66 Q10 26 50 15 Q90 26 86 66 L88 101 Z" fill="'+CLOAK+'" '+s+'/>';
+  g+='<path d="M16.5 74 Q13 32 46 19" fill="none" stroke="'+LINE2+'" stroke-width="2" stroke-linecap="round" opacity=".8"/>';
+  g+='<path d="M19 80 Q15 38 50 28 Q85 38 81 80 Z" fill="'+LINING+'"/>';
+  // 망토 어깨
+  g+='<path d="M4 101 Q6 84 24 78 L50 92 L76 78 Q94 84 96 101 Z" fill="'+CLOAK+'" '+s+'/>';
+  g+='<path d="M24 80 Q34 88 38 101 M76 80 Q66 88 62 101" fill="none" stroke="'+LINE2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  // 볼 갈기 털
+  g+='<path d="M30 62 L16 65 L24 69 L14 75 L26 76 L20 83 L35 79 L40 74 Z" fill="'+LIGHT+'" '+s+'/><path d="M70 62 L84 65 L76 69 L86 75 L74 76 L80 83 L65 79 L60 74 Z" fill="'+LIGHT+'" '+s+'/>';
+  // 머리
+  g+='<path d="M24 57 Q24 32 50 31 Q76 32 76 57 Q76 78 50 81 Q24 78 24 57 Z" fill="'+FUR+'" '+s+'/>';
+  // 밝은 얼굴 무늬(눈가·주둥이)
+  g+='<ellipse cx="38.5" cy="57.5" rx="12" ry="9" fill="'+LIGHT+'"/><ellipse cx="61.5" cy="57.5" rx="12" ry="9" fill="'+LIGHT+'"/><path d="M37 63 Q50 58 63 63 Q68 77 50 80.5 Q32 77 37 63 Z" fill="'+LIGHT+'"/>';
+  g+='<path d="M47 36 L48 42 M53 36 L52 42" stroke="'+FUR2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  g+='<path d="M25.5 64 Q29 66 33 68 M74.5 64 Q71 66 67 68 M26 70 Q29 72 32 73 M74 70 Q71 72 68 73" fill="none" stroke="'+FUR2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  // 두건 앞 테두리 (이마를 덮는 그늘)
+  g+='<path d="M21 58 Q19 27 50 24 Q81 27 79 58 Q77 39 66 35.5 Q50 32 34 35.5 Q23 39 21 58 Z" fill="'+CLOAK+'" '+s+'/>';
+  g+='<path d="M24.5 52 Q26.5 39 36 37 Q50 34 64 37 Q73.5 39 75.5 52" fill="none" stroke="'+LINE2+'" stroke-width="2.4" stroke-linecap="round"/>';
+  // 귀 (두건 구멍으로)
+  g+='<g class="ears"><path d="M28 36 L26 9 L44 28 Z" fill="#4A5068" '+s+'/><path d="M72 36 L74 9 L56 28 Z" fill="#4A5068" '+s+'/><path d="M30.5 29 L29.5 16 L38.5 26 Z M69.5 29 L70.5 16 L61.5 26 Z" fill="'+EAR+'"/><path d="M25.5 14 L20 -1 L32 8 Z M74.5 14 L80 -1 L68 8 Z" fill="'+O+'" stroke="'+O+'" stroke-width="2" stroke-linejoin="round"/></g>';
+  // 붉은 목수건
+  g+='<path d="M56 85 Q68 88 74 99 L66 97 Q62 91 54 88 Z" fill="'+RED2+'" stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"/>';
+  g+='<path d="M35 80 Q50 89 65 80 L60 87 L50 100 L40 87 Z" fill="'+RED+'" '+s+'/><ellipse cx="50" cy="85.5" rx="4.6" ry="3.6" fill="'+RED+'" stroke="'+O+'" stroke-width="2.4"/>';
+  // 초승달 브로치
+  g+='<path d="M30 84 A6.5 6.5 0 1 0 30 97 A8 8 0 0 1 30 84 Z" fill="'+GOLD+'" stroke="'+O+'" stroke-width="2" stroke-linejoin="round"/>';
+  var bo=has(mood,"shy")||has(mood,"blush")?".85":"0";
+  g+='<ellipse cx="32" cy="67" rx="4.4" ry="2.4" fill="'+PINK+'" opacity="'+bo+'"/><ellipse cx="68" cy="67" rx="4.4" ry="2.4" fill="'+PINK+'" opacity="'+bo+'"/>';
+  g+=brows(mood);
+  g+='<g class="eyes">'+eye(39,mood)+eye(61,mood)+'</g>';
+  g+=mouth(mood);
+  g+='<path d="M28 70 L37 70.5 M29 73.5 L37 72.5 M72 70 L63 70.5 M71 73.5 L63 72.5" stroke="'+O+'" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>';
+  if(has(mood,"nervous"))g+='<path d="M80 40 q4 6 0 9 q-4-3 0-9z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  if(has(mood,"cry"))g+='<path d="M33 61 q-2 8 1 11 M67 61 q2 8 -1 11" fill="none" stroke="#8FD0FF" stroke-width="3" stroke-linecap="round"/>';
+  return g}
+ function fig(mood){
+  var g='<ellipse cx="50" cy="153" rx="32" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 망토 뒤 (바람에 날림)
+  g+='<path d="M20 94 Q50 86 80 94 Q96 118 104 146 Q90 142 84 150 Q50 156 4 148 Q12 120 20 94 Z" fill="'+CLOAK+'" '+s+'/>';
+  g+='<path d="M8 144 Q14 118 21 100" fill="none" stroke="'+LINE2+'" stroke-width="2" stroke-linecap="round" opacity=".8"/>';
+  g+='<path d="M70 96 Q90 118 100 144 Q90 141 84 147 Q78 122 62 100 Z" fill="'+LINING+'"/><path d="M71 104 Q84 120 90 140" fill="none" stroke="'+LINE2+'" stroke-width="2.2" stroke-linecap="round"/>';
+  // 꼬리
+  g+='<path d="M64 138 Q78 140 80 130" fill="none" stroke="'+O+'" stroke-width="10" stroke-linecap="round"/><path d="M64 138 Q78 140 80 130" fill="none" stroke="'+FUR+'" stroke-width="5" stroke-linecap="round"/><path d="M80.5 131 L80 129" stroke="'+O+'" stroke-width="7" stroke-linecap="round"/>';
+  // 다리·장화
+  g+='<path d="M38 132 L37 150 L49 150 L48 132 Z M52 132 L52 150 L64 150 L62 132 Z" fill="#191A26" '+s+'/>';
+  // 몸 (남색 옷)
+  g+='<path d="M34 98 Q50 92 66 98 L68 136 Q50 140 32 136 Z" fill="'+SUIT+'" '+s+'/>';
+  g+='<path d="M33 126 H67" stroke="'+O+'" stroke-width="3"/><rect x="46" y="122.5" width="8" height="7" rx="1.5" fill="'+GOLD+'" stroke="'+O+'" stroke-width="1.8"/>';
+  [106,114].forEach(function(y){g+='<circle cx="50" cy="'+y+'" r="1.9" fill="'+GOLD+'"/>'});
+  // 망토 앞자락
+  g+='<path d="M22 96 Q30 100 34 108 L30 146 Q18 148 6 146 Q12 118 22 96 Z" fill="'+CLOAK+'" '+s+'/><path d="M28 104 Q31 112 28 140" fill="none" stroke="'+LINE2+'" stroke-width="2.2" stroke-linecap="round"/>';
+  // 흰 장갑 (망토 자락을 쥔 손, 허리에 얹은 손)
+  g+='<ellipse cx="30" cy="118" rx="5.2" ry="4.6" fill="#FFFFFF" '+s+'/><path d="M66 112 Q74 116 70 124" fill="none" stroke="'+O+'" stroke-width="9" stroke-linecap="round"/><path d="M66 112 Q74 116 70 124" fill="none" stroke="'+SUIT+'" stroke-width="4" stroke-linecap="round"/><ellipse cx="69" cy="125" rx="4.6" ry="4.2" fill="#FFFFFF" '+s+'/>';
+  return g+'<g>'+inner(mood)+'</g>'}
+ window.__SIG=window.__SIG||{};
+ window.__SIG["nero"]={face:function(m){return inner(m||"")},fig:function(m){return fig(m||"")}};
+})();
+
+/* v137 시그니처: 부엉이 할아버지 — 전설의 은퇴 탐정 (체크무늬 디어스토커, 인버네스 망토, 덥수룩한 흰 눈썹, 금테 동그란 안경, 목에 건 돋보기) */
+(function(){
+ var O="#2A2340",FUR="#7C6A58",FUR2="#5E4F41",DISC="#EEDFC6",DISC2="#D9C4A4",WH="#FBF8F1",BEAK="#F2A541",IRIS="#F5B83D",
+  GOLD="#E2B24A",TW="#C79C60",TW2="#A57A45",TWL="#7E5A30",RED="#C8414A",LENS="#BFE6F5",PINK="#E8707E",CP="#9A6B4A",CP2="#7A5236",CPL="#5E3E2A",COAT="#5E4636",BEAK2="#DE8530";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ var EY=55;
+ // 눈 (안경알 안쪽)
+ function eye(cx,mood){var y=EY,g='';
+  if(has(mood,"happy")||has(mood,"shy"))return '<path d="M'+(cx-7)+' '+(y+2)+' Q'+cx+' '+(y-6)+' '+(cx+7)+' '+(y+2)+'" fill="none" stroke="'+O+'" stroke-width="3.4" stroke-linecap="round"/>';
+  if(has(mood,"shock"))return '<circle cx="'+cx+'" cy="'+y+'" r="8" fill="#FFFFFF" '+s+'/><circle cx="'+cx+'" cy="'+y+'" r="2.4" fill="'+O+'"/>';
+  var px=cx,py=y+1,lid=null;
+  if(has(mood,"nervous")||has(mood,"confused"))px=cx+(cx<50?2:2);
+  g+='<circle cx="'+cx+'" cy="'+y+'" r="6" fill="'+IRIS+'" stroke="'+O+'" stroke-width="2.4"/>';
+  g+='<circle cx="'+px+'" cy="'+py+'" r="'+(has(mood,"nervous")||has(mood,"confused")?2.6:3.2)+'" fill="'+O+'"/>';
+  g+='<circle cx="'+(px+2.2)+'" cy="'+(py-2.2)+'" r="1.9" fill="#FFFFFF"/>';
+  var L=cx<50; // 바깥쪽 방향
+  if(has(mood,"sad")||has(mood,"cry")){ // 바깥쪽이 처진 눈꺼풀
+   var a=L?y-5:y-1,b=L?y-1:y-5;
+   lid='M'+(cx-7.6)+' '+(L?y-2:y-6)+' L'+(cx+7.6)+' '+(L?y-6:y-2);
+   g+='<path d="M'+(cx-9.5)+' '+(L?y-2:y-6)+' L'+(cx+9.5)+' '+(L?y-6:y-2)+' L'+(cx+9.5)+' '+(y-11)+' L'+(cx-9.5)+' '+(y-11)+' Z" fill="'+DISC+'"/>';
+  }else if(has(mood,"angry")){
+   lid='M'+(cx-7.6)+' '+(L?y-5:y-1)+' L'+(cx+7.6)+' '+(L?y-1:y-5);
+   g+='<path d="M'+(cx-9.5)+' '+(L?y-5:y-1)+' L'+(cx+9.5)+' '+(L?y-1:y-5)+' L'+(cx+9.5)+' '+(y-11)+' L'+(cx-9.5)+' '+(y-11)+' Z" fill="'+DISC+'"/>';
+  }else if(!(has(mood,"nervous")||has(mood,"confused"))){ // 기본: 지그시 내려앉은 눈꺼풀(지혜로운 눈)
+   var ly=has(mood,"smug")?y-1:y-3;
+   lid='M'+(cx-7.6)+' '+(ly+1)+' Q'+cx+' '+(ly-2)+' '+(cx+7.6)+' '+(ly+1);
+   g+='<path d="M'+(cx-9.5)+' '+(ly+1)+' Q'+cx+' '+(ly-2)+' '+(cx+9.5)+' '+(ly+1)+' L'+(cx+9.5)+' '+(y-11)+' L'+(cx-9.5)+' '+(y-11)+' Z" fill="'+DISC+'"/>';
+  }
+  if(lid)g+='<path d="'+lid+'" fill="none" stroke="'+O+'" stroke-width="3.2" stroke-linecap="round"/>';
+  return g}
+ // 덥수룩한 흰 눈썹 (안쪽 끝이 원점, 바깥쪽으로 뻗음)
+ var BROW='M3 2 Q-2 -7 -11 -5 Q-17 -11 -25 -7 Q-31 -6 -34 -2 Q-29 -1 -28 2 Q-33 4 -33 7 Q-25 5 -20 6 Q-14 3 -9 6 Q-4 3 3 2 Z';
+ function brows(mood){var r=4,dy=0;
+  if(has(mood,"angry")){r=20;dy=2}
+  else if(has(mood,"sad")||has(mood,"cry")){r=-16;dy=-1}
+  else if(has(mood,"nervous")||has(mood,"confused")){r=-11;dy=-2}
+  else if(has(mood,"shock")){r=-4;dy=-6}
+  else if(has(mood,"happy")){r=-3;dy=-3}
+  var y=42+dy,b='<path d="'+BROW+'" fill="'+WH+'" stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"/>';
+  return '<g transform="translate(46 '+y+') rotate('+r+')">'+b+'</g><g transform="translate(54 '+y+') scale(-1 1) rotate('+r+')">'+b+'</g>'}
+ function beak(mood){return beak0(mood).replace(/fill="#F2A541"/g,'fill="'+BEAK2+'"')}
+ function beak0(mood){
+  if(has(mood,"shock"))return '<ellipse cx="50" cy="71" rx="4.6" ry="5.4" fill="'+PINK+'" '+s+'/><path d="M45 64 Q50 62 55 64 L50 68.5 Z" fill="'+BEAK+'" '+s+'/><path d="M46 76.5 Q50 79 54 76.5 L50 74.5 Z" fill="'+BEAK+'" stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"/>';
+  if(has(mood,"happy"))return '<path d="M45.5 67 Q50 77 54.5 67 Z" fill="'+PINK+'" '+s+'/><path d="M45 64 Q50 62 55 64 L50 69.5 Z" fill="'+BEAK+'" '+s+'/>';
+  var g='<path d="M45 64 Q50 62 55 64 L50 73 Z" fill="'+BEAK+'" '+s+'/>';
+  if(has(mood,"nervous"))g+='<path d="M43 76 q2.3 -2 4.6 0 t4.6 0 t4.6 0" fill="none" stroke="'+O+'" stroke-width="2" stroke-linecap="round"/>';
+  return g}
+ function plaid(lines,c){return '<path d="'+lines+'" fill="none" stroke="'+(c||TWL)+'" stroke-width="2.4" stroke-linecap="round"/>'}
+ function inner(mood){var g='';
+  // 귀깃 (모자 아래 양옆으로 삐죽)
+  g+='<g class="ears"><path d="M26 42 Q14 32 10 14 Q22 20 34 32 Z" fill="'+FUR+'" '+s+'/><path d="M74 42 Q86 32 90 14 Q78 20 66 32 Z" fill="'+FUR+'" '+s+'/><path d="M24 34 Q18 28 15 21 M76 34 Q82 28 85 21" fill="none" stroke="'+FUR2+'" stroke-width="2.4" stroke-linecap="round"/></g>';
+  // 인버네스 망토 (어깨)
+  g+='<path d="M6 101 Q8 83 28 78 Q50 86 72 78 Q92 83 94 101 Z" fill="'+CP+'" '+s+'/>';
+  g+=plaid('M20 84 V101 M35 87 V101 M65 87 V101 M80 84 V101 M10 93 H90',CPL);
+  g+='<path d="M10 97 H90" stroke="'+RED+'" stroke-width="1.4"/>';
+  // 세운 깃
+  g+='<path d="M30 79 L41 93 L48 85 Z M70 79 L59 93 L52 85 Z" fill="'+CP2+'" '+s+'/>';
+  // 머리
+  g+='<path d="M18 56 Q16 30 50 28 Q84 30 82 56 Q82 82 50 85 Q18 82 18 56 Z" fill="'+FUR+'" '+s+'/>';
+  // 얼굴판
+  g+='<path d="M50 42 Q40 36 30 40 Q20 47 22 59 Q24 73 38 75 Q46 76 50 72 Q54 76 62 75 Q76 73 78 59 Q80 47 70 40 Q60 36 50 42 Z" fill="'+DISC+'" stroke="'+DISC2+'" stroke-width="2"/>';
+  g+='<path d="M45 41 Q50 46 55 41 L51.5 62 L48.5 62 Z" fill="'+FUR+'"/>';
+  // 흰 턱수염 깃
+  g+='<path d="M36 70 Q43 75 50 73 Q57 75 64 70 Q67 79 59 83 Q55 87 50 84 Q45 87 41 83 Q33 79 36 70 Z" fill="'+WH+'" stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"/>';
+  // 빨간 나비넥타이
+  g+='<path d="M50 87 L42 83 L42 92 Z M50 87 L58 83 L58 92 Z" fill="'+RED+'" stroke="'+O+'" stroke-width="2" stroke-linejoin="round"/><circle cx="50" cy="87" r="2.4" fill="'+RED+'" stroke="'+O+'" stroke-width="1.8"/>';
+  // 목에 건 돋보기
+  g+='<path d="M40 86 Q48 98 60 90" fill="none" stroke="'+GOLD+'" stroke-width="1.8"/><path d="M67 97 L71 101" stroke="'+O+'" stroke-width="5" stroke-linecap="round"/><path d="M67 97 L71 101" stroke="#8A5A32" stroke-width="2.4" stroke-linecap="round"/>';
+  g+='<circle cx="63" cy="92" r="6" fill="'+LENS+'" stroke="'+O+'" stroke-width="4.6"/><circle cx="63" cy="92" r="6" fill="none" stroke="'+GOLD+'" stroke-width="2"/><path d="M60 90 Q61 88 63 88" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>';
+  // 디어스토커 모자
+  g+='<g transform="rotate(-5 50 24)">';
+  g+='<path d="M50 10 L41 4 L42 13 Z M50 10 L59 4 L58 13 Z" fill="'+TW2+'" stroke="'+O+'" stroke-width="2.2" stroke-linejoin="round"/>';
+  g+='<path d="M25 34 Q23 11 50 9 Q77 11 75 34 Z" fill="'+TW+'" '+s+'/>';
+  g+=plaid('M37 14 V33 M50 11.5 V33 M63 14 V33 M27 23 H73'.replace(/x/,''));
+    g+='<path d="M25 34 Q24 24 31 18 Q34 27 33 35 Z M75 34 Q76 24 69 18 Q66 27 67 35 Z" fill="'+TW2+'" stroke="'+O+'" stroke-width="2.4" stroke-linejoin="round"/>';
+  g+='<circle cx="50" cy="10" r="2.6" fill="'+TW2+'" stroke="'+O+'" stroke-width="2"/>';
+  g+='<path d="M27 33 Q50 44 73 33 Q66 40 50 41 Q34 40 27 33 Z" fill="'+TW2+'" '+s+'/>';
+  g+='</g>';
+  // 볼
+  var bo=has(mood,"shy")||has(mood,"blush")?".85":".45";
+  g+='<ellipse cx="27" cy="67" rx="4.6" ry="2.6" fill="#E58A9C" opacity="'+bo+'"/><ellipse cx="73" cy="67" rx="4.6" ry="2.6" fill="#E58A9C" opacity="'+bo+'"/>';
+  g+='<g class="eyes">'+eye(37,mood)+eye(63,mood)+'</g>';
+  // 금테 안경
+  g+='<circle cx="37" cy="'+EY+'" r="11.2" fill="none" stroke="'+O+'" stroke-width="4.8"/><circle cx="63" cy="'+EY+'" r="11.2" fill="none" stroke="'+O+'" stroke-width="4.8"/><path d="M47.5 52 Q50 49.5 52.5 52" fill="none" stroke="'+O+'" stroke-width="4.4"/>';
+  g+='<circle cx="37" cy="'+EY+'" r="11.2" fill="none" stroke="'+GOLD+'" stroke-width="3"/><circle cx="63" cy="'+EY+'" r="11.2" fill="none" stroke="'+GOLD+'" stroke-width="3"/><path d="M47.5 52 Q50 49.5 52.5 52" fill="none" stroke="'+GOLD+'" stroke-width="1.8"/>';
+  g+='<path d="M43 47 Q45.5 49 46 52 M69 47 Q71.5 49 72 52" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" opacity=".9"/>';
+  g+=brows(mood);
+  g+=beak(mood);
+  if(has(mood,"nervous"))g+='<path d="M86 46 q4 6 0 9 q-4-3 0-9z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  if(has(mood,"cry"))g+='<path d="M30 66 q-2 8 1 11 M70 66 q2 8 -1 11" fill="none" stroke="#8FD0FF" stroke-width="3" stroke-linecap="round"/>';
+  return g}
+ function fig(mood){
+  var g='<ellipse cx="50" cy="153" rx="30" ry="5" fill="rgba(0,0,0,.28)"/>';
+  // 지팡이
+  g+='<path d="M96 152 L95 118 Q95 110 88 111" fill="none" stroke="'+O+'" stroke-width="7" stroke-linecap="round"/><path d="M96 152 L95 118 Q95 110 88 111" fill="none" stroke="#9A6436" stroke-width="3.4" stroke-linecap="round"/>';
+  // 발
+  g+='<path d="M34 146 l-4 7 M38 147 v7 M42 146 l4 7 M58 146 l-4 7 M62 147 v7 M66 146 l4 7" stroke="'+O+'" stroke-width="6" stroke-linecap="round"/><path d="M34 146 l-4 7 M38 147 v7 M42 146 l4 7 M58 146 l-4 7 M62 147 v7 M66 146 l4 7" stroke="'+BEAK+'" stroke-width="2.8" stroke-linecap="round"/>';
+  // 긴 코트
+  g+='<path d="M26 96 Q50 88 74 96 L82 146 Q50 152 18 146 Z" fill="'+CP2+'" '+s+'/>';
+  g+=plaid('M35 126 V149 M65 126 V149 M21 140 H79',CPL);
+  g+='<path d="M50 120 V150" stroke="'+O+'" stroke-width="2"/>';
+  // 망토 층
+  g+='<path d="M12 124 Q10 100 30 92 L50 98 L70 92 Q90 100 88 124 Q50 132 12 124 Z" fill="'+CP+'" '+s+'/>';
+  g+=plaid('M20 99 V124 M35 97 V127 M65 97 V127 M80 99 V124 M13 110 H87',CPL);
+  g+='<path d="M14 118 H86" stroke="'+RED+'" stroke-width="1.4"/>';
+  // 날개 끝(지팡이 쥔 손)
+  g+='<path d="M84 116 Q92 110 94 117 Q90 123 84 121 Z" fill="'+FUR+'" stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"/>';
+  return g+'<g>'+inner(mood)+'</g>'}
+ window.__SIG=window.__SIG||{};
+ window.__SIG["owlgp"]={face:function(m){return inner(m||"")},fig:function(m){return fig(m||"")}};
 })();
 
 (function(){window.__FIXQA=[];function FIX(id,a,b){window.__FIXQA.push({id:id,a:a,b:b})}
