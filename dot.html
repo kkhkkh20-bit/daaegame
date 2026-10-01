@@ -22545,6 +22545,645 @@ CHAIN("kitchen",{nodes:[
  document.head.appendChild(css);
 })();
 
+/* v129 데이터: 맞수 레이(RIV) · 추궁 강화(PRS) · 범인별 붕괴(BRK2) */
+(function(){window.__RIV={};window.__PRS=[];window.__BRK2={};
+function RIV(id,o){window.__RIV[id]=o}
+function PRS(id,r,y,o){window.__PRS.push({id:id,r:r,y:y,o:o})}
+function BRK2(k,o){window.__BRK2[k]=o}
+// 맞수 '레이' — 5~15장 반론 장면 + 장 끝 대사
+// 형식: RIV(장id,{phases:[talk, debate, talk], post:[[화자,대사,표정],...]})  (kitchen은 post 대신 reunion)
+
+// ===== 5장 달빛 종이 멎은 밤 =====
+RIV("bell",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! …그 결론, 너무 빨라요.",m:"smug"},
+   {w:"det1",t:"…누구야? 고양이?",m:"confused"},
+   {w:"rei",t:"레이. 도시 탐정 협회 1급 탐정이에요. 최연소. 협회 의뢰를 받고 은빛 마을에 왔어요.",m:"smug"},
+   {w:"rei",t:"방금 그 추리, 100점 만점에 38점.",m:"smug"},
+   {w:"det0",t:"협회 탐정이 이 밤중에 은빛 마을까지?"},
+   {w:"rei",t:"보호자님은 빠져 주세요. 의뢰서엔 범인이 따로 적혀 있거든요.",m:"smug"}]},
+  {type:"debate",mode:"no",topic:"종을 멎게 한 건 슬링이 아니라 밤이일까?",bullets:["m_rope","m_speech","m_safe","m_echo"],hint:"달빛 종탑에서 본 줄 끝. 끊긴 자리가 어떤 모양이었는지 떠올려 봐.",
+   stms:[
+    {w:"rei",t:"톡 아저씨 작업실의 거푸집. {가짜 추를 부탁한 건 밤이}예요. 본인도 인정했죠.",m:"smug"},
+    {w:"rei",t:"종줄은 박쥐 이빨로 {물어뜯어 끊었어요}. 종탑 처마에 매달려 사는 아이니까, 줄까지 한 번이면 닿죠.",k:"no",a:["m_rope"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 종줄은 매끈하게 끊겨 있었어. 칼로 자른 자국이야. 이빨로 뜯었으면 너덜너덜했겠지."},
+      {w:"rei",t:"…매끈하게?",m:"nervous",fx:"shock"},
+      {w:"det0",t:"박쥐 아이는 칼을 들고 다니지 않는다. 사다리에 버클 자국을 남기지도 않고."},
+      {w:"rei",t:"…의뢰서에 적힌 대로 봤는데.",m:"nervous"}]},
+    {w:"bami",t:"…내가 왜 내 종을 멎게 해. {난 종을 지키려고} 바꾼 거야. 어른들은 늘 그래.",m:"angry"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"…레이, 마이너스 20점.",m:"nervous"},
+   {w:"rei",t:"방금 반론은 51점. 운이 좋았어요. 다음엔 없어요, 시골 탐정.",m:"smug"},
+   {w:"det1",t:"점수는 됐고, 비켜 줄래?",m:"angry"}]}
+ ],
+ post:[
+  ["narr","사건이 끝난 종탑 아래. 레이는 식은 홍차 병을 무릎에 올려 두고 수첩에 무언가 적고 있었다."],
+  ["det0","따뜻한 차가 있는데, 한 잔 하겠니."],
+  ["rei","사양할게요. 뜨거운 건 판단을 흐려요.","smug"],
+  ["narr","레이가 수첩을 덮었다. 손때 묻은 가죽 표지 귀퉁이에, 작은 솔방울 그림이 있었다."],
+  ["det0","……"],
+  ["narr","아빠 탐정의 손이 찻잔 위에서 멈췄다. 작은 탐정은 종탑 계단을 뛰어오르느라 그 장면을 보지 못했다."],
+  ["rei","해결까지 남은 시간, 0초. 다음 사건에서 봬요, 보호자님.","smug"],
+  ["narr","아빠 탐정은 아무것도 묻지 않았다. 다만 멀어지는 수첩을 오래 보았다."]]
+});
+
+// ===== 6장 빛을 훔치는 자 =====
+RIV("dark",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! 또 만났네요, 시골 탐정.",m:"smug"},
+   {w:"det1",t:"…너 또 왔어? 여긴 숲속 마을이야.",m:"angry"},
+   {w:"rei",t:"협회 의뢰는 지도를 안 봐요. 열쇠 도난, 등불 소등. 범인은 이미 의뢰서에 있어요.",m:"smug"},
+   {w:"rei",t:"해결까지 남은 시간, 340초.",m:"smug"},
+   {w:"det0",t:"검사관을 지목한 데엔 이유가 있다. 들어 보겠니?"},
+   {w:"rei",t:"보호자님 설명은 필요 없어요. 증거만 보면 되니까.",m:"smug"}]},
+  {type:"debate",mode:"no",topic:"열쇠를 가져간 건 검사관이 아니라 까로일까?",bullets:["n_log","n_file","s6x_snack","n_print"],hint:"우체국 뒷방에서 찾은 종이. 7시부터 8시 반까지 까로 아저씨가 누구와 있었다고 적혀 있었지?",
+   stms:[
+    {w:"rei",t:"사무소 벽의 발톱 자국. 그 도장은 {우체국 뒷방 선반}에서 나왔죠.",m:"smug"},
+    {w:"rei",t:"8시쯤 까로는 {우체국 뒷방에 혼자} 있었어요. 도장을 찍고 언덕까지 날아갈 시간은 충분해요.",k:"no",a:["n_log","karo_d1"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 까로 아저씨는 7시부터 8시 반까지 나비랑 배달을 나갔어. 근무 기록에 나비 서명까지 있어."},
+      {w:"rei",t:"…서명?",m:"nervous",fx:"shock"},
+      {w:"det0",t:"발톱 자국은 심을 수 있다. 하지만 옆에 있던 사람까지 심을 수는 없지."},
+      {w:"rei",t:"…의뢰서엔 '까마귀'라고 적혀 있었는데.",m:"nervous"}]},
+    {w:"karo",t:"…저는 오늘 {그 방에 들어간 적도} 없는데요. 아무도 안 믿겠지만.",m:"sad"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"…레이, 마이너스 15점.",m:"nervous"},
+   {w:"rei",t:"의뢰서가 틀린 게 아니라, 제가 덜 읽은 거예요. 아마도.",m:"smug"},
+   {w:"det1",t:"'아마도'는 탐정이 쓰는 말 아니거든.",m:"angry"}]}
+ ],
+ post:[
+  ["narr","언덕 등불이 다시 켜진 밤. 사무소 앞에서 레이가 간판을 올려다보았다."],
+  ["rei","간판에 이름을 꽤 크게 썼네요. 창가엔 낮에도 등잔이고.","smug"],
+  ["rei","소문 들었어요. 엄마 찾는다며? 탐정 놀이로?","smug"],
+  ["det1","……놀이 아니야.","sad"],
+  ["det0","레이. 오늘은 거기까지."],
+  ["narr","아빠 탐정은 목소리를 높이지 않았다. 작은 탐정 앞으로 한 걸음 나와 섰을 뿐이었다."],
+  ["rei","…협회 탐정은 사적인 일에 끼어들지 않아요. 실례했어요.","nervous"],
+  ["narr","레이는 돌아서서 걸어갔다. 손에 든 식은 홍차 병이 한 번, 작게 흔들렸다."]]
+});
+
+// ===== 7장 뒤집힌 등불 =====
+RIV("museum",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! 쿠키를 나눠 준 관장님을 의심하다니, 의외네요.",m:"smug"},
+   {w:"det1",t:"쿠키랑 추리는 상관없거든.",m:"angry"},
+   {w:"rei",nar:1,t:"레이가 외알 안경을 천천히 닦았다. 생각할 때의 버릇이었다."},
+   {w:"rei",t:"이 박물관에서 쪽지에 'N'이라고 서명할 사람은 하나뿐이에요.",m:"smug"},
+   {w:"nero",t:"…하필 나를 고르셨군요.",m:"sad"}]},
+  {type:"debate",mode:"no",topic:"9시에 전기실 불을 끈 건 네로일까?",bullets:["m7_paw","cx_museum_0","m7_sack","m7_lock"],hint:"박물관 지붕 끝에 남은 자국. 한자리에서 얼마나 서 있었는지 봐.",
+   stms:[
+    {w:"rei",t:"'오늘 밤 누군가 빛을… — N'. {N은 네로}죠. 그 밖에 누가 있어요.",m:"smug"},
+    {w:"rei",t:"네로는 {9시에 지붕에서 내려와} 전기실 차단기를 내렸어요. 지붕에서 전기실 창문이 정면으로 보이니까요.",k:"no",a:["m7_paw","nero_m3"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 지붕의 스라소니 발자국은 한자리에 오래 서 있던 자국뿐이야. 내려간 자국은 없어."},
+      {w:"rei",t:"…내려온 발자국이, 없다고요?",m:"nervous",fx:"shock"},
+      {w:"det0",t:"창문을 지켜본 사람과 불을 끈 사람은 다르다."},
+      {w:"rei",t:"…의뢰서엔 '검은 망토를 주시할 것'이라고만 적혀 있었어요.",m:"nervous"}]},
+    {w:"nero",t:"나는 {그 지붕에서 한 발짝도} 움직이지 않았습니다. 별 넷짜리 지붕이니까요.",m:"smug"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"…레이, 마이너스 25점.",m:"nervous"},
+   {w:"rei",t:"시골 탐정, 방금 반론은 54점. 3점 올랐네요. 우연이에요.",m:"smug"}]}
+ ],
+ post:[
+  ["narr","박물관 계단. 레이가 무릎에 수첩을 펴 놓고 무언가 적고 있었다."],
+  ["det1","…잠깐. 그 수첩.","nervous"],
+  ["narr","가죽 표지 귀퉁이에 작은 솔방울 그림. 작은 탐정이 아는 그림이었다."],
+  ["det1","그거 어디서 났어? 그 솔방울, 우리 엄마 표시야!","nervous"],
+  ["narr","작은 탐정이 손을 뻗는 순간, 레이가 수첩을 낚아채 품에 넣었다."],
+  ["rei","남의 수첩에 손대는 것도 시골 탐정 규칙이에요?","angry"],
+  ["det1","대답해! 어디서 났냐고!","angry"],
+  ["rei","…대답할 의무 없어요.","sad"],
+  ["narr","레이는 뒤돌아보지 않고 계단을 내려갔다. 아빠 탐정은 그 작은 등을 끝까지 바라보았다."]]
+});
+
+// ===== 8장 멈춘 우편 마차 =====
+RIV("cart",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! …뭉치라니. 근거가 약해요.",m:"nervous"},
+   {w:"det1",t:"…너 오늘 목소리가 왜 그래?",m:"confused"},
+   {w:"rei",t:"아무렇지도 않아요. 다친 아이 다리를 봐서 그런 거 아니에요.",m:"angry"},
+   {w:"rei",t:"해결까지 남은 시간… 계산이 안 되네요. 됐어요. 그냥 들어요.",m:"nervous"},
+   {w:"det0",t:"천천히 해도 된다, 레이."}]},
+  {type:"debate",mode:"no",topic:"쐐기를 빼먹은 건 바퀴를 두드린 따닥일까?",bullets:["c8_watch","c8_honey","c8_load","c8_tnote"],hint:"사무소에서 본, 다친 아이가 잰 숫자들. 두드림이 끝난 시각과 마차가 멈춘 시각 사이를 세어 봐.",
+   stms:[
+    {w:"rei",t:"바퀴 축 바로 밑에 {빨간 딱따구리 깃털}. 마을 사람들도 다 봤어요.",m:"smug"},
+    {w:"rei",t:"따닥이 바퀴를 두드리고 {바로 다음 순간} 마차가 굴렀어요. 콩이도 그렇게 말했죠.",k:"no",a:["c8_watch","doto_c1","owlgp_c1"],m:"nervous",ok:[
+      {w:"det1",t:"그건 아니야! 도토가 초시계로 쟀어. 두드림은 8시 55분에 끝났고, 마차는 9시 7분에 굴렀어."},
+      {w:"rei",t:"…12분.",m:"nervous",fx:"shock"},
+      {w:"det0",t:"그 12분 사이에 누군가 쐐기를 뽑았다. 따닥은 그 전에 연못으로 갔고."},
+      {w:"rei",t:"…다친 아이의 기록을, 제가 안 읽었네요.",m:"sad"}]},
+    {w:"ttadak",t:"……{내가, 그랬나 봐}. …따닥.",m:"sad"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"레이, 마이너스 30점. …오늘은 깎을 점수가 모자라네요.",m:"sad"},
+   {w:"ttadak",nar:1,t:"따닥이 레이 쪽을 보고 부리로 탁자를 한 번 두드렸다. 괜찮다는 뜻이었다."},
+   {w:"rei",t:"…고맙다는 말은 안 받아요.",m:"shy"}]}
+ ],
+ post:[
+  ["narr","그날 밤, 탐정 사무소. 도토가 잠든 방 옆 창가에 레이가 혼자 서 있었다."],
+  ["narr","창밖, 언덕 위 등불이 노랗게 타고 있었다."],
+  ["rei","…제일 밝은 불 아래에서…","sad"],
+  ["narr","아주 작은 목소리였다. 그런데 문간에 서 있던 아빠 탐정에게는 들렸다."],
+  ["det0","……"],
+  ["narr","아빠 탐정은 들어가지 않았다. 대신 뜨거운 차 한 잔을 창가 탁자 끝에 조용히 내려놓았다. 레이가 마실 때쯤이면 식어 있을 자리에."]]
+});
+
+// ===== 9장 하얀 장갑의 밤 =====
+RIV("glove",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! 백 부인? 마을 전체가 스라소니를 가리키는데요.",m:"smug"},
+   {w:"det1",t:"마을이 가리킨다고 다 맞는 건 아니야.",m:"angry"},
+   {w:"rei",t:"알아요. 그래서 저는 의뢰서를 봐요. 협회 서류는 틀린 적이 없어요.",m:"smug"},
+   {w:"rei",nar:1,t:"레이가 식은 홍차를 한 모금 마셨다. 손목시계를 보며 입속으로 숫자를 셌다."},
+   {w:"rei",t:"해결까지 남은 시간, 120초. 아니, 90초.",m:"smug"}]},
+  {type:"debate",mode:"no",topic:"꽥순을 데려간 건 네로일까?",bullets:["g9_found","s9x_thread","g9_prints","g9_note"],hint:"저택 지하 창고 담요 속에서 들은 말. 누가, 무엇에 태웠다고 했지?",
+   stms:[
+    {w:"rei",t:"연못가에서 시작하는 {스라소니 발자국}. 본인도 자기 발자국이라고 했어요.",m:"smug"},
+    {w:"rei",t:"꽥순은 {스라소니한테 끌려} 숲으로 갔어요. 연못가엔 그 발자국 말고 다른 길이 없으니까.",k:"no",a:["g9_found","bami_g1","g9_wheel"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 꽥순이가 직접 말했어. '하얀 손이 나를 마차에 태웠어.'"},
+      {w:"rei",t:"…마차?",m:"nervous",fx:"shock"},
+      {w:"det0",t:"스라소니는 마차를 몰지 않는다. 그리고 그 발자국은 꽥순이가 사라진 뒤에 찍혔지."},
+      {w:"rei",t:"…협회 수배… 아니, 의뢰서엔 분명히…",m:"nervous"}]},
+    {w:"nero",t:"…{마을은 이미 답을 정했더군요}. 저는 아무 말도 하지 않겠습니다.",m:"sad"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"…레이, 마이너스 20점.",m:"nervous"},
+   {w:"rei",t:"의뢰서가 틀린 게 이번이 두 번째예요. 아니, 세 번째.",m:"sad"},
+   {w:"det1",t:"다섯 번째야. 세어 봤어.",m:"smug"}]}
+ ],
+ post:[
+  ["narr","꽥순이 엄마 품에 안긴 연못가. 레이는 조금 떨어진 버드나무 아래 서 있었다."],
+  ["det1","…너, 아까 '수배'라고 하려다 말았지.","confused"],
+  ["rei","…들었어요?","nervous"],
+  ["rei","협회엔 의뢰서 말고 수배서도 와요. 지난겨울에 온 수배서엔…","sad"],
+  ["narr","레이가 입을 다물었다. 시선이 작은 탐정의 얼굴에 한참 머물렀다."],
+  ["rei","…아니에요. 증거 없는 서류 얘기는 안 해요. 시골 탐정 규칙이라면서요.","sad"],
+  ["det1","…그건 우리 엄마 규칙이야.","sad"],
+  ["narr","레이는 대답 없이 외알 안경을 닦았다. 다 닦은 뒤에도 한참 동안."]]
+});
+
+// ===== 10장 별빛 축제의 밤 =====
+RIV("festival",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! 마부라니. 이 광장 사람 전부가 다른 이름을 부르고 있는데요.",m:"smug"},
+   {w:"det1",t:"또 '다들 그렇게 말한다'야? 너까지?",m:"angry"},
+   {w:"rei",t:"다들이 아니라 의뢰서예요. 협회는 소문으로 일하지 않아요.",m:"smug"},
+   {w:"rei",t:"…오늘은 점수 안 매길게요. 시간이 없어요.",m:"nervous"}]},
+  {type:"debate",mode:"no",topic:"돌이 사라질 때, 뭉치는 등불 옆에 있었을까?",bullets:["f10_slip","f10_log","s10x_receipt","f10_glove"],hint:"광장에서 손에 넣은 우체국 종이. 9시 20분에 무엇이, 누구 앞으로 접수됐지?",
+   stms:[
+    {w:"rei",t:"9시 반쯤 등불 옆에서 {흑백 무늬}를 봤다는 증인이 있어요.",m:"smug"},
+    {w:"rei",t:"돌이 사라진 9시 10분부터 31분 사이, 뭉치는 {광장 말고는 어디에도} 없었어요. 다른 곳에 갔다는 기록이 하나도 없으니까.",k:"no",a:["f10_slip","karo_f3"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 9시 20분, 우체국에 편지 세 통이 접수됐어. 받는 사람은 도토, 꽥순, 까로 아저씨."},
+      {w:"karo",t:"…맞아요. 도련님이 직접 부쳤어요. 9시 35분까지 창구 앞에 서 있었고요.",m:"sad"},
+      {w:"rei",t:"보낸 이 칸이… 비어 있어서 못 봤네요.",m:"nervous",fx:"shock"},
+      {w:"det0",t:"비워 둔 칸에도 사람이 있다."}]},
+    {w:"wanggu",t:"봤지! {이 두 눈으로}! 내 말이 맞지?!",m:"angry"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"…레이, 마이너스 20점. 이번 달 점수, 바닥이에요.",m:"sad"},
+   {w:"det1",t:"바닥이면 이제 올라갈 일만 남았네.",m:"smug"}]}
+ ],
+ post:[
+  ["narr","축제 등불이 다시 켜진 광장. 레이가 품에서 접힌 종이 한 장을 꺼냈다."],
+  ["rei","보여 줄게요. 지난번에 말하다 만 거.","sad"],
+  ["narr","협회 수배서. 굵은 글씨 한 줄. '날다람쥐 과학자. 별빛 돌 도둑. 발견 즉시 협회에 알릴 것.'"],
+  ["det1","……뭐?","nervous"],
+  ["det1","우리 엄마는 도둑 아니야! 엄마는 별빛 돌을 지키는 사람이야! 네가 뭘 알아!","angry"],
+  ["rei","…협회 서류는 틀린 적이…","sad"],
+  ["det0","증거 없이 정하지 않기. 나쁜 쪽으로도."],
+  ["narr","아빠 탐정은 수배서를 반듯하게 접어 레이에게 돌려주었다. 레이는 아무 말 없이 그것을 받아 들고 광장을 떠났다."]]
+});
+
+// ===== 11장 이름 없는 마을 =====
+RIV("snow",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음.",m:"sad"},
+   {w:"rei",nar:1,t:"레이의 목소리가 평소보다 낮았다. 외알 안경에 눈송이가 내려앉아 있었다."},
+   {w:"det1",t:"…너도 이 마을에 왔구나.",m:"confused"},
+   {w:"rei",t:"협회 의뢰예요. 그것뿐이에요.",m:"sad"},
+   {w:"rei",t:"검사원은 규정대로 일했어요. 범인은 깃털 주인이에요.",m:"smug"}]},
+  {type:"debate",mode:"no",topic:"등불이 흐려질 때, 서리 검사원은 여관 창가에 있었을까?",bullets:["e11_coat","e11_blanket","e11_seal","e11_record"],hint:"눈꽃 여관 창가 의자에 걸려 있던 것. 누비 아주머니가 본 '큰 분'이 한 번이라도 움직였는지 떠올려 봐.",
+   stms:[
+    {w:"rei",t:"봉인 밀랍에 박힌 {까만 깃털}. 이 마을에 까만 깃털은 하나뿐이에요.",m:"smug"},
+    {w:"rei",t:"6시 40분, {검사원은 창가에 앉아} 보고서를 쓰고 있었어요. 누비 아주머니가 마당에서 올려다봤죠.",k:"no",a:["e11_coat","nubi11_b","ubak11_2"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 창가 의자엔 회색 코트랑 모자만 걸려 있었어. 아주머니가 본 '큰 분'은 한 번도 안 움직였고."},
+      {w:"rei",t:"…빈 코트.",m:"nervous",fx:"shock"},
+      {w:"det0",t:"펜 소리는 견습생 쪽에서만 났다."},
+      {w:"rei",t:"…눈 오는 밤엔 흰 망토 하나로 사람이 지워지죠. 알고 있었는데.",m:"sad"}]},
+    {w:"seori",t:"검사원에겐 {검사보다 보고서가 더 깁니다}.",m:"smug"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"…레이, 마이너스 20점.",m:"sad"},
+   {w:"rei",t:"오늘은 점수 깎는 것도 춥네요.",m:"sad"}]}
+ ],
+ post:[
+  ["narr","솜이가 무쇠 할아버지 품에서 잠든 밤. 여관 처마 밑에서 레이가 고개 쪽 어둠을 보고 서 있었다."],
+  ["det1","…추운데 왜 여기 있어.","sad"],
+  ["rei","작년 첫눈 날, 나 이 고개에 있었어. 날다람쥐 과학자의 조수로.","sad"],
+  ["rei","눈보라가 몰아치니까 그 사람이 이 수첩을 내 품에 넣었어. '이걸 들고 내려가. 길이 엇갈리면, 제일 밝은 불 아래에서 만나자.'","sad"],
+  ["rei","나는 내려왔어. 그 사람은 안 왔어. …남았어야 했는데. 내가.","sad"],
+  ["rei","그 사람, 밤마다 네 얘기만 했어. 별을 재다 말고, 불을 쬐다 말고. …듣기 싫을 만큼.","sad"],
+  ["det1","…엄마는, 살아 있어?","sad"],
+  ["rei","몰라. 정말 몰라. 그래서 아직 이 수첩을 못 돌려줬어.","sad"],
+  ["narr","작은 탐정이 레이 옆에 섰다. 둘은 아무 말 없이, 고개 너머 어둠을 오래 보았다."]]
+});
+
+// ===== 12장 다시 멎은 종 =====
+RIV("clapper",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음. …이번엔 반대가 아니라 확인이에요.",m:"smug"},
+   {w:"det1",t:"확인?",m:"confused"},
+   {w:"rei",t:"촌장님을 지목하려면 이 알리바이부터 넘어야 해요. 저는 아직 못 넘었거든요.",m:"nervous"},
+   {w:"det1",t:"…같이 보자는 거야?",m:"confused"},
+   {w:"rei",t:"같이가 아니라 동시에요. 해결까지 남은 시간, 둘이면 절반.",m:"smug"}]},
+  {type:"debate",mode:"no",topic:"종이 멎을 무렵, 촌장은 회관에서 연설 연습을 하고 있었을까?",bullets:["e12_rental","e12_visitor","cx_clapper_3","e12_feather"],hint:"톡의 작업실에서 본 장부. 오늘 밤 9시에 누가 무엇을 빌려 갔지?",
+   stms:[
+    {w:"rei",t:"종탑 문은 열쇠로 열렸어요. 열쇠는 {촌장 목걸이와 종지기 열쇠}, 둘뿐이에요.",m:"smug"},
+    {w:"rei",t:"9시 50분, 밤이가 {창밑에서 촌장님 목소리를 직접} 들었어요. 밤이는 거짓말 안 해요. 그 시각 촌장님은 회관 안에 있었던 거죠.",k:"no",a:["e12_rental","e12_echo","bami12_b"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 톡 아저씨 장부에 적혀 있어. 9시, 촌장님이 메아리 상자를 빌려 갔어. '비밀'에 빨간 밑줄 두 번."},
+      {w:"rei",t:"…밤이가 들은 건 목소리가 아니라, 녹음.",m:"nervous",fx:"shock"},
+      {w:"bami",t:"…같은 데서 두 번 기침했어. 사람은 그렇게 못 해.",m:"smug"},
+      {w:"rei",t:"인정할게요. 증인이 정직해도 소리는 속일 수 있네요.",m:"nervous"}]},
+    {w:"ppul",t:"에헴, {아이의 귀가 증인}이오. 뭘 더 바라시오.",m:"smug"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"레이, 마이너스 10점. …오늘은 조금만 깎을게요.",m:"shy"},
+   {w:"det1",t:"마이너스가 줄었다.",m:"happy"}]}
+ ],
+ post:[
+  ["narr","종이 다시 울린 은빛 마을. 종탑 계단에 레이와 작은 탐정이 나란히 앉아 있었다."],
+  ["rei","아까 그 반론. 100점 만점에… 94점.","shy"],
+  ["det1","…94? 처음으로 높다!","happy"],
+  ["rei","6점은 말투 감점이에요. 너무 신나 보였거든요.","smug"],
+  ["det1","그럼 너도 점수 받아. 오늘 같이 한 거, 몇 점?","happy"],
+  ["rei","…자기 점수는 깎을 때만 매겨요.","shy"],
+  ["narr","레이가 식은 홍차 병을 작은 탐정 쪽으로 슬쩍 밀었다. 작은 탐정은 한 모금 마시고 얼굴을 찡그렸다."],
+  ["det1","…차가워.","confused"],
+  ["rei","그러니까 판단이 맑아지죠.","smug"]]
+});
+
+// ===== 13장 관리국장 =====
+RIV("bureau",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! 은호 사장은 피해자예요. 의뢰서에도 그렇게 적혀 있어요.",m:"smug"},
+   {w:"det1",t:"또 의뢰서야?",m:"angry"},
+   {w:"rei",t:"이번 건 도장까지 찍힌 정식 의뢰서예요. 범인 이름도 정확하고요.",m:"smug"},
+   {w:"mungchi",t:"…또 나야. 뭐, 그렇다는 거야.",m:"sad"},
+   {w:"rei",t:"해결까지 남은 시간, 60초.",m:"smug"}]},
+  {type:"debate",mode:"no",topic:"금고 앞 브로치는 뭉치가 금고를 털다 흘린 걸까?",bullets:["cx_bureau_2","e13_route","e13_mirror","e13_backdoor"],hint:"앞가게의 매입 장부와 쟁반. 6시 40분에 무엇이, 누구에게서 팔렸지?",
+   stms:[
+    {w:"rei",t:"뒷문 밖 눈 위엔 {나가는 발자국만} 한 줄. 도둑은 뒷문으로 달아났어요.",m:"smug"},
+    {w:"rei",t:"금고 앞 백합 브로치. {뭉치가 금고를 털다 흘린} 거예요. 백 부인 집안 물건이니까요.",k:"no",a:["cx_bureau_2","e13_tray","mungchi13_2"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 그 브로치는 6시 40분에 뭉치가 이 가게에 판 거야. 12냥. 매입 쟁반에서 그 자리만 비어 있었어."},
+      {w:"rei",t:"팔린 물건이… 금고 앞에.",m:"nervous",fx:"shock"},
+      {w:"det0",t:"브로치를 금고 앞까지 옮길 수 있었던 사람은, 그걸 산 사람이다."},
+      {w:"rei",t:"…의뢰서엔 '판다 소년'이라고 적혀 있었어요. 너무 정확하게.",m:"nervous"}]},
+    {w:"mungchi",t:"…{보석상 근처에도 안 갔어}. 뭐, 그렇다는 거야.",m:"sad"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"…레이, 마이너스 40점.",m:"sad"},
+   {w:"rei",t:"숫자가 안 맞아요. 이번엔 제가 아니라 서류가 이상해요.",m:"nervous"}]}
+ ],
+ post:[
+  ["narr","보석상이 비워진 밤. 은호의 서재 책상 위에 레이가 종이 두 장을 나란히 펼쳤다."],
+  ["rei","협회 의뢰서. 그리고 지난겨울에 온 협회 수배서.","nervous"],
+  ["narr","두 장 모두 맨 아래에 같은 도장이 찍혀 있었다. 흰 토끼풀 꽃 한 송이, 잎 셋. 책상 위 관리국 도장과 똑같은 꽃이었다."],
+  ["det1","…관리국 도장.","nervous"],
+  ["rei","협회가 아니었어. 처음부터 관리국이 협회를 통해 나한테 일을 시킨 거야. 누구를 의심하라고. 누구를 미워하라고.","angry"],
+  ["rei","…날다람쥐 과학자 수배서까지.","sad"],
+  ["det0","편지를 쓴 손은 따로 있다. 네 손이 아니다."],
+  ["narr","레이가 가슴의 탐정 배지를 떼어 의뢰서 위에 내려놓았다. '협회에 반납.' 짧은 쪽지 한 장과 함께."],
+  ["rei","도시 탐정 협회 최연소 1급 탐정, 오늘로 끝. …레이, 마이너스 100점.","sad"]]
+});
+
+// ===== 14장 망토의 안감 =====
+RIV("lining",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! …객원 탐정으로서요.",m:"smug"},
+   {w:"det1",t:"또? 너 이제 우리 편이잖아.",m:"confused"},
+   {w:"rei",t:"우리 편이니까 하는 거예요. 법정이었다면 이렇게 공격받아요. 지금 깨 두자는 거죠.",m:"smug"},
+   {w:"det0",t:"반대 연습인가."},
+   {w:"rei",t:"네, 보호자님. 마을은 네로를 벌써 가뒀어요. 그 이유들, 하나씩 쏴 볼게요.",m:"smug"}]},
+  {type:"debate",mode:"no",topic:"부엉이 할아버지를 넘어뜨린 건 네로일까?",bullets:["e14_steps","e14_wick","e14_fiber","e14_cups"],hint:"언덕 돌계단에 남은 자국. 할아버지가 앞으로 걸었는지, 뒤로 물러섰는지 봐.",
+   stms:[
+    {w:"rei",t:"네로는 10시 반에 할아버지와 차 약속이 있었어요. {할아버지가 지나갈 길을 아는 사람}이죠.",m:"smug"},
+    {w:"rei",t:"돌계단에서 할아버지는 {등 뒤에서 떠밀려} 넘어지셨어요. 법정이라면 이걸로 끝이에요.",k:"no",a:["e14_steps","owlgp14_1"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 돌계단엔 뒷걸음친 발자국이 셋. 할아버지는 덤불에서 튀어나온 걸 보고 물러서다 미끄러지셨어."},
+      {w:"rei",t:"…뒷걸음. 그럼 '떠밀렸다'는 무너지네요.",m:"nervous",fx:"shock"},
+      {w:"det0",t:"연습치고는 너무 진짜 같았다, 레이."},
+      {w:"rei",t:"진짜 같아야 연습이 되죠. 이 마을은 진짜로 그렇게 믿었으니까요. 네로를 가둘 만큼.",m:"smug"}]},
+    {w:"nero",t:"…{찻잔 둘}. 저는 기다리고 있었습니다.",m:"sad"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"연습 끝. 레이, 0점. 이번엔 깎을 게 없네요.",m:"happy"},
+   {w:"det1",t:"처음으로 안 깎았다.",m:"happy"}]}
+ ],
+ post:[
+  ["narr","새벽의 사무소. 레이가 객원 탐정 책상에 식은 홍차 병을 내려놓았다."],
+  ["det0","레이. 오늘 반대 연습, 고마웠다."],
+  ["rei","…고맙다는 말은 안 받는다고 했잖아요, 아저씨.","shy"],
+  ["narr","말해 놓고 레이가 멈칫했다. 작은 탐정이 눈을 동그랗게 떴다."],
+  ["det1","방금 '아저씨'라고 했다!","happy"],
+  ["rei","…보호자님이라고 하기엔 이 사무소, 보호가 너무 허술해서요. 문도 늘 열려 있고.","smug"],
+  ["det0","그럼 앞으로는 잠그마."],
+  ["rei","아니요. 열어 두세요. 누가 돌아올지 모르니까.","sad"]]
+});
+
+// ===== 15장 부엌의 등불 =====
+RIV("kitchen",{
+ phases:[
+  {type:"talk",ban:"이의 있음!",lines:[
+   {w:"rei",t:"이의 있음! …할머니 편에서요.",m:"smug"},
+   {w:"det1",t:"레이, 지금은 아니야. 할머니 앞이야.",m:"sad"},
+   {w:"rei",t:"지금이라서요. 이 마을은 할머니 케이크를 먹고 자랐어요. 제 반론도 못 깨면, 아무도 안 믿어요.",m:"smug"},
+   {w:"grandma",t:"…아이고, 고양이 아가씨가 이 늙은이 편을 들어 주네.",m:"sad"},
+   {w:"rei",nar:1,t:"레이는 할머니 쪽을 보지 않았다. 외알 안경을 한 번 닦고, 작은 탐정만 보았다."}]},
+  {type:"debate",mode:"no",topic:"등불을 연 열쇠는 사무소의 1번 열쇠였을까?",bullets:["e15_hook","cx_kitchen_4","e15_fur","e15_lock"],hint:"사무소 벽 열쇠 걸이. 오후 내내 사무소를 지킨 사람이 뭐라고 했는지 떠올려 봐.",
+   stms:[
+    {w:"rei",t:"할머니는 4시 15분부터 {할아버지 곁에 계셨어요}. 30년 동안 이 마을 탐정이었던 분이 증인이에요.",m:"smug"},
+    {w:"rei",t:"자물쇠는 멀쩡해요. 열쇠로 열었죠. 그 열쇠는 사무소 1번 하나뿐이고, 오후에 {누군가 걸이에서 꺼내 갔어요}. 할머니 손이 닿지 않는 곳에서요.",k:"no",a:["e15_hook","buri15_3"],m:"smug",ok:[
+      {w:"det1",t:"그건 아니야! 1번 열쇠는 오후 내내 걸이에 있었어. 부리가 지켰고, 한 번도 안 내려왔어."},
+      {w:"rei",t:"…그럼 1번이 아닌 열쇠가 있었다는 뜻이네요.",m:"nervous",fx:"shock"},
+      {w:"det0",t:"30년 전 그 밤, 등불 열쇠는 둘이었다."},
+      {w:"rei",t:"…좋아요. 이 반론이면 마을도 믿어요.",m:"sad"}]},
+    {w:"grandma",t:"아이고, 우리 아가들. {이 늙은이가 열쇠를 어떻게 가져요}.",m:"sad"}]},
+  {type:"talk",lines:[
+   {w:"rei",t:"마지막 반대 연습, 끝. 레이, 0점.",m:"sad"},
+   {w:"rei",t:"…시골 탐정. 아니, 탐정. 이제 가서 끝내요.",m:"shy"}]}
+ ],
+ reunion:[
+  ["narr","레이가 한 걸음 늦게 등불 아래로 걸어 나왔다. 품에서 솔방울이 그려진 수첩을 꺼냈다."],
+  ["rei","…측정 수첩이에요. 하나도 안 지웠어요. 내려오는 길에 잰 것까지 다 적었어요.","sad"],
+  ["mom","…레이. 내 조수. 제일 밝은 불 아래까지, 혼자 들고 왔구나.","sad"],
+  ["narr","엄마가 수첩 대신 레이를 끌어안았다. 외알 안경이 눈 위로 떨어졌다. 레이는 그것을 줍지 않았다."],
+  ["rei","…레이, 플러스 100점.","happy"]]
+});
+
+// 3장 crown
+PRS("crown",1,1,{q:"토리가 왕관을 꺼내는 걸 직접 봤어?",t:"봤어요! 토리는 사라진 10분 내내 소품 상자 앞에 있었어요. 커튼 근처엔 가지도 않았고요.",p:"부엉, 복도에서 다 보였다니까요. 제 눈은 원래 밝아요."});
+PRS("crown",2,1,{q:"한 번도? 그럼 분장실 거울 앞에도 안 갔다는 거지?",t:"분장실 거울은 구경도 못 했어요. 거울 앞에서 왕관을 써 본 사람이 있다면, 그건 절대 제가 아니에요!",p:"부엉… 신하는 거울 볼 일이 없거든요."});
+// 4장 star
+PRS("star",3,1,{q:"근처에도 안 갔다면, 저 높은 소나무 둥지에 뭐가 있는지도 모르겠군요.",t:"그럼요. 그 둥지는 텅 빈 새 둥지예요. 반짝이는 건 하나도 없다고요!",p:"후후, 둥지야 다 비슷하게 생겼잖아요. 상상이죠, 상상."});
+PRS("star",4,1,{q:"간 적이 없다… 오늘 저녁 6시 반쯤에도요?",t:"6시 반엔 가게에서 램프 심지를 갈고 있었어요. 우체국 문턱은 밟지도 않았죠.",p:"램프 심지는 섬세하거든요. 한눈팔 틈이 없었답니다."});
+// 5장 bell
+PRS("bell",3,1,{q:"그 추, 정말 종에 걸려 있던 진짜가 맞습니까?",t:"제가 들고 내려온 건 틀림없는 은추예요. 종 안에 백 년 동안 걸려 있던 바로 그 진짜 달빛 추라고요!",p:"조금 가볍긴 했죠. 백 년이면 은도 살이 빠지는 법이에요."});
+PRS("bell",5,1,{q:"열쇠를 버렸다고? 그럼 그 지하실, 그동안은 아무도 안 들어갔다는 거야?",t:"지하실은 아무도 들어간 적 없는 곳이에요. 거기에 진짜 추가 있을 리도 없고요!",p:"열쇠는 촌장님 목에만 걸려 있었어요. 그걸 누가 몰래 빌리겠어요?"});
+// 6장 dark (진행 라운드 3은 이미 숨김 문장, 4는 반전 → 1개만)
+PRS("dark",5,1,{q:"처음 온 마을이라… 30년 전에도 말입니까?",t:"이 언덕도, 부엉이 탐정도 오늘 처음 봤습니다. 30년 전엔 이 근처에 와 본 적도 없고요.",p:"규정상, 30년 지난 서류는 폐기 대상입니다."});
+// 7장 museum
+PRS("museum",2,1,{q:"그럼 저녁 6시 50분쯤엔 어디서 뭘 하고 계셨죠?",t:"6시 50분이요? 그땐 쿠키를 굽느라 오븐 앞을 떠나지 않았어요. 박물관에서 소포가 나갔을 리 없죠, 호호.",p:"쿠키 굽는 냄새가 우체국까지 났을걸요? 그게 증거예요."});
+PRS("museum",4,1,{q:"혼자서? 그럼 하얀 장갑이 먼저 연락한 적은 한 번도 없어요?",t:"하얀 장갑님과는 편지 한 통 주고받은 적 없어요. 제가 고마운 마음에 먼저 보낸 거예요.",p:"편지요? 우리 박물관엔 편지 같은 거 안 와요… 손님도 안 오는데요."});
+// 8장 cart
+PRS("cart",3,1,{q:"손도 안 댔다면, 어젯밤 그 손잡이를 한 번도 쥔 적이 없다는 거지?",t:"크랭크 손잡이 같은 건 쥐어 본 적도 없어. 끝이 ㄱ자로 꺾인 그 무거운 쇠막대 말이야. 도련님 손은 그런 데 쓰는 거 아니거든. 뭐, 그렇다는 거야.",p:"…크랭크는 다 그렇게 생겼을 것 같았어. 뭐, 그렇다는 거야.",strip:[0]});
+PRS("cart",5,1,{q:"갖고 싶었으면, 그 자루 가져가서 어디에 두려고 했는데?",t:"내 방 서랍에 넣어 두려던 거야. 상자에 담아서 어디로 보낼 생각 같은 건 없었어.",p:"도련님 방은 넓으니까. 서랍도 많고. 뭐, 그렇다는 거야."});
+// 9장 glove
+PRS("glove",3,0,{q:"관심과 욕심이 다르다면, 부인 컬렉션에 별빛 돌 자리는 없는 겁니까?",t:"별빛 돌은 등불에 있어야 하는 물건이에요. 제 컬렉션에 들일 생각은 꿈에도 해 본 적 없답니다.",p:"제 컬렉션은 이미 완벽하답니다. 빈자리 같은 건 없어요."});
+PRS("glove",5,1,{q:"부인과 아드님뿐이라면, 어젯밤 두 분은 무엇을 하셨습니까?",t:"어젯밤 우리 모자는 낯선 아이를 본 적도, 마차에 태운 적도 없어요. 뭉치는 열 시부터 방에서 잤고요.",p:"뭉치는 제 말을 거스르는 아이가 아니에요. 그렇지, 뭉치?"});
+
+// 추궁 강화: 10~15장 (festival, snow, clapper, bureau, lining, kitchen)
+
+// 10장 festival — 실룩
+PRS("festival",3,0,{q:"도련님이 흘렸다면, 그 장갑은 처음에 어떻게 놓여 있었죠?",t:"장갑은 등불 옆 풀밭에 처음부터 떨어져 있었습니다. 누구 눈에나 띄게, 하얗게요.",p:"풀이 그만큼 자랐을 리도 없고, 하얀 건 눈에 띄는 법입죠.",strip:[1]});
+PRS("festival",5,0,{q:"돌이 마을 밖으로 나갔다면요? 오늘 아침 정류장으로 보낸 짐은 없습니까?",t:"정류장이요? 오늘 아침엔 근처에도 안 갔습니다. 제 이름으로 부친 짐도 하나 없고요.",p:"마차 닦는 사람이 짐 부칠 일이 뭐 있겠습니까."});
+
+// 11장 snow — 서리 검사원
+PRS("snow",3,0,{q:"그 깃털은 정확히 언제, 어떻게 봉인에 붙었다는 겁니까?",t:"제가 5시에 부은 밀랍이 다 굳은 뒤에, 까마귀가 봉인을 뜯고 등불을 열다 흘린 깃털입니다.",p:"검사원은 깃털이 언제 떨어졌는지까지 기록하지는 않습니다."});
+PRS("snow",5,1,{q:"규정 말고, 따로 받은 지시는 정말 없었습니까?",t:"저는 누구에게도 편지 한 장 받은 적 없습니다. 오늘 검사는 처음부터 끝까지 규정집대로였습니다.",p:"규정집 말고는 읽을 것도 없는 직업이지요."});
+
+// 12장 clapper — 뿔이 촌장
+PRS("clapper",3,0,{q:"그럼 사흘 밤을 새워 읽고 또 읽으셨다는 그 종이는 뭡니까?",t:"그건 연설문이오. 회관 서랍엔 그런 편지 한 장 없고, 답장을 쓴 일도 없소. 서랍이든 어디든 뒤져 보시오.",p:"에헴… 서랍을 정말로 뒤지라는 뜻은 아니었소.",strip:[1]});
+PRS("clapper",5,0,{q:"추를 숨긴다면 어디일지, 짐작 가는 데는 없으십니까?",t:"적어도 회관엔 없소. 훈장 진열장부터 초상화까지 내가 날마다 닦는 곳인데, 추 같은 건 그림자도 없소.",p:"에헴, 초상화 뒤까지 들여다볼 사람은 없… 아니, 뭐든 닦는 게 내 버릇이라는 말이오."});
+
+// 13장 bureau — 은호 사장
+PRS("bureau",3,0,{q:"그럼 7시 무렵, 뒷방에서는 무엇을 하고 계셨습니까?",t:"7시 무렵엔 앞가게에서 장부를 맞추고 있었소. 뒷방 난로 쪽엔 얼씬도 안 했소.",p:"장부 맞추는 데 난로가 왜 필요하겠소.",strip:[1]});
+PRS("bureau",5,0,{q:"창구가 하는 일이 정확히 어디까지였습니까?",t:"책상 위 그 나무 도장은 그냥 가게 장사 도장이오. 그리고 나는 누구에게도 품삯 한 푼 치른 적 없소.",p:"장사꾼 책상에 도장 하나 있는 게 무슨 죄요."});
+
+// 14장 lining — 슬링
+PRS("lining",3,0,{q:"그 편지함이 지금 어디로 가고 있는지는 아십니까?",t:"내 심부름은 관리국 일이오. 스라소니 편지함 따위가 관리국으로 갈 리 없지 않소.",p:"후후, 배달부의 비밀이라고 했잖소."});
+PRS("lining",5,0,{q:"그 명령, 정말 국장에게서 온 게 맞습니까?",t:"이번 편지도 국장님이 도시에서 손수 도장을 찍어 부친 거요. 내가 받은 지령은 전부 그분 손에서 나왔소.",p:"도장이 같은 꽃이면 같은 사람 아니겠소?"});
+
+// 15장 kitchen — 토끼 할머니
+PRS("kitchen",4,0,{q:"그 털이 어떻게 자물쇠 고리에 걸렸다고 보십니까?",t:"그 아이가 자물쇠를 열다 제 몸에서 빠진 털이 걸린 거지요. 스라소니 털 한 줌, 다른 건 아무것도 없이요.",p:"아이고, 늙은이 눈엔 털 한 줌이 다 똑같아 보여요.",strip:[1]});
+PRS("kitchen",6,0,{q:"팔로 들 필요가 없었다면요? 오늘 무언가를 끌고 다니신 적은 없습니까?",t:"끌다니요. 영감 댁 팥죽 한 그릇도 두 손으로 받쳐 들고 갔는걸요. 썰매는 오늘 손도 안 댔어요.",p:"아가, 할머니가 썰매 탈 나이로 보이니?"});
+
+// 범인별 고유 붕괴 연출 (BRK2). 사양: /tmp/claude-0/BREAK_SPEC.md
+BRK2("nabi",{beats:[
+  {t:"흥, 방울 하나로 뭘 안다고!",a:"jolt",p:"bells",c:"#E8B830"},
+  {t:"수염에 생크림…? 언제 묻었지?!",a:"blush",p:"crumbs"},
+  {t:"초대장이 거기 끼어 있었다고…?",a:"slide",p:"letters"}
+],last:"흥… 다음엔 우체통부터 볼 거야."});
+
+BRK2("bori",{beats:[
+  {t:"운동화 끈?! 그거 내 거 아닌데…",a:"jolt",p:"sweat"},
+  {t:"꿀 먹은 것처럼 말이 안 나와…",a:"squash",p:"honey"},
+  {t:"벽시계까지 2시에 멈췄다니!",a:"slide",p:"glass"}
+],last:"공보다 거짓말이 더 멀리 날아갔어…"});
+
+BRK2("buri",{beats:[
+  {t:"가방은 안 돼요! 거긴 책뿐이…",a:"jolt",p:"feathers",c:"#8B6B4A"},
+  {t:"지퍼 틈으로 반짝이가 줄줄…!",a:"tremble",p:"sparkles",c:"#FFD54A"},
+  {t:"딱 한 번, 왕이 되고 싶었어요.",a:"blush",p:"stars"}
+],last:"왕관은 돌려드릴게요. 신하답게."});
+
+BRK2("karo",{beats:[
+  {t:"후, 후후… 증거는 환불이 안 되나요?",a:"jolt",p:"coins"},
+  {t:"제 반짝이가… 전부 날아가요!",a:"spin",p:"sparkles"},
+  {t:"불 좀… 누가 불 좀 켜 줘요.",a:"tremble",p:"stars"}
+],last:"후후… 반짝이는 건 결국 빛에 들키는군요…"});
+
+BRK2("sling",{beats:[
+  {t:"제가… 해명을 도와드릴까요?",a:"jolt",p:"letters"},
+  {t:"은칠한 쇳덩이였다고?! 내 목숨을!",a:"inflate",p:"steam"},
+  {t:"박쥐 꼬마한테 열흘이나 먼저…!",a:"slide",p:"bells"}
+],last:"미끄러진 건… 나였군…"});
+
+BRK2("luka",{beats:[
+  {t:"서류는 완벽했습니다. 서류는.",a:"jolt",p:"papers"},
+  {t:"열쇠는… 숲속 등불에 두었지요.",a:"tremble",p:"keys"},
+  {t:"배지 뒷면까지… 읽으셨습니까.",a:"freeze",p:"none"}
+],last:"루카는 여기까지입니다. 규정상."});
+
+BRK2("momo",{beats:[
+  {t:"어머, 쿠키를 더 구워 올게요!",a:"jolt",p:"cookies"},
+  {t:"그 도장은 뒤집으면 안 되는데!",a:"spin",p:"feathers",c:"#2B2B33"},
+  {t:"제일 빛나는 박물관… 될 뻔했는데.",a:"slide",p:"glass"}
+],last:"오늘도… 아무도 안 오겠네요."});
+
+BRK2("mungchi",{beats:[
+  {t:"장갑 무늬가 뭐! 흔한 무늬야!",a:"jolt",p:"buttons"},
+  {t:"그, 그런 촌스러운 증거로…!",a:"inflate",p:"steam"},
+  {t:"엄마가 웃는 걸 보고 싶었어.",a:"slide",p:"letters"}
+],last:"…이번엔 진짜 내가 한 거야."});
+
+BRK2("madam",{beats:[
+  {t:"날짜 칸 하나로… 이 저를요?",a:"jolt",p:"papers"},
+  {t:"제 컬렉션에 손대지 마세요!",a:"inflate",p:"sparkles"},
+  {t:"뭉치… 엄마 손을 놓는 거니?",a:"freeze",p:"petals",c:"#FFFFFF"}
+],last:"흰 장갑으로도 안 가려지네요."});
+
+BRK2("siluk",{beats:[
+  {t:"하, 하하… 이제야 웃음이 나네요.",a:"jolt",p:"sweat"},
+  {t:"4시 마차가… 떠나 버렸군요.",a:"spin",p:"letters"},
+  {t:"품삯 대신 남은 게 이거라니…",a:"slide",p:"coins"}
+],last:"마부는 이제 고삐를 놓겠습니다."});
+
+BRK2("seori",{beats:[
+  {t:"흰 망토 자국까지… 남았군요.",a:"jolt",p:"snow"},
+  {t:"그 규정은… 제가 지어낸 겁니다.",a:"tremble",p:"papers"},
+  {t:"아이가… 안에 있었다고요?",a:"freeze",p:"none"}
+],last:"검사 결과, 불합격은… 저였군요."});
+
+BRK2("ppul",{beats:[
+  {t:"에헴! 촌장 직권으로 기각하오!",a:"inflate",p:"steam"},
+  {t:"훈장이 하나씩 떨어진다…!",a:"shake",p:"coins",c:"#D4A93A"},
+  {t:"연설문… 다음 장이 없소!",a:"spin",p:"papers"}
+],last:"이 대목만은… 내가 직접 쓰겠소."});
+
+BRK2("eunho",{beats:[
+  {t:"값은 넉넉히 쳐 드리겠소. 그러니…",a:"jolt",p:"coins"},
+  {t:"은단추가… 하나씩 풀리는군.",a:"tremble",p:"buttons",c:"#C0C0C8"},
+  {t:"30년 치 편지가… 재가 됐는데.",a:"slide",p:"letters"}
+],last:"창구는 닫겠소. 손님은 끝내 안 왔으니."});
+
+BRK2("sling@lining",{beats:[
+  {t:"후후, 이번엔 안 도와드리겠소.",a:"jolt",p:"letters"},
+  {t:"안감은… 뒤집어 보지 마시오!",a:"spin",p:"petals",c:"#FFFFFF"},
+  {t:"영감 넘어지는 소리… 들었소.",a:"bow",p:"glass"}
+],last:"두 번째 주인도… 얼굴은 없었소."});
+
+BRK2("grandma",{beats:[
+  {t:"…아가들이 다 컸구나.",a:"bow",p:"none"},
+  {t:"초롱이는 등불을 보고 온다 했어요.",a:"freeze",p:"petals",c:"#F4F1E8"},
+  {t:"서른 해 동안, 아무도 오지 않았지요.",a:"bow",p:"crumbs"}
+],last:"…등불은, 기다리는 사람은 비추지 않습니다."});
+
+})();
+/* v129: 맞수 레이 · 추궁 강화 · 범인별 붕괴 연출 — 엔진 (데이터는 위에서 RIV/PRS/BRK2로 채움) */
+(function(){
+ var RV=window.__RIV||{},PR=window.__PRS||[],BK=window.__BRK2||{};
+ // ---------- 레이 ----------
+ var REI={name:"레이",animal:"cat",kind:"도시 탐정 협회 · 최연소 1급 탐정",color:"#5B5668"};
+ Object.defineProperty(REI,"acc",{enumerable:true,configurable:true,get:function(){var ci=(typeof G!=="undefined"&&G&&G.ci!=null)?G.ci:-1;return ci>=13?"x-mono":"x-mono x-badge"}});
+ try{Object.defineProperty(CAST,"rei",{value:REI,enumerable:false,configurable:true,writable:true})}catch(e){CAST.rei=REI}
+ try{VOICE.rei=990}catch(e){}
+ try{if(window.PERSONA&&!PERSONA.rei)Object.defineProperty(PERSONA,"rei",{value:{like:"식은 홍차, 점수 매기기",weak:"자기가 틀렸을 때",secret:"수첩 표지에 작은 솔방울 그림이 있다"},enumerable:false,configurable:true,writable:true})}catch(e){}
+ function NX(c){return window.__isNew&&window.__isNew(c)}
+ // 사건 정리 뒤 대사
+ Object.keys(RV).forEach(function(id){var r=RV[id];if(r.post&&window.STORY&&STORY[id]&&STORY[id].outro)STORY[id].outro=STORY[id].outro.concat(r.post);
+  if(r.phases&&r.phases[0]&&r.phases[0].type==="talk")delete r.phases[0].ban;
+  (r.phases||[]).forEach(function(ph){(ph.lines||[]).concat.apply(ph.lines||[],(ph.stms||[]).map(function(x){return x.ok||[]})).forEach(function(l){if(l&&l.nar&&!l._n){l._n=1;l.t="("+l.t+")"}})})});
+ // 15장 재회 장면에 레이
+ try{var RU=RV.kitchen&&RV.kitchen.reunion,PP=window.BOOK&&BOOK.kitchen&&BOOK.kitchen.post;
+  if(RU&&PP){var done=false;PP.forEach(function(pg){if(done||!pg||!pg.lines)return;var i=-1;pg.lines.forEach(function(l,k){if(Array.isArray(l)&&l[0]==="det1"&&/^푸흡/.test(l[1]||""))i=k});
+   if(i>=0){pg.lines.splice.apply(pg.lines,[i+1,0,["enter","rei",312,"sad"]].concat(RU,[["rei","…내일 아침에 사무소로 갈게요. 객원 탐정이니까. 오늘은, 셋이서요.","happy"],["exit","rei"]]));done=true}});
+   if(!done)window.__reiMiss=1}}catch(e){window.__reiMiss=2}
+ // 반론 개시 직전에 레이가 끼어든다
+ function runRival(c,cont){var r=RV[c.id],B=G.battle;B.rv=1;
+  var D=window.DEBATE&&DEBATE[c.id],cul=B.cul,seats=["rei",cul];
+  ((D&&D.seats)||[]).forEach(function(k){if(seats.indexOf(k)<0&&seats.length<4)seats.push(k)});
+  try{SFX.cutin&&SFX.cutin()}catch(e){}
+  flash("이의 있음!",true).then(function(){
+   window.__rtOpen(c,{key:"rival",title:"맞수의 반론",ban:"맞수 등장",sub:"레이 · 도시 탐정 협회",seats:seats,phases:r.phases,onDone:function(){
+    if(G.hp!=null&&B.lives>G.hp)B.lives=G.hp;try{bgm("battle")}catch(e){}G.tab="final";render();cont()}})})}
+ var _bn=banner;banner=function(text,sub){var c=G&&CASES[G.ci],B=G&&G.battle;
+  if(text==="반론 개시"&&c&&B&&B.phase==="fight"&&RV[c.id]&&RV[c.id].phases&&!B.rv&&NX(c)&&window.__rtOpen){
+   return new Promise(function(res){runRival(c,function(){_bn(text,sub).then(res)})})}
+  return _bn.apply(this,arguments)};
+
+ // ---------- 추궁 강화 ----------
+ window.__prsMiss=[];try{window.__twPrep&&window.__twPrep()}catch(e){}
+ PR.forEach(function(e){var R=BATTLE[e.id],r=R&&R[e.r],y=r&&r.stm&&r.stm[e.y];
+  if(!y||!y.a||!y.a.length||y.hide){window.__prsMiss.push(e.id+":"+e.r+":"+e.y);return}
+  var x={t:e.o.t,p:e.o.p,a:(e.o.a||y.a).slice(),hide:true};
+  if(y.rev){window.__prsMiss.push(e.id+":"+e.r+":"+e.y+" rev");return}
+  r.stm.push(x);y.rev={x:x,q:e.o.q};y.a=[];if(e.o.yt)y.t=e.o.yt;
+  (e.o.strip||[]).forEach(function(k){if(r.stm[k]&&r.stm[k]!==x)r.stm[k].a=[]})});
+ function hiddenOf(B,s){return s&&s.rev&&!window.__revAll&&!(B.rev&&B.rev[s.rev.x.t])}
+ var _uh=useHint;useHint=function(c){var B=G&&G.battle;
+  if(B&&B.phase==="fight"&&!B.hold){var st=stmsOf(rOf(c));
+   var open=st.some(function(s){return (s.a||[]).some(function(x){return haveItem(c,x)})});
+   if(!open){var i=-1;st.forEach(function(s,k){if(i<0&&hiddenOf(B,s))i=k});
+    if(i>=0){SFX.page();G.hints=(G.hints|0)+1;try{saveProg()}catch(e){}
+     say([["think",(i+1)+"번째 문장, 말을 흐렸어. 거기서 '추궁하기'로 끝까지 캐물어 보자.","",curPlayer()]],function(){B.si=i;render();setTimeout(function(){window.__pointAt&&window.__pointAt("#press")},300)});return}}}
+  return _uh.apply(this,arguments)};
+
+ // ---------- 범인별 붕괴 ----------
+ var PSV={
+  papers:'<rect x="5" y="3" width="14" height="18" fill="#FFFFFF" stroke="#1B2447" stroke-width="1.5"/><path d="M8 8h8M8 11h8M8 14h6" stroke="#8C93A8" stroke-width="1.5"/>',
+  letters:'<rect x="3" y="6" width="18" height="12" fill="#FFF8E6" stroke="#1B2447" stroke-width="1.5"/><path d="M3 6l9 7 9-7" fill="none" stroke="#1B2447" stroke-width="1.5"/><circle cx="12" cy="13" r="1.8" fill="#D23A34"/>',
+  coins:'<circle cx="12" cy="12" r="8" fill="#F2C230" stroke="#8A5A10" stroke-width="2"/><path d="M12 7v10" stroke="#8A5A10" stroke-width="2"/>',
+  keys:'<circle cx="8" cy="12" r="4.5" fill="none" stroke="#C9A040" stroke-width="2.5"/><path d="M12 12h9M18 12v3M21 12v3" stroke="#C9A040" stroke-width="2.5"/>',
+  feathers:'<path d="M12 2c6 5 6 13 0 20c-6-7-6-15 0-20z" fill="var(--pc,#FFFFFF)" stroke="#1B2447" stroke-width="1.5"/><path d="M12 5v17" stroke="#1B2447" stroke-width="1.2"/>',
+  cookies:'<circle cx="12" cy="12" r="8" fill="#C98A4A" stroke="#6B4220" stroke-width="1.5"/><circle cx="9" cy="10" r="1.4" fill="#4A2A12"/><circle cx="14" cy="9" r="1.2" fill="#4A2A12"/><circle cx="13" cy="14" r="1.4" fill="#4A2A12"/>',
+  crumbs:'<rect x="6" y="8" width="6" height="5" fill="#F4E2C4" stroke="#B88A5A" stroke-width="1.2"/><rect x="13" y="12" width="5" height="4" fill="#E86A7A"/><rect x="9" y="15" width="4" height="3" fill="#FFFFFF"/>',
+  sweat:'<path d="M12 3c4 6 6 9 6 12a6 6 0 0 1-12 0c0-3 2-6 6-12z" fill="#8FD0FF" stroke="#2F6FD6" stroke-width="1.5"/>',
+  steam:'<circle cx="9" cy="14" r="5" fill="#F4F6FA"/><circle cx="15" cy="11" r="6" fill="#F4F6FA"/><circle cx="13" cy="16" r="4.5" fill="#E2E6EE"/>',
+  stars:'<path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5-6.5 4.5 2-7.5L2 9h7z" fill="#FFD84D" stroke="#8A5A10" stroke-width="1.2"/>',
+  notes:'<path d="M9 18V5l10-2v13" fill="none" stroke="#1B2447" stroke-width="2"/><circle cx="7" cy="18" r="3" fill="#1B2447"/><circle cx="17" cy="16" r="3" fill="#1B2447"/>',
+  leaves:'<path d="M4 20C4 9 11 4 20 4c0 9-5 16-16 16z" fill="#6FB34A" stroke="#2F5A1E" stroke-width="1.5"/><path d="M4 20L15 9" stroke="#2F5A1E" stroke-width="1.2"/>',
+  snow:'<path d="M12 3v18M4 7.5l16 9M4 16.5l16-9" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>',
+  sparkles:'<path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z" fill="#FFF3B0" stroke="#E8B84A" stroke-width="1"/>',
+  petals:'<ellipse cx="12" cy="12" rx="5" ry="8" fill="var(--pc,#FFD3E0)" stroke="#C86A8A" stroke-width="1.2" transform="rotate(25 12 12)"/>',
+  buttons:'<circle cx="12" cy="12" r="7.5" fill="var(--pc,#D0463B)" stroke="#1B2447" stroke-width="1.5"/><circle cx="10" cy="10" r="1.2" fill="#1B2447"/><circle cx="14" cy="10" r="1.2" fill="#1B2447"/><circle cx="10" cy="14" r="1.2" fill="#1B2447"/><circle cx="14" cy="14" r="1.2" fill="#1B2447"/>',
+  gears:'<circle cx="12" cy="12" r="7" fill="none" stroke="#8E97AD" stroke-width="4" stroke-dasharray="3 2.5"/><circle cx="12" cy="12" r="4.5" fill="#8E97AD"/><circle cx="12" cy="12" r="1.8" fill="#1B2447"/>',
+  cards:'<rect x="5" y="3" width="14" height="18" fill="#FFFFFF" stroke="#1B2447" stroke-width="1.5"/><path d="M12 9c-2-3-5 0-2 3l2 2 2-2c3-3 0-6-2-3z" fill="#D23A34"/>',
+  honey:'<path d="M12 3c4 6 6 9 6 12a6 6 0 0 1-12 0c0-3 2-6 6-12z" fill="#F2A72E" stroke="#8A5A10" stroke-width="1.5"/>',
+  glass:'<path d="M4 18L10 4l8 9z" fill="#D8F0FF" stroke="#6FA8D0" stroke-width="1.5" opacity=".9"/>',
+  bells:'<path d="M6 17c1-2 1-8 6-9 5 1 5 7 6 9z" fill="#F2C230" stroke="#8A5A10" stroke-width="1.5"/><circle cx="12" cy="19" r="2" fill="#8A5A10"/>'};
+ var css=document.createElement("style");
+ css.textContent=
+ '.bk2{position:fixed;inset:0;z-index:77;background:radial-gradient(ellipse at 50% 40%,#2A1030,#05040E 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;overflow:hidden;animation:fade .2s;cursor:pointer;padding:0 16px}'+
+ '.bk2 .bl{position:absolute;inset:-20%;background:repeating-linear-gradient(115deg,transparent 0 26px,rgba(200,40,60,.22) 26px 30px);animation:brkln .9s linear infinite}'+
+ '.bk2 .bp{position:relative;width:min(62vw,280px);aspect-ratio:1;z-index:1}.bk2 .bp>svg{width:100%;height:100%}'+
+ '.bk2 .bt{position:relative;z-index:2;max-width:520px;width:100%;background:rgba(10,8,24,.88);border:3px solid #E86A7A;border-radius:12px;padding:12px 16px;color:#F4F1E6;font:700 clamp(18px,5vw,24px)/1.4 var(--display,Jua),sans-serif;text-align:center;min-height:2.8em}'+
+ '.bk2 .bt small{display:block;font-size:12px;letter-spacing:.18em;color:#E86A7A;margin-bottom:4px}'+
+ '.bk2 .pz{position:absolute;left:50%;top:42%;width:34px;height:34px;margin:-17px;z-index:3;pointer-events:none;animation:bkfly 1.5s cubic-bezier(.15,.7,.4,1) forwards;animation-delay:var(--d)}.bk2 .pz svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 2px rgba(255,255,255,.75))}'+
+ '@keyframes bkfly{0%{transform:translate(0,0) rotate(0) scale(.3);opacity:0}12%{opacity:1}60%{transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1);opacity:1}100%{transform:translate(calc(var(--x)*1.15),calc(var(--y) + 260px)) rotate(calc(var(--r)*2)) scale(1);opacity:0}}'+
+ '.bk2 .pz.up{animation-name:bkup}@keyframes bkup{0%{transform:translate(0,0) scale(.4);opacity:0}20%{opacity:1}100%{transform:translate(var(--x),calc(var(--y) - 120px)) scale(1.4);opacity:0}}'+
+ '.bk2 .pz.down{animation-name:bkdown}@keyframes bkdown{0%{transform:translate(var(--x),-60vh) rotate(0);opacity:0}15%{opacity:1}100%{transform:translate(calc(var(--x)*1.2),10vh) rotate(var(--r));opacity:.2}}'+
+ '.bp.a-shake{animation:bkshake .12s linear 8}@keyframes bkshake{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}'+
+ '.bp.a-jolt{animation:bkjolt .5s cubic-bezier(.2,1.8,.4,1)}@keyframes bkjolt{0%{transform:scale(1)}30%{transform:translateY(-36px) scale(1.12)}100%{transform:none}}'+
+ '.bp.a-spin{animation:bkspin .9s cubic-bezier(.3,.9,.4,1)}@keyframes bkspin{0%{transform:rotate(0)}80%{transform:rotate(740deg)}100%{transform:rotate(720deg)}}'+
+ '.bp.a-squash{animation:bksq .7s ease-out}@keyframes bksq{0%{transform:none}30%{transform:scale(1.35,.55) translateY(40%)}60%{transform:scale(.85,1.2)}100%{transform:none}}'+
+ '.bp.a-inflate{animation:bkinf 1.1s ease-in-out forwards}@keyframes bkinf{0%{transform:scale(1)}70%{transform:scale(1.35);filter:hue-rotate(-20deg) saturate(1.6)}85%{transform:scale(1.28)}100%{transform:scale(1.3);filter:saturate(1.6)}}'+
+ '.bp.a-slide{animation:bkslide 1.2s cubic-bezier(.6,0,.9,.5) forwards}@keyframes bkslide{0%{transform:none}100%{transform:translateY(38%) scaleY(.8);opacity:.85}}'+
+ '.bp.a-tremble{animation:bktr .06s linear infinite}@keyframes bktr{0%{transform:translate(1px,0)}50%{transform:translate(-2px,1px)}100%{transform:translate(1px,-1px)}}'+
+ '.bp.a-freeze{filter:grayscale(1) brightness(.85) contrast(1.2);transition:filter .5s}'+
+ '.bp.a-faint{animation:bkfaint 1.2s ease-in forwards}@keyframes bkfaint{to{transform:rotate(-24deg) translate(-6%,10%);opacity:.55;filter:blur(1.2px)}}'+
+ '.bp.a-bow{animation:bkbow 1.6s ease-in-out forwards}@keyframes bkbow{to{transform:translateY(10%) scale(.92);filter:brightness(.7) saturate(.6)}}'+
+ '.bp.a-blush{animation:bkblush 1s ease-out forwards}@keyframes bkblush{0%{filter:none}40%{filter:drop-shadow(0 0 22px #FF6A8A) saturate(1.5)}100%{filter:drop-shadow(0 0 14px #FF6A8A) saturate(1.4) hue-rotate(-12deg)}}'+
+ '.bk2.out{animation:fadeout .3s forwards}'+
+ '@media (prefers-reduced-motion:reduce){.bk2 .bl,.bk2 .pz{animation:none!important;opacity:0}.bp[class*="a-"]{animation:none!important}}';
+ document.head.appendChild(css);
+ var MOOD={shake:"nervous",jolt:"nervous",spin:"confused",squash:"nervous",inflate:"angry",slide:"sad",tremble:"nervous",freeze:"sad",faint:"sad",bow:"sad",blush:"shy"};
+ var SND={shake:"buzz",jolt:"shock",spin:"swoosh",squash:"slam",inflate:"gulp",slide:"cry",tremble:"buzz",freeze:"hush",faint:"cry",bow:"hush",blush:"blush"};
+ function keyOf(who){var c=G&&CASES[G.ci];if(c&&BK[who+"@"+c.id])return who+"@"+c.id;return BK[who]?who:null}
+ function burst(el,b){if(!b.p||b.p==="none"||!PSV[b.p])return;var n=b.n||({snow:12,petals:10,sparkles:10,leaves:9,sweat:6,steam:5}[b.p]||8);
+  var mode=b.p==="steam"?"up":(b.p==="snow"||b.p==="petals"||b.p==="leaves")?"down":"";
+  for(var i=0;i<n;i++){var d=document.createElement("div");d.className="pz "+mode;var ang=(i/n)*Math.PI*2+Math.random()*.6,dist=110+Math.random()*90;
+   d.style.setProperty("--x",Math.round(Math.cos(ang)*dist)+"px");d.style.setProperty("--y",Math.round(Math.sin(ang)*dist*.7-40)+"px");
+   d.style.setProperty("--r",Math.round((Math.random()-.5)*540)+"deg");d.style.setProperty("--d",(i*.05).toFixed(2)+"s");if(b.c)d.style.setProperty("--pc",b.c);
+   if(mode==="down"){d.style.left=(10+Math.random()*80)+"%";d.style.setProperty("--x","0px")}
+   d.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+PSV[b.p]+'</svg>';el.appendChild(d);(function(dd){setTimeout(function(){dd.remove()},2600)})(d)}}
+ function beats(who,data,cb){var p=CAST[who];if(!p){cb();return}
+  var d=document.createElement("div");d.className="bk2";d.setAttribute("role","dialog");
+  d.innerHTML='<div class="bl"></div><div class="bp"></div><div class="bt"><small>'+esc(p.name)+'</small><span></span></div>';
+  document.body.appendChild(d);var bp=d.querySelector(".bp"),tx=d.querySelector(".bt span"),i=-1,tm=null,fin=false;
+  function step(){clearTimeout(tm);i++;if(i>=data.beats.length){end();return}var b=data.beats[i];
+   bp.className="bp";void bp.offsetWidth;bp.innerHTML=pf(who,MOOD[b.a]||"nervous");bp.classList.add("a-"+b.a);tx.textContent=pname?pname(b.t):b.t;
+   try{SFX[SND[b.a]||"shock"]()}catch(e){}try{if(b.a==="jolt"||b.a==="squash")quake()}catch(e){}
+   burst(d,b);tm=setTimeout(step,2100)}
+  function end(){if(fin)return;fin=true;clearTimeout(tm);d.classList.add("out");setTimeout(function(){d.remove();cb()},300)}
+  d.onclick=function(){step()};step()}
+ var _pf=panicFx;panicFx=function(who,kind,level,cb){
+  var k=kind==="culprit"&&level>=3&&G&&G.battle&&!G.battle.bk2&&keyOf(who);
+  if(k){G.battle.bk2=1;var data=BK[k],self=this,args=arguments;try{if(window.__BRK&&data.last&&k.indexOf("@")<0)window.__BRK[who]=data.last}catch(e){}
+   beats(who,data,function(){_pf.apply(self,args)});return}
+  return _pf.apply(this,arguments)};
+ window.__bk2=function(who){var k=keyOf(who);if(k)beats(who,BK[k],function(){})};
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
