@@ -725,6 +725,8 @@ body.ingame.aiming{padding-bottom:380px}
 .chains{position:absolute;inset:0;z-index:2;pointer-events:none}
 .chains i{position:absolute;left:-10%;right:-10%;top:40%;height:10px;background:repeating-linear-gradient(90deg,#B9BFCB 0 12px,#6E7690 12px 16px);border:1.5px solid #1B2447;border-radius:5px;transform:rotate(-18deg)}
 .chains i+i{transform:rotate(18deg)}
+.chains i{display:none}
+.chains span b{background:#7A4E2C!important}
 .chains span{position:absolute;left:50%;top:40%;transform:translate(-50%,-30%);display:flex;flex-direction:column;align-items:center;gap:2px;animation:lockin .5s cubic-bezier(.2,1.6,.4,1)}
 .chains span svg{width:36px;height:40px;filter:drop-shadow(0 3px 0 rgba(0,0,0,.35))}
 .chains span b{font-family:var(--display);font-weight:400;font-size:12px;color:#fff;background:#D23A34;border-radius:999px;padding:0 8px;white-space:nowrap}
@@ -3763,7 +3765,8 @@ function psyOf(c,k){
 function lockCount(c,k){var mine=c.contra.filter(function(x){var t=tById(c,x.t);return t&&t.who===k});if(!mine.some(function(x){return G.asked.indexOf(x.t)>=0}))return 0;return mine.filter(function(x){return !G.broken[x.t]}).length}
 function lockTotal(c,k){return c.contra.filter(function(x){var t=tById(c,x.t);return t&&t.who===k}).length}
 var LOCKSVG='<svg viewBox="0 0 20 22" aria-hidden="true"><path d="M5 10 V7 a5 5 0 0 1 10 0 V10" fill="none" stroke="#1B2447" stroke-width="2.5"/><rect x="2" y="9" width="16" height="12" rx="3" fill="#D23A34" stroke="#1B2447" stroke-width="2"/><circle cx="10" cy="15" r="2" fill="#FFD84D"/></svg>';
-function lockRow(n){var h='<span class="locks" aria-label="마음의 자물쇠 '+n+'개">';for(var i=0;i<n;i++)h+=LOCKSVG;return h+'</span>'}
+var ACORNSVG='<svg viewBox="0 0 20 22" aria-hidden="true"><path d="M3.6 10 Q3.4 18 10 21 Q16.6 18 16.4 10 Z" fill="#C07A3E" stroke="#1B2447" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 10.4 Q2.6 4 10 3.4 Q17.4 4 17 10.4 Z" fill="#7A4E2C" stroke="#1B2447" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 3.6 V1" stroke="#1B2447" stroke-width="2" stroke-linecap="round"/><path d="M4 15 L16 12.6" stroke="#7A5BD6" stroke-width="2.6"/></svg>';
+function lockRow(n){var h='<span class="locks" aria-label="숨긴 도토리 '+n+'개">';for(var i=0;i<n;i++)h+=ACORNSVG;return h+'</span>'}
 function psyMeter(ps){var h='<span class="psy'+(ps.cls?' '+ps.cls:'')+'">';for(var i=0;i<3;i++)h+='<i class="'+(i<ps.lv?'on':'')+'"></i>';return h+'</span>'}
 function moodOf(c,k){
   if(G.asked.indexOf(CONFESS[c.id])>=0&&tById(c,CONFESS[c.id]).who===k)return "sad";
@@ -4245,7 +4248,7 @@ function talkStage(c,k){
   var h='',p=CAST[k],md=moodOf(c,k);
   if(G.target)h+='<div class="aimbar pop"><b>지목 중</b><span>아래 수첩에서 증거를 골라 비교해요 ↓</span></div>';
   var ps0=psyOf(c,k),lk=lockCount(c,k);
-  h+='<section class="stagebox"><div class="spot-light"></div><div class="bigp'+(G.enter?' enter':'')+(ps0.cls==="panic"?' tremble':'')+(lk?' locked':'')+'" id="bigp">'+(lk?'<div class="chains"><i></i><i></i><span><em>'+Array.apply(null,{length:lockTotal(c,k)}).map(function(_,i){return '<u class="'+(i<lockTotal(c,k)-lk?'gone':'')+'">'+LOCKSVG+'</u>'}).join("")+'</em><b>마음의 자물쇠 '+lk+'개 남음</b></span></div>':'')+pf(k,md)+'<h3>'+p.name+'</h3><p>'+p.kind+' · 마음: '+ps0.label+'</p>'+psyMeter(ps0)+'</div>';G.enter=false;
+  h+='<section class="stagebox"><div class="spot-light"></div><div class="bigp'+(G.enter?' enter':'')+(ps0.cls==="panic"?' tremble':'')+(lk?' locked':'')+'" id="bigp">'+(lk?'<div class="chains"><i></i><i></i><span><em>'+Array.apply(null,{length:lockTotal(c,k)}).map(function(_,i){return '<u class="'+(i<lockTotal(c,k)-lk?'gone':'')+'">'+ACORNSVG+'</u>'}).join("")+'</em><b>숨긴 도토리 '+lk+'개 남음</b></span></div>':'')+pf(k,md)+'<h3>'+p.name+'</h3><p>'+p.kind+' · 마음: '+ps0.label+'</p>'+psyMeter(ps0)+'</div>';G.enter=false;
   visibleTalk(c,k).forEach(function(t){
     if(G.asked.indexOf(t.id)<0){h+='<button class="askbtn" data-ask="'+t.id+'"><b>질문</b>'+t.q+'</button>';return}
     var br=G.broken[t.id];
@@ -4276,7 +4279,7 @@ function bindAsk(c){
     lines.push([x.who,x.t.a,moodOf(c,x.who),"testi",lie?"tell":"",id]);
     G.notice=null;
     var lkBefore=lockCount(c,x.who);
-    say(lines,function(){G.actions++;render();if(lockCount(c,x.who)>lkBefore){SFX.lock();floater("#bigp","철컥! 자물쇠 "+lockCount(c,x.who)+"개","bad");coach("lock","<b>마음의 자물쇠</b>가 채워졌어요. 자물쇠 수만큼 이 친구가 숨긴 말이 있어요. 아직 안 들은 말 속에 숨어 있을 수도 있어요. 그 말을 <b>이상해!</b>로 지목하고 증거를 내밀면 자물쇠가 풀리고 <b>신뢰도</b>도 1칸 회복돼요.",".bigp .chains")}});
+    say(lines,function(){G.actions++;render();if(lockCount(c,x.who)>lkBefore){SFX.lock();floater("#bigp","쏙! 숨긴 도토리 "+lockCount(c,x.who)+"개","bad");coach("lock","이 친구가 <b>도토리</b>를 볼 속에 쏙 숨겼어요. 도토리 수만큼 꼭꼭 숨긴 말이 있어요. 아직 안 들은 말 속에 숨어 있을 수도 있어요. 그 말을 <b>이상해!</b>로 지목하고 증거를 내밀면 도토리가 톡 열리고 <b>신뢰도</b>도 1칸 회복돼요.",".bigp .chains")}});
   }});
   app.querySelectorAll("[data-odd],[data-aim]").forEach(function(b){b.onclick=function(){
     var id=b.dataset.odd||b.dataset.aim;
@@ -4329,7 +4332,7 @@ function judgePresent(c,tid,item){
       var lkB=lockCount(c,who);
       G.broken[tid]=x.say;G.justBroke=tid;G.who=who;
       var lkA=lockCount(c,who);
-      setTimeout(function(){if(lkB>0){floater("#bigp",lkA?"자물쇠 1개 깨짐! 남은 "+lkA+"개":"자물쇠 모두 해제!",lkA?"":"");if(!lkA)SFX.win()}},450);
+      setTimeout(function(){if(lkB>0){floater("#bigp",lkA?"도토리 하나 톡! 남은 "+lkA+"개":"숨긴 도토리 모두 열림!",lkA?"":"");if(!lkA)SFX.win()}},450);
       var hpBefore=G.hp;G.hp=Math.min(hpMax(c),(G.hp==null?hpMax(c):G.hp)+1);
       setTimeout(function(){SFX.unlock();if(G.hp>hpBefore)floater(".hpbar","신뢰도 +1","")},200);
       if(x.unlock&&G.unlocked.indexOf(x.unlock)<0)G.unlocked.push(x.unlock);
@@ -6338,7 +6341,7 @@ CASES.push({id:"bell",part:2,title:"달빛 종이 멎은 밤",level:5,lives:4,vi
          {id:"sling2",q:"지하 열쇠를 빌리셨죠?",a:"열쇠요? 저는 배달부예요. 촌장님이 저 같은 사람한테 열쇠를 맡기실 리가요."},
          {id:"sling3",q:"망토를 입으십니까?",a:"밤에 배달하면 추워서요. 회색 망토예요. 검은색은 촌스럽잖아요."},
          {id:"sling4",hidden:true,q:"종탑에 왜 올라갔죠?",a:"…좋아요. 올라갔어요. 종줄을 끊고 추를 챙겼죠. 그런데 이상하게 가볍더군요. 그건… 그건 제 문제가 아니죠."},
-         {id:"sling5",hidden:true,q:"네로는 어디 있죠?",a:"후후. 네로 님은 이미 목적을 이루셨어요. 추 따위 처음부터 필요 없었으니까. 종이 멎은 밤, 이 마을 사람들이 얼마나 서로를 의심했는지 보셨죠?"},
+         {id:"sling5",hidden:true,q:"검은 망토단이면… 네로가 시킨 일이죠?",a:"후후. 두목 이름까지 아시는군요. 하지만 네로 님은 이미 목적을 이루셨어요. 추 따위 처음부터 필요 없었으니까. 종이 멎은 밤, 이 마을 사람들이 얼마나 서로를 의심했는지 보셨죠?"},
          {id:"sling_conf",hidden:true,q:"",a:"…네, 제가 검은 망토단입니다. 촌장을 속여 열쇠를 얻고, 종줄을 끊어 추를 가져갔어요. 가짜인 줄도 모르고요. 네로 님은 웃으시겠죠. '종이 멎으면 마을이 스스로 어두워진다.' 그 말이 맞았어요. 여러분이 오기 전까지는."}],
   seol:[{id:"seol1",q:"종은 언제 멎었나요?",a:"…10시 정각에 마지막으로 울렸어요. 세 번, 한 번, 네 번. 원래 열 번 울려야 하는데, 소리도 이상했고요. 은소리가 아니었어요."},
         {id:"seol2",q:"달빛 종의 추는 어떤 것인가요?",a:"…모두 은추라고 알지만, 사실 별빛 돌 조각이에요. 백 년 전 부엉이 탐정의 스승이 만들었죠. 종이 멎으면 이 마을은 밤에 길을 잃어요."},
@@ -6355,7 +6358,7 @@ CASES.push({id:"bell",part:2,title:"달빛 종이 멎은 밤",level:5,lives:4,vi
   {t:"bami2",items:["m_memo","tok3"],kind:"shy",say:"밤이가 코웃음을 쳤다. \"유치한 이름인 건 사실이잖아. …그래, 알아. 열흘 전부터.\"",unlock:null},
   {t:"sling1",items:["m_route","seol3","m_buckle"],kind:"culprit",say:"슬링의 미소가 굳었다. \"우편함이… 없다고요? 아, 그게, 새로 설치하려고…\"",unlock:null},
   {t:"sling2",items:["ppul3"],kind:"culprit",say:"슬링이 촌장을 흘겨봤다. \"촌장님, 그건 비밀로 하기로 했잖아요.\"",unlock:"sling4"},
-  {t:"sling3",items:["m_cloak","m_rope"],kind:"culprit",say:"슬링의 꼬리털이 곤두섰다. \"안감 도장까지… 배달 마차를 뒤졌군요.\"",unlock:"sling5"}
+  {t:"sling3",items:["m_cloak","m_rope"],kind:"culprit",say:"슬링의 꼬리털이 곤두섰다. \"안감 도장까지… 배달 마차를 뒤졌군요. 그래요, 회색이 아니라 검은 망토단 망토예요.\"",unlock:"sling5"}
  ],
  final:[
   {q:"종줄을 끊고 추를 가져간 검은 망토단원은?",type:"suspect",answer:"sling"},
@@ -17878,18 +17881,20 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   for(var i=0;i<=n;i++){var x=(x1+dx*i).toFixed(1),y=(y1+dy*i).toFixed(1),rx=i%2?2.4:4.8,ry=i%2?4.8:2.4,tr=' transform="rotate('+ang.toFixed(1)+' '+x+' '+y+')"';
    s+='<ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'"'+tr+' fill="none" stroke="#1B2447" stroke-width="3.8"/><ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'"'+tr+' fill="none" stroke="#C9CFDD" stroke-width="1.8"/>'}
   return s}
- var CH1=chain(-6,66,106,92,18),CH2=chain(106,66,-6,92,18);
+ // v143: 마음의 자물쇠 대신 '숨긴 도토리' — 비밀을 볼에 꼭꼭 숨긴 다람쥐 마을식 표현
+ var CH1='<g transform="translate(60 6)"><path d="M2 8 Q2 1 10 1 H26 Q33 1 33 8 V13 Q33 19 26 19 H22 L14 25 L15 19 H10 Q2 19 2 13 Z" fill="#FFFDF4" stroke="#1B2447" stroke-width="2.4" stroke-linejoin="round"/><circle cx="11" cy="10.5" r="2.4" fill="#7A5BD6"/><circle cx="17.5" cy="10.5" r="2.4" fill="#7A5BD6"/><circle cx="24" cy="10.5" r="2.4" fill="#7A5BD6"/></g>',CH2='';
  function padlock(x,y,open,cls,d){
-  var sh='<path d="M-5 -1 V-5 a5 5 0 0 1 10 0 V-1" fill="none" stroke="#1B2447" stroke-width="4"/><path d="M-5 -1 V-5 a5 5 0 0 1 10 0 V-1" fill="none" stroke="#C9CFDD" stroke-width="1.8"/>';
-  if(open)sh='<g transform="translate(0 -4) rotate(-35 5 -1)">'+sh+'</g>';
-  return '<g class="lkp '+cls+'" style="animation-delay:'+(d||0)+'s"><g transform="translate('+x+' '+y+')">'+sh
-   +'<rect x="-8" y="-2" width="16" height="13" rx="3" fill="'+(open?'#9AA3B8':'#D23A34')+'" stroke="#1B2447" stroke-width="2.2"/>'
-   +(open?'':'<circle cx="0" cy="3.5" r="2" fill="#FFD84D"/><path d="M0 5 V8" stroke="#FFD84D" stroke-width="1.8" stroke-linecap="round"/>')+'</g></g>'}
+  var cap='<path d="M-8.4 -1 Q-8.6 -9 0 -9.6 Q8.6 -9 8.4 -1 Z" fill="#7A4E2C" stroke="#1B2447" stroke-width="2.2" stroke-linejoin="round"/><path d="M-5 -6 l3 3 M-1 -8 l3 3 M3 -7 l3 3" stroke="#5A3820" stroke-width="1.3"/><path d="M0 -9.4 V-13" stroke="#1B2447" stroke-width="2.6" stroke-linecap="round"/>';
+  if(open)cap='<g transform="translate(5 -8) rotate(32)">'+cap+'</g>';
+  var body='<path d="M-7.6 -1 Q-8 9 0 13 Q8 9 7.6 -1 Z" fill="'+(open?'#E7B072':'#C07A3E')+'" stroke="#1B2447" stroke-width="2.2" stroke-linejoin="round"/>'+
+   (open?'<ellipse cx="0" cy="-1" rx="6.4" ry="2.2" fill="#FFE27A" stroke="#1B2447" stroke-width="1.4"/><path d="M-6 -6 l-3 -3 M0 -8 V-12 M6 -6 l3 -3" stroke="#FFD84D" stroke-width="1.8" stroke-linecap="round"/>'
+    :'<path d="M-4.6 3 Q-3 1 -1.6 3" fill="none" stroke="#FFF3D6" stroke-width="1.4" stroke-linecap="round"/><path d="M-6.6 5.6 L6.6 3.2" stroke="#7A5BD6" stroke-width="3.2"/><path d="M-6.6 5.6 L6.6 3.2" stroke="#1B2447" stroke-width="1" stroke-dasharray="1.6 1.6"/>');
+  return '<g class="lkp '+cls+'" style="animation-delay:'+(d||0)+'s"><g transform="translate('+x+' '+(y-1)+')">'+body+cap+'</g></g>'}
  var seen={};
  function lkHtml(lk,tot,cls){var locks="",w=17,x0=50-w*(tot-1)/2,open=tot-lk;
   for(var i=0;i<tot;i++){var isOpen=i<open,c=isOpen?(cls==="crack"&&i===open-1?"just":"opened"):"shut";if(cls==="free")c="just";locks+=padlock(x0+w*i,88,isOpen,c,cls==="snap"?.35+i*.12:0)}
-  return '<div class="lkov '+cls+'"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="lc1">'+CH1+'</g><g class="lc2">'+CH2+'</g>'+locks+'</svg></div>'}
- function lkChip(n,tot){return '<span class="lkchip" aria-label="마음의 자물쇠 '+n+'개"><b>숨기는 말 '+n+'개</b>'+(window.__isNew&&G&&window.__isNew(CASES[G.ci])?'<small>원탁 회의에서 밝혀요</small>':'')+'</span>'}
+  return '<div class="lkov '+cls+'"><svg viewBox="0 0 100 101" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="lc1">'+CH1+'</g><g class="lc2">'+CH2+'</g>'+locks+'</svg></div>'}
+ function lkChip(n,tot){return '<span class="lkchip" aria-label="숨긴 도토리 '+n+'개"><b>숨긴 도토리 '+n+'개</b>'+(window.__isNew&&G&&window.__isNew(CASES[G.ci])?'<small>원탁 회의에서 밝혀요</small>':'')+'</span>'}
  var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);
   try{var k=G.who;if(!k||h.indexOf('id="bigp"')<0||h.indexOf('class="tstage')<0)return h;
    var lk=lockCount(c,k),tot=lockTotal(c,k),key=c.id+"|"+k,prev=seen[key];seen[key]=lk;
@@ -17916,7 +17921,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  '.lkov.free .lc1{animation:lkfall1 .9s ease-in both}.lkov.free .lc2{animation:lkfall2 .9s ease-in both}.lkov.free .lkp{animation:lkpop .8s ease-out both}'+
  '@keyframes lkfall1{to{transform:translate(-30%,40%) rotate(-12deg);opacity:0}}@keyframes lkfall2{to{transform:translate(30%,40%) rotate(12deg);opacity:0}}'+
  '@keyframes lkpop{0%{transform:scale(1)}30%{transform:scale(1.5)}100%{transform:scale(.3) translateY(-200%);opacity:0}}'+
- '.tstage .lkchip{margin-top:4px;align-self:flex-start;background:#D23A34;color:#fff;border:2px solid #1B2447;border-radius:999px;padding:1px 10px;font-size:13px}'+
+ '.tstage .lkchip{margin-top:4px;align-self:flex-start;background:#7A4E2C;color:#fff;border:2px solid #1B2447;border-radius:999px;padding:1px 10px;font-size:13px}'+
  '@media (prefers-reduced-motion:reduce){.lkov *{animation:none!important}}';
  document.head.appendChild(css);
 
@@ -24212,10 +24217,10 @@ REI2("kitchen",{
  '.whonav button i{position:absolute;top:-4px;right:-4px;width:10px;height:10px;border-radius:50%;background:#E8485E;border:2px solid #0E1430}'+
  '.wlist{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}.wlist button{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;border-radius:12px;border:2px solid #1B2447;background:#FFFCF3;color:#1B2447;font:inherit;font-size:13px;cursor:pointer}.wlist button[aria-pressed="true"]{background:#FFE9A8}.wlist svg{width:56px;height:56px}.wlist i{position:absolute;top:4px;right:6px;width:10px;height:10px;border-radius:50%;background:#E8485E}'+
  '.showev{padding:8px 12px!important;min-height:0!important}.showev span{display:none!important}.showev b{font-size:15px}'+
- '.evpop{position:absolute;right:2%;top:2%;z-index:6;width:clamp(56px,18vw,84px);aspect-ratio:1;border-radius:12px;background:#FFFCF3;border:3px solid #F2C230;box-shadow:0 0 0 3px #1B2447,0 0 18px rgba(255,216,77,.7);display:grid;place-items:center;animation:evpop .45s cubic-bezier(.2,1.6,.4,1)}'+
- '.evpop svg{width:78%;height:78%}.evpop b{position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);white-space:nowrap;font-size:11px;background:#1B2447;color:#FFE27A;padding:1px 6px;border-radius:6px;max-width:150px;overflow:hidden;text-overflow:ellipsis}'+
- '.evpop .dir{position:absolute;left:-14px;top:50%;transform:translateY(-50%);font-size:16px;color:#FFE27A;text-shadow:0 0 4px #1B2447}'+
- '.tstage .evpop{top:52px}'+
+ '.evpop{position:absolute;right:12px;top:max(12px,env(safe-area-inset-top));z-index:7;width:clamp(88px,26vw,124px);aspect-ratio:1;border-radius:12px;background:#FFFCF3;border:3px solid #F2C230;box-shadow:0 0 0 3px #1B2447,0 0 18px rgba(255,216,77,.7);display:grid;place-items:center;animation:evpop .45s cubic-bezier(.2,1.6,.4,1)}'+
+ '.evpop svg{width:80%;height:80%}.evpop b{position:absolute;right:-4px;bottom:-24px;white-space:nowrap;font-size:12px;background:#1B2447;color:#FFE27A;padding:1px 6px;border-radius:6px;max-width:150px;overflow:hidden;text-overflow:ellipsis}'+
+ '.evpop .dir{position:absolute;left:-18px;top:50%;transform:translateY(-50%);font-size:16px;color:#FFE27A;text-shadow:0 0 4px #1B2447}'+
+ '.tstage .evpop{top:48px;right:8px}.veil.vn .evpop.sk{top:calc(max(12px,env(safe-area-inset-top)) + 44px)}'+
  '@keyframes evpop{0%{transform:scale(.2) rotate(-20deg);opacity:0}100%{transform:none;opacity:1}}';
  document.head.appendChild(css);
  // 인물 바꾸기
@@ -24242,10 +24247,10 @@ REI2("kitchen",{
  var _rc=renderCase;renderCase=function(){var before=G&&G.found?G.found.length:0,r=_rc.apply(this,arguments);
   try{var c=CASES[G.ci],o=window.__REI2&&window.__REI2[c.id];if(o&&G.notice&&/레이에게서 증거를 넘겨받았어요/.test(G.notice.title||"")&&!(window.__evShow&&window.__evShow.id===o.holds))show(o.holds,"rei","get")}catch(e){}
   return r};
- setInterval(function(){var s=window.__evShow;var tgt=document.querySelector(".vnfig")||document.querySelector(".fstalk .tstage");
+ setInterval(function(){var s=window.__evShow;var vf=document.querySelector(".vnfig"),tgt=(vf&&vf.closest(".veil"))||vf||document.querySelector(".fstalk .tstage");
   document.querySelectorAll(".evpop").forEach(function(e){if(!s||Date.now()>s.until||e.parentNode!==tgt||e.dataset.id!==s.id)e.remove()});
   if(!s||Date.now()>s.until||!tgt||!G)return;if(tgt.querySelector(".evpop"))return;
-  var c=CASES[G.ci];if(!c)return;var d=document.createElement("div");d.className="evpop";d.dataset.id=s.id;
+  var c=CASES[G.ci];if(!c)return;var d=document.createElement("div");d.className="evpop"+(tgt.querySelector(".skip")?" sk":"");d.dataset.id=s.id;
   try{d.innerHTML=evIcon(s.id)+'<b>'+esc(itemName(c,s.id))+'</b><span class="dir">'+(s.dir==="get"?"◀":"▶")+'</span>'}catch(e){return}
   if(getComputedStyle(tgt).position==="static")tgt.style.position="relative";tgt.appendChild(d)},250);
 })();
@@ -29434,9 +29439,9 @@ REI2("kitchen",{
    g+=L('M'+(l+10)+' '+(y-2)+' Q50 '+(y-5)+' '+(r-10)+' '+(y-2),O,2.8)+L('M'+(l-10)+' '+(y-3)+' L22 '+(y-5)+' M'+(r+10)+' '+(y-3)+' L78 '+(y-5),O,2.6)
     +L('M'+(l-6)+' '+(y-4)+' l3 -2.4 M'+(r-6)+' '+(y-4)+' l3 -2.4',WH,1.8,.85);
   }else if(id==="x-sun"){
-   [l,r].forEach(function(x){g+=P('M'+(x-11)+' '+(y-7)+' L'+(x+11)+' '+(y-7)+' Q'+(x+11)+' '+(y+9)+' '+x+' '+(y+9)+' Q'+(x-11)+' '+(y+9)+' '+(x-11)+' '+(y-7)+' Z',"#1B1F3A",sk(2.8))
-    +L('M'+(x-6)+' '+(y-3)+' L'+(x+1)+' '+(y-3)+' M'+(x-6)+' '+(y+1)+' L'+(x-3)+' '+(y+1),"#7FC4F2",2.2)});
-   g+=L('M'+(l+11)+' '+(y-6)+' L'+(r-11)+' '+(y-6),O,3)+L('M'+(l-11)+' '+(y-6)+' L21 '+(y-8)+' M'+(r+11)+' '+(y-6)+' L79 '+(y-8),O,2.6);
+   [l,r].forEach(function(x){g+=P('M'+(x-12.5)+' '+(y-10)+' L'+(x+12.5)+' '+(y-10)+' Q'+(x+12.5)+' '+(y+11)+' '+x+' '+(y+11)+' Q'+(x-12.5)+' '+(y+11)+' '+(x-12.5)+' '+(y-10)+' Z',"#101225",sk(2.8))
+    +L('M'+(x-7)+' '+(y-5)+' L'+(x-1)+' '+(y-5),"#5E6A8E",2)});
+   g+=L('M'+(l+12.5)+' '+(y-8)+' L'+(r-12.5)+' '+(y-8),O,3.2)+L('M'+(l-12.5)+' '+(y-8)+' L20 '+(y-10)+' M'+(r+12.5)+' '+(y-8)+' L80 '+(y-10),O,2.8);
   }else if(id==="goggles"){
    g+=L('M18 '+(y-4)+' L'+(l-10)+' '+(y-3)+' M'+(r+10)+' '+(y-3)+' L82 '+(y-4),"#3E5C6E",5)+L('M'+(l+9)+' '+y+' L'+(r-9)+' '+y,"#5B8FA8",4.4);
    [l,r].forEach(function(x){g+=E(x,y,10.6,9.6,"#9CDCF5",sk(2.6)+' fill-opacity=".38"')+E(x,y,10.6,9.6,"none",'stroke="#5B8FA8" stroke-width="2.6"')+E(x,y,12.4,11.4,"none",sk(1.6))+L('M'+(x-6)+' '+(y-3)+' Q'+(x-4)+' '+(y-6.4)+' '+(x-.6)+' '+(y-6.6),WH,2)});
@@ -29664,7 +29669,7 @@ REI2("kitchen",{
   // 6) 눈썹·눈·코입
   g+=X.adult?browsAdult(mood):browsKid(mood);
   g+=eyeItem(X.eye,ex,ey,lidc===p.F?p.LT:lidc);
-  g+='<g class="eyes">'+(X.adult?eyeAdult(39,mood)+eyeAdult(61,mood):eyeKid(38,mood,A.iris,lidc)+eyeKid(62,mood,A.iris,lidc))+'</g>';
+  g+='<g class="eyes">'+(X.eye==="x-sun"?'':X.adult?eyeAdult(39,mood)+eyeAdult(61,mood):eyeKid(38,mood,A.iris,lidc)+eyeKid(62,mood,A.iris,lidc))+'</g>';
   g+=A.beak?beak(mood):(X.adult?mouthAdult(mood):mouthKid(mood,A.teeth));
   if(ext.face2)g+=ext.face2(X);
   // 7) 안경류
