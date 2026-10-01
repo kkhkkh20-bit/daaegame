@@ -10651,6 +10651,7 @@ function drawPin(){var p=layer&&layer.querySelector(".admpin");if(!p)return;p.in
 function press(d){
   if(typed.length>=4)return;typed+=d;drawPin();
   if(typed.length===4){
+    if(typed==="3333"){typed="";close();try{window.__hintGod&&window.__hintGod()}catch(e){}return}
     if(typed===PIN){typed="";enable();close();openPanel()}
     else{var b=layer.querySelector(".admbox");b.classList.remove("admshake");void b.offsetWidth;b.classList.add("admshake");setTimeout(function(){typed="";drawPin()},250)}
   }
@@ -24243,6 +24244,30 @@ REI2("kitchen",{
   var c=CASES[G.ci];if(!c)return;var d=document.createElement("div");d.className="evpop";d.dataset.id=s.id;
   try{d.innerHTML=evIcon(s.id)+'<b>'+esc(itemName(c,s.id))+'</b><span class="dir">'+(s.dir==="get"?"◀":"▶")+'</span>'}catch(e){return}
   if(getComputedStyle(tgt).position==="static")tgt.style.position="relative";tgt.appendChild(d)},250);
+})();
+
+/* v141: 힌트는 사건마다 3번 · 관리자 번호 3333 = 힌트 무적 모드(켜기/끄기) · 원탁 회의 말풍선 겹침 */
+(function(){
+ var LIM=3;
+ function god(){try{return localStorage.getItem("daae:hintgod")==="1"}catch(e){return false}}
+ function left(){return god()?Infinity:Math.max(0,LIM-((G&&G.hints)|0))}
+ window.__hintLeft=left;
+ window.__hintGod=function(){var on=!god();try{localStorage.setItem("daae:hintgod",on?"1":"0")}catch(e){}try{SFX[on?"unlock":"lock"]()}catch(e){}
+  banner(on?"힌트 무적 모드":"힌트 무적 모드 꺼짐",on?"힌트를 마음껏 쓸 수 있어요":"사건마다 힌트 3번").then(function(){try{render()}catch(e){}})};
+ var MSG="힌트를 3번 다 썼어. 이번 사건은 이제 우리 힘으로 풀자. 수첩을 다시 차근차근 보면 길이 보일 거야.";
+ var _uh=useHint;useHint=function(c){if(left()<=0){try{SFX.huh()}catch(e){}say([["think",MSG,"",curPlayer()]],function(){render()});return}return _uh.apply(this,arguments)};
+ var _rh=window.__rtHint;if(_rh)window.__rtHint=function(){if(left()<=0){window.__rtPt=null;return MSG}return _rh.apply(this,arguments)};
+ function label(){var n=left(),t=n===Infinity?"∞":String(n);
+  [["#helpnav","힌트"],["#rthint","힌트"]].forEach(function(x){var b=document.querySelector(x[0]);if(!b)return;var s=b.querySelector(".hl");
+   if(!s){var tn=[].slice.call(b.childNodes).filter(function(n){return n.nodeType===3&&/힌트/.test(n.textContent)})[0];s=document.createElement("span");s.className="hl";if(tn)tn.replaceWith(s);else b.appendChild(s)}
+   var v=x[1]+" "+t;if(s.textContent!==v)s.textContent=v;b.classList.toggle("hout",n<=0)});
+  var f=document.querySelector(".helpfab b");if(f){var v2="힌트 "+t;if(f.textContent!==v2)f.textContent=v2}}
+ setInterval(function(){try{if(G)label()}catch(e){}},400);
+ var css=document.createElement("style");
+ css.textContent='.hout{filter:grayscale(.8) brightness(.8)}'+
+  'body.dotmode .rt-mid{gap:16px!important}body.dotmode .rt-srow{margin-bottom:10px}body.dotmode .rt-bub.stm{box-shadow:0 0 0 3px var(--gb-ink),0 0 0 6px var(--gb-line)!important}'+
+  '.rt-srow{position:relative;z-index:2}.rt-nav{position:relative;z-index:1}.rt-mid{height:auto!important;min-height:0!important}.rt-in>*{flex-shrink:0!important}.rt-big svg{width:min(150px,20vh)!important}';
+ document.head.appendChild(css);
 })();
 
 /* 시그니처: badook 바둑이 — 가로등으로 시각을 재는 열혈 야경꾼 (점박이 흰 개, 남색 야경꾼 모자와 등불 배지, 놋쇠 단추 외투, 목에 건 은색 호루라기, 한쪽 눈 검은 점)
