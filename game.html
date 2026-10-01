@@ -9,7 +9,7 @@
 .crtab2 button[aria-pressed="true"] em{background:#1B2447;color:#FFD84D}
 .crtab2 button:active{filter:brightness(.92)}
 </style></head><body>
-<title>다애 탐정 사무소</title>
+<title>다람 탐정 사무소</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Gaegu:wght@400;700&display=swap">
@@ -3125,7 +3125,7 @@ function load(){try{return JSON.parse(localStorage.getItem(SKEY))||{}}catch(e){r
 function persist(){try{localStorage.setItem(SKEY,JSON.stringify({players:S.players,best:S.best,sound:S.sound,prog:S.prog,story:S.story,tut:S.tut,aff:S.aff,chat:S.chat,master:S.master,ach:S.ach,rec:S.rec,trayOpen:S.trayOpen,tts:S.tts,tspeed:S.tspeed,big:S.big,circ:S.circ}))}catch(e){}}
 function saveProg(){if(!G)return;var id=CASES[G.ci].id;if(G.result&&G.result.solved){delete S.prog[id]}else if(G.introDone){var g=JSON.parse(JSON.stringify(G));g.result=null;g.notice=null;S.prog[id]=g}persist()}
 var saved=load();
-var S={screen:"title",players:saved.players||["아빠 탐정","다애 탐정"],best:saved.best||{},sound:saved.sound!==false,prog:saved.prog||{},tut:saved.tut||{},story:saved.story||{pro:false,read:{},finale:false},aff:saved.aff||{},chat:saved.chat||{},master:saved.master||0,ach:saved.ach||{},rec:saved.rec||{},trayOpen:!!saved.trayOpen,tts:!!saved.tts,tspeed:saved.tspeed||"f",big:!!saved.big,circ:saved.circ!==false};
+var S={screen:"title",players:saved.players||["아빠 탐정","다람 탐정"],best:saved.best||{},sound:saved.sound!==false,prog:saved.prog||{},tut:saved.tut||{},story:saved.story||{pro:false,read:{},finale:false},aff:saved.aff||{},chat:saved.chat||{},master:saved.master||0,ach:saved.ach||{},rec:saved.rec||{},trayOpen:!!saved.trayOpen,tts:!!saved.tts,tspeed:saved.tspeed||"f",big:!!saved.big,circ:saved.circ!==false};
 var G=null;
 function fresh(i){return {mem:[],coins:1,hintLog:[],dtries:0,ci:i,tab:"scene",loc:0,found:[],asked:[],unlocked:[],broken:{},marks:{},who:CASES[i].suspects[0],notice:null,wrong:0,hints:0,actions:0,answers:{},result:null,introDone:false,target:null,trayTab:"ev",seen:[],battle:null,accuse:null,hp:CASES[i].lives||5,exam:{},tf:"all"}}
 function curPlayer(){return S.players[G.actions%2]}
@@ -3540,7 +3540,7 @@ function renderTitle(){
   var ev=0,li=0;CASES.forEach(function(c){ev+=liveSpots(c).length;li+=c.contra.length});
   var solved=Object.keys(S.best).length,going=Object.keys(S.prog).length;
   app.innerHTML='<div class="tfull"><div class="tbg">'+officePortrait()+'</div><div class="tveil"></div>'+
-    '<div class="tlogo"><small>DETECTIVE AGENCY</small><h1>다애 탐정 사무소</h1><p>현장을 뒤지고, 거짓말을 깨뜨리고, 범인을 몰아붙여라</p></div>'+
+    '<div class="tlogo"><small>DETECTIVE AGENCY</small><h1>'+agName()+'</h1><p>현장을 뒤지고, 거짓말을 깨뜨리고, 범인을 몰아붙여라</p></div>'+
     '<div class="tui"><div class="tstats"><span><b>'+CASES.length+'</b>개의 사건</span><span><b>'+ev+'</b>개의 증거</span><span><b>'+li+'</b>개의 거짓말</span></div>'+
     '<button class="btn bigstart" id="go">'+(solved||going?'이어서 수사하기':'수사 시작')+'</button>'+
     '<button class="btn ghost" id="loadbtn">저장 불러오기 · 다른 기기에서 옮기기</button>'+
@@ -3558,7 +3558,7 @@ function showLetter(key,done){
   });
 }
 function prologue(){
-  say([["narr","다애 탐정 사무소가 문을 연 첫날. 문틈으로 편지 한 통이 스르륵 들어왔다."],["think","누가 보낸 거지? 이름 대신 X라고만 적혀 있어.","",S.players[1]]],function(){showLetter("prologue",function(){render()})});
+  say([["narr","{AG}가 문을 연 첫날. 문틈으로 편지 한 통이 스르륵 들어왔다."],["think","누가 보낸 거지? 이름 대신 X라고만 적혀 있어.","",S.players[1]]],function(){showLetter("prologue",function(){render()})});
 }
 function startFinale(){
   bgm("sneak");
@@ -3579,7 +3579,7 @@ function judgeFinale(k){
          ["owlgp","나는 옛날에 이 마을의 탐정이었지. 이제 너무 늙어서 새 탐정을 찾고 있었단다."],
          ["owlgp",jo(S.players[0],"과","와")+" "+S.players[1]+". 너희는 증거를 끝까지 믿었고, 거짓말한 친구들의 사정도 귀 기울여 들어 주었지."],
          ["owlgp","그게 바로 진짜 탐정이란다. 자, 이 배지를 받으렴."],
-         ["narr","두 탐정의 가슴에 반짝이는 금색 배지가 달렸다. 다애 탐정 사무소의 진짜 이야기는 이제부터 시작이다."]],function(){
+         ["narr","두 탐정의 가슴에 반짝이는 금색 배지가 달렸다. {AG}의 진짜 이야기는 이제부터 시작이다."]],function(){
       S.story.finale=true;persist();SFX.gavel();setTimeout(function(){SFX.win()},1000);bgm("win");
       modal('<span class="kicker">진짜 탐정 배지</span><div class="bigic" style="background:#FFD84D">'+MEDAL+'</div><h3>'+esc(S.players[0])+' · '+esc(S.players[1])+'</h3><p style="text-align:center">숲속 마을 공식 탐정으로 임명합니다.<br>— 부엉이 할아버지</p><button class="btn" id="closeit">배지 달기</button>',function(){document.getElementById("closeit").onclick=function(){closeModal();render();setTimeout(function(){say([["narr","며칠 뒤, 사무소에 또 한 통의 편지가 도착했다. 이번엔 부엉이 할아버지의 이름이 적혀 있다."]],function(){showLetter("starinv",function(){render()})})},500)}});
     },true);
@@ -3630,7 +3630,7 @@ function totalStars(){var n=0;Object.keys(S.best).forEach(function(k){n+=(+S.bes
 function renderBoard(){
   var st=totalStars(),rk=rankOf(st),max=CASES.length*3;
   var p1=CASES.filter(function(c){return c.part!==2}),allSolved=p1.every(function(c){return S.best[c.id]});
-  var h='<header class="btop"><div class="bt"><div class="label">다애 탐정 사무소</div><h1>사건 게시판</h1><p>'+rk.name+' · 별 '+st+' / '+max+(S.story.finale?' · 진짜 탐정':'')+'</p></div><button class="ib big" id="snd" aria-label="설정">'+IC.set+'</button></header>';
+  var h='<header class="btop"><div class="bt"><div class="label">'+agName()+'</div><h1>사건 게시판</h1><p>'+rk.name+' · 별 '+st+' / '+max+(S.story.finale?' · 진짜 탐정':'')+'</p></div><button class="ib big" id="snd" aria-label="설정">'+IC.set+'</button></header>';
   var nci=nextCaseIdx();
   if(allSolved&&!S.story.finale){
     h+='<button class="hero fin" id="finale"><div class="hart">'+SCENES.office()+'</div><div class="htx"><small>1부 마지막 사건</small><b>편지의 주인 찾기</b><span>세 사건에서 모은 힌트로 수수께끼 편지를 보낸 X의 정체를 밝혀요.</span></div><i class="cta">시작</i></button>';
@@ -5873,7 +5873,8 @@ function playBook(title,pages,done){
 Object.defineProperty(CAST,"det0",{enumerable:false,get:function(){return {name:S.players[0],animal:"raccoon",kind:"탐정 사무소 · 큰 탐정",color:"#A9A2A0",acc:"dhat"}}});
 Object.defineProperty(CAST,"det1",{enumerable:false,get:function(){return {name:S.players[1],animal:"flyingsq",kind:"탐정 사무소 · 주니어 탐정",color:"#D9A47A",acc:"ribbon"}}});
 VOICE.det0=600;VOICE.det1=1000;
-function pname(t){return String(t).replace(/\{p0\}/g,S.players[0]).replace(/\{p1\}/g,S.players[1])}
+function agName(){var n=String((S&&S.players&&S.players[1])||"").replace(/\s*탐정\s*$/,"").trim();return (n||"다람")+" 탐정 사무소"}window.__agName=agName;
+function pname(t){return String(t).replace(/\{p0\}/g,S.players[0]).replace(/\{p1\}/g,S.players[1]).replace(/\{AG\}/g,agName())}
 
 // chapter 1: the two partners before their very first case (no clues, just the duo)
 BOOK.cake={pre:[{bg:"office",time:"탐정 사무소 첫날",cast:{det0:120,det1:200},lines:[
@@ -6594,7 +6595,7 @@ CASES.push({id:"dark",part:2,title:"빛을 훔치는 자",level:5,lives:4,villai
  ],
  hints:["이번 사건의 증거 하나는 가짜다. 너무 선명한 것, 너무 쉽게 범인을 가리키는 것을 먼저 의심하자.","까로는 8시 반까지 나비와 배달 중이었다. 그럼 사무소 앞의 잉크 냄새는 누구 것인가. 콩이에게 냄새를 다시 맡게 하자.","검사관의 서류, 장갑, 배지. 세 가지가 한 사람을 가리킨다. 그리고 그 사람의 정체는 30년 전 파일 속에 있다."],
  solution:["사무소 벽의 발톱 자국은 잉크 도장이었다. 우체국 뒷방의 발톱 도장, 까로의 배달 기록이 그것을 증명한다. 까로는 범인이 아니라 누명을 쓸 뻔했다.","루카 검사관의 서류에는 발신처가 없고 은빛 마을 우편 마차 도장이 있었다. 은빛 마을에 등불 관리국은 없다. 검사관은 가짜다.","등불 자물쇠는 열쇠로 열렸고, 기둥 옆 장갑과 스라소니 발자국이 루카를 가리켰다. 발자국은 언덕 반대편 숲으로 이어졌다.","숲의 작은 등불 안에 열쇠가 있었다. 네로는 열쇠를 훔친 게 아니라 30년 동안 등불을 바라보던 자리에 두고 갔다.","30년 전 파일: 별빛 언덕 침입 미수, 어린 스라소니, 훈방. 부엉이 할아버지는 그 아이에게 등불을 켜 주었다. 그 아이가 네로다.","부리는 할아버지를 돕고 싶어 파일을 꺼냈고, 콩이는 잉크 냄새를 까로로 착각했다. 두 사람의 거짓말은 마음에서 나온 것이었다."],
- ending:"열쇠로 등불을 켜자 언덕이 다시 밝아졌다. 루카, 아니 네로는 도망치지 않았다. 등불 아래 서서 부엉이 할아버지를 오래 바라보다가, 딱 한마디를 남기고 숲으로 걸어갔다. \"다음엔 당신들이 나를 찾아오십시오.\" 검은 망토단은 흩어졌지만 네로는 잡히지 않았다. 다애 탐정 사무소의 미해결 메모 첫 장에는 이렇게 적혔다. '네로는 왜 열쇠를 등불 속에 두고 갔을까.'"
+ ending:"열쇠로 등불을 켜자 언덕이 다시 밝아졌다. 루카, 아니 네로는 도망치지 않았다. 등불 아래 서서 부엉이 할아버지를 오래 바라보다가, 딱 한마디를 남기고 숲으로 걸어갔다. \"다음엔 당신들이 나를 찾아오십시오.\" 검은 망토단은 흩어졌지만 네로는 잡히지 않았다. {AG}의 미해결 메모 첫 장에는 이렇게 적혔다. '네로는 왜 열쇠를 등불 속에 두고 갔을까.'"
 });
 STORY.dark={
  intro:[["narr","은빛 마을에서 돌아온 밤. 탐정 사무소의 열쇠 걸이가 비어 있었다."],
@@ -6773,7 +6774,7 @@ function officeArt(opts){
   s+='<path d="M20 122 Q24 108 40 110 Q46 116 40 124 Q30 128 20 122 Z" fill="#E23B3B" '+o+'/><circle cx="40" cy="108" r="2.5" fill="#E23B3B" stroke="#1B2447" stroke-width="1.5"/>';
   s+='<path d="M20 126 L18 160 L34 160 L32 126 Z" fill="#C8A46E" '+o+'/>';
   // door sign
-  s+='<rect x="24" y="8" width="150" height="12" rx="3" fill="#1D2B53" '+o+'/><text x="99" y="17.5" text-anchor="middle" font-family="Jua,sans-serif" font-size="8" fill="#FFD84D">다애 탐정 사무소 · DETECTIVE AGENCY</text>';
+  s+='<rect x="24" y="8" width="150" height="12" rx="3" fill="#1D2B53" '+o+'/><text x="99" y="17.5" text-anchor="middle" font-family="Jua,sans-serif" font-size="8" fill="#FFD84D">'+(window.__agName?window.__agName():"다람 탐정 사무소")+' · DETECTIVE AGENCY</text>';
   // wall clock
   s+='<circle cx="190" cy="40" r="11" fill="#FFFDF4" '+o+'/><path d="M190 40 V32 M190 40 L196 43" stroke="#1B2447" stroke-width="2" stroke-linecap="round"/>';
   if(opts.dust)for(var k=0;k<14;k++)s+='<circle cx="'+(30+k*23)+'" cy="'+(60+(k*37)%90)+'" r="1" fill="#FFF3C4" opacity=".5"/>';
@@ -7124,7 +7125,7 @@ function sanitizeState(d){
   }
   var pl=Array.isArray(d.players)?d.players:[],st=isObj(d.story)?d.story:{};
   return {
-    players:[txt(pl[0],10)||"아빠 탐정",txt(pl[1],10)||"다애 탐정"],
+    players:[txt(pl[0],10)||"아빠 탐정",txt(pl[1],10)||"다람 탐정"],
     best:map(d.best,isCase,function(v){return int(v,0,3,0)||null}),
     sound:d.sound!==false,
     prog:map(d.prog,isCase,function(g,k){return sanG(g,caseIds.indexOf(k))}),
@@ -11013,7 +11014,7 @@ Object.assign(window.FLAV,{
   {x:15,y:35,r:14,n:"거미줄",t:["구석에 거미줄이 잔뜩 쳐져 있다.","거미가 이 방의 진짜 주인이네."]}
  ],
  "dark-office":[
-  {x:100,y:15,r:14,n:"간판",t:["다애 탐정 사무소 간판이다. 글자가 반짝인다.","오늘따라 이 이름이 무겁게 느껴진다."]},
+  {x:100,y:15,r:14,n:"간판",t:["{AG} 간판이다. 글자가 반짝인다.","오늘따라 이 이름이 무겁게 느껴진다."]},
   {x:190,y:40,r:12,n:"벽시계",t:["동그란 벽시계다. 초침 소리가 또렷하다.","시간이 우리 편이면 좋겠는데."]},
   {x:335,y:60,r:14,n:"빨간 커튼",t:["창 옆 빨간 커튼이다. 끝자락이 바랬다.","할아버지가 고른 색이랬지."]},
   {x:227,y:92,r:12,n:"스탠드",t:["초록 갓 스탠드다. 책상을 환하게 비춘다.","밤샘 추리의 단짝이다."]},
@@ -11329,28 +11330,28 @@ Object.assign(window.MEETX,{
   ],
   tori:[
    ["tori","깡총! 어, 어떡해… 모르는 얼굴이다!","nervous"],
-   ["det0","놀라게 해서 미안해. 다애 탐정 사무소의 {p0}입니다.","happy"],
+   ["det0","놀라게 해서 미안해. {AG}의 {p0}입니다.","happy"],
    ["det1","나는 {p1}. 오늘 문을 연 따끈따끈한 탐정 사무소야.","happy"],
    ["tori","타, 탐정님? 난 토리야. 춤추는 걸 좋아하는 토끼야.","blush"],
    ["tori","여니랑 제일 친한 친구야. 할머니 케이크 일이면… 나도 걱정돼.","sad"]
   ],
   bori:[
    ["bori","음냐… 헤헤, 누구세요?","nervous"],
-   ["det1","다애 탐정 사무소의 {p1}. 이쪽은 {p0}.","happy"],
+   ["det1","{AG}의 {p1}. 이쪽은 {p0}.","happy"],
    ["bori","난 보리야. 무거운 거라면 뭐든 번쩍 들어! 헤헤.","happy"],
    ["bori","탐정님들, 배고프지 않아? 난 늘 배고파서…","nervous"],
    ["det0","배고픈 얘기는 사건이 끝나고 하자. 몇 가지만 물어볼게.","happy"]
   ],
   yeoni:[
    ["yeoni","앗! …쉿, 비밀이야! 아, 아니, 안녕!","nervous"],
-   ["det0","안녕. 다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","안녕. {AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["yeoni","난 여니야. 뜨개질이랑 깜짝 선물을 좋아하는 여우!","happy"],
    ["yeoni","토리랑은 단짝이고, 할머니랑도 엄청 친해.","happy"],
    ["det1","(속닥) {p0}, 방금 '비밀'이라고 한 거 들었어?","think"]
   ],
   nabi:[
    ["nabi","흥. 누구야? 처음 보는 얼굴인데.","smug"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["nabi","탐정? …흥. 난 나비야. 이 동네 고양이.","smug"],
    ["nabi","케이크? 파티? 그런 건 나랑 상관없는 얘기야.","nervous"],
    ["think","새침한 말투인데… 어딘가 쓸쓸해 보인다.","","det1"]
@@ -11374,7 +11375,7 @@ Object.assign(window.MEETX,{
    ["kongi","킁킁! 아까 딸기 아이스크림 드신 탐정님들이다!","happy"],
    ["det1","…그 얘기는 이제 그만해 줄래?","blush"],
    ["kongi","난 콩이! 이 마을 최고의 코를 가진 명탐견이야!","smug"],
-   ["det0","정식으로 인사하지. 다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","정식으로 인사하지. {AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["kongi","킁킁! 내 코는 못 속여! 뭐든 물어봐!","happy"]
   ],
   bori:[
@@ -11386,7 +11387,7 @@ Object.assign(window.MEETX,{
   ],
   kkwak:[
    ["kkwak","꽥! 누구야? 혹시 내 팬이야?","smug"],
-   ["det0","팬은 아니고… 다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","팬은 아니고… {AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["kkwak","난 꽥순! 연못의 수영 선수지. 꽥!","smug"],
    ["kkwak","…근데 탐정이 오리를 왜 찾아와? 아, 아무것도 아니야. 꽥.","nervous"]
   ],
@@ -11394,7 +11395,7 @@ Object.assign(window.MEETX,{
    ["ttadak","따닥! 따닥따닥!","happy"],
    ["det1","아까 운동장에서 벤치 두드리던 친구구나. …그게 인사야?","huh"],
    ["ttadak","따닥! 난 따닥이야. 말로 인사하는 건… 좀 부끄러워.","blush"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}. …머리는 두드리지 말고.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}. …머리는 두드리지 말고.","happy"],
    ["ttadak","따닥… 딱 한 번만 두드려 보려고 했는데.","sad"]
   ]
  },
@@ -11426,7 +11427,7 @@ Object.assign(window.MEETX,{
   ],
   buri:[
    ["buri","부엉… 탐정님들, 또 뵙네요.","nervous"],
-   ["det0","아까 복도에서 봤지. 정식으로 인사할게. 다애 탐정 사무소의 {p0}입니다.","happy"],
+   ["det0","아까 복도에서 봤지. 정식으로 인사할게. {AG}의 {p0}입니다.","happy"],
    ["det1","나는 {p1}. 반가워, 부리.","happy"],
    ["buri","그러니까, 저는 부리예요. 이번 연극에선 신하 역할이고요.","blush"],
    ["buri","…왕관이 없어졌다니, 큰일이네요.","nervous"]
@@ -11436,7 +11437,7 @@ Object.assign(window.MEETX,{
   owlgp:[
    ["owlgp","허허, 탐정들. 학예회 날 이후로 이제야 제대로 인사하는구나.","happy"],
    ["owlgp","나는 부리 할아버지이자, 이 언덕 등불 지킴이란다.","happy"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["owlgp","아까 말한 대로 오늘이 마지막 날인데… 허허, 면목이 없구나.","sad"],
    ["det1","9시까지 두 시간. 저희가 꼭 다시 켤게요.","happy"]
   ],
@@ -11460,7 +11461,7 @@ Object.assign(window.MEETX,{
   ],
   karo:[
    ["karo","후후, 손님. 어서 오세요. 까로 상회입니다.","smug"],
-   ["det0","손님은 아니고… 다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","손님은 아니고… {AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["karo","탐정님들이셨군요. 전 까로, 떠돌이 장사꾼이지요.","smug"],
    ["karo","축제마다 다니며 물건을 팔아요. 반짝이는… 아, 아니. 뭐든지요.","nervous"]
   ],
@@ -11484,7 +11485,7 @@ Object.assign(window.MEETX,{
  bell:{
   ppul:[
    ["ppul","에헴! 외지인들이 회관까지 무슨 일이오?","angry"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["ppul","에헴, 나는 은빛 마을 촌장 뿔이오. 이 마을의 얼굴이지.","smug"],
    ["det1","아까 종탑에서 우리가 범인이라고 하셨죠?","huh"],
    ["ppul","그, 그건 촌장으로서 조심한 것뿐이오. 에헴!","nervous"]
@@ -11492,7 +11493,7 @@ Object.assign(window.MEETX,{
   tok:[
    ["narr","작업실은 어둑했다. 톱니바퀴 소리만 딸깍딸깍 울렸다."],
    ["tok","딸깍… 이 발소리, 종탑에서 들은 두 분이네요.","happy"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["tok","시계공 톡이에요. 눈은 어둡지만 귀는 정확하죠.","happy"],
    ["tok","아, 불은 조금만요. 밝은 건 질색이라서요.","nervous"]
   ],
@@ -11505,14 +11506,14 @@ Object.assign(window.MEETX,{
   ],
   sling:[
    ["sling","아, 아까 그 낯선 분들! 또 뵙네요. 반가워요!","happy"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["sling","탐정님들이셨군요! 저는 새 배달부 슬링이에요.","happy"],
    ["sling","이 마을 길은 제가 제일 잘 알아요. 뭐든 물어보세요!","smug"],
    ["think","친절이 지나친 사람은 뭔가 원하는 게 있다… 기억해 두자.","","det1"]
   ],
   seol:[
    ["seol","…정식으로 인사드릴게요. 달빛 종지기 설이예요.","happy"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["seol","{p0}, {p1}. …한 번 더 불러 볼게요. 잊지 않게요.","think"],
    ["seol","천천히 물어봐 주세요. 저는 서두르면 틀리거든요.","nervous"]
   ],
@@ -11526,7 +11527,7 @@ Object.assign(window.MEETX,{
  dark:{
   luka:[
    ["luka","또 뵙는군요. 등불 관리국 검사관, 루카입니다.","smug"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","think"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","think"],
    ["luka","알고 있습니다. 규정상, 조사 대상 명단 맨 위니까요.","smug"],
    ["think","저 눈빛… 역시 어디서 본 것 같아.","","det1"],
    ["luka","질문하시죠. 서류에 있는 대로 답해 드리겠습니다.","smug"]
@@ -11588,13 +11589,13 @@ Object.assign(window.MEETX,{
   ],
   momo:[
    ["momo","어머, 탐정님들… 와 주셨군요. 다리가 아직 떨려요.","nervous"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["momo","숲속 박물관 관장 모모예요. 인사가 늦었네요.","sad"],
    ["momo","쿠키 하나 더 드세요. 손이 가만있질 않아서요, 호호.","nervous"]
   ],
   piko:[
    ["piko","아, 아까 그 탐정들! 피코를 다시 보러 왔구나?","smug"],
-   ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","happy"],
+   ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","happy"],
    ["piko","피코는 피코. 공작새이자 예술가지. 작품은… 피코.","smug"],
    ["det1","(속닥) {p0}, 지금도 유리에 비친 자기 보고 있어.","confused"],
    ["piko","…사건? 알아, 알아. 피코도 걱정하고 있었어.","sad"]
@@ -11623,7 +11624,7 @@ Object.assign(window.MEETX,{
 Object.assign(window.MEETX,{
  cart:{
   mungchi:[["mungchi","뭐야, 너희. 이 촌스러운 흙길에서 뭘 기웃거려?","smug"],
-           ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","think"],
+           ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","think"],
            ["mungchi","뭉치. 언덕 너머 큰 집에 새로 왔어. 도시에서. 뭐, 그렇다는 거야.","smug"],
            ["det1","(속닥) {p0}, 방금 우리 보고 '촌 동네 탐정'이래.","huh"],
            ["mungchi","탐정 놀이 구경은 재밌네. 방해는 안 할게. 뭐, 그렇다는 거야.","smug"]],
@@ -11661,7 +11662,7 @@ Object.assign(window.MEETX,{
  glove:{
   madam:[["narr","샹들리에 아래, 하얀 장갑을 낀 손이 찻잔을 내려놓는다. 소리 하나 없이.","","madam"],
          ["madam","어머, 탐정님들. 저택까지 걸음을 하시다니요.","happy"],
-         ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","think"],
+         ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","think"],
          ["madam","백이라고 해요. 반짝이는 걸 조금 모으지요. 아들이 신세를 졌다죠.","smug"],
          ["det1","(속닥) {p0}, 웃고 있는데… 하나도 안 따뜻해.","nervous"]],
   mungchi:[["mungchi","…또 너희야? 마차 창고 청소는 하고 있어. 감시하러 왔어?","nervous"],
@@ -11697,13 +11698,13 @@ Object.assign(window.MEETX,{
  },
  festival:{
   siluk:[["siluk","탐정님들이시지요. 도련님 일로 오셨군요. 소문 들었습니다.","happy"],
-         ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}. 누구시죠?","think"],
+         ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}. 누구시죠?","think"],
          ["siluk","실룩이라 합니다. 저택 마부였지요. 부인이 안 계셔도 마차는 닦아야 해서요.","sad"],
          ["narr","실룩이 한 박자 늦게 웃었다. 두 손을 공손히 모은다.","","siluk"],
          ["siluk","아는 건 뭐든 말씀드리지요. 마부야 시키는 대로 할 뿐이지만요.","happy"]],
   wanggu:[["wanggu","아까 그 탐정들이구먼! 나는 축제 준비위원장 왕구다!","angry"],
           ["det1","(속닥) {p0}, 아까 광장에서 제일 크게 외치던 분이야.","huh"],
-          ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}. 몇 가지 여쭙겠습니다.","think"],
+          ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}. 몇 가지 여쭙겠습니다.","think"],
           ["wanggu","물어볼 게 뭐 있어! 범인은 창고에 있는데. 해 지기 전에 등불이나 켜자고!","angry"]],
   mungchi:[["narr","마을 창고. 뭉치는 아까 그대로, 구석에 무릎을 안고 앉아 있다.","sad","mungchi"],
            ["det1","뭉치, 우리 또 왔어. 어제 저택에서 네가 한 말, 우린 기억해.","sad"],
@@ -14225,7 +14226,7 @@ window.SECRET.snow={
 window.MEETX=window.MEETX||{};
 window.MEETX.snow={
  seori:[["seori","등불 관리국 수석 검사원 서리입니다. 검사 중에는 등불에서 세 걸음 물러나 주십시오. 규정 제3조입니다.","smug"],
-        ["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","think"],
+        ["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","think"],
         ["seori","탐정이라. 규정집에는 탐정 항목이 없습니다. 질문은 짧게 하십시오."],
         ["det1","(속닥) {p0}, 표정이 하나도 안 변해.","huh"]],
  ubak:[["ubak","아, 안녕하세요! 관리국 견습 검사원 우박입니다! 저, 저는 규정대로…","nervous"],
@@ -14958,7 +14959,7 @@ window.SECRET.clapper={
 window.MEETX=window.MEETX||{};
 window.MEETX.clapper={
  ppul:[["ppul","에헴! 숲속 마을 탐정 양반들이구려. 이번엔 누가 불렀소?","nervous"],
-       ["det0","다애 탐정 사무소의 {p0}입니다. 종이 멎었다고 들었습니다.","think"],
+       ["det0","{AG}의 {p0}입니다. 종이 멎었다고 들었습니다.","think"],
        ["ppul","촌장으로서 말하건대, 범인은 이미 정해졌소. 종지기요. 수고스럽게 뒤질 것도 없소.","smug"],
        ["det1","(속닥) {p0}, 촌장님 훈장 줄에 빈 고리가 하나 있어. 새 훈장 자리처럼.","huh"]],
  seol:[["seol","…탐정님들. 또 뵙네요. 이번엔 부엉이 탐정님 없이.","sad"],
@@ -15721,7 +15722,7 @@ if(window.__RX){window.__RX.eunho=["허, 이거 보시오.","그, 그건 장부�
 
 // ---------- 첫 만남 ----------
 if(window.MEETX)window.MEETX.bureau={
- eunho:[["eunho","탐정? 숲속 마을에서? 허, 소문은 들었소.","smug"],["det0","다애 탐정 사무소의 {p0}입니다. 이쪽은 {p1}.","think"],["eunho","은호요. 이 거리 7번지 주인. 도둑부터 잡아 주시오. 값은 넉넉히 치르겠소.","angry"]],
+ eunho:[["eunho","탐정? 숲속 마을에서? 허, 소문은 들었소.","smug"],["det0","{AG}의 {p0}입니다. 이쪽은 {p1}.","think"],["eunho","은호요. 이 거리 7번지 주인. 도둑부터 잡아 주시오. 값은 넉넉히 치르겠소.","angry"]],
  guseul:[["narr","빵집 문간에 담요를 두른 어린 너구리가 앉아 있다. 이마에 혹이 봉긋하다.","sad","guseul"],["det1","괜찮아? 우리 탐정이야. 많이 무서웠지.","sad"],["guseul","사, 사장님 가게 견습생 구슬이에요. 저, 저는 괜찮아요.","shy"]],
  badook:[["badook","삐익! 도시 야경꾼 바둑이오. 이 거리 밤은 내가 지키오.","happy"],["det1","야경꾼인데 시계가 없어요?","huh"],["badook","가로등이 내 시계요. 이상 무!","smug"]],
  lamplighter:[["lamplighter","…해 질 녘에 뵌 분들이군요.","shy"],["det1","아저씨! 구슬이를 업고 나왔잖아요. 괜찮으세요?","shock"],["lamplighter","목도리가 좀 그을렸을 뿐이에요.","sad"]],
@@ -17638,7 +17639,7 @@ add("link",{rel:"apple-touch-icon",href:"icons/apple-180.png"});
 add("link",{rel:"icon",href:"icons/icon-192.png",type:"image/png"});
 add("meta",{name:"apple-mobile-web-app-capable",content:"yes"});
 add("meta",{name:"mobile-web-app-capable",content:"yes"});
-add("meta",{name:"apple-mobile-web-app-title",content:"다애 탐정"});
+add("meta",{name:"apple-mobile-web-app-title",content:"다람 탐정"});
 add("meta",{name:"theme-color",content:"#0E1128"});
 if("serviceWorker" in navigator&&window.top===window)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
 })();
@@ -19871,7 +19872,7 @@ TWBR.kitchen={type:"fail",phases:[
   insS(pg.lines,"그건 내가 배워야겠는걸",[["narr","사무소 창가엔 작은 등잔 하나가 켜져 있었다. 한낮인데도."]],true,"cake-lamp")})});
  // 4장
  T(function(){var p=pgBy(BOOK.star.pre,"star-square","6시 59분");if(p)insS(p.lines,"그럼 꽥순이 가족도 저 불을",[["det0","…그래. 먼 길 떠난 누구든."]],true,"star-any")});
- // 5장: 다애가 알아챈다
+ // 5장: 딸이 알아챈다
  T(function(){var P=BOOK.bell.post,k=-1;P.forEach(function(p,i){if(k<0&&p.bg==="bell-roof")k=i});if(k<0)k=P.length;
  P.splice(k,0,{bg:"bell-tower",time:"밤 11시 30분 · 종탑 계단",cast:{det0:90,det1:150,seol:260},lines:[
   ["narr","모두가 돌아간 종탑 계단. 설이가 긴 목을 숙이고 천천히 다가왔다."],
