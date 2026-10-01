@@ -22336,6 +22336,215 @@ LIE("kitchen","tori15_1",{kind:"cover",say:"토리가 썰매 뒤에 숨으려다
  (function(){var c=caseById("window");if(c&&c.teaser)c.teaser=c.teaser.replace("창피해서 숨은 친구","몰래 장사하다 숨은 친구")})();
 })();
 
+/* v126: 사건의 연결 고리 — 여러 변수가 엮여 하나의 사건이 되기까지 */
+(function(){
+ var CH=window.CHAINS={};
+ function CHAIN(id,o){CH[id]=o}
+// 사건의 연결 고리 — 파트 1 (1~5장: cake, window, crown, star, bell)
+
+// ───────── 1장 cake ─────────
+CHAIN("cake",{nodes:[
+ {who:"thing",kind:"chance",did:"누군가 우표를 뜯다가 나비의 초대장이 우체통 틈에 끼었다",so:"그 바람에 나비는 자기만 초대받지 못한 줄 알았다"},
+ {who:"grandma",t:"오후 3:00",kind:"victim",did:"케이크가 식으라고 창문을 조금 열고 걸쇠는 안 걸었다",so:"그래서 높은 창문이 드나들 수 있는 길이 되었다"},
+ {who:"bori",t:"오후 3:00",kind:"side",did:"부엌 구석에서 일주일째 몰래 먹던 꿀을 또 퍼먹었다",so:"그래서 창문으로 뛰어나간 하얀 그림자를 보고도 입을 다물었다"},
+ {who:"yeoni",t:"오후 3:00",kind:"cover",did:"할머니 생신 선물을 창밖 덤불에 숨기고 엎드려 있었다",so:"창문 바로 아래였지만 해를 등진 그림자만 봤고, 비밀이라 말도 못 했다"},
+ {who:"nabi",t:"오후 3:25",kind:"culprit",core:true,did:"열린 창문으로 뛰어들어 케이크 절반을 들고 나왔다",so:"창틀에 생크림과 하얀 털, 끊어진 방울 고리 조각이 남았다"},
+ {who:"tori",t:"오후 3:30",kind:"mistake",did:"당근 '큰형님'과 씨름하느라 방울 소리만 듣고 고개를 못 들었다",so:"번쩍이는 창문을 닫힌 줄 안 데다 하얀 털까지 겹쳐 토리가 의심받았다"}
+],end:"케이크는 나비가 먹었지만, 그 마음을 만든 건 우체통 틈에 낀 초대장 한 장이었어.",who_end:"det1"});
+
+// ───────── 2장 window ─────────
+CHAIN("window",{nodes:[
+ {who:"ttadak",t:"오후 1:40",kind:"side",did:"출입 금지 경고를 열세 번째로 어기고 창틀을 두드렸다",so:"그 콕콕 자국 때문에 사서 선생님이 따닥이를 제일 의심했다"},
+ {who:"kkwak",t:"오후 1:40",kind:"side",did:"강습비를 받아 둔 채 창가에서 수영 그림책으로 벼락치기했다",so:"그래서 쨍그랑 소리에 책 뒤로 숨는 바람에 범인을 못 봤다"},
+ {who:"bori",t:"오후 2:00",kind:"culprit",core:true,did:"운동장에서 새 공을 힘껏 차 40걸음 밖 창문을 깼다",so:"그래서 유리가 안쪽으로 쏟아지고 벽시계가 2시에 멈췄다"},
+ {who:"thing",t:"오후 2:00",kind:"chance",did:"깨진 유리에 햇빛이 번쩍여 창가 도토의 눈이 부셨다",so:"그 바람에 바로 옆에서도 멀어지는 발소리만 들렸다"},
+ {who:"bori",t:"오후 2:01",kind:"culprit",did:"혼날까 무서워 공을 덤불에 숨기고 운동장으로 도망쳤다",so:"풀린 끈이 질질 끌려 창문 앞부터 운동장까지 자국이 남았다"},
+ {who:"kongi",t:"오후 2:30",kind:"mistake",did:"낮잠에서 늦게 깨 달려와 배꼽시계대로 2시 반이라고 했다",so:"유리를 치우다 털에 조각까지 묻어 콩이가 의심받았다"}
+],end:"공은 한 번 찼을 뿐인데, 범인은 덤불과 낮잠과 그림책 뒤에 한참 숨어 있었다.",who_end:"det0"});
+
+// ───────── 3장 crown ─────────
+CHAIN("crown",{nodes:[
+ {who:"buri",t:"공연 1시간 전",kind:"culprit",did:"늘 신하 역할인 소품 담당이 상자 속 왕관을 봤다",so:"그래서 딱 한 번만 왕이 되어 보고 싶어졌다"},
+ {who:"tori",t:"공연 50분 전",kind:"chance",did:"무대가 떨려 '용감이'를 쥐고 커튼 뒤에 숨어 울었다",so:"리허설에서 사라져 의심받았지만, 분장실로 가는 누군가를 봤다"},
+ {who:"buri",t:"공연 48분 전",kind:"culprit",core:true,did:"왕관을 안고 분장실로 들어가 거울 앞에서 써 봤다",so:"거울 앞 반짝이 가루 속에 갈색 깃털 하나가 떨어졌다"},
+ {who:"yeoni",t:"공연 45분 전",kind:"mistake",did:"귀마개를 끼고 대사 한 줄마다 털실 한 코씩 떴다",so:"그 바람에 같은 분장실에 들어온 부리를 전혀 몰랐다"},
+ {who:"thing",kind:"chance",did:"소품실 창틀에 까만 깃털과 반짝이 단추가 끼어 있었다",so:"그래서 밖에서 누가 훔쳐 간 것처럼 보였다"},
+ {who:"buri",t:"공연 40분 전",kind:"culprit",did:"왕관을 가방에 숨기고 '나비가 가져갔다'고 말했다",so:"그래서 무대를 떠난 적 없는 왕 역할 나비에게 의심이 쏠렸다"}
+],end:"부리는 딱 한 번 왕이 되고 싶었고, 귀마개와 눈물과 까만 깃털이 그 10분을 가려 줬어.",who_end:"det1"});
+
+// ───────── 4장 star ─────────
+CHAIN("star",{nodes:[
+ {who:"karo",t:"어제",kind:"culprit",did:"'등불이 꺼졌나요?' 램프 전단지를 미리 찍어 두었다",so:"그래서 등불이 꺼지는 건 처음부터 짜인 일이었다"},
+ {who:"owlgp",t:"낮",kind:"victim",did:"등불 지킴이 마지막 날, 낮에 등불을 정성껏 닦아 두었다",so:"그래서 불이 안 켜지자 자기 손부터 탓하게 됐다"},
+ {who:"bori",t:"저녁 6:45",kind:"side",did:"곰은 사다리 금지인데 몰래 깃발을 달다 발판을 부러뜨렸다",so:"그 바람에 사다리길에 남아 6시 50분 언덕에 오르는 까로를 봤다"},
+ {who:"karo",t:"저녁 6:50",kind:"culprit",core:true,did:"'등불 점검'이라며 올라가 별빛 돌을 가게 유리돌로 바꿨다",so:"돌은 빛만 잃은 듯 보였고, 진짜는 소나무 둥지로 사라졌다"},
+ {who:"kongi",t:"저녁 6:57",kind:"mistake",did:"어둠 속 까만 날개를 부엉이 할아버지로 잘못 봤다",so:"그 바람에 의심이 할아버지에게 쏠렸다"},
+ {who:"owlgp",t:"저녁 7:05",kind:"mistake",did:"불이 안 켜지자 허겁지겁 언덕에 올랐다가 안경집을 흘렸다",so:"망가뜨린 줄 알고 집에 있었다고 숨겨서 누명이 더 굳어졌다"}
+],end:"까로는 돌 하나를 바꿨을 뿐인데, 그 밤엔 저마다의 비밀이 등불보다 먼저 켜져 있었다.",who_end:"det0"});
+
+// ───────── 5장 bell ─────────
+CHAIN("bell",{nodes:[
+ {who:"bami",t:"열흘 전",kind:"cover",did:"지붕에서 망토 둘의 '보름밤에 추를 가져간다'는 말을 들었다",so:"어른들은 안 믿을 거라 여겨 아무에게도 말하지 않았다"},
+ {who:"tok",t:"사흘 전",kind:"cover",did:"밤이 부탁으로 은칠한 쇠추를 만들어 진짜와 바꿔 걸었다",so:"그래서 범인이 노린 추는 그때부터 이미 가짜였다"},
+ {who:"ppul",t:"밤 9:30",kind:"side",did:"자기 얼굴 기념우표에 넘어가 배달부에게 지하 열쇠를 내줬다",so:"그 바람에 범인 손에 열쇠가 갔고, 촌장은 망신이 두려워 숨겼다"},
+ {who:"tok",t:"밤 10:00",kind:"mistake",did:"한 시간 빠른 상자 시계 탓에 마지막 종을 11시로 적었다",so:"그 바람에 종이 언제 멎었는지 한동안 엇갈렸다"},
+ {who:"sling",t:"밤 10:10",kind:"culprit",core:true,did:"배달을 핑계로 종탑 사다리를 올라 종줄을 끊고 추를 챙겼다",so:"그래서 종은 멎었지만, 손에 넣은 추는 가짜였다"},
+ {who:"sling",kind:"culprit",did:"'— 밤' 서명이 든 편지를 내밀며 밤이를 범인으로 몰았다",so:"밤이가 끝까지 입을 다물었던 탓에 한동안 그럴듯해 보였다"}
+],end:"종을 멎게 한 건 칼 한 자루였지만, 진짜 추는 어른을 못 믿은 아이가 먼저 지켜 두었어.",who_end:"det1"});
+
+// CHAIN p2: 06 dark, 07 museum, 08 cart, 09 glove, 10 festival
+// 기준: canon.txt 해답 + 각 장 TIMELINE/RECON, 거짓말 이유는 lie_out/p2.js(최신) 기준
+
+// ===== 06 dark =====
+CHAIN("dark",{nodes:[
+ {who:"owlgp",t:"30년 전",kind:"victim",did:"언덕에 숨어든 어린 스라소니를 잡지 않고 등불을 켜 주었다",so:"그 아이가 자라, 30년 뒤 그 등불 앞으로 돌아왔다"},
+ {who:"buri",t:"저녁 7:30",kind:"side",did:"곰 선생님 열쇠를 몰래 빌려 기록실에서 옛 사건을 베꼈다",so:"열쇠 걸이 자리까지 적힌 수첩이 기록실 선반에 남았다"},
+ {who:"luka",t:"저녁 7:40",kind:"culprit",core:true,did:"기록실에서 부리의 탐정 수첩을 몰래 훔쳐보았다",so:"그래서 사무소 열쇠 걸이 자리를 알아냈다"},
+ {who:"thing",t:"밤 8:00",kind:"chance",did:"탐정 사무소 문은 잠겨 있지 않았다",so:"그래서 루카는 손님처럼 문으로 들어가 흔적을 남기지 않았다"},
+ {who:"luka",t:"밤 8:00",kind:"culprit",core:true,did:"열쇠를 가져가고 벽에 발톱 모양 잉크 도장을 찍었다",so:"그래서 마을은 까로가 열쇠를 가져갔다고 믿었다"},
+ {who:"kongi",t:"밤 8:00",kind:"mistake",did:"사무소 앞 잉크 냄새를 까로 아저씨 냄새로 짐작했다",so:"그 바람에 배달 중이던 까로에게 의심이 더 쏠렸다"},
+ {who:"luka",t:"밤 8:20",kind:"culprit",did:"등불을 끄고 열쇠를 숲의 작은 등불 안에 두고 갔다",so:"그래서 언덕은 어두워졌고, 발자국은 숲으로 이어졌다"}
+],end:"열쇠는 루카가 가져갔지만, 길은 부리의 수첩과 우리가 안 잠근 문이 열어 줬다.",who_end:"det0"});
+
+// ===== 07 museum =====
+CHAIN("museum",{nodes:[
+ {who:"momo",t:"저녁 7:00",kind:"culprit",core:true,did:"진짜 돌은 소포로 부치고 진열장엔 유리돌을 넣었다",so:"그래서 정전 전부터 진열장 속 돌은 가짜였다"},
+ {who:"owlgp",t:"저녁 7:00",kind:"mistake",did:"돌이 이상하게 가볍다고 느꼈지만 늙은 손을 탓했다",so:"그 바람에 가짜라는 걸 아무도 일찍 알아채지 못했다"},
+ {who:"yeoni",t:"밤 8:40",kind:"side",did:"손대면 안 되는 진열장 걸쇠에 털실을 감아 치수를 쟀다",so:"걸쇠의 주황 털실이 또 하나의 수상한 흔적이 되었다"},
+ {who:"kongi",t:"밤 8:45",kind:"mistake",did:"쿠키를 받으며 긴 바늘 9를 보고 9시라고 믿었다",so:"그 바람에 '정전 때 입구에 있었다'는 관장의 말에 증인이 생겼다"},
+ {who:"nero",t:"밤 8:50",kind:"side",did:"관장 허락 없이 이틀째 지붕에 머물며 경고 쪽지를 남겼다",so:"찢긴 'N' 쪽지가 범행 예고처럼 보였고, 그는 온 것조차 숨겼다"},
+ {who:"karo",t:"밤 8:55",kind:"side",did:"자루를 맡기고 단추 삯을 받는 몰래 배달을 나갔다",so:"그래서 9시에 가게에 없었고, 그걸 숨기느라 거짓말을 했다"},
+ {who:"momo",t:"밤 9:00",kind:"culprit",core:true,did:"차단기를 내리고 가짜를 치운 뒤 잘라 온 깃털을 놓았다",so:"까만 깃털 하나로 마을은 까로를 재판에 세웠다"}
+],end:"까로 아저씨를 피고석에 앉힌 건 깃털 하나가 아니라, 다들 숨긴 작은 비밀들이었어.",who_end:"det1"});
+
+// ===== 08 cart =====
+CHAIN("cart",{nodes:[
+ {who:"kongi",t:"밤 8:40쯤",kind:"mistake",did:"뭉치가 '지금 9시야, 기억해 둬' 하는 말을 그대로 믿었다",so:"그 바람에 뭉치에게 '9시에 벤치'라는 가짜 알리바이가 생겼다"},
+ {who:"mungchi",t:"밤 8:45",kind:"culprit",core:true,did:"창고 공구함에서 지렛대와 크랭크 손잡이, 축 기름을 챙겼다",so:"그래서 쐐기를 소리 없이 뽑을 준비가 끝났다"},
+ {who:"bori",t:"밤 8:45",kind:"side",did:"허락 없이 숨겨 둔 꿀단지를 저으러 창고에 다시 갔다",so:"범인과 부딪힐 뻔했지만, 몰래 간 게 들킬까 봐 말하지 못했다"},
+ {who:"ttadak",t:"밤 8:52",kind:"mistake",did:"축의 빈 소리를 알리려 바퀴살을 두드렸지만 말이 안 나왔다",so:"그 두드림 때문에 다들 따닥이 쐐기를 뺐다고 여겼다"},
+ {who:"mungchi",t:"밤 9:06",kind:"culprit",core:true,did:"마차 뒤에 웅크려 지렛대로 쐐기를 뽑았다",so:"마차가 굴러 도토를 쳤고, 그 틈에 까로를 때려 자루를 뺏었다"},
+ {who:"kongi",kind:"mistake",did:"시계를 못 봐서 두드리고 '바로' 굴렀다고 말했다",so:"그래서 12분의 빈틈이 지워지고, 마을은 따닥을 몰아세웠다"}
+],end:"마차는 9시 7분에 굴렀는데, 마을은 12분 전의 따닥 소리만 기억했다.",who_end:"det0"});
+
+// ===== 09 glove =====
+CHAIN("glove",{nodes:[
+ {who:"momo",t:"어제 낮",kind:"side",did:"휴관 중 몰래 문을 열고 별빛 돌 이야기를 다 해 주었다",so:"그래서 백 부인은 축제 전날 밤이 마지막 기회임을 알았다"},
+ {who:"madam",t:"밤 11:30",kind:"culprit",did:"창가에 제 옷 입힌 마네킹을 앉히고 뒷문으로 나갔다",so:"그래서 저택 창가에는 책 읽는 '부인'이 남았다"},
+ {who:"owlgp",t:"밤 11:40",kind:"mistake",did:"산책길에 본 창가의 마네킹을 백 부인으로 믿었다",so:"그 바람에 '문밖에 안 나갔다'는 부인의 말에 증인이 생겼다"},
+ {who:"madam",t:"밤 11:40",kind:"culprit",core:true,did:"저택 마차로 꽥순을 데려가고 말뚝에 쪽지를 꽂았다",so:"그래서 마을은 아이가 '하얀 장갑'에게 끌려갔다고만 알았다"},
+ {who:"nero",t:"밤 11:45",kind:"side",did:"산울타리를 뚫고 남의 정원까지 들어가 아이를 쫓았다",so:"남은 발자국 때문에 붙잡혔고, 담 넘은 일이 걸려 입을 닫았다"},
+ {who:"mungchi",t:"새벽",kind:"cover",did:"밤새 꽥순에게 쿠키와 담요를 날랐지만 입을 닫았다",so:"꽥순은 버텼지만, '우리 집 얘기'라 아무도 그 자리를 몰랐다"}
+],end:"할아버지는 창가의 인형을, 마을은 네로의 발자국을 믿었고, 부인은 그 틈으로 나갔어.",who_end:"det1"});
+
+// ===== 10 festival =====
+CHAIN("festival",{nodes:[
+ {who:"momo",t:"어제 낮",kind:"mistake",did:"마부 모자 손님에게 돌 옮기는 시각과 천 걷는 때를 알려 줬다",so:"그래서 실룩은 천 밑의 돌을 언제 노릴지 알았다"},
+ {who:"bori",t:"아침 8:10쯤",kind:"mistake",did:"집에 가다 마부의 시간 칸 빈 확인증에 발도장을 찍어 주었다",so:"그 바람에 실룩의 '9시 15분 마차 창고' 알리바이가 생겼다"},
+ {who:"siluk",t:"아침 9:14",kind:"culprit",core:true,did:"기름 손수레를 받침 앞에 대고 보자기째 돌을 실었다",so:"다들 위쪽 심지만 보고 있어서 아무도 눈치채지 못했다"},
+ {who:"mungchi",t:"아침 9:20",kind:"victim",did:"우체국에서 보낸 이 칸을 비운 편지 세 통을 부쳤다",so:"광장에 없었지만, 아무에게도 말하지 말라고 해 그 사실이 묻혔다"},
+ {who:"karo",t:"아침 9:20",kind:"cover",did:"'손님 비밀 보관' 약속을 지키려 뭉치를 못 봤다고 했다",so:"그 바람에 뭉치의 유일한 알리바이가 사라졌다"},
+ {who:"siluk",t:"아침 9:40",kind:"culprit",core:true,did:"흉내 낸 쪽지를 두고, 풀밭의 뭉치 장갑을 가리켰다",so:"'저기 하얀 거' 한마디에 모든 증거가 뭉치를 가리켰다"},
+ {who:"wanggu",t:"아침 9:40",kind:"mistake",did:"등불 그림자를 흑백 무늬로 보고 '범인의 아들'이라 외쳤다",so:"그래서 마을은 더 묻지 않고 뭉치를 창고에 가두었다"}
+],end:"돌은 손수레에 실려 나갔고, 뭉치의 진짜 알리바이는 우체국 창구에 묶여 있었다.",who_end:"det0"});
+
+// CHAIN p3: 11 snow, 12 clapper, 13 bureau, 14 lining, 15 kitchen
+// 기준: canon.txt 해답 + 각 장 RECON/TALK, 거짓말 이유는 lie_out/p3.js(최신) 기준, 15장은 arc4.md·mastermind.md(30년 전 축제 밤) 반영
+// 11~14장에는 할머니를 원인으로 쓰지 않음(관리국 편지까지만)
+
+// ===== 11 snow =====
+CHAIN("snow",{nodes:[
+ {who:"seori",t:"오후 4:30",kind:"culprit",did:"마구간에서 까로의 까만 깃털 한 가닥을 주워 두었다",so:"그 깃털은 5시 봉인 밀랍에 꽂혀 까로를 가리키게 됐다"},
+ {who:"seori",t:"오후 5:00",kind:"culprit",core:true,did:"무게를 잰다며 진짜 조각을 칠한 얼음과 바꿔 앉혔다",so:"그래서 등불은 두 시간 멀쩡해 보이다 녹아서 7시 20분에 꺼졌다"},
+ {who:"ubak",t:"저녁 6:30",kind:"cover",did:"선배 말대로 창밖도 옆자리도 안 보고 펜 소리만 냈다",so:"그래서 서리가 자리를 비운 걸 몰랐고, '계속 옆에 있었다'고 감쌌다"},
+ {who:"karo",t:"저녁 6:35",kind:"shy",did:"밤이 무서워 마차 담요 속에 숨고는 난롯가에 있었다고 했다",so:"그래서 알리바이가 없어 봉인의 까만 깃털 주인으로 몰렸다"},
+ {who:"nubi",t:"저녁 6:40",kind:"mistake",did:"창가 의자에 걸린 빈 코트를 앉아 있는 검사원으로 봤다",so:"그 바람에 서리가 여관 창가에 있었다는 증언이 생겼다"},
+ {who:"somi",t:"저녁 6:45",kind:"victim",did:"반짝이는 조각을 쫓아 광산 대피소 안에 몰래 들어갔다",so:"서리가 모르고 여관 삽으로 문을 괴는 바람에 안에 갇혔다"},
+ {who:"musoe",t:"저녁 6:50",kind:"side",did:"규칙을 어기고 솜이 우유를 데우러 등불 곁을 떴다",so:"그래서 등불이 흐려지는 동안 곁엔 아무도 없었고, 등불지기도 의심받았다"}
+],end:"얼음은 한 사람이 넣었지만, 녹는 두 시간은 펜 소리와 빈 코트와 담요가 지켜 줬다.",who_end:"det0"});
+
+// ===== 12 clapper =====
+CHAIN("clapper",{nodes:[
+ {who:"ppul",t:"사흘 전",kind:"culprit",did:"연설문 대필 비밀을 쥔 협박과 공로 훈장 약속 편지를 받았다",so:"그래서 촌장은 백 년 울린 종의 추를 넘기기로 했다"},
+ {who:"tok",t:"밤 9:00",kind:"cover",did:"촌장에게 메아리 상자를 빌려주고 '손님 비밀'로 꽉 지켰다",so:"그래서 회관에서 울린 연설이 녹음이란 걸 아무도 몰랐다"},
+ {who:"ppul",t:"밤 9:10",kind:"culprit",did:"기침 두 번까지 녹음한 상자를 회관 창턱에 올려 두었다",so:"9시 반부터 회관엔 촌장 없이 촌장 목소리만 남았다"},
+ {who:"seol",t:"밤 9:35",kind:"shy",did:"슬링을 만나러 종탑을 15분 비우고, 그 일을 숨겼다",so:"그 사이 종탑이 비었고, 종지기가 의심을 한 몸에 받았다"},
+ {who:"ppul",t:"밤 9:40",kind:"culprit",core:true,did:"목걸이 열쇠로 종탑에 올라 추를 빼고 깃털과 7쪽 쪽지를 남겼다",so:"의심은 추의 비밀을 아는 설이와 글씨 주인 밤이에게로 갔다"},
+ {who:"bami",t:"밤 9:50",kind:"mistake",did:"창밑에서 녹음된 연설을 듣고 촌장이 회관에 있다고 믿었다",so:"그 바람에 촌장의 알리바이를 밤이 입으로 말해 주게 됐다"},
+ {who:"ppul",t:"밤 9:55",kind:"culprit",did:"진짜 추는 초상화 뒤에 숨기고, 진열함의 가짜 추를 챙겼다",so:"'설이 둥지에서 찾았다'며 내밀 반격까지 준비됐다"}
+],end:"종은 촌장이 멈췄어. 근데 그 15분은 다들 꽉 물고 있던 비밀들이 같이 비워 줬어.",who_end:"det1"});
+
+// ===== 13 bureau =====
+CHAIN("bureau",{nodes:[
+ {who:"eunho",t:"사흘 전",kind:"culprit",did:"'창구를 정리하라'는 편지에 30년 치 편지를 태우기로 했다",so:"그래서 가게에 도둑이 든 것처럼 꾸밀 밤이 정해졌다"},
+ {who:"mungchi",t:"저녁 6:40",kind:"shy",did:"엄마 담요값을 마련하려 할머니 브로치를 이 가게에 팔았다",so:"그 브로치가 금고 앞에 놓였고, 판 걸 숨긴 탓에 뭉치가 몰렸다"},
+ {who:"guseul",t:"저녁 7:00",kind:"cover",did:"일찍 가라는 말에 나가며 난로 옆 편지 더미를 못 본 척했다",so:"그래서 '편지 한 장 손대지 않았다'는 사장 말이 한동안 버텼다"},
+ {who:"piko",t:"저녁 7:00",kind:"side",did:"문 닫은 가게에 몰래 들어가 금고 문 거울에 얼굴을 비춰 봤다",so:"편지를 안고 난로로 가는 사장이 비쳤지만, 몰래 들어온 탓에 숨겼다"},
+ {who:"eunho",t:"저녁 7:35",kind:"culprit",core:true,did:"편지를 태우고 금고를 헤집은 뒤 브로치를 금고 앞에 떨어뜨렸다",so:"그래서 '검은 망토 도둑'과 판다 소년이 범인처럼 보였다"},
+ {who:"lamplighter",t:"저녁 7:52",kind:"chance",did:"연기 속 계단에서 미끄러진 구슬을 업고 나오느라 점등을 멈췄다",so:"그래서 광장 가로등이 40분 늦은 8시 20분에 켜졌다"},
+ {who:"badook",t:"밤 8:20",kind:"mistake",did:"가로등이 켜질 때 들어온 사장을 '7시 반'으로 기억했다",so:"그 바람에 어둠 속에서 불만 기다린 사장에게 알리바이가 생겼다"}
+],end:"은호는 가로등을 시계로 썼다. 그 가로등은 아이를 업고 나오느라 40분 늦었다.",who_end:"det0"});
+
+// ===== 14 lining =====
+CHAIN("lining",{nodes:[
+ {who:"sling",t:"밤 9:50",kind:"culprit",did:"대합실 난로에 큰 주전자를 올려 두고 몰래 나갔다",so:"끓어 넘치는 주전자가 밤새 '드르렁' 소리를 냈다"},
+ {who:"ttadak",t:"밤 10:20",kind:"mistake",did:"대합실 창문만 두드리고 안은 한 번도 들여다보지 않았다",so:"그 바람에 주전자 소리가 슬링의 코 고는 소리가 됐다"},
+ {who:"sling",t:"밤 10:20",kind:"culprit",core:true,did:"안감까지 새까만 망토를 두르고 할아버지 앞에 튀어나갔다",so:"할아버지가 돌계단에서 넘어지며 '검은 망토'라는 말만 남겼다"},
+ {who:"wanggu",t:"밤 10:25",kind:"side",did:"거꾸로 끼운 심지를 몰래 고치러 왔다가 망토를 보고 달아났다",so:"그래서 망토가 간 길을 본 목격자가 영감을 두고 입을 닫았다"},
+ {who:"sling",t:"밤 10:35",kind:"culprit",core:true,did:"빈 작은 등불의 편지함을 꺼내고 문설주에 발톱 도장을 찍었다",so:"그래서 마을은 네로를 다시 사무소 지하 철창에 넣었다"},
+ {who:"nero",kind:"shy",did:"망토는 벗지 않는다며 30년 동안 안감을 보이지 않았다",so:"그래서 '그 검은 망토'가 네로라는 의심이 쉽게 풀리지 않았다"},
+ {who:"tori",t:"새벽 6:30",kind:"side",did:"사탕을 받는 비밀 심부름으로 우체통 소포를 헛간까지 날라 왔다",so:"그래서 소포가 마을 안으로 옮겨지는 길이 아무도 모르게 열려 있었다"}
+],end:"망토 한 벌이 할아버지를 넘어뜨렸고, 안을 안 들여다본 눈들이 그걸 네로 탓으로 만들었어.",who_end:"det1"});
+
+// ===== 15 kitchen (30년 전 축제 밤 ~ 동짓날) =====
+CHAIN("kitchen",{nodes:[
+ {who:"grandma",t:"30년 전 축제 밤",kind:"culprit",did:"순찰 짝의 2번 열쇠로 언덕 등불을 열고 별빛 돌을 들어냈다",so:"등불이 꺼져, 고개를 넘던 아들 초롱이 마을이 자기를 잊은 줄 알고 돌아섰다"},
+ {who:"owlgp",t:"30년 전 그 밤",kind:"mistake",did:"열쇠를 풀숲에서 잃었다는 짝의 말을 믿고 자물쇠를 바꾸지 않았다",so:"그래서 30년 뒤에도 2번 열쇠로 같은 자물쇠가 열렸다"},
+ {who:"thing",t:"30년 전",kind:"chance",did:"초롱의 편지가 이름 없는 마을 우체국이 닫히며 부쳐지지 못했다",so:"그래서 할머니는 아들이 왔다 돌아간 줄 모르고 30년을 원망했다"},
+ {who:"tori",t:"며칠 전 새벽",kind:"shy",did:"심부름 새벽, 할머니 부엌 창문에 켜진 불을 못 본 척했다",so:"그래서 쪽지 주인을 눈치챈 아이가 끝까지 입을 닫았다"},
+ {who:"tori",t:"오후 3:00",kind:"cover",did:"'팥죽 나르게' 썰매를 빌려 간 할머니를 모르는 척 감쌌다",so:"그래서 언덕 뒷길 썰매 자국의 주인이 한동안 가려졌다"},
+ {who:"grandma",t:"오후 4:25",kind:"culprit",core:true,did:"잠든 할아버지 곁을 빠져나와 2번 열쇠로 돌을 꺼냈다",so:"자물쇠는 다시 잠긴 채, 돌은 썰매에 실려 부엌 창가로 갔다"},
+ {who:"grandma",t:"오후 4:25",kind:"culprit",core:true,did:"네로가 돌려준 목도리에서 털을 뜯어 자물쇠 고리에 걸었다",so:"그래서 마을은 30년 전처럼 이번에도 스라소니를 범인으로 정했다"},
+ {who:"owlgp",t:"오후 4:52",kind:"mistake",did:"잠에서 깨, '나는 계속 있었지'라는 짝의 말을 그대로 믿었다",so:"그 바람에 할머니에게 오후 내내 곁에 있었다는 증인이 생겼다"}
+],end:"등불은 할머니 손이 두 번 껐다. 그 사이 30년은 닿지 못한 편지 한 통이 이었다.",who_end:"det0"});
+
+ var KL={culprit:["범인","#D23A34"],side:["딴 잘못","#E8862A"],cover:["감싸기","#7A5BD6"],mistake:["착각","#3A7BD5"],chance:["우연","#7A8099"],victim:["사정","#2E9E6A"]};
+ var THING='<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="#EDE6CF" stroke="#1B2447" stroke-width="2.5"/><path d="M14 22a6 6 0 1 1 12 0" fill="none" stroke="#1B2447" stroke-width="2.5"/><circle cx="20" cy="27" r="2" fill="#1B2447"/></svg>';
+ function face2(w){return w&&w!=="thing"&&CAST[w]?pf(w,""):THING}
+ function show(c,done,again){var C=CH[c.id];if(!C||!C.nodes||!C.nodes.length){done&&done();return}
+  var el=document.createElement("div");el.className="chn";document.body.appendChild(el);var n=0;
+  function card(nd,i){var k=KL[nd.kind]||KL.chance,nm=nd.who&&nd.who!=="thing"&&CAST[nd.who]?CAST[nd.who].name:"";
+   return '<div class="chc'+(nd.core?' core':'')+'" style="--kc:'+k[1]+'"><div class="chf">'+face2(nd.who)+'</div><div class="cht"><div class="chm">'+(nd.t?'<span class="chtime">'+esc(nd.t)+'</span>':'')+'<span class="chk">'+k[0]+'</span>'+(nm?'<b>'+esc(nm)+'</b>':'')+'</div><p class="chd">'+esc(pname(nd.did||""))+'</p><p class="chs">'+esc(pname(nd.so||""))+'</p></div></div>'+(i<C.nodes.length-1?'<div class="cha" aria-hidden="true"></div>':'')}
+  function draw(){var h='<div class="chn-in"><div class="chn-top"><small>사건의 연결 고리</small><b>'+esc(c.title)+'</b><button class="chn-skip" id="chskip">'+(n>=C.nodes.length?'닫기':'건너뛰기')+'</button></div><p class="chn-sub">한 사람이 일으킨 사건처럼 보여도, 여러 사람의 작은 선택이 겹쳐 있었어요.</p><div class="chn-list">';
+   for(var i=0;i<Math.min(n,C.nodes.length);i++)h+=card(C.nodes[i],i);
+   if(n>=C.nodes.length&&C.end)h+='<div class="chend"><div class="chf">'+pf(C.who_end||"det1","")+'</div><p>"'+esc(pname(C.end))+'"</p></div>';
+   h+='</div><button class="btn red wide" id="chnext">'+(n>=C.nodes.length?'계속':n===0?'처음부터 보기':'다음 고리')+'</button></div>';
+   el.innerHTML=h;
+   var l=el.querySelector(".chn-list .chc:last-of-type, .chend");var last=el.querySelectorAll(".chc,.chend");if(last.length){var z=last[last.length-1];z.classList.add("fresh");try{z.scrollIntoView({block:"center",behavior:"smooth"})}catch(e){}}
+   el.querySelector("#chnext").onclick=function(){if(n>=C.nodes.length){fin();return}n++;try{SFX.page()}catch(e){}draw()};
+   el.querySelector("#chskip").onclick=function(){if(n<C.nodes.length){n=C.nodes.length;draw();return}fin()}}
+  function fin(){try{SFX.tap()}catch(e){}el.remove();done&&done()}
+  n=again?C.nodes.length:1;draw()}
+ window.__showChain=show;
+ var _rc=reconstruct;reconstruct=function(c,done){_rc(c,function(){show(c,done)})};
+ var _rr=renderResultScreen;renderResultScreen=function(c){var r=_rr.apply(this,arguments);try{if(CH[c.id]&&G&&G.result&&G.result.solved&&!document.getElementById("chagain")){var box=document.querySelector(".result");if(box){var b=document.createElement("button");b.className="btn ghost wide";b.id="chagain";b.textContent="사건의 연결 고리 다시 보기";b.style.marginTop="8px";b.onclick=function(){show(c,null,true)};box.appendChild(b)}}}catch(e){}return r};
+ var css=document.createElement("style");
+ css.textContent='.chn{position:fixed;inset:0;z-index:60;background:radial-gradient(ellipse at 50% 0%,#2A3570 0%,#121A40 60%,#0A0F26 100%);color:#fff;overflow:auto;display:flex;justify-content:center;padding:calc(12px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px));animation:fade .25s}'+
+ '.chn-in{width:100%;max-width:520px;display:flex;flex-direction:column;gap:10px}'+
+ '.chn-top{display:flex;align-items:center;gap:8px}.chn-top small{color:#FFD84D;font-size:12px;font-weight:800;letter-spacing:.06em}.chn-top b{flex:1;font-family:var(--display);font-weight:400;font-size:20px}'+
+ '.chn-skip{border:2px solid rgba(255,255,255,.5);background:transparent;color:#fff;border-radius:999px;padding:5px 12px;font:inherit;font-size:13px}'+
+ '.chn-sub{margin:0;font-size:13px;color:#C9D0EC;line-height:1.5}.chn-list{display:flex;flex-direction:column;align-items:stretch}'+
+ '.chc{display:flex;gap:10px;align-items:flex-start;background:#FFFCF3;color:#1B2447;border:3px solid #1B2447;border-left:8px solid var(--kc);border-radius:14px;padding:10px 12px;box-shadow:0 4px 0 #0A0F26}'+
+ '.chc.core{background:#FFE9E7;box-shadow:0 0 0 3px #D23A34,0 4px 0 #0A0F26}.chc.fresh,.chend.fresh{animation:chin .45s cubic-bezier(.2,1.4,.4,1)}@keyframes chin{from{opacity:0;transform:translateY(14px) scale(.96)}}'+
+ '.chf{flex:none;width:46px;height:46px}.chf svg{width:100%;height:100%}.cht{flex:1;min-width:0}'+
+ '.chm{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:3px}.chm b{font-size:14px}.chtime{font-size:11px;font-weight:800;background:#1B2447;color:#FFD84D;border-radius:999px;padding:1px 8px}.chk{font-size:11px;font-weight:800;color:#fff;background:var(--kc);border-radius:999px;padding:1px 8px}'+
+ '.chd{margin:0;font-size:15px;font-weight:700;line-height:1.45;word-break:keep-all}.chs{margin:4px 0 0;font-size:14px;line-height:1.45;color:#46507A;word-break:keep-all}.chs:before{content:"→ ";color:var(--kc);font-weight:800}'+
+ '.cha{height:22px;margin-left:30px;border-left:4px dotted rgba(255,216,77,.8)}'+
+ '.chend{display:flex;gap:10px;align-items:center;margin-top:12px;background:#FFD84D;color:#1B2447;border:3px solid #1B2447;border-radius:16px;padding:10px 14px;box-shadow:0 4px 0 #0A0F26}.chend p{margin:0;font-family:var(--display);font-size:17px;line-height:1.45;word-break:keep-all}'+
+ '@media (prefers-reduced-motion:reduce){.chc.fresh,.chend.fresh{animation:none}}';
+ document.head.appendChild(css);
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
