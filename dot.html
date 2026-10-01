@@ -23991,6 +23991,86 @@ REI2("kitchen",{
  if(CAST.rei){CAST.rei.animal="reicat";CAST.rei.color=FUR}
 })();
 
+/* v135: 15장 흑막 공개 — 토끼 할머니 변신 연출 + 악당 모습 (결판 동안) */
+(function(){
+ var O="#1A1424",FUR="#DCD3E2",SH="#B9ACC6",HOOD="#1B1626",HOOD2="#2E2440",LIN="#5B1A2E",WHITE="#F6F2FA",GLOW="#B07CFF";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ function clover(x,y,r){return '<g><circle cx="'+x+'" cy="'+(y-r)+'" r="'+r+'" fill="'+WHITE+'"/><circle cx="'+(x-r*.9)+'" cy="'+(y+r*.5)+'" r="'+r+'" fill="'+WHITE+'"/><circle cx="'+(x+r*.9)+'" cy="'+(y+r*.5)+'" r="'+r+'" fill="'+WHITE+'"/><circle cx="'+x+'" cy="'+y+'" r="'+(r*.55)+'" fill="#E8D86A"/></g>'}
+ function inner(mood){var g='';
+  // 보랏빛 기운
+  g+='<circle cx="50" cy="56" r="47" fill="'+GLOW+'" opacity=".22"/>';
+  // 두건 뒤판
+  g+='<path d="M12 100 Q8 54 22 36 Q50 14 78 36 Q92 54 88 100 Z" fill="'+HOOD+'" '+s+'/>';
+  // 귀 (두건을 뚫고)
+  g+='<g class="ears"><path d="M34 34 Q28 4 38 2 Q46 4 44 32 Z" fill="'+SH+'" '+s+'/><path d="M66 34 Q72 4 62 2 Q54 4 56 32 Z" fill="'+SH+'" '+s+'/><path d="M37 28 Q34 10 38 8 Q41 10 41 28 Z" fill="#7A3A5E"/><path d="M63 28 Q66 10 62 8 Q59 10 59 28 Z" fill="#7A3A5E"/></g>';
+  // 얼굴
+  g+='<ellipse cx="50" cy="58" rx="26" ry="25" fill="'+FUR+'" '+s+'/><path d="M28 64 Q50 86 72 64 Q70 80 50 83 Q30 80 28 64 Z" fill="'+SH+'" opacity=".55"/>';
+  // 두건 앞 테
+  g+='<path d="M20 52 Q24 30 50 28 Q76 30 80 52" fill="none" stroke="'+HOOD+'" stroke-width="9" stroke-linecap="round"/><path d="M22 50 Q26 33 50 31 Q74 33 78 50" fill="none" stroke="'+HOOD2+'" stroke-width="2"/>';
+  // 눈썹 (날카롭게)
+  g+='<path d="M31 44 L45 49 M69 44 L55 49" stroke="'+O+'" stroke-width="3.6" stroke-linecap="round"/>';
+  // 안경: 빛이 번쩍 반사되어 눈이 안 보인다 (놀라면 금이 간다)
+  var lens=has(mood,"nervous")?'#CFE0F2':'#EEF6FF';
+  g+='<g class="eyes"><circle cx="39" cy="56" r="8.5" fill="'+lens+'" stroke="'+O+'" stroke-width="3"/><circle cx="61" cy="56" r="8.5" fill="'+lens+'" stroke="'+O+'" stroke-width="3"/><path d="M47.5 56 H52.5" stroke="'+O+'" stroke-width="3"/>'
+   +'<path d="M34 59 L42 51 M56 59 L64 51" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>'
+   +(has(mood,"nervous")?'<circle cx="39" cy="57" r="2" fill="'+O+'"/><circle cx="61" cy="57" r="2" fill="'+O+'"/>':'<circle cx="41" cy="58" r="1.6" fill="#E23A5A"/><circle cx="63" cy="58" r="1.6" fill="#E23A5A"/>')
+   +(has(mood,"shock")?'<path d="M56 50 L60 56 L57 60 L63 64" fill="none" stroke="'+O+'" stroke-width="1.6"/>':'')+'</g>';
+  // 코와 얇은 미소, 앞니 두 개
+  g+='<ellipse cx="50" cy="66" rx="3" ry="2.2" fill="#C86A86"/>';
+  if(has(mood,"nervous")||has(mood,"shock"))g+='<path d="M43 72 Q50 69 57 72" fill="none" stroke="'+O+'" stroke-width="2.4" stroke-linecap="round"/>';
+  else g+='<path d="M40 70 Q50 77 61 69" fill="none" stroke="'+O+'" stroke-width="2.4" stroke-linecap="round"/><rect x="47.4" y="72" width="2.6" height="3.4" fill="'+WHITE+'" stroke="'+O+'" stroke-width="1"/><rect x="50.2" y="72" width="2.6" height="3.4" fill="'+WHITE+'" stroke="'+O+'" stroke-width="1"/>';
+  // 망토 안감: 검붉은 천에 흰 토끼풀 꽃 자수
+  g+='<path d="M24 100 Q30 86 40 84 L50 92 L60 84 Q70 86 76 100 Z" fill="'+LIN+'" '+s+'/>'+clover(36,94,2.6)+clover(64,94,2.6)+clover(50,99,2.2);
+  if(has(mood,"nervous"))g+='<path d="M80 40 q4 6 0 9 q-4-3 0-9z" fill="#8FD0FF" stroke="'+O+'" stroke-width="1.4"/>';
+  return g}
+ function on(){try{if(window.__dalOff)return false;if(window.__dalForce)return true;var c=G&&CASES[G.ci],B=G&&G.battle;return !!(c&&c.id==="kitchen"&&B&&B.phase==="fight"&&B.dal&&!B.bk2)}catch(e){return false}}
+ window.__dalOn=on;
+ var GC=CAST.grandma&&CAST.grandma.color;
+ var _face=face;face=function(animal,color,cls){if(animal==="rabbit"&&color===GC&&on())return '<svg class="'+(cls||"")+'" viewBox="0 0 100 100" aria-hidden="true">'+inner(arguments[3]||"")+'</svg>';return _face.apply(this,arguments)};
+ // 이름표도 바뀐다
+ try{var gp=CAST.grandma,nm0=gp.name;Object.defineProperty(gp,"name",{configurable:true,enumerable:true,get:function(){return on()?"관리국의 주인":nm0},set:function(v){nm0=v}})}catch(e){}
+ // 악당 테마
+ try{PAT.dal={bpm:96,lead:"sawtooth",lv:.2,mel:[57,null,null,60,null,null,56,null,57,null,null,null,63,null,62,null,57,null,null,60,null,null,64,null,63,null,61,null,60,null,null,null],bass:[33,33,32,32,30,30,29,28],dr:"k...s..kk...s...",dv:.5,hats:false}}catch(e){}
+ var _bm=window.__bmode;if(_bm)window.__bmode=function(B,c){var m=_bm.apply(this,arguments);if(on()&&(m==="battle"||m==="battle2"))return "dal";return m};
+ // 변신 연출
+ var css=document.createElement("style");
+ css.textContent=
+ '.dalx{position:fixed;inset:0;z-index:78;background:#07050E;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;overflow:hidden;padding:0 16px;cursor:pointer}'+
+ '.dalx .dv{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(176,124,255,.0),rgba(7,5,14,1) 70%);transition:background 1.2s}'+
+ '.dalx.p2 .dv{background:radial-gradient(circle at 50% 42%,rgba(176,124,255,.45),rgba(30,6,30,.95) 55%,#07050E 80%)}'+
+ '.dalx .stage{position:relative;width:min(64vw,290px);aspect-ratio:1;z-index:1}.dalx .stage>div{position:absolute;inset:0;transition:opacity .9s,transform .9s,filter .9s}.dalx .stage svg{width:100%;height:100%}'+
+ '.dalx .dfb{opacity:0;transform:scale(.92)}.dalx.p2 .dfa{opacity:0;transform:scale(1.08);filter:brightness(3) blur(2px)}.dalx.p2 .dfb{opacity:1;transform:scale(1)}'+
+ '.dalx.p1 .dfa{animation:dalsh .09s linear infinite}@keyframes dalsh{0%{transform:translate(1px,0)}50%{transform:translate(-2px,1px)}100%{transform:translate(1px,-1px)}}'+
+ '.dalx .flashw{position:absolute;inset:0;background:#FFFFFF;opacity:0;z-index:3;pointer-events:none}.dalx.p2 .flashw{animation:dalfl .7s ease-out}@keyframes dalfl{0%{opacity:.95}100%{opacity:0}}'+
+ '.dalx .ring{position:absolute;left:50%;top:42%;width:40px;height:40px;margin:-20px;border-radius:50%;border:4px solid #B07CFF;opacity:0;z-index:0}.dalx.p2 .ring{animation:dalring 1.4s ease-out forwards}.dalx.p2 .ring.r2{animation-delay:.25s}@keyframes dalring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(14)}}'+
+ '.dalx .cap{position:relative;z-index:2;max-width:520px;width:100%;text-align:center;color:#F4F1E6;font:700 clamp(18px,5vw,24px)/1.45 var(--display,Jua),sans-serif;min-height:3em}'+
+ '.dalx .cap small{display:block;font-size:12px;letter-spacing:.2em;color:#C9A2FF;margin-bottom:4px}'+
+ '.dalx .ttl{position:relative;z-index:2;font:400 clamp(26px,8vw,40px)/1.1 var(--display,Jua),sans-serif;color:#E8D9FF;text-shadow:0 0 18px #B07CFF,3px 3px 0 #2A0E2E;letter-spacing:.06em;opacity:0;transform:translateY(8px);transition:opacity .6s,transform .6s}.dalx.p3 .ttl{opacity:1;transform:none}'+
+ '.dalx .pz{position:absolute;left:50%;top:42%;width:22px;height:22px;margin:-11px;z-index:2;opacity:0}.dalx.p2 .pz{animation:dalpz 2.2s ease-out forwards;animation-delay:var(--d)}@keyframes dalpz{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.4)}15%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1)}}'+
+ '.dalx.out{animation:fadeout .4s forwards}'+
+ '@media (prefers-reduced-motion:reduce){.dalx *{animation:none!important;transition:none!important}}';
+ document.head.appendChild(css);
+ function cin(cb){var d=document.createElement("div");d.className="dalx";
+  var pz='';for(var i=0;i<14;i++){var a=i/14*Math.PI*2;pz+='<div class="pz" style="--x:'+Math.round(Math.cos(a)*170)+'px;--y:'+Math.round(Math.sin(a)*150)+'px;--r:'+(i%2?240:-240)+'deg;--d:'+(i*.04).toFixed(2)+'s"><svg viewBox="0 0 24 24" aria-hidden="true">'+clover(12,13,4.2)+'</svg></div>'}
+  window.__dalOff=true;var A=pf("grandma","happy");window.__dalOff=false;window.__dalForce=true;var Bf=pf("grandma","");
+  d.innerHTML='<div class="dv"></div><div class="ring"></div><div class="ring r2"></div>'+pz+'<div class="stage"><div class="dfa">'+A+'</div><div class="dfb">'+Bf+'</div></div><div class="ttl">등불 관리국</div><div class="cap"><small>토끼 할머니</small><span></span></div><div class="flashw"></div>';
+  document.body.appendChild(d);var cap=d.querySelector(".cap span"),nmEl=d.querySelector(".cap small");
+  var steps=[
+   function(){nmEl.textContent="토끼 할머니";cap.textContent="…아이고. 우리 아가들, 거기까지 와 버렸구나.";try{bgm(null)}catch(e){}},
+   function(){d.classList.add("p1");cap.textContent="그래. 케이크는 이제 식었단다.";try{SFX.hush&&SFX.hush()}catch(e){}},
+   function(){d.classList.add("p2");try{SFX.crash()}catch(e){}try{quake()}catch(e){}nmEl.textContent="관리국의 주인";cap.textContent="…빛은, 누구의 것입니까?"},
+   function(){d.classList.add("p3");cap.textContent="서른 해 동안 이 질문을 편지에 적어 보냈지요. 이제 대답을 들어 볼까요, 탐정 양반들.";try{bgm("dal")}catch(e){}}];
+  var i=0,tm=null,fin=false;
+  function next(){clearTimeout(tm);if(i>=steps.length){end();return}steps[i++]();tm=setTimeout(next,i===3?2600:2300)}
+  function end(){if(fin)return;fin=true;clearTimeout(tm);d.classList.add("out");setTimeout(function(){d.remove();window.__dalForce=false;cb()},380)}
+  d.onclick=function(){next()};next()}
+ var _bn=banner;banner=function(text,sub){var c=G&&CASES[G.ci],B=G&&G.battle;
+  if(text==="반론 개시"&&c&&c.id==="kitchen"&&B&&B.phase==="fight"&&!B.dal){var self=this,args=arguments;B.dal=1;try{saveProg()}catch(e){}
+   return new Promise(function(res){cin(function(){render();_bn.call(self,text,CAST.grandma.name+"의 반론").then(res)})})}
+  return _bn.apply(this,arguments)};
+})();
+
 (function(){window.__FIXQA=[];function FIX(id,a,b){window.__FIXQA.push({id:id,a:a,b:b})}
 // 2장 window
 FIX("window","…들켰네. 콩이 코 앞에서 알리바이는 무의미하구나.","…아이스크림은 들켰네. 콩이 코 앞에서 알리바이는 무의미하구나.");   // 따닥 대사가 끼어 '들켰네'가 앞 대사(두드리기)와 이어지지 않음 → 무엇이 들켰는지 밝힘
