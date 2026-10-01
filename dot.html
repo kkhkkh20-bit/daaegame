@@ -22558,7 +22558,12 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
    글꼴: Galmuri (SIL Open Font License 1.1, https://galmuri.quiple.dev) */
 (function(){
  document.body.classList.add("dotmode");
+ var STYLE="toon";try{STYLE=localStorage.getItem("daae:dotstyle")||"toon"}catch(e){}
+ if(STYLE!=="mc")STYLE="toon";document.body.classList.add("ds-"+STYLE);
  // ---- 1) 그림 픽셀화 ----
+ var RULES_MC=[
+  {vb:"0 0 360 200",w:128,h:71},{vb:"0 0 360 160",w:128,h:57},{vb:"0 0 360 640",w:72,h:128},{vb:"0 0 320 200",w:120,h:75},{vb:"0 0 300 180",w:110,h:66},
+  {vb:"0 0 100 100",w:24,h:24,sprite:1,minpx:26},{vb:"-8 -4 116 164",w:26,h:37,sprite:1},{vb:"0 0 40 40",w:16,h:16,sprite:1,minpx:22},{vb:"0 0 64 64",w:16,h:16,sprite:1,minpx:22},{vb:"0 0 60 60",w:16,h:16,sprite:1,minpx:22}];
  var RULES=[
   {vb:"0 0 360 200",w:176,h:98,ink:84},
   {vb:"0 0 360 160",w:176,h:78,ink:84},
@@ -22579,7 +22584,24 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  var NC={};
  function near(r,g,b){var k=(r>>3)<<10|(g>>3)<<5|(b>>3);var v=NC[k];if(v!=null)return v;var bi=0,bd=1e12;
   for(var i=0;i<PAL.length;i++){var c=PAL[i],rm=(r+c[0])/2,dr=r-c[0],dg=g-c[1],db=b-c[2];var d=(2+rm/256)*dr*dr+4*dg*dg+(2+(255-rm)/256)*db*db;if(d<bd){bd=d;bi=i}}NC[k]=bi;return bi}
+ if(STYLE==="mc")RULES=RULES_MC;
  var cache={},pend={},K=4;
+ // 마인크래프트풍: 색 단계를 줄이고, 칸마다 질감 노이즈, 스프라이트는 아래·오른쪽 면을 어둡게(블록 입체감)
+ function mc(img,R){var W=R.w,H=R.h,HW=W*K,HH=H*K;
+  var hc=document.createElement("canvas");hc.width=HW;hc.height=HH;var hx=hc.getContext("2d");hx.imageSmoothingEnabled=true;hx.drawImage(img,0,0,HW,HH);
+  var hd=hx.getImageData(0,0,HW,HH).data,lo=new Int32Array(W*H);
+  for(var y=0;y<H;y++)for(var x=0;x<W;x++){var f={},tr=0,best=-1,bc=0;
+   for(var yy=0;yy<K;yy++)for(var xx=0;xx<K;xx++){var p=((y*K+yy)*HW+x*K+xx)*4;if(hd[p+3]<128){tr++;continue}
+    var key=((hd[p]>>5)<<6)|((hd[p+1]>>5)<<3)|(hd[p+2]>>5);f[key]=(f[key]||0)+1;if(f[key]>bc){bc=f[key];best=key}}
+   lo[y*W+x]=tr>K*K/2?-1:best}
+  function at(x,y){return x<0||y<0||x>=W||y>=H?-1:lo[y*W+x]}
+  var cv=document.createElement("canvas");cv.width=W;cv.height=H;var cx=cv.getContext("2d"),im=cx.createImageData(W,H),d=im.data;
+  for(var y2=0;y2<H;y2++)for(var x2=0;x2<W;x2++){var v=at(x2,y2),q=(y2*W+x2)*4;if(v<0){d[q+3]=0;continue}
+   var r=((v>>6)&7)*36+18,g=((v>>3)&7)*36+18,b=(v&7)*36+18;
+   var h=((x2*73856093)^(y2*19349663)^(v*83492791))>>>0,n=1+((h%13)-6)/100;
+   if(R.sprite){if(at(x2,y2+1)<0||at(x2+1,y2)<0)n*=.72;else if(at(x2,y2-1)<0||at(x2-1,y2)<0)n*=1.12}
+   d[q]=Math.min(255,r*n);d[q+1]=Math.min(255,g*n);d[q+2]=Math.min(255,b*n);d[q+3]=255}
+  cx.putImageData(im,0,0);return cv.toDataURL("image/png")}
  function hash(s){var h=5381,i=s.length;while(i)h=(h*33)^s.charCodeAt(--i);return (h>>>0).toString(36)+"_"+s.length}
  function ruleOf(svg){var vb=(svg.getAttribute("viewBox")||"").trim().replace(/\s+/g," ");for(var i=0;i<RULES.length;i++)if(RULES[i].vb===vb)return RULES[i];return null}
  function toon(img,R){var W=R.w,H=R.h,HW=W*K,HH=H*K;
@@ -22613,7 +22635,7 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
   if(pend[key]){pend[key].push(cb);return}pend[key]=[cb];
   var full=src.indexOf("xmlns=")<0?src.replace("<svg","<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\""):src;
   full=full.replace(/<svg([^>]*?)\swidth="[^"]*"/,"<svg$1").replace(/<svg([^>]*?)\sheight="[^"]*"/,"<svg$1").replace("<svg","<svg width=\""+R.w*K+"\" height=\""+R.h*K+"\"");
-  var img=new Image();img.onload=function(){var u=null;try{u=toon(img,R)}catch(e){}if(u)cache[key]=u;var q=pend[key];delete pend[key];q.forEach(function(f){f(u)})};
+  var img=new Image();img.onload=function(){var u=null;try{u=STYLE==="mc"?mc(img,R):toon(img,R)}catch(e){}if(u)cache[key]=u;var q=pend[key];delete pend[key];q.forEach(function(f){f(u)})};
   img.onerror=function(){var q=pend[key];delete pend[key];q.forEach(function(f){f(null)})};
   img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(full)}
  function apply(svg){if(svg.__dot||!svg.isConnected)return;var R=ruleOf(svg);if(!R)return;if(svg.closest(".rc-map,.nodot")||svg.querySelector("g[id],path[id],circle[id],rect[id],text[id],ellipse[id]")){svg.__dot=1;return}
@@ -22656,5 +22678,26 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  'body.dotmode .vtxt{font-size:16px!important}'+
  '@media (prefers-reduced-motion:reduce){body.dotmode:after{display:none}}';
  document.head.appendChild(css);
+ var css2=document.createElement("style");
+ css2.textContent=
+ 'body.dotmode.ds-mc:after{display:none}'+
+ 'body.dotmode.ds-mc{--gb-ink:#1E1E1E;--gb-line:#C6C6C6}'+
+ 'body.dotmode.ds-mc .btn,body.dotmode.ds-mc .vb,body.dotmode.ds-mc .ftile,body.dotmode.ds-mc .opt,body.dotmode.ds-mc .flqo,body.dotmode.ds-mc .flqn,body.dotmode.ds-mc .crtab2 button,body.dotmode.ds-mc .stnav,body.dotmode.ds-mc .rt-sn{background:#8B8B8B!important;color:#FFFFFF!important;border:2px solid #000!important;box-shadow:inset 2px 2px 0 #C6C6C6,inset -2px -2px 0 #555!important;text-shadow:2px 2px 0 #3F3F3F}'+
+ 'body.dotmode.ds-mc .btn.red,body.dotmode.ds-mc .vb.helpnav,body.dotmode.ds-mc .crtab2 button[aria-pressed="true"],body.dotmode.ds-mc .vb[aria-selected="true"]{background:#6B8A3A!important;box-shadow:inset 2px 2px 0 #A8C870,inset -2px -2px 0 #3E5220!important}'+
+ 'body.dotmode.ds-mc .modal,body.dotmode.ds-mc .panel,body.dotmode.ds-mc .dossier,body.dotmode.ds-mc .result{background:#C6C6C6!important;color:#3F3F3F!important;border:2px solid #000!important;box-shadow:inset 3px 3px 0 #FFFFFF,inset -3px -3px 0 #555!important}'+
+ 'body.dotmode.ds-mc .modal *{text-shadow:none}'+
+ 'body.dotmode.ds-mc #vnbox,body.dotmode.ds-mc .dlg{background:rgba(0,0,0,.72)!important;border:2px solid #000!important;box-shadow:inset 0 0 0 2px #3A3A3A!important;color:#FFFFFF!important}'+
+ 'body.dotmode.ds-mc .vtxt{text-shadow:2px 2px 0 #3F3F3F}'+
+ 'body.dotmode.ds-mc .vname,body.dotmode.ds-mc #vnbox small,body.dotmode.ds-mc #vnbox b:first-child{color:#FFFF55!important}'+
+ 'body.dotmode.ds-mc .bnav,body.dotmode.ds-mc .hud{background:#3B3B3B!important;border-color:#000!important}'+
+ 'body.dotmode.ds-mc h1{color:#FFFF55!important;text-shadow:3px 3px 0 #3F3F15!important}'+
+ 'body.dotmode.ds-mc .tlogo h1{font-size:34px!important}';
+ document.head.appendChild(css2);
+ // 설정 창에 '도트 스타일' 고르기 추가
+ new MutationObserver(function(){var m=document.querySelector(".modal");if(!m||m.querySelector("#dotsty"))return;if(!/탐정 사무소 설정/.test(m.textContent))return;var g=m.querySelector(".setg");if(!g)return;
+  var row=document.createElement("div");row.className="srow";row.id="dotsty";
+  row.innerHTML='<div><b>도트 스타일</b><small>바꾸면 다시 불러와요</small></div><div class="seg" role="group"><button type="button" data-ds="toon" class="'+(STYLE==="toon"?"on":"")+'" aria-pressed="'+(STYLE==="toon")+'">카툰</button><button type="button" data-ds="mc" class="'+(STYLE==="mc"?"on":"")+'" aria-pressed="'+(STYLE==="mc")+'">블록</button></div>';
+  g.insertBefore(row,g.firstChild.nextSibling);
+  row.querySelectorAll("[data-ds]").forEach(function(b){b.onclick=function(){if(b.dataset.ds===STYLE)return;try{localStorage.setItem("daae:dotstyle",b.dataset.ds)}catch(e){}location.reload()}})}).observe(document.body,{childList:true,subtree:true});
 })();
 </script></body></html>
