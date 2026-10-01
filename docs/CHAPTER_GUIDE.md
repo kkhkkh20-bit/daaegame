@@ -1,4 +1,4 @@
-# 새 장(chapter) 작성 가이드 — 다애 탐정 사무소
+# 새 장(chapter) 작성 가이드 — 다람 탐정 사무소
 
 게임은 단일 HTML(game.html) 안의 JS 데이터로 사건을 정의한다. 새 장은 **하나의 IIFE**로 작성해 별도 .js 파일로 저장한다.
 파일은 `python3 /home/claude/daae/work/build_with.py /tmp/claude-0/chX.html /path/to/chX.js` 로 게임에 끼워 넣어 테스트 빌드를 만들 수 있고,
