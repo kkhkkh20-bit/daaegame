@@ -9796,16 +9796,19 @@ window.__ENR_SKIP=(window.__ENR_SKIP||[]).concat(["cart-hill","cart-hillpre","ca
 (function(){
 var AN=[["raccoon","너구리"],["flyingsq","날다람쥐"],["fox","여우"],["cat","고양이"],["rabbit","토끼"],["bear","곰"],["dog","강아지"],["squirrel","다람쥐"],["panda","판다"],["owl","부엉이"]];
 var COLS=["#A9A2A0","#D9A47A","#E9853A","#F7F5F0","#B07A52","#F2D27A","#F4B6C6","#9CCBEA","#A8D5A0","#C4B2EA"];
-var HEAD=[["dhat","탐정 모자"],["beret","베레모"],["ribbon","리본"],["x-cap","야구 모자"],["x-flower","꽃 화관"],["x-tophat","실크햇",15,"s"],["x-crown","왕관",10],["x-wizard","마법사 모자",30],["x-halo","별빛 고리",45,"s"],["none","없음"]];
-var EYE=[["glasses","안경"],["x-sun","선글라스"],["goggles","고글"],["x-mono","외알 안경"],["x-star","별 안경",20],["x-mask","괴도 가면",25,"s"],["x-momgog","비행 고글",1,"t"],["none","없음"]];
-var EXT=[["x-bow","나비넥타이"],["x-stache","콧수염"],["x-heart","하트 스티커"],["x-band","반창고"],["x-medal","별 훈장",35,"s"],["x-badge","황금 배지",40],["none","없음"]];
+var HEAD=[["dhat","탐정 모자"],["beret","베레모"],["ribbon","리본"],["x-cap","야구 모자"],["x-flower","꽃 화관"],["x-tophat","실크햇",15,"s"],["x-crown","왕관",10],["x-wizard","마법사 모자",30],["x-halo","별빛 고리",45,"s"],["h-fedora","중절모"],["h-goggle","머리 위 고글"],["h-bigribbon","큰 빨간 리본"],["h-starpin","별 머리핀"],["h-headphone","헤드폰"],["h-chef","요리사 모자"],["h-hood","망토 두건",10,"s"],["h-officer","장교 모자",20,"s"],["h-pilot","가죽 비행모",25,"s"],["none","없음"]];
+var EYE=[["glasses","안경"],["x-sun","선글라스"],["goggles","고글"],["x-mono","외알 안경"],["x-star","별 안경",20],["x-mask","괴도 가면",25,"s"],["x-momgog","비행 고글",1,"t"],["e-round","동그란 금테 안경"],["e-heart","하트 안경",10],["e-patch","해적 안대",15,"s"],["none","없음"]];
+var EXT=[["x-bow","나비넥타이"],["x-stache","콧수염"],["x-heart","하트 스티커"],["x-band","반창고"],["x-medal","별 훈장",35,"s"],["x-badge","황금 배지",40],["t-scarf","목도리"],["t-tie","넥타이"],["t-freckle","주근깨"],["t-pencil","귀에 꽂은 연필"],["t-pendant","별빛 펜던트",30,"s"],["none","없음"]];
+var FIT=[["f-trench","트렌치코트"],["f-cape","빨간 탐정 망토"],["f-shirt","기본 셔츠"],["f-hoodie","후드티"],["f-sweater","꽈배기 스웨터"],["f-raincoat","노란 우비"],["f-labcoat","과학자 가운"],["f-hanbok","한복",15],["f-uniform","탐정단 제복",20,"s"],["f-flight","가죽 비행 재킷",25,"s"],["f-tux","턱시도",40,"s"]];
 var ACCS=HEAD;
-var DEF={d0:{a:"raccoon",c:"#A9A2A0",acc:"dhat",eye:"none",ext:"none"},d1:{a:"flyingsq",c:"#D9A47A",acc:"ribbon",eye:"none",ext:"none"}};
-window.__LOOKITEMS=HEAD.concat(EYE,EXT).filter(function(x){return x[2]});
+var DEF={d0:{a:"raccoon",c:"#A9A2A0",acc:"h-fedora",eye:"none",ext:"t-pencil",fit:"f-trench"},d1:{a:"flyingsq",c:"#D9A47A",acc:"h-bigribbon",eye:"none",ext:"t-freckle",fit:"f-cape"}};
+var OLDDEF={d0:{a:"raccoon",c:"#A9A2A0",acc:"dhat",eye:"none",ext:"none"},d1:{a:"flyingsq",c:"#D9A47A",acc:"ribbon",eye:"none",ext:"none"}};
+window.__LOOKITEMS=HEAD.concat(EYE,EXT,FIT).filter(function(x){return x[2]});
 function has(list,v){for(var i=0;i<list.length;i++){if((list[i][0]||list[i])===v)return true}return false}
 function cleanLook(x){var o={};["d0","d1"].forEach(function(k){var v=(x&&typeof x==="object"&&x[k]&&typeof x[k]==="object")?x[k]:{};
+  if(!v.fit){var od=OLDDEF[k];if(v.a===od.a&&v.c===od.c&&v.acc===od.acc&&(v.eye||"none")==="none"&&(v.ext||"none")==="none")v={a:od.a,c:od.c,acc:DEF[k].acc,eye:"none",ext:DEF[k].ext}}
   var acc=has(HEAD,v.acc)?v.acc:has(EYE,v.acc)?"none":DEF[k].acc,leg=has(EYE,v.acc)?v.acc:null;
-  o[k]={a:has(AN,v.a)?v.a:DEF[k].a,c:COLS.indexOf(v.c)>=0?v.c:DEF[k].c,acc:acc,eye:has(EYE,v.eye)?v.eye:(leg||DEF[k].eye),ext:has(EXT,v.ext)?v.ext:DEF[k].ext}});return o}
+  o[k]={a:has(AN,v.a)?v.a:DEF[k].a,c:COLS.indexOf(v.c)>=0?v.c:DEF[k].c,acc:acc,eye:has(EYE,v.eye)?v.eye:(leg||DEF[k].eye),ext:has(EXT,v.ext)?v.ext:DEF[k].ext,fit:has(FIT,v.fit)?v.fit:DEF[k].fit}});return o}
 window.__cleanLook=cleanLook;
 window.__lookAcc=function(L){return [L.acc,L.eye,L.ext].filter(function(x){return x&&x!=="none"}).join(" ")};
 S.look=cleanLook(load().look);try{var _fl=+load().flash;S.flash=_fl>=0?_fl|0:0}catch(e){S.flash=0}
@@ -9813,13 +9816,14 @@ var tab="d1";
 function okItem(it){if(!it[2])return true;if(it[3]==="s")return totalStars()>=it[2];if(it[3]==="t")return !!(S.story&&S.story.read&&S.story.read.trueend);return (S.flash|0)>=it[2]}
 function lockLabel(it){return it[3]==="s"?"별 "+it[2]:it[3]==="t"?"진엔딩":"번뜩 "+it[2]}
 function lockMsg(it){return it[3]==="s"?"'"+it[1]+"'은(는) 별을 "+it[2]+"개 모으면 열려요. (지금 "+totalStars()+"개)":it[3]==="t"?"'"+it[1]+"'은(는) 진엔딩을 보면 열려요.":"'"+it[1]+"'은(는) 번뜩 추리 "+it[2]+"단계를 깨면 열려요."}
-var LISTS={acc:HEAD,eye:EYE,ext:EXT};
+var LISTS={acc:HEAD,eye:EYE,ext:EXT,fit:FIT};
+function lf(L,o){if(window.__AV){var X={a:L.a,c:L.c,acc:L.acc,eye:L.eye,ext:L.ext,fit:L.fit,adult:tab==="d0"};for(var q in o)X[q]=o[q];try{return '<svg class="sig" viewBox="0 0 100 101" aria-hidden="true">'+window.__AV.face(X,"")+'</svg>'}catch(e){}}return face(o.a||L.a,L.c,"",o.f||"")}
 function body(){var L=S.look[tab];
   function grid(list,f,lab){return '<div class="lk-lab">'+lab+'</div><div class="lk-grid a6">'+list.map(function(a){var lk=!okItem(a);
-    return '<button type="button" class="'+(lk?'lkd':'')+'" data-lf="'+f+'" data-lv="'+a[0]+'" aria-pressed="'+(L[f]===a[0])+'">'+face(L.a,L.c,"",a[0]==="none"?"":a[0])+'<span>'+a[1]+'</span>'+(lk?'<em class="lkbadge">'+lockLabel(a)+'</em>':'')+'</button>'}).join("")+'</div>'}
-  return '<div class="lk-lab">동물</div><div class="lk-grid">'+AN.map(function(a){return '<button type="button" data-la="'+a[0]+'" aria-pressed="'+(L.a===a[0])+'">'+face(a[0],L.c,"")+'<span>'+a[1]+'</span></button>'}).join("")+'</div>'+
+    return '<button type="button" class="'+(lk?'lkd':'')+'" data-lf="'+f+'" data-lv="'+a[0]+'" aria-pressed="'+(L[f]===a[0])+'">'+lf(L,(function(){var o={f:a[0]==="none"?"":a[0]};o[f]=a[0];return o})())+'<span>'+a[1]+'</span>'+(lk?'<em class="lkbadge">'+lockLabel(a)+'</em>':'')+'</button>'}).join("")+'</div>'}
+  return '<div class="lk-lab">동물</div><div class="lk-grid">'+AN.map(function(a){return '<button type="button" data-la="'+a[0]+'" aria-pressed="'+(L.a===a[0])+'">'+lf(L,{a:a[0]})+'<span>'+a[1]+'</span></button>'}).join("")+'</div>'+
    '<div class="lk-lab">털 색</div><div class="lk-cols">'+COLS.map(function(c){return '<button type="button" data-lc="'+c+'" aria-label="색 '+c+'" aria-pressed="'+(L.c===c)+'" style="background:'+c+'"></button>'}).join("")+'</div>'+
-   grid(HEAD,"acc","머리")+grid(EYE,"eye","얼굴")+grid(EXT,"ext","꾸밈")}
+   grid(HEAD,"acc","머리")+grid(EYE,"eye","얼굴")+grid(EXT,"ext","꾸밈")+grid(FIT,"fit","옷")}
 function open(){
   var h='<span class="kicker">탐정 꾸미기</span>'+
    '<div class="lk-tabs" role="group">'+["d0","d1"].map(function(t,i){return '<button type="button" data-lt="'+t+'" aria-pressed="'+(t===tab)+'">'+esc(S.players[i])+'</button>'}).join("")+'</div>'+
@@ -29134,6 +29138,741 @@ REI2("kitchen",{
  window.__SIG["yeoni"]={face:function(mood){return inner(mood||"")},fig:function(mood){return fig(mood||"")}};
 })();
 
+/* v142 아바타(탐정 꾸미기) 시그니처 그림체 렌더러
+   window.__AV.face(L,mood) / fig(L,mood) / NEW
+   L={a:동물,c:털색,acc:머리,eye:얼굴,ext:꾸밈,fit:옷,adult:true(아빠)}
+   규칙: ears/eyes 그룹(transform 없음), id·그라디언트·필터 없음, 외곽선 3 안팎 */
+(function(){
+ var O="#1D2B53",WH="#FFFFFF",PINK="#F28A94",TEAR="#8FD0FF",GOLD="#F2C230",GOLD2="#C9971A",
+     RED="#E23B44",RED2="#A22633",MOUTH="#8A2E3A",TONG="#F07A86",PD="#35313F";
+ var s='stroke="'+O+'" stroke-width="3" stroke-linejoin="round"';
+ function sk(w,c){return 'stroke="'+(c||O)+'" stroke-width="'+w+'" stroke-linejoin="round"'}
+ var NS='stroke="none"';
+ function has(m,w){return (" "+m+" ").indexOf(" "+w+" ")>=0}
+ function P(d,f,ex){return '<path d="'+d+'" fill="'+(f||"none")+'" '+(ex===undefined?s:ex)+'/>'}
+ function L(d,c,w,op){return '<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round" stroke-linejoin="round"'+(op?' opacity="'+op+'"':'')+'/>'}
+ function E(cx,cy,rx,ry,f,ex,rot){return '<ellipse cx="'+r2(cx)+'" cy="'+cy+'" rx="'+rx+'" ry="'+ry+'" fill="'+f+'" '+(ex===undefined?s:ex)+(rot?' transform="rotate('+rot+' '+r2(cx)+' '+cy+')"':'')+'/>'}
+ function C(cx,cy,r,f,ex){return '<circle cx="'+r2(cx)+'" cy="'+cy+'" r="'+r+'" fill="'+f+'" '+(ex===undefined?s:ex)+'/>'}
+ function G(tr,x){return '<g transform="'+tr+'">'+x+'</g>'}
+ function r2(v){return Math.round(v*100)/100}
+ function star(cx,cy,R,r){var p="";for(var i=0;i<10;i++){var rr=i%2?r:R,a=(-90+i*36)*Math.PI/180;p+=(i?"L":"M")+(cx+Math.cos(a)*rr).toFixed(1)+" "+(cy+Math.sin(a)*rr).toFixed(1)}return p+"Z"}
+ function heartD(x,y,w){var k=w/10;return 'M'+x+' '+r2(y+4*k)+' C'+r2(x-9*k)+' '+r2(y-2*k)+' '+r2(x-5*k)+' '+r2(y-9*k)+' '+x+' '+r2(y-4.6*k)+' C'+r2(x+5*k)+' '+r2(y-9*k)+' '+r2(x+9*k)+' '+r2(y-2*k)+' '+x+' '+r2(y+4*k)+' Z'}
+ // 색
+ function rgb(c){c=String(c||"#D9A47A").replace("#","");if(c.length===3)c=c.replace(/./g,"$&$&");return [0,2,4].map(function(i){return parseInt(c.substr(i,2),16)||0})}
+ function mix(a,b,t){var A=rgb(a),B=rgb(b);return "#"+A.map(function(v,i){var x=Math.round(v+(B[i]-v)*t);return (x<16?"0":"")+x.toString(16)}).join("")}
+ function lum(c){var A=rgb(c);return (.299*A[0]+.587*A[1]+.114*A[2])/255}
+ function pal(c){var l=lum(c);return {F:c,l:l,
+   D:mix(c,"#4A2A30",l>.86?.22:.3),        // 무늬·그림자
+   DD:mix(c,"#2B2430",.7),                 // 눈가 마스크
+   LT:mix(c,"#FFFFFF",.42),                // 밝은 털
+   CR:l>.84?"#FFFFFF":mix(c,"#FFF6EA",.72),// 주둥이 크림
+   IN:mix(c,"#E8708A",.5)}}                // 귀 안쪽
+
+ // 바스트(옷) 가로 비율: 전신에서 아이는 좁은 어깨
+ var K=1;
+ function BX(x){return r2(50+(x-50)*K)}
+ function B(d){if(K===1)return d;var i=0;return d.replace(/-?\d*\.?\d+/g,function(n){var v=parseFloat(n),r=(i%2===0)?50+(v-50)*K:v;i++;return r2(r)})}
+ function BP(d,f,ex){return P(B(d),f,ex)}
+ function OPEN(d,f,F){d=B(d);return F?P(d+' Z',f,NS)+P(d,null):P(d+' Z',f)}
+
+ /* ───────── 동물 머리 기준 테이블 ─────────
+    hd: 머리 윤곽, nose: 코 y(콧수염 위치), iris: 아이 눈동자색, teeth: 앞니, lid: 눈 주변 바탕색 키 */
+ var HD={
+  spiky:'M24 50 Q24 30 50 30 Q76 30 76 50 Q78 56 84 62 Q78 64 76 66 Q80 70 74 72 Q66 82 50 82 Q34 82 26 72 Q20 70 24 66 Q22 64 16 62 Q22 56 24 50 Z',
+  tuft:'M23 52 Q23 28 50 28 Q77 28 77 52 Q80 58 81 63 Q77 63 76 66 Q72 81 50 82 Q28 81 24 66 Q23 63 19 63 Q20 58 23 52 Z',
+  fox:'M24 50 Q24 29 50 29 Q76 29 76 50 Q79 57 87 63 Q80 65 78 68 Q81 72 74 74 Q65 82 50 82 Q35 82 26 74 Q19 72 22 68 Q20 65 13 63 Q21 57 24 50 Z',
+  cat:'M24 50 Q24 29 50 29 Q76 29 76 50 Q78 57 83 62 Q77 64 76 67 Q71 81 50 82 Q29 81 24 67 Q23 64 17 62 Q22 57 24 50 Z',
+  round:'M23 53 Q23 28 50 28 Q77 28 77 53 Q78 72 66 79 Q59 82.5 50 82.5 Q41 82.5 34 79 Q22 72 23 53 Z',
+  owl:'M22 52 Q21 27 50 27 Q79 27 78 52 Q79 74 66 80 Q58 83 50 83 Q42 83 34 80 Q21 74 22 52 Z'
+ };
+ var AN={
+  raccoon:{hd:"spiky",nose:65,iris:"#7A4A2A",lid:"DD"},
+  flyingsq:{hd:"tuft",nose:64,iris:"#7A3E1E",teeth:1},
+  fox:{hd:"fox",nose:64,iris:"#9A5A12"},
+  cat:{hd:"cat",nose:62.5,iris:"#3E8A4E"},
+  rabbit:{hd:"round",nose:63,iris:"#8A3E5A",teeth:1},
+  bear:{hd:"round",nose:63,iris:"#6A3A1E"},
+  dog:{hd:"round",nose:63,iris:"#5A3A22",earFront:1},
+  squirrel:{hd:"tuft",nose:63.5,iris:"#6A3418",teeth:1},
+  panda:{hd:"round",nose:63.5,iris:"#6A4A3A",lid:"PD"},
+  owl:{hd:"owl",nose:68,iris:"#E8A21E",beak:1,lid:"LT"}
+ };
+
+ function ears(a,p,hs){var g='',F=p.F,dx=hs?4.6:0,dy=hs?5:0;
+  if(a==="raccoon")g=P('M25 38 L18 10 L40 26 Z',F)+P('M75 38 L82 10 L60 26 Z',F)+P('M26 30 L22 17 L33 26 Z',p.DD,NS)+P('M74 30 L78 17 L67 26 Z',p.DD,NS);
+  else if(a==="fox")g=P('M26 40 L17 5 L45 27 Z',F)+P('M74 40 L83 5 L55 27 Z',F)+P('M27.5 32 L21.5 13.5 L37 26.5 Z',p.CR,NS)+P('M72.5 32 L78.5 13.5 L63 26.5 Z',p.CR,NS)+P('M17 5 L19.6 15.5 L25.6 11.4 Z',p.DD,sk(2))+P('M83 5 L80.4 15.5 L74.4 11.4 Z',p.DD,sk(2));
+  else if(a==="cat")g=P('M24 42 L20 11 L45 29 Z',F)+P('M76 42 L80 11 L55 29 Z',F)+P('M27 34 L24.6 19 L37 28.5 Z',p.IN,NS)+P('M73 34 L75.4 19 L63 28.5 Z',p.IN,NS);
+  else if(a==="rabbit")g=E(33,17,7.4,15,F,s,-16)+E(67,17,7.4,15,F,s,16)+E(33.4,18.4,3.4,9.6,p.IN,NS,-16)+E(66.6,18.4,3.4,9.6,p.IN,NS,16);
+  else if(a==="bear")g=C(26-dx,33+dy,10,F)+C(74+dx,33+dy,10,F)+C(26.6-dx,33.6+dy,5,p.D,NS)+C(73.4+dx,33.6+dy,5,p.D,NS);
+  else if(a==="panda")g=C(26-dx,32+dy,10.5,PD)+C(74+dx,32+dy,10.5,PD);
+  else if(a==="dog")g=P('M30 33 Q16 29 12 44 Q9 58 15 66 Q21 69 25 62 Q28 52 30 44 Z',p.D)+P('M70 33 Q84 29 88 44 Q91 58 85 66 Q79 69 75 62 Q72 52 70 44 Z',p.D)+L('M19 44 Q16 54 18 61 M81 44 Q84 54 82 61',mix(p.D,"#2B2430",.25),2.2);
+  else if(a==="squirrel")g=P('M25 40 Q15 26 22 13 Q33 18 40 29 Z',F)+P('M75 40 Q85 26 78 13 Q67 18 60 29 Z',F)+P('M26 32 Q22 24 24 18 Q30 22 34 28 Z',p.IN,NS)+P('M74 32 Q78 24 76 18 Q70 22 66 28 Z',p.IN,NS)
+     +P('M20.6 17 Q13 11 15 1.6 Q19 6.6 21.6 1 Q25 6 28 15 Z',p.D,sk(2.4))+P('M79.4 17 Q87 11 85 1.6 Q81 6.6 78.4 1 Q75 6 72 15 Z',p.D,sk(2.4));
+  else if(a==="owl")g=P('M28 36 Q19 24 19 9 Q31 16 41 28 Z',F)+P('M72 36 Q81 24 81 9 Q69 16 59 28 Z',F)+L('M24 18 Q27 25 31 30 M76 18 Q73 25 69 30',p.D,2.4);
+  else g=E(25-dx,36+dy*.6,9,11,F,s,-18-dx*3)+E(75+dx,36+dy*.6,9,11,F,s,18+dx*3)+E(25.6-dx,37+dy*.6,4.4,6.2,p.IN,NS,-18-dx*3)+E(74.4+dx,37+dy*.6,4.4,6.2,p.IN,NS,18+dx*3); // flyingsq
+  return '<g class="ears">'+g+'</g>'}
+
+ // 머리 + 털 무늬 + 코 (눈·입 제외)
+ function head(a,p,adult){var A=AN[a],hd=HD[A.hd],g='',F=p.F;
+  g+=P(hd,F);
+  if(a==="raccoon"){
+   g+=P('M28 44 Q38 38 48 43 L52 43 Q62 38 72 44 Q70 48 62 47 Q55 47 50 49 Q45 47 38 47 Q30 48 28 44 Z',p.LT,NS);
+   g+=P('M22 52 Q28 46 38 47 Q46 48 50 52 Q54 48 62 47 Q72 46 78 52 Q78 62 66 63 Q57 63 52 58 L48 58 Q43 63 34 63 Q22 62 22 52 Z',p.DD,NS);
+   g+=P('M39.5 69 Q40 61 50 61 Q60 61 60.5 69 Q59 77.5 50 79 Q41 77.5 39.5 69 Z',p.CR,sk(2.2));
+   g+='<path d="M46 63.4 Q50 61.8 54 63.4 Q53.6 66.4 50 67 Q46.4 66.4 46 63.4 Z" fill="'+O+'"/>'+E(48.4,63.5,1.2,.7,WH,'opacity=".75"')+L('M50 67 V69.4',O,2);
+  }else if(a==="flyingsq"||a==="squirrel"){
+   if(a==="squirrel")g+=E(33,66,9.5,7.5,p.CR,NS)+E(67,66,9.5,7.5,p.CR,NS);
+   g+=P('M33 66 Q36 59.5 50 60 Q64 59.5 67 66 Q66 79 50 80.5 Q34 79 33 66 Z',p.CR,NS);
+   g+=L('M42 32 Q46 37 50 36 Q54 37 58 32',p.D,3);
+   if(a==="squirrel")g+=L('M30 47 Q26 52 27 57 M70 47 Q74 52 73 57',p.D,2.6,.8);
+   g+=P(hd,null);
+   g+='<path d="M46.6 63.2 Q50 61.6 53.4 63.2 Q52.6 65.8 50 66.2 Q47.4 65.8 46.6 63.2 Z" fill="#5A3A2A" stroke="'+O+'" stroke-width="1.4"/>'+E(48.8,63.3,1,.6,WH,'opacity=".8"');
+  }else if(a==="fox"){
+   g+=P('M50 69 Q42 60 30 63 Q22 65 13 63 Q21 57 24 50 L24 52 Q19 64 22 68 Q19 72 26 74 Q35 82 50 82 Q65 82 74 74 Q81 72 78 68 Q81 64 76 52 L76 50 Q79 57 87 63 Q78 65 70 63 Q58 60 50 69 Z',p.CR,NS);
+   g+=P('M50 69 Q42 60.5 30 63 Q21 65 13 63 Q19 72 26 74 Q35 82 50 82 Q65 82 74 74 Q81 72 87 63 Q79 65 70 63 Q58 60.5 50 69 Z',p.CR,NS);
+   g+=L('M44 33 Q50 38 56 33',p.D,3);
+   g+=P(hd,null);
+   g+=P('M46.4 62.6 Q50 61 53.6 62.6 Q53 65.6 50 66.2 Q47 65.6 46.4 62.6 Z',O,sk(1.2))+E(48.6,62.8,1.1,.6,WH,'opacity=".8"');
+  }else if(a==="cat"){
+   g+=L('M44 31.5 L45.2 36.5 M50 30.6 V37 M56 31.5 L54.8 36.5',p.D,2.8);
+   g+=E(50,68.5,11.5,8.6,p.CR,NS);
+   g+=P(hd,null);
+   g+=P('M46.6 61.6 L53.4 61.6 L50 65 Z',"#E86A84",sk(1.6));
+   g+=L('M15 63 L27 65 M16 70 L27 68.6 M85 63 L73 65 M84 70 L73 68.6',O,1.8);
+  }else if(a==="rabbit"){
+   g+=E(44.6,68.4,6.6,5.6,p.CR,NS)+E(55.4,68.4,6.6,5.6,p.CR,NS)+E(50,73,7,5,p.CR,NS);
+   g+=L('M45 31.5 Q50 35 55 31.5',p.D,2.6,.8);
+   g+=E(50,63.2,3.6,2.6,"#E86A84",sk(1.6));
+  }else if(a==="bear"||a==="dog"||a==="panda"){
+   if(a==="panda"){g+=E(37,54.5,9.5,11.5,PD,NS,32)+E(63,54.5,9.5,11.5,PD,NS,-32)}
+   if(a==="dog")g+=E(63.5,51.5,10.5,10,p.D,NS,12);
+   g+=E(50,69,a==="dog"?13:12,a==="dog"?10:9.5,p.CR,sk(2.2));
+   g+=E(50,63.6,a==="panda"?4.4:5.2,3.4,O,NS)+E(48.4,62.8,1.4,.8,WH,'opacity=".75"');
+   g+=L('M50 66.5 V69',O,2);
+  }else if(a==="owl"){
+   g+=P('M50 47 Q44 39 36 40 Q24 41 23.5 54 Q24 67 37 68 Q45 68 50 62 Q55 68 63 68 Q76 67 76.5 54 Q76 41 64 40 Q56 39 50 47 Z',p.LT,NS);
+   g+=L('M38 77 l3.4 2.4 l3.4 -2.4 M55.2 77 l3.4 2.4 l3.4 -2.4',p.D,2.2);
+   g+=L('M50 31 V37 M44 32 l1 4 M56 32 l-1 4',p.D,2.4,.8);
+   g+=P(hd,null);
+  }
+  return g}
+
+ /* ───────── 눈·눈썹·입 ───────── */
+ // 아이: 크고 반짝이는 눈 (det1)
+ function eyeKid(cx,mood,ir,lidc){var y=54,Lf=cx<50,g='';
+  if(has(mood,"happy"))return L('M'+(cx-7.5)+' 56 Q'+cx+' 46 '+(cx+7.5)+' 56',O,3.6)+L('M'+(Lf?cx-7.5:cx+7.5)+' 56 l'+(Lf?-2.5:2.5)+' -2',O,2.4);
+  if(has(mood,"shock"))return E(cx,y,7.6,9,WH)+C(cx,y+.5,2.6,O,NS);
+  if(has(mood,"angry")){var ya=Lf?48:51,yb=Lf?51:48;
+   return P('M'+(cx-7.6)+' '+ya+' L'+(cx+7.6)+' '+yb+' Q'+(cx+7.6)+' 63 '+cx+' 63 Q'+(cx-7.6)+' 63 '+(cx-7.6)+' '+ya+' Z',ir)
+    +C(cx,57,3.6,O,NS)+C(cx+2,55,1.8,WH,NS)+L('M'+(cx-8.5)+' '+(ya-.4)+' L'+(cx+8.5)+' '+(yb-.4),O,3.8)}
+  if(has(mood,"smug")){
+   g+=E(cx,y,7.6,9,ir)+E(cx,y+1,4.6,5.8,O,NS)+C(cx+2.6,y-1,2.6,WH,NS);
+   g+=P('M'+(cx-9)+' 43 L'+(cx+9)+' 43 L'+(cx+9)+' 53 Q'+cx+' 51 '+(cx-9)+' 53 Z',lidc,NS)+L('M'+(cx-8)+' 53 Q'+cx+' 50.6 '+(cx+8)+' 53',O,3.6);
+   return g}
+  var sad=has(mood,"sad")||has(mood,"cry"),nerv=has(mood,"nervous")||has(mood,"confused");
+  g+=E(cx,y,7.6,9,ir);
+  if(nerv){g+=E(cx+(Lf?1.4:-1.4),y+1.6,3.6,4.4,O,NS)+C(cx+(Lf?2.8:0),y,1.6,WH,NS);}
+  else{
+   g+=E(cx,y+1,4.6,5.8,O,NS);
+   g+=C(cx+2.6,y-3.4,3,WH,NS)+C(cx-2.6,y+4,1.5,WH,NS);
+   if(!sad)g+='<path d="'+star(cx-2.8,y-3.6,2.2,.8)+'" fill="'+WH+'"/>';
+  }
+  if(sad)g+=L('M'+(cx-8.5)+' '+(Lf?47:44)+' L'+(cx+8.5)+' '+(Lf?44:47),lidc,4.5)+L('M'+(cx-8)+' '+(Lf?48:45.4)+' L'+(cx+8)+' '+(Lf?45.4:48),O,2.6);
+  g+=Lf?L('M'+(cx-7)+' 49.5 l-3.6 -2.4',O,2.4):L('M'+(cx+7)+' 49.5 l3.6 -2.4',O,2.4);
+  return g}
+ // 어른: 반쯤 감은 다정한 눈 (det0)
+ function eyeAdult(cx,mood){var y=53,x0=cx-7,x1=cx+7,g='',Lf=cx<50;
+  if(has(mood,"happy"))return L('M'+(cx-7)+' 55 Q'+cx+' 47 '+(cx+7)+' 55',WH,5)+L('M'+(cx-7)+' 55 Q'+cx+' 47 '+(cx+7)+' 55',O,3.2);
+  if(has(mood,"shock"))return E(cx,y,7.5,8.5,WH)+C(cx,y+.5,2.2,O,NS);
+  if(has(mood,"nervous")||has(mood,"confused"))return E(cx,y,7,7.5,WH)+C(cx+(Lf?1.5:-1.5),y+1,3.4,O,NS)+C(cx+(Lf?2.6:-.4),y-.4,1.2,WH,NS);
+  if(has(mood,"angry")){var ya=Lf?49.5:53.5,yb=Lf?53.5:49.5,xa=cx-8,xb=cx+8;
+   return P('M'+xa+' '+ya+' L'+xb+' '+yb+' Q'+(xb-1)+' 61 '+cx+' 61 Q'+(xa+1)+' 61 '+xa+' '+ya+' Z',WH)+C(cx+(Lf?1:-1),57,3,O,NS)+L('M'+xa+' '+ya+' L'+xb+' '+yb,O,3.8)}
+  var sad=has(mood,"sad")||has(mood,"cry"),smug=has(mood,"smug");
+  var yo=sad?54:53,yi=sad?50.5:52,xa=Lf?x0:x1,xb=Lf?x1:x0,top=sad?49:(smug?52:49.4);
+  var lid='M'+xa+' '+yo+' Q'+cx+' '+top+' '+xb+' '+yi;
+  g+=P(lid+' Q'+xb+' 60.5 '+cx+' 60.5 Q'+xa+' 60.5 '+xa+' '+yo+' Z',WH);
+  g+=C(cx,sad?56:55.8,3.6,O,NS)+C(cx+1.5,sad?55.6:55.2,1.2,WH,NS);
+  if(sad)g+=C(cx-1.6,58,.8,WH,NS);
+  g+=L(lid,O,3.8)+L('M'+xa+' '+yo+' l'+(Lf?-2.4:2.4)+' 1.6',O,2.4);
+  return g}
+ function browsKid(mood){var c=O,w=3.6;
+  if(has(mood,"angry"))return L('M29 40 L45 45.5 M71 40 L55 45.5',c,w+.4);
+  if(has(mood,"sad")||has(mood,"cry"))return L('M31 43 L45 38.5 M69 43 L55 38.5',c,w);
+  if(has(mood,"nervous"))return L('M31 42 Q38 37 45 39 M69 42 Q62 37 55 39',c,w);
+  if(has(mood,"shock"))return L('M31 38 Q38 33 45 36 M55 36 Q62 33 69 38',c,w);
+  if(has(mood,"confused"))return L('M31 39 Q38 35 45 38 M55 43 L69 42',c,w);
+  if(has(mood,"happy"))return L('M31 42 Q38 38 45 41 M55 41 Q62 38 69 42',c,w);
+  if(has(mood,"smug"))return L('M31 42.5 L45 42.5 M55 40 Q62 35 69 38.5',c,w);
+  if(has(mood,"shy"))return L('M31 42 Q38 40 45 42 M55 42 Q62 40 69 42',c,w);
+  return L('M31 42 Q38 39.5 45 41.5 M55 40 Q62 34.5 69 38',c,w)}
+ function browsAdult(mood){var c=O,w=4;
+  if(has(mood,"angry"))return L('M29 41 L46 47 M71 41 L54 47',c,w+.4);
+  if(has(mood,"sad")||has(mood,"cry"))return L('M30 46 L45 41 M70 46 L55 41',c,w);
+  if(has(mood,"nervous"))return L('M30 45 Q38 39 45 41 M70 45 Q62 39 55 41',c,w);
+  if(has(mood,"shock"))return L('M30 39 Q37 34 45 37 M55 37 Q63 34 70 39',c,w);
+  if(has(mood,"confused"))return L('M30 41 Q37 36 45 39 M55 45 L70 44',c,w);
+  if(has(mood,"happy"))return L('M30 44 Q37 40 45 43 M55 43 Q63 40 70 44',c,w);
+  if(has(mood,"smug"))return L('M30 45 L45 45 M55 42 Q63 37 70 41',c,w);
+  return L('M30 45 Q37 42.5 45 44 M55 43.5 Q63 39.5 70 42',c,w)}
+ function teeth(x,y){return '<path d="M'+(x-3.4)+' '+y+' L'+(x+3.4)+' '+y+' L'+(x+3.2)+' '+(y+4)+' L'+(x-3.2)+' '+(y+4)+' Z" fill="'+WH+'" stroke="'+O+'" stroke-width="1.6" stroke-linejoin="round"/>'+L('M'+x+' '+y+' V'+(y+4),O,1.2)}
+ function mouthKid(mood,T){var ms='stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"';
+  if(has(mood,"happy"))return P('M40 68 Q50 67 60 68 Q59 80 50 80 Q41 80 40 68 Z',MOUTH,ms)+'<path d="M45 76.5 Q50 74 55 76.5 Q53 79.6 50 79.6 Q47 79.6 45 76.5 Z" fill="'+TONG+'"/>'+(T?teeth(50,68.3):'');
+  if(has(mood,"shock"))return E(50,73,4.6,5.4,MOUTH,sk(2.6))+(T?teeth(50,68.4):'');
+  if(has(mood,"sad")||has(mood,"cry"))return L('M43 74 Q50 68.5 57 74',O,2.8)+(T?teeth(50,70.8):'');
+  if(has(mood,"nervous"))return L('M42 72 Q44.7 69.5 47.4 72 Q50 74.5 52.6 72 Q55.3 69.5 58 72',O,2.6);
+  if(has(mood,"angry"))return P('M42 70 Q50 67.6 58 70 Q57 75 50 75 Q43 75 42 70 Z',MOUTH,ms)+(T?teeth(50,68.6):L('M45 70 L55 70',WH,1.6));
+  if(has(mood,"confused"))return L('M43 72 Q46.5 69.5 50 72 Q53.5 74.5 57 71',O,2.6);
+  if(has(mood,"smug"))return L('M43 70.5 Q51 74 59 67',O,2.8)+(T?teeth(50,71.4):'');
+  if(has(mood,"shy"))return L('M45 71 Q50 74 55 71',O,2.6);
+  return P('M41 68.6 Q50 70 60 66.4 Q58.5 76.5 50 77 Q42.5 76.5 41 68.6 Z',MOUTH,ms)+'<path d="M45 74.4 Q50 72.6 55.6 73.6 Q53.6 76.4 50 76.6 Q46.6 76.4 45 74.4 Z" fill="'+TONG+'"/>'+(T?teeth(49.6,68.9):'')}
+ function mouthAdult(mood){
+  if(has(mood,"happy"))return P('M43 70 Q50 77 57 69 Q50 72 43 70 Z',"#7A2E3A",sk(2.6));
+  if(has(mood,"shock"))return E(50,73,4,4.6,"#7A2E3A",sk(2.4));
+  if(has(mood,"sad")||has(mood,"cry"))return L('M44 73 Q50 68.5 56 73',O,2.8);
+  if(has(mood,"nervous"))return L('M42 72 Q44.5 69.5 47 72 Q49.5 74.5 52 72 Q54.5 69.5 57 72',O,2.6);
+  if(has(mood,"angry"))return L('M43 72 Q50 69 57 72',O,3)+L('M46 71.2 L54 71.2',WH,1.4);
+  if(has(mood,"confused"))return L('M44 72 Q47 70 50 72 Q53 74 56 71',O,2.6);
+  if(has(mood,"smug"))return L('M44 71 Q51 73 58 67',O,2.8);
+  return L('M45 71.5 Q50 72.5 55 70',O,2.8)}
+ function beak(mood){var BK="#F2A541",o=has(mood,"happy")||has(mood,"shock")||has(mood,"angry");
+  var g='';
+  if(o)g+=has(mood,"shock")?E(50,69,4,5,MOUTH,sk(2.2)):P('M44.5 64 Q50 77 55.5 64 Z',MOUTH,sk(2.2));
+  g+=P('M44.6 59.6 Q50 56.6 55.4 59.6 Q54 '+(o?'64.6 50 67':'66 50 69.4')+' Q46 '+(o?'64.6':'66')+' 44.6 59.6 Z',BK,sk(2.4));
+  g+=L('M47.6 59.6 Q49.4 58.8 51 59.2',WH,1.6,.8);
+  if(has(mood,"sad")||has(mood,"cry"))g+=L('M43 74 Q50 70 57 74',O,2.4);
+  if(has(mood,"nervous"))g+=L('M43 74 Q45.5 72 48 74 Q50.5 76 53 74 Q55.5 72 58 74',O,2.2);
+  return g}
+
+ /* ───────── 머리 꾸미기 (acc) ───────── 머리 꼭대기 y≈28, 귀 밑동은 모자 챙이 덮음 */
+ var HAT={
+  "dhat":function(){var CK="#C9A06A",CK2="#8C6A40";
+   return P('M25 35 Q24 12 50 11 Q76 12 75 35 Z',CK)
+    +L('M37 13.5 Q33.5 23 34 34 M50 11.5 V34 M63 13.5 Q66.5 23 66 34 M27 22 Q50 17.6 73 22 M25.6 29 Q50 25 74.4 29',CK2,2,.85)
+    +P('M24 32 Q50 27 76 32 L76.6 37 Q50 33 23.4 37 Z',CK2,sk(2.4))
+    +P('M34 35 Q50 31.6 66 35 Q63 41.6 50 41.6 Q37 41.6 34 35 Z',"#A67C48",sk(2.6))
+    +L('M44 10.4 Q47 5 50 9 Q53 5 56 10.4',O,2.4)+C(50,10,2.2,"#A67C48",sk(1.8))},
+  "beret":function(){return P('M22 34 Q19 14 46 11 Q78 8 81 25 Q79 33 70 33.6 Q46 37.6 22 34 Z',"#E23B44")
+    +C(52,9.4,3.2,"#E23B44",sk(2.4))+L('M27 31.6 Q48 35.4 73 30.6',RED2,2.4)+L('M33 18 Q42 13 52 13',"#FF8A90",2.4)},
+  "ribbon":function(){var R="#FF6F91",R2="#D9406A";
+   return G('translate(73 30) rotate(18)',P('M-1 2.6 L-5 12 L-1 11 Z',R2,sk(2))+P('M1 2.6 L5 12 L1 11 Z',R2,sk(2))
+    +P('M0 0 Q-7 -11 -13.5 -7.5 Q-17 0 -13.5 7.5 Q-7 11 0 0 Z',R)+P('M0 0 Q7 -11 13.5 -7.5 Q17 0 13.5 7.5 Q7 11 0 0 Z',R)
+    +'<rect x="-3.8" y="-4.4" width="7.6" height="8.8" rx="2.6" fill="#FFB3C6" '+sk(2.4)+'/>'+L('M-10 -4 Q-12 -1 -11 2',"#FFC2D2",1.8))},
+  "x-cap":function(){var B1="#3A7BD5",B2="#2A5FA8";
+   return P('M50 33 Q78 29 95 38 Q81 45.6 50 39 Z',B2)
+    +P('M23 37 Q22 10 50 9 Q78 10 77 37 Q50 31 23 37 Z',B1)
+    +L('M50 9.6 V32 M36 12.6 Q33 23 33 34 M64 12.6 Q67 23 67 34',B2,2)+C(50,9.4,2.8,"#FFD84D",sk(1.8))
+    +'<path d="'+star(42,24,5.6,2.4)+'" fill="#FFD84D" '+sk(1.6)+'/>'},
+  "x-flower":function(){var g=L('M22 39 Q50 18 78 39',"#5FAE5A",3.4);
+   [[30,30,-30],[70,30,30],[41,23,-10],[59,23,10]].forEach(function(l){g+=E(l[0],l[1],4.6,2.4,"#7CC86E",sk(1.6),l[2])});
+   [[23,38,"#FF8FB1"],[34,28.4,"#FFFFFF"],[50,23.6,"#FFD84D"],[66,28.4,"#C4B2EA"],[77,38,"#FF8FB1"]].forEach(function(f){var p="";
+    for(var i=0;i<5;i++){var a=(i*72-90)*Math.PI/180;p+=C((f[0]+Math.cos(a)*3.8).toFixed(1),(f[1]+Math.sin(a)*3.8).toFixed(1),3.2,f[2],sk(1.6))}
+    g+=p+C(f[0],f[1],2,"#F2A541",sk(1.2))});
+   return g},
+  "x-tophat":function(){return G('rotate(-4 50 30)',P('M33 30 L35 3 Q50 0 65 3 L67 30 Z',"#1B1F3A")
+    +P('M33.6 22 L66.4 22 L67 30 L33 30 Z',"#B8323A",sk(2.4))+L('M39 7 L38 19',"#4A4F6A",2.4)
+    +P('M14 32.6 Q50 25 86 32.6 Q78 39 50 38 Q22 39 14 32.6 Z',"#1B1F3A"))},
+  "x-crown":function(){return G('rotate(-3 50 24)',P('M28 34 L26 10 L38 21 L50 5 L62 21 L74 10 L72 34 Z',GOLD)
+    +P('M28.4 28.6 L71.6 28.6 L72 34 L28 34 Z',GOLD2,sk(2.2))
+    +C(50,20,3.4,"#E23B44",sk(1.8))+C(37.6,25,2.4,"#3A7BD5",sk(1.4))+C(62.4,25,2.4,"#3A7BD5",sk(1.4))
+    +C(26,10,2.4,"#FFF3C4",sk(1.4))+C(50,5,2.4,"#FFF3C4",sk(1.4))+C(74,10,2.4,"#FFF3C4",sk(1.4))+L('M32 25 L33 14',"#FFF3C4",1.8,.8))},
+  "x-wizard":function(){return P('M28 34 Q36 20 46 10 Q54 2 68 -1 Q60 6 60 14 Q66 24 73 34 Z',"#6B4FC4")
+    +P('M14 35 Q50 26 86 35 Q78 41 50 40.6 Q22 41 14 35 Z',"#5A3FA8")
+    +P('M30 31 Q50 27.6 71 31 L72 35 Q50 31.6 29 35 Z',"#FFD84D",sk(2))
+    +'<path d="'+star(49,19,4.6,1.9)+'" fill="#FFD84D" '+sk(1.4)+'/>'+C(60,26,1.8,"#FFD84D",NS)+C(40,27,1.4,"#FFD84D",NS)+C(68,-1,2.8,"#FFD84D",sk(1.6))},
+  "x-halo":function(){var g=E(50,13,23,5.6,"none",'stroke="'+O+'" stroke-width="6.6"')+E(50,13,23,5.6,"none",'stroke="#FFE27A" stroke-width="3.6"');
+   [[27,12,4.6],[50,7,5.6],[73,12,4.6]].forEach(function(p){g+='<path d="'+star(p[0],p[1],p[2],p[2]*.42)+'" fill="#FFF3C4" '+sk(1.6)+'/>'});
+   return g+L('M20 4 l2 2 M82 3 l-2 2.4',"#FFE27A",2)},
+  "h-fedora":function(){var HAT="#946644",HAT2="#6A4228",BAND="#2E2633";
+   return G('rotate(-5 50 28)',P('M27 32 Q26 14 36 11 Q43 15 50 12 Q57 15 64 11 Q74 14 73 32 Z',HAT)
+    +P('M27.5 25 L72.5 25 L73 32 L27 32 Z',BAND,sk(2.4))+L('M44 15.5 Q50 22 56 15.5',HAT2,2.4)
+    +P('M10 34 Q30 26 50 28 Q70 26 90 34 Q82 39 50 37.5 Q18 39 10 34 Z',HAT2)+L('M31 27.5 Q35 21 41 19',"#B88A62",2.2))},
+  "h-goggle":function(){var STRAP="#7A4A2A",BRASS="#B87A3A",LENS="#FFE27A",g='';
+   g+=L('M21 36 Q24 24 30 22',STRAP,5.5)+L('M79 36 Q74 24 68 22',STRAP,5.5);
+   g+=P('M29 18.6 Q48 13.8 68 18.6 L68 26 Q48 21.6 29 26 Z',STRAP,sk(2.4));
+   [38,62].forEach(function(x){g+=C(x,21,9.4,BRASS)+C(x,21,6.2,LENS,sk(2))+L('M'+(x-3.4)+' 19.4 Q'+(x-2.4)+' 16.6 '+(x+.4)+' 16.2',WH,2.2)+C(x+2.6,23.6,1,WH,NS)});
+   return g+P('M46.6 19 L53.4 19 L53.4 23.6 L46.6 23.6 Z',BRASS,sk(2))},
+  "h-bigribbon":function(){
+   return G('translate(77 20) rotate(20)',P('M-1 3 L-7 15 L-1.5 13.5 Z',RED2,sk(2.2))+P('M1 3 L7 15 L1.5 13.5 Z',RED2,sk(2.2))
+    +P('M0 0 Q-8 -13 -16 -9 Q-20 0 -16 9 Q-8 13 0 0 Z',RED)+P('M0 0 Q8 -13 16 -9 Q20 0 16 9 Q8 13 0 0 Z',RED)
+    +'<rect x="-4.5" y="-5" width="9" height="10" rx="3" fill="'+RED+'" '+sk(2.4)+'/>'+L('M-12 -5 Q-14 -1 -13 3',"#FF8A90",2)+L('M12 -5 Q14 -1 13 3',"#FF8A90",2))},
+  "h-starpin":function(){return L('M26 40 L40 27',"#C9CED8",3)+'<path d="'+star(31,31,9.6,4.2)+'" fill="'+GOLD+'" '+sk(2.4)+'/>'+C(31,31.4,2.2,"#FFF3C4",NS)+L('M27.4 27 l1.6 -1.6',WH,1.6)
+    +'<path d="'+star(43.6,25.6,5,2.2)+'" fill="#FFE27A" '+sk(1.8)+'/>'},
+  "h-officer":function(){var CAP="#1C2650",CAP2="#2C3A72";
+   return G('rotate(-6 50 26)',P('M24 29 Q22 16 32 12 Q50 6 68 12 Q78 16 76 29 Z',CAP)
+    +L('M33 14 Q42 11 50 11',CAP2,2.4)
+    +P('M26.6 25 H73.4 V31 H26.6 Z',GOLD,sk(2.2))+L('M28 28 H72',GOLD2,1.4)
+    +P('M24 31 Q50 41 76 31 Q66 35.6 50 36 Q34 35.6 24 31 Z',"#0E1330",sk(2.6))
+    +'<path d="'+star(50,17.6,5.6,2.4)+'" fill="'+GOLD+'" '+sk(1.4)+'/>')},
+  "h-hood":{back:function(){return P('M13 72 Q8 30 30 16 Q50 6 70 16 Q92 30 87 72 Q92 88 84 100 L16 100 Q8 88 13 72 Z',"#3E3A78")},
+   front:function(){return P('M17 74 Q12 34 36 24 Q50 19 64 24 Q88 34 83 74 Q80 50 72 40 Q62 31 50 31 Q38 31 28 40 Q20 50 17 74 Z',"#4C47A0")
+    +L('M22 66 Q22 46 32 38 Q41 33 50 33 Q59 33 68 38 Q78 46 78 66',"#7C76CC",2.2)+'<path d="'+star(50,25.4,3.6,1.5)+'" fill="'+GOLD+'" '+sk(1.2)+'/>'}},
+  "h-headphone":function(){var HP="#E2457A",HP2="#B02A5A";
+   return L('M18 52 Q16 18 50 16 Q84 18 82 52',O,8)+L('M18 52 Q16 18 50 16 Q84 18 82 52',HP,4.4)
+    +P('M12 47 Q12 42 17.6 42 L24 42 L24 64 L17.6 64 Q12 64 12 59 Z',HP)+P('M88 47 Q88 42 82.4 42 L76 42 L76 64 L82.4 64 Q88 64 88 59 Z',HP)
+    +L('M15.6 47 V58 M84.4 47 V58',HP2,2.4)+C(18,53,1.4,"#FFC2D6",NS)},
+  "h-chef":function(){return P('M30 26 Q19 22 22 12 Q25 2 37 5 Q42 -3 51 1 Q59 -3 64 5 Q77 3 78 13 Q80 22 70 26 Z',WH)
+    +L('M38 9 Q37 15 40 21 M60 9 Q62 15 60 21',"#D5DCE6",2.2)
+    +P('M29 25 L71 25 L71.6 35 Q50 33 28.4 35 Z',"#F2F4F8",sk(2.6))+L('M36 26 V33.6 M43 25.6 V33.4 M50 25.6 V33.2 M57 25.6 V33.4 M64 26 V33.6',"#D5DCE6",1.6)},
+  "h-pilot":{earsOver:1,front:function(){var CAP="#6E4426",CAP2="#8E5A34",FL="#F3DDB4";
+   return P('M23 45 Q20 16 50 14 Q80 16 77 45 Q64 37 50 37 Q36 37 23 45 Z',CAP)
+    +L('M50 15 V35',"#4A2C16",2,.7)+L('M34 19 Q31 28 32 37 M66 19 Q69 28 68 37',CAP2,2.4)
+    +P('M22 42 Q34 33.6 50 33.6 Q66 33.6 78 42 L77 46.6 Q64 38.6 50 38.6 Q36 38.6 23 46.6 Z',FL,sk(2.2))
+    +P('M23 43 Q14 45 13 55 Q19 59 26 52 Z',CAP)+P('M77 43 Q86 45 87 55 Q81 59 74 52 Z',CAP)
+    +C(18.6,51.4,1.8,"#D69A3C",sk(1))+C(81.4,51.4,1.8,"#D69A3C",sk(1))}}
+ };
+
+ var WIDEHAT={"beret":1,"x-cap":1,"x-tophat":1,"x-wizard":1,"h-fedora":1,"h-officer":1,"dhat":1,"h-chef":1};
+ /* ───────── 얼굴 꾸미기 (eye) ───────── EX: 눈 x, EY: 눈 y */
+ function eyeItem(id,ex,ey,under){var g='',l=ex[0],r=ex[1],y=ey;
+  if(under){
+   if(id==="x-mask")return P('M21 '+(y-5)+' Q29 '+(y-12)+' 40 '+(y-10.4)+' Q46 '+(y-9.6)+' 50 '+(y-6)+' Q54 '+(y-9.6)+' 60 '+(y-10.4)+' Q71 '+(y-12)+' 79 '+(y-5)+' Q79 '+(y+8)+' 64 '+(y+9.4)+' Q55 '+(y+9.4)+' 50 '+(y+4)+' Q45 '+(y+9.4)+' 36 '+(y+9.4)+' Q21 '+(y+8)+' 21 '+(y-5)+' Z',"#2A2456",sk(2.6))
+    +E(l,y+.6,8.8,9.8,under,NS)+E(r,y+.6,8.8,9.8,under,NS)+L('M17 '+(y-4)+' l-4 -3 M83 '+(y-4)+' l4 -3',"#2A2456",3)+L('M26 '+(y-6)+' Q31 '+(y-9.4)+' 37 '+(y-8.6)+' M63 '+(y-8.6)+' Q69 '+(y-9.4)+' 74 '+(y-6),"#6A62B0",2);
+   return ''}
+  var tint='fill="#FFFFFF" fill-opacity=".14"';
+  if(id==="glasses"){
+   [l,r].forEach(function(x){g+='<rect x="'+(x-10)+'" y="'+(y-8.4)+'" width="20" height="16.8" rx="6.4" '+tint+' '+sk(3)+'/>'});
+   g+=L('M'+(l+10)+' '+(y-2)+' Q50 '+(y-5)+' '+(r-10)+' '+(y-2),O,2.8)+L('M'+(l-10)+' '+(y-3)+' L22 '+(y-5)+' M'+(r+10)+' '+(y-3)+' L78 '+(y-5),O,2.6)
+    +L('M'+(l-6)+' '+(y-4)+' l3 -2.4 M'+(r-6)+' '+(y-4)+' l3 -2.4',WH,1.8,.85);
+  }else if(id==="x-sun"){
+   [l,r].forEach(function(x){g+=P('M'+(x-11)+' '+(y-7)+' L'+(x+11)+' '+(y-7)+' Q'+(x+11)+' '+(y+9)+' '+x+' '+(y+9)+' Q'+(x-11)+' '+(y+9)+' '+(x-11)+' '+(y-7)+' Z',"#1B1F3A",sk(2.8))
+    +L('M'+(x-6)+' '+(y-3)+' L'+(x+1)+' '+(y-3)+' M'+(x-6)+' '+(y+1)+' L'+(x-3)+' '+(y+1),"#7FC4F2",2.2)});
+   g+=L('M'+(l+11)+' '+(y-6)+' L'+(r-11)+' '+(y-6),O,3)+L('M'+(l-11)+' '+(y-6)+' L21 '+(y-8)+' M'+(r+11)+' '+(y-6)+' L79 '+(y-8),O,2.6);
+  }else if(id==="goggles"){
+   g+=L('M18 '+(y-4)+' L'+(l-10)+' '+(y-3)+' M'+(r+10)+' '+(y-3)+' L82 '+(y-4),"#3E5C6E",5)+L('M'+(l+9)+' '+y+' L'+(r-9)+' '+y,"#5B8FA8",4.4);
+   [l,r].forEach(function(x){g+=E(x,y,10.6,9.6,"#9CDCF5",sk(2.6)+' fill-opacity=".38"')+E(x,y,10.6,9.6,"none",'stroke="#5B8FA8" stroke-width="2.6"')+E(x,y,12.4,11.4,"none",sk(1.6))+L('M'+(x-6)+' '+(y-3)+' Q'+(x-4)+' '+(y-6.4)+' '+(x-.6)+' '+(y-6.6),WH,2)});
+  }else if(id==="x-mono"){
+   g+=L('M'+(r+8)+' '+(y+7)+' Q'+(r+16)+' '+(y+18)+' '+(r+8)+' '+(y+30),GOLD2,1.8);
+   g+=C(r,y,10.4,"#DCF0FF",sk(1.4)+' fill-opacity=".25"')+C(r,y,10.4,"none",'stroke="'+GOLD+'" stroke-width="3"')+C(r,y,12.2,"none",sk(1.4))+L('M'+(r-6)+' '+(y-4)+' l3 -2.4',WH,1.8);
+  }else if(id==="x-star"){
+   [l,r].forEach(function(x){g+='<path d="'+star(x,y,13,6.2)+'" fill="#FF8FB1" fill-opacity=".35" stroke="#E2457A" stroke-width="3" stroke-linejoin="round"/>'+'<path d="'+star(x,y,14.8,7.4)+'" fill="none" '+sk(1.4)+'/>'});
+   g+=L('M'+(l+6)+' '+(y-1)+' L'+(r-6)+' '+(y-1),"#E2457A",2.6);
+  }else if(id==="x-momgog"){
+   g+=L('M17 '+(y-3)+' L'+(l-10)+' '+(y-2)+' M'+(r+10)+' '+(y-2)+' L83 '+(y-3),"#7A4A2A",5.6);
+   [l,r].forEach(function(x){g+=C(x,y,10.2,"#FFE27A",sk(1.4)+' fill-opacity=".4"')+C(x,y,10.2,"none",'stroke="#B87A3A" stroke-width="3.8"')+C(x,y,12.3,"none",sk(1.6))+L('M'+(x-5)+' '+(y-4)+' l3.4 -2.6',WH,2)});
+   g+='<rect x="'+(l+10.6)+'" y="'+(y-2.4)+'" width="'+(r-l-21.2)+'" height="4.4" fill="#B87A3A" '+sk(1.6)+'/>';
+  }else if(id==="e-round"){
+   [l,r].forEach(function(x){g+=C(x,y,9.6,"#FFFFFF",'fill-opacity=".2"')+C(x,y,11,"none",sk(1.2))+C(x,y,9.6,"none",'stroke="#E0A92E" stroke-width="2.6"')+L('M'+(x-5.6)+' '+(y-4)+' l2.6 -2',WH,1.6)});
+   g+=L('M'+(l+9.6)+' '+(y-1)+' Q50 '+(y-4)+' '+(r-9.6)+' '+(y-1),"#E0A92E",2.4)+L('M'+(l-9.6)+' '+(y-2)+' L22 '+(y-4)+' M'+(r+9.6)+' '+(y-2)+' L78 '+(y-4),"#E0A92E",2.2);
+  }else if(id==="e-heart"){
+   [l,r].forEach(function(x){g+='<path d="'+heartD(x,y+2,24)+'" fill="#FF5C8A" fill-opacity=".35" stroke="#E2245A" stroke-width="3"/>'+'<path d="'+heartD(x,y+2.2,27.6)+'" fill="none" '+sk(1.4)+'/>'+L('M'+(x-7)+' '+(y-5)+' l2.6 -2',WH,1.8)});
+   g+=L('M'+(l+9)+' '+(y-3)+' Q50 '+(y-6)+' '+(r-9)+' '+(y-3),"#E2245A",2.6);
+  }else if(id==="e-patch"){
+   g+=L('M'+(r-8)+' '+(y-7)+' L27 '+(y-17)+' M'+(r+8)+' '+(y-5)+' L80 '+(y-4),"#2A2233",2.8);
+   g+=P('M'+(r-9)+' '+(y-6)+' Q'+r+' '+(y-10)+' '+(r+9)+' '+(y-6)+' Q'+(r+10)+' '+(y+8)+' '+r+' '+(y+10)+' Q'+(r-10)+' '+(y+8)+' '+(r-9)+' '+(y-6)+' Z',"#2A2233",sk(2.6));
+   g+='<path d="'+star(r,y+1,3.6,1.5)+'" fill="'+GOLD+'"/>';
+  }
+  return g}
+
+ /* ───────── 옷 (fit) ───────── 얼굴 좌표로 그리고 B()가 전신 아이 어깨 폭에 맞게 가로를 줄인다 */
+ function neckExt(ext){return ext==="x-bow"||ext==="t-tie"||ext==="t-pendant"||ext==="t-scarf"}
+ var SHL='M8 YB Q10 84 30 79',SHR='Q90 84 92 YB';
+ function sh(mid,YB){return (SHL+' '+mid+(mid.charAt(0)==="Q"?' 70 79 ':' L70 79 ')+SHR).replace(/YB/g,YB)}
+ function btn(x,y,c,r){return C(BX(x),y,r||2.3,c,sk(1.4))}
+ var FIT={
+  "f-trench":{c:"#E6CC98",c2:"#A07A50",sl:"#E6CC98",cuff:"#A07A50",pants:"#4A4040",shoe:"#3A2A22",long:1,
+   bust:function(F,X){var g='',YB=F?104:101,c=this.c,c2=this.c2;
+    g+=OPEN(sh('L50 88',YB),c,F);
+    g+=BP(F?'M38 79 L50 90 L62 79 L58 104 L50 111 L42 104 Z':'M38 79 L50 90 L62 79 L60 101 L40 101 Z',"#F6F2E8");
+    if(!X.neckExt)g+=BP(F?'M47 86 L53 86 L55 103 L50 108 L45 103 Z':'M47 86 L53 86 L55 101 L45 101 Z',"#B8323A")+BP('M46.5 84 L53.5 84 L52 89 L48 89 Z',"#B8323A",sk(2));
+    g+=L(B('M18 90 Q22 86 28 86 M82 90 Q78 86 72 86'),c2,2.6)+btn(30,96,c2,2.4)+btn(70,96,c2,2.4);
+    return g},
+   over:function(F){var YB=F?104:101,c=this.c,c2=this.c2;
+    return OPEN('M12 '+YB+' L14 78 L26 66 L32 80 L38 79 L33 '+YB,c,F)+L(B('M26 66 L32 80'),c2,2)
+     +OPEN('M88 '+YB+' L86 78 L74 66 L68 80 L62 79 L67 '+YB,c,F)+L(B('M74 66 L68 80'),c2,2)},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult){g+=P('M14 96 L86 96 L90 141 Q50 146 10 141 Z',c)+L('M50 108 L50 143',O,2.2)+L('M52 100 L60 142',c2,2);
+     g+=btn(42,113,c2)+btn(58,113,c2)+btn(42,135,c2)+btn(58,135,c2);
+     g+=P('M12 120 Q50 125 88 120 L88.6 127 Q50 132 11.4 127 Z',c2,sk(2.4))+'<rect x="45" y="121.5" width="10" height="8" rx="1.5" fill="none" '+sk(2.2)+'/>'+L('M66 128 L70 138 M70 128 L75 137',c2,2.4);}
+    else{g+=P('M27 97 Q50 93 73 97 L77 135 Q50 139 23 135 Z',c)+L('M50 104 L50 136',O,2);
+     g+=P('M25 115 Q50 119 75 115 L75.6 121 Q50 125 24.4 121 Z',c2,sk(2.2))+'<rect x="46" y="116" width="8" height="7" rx="1.4" fill="none" '+sk(2)+'/>'+btn(44,128,c2,2)+btn(56,128,c2,2);}
+    return g}},
+  "f-cape":{c:"#E23B44",c2:"#A22633",sl:null,pants:"#2D3F86",shoe:"#7A3A22",
+   bust:function(F){var g='';
+    if(F){g+=P(B('M10 106 Q8 84 28 79 Q40 84 50 86 Q44 96 34 103 Q22 108 10 106 Z'),RED)+P(B('M90 106 Q92 84 72 79 Q60 84 50 86 Q56 96 66 103 Q78 108 90 106 Z'),RED);
+     g+=L(B('M18 100 Q22 90 30 86 M82 100 Q78 90 70 86'),RED2,2.4);}
+    else{g+=P('M8 101 Q8 84 28 79 Q50 86 72 79 Q92 84 92 101 Z',RED)+L('M20 94 Q24 88 30 86 M80 94 Q76 88 70 86',RED2,2.4);}
+    return g},
+   over:function(F,X){var g=BP('M33 79 Q36 92 48 88 L50 84 L52 88 Q64 92 67 79 Q50 86 33 79 Z',WH,sk(2.4));
+    if(!X.neckExt||X.ext==="t-tie")g+='<path d="'+star(50,91,9.4,4.2)+'" fill="'+GOLD+'" '+sk(2.2)+'/>'+C(50,91,1.6,"#FFF3C4",NS);
+    return g},
+   figBack:function(X){return P('M12 96 Q50 88 88 96 L94 146 Q78 140 68 147 Q50 141 32 147 Q22 140 6 146 Z',RED)+L('M20 108 L14 140 M80 108 L86 140',RED2,2.4)},
+   torso:function(X){var g='';
+    if(X.adult){g+=P('M24 96 L76 96 L78 126 L22 126 Z',"#FBE8D0")+P('M21 122 L79 122 L80 138 L52 138 L50 132 L48 138 L20 138 Z',"#2D3F86")+L('M36 98 L37 123 M64 98 L63 123',"#2D3F86",3.4)}
+    else{g+=P('M32 98 Q50 94 68 98 L68 124 Q50 128 32 124 Z',"#FBE8D0")+P('M31 120 Q50 125 69 120 L70 137 L52 137 L50 131 L48 137 L30 137 Z',"#2D3F86")+L('M40 99 L41 121 M60 99 L59 121',"#2D3F86",3.4)+C(41,119,1.8,GOLD,NS)+C(59,119,1.8,GOLD,NS)}
+    return g}},
+  "f-shirt":{c:"#BFE0F5",c2:"#7FB2D6",sl:"#BFE0F5",cuff:"#FFFFFF",pants:"#3C5BA8",shoe:"#6A4A3A",
+   bust:function(F){var YB=F?104:101,c=this.c,c2=this.c2;
+    return OPEN(sh('Q50 90',YB),c,F)+L(B('M50 89 L50 '+YB),c2,2.2)+btn(50,94.6,WH,1.8)+(F?btn(50,102,WH,1.8):'')+L(B('M20 93 Q24 88 30 87 M80 93 Q76 88 70 87'),c2,2.2)},
+   over:function(F){return BP('M31 77 Q40 85 50 89 L41 96 Q34 88 31 77 Z',WH,sk(2.4))+BP('M69 77 Q60 85 50 89 L59 96 Q66 88 69 77 Z',WH,sk(2.4))},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult)g+=P('M18 122 L82 122 L83 138 L52 138 L50 132 L48 138 L17 138 Z',this.pants)+P('M16 96 L84 96 L84 125 Q50 129 16 125 Z',c)+L('M50 100 L50 126',c2,2.2)+btn(50,108,WH,1.8)+btn(50,117,WH,1.8)+P('M17 121 Q50 126 83 121 L83 127 Q50 132 17 127 Z',"#5A3A2A",sk(2))+'<rect x="46" y="122.6" width="8" height="6.4" rx="1.2" fill="'+GOLD+'" '+sk(1.6)+'/>';
+    else g+=P('M31 118 Q50 123 69 118 L70 137 L52 137 L50 131 L48 137 L30 137 Z',this.pants)+P('M29 97 Q50 93 71 97 L71 121 Q50 125 29 121 Z',c)+L('M50 100 L50 122',c2,2)+btn(50,108,WH,1.6)+btn(50,115,WH,1.6);
+    return g}},
+  "f-hoodie":{c:"#4DB6AC",c2:"#2E8178",sl:"#4DB6AC",cuff:"#2E8178",pants:"#5A6070",shoe:"#E2574C",
+   back:function(X){return BP('M18 92 Q14 70 32 69 Q50 73 68 69 Q86 70 82 92 Z',this.c2)},
+   bust:function(F,X){var YB=F?104:101,c=this.c,c2=this.c2;
+    return OPEN(sh('Q50 88',YB),c,F)+BP('M28 79 Q36 93 50 93 Q64 93 72 79 Q62 86 50 86 Q38 86 28 79 Z',c2,sk(2.4))
+     +(X.neckExt?'':L(B('M45 90 L44 99 M55 90 L56 99'),WH,2.2)+C(BX(44),100,1.6,WH,sk(1))+C(BX(56),100,1.6,WH,sk(1)))},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult)g+=P('M18 122 L82 122 L83 138 L52 138 L50 132 L48 138 L17 138 Z',this.pants)+P('M16 96 L84 96 L85 128 Q50 132 15 128 Z',c)+P('M30 110 L70 110 L74 124 L26 124 Z',c2,sk(2.4))+P('M15.4 124 Q50 128 84.6 124 L85 130 Q50 134 15 130 Z',c2,sk(2.2));
+    else g+=P('M31 118 Q50 123 69 118 L70 137 L52 137 L50 131 L48 137 L30 137 Z',this.pants)+P('M28 97 Q50 93 72 97 L73 124 Q50 128 27 124 Z',c)+P('M36 110 L64 110 L67 121 L33 121 Z',c2,sk(2.2))+P('M27.4 120 Q50 124 72.6 120 L73 126 Q50 130 27 126 Z',c2,sk(2));
+    return g}},
+  "f-sweater":{c:"#E8B53C",c2:"#C08A1E",sl:"#E8B53C",cuff:"#C08A1E",pants:"#6E4E3A",shoe:"#3A2A22",
+   bust:function(F){var YB=F?104:101,c=this.c,c2=this.c2,g=OPEN(sh('Q50 88',YB),c,F);
+    g+=cable(BX(37),90,YB,c2)+cable(BX(63),90,YB,c2)+cable(BX(19),94,YB,c2);
+    g+=BP('M31 78 Q50 89 69 78 L70.6 84 Q50 96 29.4 84 Z',c2,sk(2.4))+L(B('M36 84 L35.4 86.6 M42 87 L41.6 89.6 M50 88.6 L50 91.6 M58 87 L58.4 89.6 M64 84 L64.6 86.6'),"#9A6A10",1.6);
+    if(K===1)g+=cable(81,94,YB,c2);
+    return g},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult){g+=P('M18 122 L82 122 L83 138 L52 138 L50 132 L48 138 L17 138 Z',this.pants)+P('M16 96 L84 96 L85 128 Q50 132 15 128 Z',c)+cable(38,104,124,c2)+cable(62,104,124,c2)+cable(26,104,124,c2)+cable(74,104,124,c2)+P('M15.4 123 Q50 127 84.6 123 L85 130 Q50 134 15 130 Z',c2,sk(2.2))}
+    else{g+=P('M31 118 Q50 123 69 118 L70 137 L52 137 L50 131 L48 137 L30 137 Z',this.pants)+P('M28 97 Q50 93 72 97 L73 124 Q50 128 27 124 Z',c)+cable(42,102,120,c2)+cable(58,102,120,c2)+P('M27.4 119 Q50 123 72.6 119 L73 126 Q50 130 27 126 Z',c2,sk(2))}
+    return g}},
+  "f-raincoat":{c:"#FFD23F",c2:"#D9A21B",sl:"#FFD23F",cuff:"#D9A21B",pants:"#3C5BA8",shoe:"#E2574C",boots:1,long:1,
+   bust:function(F){var YB=F?104:101,c=this.c,c2=this.c2,g=OPEN(sh('L50 88',YB),c,F);
+    g+=L(B('M50 88 L50 '+YB),c2,2.6)+L(B('M20 93 Q24 88 30 87 M80 93 Q76 88 70 87'),c2,2.2);
+    g+='<rect x="'+BX(40.5)+'" y="94" width="'+r2(6*K+.01)+'" height="3" rx="1.4" fill="#8A5A2A" '+sk(1.4)+'/>'+'<rect x="'+BX(53.5)+'" y="94" width="'+r2(6*K+.01)+'" height="3" rx="1.4" fill="#8A5A2A" '+sk(1.4)+'/>'+L(B('M46.5 95.5 L53.5 95.5'),"#8A5A2A",1.4);
+    return g},
+   over:function(F){var c=this.c;return BP('M29 76 L50 88 L42 97 L24 86 Z',c,sk(2.6))+BP('M71 76 L50 88 L58 97 L76 86 Z',c,sk(2.6))+L(B('M30 80 L44 88 M70 80 L56 88'),this.c2,1.8)},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult){g+=P('M14 96 L86 96 L91 140 Q50 145 9 140 Z',c)+L('M50 100 L50 142',c2,2.6);[108,120,132].forEach(function(y){g+='<rect x="40" y="'+y+'" width="7" height="3.4" rx="1.5" fill="#8A5A2A" '+sk(1.4)+'/><rect x="53" y="'+y+'" width="7" height="3.4" rx="1.5" fill="#8A5A2A" '+sk(1.4)+'/>'})}
+    else{g+=P('M27 97 Q50 93 73 97 L78 134 Q50 139 22 134 Z',c)+L('M50 100 L50 136',c2,2.4);[107,118,128].forEach(function(y){g+='<rect x="43" y="'+y+'" width="5.4" height="3" rx="1.4" fill="#8A5A2A" '+sk(1.2)+'/><rect x="52" y="'+y+'" width="5.4" height="3" rx="1.4" fill="#8A5A2A" '+sk(1.2)+'/>'})}
+    return g}},
+  "f-labcoat":{c:"#F4F6F8",c2:"#B9C3CC",sl:"#F4F6F8",cuff:"#DCE3EA",pants:"#5A6070",shoe:"#3A3A4A",long:1,
+   bust:function(F,X){var YB=F?104:101,c=this.c,c2=this.c2,g=OPEN(sh('L50 98',YB),c,F);
+    g+=BP(F?'M36 79 L50 98 L64 79 L60 104 L40 104 Z':'M36 79 L50 98 L64 79 L62 101 L38 101 Z',"#9CCBEA");
+    g+=L(B('M44 80 L50 86 L56 80'),"#6FA6CC",2);
+    g+=BP('M20 92 L36 92 L36 '+YB+' L20 '+YB+' Z',c,sk(2.2))+L(B('M24 92 L24 86 M28.6 92 L29.6 85.4 M32.4 92 L32.4 87'),"#3A7BD5",2.6)+C(BX(29.6),85.2,1.2,"#E23B44",NS);
+    return g},
+   over:function(F){var YB=F?104:101,c=this.c;
+    return BP('M30 78 L36 79 L50 98 L45 '+YB+' L38 '+YB+' L42 94 L26 86 Z',c,sk(2.4))+BP('M70 78 L64 79 L50 98 L55 '+YB+' L62 '+YB+' L58 94 L74 86 Z',c,sk(2.4))},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult){g+=P('M24 96 L76 96 L76 126 L24 126 Z',"#9CCBEA")+P('M14 96 L40 96 L44 142 Q26 142 9 140 Z',c)+P('M86 96 L60 96 L56 142 Q74 142 91 140 Z',c)+P('M62 120 L78 120 L78 132 L62 132 Z',c,sk(2))+btn(42,116,c2,2)+btn(42,130,c2,2)}
+    else{g+=P('M31 118 Q50 123 69 118 L70 137 L52 137 L50 131 L48 137 L30 137 Z',this.pants)+P('M32 97 L68 97 L68 120 L32 120 Z',"#9CCBEA")+P('M27 97 L42 97 L45 136 Q34 138 22 135 Z',c)+P('M73 97 L58 97 L55 136 Q66 138 78 135 Z',c)+P('M60 118 L72 118 L73 128 L60 128 Z',c,sk(1.8))}
+    return g}},
+  "f-hanbok":{c:"#FFD95A",c2:"#E23B44",sl:"#FFD95A",cuff:"#E23B44",saek:1,pants:"#CFCFD8",shoe:"#F4F1E8",
+   col:function(X){return X.adult?{j:"#ECE6D2",k:"#3F6E8C",go:"#3F6E8C",v:"#3F6E8C"}:{j:"#FFD95A",k:"#E23B44",go:"#E23B44"}},
+   bust:function(F,X){var YB=F?104:101,q=this.col(X),g=OPEN(sh('L50 92',YB),q.j,F);
+    g+=BP('M34 79 L50 92 L66 79 Z',WH,sk(2));
+    g+=BP('M62 78.4 L70 79.6 L45 '+YB+' L36 '+YB+' Z',q.k,sk(2.4))+L(B('M63.4 80.6 L46 97'),WH,2.6);
+    if(q.v)g+=BP('M8 '+YB+' Q10 86 26 81 L30 82 L38 '+YB+' Z',q.v,sk(2.6))+BP('M92 '+YB+' Q90 86 74 81 L70 82 L60 '+YB+' Z',q.v,sk(2.6))+btn(31,96,GOLD,1.8)+btn(64,96,GOLD,1.8);
+    else g+=BP('M44 96 Q36 93 33 98 Q36 102 44 98 Z',q.go,sk(2))+L(B('M44 97 Q41 104 37 '+(YB+4)+' M44 97 Q44 104 43 '+(YB+4)),q.go,3.4);
+    return g},
+   torso:function(X){var q=this.col(X),g='';
+    if(X.adult){g+=P('M16 120 L84 120 L86 140 L52 140 L50 134 L48 140 L14 140 Z',"#CFCFD8")+L('M22 126 L46 126 M54 126 L78 126',"#A9A9B8",2)
+     +P('M16 96 L84 96 L85 124 Q50 128 15 124 Z',q.j)+P('M16 96 L38 96 L42 126 Q28 126 15 124 Z',q.v)+P('M84 96 L62 96 L58 126 Q72 126 85 124 Z',q.v)+btn(40,108,GOLD,1.8)+btn(40,118,GOLD,1.8);}
+    else{g+=P('M30 104 Q50 100 70 104 L82 144 Q50 151 18 144 Z',"#E23B44")+L('M32 120 L26 142 M50 108 L50 146 M68 120 L74 142',"#B82A34",2)
+     +P('M30 97 Q50 93 70 97 L70 108 Q50 112 30 108 Z',q.j)+L('M40 101 Q36 116 33 132 M40 101 Q41 116 40 128',q.go,3.4);}
+    return g}},
+  "f-uniform":{c:"#2B3A7E",c2:"#1C2650",sl:"#2B3A7E",cuff:"#C8323C",pants:"#1C2650",shoe:"#1A1A24",boots:1,
+   bust:function(F,X){var YB=F?104:101,c=this.c,c2=this.c2,g=OPEN(sh('L50 90',YB),c,F);
+    g+=BP('M38 79 L50 90 L62 79 L60 '+YB+' L40 '+YB+' Z',WH,sk(2.4));
+    if(!X.neckExt)g+=BP('M47 86 L53 86 L54.6 '+YB+' L45.4 '+YB+' Z',"#C8323C",sk(2.2))+BP('M46.5 84 L53.5 84 L52 89 L48 89 Z',"#C8323C",sk(2));
+    g+=BP('M33 79 L44 '+YB+' L38 '+YB+' L27 84 Z',c2,sk(2.4))+BP('M67 79 L56 '+YB+' L62 '+YB+' L73 84 Z',c2,sk(2.4));
+    g+=BP('M10 89 Q18 82 30 84 L30 90 Q20 89 12 95 Z',GOLD,sk(2.2))+BP('M90 89 Q82 82 70 84 L70 90 Q80 89 88 95 Z',GOLD,sk(2.2));
+    g+=L(B('M13 94 L12 98 M17 92 L16.4 96.4 M21 90.6 L20.8 95 M87 94 L88 98 M83 92 L83.6 96.4 M79 90.6 L79.2 95'),GOLD,1.8);
+    g+=btn(36,97,GOLD,1.8)+btn(64,97,GOLD,1.8);
+    return g},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult){g+=P('M18 122 L82 122 L83 138 L52 138 L50 132 L48 138 L17 138 Z',this.pants)+L('M20 124 L19 138 M80 124 L81 138',"#C8323C",2.4)+P('M16 96 L84 96 L86 128 Q50 132 14 128 Z',c)+L('M50 102 L50 129',c2,2)+btn(44,108,GOLD,2)+btn(56,108,GOLD,2)+btn(44,118,GOLD,2)+btn(56,118,GOLD,2)+P('M15 119 Q50 124 85 119 L85.4 125 Q50 130 14.6 125 Z',"#F4F1E8",sk(2))+'<rect x="45.6" y="120" width="8.8" height="7" rx="1.4" fill="'+GOLD+'" '+sk(1.6)+'/>'}
+    else{g+=P('M31 118 Q50 123 69 118 L70 137 L52 137 L50 131 L48 137 L30 137 Z',this.pants)+P('M28 97 Q50 93 72 97 L73 124 Q50 128 27 124 Z',c)+L('M50 100 L50 125',c2,2)+btn(45,106,GOLD,1.7)+btn(55,106,GOLD,1.7)+btn(45,114,GOLD,1.7)+btn(55,114,GOLD,1.7)+P('M27.4 117 Q50 122 72.6 117 L73 122.6 Q50 127.6 27 122.6 Z',"#F4F1E8",sk(1.8))}
+    return g}},
+  "f-flight":{c:"#8E5631",c2:"#6E3F22",sl:"#8E5631",cuff:"#F3DDB4",pants:"#5C6A54",shoe:"#4A2A18",boots:1,
+   bust:function(F){var YB=F?104:101,c=this.c,c2=this.c2,g=OPEN(sh('L50 88',YB),c,F);
+    g+=L(B('M50 90 L50 '+YB),c2,2.4)+L(B('M16 94 Q20 90 26 90 M84 94 Q80 90 74 90'),c2,2);
+    return g},
+   over:function(F){var YB=F?104:101,FL="#F3DDB4";
+    return BP('M14 90 Q14 80 24 78 Q30 74 36 78 Q44 80 46 88 Q46 95 42 '+YB+' L33 '+YB+' Q35 94 30 91 Q22 95 14 90 Z',FL,sk(2.6))
+     +BP('M86 90 Q86 80 76 78 Q70 74 64 78 Q56 80 54 88 Q54 95 58 '+YB+' L67 '+YB+' Q65 94 70 91 Q78 95 86 90 Z',FL,sk(2.6))
+     +L(B('M22 82 Q26 80 30 82 M78 82 Q74 80 70 82'),"#D9BE8C",1.8)},
+   torso:function(X){var c=this.c,c2=this.c2,g='',FL="#F3DDB4";
+    if(X.adult){g+=P('M18 122 L82 122 L83 138 L52 138 L50 132 L48 138 L17 138 Z',this.pants)+P('M16 96 L84 96 L86 126 Q50 130 14 126 Z',c)+L('M50 98 L50 128',O,2)+P('M14.6 121 Q50 126 85.4 121 L86 129 Q50 134 14 129 Z',FL,sk(2.2))+'<rect x="25" y="104" width="14" height="10" rx="1.6" fill="'+c2+'" '+sk(2)+'/><rect x="61" y="104" width="14" height="10" rx="1.6" fill="'+c2+'" '+sk(2)+'/>'}
+    else{g+=P('M31 118 Q50 123 69 118 L70 137 L52 137 L50 131 L48 137 L30 137 Z',this.pants)+P('M28 97 Q50 93 72 97 L73 123 Q50 127 27 123 Z',c)+L('M50 99 L50 125',O,1.8)+P('M27.4 118 Q50 122 72.6 118 L73 125 Q50 129 27 125 Z',FL,sk(2))+'<rect x="33" y="104" width="10" height="8" rx="1.4" fill="'+c2+'" '+sk(1.8)+'/><rect x="57" y="104" width="10" height="8" rx="1.4" fill="'+c2+'" '+sk(1.8)+'/>'}
+    return g}},
+  "f-tux":{c:"#2E3352",c2:"#5A6196",sl:"#25283F",cuff:"#FFFFFF",pants:"#1E2034",shoe:"#14141C",
+   bust:function(F,X){var YB=F?104:101,c=this.c,c2=this.c2,g=OPEN(sh('L50 98',YB),c,F);
+    g+=BP(F?'M35 79 L50 100 L65 79 L60 104 L40 104 Z':'M35 79 L50 99 L65 79 L62 101 L38 101 Z',WH,sk(2.4));
+    g+=L(B('M50 90 L50 '+YB),"#D5DCE6",1.6)+C(BX(50),94,1.2,O,NS)+(F?C(BX(50),101,1.2,O,NS):'');
+    g+=BP('M31 79 L48 '+YB+' L41 '+YB+' L25 85 Z',c2,sk(2.4))+BP('M69 79 L52 '+YB+' L59 '+YB+' L75 85 Z',c2,sk(2.4));
+    g+=BP('M72 92 L80 92 L79.4 95 L72.6 95 Z',WH,sk(1.6))+BP('M73 92 L74.6 88.6 L76.2 92 L77.8 88.4 L79 92 Z',WH,sk(1.4));
+    if(!X.neckExt)g+=bowtie(50,86,"#14141C","#3A3D5C");
+    return g},
+   torso:function(X){var c=this.c,c2=this.c2,g='';
+    if(X.adult){g+=P('M18 122 L82 122 L83 138 L52 138 L50 132 L48 138 L17 138 Z',this.pants)+P('M38 96 L62 96 L62 128 L38 128 Z',WH)+L('M50 98 L50 126',"#D5DCE6",1.6)+P('M16 96 L44 96 L48 124 L42 142 Q26 140 14 134 Z',c)+P('M84 96 L56 96 L52 124 L58 142 Q74 140 86 134 Z',c)+btn(46,120,c2,1.8)}
+    else{g+=P('M31 118 Q50 123 69 118 L70 137 L52 137 L50 131 L48 137 L30 137 Z',this.pants)+P('M38 97 L62 97 L62 122 L38 122 Z',WH)+L('M50 99 L50 121',"#D5DCE6",1.4)+P('M28 97 L44 97 L47 120 L43 132 Q32 130 27 126 Z',c)+P('M72 97 L56 97 L53 120 L57 132 Q68 130 73 126 Z',c)}
+    return g}}
+ };
+ function cable(x,y0,y1,c){var d='',d2='';for(var y=y0;y<y1-1;y+=5){d+='M'+r2(x-2.6)+' '+y+' Q'+r2(x+2.8)+' '+(y+2.5)+' '+r2(x-2.6)+' '+(y+5)+' ';d2+='M'+r2(x+2.6)+' '+y+' Q'+r2(x-2.8)+' '+(y+2.5)+' '+r2(x+2.6)+' '+(y+5)+' '}
+  return L(d,c,1.8)+L(d2,c,1.8)}
+ function bowtie(x,y,c,c2){x=BX(x);return P('M'+x+' '+y+' L'+(x-9)+' '+(y-5)+' Q'+(x-11)+' '+y+' '+(x-9)+' '+(y+5)+' Z',c,sk(2.2))+P('M'+x+' '+y+' L'+(x+9)+' '+(y-5)+' Q'+(x+11)+' '+y+' '+(x+9)+' '+(y+5)+' Z',c,sk(2.2))
+   +'<rect x="'+(x-3)+'" y="'+(y-3.4)+'" width="6" height="6.8" rx="2" fill="'+c2+'" '+sk(1.8)+'/>'}
+
+ /* ───────── 꾸밈 (ext) ───────── */
+ var EXT={
+  "x-bow":{neck:function(){return bowtie(50,86.4,"#E23B44","#B8262B")}},
+  "x-stache":{face:function(X){var y=X.noseY+3.4;return P('M50 '+y+' Q44 '+(y-4.4)+' 38 '+(y-1.4)+' Q33 '+(y+1.6)+' 29.6 '+(y-2.6)+' Q31 '+(y+6.6)+' 40 '+(y+5.6)+' Q46 '+(y+4.6)+' 50 '+(y+1.4)+' Q54 '+(y+4.6)+' 60 '+(y+5.6)+' Q69 '+(y+6.6)+' 70.4 '+(y-2.6)+' Q67 '+(y+1.6)+' 62 '+(y-1.4)+' Q56 '+(y-4.4)+' 50 '+y+' Z',"#5A3A22",sk(2))}},
+  "x-heart":{face:function(X){return '<path d="'+heartD(X.ck[0],X.ck[1],12)+'" fill="#FF5C8A" '+sk(1.8)+'/>'+'<path d="'+heartD(100-X.ck[0],X.ck[1],12)+'" fill="#FF5C8A" '+sk(1.8)+'/>'+C(X.ck[0]-2.4,X.ck[1]-2.6,.9,WH,NS)+C(100-X.ck[0]-2.4,X.ck[1]-2.6,.9,WH,NS)}},
+  "x-band":{face:function(X){return G('rotate(-24 70 63)','<rect x="60" y="59.4" width="20" height="7.4" rx="3.4" fill="#F2D2A9" '+sk(2)+'/><rect x="66.6" y="59.4" width="6.8" height="7.4" fill="#E6B98A" '+sk(1.4)+'/>'+C(68.4,61.8,.7,"#B08A5A",NS)+C(71.6,64.2,.7,"#B08A5A",NS))}},
+  "x-medal":{chest:function(){var x=BX(33);return L('M'+(x-4)+' 84 L'+(x-1)+' 93 M'+(x+4)+' 84 L'+(x+1)+' 93',O,6)+L('M'+(x-4)+' 84 L'+(x-1)+' 93',"#3A7BD5",3.6)+L('M'+(x+4)+' 84 L'+(x+1)+' 93',"#E23B44",3.6)
+    +C(x,96,6.6,GOLD,sk(2.2))+'<path d="'+star(x,96.2,4.6,2)+'" fill="#FFF3C4"/>'}},
+  "x-badge":{chest:function(){var x=BX(69);return '<path d="'+star(x,94,8.6,4.2)+'" fill="'+GOLD+'" '+sk(2.2)+'/>'+C(x,94.4,2.6,"#FFF3C4",sk(1.2))+L('M'+(x-4.6)+' 89.4 l1.6 -1.4',WH,1.6)}},
+  "t-scarf":{neck:function(){var S="#E2574C",S2="#FFE3D6";
+    return BP('M40 84 Q36 94 34 108 L44 109 Q45 96 48 87 Z',S,sk(2.6))+L(B('M36 103 L44 104'),S2,2.4)+L(B('M35.6 108 L35 111 M38.6 108.4 L38.2 111.4 M41.6 108.6 L41.4 111.6'),S,2.2)
+     +BP('M28 75 Q50 85 72 75 Q76 82 72 88 Q50 97 28 88 Q24 82 28 75 Z',S,sk(2.8))+L(B('M33 80 Q50 88 67 80 M31 86 Q50 93.6 69 86'),S2,2.2)}},
+  "t-tie":{neck:function(){var T="#3A5BB8",T2="#F2C230";
+    return BP('M46.6 85.6 L53.4 85.6 L55.4 101 L50 106 L44.6 101 Z',T,sk(2.4))+L(B('M45.6 92 L54 88.4 M45 98 L55 93.8 M47 103.6 L55.2 100'),T2,1.8)+BP('M46 82.6 L54 82.6 L52.4 88 L47.6 88 Z',T,sk(2.2))}},
+  "t-freckle":{face:function(X){var g='',cx=X.ck[0],cy=X.ck[1];
+    [[-2,-2.6],[2.6,-3.4],[.4,.8]].forEach(function(d){g+=C(cx+d[0],cy+d[1],1.3,X.frk,NS)+C(100-cx-d[0],cy+d[1],1.3,X.frk,NS)});return g}},
+  "t-pencil":{back:function(){return G('rotate(32 84 30)','<rect x="80.5" y="10" width="7" height="30" fill="#FFC93C" '+s+'/><path d="M80.5 40 L84 47 L87.5 40 Z" fill="#F2D8B0" '+s+'/><path d="M83 44 L84 47 L85 44 Z" fill="'+O+'"/><rect x="80.5" y="6" width="7" height="5" fill="#E58A9C" '+s+'/>'+L('M83 13 V37',"#E8A820",1.6))}},
+  "t-pendant":{chest:function(){var x=BX(50);return L('M'+BX(38)+' 82 Q'+x+' 96 '+BX(62)+' 82',"#C9CED8",1.8)+C(x,95,8.6,"#FFF7C9",'opacity=".45"')+'<path d="'+star(x,95,6.6,3)+'" fill="#FFF2A6" '+sk(2.2)+'/>'+C(x-1.6,93.4,1.3,WH,NS)+L('M'+(x+8)+' 87.6 l1.6 -1.6 M'+(x-9)+' 101 l-1.6 1.4',"#FFE27A",1.6)}}
+ };
+
+ /* ───────── 조합 ───────── */
+ function norm(L){L=L||{};var a=AN[L.a]?L.a:"flyingsq";
+  var adult=!!L.adult,fit=L.fit;if(!FIT[fit])fit=(fit==="none")?"f-shirt":(adult?"f-trench":"f-cape");
+  return {a:a,c:L.c||"#D9A47A",acc:L.acc||"none",eye:L.eye||"none",ext:L.ext||"none",fit:fit,adult:adult}}
+ function inner(L0,mood,F){var X=norm(L0),a=X.a,A=AN[a],p=pal(X.c),fit=FIT[X.fit],hat=HAT[X.acc],ext=EXT[X.ext];
+  if(typeof hat==="function")hat={front:hat};
+  hat=hat||{};ext=ext||{};
+  K=F?(X.adult?0.95:0.64):1;
+  X.neckExt=neckExt(X.ext);X.noseY=A.nose;X.ck=X.adult?[30,68]:[29,66];X.frk=mix(p.F,"#5A2A10",.45);
+  var g='',ex=X.adult?[39,61]:[38,62],ey=X.adult?55.4:54,lidc=A.lid==="DD"?p.DD:A.lid==="PD"?PD:A.lid==="LT"?p.LT:p.F;
+  var shock=has(mood,"shock");
+  // 1) 뒤쪽
+  if(hat.back)g+=hat.back(X);
+  if(fit.back)g+=fit.back(X);
+  if(ext.back)g+=ext.back(X);
+  // 2) 옷 (머리 아래)
+  K=F?(X.adult?0.95:0.64):1;
+  g+=fit.bust(F,X);
+  K=1;
+  // 3) 귀(뒤) + 머리
+  var EARS=ears(a,p,WIDEHAT[X.acc]&&(a==="bear"||a==="panda"||a==="flyingsq"));
+  if(!A.earFront&&!hat.earsOver)g+=EARS;
+  g+=head(a,p,X.adult);
+  if(A.earFront&&!hat.earsOver)g+=EARS;
+  // 4) 옷 깃·목 장식 (머리 위로 겹침)
+  K=F?(X.adult?0.95:0.64):1;
+  if(fit.over)g+=fit.over(F,X);
+  if(ext.neck)g+=ext.neck(X);
+  if(ext.chest)g+=ext.chest(X);
+  K=1;
+  // 5) 볼·얼굴 장식
+  var bl=has(mood,"shy")||has(mood,"blush");
+  g+=E(X.ck[0],X.ck[1],X.adult?4.6:5.4,X.adult?2.6:3.2,PINK,'opacity="'+(bl?".95":(X.adult?".5":".6"))+'"')+E(100-X.ck[0],X.ck[1],X.adult?4.6:5.4,X.adult?2.6:3.2,PINK,'opacity="'+(bl?".95":(X.adult?".5":".6"))+'"');
+  if(bl)g+=L('M'+(X.ck[0]-3)+' '+(X.ck[1]-1.4)+' l1.8 2 M'+(X.ck[0]+1)+' '+(X.ck[1]-1.4)+' l1.8 2 M'+(97-X.ck[0])+' '+(X.ck[1]-1.4)+' l1.8 2 M'+(101-X.ck[0])+' '+(X.ck[1]-1.4)+' l1.8 2',"#C8605A",1.4);
+  if(ext.face)g+=ext.face(X);
+  // 6) 눈썹·눈·코입
+  g+=X.adult?browsAdult(mood):browsKid(mood);
+  g+=eyeItem(X.eye,ex,ey,lidc===p.F?p.LT:lidc);
+  g+='<g class="eyes">'+(X.adult?eyeAdult(39,mood)+eyeAdult(61,mood):eyeKid(38,mood,A.iris,lidc)+eyeKid(62,mood,A.iris,lidc))+'</g>';
+  g+=A.beak?beak(mood):(X.adult?mouthAdult(mood):mouthKid(mood,A.teeth));
+  if(ext.face2)g+=ext.face2(X);
+  // 7) 안경류
+  g+=eyeItem(X.eye,ex,ey,0);
+  // 8) 모자 (놀람: 들썩)
+  if(hat.earsOver){g+=G('translate(0 '+(shock?-5:0)+')',hat.front(X))+EARS}
+  else if(hat.front)g+=(shock&&!hat.back)?G('translate(0 -6)',hat.front(X)):hat.front(X);
+  // 9) 표정 효과
+  if(has(mood,"nervous"))g+='<path d="M82 44 q4.5 6.5 0 9.5 q-4.5 -3 0 -9.5z" fill="'+TEAR+'" '+sk(1.6)+'/>';
+  if(has(mood,"cry"))g+=L('M'+(ex[0]-6)+' 62 q-2 7 0 11 M'+(ex[1]+6)+' 62 q2 7 0 11',TEAR,3);
+  if(shock)g+=L('M14 40 l-5 -3 M86 40 l5 -3 M13 48 l-6 0 M87 48 l6 0',O,2.4);
+  if(has(mood,"angry"))g+=L('M84 46 l5 -4 M86 51 l6 -1',O,2.4);
+  if(has(mood,"happy")&&!X.adult)g+='<path d="'+star(88,46,4.6,1.8)+'" fill="'+GOLD+'" '+sk(1.4)+'/><path d="'+star(13,52,3.4,1.3)+'" fill="'+GOLD+'" '+sk(1.2)+'/>';
+  if(has(mood,"confused"))g+='<text x="84" y="40" font-size="14" font-weight="900" fill="'+WH+'" stroke="'+O+'" stroke-width="1.4" font-family="sans-serif">?</text>';
+  return g}
+
+ /* ───────── 전신 ───────── */
+ function tail(a,p){var F=p.F;
+  if(a==="raccoon")return L('M66 136 Q100 136 94 100',O,15)+L('M66 136 Q100 136 94 100',F,10)+L('M80 134 l3 -6 M90 126 l5 -3 M95 114 l5 0 M94 104 l5 2',p.DD,5);
+  if(a==="fox")return P('M62 136 Q102 142 99 106 Q97 88 86 90 Q93 112 65 122 Z',F)+P('M99 106 Q97 88 86 90 Q90 98 91 104 Q95 106 99 106 Z',p.CR,sk(2.2));
+  if(a==="cat")return L('M64 134 Q92 138 90 112 Q89 100 97 96',O,10)+L('M64 134 Q92 138 90 112 Q89 100 97 96',F,5.4);
+  if(a==="rabbit")return C(71,131,7.4,p.CR);
+  if(a==="bear")return C(69,131,6,F);
+  if(a==="panda")return C(69,131,6,PD);
+  if(a==="dog")return L('M66 128 Q86 128 84 110 Q83 102 90 99',O,10.4)+L('M66 128 Q86 128 84 110 Q83 102 90 99',F,6);
+  if(a==="squirrel")return P('M60 138 Q110 142 102 96 Q98 66 80 72 Q72 78 80 86 Q92 84 91 100 Q90 118 64 124 Z',F)+L('M82 132 Q98 118 96 96 Q94 82 84 80',p.D,3,.8);
+  if(a==="owl")return P('M38 132 L32 146 L42 143 L50 149 L58 143 L68 146 L62 132 Z',p.D);
+  return P('M60 138 Q106 144 100 102 Q96 82 84 90 Q96 112 66 124 Z',F)+L('M84 132 Q96 120 92 102',p.D,3);}
+ function fig(L0,mood){var X=norm(L0),a=X.a,p=pal(X.c),fit=FIT[X.fit],AD=X.adult,g='';
+  var paw=a==="panda"?PD:p.F,legC=fit.pants||p.F,shoe=fit.shoe||"#6A4A3A",sl=fit.sl||p.F,cuff=fit.cuff||null;
+  if(X.fit==="f-hanbok"&&AD){sl="#ECE6D2";cuff="#3F6E8C"}
+  X.neckExt=neckExt(X.ext);
+  g+='<ellipse cx="50" cy="153" rx="'+(AD?32:30)+'" ry="5" fill="rgba(0,0,0,.28)"/>';
+  g+=tail(a,p);
+  if(fit.figBack){K=1;g+=fit.figBack(X)}
+  // 다리·신발
+  if(AD){g+=P('M38 134 L37 148 L48 148 L48 134 Z',legC)+P('M52 134 L52 148 L63 148 L62 134 Z',legC);
+   if(fit.boots)g+=P('M35.6 140 L35 148 L49 148 L48.6 140 Z',shoe,sk(2.6))+P('M51.4 140 L51 148 L65 148 L64.4 140 Z',shoe,sk(2.6));
+   g+=E(41,149.5,9.4,4.8,shoe)+E(59,149.5,9.4,4.8,shoe);}
+  else{var kl=(X.fit==="f-hanbok")?"#FFFFFF":(fit.long||X.fit==="f-cape"||X.fit==="f-sweater"||X.fit==="f-hoodie")?p.F:"#F4F1E8";
+   if(X.fit==="f-uniform"||X.fit==="f-shirt"||X.fit==="f-tux"||X.fit==="f-flight"||X.fit==="f-labcoat")kl=X.fit==="f-uniform"||X.fit==="f-tux"?"#F4F1E8":p.F;
+   g+=P('M39 132 L39 146 L48 146 L48 132 Z',kl)+P('M52 132 L52 146 L61 146 L61 132 Z',kl);
+   if(fit.boots)g+=P('M37.4 138 L37 146 L49.6 146 L49.4 138 Z',shoe,sk(2.6))+P('M50.6 138 L50.4 146 L63 146 L62.6 138 Z',shoe,sk(2.6));
+   g+=E(42,148.5,8.6,4.6,shoe)+E(58,148.5,8.6,4.6,shoe);}
+  K=1;g+=fit.torso.call(fit,X);
+  // 어른: 주머니에 손 넣은 팔 (얼굴 아래)
+  if(AD){g+=P('M14 98 Q6 106 9 124 L22 124 Q20 110 24 102 Z',sl)+P('M86 98 Q94 106 91 124 L78 124 Q80 110 76 102 Z',sl);
+   g+=P('M8 121 L23 121 L24 127 L9 127 Z',cuff||mix(sl,"#2B2430",.25),sk(2.4))+P('M92 121 L77 121 L76 127 L91 127 Z',cuff||mix(sl,"#2B2430",.25),sk(2.4));}
+  g+='<g>'+inner(L0,mood,1)+'</g>';
+  K=1;
+  // 아이: 허리에 손 + 돋보기 든 손 (얼굴 위)
+  if(!AD){var slc=sl;
+   g+=P('M22 99 Q14 112 26 121 Q31 117 30 114 Q24 110 29 101 Z',slc);
+   if(cuff&&fit.sl)g+=L('M23.4 117.6 L30 112.8',O,6.4)+L('M23.4 117.6 L30 112.8',cuff,3.4);
+   g+=C(29,118.6,4.4,paw);
+   g+=P('M73 99 Q84 98 86 88 L80 86 Q78 93 70 94 Z',slc);
+   if(cuff&&fit.sl)g+=L('M79.4 88.4 L86.2 90.6',O,6.4)+L('M79.4 88.4 L86.2 90.6',cuff,3.4);
+   g+=L('M84 86 L89 76',"#7A4A2A",4.6);
+   g+=C(92,68,9.4,"#BFEFFA",'stroke="'+GOLD+'" stroke-width="3.6"')+C(92,68,11.2,"none",sk(1.8))+C(92,68,7.6,"none",sk(1.4))+L('M87.6 64 Q89.4 61.4 92.4 61.2',WH,2.2);
+   g+=C(83.6,87,4.6,paw);}
+  return g}
+
+ window.__AV={
+  face:function(L,mood){return inner(L,mood||"",0)},
+  fig:function(L,mood){return fig(L,mood||"")},
+  NEW:{
+   acc:[["h-fedora","중절모"],["h-goggle","머리 위 비행 고글"],["h-bigribbon","큰 빨간 리본"],["h-starpin","별 머리핀"],["h-officer","장교 모자",20,"s"],["h-hood","망토 두건",10,"s"],["h-headphone","헤드폰"],["h-chef","요리사 모자"],["h-pilot","가죽 비행모",25,"s"]],
+   eye:[["e-round","동그란 금테 안경"],["e-heart","하트 안경",10],["e-patch","해적 안대",15,"s"]],
+   ext:[["t-scarf","목도리"],["t-tie","넥타이"],["t-freckle","주근깨"],["t-pencil","귀에 꽂은 연필"],["t-pendant","별빛 펜던트",30,"s"]],
+   fit:[["f-trench","트렌치코트"],["f-cape","빨간 탐정 망토"],["f-shirt","기본 셔츠"],["f-hoodie","후드티"],["f-sweater","꽈배기 스웨터"],["f-raincoat","노란 우비"],["f-labcoat","과학자 가운"],["f-hanbok","한복",15],["f-uniform","탐정단 제복",20,"s"],["f-flight","가죽 비행 재킷",25,"s"],["f-tux","턱시도",40,"s"]]
+  }
+ };
+})();
+
+/* evidence icon library — used only when evIcon() falls back to the default yellow circle */
+(function(){
+ var K="#1B2447",o='stroke="'+K+'" stroke-width="2.5" stroke-linejoin="round"';
+ /* thick colored line with dark outline */
+ function line(d,c,w){w=w||4;return '<path d="'+d+'" fill="none" stroke="'+K+'" stroke-width="'+(w+4)+'" stroke-linecap="round" stroke-linejoin="round"/><path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round" stroke-linejoin="round"/>'}
+ function star(cx,cy,r,c){return '<path d="M'+cx+' '+(cy-r)+' L'+(cx+r*.3)+' '+(cy-r*.3)+' L'+(cx+r)+' '+cy+' L'+(cx+r*.3)+' '+(cy+r*.3)+' L'+cx+' '+(cy+r)+' L'+(cx-r*.3)+' '+(cy+r*.3)+' L'+(cx-r)+' '+cy+' L'+(cx-r*.3)+' '+(cy-r*.3)+' Z" fill="'+c+'" stroke="'+K+'" stroke-width="1.5" stroke-linejoin="round"/>'}
+ function paw(x,y,s,c){return '<ellipse cx="'+x+'" cy="'+(y+s*.35)+'" rx="'+(s*.6)+'" ry="'+(s*.48)+'" fill="'+c+'" '+o+'/>'+
+  [[-.62,-.38],[0,-.72],[.62,-.38]].map(function(p){return '<circle cx="'+(x+p[0]*s)+'" cy="'+(y+p[1]*s)+'" r="'+(s*.26)+'" fill="'+c+'" stroke="'+K+'" stroke-width="2"/>'}).join("")}
+ function zig(x0,x1,y,n,h){var s="",w=(x1-x0)/n;for(var i=0;i<n;i++){s+=" L"+(x0+w*i+w/2)+" "+(y+h)+" L"+(x0+w*(i+1))+" "+y}return s}
+ function lines(x,y,w,n,gap,c){var s="";for(var i=0;i<n;i++)s+="M"+x+" "+(y+i*gap)+" h"+(i===n-1?w*.65:w)+" ";return '<path d="'+s+'" stroke="'+(c||"#7C86A2")+'" stroke-width="2.5" stroke-linecap="round"/>'}
+
+ var I={
+  letter:'<rect x="3" y="9" width="34" height="23" rx="2" fill="#FFFFFF" '+o+'/><path d="M3 10 L20 23 L37 10" fill="none" '+o+'/><circle cx="20" cy="23" r="4.5" fill="#E5484D" '+o+'/>',
+  note:'<path d="M6 5 H34 V27 L26 35 H6 Z" fill="#FFE066" '+o+'/><path d="M26 35 V27 H34 Z" fill="#E8B92E" '+o+'/>'+lines(11,13,17,3,6,"#B38A1E"),
+  book:'<rect x="7" y="3" width="27" height="34" rx="3" fill="#4C7BD9" '+o+'/><rect x="7" y="3" width="7" height="34" rx="2" fill="#2E56A8" '+o+'/><rect x="18" y="10" width="12" height="8" rx="1" fill="#FFFFFF" '+o+'/><path d="M14 30 H34" stroke="#FFFFFF" stroke-width="2"/>',
+  clipboard:'<rect x="6" y="6" width="28" height="31" rx="3" fill="#B87A44" '+o+'/><rect x="10" y="11" width="20" height="22" fill="#FFFFFF" '+o+'/><rect x="13" y="3" width="14" height="7" rx="2" fill="#AEB5C6" '+o+'/>'+lines(14,17,12,3,5),
+  speech:'<rect x="9" y="8" width="22" height="24" fill="#FFF4D6" '+o+'/><rect x="5" y="4" width="30" height="7" rx="3.5" fill="#E2A64E" '+o+'/><rect x="5" y="29" width="30" height="7" rx="3.5" fill="#E2A64E" '+o+'/>'+lines(13,16,14,3,5,"#9C6B2E"),
+  key:'<circle cx="12" cy="15" r="8.5" fill="#F2C230" '+o+'/><circle cx="12" cy="15" r="3" fill="#FFFFFF" '+o+'/><path d="M20 12 H37 V18 H33 V24 H28 V18 H20 Z" fill="#F2C230" '+o+'/>',
+  lock:line("M13 19 V12 a7 7 0 0 1 14 0 V19","#AEB5C6",4)+'<rect x="7" y="18" width="26" height="19" rx="4" fill="#F2A541" '+o+'/><circle cx="20" cy="25.5" r="3" fill="'+K+'"/><path d="M20 26 V32" stroke="'+K+'" stroke-width="3" stroke-linecap="round"/>',
+  feather:'<path d="M8 35 Q5 16 31 4 Q35 22 8 35 Z" fill="#3FB7A8" '+o+'/><path d="M5 38 L28 9" stroke="'+K+'" stroke-width="2.5" stroke-linecap="round"/><path d="M16 22 l-5 -1 M21 17 l-4 -2 M19 26 l5 1" stroke="'+K+'" stroke-width="1.8" stroke-linecap="round"/>',
+  fur:line("M7 33 Q12 14 22 8","#E8D2B0",5)+line("M14 35 Q20 18 31 13","#C8A27A",5)+line("M23 36 Q27 26 35 23","#E8D2B0",5),
+  paws:paw(12,26,8,"#8A5A3B")+paw(28,11,7,"#8A5A3B"),
+  claw:line("M8 8 L16 34","#E5484D",4)+line("M17 6 L24 33","#E5484D",4)+line("M26 6 L32 31","#E5484D",4),
+  hoof:'<path d="M5 30 Q4 18 12 17 Q20 18 19 30 Q19 35 15 35 L12 30 L9 35 Q5 35 5 30 Z" fill="#8A6A48" '+o+'/><path d="M21 16 Q20 4 28 3 Q36 4 35 16 Q35 21 31 21 L28 16 L25 21 Q21 21 21 16 Z" fill="#8A6A48" '+o+'/><path d="M9 22 q3 -2 6 0 M25 8 q3 -2 6 0" stroke="#C8A27A" stroke-width="2" fill="none" stroke-linecap="round"/>',
+  bell:'<path d="M20 5 Q8 7 8 24 L5 31 H35 L32 24 Q32 7 20 5 Z" fill="#FFC93C" '+o+'/><circle cx="20" cy="33" r="4" fill="#E5484D" '+o+'/><path d="M13 14 q2 -4 5 -5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>',
+  clapper:line("M20 2 V9","#D9A86C",3)+'<circle cx="20" cy="11" r="3.5" fill="none" stroke="'+K+'" stroke-width="2.5"/><path d="M20 13 Q7 22 8 30 Q9 38 20 38 Q31 38 32 30 Q33 22 20 13 Z" fill="#D7DCEA" '+o+'/><path d="M15 27 q0 -4 3 -7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>'+star(26,29,3.5,"#FFE27A"),
+  hook:line("M21 4 V24 a7 7 0 0 1 -14 0 V21","#AEB5C6",5)+'<rect x="15" y="2" width="12" height="6" rx="2" fill="#7C86A2" '+o+'/><path d="M28 18 l8 -3 M28 24 l8 -1 M28 30 l7 1" stroke="#E5484D" stroke-width="2.5" stroke-linecap="round"/>',
+  rope:line("M6 5 Q22 10 14 20 Q6 30 24 31","#D9A86C",6)+'<path d="M24 31 l9 -5 M24 31 l11 0 M24 31 l9 5" stroke="'+K+'" stroke-width="2.5" stroke-linecap="round"/>',
+  thread:'<rect x="9" y="5" width="18" height="5" rx="2" fill="#B87A44" '+o+'/><rect x="9" y="30" width="18" height="5" rx="2" fill="#B87A44" '+o+'/><rect x="11" y="10" width="14" height="20" fill="#8E5BD8" '+o+'/><path d="M11 16 H25 M11 22 H25" stroke="#B48CF0" stroke-width="2"/>'+line("M25 24 Q34 24 31 34 Q30 38 36 37","#8E5BD8",3),
+  cloth:'<path d="M5 8 L33 5 L36 14 L32 20 L35 28 L31 35 L6 34 L9 26 L4 18 L8 13 Z" fill="#4FA3E0" '+o+'/><path d="M10 12 L29 10 M11 30 L29 30" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 3"/><circle cx="20" cy="20" r="3.5" fill="#FFE066" stroke="'+K+'" stroke-width="1.8"/>',
+  cloak:'<path d="M20 3 Q11 3 11 14 L4 37 H36 L29 14 Q29 3 20 3 Z" fill="#5B4A9E" '+o+'/><path d="M14 15 Q14 8 20 8 Q26 8 26 15 Q23 19 20 19 Q17 19 14 15 Z" fill="#241D45" '+o+'/><path d="M20 22 V36" stroke="#3E3275" stroke-width="2.5"/><circle cx="20" cy="22" r="3" fill="#FFC93C" stroke="'+K+'" stroke-width="2"/>',
+  glove:'<path d="M10 37 V22 L6 16 Q4 12 8 12 L12 16 V7 Q12 4 15 4 Q17 4 17 7 V15 V5 Q17 2 20 2 Q23 2 23 5 V15 V6 Q23 3 26 3 Q29 3 29 6 V16 V10 Q29 7 31.5 7 Q34 7 34 10 V24 Q34 30 30 33 V37 Z" fill="#FFFFFF" '+o+'/><path d="M10 33 H30" stroke="#AEB5C6" stroke-width="2.5"/>',
+  hat:'<ellipse cx="20" cy="31" rx="17" ry="5" fill="#E5484D" '+o+'/><path d="M9 31 V14 Q9 7 20 7 Q31 7 31 14 V31 Z" fill="#E5484D" '+o+'/><rect x="9" y="22" width="22" height="5" fill="#FFE066" stroke="'+K+'" stroke-width="2"/>',
+  glasses:'<path d="M3 15 L5 21 M37 15 L35 21" stroke="'+K+'" stroke-width="3" stroke-linecap="round"/><path d="M15 22 Q20 18 25 22" fill="none" stroke="'+K+'" stroke-width="3"/><circle cx="10" cy="24" r="7.5" fill="#BFE6F7" stroke="'+K+'" stroke-width="3.5"/><circle cx="30" cy="24" r="7.5" fill="#BFE6F7" stroke="'+K+'" stroke-width="3.5"/><path d="M7 21 l3 -2 M27 21 l3 -2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>',
+  bag:'<path d="M13 10 Q4 18 6 30 Q8 37 20 37 Q32 37 34 30 Q36 18 27 10 Z" fill="#C99A5B" '+o+'/><path d="M13 10 L10 4 Q20 7 30 4 L27 10 Z" fill="#C99A5B" '+o+'/>'+line("M12 11 H28","#E5484D",3)+'<path d="M14 24 h12 M17 29 h6" stroke="#8A6538" stroke-width="2.5" stroke-linecap="round"/>',
+  box:'<rect x="5" y="14" width="30" height="22" fill="#D9A060" '+o+'/><path d="M3 9 H37 V15 H3 Z" fill="#E8B87A" '+o+'/><path d="M5 22 H35 M5 29 H35" stroke="#A86F35" stroke-width="2"/><rect x="16" y="17" width="8" height="5" rx="1" fill="#7C86A2" stroke="'+K+'" stroke-width="1.8"/>',
+  parcel:'<rect x="5" y="11" width="30" height="25" rx="2" fill="#E8C08A" '+o+'/><path d="M20 11 V36 M5 23 H35" stroke="#C0392B" stroke-width="3.5"/><path d="M20 11 Q12 3 13 9 Q14 12 20 11 Q28 3 27 9 Q26 12 20 11 Z" fill="#E5484D" stroke="'+K+'" stroke-width="2"/><rect x="24" y="27" width="8" height="6" fill="#FFFFFF" stroke="'+K+'" stroke-width="1.5"/>',
+  bottle:'<rect x="9" y="11" width="22" height="26" rx="6" fill="#9EDBB0" '+o+'/><rect x="11" y="4" width="18" height="8" rx="2" fill="#E5484D" '+o+'/><circle cx="16" cy="22" r="2.5" fill="#FFE066"/><circle cx="23" cy="27" r="2.5" fill="#F28DB2"/><circle cx="17" cy="31" r="2" fill="#4C7BD9"/><path d="M13 17 v6" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>',
+  paint:'<path d="M8 12 V32 Q8 37 20 37 Q32 37 32 32 V12 Z" fill="#C9CEDB" '+o+'/><ellipse cx="20" cy="12" rx="12" ry="4" fill="#EEF1F7" '+o+'/><path d="M10 13 Q10 20 13 20 Q15 20 15 16 Q17 22 19 18 Q21 15 22 15" fill="#AEB5C6" stroke="'+K+'" stroke-width="1.8"/><path d="M8 12 Q20 -2 32 12" fill="none" stroke="'+K+'" stroke-width="2"/>'+star(26,26,4,"#FFFFFF"),
+  stamp:'<circle cx="20" cy="8" r="5.5" fill="#E5484D" '+o+'/><rect x="17" y="12" width="6" height="9" fill="#B87A44" '+o+'/><rect x="7" y="20" width="26" height="8" rx="2" fill="#B87A44" '+o+'/><rect x="5" y="28" width="30" height="5" rx="1" fill="#2E2F45" '+o+'/><path d="M8 37 H32" stroke="#E5484D" stroke-width="3" stroke-linecap="round"/>',
+  photo:'<rect x="5" y="4" width="30" height="33" rx="2" fill="#FFFFFF" '+o+'/><rect x="9" y="8" width="22" height="20" fill="#8FD3F4" stroke="'+K+'" stroke-width="2"/><path d="M9 28 L16 19 L21 24 L25 20 L31 28 Z" fill="#5CB85C" stroke="'+K+'" stroke-width="1.8" stroke-linejoin="round"/><circle cx="25" cy="13" r="3" fill="#FFE066"/>',
+  map:'<path d="M3 9 L14 5 L26 9 L37 5 V31 L26 35 L14 31 L3 35 Z" fill="#FFE7A3" '+o+'/><path d="M14 5 V31 M26 9 V35" stroke="'+K+'" stroke-width="2"/><path d="M5 22 Q12 16 18 22 T33 18" stroke="#4C7BD9" stroke-width="2.5" fill="none" stroke-dasharray="3 2"/><path d="M28 12 l5 5 M33 12 l-5 5" stroke="#E5484D" stroke-width="3" stroke-linecap="round"/>',
+  clock:'<circle cx="20" cy="20" r="16" fill="#4C7BD9" '+o+'/><circle cx="20" cy="20" r="11.5" fill="#FFFFFF" stroke="'+K+'" stroke-width="2"/><path d="M20 20 V12 M20 20 L26 23" stroke="'+K+'" stroke-width="3" stroke-linecap="round"/>',
+  stopwatch:'<rect x="16" y="2" width="8" height="5" rx="1.5" fill="#E5484D" '+o+'/><path d="M30 9 l4 -3" stroke="'+K+'" stroke-width="3.5" stroke-linecap="round"/><circle cx="20" cy="23" r="14" fill="#5CC08A" '+o+'/><circle cx="20" cy="23" r="10" fill="#FFFFFF" stroke="'+K+'" stroke-width="2"/><path d="M20 23 L25 16" stroke="#E5484D" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="23" r="2" fill="'+K+'"/>',
+  lantern:'<path d="M15 6 a5 4 0 0 1 10 0" fill="none" stroke="'+K+'" stroke-width="2.5"/><path d="M10 12 L13 7 H27 L30 12 Z" fill="#4A4F66" '+o+'/><rect x="11" y="12" width="18" height="19" rx="2" fill="#FFD84D" '+o+'/><path d="M20 16 Q15 22 20 27 Q25 22 20 16 Z" fill="#FF8A3C" stroke="'+K+'" stroke-width="1.5"/><rect x="9" y="31" width="22" height="5" rx="1.5" fill="#4A4F66" '+o+'/>',
+  stone:'<path d="M5 26 L9 13 L19 7 L31 10 L36 22 L30 34 L13 35 Z" fill="#A7AEBD" '+o+'/><path d="M19 7 L21 18 L14 24 M21 18 L30 22" stroke="'+K+'" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M11 15 l3 -2" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>',
+  glass:'<path d="M4 34 L12 6 L19 30 Z" fill="#BFE6F7" '+o+'/><path d="M17 36 L27 12 L33 34 Z" fill="#BFE6F7" '+o+'/><path d="M26 10 L36 4 L34 14 Z" fill="#BFE6F7" '+o+'/><path d="M11 13 L12 22 M26 20 l-2 6" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>',
+  powder:'<path d="M3 35 Q8 22 20 21 Q32 22 37 35 Z" fill="#F2C230" '+o+'/><circle cx="12" cy="31" r="1.6" fill="#FFFFFF"/><circle cx="24" cy="28" r="1.6" fill="#FFFFFF"/><circle cx="29" cy="32" r="1.4" fill="#FFFFFF"/>'+star(11,11,6,"#FFE27A")+star(28,9,5,"#FFFFFF")+star(21,17,3.5,"#FFE27A"),
+  crumbs:'<path d="M5 26 l6 -4 l6 3 l-2 7 l-7 1 Z" fill="#E2B271" '+o+'/><path d="M19 12 l6 -3 l4 4 l-3 5 l-6 -1 Z" fill="#E2B271" '+o+'/><path d="M24 28 l5 -2 l4 4 l-4 4 l-5 -2 Z" fill="#E2B271" '+o+'/><circle cx="10" cy="11" r="2.5" fill="#E2B271" stroke="'+K+'" stroke-width="2"/><circle cx="34" cy="18" r="2" fill="#E2B271" stroke="'+K+'" stroke-width="2"/>',
+  cookie:'<path d="M35 15 Q31 15 31 11 Q27 11 27 7 A16 16 0 1 0 35 15 Z" fill="#D9A15A" '+o+'/><circle cx="13" cy="16" r="2.5" fill="#5A3A22"/><circle cx="21" cy="25" r="2.5" fill="#5A3A22"/><circle cx="12" cy="27" r="2" fill="#5A3A22"/><circle cx="27" cy="22" r="2" fill="#5A3A22"/>',
+  honey:'<path d="M9 14 Q4 26 10 35 H30 Q36 26 31 14 Z" fill="#F2B632" '+o+'/><rect x="8" y="8" width="24" height="7" rx="2" fill="#C98A2A" '+o+'/><path d="M12 15 V22 Q12 25 14.5 25 Q17 25 17 22 V15" fill="#E09A1A" stroke="'+K+'" stroke-width="2"/><path d="M14 30 h12" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>',
+  flower:'<path d="M20 22 V38" stroke="#3E9B4F" stroke-width="3.5" stroke-linecap="round"/><path d="M20 32 Q28 26 32 30 Q26 35 20 32 Z" fill="#5CB85C" stroke="'+K+'" stroke-width="2"/>'+
+   [0,72,144,216,288].map(function(a){return '<ellipse cx="20" cy="7.5" rx="5" ry="6.5" fill="#F7A6C6" '+o+' transform="rotate('+a+' 20 15)"/>'}).join("")+'<circle cx="20" cy="15" r="4.5" fill="#FFE066" stroke="'+K+'" stroke-width="2"/>',
+  brooch:'<ellipse cx="20" cy="21" rx="15" ry="13" fill="#D7DCEA" '+o+'/><ellipse cx="20" cy="21" rx="10" ry="8" fill="#FFFFFF" stroke="'+K+'" stroke-width="2"/><path d="M20 15 Q15 20 20 27 Q25 20 20 15 Z M14 22 Q20 21 20 27 Q15 26 14 22 Z M26 22 Q20 21 20 27 Q25 26 26 22 Z" fill="#E9DBF7" stroke="'+K+'" stroke-width="1.5"/><circle cx="7" cy="12" r="2" fill="#5ED0E6" stroke="'+K+'" stroke-width="1.5"/><circle cx="33" cy="12" r="2" fill="#5ED0E6" stroke="'+K+'" stroke-width="1.5"/>',
+  gem:'<path d="M4 15 L11 6 H29 L36 15 L20 36 Z" fill="#5ED0E6" '+o+'/><path d="M4 15 H36 M11 6 L15 15 L20 36 L25 15 L29 6 M15 15 L20 6 L25 15" fill="none" stroke="'+K+'" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 13 l3 -4" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>',
+  ticket:'<path d="M3 10 H37 V16 A4 4 0 0 0 37 24 V30 H3 V24 A4 4 0 0 0 3 16 Z" fill="#FF9F43" '+o+'/><path d="M27 11 V29" stroke="'+K+'" stroke-width="2" stroke-dasharray="2.5 2.5"/>'+star(16,20,6,"#FFE066"),
+  receipt:'<path d="M8 3 H32 V36 L29 33 L26 36 L23 33 L20 36 L17 33 L14 36 L11 33 L8 36 Z" fill="#FFFFFF" '+o+'/>'+lines(12,10,16,3,5)+'<path d="M12 27 H28" stroke="'+K+'" stroke-width="3" stroke-linecap="round"/>',
+  paper:'<rect x="4" y="5" width="32" height="30" rx="1" fill="#EEF0F5" '+o+'/><rect x="8" y="9" width="24" height="5" fill="'+K+'"/><rect x="8" y="18" width="10" height="12" fill="#E5484D" stroke="'+K+'" stroke-width="1.8"/>'+lines(21,19,11,3,5),
+  wheel:'<circle cx="20" cy="20" r="16" fill="#B87A44" '+o+'/><circle cx="20" cy="20" r="11.5" fill="#F5E6CC" stroke="'+K+'" stroke-width="2"/><path d="M20 9 V31 M9 20 H31 M12 12 L28 28 M28 12 L12 28" stroke="#8A5A2B" stroke-width="3"/><circle cx="20" cy="20" r="4" fill="#4A4F66" stroke="'+K+'" stroke-width="2"/>',
+  wedge:'<path d="M3 32 L37 32 L37 14 Z" fill="#E2A64E" '+o+'/><path d="M14 29 L33 22 M24 29 L34 26" stroke="#9C6B2E" stroke-width="2" stroke-linecap="round"/><path d="M3 36 H37" stroke="'+K+'" stroke-width="2.5" stroke-linecap="round"/>',
+  ladder:'<path d="M11 3 V37 M29 3 V37" stroke="'+K+'" stroke-width="7" stroke-linecap="round"/><path d="M11 3 V37 M29 3 V37" stroke="#D9873E" stroke-width="3.5" stroke-linecap="round"/><path d="M11 10 H29 M11 30 H29" stroke="'+K+'" stroke-width="6"/><path d="M11 10 H29 M11 30 H29" stroke="#F0B26A" stroke-width="2.5"/><path d="M11 20 l7 2 M29 20 l-6 -2" stroke="'+K+'" stroke-width="3" stroke-linecap="round"/>',
+  echo:'<rect x="3" y="8" width="24" height="26" rx="3" fill="#8E5BD8" '+o+'/><circle cx="15" cy="21" r="7" fill="#E9DBF7" stroke="'+K+'" stroke-width="2"/><circle cx="15" cy="21" r="2.5" fill="'+K+'"/><path d="M30 15 q4 6 0 12 M34 11 q7 10 0 20" fill="none" stroke="'+K+'" stroke-width="2.5" stroke-linecap="round"/>',
+  postage:'<path d="M6 4'+zig(6,34,4,7,-2)+' L34 36'+zig(34,6,36,7,2)+' Z" fill="#FFFFFF" '+o+'/><rect x="10" y="8" width="20" height="24" fill="#FF8FB1" stroke="'+K+'" stroke-width="1.8"/><path d="M20 27 Q11 20 14 15 Q17 12 20 16 Q23 12 26 15 Q29 20 20 27 Z" fill="#E5484D" stroke="'+K+'" stroke-width="1.8"/>',
+  snow:line("M20 3 V37 M5 11.5 L35 28.5 M5 28.5 L35 11.5","#8FD3F4",4)+line("M15 6 L20 10 L25 6 M15 34 L20 30 L25 34","#8FD3F4",3),
+  blanket:'<rect x="4" y="20" width="32" height="14" rx="4" fill="#E5484D" '+o+'/><rect x="6" y="8" width="28" height="14" rx="4" fill="#FFE7A3" '+o+'/><path d="M13 8 V22 M27 8 V22" stroke="#E5484D" stroke-width="3"/><path d="M4 27 H36" stroke="#FFE7A3" stroke-width="3"/>',
+  kettle:'<path d="M8 34 Q4 20 20 17 Q36 20 32 34 Z" fill="#4FB39A" '+o+'/><path d="M9 26 L2 17" stroke="'+K+'" stroke-width="5" stroke-linecap="round"/><path d="M9 26 L2 17" stroke="#4FB39A" stroke-width="2" stroke-linecap="round"/><path d="M12 17 Q12 6 20 6 Q28 6 28 17" fill="none" stroke="'+K+'" stroke-width="3"/><ellipse cx="20" cy="17" rx="8" ry="3" fill="#3A9480" '+o+'/>',
+  chalk:'<rect x="3" y="5" width="34" height="25" rx="2" fill="#2F6B4F" stroke="#8A5A2B" stroke-width="3"/><path d="M8 13 q4 -5 8 0 t8 0 M8 21 h14" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M22 36 L33 25 L37 29 L26 40 Z" fill="#FFFFFF" '+o+'/>',
+  badge:'<path d="M20 3 L35 9 V20 Q35 31 20 37 Q5 31 5 20 V9 Z" fill="#4C7BD9" '+o+'/>'+star(20,20,10,"#FFC93C"),
+  window:'<rect x="5" y="4" width="30" height="31" rx="2" fill="#8A5A3B" '+o+'/><rect x="9" y="8" width="22" height="23" fill="#BFE6F7" stroke="'+K+'" stroke-width="2"/><path d="M20 8 V31 M9 19.5 H31" stroke="#8A5A3B" stroke-width="3"/><rect x="17" y="16" width="6" height="7" rx="1" fill="#FFC93C" stroke="'+K+'" stroke-width="1.8"/>',
+  sled:'<rect x="7" y="12" width="26" height="12" rx="3" fill="#E5484D" '+o+'/><path d="M10 24 V30 M30 24 V30" stroke="'+K+'" stroke-width="3"/><path d="M3 30 H32 Q38 30 37 24" fill="none" stroke="'+K+'" stroke-width="6" stroke-linecap="round"/><path d="M3 30 H32 Q38 30 37 24" fill="none" stroke="#AEB5C6" stroke-width="2.5" stroke-linecap="round"/><path d="M12 16 H28" stroke="#FFE7A3" stroke-width="2.5"/>',
+  stove:'<rect x="24" y="2" width="7" height="12" fill="#4A4F66" '+o+'/><rect x="6" y="12" width="28" height="22" rx="3" fill="#5A6070" '+o+'/><rect x="12" y="18" width="16" height="11" rx="2" fill="#FF8A3C" stroke="'+K+'" stroke-width="2"/><path d="M16 29 Q14 23 18 21 Q18 25 20 24 Q22 21 24 23 Q26 26 24 29" fill="#FFD84D" stroke="'+K+'" stroke-width="1.5"/><path d="M9 34 V38 M31 34 V38" stroke="'+K+'" stroke-width="3" stroke-linecap="round"/>',
+  peck:'<rect x="3" y="9" width="34" height="22" rx="2" fill="#D9A060" '+o+'/><path d="M3 16 H37 M3 24 H37" stroke="#A86F35" stroke-width="1.8"/><circle cx="11" cy="17" r="2.5" fill="'+K+'"/><circle cx="19" cy="22" r="2.5" fill="'+K+'"/><circle cx="16" cy="13" r="2" fill="'+K+'"/><circle cx="27" cy="18" r="2.5" fill="'+K+'"/><circle cx="31" cy="25" r="2" fill="'+K+'"/><circle cx="24" cy="26" r="2" fill="'+K+'"/>',
+  ball:'<circle cx="20" cy="20" r="16" fill="#FFFFFF" '+o+'/><path d="M20 12 L27 17 L24.5 25 H15.5 L13 17 Z" fill="'+K+'"/><path d="M20 12 V5 M27 17 L34 14 M24.5 25 L29 31 M15.5 25 L11 31 M13 17 L6 14" stroke="'+K+'" stroke-width="2"/>',
+  smudge:'<rect x="4" y="4" width="32" height="32" rx="3" fill="#BFE6F7" '+o+'/><path d="M8 12 L14 8 M8 20 L20 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="22" cy="24" rx="10" ry="8" fill="#C7A27E" stroke="'+K+'" stroke-width="2" stroke-dasharray="3 2"/><ellipse cx="18.5" cy="24" rx="2" ry="2.8" fill="'+K+'"/><ellipse cx="25.5" cy="24" rx="2" ry="2.8" fill="'+K+'"/>'
+ };
+
+ var R=[
+  [/메아리/,"echo"],[/분필/,"chalk"],[/연설문/,"speech"],[/우표/,"postage"],[/영수증|확인증/,"receipt"],[/배지/,"badge"],
+  [/코 자국/,"smudge"],[/콕콕/,"peck"],[/초시계/,"stopwatch"],
+  [/쪽지|메모/,"note"],
+  [/망토|코트|마네킹/,"cloak"],[/도장|밀랍|봉인/,"stamp"],[/안경/,"glasses"],[/브로치/,"brooch"],[/페인트|광택/,"paint"],
+  [/금고|상자|공구함|진열함|보관함|선반|칸$/,"box"],
+  [/자루|가방|주머니(?!의)|봉지/,"bag"],[/편지|초대장|답장/,"letter"],
+  [/장갑/,"glove"],[/모자|귀마개/,"hat"],
+  [/자물쇠|문고리/,"lock"],[/열쇠/,"key"],
+  [/장부|수첩|공책|대장|기록부|기록장|파일|그림책/,"book"],
+  [/소포/,"parcel"],
+  [/명단|출석부|기록|순서표|배역표|무게표/,"clipboard"],
+  [/지도|배달도/,"map"],[/통지서|벽보|전단지|신문|먹지|사본|종이|글씨|팻말|눌린/,"paper"],[/사진/,"photo"],[/시계/,"clock"],
+  [/발톱/,"claw"],[/발굽/,"hoof"],[/바퀴|손수레/,"wheel"],[/썰매/,"sled"],
+  [/발자국|손자국|손바닥|발바닥|미끄러진/,"paws"],[/쐐기|나무 조각/,"wedge"],[/사다리/,"ladder"],
+  [/고리|걸이|크랭크/,"hook"],[/쿠키 틀/,"cookie"],[/추$|거푸집|틀$/,"clapper"],[/종줄|끈|줄$/,"rope"],[/방울|종$/,"bell"],
+  [/깃털|먼지털이/,"feather"],[/털실|실오라기|실$|자수/,"thread"],[/털|가시 열매/,"fur"],
+  [/담요|방석/,"blanket"],[/쇳조각/,"stone"],[/목도리|헝겊|손수건|조각|천$/,"cloth"],
+  [/주전자|냄비|찻잔|그릇|팥죽|물웅덩이/,"kettle"],[/난로/,"stove"],[/축구공|공 자국/,"ball"],[/막$/,"paint"],[/꿀/,"honey"],[/부스러기/,"crumbs"],[/쿠키|빵|과자/,"cookie"],
+  [/병$|물통|통$|단지/,"bottle"],[/유리|그을음/,"glass"],[/가루|반짝이|스팽글|재 /,"powder"],
+  [/별빛 돌|보석|유리돌/,"gem"],[/꽃|백합|토끼풀|꼭지/,"flower"],[/돌/,"stone"],[/표$|예약|접수/,"ticket"],[/창문|창살|거울|창틀/,"window"],
+  [/삽|눈 /,"snow"],[/등불|가로등|심지|램프/,"lantern"],[/문/,"lock"],[/창/,"window"],[/종/,"bell"]
+ ];
+
+ var B={
+  guestlist:"clipboard", crowfeather:"feather", sequin:"bottle", m_safe:"key", m_flake:"stone", m_realclap:"clapper",
+  m_cloak:"cloak", n_window:"window", n_lock:"lock", n_key:"key", n_paper:"paper", n_stamp:"stamp", e11_shovel:"snow",
+  c8_handle:"hook", f10_cradle:"lantern", e13_ladder:"ladder",
+  e15_fur:"fur", uvd:"paper", uvs:"stamp", e11_hooks:"hook", e12_cloth:"cloth", e11_mold:"clapper", m7_note:"note", m7_note2:"note"
+ };
+
+ window.__EVI={icons:I,rules:R,byId:B};
+})();
+
+/* v142: 다람·아빠 아바타(__AV) 적용 + 증거 아이콘 보강(__EVI) */
+(function(){
+ /* ---- 탐정 아바타: det0/det1은 항상 __AV 그림체 ---- */
+ function look(k){try{var L=S.look&&S.look[k==="det0"?"d0":"d1"];if(!L)return null;return {a:L.a,c:L.c,acc:L.acc,eye:L.eye,ext:L.ext,fit:L.fit,adult:k==="det0"}}catch(e){return null}}
+ var _pf=pf;pf=function(k,mood){if((k==="det0"||k==="det1")&&window.__AV){var L=look(k);if(L){try{return '<svg class="sig av sig-'+k+'" viewBox="0 0 100 101" aria-hidden="true">'+window.__AV.face(L,mood||"")+'</svg>'}catch(e){}}}return _pf.apply(this,arguments)};
+ var _nf=npcFig;npcFig=function(k,mood){if((k==="det0"||k==="det1")&&window.__AV){var L=look(k);if(L){try{return '<svg class="fig sig av sig-'+k+'" viewBox="-8 -4 116 164" aria-hidden="true">'+window.__AV.fig(L,mood||"")+'</svg>'}catch(e){}}}return _nf.apply(this,arguments)};
+
+ /* ---- 증거 아이콘: 기본 노란 동그라미 대신 상황별 아이콘 ---- */
+ var FB=null,SPK={owl:"owlgp",g9_found:"kkwak"};
+ function caseOf(id){try{var c=(typeof G!=="undefined"&&G&&CASES[G.ci])?CASES[G.ci]:null;if(c&&evById(c,id))return c;for(var i=0;i<CASES.length;i++){if(evById(CASES[i],id))return CASES[i]}}catch(e){}return null}
+ function pick(id){var E=window.__EVI;if(!E)return null;if(E.byId[id]&&E.icons[E.byId[id]])return E.icons[E.byId[id]];
+  var c=caseOf(id),e=c&&evById(c,id),nm=e?e.name:"";if(!nm)return null;
+  for(var i=0;i<E.rules.length;i++){if(E.rules[i][0].test(nm)&&E.icons[E.rules[i][1]])return E.icons[E.rules[i][1]]}return null}
+ function talk(k){var f="";try{f=pf(k,"").replace(/^<svg[^>]*>/,"").replace(/<\/svg>$/,"")}catch(e){}
+  return '<path d="M4 6 Q4 3 7 3 H33 Q36 3 36 6 V27 Q36 30 33 30 H18 L11 37 L12 30 H7 Q4 30 4 27 Z" fill="#FFFDF4" stroke="#1B2447" stroke-width="2.5" stroke-linejoin="round"/>'+
+   '<svg x="8" y="4" width="24" height="25" viewBox="0 0 100 101">'+f+'</svg>'}
+ var _ei=evIcon;evIcon=function(id){var r=_ei.apply(this,arguments);
+  if(FB===null){try{FB=_ei("__none__")}catch(e){FB=""}}
+  if(r!==FB||id==="__none__")return r;
+  try{if(SPK[id])return '<svg class="evic" viewBox="0 0 40 40" aria-hidden="true">'+talk(SPK[id])+'</svg>';
+   var g=pick(id);if(g)return '<svg class="evic" viewBox="0 0 40 40" aria-hidden="true">'+g+'</svg>'}catch(e){}
+  return r};
+})();
+
 (function(){window.__FIXQA=[];function FIX(id,a,b){window.__FIXQA.push({id:id,a:a,b:b})}
 // 2장 window
 FIX("window","…들켰네. 콩이 코 앞에서 알리바이는 무의미하구나.","…아이스크림은 들켰네. 콩이 코 앞에서 알리바이는 무의미하구나.");   // 따닥 대사가 끼어 '들켰네'가 앞 대사(두드리기)와 이어지지 않음 → 무엇이 들켰는지 밝힘
@@ -29302,11 +30041,11 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
   {vb:"0 0 360 200",w:128,h:71},{vb:"0 0 360 160",w:128,h:57},{vb:"0 0 360 640",w:72,h:128},{vb:"0 0 320 200",w:120,h:75},{vb:"0 0 300 180",w:110,h:66},
   {vb:"0 0 100 100",w:24,h:24,sprite:1,minpx:26},{vb:"0 0 100 101",w:32,h:32,sprite:1,minpx:26},{vb:"-8 -4 116 164",w:26,h:37,sprite:1},{vb:"0 0 40 40",w:16,h:16,sprite:1,minpx:22},{vb:"0 0 64 64",w:16,h:16,sprite:1,minpx:22},{vb:"0 0 60 60",w:16,h:16,sprite:1,minpx:22},{vb:"0 0 24 24",w:12,h:12,icon:1},{vb:"0 0 32 32",w:14,h:14,icon:1},{vb:"0 0 20 20",w:11,h:11,icon:1},{vb:"0 0 20 22",w:11,h:12,icon:1}];
  var RULES=[
-  {vb:"0 0 360 200",w:176,h:98,ink:84},
-  {vb:"0 0 360 160",w:176,h:78,ink:84},
-  {vb:"0 0 360 640",w:96,h:171,ink:84},
-  {vb:"0 0 320 200",w:160,h:100,ink:84},
-  {vb:"0 0 300 180",w:150,h:90,ink:84},
+  {vb:"0 0 360 200",w:232,h:129,ink:84,scene:1},
+  {vb:"0 0 360 160",w:232,h:103,ink:84,scene:1},
+  {vb:"0 0 360 640",w:120,h:213,ink:84,scene:1},
+  {vb:"0 0 320 200",w:206,h:129,ink:84,scene:1},
+  {vb:"0 0 300 180",w:194,h:116,ink:84,scene:1},
   {vb:"0 0 100 100",w:40,h:40,sprite:1,ink:70,minpx:26},
   {vb:"0 0 100 101",w:54,h:55,sprite:1,ink:60,minpx:26},
   {vb:"-8 -4 116 164",w:40,h:57,sprite:1,ink:70},
@@ -29321,6 +30060,10 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  var LUM=PAL.map(function(c){return .299*c[0]+.587*c[1]+.114*c[2]});
  // 각 색의 '한 단계 어두운 색'
  var DARK=PAL.map(function(c,i){var best=0,bd=1e9;PAL.forEach(function(q,j){if(LUM[j]>=LUM[i]-12)return;var dl=LUM[i]-LUM[j];var hue=Math.abs((c[0]-q[0])*.6)+Math.abs((c[1]-q[1])*.6)+Math.abs((c[2]-q[2])*.6);var sc=hue+Math.abs(dl-55)*1.2;if(sc<bd){bd=sc;best=j}});return bd<1e9?best:0});
+ // 각 색의 '한 단계 밝은 색'
+ var LITE=PAL.map(function(c,i){var best=i,bd=1e9;PAL.forEach(function(q,j){if(LUM[j]<=LUM[i]+12)return;var dl=LUM[j]-LUM[i];var hue=Math.abs((c[0]-q[0])*.6)+Math.abs((c[1]-q[1])*.6)+Math.abs((c[2]-q[2])*.6);var sc=hue+Math.abs(dl-40)*1.2;if(sc<bd){bd=sc;best=j}});return bd<160?best:i});
+ var SHD=PAL.map(function(c,i){var best=DARK[i],bd=1e9;PAL.forEach(function(q,j){if(LUM[j]>=LUM[i]-12)return;var dl=LUM[i]-LUM[j];var hue=Math.abs((c[0]-c[1])-(q[0]-q[1]))+Math.abs((c[1]-c[2])-(q[1]-q[2]));var sc=hue*1.5+Math.abs(dl-38);if(sc<bd){bd=sc;best=j}});return best});
+ var BAY=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5];
  var WHITE=0;LUM.forEach(function(l,i){if(l>LUM[WHITE])WHITE=i});
  var NC={};
  function near(r,g,b){var k=(r>>3)<<10|(g>>3)<<5|(b>>3);var v=NC[k];if(v!=null)return v;var bi=0,bd=1e12;
@@ -29371,6 +30114,21 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
   for(var y3=0;y3<H;y3++)for(var x3=0;x3<W;x3++){var c=at(x3,y3);if(c<0)continue;var nb=[at(x3+1,y3),at(x3,y3+1),at(x3-1,y3),at(x3,y3-1)];
    for(var q=0;q<4;q++){var o=nb[q];if(o<0||o===c)continue;if(LUM[o]-LUM[c]>R.ink){out[y3*W+x3]=DARK[c];break}}}
   lo=out;
+  // 배경: 캐릭터와 밀도 맞추기 — 윗면 빛, 아래쪽 그늘 디더, 넓은 면 질감
+  if(R.scene){var up=new Int16Array(W*H),dn=new Int16Array(W*H);
+   for(var xs=0;xs<W;xs++){var run=0;for(var ys=0;ys<H;ys++){var cs=lo[ys*W+xs];run=(ys>0&&lo[(ys-1)*W+xs]===cs)?run+1:0;up[ys*W+xs]=run}
+    run=0;for(var ys2=H-1;ys2>=0;ys2--){var cs2=lo[ys2*W+xs];run=(ys2<H-1&&lo[(ys2+1)*W+xs]===cs2)?run+1:0;dn[ys2*W+xs]=run}}
+   function hrun(x,y,c){var n=1,i=x-1;while(i>=0&&lo[y*W+i]===c&&n<99){n++;i--}i=x+1;while(i<W&&lo[y*W+i]===c&&n<99){n++;i++}return n}
+   out=lo.slice();
+   for(var yb=0;yb<H;yb++)for(var xb=0;xb<W;xb++){var ib=yb*W+xb,cb=lo[ib];if(cb<0)continue;var u=up[ib],dd=dn[ib],len=u+dd+1,ab=at(xb,yb-1);
+    // 윗면 빛: 어두운 테두리 바로 아래 한 줄
+    if(u===0&&dd>=2&&ab>=0&&LUM[ab]<LUM[cb]-30){out[ib]=LITE[cb];continue}
+    // 셀 셰이딩: 위아래가 진한 테두리로 닫힌 작은 물체만 아래쪽 그늘(경계는 체크 디더)
+    if(len>=6&&len<=48&&yb-u>0&&hrun(xb,yb,cb)<=64){var tp=at(xb,yb-u-1),bt=at(xb,yb+dd+1);
+     if(tp>=0&&bt>=0&&LUM[tp]<LUM[cb]-30&&LUM[bt]<LUM[cb]-30){var t=u/(len-1);
+      if(t>.72){out[ib]=SHD[cb];continue}
+      if(t>.6&&((xb+yb)&1)){out[ib]=SHD[cb];continue}}}}
+   lo=out}
   // 스프라이트는 바깥 윤곽선
   if(R.sprite){out=lo.slice();for(var y4=0;y4<H;y4++)for(var x4=0;x4<W;x4++){if(at(x4,y4)!==-1)continue;if(at(x4-1,y4)>=0||at(x4+1,y4)>=0||at(x4,y4-1)>=0||at(x4,y4+1)>=0)out[y4*W+x4]=0}lo=out}
   var cv=document.createElement("canvas");cv.width=W;cv.height=H;var cx=cv.getContext("2d"),im=cx.createImageData(W,H),d=im.data;
@@ -29391,7 +30149,7 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  var LSUSED=0,LSCAP=1200000;try{for(var li=localStorage.length-1;li>=0;li--){var lk=localStorage.key(li);if(lk&&lk.indexOf("dc1:")===0){if(lk.indexOf(LSP)!==0)localStorage.removeItem(lk);else LSUSED+=(localStorage.getItem(lk)||"").length}}}catch(e){LSOK=false}
  // 그림 캐시는 저장 공간의 일부만 쓴다(게임 저장이 밀려나지 않게)
  function lsSet(k,v){if(!LSOK||LSUSED+v.length>LSCAP)return;try{localStorage.setItem(LSP+k,v);LSUSED+=v.length}catch(e){LSOK=false}}
- function raster(src,R,cb){var key=hash(src)+R.w+"x"+R.h+(R.sprite?"s":"");if(cache[key]){cb(cache[key]);return}
+ function raster(src,R,cb){var key=hash(src)+R.w+"x"+R.h+(R.sprite?"s":"")+(R.scene?"b2":"");if(cache[key]){cb(cache[key]);return}
   var st=lsGet(key);if(st){cache[key]=st;cb(st);return}
   if(pend[key]){pend[key].push(cb);return}pend[key]=[cb];
   var full=src.indexOf("xmlns=")<0?src.replace("<svg","<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\""):src;
