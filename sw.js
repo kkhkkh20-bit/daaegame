@@ -1,6 +1,6 @@
 // 다람 탐정 사무소 service worker
 // Bump VERSION whenever game.html changes so installed apps pick up the new build.
-const VERSION = "v129";
+const VERSION = "v130";
 const CORE = "daae-core-" + VERSION;
 const FONTS = "daae-fonts";
 const FILES = ["./", "index.html", "game.html", "manifest.webmanifest",
