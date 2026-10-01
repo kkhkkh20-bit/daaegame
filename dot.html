@@ -9828,7 +9828,7 @@ function open(){
    '<button class="btn" id="lkdone">완료</button>';
   modal(h,function(){
     function k(){return tab==="d0"?"det0":"det1"}
-    function prev(bump){var p=document.getElementById("lkprev");if(!p)return;p.innerHTML=pf(k(),"happy");if(bump){p.classList.remove("bump");void p.offsetWidth;p.classList.add("bump")}}
+    function prev(bump){var p=document.getElementById("lkprev");if(!p)return;p.innerHTML=pf(k(),"");if(bump){p.classList.remove("bump");void p.offsetWidth;p.classList.add("bump")}}
     function say2(t){var m=document.getElementById("lkmsg");if(m){m.textContent=t||"";m.style.display=t?"block":"none"}}
     function paint(){var b=document.getElementById("lkbody");if(!b)return;b.innerHTML=body();bind()}
     function press(f,v){ov.querySelectorAll('[data-lf="'+f+'"]').forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.lv===v))})}
@@ -22581,6 +22581,7 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  var LUM=PAL.map(function(c){return .299*c[0]+.587*c[1]+.114*c[2]});
  // 각 색의 '한 단계 어두운 색'
  var DARK=PAL.map(function(c,i){var best=0,bd=1e9;PAL.forEach(function(q,j){if(LUM[j]>=LUM[i]-12)return;var dl=LUM[i]-LUM[j];var hue=Math.abs((c[0]-q[0])*.6)+Math.abs((c[1]-q[1])*.6)+Math.abs((c[2]-q[2])*.6);var sc=hue+Math.abs(dl-55)*1.2;if(sc<bd){bd=sc;best=j}});return bd<1e9?best:0});
+ var WHITE=0;LUM.forEach(function(l,i){if(l>LUM[WHITE])WHITE=i});
  var NC={};
  function near(r,g,b){var k=(r>>3)<<10|(g>>3)<<5|(b>>3);var v=NC[k];if(v!=null)return v;var bi=0,bd=1e12;
   for(var i=0;i<PAL.length;i++){var c=PAL[i],rm=(r+c[0])/2,dr=r-c[0],dg=g-c[1],db=b-c[2];var d=(2+rm/256)*dr*dr+4*dg*dg+(2+(255-rm)/256)*db*db;if(d<bd){bd=d;bi=i}}NC[k]=bi;return bi}
@@ -22620,7 +22621,12 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
   var out=lo.slice();
   for(var y2=0;y2<H;y2++)for(var x2=0;x2<W;x2++){var c0=at(x2,y2),n=[at(x2-1,y2),at(x2+1,y2),at(x2,y2-1),at(x2,y2+1)];var same=n.filter(function(v){return v===c0}).length;
    if(same===0){var f={},mx=-2,mc=0;n.forEach(function(v){f[v]=(f[v]||0)+1;if(f[v]>mc){mc=f[v];mx=v}});if(mc>=3)out[y2*W+x2]=mx}}
-  lo=out;out=lo.slice();
+  lo=out;
+  // 눈 반짝이 살리기: 칸 안에 작은 흰 점이 있고 칸 대표색이 어두우면 그 칸을 흰색으로
+  if(R.sprite){for(var y5=0;y5<H;y5++)for(var x5=0;x5<W;x5++){var c5=lo[y5*W+x5];if(c5<0||LUM[c5]>120)continue;var hi=0;
+   for(var y6=0;y6<K;y6++){var r6=(y5*K+y6)*HW+x5*K;for(var x6=0;x6<K;x6++){var v6=idx[r6+x6];if(v6>=0&&LUM[v6]>225)hi++}}
+   if(hi>=2)lo[y5*W+x5]=WHITE}}
+  out=lo.slice();
   // 카툰 잉크선: 밝기 차이가 큰 경계의 어두운 쪽을 한 단계 더 어둡게
   for(var y3=0;y3<H;y3++)for(var x3=0;x3<W;x3++){var c=at(x3,y3);if(c<0)continue;var nb=[at(x3+1,y3),at(x3,y3+1),at(x3-1,y3),at(x3,y3-1)];
    for(var q=0;q<4;q++){var o=nb[q];if(o<0||o===c)continue;if(LUM[o]-LUM[c]>R.ink){out[y3*W+x3]=DARK[c];break}}}
@@ -22676,6 +22682,12 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  'body.dotmode .hud .ht,body.dotmode .hud .ht small,body.dotmode .hud2 .ht{color:#F4F1E6!important}body.dotmode .hud .ht small{color:#C9D0EC!important}'+
  'body.dotmode .bnav2 .vb{font-size:12px!important;letter-spacing:-.5px!important;gap:4px!important}body.dotmode .bnav2 .vb svg{width:22px;height:22px}'+
  'body.dotmode .vtxt{font-size:16px!important}'+
+ // 속마음: 밝은 상자 위에 진한 남색 굵은 글씨(같은 도트 폰트)
+ 'body.dotmode .veil.vn.think .vband,body.dotmode .veil.vn.think .vband .txt{color:#14306B!important}'+
+ 'body.dotmode .veil.vn.think .vband .txt,body.dotmode .dlg.s-thought .txt,body.dotmode .dlg.think .txt{font-family:"Galmuri11B","Galmuri11",monospace!important;font-weight:400!important;text-shadow:none!important}'+
+ 'body.dotmode .dlg.s-thought .txt{color:#14306B!important}'+
+ // 조사 지점·생각 거품은 원래대로 동그랗게
+ 'body.dotmode .hot,body.dotmode .ptring.round,body.dotmode .tdots i{border-radius:50%!important}'+
  '@media (prefers-reduced-motion:reduce){body.dotmode:after{display:none}}';
  document.head.appendChild(css);
  var css2=document.createElement("style");
@@ -22689,6 +22701,7 @@ else{start((window.claude&&window.claude.hot&&window.claude.hot.data)||{})}
  'body.dotmode.ds-mc #vnbox,body.dotmode.ds-mc .dlg{background:rgba(0,0,0,.72)!important;border:2px solid #000!important;box-shadow:inset 0 0 0 2px #3A3A3A!important;color:#FFFFFF!important}'+
  'body.dotmode.ds-mc .vtxt{text-shadow:2px 2px 0 #3F3F3F}'+
  'body.dotmode.ds-mc .vname,body.dotmode.ds-mc #vnbox small,body.dotmode.ds-mc #vnbox b:first-child{color:#FFFF55!important}'+
+ 'body.dotmode.ds-mc .veil.vn.think .vband *{text-shadow:none!important}body.dotmode.ds-mc .veil.vn.think .vband b:first-child,body.dotmode.ds-mc .veil.vn.think .vband .vname{color:#14306B!important}'+
  'body.dotmode.ds-mc .bnav,body.dotmode.ds-mc .hud{background:#3B3B3B!important;border-color:#000!important}'+
  'body.dotmode.ds-mc h1{color:#FFFF55!important;text-shadow:3px 3px 0 #3F3F15!important}'+
  'body.dotmode.ds-mc .tlogo h1{font-size:34px!important}';

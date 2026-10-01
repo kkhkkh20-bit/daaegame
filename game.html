@@ -9828,7 +9828,7 @@ function open(){
    '<button class="btn" id="lkdone">완료</button>';
   modal(h,function(){
     function k(){return tab==="d0"?"det0":"det1"}
-    function prev(bump){var p=document.getElementById("lkprev");if(!p)return;p.innerHTML=pf(k(),"happy");if(bump){p.classList.remove("bump");void p.offsetWidth;p.classList.add("bump")}}
+    function prev(bump){var p=document.getElementById("lkprev");if(!p)return;p.innerHTML=pf(k(),"");if(bump){p.classList.remove("bump");void p.offsetWidth;p.classList.add("bump")}}
     function say2(t){var m=document.getElementById("lkmsg");if(m){m.textContent=t||"";m.style.display=t?"block":"none"}}
     function paint(){var b=document.getElementById("lkbody");if(!b)return;b.innerHTML=body();bind()}
     function press(f,v){ov.querySelectorAll('[data-lf="'+f+'"]').forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.lv===v))})}
