@@ -1,13 +1,13 @@
 // 다람 탐정 사무소 service worker
 // Bump VERSION whenever game.html changes so installed apps pick up the new build.
-const VERSION = "v143";
+const VERSION = "v144";
 const CORE = "daae-core-" + VERSION;
 const FONTS = "daae-fonts";
 const FILES = ["./", "index.html", "game.html", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "icons/apple-180.png"];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CORE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CORE).then((c) => c.addAll(FILES.map((u) => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (e) => {
@@ -37,7 +37,7 @@ self.addEventListener("fetch", (e) => {
   // Pages: network first so a new build shows up right away; cache when offline
   if (req.mode === "navigate" || url.pathname.endsWith(".html") || url.pathname.endsWith("/")) {
     e.respondWith(
-      fetch(req).then((res) => { if (res.ok) { const copy = res.clone(); caches.open(CORE).then((c) => c.put(req, copy)); } return res; })
+      fetch(req.url, { cache: "no-cache", credentials: "same-origin" }).then((res) => { if (res.ok) { const copy = res.clone(); caches.open(CORE).then((c) => c.put(url.origin + url.pathname, copy)); } return res; })
         .catch(() => caches.match(req, { ignoreSearch: true }).then((hit) => hit || caches.match("index.html")))
     );
     return;
