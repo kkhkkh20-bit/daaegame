@@ -228,7 +228,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--hl);outline-off
   .tab{font-size:14px}
   .a{font-size:18px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}}
 
 /* ===== game shell ===== */
 body.ingame{padding-block:0 96px}
@@ -17954,7 +17954,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  '@keyframes lkfall1{to{transform:translate(-30%,40%) rotate(-12deg);opacity:0}}@keyframes lkfall2{to{transform:translate(30%,40%) rotate(12deg);opacity:0}}'+
  '@keyframes lkpop{0%{transform:scale(1)}30%{transform:scale(1.5)}100%{transform:scale(.3) translateY(-200%);opacity:0}}'+
  '.tstage .lkchip{margin-top:4px;align-self:flex-start;background:#7A4E2C;color:#fff;border:2px solid #1B2447;border-radius:999px;padding:1px 10px;font-size:13px}'+
- '@media (prefers-reduced-motion:reduce){.lkov *{animation:none!important}}';
+ '@media (prefers-reduced-motion:reduce){.lkov *{animation-duration:.001s!important;animation-iteration-count:1!important}}';
  document.head.appendChild(css);
 
  // ---------- 3) 대결 상대가 무너지는 얼굴: 다크서클·그늘·큰 땀·떨리는 손·깜빡임·접히는 귀·고개 흔들기 ----------
@@ -24146,7 +24146,7 @@ REI2("kitchen",{
  '.dalx .ttl{position:relative;z-index:2;font:400 clamp(26px,8vw,40px)/1.1 var(--display,Jua),sans-serif;color:#E8D9FF;text-shadow:0 0 18px #B07CFF,3px 3px 0 #2A0E2E;letter-spacing:.06em;opacity:0;transform:translateY(8px);transition:opacity .6s,transform .6s}.dalx.p3 .ttl{opacity:1;transform:none}'+
  '.dalx .pz{position:absolute;left:50%;top:42%;width:22px;height:22px;margin:-11px;z-index:2;opacity:0}.dalx.p2 .pz{animation:dalpz 2.2s ease-out forwards;animation-delay:var(--d)}@keyframes dalpz{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.4)}15%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1)}}'+
  '.dalx.out{animation:fadeout .4s forwards}'+
- '@media (prefers-reduced-motion:reduce){.dalx *{animation:none!important;transition:none!important}}';
+ '@media (prefers-reduced-motion:reduce){.dalx *{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}}';
  document.head.appendChild(css);
  function cin(cb){var d=document.createElement("div");d.className="dalx";
   var pz='';for(var i=0;i<14;i++){var a=i/14*Math.PI*2;pz+='<div class="pz" style="--x:'+Math.round(Math.cos(a)*170)+'px;--y:'+Math.round(Math.sin(a)*150)+'px;--r:'+(i%2?240:-240)+'deg;--d:'+(i*.04).toFixed(2)+'s"><svg viewBox="0 0 24 24" aria-hidden="true">'+clover(12,13,4.2)+'</svg></div>'}
@@ -33394,6 +33394,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
    '<div class="csbox"><div class="csfig"></div><span class="csname"></span><div class="cstxt"></div><span class="csnext">▼</span></div>'+
    '<div class="csintro"><em>사건 현장</em><strong>'+esc(o.place||c.title)+'</strong><span>'+esc(o.time||"")+'</span></div>';
   document.body.appendChild(el);
+  setTimeout(function(){var ci=el.querySelector(".csintro");if(ci)ci.style.display="none"},2100);
   var view=el.querySelector(".csview"),cam=el.querySelector(".cscam"),box=el.querySelector(".csbox"),fig=el.querySelector(".csfig"),name=el.querySelector(".csname"),txt=el.querySelector(".cstxt"),fl=el.querySelector(".csflash");
   var i=0,ended=false,typing=null,full="",lock=false;
   try{SFX.slam&&SFX.slam()}catch(e){}
@@ -35506,6 +35507,45 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
   if(on){var v=document.querySelector("#app>.view");if(v)document.documentElement.style.setProperty("--xtop",Math.round(v.getBoundingClientRect().top)+"px")}}catch(e){}}
  var _r=render;render=function(){var r=_r.apply(this,arguments);mark();return r};
 })();
+/* v156: 화면에 깜짝 효과(헉!, 흔들림, 번쩍, 도장, 증거 표시, 배너 등)가 나오면 소리도 함께 — 이미 소리가 났으면 겹치지 않게 건너뜀 */
+(function(){
+ if(typeof SFX==="undefined")return;
+ var QUIET={blip:1,tick:1,tick2:1,type:1};window.__sfxAt=0;
+ Object.keys(SFX).forEach(function(k){var f=SFX[k];if(typeof f!=="function"||QUIET[k])return;SFX[k]=function(){window.__sfxAt=Date.now();return f.apply(this,arguments)}});
+ var pend=null;
+ function want(kind){if(pend)return;pend=kind;setTimeout(function(){var k=pend;pend=null;if(Date.now()-window.__sfxAt<320)return;try{if(SFX[k])SFX[k]()}catch(e){}},90)}
+ function cls(n){return (n&&typeof n.className==="string")?" "+n.className+" ":""}
+ function scan(n){
+  if(!n||n.nodeType!==1)return;var c=cls(n);
+  if(/ (csstamp|lie-stamp) /.test(c))return want("stamp");
+  if(/ banner /.test(c))return want("slam");
+  if(/ evpop /.test(c))return want("present");
+  if(/ (flash|rxflash) /.test(c))return want("cutin");
+  if(/ csmark /.test(c))return want("ping");
+ }
+ var mo=new MutationObserver(function(ms){
+  for(var i=0;i<ms.length;i++){var m=ms[i];
+   if(m.type==="childList"){for(var j=0;j<m.addedNodes.length;j++)scan(m.addedNodes[j])}
+   else if(m.type==="attributes"){var t=m.target;
+    if(m.attributeName==="data-ono"&&t.getAttribute("data-ono")&&m.oldValue!==t.getAttribute("data-ono")){var v=document.getElementById("dlgveil");if(!(v&&/fx-tell/.test(v.className)))want("pop")}
+    else if(m.attributeName==="class"){var nc=cls(t),oc=" "+(m.oldValue||"")+" ";
+     if(/ (shake|fxa) /.test(nc)&&!/ (shake|fxa) /.test(oc)){var v2=document.getElementById("dlgveil");if(!(v2&&/fx-tell/.test(v2.className)))want(/ shake /.test(nc)?"impact":"pop")}
+     else if(/ on /.test(nc)&&/ csflash /.test(nc)&&!/ on /.test(oc))want("cutin")}}
+  }});
+ function start(){try{mo.observe(document.body,{subtree:true,childList:true,attributes:true,attributeOldValue:true,attributeFilter:["class","data-ono"]})}catch(e){}}
+ if(document.body)start();else document.addEventListener("DOMContentLoaded",start);
+ if(typeof quake==="function"){var _q=quake;quake=function(){want("impact");return _q.apply(this,arguments)}}
+})();
+/* v156b: 증거 고르기 — 설명 칸 높이를 조금 키우고, '중요·결합' 버튼은 늘 보이게 아래 고정(긴 설명만 칸 안에서 스크롤) */
+(function(){var css=document.createElement("style");css.textContent=
+ '.crec2 .cr-in>.cr-det{height:clamp(150px,26vh,212px)!important;overflow:hidden!important;display:flex!important;align-items:stretch!important;gap:10px!important;box-sizing:border-box}'+
+ '.crec2 .cr-det .cr-ic{flex:none!important;width:clamp(64px,19vw,96px)!important;height:clamp(64px,19vw,96px)!important;align-self:flex-start}'+
+ '.crec2 .cr-det .cr-ic svg,.crec2 .cr-det .cr-ic img,.crec2 .cr-det .cr-ic canvas{width:100%!important;height:100%!important}'+
+ '.crec2 .cr-det .cr-tx{flex:1 1 auto!important;min-width:0;min-height:0;display:flex!important;flex-direction:column!important;overflow:hidden}'+
+ '.crec2 .cr-det .cr-tx h3{flex:none;margin:0 0 4px!important}'+
+ '.crec2 .cr-det .cr-tx p{flex:1 1 auto;min-height:0;overflow-y:auto;margin:0!important;font-size:14px!important;line-height:1.45!important;-webkit-overflow-scrolling:touch}'+
+ '.crec2 .cr-det .cr-act{flex:none!important;margin-top:6px!important;display:flex;gap:6px}';
+ document.head.appendChild(css)})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
