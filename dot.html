@@ -30956,6 +30956,44 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
  window.__openSpine=openSpine;
  var _r=render;render=function(){var r=_r.apply(this,arguments);track();pill();return r};
 })();
+/* v147: 큰 줄기 목표 띠 — 지금 무엇을 향해 가는지 한 줄로. 조사·회의·대결 순서는 자유(열 수 있을 때 알려 줄 뿐 강제하지 않음) */
+(function(){
+ function has(g,id){return (g.found&&g.found.indexOf(id)>=0)||(g.asked&&g.asked.indexOf(id)>=0)||!!(g.broken&&g.broken[id])}
+ function goal(c,g){
+  if(!g||g.result)return null;
+  if(g.battle)return null;
+  var D=(typeof DEBATE!=="undefined")&&DEBATE[c.id];
+  if(D&&g.debate&&g.debate.hold&&!g.debate.done)return {k:"hold",t:"회의 중단 · "+(g.debate.hold.task||"필요한 증거를 더 찾아요"),go:"scene"};
+  var st=window.__spineState&&window.__spineState(c,g),next=st?st.th.filter(function(x){return !x.done})[0]:null;
+  if(D&&!(g.debate&&g.debate.done)){
+   var ready=window.__rtReady&&window.__rtReady(c),miss=(D.need||[]).filter(function(id){return !has(g,id)}).length;
+   if(ready)return {k:"meet",t:"원탁 회의를 열 수 있어요 · 지금 열어도, 더 조사해도 돼요",go:"final"};
+   return {k:"inv",t:(next?next.t.title:"단서를 더 모아요"),sub:"회의까지 증거 "+miss+"개",go:"spine"};
+  }
+  if(D&&g.debate&&g.debate.done)return {k:"fight",t:"범인과의 대결이 남았어요 · 준비되면 대결로",go:"final"};
+  // 회의 없는 사건(1·2장)
+  var all=c.contra.every(function(x){return g.broken&&g.broken[x.t]});
+  if(all)return {k:"fight",t:"거짓말을 모두 깼어요 · 범인과 대결로",go:"final"};
+  return {k:"inv",t:(next?next.t.title:"거짓말을 찾아 깨뜨려요"),sub:"남은 거짓말 "+c.contra.filter(function(x){return !(g.broken&&g.broken[x.t])}).length+"개",go:"spine"};
+ }
+ window.__goalOf=goal;
+ var css=document.createElement("style");css.textContent=
+  '.hasgoal{flex-wrap:wrap!important;row-gap:4px}.goalbar{flex:1 1 100%;order:99;display:flex;align-items:center;gap:8px;width:100%;box-sizing:border-box;margin:4px 0 0;padding:5px 10px;border-radius:10px;border:2px solid #F2C230;background:rgba(27,36,71,.92);color:#FFF6D8;font-size:13px;line-height:1.3;text-align:left;cursor:pointer}'+
+  '.goalbar i{font-style:normal;flex:none;background:#F2C230;color:#1B2447;border-radius:6px;padding:1px 6px;font-size:11px}'+
+  '.goalbar span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.goalbar small{flex:none;color:#FFE27A;font-size:11px}'+
+  '.goalbar.meet{border-color:#E23B44}.goalbar.meet i{background:#E23B44;color:#fff}.goalbar.fight{border-color:#E23B44}.goalbar.fight i{background:#E23B44;color:#fff}'+
+  '.goalbar.pulse{animation:gbp 1.4s ease-in-out 2}@keyframes gbp{50%{box-shadow:0 0 0 4px rgba(242,194,48,.55)}}';
+ document.head.appendChild(css);
+ var lastK={};
+ function draw(){try{if(!G||S.screen!=="case")return;var c=CASES[G.ci];if(!c)return;var rb=document.getElementById("recbtn");var old=document.getElementById("goalbar");
+  var gl=goal(c,G);if(!gl||!rb){if(old)old.remove();return}
+  var row=rb.parentNode;var b=old||document.createElement("button");b.type="button";b.id="goalbar";
+  b.className="goalbar "+gl.k;b.innerHTML='<i>'+(gl.k==="meet"?"회의":gl.k==="fight"?"대결":gl.k==="hold"?"회의":"목표")+'</i><span>'+esc(gl.t)+'</span>'+(gl.sub?'<small>'+esc(gl.sub)+'</small>':'');
+  if(!old||old.parentNode!==row){if(old)old.remove();row.classList.add('hasgoal');row.appendChild(b);try{fsLayout()}catch(e){}}
+  var key=c.id+":"+gl.k+":"+gl.t;if(lastK[c.id]&&lastK[c.id]!==key){b.classList.remove("pulse");void b.offsetWidth;b.classList.add("pulse")}lastK[c.id]=key;
+  b.onclick=function(){try{SFX.tap&&SFX.tap()}catch(e){}if(DL)return;if(gl.go==="spine"){window.__openSpine&&window.__openSpine()}else if(gl.go==="final"){if(G.tab!=="final")goTab("final")}else{if(G.tab!=="scene")goTab("scene")}}}catch(e){}}
+ var _r=render;render=function(){var r=_r.apply(this,arguments);draw();return r};
+})();
 
 /* v146 spine A — 1~5장(cake, window, crown, star, bell) 사건 줄기 + 줄기 대사
    - 1~4장은 기존 BEATS(loc/ev1/lie1/lieAll)를 덮지 않는다(엔진도 기존 키는 건너뜀). 5장(bell)은 loc/ev1/lie1/lieAll 새로 넣음.
