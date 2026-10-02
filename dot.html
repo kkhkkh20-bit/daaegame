@@ -35266,7 +35266,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
 /* v153: 역전재판식 모바일 화면 — 위: 동사 탭 한 줄 / 가운데: 장면·인물 고정 / 아래: 낮은 대사창(최대 2줄, 넘겨 보기) */
 (function(){
  var css=document.createElement("style");css.textContent=
-  ':root{--dH:100px}'+
+  ':root{--dH:128px}'+
   /* 위쪽: 머리줄 한 줄 + 동사 탭 한 줄 */
   'body.aa .hud.hud2{min-height:0!important;padding-top:4px!important;padding-bottom:4px!important;gap:6px!important}'+
   'body.aa .hud.hud2 .ht{flex:1 1 auto;min-width:0;overflow:hidden}'+
@@ -35333,6 +35333,13 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
   'body.aa .stage .stagebar .sbtns{align-self:flex-end}'+
   'body.aa .stage{background:#0B1026}'+
   'body.aa.dl-on .fstalk .tprompt{visibility:hidden}'+
+  'body.aa.dl-on .stage .stagebar{visibility:hidden}'+
+  'body.aa .veil.vn2 .vband.bot{bottom:calc(var(--fsb,0px) + 8px + env(safe-area-inset-bottom,0px))!important}'+
+  'body.aa #vnfig{bottom:calc(var(--fsb,0px) + var(--dH) - 4px + env(safe-area-inset-bottom,0px))!important}'+
+  'body.aa .fstalk .tprompt{bottom:calc(8px + env(safe-area-inset-bottom,0px))}'+
+  'body.aa .fstalk .tstage .tfig{bottom:calc(var(--dH) - 4px + env(safe-area-inset-bottom,0px))!important}'+
+  'body.aa .fstalk .tacts{bottom:calc(var(--dH) + 16px + env(safe-area-inset-bottom,0px))}'+
+  'body.aa.invwait .status.atabs>*,body.aa:has(#dzgo) .status.atabs>*{visibility:hidden!important}'+
   '@media (min-width:600px){body.aa .fstalk .tprompt{left:50%;right:auto;width:calc(100% - 32px);max-width:680px;transform:translateX(-50%)}body.aa .stage .scenerow.stagebar{width:calc(100% - 32px);max-width:680px;margin-left:auto!important;margin-right:auto!important}body.aa .fstalk .tpanel{padding:0 max(8%,calc(50% - 300px))!important}}';
  document.head.appendChild(css);
 
@@ -35357,6 +35364,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
    var pb=st.querySelector("#presentbtn"),rb=st.querySelector("#recbtn");
    if(pb&&rb&&!pb.querySelector(".tnum")){var n=parseInt((rb.querySelector("b")||{}).textContent,10);if(n>0){var t=document.createElement("b");t.className="tnum";t.textContent=n;pb.appendChild(t)}}
    b.classList.add("aa");
+   b.classList.toggle("invwait",!G.introDone||!!window.__invWait);
    if(b.classList.contains("fs"))st.style.top=Math.round(hud.getBoundingClientRect().bottom)+"px";else st.style.top="";
   }catch(e){b.classList.remove("aa")}
  }
@@ -35387,6 +35395,15 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  var _fl=fsLayout;fsLayout=function(){var r=_fl.apply(this,arguments);try{if(document.body.classList.contains("aa"))document.documentElement.style.setProperty("--fsb","0px")}catch(e){}return r};
  var _r=render;render=function(){var r=_r.apply(this,arguments);topTabs();talkDeco();try{fsLayout()}catch(e){}return r};
  window.__aaTabs=topTabs;
+ /* 도입 대화·현장 브리핑이 끝나고 '수사 개시' 배너가 지나간 뒤에 탭을 보여 준다 */
+ var _bn=banner;banner=function(t){
+  if(t!=="수사 개시")return _bn.apply(this,arguments);
+  window.__invWait=true;document.body.classList.add("invwait");
+  var pr;try{pr=_bn.apply(this,arguments)}catch(e){window.__invWait=false;document.body.classList.remove("invwait");throw e}
+  function done(){window.__invWait=false;try{if(G&&G.introDone)document.body.classList.remove("invwait")}catch(e){}}
+  if(pr&&pr.then)pr.then(done,done);else done();
+  setTimeout(function(){if(window.__invWait)done()},30000);
+  return pr};
 
  /* ---------- 대사: 대사창 2줄에 맞춰 나누기 ---------- */
  var probe=null,cache={};
@@ -35402,7 +35419,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
   v.innerHTML='<div><div class="vband bot'+(mine?' mine':'')+(isN?' narr':'')+(d.testi?' testi':'')+'">'+(mine?'<div class="vface r"></div>':'')+'<div class="vtxt"><span class="plate">가</span><div class="txt"></div></div></div></div>';
   document.body.appendChild(v);
   var t=v.querySelector(".txt");
-  probe={key:key,el:v,txt:t,isT:isT,max:lh(t)*2+3};
+  probe={key:key,el:v,txt:t,isT:isT,max:lh(t)*3+3};
   return probe;
  }
  function fits(p,s){
