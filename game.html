@@ -35266,6 +35266,60 @@ if(typeof bindScene==="function"){var _bs=bindScene;bindScene=function(c){_bs.ap
 window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMode,P:P,SKY:SKY,ver:VER};
 })();
 
+/* v161: 5장 — (1) 슬링이 검은 망토단이라는 근거를 분명히(망토 안감의 검은 망토단 도장 = 사무소에 온 검은 봉투의 도장, 우편 마차 도장 = 배달부)
+   그리고 정체가 드러나는 순간 모두가 놀라는 장면을 넣는다. (2) 레이 반론 라운드의 쟁점을 '종을 멈춘 건 가짜 추냐, 끊긴 줄이냐' 하나로 정리. */
+(function(){
+ var c=typeof caseById==="function"?caseById("bell"):null;if(!c)return;
+ // 1) 증거: 망토 조각
+ c.locations.forEach(function(l){(l.spots||[]).forEach(function(s){if(s.ev&&s.ev.id==="m_cloak"){
+  s.text="검은 망토 조각이 못에 걸려 찢겨 있다. 안감에는 우편 마차 도장, 그 옆에 작은 검은 망토 모양 도장이 수놓여 있다. 사무소 문틈에 끼어 있던 검은 봉투의 도장과 똑같은 모양이다.";
+  s.ev.desc="검은 망토 조각. 안감에 우편 마차 도장과 검은 망토단 도장(네로의 검은 봉투와 같은 모양). 갈색 털이 묻어 있다.";}})});
+ try{if(typeof THINK!=="undefined")THINK.m_cloak="우편 마차 도장 옆에… 이 도장, 우리 사무소에 온 검은 봉투랑 똑같아. 우편 마차를 타는 누군가가 검은 망토단이야.";}catch(e){}
+ // 2) 반박 순간의 한마디(정체 고백은 아래 장면에서)
+ c.contra.forEach(function(x){if(x.t==="sling3")x.say="슬링의 꼬리털이 곤두섰다. 망토 조각에 묻은 털은 종줄에 끼어 있던 갈색 털과 같았다. \"…회색이라고 했잖아요. 지붕 구석까지 뒤지셨군요.\"";});
+ (c.talk.sling||[]).forEach(function(t){if(t.id==="sling5")t.q="네로가 시킨 거지? 종을 멈추라고.";});
+ // 3) 정체가 드러나는 장면
+ function lines(){var p0=S.players[0],p1=S.players[1];return [
+  ["det1",p0+", 이 도장 봐! 우리 사무소 문틈에 끼어 있던 검은 봉투랑 똑같은 도장이야!","nervous","","shock"],
+  ["det0","우편 마차 도장과 검은 망토단 도장이 한 망토 안에 같이 있다. 이 마을에서 우편 마차를 모는 사람은… 한 사람뿐이지."],
+  ["think","잠깐… 그 검은 봉투엔 우표도 주소도 없었어. 그런데 어떻게 우리 사무소 문틈까지 왔지? 편지를 나르는 사람이라면…","",p1],
+  ["ppul","스, 슬링이? 우리 마을 편지를 십 년이나 날라 준 배달부가?!","nervous","","shock"],
+  ["narr","종탑 아래가 술렁였다. 모두가 늘 웃으며 편지를 건네던 배달부를 쳐다봤다."],
+  ["sling","…후후. 시골 탐정은 편지를 너무 꼼꼼히 읽는다니까요.","smug"],
+  ["sling","네, 그 검은 봉투도 제가 넣었어요. 네로 님 편지는 늘 제가 날라요. 배달부는 어느 집 문틈이든 드나들 수 있으니까요.","smug"],
+  ["sling","…아무도 배달부 얼굴은 기억하지 않거든요.","smug"],
+  ["det1","그럼 처음부터… 우리를 지켜보고 있었던 거야?!","angry","","angry"],
+  ["det0",p1+", 흔들리지 마라. 이제 상대가 누군지 알았다. 이번엔 우리가 묻는다."]]}
+ function busy(){return !!(DL||document.querySelector(".ovr,.flash,.banner,.crec2,.modal,.cutin,.csx,.sbook,.rt,.show,.recon,.zoomv"))}
+ setInterval(function(){
+  try{if(!G||S.screen!=="case"||!CASES[G.ci]||CASES[G.ci].id!=="bell")return;
+   if(!G.broken||!G.broken.sling3)return;if(!G.beats)G.beats={};if(G.beats.slingRev)return;
+   if(G.battle&&G.battle.phase==="fight")return;if(busy())return;
+   G.beats.slingRev=1;try{saveProg()}catch(e){}
+   try{window.__crowd&&window.__crowd("웅성웅성")}catch(e){}
+   say(lines(),function(){try{render()}catch(e){}});
+  }catch(e){}
+ },500);
+ // 4) 레이 반론: 쟁점 하나로
+ var R=window.__REI2&&window.__REI2.bell;
+ if(R&&R.def){
+  R.def.intro=[
+   ["rei","이의 있음! 줄을 끊은 건 저 배달부예요. 그건 인정해요. 하지만 '종을 멈춘 범인'은 따로 있어요.","smug"],
+   ["rei","협회 의뢰서에 이렇게 적혀 있어요. '종탑 처마 밑 박쥐 아이를 주시할 것.' 사흘 전 가짜 쇠추를 걸어 둔 건 그 아이, 밤이예요.","smug"],
+   ["rei","쇳덩이 추로는 달빛 종이 울리지 않아요. 가짜를 건 순간 종은 이미 멎었어요. 배달부는 이미 멎은 종의 줄을 자른 것뿐이에요.","smug"],
+   ["bami","…뭐? 종을 살리려고 바꿔 단 건데, 내가 종을 멈췄다고?","angry"],
+   ["sling","어머, 1급 탐정님이 제 편을? 후후, 그래요. 저는 이미 멎은 종의 줄을 끊었을 뿐이죠.","happy"],
+   ["rei","착각하지 마세요. 저는 당신 편이 아니라 계산 편이에요.","smug"],
+   ["det1",S.players[0]+", 쟁점은 하나야. 종을 멈춘 건 가짜 추일까, 끊긴 줄일까?","confused"],
+   ["det0","좋다. 증언대에 서라, 레이. 네 계산에서 틀린 한 줄만 찾으면 된다."]];
+  R.def.stm=[
+   {t:"가짜 쇠추는 사흘 전에 걸렸어요. 고리의 페인트 가루, 작업실의 거푸집이 증거예요.",p:"여기까진 다들 인정했죠?"},
+   {t:"쇳덩이 추로는 달빛 종이 울리지 않아요. 가짜가 걸린 그날부터 종은 멎어 있었어요.",p:"별빛 돌 추가 아니면 그 종은 소리를 못 내요. 줄은 그다음 일이에요.",a:["rv_bell_2","seol1","tok4"]},
+   {t:"그러니까 종을 멈춘 건 줄을 끊은 손이 아니라, 가짜를 건 손이에요.",p:"순서대로 따라가면 그렇게 돼요."}];
+  R.def.hit="…10시 정각, 세 번, 한 번, 네 번. 그 종소리를 0초까지 잰 게 바로 저였어요. 가짜 추로도 종은 울리고 있었던 거예요. 종이 진짜로 멎은 건 10시 15분, 줄이 끊긴 뒤예요. …협회 의뢰서에서 출발한 계산이었네요. 깨끗하게 졌어요. 시골 탐정, 방금 그 한 방은 92점.";
+ }
+})();
+
 /* v153: 역전재판식 모바일 화면 — 위: 동사 탭 한 줄 / 가운데: 장면·인물 고정 / 아래: 낮은 대사창(최대 2줄, 넘겨 보기) */
 (function(){
  var css=document.createElement("style");css.textContent=
