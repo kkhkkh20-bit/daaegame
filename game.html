@@ -19881,7 +19881,7 @@ TWBR.kitchen={type:"fail",phases:[
    ["narr","밤 9시 50분. 종탑 들보 위에 작은 무언가가 거꾸로 매달려, 종을 꼼짝 않고 지켜보고 있었다."],
    ["narr","종탑 아래 회관 창가에선 누군가 목에 건 줄을 자꾸 만지작거렸다. 줄 끝에 있어야 할 무언가가 없는 것처럼."],
    ["narr","아무도 내려가지 않는 지하실 벽에는, 분필 글씨 한 줄이 하얗게 남아 있었다."],
-   ["narr","10분 뒤, 이 종은 백 년 만에 처음으로 멈추는다. 그 밤 은빛 마을 사람들은 처음으로 서로의 얼굴을 의심하게 된다."],
+   ["narr","10분 뒤, 이 종은 백 년 만에 처음으로 멈춘다. 그 밤 은빛 마을 사람들은 처음으로 서로의 얼굴을 의심하게 된다."],
    ["narr","— 그보다 50분 전. 마을 어귀에 숲속 마을에서 온 손님 셋이 내렸다."]]}
  };
  Object.keys(COLD).forEach(function(id){var b=BOOK[id];if(b&&Array.isArray(b.pre)&&SCENES[COLD[id].bg])b.pre.unshift(COLD[id])});
@@ -34893,9 +34893,8 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
   var c=G&&CASES[G.ci];if(!c)return "board";
   if(G.result)return G.result.solved?(c.id==="kitchen"?"ending":"victory"):"memory";
   if(G.battle&&G.battle.phase==="fight"){try{return window.__bmode(G.battle,c)||"battle"}catch(e){return "battle"}}
-  if(DL){var w=DL.lastWho||"",st=DL.stageWho||"";if(w==="rei"||st==="rei")return "rei_talk"}
+  /* v163: 대사·대화 중에도 배경음은 바꾸지 않는다(조사하던 곡 그대로) */
   if(G.battle&&G.battle.phase==="won")return "deduce";
-  if(G.tab==="talk")return (c.part>=3)?"talk_dark":"talk";
   if(G.tab==="final")return "deduce";
   var l=c.locations[G.loc]||c.locations[0];return invKey(c,l?l.id:"")}
  function wantKey(){
@@ -35320,6 +35319,426 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  }
 })();
 
+/* v162 감사 a: 1장(cake)·2장(window) 스토리·논리 다듬기.
+   1장: 창문 틈 크기, 초대 명단(손님 열두 명과 맞게), 보리·여니 목격 표현 통일, 토리 첫 만남 반응, 나비 방울·우체통 고백,
+        토리 반박 대사(어떤 증거를 내밀어도 맞게), 그 후 이야기의 '~했다고 한다' 정리.
+   2장: 현장 브리핑 시각(2:10→2:40, 콩이 도착 2:30 뒤), 꽥순이가 도서관에 있었는데 아무도 못 본 이유, 공 자국(굴러감→찬 자국),
+        공이 밖에 있는 이유, 보리 공 글씨('보리 거'), 꽥순이 그림책 시점, 콩이 낮잠 동선, 부엉이 할아버지가 덤불 얘기를 안 하는 이유,
+        대결 3라운드 첫 문장 정리, 그 후 이야기 정리. */
+(function(){
+ var A=window.__aud162_a={ok:0,miss:[]};
+ function T(label,fn){try{var r=fn();if(r===false)A.miss.push(label);else A.ok++}catch(e){A.miss.push(label+": "+e.message)}}
+ // 문자열 필드 바꾸기: old가 들어 있을 때만
+ function rep(o,k,old,nw){if(!o||typeof o[k]!=="string"||o[k].indexOf(old)<0)return false;o[k]=o[k].split(old).join(nw);return true}
+ // 대사 줄 찾기: [who, text...] 배열에서 who가 같고 text에 sub가 들어 있는 줄
+ function line(arr,who,sub){if(!arr)return null;for(var i=0;i<arr.length;i++){var l=arr[i];if(l&&l[0]===who&&typeof l[1]==="string"&&l[1].indexOf(sub)>=0)return l}return null}
+ function lrep(arr,who,old,nw){var l=line(arr,who,old);if(!l)return false;l[1]=l[1].split(old).join(nw);return true}
+ function spot(c,sid){var r=null;c.locations.forEach(function(l){(l.spots||[]).forEach(function(s){if(s.id===sid)r=s})});return r}
+ function obs(c,oid){var r=null;c.locations.forEach(function(l){(l.obs||[]).forEach(function(s){if(s.id===oid)r=s})});return r}
+ function tk(c,id){var r=null;Object.keys(c.talk||{}).forEach(function(w){(c.talk[w]||[]).forEach(function(t){if(t.id===id)r=t})});return r}
+ function cx(c,t){var r=null;(c.contra||[]).forEach(function(x){if(x.t===t)r=x});return r}
+ var GV=function(n){try{return eval(n)}catch(e){return undefined}};
+
+ /* ================= 1장 cake ================= */
+ var c1=typeof caseById==="function"?caseById("cake"):null;
+ if(!c1)A.miss.push("cake 없음");else{
+  // (1) 손가락 두 개 틈으로는 고양이가 케이크 반쪽을 들고 나올 수 없다 → 한 뼘
+  T("c1 latch",function(){return rep(spot(c1,"latch"),"text","손가락 두 개만큼 열려 있어요","한 뼘쯤 열려 있어요. 고양이 정도는 충분히 드나들 만해요")});
+  // (2) 초대 명단: 손님은 열두 명인데 명단엔 아이 넷뿐 → 아이들 칸으로 분명히
+  T("c1 guestlist",function(){var s=spot(c1,"z_list");if(!s||!s.ev)return false;
+   var nd="할머니 손글씨 파티 명단. 마을 손님들 이름 아래 '아이들: 토리, 보리, 여니, 나비 — 모두 우체통으로 보냄'. 나비도 초대받았다.";
+   if(s.ev.desc.indexOf("모두 우체통으로 보냄")<0)return false;s.ev.desc=nd;s.text=nd;return true});
+  // (3) 초대장은 며칠 끼어 있었다(비에 젖었다 마른 자국) → 나비가 '며칠 동안' 서운했던 근거
+  T("c1 invite",function(){return rep(spot(c1,"mailbox"),"text","비에 젖은 생일 파티 초대장이에요.","비에 젖었다 마른 생일 파티 초대장이에요. 며칠은 끼어 있었나 봐요.")});
+  // (4) 보리: 왜 누군지 못 봤나 / 여니: '입에 물고' ↔ 보리 '들고' 통일
+  T("c1 bori2",function(){return rep(tk(c1,"bori2"),"a","창문으로 휙 뛰어나갔어.","창문으로 휙 뛰어나갔어. 해를 등지고 있어서 얼굴은 못 봤어.")});
+  T("c1 yeoni2",function(){return rep(tk(c1,"yeoni2"),"a","입에 뭘 물고 있었는데","뭔가 커다란 걸 안고 있었는데")});
+  T("c1 beat yeoni2",function(){var sp=window.__SPINE&&window.__SPINE.cake;return lrep(sp&&sp.beats&&sp.beats["ask:yeoni2"],"det1","입에 뭘 물고!","뭔가 커다란 걸 안고!")});
+  // (5) 토리 반박: 보리·여니 증언이나 창틀 증거를 내밀어도 '걸쇠' 이야기가 나오던 문제
+  T("c1 tori3 say",function(){return rep(cx(c1,"tori3"),"say","\"걸쇠가 풀려 있었다고? 어, 어떡해…","\"창문이 열려 있었다고? 어, 어떡해…")});
+  // (6) 여니: 어려운 낱말 '치수'
+  T("c1 yeoni1 say",function(){return rep(cx(c1,"yeoni1"),"say","할머니 치수는 눈대중으로 다 재 놨단 말이야.","할머니한테 딱 맞게 눈대중으로 다 재 놨단 말이야.")});
+  // (7) 토리 첫 만남: 범인으로 몰린 아이가 아무 반응이 없던 문제
+  T("c1 meet tori",function(){var m=window.MEETX&&window.MEETX.cake;var l=line(m&&m.tori,"tori","할머니 케이크 일이면");if(!l)return false;
+   l[1]="할머니 케이크 일이면… 다들 내가 그랬대. 난 정말 아니야.";l[2]="sad";return true});
+  // (8) 나비 고백: 방울 소리를 왜 아무도 못 들었나 + '우체통 앞을 지나갔다'(남의 집 우체통?)의 모호함
+  T("c1 conf2",function(){var cf=window.__CONF2&&window.__CONF2.cake;if(!cf)return false;
+   var a=line(cf,"nabi","우체통 앞을 세 번이나");if(!a)return false;
+   a[1]="난 며칠 동안 초대장을 기다렸어. 아무것도 안 왔어. 다들 나만 빼고 노는 줄 알았어.";
+   var b=line(cf,"nabi","창문이 조금 열려 있었어");if(!b)return false;
+   var i=cf.indexOf(b);cf.splice(i+1,0,["nabi","방울이 울릴까 봐 앞발로 꼭 쥐고 살금살금 갔어. 그런데 창틀을 넘다가 고리가 걸려서 툭…","sad"]);
+   var d=line(cf,"nabi","큰 나무 밑에서 먹었는데");if(d)d[1]="절반이나 들고 나왔어. 큰 나무 밑에서 먹다가 방울이 풀숲에 떨어진 것도 몰랐어. …하나도 맛이 없었어.";
+   return true});
+  // (9) 그 후 이야기: 탐정이 직접 본 초대장인데 '~했다고 한다'로 남의 말처럼 적혀 있던 것 + 나비가 우체국을 돕는 이유
+  T("c1 post",function(){var P=GV("POST");var L=P&&P.cake&&P.cake.lines;if(!L)return false;var n=0;
+   if(lrep(L,"narr","나비는 그날부터 우체국에서 편지 배달을 돕기 시작했다.","다시는 편지가 길을 잃지 않게, 나비는 그날부터 우체국에서 편지 배달을 돕기 시작했다."))n++;
+   var l=line(L,"narr","우표 자리만 쏙 뜯겨 있었다고 한다");if(l){l[1]="그런데 우체통에서 꺼낸 그 초대장은 우표 자리만 쏙 뜯겨 있었다. 까만 발톱 자국과 함께. 누가 우표를 떼 가려다 초대장을 끼워 버린 걸까?";n++}
+   return n===2});
+ }
+
+ /* ================= 2장 window ================= */
+ var c2=typeof caseById==="function"?caseById("window"):null;
+ if(!c2)A.miss.push("window 없음");else{
+  // (1) 현장 브리핑 2:10인데, 도입에서 이미 콩이(2:30 도착)까지 '자기는 아니래요' → 브리핑을 2:40으로
+  T("c2 scenex",function(){var X=window.__SCENEX&&window.__SCENEX.window;if(!X||X.time!=="오후 2:10")return false;X.time="오후 2:40";
+   var s=X.steps&&X.steps[0];if(!s||s.text.indexOf("오후 2시 10분")<0)return false;
+   s.text="오후 2시 40분, 도서관 뒤편. 쨍그랑 소리에 몰려든 구경꾼들이 아직도 깨진 창문 아래를 빙 둘러싸고 있다.";return true});
+  // (2) 꽥순이는 2시에 도서관 창가에 있었는데, 사서도 탐정도 못 봤다 → 책장 뒤 구석 자리 + 몰래 빠져나감
+  T("c2 seat",function(){var s=spot(c2,"seat");return rep(s,"text","창가 의자에","책장 뒤 구석 창가 의자에")&&(s.text+=" 대출대에서는 책장에 가려 안 보이는 자리예요.",true)});
+  T("c2 librarian1",function(){return rep(tk(c2,"librarian1"),"a","도토는 제 바로 옆 창가에서 책을 읽고 있었고요.","도토는 제 바로 옆 창가에서 책을 읽고 있었고요. 꽥순이는 1시 40분에 그림책을 빌려 갔는데, 그 뒤로는 못 봤어요.")});
+  T("c2 kkwak2",function(){var t=tk(c2,"kkwak2");if(!t||t.a.indexOf("도서관 창가에서 수영 그림책으로 벼락치기")<0)return false;
+   t.a="도서관 책장 뒤 구석 창가에서 수영 그림책으로 벼락치기 중이었어. 강사가 수영을 못 하면 안 되잖아. 1시 40분쯤 따닥이가 창틀을 두드렸을 땐 창문 멀쩡했어. 쨍그랑 소리에 책 뒤에 숨었다가, 다들 밖으로 뛰어나간 사이에 몰래 빠져나왔어. 그림책을 두고 온 것도 몰랐어.";return true});
+  // (3) 공이 창문을 깼는데 왜 도서관 안이 아니라 밖 덤불에 있나
+  T("c2 glass",function(){var s=spot(c2,"glass");if(!s||!s.ev)return false;
+   if(!rep(s,"text","공은 밖에서 안으로 날아온 거예요.","공은 밖에서 안으로 날아온 거예요. 그런데 도서관 안엔 공이 없어요. 창틀에 맞고 다시 밖으로 튕겨 나갔나 봐요."))return false;
+   return rep(s.ev,"desc","공은 도서관 밖에서 안으로 날아왔다.","공은 도서관 밖에서 안으로 날아왔다. 공은 창틀에 맞고 다시 밖으로 튕겨 나갔다.")});
+  // (4) 공은 40걸음을 '날아가' 창문을 깼는데, 운동장엔 '굴러간 자국' → 힘껏 찬 자국으로
+  T("c2 kick",function(){var s=spot(c2,"goal");if(!s||!s.ev||s.text.indexOf("공이 굴러간 자국")<0)return false;
+   s.text="골대 앞 흙이 움푹 파여 있어요. 누군가 공을 힘껏 찬 자국이에요. 발끝이 가리키는 쪽은 정확히 도서관 창문이에요. 골대에서 창문까지는 아주 멀어요.";
+   s.ev.desc="골대 앞에서 도서관 창문 쪽으로 힘껏 찬 자국. 골대에서 창문까지 40걸음. 힘이 아주 센 친구가 찼다.";return true});
+  // (5) 운동장 끈: '누가 빨간 운동화를 신었더라?' — 게임에서 그런 장면이 나온 적 없음
+  T("c2 think lace",function(){if(typeof THINK==="undefined"||typeof THINK.lace!=="string"||THINK.lace.indexOf("누가 빨간 운동화를 신었더라")<0)return false;
+   THINK.lace="빨간 운동화 끈이야. 끝에 진흙이 묻었어. 오늘 운동화 끈 한쪽을 잃어버린 친구가 있을까?";return true});
+  // (6) 부엉이 할아버지: 콩이 이야기는 해 주면서 바로 옆 덤불 이야기는 안 하는 이유(X의 시험)와 '말 못 하는 부엉이'처럼 보이던 문제
+  T("c2 owl2",function(){var o=obs(c2,"o_owl2");if(!o||o.text.indexOf("고개만 갸웃한다")<0)return false;
+   o.text="부엉이 할아버지께 덤불 쪽도 보셨는지 여쭸다. 할아버지는 '부엉' 하고 눈만 꿈뻑일 뿐이다. 아침부터 저 자리에 계셨다면 덤불 쪽도 다 내려다보셨을 텐데… 그건 탐정이 찾으라는 걸까?";return true});
+  // (7) 콩이 반박: 탐정들 자신도 2시에 도서관 안에서 쨍그랑 소리를 들었다
+  T("c2 kongi1 say",function(){return rep(cx(c2,"kongi1"),"say","콩이는 쨍그랑 소리가 나고 30분이나 지나서 도착한 거예요.","그러고 보니 쨍그랑 소리가 났을 때 탐정들도 도서관 안에 있었어요. 그때 벽시계는 막 2시를 가리키고 있었죠. 콩이는 쨍그랑 소리가 나고 30분이나 지나서 도착한 거예요.")});
+  // (8) 대결 3라운드: '운동장 한가운데서' ↔ '골대 근처에서' 한 사람 말이 서로 어긋남 → 쟁점을 '살살 찼다'로
+  T("c2 battle r3",function(){var B=GV("BATTLE");var r=B&&B.window&&B.window[2];var s=r&&r.stm&&r.stm[0];if(!s||s.t.indexOf("운동장 한가운데서만 살살")<0)return false;
+   s.t="공은 찼지만 살살 찼어. 창문까지 날아갈 리가 없어.";s.p="톡, 톡. 아주 살살 굴렸을 뿐이야.";return true});
+  // (9) 보리 고백: 왜 도망치지 않고 일부러 창문 앞까지 가서 공을 숨겼나
+  T("c2 conf2",function(){var cf=window.__CONF2&&window.__CONF2.window;return lrep(cf,"bori","공은 덤불에 숨겼어.","공은 덤불에 숨겼어. 내 이름이 써 있으니까.")});
+  // (10) 앞 이야기: 공 글씨는 '○○ 거'인데 보리는 '보, 리.'라고만 / 꽥순이가 1시 30분에 이미 그림책을 끼고 있었는데 대출은 1시 40분
+  T("c2 pre",function(){var P=GV("PRE");var L=P&&P.window&&P.window.lines;if(!L)return false;var n=0;
+   if(lrep(L,"bori","내 이름도 썼어. 보, 리. 좀 삐뚤빼뚤하지만!","'보리 거'라고 이름도 썼어. 좀 삐뚤빼뚤하지만!"))n++;
+   var l=line(L,"narr","날개 밑에 그림책 한 권이 끼어 있었다");if(l){l[1]="그런데 뒤뚱뒤뚱 걸어가는 꽥순이는 연못이 아니라 도서관 쪽으로 가고 있었다.";n++}
+   return n===2});
+  // (11) 그림책: 낮잠 자러 갔어야 할 콩이가 운동장에 그대로 → 낮잠 자러 떠나는 한 줄
+  T("c2 book kongi",function(){var B=GV("BOOK");var pg=B&&B.window&&B.window.pre&&B.window.pre[1];if(!pg||!line(pg.lines,"kongi","딸기 아이스크림 냄새"))return false;
+   if(line(pg.lines,"kongi","낮잠 자러"))return true;
+   pg.lines.push(["kongi","하암… 난 이제 집 앞에서 낮잠 자러 갈래. 딱 10분만! 킁.","happy"]);return true});
+  // (12) 도입: '따닥은' → '따닥이는'
+  T("c2 intro ttadak",function(){var S0=GV("STORY");var L=S0&&S0.window&&S0.window.intro;var l=line(L,"narr","따닥은 아무것도");if(!l)return false;
+   l[1]=l[1].replace("창밖 나뭇가지 위에서 따닥이 고개를","창밖 나뭇가지 위에서 따닥이가 고개를").replace("따닥은 아무것도","따닥이는 아무것도");return true});
+  // (13) 그 후 이야기: '~했다고 한다'(직접 본 깃털을 남 얘기처럼) + 숨은 이유 정리(따닥이는 부끄러워서가 아니라 쫓겨날까 봐)
+  T("c2 bookpost",function(){var B=GV("BOOK");var pg=B&&B.window&&B.window.post&&B.window.post[0];if(!pg)return false;var n=0;
+   var l=line(pg.lines,"narr","까만 깃털 하나가 또 떨어져 있었다고 한다");if(l){l[1]="그리고 그날, 새 창문 앞에 까만 깃털 하나가 또 떨어져 있었다.";n++}
+   if(lrep(pg.lines,"det0","무서워서, 창피해서, 부끄러워서.","혼날까 봐, 창피해서, 쫓겨날까 봐."))n++;
+   return n===2});
+  T("c2 post",function(){var P=GV("POST");var L=P&&P.window&&P.window.lines;var l=line(L,"narr","까만 깃털 하나가 또 떨어져 있었다고 한다");if(!l)return false;
+   l[1]="그리고 그날, 새 창문 앞에 까만 깃털 하나가 또 떨어져 있었다.";return true});
+ }
+
+ /* ===== 반응 장면: 꽥순이가 그 시각 도서관에 있었다는 게 밝혀진 순간(탐정들도 같은 도서관에 있었다) ===== */
+ function busy(){return !!(DL||document.querySelector(".ovr,.flash,.banner,.crec2,.modal,.cutin,.csx,.sbook,.rt,.show,.recon,.zoomv"))}
+ setInterval(function(){
+  try{if(!G||S.screen!=="case"||!CASES[G.ci]||CASES[G.ci].id!=="window")return;
+   if(!G.broken||!G.broken.kkwak1)return;if(!G.beats)G.beats={};if(G.beats.a162kk)return;
+   if(G.battle&&G.battle.phase==="fight")return;if(busy())return;
+   G.beats.a162kk=1;try{saveProg()}catch(e){}
+   say([
+    ["det1","{p0}, 잠깐. 2시에 우리도 도서관 안에 있었잖아. 꽥순이를 못 봤어.","confused"],
+    ["det0","책장 뒤 구석 창가다. 대출대에서도, 우리 자리에서도 안 보이는 자리지. 사서 선생님도 그래서 꽥순이가 책만 빌려 나간 줄 아셨던 거다."],
+    ["det1","그럼 쨍그랑 소리에 다들 밖으로 뛰어나갈 때, 꽥순이는 반대로 몰래 빠져나간 거구나.","think"]
+   ],function(){try{render()}catch(e){}});
+  }catch(e){}
+ },500);
+})();
+
+/* v162 감사(b): 3장 crown · 4장 star — 이야기·논리 손보기
+   3장: (1) '딱 하나만 거짓말'을 소문이 아니라 곰 선생님의 판단으로 (2) 리허설 기록에 '시작 때 왕관 있음(부리 확인)'을 넣어 "나비가 가져갔다" 반박을 빈틈없이
+        (3) 원탁회의에서 부리가 "제가 봤어요"라던 말(앞에서 직접 못 봤다고 함)과 충돌 정리 (4) 여니 뜨개질·귀마개 근거를 현장에 (5) 부리 몸에 묻은 반짝이 복선
+   4장: (1) 안경집이 '언제' 떨어졌는지 근거(이슬) (2) 콩이 착각 반박에 할아버지 갈색 깃털도 인정 (3) 까로 = 검은 망토단의 하수인이라는 고백 장면을 증거(수첩 도장)로 열고 반응을 넣음
+        (4) 검은 봉투가 사무소에 도착하는 장면(네로 이름·종탑 X 지도)을 그 후 이야기에 넣어 5장과 잇기 (5) 익명 쪽지의 주인 정리 (6) 시간 어긋남 몇 곳 */
+(function(){
+ var R=window.__aud162_b={ok:0,miss:[]};
+ function ok(){R.ok++}function miss(t){R.miss.push(t)}
+ function T(tag,f){try{f()}catch(e){miss(tag+": "+e.message)}}
+ // 대사 배열에서 old(일부 문자열)를 가진 줄을 찾아 글을 통째로 바꾼다
+ function setL(arr,tag,old,nw,mood){if(!arr){miss(tag+" (배열 없음)");return null}
+  for(var i=0;i<arr.length;i++){var l=arr[i];if(l&&typeof l[1]==="string"&&l[1].indexOf(old)>=0){l[1]=nw;if(mood!=null)l[2]=mood;ok();return i}}
+  miss(tag);return null}
+ function insAfter(arr,tag,old,add){if(!arr){miss(tag+" (배열 없음)");return}
+  for(var i=0;i<arr.length;i++){var l=arr[i];if(l&&typeof l[1]==="string"&&l[1].indexOf(old)>=0){arr.splice.apply(arr,[i+1,0].concat(add));ok();return}}
+  miss(tag)}
+ function spot(c,id){var r=null;c.locations.forEach(function(l){(l.spots||[]).forEach(function(s){if(s.id===id)r=s})});return r}
+ function talk(c,who,id){return (c.talk[who]||[]).filter(function(t){return t.id===id})[0]}
+ function contra(c,t){return c.contra.filter(function(x){return x.t===t})[0]}
+
+ /* ====================== 3장 crown ====================== */
+ var C3=typeof caseById==="function"?caseById("crown"):null;
+ if(!C3)miss("crown 없음");else{
+  // 1) '딱 하나만 거짓말'의 출처: 소문 → 곰 선생님의 판단(그리고 아빠의 '증거로 가리자')
+  T("crown.story",function(){var s=C3.story,o="네 친구에게 \"왕관은 누가 가져갔어?\"라고 물으면";
+   if(s.indexOf(o)>=0){C3.story=s.replace(o,"곰 선생님 말로는, 네 친구에게 \"왕관은 누가 가져갔어?\"라고 물으면");ok()}else miss("crown.story")});
+  T("crown.intro",function(){var a=STORY.crown.intro;
+   setL(a,"crown.intro.2","그런데 이상한 소문이 있어요","무대 뒤에 있던 친구는 여니, 부리, 토리, 나비예요. 넷에게 \"왕관은 누가 가져갔어?\" 하고 물었더니 대답이 서로 엇갈려요.");
+   var i=setL(a,"crown.intro.3","네 대답 중 딱 하나만 거짓말이래요","아이들을 오래 가르쳐서 알아요. 그 질문에 거짓말로 답한 아이는 딱 한 명이에요. 누구인지까지는 모르겠지만요. 그런데 다른 질문엔 다들 뭔가 숨기는 눈치예요.","nervous");
+   if(i!=null){a.splice(i+1,0,["det0","선생님의 눈을 믿겠습니다. 그 한 명이 누구인지는, 대답끼리 맞춰 보고 증거로 가리죠."]);ok()}});
+  // 2) 리허설 기록: 시작 때 왕관이 상자에 있었다(부리 확인) → 계속 무대 위였던 나비는 가져갈 틈이 없다
+  T("crown.rehearsal",function(){var s=spot(C3,"notes");if(!s){miss("crown.notes");return}
+   s.text="'공연 1시간 전부터 리허설. 시작 전 소품 담당 부리: 왕관 상자에 있음. 나비: 한 번도 무대에서 안 내려감. 토리: 처음 10분만 연습하고 사라짐.' 선생님 사인이 있어요.";
+   s.ev.desc="리허설 시작 때 왕관은 상자에 있었다(소품 담당 부리가 확인). 나비는 그 뒤 계속 무대 위. 토리는 10분 만에 무대에서 사라졌다.";ok();
+   if(typeof THINK!=="undefined"){THINK.rehearsal="리허설 시작 때 왕관은 상자에 있었고, 나비는 그 뒤로 한 번도 무대에서 안 내려갔어. 그런데 토리는 10분 만에 사라졌다고?";ok()}});
+  T("crown.buri1",function(){var x=contra(C3,"buri1");if(!x){miss("crown.contra.buri1");return}
+   x.say="부리가 날개를 파닥였어요. 리허설이 시작될 때 왕관은 상자에 있었고(부리가 직접 확인했대요), 나비는 그 뒤로 무대에서 한 번도 내려오지 않았어요. 나비는 왕관을 가져갈 수 없었어요. 부리의 말은 거짓이에요!";ok()});
+  // 3) 원탁회의: 부리는 앞에서 '직접 본 건 아니'라고 했다 → "제가 봤어요" 대신 짐작으로
+  T("crown.debate",function(){var ph=DEBATE.crown.phases,done=0;
+   ph.forEach(function(p){(p.stms||[]).forEach(function(s){
+    if(s.t&&s.t.indexOf("{무대 뒤로 갔어요}. 제가 봤어요.")>=0){s.t="나비는 리허설 쉬는 틈에 슬쩍 {무대 뒤로 갔을} 거예요. 왕 역할이니까 왕관이 제일 탐났을걸요.";done++}
+    if(s.t&&s.t.indexOf("{소품 상자}에 넣어 두었었어요")>=0){s.t="왕관은 {소품 상자}에 넣어 두었어요.";done++}
+    (s.ok||[]).forEach(function(o){if(o.t==="부, 부엉…?! 제가 잘못 봤나 봐요…"){o.t="부, 부엉…?! 제, 제가 잘못 짐작했나 봐요…";done++}})})});
+   if(done===3)R.ok+=3;else miss("crown.debate "+done+"/3")});
+  // 4) 여니의 뜨개질: 모순 깨기 대사('대사 한 줄마다 털실 한 코')의 근거를 현장에
+  T("crown.closet",function(){var s=spot(C3,"closet");if(!s){miss("crown.closet");return}
+   s.text="옷장 앞에 여니의 대본과 귀마개, 뜨다 만 주황 털실 뭉치가 놓여 있어요. 대본 첫 장에 '조용히 집중! 귀마개 필수'라고 적혀 있어요.";
+   s.ev.desc="여니는 귀마개를 끼고 대본을 외웠다. 옆엔 뜨다 만 털실. 주변 소리를 잘 못 들었다.";ok()});
+  T("crown.book.pre",function(){var P=BOOK.crown.pre;
+   setL(P[0].lines,"crown.pre0","대본을 중얼중얼 외우느라","구석에서 누군가 귀마개를 낀 채 대본을 중얼중얼 외우고 있었다. 문 열리는 소리는 듣지 못했다.");
+   // 5) 부리 몸에 묻은 반짝이(최후 반론 '저는 만진 적도 없어요'의 복선)
+   insAfter(P[2].lines,"crown.pre2","…정말요? 헤헤.",[["narr","부리가 날개를 파닥이자, 날개 끝에서 금색 가루가 반짝 흩날렸다."]])});
+  T("crown.think",function(){if(typeof THINK==="undefined")return;
+   if(THINK.crowfeather&&THINK.crowfeather.indexOf("도서관 골목")>=0){THINK.crowfeather=THINK.crowfeather.replace("도서관 골목에서","도서관 창가에서");ok()}else miss("crown.think.crowfeather")});
+  // 3장 POST(그 후 이야기 예비본)도 BOOK.post와 맞춘다: 부리는 '다음에도 소품 담당'
+  T("crown.POST",function(){if(typeof POST==="undefined"||!POST.crown)return;
+   setL(POST.crown.lines,"crown.POST","다음 연극에선 진짜 왕 역할이래요","할아버지… 다음 연극에서도 소품 담당 할래요. 이번엔 하나도 안 잃어버리고요!")});
+ }
+
+ /* ====================== 4장 star ====================== */
+ var C4=typeof caseById==="function"?caseById("star"):null;
+ if(!C4)miss("star 없음");else{
+  // 1) 안경집: 낮에 등불을 닦다 흘렸을 수도 있다 → 이슬로 '해 진 뒤'를 못 박는다
+  T("star.glasscase",function(){var s=spot(C4,"s_glass");if(!s){miss("star.s_glass");return}
+   s.text="풀밭에 안경집이 떨어져 있어요. 이름표에 '부엉이 할아버지'라고 적혀 있어요. 풀은 저녁 이슬에 촉촉한데, 안경집 겉은 보송보송 말라 있어요.";
+   s.ev.desc="별빛 언덕 풀밭. 이슬 젖은 풀 위에 말라 있었다. 해가 진 뒤, 오늘 저녁에 떨어졌다.";ok();
+   if(typeof THINK!=="undefined"){THINK.glasscase="할아버지 안경집이 이슬 하나 안 맞았어. 낮이 아니라 해가 진 뒤에 떨어진 거야. 할아버지는 오늘 저녁 언덕에 왔었어.";ok()}
+   var x=contra(C4,"owlgp1");if(x&&x.say.indexOf("그때 언덕에 있었단다")>=0){x.say=x.say.replace("그래, 나는 그때 언덕에 있었단다.","이슬도 안 맞았으니 낮에 흘린 거라고 둘러댈 수도 없겠구나. 그래, 나는 오늘 저녁 언덕에 있었단다.");ok()}else miss("star.contra.owlgp1")});
+  // 2) 콩이 착각: 할아버지 깃털이 갈색이라는 증거(덤불 깃털)로도 반박되게
+  T("star.kongi1",function(){var x=contra(C4,"kongi1");if(!x){miss("star.contra.kongi1");return}
+   if(x.items.indexOf("owlfeather")<0)x.items.push("owlfeather");ok()});
+  // 3) 작은 어긋남들
+  T("star.karo3",function(){var t=talk(C4,"karo","karo3");if(t&&t.a.indexOf("등불이 잘 켜졌나")>=0){t.a=t.a.replace("등불이 잘 켜졌나","등불이 7시에 잘 켜지나");ok()}else miss("star.karo3")});
+  T("star.battle1",function(){var s=BATTLE.star[0].stm[0];if(s&&s.p==="램프가 아주 잘 팔렸지요."){s.p="손님이 끊이질 않았지요.";ok()}else miss("star.battle1.p")});
+  T("star.dancelamp",function(){var s=spot(C4,"s_dlamp");if(!s){miss("star.s_dlamp");return}
+   s.text="주황 털실로 리본을 묶은 작은 등불이 놓여 있어요. 주변 발자국이 빙글빙글 원을 그려요.";
+   s.ev.desc="연못가. 주황 털실 리본. 발자국이 빙글빙글 원을 그린다. 누가 춤을 춘 걸까?";ok()});
+  T("star.think.ledger",function(){if(typeof THINK==="undefined")return;
+   THINK.ledger="할머니 집 우체통 우표, 도서관 책갈피, 학예회 단추… 도서관 창가와 소품실 창틀의 까만 깃털도 다 까로 아저씨였어! 그런데 마지막 장의 검은 망토 도장은 뭐지? 까로 아저씨 뒤에 누가 더 있어.";ok()});
+  // 4) 고백: 익명 쪽지의 주인 + 검은 망토단의 하수인이었다는 고백(수첩 도장이 근거) + 모두의 반응
+  T("star.conf2",function(){var a=window.__CONF2&&window.__CONF2.star;if(!a){miss("star.conf2 없음");return}
+   insAfter(a,"star.conf2.anon","불은 불이니까",[
+    ["det1","그럼 '범인은 부엉이' 쪽지도 아저씨가 쓴 거죠? 쪽지에서 인쇄소 잉크 냄새가 났어요.","angry"],
+    ["karo","…네. 다들 할아버지만 보고 있으면, 아무도 저를 안 볼 테니까요.","sad"]]);
+   a.push(
+    ["det1","까로 아저씨, 하나만 더요. 수첩 마지막 장에 찍힌 이 검은 망토 도장은 뭐예요?","confused"],
+    ["karo","……그건 저한테 일을 시킨 쪽 도장이에요.","nervous"],
+    ["karo","얼마 전부터 우표도 주소도 없는 까만 봉투가 제가 머무는 곳마다 문틈에 끼어 있었어요. 늘 이 도장이 찍혀서요. '축제 날 밤, 언덕 등불을 꺼라. 일이 끝나면 약속한 빛을 주겠다.'","nervous"],
+    ["karo","편지 끝엔 늘 '검은 망토단'이라고만 적혀 있었어요. 얼굴은 한 번도 못 봤어요. 다음은 옆 마을 달빛 종이라는 것도 그 편지에 있었고요.","sad"],
+    ["det1","검은 망토단…? 그럼 등불을 끈 게 아저씨 혼자 생각이 아니었어요?","nervous","","shock"],
+    ["karo","램프 장사랑 반짝이는 제 욕심이에요. 등불을 끄라는 건 그 편지였고요. 다시는 어둡지 않게 해 준다는 말에… 넘어갔어요.","sad"],
+    ["owlgp","…검은 망토라고 했느냐.","nervous","","shock"],
+    ["narr","부엉이 할아버지의 깃털이 바르르 떨렸다. 할아버지는 그 뒤로 한참 동안 아무 말도 하지 않았다."],
+    ["det0","까로는 손이었을 뿐이다. 이 등불을 끄라고 시킨 머리가 따로 있어. 오늘 밤 사건은, 아직 반만 풀렸다."]);R.ok++});
+  T("star.solution",function(){C4.solution.push("수첩 마지막 장의 검은 망토 도장. 까로는 '검은 망토단'이라고만 서명된 까만 봉투의 명령을 받고 등불을 껐다. 램프 장사와 반짝이 모으기는 까로 자신의 욕심이었다.");ok()});
+  T("star.recon",function(){var objs=[C4.recon];if(typeof RECON!=="undefined"&&RECON.star&&RECON.star!==C4.recon)objs.push(RECON.star);
+   objs.forEach(function(o){if(o&&o.sum)o.sum.why="검은 망토단이 까만 봉투로 '등불을 끄면 빛을 주겠다'고 시켰고, 램프를 팔아 반짝이를 모으면 다시는 어둡지 않을 거라 믿어서"});ok()});
+  T("star.ending",function(){var o="그런데 수첩 마지막 장의 검은 망토 도장은 무엇을 뜻하는 걸까?";
+   if(C4.ending.indexOf(o)>=0){C4.ending=C4.ending.replace(o,"그런데 까로에게 까만 봉투를 보낸 검은 망토단은, 지금 어디서 이 마을을 보고 있을까?");ok()}else miss("star.ending")});
+  // 5) 그 후 이야기: 다음 날 까로의 말(이미 고백한 내용과 겹치지 않게) + 검은 봉투가 사무소에 도착하는 장면
+  T("star.book.post",function(){var P=BOOK.star.post,L=P[0].lines;
+   setL(L,"star.post.karo1","하나만 더 말씀드릴게요. 저한테 명령은 늘 편지로 왔어요","…탐정님들, 그 까만 봉투 말인데요. 어젯밤엔 말 못 한 게 하나 있어요.");
+   setL(L,"star.post.karo2","그런데 그 안의 편지지가","봉투 안의 편지지가… 탐정님들이 받은 수수께끼 편지랑 똑같은 종이였어요.");
+   setL(L,"star.post.det1","까로 뒤에 누가 있었던 거야","{p0}… 할아버지가 놓친 검은 망토랑, 까로 아저씨한테 봉투를 보낸 검은 망토단. 같은 걸까?");
+   if(P.some(function(s){return s.__aud162b}))return;
+   P.push({__aud162b:1,bg:"office",time:"며칠 뒤 밤 · 탐정 사무소",cast:{det0:110,det1:210},lines:[
+    ["narr","까로가 모은 반짝이를 마지막 하나까지 주인에게 돌려준 밤. 사무소 문틈에 검은 봉투 하나가 끼어 있었다."],
+    ["det1","{p0}, 이 봉투… 우표도 주소도 없어. 누가 직접 문틈에 끼워 놓고 갔어.","nervous"],
+    ["det0","봉투에 찍힌 도장을 봐라. 까로 수첩 마지막 장의 검은 망토 도장과 같은 모양이다."],
+    ["narr","'작은 까마귀 하나 잡았다고 끝났다고 생각하지 마라. 옆 마을 달빛 종은 곧 우리 것이 된다. — 검은 망토단, 네로'"],
+    ["narr","편지 아래엔 손으로 그린 지도 한 장. 옆 마을 달빛 종탑 아래에 X 표시가 있었다."],
+    ["det1","네로…? 까로 아저씨가 받은 편지엔 이름이 없었다고 했잖아. 그런데 이번엔 이름을 썼어.","nervous","","shock"],
+    ["det0","우리한테 직접 하는 말이라는 뜻이다. 까로가 잡힌 걸 보고 바로 보냈어."],
+    ["det1","…우리 사무소가 어디 있는지도 알아. 지금도 어디선가 보고 있을지 몰라.","nervous"],
+    ["det0","내일 아침, 할아버지께 이 봉투부터 보여 드리자."]]});ok()});
+  T("star.letter",function(){if(typeof LETTERS==="undefined"||!LETTERS.star){miss("LETTERS.star");return}
+   LETTERS.star.body=["까로가 반짝이를 모두 돌려주던 밤, 사무소 문틈에 검은 봉투가 끼어 있었어요. 우표도 주소도 없었어요.",
+    "'작은 까마귀 하나 잡았다고 끝났다고 생각하지 마라. 옆 마을 달빛 종은 곧 우리 것이 된다.'",
+    "봉투 속엔 지도 한 장. 옆 마을 달빛 종탑 아래에 X 표시가 있었어요.",
+    "봉투에는 까로의 수첩 마지막 장과 똑같은 검은 망토 모양 도장이 찍혀 있었어요. 다음 이야기는… 5탄에서!"];
+   LETTERS.star.sign="검은 망토단 네로";ok()});
+  // 보수 장면은 그 후 이야기(며칠 뒤까지) 다음에 나온다 → '그날 밤'이 시간을 거꾸로 돌리지 않게
+  T("star.contract.after",function(){var o=window.__CONTRACT&&window.__CONTRACT.star;if(!o||!o.after){miss("star.contract");return}
+   setL(o.after,"star.contract.after0","그날 밤 사무소. 아빠 탐정은","며칠 뒤 사무소. 아빠 탐정은 문 옆 벽에 못을 하나 박고, 등불 열쇠를 걸었다. 그 옆에는 검은 봉투를 핀으로 꽂아 두었다.")});
+ }
+})();
+
+/* audit162_c: 5장(bell)·6장(dark) 이야기·논리 감사 패치. ch5fix161 뒤에 실행된다.
+   5장: 시각(10시/11시)·추 바꿔치기 시점·지하 열쇠의 쓰임·레이 반론(대결 라운드까지 동기화)·자잘한 사실 불일치.
+   6장: 레이 반론 전제(협회 수배서)·흰 장갑 혼동·배지 모순·루카 정체가 대결 전에 미리 다 드러나던 문제. */
+(function(){
+ var A={ok:0,miss:[]};window.__aud162_c=A;
+ function T(name,fn){try{var r=fn();if(r===false)A.miss.push(name);else A.ok++}catch(e){A.miss.push(name+": "+(e&&e.message))}}
+ // obj[key] 안에 old가 있으면 val로 통째로 바꾼다
+ function SET(obj,key,old,val){if(obj&&typeof obj[key]==="string"&&obj[key].indexOf(old)>=0){obj[key]=val;return true}return false}
+ // obj[key] 안의 부분 문자열만 바꾼다
+ function SUB(obj,key,old,val){if(obj&&typeof obj[key]==="string"&&obj[key].indexOf(old)>=0){obj[key]=obj[key].split(old).join(val);return true}return false}
+ // 대사 배열에서 화자 who, 글에 sub가 든 줄
+ function LINE(arr,who,sub){if(!arr)return null;for(var i=0;i<arr.length;i++){var l=arr[i];if(Array.isArray(l)&&(!who||l[0]===who)&&typeof l[1]==="string"&&l[1].indexOf(sub)>=0)return l}return null}
+ function LSET(arr,who,sub,val){var l=LINE(arr,who,sub);if(!l)return false;l[1]=val;return true}
+ function talk(c,who,id){return (c.talk[who]||[]).filter(function(t){return t.id===id})[0]}
+ function contra(c,t){return (c.contra||[]).filter(function(x){return x.t===t})[0]}
+ function spot(c,id){var r=null;c.locations.forEach(function(l){(l.spots||[]).forEach(function(s){if(s.id===id)r=s})});return r}
+ function loc(c,id){return c.locations.filter(function(l){return l.id===id})[0]}
+ function rvRound(id){var R=(typeof BATTLE!=="undefined"&&BATTLE[id])||[];for(var i=0;i<R.length;i++)if(R[i].rv)return R[i];return null}
+ // 다른 모듈이 함수 안에 쥐고 있는 대사는 say로 넘어오는 순간 고친다
+ var SAYFIX=[];
+ (function(){var _s=say;say=function(lines){try{if(SAYFIX.length&&Array.isArray(lines)){var a=[].slice.call(arguments);a[0]=lines.map(function(l){if(!Array.isArray(l)||typeof l[1]!=="string")return l;for(var i=0;i<SAYFIX.length;i++){var f=SAYFIX[i];if((!f[0]||l[0]===f[0])&&l[1].indexOf(f[1])>=0){var n=l.slice();n[1]=f[2];return n}}return l});return _s.apply(this,a)}}catch(e){}return _s.apply(this,arguments)}})();
+ function busy(){return !!(DL||document.querySelector(".ovr,.flash,.banner,.crec2,.modal,.cutin,.csx,.sbook,.rt,.show,.recon,.zoomv"))}
+
+ /* ================= 5장 달빛 종이 멈춘 밤 ================= */
+ var c=typeof caseById==="function"?caseById("bell"):null;
+ if(!c){A.miss.push("bell 없음")}else{
+  var BK=typeof BOOK!=="undefined"&&BOOK.bell;
+  // 1) 일괄 치환 사고: '멈춘다'→'멈추는다'
+  T("bell 책 멈추는다",function(){var ok=false;(BK.pre||[]).forEach(function(p){(p.lines||[]).forEach(function(l){if(typeof l[1]==="string"&&l[1].indexOf("멈추는다")>=0){l[1]=l[1].split("멈추는다").join("멈춘다");ok=true}})});return ok});
+  // 2) '네로'라는 이름은 4장에서 한 번도 안 나왔다 → 출발 전 사무소에서 할아버지가 알려 준다
+  T("bell 책 네로 이름",function(){var ok=false;(BK.pre||[]).forEach(function(p){if(LSET(p.lines,"owlgp","…그 봉투, 나도 봤다.","…그 봉투, 나도 봤다. 까로가 떠나기 전에 나한테만 털어놓더구나. 검은 망토단 두목의 이름은 '네로'라고. 은빛 마을 종지기에게 급히 편지를 띄웠다만, 우리 걸음이 더 빠르겠지."))ok=true});return ok});
+  // 3) 쪽지: 열흘 전에 엿들은 '보름밤 10시'
+  T("bell 쪽지 보름밤",function(){var s=spot(c,"m_wing");var a=SUB(s,"text","'10시. 검은 망토 둘.","'보름밤 10시. 검은 망토 둘.");var b=SUB(s.ev,"desc","'10시. 검은 망토 둘.","'보름밤 10시. 검은 망토 둘.");return a&&b});
+  // 4) 네로의 분필: '가짜라도 상관없다'는 네로가 바꿔치기를 안 것처럼 읽힌다
+  T("bell 분필 진짜든 가짜든",function(){return SUB(spot(c,"m_map"),"text","가짜라도 상관없다.","추가 진짜든 가짜든 상관없다.")});
+  // 5) 지하실 문: 열쇠로도, 다이얼로도 열린다(왜 열쇠가 필요했고 왜 우리는 암호로 들어가는지)
+  var CI="지하실 문은 촌장의 지하 열쇠로도, 문에 달린 숫자 다이얼로도 열린다";
+  T("bell 지하실 info",function(){var l=loc(c,"cellar");if(!l)return false;l.info=[CI];try{if(typeof INFO!=="undefined"&&INFO.bell)INFO.bell.cellar=[CI]}catch(e){}return true});
+  T("bell 회의 설이 지하",function(){var ok=false;(DEBATE.bell.phases||[]).forEach(function(ph){(ph.stms||[]).forEach(function(s){if(s.w==="seol"&&SET(s,"t","{열쇠가 있어야}","…종탑 지하 문은 {촌장님 지하 열쇠로} 열어요."))ok=true})});return ok});
+  // 6) 설이: 사흘 전부터 소리가 둔했다(가짜는 사흘 전에 걸렸는데 오늘 처음 이상했다는 모순 해소, 레이의 '제보'와 연결)
+  T("bell seol1",function(){return SET(talk(c,"seol","seol1"),"a","10시 정각에 마지막으로","…10시 정각에 마지막으로 울렸어요. 세 번, 한 번, 네 번. 원래 열 번 울려야 하는데요. 소리도 은소리가 아니었어요. …사실 사흘쯤 전부터 소리가 조금 둔했어요. 한 번 더 들어 보고 말하려다가 오늘이 됐네요.")});
+  // 7) 밤이: 열쇠를 어떻게 빌렸는지(목걸이엔 금고 열쇠가 걸려 있다)
+  T("bell bami4",function(){return SET(talk(c,"bami","bami4"),"a","열쇠는 사흘 전에","…지하실. 사흘 전에 촌장이 낮잠 잘 때, 목걸이에 걸린 금고 열쇠로 지하 열쇠를 꺼내 썼다가 바로 돌려놨어. 근데 오늘 밤 촌장이 그 열쇠를 배달부한테 줘 버렸더라. 어른들은 늘 그래. 잘 속아.")});
+  // 8) 슬링이 지하 열쇠를 빌린 이유: 네로를 지하실(지도의 X)에 들여보내려고
+  T("bell sling4",function(){var t=talk(c,"sling","sling4");if(!t)return false;t.q="열쇠까지 빌려서, 오늘 밤 종탑에서 뭘 했죠?";t.a="…좋아요. 올라갔어요. 종줄을 끊고 추를 챙겼죠. 열쇠요? 지하실에 손님 한 분을 모셔 드렸을 뿐이에요. 그런데 그 추, 이상하게 가볍더군요. 그건… 제 문제가 아니죠.";return true});
+  // 9) 슬링이 방금 '네로 님 편지는 제가 날라요'라고 해 놓고 '두목 이름까지 아시는군요'는 어색
+  T("bell sling5",function(){return SET(talk(c,"sling","sling5"),"a","두목 이름까지 아시는군요","후후. 네, 네로 님 명령이에요. 하지만 네로 님은 이미 목적을 이루셨어요. 추 따위 처음부터 필요 없었으니까. 종이 멈춘 밤, 이 마을 사람들이 얼마나 서로를 의심했는지 보셨죠?")});
+  T("bell sling_conf",function(){return SET(talk(c,"sling","sling_conf"),"a","촌장을 속여 열쇠를 얻고","…네, 제가 검은 망토단입니다. 촌장을 속여 지하 열쇠를 얻어 네로 님을 지하실에 모셨고, 종줄을 끊어 추를 가져갔어요. 가짜인 줄도 모르고요. 네로 님은 웃으시겠죠. '종이 멈추면 마을이 스스로 어두워진다.' 그 말이 맞았어요. 여러분이 오기 전까지는.")});
+  // 10) 레이의 10시 증언: 조사 시각은 아직 11시 전이다. '11시엔 안 울렸어요, 3600초'는 성립 불가
+  var RV2="10시 정각, 마을 입구에서요. 제 시계로 0초까지. 세 번, 한 번, 네 번. 은소리가 아니라 둔한 쇳소리였지만, 종은 분명히 여덟 번 울렸어요. 이 마을에서 누가 '11시'라고 하면, 그 사람 시계가 한 시간 빠른 거예요.";
+  T("bell rv_bell_2",function(){var t=talk(c,"rei","rv_bell_2");if(!t)return false;t.a=RV2;try{(window.__REI2.bell.talk||[]).forEach(function(x){if(x.id==="rv_bell_2")x.a=RV2})}catch(e){}return true});
+  T("bell 레이 첫 대사",function(){var R=window.__REI2&&window.__REI2.bell;if(!R)return false;
+   var a=LSET(R.intro,"rei","마지막 종이 11시였다고","알아요. 시골 탐정이랑 보호자님. 인사 대신 하나 알려 드릴게요. 마지막 종은 10시 정각이었어요. 제 시계로 0초까지 쟀어요. 누가 '11시'라고 하거든, 그 사람 시계부터 의심하세요.");
+   var b=LSET(R.intro,"det0","11시라는 말이 어디서","…우리도 10시 종소리는 종탑 아래에서 직접 들었다. 좋은 귀구나. 시계 이야기는 기억해 두마.");return a&&b});
+  // 11) 톡의 '11시': 지금은 11시 전이다. 그걸 짚어 줘야 아이도 납득한다
+  T("bell tok1 say",function(){return SET(contra(c,"tok1"),"say","11시라고 했는데","톡이 고글을 벗고 눈을 비볐다. \"11시라고 했는데… 설이 씨는 10시라고요? 딸깍… 그러고 보니 11시 종은 아직 칠 때도 안 됐네요. 제 귀는 맞았는데, 상자 시계가 한 시간 앞서 거짓말을 했어요. 시계가 거짓말하는 소리는 처음 들어 봐요.\"")});
+  T("bell ask:tok1 beat",function(){return LSET(__SPINE.bell.beats["ask:tok1"],"det1","11시?","11시? 우리 10시에 종탑 아래에서 직접 들었잖아! 게다가 11시 종은 아직 칠 때도 안 됐어!")});
+  // 12) 밤이가 다이얼을 바꾼 이유
+  T("bell bami2 say",function(){return SET(contra(c,"bami2"),"say","문 암호?","밤이가 코웃음을 쳤다. \"유치한 이름인 건 사실이잖아. …그래, 알아. 열흘 전부터. 모르는 척한 건, 아는 척하면 나도 유치해 보이니까. 더 궁금하면 종탑 지하실에나 가 봐. 열쇠는 배달부가 가져갔지만, 그 문엔 숫자 다이얼도 있어. 아까 종이 이상하게 끊긴 뒤에 내가 숫자를 바꿔 놨어. 종소리를 끝까지 센 사람만 들어오게. 종이 마지막으로 울린 그대로야.\"")});
+  // 13) 레이 회의 반론: '줄이 없으면 아무도 종 안을 안 들여다본다'는 거꾸로 된 논리
+  T("bell 레이 회의 반론",function(){var ok=false;(window.__REI2.bell.meet||[]).forEach(function(ph){(ph.stms||[]).forEach(function(s){if(SET(s,"t","{종줄까지 끊었어요}","그리고 바꿔치기가 들통나기 전에, 같은 아이가 {종줄까지 끊어} 가짜 추를 치웠어요. 가짜가 사라지면 바꿔친 증거도 같이 사라지니까."))ok=true})});return ok});
+  // 14) 레이 대결 라운드: ch5fix161이 __REI2.def만 바꿔서 대결 문장·결말 대사는 옛것이 나오고 있었다 → 하나로 맞추고 BATTLE에도 반영
+  T("bell 레이 대결 동기화",function(){var R=window.__REI2&&window.__REI2.bell;if(!R||!R.def)return false;
+   R.def.intro=[
+    ["rei","이의 있음! 줄을 끊은 건 저 배달부예요. 그건 인정해요. 하지만 '달빛 종을 멈춘 범인'은 따로 있어요.","smug"],
+    ["rei","협회 의뢰서에 이렇게 적혀 있어요. '사흘 전부터 달빛 종소리가 끊겼다는 제보. 종탑 처마 밑 박쥐 아이를 주시할 것.'","smug"],
+    ["rei","사흘 전이면 가짜 쇠추가 걸린 날이에요. 그날부터 종은 울리지 않았어요. 배달부는 이미 멈춘 종의 줄을 자른 것뿐이에요.","smug"],
+    ["bami","…뭐? 종을 지키려고 바꿔 단 건데, 내가 종을 멈췄다고?","angry"],
+    ["sling","어머, 1급 탐정님이 제 편을? 후후, 그래요. 저는 이미 멈춘 종의 줄을 끊었을 뿐이죠.","happy"],
+    ["rei","착각하지 마세요. 저는 당신 편이 아니라 기록 편이에요.","smug"],
+    ["det1","{p0}, 쟁점은 하나야. 가짜 추가 걸린 뒤로 종이 정말 한 번도 안 울렸을까?","confused"],
+    ["det0","좋다. 증언대에 서라, 레이. 네 말에서 틀린 한 줄만 찾으면 된다."]];
+   R.def.stm=[
+    {t:"가짜 쇠추는 사흘 전에 걸렸어요. 고리의 쇳가루, 작업실의 거푸집이 증거예요.",p:"여기까진 다들 인정했죠?"},
+    {t:"협회 기록대로예요. 가짜가 걸린 그날부터 달빛 종은 한 번도 울리지 않았어요.",p:"제보에 '사흘 전부터 종소리가 끊겼다'고 적혀 있으니까요.",a:["rv_bell_2","seol1","tok4","m_echo"]},
+    {t:"그러니까 종을 멈춘 건 줄을 끊은 손이 아니라, 사흘 전에 가짜를 건 손이에요.",p:"순서대로 따라가면 그렇게 돼요."}];
+   R.def.hit="…10시 정각, 세 번, 한 번, 네 번. 그 종소리를 0초까지 잰 게 바로 저였어요. 가짜 쇠추로도 종은 울렸어요. 은소리가 둔한 쇳소리로 바뀌었을 뿐이에요. 제보는 '은소리가 사라졌다'였는데, 협회가 '종소리가 끊겼다'로 옮겨 적은 거예요. 종이 아예 울릴 수 없게 된 건 10시 10분, 줄이 끊기고 추가 사라진 뒤예요. …제 귀보다 서류를 먼저 믿었네요. 깨끗하게 졌어요. 시골 탐정, 방금 그 한 방은 92점.";
+   var B=rvRound("bell");if(!B)return false;
+   B.stm=R.def.stm.map(function(s){return {t:s.t,p:s.p,a:(s.a||[]).slice()}});B.hit=R.def.hit;B.intro=R.def.intro;return true});
+  // 15) 마지막 라운드: '열쇠를 버렸으니 종은 못 울린다'에 이유가 빠져 있었다
+  T("bell 마지막 라운드",function(){var R=BATTLE.bell,L=R[R.length-1];if(!L||!L.stm||L.stm.length<3)return false;
+   var s1=L.stm[1],s2=L.stm[2];if(!s1.rev||s1.t.indexOf("열쇠는 제가 버렸으니까")<0)return false;
+   L.stm[0].t="상관없어요. 네로 님이 원한 건 추가 아니라 종이 멈추는 거니까.";
+   s1.t="진짜 추가 어디 있든, 11시까지 종은 다시 못 울려요. 지하실 열쇠는 제가 버렸으니까!";
+   s1.p="아무도 안 뒤져 본 곳은 지하실뿐인데, 이제 아무도 못 들어가죠.";
+   var X="그 지하실엔 네로 님 말고 아무도 들어간 적 없어요. 진짜 추가 거기 있을 리 없죠!",P="열쇠는 늘 촌장님 금고에 있었어요. 그걸 누가 몰래 빌리겠어요?";
+   s1.rev.x.t=X;s1.rev.x.p=P;s2.t=X;s2.p=P;
+   L.hit="…지하실에 들어갔다고? 박쥐 꼬마가… 네로 님이 기다리던 바로 그 방, 그 궤짝에 진짜 추를…?! 하, 하하… 완벽하게 졌군.";return true});
+  // 16) 위조 편지 글씨: 엄마 글씨('오른쪽으로 살짝 기운 글씨')와 헷갈리지 않게
+  T("bell 위조 편지 글씨",function(){return SUB(TWIST.bell.card.check,"text","오른쪽으로 비스듬히 누운","왼쪽으로 잔뜩 누운")});
+  // 17) 고백: 열쇠를 어디에 썼는지, '네로 얘기는 안 한다'의 범위
+  T("bell 고백",function(){var C=window.__CONF2&&window.__CONF2.bell;if(!C)return false;
+   var a=LSET(C,"sling","촌장님이 열쇠를 바로 내주시더군요","…하하. 그래요, 제가 했어요. '종탑 앞에 우편함을 달아야 한다'고 했더니 촌장님이 열쇠를 바로 내주시더군요. 그 열쇠로 네로 님을 지하실에 모셨어요. 지도에 X를 그린 바로 그 자리요. 그리고 10시 10분, 사다리를 올라가 종줄을 끊었습니다.");
+   var b=LSET(C,"sling","네로 님 얘기는 하지 않겠습니다","……네로 님이 지금 어디 계신지는 말하지 않겠습니다. 저한테 남은 건 그거 하나라서요.");return a&&b});
+  T("bell 뒷이야기 슬링",function(){var ok=false;(BK.post||[]).forEach(function(p){if(LSET(p.lines,"det1","슬링은 끝까지 네로 얘기를 안 했어","{p0}, 슬링은 네로가 지금 어디 있는지는 끝까지 말 안 했어."))ok=true});return ok});
+  T("bell ending 네로",function(){return SUB(c,"ending","네로에 대해선 끝까지 입을 다물었다","네로가 어디로 갔는지는 끝까지 입을 다물었다")});
+  // 18) 촌장: 우표 '백 장'(ppul3)과 '한 장'이 엇갈림
+  T("bell outro 우표",function(){return SUB(LINE(STORY.bell.outro,"ppul","기념우표"),1,"기념우표 한 장에","기념우표 백 장에")});
+  // 19) 정리·타임라인: 지하 열쇠의 쓰임, 10:10/10:15 엇갈림
+  T("bell recon",function(){var R=c.recon||RECON.bell;var a=SET(R.sum,"how","촌장을 속여 지하 열쇠를 얻고","촌장을 속여 지하 열쇠를 얻어 네로를 지하실에 들여보내고, 배달을 핑계로 10시 10분에 종탑에 올라가 칼로 종줄을 끊었다");
+   var b=false,d2=false;(R.steps||[]).forEach(function(x){if(x.t==="밤 9:30"&&SET(x,"txt","우편함 설치","슬링은 '우편함 설치'를 핑계로 촌장에게 지하 열쇠를 빌렸다. 그 열쇠로 네로를 지하실에 들여보냈다. 촌장은 망신이 두려워 그 사실을 숨겼다."))b=true;
+    if(x.loc==="cellar"&&SET(x,"txt","네로의 글씨","지하실 벽에는 네로가 기다리며 남긴 글씨가 있었다. '종만 멈추면 된다.' 네로는 바로 옆 궤짝에 밤이가 숨긴 진짜 추가 있는 줄도 몰랐다."))d2=true});return a&&b&&d2});
+  T("bell timeline",function(){var ok=0;(c.timeline||TIMELINE.bell).forEach(function(x){if(x.s===2215&&x.t==="밤 10:15"){x.t="밤 10:10";ok++}if(x.s===2130&&SET(x,"txt","지하 열쇠를 빌림","슬링이 '우편함 설치'를 핑계로 촌장에게 지하 열쇠를 빌리고, 그 열쇠로 네로를 지하실에 들임"))ok++});return ok===2});
+  T("bell solution",function(){var s=c.solution||[];for(var i=0;i<s.length;i++)if(s[i].indexOf("슬링은 촌장을 속여 지하 열쇠를 얻고")===0){s[i]="슬링은 촌장을 속여 지하 열쇠를 얻어 네로를 지하실에 들여보내고, 10시 10분에 종탑에 올라가 종줄을 끊었다. 배달 기록, 설이의 목격, 사다리의 버클 자국이 증거다.";return true}return false});
+  // 20) ch5fix161 정체 폭로 장면: 슬링은 '한 달 전에 온 새 배달부'인데 '십 년'이라고 함
+  T("bell 폭로 장면 십 년",function(){SAYFIX.push(["ppul","편지를 십 년이나 날라 준","스, 슬링이? 한 달 전에 와서 우리 마을 편지를 그렇게 싹싹하게 날라 주던 배달부가?!"]);SAYFIX.push(["narr","모두가 늘 웃으며 편지를 건네던 배달부","종탑 아래가 술렁였다. 모두가 늘 웃으며 편지를 건네던 새 배달부를 쳐다봤다."]);return true});
+  // 21) 조사 중간 정리: 추는 언제 바뀌었고, 종은 언제·왜 끊겼고, 언제 아예 못 울리게 됐는지
+  T("bell 중간 정리 장면",function(){
+   function has(id){return G.found.indexOf(id)>=0}
+   setInterval(function(){
+    try{if(!G||S.screen!=="case"||!CASES[G.ci]||CASES[G.ci].id!=="bell")return;
+     if(!G.beats)G.beats={};if(G.beats.audcSum)return;
+     if(G.battle||(G.debate&&G.debate.done))return;
+     if(!(has("m_hook")&&has("m_echo")&&has("m_rope")&&G.asked.indexOf("seol3")>=0))return;
+     if(busy())return;
+     G.beats.audcSum=1;try{saveProg()}catch(e){}
+     say([
+      ["det1","{p0}, 잠깐 정리해 줘. 머릿속이 종소리처럼 뒤죽박죽이야.","confused"],
+      ["det0","좋다. 하나. 종 안에 걸려 있던 추는 오늘 밤보다 먼저 은칠한 쇠추로 바뀌어 있었다. 고리에 남은 쇳가루가 증거다.","think"],
+      ["det0","둘. 10시 종은 그 가벼운 쇠추가 덜컹거려서 세 번, 한 번, 네 번, 여덟 번 만에 끊겼다. 그때까지 추는 아직 종 안에 있었다."],
+      ["det0","셋. 10시 10분쯤 누군가 사다리로 올라가 종줄을 칼로 끊고, 그 추마저 가져갔다. 그래서 이제 종은 아예 울릴 수가 없다."],
+      ["det1","그럼 찾을 건 셋이네. 줄을 끊은 사람, 진짜 추를 숨긴 사람, 그리고 진짜 추가 있는 곳!","happy"],
+      ["det0","11시 종이 울릴 시각 전에. 가자."]],function(){try{render()}catch(e){}});
+    }catch(e){}
+   },700);return true});
+ }
+
+ /* ================= 6장 빛을 훔치는 자 ================= */
+ var d=typeof caseById==="function"?caseById("dark"):null;
+ if(!d){A.miss.push("dark 없음")}else{
+  // 1) 흰 장갑은 범인의 단서인데 레이가 '흰 장갑을 고쳐 끼고' 나온다
+  T("dark 레이 흰 장갑",function(){var ok=false;(window.__REI2.dark.meet||[]).forEach(function(ph){(ph.lines||[]).forEach(function(l){if(SUB(l,"t","흰 장갑을 고쳐 끼고 ",""))ok=true})});return ok});
+  // 2) 레이 반론: '의뢰서는 까마귀만 가리켰다'는 회의에서 이미 무너진 전제 → 협회 수배서의 잘못된 전제로
+  T("dark 레이 대결",function(){var R=window.__REI2&&window.__REI2.dark;if(!R||!R.def)return false;
+   R.def.intro=[
+    ["rei","이의 있음! 등불을 끈 건 본인이 인정했어요. 그 죄는 그 죄예요. 하지만 숲의 편지에 '네로'라고 적혀 있다고, 이 사람을 검은 망토단 두목 네로로 닫는 건 반대예요.","smug"],
+    ["rei","협회 수배서에 이렇게 적혀 있어요. '검은 망토단 두목 네로. 언제나 검은 망토 차림.'","smug"],
+    ["rei","저는 오늘 낮 우편 마차에서 이 사람 바로 옆자리였어요. 두 시간 동안 망토는 한 자락도 못 봤어요. 이름이야 누구든 편지에 쓸 수 있고요.","smug"],
+    ["luka","…규정상, 1급 탐정님의 의견에 전적으로 동의합니다. 아주 훌륭한 추론이군요.","happy"],
+    ["rei","동의하지 마세요. 당신 편이 아니에요. 엉뚱한 사람을 두목으로 닫으면, 진짜 두목은 아무도 안 쫓게 돼요.","angry"],
+    ["det1","{p0}, 쟁점은 하나야. 저 사람한테 검은 망토가 정말 없었을까?","confused"],
+    ["det0","좋다. 증인석에 서라, 레이. 네가 본 것 전부를 듣겠다."]];
+   R.def.stm=[
+    {t:"등불을 끈 건 본인이 인정했어요. 열쇠도 숲속 등불에 두고 갔고요.",p:"자백한 만큼은 범인이에요. 거기까지는 저도 동의해요."},
+    {t:"수배서대로라면 두목은 언제나 검은 망토 차림이에요. 그런데 이 사람 짐은 서류 가방 하나였어요. 망토는 한 자락도 못 봤어요.",p:"두 시간 내내 바로 옆자리였어요. 발밑엔 담요 하나뿐이었고요.",a:["rv_dark_2","bami_d2"]},
+    {t:"그러니까 이 사람은 두목이 아니라, 두목 이름을 빌린 심부름꾼이에요.",p:"까로 씨한테 도장을 찍은 건 비겁해요. 하지만 비겁한 것과 두목인 건 다른 얘기예요."}];
+   R.def.hit="…발밑 가방 사이, 둘둘 만 검은 모직. 폭은 한 아름. 그걸 '담요'라고 적은 게 저였어요. 수배서에 '언제나 망토 차림'이라고 적혀 있으니, 접어 둔 망토는 망토로 안 보였던 거예요. 은빛 마을 종탑 지붕에서 그 망토를 두른 스라소니를 본 아이도 있고요. …서류보다 제 눈을 먼저 믿었어야 했네요. 깨끗하게 졌어요. 시골 탐정, 방금 그 질문은 날카로웠어요.";
+   var B=rvRound("dark");if(!B)return false;
+   B.stm=R.def.stm.map(function(s){return {t:s.t,p:s.p,a:(s.a||[]).slice()}});B.hit=R.def.hit;B.intro=R.def.intro;return true});
+  // 3) luka5: 조사 중 질문 하나로 '네로'라고 다 털어놓으면, 대결 마지막 라운드('30년 전엔 와 본 적도 없다')와 앞뒤가 안 맞는다
+  T("dark luka5",function(){return SET(talk(d,"luka","luka5"),"a","30년 전 이 언덕 아래에서","…30년 전 이 언덕 아래에서 떨던 아이 이야기라면 압니다. 부엉이 탐정이 그 아이에게 등불을 켜 주고 집으로 보냈다지요. 집도 없는 아이였는데. …규정상, 그 아이 이름은 어느 서류에도 없습니다.")});
+  T("dark ask:luka5 beat",function(){var b=__SPINE.dark.beats["ask:luka5"];if(!b||b.length<2)return false;
+   b[0][1]="'집도 없는 아이였는데'… 그건 파일에도 없는 얘기야. 저 사람, 그 밤을 직접 겪은 것처럼 말해.";b[0][2]="nervous";
+   b[1][1]="아직 제 입으로 이름을 대진 않았다. 30년 전 파일과 저 사람이 흘린 물건을 맞춰 보면, 스스로 말하게 될 거다.";return true});
+  // 4) 배지는 기록실 바닥에서 우리가 주웠다 → 고백 장면 '가슴의 배지를 떼어'는 모순. 남은 장갑 한 짝으로
+  T("dark 고백 배지",function(){var C=window.__CONF2&&window.__CONF2.dark;if(!C)return false;
+   var a=LSET(C,"narr","가슴의 배지를 떼어","검사관은 남은 흰 장갑 한 짝을 벗어 책상 위에 내려놓았다.");
+   var b=LSET(C,"luka","배지는 두고 가겠습니다","장갑은 두고 가겠습니다. 루카라는 이름도요. 서류 말고는 처음부터 아무것도 아니었으니까.");return a&&b});
+  // 5) 최종 질문: 부리는 '할아버지 같은 탐정이 되고 싶어서' 베꼈다고 말했다
+  T("dark 최종 질문 부리",function(){var f=(d.final||[]).filter(function(x){return x.q&&x.q.indexOf("부리가 옛 사건 파일")>=0})[0];if(!f||f.answer!=="할아버지를 돕고 싶어서")return false;
+   var N="할아버지 같은 탐정이 되고 싶어서";f.opts=f.opts.map(function(o){return o==="할아버지를 돕고 싶어서"?N:o});f.answer=N;return true});
+  // 6) ending: '검은 망토단은 흩어졌지만' — 그런 장면이 없다
+  T("dark ending",function(){return SUB(d,"ending","검은 망토단은 흩어졌지만 네로는 잡히지 않았다.","검은 망토단의 하수인들은 붙잡히거나 떠나갔지만, 네로는 잡히지 않았다.")});
+ }
+})();
+
 /* v153: 역전재판식 모바일 화면 — 위: 동사 탭 한 줄 / 가운데: 장면·인물 고정 / 아래: 낮은 대사창(최대 2줄, 넘겨 보기) */
 (function(){
  var css=document.createElement("style");css.textContent=
@@ -35699,7 +36118,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  /* 타자 소리: 모든 인물 같은 음, 짧고 부드럽게, 너무 촘촘하지 않게, 한 대사에 최대 0.9초 */
  if(typeof SFX!=="undefined"&&typeof tone==="function"){
   var lastB=0,lineStart=0;
-  SFX.blip=function(){var t=Date.now();if(t-lastB<85)return;if(t-lineStart>900)return;lastB=t;try{tone(420,.022,"triangle",.03)}catch(e){}};
+  SFX.blip=function(){var t=Date.now();if(t-lastB<85)return;if(t-lineStart>900)return;lastB=t;try{tone(500,.045,"square",.06)}catch(e){}};
   var _sl=showLine;showLine=function(){lineStart=Date.now();lastB=0;return _sl.apply(this,arguments)};
  }
 })();
