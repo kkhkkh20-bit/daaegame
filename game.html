@@ -35546,6 +35546,25 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  '.crec2 .cr-det .cr-tx p{flex:1 1 auto;min-height:0;overflow-y:auto;margin:0!important;font-size:14px!important;line-height:1.45!important;-webkit-overflow-scrolling:touch}'+
  '.crec2 .cr-det .cr-act{flex:none!important;margin-top:6px!important;display:flex;gap:6px}';
  document.head.appendChild(css)})();
+/* v156c: 대결 중 대사창 — 빨간 '적대' 대사창은 지금 몰아붙이는 범인에게만. 레이는 맞수(조력)라 차분한 은빛 창, 화난 얼굴·흔들림은 빼고 */
+(function(){
+ var css=document.createElement("style");css.textContent=
+  '.veil.vn.rival .vband{border-color:#9FD8F0!important;background:linear-gradient(180deg,#34427E,#1F2856)!important}'+
+  '.veil.vn.rival .vband .plate{background:#9FD8F0!important;color:#12183A!important}';
+ document.head.appendChild(css);
+ function fight(){try{return !!(G&&G.battle&&G.battle.phase==="fight")}catch(e){return false}}
+ var _say=say;say=function(lines,done,sk){
+  try{if(fight()&&Array.isArray(lines))lines=lines.map(function(l){if(!Array.isArray(l)||l[0]!=="rei")return l;var n=l.slice();if(n[2]==="angry")n[2]="smug";if(n[4]==="angry"||n[4]==="shock")n[4]="";if(l.__pg)n.__pg=l.__pg;if(l.__fit)n.__fit=1;return n})}catch(e){}
+  return _say.call(this,lines,done,sk)};
+ var _sl=showLine;showLine=function(){var r=_sl.apply(this,arguments);
+  try{var v=document.getElementById("dlgveil"),raw=DL&&DL.lines[DL.i],w=raw&&raw[0];if(!v)return r;
+   v.classList.remove("rival");
+   if(fight()&&w&&CAST[w]&&w!=="det0"&&w!=="det1"){
+    if(w==="rei"){v.classList.remove("battle");v.classList.add("rival");var sm=v.querySelector(".vband .plate small");if(sm)sm.textContent="맞수"}
+    else if(G.battle.cul&&w!==G.battle.cul){v.classList.remove("battle");var sm2=v.querySelector(".vband .plate small");if(sm2&&sm2.textContent==="범인?")sm2.textContent="증인"}}
+  }catch(e){}
+  return r};
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
