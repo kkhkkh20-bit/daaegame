@@ -35609,6 +35609,25 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  var _sl=showLine;showLine=function(){stop();var r=_sl.apply(this,arguments);setTimeout(start,30);return r};
  var _ed=endDlg;endDlg=function(){stop();return _ed.apply(this,arguments)};
 })();
+/* v159: 대사 상태 표시(dl-on)가 남아 질문 목록이 안 보이던 문제 — 실제 대사창 유무로 늘 다시 맞춤 · 대사가 바로 떠도 타자 소리는 글자 수만큼 */
+(function(){
+ function sync(){try{var on=!!(typeof DL!=="undefined"&&DL&&document.getElementById("dlgveil"));document.body.classList.toggle("dl-on",on)}catch(e){}}
+ setInterval(sync,150);
+ var _r=render;render=function(){var r=_r.apply(this,arguments);sync();return r};
+ var bt=null;
+ function stopB(){clearInterval(bt);bt=null}
+ var _sl=showLine;showLine=function(){stopB();var r=_sl.apply(this,arguments);
+  try{
+   if(DL&&!DL.timer&&!DL.spoken&&typeof SFX!=="undefined"&&SFX.blip){
+    var raw=DL.lines[DL.i]||[],w=raw[0],th=w==="think",voice=th?0:((typeof VOICE!=="undefined"&&VOICE[w])||0);
+    var n=String(DL.full||"").replace(/\s/g,"").length,beats=Math.min(40,Math.ceil(n/2)),k=0,me=DL;
+    bt=setInterval(function(){if(DL!==me||k>=beats){stopB();return}k++;try{SFX.blip(voice)}catch(e){}},64);
+   }
+  }catch(e){}
+  return r};
+ var _ed=endDlg;endDlg=function(){stopB();var r=_ed.apply(this,arguments);sync();return r};
+ var _adv=advance;advance=function(){stopB();return _adv.apply(this,arguments)};
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
