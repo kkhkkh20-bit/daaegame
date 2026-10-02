@@ -35307,7 +35307,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
   'body.aa .fstalk .tstage .tfig{top:auto!important;bottom:calc(var(--dH) - 4px)!important;width:min(66vw,290px)!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;transition:none!important}'+
   'body.aa #vnfig{top:auto!important;bottom:calc(var(--fsb,0px) + var(--dH) - 4px)!important;width:min(66vw,290px)!important}'+
   'body.aa .fstalk .tstage .tname{display:none!important}'+
-  'body.aa .fstalk .tpanel{top:54px!important;bottom:calc(var(--dH) + 70px)!important;height:auto!important;max-height:none!important;left:0!important;right:0!important;padding:0 8%!important;background:none!important;overflow:visible!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;pointer-events:none;z-index:3}'+
+  'body.aa .fstalk .tpanel{top:54px!important;bottom:calc(var(--dH) + 70px)!important;height:auto!important;max-height:none!important;left:0!important;right:0!important;padding:0 8%!important;background:none!important;overflow:visible!important;display:flex!important;flex-direction:column!important;justify-content:center!important;pointer-events:none;z-index:3}'+
   'body.aa .fstalk .tpanel>*{pointer-events:auto}'+
   'body.aa .fstalk .topics{max-height:100%;overflow-y:auto;display:flex!important;flex-direction:column!important;gap:6px!important;padding:2px;-webkit-overflow-scrolling:touch}'+
   'body.aa .fstalk .topic{min-height:42px!important;margin:0!important;padding:8px 12px!important;background:rgba(18,26,66,.88)!important;border:2px solid #C9A96A!important;border-radius:6px!important;box-shadow:0 2px 0 rgba(0,0,0,.35)!important;color:#fff!important;font-size:15px!important;text-align:center!important;justify-content:center!important;display:flex!important;align-items:center!important;gap:8px!important}'+
@@ -35319,10 +35319,12 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
   'body.aa .fstalk .tprompt .plate small{background:#1D2B53;color:#FFD84D;border-radius:4px;padding:0 5px;font-size:11px}'+
   'body.aa .fstalk .tprompt .tq{color:#DDE5FF}'+
   'body.aa .fstalk .tacts{position:absolute;right:8px;bottom:calc(var(--dH) + 16px);z-index:4;display:flex;flex-direction:column;align-items:flex-end;gap:8px}'+
-  'body.aa .fstalk .tacts button{position:static!important;margin:0!important;min-width:96px;height:42px;padding:0 14px!important;border-radius:22px 6px 6px 22px!important;font-family:var(--display);font-size:16px!important;display:flex!important;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 0 rgba(0,0,0,.4)!important;cursor:pointer;width:auto!important}'+
+  'body.aa .fstalk .tacts button{position:static!important;margin:0!important;min-width:118px!important;box-sizing:border-box;height:42px;padding:0 14px!important;border-radius:22px 6px 6px 22px!important;font-family:var(--display);font-size:16px!important;display:flex!important;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 0 rgba(0,0,0,.4)!important;cursor:pointer;width:auto!important}'+
   'body.aa .fstalk .tacts .tpres{background:linear-gradient(180deg,#E0503F,#A82C22)!important;color:#fff!important;border:2px solid #FFE6B8!important}'+
   'body.aa .fstalk .tacts .tpres svg{width:20px;height:20px}'+
-  'body.aa .fstalk .tacts .chatbtn{background:rgba(18,26,66,.9)!important;color:#FFE6B8!important;border:2px solid #C9A96A!important;font-size:14px!important;height:36px!important;min-width:0!important}'+
+  'body.aa .fstalk .tacts .chatbtn{background:linear-gradient(180deg,#F0A2C2,#C9638E)!important;color:#fff!important;border:2px solid #FFE6B8!important;border-style:solid!important;font-size:16px!important;min-width:96px!important}'+
+  'body.aa .fstalk .tacts .chatbtn b{background:none!important;color:inherit!important;padding:0!important;font-size:16px!important;border-radius:0!important}'+
+  'body.aa .fstalk .tacts .chatbtn .hearts{display:none!important}'+
   'body.aa .fstalk .tacts .chatbtn span{display:none}'+
   'body.aa .fstalk .tacts .chatbtn svg{width:18px;height:18px}'+
   'body.aa .fstalk .tstage .whonav{top:8px!important}'+
@@ -35361,6 +35363,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
    [].slice.call(st.children).forEach(function(e){if(e.id!=="recbtn")e.remove()});
    verbs.forEach(function(v){if(v!==help)st.appendChild(v)});
    if(note)st.appendChild(note);if(fight)st.appendChild(fight);if(help)st.appendChild(help);
+   nav.remove();
    var pb=st.querySelector("#presentbtn"),rb=st.querySelector("#recbtn");
    if(pb&&rb&&!pb.querySelector(".tnum")){var n=parseInt((rb.querySelector("b")||{}).textContent,10);if(n>0){var t=document.createElement("b");t.className="tnum";t.textContent=n;pb.appendChild(t)}}
    b.classList.add("aa");
