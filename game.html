@@ -24277,12 +24277,12 @@ REI2("kitchen",{
  var _rc=renderCase;renderCase=function(){var before=G&&G.found?G.found.length:0,r=_rc.apply(this,arguments);
   try{var c=CASES[G.ci],o=window.__REI2&&window.__REI2[c.id];if(o&&G.notice&&/레이에게서 증거를 넘겨받았어요/.test(G.notice.title||"")&&!(window.__evShow&&window.__evShow.id===o.holds))show(o.holds,"rei","get")}catch(e){}
   return r};
- setInterval(function(){var s=window.__evShow;var vf=document.querySelector(".vnfig"),tgt=(vf&&vf.closest(".veil"))||vf||document.querySelector(".fstalk .tstage");
+ setInterval(function(){var s=window.__evShow;var tgt=(document.querySelector(".vnfig")||document.querySelector(".fstalk .tstage"))?document.body:null;
   document.querySelectorAll(".evpop").forEach(function(e){if(!s||Date.now()>s.until||e.parentNode!==tgt||e.dataset.id!==s.id)e.remove()});
-  if(!s||Date.now()>s.until||!tgt||!G)return;if(tgt.querySelector(".evpop"))return;
-  var c=CASES[G.ci];if(!c)return;var d=document.createElement("div");d.className="evpop"+(tgt.querySelector(".skip")?" sk":"");d.dataset.id=s.id;
+  if(!s||Date.now()>s.until||!tgt||!G)return;if(document.querySelector(".evpop"))return;
+  var c=CASES[G.ci];if(!c)return;var d=document.createElement("div");d.className="evpop inscene";d.dataset.id=s.id;
   try{d.innerHTML=evIcon(s.id)+'<b>'+esc(itemName(c,s.id))+'</b><span class="dir">'+(s.dir==="get"?"◀":"▶")+'</span>'}catch(e){return}
-  if(getComputedStyle(tgt).position==="static")tgt.style.position="relative";tgt.appendChild(d)},250);
+  d.style.visibility="hidden";tgt.appendChild(d);setTimeout(function(){d.style.visibility=""},140)},250);
 })();
 
 /* v141: 힌트는 사건마다 3번 · 관리자 번호 3333 = 힌트 무적 모드(켜기/끄기) · 원탁 회의 말풍선 겹침 */
@@ -29292,62 +29292,84 @@ REI2("kitchen",{
   }
   return g}
 
- /* ───────── 눈·눈썹·입 ───────── */
- // 아이: 크고 반짝이는 눈 (det1)
- function eyeKid(cx,mood,ir,lidc){var y=54,Lf=cx<50,g='';
-  if(has(mood,"happy"))return L('M'+(cx-7.5)+' 56 Q'+cx+' 46 '+(cx+7.5)+' 56',O,3.6)+L('M'+(Lf?cx-7.5:cx+7.5)+' 56 l'+(Lf?-2.5:2.5)+' -2',O,2.4);
-  if(has(mood,"shock"))return E(cx,y,7.6,9,WH)+C(cx,y+.5,2.6,O,NS);
-  if(has(mood,"angry")){var ya=Lf?48:51,yb=Lf?51:48;
-   return P('M'+(cx-7.6)+' '+ya+' L'+(cx+7.6)+' '+yb+' Q'+(cx+7.6)+' 63 '+cx+' 63 Q'+(cx-7.6)+' 63 '+(cx-7.6)+' '+ya+' Z',ir)
-    +C(cx,57,3.6,O,NS)+C(cx+2,55,1.8,WH,NS)+L('M'+(cx-8.5)+' '+(ya-.4)+' L'+(cx+8.5)+' '+(yb-.4),O,3.8)}
-  if(has(mood,"smug")){
-   g+=E(cx,y,7.6,9,ir)+E(cx,y+1,4.6,5.8,O,NS)+C(cx+2.6,y-1,2.6,WH,NS);
-   g+=P('M'+(cx-9)+' 43 L'+(cx+9)+' 43 L'+(cx+9)+' 53 Q'+cx+' 51 '+(cx-9)+' 53 Z',lidc,NS)+L('M'+(cx-8)+' 53 Q'+cx+' 50.6 '+(cx+8)+' 53',O,3.6);
-   return g}
-  var sad=has(mood,"sad")||has(mood,"cry"),nerv=has(mood,"nervous")||has(mood,"confused");
-  g+=E(cx,y,7.6,9,ir);
-  if(nerv){g+=E(cx+(Lf?1.4:-1.4),y+1.6,3.6,4.4,O,NS)+C(cx+(Lf?2.8:0),y,1.6,WH,NS);}
-  else{
-   g+=E(cx,y+1,4.6,5.8,O,NS);
-   g+=C(cx+2.6,y-3.4,3,WH,NS)+C(cx-2.6,y+4,1.5,WH,NS);
-   if(!sad)g+='<path d="'+star(cx-2.8,y-3.6,2.2,.8)+'" fill="'+WH+'"/>';
+ /* ───────── 눈·눈썹·입 ─────────
+    v150: 레이 결의 '색 눈동자' 눈 — 흰자 없이 눈 전체를 눈동자색으로 채우고(도트에서 흰자+외곽선은 반짝이 규칙에 먹힘)
+    아래쪽 밝은 반달 + 큰 하이라이트 + 굵은 윗눈꺼풀선. 아빠는 살짝 올라간 아몬드형, 다람은 크고 둥근 눈. */
+ function irLite(ir,ad){return ad?mix(ir,"#FFD27A",.55):mix(mix(ir,"#5A3418",.35),"#FFC060",.8)}
+ // 아빠 눈동자: 깊은 청록 (레이의 파란 눈처럼 도트에서도 또렷) — 부엉이는 제 호박색 유지
+ function irAd(ir){return ir==="#E8A21E"?ir:"#2D6E8C"}
+ // 눈 하나: o={ad:어른, ir, lid:눈가 바탕색}
+ function eyeOpen(cx,y,mood,o){var Lf=cx<50,s=Lf?-1:1,g='',ad=o.ad,ir=ad?irAd(o.ir):o.ir,IL=irLite(ir,ad);
+  var sad=has(mood,"sad")||has(mood,"cry"),nerv=has(mood,"nervous")||has(mood,"confused"),
+      ang=has(mood,"angry"),smug=has(mood,"smug"),shy=has(mood,"shy");
+  var pdx=nerv?-s*1.2:(smug?s*1.6:0),pdy=(sad||shy)?1:0,prx=ad?3.1:3.5,pry=ad?3.9:4.7;
+  if(nerv){prx=ad?2.2:2.5;pry=ad?2.8:3.2}
+  if(ang){prx-=.5;pry-=.8}
+  var outline,lid,top;
+  if(ad){var xi=cx-s*7.8,yi=y+.8,xo=cx+s*8.4,yo=y-1.4;
+   top='M'+r2(xi)+' '+r2(yi)+' C'+r2(cx-s*5.4)+' '+(y-6.8)+' '+r2(cx+s*4.6)+' '+(y-7.4)+' '+r2(xo)+' '+r2(yo);
+   outline=top+' C'+r2(cx+s*7.4)+' '+(y+5.4)+' '+r2(cx-s*3.6)+' '+(y+7.8)+' '+r2(xi)+' '+r2(yi)+' Z';
+   lid=L(top,O,3.8)+L('M'+r2(xo)+' '+r2(yo)+' l'+r2(s*1.6)+' -.6',O,2.8);
+  }else{
+   outline='M'+(cx-7.2)+' '+y+' A7.2 8.6 0 1 0 '+(cx+7.2)+' '+y+' A7.2 8.6 0 1 0 '+(cx-7.2)+' '+y+' Z';
+   top='M'+(cx-8.4)+' '+(y-2.2)+' Q'+cx+' '+(y-15)+' '+(cx+8.4)+' '+(y-2.2);
+   lid=L(top,O,3.8)+L('M'+r2(cx+s*7.6)+' '+(y-4.4)+' l'+r2(s*3.4)+' -2.4 M'+r2(cx+s*5.4)+' '+(y-7.4)+' l'+r2(s*2.2)+' -2.8',O,2.4);
   }
-  if(sad)g+=L('M'+(cx-8.5)+' '+(Lf?47:44)+' L'+(cx+8.5)+' '+(Lf?44:47),lidc,4.5)+L('M'+(cx-8)+' '+(Lf?48:45.4)+' L'+(cx+8)+' '+(Lf?45.4:48),O,2.6);
-  g+=Lf?L('M'+(cx-7)+' 49.5 l-3.6 -2.4',O,2.4):L('M'+(cx+7)+' 49.5 l3.6 -2.4',O,2.4);
+  g+=P(outline,ir,sk(2.4));
+  // 아래쪽 밝은 반달
+  var cw=ad?4.8:5.2,cy0=ad?y+1.6:y+2.4,cy1=ad?y+7.2:y+9.4;
+  g+=P('M'+r2(cx-cw)+' '+r2(cy0)+' Q'+cx+' '+r2(cy1)+' '+r2(cx+cw)+' '+r2(cy0)+' Q'+cx+' '+r2(cy0+2.8)+' '+r2(cx-cw)+' '+r2(cy0)+' Z',IL,NS);
+  // 동공 + 반짝이
+  g+=E(cx+pdx,r2(y+(ad?.4:.8)+pdy),prx,pry,O,NS);
+  var hx=cx+pdx+(ad?2:2.3),hy=r2(y+(ad?-1.8:-2.6)+pdy);
+  g+=C(hx,hy,nerv?1.5:(ad?2.1:2.6),WH,NS);
+  if(!nerv)g+=C(cx+pdx-(ad?2:2.4),r2(y+(ad?3:3.8)+pdy),ad?1:1.3,WH,NS);
+  if(sad)g+=C(cx+pdx+1.4,r2(y+4.4),1.1,WH,NS);
+  g+=lid;
+  // 눈꺼풀(감정): 눈가 바탕색으로 위를 덮고 선을 긋는다
+  var yin=null,yout=null;
+  if(sad){yin=y-(ad?5.6:7);yout=y-(ad?2.2:3.2)}
+  else if(ang){yin=y-(ad?.8:1.6);yout=y-(ad?5.4:6.6)}
+  else if(smug){yin=y-(ad?1.2:1.6);yout=y-(ad?1.6:2.2)}
+  if(yin!==null){var xA=cx-s*9.6,xB=cx+s*10.6;
+   g+=P('M'+r2(xA)+' '+r2(yin)+' L'+r2(xB)+' '+r2(yout)+' L'+r2(xB)+' '+(y-13.6)+' L'+r2(xA)+' '+(y-13.6)+' Z',o.lid,NS);
+   g+=L('M'+r2(cx-s*8.4)+' '+r2(yin+.2)+' L'+r2(cx+s*9)+' '+r2(yout),O,3.6);
+   if(!ang)g+=L('M'+r2(cx+s*9)+' '+r2(yout)+' l'+r2(s*2.4)+' '+(sad?1.6:-1.2),O,2.4)}
   return g}
- // 어른: 반쯤 감은 다정한 눈 (det0)
- function eyeAdult(cx,mood){var y=53,x0=cx-7,x1=cx+7,g='',Lf=cx<50;
-  if(has(mood,"happy"))return L('M'+(cx-7)+' 55 Q'+cx+' 47 '+(cx+7)+' 55',WH,5)+L('M'+(cx-7)+' 55 Q'+cx+' 47 '+(cx+7)+' 55',O,3.2);
-  if(has(mood,"shock"))return E(cx,y,7.5,8.5,WH)+C(cx,y+.5,2.2,O,NS);
-  if(has(mood,"nervous")||has(mood,"confused"))return E(cx,y,7,7.5,WH)+C(cx+(Lf?1.5:-1.5),y+1,3.4,O,NS)+C(cx+(Lf?2.6:-.4),y-.4,1.2,WH,NS);
-  if(has(mood,"angry")){var ya=Lf?49.5:53.5,yb=Lf?53.5:49.5,xa=cx-8,xb=cx+8;
-   return P('M'+xa+' '+ya+' L'+xb+' '+yb+' Q'+(xb-1)+' 61 '+cx+' 61 Q'+(xa+1)+' 61 '+xa+' '+ya+' Z',WH)+C(cx+(Lf?1:-1),57,3,O,NS)+L('M'+xa+' '+ya+' L'+xb+' '+yb,O,3.8)}
-  var sad=has(mood,"sad")||has(mood,"cry"),smug=has(mood,"smug");
-  // 30대 아빠: 또렷한 아몬드형 눈 + 갈색 눈동자 + 반짝이
-  var top=sad?50:(smug?51.5:47.6),bot=61.4,xa=cx-7.6,xb=cx+7.6;
-  g+=P('M'+xa+' 55.2 Q'+cx+' '+top+' '+xb+' 55.2 Q'+cx+' '+bot+' '+xa+' 55.2 Z',WH);
-  g+=E(cx+(Lf?.6:-.6),55.6,4,4.8,"#5A3A22",NS)+C(cx+(Lf?.6:-.6),55.9,2.3,O,NS)+C(cx+(Lf?2.2:1),53.8,1.5,WH,NS)+C(cx+(Lf?-1:-2.2),57.6,.7,WH,NS);
-  g+=L('M'+xa+' 55.2 Q'+cx+' '+top+' '+xb+' 55.2',O,3.4)+L('M'+(Lf?xa:xb)+' 55.2 l'+(Lf?-2.2:2.2)+' -1.4',O,2.2)+L('M'+(cx-4)+' 60.6 Q'+cx+' 61.8 '+(cx+4)+' 60.6',O,1.4,.55);
-  return g}
+ function eyeShut(cx,y,ad){var Lf=cx<50,s=Lf?-1:1,w=ad?7.8:7.6;
+  return L('M'+(cx-w)+' '+(y+2.4)+' Q'+cx+' '+(y-(ad?6.6:8.6))+' '+(cx+w)+' '+(y+2.4),O,3.8)+L('M'+r2(cx+s*w)+' '+(y+2.4)+' l'+r2(s*2.6)+' -.6',O,2.6)}
+ function eyeShock(cx,y,ir,ad){var r=ad?6.4:6.8;if(ad)ir=irAd(ir);
+  return C(cx,y,r,ir,sk(2.6))+C(cx,y+.4,ad?1.9:2.1,O,NS)+C(cx+2.4,y-2.4,1.4,WH,NS)}
+ // 아이: 크고 반짝이는 눈 (det1)
+ function eyeKid(cx,mood,ir,lidc){var y=54;
+  if(has(mood,"happy"))return eyeShut(cx,y+1,0);
+  if(has(mood,"shock"))return eyeShock(cx,y,ir,0);
+  return eyeOpen(cx,y,mood,{ad:0,ir:ir,lid:lidc})}
+ // 어른: 또렷한 아몬드형 눈 (det0, 30대)
+ function eyeAdult(cx,mood,ir,lidc){var y=55;
+  if(has(mood,"happy"))return eyeShut(cx,y+.6,1);
+  if(has(mood,"shock"))return eyeShock(cx,y,ir,1);
+  return eyeOpen(cx,y,mood,{ad:1,ir:ir,lid:lidc})}
  function browsKid(mood){var c=O,w=3.6;
   if(has(mood,"angry"))return L('M29 40 L45 45.5 M71 40 L55 45.5',c,w+.4);
   if(has(mood,"sad")||has(mood,"cry"))return L('M31 43 L45 38.5 M69 43 L55 38.5',c,w);
   if(has(mood,"nervous"))return L('M31 42 Q38 37 45 39 M69 42 Q62 37 55 39',c,w);
-  if(has(mood,"shock"))return L('M31 38 Q38 33 45 36 M55 36 Q62 33 69 38',c,w);
-  if(has(mood,"confused"))return L('M31 39 Q38 35 45 38 M55 43 L69 42',c,w);
-  if(has(mood,"happy"))return L('M31 42 Q38 38 45 41 M55 41 Q62 38 69 42',c,w);
-  if(has(mood,"smug"))return L('M31 42.5 L45 42.5 M55 40 Q62 35 69 38.5',c,w);
+  if(has(mood,"shock"))return L('M31 37.6 Q38 32.6 45 35.6 M55 35.6 Q62 32.6 69 37.6',c,w);
+  if(has(mood,"confused"))return L('M31 39 Q38 35 45 38 M55 42.6 L69 41.6',c,w);
+  if(has(mood,"happy"))return L('M31 41.6 Q38 37.6 45 40.6 M55 40.6 Q62 37.6 69 41.6',c,w);
+  if(has(mood,"smug"))return L('M31 42.6 L45 42.6 M55 40 Q62 35 69 38.5',c,w);
   if(has(mood,"shy"))return L('M31 42 Q38 40 45 42 M55 42 Q62 40 69 42',c,w);
-  return L('M31 42 Q38 39.5 45 41.5 M55 40 Q62 34.5 69 38',c,w)}
+  return L('M31 41.6 Q38 38.6 45 40.8 M55 40 Q62 35 69 38.4',c,w)}
  function browsAdult(mood){var c=O,w=3.4;
-  if(has(mood,"angry"))return L('M29 41 L46 47 M71 41 L54 47',c,w+.4);
-  if(has(mood,"sad")||has(mood,"cry"))return L('M30 46 L45 41 M70 46 L55 41',c,w);
-  if(has(mood,"nervous"))return L('M30 45 Q38 39 45 41 M70 45 Q62 39 55 41',c,w);
-  if(has(mood,"shock"))return L('M30 39 Q37 34 45 37 M55 37 Q63 34 70 39',c,w);
-  if(has(mood,"confused"))return L('M30 41 Q37 36 45 39 M55 45 L70 44',c,w);
-  if(has(mood,"happy"))return L('M30 44 Q37 40 45 43 M55 43 Q63 40 70 44',c,w);
-  if(has(mood,"smug"))return L('M30 45 L45 45 M55 42 Q63 37 70 41',c,w);
-  return L('M31 43 Q38 39.6 45 41.6 M55 41.2 Q62 38.6 69 40.6',c,w)}
+  if(has(mood,"angry"))return L('M30 41 L46 46.4 M70 41 L54 46.4',c,w+.4);
+  if(has(mood,"sad")||has(mood,"cry"))return L('M31 44.4 Q38 43 45.4 39.4 M69 44.4 Q62 43 54.6 39.4',c,w);
+  if(has(mood,"nervous"))return L('M31 43.6 Q38 39.8 45.4 39.8 M69 43.6 Q62 39.8 54.6 39.8',c,w);
+  if(has(mood,"shock"))return L('M31 39 Q37.6 34.4 45 37.2 M55 37.2 Q62.4 34.4 69 39',c,w);
+  if(has(mood,"confused"))return L('M31 40.6 Q37.6 36 45 38.6 M55 43.4 L69.4 42.6',c,w);
+  if(has(mood,"happy"))return L('M31 42.4 Q37.6 38 45 40.4 M55 40.4 Q62.4 38 69 42.4',c,w);
+  if(has(mood,"smug"))return L('M31 43.4 L45 43.4 M55 41 Q62.4 35.6 69.6 39.6',c,w);
+  if(has(mood,"shy"))return L('M31.4 43.4 Q38 41 45 42.6 M68.6 43.4 Q62 41 55 42.6',c,w);
+  return L('M31.4 43.8 Q37.4 39.4 45.2 41.8 M68.6 43.8 Q62.6 39.4 54.8 41.8',c,w+.3)}
  function teeth(x,y){return '<path d="M'+(x-3.4)+' '+y+' L'+(x+3.4)+' '+y+' L'+(x+3.2)+' '+(y+4)+' L'+(x-3.2)+' '+(y+4)+' Z" fill="'+WH+'" stroke="'+O+'" stroke-width="1.6" stroke-linejoin="round"/>'+L('M'+x+' '+y+' V'+(y+4),O,1.2)}
  function mouthKid(mood,T){var ms='stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"';
   if(has(mood,"happy"))return P('M40 68 Q50 67 60 68 Q59 80 50 80 Q41 80 40 68 Z',MOUTH,ms)+'<path d="M45 76.5 Q50 74 55 76.5 Q53 79.6 50 79.6 Q47 79.6 45 76.5 Z" fill="'+TONG+'"/>'+(T?teeth(50,68.3):'');
@@ -29359,15 +29381,16 @@ REI2("kitchen",{
   if(has(mood,"smug"))return L('M43 70.5 Q51 74 59 67',O,2.8)+(T?teeth(50,71.4):'');
   if(has(mood,"shy"))return L('M45 71 Q50 74 55 71',O,2.6);
   return P('M41 68.6 Q50 70 60 66.4 Q58.5 76.5 50 77 Q42.5 76.5 41 68.6 Z',MOUTH,ms)+'<path d="M45 74.4 Q50 72.6 55.6 73.6 Q53.6 76.4 50 76.6 Q46.6 76.4 45 74.4 Z" fill="'+TONG+'"/>'+(T?teeth(49.6,68.9):'')}
- function mouthAdult(mood){
-  if(has(mood,"happy"))return P('M43 70 Q50 77 57 69 Q50 72 43 70 Z',"#7A2E3A",sk(2.6));
-  if(has(mood,"shock"))return E(50,73,4,4.6,"#7A2E3A",sk(2.4));
-  if(has(mood,"sad")||has(mood,"cry"))return L('M44 73 Q50 68.5 56 73',O,2.8);
-  if(has(mood,"nervous"))return L('M42 72 Q44.5 69.5 47 72 Q49.5 74.5 52 72 Q54.5 69.5 57 72',O,2.6);
-  if(has(mood,"angry"))return L('M43 72 Q50 69 57 72',O,3)+L('M46 71.2 L54 71.2',WH,1.4);
+ function mouthAdult(mood){var ms=sk(2.6);
+  if(has(mood,"happy"))return P('M42.4 68.6 Q50 70.4 57.6 68.4 Q56.4 77.2 50 77.2 Q43.6 77.2 42.4 68.6 Z',MOUTH,ms)+P('M44 69.6 Q50 71 56 69.4 L55.4 71.6 Q50 72.8 44.6 71.8 Z',WH,NS)+'<path d="M46 75.2 Q50 73.4 54 75.2 Q52.6 76.8 50 76.8 Q47.4 76.8 46 75.2 Z" fill="'+TONG+'"/>';
+  if(has(mood,"shock"))return E(50,73,3.8,4.6,MOUTH,sk(2.4));
+  if(has(mood,"sad")||has(mood,"cry"))return L('M44.4 73.4 Q50 69 55.6 73.4',O,2.8);
+  if(has(mood,"nervous"))return L('M42.6 72 Q45 69.6 47.4 72 Q49.8 74.4 52.2 72 Q54.6 69.6 57 72',O,2.6);
+  if(has(mood,"angry"))return P('M43 70.6 Q50 68.4 57 70.6 Q56 74.6 50 74.6 Q44 74.6 43 70.6 Z',MOUTH,ms)+L('M45.4 71 L54.6 71',WH,1.8);
   if(has(mood,"confused"))return L('M44 72 Q47 70 50 72 Q53 74 56 71',O,2.6);
-  if(has(mood,"smug"))return L('M44 71 Q51 73 58 67',O,2.8);
-  return L('M45 71.5 Q50 72.5 55 70',O,2.8)}
+  if(has(mood,"smug"))return L('M44 71 Q51 73.6 58 67.4',O,2.8)+L('M58 67.4 l1.2 2',O,2);
+  if(has(mood,"shy"))return L('M45.6 71 Q50 73.6 54.4 71',O,2.6);
+  return L('M43.4 69.6 Q50 75 57 69',O,2.8)+L('M42.6 68.4 l1.2 1.6 M57.6 67.8 l-.8 1.6',O,2)}
  function beak(mood){var BK="#F2A541",o=has(mood,"happy")||has(mood,"shock")||has(mood,"angry");
   var g='';
   if(o)g+=has(mood,"shock")?E(50,69,4,5,MOUTH,sk(2.2)):P('M44.5 64 Q50 77 55.5 64 Z',MOUTH,sk(2.2));
@@ -29670,7 +29693,7 @@ REI2("kitchen",{
   K=F?(X.adult?0.95:0.64):1;
   X.neckExt=neckExt(X.ext);X.noseY=A.nose;X.ck=X.adult?[30,68]:[29,66];X.frk=mix(p.F,"#5A2A10",.45);
   var g='',ex=X.adult?[39,61]:[38,62],ey=X.adult?55.4:54,lidc=A.lid==="DD"?p.DD:A.lid==="PD"?PD:A.lid==="LT"?p.LT:p.F;
-  var shock=has(mood,"shock");
+  var shock=has(mood,"shock"),lidE=X.eye==="x-mask"&&lidc===p.F?p.LT:lidc;
   // 1) 뒤쪽
   if(hat.back)g+=hat.back(X);
   if(fit.back)g+=fit.back(X);
@@ -29698,7 +29721,7 @@ REI2("kitchen",{
   // 6) 눈썹·눈·코입
   g+=X.adult?browsAdult(mood):browsKid(mood);
   g+=eyeItem(X.eye,ex,ey,lidc===p.F?p.LT:lidc);
-  g+='<g class="eyes">'+(X.eye==="x-sun"?'':X.adult?eyeAdult(39,mood)+eyeAdult(61,mood):eyeKid(38,mood,A.iris,lidc)+eyeKid(62,mood,A.iris,lidc))+'</g>';
+  g+='<g class="eyes">'+(X.eye==="x-sun"?'':X.adult?eyeAdult(39,mood,A.iris,lidE)+eyeAdult(61,mood,A.iris,lidE):eyeKid(38,mood,A.iris,lidE)+eyeKid(62,mood,A.iris,lidE))+'</g>';
   g+=A.beak?beak(mood):(X.adult?mouthAdult(mood):mouthKid(mood,A.teeth));
   if(ext.face2)g+=ext.face2(X);
   // 7) 안경류
@@ -29946,6 +29969,23 @@ REI2("kitchen",{
   tf.style.top="auto";tf.style.bottom=Math.max(0,Math.round(sb-pt)-4)+"px"}catch(e){}}
  var _r=render;render=function(){var r=_r.apply(this,arguments);anchor();requestAnimationFrame(anchor);return r};
  window.addEventListener("resize",function(){setTimeout(anchor,60)});
+})();
+/* v150: 대사 화면(VN) 인물도 대사창 위에 붙이기 + 증거 표시는 게임 화면(장면) 안 오른쪽 위 */
+(function(){
+ function anchorVN(){try{var vf=document.getElementById("vnfig"),vb=document.querySelector("#vnbox .vband"),veil=document.getElementById("dlgveil");if(!vf||!vb||!veil||vf.hidden)return;
+  var vr=veil.getBoundingClientRect(),br=vb.getBoundingClientRect();if(!(br.top>0))return;
+  vf.style.top="auto";vf.style.bottom=Math.max(0,Math.round(vr.bottom-br.top)-6)+"px"}catch(e){}}
+ var _sl=showLine;showLine=function(){var r=_sl.apply(this,arguments);anchorVN();requestAnimationFrame(anchorVN);return r};
+ setInterval(anchorVN,400);
+ // 증거 표시: 장면 영역 안 오른쪽 위에 고정
+ var css=document.createElement("style");css.textContent='.evpop.inscene{position:fixed!important;right:auto!important;z-index:75!important}';document.head.appendChild(css);
+ function sceneRect(){var cands=[document.querySelector(".fstalk .tstage"),document.getElementById("bigscene"),document.querySelector("#dlgveil .vnbg.full"),document.querySelector("#dlgveil .vnbg")];
+  for(var i=0;i<cands.length;i++){var e=cands[i];if(!e)continue;var r=e.getBoundingClientRect();if(r.width>80&&r.height>80)return r}return null}
+ setInterval(function(){try{var p=document.querySelector(".evpop");if(!p)return;var r=sceneRect();if(!r)return;
+  var top=Math.max(r.top,0),st=document.querySelector(".status");if(st){var sb=st.getBoundingClientRect().bottom;if(sb>top&&sb<r.bottom)top=sb}
+  var w=p.offsetWidth||100,left=Math.min(r.right,innerWidth)-w-12;
+  if(p.parentNode!==document.body)document.body.appendChild(p);
+  p.classList.add("inscene");p.style.top=Math.round(top+10)+"px";p.style.left=Math.round(left)+"px"}catch(e){}},120);
 })();
 
 (function(){window.__FIXQA=[];function FIX(id,a,b){window.__FIXQA.push({id:id,a:a,b:b})}
