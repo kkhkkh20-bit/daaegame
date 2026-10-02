@@ -10767,6 +10767,7 @@ function openPanel(){
       '<button type="button" data-a="break">거짓말까지 다 깨기</button>'+
       '<button type="button" data-a="locs">모든 장소 열기</button>'+
       '<button type="button" data-a="hp">신뢰도 가득</button>'+
+      '<button type="button" data-a="hints">힌트 꽉 채우기</button>'+
       '<button type="button" class="pri" data-a="battle">바로 대결</button>'+
       '<button type="button" data-a="step"'+(fight?'':' disabled')+'>대결 한 수 넘기기</button>'+
       '<button type="button" data-a="deduce">추리 답 채우기</button>'+
@@ -10805,6 +10806,7 @@ function openPanel(){
     else if(a==="break"){gather(c,true);done("거짓말 다 깼어요")}
     else if(a==="locs"){openLocs(c);gather(c,false);done("장소가 모두 열렸어요")}
     else if(a==="hp"){G.hp=hpMax(c);if(G.battle)G.battle.lives=hpMax(c);done()}
+    else if(a==="hints"){G.hints=0;if(G.night)G.night.paid=0;done("힌트를 꽉 채웠어요")}
     else if(a==="battle")startBattle(c);
     else if(a==="step")battleStep(c);
     else if(a==="deduce")fillDeduce(c);
@@ -35628,6 +35630,50 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  var _ed=endDlg;endDlg=function(){stopB();var r=_ed.apply(this,arguments);sync();return r};
  var _adv=advance;advance=function(){stopB();return _adv.apply(this,arguments)};
 })();
+/* v160: 대사가 왼쪽부터 써지는 효과(타자 소리와 함께)를 기본으로 — 한 번만 바꾸고, 설정에서 다시 '바로'로 돌릴 수 있음 */
+(function(){try{if(!localStorage.getItem("daae:tsp160")){localStorage.setItem("daae:tsp160","1");if(typeof S!=="undefined"&&S){S.tspeed="n";try{persist()}catch(e){}}}}catch(e){}})();
+/* v161: 글자 크기 통일(대사·해설·속마음·증언 모두 같은 글꼴·크기) · 타자 소리 한 가지 음, 짧게 · 알림이 위 탭을 가리지 않게 */
+(function(){
+ var css=document.createElement("style");css.textContent=
+  '.veil.vn2 .vband .vtxt,.veil.vn2 .vband .txt,.veil.vn2 .vband.narr .txt,.veil.vn.think .vband .txt,.veil.vn2 .vband.testi .txt{font-family:var(--body,inherit)!important;font-size:16px!important;line-height:1.5!important;font-style:normal!important}'+
+  'body.bigtxt .veil.vn2 .vband .vtxt,body.bigtxt .veil.vn2 .vband .txt{font-size:19px!important}'+
+  '.csx .cstxt{font-size:16px!important;line-height:1.5!important;font-style:normal!important}'+
+  'body.aa .fstalk .tprompt,body.aa .stage .stagebar .scap small{font-size:16px!important}'+
+  'body.aa .notice.toast,body.aa .metto{top:calc(var(--fst,110px) + 6px)!important}'+
+  'body.aa .hud.hud2 .ht small .hpbar small{display:none!important}';
+ document.head.appendChild(css);
+ /* 타자 소리: 모든 인물 같은 음, 짧고 부드럽게, 너무 촘촘하지 않게, 한 대사에 최대 0.9초 */
+ if(typeof SFX!=="undefined"&&typeof tone==="function"){
+  var lastB=0,lineStart=0;
+  SFX.blip=function(){var t=Date.now();if(t-lastB<85)return;if(t-lineStart>900)return;lastB=t;try{tone(420,.022,"triangle",.03)}catch(e){}};
+  var _sl=showLine;showLine=function(){lineStart=Date.now();lastB=0;return _sl.apply(this,arguments)};
+ }
+})();
+/* v161b: 반박 직후 반응 화면의 말 칸도 아래 대사창과 같은 모양 · 대사 중엔 위 알림 잠시 숨김(기록 버튼과 겹침 방지) */
+(function(){var css=document.createElement("style");css.textContent=
+ '.ovr .pq{position:absolute!important;left:8px!important;right:8px!important;top:auto!important;bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;transform:none!important;width:auto!important;max-width:none!important;min-height:var(--dH,128px);box-sizing:border-box;margin:0!important;background:linear-gradient(180deg,#3C4AA8,#2A3480)!important;border:3px solid #C9A96A!important;outline:2px solid #1B2447;border-radius:6px!important;box-shadow:inset 0 0 0 2px #1B2447,0 8px 24px rgba(0,0,0,.5)!important;padding:24px 14px 12px!important;text-align:left!important;color:#fff!important;display:block!important;z-index:5}'+
+ '.ovr .pq span{position:absolute!important;top:-14px;left:8px;background:#FFD84D!important;color:#1D2B53!important;font-family:var(--display);font-size:14px!important;padding:1px 10px;border-radius:6px;border:2px solid #1B2447;white-space:nowrap;margin:0!important}'+
+ '.ovr .pq b{display:block;font-family:var(--body,inherit)!important;font-weight:normal!important;font-size:16px!important;line-height:1.5!important;color:#fff!important;text-shadow:none!important}'+
+ '@media (min-width:600px){.ovr .pq{left:50%!important;right:auto!important;width:calc(100% - 32px)!important;max-width:680px!important;transform:translateX(-50%)!important}}'+
+ 'body.dl-on .notice.toast{visibility:hidden}';
+ document.head.appendChild(css)})();
+/* v161c: 조사 화면을 누르면 누른 자리에 돋보기 고리가 잠깐 뜬다(장면·근접 조사 모두) */
+(function(){
+ var css=document.createElement("style");css.textContent=
+  '.tapmark{position:absolute;z-index:30;width:46px;height:46px;margin:-23px 0 0 -23px;pointer-events:none;border-radius:50%;border:3px solid #FFE27A;box-shadow:0 0 0 2px rgba(27,36,71,.85),0 0 12px rgba(255,226,122,.7);animation:tapmk .55s ease-out forwards}'+
+  '.tapmark::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#FFE27A;box-shadow:0 0 0 2px rgba(27,36,71,.85)}'+
+  '@keyframes tapmk{0%{transform:scale(.4);opacity:1}70%{transform:scale(1);opacity:1}100%{transform:scale(1.15);opacity:0}}';
+ document.head.appendChild(css);
+ document.addEventListener("click",function(e){
+  try{var host=e.target.closest&&e.target.closest("#bigscene,.zoomv .zart");if(!host)return;
+   var r=host.getBoundingClientRect(),m=document.createElement("i");m.className="tapmark";
+   var sx=host.offsetWidth?host.offsetWidth/r.width:1,sy=host.offsetHeight?host.offsetHeight/r.height:1;
+   m.style.left=((e.clientX-r.left)*sx)+"px";m.style.top=((e.clientY-r.top)*sy)+"px";
+   if(getComputedStyle(host).position==="static")host.style.position="relative";
+   host.appendChild(m);setTimeout(function(){m.remove()},650)}catch(x){}
+ },true);
+})();
+(function(){var css=document.createElement("style");css.textContent='body.xfight .status.s2 #recbtn{display:none!important}';document.head.appendChild(css)})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
