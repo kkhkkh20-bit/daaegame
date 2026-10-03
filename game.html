@@ -35582,6 +35582,79 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
   window.addEventListener(t,function(e){if(!e.isTrusted)return;var o=blocker();if(!o)return;if(o.contains(e.target)&&o.classList.contains("csintro"))return;
    e.stopPropagation();if(t!=="touchstart"&&t!=="pointerdown")e.preventDefault();else if(t==="touchstart"&&e.cancelable)e.preventDefault()},{capture:true,passive:false})});
 })();
+(function(){
+ function C(id){try{return caseById(id)}catch(e){return null}}
+ function L(c,id){return c&&c.locations.filter(function(l){return l.id===id})[0]}
+ try{var w=C("window"),wb=L(w,"bush");if(wb){HOTS.owl=[298,58];wb.obs=(wb.obs||[]).filter(function(o){return o.id!=="o_owl2"})}}catch(e){}
+ try{var b=C("bell"),bs=L(b,"shop");if(bs){bs.obs.forEach(function(o){if(o.id==="o_b4"){o.x=236;o.y=70}});
+   if(!bs.obs.some(function(o){return o.id==="o_b4w"}))bs.obs.push({id:"o_b4w",name:"벽 시계판",x:88,y:90,text:"벽에 걸린 시계 여섯 개는 모두 마을 회관 시계와 같은 시각을 가리킨다. 틀린 시계는 여기 없다."})}}catch(e){}
+ var RECT=[
+  ["clapper","",  "o12_5", 8,26,118,110],
+  ["bell","shop", "o_b4w", 20,38,155,143],
+  ["window","bush","owl",  280,38,318,80],
+  ["window","lib","clock", 70,146,112,196],
+  ["cake","kitchen","o_clock",282,16,320,56]
+ ];
+ var css=document.createElement("style");css.textContent='#bigscene .hot.done{pointer-events:none!important}';document.head.appendChild(css);
+ function hotEl(id){return document.querySelector('#bigscene button.hot[data-obs="'+id+'"],#bigscene button.hot[data-spot="'+id+'"]')}
+ window.addEventListener("click",function(e){
+  try{if(!e.isTrusted||!G||G.tab!=="scene")return;var sc=document.getElementById("bigscene");if(!sc||!sc.contains(e.target))return;
+   if(e.target.closest(".hot,.npc,.fsa,button"))return;if(DL||document.querySelector("#ov.on,.modal"))return;
+   var r=sc.getBoundingClientRect(),ux=(e.clientX-r.left)/r.width*360,uy=(e.clientY-r.top)/r.height*200;
+   var c=CASES[G.ci],l=c&&c.locations[G.loc],pick=null;
+   RECT.forEach(function(q){if(pick||q[0]!==c.id||(q[1]&&l&&q[1]!==l.id))return;if(ux>=q[3]&&ux<=q[5]&&uy>=q[4]&&uy<=q[6]){var h=hotEl(q[2]);if(h)pick=h}});
+   if(!pick){var best=1e9;[].forEach.call(sc.querySelectorAll("button.hot"),function(h){var q=h.getBoundingClientRect(),cx=q.left+q.width/2,cy=q.top+q.height/2,d=Math.hypot(e.clientX-cx,e.clientY-cy),rad=q.width/2;
+     if(d<rad*1.4&&d<best){best=d;pick=h}})}
+   if(pick){e.stopPropagation();e.preventDefault();pick.click()}
+  }catch(x){}
+ },true);
+ var _bs=bindScene;bindScene=function(c){_bs.apply(this,arguments);
+  try{if(!c||c.id!=="window")return;var bt=document.querySelector('#bigscene button.hot[data-spot="owl"]');if(!bt||bt.__owl)return;bt.__owl=1;var o=bt.onclick;
+   bt.onclick=function(ev){var self=this;if(G.found.indexOf("owl")>=0){return o&&o.call(self,ev)}
+    say([["owlgp","부엉… 아래가 소란스럽더니, 탐정들이로구나.",""],
+     ["det0","할아버지, 2시쯤 창문 깨지는 소리 들으셨습니까? 그때 이 앞에 누가 있었는지 여쭙고 싶습니다.",""],
+     ["owlgp","들었지. 여기 가지에 앉으면 도서관 앞과 골목이 다 내려다보이거든. 쨍그랑 소리가 나고 한참 뒤에야 콩이가 저쪽 골목에서 멍멍 짖으며 달려왔단다. 그 전엔 여기 없었어.",""],
+     ["owlgp","덤불 속은 잎이 무성해서 내 눈에도 안 보였단다. 거긴 너희가 직접 헤쳐 보거라.",""]],function(){o&&o.call(self,ev)})}}catch(e){}};
+ var RE={
+  shy:[[["det1","…고작 그거 숨기려고 거짓말한 거야?","confused"],["det0","그 말 하나 때문에 수사가 한참 돌아갔다. 다음엔 처음부터 사실대로 말해 주게.",""]],
+       [["det1","어이없어. 그게 거짓말까지 할 일이었어?","confused"],["det0","본인한텐 큰일이었겠지. 하지만 사건 앞에선 작은 거짓말 하나도 길을 막는다.",""]]],
+  side:[[["det1","그러니까 사건이랑 상관없는 딴 잘못을 덮으려고…?","confused"],["det0","덕분에 엉뚱한 데서 시간을 썼군. 그 일은 그 일대로 따로 짚자.",""]],
+       [["det1","기가 막혀. 그걸 감추려고 탐정한테 거짓말을 했다고?","confused"],["det0","수사는 숨긴 사정까지 다 드러낸다. 처음부터 말했으면 될 일이었다.",""]]],
+  mistake:[[["det1","확인도 안 하고 그렇게 딱 잘라 말한 거였어?","confused"],["det0","착각도 증언이 되면 수사를 흔든다. 바로잡았으니 다음으로 가자.",""]],
+       [["det0","제대로 확인도 안 하고 단정했던 거군.",""],["det1","그 착각 하나 때문에 엉뚱한 길로 갈 뻔했어.","confused"]]],
+  cover:[[["det1","누굴 감싸 주려고 거짓말을 한 거야?","confused"],["det0","감싸 준 게 오히려 진짜 범인을 숨겨 줬다. 그게 더 위험하다.",""]],
+       [["det0","감싸려던 마음은 알겠다. 하지만 그 거짓말이 진실을 늦췄다.",""],["det1","이제 숨기지 말고 아는 걸 다 말해 줘.","confused"]]]};
+ var lastBr=null,_bt=window.__brThink;
+ if(_bt)window.__brThink=function(name,tid){var t=_bt.apply(this,arguments);lastBr={t:t,tid:tid};return t};
+ var _say=say;say=function(lines){
+  try{if(lastBr&&Array.isArray(lines)){var i=-1;lines.forEach(function(x,k){if(x&&x[0]==="think"&&x[1]===lastBr.t)i=k});
+    if(i>=0){var c=CASES[G.ci],x=contraOf(c,lastBr.tid),kd=(x&&x.kind)||"culprit",set=RE[kd];
+     if(set){var h=0;String(lastBr.tid).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%97});
+      var rep=set[h%set.length].map(function(q){return q.slice()});lines=lines.slice(0,i).concat(rep,lines.slice(i+1));arguments[0]=lines}
+     lastBr=null}}}catch(e){}
+  return _say.apply(this,arguments)};
+ try{var FIX={
+   window:[["det0","말 하나가 깨졌다. 사정이 뭐든 거짓 증언은 거짓 증언이다."],["det1","남은 말들도 하나씩 확인하자. 진짜 숨긴 사람은 따로 있을 거야.","confused"]],
+   star:[["det1","말 하나가 무너졌어. 다들 제 사정 챙기느라 수사만 꼬였네.","confused"],["det0","그래도 사람을 미워하진 않는다. 진실만 쫓는다. 진짜 악의는 따로 있다."]],
+   lining:[["det1","말 하나가 무너졌어. 제 사정 숨기려다 수사만 꼬아 놨네.","confused"],["det0","그런 거짓말을 걷어 내야 진짜 거짓말이 드러난다."]]};
+  Object.keys(FIX).forEach(function(k){if(BEATS[k])BEATS[k].lie1=FIX[k]});
+  if(BEATS.museum&&BEATS.museum.lie1)BEATS.museum.lie1.forEach(function(x){if(x[0]==="det0"&&x[1].indexOf("부끄러워서 숨긴 말")>=0)x[1]="숨긴 이유도 증거다. 제 사정 때문에 숨긴 말과 범인을 덮으려는 말을 섞지 말자."});
+  if(BEATS.cake&&BEATS.cake.lie1)BEATS.cake.lie1.forEach(function(x){if(x[0]==="det0"&&x[1].indexOf("이유가 있는 거짓말도")>=0)x[1]="그게 증거의 힘이다. 다만 말이 바뀌었다고 바로 범인으로 단정하진 마라. 왜 거짓말했는지까지 확인한다."});
+  if(IHINT&&IHINT.window)IHINT.window=IHINT.window.map(function(s){return s.indexOf("부끄러울 수도")>=0?"잘한다고 큰소리친 말일수록 증거로 확인해 봐. 정말 그 일을 했다면 흔적이 남았을 거야.":s});
+ }catch(e){}
+})();
+(function(){var css=document.createElement("style");css.textContent=
+ '.crec2 .cr-in>.cr-det{height:auto!important;min-height:0!important;max-height:48vh!important;max-height:48dvh!important;flex:0 1 auto!important;overflow:hidden!important}'+
+ '.crec2 .cr-det .cr-ic{width:clamp(56px,16vw,80px)!important;height:clamp(56px,16vw,80px)!important}'+
+ '.crec2 .cr-det .cr-tx{min-height:0!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-right:2px}'+
+ '.crec2 .cr-det .cr-tx p{flex:none!important;overflow:visible!important;max-height:none!important;min-height:0!important;height:auto!important;font-size:15.5px!important;line-height:1.6!important;margin:0 0 8px!important;white-space:normal!important;-webkit-line-clamp:unset!important;display:block!important}'+
+ '.crec2 .cr-det .cr-tx p.cr-ex{background:#FFF6D8!important;border:2px solid #E2B84A!important;border-radius:6px!important;padding:8px 10px!important;color:#2A2A3A!important}'+
+ '.crec2 .cr-det .cr-tx p.cr-gap{background:#FFF0C8!important;padding:8px 10px!important;border-radius:6px!important}'+
+ '.crec2 .cr-det .cr-tx p.cr-gap b{margin-right:6px}'+
+ '.crec2 .cr-det .cr-tx .minib{flex:none!important;align-self:flex-start;margin:0 0 8px!important}'+
+ '.crec2 .cr-det .cr-act{position:sticky!important;bottom:0;padding-top:6px;background:#F8EED4;margin-top:0!important}'+
+ '.crec2 .cr-in>.cr-grid{min-height:110px!important}';
+ document.head.appendChild(css)})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
