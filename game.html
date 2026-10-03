@@ -35629,8 +35629,10 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  var _say=say;say=function(lines){
   try{if(lastBr&&Array.isArray(lines)){var i=-1;lines.forEach(function(x,k){if(x&&x[0]==="think"&&x[1]===lastBr.t)i=k});
     if(i>=0){var c=CASES[G.ci],x=contraOf(c,lastBr.tid),kd=(x&&x.kind)||"culprit",set=RE[kd];
-     if(set){var h=0;String(lastBr.tid).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%97});
-      var rep=set[h%set.length].map(function(q){return q.slice()});lines=lines.slice(0,i).concat(rep,lines.slice(i+1));arguments[0]=lines}
+     var key=c.id+"/"+lastBr.tid,RX=window.__RX||{},rep=null;
+     if(Object.prototype.hasOwnProperty.call(RX,key)){rep=RX[key]?RX[key].map(function(q){return [q[0],q[1],q[0]==="det1"?"confused":""]}):null}
+     else if(set){var h=0;String(lastBr.tid).split("").forEach(function(ch){h=(h*31+ch.charCodeAt(0))%97});rep=set[h%set.length].map(function(q){return q.slice()})}
+     if(rep){lines=lines.slice(0,i).concat(rep,lines.slice(i+1));arguments[0]=lines}
      lastBr=null}}}catch(e){}
   return _say.apply(this,arguments)};
  try{var FIX={
@@ -35655,6 +35657,97 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  '.crec2 .cr-det .cr-act{position:sticky!important;bottom:0;padding-top:6px;background:#F8EED4;margin-top:0!important}'+
  '.crec2 .cr-in>.cr-grid{min-height:110px!important}';
  document.head.appendChild(css)})();
+(function(){
+ function D(a,b){return [["det1",a],["det0",b]]}
+ window.__RX={
+  "cake/tori3":D("당근이랑 씨름하느라 창문은 보지도 않고 '내가 다 봤어'라고 한 거야?","당근 큰형님이 이겼군. 증언은 졌고."),
+  "cake/bori1":D("마흔 숟갈…? 일주일 동안 매일?","'맛 검사'치곤 표본이 너무 많군. 할머니께는 직접 말씀드려라."),
+  "cake/yeoni1":D("선물 숨기려고 덤불에 엎드려 있던 걸 '산책'이라고 한 거야?","깜짝 선물 하나 때문에 용의자가 될 뻔했군. 덕분에 목격자는 하나 건졌다."),
+  "window/kongi1":D("배꼽시계를 믿고 시각을 증언한 거야?","배꼽시계는 증거로 안 쳐준다. 벽시계로 간다."),
+  "window/kkwak1":D("수영도 못 하면서 수영 강습비부터 받았다고?","그것도 첫 수업 전날 그림책으로 벼락치기라. 강습비는 돌려주는 게 좋겠군."),
+  "window/kkwak3":D("책 안 읽는 '콘셉트'…? 그게 거짓말할 일이야?","콘셉트 하나 지키려다 알리바이가 하나 더 무너졌군."),
+  "window/ttadak1":D("열세 번째 '한 번만 더'…? 열두 번은 왜 봐주신 거야.","사서 선생님 인내심이 이 사건 최대의 수수께끼군."),
+  "crown/tori2":D("당근 쥐고 커튼 뒤에서 울어 놓고 '한 번도 안 내려갔어'?","용감이가 토리보다 용감했군. 그래도 커튼 틈으로 본 건 쓸모가 있다."),
+  "crown/yeoni2":D("대사 한 줄에 한 코씩, 이백 코…? 대본은 외우긴 했어?","귀마개까지 끼고 '아무도 안 들어왔다'고 단정했군. 못 들은 거지, 없었던 게 아니다."),
+  "star/owlgp1":D("할아버지, 사건 수첩 교훈이 마흔한 개나 있으면서 안경집을 흘리셨어요?","은퇴한 탐정이 자기 알리바이를 풀밭에 떨어뜨리셨군요."),
+  "star/kongi1":D("코는 못 속여도 눈은 속는다면서 '틀림없어'라고 한 거야?","다음엔 본 것 말고 맡은 것부터 말해라. 그쪽이 더 정확하겠군."),
+  "star/bori1":D("발바닥에 꿀 세 숟갈…? 그게 미끄럼 방지야?","사다리까지 꿀 범벅이 됐겠군. 곰이 사다리 금지인 데는 이유가 있었다."),
+  "star/yeoni1":D("리본은 털실로 대충 묶어 놓고 당번을 빼먹었다고?","광장 장식이 왜 죄다 털실인가 했다. 당번은 나중에 다시 해라."),
+  "bell/ppul1":D("기념우표 때문에 지하 열쇠를 내주셨다고요? 촌장님이?","얼굴 우표 백 장과 마을 열쇠를 바꾸셨군요. 남는 장사는 아니었습니다."),
+  "bell/ppul2":D("연설문은 남이 써 주고, 촌장님은 훈장 달고 거울 앞에서 읽기 연습…?","'한 글자 한 글자'는 쓰는 쪽이 아니라 읽는 쪽이었군요."),
+  "bell/tok1":D("시계가 거짓말하는 소리라니… 그걸 이제야 처음 들어요?","귀는 맞고 시계가 틀렸다. 시각은 종소리로 다시 세자."),
+  "bell/tok2":null,"bell/bami1":null,
+  "bell/bami2":D("유치해 보일까 봐 모르는 척했다고? 그게 제일 유치해.","그러면서 지하실 다이얼은 몰래 바꿔 잠갔군. 꼬마가 어른들보다 바빴다."),
+  "dark/buri_d1":D("3주째 밤마다 기록실에서 베껴 썼다고? 연극 대본은?","'아뢰옵기 황송하오나'는 어디서 배웠나. 옛날 사건 파일 말투가 옮았군."),
+  "dark/kongi_d1":D("잉크 냄새 하나로 까로 아저씨를 범인으로 만든 거야?","냄새는 맞고 결론이 틀렸다. 코는 믿되 말은 아껴라."),
+  "museum/karo_m1":D("편지 한 통에 외투 단추 하나…? 할아버지 외투에 단추가 남아 있긴 해요?","몰래 배달은 숨길 만했겠지. 하지만 그걸 숨기느라 알리바이까지 숨길 일은 아니었다."),
+  "museum/nero_m1":D("남의 지붕에서 이틀 밤을 보내 놓고 '오늘 안 왔다'고 한 거예요?","엄밀히 말하면 거짓말이 맞소. 엄밀히 말해서."),
+  "museum/yeoni_m1":D("진열장 걸쇠에 털실을 감아서 치수를 쟀다고? 우리 치수도 벌써 재 뒀다며?","…그건 나중에 따로 묻겠다. 우선 걸쇠가 잠겨 있었다는 말만 받아 두지."),
+  "museum/piko2":D("코 자국이 '서명'이라고?","진열장 앞에서 돌은 안 보고 자기만 봤다. 목격자로선 최악이군."),
+  "museum/s7x_kongi1":D("긴 바늘 9를 보고 9시라고 한 거야?","시계 공부는 사건 끝나고 하자. 쿠키 받은 건 8시 45분이다."),
+  "cart/s8x_kongi_a":null,"cart/ttadak_c1":null,"cart/karo_c2":null,"cart/karo_c1":null,"cart/karo_c4":null,
+  "cart/bori_c2":D("남의 창고를 꿀 숙성실로 쓰고 있었다고? 밤마다 8시 45분에 세 번씩 저으러?","꿀빵 가게 꿈은 응원하지. 창고 주인 허락부터 받아라."),
+  "cart/kongi_c1":D("시계도 못 보면서 '바로'라고, 거기다 '다들 그렇게 말해'까지?","'다들 그렇게 말한다'는 증거가 아니다. 따닥이한테는 제대로 사과해라."),
+  "glove/s9x_owl_a":D("할아버지, 밤새 책장 한 번 안 넘기는 사람을 보고도 이상하다고 안 느끼셨어요?","은퇴한 탐정이 창문 하나에 속았다. 본인 입으로 하신 말이니 그대로 적어 두죠."),
+  "glove/mungchi1":null,
+  "glove/mungchi2":D("관심 없다면서 이름도 알고, 담요까지 갖다줬어?","'뭐, 그렇다는 거야'로 덮기엔 너무 많이 알고 있군."),
+  "glove/nero2":D("'이제 남의 집 담은 넘지 않겠다'더니, 산울타리를 뚫고 들어갔어요?","담은 안 넘었다는 건가. 그걸 숨기느라 아이 흔적이 끊긴 자리를 하루 늦게 들었소."),
+  "glove/momo_g2":D("방명록 숫자가 0에서 1이 되는 게 기뻐서 휴관 중에 문을 열어 주셨다고요?","금고 지키라고 빌린 열쇠로 금고 구경을 시켜 드렸군요. 열쇠가 울겠습니다."),
+  "festival/s10x_bori_a":D("빈 확인증에 발도장부터 찍어 준 거야?","빈칸에 도장 찍는 건 어른도 하면 안 되는 일이다. 다음엔 칸부터 봐라."),
+  "festival/wanggu_f1":D("'범인의 아들이 범인'이라더니, 본 건 등불 그림자였어요?","목소리 크기는 증거가 아닙니다, 위원장님."),
+  "festival/wanggu_f2":D("주운 건 아저씨, 가리킨 건 마부. 그게 다르냐고요? 완전히 달라요.","누가 가리켰는지가 이 사건의 절반입니다."),
+  "festival/karo_f2":null,"festival/mungchi_f1":null,"festival/mungchi_f2":null,
+  "snow/nubi11_1":D("코트한테 부지런하다고 칭찬하신 거예요?","모자도 안 벗고 고개 한 번 안 돌리는 분은 대개 사람이 아닙니다."),
+  "snow/ubak11_1":D("규정집에 없는 12조를 믿고 거짓 증언을 했다고요?","한 시간 동안 펜 소리만 냈다. 그것도 엄마한테 쓰는 자랑 편지로. 보좌 기록치곤 역대급이군."),
+  "snow/karo11_1":D("밤 우편 나르는 분이 밤이 무섭다고요?","은화 세 닢짜리 정보를 공짜로 받았으니, 그 비밀은 지켜 드리죠."),
+  "snow/musoe11_1":D("등불지기 첫째 규칙을 매일 어기셨다고요? 우유 데우러?","규칙보다 우유가 급하셨군요. 그사이 등불이 약해진 겁니다."),
+  "clapper/tok12_1":D("빨간 줄 두 번이 '톱니처럼 꽉 문 비밀'…? 그런 표시를 왜 장부에 해 둬요?","비밀 지키는 규칙이 비밀을 들키게 만들었군."),
+  "clapper/bami12_1":D("어른들 실수는 서른 개씩 세더니, 녹음은 못 알아챘어?","귀가 밝은 것과 제대로 본 것은 다르다."),
+  "clapper/seol12_1":null,
+  "clapper/sling12_2":D("갇힌 몸한테 편지가 안 온다더니, 날짜까지 박혀서 온다고?","'친절은 버릇'이란 말은 거짓말을 안 할 때나 하는 거요."),
+  "bureau/badook13_1":D("가로등이 켜지면 그게 시계라고요?","오늘은 그 시계가 40분 늦었소. 경비 기록부터 다시 씁시다."),
+  "bureau/guseul13_1":D("닦을 데도 없는 돋보기를 닦으면서… 루비 흠집 얘기는 왜 지금 해?","들킨 김에 다 털어놓는 건 좋다. 순서만 좀 정해 주게."),
+  "bureau/piko13_1":D("문 닫은 가게에 몰래 들어가서 '거울 순위'를 매겼다고?","금고 문에 찍은 부리 자국이 '1등 기념 도장'이라. 금고 주인이 퍽 좋아하겠군."),
+  "bureau/mungchi13_1":null,
+  "lining/ttadak14_1":D("주전자한테 '안녕'을 열두 번…?","코 고는 소리와 물 끓는 소리를 헷갈렸군. 다음엔 두드리기 전에 들여다봐라."),
+  "lining/sling14_5":null,"lining/nero14_2":null,
+  "lining/wanggu14_1":D("작년에 심지를 거꾸로 끼운 걸 1년 내내 숨기셨다고요?","그걸 고치러 갔다가 망토를 보고 도망치셨군요. 소문보다 그쪽이 더 큰일이었습니다."),
+  "lining/tori14_1":null,
+  "kitchen/owlgp15_1":null,"kitchen/tori15_1":null,"kitchen/tori15_4":null
+ };
+ try{if(BEATS.window&&BEATS.window.lieAll)BEATS.window.lieAll.forEach(function(x){if(x[0]==="det1"&&x[1].indexOf("나쁜 마음은 아니었던")>=0)x[1]="이제 진짜 범인만 남았어. 배꼽시계에 수영 강습비에 열세 번째 '한 번만 더'까지… 다들 가지가지 했네."})}catch(e){}
+})();
+(function(){
+ var css=document.createElement("style");css.textContent=
+ '.crec2 .cr-in>.cr-det:not(.empty){display:grid!important;grid-template-columns:auto 1fr auto!important;align-items:center!important;column-gap:8px!important;row-gap:6px!important;max-height:40vh!important;max-height:40dvh!important;overflow-y:auto!important;overscroll-behavior:contain;padding-top:0!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx{display:contents!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-ic{grid-column:1;grid-row:1;width:44px!important;height:44px!important;align-self:center!important;position:sticky;top:0;z-index:2}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx h3{grid-column:2;grid-row:1;margin:0!important;font-size:17px!important;line-height:1.25!important;position:sticky;top:0;z-index:2;padding:8px 0!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-act{grid-column:3;grid-row:1;position:sticky!important;top:0;bottom:auto!important;z-index:2;margin:0!important;padding:0!important;background:transparent!important;display:flex!important;gap:4px!important}'+
+ '.crec2 .cr-det:not(.empty)::before{content:"";grid-column:1/-1;grid-row:1;align-self:stretch;position:sticky;top:0;z-index:1;background:#F8EED4;border-bottom:2px solid #E5D3A6;margin:0 -10px}'+
+ '.crec2 .cr-det:not(.empty) .cr-act button{min-height:0!important;height:30px!important;padding:0 8px!important;font-size:12.5px!important;line-height:1!important;white-space:nowrap}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx>*:not(h3):not(.cr-act){grid-column:1/-1!important;margin:0!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx p{font-size:16px!important;line-height:1.6!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx p.cr-ex{font-size:14.5px!important;border-width:0 0 0 4px!important;border-radius:0!important;background:#FFF6D8!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx .minib{justify-self:stretch;width:100%;height:40px;font-size:15px!important;background:#2F5BD3!important;color:#fff!important;border:2px solid #1B2447!important;border-radius:6px!important}'+
+ '.crec2 .cr-det .cr-tag{display:inline-block;margin-left:6px;vertical-align:middle;font-size:11px;padding:1px 6px;border-radius:999px;background:#F2C230;color:#1B2447}'+
+ '.crec2 .cr-th{position:relative}.crec2 .cr-th.piece::after{display:none!important}'+
+ '.crec2 .cr-th .bdg{position:absolute;top:-5px;left:50%;transform:translateX(-50%);z-index:2;white-space:nowrap;font-style:normal;font-size:10px;line-height:1;padding:3px 5px;border-radius:999px;border:1.5px solid #1B2447;box-shadow:0 1px 0 rgba(0,0,0,.4)}'+
+ '.crec2 .cr-th .bdg.ex{background:#2F5BD3;color:#fff}.crec2 .cr-th .bdg.pc{background:#F28C28;color:#1B2447}'+
+ '.crec2 .cr-th.needex{border-color:#2F5BD3!important;box-shadow:0 0 0 2px #2F5BD3 inset}.crec2 .cr-th.piece{border-color:#F28C28!important;box-shadow:0 0 0 2px #F28C28 inset}'+
+ '.crec2 .cr-grid{padding-top:6px!important}'+
+ '.crec2 .cr-in>.cr-grid{min-height:140px!important}';
+ document.head.appendChild(css);
+ function deco(el){try{var c=CASES[G.ci];if(!c)return;
+  el.querySelectorAll(".cr-th").forEach(function(b){var id=b.dataset.crs;if(!id||b.querySelector(".bdg"))return;var e=evById(c,id);if(!e)return;
+   var needEx=!!(e.check&&!(G.exam&&G.exam[id])),pc=b.classList.contains("piece");
+   b.classList.toggle("needex",needEx);
+   if(needEx)b.insertAdjacentHTML("beforeend",'<i class="bdg ex">살펴보기</i>');else if(pc)b.insertAdjacentHTML("beforeend",'<i class="bdg pc">결합</i>')});
+  var pn=el.querySelector("#crpin");if(pn&&!pn.dataset.s){pn.dataset.s=1;pn.textContent=pn.getAttribute("aria-pressed")==="true"?"★":"☆";pn.setAttribute("aria-label","중요 표시")}
+ }catch(x){}}
+ var _or=openRecord;openRecord=function(){var r=_or.apply(this,arguments);var el=document.querySelector(".crec2");
+  if(el){deco(el);new MutationObserver(function(){deco(el)}).observe(el,{childList:true,subtree:true})}return r};
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
