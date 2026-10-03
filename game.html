@@ -36364,6 +36364,17 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  var HIT={"모순이다!":1,"그건 아니야!":1,"그 말이 맞아!":1};
  var _fl=flash;flash=function(text){try{if(HIT[String(text)]&&window.__AUD&&!(G&&G.battle&&G.battle.phase==="fight"))window.__AUD.pursuit={t:Date.now(),seen:false}}catch(e){}return _fl.apply(this,arguments)};
 })();
+(function(){var css=document.createElement("style");css.textContent=
+ '.crec2 .cr-in>.cr-det:not(.empty){display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important;align-content:flex-start!important;gap:6px 8px!important;max-height:40vh!important;max-height:40dvh!important;overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch!important;touch-action:pan-y!important;overscroll-behavior:contain;padding-top:8px!important}'+
+ '.crec2 .cr-det:not(.empty)::before{display:none!important;content:none!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-ic{position:static!important;flex:0 0 auto!important;order:0}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx h3{position:static!important;flex:1 1 0!important;min-width:0!important;order:1;padding:6px 8px!important}'+
+ '.crec2 .cr-det:not(.empty) .cr-act{position:static!important;flex:0 0 auto!important;order:2}'+
+ '.crec2 .cr-det:not(.empty) .cr-tx>*:not(h3):not(.cr-act){order:3;flex:0 0 100%!important;width:100%!important;min-height:auto!important;max-height:none!important;height:auto!important;overflow:visible!important;box-sizing:border-box}';
+ document.head.appendChild(css)})();
+(function(){function fit(){try{var d=document.querySelector(".crec2 .cr-in>.cr-det:not(.empty)");if(!d)return;d.style.setProperty("min-height","0px","important");var want=Math.min(d.scrollHeight,Math.round(innerHeight*.3));d.style.setProperty("min-height",want+"px","important")}catch(e){}}
+ var _or=openRecord;openRecord=function(){var r=_or.apply(this,arguments);var el=document.querySelector(".crec2");if(el){fit();new MutationObserver(function(m){if(m.some(function(x){return x.target===el||x.target.classList&&x.target.classList.contains("cr-in")}))setTimeout(fit,0)}).observe(el,{childList:true,subtree:true})}return r};
+ window.addEventListener("resize",fit)})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
