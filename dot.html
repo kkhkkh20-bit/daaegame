@@ -35507,11 +35507,23 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
    if(old==null)old=sm.textContent;
    var line=LINES[(k++)%LINES.length],n=0;clearTimeout(tm);clearInterval(ty);
    sm.classList.add("missln");sm.textContent="";
-   ty=setInterval(function(){n++;sm.textContent=line.slice(0,n);if(n%2===0)try{SFX.blip()}catch(x){}if(n>=line.length)clearInterval(ty)},32);
+   sm.textContent=line;
    tm=setTimeout(function(){clearInterval(ty);var s2=document.querySelector("body.aa .stage .stagebar .scap small");if(s2&&s2.classList.contains("missln")){s2.textContent=old;s2.classList.remove("missln")}old=null},1900);
   }catch(x){}
  },true);
 })();
+(function(){
+ var css=document.createElement("style");css.textContent=
+  '.tfx i{left:-18px!important;top:-18px!important;width:36px!important;height:36px!important;border-width:3px!important;box-shadow:0 0 0 2px rgba(20,26,60,.8)!important}'+
+  '.tfx.hit i{box-shadow:0 0 0 2px rgba(20,26,60,.8),0 0 10px #FFD84D!important}'+
+  '.tfx.hit b{font-size:20px!important;top:-44px!important;-webkit-text-stroke:1.5px #1B2447!important;text-shadow:2px 2px 0 #1B2447!important}';
+ document.head.appendChild(css);
+ var _sl=showLine;showLine=function(){var r=_sl.apply(this,arguments);
+  try{var raw=DL&&DL.lines[DL.i];if(raw&&raw[0]==="think"&&DL.timer){clearInterval(DL.timer);DL.timer=null;var el=document.getElementById("dtxt");if(el)el.innerHTML=hl(DL.full);DL.shown=DL.full.length}}catch(e){}
+  return r};
+ document.addEventListener("click",function(){setTimeout(function(){try{var sm=document.querySelector("body.aa .stage .stagebar .scap small.missln");if(sm&&sm.dataset.full!=="1"){sm.dataset.full="1"}}catch(e){}},0)},true);
+})();
+(function(){var css=document.createElement("style");css.textContent='body.aa #bigscene .tapq{display:none!important}';document.head.appendChild(css)})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
