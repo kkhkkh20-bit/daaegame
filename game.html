@@ -27015,9 +27015,11 @@ REI2("kitchen",{
  function lum(c){var A=rgb(c);return (.299*A[0]+.587*A[1]+.114*A[2])/255}
  function pal(c){var l=lum(c);return {F:c,l:l,
    D:mix(c,"#4A2A30",l>.86?.22:.3),        // 무늬·그림자
-   DD:mix(c,"#2B2430",.7),                 // 눈가 마스크
+   DD:mix(c,"#2B2430",.7),                 // 진한 무늬
+   MK:mix(c,"#2A3A6A",l>.8?.66:.6),        // 너구리 눈가 마스크 (검지 않은 남회색 — 도트에서 #5a6988)
    LT:mix(c,"#FFFFFF",.42),                // 밝은 털
    CR:l>.84?"#FFFFFF":mix(c,"#FFF6EA",.72),// 주둥이 크림
+   WT:l>.84?"#FFFFFF":mix(c,"#FFFFFF",l>.6?.55:.7),// 밝은 털 (너구리 눈썹·볼) — 털색과 밝기차를 줄여 도트 잉크선이 분홍으로 번지지 않게
    IN:mix(c,"#E8708A",.5)}}                // 귀 안쪽
 
  var K=1;
@@ -27027,76 +27029,89 @@ REI2("kitchen",{
  function OPEN(d,f,F){d=B(d);return F?P(d+' Z',f,NS)+P(d,null):P(d+' Z',f)}
 
  var HD={
-  spiky:'M24 50 Q24 30 50 30 Q76 30 76 50 Q78 56 84 62 Q78 64 76 66 Q80 70 74 72 Q66 82 50 82 Q34 82 26 72 Q20 70 24 66 Q22 64 16 62 Q22 56 24 50 Z',
-  tuft:'M23 52 Q23 28 50 28 Q77 28 77 52 Q80 58 81 63 Q77 63 76 66 Q72 81 50 82 Q28 81 24 66 Q23 63 19 63 Q20 58 23 52 Z',
+  spiky:'M24 50 Q24 30 50 30 Q76 30 76 50 Q78 56 85 61 Q79 63.4 77 65.4 Q82 69.6 75.4 72.4 Q66 82 50 82 Q34 82 24.6 72.4 Q18 69.6 23 65.4 Q21 63.4 15 61 Q22 56 24 50 Z',
+  tuft:'M23 53 Q23 28.6 50 28.6 Q77 28.6 77 53 Q80.6 58 82 63.4 Q77.6 63.6 76.4 66.4 Q72 81.6 50 82.4 Q28 81.6 23.6 66.4 Q22.4 63.6 18 63.4 Q19.4 58 23 53 Z',
   fox:'M24 50 Q24 29 50 29 Q76 29 76 50 Q79 57 87 63 Q80 65 78 68 Q81 72 74 74 Q65 82 50 82 Q35 82 26 74 Q19 72 22 68 Q20 65 13 63 Q21 57 24 50 Z',
   cat:'M24 50 Q24 29 50 29 Q76 29 76 50 Q78 57 83 62 Q77 64 76 67 Q71 81 50 82 Q29 81 24 67 Q23 64 17 62 Q22 57 24 50 Z',
   round:'M23 53 Q23 28 50 28 Q77 28 77 53 Q78 72 66 79 Q59 82.5 50 82.5 Q41 82.5 34 79 Q22 72 23 53 Z',
   owl:'M22 52 Q21 27 50 27 Q79 27 78 52 Q79 74 66 80 Q58 83 50 83 Q42 83 34 80 Q21 74 22 52 Z'
  };
  var AN={
-  raccoon:{hd:"spiky",nose:65,iris:"#7A4A2A",lid:"DD"},
-  flyingsq:{hd:"tuft",nose:64,iris:"#7A3E1E",teeth:1},
-  fox:{hd:"fox",nose:64,iris:"#9A5A12"},
-  cat:{hd:"cat",nose:62.5,iris:"#3E8A4E"},
-  rabbit:{hd:"round",nose:63,iris:"#8A3E5A",teeth:1},
-  bear:{hd:"round",nose:63,iris:"#6A3A1E"},
-  dog:{hd:"round",nose:63,iris:"#5A3A22",earFront:1},
-  squirrel:{hd:"tuft",nose:63.5,iris:"#6A3418",teeth:1},
-  panda:{hd:"round",nose:63.5,iris:"#6A4A3A",lid:"PD"},
-  owl:{hd:"owl",nose:68,iris:"#E8A21E",beak:1,lid:"LT"}
+  raccoon:{hd:"spiky",nose:62,ik:"#2E86C8",ia:"#3A8AD0",lid:"MK"},
+  flyingsq:{hd:"tuft",nose:63.4,ik:"#2E86C8",ia:"#5E4636",teeth:1,fringe:1},
+  fox:{hd:"fox",nose:63,ik:"#E8A030",ia:"#E8A030"},
+  cat:{hd:"cat",nose:62.5,ik:"#3E8A4E",ia:"#4E9A4A"},
+  rabbit:{hd:"round",nose:63,ik:"#8A3E6A",ia:"#7A4A8A",teeth:1,fringe:1},
+  bear:{hd:"round",nose:63,ik:"#6A3A1E",ia:"#5E4636"},
+  dog:{hd:"round",nose:63,ik:"#5A3A22",ia:"#5E4636",earFront:1},
+  squirrel:{hd:"tuft",nose:63.5,ik:"#7A3A18",ia:"#5E4636",teeth:1,fringe:1},
+  panda:{hd:"round",nose:63.5,ik:"#6A4A3A",ia:"#6A5A8A",lid:"PD"},
+  owl:{hd:"owl",nose:68,ik:"#E8A21E",ia:"#E8A21E",beak:1,lid:"LT"}
  };
 
+ function leafEar(x,y,ang,h,w,F,IN){var g=P('M'+(-w)+' 0 C'+r2(-w*1.35)+' '+r2(-h*.62)+' '+r2(-w*.62)+' '+(-h)+' 0 '+(-h)+' C'+r2(w*.62)+' '+(-h)+' '+r2(w*1.35)+' '+r2(-h*.62)+' '+w+' 0 Z',F);
+  if(IN)g+=P('M'+r2(-w*.5)+' '+r2(-h*.14)+' C'+r2(-w*.78)+' '+r2(-h*.56)+' '+r2(-w*.36)+' '+r2(-h*.8)+' 0 '+r2(-h*.8)+' C'+r2(w*.36)+' '+r2(-h*.8)+' '+r2(w*.78)+' '+r2(-h*.56)+' '+r2(w*.5)+' '+r2(-h*.14)+' Z',IN,NS);
+  return G('translate('+x+' '+y+') rotate('+ang+')',g)}
  function ears(a,p,hs){var g='',F=p.F,dx=hs?4.6:0,dy=hs?5:0;
-  if(a==="raccoon")g=P('M25 38 L18 10 L40 26 Z',F)+P('M75 38 L82 10 L60 26 Z',F)+P('M26 30 L22 17 L33 26 Z',p.DD,NS)+P('M74 30 L78 17 L67 26 Z',p.DD,NS);
+  if(a==="raccoon")g=P('M24 39 Q16 23 19.6 10.6 Q31 12.6 41 27 Z',F)+P('M76 39 Q84 23 80.4 10.6 Q69 12.6 59 27 Z',F)
+     +P('M26.6 31.4 Q22.4 22.4 23.4 15.6 Q30 17.6 35.4 25.6 Z',p.MK,NS)+P('M73.4 31.4 Q77.6 22.4 76.6 15.6 Q70 17.6 64.6 25.6 Z',p.MK,NS)
+     +L('M21.4 13.4 Q27 13.4 32 18 M78.6 13.4 Q73 13.4 68 18',p.WT,2);
   else if(a==="fox")g=P('M26 40 L17 5 L45 27 Z',F)+P('M74 40 L83 5 L55 27 Z',F)+P('M27.5 32 L21.5 13.5 L37 26.5 Z',p.CR,NS)+P('M72.5 32 L78.5 13.5 L63 26.5 Z',p.CR,NS)+P('M17 5 L19.6 15.5 L25.6 11.4 Z',p.DD,sk(2))+P('M83 5 L80.4 15.5 L74.4 11.4 Z',p.DD,sk(2));
   else if(a==="cat")g=P('M24 42 L20 11 L45 29 Z',F)+P('M76 42 L80 11 L55 29 Z',F)+P('M27 34 L24.6 19 L37 28.5 Z',p.IN,NS)+P('M73 34 L75.4 19 L63 28.5 Z',p.IN,NS);
   else if(a==="rabbit")g=E(33,17,7.4,15,F,s,-16)+E(67,17,7.4,15,F,s,16)+E(33.4,18.4,3.4,9.6,p.IN,NS,-16)+E(66.6,18.4,3.4,9.6,p.IN,NS,16);
-  else if(a==="bear")g=C(26-dx,33+dy,10,F)+C(74+dx,33+dy,10,F)+C(26.6-dx,33.6+dy,5,p.D,NS)+C(73.4+dx,33.6+dy,5,p.D,NS);
+  else if(a==="bear")g=C(26-dx,33+dy,10,F)+C(74+dx,33+dy,10,F)+C(26.6-dx,33.6+dy,5,p.IN,NS)+C(73.4+dx,33.6+dy,5,p.IN,NS);
   else if(a==="panda")g=C(26-dx,32+dy,10.5,PD)+C(74+dx,32+dy,10.5,PD);
   else if(a==="dog")g=P('M30 33 Q16 29 12 44 Q9 58 15 66 Q21 69 25 62 Q28 52 30 44 Z',p.D)+P('M70 33 Q84 29 88 44 Q91 58 85 66 Q79 69 75 62 Q72 52 70 44 Z',p.D)+L('M19 44 Q16 54 18 61 M81 44 Q84 54 82 61',mix(p.D,"#2B2430",.25),2.2);
   else if(a==="squirrel")g=P('M25 40 Q15 26 22 13 Q33 18 40 29 Z',F)+P('M75 40 Q85 26 78 13 Q67 18 60 29 Z',F)+P('M26 32 Q22 24 24 18 Q30 22 34 28 Z',p.IN,NS)+P('M74 32 Q78 24 76 18 Q70 22 66 28 Z',p.IN,NS)
      +P('M20.6 17 Q13 11 15 1.6 Q19 6.6 21.6 1 Q25 6 28 15 Z',p.D,sk(2.4))+P('M79.4 17 Q87 11 85 1.6 Q81 6.6 78.4 1 Q75 6 72 15 Z',p.D,sk(2.4));
   else if(a==="owl")g=P('M28 36 Q19 24 19 9 Q31 16 41 28 Z',F)+P('M72 36 Q81 24 81 9 Q69 16 59 28 Z',F)+L('M24 18 Q27 25 31 30 M76 18 Q73 25 69 30',p.D,2.4);
-  else g=E(25-dx,36+dy*.6,9,11,F,s,-18-dx*3)+E(75+dx,36+dy*.6,9,11,F,s,18+dx*3)+E(25.6-dx,37+dy*.6,4.4,6.2,p.IN,NS,-18-dx*3)+E(74.4+dx,37+dy*.6,4.4,6.2,p.IN,NS,18+dx*3); // flyingsq
+  else g=hs?leafEar(28.6,39,-52,20,9.4,F,p.IN)+leafEar(71.4,39,52,20,9.4,F,p.IN)   // flyingsq: 둥근 귀, 넓은 모자면 옆으로 삐죽
+        :leafEar(31,36,-22,20,9.4,F,p.IN)+leafEar(69,36,22,20,9.4,F,p.IN);
   return '<g class="ears">'+g+'</g>'}
+
+ function noseDrop(y,c,w){w=w||4.4;return P('M'+r2(50-w)+' '+y+' Q50 '+r2(y-1.8)+' '+r2(50+w)+' '+y+' Q'+r2(50+w*.86)+' '+r2(y+3.2)+' 50 '+r2(y+3.8)+' Q'+r2(50-w*.86)+' '+r2(y+3.2)+' '+r2(50-w)+' '+y+' Z',c,sk(1.6))+E(r2(50-w*.4),r2(y+.2),r2(w*.3),.7,WH,'opacity=".8"')}
+ function fringe(F,D){var H=mix(F,D,.3);return P('M36.4 31.6 Q36.8 39.4 41.6 41.2 Q41.6 37.4 44.4 35.6 Q45.4 41.6 50.4 42.8 Q50 38 53 36 Q55.2 41 60.6 40.4 Q63.6 39.8 64.2 36.6 Q61 37.4 60.6 31.4 Q50 28.6 36.4 31.6 Z',H,sk(2.2))
+   +L('M39.4 33.4 Q39.6 36.8 41.4 38.6 M47.4 34.6 Q48 38 49.8 39.8',mix(H,"#FFFFFF",.35),1.6,.9)}
 
  function head(a,p,adult){var A=AN[a],hd=HD[A.hd],g='',F=p.F;
   g+=P(hd,F);
   if(a==="raccoon"){
-   g+=P('M28 44 Q38 38 48 43 L52 43 Q62 38 72 44 Q70 48 62 47 Q55 47 50 49 Q45 47 38 47 Q30 48 28 44 Z',p.LT,NS);
-   g+=P('M22 52 Q28 46 38 47 Q46 48 50 52 Q54 48 62 47 Q72 46 78 52 Q78 62 66 63 Q57 63 52 58 L48 58 Q43 63 34 63 Q22 62 22 52 Z',p.DD,NS);
-   g+=P('M39.5 69 Q40 61 50 61 Q60 61 60.5 69 Q59 77.5 50 79 Q41 77.5 39.5 69 Z',p.CR,sk(2.2));
-   g+='<path d="M46 63.4 Q50 61.8 54 63.4 Q53.6 66.4 50 67 Q46.4 66.4 46 63.4 Z" fill="'+O+'"/>'+E(48.4,63.5,1.2,.7,WH,'opacity=".75"')+L('M50 67 V69.4',O,2);
+   g+=P('M15 61 Q22 63 28 66.2 Q36 68.8 44 65.6 Q47 63.6 50 63.6 Q53 63.6 56 65.6 Q64 68.8 72 66.2 Q78 63 85 61 Q79 63.4 77 65.4 Q82 69.6 75.4 72.4 Q66 82 50 82 Q34 82 24.6 72.4 Q18 69.6 23 65.4 Q21 63.4 15 61 Z',p.WT,NS);
+   g+=P('M46.6 30.6 Q50 29.6 53.4 30.6 L52.2 46 Q50 48.4 47.8 46 Z',mix(p.F,p.MK,.55),NS);
+   g+=P('M21.8 54.6 Q22.6 45 33.6 44.4 Q44.2 44 48.4 50 L51.6 50 Q55.8 44 66.4 44.4 Q77.4 45 78.2 54.6 Q78.4 63.4 69.4 64.8 Q59.8 65.6 54.8 59.4 L45.2 59.4 Q40.2 65.6 30.6 64.8 Q21.6 63.4 21.8 54.6 Z',p.MK,NS);
+   g+=L('M18.6 62.4 l4.4 1.2 M81.4 62.4 l-4.4 1.2 M22 69.6 l3.4 -.4 M78 69.6 l-3.4 -.4',mix(p.WT,"#8A8090",.45),1.6);
+   g+=P(hd,null);
+   g+=noseDrop(60.6,O,4.6)+L('M50 64.4 V66.6',O,1.8);
   }else if(a==="flyingsq"||a==="squirrel"){
    if(a==="squirrel")g+=E(33,66,9.5,7.5,p.CR,NS)+E(67,66,9.5,7.5,p.CR,NS);
-   g+=P('M33 66 Q36 59.5 50 60 Q64 59.5 67 66 Q66 79 50 80.5 Q34 79 33 66 Z',p.CR,NS);
-   g+=L('M42 32 Q46 37 50 36 Q54 37 58 32',p.D,3);
+   g+=P('M18 63.4 Q26.6 60.4 35 63.4 Q43.4 67 50 63 Q56.6 67 65 63.4 Q73.4 60.4 82 63.4 Q77.6 63.6 76.4 66.4 Q72 81.6 50 82.4 Q28 81.6 23.6 66.4 Q22.4 63.6 18 63.4 Z',p.CR,NS);
+   g+=E(38,44.4,6,2.4,p.LT,NS,-6)+E(62,44.4,6,2.4,p.LT,NS,6);
    if(a==="squirrel")g+=L('M30 47 Q26 52 27 57 M70 47 Q74 52 73 57',p.D,2.6,.8);
+   g+=L('M20.4 63.6 l3.6 .8 M79.6 63.6 l-3.6 .8',p.D,1.6,.8);
    g+=P(hd,null);
-   g+='<path d="M46.6 63.2 Q50 61.6 53.4 63.2 Q52.6 65.8 50 66.2 Q47.4 65.8 46.6 63.2 Z" fill="#5A3A2A" stroke="'+O+'" stroke-width="1.4"/>'+E(48.8,63.3,1,.6,WH,'opacity=".8"');
+   g+=fringe(F,p.D);
+   g+=noseDrop(62.4,"#6E3428",3.6)+L('M50 66.2 V67.8',O,1.6);
   }else if(a==="fox"){
-   g+=P('M50 69 Q42 60 30 63 Q22 65 13 63 Q21 57 24 50 L24 52 Q19 64 22 68 Q19 72 26 74 Q35 82 50 82 Q65 82 74 74 Q81 72 78 68 Q81 64 76 52 L76 50 Q79 57 87 63 Q78 65 70 63 Q58 60 50 69 Z',p.CR,NS);
    g+=P('M50 69 Q42 60.5 30 63 Q21 65 13 63 Q19 72 26 74 Q35 82 50 82 Q65 82 74 74 Q81 72 87 63 Q79 65 70 63 Q58 60.5 50 69 Z',p.CR,NS);
+   g+=E(37.6,44.4,5.6,2.2,p.CR,NS,-8)+E(62.4,44.4,5.6,2.2,p.CR,NS,8);
    g+=L('M44 33 Q50 38 56 33',p.D,3);
    g+=P(hd,null);
-   g+=P('M46.4 62.6 Q50 61 53.6 62.6 Q53 65.6 50 66.2 Q47 65.6 46.4 62.6 Z',O,sk(1.2))+E(48.6,62.8,1.1,.6,WH,'opacity=".8"');
+   g+=noseDrop(61.6,O,3.8);
   }else if(a==="cat"){
    g+=L('M44 31.5 L45.2 36.5 M50 30.6 V37 M56 31.5 L54.8 36.5',p.D,2.8);
    g+=E(50,68.5,11.5,8.6,p.CR,NS);
    g+=P(hd,null);
-   g+=P('M46.6 61.6 L53.4 61.6 L50 65 Z',"#E86A84",sk(1.6));
+   g+=P('M46.6 61.6 L53.4 61.6 L50 65 Z',"#E86A84",sk(1.6))+L('M50 65 V66.8',O,1.6);
    g+=L('M15 63 L27 65 M16 70 L27 68.6 M85 63 L73 65 M84 70 L73 68.6',O,1.8);
   }else if(a==="rabbit"){
    g+=E(44.6,68.4,6.6,5.6,p.CR,NS)+E(55.4,68.4,6.6,5.6,p.CR,NS)+E(50,73,7,5,p.CR,NS);
-   g+=L('M45 31.5 Q50 35 55 31.5',p.D,2.6,.8);
-   g+=E(50,63.2,3.6,2.6,"#E86A84",sk(1.6));
+   g+=fringe(F,p.D);
+   g+=E(50,63.2,3.6,2.6,"#E86A84",sk(1.6))+L('M50 65.8 V67.6',O,1.6);
   }else if(a==="bear"||a==="dog"||a==="panda"){
    if(a==="panda"){g+=E(37,54.5,9.5,11.5,PD,NS,32)+E(63,54.5,9.5,11.5,PD,NS,-32)}
    if(a==="dog")g+=E(63.5,51.5,10.5,10,p.D,NS,12);
-   g+=E(50,69,a==="dog"?13:12,a==="dog"?10:9.5,p.CR,sk(2.2));
-   g+=E(50,63.6,a==="panda"?4.4:5.2,3.4,O,NS)+E(48.4,62.8,1.4,.8,WH,'opacity=".75"');
-   g+=L('M50 66.5 V69',O,2);
+   g+=E(50,69.4,a==="dog"?12.6:11.6,a==="dog"?9.6:9,p.CR,NS);
+   g+=noseDrop(62,O,a==="panda"?4:4.6)+L('M50 65.8 V68',O,1.8);
   }else if(a==="owl"){
    g+=P('M50 47 Q44 39 36 40 Q24 41 23.5 54 Q24 67 37 68 Q45 68 50 62 Q55 68 63 68 Q76 67 76.5 54 Q76 41 64 40 Q56 39 50 47 Z',p.LT,NS);
    g+=L('M38 77 l3.4 2.4 l3.4 -2.4 M55.2 77 l3.4 2.4 l3.4 -2.4',p.D,2.2);
@@ -27105,95 +27120,113 @@ REI2("kitchen",{
   }
   return g}
 
- function irLite(ir,ad){return ad?mix(ir,"#FFD27A",.55):mix(mix(ir,"#5A3418",.35),"#FFC060",.8)}
- function irAd(ir){return ir==="#E8A21E"?ir:"#2D6E8C"}
- function eyeOpen(cx,y,mood,o){var Lf=cx<50,s=Lf?-1:1,g='',ad=o.ad,ir=ad?irAd(o.ir):o.ir,IL=irLite(ir,ad);
-  var sad=has(mood,"sad")||has(mood,"cry"),nerv=has(mood,"nervous")||has(mood,"confused"),
-      ang=has(mood,"angry"),smug=has(mood,"smug"),shy=has(mood,"shy");
-  var pdx=nerv?-s*1.2:(smug?s*1.6:0),pdy=(sad||shy)?1:0,prx=ad?3.1:3.5,pry=ad?3.9:4.7;
-  if(nerv){prx=ad?2.2:2.5;pry=ad?2.8:3.2}
-  if(ang){prx-=.5;pry-=.8}
-  var outline,lid,top;
-  if(ad){var xi=cx-s*7.8,yi=y+.8,xo=cx+s*8.4,yo=y-1.4;
-   top='M'+r2(xi)+' '+r2(yi)+' C'+r2(cx-s*5.4)+' '+(y-6.8)+' '+r2(cx+s*4.6)+' '+(y-7.4)+' '+r2(xo)+' '+r2(yo);
-   outline=top+' C'+r2(cx+s*7.4)+' '+(y+5.4)+' '+r2(cx-s*3.6)+' '+(y+7.8)+' '+r2(xi)+' '+r2(yi)+' Z';
-   lid=L(top,O,3.8)+L('M'+r2(xo)+' '+r2(yo)+' l'+r2(s*1.6)+' -.6',O,2.8);
-  }else{
-   outline='M'+(cx-7.2)+' '+y+' A7.2 8.6 0 1 0 '+(cx+7.2)+' '+y+' A7.2 8.6 0 1 0 '+(cx-7.2)+' '+y+' Z';
-   top='M'+(cx-8.4)+' '+(y-2.2)+' Q'+cx+' '+(y-15)+' '+(cx+8.4)+' '+(y-2.2);
-   lid=L(top,O,3.8)+L('M'+r2(cx+s*7.6)+' '+(y-4.4)+' l'+r2(s*3.4)+' -2.4 M'+r2(cx+s*5.4)+' '+(y-7.4)+' l'+r2(s*2.2)+' -2.8',O,2.4);
-  }
-  g+=P(outline,ir,sk(2.4));
-  var cw=ad?4.8:5.2,cy0=ad?y+1.6:y+2.4,cy1=ad?y+7.2:y+9.4;
-  g+=P('M'+r2(cx-cw)+' '+r2(cy0)+' Q'+cx+' '+r2(cy1)+' '+r2(cx+cw)+' '+r2(cy0)+' Q'+cx+' '+r2(cy0+2.8)+' '+r2(cx-cw)+' '+r2(cy0)+' Z',IL,NS);
-  g+=E(cx+pdx,r2(y+(ad?.4:.8)+pdy),prx,pry,O,NS);
-  var hx=cx+pdx+(ad?2:2.3),hy=r2(y+(ad?-1.8:-2.6)+pdy);
-  g+=C(hx,hy,nerv?1.5:(ad?2.1:2.6),WH,NS);
-  if(!nerv)g+=C(cx+pdx-(ad?2:2.4),r2(y+(ad?3:3.8)+pdy),ad?1:1.3,WH,NS);
-  if(sad)g+=C(cx+pdx+1.4,r2(y+4.4),1.1,WH,NS);
-  g+=lid;
+ function moodOf(mood){return {sad:has(mood,"sad")||has(mood,"cry"),nerv:has(mood,"nervous"),conf:has(mood,"confused"),
+   ang:has(mood,"angry"),smug:has(mood,"smug"),shy:has(mood,"shy"),think:has(mood,"think")}}
+ function lidCut(cx,y,s,yin,yout,lid,top,sad,ang){var xA=cx-s*10,xB=cx+s*11;
+  return P('M'+r2(xA)+' '+r2(yin)+' L'+r2(xB)+' '+r2(yout)+' L'+r2(xB)+' '+r2(y-top)+' L'+r2(xA)+' '+r2(y-top)+' Z',lid,NS)
+   +L('M'+r2(cx-s*8.2)+' '+r2(yin+.3)+' L'+r2(cx+s*8.8)+' '+r2(yout),O,3.6)
+   +(ang?'':L('M'+r2(cx+s*8.8)+' '+r2(yout)+' l'+r2(s*2.2)+' '+(sad?1.4:-1),O,2.4))}
+ function eyeKidOpen(cx,y,mood,o){var s=cx<50?-1:1,g='',ir=o.ir,M=moodOf(mood);
+  var IL=mix(ir,"#FFC870",.7),ID=mix(ir,"#1D2B53",.3),rx=7.4,ry=8.8;
+  var pdx=M.nerv?-s*1.3:(M.smug?s*1.5:(M.think?1.6:(M.conf?-1:0))),pdy=(M.sad||M.shy)?1:(M.think?-1.2:0);
+  var prx=4,pry=5;if(M.nerv){prx=2.6;pry=3.3}if(M.ang){prx=3.3;pry=4}
+  g+=E(cx,y,rx,ry,ir,sk(2.6));
+  g+=P('M'+r2(cx-rx+.9)+' '+r2(y-2.6)+' Q'+cx+' '+r2(y-ry-2.6)+' '+r2(cx+rx-.9)+' '+r2(y-2.6)+' Q'+cx+' '+r2(y-5.8)+' '+r2(cx-rx+.9)+' '+r2(y-2.6)+' Z',ID,NS);
+  g+=P('M'+r2(cx-5.4)+' '+r2(y+2.6)+' Q'+cx+' '+r2(y+10.4)+' '+r2(cx+5.4)+' '+r2(y+2.6)+' Q'+cx+' '+r2(y+5.6)+' '+r2(cx-5.4)+' '+r2(y+2.6)+' Z',IL,NS);
+  g+=E(cx+pdx,r2(y+.9+pdy),prx,pry,O,NS);
+  var hx=cx+pdx+2.5,hy=r2(y-2.8+pdy);
+  g+=C(hx,hy,M.nerv?1.7:2.8,WH,NS);
+  if(!M.nerv)g+=C(r2(cx+pdx-2.6),r2(y+3.8+pdy),1.3,WH,NS)+C(r2(cx+pdx+3.4),r2(y+3.2+pdy),.8,WH,NS);
+  if(M.sad)g+=C(r2(cx+pdx+.6),r2(y+5),1.1,WH,NS);
+  g+=L('M'+r2(cx-7.8)+' '+r2(y-2.4)+' Q'+cx+' '+r2(y-13.2)+' '+r2(cx+7.8)+' '+r2(y-2.4),O,3.2);
+  g+=L('M'+r2(cx+s*7.2)+' '+r2(y-4)+' l'+r2(s*3.4)+' -1.8 M'+r2(cx+s*5)+' '+r2(y-7.2)+' l'+r2(s*2)+' -2.6',O,2.2);
   var yin=null,yout=null;
-  if(sad){yin=y-(ad?5.6:7);yout=y-(ad?2.2:3.2)}
-  else if(ang){yin=y-(ad?.8:1.6);yout=y-(ad?5.4:6.6)}
-  else if(smug){yin=y-(ad?1.2:1.6);yout=y-(ad?1.6:2.2)}
-  if(yin!==null){var xA=cx-s*9.6,xB=cx+s*10.6;
-   g+=P('M'+r2(xA)+' '+r2(yin)+' L'+r2(xB)+' '+r2(yout)+' L'+r2(xB)+' '+(y-13.6)+' L'+r2(xA)+' '+(y-13.6)+' Z',o.lid,NS);
-   g+=L('M'+r2(cx-s*8.4)+' '+r2(yin+.2)+' L'+r2(cx+s*9)+' '+r2(yout),O,3.6);
-   if(!ang)g+=L('M'+r2(cx+s*9)+' '+r2(yout)+' l'+r2(s*2.4)+' '+(sad?1.6:-1.2),O,2.4)}
+  if(M.sad){yin=y-7.4;yout=y-3}else if(M.ang){yin=y-1.6;yout=y-6.8}else if(M.smug){yin=y-2;yout=y-2.6}else if(M.shy){yin=y-3.6;yout=y-3.6}
+  else if(M.conf&&s>0){yin=y-3;yout=y-3.4}
+  if(yin!==null)g+=lidCut(cx,y,s,yin,yout,o.lid,11,M.sad,M.ang);
   return g}
- function eyeShut(cx,y,ad){var Lf=cx<50,s=Lf?-1:1,w=ad?7.8:7.6;
-  return L('M'+(cx-w)+' '+(y+2.4)+' Q'+cx+' '+(y-(ad?6.6:8.6))+' '+(cx+w)+' '+(y+2.4),O,3.8)+L('M'+r2(cx+s*w)+' '+(y+2.4)+' l'+r2(s*2.6)+' -.6',O,2.6)}
- function eyeShock(cx,y,ir,ad){var r=ad?6.4:6.8;if(ad)ir=irAd(ir);
-  return C(cx,y,r,ir,sk(2.6))+C(cx,y+.4,ad?1.9:2.1,O,NS)+C(cx+2.4,y-2.4,1.4,WH,NS)}
- function eyeKid(cx,mood,ir,lidc){var y=54;
-  if(has(mood,"happy"))return eyeShut(cx,y+1,0);
+ function eyeAdOpen(cx,y,mood,o){var s=cx<50?-1:1,g='',ir=o.ir,M=moodOf(mood);
+  var IL=mix(ir,"#FFE0A0",.55),ID=mix(ir,"#2A1E30",.45);
+  var xi=cx-s*8.6,yi=y+1.4,xo=cx+s*9.8,yo=y-.4;
+  var top='M'+r2(xi)+' '+r2(yi)+' C'+r2(cx-s*5.6)+' '+r2(y-7.9)+' '+r2(cx+s*5.2)+' '+r2(y-8.5)+' '+r2(xo)+' '+r2(yo);
+  var bot=' C'+r2(cx+s*7.6)+' '+r2(y+7.2)+' '+r2(cx-s*4)+' '+r2(y+8.6)+' '+r2(xi)+' '+r2(yi)+' Z';
+  var pdx=M.nerv?-s*1.2:(M.smug?s*1.3:(M.think?1.3:(M.conf?-.8:0))),pdy=(M.sad||M.shy)?.8:(M.think?-.9:0),R=M.nerv?4:5.9;
+  var ix=r2(cx+pdx+s*.5),iy=r2(y+1.1+pdy);
+  g+=P(top+bot,WH,NS);
+  g+=C(ix,iy,R,ir,NS);
+  g+=P('M'+r2(ix-R*.86)+' '+r2(iy-R*.5)+' Q'+ix+' '+r2(iy-R*1.25)+' '+r2(ix+R*.86)+' '+r2(iy-R*.5)+' Q'+ix+' '+r2(iy-R*.8)+' '+r2(ix-R*.86)+' '+r2(iy-R*.5)+' Z',ID,NS);
+  g+=P('M'+r2(ix-R*.72)+' '+r2(iy+R*.42)+' Q'+ix+' '+r2(iy+R*1.08)+' '+r2(ix+R*.72)+' '+r2(iy+R*.42)+' Q'+ix+' '+r2(iy+R*.7)+' '+r2(ix-R*.72)+' '+r2(iy+R*.42)+' Z',IL,NS);
+  g+=E(ix,r2(iy+.2),M.nerv?1.6:2.2,M.nerv?2.1:2.9,O,NS);
+  g+=C(r2(ix+2),r2(iy-2),M.nerv?1.2:1.9,WH,NS);
+  if(!M.nerv)g+=C(r2(ix-1.9),r2(iy+2.1),.9,WH,NS);
+  if(M.sad)g+=C(r2(ix+.8),r2(iy+3),.9,WH,NS);
+  g+=P(top+bot,null,sk(2));
+  g+=L(top,O,3.8)+L('M'+r2(xo-s*.4)+' '+r2(yo)+' l'+r2(s*2.6)+' -1.2',O,2.6)+L('M'+r2(cx+s*5.4)+' '+r2(y+4.6)+' l'+r2(s*1.6)+' .8',O,1.6,.8);
+  var yin=null,yout=null;
+  if(M.sad){yin=y-5.4;yout=y-1.6}else if(M.ang){yin=y-.8;yout=y-5.6}else if(M.smug){yin=y-1.6;yout=y-2}else if(M.shy){yin=y-2.6;yout=y-2.6}
+  else if(M.conf&&s>0){yin=y-1.8;yout=y-2.2}
+  if(yin!==null)g+=lidCut(cx,y,s,yin,yout,o.lid,7.6,M.sad,M.ang);
+  return g}
+ function eyeShut(cx,y,ad,dark){var s=cx<50?-1:1,w=ad?7.8:7.6;
+  var d='M'+r2(cx-w)+' '+r2(y+2.4)+' Q'+cx+' '+r2(y-(ad?6.6:8.6))+' '+r2(cx+w)+' '+r2(y+2.4),t='M'+r2(cx+s*w)+' '+r2(y+2.4)+' l'+r2(s*2.6)+' -.6';
+  return (dark?L(d,dark,6.4)+L(t,dark,5):'')+L(d,O,3.8)+L(t,O,2.6)}
+ function eyeShock(cx,y,ir,ad){
+  if(ad)return C(cx,y,6.6,WH,sk(2.6))+C(cx,y+.4,2.9,ir,NS)+C(cx,y+.4,1.5,O,NS)+C(cx+1.6,y-1.2,1.1,WH,NS);
+  return C(cx,y,6.9,ir,sk(2.6))+C(cx,y+.4,2.1,O,NS)+C(cx+2.4,y-2.4,1.5,WH,NS)}
+ function eyeKid(cx,mood,ir,lidc,dark){var y=54;
+  if(has(mood,"happy"))return eyeShut(cx,y+1,0,dark);
   if(has(mood,"shock"))return eyeShock(cx,y,ir,0);
-  return eyeOpen(cx,y,mood,{ad:0,ir:ir,lid:lidc})}
- function eyeAdult(cx,mood,ir,lidc){var y=55;
-  if(has(mood,"happy"))return eyeShut(cx,y+.6,1);
+  return eyeKidOpen(cx,y,mood,{ir:ir,lid:lidc})}
+ function eyeAdult(cx,mood,ir,lidc,dark){var y=55;
+  if(has(mood,"happy"))return eyeShut(cx,y+.6,1,dark);
   if(has(mood,"shock"))return eyeShock(cx,y,ir,1);
-  return eyeOpen(cx,y,mood,{ad:1,ir:ir,lid:lidc})}
- function browsKid(mood){var c=O,w=3.6;
-  if(has(mood,"angry"))return L('M29 40 L45 45.5 M71 40 L55 45.5',c,w+.4);
-  if(has(mood,"sad")||has(mood,"cry"))return L('M31 43 L45 38.5 M69 43 L55 38.5',c,w);
+  return eyeAdOpen(cx,y,mood,{ir:ir,lid:lidc})}
+ function browsKid(mood){var c=O,w=3.3;
+  if(has(mood,"angry"))return L('M29.6 40 L45 45.2 M70.4 40 L55 45.2',c,w+.4);
+  if(has(mood,"sad")||has(mood,"cry"))return L('M31 42.6 L45 38.2 M69 42.6 L55 38.2',c,w);
   if(has(mood,"nervous"))return L('M31 42 Q38 37 45 39 M69 42 Q62 37 55 39',c,w);
   if(has(mood,"shock"))return L('M31 37.6 Q38 32.6 45 35.6 M55 35.6 Q62 32.6 69 37.6',c,w);
   if(has(mood,"confused"))return L('M31 39 Q38 35 45 38 M55 42.6 L69 41.6',c,w);
+  if(has(mood,"think"))return L('M31 41.6 Q38 39.6 45 41 M55 39.4 Q62 34.6 69 37.6',c,w);
   if(has(mood,"happy"))return L('M31 41.6 Q38 37.6 45 40.6 M55 40.6 Q62 37.6 69 41.6',c,w);
   if(has(mood,"smug"))return L('M31 42.6 L45 42.6 M55 40 Q62 35 69 38.5',c,w);
   if(has(mood,"shy"))return L('M31 42 Q38 40 45 42 M55 42 Q62 40 69 42',c,w);
-  return L('M31 41.6 Q38 38.6 45 40.8 M55 40 Q62 35 69 38.4',c,w)}
+  return L('M31.4 41.4 Q38 37.8 45 40 M55 40 Q62 37.8 68.6 41.4',c,w)}
  function browsAdult(mood){var c=O,w=3.4;
   if(has(mood,"angry"))return L('M30 41 L46 46.4 M70 41 L54 46.4',c,w+.4);
   if(has(mood,"sad")||has(mood,"cry"))return L('M31 44.4 Q38 43 45.4 39.4 M69 44.4 Q62 43 54.6 39.4',c,w);
   if(has(mood,"nervous"))return L('M31 43.6 Q38 39.8 45.4 39.8 M69 43.6 Q62 39.8 54.6 39.8',c,w);
   if(has(mood,"shock"))return L('M31 39 Q37.6 34.4 45 37.2 M55 37.2 Q62.4 34.4 69 39',c,w);
   if(has(mood,"confused"))return L('M31 40.6 Q37.6 36 45 38.6 M55 43.4 L69.4 42.6',c,w);
+  if(has(mood,"think"))return L('M31 43.4 Q38 41.6 45.4 42.6 M54.6 41.6 Q62 36.4 69.6 39.8',c,w);
   if(has(mood,"happy"))return L('M31 42.4 Q37.6 38 45 40.4 M55 40.4 Q62.4 38 69 42.4',c,w);
   if(has(mood,"smug"))return L('M31 43.4 L45 43.4 M55 41 Q62.4 35.6 69.6 39.6',c,w);
   if(has(mood,"shy"))return L('M31.4 43.4 Q38 41 45 42.6 M68.6 43.4 Q62 41 55 42.6',c,w);
-  return L('M31.4 43.8 Q37.4 39.4 45.2 41.8 M68.6 43.8 Q62.6 39.4 54.8 41.8',c,w+.3)}
+  return L('M31.6 43.4 Q37.4 40.6 45.4 41.4 M68.4 43.4 Q62.6 40.6 54.6 41.4',c,w+.2)}
  function teeth(x,y){return '<path d="M'+(x-3.4)+' '+y+' L'+(x+3.4)+' '+y+' L'+(x+3.2)+' '+(y+4)+' L'+(x-3.2)+' '+(y+4)+' Z" fill="'+WH+'" stroke="'+O+'" stroke-width="1.6" stroke-linejoin="round"/>'+L('M'+x+' '+y+' V'+(y+4),O,1.2)}
+ function teeth2(x,y){return '<rect x="'+r2(x-2.9)+'" y="'+y+'" width="2.9" height="3.6" rx=".6" fill="'+WH+'" stroke="'+O+'" stroke-width="1.3"/><rect x="'+x+'" y="'+y+'" width="2.9" height="3.6" rx=".6" fill="'+WH+'" stroke="'+O+'" stroke-width="1.3"/>'}
  function mouthKid(mood,T){var ms='stroke="'+O+'" stroke-width="2.6" stroke-linejoin="round"';
-  if(has(mood,"happy"))return P('M40 68 Q50 67 60 68 Q59 80 50 80 Q41 80 40 68 Z',MOUTH,ms)+'<path d="M45 76.5 Q50 74 55 76.5 Q53 79.6 50 79.6 Q47 79.6 45 76.5 Z" fill="'+TONG+'"/>'+(T?teeth(50,68.3):'');
-  if(has(mood,"shock"))return E(50,73,4.6,5.4,MOUTH,sk(2.6))+(T?teeth(50,68.4):'');
-  if(has(mood,"sad")||has(mood,"cry"))return L('M43 74 Q50 68.5 57 74',O,2.8)+(T?teeth(50,70.8):'');
-  if(has(mood,"nervous"))return L('M42 72 Q44.7 69.5 47.4 72 Q50 74.5 52.6 72 Q55.3 69.5 58 72',O,2.6);
-  if(has(mood,"angry"))return P('M42 70 Q50 67.6 58 70 Q57 75 50 75 Q43 75 42 70 Z',MOUTH,ms)+(T?teeth(50,68.6):L('M45 70 L55 70',WH,1.6));
-  if(has(mood,"confused"))return L('M43 72 Q46.5 69.5 50 72 Q53.5 74.5 57 71',O,2.6);
-  if(has(mood,"smug"))return L('M43 70.5 Q51 74 59 67',O,2.8)+(T?teeth(50,71.4):'');
-  if(has(mood,"shy"))return L('M45 71 Q50 74 55 71',O,2.6);
-  return P('M41 68.6 Q50 70 60 66.4 Q58.5 76.5 50 77 Q42.5 76.5 41 68.6 Z',MOUTH,ms)+'<path d="M45 74.4 Q50 72.6 55.6 73.6 Q53.6 76.4 50 76.6 Q46.6 76.4 45 74.4 Z" fill="'+TONG+'"/>'+(T?teeth(49.6,68.9):'')}
+  if(has(mood,"happy"))return P('M42.8 68 Q50 69.6 57.2 68 Q56.6 77.6 50 77.8 Q43.4 77.6 42.8 68 Z',MOUTH,ms)+'<path d="M45.6 74.8 Q50 72.4 54.4 74.8 Q52.8 77.4 50 77.4 Q47.2 77.4 45.6 74.8 Z" fill="'+TONG+'"/>'+(T?teeth2(50,68.6):'');
+  if(has(mood,"shock"))return E(50,73,4.4,5.2,MOUTH,sk(2.6))+(T?teeth2(50,68.2):'');
+  if(has(mood,"sad")||has(mood,"cry"))return L('M43.6 74.4 Q50 68.8 56.4 74.4',O,2.7)+(T?teeth2(50,70.8):'');
+  if(has(mood,"nervous"))return L('M42.4 72 Q45 69.4 47.6 72 Q50 74.6 52.4 72 Q55 69.4 57.6 72',O,2.5);
+  if(has(mood,"angry"))return P('M43.4 69.8 Q50 67.8 56.6 69.8 Q55.6 74.8 50 74.8 Q44.4 74.8 43.4 69.8 Z',MOUTH,ms)+(T?teeth2(50,69.2):L('M45.6 70.2 L54.4 70.2',WH,1.6));
+  if(has(mood,"confused"))return L('M43.4 72 Q46.7 69.6 50 72 Q53.3 74.4 56.6 71.2',O,2.5);
+  if(has(mood,"smug"))return L('M43.6 70 Q51 73.6 58 67.4',O,2.7)+(T?teeth2(50,71):'');
+  if(has(mood,"shy"))return L('M46 70.4 Q50 73.2 54 70.4',O,2.5);
+  if(has(mood,"think"))return L('M46 71.4 Q50.6 70.2 55 71.8',O,2.5);
+  return P('M43.8 68.2 Q50 69.8 56.2 68 Q55.4 76 50 76.2 Q44.6 76 43.8 68.2 Z',MOUTH,ms)+'<path d="M46.2 73.8 Q50 71.8 53.8 73.6 Q52.6 75.6 50 75.6 Q47.4 75.6 46.2 73.8 Z" fill="'+TONG+'"/>'+(T?teeth2(50,68.7):'')}
  function mouthAdult(mood){var ms=sk(2.6);
-  if(has(mood,"happy"))return P('M42.4 68.6 Q50 70.4 57.6 68.4 Q56.4 77.2 50 77.2 Q43.6 77.2 42.4 68.6 Z',MOUTH,ms)+P('M44 69.6 Q50 71 56 69.4 L55.4 71.6 Q50 72.8 44.6 71.8 Z',WH,NS)+'<path d="M46 75.2 Q50 73.4 54 75.2 Q52.6 76.8 50 76.8 Q47.4 76.8 46 75.2 Z" fill="'+TONG+'"/>';
-  if(has(mood,"shock"))return E(50,73,3.8,4.6,MOUTH,sk(2.4));
-  if(has(mood,"sad")||has(mood,"cry"))return L('M44.4 73.4 Q50 69 55.6 73.4',O,2.8);
-  if(has(mood,"nervous"))return L('M42.6 72 Q45 69.6 47.4 72 Q49.8 74.4 52.2 72 Q54.6 69.6 57 72',O,2.6);
-  if(has(mood,"angry"))return P('M43 70.6 Q50 68.4 57 70.6 Q56 74.6 50 74.6 Q44 74.6 43 70.6 Z',MOUTH,ms)+L('M45.4 71 L54.6 71',WH,1.8);
-  if(has(mood,"confused"))return L('M44 72 Q47 70 50 72 Q53 74 56 71',O,2.6);
-  if(has(mood,"smug"))return L('M44 71 Q51 73.6 58 67.4',O,2.8)+L('M58 67.4 l1.2 2',O,2);
-  if(has(mood,"shy"))return L('M45.6 71 Q50 73.6 54.4 71',O,2.6);
-  return L('M43.4 69.6 Q50 75 57 69',O,2.8)+L('M42.6 68.4 l1.2 1.6 M57.6 67.8 l-.8 1.6',O,2)}
+  if(has(mood,"happy"))return P('M43.4 68.4 Q50 70 56.6 68.2 Q55.6 76.6 50 76.6 Q44.4 76.6 43.4 68.4 Z',MOUTH,ms)+P('M45 69.4 Q50 70.8 55 69.2 L54.4 71.2 Q50 72.2 45.6 71.4 Z',WH,NS)+'<path d="M46.4 74.8 Q50 73 53.6 74.8 Q52.4 76.2 50 76.2 Q47.6 76.2 46.4 74.8 Z" fill="'+TONG+'"/>';
+  if(has(mood,"shock"))return E(50,72.6,3.6,4.4,MOUTH,sk(2.4));
+  if(has(mood,"sad")||has(mood,"cry"))return L('M44.6 73 Q50 68.8 55.4 73',O,2.7);
+  if(has(mood,"nervous"))return L('M43 71.6 Q45.4 69.2 47.8 71.6 Q50.2 74 52.6 71.6 Q55 69.2 57.4 71.6',O,2.5);
+  if(has(mood,"angry"))return P('M43.6 70.2 Q50 68 56.4 70.2 Q55.4 74.2 50 74.2 Q44.6 74.2 43.6 70.2 Z',MOUTH,ms)+L('M45.8 70.6 L54.2 70.6',WH,1.8);
+  if(has(mood,"confused"))return L('M44.4 71.6 Q47.2 69.6 50 71.6 Q52.8 73.6 55.6 70.8',O,2.5);
+  if(has(mood,"smug"))return L('M44.2 69.6 Q47 72.4 50 69 Q53.6 72.4 57.6 67.4',O,2.5);
+  if(has(mood,"shy"))return L('M45.6 70.6 Q50 73.2 54.4 70.6',O,2.5);
+  if(has(mood,"think"))return L('M45.4 71 Q50 70 54.6 71.6',O,2.5);
+  return L('M44.2 68.6 Q47 71.6 50 68.4 Q53.2 71.6 56.6 67.6',O,2.5)}
  function beak(mood){var BK="#F2A541",o=has(mood,"happy")||has(mood,"shock")||has(mood,"angry");
   var g='';
   if(o)g+=has(mood,"shock")?E(50,69,4,5,MOUTH,sk(2.2)):P('M44.5 64 Q50 77 55.5 64 Z',MOUTH,sk(2.2));
@@ -27204,11 +27237,11 @@ REI2("kitchen",{
   return g}
 
  var HAT={
-  "dhat":function(){var CK="#C9A06A",CK2="#8C6A40";
+  "dhat":function(){var CK="#C28A5E",CK2="#8E6A48";
    return P('M25 35 Q24 12 50 11 Q76 12 75 35 Z',CK)
     +L('M37 13.5 Q33.5 23 34 34 M50 11.5 V34 M63 13.5 Q66.5 23 66 34 M27 22 Q50 17.6 73 22 M25.6 29 Q50 25 74.4 29',CK2,2,.85)
     +P('M24 32 Q50 27 76 32 L76.6 37 Q50 33 23.4 37 Z',CK2,sk(2.4))
-    +P('M34 35 Q50 31.6 66 35 Q63 41.6 50 41.6 Q37 41.6 34 35 Z',"#A67C48",sk(2.6))
+    +P('M35 35 Q50 31.8 65 35 Q62.4 40 50 40 Q37.6 40 35 35 Z',"#A67C48",sk(2.6))
     +L('M44 10.4 Q47 5 50 9 Q53 5 56 10.4',O,2.4)+C(50,10,2.2,"#A67C48",sk(1.8))},
   "beret":function(){return P('M22 34 Q19 14 46 11 Q78 8 81 25 Q79 33 70 33.6 Q46 37.6 22 34 Z',"#E23B44")
     +C(52,9.4,3.2,"#E23B44",sk(2.4))+L('M27 31.6 Q48 35.4 73 30.6',RED2,2.4)+L('M33 18 Q42 13 52 13',"#FF8A90",2.4)},
@@ -27334,8 +27367,8 @@ REI2("kitchen",{
     g+=L(B('M18 90 Q22 86 28 86 M82 90 Q78 86 72 86'),c2,2.6)+btn(30,96,c2,2.4)+btn(70,96,c2,2.4);
     return g},
    over:function(F){var YB=F?104:101,c=this.c,c2=this.c2;
-    return OPEN('M12 '+YB+' L14 78 L26 66 L32 80 L38 79 L33 '+YB,c,F)+L(B('M26 66 L32 80'),c2,2)
-     +OPEN('M88 '+YB+' L86 78 L74 66 L68 80 L62 79 L67 '+YB,c,F)+L(B('M74 66 L68 80'),c2,2)},
+    return OPEN('M12 '+YB+' L13 80 L22.6 71 L32 80.6 L38 79 L33 '+YB,c,F)+L(B('M22.6 71 L32 80.6'),c2,2)+L(B('M17 84 L23 75.6'),mix(c,"#FFFFFF",.4),1.8)
+     +OPEN('M88 '+YB+' L87 80 L77.4 71 L68 80.6 L62 79 L67 '+YB,c,F)+L(B('M77.4 71 L68 80.6'),c2,2)},
    torso:function(X){var c=this.c,c2=this.c2,g='';
     if(X.adult){g+=P('M14 96 L86 96 L90 141 Q50 146 10 141 Z',c)+L('M50 108 L50 143',O,2.2)+L('M52 100 L60 142',c2,2);
      g+=btn(42,113,c2)+btn(58,113,c2)+btn(42,135,c2)+btn(58,135,c2);
@@ -27471,9 +27504,9 @@ REI2("kitchen",{
   "x-medal":{chest:function(){var x=BX(33);return L('M'+(x-4)+' 84 L'+(x-1)+' 93 M'+(x+4)+' 84 L'+(x+1)+' 93',O,6)+L('M'+(x-4)+' 84 L'+(x-1)+' 93',"#3A7BD5",3.6)+L('M'+(x+4)+' 84 L'+(x+1)+' 93',"#E23B44",3.6)
     +C(x,96,6.6,GOLD,sk(2.2))+'<path d="'+star(x,96.2,4.6,2)+'" fill="#FFF3C4"/>'}},
   "x-badge":{chest:function(){var x=BX(69);return '<path d="'+star(x,94,8.6,4.2)+'" fill="'+GOLD+'" '+sk(2.2)+'/>'+C(x,94.4,2.6,"#FFF3C4",sk(1.2))+L('M'+(x-4.6)+' 89.4 l1.6 -1.4',WH,1.6)}},
-  "t-scarf":{neck:function(){var S="#E2574C",S2="#FFE3D6";
-    return BP('M40 84 Q36 94 34 108 L44 109 Q45 96 48 87 Z',S,sk(2.6))+L(B('M36 103 L44 104'),S2,2.4)+L(B('M35.6 108 L35 111 M38.6 108.4 L38.2 111.4 M41.6 108.6 L41.4 111.6'),S,2.2)
-     +BP('M28 75 Q50 85 72 75 Q76 82 72 88 Q50 97 28 88 Q24 82 28 75 Z',S,sk(2.8))+L(B('M33 80 Q50 88 67 80 M31 86 Q50 93.6 69 86'),S2,2.2)}},
+  "t-scarf":{neck:function(){var S="#F2B33A",S2="#FFEDB8",S3="#C9861E";  // v171: 겨자색 니트 목도리 (빨간 망토·베레와 구분)
+    return BP('M39 86 Q35.4 95 34 108 L44.4 109 Q45.2 97 48.4 88 Z',S,sk(2.6))+L(B('M35.4 99 L44.8 100.4 M34.8 104 L44.4 105.2'),S2,2)+L(B('M35.4 108.4 L35 111.4 M38.6 108.6 L38.2 111.6 M41.8 108.8 L41.6 111.8'),S,2.2)
+     +BP('M27.4 78.6 Q50 88.6 72.6 78.6 Q77 84.6 72.4 90.4 Q50 99.4 27.6 90.4 Q23 84.6 27.4 78.6 Z',S,sk(2.8))+L(B('M29.4 84.6 Q50 93.4 70.6 84.6'),S2,2.4)+L(B('M30 88.8 Q50 97 70 88.8'),S3,1.6,.7)}},
   "t-tie":{neck:function(){var T="#3A5BB8",T2="#F2C230";
     return BP('M46.6 85.6 L53.4 85.6 L55.4 101 L50 106 L44.6 101 Z',T,sk(2.4))+L(B('M45.6 92 L54 88.4 M45 98 L55 93.8 M47 103.6 L55.2 100'),T2,1.8)+BP('M46 82.6 L54 82.6 L52.4 88 L47.6 88 Z',T,sk(2.2))}},
   "t-freckle":{face:function(X){var g='',cx=X.ck[0],cy=X.ck[1];
@@ -27489,15 +27522,18 @@ REI2("kitchen",{
   if(typeof hat==="function")hat={front:hat};
   hat=hat||{};ext=ext||{};
   K=F?(X.adult?0.95:0.64):1;
-  X.neckExt=neckExt(X.ext);X.noseY=A.nose;X.ck=X.adult?[30,68]:[29,66];X.frk=mix(p.F,"#5A2A10",.45);
-  var g='',ex=X.adult?[39,61]:[38,62],ey=X.adult?55.4:54,lidc=A.lid==="DD"?p.DD:A.lid==="PD"?PD:A.lid==="LT"?p.LT:p.F;
-  var shock=has(mood,"shock"),lidE=X.eye==="x-mask"&&lidc===p.F?p.LT:lidc;
+  X.neckExt=neckExt(X.ext);X.noseY=A.nose;X.ck=X.adult?[29.6,67.4]:[28.6,66.2];X.frk=mix(p.F,"#5A2A10",.45);
+  var g='',ex=X.adult?[39,61]:[38,62],ey=X.adult?55.4:54,lidc=A.lid==="MK"?p.MK:A.lid==="DD"?p.DD:A.lid==="PD"?PD:A.lid==="LT"?p.LT:p.F;
+  var shock=has(mood,"shock"),lidE=X.eye==="x-mask"&&lidc===p.F?p.LT:lidc,lidR=(a==="dog"&&X.eye!=="x-mask")?p.D:lidE;
+  var dark=lum(lidc)<.42?mix(lidc,"#FFFFFF",.55):null;
   if(hat.back)g+=hat.back(X);
   if(fit.back)g+=fit.back(X);
   if(ext.back)g+=ext.back(X);
   K=F?(X.adult?0.95:0.64):1;
   g+=fit.bust(F,X);
   K=1;
+  g+=E(50,80.6,X.adult?19:17,5.4,O,'opacity=".22"');
+  if(!F)g+=P('M8 101 Q10 84 30 79 L31 82.6 Q18.6 86.4 16.4 101 Z',O,'opacity=".13" stroke="none"')+P('M92 101 Q90 84 70 79 L69 82.6 Q81.4 86.4 83.6 101 Z',O,'opacity=".13" stroke="none"');
   var EARS=ears(a,p,WIDEHAT[X.acc]&&(a==="bear"||a==="panda"||a==="flyingsq"));
   if(!A.earFront&&!hat.earsOver)g+=EARS;
   g+=head(a,p,X.adult);
@@ -27508,12 +27544,13 @@ REI2("kitchen",{
   if(ext.chest)g+=ext.chest(X);
   K=1;
   var bl=has(mood,"shy")||has(mood,"blush");
-  g+=E(X.ck[0],X.ck[1],X.adult?4.6:5.4,X.adult?2.6:3.2,PINK,'opacity="'+(bl?".95":(X.adult?".5":".6"))+'"')+E(100-X.ck[0],X.ck[1],X.adult?4.6:5.4,X.adult?2.6:3.2,PINK,'opacity="'+(bl?".95":(X.adult?".5":".6"))+'"');
+  var BLc=X.adult?"#EE8F98":"#F58FA8",bo='opacity="'+(bl?".95":(X.adult?".42":".85"))+'"',brx=X.adult?4.8:5.8,bry=X.adult?2.4:3.4;
+  g+=E(X.ck[0],X.ck[1],brx,bry,BLc,bo)+E(100-X.ck[0],X.ck[1],brx,bry,BLc,bo);
   if(bl)g+=L('M'+(X.ck[0]-3)+' '+(X.ck[1]-1.4)+' l1.8 2 M'+(X.ck[0]+1)+' '+(X.ck[1]-1.4)+' l1.8 2 M'+(97-X.ck[0])+' '+(X.ck[1]-1.4)+' l1.8 2 M'+(101-X.ck[0])+' '+(X.ck[1]-1.4)+' l1.8 2',"#C8605A",1.4);
   if(ext.face)g+=ext.face(X);
-  g+=X.adult?browsAdult(mood):browsKid(mood);
+  g+=X.adult?G('translate(0 -1.4)',browsAdult(mood)):browsKid(mood);
   g+=eyeItem(X.eye,ex,ey,lidc===p.F?p.LT:lidc);
-  g+='<g class="eyes">'+(X.eye==="x-sun"?'':X.adult?eyeAdult(39,mood,A.iris,lidE)+eyeAdult(61,mood,A.iris,lidE):eyeKid(38,mood,A.iris,lidE)+eyeKid(62,mood,A.iris,lidE))+'</g>';
+  g+='<g class="eyes">'+(X.eye==="x-sun"?'':X.adult?eyeAdult(39,mood,A.ia,lidE,dark)+eyeAdult(61,mood,A.ia,lidR,dark):eyeKid(38,mood,A.ik,lidE,dark)+eyeKid(62,mood,A.ik,lidR,dark))+'</g>';
   g+=A.beak?beak(mood):(X.adult?mouthAdult(mood):mouthKid(mood,A.teeth));
   if(ext.face2)g+=ext.face2(X);
   g+=eyeItem(X.eye,ex,ey,0);
@@ -35524,6 +35561,27 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  document.addEventListener("click",function(){setTimeout(function(){try{var sm=document.querySelector("body.aa .stage .stagebar .scap small.missln");if(sm&&sm.dataset.full!=="1"){sm.dataset.full="1"}}catch(e){}},0)},true);
 })();
 (function(){var css=document.createElement("style");css.textContent='body.aa #bigscene .tapq{display:none!important}';document.head.appendChild(css)})();
+(function(){
+ var css=document.createElement("style");css.textContent=
+  'body .fstalk .topic.done.sus,body.aa .fstalk .topic.done.sus{border-color:#E7B072!important;background:rgba(92,48,20,.92)!important;color:#FFF3D6!important;flex-direction:row!important;flex-wrap:nowrap!important}'+
+  'body.aa .fstalk .topic.sus::before{display:none!important}'+
+  '.fstalk .topic .susi{flex:none;display:inline-block;width:20px;height:22px;line-height:0}.fstalk .topic .susi svg{width:100%;height:100%}'+
+  '.fstalk .topic .tk.sus{flex:none;font-style:normal;font-size:12px;line-height:1;padding:3px 7px;border-radius:999px;background:#C07A3E;color:#fff;border:1.5px solid #1B2447}'+
+  '.fstalk .topic.sus .susi{animation:susb 1.6s ease-in-out infinite}@keyframes susb{50%{transform:rotate(-12deg) scale(1.12)}}';
+ document.head.appendChild(css);
+ function isLie(c,id){try{return !G.broken[id]&&c.contra.some(function(x){return x.t===id})}catch(e){return false}}
+ var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);
+  try{h=h.replace(/<button class="topic done" data-replay="([^"]+)">([\s\S]*?)<\/button>/g,function(m,id,inner){
+    if(!isLie(c,id))return m;
+    return '<button class="topic done sus" data-replay="'+id+'" aria-label="수상한 말"><i class="susi">'+ACORNSVG+'</i>'+inner+'<em class="tk sus">수상해</em></button>'})}catch(e){}
+  return h};
+ var css2=document.createElement("style");css2.textContent='.banner:not(.out),.cutin,.stampfx{pointer-events:auto!important}';document.head.appendChild(css2);
+ function blocker(){var o=document.querySelector(".banner:not(.out),.cutin,.stampfx");if(o)return o;
+  var ci=document.querySelector(".csx .csintro");if(ci){var cs=getComputedStyle(ci);if(cs.display!=="none"&&+cs.opacity>.05)return ci}return null}
+ ["pointerdown","pointerup","click","touchstart","touchend","mousedown","mouseup"].forEach(function(t){
+  window.addEventListener(t,function(e){if(!e.isTrusted)return;var o=blocker();if(!o)return;if(o.contains(e.target)&&o.classList.contains("csintro"))return;
+   e.stopPropagation();if(t!=="touchstart"&&t!=="pointerdown")e.preventDefault();else if(t==="touchstart"&&e.cancelable)e.preventDefault()},{capture:true,passive:false})});
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
