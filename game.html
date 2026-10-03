@@ -35080,6 +35080,74 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
 })();
 
 (function(){
+ var R=window.__aud173_rt={ok:0,miss:[]};
+ var DB=window.DEBATE||(typeof DEBATE!=="undefined"?DEBATE:null);
+ function A(t){return {w:"det1",t:t,m:"confused"}}
+ function B(t){return {w:"det0",t:t}}
+ function okArrays(cid){var D=DB&&DB[cid],o=[];if(!D||!D.phases)return o;
+  D.phases.forEach(function(ph){if(Array.isArray(ph.ok))o.push(ph.ok);(ph.stms||[]).forEach(function(st){if(Array.isArray(st.ok))o.push(st.ok)})});return o}
+ function ins(cid,who,frag,add){
+  try{var arrs=okArrays(cid),done=false;
+   for(var a=0;a<arrs.length&&!done;a++){var L=arrs[a];
+    for(var i=0;i<L.length;i++){var l=L[i];
+     if(l&&l.w===who&&typeof l.t==="string"&&l.t.indexOf(frag)>=0){
+      if(!(L[i+1]&&L[i+1].t===add[0].t))Array.prototype.splice.apply(L,[i+1,0].concat(add));
+      done=true;break}}}
+   if(done)R.ok++;else R.miss.push(cid+":"+frag)}catch(e){R.miss.push(cid+":"+frag+" ("+e.message+")")}}
+
+ ins("star","yeoni","장식 당번 빼먹고",[
+  A("장식 당번은 빼먹고 깜짝 춤 연습? 그거 하나 숨기려고 '연못엔 안 갔다'고 한 거야?"),
+  B("깜짝 공연은 비밀로 해 주지. 장식 당번은 오늘 안에 채워라.")]);
+
+ ins("bell","ppul","대필료",[
+  A("촌장님 연설문을 밤이가 꿀사탕 열 개 받고 써 왔다고요?"),
+  B("'한 글자 한 글자'는 쓰는 쪽이 아니라 읽는 쪽이었군요.")]);
+ ins("bell","ppul","기념우표",[
+  A("기념우표 때문에 종탑 지하 열쇠를 내주셨다고요? 촌장님이요?"),
+  B("마을 열쇠와 얼굴 우표를 맞바꾸셨군요. 누구한테 줬는지는 꼭 듣겠습니다.")]);
+
+ ins("dark","buri","탐정 수첩에 전부 베끼는",[
+  A("대본 찾는다더니 3주 동안 몰래 기록실로 출근한 거야?"),
+  B("'아뢰옵기 황송하오나'도 거기서 옮았군. 30년 전 사건 파일 말투다.")]);
+
+ ins("museum","owlgp","외투 단추 하나씩",[
+  A("편지 한 통에 외투 단추 하나요? 할아버지 외투에 단추가 남아 있긴 해요?")]);
+ ins("museum","yeoni","덮개 치수를 쟀어",[
+  A("손대면 안 되는 진열장인 줄 알면서 걸쇠에 털실 자를 감았다고?"),
+  B("덕분에 걸쇠가 잠겨 있었다는 건 확실해졌다. 덮개 얘기는 나중에 하자.")]);
+ ins("museum","piko","코 자국만 남겼다고",[
+  B("진열장 바로 앞에 있었는데 돌은 안 보고 유리에 비친 자기 얼굴만 봤군. 증언이 하나 줄었다.")]);
+
+ ins("cart","bori","창고 주인 허락은",[
+  A("남의 창고 선반 뒤에서 꿀을 숙성시킨다고? 그것도 8시 45분마다 저으러?"),
+  B("창고 주인 허락부터 받아라. 그래서, 그 시각에 뭘 봤지?")]);
+
+ ins("festival","wanggu","등불 그림자였나",[
+  A("'이 두 눈으로 봤다'면서요. 그게 등불 그림자였어요?"),
+  B("목소리 크기는 증거가 아닙니다, 위원장님.")]);
+ ins("festival","wanggu","난 주웠을 뿐인데",[
+  A("증거는 잘 보관하고 있다면서, 뒤집어 보지도 않으셨어요?")]);
+
+ ins("snow","nubi","부지런하다고",[
+  B("고개 한 번 안 돌리는 큰 분은 대개 사람이 아닙니다.")]);
+ ins("snow","ubak","선배님이 거기 계셨는지는",[
+  A("창가 책상에 앉아 있었는데 창밖은 한 번도 안 봤다고요?"),
+  B("펜 소리 내라는 지시만은 빈틈없이 지켰군요. 덕분에 옆자리가 빈 걸 아무도 몰랐고.")]);
+
+ ins("clapper","tok","빨간 줄 두 번은",[
+  A("빨간 줄 두 번이 '꽉 문 비밀' 표시예요? 장부에 그어 두면 다 보이잖아요."),
+  B("비밀 지키는 표시가 비밀을 알려 줬군요.")]);
+
+ ins("bureau","piko","찍혀 버렸네",[
+  A("남의 가게 금고 문을 거울로 쓴 거야? 부리 자국까지 찍어 가면서?"),
+  B("볏 자국에 입김까지 남겼으니, 금고 앞에 있었던 건 확실하군.")]);
+
+ ins("lining","wanggu","심지를 거꾸로 끼웠어",[
+  A("작년에 심지를 거꾸로 끼운 걸 1년 내내 숨기셨어요? 그걸 바꾸러 한밤중에?"),
+  B("1년 묵은 실수 덕에 목격자가 하나 생겼군요.")]);
+})();
+
+(function(){
  var css=document.createElement("style");css.textContent=
   ':root{--dH:128px}'+
   'body.aa .hud.hud2{min-height:0!important;padding-top:4px!important;padding-bottom:4px!important;gap:6px!important}'+
@@ -35747,6 +35815,13 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  }catch(x){}}
  var _or=openRecord;openRecord=function(){var r=_or.apply(this,arguments);var el=document.querySelector(".crec2");
   if(el){deco(el);new MutationObserver(function(){deco(el)}).observe(el,{childList:true,subtree:true})}return r};
+})();
+(function(){
+ try{(BOOK.window.post||[]).forEach(function(pg){(pg.lines||[]).forEach(function(x){
+   if(x[0]==="det1"&&x[1].indexOf("다들 숨긴 이유가 달랐어")>=0)x[1]="{p0}, 이번 사건은 거짓말 셋에 착각 하나. 배꼽시계에 수영 강습비에 열세 번째 '한 번만 더'까지.";
+   if(x[0]==="det0"&&x[1].indexOf("시계는 이유를 안 묻고")>=0)x[1]="다들 가지가지 했다. 시계만 이유 없이 정확했지."})})}catch(e){}
+ try{var L=DEBATE.star.phases[0].lines,i=-1;L.forEach(function(x,k){if(x.w==="bori"&&x.t.indexOf("미끄럼 방지용")>=0)i=k});
+  if(i>=0&&!(L[i+1]&&L[i+1].w==="det1"&&L[i+1].t.indexOf("꿀 세 숟갈")>=0))L.splice(i+1,0,{w:"det1",t:"발바닥에 꿀 세 숟갈 바르고 사다리를 탔다고? 그게 미끄럼 방지야?",m:"confused"},{w:"det0",t:"사다리까지 꿀 범벅이 됐겠군. 곰이 사다리 금지인 데는 이유가 있었다."})}catch(e){}
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
