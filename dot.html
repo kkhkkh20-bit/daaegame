@@ -36405,6 +36405,47 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  var _say=say;say=function(){window.__dlHoldUntil=0;return _say.apply(this,arguments)};
  var _cm=closeModal;closeModal=function(){var r=_cm.apply(this,arguments);return r};
 })();
+(function(){
+ var _md=modal;modal=function(html){
+  try{if(typeof html==="string"&&html.indexOf("이제 범인과 대결할까요?")>=0&&G&&!G.battle){
+    setTimeout(function(){banner("최종 대결","범인과 정면 대결").then(function(){if(G&&!G.battle){SFX.gotcha&&SFX.gotcha();goTab("final");window.scrollTo(0,0)}})},150);return}}catch(e){}
+  return _md.apply(this,arguments)};
+ function left(c){
+  var locOf={};c.locations.forEach(function(l){(l.spots||[]).forEach(function(s){locOf[s.ev.id]=l})});
+  var per={},locked=0;
+  liveSpots(c).forEach(function(s){if(G.found.indexOf(s.ev.id)>=0)return;var l=locOf[s.ev.id];if(!l)return;
+   if(G.unlocked&&G.unlocked.indexOf(l.id)<0&&c.locations.indexOf(l)>0){return}per[l.name]=(per[l.name]||0)+1});
+  c.locations.forEach(function(l,i){if(i>0&&G.unlocked&&G.unlocked.indexOf(l.id)<0)locked++});
+  var lies={},hidden=0;c.contra.forEach(function(x){if(G.broken[x.t])return;var t=tById(c,x.t);if(!t)return;
+   if(G.asked.indexOf(x.t)>=0)lies[CAST[t.who].name]=(lies[CAST[t.who].name]||0)+1;else hidden++});
+  return {per:per,locked:locked,lies:lies,hidden:hidden}}
+ var _rf=renderFinal;renderFinal=function(c){
+  var h=_rf.apply(this,arguments);
+  try{h=h.replace(/아직 못 찾은 증거 (-?\d+)개, /,function(m,n){return +n>0?m:""})}catch(e){}
+  try{if(G.battle||G.earlyFight||(window.DEBATE&&DEBATE[c.id]))return h;
+   var unb=c.contra.filter(function(x){return !G.broken[x.t]}).length;if(!unb)return h;
+   var L=left(c),rows=[];
+   Object.keys(L.lies).forEach(function(n){rows.push('<li><b>거짓말</b>'+esc(n)+'의 말 '+L.lies[n]+'개를 아직 못 깼어요.</li>')});
+   if(L.hidden)rows.push('<li><b>거짓말</b>아직 안 들어 본 이야기 속에 숨은 말이 '+L.hidden+'개 있어요.</li>');
+   Object.keys(L.per).forEach(function(n){rows.push('<li><b>단서</b>'+esc(n)+'에 못 찾은 단서 '+L.per[n]+'개</li>')});
+   if(L.locked)rows.push('<li><b>장소</b>아직 못 가 본 곳이 '+L.locked+'곳 있어요.</li>');
+   return '<section class="panel notready"><h3 style="font-size:22px">아직 대결할 때가 아니에요</h3>'
+    +'<p class="soft">범인을 몰아붙이려면 거짓말을 전부 깨야 해요. 다 깨면 자동으로 대결이 시작돼요.</p>'
+    +'<ul class="nrl">'+rows.join("")+'</ul>'
+    +'<button class="btn wide" id="nrgo">조사하러 가기</button>'
+    +'<button class="btn ghost wide" id="nrfight" style="margin-top:8px">그래도 지금 대결하기</button></section>';
+  }catch(e){return h}};
+ var _rc=renderCase;renderCase=function(){var r=_rc.apply(this,arguments);
+  try{var a=document.getElementById("nrgo");if(a)a.onclick=function(){SFX.tap();goTab("scene")};
+   var b=document.getElementById("nrfight");if(b)b.onclick=function(){SFX.tap();G.earlyFight=1;render()}}catch(e){}
+  return r};
+ var css=document.createElement("style");css.textContent=
+  '.notready .nrl{list-style:none;margin:10px 0 14px;padding:0;display:flex;flex-direction:column;gap:6px}'+
+  '.notready .nrl li{background:#FFF6D8;border:2px solid #E2B84A;border-radius:6px;padding:8px 10px;font-size:15px;line-height:1.45;color:#2A2A3A}'+
+  '.notready .nrl li b{display:inline-block;margin-right:8px;padding:1px 7px;border-radius:999px;background:#1B2447;color:#FFD84D;font-size:12px}';
+ document.head.appendChild(css);
+})();
+(function(){try{HOTS.pondside=[286,103]}catch(e){}})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
