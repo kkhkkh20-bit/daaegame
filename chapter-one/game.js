@@ -39,7 +39,7 @@ $('game').addEventListener('click',e=>{if(e.target.closest('button,a,input,selec
 $('skip-intro').onclick=()=>{if(!isIntro())return;stop();s.lines.slice(s.index+1).forEach(l=>s.log.push({name:NAMES[l.who],text:l.text,thought:!!l.thought}));s.introSkipped=true;s.index=s.lines.length;audio.fx('page');arrive('questions');};
 function advance(){if(s.mode!=='dialogue'||$('modal').childElementCount||!$('title').hidden)return;const t=Date.now();if(t-last<170)return;last=t;if(timer){stop();$('text').textContent=full;return;}audio.fx('page');s.index++;save();render();}
 function arrive(mode){s.mode=mode;if(mode==='second'){s.room=2;core.state.loc=2;s.pan=.5;s.round=2;s.who='mungchi';s.mode='questions';s.statement=0;}if(mode==='review'){s.room=3;core.state.loc=3;s.pan=.5;['envelope','roster','report'].forEach(add);core.ask('confession');}save();render();}
-function isIntro(){return s.mode==='dialogue'&&s.lines.length===STORY.intro.length&&s.lines.every((l,i)=>l.text===STORY.intro[i].text);}
+function isIntro(){return s.mode==='dialogue'&&s.lines[0]?.establish===true;}
 function render(){ $('skip-intro').hidden=!isIntro();if($('scene-people'))$('scene-people').hidden=true;$('world').querySelectorAll('.scene-selection,.scene-tap').forEach(e=>e.remove());effects.clear();stop();count();audio.music((s.mode==='done'||s.mode==='dialogue'&&s.after==='done')?'win':(s.mode==='testimony'||s.mode==='dialogue'&&s.after==='testimony')?'battle':(s.mode==='dialogue'&&s.after==='second')?'pursuit':s.mode==='finale'?'pursuit':['investigate','review','retry'].includes(s.mode)?'sneak':s.mode==='questions'?'talk':s.round===2?'sneak':'calm');$('chaptermark').hidden=true;$('hotspots').innerHTML='';$('scene').classList.toggle('exploring',s.mode==='investigate');$('panorama').hidden=s.mode!=='investigate';$('pan-controls').hidden=s.mode!=='investigate';$('panel').className='';
  const begun=s.asked.length>0||s.mode!=='dialogue'||s.lines!==STORY.intro&&s.after!=='questions';
  $('case-nav').hidden=!(s.mode!=='dialogue'||s.asked.length||s.round>1);$('case-nav').querySelectorAll('button').forEach(b=>b.disabled=s.mode==='dialogue'||s.mode==='retry');
@@ -50,23 +50,32 @@ function render(){ $('skip-intro').hidden=!isIntro();if($('scene-people'))$('sce
 const button=(id,t,cls='')=>`<button id="${id}" class="${cls}">${t}</button>`;
 function questions(){const who=s.who||'karo';actor(who,0);$('panel').className='interactive';
  let qs=who==='karo'?Object.entries(STORY.questions).map(([id,q])=>[id,q.title]):[['key','목에 건 열쇠는 어디에 쓰나요?'],['reason','봉투가 없어진 걸 언제 알았나요?']];
- if(who==='karo'&&s.round===2)qs.push(['after','뭉치의 이야기를 듣고 나니…']);
+ if(who==='karo'&&s.round===2)qs.push(['after','접수증을 다시 보니…']);
  $('panel').innerHTML=`<div class="nameplate">${PEOPLE[who].name}<small>${PEOPLE[who].role}</small></div><div class="questions">${qs.map(([id,title],i)=>`<button data-q="${id}"><span class="question-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><span class="question-label">${title}</span><small>${s.asked.includes(id)?'다시 듣기':'›'}</small></button>`).join('')}</div><div class="subactions">${button('people','다른 사람')}${button('chat','수다')}${button('show-evidence','증거 보여주기')}</div>`;
  $('panel').querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{if(s.mode!=='questions')return;const id=b.dataset.q;if(!s.asked.includes(id))s.asked.push(id);
  const ids={delivery:['t_delivery','t_paid'],witness:['t_witness'],spoon:['t_spoon'],key:['t_key'],reason:['t_reason']};(ids[id]||[]).forEach(t=>core.ask(t));
- if(id==='key'){add('key');dialogue(STORY.keyFound,'questions','mungchi');}else if(id==='reason')dialogue([line('daram','봉투가 없어진 건 언제 알았어요?'),line('mungchi','주민이 돈을 받으러 왔을 때요.',1),line('daram','계속 받침을 보고 있었나요?'),line('mungchi','…아뇨.',1)],'questions','mungchi');else if(id==='after')dialogue([line('karo','겁이 나서 숨겼다는 건 알겠습니다.',1),line('karo','그렇다고 제가 도둑이 되어도 되는 건 아니죠.',0),line('daram','그것도 꼭 기록할게요.',0)],'questions','karo');else dialogue(STORY.questions[id].lines,'questions','karo');});
+ if(id==='key'){add('key');dialogue(STORY.keyFound,'questions','mungchi');}else if(id==='reason')dialogue(STORY.reason,'questions','mungchi');else if(id==='after')dialogue(STORY.afterCrow,'questions','karo');else dialogue(STORY.questions[id].lines,'questions','karo');});
  $('people').onclick=peoplePicker;$('chat').onclick=()=>{if(!s.chats.includes(who)){s.chats.push(who);core.state.actions++;}dialogue(CHAT[who],'questions',who);};$('show-evidence').onclick=()=>inventory('show');}
-function peoplePicker(){open(head('누구와 이야기할까?')+['karo',...(s.round>1?['mungchi']:[])].map(id=>`<button class="person-row" data-person="${id}"><b>${PEOPLE[id].name}</b><span>${PEOPLE[id].role}</span></button>`).join(''));document.querySelectorAll('[data-person]').forEach(b=>b.onclick=()=>{s.who=b.dataset.person;close();s.mode='questions';save();render();});}
+function talkTo(id){s.who=id;if(!room().people.includes(id)){s.room=id==='mungchi'?2:0;core.state.loc=s.room;s.pan=s.roomPans?.[ROOMS[s.room].id]??.5;}s.mode='questions';save();render();}
+function peoplePicker(){open(head('누구와 이야기할까?')+['karo',...(s.round>1?['mungchi']:[])].map(id=>`<button class="person-row" data-person="${id}"><b>${PEOPLE[id].name}</b><span>${PEOPLE[id].role}</span></button>`).join(''));document.querySelectorAll('[data-person]').forEach(b=>b.onclick=()=>{close();talkTo(b.dataset.person);});}
 function room(){return ROOMS[s.room||0];}
 function roomSpots(){return room().spots;}
 function sceneAsset(r=room()){return window.ART?.[r.asset]||'assets/'+r.asset+'.png';}
+function currentGoal(){
+ if(['review','finale'].includes(s.mode)||s.found.includes('report'))return core.have('cx_reception_2')?'확인한 사실로 봉투 사건을 정리하자.':'명단과 보고서의 확인 문구를 검사해 비교하자.';
+ if(s.round===1){if(!s.asked.includes('delivery'))return '까로에게 봉투를 건넨 과정을 물어보자.';if(!s.found.includes('receipt'))return '접수대 창가 책상에서 접수증을 찾아보자.';if(!core.state.exam.receipt)return '수첩에서 접수증의 서명 아래 문구를 검사하자.';if(!s.asked.includes('witness'))return '까로가 지급 장면을 직접 봤는지 물어보자.';return '까로의 증언과 접수증을 나란히 비교하자.';}
+ if(!s.found.includes('cabinet'))return '관리실 보관함의 잠금쇠를 살펴보자.';
+ if(!s.asked.includes('key'))return '뭉치에게 목에 건 열쇠를 물어보자.';
+ if(!core.state.exam.key)return '열쇠와 보관함의 번호를 비교하자.';
+ return '보관함을 열 수 없다는 말과 열쇠를 비교하자.';
+}
 function syncCaseUI(){
  const r=room();$('place').textContent=r.name;$('subtitle').textContent='눈길 거처 · 첫 번째 사건';
  $('background').style.backgroundImage=`url(${sceneAsset()})`;
  let goal=$('case-goal');if(!goal){goal=document.createElement('aside');goal.id='case-goal';$('game').append(goal);}
  goal.hidden=s.mode==='dialogue'||s.mode==='done';
  const clues=roomSpots().filter(p=>s.found.includes(p.id)).length;
- goal.innerHTML=`<small>현재 목표</small><span>${s.round===1?'봉투를 받은 것과 지급한 것은 같을까?':['review','finale'].includes(s.mode)?'명단과 보고서가 확인한 내용을 비교하자.':'주인님 열쇠 없이 보관함을 열 수 있을까?'}</span><b>${clues}/${roomSpots().length}</b>`;
+ goal.innerHTML=`<small>현재 목표</small><span>${esc(currentGoal())}</span><b>${clues}/${roomSpots().length}</b>`;
 }
 function markSpot(p,title=EVIDENCE[p.id]?.title||p.title){$('world').querySelector('.scene-selection')?.remove();const mark=document.createElement('div');mark.className='scene-selection';mark.style.cssText=`left:${(p.x-p.w/2)*100}%;top:${(p.y-p.h/2)*100}%;width:${p.w*100}%;height:${p.h*100}%`;const label=document.createElement('span');label.textContent=title;mark.append(label);$('world').append(mark);mark.setAttribute('role','status');$('pan-label').textContent=title+' · 선택';setTimeout(()=>mark.remove(),500);return mark;}
 let drag=null,moved=false,panoramaLoading=false,sceneLoadSerial=0;
@@ -117,7 +126,7 @@ function movePicker(){open(head('눈길 거처 · 장소 이동')+'<p class="mut
 function renderRoomInteractions(){
  const r=room();$('hotspots').insertAdjacentHTML('beforeend',r.observations.map(o=>`<button class="spot observation" data-observe="${o.id}" aria-label="${o.title} 살펴보기" style="left:${(o.x-o.w/2)*100}%;top:${(o.y-o.h/2)*100}%;width:${o.w*100}%;height:${o.h*100}%"></button>`).join(''));
  document.querySelectorAll('[data-observe]').forEach(b=>b.onclick=()=>{if(moved||panoramaLoading)return;const o=r.observations.find(x=>x.id===b.dataset.observe);s.sceneSelection=null;markSpot(o);document.querySelectorAll('[data-spot]').forEach(x=>x.setAttribute('aria-pressed','false'));save();$('panel').innerHTML=`<div class="observation-note"><small>다람의 현장 메모</small><h3>${o.title}</h3><p>${o.text}</p><p class="scribble">“${o.memo}”</p></div>`;audio.fx('tap');});
- let cast=$('scene-people');if(!cast){cast=document.createElement('nav');cast.id='scene-people';cast.setAttribute('aria-label','현장에 있는 인물');$('world').append(cast);}const anchor={reception:.82,lounge:.85,cabinet:.47};cast.innerHTML=r.people.filter(id=>id!=='mungchi'||s.round>1).map(id=>`<button class="scene-person" data-room-person="${id}" aria-label="${PEOPLE[id].name}에게 말 걸기" style="left:${(anchor[r.id]||.8)*100}%;background-image:url(${DaramArt.source(id)})"><span>${PEOPLE[id].name} <b>···</b></span></button>`).join('');cast.hidden=false;cast.querySelectorAll('button').forEach(b=>b.onclick=()=>{if(moved||panoramaLoading)return;s.who=b.dataset.roomPerson;go('questions');});
+ let cast=$('scene-people');if(!cast){cast=document.createElement('nav');cast.id='scene-people';cast.setAttribute('aria-label','현장에 있는 인물');$('world').append(cast);}const anchor={reception:.82,lounge:.85,cabinet:.47};cast.innerHTML=r.people.filter(id=>id!=='mungchi'||s.round>1).map(id=>`<button class="scene-person" data-room-person="${id}" aria-label="${PEOPLE[id].name}에게 말 걸기" style="left:${(anchor[r.id]||.8)*100}%;background-image:url(${DaramArt.source(id)})"><span>${PEOPLE[id].name} <b>···</b></span></button>`).join('');cast.hidden=false;cast.querySelectorAll('button').forEach(b=>b.onclick=()=>{if(moved||panoramaLoading)return;talkTo(b.dataset.roomPerson);});
 }
 function go(mode){if(s.mode==='dialogue'||s.mode==='retry')return;s.mode=mode;save();render();}
 function battleStart(){if(s.round===1&&!s.asked.includes('delivery')){tell('까로에게 배달 이야기를 먼저 들어 보자.');return;}s.mode='testimony';s.statement=0;core.begin(s.round-1,0);save();render();}
@@ -133,7 +142,7 @@ async function submit(id){if(busy)return;busy=true;$('game').classList.add('judg
  dialogue([line('daram','(「'+shown+'」… '+msg+')',result.kind==='inspect'?1:5,{actor:'daram',thought:true})],'testimony');
  effects.play(result.kind==='inspect'?'insight':'wrong');}finally{busy=false;$('game').classList.remove('judging');}}
 function retry(){actor('daram',5);$('panel').className='interactive';$('panel').innerHTML=`<div class="nameplate">다람</div><p>마음이 급했어. 확인한 사실부터 다시 보자.</p><p class="muted">모은 단서는 남아 있습니다.</p><div class="actions">${button('retry-case','이 공방 다시 도전','primary')}${button('retry-book','수첩 보기')}</div>`;$('retry-case').onclick=battleStart;$('retry-book').onclick=()=>inventory();}
-function review(){actor('daram',1);$('panel').className='interactive';$('panel').innerHTML=`<div class="nameplate">다람<small>같은 서명, 다른 뜻</small></div><p>명단과 엄마의 보고서는 무엇을 확인했을까?</p><div class="actions">${button('roster','명단 읽기')}${button('report','보고서 읽기')}</div><div class="actions">${button('connect','두 단서 결합','primary')}${button('deduce','사건 정리')}</div>`;
+function review(){actor('daram',1);$('panel').className='interactive';$('panel').innerHTML=`<div class="nameplate">다람<small>같은 서명, 다른 뜻</small></div><p>봉투는 찾았다. 이제 엄마의 서명이 지급 명단까지 보증하는지, 두 문서의 작은 글씨를 비교하자.</p><div class="actions">${button('roster','명단 읽기')}${button('report','보고서 읽기')}</div><div class="actions">${button('connect','두 단서 결합','primary')}${button('deduce','사건 정리')}</div>`;
  $('roster').onclick=()=>detail('roster');$('report').onclick=()=>detail('report');$('connect').onclick=combine;
  $('deduce').onclick=()=>{if(!core.have('cx_reception_2')){tell('두 문서를 검사하고, 수첩에서 이어 보자.');return;}s.mode='finale';save();render();};}
 function finale(){actor('daram',2);$('panel').className='interactive finale';$('panel').innerHTML=`<div class="nameplate">사건 정리</div>${CHAPTER_CASE.final.map((f,i)=>`<label class="answer-row">${f.question}<select data-answer="${i}"><option value="">선택하기</option>${f.options.map(([id,t])=>`<option value="${id}">${t}</option>`).join('')}</select></label>`).join('')}<p id="answer-feedback" role="status"></p>${button('finish-case','추리 확인','primary wide')}`;
@@ -141,7 +150,7 @@ function finale(){actor('daram',2);$('panel').className='interactive finale';$('
 function ending(){s.finished=true;save();actor('daram',3);$('panel').className='interactive ending';$('panel').innerHTML=`<div class="nameplate">첫 번째 사건 · 끝</div><small class="eyebrow">사라진 봉투</small><h2>답을 찾으면,<br>다음 질문이 보인다.</h2><p>봉투는 돌아왔다. 명단에 쓰인 엄마의 이름은<br>아직 풀리지 않은 질문으로 남았다.</p><p class="muted">추리 기록 ${'★'.repeat(core.state.result?.stars||1)} · 힌트 ${core.state.hints}회</p><div class="actions">${button('endingbook','사건 수첩')}${button('replay','처음부터')}</div>`;$('endingbook').onclick=()=>inventory();$('replay').onclick=resetPrompt;}
 function open(html){const existing=$('modal').querySelector('.sheet');if(existing){const y=existing.scrollTop;existing.innerHTML=html;existing.scrollTop=y;}else{returnFocus=document.activeElement;$('modal').innerHTML=`<div class="veil"><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">${html}</section></div>`;}[...$('game').children].filter(e=>e.id!=='modal'&&e.id!=='toast').forEach(e=>e.inert=true);$('modal').querySelectorAll('[data-close]').forEach(b=>b.onclick=close);$('modal').querySelector('button,select')?.focus();}
 function head(t,selected=false){return `<div class="sheet-head"><div class="sheet-heading"><small>다람 탐정 · 사건 수첩</small><h2 id="sheet-title">${selected?'<span id="selected-record-name">'+esc(t)+'</span>':esc(t)}</h2></div><button data-close aria-label="닫기">×</button></div>`;}
-function close(){$('modal').innerHTML='';[...$('game').children].forEach(e=>e.inert=false);if(returnFocus?.isConnected)returnFocus.focus();}
+function close(){$('modal').innerHTML='';if($('title').hidden)syncCaseUI();[...$('game').children].forEach(e=>e.inert=false);if(returnFocus?.isConnected)returnFocus.focus();}
 let notebookTab='evidence',comboPicks=[],comboMode='';
 const recordName=id=>EVIDENCE[id]?.title||(TESTIMONIES[id]?PEOPLE[TESTIMONIES[id].who].name+'의 증언 · '+TESTIMONIES[id].q:'');
 function inventory(mode='',tab=(mode==='present'||mode==='show'||mode==='archive')?'evidence':notebookTab){notebookTab=tab;const presenting=mode==='present',showing=mode==='show';
