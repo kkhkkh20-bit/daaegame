@@ -1,7 +1,7 @@
 /* Report loading failures instead of leaving an unresponsive mobile preview. */
 (()=>{
  const status=document.getElementById('load-status'),retry=document.getElementById('retry-load');
- const controls=['start','continue'].map(id=>document.getElementById(id));
+ const controls=['start','continue','home-settings','home-guide','home-clues','home-friends'].map(id=>document.getElementById(id));
  let failed=false;
  const fail=()=>{failed=true;status.hidden=false;status.textContent='게임을 불러오지 못했어요. 인터넷 연결을 확인한 뒤 다시 열어 주세요.';retry.hidden=false;controls.forEach(b=>b.disabled=true);};
  window.chapterLoadError=fail;
@@ -11,9 +11,9 @@
  window.chapterStartReady=async()=>{
   try{
    const bg=window.ART?.['reception-pixel']||'assets/reception-pixel.png';
-   await Promise.all([window.DaramArt?.ready||Promise.resolve(),load(bg),load(window.DaramArt.source('daram')),document.fonts?Promise.all([document.fonts.load('16px DaramDot'),document.fonts.load('16px DaramDotBold')]).catch(()=>{}):Promise.resolve()]);
+   await Promise.all([window.DaramArt?.ready||Promise.resolve(),load(bg),load(window.ART?.['home-pixel']||'assets/home-pixel.png'),load(window.DaramArt.source('daram')),document.fonts?Promise.all([document.fonts.load('16px DaramDot'),document.fonts.load('16px DaramDotBold')]).catch(()=>{}):Promise.resolve()]);
    if(failed)return;
-   window.chapterTitleReady?.();status.hidden=true;controls.forEach(b=>b.disabled=false);
+   status.hidden=true;controls.forEach(b=>b.disabled=false);window.chapterTitleReady?.();
    // Fetch the other actors while the introduction is being read.
    ['karo','mungchi','daram-extra','reception-pixel'].forEach(id=>load(window.ART?.[id]||'assets/'+id+'.png').catch(()=>{}));
   }catch{fail();}

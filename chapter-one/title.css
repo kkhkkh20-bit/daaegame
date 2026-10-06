@@ -1,23 +1,20 @@
-/* The opening uses the same pixel art and palette as the playable scene. */
-#background{background-image:url(assets/reception-pixel.png);image-rendering:pixelated}
-body:before{background:#171b2b;filter:none}
-#game.title-screen>header,#game.title-screen>#panel,#game.title-screen>#case-nav,#game.title-screen>#case-goal{display:none!important}
-#game.title-screen #scene{width:100%}
-#game.title-screen .shade{display:none}
-#game.title-screen #background{background-position:40% center}
-#game.title-screen #actor{visibility:hidden}
-#game.title-screen.title-ready #actor{visibility:visible;width:86%;height:auto;aspect-ratio:1/2;left:7%;right:auto;top:24%;bottom:auto;clip-path:none;filter:none;image-rendering:pixelated}
-#title{padding:0;background:linear-gradient(180deg,#171b2bf5 0%,#171b2bb8 18%,transparent 37%,transparent 64%,#171b2bee 84%,#171b2b 100%)}
-.title-heading{position:absolute;top:calc(5% + env(safe-area-inset-top));left:5%;right:5%;text-align:center}
-.title-heading small{color:#e3bf79;font-size:12px;letter-spacing:.08em}
-.title-heading h1{font-family:DaramDotBold,monospace;font-size:clamp(32px,9vw,48px);font-weight:400;line-height:1.3;margin:12px 0;color:#fff0ce;text-shadow:3px 3px 0 #714733;white-space:nowrap}
-.title-heading p{font-size:12px;color:#e4d8c6;line-height:1.8;margin:8px 0;text-shadow:1px 2px #171b2b}
-.title-menu{position:absolute;bottom:calc(4% + env(safe-area-inset-bottom));left:15%;right:15%;display:grid;gap:10px;text-align:center}
-.title-menu button{position:relative;width:100%;min-height:48px;margin:0;padding:10px 18px;border:2px solid #e8c47f;border-radius:0;background:#edd397;color:#2a2632;box-shadow:inset 0 0 0 2px #fff0c0,3px 3px 0 #503a37;font-family:DaramDotBold,monospace;font-size:17px;text-align:left}
-.title-menu button span{display:inline-block;width:30px;font-size:14px}
-.title-menu #continue{background:#29324a;color:#fff0ce;box-shadow:inset 0 0 0 2px #485570,3px 3px 0 #101523}
-.title-menu button:active{transform:translate(2px,2px);box-shadow:none}
-.title-menu small{color:#d0c2ad;font-size:10px;line-height:1.6;margin-top:6px}
-.title-menu #load-status{margin:0;font-size:11px;color:#f4dfb4}
-@media(max-height:600px) and (orientation:portrait){.title-heading{top:4%}.title-heading h1{margin:7px 0;font-size:32px}.title-heading p{font-size:11px}.title-menu{bottom:3%;gap:7px}.title-menu button{min-height:42px;font-size:15px}}
-@media(orientation:landscape) and (max-height:550px){#game.title-screen.title-ready #actor{width:38%;left:52%;top:8%}.title-heading{left:4%;right:52%;top:8%}.title-heading h1{font-size:32px}.title-menu{left:9%;right:57%;bottom:7%}}
+/* The illustrated title scene has no baked-in text or controls. */
+#background{background-image:url(assets/reception-pixel.png);image-rendering:pixelated}body:before{background:#171b2b;filter:none}
+#game.title-screen>header,#game.title-screen>#panel,#game.title-screen>#case-nav,#game.title-screen>#case-goal,#game.title-screen #scene{display:none!important}
+#title{padding:0;background:#171b2b url(assets/home-pixel.png) center/100% 100% no-repeat;image-rendering:pixelated}
+.home-tools{position:absolute;right:5%;top:calc(2% + env(safe-area-inset-top));display:flex;gap:12px}.home-tools button{display:grid;justify-items:center;gap:3px;border:0;background:none;color:#f5d89c;padding:0;font-size:10px;min-width:40px;min-height:48px;text-shadow:1px 2px #231c2b}.home-tools svg{width:30px;height:30px;padding:4px;border:2px solid #dab678;background:#20273dd9;box-shadow:2px 2px #3c2b2b}.home-tools em,.home-tools small{display:none}
+#title svg{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linejoin:bevel;stroke-linecap:square}
+.title-heading{position:absolute;top:13%;left:24%;right:9%;text-align:center;color:#ffe0a0;text-shadow:3px 3px #5f3028,5px 5px #171b2b}
+.title-heading>small{font-size:10px;letter-spacing:.05em;color:#f7dfb0;text-shadow:1px 2px #171b2b}
+.title-heading h1{font-family:DaramDotBold,monospace;font-weight:400;font-size:clamp(34px,10vw,54px);line-height:1.17;letter-spacing:-.04em;margin:9px 0 11px;transform:rotate(-3deg)}
+.title-heading h1 span{font-size:1.08em}.title-heading p{font-size:12px;color:#3d2c2b;background:#efd39b;border:2px solid #9b693e;box-shadow:2px 3px #221d2d;padding:5px 2px;margin:0;text-shadow:none;clip-path:polygon(0 0,100% 0,97% 50%,100% 100%,0 100%,3% 50%)}.title-heading em{display:block;font-style:normal;font-size:9px;letter-spacing:.13em;margin-top:7px;text-shadow:1px 2px #171b2b}
+.title-menu{position:absolute;left:53%;right:4%;top:40%;display:grid;gap:10px}
+.title-menu button{position:relative;display:flex;align-items:center;gap:7px;width:100%;min-height:clamp(55px,8dvh,76px);padding:9px 8px;border:2px solid #9b653f;border-radius:2px;background:#fae9c8;color:#49352f;box-shadow:inset 0 0 0 2px #fff6df,inset 0 0 0 4px #dbbd88,0 0 0 2px #ebc985,3px 5px #231e2c;text-align:left}
+.title-menu svg{width:26px;height:26px;flex:none}.title-menu button>span{min-width:0;flex:1}.title-menu b{font:clamp(12px,3.6vw,18px) DaramDotBold;white-space:nowrap;display:block;letter-spacing:-.04em}.title-menu small{font-size:clamp(8px,2.15vw,10px);display:block;line-height:1.4;margin-top:5px;word-break:keep-all}.title-menu em{font-size:23px;font-style:normal}.title-menu #start{background:#843b3c;color:#fff0c9;box-shadow:inset 0 0 0 2px #b77859,inset 0 0 0 4px #e1b975,0 0 0 2px #ebc985,3px 5px #231e2c}.title-menu button:active{transform:translate(2px,2px)}.title-menu button:disabled{opacity:.68;filter:saturate(.5)}
+.home-loading{position:absolute;bottom:12%;left:8%;right:8%;text-align:center;background:#171b2bee;color:#ffe5b4;font-size:12px}.home-loading:has(#load-status[hidden]){display:none}.home-loading #load-status{max-width:none;padding:8px;margin:0}.home-loading button{background:#f7dfb0;color:#3f3030;border:2px solid #936b46;min-height:40px;padding:8px 20px}
+.title-foot{position:absolute;left:5%;bottom:2%;margin:0;padding:7px 10px;font-size:9px;line-height:1.7;letter-spacing:0;color:#f6deb5;background:#241e30c9;border:1px dashed #b28b61;text-shadow:1px 1px #171b2b}
+.home-collection article{display:flex;gap:12px;border-bottom:1px solid #bfa778;padding:12px 0}.home-collection h3{font-size:15px;margin:0}.home-collection h3 small{font-size:11px}.home-collection p{font-size:12px;margin:5px 0}.home-collection .record-thumb{width:70px;height:70px;flex:none}
+@media(max-height:700px) and (orientation:portrait){.title-menu{gap:8px;top:40%}.title-menu button{min-height:51px;padding:7px}.title-menu small{font-size:8px}.title-heading{top:12%}.title-heading h1{font-size:36px}.title-heading p{font-size:10px}.title-heading>small{font-size:9px}.title-menu svg{width:22px;height:22px}.title-menu b{font-size:13px}}
+@media(orientation:landscape) and (max-height:550px){#title{background-size:cover;background-position:center 48%}.title-heading{left:8%;right:60%;top:7%}.title-heading h1{font-size:34px}.title-menu{left:59%;right:6%;top:19%;gap:6px}.title-menu button{min-height:49px;padding:6px 10px}.title-menu b{font-size:14px}.title-menu small{font-size:8px}.home-tools{top:3%;right:7%}.home-tools button{min-height:38px}.home-tools svg{width:23px;height:23px}.home-tools b{display:none}.title-foot{font-size:8px}}
+
+.title-menu button:disabled{opacity:1;filter:none;background:#d8cbb3;color:#81705e;box-shadow:inset 0 0 0 2px #ede2cc,inset 0 0 0 4px #bca57c,0 0 0 2px #b79866,3px 5px #231e2c}
