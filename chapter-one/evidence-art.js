@@ -48,7 +48,9 @@ function visual(id,title,mini=false){const c=crops[id];if(c){const [asset,x,y,w,
 }
 function recordIcon(id,title){
  const cells={receipt:0,tray:1,clock:2,cabinet:3,key:4,envelope:5,roster:6,report:7};
- if(window.DaramArt?.has('evidence')&&cells[id]!==undefined){const c=cells[id];return `<span class="pixel-evidence" role="img" aria-label="${escape(title)}" style="background-image:url(${DaramArt.source('evidence')});background-position:${c%3*50}% ${Math.floor(c/3)*50}%"></span>`;}
+ const bounds=[[35,20,365,382],[412,65,425,314],[865,10,363,402],[50,414,318,394],[418,440,401,350],[840,431,396,366],[20,815,380,420],[399,825,432,405]];
+ if(window.DaramArt?.has('evidence')&&cells[id]!==undefined){const [x,y,w,h]=bounds[cells[id]];return `<svg class="pixel-evidence" role="img" aria-label="${escape(title)}" viewBox="${bounds[cells[id]].join(' ')}"><svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="${x} ${y} ${w} ${h}" overflow="hidden"><image href="${DaramArt.source('evidence')}" width="1254" height="1254"/></svg></svg>`;}
+
 
  const symbols={tray:'<path d="M4 14h32v18H4z" fill="#B5814A"/><path d="M4 14l6-7h20l6 7-6 8H10z" fill="#EDD5A5"/><path d="M10 12h20v7H10z" fill="#765035"/>',cabinet:'<path d="M7 4h26v33H7z" fill="#B5814A"/><path d="M11 8h18v25H11z" fill="#EDD5A5"/><path d="M23 19h4v7h-4z" fill="#475369"/>',key:'<path d="M13 4h12v12H13z M17 16h4v20h-4z M21 26h7v4h-7z M21 33h7v3h-7z" fill="#E8B84A"/><path d="M17 8h4v4h-4z" fill="#fff8e5"/>'};
  if(pairs[id])return '<span class="paired-evidence">'+pairs[id].map(x=>recordIcon(x,'관련 자료')).join('<b>＋</b>')+'</span>';
@@ -56,6 +58,6 @@ function recordIcon(id,title){
  const svg=symbols[id]?'<svg viewBox="0 0 40 40" aria-hidden="true" stroke="#2A2F45" stroke-width="2">'+symbols[id]+'</svg>':evIcon(({receipt:'order',clock:'clock',envelope:'invite',roster:'roles',report:'script'})[id]||'anon');
  return '<span class="original-evidence-icon" role="img" aria-label="'+escape(title)+'">'+svg+'</span>';
 }
-window.DaramEvidenceArt={thumb(id,title){return `<span class="record-thumb">${recordIcon(id,title)}</span>`;},html(id,title){return `<figure class="evidence-art" data-art="${escape(id)}">${visual(id,title)}<figcaption>${crops[id]?'조사한 부분':pairs[id]?'함께 비교한 자료':'증거 그림'}</figcaption></figure>`;}};
+window.DaramEvidenceArt={thumb(id,title){return `<span class="record-thumb">${recordIcon(id,title)}</span>`;},html(id,title){return `<figure class="evidence-art" data-art="${escape(id)}">${["receipt","tray","clock","cabinet","key","envelope","roster","report"].includes(id)?recordIcon(id,title)+`<details><summary>발견한 곳 보기</summary>${visual(id,title)}</details>`:visual(id,title)}<figcaption>${crops[id]?'수첩에 기록한 증거':pairs[id]?'함께 비교한 자료':'증거 그림'}</figcaption></figure>`;}};
 
 })();
