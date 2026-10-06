@@ -38,7 +38,7 @@ function evIcon(id){
  }
  return '<svg class="evic" viewBox="0 0 40 40" aria-hidden="true">'+g+'</svg>';
 }
-const crops={envelope:['room-archive',.19,.595,.17,.16,1.5],roster:['room-archive',.405,.56,.17,.2,1.5],report:['room-archive',.605,.59,.305,.19,1.5],receipt:['panorama',.072,.465,.16,.16,1.5],tray:['panorama',.465,.495,.2,.15,1.5],clock:['room-lounge',.455,.09,.15,.23,1.5],cabinet:['room-office',.595,.125,.25,.6,1.5],t_paid:['karo',.1,.08,.17,.29,1.5],key:['mungchi',.837,.448,.065,.125,1.5]};
+const crops={envelope:['room-archive',.19,.595,.17,.16,1.5],roster:['room-archive',.405,.56,.17,.2,1.5],report:['room-archive',.605,.59,.305,.19,1.5],receipt:['reception-pixel',.072,.465,.16,.16,1.5],tray:['reception-pixel',.465,.495,.2,.15,1.5],clock:['room-lounge',.455,.09,.15,.23,1.5],cabinet:['room-office',.595,.125,.25,.6,1.5],t_paid:['karo',.1,.08,.17,.29,1.5],key:['mungchi',.837,.448,.065,.125,1.5]};
 const icons={envelope:'invite',roster:'roles',report:'script'};
 const pairs={cx_reception_0:['receipt','t_paid'],cx_reception_1:['key','cabinet'],cx_reception_2:['roster','report']};
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

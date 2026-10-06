@@ -10,12 +10,12 @@
  const load=src=>new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve();img.onerror=reject;img.src=src;});
  window.chapterStartReady=async()=>{
   try{
-   const bg=window.ART?.reception||'assets/reception.png';
-   await Promise.all([window.DaramArt?.ready||Promise.resolve(),load(bg),load(window.ART?.daram||'assets/daram.png'),document.fonts?Promise.all([document.fonts.load('16px DaramDot'),document.fonts.load('16px DaramDotBold')]).catch(()=>{}):Promise.resolve()]);
+   const bg=window.ART?.['reception-pixel']||'assets/reception-pixel.png';
+   await Promise.all([window.DaramArt?.ready||Promise.resolve(),load(bg),load(window.DaramArt.source('daram')),document.fonts?Promise.all([document.fonts.load('16px DaramDot'),document.fonts.load('16px DaramDotBold')]).catch(()=>{}):Promise.resolve()]);
    if(failed)return;
-   status.hidden=true;controls.forEach(b=>b.disabled=false);
+   window.chapterTitleReady?.();status.hidden=true;controls.forEach(b=>b.disabled=false);
    // Fetch the other actors while the introduction is being read.
-   ['karo','mungchi','daram-extra','panorama'].forEach(id=>load(window.ART?.[id]||'assets/'+id+'.png').catch(()=>{}));
+   ['karo','mungchi','daram-extra','reception-pixel'].forEach(id=>load(window.ART?.[id]||'assets/'+id+'.png').catch(()=>{}));
   }catch{fail();}
  };
 })();
