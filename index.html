@@ -4,14 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>다람 탐정 사무소</title>
-<meta name="description" content="아이와 함께 푸는 따뜻한 동물 마을 추리 게임">
-<meta name="theme-color" content="#0c1733">
+<meta name="description" content="아이와 함께 푸는 동물 마을 추리 게임">
+<meta name="theme-color" content="#0E1128">
 <link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:title" content="다람 탐정 사무소">
-<meta property="og:description" content="작은 단서를 모아 큰 진실을 찾아가는 동물 마을 추리 어드벤처.">
+<meta property="og:description" content="아이와 함께 푸는 동물 마을 추리 게임. 증거를 모으고, 원탁 회의로 추리하고, 결판에서 범인을 밝혀요.">
 <meta property="og:image" content="https://kkhkkh20-bit.github.io/daaegame/icons/icon-512.png">
 <meta property="og:url" content="https://kkhkkh20-bit.github.io/daaegame/">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icons/apple-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,63 +20,73 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="다람 탐정">
 <style>
-:root{--navy:#0c1733;--navy2:#162651;--cream:#fff7df;--gold:#efbe4f;--wine:#8f3546}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#071025;color:var(--cream);font-family:"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif}body{overflow:hidden}button,a{font:inherit}[hidden]{display:none!important}
-#app{position:fixed;inset:0;background:radial-gradient(circle at 72% 13%,rgba(239,190,79,.13),transparent 22%),linear-gradient(#0a1736 0 58%,#14244a 58% 100%);overflow:hidden}
-#app:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.26;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px),radial-gradient(circle,#fff 0 1px,transparent 1.5px);background-size:42px 42px,67px 67px;background-position:5px 8px,22px 31px}
-.pixel-village{position:absolute;left:0;right:0;bottom:0;height:47%;opacity:.95;pointer-events:none;background:linear-gradient(135deg,transparent 20px,#111a32 0) 4% 66%/58px 70px repeat-x,linear-gradient(225deg,transparent 18px,#17284d 0) 0 78%/72px 94px repeat-x,linear-gradient(#11203e,#091329);clip-path:polygon(0 18%,7% 11%,13% 18%,19% 8%,28% 19%,37% 4%,45% 18%,53% 9%,61% 20%,70% 6%,78% 15%,86% 3%,94% 18%,100% 12%,100% 100%,0 100%)}
-.pixel-village:after{content:"";position:absolute;inset:18% 4% 12%;background:radial-gradient(circle,#ffca5b 0 2px,transparent 3px) 0 0/43px 38px;opacity:.75}
-.menu-wrap{position:relative;z-index:2;height:100%;display:grid;place-items:center;padding:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom))}
-.menu-card{position:relative;width:min(100%,460px);height:min(100%,900px);max-height:100%;min-height:610px;border:2px solid rgba(239,190,79,.58);background:linear-gradient(rgba(6,14,34,.12),rgba(6,14,34,.56)),linear-gradient(180deg,#182b55 0%,#132449 45%,#1f1c2b 100%);box-shadow:0 18px 70px rgba(0,0,0,.48),inset 0 0 0 3px rgba(255,247,223,.04);overflow:hidden;border-radius:22px}
-.menu-card:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 4px)}
-.top-icons{position:absolute;top:14px;right:14px;z-index:5;display:flex;gap:8px}.icon-btn{width:44px;height:44px;border:2px solid #c99546;border-radius:10px;background:#121f40;color:#ffe7a7;display:grid;place-items:center;font-size:18px;box-shadow:inset 0 0 0 2px #293b66}.icon-btn:active{transform:translateY(1px)}
-.tagline{position:absolute;left:18px;top:24px;width:170px;font-size:12px;line-height:1.6;color:#f5d99b;letter-spacing:.03em}.title-zone{position:absolute;top:88px;left:18px;right:18px;text-align:center}.kicker{font-size:10px;letter-spacing:.27em;color:#e6bd69;margin-bottom:4px}.title{font-weight:900;font-size:clamp(34px,10vw,56px);line-height:.95;color:#ffe5a0;text-shadow:4px 4px 0 #392632,0 0 18px rgba(239,190,79,.2);letter-spacing:-.08em}.sub{display:inline-block;margin-top:10px;padding:6px 13px;border:1px solid #9e703c;background:#e8c786;color:#382433;font-weight:800;font-size:12px;box-shadow:3px 3px 0 rgba(38,24,35,.65)}
-.art-zone{position:absolute;left:0;right:0;top:245px;height:245px}.moon{position:absolute;right:20px;top:5px;width:70px;height:70px;border-radius:50%;background:#f8dda0;box-shadow:0 0 30px rgba(248,221,160,.18)}.portrait{position:absolute;left:18px;bottom:0;width:186px;height:186px;border-radius:28px 28px 22px 22px;background:linear-gradient(145deg,#24436b,#101a35);border:3px solid #d5a44e;overflow:hidden;box-shadow:7px 8px 0 rgba(38,23,33,.72)}.portrait img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated;transform:scale(1.02)}.speech{position:absolute;left:178px;right:22px;bottom:115px;background:#fff2d1;color:#4a2b30;border:2px solid #805038;border-radius:14px;padding:9px 11px;font-size:12px;font-weight:800;line-height:1.45;box-shadow:4px 5px 0 rgba(24,18,35,.5)}.speech:after{content:"";position:absolute;left:14px;bottom:-12px;border:7px solid transparent;border-top-color:#805038}.desk{position:absolute;left:0;right:0;bottom:0;height:42px;background:linear-gradient(#7a4429 0 18%,#4a291d 18% 100%);border-top:3px solid #b6783e}
-.menu-buttons{position:absolute;left:214px;right:16px;top:485px;display:grid;gap:9px}.main-btn{min-height:60px;border:2px solid #8e6337;background:#fff4da;color:#3d2931;border-radius:12px;text-align:left;padding:8px 10px 8px 50px;position:relative;box-shadow:4px 5px 0 rgba(31,20,36,.58);font-weight:900}.main-btn .ico{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:22px}.main-btn .label{display:block;font-size:16px;line-height:1.1}.main-btn small{display:block;margin-top:5px;font-size:10px;font-weight:700;color:#876a5d}.main-btn.primary{background:linear-gradient(#aa4153,#7f3042);color:#fff7e6;border-color:#e3b45c}.main-btn.primary small{color:#f3d9bd}.main-btn:active{transform:translate(2px,2px);box-shadow:2px 3px 0 rgba(31,20,36,.58)}
-.bottom-note{position:absolute;left:18px;right:18px;bottom:20px;text-align:center;font-size:10px;color:#e1c487;letter-spacing:.08em}.bottom-note strong{display:block;color:#fff0bc;font-size:12px;margin-bottom:4px}
-.modal{position:absolute;z-index:20;inset:0;background:rgba(5,8,20,.74);display:grid;place-items:center;padding:24px}.modal-card{width:min(100%,340px);background:#fff4d8;color:#33232b;border:3px solid #bb8441;box-shadow:8px 10px 0 rgba(28,18,32,.7);padding:20px;border-radius:16px}.modal-card h2{margin:0 0 10px;font-size:22px}.modal-card p{margin:0 0 16px;line-height:1.6;color:#654b49}.modal-card button,.modal-card a{display:block;width:100%;min-height:48px;border:0;border-radius:10px;background:#162651;color:#fff4d8;font-weight:900;text-align:center;padding:13px;text-decoration:none}
-#gameStage{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;background:#0E1128}#frame{display:block;border:0;background:#141833;width:100vw;height:100vh;height:100dvh}
-@media (min-width:600px) and (min-aspect-ratio:3/4){#frame{height:calc(100vh - 32px);height:calc(100dvh - 32px);max-height:980px;width:auto;aspect-ratio:9/18;border-radius:26px;box-shadow:0 0 0 2px #2A3060,0 24px 80px rgba(0,0,0,.55),0 0 120px rgba(242,194,48,.08)}}
-@media (max-width:390px){.menu-card{min-height:590px}.tagline{display:none}.title-zone{top:62px}.art-zone{top:212px;height:230px}.portrait{width:158px;height:158px}.speech{left:151px;bottom:100px;font-size:11px}.menu-buttons{left:172px;top:442px;right:11px;gap:8px}.main-btn{min-height:55px;padding-left:44px}.main-btn .label{font-size:14px}.main-btn small{font-size:9px}.bottom-note{display:none}}
-#kakao[hidden]{display:none!important}
+  :root{--bg:#0E1128;--glow:#2B3170}
+  html,body{margin:0;height:100%;background:var(--bg);overflow:hidden;color-scheme:dark}
+  body{background:radial-gradient(ellipse at 50% 30%,var(--glow) 0%,var(--bg) 70%) fixed}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #kakao[hidden]{display:none!important}
+  #frame{display:block;border:0;background:#141833;width:100vw;height:100vh;height:100dvh}
+  /* Wide screens (PC, tablet landscape): lock the game to a portrait phone-shaped column */
+  @media (min-width:600px) and (min-aspect-ratio:3/4){
+    #frame{height:calc(100vh - 32px);height:calc(100dvh - 32px);max-height:980px;width:auto;aspect-ratio:9/18;
+      border-radius:26px;box-shadow:0 0 0 2px #2A3060,0 24px 80px rgba(0,0,0,.55),0 0 120px rgba(242,194,48,.08)}
+  }
+  @media (min-width:600px) and (min-aspect-ratio:3/4) and (max-height:520px){
+    #frame{height:100vh;height:100dvh;border-radius:0}
+  }
 </style>
 </head>
 <body>
-<div id="app">
-  <div class="pixel-village" aria-hidden="true"></div>
-  <div id="kakao" hidden class="modal"><div class="modal-card"><h2>브라우저에서 플레이해 주세요</h2><p>카카오톡 안에서는 진행 기록이 지워질 수 있어요. 사파리나 크롬으로 열면 안전하게 이어 할 수 있습니다.</p><a id="kakaoOut" href="#">브라우저로 열기</a><p id="kakaoUrl" style="font-size:12px;word-break:break-all;margin-top:12px"></p><button id="kakaoStay" type="button">여기서 계속하기</button></div></div>
-  <main id="menu" class="menu-wrap">
-    <section class="menu-card" aria-label="다람 탐정 사무소 메인 메뉴">
-      <div class="top-icons"><button class="icon-btn" type="button" data-modal="설정" aria-label="설정">⚙</button><button class="icon-btn" type="button" data-modal="도감" aria-label="도감">▤</button><button class="icon-btn" type="button" data-modal="업적" aria-label="업적">🐾</button></div>
-      <div class="tagline">작은 단서가<br>큰 진실로 이어지는 곳.</div>
-      <div class="title-zone"><div class="kicker">ANIMAL MYSTERY ADVENTURE</div><div class="title">다람의<br>사건수첩</div><div class="sub">눈 내리는 마을의 비밀</div></div>
-      <div class="art-zone"><div class="moon" aria-hidden="true"></div><div class="portrait"><img src="icons/icon-512.png" alt="다람 탐정 캐릭터"></div><div class="speech">“궁금한 게 있다면 가만히 있을 수 없지!”</div><div class="desk" aria-hidden="true"></div></div>
-      <div class="menu-buttons">
-        <button class="main-btn primary" type="button" data-play><span class="ico">📖</span><span class="label">이야기 시작하기</span><small>사건 속으로 들어가요</small></button>
-        <button class="main-btn" type="button" data-play><span class="ico">📁</span><span class="label">이어하기</span><small>저장된 진행부터 계속해요</small></button>
-        <button class="main-btn" type="button" data-modal="사건 기록"><span class="ico">🗺</span><span class="label">사건 기록</span><small>지금까지의 사건을 정리해요</small></button>
-        <button class="main-btn" type="button" data-modal="등장인물"><span class="ico">🐾</span><span class="label">등장인물</span><small>만난 동물 친구들을 확인해요</small></button>
-      </div>
-      <div class="bottom-note"><strong>“오늘도, 어딘가에서 진실이 기다리고 있어.”</strong>A SMALL CLUE MAKES A BIG TRUTH.</div>
-    </section>
-  </main>
-  <div id="infoModal" class="modal" hidden><div class="modal-card"><h2 id="modalTitle">안내</h2><p id="modalText"></p><button id="modalClose" type="button">확인</button></div></div>
-  <div id="gameStage" hidden><iframe id="frame" title="다람 탐정 사무소" allow="autoplay; fullscreen"></iframe></div>
+<div id="kakao" hidden style="position:fixed;inset:0;z-index:5;display:grid;place-items:center;padding:24px;background:#0E1128;color:#F4F1E6;font:16px/1.6 sans-serif;text-align:center">
+  <div style="max-width:340px">
+    <p style="font-size:20px;color:#F2C230;margin:0 0 10px">카카오톡 안에서는 기록이 지워져요</p>
+    <p style="margin:0 0 16px">카카오톡 안의 화면은 닫으면 저장이 사라질 수 있어요. 크롬이나 사파리로 열어서 이어 하세요.</p>
+    <a id="kakaoOut" href="#" style="display:inline-block;background:#F2C230;color:#1B2447;border-radius:12px;padding:12px 20px;text-decoration:none;font-size:17px">브라우저로 열기</a>
+    <p style="margin:16px 0 0;font-size:14px;opacity:.8">안 열리면 오른쪽 위(또는 아래) 메뉴에서<br>"다른 브라우저로 열기"를 눌러 주세요.</p>
+    <p id="kakaoUrl" style="margin:12px 0 0;font-size:13px;opacity:.7;word-break:break-all;user-select:all"></p>
+    <button id="kakaoStay" type="button" style="margin-top:18px;background:transparent;border:1.5px solid #4A5490;color:#C9CFE6;border-radius:999px;padding:8px 16px;font-size:14px">이미 사파리·크롬이에요. 여기서 계속하기</button>
+  </div>
 </div>
+<div id="stage"><iframe id="frame" src="game.html" title="다람 탐정 사무소" allow="autoplay; fullscreen"></iframe></div>
 <script>
+// KakaoTalk's in-app browser wipes storage: send the player to the real browser
 (function(){
-  var q=new URLSearchParams(location.search),stay=false;try{stay=localStorage.getItem("daae:stay")==="1"}catch(e){}
+  var q=new URLSearchParams(location.search),stay=false;
+  try{stay=localStorage.getItem("daae:stay")==="1"}catch(e){}
   var standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
-  if(q.get("ext")==="1"){try{localStorage.setItem("daae:stay","1")}catch(e){}history.replaceState(null,"",location.pathname)}
-  if(!stay&&!standalone&&/KAKAOTALK/i.test(navigator.userAgent)){var base=location.origin+location.pathname,url=base+"?ext=1",out="kakaotalk://web/openExternal?url="+encodeURIComponent(url);var k=document.getElementById("kakao");k.hidden=false;document.getElementById("kakaoOut").href=out;document.getElementById("kakaoUrl").textContent=base;document.getElementById("kakaoStay").onclick=function(){try{localStorage.setItem("daae:stay","1")}catch(e){}k.hidden=true}}
-  var frame=document.getElementById("frame"),menu=document.getElementById("menu"),stage=document.getElementById("gameStage");
-  function launchGame(){if(!frame.src)frame.src="game.html";menu.hidden=true;stage.hidden=false;setTimeout(function(){try{frame.contentWindow.focus()}catch(e){}},80)}
-  document.querySelectorAll("[data-play]").forEach(function(b){b.addEventListener("click",launchGame)});
-  var modal=document.getElementById("infoModal"),mt=document.getElementById("modalTitle"),mb=document.getElementById("modalText");
-  var copy={"설정":"음향과 게임 설정은 현재 게임 안의 관리 메뉴에서 조정할 수 있어요.","도감":"등장인물과 장소, 단서를 한곳에서 보는 도감 화면은 다음 단계에서 연결할 예정이에요.","업적":"모든 단서 발견, 힌트 없이 해결 같은 인디게임식 업적을 넣을 예정이에요.","사건 기록":"기존 진행 기록은 그대로 유지됩니다. 우선 게임 안에서 현재 사건을 확인해 주세요.","등장인물":"다람과 여러 동물들의 프로필과 관계도를 보는 화면을 다음 단계에서 붙일 예정이에요."};
-  document.querySelectorAll("[data-modal]").forEach(function(b){b.addEventListener("click",function(){var t=b.dataset.modal;mt.textContent=t;mb.textContent=copy[t]||"준비 중인 메뉴입니다.";modal.hidden=false})});
-  document.getElementById("modalClose").addEventListener("click",function(){modal.hidden=true});modal.addEventListener("click",function(e){if(e.target===modal)modal.hidden=true});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!modal.hidden)modal.hidden=true});
-  if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
+  if(q.get("ext")==="1"){try{localStorage.setItem("daae:stay","1")}catch(e){}history.replaceState(null,"",location.pathname);return}
+  if(stay||standalone||!/KAKAOTALK/i.test(navigator.userAgent))return;
+  var base=location.origin+location.pathname,url=base+"?ext=1",out="kakaotalk://web/openExternal?url="+encodeURIComponent(url);
+  var k=document.getElementById("kakao");k.hidden=false;
+  document.getElementById("kakaoOut").href=out;
+  document.getElementById("kakaoUrl").textContent=base;
+  document.getElementById("kakaoStay").onclick=function(){try{localStorage.setItem("daae:stay","1")}catch(e){}k.hidden=true};
+  try{location.href=out}catch(e){}
+  window.__kakaoShown=true;
+})();
+// Phones: open the game directly (no frame) so iPhone sound and storage behave normally
+(function(){
+  if(window.__kakaoShown)return;
+  var wide=matchMedia("(min-width:600px) and (min-aspect-ratio:3/4)").matches;
+  if(!wide){location.replace("game.html");}
+})();
+(function(){
+  var f=document.getElementById("frame");
+  f.addEventListener("load",function(){try{f.contentWindow.focus()}catch(e){}});
+  document.addEventListener("keydown",function(){try{f.contentWindow.focus()}catch(e){}});
+  // Installed app on a desktop: open the window once in a portrait size (the user can resize afterwards)
+  try{
+    var standalone=matchMedia("(display-mode: standalone)").matches||matchMedia("(display-mode: window-controls-overlay)").matches;
+    var desktop=matchMedia("(pointer: fine)").matches;
+    if(standalone&&desktop&&!localStorage.getItem("daae:sized")){
+      var h=Math.min(screen.availHeight-40,1000),w=Math.round((h-32)*9/18)+48;
+      window.resizeTo(w,h);window.moveTo(Math.round((screen.availWidth-w)/2),Math.round((screen.availHeight-h)/2));
+      localStorage.setItem("daae:sized","1");
+    }
+  }catch(e){}
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
+  }
 })();
 </script>
 </body>
