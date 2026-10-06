@@ -3,50 +3,73 @@ const NAMES={daram:'다람',dad:'다온',karo:'까로',mungchi:'뭉치',mother:'
 const line=(who,text,mood=0,extra={})=>({who,text,mood,...extra});
 const STORY={
 intro:[
- line('narr','눈이 길을 지운 오후. 다람은 아빠보다 한 걸음 먼저 거처의 문을 열었다.',0,{actor:null,establish:true}),
- line('daram','여기가 엄마가 마지막으로 점검한 곳이지?',1,{actor:'daram'}),
- line('dad','마지막으로 확인된 곳. 아직 그 뒤의 일은 몰라.',0,{actor:'daram'}),
- line('daram','…응. 마지막이라고 정해 버리면 안 되지.',1,{actor:'daram'}),
- line('narr','엄마가 돌아오지 않은 지 여섯 주. 오늘은 거처에 남은 점검 보고서를 보러 왔다.',0,{actor:null}),
- line('dad','힘들면 오늘은 내가 보고 와도 돼.',0,{actor:'daram'}),
- line('daram','나도 볼래. 기다리면서 상상만 하는 건 더 무서워.',0,{actor:'daram'}),
- line('daram','엄마처럼 뭐든 알아내고 싶은 건 아니야. 모르는 걸 확인하는 사람이 되고 싶어.',0,{actor:'daram'}),
- line('dad','그럼 같이 확인하자. 내 짐작도 틀릴 수 있으니까.',0,{actor:'daram'}),
- line('narr','안쪽에서 목소리가 높아졌다.',0,{actor:null}),
- line('karo','봉투는 전달했습니다. 눈길을 또 걸으라면 추가 요금입니다.',1,{actor:'karo'}),
- line('mungchi','추가 배달이 아니라… 봉투가 없어졌다고요.',1,{actor:'mungchi'}),
- line('narr','접수대의 나무 받침은 비어 있었다. 주민들에게 줄 지원금 봉투라고 했다.',0,{actor:null}),
- line('dad','문부터 막으면 안 되지. 배달부에게 무슨 일이 있었는지 물어보자.',0,{actor:'karo'}),
- line('daram','제가 적을게요. 직접 본 것부터 말씀해 주세요.',0,{actor:'karo'}),
- line('karo','좋습니다. 제 결백과 근무 시간을 동시에 지켜 주시죠.',0,{actor:'karo'})
+ line('narr','눈길 거처에서 연락이 온 건 어제였다. 아내가 남긴 점검 보고서를 찾았다고 했다.',0,{actor:null,establish:true}),
+ line('narr','아내가 돌아오지 않은 지 여섯 주. 오늘은 그 보고서에 다음 행선지가 적혀 있는지 확인하러 왔다.',0,{actor:null}),
+ line('daram','엄마가 쓴 진짜 종이를 볼 수 있는 거지? 사진 말고.',1,{actor:'daram'}),
+ line('dad','응. 접수 담당자 뭉치 씨가 꺼내 두겠다고 했어.',0,{actor:'daram'}),
+ line('daram','그럼 나도 읽을래. 엄마 글씨, 아빠보다 내가 잘 읽잖아.',3,{actor:'daram'}),
+ line('narr','다람은 수첩을 꼭 쥐었다. 웃는 목소리와 달리 손끝은 조금 굳어 있었다.',0,{actor:'daram'}),
+ line('mungchi','다온 탐정님이시죠? 보고서 때문에 오셨는데… 죄송해요. 지금 봉투 하나가 없어져서요.',1,{actor:'mungchi'}),
+ line('karo','그 봉투는 제가 세 시에 전달했습니다. 빈손으로 온 게 아니라고요.',1,{actor:'karo'}),
+ line('daram','무슨 봉투인데요?',0,{actor:'daram'}),
+ line('mungchi','눈 때문에 집을 떠나 여기 머무는 분들 지원금이에요. 장작과 먹을 걸 살 돈이요.',0,{actor:'mungchi'}),
+ line('mungchi','제가 받아서 받침에 뒀는데, 주민이 찾으러 왔을 땐 없었어요.',1,{actor:'mungchi'}),
+ line('karo','받았다는 서명도 있습니다. 그걸 보면 제 배달은 끝난 일입니다.',0,{actor:'karo'}),
+ line('mungchi','그런데 같이 온 명단도 이상해서… 우리 할머니가 여기 계신 건 분명한데…',2,{actor:'mungchi'}),
+ line('narr','뭉치는 말을 멈추고 빈 받침을 봤다. 주민들은 저녁에 지원금을 받으러 올 예정이라고 했다.',0,{actor:null}),
+ line('mungchi','죄송하지만 봉투부터 같이 찾아 주실 수 있을까요? 보고서는 안쪽 문서 보관실에 안전하게 있어요.',1,{actor:'mungchi'}),
+ line('dad','살펴보겠습니다. 접수증과 봉투를 뒀던 곳을 보여 주세요. 아무도 단정해서 의심하진 않고요.',0,{actor:'daram'}),
+ line('daram','그럼 나는 적을게. 봉투가 어디까지 왔는지부터!',0,{actor:'daram'}),
+ line('karo','접수증은 창가 책상에 뒀습니다. 물어볼 게 있으면 여기서 듣겠습니다.',0,{actor:'karo'}),
+ line('daram','(엄마 보고서도, 없어진 봉투도. 먼저 눈앞에서 확인할 수 있는 것부터 보자.)',1,{actor:'daram',thought:true})
 ],
 questions:{
- delivery:{title:'봉투를 누구에게 줬나요?',lines:[line('daram','봉투를 누구에게 줬나요?'),line('karo','세 시에 뭉치에게요. 서명까지 받았습니다.',0),line('karo','접수도 끝났고, 주민 지급도 끝났겠죠.',0),line('daram','주민 지급까지요?',1),line('karo','서명이 있잖아요. 서류는 사람보다 덜 변덕스럽죠.',0)]},
- witness:{title:'주민들이 받는 것도 봤나요?',lines:[line('daram','돈을 나눠 주는 것도 직접 봤어요?'),line('karo','그건 못 봤죠. 여기서 젖은 날개를 말렸습니다.',1),line('daram','(본 일과 생각한 일이 섞여 있어.)',1,{thought:true})]},
- spoon:{title:'주머니에서 반짝이는 건…',lines:[line('daram','주머니에서 반짝이는 건 뭔가요?'),line('karo','숟가락입니다. 샀어요.',0),line('daram','아직 아무 말도 안 했는데요.'),line('karo','미리 말씀드리는 겁니다. 반짝임은 죄가 아니니까.',1)]}
+ delivery:{title:'봉투를 건넨 뒤에는요?',lines:[line('daram','세 시에 봉투를 누구에게 줬나요?'),line('karo','뭉치 씨에게요. 받침에 놓는 걸 보고 접수증에 서명을 받았습니다.',0),line('karo','서명이 있으니, 주민들에게 지급됐다는 것도 확인된 겁니다.',0),line('daram','돈을 나눠 준 것까지 이 종이에 적혀 있다고요?',1,{actor:'daram'}),line('karo','확인 서명이잖습니까. 저는 그렇게 이해했습니다.',0)]},
+ witness:{title:'그 뒤에 직접 본 일은요?',lines:[line('daram','주민들이 봉투 속 돈을 받는 것도 봤나요?'),line('karo','아뇨. 서명을 받은 뒤 옆 휴게실에서 젖은 날개를 말렸습니다.',1),line('karo','돌아오니 봉투가 없더군요. 그래서 지급한 줄 알았죠.',0),line('daram','(없어진 걸 봤지만, 나눠 주는 건 못 봤어. 이 둘은 따로 적어야겠다.)',1,{actor:'daram',thought:true}),line('dad','접수증에는 어디까지 확인했다고 적혀 있는지 읽어 보자.',0,{actor:'daram'})]},
+ spoon:{title:'주머니의 반짝이는 것은?',lines:[line('daram','주머니에서 반짝이는 건 뭔가요?'),line('karo','숟가락입니다. 샀어요.',0),line('daram','아직 아무 말도 안 했는데요.'),line('karo','눈길에서 배달 한 번 하면 뜨거운 수프가 필요합니다. 준비성이라고 해 두죠.',1)]}
 },
 crowSolved:[
- line('daram','이 서명은 봉투를 받았다는 확인이에요. 돈을 나눠 줬다는 확인은 아니고요.',2,{actor:'daram'}),
+ line('daram','여기는 「물품을 접수했다」고만 적혀 있어요. 주민들에게 지급했다는 칸은 없어요.',2,{actor:'daram'}),
  line('karo','…접수 확인. 정말 그렇게 적혀 있네요.',2,{actor:'karo'}),
- line('karo','제가 본 건 뭉치가 받는 데까지입니다. 그 뒤는 짐작했어요.',1,{actor:'karo'}),
- line('daram','그럼 짐작은 빼고 적을게요.',0,{actor:'karo'}),
- line('karo','제 숟가락 이야기도 빼 주시면 좋겠습니다.',0,{actor:'karo'}),
- line('daram','(말이 틀렸다고 범인인 건 아니야. 이제 받은 사람에게 물어보자.)',1,{actor:'daram',thought:true}),
- line('mungchi','제가 받았어요. 잠깐 받침에 뒀는데… 없어졌어요.',1,{actor:'mungchi'}),
- line('daram','접수대 뒤 보관함도 확인할 수 있을까요?',0,{actor:'mungchi'}),
- line('mungchi','거긴 잠겨 있어요. 주인님 열쇠 없이는 못 열어요.',0,{actor:'mungchi'}),
- line('narr','뭉치는 말하면서 목에 걸린 열쇠를 움켜쥐었다.',0,{actor:'mungchi'})
+ line('karo','제가 직접 확인한 건 뭉치 씨가 받았다는 것뿐입니다. 지급한 건 제 짐작이었어요.',1,{actor:'karo'}),
+ line('daram','그럼 아직 찾아야 하는 봉투가 맞네요. 배달을 안 했다는 뜻은 아니에요.',0,{actor:'daram'}),
+ line('karo','좋습니다. 제 결백 옆에 그 문장도 크게 적어 주세요.',0,{actor:'karo'}),
+ line('dad','뭉치 씨, 받침에서 다른 곳으로 옮겼을 가능성은 없나요? 평소 중요한 물건은 어디에 두죠?',0,{actor:'mungchi'}),
+ line('mungchi','관리실 02번 보관함에요. 오늘은… 받침에만 뒀어요.',1,{actor:'mungchi'}),
+ line('daram','그럼 받침과 보관함을 둘 다 확인해 봐도 될까요?',0,{actor:'daram'}),
+ line('mungchi','관리실은 보여 드릴게요. 하지만 보관함은 주인님 열쇠 없이는 못 열어요.',1,{actor:'mungchi'}),
+ line('narr','우리는 뭉치를 따라 접수대 옆 관리실로 갔다. 문 앞에서 뭉치는 목에 걸린 열쇠를 옷 안으로 밀어 넣었다.',0,{actor:'mungchi'})
 ],
-keyFound:[line('daram','목에 건 열쇠는 어디에 쓰는 거예요?',0,{actor:'mungchi'}),line('mungchi','아, 이건… 예비 열쇠예요. 접수 담당자가 갖고 있어요.',1,{actor:'mungchi'}),line('daram','보관함의 번호와 같네요.',0,{actor:'mungchi'}),line('mungchi','열쇠를 갖고 있다고 제가 숨긴 건 아니잖아요.',1,{actor:'mungchi'}),line('daram','맞아요. 그래서 안을 확인하고 싶어요.',0,{actor:'mungchi'})],
-keySolved:[line('daram','주인님 열쇠가 없어도 열 수 있어요. 그 예비 열쇠로요.',2,{actor:'daram'}),line('mungchi','…네.',1,{actor:'mungchi'}),line('daram','열쇠만으로 누가 숨겼는지는 몰라요. 같이 열어 봐도 될까요?',0,{actor:'mungchi'}),line('mungchi','제가 열게요.',2,{actor:'mungchi'}),line('narr','보관함 아래 칸에서 봉투가 나왔다. 봉인은 그대로였다.',0,{actor:null}),line('mungchi','제가 넣었어요. 돈은 건드리지 않았어요.',2,{actor:'mungchi'}),line('daram','왜요?',0,{actor:'mungchi'}),line('mungchi','함께 온 지급 명단에 할머니 이름이 없었어요.',2,{actor:'mungchi'}),line('mungchi','명단이 틀렸는데 지급부터 끝나면, 고쳐 달라는 말도 안 들어줄 것 같아서…',1,{actor:'mungchi'}),line('dad','그래서 다른 주민들 몫까지 숨겼구나.',0,{actor:'mungchi'}),line('mungchi','알아요. 그런데 가만히 기다리는 것도 무서웠어요.',2,{actor:'mungchi'}),line('narr','명단 아래에 익숙한 이름이 있었다. 다람의 엄마였다.',0,{actor:null}),line('mungchi','이 명단도 그분이 확인했다던데요. 다람 씨 어머니요.',1,{actor:'mungchi'}),line('daram','(엄마가 그랬을 리 없어. …아니. 그것도 내 짐작이야.)',1,{actor:'daram',thought:true}),line('dad','명단과 점검 보고서를 같이 보자. 이름만 보고 결론 내리지 말고.',0,{actor:'daram'})],
+keyFound:[line('daram','목에 걸린 건 어떤 열쇠예요?',0,{actor:'mungchi'}),line('mungchi','접수 담당자용 예비 열쇠예요. 잃어버릴까 봐 걸고 다녀요.',1,{actor:'mungchi'}),line('daram','작게 02라고 적혀 있네요. 보관함 번호와 비교해 봐도 될까요?',0,{actor:'daram'}),line('mungchi','…네. 하지만 갖고 있다는 것만으로 제가 봉투를 숨겼다는 건 아니잖아요.',1,{actor:'mungchi'}),line('daram','맞아요. 지금 확인하려는 건 문을 열 수 있는지예요.',0,{actor:'daram'})],
+keySolved:[
+ line('daram','보관함도 열쇠도 02번이에요. 주인님이 안 계셔도, 이 예비 열쇠로 확인할 수 있어요.',2,{actor:'daram'}),
+ line('mungchi','…그만해도 돼요. 제가 넣었어요.',2,{actor:'mungchi'}),
+ line('daram','봉투를요?',4,{actor:'daram',fx:'shock'}),
+ line('mungchi','네. 제가 열게요. 두 분이 보는 앞에서요.',2,{actor:'mungchi'}),
+ line('narr','뭉치가 보관함을 열었다. 아래 칸에 지원금 봉투와 지급 명단이 있었다. 봉인은 뜯기지 않았다.',0,{actor:null}),
+ line('mungchi','아까 말씀드리려던 할머니요. 명단에 이름이 없어요. 어젯밤에도 여기서 주무셨는데.',2,{actor:'mungchi'}),
+ line('daram','그래서 돈을 나눠 주지 못하게 숨긴 거예요?',1,{actor:'daram'}),
+ line('mungchi','명단을 보낸 곳에 전화했더니 담당자가 내일 온대요. 오늘 지급이 끝나면 할머니 몫은 없을까 봐…',2,{actor:'mungchi'}),
+ line('dad','그렇다고 다른 주민들 돈을 감추면 안 됩니다. 까로 씨까지 의심받았어요.',0,{actor:'mungchi'}),
+ line('mungchi','알아요. 까로 씨한테도 제가 설명할게요.',2,{actor:'mungchi'}),
+ line('daram','명단은 누가 확인한 거예요?',0,{actor:'daram'}),
+ line('mungchi','명단에 시설 점검 보고서를 근거로 썼대요. 그분이 확인했으니 명단도 맞는 거라고… 그렇게 안내받았어요.',1,{actor:'mungchi'}),
+ line('narr','첨부란에 아내의 이름이 있었다. 우리가 받으러 온 보고서가 뜻밖의 자리에 묶여 있었다.',0,{actor:null}),
+ line('daram','(엄마 이름… 그러면 할머니가 빠진 걸 엄마도 봤다는 뜻이야?)',5,{actor:'daram',thought:true}),
+ line('dad','그건 아직 모르지. 뭉치 씨가 들은 설명과 보고서에 실제로 적힌 내용을 나란히 보자.',0,{actor:'daram'}),
+ line('mungchi','원본은 옆 문서 보관실에 있어요. 봉투와 명단을 가져가서 펼쳐 드릴게요.',1,{actor:'mungchi'}),
+ line('narr','봉투는 내가 받아 들었다. 우리는 옆방의 넓은 작업대에 명단과 보고서를 나란히 놓았다.',0,{actor:null})
+],
 ending:[
- line('daram','엄마가 확인한 건 건물 안전이에요. 지원금 명단은 확인하지 않았어요.',2,{actor:'daram'}),
+ line('daram','이 보고서가 확인하는 건 건물 안전이에요. 이 서명만으로 지원금 명단까지 맞다고 할 수는 없어요.',2,{actor:'daram'}),
  line('mungchi','그러면 누가 그 이름을 여기에…',1,{actor:'mungchi'}),
  line('daram','아직 몰라요. 잘못 옮겼는지, 일부러 썼는지도요.',1,{actor:'mungchi'}),
- line('dad','명단은 다시 확인하도록 맡기자. 봉투도 주민들 앞에서 열고 금액을 세고.',0,{actor:'mungchi'}),
+ line('dad','주민 대표와 함께 봉투를 열어 금액부터 확인합시다. 빠진 이름은 거처 기록과 대조하고, 발급 담당자에게 수정을 요청하죠.',0,{actor:'mungchi'}),
  line('mungchi','돌려드릴게요. 하지만 할머니 이름은 꼭 다시 봐 주세요.',2,{actor:'mungchi'}),
  line('daram','그것도 기록할게요. 봉투를 숨긴 일과 따로요.',0,{actor:'mungchi'}),
- line('narr','봉투 안의 금액은 배달 내역과 같았다. 지급은 명단을 다시 확인할 때까지 보류됐다.',0,{actor:null}),
+ line('narr','주민 대표가 보는 앞에서 센 돈은 배달 내역과 같았다. 뭉치는 봉투를 숨긴 일을 설명했다. 대표는 명단이 확인될 때까지 봉투를 맡기로 했다.',0,{actor:null}),
+ line('mungchi','까로 씨, 제가 숨기고도 말하지 않았어요. 의심받게 해서 죄송해요.',2,{actor:'mungchi'}),
+ line('karo','다음엔 명단 때문에 보류한다고 말해 주세요. 제 배달 기록에 도난이라고 적히는 줄 알았습니다.',1,{actor:'karo'}),
  line('karo','이제 가도 되겠죠? 결백한 배달부도 저녁은 먹어야 합니다.',0,{actor:'karo'}),
  line('daram','숟가락이 있으니 준비는 끝났네요.',0,{actor:'karo'}),
  line('karo','봐요. 중요한 물건이라니까.',0,{actor:'karo'}),
@@ -55,8 +78,8 @@ ending:[
  line('daram','아니. 엄마가 틀렸을까 봐 무서웠어.',1,{actor:'daram'}),
  line('daram','그래도… 무섭다고 덮어 두고 싶지는 않아.',0,{actor:'daram'}),
  line('dad','나도 그래. 같이 읽자.',0,{actor:'daram'}),
- line('narr','보고서 마지막 장에는 다음 점검 장소가 적혀 있었다. 「갈림 관측소」.',0,{actor:null}),
- line('daram','(엄마가 남긴 답이 아니라, 다음에 확인할 곳을 찾았다.)',1,{actor:'daram',thought:true})
+ line('narr','우리가 처음 찾으려던 건 보고서의 마지막 장이었다. 다음 방문 예정지에 「갈림 관측소」라고 적혀 있었다.',0,{actor:null}),
+ line('daram','(예정이라고 적혀 있어. 정말 갔는지는… 거기서 확인하면 되겠지.)',1,{actor:'daram',thought:true})
 ]
 };
 const EVIDENCE={
@@ -67,11 +90,11 @@ const EVIDENCE={
  key:{title:'02번 예비 열쇠',desc:'뭉치가 가진 접수 담당자용 열쇠.',body:'<h3>02 · 예비</h3><p>보관함 잠금쇠와 같은 번호다. 뭉치가 보관함용이라고 확인했다.</p>',note:'주인의 열쇠 없이도 열 수 있다. 누가 열었는지와는 별개의 문제다.'},
  envelope:{title:'회수한 지원금 봉투',desc:'뭉치가 보관함에서 꺼낸 봉투.',body:'<p>봉인에는 찢거나 다시 붙인 흔적이 없다. 뭉치는 자신이 숨겼다고 인정했다.</p>',note:'내용물의 금액은 주민들 앞에서 확인해야 한다.'},
  roster:{title:'지급 명단',desc:'봉투와 함께 온 주민 지원금 명단.',body:'<h3>주민 지원금 지급 대상</h3><p>뭉치의 할머니 이름은 없다.</p><p class="fineprint">첨부 시설 점검자 확인으로 대상 명단 검증을 갈음함.</p>',note:'시설 점검자의 확인을 명단 검증으로 사용했다.'},
- report:{title:'엄마의 점검 보고서',desc:'거처가 보관 중이던 원본. 엄마의 서명이 있다.',body:'<h3>시설 안전 점검 보고서</h3><dl><dt>점검 범위</dt><dd>건물 · 난방 · 대피로</dd><dt>점검 결과</dt><dd>일부 보수 필요</dd></dl><p class="fineprint">본 보고서는 거주자 자격 및 지원금 지급 대상을 확인하지 않습니다.</p>',note:'엄마의 서명은 실제다. 지원금 명단에 대한 보증은 아니다.'}
+ report:{title:'엄마의 점검 보고서',desc:'거처가 보관 중이던 원본. 엄마의 서명이 있다.',body:'<h3>시설 안전 점검 보고서</h3><dl><dt>점검 범위</dt><dd>건물 · 난방 · 대피로</dd><dt>점검 결과</dt><dd>일부 보수 필요</dd><dt>다음 방문 예정지</dt><dd>갈림 관측소 · 방문 여부 미확인</dd></dl><p class="fineprint">본 보고서는 거주자 자격 및 지원금 지급 대상을 확인하지 않습니다.</p>',note:'엄마의 서명은 실제다. 이 보고서가 지원금 명단까지 보증하는 것은 아니다.'}
 };
 
 // Additional expression frames: 3 playful, 4 surprised, 5 vulnerable.
-STORY.intro[6].mood=5;
+STORY.intro.find(l=>l.text.includes('엄마가 쓴')).mood=5;
 STORY.questions.spoon.lines[2].mood=3;STORY.questions.spoon.lines[2].actor='daram';
 STORY.keySolved.find(l=>l.thought).mood=5;
 STORY.ending.filter(l=>l.who==='daram').forEach(l=>{if(l.text.includes('무서'))l.mood=5;else if(l.text.includes('숟가락')){l.mood=3;l.actor='daram';}});
@@ -98,3 +121,13 @@ const FATHER_NARRATION={
 };
 
 const FATHER_VIEW_TARGET={'문부터 막으면 안 되지. 배달부에게 무슨 일이 있었는지 물어보자.':'karo','그래서 다른 주민들 몫까지 숨겼구나.':'mungchi'};
+
+STORY.reason=[line('daram','봉투가 없어진 건 언제 알았어요?'),line('mungchi','주민이 돈을 받으러 왔을 때요. 까로 씨는 휴게실에 있었고요.',1),line('daram','그동안 받침을 계속 보고 있었나요?'),line('mungchi','아뇨. 명단 때문에 전화를 하고 있었어요. 담당자는 내일 온다고 했고요.',1),line('daram','(명단 얘기만 나오면 목소리가 작아져. 그래도 먼저 물건부터 확인하자.)',1,{actor:'daram',thought:true})];
+STORY.afterCrow=[line('karo','받았다는 서명이지, 지급했다는 서명은 아니라… 이제 구분하겠습니다.',1),line('daram','봉투는 어디 있는지 아직 확인 중이에요.'),line('karo','뭉치 씨에게도 물어보세요. 저는 관리실 안에는 들어가지 않았습니다.',0)];
+
+Object.assign(STORY_EFFECTS,{
+ '그 봉투는 제가 세 시에 전달했습니다. 빈손으로 온 게 아니라고요.':'sweat',
+ '작게 02라고 적혀 있네요. 보관함 번호와 비교해 봐도 될까요?':'insight',
+ '…그만해도 돼요. 제가 넣었어요.':'shock',
+ '첨부란에 아내의 이름이 있었다. 우리가 받으러 온 보고서가 뜻밖의 자리에 묶여 있었다.':'insight'
+});

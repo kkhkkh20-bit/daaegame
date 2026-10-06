@@ -11,7 +11,7 @@ async function combine(p,a,c){await p.locator('#notebook').click();await p.locat
 async function moveRoom(p,i){await p.locator('#nav-move').click();await p.locator(`[data-loc="${i}"]`).click();await sceneReady(p);}
 async function sceneReady(p){await p.waitForFunction(()=>document.getElementById('world').dataset.ready==='true');}
 try{
- const p=await open({width:390,height:844});await step(p);await step(p);assert.equal(await p.locator('#actor').getAttribute('data-actor'),'daram');assert.match(await p.locator('.nameplate').innerText(),/다온/);assert.doesNotMatch(await p.locator('.nameplate').innerText(),/곁에서|옆에서/);await p.screenshot({path:path.join(__dirname,'previews/v2-dad-reaction.png')});await read(p);
+ const p=await open({width:390,height:844});await step(p);await step(p);await step(p);assert.equal(await p.locator('#actor').getAttribute('data-actor'),'daram');assert.match(await p.locator('.nameplate').innerText(),/다온/);assert.doesNotMatch(await p.locator('.nameplate').innerText(),/곁에서|옆에서/);await p.screenshot({path:path.join(__dirname,'previews/v2-dad-reaction.png')});await read(p);
  await p.locator('[data-q=delivery]').click();await read(p);await p.locator('[data-q=spoon]').click();await step(p);await step(p);assert.equal(await p.locator('#actor').getAttribute('data-emotion'),'3');await read(p);
  await p.locator('#notebook').click();await p.locator('[data-tab=people]').click();assert.match(await p.locator('.person-note').filter({hasText:'까로'}).innerText(),/못생김/);await p.screenshot({path:path.join(__dirname,'previews/v2-people.png')});await p.locator('[data-close]').click();
  await p.locator('#settings').click();await p.locator('#save-menu').click();await p.locator('[data-save="0"]').click();await p.locator('[data-close]').click();
