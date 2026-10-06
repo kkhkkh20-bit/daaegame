@@ -6,7 +6,7 @@ var CASES=[c],COMBO={[c.id]:combos},BATTLE={[c.id]:c.rounds},CAST=c.cast,CONFESS
 var S={players:['다람','아빠']},DL=null,events=[];
 var document={querySelector:function(){return null},getElementById:function(){return null}};
 var window={scrollTo:function(){},__hush:function(){return Promise.resolve()},__testi:function(){return []},__CONF2:{}};
-var SFX=new Proxy({},{get:function(){return function(){}}});
+var SFX=new Proxy({},{get:function(_,name){return function(){if(globalThis.DaramAudio)globalThis.DaramAudio.fx(name)}}});
 function render(){} function floater(){} function bgm(){} function panicFx(w,k,n,done){done()}
 function flash(){return Promise.resolve()} function banner(){return Promise.resolve()}
 function jo(n){return n} function itemName(c,id){var e=evById(c,id),t=tById(c,id);return e?e.name:t?CAST[t.who].name+'의 말':id}
