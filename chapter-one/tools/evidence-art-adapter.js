@@ -7,6 +7,9 @@ function visual(id,title,mini=false){const c=crops[id];if(c){const [asset,x,y,w,
  return `<span class="original-evidence-icon" role="img" aria-label="${escape(title)}">${evIcon(icons[id]||'anon')}</span>`;
 }
 function recordIcon(id,title){
+ const cells={receipt:0,tray:1,clock:2,cabinet:3,key:4,envelope:5,roster:6,report:7};
+ if(window.DaramArt?.has('evidence')&&cells[id]!==undefined){const c=cells[id];return `<span class="pixel-evidence" role="img" aria-label="${escape(title)}" style="background-image:url(${DaramArt.source('evidence')});background-position:${c%3*50}% ${Math.floor(c/3)*50}%"></span>`;}
+
  const symbols={tray:'<path d="M4 14h32v18H4z" fill="#B5814A"/><path d="M4 14l6-7h20l6 7-6 8H10z" fill="#EDD5A5"/><path d="M10 12h20v7H10z" fill="#765035"/>',cabinet:'<path d="M7 4h26v33H7z" fill="#B5814A"/><path d="M11 8h18v25H11z" fill="#EDD5A5"/><path d="M23 19h4v7h-4z" fill="#475369"/>',key:'<path d="M13 4h12v12H13z M17 16h4v20h-4z M21 26h7v4h-7z M21 33h7v3h-7z" fill="#E8B84A"/><path d="M17 8h4v4h-4z" fill="#fff8e5"/>'};
  if(pairs[id])return '<span class="paired-evidence">'+pairs[id].map(x=>recordIcon(x,'관련 자료')).join('<b>＋</b>')+'</span>';
  if(id==='t_paid')return visual(id,title,true);

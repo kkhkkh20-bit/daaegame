@@ -21,7 +21,7 @@ function tell(text){$('toast').textContent=text;$('toast').hidden=false;clearTim
 function stop(){clearInterval(timer);timer=null;$('panel').classList.remove('typing');}
 function actor(id,mood=0){if(id==='dad')id='daram';const el=$('actor');el.hidden=!id;el.dataset.actor=id||'';if(!id)return;
  const extra=id==='daram'&&mood>=3;el.style.setProperty('--expression',extra?Math.min(2,mood-3):Math.min(2,mood));
- const asset=extra?'daram-extra':id;el.style.backgroundImage=`url(${window.ART?.[asset]||'assets/'+asset+'.png'})`;el.dataset.emotion=String(mood);
+ const asset=extra?'daram-extra':id,pixel=window.DaramArt?.has(asset);el.dataset.art=pixel?'pixel':'illustrated';el.style.backgroundImage=`url(${pixel?DaramArt.source(asset):window.ART?.[asset]||'assets/'+asset+'.png'})`;el.dataset.emotion=String(mood);
 }
 function add(id){if(!s.found.includes(id)){audio.fx('found');effects.play('found');}core.discover(id);save();count();}
 function count(){$('count').textContent=s.found.length?' '+s.found.length:'';}
@@ -36,7 +36,7 @@ function showLine(){const l=s.lines[s.index];if(!l){arrive(s.after);return;}if(l
 }
 function advance(){if(s.mode!=='dialogue'||$('modal').childElementCount||!$('title').hidden)return;const t=Date.now();if(t-last<170)return;last=t;if(timer){stop();$('text').textContent=full;return;}audio.fx('page');s.index++;save();render();}
 function arrive(mode){s.mode=mode;if(mode==='second'){s.round=2;s.who='mungchi';s.mode='questions';s.statement=0;}if(mode==='review'){['envelope','roster','report'].forEach(add);core.ask('confession');}save();render();}
-function render(){clearTimeout(inspectionTimer);inspectionPending=false;$('world').querySelector('.scene-selection')?.remove();effects.clear();stop();count();audio.music((s.mode==='done'||s.mode==='dialogue'&&s.after==='done')?'win':(s.mode==='testimony'||s.mode==='dialogue'&&s.after==='testimony')?'battle':(s.mode==='dialogue'&&s.after==='second')?'pursuit':s.mode==='finale'?'pursuit':['investigate','review','retry'].includes(s.mode)?'sneak':s.mode==='questions'?'talk':s.round===2?'sneak':'calm');$('chaptermark').hidden=true;$('hotspots').innerHTML='';$('scene').classList.toggle('exploring',s.mode==='investigate');$('panorama').hidden=s.mode!=='investigate';$('pan-controls').hidden=s.mode!=='investigate';$('panel').className='';
+function render(){$('world').querySelector('.scene-selection')?.remove();effects.clear();stop();count();audio.music((s.mode==='done'||s.mode==='dialogue'&&s.after==='done')?'win':(s.mode==='testimony'||s.mode==='dialogue'&&s.after==='testimony')?'battle':(s.mode==='dialogue'&&s.after==='second')?'pursuit':s.mode==='finale'?'pursuit':['investigate','review','retry'].includes(s.mode)?'sneak':s.mode==='questions'?'talk':s.round===2?'sneak':'calm');$('chaptermark').hidden=true;$('hotspots').innerHTML='';$('scene').classList.toggle('exploring',s.mode==='investigate');$('panorama').hidden=s.mode!=='investigate';$('pan-controls').hidden=s.mode!=='investigate';$('panel').className='';
  const begun=s.asked.length>0||s.mode!=='dialogue'||s.lines!==STORY.intro&&s.after!=='questions';
  $('case-nav').hidden=!(s.mode!=='dialogue'||s.asked.length||s.round>1);$('case-nav').querySelectorAll('button').forEach(b=>b.disabled=s.mode==='dialogue'||s.mode==='retry');
  for(const [id,mode] of [['nav-scene','investigate'],['nav-talk','questions'],['nav-fight','testimony']])$(id).setAttribute('aria-current',String(s.mode===mode));
@@ -54,8 +54,7 @@ function questions(){const who=s.who||'karo';actor(who,0);$('panel').className='
  $('people').onclick=peoplePicker;$('chat').onclick=()=>{if(!s.chats.includes(who)){s.chats.push(who);core.state.actions++;}dialogue(CHAT[who],'questions',who);};$('show-evidence').onclick=()=>inventory('show');}
 function peoplePicker(){open(head('누구와 이야기할까?')+['karo',...(s.round>1?['mungchi']:[])].map(id=>`<button class="person-row" data-person="${id}"><b>${PEOPLE[id].name}</b><span>${PEOPLE[id].role}</span></button>`).join(''));document.querySelectorAll('[data-person]').forEach(b=>b.onclick=()=>{s.who=b.dataset.person;close();s.mode='questions';save();render();});}
 const spots=[{id:'receipt',x:.15,y:.53,w:.14,h:.11},{id:'tray',x:.565,y:.558,w:.15,h:.105},{id:'clock',x:.601,y:.254,w:.075,h:.12},{id:'cabinet',x:.75,y:.33,w:.155,h:.31}];
-let inspectionTimer=null,inspectionPending=false;
-function markSpot(p){$('world').querySelector('.scene-selection')?.remove();const mark=document.createElement('div');mark.className='scene-selection';mark.style.cssText=`left:${(p.x-p.w/2)*100}%;top:${(p.y-p.h/2)*100}%;width:${p.w*100}%;height:${p.h*100}%`;const label=document.createElement('span');label.textContent=EVIDENCE[p.id].title;mark.append(label);$('world').append(mark);$('pan-label').textContent=EVIDENCE[p.id].title+' · 조사';return mark;}
+function markSpot(p){$('world').querySelector('.scene-selection')?.remove();const mark=document.createElement('div');mark.className='scene-selection';mark.style.cssText=`left:${(p.x-p.w/2)*100}%;top:${(p.y-p.h/2)*100}%;width:${p.w*100}%;height:${p.h*100}%`;const label=document.createElement('span');label.textContent=EVIDENCE[p.id].title;mark.append(label);$('world').append(mark);mark.setAttribute('role','status');$('pan-label').textContent=EVIDENCE[p.id].title+' · 선택';return mark;}
 let drag=null,moved=false,panoramaReady=false,panoramaLoading=false;
 function loadPanorama(){if(panoramaReady||panoramaLoading)return;panoramaLoading=true;$('world').classList.add('loading');$('scene-load').hidden=false;$('scene-load').textContent='현장을 불러오는 중…';$('scene-load').onclick=null;
  const img=new Image();img.onload=()=>{panoramaLoading=false;panoramaReady=true;$('world').dataset.ready='true';$('world').classList.remove('loading');$('scene-load').hidden=true;};img.onerror=()=>{panoramaLoading=false;$('scene-load').textContent='현장을 다시 불러오기';$('scene-load').onclick=loadPanorama;};img.src=window.ART?.panorama||'assets/panorama.png';
@@ -63,11 +62,18 @@ function loadPanorama(){if(panoramaReady||panoramaLoading)return;panoramaLoading
 function positionWorld(){const v=$('panorama'),world=$('world');world.style.width=Math.max(v.clientWidth,v.clientHeight*1.5)+'px';}
 function setPan(f,smooth=false){const v=$('panorama');v.scrollTo({left:(v.scrollWidth-v.clientWidth)*Math.max(0,Math.min(1,f)),behavior:smooth?'smooth':'auto'});}
 function panLabel(){const v=$('panorama'),range=v.scrollWidth-v.clientWidth;s.pan=range>0?v.scrollLeft/range:0;const i=Math.min(2,Math.round(s.pan*2));core.state.loc=i;$('pan-label').textContent=CHAPTER_CASE.locations[i].name;$('pan-left').disabled=s.pan<.02;$('pan-right').disabled=s.pan>.98;clearTimeout(scrollTimer);scrollTimer=setTimeout(save,160);}
-function investigate(){loadPanorama();actor(null);$('panel').className='investigation';$('panel').innerHTML=`<div class="nameplate">현장 조사<small>${core.player()} 차례</small></div><p>좌우로 살펴보고, 궁금한 물건을 눌러 보자.</p><div class="subactions">${button('back','대화로')}${button('openbook','수첩')}${button('move','이동')}</div>`;
- $('hotspots').innerHTML=spots.map(p=>`<button class="spot" data-spot="${p.id}" aria-label="${EVIDENCE[p.id].title} 조사" style="left:${(p.x-p.w/2)*100}%;top:${(p.y-p.h/2)*100}%;width:${p.w*100}%;height:${p.h*100}%"></button>`).join('');
- document.querySelectorAll('[data-spot]').forEach(b=>b.onclick=()=>{if(moved||inspectionPending||panoramaLoading)return;const id=b.dataset.spot,p=spots.find(x=>x.id===id);markSpot(p);add(id);inspectionPending=true;inspectionTimer=setTimeout(()=>{inspectionPending=false;if(s.mode==='investigate'&&!$('modal').childElementCount)detail(id);},340);});
+function investigationCard(id){
+ const e=EVIDENCE[id];if(!e)return;
+ $('panel').innerHTML=`<div class="scene-clue-card">${DaramEvidenceArt.thumb(id,e.title)}<div><small>살펴본 물건 · 수첩에 기록됨</small><h3>${esc(e.title)}</h3><p>${esc(e.desc)}</p><button id="inspect-selected" class="primary">자세히 보기 <span aria-hidden="true">›</span></button></div></div>`;
+ document.querySelectorAll('[data-spot]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.spot===id)));
+ $('inspect-selected').onclick=()=>detail(id);window.DaramPortraits?.layout();
+}
+function investigate(){loadPanorama();actor(null);$('panel').className='investigation';$('panel').innerHTML=`<div class="nameplate">현장 조사</div><p>좌우로 살펴보고, 궁금한 물건을 눌러 보자.</p><small class="scene-guidance">선택한 곳에 표시가 남아요.</small><div class="subactions">${button('back','대화로')}${button('openbook','수첩')}${button('move','이동')}</div>`;
+ $('hotspots').innerHTML=spots.map(p=>`<button class="spot" data-spot="${p.id}" aria-label="${EVIDENCE[p.id].title} 조사" aria-pressed="false" style="left:${(p.x-p.w/2)*100}%;top:${(p.y-p.h/2)*100}%;width:${p.w*100}%;height:${p.h*100}%"></button>`).join('');
+ document.querySelectorAll('[data-spot]').forEach(b=>b.onclick=()=>{if(moved||panoramaLoading)return;const id=b.dataset.spot,p=spots.find(x=>x.id===id);s.sceneSelection=id;markSpot(p);add(id);save();investigationCard(id);});
  positionWorld();setPan(s.pan);panLabel();$('panorama').onscroll=panLabel;
  $('back').onclick=()=>go('questions');$('openbook').onclick=()=>inventory();$('move').onclick=movePicker;
+ const picked=spots.find(x=>x.id===s.sceneSelection);if(picked){markSpot(picked);investigationCard(picked.id);}
 }
 $('pan-left').onclick=()=>setPan(Math.max(0,s.pan-.5),true);$('pan-right').onclick=()=>setPan(Math.min(1,s.pan+.5),true);
 $('panorama').addEventListener('pointerdown',e=>{moved=false;drag={x:e.clientX,start:$('panorama').scrollLeft,id:e.pointerId,mouse:e.pointerType==='mouse'};});
@@ -96,13 +102,13 @@ function finale(){actor('daram',2);$('panel').className='interactive finale';$('
 function ending(){s.finished=true;save();actor('daram',3);$('panel').className='interactive ending';$('panel').innerHTML=`<div class="nameplate">첫 번째 사건 · 끝</div><small class="eyebrow">사라진 봉투</small><h2>답을 찾으면,<br>다음 질문이 보인다.</h2><p>봉투는 돌아왔다. 명단에 쓰인 엄마의 이름은<br>아직 풀리지 않은 질문으로 남았다.</p><p class="muted">추리 기록 ${'★'.repeat(core.state.result?.stars||1)} · 힌트 ${core.state.hints}회</p><div class="actions">${button('endingbook','사건 수첩')}${button('replay','처음부터')}</div>`;$('endingbook').onclick=()=>inventory();$('replay').onclick=resetPrompt;}
 function open(html){returnFocus=document.activeElement;$('modal').innerHTML=`<div class="veil"><section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">${html}</section></div>`;[...$('game').children].filter(e=>e.id!=='modal'&&e.id!=='toast').forEach(e=>e.inert=true);$('modal').querySelectorAll('[data-close]').forEach(b=>b.onclick=close);$('modal').querySelector('button,select')?.focus();}
 function head(t,selected=false){return `<div class="sheet-head"><div class="sheet-heading"><small>다람 탐정 · 사건 수첩</small><h2 id="sheet-title">${selected?'<span id="selected-record-name">'+esc(t)+'</span>':esc(t)}</h2></div><button data-close aria-label="닫기">×</button></div>`;}
-function close(){$('modal').innerHTML='';const mark=$('world').querySelector('.scene-selection');if(mark)setTimeout(()=>{const current=$('world').querySelector('.scene-selection')===mark;mark.remove();if(current&&s.mode==='investigate')panLabel();},1100);[...$('game').children].forEach(e=>e.inert=false);if(returnFocus?.isConnected)returnFocus.focus();}
+function close(){$('modal').innerHTML='';[...$('game').children].forEach(e=>e.inert=false);if(returnFocus?.isConnected)returnFocus.focus();}
 let notebookTab='evidence',comboPicks=[],comboMode='';
 const recordName=id=>EVIDENCE[id]?.title||(TESTIMONIES[id]?PEOPLE[TESTIMONIES[id].who].name+'의 증언 · '+TESTIMONIES[id].q:'');
 function inventory(mode='',tab=(mode==='present'||mode==='show'||mode==='archive')?'evidence':notebookTab){notebookTab=tab;const presenting=mode==='present',showing=mode==='show';
  const tabs=[['evidence','증거'],['testimony','증언'],['people','인물'],['timeline','사건 순서']];
  let html=head(presenting?'증거 제시':showing?'증거 보여주기':'다람의 수첩');
- if(presenting)html+=`<p class="current-claim">${esc(claims()[s.statement])}</p>`;
+ if(presenting)html+=`<section class="comparison-claim"><small>${s.round===1?'까로':'뭉치'}의 증언 · ${s.statement+1} / ${claims().length}</small><p>“${esc(claims()[s.statement])}”</p><b>이 말과 모순되는 증거는?</b></section>`;
  html+='<nav class="book-tabs">'+tabs.map(([id,t])=>`<button data-tab="${id}" aria-pressed="${id===tab}">${t}</button>`).join('')+'</nav>';
  if(tab==='evidence'){let ids=core.records('ev');if(mode==='archive')ids=ids.filter(id=>['envelope','roster','report'].includes(id));
  const pins=core.state.pins||[];ids=ids.slice().sort((a,b)=>Number(pins.includes(b))-Number(pins.includes(a)));
@@ -124,7 +130,7 @@ function detail(id,mode=''){if(!core.selectRecord(id))return;save();const e=EVID
  const isEvidence=!!e,examined=!!core.state.exam[id];const title=recordName(id);
  const ids=core.records(e?'ev':'t').filter(x=>EVIDENCE[x]||TESTIMONIES[x]);
  let html=head(title,true)+`<section class="record-selection" aria-label="선택한 증거"><div class="selection-label">${mode==='present'?'제시할 증거':mode==='show'?'보여줄 증거':'선택한 기록'}<span>${ids.indexOf(id)+1} / ${ids.length}</span></div><div class="record-strip" aria-label="기록 선택">${ids.map(x=>`<button data-record="${x}" aria-pressed="${x===id}">${esc(recordName(x))}${x===id?'<span aria-hidden="true"> ✓</span>':''}</button>`).join('')}</div></section>`;
- if(mode==='present')html+=`<p class="current-claim"><b>${s.round===1?'까로':'뭉치'} · 문장 ${s.statement+1}</b><br>“${esc(claims()[s.statement])}”</p>`;
+ if(mode==='present')html+=`<section class="current-claim comparison-claim"><small>${s.round===1?'까로':'뭉치'} · 문장 ${s.statement+1}</small><p>“${esc(claims()[s.statement])}”</p><b>선택한 증거와 나란히 확인하세요.</b></section>`;
  if(mode==='show')html+=`<p class="current-claim">보여줄 사람: <b>${PEOPLE[s.who||'karo'].name}</b></p>`;
  html+=`<small class="item-meta">${e?(examined?'검사 완료':e.check?'추가 검사 가능':'증거 기록'):'수집한 증언'}</small>`;
  if(e)html+=(window.DaramEvidenceArt?.html(id,title)||'')+`<p class="item-description">${e.desc}</p><article class="paper">${e.body}</article>`+(e.check?(examined?`<div class="finding"><b>검사 기록</b><p>${e.check.text}</p></div>`:button('examine',e.check.label,'inspect-button')):'')+`<details class="daram-memo"><summary>다람의 낙서</summary><p>${e.memo}</p></details>`;
