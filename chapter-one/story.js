@@ -75,3 +75,17 @@ STORY.intro[6].mood=5;
 STORY.questions.spoon.lines[2].mood=3;STORY.questions.spoon.lines[2].actor='daram';
 STORY.keySolved.find(l=>l.thought).mood=5;
 STORY.ending.filter(l=>l.who==='daram').forEach(l=>{if(l.text.includes('무서'))l.mood=5;else if(l.text.includes('숟가락')){l.mood=3;l.actor='daram';}});
+
+// Explicit beats only; ordinary dialogue does not trigger random animations.
+// Text lookup also applies to dialogue arrays in saves made before these cues.
+const STORY_EFFECTS={
+ '추가 배달이 아니라… 봉투가 없어졌다고요.':'shock',
+ '주민 지급까지요?':'insight',
+ '숟가락입니다. 샀어요.':'sweat',
+ '아직 아무 말도 안 했는데요.':'tease',
+ '…접수 확인. 정말 그렇게 적혀 있네요.':'shock',
+ '제 숟가락 이야기도 빼 주시면 좋겠습니다.':'sweat',
+ '뭉치는 말하면서 목에 걸린 열쇠를 움켜쥐었다.':'sweat',
+ '아, 이건… 예비 열쇠예요. 접수 담당자가 갖고 있어요.':'sweat',
+ '보관함의 번호와 같네요.':'insight'
+};
