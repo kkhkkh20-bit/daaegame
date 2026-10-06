@@ -5,6 +5,9 @@ for(const f of ['story.js','case-data.js','legacy-core.js'])vm.runInContext(fs.r
  const e=window.DaramLegacy.create(CHAPTER_CASE,COMBINATIONS);
  if(e.state.hp!==5||e.locationOpen(3))throw Error('initial rules');
  e.discover('receipt');e.ask('t_paid');e.begin(0,1);
+ if(e.records('ev').join()!=='receipt'||!e.records('t').includes('t_paid'))throw Error('original record lists');
+ if(e.selectRecord('key')||!e.selectRecord('receipt')||!e.state.seen.includes('receipt')||e.state.exam.receipt)throw Error('selection must mark seen, not inspected');
+ const restored=window.DaramLegacy.create(CHAPTER_CASE,COMBINATIONS,JSON.parse(JSON.stringify(e.state)));if(restored.state.recordSelection!=='receipt')throw Error('selection persistence');
  if((await e.present(0,1,'receipt')).kind!=='inspect'||e.state.hp!==5)throw Error('inspection gate');
  e.examine('receipt');if(e.combine('t_paid','receipt').kind!=='success')throw Error('testimony combination');
  if((await e.present(0,0,'receipt')).kind!=='wrong'||e.state.hp!==4)throw Error('wrong statement');

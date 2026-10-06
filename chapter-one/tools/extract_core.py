@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib,json
 root=Path(__file__).resolve().parents[2]
 source=(root/'game.html').read_text()
-names=['allSpots','evById','tById','locOfEv','fresh','curPlayer','locOpen','evDesc','hpMax','gated','stmsOf','comboFor','haveItem','autoHint','judgeBattle']
+names=['allSpots','evById','tById','locOfEv','fresh','curPlayer','locOpen','evDesc','hpMax','gated','stmsOf','comboFor','haveItem','autoHint','recItems','judgeBattle']
 def extract(name):
  start=source.index('function '+name+'(');opening=source.index('{',start);depth=1;i=opening+1;quote=None;escape=False
  while depth:
@@ -37,6 +37,8 @@ footer='''
 var G=Object.assign(fresh(0),saved||{});
 return {
  state:G,
+ records:function(tab){return recItems(c,tab)},
+ selectRecord:function(id){if(recItems(c,"ev").concat(recItems(c,"t")).indexOf(id)<0)return false;G.recordSelection=id;G.seen=G.seen||[];if(G.seen.indexOf(id)<0)G.seen.push(id);return true;},
  evidence:function(id){return evById(c,id)},testimony:function(id){return tById(c,id)},
  have:function(id){return haveItem(c,id)},gated:function(id){return gated(c,id)},
  description:function(id){var e=evById(c,id);return e?evDesc(e):''},
