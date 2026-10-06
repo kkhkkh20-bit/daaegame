@@ -4,10 +4,10 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const audio=window.DaramAudio||{music(){},fx(){},get(){return {music:0,effects:0}},set(){}};
 const effects=window.DaramEffects||{play(){},clear(){},cue(){},get(){return 'off'},set(){}};
 const own=(x,k)=>Object.prototype.hasOwnProperty.call(x,k);
-const fresh=()=>({version:1,mode:'dialogue',lines:STORY.intro,index:0,after:'questions',round:1,found:[],read:[],asked:[],pressed:[],statement:0,log:[],speed:28,finished:false,moods:{},pan:.5,room:0,roomVersion:2,roomPans:{},who:'karo',chats:[],system:null});
-let s=fresh(),core,timer=null,full='',last=0,returnFocus=null,toastTimer,scrollTimer,busy=false,checkpoint=null;
+const fresh=()=>({version:1,mode:'dialogue',lines:STORY.intro,index:0,after:'questions',round:1,found:[],read:[],asked:[],pressed:[],statement:0,log:[],speed:28,finished:false,moods:{},pan:.5,room:0,roomVersion:2,roomPans:{},caseTime:'15:40',who:'karo',chats:[],system:null});
+let s=fresh(),core,timer=null,full='',last=0,returnFocus=null,toastTimer,scrollTimer,busy=false,checkpoint=null,questionReadyAt=0,questionUnlockTimer;
 function valid(v){return v&&v.version===1&&['dialogue','questions','investigate','testimony','review','finale','done','retry'].includes(v.mode)&&Array.isArray(v.lines)&&v.lines.every(l=>l&&typeof l.text==='string')&&Array.isArray(v.found)&&v.found.every(id=>EVIDENCE[id])&&Array.isArray(v.log)&&Number.isInteger(v.index)&&v.index>=0&&[1,2].includes(v.round);}
-function bind(){if(!s.roomVersion){s.room=[0,0,2,3][s.system?.loc||0];s.roomVersion=2;s.roomPans={};s.sceneSelection=null;}if(!s.who)s.who=s.round===2?'mungchi':'karo';s={...fresh(),...s};core=DaramLegacy.create(CHAPTER_CASE,COMBINATIONS,s.system);const g=core.state;
+function bind(){if(!s.caseTime)s.caseTime=s.found.includes('report')?'16:25':s.round===2?'16:05':s.mode==='dialogue'&&s.index===0?'15:40':'15:45';if(!s.roomVersion){s.room=[0,0,2,3][s.system?.loc||0];s.roomVersion=2;s.roomPans={};s.sceneSelection=null;}if(!s.who)s.who=s.round===2?'mungchi':'karo';s={...fresh(),...s};core=DaramLegacy.create(CHAPTER_CASE,COMBINATIONS,s.system);const g=core.state;
  g.found=s.found;g.asked=g.asked||[];g.exam=g.exam||{};g.hintLog=g.hintLog||[];s.system=g;if(!Number.isInteger(s.room)||s.room<0||s.room>3)s.room=0;g.loc=s.room;
  const mapping={delivery:['t_delivery','t_paid'],witness:['t_witness'],spoon:['t_spoon'],key:['t_key'],reason:['t_reason']};
  s.asked.forEach(id=>(mapping[id]||[]).forEach(t=>{if(!g.asked.includes(t))g.asked.push(t)}));
@@ -29,7 +29,7 @@ function count(){$('count').textContent=s.found.length?' '+s.found.length:'';}
 function dialogue(lines,after,actorId=s.who||'karo'){s.mode='dialogue';s.lines=lines.map(l=>({...l,actor:own(l,'actor')?l.actor:actorId}));s.index=0;s.after=after;save();render();}
 function showLine(){const l=s.lines[s.index];if(!l){arrive(s.after);return;}if(l.who==='narr'&&FATHER_NARRATION[l.text])l.text=FATHER_NARRATION[l.text];const who=l.who==='dad'&&FATHER_VIEW_TARGET[l.text]?FATHER_VIEW_TARGET[l.text]:own(l,'actor')?l.actor:l.who==='dad'?'daram':'karo';
  if(who&&l.who===who)s.moods[who]=l.mood;actor(who,who?s.moods[who]||0:0);
- $('chaptermark').hidden=!l.establish;$('chaptermark').innerHTML='<small>첫 번째 사건</small><h2>사라진 봉투</h2><p>눈길 거처 · 어느 겨울 오후</p>';
+ if(l.stamp){s.caseTime=l.stamp.time;s.casePlace=l.stamp.place;save();} $('chaptermark').hidden=!l.establish;$('chaptermark').innerHTML='<small>첫 번째 사건</small><h2>사라진 봉투</h2><p class="event-time">12월 18일 · 오후 3시 40분<br>눈길 거처 · 산장 접수대</p>';
  $('panel').className='dialogue';$('panel').innerHTML=`<div class="nameplate">${esc(l.thought?'다람':NAMES[l.who])}<small>${l.thought?'혼잣말':''}</small></div><p id="text" class="${l.thought?'thought':l.who==='narr'?'narration':''}"></p><button id="advance" aria-label="대사 읽기 · 다음"><span>다음 ▸</span></button>`;
  const id=s.lines.map(x=>x.text).join('|')+'#'+s.index;if(s.logged!==id){s.log.push({name:NAMES[l.who],text:l.text,thought:!!l.thought});s.logged=id;save();}
  effects.cue({...l,fx:l.fx||STORY_EFFECTS[l.text]});full=l.text;if(l.thought)audio.fx('thinkin');$('advance').onclick=advance;
@@ -38,7 +38,7 @@ function showLine(){const l=s.lines[s.index];if(!l){arrive(s.after);return;}if(l
 $('game').addEventListener('click',e=>{if(e.target.closest('button,a,input,select,summary,[role=dialog]'))return;if(s.mode==='dialogue')advance();});
 $('skip-intro').onclick=()=>{if(!isIntro())return;stop();s.lines.slice(s.index+1).forEach(l=>s.log.push({name:NAMES[l.who],text:l.text,thought:!!l.thought}));s.introSkipped=true;s.index=s.lines.length;audio.fx('page');arrive('questions');};
 function advance(){if(s.mode!=='dialogue'||$('modal').childElementCount||!$('title').hidden)return;const t=Date.now();if(t-last<170)return;last=t;if(timer){stop();$('text').textContent=full;return;}audio.fx('page');s.index++;save();render();}
-function arrive(mode){s.mode=mode;if(mode==='second'){s.room=2;core.state.loc=2;s.pan=.5;s.round=2;s.who='mungchi';s.mode='questions';s.statement=0;}if(mode==='review'){s.room=3;core.state.loc=3;s.pan=.5;['envelope','roster','report'].forEach(add);core.ask('confession');}save();render();}
+function arrive(mode){if(mode==='questions'||mode==='second')questionReadyAt=Date.now()+850;s.mode=mode;if(mode==='questions'&&s.caseTime==='15:40')s.caseTime='15:45';if(mode==='second'){s.caseTime='16:05';s.room=2;core.state.loc=2;s.pan=.5;s.round=2;s.who='mungchi';s.mode='questions';s.statement=0;}if(mode==='review'){s.caseTime='16:25';s.room=3;core.state.loc=3;s.pan=.5;['envelope','roster','report'].forEach(add);core.ask('confession');}save();render();}
 function isIntro(){return s.mode==='dialogue'&&s.lines[0]?.establish===true;}
 function render(){ $('skip-intro').hidden=!isIntro();if($('scene-people'))$('scene-people').hidden=true;$('world').querySelectorAll('.scene-selection,.scene-tap').forEach(e=>e.remove());effects.clear();stop();count();audio.music((s.mode==='done'||s.mode==='dialogue'&&s.after==='done')?'win':(s.mode==='testimony'||s.mode==='dialogue'&&s.after==='testimony')?'battle':(s.mode==='dialogue'&&s.after==='second')?'pursuit':s.mode==='finale'?'pursuit':['investigate','review','retry'].includes(s.mode)?'sneak':s.mode==='questions'?'talk':s.round===2?'sneak':'calm');$('chaptermark').hidden=true;$('hotspots').innerHTML='';$('scene').classList.toggle('exploring',s.mode==='investigate');$('panorama').hidden=s.mode!=='investigate';$('pan-controls').hidden=s.mode!=='investigate';$('panel').className='';
  const begun=s.asked.length>0||s.mode!=='dialogue'||s.lines!==STORY.intro&&s.after!=='questions';
@@ -48,11 +48,12 @@ function render(){ $('skip-intro').hidden=!isIntro();if($('scene-people'))$('sce
  if(s.mode==='dialogue')showLine();else if(s.mode==='questions')questions();else if(s.mode==='investigate')investigate();else if(s.mode==='testimony')testimony();else if(s.mode==='review')review();else if(s.mode==='finale')finale();else if(s.mode==='done')ending();else if(s.mode==='retry')retry();syncCaseUI();window.DaramPortraits?.layout();
 }
 const button=(id,t,cls='')=>`<button id="${id}" class="${cls}">${t}</button>`;
-function questions(){const who=s.who||'karo';actor(who,0);$('panel').className='interactive';
+function questions(){const who=s.who||'karo';actor(who,0);$('panel').className='interactive question-panel';
  let qs=who==='karo'?Object.entries(STORY.questions).map(([id,q])=>[id,q.title]):[['key','목에 건 열쇠는 어디에 쓰나요?'],['reason','봉투가 없어진 걸 언제 알았나요?']];
  if(who==='karo'&&s.round===2)qs.push(['after','접수증을 다시 보니…']);
- $('panel').innerHTML=`<div class="nameplate">${PEOPLE[who].name}<small>${PEOPLE[who].role}</small></div><div class="questions">${qs.map(([id,title],i)=>`<button data-q="${id}"><span class="question-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><span class="question-label">${title}</span><small>${s.asked.includes(id)?'다시 듣기':'›'}</small></button>`).join('')}</div><div class="subactions">${button('people','다른 사람')}${button('chat','수다')}${button('show-evidence','증거 보여주기')}</div>`;
- $('panel').querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{if(s.mode!=='questions')return;const id=b.dataset.q;if(!s.asked.includes(id))s.asked.push(id);
+ $('panel').innerHTML=`<div class="nameplate">${PEOPLE[who].name}<small>${PEOPLE[who].role}</small></div><p class="question-prompt">무엇을 물어볼까? <small>질문 ${qs.length}개</small></p><div class="questions">${qs.map(([id,title],i)=>`<button data-q="${id}"><span class="question-number" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><span class="question-label">${title}</span><small>${s.asked.includes(id)?'다시 듣기':'›'}</small></button>`).join('')}</div><div class="subactions">${button('people','다른 사람')}${button('chat','수다')}${button('show-evidence','증거 보여주기')}</div><div class="question-rest" aria-live="polite">이야기를 다 들었어요. 위에서 질문을 골라 주세요.</div>`;
+ clearTimeout(questionUnlockTimer);const choices=[...$('panel').querySelectorAll('button')];if(Date.now()<questionReadyAt){choices.forEach(b=>b.disabled=true);questionUnlockTimer=setTimeout(()=>choices.forEach(b=>b.disabled=false),questionReadyAt-Date.now());}
+ $('panel').querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{if(s.mode!=='questions'||Date.now()<questionReadyAt)return;const id=b.dataset.q;if(!s.asked.includes(id))s.asked.push(id);
  const ids={delivery:['t_delivery','t_paid'],witness:['t_witness'],spoon:['t_spoon'],key:['t_key'],reason:['t_reason']};(ids[id]||[]).forEach(t=>core.ask(t));
  if(id==='key'){add('key');dialogue(STORY.keyFound,'questions','mungchi');}else if(id==='reason')dialogue(STORY.reason,'questions','mungchi');else if(id==='after')dialogue(STORY.afterCrow,'questions','karo');else dialogue(STORY.questions[id].lines,'questions','karo');});
  $('people').onclick=peoplePicker;$('chat').onclick=()=>{if(!s.chats.includes(who)){s.chats.push(who);core.state.actions++;}dialogue(CHAT[who],'questions',who);};$('show-evidence').onclick=()=>inventory('show');}
@@ -70,7 +71,7 @@ function currentGoal(){
  return '보관함을 열 수 없다는 말과 열쇠를 비교하자.';
 }
 function syncCaseUI(){
- const r=room();$('place').textContent=r.name;$('subtitle').textContent='눈길 거처 · 첫 번째 사건';
+ const r=room();$('place').textContent=s.mode==='dialogue'&&s.casePlace?s.casePlace.replace('눈길 거처 · ',''):r.name;$('subtitle').textContent='12월 18일 · '+(s.caseTime||'15:45');$('subtitle').classList.add('event-time');$('place').classList.add('event-place');
  $('background').style.backgroundImage=`url(${sceneAsset()})`;
  let goal=$('case-goal');if(!goal){goal=document.createElement('aside');goal.id='case-goal';$('game').append(goal);}
  goal.hidden=s.mode==='dialogue'||s.mode==='done';
@@ -114,7 +115,7 @@ $('world').addEventListener('click',e=>{
  const px=e.detail===0&&targetRect?targetRect.left+targetRect.width/2:e.clientX,py=e.detail===0&&targetRect?targetRect.top+targetRect.height/2:e.clientY;
  const x=Math.max(0,Math.min(1,(px-rect.left)/rect.width)),y=Math.max(0,Math.min(1,(py-rect.top)/rect.height));
  world.querySelector('.scene-tap')?.remove();
- const mark=document.createElement('div');mark.className='scene-tap'+(target?.dataset.spot?' clue':'');mark.style.left=x*100+'%';mark.style.top=y*100+'%';mark.setAttribute('aria-hidden','true');mark.innerHTML='<i></i><b>＋</b>';world.append(mark);setTimeout(()=>mark.remove(),500);
+ const mark=document.createElement('div');mark.className='scene-tap'+(target?.dataset.spot?' clue':'');mark.style.left=x*100+'%';mark.style.top=y*100+'%';mark.setAttribute('aria-hidden','true');mark.innerHTML='<i></i><span class="tap-paw">●</span>';world.append(mark);setTimeout(()=>mark.remove(),500);
  if(effects.get()==='standard'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)mark.querySelector('i').animate([{transform:'scale(.35)',opacity:1},{transform:'scale(1.8)',opacity:0}],{duration:500,fill:'forwards'});
  if(target)return;
  world.querySelector('.scene-selection')?.remove();s.sceneSelection=null;document.querySelectorAll('[data-spot]').forEach(b=>b.setAttribute('aria-pressed','false'));save();
