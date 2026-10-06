@@ -1,0 +1,19 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const ctx={window:{},console,setTimeout,Promise};ctx.globalThis=ctx;vm.createContext(ctx);
+for(const f of ['story.js','case-data.js','legacy-core.js'])vm.runInContext(fs.readFileSync(__dirname+'/'+f,'utf8'),ctx);
+(async()=>{await vm.runInContext(`(async()=>{
+ const e=window.DaramLegacy.create(CHAPTER_CASE,COMBINATIONS);
+ if(e.state.hp!==5||e.locationOpen(3))throw Error('initial rules');
+ e.discover('receipt');e.ask('t_paid');e.begin(0,1);
+ if((await e.present(0,1,'receipt')).kind!=='inspect'||e.state.hp!==5)throw Error('inspection gate');
+ e.examine('receipt');if(e.combine('t_paid','receipt').kind!=='success')throw Error('testimony combination');
+ if((await e.present(0,0,'receipt')).kind!=='wrong'||e.state.hp!==4)throw Error('wrong statement');
+ if((await e.present(0,1,'cx_reception_0')).kind!=='success')throw Error('combined evidence accepted');
+ e.discover('key');e.discover('cabinet');e.examine('key');e.combine('cabinet','key');
+ if((await e.present(1,1,'cx_reception_1')).kind!=='success'||!e.locationOpen(3))throw Error('second round unlock');
+ if(!e.hint()||!e.hint()||!e.hint()||e.hint())throw Error('hint limit');
+ if(e.finish(['karo','window','steal'])||!e.finish(['mungchi','cabinet','hold']))throw Error('deduction');
+ const f=window.DaramLegacy.create(CHAPTER_CASE,COMBINATIONS);f.discover('tray');f.begin(0,1);
+ for(let i=0;i<4;i++)if((await f.present(0,1,'tray')).kind!=='wrong')throw Error('early exhaustion');
+ if((await f.present(0,1,'tray')).kind!=='exhausted'||f.state.hp!==5||!f.have('tray'))throw Error('retry retains clues');
+})()`,ctx);console.log('PASS original judgeBattle, inspection gate, evidence+testimony combinations, HP/retry, location unlock, hints, deduction');})().catch(e=>{console.error(e);process.exit(1)});
