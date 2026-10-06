@@ -46,6 +46,13 @@ function visual(id,title,mini=false){const c=crops[id];if(c){const [asset,x,y,w,
  if(pairs[id])return '<span class="paired-evidence">'+pairs[id].map(x=>visual(x,'관련 자료',true)).join('<b aria-hidden="true">＋</b>')+'</span>';
  return `<span class="original-evidence-icon" role="img" aria-label="${escape(title)}">${evIcon(icons[id]||'anon')}</span>`;
 }
-window.DaramEvidenceArt={thumb(id,title){return `<span class="record-thumb">${visual(id,title,true)}</span>`;},html(id,title){return `<figure class="evidence-art" data-art="${escape(id)}">${visual(id,title)}<figcaption>${crops[id]?'조사한 부분':pairs[id]?'함께 비교한 자료':'증거 그림'}</figcaption></figure>`;}};
+function recordIcon(id,title){
+ const symbols={tray:'<path d="M4 14h32v18H4z" fill="#B5814A"/><path d="M4 14l6-7h20l6 7-6 8H10z" fill="#EDD5A5"/><path d="M10 12h20v7H10z" fill="#765035"/>',cabinet:'<path d="M7 4h26v33H7z" fill="#B5814A"/><path d="M11 8h18v25H11z" fill="#EDD5A5"/><path d="M23 19h4v7h-4z" fill="#475369"/>',key:'<path d="M13 4h12v12H13z M17 16h4v20h-4z M21 26h7v4h-7z M21 33h7v3h-7z" fill="#E8B84A"/><path d="M17 8h4v4h-4z" fill="#fff8e5"/>'};
+ if(pairs[id])return '<span class="paired-evidence">'+pairs[id].map(x=>recordIcon(x,'관련 자료')).join('<b>＋</b>')+'</span>';
+ if(id==='t_paid')return visual(id,title,true);
+ const svg=symbols[id]?'<svg viewBox="0 0 40 40" aria-hidden="true" stroke="#2A2F45" stroke-width="2">'+symbols[id]+'</svg>':evIcon(({receipt:'order',clock:'clock',envelope:'invite',roster:'roles',report:'script'})[id]||'anon');
+ return '<span class="original-evidence-icon" role="img" aria-label="'+escape(title)+'">'+svg+'</span>';
+}
+window.DaramEvidenceArt={thumb(id,title){return `<span class="record-thumb">${recordIcon(id,title)}</span>`;},html(id,title){return `<figure class="evidence-art" data-art="${escape(id)}">${visual(id,title)}<figcaption>${crops[id]?'조사한 부분':pairs[id]?'함께 비교한 자료':'증거 그림'}</figcaption></figure>`;}};
 
 })();
