@@ -11,7 +11,7 @@
  window.chapterStartReady=async()=>{
   try{
    const bg=window.ART?.['reception-pixel']||'assets/reception-pixel.png';
-   await Promise.all([window.DaramArt?.ready||Promise.resolve(),load(bg),...['home','case','clues','contradiction','friends','saves','investigation'].map(n=>load('assets/reference/'+n+'.jpg')),load(window.DaramArt.source('daram')),document.fonts?Promise.all([document.fonts.load('16px DaramDot'),document.fonts.load('16px DaramDotBold')]).catch(()=>{}):Promise.resolve()]);
+   await Promise.all([window.DaramArt?.ready||Promise.resolve(),load(bg),load('assets/home-pixel.png'),load(window.DaramArt.source('daram')),document.fonts?Promise.all([document.fonts.load('16px DaramDot'),document.fonts.load('16px DaramDotBold')]).catch(()=>{}):Promise.resolve()]);
    if(failed)return;
    status.hidden=true;controls.forEach(b=>b.disabled=false);window.chapterTitleReady?.();
    // Fetch the other actors while the introduction is being read.
