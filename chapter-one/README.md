@@ -110,3 +110,7 @@ NODE_PATH=/opt/codex/cua_node/lib/node_modules node chapter-one/check-mobile.cjs
 ## 현재 UI 기준
 
 최신 사용자 제공 4화면 보드를 기준으로 `retro.css`가 남색 외곽·크림색 대화/증거창·금색 선택과 실행 버튼을 적용합니다. 원작의 IC/NAVIC 경로는 `tools/extract_ui.py`로 가져오며 `ui-provenance.json`에 출처를 남깁니다. 수첩 목록은 사진 크롭 대신 물건 아이콘을 사용하고, 상세에서는 현장 이미지를 유지합니다. 수첩 선택은 요약만 갱신하며, ‘자세히 보기’ 버튼으로 검사·제시 상세를 엽니다. 기존 시스템과 저장 데이터는 유지합니다.
+
+## 현재 인디 픽셀 방향
+
+현재 기준은 [ART_DIRECTION.md](ART_DIRECTION.md)입니다. 픽셀 캐릭터 12표정과 증거 아이콘 atlas를 추가했으며 원본 일러스트는 유지합니다. `art.js`는 새 아트 로딩 실패 시 원본으로 복귀합니다. 조사 선택은 더 이상 340ms 후 설명창을 열지 않습니다. 물건의 테두리·이름·하단 발견 카드가 유지되고 ‘자세히 보기’로 검사를 엽니다. 반박 수첩에는 정확한 증언과 선택 증거를 함께 표시합니다. `check-indie.cjs`가 새 흐름과 아트 fallback을 검증합니다.
