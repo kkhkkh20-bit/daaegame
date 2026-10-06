@@ -56,3 +56,7 @@ NODE_PATH=/opt/codex/cua_node/lib/node_modules node chapter-one/check-mobile.cjs
 `tools/extract_audio.py`로 원작의 여섯 가지 합성 배경음(calm, sneak, talk, battle, pursuit, win)과 기본 효과음 코드를 추출했습니다. `audio-provenance.json`에 원본 해시를 기록합니다. `tools/audio-adapter.js`는 재생 시작, 모바일 백그라운드 정지/복귀, 배경음·효과음 개별 음량과 설정 보존을 담당합니다. 조사·대화·공방·후일담에 맞춰 곡을 바꾸고, 글자 출력·페이지 넘김·발견·검사·결합·이동·추궁·제시·오답에 소리를 연결합니다.
 
 설정에서 각 음량을 0으로 내리면 해당 소리만 끕니다. 브라우저 자동 재생 제한에 맞춰 사용자가 게임 버튼을 처음 누른 뒤 소리가 시작됩니다. 녹음 파일이나 새 외부 음악을 추가한 것은 아닙니다. `check-audio.cjs`는 터치 시작, 실제 오실레이터 생성, 개별 음소거, 설정 보존, 배경 전환 시 정지와 복귀를 Chromium에서 검사합니다.
+
+## 최신 UI 테마
+
+`ui.css`에서 붉은 이름표와 사건 수첩, 흰 증거 서류, 다람 초상이 붙은 개인 메모를 구분합니다. 제목과 이름표는 원작의 Galmuri11 글꼴을 사용하며 OFL 라이선스 사본을 함께 배포합니다. 확인한 공식 스크린샷과 적용 원칙은 [UI_REFERENCES.md](UI_REFERENCES.md)에 기록했습니다. 배경·캐릭터 이미지, 원작 판정과 소리는 그대로 유지합니다.
