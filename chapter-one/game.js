@@ -107,14 +107,17 @@ function inventory(mode='',tab=(mode==='present'||mode==='show'||mode==='archive
  if(tab==='evidence'){let ids=core.records('ev');if(mode==='archive')ids=ids.filter(id=>['envelope','roster','report'].includes(id));
  const pins=core.state.pins||[];ids=ids.slice().sort((a,b)=>Number(pins.includes(b))-Number(pins.includes(a)));
  const selected=ids.includes(core.state.recordSelection)?core.state.recordSelection:ids[0];
+ html+='<div class="record-browser">';
  if(selected)html+=`<section class="record-overview">${DaramEvidenceArt.thumb(selected,EVIDENCE[selected].title)}<div><small>증거 기록</small><h3>${esc(EVIDENCE[selected].title)}</h3><p>${esc(EVIDENCE[selected].desc)}</p></div></section><p class="record-instruction">증거 ${ids.length}개 <span>선택해서 자세히 보기</span></p>`;
  html+='<div class="evidence-list evidence-grid">'+ids.map(id=>`<button data-evidence="${id}" aria-label="${esc(EVIDENCE[id].title)} 조사하기" aria-pressed="${selected===id}">${DaramEvidenceArt.thumb(id,EVIDENCE[id].title)}<b>${esc(EVIDENCE[id].title)}</b><small>${pins.includes(id)?'★ ':''}${core.gated(id)?'추가 검사':core.state.exam[id]?'검사 완료':id.startsWith('cx_')?'결합 단서':'증거'}</small></button>`).join('')+'</div>';
+ if(selected)html+=button('record-open',mode==='present'?'이 증거 확인하고 제시':mode==='show'?'이 증거 확인하고 보여주기':'이 증거 자세히 보기','record-open primary wide');
+ html+='</div>';
  if(!ids.length)html+='<p class="empty">아직 기록이 없다. 현장을 살펴보자.</p>';
  }else if(tab==='testimony')html+='<div class="evidence-list">'+core.records('t').filter(id=>TESTIMONIES[id]).map(id=>`<button data-evidence="${id}" aria-pressed="${core.state.recordSelection===id}"><span><b>${PEOPLE[TESTIMONIES[id].who].name}</b><small>${esc(TESTIMONIES[id].a)}</small></span><span>›</span></button>`).join('')+'</div>';
  else if(tab==='people')html+=Object.entries(PEOPLE).filter(([id])=>id!=='mungchi'||s.round>1).map(([id,p])=>`<article class="person-note"><h3>${p.name}<small>${p.role}</small></h3><p>${p.fact}</p><aside class="daram-memo"><small>다람이만 보는 메모</small><p>${p.memo}</p></aside></article>`).join('');
  else html='<div>'+html+'<ol class="timeline">'+timeline().map(x=>'<li>'+x+'</li>').join('')+'</ol></div>';
  html+=`<div class="book-footer">${button('combine','단서 결합')}${button('journal-hint','힌트 '+Math.max(0,3-core.state.hints))}</div>`;open(html);
- document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>inventory(mode,b.dataset.tab));document.querySelectorAll('[data-evidence]').forEach(b=>b.onclick=()=>detail(b.dataset.evidence,mode));$('combine').onclick=()=>combine();$('journal-hint').onclick=hint;
+ document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>inventory(mode,b.dataset.tab));document.querySelectorAll('[data-evidence]').forEach(b=>b.onclick=()=>{if(tab==='evidence'){core.selectRecord(b.dataset.evidence);save();inventory(mode,tab);}else detail(b.dataset.evidence,mode);});if($('record-open'))$('record-open').onclick=()=>{const picked=document.querySelector('.evidence-grid [aria-pressed=true]');if(picked)detail(picked.dataset.evidence,mode);};$('combine').onclick=()=>combine();$('journal-hint').onclick=hint;
 }
 function timeline(){const out=['엄마가 남긴 보고서를 보러 눈길 거처에 도착했다.'];if(core.have('t_delivery'))out.push('오후 3시 · 까로는 뭉치에게 봉투를 건넸다고 증언했다.');if(core.state.broken['round:0'])out.push('서명은 접수 확인이었다. 주민 지급 여부는 미확인.');if(core.have('key'))out.push('뭉치에게도 보관함 예비 열쇠가 있었다.');if(core.have('envelope'))out.push('보관함에서 봉투를 회수했다. 뭉치가 숨겼다고 인정했다.');if(core.have('cx_reception_2'))out.push('시설 안전 확인이 주민 명단의 보증으로 옮겨 쓰였다.');return out;}
 function detail(id,mode=''){if(!core.selectRecord(id))return;save();const e=EVIDENCE[id],t=TESTIMONIES[id];if(!e&&!t)return;if(!s.read.includes(id)){s.read.push(id);save();}
