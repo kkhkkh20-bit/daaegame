@@ -37,7 +37,7 @@ function showLine(){const l=s.lines[s.index];if(!l){arrive(s.after);return;}if(l
 }
 function advance(){if(s.mode!=='dialogue'||$('modal').childElementCount||!$('title').hidden)return;const t=Date.now();if(t-last<170)return;last=t;if(timer){stop();$('text').textContent=full;return;}audio.fx('page');s.index++;save();render();}
 function arrive(mode){s.mode=mode;if(mode==='second'){s.room=2;core.state.loc=2;s.pan=.5;s.round=2;s.who='mungchi';s.mode='questions';s.statement=0;}if(mode==='review'){s.room=3;core.state.loc=3;s.pan=.5;['envelope','roster','report'].forEach(add);core.ask('confession');}save();render();}
-function render(){if($('scene-people'))$('scene-people').hidden=true;$('world').querySelector('.scene-selection')?.remove();effects.clear();stop();count();audio.music((s.mode==='done'||s.mode==='dialogue'&&s.after==='done')?'win':(s.mode==='testimony'||s.mode==='dialogue'&&s.after==='testimony')?'battle':(s.mode==='dialogue'&&s.after==='second')?'pursuit':s.mode==='finale'?'pursuit':['investigate','review','retry'].includes(s.mode)?'sneak':s.mode==='questions'?'talk':s.round===2?'sneak':'calm');$('chaptermark').hidden=true;$('hotspots').innerHTML='';$('scene').classList.toggle('exploring',s.mode==='investigate');$('panorama').hidden=s.mode!=='investigate';$('pan-controls').hidden=s.mode!=='investigate';$('panel').className='';
+function render(){if($('scene-people'))$('scene-people').hidden=true;$('world').querySelectorAll('.scene-selection,.scene-tap').forEach(e=>e.remove());effects.clear();stop();count();audio.music((s.mode==='done'||s.mode==='dialogue'&&s.after==='done')?'win':(s.mode==='testimony'||s.mode==='dialogue'&&s.after==='testimony')?'battle':(s.mode==='dialogue'&&s.after==='second')?'pursuit':s.mode==='finale'?'pursuit':['investigate','review','retry'].includes(s.mode)?'sneak':s.mode==='questions'?'talk':s.round===2?'sneak':'calm');$('chaptermark').hidden=true;$('hotspots').innerHTML='';$('scene').classList.toggle('exploring',s.mode==='investigate');$('panorama').hidden=s.mode!=='investigate';$('pan-controls').hidden=s.mode!=='investigate';$('panel').className='';
  const begun=s.asked.length>0||s.mode!=='dialogue'||s.lines!==STORY.intro&&s.after!=='questions';
  $('case-nav').hidden=!(s.mode!=='dialogue'||s.asked.length||s.round>1);$('case-nav').querySelectorAll('button').forEach(b=>b.disabled=s.mode==='dialogue'||s.mode==='retry');
  for(const [id,mode] of [['nav-scene','investigate'],['nav-talk','questions'],['nav-fight','testimony']])$(id).setAttribute('aria-current',String(s.mode===mode));
@@ -91,9 +91,24 @@ function investigate(){loadPanorama();actor(null);$('panel').className='investig
  const picked=roomSpots().find(x=>x.id===s.sceneSelection);if(picked){markSpot(picked);investigationCard(picked.id);}
 }
 $('pan-left').onclick=()=>setPan(Math.max(0,s.pan-.5),true);$('pan-right').onclick=()=>setPan(Math.min(1,s.pan+.5),true);
-$('panorama').addEventListener('pointerdown',e=>{moved=false;drag={x:e.clientX,start:$('panorama').scrollLeft,id:e.pointerId,mouse:e.pointerType==='mouse'};});
-$('panorama').addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>10)moved=true;if(drag.mouse&&moved){$('panorama').setPointerCapture(e.pointerId);$('panorama').scrollLeft=drag.start-dx;}});
-$('panorama').addEventListener('pointerup',()=>{drag=null;setTimeout(()=>moved=false,0)});$('panorama').addEventListener('pointercancel',()=>{drag=null;});
+$('panorama').addEventListener('pointerdown',e=>{moved=false;drag={x:e.clientX,y:e.clientY,start:$('panorama').scrollLeft,id:e.pointerId,mouse:e.pointerType==='mouse'};});
+$('panorama').addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x;if(Math.hypot(dx,e.clientY-drag.y)>10)moved=true;if(drag.mouse&&moved){$('panorama').setPointerCapture(e.pointerId);$('panorama').scrollLeft=drag.start-dx;}});
+$('panorama').addEventListener('pointerup',()=>{drag=null;});$('panorama').addEventListener('pointercancel',()=>{drag=null;moved=true;});
+// One marker at the actual world coordinate, including otherwise empty scenery.
+$('world').addEventListener('click',e=>{
+ if(s.mode!=='investigate'||moved||panoramaLoading||e.target.closest('#scene-load'))return;
+ const world=$('world'),rect=world.getBoundingClientRect(),target=e.target.closest('[data-spot],[data-observe]');
+ const targetRect=target?.getBoundingClientRect();
+ const px=e.detail===0&&targetRect?targetRect.left+targetRect.width/2:e.clientX,py=e.detail===0&&targetRect?targetRect.top+targetRect.height/2:e.clientY;
+ const x=Math.max(0,Math.min(1,(px-rect.left)/rect.width)),y=Math.max(0,Math.min(1,(py-rect.top)/rect.height));
+ world.querySelector('.scene-tap')?.remove();
+ const mark=document.createElement('div');mark.className='scene-tap'+(target?.dataset.spot?' clue':'');mark.style.left=x*100+'%';mark.style.top=y*100+'%';mark.setAttribute('aria-hidden','true');mark.innerHTML='<i></i><b>＋</b>';world.append(mark);
+ if(effects.get()==='standard'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)mark.querySelector('i').animate([{transform:'scale(.35)',opacity:1},{transform:'scale(1.8)',opacity:0}],{duration:550,fill:'forwards'});
+ if(target)return;
+ world.querySelector('.scene-selection')?.remove();s.sceneSelection=null;document.querySelectorAll('[data-spot]').forEach(b=>b.setAttribute('aria-pressed','false'));save();
+ const o=sceneryAt(room().id,x,y);$('pan-label').textContent=o.title+' · 살펴봄';
+ $('panel').innerHTML=`<div class="observation-note" role="status"><small>다람 · 살펴보기</small><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></div>`;audio.fx('tap');
+});
 function visitRoom(i){if(!core.locationOpen(i))return;s.roomPans=s.roomPans||{};s.roomPans[room().id]=s.pan;s.room=i;core.state.loc=i;s.pan=s.roomPans[room().id]??.5;s.sceneSelection=null;audio.fx('steps');close();go('investigate');}
 function movePicker(){open(head('눈길 거처 · 장소 이동')+'<p class="muted">방마다 다른 물건과 이야기가 있어요.</p><div class="location-map">'+ROOMS.map((r,i)=>{const unlocked=core.locationOpen(i),done=r.spots.filter(p=>s.found.includes(p.id)).length;return `<button class="location-card" data-loc="${i}" aria-current="${s.room===i}" ${unlocked?'':'disabled'}><span class="location-art" style="background-image:url(${sceneAsset(r)})"></span><span><b>${r.name}</b><small>${unlocked?r.purpose:'보관함 사건을 먼저 확인하세요.'}</small><em>${unlocked?done+' / '+r.spots.length+'개 조사':'잠김'}</em></span></button>`}).join('')+'</div>');document.querySelectorAll('[data-loc]').forEach(b=>b.onclick=()=>visitRoom(+b.dataset.loc));}
 function renderRoomInteractions(){
