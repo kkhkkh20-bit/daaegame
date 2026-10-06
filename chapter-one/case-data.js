@@ -35,7 +35,7 @@ const PEOPLE={
  daram:{name:'다람',role:'11살 다람쥐 · 견습 탐정',fact:'실종된 엄마의 보고서를 확인하러 왔다. 궁금한 건 못 참고, 겁이 나면 수첩부터 꼭 쥔다.',memo:'명탐정 예정. 예정이니까 아직 실수해도 됨.'},
  karo:{name:'까로',role:'까마귀 배달부',fact:'봉투를 가져왔다. 지급 장면은 직접 보지 못했다.',memo:'첫인상: 얼굴 좀 못생김. 눈썹이 너무 화나 있음. …숟가락은 예쁨.'},
  mungchi:{name:'뭉치',role:'고슴도치 접수 담당자',fact:'봉투를 받은 접수 담당자. 함께 머무는 할머니와 지급 명단 때문에 마음을 쓰고 있다.',memo:'뭔가 숨기면 안경도 같이 숨고 싶어 하는 얼굴. 내 눈은 안 피하셔도 되는데.'},
- dad:{name:'다온',role:'다람의 아빠 · 탐정',fact:'다람과 함께 엄마의 행적을 확인한다.',memo:'내 편. 가끔 너무 내 편이라 내가 한 번 더 물어봐야 함.'}
+ dad:{name:'서진',role:'다람의 아빠 · 탐정',fact:'다람과 함께 엄마의 행적을 확인한다.',memo:'내 편. 가끔 너무 내 편이라 내가 한 번 더 물어봐야 함.'}
 };
 const asEvidence=id=>({id,name:EVIDENCE[id].title,desc:EVIDENCE[id].desc,check:EVIDENCE[id].check});
 const CHAPTER_CASE={id:'reception',lives:5,suspects:['karo','mungchi'],cast:PEOPLE,

@@ -1,10 +1,22 @@
 /* Chapter one: all dialogue remains selectable text, independent of art. */
-const NAMES={daram:'다람',dad:'다온',karo:'까로',mungchi:'뭉치',mother:'엄마',narr:'다온'};
+const NAMES={daram:'다람',dad:'서진',karo:'까로',mungchi:'뭉치',mother:'엄마',narr:'서진',unknown:'누군가'};
 const line=(who,text,mood=0,extra={})=>({who,text,mood,...extra});
 const STORY={
 intro:[
- line('narr','12월 18일. 눈길 거처의 문을 열자, 젖은 목도리에 따뜻한 장작 냄새가 배었다.',0,{actor:null,establish:true,stamp:{time:'15:40',place:'눈길 거처 · 산장 접수대'}}),
- line('narr','내 이름은 다온. 작은 탐정 사무소를 운영한다. 오늘은 의뢰를 받으러 온 길이 아니다.',0,{actor:null}),
+ line('unknown','발소리가 멎었다. 문 바로 밖에서.',0,{actor:null,cold:true,establish:true,stamp:{time:'15:20',place:'눈길 거처 · 불 꺼진 방'}}),
+ line('unknown','숨을 참았다. 품에 넣은 봉투가, 자꾸만 바스락거렸다.',0,{actor:null,cold:true}),
+ line('unknown','제발. 지금은 들어오지 마.',0,{actor:null,cold:true}),
+ line('unknown','내일 다시 오라고 했다. 담당자가 없으니, 내일 이야기하자고.',0,{actor:null,cold:true}),
+ line('unknown','하지만 내일이면 늦는다. 오늘 다 나눠 주고 나면… 남는 건 없을 테니까.',0,{actor:null,cold:true}),
+ line('unknown','봉투를 쥔 손이 떨렸다. 돌려놓자. 지금이라면 아무도 모른다.',0,{actor:null,cold:true}),
+ line('unknown','복도에서 누군가 기침했다. 손이 멈췄다.',0,{actor:null,cold:true}),
+ line('unknown','나는 봉투를 어둠 속으로 밀어 넣었다.',0,{actor:null,cold:true}),
+ line('unknown','미안해. 조금만… 조금만 늦추면 돼.',0,{actor:null,cold:true}),
+ line('unknown','달칵. 문이 닫혔다. 돌아가는 손잡이를 놓지 못했다.',0,{actor:null,cold:true}),
+ line('unknown','누가 물으면, 모른다고 해야 한다. 방금 전까지 여기 있었다고.',0,{actor:null,cold:true}),
+ line('unknown','나는 빈손을 내려다봤다. 이제 정말, 모르는 척해야 한다.',0,{actor:null,cold:true}),
+ line('daram','아빠, 코끝에 눈 묻었어! 가만있어. 내가 털어 줄게.',3,{actor:'daram',establish:true,returnToPresent:true,stamp:{time:'15:40',place:'눈길 거처 · 산장 접수대'}}),
+ line('narr','산장 문을 열자 따뜻한 장작 냄새가 났다. 내 이름은 서진. 작은 탐정 사무소를 운영한다.',0,{actor:'daram'}),
  line('narr','내 옆에서 눈을 털고 있는 아이는 딸 다람. 열한 살이다. 본인은 내 조수가 아니라 동료라고 한다.',0,{actor:'daram'}),
  line('dad','다람 동료님, 안으로 들어오세요. 코끝까지 눈이 묻었는데.',0,{actor:'daram'}),
  line('daram','잠깐! 발자국을 보고 있었어. 아빠 건 크고, 내 건… 엄청 빠르네!',3,{actor:'daram'}),
@@ -14,9 +26,9 @@ intro:[
  line('narr','아내는 여러 마을을 돌며 건물의 안전을 살피는 일을 했다. 마지막 출장에서 돌아오지 않은 지 여섯 주째였다.',0,{actor:null}),
  line('narr','어제 이 산장에서 연락이 왔다. 아내가 남긴 점검 보고서 원본을 찾았다고. 다음에 어디로 갈 예정이었는지 적혀 있을지도 모른다.',0,{actor:null}),
  line('daram','엄마가 쓴 진짜 종이를 볼 수 있는 거지? 사진 말고.',1,{actor:'daram'}),
- line('dad','응. 오늘은 그 보고서를 읽으러 온 거야. 모르는 건 하나씩 물어보자.',0,{actor:'daram'}),
+ line('dad','응. 오늘은 사건 의뢰가 아니라, 그 보고서를 읽으러 온 거야. 모르는 건 하나씩 물어보자.',0,{actor:'daram'}),
  line('narr','접수대 뒤에서 작은 고슴도치가 고개를 들었다. 「접수 담당 · 뭉치」라는 이름표가 가디건에 비뚤게 달려 있었다.',0,{actor:'mungchi'}),
- line('mungchi','다온 탐정님? 어제 연락드린 뭉치예요. 눈길 오시느라 고생하셨어요.',0,{actor:'mungchi'}),
+ line('mungchi','서진 탐정님? 어제 연락드린 뭉치예요. 눈길 오시느라 고생하셨어요.',0,{actor:'mungchi'}),
  line('daram','저는 다람이에요. 수첩 담당! 이름표가 조금 삐뚤어졌어요.',0,{actor:'daram'}),
  line('mungchi','앗, 고마워요. 아침부터 정신이 없네요. 여긴 눈 때문에 집을 떠난 주민들이 잠시 지내는 곳이에요.',1,{actor:'mungchi'}),
  line('dad','보고서는 준비되어 있을까요?',0,{actor:'mungchi'}),

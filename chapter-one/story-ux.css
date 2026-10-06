@@ -7,3 +7,8 @@
 #game #panel.question-panel{display:flex;flex-direction:column;max-height:45dvh!important;overflow:hidden!important}.question-panel>.nameplate,.question-panel>.question-prompt,.question-panel>.subactions,.question-panel>.question-rest{flex-shrink:0}.question-panel .questions{min-height:0;overflow-y:auto;overscroll-behavior:contain;flex:1}.question-panel .question-rest{pointer-events:auto}
 
 .question-panel .question-prompt small{float:right;font:9px DaramDot;color:#826a42}.question-panel .questions{scrollbar-width:thin;scrollbar-color:#ad8c5a #efdfbb}
+
+/* Anonymous culprit POV: keep the room, face and hiding-place identity unrevealed. */
+#game.cold-open #background{background-image:url(assets/room-office.png)!important;background-size:270% auto;background-position:2% 92%;filter:brightness(.17) saturate(.25)}#game.cold-open .shade{background:linear-gradient(#070c16b0,#05070b33 40%,#080910d9)}#game.cold-open #panel.dialogue{background:#101725f5!important;color:#e2e2dc!important;border-color:#7e8c91!important}#game.cold-open #panel #text{color:#ece9dd!important;font:16px/1.95 DaramDot!important}#game.cold-open .nameplate{background:#26323d!important;color:#d0ddd5!important}#game.cold-open #chaptermark h2{font-size:clamp(23px,7vw,34px);color:#e3d9bf}#game.cold-open #chaptermark{background:#0c111ad9}#game.cold-open header nav{opacity:.8}
+
+#game.present-return #chaptermark{top:132px;left:14px;width:180px;padding:10px 12px}#game.present-return #chaptermark h2{font-size:22px;margin:5px 0}#game.present-return #chaptermark .event-time{font-size:10px!important;line-height:1.6!important}#game.present-return #chaptermark small{font-size:9px}
