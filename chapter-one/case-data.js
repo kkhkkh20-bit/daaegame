@@ -40,10 +40,10 @@ const PEOPLE={
 const asEvidence=id=>({id,name:EVIDENCE[id].title,desc:EVIDENCE[id].desc,check:EVIDENCE[id].check});
 const CHAPTER_CASE={id:'reception',lives:5,suspects:['karo','mungchi'],cast:PEOPLE,
  locations:[
-  {id:'window',name:'창가',pan:0,spots:['receipt'].map(id=>({ev:asEvidence(id)}))},
-  {id:'desk',name:'접수대',pan:.5,spots:['tray','clock'].map(id=>({ev:asEvidence(id)}))},
-  {id:'cabinet',name:'보관함',pan:1,spots:['cabinet','key'].map(id=>({ev:asEvidence(id)}))},
-  {id:'archive',name:'보관함 안쪽',pan:1,req:'door:archive',spots:['envelope','roster','report',...COMBINATIONS.map(x=>x.id)].map(id=>({ev:asEvidence(id)}))}
+  {id:'reception',name:'산장 접수대',pan:.5,spots:['receipt','tray'].map(id=>({ev:asEvidence(id)}))},
+  {id:'lounge',name:'손님 휴게실',pan:.5,spots:['clock'].map(id=>({ev:asEvidence(id)}))},
+  {id:'cabinet',name:'접수 담당자 관리실',pan:.5,spots:['cabinet','key'].map(id=>({ev:asEvidence(id)}))},
+  {id:'archive',name:'문서 보관실',pan:.5,req:'door:archive',spots:['envelope','roster','report',...COMBINATIONS.map(x=>x.id)].map(id=>({ev:asEvidence(id)}))}
  ],talk:{karo:[],mungchi:[]},
  rounds:[
   {who:'karo',stm:[{t:'오후 세 시에 뭉치에게 봉투를 건넸습니다.',p:'제 앞에서 서명했어요.',a:[]},{t:'서명을 받았으니 주민 지급도 끝났습니다.',p:'확인서니까 지급 확인이죠.',a:['receipt','cx_reception_0']}],hit:'제가 확인한 건 봉투를 받은 데까지네요.'},
