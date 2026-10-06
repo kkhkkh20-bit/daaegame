@@ -26,7 +26,7 @@ function actor(id,mood=0){if(id==='dad')id='daram';const el=$('actor');el.hidden
 }
 function add(id){if(!s.found.includes(id)){audio.fx('found');effects.play('found');}core.discover(id);save();count();}
 function count(){$('count').textContent=s.found.length?' '+s.found.length:'';}
-function dialogue(lines,after,actorId=s.who||'karo'){s.mode='dialogue';s.lines=lines.map(l=>({...l,actor:own(l,'actor')?l.actor:actorId}));s.index=0;s.after=after;save();render();}
+function dialogue(lines,after,actorId=s.who||'karo'){s.casePlace='눈길 거처 · '+room().name;s.mode='dialogue';s.lines=lines.map(l=>({...l,actor:own(l,'actor')?l.actor:actorId}));s.index=0;s.after=after;save();render();}
 function showLine(){const l=s.lines[s.index];if(!l){arrive(s.after);return;}if(l.who==='narr'&&FATHER_NARRATION[l.text])l.text=FATHER_NARRATION[l.text];const who=l.who==='dad'&&FATHER_VIEW_TARGET[l.text]?FATHER_VIEW_TARGET[l.text]:own(l,'actor')?l.actor:l.who==='dad'?'daram':'karo';
  if(who&&l.who===who)s.moods[who]=l.mood;actor(who,who?s.moods[who]||0:0);
  if(l.stamp){s.caseTime=l.stamp.time;s.casePlace=l.stamp.place;save();} $('chaptermark').hidden=!l.establish;$('chaptermark').innerHTML='<small>첫 번째 사건</small><h2>사라진 봉투</h2><p class="event-time">12월 18일 · 오후 3시 40분<br>눈길 거처 · 산장 접수대</p>';
