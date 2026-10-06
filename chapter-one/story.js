@@ -1,5 +1,5 @@
 /* Chapter one: all dialogue remains selectable text, independent of art. */
-const NAMES={daram:'다람',dad:'아빠',karo:'까로',mungchi:'뭉치',mother:'엄마',narr:'아빠'};
+const NAMES={daram:'다람',dad:'다온',karo:'까로',mungchi:'뭉치',mother:'엄마',narr:'다온'};
 const line=(who,text,mood=0,extra={})=>({who,text,mood,...extra});
 const STORY={
 intro:[
