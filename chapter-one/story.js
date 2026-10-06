@@ -1,5 +1,5 @@
 /* Chapter one: all dialogue remains selectable text, independent of art. */
-const NAMES={daram:'다람',dad:'아빠',karo:'까로',mungchi:'뭉치',mother:'엄마',narr:'눈길 거처'};
+const NAMES={daram:'다람',dad:'아빠',karo:'까로',mungchi:'뭉치',mother:'엄마',narr:'아빠'};
 const line=(who,text,mood=0,extra={})=>({who,text,mood,...extra});
 const STORY={
 intro:[
@@ -89,3 +89,12 @@ const STORY_EFFECTS={
  '아, 이건… 예비 열쇠예요. 접수 담당자가 갖고 있어요.':'sweat',
  '보관함의 번호와 같네요.':'insight'
 };
+
+// Father's narrative viewpoint; migrate the same lines in earlier saves too.
+const FATHER_NARRATION={
+ '눈이 길을 지운 오후. 다람은 아빠보다 한 걸음 먼저 거처의 문을 열었다.':'눈이 길을 지운 오후. 다람이 나보다 한 걸음 먼저 거처의 문을 열었다.',
+ '엄마가 돌아오지 않은 지 여섯 주. 오늘은 거처에 남은 점검 보고서를 보러 왔다.':'아내가 돌아오지 않은 지 여섯 주. 다람과 함께 그녀가 남긴 점검 보고서를 찾으러 왔다.',
+ '명단 아래에 익숙한 이름이 있었다. 다람의 엄마였다.':'명단 아래에 익숙한 이름이 있었다. 아내의 이름이었다.'
+};
+
+const FATHER_VIEW_TARGET={'문부터 막으면 안 되지. 배달부에게 무슨 일이 있었는지 물어보자.':'karo','그래서 다른 주민들 몫까지 숨겼구나.':'mungchi'};

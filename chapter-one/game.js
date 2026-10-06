@@ -25,11 +25,11 @@ function actor(id,mood=0){if(id==='dad')id='daram';const el=$('actor');el.hidden
 }
 function add(id){if(!s.found.includes(id)){audio.fx('found');effects.play('found');}core.discover(id);save();count();}
 function count(){$('count').textContent=s.found.length?' '+s.found.length:'';}
-function dialogue(lines,after,actorId=s.who||'karo'){s.mode='dialogue';s.lines=lines.map(l=>({...l,actor:l.who==='dad'?'daram':own(l,'actor')?l.actor:actorId}));s.index=0;s.after=after;save();render();}
-function showLine(){const l=s.lines[s.index];if(!l){arrive(s.after);return;}const who=l.who==='dad'?'daram':own(l,'actor')?l.actor:'karo';
+function dialogue(lines,after,actorId=s.who||'karo'){s.mode='dialogue';s.lines=lines.map(l=>({...l,actor:own(l,'actor')?l.actor:actorId}));s.index=0;s.after=after;save();render();}
+function showLine(){const l=s.lines[s.index];if(!l){arrive(s.after);return;}if(l.who==='narr'&&FATHER_NARRATION[l.text])l.text=FATHER_NARRATION[l.text];const who=l.who==='dad'&&FATHER_VIEW_TARGET[l.text]?FATHER_VIEW_TARGET[l.text]:own(l,'actor')?l.actor:l.who==='dad'?'daram':'karo';
  if(who&&l.who===who)s.moods[who]=l.mood;actor(who,who?s.moods[who]||0:0);
  $('chaptermark').hidden=!l.establish;$('chaptermark').innerHTML='<small>첫 번째 사건</small><h2>사라진 봉투</h2><p>눈길 거처 · 어느 겨울 오후</p>';
- $('panel').className='dialogue';$('panel').innerHTML=`<div class="nameplate">${esc(l.thought?'다람':NAMES[l.who])}<small>${l.thought?'혼잣말':l.who==='dad'?'곁에서':''}</small></div><p id="text" class="${l.thought?'thought':l.who==='narr'?'narration':''}"></p><button id="advance" aria-label="대사 읽기 · 다음"><span>다음 ▸</span></button>`;
+ $('panel').className='dialogue';$('panel').innerHTML=`<div class="nameplate">${esc(l.thought?'다람':NAMES[l.who])}<small>${l.thought?'혼잣말':''}</small></div><p id="text" class="${l.thought?'thought':l.who==='narr'?'narration':''}"></p><button id="advance" aria-label="대사 읽기 · 다음"><span>다음 ▸</span></button>`;
  const id=s.lines.map(x=>x.text).join('|')+'#'+s.index;if(s.logged!==id){s.log.push({name:NAMES[l.who],text:l.text,thought:!!l.thought});s.logged=id;save();}
  effects.cue({...l,fx:l.fx||STORY_EFFECTS[l.text]});full=l.text;if(l.thought)audio.fx('thinkin');$('advance').onclick=advance;
  if(!s.speed)$('text').textContent=full;else{let n=0;$('panel').classList.add('typing');timer=setInterval(()=>{if($('modal').childElementCount)return;$('text').textContent=full.slice(0,++n);if(!l.thought&&n%2===0&&/\S/.test(full[n-1]))audio.fx('blip',({daram:880,dad:330,karo:520,mungchi:420})[l.who]||0);if(n>=full.length)stop();},s.speed);}
@@ -41,7 +41,7 @@ function render(){effects.clear();stop();count();audio.music((s.mode==='done'||s
  $('case-nav').hidden=!(s.mode!=='dialogue'||s.asked.length||s.round>1);$('case-nav').querySelectorAll('button').forEach(b=>b.disabled=s.mode==='dialogue'||s.mode==='retry');
  for(const [id,mode] of [['nav-scene','investigate'],['nav-talk','questions'],['nav-fight','testimony']])$(id).setAttribute('aria-current',String(s.mode===mode));
  $('nav-hint').textContent='힌트 '+Math.max(0,3-core.state.hints);
- if(s.mode==='dialogue')showLine();else if(s.mode==='questions')questions();else if(s.mode==='investigate')investigate();else if(s.mode==='testimony')testimony();else if(s.mode==='review')review();else if(s.mode==='finale')finale();else if(s.mode==='done')ending();else if(s.mode==='retry')retry();
+ if(s.mode==='dialogue')showLine();else if(s.mode==='questions')questions();else if(s.mode==='investigate')investigate();else if(s.mode==='testimony')testimony();else if(s.mode==='review')review();else if(s.mode==='finale')finale();else if(s.mode==='done')ending();else if(s.mode==='retry')retry();window.DaramPortraits?.layout();
 }
 const button=(id,t,cls='')=>`<button id="${id}" class="${cls}">${t}</button>`;
 function questions(){const who=s.who||'karo';actor(who,0);$('panel').className='interactive';
