@@ -153,7 +153,26 @@ function head(t,selected=false){return `<div class="sheet-head"><div class="shee
 function close(){$('modal').innerHTML='';if($('title').hidden)syncCaseUI();[...$('game').children].forEach(e=>e.inert=false);if(returnFocus?.isConnected)returnFocus.focus();}
 let notebookTab='evidence',comboPicks=[],comboMode='';
 const recordName=id=>EVIDENCE[id]?.title||(TESTIMONIES[id]?PEOPLE[TESTIMONIES[id].who].name+'의 증언 · '+TESTIMONIES[id].q:'');
-function inventory(mode='',tab=(mode==='present'||mode==='show'||mode==='archive')?'evidence':notebookTab){notebookTab=tab;const presenting=mode==='present',showing=mode==='show';
+
+function referencePresent(page=0){const R=DaramReference,ids=core.records('ev'),who=s.round===1?'karo':'mungchi';let selected=ids.includes(core.state.recordSelection)?core.state.recordSelection:ids[0];let h=R.hot(22,150,56,66,'닫기','data-close');h+=R.box(30,251,524,78,`<b>${PEOPLE[who].name}의 증언</b><p>수집한 단서로 지금 말을 확인해 보자.</p>`,'ref-ink');h+=R.box(36,408,364,166,`<small>${PEOPLE[who].name}의 증언 · ${s.statement+1}/2</small><p>“${esc(claims()[s.statement])}”</p><b>이 말과 모순되는 증거는?</b>`,'ref-paper ref-claim comparison-claim');h+=R.box(435,373,117,113,`<div class="ref-portrait" style="background-image:url(${DaramArt.source(who)})"></div>`,'ref-ink');h+=R.box(432,495,121,89,`<b>${PEOPLE[who].name}</b><p>${PEOPLE[who].role}</p>`);h+=R.box(42,596,360,36,'수첩의 증거를 고르고 자세히 확인하세요.');h+=R.hot(428,600,132,40,'힌트','id="ref-hint"');h+=R.hot(307,362,35,40,'이전 문장','id="ref-prev"');h+=R.hot(380,362,29,40,'다음 문장','id="ref-next"');h+=R.box(339,369,35,25,`${s.statement+1}/2`);h+=R.box(289,668,266,30,`<button id="ref-page">단서 ${page+1} / ${Math.max(1,Math.ceil(ids.length/8))} · 다음 ›</button>`,'ref-ink');
+for(let i=0;i<8;i++){const id=ids[page*8+i];h+=R.box(31+i%4*138,721+Math.floor(i/4)*125,115,105,id?`<button data-evidence="${id}" aria-pressed="${id===selected}" class="ref-content-button">${DaramEvidenceArt.thumb(id,EVIDENCE[id].title)}<b>${esc(EVIDENCE[id].title)}</b></button>`:'<span class="ref-unknown">?</span>','ref-paper ref-proof');}
+h+=R.hot(143,984,300,62,selected?'선택한 증거 확인':'수집한 증거가 없어요',`id="record-open" ${selected?'':'disabled'}`);open(R.plane('contradiction',h,'증거 제시'));$('ref-prev').onclick=$('ref-next').onclick=()=>{s.statement=1-s.statement;save();referencePresent(page);};$('ref-hint').onclick=hint;$('ref-page').onclick=()=>referencePresent((page+1)%Math.max(1,Math.ceil(ids.length/8)));document.querySelectorAll('[data-evidence]').forEach(b=>b.onclick=()=>{core.selectRecord(b.dataset.evidence);save();referencePresent(page);});$('record-open').onclick=()=>{if(selected)detail(selected,'present');};}
+
+function referenceInventory(mode=''){
+ const R=DaramReference;let ids=core.records('ev');if(mode==='archive')ids=ids.filter(id=>['envelope','roster','report'].includes(id));const pins=core.state.pins||[];ids=ids.slice().sort((a,b)=>Number(pins.includes(b))-Number(pins.includes(a)));const selected=ids.includes(core.state.recordSelection)?core.state.recordSelection:ids[0];
+ let h=R.hot(20,132,73,59,'닫기','data-close');
+ [['case','사건'],['evidence','단서'],['testimony','증언'],['people','인물'],['timeline','순서']].forEach(([id,label],i)=>h+=R.box(88+i*78,335,76,39,`<button data-tab="${id}" aria-pressed="${id==='evidence'}">${label}</button>`,'ref-paper ref-tab'));
+ h+=R.box(482,313,87,51,`모은 단서<br><b>${ids.length}개</b>`);
+ h+=R.box(105,383,448,315,ids.map(id=>`<button data-evidence="${id}" aria-label="${esc(EVIDENCE[id].title)} 조사하기" aria-pressed="${selected===id}" class="ref-content-button">${DaramEvidenceArt.thumb(id,EVIDENCE[id].title)}<b>${esc(EVIDENCE[id].title)}</b></button>`).join('')||'<p>현장에서 첫 단서를 찾아보자.</p>','ref-live-grid evidence-grid');
+ h+=R.box(61,766,162,156,selected?DaramEvidenceArt.thumb(selected,EVIDENCE[selected].title):'<span class="ref-unknown">?</span>','ref-ink ref-selected-picture');
+ h+=R.box(249,736,305,188,selected?`<h3>${esc(EVIDENCE[selected].title)}</h3><p>${esc(EVIDENCE[selected].desc)}</p><small>${core.state.exam[selected]?'검사 완료':'사진을 눌러 자세히 조사하기'}</small>`:'<h3>아직 기록이 없어요</h3><p>궁금한 곳을 눌러 조사해 보세요.</p>','ref-paper ref-detail-copy ref-scroll');
+ h+=R.box(267,940,272,71,selected?esc(EVIDENCE[selected].memo):'작은 단서도 적어 두자.','ref-paper ref-scroll');
+ if(selected)h+=R.hot(51,749,184,220,'선택한 증거 자세히 보기','id="record-open"');
+ h+=R.box(166,1089,154,40,'<button id="combine">단서 결합</button>');h+=R.box(348,1090,160,40,`<button id="journal-hint">힌트 ${Math.max(0,3-core.state.hints)}</button>`);
+ open(R.plane('clues',h,'다람의 수첩'));document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>inventory(mode,b.dataset.tab));document.querySelectorAll('[data-evidence]').forEach(b=>b.onclick=()=>{const scroll=document.querySelector('.ref-live-grid').scrollTop;core.selectRecord(b.dataset.evidence);save();referenceInventory(mode);document.querySelector('.ref-live-grid').scrollTop=scroll;});if($('record-open'))$('record-open').onclick=()=>detail(selected,mode);$('combine').onclick=()=>combine();$('journal-hint').onclick=hint;
+}
+
+function inventory(mode='',tab=(mode==='present'||mode==='show'||mode==='archive')?'evidence':notebookTab){notebookTab=tab;if(tab==='case'){open(DaramReference.board(s,core));document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>inventory(mode,b.dataset.tab));document.querySelectorAll('[data-board-evidence]').forEach(b=>b.onclick=()=>detail(b.dataset.boardEvidence));$('board-hypothesis').onclick=()=>combine();return;}if(mode==='present'){referencePresent();return;}if(tab==='evidence'){referenceInventory(mode);return;}const presenting=mode==='present',showing=mode==='show';
  const tabs=[['case','사건'],['evidence','증거'],['testimony','증언'],['people','인물'],['timeline','사건 순서']];
  let html=head(presenting?'증거 제시':showing?'증거 보여주기':'다람의 수첩');
  if(presenting)html+=`<section class="comparison-claim">${DaramSceneUI.speaker(s.round===1?'karo':'mungchi')}<small>${s.round===1?'까로':'뭉치'}의 증언 · ${s.statement+1} / ${claims().length}</small><p>“${esc(claims()[s.statement])}”</p><b>이 말과 모순되는 증거는?</b></section>`;
@@ -222,9 +241,9 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&!
 window.chapterTitleReady=()=>{if(!$('title').hidden){actor(null);$('game').classList.add('title-ready');$('continue').disabled=!checkpoint&&!readSlots().some(Boolean);if($('continue').disabled)$('continue').querySelector('small').textContent='아직 시작한 사건이 없어요';}};
 $('home-settings').onclick=()=>{if(checkpoint){s=JSON.parse(JSON.stringify(checkpoint));bind();}$('settings').click();};
 $('home-guide').onclick=()=>open(head('탐정 수첩 사용법')+'<article><h3>살펴보고, 듣고, 이어 보기</h3><p>조사 화면을 좌우로 움직여 보세요. 궁금한 곳을 누르면 그 자리에서 반응하고, 다람이 살펴본 내용을 알려줘요.</p><p>모은 증거는 수첩에서 자세히 검사하세요. 사람들의 말과 다른 부분을 발견하면, 그 말을 골라 증거로 반박해요.</p></article>');
-const scrapbook=createScrapbook({open,esc,checkpoint:()=>checkpoint,slots:readSlots,restore});
+const scrapbook=DaramReference.controller({open,esc,checkpoint:()=>checkpoint,slots:readSlots,restore});
 $('home-clues').onclick=()=>scrapbook.clues();
-$('home-friends').onclick=()=>scrapbook.friends();
+$('home-friends').onclick=()=>scrapbook.friends();$('home-codex').onclick=()=>scrapbook.friends();$('home-guide').onclick=()=>open(head('우편함')+'<p>눈길 거처에서 엄마의 점검 보고서를 찾았다는 연락이 왔다. 다람과 다온은 보고서에 적힌 다음 행선지를 확인하러 간다.</p>');$('home-achievements').onclick=()=>open(head('사건 기록')+'<p>'+ (checkpoint?.finished?'첫 번째 사건 · 사라진 봉투 해결':'아직 해결한 사건이 없어요. 다람의 첫 사건을 시작해 보세요.')+'</p>');
 $('continue').onclick=()=>scrapbook.saves();
 count();window.chapterStartReady?.();
 })();
