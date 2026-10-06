@@ -11,7 +11,7 @@
  window.chapterStartReady=async()=>{
   try{
    const bg=window.ART?.reception||'assets/reception.png';
-   await Promise.all([load(bg),load(window.ART?.daram||'assets/daram.png')]);
+   await Promise.all([load(bg),load(window.ART?.daram||'assets/daram.png'),document.fonts?Promise.all([document.fonts.load('16px DaramDot'),document.fonts.load('16px DaramDotBold')]).catch(()=>{}):Promise.resolve()]);
    if(failed)return;
    status.hidden=true;controls.forEach(b=>b.disabled=false);
    // Fetch the other actors while the introduction is being read.
