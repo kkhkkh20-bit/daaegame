@@ -206,10 +206,12 @@ $('nav-scene').onclick=()=>go('investigate');$('nav-move').onclick=movePicker;$(
 window.addEventListener('resize',()=>{if(s.mode==='investigate'){const p=s.pan;positionWorld();setPan(p);panLabel();}});
 document.addEventListener('keydown',e=>{if($('modal').childElementCount){if(e.key==='Escape'){e.preventDefault();close();}if(e.key==='Tab'){const a=[...$('modal').querySelectorAll('button:not(:disabled),select,summary')],first=a[0],last=a[a.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}return;}if((e.key==='Enter'||e.key===' ')&&s.mode==='dialogue'&&[document.body,$('advance')].includes(document.activeElement)){e.preventDefault();advance();}});
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&!b.disabled&&b.id!=='advance'&&!b.classList.contains('spot'))audio.fx(['notebook','nav-note','log'].includes(b.id)?'page':'tap');});
-window.chapterTitleReady=()=>{if(!$('title').hidden){actor(null);$('game').classList.add('title-ready');$('continue').disabled=!checkpoint;if(!checkpoint)$('continue').querySelector('small').textContent='아직 시작한 사건이 없어요';}};
+window.chapterTitleReady=()=>{if(!$('title').hidden){actor(null);$('game').classList.add('title-ready');$('continue').disabled=!checkpoint&&!readSlots().some(Boolean);if($('continue').disabled)$('continue').querySelector('small').textContent='아직 시작한 사건이 없어요';}};
 $('home-settings').onclick=()=>{if(checkpoint){s=JSON.parse(JSON.stringify(checkpoint));bind();}$('settings').click();};
 $('home-guide').onclick=()=>open(head('탐정 수첩 사용법')+'<article><h3>살펴보고, 듣고, 이어 보기</h3><p>조사 화면을 좌우로 움직여 보세요. 궁금한 곳을 누르면 그 자리에서 반응하고, 다람이 살펴본 내용을 알려줘요.</p><p>모은 증거는 수첩에서 자세히 검사하세요. 사람들의 말과 다른 부분을 발견하면, 그 말을 골라 증거로 반박해요.</p></article>');
-$('home-clues').onclick=()=>{const ids=checkpoint?.found||[];open(head('단서 모음')+(ids.length?'<div class="home-collection">'+ids.map(id=>`<article>${DaramEvidenceArt.thumb(id,EVIDENCE[id].title)}<div><h3>${esc(EVIDENCE[id].title)}</h3><p>${esc(EVIDENCE[id].desc)}</p></div></article>`).join('')+'</div>':'<p class="empty">아직 모은 단서가 없어요. 다람과 첫 사건을 시작해 보세요.</p>'));};
-$('home-friends').onclick=()=>open(head('친구들')+'<div class="home-collection">'+Object.entries(PEOPLE).filter(([id])=>id!=='mungchi'||checkpoint?.round>1).map(([id,p])=>`<article><div><h3>${esc(p.name)} <small>${esc(p.role)}</small></h3><p>${esc(p.fact)}</p></div></article>`).join('')+'</div>');
+const scrapbook=createScrapbook({open,esc,checkpoint:()=>checkpoint,slots:readSlots,restore});
+$('home-clues').onclick=()=>scrapbook.clues();
+$('home-friends').onclick=()=>scrapbook.friends();
+$('continue').onclick=()=>scrapbook.saves();
 count();window.chapterStartReady?.();
 })();
