@@ -6,7 +6,7 @@ art={p.stem:'data:image/png;base64,'+base64.b64encode(p.read_bytes()).decode() f
 def inline_css(name):
     css=(root/name).read_text()
     css=re.sub(r'url\(assets/([\w-]+)\.png\)',lambda m:'url('+art[m[1]]+')',css)
-    return css.replace('url(assets/galmuri11.woff2)', 'url(data:font/woff2;base64,'+base64.b64encode((root/'assets/galmuri11.woff2').read_bytes()).decode()+')')
+    return re.sub(r'url\(assets/([\w-]+\.woff2)\)',lambda m:'url(data:font/woff2;base64,'+base64.b64encode((root/'assets'/m[1]).read_bytes()).decode()+')',css)
 html=(root/'index.html').read_text()
 html=re.sub(r'<link rel="stylesheet" href="([\w-]+\.css)(?:\?[^"]*)?">',lambda m:'<style>'+inline_css(m[1])+'</style>',html)
 parts=re.findall(r'<script src="([\w-]+\.js)(?:\?[^"]*)?"[^>]*></script>',html)
