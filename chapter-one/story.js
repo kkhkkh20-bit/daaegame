@@ -69,3 +69,9 @@ const EVIDENCE={
  roster:{title:'지급 명단',desc:'봉투와 함께 온 주민 지원금 명단.',body:'<h3>주민 지원금 지급 대상</h3><p>뭉치의 할머니 이름은 없다.</p><p class="fineprint">첨부 시설 점검자 확인으로 대상 명단 검증을 갈음함.</p>',note:'시설 점검자의 확인을 명단 검증으로 사용했다.'},
  report:{title:'엄마의 점검 보고서',desc:'거처가 보관 중이던 원본. 엄마의 서명이 있다.',body:'<h3>시설 안전 점검 보고서</h3><dl><dt>점검 범위</dt><dd>건물 · 난방 · 대피로</dd><dt>점검 결과</dt><dd>일부 보수 필요</dd></dl><p class="fineprint">본 보고서는 거주자 자격 및 지원금 지급 대상을 확인하지 않습니다.</p>',note:'엄마의 서명은 실제다. 지원금 명단에 대한 보증은 아니다.'}
 };
+
+// Additional expression frames: 3 playful, 4 surprised, 5 vulnerable.
+STORY.intro[6].mood=5;
+STORY.questions.spoon.lines[2].mood=3;STORY.questions.spoon.lines[2].actor='daram';
+STORY.keySolved.find(l=>l.thought).mood=5;
+STORY.ending.filter(l=>l.who==='daram').forEach(l=>{if(l.text.includes('무서'))l.mood=5;else if(l.text.includes('숟가락')){l.mood=3;l.actor='daram';}});
