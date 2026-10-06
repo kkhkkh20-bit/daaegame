@@ -46,6 +46,6 @@ function visual(id,title,mini=false){const c=crops[id];if(c){const [asset,x,y,w,
  if(pairs[id])return '<span class="paired-evidence">'+pairs[id].map(x=>visual(x,'관련 자료',true)).join('<b aria-hidden="true">＋</b>')+'</span>';
  return `<span class="original-evidence-icon" role="img" aria-label="${escape(title)}">${evIcon(icons[id]||'anon')}</span>`;
 }
-window.DaramEvidenceArt={html(id,title){return `<figure class="evidence-art" data-art="${escape(id)}">${visual(id,title)}<figcaption>${crops[id]?'조사한 부분':pairs[id]?'함께 비교한 자료':'증거 그림'}</figcaption></figure>`;}};
+window.DaramEvidenceArt={thumb(id,title){return `<span class="record-thumb">${visual(id,title,true)}</span>`;},html(id,title){return `<figure class="evidence-art" data-art="${escape(id)}">${visual(id,title)}<figcaption>${crops[id]?'조사한 부분':pairs[id]?'함께 비교한 자료':'증거 그림'}</figcaption></figure>`;}};
 
 })();
