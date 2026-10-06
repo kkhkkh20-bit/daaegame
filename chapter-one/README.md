@@ -23,7 +23,7 @@ NODE_PATH=/opt/codex/cua_node/lib/node_modules node chapter-one/check-mobile.cjs
 
 ## 원작 시스템 연결
 
-`tools/extract_core.py`가 기존 `game.html`에서 `fresh`, `gated`, `comboFor`, `haveItem`, **전체 `judgeBattle`** 등을 포함한 15개 함수를 그대로 추출합니다. `legacy-provenance.json`에 원본 위치와 SHA256을 기록합니다. `legacy-core.js`는 원작의 화면·효과 호출을 새 화면 어댑터로 연결합니다. `case-data.js`는 이번 사건을 원작 데이터 형식으로 제공합니다.
+`tools/extract_core.py`가 기존 `game.html`에서 `fresh`, `gated`, `comboFor`, `haveItem`, **전체 `judgeBattle`** 등을 포함한 16개 함수를 그대로 추출합니다. `legacy-provenance.json`에 원본 위치와 SHA256을 기록합니다. `legacy-core.js`는 원작의 화면·효과 호출을 새 화면 어댑터로 연결합니다. `case-data.js`는 이번 사건을 원작 데이터 형식으로 제공합니다.
 
 이번 장에서 사용하는 기능:
 
@@ -64,3 +64,9 @@ NODE_PATH=/opt/codex/cua_node/lib/node_modules node chapter-one/check-mobile.cjs
 ### 사용자 첨부 예시를 반영한 최신 창 구성
 
 현재 `ui.css`는 아이보리·청록의 둥근 모바일 게임 UI입니다. 이전 붉은 직각 테마를 대체했습니다. 질문은 번호가 붙은 카드, 대사는 밝은 창과 화자 표찰, 수첩은 중앙 제목과 원형 닫기 버튼으로 구성합니다. 까로 반신 이미지의 하단은 세로 대사창 안쪽에 맞춰 절단면이 떠 보이지 않게 했습니다. `check.cjs`에서 얼굴 가림뿐 아니라 원본 이미지 하단이 창 뒤에 있는지도 검사합니다.
+
+## 증거 선택 흐름 복구
+
+원작 `recItems` 함수를 추가로 그대로 추출해 증거·증언 목록을 구성합니다. `selectRecord` 어댑터는 원작처럼 선택과 열람 여부(`G.seen`)를 기록합니다. 상세창 안에서 현재 선택한 증거의 이름, 검사 상태, 다른 수집 기록을 함께 확인하고 바로 바꿀 수 있습니다. 목록으로 돌아가도 선택 표시를 유지합니다. 공방에서는 제시 대상 인물과 정확한 증언 문장을 표시하고, 확인 버튼에도 제시할 증거 이름을 씁니다. 제시 뒤 대사/기록에도 사용한 증거 이름을 남깁니다. 결합 결과를 제시하는 경우에도 제시 모드를 유지합니다.
+
+이는 현재 1장에 사용 중인 원작 수첩·공방 흐름의 복구입니다. 후반 사건 전용 시스템까지 모두 이식했다는 의미는 아닙니다.

@@ -31,6 +31,7 @@ function autoHint(c,st){
   var src=evById(c,a0)?"현장 '"+locOfEv(c,a0)+"'에서 찾은 증거":(tById(c,a0)?CAST[tById(c,a0).who].name+"의 증언":"수첩");
   return "\""+s.t.slice(0,20)+"…\" 이 문장이 수상해. "+src+"랑 나란히 놓고 비교해 보자.";
 }
+function recItems(c,tab){return tab==="t"?G.asked.filter(function(id){var x=tById(c,id);return x&&x.t.q!==""}):G.found.slice()}
 function judgeBattle(c,item){
   var B=G.battle,R=BATTLE[c.id];if(!B||B.round>=R.length||B.phase!=="fight"||DL||document.querySelector(".ovr,.flash,.banner"))return;
   var r=R[B.round],st=stmsOf(r),s=st[(B.si||0)%st.length],cul=B.cul,name=CAST[cul].name;
@@ -78,6 +79,8 @@ function judgeBattle(c,item){
 var G=Object.assign(fresh(0),saved||{});
 return {
  state:G,
+ records:function(tab){return recItems(c,tab)},
+ selectRecord:function(id){if(recItems(c,"ev").concat(recItems(c,"t")).indexOf(id)<0)return false;G.recordSelection=id;G.seen=G.seen||[];if(G.seen.indexOf(id)<0)G.seen.push(id);return true;},
  evidence:function(id){return evById(c,id)},testimony:function(id){return tById(c,id)},
  have:function(id){return haveItem(c,id)},gated:function(id){return gated(c,id)},
  description:function(id){var e=evById(c,id);return e?evDesc(e):''},
