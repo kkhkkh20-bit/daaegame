@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>다람 · 별빛 언덕에 맞춘 새 그림</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#1a1c2c;color:#f4e4c1}*{box-sizing:border-box}body{margin:0}main{max-width:1100px;margin:auto;padding:24px 18px 42px}a{color:#ffcd75;text-underline-offset:4px}header,.controls,.bar{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}h1{font-size:24px;margin:24px 0 10px}h2{font-size:18px;margin:0}p{line-height:1.7;color:#c7d4de}.stage{position:relative;margin-top:24px;background:#2b2d4a;overflow:hidden}.stage>img{display:block;width:100%;height:auto}.stage>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}img,svg{image-rendering:pixelated}.controls{padding:14px 0}.controls label{display:flex;align-items:center;gap:10px}.controls select{font:inherit;padding:8px 28px 8px 10px;background:#2b2d4a;color:#f4e4c1;border:1px solid #566c86;border-radius:0}.controls input{width:18px;height:18px;accent-color:#b13e53}.status{font-size:14px;margin:0}.art{margin-top:24px;border:1px solid #566c86}.bar{padding:14px 16px}.sheet{background-color:#2b2d4a;background-image:conic-gradient(#566c86 25%,transparent 0 50%,#566c86 0 75%,transparent 0);background-size:24px 24px}.sheet img{display:block;width:100%;height:auto}.foot{margin-top:26px;font-size:14px}summary{cursor:pointer;color:#94b0c2}details p{font-size:14px}@media(max-width:480px){main{padding:18px 12px 32px}h1{font-size:21px}.controls{gap:12px}.controls label{font-size:14px}.bar{padding:12px}}
+</style>
+</head>
+<body>
+<main>
+<header><a href="./">← 첫 시안</a><a href="daram-matched-study.zip?v=2" download>새 다람·미리보기 받기 ↓</a></header>
+<h1>별빛 언덕에 맞춘 다람</h1>
+<p>털과 옷의 잔묘사를 줄이고, 꼬리와 치마의 명암을 크게 정리했습니다. 기본·생각·감정 포즈를 같은 배경 위에서 확인해 보세요.</p>
+<div class="stage" aria-label="별빛 언덕 위에 새 다람을 배치한 비교 미리보기">
+<img src="star-hill.png" alt="변경하지 않은 별빛 언덕 배경" width="1681" height="936">
+<svg viewBox="0 0 1681 936" aria-hidden="true"><svg id="sprite" x="110" y="334" width="430" height="552" viewBox="0 0 594 763" preserveAspectRatio="xMinYMin meet" overflow="hidden"><image id="sprite-image" href="daram-matched.png" x="0" y="0" width="2062" height="763"/></svg></svg>
+</div>
+<div class="controls"><label for="pose">표정 <select id="pose"><option value="0">기본</option><option value="1">생각</option><option value="2">감정</option></select></label><label><input id="previous" type="checkbox">이전 다람과 비교</label></div>
+<p class="status" id="status" aria-live="polite">새 다람 · 기본</p>
+<section class="art" aria-labelledby="sheet-title"><div class="bar"><h2 id="sheet-title">새 다람 · 세 포즈</h2><a href="daram-matched.png" download>투명 PNG ↓</a></div><div class="sheet"><img src="daram-matched.png" alt="명암과 장식을 단순하게 정리한 다람의 기본, 생각, 감정 포즈" width="2062" height="763"></div></section>
+<p class="foot">원본 게임과 기존 다람 파일은 그대로 두고 별도 시안으로 보관했습니다.</p>
+<details><summary>파일 규격과 전달 정보</summary><p>배경 위 배치로 어울림을 확인하는 생성 시안입니다. 엄격한 공통 픽셀 격자·26색 팔레트·머리와 몸 비율까지 검증된 최종 도트는 아닙니다. 가장자리와 색 변화가 남아 있습니다. PNG에는 세 포즈가 서로 다른 너비로 들어 있으므로, 3등분하지 않고 제공한 프레임 좌표를 사용하세요.</p><p><a href="daram-matched.json">크기·프레임 좌표·파일 검사</a> · <a href="DARAM-HANDOFF.txt">전달 문서</a></p></details>
+</main>
+<script>
+const frames=[[0,0,594,763],[594,0,600,763],[1194,0,868,763]];
+const previousFrames=[[0,0,567,1024],[567,0,457,1024],[1024,0,512,1024]];
+const labels=['기본','생각','감정'];
+const pose=document.getElementById('pose'),previous=document.getElementById('previous'),sprite=document.getElementById('sprite'),picture=document.getElementById('sprite-image');
+function render(){const i=Number(pose.value),old=previous.checked,[x,y,w,h]=(old?previousFrames:frames)[i];sprite.setAttribute('viewBox',[x,y,w,h].join(' '));sprite.setAttribute('width',String(w*552/h));sprite.setAttribute('x',old?'340':'110');picture.setAttribute('href',old?'daram-poses.png':'daram-matched.png');picture.setAttribute('width',old?'1536':'2062');picture.setAttribute('height',old?'1024':'763');document.getElementById('status').textContent=(old?'이전 다람':'새 다람')+' · '+labels[i];}
+pose.addEventListener('change',render);previous.addEventListener('change',render);render();
+</script>
+</body>
+</html>
