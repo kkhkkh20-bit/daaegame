@@ -46382,9 +46382,14 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   angry:["angry","tense","pout","shock","think"],pout:["pout","angry","sad"],embarrassed:["embarrassed","shy","nervous"]
  };
  function pick(k,mood){var F=FACE[k];if(!F)return null;mood=String(mood||"").split(/\s+/)[0];var L=NEAR[mood]||[];for(var i=0;i<L.length;i++)if(F[L[i]])return L[i];return "neutral"}
- var N=0,_pf=pf;pf=function(k,mood){var e=pick(k,mood);if(e){var file=(k==="det0"?"papa":k)+"-"+e;
-  return '<svg class="nodot" viewBox="0 0 100 101" aria-hidden="true"><g id="an-'+k+'-'+(++N)+'"><image href="art/faces/'+file+'.png'+V+'" x="0" y="0" width="100" height="101" preserveAspectRatio="xMidYMax meet"/></g></svg>'}
+ var PRE={};function preload(k){var f=(k==="det0"?"papa":k);if(PRE[f]||!FACE[f])return;PRE[f]=[];Object.keys(FACE[f]).forEach(function(x){var im=new Image();im.decoding="async";im.src="art/faces/"+f+"-"+x+".png"+V;PRE[f].push(im)})}
+ try{preload("det1");preload("papa")}catch(e){}
+ var N=0,_pf=pf;pf=function(k,mood){var e=pick(k,mood);if(e){preload(k);var file=(k==="det0"?"papa":k)+"-"+e;
+  return '<svg class="nodot" viewBox="0 0 100 101" aria-hidden="true"><g id="an-'+k+'-'+e+'"><image x="0" y="0" width="100" height="101" preserveAspectRatio="xMidYMax meet" href="art/faces/'+file+'.png'+V+'"/></g></svg>'}
   return _pf.apply(this,arguments)};
+ try{var _vf=vnFigure;vnFigure=function(l){var w=l&&l.who;if(w==="det"||w==="think")w=(l.name&&S.players[1]!==S.players[0]&&l.name.indexOf(S.players[1])===0)?"det1":"det0";
+  if(w==="det0"){var c=(typeof G!=="undefined"&&G&&CASES[G.ci])?CASES[G.ci].id:"";if(c!=="fall")return ""}
+  return _vf.apply(this,arguments)}}catch(e){}
 
  function img(n,px){return '<img class="anic" src="art/icons/'+n+'.png'+V+'" alt="" width="'+px+'" height="'+px+'" draggable="false">'}
  function swapIcon(el,n,px){if(!el||el.dataset.anic===n)return;var s=el.querySelector("svg");if(s){s.insertAdjacentHTML("beforebegin",img(n,px));s.remove()}else el.insertAdjacentHTML("afterbegin",img(n,px));el.dataset.anic=n}
