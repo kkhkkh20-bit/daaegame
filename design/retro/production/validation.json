@@ -1,0 +1,65 @@
+{
+  "scope": "Art handoff preview; actual game integration review remains pending",
+  "browser": {
+    "engine": "Chromium via Playwright",
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "checks": 864,
+    "errors": []
+  },
+  "packaging": {
+    "imageCount": 65,
+    "completeBatches": 10,
+    "zipIntegrityChecked": true,
+    "originalPNGBytesPreserved": true,
+    "transparentHollowCentersChecked": [
+      "trust-empty",
+      "star-empty"
+    ],
+    "onOffSharedCropChecked": true,
+    "registryFilesExist": true
+  },
+  "title": {
+    "portraitOriginalSize": [
+      853,
+      1844
+    ],
+    "wideOriginalSize": [
+      1672,
+      941
+    ],
+    "titleAndButtonsOverlayVisuallyReviewed": true,
+    "strictSafeBandGuaranteed": false,
+    "note": "Title/menu overlays do not obscure key artwork in preview. Curtain rod and chair feet slightly extend beyond nominal 35–65% guide; use preview layout and preserve aspect ratio."
+  },
+  "wood": {
+    "wood-tile": {
+      "horizontalBoundaryMeanRGBDifference": 3.1766,
+      "verticalBoundaryMeanRGBDifference": 1.0344,
+      "exactBoundaryMatch": false,
+      "visualRepeatReviewed": true,
+      "previewTileSize": [
+        192,
+        96
+      ],
+      "reviewNote": "Both axes repeated in Chromium preview; no conspicuous seam observed at display size. Original edge pixels are not mathematically identical."
+    },
+    "wood-tile-dark": {
+      "horizontalBoundaryMeanRGBDifference": 3.3138,
+      "verticalBoundaryMeanRGBDifference": 1.3183,
+      "exactBoundaryMatch": false,
+      "visualRepeatReviewed": true,
+      "previewTileSize": [
+        192,
+        96
+      ],
+      "reviewNote": "Both axes repeated in Chromium preview; no conspicuous seam observed at display size. Original edge pixels are not mathematically identical."
+    }
+  },
+  "strictRasterCompliant": false,
+  "runtimeReviewed": false
+}

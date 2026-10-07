@@ -1,0 +1,21 @@
+다람 탐정 · I02 그림 인계
+
+원본 PNG는 생성 도구 출력 그대로 복사했습니다. 원본 게임과 art/는 변경하지 않았습니다.
+이미지 생성은 완료, 사용자 승인 및 실제 게임 적용 검토는 별도입니다.
+미리보기: https://kkhkkh20-bit.github.io/daaegame/design/retro/production/
+manifest.json에 실제 크기·SHA256·투명도·x,y,width,height 좌표·프롬프트가 있습니다.
+엄격한 32픽셀 격자/128픽셀 납품 또는 26색 제한 충족으로 표시하지 마세요.
+화면 크기에 맞춘 축소·색상 정리·반투명 가장자리 정리는 게임 담당자가 사본에서 수행합니다.
+
+각 아이콘은 투명 PNG 한 파일입니다. 기본 표시 32px, 작은 버튼 22px, 큰 버튼 36px.
+아이콘 crop에 투명 여백을 조금 남겨 같은 시각 크기로 표시합니다. 원본 PNG 자체는 잘라내지 않았습니다.
+on/off 및 full/empty 쌍은 두 파일의 공통 crop을 유지하세요.
+
+design/retro/icons/back.png | 크기 [1254, 1254] | crop [234, 244, 786, 786] | SHA256 2b61a95b3faa93639d8da7636a8e603efcd02f9b7cf49f1332e9aa736d982e90
+design/retro/icons/menu.png | 크기 [1254, 1254] | crop [339, 352, 576, 576] | SHA256 b69aaafb839e1d26eb5151122f1b0693f20ac451c53560d8738f4a113cd56891
+design/retro/icons/sound-on.png | 크기 [1254, 1254] | crop [245, 203, 888, 888] | SHA256 30a68670fe50c7422e8b87db9b32ff944b498b7584c11946c4c94e0ca1239dc8
+design/retro/icons/detective-hat.png | 크기 [1254, 1254] | crop [112, 99, 1058, 1058] | SHA256 dbaf63d8bedd499f96868c36b9f1d7a4c9c4b433be2098b3d22d7a58debac830
+design/retro/icons/flash-idea.png | 크기 [1254, 1254] | crop [64, 65, 1125, 1125] | SHA256 2d82481d037c8727a7e7ee78a5a0a83038e8b5c2ae738f616f45a5341fecb1a3
+design/retro/icons/hidden-story.png | 크기 [1254, 1254] | crop [196, 201, 863, 863] | SHA256 814ce3ac95105595abddfe890cedfca0250dd2426dd7127a72e89766ebeaa74f
+design/retro/icons/badge.png | 크기 [1254, 1254] | crop [99, 107, 1055, 1055] | SHA256 38ec2bca71368e65987b850a9fd1a2539d167e3e9ff5e070f33f11d1822763a6
+design/retro/icons/sound-off.png | 크기 [1254, 1254] | crop [245, 203, 888, 888] | SHA256 5b73b6679999eaa720105a81d361dfb8226992f189f6dbef1e7f0b9055428901

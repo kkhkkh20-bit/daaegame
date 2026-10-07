@@ -1,0 +1,21 @@
+다람 탐정 · I04 그림 인계
+
+원본 PNG는 생성 도구 출력 그대로 복사했습니다. 원본 게임과 art/는 변경하지 않았습니다.
+이미지 생성은 완료, 사용자 승인 및 실제 게임 적용 검토는 별도입니다.
+미리보기: https://kkhkkh20-bit.github.io/daaegame/design/retro/production/
+manifest.json에 실제 크기·SHA256·투명도·x,y,width,height 좌표·프롬프트가 있습니다.
+엄격한 32픽셀 격자/128픽셀 납품 또는 26색 제한 충족으로 표시하지 마세요.
+화면 크기에 맞춘 축소·색상 정리·반투명 가장자리 정리는 게임 담당자가 사본에서 수행합니다.
+
+각 아이콘은 투명 PNG 한 파일입니다. 기본 표시 32px, 작은 버튼 22px, 큰 버튼 36px.
+아이콘 crop에 투명 여백을 조금 남겨 같은 시각 크기로 표시합니다. 원본 PNG 자체는 잘라내지 않았습니다.
+on/off 및 full/empty 쌍은 두 파일의 공통 crop을 유지하세요.
+
+design/retro/icons/trust-full.png | 크기 [1254, 1254] | crop [219, 223, 816, 816] | SHA256 1d1f16ea971b42caaea857f1b382c6682266acdf8330312da072606c30579505
+design/retro/icons/star-full.png | 크기 [1254, 1254] | crop [158, 160, 937, 937] | SHA256 7a13893f58b04b1584001a7634d95a8d3fe9525ac10dde9c984d7b97188d662b
+design/retro/icons/lamp-life-on.png | 크기 [1254, 1254] | crop [146, 145, 961, 961] | SHA256 f6ab6c43bc43757017e64c21eb4cc9fd935438736a49d7600a5cafae492b5f0a
+design/retro/icons/press.png | 크기 [1254, 1254] | crop [81, 98, 1147, 1147] | SHA256 ca60f295aa25b0c498e2f6e2d11cbe1ab33545c1ed5a42e70556ce74711169c8
+design/retro/icons/objection.png | 크기 [1254, 1254] | crop [211, 224, 831, 831] | SHA256 5e832c7b8d8711e283b02088ef4966b2f49ab5ca284425b652a83eef50e5d7ae
+design/retro/icons/trust-empty.png | 크기 [1254, 1254] | crop [219, 223, 816, 816] | SHA256 5f2fa13a40a21469be1230afdb662dc872417af84a38e06816b0530e6c1638e7
+design/retro/icons/star-empty.png | 크기 [1254, 1254] | crop [158, 160, 937, 937] | SHA256 f40759b8ffd2cc4afe16c481e33267116fe7debef20d39274dfa1a01a676fc3a
+design/retro/icons/lamp-life-off.png | 크기 [1254, 1254] | crop [146, 145, 961, 961] | SHA256 6644331abc0d7eb4b6b49dd0a8f8d8bd7691fce7145c29ded965c109d7cef075
