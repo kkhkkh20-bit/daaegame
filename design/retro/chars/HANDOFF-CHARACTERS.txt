@@ -1,0 +1,485 @@
+CHARACTERS 캐릭터 전달 문서
+상태: ready_for_review
+브랜치: art/c01-papa-rei-karo-20261007
+기준 origin/main: cf84c4a4a99416e90b0e72312005d880db9e6255
+
+제작: 내장 image_gen. 그림 내용 수정도 image_gen 사용. 원본 알파 보존.
+최신 요청 확인: origin/main e4a096ee2b509a178f057cfde34a7bc3f1df0671. R-012 F02 표정 목록 반영.
+C01·C02 정면 얼굴 24장은 다른 채팅이 main에 납품한 파일을 바이트 변경 없이 재사용. 본 채팅의 중복 시안은 납품에서 제외.
+새 제작 범위: C03~C13 전신 32장(루카 포함) 및 정면 얼굴 128장. 기존 전신 6장과 기존 정면 24장은 검토 편의를 위해 함께 표시.
+기준: daram-matched.png 직접 참조, star-hill-enriched.png 색감 참조.
+좌표: 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 전신 3등분 금지.
+정면 얼굴은 각 PNG 전체 정사각형을 96×96 nearest-neighbor로 표시. 두 눈과 시선이 플레이어를 향함.
+전신은 인물별 fullBodyScale(최대 높이 90px)로 동일 배율 적용. baselines/ baselineOffsets로 발 정렬.
+일부 원본 포즈의 최하단 픽셀은 1~4px 차이가 있음. 90px 표시에서는 1px 미만이며 미리보기에서 각 baseline으로 정렬.
+RGBA 투명 배경과 가시 영역/crop 경계/상대경로/파일 해시 확인.
+생성 원본에 반투명 가장자리와 작은 색 변화가 있음. 정확한 정수 픽셀 격자 및 26색 제한을 강제한 하드웨어 래스터는 아님.
+게임용 축소·팔레트 정리는 개발 담당이 별도 art/에서 처리. 이 작업은 game.html/index.html/dot.html/sw.js/art/를 수정하지 않음.
+C01·C02 기존 PNG/문서/미리보기 보존. 배경·승인 이미지·공용 요청/검토/ready-assets 파일 보존. main 병합 없음.
+사용자 최종 승인 및 실제 게임 런타임 검토 전.
+
+아빠 (papa)
+전신: design/retro/chars/papa.png
+크기: [2060, 763] / SHA256: f7f1b81206b943263ed33158cda88329013eccf91e1dcf23225c1c6c9657cb72
+발 기준선: [739, 738, 739] / 보정: [0, 1, 0]
+기본 전신 crop: [0, 0, 668, 763]
+생각 전신 crop: [668, 0, 651, 763]
+감정 전신 crop: [1319, 0, 741, 763]
+정면 neutral: design/retro/faces/papa-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 1a7a6de39bac0518b7ed4ab22a13209dffdec2c0880a8a89d59fc51a2c2e6364
+정면 think: design/retro/faces/papa-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 3e07a7022a1092599d59fac5bb7655e3aa26154a96b01f87be4d825e5050f887
+정면 sad: design/retro/faces/papa-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6655c389f6613de9b3a4106f7ee0645b21ad20e86b5efa03d599c8782222cdbf
+정면 smile: design/retro/faces/papa-smile.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5ee1eaa4fc25899b21eccbef155106b39923ad3215dce1af3152367a164003d7
+
+레이 (rei)
+전신: design/retro/chars/rei.png
+크기: [2061, 763] / SHA256: 2901965f75a9185e342bbba1c32944eba3703b9cf71913e44dd7cc564c2757a2
+발 기준선: [731, 730, 730] / 보정: [0, 1, 1]
+기본 전신 crop: [0, 0, 721, 763]
+생각 전신 crop: [721, 0, 616, 763]
+감정 전신 crop: [1337, 0, 724, 763]
+정면 neutral: design/retro/faces/rei-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d6d8bdd145b32bdeb47f6b0c47881c2b5c56954bb0ab3754e1fdf48cd3119191
+정면 think: design/retro/faces/rei-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 95ce457655af6caf514b42de47475b070af2dc29ee882149a689dd95848d3a05
+정면 smug: design/retro/faces/rei-smug.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6712449bbe605c426c402e3461810a5fcd87c201ef2d70cb6401455772fa54b2
+정면 pout: design/retro/faces/rei-pout.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 cd3b3420fc27346d473bcfbdc2f214e6d193ed1b51779ebcfd5e0eeb19325237
+
+까로 (karo)
+전신: design/retro/chars/karo.png
+크기: [2061, 763] / SHA256: 4d31bb11c3d291ee86c7f7df505f89a30f9cd0f662d2275df2d746f189835a1a
+발 기준선: [699, 699, 699] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 685, 763]
+생각 전신 crop: [685, 0, 682, 763]
+감정 전신 crop: [1367, 0, 694, 763]
+정면 neutral: design/retro/faces/karo-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e3a46f44533a97854376f7e49d11f00c3b2692bbd5bcf43dfd1dcccd9eed90d2
+정면 think: design/retro/faces/karo-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 855a488a3dc10e0f3051ed0116b7a95dd86457f7435795222fe33ea4ab4e31f0
+정면 nervous: design/retro/faces/karo-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c52c18af75d9abfdd53253665277815fa5fa23d83e2bcc8a9cd73ef2e142fb70
+정면 shock: design/retro/faces/karo-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5c554c180b397da0da0ec0185afd3b8d2ab55b30e513715bd8d342b4fe28e1ea
+
+부리 (buri)
+전신: design/retro/chars/buri.png
+크기: [2062, 763] / SHA256: da5a820df84de26d7d439e41da5253d4b78432e95bc398b979eda202973e6129
+발 기준선: [746, 746, 746] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 751, 763]
+생각 전신 crop: [751, 0, 651, 763]
+감정 전신 crop: [1402, 0, 660, 763]
+정면 neutral: design/retro/faces/buri-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 32129e4dff8e976951c6a294a6467d01be1dca3ebb6af2158d9ad8748d71495b
+정면 think: design/retro/faces/buri-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8b977b39bfea556fd3ecaf3c0549a15e5eac051820e4f4ac0b7e7515df112154
+정면 sad: design/retro/faces/buri-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 cedf9a448d3c7ae8ef8d25d73fb706d03593007b94ebb6fd0c361ee8a42af8f6
+정면 shock: design/retro/faces/buri-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8358467ba00b3c37eda8a8f24f8ea195ba1e861529afe7298cb83377f997ab6b
+
+왕구 (wanggu)
+전신: design/retro/chars/wanggu.png
+크기: [2061, 763] / SHA256: 2c9a7299aec65975df4c4680eb1d6357c130e03e1aed78071424800a4ef1973d
+발 기준선: [723, 723, 723] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 682, 763]
+생각 전신 crop: [682, 0, 624, 763]
+감정 전신 crop: [1306, 0, 755, 763]
+정면 neutral: design/retro/faces/wanggu-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 16cd5c9ce1b0f8a327e9fe020f11434820ae1b6e2921062cc14fb4ac6fc222d0
+정면 think: design/retro/faces/wanggu-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5fe58af25a85797a44474b6976e4315532e6d80dda9512e778568baa01796ede
+정면 embarrassed: design/retro/faces/wanggu-embarrassed.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d8936f4cf4cb6700f38cb7c59c68921c748bbfe2993834fec7813a063bea83d2
+정면 shock: design/retro/faces/wanggu-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 a2a650e65ea7a431b7e949e10bd1dfdd69cfb75921b28c3a7b3781b5fa9f4d7e
+
+도토 (doto)
+전신: design/retro/chars/doto.png
+크기: [2061, 763] / SHA256: dfb84bdc8b7024de05e20c8ef4f7d30de5b1d9764ac8feccd9c0416b222754fa
+발 기준선: [726, 726, 726] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 682, 763]
+생각 전신 crop: [682, 0, 621, 763]
+감정 전신 crop: [1303, 0, 758, 763]
+정면 neutral: design/retro/faces/doto-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 b2b582f349e251286b94f7e183dd373e0d895517097cb0c2ee6ab4f2c3ac43c7
+정면 think: design/retro/faces/doto-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f369ef9cc555c1b666c2ea66e58add563ca848f2e9f1d02be4aa615b128fd976
+정면 shy: design/retro/faces/doto-shy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 0ffd2b6d685c6a4fe3bcffb7be9c9ce40c7e16f5475541227fe49adee49d3a78
+정면 shock: design/retro/faces/doto-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f6563ddab9df804e2772aa730cab1a7691b8d1f9a56d8624e892610e4b5e4d39
+
+꽥순 (kkwak)
+전신: design/retro/chars/kkwak.png
+크기: [2061, 763] / SHA256: f189ce4699204e981883569ca71bbdfa442827c1498f73db18df0616cc89989a
+발 기준선: [727, 727, 725] / 보정: [0, 0, 2]
+기본 전신 crop: [0, 0, 719, 763]
+생각 전신 crop: [719, 0, 646, 763]
+감정 전신 crop: [1365, 0, 696, 763]
+정면 neutral: design/retro/faces/kkwak-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 95ac4bb6e79efeadcdfaca0714ede595097c1a2e9c19ae018bd5496779d5a55f
+정면 smug: design/retro/faces/kkwak-smug.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 3a3b7b85ff06871b81e41d37b54885710846bbc5745e9a60b96f35f1dfe941b5
+정면 think: design/retro/faces/kkwak-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6cb606832907884bdf1be2efc357335352f112212db549b35eb818e2840c499d
+정면 shock: design/retro/faces/kkwak-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 a1f29bacadddc1d09c1f890fc068778ce67e5a3b42440e0ce935c1711729fac3
+
+콩이 (kongi)
+전신: design/retro/chars/kongi.png
+크기: [2062, 763] / SHA256: 395d8bfd8ba8cc59fa666588d9c38980d33ca34744a61332839ccb41c9653388
+발 기준선: [715, 715, 715] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 674, 763]
+생각 전신 crop: [674, 0, 619, 763]
+감정 전신 crop: [1293, 0, 769, 763]
+정면 neutral: design/retro/faces/kongi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5acca2bb626ed621ede9d2261c28db5a45a1d2d89a0a02ae57ed0a0a71e41d28
+정면 happy: design/retro/faces/kongi-happy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6db98d59fef3ac1d362a0e983786dfc2a52663b41f292aba69be4f999d2ae06c
+정면 think: design/retro/faces/kongi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f46155c0ef03f96ba09ae1e7c032565615d3b53d61773c99ef4b9973d8429ce5
+정면 sad: design/retro/faces/kongi-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e729b136d1185d9989c4b5d4e7bf76c3d5ce4c22c2dfae0696722e8c746ddd0f
+
+부엉이 할아버지 (owlgp)
+전신: design/retro/chars/owlgp.png
+크기: [2062, 763] / SHA256: 173211a9cb8de07afa83a0cae2ac230bb3352c65150406ed572f338faa63e2f1
+발 기준선: [737, 736, 736] / 보정: [0, 1, 1]
+기본 전신 crop: [0, 0, 676, 763]
+생각 전신 crop: [676, 0, 626, 763]
+감정 전신 crop: [1302, 0, 760, 763]
+정면 neutral: design/retro/faces/owlgp-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4612a27edbfa37e1d7edbf77d0b28fb6e11ce1e207ad5763e2f7f2bbd4cdaab7
+정면 smile: design/retro/faces/owlgp-smile.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7af5a95bdd2634822b0c5c015b9bf509bc9394b2c85be27a2fbc96a57108176c
+정면 think: design/retro/faces/owlgp-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bdc093f9bc2ea61a9906692c6516e9fc0a5f1675ee97a1cc2f796985fc2a0324
+정면 sad: design/retro/faces/owlgp-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4eebb20475f362e5d5a6d498330c5baf7934a4ceda34278830f01ae3eaec60e5
+
+토끼 할머니 (grandma)
+전신: design/retro/chars/grandma.png
+크기: [2061, 763] / SHA256: 28d603d962db6bce62fa85c32f4b9fae354ab880f3af050883216a30315434f3
+발 기준선: [725, 725, 725] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 700, 763]
+생각 전신 crop: [700, 0, 604, 763]
+감정 전신 crop: [1304, 0, 757, 763]
+정면 neutral: design/retro/faces/grandma-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 26df97eacd68732141411b9dd592f43e9bf1f5281bc1376a8d9659749dd53616
+정면 smile: design/retro/faces/grandma-smile.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 1f6f2022d887e81ff9950e192f4aceae939386239418ae979a784f340e55bfd6
+정면 think: design/retro/faces/grandma-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5675397eacfafe59896c6c498657fa94239d7f3f8f632e833b3968991ffe145b
+정면 sad: design/retro/faces/grandma-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ad6133aab23be7b034f682f0be0b1a5ef776e102227040449d0e1a6a0aa3211f
+
+나비 (nabi)
+전신: design/retro/chars/nabi.png
+크기: [2061, 763] / SHA256: 6df5b418028abe0dc4ad832ed08fcf741236d6cd939198f8266e49b1c7f00759
+발 기준선: [739, 739, 739] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 651, 763]
+생각 전신 crop: [651, 0, 672, 763]
+감정 전신 crop: [1323, 0, 738, 763]
+정면 neutral: design/retro/faces/nabi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 2cc7bdbf4edba4f4f9afc1fb47aabf97eb45dc17cb0f501f3ec4a92ea5ebd470
+정면 smug: design/retro/faces/nabi-smug.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ca72eb11e43e33c706372c901e11de6c21731a84c62a11d021e9451d6e7fc875
+정면 think: design/retro/faces/nabi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 075ef6de6f79778929a158d38017e7e3ce85706e44783e60aea2ed7fb75e1840
+정면 shy: design/retro/faces/nabi-shy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 34bdb6dc29182be74a0f2615cea017d660fb698281db182b1154be1de1dfcd27
+
+검은 망토 (shadow)
+전신: design/retro/chars/shadow.png
+크기: [2062, 763] / SHA256: d6396ae2685c4b02a56ac090030b8d6c7e351d7315c99b91f0046cb76bd84705
+발 기준선: [735, 736, 737] / 보정: [2, 1, 0]
+기본 전신 crop: [0, 0, 682, 763]
+생각 전신 crop: [682, 0, 645, 763]
+감정 전신 crop: [1327, 0, 735, 763]
+정면 neutral: design/retro/faces/shadow-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ddff4551275277701f7812d4829ee8b9225c8f924cebf6aa5be61a00203da56d
+정면 think: design/retro/faces/shadow-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bb23ac42f197cc6ea073c41c42fadfccced8ab7316685ad7c2955bc3b096ded8
+정면 tense: design/retro/faces/shadow-tense.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 0db5a1078640913941ae02c919ecff160f52e03e5e8d1d9fff836cb249be7bc5
+정면 shock: design/retro/faces/shadow-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5824afd2ffb6aeb2193fc31b25f78f31667861a1b7e9052e36c0dea34af8bbf5
+가려진 인물의 정체 보호: 정면 후드이지만 눈·코·입은 모든 표정에서 숨김. 얼굴 노출 규칙의 의도적 예외.
+
+밤이 (bami)
+전신: design/retro/chars/bami.png
+크기: [2061, 763] / SHA256: b86aeaca859c21adacfdddac15b9450320e7005e43a01f891c02b57dd50a80c4
+발 기준선: [744, 744, 742] / 보정: [0, 0, 2]
+기본 전신 crop: [0, 0, 732, 763]
+생각 전신 crop: [732, 0, 656, 763]
+감정 전신 crop: [1388, 0, 673, 763]
+정면 neutral: design/retro/faces/bami-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 fbd9320a823595f791841803f13e5b665268f5a8d30fd583d358ed93640ba336
+정면 think: design/retro/faces/bami-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c756f6aaecdc2f8ed6fa79a48e1bf50918f932e042aff5abb8651f62bfe28851
+정면 sad: design/retro/faces/bami-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 3882501d34dc84d84cca8a51a90ec05c1bd4e8920c316d42a7c2497920d410e9
+정면 shock: design/retro/faces/bami-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 fa54964c1db050698ef0e99e6a3ff3627869b2e84d6590d100d8b0905ef38eaf
+
+뿔이 촌장 (ppul)
+전신: design/retro/chars/ppul.png
+크기: [2061, 763] / SHA256: ec6525d95b3c1cc7aa4050bb50ad6215c1b98bef1a459f125677e0556d33f41e
+발 기준선: [732, 732, 733] / 보정: [1, 1, 0]
+기본 전신 crop: [0, 0, 703, 763]
+생각 전신 crop: [703, 0, 685, 763]
+감정 전신 crop: [1388, 0, 673, 763]
+정면 neutral: design/retro/faces/ppul-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8ede89b34f319609c39a48b499d3bfcfbe125c290420eb900284ed64ec9d18e3
+정면 think: design/retro/faces/ppul-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 55a152ed221ea1e3a432233ecc55a990f0f7dc590913ecc371e6b60389ca6bcd
+정면 embarrassed: design/retro/faces/ppul-embarrassed.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 95e33205a54b06935a50007ed14757f1044f6aa4f2227f75ccea4e8f306f9548
+정면 shock: design/retro/faces/ppul-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8cb7e7cbcd3d39a7157d54b73cc57e3901558d8d7132e10b4258de3176b8e3cd
+
+설이 (seol)
+전신: design/retro/chars/seol.png
+크기: [2060, 763] / SHA256: a5e26ad7e75d2f4e433884ea90da7b527c978a33876a9a813d14a9e1f74f4a66
+발 기준선: [734, 734, 734] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 707, 763]
+생각 전신 crop: [707, 0, 626, 763]
+감정 전신 crop: [1333, 0, 727, 763]
+정면 neutral: design/retro/faces/seol-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 9261551d4966fa660ecc64919110181f7a800fb2d366a889f433f9460d601cbd
+정면 think: design/retro/faces/seol-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 236217f1bda998f07de5d0a4bd3f624fad057d6c2c44995d115ba31695118e13
+정면 worried: design/retro/faces/seol-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c953aff4bc9511d8ec02644621158cdc76fc7ac5d788fc4e7607ff637e7eaa0b
+정면 shock: design/retro/faces/seol-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e906629f9f93ff09414d4532d4114479bbd64c048d164b20be17571b1c5837cb
+
+슬링 (sling)
+전신: design/retro/chars/sling.png
+크기: [2060, 763] / SHA256: 24a849a172f7514424aa23e75bcfa9ffc529c83b8996449d7b04f7e670ca7660
+발 기준선: [725, 725, 725] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 686, 763]
+생각 전신 crop: [686, 0, 605, 763]
+감정 전신 crop: [1291, 0, 769, 763]
+정면 neutral: design/retro/faces/sling-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 b0b62298952638d155477e4fc18da9a940b7fe25905ef087f38f508ce109f198
+정면 think: design/retro/faces/sling-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 75d58365550039bd71cea5d437161f572584174927d2eff50e4cf971dff9b00c
+정면 nervous: design/retro/faces/sling-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 eff6037f37435f3155405b4f811fa1c830aff458f775d503c8c3d9d201c0922a
+정면 shock: design/retro/faces/sling-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 64563c0a92200f94535224b2c8cd21be7cdaf33dc677dec443738bb214c0fa19
+
+톡 (tok)
+전신: design/retro/chars/tok.png
+크기: [2061, 763] / SHA256: 5a2b3bc478da6cfa9a6f096939166c9f0b5ed7aba0016be35b2ac66b863fd50e
+발 기준선: [741, 739, 742] / 보정: [1, 3, 0]
+기본 전신 crop: [0, 0, 706, 763]
+생각 전신 crop: [706, 0, 642, 763]
+감정 전신 crop: [1348, 0, 713, 763]
+정면 neutral: design/retro/faces/tok-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 cb0ce87106d02dd9655cf3c1715a57d510c2ba29c587691326950b5ac8a9c198
+정면 think: design/retro/faces/tok-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e54b28ba5e60435a7db5c447df35ce15f6da245383e5a6e8571ad0fcc0d843b8
+정면 worried: design/retro/faces/tok-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 3db98104b5b2926ae290035b2932234c26e02c1754f895d451cc3cd850448f78
+정면 shock: design/retro/faces/tok-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e79aca6510bc2cc8a609057be499b904f33952f839bc89555d641f5af270ece6
+
+네로 (nero)
+전신: design/retro/chars/nero.png
+크기: [2061, 763] / SHA256: 88cdfeb181d5615e2f13936aa4720bce10e3790ffdc0f057ebe6430d5329151b
+발 기준선: [736, 736, 736] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 759, 763]
+생각 전신 crop: [759, 0, 615, 763]
+감정 전신 crop: [1374, 0, 687, 763]
+정면 neutral: design/retro/faces/nero-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 733cc3065ca8c6b3c636abd52ea42a0994a71dd6bbef34d784b1af1de22c4f42
+정면 think: design/retro/faces/nero-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 42b92addc26c0ca150f4703ad3a737429de00ac4fbc1c04f82e78b7c2ade67c1
+정면 sad: design/retro/faces/nero-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 2d258ae8d409be9cee642d84d8bbd28876ac6746ec2f5deb1983ff0dd95a1aee
+정면 shock: design/retro/faces/nero-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 2a83bc4a73fa1499e831f0f59108c2fa9a0541f172be3d7d68d301af374a0cc8
+
+모모 관장 (momo)
+전신: design/retro/chars/momo.png
+크기: [2061, 763] / SHA256: 59d6b3345b73fe4f0bec39c129473100f464c66969ba9d1c1f2bf3fa533bbdeb
+발 기준선: [744, 744, 744] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 787, 763]
+생각 전신 crop: [787, 0, 604, 763]
+감정 전신 crop: [1391, 0, 670, 763]
+정면 neutral: design/retro/faces/momo-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 2ef5a23c58efcac422bd333a06137f17736bf1fcf4028197f8416b34a4de312a
+정면 think: design/retro/faces/momo-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 628c4cba63e453df4a6d10f01b4c97bdb4b5e658489bd32a0d00df4edaa1c842
+정면 sad: design/retro/faces/momo-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f55f2a4f37f185f0d45fec5cdd8f67c89fba7017c339dd28aee7ed443f0cbf1c
+정면 shock: design/retro/faces/momo-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c830704fa96209dc4e92f3606f3c5bf8dd8846ec2fa805fb98d5ef0109d3fc80
+
+여니 (yeoni)
+전신: design/retro/chars/yeoni.png
+크기: [2061, 763] / SHA256: 0685083562e4a4747d5edda83393a0214a05eecd4aee55fe6f47525a4228ac41
+발 기준선: [742, 742, 743] / 보정: [1, 1, 0]
+기본 전신 crop: [0, 0, 662, 763]
+생각 전신 crop: [662, 0, 654, 763]
+감정 전신 crop: [1316, 0, 745, 763]
+정면 neutral: design/retro/faces/yeoni-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e354d61fa4f8403e630ec3d504917af483c8e121d2c725a3b968f3732cae2512
+정면 think: design/retro/faces/yeoni-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7019048263014a66f1d922a89e98c84b95dfcf2ddda2542c8977e65d06bd45ec
+정면 shy: design/retro/faces/yeoni-shy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 837a5f3da1ad23823121c3d11d57c7e6d43b29b17e27f7b22665c141d3334762
+정면 shock: design/retro/faces/yeoni-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 df6daa92a99ee4f07da0556a3d32afbcbcd9b24f287f519340fe959885b70871
+
+피코 (piko)
+전신: design/retro/chars/piko.png
+크기: [2061, 763] / SHA256: 2a05ede6198844054541e26298f55bfc99edddd999c7c2bafde134bf0159dcf1
+발 기준선: [740, 736, 740] / 보정: [0, 4, 0]
+기본 전신 crop: [0, 0, 736, 763]
+생각 전신 crop: [736, 0, 631, 763]
+감정 전신 crop: [1367, 0, 694, 763]
+정면 neutral: design/retro/faces/piko-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 49a6f81e589ec5fa96044989f678a66c1d341690f97894b4956107d851fd1ab5
+정면 think: design/retro/faces/piko-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 271f04ae623fa67c000286da20b5da328f94bfee6e3d4aacbaac70777a5807da
+정면 embarrassed: design/retro/faces/piko-embarrassed.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 589f54c45a97beed74662e9bc551d4dfdfc672cb83de3bb184b31a43c8c0142e
+정면 shock: design/retro/faces/piko-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 3976eaa76e711885e7d81127c503bea1694bca8f28be62633587d125d309aaf8
+
+따닥 (ttadak)
+전신: design/retro/chars/ttadak.png
+크기: [2061, 763] / SHA256: f07f1812ff760de469c9f2fdb1cbf04fa618b906244caaa4b103a19a359bf791
+발 기준선: [727, 727, 727] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 721, 763]
+생각 전신 crop: [721, 0, 666, 763]
+감정 전신 crop: [1387, 0, 674, 763]
+정면 neutral: design/retro/faces/ttadak-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4a58c291d4d3265ae7bc157b6728990b7bdb3a3d5f80b4ea09ad524c5e3727f2
+정면 think: design/retro/faces/ttadak-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f216f003a5fafe82fac6d2b63ff3cf816e668eff3107e19c7d54285c3b50e4e1
+정면 shy: design/retro/faces/ttadak-shy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 b9c0cf87630424c9bc8b8df5eb5bcc7c023c6ff01504f13cf7b0f47f92264240
+정면 shock: design/retro/faces/ttadak-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d870507e137ab35f4985f05f3fe7200d7cf33a0f1053cb964610b2ac4e0f0dc4
+
+뭉치 (mungchi)
+전신: design/retro/chars/mungchi.png
+크기: [2061, 763] / SHA256: 043dbe053a84798f9367f906ee1e3198526ba3ff5089818b5380cf5d8002b3b0
+발 기준선: [736, 736, 736] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 750, 763]
+생각 전신 crop: [750, 0, 621, 763]
+감정 전신 crop: [1371, 0, 690, 763]
+정면 neutral: design/retro/faces/mungchi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 aa9d5cdc913bbee56ae14f34d096a57955dbac87b2579357483a562886bce6b3
+정면 think: design/retro/faces/mungchi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bc80e00027f8c6045aa22137753f989946e16526aa923726558ab5fe9ca16944
+정면 sad: design/retro/faces/mungchi-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5bad3ae7baf05c52ca239a173ec756daf0b2f02a6f8a1c45a9309b96ef799ed8
+정면 shock: design/retro/faces/mungchi-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8eeca99062191ba39b020b38ef2add4f0e5a9bccf5adf020ff9504dcd75b8f56
+
+보리 (bori)
+전신: design/retro/chars/bori.png
+크기: [2061, 763] / SHA256: 5119966c56521b35f9b5a6c217ae17d2d09f2909fcb37f0a6dd9dbf1ad559e30
+발 기준선: [736, 736, 736] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 765, 763]
+생각 전신 crop: [765, 0, 634, 763]
+감정 전신 crop: [1399, 0, 662, 763]
+정면 neutral: design/retro/faces/bori-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d5f401b651404c141469dad9329a76c040783384c524ffcb7b39eb01a41b6c6c
+정면 think: design/retro/faces/bori-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 9c51580f8daa9269cc54ae600fd3a9ebe504f72643544ae3fbb8597715e54560
+정면 shy: design/retro/faces/bori-shy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 97a2f19dca34446354bc1e14baf3e60f3192fe3122ce34257cf0414c8acefae1
+정면 shock: design/retro/faces/bori-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 630092812153a0b74d185f2f29253395ac89b95b4d735d2fd50caa14e05647a5
+
+백 부인 (madam)
+전신: design/retro/chars/madam.png
+크기: [2062, 763] / SHA256: 7ea0e1bd04aa0d074cb127b47b334c8ea8d4d4e4ea5fa4b67463f7ce3036934f
+발 기준선: [739, 739, 739] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 762, 763]
+생각 전신 crop: [762, 0, 611, 763]
+감정 전신 crop: [1373, 0, 689, 763]
+정면 neutral: design/retro/faces/madam-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 1794925b264d59b361f155f62eab3f59a86bd4be60bcefa6cc20956ec715a242
+정면 think: design/retro/faces/madam-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 dc109ac8ee0f6750dfab8144a20af6fb22ab741850145a62e79b244d2cf6ac34
+정면 angry: design/retro/faces/madam-angry.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 df5f413e429f8a5e6145a27b78aa5a161e98a3ffe15c0e23c7958e7e24e3a3f6
+정면 shock: design/retro/faces/madam-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 076349f52d1489ff2da416dd2930ac68f6a5a981aaca0c0a9c79c5f1681344bf
+
+실룩 (siluk)
+전신: design/retro/chars/siluk.png
+크기: [2060, 763] / SHA256: 9eda0c5d11ca8a42924b36f8def94ea3fd34f0753aee23df49a5d24f82cf967c
+발 기준선: [730, 730, 730] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 664, 763]
+생각 전신 crop: [664, 0, 609, 763]
+감정 전신 crop: [1273, 0, 787, 763]
+정면 neutral: design/retro/faces/siluk-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 85187647885de9b93b6369f48c616b05ba4fc73143bb6f86da4debbb5cc1c1d0
+정면 think: design/retro/faces/siluk-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 2ccf95c6eaad30a8b1788b40876a541472d81a78bfd4ee14e1567f01877f8579
+정면 sad: design/retro/faces/siluk-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 991055ed3ca9641a29738522ab113572b5d558d53959861837bdc4fc586d51c8
+정면 shock: design/retro/faces/siluk-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 9f2984c53adcc29817e5dd37bc5ff1173e6b174fcdf4d2b5334d676d9a8a22f4
+
+누비 아주머니 (nubi)
+전신: design/retro/chars/nubi.png
+크기: [2061, 763] / SHA256: df3c48ca06e20f241650667ef072ea369ce4642e90b45e6bce9cb36d6f300f64
+발 기준선: [738, 738, 740] / 보정: [2, 2, 0]
+기본 전신 crop: [0, 0, 671, 763]
+생각 전신 crop: [671, 0, 658, 763]
+감정 전신 crop: [1329, 0, 732, 763]
+정면 neutral: design/retro/faces/nubi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 762a819bd05fa55a3a661b6cba9a908b0c72aac533baa89926bb28be455802b8
+정면 think: design/retro/faces/nubi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bbc6dfe838fba10e6e62501719451dad51c470fefa60a5394b05cab2eacd98e4
+정면 worried: design/retro/faces/nubi-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6c48df755aa5f58387aeb694f1cbbcf1c82d51c59bbc4841cb1afbbb9c290c30
+정면 shock: design/retro/faces/nubi-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 85f7c5a67602c07d3c566bfdd17051917473c0785241acf0aa888e1d8b03cc74
+
+무쇠 할아버지 (musoe)
+전신: design/retro/chars/musoe.png
+크기: [2061, 763] / SHA256: faec89afd193802e7be1b63dc3f1a4c1ed92f6d37d180fd00cc484fce135efef
+발 기준선: [738, 738, 738] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 727, 763]
+생각 전신 crop: [727, 0, 603, 763]
+감정 전신 crop: [1330, 0, 731, 763]
+정면 neutral: design/retro/faces/musoe-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 79ae6ac040e7359662b623a0d82c6cb68f12745ef3a97d62fea22983ee7e107a
+정면 think: design/retro/faces/musoe-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 af903d31011c350efee06fe0214d3e38e777f1f5596453145c04f8fc504f8398
+정면 sad: design/retro/faces/musoe-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4b90894c167c60b028d8fdb2b8fbdfefb04aa9bcfb0f734cdd9ffe95603221e5
+정면 shock: design/retro/faces/musoe-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4b3f61ccc01d8bd987cc652449d56534b54c312887e46682089515bbe4c80f6a
+
+서리 검사원 (seori)
+전신: design/retro/chars/seori.png
+크기: [2062, 763] / SHA256: 19c33787836d65c607b61a943ffde946adcf9b970f5e34be5cd4f153ddcafcd3
+발 기준선: [732, 732, 732] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 724, 763]
+생각 전신 crop: [724, 0, 626, 763]
+감정 전신 crop: [1350, 0, 712, 763]
+정면 neutral: design/retro/faces/seori-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 370ab80f1280ed6a9bd4f257fb351ebe244942707160a6c9c7534d9b53f96c15
+정면 think: design/retro/faces/seori-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 1682faa667892bc520eb9b80b835da3336799c808ba3f6f343b0e9610dbb70c4
+정면 nervous: design/retro/faces/seori-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5f5820171deb63181a3debe7fe7ad7f0f59aa362049817f16290d7f5a9735eba
+정면 shock: design/retro/faces/seori-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c5dc75e4590dd3169c13130fdcf6ca6029305fa56708084d02659dac7b82fbe8
+
+솜이 (somi)
+전신: design/retro/chars/somi.png
+크기: [2061, 763] / SHA256: 63e142480418b92ba199add7d9ab4c1a471fe7381140f205c785d1433c325577
+발 기준선: [713, 714, 714] / 보정: [1, 0, 0]
+기본 전신 crop: [0, 0, 659, 763]
+생각 전신 crop: [659, 0, 620, 763]
+감정 전신 crop: [1279, 0, 782, 763]
+정면 neutral: design/retro/faces/somi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d53d05be2b0effe07bc06049be73c6f1c303de0c2586d05ee1983b880198c491
+정면 think: design/retro/faces/somi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8953131eeb12a5e6c7f41b975034a2fae07a00911bacc9e6bee85745b943fbe0
+정면 nervous: design/retro/faces/somi-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 356087e87cdde6bb8e2f557bd0f6ccb91ca373826f1614f12ea6cbd284d006c8
+정면 shock: design/retro/faces/somi-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8bfd70d8175654ba8551dda114b75ef3d15779de4d935449d3c398976537b8c5
+
+우박 (ubak)
+전신: design/retro/chars/ubak.png
+크기: [2061, 763] / SHA256: f0f2f7267944eeb3ebfcf6119345cdd3cd42a49666c735cf0e6a0258a74b08ac
+발 기준선: [729, 729, 729] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 766, 763]
+생각 전신 crop: [766, 0, 620, 763]
+감정 전신 crop: [1386, 0, 675, 763]
+정면 neutral: design/retro/faces/ubak-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7b0a9586d1c5a9e8b583775ba20412621d55c45280bb438f41944c00c4165807
+정면 think: design/retro/faces/ubak-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e32ea3af713c5d94c982c29d1ac5505abbe3903c8271aa34cc9da8ac63e36f68
+정면 nervous: design/retro/faces/ubak-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 379ca10f002acfeced977884e5310034fbf84bd7546da0d5725b22a264c815ae
+정면 shock: design/retro/faces/ubak-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 56f99a1a760725b75122b3f78aa756a6868bf05190df5fc8b16a4b1386d54dd6
+
+구슬 (guseul)
+전신: design/retro/chars/guseul.png
+크기: [2061, 763] / SHA256: f87bf49bf803112cd6762930a9a962ab00c1603c61b14606116a46d0bb00236f
+발 기준선: [725, 727, 727] / 보정: [2, 0, 0]
+기본 전신 crop: [0, 0, 660, 763]
+생각 전신 crop: [660, 0, 648, 763]
+감정 전신 crop: [1308, 0, 753, 763]
+정면 neutral: design/retro/faces/guseul-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 67d61ad8c0f439f394bfb1b6c968cd189c714358406c119b65e55bb2c4016bc2
+정면 think: design/retro/faces/guseul-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7600be602ca09237a9a0deec9814040590a588cb93fcfde99896f8c413fec471
+정면 nervous: design/retro/faces/guseul-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 69cdd5cd0f9005acc1c7fbc509a0737cc0fc98d77418ad4b26e322dc075e668a
+정면 shock: design/retro/faces/guseul-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 b552530a93218e84e503cd14cf62057f3734faa3ff83bde9170a10bc4df8e46b
+
+등불지기 아저씨 (lamplighter)
+전신: design/retro/chars/lamplighter.png
+크기: [2061, 763] / SHA256: 8738b752f21537a63c9b43860a11e573bda2404820968f23b435c8c3b2ea077f
+발 기준선: [733, 733, 733] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 720, 763]
+생각 전신 crop: [720, 0, 627, 763]
+감정 전신 crop: [1347, 0, 714, 763]
+정면 neutral: design/retro/faces/lamplighter-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ea24c506d9481bdad1455e9b795d73b2ef415847ae7f4c88b53909b8f33b52a5
+정면 think: design/retro/faces/lamplighter-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 a7b1366a42cd48d0b558cf97d42cb6c02ff8943938a3e8a78194310051195c24
+정면 worried: design/retro/faces/lamplighter-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4b6b561954592f71698a504579ad488e0de585c64353de1f2ccc587f5e8062b0
+정면 shock: design/retro/faces/lamplighter-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 a384fb2f2282016b065e4f87781f71801765818c7ed196756587db426dee5193
+수달. 토끼 귀 없음.
+
+바둑이 (badook)
+전신: design/retro/chars/badook.png
+크기: [2061, 763] / SHA256: 6133f83710e66b96de10041f0aa8d370daaece04ee8c611a26d3273283085120
+발 기준선: [736, 736, 736] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 678, 763]
+생각 전신 crop: [678, 0, 644, 763]
+감정 전신 crop: [1322, 0, 739, 763]
+정면 neutral: design/retro/faces/badook-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7a97b465d03cd42569265dba4745e89b5d95549bf579e01485761e904f6b3272
+정면 think: design/retro/faces/badook-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8ab38793bf5af0c25dfa1384fc6e0a7ef7484a34ef4bbb4a7b74ef12003becba
+정면 embarrassed: design/retro/faces/badook-embarrassed.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 b7f8f8740c694384d0369ffb9df475fd35aea8561364f79b7c76f118874e057b
+정면 shock: design/retro/faces/badook-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d2aab2a345f38f36ced5508a2dd0ad5815cfa9cf389c759aa0f02a4b9bd8abf1
+
+은호 사장 (eunho)
+전신: design/retro/chars/eunho.png
+크기: [2061, 763] / SHA256: f115a7d7641407cf24d5219a2485163b5470edaeafb845725087505ea74b0d5d
+발 기준선: [745, 746, 746] / 보정: [1, 0, 0]
+기본 전신 crop: [0, 0, 686, 763]
+생각 전신 crop: [686, 0, 651, 763]
+감정 전신 crop: [1337, 0, 724, 763]
+정면 neutral: design/retro/faces/eunho-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e2ecc32e1041b538efb776ff17194ef1ccefc33f20bb4a91cd14a5317f73c5bb
+정면 think: design/retro/faces/eunho-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c456222cbecad3c53b37f98485120e08fee01594a1cc1067cc63fd99b15cddc2
+정면 worried: design/retro/faces/eunho-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7041fa6f4eeba64b21d9b5aee5e7e0c9a73d171157e297214c6b1ea9f6b5d8fe
+정면 shock: design/retro/faces/eunho-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d7ea573f3bcd9457c68c1f82aa7b8d70aad1fc442668c6dbda904f5ed614a00d
+
+토리 (tori)
+전신: design/retro/chars/tori.png
+크기: [2061, 763] / SHA256: 4171ed22ba5588504e20d124afb7168bf027b633a3e57a3224012c07012415db
+발 기준선: [735, 735, 735] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 691, 763]
+생각 전신 crop: [691, 0, 642, 763]
+감정 전신 crop: [1333, 0, 728, 763]
+정면 neutral: design/retro/faces/tori-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5455b0f30a6d28492b012e32f59b15fa622b4a2ee609cf8fb606d58116da754d
+정면 think: design/retro/faces/tori-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ed6ee520dfc4888c7eb27c8f27c71741750de2e8a84a128e9e76c41f8e99307c
+정면 nervous: design/retro/faces/tori-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ac479565f24b7deb474b051d98cd7501c24b056dd34bd8229dd97aa38e100a19
+정면 shock: design/retro/faces/tori-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bf2e4da0747cfd4dc581b1e8f91de3ff5cdacb40861662afa4b3178292f5875e
+
+엄마 (mom)
+전신: design/retro/chars/mom.png
+크기: [2060, 763] / SHA256: 25f8aee3cbc7b653dad9b1d2d666faa48c92cb6a3963e45499030305d3136adf
+발 기준선: [730, 730, 732] / 보정: [2, 2, 0]
+기본 전신 crop: [0, 0, 643, 763]
+생각 전신 crop: [643, 0, 700, 763]
+감정 전신 crop: [1343, 0, 717, 763]
+정면 neutral: design/retro/faces/mom-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 96e432c0a9a9b91d804ee3b24a8232d8051c3128a444ca1019ba51de0f2580f9
+정면 think: design/retro/faces/mom-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 316a4e3531ea2eaf9ad7357c226d3d81a501c24c89d47f8b1796768f22ae044b
+정면 cry: design/retro/faces/mom-cry.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f12787ad0562c52343084a11279b5cec11c94f4c879bb6185416ef2e25740cba
+정면 shock: design/retro/faces/mom-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 583c28c42baad708967f01a481280a7b4f6cc54fd1dd7896fd91f4f3da1aeb66
+일반 다람쥐 과학자. 생물 비막 없음, 접이식 천 활공 장비. 전신 생각은 지도 읽기.
+
+루카 검사관 (luka)
+전신: design/retro/chars/luka.png
+크기: [2061, 763] / SHA256: 04fe67b705d922ad1fbddbdfc0b4c59cb4a419ec3f0039734dddf9a080087f45
+발 기준선: [728, 728, 728] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 724, 763]
+생각 전신 crop: [724, 0, 635, 763]
+감정 전신 crop: [1359, 0, 702, 763]
+정면 neutral: design/retro/faces/luka-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 dbece088a84b3f0bd9dbb0c11d2515072e9c1e8f488dcd378b8dfeaf614664e3
+정면 think: design/retro/faces/luka-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 540ba5244d7bb9a6ff5563fe1bc906c35e372c979755a1e05b346678cc3aa3fb
+정면 nervous: design/retro/faces/luka-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4cbc19aa25d36be38abfeeea829c73d1260c0c7bda73d69a4aea4790b24d44cc
+정면 shock: design/retro/faces/luka-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c40682f8de1a4cacfc90fbefaaeb60636bcd939caaef571d3d27728ab0163471
+네로의 변장. 같은 회색 스라소니 얼굴/귀술/피곤한 눈, 검사관 복장과 안경으로 구별.
+
+적용 방법
+같은 폴더의 CHARACTERS-preview.html 또는 CHARACTERS-preview.html을 열어 96px 얼굴·90px 전신을 검토.
+각 manifest frames를 drawImage의 source rectangle로 사용. 이미지 보간은 끔.
+정면은 faces/<인물>-<표정>.png를 사용. 기존 옆얼굴을 재활용하지 않음.
+전체 좌표/알파 통계/생성 프롬프트: CHARACTERS-manifest.json, C03-C13-prompts.json, ../faces/FACES-prompts.json.

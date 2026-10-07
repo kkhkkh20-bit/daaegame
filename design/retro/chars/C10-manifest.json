@@ -1,0 +1,624 @@
+{
+  "status": "ready_for_review",
+  "branch": "art/c01-papa-rei-karo-20261007",
+  "referenceCommit": "cf84c4a4a99416e90b0e72312005d880db9e6255",
+  "latestRequestsCheckedCommit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+  "reusedMainFaces": {
+    "keys": [
+      "buri",
+      "doto",
+      "karo",
+      "papa",
+      "rei",
+      "wanggu"
+    ],
+    "commit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+    "unchanged": true
+  },
+  "generationTool": "built-in image_gen",
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "strictRasterCompliant": false,
+  "coordinateConvention": "x,y,width,height; right/bottom exclusive",
+  "alphaThreshold": 64,
+  "assets": {
+    "nubi": {
+      "key": "nubi",
+      "name": "누비 아주머니",
+      "batch": "C10",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1058456,
+        "sha256": "df3c48ca06e20f241650667ef072ea369ce4642e90b45e6bce9cb36d6f300f64",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 53.257,
+        "partialAlphaPercent": 46.61,
+        "visibleBoundsAlphaOver64": [
+          87,
+          30,
+          1922,
+          711
+        ],
+        "src": "nubi.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            671,
+            763
+          ],
+          [
+            671,
+            0,
+            658,
+            763
+          ],
+          [
+            1329,
+            0,
+            732,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            87,
+            43,
+            512,
+            696
+          ],
+          [
+            744,
+            30,
+            489,
+            709
+          ],
+          [
+            1425,
+            40,
+            584,
+            701
+          ]
+        ],
+        "baselines": [
+          738,
+          738,
+          740
+        ],
+        "baselineOffsets": [
+          2,
+          2,
+          0
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.12693935119887165
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 791352,
+          "sha256": "762a819bd05fa55a3a661b6cba9a908b0c72aac533baa89926bb28be455802b8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.857,
+          "partialAlphaPercent": 42.967,
+          "visibleBoundsAlphaOver64": [
+            146,
+            154,
+            920,
+            1014
+          ],
+          "src": "../faces/nubi-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 798142,
+          "sha256": "bbc6dfe838fba10e6e62501719451dad51c470fefa60a5394b05cab2eacd98e4",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.655,
+          "partialAlphaPercent": 43.19,
+          "visibleBoundsAlphaOver64": [
+            146,
+            156,
+            921,
+            1013
+          ],
+          "src": "../faces/nubi-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "worried": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 796067,
+          "sha256": "6c48df755aa5f58387aeb694f1cbbcf1c82d51c59bbc4841cb1afbbb9c290c30",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.733,
+          "partialAlphaPercent": 43.088,
+          "visibleBoundsAlphaOver64": [
+            146,
+            154,
+            921,
+            1014
+          ],
+          "src": "../faces/nubi-worried.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 796772,
+          "sha256": "85f7c5a67602c07d3c566bfdd17051917473c0785241acf0aa888e1d8b03cc74",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.669,
+          "partialAlphaPercent": 43.169,
+          "visibleBoundsAlphaOver64": [
+            145,
+            154,
+            922,
+            1015
+          ],
+          "src": "../faces/nubi-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "musoe": {
+      "key": "musoe",
+      "name": "무쇠 할아버지",
+      "batch": "C10",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 936718,
+        "sha256": "faec89afd193802e7be1b63dc3f1a4c1ed92f6d37d180fd00cc484fce135efef",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 55.261,
+        "partialAlphaPercent": 44.639,
+        "visibleBoundsAlphaOver64": [
+          137,
+          36,
+          1809,
+          703
+        ],
+        "src": "musoe.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            727,
+            763
+          ],
+          [
+            727,
+            0,
+            603,
+            763
+          ],
+          [
+            1330,
+            0,
+            731,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            137,
+            36,
+            483,
+            703
+          ],
+          [
+            834,
+            36,
+            409,
+            703
+          ],
+          [
+            1418,
+            147,
+            528,
+            592
+          ]
+        ],
+        "baselines": [
+          738,
+          738,
+          738
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12802275960170698
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 904302,
+          "sha256": "79ae6ac040e7359662b623a0d82c6cb68f12745ef3a97d62fea22983ee7e107a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.583,
+          "partialAlphaPercent": 51.306,
+          "visibleBoundsAlphaOver64": [
+            81,
+            168,
+            1092,
+            985
+          ],
+          "src": "../faces/musoe-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 909472,
+          "sha256": "af903d31011c350efee06fe0214d3e38e777f1f5596453145c04f8fc504f8398",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.87,
+          "partialAlphaPercent": 50.97,
+          "visibleBoundsAlphaOver64": [
+            80,
+            169,
+            1094,
+            985
+          ],
+          "src": "../faces/musoe-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 910936,
+          "sha256": "4b90894c167c60b028d8fdb2b8fbdfefb04aa9bcfb0f734cdd9ffe95603221e5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.575,
+          "partialAlphaPercent": 51.253,
+          "visibleBoundsAlphaOver64": [
+            80,
+            168,
+            1094,
+            987
+          ],
+          "src": "../faces/musoe-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 914371,
+          "sha256": "4b3f61ccc01d8bd987cc652449d56534b54c312887e46682089515bbe4c80f6a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.715,
+          "partialAlphaPercent": 51.109,
+          "visibleBoundsAlphaOver64": [
+            81,
+            169,
+            1093,
+            986
+          ],
+          "src": "../faces/musoe-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "seori": {
+      "key": "seori",
+      "name": "서리 검사원",
+      "batch": "C10",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 825070,
+        "sha256": "19c33787836d65c607b61a943ffde946adcf9b970f5e34be5cd4f153ddcafcd3",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 63.824,
+        "partialAlphaPercent": 36.062,
+        "visibleBoundsAlphaOver64": [
+          244,
+          34,
+          1674,
+          699
+        ],
+        "src": "seori.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            724,
+            763
+          ],
+          [
+            724,
+            0,
+            626,
+            763
+          ],
+          [
+            1350,
+            0,
+            712,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            244,
+            34,
+            354,
+            699
+          ],
+          [
+            851,
+            34,
+            362,
+            699
+          ],
+          [
+            1487,
+            34,
+            431,
+            699
+          ]
+        ],
+        "baselines": [
+          732,
+          732,
+          732
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12875536480686695
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 939988,
+          "sha256": "370ab80f1280ed6a9bd4f257fb351ebe244942707160a6c9c7534d9b53f96c15",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.095,
+          "partialAlphaPercent": 54.706,
+          "visibleBoundsAlphaOver64": [
+            42,
+            88,
+            1171,
+            1095
+          ],
+          "src": "../faces/seori-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 960737,
+          "sha256": "1682faa667892bc520eb9b80b835da3336799c808ba3f6f343b0e9610dbb70c4",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 44.587,
+          "partialAlphaPercent": 55.192,
+          "visibleBoundsAlphaOver64": [
+            42,
+            88,
+            1171,
+            1098
+          ],
+          "src": "../faces/seori-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 954150,
+          "sha256": "5f5820171deb63181a3debe7fe7ad7f0f59aa362049817f16290d7f5a9735eba",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 44.589,
+          "partialAlphaPercent": 55.227,
+          "visibleBoundsAlphaOver64": [
+            41,
+            87,
+            1173,
+            1098
+          ],
+          "src": "../faces/seori-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 950321,
+          "sha256": "c5dc75e4590dd3169c13130fdcf6ca6029305fa56708084d02659dac7b82fbe8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 44.892,
+          "partialAlphaPercent": 54.871,
+          "visibleBoundsAlphaOver64": [
+            41,
+            87,
+            1173,
+            1097
+          ],
+          "src": "../faces/seori-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    }
+  },
+  "batchId": "C10"
+}

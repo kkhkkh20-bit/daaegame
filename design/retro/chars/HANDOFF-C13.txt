@@ -1,0 +1,50 @@
+C13 캐릭터 전달 문서
+상태: ready_for_review
+브랜치: art/c01-papa-rei-karo-20261007
+기준 origin/main: cf84c4a4a99416e90b0e72312005d880db9e6255
+
+제작: 내장 image_gen. 그림 내용 수정도 image_gen 사용. 원본 알파 보존.
+최신 요청 확인: origin/main e4a096ee2b509a178f057cfde34a7bc3f1df0671. R-012 F02 표정 목록 반영.
+C01·C02 정면 얼굴 24장은 다른 채팅이 main에 납품한 파일을 바이트 변경 없이 재사용. 본 채팅의 중복 시안은 납품에서 제외.
+새 제작 범위: C03~C13 전신 32장(루카 포함) 및 정면 얼굴 128장. 기존 전신 6장과 기존 정면 24장은 검토 편의를 위해 함께 표시.
+기준: daram-matched.png 직접 참조, star-hill-enriched.png 색감 참조.
+좌표: 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 전신 3등분 금지.
+정면 얼굴은 각 PNG 전체 정사각형을 96×96 nearest-neighbor로 표시. 두 눈과 시선이 플레이어를 향함.
+전신은 인물별 fullBodyScale(최대 높이 90px)로 동일 배율 적용. baselines/ baselineOffsets로 발 정렬.
+일부 원본 포즈의 최하단 픽셀은 1~4px 차이가 있음. 90px 표시에서는 1px 미만이며 미리보기에서 각 baseline으로 정렬.
+RGBA 투명 배경과 가시 영역/crop 경계/상대경로/파일 해시 확인.
+생성 원본에 반투명 가장자리와 작은 색 변화가 있음. 정확한 정수 픽셀 격자 및 26색 제한을 강제한 하드웨어 래스터는 아님.
+게임용 축소·팔레트 정리는 개발 담당이 별도 art/에서 처리. 이 작업은 game.html/index.html/dot.html/sw.js/art/를 수정하지 않음.
+C01·C02 기존 PNG/문서/미리보기 보존. 배경·승인 이미지·공용 요청/검토/ready-assets 파일 보존. main 병합 없음.
+사용자 최종 승인 및 실제 게임 런타임 검토 전.
+
+토리 (tori)
+전신: design/retro/chars/tori.png
+크기: [2061, 763] / SHA256: 4171ed22ba5588504e20d124afb7168bf027b633a3e57a3224012c07012415db
+발 기준선: [735, 735, 735] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 691, 763]
+생각 전신 crop: [691, 0, 642, 763]
+감정 전신 crop: [1333, 0, 728, 763]
+정면 neutral: design/retro/faces/tori-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5455b0f30a6d28492b012e32f59b15fa622b4a2ee609cf8fb606d58116da754d
+정면 think: design/retro/faces/tori-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ed6ee520dfc4888c7eb27c8f27c71741750de2e8a84a128e9e76c41f8e99307c
+정면 nervous: design/retro/faces/tori-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ac479565f24b7deb474b051d98cd7501c24b056dd34bd8229dd97aa38e100a19
+정면 shock: design/retro/faces/tori-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bf2e4da0747cfd4dc581b1e8f91de3ff5cdacb40861662afa4b3178292f5875e
+
+엄마 (mom)
+전신: design/retro/chars/mom.png
+크기: [2060, 763] / SHA256: 25f8aee3cbc7b653dad9b1d2d666faa48c92cb6a3963e45499030305d3136adf
+발 기준선: [730, 730, 732] / 보정: [2, 2, 0]
+기본 전신 crop: [0, 0, 643, 763]
+생각 전신 crop: [643, 0, 700, 763]
+감정 전신 crop: [1343, 0, 717, 763]
+정면 neutral: design/retro/faces/mom-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 96e432c0a9a9b91d804ee3b24a8232d8051c3128a444ca1019ba51de0f2580f9
+정면 think: design/retro/faces/mom-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 316a4e3531ea2eaf9ad7357c226d3d81a501c24c89d47f8b1796768f22ae044b
+정면 cry: design/retro/faces/mom-cry.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f12787ad0562c52343084a11279b5cec11c94f4c879bb6185416ef2e25740cba
+정면 shock: design/retro/faces/mom-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 583c28c42baad708967f01a481280a7b4f6cc54fd1dd7896fd91f4f3da1aeb66
+일반 다람쥐 과학자. 생물 비막 없음, 접이식 천 활공 장비. 전신 생각은 지도 읽기.
+
+적용 방법
+같은 폴더의 C13-preview.html 또는 CHARACTERS-preview.html을 열어 96px 얼굴·90px 전신을 검토.
+각 manifest frames를 drawImage의 source rectangle로 사용. 이미지 보간은 끔.
+정면은 faces/<인물>-<표정>.png를 사용. 기존 옆얼굴을 재활용하지 않음.
+전체 좌표/알파 통계/생성 프롬프트: CHARACTERS-manifest.json, C03-C13-prompts.json, ../faces/FACES-prompts.json.
