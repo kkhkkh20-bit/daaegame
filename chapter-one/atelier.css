@@ -154,3 +154,88 @@
 #game[data-effects=off].cold-open.storm-beat #background{animation:none!important}
 #game.cold-open[data-opening=lodge] #background{background-position:18% 35%!important}
 #game.cold-open[data-opening=inside] #background{background-position:85% 35%!important}
+/* One evidence desk: three-column shelf and an adjacent working area. */
+#game .sheet.unified-records{max-width:850px;width:100%;padding:12px!important}
+#game .unified-records .sheet-head{margin:0 0 8px;padding:0 48px 8px 0}
+#game .unified-records .sheet-head h2{font-size:19px;margin:3px 0}
+#game .unified-records .sheet-heading>small,#game .unified-records .sheet-head:after{display:none}
+#game .unified-records .book-tabs{margin:0 0 10px;gap:3px}
+#game .unified-records .book-tabs button{padding:6px 3px!important;min-height:36px}
+#game .evidence-desk{display:grid;grid-template-columns:minmax(200px, .9fr) minmax(0,1.1fr);gap:14px;align-items:start}
+#game .evidence-shelf{position:sticky;top:0;min-width:0}
+#game .unified-records .record-instruction{margin:0 0 6px!important;font-size:10px!important;padding:0}
+#game .unified-records .evidence-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px;max-height:52dvh;overflow:auto;padding:3px!important;background:none;border:0}
+#game .unified-records .evidence-grid>button{min-height:100px;padding:5px!important;gap:4px;box-shadow:none!important}
+#game .unified-records .evidence-grid .record-thumb{width:100%;height:52px;aspect-ratio:auto;padding:2px;box-shadow:none;border:1px solid #a88b62}
+#game .unified-records .evidence-grid b{font-size:10px!important;line-height:1.4!important}
+#game .unified-records .evidence-grid small{display:block!important;font-size:9px}
+#game [data-link-state=ready]{color:#355f49!important}
+#game [data-link-state=inspect]{color:#84443d!important}
+#game [data-link-state=missing],#game [data-link-state=none]{color:#806b53!important}
+#game [data-link-state=complete]{color:#416277!important}
+#game .unified-records #record-detail{min-width:0;border-left:1px solid #b99d73;padding-left:14px}
+#game .selected-heading{display:flex;gap:9px;align-items:start;margin:0 0 10px}
+#game .selected-heading>.record-thumb{width:60px;height:66px;flex:none;background:#302a39;border:1px solid #a88b62;box-shadow:none;padding:3px}
+#game .selected-heading>div{min-width:0}
+#game .selected-heading small{font-size:10px;color:#806b53}
+#game .selected-heading h3{font-size:15px;margin:4px 0;line-height:1.45;overflow-wrap:anywhere}
+#game .selected-heading p{font-size:12px;line-height:1.6;margin:0}
+#game .unified-records .paper{margin:0;padding:10px;box-shadow:none!important}
+#game .unified-records .paper h3{font-size:14px;margin:0 0 8px}
+#game .unified-records .paper p{font-size:12px;line-height:1.65;margin:6px 0}
+#game .unified-records .paper dl{font-size:12px;margin:0}
+#game .unified-records .paper dt,#game .unified-records .paper dd{padding:5px 0;line-height:1.5}
+#game .unified-records .inspect-button{width:100%;min-height:40px;margin:8px 0 0;padding:8px;font-size:12px}
+#game .unified-records .finding{margin:8px 0 0;padding:8px 10px;box-shadow:none!important}
+#game .unified-records .finding b{font-size:11px}
+#game .unified-records .finding p{font-size:12px;line-height:1.6;margin:4px 0 0}
+#game .unified-records .daram-memo{padding:6px 10px!important;margin:8px 0!important;transform:none;box-shadow:none;background-size:30px!important}
+#game .inline-connection{border-top:1px solid #b99d73;padding-top:9px;margin-top:9px}
+#game .connection-heading{display:flex;justify-content:space-between;align-items:center;gap:6px}
+#game .connection-heading h4{font-size:12px;margin:0;color:#51402e}
+#game .connection-heading span{font-size:10px}
+#game .inline-connection p{font-size:11px;line-height:1.6;margin:5px 0}
+#game .inline-connection label{display:block;font-size:10px;margin:8px 0 4px;color:#806b53}
+#game #connection-partner{width:100%;max-width:100%;min-height:40px;font:12px DaramDot;padding:7px;background:#fff1d1;color:#51402e;border:1px solid #b99d73;box-sizing:border-box}
+#game .unified-records #combine-go{width:100%;min-height:38px;margin-top:6px;font-size:12px!important;border:2px solid #ae895b!important;padding:6px!important;box-shadow:none!important}
+#game .unified-records .record-actions{position:static;display:flex;gap:6px;border-top:1px solid #b99d73;margin-top:9px;padding-top:8px}
+#game .unified-records .record-actions button{flex:1;min-height:38px;padding:6px!important;font-size:11px!important}
+#game .unified-records .record-actions .primary{border:2px solid #ae895b!important;min-height:38px;box-shadow:none!important}
+#game .unified-records .comparison-claim{padding:8px!important;margin:0 0 8px!important}
+#game .unified-records .comparison-claim p{font-size:12px!important;line-height:1.5!important;margin:6px 0!important}
+#game .unified-records .proof-navigation{margin-top:6px;padding-top:4px}
+#game .unified-records .show-target{font-size:11px;margin:0 0 8px}
+#game .scenery-marker{border:1px solid #bdc7cc!important;box-shadow:none!important;background:#cad5de0c!important;color:#d0d9de!important}
+#game .scenery-marker span{background:#28323d!important;color:#dce4e8!important;border-color:#71818d!important}
+#game .scene-tap:not(.clue){color:#c5d1dd!important;filter:none!important}
+#game .spot.observation{border-color:transparent!important;box-shadow:none!important;background:none!important}
+@media(max-width:600px){
+ #game .evidence-desk{grid-template-columns:1fr;gap:10px}
+ #game .evidence-shelf{position:static}
+ #game .unified-records .evidence-grid{max-height:168px}
+ #game .unified-records .evidence-grid>button{min-height:94px}
+ #game .unified-records #record-detail{border-left:0;border-top:1px solid #b99d73;padding:10px 0 0}
+ #game .selected-heading>.record-thumb{display:none}
+}
+@media(orientation:landscape) and (max-height:550px){#game .unified-records .evidence-grid{max-height:46dvh}}
+@media(max-width:600px){#game .unified-records .evidence-grid{max-height:224px}}
+@media(max-width:600px) and (max-height:700px){#game .unified-records .evidence-grid{max-height:110px}}
+#game #case-goal{pointer-events:none!important}
+#game #case-goal #goal-action{pointer-events:auto!important}
+#game .unified-records:has(>.comparison-claim)>.book-tabs{display:flex}
+/* Keep the shelf and close control available while reading a long record. */
+#game .sheet.unified-records:has(.evidence-desk){display:flex;flex-direction:column;height:min(760px,calc(100dvh - 100px));overflow:hidden;box-sizing:border-box}
+#game .unified-records:has(.evidence-desk)>.sheet-head,#game .unified-records:has(.evidence-desk)>.book-tabs,#game .unified-records:has(.evidence-desk)>.comparison-claim,#game .unified-records:has(.evidence-desk)>.show-target{flex-shrink:0}
+#game .unified-records .evidence-desk{flex:1;min-height:0;overflow:hidden}
+#game .unified-records .evidence-shelf{max-height:100%;overflow:auto;position:static}
+#game .unified-records #record-detail{max-height:100%;overflow-y:auto;overscroll-behavior:contain;padding-right:4px;scrollbar-width:thin}
+#game .unified-records .evidence-grid{max-height:none}
+@media(max-width:600px){
+ #game .unified-records .evidence-desk{grid-template-rows:auto minmax(0,1fr)}
+ #game .unified-records .evidence-grid{max-height:224px}
+}
+@media(max-width:600px) and (max-height:700px){#game .unified-records .evidence-grid{max-height:110px}}
+@media(orientation:landscape) and (max-height:550px){#game .sheet.unified-records:has(.evidence-desk){height:calc(100dvh - 32px)}}
+#game .evidence-marker,#game .scenery-marker{visibility:visible}
+#game .scenery-marker:after{display:none!important}
+#game .spot.observation:focus-visible{outline:2px solid #bdc7cc!important;outline-offset:2px;background:#cad5de0c!important}
