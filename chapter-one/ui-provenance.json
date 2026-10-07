@@ -22,5 +22,37 @@
     "cr-th"
   ],
   "dot_styles": "dotmode / Galmuri11",
-  "source_sha256": "24dea6e69ec3120880dd5ce1df0822e46b81db8658adead3f7d8b62b96fd4a62"
+  "source_sha256": "24dea6e69ec3120880dd5ce1df0822e46b81db8658adead3f7d8b62b96fd4a62",
+  "record_port": {
+    "source": "game.html",
+    "source_sha256": "7ee8a4c151a8c7afcdfc12f887f8cab81c1bd84e02d80d17bcde00ec4b739c4a",
+    "behavior": [
+      "openRecord st.comb",
+      "crcomb / crcx",
+      "tryCombine",
+      "select second icon to combine",
+      "same icon cancels",
+      "inspection gates",
+      "combined fact becomes evidence"
+    ],
+    "styles": [
+      "crec2 / cr-det / cr-th",
+      "cr-comb / newfact",
+      "dotmode pixel bevels"
+    ],
+    "adapter": [
+      "fixed 3-column paged shelf",
+      "one contextual action",
+      "mouse and touch icon dragging"
+    ],
+    "implementation": [
+      "game.js",
+      "record-desk.css"
+    ],
+    "verification": [
+      "check-original-combination.cjs",
+      "check-icon-combination.cjs",
+      "check-record-poster.cjs"
+    ]
+  }
 }
