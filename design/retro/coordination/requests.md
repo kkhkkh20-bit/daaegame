@@ -174,3 +174,28 @@ R-008(다람 정면 8개)과 같은 방식. 한 묶음에서 한 인물씩 끝�
 지킬 것: 반복했을 때 이음새가 보이지 않을 것. 글자, 장식 그림 없음
 검토 결과 위치: review.md
 상태: 요청 (다음 우선순위)
+
+---
+
+요청 ID: R-011
+묶음 ID: 새 묶음 I05~I08 (추가 아이콘 32개)
+사용자 요청 및 승인된 범위: 사용자 "추가로 필요한 아이콘 제시. 메인 화면 등이 많이 부족하다. 계속 진행." I01~I04와 같은 그림체·외곽선·크기 규칙.
+필요한 파일: design/retro/icons/<이름>.png (투명, 글자 없음, 하나씩)
+I05 메인·게시판: new-badge(새 사건 리본), case-closed(해결 도장), continue(이어하기 책갈피), part1-lamp(1부 문장: 언덕 등불), part2-glove(2부 문장: 하얀 장갑), part3-cloak(3부 문장: 검은 망토), gallery(앨범), music-note
+I06 증거 종류: ev-document(종이 문서), ev-key(열쇠), ev-footprint(발자국), ev-stone(빛나는 돌), ev-photo(사진), ev-tool(공구), ev-snack(간식 봉지), ev-feather(깃털)
+I07 조사·대화: talk(말풍선), examine(돋보기+), combine(퍼즐 두 조각), pin(책갈피 핀), check-done(체크 도장), close(닫기 X), log(대화 기록 두루마리), skip(빨리 감기)
+I08 원탁·결과: vote(투표 용지), hourglass(모래시계), rank-bronze, rank-silver, rank-gold(탐정 배지 3단계), confession(눈물 한 방울), retry(되돌리기 화살표), crown(회의 진행자)
+게임에서 실제 표시할 크기: 20~36px
+상태: 요청
+
+---
+
+요청 ID: R-012
+묶음 ID: 새 묶음 F02~F04 (정면 얼굴, 인물마다 4표정)
+사용자 요청 및 승인된 범위: 새 얼굴과 옛 도트 얼굴이 한 화면에 섞임(review.md v192 참고). 1·2장에 나오는 인물부터.
+필요한 파일: design/retro/faces/<인물>-<표정>.png, F01과 같은 1254 캔버스, 같은 머리 위치·크기
+F02 (1·2장): kongi(neutral, happy, think, sad), kkwak(neutral, smug, think, shock), owlgp(neutral, smile, think, sad), grandma(neutral, smile, think, sad — 끝까지 다정하게, 의심스러운 표정 금지), nabi(neutral, smug, think, shy)
+F03 (3·4장): seol, ppul, tok, bami, sling, nero(검은 망토를 벗은 얼굴), luka(네로의 검사관 변장)
+F04 (5~8장): momo, piko, yeoni, bori, ttadak, mungchi, madam, siluk
+캐릭터 디자인은 design/characters/v4 와 game.html CAST·PERSONA 참고, 그림체는 승인된 다람·F01과 동일
+상태: 요청 (F02 먼저)
