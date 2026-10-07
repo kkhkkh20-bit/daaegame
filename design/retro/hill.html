@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>별빛 언덕 · 배경 보강</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#1a1c2c;color:#f4e4c1}*{box-sizing:border-box}body{margin:0}main{max-width:1100px;margin:auto;padding:24px 18px 42px}a{color:#ffcd75;text-underline-offset:4px}header,.controls{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}h1{font-size:24px;margin:24px 0 10px}p{line-height:1.7;color:#c7d4de}.stage{position:relative;margin-top:24px;background:#2b2d4a;overflow:hidden}.stage>img{display:block;width:100%;height:auto;image-rendering:pixelated}.stage>svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated}.stage>svg[hidden]{display:none}.controls{padding:16px 0}.controls label{display:flex;align-items:center;gap:10px}.controls input{width:18px;height:18px;accent-color:#b13e53}.status{font-size:14px;margin:0}.download{margin-top:28px;display:flex;flex-wrap:wrap;gap:18px}.foot{font-size:14px;margin-top:28px}summary{cursor:pointer;color:#94b0c2}details p{font-size:14px}@media(max-width:480px){main{padding:18px 12px 32px}h1{font-size:21px}.controls{gap:12px;font-size:14px}}
+</style>
+</head>
+<body><main>
+<header><a href="./">← 첫 시안</a><a href="star-hill-enriched-study.zip" download>수정 배경·미리보기 받기 ↓</a></header>
+<h1>별빛 언덕 · 조금 더 풍성하게</h1>
+<p>기존 구도와 물건 배치를 유지하면서 하늘의 디더링, 작은 초승달, 드문 풀 무늬와 마을 창문 불빛을 보탰습니다.</p>
+<div class="stage">
+<img id="background" src="star-hill-enriched.png" alt="남색에서 보라빛으로 이어지는 체크무늬 하늘, 오른쪽 위 작은 초승달, 드문 풀 무늬와 노란 마을 창문. 중앙 등불의 꺼진 돌과 기둥 아래 검은 깃털, 오른쪽 바위 위 서류와 돌계단." width="1680" height="936">
+<svg id="daram" hidden viewBox="0 0 1681 936" aria-hidden="true"><svg x="110" y="334" width="429.735" height="552" viewBox="0 0 594 763" preserveAspectRatio="xMinYMin meet" overflow="hidden"><image href="daram-matched.png" width="2062" height="763"/></svg></svg>
+</div>
+<div class="controls"><label><input id="previous" type="checkbox">이전 배경과 비교</label><label><input id="show-daram" type="checkbox">다람 함께 보기</label></div>
+<p class="status" id="status" aria-live="polite">보강한 배경</p>
+<div class="download"><a href="star-hill-enriched.png" download>수정 배경 PNG ↓</a><a href="daram.html?v=2">다람 세 포즈 보기 →</a></div>
+<p class="foot">이전 배경과 게임 원본은 그대로 남겨 두었습니다. 다람은 비교 화면에만 표시되며 배경 PNG에는 들어 있지 않습니다.</p>
+<details><summary>파일 규격과 전달 정보</summary><p>생성 도구로 편집한 시안입니다. 물건 배치를 유지하는 방향으로 수정했으며, 픽셀 단위로 원본과 동일한 합성은 아닙니다. 이전 배경은 1681×936, 수정본은 1680×936입니다. 정확한 26색과 공통 픽셀 격자까지 보증하는 최종 도트 파일은 아닙니다.</p><p><a href="star-hill-enriched.json">파일 검사 결과</a> · <a href="HILL-HANDOFF.txt">전달 문서</a></p></details>
+</main>
+<script>
+const previous=document.getElementById('previous'),showDaram=document.getElementById('show-daram'),background=document.getElementById('background');
+const editedAlt=background.alt;
+function render(){const old=previous.checked;background.src=old?'star-hill.png':'star-hill-enriched.png';background.width=old?1681:1680;background.alt=old?'수정 전 별빛 언덕 배경':editedAlt;document.getElementById('daram').toggleAttribute('hidden',!showDaram.checked);document.getElementById('status').textContent=(old?'이전 배경':'보강한 배경')+(showDaram.checked?' · 다람 함께 보기':'');}
+previous.addEventListener('change',render);showDaram.addEventListener('change',render);
+</script></body></html>
