@@ -46,7 +46,7 @@ for id in ['luka','shadow']:
   if args.partial:continue
   raise RuntimeError('Missing Nero costume '+id)
  d=outputs[id];w,h,frames=atlas(d);c=canon['cast'][id]
- characters[id]={**c,'id':id,'src':d['path'],'width':w,'height':h,'frames':frames[d['row']],'labels':['기본','생각·의심','감정'],'region':'forest','species':'스라소니','role':c['kind'],'bio':canon['bio'].get(id,''),'design':'네로의 동일한 얼굴을 유지한 변장 외형','aliasOf':'nero'}
+ characters[id]={**c,'id':id,'src':d['path'],'width':w,'height':h,'frames':frames[d['row']],'labels':['기본','생각·의심','감정'],'region':'forest','species':'스라소니','role':c['kind'],'bio':canon['bio'].get(id,''),'design':('얼굴을 완전히 숨긴 검은 후드, 푸른 안감과 청동 단추만 단서로 남긴다' if id=='shadow' else '네로의 동일한 얼굴을 유지한 검사관 변장 외형'),'aliasOf':'nero'}
 daram=root/'reference/daram-pixel.png';im=Image.open(daram);w,h=im.size
 characters['daram']={'id':'daram','name':'다람','species':'다람쥐 탐정','role':'기존 주인공 디자인','src':'reference/daram-pixel.png','width':w,'height':h,'frames':[[round(w*i/3),0,round(w/3),h] for i in range(3)],'labels':['기본','생각','증거 제시'],'preserved':True}
 backgrounds={};bgorder=[]
@@ -59,5 +59,5 @@ for s in bgs:
 if args.partial and 'main' not in backgrounds:
  im=Image.open(root.parent/'chapter-one/assets/home-pixel.png');w,h=im.size;backgrounds['main']={'id':'main','name':'메인 화면 임시 미리보기','src':'../chapter-one/assets/home-pixel.png','width':w,'height':h,'frames':[[0,0,w,h]]};bgorder.insert(0,'main')
 if not args.partial:assert len(order)==35 and len(backgrounds)==17
-manifest={'version':1,'game':'다람 탐정 사무소','source':'game.html CAST / BIO / PERSONA / CASES','characterCount':len(order),'preservedCharacters':['daram'],'aliases':{'luka':'nero','shadow':'nero'},'order':order,'characters':characters,'backgroundOrder':bgorder,'backgrounds':backgrounds,'frameFormat':'[x,y,width,height] in original PNG pixels; render with a clipped SVG viewport or equivalent atlas renderer','representativeBackgrounds':True}
+manifest={'version':2,'game':'다람 탐정 사무소','source':'game.html CAST / BIO / PERSONA / CASES','characterCount':len(order),'preservedCharacters':['daram'],'aliases':{'luka':'nero','shadow':'nero'},'order':order,'characters':characters,'backgroundOrder':bgorder,'backgrounds':backgrounds,'frameFormat':'[x,y,width,height] in original PNG pixels; render with a clipped SVG viewport or equivalent atlas renderer','representativeBackgrounds':True}
 (root/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(f'Manifest: {len(order)} unique characters + Daram + Nero costumes; {len(backgrounds)} backgrounds')
