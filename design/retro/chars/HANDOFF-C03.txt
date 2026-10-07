@@ -1,0 +1,61 @@
+C03 캐릭터 전달 문서
+상태: ready_for_review
+브랜치: art/c01-papa-rei-karo-20261007
+기준 origin/main: cf84c4a4a99416e90b0e72312005d880db9e6255
+
+제작: 내장 image_gen. 그림 내용 수정도 image_gen 사용. 원본 알파 보존.
+최신 요청 확인: origin/main e4a096ee2b509a178f057cfde34a7bc3f1df0671. R-012 F02 표정 목록 반영.
+C01·C02 정면 얼굴 24장은 다른 채팅이 main에 납품한 파일을 바이트 변경 없이 재사용. 본 채팅의 중복 시안은 납품에서 제외.
+새 제작 범위: C03~C13 전신 32장(루카 포함) 및 정면 얼굴 128장. 기존 전신 6장과 기존 정면 24장은 검토 편의를 위해 함께 표시.
+기준: daram-matched.png 직접 참조, star-hill-enriched.png 색감 참조.
+좌표: 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 전신 3등분 금지.
+정면 얼굴은 각 PNG 전체 정사각형을 96×96 nearest-neighbor로 표시. 두 눈과 시선이 플레이어를 향함.
+전신은 인물별 fullBodyScale(최대 높이 90px)로 동일 배율 적용. baselines/ baselineOffsets로 발 정렬.
+일부 원본 포즈의 최하단 픽셀은 1~4px 차이가 있음. 90px 표시에서는 1px 미만이며 미리보기에서 각 baseline으로 정렬.
+RGBA 투명 배경과 가시 영역/crop 경계/상대경로/파일 해시 확인.
+생성 원본에 반투명 가장자리와 작은 색 변화가 있음. 정확한 정수 픽셀 격자 및 26색 제한을 강제한 하드웨어 래스터는 아님.
+게임용 축소·팔레트 정리는 개발 담당이 별도 art/에서 처리. 이 작업은 game.html/index.html/dot.html/sw.js/art/를 수정하지 않음.
+C01·C02 기존 PNG/문서/미리보기 보존. 배경·승인 이미지·공용 요청/검토/ready-assets 파일 보존. main 병합 없음.
+사용자 최종 승인 및 실제 게임 런타임 검토 전.
+
+꽥순 (kkwak)
+전신: design/retro/chars/kkwak.png
+크기: [2061, 763] / SHA256: f189ce4699204e981883569ca71bbdfa442827c1498f73db18df0616cc89989a
+발 기준선: [727, 727, 725] / 보정: [0, 0, 2]
+기본 전신 crop: [0, 0, 719, 763]
+생각 전신 crop: [719, 0, 646, 763]
+감정 전신 crop: [1365, 0, 696, 763]
+정면 neutral: design/retro/faces/kkwak-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 95ac4bb6e79efeadcdfaca0714ede595097c1a2e9c19ae018bd5496779d5a55f
+정면 smug: design/retro/faces/kkwak-smug.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 3a3b7b85ff06871b81e41d37b54885710846bbc5745e9a60b96f35f1dfe941b5
+정면 think: design/retro/faces/kkwak-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6cb606832907884bdf1be2efc357335352f112212db549b35eb818e2840c499d
+정면 shock: design/retro/faces/kkwak-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 a1f29bacadddc1d09c1f890fc068778ce67e5a3b42440e0ce935c1711729fac3
+
+콩이 (kongi)
+전신: design/retro/chars/kongi.png
+크기: [2062, 763] / SHA256: 395d8bfd8ba8cc59fa666588d9c38980d33ca34744a61332839ccb41c9653388
+발 기준선: [715, 715, 715] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 674, 763]
+생각 전신 crop: [674, 0, 619, 763]
+감정 전신 crop: [1293, 0, 769, 763]
+정면 neutral: design/retro/faces/kongi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5acca2bb626ed621ede9d2261c28db5a45a1d2d89a0a02ae57ed0a0a71e41d28
+정면 happy: design/retro/faces/kongi-happy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6db98d59fef3ac1d362a0e983786dfc2a52663b41f292aba69be4f999d2ae06c
+정면 think: design/retro/faces/kongi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f46155c0ef03f96ba09ae1e7c032565615d3b53d61773c99ef4b9973d8429ce5
+정면 sad: design/retro/faces/kongi-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e729b136d1185d9989c4b5d4e7bf76c3d5ce4c22c2dfae0696722e8c746ddd0f
+
+부엉이 할아버지 (owlgp)
+전신: design/retro/chars/owlgp.png
+크기: [2062, 763] / SHA256: 173211a9cb8de07afa83a0cae2ac230bb3352c65150406ed572f338faa63e2f1
+발 기준선: [737, 736, 736] / 보정: [0, 1, 1]
+기본 전신 crop: [0, 0, 676, 763]
+생각 전신 crop: [676, 0, 626, 763]
+감정 전신 crop: [1302, 0, 760, 763]
+정면 neutral: design/retro/faces/owlgp-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4612a27edbfa37e1d7edbf77d0b28fb6e11ce1e207ad5763e2f7f2bbd4cdaab7
+정면 smile: design/retro/faces/owlgp-smile.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7af5a95bdd2634822b0c5c015b9bf509bc9394b2c85be27a2fbc96a57108176c
+정면 think: design/retro/faces/owlgp-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bdc093f9bc2ea61a9906692c6516e9fc0a5f1675ee97a1cc2f796985fc2a0324
+정면 sad: design/retro/faces/owlgp-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4eebb20475f362e5d5a6d498330c5baf7934a4ceda34278830f01ae3eaec60e5
+
+적용 방법
+같은 폴더의 C03-preview.html 또는 CHARACTERS-preview.html을 열어 96px 얼굴·90px 전신을 검토.
+각 manifest frames를 drawImage의 source rectangle로 사용. 이미지 보간은 끔.
+정면은 faces/<인물>-<표정>.png를 사용. 기존 옆얼굴을 재활용하지 않음.
+전체 좌표/알파 통계/생성 프롬프트: CHARACTERS-manifest.json, C03-C13-prompts.json, ../faces/FACES-prompts.json.

@@ -1,0 +1,624 @@
+{
+  "status": "ready_for_review",
+  "branch": "art/c01-papa-rei-karo-20261007",
+  "referenceCommit": "cf84c4a4a99416e90b0e72312005d880db9e6255",
+  "latestRequestsCheckedCommit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+  "reusedMainFaces": {
+    "keys": [
+      "buri",
+      "doto",
+      "karo",
+      "papa",
+      "rei",
+      "wanggu"
+    ],
+    "commit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+    "unchanged": true
+  },
+  "generationTool": "built-in image_gen",
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "strictRasterCompliant": false,
+  "coordinateConvention": "x,y,width,height; right/bottom exclusive",
+  "alphaThreshold": 64,
+  "assets": {
+    "kkwak": {
+      "key": "kkwak",
+      "name": "꽥순",
+      "batch": "C03",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 887109,
+        "sha256": "f189ce4699204e981883569ca71bbdfa442827c1498f73db18df0616cc89989a",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.304,
+        "partialAlphaPercent": 38.594,
+        "visibleBoundsAlphaOver64": [
+          196,
+          26,
+          1696,
+          702
+        ],
+        "src": "kkwak.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            719,
+            763
+          ],
+          [
+            719,
+            0,
+            646,
+            763
+          ],
+          [
+            1365,
+            0,
+            696,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            196,
+            26,
+            433,
+            702
+          ],
+          [
+            809,
+            26,
+            441,
+            702
+          ],
+          [
+            1480,
+            47,
+            412,
+            679
+          ]
+        ],
+        "baselines": [
+          727,
+          727,
+          725
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          2
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.1282051282051282
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 845203,
+          "sha256": "95ac4bb6e79efeadcdfaca0714ede595097c1a2e9c19ae018bd5496779d5a55f",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.531,
+          "partialAlphaPercent": 49.298,
+          "visibleBoundsAlphaOver64": [
+            105,
+            89,
+            1044,
+            1108
+          ],
+          "src": "../faces/kkwak-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smug": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 850413,
+          "sha256": "3a3b7b85ff06871b81e41d37b54885710846bbc5745e9a60b96f35f1dfe941b5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.474,
+          "partialAlphaPercent": 49.336,
+          "visibleBoundsAlphaOver64": [
+            104,
+            88,
+            1047,
+            1111
+          ],
+          "src": "../faces/kkwak-smug.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 853701,
+          "sha256": "6cb606832907884bdf1be2efc357335352f112212db549b35eb818e2840c499d",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.518,
+          "partialAlphaPercent": 49.319,
+          "visibleBoundsAlphaOver64": [
+            104,
+            88,
+            1046,
+            1115
+          ],
+          "src": "../faces/kkwak-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 858571,
+          "sha256": "a1f29bacadddc1d09c1f890fc068778ce67e5a3b42440e0ce935c1711729fac3",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.463,
+          "partialAlphaPercent": 49.366,
+          "visibleBoundsAlphaOver64": [
+            103,
+            89,
+            1049,
+            1111
+          ],
+          "src": "../faces/kkwak-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "kongi": {
+      "key": "kongi",
+      "name": "콩이",
+      "batch": "C03",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1002209,
+        "sha256": "395d8bfd8ba8cc59fa666588d9c38980d33ca34744a61332839ccb41c9653388",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 56.836,
+        "partialAlphaPercent": 43.076,
+        "visibleBoundsAlphaOver64": [
+          106,
+          30,
+          1806,
+          686
+        ],
+        "src": "kongi.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            674,
+            763
+          ],
+          [
+            674,
+            0,
+            619,
+            763
+          ],
+          [
+            1293,
+            0,
+            769,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            106,
+            30,
+            516,
+            686
+          ],
+          [
+            726,
+            30,
+            493,
+            686
+          ],
+          [
+            1368,
+            57,
+            544,
+            659
+          ]
+        ],
+        "baselines": [
+          715,
+          715,
+          715
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.13119533527696792
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 934381,
+          "sha256": "5acca2bb626ed621ede9d2261c28db5a45a1d2d89a0a02ae57ed0a0a71e41d28",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.279,
+          "partialAlphaPercent": 53.529,
+          "visibleBoundsAlphaOver64": [
+            50,
+            96,
+            1154,
+            1057
+          ],
+          "src": "../faces/kongi-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "happy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 942484,
+          "sha256": "6db98d59fef3ac1d362a0e983786dfc2a52663b41f292aba69be4f999d2ae06c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.108,
+          "partialAlphaPercent": 53.707,
+          "visibleBoundsAlphaOver64": [
+            49,
+            95,
+            1156,
+            1059
+          ],
+          "src": "../faces/kongi-happy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 951308,
+          "sha256": "f46155c0ef03f96ba09ae1e7c032565615d3b53d61773c99ef4b9973d8429ce5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.139,
+          "partialAlphaPercent": 53.677,
+          "visibleBoundsAlphaOver64": [
+            49,
+            93,
+            1156,
+            1061
+          ],
+          "src": "../faces/kongi-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 948796,
+          "sha256": "e729b136d1185d9989c4b5d4e7bf76c3d5ce4c22c2dfae0696722e8c746ddd0f",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.159,
+          "partialAlphaPercent": 53.686,
+          "visibleBoundsAlphaOver64": [
+            50,
+            96,
+            1155,
+            1058
+          ],
+          "src": "../faces/kongi-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "owlgp": {
+      "key": "owlgp",
+      "name": "부엉이 할아버지",
+      "batch": "C03",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1102615,
+        "sha256": "173211a9cb8de07afa83a0cae2ac230bb3352c65150406ed572f338faa63e2f1",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 53.491,
+        "partialAlphaPercent": 46.423,
+        "visibleBoundsAlphaOver64": [
+          115,
+          22,
+          1909,
+          716
+        ],
+        "src": "owlgp.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            676,
+            763
+          ],
+          [
+            676,
+            0,
+            626,
+            763
+          ],
+          [
+            1302,
+            0,
+            760,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            115,
+            22,
+            495,
+            716
+          ],
+          [
+            743,
+            29,
+            480,
+            708
+          ],
+          [
+            1381,
+            38,
+            643,
+            699
+          ]
+        ],
+        "baselines": [
+          737,
+          736,
+          736
+        ],
+        "baselineOffsets": [
+          0,
+          1,
+          1
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.12569832402234637
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1058790,
+          "sha256": "4612a27edbfa37e1d7edbf77d0b28fb6e11ce1e207ad5763e2f7f2bbd4cdaab7",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.827,
+          "partialAlphaPercent": 58.99,
+          "visibleBoundsAlphaOver64": [
+            77,
+            45,
+            1101,
+            1163
+          ],
+          "src": "../faces/owlgp-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smile": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1065697,
+          "sha256": "7af5a95bdd2634822b0c5c015b9bf509bc9394b2c85be27a2fbc96a57108176c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.785,
+          "partialAlphaPercent": 59.014,
+          "visibleBoundsAlphaOver64": [
+            75,
+            46,
+            1105,
+            1163
+          ],
+          "src": "../faces/owlgp-smile.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1072575,
+          "sha256": "bdc093f9bc2ea61a9906692c6516e9fc0a5f1675ee97a1cc2f796985fc2a0324",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.81,
+          "partialAlphaPercent": 59.013,
+          "visibleBoundsAlphaOver64": [
+            77,
+            44,
+            1100,
+            1165
+          ],
+          "src": "../faces/owlgp-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1061603,
+          "sha256": "4eebb20475f362e5d5a6d498330c5baf7934a4ceda34278830f01ae3eaec60e5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 41.014,
+          "partialAlphaPercent": 58.812,
+          "visibleBoundsAlphaOver64": [
+            76,
+            48,
+            1103,
+            1161
+          ],
+          "src": "../faces/owlgp-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    }
+  },
+  "batchId": "C03"
+}

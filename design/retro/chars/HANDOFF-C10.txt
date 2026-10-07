@@ -1,0 +1,61 @@
+C10 캐릭터 전달 문서
+상태: ready_for_review
+브랜치: art/c01-papa-rei-karo-20261007
+기준 origin/main: cf84c4a4a99416e90b0e72312005d880db9e6255
+
+제작: 내장 image_gen. 그림 내용 수정도 image_gen 사용. 원본 알파 보존.
+최신 요청 확인: origin/main e4a096ee2b509a178f057cfde34a7bc3f1df0671. R-012 F02 표정 목록 반영.
+C01·C02 정면 얼굴 24장은 다른 채팅이 main에 납품한 파일을 바이트 변경 없이 재사용. 본 채팅의 중복 시안은 납품에서 제외.
+새 제작 범위: C03~C13 전신 32장(루카 포함) 및 정면 얼굴 128장. 기존 전신 6장과 기존 정면 24장은 검토 편의를 위해 함께 표시.
+기준: daram-matched.png 직접 참조, star-hill-enriched.png 색감 참조.
+좌표: 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 전신 3등분 금지.
+정면 얼굴은 각 PNG 전체 정사각형을 96×96 nearest-neighbor로 표시. 두 눈과 시선이 플레이어를 향함.
+전신은 인물별 fullBodyScale(최대 높이 90px)로 동일 배율 적용. baselines/ baselineOffsets로 발 정렬.
+일부 원본 포즈의 최하단 픽셀은 1~4px 차이가 있음. 90px 표시에서는 1px 미만이며 미리보기에서 각 baseline으로 정렬.
+RGBA 투명 배경과 가시 영역/crop 경계/상대경로/파일 해시 확인.
+생성 원본에 반투명 가장자리와 작은 색 변화가 있음. 정확한 정수 픽셀 격자 및 26색 제한을 강제한 하드웨어 래스터는 아님.
+게임용 축소·팔레트 정리는 개발 담당이 별도 art/에서 처리. 이 작업은 game.html/index.html/dot.html/sw.js/art/를 수정하지 않음.
+C01·C02 기존 PNG/문서/미리보기 보존. 배경·승인 이미지·공용 요청/검토/ready-assets 파일 보존. main 병합 없음.
+사용자 최종 승인 및 실제 게임 런타임 검토 전.
+
+누비 아주머니 (nubi)
+전신: design/retro/chars/nubi.png
+크기: [2061, 763] / SHA256: df3c48ca06e20f241650667ef072ea369ce4642e90b45e6bce9cb36d6f300f64
+발 기준선: [738, 738, 740] / 보정: [2, 2, 0]
+기본 전신 crop: [0, 0, 671, 763]
+생각 전신 crop: [671, 0, 658, 763]
+감정 전신 crop: [1329, 0, 732, 763]
+정면 neutral: design/retro/faces/nubi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 762a819bd05fa55a3a661b6cba9a908b0c72aac533baa89926bb28be455802b8
+정면 think: design/retro/faces/nubi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bbc6dfe838fba10e6e62501719451dad51c470fefa60a5394b05cab2eacd98e4
+정면 worried: design/retro/faces/nubi-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 6c48df755aa5f58387aeb694f1cbbcf1c82d51c59bbc4841cb1afbbb9c290c30
+정면 shock: design/retro/faces/nubi-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 85f7c5a67602c07d3c566bfdd17051917473c0785241acf0aa888e1d8b03cc74
+
+무쇠 할아버지 (musoe)
+전신: design/retro/chars/musoe.png
+크기: [2061, 763] / SHA256: faec89afd193802e7be1b63dc3f1a4c1ed92f6d37d180fd00cc484fce135efef
+발 기준선: [738, 738, 738] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 727, 763]
+생각 전신 crop: [727, 0, 603, 763]
+감정 전신 crop: [1330, 0, 731, 763]
+정면 neutral: design/retro/faces/musoe-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 79ae6ac040e7359662b623a0d82c6cb68f12745ef3a97d62fea22983ee7e107a
+정면 think: design/retro/faces/musoe-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 af903d31011c350efee06fe0214d3e38e777f1f5596453145c04f8fc504f8398
+정면 sad: design/retro/faces/musoe-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4b90894c167c60b028d8fdb2b8fbdfefb04aa9bcfb0f734cdd9ffe95603221e5
+정면 shock: design/retro/faces/musoe-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4b3f61ccc01d8bd987cc652449d56534b54c312887e46682089515bbe4c80f6a
+
+서리 검사원 (seori)
+전신: design/retro/chars/seori.png
+크기: [2062, 763] / SHA256: 19c33787836d65c607b61a943ffde946adcf9b970f5e34be5cd4f153ddcafcd3
+발 기준선: [732, 732, 732] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 724, 763]
+생각 전신 crop: [724, 0, 626, 763]
+감정 전신 crop: [1350, 0, 712, 763]
+정면 neutral: design/retro/faces/seori-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 370ab80f1280ed6a9bd4f257fb351ebe244942707160a6c9c7534d9b53f96c15
+정면 think: design/retro/faces/seori-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 1682faa667892bc520eb9b80b835da3336799c808ba3f6f343b0e9610dbb70c4
+정면 nervous: design/retro/faces/seori-nervous.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5f5820171deb63181a3debe7fe7ad7f0f59aa362049817f16290d7f5a9735eba
+정면 shock: design/retro/faces/seori-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c5dc75e4590dd3169c13130fdcf6ca6029305fa56708084d02659dac7b82fbe8
+
+적용 방법
+같은 폴더의 C10-preview.html 또는 CHARACTERS-preview.html을 열어 96px 얼굴·90px 전신을 검토.
+각 manifest frames를 drawImage의 source rectangle로 사용. 이미지 보간은 끔.
+정면은 faces/<인물>-<표정>.png를 사용. 기존 옆얼굴을 재활용하지 않음.
+전체 좌표/알파 통계/생성 프롬프트: CHARACTERS-manifest.json, C03-C13-prompts.json, ../faces/FACES-prompts.json.
