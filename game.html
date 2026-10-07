@@ -37817,7 +37817,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
    '<rect x="316" y="186" width="10" height="34" fill="#C9CFDB"/><path d="M314 186h14l-7-9z" fill="#5B6F96"/><rect x="319" y="191" width="4" height="5" fill="#FFE27A" class="wm-glow"/>'+T("silver",278,244,"은빛 마을")+'</g>'
    :'<g class="wm-v wm-lock" data-v="silver"><rect x="272" y="182" width="62" height="48" fill="#F4EEDC" opacity=".9"/>'+T("silver",296,212,"?","q")+'</g>';
   s+=o("nameless")?'<g class="wm-v" data-v="nameless">'+house(156,28,"#6E6A66",12)+house(176,34,"#77716B",12)+house(194,26,"#6E6A66",10)+
-   '<rect x="214" y="22" width="2" height="12" fill="#3B2F45"/><rect x="211" y="17" width="8" height="7" fill="'+(S.best.kitchen?"#FFE27A":"#5B5852")+'"'+(S.best.kitchen?' class="wm-glow"':'')+'/>'+T("nameless",150,58,"이름 없는 마을")+'</g>'
+   '<rect x="214" y="22" width="2" height="12" fill="#3B2F45"/><rect x="211" y="17" width="8" height="7" fill="'+(S.best.kitchen?"#FFE27A":"#5B5852")+'"'+(S.best.kitchen?' class="wm-glow"':'')+'/>'+T("nameless",150,58,VIL.nameless.name)+'</g>'
    :hn?'<g class="wm-v wm-lock" data-v="nameless"><rect x="146" y="14" width="80" height="34" fill="#F4EEDC" opacity=".9"/>'+T("nameless",180,36,"?","q")+'</g>':'';
   s+=o("city")?'<g class="wm-v" data-v="city"><rect x="290" y="282" width="10" height="24" fill="#8A8F9C"/><rect x="302" y="274" width="12" height="32" fill="#9AA0AD"/><rect x="316" y="288" width="10" height="18" fill="#8A8F9C"/><rect x="328" y="270" width="8" height="36" fill="#A3A9B6"/><rect x="331" y="274" width="2" height="2" fill="#FFE27A"/>'+
    '<rect x="293" y="286" width="2" height="2" fill="#FFE27A"/><rect x="306" y="280" width="2" height="2" fill="#FFE27A"/><rect x="306" y="290" width="2" height="2" fill="#FFE27A"/><rect x="320" y="294" width="2" height="2" fill="#FFE27A"/>'+T("city",298,322,"도시")+'</g>'
@@ -46155,6 +46155,173 @@ var __M={"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열�
 })();
 
 (function(){
+ var MISS=window.__S196MISS=[];
+ function C(id){return caseById(id)}
+ function T(n,cid){try{var t=eval(n);return t&&t[cid]}catch(e){return null}}
+ function loc(cid,lid){var r=null;C(cid).locations.forEach(function(l){if(l.id===lid)r=l});if(!r)MISS.push("loc "+cid+"/"+lid);return r}
+ function spot(cid,sid){var r=null;C(cid).locations.forEach(function(l){(l.spots||[]).forEach(function(s){if(s.id===sid)r=s})});if(!r)MISS.push("spot "+sid);return r}
+ function addObs(cid,lid,o){var l=loc(cid,lid);if(!l)return;l.obs=l.obs||[];if(!l.obs.some(function(x){return x.id===o.id}))l.obs.push(o)}
+ function setObs(cid,oid,text){var n=0;C(cid).locations.forEach(function(l){(l.obs||[]).forEach(function(o){if(o.id===oid){o.text=text;n++}})});if(!n)MISS.push("obs "+oid)}
+ function talk(cid,who,i,a){var t=C(cid).talk[who];if(!t||!t[i]){MISS.push("talk "+cid+"/"+who+i);return}t[i].a=a}
+ function scene(cid,part,i){var B=T("BOOK",cid);var s=B&&B[part]&&B[part][i];if(!s)MISS.push("scene "+cid+"/"+part+i);return s}
+ function idx(lines,pre){for(var k=0;k<lines.length;k++)if(typeof lines[k][1]==="string"&&lines[k][1].indexOf(pre)===0)return k;return -1}
+ function L(cid,part,i,pre,text){var s=scene(cid,part,i);if(!s)return;var k=idx(s.lines,pre);if(k<0){MISS.push("line "+cid+"/"+part+i+" "+pre);return}s.lines[k][1]=text}
+ function INS(cid,part,i,pre,arr){var s=scene(cid,part,i);if(!s)return;var k=idx(s.lines,pre);if(k<0){MISS.push("ins "+cid+"/"+part+i+" "+pre);return}s.lines.splice.apply(s.lines,[k+1,0].concat(arr))}
+ function DEL(cid,part,i,pre){var s=scene(cid,part,i);if(!s)return;var k=idx(s.lines,pre);if(k<0){MISS.push("del "+cid+"/"+part+i+" "+pre);return}s.lines.splice(k,1)}
+ function rs(obj,key,a,b){if(!obj||typeof obj[key]!=="string"||obj[key].indexOf(a)<0){MISS.push("rs "+a.slice(0,20));return}obj[key]=obj[key].split(a).join(b)}
+ try{
+
+ (function(){var s=scene("envelope","pre",2);if(!s)return;var k=idx(s.lines,"간식 서랍도 있어요");
+  var add=[["narr","책상 위엔 낡은 등잔이 하나 있었다. 밑동에 엄지만 한 홈이 파여 있었다."],
+   ["owlgp","별빛 돌 조각을 끼우는 등잔이다. 조각은 서랍에 있다. 칸칸이 하나씩."],
+   ["narr","다람이 작은 조각 하나를 홈에 끼웠다. 아빠가 옆의 손잡이를 돌렸다. 유리 안에 불이 켜졌다."],
+   ["det1","오. 이제 내 글씨도 읽혀?","happy"],["det0","밝기는 충분한데."],["det1","그 뒤는 말하지 마.","smug"],
+   ["det1","할아버지, 조각은 왜 칸칸이 따로 넣어요? 한 통에 다 넣으면 편한데.","think"],
+   ["owlgp","허허. 광산 시절부터 그렇게 했다더구나. 나도 이유는 모른다. 옛사람 말은 일단 들어 두는 거다."]];
+  if(k<0)s.lines=s.lines.concat(add);else s.lines.splice.apply(s.lines,[k+1,0].concat(add))})();
+ INS("envelope","post",2,"…그래서 여기다.",[["narr","지도 귀퉁이엔 같은 글씨로 한 줄이 더 있었다. '돌은 하나씩. 둘을 붙여 두지 말 것.'"],["det1","돌끼리 싸우나? 할아버지 서랍처럼 칸칸이네.","think"],["det0","…엄마는 이유 없이 적는 사람이 아니었다."]]);
+
+ (function(){var s=spot("dark","s9_file")||null;C("dark").locations.forEach(function(l){(l.spots||[]).forEach(function(x){if(x.ev&&x.ev.name==="30년 전 사건 파일"){x.text+=" 뒷장은 뜯겨 나가고 없다.";x.ev.desc+=" 뒷장은 뜯겨 나갔다."}})})})();
+ MISS=MISS.filter(function(m){return m!=="spot s9_file"});window.__S196MISS=MISS;
+ L("dark","post",5,"불이 한 시간 꺼져 있었다.","그 아이는 북쪽 광산 마을에서 왔다더구나. 그 높은 고개를 혼자 넘어서.");
+ L("dark","post",5,"그 한 시간 동안…","집으로 돌아가라고, 작은 손등불 하나를 쥐여 보냈다. 그런데 그해 겨울, 그 광산 소식이…");
+ L("dark","post",5,"그 한 시간 얘기도","그 겨울 얘기도, 언젠가 꼭 하마.");
+
+ addObs("museum","hall",{id:"o196_m1",name:"진열장 안내판",x:40,y:40,text:"'별빛 돌 특별전. 진열장 하나에 돌 하나. 돌끼리 닿지 않게 하십시오.' 아래에 작은 글씨. '옛 광산 보관 규칙을 따름.' 이유는 적혀 있지 않다."});
+
+ (function(){var s=spot("festival","s10_scale");if(!s)return;s.text+=" 맨 아래 한 줄 더. '다른 돌과 한 상자에 넣지 말 것.'";if(s.ev&&s.ev.desc)s.ev.desc+=" '다른 돌과 한 상자에 넣지 말 것.'"})();
+
+ addObs("snow","lamp",{id:"o196_s1",name:"불탄 돌 창고 터",x:318,y:162,text:"언덕 아래 무너진 돌 창고 터. 그을린 돌 선반엔 돌 하나씩 들어가는 칸이 줄지어 있다. 기둥에 새긴 글씨. '돌은 칸마다 하나. 서로 닿게 두지 마라.' 구석 한 곳만 유난히 까맣다. 짚더미가 있던 자리다."});
+ addObs("snow","postoffice",{id:"o196_s2",name:"광산 폐쇄 공고",x:300,y:50,text:"'1985년 가을. 광산 돌 창고 화재. 원인 미상. 광산을 닫는다. 남은 돌은 도시 상회가 거둔다.' 도장은 도시 상회. 창고지기 이름 칸은 비어 있다."});
+ addObs("snow","postoffice",{id:"o196_s3",name:"그을린 양철 깡통",x:212,y:140,text:"분류함 구석에 양철 깡통 하나. 뚜껑 안쪽에 솔방울 그림. 안엔 작은 돌 조각 두 개가 서로 붙은 채 놓여 있고, 깡통 바닥은 까맣게 그을렸다. 뚜껑 안 글씨. '하나씩은 미지근. 둘이 닿으면 뜨거워짐. 사흘째 그을음. 창고 불도 이것?'"});
+ INS("snow","post",0,"…찾았다. 눈이 다 덮은 뒤에.",[["musoe","그해 가을, 돌 창고에 불이 났다. 창고지기 청년이 돌을 꺼내러 들어갔다가… 못 나왔지."],["musoe","도시 사람들은 '원인 미상'이라 적고, 남은 돌을 마차에 싣고 갔다."],["narr","네로의 발톱 끝이 망토 자락을 꽉 쥐었다. 무쇠 할아버지는 그걸 보지 못했다."]]);
+
+ (function(){var t=C("bureau").talk.eunho;if(!t||!t[5]){MISS.push("eunho5");return}t[5].a="…그분은 늘 북쪽 광산에서 나온 돌만 찾았소. 서른 해 전 첫 편지도 '그 광산 창고 돌이 어디로 팔려 갔는지 알려 주시오'였지. "+t[5].a})();
+
+ talk("lining","owlgp",1,"흰 꽃 자수… 그래, 이 망토다. 30년 전 그 밤, 내가 언덕에 닿았을 때 아이는 벌써 이 망토를 덮고 있었다. 아이는 하얀 손 하나만 봤다더구나. 열쇠 꾸러미를 쥔. 그 밤 등불 열쇠를 가진 사람은 둘이었다. 나와… 내 순찰 짝. (할아버지가 한참 말이 없다) …아니다. 짝은 그 밤 반대편 길을 돌았어. 늘 웃던 사람이었다.");
+ talk("lining","nero",2,"이 꽃 이름을 오랫동안 몰랐습니다. 30년 전 그 밤, 돌을 꺼냈다가 들고 가지도 못하고 떨고 있는데, 하얀 손 하나가 이 망토를 덮어 주고 사라졌습니다. 저를 덮어 준 건 그 망토뿐이었지요.");
+ (function(){var o=T("STORY","lining");if(!o||!o.outro){MISS.push("lining outro");return}o.outro.forEach(function(l){if(typeof l[1]==="string"&&l[1].indexOf("30년 전 그 밤, 망토의 주인이 등불을 껐다")===0)l[1]="30년 전 그 밤 네로를 덮어 준 망토의 주인이, 30년 동안 같은 꽃을 편지에 찍었다."})})();
+
+ var K=C("kitchen");
+ rs(K,"story",'그런데 30년 전 그 밤에도, 등불은 <span class="mark">열쇠로</span> 열렸다. 그 밤 열쇠를 가진 사람은 둘이었다.','열쇠는 사무소에 하나뿐이라고들 했다. 그런데 30년 전 순찰대는 <span class="mark">둘이서</span> 다녔다.');
+ (function(){var o=T("STORY","kitchen");if(o&&o.intro)o.intro.forEach(function(l){if(typeof l[1]==="string"&&l[1].indexOf("30년 전 그 밤에도 등불은 열쇠로")===0)l[1]="열쇠는 사무소에 하나뿐이라고들 해. 그런데 30년 전 순찰대는 둘이서 다녔다고 했지. …오늘 밤은 네 시간이야."})})();
+ L("kitchen","pre",1,"네 시간. …{p0}, 30년 전","네 시간. …{p0}, 30년 전 순찰대는 둘이서 다녔다고 했지. 열쇠도 둘이었을까?");
+ (function(){var s=spot("kitchen","s15_file");if(!s)return;s.text="30년 전 별빛 언덕 사건 파일. 1쪽: '별빛 등불 돌 절도. 어린 스라소니. 자물쇠는 잠긴 채, 옆 유리 한 장을 깨고 손을 넣어 돌을 꺼냄. 돌은 들지 못하고 등불 밑에. 훈방. 이 아이에게 등불을 켜 주었다.' 2쪽은 뜯겨 나갔다.";s.ev.desc="1쪽: '옆 유리를 깨고 돌을 꺼냄. 들지 못함. 훈방. 이 아이에게 등불을 켜 주었다.' 2쪽은 뜯겨 나갔다."})();
+ (function(){var s=spot("kitchen","s15_carbon");if(!s)return;s.text="부리가 학교 기록실 서랍의 이중 바닥 밑에서 찾아온 먹지 사본. 뜯겨 나간 파일 2쪽이 그대로 찍혀 있다. '아이를 덮은 어른 망토, 흰 꽃 자수. 등불 열쇠: 1번 부엉이 탐정, 2번 순찰 짝. 아이 진술: 북쪽 광산 마을 돌 창고 짚더미에서 잤다. 돌 조각을 자루에 모아 베고 잤다. 따뜻해서.' 맨 아래, 다른 잉크로 한 줄. '그 창고는 그해 가을 불탔다고 함. 창고지기 사망. 이 쪽은 떼어 둔다.' 짝의 이름 칸만 잉크가 번져 읽을 수 없다.";s.ev.desc="뜯겨 나간 2쪽의 먹지 사본. 열쇠는 1번 부엉이 탐정, 2번 순찰 짝. 아이 진술: '광산 돌 창고 짚더미에서, 돌 조각 자루를 베고 잤다.' 다른 잉크로 '그 창고는 그해 가을 불탔다고 함. 창고지기 사망. 이 쪽은 떼어 둔다.' 짝의 이름 칸은 번져서 읽을 수 없다."})();
+ (function(){var s=spot("kitchen","s15_list");if(!s)return;s.text=s.text.replace(" — 보석상 거리 모퉁이 빵집(7번지 옆)","");if(s.ev&&s.ev.desc)s.ev.desc=s.ev.desc.replace(" — 보석상 거리 모퉁이 빵집(7번지 옆)","")})();
+ (function(){var s=spot("kitchen","s15_window");if(!s)return;s.text="창가에 오래된 등잔이 놓여 있다. 밑동의 낙인이 희미하다. '북쪽 광산 · 창고.' 등잔 안엔 밀가루 자루로 싼 둥근 것. 자루 틈으로 푸르스름한 빛이 새어 나온다. 옆엔 작은 병 가득 반짝이는 조각들이 서로 꼭 붙어 있다. 병에 손을 대니 화들짝 놀랄 만큼 뜨겁다.";s.ev.desc="부엌 창가의 낡은 창고 등잔. 낙인 '북쪽 광산 · 창고'. 밀가루 자루로 싼 둥근 것이 들어 있다. 옆의 조각 병은 조각끼리 꼭 붙어 있고, 손을 댈 수 없을 만큼 뜨겁다."})();
+ setObs("kitchen","o15_12","찬장이 벽에서 한 뼘 밀려 나와 있다. 틈 사이로 작은 문 모서리가 보인다. 틈에서 뜨거운 바람이 훅 나온다. 밀가루 타는 냄새. 지금은 열 수 없다.");
+ addObs("kitchen","field",{id:"o196_k1",name:"할머니 집 지붕",x:300,y:40,text:"동짓날 밤인데 할머니 집 지붕 한쪽만 눈이 없다. 부엌 뒤쪽이다. 처마 끝에서 녹은 물이 뚝뚝 떨어진다."});
+ (function(){var f=K.final||[];var q=null;f.forEach(function(x){if(/30년 전 등불을 끈 사람/.test(x.q))q=x});if(!q){MISS.push("final5");return}
+  q.q="30년 전 북쪽 광산 돌 창고에 불이 난 까닭은?";q.opts=["한 자루에 몰아 둔 돌 조각","창고지기의 등잔 불씨","도시 상회의 방화","벼락"];q.answer="한 자루에 몰아 둔 돌 조각"})();
+ talk("kitchen","grandma",6,"…그렇습니다. 등불 관리국은 저 하나였습니다. 처음 스무 해 넘게는 그 광산에서 팔려 나간 돌이 어디 있는지 적기만 했지요. 몇 해 전부터는 남의 손을 빌려 가져왔습니다. 오늘은 제 손으로. 2번 열쇠로 열고, 토리의 썰매에 싣고. 동짓날 자정, 그 창고 등잔에 켜려고요.");
+ if(K.solution)K.solution.push("찬장 뒤 광은 손을 댈 수 없을 만큼 뜨거웠다. 밀가루 자루마다 별빛 돌이 몰려 서로 닿아 있었다. 하나씩은 미지근하고 둘이 닿으면 뜨거워진다는 엄마의 깡통, 칸마다 하나씩 두라는 광산 창고의 규칙 그대로였다. 30년 전 창고 불도 짚더미 속 조각 자루에서 시작됐다.");
+ if(K.recon&&K.recon.sum)K.recon.sum.why="서른 해 전 아들 초롱이 지키던 북쪽 광산 돌 창고가 불탔다. 도시는 '원인 미상'으로 광산을 닫고 돌만 가져갔고, 마을은 지도에서 지워졌다. 몇 해 전 할머니는 그 창고에서 자던 아이가 네로였고, 부엉이 탐정이 알고도 말하지 않았다는 걸 알았다. 그래서 그 광산에서 나간 돌을 도로 모아 지워진 마을의 등불을 다시 켜려 했고, 그 일의 손으로 네로를 썼다. 돌이 닿으면 뜨거워진다는 것은 몰랐다";
+ if(K.recon&&K.recon.sum&&K.recon.sum.what)K.recon.sum.what=K.recon.sum.what.replace("서른 해 동안 '등불 관리국'이라는 이름으로","서른 해 동안 광산 돌이 간 곳을 적어 오다, 몇 해 전부터 '등불 관리국'이라는 이름으로");
+ try{DEDUCE.kitchen=DEDUCE.kitchen.replace("30년 전 그 밤 등불을 끈 사람은 [4].","30년 전 북쪽 광산 돌 창고의 불은 [4]에서 시작됐다.");if(DEDUCE.kitchen.indexOf("[4]에서 시작")<0)MISS.push("DEDUCE")}catch(e){MISS.push("DEDUCE "+e.message)}
+ try{var hit=0;((DEBATE.kitchen||{}).phases||[]).forEach(function(r){(r.lines||[]).forEach(function(x){if(x.t==="아이고, 다른 열쇠라… 30년 전 그 밤에도 등불은 열쇠로 열렸다지요."){x.t="아이고, 다른 열쇠라… 30년 전 그 밤에도 언덕 등불에서 돌이 나왔다지요.";hit++}})});if(!hit)MISS.push("debate key line")}catch(e){MISS.push("DEBATE "+e.message)}
+ K.ending="8시 55분. 언덕 등불에 별빛 돌이 돌아갔다. 9시, 도시 우편 마차가 그 불을 보고 눈길 고개를 넘어왔다. 광에서 꺼낸 돌들은 한 뼘씩 떨어져 눈밭에서 식었다. 그날 밤 할머니는 부엉이 할아버지와 나란히 사무소 지하 철창까지 걸어갔다. 이튿날 아침 마을 회의가 열렸다. 30년 전 창고 불의 기록이 고쳐졌다. '원인: 짚더미 속 한 자루에 모인 돌 조각. 창고지기 초롱은 돌을 꺼내러 들어갔다.' 돌을 하나씩 두라는 오래된 말에는, 처음으로 이유가 붙었다. 통돌은 공책에 적힌 마을로 하나씩 돌아가고, 조각들은 회의의 결정으로 북쪽 고개 너머 그 마을로 가기로 했다.";
+
+ (function(){var o=T("STORY","kitchen");if(!o){MISS.push("kitchen STORY");return}o.outro=[
+  ["narr","밤 8시 20분. 할머니의 부엌. 동짓날 밤인데 부엌이 이상하게 더웠다. 창가의 낡은 등잔에서 푸르스름한 빛이 새어 나왔다. 아무도 찻잔에 손을 대지 않았다."],
+  ["grandma","서른 해 전, 하나뿐인 아들 초롱이는 북쪽 광산 마을 돌 창고를 지켰습니다. 이 숲 마을들 등불의 돌은, 다 그 창고에서 나갔지요.","sad"],
+  ["narr","부엌 문가에 서 있던 나비의 귀가 쫑긋 섰다. 나비는 까로의 소매를 잡아끌고, 소리 없이 눈길로 빠져나갔다."],
+  ["grandma","그해 가을, 창고에 불이 났습니다. 초롱이는 돌을 꺼내러 들어갔다가 나오지 못했어요.","sad"],
+  ["grandma","도시 상회는 '원인 미상'이라 적었습니다. 광산은 닫혔고, 남은 돌은 마차에 실려 갔지요. 사람들은 떠났고, 마을은 지도에서 지워졌습니다."],
+  ["grandma","사람들은 수군댔어요. 창고지기가 등잔 불씨를 잘못 다뤘다고. 저 창가 등잔이 그 등잔입니다. 서른 해 동안 한 번도 켜지 않았어요."],
+  ["grandma","그 뒤로 저는 그 광산 돌이 어디로 팔려 갔는지 적었습니다. 금요일마다 도시 창구에 편지를 써서요. 처음엔 그게 다였습니다."],
+  ["grandma","그해 축제 밤엔, 언덕에서 떨고 있던 스라소니 아이를 제 망토로 덮어 줬지요. 순찰 길을 벗어난 게 부끄러워서, 영감에겐 반대편 길을 돌았다고 했고요. 그 밤 떨어뜨린 2번 열쇠는 이튿날 주워 두었습니다."],
+  ["grandma","몇 해 전, 영감이 이 부엌에서 차를 마시다 말했습니다. 해마다 편지를 보내는 그 아이가, 북쪽 광산 창고에서 자던 아이였다고."],
+  ["grandma","영감은 그해 겨울에 다 알았답니다. 그리고 서른 해 동안, 나한테는 한 마디도 하지 않았지요."],
+  ["narr","할머니의 목소리가 처음으로 흔들렸다."],
+  ["grandma","내가 덮어 준 그 아이는 등불을 받았습니다. 내 아들은 '원인 미상'을 받았고요. 돌을 가져간 도시는 아무것도 치르지 않았습니다.","angry"],
+  ["grandma","그래서 돌려받기로 했습니다. 그 광산에서 나간 돌을. 그 마을 등불 자리에 다시 끼우면, 지워진 마을도 다시 지도에 오를 테니까요."],
+  ["grandma","손은 그 아이 손을 빌렸습니다. '빛은 누구의 것입니까.' 그 문장도 제가 써 보냈지요. 그 아이가 훔친 불로 그 아이가 갇히는 걸, 이번엔 아무도 편들지 못하게."],
+  ["grandma","잊는 척을 했습니다. 잊는 척하면 사람들은 같은 이야기를 두 번씩 해 주니까요. 도시 창구가 보낸 값은 마차 소포로 왔고, 저는 '이웃 심부름'이라며 우체국에서 찾아왔지요."],
+  ["grandma","이 마을 돌만은 남의 손을 빌려 세 번이나 실패했습니다. 소나무 둥지도, 박물관 소포도, 축제 밤 상자도. 그래서 오늘은 제 손으로 가져왔어요. 자정에 그 창고 등잔에 켜려고요. 봄이 오면 모은 돌을 모두 그 마을로 보낼 참이었습니다."],
+  ["det1","…그래서 도토 다리가 다치고, 꽥순이가 지하 창고에 갇히고, 토리가 영문도 모르고 소포를 날랐어요.","angry"],
+  ["grandma","아이는 다치게 하지 말라고 썼습니다. 편지마다, 한 번도 빼먹지 않고."],
+  ["det1","쓰기만 했잖아요. 다친 건 진짜였어요.","sad"],
+  ["narr","할머니는 대답하지 않았다. 찬장 뒤에서 무언가 지직, 하고 탔다."],
+  ["det0","할머니. 찬장 뒤 광이 손을 댈 수 없을 만큼 뜨겁습니다. 밀가루 자루마다 돌이 몰려 있죠."],
+  ["det1","엄마 지도에 적혀 있었어요. '돌은 하나씩. 둘을 붙여 두지 말 것.' 이름 없는 마을 우체국에서 본 엄마 깡통도요. 붙여 둔 조각 두 개가 깡통을 태웠어요.","think"],
+  ["grandma","…돌은 하나씩이라는 말은, 도시가 돌 값을 올리려고 만든 말인 줄 알았지요."],
+  ["det0","30년 전 그 창고도 그랬을 겁니다. 짚더미 속, 한 자루에 몰아 둔 조각들. 창고지기의 등잔이 아니라."],
+  ["det1","지금 꺼내야 해요! 하나씩, 닿지 않게!","shock"],
+  ["narr","네로가 먼저 광으로 뛰어들었다. 아빠와 레이가 뒤따랐다. 뜨거운 자루를 하나씩 눈밭으로 끌어내 한 뼘씩 떼어 놓자, 지직거리던 소리가 잦아들었다."],
+  ["nero","…그 자루, 제 것이었습니다.","sad"],
+  ["nero","분류장에서 조각을 하나씩 훔쳤습니다. 들킬까 봐 한 자루에 넣어 짚더미 속에 숨기고, 그 위에서 잤지요. 모을수록 따뜻해서."],
+  ["nero","그 밤 자루에서 연기가 났습니다. 저는 도둑질이 들킬까 봐 아무도 깨우지 않고 달아났습니다. 창고지기가 자고 있는 걸 알면서."],
+  ["owlgp","달래. 나는 그 아이가 불을 냈다고 믿기 싫었다. 그래서 파일 2쪽을 뜯었다. 너에게는 끝내 말하지 못했다. 그건 용서가 아니라 내 비겁이었다.","sad"],
+  ["grandma","…영감은 그 아이를 덮어 줬고, 나는 내 부엌에 그 창고를 다시 만들고 있었군요."],
+  ["narr","그때 부엌 문이 벌컥 열렸다. 찬바람과 함께 나비와 까로가 뛰어 들어왔다. 나비의 손에 누렇게 바랜 봉투 한 통."],
+  ["nabi","흥… 헉, 헉. '초롱'이라는 이름 듣자마자 생각났어. 우체국 '주인 없는 편지' 칸에 자루가 하나 있거든. 30년 전 이름 없는 마을 우체국이 문 닫을 때 넘어온 거."],
+  ["karo","보낸 이는 '초롱'. 뒷면엔 '폐국으로 미발송, 숲속 마을 우체국으로 이관' 도장. 우체국이 문을 닫는 바람에 못 부친 편지예요."],
+  ["nabi","…방울 목걸이 걸어 줄 때도, 우체국 얘기 물어볼 때도. 그것도 다 그 공책에 적었어?"],
+  ["grandma","…적었습니다."],
+  ["nabi","흥. …그래도 이건 줄게. 주인 있는 편지니까."],
+  ["narr","할머니가 봉투를 받아 들었다. 손이 떨려 봉투가 두 번 미끄러졌다."],
+  ["narr","'엄마. 창고 정리만 끝나면 축제 날 갈게요. 요즘 창고 짚더미에서 고양이만 한 꼬마가 자요.'"],
+  ["narr","'내쫓지 않았어요. 추운 애라서요. 갈 때 엄마 당근 케이크 한 조각 싸 가도 돼요? 초롱.'"],
+  ["grandma","…그 아이를, 초롱이가 재워 줬구나.","cry"],
+  ["narr","할머니는 오래 아무 말도 하지 않았다. 네로는 눈을 피하지 않았다. 토리는 여니 뒤에서 나오지 않았다."],
+  ["det0","…등불을 켜러 가겠습니다, 할머니. 오늘 밤 오는 마차가 길을 잃지 않게."],
+  ["narr","할머니가 천천히 일어나 창가로 갔다. 그리고 제 손으로 밀가루 자루의 끈을 풀었다. 부엌 가득 별빛이 쏟아졌다."],
+  ["grandma","…가져가요. 무거우니까, 둘이서."],
+  ["grandma","…이 병도요. 서른 해 동안 그 광산에서 나간 조각들이에요. 어느 마을 건지, 공책에 다 적혀 있어요. 하나씩 싸요. 닿지 않게."],
+  ["grandma","…영감. 사무소 지하 쪽창으로도 언덕 등불이 보이던가요."],
+  ["owlgp","보인다. 잘 보이지."]
+ ]})();
+
+ L("kitchen","post",0,"돌을 안고 나서려던 참이었다.","돌 자루를 모두 눈밭으로 꺼낸 뒤. 텅 빈 광 구석에 양철 상자 하나가 남아 있었다.");
+ L("kitchen","post",0,"광 안엔 양철 상자 하나.","상자 안엔 봉투 서른 통. 받는 이는 모두 '초롱'. 주소 칸은 비어 있었다. 한 해에 한 통, 그 창고가 탄 날마다.");
+ L("kitchen","post",0,"맨 위의 편지.","맨 위의 편지. '초롱아. 올해도 언덕 등불이 켜졌단다. 엄마는 올해도 그 불이 미웠다. 네 창고에서 나간 돌로 켜는 불이니까.'");
+ L("kitchen","post",0,"'올해는 돌을 거의 다 모았다.","'올해는 돌을 거의 다 모았다. 봄이 오면 네 마을 등불을 하나씩 다시 켜 주마. 아이들이 오늘도 케이크를 맛있게 먹었다. 토리는 여전히 딸기를 못 먹는단다. 너도 어릴 때 당근 케이크만 먹었지. 엄마가.'");
+ L("kitchen","post",1,"30년 동안 저를 덮어 준 건 이것뿐이었습니다.","30년 전 그 밤 당신이 덮어 준 망토입니다. 30년 동안 저를 덮어 준 건 이것뿐이었지요. …그 지하 철창은 춥습니다. 두 번 들어가 봐서 압니다.");
+ L("kitchen","post",3,"할머니가 30년 동안 부린 손들.","할머니가 부린 손들. 네로에겐 후원자 편지와 '빛은 누구의 것입니까', 그리고 루카 검사관 서류를 보냈다. 슬링은 두 번 움직였다.");
+ (function(){var s=scene("kitchen","post",4);if(!s)return;
+  var k=idx(s.lines,"며칠 뒤.");if(k>=0)s.lines[k][1]=s.lines[k][1].replace("창가의 조각 병은 공책에 적힌 대로 원래 마을에 하나씩 돌려보내기로 했다.","통돌은 공책에 적힌 대로 원래 마을로 하나씩 돌려보내기로 했다. 조각 병은 마을 회의가 정하기로 했다.");
+  L("kitchen","post",4,"'초롱아. 언덕 등불이 켜져 있단다.","'초롱아. 네가 재워 준 그 아이를, 엄마는 미워하려고 서른 해를 썼구나. 봄에 네 마을 등불이 켜지면, 그 아이가 지킨대. 엄마가.'");
+  L("kitchen","post",4,"…부탁해도 될까요. 받는 곳은","…부탁해도 될까요. 북쪽 고개 너머, 창고 터로요.");
+  L("kitchen","post",4,"…박물관 깃털도","…박물관 깃털도, 마차에서 제 머리 다친 것도, 그 편지들에서 시작됐죠. 그래도 우체국 사람은 내용을 보고 편지를 고르지 않아요. 고개가 열리면 봄 첫 마차로 제가 들고 갈게요.");
+  DEL("kitchen","post",4,"까로 아저씨, 도시 보석상 거리요.");DEL("kitchen","post",4,"…호두과자를 좋아하던 등불지기.");DEL("kitchen","post",4,"구슬이 편지에 그랬잖아.");})();
+ L("kitchen","post",9,"같은 날, 문 닫은 도서관 창가.","같은 날, 문 닫은 도서관 창가. 사서 선생님이 밤마다 몰래 쓰던 원고 뭉치를 내려놓았다. 첫 장의 제목. '{AG} — 사건 1. 사라진 지원금 봉투.'");
+ L("kitchen","post",9,"정확히 말하면, 케이크가","정확히 말하면, 봉투가 사라진 건 7시 10분과 7시 40분 사이예요. …선생님, 2권은 언제 나와요? (딸깍)");
+ L("kitchen","post",12,"쪽지엔 은호의 글씨.","쪽지엔 은호의 글씨. '수달 양반이라… 내 가게 앞 불을 서른 해 켜 준 사람의 이름을, 나는 한 번도 묻지 않았구려.'");
+ L("kitchen","post",13,"등불지기는 걸었다.","등불지기는 장대를 고쳐 메고 언덕 쪽으로 걸었다. 다락방 손님을 제일 밝은 불 아래까지 데려다주겠다던 약속이었다.");
+ (function(){var s=scene("kitchen","post",14);if(!s)return;var k=idx(s.lines,"계단 위 눈 덮인 문간에");if(k<0){MISS.push("post14 tori");return}
+  if(s.cast)delete s.cast.lamplighter;s.lines=[["narr","사무소 지하. 계단 위 쪽창으로 언덕 등불이 보였다. 발소리가 지하 계단을 내려왔다. 네로였다."],["enter","nero",170,"sad"],
+   ["nero","…창고 짚더미에서 잔 꼬마가 저입니다. 그 청년은 저를 내쫓지 않았습니다. 추운 애라고."],
+   ["nero","연기가 났을 때 저는 도망쳤습니다. 그 청년이 자는 걸 알면서. 그 말을 서른 해 동안 아무에게도 못 했습니다."],
+   ["grandma","…알아요. 이제는."],
+   ["nero","봄이 오면 북쪽으로 갑니다. 무쇠 할아버지랑 그 마을 등불을 켜겠습니다. 조각은 하나씩, 칸칸이."],
+   ["nero","창고 터 기둥에 이름 하나를 새기려 합니다. 허락해 주시겠습니까."],
+   ["narr","할머니가 창살 사이로 손가락을 내밀어, 허공에 두 글자를 천천히 썼다. 초롱."],
+   ["nero","…봄에 다시 오겠습니다. 새긴 걸 보여 드리러."],["exit","nero"]].concat(s.lines.slice(k))})();
+ L("kitchen","post",15,"많이 늦었지. 미안해.","많이 늦었지. 미안해. 돌이 한곳에 모이면 불이 난다는 걸 알리러 서둘러 오다가, 눈보라 속에서 길을 잃었어. 다치고, 한참을 아무것도 기억하지 못했어.");
+ L("kitchen","post",15,"케이크, 창문, 왕관","봉투, 깃털, 종, 하얀 장갑, 첫눈… 한 통씩 읽는데, 눈이 녹듯이 하나씩 생각났어. 네 웃음소리, 우리 집 문소리.");
+ INS("kitchen","post",15,"응. 너희가 불을 안 꺼서.",[["mom","편지를 못 쓴 건… 관리국 편지 소인이 전부 우리 마을 우체국이었어. 집으로 부치면 그 사람이 먼저 읽을 테니까."]]);
+ (function(){var B=T("BOOK","kitchen");if(!B||!B.post)return;B.post.push({bg:"snow-lamplit",time:"이듬해 봄 · 북쪽 고개 너머",cast:{det1:110},lines:[
+  ["narr","이듬해 봄. 북쪽 고개가 열렸다. 그늘엔 아직 눈이 남아 있었다."],
+  ["narr","이름 없는 마을의 빈 등불 받침마다, 조각이 하나씩 놓였다. 칸칸이, 닿지 않게."],
+  ["narr","무쇠 할아버지와 네로가 갱도 등불 언덕에서 첫 불을 켰다. 마을 아래 창문 몇 개가 따라 켜졌다."],
+  ["narr","불탄 창고 터 기둥엔 새로 새긴 이름 하나. '초롱.'"],
+  ["det1","아빠. 세계 지도에 그 마을 이름, 다시 적었어. '반딧골'. 무쇠 할아버지가 옛 이름이래.","happy"],
+  ["det0","…불이 켜진 마을은 지워지지 않는다. 엄마가 그렇게 적었지."],
+  ["narr","사무소 창가 등잔엔 오늘도 조각 하나. 서랍엔 칸칸이 하나씩."]
+ ]})})();
+ }catch(e){MISS.push("ERR "+e.message)}
+ try{[["bell","o_b1",150,116],["festival","o_f1",214,62]].forEach(function(f){var c=C(f[0]);if(!c)return;var hit=0;c.locations.forEach(function(l){(l.obs||[]).forEach(function(o){if(o.id===f[1]){o.x=f[2];o.y=f[3];hit++}})});if(!hit)MISS.push("obs "+f[1])})}catch(e){MISS.push("obsfix "+e.message)}
+ function vil(){try{var V=window.__WMAP&&__WMAP.VIL,n=V&&V.nameless;if(!n||n.__s196)return!!n;var n0=n.name,d0=n.desc;
+  function done(){return typeof S!=="undefined"&&S.best&&!!S.best.kitchen}
+  Object.defineProperty(n,"name",{get:function(){return done()?"반딧골":n0},configurable:true});
+  Object.defineProperty(n,"desc",{get:function(){return done()?"북쪽 광산 마을. 30년 전 돌 창고가 불타며 지도에서 지워졌다. 봄에 등불 받침마다 조각이 하나씩 놓였고, 옛 이름을 되찾았다.":d0},configurable:true});
+  n.__s196=1;return true}catch(e){return false}}
+ if(!vil()){document.addEventListener("DOMContentLoaded",vil);window.addEventListener("load",vil)}
+ if(MISS.length)try{console.warn("story196 miss",MISS)}catch(e){}
+})();
+
+(function(){
  if(window.__ui186)return;window.__ui186={n:0};
  var MAP={
   "27,36,71":"59,36,22",    /* #1B2447 ink */
@@ -46358,12 +46525,12 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  var V="?v=194";
 
  var BG={
-  "fall-hill":{hots:{s2f_stone:[180,61],s2f_feather:[157,154],f2_order:[281,131]},ppl:[["rei",70,166]],obs:{o2f_flag:[188,96],o2f_big:[66,176],o2f_hill:[338,150]}},
+  "fall-hill":{hots:{s2f_stone:[180,61],s2f_feather:[157,154],f2_order:[281,131]},ppl:[["rei",70,166]],obs:{o2f_flag:[188,96],o2f_big:[120,188],o2f_hill:[338,150]}},
   "fall-steps":{hots:{s2f_glass:[274,94]},ppl:[["wanggu",52,165],["kongi",176,165]],obs:{o2f_rail:[120,96],o2f_steps:[334,84]}},
-  "fall-square":{hots:{s2f_jar:[141,96],s2f_flyer:[289,91],s2f_receipt:[233,113],s2f_birdlog:[86,142]},ppl:[["karo",132,165],["doto",282,165]],obs:{o2f_horn:[186,126]}},
+  "fall-square":{hots:{s2f_jar:[141,96],s2f_flyer:[289,91],s2f_receipt:[233,113],s2f_birdlog:[86,142]},ppl:[["karo",132,165],["doto",282,165]],obs:{o2f_horn:[186,126],o2f_shop:[102,84]}},
   "fall-pond":{hots:{s2f_landing:[260,131]},ppl:[["kkwak",100,165]]},
   "fall-owlhouse":{hots:{s2f_log:[132,91]},ppl:[["buri",296,168]],obs:{o2f_cal:[200,44],o2f_desk:[36,100]}},
-  "fall-cell":{hots:{s2f_hanky:[258,91],s2f_notebook:[306,94]},ppl:[["papa",112,104]],obs:{o2f_lock:[200,72],o2f_sleeve:[238,104]},bars:1},
+  "fall-cell":{hots:{s2f_hanky:[258,91],s2f_notebook:[306,94]},ppl:[["papa",112,104]],obs:{o2f_lock:[200,72],o2f_sleeve:[244,122]},bars:1},
   "fall-pine":{hots:{s2f_nest:[262,45],s2f_envelope:[276,58]},obs:{o2f_trunk:[214,172]}}
  };
  Object.keys(BG).forEach(function(k){var b=BG[k],src="art/"+k+".png";
