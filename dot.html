@@ -46149,6 +46149,12 @@ var __M={"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열�
 })();
 
 (function(){
+ function parts(cid,id){var m=/^cx_(.+)_(\d+)$/.exec(id);if(!m)return [id];var x=(COMBO[m[1]]||[])[+m[2]];return x?[x.a,x.b]:[id]}
+ function fix(arr,cid){if(!arr)return arr;var out=[];arr.forEach(function(id){parts(cid,id).forEach(function(p){if(out.indexOf(p)<0)out.push(p)})});return out}
+ try{Object.keys(DEBATE).forEach(function(cid){var D=DEBATE[cid];if(!D)return;D.need=fix(D.need,cid);(D.phases||[]).forEach(function(ph){if(ph.need)ph.need=fix(ph.need,cid)})})}catch(e){}
+})();
+
+(function(){
  if(window.__ui186)return;window.__ui186={n:0};
  var MAP={
   "27,36,71":"59,36,22",    /* #1B2447 ink */
@@ -46349,35 +46355,31 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  try{var q=location.search.match(/[?&]art=([01])/);if(q){if(q[1]==="0")localStorage.setItem("daram-art","0");else localStorage.removeItem("daram-art")}
   on=localStorage.getItem("daram-art")!=="0"}catch(e){}
  window.__artNew=on;if(!on)return;
- var V="?v=192";
+ var V="?v=194";
 
  var BG={
-  "fall-hill":{hots:{s2f_stone:[180,61],s2f_feather:[157,154],f2_order:[281,131]},ppl:[["rei",70,166]]},
-  "fall-steps":{hots:{s2f_glass:[274,94]},ppl:[["wanggu",52,165],["kongi",176,165]]},
-  "fall-square":{hots:{s2f_jar:[141,96],s2f_flyer:[289,91],s2f_receipt:[233,113],s2f_birdlog:[86,142]},ppl:[["karo",132,165],["doto",282,165]]},
-  "fall-pond":{hots:{s2f_landing:[260,131]},ppl:[["kkwak",100,165]]}
+  "fall-hill":{hots:{s2f_stone:[180,61],s2f_feather:[157,154],f2_order:[281,131]},ppl:[["rei",70,166]],obs:{o2f_flag:[188,96],o2f_big:[66,176],o2f_hill:[338,150]}},
+  "fall-steps":{hots:{s2f_glass:[274,94]},ppl:[["wanggu",52,165],["kongi",176,165]],obs:{o2f_rail:[120,96],o2f_steps:[334,84]}},
+  "fall-square":{hots:{s2f_jar:[141,96],s2f_flyer:[289,91],s2f_receipt:[233,113],s2f_birdlog:[86,142]},ppl:[["karo",132,165],["doto",282,165]],obs:{o2f_horn:[186,126]}},
+  "fall-pond":{hots:{s2f_landing:[260,131]},ppl:[["kkwak",100,165]]},
+  "fall-owlhouse":{hots:{s2f_log:[132,91]},ppl:[["buri",296,168]],obs:{o2f_cal:[200,44],o2f_desk:[36,100]}},
+  "fall-cell":{hots:{s2f_hanky:[258,91],s2f_notebook:[306,94]},ppl:[["papa",112,104]],obs:{o2f_lock:[200,72],o2f_sleeve:[238,104]},bars:1},
+  "fall-pine":{hots:{s2f_nest:[262,45],s2f_envelope:[276,58]},obs:{o2f_trunk:[214,172]}}
  };
  Object.keys(BG).forEach(function(k){var b=BG[k],src="art/"+k+".png";
   SCENES[k]=function(){return '<svg class="nodot" viewBox="0 0 360 200" preserveAspectRatio="none"><g id="an-bg-'+k+'"><image href="'+src+V+'" width="360" height="200" style="image-rendering:pixelated"/></g></svg>'};
   Object.assign(HOTS,b.hots||{});
-  try{if(b.ppl){var cid=k.split("-")[0],lid=k.slice(cid.length+1),c=caseById(cid);if(c&&c.ppl)c.ppl[lid]=b.ppl}}catch(e){}
+  try{var cid=k.split("-")[0],lid=k.slice(cid.length+1),c=caseById(cid);if(b.ppl&&c&&c.ppl)c.ppl[lid]=b.ppl;
+   if(b.obs&&c)c.locations.forEach(function(l){if(l.id===lid)(l.obs||[]).forEach(function(o){var q=b.obs[o.id];if(q){o.x=q[0];o.y=q[1]}})})}catch(e){}
  });
 
- var FACE={
-  det1:{neutral:1,happy:1,think:1,smug:1,shock:1,angry:1,sad:1,cry:1},
-  papa:{neutral:1,think:1,sad:1,smile:1},
-  rei:{neutral:1,think:1,smug:1,pout:1},
-  karo:{neutral:1,think:1,nervous:1,shock:1},
-  buri:{neutral:1,think:1,sad:1,shock:1},
-  wanggu:{neutral:1,think:1,embarrassed:1,shock:1},
-  doto:{neutral:1,think:1,shy:1,shock:1}
- };
+ var FACE={"badook":{"embarrassed":1,"neutral":1,"shock":1,"think":1},"bami":{"neutral":1,"sad":1,"shock":1,"think":1},"bori":{"neutral":1,"shock":1,"shy":1,"think":1},"buri":{"neutral":1,"sad":1,"shock":1,"think":1},"det1":{"angry":1,"cry":1,"happy":1,"neutral":1,"sad":1,"shock":1,"smug":1,"think":1},"doto":{"neutral":1,"shock":1,"shy":1,"think":1},"eunho":{"neutral":1,"shock":1,"think":1,"worried":1},"grandma":{"neutral":1,"sad":1,"smile":1,"think":1},"guseul":{"nervous":1,"neutral":1,"shock":1,"think":1},"karo":{"nervous":1,"neutral":1,"shock":1,"think":1},"kkwak":{"neutral":1,"shock":1,"smug":1,"think":1},"kongi":{"happy":1,"neutral":1,"sad":1,"think":1},"lamplighter":{"neutral":1,"shock":1,"think":1,"worried":1},"luka":{"nervous":1,"neutral":1,"shock":1,"think":1},"madam":{"angry":1,"neutral":1,"shock":1,"think":1},"mom":{"cry":1,"neutral":1,"shock":1,"think":1},"momo":{"neutral":1,"sad":1,"shock":1,"think":1},"mungchi":{"neutral":1,"sad":1,"shock":1,"think":1},"musoe":{"neutral":1,"sad":1,"shock":1,"think":1},"nabi":{"neutral":1,"shy":1,"smug":1,"think":1},"nero":{"neutral":1,"sad":1,"shock":1,"think":1},"nubi":{"neutral":1,"shock":1,"think":1,"worried":1},"owlgp":{"neutral":1,"sad":1,"smile":1,"think":1},"papa":{"neutral":1,"sad":1,"smile":1,"think":1},"piko":{"embarrassed":1,"neutral":1,"shock":1,"think":1},"ppul":{"embarrassed":1,"neutral":1,"shock":1,"think":1},"rei":{"neutral":1,"pout":1,"smug":1,"think":1},"seol":{"neutral":1,"shock":1,"think":1,"worried":1},"seori":{"nervous":1,"neutral":1,"shock":1,"think":1},"shadow":{"neutral":1,"shock":1,"tense":1,"think":1},"siluk":{"neutral":1,"sad":1,"shock":1,"think":1},"sling":{"nervous":1,"neutral":1,"shock":1,"think":1},"somi":{"nervous":1,"neutral":1,"shock":1,"think":1},"tok":{"neutral":1,"shock":1,"think":1,"worried":1},"tori":{"nervous":1,"neutral":1,"shock":1,"think":1},"ttadak":{"neutral":1,"shock":1,"shy":1,"think":1},"ubak":{"nervous":1,"neutral":1,"shock":1,"think":1},"wanggu":{"embarrassed":1,"neutral":1,"shock":1,"think":1},"yeoni":{"neutral":1,"shock":1,"shy":1,"think":1}};
  FACE.det0=FACE.papa;
  var NEAR={
-  happy:["happy","smile","smug"],smug:["smug","happy","smile"],confused:["think"],think:["think"],doubt:["think"],huh:["think","shock"],
-  sad:["sad","cry","pout","shy","embarrassed","nervous"],cry:["cry","sad","pout"],shy:["shy","embarrassed","sad","pout"],
-  nervous:["nervous","shock","embarrassed","shy","sad"],shock:["shock","nervous"],panic:["shock","nervous"],
-  angry:["angry","pout","shock","think"],pout:["pout","angry","sad"],embarrassed:["embarrassed","shy","nervous"]
+  happy:["happy","smile","smug"],smug:["smug","happy","smile"],confused:["think"],think:["think"],worried:["worried","nervous","sad","think"],tense:["tense","nervous","shock"],smile:["smile","happy","smug"],doubt:["think"],huh:["think","shock"],
+  sad:["sad","worried","cry","pout","shy","embarrassed","nervous"],cry:["cry","sad","worried","pout"],shy:["shy","embarrassed","sad","pout"],
+  nervous:["nervous","worried","tense","shock","embarrassed","shy","sad"],shock:["shock","nervous"],panic:["shock","nervous"],
+  angry:["angry","tense","pout","shock","think"],pout:["pout","angry","sad"],embarrassed:["embarrassed","shy","nervous"]
  };
  function pick(k,mood){var F=FACE[k];if(!F)return null;mood=String(mood||"").split(/\s+/)[0];var L=NEAR[mood]||[];for(var i=0;i<L.length;i++)if(F[L[i]])return L[i];return "neutral"}
  var N=0,_pf=pf;pf=function(k,mood){var e=pick(k,mood);if(e){var file=(k==="det0"?"papa":k)+"-"+e;
@@ -46387,7 +46389,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  function img(n,px){return '<img class="anic" src="art/icons/'+n+'.png'+V+'" alt="" width="'+px+'" height="'+px+'" draggable="false">'}
  function swapIcon(el,n,px){if(!el||el.dataset.anic===n)return;var s=el.querySelector("svg");if(s){s.insertAdjacentHTML("beforebegin",img(n,px));s.remove()}else el.insertAdjacentHTML("afterbegin",img(n,px));el.dataset.anic=n}
  var VB={"조사한다":"investigate","이동한다":"move","증거":"evidence","힌트":"hint","수첩":"notebook","기록":"record","메모":"memo"};
- function icons(){try{
+ function bars(){var g=document.getElementById("an-bg-fall-cell");if(!g)return;var w=g.closest("svg").parentNode;if(w.querySelector(".an-bars"))return;w.insertAdjacentHTML("beforeend",'<div class="an-bars" aria-hidden="true"></div>')}
+ function icons(){try{bars();
   swapIcon(document.getElementById("menu"),"menu",24);
   swapIcon(document.getElementById("snd"),"settings",24);
   swapIcon(document.getElementById("wmapbtn"),"world-map",26);
@@ -46411,6 +46414,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   "html:root body{background-image:radial-gradient(ellipse 90% 38% at 50% -4%,rgba(255,196,110,.22),transparent 70%),radial-gradient(ellipse 140% 90% at 50% 50%,transparent 50%,rgba(16,8,3,.55) 100%),url('art/ui/wood-tile.jpg"+V+"')!important;background-size:auto,auto,444px 222px!important;background-repeat:no-repeat,no-repeat,repeat!important}",
   B+".hud,html:root body.dotmode:not(.ds-mc) .hud{background:linear-gradient(180deg,rgba(150,95,50,.18),rgba(20,10,4,.25)),url('art/ui/wood-tile-dark.jpg"+V+"') 0 0/444px 222px!important}",
   B+".status.s2,"+B+".status.atabs,"+B+".rt,"+B+".arena{background:linear-gradient(180deg,rgba(20,10,4,.25),rgba(20,10,4,.45)),url('art/ui/wood-tile-dark.jpg"+V+"') 0 0/444px 222px!important}",
+  B+".an-bars{position:absolute;inset:0;background:url('art/fall-cell-bars.png"+V+"') 0 0/100% 100% no-repeat;image-rendering:pixelated;pointer-events:none;z-index:4}",
+  B+".scene:has(.an-bars) .hot{z-index:5}",
   B+".anic{display:block;object-fit:contain;pointer-events:none;flex:none}",
   B+".vb .anic{margin:0 auto 2px}",
   B+".ftile .fi .anic{width:34px;height:34px}",
@@ -46422,6 +46427,65 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  ].join("\n");
  function put(){var t=document.getElementById("ui18art");if(!t){t=document.createElement("style");t.id="ui18art";t.textContent=css}(document.body||document.head).appendChild(t)}
  put();window.addEventListener("load",put);document.addEventListener("DOMContentLoaded",put);
+})();
+
+(function(){
+ if(window.__ui194)return;window.__ui194=1;
+ var V="?v=194",B="html:root body:not(.ds-mc) ";
+ function u(n){return "url('art/icons/"+n+".png"+V+"')"}
+ var css=[
+  "html:root body{word-break:keep-all;overflow-wrap:break-word}",
+  B+".srow>div:first-child{flex:1 1 auto;min-width:5.2em}","html:root body:not(.ds-mc) .srow .seg button{padding-left:7px!important;padding-right:7px!important}",B+".srow>.seg,"+B+".srow>div:last-child:not(:first-child){flex:none}",
+  B+".flq{background:linear-gradient(180deg,rgba(20,10,4,.35),rgba(20,10,4,.6)),url('art/ui/wood-tile-dark.jpg?v=192') 0 0/444px 222px!important;color:#FFF3D6}",
+  B+".flq-top b{color:#F7D774!important;text-shadow:0 2px 0 #3B2416}",
+  B+".flq-top span,"+B+".flq-sub{color:#F3E2C0!important}",
+  B+".flq-x,"+B+".flq-back{border:6px solid transparent!important;border-image:var(--k-pill_wood) 6 fill / 6px / 0 stretch!important;background:none!important;border-radius:0!important;color:#FFF3D6!important;padding:0 10px!important;height:36px;display:inline-flex;align-items:center;gap:4px}",
+  B+".flq-x{width:auto!important;min-width:36px;justify-content:center}",
+  B+".flq-card{border:24px solid transparent!important;border-image:var(--k-panel2) 12 fill / 24px / 0 stretch!important;background:none!important;box-shadow:none!important;border-radius:0!important;padding:6px 4px!important;filter:drop-shadow(0 4px 0 rgba(20,10,4,.55))}",
+  B+".flq-q{color:#3B2416!important}",
+  B+".flqo{border:7px solid transparent!important;border-image:var(--k-small2) 7 fill / 7px / 0 stretch!important;background:none!important;box-shadow:none!important;border-radius:0!important;color:#3B2416!important;filter:drop-shadow(0 3px 0 rgba(20,10,4,.5))}",
+  B+".flqo.right{border-image:var(--k-pill_gold) 6 fill / 7px / 0 stretch!important}",
+  B+".flqo.wrong{opacity:.45}",
+  B+".flqn{border:7px solid transparent!important;border-image:var(--k-small2) 7 fill / 7px / 0 stretch!important;background:none!important;box-shadow:none!important;border-radius:0!important;color:#3B2416!important}",
+  B+".flqn.next{border-image:var(--k-pill_gold) 6 fill / 7px / 0 stretch!important;animation:none}",
+  B+".flqn.ok{filter:sepia(.3)}",
+  B+".flq-why,"+B+".flq-hint{background:#FBF1DA!important;color:#3B2416!important;border:2px solid #8A5A32;border-radius:4px!important}",
+  B+".flq-gift{background:#F7D774!important;color:#3B2416!important;border:2px solid #8A5A32;border-radius:4px!important}",
+  B+".flq-again{color:#FFC9A8!important}",
+  B+".flq-help{border:6px solid transparent!important;border-image:var(--k-pill_gold) 6 fill / 6px / 0 stretch!important;background:none!important;box-shadow:none!important;border-radius:0!important;color:#3B2416!important}",
+  B+".logb{border:6px solid transparent!important;border-image:var(--k-pill_paper) 6 fill / 6px / 0 stretch!important;background:none!important;box-shadow:none!important;border-radius:0!important;color:#3B2416!important;font-family:var(--display);font-size:14px;padding:0 8px!important;height:34px;display:inline-flex!important;align-items:center;gap:4px}",
+  B+".hpbar i{width:15px!important;height:15px!important;background:"+u("trust-empty")+" center/contain no-repeat!important;border:0!important;box-shadow:none!important;border-radius:0!important;image-rendering:pixelated;opacity:1!important}",
+  B+".hpbar i.on{background-image:"+u("trust-full")+"!important}",
+  B+".life{width:28px;height:28px;background:"+u("lamp-life-on")+" center/contain no-repeat;image-rendering:pixelated}",
+  B+".life svg{visibility:hidden}",
+  B+".life.off{background-image:"+u("lamp-life-off")+";opacity:1!important;filter:none!important}",
+  B+".stb .anic,"+B+".logb .anic{width:18px;height:18px;display:inline-block;vertical-align:middle;margin-right:3px}",
+  B+".dpres .anic{width:22px;height:22px;display:inline-block;vertical-align:middle;margin-right:4px}",
+  B+"#loadbtn .anic,"+B+"#press .anic,"+B+"#aimhint .anic{width:22px;height:22px;display:inline-block;vertical-align:middle;margin-right:5px}",
+  B+".flq-back .anic,"+B+".bkic .anic{width:18px;height:18px;display:inline-block;vertical-align:middle}",
+  B+".anstar{width:16px;height:16px;display:inline-block;vertical-align:-3px;margin:0 2px;image-rendering:pixelated}",
+  "@media (min-aspect-ratio:4/5){"+B+".tfull .tstats{background:rgba(30,16,6,.72);border:2px solid #8A5A32;padding:6px 12px;border-radius:4px}}"
+ ].join("\n");
+ function put(){var t=document.getElementById("ui18v194");if(!t){t=document.createElement("style");t.id="ui18v194";t.textContent=css}(document.body||document.head).appendChild(t)}
+ put();window.addEventListener("load",put);document.addEventListener("DOMContentLoaded",put);
+
+ if(window.__artNew===false)return;
+ function img(n,px){return '<img class="anic" src="art/icons/'+n+'.png'+V+'" alt="" width="'+px+'" height="'+px+'" draggable="false">'}
+ function sw(el,n,px){if(!el||el.dataset.anic===n)return;var s=el.querySelector("svg");if(s){s.insertAdjacentHTML("beforebegin",img(n,px));s.remove()}else el.insertAdjacentHTML("afterbegin",img(n,px));el.dataset.anic=n}
+ function backText(el){if(!el||el.dataset.anic==="back")return;var w=document.createTreeWalker(el,4),t;while(t=w.nextNode()){if(/◀/.test(t.nodeValue)){t.nodeValue=t.nodeValue.replace(/◀\s*/,"");el.insertAdjacentHTML("afterbegin",img("back",18));el.dataset.anic="back";return}}}
+ function run(){try{
+  sw(document.getElementById("recbtn"),"record",18);
+  sw(document.getElementById("logb"),"record",18);
+  document.querySelectorAll('.stb[data-tab="note"]').forEach(function(b){sw(b,"notebook",18)});
+  sw(document.getElementById("loadbtn"),"save",22);
+  sw(document.getElementById("dpres"),"present",22);
+  sw(document.getElementById("press"),"press",22);
+  sw(document.getElementById("aimhint"),"objection",22);
+  document.querySelectorAll(".flq-back,button").forEach(function(b){if(/^\s*◀\s*(목록|돌아가기)/.test(b.textContent))backText(b)});
+  document.querySelectorAll(".bt p").forEach(function(p){if(p.dataset.st)return;var h=p.innerHTML;if(/별 \d+ \/ \d+/.test(h)){p.innerHTML=h.replace(/별 (\d+ \/ \d+)/,'<img class="anstar" src="art/icons/star-full.png'+V+'" alt="별">$1');p.dataset.st=1}});
+ }catch(e){}}
+ try{var _r=render;render=function(){var r=_r.apply(this,arguments);run();return r}}catch(e){}
+ try{new MutationObserver(function(){if(run.t)return;run.t=setTimeout(function(){run.t=0;run()},90)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});

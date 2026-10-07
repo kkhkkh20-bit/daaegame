@@ -199,3 +199,72 @@ F03 (3·4장): seol, ppul, tok, bami, sling, nero(검은 망토를 벗은 얼굴
 F04 (5~8장): momo, piko, yeoni, bori, ttadak, mungchi, madam, siluk
 캐릭터 디자인은 design/characters/v4 와 game.html CAST·PERSONA 참고, 그림체는 승인된 다람·F01과 동일
 상태: 요청 (F02 먼저)
+
+---
+
+진행 순서 (2026-10-07 19시 기준, 위 순서는 끝남)
+1. R-013 1장 배경 (B03) — 게임 첫 사건이라 가장 먼저 보이는 장면
+2. R-014 얼굴 2명 (곰 선생님, 사서 선생님)
+3. R-015 3장 배경 (B04, B05)
+4. R-016 4~11장 배경 (B06~B17), 한 묶음씩
+5. R-011 추가 아이콘 32개 (이미 등록됨)
+6. R-017 PC 첫 화면 가로판 수정
+12·13장 배경(B18~B21 이후)은 이야기 수정 뒤 따로 요청함. 지금은 만들지 마세요.
+
+배경 공통 규칙 추가 (B02 적용 결과 반영)
+- HANDOFF에 spots(증거) 좌표와 함께 obs(관찰 지점) 좌표도 적어 주세요. 게임 데이터의 각 장소 obs 목록(id, name)을 읽고, 그 물건을 그림에 넣은 뒤 360×200 기준 중심점을 적으면 됩니다. 그림에 없는 관찰 대상이면 "그림에 없음"이라고 적어 주세요.
+- 인물이 무엇 뒤에 서야 하는 장면(철창 안, 창구 뒤, 수레 뒤)은 그 앞쪽 물건만 뽑은 투명 전경 PNG를 같이 주세요. 파일: <배경이름>-front.png, 배경과 같은 크기. (B02 철창은 Claude가 직접 뽑아 씀)
+- 인물이 설 자리는 화면 아래 15~25% 사이, 발 위치(x,y)를 적어 주세요. 오른쪽 아래 끝(320~360, 185~200)은 버튼이 겹치니 피해 주세요.
+- 증거와 비슷한 크기·진하기의 장식 물건 섞기(R-001 원칙)는 그대로.
+
+---
+
+요청 ID: R-013
+묶음 ID: B03 (briefs/B03.txt)
+사용자 요청 및 승인된 범위: 사용자 "디자인 마감 채우기에 집중". 2장 배경 적용 결과가 좋아 같은 방식으로 1장부터 진행.
+필요한 파일: design/retro/bg/envelope-post.png, envelope-store.png, envelope-records.png (+ 필요하면 -front.png)
+게임에서 실제 표시할 크기: 360×200
+읽어야 할 게임 데이터/파일: briefs/B03.txt, game.html 의 CASES id "envelope" (locations post, store, records의 spots와 obs)
+수정할 부분: 새로 그림. 위 배경 공통 규칙 추가분 지키기
+유지할 부분: star-hill-enriched, fall-* 배경과 같은 그림체·색감
+검토 결과 위치: review.md
+상태: 요청
+
+---
+
+요청 ID: R-014
+묶음 ID: F05 (정면 얼굴 2명)
+사용자 요청 및 승인된 범위: 대사가 많은데 얼굴이 옛 도트로 남은 두 인물.
+필요한 파일: design/retro/faces/teacher-<표정>.png, librarian-<표정>.png (F01~F04와 같은 1254 캔버스, 같은 머리 위치·크기)
+teacher (곰 선생님, 마을 학교 선생님, 따뜻하고 꼼꼼함): neutral, smile, think, worried
+librarian (사서 선생님, 고양이, 차분하고 기록에 엄격함): neutral, think, shock, smile
+캐릭터 설정은 game.html CAST·PERSONA 의 teacher, librarian 참고. 기존 곰(보리, 무쇠 할아버지)·고양이(나비, 레이)와 털 색·옷으로 확실히 구분
+상태: 요청
+
+---
+
+요청 ID: R-015
+묶음 ID: B04, B05 (briefs/B04.txt, B05.txt)
+필요한 파일: design/retro/bg/bell-street.png, bell-tower.png, bell-roof.png, bell-shop.png
+읽어야 할 게임 데이터/파일: briefs/B04.txt, B05.txt, game.html 의 CASES id "bell"
+수정할 부분: 새로 그림. 배경 공통 규칙 추가분 지키기. B04 끝나면 멈춤
+상태: 요청 (R-013 다음)
+
+---
+
+요청 ID: R-016
+묶음 ID: B06 ~ B17 (briefs/B06.txt ~ B17.txt, 4~11장)
+필요한 파일: 각 brief에 적힌 design/retro/bg/<장>-<장소>.png
+수정할 부분: 새로 그림. 한 묶음(배경 2장)씩 끝내고 멈춤. 배경 공통 규칙 추가분 지키기
+주의: 9장 snow 대피소(snow-shelter)는 엄마가 살아남은 장소라 따뜻한 불빛을 남겨 주세요. 모든 장에서 brief에 없는 소품으로 특정 인물을 암시하지 마세요(추리가 그림으로 미리 풀리면 안 됨)
+상태: 요청 (R-015 다음)
+
+---
+
+요청 ID: R-017
+묶음 ID: T02 (첫 화면 가로판 수정)
+사용자 요청 및 승인된 범위: v192 검토에서 PC 첫 화면의 통계 줄이 그림 속 책상과 겹침
+필요한 파일: design/retro/title/title-bg-wide-v2.png (기존 파일 유지)
+수정할 부분: 지금 가로판과 같은 그림을 아래쪽 25%가 어두운 나무 바닥이 되도록 다시 배치(책상·다람·창문은 화면 30~70% 높이 안으로). 버튼 3개와 통계 줄이 그 바닥 위에 얹힘
+유지할 부분: 그림 내용 전부
+상태: 요청
