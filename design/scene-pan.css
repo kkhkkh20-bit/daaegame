@@ -1,0 +1,18 @@
+/* A viewport over one 16:9 canvas; targets stay in the artwork's coordinate space. */
+.pan-scroll{overflow-x:auto;overflow-y:hidden;container-type:size;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x pan-y pinch-zoom;-webkit-overflow-scrolling:touch;scroll-behavior:auto}
+.pan-scroll::-webkit-scrollbar{display:none}
+.pan-canvas{position:relative;width:calc(100cqh * 16 / 9);height:100%;aspect-ratio:16/9;margin:0 auto;flex:none}
+.pan-scroll.can-pan{cursor:grab}.pan-scroll.dragging{cursor:grabbing;user-select:none}
+.pan-scroll:focus-visible{outline:2px solid #e5bf86;outline-offset:-3px}
+.pan-canvas svg,.pan-canvas img{-webkit-user-drag:none}
+.world .scene-stage.pan-frame{aspect-ratio:4/3;width:100%;max-width:720px;margin:auto}
+.pan-frame>.pan-scroll{position:absolute;inset:0}
+.pan-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:36px;height:58px;padding:0;border:1px solid #d6ac674d;background:#111b2bd9;color:#efcc82;font:22px system-ui;touch-action:manipulation}
+.pan-arrow.left{left:0;border-radius:0 8px 8px 0}.pan-arrow.right{right:0;border-radius:8px 0 0 8px}
+.pan-arrow:hover{background:#233246}.pan-arrow[hidden]{display:none}
+.pan-position{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:90px;height:4px;background:#f1dfbd33;border-radius:4px;pointer-events:none}
+.pan-position span{position:absolute;top:0;height:100%;background:#e5bf86;border-radius:4px}
+.pan-guide{color:#9daeb4;font-size:10px;text-align:center;margin:7px 0 0}
+.scene-workbench:fullscreen .scene-stage.pan-frame,.scene-workbench.expanded .scene-stage.pan-frame{max-width:min(100%,calc((100dvh - 255px)*4/3))}
+@media(max-width:600px){.world .scene-stage.pan-frame{aspect-ratio:1/1}.scene-workbench:fullscreen .scene-stage.pan-frame,.scene-workbench.expanded .scene-stage.pan-frame{max-width:min(100%,calc(100dvh - 250px))}.pan-arrow{width:30px;height:50px;font-size:18px}}
+@media(max-height:540px) and (orientation:landscape){.scene-workbench:fullscreen .scene-stage.pan-frame{max-width:min(100%,calc((100dvh - 145px)*4/3))}}

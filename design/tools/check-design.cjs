@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'../..')+'/';const source=JSON.parse(fs.readFi
  let checked=0,zoomChecked=0;
  for(const key of source.locationOrder){const l=source.locations[key];await page.selectOption('#case-select',l.caseId);await page.selectOption('#location-select',key);
   if(l.evidence.some(e=>e.uv))await page.locator('#uv-mode').check();
-  const r=await page.locator('.scene-stage').boundingBox();assert(Math.abs(r.width/r.height-16/9)<.01,key);
+  const r=await page.locator('#scene-canvas').boundingBox();assert(Math.abs(r.width/r.height-16/9)<.01,key);
   for(const e of l.evidence.filter(e=>!e.inZoom)){
    const point=page.locator('#scene-hotspots [data-point="'+e.spotId+'"]');assert.equal(await point.count(),1,key+':'+e.spotId);
    await point.evaluate(el=>el.click());assert.equal(await page.locator('#evidence-name').innerText(),e.evidence.name);assert.equal(await page.locator('#evidence-desc').innerText(),e.evidence.desc);checked++;
@@ -18,7 +18,7 @@ const root=path.resolve(__dirname,'../..')+'/';const source=JSON.parse(fs.readFi
   }
  }
  assert.equal(checked+zoomChecked,250);assert.equal(source.reviewedLocations.length,82);
- for(const [width,height] of [[360,640],[390,844],[844,390],[1280,800]]){await page.setViewportSize({width,height});await page.selectOption('#case-select','cake');await page.selectOption('#location-select','cake-kitchen');await page.locator('#scene-workbench').scrollIntoViewIfNeeded();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));const r=await page.locator('.scene-stage').boundingBox();assert(Math.abs(r.width/r.height-16/9)<.01);await page.screenshot({path:'/tmp/wide-gallery-'+width+'.png'});}
+ for(const [width,height] of [[360,640],[390,844],[844,390],[1280,800]]){await page.setViewportSize({width,height});await page.selectOption('#case-select','cake');await page.selectOption('#location-select','cake-kitchen');await page.locator('#scene-workbench').scrollIntoViewIfNeeded();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));const r=await page.locator('#scene-canvas').boundingBox();assert(Math.abs(r.width/r.height-16/9)<.01);await page.screenshot({path:'/tmp/wide-gallery-'+width+'.png'});}
  console.log('Gallery:',checked,'scene evidence +',zoomChecked,'drawer evidence; all 82 locations; 4 viewport checks; errors',errors);assert.equal(errors.length,0);
  await page.route('**/game.html',r=>{const s=fs.readFileSync(root+'game.html','utf8').replace('function start(data){','window.__T=function(c){return eval(c)};function start(data){');r.fulfill({contentType:'text/html',body:s})});
  await page.evaluate(()=>localStorage.setItem('daae-detective-v3','ORIGINAL_SAVE_SENTINEL'));

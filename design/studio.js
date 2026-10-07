@@ -3,6 +3,7 @@
   const $ = id => document.getElementById(id), kit = window.DaramArtKit;
   let manifest, selected, costume, expression = 0, scene = 'cake-kitchen', activeEvidence;
   const found = new Set(), regions = {forest:'숲속 마을',silver:'은빛 마을',mine:'광산 마을',city:'도시'};
+  const camera = DaramScenePan.attach({viewport:$('scene-viewport'),canvas:$('scene-canvas'),left:$('scene-left'),right:$('scene-right'),progress:$('scene-position')});
   const lazy = new IntersectionObserver(entries => {
     for (const entry of entries) if (entry.isIntersecting) {
       kit.character(entry.target, entry.target.dataset.character, 0);
@@ -107,7 +108,7 @@
     $('location-select').value = id;
     $('evidence-inspector').dataset.kind = 'idle'; $('evidence-name').textContent = record ? '수상한 물건을 눌러 보세요.' : '배경 전체를 둘러보세요.';
     $('evidence-desc').textContent = record ? '노란 표시는 증거, 파란 표시는 관찰과 확대 조사입니다.' : '이 장면에는 원작의 조사 증거를 배치하지 않았습니다.';
-    $('evidence-check').hidden = true; paintPoints();
+    $('evidence-check').hidden = true; paintPoints(); camera.setKey('gallery:' + id);
   }
   function openZoom(record, key) {
     const z = record.zooms[key]; if (!z) return;
