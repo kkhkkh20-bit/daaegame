@@ -16975,7 +16975,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
 
  function nm(k){if(k==="det0")return S.players[0];if(k==="det1")return S.players[1];return (CAST[k]||{}).name||k}
  function has(id){return G.found.indexOf(id)>=0||G.asked.indexOf(id)>=0}
- function ready(c){var D=DEBATE[c.id];return !D.need||D.need.every(has)}
+ function ready(c){var D=DEBATE[c.id];if(window.__rtGap)return !window.__rtGap(c,has).length;return !D.need||D.need.every(has)}
  function isSus(c,k){return c.suspects.indexOf(k)>=0}
  var SPEC=null,SKEY="debate";
  function stt(){if(!G[SKEY])G[SKEY]={pi:0,sus:SKEY==="debate"?{}:JSON.parse(JSON.stringify((G.debate&&G.debate.sus)||{}))};return G[SKEY]}
@@ -16996,9 +16996,9 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(Q){var L=Q[qi];h+=seats(L.w)+'<div class="rt-mid talk" id="rtnext"><div class="rt-big">'+pf(L.w,L.m||"")+'</div><div class="rt-bub"><small>'+esc(nm(L.w))+'</small><p>'+hl(pname(L.t))+'</p><span class="nx">▼</span></div></div>'}
   else if(ph.type==="debate"){var st=ph.stms[si],md=modeOf(ph),ev=sel&&evById(C,sel);
    h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-srow"><button type="button" class="rt-sn" id="rtprev" aria-label="이전 말"'+(ph.stms.length<2?' disabled':'')+'>◀</button><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div><button type="button" class="rt-sn" id="rtnx" aria-label="다음 말"'+(ph.stms.length<2?' disabled':'')+'>▶</button></div>'
-    +'<div class="rt-nav"><span>'+(sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p>'+(gated(C,sel)&&ev.check?'<button type="button" class="rt-exam" id="rtexam">'+esc(ev.check.label||"자세히 살펴보기")+'</button>':'')+'</div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
+    +'<div class="rt-nav"><span>'+(SKEY==="debate"&&window.__rtStuck&&window.__rtStuck(C,ph)?'지금 가진 증거로는 이 토론을 풀 수 없어요. 아래 <b>수사로 돌아가기</b>를 눌러 증거를 더 찾아요.':sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p>'+(gated(C,sel)&&ev.check?'<button type="button" class="rt-exam" id="rtexam">'+esc(ev.check.label||"자세히 살펴보기")+'</button>':'')+'</div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
     +'<div class="rt-bul">'+ph.bullets.filter(has).map(function(id){return '<button type="button" class="bl'+(sel===id?' on':'')+'" data-bl="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(C,id))+'</span></button>'}).join("")+'</div>'
-    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button><span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
+    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button>'+(SKEY==="debate"?'<button type="button" id="rtleave">수사로 돌아가기</button>':'')+'<span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
   else if(ph.type==="vote"||ph.type==="mob"){var V=ph.votes||{},mob=ph.type==="mob";h+=seats(null,false)+'<div class="rt-mid vote"><p class="rt-q">'+esc(ph.q)+'</p><p class="rt-sub">'+(mob?'모두의 표가 나왔어요…':'모두의 표가 나왔어요. 범인이라고 생각하는 사람을 눌러요.')+'</p><div class="rt-vg'+(mob?' mob':'')+'">'+C.suspects.map(function(k){var by=Object.keys(V).filter(function(v){return V[v]===k});return '<button type="button" class="vc'+(mob&&mobHit&&k===ph.target?' hitm':'')+'" data-seat="'+k+'"'+(mob?' disabled':'')+'>'+(mob&&mobHit&&k===ph.target?'<span class="mstamp">다수결</span>':'')+pf(k,by.length>1?"nervous":"")+'<b>'+esc(nm(k))+'</b><span class="vby">'+by.map(function(v){return '<i>'+pf(v,"")+'</i>'}).join("")+'</span><em>'+by.length+'표</em></button>'}).join("")+'</div></div>'}
   el.innerHTML='<div class="rt-in">'+h+'</div>';
   requestAnimationFrame(function(){if(!el)return;el.querySelectorAll(".sm u").forEach(function(u){u.style.width=u.dataset.v+"%"});D.seats.forEach(function(k){prev[k]=susOf(k)})});
@@ -17018,6 +17018,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(ph.type==="mob"){mobHit=false;banner("투표",ph.q).then(function(){draw();setTimeout(function(){mobHit=true;try{SFX.stamp();quake()}catch(e){}draw();setTimeout(function(){sayQ(ph.lines||[],nextPh)},1300)},1200)});return}
   if(ph.type==="adjourn"){sayQ(ph.lines||[],function(){adjourn(ph)});return}}
  var mobHit=false;
+ function leave(){if(busy)return;Q=null;qi=0;sel=null;si=0;try{saveProg()}catch(e){}if(el){el.remove();el=null}window.__inMeeting=false;try{bgm("sneak")}catch(e){}var gp=window.__rtGap?window.__rtGap(C,has):[];G.tab="scene";G.notice={title:"회의를 잠시 멈췄어요",text:(gp.length?"지금 가진 증거로는 이 토론을 풀 수 없어요. 수사를 더 해 봐요. ":"")+"준비되면 대결 탭에서 회의를 이어서 열 수 있어요."};render()}
  function adjourn(ph){var s=stt();
   if((ph.need||[]).every(has)){sayQ([{w:"det1",t:"잠깐! 그거라면 우리가 이미 찾아 뒀어!"}].concat(ph.resume||[]),nextPh);return}
   s.pi++;s.hold={need:ph.need||[],task:ph.task||""};try{saveProg()}catch(e){}
@@ -17047,7 +17048,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   var x=el.querySelector("#rtnx");if(x)x.onclick=function(){var ph=curPh();si=(si+1)%ph.stms.length;SFX.page();draw()};
   var sb=el.querySelector(".rt-bub.stm");if(sb){var sx0=null,sy0=null;sb.style.touchAction="pan-y";sb.addEventListener("pointerdown",function(e){sx0=e.clientX;sy0=e.clientY});sb.addEventListener("pointerup",function(e){if(sx0==null)return;var dx=e.clientX-sx0,dy=e.clientY-sy0;sx0=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){var b=el.querySelector(dx<0?"#rtnx":"#rtprev");if(b&&!b.disabled)b.click()}});sb.addEventListener("pointercancel",function(){sx0=null})}
   var ex=el.querySelector("#rtexam");if(ex)ex.onclick=function(){if(!G.exam)G.exam={};G.exam[sel]=true;try{SFX.found()}catch(e){}try{saveProg()}catch(e){}draw()};
-  var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();var t=window.__rtHint?window.__rtHint(C,curPh(),has,function(i){si=i}):curPh().hint;try{saveProg()}catch(e){}sayQ([{w:"det0",t:t}],function(){draw();if(window.__rtPt&&window.__pointAt)setTimeout(function(){window.__pointAt(window.__rtPt)},250)})};
+  var lv=el.querySelector("#rtleave");if(lv)lv.onclick=function(){try{SFX.tap()}catch(e){}leave()};var hb=el.querySelector("#rthint");if(hb)hb.onclick=function(){SFX.thinkin&&SFX.thinkin();var t=window.__rtHint?window.__rtHint(C,curPh(),has,function(i){si=i}):curPh().hint;try{saveProg()}catch(e){}sayQ([{w:"det0",t:t}],function(){draw();if(window.__rtPt&&window.__pointAt)setTimeout(function(){window.__pointAt(window.__rtPt)},250)})};
   if(curPh()&&curPh().type==="vote"&&!Q)el.querySelectorAll(".vc[data-seat]").forEach(function(b){b.onclick=function(){vote(b.dataset.seat)}});
  }
  function open(c,spec){C=c;Q=null;qi=0;sel=null;si=0;prev={};try{if(document.getElementById("tomeet"))closeModal()}catch(e){}if(G){if(!G.beats)G.beats={};G.beats.toMeet=1}
@@ -17064,9 +17065,9 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
  var _rf=renderFinal;renderFinal=function(c){
   if(DEBATE[c.id]&&!G.battle&&!(G.debate&&G.debate.done)&&!G.result){
    var hold=G.debate&&G.debate.hold;
-   if(hold){var ok2=hold.need.every(has);
+   if(hold){var ok2=hold.need.every(has)&&!(window.__rtGap&&window.__rtGap(c,has).filter(function(id){return hold.need.indexOf(id)<0&&(DEBATE[c.id].need||[]).indexOf(id)<0}).length);
     return '<section class="panel rtpanel"><h3 style="font-size:24px">회의 중단</h3><p>'+esc(hold.task)+'</p>'+(ok2?'<button class="btn red wide" id="rtgo">회의 다시 열기</button>':'<p class="soft" style="color:var(--stamp)">아직 필요한 증거를 못 찾았어요.</p><button class="btn wide" id="rtback">수사로 돌아가기</button>')+'</section>'}
-   var ok=ready(c),miss=(DEBATE[c.id].need||[]).filter(function(id){return !has(id)}).length;
+   var ok=ready(c),miss=window.__rtGap?window.__rtGap(c,has).length:(DEBATE[c.id].need||[]).filter(function(id){return !has(id)}).length;
    return '<section class="panel rtpanel"><h3 style="font-size:24px">원탁 회의</h3><p>모두 한자리에 모여 서로의 생각을 말해요. 빛나는 말에 증거를 쏘아 틀린 추리는 깨고, 맞는 말은 편들어 주세요. 마지막엔 투표로 범인을 가려요.</p>'
     +(ok?'<button class="btn red wide" id="rtgo">원탁 회의 열기</button>':'<p class="soft" style="color:var(--stamp)">회의를 열기엔 아직 증거가 '+miss+'개 모자라요. 수사를 조금 더 해 봐요.</p><button class="btn wide" id="rtback">수사로 돌아가기</button>')+'</section>'}
   return _rf.apply(this,arguments)};
@@ -18387,12 +18388,12 @@ TWBR.kitchen={type:"fail",phases:[
  function obj(n){return jo(n,"을","를")}
  function locOf(c,id){for(var i=0;i<c.locations.length;i++){var l=c.locations[i];for(var j=0;j<l.spots.length;j++)if(l.spots[j].ev.id===id)return {i:i,s:l.spots[j]}}return null}
  function needTip(c){var D=window.DEBATE&&DEBATE[c.id];if(!D||!D.need)return null;
-  for(var k=0;k<D.need.length;k++){var id=D.need[k];if(haveItem(c,id))continue;
+  var NL=window.__rtGap?window.__rtGap(c,function(id){return haveItem(c,id)}):D.need;for(var k=0;k<NL.length;k++){var id=NL[k];if(haveItem(c,id))continue;
    var m=/^cx_[a-z]+_(\d+)$/.exec(id);
    if(m){var x=(COMBO[c.id]||[])[+m[1]];if(x){if(haveItem(c,x.a)&&haveItem(c,x.b))return {say:"'기록'을 열어 '"+itemName(c,x.a)+"'와(과) '"+itemName(c,x.b)+"'"+"을(를) 결합해 봐. 둘을 합치면 새 단서가 나와.",tab:"scene",pt:"#recbtn"};
      var miss=haveItem(c,x.a)?x.b:x.a,L2=locOf(c,miss);if(L2&&locOpen(c,L2.i))return {say:c.locations[L2.i].name+"에서 '"+itemName(c,miss)+"'"+"을(를) 찾아야 해.",tab:"scene",loc:L2.i,blink:true,pt:L2.s.uv&&!uvOn()?"#uvbtn":'[data-spot="'+miss+'"]'};}
      continue}
-   var L=locOf(c,id);if(!L)continue;
+   var L=locOf(c,id);if(!L){var tt=window.__rtTalkTip&&window.__rtTalkTip(c,id);if(tt)return tt;continue}
    if(!locOpen(c,L.i))return {say:"아직 못 가 본 장소가 있어. 사람들에게 안 물어본 질문을 끝까지 물어보면 길이 열릴 거야.",tab:"talk",pt:'[data-tab="talk"]'};
    if(L.s.uv&&!uvOn())return {say:c.locations[L.i].name+"에서 '자외선' 버튼을 켜고 살펴봐. 눈에 안 보이던 게 나타나.",tab:"scene",loc:L.i,pt:"#uvbtn"};
    return {say:c.locations[L.i].name+"에 아직 못 찾은 게 있어. 빨간 동그라미를 눌러 봐.",tab:"scene",loc:L.i,blink:true,pt:'[data-spot="'+id+'"]'}}
@@ -29043,7 +29044,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
   if(D&&g.debate&&g.debate.hold&&!g.debate.done)return {k:"hold",t:"회의 중단 · "+(g.debate.hold.task||"필요한 증거를 더 찾아요"),go:"scene"};
   var st=window.__spineState&&window.__spineState(c,g),next=st?st.th.filter(function(x){return !x.done})[0]:null;
   if(D&&!(g.debate&&g.debate.done)){
-   var ready=window.__rtReady&&window.__rtReady(c),miss=(D.need||[]).filter(function(id){return !has(g,id)}).length;
+   var ready=window.__rtReady&&window.__rtReady(c),miss=window.__rtGap?window.__rtGap(c,function(id){return has(g,id)},(g.debate&&g.debate.pi)||0).length:(D.need||[]).filter(function(id){return !has(g,id)}).length;
    if(ready)return {k:"meet",t:"원탁 회의를 열 수 있어요 · 지금 열어도, 더 조사해도 돼요",go:"final"};
    return {k:"inv",t:(next?next.t.title:"단서를 더 모아요"),sub:"회의까지 증거 "+miss+"개",go:"spine"};
   }
@@ -46319,6 +46320,31 @@ var __M={"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열�
   n.__s196=1;return true}catch(e){return false}}
  if(!vil()){document.addEventListener("DOMContentLoaded",vil);window.addEventListener("load",vil)}
  if(MISS.length)try{console.warn("story196 miss",MISS)}catch(e){}
+})();
+
+(function(){
+ if(window.__fix197)return;window.__fix197=1;
+ var MISS=window.__F197MISS=[];
+ function hasG(id){return !!G&&(G.found.indexOf(id)>=0||G.asked.indexOf(id)>=0)}
+ function modeOf(ph){if(ph.mode)return ph.mode;var s=(ph.stms||[]).filter(function(x){return x.k&&x.a&&x.a.length})[0];return s?s.k:"no"}
+ function answers(ph){var md=modeOf(ph),o=[];(ph.stms||[]).forEach(function(s){if(s.k===md&&s.a)s.a.forEach(function(id){if((ph.bullets||[]).indexOf(id)>=0&&o.indexOf(id)<0)o.push(id)})});return o}
+ window.__rtAnswers=answers;
+ function stuck(c,has,from){var D=window.DEBATE&&DEBATE[c.id];if(!D)return [];has=has||hasG;var out=[];
+  for(var i=from||0;i<D.phases.length;i++){var ph=D.phases[i];
+   if(ph.type==="adjourn"){if(!(ph.need||[]).every(has))break;continue}
+   if(ph.type!=="debate")continue;
+   var a=answers(ph);if(!a.length){if(MISS.indexOf(c.id+":"+i)<0)MISS.push(c.id+":"+i);continue}
+   if(!a.some(has))out.push({pi:i,cand:a})}
+  return out}
+ function pref(c,cand,has){/* 열린 장소의 증거 > 질문 > 조합 순으로 하나 고름 */
+  var sp=null,tk=null,cx=null;cand.forEach(function(id){if(/^cx_/.test(id)){cx=cx||id;return}if(typeof tById==="function"&&tById(c,id)){tk=tk||id;return}sp=sp||id});return sp||tk||cx||cand[0]}
+ window.__rtGap=function(c,has,from){var D=window.DEBATE&&DEBATE[c.id];if(!D)return [];has=has||hasG;
+  if(from==null)from=(G&&G.debate&&G.debate.pi)||0;
+  var o=(D.need||[]).filter(function(id){return !has(id)});
+  stuck(c,has,from).forEach(function(s){var r=pref(c,s.cand,has);if(o.indexOf(r)<0)o.push(r)});return o};
+ window.__rtStuck=function(c,ph){if(!ph||ph.type!=="debate")return false;var a=answers(ph);return a.length>0&&!a.some(hasG)};
+ window.__rtTalkTip=function(c,id){if(typeof tById!=="function")return null;var t=tById(c,id);if(!t)return null;var nm=(CAST[t.who]||{}).name||"";
+  return {say:nm+"에게 아직 안 물어본 게 있어. "+nm+"에게 가서 질문을 끝까지 들어 보자.",tab:"talk",who:t.who,pt:'[data-tab="talk"]'}};
 })();
 
 (function(){
