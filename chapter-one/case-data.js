@@ -51,7 +51,3 @@ const CHAPTER_CASE={id:'reception',lives:5,suspects:['karo','mungchi'],cast:PEOP
  ],final:[{question:'봉투를 숨긴 사람',answer:'mungchi',options:[['karo','까로'],['mungchi','뭉치']]},{question:'숨긴 장소',answer:'cabinet',options:[['window','창가'],['cabinet','보관함']]},{question:'숨긴 이유',answer:'hold',options:[['steal','돈을 빼돌리려고'],['hold','잘못된 명단의 지급을 멈추려고']]}]
 };
 Object.entries(TESTIMONIES).forEach(([id,t])=>CHAPTER_CASE.talk[t.who].push({id,q:t.q,a:t.a}));
-const CHAT={
- karo:[line('daram','늦으면 배달 기록에 남나요?'),line('karo','네. 그래서 서명을 받으면 끝났다고 생각하고 싶었어요.'),line('daram','확인한 것보다 더 많이 확인했다고 말한 거네요.',1,{actor:'daram'}),line('karo','그렇네요. 다음에는 받은 사람이 무엇을 확인했는지도 읽겠습니다.')],
- mungchi:[line('daram','전화할 때 할머니 이름이 빠졌다고 말했어요?'),line('mungchi','말했어요. 내일 담당자에게 다시 말하래요.',1),line('daram','그 답을 듣고 혼자 결정한 거예요?'),line('mungchi','다들 바빠 보였어요. 제가 해결해야 한다고 생각했어요.',2),line('daram','혼자 해결하려다가 다른 사람도 곤란해졌네요.',1,{actor:'daram'}),line('mungchi','네. 기다려 달라고 말하는 게, 숨기는 것보다 어려웠어요.',2)]
-};
