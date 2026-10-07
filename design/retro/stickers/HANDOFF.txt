@@ -1,0 +1,37 @@
+다람 탐정 · 도트 장식 스티커 14개
+
+개별 투명 PNG, 한 파일에 한 스티커, 글자 없음.
+게임 원본과 승인된 별빛 언덕·다람 파일은 수정하지 않았습니다.
+
+파일 목록
+lantern-lit.png       켜진 작은 랜턴
+books-stack.png       책 세 권 더미
+ink-quill.png         잉크병과 깃털 펜
+cat-sleeping.png      웅크리고 자는 고양이
+pin-red.png           빨간 압정
+pin-yellow.png        노란 압정
+pin-green.png         초록 압정
+pin-blue.png          파란 압정
+memo-yellow.png       찢어진 노란 메모지
+memo-white.png        찢어진 흰 메모지
+masking-tape.png      마스킹테이프 한 조각
+magnifier.png         돋보기
+ivy-left.png          왼쪽 위용 담쟁이 넝쿨
+ivy-right.png         오른쪽 위용 담쟁이 넝쿨
+
+미리보기
+정적 서버에서 /design/retro/stickers/를 엽니다.
+투명 격자·남색·크림색 바탕을 바꿔 보고, PNG를 각각 다운로드할 수 있습니다.
+
+적용 참고
+manifest.json의 size는 PNG 실제 크기입니다.
+visibleBounds는 [left, top, right, bottom]이며 알파 >10인 영역을 검사한 표시용 좌표입니다.
+원본 PNG의 픽셀을 잘라내거나 변경하지 않았습니다. SVG viewBox로 투명 여백을 제외한 범위를 표시합니다.
+suggestedDisplayBox는 작은 장식으로 표시할 때의 시작 크기 제안이며 정확한 픽셀 격자 보증값이 아닙니다.
+이미지에는 알파 채널과 충분한 투명 여백이 있으며 주요 그림이 파일 경계에서 잘리지 않는 것을 확인했습니다.
+원본 게임 적용 없이 별도 디자인 폴더에만 보관했습니다.
+
+그림 규격
+별빛 언덕과 다람의 도트 느낌을 참조한 생성 그림입니다.
+색 변화와 반투명 가장자리 일부가 남아 있으므로, 정확한 26색·공통 픽셀 격자를 보증하는 최종 도트 규격은 아닙니다.
+CSS image-rendering:pixelated는 확대 표시 설정이며 PNG 픽셀이나 팔레트를 변환하지 않습니다.
