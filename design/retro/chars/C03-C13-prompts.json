@@ -1,0 +1,798 @@
+{
+  "tool": "built-in image_gen",
+  "referenceCommit": "cf84c4a4a99416e90b0e72312005d880db9e6255",
+  "sheets": [
+    {
+      "batch": "C03",
+      "key": "kkwak",
+      "name": "꽥순",
+      "design": "Yellow duck, blue scarf and small swimming shoulder bag, cream simple shirt and navy shorts; feathered wing-tip hands and orange webbed feet. Proud but secretly afraid of deep water. Basic brave cheerful; thinking wing under beak; emotion quietly nervous about family getting lost, no exaggerated tears.",
+      "emotion": "nervous",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nYellow duck, blue scarf and small swimming shoulder bag, cream simple shirt and navy shorts; feathered wing-tip hands and orange webbed feet. Proud but secretly afraid of deep water. Basic brave cheerful; thinking wing under beak; emotion quietly nervous about family getting lost, no exaggerated tears.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C03",
+      "key": "kongi",
+      "name": "콩이",
+      "design": "Wheat-golden dog with floppy ears and red scarf, cream shirt and simple green shorts, furry paws. Kind scent detective. Basic gentle bright; think paw at chin sniffing thoughtfully; emotion concerned sympathetic lowered eyebrows.",
+      "emotion": "worried",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nWheat-golden dog with floppy ears and red scarf, cream shirt and simple green shorts, furry paws. Kind scent detective. Basic gentle bright; think paw at chin sniffing thoughtfully; emotion concerned sympathetic lowered eyebrows.",
+      "editPrompts": [
+        "Use case: precise-object-edit. Edit target reference1. Remove ONLY the floating white sniff/swoosh mark beside thinking middle face. Preserve all three dog poses, clothing, animal features, palette and exact composition. Keep true transparent background, crisp coarse16bit pixel style. No additional text, effects, objects or blur."
+      ]
+    },
+    {
+      "batch": "C03",
+      "key": "owlgp",
+      "name": "부엉이 할아버지",
+      "design": "Elder brown owl, gray eyebrow feathers and round spectacles, worn olive/tan detective coat. Carry small STARLIGHT LANTERN as hand-held prop, pale cream light but no bloom/glow outside silhouette. Feather wing tips for hands, bird feet. Distinct from young Buri by gray feathers and long coat. Basic kind knowing; think wing under beak; emotion wistful remembering old mistakes.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nElder brown owl, gray eyebrow feathers and round spectacles, worn olive/tan detective coat. Carry small STARLIGHT LANTERN as hand-held prop, pale cream light but no bloom/glow outside silhouette. Feather wing tips for hands, bird feet. Distinct from young Buri by gray feathers and long coat. Basic kind knowing; think wing under beak; emotion wistful remembering old mistakes.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C04",
+      "key": "grandma",
+      "name": "토끼 할머니",
+      "design": "Warm elderly gray-white rabbit, long ears and round glasses, dusty rose modest dress with floral apron (few simple large flower shapes). All three poses warm kindly, never suspicious. Basic gentle smile; think soft paw at chin; emotion tender pleased smile, no ominous shade.",
+      "emotion": "smile",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nWarm elderly gray-white rabbit, long ears and round glasses, dusty rose modest dress with floral apron (few simple large flower shapes). All three poses warm kindly, never suspicious. Basic gentle smile; think soft paw at chin; emotion tender pleased smile, no ominous shade.",
+      "editPrompts": [
+        "Use case: precise-object-edit. Edit target reference1. Remove ONLY the floating red laugh rays around right rabbit face. Preserve friendly warm smile and all three poses, clothing, palette and exact composition. Keep true transparent background, crisp coarse16bit pixel style. No additional text, effects, objects or blur."
+      ]
+    },
+    {
+      "batch": "C04",
+      "key": "nabi",
+      "name": "나비",
+      "design": "White female cat, small GOLD bell necklace, navy sailor uniform and skirt, furry paws and white cat tail. Basic prim aloof; think paw beneath chin; emotion lonely downcast but restrained.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nWhite female cat, small GOLD bell necklace, navy sailor uniform and skirt, furry paws and white cat tail. Basic prim aloof; think paw beneath chin; emotion lonely downcast but restrained.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C04",
+      "key": "shadow",
+      "name": "검은 망토",
+      "design": "Mysterious LYNX figure, face COMPLETELY HIDDEN in solid dark opaque hood: NO eyes, NO mouth or visible face in any pose. Only lynx ear-tuft silhouette visible at hood top. Black cloak with BLUE lining and BRONZE buttons as clues. Furred paw only for thoughtful gesture under hidden chin. Basic quiet stance; think paw at chin; emotion tense shoulders and clasped paws, still face hidden.",
+      "emotion": "tense",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nMysterious LYNX figure, face COMPLETELY HIDDEN in solid dark opaque hood: NO eyes, NO mouth or visible face in any pose. Only lynx ear-tuft silhouette visible at hood top. Black cloak with BLUE lining and BRONZE buttons as clues. Furred paw only for thoughtful gesture under hidden chin. Basic quiet stance; think paw at chin; emotion tense shoulders and clasped paws, still face hidden.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C05",
+      "key": "bami",
+      "name": "밤이",
+      "design": "Purple BAT girl with entirely bat face, pointed large bat ears, folded membranous wings and asymmetric dark plum hood, modest cream top and charcoal skirt. No human hands: small bat paws/wing tips. Basic cynical half-lidded; think paw at chin; emotion quietly hurt, mouth small, not evil.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, sniff marks, comic effect strokes, sparkles or sweat.\nPurple BAT girl with entirely bat face, pointed large bat ears, folded membranous wings and asymmetric dark plum hood, modest cream top and charcoal skirt. No human hands: small bat paws/wing tips. Basic cynical half-lidded; think paw at chin; emotion quietly hurt, mouth small, not evil.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C05",
+      "key": "ppul",
+      "name": "뿔이 촌장",
+      "design": "Adult GOAT mayor with curved horns, light taupe fur and short animal chin tuft, dignified burgundy mayor formal coat, cream collar, VAULT KEY on neck chain. Animal hooves/paws not human hands. Basic self-important; think hoof under chin; emotion embarrassed loss of face.",
+      "emotion": "embarrassed",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, sniff marks, comic effect strokes, sparkles or sweat.\nAdult GOAT mayor with curved horns, light taupe fur and short animal chin tuft, dignified burgundy mayor formal coat, cream collar, VAULT KEY on neck chain. Animal hooves/paws not human hands. Basic self-important; think hoof under chin; emotion embarrassed loss of face.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C05",
+      "key": "seol",
+      "name": "설이",
+      "design": "White CRANE with RED crown patch on top of head, long bird beak, moderate neck length adapted to Daram proportions, moonlight pale blue-gray shawl over simple slate dress, wing-tip hands, long bird feet. Basic serene slow precise bell keeper; think wing at beak; emotion gentle concern.",
+      "emotion": "worried",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, sniff marks, comic effect strokes, sparkles or sweat.\nWhite CRANE with RED crown patch on top of head, long bird beak, moderate neck length adapted to Daram proportions, moonlight pale blue-gray shawl over simple slate dress, wing-tip hands, long bird feet. Basic serene slow precise bell keeper; think wing at beak; emotion gentle concern.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C06",
+      "key": "sling",
+      "name": "슬링",
+      "design": "Honey-colored WEASEL mail carrier, elongated weasel muzzle and short rounded ears, neat teal postal vest with cream shirt and charcoal trousers, POSTAL SHOULDER BAG, tidy gloves shaped as animal paws not human fingers. Basic excessively polite smile; think paw under chin; emotion strained nervous smile under questioning.",
+      "emotion": "nervous",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, sniff marks, comic effect strokes, sparkles or sweat.\nHoney-colored WEASEL mail carrier, elongated weasel muzzle and short rounded ears, neat teal postal vest with cream shirt and charcoal trousers, POSTAL SHOULDER BAG, tidy gloves shaped as animal paws not human fingers. Basic excessively polite smile; think paw under chin; emotion strained nervous smile under questioning.",
+      "editPrompts": [
+        "Use case: precise-object-edit. Edit target reference1. Replace ONLY the huge curled squirrel tails with slender elongated weasel tails tapering to a small tip. Also give compact WEASEL muzzle and small rounded ears, keep face proportions, postal outfit, bag, poses and all colors. Keep true transparent background, crisp coarse16bit pixel style. No additional text, effects, objects or blur."
+      ]
+    },
+    {
+      "batch": "C06",
+      "key": "tok",
+      "name": "톡",
+      "design": "MOLE clockmaker, charcoal-brown fur, compact mole animal snout and tiny animal eyes, magnifying loupe above one eye, oil-stained blue-gray work overalls. Broad clawed mole paws. Basic listening attentive; think claw paw under chin; emotion quietly worried inventor.",
+      "emotion": "worried",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, sniff marks, comic effect strokes, sparkles or sweat.\nMOLE clockmaker, charcoal-brown fur, compact mole animal snout and tiny animal eyes, magnifying loupe above one eye, oil-stained blue-gray work overalls. Broad clawed mole paws. Basic listening attentive; think claw paw under chin; emotion quietly worried inventor.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C07",
+      "key": "nero",
+      "name": "네로",
+      "design": "Adult LYNX, charcoal slate gray fur, distinct black ear tufts, cream short feline muzzle, slightly tired narrow eyes. Black cloak BLUE lining and worn BRASS button; full face visible. Cold but exhausted, not cartoon villain. Basic restrained neutral; think furry paw at chin; emotion grief/regret in softly lowered eyebrows.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, sniff marks, comic effect strokes, sparkles or sweat.\nAdult LYNX, charcoal slate gray fur, distinct black ear tufts, cream short feline muzzle, slightly tired narrow eyes. Black cloak BLUE lining and worn BRASS button; full face visible. Cold but exhausted, not cartoon villain. Basic restrained neutral; think furry paw at chin; emotion grief/regret in softly lowered eyebrows.",
+      "editPrompts": [
+        "Use case: precise-object-edit. Edit target reference1. Replace ONLY all large tails with a SHORT small bobtail appropriate to a LYNX. Preserve gray lynx face with black ear tufts, tired eyes, black cloak with blue lining and bronze buttons, poses, composition and palette. Keep true transparent background, crisp coarse16bit pixel style. No additional text, effects, objects or blur."
+      ]
+    },
+    {
+      "batch": "C07",
+      "key": "momo",
+      "name": "모모 관장",
+      "design": "Cream-colored adult GOAT female museum curator, small horns, mauve ribbon, muted lavender dress and apron, wicker COOKIE BASKET. Entire animal head, fur/hoof paws. Basic welcoming smile; think paw under chin basket in other hand; emotion lonely ashamed small sad mouth.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nCream-colored adult GOAT female museum curator, small horns, mauve ribbon, muted lavender dress and apron, wicker COOKIE BASKET. Entire animal head, fur/hoof paws. Basic welcoming smile; think paw under chin basket in other hand; emotion lonely ashamed small sad mouth.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C07",
+      "key": "yeoni",
+      "name": "여니",
+      "design": "Orange FOX female with white muzzle and dark ear tips, TEAL ribbon, simple cream blouse and muted teal skirt, GIFT BAG by side, bushy fox tail. Basic warm secretive smile; think paw at chin; emotion gently bashful when surprise exposed.",
+      "emotion": "shy",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nOrange FOX female with white muzzle and dark ear tips, TEAL ribbon, simple cream blouse and muted teal skirt, GIFT BAG by side, bushy fox tail. Basic warm secretive smile; think paw at chin; emotion gently bashful when surprise exposed.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C08",
+      "key": "piko",
+      "name": "피코",
+      "design": "TEAL PEACOCK artist with small feather crown, elegant simplified folded long tail with very few broad eye spots, plum artist scarf, cream shirt and slate vest/trousers, wing tip hands and bird feet. Basic proud elegant; think wing at beak; emotion self-conscious embarrassed, no gag tears.",
+      "emotion": "embarrassed",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nTEAL PEACOCK artist with small feather crown, elegant simplified folded long tail with very few broad eye spots, plum artist scarf, cream shirt and slate vest/trousers, wing tip hands and bird feet. Basic proud elegant; think wing at beak; emotion self-conscious embarrassed, no gag tears.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C08",
+      "key": "ttadak",
+      "name": "따닥",
+      "design": "WOODPECKER with RED crest, cream face and charcoal beak, black-white STRIPED WINGS, simple olive carpentry vest and dark shorts, SMALL WOODEN HAMMER, wing-tip hands, bird feet. Basic alert lively; think wing beneath beak; emotion bashful after being caught greeting someone.",
+      "emotion": "shy",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nWOODPECKER with RED crest, cream face and charcoal beak, black-white STRIPED WINGS, simple olive carpentry vest and dark shorts, SMALL WOODEN HAMMER, wing-tip hands, bird feet. Basic alert lively; think wing beneath beak; emotion bashful after being caught greeting someone.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C08",
+      "key": "mungchi",
+      "name": "뭉치",
+      "design": "Teen PANDA son of Madam, black-white panda face and fur, PLUM BERET, tidy cream shirt and burgundy vest with dark trousers, WHITE GLOVES shaped as furry panda paws. Basic smug entitled; think paw at chin; emotion hurt uncertain under mother expectations, no villain caricature.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nTeen PANDA son of Madam, black-white panda face and fur, PLUM BERET, tidy cream shirt and burgundy vest with dark trousers, WHITE GLOVES shaped as furry panda paws. Basic smug entitled; think paw at chin; emotion hurt uncertain under mother expectations, no villain caricature.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C09",
+      "key": "bori",
+      "name": "보리",
+      "design": "Honey-brown BEAR, round shoulders, stocky but same Daram head/body ratio, blue-gray SUSPENDER WORK OVERALLS, cream shirt, fur paws and simple boots. Basic gentle sheepish grin; think paw under chin; emotion guilty bashful about secretly eating honey.",
+      "emotion": "shy",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nHoney-brown BEAR, round shoulders, stocky but same Daram head/body ratio, blue-gray SUSPENDER WORK OVERALLS, cream shirt, fur paws and simple boots. Basic gentle sheepish grin; think paw under chin; emotion guilty bashful about secretly eating honey.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C09",
+      "key": "madam",
+      "name": "백 부인",
+      "design": "Elegant adult PANDA woman, black-white panda fur and round ears, BLACK DRESS, plain PEARL necklace and WHITE GLOVES shaped animal paws, no human hairstyle. Basic polite controlled smile; think paw at chin; emotion controlled displeasure as composed smile tightens, not exaggerated evil.",
+      "emotion": "angry",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nElegant adult PANDA woman, black-white panda fur and round ears, BLACK DRESS, plain PEARL necklace and WHITE GLOVES shaped animal paws, no human hairstyle. Basic polite controlled smile; think paw at chin; emotion controlled displeasure as composed smile tightens, not exaggerated evil.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C09",
+      "key": "siluk",
+      "name": "실룩",
+      "design": "Older WEASEL coachman, warm gray-brown fur, flat brown COACHMAN CAP and worn LEATHER VEST over cream shirt and slate trousers, animal furry paws and boots. Basic tired delayed smile; think paw at chin; emotion resigned sadness about unpaid wages.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nOlder WEASEL coachman, warm gray-brown fur, flat brown COACHMAN CAP and worn LEATHER VEST over cream shirt and slate trousers, animal furry paws and boots. Basic tired delayed smile; think paw at chin; emotion resigned sadness about unpaid wages.",
+      "editPrompts": [
+        "Use case: precise-object-edit. Edit target reference1. Replace ONLY all huge curled squirrel tails with slender long tapered WEASEL tails. Preserve worn coachman cap, leather vest, gray elder face, poses, outlines, layout and palette. Keep true transparent background, crisp coarse16bit pixel style. No additional text, effects, objects or blur."
+      ]
+    },
+    {
+      "batch": "C10",
+      "key": "nubi",
+      "name": "누비 아주머니",
+      "design": "Warm middle-aged DUCK innkeeper, soft warm yellow feathers and orange beak, cream blouse and plum skirt, blue-gray apron with a few simple SNOWFLAKE shapes, broad feathered WING TIP hands and webbed feet. Basic hearty warm smile; think wing beneath beak; emotion concerned motherly care, never sinister.",
+      "emotion": "worried",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Warm middle-aged DUCK innkeeper, soft warm yellow feathers and orange beak, cream blouse and plum skirt, blue-gray apron with a few simple SNOWFLAKE shapes, broad feathered WING TIP hands and webbed feet. Basic hearty warm smile; think wing beneath beak; emotion concerned motherly care, never sinister.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C10",
+      "key": "musoe",
+      "name": "무쇠 할아버지",
+      "design": "Elder GRAY BEAR, gray muzzle and small round ears, MINER GOGGLES on forehead, iron-gray WORK OVERALLS and boots, furry paws. Basic stoic tired elder; think paw beneath chin; emotion tender sadness remembering closed mine, no streaming tears.",
+      "emotion": "sad",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Elder GRAY BEAR, gray muzzle and small round ears, MINER GOGGLES on forehead, iron-gray WORK OVERALLS and boots, furry paws. Basic stoic tired elder; think paw beneath chin; emotion tender sadness remembering closed mine, no streaming tears.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C10",
+      "key": "seori",
+      "name": "서리 검사원",
+      "design": "Gray GOAT inspector, small curved horns and compact goat muzzle, rigid regulation GRAY COAT, cream collar, STAMP BAG; hooved animal paws. Basic severe official; think paw at chin; emotion flustered when asked to cite regulation, no exaggerated sweat.",
+      "emotion": "nervous",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Gray GOAT inspector, small curved horns and compact goat muzzle, rigid regulation GRAY COAT, cream collar, STAMP BAG; hooved animal paws. Basic severe official; think paw at chin; emotion flustered when asked to cite regulation, no exaggerated sweat.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C11",
+      "key": "somi",
+      "name": "솜이",
+      "design": "FLYING SQUIRREL girl, warm light brown fur, purple ribbon, modest cream tunic and mauve shorts, GLIDING CAPE and small folded gliding membranes between limbs. Entire squirrel face, animal paws, no human hair. Distinct from Daram: no deerstalker, purple cape and different clothes. Basic adventurous smile; think paw at chin; emotion startled anxious at darkness.",
+      "emotion": "nervous",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. FLYING SQUIRREL girl, warm light brown fur, purple ribbon, modest cream tunic and mauve shorts, GLIDING CAPE and small folded gliding membranes between limbs. Entire squirrel face, animal paws, no human hair. Distinct from Daram: no deerstalker, purple cape and different clothes. Basic adventurous smile; think paw at chin; emotion startled anxious at darkness.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C11",
+      "key": "ubak",
+      "name": "우박",
+      "design": "Young MOLE apprentice, warm gray fur and compact mole snout, oversized charcoal COAT with sleeves clearly rolled THREE times, simple brown boots and broad clawed mole paws. Basic shy obedient; think paw at chin; emotion trembling uncertain lowered gaze under supervisor pressure, restrained.",
+      "emotion": "nervous",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Young MOLE apprentice, warm gray fur and compact mole snout, oversized charcoal COAT with sleeves clearly rolled THREE times, simple brown boots and broad clawed mole paws. Basic shy obedient; think paw at chin; emotion trembling uncertain lowered gaze under supervisor pressure, restrained.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C11",
+      "key": "guseul",
+      "name": "구슬",
+      "design": "Young GRAY RACCOON apprentice jeweler, pale gray fur, black mask, small round ears; simple blue vest/cream shirt/dark shorts, JEWEL POLISHING CLOTH and SMALL MAGNIFIER, furry animal paws. Distinct from Papa and Wanggu: no hat, no orange, no trenchcoat, youthful slim clothes. Basic timid earnest; think paw at chin; emotion frightened/apologetic by loud voice.",
+      "emotion": "nervous",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Young GRAY RACCOON apprentice jeweler, pale gray fur, black mask, small round ears; simple blue vest/cream shirt/dark shorts, JEWEL POLISHING CLOTH and SMALL MAGNIFIER, furry animal paws. Distinct from Papa and Wanggu: no hat, no orange, no trenchcoat, youthful slim clothes. Basic timid earnest; think paw at chin; emotion frightened/apologetic by loud voice.",
+      "editPrompts": [
+        "Use case: precise-object-edit. Reference1 edit target. Replace ONLY all enormous curled squirrel tails with modest length straight tapering RACCOON ringed tails held low. Preserve youthful gray raccoon face, blue vest, magnifier and polishing cloth, animal paws, all poses and pixel style. Keep true transparent background. No new text/effects. All poses on same feet baseline."
+      ]
+    },
+    {
+      "batch": "C12",
+      "key": "lamplighter",
+      "name": "등불지기 아저씨",
+      "design": "Adult OTTER (NOT rabbit), gray-brown fur, small round otter ears and short whiskered otter muzzle, long tapered otter tail, worn tan work coat and old muted teal SCARF, LONG LAMPLIGHTING POLE held upright. Entire otter face and furry paws, absolutely NO long rabbit ears. Basic quietly kind; think paw under chin pole held other paw; emotion concerned by unlit street.",
+      "emotion": "worried",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Adult OTTER (NOT rabbit), gray-brown fur, small round otter ears and short whiskered otter muzzle, long tapered otter tail, worn tan work coat and old muted teal SCARF, LONG LAMPLIGHTING POLE held upright. Entire otter face and furry paws, absolutely NO long rabbit ears. Basic quietly kind; think paw under chin pole held other paw; emotion concerned by unlit street.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C12",
+      "key": "badook",
+      "name": "바둑이",
+      "design": "Adult SPOTTED DOG night watchman, white fur with black patches, floppy ears, navy NIGHT WATCH CAP and olive-gray patrol vest, WHISTLE around neck, fur paws and boots. Basic confident watchman; think paw beneath chin; emotion awkward when exact time challenged.",
+      "emotion": "embarrassed",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Adult SPOTTED DOG night watchman, white fur with black patches, floppy ears, navy NIGHT WATCH CAP and olive-gray patrol vest, WHISTLE around neck, fur paws and boots. Basic confident watchman; think paw beneath chin; emotion awkward when exact time challenged.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C12",
+      "key": "eunho",
+      "name": "은호 사장",
+      "design": "Adult WHITE FOX jeweler, GOLD-RIM ROUND GLASSES, muted dark green VEST with SILVER BUTTONS and cream shirt/dark trousers, white bushy fox tail and furry paws. Basic generous dignified; think paw under chin; emotion quietly guarded worry when asked about patron.",
+      "emotion": "worried",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Adult WHITE FOX jeweler, GOLD-RIM ROUND GLASSES, muted dark green VEST with SILVER BUTTONS and cream shirt/dark trousers, white bushy fox tail and furry paws. Basic generous dignified; think paw under chin; emotion quietly guarded worry when asked about patron.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C13",
+      "key": "tori",
+      "name": "토리",
+      "design": "Young white RABBIT, long ears with tips folded, GREEN CARDIGAN with small CARROT BROOCH, cream blouse and dusty brown skirt, furry rabbit paws. Basic shy gentle; think paw at chin; emotion stage-fright nervous small mouth, no melodramatic tears.",
+      "emotion": "nervous",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Young white RABBIT, long ears with tips folded, GREEN CARDIGAN with small CARROT BROOCH, cream blouse and dusty brown skirt, furry rabbit paws. Basic shy gentle; think paw at chin; emotion stage-fright nervous small mouth, no melodramatic tears.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C13",
+      "key": "mom",
+      "name": "엄마",
+      "design": "Adult mother SQUIRREL scientist, ordinary squirrel NO biological gliding membranes. Warm caramel fur and eyes resembling Daram, rounded GOGGLES on forehead, travel CLOAK, MAP TUBE shoulder strap and FOLDED FABRIC WING gliding apparatus strapped to back (simple wooden frame with pale canvas, not bird wings). Basic soft motherly smile. Middle thinking LOOKING AT UNROLLED MAP rather than paw at chin. Right reunion eyes with restrained tear moisture and soft relieved smile.",
+      "emotion": "cry",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating expression effects or symbols. Only squirrels have curled tails. Adult mother SQUIRREL scientist, ordinary squirrel NO biological gliding membranes. Warm caramel fur and eyes resembling Daram, rounded GOGGLES on forehead, travel CLOAK, MAP TUBE shoulder strap and FOLDED FABRIC WING gliding apparatus strapped to back (simple wooden frame with pale canvas, not bird wings). Basic soft motherly smile. Middle thinking LOOKING AT UNROLLED MAP rather than paw at chin. Right reunion eyes with restrained tear moisture and soft relieved smile.",
+      "editPrompts": []
+    },
+    {
+      "batch": "C06",
+      "key": "luka",
+      "name": "루카 검사관",
+      "emotion": "nervous",
+      "design": "Luka is Nero disguised as inspector. Gray lynx, black ear tufts and same tired eyes, round spectacles, slate inspector uniform, bronze badge and document satchel.",
+      "prompt": "Use case: stylized-concept. Create ONE character in THREE complete full-body poses in a horizontal row on TRUE transparent RGBA. Reference 1 approved Daram: match EXACT visual coarse square pixel density, simple navy stepped outlines, head one third of body, simple dark rectangular pupil with one small white highlight, broad 3-4 shade clusters, bright clean midtones. Reference2 palette only. No text/background/shadow/gloss/blur/realistic fur/fine folds/anime eyes/human faces/human hair/human fingers. Bipedal fully animal head and paw/feather hands, clothing. Generous gaps; same size, exact common feet baseline. Slight 3/4 body view. Left basic; middle thinking paw or wing beneath chin (unless map specified); right emotional. All tails/props/ears/feet inside canvas. Eye expression readable at 96px portrait, body at 90px. Landscape sprite sheet.\nNo floating emotion symbols, effects or sweat. Species anatomy must be correct; only squirrels have huge curled squirrel tails, other tails must belong to their species.\nLuka is exactly NERO in reference3 disguised as an inspector. Same gray lynx face, cream muzzle, black ear tufts, tired eyes and face proportions, NOT a new person. Replace cloak with neat slate INSPECTOR UNIFORM coat, round spectacles, small plain bronze inspector badge and document satchel. Basic procedural controlled; think furry paw under chin; emotion guarded uneasy when past questioned. No writing.",
+      "editPrompts": [
+        "Use case: precise-object-edit. Reference1 edit target. Replace ONLY all large curled tails with SHORT small LYNX bobtails. Preserve gray face, black ear tufts, tired eyes, spectacles, inspector uniform, bronze badge, satchel, poses and pixel style. Keep true transparent background. No new text/effects. All poses on same feet baseline."
+      ]
+    }
+  ],
+  "faces": [
+    {
+      "batch": "C01",
+      "key": "papa",
+      "name": "아빠",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "smile"
+      ]
+    },
+    {
+      "batch": "C01",
+      "key": "rei",
+      "name": "레이",
+      "emotion": "smug",
+      "faces": [
+        "neutral",
+        "think",
+        "smug",
+        "pout"
+      ]
+    },
+    {
+      "batch": "C01",
+      "key": "karo",
+      "name": "까로",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C02",
+      "key": "buri",
+      "name": "부리",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C02",
+      "key": "wanggu",
+      "name": "왕구",
+      "emotion": "embarrassed",
+      "faces": [
+        "neutral",
+        "think",
+        "embarrassed",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C02",
+      "key": "doto",
+      "name": "도토",
+      "emotion": "embarrassed",
+      "faces": [
+        "neutral",
+        "think",
+        "embarrassed",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C03",
+      "key": "kkwak",
+      "name": "꽥순",
+      "design": "Yellow duck, blue scarf and small swimming shoulder bag, cream simple shirt and navy shorts; feathered wing-tip hands and orange webbed feet. Proud but secretly afraid of deep water. Basic brave cheerful; thinking wing under beak; emotion quietly nervous about family getting lost, no exaggerated tears.",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C03",
+      "key": "kongi",
+      "name": "콩이",
+      "design": "Wheat-golden dog with floppy ears and red scarf, cream shirt and simple green shorts, furry paws. Kind scent detective. Basic gentle bright; think paw at chin sniffing thoughtfully; emotion concerned sympathetic lowered eyebrows.",
+      "emotion": "worried",
+      "faces": [
+        "neutral",
+        "think",
+        "worried",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C03",
+      "key": "owlgp",
+      "name": "부엉이 할아버지",
+      "design": "Elder brown owl, gray eyebrow feathers and round spectacles, worn olive/tan detective coat. Carry small STARLIGHT LANTERN as hand-held prop, pale cream light but no bloom/glow outside silhouette. Feather wing tips for hands, bird feet. Distinct from young Buri by gray feathers and long coat. Basic kind knowing; think wing under beak; emotion wistful remembering old mistakes.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C04",
+      "key": "grandma",
+      "name": "토끼 할머니",
+      "design": "Warm elderly gray-white rabbit, long ears and round glasses, dusty rose modest dress with floral apron (few simple large flower shapes). All three poses warm kindly, never suspicious. Basic gentle smile; think soft paw at chin; emotion tender pleased smile, no ominous shade.",
+      "emotion": "smile",
+      "faces": [
+        "neutral",
+        "think",
+        "smile",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C04",
+      "key": "nabi",
+      "name": "나비",
+      "design": "White female cat, small GOLD bell necklace, navy sailor uniform and skirt, furry paws and white cat tail. Basic prim aloof; think paw beneath chin; emotion lonely downcast but restrained.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C04",
+      "key": "shadow",
+      "name": "검은 망토",
+      "design": "Mysterious LYNX figure, face COMPLETELY HIDDEN in solid dark opaque hood: NO eyes, NO mouth or visible face in any pose. Only lynx ear-tuft silhouette visible at hood top. Black cloak with BLUE lining and BRONZE buttons as clues. Furred paw only for thoughtful gesture under hidden chin. Basic quiet stance; think paw at chin; emotion tense shoulders and clasped paws, still face hidden.",
+      "emotion": "tense",
+      "faces": [
+        "neutral",
+        "think",
+        "tense",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C05",
+      "key": "bami",
+      "name": "밤이",
+      "design": "Purple BAT girl with entirely bat face, pointed large bat ears, folded membranous wings and asymmetric dark plum hood, modest cream top and charcoal skirt. No human hands: small bat paws/wing tips. Basic cynical half-lidded; think paw at chin; emotion quietly hurt, mouth small, not evil.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C05",
+      "key": "ppul",
+      "name": "뿔이 촌장",
+      "design": "Adult GOAT mayor with curved horns, light taupe fur and short animal chin tuft, dignified burgundy mayor formal coat, cream collar, VAULT KEY on neck chain. Animal hooves/paws not human hands. Basic self-important; think hoof under chin; emotion embarrassed loss of face.",
+      "emotion": "embarrassed",
+      "faces": [
+        "neutral",
+        "think",
+        "embarrassed",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C05",
+      "key": "seol",
+      "name": "설이",
+      "design": "White CRANE with RED crown patch on top of head, long bird beak, moderate neck length adapted to Daram proportions, moonlight pale blue-gray shawl over simple slate dress, wing-tip hands, long bird feet. Basic serene slow precise bell keeper; think wing at beak; emotion gentle concern.",
+      "emotion": "worried",
+      "faces": [
+        "neutral",
+        "think",
+        "worried",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C06",
+      "key": "sling",
+      "name": "슬링",
+      "design": "Honey-colored WEASEL mail carrier, elongated weasel muzzle and short rounded ears, neat teal postal vest with cream shirt and charcoal trousers, POSTAL SHOULDER BAG, tidy gloves shaped as animal paws not human fingers. Basic excessively polite smile; think paw under chin; emotion strained nervous smile under questioning.",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C06",
+      "key": "tok",
+      "name": "톡",
+      "design": "MOLE clockmaker, charcoal-brown fur, compact mole animal snout and tiny animal eyes, magnifying loupe above one eye, oil-stained blue-gray work overalls. Broad clawed mole paws. Basic listening attentive; think claw paw under chin; emotion quietly worried inventor.",
+      "emotion": "worried",
+      "faces": [
+        "neutral",
+        "think",
+        "worried",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C07",
+      "key": "nero",
+      "name": "네로",
+      "design": "Adult LYNX, charcoal slate gray fur, distinct black ear tufts, cream short feline muzzle, slightly tired narrow eyes. Black cloak BLUE lining and worn BRASS button; full face visible. Cold but exhausted, not cartoon villain. Basic restrained neutral; think furry paw at chin; emotion grief/regret in softly lowered eyebrows.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C07",
+      "key": "momo",
+      "name": "모모 관장",
+      "design": "Cream-colored adult GOAT female museum curator, small horns, mauve ribbon, muted lavender dress and apron, wicker COOKIE BASKET. Entire animal head, fur/hoof paws. Basic welcoming smile; think paw under chin basket in other hand; emotion lonely ashamed small sad mouth.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C07",
+      "key": "yeoni",
+      "name": "여니",
+      "design": "Orange FOX female with white muzzle and dark ear tips, TEAL ribbon, simple cream blouse and muted teal skirt, GIFT BAG by side, bushy fox tail. Basic warm secretive smile; think paw at chin; emotion gently bashful when surprise exposed.",
+      "emotion": "shy",
+      "faces": [
+        "neutral",
+        "think",
+        "shy",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C08",
+      "key": "piko",
+      "name": "피코",
+      "design": "TEAL PEACOCK artist with small feather crown, elegant simplified folded long tail with very few broad eye spots, plum artist scarf, cream shirt and slate vest/trousers, wing tip hands and bird feet. Basic proud elegant; think wing at beak; emotion self-conscious embarrassed, no gag tears.",
+      "emotion": "embarrassed",
+      "faces": [
+        "neutral",
+        "think",
+        "embarrassed",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C08",
+      "key": "ttadak",
+      "name": "따닥",
+      "design": "WOODPECKER with RED crest, cream face and charcoal beak, black-white STRIPED WINGS, simple olive carpentry vest and dark shorts, SMALL WOODEN HAMMER, wing-tip hands, bird feet. Basic alert lively; think wing beneath beak; emotion bashful after being caught greeting someone.",
+      "emotion": "shy",
+      "faces": [
+        "neutral",
+        "think",
+        "shy",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C08",
+      "key": "mungchi",
+      "name": "뭉치",
+      "design": "Teen PANDA son of Madam, black-white panda face and fur, PLUM BERET, tidy cream shirt and burgundy vest with dark trousers, WHITE GLOVES shaped as furry panda paws. Basic smug entitled; think paw at chin; emotion hurt uncertain under mother expectations, no villain caricature.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C09",
+      "key": "bori",
+      "name": "보리",
+      "design": "Honey-brown BEAR, round shoulders, stocky but same Daram head/body ratio, blue-gray SUSPENDER WORK OVERALLS, cream shirt, fur paws and simple boots. Basic gentle sheepish grin; think paw under chin; emotion guilty bashful about secretly eating honey.",
+      "emotion": "shy",
+      "faces": [
+        "neutral",
+        "think",
+        "shy",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C09",
+      "key": "madam",
+      "name": "백 부인",
+      "design": "Elegant adult PANDA woman, black-white panda fur and round ears, BLACK DRESS, plain PEARL necklace and WHITE GLOVES shaped animal paws, no human hairstyle. Basic polite controlled smile; think paw at chin; emotion controlled displeasure as composed smile tightens, not exaggerated evil.",
+      "emotion": "angry",
+      "faces": [
+        "neutral",
+        "think",
+        "angry",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C09",
+      "key": "siluk",
+      "name": "실룩",
+      "design": "Older WEASEL coachman, warm gray-brown fur, flat brown COACHMAN CAP and worn LEATHER VEST over cream shirt and slate trousers, animal furry paws and boots. Basic tired delayed smile; think paw at chin; emotion resigned sadness about unpaid wages.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C10",
+      "key": "nubi",
+      "name": "누비 아주머니",
+      "design": "Warm middle-aged DUCK innkeeper, soft warm yellow feathers and orange beak, cream blouse and plum skirt, blue-gray apron with a few simple SNOWFLAKE shapes, broad feathered WING TIP hands and webbed feet. Basic hearty warm smile; think wing beneath beak; emotion concerned motherly care, never sinister.",
+      "emotion": "worried",
+      "faces": [
+        "neutral",
+        "think",
+        "worried",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C10",
+      "key": "musoe",
+      "name": "무쇠 할아버지",
+      "design": "Elder GRAY BEAR, gray muzzle and small round ears, MINER GOGGLES on forehead, iron-gray WORK OVERALLS and boots, furry paws. Basic stoic tired elder; think paw beneath chin; emotion tender sadness remembering closed mine, no streaming tears.",
+      "emotion": "sad",
+      "faces": [
+        "neutral",
+        "think",
+        "sad",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C10",
+      "key": "seori",
+      "name": "서리 검사원",
+      "design": "Gray GOAT inspector, small curved horns and compact goat muzzle, rigid regulation GRAY COAT, cream collar, STAMP BAG; hooved animal paws. Basic severe official; think paw at chin; emotion flustered when asked to cite regulation, no exaggerated sweat.",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C11",
+      "key": "somi",
+      "name": "솜이",
+      "design": "FLYING SQUIRREL girl, warm light brown fur, purple ribbon, modest cream tunic and mauve shorts, GLIDING CAPE and small folded gliding membranes between limbs. Entire squirrel face, animal paws, no human hair. Distinct from Daram: no deerstalker, purple cape and different clothes. Basic adventurous smile; think paw at chin; emotion startled anxious at darkness.",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C11",
+      "key": "ubak",
+      "name": "우박",
+      "design": "Young MOLE apprentice, warm gray fur and compact mole snout, oversized charcoal COAT with sleeves clearly rolled THREE times, simple brown boots and broad clawed mole paws. Basic shy obedient; think paw at chin; emotion trembling uncertain lowered gaze under supervisor pressure, restrained.",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C11",
+      "key": "guseul",
+      "name": "구슬",
+      "design": "Young GRAY RACCOON apprentice jeweler, pale gray fur, black mask, small round ears; simple blue vest/cream shirt/dark shorts, JEWEL POLISHING CLOTH and SMALL MAGNIFIER, furry animal paws. Distinct from Papa and Wanggu: no hat, no orange, no trenchcoat, youthful slim clothes. Basic timid earnest; think paw at chin; emotion frightened/apologetic by loud voice.",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C12",
+      "key": "lamplighter",
+      "name": "등불지기 아저씨",
+      "design": "Adult OTTER (NOT rabbit), gray-brown fur, small round otter ears and short whiskered otter muzzle, long tapered otter tail, worn tan work coat and old muted teal SCARF, LONG LAMPLIGHTING POLE held upright. Entire otter face and furry paws, absolutely NO long rabbit ears. Basic quietly kind; think paw under chin pole held other paw; emotion concerned by unlit street.",
+      "emotion": "worried",
+      "faces": [
+        "neutral",
+        "think",
+        "worried",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C12",
+      "key": "badook",
+      "name": "바둑이",
+      "design": "Adult SPOTTED DOG night watchman, white fur with black patches, floppy ears, navy NIGHT WATCH CAP and olive-gray patrol vest, WHISTLE around neck, fur paws and boots. Basic confident watchman; think paw beneath chin; emotion awkward when exact time challenged.",
+      "emotion": "embarrassed",
+      "faces": [
+        "neutral",
+        "think",
+        "embarrassed",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C12",
+      "key": "eunho",
+      "name": "은호 사장",
+      "design": "Adult WHITE FOX jeweler, GOLD-RIM ROUND GLASSES, muted dark green VEST with SILVER BUTTONS and cream shirt/dark trousers, white bushy fox tail and furry paws. Basic generous dignified; think paw under chin; emotion quietly guarded worry when asked about patron.",
+      "emotion": "worried",
+      "faces": [
+        "neutral",
+        "think",
+        "worried",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C13",
+      "key": "tori",
+      "name": "토리",
+      "design": "Young white RABBIT, long ears with tips folded, GREEN CARDIGAN with small CARROT BROOCH, cream blouse and dusty brown skirt, furry rabbit paws. Basic shy gentle; think paw at chin; emotion stage-fright nervous small mouth, no melodramatic tears.",
+      "emotion": "nervous",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C13",
+      "key": "mom",
+      "name": "엄마",
+      "design": "Adult mother SQUIRREL scientist, ordinary squirrel NO biological gliding membranes. Warm caramel fur and eyes resembling Daram, rounded GOGGLES on forehead, travel CLOAK, MAP TUBE shoulder strap and FOLDED FABRIC WING gliding apparatus strapped to back (simple wooden frame with pale canvas, not bird wings). Basic soft motherly smile. Middle thinking LOOKING AT UNROLLED MAP rather than paw at chin. Right reunion eyes with restrained tear moisture and soft relieved smile.",
+      "emotion": "cry",
+      "faces": [
+        "neutral",
+        "think",
+        "cry",
+        "shock"
+      ]
+    },
+    {
+      "batch": "C06",
+      "key": "luka",
+      "name": "루카 검사관",
+      "emotion": "nervous",
+      "design": "Luka is Nero disguised as inspector. Gray lynx, black ear tufts and same tired eyes, round spectacles, slate inspector uniform, bronze badge and document satchel.",
+      "faces": [
+        "neutral",
+        "think",
+        "nervous",
+        "shock"
+      ]
+    }
+  ]
+}
