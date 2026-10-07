@@ -1,0 +1,79 @@
+{
+  "batchId": "H01",
+  "assets": [
+    {
+      "id": "star-hill-evidence",
+      "batch": "H01",
+      "path": "design/retro/star-hill-evidence.png",
+      "refs": [
+        "/workspace/daaegame/design/retro/star-hill-enriched.png"
+      ],
+      "transparent": false,
+      "prompt": "Edit approved hill background, preserve SAME composition, pixel style, navy-purple checker-dither sky, crescent moon, distant village/window lights, central old iron lamp with UNLIT grey stone, right boulder/paper, far-right stone stairs. Keep visible square pixels and single-light discrete shades, NO photographic noise, soft bloom or realistic detail. 9:5 landscape. The mystery evidence is too obvious; refine physical context WITHOUT hiding it completely. Add exactly FOUR short plain wooden stakes loosely around central lamp connected by drooping YELLOW RESTRICTED-AREA TAPE, NO letters or markings, arranged as small boundary ring around lamp base, not crossing stone inside glass. Stakes and tape stay in mid-ground; front lower25% remains empty walkable grass. Black feather at lamp base should be HALF tucked into irregular short grass, only dark shaft/point and part of blade visible, not bright outlined. Make paper on boulder about 25% smaller than now, pin one corner down with SMALL flat grey pebble. Add comparable inconspicuous decorations: low old wooden bench toward left midground, a SMALL fallen plain wooden sign at grass near bench (no text), few acorn shells by base left, 2 sparse small flower clumps near side grass, 3 ordinary flat pebbles distributed near paper/base. Do not overfill scene: 8-12 grouped objects max, big simple shapes; no dense garden. Irregular sparse 2-3 green short grass patterns, not evenly spaced repeating clumps. Keep light clean green ground. Important central lamp/stone, feather patch and paper must remain recognizable after center9:5 crop to360x200; do not enlarge clues into collectible icons. No characters/animals, text, labels, UI. Retain original scene layout and all sky/village exactly in spirit, only ground/evidence setting changes.",
+      "source": "/workspace/generated_images/exec-a3226019-de01-4c41-be04-7d55baa1cf02.png",
+      "size": [
+        1680,
+        936
+      ],
+      "mode": "RGB",
+      "bytes": 1507788,
+      "sha256": "5be044db5f65670ddfe900a97cc17677c9d904cb0046042f0c06e0dccd0258d4",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        1680,
+        936
+      ],
+      "crop": [
+        0.0,
+        1.3333333333333144,
+        1680,
+        933.3333333333334
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalSize": [
+        360,
+        200
+      ],
+      "evidence": [
+        {
+          "spotId": "s2f_stone",
+          "evidenceId": "f2_fakestone",
+          "name": "등불 속 돌",
+          "point": [
+            180,
+            61
+          ]
+        },
+        {
+          "spotId": "s2f_feather",
+          "evidenceId": "f2_feather",
+          "name": "기둥 아래 깃털",
+          "point": [
+            157,
+            154
+          ]
+        },
+        {
+          "spotId": "f2_order",
+          "evidenceId": "f2_order",
+          "name": "바위 위 의뢰서",
+          "point": [
+            281,
+            131
+          ]
+        }
+      ]
+    }
+  ],
+  "strictRasterCompliant": false,
+  "runtimeReviewed": false
+}

@@ -1,0 +1,18 @@
+다람 탐정 · D02 그림 인계
+
+원본 PNG는 생성 도구 출력 그대로 복사했습니다. 원본 게임과 art/는 변경하지 않았습니다.
+이미지 생성은 완료, 사용자 승인 및 실제 게임 적용 검토는 별도입니다.
+미리보기: https://kkhkkh20-bit.github.io/daaegame/design/retro/production/
+manifest.json에 실제 크기·SHA256·투명도·x,y,width,height 좌표·프롬프트가 있습니다.
+엄격한 32픽셀 격자/128픽셀 납품 또는 26색 제한 충족으로 표시하지 마세요.
+화면 크기에 맞춘 축소·색상 정리·반투명 가장자리 정리는 게임 담당자가 사본에서 수행합니다.
+
+얼굴은 머리와 어깨의 공통 전체 캔버스를 96×96으로 최근접 축소합니다.
+표정별 불투명 경계를 각각 잘라 확대하면 얼굴 위치가 흔들립니다. 같은 인물은 같은 crop을 유지하세요.
+D02는 기존 D01 neutral/happy/think/smug와 함께 총 8표정입니다.
+C01/C02 전신 시트는 다른 채팅 원본을 chars/에 그대로 보관했습니다. 이 얼굴들은 별도 추가 납품입니다.
+
+design/retro/daram-face/shock.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 4e556d977dd6617519d510d3376222b349470062916f18fbe6c346d59c85176c
+design/retro/daram-face/angry.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 f4490118c7e5d1b337e2dccb58d280a1cea6d5df0847c4142cb148362adaba50
+design/retro/daram-face/sad.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 6272cecded768daeae5063fe1c2a5f8a3d105908d530394e15ee69e08aaa83a0
+design/retro/daram-face/cry.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 8b5400133485a1ff3e3c838efa6137c31e3a562b372875ec7d290506439f56d8
