@@ -1,28 +1,43 @@
 {
   "version": 1,
   "scope": "Actual generated art inventory; original game integration managed separately by Claude",
-  "count": 98,
+  "count": 259,
   "assets": [
     {
       "id": "star-hill-base",
       "kind": "background",
       "path": "design/retro/star-hill.png",
       "metadata": "design/retro/metadata.json",
-      "preview": "design/retro/"
+      "preview": "design/retro/",
+      "runtime": {
+        "connected": false,
+        "note": "H01(star-hill-evidence)로 대체됨",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "star-hill-enriched",
       "kind": "background",
       "path": "design/retro/star-hill-enriched.png",
       "metadata": "design/retro/star-hill-enriched.json",
-      "preview": "design/retro/hill.html"
+      "preview": "design/retro/hill.html",
+      "runtime": {
+        "connected": false,
+        "note": "H01(star-hill-evidence)로 대체됨",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-matched",
       "kind": "character",
       "path": "design/retro/daram-matched.png",
       "metadata": "design/retro/daram-matched.json",
-      "preview": "design/retro/daram.html"
+      "preview": "design/retro/daram.html",
+      "runtime": {
+        "connected": false,
+        "note": "그림체 기준 시트. 런타임은 정면 얼굴(det1) 사용",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "lantern-lit",
@@ -30,7 +45,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/lantern-lit.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/lantern-lit.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "books-stack",
@@ -38,7 +59,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/books-stack.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/books-stack.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "ink-quill",
@@ -46,7 +73,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/ink-quill.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/ink-quill.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "cat-sleeping",
@@ -54,7 +87,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/cat-sleeping.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/cat-sleeping.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "pin-red",
@@ -62,7 +101,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/pin-red.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/pin-red.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "pin-yellow",
@@ -70,7 +115,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/pin-yellow.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/pin-yellow.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "pin-green",
@@ -78,7 +129,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/pin-green.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/pin-green.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "pin-blue",
@@ -86,7 +143,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/pin-blue.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/pin-blue.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "memo-yellow",
@@ -94,7 +157,14 @@
       "kind": "sticker",
       "path": "design/retro/stickers/memo-yellow.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/memo-yellow.png",
+        "copyExists": true,
+        "connected": false,
+        "note": "찢어진 종이 메모. 사용자 피드백(\"메모가 너무 찢어져\")으로 줄 노트 CSS로 대체해 연결하지 않음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "memo-white",
@@ -102,7 +172,14 @@
       "kind": "sticker",
       "path": "design/retro/stickers/memo-white.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/memo-white.png",
+        "copyExists": true,
+        "connected": false,
+        "note": "찢어진 종이 메모. 사용자 피드백(\"메모가 너무 찢어져\")으로 줄 노트 CSS로 대체해 연결하지 않음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "masking-tape",
@@ -110,7 +187,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/masking-tape.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/masking-tape.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "magnifier",
@@ -118,7 +201,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/magnifier.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/magnifier.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "ivy-left",
@@ -126,7 +215,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/ivy-left.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/ivy-left.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "ivy-right",
@@ -134,7 +229,13 @@
       "kind": "sticker",
       "path": "design/retro/stickers/ivy-right.png",
       "metadata": "design/retro/stickers/manifest.json",
-      "preview": "design/retro/stickers/"
+      "preview": "design/retro/stickers/",
+      "runtime": {
+        "copy": "art/ui/ivy-right.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-shock",
@@ -146,7 +247,13 @@
       "handoff": "design/retro/production/HANDOFF-D02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/det1-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-angry",
@@ -158,7 +265,13 @@
       "handoff": "design/retro/production/HANDOFF-D02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/det1-angry.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-sad",
@@ -170,7 +283,13 @@
       "handoff": "design/retro/production/HANDOFF-D02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/det1-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-cry",
@@ -182,7 +301,13 @@
       "handoff": "design/retro/production/HANDOFF-D02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/det1-cry.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "star-hill-evidence",
@@ -194,7 +319,13 @@
       "handoff": "design/retro/production/HANDOFF-H01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/fall-hill.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "papa-neutral",
@@ -206,7 +337,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/papa-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "rei-neutral",
@@ -218,7 +355,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/rei-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "karo-neutral",
@@ -230,7 +373,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/karo-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "buri-neutral",
@@ -242,7 +391,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/buri-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "wanggu-neutral",
@@ -254,7 +409,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/wanggu-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "doto-neutral",
@@ -266,7 +427,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/doto-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "title-bg",
@@ -278,7 +445,13 @@
       "handoff": "design/retro/production/HANDOFF-T01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/ui/title-bg.jpg",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-investigate",
@@ -290,7 +463,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/investigate.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-move",
@@ -302,7 +481,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/move.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-evidence",
@@ -314,7 +499,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/evidence.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-notebook",
@@ -326,7 +517,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/notebook.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-hint",
@@ -338,7 +535,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/hint.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-record",
@@ -350,7 +553,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/record.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-memo",
@@ -362,7 +571,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/memo.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-present",
@@ -374,7 +589,13 @@
       "handoff": "design/retro/production/HANDOFF-I01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/present.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "papa-think",
@@ -386,7 +607,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/papa-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "papa-sad",
@@ -398,7 +625,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/papa-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "papa-smile",
@@ -410,7 +643,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/papa-smile.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "rei-smug",
@@ -422,7 +661,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/rei-smug.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "rei-think",
@@ -434,7 +679,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/rei-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "rei-pout",
@@ -446,7 +697,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/rei-pout.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "karo-nervous",
@@ -458,7 +715,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/karo-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "karo-think",
@@ -470,7 +733,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/karo-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "karo-shock",
@@ -482,7 +751,13 @@
       "handoff": "design/retro/production/HANDOFF-F01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/karo-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "buri-think",
@@ -494,7 +769,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/buri-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "buri-sad",
@@ -506,7 +787,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/buri-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "buri-shock",
@@ -518,7 +805,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/buri-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "wanggu-think",
@@ -530,7 +823,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/wanggu-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "wanggu-embarrassed",
@@ -542,7 +841,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/wanggu-embarrassed.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "wanggu-shock",
@@ -554,7 +859,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/wanggu-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "doto-think",
@@ -566,7 +877,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/doto-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "doto-shy",
@@ -578,7 +895,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/doto-shy.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "doto-shock",
@@ -590,7 +913,13 @@
       "handoff": "design/retro/production/HANDOFF-C02-F.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/faces/doto-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "wood-tile",
@@ -602,7 +931,13 @@
       "handoff": "design/retro/production/HANDOFF-U01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/ui/wood-tile.jpg",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "wood-tile-dark",
@@ -614,7 +949,13 @@
       "handoff": "design/retro/production/HANDOFF-U01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/ui/wood-tile-dark.jpg",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-back",
@@ -626,7 +967,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/back.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-menu",
@@ -638,7 +985,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/menu.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-sound-on",
@@ -650,7 +1003,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/sound-on.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-detective-hat",
@@ -662,7 +1021,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/detective-hat.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-flash-idea",
@@ -674,7 +1039,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/flash-idea.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-hidden-story",
@@ -686,7 +1057,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/hidden-story.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-badge",
@@ -698,7 +1075,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/badge.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-friends",
@@ -710,7 +1093,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/friends.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-mom-notebook",
@@ -722,7 +1111,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/mom-notebook.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-letter",
@@ -734,7 +1129,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/letter.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-cloak-file",
@@ -746,7 +1147,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/cloak-file.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-world-map",
@@ -758,7 +1165,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/world-map.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-save",
@@ -770,7 +1183,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/save.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-settings",
@@ -782,7 +1201,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/settings.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-lock",
@@ -794,7 +1219,13 @@
       "handoff": "design/retro/production/HANDOFF-I03.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/lock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-trust-full",
@@ -806,7 +1237,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/trust-full.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-star-full",
@@ -818,7 +1255,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/star-full.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-lamp-life-on",
@@ -830,7 +1273,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/lamp-life-on.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-press",
@@ -842,7 +1291,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/press.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-objection",
@@ -854,7 +1309,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/objection.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-sound-off",
@@ -866,7 +1327,13 @@
       "handoff": "design/retro/production/HANDOFF-I02.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/sound-off.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-trust-empty",
@@ -878,7 +1345,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/trust-empty.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-star-empty",
@@ -890,7 +1363,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/star-empty.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "icon-lamp-life-off",
@@ -902,7 +1381,13 @@
       "handoff": "design/retro/production/HANDOFF-I04.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/icons/lamp-life-off.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "title-bg-wide",
@@ -914,7 +1399,13 @@
       "handoff": "design/retro/production/HANDOFF-T01.txt",
       "status": "ready_for_review",
       "userApproved": false,
-      "runtimeReviewed": false
+      "runtimeReviewed": false,
+      "runtime": {
+        "copy": "art/ui/title-bg-wide.jpg",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-neutral",
@@ -922,7 +1413,13 @@
       "path": "design/retro/daram-face/neutral.png",
       "metadata": "design/retro/daram-face/D01-manifest.json",
       "preview": "design/retro/daram-face/D01-preview.html",
-      "handoff": "design/retro/daram-face/HANDOFF-D01.txt"
+      "handoff": "design/retro/daram-face/HANDOFF-D01.txt",
+      "runtime": {
+        "copy": "art/faces/det1-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-happy",
@@ -930,7 +1427,13 @@
       "path": "design/retro/daram-face/happy.png",
       "metadata": "design/retro/daram-face/D01-manifest.json",
       "preview": "design/retro/daram-face/D01-preview.html",
-      "handoff": "design/retro/daram-face/HANDOFF-D01.txt"
+      "handoff": "design/retro/daram-face/HANDOFF-D01.txt",
+      "runtime": {
+        "copy": "art/faces/det1-happy.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-think",
@@ -938,7 +1441,13 @@
       "path": "design/retro/daram-face/think.png",
       "metadata": "design/retro/daram-face/D01-manifest.json",
       "preview": "design/retro/daram-face/D01-preview.html",
-      "handoff": "design/retro/daram-face/HANDOFF-D01.txt"
+      "handoff": "design/retro/daram-face/HANDOFF-D01.txt",
+      "runtime": {
+        "copy": "art/faces/det1-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "daram-smug",
@@ -946,7 +1455,13 @@
       "path": "design/retro/daram-face/smug.png",
       "metadata": "design/retro/daram-face/D01-manifest.json",
       "preview": "design/retro/daram-face/D01-preview.html",
-      "handoff": "design/retro/daram-face/HANDOFF-D01.txt"
+      "handoff": "design/retro/daram-face/HANDOFF-D01.txt",
+      "runtime": {
+        "copy": "art/faces/det1-smug.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "fall-steps",
@@ -954,7 +1469,13 @@
       "path": "design/retro/bg/fall-steps.png",
       "metadata": "design/retro/bg/B01-manifest.json",
       "preview": "design/retro/bg/B01-preview.html",
-      "handoff": "design/retro/bg/HANDOFF-B01.txt"
+      "handoff": "design/retro/bg/HANDOFF-B01.txt",
+      "runtime": {
+        "copy": "art/fall-steps.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "fall-square",
@@ -962,7 +1483,13 @@
       "path": "design/retro/bg/fall-square.png",
       "metadata": "design/retro/bg/B01-manifest.json",
       "preview": "design/retro/bg/B01-preview.html",
-      "handoff": "design/retro/bg/HANDOFF-B01.txt"
+      "handoff": "design/retro/bg/HANDOFF-B01.txt",
+      "runtime": {
+        "copy": "art/fall-square.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "fall-pond",
@@ -970,7 +1497,13 @@
       "path": "design/retro/bg/fall-pond.png",
       "metadata": "design/retro/bg/B01-manifest.json",
       "preview": "design/retro/bg/B01-preview.html",
-      "handoff": "design/retro/bg/HANDOFF-B01.txt"
+      "handoff": "design/retro/bg/HANDOFF-B01.txt",
+      "runtime": {
+        "copy": "art/fall-pond.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "fall-owlhouse",
@@ -978,7 +1511,13 @@
       "path": "design/retro/bg/fall-owlhouse.png",
       "metadata": "design/retro/bg/B02-manifest.json",
       "preview": "design/retro/bg/B02-preview.html",
-      "handoff": "design/retro/bg/HANDOFF-B02.txt"
+      "handoff": "design/retro/bg/HANDOFF-B02.txt",
+      "runtime": {
+        "copy": "art/fall-owlhouse.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "fall-cell",
@@ -986,7 +1525,13 @@
       "path": "design/retro/bg/fall-cell.png",
       "metadata": "design/retro/bg/B02-manifest.json",
       "preview": "design/retro/bg/B02-preview.html",
-      "handoff": "design/retro/bg/HANDOFF-B02.txt"
+      "handoff": "design/retro/bg/HANDOFF-B02.txt",
+      "runtime": {
+        "copy": "art/fall-cell.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "fall-pine",
@@ -994,7 +1539,13 @@
       "path": "design/retro/bg/fall-pine.png",
       "metadata": "design/retro/bg/B02-manifest.json",
       "preview": "design/retro/bg/B02-preview.html",
-      "handoff": "design/retro/bg/HANDOFF-B02.txt"
+      "handoff": "design/retro/bg/HANDOFF-B02.txt",
+      "runtime": {
+        "copy": "art/fall-pine.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "papa-body",
@@ -1003,7 +1554,12 @@
       "handoff": "design/retro/chars/HANDOFF-C01.txt",
       "sourceBranch": "art/c01-papa-rei-karo-20261007",
       "sourceCommit": "a231920742212ec05db3854c10ff229c956497fa",
-      "pngPixelsChanged": false
+      "pngPixelsChanged": false,
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "rei-body",
@@ -1012,7 +1568,12 @@
       "handoff": "design/retro/chars/HANDOFF-C01.txt",
       "sourceBranch": "art/c01-papa-rei-karo-20261007",
       "sourceCommit": "a231920742212ec05db3854c10ff229c956497fa",
-      "pngPixelsChanged": false
+      "pngPixelsChanged": false,
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "karo-body",
@@ -1021,7 +1582,12 @@
       "handoff": "design/retro/chars/HANDOFF-C01.txt",
       "sourceBranch": "art/c01-papa-rei-karo-20261007",
       "sourceCommit": "a231920742212ec05db3854c10ff229c956497fa",
-      "pngPixelsChanged": false
+      "pngPixelsChanged": false,
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "buri-body",
@@ -1032,7 +1598,12 @@
       "sourceCommit": "a231920742212ec05db3854c10ff229c956497fa",
       "pngPixelsChanged": false,
       "metadata": "design/retro/chars/C02-manifest.json",
-      "preview": "design/retro/chars/C02-preview.html"
+      "preview": "design/retro/chars/C02-preview.html",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "wanggu-body",
@@ -1043,7 +1614,12 @@
       "sourceCommit": "a231920742212ec05db3854c10ff229c956497fa",
       "pngPixelsChanged": false,
       "metadata": "design/retro/chars/C02-manifest.json",
-      "preview": "design/retro/chars/C02-preview.html"
+      "preview": "design/retro/chars/C02-preview.html",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     },
     {
       "id": "doto-body",
@@ -1054,7 +1630,2233 @@
       "sourceCommit": "a231920742212ec05db3854c10ff229c956497fa",
       "pngPixelsChanged": false,
       "metadata": "design/retro/chars/C02-manifest.json",
-      "preview": "design/retro/chars/C02-preview.html"
+      "preview": "design/retro/chars/C02-preview.html",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-badook",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/badook.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-bami",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/bami.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-bori",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/bori.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-eunho",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/eunho.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-grandma",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/grandma.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-guseul",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/guseul.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-kkwak",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/kkwak.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-kongi",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/kongi.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-lamplighter",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/lamplighter.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-luka",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/luka.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-madam",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/madam.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-mom",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/mom.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-momo",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/momo.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-mungchi",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/mungchi.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-musoe",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/musoe.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-nabi",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/nabi.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-nero",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/nero.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-nubi",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/nubi.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-owlgp",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/owlgp.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-piko",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/piko.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-ppul",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/ppul.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-seol",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/seol.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-seori",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/seori.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-shadow",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/shadow.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-siluk",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/siluk.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-sling",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/sling.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-somi",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/somi.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-tok",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/tok.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-tori",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/tori.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-ttadak",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/ttadak.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-ubak",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/ubak.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-yeoni",
+      "kind": "character-sheet",
+      "path": "design/retro/chars/yeoni.png",
+      "status": "ready_for_review",
+      "sourceCommit": "1843213",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "connected": false,
+        "note": "전신 시트. 게임은 정면 얼굴만 표시하므로 런타임 사본 없음",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "char-daram-poses",
+      "kind": "style-reference",
+      "path": "design/retro/daram-poses.png",
+      "status": "ready_for_review",
+      "sourceCommit": "14882c3",
+      "handoff": null,
+      "runtime": {
+        "connected": false,
+        "note": "그림체 기준 시트. 런타임은 정면 얼굴(det1) 사용",
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-badook-embarrassed",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/badook-embarrassed.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/badook-embarrassed.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-badook-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/badook-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/badook-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-badook-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/badook-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/badook-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-badook-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/badook-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/badook-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bami-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bami-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bami-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bami-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bami-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bami-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bami-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bami-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bami-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bami-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bami-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bami-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bori-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bori-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bori-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bori-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bori-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bori-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bori-shy",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bori-shy.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bori-shy.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-bori-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/bori-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/bori-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-eunho-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/eunho-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/eunho-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-eunho-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/eunho-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/eunho-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-eunho-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/eunho-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/eunho-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-eunho-worried",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/eunho-worried.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/eunho-worried.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-grandma-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/grandma-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/grandma-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-grandma-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/grandma-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/grandma-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-grandma-smile",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/grandma-smile.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/grandma-smile.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-grandma-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/grandma-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/grandma-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-guseul-nervous",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/guseul-nervous.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/guseul-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-guseul-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/guseul-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/guseul-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-guseul-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/guseul-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/guseul-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-guseul-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/guseul-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/guseul-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kkwak-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kkwak-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kkwak-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kkwak-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kkwak-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kkwak-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kkwak-smug",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kkwak-smug.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kkwak-smug.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kkwak-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kkwak-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kkwak-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kongi-happy",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kongi-happy.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kongi-happy.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kongi-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kongi-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kongi-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kongi-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kongi-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kongi-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-kongi-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/kongi-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/kongi-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-lamplighter-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/lamplighter-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/lamplighter-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-lamplighter-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/lamplighter-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/lamplighter-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-lamplighter-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/lamplighter-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/lamplighter-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-lamplighter-worried",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/lamplighter-worried.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/lamplighter-worried.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-luka-nervous",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/luka-nervous.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/luka-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-luka-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/luka-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/luka-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-luka-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/luka-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/luka-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-luka-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/luka-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/luka-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-madam-angry",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/madam-angry.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/madam-angry.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-madam-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/madam-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/madam-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-madam-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/madam-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/madam-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-madam-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/madam-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/madam-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mom-cry",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mom-cry.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mom-cry.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mom-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mom-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mom-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mom-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mom-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mom-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mom-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mom-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mom-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-momo-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/momo-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/momo-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-momo-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/momo-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/momo-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-momo-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/momo-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/momo-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-momo-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/momo-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/momo-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mungchi-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mungchi-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mungchi-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mungchi-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mungchi-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mungchi-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mungchi-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mungchi-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mungchi-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-mungchi-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/mungchi-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/mungchi-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-musoe-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/musoe-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/musoe-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-musoe-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/musoe-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/musoe-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-musoe-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/musoe-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/musoe-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-musoe-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/musoe-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/musoe-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nabi-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nabi-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nabi-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nabi-shy",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nabi-shy.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nabi-shy.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nabi-smug",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nabi-smug.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nabi-smug.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nabi-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nabi-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nabi-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nero-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nero-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nero-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nero-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nero-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nero-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nero-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nero-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nero-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nero-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nero-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nero-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nubi-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nubi-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nubi-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nubi-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nubi-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nubi-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nubi-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nubi-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nubi-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-nubi-worried",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/nubi-worried.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/nubi-worried.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-owlgp-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/owlgp-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/owlgp-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-owlgp-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/owlgp-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/owlgp-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-owlgp-smile",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/owlgp-smile.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/owlgp-smile.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-owlgp-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/owlgp-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/owlgp-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-piko-embarrassed",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/piko-embarrassed.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/piko-embarrassed.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-piko-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/piko-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/piko-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-piko-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/piko-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/piko-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-piko-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/piko-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/piko-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ppul-embarrassed",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ppul-embarrassed.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ppul-embarrassed.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ppul-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ppul-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ppul-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ppul-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ppul-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ppul-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ppul-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ppul-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ppul-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seol-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seol-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seol-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seol-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seol-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seol-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seol-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seol-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seol-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seol-worried",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seol-worried.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seol-worried.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seori-nervous",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seori-nervous.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seori-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seori-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seori-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seori-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seori-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seori-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seori-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-seori-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/seori-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/seori-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-shadow-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/shadow-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/shadow-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-shadow-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/shadow-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/shadow-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-shadow-tense",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/shadow-tense.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/shadow-tense.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-shadow-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/shadow-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/shadow-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-siluk-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/siluk-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/siluk-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-siluk-sad",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/siluk-sad.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/siluk-sad.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-siluk-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/siluk-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/siluk-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-siluk-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/siluk-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/siluk-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-sling-nervous",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/sling-nervous.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/sling-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-sling-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/sling-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/sling-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-sling-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/sling-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/sling-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-sling-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/sling-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/sling-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-somi-nervous",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/somi-nervous.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/somi-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-somi-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/somi-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/somi-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-somi-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/somi-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/somi-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-somi-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/somi-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/somi-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tok-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tok-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tok-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tok-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tok-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tok-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tok-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tok-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tok-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tok-worried",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tok-worried.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tok-worried.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tori-nervous",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tori-nervous.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tori-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tori-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tori-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tori-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tori-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tori-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tori-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-tori-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/tori-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/tori-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ttadak-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ttadak-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ttadak-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ttadak-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ttadak-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ttadak-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ttadak-shy",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ttadak-shy.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ttadak-shy.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ttadak-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ttadak-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ttadak-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ubak-nervous",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ubak-nervous.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ubak-nervous.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ubak-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ubak-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ubak-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ubak-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ubak-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ubak-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-ubak-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/ubak-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/ubak-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-yeoni-neutral",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/yeoni-neutral.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/yeoni-neutral.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-yeoni-shock",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/yeoni-shock.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/yeoni-shock.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-yeoni-shy",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/yeoni-shy.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/yeoni-shy.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
+    },
+    {
+      "id": "face-yeoni-think",
+      "kind": "portrait-face",
+      "path": "design/retro/faces/yeoni-think.png",
+      "status": "ready_for_review",
+      "sourceCommit": "8343da4",
+      "handoff": "design/retro/chars/HANDOFF-CHARACTERS.txt",
+      "runtime": {
+        "copy": "art/faces/yeoni-think.png",
+        "copyExists": true,
+        "connected": true,
+        "checkedAt": "2026-10-07 (v195+, 1be8279 이후)"
+      }
     }
   ],
   "documentBatchDeliveries": {
@@ -1108,5 +3910,52 @@
     "held": [
       "R-005"
     ]
+  },
+  "claudeRuntimeNote": "runtime 필드는 Claude가 실제 파일과 game.html 연결을 대조해 적은 값입니다. 사용자 승인(userApproved)과 무관하며 승인 값은 바꾸지 않았습니다.",
+  "deliveries": [
+    {
+      "id": "CHARACTERS-F02-F04",
+      "branch": "art/c01-papa-rei-karo-20261007",
+      "commit": "8343da4",
+      "mergedToMain": "b5e103a",
+      "newFaces": 128,
+      "characterSheets": 32,
+      "status": "ready_for_review",
+      "appliedInGame": "v194 (1be8279): 정면 얼굴 128장 art/faces 사본, 전신 시트는 미사용"
+    },
+    {
+      "id": "B02",
+      "requestId": "R-003",
+      "commit": "cf84c4a",
+      "files": [
+        "design/retro/bg/fall-owlhouse.png",
+        "design/retro/bg/fall-cell.png",
+        "design/retro/bg/fall-pine.png"
+      ],
+      "status": "ready_for_review",
+      "appliedInGame": "v194 (1be8279): art/fall-owlhouse.png, art/fall-cell.png, art/fall-pine.png, 철창 앞 레이어 art/fall-cell-bars.png (Claude가 원본에서 추출)"
+    },
+    {
+      "id": "B01",
+      "requestId": "R-002",
+      "commit": "b82894c",
+      "files": [
+        "design/retro/bg/fall-steps.png",
+        "design/retro/bg/fall-square.png",
+        "design/retro/bg/fall-pond.png"
+      ],
+      "status": "ready_for_review",
+      "appliedInGame": "v188 (5a4dfae)"
+    }
+  ],
+  "referenceOnly": {
+    "path": "design/backgrounds/",
+    "commits": [
+      "141bb67",
+      "f153c85"
+    ],
+    "images": 89,
+    "style": "이전 디자인 실험(일러스트 16:9). 현재 채택된 도트 스타일이 아님",
+    "runtime": "게임에 쓰지 않음. 도트 에셋과 섞지 말 것. 장소 구도·증거 위치(scene-map.json) 참고용"
   }
 }
