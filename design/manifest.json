@@ -1,0 +1,2059 @@
+{
+  "version": 1,
+  "game": "다람 탐정 사무소",
+  "source": "game.html CAST / BIO / PERSONA / CASES",
+  "characterCount": 35,
+  "preservedCharacters": [
+    "daram"
+  ],
+  "aliases": {
+    "luka": "nero",
+    "shadow": "nero"
+  },
+  "order": [
+    "tori",
+    "bori",
+    "yeoni",
+    "nabi",
+    "buri",
+    "kongi",
+    "doto",
+    "kkwak",
+    "grandma",
+    "librarian",
+    "owlgp",
+    "teacher",
+    "karo",
+    "nero",
+    "seol",
+    "ppul",
+    "tok",
+    "bami",
+    "sling",
+    "momo",
+    "ttadak",
+    "piko",
+    "mungchi",
+    "madam",
+    "siluk",
+    "wanggu",
+    "musoe",
+    "somi",
+    "seori",
+    "ubak",
+    "nubi",
+    "eunho",
+    "guseul",
+    "badook",
+    "lamplighter"
+  ],
+  "characters": {
+    "tori": {
+      "id": "tori",
+      "name": "토리",
+      "animal": "rabbit",
+      "kind": "하얀 토끼",
+      "color": "#F7F5F0",
+      "bio": "겁 많고 정직한 토끼. 당근을 좋아하고 딸기 알레르기가 있다. 무대에 서면 몹시 떨린다.",
+      "design": "초록 카디건 · 당근 브로치 · 끝이 접힌 긴 귀",
+      "expressions": [
+        "gentle nervous neutral",
+        "thinking, hand near chin",
+        "startled, paws near chest"
+      ],
+      "src": "characters/tori.png",
+      "width": 1882,
+      "height": 836,
+      "frames": [
+        [
+          0,
+          0,
+          627,
+          836
+        ],
+        [
+          627,
+          0,
+          628,
+          836
+        ],
+        [
+          1255,
+          0,
+          627,
+          836
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "토끼",
+      "role": "겁 많은 요정 춤꾼"
+    },
+    "bori": {
+      "id": "bori",
+      "name": "보리",
+      "animal": "bear",
+      "kind": "갈색 곰",
+      "color": "#B07A52",
+      "bio": "힘세고 마음 약한 곰. 꿀을 제일 좋아한다. 혼날까 봐 숨기다가 일을 키우는 버릇이 있다.",
+      "design": "꿀빛 털 · 둥근 어깨 · 멜빵 작업복",
+      "expressions": [
+        "gentle shy neutral",
+        "embarrassed, looking aside",
+        "worried, shoulders drawn in"
+      ],
+      "src": "characters/bori.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          540,
+          1024
+        ],
+        [
+          540,
+          0,
+          510,
+          1024
+        ],
+        [
+          1050,
+          0,
+          486,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "곰",
+      "role": "힘센 먹보 곰"
+    },
+    "yeoni": {
+      "id": "yeoni",
+      "name": "여니",
+      "animal": "fox",
+      "kind": "주황 여우",
+      "color": "#E9853A",
+      "bio": "센스 있는 여우. 몰래 깜짝 선물을 준비하는 걸 좋아한다.",
+      "design": "주황 털 · 청록 리본 · 선물 가방",
+      "expressions": [
+        "confident warm neutral",
+        "secretive knowing smile, finger near muzzle",
+        "surprised vulnerable expression"
+      ],
+      "src": "characters/yeoni.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          548,
+          1024
+        ],
+        [
+          548,
+          0,
+          513,
+          1024
+        ],
+        [
+          1061,
+          0,
+          475,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "여우",
+      "role": "비밀 많은 선물 장인"
+    },
+    "nabi": {
+      "id": "nabi",
+      "name": "나비",
+      "animal": "cat",
+      "kind": "하얀 고양이",
+      "color": "#FBFAF7",
+      "bio": "새침한 하얀 고양이. 목에 금색 방울 목걸이를 한다. 외로움을 잘 탄다.",
+      "design": "하얀 털 · 금색 방울 · 남색 세일러복",
+      "expressions": [
+        "reserved proud neutral",
+        "skeptical, arms folded",
+        "lonely remorseful, eyes lowered"
+      ],
+      "src": "characters/nabi.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          512,
+          1024
+        ],
+        [
+          512,
+          0,
+          507,
+          1024
+        ],
+        [
+          1019,
+          0,
+          517,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "고양이",
+      "role": "새침한 우체국 도우미"
+    },
+    "buri": {
+      "id": "buri",
+      "name": "부리",
+      "animal": "owl",
+      "kind": "갈색 부엉이",
+      "color": "#9A846E",
+      "bio": "성실한 부엉이. 늘 신하 역할만 맡아 한 번쯤 주인공이 되고 싶어 한다.",
+      "design": "책벌레 부엉이 · 둥근 눈 · 자주색 조끼",
+      "expressions": [
+        "earnest calm neutral",
+        "thoughtful, reading spectacles held near beak",
+        "frustrated but vulnerable"
+      ],
+      "src": "characters/buri.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          512,
+          1024
+        ],
+        [
+          512,
+          0,
+          512,
+          1024
+        ],
+        [
+          1024,
+          0,
+          512,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "부엉이",
+      "role": "신하 역할 전문 책벌레"
+    },
+    "kongi": {
+      "id": "kongi",
+      "name": "콩이",
+      "animal": "dog",
+      "kind": "강아지",
+      "color": "#EAC894",
+      "bio": "착하고 코가 좋은 강아지. 낮잠을 좋아하고 시간을 자주 헷갈린다.",
+      "design": "늘어진 귀 · 보리색 털 · 빨간 목도리",
+      "expressions": [
+        "friendly drowsy neutral",
+        "sniffing thoughtfully with alert ears",
+        "confused, sheepish apology"
+      ],
+      "src": "characters/atlas-02.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          411
+        ],
+        [
+          418,
+          0,
+          418,
+          411
+        ],
+        [
+          836,
+          0,
+          418,
+          411
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "개",
+      "role": "시계 못 보는 명탐견"
+    },
+    "doto": {
+      "id": "doto",
+      "name": "도토",
+      "animal": "squirrel",
+      "kind": "다람쥐",
+      "color": "#D08A4E",
+      "bio": "꼼꼼한 다람쥐. 도서관 단골이다.",
+      "design": "초시계 · 기록 수첩 · 단정한 체크 조끼",
+      "expressions": [
+        "precise composed neutral",
+        "concentrating on stopwatch",
+        "anxious but determined"
+      ],
+      "src": "characters/atlas-02.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          411,
+          418,
+          409
+        ],
+        [
+          418,
+          411,
+          416,
+          409
+        ],
+        [
+          834,
+          411,
+          420,
+          409
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "다람쥐",
+      "role": "초 단위 기록광"
+    },
+    "kkwak": {
+      "id": "kkwak",
+      "name": "꽥순",
+      "animal": "duck",
+      "kind": "오리",
+      "color": "#FFD34E",
+      "bio": "씩씩한 척하는 오리. 사실 수영을 잘 못한다. 가족이 멀리 떠나 있다.",
+      "design": "노란 오리 · 파란 스카프 · 작은 수영 가방",
+      "expressions": [
+        "brave-looking cheerful neutral",
+        "skeptical, head tilted",
+        "embarrassed, looking down"
+      ],
+      "src": "characters/atlas-02.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          820,
+          418,
+          434
+        ],
+        [
+          418,
+          820,
+          418,
+          434
+        ],
+        [
+          836,
+          820,
+          418,
+          434
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "오리",
+      "role": "허세 부리던 수영 꿈나무"
+    },
+    "grandma": {
+      "id": "grandma",
+      "name": "토끼 할머니",
+      "animal": "rabbit",
+      "kind": "의뢰인",
+      "color": "#DAD5CC",
+      "acc": "glasses",
+      "bio": "마을의 다정한 토끼 할머니. 생일 케이크의 주인.",
+      "design": "회백색 토끼 · 둥근 안경 · 꽃무늬 앞치마",
+      "expressions": [
+        "warm grandmotherly neutral",
+        "remembering, one paw at cheek",
+        "concerned but gentle"
+      ],
+      "src": "characters/atlas-03.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          411
+        ],
+        [
+          418,
+          0,
+          418,
+          411
+        ],
+        [
+          836,
+          0,
+          418,
+          411
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "토끼",
+      "role": "깜빡깜빡 다정한 할머니"
+    },
+    "librarian": {
+      "id": "librarian",
+      "name": "사서 선생님",
+      "animal": "cat",
+      "kind": "의뢰인",
+      "color": "#B9BFCB",
+      "acc": "glasses",
+      "bio": "도서관을 지키는 사서 선생님. 시간을 정확히 기억한다.",
+      "design": "은회색 고양이 · 안경줄 · 잉크빛 정장",
+      "expressions": [
+        "composed attentive neutral",
+        "stern skeptical, raised eyebrow",
+        "quiet surprise"
+      ],
+      "src": "characters/atlas-03.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          411,
+          418,
+          425
+        ],
+        [
+          418,
+          411,
+          418,
+          425
+        ],
+        [
+          836,
+          411,
+          418,
+          425
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "고양이",
+      "role": "1초도 안 틀리는 사서"
+    },
+    "owlgp": {
+      "id": "owlgp",
+      "name": "부엉이 할아버지",
+      "animal": "owl",
+      "kind": "은퇴한 탐정",
+      "color": "#7C6A58",
+      "acc": "glasses",
+      "bio": "은퇴한 마을 탐정이자 별빛 등불 지킴이. 요즘 눈이 침침하다.",
+      "design": "낡은 탐정 코트 · 둥근 안경 · 별빛 등불",
+      "expressions": [
+        "gentle wise neutral",
+        "observant stern thinking",
+        "sad reflective, lowered eyes"
+      ],
+      "src": "characters/atlas-04.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          412
+        ],
+        [
+          418,
+          0,
+          418,
+          412
+        ],
+        [
+          836,
+          0,
+          418,
+          412
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "부엉이",
+      "role": "은퇴한 명탐정"
+    },
+    "teacher": {
+      "id": "teacher",
+      "name": "곰 선생님",
+      "animal": "bear",
+      "kind": "의뢰인",
+      "color": "#D8B894",
+      "acc": "glasses",
+      "bio": "학예회를 맡은 곰 선생님. 기록을 꼼꼼히 남긴다.",
+      "design": "크림빛 곰 · 니트 조끼 · 출석부",
+      "expressions": [
+        "patient welcoming neutral",
+        "concentrated, pen near mouth",
+        "firm disappointed concern"
+      ],
+      "src": "characters/atlas-03.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          836,
+          418,
+          418
+        ],
+        [
+          418,
+          836,
+          418,
+          418
+        ],
+        [
+          836,
+          836,
+          418,
+          418
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "곰",
+      "role": "뭐든 적는 곰 선생님"
+    },
+    "karo": {
+      "id": "karo",
+      "name": "까로",
+      "animal": "crow",
+      "kind": "떠돌이 장사꾼 까마귀",
+      "color": "#2E2D3D",
+      "acc": "villain",
+      "bio": "떠돌이 장사꾼 까마귀. 존댓말을 쓰며 반짝이는 것을 모은다는 소문이 있다.",
+      "design": "붉은 모자 · 금빛 깃털 · 여행 가방",
+      "expressions": [
+        "polite smiling neutral",
+        "sly knowing smile, feather hand gesturing",
+        "caught off guard, uneasy sweat"
+      ],
+      "src": "characters/atlas-04.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          412,
+          418,
+          415
+        ],
+        [
+          418,
+          412,
+          452,
+          415
+        ],
+        [
+          870,
+          412,
+          384,
+          415
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "까마귀",
+      "role": "반짝이에 약한 장사꾼"
+    },
+    "nero": {
+      "id": "nero",
+      "name": "네로",
+      "animal": "lynx",
+      "kind": "검은 망토단의 우두머리",
+      "color": "#3B3F52",
+      "acc": "hood",
+      "bio": "검은 망토단의 우두머리. 30년 전 별빛 등불 아래에서 부엉이 탐정에게 놓아진 어린 스라소니.",
+      "design": "스라소니 귀털 · 검은 망토 · 닳은 황동 단추",
+      "expressions": [
+        "controlled unreadable neutral",
+        "cold determined stare",
+        "regretful wounded expression"
+      ],
+      "src": "characters/atlas-04.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          827,
+          418,
+          427
+        ],
+        [
+          418,
+          827,
+          418,
+          427
+        ],
+        [
+          836,
+          827,
+          418,
+          427
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "스라소니",
+      "role": "빛을 훔치는 자"
+    },
+    "seol": {
+      "id": "seol",
+      "name": "설이",
+      "animal": "crane",
+      "kind": "달빛 종지기",
+      "color": "#F4F4F8",
+      "bio": "달빛 종을 지키는 두루미. 종소리로 시각을 재는 마을의 시계 같은 존재. 말이 느리고 정확하다.",
+      "design": "하얀 두루미 · 붉은 정수리 · 달빛색 숄",
+      "expressions": [
+        "serene precise neutral",
+        "listening, head turned slightly",
+        "quiet concern"
+      ],
+      "src": "characters/atlas-05.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          412
+        ],
+        [
+          418,
+          0,
+          418,
+          412
+        ],
+        [
+          836,
+          0,
+          418,
+          412
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "silver",
+      "species": "두루미",
+      "role": "느리지만 정확한 종지기"
+    },
+    "ppul": {
+      "id": "ppul",
+      "name": "뿔이 촌장",
+      "animal": "goat",
+      "kind": "은빛 마을 촌장",
+      "color": "#D9D3C7",
+      "acc": "glasses",
+      "bio": "은빛 마을 촌장. 체면을 몹시 차린다. 마을 금고 열쇠를 늘 목에 걸고 다닌다.",
+      "design": "곡선 뿔 · 촌장 예복 · 목에 건 금고 열쇠",
+      "expressions": [
+        "pompous formal neutral",
+        "suspicious defensive",
+        "flustered, dignity slipping"
+      ],
+      "src": "characters/atlas-05.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          412,
+          442,
+          421
+        ],
+        [
+          442,
+          412,
+          394,
+          421
+        ],
+        [
+          836,
+          412,
+          418,
+          421
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "silver",
+      "species": "염소",
+      "role": "체면이 전부인 촌장"
+    },
+    "tok": {
+      "id": "tok",
+      "name": "톡",
+      "animal": "mole",
+      "kind": "시계공",
+      "color": "#6E5A4E",
+      "acc": "goggles",
+      "bio": "땅속 작업실에서 시계를 고치는 두더지. 소리를 담는 '메아리 상자'를 발명했다. 눈이 나빠 시간을 소리로 잰다.",
+      "design": "두더지 시계공 · 확대경 · 기름 묻은 작업복",
+      "expressions": [
+        "focused calm neutral",
+        "listening intently, finger raised",
+        "sudden discovery, eyes bright"
+      ],
+      "src": "characters/atlas-05.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          833,
+          418,
+          421
+        ],
+        [
+          418,
+          833,
+          418,
+          421
+        ],
+        [
+          836,
+          833,
+          418,
+          421
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "silver",
+      "species": "두더지",
+      "role": "소리로 시간을 재는 발명가"
+    },
+    "bami": {
+      "id": "bami",
+      "name": "밤이",
+      "animal": "bat",
+      "kind": "종탑에 사는 소녀",
+      "color": "#4A3F6B",
+      "bio": "종탑 꼭대기에서 낮잠을 자고 밤에 날아다니는 박쥐 소녀. 말투가 시니컬하고, 어른들을 잘 믿지 않는다.",
+      "design": "보라빛 박쥐 · 접힌 날개 · 비대칭 후드",
+      "expressions": [
+        "unimpressed cool neutral",
+        "side-eyed skepticism",
+        "unguarded worried expression"
+      ],
+      "src": "characters/atlas-06.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          396
+        ],
+        [
+          418,
+          0,
+          418,
+          396
+        ],
+        [
+          836,
+          0,
+          418,
+          396
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "silver",
+      "species": "박쥐",
+      "role": "밤을 사는 시니컬한 소녀"
+    },
+    "sling": {
+      "id": "sling",
+      "name": "슬링",
+      "animal": "weasel",
+      "kind": "새로 온 우편배달부",
+      "color": "#C8A16B",
+      "bio": "한 달 전 은빛 마을에 온 족제비 배달부. 친절하고 눈치가 빠르다. 어디서 왔는지는 아무도 모른다.",
+      "design": "꿀빛 족제비 · 우편 가방 · 말끔한 장갑",
+      "expressions": [
+        "overly helpful pleasant neutral",
+        "carefully listening, measured smile",
+        "tense restrained concern"
+      ],
+      "src": "characters/atlas-06.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          396,
+          432,
+          412
+        ],
+        [
+          432,
+          396,
+          420,
+          412
+        ],
+        [
+          852,
+          396,
+          402,
+          412
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "silver",
+      "species": "족제비",
+      "role": "지나치게 친절한 배달부"
+    },
+    "momo": {
+      "id": "momo",
+      "name": "모모 관장",
+      "animal": "goat",
+      "kind": "숲속 박물관 관장",
+      "color": "#F4EFE4",
+      "acc": "ribbon",
+      "bio": "숲속 박물관의 관장. 늘 웃으며 쿠키를 나눠 준다. 마을 사람 누구에게나 친절하다.",
+      "design": "크림빛 염소 · 리본 · 쿠키 바구니",
+      "expressions": [
+        "welcoming warm neutral",
+        "attentive cautious smile",
+        "quiet serious concern"
+      ],
+      "src": "characters/atlas-06.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          808,
+          429,
+          446
+        ],
+        [
+          429,
+          808,
+          422,
+          446
+        ],
+        [
+          851,
+          808,
+          403,
+          446
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "염소",
+      "role": "쿠키를 나눠 주는 관장님"
+    },
+    "ttadak": {
+      "id": "ttadak",
+      "name": "따닥",
+      "animal": "woodpecker",
+      "kind": "딱따구리",
+      "color": "#F4F1E6",
+      "bio": "모든 걸 두드려 봐야 직성이 풀리는 딱따구리. 소리로 속을 본다고 믿는다. 부끄러우면 더 세게 두드린다.",
+      "design": "붉은 볏 · 줄무늬 날개 · 작은 목공 망치",
+      "expressions": [
+        "alert cheerful neutral",
+        "listening, mallet paused near chest",
+        "embarrassed nervous expression"
+      ],
+      "src": "characters/atlas-07.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          418
+        ],
+        [
+          418,
+          0,
+          418,
+          418
+        ],
+        [
+          836,
+          0,
+          418,
+          418
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "딱따구리",
+      "role": "뭐든 두드리는 딱따구리"
+    },
+    "piko": {
+      "id": "piko",
+      "name": "피코",
+      "animal": "peacock",
+      "kind": "공작새 · 자칭 예술가",
+      "color": "#2F6FD6",
+      "bio": "자기를 '피코'라고 부르는 공작새. 반짝이는 것 앞에 서면 거기 비친 자기 얼굴부터 본다. 반짝이를 좋아한다는 이유로 늘 의심받는다.",
+      "design": "청록 깃털 · 유려한 꼬리 · 예술가 스카프",
+      "expressions": [
+        "self-assured elegant neutral",
+        "admiring his reflection thoughtfully",
+        "offended wounded pride"
+      ],
+      "src": "characters/atlas-07.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          418,
+          418,
+          413
+        ],
+        [
+          418,
+          418,
+          420,
+          413
+        ],
+        [
+          838,
+          418,
+          416,
+          413
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "공작새",
+      "role": "자기 얼굴에 반한 공작새"
+    },
+    "mungchi": {
+      "id": "mungchi",
+      "name": "뭉치",
+      "animal": "panda",
+      "kind": "백 부인의 아들 · 수집상 집 도련님",
+      "color": "#F4F1E6",
+      "acc": "beret",
+      "bio": "마을에 새로 온 수집상 백 부인의 아들. 열다섯 살쯤. 거만하고, 약한 아이를 골리고, 잘못은 언제나 남의 것이다. 말끝마다 '뭐, 그렇다는 거야.'를 붙인다.",
+      "design": "판다 도련님 · 자주색 베레 · 흰 장갑",
+      "expressions": [
+        "smug superior neutral",
+        "dismissive, arms folded",
+        "frightened vulnerable defensiveness"
+      ],
+      "src": "characters/atlas-07.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          831,
+          430,
+          423
+        ],
+        [
+          430,
+          831,
+          422,
+          423
+        ],
+        [
+          852,
+          831,
+          402,
+          423
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "판다",
+      "role": "잘못은 늘 남의 것인 도련님"
+    },
+    "madam": {
+      "id": "madam",
+      "name": "백 부인",
+      "animal": "panda",
+      "kind": "수집상 · 하얀 장갑",
+      "color": "#FFFFFF",
+      "acc": "glasses",
+      "bio": "언덕 위 하얀 저택에 사는 수집상. 반짝이는 것이라면 무엇이든 모은다. 늘 하얀 장갑을 끼고, 목소리를 높이는 법이 없다.",
+      "design": "우아한 판다 · 흰 장갑 · 진주와 검은 드레스",
+      "expressions": [
+        "serene elegant neutral",
+        "cool appraising gaze",
+        "controlled displeasure, no shouting"
+      ],
+      "src": "characters/atlas-08.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          412
+        ],
+        [
+          418,
+          0,
+          418,
+          412
+        ],
+        [
+          836,
+          0,
+          418,
+          412
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "판다",
+      "role": "우아한 수집상"
+    },
+    "siluk": {
+      "id": "siluk",
+      "name": "실룩",
+      "animal": "weasel",
+      "kind": "백 부인 저택의 전 마부",
+      "color": "#8A6A4A",
+      "acc": "dhat",
+      "bio": "백 부인 저택의 마부였던 족제비. 부인이 끌려간 뒤에도 마차 창고에 남아 마차를 닦는다. 말수가 적고, 늘 한 박자 늦게 웃는다.",
+      "design": "늙은 족제비 · 마부 모자 · 낡은 가죽 조끼",
+      "expressions": [
+        "tired reserved neutral",
+        "watchful, slow knowing smile",
+        "uneasy regret"
+      ],
+      "src": "characters/atlas-08.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          412,
+          418,
+          401
+        ],
+        [
+          418,
+          412,
+          418,
+          401
+        ],
+        [
+          836,
+          412,
+          418,
+          401
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "족제비",
+      "role": "한 박자 늦게 웃는 마부"
+    },
+    "wanggu": {
+      "id": "wanggu",
+      "name": "왕구",
+      "animal": "raccoon",
+      "kind": "축제 준비위원장 · 목소리 큰 너구리",
+      "color": "#8C7A6B",
+      "bio": "축제 준비위원장. 마을에서 목소리가 제일 크고, 제일 먼저 결론을 내린다. 나쁜 사람은 아니지만, 틀렸다는 말을 제일 늦게 한다.",
+      "design": "너구리 위원장 · 주황 조끼 · 축제 완장",
+      "expressions": [
+        "booming confident neutral",
+        "insistent, one finger raised",
+        "embarrassed reluctant doubt"
+      ],
+      "src": "characters/atlas-08.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          813,
+          428,
+          441
+        ],
+        [
+          428,
+          813,
+          411,
+          441
+        ],
+        [
+          839,
+          813,
+          415,
+          441
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "너구리",
+      "role": "제일 먼저 결론 내리는 위원장"
+    },
+    "musoe": {
+      "id": "musoe",
+      "name": "무쇠 할아버지",
+      "animal": "bear",
+      "kind": "이름 없는 마을 등불지기",
+      "color": "#B8B4AC",
+      "acc": "goggles",
+      "bio": "이름 없는 마을의 늙은 등불지기. 광산이 닫히기 전엔 광부였다. 말이 짧고, 한쪽 귀가 어둡다. 손녀 솜이와 둘이 산다.",
+      "design": "회색 늙은 곰 · 광부 고글 · 무쇠빛 작업복",
+      "expressions": [
+        "quiet stoic neutral",
+        "listening carefully, slight frown",
+        "protective sorrowful tenderness"
+      ],
+      "src": "characters/atlas-09.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          410
+        ],
+        [
+          418,
+          0,
+          426,
+          410
+        ],
+        [
+          844,
+          0,
+          410,
+          410
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "mine",
+      "species": "곰",
+      "role": "말이 짧은 늙은 등불지기"
+    },
+    "somi": {
+      "id": "somi",
+      "name": "솜이",
+      "animal": "flyingsq",
+      "kind": "무쇠의 손녀",
+      "color": "#D9B98C",
+      "acc": "ribbon",
+      "bio": "무쇠 할아버지의 손녀. 여덟 살 날다람쥐. 지붕에서 지붕으로 활공하고, 반짝이는 건 뭐든 따라간다.",
+      "design": "날다람쥐 소녀 · 리본 · 활공 망토",
+      "expressions": [
+        "bright curious neutral",
+        "curious thinking, head tilted",
+        "scared but bravely hopeful"
+      ],
+      "src": "characters/atlas-09.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          410,
+          418,
+          394
+        ],
+        [
+          418,
+          410,
+          418,
+          394
+        ],
+        [
+          836,
+          410,
+          418,
+          394
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "mine",
+      "species": "날다람쥐",
+      "role": "반짝이를 쫓는 날다람쥐"
+    },
+    "seori": {
+      "id": "seori",
+      "name": "서리 검사원",
+      "animal": "goat",
+      "kind": "등불 관리국 수석 검사원",
+      "color": "#9EA3AE",
+      "acc": "dhat",
+      "bio": "'등불 관리국' 수석 검사원. 회색 코트, 회색 모자, 도장 가방. 표정이 거의 없고, 말끝마다 규정을 댄다.",
+      "design": "회색 염소 · 규격 코트 · 도장 가방",
+      "expressions": [
+        "blank bureaucratic neutral",
+        "cold skeptical scrutiny",
+        "restrained frustration"
+      ],
+      "src": "characters/atlas-09.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          804,
+          420,
+          450
+        ],
+        [
+          420,
+          804,
+          430,
+          450
+        ],
+        [
+          850,
+          804,
+          404,
+          450
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "mine",
+      "species": "염소",
+      "role": "규정을 입은 회색 코트"
+    },
+    "ubak": {
+      "id": "ubak",
+      "name": "우박",
+      "animal": "mole",
+      "kind": "관리국 견습 검사원",
+      "color": "#7A5E4A",
+      "acc": "glasses",
+      "bio": "관리국 견습 검사원. 신문 광고를 보고 들어온 신입이다. 코트가 커서 소매를 세 번 접었다. 규정집을 품에 안고 다닌다.",
+      "design": "어린 두더지 · 큰 코트 · 세 번 접은 소매",
+      "expressions": [
+        "anxious polite neutral",
+        "hesitant thinking, clutching book",
+        "startled, overwhelmed"
+      ],
+      "src": "characters/atlas-10.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          403
+        ],
+        [
+          418,
+          0,
+          418,
+          403
+        ],
+        [
+          836,
+          0,
+          418,
+          403
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "mine",
+      "species": "두더지",
+      "role": "소매를 세 번 접은 견습생"
+    },
+    "nubi": {
+      "id": "nubi",
+      "name": "누비 아주머니",
+      "animal": "duck",
+      "kind": "눈꽃 여관 주인",
+      "color": "#E8D9A8",
+      "bio": "눈꽃 여관 주인. 수다스럽고 손이 크다. 손님이 일 년에 몇 없는 여관을 30년째 지킨다.",
+      "design": "따뜻한 오리 아주머니 · 눈꽃 앞치마 · 넓은 손",
+      "expressions": [
+        "welcoming cheerful neutral",
+        "thinking, one hand on hip",
+        "concerned maternal warmth"
+      ],
+      "src": "characters/atlas-10.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          403,
+          418,
+          422
+        ],
+        [
+          418,
+          403,
+          418,
+          422
+        ],
+        [
+          836,
+          403,
+          418,
+          422
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "mine",
+      "species": "오리",
+      "role": "손 큰 여관 주인"
+    },
+    "eunho": {
+      "id": "eunho",
+      "name": "은호 사장",
+      "animal": "fox",
+      "kind": "도시 보석상 · 관리국 창구 주인",
+      "color": "#F2F0EA",
+      "acc": "glasses",
+      "bio": "도시 보석상 거리 7번지의 흰 여우. 금테 안경에 은단추 조끼. 말끝을 '…하오', '…소'로 맺는다. 뒷방 벽에 '관리국 창구'라는 작은 팻말을 걸어 두었다.",
+      "design": "흰 여우 보석상 · 금테 안경 · 은단추 조끼",
+      "expressions": [
+        "polished courteous neutral",
+        "evaluating with cool half-smile",
+        "controlled alarm"
+      ],
+      "src": "characters/atlas-10.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          825,
+          418,
+          429
+        ],
+        [
+          418,
+          825,
+          418,
+          429
+        ],
+        [
+          836,
+          825,
+          418,
+          429
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "city",
+      "species": "여우",
+      "role": "값을 넉넉히 치르는 보석상"
+    },
+    "guseul": {
+      "id": "guseul",
+      "name": "구슬",
+      "animal": "raccoon",
+      "kind": "은호 보석상 견습생",
+      "color": "#8C8F99",
+      "bio": "은호 보석상의 어린 견습생 너구리. 하루 종일 보석을 닦는다. 말은 더듬지만 손끝은 누구보다 섬세하다.",
+      "design": "어린 회색 너구리 · 보석 닦는 천 · 작은 확대경",
+      "expressions": [
+        "shy attentive neutral",
+        "concentrating carefully on gemstone",
+        "worried, struggling to speak"
+      ],
+      "src": "characters/atlas-11.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          0,
+          418,
+          406
+        ],
+        [
+          418,
+          0,
+          418,
+          406
+        ],
+        [
+          836,
+          0,
+          418,
+          406
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "city",
+      "species": "너구리",
+      "role": "말 더듬는 견습생"
+    },
+    "badook": {
+      "id": "badook",
+      "name": "바둑이",
+      "animal": "dog",
+      "kind": "도시 야경꾼",
+      "color": "#EDEDED",
+      "acc": "dhat",
+      "bio": "도시의 야경꾼. 점박이 개. 호루라기를 목에 걸고 밤거리를 돈다. 시계는 잘 안 보고, 가로등이 켜지는 걸 보고 시각을 짐작한다.",
+      "design": "점박이 개 · 야경 모자 · 목의 호루라기",
+      "expressions": [
+        "dutiful calm neutral",
+        "watchful alert scrutiny",
+        "surprised, whistle near mouth"
+      ],
+      "src": "characters/atlas-11.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          406,
+          418,
+          421
+        ],
+        [
+          418,
+          406,
+          418,
+          421
+        ],
+        [
+          836,
+          406,
+          418,
+          421
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "city",
+      "species": "개",
+      "role": "가로등으로 시각을 재는 야경꾼"
+    },
+    "lamplighter": {
+      "id": "lamplighter",
+      "name": "등불지기 아저씨",
+      "animal": "rabbit",
+      "kind": "도시의 가로등 등불지기",
+      "color": "#A89A8A",
+      "bio": "회갈색 토끼. 긴 장대와 낡은 목도리. 해 질 녘부터 도시의 가로등을 하나씩 켠다. 말수가 적고, 자기 이야기는 잘 하지 않는다.",
+      "design": "회갈색 토끼 · 긴 장대 · 낡은 목도리",
+      "expressions": [
+        "reserved gentle neutral",
+        "pensive looking aside",
+        "quiet relief"
+      ],
+      "src": "characters/atlas-11.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          827,
+          418,
+          427
+        ],
+        [
+          418,
+          827,
+          418,
+          427
+        ],
+        [
+          836,
+          827,
+          418,
+          427
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "city",
+      "species": "토끼",
+      "role": "말수 적은 등불지기"
+    },
+    "luka": {
+      "name": "루카 검사관",
+      "animal": "lynx",
+      "kind": "등불 검사관 (자칭)",
+      "color": "#3B3F52",
+      "acc": "glasses",
+      "id": "luka",
+      "src": "characters/nero-identities.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          415,
+          427,
+          415
+        ],
+        [
+          427,
+          415,
+          414,
+          415
+        ],
+        [
+          841,
+          415,
+          413,
+          415
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "스라소니",
+      "role": "등불 검사관 (자칭)",
+      "bio": "어느 날 갑자기 나타난 '등불 검사관'. 예의 바르고 말이 느리다. 서류를 늘 들고 다니지만 아무도 그 서류를 읽어 본 적이 없다.",
+      "design": "네로의 동일한 얼굴을 유지한 변장 외형",
+      "aliasOf": "nero"
+    },
+    "shadow": {
+      "name": "검은 망토",
+      "animal": "lynx",
+      "kind": "정체불명",
+      "color": "#3B3F52",
+      "acc": "hood",
+      "id": "shadow",
+      "src": "characters/nero-identities.png",
+      "width": 1254,
+      "height": 1254,
+      "frames": [
+        [
+          0,
+          830,
+          441,
+          424
+        ],
+        [
+          441,
+          830,
+          400,
+          424
+        ],
+        [
+          841,
+          830,
+          413,
+          424
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "스라소니",
+      "role": "정체불명",
+      "bio": "",
+      "design": "네로의 동일한 얼굴을 유지한 변장 외형",
+      "aliasOf": "nero"
+    },
+    "daram": {
+      "id": "daram",
+      "name": "다람",
+      "species": "다람쥐 탐정",
+      "role": "기존 주인공 디자인",
+      "src": "reference/daram-pixel.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          512,
+          1024
+        ],
+        [
+          512,
+          0,
+          512,
+          1024
+        ],
+        [
+          1024,
+          0,
+          512,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각",
+        "증거 제시"
+      ],
+      "preserved": true
+    }
+  },
+  "backgroundOrder": [
+    "main",
+    "cake",
+    "window",
+    "crown",
+    "star",
+    "bell",
+    "dark",
+    "museum",
+    "cart",
+    "glove",
+    "festival",
+    "snow",
+    "clapper",
+    "bureau",
+    "lining",
+    "kitchen",
+    "forest-path"
+  ],
+  "backgrounds": {
+    "main": {
+      "id": "main",
+      "name": "탐정 사무소 · 메인 화면",
+      "src": "backgrounds/main.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          1536,
+          1024
+        ]
+      ],
+      "caseId": null
+    },
+    "cake": {
+      "id": "cake",
+      "name": "사라진 딸기 케이크 · 할머니의 부엌",
+      "src": "backgrounds/scenes-01.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "cake"
+    },
+    "window": {
+      "id": "window",
+      "name": "깨진 도서관 창문 · 마을 도서관",
+      "src": "backgrounds/scenes-01.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "window"
+    },
+    "crown": {
+      "id": "crown",
+      "name": "반짝이 왕관 도난 · 학예회 무대 뒤",
+      "src": "backgrounds/scenes-01.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": "crown"
+    },
+    "star": {
+      "id": "star",
+      "name": "꺼진 별빛 등불 · 별빛 언덕",
+      "src": "backgrounds/scenes-01.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": "star"
+    },
+    "bell": {
+      "id": "bell",
+      "name": "달빛 종이 멈춘 밤 · 종탑",
+      "src": "backgrounds/scenes-02.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "bell"
+    },
+    "dark": {
+      "id": "dark",
+      "name": "빛을 훔치는 자 · 사무소의 밤",
+      "src": "backgrounds/scenes-02.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "dark"
+    },
+    "museum": {
+      "id": "museum",
+      "name": "뒤집힌 등불 · 숲속 박물관",
+      "src": "backgrounds/scenes-02.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": "museum"
+    },
+    "cart": {
+      "id": "cart",
+      "name": "멈춘 우편 마차 · 언덕길",
+      "src": "backgrounds/scenes-02.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": "cart"
+    },
+    "glove": {
+      "id": "glove",
+      "name": "하얀 장갑의 밤 · 백 부인 응접실",
+      "src": "backgrounds/scenes-03.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "glove"
+    },
+    "festival": {
+      "id": "festival",
+      "name": "별빛 축제의 밤 · 등불 광장",
+      "src": "backgrounds/scenes-03.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "festival"
+    },
+    "snow": {
+      "id": "snow",
+      "name": "이름 없는 마을 · 광산 마을",
+      "src": "backgrounds/scenes-03.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": "snow"
+    },
+    "clapper": {
+      "id": "clapper",
+      "name": "다시 멈춘 종 · 종탑 작업실",
+      "src": "backgrounds/scenes-03.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": "clapper"
+    },
+    "bureau": {
+      "id": "bureau",
+      "name": "관리국장 · 도시 보석상",
+      "src": "backgrounds/scenes-04.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "bureau"
+    },
+    "lining": {
+      "id": "lining",
+      "name": "망토의 안감 · 정거장 대합실",
+      "src": "backgrounds/scenes-04.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          0,
+          768,
+          512
+        ]
+      ],
+      "caseId": "lining"
+    },
+    "kitchen": {
+      "id": "kitchen",
+      "name": "부엌의 등불 · 마지막 밤",
+      "src": "backgrounds/scenes-04.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": "kitchen"
+    },
+    "forest-path": {
+      "id": "forest-path",
+      "name": "마을을 잇는 숲길",
+      "src": "backgrounds/scenes-04.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          768,
+          512,
+          768,
+          512
+        ]
+      ],
+      "caseId": null
+    }
+  },
+  "frameFormat": "[x,y,width,height] in original PNG pixels; render with a clipped SVG viewport or equivalent atlas renderer",
+  "representativeBackgrounds": true
+}
