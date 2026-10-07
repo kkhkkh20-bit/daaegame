@@ -2890,7 +2890,7 @@ function hl(t){
   return s;
 }
 var NSX=null,NTIMER=null;
-function starStr(n){var s="";for(var i=0;i<3;i++)s+=i<n?"★":"☆";return s}
+function starStr(n){var s="";for(var i=0;i<3;i++)s+='<img class="anstar" src="art/icons/'+(i<n?"star-full":"star-empty")+'.png?v=194" alt="">';return '<span class="stimg" role="img" aria-label="별 '+n+'개">'+s+'</span>'}
 function sleep(ms){return new Promise(function(r){setTimeout(r,ms)})}
 function pf(k,mood){var p=CAST[k];if((k==="det0"||k==="det1")&&typeof S!=="undefined"&&S&&S.look){var L=S.look[k==="det0"?"d0":"d1"];if(L)p={animal:L.a,color:L.c,acc:window.__lookAcc?window.__lookAcc(L):(L.acc==="none"?"":L.acc)}}return face(p.animal,p.color,"",((mood||"")+" "+(p.acc||"")).trim())}
 function allSpots(c){var r=[];c.locations.forEach(function(l){l.spots.forEach(function(s){r.push(s)})});return r}
@@ -3728,7 +3728,7 @@ function renderScene(c){
     if(got)h+='<span class="hot done" style="'+st+'" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10 l4 4 l8 -8" fill="none" stroke="currentColor" stroke-width="3"/></svg></span>';
     else h+='<button class="hot'+(s.uv?' uvs':'')+(p[1]>135?' up':'')+edge(p[0])+'" style="'+st+'" data-spot="'+s.ev.id+'" data-px="'+p[0]+'" data-py="'+p[1]+'" aria-label="'+s.name+' 살펴보기">'+LENS+'<span class="hn">'+s.name+'</span></button>';
   });
-  h+='</div></div><button class="fsa l" id="fsal" aria-label="왼쪽 보기">◀</button><button class="fsa r" id="fsar" aria-label="오른쪽 보기">▶</button>'+sbar+'</div>';
+  h+='</div></div><button class="fsa l" id="fsal" aria-label="왼쪽 보기">◀︎</button><button class="fsa r" id="fsar" aria-label="오른쪽 보기">▶︎</button>'+sbar+'</div>';
   if(G.sceneTalk&&c.talk[G.sceneTalk])h+='<section class="fieldtalk" id="fieldtalk"><div class="fth"><span><small>현장 인터뷰</small>'+CAST[G.sceneTalk].name+'에게 묻기</span><button class="minib ghost" id="ftfull">심문 탭</button><button class="minib" id="ftclose">닫기</button></div>'+talkStage(c,G.sceneTalk)+'</section>';
   return h;
 }
@@ -3778,7 +3778,7 @@ function openRecord(c,mode,opts){opts=opts||{};
     var items=recItems(c,st.tab);if(items.indexOf(st.sel)<0)st.sel=items[items.length-1]||null;
     if(st.sel){if(!G.seen)G.seen=[];if(G.seen.indexOf(st.sel)<0)G.seen.push(st.sel)}
     var nE=G.found.length,nT=recItems(c,"t").length;
-    var h='<div class="cr-in"><div class="cr-top"><b>'+(mode==="battle"?'증거로 반박':mode==="present"?'제시한다':'법정기록')+'</b><button class="cr-x" aria-label="닫기">✕</button></div>';
+    var h='<div class="cr-in"><div class="cr-top"><b>'+(mode==="battle"?'증거로 반박':mode==="present"?'제시한다':'법정기록')+'</b><button class="cr-x" aria-label="닫기">×</button></div>';
     if(mode==="present"&&opts.tid){var lx=tById(c,st.tid);h+='<div class="cr-claim"><small>'+esc(CAST[lx.who].name)+'의 말</small>"'+esc(lx.t.a)+'"</div>'}
     else if(mode==="present"){h+='<div class="cr-who"><small>누구의</small>'+__met(c,people(c)).map(function(k){return '<button data-crw="'+k+'" aria-pressed="'+(st.who===k)+'">'+pf(k,moodOf(c,k))+'<span>'+esc(CAST[k].name)+'</span></button>'}).join("")+'</div>';
       var sl=stms(st.who);if(!sl.some(function(t){return t.id===st.tid}))st.tid=null;
@@ -3929,7 +3929,7 @@ function renderTray(c){
     '<span class="tmsg">'+(mode?'':'눌러서 자세히 보기')+'</span>'+(mode==="talk"?'<button class="tcancel" id="tcancel">지목 취소</button>':'')+(mode?'':'<button class="tfold" id="traytog" aria-expanded="true">접기 ▼</button>')+'</div><div class="list">';
   if(tab==="ev"){
     if(!G.found.length)h+='<span class="none">현장에서 돋보기를 눌러 증거를 모아요.</span>';
-    var pins=G.pins||[];G.found.slice().sort(function(a,b){return (pins.indexOf(b)>=0)-(pins.indexOf(a)>=0)}).forEach(function(id){var e=evById(c,id),cx=e.check&&!(G.exam&&G.exam[id]);h+='<button class="ti'+(G.pick===id?' sel':'')+'" data-ti="'+id+'">'+(isSeen(id)?'':'<i class="nd"></i>')+(cx?'<i class="exq" title="더 살펴볼 곳이 있어요">?</i>':'')+(pins.indexOf(id)>=0?'<i class="pinq">★</i>':'')+evIcon(id)+'<span>'+e.name+'</span></button>'});
+    var pins=G.pins||[];G.found.slice().sort(function(a,b){return (pins.indexOf(b)>=0)-(pins.indexOf(a)>=0)}).forEach(function(id){var e=evById(c,id),cx=e.check&&!(G.exam&&G.exam[id]);h+='<button class="ti'+(G.pick===id?' sel':'')+'" data-ti="'+id+'">'+(isSeen(id)?'':'<i class="nd"></i>')+(cx?'<i class="exq" title="더 살펴볼 곳이 있어요">?</i>':'')+(pins.indexOf(id)>=0?'<i class="pinq"><img class="anstar" src="art/icons/star-full.png?v=194" alt="중요"></i>':'')+evIcon(id)+'<span>'+e.name+'</span></button>'});
   }else{
     if(!tItems.length)h+='<span class="none">심문에서 받은 증언이 여기 모여요.</span>';
     var whos=[];tItems.forEach(function(id){var w=tById(c,id).who;if(whos.indexOf(w)<0)whos.push(w)});
@@ -4340,7 +4340,7 @@ function renderNote(c){
       if(l.info&&l.info.length&&f==="all")h+='<ul class="memo">'+l.info.map(function(m){return '<li>'+m+'</li>'}).join("")+(l.obs||[]).filter(function(o){return !o.zoom&&obsSeen(o.id)}).map(function(o){return '<li class="ob"><b>관찰</b> '+o.text+'</li>'}).join("")+'</ul>';
       if(!items.length)h+='<p class="empty">'+(f==="all"?'아직 찾은 증거가 없어요.':'해당하는 증거가 없어요.')+'</p>';
       items.forEach(function(s){var id=s.ev.id,pin=pins.indexOf(id)>=0,cx=s.ev.check&&!(G.exam&&G.exam[id]);
-        h+='<div class="evrow'+(pin?' pinned':'')+'"><button class="evopen" data-open="'+id+'">'+evIcon(id)+'<div><h4>'+s.ev.name+(cx?' <i class="exq2">살펴볼 곳 있음</i>':'')+'</h4><p>'+evDesc(s.ev)+'</p>'+(THINK[id]?'<p class="evth">'+esc(pname(THINK[id]))+'</p>':'')+'</div></button><button class="pinbtn" data-pin="'+id+'" aria-pressed="'+pin+'" aria-label="별표">'+(pin?'★':'☆')+'</button></div>'});
+        h+='<div class="evrow'+(pin?' pinned':'')+'"><button class="evopen" data-open="'+id+'">'+evIcon(id)+'<div><h4>'+s.ev.name+(cx?' <i class="exq2">살펴볼 곳 있음</i>':'')+'</h4><p>'+evDesc(s.ev)+'</p>'+(THINK[id]?'<p class="evth">'+esc(pname(THINK[id]))+'</p>':'')+'</div></button><button class="pinbtn" data-pin="'+id+'" aria-pressed="'+pin+'" aria-label="별표">'+(pin?'<img class="anstar" src="art/icons/star-full.png?v=194" alt="중요">':'<img class="anstar" src="art/icons/star-empty.png?v=194" alt="중요 아님">')+'</button></div>'});
       h+='</section>';
     });
   }else if(nt==="ppl"){
@@ -4395,7 +4395,7 @@ function reconstruct(c,done){
     h+='<path id="rtrail" d="" fill="none" stroke="#D23A34" stroke-width="3" stroke-dasharray="5 5"/><g id="rtok" style="transition:transform .9s cubic-bezier(.45,.05,.3,1)"><circle r="15" fill="#fff" stroke="#D23A34" stroke-width="3"/><g id="rface" transform="translate(-13 -13) scale(.26)"></g></g></svg>';
     return h;
   }
-  el.innerHTML='<div class="rc-in"><div class="rc-top"><small>사건 재구성</small><b id="rclock"></b></div><div class="rc-map">'+mapSvg()+'</div><div class="rc-txt" id="rtxt"></div><div class="rc-dots">'+R.steps.map(function(_,j){return '<i></i>'}).join("")+'</div><div class="rc-act"><button class="btn ghost" id="reconskip">건너뛰기</button><button class="btn" id="rnext">다음 ▶</button></div></div>';
+  el.innerHTML='<div class="rc-in"><div class="rc-top"><small>사건 재구성</small><b id="rclock"></b></div><div class="rc-map">'+mapSvg()+'</div><div class="rc-txt" id="rtxt"></div><div class="rc-dots">'+R.steps.map(function(_,j){return '<i></i>'}).join("")+'</div><div class="rc-act"><button class="btn ghost" id="reconskip">건너뛰기</button><button class="btn" id="rnext">다음 ▶︎</button></div></div>';
   var trail=[];
   function show(){
     var s=R.steps[i],p=pt(s.loc);
@@ -4406,7 +4406,7 @@ function reconstruct(c,done){
     el.querySelector("#rtok").style.transform='translate('+p[0]+'px,'+(p[1]-14)+'px)';
     var culp=trail.map(function(q,j){return (j?'L':'M')+q[0]+' '+(q[1]-4)}).join(" ");el.querySelector("#rtrail").setAttribute("d",culp);
     el.querySelectorAll(".rc-dots i").forEach(function(d,j){d.className=j<=i?'on':''});
-    el.querySelector("#rnext").textContent=i<R.steps.length-1?'다음 ▶':'정리하기';
+    el.querySelector("#rnext").textContent=i<R.steps.length-1?'다음 ▶︎':'정리하기';
     SFX.steps();
   }
   function summary(){
@@ -4467,7 +4467,7 @@ function renderFinal(c){
   if(G.hp==null)G.hp=hpMax(c);
   if(!G.battle){
     var missing=liveSpots(c).length-nFound(),unbroken=c.contra.length-Object.keys(G.broken).length;
-    h+='<section class="panel"><h3 style="font-size:24px">최종 대결</h3><ol class="rule3"><li><b>1</b><span>범인을 골라요</span></li><li><b>2</b><span>◀ ▶로 범인의 말을 넘겨 봐요</span></li><li><b>3</b><span>증거랑 안 맞는 말에서 <em>증거로 반박</em>!</span></li></ol><p class="soft">틀리면 신뢰도 ●가 하나 줄어요.</p>'+
+    h+='<section class="panel"><h3 style="font-size:24px">최종 대결</h3><ol class="rule3"><li><b>1</b><span>범인을 골라요</span></li><li><b>2</b><span>◀︎ ▶︎로 범인의 말을 넘겨 봐요</span></li><li><b>3</b><span>증거랑 안 맞는 말에서 <em>증거로 반박</em>!</span></li></ol><p class="soft">틀리면 신뢰도 ●가 하나 줄어요.</p>'+
        ((missing||unbroken)?'<p class="soft" style="color:var(--stamp)">아직 못 찾은 증거 '+missing+'개, 깨뜨리지 못한 거짓말 '+unbroken+'개가 있어요.</p>':'')+'</section>';
     h+='<section class="fq"><h4>범인은 누구일까?</h4><div class="opts">';
     __met(c,c.suspects).forEach(function(k){h+='<button class="opt face" data-acc="'+k+'" aria-pressed="'+(G.accuse===k)+'">'+pf(k,moodOf(c,k))+CAST[k].name+'</button>'});
@@ -4482,7 +4482,7 @@ function renderFinal(c){
        '<div class="foe lv'+Math.min(3,B.round)+' fst'+window.__fst(B.round,R.length)+'" id="foe" style="--fc:'+((CAST[cul]&&CAST[cul].color)||"#E8ECF8")+'">'+pf(cul,window.__fmood(md,B.round,R.length))+window.__foefx(window.__fst(B.round,R.length))+'<div class="stand"><b>'+name+'</b></div></div>'+
        '<div class="xhead"><b>반대 심문</b><span>반론 '+(ri+1)+' / '+R.length+'</span></div>'+
        '<ol class="stmlist">'+st.map(function(x,i){return i===si?'<li class="claim pop" id="claim"><span class="cno">문장 '+(i+1)+' / '+st.length+'</span>"'+x.t+'"</li>':'<li><button data-si="'+i+'"><b>'+(i+1)+'</b>'+esc(x.t)+'</button></li>'}).join("")+'</ol>'+
-       '<div class="acts x"><button class="btn ghost nav" id="prevst" aria-label="이전 문장">◀</button><button class="btn ghost" id="press">추궁하기</button><button class="btn red" id="aimhint">이의 있음!</button><button class="btn ghost nav" id="nextst" aria-label="다음 문장">▶</button></div>'+
+       '<div class="acts x"><button class="btn ghost nav" id="prevst" aria-label="이전 문장">◀︎</button><button class="btn ghost" id="press">추궁하기</button><button class="btn red" id="aimhint">이의 있음!</button><button class="btn ghost nav" id="nextst" aria-label="다음 문장">▶︎</button></div>'+
        '<button class="linkish" id="retreat">잠깐, 수사로 돌아갈래</button></section>';
     return h;
   }
@@ -4597,7 +4597,7 @@ function accuse(c,k){
     if(G.hp==null||G.hp<1)G.hp=hpMax(c);
     G.battle={cul:cul,round:(window.__startRound?window.__startRound(c):0),si:0,miss:0,lives:G.hp,max:hpMax(c),phase:"fight"};G.target=null;G.pick=null;G.tf="all";render();window.scrollTo(0,0);
     banner("반론 개시",CAST[cul].name+"의 반론").then(function(){
-      say(window.__testi(c,cul,G.battle.round,true),function(){render();coach("xexam","◀ ▶로 반론 <b>문장을 하나씩</b> 넘겨 봐요. 수상한 문장에서 <b>추궁하기</b>로 더 캐묻거나, 아래 수첩에서 증거를 올려 <b>이의 있음!</b>",".claim")});
+      say(window.__testi(c,cul,G.battle.round,true),function(){render();coach("xexam","◀︎ ▶︎로 반론 <b>문장을 하나씩</b> 넘겨 봐요. 수상한 문장에서 <b>추궁하기</b>로 더 캐묻거나, 아래 수첩에서 증거를 올려 <b>이의 있음!</b>",".claim")});
     });
   });
 }
@@ -4645,7 +4645,7 @@ function judgeBattle(c,item){
       var taunts=["흥, "+itemName(c,item)+"? 그게 뭐 어쨌다는 거야?","후후, 그걸로는 어림없지!","그게 내 말이랑 무슨 상관인데? 탐정 맞아?"];
       var bt=window.__bait&&window.__bait(c,s,item);
       var lines=bt?bt.map(function(l){return l[0]==="think"&&!l[3]?[l[0],l[1],"",curPlayer()]:l}):[[cul,taunts[B.lives%3],"smug","","smug"]];
-      lines.push(["think",elsewhere?"증거는 맞는 것 같은데… 부딪치는 문장이 달라! ◀ ▶로 다른 문장을 넘겨 보자.":"아니야, 그건 이 문장이랑 부딪치지 않아.","",curPlayer()]);
+      lines.push(["think",elsewhere?"증거는 맞는 것 같은데… 부딪치는 문장이 달라! ◀︎ ▶︎로 다른 문장을 넘겨 보자.":"아니야, 그건 이 문장이랑 부딪치지 않아.","",curPlayer()]);
       if(B.miss>=2&&B.lives>0){var hh=autoHint(c,st);if(hh)lines.push(["think",hh,"",curPlayer()])}
       if(B.lives<=0){
         lines.push(["narr","신뢰도가 바닥났다… "+jo(name,"이","가")+" 빠져나갔어요. 수첩을 다시 정리하고 도전해요."]);
@@ -4712,7 +4712,7 @@ function renderResultScreen(c){
     h+='<div><div class="label">이번 사건 배지</div><div class="badges">'+bd.map(function(b){return '<span class="bdg'+(b[1]?'':' off')+'" title="'+b[2]+'">'+MEDAL.replace('class="medal"','')+b[0]+'</span>'}).join("")+'</div></div>';
     h+='<details class="why"><summary>탐정의 추리 보기</summary><ol class="steps">'+c.solution.map(function(s){return '<li>'+s+'</li>'}).join("")+'</ol><button class="btn ghost" id="recon">사건 재구성 다시 보기</button></details>';
     h+='<button class="linkbtn" id="again">이 사건 처음부터 다시</button>';
-    h+='<div class="rowbtns stick"><button class="btn" id="next">'+(G.ci===CASES.length-1||!caseOpen(G.ci+1)?'게시판으로':'다음 사건 ▶')+'</button></div>';
+    h+='<div class="rowbtns stick"><button class="btn" id="next">'+(G.ci===CASES.length-1||!caseOpen(G.ci+1)?'게시판으로':'다음 사건 ▶︎')+'</button></div>';
   }else{
     h+='<ul class="checks">'+c.final.map(function(f,i){var mine=G.answers[i],shown=f.type==="suspect"?CAST[mine].name:mine;return '<li><span class="'+(r.correct[i]?'ok':'ng')+'">'+(r.correct[i]?'정답':'오답')+'</span><span>'+f.q+' · '+esc(shown)+'</span></li>'}).join("")+'</ul>';
     h+='<p>조사한 내용은 그대로 있어요. 수첩을 다시 보고 틀린 문제를 고쳐 봐요. 해설은 사건을 풀면 나와요.</p>';
@@ -5203,7 +5203,7 @@ var CHAT={
 
 function affOf(k){return (S.aff&&S.aff[k])||0}
 var AFFMAX=3,AFFSECRET=2;
-function hearts(k){var n=Math.min(AFFMAX,affOf(k)),h="";for(var i=0;i<AFFMAX;i++)h+=i<n?"♥":"♡";return '<span class="hearts" aria-label="친밀도 '+n+'">'+h+'</span>'}
+function hearts(k){var n=Math.min(AFFMAX,affOf(k)),h="";for(var i=0;i<AFFMAX;i++)h+='<img class="anstar" src="art/icons/'+(i<n?"trust-full":"trust-empty")+'.png?v=194" alt="">';return '<span class="hearts" aria-label="친밀도 '+n+'">'+h+'</span>'}
 function chatNext(c,k){
   var sets=(CHAT[c.id]||{})[k]||[];if(!S.chat)S.chat={};
   for(var i=0;i<sets.length;i++){var key=c.id+":"+k+":"+i;if(!S.chat[key])return {i:i,key:key,lines:sets[i],fresh:true}}
@@ -5214,7 +5214,7 @@ function doChat(c,k){
   var n=chatNext(c,k);if(!n)return;SFX.select();
   say(n.lines,function(){
     if(n.fresh){S.chat[n.key]=1;if(!S.aff)S.aff={};var before=affOf(k);S.aff[k]=Math.min(AFFMAX,before+1);persist();render();
-      if(S.aff[k]>before){SFX.blush();floater("#bigp","친해졌어요 ♥ "+S.aff[k]+"/"+AFFMAX,"");
+      if(S.aff[k]>before){SFX.blush();floater("#bigp","친해졌어요 "+S.aff[k]+"/"+AFFMAX,"");
         if(S.aff[k]===AFFSECRET)setTimeout(function(){if(!G)return;G.notice={good:true,title:CAST[k].name+"의 비밀을 알게 됐어요",text:"수첩 > 인물 카드에서 볼 수 있어요."};render()},900)}}
     else render();
   });
@@ -5226,7 +5226,7 @@ function personaBox(k,compact){
   var h='<div class="persona"><div class="ptop"><b class="ptag">'+p.tag+'</b>'+(chOn?hearts(k):'')+'</div>'+
     '<dl><dt>말버릇</dt><dd>"'+p.say+'"</dd><dt>좋아해요</dt><dd>'+p.likes+'</dd><dt>약해요</dt><dd>'+p.weak+'</dd></dl>';
   if(rel.length)h+='<div class="prelx">'+rel.map(function(r){return '<span>'+(CAST[r[0]]?pf(r[0]):'')+'<i><b>'+(CAST[r[0]]?CAST[r[0]].name:r[0])+'</b> '+r[1]+'</i></span>'}).join("")+'</div>';
-  h+=affOf(k)>=AFFSECRET?'<p class="psecret"><b>비밀</b> '+p.secret+'</p>':!chOn?'':'<p class="psecret lock">친밀도 ♥'+AFFSECRET+'이 되면 비밀을 알려 줘요. 심문 중 <b>수다 떨기</b>로 친해져요.</p>';
+  h+=affOf(k)>=AFFSECRET?'<p class="psecret"><b>비밀</b> '+p.secret+'</p>':!chOn?'':'<p class="psecret lock">친밀도 '+AFFSECRET+'이 되면 비밀을 알려 줘요. 심문 중 <b>수다 떨기</b>로 친해져요.</p>';
   return h+'</div>';
 }
 function friendIds(){var o=[];CASES.forEach(function(c,i){if(!caseOpen(i))return;people(c).forEach(function(k){if(o.indexOf(k)<0&&PERSONA[k])o.push(k)})});return o}
@@ -7727,14 +7727,14 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
    if(st.sel){if(!G.seen)G.seen=[];if(G.seen.indexOf(st.sel)<0)G.seen.push(st.sel)}
    var nE=G.found.length,nT=G.asked.filter(function(id){var x=tById(c,id);return x&&x.t.q!==""}).length,pins=G.pins||[];
    el.classList.toggle("combining",!!st.comb);
-   var h='<div class="cr-in"><div class="cr-top"><b>'+(mode==="battle"?'증거로 반박':mode==="present"?'제시한다':'법정기록')+'</b><button class="cr-x" aria-label="닫기">✕</button></div>';
+   var h='<div class="cr-in"><div class="cr-top"><b>'+(mode==="battle"?'증거로 반박':mode==="present"?'제시한다':'법정기록')+'</b><button class="cr-x" aria-label="닫기">×</button></div>';
    if(mode==="present"&&opts.tid){var lx=tById(c,st.tid);h+='<div class="cr-claim"><small>'+esc(CAST[lx.who].name)+'의 말</small>"'+esc(lx.t.a)+'"</div>'}
    else if(mode==="present"){h+='<div class="cr-who"><small>누구의</small>'+__met(c,people(c)).map(function(k){return '<button data-crw="'+k+'" aria-pressed="'+(st.who===k)+'">'+pf(k,moodOf(c,k))+'<span>'+esc(CAST[k].name)+'</span></button>'}).join("")+'</div>';
     var sl=stms(st.who);if(!sl.some(function(t){return t.id===st.tid}))st.tid=null;
     h+='<div class="cr-stm"><small>어떤 말에</small>'+(sl.length?sl.map(function(t){return '<button data-crm="'+t.id+'" aria-pressed="'+(st.tid===t.id)+'">"'+esc(t.a)+'"</button>'}).join(""):'<p>아직 깨뜨릴 말이 없어요.</p>')+'</div>'}
    if(mode==="battle"){var stt=stmsOf(rOf(c));h+='<div class="cr-claim"><small>'+esc(CAST[G.battle.cul].name)+'의 말</small>"'+esc(stt[(G.battle.si||0)%stt.length].t)+'"</div>'}
    if(st.comb)h+='<div class="cr-comb">'+thumb(st.comb)+'<span><b>'+esc(itemName(c,st.comb))+'</b>와(과) 이을 것을 골라요. 증언 탭도 고를 수 있어요.</span><button id="crcx">취소</button></div>';
-   if(st.sel){var e=evById(c,st.sel),pn=pins.indexOf(st.sel)>=0,act='<div class="cr-act"><button class="pn" id="crpin" aria-pressed="'+pn+'">'+(pn?'★ 중요':'☆ 중요')+'</button>'+(st.comb?'':'<button class="cb" id="crcomb">결합</button>')+'</div>';
+   if(st.sel){var e=evById(c,st.sel),pn=pins.indexOf(st.sel)>=0,act='<div class="cr-act"><button class="pn" id="crpin" aria-pressed="'+pn+'">'+(pn?'<img class="anstar" src="art/icons/star-full.png?v=194" alt=""> 중요':'<img class="anstar" src="art/icons/star-empty.png?v=194" alt=""> 중요')+'</button>'+(st.comb?'':'<button class="cb" id="crcomb">결합</button>')+'</div>';
     if(e){var ex=G.exam&&G.exam[st.sel],cx=cxOf(c,st.sel);
      h+='<div class="cr-det'+(st.fresh===st.sel?' newfact':'')+'"><div class="cr-ic">'+evIcon(st.sel)+'</div><div class="cr-tx"><h3>'+esc(e.name)+(cx?'<span class="cr-tag">결합</span>':'')+'</h3><p>'+(cx?esc(e.desc):evDesc(e))+'</p>'+(cx?'<p class="cr-q">'+esc(itemName(c,cx.combo[0]))+' + '+esc(itemName(c,cx.combo[1]))+'</p>':'')+(e.check?(ex?'<p class="cr-ex">'+e.check.text+'</p>':'<button class="minib" id="crexam">'+e.check.label+'</button>'):'')+act+'</div></div>'}
     else{var x=tById(c,st.sel);h+='<div class="cr-det"><div class="cr-ic">'+pf(x.who,moodOf(c,x.who))+'</div><div class="cr-tx"><h3>'+esc(CAST[x.who].name)+'</h3><p class="cr-q">'+esc(x.t.q)+'</p><p class="cr-a">"'+esc(x.t.a)+'"</p>'+act+'</div></div>'}
@@ -12307,7 +12307,7 @@ function openRoom(cid){
   function draw(msg,ok){
     var step=s.steps[st.i];
     el.classList.toggle("uvon",!!st.uv);
-    var h='<button class="x" type="button" aria-label="닫기">✕</button><div class="sart">'+art(step)+'</div><div class="spn">';
+    var h='<button class="x" type="button" aria-label="닫기">×</button><div class="sart">'+art(step)+'</div><div class="spn">';
     if(!step){
       h+='<h3>'+esc(s.title)+'</h3><p class="q">'+esc(s.done||"비밀 공간을 모두 풀었다.")+'</p><div class="row"><button class="b pri" type="button" id="sfin">흔적 챙기기</button></div>';
     }else{
@@ -16820,7 +16820,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   var R=BATTLE[c.id]||[],st=stmsOf(R[Math.min(r,R.length-1)]),n=R.length,md=r===0?"":window.__fmood("",r,n);
   var L=[["narr","— 증언 개시 —","",cul]];
   st.forEach(function(s){L.push([cul,s.t,md,"testi"])});
-  L.push(["narr",first?"반대 심문 시작! ◀ ▶로 문장을 하나씩 넘겨 보며, 증거와 부딪치는 문장에 이의 있음!":"— 반대 심문 —","",cul]);
+  L.push(["narr",first?"반대 심문 시작! ◀︎ ▶︎로 문장을 하나씩 넘겨 보며, 증거와 부딪치는 문장에 이의 있음!":"— 반대 심문 —","",cul]);
   return L};
  var css=document.createElement("style");
  window.__hush=function(last){try{bgm(null)}catch(e){}return new Promise(function(r){setTimeout(r,last?520:260)})};
@@ -16995,10 +16995,10 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   h+='<div class="rt-top"><b>'+esc(D.title)+'</b><span>'+esc(ph.topic||ph.q||D.sub)+'</span><span class="rt-hp">'+Array.apply(null,{length:hpMax(C)}).map(function(_,i){return '<i class="'+(i<(G.hp==null?hpMax(C):G.hp)?'on':'')+'"></i>'}).join("")+'</span></div>';
   if(Q){var L=Q[qi];h+=seats(L.w)+'<div class="rt-mid talk" id="rtnext"><div class="rt-big">'+pf(L.w,L.m||"")+'</div><div class="rt-bub"><small>'+esc(nm(L.w))+'</small><p>'+hl(pname(L.t))+'</p><span class="nx">▼</span></div></div>'}
   else if(ph.type==="debate"){var st=ph.stms[si],md=modeOf(ph),ev=sel&&evById(C,sel);
-   h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-srow"><button type="button" class="rt-sn" id="rtprev" aria-label="이전 말"'+(ph.stms.length<2?' disabled':'')+'>◀</button><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div><button type="button" class="rt-sn" id="rtnx" aria-label="다음 말"'+(ph.stms.length<2?' disabled':'')+'>▶</button></div>'
+   h+=seats(st.w)+'<div class="rt-goal '+md+'">'+(md==="no"?'<b>틀린 말 찾기</b>틀린 말을 찾아 증거로 "그건 아니야!"':'<b>맞는 말 찾기</b>맞는 말을 찾아 증거로 "그 말이 맞아!"')+'</div><div class="rt-mid"><div class="rt-big">'+pf(st.w,st.m||"")+'</div><div class="rt-srow"><button type="button" class="rt-sn" id="rtprev" aria-label="이전 말"'+(ph.stms.length<2?' disabled':'')+'>◀︎</button><div class="rt-bub stm"><small>'+esc(nm(st.w))+' <em>'+(si+1)+' / '+ph.stms.length+'</em></small><p>'+words(pname(st.t),st)+'</p></div><button type="button" class="rt-sn" id="rtnx" aria-label="다음 말"'+(ph.stms.length<2?' disabled':'')+'>▶︎</button></div>'
     +'<div class="rt-nav"><span>'+(SKEY==="debate"&&window.__rtStuck&&window.__rtStuck(C,ph)?'지금 가진 증거로는 이 토론을 풀 수 없어요. 아래 <b>수사로 돌아가기</b>를 눌러 증거를 더 찾아요.':sel?'빛나는 말을 눌러 <b>'+esc(itemName(C,sel))+'</b>을(를) 쏴요':'아래에서 증거를 먼저 골라요')+'</span></div></div>'+(ev?'<div class="rt-evd">'+evIcon(sel)+'<div><b>'+esc(ev.name)+'</b><p>'+(window.__cxOf&&window.__cxOf(C,sel)?esc(ev.desc):evDesc(ev))+'</p>'+(gated(C,sel)&&ev.check?'<button type="button" class="rt-exam" id="rtexam">'+esc(ev.check.label||"자세히 살펴보기")+'</button>':'')+'</div></div>':'<div class="rt-evd empty">증거를 누르면 자세한 설명이 여기에 나와요.</div>')
     +'<div class="rt-bul">'+ph.bullets.filter(has).map(function(id){return '<button type="button" class="bl'+(sel===id?' on':'')+'" data-bl="'+id+'">'+evIcon(id)+'<span>'+esc(itemName(C,id))+'</span></button>'}).join("")+'</div>'
-    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button>'+(SKEY==="debate"?'<button type="button" id="rtleave">수사로 돌아가기</button>':'')+'<span>문장은 ◀ ▶로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
+    +'<div class="rt-foot"><button type="button" id="rthint">힌트</button>'+(SKEY==="debate"?'<button type="button" id="rtleave">수사로 돌아가기</button>':'')+'<span>문장은 ◀︎ ▶︎로 넘겨요. 빛나는 말이 판단할 대상이에요.</span></div>'}
   else if(ph.type==="vote"||ph.type==="mob"){var V=ph.votes||{},mob=ph.type==="mob";h+=seats(null,false)+'<div class="rt-mid vote"><p class="rt-q">'+esc(ph.q)+'</p><p class="rt-sub">'+(mob?'모두의 표가 나왔어요…':'모두의 표가 나왔어요. 범인이라고 생각하는 사람을 눌러요.')+'</p><div class="rt-vg'+(mob?' mob':'')+'">'+C.suspects.map(function(k){var by=Object.keys(V).filter(function(v){return V[v]===k});return '<button type="button" class="vc'+(mob&&mobHit&&k===ph.target?' hitm':'')+'" data-seat="'+k+'"'+(mob?' disabled':'')+'>'+(mob&&mobHit&&k===ph.target?'<span class="mstamp">다수결</span>':'')+pf(k,by.length>1?"nervous":"")+'<b>'+esc(nm(k))+'</b><span class="vby">'+by.map(function(v){return '<i>'+pf(v,"")+'</i>'}).join("")+'</span><em>'+by.length+'표</em></button>'}).join("")+'</div></div>'}
   el.innerHTML='<div class="rt-in">'+h+'</div>';
   requestAnimationFrame(function(){if(!el)return;el.querySelectorAll(".sm u").forEach(function(u){u.style.width=u.dataset.v+"%"});D.seats.forEach(function(k){prev[k]=susOf(k)})});
@@ -18019,10 +18019,10 @@ DEBATE.kitchen={
    var st=stmsOf(rOf(c)),si=(B.si||0)%st.length,t=String((st[si]||{}).t||"");
    h=h.replace('<li class="claim pop" id="claim">','<li class="claim pop'+(t.length>44?' long':'')+(t.length>70?' xlong':'')+'" id="claim">');
    var dots='<div class="stdots" aria-hidden="true">'+st.map(function(_,i){return '<i class="'+(i===si?'on':'')+'"></i>'}).join("")+'<span>옆으로 밀어서 다음 문장</span></div>';
-   h=h.replace('<button class="btn ghost nav" id="prevst" aria-label="이전 문장">◀</button>','').replace('<button class="btn ghost nav" id="nextst" aria-label="다음 문장">▶</button>','').replace('<div class="acts x">','<div class="acts x x2">');
+   h=h.replace('<button class="btn ghost nav" id="prevst" aria-label="이전 문장">◀︎</button>','').replace('<button class="btn ghost nav" id="nextst" aria-label="다음 문장">▶︎</button>','').replace('<div class="acts x">','<div class="acts x x2">');
    var one=st.length<2?' disabled':'';
-   h=h.replace('<ol class="stmlist">','<div class="strow"><button class="stnav" id="prevst" aria-label="이전 문장"'+one+'>◀</button><ol class="stmlist">');
-   h=h.replace('</ol>','</ol><button class="stnav" id="nextst" aria-label="다음 문장"'+one+'>▶</button></div>'+dots.replace('옆으로 밀어서 다음 문장',st.length<2?'문장 1개':'◀ ▶ 또는 옆으로 밀어서 넘기기'))}
+   h=h.replace('<ol class="stmlist">','<div class="strow"><button class="stnav" id="prevst" aria-label="이전 문장"'+one+'>◀︎</button><ol class="stmlist">');
+   h=h.replace('</ol>','</ol><button class="stnav" id="nextst" aria-label="다음 문장"'+one+'>▶︎</button></div>'+dots.replace('옆으로 밀어서 다음 문장',st.length<2?'문장 1개':'◀︎ ▶︎ 또는 옆으로 밀어서 넘기기'))}
   return h};
  var _bf=bindFinal;bindFinal=function(c){_bf.apply(this,arguments);
   var cl=document.getElementById("claim");if(!cl)return;var x0=null,y0=null;
@@ -18542,7 +18542,7 @@ TWBR.kitchen={type:"fail",phases:[
  var el=null,cur=0,tried={},hintOn=false,solved=false;
  function faceOpt(o){return typeof o==="string"?esc(o):face(o.f[0],o.f[1],"")+'<span>'+esc(o.t)+'</span>'}
  function close(){if(el){el.remove();el=null}render()}
- function list(){var n=done(),h='<div class="flq-top"><b>번뜩 추리</b><span>'+Math.min(n,Q.length)+' / '+Q.length+'</span><button class="flq-x" id="fqx" aria-label="닫기">✕</button></div>';
+ function list(){var n=done(),h='<div class="flq-top"><b>번뜩 추리</b><span>'+Math.min(n,Q.length)+' / '+Q.length+'</span><button class="flq-x" id="fqx" aria-label="닫기">×</button></div>';
   h+='<p class="flq-sub">짧은 문제를 버튼으로 맞혀요. 틀려도 괜찮아요. 단계를 깨면 새 꾸미기가 열려요.</p><div class="flq-grid">';
   for(var i=0;i<Q.length;i++){var st=i<n?'ok':i===n?'next':'lock';h+='<button type="button" class="flqn '+st+'" data-fq="'+i+'"'+(st==="lock"?' disabled':'')+'>'+(i+1)+(st==="ok"?'<i>★</i>':'')+'</button>'}
   h+='</div>';el.innerHTML='<div class="flq-in">'+h+'</div>';
@@ -18551,7 +18551,7 @@ TWBR.kitchen={type:"fail",phases:[
   var nx=el.querySelector(".flqn.next");if(nx)try{nx.scrollIntoView({block:"center"})}catch(e){}}
  function play(i){cur=i;tried={};hintOn=false;solved=false;draw()}
  function draw(){var p=Q[cur],faces=p.o.some(function(o){return typeof o!=="string"});
-  var h='<div class="flq-top"><button class="flq-back" id="fqback" aria-label="목록">◀ 목록</button><b>'+(cur+1)+'단계</b><span class="flq-k k-'+p.k+'">'+p.k+'</span><button class="flq-x" id="fqx" aria-label="닫기">✕</button></div>';
+  var h='<div class="flq-top"><button class="flq-back" id="fqback" aria-label="목록">◀︎ 목록</button><b>'+(cur+1)+'단계</b><span class="flq-k k-'+p.k+'">'+p.k+'</span><button class="flq-x" id="fqx" aria-label="닫기">×</button></div>';
   h+='<div class="flq-card'+(solved?' solved':'')+'"><p class="flq-q">'+esc(p.q).replace(/\n/g,"<br>")+'</p>'+(solved?'<div class="flq-stamp">번뜩!</div>':'')+'</div>';
   h+='<div class="flq-opts'+(faces?' flqf':'')+'">'+p.o.map(function(o,j){var cls=solved&&j===p.a?' right':tried[j]?' wrong':'';return '<button type="button" class="flqo'+cls+'" data-fo="'+j+'"'+(solved||tried[j]?' disabled':'')+'>'+faceOpt(o)+'</button>'}).join("")+'</div>';
   if(solved){h+='<p class="flq-why">'+esc(p.w)+'</p>'+(window.__flashMsg?'<p class="flq-gift">'+window.__flashMsg+'</p>':'')+(cur+1<Q.length?'<button class="btn red wide" id="flqnext">다음 문제</button>':'<p class="flq-why"><b>모든 문제를 풀었어요! 새 문제가 곧 더 생길 거예요.</b></p><button class="btn wide" id="fqlist">목록으로</button>')}
@@ -22823,7 +22823,7 @@ REI2("kitchen",{
  var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);
   try{var m=window.__metOf?window.__metOf(c):[];if(m.length>1||document.getElementById("whounk")||h.indexOf("whounk")>=0){
    var others=m.filter(function(k){return k!==G.who&&pend(c,k)}).length;
-   var nav='<div class="whonav"><button type="button" data-wn="-1" aria-label="이전 사람">◀</button><button type="button" data-wn="list">명단'+(others?'<i></i>':'')+'</button><button type="button" data-wn="1" aria-label="다음 사람">▶</button></div>';
+   var nav='<div class="whonav"><button type="button" data-wn="-1" aria-label="이전 사람">◀︎</button><button type="button" data-wn="list">명단'+(others?'<i></i>':'')+'</button><button type="button" data-wn="1" aria-label="다음 사람">▶︎</button></div>';
    h=h.replace(/(<div class="tstage[^"]*"[^>]*>)/,"$1"+nav)}}catch(e){}
   return h};
  var _bt=bindTalk;bindTalk=function(c){_bt.apply(this,arguments);
@@ -22844,7 +22844,7 @@ REI2("kitchen",{
   document.querySelectorAll(".evpop").forEach(function(e){if(!s||Date.now()>s.until||e.parentNode!==tgt||e.dataset.id!==s.id)e.remove()});
   if(!s||Date.now()>s.until||!tgt||!G)return;if(document.querySelector(".evpop"))return;
   var c=CASES[G.ci];if(!c)return;var d=document.createElement("div");d.className="evpop inscene";d.dataset.id=s.id;
-  try{d.innerHTML=evIcon(s.id)+'<b>'+esc(itemName(c,s.id))+'</b><span class="dir">'+(s.dir==="get"?"◀":"▶")+'</span>'}catch(e){return}
+  try{d.innerHTML=evIcon(s.id)+'<b>'+esc(itemName(c,s.id))+'</b><span class="dir">'+(s.dir==="get"?"◀︎":"▶︎")+'</span>'}catch(e){return}
   d.style.visibility="hidden";tgt.appendChild(d);setTimeout(function(){d.style.visibility=""},140)},250);
 })();
 
@@ -28161,7 +28161,7 @@ REI2("kitchen",{
  function zones(p){return p.zf?p.zf():(p.z||[])}
  function close(){if(el){el.remove();el=null}render()}
  function stars(lv){return lv?'<em class="flq-lv" aria-label="난이도 '+lv+'">'+"★★★".slice(0,lv)+'<s>'+"★★★".slice(lv)+'</s></em>':''}
- function list(){var n=done(),h='<div class="flq-top"><b>번뜩 추리</b><span>'+Math.min(n,Q.length)+' / '+Q.length+'</span><button class="flq-x" id="fqx" aria-label="닫기">✕</button></div>';
+ function list(){var n=done(),h='<div class="flq-top"><b>번뜩 추리</b><span>'+Math.min(n,Q.length)+' / '+Q.length+'</span><button class="flq-x" id="fqx" aria-label="닫기">×</button></div>';
   h+='<p class="flq-sub">짧은 문제를 버튼으로 맞혀요. 틀려도 괜찮아요. 단계를 깨면 새 꾸미기가 열려요.<br>'+(OLDN+1)+'단계부터는 그림을 보고 푸는 문제예요!</p><div class="flq-grid">';
   for(var i=0;i<Q.length;i++){if(i===OLDN)h+='<div class="flq-sec"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="#FFF6C8" stroke="#1B2447" stroke-width="2"/><path d="M5 17l5-6 4 4 2-2 3 4z" fill="#5FA35A"/><circle cx="16" cy="9" r="2" fill="#FFD84D"/></svg>그림 추리</div>';
    var st=i<n?'ok':i===n?'next':'lock';h+='<button type="button" class="flqn '+st+(i>=OLDN?' pic':'')+'" data-fq="'+i+'"'+(st==="lock"?' disabled':'')+'>'+(i+1)+(st==="ok"?'<i>★</i>':'')+'</button>'}
@@ -28177,9 +28177,9 @@ REI2("kitchen",{
   draw()}
  function oops(){nmiss++;try{SFX.ng()}catch(e){}draw();var c=el.querySelector(".flq-card");if(c)c.classList.add("shake")}
  function marks(p){var zs=zones(p),h="";zs.forEach(function(z,i){if(found[i]||solved)h+='<i class="fz" style="left:'+(z.x/3.6)+'%;top:'+(z.y/2)+'%;width:'+(z.r*2/3.6)+'%;height:'+(z.r*2/2)+'%"></i>'});
-  if(miss&&!solved)h+='<b class="fx" style="left:'+(miss.x/3.6)+'%;top:'+(miss.y/2)+'%">✕</b>';return h}
+  if(miss&&!solved)h+='<b class="fx" style="left:'+(miss.x/3.6)+'%;top:'+(miss.y/2)+'%">×</b>';return h}
  function draw(){var p=Q[cur],mode=p.m||"pick",faces=p.o&&p.o.some(function(o){return typeof o!=="string"&&(o.f||o.k)}),pics=p.pic?[].concat(p.pic()):[];
-  var h='<div class="flq-top"><button class="flq-back" id="fqback" aria-label="목록">◀ 목록</button><b>'+(cur+1)+'단계</b>'+stars(p.lv)+'<span class="flq-k k-'+p.k.replace(/\s/g,"")+'">'+p.k+'</span><button class="flq-x" id="fqx" aria-label="닫기">✕</button></div>';
+  var h='<div class="flq-top"><button class="flq-back" id="fqback" aria-label="목록">◀︎ 목록</button><b>'+(cur+1)+'단계</b>'+stars(p.lv)+'<span class="flq-k k-'+p.k.replace(/\s/g,"")+'">'+p.k+'</span><button class="flq-x" id="fqx" aria-label="닫기">×</button></div>';
   h+='<div class="flq-card'+(pics.length||mode==="order"?' fpq':'')+(solved?' solved':'')+'"><p class="flq-q">'+esc(p.q).replace(/\n/g,"<br>")+'</p>';
   pics.forEach(function(s,i){h+='<div class="fpic'+(mode==="tap"&&!solved?' tap':'')+'" data-pi="'+i+'">'+s+'<div class="fmk">'+(mode==="tap"?marks(p):'')+'</div></div>'});
   if(mode==="tap"&&zones(p).length>1)h+='<p class="fcount">찾은 곳: <b>'+(solved?zones(p).length:Object.keys(found).length)+'</b> / '+zones(p).length+'</p>';
@@ -36815,7 +36815,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  function addBack(){try{
   if(!document.body.classList.contains("aa")||!G||G.tab!=="talk")return;
   var stg=document.querySelector(".fstalk .tstage");if(!stg||stg.querySelector(".tback"))return;
-  var b=document.createElement("button");b.type="button";b.className="tback";b.innerHTML="◀ 돌아가기";
+  var b=document.createElement("button");b.type="button";b.className="tback";b.innerHTML="◀︎ 돌아가기";
   b.onclick=function(e){e.stopPropagation();if(DL)return;var t=document.querySelector('.atabs [data-tab="scene"]');if(t)t.click()};
   stg.appendChild(b)}catch(e){}}
  var _r=render;render=function(){var r=_r.apply(this,arguments);addBack();return r};
@@ -37084,7 +37084,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
    var needEx=!!(e.check&&!(G.exam&&G.exam[id])),pc=b.classList.contains("piece");
    b.classList.toggle("needex",needEx);
    if(needEx)b.insertAdjacentHTML("beforeend",'<i class="bdg ex">살펴보기</i>');else if(pc)b.insertAdjacentHTML("beforeend",'<i class="bdg pc">결합</i>')});
-  var pn=el.querySelector("#crpin");if(pn&&!pn.dataset.s){pn.dataset.s=1;pn.textContent=pn.getAttribute("aria-pressed")==="true"?"★":"☆";pn.setAttribute("aria-label","중요 표시")}
+  var pn=el.querySelector("#crpin");if(pn&&!pn.dataset.s){pn.dataset.s=1;pn.innerHTML='<img class="anstar" src="art/icons/'+(pn.getAttribute("aria-pressed")==="true"?"star-full":"star-empty")+'.png?v=194" alt="">';pn.setAttribute("aria-label","중요 표시")}
  }catch(x){}}
  var _or=openRecord;openRecord=function(){var r=_or.apply(this,arguments);var el=document.querySelector(".crec2");
   if(el){deco(el);new MutationObserver(function(){deco(el)}).observe(el,{childList:true,subtree:true})}return r};
@@ -46605,16 +46605,21 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   nervous:["nervous","worried","tense","shock","embarrassed","shy","sad"],shock:["shock","nervous"],panic:["shock","nervous"],
   angry:["angry","tense","pout","shock","think"],pout:["pout","angry","sad"],embarrassed:["embarrassed","shy","nervous"]
  };
- var OV={nabi:{sad:"neutral",nervous:"think"},det1:{shy:"happy"},karo:{shy:"nervous"},buri:{nervous:"shock"}};
+ var FV2={det1:{nervous:1,laugh:"happy"},nabi:{happy:1,nervous:1,shock:1,angry:1},wanggu:{happy:1,nervous:1,angry:1},karo:{happy:1,angry:1},doto:{happy:1,nervous:1,angry:1},buri:{happy:1,nervous:1,angry:1}};
+ Object.keys(FV2).forEach(function(k){if(FACE[k])Object.keys(FV2[k]).forEach(function(m){FACE[k][m]=2})});
+ NEAR.laugh=["laugh","happy","smile","smug"];
+ function fsrc(k,e){var f=(k==="det0"?"papa":k),v=FV2[f]&&FV2[f][e];return v?"art/faces-v2/"+f+"-"+(v===1?e:v)+".png":"art/faces/"+f+"-"+e+".png"}
+ var OV={nabi:{sad:"neutral"},det1:{shy:"happy"},karo:{shy:"nervous"}};
  function pick(k,mood){var F=FACE[k];if(!F)return null;mood=String(mood||"").split(/\s+/)[0];if(OV[k]&&OV[k][mood]&&F[OV[k][mood]])return OV[k][mood];var L=NEAR[mood]||[];for(var i=0;i<L.length;i++)if(F[L[i]])return L[i];return "neutral"}
- var PRE={};function preload(k){var f=(k==="det0"?"papa":k);if(PRE[f]||!FACE[f])return;PRE[f]=[];Object.keys(FACE[f]).forEach(function(x){var im=new Image();im.decoding="async";im.src="art/faces/"+f+"-"+x+".png"+V;PRE[f].push(im)})}
+ var PRE={};function preload(k){var f=(k==="det0"?"papa":k);if(PRE[f]||!FACE[f])return;PRE[f]=[];Object.keys(FACE[f]).forEach(function(x){var im=new Image();im.decoding="async";im.src=fsrc(f,x)+V;PRE[f].push(im)})}
  try{preload("det1");preload("papa")}catch(e){}
  var N=0,_pf=pf;pf=function(k,mood){var e=pick(k,mood);if(e){preload(k);var file=(k==="det0"?"papa":k)+"-"+e;
-  return '<svg class="nodot" viewBox="0 0 100 101" aria-hidden="true"><g id="an-'+k+'-'+e+'"><image x="0" y="0" width="100" height="101" preserveAspectRatio="xMidYMax meet" href="art/faces/'+file+'.png'+V+'"/></g></svg>'}
+  return '<svg class="nodot" viewBox="0 0 100 101" aria-hidden="true"><g id="an-'+k+'-'+e+'"><image x="0" y="0" width="100" height="101" preserveAspectRatio="xMidYMax meet" href="'+fsrc(k,e)+V+'"/></g></svg>'}
   return _pf.apply(this,arguments)};
  try{var _vf=vnFigure;vnFigure=function(l){var w=l&&l.who;if(w==="det"||w==="think")w=(l.name&&S.players[1]!==S.players[0]&&l.name.indexOf(S.players[1])===0)?"det1":"det0";
   if(w==="det0"){var c=(typeof G!=="undefined"&&G&&CASES[G.ci])?CASES[G.ci].id:"";if(c!=="fall")return ""}
   return _vf.apply(this,arguments)}}catch(e){}
+ try{var _ld=lineData;lineData=function(l){if(l&&l[0]==="det1"&&(/^(happy|smile|smug)?$/.test(String(l[2]||""))&&/하하|헤헤|히히|푸하|깔깔|ㅎㅎ|ㅋㅋ/.test(String(l[1]||""))||l[2]==="happy"&&/!\s*$/.test(String(l[1]||"")))){l=l.slice();l[2]="laugh"}return _ld.call(this,l)}}catch(e){}
 
  function img(n,px){return '<img class="anic" src="art/icons/'+n+'.png'+V+'" alt="" width="'+px+'" height="'+px+'" draggable="false">'}
  function swapIcon(el,n,px){if(!el||el.dataset.anic===n)return;var s=el.querySelector("svg");if(s){s.insertAdjacentHTML("beforebegin",img(n,px));s.remove()}else el.insertAdjacentHTML("afterbegin",img(n,px));el.dataset.anic=n}
@@ -46710,7 +46715,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  if(window.__artNew===false)return;
  function img(n,px){return '<img class="anic" src="art/icons/'+n+'.png'+V+'" alt="" width="'+px+'" height="'+px+'" draggable="false">'}
  function sw(el,n,px){if(!el||el.dataset.anic===n)return;var s=el.querySelector("svg");if(s){s.insertAdjacentHTML("beforebegin",img(n,px));s.remove()}else el.insertAdjacentHTML("afterbegin",img(n,px));el.dataset.anic=n}
- function backText(el){if(!el||el.dataset.anic==="back")return;var w=document.createTreeWalker(el,4),t;while(t=w.nextNode()){if(/◀/.test(t.nodeValue)){t.nodeValue=t.nodeValue.replace(/◀\s*/,"");el.insertAdjacentHTML("afterbegin",img("back",18));el.dataset.anic="back";return}}}
+ function backText(el){if(!el||el.dataset.anic==="back")return;var w=document.createTreeWalker(el,4),t;while(t=w.nextNode()){if(/◀︎/.test(t.nodeValue)){t.nodeValue=t.nodeValue.replace(/◀︎\s*/,"");el.insertAdjacentHTML("afterbegin",img("back",18));el.dataset.anic="back";return}}}
  function run(){try{
   var dl=document.getElementById("detlook");if(dl)sw(dl.querySelector(".fi"),"detective-hat",34);
   document.querySelectorAll(".score .stars").forEach(function(st){var m=/(\d+)/.exec(st.getAttribute("aria-label")||"");if(!m)return;var n=+m[1],k=String(n);if(st.dataset.st===k)return;var h="";for(var i=0;i<3;i++)h+='<img class="anstar big" src="art/icons/'+(i<n?"star-full":"star-empty")+'.png'+V+'" alt="">';st.innerHTML=h;st.dataset.st=k});
@@ -46723,7 +46728,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   sw(document.getElementById("dpres"),"present",22);
   sw(document.getElementById("press"),"press",22);
   sw(document.getElementById("aimhint"),"objection",22);
-  document.querySelectorAll(".flq-back,button").forEach(function(b){if(/^\s*◀\s*(목록|돌아가기)/.test(b.textContent))backText(b)});
+  document.querySelectorAll(".flq-back,button").forEach(function(b){if(/^\s*◀︎\s*(목록|돌아가기)/.test(b.textContent))backText(b)});
   document.querySelectorAll(".bt p").forEach(function(p){if(p.dataset.st)return;var h=p.innerHTML;if(/별 \d+ \/ \d+/.test(h)){p.innerHTML=h.replace(/별 (\d+ \/ \d+)/,'<img class="anstar" src="art/icons/star-full.png'+V+'" alt="별">$1');p.dataset.st=1}});
  }catch(e){}}
  try{var _r=render;render=function(){var r=_r.apply(this,arguments);run();return r}}catch(e){}
@@ -46829,12 +46834,17 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   "#app button,.veil,.sbook,.crec2 button,#ov button{touch-action:manipulation}",
   "body.fs .fstalk .tpanel{height:auto!important;max-height:calc(100% - 56px)!important;padding-top:30px!important;background:linear-gradient(180deg,rgba(24,12,5,0),rgba(24,12,5,.62) 30px,rgba(24,12,5,.78))!important}",
   "body.fs .fstalk .tpanel .topics{max-height:none!important;overflow:visible!important}",
-  "#ov .lt199nav{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center;justify-content:space-between;gap:8px;width:100%;margin-top:8px;align-self:stretch}",
-  "#ov .lt199nav button{flex:0 0 auto!important;width:auto!important;min-width:92px;white-space:nowrap!important;margin:0!important}",
-  "#ov .lt199nav span{flex:1 1 auto;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums;opacity:.8}",
+  "#ov .lt199nav{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center;justify-content:space-between;gap:6px;width:auto!important;max-width:100%;margin:8px 0 0!important;align-self:stretch!important;box-sizing:border-box}",
+  "#ov .lt199nav button{flex:1 1 0!important;width:auto!important;min-width:0!important;max-width:132px;white-space:nowrap!important;margin:0!important;padding-left:8px!important;padding-right:8px!important}",
+  "#ov .lt199nav span{flex:0 0 auto;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums;opacity:.8}",
   ".letter.lt199 .ltp[hidden]{display:none!important}",
   ".crec2 .cr199{display:flex;align-items:center;gap:8px;margin-top:8px}",".crec2 .cr199 small{color:#FFF3D6;font-size:14px}",
-  "body:has(#ov .modal) #app .notice{visibility:hidden}",".crec2 .cr199 .btn{flex:1 1 auto}",".crec2 .cr199 small{flex:1 1 auto;text-align:center;opacity:.85}"
+  "body:has(#ov .modal) #app .notice{visibility:hidden}",
+  B+".scene.big .hot.obs.seen{opacity:0!important;border-color:transparent!important;background:transparent!important;box-shadow:none!important;animation:none!important}",
+  B+".scene.big .hot.obs.seen::after,"+B+".scene.big .hot.obs.seen::before,"+B+".scene.big .hot.obs.seen .hn{content:none!important;display:none!important}",
+  B+".scene.big:not(.blink) .hot:not(.done):not(.seen){box-shadow:none!important}",
+  ".stimg{white-space:nowrap}",
+  B+"#app>.ivy.r{right:max(-24px,calc((100% - 100vw) / 2))!important}",".crec2 .cr199 .btn{flex:1 1 auto}",".crec2 .cr199 small{flex:1 1 auto;text-align:center;opacity:.85}"
  ].join("\n");
  function put(){var t=document.getElementById("ui18v199");if(!t){t=document.createElement("style");t.id="ui18v199";t.textContent=css}(document.body||document.head).appendChild(t)}
  put();window.addEventListener("load",put);document.addEventListener("DOMContentLoaded",put);
@@ -46880,9 +46890,11 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   L.classList.add("lt199");
   pages.forEach(function(pg,i){var w=document.createElement("div");w.className="ltp";pg.forEach(function(p){w.appendChild(p)});L.appendChild(w)});
   var wraps=[].slice.call(L.querySelectorAll(".ltp"));var hmax=0;
-  wraps.forEach(function(w,k){wraps.forEach(function(x,j){x.hidden=j!==k});hmax=Math.max(hmax,L.getBoundingClientRect().height)});
-  L.style.height=Math.ceil(hmax)+"px";L.style.boxSizing="border-box";
-  var nav=document.createElement("div");nav.className="lt199nav";nav.innerHTML='<button class="btn ghost" type="button" data-lt="-1">◀ 이전</button><span></span><button class="btn" type="button" data-lt="1">다음 ▶</button>';
+  L.style.flex="none";L.style.boxSizing="border-box";
+  wraps.forEach(function(w,k){wraps.forEach(function(x,j){x.hidden=j!==k});L.style.height="auto";hmax=Math.max(hmax,L.offsetHeight,L.scrollHeight)});
+  L.style.height=Math.ceil(hmax)+"px";
+  wraps.forEach(function(w,k){wraps.forEach(function(x,j){x.hidden=j!==k});if(L.scrollHeight>L.clientHeight+1){hmax+=L.scrollHeight-L.clientHeight;L.style.height=Math.ceil(hmax)+"px"}});
+  var nav=document.createElement("div");nav.className="lt199nav";nav.innerHTML='<button class="btn ghost" type="button" data-lt="-1">◀︎ 이전</button><span></span><button class="btn" type="button" data-lt="1">다음 ▶︎</button>';
   L.parentNode.insertBefore(nav,L.nextSibling);
   var close=L.parentNode.querySelector("#closeit");
   var i=0;function show(){wraps.forEach(function(w,k){w.hidden=k!==i});nav.querySelector("span").textContent=(i+1)+" / "+wraps.length;
@@ -46902,6 +46914,14 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   var bt=d.querySelector("[data-cr199]");if(bt)bt.onclick=function(){var x=el.querySelector(".cr-x");if(x)x.click();else el.remove();
    try{goTab("final")}catch(e){G.tab="final";render()}
    if(bt.dataset.cr199==="meet")setTimeout(function(){var g=document.getElementById("rtgo");if(g)g.click()},60)}}
+
+ try{var _sl=showLine;showLine=function(){var raw=DL&&DL.lines&&DL.lines[DL.i];
+   if(raw&&raw[0]==="det1"){DL.__d1=String(raw[2]||"")}
+   var r=_sl.apply(this,arguments);
+   try{if(DL&&DL.lastWho==="det0"&&DL.__d1!=null&&!DL.stageWho){var vf=document.getElementById("vnfig");
+     if(vf&&vf.hidden){var key="det1|"+DL.__d1;if(vf.dataset.k!==key){vf.innerHTML=pf("det1",DL.__d1);vf.dataset.k=key;vf.dataset.w="det1"}vf.hidden=false;vf.classList.add("dim");vf.dataset.keep199="1"}}
+    else{var v2=document.getElementById("vnfig");if(v2&&v2.dataset.keep199&&DL&&!DL.stageWho&&DL.lastWho!=="det0"){delete v2.dataset.keep199}}}catch(e){}
+   return r}}catch(e){}
 
  function run(){try{paginate()}catch(e){}try{recFoot()}catch(e){}}
  try{new MutationObserver(function(){if(run.t)return;run.t=setTimeout(function(){run.t=0;run()},40)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
