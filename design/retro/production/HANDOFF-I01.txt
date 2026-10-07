@@ -1,0 +1,21 @@
+다람 탐정 · I01 그림 인계
+
+원본 PNG는 생성 도구 출력 그대로 복사했습니다. 원본 게임과 art/는 변경하지 않았습니다.
+이미지 생성은 완료, 사용자 승인 및 실제 게임 적용 검토는 별도입니다.
+미리보기: https://kkhkkh20-bit.github.io/daaegame/design/retro/production/
+manifest.json에 실제 크기·SHA256·투명도·x,y,width,height 좌표·프롬프트가 있습니다.
+엄격한 32픽셀 격자/128픽셀 납품 또는 26색 제한 충족으로 표시하지 마세요.
+화면 크기에 맞춘 축소·색상 정리·반투명 가장자리 정리는 게임 담당자가 사본에서 수행합니다.
+
+각 아이콘은 투명 PNG 한 파일입니다. 기본 표시 32px, 작은 버튼 22px, 큰 버튼 36px.
+아이콘 crop에 투명 여백을 조금 남겨 같은 시각 크기로 표시합니다. 원본 PNG 자체는 잘라내지 않았습니다.
+on/off 및 full/empty 쌍은 두 파일의 공통 crop을 유지하세요.
+
+design/retro/icons/investigate.png | 크기 [1254, 1254] | crop [131, 157, 1024, 1024] | SHA256 822bf8ebdbab74bf911ce9bb62a4c1ec276160efe84be5e340c72da0c78baedd
+design/retro/icons/move.png | 크기 [1254, 1254] | crop [195, 205, 863, 863] | SHA256 79bc4df5ed517ba702b19465c70120574184465ad39a7915096a5107d6b0db2c
+design/retro/icons/evidence.png | 크기 [1299, 1211] | crop [264, 228, 798, 798] | SHA256 23b238d96326b6cfed6f1dd4260ced5a592196c62f0cffdf384a8eb889bb5d8b
+design/retro/icons/notebook.png | 크기 [1299, 1211] | crop [196, 158, 907, 907] | SHA256 5de788b34fac578cc67633cfcde944cc688ea9c74adc358885c223eaff671b8b
+design/retro/icons/hint.png | 크기 [1299, 1211] | crop [244, 209, 811, 811] | SHA256 9ffbde46ba331fbde0fb4147a84b8b114bd7938c99b5b79375d2b563ec5a00ab
+design/retro/icons/record.png | 크기 [1299, 1211] | crop [167, 143, 981, 981] | SHA256 b2de00729dda34fa56503c8db15156914354b59f5a52807b5c3ead9abf627c05
+design/retro/icons/memo.png | 크기 [1299, 1211] | crop [203, 174, 911, 911] | SHA256 b0bb49d03e3548b681e0e4fdd91cba19242a1dc6959b7931fe7d5cd856171ccb
+design/retro/icons/present.png | 크기 [1299, 1211] | crop [135, 123, 1015, 1015] | SHA256 69fde221193900740c9030ee75e732e295af6f16656e4c8eee2bc31133a226cd

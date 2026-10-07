@@ -2,9 +2,9 @@
   "batchId": "I01",
   "requestId": "R-007",
   "assignedTo": "current-chat-all-open-requests",
-  "status": "reserved",
-  "generationStarted": false,
-  "generationCompleted": false,
+  "status": "ready_for_review",
+  "generationStarted": true,
+  "generationCompleted": true,
   "sourceRequestCommit": "ea93961c88cc9c36e1b6dfc9f89f278ad342687f",
   "ownedFiles": [
     "design/retro/icons/investigate.png",
@@ -16,5 +16,22 @@
     "design/retro/icons/memo.png",
     "design/retro/icons/present.png"
   ],
-  "note": "사용자의 '모두 진행' 요청에 따라 해당 미완료 묶음을 배정했습니다. 문서의 묶음마다 중단 규칙은 이번 전체 진행 요청 범위에서 연속 처리합니다. 기존 PNG·게임·art/ 및 다른 채팅의 C02 시트는 보존합니다."
+  "note": "사용자가 확인한 등록 미완료 요청 전체 제작. PNG 원본 보존, 공통 crop·투명도·ZIP 확인. 실제 게임 적용 검토 대기.",
+  "deliveredFiles": [
+    "design/retro/icons/investigate.png",
+    "design/retro/icons/move.png",
+    "design/retro/icons/evidence.png",
+    "design/retro/icons/notebook.png",
+    "design/retro/icons/hint.png",
+    "design/retro/icons/record.png",
+    "design/retro/icons/memo.png",
+    "design/retro/icons/present.png"
+  ],
+  "manifest": "design/retro/production/I01-manifest.json",
+  "handoff": "design/retro/production/HANDOFF-I01.txt",
+  "preview": "design/retro/production/index.html",
+  "archive": "design/retro/production/I01-assets.zip",
+  "runtimeReviewed": false,
+  "userApproved": false,
+  "gameIntegration": "not_applied"
 }

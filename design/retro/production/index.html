@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>다람 탐정 · 새 그림 모아보기</title><link rel="stylesheet" href="studio.css"><script defer src="data.js"></script><script defer src="studio.js"></script></head>
+<body data-surface="dark"><main>
+<header><div><p class="eyebrow">다람 탐정 사무소</p><h1>새 그림 모아보기</h1><p class="intro">표정은 대화창 크기로, 아이콘은 실제 버튼 크기로 확인하세요.</p></div><span id="count" class="stamp"></span></header>
+<nav aria-label="그림 종류"><button data-tab="faces" aria-selected="true">정면 얼굴</button><button data-tab="hill" aria-selected="false">별빛 언덕</button><button data-tab="title" aria-selected="false">첫 화면</button><button data-tab="icons" aria-selected="false">아이콘</button><button data-tab="wood" aria-selected="false">나무 바탕</button></nav>
+<section id="faces" class="panel">
+<div class="controls"><label>인물 <select id="character"><option value="daram">다람</option><option value="papa">아빠</option><option value="rei">레이</option><option value="karo">까로</option><option value="buri">부리</option><option value="wanggu">왕구</option><option value="doto">도토</option></select></label><label>크기 <select id="face-size"><option value="96">96px · 실제 크기</option><option value="192">192px · 확대</option></select></label><label>바탕 <select class="surface-select"><option value="dark">남색</option><option value="light">크림</option><option value="check">투명 확인</option></select></label></div>
+<div id="face-grid" class="face-grid"></div>
+<div class="dialogue"><canvas id="talk-face" width="96" height="96" aria-label="선택한 대화 표정"></canvas><div><small>표정 확인용 대화</small><strong id="talk-name">다람</strong><p>…잠깐. 기록과 이야기가 서로 맞지 않아.</p></div></div>
+<p class="note">표정을 눌러 바꿔 보세요. 머리 크기와 위치를 같은 틀로 유지했습니다.</p>
+<p class="links"><a href="../chars/C02-preview.html">다른 채팅의 C02 전신 3포즈 보기</a> · <a href="../daram.html">다람 전신 보기</a></p>
+</section>
+<section id="hill" class="panel" hidden>
+<div class="controls"><label><input id="hill-daram" type="checkbox" checked> 다람 함께 보기</label><label><input id="hill-points" type="checkbox"> 조사 위치 보기</label></div>
+<div class="scene-viewport"><div class="scene"><canvas id="hill-canvas" width="720" height="400" aria-label="증거 노출을 조정한 별빛 언덕"></canvas><canvas id="hill-character" width="160" height="220" aria-label="장면 속 다람"></canvas><div id="hill-hotspots" hidden></div></div></div>
+<p class="note">좁은 화면에서는 배경을 좌우로 밀어서 볼 수 있습니다. 노란 줄과 벤치·꽃·돌은 배경 장식입니다.</p><p id="hill-clue" class="clue">등불 안의 꺼진 돌, 기둥 아래 깃털, 바위 위 의뢰서를 조사합니다.</p>
+<a href="../hill.html">기존 승인 언덕과 비교하기</a>
+</section>
+<section id="title" class="panel" hidden>
+<div class="controls"><label>방향 <select id="title-direction"><option value="portrait">세로</option><option value="wide">가로</option></select></label><label><input id="title-ui" type="checkbox" checked> 제목·버튼 배치 보기</label><label><input id="title-zones" type="checkbox"> 배치 영역 보기</label></div>
+<div id="title-stage" class="title-stage portrait"><img id="title-image" alt="밤의 탐정 사무소 첫 화면 배경"><div class="title-overlay"><div class="title-logo"><small>DETECTIVE AGENCY</small><h2>다람 탐정<br>사무소</h2></div><div class="title-buttons"><span>수사 시작</span><span>세계 지도</span><span>저장 불러오기</span></div></div><div class="safe-zones" hidden><div class="zone-title">제목</div><div class="zone-content">주요 그림</div><div class="zone-buttons">버튼</div></div></div>
+<p class="note">글자와 버튼은 배치 예시입니다. 납품 이미지에는 들어 있지 않습니다.</p><a id="title-original">배경 원본 보기</a>
+</section>
+<section id="icons" class="panel" hidden>
+<div class="controls"><label>묶음 <select id="icon-batch"><option value="I01">행동 버튼</option><option value="I02">상단·게시판</option><option value="I03">게시판·기록</option><option value="I04">대결·상태</option></select></label><label>바탕 <select class="surface-select"><option value="dark">남색</option><option value="light">크림</option><option value="check">투명 확인</option></select></label></div>
+<p class="note">같은 아이콘을 22 · 32 · 36픽셀로 나란히 표시했습니다.</p><div id="icon-grid" class="icon-grid"></div>
+</section>
+<section id="wood" class="panel" hidden><p class="note">가로·세로로 반복한 모습입니다. 두 버전 모두 같은 판자 무늬를 사용합니다.</p><div class="wood-grid"><article><h2>기본 호두나무</h2><div id="wood-normal" class="wood-repeat"><div class="wood-card">현장의 기록을<br>차근차근 살펴보자.</div></div><a href="../ui/wood-tile.png">원본 보기</a></article><article><h2>어두운 호두나무</h2><div id="wood-dark" class="wood-repeat"><div class="wood-card">현장의 기록을<br>차근차근 살펴보자.</div></div><a href="../ui/wood-tile-dark.png">원본 보기</a></article></div></section>
+<footer><details><summary>그림 파일과 개발용 인계 자료 받기</summary><div id="downloads"></div><p><a href="HANDOFF-ALL.txt">전체 인계서</a> · <a href="manifest.json">크기·좌표·원본 정보</a></p></details><p class="note">그림 제작본 미리보기입니다. 실제 게임 적용 검토는 별도로 진행합니다.</p></footer>
+</main></body></html>
