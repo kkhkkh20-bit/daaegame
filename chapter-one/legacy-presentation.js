@@ -62,6 +62,6 @@ window.DaramPresentation={
  flash:(text,bad,point)=>window.DaramEffects?.get()==='off'?Promise.resolve():flash(esc(text),bad,point),
  panic:(who,kind,level)=>window.DaramEffects?.get()==='off'?Promise.resolve():new Promise(resolve=>panicFx(who,kind,level,resolve)),
  banner:(text,sub)=>window.DaramEffects?.get()==='off'?Promise.resolve():banner(esc(text),esc(sub||'')),
- present(from,id){if(quiet())return Promise.resolve();return flyEvidence(from,id,{});}
+ async present(from,id){if(!quiet())await flyEvidence(from,id,{});const e=EVIDENCE[id],t=TESTIMONIES[id];const card=document.createElement('section');card.id='presented-item';card.setAttribute('role','status');card.dataset.motion=quiet()?'simple':'standard';card.innerHTML='<small>이 자료를 봐 주세요</small>'+evIcon(id)+'<h3>'+esc(e?.title||PEOPLE[t?.who]?.name+'의 증언')+'</h3><p>'+esc(e?.desc||t?.a||'')+'</p>';document.body.append(card);try{await new Promise(resolve=>window.setTimeout(resolve,quiet()?900:1250));}finally{card.remove();}}
 };
 })();

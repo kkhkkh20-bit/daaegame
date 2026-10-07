@@ -50,13 +50,6 @@
 #game #pan-controls{top:calc(166px + env(safe-area-inset-top))}
 @media(orientation:landscape) and (max-height:550px){#game #pan-controls{top:156px}}
 /* Original-game discovery and courtroom presentation, with current chapter art. */
-#recent-evidence{position:absolute;right:12px;top:222px;z-index:9;display:flex;flex-direction:column;gap:6px;max-height:170px;overflow:auto}
-#recent-evidence[hidden]{display:none}
-#game:has(#panorama[hidden]) #recent-evidence{top:90px}
-#recent-evidence button{position:relative;display:flex;align-items:center;justify-content:center;width:48px;height:48px;min-height:48px;background:#20273de8;border:2px solid #d5b57b;box-shadow:2px 2px #111929;padding:3px}
-#recent-evidence .record-thumb{width:36px;height:36px;padding:0;border:0;background:transparent;box-shadow:none}
-#recent-evidence .pixel-evidence,#recent-evidence .original-evidence-icon{width:100%;height:100%}
-#recent-evidence button>span:not(.record-thumb){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 #acquired-item{position:absolute;z-index:26;top:24%;left:12%;right:12%;max-height:43%;overflow:auto;text-align:center;padding:16px;background:#fff0ce;border:8px solid transparent;border-image:var(--frame) 20 stretch;box-shadow:0 10px 30px #07102288;color:#443121;animation:acquisition-pop .32s cubic-bezier(.2,.8,.3,1.3)}
 #acquired-item[data-motion=simple]{animation:none}
 .acquisition-kicker{font:19px DaramDotBold;color:#86452b}.acquisition-items{display:flex;justify-content:center;gap:8px;margin:12px 0}.acquisition-items button{padding:4px;border:2px solid #c5a068;background:#253047;box-shadow:none}.acquisition-items button[aria-pressed=true]{border-color:#f4bd54;box-shadow:0 0 0 2px #bf8347}.acquisition-items .record-thumb{width:76px;height:76px;border:0;padding:5px;background:transparent;box-shadow:none}.acquisition-items .pixel-evidence{width:100%;height:100%}
@@ -71,13 +64,19 @@
 #game.judging #modal,#game.judging #case-nav,#game.judging #goal-action,#game.judging header{pointer-events:none}
 #original-game{display:flex;align-items:center;justify-content:space-between;gap:7px;min-height:52px;padding:10px;background:#20273ded;color:#ffe3a8;border:2px solid #bf9b62;text-decoration:none;box-shadow:3px 4px #111827;font-size:13px}#original-game small{display:block;font-size:9px;margin-top:5px;color:#dbc59e}
 @media(prefers-reduced-motion:reduce){#acquired-item,.flash .shout,.ovr .plines{animation:none}.ovr.out{transition:none}}
-@media(orientation:landscape) and (max-height:550px){#recent-evidence{right:calc(50% + 16px);top:206px;flex-direction:row;max-height:50px}#game:has(#panorama[hidden]) #recent-evidence{top:140px}#acquired-item{left:5%;right:55%;top:18%;max-height:70%;padding:10px}.acquisition-items .record-thumb{width:54px;height:54px}.ovr .ppor{width:110px;height:150px}.ovr .pono{font-size:24px}.ovr .pq b{font-size:18px}#original-game{min-height:36px;padding:5px;font-size:10px}#original-game small{display:none}}
+@media(orientation:landscape) and (max-height:550px){#acquired-item{left:5%;right:55%;top:18%;max-height:70%;padding:10px}.acquisition-items .record-thumb{width:54px;height:54px}.ovr .ppor{width:110px;height:150px}.ovr .pono{font-size:24px}.ovr .pq b{font-size:18px}#original-game{min-height:36px;padding:5px;font-size:10px}#original-game small{display:none}}
 /* The discovery art never steals a scene click; its explicit actions remain usable. */
 #acquired-item{pointer-events:none}#acquired-item button{pointer-events:auto}
-#game.title-screen #recent-evidence{display:none}
 #title .title-menu{gap:7px}#title .title-menu button{min-height:62px}
 @media(max-width:375px){#title .title-menu button{min-height:54px}#original-game{min-height:42px;padding:6px;font-size:11px}}
 #original-game>span{min-width:0}#original-game b{display:block;font-size:13px}#original-game small{line-height:1.5;font-size:9px}#original-game em{flex:none;font-style:normal;font-size:20px}
 #game.judging{pointer-events:none}
 .finding{animation:acquisition-pop .25s ease-out}
 @media(prefers-reduced-motion:reduce){.finding{animation:none}}
+
+/* Evidence is shown at the moment it is presented, rather than pinned to the scene. */
+#presented-item{position:fixed;z-index:145;left:50%;top:50%;transform:translate(-50%,-50%);width:min(82vw,400px);max-height:86dvh;overflow:auto;display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px;background:#fff0ce;border:5px double #b78e55;box-shadow:0 0 0 100vmax #0c1528b8,0 10px 35px #07102288;color:#443121;text-align:center;pointer-events:none}
+#presented-item>small{font:15px DaramDotBold;color:#86452b}#presented-item>.record-thumb{width:180px;height:180px;padding:12px;background:#253047;border:3px solid #d8b475;box-shadow:4px 5px #61432433}#presented-item .pixel-evidence,#presented-item .original-evidence-icon{width:100%;height:100%}#presented-item h3{font:20px DaramDotBold;margin:0}#presented-item p{font-size:13px;line-height:1.7;margin:0}#presented-item[data-motion=standard]>.record-thumb{animation:acquisition-pop .25s ease-out}
+#game .question-rest{border:0;min-height:22px;background:transparent;margin-top:0}
+@media(orientation:landscape) and (max-height:550px){#presented-item{gap:7px;padding:13px}#presented-item>.record-thumb{width:115px;height:115px}#presented-item h3{font-size:17px}#presented-item p{font-size:11px}}
+@media(prefers-reduced-motion:reduce){#presented-item>.record-thumb{animation:none!important}}
