@@ -1,0 +1,62 @@
+C04 캐릭터 전달 문서
+상태: ready_for_review
+브랜치: art/c01-papa-rei-karo-20261007
+기준 origin/main: cf84c4a4a99416e90b0e72312005d880db9e6255
+
+제작: 내장 image_gen. 그림 내용 수정도 image_gen 사용. 원본 알파 보존.
+최신 요청 확인: origin/main e4a096ee2b509a178f057cfde34a7bc3f1df0671. R-012 F02 표정 목록 반영.
+C01·C02 정면 얼굴 24장은 다른 채팅이 main에 납품한 파일을 바이트 변경 없이 재사용. 본 채팅의 중복 시안은 납품에서 제외.
+새 제작 범위: C03~C13 전신 32장(루카 포함) 및 정면 얼굴 128장. 기존 전신 6장과 기존 정면 24장은 검토 편의를 위해 함께 표시.
+기준: daram-matched.png 직접 참조, star-hill-enriched.png 색감 참조.
+좌표: 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 전신 3등분 금지.
+정면 얼굴은 각 PNG 전체 정사각형을 96×96 nearest-neighbor로 표시. 두 눈과 시선이 플레이어를 향함.
+전신은 인물별 fullBodyScale(최대 높이 90px)로 동일 배율 적용. baselines/ baselineOffsets로 발 정렬.
+일부 원본 포즈의 최하단 픽셀은 1~4px 차이가 있음. 90px 표시에서는 1px 미만이며 미리보기에서 각 baseline으로 정렬.
+RGBA 투명 배경과 가시 영역/crop 경계/상대경로/파일 해시 확인.
+생성 원본에 반투명 가장자리와 작은 색 변화가 있음. 정확한 정수 픽셀 격자 및 26색 제한을 강제한 하드웨어 래스터는 아님.
+게임용 축소·팔레트 정리는 개발 담당이 별도 art/에서 처리. 이 작업은 game.html/index.html/dot.html/sw.js/art/를 수정하지 않음.
+C01·C02 기존 PNG/문서/미리보기 보존. 배경·승인 이미지·공용 요청/검토/ready-assets 파일 보존. main 병합 없음.
+사용자 최종 승인 및 실제 게임 런타임 검토 전.
+
+토끼 할머니 (grandma)
+전신: design/retro/chars/grandma.png
+크기: [2061, 763] / SHA256: 28d603d962db6bce62fa85c32f4b9fae354ab880f3af050883216a30315434f3
+발 기준선: [725, 725, 725] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 700, 763]
+생각 전신 crop: [700, 0, 604, 763]
+감정 전신 crop: [1304, 0, 757, 763]
+정면 neutral: design/retro/faces/grandma-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 26df97eacd68732141411b9dd592f43e9bf1f5281bc1376a8d9659749dd53616
+정면 smile: design/retro/faces/grandma-smile.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 1f6f2022d887e81ff9950e192f4aceae939386239418ae979a784f340e55bfd6
+정면 think: design/retro/faces/grandma-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5675397eacfafe59896c6c498657fa94239d7f3f8f632e833b3968991ffe145b
+정면 sad: design/retro/faces/grandma-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ad6133aab23be7b034f682f0be0b1a5ef776e102227040449d0e1a6a0aa3211f
+
+나비 (nabi)
+전신: design/retro/chars/nabi.png
+크기: [2061, 763] / SHA256: 6df5b418028abe0dc4ad832ed08fcf741236d6cd939198f8266e49b1c7f00759
+발 기준선: [739, 739, 739] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 651, 763]
+생각 전신 crop: [651, 0, 672, 763]
+감정 전신 crop: [1323, 0, 738, 763]
+정면 neutral: design/retro/faces/nabi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 2cc7bdbf4edba4f4f9afc1fb47aabf97eb45dc17cb0f501f3ec4a92ea5ebd470
+정면 smug: design/retro/faces/nabi-smug.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ca72eb11e43e33c706372c901e11de6c21731a84c62a11d021e9451d6e7fc875
+정면 think: design/retro/faces/nabi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 075ef6de6f79778929a158d38017e7e3ce85706e44783e60aea2ed7fb75e1840
+정면 shy: design/retro/faces/nabi-shy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 34bdb6dc29182be74a0f2615cea017d660fb698281db182b1154be1de1dfcd27
+
+검은 망토 (shadow)
+전신: design/retro/chars/shadow.png
+크기: [2062, 763] / SHA256: d6396ae2685c4b02a56ac090030b8d6c7e351d7315c99b91f0046cb76bd84705
+발 기준선: [735, 736, 737] / 보정: [2, 1, 0]
+기본 전신 crop: [0, 0, 682, 763]
+생각 전신 crop: [682, 0, 645, 763]
+감정 전신 crop: [1327, 0, 735, 763]
+정면 neutral: design/retro/faces/shadow-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ddff4551275277701f7812d4829ee8b9225c8f924cebf6aa5be61a00203da56d
+정면 think: design/retro/faces/shadow-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bb23ac42f197cc6ea073c41c42fadfccced8ab7316685ad7c2955bc3b096ded8
+정면 tense: design/retro/faces/shadow-tense.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 0db5a1078640913941ae02c919ecff160f52e03e5e8d1d9fff836cb249be7bc5
+정면 shock: design/retro/faces/shadow-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5824afd2ffb6aeb2193fc31b25f78f31667861a1b7e9052e36c0dea34af8bbf5
+가려진 인물의 정체 보호: 정면 후드이지만 눈·코·입은 모든 표정에서 숨김. 얼굴 노출 규칙의 의도적 예외.
+
+적용 방법
+같은 폴더의 C04-preview.html 또는 CHARACTERS-preview.html을 열어 96px 얼굴·90px 전신을 검토.
+각 manifest frames를 drawImage의 source rectangle로 사용. 이미지 보간은 끔.
+정면은 faces/<인물>-<표정>.png를 사용. 기존 옆얼굴을 재활용하지 않음.
+전체 좌표/알파 통계/생성 프롬프트: CHARACTERS-manifest.json, C03-C13-prompts.json, ../faces/FACES-prompts.json.

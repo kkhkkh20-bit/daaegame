@@ -1,0 +1,62 @@
+C12 캐릭터 전달 문서
+상태: ready_for_review
+브랜치: art/c01-papa-rei-karo-20261007
+기준 origin/main: cf84c4a4a99416e90b0e72312005d880db9e6255
+
+제작: 내장 image_gen. 그림 내용 수정도 image_gen 사용. 원본 알파 보존.
+최신 요청 확인: origin/main e4a096ee2b509a178f057cfde34a7bc3f1df0671. R-012 F02 표정 목록 반영.
+C01·C02 정면 얼굴 24장은 다른 채팅이 main에 납품한 파일을 바이트 변경 없이 재사용. 본 채팅의 중복 시안은 납품에서 제외.
+새 제작 범위: C03~C13 전신 32장(루카 포함) 및 정면 얼굴 128장. 기존 전신 6장과 기존 정면 24장은 검토 편의를 위해 함께 표시.
+기준: daram-matched.png 직접 참조, star-hill-enriched.png 색감 참조.
+좌표: 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 전신 3등분 금지.
+정면 얼굴은 각 PNG 전체 정사각형을 96×96 nearest-neighbor로 표시. 두 눈과 시선이 플레이어를 향함.
+전신은 인물별 fullBodyScale(최대 높이 90px)로 동일 배율 적용. baselines/ baselineOffsets로 발 정렬.
+일부 원본 포즈의 최하단 픽셀은 1~4px 차이가 있음. 90px 표시에서는 1px 미만이며 미리보기에서 각 baseline으로 정렬.
+RGBA 투명 배경과 가시 영역/crop 경계/상대경로/파일 해시 확인.
+생성 원본에 반투명 가장자리와 작은 색 변화가 있음. 정확한 정수 픽셀 격자 및 26색 제한을 강제한 하드웨어 래스터는 아님.
+게임용 축소·팔레트 정리는 개발 담당이 별도 art/에서 처리. 이 작업은 game.html/index.html/dot.html/sw.js/art/를 수정하지 않음.
+C01·C02 기존 PNG/문서/미리보기 보존. 배경·승인 이미지·공용 요청/검토/ready-assets 파일 보존. main 병합 없음.
+사용자 최종 승인 및 실제 게임 런타임 검토 전.
+
+등불지기 아저씨 (lamplighter)
+전신: design/retro/chars/lamplighter.png
+크기: [2061, 763] / SHA256: 8738b752f21537a63c9b43860a11e573bda2404820968f23b435c8c3b2ea077f
+발 기준선: [733, 733, 733] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 720, 763]
+생각 전신 crop: [720, 0, 627, 763]
+감정 전신 crop: [1347, 0, 714, 763]
+정면 neutral: design/retro/faces/lamplighter-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 ea24c506d9481bdad1455e9b795d73b2ef415847ae7f4c88b53909b8f33b52a5
+정면 think: design/retro/faces/lamplighter-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 a7b1366a42cd48d0b558cf97d42cb6c02ff8943938a3e8a78194310051195c24
+정면 worried: design/retro/faces/lamplighter-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4b6b561954592f71698a504579ad488e0de585c64353de1f2ccc587f5e8062b0
+정면 shock: design/retro/faces/lamplighter-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 a384fb2f2282016b065e4f87781f71801765818c7ed196756587db426dee5193
+수달. 토끼 귀 없음.
+
+바둑이 (badook)
+전신: design/retro/chars/badook.png
+크기: [2061, 763] / SHA256: 6133f83710e66b96de10041f0aa8d370daaece04ee8c611a26d3273283085120
+발 기준선: [736, 736, 736] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 678, 763]
+생각 전신 crop: [678, 0, 644, 763]
+감정 전신 crop: [1322, 0, 739, 763]
+정면 neutral: design/retro/faces/badook-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7a97b465d03cd42569265dba4745e89b5d95549bf579e01485761e904f6b3272
+정면 think: design/retro/faces/badook-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8ab38793bf5af0c25dfa1384fc6e0a7ef7484a34ef4bbb4a7b74ef12003becba
+정면 embarrassed: design/retro/faces/badook-embarrassed.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 b7f8f8740c694384d0369ffb9df475fd35aea8561364f79b7c76f118874e057b
+정면 shock: design/retro/faces/badook-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d2aab2a345f38f36ced5508a2dd0ad5815cfa9cf389c759aa0f02a4b9bd8abf1
+
+은호 사장 (eunho)
+전신: design/retro/chars/eunho.png
+크기: [2061, 763] / SHA256: f115a7d7641407cf24d5219a2485163b5470edaeafb845725087505ea74b0d5d
+발 기준선: [745, 746, 746] / 보정: [1, 0, 0]
+기본 전신 crop: [0, 0, 686, 763]
+생각 전신 crop: [686, 0, 651, 763]
+감정 전신 crop: [1337, 0, 724, 763]
+정면 neutral: design/retro/faces/eunho-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 e2ecc32e1041b538efb776ff17194ef1ccefc33f20bb4a91cd14a5317f73c5bb
+정면 think: design/retro/faces/eunho-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 c456222cbecad3c53b37f98485120e08fee01594a1cc1067cc63fd99b15cddc2
+정면 worried: design/retro/faces/eunho-worried.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 7041fa6f4eeba64b21d9b5aee5e7e0c9a73d171157e297214c6b1ea9f6b5d8fe
+정면 shock: design/retro/faces/eunho-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d7ea573f3bcd9457c68c1f82aa7b8d70aad1fc442668c6dbda904f5ed614a00d
+
+적용 방법
+같은 폴더의 C12-preview.html 또는 CHARACTERS-preview.html을 열어 96px 얼굴·90px 전신을 검토.
+각 manifest frames를 drawImage의 source rectangle로 사용. 이미지 보간은 끔.
+정면은 faces/<인물>-<표정>.png를 사용. 기존 옆얼굴을 재활용하지 않음.
+전체 좌표/알파 통계/생성 프롬프트: CHARACTERS-manifest.json, C03-C13-prompts.json, ../faces/FACES-prompts.json.

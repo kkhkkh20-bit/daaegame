@@ -1,0 +1,624 @@
+{
+  "status": "ready_for_review",
+  "branch": "art/c01-papa-rei-karo-20261007",
+  "referenceCommit": "cf84c4a4a99416e90b0e72312005d880db9e6255",
+  "latestRequestsCheckedCommit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+  "reusedMainFaces": {
+    "keys": [
+      "buri",
+      "doto",
+      "karo",
+      "papa",
+      "rei",
+      "wanggu"
+    ],
+    "commit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+    "unchanged": true
+  },
+  "generationTool": "built-in image_gen",
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "strictRasterCompliant": false,
+  "coordinateConvention": "x,y,width,height; right/bottom exclusive",
+  "alphaThreshold": 64,
+  "assets": {
+    "nero": {
+      "key": "nero",
+      "name": "네로",
+      "batch": "C07",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 872090,
+        "sha256": "88cdfeb181d5615e2f13936aa4720bce10e3790ffdc0f057ebe6430d5329151b",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.802,
+        "partialAlphaPercent": 38.067,
+        "visibleBoundsAlphaOver64": [
+          246,
+          20,
+          1679,
+          717
+        ],
+        "src": "nero.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            759,
+            763
+          ],
+          [
+            759,
+            0,
+            615,
+            763
+          ],
+          [
+            1374,
+            0,
+            687,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            246,
+            20,
+            432,
+            717
+          ],
+          [
+            840,
+            20,
+            428,
+            717
+          ],
+          [
+            1480,
+            26,
+            445,
+            711
+          ]
+        ],
+        "baselines": [
+          736,
+          736,
+          736
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12552301255230125
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 942862,
+          "sha256": "733cc3065ca8c6b3c636abd52ea42a0994a71dd6bbef34d784b1af1de22c4f42",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.253,
+          "partialAlphaPercent": 54.589,
+          "visibleBoundsAlphaOver64": [
+            135,
+            39,
+            985,
+            1159
+          ],
+          "src": "../faces/nero-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 951203,
+          "sha256": "42b92addc26c0ca150f4703ad3a737429de00ac4fbc1c04f82e78b7c2ade67c1",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.284,
+          "partialAlphaPercent": 54.545,
+          "visibleBoundsAlphaOver64": [
+            135,
+            40,
+            985,
+            1156
+          ],
+          "src": "../faces/nero-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 942308,
+          "sha256": "2d258ae8d409be9cee642d84d8bbd28876ac6746ec2f5deb1983ff0dd95a1aee",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.068,
+          "partialAlphaPercent": 54.77,
+          "visibleBoundsAlphaOver64": [
+            134,
+            38,
+            987,
+            1159
+          ],
+          "src": "../faces/nero-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 944956,
+          "sha256": "2a83bc4a73fa1499e831f0f59108c2fa9a0541f172be3d7d68d301af374a0cc8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.457,
+          "partialAlphaPercent": 54.447,
+          "visibleBoundsAlphaOver64": [
+            135,
+            41,
+            985,
+            1156
+          ],
+          "src": "../faces/nero-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "momo": {
+      "key": "momo",
+      "name": "모모 관장",
+      "batch": "C07",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 990175,
+        "sha256": "59d6b3345b73fe4f0bec39c129473100f464c66969ba9d1c1f2bf3fa533bbdeb",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.346,
+        "partialAlphaPercent": 38.551,
+        "visibleBoundsAlphaOver64": [
+          219,
+          18,
+          1673,
+          727
+        ],
+        "src": "momo.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            787,
+            763
+          ],
+          [
+            787,
+            0,
+            604,
+            763
+          ],
+          [
+            1391,
+            0,
+            670,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            219,
+            18,
+            491,
+            727
+          ],
+          [
+            865,
+            18,
+            380,
+            727
+          ],
+          [
+            1537,
+            27,
+            355,
+            718
+          ]
+        ],
+        "baselines": [
+          744,
+          744,
+          744
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12379642365887207
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1065914,
+          "sha256": "2ef5a23c58efcac422bd333a06137f17736bf1fcf4028197f8416b34a4de312a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.139,
+          "partialAlphaPercent": 59.657,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1154
+          ],
+          "src": "../faces/momo-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1087293,
+          "sha256": "628c4cba63e453df4a6d10f01b4c97bdb4b5e658489bd32a0d00df4edaa1c842",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.002,
+          "partialAlphaPercent": 59.803,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1155
+          ],
+          "src": "../faces/momo-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1070486,
+          "sha256": "f55f2a4f37f185f0d45fec5cdd8f67c89fba7017c339dd28aee7ed443f0cbf1c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 39.977,
+          "partialAlphaPercent": 59.797,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1155
+          ],
+          "src": "../faces/momo-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1074875,
+          "sha256": "c830704fa96209dc4e92f3606f3c5bf8dd8846ec2fa805fb98d5ef0109d3fc80",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 39.826,
+          "partialAlphaPercent": 59.957,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1156
+          ],
+          "src": "../faces/momo-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "yeoni": {
+      "key": "yeoni",
+      "name": "여니",
+      "batch": "C07",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1040251,
+        "sha256": "0685083562e4a4747d5edda83393a0214a05eecd4aee55fe6f47525a4228ac41",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 52.984,
+        "partialAlphaPercent": 46.882,
+        "visibleBoundsAlphaOver64": [
+          78,
+          16,
+          1890,
+          728
+        ],
+        "src": "yeoni.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            662,
+            763
+          ],
+          [
+            662,
+            0,
+            654,
+            763
+          ],
+          [
+            1316,
+            0,
+            745,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            78,
+            16,
+            544,
+            727
+          ],
+          [
+            703,
+            17,
+            553,
+            726
+          ],
+          [
+            1377,
+            45,
+            591,
+            699
+          ]
+        ],
+        "baselines": [
+          742,
+          742,
+          743
+        ],
+        "baselineOffsets": [
+          1,
+          1,
+          0
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.12379642365887207
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 949751,
+          "sha256": "e354d61fa4f8403e630ec3d504917af483c8e121d2c725a3b968f3732cae2512",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.649,
+          "partialAlphaPercent": 53.206,
+          "visibleBoundsAlphaOver64": [
+            161,
+            44,
+            907,
+            1172
+          ],
+          "src": "../faces/yeoni-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 948018,
+          "sha256": "7019048263014a66f1d922a89e98c84b95dfcf2ddda2542c8977e65d06bd45ec",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.765,
+          "partialAlphaPercent": 53.058,
+          "visibleBoundsAlphaOver64": [
+            160,
+            44,
+            909,
+            1172
+          ],
+          "src": "../faces/yeoni-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 956121,
+          "sha256": "837a5f3da1ad23823121c3d11d57c7e6d43b29b17e27f7b22665c141d3334762",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.393,
+          "partialAlphaPercent": 53.449,
+          "visibleBoundsAlphaOver64": [
+            161,
+            43,
+            908,
+            1174
+          ],
+          "src": "../faces/yeoni-shy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 943121,
+          "sha256": "df6daa92a99ee4f07da0556a3d32afbcbcd9b24f287f519340fe959885b70871",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.028,
+          "partialAlphaPercent": 52.818,
+          "visibleBoundsAlphaOver64": [
+            162,
+            45,
+            906,
+            1171
+          ],
+          "src": "../faces/yeoni-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    }
+  },
+  "batchId": "C07"
+}

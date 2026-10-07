@@ -374,7 +374,7 @@
       "faces": [
         "neutral",
         "think",
-        "embarrassed",
+        "shy",
         "shock"
       ]
     },
@@ -386,8 +386,8 @@
       "emotion": "nervous",
       "faces": [
         "neutral",
+        "smug",
         "think",
-        "nervous",
         "shock"
       ]
     },
@@ -399,9 +399,9 @@
       "emotion": "worried",
       "faces": [
         "neutral",
+        "happy",
         "think",
-        "worried",
-        "shock"
+        "sad"
       ]
     },
     {
@@ -412,9 +412,9 @@
       "emotion": "sad",
       "faces": [
         "neutral",
+        "smile",
         "think",
-        "sad",
-        "shock"
+        "sad"
       ]
     },
     {
@@ -425,9 +425,9 @@
       "emotion": "smile",
       "faces": [
         "neutral",
-        "think",
         "smile",
-        "shock"
+        "think",
+        "sad"
       ]
     },
     {
@@ -438,9 +438,9 @@
       "emotion": "sad",
       "faces": [
         "neutral",
+        "smug",
         "think",
-        "sad",
-        "shock"
+        "shy"
       ]
     },
     {
@@ -794,5 +794,19 @@
         "shock"
       ]
     }
-  ]
+  ],
+  "latestRequestCommit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+  "latestRequest": "R-012: F02 expression names",
+  "reusedMainFaces": {
+    "keys": [
+      "buri",
+      "doto",
+      "karo",
+      "papa",
+      "rei",
+      "wanggu"
+    ],
+    "commit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+    "unchanged": true
+  }
 }

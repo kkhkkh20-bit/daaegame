@@ -1,0 +1,61 @@
+C08 캐릭터 전달 문서
+상태: ready_for_review
+브랜치: art/c01-papa-rei-karo-20261007
+기준 origin/main: cf84c4a4a99416e90b0e72312005d880db9e6255
+
+제작: 내장 image_gen. 그림 내용 수정도 image_gen 사용. 원본 알파 보존.
+최신 요청 확인: origin/main e4a096ee2b509a178f057cfde34a7bc3f1df0671. R-012 F02 표정 목록 반영.
+C01·C02 정면 얼굴 24장은 다른 채팅이 main에 납품한 파일을 바이트 변경 없이 재사용. 본 채팅의 중복 시안은 납품에서 제외.
+새 제작 범위: C03~C13 전신 32장(루카 포함) 및 정면 얼굴 128장. 기존 전신 6장과 기존 정면 24장은 검토 편의를 위해 함께 표시.
+기준: daram-matched.png 직접 참조, star-hill-enriched.png 색감 참조.
+좌표: 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 전신 3등분 금지.
+정면 얼굴은 각 PNG 전체 정사각형을 96×96 nearest-neighbor로 표시. 두 눈과 시선이 플레이어를 향함.
+전신은 인물별 fullBodyScale(최대 높이 90px)로 동일 배율 적용. baselines/ baselineOffsets로 발 정렬.
+일부 원본 포즈의 최하단 픽셀은 1~4px 차이가 있음. 90px 표시에서는 1px 미만이며 미리보기에서 각 baseline으로 정렬.
+RGBA 투명 배경과 가시 영역/crop 경계/상대경로/파일 해시 확인.
+생성 원본에 반투명 가장자리와 작은 색 변화가 있음. 정확한 정수 픽셀 격자 및 26색 제한을 강제한 하드웨어 래스터는 아님.
+게임용 축소·팔레트 정리는 개발 담당이 별도 art/에서 처리. 이 작업은 game.html/index.html/dot.html/sw.js/art/를 수정하지 않음.
+C01·C02 기존 PNG/문서/미리보기 보존. 배경·승인 이미지·공용 요청/검토/ready-assets 파일 보존. main 병합 없음.
+사용자 최종 승인 및 실제 게임 런타임 검토 전.
+
+피코 (piko)
+전신: design/retro/chars/piko.png
+크기: [2061, 763] / SHA256: 2a05ede6198844054541e26298f55bfc99edddd999c7c2bafde134bf0159dcf1
+발 기준선: [740, 736, 740] / 보정: [0, 4, 0]
+기본 전신 crop: [0, 0, 736, 763]
+생각 전신 crop: [736, 0, 631, 763]
+감정 전신 crop: [1367, 0, 694, 763]
+정면 neutral: design/retro/faces/piko-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 49a6f81e589ec5fa96044989f678a66c1d341690f97894b4956107d851fd1ab5
+정면 think: design/retro/faces/piko-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 271f04ae623fa67c000286da20b5da328f94bfee6e3d4aacbaac70777a5807da
+정면 embarrassed: design/retro/faces/piko-embarrassed.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 589f54c45a97beed74662e9bc551d4dfdfc672cb83de3bb184b31a43c8c0142e
+정면 shock: design/retro/faces/piko-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 3976eaa76e711885e7d81127c503bea1694bca8f28be62633587d125d309aaf8
+
+따닥 (ttadak)
+전신: design/retro/chars/ttadak.png
+크기: [2061, 763] / SHA256: f07f1812ff760de469c9f2fdb1cbf04fa618b906244caaa4b103a19a359bf791
+발 기준선: [727, 727, 727] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 721, 763]
+생각 전신 crop: [721, 0, 666, 763]
+감정 전신 crop: [1387, 0, 674, 763]
+정면 neutral: design/retro/faces/ttadak-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 4a58c291d4d3265ae7bc157b6728990b7bdb3a3d5f80b4ea09ad524c5e3727f2
+정면 think: design/retro/faces/ttadak-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 f216f003a5fafe82fac6d2b63ff3cf816e668eff3107e19c7d54285c3b50e4e1
+정면 shy: design/retro/faces/ttadak-shy.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 b9c0cf87630424c9bc8b8df5eb5bcc7c023c6ff01504f13cf7b0f47f92264240
+정면 shock: design/retro/faces/ttadak-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 d870507e137ab35f4985f05f3fe7200d7cf33a0f1053cb964610b2ac4e0f0dc4
+
+뭉치 (mungchi)
+전신: design/retro/chars/mungchi.png
+크기: [2061, 763] / SHA256: 043dbe053a84798f9367f906ee1e3198526ba3ff5089818b5380cf5d8002b3b0
+발 기준선: [736, 736, 736] / 보정: [0, 0, 0]
+기본 전신 crop: [0, 0, 750, 763]
+생각 전신 crop: [750, 0, 621, 763]
+감정 전신 crop: [1371, 0, 690, 763]
+정면 neutral: design/retro/faces/mungchi-neutral.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 aa9d5cdc913bbee56ae14f34d096a57955dbac87b2579357483a562886bce6b3
+정면 think: design/retro/faces/mungchi-think.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 bc80e00027f8c6045aa22137753f989946e16526aa923726558ab5fe9ca16944
+정면 sad: design/retro/faces/mungchi-sad.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 5bad3ae7baf05c52ca239a173ec756daf0b2f02a6f8a1c45a9309b96ef799ed8
+정면 shock: design/retro/faces/mungchi-shock.png / 얼굴·어깨 crop [0, 0, 1254, 1254] / SHA256 8eeca99062191ba39b020b38ef2add4f0e5a9bccf5adf020ff9504dcd75b8f56
+
+적용 방법
+같은 폴더의 C08-preview.html 또는 CHARACTERS-preview.html을 열어 96px 얼굴·90px 전신을 검토.
+각 manifest frames를 drawImage의 source rectangle로 사용. 이미지 보간은 끔.
+정면은 faces/<인물>-<표정>.png를 사용. 기존 옆얼굴을 재활용하지 않음.
+전체 좌표/알파 통계/생성 프롬프트: CHARACTERS-manifest.json, C03-C13-prompts.json, ../faces/FACES-prompts.json.
