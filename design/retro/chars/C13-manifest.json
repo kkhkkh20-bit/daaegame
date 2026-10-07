@@ -1,0 +1,426 @@
+{
+  "status": "ready_for_review",
+  "branch": "art/c01-papa-rei-karo-20261007",
+  "referenceCommit": "cf84c4a4a99416e90b0e72312005d880db9e6255",
+  "latestRequestsCheckedCommit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+  "reusedMainFaces": {
+    "keys": [
+      "buri",
+      "doto",
+      "karo",
+      "papa",
+      "rei",
+      "wanggu"
+    ],
+    "commit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+    "unchanged": true
+  },
+  "generationTool": "built-in image_gen",
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "strictRasterCompliant": false,
+  "coordinateConvention": "x,y,width,height; right/bottom exclusive",
+  "alphaThreshold": 64,
+  "assets": {
+    "tori": {
+      "key": "tori",
+      "name": "토리",
+      "batch": "C13",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 837827,
+        "sha256": "4171ed22ba5588504e20d124afb7168bf027b633a3e57a3224012c07012415db",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 63.696,
+        "partialAlphaPercent": 36.208,
+        "visibleBoundsAlphaOver64": [
+          172,
+          30,
+          1690,
+          706
+        ],
+        "src": "tori.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            691,
+            763
+          ],
+          [
+            691,
+            0,
+            642,
+            763
+          ],
+          [
+            1333,
+            0,
+            728,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            172,
+            30,
+            411,
+            706
+          ],
+          [
+            799,
+            30,
+            406,
+            706
+          ],
+          [
+            1461,
+            40,
+            401,
+            696
+          ]
+        ],
+        "baselines": [
+          735,
+          735,
+          735
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.1274787535410765
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 967790,
+          "sha256": "5455b0f30a6d28492b012e32f59b15fa622b4a2ee609cf8fb606d58116da754d",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.631,
+          "partialAlphaPercent": 57.138,
+          "visibleBoundsAlphaOver64": [
+            29,
+            107,
+            1184,
+            1065
+          ],
+          "src": "../faces/tori-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 964961,
+          "sha256": "ed6ee520dfc4888c7eb27c8f27c71741750de2e8a84a128e9e76c41f8e99307c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.487,
+          "partialAlphaPercent": 57.307,
+          "visibleBoundsAlphaOver64": [
+            28,
+            107,
+            1186,
+            1067
+          ],
+          "src": "../faces/tori-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 967013,
+          "sha256": "ac479565f24b7deb474b051d98cd7501c24b056dd34bd8229dd97aa38e100a19",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.553,
+          "partialAlphaPercent": 57.205,
+          "visibleBoundsAlphaOver64": [
+            28,
+            108,
+            1186,
+            1064
+          ],
+          "src": "../faces/tori-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 976443,
+          "sha256": "bf2e4da0747cfd4dc581b1e8f91de3ff5cdacb40861662afa4b3178292f5875e",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.44,
+          "partialAlphaPercent": 57.356,
+          "visibleBoundsAlphaOver64": [
+            28,
+            106,
+            1187,
+            1067
+          ],
+          "src": "../faces/tori-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "mom": {
+      "key": "mom",
+      "name": "엄마",
+      "batch": "C13",
+      "sheet": {
+        "size": [
+          2060,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1188159,
+        "sha256": "25f8aee3cbc7b653dad9b1d2d666faa48c92cb6a3963e45499030305d3136adf",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 49.864,
+        "partialAlphaPercent": 50.018,
+        "visibleBoundsAlphaOver64": [
+          52,
+          22,
+          1876,
+          711
+        ],
+        "src": "mom.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            643,
+            763
+          ],
+          [
+            643,
+            0,
+            700,
+            763
+          ],
+          [
+            1343,
+            0,
+            717,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            52,
+            29,
+            550,
+            702
+          ],
+          [
+            684,
+            36,
+            643,
+            695
+          ],
+          [
+            1360,
+            22,
+            568,
+            711
+          ]
+        ],
+        "baselines": [
+          730,
+          730,
+          732
+        ],
+        "baselineOffsets": [
+          2,
+          2,
+          0
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.12658227848101267
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 866934,
+          "sha256": "96e432c0a9a9b91d804ee3b24a8232d8051c3128a444ca1019ba51de0f2580f9",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 51.233,
+          "partialAlphaPercent": 48.635,
+          "visibleBoundsAlphaOver64": [
+            203,
+            84,
+            848,
+            1112
+          ],
+          "src": "../faces/mom-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 874611,
+          "sha256": "316a4e3531ea2eaf9ad7357c226d3d81a501c24c89d47f8b1796768f22ae044b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.911,
+          "partialAlphaPercent": 48.936,
+          "visibleBoundsAlphaOver64": [
+            202,
+            84,
+            850,
+            1114
+          ],
+          "src": "../faces/mom-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "cry": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 873922,
+          "sha256": "f12787ad0562c52343084a11279b5cec11c94f4c879bb6185416ef2e25740cba",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.891,
+          "partialAlphaPercent": 49.0,
+          "visibleBoundsAlphaOver64": [
+            203,
+            84,
+            849,
+            1114
+          ],
+          "src": "../faces/mom-cry.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 885230,
+          "sha256": "583c28c42baad708967f01a481280a7b4f6cc54fd1dd7896fd91f4f3da1aeb66",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.909,
+          "partialAlphaPercent": 48.966,
+          "visibleBoundsAlphaOver64": [
+            203,
+            84,
+            849,
+            1113
+          ],
+          "src": "../faces/mom-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true,
+      "note": "일반 다람쥐 과학자. 생물 비막 없음, 접이식 천 활공 장비. 전신 생각은 지도 읽기."
+    }
+  },
+  "batchId": "C13"
+}

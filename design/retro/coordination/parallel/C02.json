@@ -1,9 +1,9 @@
 {
   "batchId": "C02",
   "assignedTo": "other-chat-character",
-  "status": "reserved",
-  "generationStarted": false,
-  "generationCompleted": false,
+  "status": "ready_for_review",
+  "generationStarted": true,
+  "generationCompleted": true,
   "brief": "design/retro/coordination/briefs/C02.txt",
   "startInstructions": "design/retro/coordination/parallel/C02-start.txt",
   "workingBranch": "art/c01-papa-rei-karo-20261007",
@@ -19,5 +19,342 @@
     "design/retro/chars/C02-preview.html",
     "design/retro/coordination/parallel/C02.json"
   ],
-  "note": "사용자가 다른 ChatGPT 채팅에 줄 다음 작업을 요청하여 C02를 배정했습니다. C01 제작본은 별도 브랜치에서 검토 대기 상태이며 여기서는 병합하거나 승인하지 않았습니다. 이 예약은 다른 채팅이 C02 제작을 시작했다는 뜻이 아닙니다."
+  "note": "C02 세 인물 각각 3포즈 제작. 투명도/해시/좌표/alpha>64 발 기준선 확인. C01 보존, C02 파일만 추가. 사용자 최종 승인 및 실제 게임 검토 전.",
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "manifest": "design/retro/chars/C02-manifest.json",
+  "preview": "design/retro/chars/C02-preview.html",
+  "handoff": "design/retro/chars/HANDOFF-C02.txt",
+  "assets": {
+    "buri": {
+      "name": "부리",
+      "src": "buri.png",
+      "size": [
+        2062,
+        763
+      ],
+      "bytes": 989438,
+      "sha256": "da5a820df84de26d7d439e41da5253d4b78432e95bc398b979eda202973e6129",
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.651,
+      "partialAlphaPercent": 42.214,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          751,
+          763
+        ],
+        [
+          751,
+          0,
+          651,
+          763
+        ],
+        [
+          1402,
+          0,
+          660,
+          763
+        ]
+      ],
+      "visibleBoundsAlphaOver64": [
+        [
+          219,
+          25,
+          451,
+          722
+        ],
+        [
+          832,
+          19,
+          453,
+          728
+        ],
+        [
+          1519,
+          36,
+          400,
+          711
+        ]
+      ],
+      "nonzeroAlphaBounds": [
+        [
+          65,
+          19,
+          686,
+          731
+        ],
+        [
+          752,
+          9,
+          650,
+          754
+        ],
+        [
+          1402,
+          33,
+          606,
+          717
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          400,
+          400
+        ],
+        [
+          890,
+          0,
+          400,
+          400
+        ],
+        [
+          1530,
+          10,
+          400,
+          400
+        ]
+      ],
+      "feetBaselineAlphaOver64": 746,
+      "fullBodyScale": 0.12362637362637363,
+      "prompt": "Use case: stylized-concept. ONE animal character sprite sheet, exactly THREE full body poses horizontal on actual transparent RGBA background, generous separate margins. Reference 1 APPROVED Daram is authoritative STYLE: same head/body proportion (head roughly third), chunky square pixels, navy stepped outline, simple dark pupil and single white highlight, broad 3-4 shade clusters, bright readable midtones. Reference 2 environment palette only, no background. Clothes on bipedal animal, slight three quarter right. Same height and EXACT SAME feet baseline for all 3 poses. No text, labels, floor shadow, glossy surfaces, blur, realistic fur, tiny folds, anime eyes, baby giant head, human face/hair/nose/hands. Fully visible ears/tails/props/feet. Left BASIC / middle THINK wing-tip or furry paw under chin / right restrained EMOTION. Keep expressions readable at 96px portrait and full body 90px.\nBuri, young brown OWL bookworm. Full owl head with rounded facial discs, round open eyes yet Daram-style dark simple pupils, small owl beak, few feather tufts, compact wings ending in FEATHER TIPS as hands, owl talons. Burgundy/plum vest over plain cream shirt, dark brown modest trousers. Hold a single closed plain book, no writing. Basic earnest quiet bookworm. Thinking wing tip beneath beak, book tucked by side. Emotion hurt and wistful, brows lifted toward center, gaze slightly down, closed beak: grandfather trusted someone else and Buri is ashamed of concealing it. No tears streaming or slapstick. Simple feather surfaces, similar overall body length to Daram, not a fat spherical mascot.",
+      "editPrompts": []
+    },
+    "wanggu": {
+      "name": "왕구",
+      "src": "wanggu.png",
+      "size": [
+        2061,
+        763
+      ],
+      "bytes": 1042934,
+      "sha256": "2c9a7299aec65975df4c4680eb1d6357c130e03e1aed78071424800a4ef1973d",
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 55.448,
+      "partialAlphaPercent": 44.507,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          682,
+          763
+        ],
+        [
+          682,
+          0,
+          624,
+          763
+        ],
+        [
+          1306,
+          0,
+          755,
+          763
+        ]
+      ],
+      "visibleBoundsAlphaOver64": [
+        [
+          72,
+          35,
+          583,
+          689
+        ],
+        [
+          709,
+          36,
+          523,
+          688
+        ],
+        [
+          1380,
+          39,
+          540,
+          685
+        ]
+      ],
+      "nonzeroAlphaBounds": [
+        [
+          65,
+          32,
+          596,
+          697
+        ],
+        [
+          693,
+          32,
+          613,
+          699
+        ],
+        [
+          1307,
+          36,
+          700,
+          697
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          390,
+          390
+        ],
+        [
+          870,
+          0,
+          390,
+          390
+        ],
+        [
+          1540,
+          5,
+          390,
+          390
+        ]
+      ],
+      "feetBaselineAlphaOver64": 723,
+      "fullBodyScale": 0.13062409288824384,
+      "prompt": "Use case: stylized-concept. ONE animal character sprite sheet, exactly THREE full body poses horizontal on actual transparent RGBA background, generous separate margins. Reference 1 APPROVED Daram is authoritative STYLE: same head/body proportion (head roughly third), chunky square pixels, navy stepped outline, simple dark pupil and single white highlight, broad 3-4 shade clusters, bright readable midtones. Reference 2 environment palette only, no background. Clothes on bipedal animal, slight three quarter right. Same height and EXACT SAME feet baseline for all 3 poses. No text, labels, floor shadow, glossy surfaces, blur, realistic fur, tiny folds, anime eyes, baby giant head, human face/hair/nose/hands. Fully visible ears/tails/props/feet. Left BASIC / middle THINK wing-tip or furry paw under chin / right restrained EMOTION. Keep expressions readable at 96px portrait and full body 90px.\nWanggu, adult RACCOON festival committee chair. Entirely raccoon head with black eye mask, pale sandy warm taupe fur, broad cheeks, small rounded ears, short animal snout, striped tail. Distinct from Papa reference 3: NO HAT, NO trenchcoat, NO tie, shorter wider sturdy torso, bright ORANGE vest over cream shirt, dark olive/brown trousers, animal paws and dark shoes. Plain contrasting red festival ARMBAND around upper arm with a small cream geometric stripe, absolutely no writing. Basic confident loud committee chair, raised brow and small assertive open mouth, paw on hip. Thinking furry paw under chin, brow knit. Emotion embarrassed uncertainty after challenged about what he actually witnessed: mouth small hesitant, brows raised, shoulders slightly tucked; no comic sweat, not raging villain. Same animal proportion and pixel density as Daram.",
+      "editPrompts": [
+        "Two narrowly targeted edits only to this Wanggu sheet. 1) Align lowest visible foot pixel in all three poses to exactly the same horizontal baseline. 2) Festival red/cream armband must consistently stay on his LEFT upper arm, which is the arm on the VIEWER'S RIGHT in this three-quarter view. In third pose move the armband from viewer-left arm to viewer-right arm; first and middle placement already correct. Preserve all face/expressions, no hat, orange vest, fur, tail, poses, design, coarse pixels, palette, transparent RGBA. No text, shadows or other changes."
+      ]
+    },
+    "doto": {
+      "name": "도토",
+      "src": "doto.png",
+      "size": [
+        2061,
+        763
+      ],
+      "bytes": 982061,
+      "sha256": "dfb84bdc8b7024de05e20c8ef4f7d30de5b1d9764ac8feccd9c0416b222754fa",
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.762,
+      "partialAlphaPercent": 42.082,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          682,
+          763
+        ],
+        [
+          682,
+          0,
+          621,
+          763
+        ],
+        [
+          1303,
+          0,
+          758,
+          763
+        ]
+      ],
+      "visibleBoundsAlphaOver64": [
+        [
+          120,
+          26,
+          511,
+          701
+        ],
+        [
+          734,
+          26,
+          498,
+          701
+        ],
+        [
+          1374,
+          51,
+          464,
+          676
+        ]
+      ],
+      "nonzeroAlphaBounds": [
+        [
+          117,
+          22,
+          565,
+          708
+        ],
+        [
+          683,
+          23,
+          555,
+          708
+        ],
+        [
+          1321,
+          48,
+          521,
+          683
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          370,
+          370
+        ],
+        [
+          880,
+          0,
+          370,
+          370
+        ],
+        [
+          1520,
+          20,
+          370,
+          370
+        ]
+      ],
+      "feetBaselineAlphaOver64": 726,
+      "fullBodyScale": 0.12838801711840228,
+      "prompt": "Use case: stylized-concept. ONE animal character sprite sheet, exactly THREE full body poses horizontal on actual transparent RGBA background, generous separate margins. Reference 1 APPROVED Daram is authoritative STYLE: same head/body proportion (head roughly third), chunky square pixels, navy stepped outline, simple dark pupil and single white highlight, broad 3-4 shade clusters, bright readable midtones. Reference 2 environment palette only, no background. Clothes on bipedal animal, slight three quarter right. Same height and EXACT SAME feet baseline for all 3 poses. No text, labels, floor shadow, glossy surfaces, blur, realistic fur, tiny folds, anime eyes, baby giant head, human face/hair/nose/hands. Fully visible ears/tails/props/feet. Left BASIC / middle THINK wing-tip or furry paw under chin / right restrained EMOTION. Keep expressions readable at 96px portrait and full body 90px.\nDoto, young meticulous SQUIRREL record keeper. Entirely squirrel head with upright small rounded ears and compact animal muzzle, chestnut-brown fur distinctly darker than Daram's golden orange. NO HAT, NO ribbon, NO skirt. Neat sage-green and cream CHECK VEST (few large check blocks, not busy texture) over cream shirt, dark brown shorts/trousers and simple shoes, furry paws. Narrower upright oval squirrel tail, distinct silhouette from Daram's huge wide tail. Silver STOPWATCH with tiny plain dial on short chain and small plain brown RECORD NOTEBOOK visible, NO lettering/numbers. Basic attentive serious, holds notebook and displays stopwatch near chest. Thinking one furry paw beneath chin, notebook and stopwatch secured near vest. Emotion shy caught-out embarrassment: hugs notebook close, lowered eyes, tiny hesitant mouth, only subtle warmth on cheeks; afraid mother will learn he stayed up birdwatching. Same Daram proportions/pixel style, restrained.",
+      "editPrompts": [
+        "Edit ONLY Doto's green vest in all three poses: make it unmistakably a neat CHECK/PLAID vest using a few large alternating cream and sage-green square blocks with broad dark green grid stripes; simple coarse pixel checks, not tiny fabric texture. Preserve squirrel face/fur, no hat, notebook, stopwatch, all three expressions, poses, all body proportions, pixel scale and shared feet baseline. No text, no background or shadow. Everything else identical. True transparent RGBA."
+      ]
+    }
+  },
+  "previewValidation": {
+    "canvasCount": 28,
+    "allSourceCropsWithinPNG": true,
+    "relativeImagesLoaded": true,
+    "nativeCanvasRenderedAndVisuallyInspected": true,
+    "browserLayoutReviewed": false,
+    "note": "HTML 표시 스크립트를 native canvas 환경에서 실행해 28개 그림을 렌더링·시각 확인. 브라우저 설치 다운로드가 실패하여 브라우저 CSS 레이아웃 검토는 미실시."
+  }
 }

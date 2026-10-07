@@ -1,0 +1,7592 @@
+{
+  "status": "ready_for_review",
+  "branch": "art/c01-papa-rei-karo-20261007",
+  "referenceCommit": "cf84c4a4a99416e90b0e72312005d880db9e6255",
+  "latestRequestsCheckedCommit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+  "reusedMainFaces": {
+    "keys": [
+      "buri",
+      "doto",
+      "karo",
+      "papa",
+      "rei",
+      "wanggu"
+    ],
+    "commit": "e4a096ee2b509a178f057cfde34a7bc3f1df0671",
+    "unchanged": true
+  },
+  "generationTool": "built-in image_gen",
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "strictRasterCompliant": false,
+  "coordinateConvention": "x,y,width,height; right/bottom exclusive",
+  "alphaThreshold": 64,
+  "assets": {
+    "papa": {
+      "key": "papa",
+      "name": "아빠",
+      "batch": "C01",
+      "sheet": {
+        "size": [
+          2060,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1011826,
+        "sha256": "f7f1b81206b943263ed33158cda88329013eccf91e1dcf23225c1c6c9657cb72",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 52.793,
+        "partialAlphaPercent": 47.089,
+        "visibleBoundsAlphaOver64": [
+          70,
+          14,
+          1871,
+          726
+        ],
+        "src": "papa.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            668,
+            763
+          ],
+          [
+            668,
+            0,
+            651,
+            763
+          ],
+          [
+            1319,
+            0,
+            741,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            70,
+            15,
+            550,
+            725
+          ],
+          [
+            716,
+            14,
+            542,
+            725
+          ],
+          [
+            1381,
+            32,
+            560,
+            708
+          ]
+        ],
+        "baselines": [
+          739,
+          738,
+          739
+        ],
+        "baselineOffsets": [
+          0,
+          1,
+          0
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.12413793103448276
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 884445,
+          "sha256": "1a7a6de39bac0518b7ed4ab22a13209dffdec2c0880a8a89d59fc51a2c2e6364",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 52.415,
+          "partialAlphaPercent": 47.422,
+          "visibleBoundsAlphaOver64": [
+            167,
+            143,
+            921,
+            1046
+          ],
+          "src": "../faces/papa-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 889899,
+          "sha256": "3e07a7022a1092599d59fac5bb7655e3aa26154a96b01f87be4d825e5050f887",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 52.549,
+          "partialAlphaPercent": 47.295,
+          "visibleBoundsAlphaOver64": [
+            166,
+            144,
+            922,
+            1046
+          ],
+          "src": "../faces/papa-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 885630,
+          "sha256": "6655c389f6613de9b3a4106f7ee0645b21ad20e86b5efa03d599c8782222cdbf",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 52.423,
+          "partialAlphaPercent": 47.419,
+          "visibleBoundsAlphaOver64": [
+            166,
+            143,
+            923,
+            1047
+          ],
+          "src": "../faces/papa-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smile": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 888327,
+          "sha256": "5ee1eaa4fc25899b21eccbef155106b39923ad3215dce1af3152367a164003d7",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 52.288,
+          "partialAlphaPercent": 47.569,
+          "visibleBoundsAlphaOver64": [
+            165,
+            143,
+            925,
+            1048
+          ],
+          "src": "../faces/papa-smile.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "rei": {
+      "key": "rei",
+      "name": "레이",
+      "batch": "C01",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 815296,
+        "sha256": "2901965f75a9185e342bbba1c32944eba3703b9cf71913e44dd7cc564c2757a2",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 63.415,
+        "partialAlphaPercent": 36.413,
+        "visibleBoundsAlphaOver64": [
+          130,
+          23,
+          1788,
+          709
+        ],
+        "src": "rei.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            721,
+            763
+          ],
+          [
+            721,
+            0,
+            616,
+            763
+          ],
+          [
+            1337,
+            0,
+            724,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            130,
+            26,
+            508,
+            706
+          ],
+          [
+            805,
+            23,
+            459,
+            708
+          ],
+          [
+            1411,
+            60,
+            507,
+            671
+          ]
+        ],
+        "baselines": [
+          731,
+          730,
+          730
+        ],
+        "baselineOffsets": [
+          0,
+          1,
+          1
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.1271186440677966
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 798115,
+          "sha256": "d6d8bdd145b32bdeb47f6b0c47881c2b5c56954bb0ab3754e1fdf48cd3119191",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.224,
+          "partialAlphaPercent": 42.602,
+          "visibleBoundsAlphaOver64": [
+            186,
+            163,
+            882,
+            1032
+          ],
+          "src": "../faces/rei-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 795881,
+          "sha256": "95ce457655af6caf514b42de47475b070af2dc29ee882149a689dd95848d3a05",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.312,
+          "partialAlphaPercent": 42.502,
+          "visibleBoundsAlphaOver64": [
+            186,
+            163,
+            883,
+            1032
+          ],
+          "src": "../faces/rei-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smug": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 791503,
+          "sha256": "6712449bbe605c426c402e3461810a5fcd87c201ef2d70cb6401455772fa54b2",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.325,
+          "partialAlphaPercent": 42.559,
+          "visibleBoundsAlphaOver64": [
+            185,
+            163,
+            885,
+            1032
+          ],
+          "src": "../faces/rei-smug.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "pout": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 791302,
+          "sha256": "cd3b3420fc27346d473bcfbdc2f214e6d193ed1b51779ebcfd5e0eeb19325237",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.34,
+          "partialAlphaPercent": 42.504,
+          "visibleBoundsAlphaOver64": [
+            185,
+            163,
+            884,
+            1032
+          ],
+          "src": "../faces/rei-pout.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "karo": {
+      "key": "karo",
+      "name": "까로",
+      "batch": "C01",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 875289,
+        "sha256": "4d31bb11c3d291ee86c7f7df505f89a30f9cd0f662d2275df2d746f189835a1a",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 60.335,
+        "partialAlphaPercent": 39.571,
+        "visibleBoundsAlphaOver64": [
+          96,
+          58,
+          1841,
+          642
+        ],
+        "src": "karo.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            685,
+            763
+          ],
+          [
+            685,
+            0,
+            682,
+            763
+          ],
+          [
+            1367,
+            0,
+            694,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            96,
+            58,
+            510,
+            642
+          ],
+          [
+            765,
+            62,
+            523,
+            638
+          ],
+          [
+            1447,
+            78,
+            490,
+            622
+          ]
+        ],
+        "baselines": [
+          699,
+          699,
+          699
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.14018691588785046
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 791846,
+          "sha256": "e3a46f44533a97854376f7e49d11f00c3b2692bbd5bcf43dfd1dcccd9eed90d2",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.446,
+          "partialAlphaPercent": 43.363,
+          "visibleBoundsAlphaOver64": [
+            137,
+            163,
+            977,
+            1021
+          ],
+          "src": "../faces/karo-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 783186,
+          "sha256": "855a488a3dc10e0f3051ed0116b7a95dd86457f7435795222fe33ea4ab4e31f0",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.438,
+          "partialAlphaPercent": 43.377,
+          "visibleBoundsAlphaOver64": [
+            137,
+            163,
+            978,
+            1022
+          ],
+          "src": "../faces/karo-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 786877,
+          "sha256": "c52c18af75d9abfdd53253665277815fa5fa23d83e2bcc8a9cd73ef2e142fb70",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.573,
+          "partialAlphaPercent": 43.285,
+          "visibleBoundsAlphaOver64": [
+            136,
+            161,
+            979,
+            1025
+          ],
+          "src": "../faces/karo-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 786504,
+          "sha256": "5c554c180b397da0da0ec0185afd3b8d2ab55b30e513715bd8d342b4fe28e1ea",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.495,
+          "partialAlphaPercent": 43.345,
+          "visibleBoundsAlphaOver64": [
+            137,
+            163,
+            979,
+            1022
+          ],
+          "src": "../faces/karo-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "buri": {
+      "key": "buri",
+      "name": "부리",
+      "batch": "C02",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 989438,
+        "sha256": "da5a820df84de26d7d439e41da5253d4b78432e95bc398b979eda202973e6129",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 57.651,
+        "partialAlphaPercent": 42.214,
+        "visibleBoundsAlphaOver64": [
+          219,
+          19,
+          1700,
+          728
+        ],
+        "src": "buri.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            751,
+            763
+          ],
+          [
+            751,
+            0,
+            651,
+            763
+          ],
+          [
+            1402,
+            0,
+            660,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            219,
+            25,
+            451,
+            722
+          ],
+          [
+            832,
+            19,
+            453,
+            728
+          ],
+          [
+            1519,
+            36,
+            400,
+            711
+          ]
+        ],
+        "baselines": [
+          746,
+          746,
+          746
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12362637362637363
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 918684,
+          "sha256": "32129e4dff8e976951c6a294a6467d01be1dca3ebb6af2158d9ad8748d71495b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.758,
+          "partialAlphaPercent": 50.114,
+          "visibleBoundsAlphaOver64": [
+            130,
+            171,
+            991,
+            1038
+          ],
+          "src": "../faces/buri-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 927088,
+          "sha256": "8b977b39bfea556fd3ecaf3c0549a15e5eac051820e4f4ac0b7e7515df112154",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.733,
+          "partialAlphaPercent": 50.128,
+          "visibleBoundsAlphaOver64": [
+            129,
+            169,
+            995,
+            1040
+          ],
+          "src": "../faces/buri-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 919704,
+          "sha256": "cedf9a448d3c7ae8ef8d25d73fb706d03593007b94ebb6fd0c361ee8a42af8f6",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.844,
+          "partialAlphaPercent": 50.017,
+          "visibleBoundsAlphaOver64": [
+            129,
+            169,
+            995,
+            1041
+          ],
+          "src": "../faces/buri-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 929457,
+          "sha256": "8358467ba00b3c37eda8a8f24f8ea195ba1e861529afe7298cb83377f997ab6b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.978,
+          "partialAlphaPercent": 49.894,
+          "visibleBoundsAlphaOver64": [
+            130,
+            170,
+            993,
+            1041
+          ],
+          "src": "../faces/buri-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "wanggu": {
+      "key": "wanggu",
+      "name": "왕구",
+      "batch": "C02",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1042934,
+        "sha256": "2c9a7299aec65975df4c4680eb1d6357c130e03e1aed78071424800a4ef1973d",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 55.448,
+        "partialAlphaPercent": 44.507,
+        "visibleBoundsAlphaOver64": [
+          72,
+          35,
+          1848,
+          689
+        ],
+        "src": "wanggu.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            682,
+            763
+          ],
+          [
+            682,
+            0,
+            624,
+            763
+          ],
+          [
+            1306,
+            0,
+            755,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            72,
+            35,
+            583,
+            689
+          ],
+          [
+            709,
+            36,
+            523,
+            688
+          ],
+          [
+            1380,
+            39,
+            540,
+            685
+          ]
+        ],
+        "baselines": [
+          723,
+          723,
+          723
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.13062409288824384
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 891448,
+          "sha256": "16cd5c9ce1b0f8a327e9fe020f11434820ae1b6e2921062cc14fb4ac6fc222d0",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.38,
+          "partialAlphaPercent": 49.47,
+          "visibleBoundsAlphaOver64": [
+            120,
+            139,
+            1014,
+            1044
+          ],
+          "src": "../faces/wanggu-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 898907,
+          "sha256": "5fe58af25a85797a44474b6976e4315532e6d80dda9512e778568baa01796ede",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.255,
+          "partialAlphaPercent": 49.58,
+          "visibleBoundsAlphaOver64": [
+            120,
+            138,
+            1014,
+            1046
+          ],
+          "src": "../faces/wanggu-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "embarrassed": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 900023,
+          "sha256": "d8936f4cf4cb6700f38cb7c59c68921c748bbfe2993834fec7813a063bea83d2",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.264,
+          "partialAlphaPercent": 49.597,
+          "visibleBoundsAlphaOver64": [
+            120,
+            138,
+            1014,
+            1047
+          ],
+          "src": "../faces/wanggu-embarrassed.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 910243,
+          "sha256": "a2a650e65ea7a431b7e949e10bd1dfdd69cfb75921b28c3a7b3781b5fa9f4d7e",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.3,
+          "partialAlphaPercent": 49.557,
+          "visibleBoundsAlphaOver64": [
+            122,
+            138,
+            1010,
+            1047
+          ],
+          "src": "../faces/wanggu-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "doto": {
+      "key": "doto",
+      "name": "도토",
+      "batch": "C02",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 982061,
+        "sha256": "dfb84bdc8b7024de05e20c8ef4f7d30de5b1d9764ac8feccd9c0416b222754fa",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 57.762,
+        "partialAlphaPercent": 42.082,
+        "visibleBoundsAlphaOver64": [
+          120,
+          26,
+          1718,
+          701
+        ],
+        "src": "doto.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            682,
+            763
+          ],
+          [
+            682,
+            0,
+            621,
+            763
+          ],
+          [
+            1303,
+            0,
+            758,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            120,
+            26,
+            511,
+            701
+          ],
+          [
+            734,
+            26,
+            498,
+            701
+          ],
+          [
+            1374,
+            51,
+            464,
+            676
+          ]
+        ],
+        "baselines": [
+          726,
+          726,
+          726
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12838801711840228
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 776622,
+          "sha256": "b2b582f349e251286b94f7e183dd373e0d895517097cb0c2ee6ab4f2c3ac43c7",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 58.235,
+          "partialAlphaPercent": 41.621,
+          "visibleBoundsAlphaOver64": [
+            189,
+            176,
+            877,
+            1040
+          ],
+          "src": "../faces/doto-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 786523,
+          "sha256": "f369ef9cc555c1b666c2ea66e58add563ca848f2e9f1d02be4aa615b128fd976",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 58.071,
+          "partialAlphaPercent": 41.786,
+          "visibleBoundsAlphaOver64": [
+            187,
+            176,
+            881,
+            1042
+          ],
+          "src": "../faces/doto-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 788588,
+          "sha256": "0ffd2b6d685c6a4fe3bcffb7be9c9ce40c7e16f5475541227fe49adee49d3a78",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.875,
+          "partialAlphaPercent": 41.983,
+          "visibleBoundsAlphaOver64": [
+            186,
+            175,
+            882,
+            1042
+          ],
+          "src": "../faces/doto-shy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 787747,
+          "sha256": "f6563ddab9df804e2772aa730cab1a7691b8d1f9a56d8624e892610e4b5e4d39",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.806,
+          "partialAlphaPercent": 42.03,
+          "visibleBoundsAlphaOver64": [
+            187,
+            173,
+            881,
+            1043
+          ],
+          "src": "../faces/doto-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "kkwak": {
+      "key": "kkwak",
+      "name": "꽥순",
+      "batch": "C03",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 887109,
+        "sha256": "f189ce4699204e981883569ca71bbdfa442827c1498f73db18df0616cc89989a",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.304,
+        "partialAlphaPercent": 38.594,
+        "visibleBoundsAlphaOver64": [
+          196,
+          26,
+          1696,
+          702
+        ],
+        "src": "kkwak.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            719,
+            763
+          ],
+          [
+            719,
+            0,
+            646,
+            763
+          ],
+          [
+            1365,
+            0,
+            696,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            196,
+            26,
+            433,
+            702
+          ],
+          [
+            809,
+            26,
+            441,
+            702
+          ],
+          [
+            1480,
+            47,
+            412,
+            679
+          ]
+        ],
+        "baselines": [
+          727,
+          727,
+          725
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          2
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.1282051282051282
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 845203,
+          "sha256": "95ac4bb6e79efeadcdfaca0714ede595097c1a2e9c19ae018bd5496779d5a55f",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.531,
+          "partialAlphaPercent": 49.298,
+          "visibleBoundsAlphaOver64": [
+            105,
+            89,
+            1044,
+            1108
+          ],
+          "src": "../faces/kkwak-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smug": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 850413,
+          "sha256": "3a3b7b85ff06871b81e41d37b54885710846bbc5745e9a60b96f35f1dfe941b5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.474,
+          "partialAlphaPercent": 49.336,
+          "visibleBoundsAlphaOver64": [
+            104,
+            88,
+            1047,
+            1111
+          ],
+          "src": "../faces/kkwak-smug.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 853701,
+          "sha256": "6cb606832907884bdf1be2efc357335352f112212db549b35eb818e2840c499d",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.518,
+          "partialAlphaPercent": 49.319,
+          "visibleBoundsAlphaOver64": [
+            104,
+            88,
+            1046,
+            1115
+          ],
+          "src": "../faces/kkwak-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 858571,
+          "sha256": "a1f29bacadddc1d09c1f890fc068778ce67e5a3b42440e0ce935c1711729fac3",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.463,
+          "partialAlphaPercent": 49.366,
+          "visibleBoundsAlphaOver64": [
+            103,
+            89,
+            1049,
+            1111
+          ],
+          "src": "../faces/kkwak-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "kongi": {
+      "key": "kongi",
+      "name": "콩이",
+      "batch": "C03",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1002209,
+        "sha256": "395d8bfd8ba8cc59fa666588d9c38980d33ca34744a61332839ccb41c9653388",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 56.836,
+        "partialAlphaPercent": 43.076,
+        "visibleBoundsAlphaOver64": [
+          106,
+          30,
+          1806,
+          686
+        ],
+        "src": "kongi.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            674,
+            763
+          ],
+          [
+            674,
+            0,
+            619,
+            763
+          ],
+          [
+            1293,
+            0,
+            769,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            106,
+            30,
+            516,
+            686
+          ],
+          [
+            726,
+            30,
+            493,
+            686
+          ],
+          [
+            1368,
+            57,
+            544,
+            659
+          ]
+        ],
+        "baselines": [
+          715,
+          715,
+          715
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.13119533527696792
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 934381,
+          "sha256": "5acca2bb626ed621ede9d2261c28db5a45a1d2d89a0a02ae57ed0a0a71e41d28",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.279,
+          "partialAlphaPercent": 53.529,
+          "visibleBoundsAlphaOver64": [
+            50,
+            96,
+            1154,
+            1057
+          ],
+          "src": "../faces/kongi-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "happy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 942484,
+          "sha256": "6db98d59fef3ac1d362a0e983786dfc2a52663b41f292aba69be4f999d2ae06c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.108,
+          "partialAlphaPercent": 53.707,
+          "visibleBoundsAlphaOver64": [
+            49,
+            95,
+            1156,
+            1059
+          ],
+          "src": "../faces/kongi-happy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 951308,
+          "sha256": "f46155c0ef03f96ba09ae1e7c032565615d3b53d61773c99ef4b9973d8429ce5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.139,
+          "partialAlphaPercent": 53.677,
+          "visibleBoundsAlphaOver64": [
+            49,
+            93,
+            1156,
+            1061
+          ],
+          "src": "../faces/kongi-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 948796,
+          "sha256": "e729b136d1185d9989c4b5d4e7bf76c3d5ce4c22c2dfae0696722e8c746ddd0f",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.159,
+          "partialAlphaPercent": 53.686,
+          "visibleBoundsAlphaOver64": [
+            50,
+            96,
+            1155,
+            1058
+          ],
+          "src": "../faces/kongi-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "owlgp": {
+      "key": "owlgp",
+      "name": "부엉이 할아버지",
+      "batch": "C03",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1102615,
+        "sha256": "173211a9cb8de07afa83a0cae2ac230bb3352c65150406ed572f338faa63e2f1",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 53.491,
+        "partialAlphaPercent": 46.423,
+        "visibleBoundsAlphaOver64": [
+          115,
+          22,
+          1909,
+          716
+        ],
+        "src": "owlgp.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            676,
+            763
+          ],
+          [
+            676,
+            0,
+            626,
+            763
+          ],
+          [
+            1302,
+            0,
+            760,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            115,
+            22,
+            495,
+            716
+          ],
+          [
+            743,
+            29,
+            480,
+            708
+          ],
+          [
+            1381,
+            38,
+            643,
+            699
+          ]
+        ],
+        "baselines": [
+          737,
+          736,
+          736
+        ],
+        "baselineOffsets": [
+          0,
+          1,
+          1
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.12569832402234637
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1058790,
+          "sha256": "4612a27edbfa37e1d7edbf77d0b28fb6e11ce1e207ad5763e2f7f2bbd4cdaab7",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.827,
+          "partialAlphaPercent": 58.99,
+          "visibleBoundsAlphaOver64": [
+            77,
+            45,
+            1101,
+            1163
+          ],
+          "src": "../faces/owlgp-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smile": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1065697,
+          "sha256": "7af5a95bdd2634822b0c5c015b9bf509bc9394b2c85be27a2fbc96a57108176c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.785,
+          "partialAlphaPercent": 59.014,
+          "visibleBoundsAlphaOver64": [
+            75,
+            46,
+            1105,
+            1163
+          ],
+          "src": "../faces/owlgp-smile.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1072575,
+          "sha256": "bdc093f9bc2ea61a9906692c6516e9fc0a5f1675ee97a1cc2f796985fc2a0324",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.81,
+          "partialAlphaPercent": 59.013,
+          "visibleBoundsAlphaOver64": [
+            77,
+            44,
+            1100,
+            1165
+          ],
+          "src": "../faces/owlgp-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1061603,
+          "sha256": "4eebb20475f362e5d5a6d498330c5baf7934a4ceda34278830f01ae3eaec60e5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 41.014,
+          "partialAlphaPercent": 58.812,
+          "visibleBoundsAlphaOver64": [
+            76,
+            48,
+            1103,
+            1161
+          ],
+          "src": "../faces/owlgp-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "grandma": {
+      "key": "grandma",
+      "name": "토끼 할머니",
+      "batch": "C04",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 906747,
+        "sha256": "28d603d962db6bce62fa85c32f4b9fae354ab880f3af050883216a30315434f3",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 62.056,
+        "partialAlphaPercent": 37.788,
+        "visibleBoundsAlphaOver64": [
+          196,
+          49,
+          1668,
+          677
+        ],
+        "src": "grandma.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            700,
+            763
+          ],
+          [
+            700,
+            0,
+            604,
+            763
+          ],
+          [
+            1304,
+            0,
+            757,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            196,
+            49,
+            426,
+            677
+          ],
+          [
+            778,
+            54,
+            422,
+            672
+          ],
+          [
+            1409,
+            54,
+            455,
+            672
+          ]
+        ],
+        "baselines": [
+          725,
+          725,
+          725
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.1329394387001477
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 893261,
+          "sha256": "26df97eacd68732141411b9dd592f43e9bf1f5281bc1376a8d9659749dd53616",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.974,
+          "partialAlphaPercent": 49.856,
+          "visibleBoundsAlphaOver64": [
+            40,
+            145,
+            1174,
+            978
+          ],
+          "src": "../faces/grandma-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smile": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 898532,
+          "sha256": "1f6f2022d887e81ff9950e192f4aceae939386239418ae979a784f340e55bfd6",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.737,
+          "partialAlphaPercent": 50.052,
+          "visibleBoundsAlphaOver64": [
+            39,
+            143,
+            1177,
+            984
+          ],
+          "src": "../faces/grandma-smile.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 905044,
+          "sha256": "5675397eacfafe59896c6c498657fa94239d7f3f8f632e833b3968991ffe145b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.843,
+          "partialAlphaPercent": 49.964,
+          "visibleBoundsAlphaOver64": [
+            39,
+            145,
+            1177,
+            979
+          ],
+          "src": "../faces/grandma-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 890524,
+          "sha256": "ad6133aab23be7b034f682f0be0b1a5ef776e102227040449d0e1a6a0aa3211f",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.159,
+          "partialAlphaPercent": 49.649,
+          "visibleBoundsAlphaOver64": [
+            40,
+            145,
+            1175,
+            979
+          ],
+          "src": "../faces/grandma-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "nabi": {
+      "key": "nabi",
+      "name": "나비",
+      "batch": "C04",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 946366,
+        "sha256": "6df5b418028abe0dc4ad832ed08fcf741236d6cd939198f8266e49b1c7f00759",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 55.724,
+        "partialAlphaPercent": 44.16,
+        "visibleBoundsAlphaOver64": [
+          77,
+          22,
+          1851,
+          718
+        ],
+        "src": "nabi.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            651,
+            763
+          ],
+          [
+            651,
+            0,
+            672,
+            763
+          ],
+          [
+            1323,
+            0,
+            738,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            77,
+            23,
+            518,
+            717
+          ],
+          [
+            707,
+            22,
+            534,
+            718
+          ],
+          [
+            1405,
+            68,
+            523,
+            672
+          ]
+        ],
+        "baselines": [
+          739,
+          739,
+          739
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12534818941504178
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 958662,
+          "sha256": "2cc7bdbf4edba4f4f9afc1fb47aabf97eb45dc17cb0f501f3ec4a92ea5ebd470",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 41.379,
+          "partialAlphaPercent": 58.495,
+          "visibleBoundsAlphaOver64": [
+            120,
+            79,
+            1015,
+            1118
+          ],
+          "src": "../faces/nabi-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "smug": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 962740,
+          "sha256": "ca72eb11e43e33c706372c901e11de6c21731a84c62a11d021e9451d6e7fc875",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 41.318,
+          "partialAlphaPercent": 58.539,
+          "visibleBoundsAlphaOver64": [
+            119,
+            80,
+            1017,
+            1118
+          ],
+          "src": "../faces/nabi-smug.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 967752,
+          "sha256": "075ef6de6f79778929a158d38017e7e3ce85706e44783e60aea2ed7fb75e1840",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 41.245,
+          "partialAlphaPercent": 58.626,
+          "visibleBoundsAlphaOver64": [
+            118,
+            79,
+            1019,
+            1118
+          ],
+          "src": "../faces/nabi-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 980300,
+          "sha256": "34bdb6dc29182be74a0f2615cea017d660fb698281db182b1154be1de1dfcd27",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 41.167,
+          "partialAlphaPercent": 58.626,
+          "visibleBoundsAlphaOver64": [
+            118,
+            80,
+            1019,
+            1117
+          ],
+          "src": "../faces/nabi-shy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "shadow": {
+      "key": "shadow",
+      "name": "검은 망토",
+      "batch": "C04",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 879736,
+        "sha256": "d6396ae2685c4b02a56ac090030b8d6c7e351d7315c99b91f0046cb76bd84705",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 58.536,
+        "partialAlphaPercent": 41.319,
+        "visibleBoundsAlphaOver64": [
+          77,
+          8,
+          1856,
+          730
+        ],
+        "src": "shadow.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            682,
+            763
+          ],
+          [
+            682,
+            0,
+            645,
+            763
+          ],
+          [
+            1327,
+            0,
+            735,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            77,
+            8,
+            539,
+            728
+          ],
+          [
+            748,
+            10,
+            510,
+            727
+          ],
+          [
+            1396,
+            54,
+            537,
+            684
+          ]
+        ],
+        "baselines": [
+          735,
+          736,
+          737
+        ],
+        "baselineOffsets": [
+          2,
+          1,
+          0
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.12362637362637363
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 880711,
+          "sha256": "ddff4551275277701f7812d4829ee8b9225c8f924cebf6aa5be61a00203da56d",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.365,
+          "partialAlphaPercent": 52.454,
+          "visibleBoundsAlphaOver64": [
+            97,
+            61,
+            1060,
+            1126
+          ],
+          "src": "../faces/shadow-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 932911,
+          "sha256": "bb23ac42f197cc6ea073c41c42fadfccced8ab7316685ad7c2955bc3b096ded8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.084,
+          "partialAlphaPercent": 52.739,
+          "visibleBoundsAlphaOver64": [
+            98,
+            59,
+            1059,
+            1128
+          ],
+          "src": "../faces/shadow-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "tense": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 918722,
+          "sha256": "0db5a1078640913941ae02c919ecff160f52e03e5e8d1d9fff836cb249be7bc5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.187,
+          "partialAlphaPercent": 52.69,
+          "visibleBoundsAlphaOver64": [
+            95,
+            59,
+            1064,
+            1130
+          ],
+          "src": "../faces/shadow-tense.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 932570,
+          "sha256": "5824afd2ffb6aeb2193fc31b25f78f31667861a1b7e9052e36c0dea34af8bbf5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.936,
+          "partialAlphaPercent": 52.915,
+          "visibleBoundsAlphaOver64": [
+            95,
+            59,
+            1064,
+            1130
+          ],
+          "src": "../faces/shadow-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true,
+      "note": "가려진 인물의 정체 보호: 정면 후드이지만 눈·코·입은 모든 표정에서 숨김. 얼굴 노출 규칙의 의도적 예외."
+    },
+    "bami": {
+      "key": "bami",
+      "name": "밤이",
+      "batch": "C05",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 896847,
+        "sha256": "b86aeaca859c21adacfdddac15b9450320e7005e43a01f891c02b57dd50a80c4",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 60.734,
+        "partialAlphaPercent": 39.145,
+        "visibleBoundsAlphaOver64": [
+          197,
+          19,
+          1728,
+          726
+        ],
+        "src": "bami.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            732,
+            763
+          ],
+          [
+            732,
+            0,
+            656,
+            763
+          ],
+          [
+            1388,
+            0,
+            673,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            197,
+            19,
+            437,
+            726
+          ],
+          [
+            830,
+            24,
+            417,
+            721
+          ],
+          [
+            1529,
+            28,
+            396,
+            715
+          ]
+        ],
+        "baselines": [
+          744,
+          744,
+          742
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          2
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.12396694214876033
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1072157,
+          "sha256": "fbd9320a823595f791841803f13e5b665268f5a8d30fd583d358ed93640ba336",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 37.482,
+          "partialAlphaPercent": 62.312,
+          "visibleBoundsAlphaOver64": [
+            94,
+            29,
+            1066,
+            1158
+          ],
+          "src": "../faces/bami-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1085435,
+          "sha256": "c756f6aaecdc2f8ed6fa79a48e1bf50918f932e042aff5abb8651f62bfe28851",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 37.325,
+          "partialAlphaPercent": 62.453,
+          "visibleBoundsAlphaOver64": [
+            93,
+            30,
+            1068,
+            1158
+          ],
+          "src": "../faces/bami-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1086880,
+          "sha256": "3882501d34dc84d84cca8a51a90ec05c1bd4e8920c316d42a7c2497920d410e9",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 36.926,
+          "partialAlphaPercent": 62.914,
+          "visibleBoundsAlphaOver64": [
+            93,
+            28,
+            1068,
+            1160
+          ],
+          "src": "../faces/bami-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1092320,
+          "sha256": "fa54964c1db050698ef0e99e6a3ff3627869b2e84d6590d100d8b0905ef38eaf",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 36.844,
+          "partialAlphaPercent": 63.002,
+          "visibleBoundsAlphaOver64": [
+            91,
+            28,
+            1072,
+            1160
+          ],
+          "src": "../faces/bami-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "ppul": {
+      "key": "ppul",
+      "name": "뿔이 촌장",
+      "batch": "C05",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 965936,
+        "sha256": "ec6525d95b3c1cc7aa4050bb50ad6215c1b98bef1a459f125677e0556d33f41e",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 59.709,
+        "partialAlphaPercent": 40.193,
+        "visibleBoundsAlphaOver64": [
+          160,
+          22,
+          1765,
+          712
+        ],
+        "src": "ppul.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            703,
+            763
+          ],
+          [
+            703,
+            0,
+            685,
+            763
+          ],
+          [
+            1388,
+            0,
+            673,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            160,
+            22,
+            435,
+            711
+          ],
+          [
+            812,
+            23,
+            450,
+            710
+          ],
+          [
+            1514,
+            28,
+            411,
+            706
+          ]
+        ],
+        "baselines": [
+          732,
+          732,
+          733
+        ],
+        "baselineOffsets": [
+          1,
+          1,
+          0
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.12658227848101267
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1046725,
+          "sha256": "8ede89b34f319609c39a48b499d3bfcfbe125c290420eb900284ed64ec9d18e3",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 43.06,
+          "partialAlphaPercent": 56.709,
+          "visibleBoundsAlphaOver64": [
+            87,
+            86,
+            1080,
+            1110
+          ],
+          "src": "../faces/ppul-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1054438,
+          "sha256": "55a152ed221ea1e3a432233ecc55a990f0f7dc590913ecc371e6b60389ca6bcd",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 43.151,
+          "partialAlphaPercent": 56.613,
+          "visibleBoundsAlphaOver64": [
+            88,
+            84,
+            1079,
+            1112
+          ],
+          "src": "../faces/ppul-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "embarrassed": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1057235,
+          "sha256": "95e33205a54b06935a50007ed14757f1044f6aa4f2227f75ccea4e8f306f9548",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 43.165,
+          "partialAlphaPercent": 56.603,
+          "visibleBoundsAlphaOver64": [
+            87,
+            84,
+            1080,
+            1112
+          ],
+          "src": "../faces/ppul-embarrassed.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1052930,
+          "sha256": "8cb7e7cbcd3d39a7157d54b73cc57e3901558d8d7132e10b4258de3176b8e3cd",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 43.121,
+          "partialAlphaPercent": 56.665,
+          "visibleBoundsAlphaOver64": [
+            87,
+            83,
+            1080,
+            1113
+          ],
+          "src": "../faces/ppul-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "seol": {
+      "key": "seol",
+      "name": "설이",
+      "batch": "C05",
+      "sheet": {
+        "size": [
+          2060,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 744610,
+        "sha256": "a5e26ad7e75d2f4e433884ea90da7b527c978a33876a9a813d14a9e1f74f4a66",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 68.717,
+        "partialAlphaPercent": 31.117,
+        "visibleBoundsAlphaOver64": [
+          187,
+          31,
+          1674,
+          704
+        ],
+        "src": "seol.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            707,
+            763
+          ],
+          [
+            707,
+            0,
+            626,
+            763
+          ],
+          [
+            1333,
+            0,
+            727,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            187,
+            31,
+            414,
+            704
+          ],
+          [
+            814,
+            31,
+            368,
+            704
+          ],
+          [
+            1484,
+            32,
+            377,
+            703
+          ]
+        ],
+        "baselines": [
+          734,
+          734,
+          734
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.1278409090909091
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 786709,
+          "sha256": "9261551d4966fa660ecc64919110181f7a800fb2d366a889f433f9460d601cbd",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.024,
+          "partialAlphaPercent": 42.784,
+          "visibleBoundsAlphaOver64": [
+            55,
+            59,
+            1144,
+            1179
+          ],
+          "src": "../faces/seol-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 822764,
+          "sha256": "236217f1bda998f07de5d0a4bd3f624fad057d6c2c44995d115ba31695118e13",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 55.402,
+          "partialAlphaPercent": 44.511,
+          "visibleBoundsAlphaOver64": [
+            55,
+            59,
+            1145,
+            1180
+          ],
+          "src": "../faces/seol-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "worried": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 788842,
+          "sha256": "c953aff4bc9511d8ec02644621158cdc76fc7ac5d788fc4e7607ff637e7eaa0b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.951,
+          "partialAlphaPercent": 42.908,
+          "visibleBoundsAlphaOver64": [
+            55,
+            59,
+            1145,
+            1180
+          ],
+          "src": "../faces/seol-worried.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 791531,
+          "sha256": "e906629f9f93ff09414d4532d4114479bbd64c048d164b20be17571b1c5837cb",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.852,
+          "partialAlphaPercent": 43.036,
+          "visibleBoundsAlphaOver64": [
+            55,
+            59,
+            1145,
+            1181
+          ],
+          "src": "../faces/seol-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "sling": {
+      "key": "sling",
+      "name": "슬링",
+      "batch": "C06",
+      "sheet": {
+        "size": [
+          2060,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 893617,
+        "sha256": "24a849a172f7514424aa23e75bcfa9ffc529c83b8996449d7b04f7e670ca7660",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 62.363,
+        "partialAlphaPercent": 37.544,
+        "visibleBoundsAlphaOver64": [
+          67,
+          19,
+          1841,
+          707
+        ],
+        "src": "sling.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            686,
+            763
+          ],
+          [
+            686,
+            0,
+            605,
+            763
+          ],
+          [
+            1291,
+            0,
+            769,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            67,
+            19,
+            589,
+            707
+          ],
+          [
+            716,
+            19,
+            526,
+            707
+          ],
+          [
+            1341,
+            19,
+            567,
+            707
+          ]
+        ],
+        "baselines": [
+          725,
+          725,
+          725
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.1272984441301273
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 934819,
+          "sha256": "b0b62298952638d155477e4fc18da9a940b7fe25905ef087f38f508ce109f198",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.533,
+          "partialAlphaPercent": 54.288,
+          "visibleBoundsAlphaOver64": [
+            124,
+            73,
+            1006,
+            1124
+          ],
+          "src": "../faces/sling-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 940055,
+          "sha256": "75d58365550039bd71cea5d437161f572584174927d2eff50e4cf971dff9b00c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.495,
+          "partialAlphaPercent": 54.367,
+          "visibleBoundsAlphaOver64": [
+            123,
+            71,
+            1008,
+            1125
+          ],
+          "src": "../faces/sling-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 936909,
+          "sha256": "eff6037f37435f3155405b4f811fa1c830aff458f775d503c8c3d9d201c0922a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.446,
+          "partialAlphaPercent": 54.349,
+          "visibleBoundsAlphaOver64": [
+            123,
+            72,
+            1008,
+            1125
+          ],
+          "src": "../faces/sling-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 944249,
+          "sha256": "64563c0a92200f94535224b2c8cd21be7cdaf33dc677dec443738bb214c0fa19",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.52,
+          "partialAlphaPercent": 54.318,
+          "visibleBoundsAlphaOver64": [
+            123,
+            72,
+            1008,
+            1125
+          ],
+          "src": "../faces/sling-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "tok": {
+      "key": "tok",
+      "name": "톡",
+      "batch": "C06",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1021950,
+        "sha256": "5a2b3bc478da6cfa9a6f096939166c9f0b5ed7aba0016be35b2ac66b863fd50e",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 54.805,
+        "partialAlphaPercent": 45.077,
+        "visibleBoundsAlphaOver64": [
+          185,
+          24,
+          1753,
+          719
+        ],
+        "src": "tok.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            706,
+            763
+          ],
+          [
+            706,
+            0,
+            642,
+            763
+          ],
+          [
+            1348,
+            0,
+            713,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            185,
+            27,
+            427,
+            715
+          ],
+          [
+            800,
+            24,
+            438,
+            716
+          ],
+          [
+            1459,
+            31,
+            479,
+            712
+          ]
+        ],
+        "baselines": [
+          741,
+          739,
+          742
+        ],
+        "baselineOffsets": [
+          1,
+          3,
+          0
+        ],
+        "baselineSpreadSourcePixels": 3,
+        "fullBodyScale": 0.12569832402234637
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 996354,
+          "sha256": "cb0ce87106d02dd9655cf3c1715a57d510c2ba29c587691326950b5ac8a9c198",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.417,
+          "partialAlphaPercent": 57.39,
+          "visibleBoundsAlphaOver64": [
+            69,
+            43,
+            1116,
+            1161
+          ],
+          "src": "../faces/tok-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1004475,
+          "sha256": "e54b28ba5e60435a7db5c447df35ce15f6da245383e5a6e8571ad0fcc0d843b8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.297,
+          "partialAlphaPercent": 57.499,
+          "visibleBoundsAlphaOver64": [
+            69,
+            44,
+            1116,
+            1163
+          ],
+          "src": "../faces/tok-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "worried": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1000455,
+          "sha256": "3db98104b5b2926ae290035b2932234c26e02c1754f895d451cc3cd850448f78",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.388,
+          "partialAlphaPercent": 57.428,
+          "visibleBoundsAlphaOver64": [
+            69,
+            44,
+            1116,
+            1161
+          ],
+          "src": "../faces/tok-worried.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1006893,
+          "sha256": "e79aca6510bc2cc8a609057be499b904f33952f839bc89555d641f5af270ece6",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.461,
+          "partialAlphaPercent": 57.366,
+          "visibleBoundsAlphaOver64": [
+            69,
+            45,
+            1116,
+            1160
+          ],
+          "src": "../faces/tok-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "nero": {
+      "key": "nero",
+      "name": "네로",
+      "batch": "C07",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 872090,
+        "sha256": "88cdfeb181d5615e2f13936aa4720bce10e3790ffdc0f057ebe6430d5329151b",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.802,
+        "partialAlphaPercent": 38.067,
+        "visibleBoundsAlphaOver64": [
+          246,
+          20,
+          1679,
+          717
+        ],
+        "src": "nero.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            759,
+            763
+          ],
+          [
+            759,
+            0,
+            615,
+            763
+          ],
+          [
+            1374,
+            0,
+            687,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            246,
+            20,
+            432,
+            717
+          ],
+          [
+            840,
+            20,
+            428,
+            717
+          ],
+          [
+            1480,
+            26,
+            445,
+            711
+          ]
+        ],
+        "baselines": [
+          736,
+          736,
+          736
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12552301255230125
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 942862,
+          "sha256": "733cc3065ca8c6b3c636abd52ea42a0994a71dd6bbef34d784b1af1de22c4f42",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.253,
+          "partialAlphaPercent": 54.589,
+          "visibleBoundsAlphaOver64": [
+            135,
+            39,
+            985,
+            1159
+          ],
+          "src": "../faces/nero-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 951203,
+          "sha256": "42b92addc26c0ca150f4703ad3a737429de00ac4fbc1c04f82e78b7c2ade67c1",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.284,
+          "partialAlphaPercent": 54.545,
+          "visibleBoundsAlphaOver64": [
+            135,
+            40,
+            985,
+            1156
+          ],
+          "src": "../faces/nero-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 942308,
+          "sha256": "2d258ae8d409be9cee642d84d8bbd28876ac6746ec2f5deb1983ff0dd95a1aee",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.068,
+          "partialAlphaPercent": 54.77,
+          "visibleBoundsAlphaOver64": [
+            134,
+            38,
+            987,
+            1159
+          ],
+          "src": "../faces/nero-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 944956,
+          "sha256": "2a83bc4a73fa1499e831f0f59108c2fa9a0541f172be3d7d68d301af374a0cc8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.457,
+          "partialAlphaPercent": 54.447,
+          "visibleBoundsAlphaOver64": [
+            135,
+            41,
+            985,
+            1156
+          ],
+          "src": "../faces/nero-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "momo": {
+      "key": "momo",
+      "name": "모모 관장",
+      "batch": "C07",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 990175,
+        "sha256": "59d6b3345b73fe4f0bec39c129473100f464c66969ba9d1c1f2bf3fa533bbdeb",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.346,
+        "partialAlphaPercent": 38.551,
+        "visibleBoundsAlphaOver64": [
+          219,
+          18,
+          1673,
+          727
+        ],
+        "src": "momo.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            787,
+            763
+          ],
+          [
+            787,
+            0,
+            604,
+            763
+          ],
+          [
+            1391,
+            0,
+            670,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            219,
+            18,
+            491,
+            727
+          ],
+          [
+            865,
+            18,
+            380,
+            727
+          ],
+          [
+            1537,
+            27,
+            355,
+            718
+          ]
+        ],
+        "baselines": [
+          744,
+          744,
+          744
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12379642365887207
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1065914,
+          "sha256": "2ef5a23c58efcac422bd333a06137f17736bf1fcf4028197f8416b34a4de312a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.139,
+          "partialAlphaPercent": 59.657,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1154
+          ],
+          "src": "../faces/momo-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1087293,
+          "sha256": "628c4cba63e453df4a6d10f01b4c97bdb4b5e658489bd32a0d00df4edaa1c842",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.002,
+          "partialAlphaPercent": 59.803,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1155
+          ],
+          "src": "../faces/momo-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1070486,
+          "sha256": "f55f2a4f37f185f0d45fec5cdd8f67c89fba7017c339dd28aee7ed443f0cbf1c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 39.977,
+          "partialAlphaPercent": 59.797,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1155
+          ],
+          "src": "../faces/momo-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1074875,
+          "sha256": "c830704fa96209dc4e92f3606f3c5bf8dd8846ec2fa805fb98d5ef0109d3fc80",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 39.826,
+          "partialAlphaPercent": 59.957,
+          "visibleBoundsAlphaOver64": [
+            38,
+            58,
+            1178,
+            1156
+          ],
+          "src": "../faces/momo-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "yeoni": {
+      "key": "yeoni",
+      "name": "여니",
+      "batch": "C07",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1040251,
+        "sha256": "0685083562e4a4747d5edda83393a0214a05eecd4aee55fe6f47525a4228ac41",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 52.984,
+        "partialAlphaPercent": 46.882,
+        "visibleBoundsAlphaOver64": [
+          78,
+          16,
+          1890,
+          728
+        ],
+        "src": "yeoni.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            662,
+            763
+          ],
+          [
+            662,
+            0,
+            654,
+            763
+          ],
+          [
+            1316,
+            0,
+            745,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            78,
+            16,
+            544,
+            727
+          ],
+          [
+            703,
+            17,
+            553,
+            726
+          ],
+          [
+            1377,
+            45,
+            591,
+            699
+          ]
+        ],
+        "baselines": [
+          742,
+          742,
+          743
+        ],
+        "baselineOffsets": [
+          1,
+          1,
+          0
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.12379642365887207
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 949751,
+          "sha256": "e354d61fa4f8403e630ec3d504917af483c8e121d2c725a3b968f3732cae2512",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.649,
+          "partialAlphaPercent": 53.206,
+          "visibleBoundsAlphaOver64": [
+            161,
+            44,
+            907,
+            1172
+          ],
+          "src": "../faces/yeoni-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 948018,
+          "sha256": "7019048263014a66f1d922a89e98c84b95dfcf2ddda2542c8977e65d06bd45ec",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.765,
+          "partialAlphaPercent": 53.058,
+          "visibleBoundsAlphaOver64": [
+            160,
+            44,
+            909,
+            1172
+          ],
+          "src": "../faces/yeoni-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 956121,
+          "sha256": "837a5f3da1ad23823121c3d11d57c7e6d43b29b17e27f7b22665c141d3334762",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.393,
+          "partialAlphaPercent": 53.449,
+          "visibleBoundsAlphaOver64": [
+            161,
+            43,
+            908,
+            1174
+          ],
+          "src": "../faces/yeoni-shy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 943121,
+          "sha256": "df6daa92a99ee4f07da0556a3d32afbcbcd9b24f287f519340fe959885b70871",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.028,
+          "partialAlphaPercent": 52.818,
+          "visibleBoundsAlphaOver64": [
+            162,
+            45,
+            906,
+            1171
+          ],
+          "src": "../faces/yeoni-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "piko": {
+      "key": "piko",
+      "name": "피코",
+      "batch": "C08",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 934844,
+        "sha256": "2a05ede6198844054541e26298f55bfc99edddd999c7c2bafde134bf0159dcf1",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 58.917,
+        "partialAlphaPercent": 40.996,
+        "visibleBoundsAlphaOver64": [
+          69,
+          13,
+          1904,
+          728
+        ],
+        "src": "piko.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            736,
+            763
+          ],
+          [
+            736,
+            0,
+            631,
+            763
+          ],
+          [
+            1367,
+            0,
+            694,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            69,
+            13,
+            646,
+            728
+          ],
+          [
+            758,
+            14,
+            570,
+            723
+          ],
+          [
+            1407,
+            47,
+            566,
+            694
+          ]
+        ],
+        "baselines": [
+          740,
+          736,
+          740
+        ],
+        "baselineOffsets": [
+          0,
+          4,
+          0
+        ],
+        "baselineSpreadSourcePixels": 4,
+        "fullBodyScale": 0.12362637362637363
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 791136,
+          "sha256": "49a6f81e589ec5fa96044989f678a66c1d341690f97894b4956107d851fd1ab5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.195,
+          "partialAlphaPercent": 43.582,
+          "visibleBoundsAlphaOver64": [
+            185,
+            26,
+            881,
+            1211
+          ],
+          "src": "../faces/piko-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 808372,
+          "sha256": "271f04ae623fa67c000286da20b5da328f94bfee6e3d4aacbaac70777a5807da",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 55.923,
+          "partialAlphaPercent": 43.86,
+          "visibleBoundsAlphaOver64": [
+            185,
+            25,
+            883,
+            1214
+          ],
+          "src": "../faces/piko-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "embarrassed": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 797949,
+          "sha256": "589f54c45a97beed74662e9bc551d4dfdfc672cb83de3bb184b31a43c8c0142e",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 55.956,
+          "partialAlphaPercent": 43.861,
+          "visibleBoundsAlphaOver64": [
+            184,
+            25,
+            884,
+            1213
+          ],
+          "src": "../faces/piko-embarrassed.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 801773,
+          "sha256": "3976eaa76e711885e7d81127c503bea1694bca8f28be62633587d125d309aaf8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.013,
+          "partialAlphaPercent": 43.779,
+          "visibleBoundsAlphaOver64": [
+            184,
+            26,
+            883,
+            1211
+          ],
+          "src": "../faces/piko-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "ttadak": {
+      "key": "ttadak",
+      "name": "따닥",
+      "batch": "C08",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 753485,
+        "sha256": "f07f1812ff760de469c9f2fdb1cbf04fa618b906244caaa4b103a19a359bf791",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 68.999,
+        "partialAlphaPercent": 30.899,
+        "visibleBoundsAlphaOver64": [
+          225,
+          37,
+          1650,
+          691
+        ],
+        "src": "ttadak.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            721,
+            763
+          ],
+          [
+            721,
+            0,
+            666,
+            763
+          ],
+          [
+            1387,
+            0,
+            674,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            225,
+            37,
+            374,
+            691
+          ],
+          [
+            844,
+            45,
+            387,
+            683
+          ],
+          [
+            1543,
+            43,
+            332,
+            685
+          ]
+        ],
+        "baselines": [
+          727,
+          727,
+          727
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.13024602026049203
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 828987,
+          "sha256": "4a58c291d4d3265ae7bc157b6728990b7bdb3a3d5f80b4ea09ad524c5e3727f2",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 53.106,
+          "partialAlphaPercent": 46.696,
+          "visibleBoundsAlphaOver64": [
+            121,
+            34,
+            1012,
+            1187
+          ],
+          "src": "../faces/ttadak-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 845948,
+          "sha256": "f216f003a5fafe82fac6d2b63ff3cf816e668eff3107e19c7d54285c3b50e4e1",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 52.708,
+          "partialAlphaPercent": 47.084,
+          "visibleBoundsAlphaOver64": [
+            120,
+            33,
+            1014,
+            1189
+          ],
+          "src": "../faces/ttadak-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 832712,
+          "sha256": "b9c0cf87630424c9bc8b8df5eb5bcc7c023c6ff01504f13cf7b0f47f92264240",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 53.132,
+          "partialAlphaPercent": 46.736,
+          "visibleBoundsAlphaOver64": [
+            122,
+            34,
+            1011,
+            1187
+          ],
+          "src": "../faces/ttadak-shy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 840918,
+          "sha256": "d870507e137ab35f4985f05f3fe7200d7cf33a0f1053cb964610b2ac4e0f0dc4",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 52.885,
+          "partialAlphaPercent": 46.919,
+          "visibleBoundsAlphaOver64": [
+            121,
+            33,
+            1013,
+            1188
+          ],
+          "src": "../faces/ttadak-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "mungchi": {
+      "key": "mungchi",
+      "name": "뭉치",
+      "batch": "C08",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 743835,
+        "sha256": "043dbe053a84798f9367f906ee1e3198526ba3ff5089818b5380cf5d8002b3b0",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 66.279,
+        "partialAlphaPercent": 33.58,
+        "visibleBoundsAlphaOver64": [
+          294,
+          19,
+          1557,
+          718
+        ],
+        "src": "mungchi.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            750,
+            763
+          ],
+          [
+            750,
+            0,
+            621,
+            763
+          ],
+          [
+            1371,
+            0,
+            690,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            294,
+            23,
+            336,
+            714
+          ],
+          [
+            870,
+            19,
+            348,
+            718
+          ],
+          [
+            1525,
+            23,
+            326,
+            714
+          ]
+        ],
+        "baselines": [
+          736,
+          736,
+          736
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12534818941504178
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 927875,
+          "sha256": "aa9d5cdc913bbee56ae14f34d096a57955dbac87b2579357483a562886bce6b3",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.629,
+          "partialAlphaPercent": 54.228,
+          "visibleBoundsAlphaOver64": [
+            121,
+            73,
+            1012,
+            1123
+          ],
+          "src": "../faces/mungchi-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 941464,
+          "sha256": "bc80e00027f8c6045aa22137753f989946e16526aa923726558ab5fe9ca16944",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.064,
+          "partialAlphaPercent": 54.807,
+          "visibleBoundsAlphaOver64": [
+            119,
+            71,
+            1016,
+            1124
+          ],
+          "src": "../faces/mungchi-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 937394,
+          "sha256": "5bad3ae7baf05c52ca239a173ec756daf0b2f02a6f8a1c45a9309b96ef799ed8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.294,
+          "partialAlphaPercent": 54.585,
+          "visibleBoundsAlphaOver64": [
+            119,
+            71,
+            1016,
+            1125
+          ],
+          "src": "../faces/mungchi-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 930000,
+          "sha256": "8eeca99062191ba39b020b38ef2add4f0e5a9bccf5adf020ff9504dcd75b8f56",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.688,
+          "partialAlphaPercent": 54.142,
+          "visibleBoundsAlphaOver64": [
+            120,
+            72,
+            1014,
+            1124
+          ],
+          "src": "../faces/mungchi-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "bori": {
+      "key": "bori",
+      "name": "보리",
+      "batch": "C09",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 869712,
+        "sha256": "5119966c56521b35f9b5a6c217ae17d2d09f2909fcb37f0a6dd9dbf1ad559e30",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.022,
+        "partialAlphaPercent": 38.884,
+        "visibleBoundsAlphaOver64": [
+          263,
+          27,
+          1613,
+          710
+        ],
+        "src": "bori.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            765,
+            763
+          ],
+          [
+            765,
+            0,
+            634,
+            763
+          ],
+          [
+            1399,
+            0,
+            662,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            263,
+            27,
+            396,
+            710
+          ],
+          [
+            871,
+            27,
+            404,
+            710
+          ],
+          [
+            1523,
+            56,
+            353,
+            681
+          ]
+        ],
+        "baselines": [
+          736,
+          736,
+          736
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.1267605633802817
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1086506,
+          "sha256": "d5f401b651404c141469dad9329a76c040783384c524ffcb7b39eb01a41b6c6c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 35.692,
+          "partialAlphaPercent": 64.134,
+          "visibleBoundsAlphaOver64": [
+            59,
+            40,
+            1137,
+            1175
+          ],
+          "src": "../faces/bori-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1109436,
+          "sha256": "9c51580f8daa9269cc54ae600fd3a9ebe504f72643544ae3fbb8597715e54560",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 35.26,
+          "partialAlphaPercent": 64.496,
+          "visibleBoundsAlphaOver64": [
+            58,
+            39,
+            1139,
+            1178
+          ],
+          "src": "../faces/bori-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shy": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1107782,
+          "sha256": "97a2f19dca34446354bc1e14baf3e60f3192fe3122ce34257cf0414c8acefae1",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 35.466,
+          "partialAlphaPercent": 64.329,
+          "visibleBoundsAlphaOver64": [
+            58,
+            40,
+            1140,
+            1177
+          ],
+          "src": "../faces/bori-shy.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1100462,
+          "sha256": "630092812153a0b74d185f2f29253395ac89b95b4d735d2fd50caa14e05647a5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 35.516,
+          "partialAlphaPercent": 64.306,
+          "visibleBoundsAlphaOver64": [
+            58,
+            40,
+            1139,
+            1176
+          ],
+          "src": "../faces/bori-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "madam": {
+      "key": "madam",
+      "name": "백 부인",
+      "batch": "C09",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 694883,
+        "sha256": "7ea0e1bd04aa0d074cb127b47b334c8ea8d4d4e4ea5fa4b67463f7ce3036934f",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 67.492,
+        "partialAlphaPercent": 32.385,
+        "visibleBoundsAlphaOver64": [
+          297,
+          31,
+          1565,
+          709
+        ],
+        "src": "madam.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            762,
+            763
+          ],
+          [
+            762,
+            0,
+            611,
+            763
+          ],
+          [
+            1373,
+            0,
+            689,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            297,
+            31,
+            343,
+            709
+          ],
+          [
+            884,
+            31,
+            347,
+            709
+          ],
+          [
+            1515,
+            43,
+            347,
+            697
+          ]
+        ],
+        "baselines": [
+          739,
+          739,
+          739
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12693935119887165
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 924607,
+          "sha256": "1794925b264d59b361f155f62eab3f59a86bd4be60bcefa6cc20956ec715a242",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.966,
+          "partialAlphaPercent": 56.858,
+          "visibleBoundsAlphaOver64": [
+            110,
+            89,
+            1034,
+            1103
+          ],
+          "src": "../faces/madam-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 924142,
+          "sha256": "dc109ac8ee0f6750dfab8144a20af6fb22ab741850145a62e79b244d2cf6ac34",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.54,
+          "partialAlphaPercent": 57.34,
+          "visibleBoundsAlphaOver64": [
+            108,
+            87,
+            1038,
+            1106
+          ],
+          "src": "../faces/madam-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "angry": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 927465,
+          "sha256": "df5f413e429f8a5e6145a27b78aa5a161e98a3ffe15c0e23c7958e7e24e3a3f6",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.537,
+          "partialAlphaPercent": 57.304,
+          "visibleBoundsAlphaOver64": [
+            109,
+            88,
+            1037,
+            1106
+          ],
+          "src": "../faces/madam-angry.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 949347,
+          "sha256": "076349f52d1489ff2da416dd2930ac68f6a5a981aaca0c0a9c79c5f1681344bf",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.633,
+          "partialAlphaPercent": 57.194,
+          "visibleBoundsAlphaOver64": [
+            109,
+            87,
+            1037,
+            1106
+          ],
+          "src": "../faces/madam-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "siluk": {
+      "key": "siluk",
+      "name": "실룩",
+      "batch": "C09",
+      "sheet": {
+        "size": [
+          2060,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 813587,
+        "sha256": "9eda0c5d11ca8a42924b36f8def94ea3fd34f0753aee23df49a5d24f82cf967c",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 63.559,
+        "partialAlphaPercent": 36.238,
+        "visibleBoundsAlphaOver64": [
+          67,
+          12,
+          1866,
+          719
+        ],
+        "src": "siluk.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            664,
+            763
+          ],
+          [
+            664,
+            0,
+            609,
+            763
+          ],
+          [
+            1273,
+            0,
+            787,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            67,
+            12,
+            559,
+            719
+          ],
+          [
+            703,
+            12,
+            525,
+            719
+          ],
+          [
+            1319,
+            43,
+            614,
+            688
+          ]
+        ],
+        "baselines": [
+          730,
+          730,
+          730
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12517385257301808
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 993219,
+          "sha256": "85187647885de9b93b6369f48c616b05ba4fc73143bb6f86da4debbb5cc1c1d0",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.951,
+          "partialAlphaPercent": 58.876,
+          "visibleBoundsAlphaOver64": [
+            100,
+            47,
+            1055,
+            1163
+          ],
+          "src": "../faces/siluk-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1005615,
+          "sha256": "2ccf95c6eaad30a8b1788b40876a541472d81a78bfd4ee14e1567f01877f8579",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.664,
+          "partialAlphaPercent": 59.176,
+          "visibleBoundsAlphaOver64": [
+            99,
+            44,
+            1057,
+            1168
+          ],
+          "src": "../faces/siluk-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 998265,
+          "sha256": "991055ed3ca9641a29738522ab113572b5d558d53959861837bdc4fc586d51c8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.988,
+          "partialAlphaPercent": 58.859,
+          "visibleBoundsAlphaOver64": [
+            99,
+            47,
+            1057,
+            1164
+          ],
+          "src": "../faces/siluk-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 1006351,
+          "sha256": "9f2984c53adcc29817e5dd37bc5ff1173e6b174fcdf4d2b5334d676d9a8a22f4",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 40.645,
+          "partialAlphaPercent": 59.195,
+          "visibleBoundsAlphaOver64": [
+            98,
+            45,
+            1059,
+            1164
+          ],
+          "src": "../faces/siluk-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "nubi": {
+      "key": "nubi",
+      "name": "누비 아주머니",
+      "batch": "C10",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1058456,
+        "sha256": "df3c48ca06e20f241650667ef072ea369ce4642e90b45e6bce9cb36d6f300f64",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 53.257,
+        "partialAlphaPercent": 46.61,
+        "visibleBoundsAlphaOver64": [
+          87,
+          30,
+          1922,
+          711
+        ],
+        "src": "nubi.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            671,
+            763
+          ],
+          [
+            671,
+            0,
+            658,
+            763
+          ],
+          [
+            1329,
+            0,
+            732,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            87,
+            43,
+            512,
+            696
+          ],
+          [
+            744,
+            30,
+            489,
+            709
+          ],
+          [
+            1425,
+            40,
+            584,
+            701
+          ]
+        ],
+        "baselines": [
+          738,
+          738,
+          740
+        ],
+        "baselineOffsets": [
+          2,
+          2,
+          0
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.12693935119887165
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 791352,
+          "sha256": "762a819bd05fa55a3a661b6cba9a908b0c72aac533baa89926bb28be455802b8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.857,
+          "partialAlphaPercent": 42.967,
+          "visibleBoundsAlphaOver64": [
+            146,
+            154,
+            920,
+            1014
+          ],
+          "src": "../faces/nubi-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 798142,
+          "sha256": "bbc6dfe838fba10e6e62501719451dad51c470fefa60a5394b05cab2eacd98e4",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.655,
+          "partialAlphaPercent": 43.19,
+          "visibleBoundsAlphaOver64": [
+            146,
+            156,
+            921,
+            1013
+          ],
+          "src": "../faces/nubi-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "worried": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 796067,
+          "sha256": "6c48df755aa5f58387aeb694f1cbbcf1c82d51c59bbc4841cb1afbbb9c290c30",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.733,
+          "partialAlphaPercent": 43.088,
+          "visibleBoundsAlphaOver64": [
+            146,
+            154,
+            921,
+            1014
+          ],
+          "src": "../faces/nubi-worried.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 796772,
+          "sha256": "85f7c5a67602c07d3c566bfdd17051917473c0785241acf0aa888e1d8b03cc74",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 56.669,
+          "partialAlphaPercent": 43.169,
+          "visibleBoundsAlphaOver64": [
+            145,
+            154,
+            922,
+            1015
+          ],
+          "src": "../faces/nubi-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "musoe": {
+      "key": "musoe",
+      "name": "무쇠 할아버지",
+      "batch": "C10",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 936718,
+        "sha256": "faec89afd193802e7be1b63dc3f1a4c1ed92f6d37d180fd00cc484fce135efef",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 55.261,
+        "partialAlphaPercent": 44.639,
+        "visibleBoundsAlphaOver64": [
+          137,
+          36,
+          1809,
+          703
+        ],
+        "src": "musoe.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            727,
+            763
+          ],
+          [
+            727,
+            0,
+            603,
+            763
+          ],
+          [
+            1330,
+            0,
+            731,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            137,
+            36,
+            483,
+            703
+          ],
+          [
+            834,
+            36,
+            409,
+            703
+          ],
+          [
+            1418,
+            147,
+            528,
+            592
+          ]
+        ],
+        "baselines": [
+          738,
+          738,
+          738
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12802275960170698
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 904302,
+          "sha256": "79ae6ac040e7359662b623a0d82c6cb68f12745ef3a97d62fea22983ee7e107a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.583,
+          "partialAlphaPercent": 51.306,
+          "visibleBoundsAlphaOver64": [
+            81,
+            168,
+            1092,
+            985
+          ],
+          "src": "../faces/musoe-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 909472,
+          "sha256": "af903d31011c350efee06fe0214d3e38e777f1f5596453145c04f8fc504f8398",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.87,
+          "partialAlphaPercent": 50.97,
+          "visibleBoundsAlphaOver64": [
+            80,
+            169,
+            1094,
+            985
+          ],
+          "src": "../faces/musoe-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "sad": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 910936,
+          "sha256": "4b90894c167c60b028d8fdb2b8fbdfefb04aa9bcfb0f734cdd9ffe95603221e5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.575,
+          "partialAlphaPercent": 51.253,
+          "visibleBoundsAlphaOver64": [
+            80,
+            168,
+            1094,
+            987
+          ],
+          "src": "../faces/musoe-sad.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 914371,
+          "sha256": "4b3f61ccc01d8bd987cc652449d56534b54c312887e46682089515bbe4c80f6a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.715,
+          "partialAlphaPercent": 51.109,
+          "visibleBoundsAlphaOver64": [
+            81,
+            169,
+            1093,
+            986
+          ],
+          "src": "../faces/musoe-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "seori": {
+      "key": "seori",
+      "name": "서리 검사원",
+      "batch": "C10",
+      "sheet": {
+        "size": [
+          2062,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 825070,
+        "sha256": "19c33787836d65c607b61a943ffde946adcf9b970f5e34be5cd4f153ddcafcd3",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 63.824,
+        "partialAlphaPercent": 36.062,
+        "visibleBoundsAlphaOver64": [
+          244,
+          34,
+          1674,
+          699
+        ],
+        "src": "seori.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            724,
+            763
+          ],
+          [
+            724,
+            0,
+            626,
+            763
+          ],
+          [
+            1350,
+            0,
+            712,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            244,
+            34,
+            354,
+            699
+          ],
+          [
+            851,
+            34,
+            362,
+            699
+          ],
+          [
+            1487,
+            34,
+            431,
+            699
+          ]
+        ],
+        "baselines": [
+          732,
+          732,
+          732
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12875536480686695
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 939988,
+          "sha256": "370ab80f1280ed6a9bd4f257fb351ebe244942707160a6c9c7534d9b53f96c15",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 45.095,
+          "partialAlphaPercent": 54.706,
+          "visibleBoundsAlphaOver64": [
+            42,
+            88,
+            1171,
+            1095
+          ],
+          "src": "../faces/seori-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 960737,
+          "sha256": "1682faa667892bc520eb9b80b835da3336799c808ba3f6f343b0e9610dbb70c4",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 44.587,
+          "partialAlphaPercent": 55.192,
+          "visibleBoundsAlphaOver64": [
+            42,
+            88,
+            1171,
+            1098
+          ],
+          "src": "../faces/seori-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 954150,
+          "sha256": "5f5820171deb63181a3debe7fe7ad7f0f59aa362049817f16290d7f5a9735eba",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 44.589,
+          "partialAlphaPercent": 55.227,
+          "visibleBoundsAlphaOver64": [
+            41,
+            87,
+            1173,
+            1098
+          ],
+          "src": "../faces/seori-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 950321,
+          "sha256": "c5dc75e4590dd3169c13130fdcf6ca6029305fa56708084d02659dac7b82fbe8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 44.892,
+          "partialAlphaPercent": 54.871,
+          "visibleBoundsAlphaOver64": [
+            41,
+            87,
+            1173,
+            1097
+          ],
+          "src": "../faces/seori-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "somi": {
+      "key": "somi",
+      "name": "솜이",
+      "batch": "C11",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1052878,
+        "sha256": "63e142480418b92ba199add7d9ab4c1a471fe7381140f205c785d1433c325577",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 53.177,
+        "partialAlphaPercent": 46.717,
+        "visibleBoundsAlphaOver64": [
+          49,
+          46,
+          1941,
+          669
+        ],
+        "src": "somi.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            659,
+            763
+          ],
+          [
+            659,
+            0,
+            620,
+            763
+          ],
+          [
+            1279,
+            0,
+            782,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            49,
+            47,
+            593,
+            667
+          ],
+          [
+            677,
+            46,
+            560,
+            669
+          ],
+          [
+            1322,
+            84,
+            668,
+            631
+          ]
+        ],
+        "baselines": [
+          713,
+          714,
+          714
+        ],
+        "baselineOffsets": [
+          1,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.13452914798206278
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 940793,
+          "sha256": "d53d05be2b0effe07bc06049be73c6f1c303de0c2586d05ee1983b880198c491",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.202,
+          "partialAlphaPercent": 53.623,
+          "visibleBoundsAlphaOver64": [
+            120,
+            70,
+            1014,
+            1133
+          ],
+          "src": "../faces/somi-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 945573,
+          "sha256": "8953131eeb12a5e6c7f41b975034a2fae07a00911bacc9e6bee85745b943fbe0",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.205,
+          "partialAlphaPercent": 53.612,
+          "visibleBoundsAlphaOver64": [
+            120,
+            69,
+            1015,
+            1136
+          ],
+          "src": "../faces/somi-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 936639,
+          "sha256": "356087e87cdde6bb8e2f557bd0f6ccb91ca373826f1614f12ea6cbd284d006c8",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.457,
+          "partialAlphaPercent": 53.417,
+          "visibleBoundsAlphaOver64": [
+            122,
+            70,
+            1010,
+            1135
+          ],
+          "src": "../faces/somi-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 944827,
+          "sha256": "8bfd70d8175654ba8551dda114b75ef3d15779de4d935449d3c398976537b8c5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.32,
+          "partialAlphaPercent": 53.52,
+          "visibleBoundsAlphaOver64": [
+            120,
+            70,
+            1014,
+            1135
+          ],
+          "src": "../faces/somi-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "ubak": {
+      "key": "ubak",
+      "name": "우박",
+      "batch": "C11",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 775810,
+        "sha256": "f0f2f7267944eeb3ebfcf6119345cdd3cd42a49666c735cf0e6a0258a74b08ac",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 65.5,
+        "partialAlphaPercent": 34.414,
+        "visibleBoundsAlphaOver64": [
+          275,
+          44,
+          1574,
+          686
+        ],
+        "src": "ubak.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            766,
+            763
+          ],
+          [
+            766,
+            0,
+            620,
+            763
+          ],
+          [
+            1386,
+            0,
+            675,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            275,
+            44,
+            357,
+            686
+          ],
+          [
+            901,
+            44,
+            349,
+            686
+          ],
+          [
+            1522,
+            68,
+            327,
+            662
+          ]
+        ],
+        "baselines": [
+          729,
+          729,
+          729
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.13119533527696792
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 912604,
+          "sha256": "7b0a9586d1c5a9e8b583775ba20412621d55c45280bb438f41944c00c4165807",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.603,
+          "partialAlphaPercent": 52.301,
+          "visibleBoundsAlphaOver64": [
+            127,
+            117,
+            1001,
+            1107
+          ],
+          "src": "../faces/ubak-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 885508,
+          "sha256": "e32ea3af713c5d94c982c29d1ac5505abbe3903c8271aa34cc9da8ac63e36f68",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.751,
+          "partialAlphaPercent": 51.141,
+          "visibleBoundsAlphaOver64": [
+            159,
+            115,
+            965,
+            1111
+          ],
+          "src": "../faces/ubak-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 910938,
+          "sha256": "379ca10f002acfeced977884e5310034fbf84bd7546da0d5725b22a264c815ae",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.553,
+          "partialAlphaPercent": 52.338,
+          "visibleBoundsAlphaOver64": [
+            125,
+            117,
+            1004,
+            1106
+          ],
+          "src": "../faces/ubak-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 911087,
+          "sha256": "56f99a1a760725b75122b3f78aa756a6868bf05190df5fc8b16a4b1386d54dd6",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.542,
+          "partialAlphaPercent": 52.303,
+          "visibleBoundsAlphaOver64": [
+            125,
+            117,
+            1004,
+            1107
+          ],
+          "src": "../faces/ubak-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "guseul": {
+      "key": "guseul",
+      "name": "구슬",
+      "batch": "C11",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 849803,
+        "sha256": "f87bf49bf803112cd6762930a9a962ab00c1603c61b14606116a46d0bb00236f",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 63.086,
+        "partialAlphaPercent": 36.761,
+        "visibleBoundsAlphaOver64": [
+          112,
+          49,
+          1861,
+          679
+        ],
+        "src": "guseul.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            660,
+            763
+          ],
+          [
+            660,
+            0,
+            648,
+            763
+          ],
+          [
+            1308,
+            0,
+            753,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            112,
+            64,
+            500,
+            662
+          ],
+          [
+            709,
+            49,
+            509,
+            679
+          ],
+          [
+            1398,
+            87,
+            575,
+            641
+          ]
+        ],
+        "baselines": [
+          725,
+          727,
+          727
+        ],
+        "baselineOffsets": [
+          2,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.1325478645066274
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 891936,
+          "sha256": "67d61ad8c0f439f394bfb1b6c968cd189c714358406c119b65e55bb2c4016bc2",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.115,
+          "partialAlphaPercent": 51.712,
+          "visibleBoundsAlphaOver64": [
+            113,
+            194,
+            1026,
+            995
+          ],
+          "src": "../faces/guseul-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 892750,
+          "sha256": "7600be602ca09237a9a0deec9814040590a588cb93fcfde99896f8c413fec471",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.102,
+          "partialAlphaPercent": 51.703,
+          "visibleBoundsAlphaOver64": [
+            114,
+            193,
+            1026,
+            996
+          ],
+          "src": "../faces/guseul-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 895228,
+          "sha256": "69cdd5cd0f9005acc1c7fbc509a0737cc0fc98d77418ad4b26e322dc075e668a",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 47.927,
+          "partialAlphaPercent": 51.892,
+          "visibleBoundsAlphaOver64": [
+            113,
+            192,
+            1027,
+            997
+          ],
+          "src": "../faces/guseul-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 896393,
+          "sha256": "b552530a93218e84e503cd14cf62057f3734faa3ff83bde9170a10bc4df8e46b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 48.008,
+          "partialAlphaPercent": 51.804,
+          "visibleBoundsAlphaOver64": [
+            113,
+            193,
+            1027,
+            997
+          ],
+          "src": "../faces/guseul-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "lamplighter": {
+      "key": "lamplighter",
+      "name": "등불지기 아저씨",
+      "batch": "C12",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 932467,
+        "sha256": "8738b752f21537a63c9b43860a11e573bda2404820968f23b435c8c3b2ea077f",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.332,
+        "partialAlphaPercent": 38.572,
+        "visibleBoundsAlphaOver64": [
+          136,
+          9,
+          1847,
+          725
+        ],
+        "src": "lamplighter.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            720,
+            763
+          ],
+          [
+            720,
+            0,
+            627,
+            763
+          ],
+          [
+            1347,
+            0,
+            714,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            136,
+            32,
+            559,
+            702
+          ],
+          [
+            746,
+            46,
+            548,
+            688
+          ],
+          [
+            1400,
+            9,
+            583,
+            725
+          ]
+        ],
+        "baselines": [
+          733,
+          733,
+          733
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12413793103448276
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 733053,
+          "sha256": "ea24c506d9481bdad1455e9b795d73b2ef415847ae7f4c88b53909b8f33b52a5",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 58.025,
+          "partialAlphaPercent": 41.85,
+          "visibleBoundsAlphaOver64": [
+            120,
+            313,
+            1014,
+            920
+          ],
+          "src": "../faces/lamplighter-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 750442,
+          "sha256": "a7b1366a42cd48d0b558cf97d42cb6c02ff8943938a3e8a78194310051195c24",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.927,
+          "partialAlphaPercent": 41.945,
+          "visibleBoundsAlphaOver64": [
+            119,
+            312,
+            1017,
+            922
+          ],
+          "src": "../faces/lamplighter-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "worried": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 735769,
+          "sha256": "4b6b561954592f71698a504579ad488e0de585c64353de1f2ccc587f5e8062b0",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.936,
+          "partialAlphaPercent": 41.916,
+          "visibleBoundsAlphaOver64": [
+            119,
+            312,
+            1017,
+            922
+          ],
+          "src": "../faces/lamplighter-worried.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 742663,
+          "sha256": "a384fb2f2282016b065e4f87781f71801765818c7ed196756587db426dee5193",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 57.885,
+          "partialAlphaPercent": 41.987,
+          "visibleBoundsAlphaOver64": [
+            119,
+            313,
+            1016,
+            921
+          ],
+          "src": "../faces/lamplighter-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true,
+      "note": "수달. 토끼 귀 없음."
+    },
+    "badook": {
+      "key": "badook",
+      "name": "바둑이",
+      "batch": "C12",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 852248,
+        "sha256": "6133f83710e66b96de10041f0aa8d370daaece04ee8c611a26d3273283085120",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 61.877,
+        "partialAlphaPercent": 37.971,
+        "visibleBoundsAlphaOver64": [
+          143,
+          30,
+          1724,
+          707
+        ],
+        "src": "badook.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            678,
+            763
+          ],
+          [
+            678,
+            0,
+            644,
+            763
+          ],
+          [
+            1322,
+            0,
+            739,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            143,
+            30,
+            457,
+            707
+          ],
+          [
+            757,
+            30,
+            467,
+            707
+          ],
+          [
+            1420,
+            35,
+            447,
+            702
+          ]
+        ],
+        "baselines": [
+          736,
+          736,
+          736
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.1272984441301273
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 854153,
+          "sha256": "7a97b465d03cd42569265dba4745e89b5d95549bf579e01485761e904f6b3272",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.761,
+          "partialAlphaPercent": 50.041,
+          "visibleBoundsAlphaOver64": [
+            108,
+            114,
+            1039,
+            1061
+          ],
+          "src": "../faces/badook-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 853641,
+          "sha256": "8ab38793bf5af0c25dfa1384fc6e0a7ef7484a34ef4bbb4a7b74ef12003becba",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.686,
+          "partialAlphaPercent": 50.15,
+          "visibleBoundsAlphaOver64": [
+            107,
+            113,
+            1041,
+            1063
+          ],
+          "src": "../faces/badook-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "embarrassed": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 869988,
+          "sha256": "b7f8f8740c694384d0369ffb9df475fd35aea8561364f79b7c76f118874e057b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.589,
+          "partialAlphaPercent": 50.319,
+          "visibleBoundsAlphaOver64": [
+            108,
+            112,
+            1038,
+            1064
+          ],
+          "src": "../faces/badook-embarrassed.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 857003,
+          "sha256": "d2aab2a345f38f36ced5508a2dd0ad5815cfa9cf389c759aa0f02a4b9bd8abf1",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 49.625,
+          "partialAlphaPercent": 50.225,
+          "visibleBoundsAlphaOver64": [
+            108,
+            112,
+            1039,
+            1065
+          ],
+          "src": "../faces/badook-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "eunho": {
+      "key": "eunho",
+      "name": "은호 사장",
+      "batch": "C12",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1087756,
+        "sha256": "f115a7d7641407cf24d5219a2485163b5470edaeafb845725087505ea74b0d5d",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 50.765,
+        "partialAlphaPercent": 49.129,
+        "visibleBoundsAlphaOver64": [
+          57,
+          17,
+          1888,
+          730
+        ],
+        "src": "eunho.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            686,
+            763
+          ],
+          [
+            686,
+            0,
+            651,
+            763
+          ],
+          [
+            1337,
+            0,
+            724,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            57,
+            17,
+            596,
+            729
+          ],
+          [
+            720,
+            18,
+            560,
+            729
+          ],
+          [
+            1395,
+            50,
+            550,
+            697
+          ]
+        ],
+        "baselines": [
+          745,
+          746,
+          746
+        ],
+        "baselineOffsets": [
+          1,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 1,
+        "fullBodyScale": 0.12345679012345678
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 952018,
+          "sha256": "e2ecc32e1041b538efb776ff17194ef1ccefc33f20bb4a91cd14a5317f73c5bb",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.778,
+          "partialAlphaPercent": 57.066,
+          "visibleBoundsAlphaOver64": [
+            80,
+            79,
+            1094,
+            1100
+          ],
+          "src": "../faces/eunho-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 965272,
+          "sha256": "c456222cbecad3c53b37f98485120e08fee01594a1cc1067cc63fd99b15cddc2",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.183,
+          "partialAlphaPercent": 57.605,
+          "visibleBoundsAlphaOver64": [
+            79,
+            80,
+            1096,
+            1100
+          ],
+          "src": "../faces/eunho-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "worried": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 957964,
+          "sha256": "7041fa6f4eeba64b21d9b5aee5e7e0c9a73d171157e297214c6b1ea9f6b5d8fe",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.65,
+          "partialAlphaPercent": 57.172,
+          "visibleBoundsAlphaOver64": [
+            79,
+            80,
+            1096,
+            1100
+          ],
+          "src": "../faces/eunho-worried.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 958148,
+          "sha256": "d7ea573f3bcd9457c68c1f82aa7b8d70aad1fc442668c6dbda904f5ed614a00d",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.499,
+          "partialAlphaPercent": 57.284,
+          "visibleBoundsAlphaOver64": [
+            80,
+            80,
+            1095,
+            1099
+          ],
+          "src": "../faces/eunho-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "tori": {
+      "key": "tori",
+      "name": "토리",
+      "batch": "C13",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 837827,
+        "sha256": "4171ed22ba5588504e20d124afb7168bf027b633a3e57a3224012c07012415db",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 63.696,
+        "partialAlphaPercent": 36.208,
+        "visibleBoundsAlphaOver64": [
+          172,
+          30,
+          1690,
+          706
+        ],
+        "src": "tori.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            691,
+            763
+          ],
+          [
+            691,
+            0,
+            642,
+            763
+          ],
+          [
+            1333,
+            0,
+            728,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            172,
+            30,
+            411,
+            706
+          ],
+          [
+            799,
+            30,
+            406,
+            706
+          ],
+          [
+            1461,
+            40,
+            401,
+            696
+          ]
+        ],
+        "baselines": [
+          735,
+          735,
+          735
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.1274787535410765
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 967790,
+          "sha256": "5455b0f30a6d28492b012e32f59b15fa622b4a2ee609cf8fb606d58116da754d",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.631,
+          "partialAlphaPercent": 57.138,
+          "visibleBoundsAlphaOver64": [
+            29,
+            107,
+            1184,
+            1065
+          ],
+          "src": "../faces/tori-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 964961,
+          "sha256": "ed6ee520dfc4888c7eb27c8f27c71741750de2e8a84a128e9e76c41f8e99307c",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.487,
+          "partialAlphaPercent": 57.307,
+          "visibleBoundsAlphaOver64": [
+            28,
+            107,
+            1186,
+            1067
+          ],
+          "src": "../faces/tori-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 967013,
+          "sha256": "ac479565f24b7deb474b051d98cd7501c24b056dd34bd8229dd97aa38e100a19",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.553,
+          "partialAlphaPercent": 57.205,
+          "visibleBoundsAlphaOver64": [
+            28,
+            108,
+            1186,
+            1064
+          ],
+          "src": "../faces/tori-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 976443,
+          "sha256": "bf2e4da0747cfd4dc581b1e8f91de3ff5cdacb40861662afa4b3178292f5875e",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 42.44,
+          "partialAlphaPercent": 57.356,
+          "visibleBoundsAlphaOver64": [
+            28,
+            106,
+            1187,
+            1067
+          ],
+          "src": "../faces/tori-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true
+    },
+    "mom": {
+      "key": "mom",
+      "name": "엄마",
+      "batch": "C13",
+      "sheet": {
+        "size": [
+          2060,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 1188159,
+        "sha256": "25f8aee3cbc7b653dad9b1d2d666faa48c92cb6a3963e45499030305d3136adf",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 49.864,
+        "partialAlphaPercent": 50.018,
+        "visibleBoundsAlphaOver64": [
+          52,
+          22,
+          1876,
+          711
+        ],
+        "src": "mom.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            643,
+            763
+          ],
+          [
+            643,
+            0,
+            700,
+            763
+          ],
+          [
+            1343,
+            0,
+            717,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            52,
+            29,
+            550,
+            702
+          ],
+          [
+            684,
+            36,
+            643,
+            695
+          ],
+          [
+            1360,
+            22,
+            568,
+            711
+          ]
+        ],
+        "baselines": [
+          730,
+          730,
+          732
+        ],
+        "baselineOffsets": [
+          2,
+          2,
+          0
+        ],
+        "baselineSpreadSourcePixels": 2,
+        "fullBodyScale": 0.12658227848101267
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 866934,
+          "sha256": "96e432c0a9a9b91d804ee3b24a8232d8051c3128a444ca1019ba51de0f2580f9",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 51.233,
+          "partialAlphaPercent": 48.635,
+          "visibleBoundsAlphaOver64": [
+            203,
+            84,
+            848,
+            1112
+          ],
+          "src": "../faces/mom-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 874611,
+          "sha256": "316a4e3531ea2eaf9ad7357c226d3d81a501c24c89d47f8b1796768f22ae044b",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.911,
+          "partialAlphaPercent": 48.936,
+          "visibleBoundsAlphaOver64": [
+            202,
+            84,
+            850,
+            1114
+          ],
+          "src": "../faces/mom-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "cry": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 873922,
+          "sha256": "f12787ad0562c52343084a11279b5cec11c94f4c879bb6185416ef2e25740cba",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.891,
+          "partialAlphaPercent": 49.0,
+          "visibleBoundsAlphaOver64": [
+            203,
+            84,
+            849,
+            1114
+          ],
+          "src": "../faces/mom-cry.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 885230,
+          "sha256": "583c28c42baad708967f01a481280a7b4f6cc54fd1dd7896fd91f4f3da1aeb66",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 50.909,
+          "partialAlphaPercent": 48.966,
+          "visibleBoundsAlphaOver64": [
+            203,
+            84,
+            849,
+            1113
+          ],
+          "src": "../faces/mom-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true,
+      "note": "일반 다람쥐 과학자. 생물 비막 없음, 접이식 천 활공 장비. 전신 생각은 지도 읽기."
+    },
+    "luka": {
+      "key": "luka",
+      "name": "루카 검사관",
+      "batch": "C06",
+      "sheet": {
+        "size": [
+          2061,
+          763
+        ],
+        "mode": "RGBA",
+        "bytes": 844623,
+        "sha256": "04fe67b705d922ad1fbddbdfc0b4c59cb4a419ec3f0039734dddf9a080087f45",
+        "alphaRange": [
+          0,
+          255
+        ],
+        "transparentPercent": 64.546,
+        "partialAlphaPercent": 35.357,
+        "visibleBoundsAlphaOver64": [
+          215,
+          11,
+          1680,
+          718
+        ],
+        "src": "luka.png",
+        "labels": [
+          "기본",
+          "생각",
+          "감정"
+        ],
+        "frames": [
+          [
+            0,
+            0,
+            724,
+            763
+          ],
+          [
+            724,
+            0,
+            635,
+            763
+          ],
+          [
+            1359,
+            0,
+            702,
+            763
+          ]
+        ],
+        "bounds": [
+          [
+            215,
+            11,
+            403,
+            718
+          ],
+          [
+            830,
+            11,
+            391,
+            718
+          ],
+          [
+            1497,
+            20,
+            398,
+            709
+          ]
+        ],
+        "baselines": [
+          728,
+          728,
+          728
+        ],
+        "baselineOffsets": [
+          0,
+          0,
+          0
+        ],
+        "baselineSpreadSourcePixels": 0,
+        "fullBodyScale": 0.12534818941504178
+      },
+      "faces": {
+        "neutral": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 945092,
+          "sha256": "dbece088a84b3f0bd9dbb0c11d2515072e9c1e8f488dcd378b8dfeaf614664e3",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.445,
+          "partialAlphaPercent": 53.413,
+          "visibleBoundsAlphaOver64": [
+            167,
+            43,
+            920,
+            1180
+          ],
+          "src": "../faces/luka-neutral.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "think": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 946479,
+          "sha256": "540ba5244d7bb9a6ff5563fe1bc906c35e372c979755a1e05b346678cc3aa3fb",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.992,
+          "partialAlphaPercent": 52.837,
+          "visibleBoundsAlphaOver64": [
+            169,
+            43,
+            916,
+            1179
+          ],
+          "src": "../faces/luka-think.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "nervous": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 944207,
+          "sha256": "4cbc19aa25d36be38abfeeea829c73d1260c0c7bda73d69a4aea4790b24d44cc",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.432,
+          "partialAlphaPercent": 53.384,
+          "visibleBoundsAlphaOver64": [
+            166,
+            43,
+            922,
+            1179
+          ],
+          "src": "../faces/luka-nervous.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        },
+        "shock": {
+          "size": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 964330,
+          "sha256": "c40682f8de1a4cacfc90fbefaaeb60636bcd939caaef571d3d27728ab0163471",
+          "alphaRange": [
+            0,
+            255
+          ],
+          "transparentPercent": 46.317,
+          "partialAlphaPercent": 53.553,
+          "visibleBoundsAlphaOver64": [
+            167,
+            43,
+            921,
+            1180
+          ],
+          "src": "../faces/luka-shock.png",
+          "frame": [
+            0,
+            0,
+            1254,
+            1254
+          ]
+        }
+      },
+      "complete": true,
+      "note": "네로의 변장. 같은 회색 스라소니 얼굴/귀술/피곤한 눈, 검사관 복장과 안경으로 구별."
+    }
+  }
+}
