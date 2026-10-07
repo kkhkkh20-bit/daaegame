@@ -28,6 +28,7 @@
   function paintCharacter() {
     const id = costume || selected, c = manifest.characters[id];
     kit.character($('character-large'), id, expression);
+    $('character-compare').href = 'quality.html?v=4&character=' + selected;
     $('character-download').href = kit.url(c.src); $('character-download').download = c.src.split('/').pop();
     $('expression-buttons').replaceChildren();
     ['기본','생각·의심','감정'].forEach((label,i) => {

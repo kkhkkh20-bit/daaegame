@@ -9,7 +9,12 @@ code={p for p in root.iterdir() if p.suffix in ['.html','.js','.css','.json','.t
 code.update(p for p in (root/'reference').iterdir() if p.is_file())
 code.update(p for p in (root/'tools').iterdir() if p.suffix in ['.py','.cjs'])
 code.update((root/'background-results').glob('*.json'))
-for name,paths in [('daram-design-pack.zip',code|chars),('daram-backgrounds-pack.zip',backgrounds)]:
+code.update((root/'character-results-v4').glob('*.json'))
+# Keep full-resolution PNGs intact; split large character delivery into two archives.
+ordered_chars=sorted(chars-code)
+mid=(len(ordered_chars)+1)//2
+char_first=set(ordered_chars[:mid]);char_second=set(ordered_chars[mid:])
+for name,paths in [('daram-design-pack.zip',code|char_first),('daram-characters-part2.zip',char_second),('daram-backgrounds-pack.zip',backgrounds)]:
  with zipfile.ZipFile(root/name,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
   for p in sorted(paths):
    assert p.is_file(),p

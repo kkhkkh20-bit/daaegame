@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "game": "다람 탐정 사무소",
   "source": "game.html CAST / BIO / PERSONA / CASES",
   "characterCount": 35,
@@ -61,187 +61,7 @@
         "thinking, hand near chin",
         "startled, paws near chest"
       ],
-      "src": "characters/tori.png",
-      "width": 1882,
-      "height": 836,
-      "frames": [
-        [
-          0,
-          0,
-          627,
-          836
-        ],
-        [
-          627,
-          0,
-          628,
-          836
-        ],
-        [
-          1255,
-          0,
-          627,
-          836
-        ]
-      ],
-      "labels": [
-        "기본",
-        "생각·의심",
-        "감정"
-      ],
-      "region": "forest",
-      "species": "토끼",
-      "role": "겁 많은 요정 춤꾼"
-    },
-    "bori": {
-      "id": "bori",
-      "name": "보리",
-      "animal": "bear",
-      "kind": "갈색 곰",
-      "color": "#B07A52",
-      "bio": "힘세고 마음 약한 곰. 꿀을 제일 좋아한다. 혼날까 봐 숨기다가 일을 키우는 버릇이 있다.",
-      "design": "꿀빛 털 · 둥근 어깨 · 멜빵 작업복",
-      "expressions": [
-        "gentle shy neutral",
-        "embarrassed, looking aside",
-        "worried, shoulders drawn in"
-      ],
-      "src": "characters/bori.png",
-      "width": 1536,
-      "height": 1024,
-      "frames": [
-        [
-          0,
-          0,
-          540,
-          1024
-        ],
-        [
-          540,
-          0,
-          510,
-          1024
-        ],
-        [
-          1050,
-          0,
-          486,
-          1024
-        ]
-      ],
-      "labels": [
-        "기본",
-        "생각·의심",
-        "감정"
-      ],
-      "region": "forest",
-      "species": "곰",
-      "role": "힘센 먹보 곰"
-    },
-    "yeoni": {
-      "id": "yeoni",
-      "name": "여니",
-      "animal": "fox",
-      "kind": "주황 여우",
-      "color": "#E9853A",
-      "bio": "센스 있는 여우. 몰래 깜짝 선물을 준비하는 걸 좋아한다.",
-      "design": "주황 털 · 청록 리본 · 선물 가방",
-      "expressions": [
-        "confident warm neutral",
-        "secretive knowing smile, finger near muzzle",
-        "surprised vulnerable expression"
-      ],
-      "src": "characters/yeoni.png",
-      "width": 1536,
-      "height": 1024,
-      "frames": [
-        [
-          0,
-          0,
-          548,
-          1024
-        ],
-        [
-          548,
-          0,
-          513,
-          1024
-        ],
-        [
-          1061,
-          0,
-          475,
-          1024
-        ]
-      ],
-      "labels": [
-        "기본",
-        "생각·의심",
-        "감정"
-      ],
-      "region": "forest",
-      "species": "여우",
-      "role": "비밀 많은 선물 장인"
-    },
-    "nabi": {
-      "id": "nabi",
-      "name": "나비",
-      "animal": "cat",
-      "kind": "하얀 고양이",
-      "color": "#FBFAF7",
-      "bio": "새침한 하얀 고양이. 목에 금색 방울 목걸이를 한다. 외로움을 잘 탄다.",
-      "design": "하얀 털 · 금색 방울 · 남색 세일러복",
-      "expressions": [
-        "reserved proud neutral",
-        "skeptical, arms folded",
-        "lonely remorseful, eyes lowered"
-      ],
-      "src": "characters/nabi.png",
-      "width": 1536,
-      "height": 1024,
-      "frames": [
-        [
-          0,
-          0,
-          512,
-          1024
-        ],
-        [
-          512,
-          0,
-          507,
-          1024
-        ],
-        [
-          1019,
-          0,
-          517,
-          1024
-        ]
-      ],
-      "labels": [
-        "기본",
-        "생각·의심",
-        "감정"
-      ],
-      "region": "forest",
-      "species": "고양이",
-      "role": "새침한 우체국 도우미"
-    },
-    "buri": {
-      "id": "buri",
-      "name": "부리",
-      "animal": "owl",
-      "kind": "갈색 부엉이",
-      "color": "#9A846E",
-      "bio": "성실한 부엉이. 늘 신하 역할만 맡아 한 번쯤 주인공이 되고 싶어 한다.",
-      "design": "책벌레 부엉이 · 둥근 눈 · 자주색 조끼",
-      "expressions": [
-        "earnest calm neutral",
-        "thoughtful, reading spectacles held near beak",
-        "frustrated but vulnerable"
-      ],
-      "src": "characters/buri.png",
+      "src": "characters/v4/tori.png",
       "width": 1536,
       "height": 1024,
       "frames": [
@@ -270,6 +90,186 @@
         "감정"
       ],
       "region": "forest",
+      "species": "토끼",
+      "role": "겁 많은 요정 춤꾼"
+    },
+    "bori": {
+      "id": "bori",
+      "name": "보리",
+      "animal": "bear",
+      "kind": "갈색 곰",
+      "color": "#B07A52",
+      "bio": "힘세고 마음 약한 곰. 꿀을 제일 좋아한다. 혼날까 봐 숨기다가 일을 키우는 버릇이 있다.",
+      "design": "꿀빛 털 · 둥근 어깨 · 멜빵 작업복",
+      "expressions": [
+        "gentle shy neutral",
+        "embarrassed, looking aside",
+        "worried, shoulders drawn in"
+      ],
+      "src": "characters/v4/bori.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          526,
+          1024
+        ],
+        [
+          526,
+          0,
+          532,
+          1024
+        ],
+        [
+          1058,
+          0,
+          478,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "곰",
+      "role": "힘센 먹보 곰"
+    },
+    "yeoni": {
+      "id": "yeoni",
+      "name": "여니",
+      "animal": "fox",
+      "kind": "주황 여우",
+      "color": "#E9853A",
+      "bio": "센스 있는 여우. 몰래 깜짝 선물을 준비하는 걸 좋아한다.",
+      "design": "주황 털 · 청록 리본 · 선물 가방",
+      "expressions": [
+        "confident warm neutral",
+        "secretive knowing smile, finger near muzzle",
+        "surprised vulnerable expression"
+      ],
+      "src": "characters/v4/yeoni.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          538,
+          1024
+        ],
+        [
+          538,
+          0,
+          507,
+          1024
+        ],
+        [
+          1045,
+          0,
+          491,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "여우",
+      "role": "비밀 많은 선물 장인"
+    },
+    "nabi": {
+      "id": "nabi",
+      "name": "나비",
+      "animal": "cat",
+      "kind": "하얀 고양이",
+      "color": "#FBFAF7",
+      "bio": "새침한 하얀 고양이. 목에 금색 방울 목걸이를 한다. 외로움을 잘 탄다.",
+      "design": "하얀 털 · 금색 방울 · 남색 세일러복",
+      "expressions": [
+        "reserved proud neutral",
+        "skeptical, arms folded",
+        "lonely remorseful, eyes lowered"
+      ],
+      "src": "characters/v4/nabi.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          557,
+          1024
+        ],
+        [
+          557,
+          0,
+          504,
+          1024
+        ],
+        [
+          1061,
+          0,
+          475,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
+      "species": "고양이",
+      "role": "새침한 우체국 도우미"
+    },
+    "buri": {
+      "id": "buri",
+      "name": "부리",
+      "animal": "owl",
+      "kind": "갈색 부엉이",
+      "color": "#9A846E",
+      "bio": "성실한 부엉이. 늘 신하 역할만 맡아 한 번쯤 주인공이 되고 싶어 한다.",
+      "design": "책벌레 부엉이 · 둥근 눈 · 자주색 조끼",
+      "expressions": [
+        "earnest calm neutral",
+        "thoughtful, reading spectacles held near beak",
+        "frustrated but vulnerable"
+      ],
+      "src": "characters/v4/buri.png",
+      "width": 1536,
+      "height": 1024,
+      "frames": [
+        [
+          0,
+          0,
+          502,
+          1024
+        ],
+        [
+          502,
+          0,
+          502,
+          1024
+        ],
+        [
+          1004,
+          0,
+          532,
+          1024
+        ]
+      ],
+      "labels": [
+        "기본",
+        "생각·의심",
+        "감정"
+      ],
+      "region": "forest",
       "species": "부엉이",
       "role": "신하 역할 전문 책벌레"
     },
@@ -286,27 +286,27 @@
         "sniffing thoughtfully with alert ears",
         "confused, sheepish apology"
       ],
-      "src": "characters/atlas-02.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/kongi.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          411
+          508,
+          1024
         ],
         [
-          418,
+          508,
           0,
-          418,
-          411
+          510,
+          1024
         ],
         [
-          836,
+          1018,
           0,
-          418,
-          411
+          518,
+          1024
         ]
       ],
       "labels": [
@@ -331,27 +331,27 @@
         "concentrating on stopwatch",
         "anxious but determined"
       ],
-      "src": "characters/atlas-02.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/doto.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          411,
-          418,
-          409
+          0,
+          545,
+          1024
         ],
         [
-          418,
-          411,
-          416,
-          409
+          545,
+          0,
+          521,
+          1024
         ],
         [
-          834,
-          411,
-          420,
-          409
+          1066,
+          0,
+          470,
+          1024
         ]
       ],
       "labels": [
@@ -376,27 +376,27 @@
         "skeptical, head tilted",
         "embarrassed, looking down"
       ],
-      "src": "characters/atlas-02.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/kkwak.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          820,
-          418,
-          434
+          0,
+          550,
+          1024
         ],
         [
-          418,
-          820,
-          418,
-          434
+          550,
+          0,
+          521,
+          1024
         ],
         [
-          836,
-          820,
-          418,
-          434
+          1071,
+          0,
+          465,
+          1024
         ]
       ],
       "labels": [
@@ -422,27 +422,27 @@
         "remembering, one paw at cheek",
         "concerned but gentle"
       ],
-      "src": "characters/atlas-03.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/grandma.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          411
+          516,
+          1024
         ],
         [
-          418,
+          516,
           0,
-          418,
-          411
+          512,
+          1024
         ],
         [
-          836,
+          1028,
           0,
-          418,
-          411
+          508,
+          1024
         ]
       ],
       "labels": [
@@ -468,27 +468,27 @@
         "stern skeptical, raised eyebrow",
         "quiet surprise"
       ],
-      "src": "characters/atlas-03.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/librarian.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          411,
-          418,
-          425
+          0,
+          513,
+          1024
         ],
         [
-          418,
-          411,
-          418,
-          425
+          513,
+          0,
+          500,
+          1024
         ],
         [
-          836,
-          411,
-          418,
-          425
+          1013,
+          0,
+          523,
+          1024
         ]
       ],
       "labels": [
@@ -514,27 +514,27 @@
         "observant stern thinking",
         "sad reflective, lowered eyes"
       ],
-      "src": "characters/atlas-04.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/owlgp.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          412
+          532,
+          1024
         ],
         [
-          418,
+          532,
           0,
-          418,
-          412
+          503,
+          1024
         ],
         [
-          836,
+          1035,
           0,
-          418,
-          412
+          501,
+          1024
         ]
       ],
       "labels": [
@@ -560,27 +560,27 @@
         "concentrated, pen near mouth",
         "firm disappointed concern"
       ],
-      "src": "characters/atlas-03.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/teacher.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          836,
-          418,
-          418
+          0,
+          508,
+          1024
         ],
         [
-          418,
-          836,
-          418,
-          418
+          508,
+          0,
+          516,
+          1024
         ],
         [
-          836,
-          836,
-          418,
-          418
+          1024,
+          0,
+          512,
+          1024
         ]
       ],
       "labels": [
@@ -606,27 +606,27 @@
         "sly knowing smile, feather hand gesturing",
         "caught off guard, uneasy sweat"
       ],
-      "src": "characters/atlas-04.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/karo.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          412,
-          418,
-          415
+          0,
+          514,
+          1024
         ],
         [
-          418,
-          412,
-          452,
-          415
+          514,
+          0,
+          508,
+          1024
         ],
         [
-          870,
-          412,
-          384,
-          415
+          1022,
+          0,
+          514,
+          1024
         ]
       ],
       "labels": [
@@ -652,27 +652,27 @@
         "cold determined stare",
         "regretful wounded expression"
       ],
-      "src": "characters/atlas-04.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/nero.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          827,
-          418,
-          427
+          0,
+          538,
+          1024
         ],
         [
-          418,
-          827,
-          418,
-          427
+          538,
+          0,
+          512,
+          1024
         ],
         [
-          836,
-          827,
-          418,
-          427
+          1050,
+          0,
+          486,
+          1024
         ]
       ],
       "labels": [
@@ -697,27 +697,27 @@
         "listening, head turned slightly",
         "quiet concern"
       ],
-      "src": "characters/atlas-05.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/seol.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          412
+          512,
+          1024
         ],
         [
-          418,
+          512,
           0,
-          418,
-          412
+          512,
+          1024
         ],
         [
-          836,
+          1024,
           0,
-          418,
-          412
+          512,
+          1024
         ]
       ],
       "labels": [
@@ -743,27 +743,27 @@
         "suspicious defensive",
         "flustered, dignity slipping"
       ],
-      "src": "characters/atlas-05.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/ppul.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          412,
-          442,
-          421
+          0,
+          529,
+          1024
         ],
         [
-          442,
-          412,
-          394,
-          421
+          529,
+          0,
+          494,
+          1024
         ],
         [
-          836,
-          412,
-          418,
-          421
+          1023,
+          0,
+          513,
+          1024
         ]
       ],
       "labels": [
@@ -789,27 +789,27 @@
         "listening intently, finger raised",
         "sudden discovery, eyes bright"
       ],
-      "src": "characters/atlas-05.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/tok.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          833,
-          418,
-          421
+          0,
+          509,
+          1024
         ],
         [
-          418,
-          833,
-          418,
-          421
+          509,
+          0,
+          518,
+          1024
         ],
         [
-          836,
-          833,
-          418,
-          421
+          1027,
+          0,
+          509,
+          1024
         ]
       ],
       "labels": [
@@ -834,27 +834,27 @@
         "side-eyed skepticism",
         "unguarded worried expression"
       ],
-      "src": "characters/atlas-06.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/bami.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          396
+          524,
+          1024
         ],
         [
-          418,
+          524,
           0,
-          418,
-          396
+          523,
+          1024
         ],
         [
-          836,
+          1047,
           0,
-          418,
-          396
+          489,
+          1024
         ]
       ],
       "labels": [
@@ -879,27 +879,27 @@
         "carefully listening, measured smile",
         "tense restrained concern"
       ],
-      "src": "characters/atlas-06.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/sling.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          396,
-          432,
-          412
+          0,
+          562,
+          1024
         ],
         [
-          432,
-          396,
-          420,
-          412
+          562,
+          0,
+          505,
+          1024
         ],
         [
-          852,
-          396,
-          402,
-          412
+          1067,
+          0,
+          469,
+          1024
         ]
       ],
       "labels": [
@@ -925,27 +925,27 @@
         "attentive cautious smile",
         "quiet serious concern"
       ],
-      "src": "characters/atlas-06.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/momo.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          808,
-          429,
-          446
+          0,
+          534,
+          1024
         ],
         [
-          429,
-          808,
-          422,
-          446
+          534,
+          0,
+          497,
+          1024
         ],
         [
-          851,
-          808,
-          403,
-          446
+          1031,
+          0,
+          505,
+          1024
         ]
       ],
       "labels": [
@@ -970,27 +970,27 @@
         "listening, mallet paused near chest",
         "embarrassed nervous expression"
       ],
-      "src": "characters/atlas-07.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/ttadak.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          418
+          502,
+          1024
         ],
         [
-          418,
+          502,
           0,
-          418,
-          418
+          554,
+          1024
         ],
         [
-          836,
+          1056,
           0,
-          418,
-          418
+          480,
+          1024
         ]
       ],
       "labels": [
@@ -1015,27 +1015,27 @@
         "admiring his reflection thoughtfully",
         "offended wounded pride"
       ],
-      "src": "characters/atlas-07.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/piko.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          418,
-          418,
-          413
+          0,
+          512,
+          1024
         ],
         [
-          418,
-          418,
-          420,
-          413
+          512,
+          0,
+          515,
+          1024
         ],
         [
-          838,
-          418,
-          416,
-          413
+          1027,
+          0,
+          509,
+          1024
         ]
       ],
       "labels": [
@@ -1061,27 +1061,27 @@
         "dismissive, arms folded",
         "frightened vulnerable defensiveness"
       ],
-      "src": "characters/atlas-07.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/mungchi.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          831,
-          430,
-          423
+          0,
+          513,
+          1024
         ],
         [
-          430,
-          831,
-          422,
-          423
+          513,
+          0,
+          524,
+          1024
         ],
         [
-          852,
-          831,
-          402,
-          423
+          1037,
+          0,
+          499,
+          1024
         ]
       ],
       "labels": [
@@ -1107,27 +1107,27 @@
         "cool appraising gaze",
         "controlled displeasure, no shouting"
       ],
-      "src": "characters/atlas-08.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/madam.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          412
+          520,
+          1024
         ],
         [
-          418,
+          520,
           0,
-          418,
-          412
+          506,
+          1024
         ],
         [
-          836,
+          1026,
           0,
-          418,
-          412
+          510,
+          1024
         ]
       ],
       "labels": [
@@ -1153,27 +1153,27 @@
         "watchful, slow knowing smile",
         "uneasy regret"
       ],
-      "src": "characters/atlas-08.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/siluk.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          412,
-          418,
-          401
+          0,
+          516,
+          1024
         ],
         [
-          418,
-          412,
-          418,
-          401
+          516,
+          0,
+          498,
+          1024
         ],
         [
-          836,
-          412,
-          418,
-          401
+          1014,
+          0,
+          522,
+          1024
         ]
       ],
       "labels": [
@@ -1198,27 +1198,27 @@
         "insistent, one finger raised",
         "embarrassed reluctant doubt"
       ],
-      "src": "characters/atlas-08.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/wanggu.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          813,
-          428,
-          441
+          0,
+          506,
+          1024
         ],
         [
-          428,
-          813,
-          411,
-          441
+          506,
+          0,
+          509,
+          1024
         ],
         [
-          839,
-          813,
-          415,
-          441
+          1015,
+          0,
+          521,
+          1024
         ]
       ],
       "labels": [
@@ -1244,27 +1244,27 @@
         "listening carefully, slight frown",
         "protective sorrowful tenderness"
       ],
-      "src": "characters/atlas-09.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/musoe.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          410
+          506,
+          1024
         ],
         [
-          418,
+          506,
           0,
-          426,
-          410
+          526,
+          1024
         ],
         [
-          844,
+          1032,
           0,
-          410,
-          410
+          504,
+          1024
         ]
       ],
       "labels": [
@@ -1290,27 +1290,27 @@
         "curious thinking, head tilted",
         "scared but bravely hopeful"
       ],
-      "src": "characters/atlas-09.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/somi.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          410,
-          418,
-          394
+          0,
+          546,
+          1024
         ],
         [
-          418,
-          410,
-          418,
-          394
+          546,
+          0,
+          507,
+          1024
         ],
         [
-          836,
-          410,
-          418,
-          394
+          1053,
+          0,
+          483,
+          1024
         ]
       ],
       "labels": [
@@ -1336,27 +1336,27 @@
         "cold skeptical scrutiny",
         "restrained frustration"
       ],
-      "src": "characters/atlas-09.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/seori.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          804,
-          420,
-          450
+          0,
+          527,
+          1024
         ],
         [
-          420,
-          804,
-          430,
-          450
+          527,
+          0,
+          520,
+          1024
         ],
         [
-          850,
-          804,
-          404,
-          450
+          1047,
+          0,
+          489,
+          1024
         ]
       ],
       "labels": [
@@ -1382,27 +1382,27 @@
         "hesitant thinking, clutching book",
         "startled, overwhelmed"
       ],
-      "src": "characters/atlas-10.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/ubak.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          403
+          510,
+          1024
         ],
         [
-          418,
+          510,
           0,
-          418,
-          403
+          524,
+          1024
         ],
         [
-          836,
+          1034,
           0,
-          418,
-          403
+          502,
+          1024
         ]
       ],
       "labels": [
@@ -1427,27 +1427,27 @@
         "thinking, one hand on hip",
         "concerned maternal warmth"
       ],
-      "src": "characters/atlas-10.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/nubi.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          403,
-          418,
-          422
+          0,
+          512,
+          1024
         ],
         [
-          418,
-          403,
-          418,
-          422
+          512,
+          0,
+          546,
+          1024
         ],
         [
-          836,
-          403,
-          418,
-          422
+          1058,
+          0,
+          478,
+          1024
         ]
       ],
       "labels": [
@@ -1473,27 +1473,27 @@
         "evaluating with cool half-smile",
         "controlled alarm"
       ],
-      "src": "characters/atlas-10.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/eunho.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          825,
-          418,
-          429
+          0,
+          557,
+          1024
         ],
         [
-          418,
-          825,
-          418,
-          429
+          557,
+          0,
+          482,
+          1024
         ],
         [
-          836,
-          825,
-          418,
-          429
+          1039,
+          0,
+          497,
+          1024
         ]
       ],
       "labels": [
@@ -1518,27 +1518,27 @@
         "concentrating carefully on gemstone",
         "worried, struggling to speak"
       ],
-      "src": "characters/atlas-11.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/guseul.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          418,
-          406
+          542,
+          1024
         ],
         [
-          418,
+          542,
           0,
-          418,
-          406
+          518,
+          1024
         ],
         [
-          836,
+          1060,
           0,
-          418,
-          406
+          476,
+          1024
         ]
       ],
       "labels": [
@@ -1564,27 +1564,27 @@
         "watchful alert scrutiny",
         "surprised, whistle near mouth"
       ],
-      "src": "characters/atlas-11.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/badook.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          406,
-          418,
-          421
+          0,
+          540,
+          1024
         ],
         [
-          418,
-          406,
-          418,
-          421
+          540,
+          0,
+          480,
+          1024
         ],
         [
-          836,
-          406,
-          418,
-          421
+          1020,
+          0,
+          516,
+          1024
         ]
       ],
       "labels": [
@@ -1609,27 +1609,27 @@
         "pensive looking aside",
         "quiet relief"
       ],
-      "src": "characters/atlas-11.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/lamplighter.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          827,
-          418,
-          427
+          0,
+          521,
+          1024
         ],
         [
-          418,
-          827,
-          418,
-          427
+          521,
+          0,
+          498,
+          1024
         ],
         [
-          836,
-          827,
-          418,
-          427
+          1019,
+          0,
+          517,
+          1024
         ]
       ],
       "labels": [
@@ -1648,27 +1648,27 @@
       "color": "#3B3F52",
       "acc": "glasses",
       "id": "luka",
-      "src": "characters/nero-identities.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/v4/luka.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
-          415,
-          427,
-          415
+          0,
+          544,
+          1024
         ],
         [
-          427,
-          415,
-          414,
-          415
+          544,
+          0,
+          510,
+          1024
         ],
         [
-          841,
-          415,
-          413,
-          415
+          1054,
+          0,
+          482,
+          1024
         ]
       ],
       "labels": [
@@ -1690,27 +1690,27 @@
       "color": "#3B3F52",
       "acc": "hood",
       "id": "shadow",
-      "src": "characters/shadow.png",
-      "width": 2172,
-      "height": 724,
+      "src": "characters/v4/shadow.png",
+      "width": 1536,
+      "height": 1024,
       "frames": [
         [
           0,
           0,
-          724,
-          724
+          514,
+          1024
         ],
         [
-          724,
+          514,
           0,
-          724,
-          724
+          525,
+          1024
         ],
         [
-          1448,
+          1039,
           0,
-          724,
-          724
+          497,
+          1024
         ]
       ],
       "labels": [
@@ -5009,5 +5009,8 @@
       "name": "할머니의 부엌",
       "backgroundId": "kitchen-kitchen"
     }
-  }
+  },
+  "characterArtVersion": 4,
+  "characterReference": "daram",
+  "individualCharacterSheets": true
 }
