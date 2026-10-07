@@ -6854,7 +6854,7 @@ function sanitizeState(d){
     best:map(d.best,isCase,function(v){return int(v,0,3,0)||null}),
     sound:d.sound!==false,
     prog:map(d.prog,isCase,function(g,k){return sanG(g,caseIds.indexOf(k))}),
-    story:{pro:!!st.pro,read:map(st.read,function(k){return own(LETTERS,k)},function(v){return v?true:null}),finale:!!st.finale},
+    story:{named:!!st.named||(Array.isArray(d.players)&&d.players.length===2&&typeof d.players[0]==="string"&&(d.players[0]!=="아빠 탐정"||d.players[1]!=="다람 탐정")),pro:!!st.pro,read:map(st.read,function(k){return own(LETTERS,k)},function(v){return v?true:null}),finale:!!st.finale},
     tut:map(d.tut,null,null,200),
     aff:map(d.aff,function(k){return own(CAST,k)},function(v){return int(v,0,AFFMAX,0)||null}),
     chat:map(d.chat,function(k){return /^[a-z0-9]+:[a-z0-9]+:\d{1,2}$/i.test(k)},null,500),
