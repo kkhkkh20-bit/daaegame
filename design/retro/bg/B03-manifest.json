@@ -1,0 +1,491 @@
+{
+  "batchId": "B03",
+  "requestId": "R-013",
+  "status": "ready_for_review",
+  "branch": "art/b03-envelope-backgrounds-20261007",
+  "sourceGameCommit": "b5da5bf9afaa7c56c21aef3b630d9e62c5d47988",
+  "generationTool": "built-in image_gen",
+  "originalGameModified": false,
+  "sharedFilesModified": false,
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "strictRasterCompliant": false,
+  "rasterNote": "승인된 도트 느낌에 맞춘 생성 원본. 정확한 360×200 공통 격자나 26색 래스터로 검증하지 않았음.",
+  "logicalDisplay": [
+    360,
+    200
+  ],
+  "aspectRatio": "9:5",
+  "approvedStyleReferences": [
+    "../star-hill-enriched.png",
+    "fall-owlhouse.png"
+  ],
+  "coordinateConvention": "각 원본의 가운데 9:5 crop을 360×200에 표시한 좌표. bounds=[x,y,width,height]; feet는 발 중심.",
+  "preview": "B03-preview.html",
+  "handoff": "HANDOFF-B03.txt",
+  "prompts": "B03-prompts.json",
+  "assets": [
+    {
+      "id": "envelope-post",
+      "name": "숲속 마을 우체국",
+      "time": "해 질 무렵",
+      "evidence": [
+        {
+          "spotId": "s1e_receipt",
+          "evidenceId": "e1_receipt",
+          "name": "창구 책상 / 봉투 접수증",
+          "point": [
+            217,
+            96
+          ],
+          "bounds": [
+            208,
+            91,
+            18,
+            10
+          ]
+        },
+        {
+          "spotId": "s1e_tray",
+          "evidenceId": "e1_tray",
+          "name": "창구 끝 받침 / 빈 등기 받침",
+          "point": [
+            94,
+            93
+          ],
+          "bounds": [
+            79,
+            86,
+            33,
+            14
+          ]
+        },
+        {
+          "spotId": "s1e_hook",
+          "evidenceId": "e1_hook",
+          "name": "창구 책상 서랍 / 창고 예비 열쇠",
+          "point": [
+            243,
+            120
+          ],
+          "bounds": [
+            226,
+            114,
+            39,
+            23
+          ]
+        },
+        {
+          "spotId": "s1e_ink",
+          "evidenceId": "e1_ink",
+          "name": "창구 잉크병 / 빨간 소인 잉크",
+          "point": [
+            156,
+            89
+          ],
+          "bounds": [
+            150,
+            81,
+            14,
+            14
+          ]
+        },
+        {
+          "spotId": "s1e_letter",
+          "evidenceId": "e1_letter",
+          "name": "발송 자루 / 도시로 가는 편지",
+          "point": [
+            308,
+            102
+          ],
+          "bounds": [
+            300,
+            94,
+            18,
+            13
+          ]
+        },
+        {
+          "spotId": "s1e_cubby",
+          "evidenceId": "e1_cubby",
+          "name": "철새 우편함 / 잠긴 꽥순네 칸",
+          "point": [
+            143,
+            67
+          ],
+          "bounds": [
+            132,
+            55,
+            16,
+            23
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "id": "o_e1_clock",
+          "name": "벽시계",
+          "point": [
+            205,
+            40
+          ],
+          "status": "그림에 있음"
+        },
+        {
+          "id": "o_e1_win",
+          "name": "창밖",
+          "point": [
+            315,
+            46
+          ],
+          "status": "그림에 있음"
+        }
+      ],
+      "decorations": [
+        "두 번째 빈 받침",
+        "장부 옆 자주색 공책",
+        "잉크 옆 날짜 도장과 빈 컵",
+        "자루 옆 접힌 초록 자루",
+        "우편함 옆 천과 화병",
+        "창가 화분과 작은 상자"
+      ],
+      "characterPositions": [
+        {
+          "id": "karo",
+          "feet": [
+            56,
+            176
+          ],
+          "height": 78
+        },
+        {
+          "id": "wanggu",
+          "feet": [
+            126,
+            176
+          ],
+          "height": 78
+        },
+        {
+          "id": "nabi",
+          "feet": [
+            239,
+            176
+          ],
+          "height": 78
+        }
+      ],
+      "behindCounter": {
+        "id": "nabi",
+        "feet": [
+          238,
+          136
+        ],
+        "height": 90,
+        "note": "창구 뒤를 쓸 때의 별도 깊이 좌표. 발은 창구에 가려 보이지 않음. 일반 전면 위치 (239,176)와 동시 사용하지 않음."
+      },
+      "front": "envelope-post-front.png",
+      "src": "envelope-post.png",
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGB",
+      "bytes": 1672088,
+      "sha256": "21e1857e607177bf25320176557ea3635366571607edf49ff51f7723963591bd",
+      "centerCrop": [
+        0,
+        1.055556,
+        1681,
+        933.888889
+      ]
+    },
+    {
+      "id": "envelope-store",
+      "name": "마을 창고",
+      "time": "낮 / 사건 조사 시점",
+      "evidence": [
+        {
+          "spotId": "s1e_box",
+          "evidenceId": "e1_box",
+          "name": "02번 보관함",
+          "point": [
+            136,
+            118
+          ],
+          "bounds": [
+            94,
+            98,
+            87,
+            40
+          ]
+        },
+        {
+          "spotId": "s1e_paw",
+          "evidenceId": "e1_paw",
+          "name": "보관함 뚜껑 / 빨간 발자국",
+          "point": [
+            170,
+            76
+          ],
+          "bounds": [
+            164,
+            70,
+            12,
+            12
+          ]
+        },
+        {
+          "spotId": "s1e_list",
+          "evidenceId": "e1_list",
+          "name": "작은 상자 위 / 지급 명단",
+          "point": [
+            210,
+            107
+          ],
+          "bounds": [
+            197,
+            99,
+            27,
+            17
+          ]
+        },
+        {
+          "spotId": "s1e_window",
+          "evidenceId": "e1_window",
+          "name": "높은 창문",
+          "point": [
+            214,
+            43
+          ],
+          "bounds": [
+            183,
+            16,
+            61,
+            55
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "id": "o_e1_lamp",
+          "name": "벽등",
+          "point": [
+            130,
+            39
+          ],
+          "status": "그림에 있음"
+        },
+        {
+          "id": "o_e1_door",
+          "name": "옆문",
+          "point": [
+            335,
+            82
+          ],
+          "status": "그림에 있음"
+        },
+        {
+          "id": "o_e1_coat",
+          "name": "걸린 비옷",
+          "point": [
+            62,
+            84
+          ],
+          "status": "그림에 있음"
+        }
+      ],
+      "decorations": [
+        "뚜껑 옆 자주색 접힌 천",
+        "명단 옆 자주색 장부",
+        "선반의 밧줄과 빈 컵",
+        "왼쪽 겹친 공급 상자"
+      ],
+      "characterPositions": [
+        {
+          "id": "doto",
+          "feet": [
+            277,
+            176
+          ],
+          "height": 78
+        }
+      ],
+      "src": "envelope-store.png",
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGB",
+      "bytes": 1667427,
+      "sha256": "3babd7cdf330e816c68a5af081ad4241045d8669e3faa9c76ab6be2712f37bb8",
+      "centerCrop": [
+        0,
+        1.055556,
+        1681,
+        933.888889
+      ]
+    },
+    {
+      "id": "envelope-records",
+      "name": "마을 기록실",
+      "time": "창문 없는 기록실 / 등잔",
+      "evidence": [
+        {
+          "spotId": "s1e_houses",
+          "evidenceId": "e1_houses",
+          "name": "빨간 상자 / 마을 집 명부",
+          "point": [
+            173,
+            52
+          ],
+          "bounds": [
+            162,
+            43,
+            23,
+            16
+          ]
+        },
+        {
+          "spotId": "s1e_winter",
+          "evidenceId": "e1_winter",
+          "name": "읽기 탁자 / 겨울 굴뚝 기록",
+          "point": [
+            160,
+            98
+          ],
+          "bounds": [
+            136,
+            92,
+            46,
+            12
+          ]
+        },
+        {
+          "spotId": "s1e_damage",
+          "evidenceId": "e1_damage",
+          "name": "오른쪽 책장 / 눈 피해 기록",
+          "point": [
+            282,
+            74
+          ],
+          "bounds": [
+            276,
+            65,
+            12,
+            20
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "id": "o_e1_ladder",
+          "name": "사다리",
+          "point": [
+            343,
+            96
+          ],
+          "status": "그림에 있음"
+        },
+        {
+          "id": "o_e1_oil",
+          "name": "작은 등잔",
+          "point": [
+            221,
+            90
+          ],
+          "status": "그림에 있음"
+        }
+      ],
+      "decorations": [
+        "빨간 상자 옆 청록 상자",
+        "탁자의 자주색 공책과 컵",
+        "오른쪽 초록 공책",
+        "접힌 청록 천",
+        "서류 상자와 화분"
+      ],
+      "characterPositions": [
+        {
+          "id": "buri",
+          "feet": [
+            267,
+            176
+          ],
+          "height": 78
+        }
+      ],
+      "src": "envelope-records.png",
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGB",
+      "bytes": 1547106,
+      "sha256": "c6ccf2ab801e80f8e21c2969f55eafb786e9eaea3eb41ce4d209658f92894404",
+      "centerCrop": [
+        0,
+        1.055556,
+        1681,
+        933.888889
+      ]
+    }
+  ],
+  "foreground": {
+    "src": "envelope-post-front.png",
+    "size": [
+      1681,
+      936
+    ],
+    "mode": "RGBA",
+    "transparentPercent": 85.043,
+    "visibleBoundsAlphaOver64": [
+      331,
+      358,
+      1339,
+      643
+    ],
+    "exportNote": "오른쪽 투명 1열 추가만. 생성 원본의 위치와 픽셀 유지.",
+    "pixelExactExtraction": false,
+    "note": "AI 추출본이며 원본 RGB와 픽셀 단위 일치를 보증하지 않음. 가장자리 반투명 정리는 게임용 사본에서 검토.",
+    "bytes": 310379,
+    "sha256": "dc71fd1eb7e2321de79524adf217ce947afbc72c435cd3b17b155fb37cf815ea"
+  },
+  "previewCharacters": {
+    "buri": {
+      "src": "../chars/buri.png",
+      "crop": [
+        219,
+        25,
+        451,
+        722
+      ]
+    },
+    "wanggu": {
+      "src": "../chars/wanggu.png",
+      "crop": [
+        72,
+        35,
+        583,
+        689
+      ]
+    },
+    "doto": {
+      "src": "../chars/doto.png",
+      "crop": [
+        120,
+        26,
+        511,
+        701
+      ]
+    },
+    "nabi": {
+      "src": "../chars/nabi.png",
+      "crop": [
+        77,
+        23,
+        518,
+        717
+      ]
+    }
+  }
+}
