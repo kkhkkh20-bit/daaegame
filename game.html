@@ -37724,6 +37724,371 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  try{var L4=BOOK.dark.post[5].lines,m=idx(L4,"owlgp","나는 너희를 이용했다");if(m>=0&&!L4.__s182){L4.__s182=1;L4.splice(m+1,0,["owlgp","초소를 너희에게 내준 것도 그래서다. 그 등불 곁에, 누군가 있어 줘야 했다.","sad"]);R.ok++}else R.miss.push("dark")}catch(e){R.miss.push("dark "+e.message)}
 })();
 
+(function(){
+ if(window.__s183)return;window.__s183={ok:0};
+ var DEFNAME="서진";
+
+ function daramLine(l){return l&&(l[0]==="det1"||(l[0]==="think"&&(l[3]==="det1"||(S&&S.players&&l[3]===S.players[1]))))}
+ try{var _ld=lineData;lineData=function(l){
+  if(daramLine(l)&&typeof l[1]==="string"&&l[1].indexOf("{p0}")>=0){l=l.slice();l[1]=l[1].replace(/\{p0\}/g,"아빠")}
+  return _ld.call(this,l)};window.__s183.ok++}catch(e){}
+
+ function clean(v){return String(v||"").replace(/[<>"'&`]/g,"").trim().slice(0,10)}
+ function needName(){return !(S.story&&S.story.named)}
+ function askName(next){
+  var cur=S.players[0];if(!cur||cur==="아빠 탐정"||cur==="첫 번째 탐정")cur=DEFNAME;
+  modal('<span class="kicker">탐정 사무소 등록</span><h3>아빠 이름을 지어 주세요</h3>'+
+   '<p style="text-align:center;margin:6px 0 12px">마을 사람들은 이 이름으로 불러요.<br>다람이는 그냥 "아빠"라고 불러요.</p>'+
+   '<input id="nm183" class="nm183" value="'+esc(cur)+'" maxlength="10" aria-label="아빠 탐정 이름" autocomplete="off">'+
+   '<button class="btn" id="nm183ok">이 이름으로 시작</button>',function(){
+    var inp=document.getElementById("nm183"),ok=document.getElementById("nm183ok");
+    try{inp.focus();inp.select()}catch(e){}
+    function go(){var v=clean(inp.value)||DEFNAME;S.players[0]=v;
+     if(!S.players[1]||S.players[1]==="다람 탐정"||S.players[1]==="두 번째 탐정")S.players[1]="다람";
+     S.story.named=true;persist();try{SFX.tap()}catch(e){}closeModal();if(next)next()}
+    ok.onclick=go;inp.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();go()}});
+   });
+ }
+ window.__askName=askName;
+
+ window.__MEMO=window.__MEMO||{};
+ function memoOf(c,id){if(!c||!id)return "";var M=window.__MEMO;return M[c.id+"/"+id]||M[id]||""}
+ window.__memoOf=memoOf;
+ function memoHtml(m){return '<div class="dmemo"><small>다람 메모</small><span>'+esc(m)+'</span></div>'}
+ function decorate(el,c){
+  var on=el.querySelector(".cr-th.on"),id=on&&on.dataset.crs,tx=el.querySelector(".cr-det .cr-tx");
+  if(!tx)return;var old=tx.querySelector(".dmemo");
+  var m=memoOf(c,id);
+  if(old&&old.dataset.id===id)return;if(old)old.remove();
+  if(!m||!evById(c,id))return;
+  var w=document.createElement("div");w.innerHTML=memoHtml(m);var d=w.firstChild;d.dataset.id=id;
+  var a=tx.querySelector(".cr-act");tx.insertBefore(d,a||null);
+ }
+ try{var _or=openRecord;openRecord=function(c){var r=_or.apply(this,arguments);var el=document.querySelector(".crec2");
+  if(el){decorate(el,c);var busy=false;new MutationObserver(function(){if(busy)return;busy=true;try{decorate(el,c)}catch(e){}busy=false}).observe(el,{childList:true,subtree:true})}return r};window.__s183.ok++}catch(e){}
+ function toast(m){
+  var t=document.createElement("div");t.className="dmtoast";t.innerHTML=memoHtml(m);document.body.appendChild(t);
+  setTimeout(function(){t.classList.add("out")},3600);setTimeout(function(){t.remove()},4200);
+ }
+ try{var _fe=flyEvidence;flyEvidence=function(from,id,c){var p=_fe.apply(this,arguments);
+  try{var m=memoOf(c||(G&&CASES[G.ci]),id);if(m&&p&&p.then)p.then(function(){setTimeout(function(){toast(m)},250)})}catch(e){}
+  return p};window.__s183.ok++}catch(e){}
+
+ var VIL={
+  forest:{name:"숲속 마을",sub:"언덕 위 별빛 등불 아래",desc:"다람과 아빠가 사는 마을. 탐정 사무소는 30년 전 순찰대가 쓰던 초소다. 밤이면 언덕의 별빛 등불이 마을 길을 비춘다.",
+   lamp:function(){return "별빛 등불 · 켜짐"},who:["owlgp","grandma","buri","tori","bori","yeoni","nabi","kongi","doto","kkwak","ttadak","wanggu","momo","karo"],open:function(){return true}},
+  silver:{name:"은빛 마을",sub:"큰 강 건너 동쪽",desc:"종탑의 마을. 해 질 녘이면 달빛 종이 울려 밤길을 알린다. 손재주 좋은 장인들이 산다.",
+   lamp:function(){return S.prog.clapper&&!S.best.clapper?"달빛 종 · 멈춤":"달빛 종 · 울림"},who:["seol","ppul","tok","bami"],open:function(){return !!(S.best.star||S.best.bell||S.prog.bell)}},
+  manor:{name:"하얀 저택",sub:"숲 동쪽 언덕 위",desc:"숲에서 가장 부유한 백 부인의 저택. 반짝이는 물건을 모은다는 소문이 있다.",
+   lamp:function(){return "창문 불빛 · 밤늦게까지"},who:["madam","mungchi","siluk"],open:function(){return !!(S.best.museum||S.best.cart)}},
+  nameless:{name:"이름 없는 마을",sub:"북쪽 큰 고개 너머",desc:"30년 전 광산이 닫히며 등불이 꺼진 마을. 지금은 아무도 그 이름을 부르지 않는다.",
+   lamp:function(){return S.best.kitchen?"옛 등불 · 다시 켜짐":"옛 등불 · 꺼짐"},who:["musoe","somi","nubi","seori","ubak"],open:function(){return !!S.best.snow},hint:function(){return !!(S.best.festival||S.prog.snow)}},
+  city:{name:"도시",sub:"남동쪽 · 우편 마차로 반나절",desc:"가로등이 끝없이 이어진 큰 도시. 보석상 거리와 시계탑 광장이 있다. 거리 끝 가로등 하나는 늘 늦게 꺼진다.",
+   lamp:function(){return "가로등 · 수백 개"},who:["eunho","guseul","badook","lamplighter"],open:function(){return !!(S.best.clapper||S.best.bureau||S.prog.bureau)}}
+ };
+ var WHERE={cake:"forest",window:"forest",crown:"forest",star:"forest",bell:"silver",dark:"forest",museum:"forest",cart:"forest",glove:"manor",festival:"forest",snow:"nameless",clapper:"silver",bureau:"city",lining:"forest",kitchen:"forest"};
+ window.__WMAP={VIL:VIL,WHERE:WHERE};
+ function nextCase(){for(var i=0;i<CASES.length;i++)if(!S.best[CASES[i].id])return CASES[i];return null}
+ function T(id,x,y,s,a){return '<text x="'+x+'" y="'+y+'" class="wm-l'+(a?' '+a:'')+'" data-v="'+id+'">'+s+'</text>'}
+ function tree(x,y,c){return '<path d="M'+x+' '+(y-10)+'h2v2h2v2h2v2h2v2h-4v2h4v2h-6v2h-2v-2h-6v-2h4v-2h-4v-2h2v-2h2v-2h2z" fill="'+(c||"#3E7A4A")+'"/>'}
+ function house(x,y,r,w){return '<rect x="'+x+'" y="'+(y+4)+'" width="'+w+'" height="7" fill="#E9D2A6"/><path d="M'+(x-1)+' '+(y+4)+'h'+(w+2)+'l-3 -4h-'+(w-4)+'z" fill="'+r+'"/><rect x="'+(x+2)+'" y="'+(y+6)+'" width="2" height="2" fill="#FFD84D"/>'}
+ function svgMap(){
+  var nx=nextCase(),nv=nx&&WHERE[nx.id];
+  var o=function(k){return VIL[k].open()},hn=VIL.nameless.hint();
+  var s='<svg viewBox="0 0 360 330" class="wm-svg" shape-rendering="crispEdges" role="img" aria-label="숲의 지도">'+
+  '<rect width="360" height="330" fill="#E7D9B4"/><rect x="3" y="3" width="354" height="324" fill="none" stroke="#6B5434" stroke-width="2"/>'+
+  '<g fill="#8C7B66"><path d="M70 92l14-22 14 22z"/><path d="M96 92l18-30 18 30z"/><path d="M128 92l16-26 16 26z"/><path d="M156 92l20-34 20 34z"/><path d="M190 92l15-24 15 24z"/><path d="M214 92l13-20 13 20z"/></g>'+
+  '<g fill="#F4F0E6"><path d="M108 70l6-8 6 8z"/><path d="M170 66l6-8 6 8z"/></g>'+
+  '<path d="M262 0v40h-8v40h-10v50h-6v50h-8v60h6v40h-4v50" fill="none" stroke="#5D8FB5" stroke-width="12"/>'+
+  '<path d="M262 0v40h-8v40h-10v50h-6v50h-8v60h6v40h-4v50" fill="none" stroke="#86B2D2" stroke-width="4"/>'+
+  '<g fill="none" stroke="#A0784A" stroke-width="3" stroke-dasharray="4 3"><path d="M130 206V120h46V58"/><path d="M146 210h104v6h44"/><path d="M140 236h40v40h60v30h36"/><path d="M168 200v-26h40"/></g>'+
+  '<rect x="228" y="208" width="18" height="10" fill="#7A5A34"/><rect x="228" y="270" width="18" height="10" fill="#7A5A34"/>';
+  [[40,140],[56,150],[30,170],[48,186],[36,214],[60,240],[44,262],[78,272],[98,288],[120,296],[150,292],[178,290],[196,266],[206,236],[70,128],[92,124],[196,140],[210,130],[60,300],[30,290],[22,240],[188,110],[150,130],[100,150]].forEach(function(p,i){s+=tree(p[0],p[1],i%3?"#3E7A4A":"#2F6640")});
+  s+='<g class="wm-v" data-v="forest">'+
+   '<path d="M108 210l14-14h16l14 14z" fill="#9BBF7A"/>'+
+   house(96,218,"#B5523B",14)+house(116,226,"#C0703F",12)+house(84,232,"#B5523B",12)+house(136,234,"#A04A3A",14)+house(110,244,"#C0703F",12)+
+   '<rect x="146" y="206" width="14" height="10" fill="#6A4E34"/><path d="M144 206h18l-3-5h-12z" fill="#3B2F45"/><rect x="151" y="210" width="4" height="6" fill="#FFD84D"/>'+
+   '<rect x="128" y="186" width="2" height="12" fill="#3B2F45"/><rect x="125" y="181" width="8" height="7" fill="#FFE27A" class="wm-glow"/>'+
+   T("forest",92,266,"숲속 마을")+'</g>';
+  s+=o("manor")?'<g class="wm-v" data-v="manor"><path d="M186 176l8-10h12l8 10z" fill="#A9C79A"/><rect x="190" y="160" width="18" height="12" fill="#F6F2EA"/><path d="M188 160h22l-11-7z" fill="#7B6E8E"/><rect x="194" y="164" width="3" height="3" fill="#FFD84D"/><rect x="201" y="164" width="3" height="3" fill="#FFD84D"/>'+T("manor",170,190,"하얀 저택")+'</g>'
+   :'<g class="wm-v wm-lock" data-v="manor"><rect x="184" y="152" width="34" height="26" fill="#F4EEDC" opacity=".85"/>'+T("manor",194,170,"?","q")+'</g>';
+  s+=o("silver")?'<g class="wm-v" data-v="silver">'+house(280,204,"#5B6F96",12)+house(298,212,"#6C7FA8",12)+house(284,222,"#5B6F96",14)+
+   '<rect x="316" y="186" width="10" height="34" fill="#C9CFDB"/><path d="M314 186h14l-7-9z" fill="#5B6F96"/><rect x="319" y="191" width="4" height="5" fill="#FFE27A" class="wm-glow"/>'+T("silver",278,244,"은빛 마을")+'</g>'
+   :'<g class="wm-v wm-lock" data-v="silver"><rect x="272" y="182" width="62" height="48" fill="#F4EEDC" opacity=".9"/>'+T("silver",296,212,"?","q")+'</g>';
+  s+=o("nameless")?'<g class="wm-v" data-v="nameless">'+house(156,28,"#6E6A66",12)+house(176,34,"#77716B",12)+house(194,26,"#6E6A66",10)+
+   '<rect x="214" y="22" width="2" height="12" fill="#3B2F45"/><rect x="211" y="17" width="8" height="7" fill="'+(S.best.kitchen?"#FFE27A":"#5B5852")+'"'+(S.best.kitchen?' class="wm-glow"':'')+'/>'+T("nameless",150,58,"이름 없는 마을")+'</g>'
+   :hn?'<g class="wm-v wm-lock" data-v="nameless"><rect x="146" y="14" width="80" height="34" fill="#F4EEDC" opacity=".9"/>'+T("nameless",180,36,"?","q")+'</g>':'';
+  s+=o("city")?'<g class="wm-v" data-v="city"><rect x="290" y="282" width="10" height="24" fill="#8A8F9C"/><rect x="302" y="274" width="12" height="32" fill="#9AA0AD"/><rect x="316" y="288" width="10" height="18" fill="#8A8F9C"/><rect x="328" y="270" width="8" height="36" fill="#A3A9B6"/><rect x="331" y="274" width="2" height="2" fill="#FFE27A"/>'+
+   '<rect x="293" y="286" width="2" height="2" fill="#FFE27A"/><rect x="306" y="280" width="2" height="2" fill="#FFE27A"/><rect x="306" y="290" width="2" height="2" fill="#FFE27A"/><rect x="320" y="294" width="2" height="2" fill="#FFE27A"/>'+T("city",298,322,"도시")+'</g>'
+   :'<g class="wm-v wm-lock" data-v="city"><rect x="284" y="266" width="58" height="46" fill="#F4EEDC" opacity=".9"/>'+T("city",306,294,"?","q")+'</g>';
+  var P={forest:[130,196],silver:[300,196],manor:[198,152],nameless:[176,22],city:[310,264]};
+  if(nv&&P[nv]&&VIL[nv].open()){var q=P[nv];s+='<g class="wm-next"><rect x="'+(q[0]-3)+'" y="'+(q[1]-22)+'" width="6" height="10" fill="#D93A3F"/><rect x="'+(q[0]-3)+'" y="'+(q[1]-10)+'" width="6" height="4" fill="#D93A3F"/></g>'}
+  s+='<g class="wm-compass"><text x="336" y="24" class="wm-l s">북</text><path d="M339 28v14" stroke="#6B5434" stroke-width="2"/></g></svg>';
+  return s;
+ }
+ function info(k){
+  var v=VIL[k];if(!v)return "";
+  if(!v.open())return '<div class="wm-card"><h4>???</h4><p>아직 가 보지 않은 곳이에요. 사건을 따라가다 보면 알게 될 거예요.</p></div>';
+  var cs=CASES.map(function(c,i){return {c:c,i:i}}).filter(function(x){return WHERE[x.c.id]===k});
+  var known=v.who.filter(function(w){return CAST[w]});
+  return '<div class="wm-card"><h4>'+v.name+'<small>'+v.sub+'</small></h4><p>'+v.desc+'</p>'+
+   '<div class="wm-lamp"><i></i>'+v.lamp()+'</div>'+
+   (known.length?'<div class="wm-who">'+known.map(function(w){return '<span title="'+esc(CAST[w].name)+'">'+pf(w)+'<b>'+esc(CAST[w].name)+'</b></span>'}).join("")+'</div>':'')+
+   (cs.length?'<ul class="wm-cases">'+cs.map(function(x){var done=!!S.best[x.c.id];return '<li class="'+(done?'ok':'')+'"><em>'+(x.i+1)+'장</em>'+esc(x.c.title)+(done?'<span>해결</span>':'')+'</li>'}).join("")+'</ul>':'')+'</div>';
+ }
+ function openMap(){
+  try{SFX.page()}catch(e){}
+  var old=document.querySelector(".wmap");if(old)old.remove();
+  var nx=nextCase(),k=(nx&&WHERE[nx.id]&&VIL[WHERE[nx.id]].open())?WHERE[nx.id]:"forest";
+  var d=document.createElement("div");d.className="wmap";
+  d.innerHTML='<div class="wm-in"><div class="wm-hd"><span>숲의 지도</span><button type="button" class="wm-x" aria-label="닫기">닫기</button></div>'+
+   '<div class="wm-map">'+svgMap()+'</div><div class="wm-info">'+info(k)+'</div>'+
+   (nx?'<p class="wm-tip">빨간 깃발이 다음 사건이 벌어질 곳이에요.</p>':'')+'</div>';
+  document.body.appendChild(d);
+  function sel(v){d.querySelectorAll(".wm-v").forEach(function(g){g.classList.toggle("on",g.dataset.v===v)});d.querySelector(".wm-info").innerHTML=info(v)}
+  sel(k);
+  d.querySelector(".wm-map").addEventListener("click",function(e){var g=e.target.closest&&e.target.closest("[data-v]");if(g){try{SFX.tap()}catch(x){}sel(g.dataset.v)}});
+  d.querySelector(".wm-x").onclick=function(){try{SFX.tap()}catch(x){}d.remove()};
+  d.addEventListener("click",function(e){if(e.target===d)d.remove()});
+ }
+ window.__openWorldMap=openMap;
+
+ try{var _rt=renderTitle;renderTitle=function(){var r=_rt.apply(this,arguments);try{
+  var go=document.getElementById("go");
+  if(go&&!document.getElementById("wmapbtn")){var b=document.createElement("button");b.className="btn ghost wmapbtn";b.id="wmapbtn";b.type="button";
+   b.innerHTML='<svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path d="M1 3l4-2 6 2 4-2v12l-4 2-6-2-4 2z" fill="#E7D9B4"/><path d="M5 1v12M11 3v12" stroke="#6B5434"/><rect x="7" y="6" width="2" height="2" fill="#D93A3F"/></svg>세계 지도';
+   b.onclick=function(){try{ac()}catch(e){}openMap()};go.parentNode.insertBefore(b,go.nextSibling)}
+  if(go){var on=go.onclick;go.onclick=function(e){var self=this;if(needName()){try{ac()}catch(x){}askName(function(){on&&on.call(self,e)})}else on&&on.call(self,e)}}
+ }catch(e){}return r};window.__s183.ok++}catch(e){}
+
+ var css=document.createElement("style");css.textContent=
+ '.nm183{display:block;width:100%;box-sizing:border-box;font:inherit;font-size:22px;text-align:center;padding:10px;margin:0 0 14px;border:3px solid #1B2447;border-radius:8px;background:#FFFCF3;color:#1B2447}'+
+ '.dmemo{flex:none!important;position:relative;margin:8px 2px 2px!important;padding:6px 10px 7px;background:#FFF4B8;border-radius:3px;transform:rotate(-1.2deg);box-shadow:2px 3px 0 rgba(27,36,71,.18);color:#2848A0;font-family:"Gaegu",var(--hand),cursive;font-weight:700;font-size:17px;line-height:1.3;text-align:left}'+
+ '.dmemo small{display:block;font-family:var(--body);font-size:11px;color:#8A6A2A;letter-spacing:.04em;margin-bottom:1px}'+
+ '.dmemo:before{content:"";position:absolute;top:-6px;left:50%;width:34px;height:10px;margin-left:-17px;background:rgba(214,196,150,.75);transform:rotate(2deg)}'+
+ '.dmtoast{position:fixed;left:12px;bottom:calc(150px + env(safe-area-inset-bottom));z-index:99990;max-width:min(300px,78vw);pointer-events:none;animation:dmin .35s cubic-bezier(.2,1.5,.4,1)}'+
+ '.dmtoast .dmemo{margin:0!important;font-size:18px}.dmtoast.out{transition:opacity .5s,transform .5s;opacity:0;transform:translateY(8px)}'+
+ '@keyframes dmin{0%{transform:scale(.6) rotate(-6deg);opacity:0}100%{transform:none;opacity:1}}'+
+ '.wmapbtn{display:flex;align-items:center;justify-content:center;gap:8px}.wmapbtn svg{width:22px;height:22px}'+
+ '.wmap{position:fixed;inset:0;z-index:99980;background:rgba(10,14,34,.82);display:flex;align-items:center;justify-content:center;padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));box-sizing:border-box}'+
+ '.wm-in{width:min(460px,100%);max-height:100%;overflow-y:auto;background:#F4EEDC;border:3px solid #1B2447;border-radius:10px;box-shadow:0 0 0 3px #F2C230;color:#1B2447}'+
+ '.wm-hd{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#1B2447;color:#FFE27A;font-family:var(--display);font-size:18px;position:sticky;top:0;z-index:2}'+
+ '.wm-x{font:inherit;font-size:14px;background:transparent;border:2px solid #FFE27A;color:#FFE27A;border-radius:6px;padding:2px 10px;cursor:pointer}'+
+ '.wm-map{padding:10px 10px 0}.wm-svg{display:block;width:100%;height:auto;image-rendering:pixelated}'+
+ '.wm-l{font-family:var(--display);font-size:11px;fill:#2B2418;paint-order:stroke;stroke:#F4EEDC;stroke-width:3px;cursor:pointer}.wm-l.q{font-size:16px;fill:#8A7A5A}.wm-l.s{font-size:9px}'+
+ '.wm-v{cursor:pointer}.wm-v.on .wm-l{fill:#B5523B}.wm-glow{animation:wmg 1.6s steps(2) infinite}@keyframes wmg{50%{fill:#FFF3B0}}'+
+ '.wm-next{animation:wmn 1s steps(2) infinite}@keyframes wmn{50%{transform:translateY(-2px)}}'+
+ '.wm-info{padding:10px 12px 4px}.wm-card h4{margin:0 0 4px;font-family:var(--display);font-size:20px}.wm-card h4 small{display:block;font-family:var(--body);font-size:12px;color:#6B5434;font-weight:400}'+
+ '.wm-card p{margin:0 0 8px;font-size:14px;line-height:1.55}.wm-lamp{display:inline-flex;align-items:center;gap:6px;font-size:13px;background:#1B2447;color:#FFE27A;padding:3px 10px;border-radius:999px;margin-bottom:8px}.wm-lamp i{width:8px;height:8px;background:#FFE27A;display:inline-block}'+
+ '.wm-who{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}.wm-who span{display:flex;flex-direction:column;align-items:center;width:58px}.wm-who svg,.wm-who img{width:44px;height:44px}.wm-who b{font-size:10px;font-weight:400;line-height:1.2;text-align:center;word-break:keep-all}'+
+ '.wm-cases{list-style:none;margin:0;padding:0;font-size:13px}.wm-cases li{display:flex;gap:8px;align-items:center;padding:4px 0;border-top:1px dashed #C9B48A}.wm-cases em{font-style:normal;color:#6B5434;min-width:34px}.wm-cases li span{margin-left:auto;font-size:11px;color:#D93A3F;border:1.5px solid #D93A3F;border-radius:4px;padding:0 4px}'+
+ '.wm-tip{margin:0;padding:4px 12px 12px;font-size:12px;color:#6B5434}';
+ document.head.appendChild(css);
+})();
+
+Object.assign(window.__MEMO=window.__MEMO||{},{
+"bell/m_hook":"은색 가루가 손가락에 묻었다. 안 지워짐. 큰일.",
+"bell/m_rope":"칼로 싹둑. 털도 붙어 있음. 내 털 아님. 확인함.",
+"bell/m_buckle":"네모난 자국이랑 반짝이 실 한 가닥. 이건 꼭 기억해 둘 것.",
+"bell/m_route":"우편함 없는 데에 배달 완료? 편지가 혼자 날아갔나.",
+"bell/m_flake":"은 아님. 쇠임. 깨물어 볼 뻔했다. 안 깨묾.",
+"bell/m_safe":"칸이 텅 비었음. 내 간식 통도 맨날 이렇게 텅 빔.",
+"bell/m_speech":"글씨 엄청 반듯함. 내 글씨랑 비교 금지.",
+"bell/m_echo":"세 번, 한 번, 네 번. 박자가 이상함. 다시 따져 볼 것.",
+"bell/m_paint":"페인트 아직 끈적함. 꼬리 닿을 뻔. 위험 구역.",
+"bell/m_memo":"또박또박한 글씨. 부럽다. 내 메모는... (뭐라고 쓴 거지.)",
+"bell/m_cloak":"망토 조각에 도장이 둘. 중요함. 절대 잃어버리지 말 것.",
+"bell/m_realclap":"진짜 추 찾았다! 반짝반짝. 생각보다 예쁨.",
+"bell/m_nero":"종만 멈추면 된다고? 왜? 이건 꼭 물어볼 것.",
+"bell/uvb":"형광 분필 멋짐. 나도 갖고 싶음. 아빠한테 사 달라고 할 것.",
+"dark/n_claw":"발톱 자국이 너무 깔끔함. 내 발톱은 이렇게 착하지 않음.",
+"dark/n_window":"창문은 안에서 잠김. 바깥 발자국 없음. 문 쪽을 볼 것.",
+"dark/n_paper":"보낸 사람 칸이 빈칸. 숙제에 이름 안 쓴 나 같음.",
+"dark/uvd":"불 비추니까 숨어 있던 문양이 나옴. 눈 크게 뜨고 다시 볼 것.",
+"dark/n_stamp":"도장 잉크 아직 젖음. 손에 묻었다. 아빠 셔츠에 닦음. 비밀.",
+"dark/n_log":"근무 기록 빼곡함. 나는 숙제 기록이 빈칸임.",
+"dark/n_file":"30년 전 파일. 종이에서 옛날 냄새 남. 먼지 냄새인가.",
+"dark/n_badge":"배지 반짝. 근데 뒷면 글씨는 좀 쓸쓸함.",
+"dark/n_lock":"부순 흔적 없음. 열쇠로 열었음. 중요.",
+"dark/n_print":"발자국이 숲으로 감. 따라가려면 간식부터 챙길 것.",
+"dark/n_glove":"흰 장갑인데 하나도 안 흼. 빨래 누가 함?",
+"dark/s6x_snack":"생선 과자 한 봉지가 통째로. 아깝다. 먹어도 되나. 안 됨.",
+"dark/n_key":"열쇠 찾음! 작은 등불 안에 쏙. 숨바꼭질 장인.",
+"dark/n_letter":"편지 읽고 아빠 얼굴 굳음. 나도 굳음. 잘 챙겨 둘 것.",
+"museum/m7_feather":"까맣고 반들반들한 깃털. 붓으로 써도 될 듯.",
+"museum/m7_note":"쪽지가 반쪽뿐. 나머지 반쪽 꼭 찾을 것.",
+"museum/m7_lock":"걸쇠에 주황 털실 한 가닥. 누구 목도리 실이지?",
+"museum/m7_glass":"반짝이는데 유리 가루. 반짝인다고 다 보석 아님.",
+"museum/m7_smudge":"유리에 코 도장. 나도 옆에 찍어 봄. 아빠한테 혼남.",
+"museum/m7uv_stamp":"불 비추니까 글씨가 나옴. 이 등 진짜 쓸모 많다.",
+"museum/s7x_clock":"짧은 바늘 9, 긴 바늘 12. 9시 정각. 시간 꼭 기억할 것.",
+"museum/m7_hair":"하얀 털. 킁킁 했더니 풀 냄새. 재채기 나옴.",
+"museum/m7_crumbs":"별 모양 쿠키 부스러기! 부스러기 말고 쿠키를 원함.",
+"museum/m7_duster":"먼지털이 깃털이 숭숭. 머리 자르고 온 날 아빠 같음.",
+"museum/m7_receipt":"날짜는 어제. 크기도 적어 둠. 중요.",
+"museum/m7_letter":"말투가 이상하게 매끈함. 하얀 장갑, 이름 기억해 둠.",
+"museum/m7_parcel":"두 손으로 겨우 들 무게래. 뭐가 들었길래. 무게 중요.",
+"museum/m7_sack":"편지만 잔뜩. 돌도 없고 간식도 없음. 아쉬움.",
+"museum/m7_paw":"한자리에 오래 서 있었음. 다리 안 아팠나.",
+"museum/m7_note2":"나머지 반쪽 찾았다! 퍼즐 맞추기 시작.",
+"cart/c8_axle":"쐐기 구멍이 텅. 가장자리가 눌렸음. 자세히 볼 것.",
+"cart/c8_skid":"바퀴 자국 쭉. 미끄럼틀 같음. 타고 싶진 않음.",
+"cart/c8_peck":"바퀴살에만 콕콕콕. 줄 맞춰 쪼았음. 성실한 부리.",
+"cart/c8_handle":"ㄱ자 손잡이. 내가 쓴 'ㄱ'보다 반듯함. 분하다.",
+"cart/s8x_feather":"빨간 깃털 보고 다들 수군수군. 나는 일단 메모만.",
+"cart/c8_toolbox":"공구함 빈자리 두 개. 숨은그림찾기 같음.",
+"cart/c8_grease":"기름 냄새 진함. 코 막고 씀. 그래서 글씨가 더 엉망.",
+"cart/c8_honey":"꿀 흘러내림! 아깝다. 손가락으로 찍어 먹을 뻔. 참았다.",
+"cart/c8_load":"누구나 읽을 수 있는 판. 나도 읽음. 글씨는 나보다 나음.",
+"cart/c8uv_box":"빛나는 손자국. 작은 손. 이건 꼭 기억해 둘 것.",
+"cart/c8_watch":"8:52, 9:07. 숫자 너무 많음. 머리 아픔. 간식 필요.",
+"cart/c8_tnote":"속이 비었다고 함. 따닥은 계속 말하고 있었음.",
+"cart/c8_wedge":"쐐기 찾음. 기름 범벅. 손 씻을 것. 두 번.",
+"cart/c8_prints":"작은 발자국 사이사이 흑백 털. 바둑알 흘린 것 같음.",
+"cart/c8_sack":"봉투가 반듯하게 갈라짐. 남의 편지 몰래 읽기는 반칙임.",
+"cart/c8_glove":"도련님 맞춤 새 장갑. 내 장갑은 엄지에 구멍 남.",
+"cart/c8_crate":"하얀 장갑 또 나옴. 이 이름 자꾸 보임. 기억할 것."
+});
+
+Object.assign(window.__MEMO=window.__MEMO||{},{
+"glove/g9_cap":"꽥순이 모자. 끈이 쭉 늘어남. 빨리 찾아서 돌려줘야 함.",
+"glove/g9_note":"종이가 반들반들. 비싼 종이 같다. 내 공책이랑 너무 다름.",
+"glove/g9_prints":"발자국 엄청 큼. 내 발 넣어 봤는데 세 개 들어감.",
+"glove/g9_wheel":"바퀴 엄청 넓음. 우편 마차보다 뚱뚱함. 못 자국 세다가 까먹음.",
+"glove/s9x_thread":"검은 실 한 가닥. 다들 수군수군. 나는 아직 아무 말 안 함.",
+"glove/g9_memo":"네로 글씨. 나보다 잘 씀. 좀 분함.",
+"glove/g9_cloak":"망토에 물이끼. 미끌미끌. 냄새는 기록 안 하겠음.",
+"glove/g9_paper":"맨 위 한 장이 없음. 이건 꼭 기억해 둘 것.",
+"glove/g9_gloves":"하얀 장갑인데 손끝이 초록. 하얀 건 빨래가 힘들 듯.",
+"glove/g9_ledger":"어른 장부는 왜 이렇게 어려움. 두 번 읽음. 간식 필요.",
+"glove/g9_feather":"노란 솜털 하나. 작고 보송함. 날아갈라 잘 챙겨 둠.",
+"glove/g9uv_blot":"글씨가 거꾸로임. 거울 가져올 걸. (아빠는 내 글씨도 거꾸로래.)",
+"glove/s9x_dummy":"마네킹 모자 멋짐. 인사했는데 대답 없음. 당연함.",
+"glove/g9r_opener":"띠가 여섯 장. 다 반듯함. 나는 봉투 그냥 손으로 찢는데.",
+"glove/g9_crumbs":"별 모양 쿠키 부스러기. 아까움. 한 개만 남겨 주지.",
+"glove/g9_box":"빈 상자. 금박 글씨 반짝. 안에 간식 넣으면 딱이겠다.",
+"glove/g9_found":"꽥순이 무사함. 진짜 다행. 이건 꼭 적어 둠.",
+"glove/g9_burr":"가시 열매 따끔. 네로 털에서 떼다가 내 손도 찔림.",
+"glove/g9_bag":"주머니 비었음. 자수 예쁨. 간식 주머니로 갖고 싶다.",
+"glove/g9_tracks":"바퀴 자국 또 나옴. 못 간격 꼭 비교해 볼 것.",
+"festival/f10_cradle":"받침 텅 빔. 덮개는 그대로. 꼼꼼히 볼 것.",
+"festival/f10_note":"쪽지 말투가 좀 건방짐. 쓴 사람한테 한마디 하고 싶음.",
+"festival/f10_rut":"바퀴가 돌 때마다 찍. 땅이 아프겠다.",
+"festival/f10_handcart":"기름 냄새 진동. 코 막고 적는 중. 그래서 글씨 더 엉망임.",
+"festival/f10_slip":"보낸 이 칸만 비었음. 이름 쓰기 귀찮았나?",
+"festival/f10_glove":"장갑 짜임 촘촘함. 도시 물건이다. 내 장갑은 구멍 남.",
+"festival/f10uv_grip":"손잡이에 반짝이는 손바닥. 이건 꼭 기억해 둘 것.",
+"festival/s10x_receipt":"곰 발도장 엄청 큼. 내 얼굴만 함. 숫자 많아서 머리 아픔.",
+"festival/f10_log":"보라 보자기에 금실. 돌도 옷을 입고 다님. 나보다 멋짐.",
+"festival/f10_scale":"어른도 두 손으로 겨우. 아빠는 한 손으로 든다고 우김. 안 믿음.",
+"festival/f10_drafts":"'미안'만 쓰고 지웠음. 글씨가 나만큼 삐뚤다. 좀 반가움.",
+"festival/f10_bread":"따뜻한 빵인데 안 먹었다. 내가 먹으면 안 되나. (안 됨.)",
+"festival/f10_fiber":"보랏빛 실이랑 금실 한 올. 너무 작음. 잃어버리면 안 됨.",
+"festival/f10_map":"보석상 거리에 빨간 동그라미. 이건 적어 둘 것.",
+"festival/f10_ticket":"도시행 오후 4시. 시간 꼭 기억할 것.",
+"festival/f10_crate":"상자 안에서 사각사각 소리. 고양이는 아닌 것 같음.",
+"festival/f10_practice":"같은 말 수십 번. 나도 받아쓰기 숙제 이렇게 함. 동지다.",
+"festival/f10_keys":"열쇠 엄청 많음. 짤랑짤랑. 아빠는 열쇠 하나도 맨날 잃어버림.",
+"snow/e11_tray":"돌 자리에 물만 고임. 기름은 가득. 이건 꼭 기억해 둘 것.",
+"snow/e11uv_film":"물 위에 반짝이가 둥둥. 예쁜데 마시면 안 될 것 같음.",
+"snow/e11_seal":"봉인 멀쩡함. 까만 깃털 콕. 서두르지 말고 볼 것.",
+"snow/e11_record":"5시 이상 없음. 도장 쾅. 글씨는 나보다 훨씬 잘 씀.",
+"snow/e11_milk":"우유 두 잔. 다 식음. 데워 먹고 싶다. 참음.",
+"snow/e11_coat":"회색 코트에 회색 모자. 온통 회색. 색깔 좀 써도 될 텐데.",
+"snow/e11_order":"지난 편지는 어디 있음? (뭐라고 쓴 거지. 손 시려서 글씨 덜덜.)",
+"snow/e11_hooks":"걸이 다섯 개 중 하나 빔. 삽 걸이도 빔. 숫자 세기 완료.",
+"snow/e11_mold":"동그란 쇠틀. 규정집에도 없음. 붕어빵 틀은 아님. 아쉬움.",
+"snow/e11_blanket":"담요가 동그랗게 움푹. 아직 따뜻함. 나도 눕고 싶다. 참음.",
+"snow/e11_sack":"우편 자루 묵직함. 내일 아침 첫 마차. 나도 타 보고 싶다.",
+"snow/e11_hoof":"발굽 가운데가 쩍 갈라짐. 눈이 덮기 전에 서둘러야 함.",
+"snow/e11_cape":"흰 망토가 눈 속에 숨어 있었음. 숨바꼭질 1등 할 듯.",
+"snow/e11_shovel":"삽이 문고리 밑에 비스듬히. 여관 낙인. 이건 꼭 적어 둘 것.",
+"snow/e11_mitten":"솜이 장갑. 한 짝만 있음. 꼭 돌려줄 거다.",
+"snow/e11_notice":"1985년. 아빠보다 나이 많은 벽보. (아빠는 아니라고 함.)",
+"snow/e11_map":"지도에 먼지 많음. 재채기 세 번 함. 메모가 날아갈 뻔.",
+"clapper/e12_hook":"추가 없음. 핀은 손으로 뽑음. 이건 꼭 기억해 둘 것.",
+"clapper/e12_feather":"흰 깃털 한 개. 간지럼 태우기 딱 좋음. 실험은 안 함.",
+"clapper/e12_note":"밤이 글씨 반듯함. 내 글씨랑 바꾸고 싶다.",
+"clapper/e12_sweep":"깃털 더미 폭신해 보임. 다이빙하고 싶음. 설이한테 혼날 듯.",
+"clapper/e12_door":"문 멀쩡함. 열쇠는 딱 둘. 숫자 2에 동그라미 침.",
+"clapper/e12uv_rail":"난간에 은빛 손바닥. 내 손 대 봄. 내 손이 반만 함.",
+"clapper/e12_echo":"메아리 상자에 '아' 해 봤는데 대답 안 함. 태엽 탓인 듯.",
+"clapper/e12_hoofprint":"발굽 자국 큼직. 두루미 발이랑 완전 다름. 그림 그려 둠. (못 알아봄.)",
+"clapper/e12_rental":"'비밀'에 밑줄 두 번. 비밀이면 왜 적었지?",
+"clapper/s12x_mold":"2번 거푸집. 1번은 어디 갔지. 3번도 궁금함.",
+"clapper/e12_visitor":"면회 딱 한 번. 짧다. 나라면 간식 들고 감.",
+"clapper/e12_release":"또박또박 글씨. 나랑 정반대. 부러움.",
+"clapper/e12_speech":"연설문 엄청 두꺼움. 졸림. 7쪽에 네모 구멍. 벌레는 아님.",
+"clapper/e12_cloth":"헝겊 반짝반짝. 아빠 구두 닦아 주면 좋아하려나. 안 해 줌.",
+"clapper/e12_letter":"어른 편지는 어려움. 두 번 읽음. 이건 꼭 기억해 둘 것.",
+"clapper/e12_fakecase":"진열함 텅 빔. 자국만 덩그러니. 가짜 추도 집 나갔나.",
+"clapper/e12_clapper":"진짜 추 찾음. 두드리니 맑은 소리. 이건 잘 지킬 것."
+});
+
+Object.assign(window.__MEMO=window.__MEMO||{},{
+"bureau/e13_rescue":"유리 조각 반짝반짝. 아빠는 꼭 이런 걸 밟음. 미리 경고함.",
+"bureau/e13_ladder":"사다리 엄청 높다. 아빠는 무서워서 못 올라감. 아마도.",
+"bureau/e13_tray":"브로치 자리만 텅 빔. 12냥이면 도토리가 몇 개지.",
+"bureau/e13_mirror":"닦은 뒤에 생긴 자국들. 놓치지 말 것.",
+"bureau/e13_stove":"종이 탄 냄새. 군고구마 냄새였으면 좋았을 텐데.",
+"bureau/e13uv_ash":"재마다 같은 꽃 도장. 수백 통. 꼭 기억할 것.",
+"bureau/e13_vault":"돈 자루 그대로. 편지 칸만 비었음. 이건 중요함.",
+"bureau/e13_stairs":"계단 번들번들. 여기 기름 붓는 거 반칙임. 아빠 접근 금지.",
+"bureau/e13_backdoor":"나가는 발자국만 한 줄. 들어온 자국 없음. 기억할 것.",
+"bureau/e13_brooch":"백합 브로치 예쁘다. 나도 갖고 싶음. 아빠한테 말해 볼까.",
+"bureau/e13_route":"분필 번짐. 그래도 내 글씨보다는 잘 읽힘. 그건 확실.",
+"bureau/e13_roll":"도장은 찍고 시간 칸은 텅. 이름만 쓰고 낸 숙제 같음.",
+"bureau/e13_blanket":"새 담요 푹신해 보임. 덮고 낮잠 자고 싶다. 참는 중.",
+"bureau/e13_stamp":"꽃 도장 하나. 내 손등에 찍어 보고 싶음. 꾹 참음.",
+"bureau/e13_ledger":"이름이 줄줄이. 받는 주소만 없음. 꼭 기억해 둘 것.",
+"lining/e14_steps":"뒷걸음 세 번, 그리고 꽈당. 할아버지 많이 놀라셨겠다.",
+"lining/e14_glasses":"알 하나 어디 갔지. 안경 혼자 윙크하는 중.",
+"lining/e14_fiber":"까만 털실. 가시가 무섭다. 내 양말 걸리면 끝장임.",
+"lining/e14_wick":"받침에 너구리 털. 털갈이 계절인가 봄. 몰래 고친 등불.",
+"lining/e14_shelf":"먼지 없는 네모. 아빠 책상엔 이런 데 없음. 전부 먼지.",
+"lining/e14_cups":"찻잔 둘, 차 그대로. 과자는 없었나. 그게 제일 아쉬움.",
+"lining/e14_claw":"다들 네로 자국이라고 함. 나는 아직 아무것도 단정 안 함.",
+"lining/e14_kettle":"물 다 졸았음. 아빠가 라면 끓이다 잊은 냄비랑 똑같다.",
+"lining/e14_roster":"내린 사람 딱 한 명. 마차 엄청 한가했겠다.",
+"lining/e14_bag":"불룩했다가 쭈그러짐. 간식 꺼내 먹은 거면 좋겠다.",
+"lining/e14_order":"시간이랑 장소가 너무 자세한 편지. 꼭 기억할 것.",
+"lining/e14_lens":"찾았다, 안경알. 할아버지한테 꼭 돌려드릴 것.",
+"lining/e14_emptybox":"우리 증거 상자에 빈 칸. 사무소 문 좀 잠그자, 아빠.",
+"lining/e14_stamp13":"봉인 그대로. 아무도 손 안 댔음. 얌전한 증거.",
+"lining/e14_register":"30년 동안 매주 금요일. 나는 일기 사흘도 못 씀.",
+"lining/e14_memo":"'목도리 챙길 것.' 할아버지 메모가 내 메모보다 훨씬 잘 읽힘.",
+"lining/e14_parcel":"30년 치 편지함. 이건 잘 지켜 드려야 함.",
+"lining/e14uv_wrap":"불 비추면 꽃밭, 안 비추면 그냥 종이. 신기하다.",
+"lining/e14_sled":"빨간 썰매. 매듭이 다 닳았음. 나도 한번 타 보고 싶다.",
+"lining/e14_notes":"쪽지 뭉치 두툼. 부탁을 엄청 많이 받았나 봄.",
+"lining/e14_lining":"안감 가득 흰 꽃. 예쁘다. 그런데 마음이 복잡함.",
+"lining/e14_reply":"할아버지 답장. 읽고 조금 울었음. 아빠한테는 비밀.",
+"kitchen/e15_lamp":"받침 텅. 유리에 성에. 손 대니까 차가워서 깜짝.",
+"kitchen/e15_lock":"부서진 데 하나 없음. 이건 꼭 기억해 둘 것.",
+"kitchen/e15_fur":"털 한 줌. 코에 대니까 재채기 나옴. 에취.",
+"kitchen/e15_tracks":"썰매 자국 두 줄. 쿵 하고 파인 자리. 메모해 둠.",
+"kitchen/e15_cutter":"꽃 쿠키 틀. 쿠키 생각에 집중 안 됨. 관장님 하나만요.",
+"kitchen/e15_bowl":"동지 팥죽 반 그릇. 할아버지가 남기시면 내가 먹어도 되나.",
+"kitchen/e15x_stove":"장작은 가득한데 불이 꺼져 감. 아빠, 장작 좀 넣어.",
+"kitchen/e15_hook":"1번 열쇠 제자리. 은빛 반짝. 할아버지 솜씨 최고.",
+"kitchen/e15_file":"2쪽이 뜯겨 나갔음. 꼭 찾아낼 것.",
+"kitchen/e15_carbon":"이름 칸 번짐. 내 글씨만큼 못 읽겠음. 왠지 친근함.",
+"kitchen/e15uv_name":"불빛 아래에서만 보이는 이름. 꼭 적어 둘 것.",
+"kitchen/e15_photo":"1985년. 아빠도 이때는 꼬맹이였겠지. 상상이 안 됨.",
+"kitchen/e15_orders":"쪽지가 한가득. 다 펼쳐 놓고 천천히 볼 것.",
+"kitchen/e15_stamp13":"새 도장 반질반질. 아직 한 번도 안 혼나 본 얼굴.",
+"kitchen/e15_list":"호두과자 심부름. 하나 몰래 먹은 거 아빠는 모름.",
+"kitchen/e15_invite":"나비가 아직 이걸 갖고 있었구나. 마음이 따뜻해짐.",
+"kitchen/e15x_ledger":"또 금요일. 30년. 금요일은 원래 간식 먹는 날인데.",
+"kitchen/e15_sled":"토리 썰매. 끈 꽉 묶였음. 나 태워 줄 때도 이렇게 묶어 주라.",
+"kitchen/e15x_path":"눈 위에 발자국 졸졸. (뭐라고 쓴 거지. 졸졸? 줄줄?)",
+"kitchen/e15_window":"창가에서 푸른 빛이 샘. 예쁘다. 오래 보고 싶음.",
+"kitchen/e15_key2":"낡은 열쇠. 반들반들. 오래 쓴 물건은 왠지 정이 감.",
+"kitchen/e15_stamp":"쿠키 도장! 할머니 쿠키 또 먹고 싶다. 침 흘림 주의.",
+"kitchen/e15_notebook":"장보기 공책 두툼함. 간식 목록도 있으면 좋겠다.",
+"kitchen/e15_scarf":"주황 목도리 포근해 보임. 할머니 뜨개 솜씨 최고."
+});
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
