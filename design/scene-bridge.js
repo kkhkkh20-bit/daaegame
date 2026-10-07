@@ -49,6 +49,7 @@
       return '<svg viewBox="0 0 100 101" aria-hidden="true" data-daram-art="' + id + '"><g id="' + marker + '" class="nodot" transform="matrix(' + scale + ' 0 0 ' + scale + ' ' + tx + ' ' + ty + ')">' + content + '</g></svg>';
     });
     if (refresh) refresh();
+    if (window.DaramScenePan) DaramScenePan.watchGame();
     return { locations: count, evidence: source.evidenceCount };
   }
   window.DaramSceneBridge = { install };
