@@ -37696,6 +37696,33 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  }catch(e){R.miss.push("bell "+e.message)}
  var _vt=visibleTalk;visibleTalk=function(c,k){var r=_vt.apply(this,arguments);try{return r.filter(function(t){return !t.needEv||G.asked.indexOf(t.id)>=0||t.needEv.every(function(id){return G.found.indexOf(id)>=0})})}catch(e){return r}};
 })();
+(function(){var R=window.__s182={ok:0,miss:[]};
+ function idx(L,who,sub){for(var i=0;i<L.length;i++)if(L[i][0]===who&&String(L[i][1]).indexOf(sub)>=0)return i;return -1}
+ try{var L=BOOK.cake.pre[1].lines;if(!L.__s182){L.__s182=1;
+  var i0=idx(L,"narr","문을 연 지");if(i0>=0){L.splice(i0+1,0,["narr","사무소는 원래 별빛 언덕 순찰대의 초소였다. 집주인은 언덕 숲 나무 집에 사는 부엉이 할아버지."]);R.ok++}
+  var i1=idx(L,"det0","언덕 등불 다음으로");if(i1>=0){L.splice(i1+1,0,
+   ["enter","owlgp",292,""],
+   ["owlgp","허허, 첫날 밤은 잘 잤느냐. 초소 바닥이 좀 차지?",""],
+   ["det1","바닥은 차가운데 창가 자리는 최고예요. 언덕 등불이 바로 보여요.","happy"],
+   ["owlgp","그래서 이 초소를 내준 게다. 저 등불 곁에 누가 있어 줬으면 했거든.",""],
+   ["det0","정말 월세는 안 받으셔도 됩니까?",""],
+   ["owlgp","대신 등불이 꺼지면 제일 먼저 뛰어 올라가 다오. 이 무릎으론 이제 힘들구나.",""],
+   ["det1","그 정도면 우리가 남는 장사인데요, 할아버지.","smug"],
+   ["owlgp","허허. 손님 오는 소리가 나는구나. 나는 이만 가마.",""],
+   ["exit","owlgp"]);R.ok++}else R.miss.push("cake lamp")}}catch(e){R.miss.push("cake "+e.message)}
+ try{var P=BOOK.window.post,pg=P[P.length-1],L2=pg.lines;if(!L2.__s182){L2.__s182=1;
+  if(pg.cast&&pg.cast.owlgp==null)pg.cast.owlgp=300;
+  var j=idx(L2,"det0","쪽지는 X 편지 옆에");if(j<0)j=L2.length-1;
+  L2.splice(j+1,0,["enter","owlgp",300,""],
+   ["owlgp","허허, 둘 다 얼굴이 심각하구나. 보리차 한 주전자 들고 왔다.",""],
+   ["det1","할아버지, 누가 우리를 지켜보는 것 같아요. 이 쪽지 좀 보세요.","nervous"],
+   ["owlgp","'잘 봤다, 꼬마 탐정들.' …칭찬 같구나. 나쁜 뜻은 아닌 것 같다만.",""],
+   ["det0","할아버지는 이 글씨, 본 적 있으십니까?",""],
+   ["owlgp","눈이 침침해서 원. 허허, 차 식기 전에 마시거라.",""],
+   ["exit","owlgp"]);R.ok++}}catch(e){R.miss.push("window "+e.message)}
+ try{var L3=BOOK.star.pre[1].lines,k=idx(L3,"det0","할아버지 마지막 날");if(k>=0){L3[k][1]="오늘은 우리 집주인 할아버지 은퇴식이다. 그런 말은 넣어 둬라.";R.ok++}else R.miss.push("star")}catch(e){R.miss.push("star "+e.message)}
+ try{var L4=BOOK.dark.post[5].lines,m=idx(L4,"owlgp","나는 너희를 이용했다");if(m>=0&&!L4.__s182){L4.__s182=1;L4.splice(m+1,0,["owlgp","초소를 너희에게 내준 것도 그래서다. 그 등불 곁에, 누군가 있어 줘야 했다.","sad"]);R.ok++}else R.miss.push("dark")}catch(e){R.miss.push("dark "+e.message)}
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
