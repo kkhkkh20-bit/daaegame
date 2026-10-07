@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "game": "다람 탐정 사무소",
   "source": "game.html CAST / BIO / PERSONA / CASES",
   "characterCount": 35,
@@ -1763,297 +1763,3251 @@
   },
   "backgroundOrder": [
     "main",
-    "cake",
-    "window",
-    "crown",
-    "star",
-    "bell",
-    "dark",
-    "museum",
-    "cart",
-    "glove",
-    "festival",
-    "snow",
-    "clapper",
-    "bureau",
-    "lining",
-    "kitchen",
+    "cake-kitchen",
+    "cake-window",
+    "cake-yard",
+    "window-under",
+    "window-field",
+    "window-bush",
+    "window-lib",
+    "window-pond",
+    "window-alley",
+    "crown-props",
+    "crown-stage",
+    "crown-dressing",
+    "crown-hall",
+    "star-hill",
+    "star-ladder",
+    "star-square",
+    "star-pond",
+    "star-post",
+    "star-pine",
+    "bell-tower",
+    "bell-street",
+    "bell-hall",
+    "bell-shop",
+    "bell-roof",
+    "bell-cellar",
+    "dark-office",
+    "dark-post",
+    "dark-school",
+    "dark-hill",
+    "dark-forest",
+    "museum-hall",
+    "museum-fuse",
+    "museum-office",
+    "museum-post",
+    "museum-roof",
+    "cart-hill",
+    "cart-shed",
+    "cart-office",
+    "cart-forest",
+    "cart-mansion",
+    "glove-pond",
+    "glove-lantern",
+    "glove-parlor",
+    "glove-cellar",
+    "glove-basement",
+    "glove-woods",
+    "festival-square",
+    "festival-museum",
+    "festival-storeroom",
+    "festival-coach",
+    "festival-road",
+    "festival-attic",
+    "snow-lamp",
+    "snow-inn",
+    "snow-stable",
+    "snow-fork",
+    "snow-shelter",
+    "snow-postoffice",
+    "clapper-tower",
+    "clapper-street",
+    "clapper-shop",
+    "clapper-jail",
+    "clapper-hall",
+    "bureau-street",
+    "bureau-shop",
+    "bureau-backroom",
+    "bureau-square",
+    "bureau-jail",
+    "bureau-study",
+    "lining-hill",
+    "lining-lantern",
+    "lining-station",
+    "lining-basement",
+    "lining-owlhouse",
+    "lining-field",
+    "lining-cloak",
+    "kitchen-hill",
+    "kitchen-owlhouse",
+    "kitchen-office",
+    "kitchen-post",
+    "kitchen-field",
+    "kitchen-kitchen",
     "forest-path"
   ],
   "backgrounds": {
     "main": {
-      "id": "main",
-      "name": "탐정 사무소 · 메인 화면",
-      "src": "backgrounds/main.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/main-wide.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
           0,
           0,
-          1536,
-          1024
+          1672,
+          940
         ]
       ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "main",
+      "name": "탐정 사무소 · 메인 화면",
       "caseId": null
     },
     "cake": {
-      "id": "cake",
-      "name": "사라진 딸기 케이크 · 할머니의 부엌",
-      "src": "backgrounds/scenes-01.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-01.png",
+      "width": 1672,
+      "height": 940,
       "frames": [
         [
           0,
           0,
-          768,
-          512
+          836,
+          470
         ]
       ],
-      "caseId": "cake"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cake",
+      "name": "사라진 딸기 케이크 · 부엌 식탁",
+      "caseId": "cake",
+      "locationId": "kitchen",
+      "aliasOf": "cake-kitchen"
     },
     "window": {
-      "id": "window",
-      "name": "깨진 도서관 창문 · 마을 도서관",
-      "src": "backgrounds/scenes-01.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-01.png",
+      "width": 1672,
+      "height": 940,
       "frames": [
         [
-          768,
-          0,
-          768,
-          512
+          836,
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "window"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "window",
+      "name": "깨진 도서관 창문 · 깨진 창문 아래",
+      "caseId": "window",
+      "locationId": "under",
+      "aliasOf": "window-under"
     },
     "crown": {
-      "id": "crown",
-      "name": "반짝이 왕관 도난 · 학예회 무대 뒤",
-      "src": "backgrounds/scenes-01.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-03.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
+          836,
           0,
-          512,
-          768,
-          512
+          836,
+          470
         ]
       ],
-      "caseId": "crown"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "crown",
+      "name": "반짝이 왕관 도난 사건 · 소품 상자",
+      "caseId": "crown",
+      "locationId": "props",
+      "aliasOf": "crown-props"
     },
     "star": {
+      "src": "backgrounds/locations-04.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
       "id": "star",
       "name": "꺼진 별빛 등불 · 별빛 언덕",
-      "src": "backgrounds/scenes-01.png",
-      "width": 1536,
-      "height": 1024,
-      "frames": [
-        [
-          768,
-          512,
-          768,
-          512
-        ]
-      ],
-      "caseId": "star"
+      "caseId": "star",
+      "locationId": "hill",
+      "aliasOf": "star-hill"
     },
     "bell": {
-      "id": "bell",
-      "name": "달빛 종이 멈춘 밤 · 종탑",
-      "src": "backgrounds/scenes-02.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-05.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
-          0,
-          0,
-          768,
-          512
+          836,
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "bell"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bell",
+      "name": "달빛 종이 멈춘 밤 · 달빛 종탑",
+      "caseId": "bell",
+      "locationId": "tower",
+      "aliasOf": "bell-tower"
     },
     "dark": {
-      "id": "dark",
-      "name": "빛을 훔치는 자 · 사무소의 밤",
-      "src": "backgrounds/scenes-02.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-07.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
-          768,
+          836,
           0,
-          768,
-          512
+          836,
+          470
         ]
       ],
-      "caseId": "dark"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "dark",
+      "name": "빛을 훔치는 자 · 탐정 사무소",
+      "caseId": "dark",
+      "locationId": "office",
+      "aliasOf": "dark-office"
     },
     "museum": {
-      "id": "museum",
-      "name": "뒤집힌 등불 · 숲속 박물관",
-      "src": "backgrounds/scenes-02.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-08.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
           0,
-          512,
-          768,
-          512
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "museum"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "museum",
+      "name": "뒤집힌 등불 · 박물관 전시실",
+      "caseId": "museum",
+      "locationId": "hall",
+      "aliasOf": "museum-hall"
     },
     "cart": {
-      "id": "cart",
-      "name": "멈춘 우편 마차 · 언덕길",
-      "src": "backgrounds/scenes-02.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-09.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
-          768,
-          512,
-          768,
-          512
+          836,
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "cart"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cart",
+      "name": "멈춘 우편 마차 · 언덕길 사고 현장",
+      "caseId": "cart",
+      "locationId": "hill",
+      "aliasOf": "cart-hill"
     },
     "glove": {
-      "id": "glove",
-      "name": "하얀 장갑의 밤 · 백 부인 응접실",
-      "src": "backgrounds/scenes-03.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-11.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
           0,
-          0,
-          768,
-          512
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "glove"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "glove",
+      "name": "하얀 장갑의 밤 · 백 부인 저택 응접실",
+      "caseId": "glove",
+      "locationId": "parlor",
+      "aliasOf": "glove-parlor"
     },
     "festival": {
-      "id": "festival",
-      "name": "별빛 축제의 밤 · 등불 광장",
-      "src": "backgrounds/scenes-03.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-12.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
-          768,
           0,
-          768,
-          512
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "festival"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "festival",
+      "name": "별빛 축제의 밤 · 별빛 등불 광장",
+      "caseId": "festival",
+      "locationId": "square",
+      "aliasOf": "festival-square"
     },
     "snow": {
-      "id": "snow",
-      "name": "이름 없는 마을 · 광산 마을",
-      "src": "backgrounds/scenes-03.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-14.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
           0,
-          512,
-          768,
-          512
+          0,
+          836,
+          470
         ]
       ],
-      "caseId": "snow"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "snow",
+      "name": "이름 없는 마을 · 갱도 등불 언덕",
+      "caseId": "snow",
+      "locationId": "lamp",
+      "aliasOf": "snow-lamp"
     },
     "clapper": {
-      "id": "clapper",
-      "name": "다시 멈춘 종 · 종탑 작업실",
-      "src": "backgrounds/scenes-03.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-15.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
-          768,
-          512,
-          768,
-          512
+          0,
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "clapper"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "clapper",
+      "name": "다시 멈춘 종 · 달빛 종탑",
+      "caseId": "clapper",
+      "locationId": "tower",
+      "aliasOf": "clapper-tower"
     },
     "bureau": {
-      "id": "bureau",
-      "name": "관리국장 · 도시 보석상",
-      "src": "backgrounds/scenes-04.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-17.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
+          836,
           0,
-          0,
-          768,
-          512
+          836,
+          470
         ]
       ],
-      "caseId": "bureau"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bureau",
+      "name": "관리국장 · 뒷방 · 관리국 창구",
+      "caseId": "bureau",
+      "locationId": "backroom",
+      "aliasOf": "bureau-backroom"
     },
     "lining": {
-      "id": "lining",
-      "name": "망토의 안감 · 정거장 대합실",
-      "src": "backgrounds/scenes-04.png",
-      "width": 1536,
-      "height": 1024,
+      "src": "backgrounds/locations-19.png",
+      "width": 1672,
+      "height": 941,
       "frames": [
         [
-          768,
-          0,
-          768,
-          512
+          836,
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "lining"
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining",
+      "name": "망토의 안감 · 네로의 망토",
+      "caseId": "lining",
+      "locationId": "cloak",
+      "aliasOf": "lining-cloak"
     },
     "kitchen": {
+      "src": "backgrounds/locations-21.png",
+      "width": 1673,
+      "height": 940,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
       "id": "kitchen",
-      "name": "부엌의 등불 · 마지막 밤",
-      "src": "backgrounds/scenes-04.png",
-      "width": 1536,
-      "height": 1024,
+      "name": "부엌의 등불 · 할머니의 부엌",
+      "caseId": "kitchen",
+      "locationId": "kitchen",
+      "aliasOf": "kitchen-kitchen"
+    },
+    "forest-path": {
+      "src": "backgrounds/locations-21.png",
+      "width": 1673,
+      "height": 940,
       "frames": [
         [
           0,
-          512,
-          768,
-          512
+          470,
+          836,
+          470
         ]
       ],
-      "caseId": "kitchen"
-    },
-    "forest-path": {
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
       "id": "forest-path",
       "name": "마을을 잇는 숲길",
-      "src": "backgrounds/scenes-04.png",
-      "width": 1536,
-      "height": 1024,
+      "caseId": null
+    },
+    "cake-kitchen": {
+      "src": "backgrounds/locations-01.png",
+      "width": 1672,
+      "height": 940,
       "frames": [
         [
-          768,
-          512,
-          768,
-          512
+          0,
+          0,
+          836,
+          470
         ]
       ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cake-kitchen",
+      "name": "사라진 딸기 케이크 · 부엌 식탁",
+      "caseId": "cake",
+      "locationId": "kitchen"
+    },
+    "cake-window": {
+      "src": "backgrounds/locations-01.png",
+      "width": 1672,
+      "height": 940,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cake-window",
+      "name": "사라진 딸기 케이크 · 부엌 창문",
+      "caseId": "cake",
+      "locationId": "window"
+    },
+    "cake-yard": {
+      "src": "backgrounds/locations-01.png",
+      "width": 1672,
+      "height": 940,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cake-yard",
+      "name": "사라진 딸기 케이크 · 마당",
+      "caseId": "cake",
+      "locationId": "yard"
+    },
+    "window-under": {
+      "src": "backgrounds/locations-01.png",
+      "width": 1672,
+      "height": 940,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "window-under",
+      "name": "깨진 도서관 창문 · 깨진 창문 아래",
+      "caseId": "window",
+      "locationId": "under"
+    },
+    "window-field": {
+      "src": "backgrounds/locations-02.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "window-field",
+      "name": "깨진 도서관 창문 · 운동장",
+      "caseId": "window",
+      "locationId": "field"
+    },
+    "window-bush": {
+      "src": "backgrounds/locations-02.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "window-bush",
+      "name": "깨진 도서관 창문 · 도서관 옆 덤불",
+      "caseId": "window",
+      "locationId": "bush"
+    },
+    "window-lib": {
+      "src": "backgrounds/locations-02.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "window-lib",
+      "name": "깨진 도서관 창문 · 도서관 안",
+      "caseId": "window",
+      "locationId": "lib"
+    },
+    "window-pond": {
+      "src": "backgrounds/locations-02.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "window-pond",
+      "name": "깨진 도서관 창문 · 연못",
+      "caseId": "window",
+      "locationId": "pond"
+    },
+    "window-alley": {
+      "src": "backgrounds/locations-03.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "window-alley",
+      "name": "깨진 도서관 창문 · 골목길",
+      "caseId": "window",
+      "locationId": "alley"
+    },
+    "crown-props": {
+      "src": "backgrounds/locations-03.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "crown-props",
+      "name": "반짝이 왕관 도난 사건 · 소품 상자",
+      "caseId": "crown",
+      "locationId": "props"
+    },
+    "crown-stage": {
+      "src": "backgrounds/locations-03.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "crown-stage",
+      "name": "반짝이 왕관 도난 사건 · 무대",
+      "caseId": "crown",
+      "locationId": "stage"
+    },
+    "crown-dressing": {
+      "src": "backgrounds/locations-03.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "crown-dressing",
+      "name": "반짝이 왕관 도난 사건 · 분장실",
+      "caseId": "crown",
+      "locationId": "dressing"
+    },
+    "crown-hall": {
+      "src": "backgrounds/locations-04.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "crown-hall",
+      "name": "반짝이 왕관 도난 사건 · 복도",
+      "caseId": "crown",
+      "locationId": "hall"
+    },
+    "star-hill": {
+      "src": "backgrounds/locations-04.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "star-hill",
+      "name": "꺼진 별빛 등불 · 별빛 언덕",
+      "caseId": "star",
+      "locationId": "hill"
+    },
+    "star-ladder": {
+      "src": "backgrounds/locations-04.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "star-ladder",
+      "name": "꺼진 별빛 등불 · 사다리길",
+      "caseId": "star",
+      "locationId": "ladder"
+    },
+    "star-square": {
+      "src": "backgrounds/locations-04.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "star-square",
+      "name": "꺼진 별빛 등불 · 잔치 광장",
+      "caseId": "star",
+      "locationId": "square"
+    },
+    "star-pond": {
+      "src": "backgrounds/locations-05.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "star-pond",
+      "name": "꺼진 별빛 등불 · 연못",
+      "caseId": "star",
+      "locationId": "pond"
+    },
+    "star-post": {
+      "src": "backgrounds/locations-05.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "star-post",
+      "name": "꺼진 별빛 등불 · 우체국",
+      "caseId": "star",
+      "locationId": "post"
+    },
+    "star-pine": {
+      "src": "backgrounds/locations-05.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "star-pine",
+      "name": "꺼진 별빛 등불 · 높은 소나무",
+      "caseId": "star",
+      "locationId": "pine"
+    },
+    "bell-tower": {
+      "src": "backgrounds/locations-05.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bell-tower",
+      "name": "달빛 종이 멈춘 밤 · 달빛 종탑",
+      "caseId": "bell",
+      "locationId": "tower"
+    },
+    "bell-street": {
+      "src": "backgrounds/locations-06.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bell-street",
+      "name": "달빛 종이 멈춘 밤 · 은빛 마을 거리",
+      "caseId": "bell",
+      "locationId": "street"
+    },
+    "bell-hall": {
+      "src": "backgrounds/locations-06.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bell-hall",
+      "name": "달빛 종이 멈춘 밤 · 마을 회관",
+      "caseId": "bell",
+      "locationId": "hall"
+    },
+    "bell-shop": {
+      "src": "backgrounds/locations-06.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bell-shop",
+      "name": "달빛 종이 멈춘 밤 · 톡의 작업실",
+      "caseId": "bell",
+      "locationId": "shop"
+    },
+    "bell-roof": {
+      "src": "backgrounds/locations-06.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bell-roof",
+      "name": "달빛 종이 멈춘 밤 · 종탑 지붕",
+      "caseId": "bell",
+      "locationId": "roof"
+    },
+    "bell-cellar": {
+      "src": "backgrounds/locations-07.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bell-cellar",
+      "name": "달빛 종이 멈춘 밤 · 종탑 지하실",
+      "caseId": "bell",
+      "locationId": "cellar"
+    },
+    "dark-office": {
+      "src": "backgrounds/locations-07.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "dark-office",
+      "name": "빛을 훔치는 자 · 탐정 사무소",
+      "caseId": "dark",
+      "locationId": "office"
+    },
+    "dark-post": {
+      "src": "backgrounds/locations-07.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "dark-post",
+      "name": "빛을 훔치는 자 · 우체국 뒷방",
+      "caseId": "dark",
+      "locationId": "post"
+    },
+    "dark-school": {
+      "src": "backgrounds/locations-07.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "dark-school",
+      "name": "빛을 훔치는 자 · 학교 기록실",
+      "caseId": "dark",
+      "locationId": "school"
+    },
+    "dark-hill": {
+      "src": "backgrounds/locations-08.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "dark-hill",
+      "name": "빛을 훔치는 자 · 꺼진 별빛 언덕",
+      "caseId": "dark",
+      "locationId": "hill"
+    },
+    "dark-forest": {
+      "src": "backgrounds/locations-08.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "dark-forest",
+      "name": "빛을 훔치는 자 · 언덕 반대편 숲",
+      "caseId": "dark",
+      "locationId": "forest"
+    },
+    "museum-hall": {
+      "src": "backgrounds/locations-08.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "museum-hall",
+      "name": "뒤집힌 등불 · 박물관 전시실",
+      "caseId": "museum",
+      "locationId": "hall"
+    },
+    "museum-fuse": {
+      "src": "backgrounds/locations-08.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "museum-fuse",
+      "name": "뒤집힌 등불 · 박물관 전기실",
+      "caseId": "museum",
+      "locationId": "fuse"
+    },
+    "museum-office": {
+      "src": "backgrounds/locations-09.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "museum-office",
+      "name": "뒤집힌 등불 · 관장실",
+      "caseId": "museum",
+      "locationId": "office"
+    },
+    "museum-post": {
+      "src": "backgrounds/locations-09.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "museum-post",
+      "name": "뒤집힌 등불 · 우체국",
+      "caseId": "museum",
+      "locationId": "post"
+    },
+    "museum-roof": {
+      "src": "backgrounds/locations-09.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "museum-roof",
+      "name": "뒤집힌 등불 · 박물관 지붕",
+      "caseId": "museum",
+      "locationId": "roof"
+    },
+    "cart-hill": {
+      "src": "backgrounds/locations-09.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cart-hill",
+      "name": "멈춘 우편 마차 · 언덕길 사고 현장",
+      "caseId": "cart",
+      "locationId": "hill"
+    },
+    "cart-shed": {
+      "src": "backgrounds/locations-10.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cart-shed",
+      "name": "멈춘 우편 마차 · 우편 마차 창고",
+      "caseId": "cart",
+      "locationId": "shed"
+    },
+    "cart-office": {
+      "src": "backgrounds/locations-10.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cart-office",
+      "name": "멈춘 우편 마차 · 탐정 사무소",
+      "caseId": "cart",
+      "locationId": "office"
+    },
+    "cart-forest": {
+      "src": "backgrounds/locations-10.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cart-forest",
+      "name": "멈춘 우편 마차 · 숲 어귀",
+      "caseId": "cart",
+      "locationId": "forest"
+    },
+    "cart-mansion": {
+      "src": "backgrounds/locations-10.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "cart-mansion",
+      "name": "멈춘 우편 마차 · 백 부인 저택 앞",
+      "caseId": "cart",
+      "locationId": "mansion"
+    },
+    "glove-pond": {
+      "src": "backgrounds/locations-11.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "glove-pond",
+      "name": "하얀 장갑의 밤 · 연못가",
+      "caseId": "glove",
+      "locationId": "pond"
+    },
+    "glove-lantern": {
+      "src": "backgrounds/locations-11.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "glove-lantern",
+      "name": "하얀 장갑의 밤 · 숲의 작은 등불",
+      "caseId": "glove",
+      "locationId": "lantern"
+    },
+    "glove-parlor": {
+      "src": "backgrounds/locations-11.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "glove-parlor",
+      "name": "하얀 장갑의 밤 · 백 부인 저택 응접실",
+      "caseId": "glove",
+      "locationId": "parlor"
+    },
+    "glove-cellar": {
+      "src": "backgrounds/locations-11.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "glove-cellar",
+      "name": "하얀 장갑의 밤 · 저택 지하 창고",
+      "caseId": "glove",
+      "locationId": "cellar"
+    },
+    "glove-basement": {
+      "src": "backgrounds/locations-12.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "glove-basement",
+      "name": "하얀 장갑의 밤 · 사무소 지하",
+      "caseId": "glove",
+      "locationId": "basement"
+    },
+    "glove-woods": {
+      "src": "backgrounds/locations-12.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "glove-woods",
+      "name": "하얀 장갑의 밤 · 자정의 숲",
+      "caseId": "glove",
+      "locationId": "woods"
+    },
+    "festival-square": {
+      "src": "backgrounds/locations-12.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "festival-square",
+      "name": "별빛 축제의 밤 · 별빛 등불 광장",
+      "caseId": "festival",
+      "locationId": "square"
+    },
+    "festival-museum": {
+      "src": "backgrounds/locations-12.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "festival-museum",
+      "name": "별빛 축제의 밤 · 박물관 금고실",
+      "caseId": "festival",
+      "locationId": "museum"
+    },
+    "festival-storeroom": {
+      "src": "backgrounds/locations-13.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "festival-storeroom",
+      "name": "별빛 축제의 밤 · 마을 창고",
+      "caseId": "festival",
+      "locationId": "storeroom"
+    },
+    "festival-coach": {
+      "src": "backgrounds/locations-13.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "festival-coach",
+      "name": "별빛 축제의 밤 · 저택 마차 창고",
+      "caseId": "festival",
+      "locationId": "coach"
+    },
+    "festival-road": {
+      "src": "backgrounds/locations-13.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "festival-road",
+      "name": "별빛 축제의 밤 · 도시로 가는 길",
+      "caseId": "festival",
+      "locationId": "road"
+    },
+    "festival-attic": {
+      "src": "backgrounds/locations-13.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "festival-attic",
+      "name": "별빛 축제의 밤 · 저택 다락",
+      "caseId": "festival",
+      "locationId": "attic"
+    },
+    "snow-lamp": {
+      "src": "backgrounds/locations-14.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "snow-lamp",
+      "name": "이름 없는 마을 · 갱도 등불 언덕",
+      "caseId": "snow",
+      "locationId": "lamp"
+    },
+    "snow-inn": {
+      "src": "backgrounds/locations-14.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "snow-inn",
+      "name": "이름 없는 마을 · 눈꽃 여관",
+      "caseId": "snow",
+      "locationId": "inn"
+    },
+    "snow-stable": {
+      "src": "backgrounds/locations-14.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "snow-stable",
+      "name": "이름 없는 마을 · 여관 마구간",
+      "caseId": "snow",
+      "locationId": "stable"
+    },
+    "snow-fork": {
+      "src": "backgrounds/locations-14.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "snow-fork",
+      "name": "이름 없는 마을 · 눈 덮인 갈림길",
+      "caseId": "snow",
+      "locationId": "fork"
+    },
+    "snow-shelter": {
+      "src": "backgrounds/locations-15.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "snow-shelter",
+      "name": "이름 없는 마을 · 광산 대피소",
+      "caseId": "snow",
+      "locationId": "shelter"
+    },
+    "snow-postoffice": {
+      "src": "backgrounds/locations-15.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "snow-postoffice",
+      "name": "이름 없는 마을 · 옛 우체국",
+      "caseId": "snow",
+      "locationId": "postoffice"
+    },
+    "clapper-tower": {
+      "src": "backgrounds/locations-15.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "clapper-tower",
+      "name": "다시 멈춘 종 · 달빛 종탑",
+      "caseId": "clapper",
+      "locationId": "tower"
+    },
+    "clapper-street": {
+      "src": "backgrounds/locations-15.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "clapper-street",
+      "name": "다시 멈춘 종 · 은빛 마을 거리",
+      "caseId": "clapper",
+      "locationId": "street"
+    },
+    "clapper-shop": {
+      "src": "backgrounds/locations-16.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "clapper-shop",
+      "name": "다시 멈춘 종 · 톡의 작업실",
+      "caseId": "clapper",
+      "locationId": "shop"
+    },
+    "clapper-jail": {
+      "src": "backgrounds/locations-16.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "clapper-jail",
+      "name": "다시 멈춘 종 · 은빛 마을 감시소",
+      "caseId": "clapper",
+      "locationId": "jail"
+    },
+    "clapper-hall": {
+      "src": "backgrounds/locations-16.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "clapper-hall",
+      "name": "다시 멈춘 종 · 마을 회관",
+      "caseId": "clapper",
+      "locationId": "hall"
+    },
+    "bureau-street": {
+      "src": "backgrounds/locations-16.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bureau-street",
+      "name": "관리국장 · 보석상 거리",
+      "caseId": "bureau",
+      "locationId": "street"
+    },
+    "bureau-shop": {
+      "src": "backgrounds/locations-17.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bureau-shop",
+      "name": "관리국장 · 은호 보석상 앞가게",
+      "caseId": "bureau",
+      "locationId": "shop"
+    },
+    "bureau-backroom": {
+      "src": "backgrounds/locations-17.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bureau-backroom",
+      "name": "관리국장 · 뒷방 · 관리국 창구",
+      "caseId": "bureau",
+      "locationId": "backroom"
+    },
+    "bureau-square": {
+      "src": "backgrounds/locations-17.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bureau-square",
+      "name": "관리국장 · 시계탑 광장",
+      "caseId": "bureau",
+      "locationId": "square"
+    },
+    "bureau-jail": {
+      "src": "backgrounds/locations-17.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bureau-jail",
+      "name": "관리국장 · 도시 감시소",
+      "caseId": "bureau",
+      "locationId": "jail"
+    },
+    "bureau-study": {
+      "src": "backgrounds/locations-18.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "bureau-study",
+      "name": "관리국장 · 은호의 서재 (2층)",
+      "caseId": "bureau",
+      "locationId": "study"
+    },
+    "lining-hill": {
+      "src": "backgrounds/locations-18.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining-hill",
+      "name": "망토의 안감 · 언덕 돌계단",
+      "caseId": "lining",
+      "locationId": "hill"
+    },
+    "lining-lantern": {
+      "src": "backgrounds/locations-18.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining-lantern",
+      "name": "망토의 안감 · 숲의 작은 등불",
+      "caseId": "lining",
+      "locationId": "lantern"
+    },
+    "lining-station": {
+      "src": "backgrounds/locations-18.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining-station",
+      "name": "망토의 안감 · 마차 정거장 대합실",
+      "caseId": "lining",
+      "locationId": "station"
+    },
+    "lining-basement": {
+      "src": "backgrounds/locations-19.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining-basement",
+      "name": "망토의 안감 · 사무소 지하",
+      "caseId": "lining",
+      "locationId": "basement"
+    },
+    "lining-owlhouse": {
+      "src": "backgrounds/locations-19.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining-owlhouse",
+      "name": "망토의 안감 · 부엉이 할아버지 댁",
+      "caseId": "lining",
+      "locationId": "owlhouse"
+    },
+    "lining-field": {
+      "src": "backgrounds/locations-19.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining-field",
+      "name": "망토의 안감 · 당근밭 옆 빨간 우체통",
+      "caseId": "lining",
+      "locationId": "field"
+    },
+    "lining-cloak": {
+      "src": "backgrounds/locations-19.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "lining-cloak",
+      "name": "망토의 안감 · 네로의 망토",
+      "caseId": "lining",
+      "locationId": "cloak"
+    },
+    "kitchen-hill": {
+      "src": "backgrounds/locations-20.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "kitchen-hill",
+      "name": "부엌의 등불 · 별빛 언덕",
+      "caseId": "kitchen",
+      "locationId": "hill"
+    },
+    "kitchen-owlhouse": {
+      "src": "backgrounds/locations-20.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "kitchen-owlhouse",
+      "name": "부엌의 등불 · 부엉이 할아버지 댁",
+      "caseId": "kitchen",
+      "locationId": "owlhouse"
+    },
+    "kitchen-office": {
+      "src": "backgrounds/locations-20.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "kitchen-office",
+      "name": "부엌의 등불 · 탐정 사무소",
+      "caseId": "kitchen",
+      "locationId": "office"
+    },
+    "kitchen-post": {
+      "src": "backgrounds/locations-20.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "kitchen-post",
+      "name": "부엌의 등불 · 우체국",
+      "caseId": "kitchen",
+      "locationId": "post"
+    },
+    "kitchen-field": {
+      "src": "backgrounds/locations-21.png",
+      "width": 1673,
+      "height": 940,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "kitchen-field",
+      "name": "부엌의 등불 · 당근밭 우체통과 헛간",
+      "caseId": "kitchen",
+      "locationId": "field"
+    },
+    "kitchen-kitchen": {
+      "src": "backgrounds/locations-21.png",
+      "width": 1673,
+      "height": 940,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "kitchen-kitchen",
+      "name": "부엌의 등불 · 할머니의 부엌",
+      "caseId": "kitchen",
+      "locationId": "kitchen"
+    },
+    "zoom-drawer1": {
+      "src": "backgrounds/locations-21.png",
+      "width": 1673,
+      "height": 940,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "zoom-drawer1",
+      "name": "drawer1 · 확대 조사",
+      "caseId": null
+    },
+    "zoom-drawer2": {
+      "src": "backgrounds/locations-22.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "zoom-drawer2",
+      "name": "drawer2 · 확대 조사",
+      "caseId": null
+    },
+    "zoom-drawer3": {
+      "src": "backgrounds/locations-22.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          0,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "zoom-drawer3",
+      "name": "drawer3 · 확대 조사",
+      "caseId": null
+    },
+    "zoom-box4": {
+      "src": "backgrounds/locations-22.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          0,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "zoom-box4",
+      "name": "box4 · 확대 조사",
+      "caseId": null
+    },
+    "zoom-drawer7": {
+      "src": "backgrounds/locations-22.png",
+      "width": 1672,
+      "height": 941,
+      "frames": [
+        [
+          836,
+          470,
+          836,
+          470
+        ]
+      ],
+      "aspectRatio": [
+        16,
+        9
+      ],
+      "safeFrame": true,
+      "id": "zoom-drawer7",
+      "name": "drawer7 · 확대 조사",
       "caseId": null
     }
   },
   "frameFormat": "[x,y,width,height] in original PNG pixels; render with a clipped SVG viewport or equivalent atlas renderer",
-  "representativeBackgrounds": true
+  "representativeBackgrounds": false,
+  "aspectRatio": [
+    16,
+    9
+  ],
+  "locationOrder": [
+    "cake-kitchen",
+    "cake-window",
+    "cake-yard",
+    "window-under",
+    "window-field",
+    "window-bush",
+    "window-lib",
+    "window-pond",
+    "window-alley",
+    "crown-props",
+    "crown-stage",
+    "crown-dressing",
+    "crown-hall",
+    "star-hill",
+    "star-ladder",
+    "star-square",
+    "star-pond",
+    "star-post",
+    "star-pine",
+    "bell-tower",
+    "bell-street",
+    "bell-hall",
+    "bell-shop",
+    "bell-roof",
+    "bell-cellar",
+    "dark-office",
+    "dark-post",
+    "dark-school",
+    "dark-hill",
+    "dark-forest",
+    "museum-hall",
+    "museum-fuse",
+    "museum-office",
+    "museum-post",
+    "museum-roof",
+    "cart-hill",
+    "cart-shed",
+    "cart-office",
+    "cart-forest",
+    "cart-mansion",
+    "glove-pond",
+    "glove-lantern",
+    "glove-parlor",
+    "glove-cellar",
+    "glove-basement",
+    "glove-woods",
+    "festival-square",
+    "festival-museum",
+    "festival-storeroom",
+    "festival-coach",
+    "festival-road",
+    "festival-attic",
+    "snow-lamp",
+    "snow-inn",
+    "snow-stable",
+    "snow-fork",
+    "snow-shelter",
+    "snow-postoffice",
+    "clapper-tower",
+    "clapper-street",
+    "clapper-shop",
+    "clapper-jail",
+    "clapper-hall",
+    "bureau-street",
+    "bureau-shop",
+    "bureau-backroom",
+    "bureau-square",
+    "bureau-jail",
+    "bureau-study",
+    "lining-hill",
+    "lining-lantern",
+    "lining-station",
+    "lining-basement",
+    "lining-owlhouse",
+    "lining-field",
+    "lining-cloak",
+    "kitchen-hill",
+    "kitchen-owlhouse",
+    "kitchen-office",
+    "kitchen-post",
+    "kitchen-field",
+    "kitchen-kitchen"
+  ],
+  "locationCount": 82,
+  "evidenceCount": 250,
+  "sceneMap": "scene-map.json",
+  "zoomBackgrounds": {
+    "drawer1": "zoom-drawer1",
+    "drawer2": "zoom-drawer2",
+    "drawer3": "zoom-drawer3",
+    "box4": "zoom-box4",
+    "drawer7": "zoom-drawer7"
+  },
+  "cases": [
+    {
+      "id": "cake",
+      "title": "사라진 딸기 케이크",
+      "time": "오후 3시 ~ 3시 40분",
+      "locations": [
+        "cake-kitchen",
+        "cake-window",
+        "cake-yard"
+      ]
+    },
+    {
+      "id": "window",
+      "title": "깨진 도서관 창문",
+      "time": "오후 2시 무렵",
+      "locations": [
+        "window-under",
+        "window-field",
+        "window-bush",
+        "window-lib",
+        "window-pond",
+        "window-alley"
+      ]
+    },
+    {
+      "id": "crown",
+      "title": "반짝이 왕관 도난 사건",
+      "time": "공연 30분 전",
+      "locations": [
+        "crown-props",
+        "crown-stage",
+        "crown-dressing",
+        "crown-hall"
+      ]
+    },
+    {
+      "id": "star",
+      "title": "꺼진 별빛 등불",
+      "time": "저녁 6시 30분 ~ 7시 10분",
+      "locations": [
+        "star-hill",
+        "star-ladder",
+        "star-square",
+        "star-pond",
+        "star-post",
+        "star-pine"
+      ]
+    },
+    {
+      "id": "bell",
+      "title": "달빛 종이 멈춘 밤",
+      "time": "밤 10시 ~ 11시",
+      "locations": [
+        "bell-tower",
+        "bell-street",
+        "bell-hall",
+        "bell-shop",
+        "bell-roof",
+        "bell-cellar"
+      ]
+    },
+    {
+      "id": "dark",
+      "title": "빛을 훔치는 자",
+      "time": "밤 8시 ~ 9시",
+      "locations": [
+        "dark-office",
+        "dark-post",
+        "dark-school",
+        "dark-hill",
+        "dark-forest"
+      ]
+    },
+    {
+      "id": "museum",
+      "title": "뒤집힌 등불",
+      "time": "밤 8시 30분 ~ 9시 30분",
+      "locations": [
+        "museum-hall",
+        "museum-fuse",
+        "museum-office",
+        "museum-post",
+        "museum-roof"
+      ]
+    },
+    {
+      "id": "cart",
+      "title": "멈춘 우편 마차",
+      "time": "밤 8시 50분 ~ 9시 10분",
+      "locations": [
+        "cart-hill",
+        "cart-shed",
+        "cart-office",
+        "cart-forest",
+        "cart-mansion"
+      ]
+    },
+    {
+      "id": "glove",
+      "title": "하얀 장갑의 밤",
+      "time": "별빛 축제 이틀 전 밤 11시 40분 ~ 축제 전날 자정",
+      "locations": [
+        "glove-pond",
+        "glove-lantern",
+        "glove-parlor",
+        "glove-cellar",
+        "glove-basement",
+        "glove-woods"
+      ]
+    },
+    {
+      "id": "festival",
+      "title": "별빛 축제의 밤",
+      "time": "별빛 축제 날 아침 9시 31분 ~ 해 질 녘",
+      "locations": [
+        "festival-square",
+        "festival-museum",
+        "festival-storeroom",
+        "festival-coach",
+        "festival-road",
+        "festival-attic"
+      ]
+    },
+    {
+      "id": "snow",
+      "title": "이름 없는 마을",
+      "time": "첫눈 오는 날 오후 4시 반 ~ 밤 9시",
+      "locations": [
+        "snow-lamp",
+        "snow-inn",
+        "snow-stable",
+        "snow-fork",
+        "snow-shelter",
+        "snow-postoffice"
+      ]
+    },
+    {
+      "id": "clapper",
+      "title": "다시 멈춘 종",
+      "time": "첫눈 열흘 뒤, 보름밤 9시 ~ 11시",
+      "locations": [
+        "clapper-tower",
+        "clapper-street",
+        "clapper-shop",
+        "clapper-jail",
+        "clapper-hall"
+      ]
+    },
+    {
+      "id": "bureau",
+      "title": "관리국장",
+      "time": "은빛 마을 사건 사흘 뒤 · 해 질 녘 5시 ~ 밤 9시",
+      "locations": [
+        "bureau-street",
+        "bureau-shop",
+        "bureau-backroom",
+        "bureau-square",
+        "bureau-jail",
+        "bureau-study"
+      ]
+    },
+    {
+      "id": "lining",
+      "title": "망토의 안감",
+      "time": "동지 사흘 전 밤 9시 ~ 이튿날 새벽 6시 반",
+      "locations": [
+        "lining-hill",
+        "lining-lantern",
+        "lining-station",
+        "lining-basement",
+        "lining-owlhouse",
+        "lining-field",
+        "lining-cloak"
+      ]
+    },
+    {
+      "id": "kitchen",
+      "title": "부엌의 등불",
+      "time": "동짓날 오후 4시 ~ 밤 9시",
+      "locations": [
+        "kitchen-hill",
+        "kitchen-owlhouse",
+        "kitchen-office",
+        "kitchen-post",
+        "kitchen-field",
+        "kitchen-kitchen"
+      ]
+    }
+  ],
+  "locations": {
+    "cake-kitchen": {
+      "id": "cake-kitchen",
+      "caseId": "cake",
+      "locationId": "kitchen",
+      "name": "부엌 식탁",
+      "backgroundId": "cake-kitchen"
+    },
+    "cake-window": {
+      "id": "cake-window",
+      "caseId": "cake",
+      "locationId": "window",
+      "name": "부엌 창문",
+      "backgroundId": "cake-window"
+    },
+    "cake-yard": {
+      "id": "cake-yard",
+      "caseId": "cake",
+      "locationId": "yard",
+      "name": "마당",
+      "backgroundId": "cake-yard"
+    },
+    "window-under": {
+      "id": "window-under",
+      "caseId": "window",
+      "locationId": "under",
+      "name": "깨진 창문 아래",
+      "backgroundId": "window-under"
+    },
+    "window-field": {
+      "id": "window-field",
+      "caseId": "window",
+      "locationId": "field",
+      "name": "운동장",
+      "backgroundId": "window-field"
+    },
+    "window-bush": {
+      "id": "window-bush",
+      "caseId": "window",
+      "locationId": "bush",
+      "name": "도서관 옆 덤불",
+      "backgroundId": "window-bush"
+    },
+    "window-lib": {
+      "id": "window-lib",
+      "caseId": "window",
+      "locationId": "lib",
+      "name": "도서관 안",
+      "backgroundId": "window-lib"
+    },
+    "window-pond": {
+      "id": "window-pond",
+      "caseId": "window",
+      "locationId": "pond",
+      "name": "연못",
+      "backgroundId": "window-pond"
+    },
+    "window-alley": {
+      "id": "window-alley",
+      "caseId": "window",
+      "locationId": "alley",
+      "name": "골목길",
+      "backgroundId": "window-alley"
+    },
+    "crown-props": {
+      "id": "crown-props",
+      "caseId": "crown",
+      "locationId": "props",
+      "name": "소품 상자",
+      "backgroundId": "crown-props"
+    },
+    "crown-stage": {
+      "id": "crown-stage",
+      "caseId": "crown",
+      "locationId": "stage",
+      "name": "무대",
+      "backgroundId": "crown-stage"
+    },
+    "crown-dressing": {
+      "id": "crown-dressing",
+      "caseId": "crown",
+      "locationId": "dressing",
+      "name": "분장실",
+      "backgroundId": "crown-dressing"
+    },
+    "crown-hall": {
+      "id": "crown-hall",
+      "caseId": "crown",
+      "locationId": "hall",
+      "name": "복도",
+      "backgroundId": "crown-hall"
+    },
+    "star-hill": {
+      "id": "star-hill",
+      "caseId": "star",
+      "locationId": "hill",
+      "name": "별빛 언덕",
+      "backgroundId": "star-hill"
+    },
+    "star-ladder": {
+      "id": "star-ladder",
+      "caseId": "star",
+      "locationId": "ladder",
+      "name": "사다리길",
+      "backgroundId": "star-ladder"
+    },
+    "star-square": {
+      "id": "star-square",
+      "caseId": "star",
+      "locationId": "square",
+      "name": "잔치 광장",
+      "backgroundId": "star-square"
+    },
+    "star-pond": {
+      "id": "star-pond",
+      "caseId": "star",
+      "locationId": "pond",
+      "name": "연못",
+      "backgroundId": "star-pond"
+    },
+    "star-post": {
+      "id": "star-post",
+      "caseId": "star",
+      "locationId": "post",
+      "name": "우체국",
+      "backgroundId": "star-post"
+    },
+    "star-pine": {
+      "id": "star-pine",
+      "caseId": "star",
+      "locationId": "pine",
+      "name": "높은 소나무",
+      "backgroundId": "star-pine"
+    },
+    "bell-tower": {
+      "id": "bell-tower",
+      "caseId": "bell",
+      "locationId": "tower",
+      "name": "달빛 종탑",
+      "backgroundId": "bell-tower"
+    },
+    "bell-street": {
+      "id": "bell-street",
+      "caseId": "bell",
+      "locationId": "street",
+      "name": "은빛 마을 거리",
+      "backgroundId": "bell-street"
+    },
+    "bell-hall": {
+      "id": "bell-hall",
+      "caseId": "bell",
+      "locationId": "hall",
+      "name": "마을 회관",
+      "backgroundId": "bell-hall"
+    },
+    "bell-shop": {
+      "id": "bell-shop",
+      "caseId": "bell",
+      "locationId": "shop",
+      "name": "톡의 작업실",
+      "backgroundId": "bell-shop"
+    },
+    "bell-roof": {
+      "id": "bell-roof",
+      "caseId": "bell",
+      "locationId": "roof",
+      "name": "종탑 지붕",
+      "backgroundId": "bell-roof"
+    },
+    "bell-cellar": {
+      "id": "bell-cellar",
+      "caseId": "bell",
+      "locationId": "cellar",
+      "name": "종탑 지하실",
+      "backgroundId": "bell-cellar"
+    },
+    "dark-office": {
+      "id": "dark-office",
+      "caseId": "dark",
+      "locationId": "office",
+      "name": "탐정 사무소",
+      "backgroundId": "dark-office"
+    },
+    "dark-post": {
+      "id": "dark-post",
+      "caseId": "dark",
+      "locationId": "post",
+      "name": "우체국 뒷방",
+      "backgroundId": "dark-post"
+    },
+    "dark-school": {
+      "id": "dark-school",
+      "caseId": "dark",
+      "locationId": "school",
+      "name": "학교 기록실",
+      "backgroundId": "dark-school"
+    },
+    "dark-hill": {
+      "id": "dark-hill",
+      "caseId": "dark",
+      "locationId": "hill",
+      "name": "꺼진 별빛 언덕",
+      "backgroundId": "dark-hill"
+    },
+    "dark-forest": {
+      "id": "dark-forest",
+      "caseId": "dark",
+      "locationId": "forest",
+      "name": "언덕 반대편 숲",
+      "backgroundId": "dark-forest"
+    },
+    "museum-hall": {
+      "id": "museum-hall",
+      "caseId": "museum",
+      "locationId": "hall",
+      "name": "박물관 전시실",
+      "backgroundId": "museum-hall"
+    },
+    "museum-fuse": {
+      "id": "museum-fuse",
+      "caseId": "museum",
+      "locationId": "fuse",
+      "name": "박물관 전기실",
+      "backgroundId": "museum-fuse"
+    },
+    "museum-office": {
+      "id": "museum-office",
+      "caseId": "museum",
+      "locationId": "office",
+      "name": "관장실",
+      "backgroundId": "museum-office"
+    },
+    "museum-post": {
+      "id": "museum-post",
+      "caseId": "museum",
+      "locationId": "post",
+      "name": "우체국",
+      "backgroundId": "museum-post"
+    },
+    "museum-roof": {
+      "id": "museum-roof",
+      "caseId": "museum",
+      "locationId": "roof",
+      "name": "박물관 지붕",
+      "backgroundId": "museum-roof"
+    },
+    "cart-hill": {
+      "id": "cart-hill",
+      "caseId": "cart",
+      "locationId": "hill",
+      "name": "언덕길 사고 현장",
+      "backgroundId": "cart-hill"
+    },
+    "cart-shed": {
+      "id": "cart-shed",
+      "caseId": "cart",
+      "locationId": "shed",
+      "name": "우편 마차 창고",
+      "backgroundId": "cart-shed"
+    },
+    "cart-office": {
+      "id": "cart-office",
+      "caseId": "cart",
+      "locationId": "office",
+      "name": "탐정 사무소",
+      "backgroundId": "cart-office"
+    },
+    "cart-forest": {
+      "id": "cart-forest",
+      "caseId": "cart",
+      "locationId": "forest",
+      "name": "숲 어귀",
+      "backgroundId": "cart-forest"
+    },
+    "cart-mansion": {
+      "id": "cart-mansion",
+      "caseId": "cart",
+      "locationId": "mansion",
+      "name": "백 부인 저택 앞",
+      "backgroundId": "cart-mansion"
+    },
+    "glove-pond": {
+      "id": "glove-pond",
+      "caseId": "glove",
+      "locationId": "pond",
+      "name": "연못가",
+      "backgroundId": "glove-pond"
+    },
+    "glove-lantern": {
+      "id": "glove-lantern",
+      "caseId": "glove",
+      "locationId": "lantern",
+      "name": "숲의 작은 등불",
+      "backgroundId": "glove-lantern"
+    },
+    "glove-parlor": {
+      "id": "glove-parlor",
+      "caseId": "glove",
+      "locationId": "parlor",
+      "name": "백 부인 저택 응접실",
+      "backgroundId": "glove-parlor"
+    },
+    "glove-cellar": {
+      "id": "glove-cellar",
+      "caseId": "glove",
+      "locationId": "cellar",
+      "name": "저택 지하 창고",
+      "backgroundId": "glove-cellar"
+    },
+    "glove-basement": {
+      "id": "glove-basement",
+      "caseId": "glove",
+      "locationId": "basement",
+      "name": "사무소 지하",
+      "backgroundId": "glove-basement"
+    },
+    "glove-woods": {
+      "id": "glove-woods",
+      "caseId": "glove",
+      "locationId": "woods",
+      "name": "자정의 숲",
+      "backgroundId": "glove-woods"
+    },
+    "festival-square": {
+      "id": "festival-square",
+      "caseId": "festival",
+      "locationId": "square",
+      "name": "별빛 등불 광장",
+      "backgroundId": "festival-square"
+    },
+    "festival-museum": {
+      "id": "festival-museum",
+      "caseId": "festival",
+      "locationId": "museum",
+      "name": "박물관 금고실",
+      "backgroundId": "festival-museum"
+    },
+    "festival-storeroom": {
+      "id": "festival-storeroom",
+      "caseId": "festival",
+      "locationId": "storeroom",
+      "name": "마을 창고",
+      "backgroundId": "festival-storeroom"
+    },
+    "festival-coach": {
+      "id": "festival-coach",
+      "caseId": "festival",
+      "locationId": "coach",
+      "name": "저택 마차 창고",
+      "backgroundId": "festival-coach"
+    },
+    "festival-road": {
+      "id": "festival-road",
+      "caseId": "festival",
+      "locationId": "road",
+      "name": "도시로 가는 길",
+      "backgroundId": "festival-road"
+    },
+    "festival-attic": {
+      "id": "festival-attic",
+      "caseId": "festival",
+      "locationId": "attic",
+      "name": "저택 다락",
+      "backgroundId": "festival-attic"
+    },
+    "snow-lamp": {
+      "id": "snow-lamp",
+      "caseId": "snow",
+      "locationId": "lamp",
+      "name": "갱도 등불 언덕",
+      "backgroundId": "snow-lamp"
+    },
+    "snow-inn": {
+      "id": "snow-inn",
+      "caseId": "snow",
+      "locationId": "inn",
+      "name": "눈꽃 여관",
+      "backgroundId": "snow-inn"
+    },
+    "snow-stable": {
+      "id": "snow-stable",
+      "caseId": "snow",
+      "locationId": "stable",
+      "name": "여관 마구간",
+      "backgroundId": "snow-stable"
+    },
+    "snow-fork": {
+      "id": "snow-fork",
+      "caseId": "snow",
+      "locationId": "fork",
+      "name": "눈 덮인 갈림길",
+      "backgroundId": "snow-fork"
+    },
+    "snow-shelter": {
+      "id": "snow-shelter",
+      "caseId": "snow",
+      "locationId": "shelter",
+      "name": "광산 대피소",
+      "backgroundId": "snow-shelter"
+    },
+    "snow-postoffice": {
+      "id": "snow-postoffice",
+      "caseId": "snow",
+      "locationId": "postoffice",
+      "name": "옛 우체국",
+      "backgroundId": "snow-postoffice"
+    },
+    "clapper-tower": {
+      "id": "clapper-tower",
+      "caseId": "clapper",
+      "locationId": "tower",
+      "name": "달빛 종탑",
+      "backgroundId": "clapper-tower"
+    },
+    "clapper-street": {
+      "id": "clapper-street",
+      "caseId": "clapper",
+      "locationId": "street",
+      "name": "은빛 마을 거리",
+      "backgroundId": "clapper-street"
+    },
+    "clapper-shop": {
+      "id": "clapper-shop",
+      "caseId": "clapper",
+      "locationId": "shop",
+      "name": "톡의 작업실",
+      "backgroundId": "clapper-shop"
+    },
+    "clapper-jail": {
+      "id": "clapper-jail",
+      "caseId": "clapper",
+      "locationId": "jail",
+      "name": "은빛 마을 감시소",
+      "backgroundId": "clapper-jail"
+    },
+    "clapper-hall": {
+      "id": "clapper-hall",
+      "caseId": "clapper",
+      "locationId": "hall",
+      "name": "마을 회관",
+      "backgroundId": "clapper-hall"
+    },
+    "bureau-street": {
+      "id": "bureau-street",
+      "caseId": "bureau",
+      "locationId": "street",
+      "name": "보석상 거리",
+      "backgroundId": "bureau-street"
+    },
+    "bureau-shop": {
+      "id": "bureau-shop",
+      "caseId": "bureau",
+      "locationId": "shop",
+      "name": "은호 보석상 앞가게",
+      "backgroundId": "bureau-shop"
+    },
+    "bureau-backroom": {
+      "id": "bureau-backroom",
+      "caseId": "bureau",
+      "locationId": "backroom",
+      "name": "뒷방 · 관리국 창구",
+      "backgroundId": "bureau-backroom"
+    },
+    "bureau-square": {
+      "id": "bureau-square",
+      "caseId": "bureau",
+      "locationId": "square",
+      "name": "시계탑 광장",
+      "backgroundId": "bureau-square"
+    },
+    "bureau-jail": {
+      "id": "bureau-jail",
+      "caseId": "bureau",
+      "locationId": "jail",
+      "name": "도시 감시소",
+      "backgroundId": "bureau-jail"
+    },
+    "bureau-study": {
+      "id": "bureau-study",
+      "caseId": "bureau",
+      "locationId": "study",
+      "name": "은호의 서재 (2층)",
+      "backgroundId": "bureau-study"
+    },
+    "lining-hill": {
+      "id": "lining-hill",
+      "caseId": "lining",
+      "locationId": "hill",
+      "name": "언덕 돌계단",
+      "backgroundId": "lining-hill"
+    },
+    "lining-lantern": {
+      "id": "lining-lantern",
+      "caseId": "lining",
+      "locationId": "lantern",
+      "name": "숲의 작은 등불",
+      "backgroundId": "lining-lantern"
+    },
+    "lining-station": {
+      "id": "lining-station",
+      "caseId": "lining",
+      "locationId": "station",
+      "name": "마차 정거장 대합실",
+      "backgroundId": "lining-station"
+    },
+    "lining-basement": {
+      "id": "lining-basement",
+      "caseId": "lining",
+      "locationId": "basement",
+      "name": "사무소 지하",
+      "backgroundId": "lining-basement"
+    },
+    "lining-owlhouse": {
+      "id": "lining-owlhouse",
+      "caseId": "lining",
+      "locationId": "owlhouse",
+      "name": "부엉이 할아버지 댁",
+      "backgroundId": "lining-owlhouse"
+    },
+    "lining-field": {
+      "id": "lining-field",
+      "caseId": "lining",
+      "locationId": "field",
+      "name": "당근밭 옆 빨간 우체통",
+      "backgroundId": "lining-field"
+    },
+    "lining-cloak": {
+      "id": "lining-cloak",
+      "caseId": "lining",
+      "locationId": "cloak",
+      "name": "네로의 망토",
+      "backgroundId": "lining-cloak"
+    },
+    "kitchen-hill": {
+      "id": "kitchen-hill",
+      "caseId": "kitchen",
+      "locationId": "hill",
+      "name": "별빛 언덕",
+      "backgroundId": "kitchen-hill"
+    },
+    "kitchen-owlhouse": {
+      "id": "kitchen-owlhouse",
+      "caseId": "kitchen",
+      "locationId": "owlhouse",
+      "name": "부엉이 할아버지 댁",
+      "backgroundId": "kitchen-owlhouse"
+    },
+    "kitchen-office": {
+      "id": "kitchen-office",
+      "caseId": "kitchen",
+      "locationId": "office",
+      "name": "탐정 사무소",
+      "backgroundId": "kitchen-office"
+    },
+    "kitchen-post": {
+      "id": "kitchen-post",
+      "caseId": "kitchen",
+      "locationId": "post",
+      "name": "우체국",
+      "backgroundId": "kitchen-post"
+    },
+    "kitchen-field": {
+      "id": "kitchen-field",
+      "caseId": "kitchen",
+      "locationId": "field",
+      "name": "당근밭 우체통과 헛간",
+      "backgroundId": "kitchen-field"
+    },
+    "kitchen-kitchen": {
+      "id": "kitchen-kitchen",
+      "caseId": "kitchen",
+      "locationId": "kitchen",
+      "name": "할머니의 부엌",
+      "backgroundId": "kitchen-kitchen"
+    }
+  }
 }
