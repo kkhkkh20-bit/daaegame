@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>다람 탐정 · 도트 방향 시안</title>
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,sans-serif;background:#1a1c2c;color:#f4e4c1}*{box-sizing:border-box}body{margin:0}main{max-width:1100px;margin:auto;padding:28px 20px 48px}a{color:#ffcd75;text-underline-offset:4px}header{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}h1{font-size:24px;margin:20px 0 12px}h2{font-size:19px;margin:0}p{line-height:1.7;color:#c7d4de}.note{padding:14px 18px;border-left:3px solid #ffcd75;background:#2b2d4a}.art{margin-top:28px;border:1px solid #566c86;background:#1a1c2c}.bar{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.bar p{margin:5px 0 0;font-size:14px}.picture{display:block;width:100%;height:auto;image-rendering:pixelated}.transparent{background-color:#2b2d4a;background-image:conic-gradient(#566c86 25%,transparent 0 50%,#566c86 0 75%,transparent 0);background-size:24px 24px}.poses{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;border-top:1px solid #566c86;padding:12px 0;color:#f4e4c1}.compare{margin-top:24px}summary{cursor:pointer;padding:14px 0}.compare img{max-height:600px;object-fit:contain;background:#2b2d4a}.footer{font-size:14px;margin-top:28px}@media(max-width:480px){main{padding:18px 12px 32px}h1{font-size:21px}.bar{padding:12px}.note{font-size:14px}.poses{font-size:14px}}
+  </style>
+</head>
+<body>
+<main>
+  <header><a href="../?v=5">← 디자인 작업실</a><a href="daram-retro-study.zip" download>두 그림과 전달 문서 받기 ↓</a></header>
+  <h1>다람 탐정 · 도트 방향 시안</h1>
+  <p>별빛 언덕과 다람의 세 포즈. 게임 원본과 기존 캐릭터는 그대로 두고, 새 그림을 따로 보관했습니다.</p>
+  <p class="note">아직 최종 도트 규격을 충족하지 않은 시안입니다. 생성 파일에는 26색을 넘는 색과 부드러운 색 변화가 남아 있으며, 배경도 요청한 360×200의 정확한 4배 크기가 아닙니다.</p>
+  <section class="art" aria-labelledby="hill-title">
+    <div class="bar"><div><h2 id="hill-title">별빛 언덕 · 밤 10시</h2><p>꺼진 돌 · 기둥 아래 깃털 · 바위 위 서류 · 오른쪽 돌계단</p></div><a href="star-hill.png" download>배경 PNG ↓</a></div>
+    <img class="picture" src="star-hill.png" alt="별이 떠 있는 남색 밤하늘. 언덕 중앙의 철제 등불 안에 꺼진 돌이 있고, 기둥 아래 검은 깃털, 오른쪽 바위 위 서류와 돌계단이 있다." width="1681" height="936">
+  </section>
+  <section class="art" aria-labelledby="daram-title">
+    <div class="bar"><div><h2 id="daram-title">다람 · 동물 얼굴 통일</h2><p>빨간 체크 사냥모자 · 도토리 카디건 · 갈색 치마 · 수첩</p></div><a href="daram-poses.png" download>투명 PNG ↓</a></div>
+    <div class="transparent"><img class="picture" src="daram-poses.png" alt="다람쥐 얼굴과 털 있는 손을 가진 소녀 탐정 다람. 왼쪽 기본, 가운데 손을 턱에 댄 생각, 오른쪽 수첩을 들고 감정을 표현하는 세 포즈." width="1536" height="1024"></div>
+    <div class="poses" aria-hidden="true"><span>기본</span><span>생각</span><span>감정</span></div>
+  </section>
+  <details class="compare"><summary>기존 다람과 비교</summary><img class="picture" src="../reference/daram-pixel.png" alt="기존 다람 캐릭터의 세 포즈" width="1536" height="1024" loading="lazy"></details>
+  <p class="footer"><a href="HANDOFF.txt">클로드 전달 문서</a> · <a href="metadata.json">파일 검사 결과</a></p>
+</main>
+</body>
+</html>
