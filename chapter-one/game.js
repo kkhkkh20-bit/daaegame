@@ -12,9 +12,9 @@ function bind(){s.lines=s.lines.map(l=>({...l,text:l.text.replaceAll('다온','�
  g.found=s.found;g.asked=g.asked||[];g.exam=g.exam||{};g.hintLog=g.hintLog||[];s.system=g;if(!Number.isInteger(s.room)||s.room<0||s.room>3)s.room=0;g.loc=s.room;
  const mapping={delivery:['t_delivery','t_paid'],witness:['t_witness'],spoon:['t_spoon'],key:['t_key'],reason:['t_reason']};
  s.asked.forEach(id=>(mapping[id]||[]).forEach(t=>{if(!g.asked.includes(t))g.asked.push(t)}));
- if(s.round===2)g.broken['round:0']=true;
+ if(s.round===2)g.broken['round:0']=true;if(g.broken['round:0']&&!g.unlocked.includes('door:reception-solved'))g.unlocked.push('door:reception-solved');
  if(['review','finale','done'].includes(s.mode)||s.found.includes('report')){g.broken['round:1']=true;if(!g.unlocked.includes('door:archive'))g.unlocked.push('door:archive');}
- if(!core.locationOpen(s.room)){s.room=0;g.loc=0;}
+ if(!core.locationOpen(s.room)){s.room=0;g.loc=0;s.who='karo';s.pan=.5;}
 }
 try{const v=JSON.parse(localStorage.getItem(KEY));if(valid(v))checkpoint=v;}catch{}
 bind();
@@ -58,7 +58,7 @@ function questions(){const who=s.who||'karo';actor(who,0);$('panel').className='
  const ids={delivery:['t_delivery','t_paid'],witness:['t_witness'],spoon:['t_spoon'],key:['t_key'],reason:['t_reason']};(ids[id]||[]).forEach(t=>core.ask(t));
  if(id==='key'){add('key');dialogue(STORY.keyFound,'questions','mungchi');}else if(id==='reason')dialogue(STORY.reason,'questions','mungchi');else if(id==='after')dialogue(STORY.afterCrow,'questions','karo');else dialogue(STORY.questions[id].lines,'questions','karo');});
  $('show-evidence').onclick=()=>inventory('show');}
-function talkTo(id){s.who=id;if(!room().people.includes(id)){s.room=id==='mungchi'?2:0;core.state.loc=s.room;s.pan=s.roomPans?.[ROOMS[s.room].id]??.5;}s.mode='questions';save();render();}
+function talkTo(id){if(id==='mungchi'&&!core.locationOpen(2)){tell('먼저 까로의 말과 접수증을 확인해야 합니다.');return;}s.who=id;if(!room().people.includes(id)){s.room=id==='mungchi'?2:0;core.state.loc=s.room;s.pan=s.roomPans?.[ROOMS[s.room].id]??.5;}s.mode='questions';save();render();}
 function peoplePicker(){open(head('누구와 이야기할까?')+['karo',...(s.round>1?['mungchi']:[])].map(id=>`<button class="person-row" data-person="${id}"><b>${PEOPLE[id].name}</b><span>${PEOPLE[id].role}</span></button>`).join(''));document.querySelectorAll('[data-person]').forEach(b=>b.onclick=()=>{close();talkTo(b.dataset.person);});}
 function room(){return ROOMS[s.room||0];}
 function roomSpots(){return room().spots;}
@@ -130,7 +130,7 @@ $('world').addEventListener('click',e=>{
  $('panel').innerHTML=`<div class="observation-note" role="status"><small>다람 · 살펴보기</small><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p></div>`;audio.fx('tap');
 });
 function visitRoom(i){if(!core.locationOpen(i))return;s.roomPans=s.roomPans||{};s.roomPans[room().id]=s.pan;s.room=i;core.state.loc=i;s.pan=s.roomPans[room().id]??.5;s.sceneSelection=null;audio.fx('steps');close();go('investigate');}
-function movePicker(){open(head('눈길 거처 · 장소 이동')+'<p class="muted">방마다 다른 물건과 이야기가 있어요.</p><div class="location-map">'+ROOMS.map((r,i)=>{const unlocked=core.locationOpen(i),done=r.spots.filter(p=>s.found.includes(p.id)).length;return `<button class="location-card" data-loc="${i}" aria-current="${s.room===i}" ${unlocked?'':'disabled'}><span class="location-art" style="background-image:url(${sceneAsset(r)})"></span><span><b>${r.name}</b><small>${unlocked?r.purpose:'보관함 사건을 먼저 확인하세요.'}</small><em>${unlocked?done+' / '+r.spots.length+'개 조사':'잠김'}</em></span></button>`}).join('')+'</div>');document.querySelectorAll('[data-loc]').forEach(b=>b.onclick=()=>visitRoom(+b.dataset.loc));}
+function movePicker(){if(!core.state.broken['round:0']){const action=goalAction();open(head('첫 조사 · 접수대')+'<p>다른 방으로 가기 전에, 까로의 말과 접수증이 같은 내용을 확인하는지 살펴보세요.</p><ol class="tutorial-steps"><li>까로에게 배달 과정과 직접 본 일을 묻기</li><li>접수증에서 서명 아래 문구 검사하기</li><li>접수증과 서명에 관한 증언을 결합하고, 다른 부분을 까로에게 보여주기</li></ol><p class="tutorial-current">'+esc(currentGoal())+'</p>'+button('tutorial-next',esc(action.label),'primary wide'));$('tutorial-next').onclick=()=>{close();if(s.mode!=='dialogue')action.run();};return;}open(head('눈길 거처 · 장소 이동')+'<p class="muted">방마다 다른 물건과 이야기가 있어요.</p><div class="location-map">'+ROOMS.map((r,i)=>{const unlocked=core.locationOpen(i),done=r.spots.filter(p=>s.found.includes(p.id)).length;return `<button class="location-card" data-loc="${i}" aria-current="${s.room===i}" ${unlocked?'':'disabled'}><span class="location-art" style="background-image:url(${sceneAsset(r)})"></span><span><b>${r.name}</b><small>${unlocked?r.purpose:'보관함 사건을 먼저 확인하세요.'}</small><em>${unlocked?done+' / '+r.spots.length+'개 조사':'잠김'}</em></span></button>`}).join('')+'</div>');document.querySelectorAll('[data-loc]').forEach(b=>b.onclick=()=>visitRoom(+b.dataset.loc));}
 function renderRoomInteractions(){
  const r=room();$('hotspots').insertAdjacentHTML('beforeend',r.observations.map(o=>`<button class="spot observation" data-observe="${o.id}" aria-label="${o.title} 살펴보기" style="left:${(o.x-o.w/2)*100}%;top:${(o.y-o.h/2)*100}%;width:${o.w*100}%;height:${o.h*100}%"></button>`).join(''));
  document.querySelectorAll('[data-observe]').forEach(b=>b.onclick=()=>{if(moved||panoramaLoading)return;const o=r.observations.find(x=>x.id===b.dataset.observe);s.sceneSelection=null;markSpot(o);document.querySelectorAll('[data-spot]').forEach(x=>x.setAttribute('aria-pressed','false'));save();$('panel').innerHTML=`<div class="observation-note"><small>다람의 현장 메모</small><h3>${o.title}</h3><p>${o.text}</p><p class="scribble">“${o.memo}”</p></div>`;audio.fx('tap');});
