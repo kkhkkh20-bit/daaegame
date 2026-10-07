@@ -1,0 +1,266 @@
+{
+  "batchId": "D01",
+  "requestId": "R-008",
+  "status": "ready_for_review",
+  "sourceRequestCommit": "8e408db8a03c4a6c571904f8aea1d2864febbffb",
+  "approvedReference": "../daram-matched.png",
+  "originalGameModified": false,
+  "claudeRuntimeArtModified": false,
+  "approvedSpritePreserved": true,
+  "strictRasterCompliant": false,
+  "rasterNote": "도트 스타일 생성 원본입니다. 정확한 96×96 픽셀 격자·26색 최종 래스터로 검증한 파일은 아닙니다. 게임용 96×96 변환은 개발 영역에서 수행합니다.",
+  "pose": "front-facing head and shoulders, both eyes toward player",
+  "logicalDisplay": [
+    96,
+    96
+  ],
+  "commonSourceSize": [
+    1254,
+    1254
+  ],
+  "commonCrop": [
+    0,
+    0,
+    1254,
+    1254
+  ],
+  "alignment": "네 파일을 동일한 full-canvas crop과 같은 표시 크기로 사용합니다. 투명 bbox에 맞춰 각각 확대하면 얼굴 크기가 달라질 수 있으므로 개별 자동 확대를 하지 않습니다.",
+  "preview": "D01-preview.html",
+  "handoff": "HANDOFF-D01.txt",
+  "archive": "D01-faces.zip",
+  "assets": [
+    {
+      "id": "neutral",
+      "name": "기본",
+      "description": "살짝 웃으며 이야기를 듣는 얼굴.",
+      "sample": "먼저 직접 확인해 보자.",
+      "source": "/workspace/generated_images/exec-2a9a2dfc-0771-4430-9060-44ac9aff0270.png",
+      "src": "neutral.png",
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "5768db137f78ee595ad57f3afcbde2ce188d95b207e8203c26d40ae6e7b18c92",
+      "bytes": 842183,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlphaOver16": [
+        186,
+        98,
+        1068,
+        1214
+      ],
+      "headRegionAlphaOver16": {
+        "sourceRows": [
+          0,
+          900
+        ],
+        "bounds": [
+          248,
+          98,
+          1004,
+          900
+        ]
+      },
+      "transparentFraction": 0.544766,
+      "rgbaColorCount": 74597
+    },
+    {
+      "id": "happy",
+      "name": "활짝 웃음",
+      "description": "기쁨을 드러내는 열린 웃음.",
+      "sample": "찾았다! 이 기록이 필요했어.",
+      "source": "/workspace/generated_images/exec-03fea843-63d1-4fb7-9423-f75d3ea7d7fa.png",
+      "src": "happy.png",
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "30a35a73673d1f92277216c081ee54316066f50f8cee28452d276682a8632e24",
+      "bytes": 847661,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlphaOver16": [
+        186,
+        98,
+        1069,
+        1215
+      ],
+      "headRegionAlphaOver16": {
+        "sourceRows": [
+          0,
+          900
+        ],
+        "bounds": [
+          247,
+          98,
+          1005,
+          900
+        ]
+      },
+      "transparentFraction": 0.543699,
+      "rgbaColorCount": 80650
+    },
+    {
+      "id": "think",
+      "name": "생각",
+      "description": "동물 손을 턱에 대고 검토하는 얼굴.",
+      "sample": "잠깐… 시간부터 다시 맞춰 볼까.",
+      "source": "/workspace/generated_images/exec-59760245-9390-4652-bc3b-e10a84340e0e.png",
+      "src": "think.png",
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "1e21aa3c90d47848b11462a20e1038ba3665dbdd236509954fa5e01559b48eb1",
+      "bytes": 843339,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlphaOver16": [
+        185,
+        97,
+        1070,
+        1215
+      ],
+      "headRegionAlphaOver16": {
+        "sourceRows": [
+          0,
+          900
+        ],
+        "bounds": [
+          248,
+          97,
+          1004,
+          900
+        ]
+      },
+      "transparentFraction": 0.54343,
+      "rgbaColorCount": 78017
+    },
+    {
+      "id": "smug",
+      "name": "의기양양",
+      "description": "반쯤 감은 눈과 한쪽 올라간 입꼬리.",
+      "sample": "이제 두 기록이 이어져.",
+      "source": "/workspace/generated_images/exec-873951cc-ee6f-46c0-bfc6-16f2bb11d80e.png",
+      "src": "smug.png",
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "a2eb4c06241f884867b94669861dabbce051ac02540ef159ca69555a695962d0",
+      "bytes": 846875,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBoundsAlphaOver16": [
+        185,
+        97,
+        1070,
+        1215
+      ],
+      "headRegionAlphaOver16": {
+        "sourceRows": [
+          0,
+          900
+        ],
+        "bounds": [
+          247,
+          97,
+          1007,
+          900
+        ]
+      },
+      "transparentFraction": 0.544096,
+      "rgbaColorCount": 79618
+    }
+  ],
+  "generation": {
+    "neutralPrompt": "Create ONE dialogue portrait PNG for Daram Detective. The supplied image is the APPROVED Daram design and coarse pixel STYLE reference. Only draw ONE bust, NOT a 3-pose sprite sheet and NOT full body. SQUARE 1:1 canvas, requested 1024x1024. Actual transparent RGBA background with generous transparent padding around hat, ears and both shoulders, no checkerboard baked into art.\n\nDaram is a FEMALE SQUIRREL girl detective, entirely animal head, orange golden-brown fur, compact natural squirrel muzzle with cream cheeks/lower muzzle, tiny dark animal nose, two short pointed rounded squirrel ears, no human face, human hair or human hands. Preserve APPROVED dark-red/burgundy CHECKED deerstalker hunting cap, its side flaps, cream acorn-pattern cardigan collar/shoulders, and small dark burgundy neck RIBBON bow. Keep exact recognizable clothing palette and identity. No squirrel forehead stripes, no human hairstyle, no extra accessories.\n\nKEY CHANGE: head and shoulders face STRAIGHT TOWARD VIEWER, both eyes fully visible and balanced, gaze looking AT PLAYER, not sideways, not right-facing profile. Squirrel muzzle protrudes forward in depth but nose is horizontally centered. Head not tilted. Cap can retain slightly asymmetric side brim shape but head itself straight. Two simple dark navy oval/block eyes drawn in same pixel language as supplied Daram, ONE tiny square highlight each. Small simple eyebrows, no giant anime eyes, mascara, sparkling eyes, glossy lashes, excessive blush or teddy-bear baby head. Calm attentive expression with a TINY CLOSED gentle smile, neutral brows, mouth only 2-3 logical pixel steps. No exaggerated grin.\n\n90s 16-bit adventure chunky SQUARE pixel art, coarse visible logical pixels, approximately a 96x96 face sprite enlarged by NEAREST NEIGHBOR, NOT fine illustration made pixelly. 3-4 hard flat shade clusters per material. Simplified fur, cap checks, cardigan folds, acorn motif, cream muzzle. Dark navy 1-2 logical pixel outline. Single upper-left light source. No antialiasing, soft gradient, realistic fur, shine, bloom, grain, fancy texture or small extra folds. Match supplied APPROVED coarse pixel density even at high-resolution output.\n\nSTABLE FRAMING for subsequent expression variants: center line x512, cap top around y80, hat+ears+head fit x180..845 and y80..700, pupils around y445, nose near y555, neck bow near y770, shoulder bottom around y955. Bust only to upper chest; NO skirt, tail, feet, notebook, hand in neutral pose or detached objects. Shoulder silhouette x160..865. Leave all edges transparent and keep whole ears and bow visible. Head and shoulders should fill about 80% of square but leave >=40px safety padding. No text, labels, UI or floor shadow. This neutral portrait is the reference anchor for all other expressions.",
+    "expressionCommon": "Edit ONLY the facial expression of the supplied NEUTRAL front-facing Daram dialogue portrait. Preserve EXACT original square canvas dimensions, complete transparency, head center, cap and ears top coordinates, neck/shoulder positions, character scale, outline thickness, coarse square pixel density and all colors. The approved design is a fully animal squirrel girl, golden orange fur, cream muzzle, dark red checked hunting cap, cream acorn cardigan, burgundy bow. Do NOT redesign or tilt head, enlarge eyes, shift or crop face, add a tail or notebook. Eyes look directly at PLAYER; both eyes visible. No background, text, UI, shadows, soft gradients, glow, realistic fur, lashes or sparkle. Only clean large hard pixel clusters. Keep all outer silhouette pixels the SAME except paw explicitly requested for thinking. One tiny square highlight per open eye, not anime gloss. Return ONE individual transparent RGBA portrait, not a sprite sheet. No labels.",
+    "expressions": [
+      {
+        "id": "happy",
+        "label": "활짝 웃음",
+        "prompt": "Expression HAPPY: open warm joyful smile, small dark mouth with a single cream tooth or simple lighter mouth pixel, cheeks rise slightly, friendly gently curved brows. Eyes remain OPEN and direct-facing, tiny pupils/highlight match neutral, no giant grin, laughing tears or huge blush. Keep hat, ears, shoulders and entire head outline EXACTLY in same positions as neutral. Cute but restrained and emotionally believable."
+      },
+      {
+        "id": "think",
+        "label": "생각",
+        "prompt": "Expression THINKING: brows slightly drawn together, tiny closed considering mouth, eyes direct-facing and attentive, no sideways glance. Add ONE small orange FURRY SQUIRREL PAW (NOT human finger/hand) touching the underside of muzzle/chin, emerging from cream sleeve at portrait lower RIGHT. A single paw digit rests against chin, other compact paw pads fold; simple block shape, not anatomically human fingers. Preserve face center, all cap/ears/head outer outline and shoulder level EXACTLY. Paw must not cover nose, mouth, eyes or neck bow completely."
+      },
+      {
+        "id": "smug",
+        "label": "의기양양",
+        "prompt": "Expression SMUG / a quiet confident deduction: eyebrows one slightly raised, both eyes HALF-LIDDED but dark pupils still face viewer, one corner of tiny closed mouth raised asymmetrically. Keep white eye area and highlight simple, not villain sneer, angry or cruel, no hand gesture. Preserve hat, ears, head center, outer face outline, shoulders and all pixel proportions EXACTLY."
+      }
+    ]
+  },
+  "alignmentMeasured": {
+    "headBoundsRangePx": [
+      1,
+      1,
+      3,
+      0
+    ],
+    "headTopVariationPx": 1,
+    "note": "머리 영역(원본 y0..899)의 alpha>16 경계 비교이며 랜드마크의 픽셀 단위 동일성을 뜻하지 않습니다."
+  },
+  "validation": {
+    "previewWidths": [
+      360,
+      390,
+      844,
+      1280
+    ],
+    "displaySizes": [
+      96,
+      192
+    ],
+    "surfaces": [
+      "navy",
+      "cream",
+      "check"
+    ],
+    "previewStatesChecked": 96,
+    "browserErrors": [],
+    "horizontalOverflow": false,
+    "trueAlphaConfirmed": true,
+    "commonCanvasConfirmed": true,
+    "sourcePngsUnmodified": true,
+    "gameIntegration": "not_applied",
+    "remainingRequestBatch": "D02",
+    "review": "pending_developer_game_review"
+  }
+}
