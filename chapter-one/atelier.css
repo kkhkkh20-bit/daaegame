@@ -242,3 +242,13 @@
 #game .tutorial-steps{font-size:12px;line-height:1.8;color:#59452f;padding-left:22px;margin:14px 0}
 #game .tutorial-steps li{margin:7px 0}
 #game .tutorial-current{border-left:3px solid #84443d;padding:8px 10px;background:#e9d4af;font-size:12px}
+#game #dialogue-back{position:absolute;bottom:0;left:0;min-height:40px;width:40%;padding:8px;background:var(--navy);border:1px solid #b7996b;color:#e8d3aa;font:12px DaramDot;z-index:3}
+#game #panel.dialogue:has(#dialogue-back) #advance{width:40%;left:auto}
+#game .cabinet-lock{border:1px solid #a78a62;padding:10px;margin-top:10px;background:#e7d3b1;color:#51402e}
+#game .cabinet-lock h4{font-size:13px;margin:0 0 6px}
+#game .cabinet-lock p{font-size:11px!important;line-height:1.6!important;margin:5px 0!important;color:#51402e!important}
+#game .cabinet-lock label{display:block;font-size:10px;margin:8px 0 4px}
+#game #cabinet-code-form>div{display:flex;gap:6px}
+#game #cabinet-code{width:100%;min-width:0;min-height:40px;font:18px DaramDot;letter-spacing:.15em;background:#fff5da;border:1px solid #a78a62;padding:6px;color:#51402e}
+#game #cabinet-code-submit,#game #cabinet-use-key{min-height:40px;padding:7px 10px;border:1px solid #a78a62;background:#283249;color:#ffe8be;font:12px DaramDot}
+#game #cabinet-use-key{width:100%;margin-top:7px}
