@@ -1,0 +1,302 @@
+{
+  "batchId": "B02",
+  "requestId": "R-003",
+  "status": "ready_for_review",
+  "originalGameModified": false,
+  "claudeRuntimeArtModified": false,
+  "logicalDisplay": [
+    360,
+    200
+  ],
+  "aspectRatio": "9:5",
+  "approvedStyleReference": "../star-hill-enriched.png",
+  "strictRasterCompliant": false,
+  "rasterNote": "생성 원본을 보존한 도트 스타일 시안입니다. 정확한 360×200 격자·26색으로 검증된 최종 래스터는 아닙니다.",
+  "sourceGameCommit": "4157210da75c7388c5ac740fef99cd76a32b707d",
+  "caseId": "fall",
+  "coordinateConvention": "가운데 기준 9:5 crop 후 360×200으로 표시한 대략 좌표. bounds=[x,y,width,height], characterPositions=[leftX,feetY]. markerOffset은 미리보기 번호만 옮기는 값이며 HOTS에는 point를 씁니다.",
+  "preview": "B02-preview.html",
+  "handoff": "HANDOFF-B02.txt",
+  "archive": "B02-backgrounds.zip",
+  "scope": "B02 only; original game, art/, approved PNGs, B01, C01/C02 and shared coordination files preserved.",
+  "assets": [
+    {
+      "id": "fall-owlhouse",
+      "name": "할아버지 나무 집",
+      "time": "정오 무렵",
+      "src": "fall-owlhouse.png",
+      "alt": "나무 집의 침대, 왼쪽 탁자의 촛대와 순찰 일지, 창문에서 들어오는 낮빛과 빈 앞쪽 마루.",
+      "source": "/workspace/generated_images/exec-c9453b84-c2d7-4fa2-a90e-f12d25f22252.png",
+      "evidence": [
+        {
+          "spotId": "s2f_log",
+          "evidenceId": "f2_owllog",
+          "name": "할아버지 순찰 일지",
+          "point": [
+            132,
+            91
+          ],
+          "bounds": [
+            118,
+            86,
+            28,
+            11
+          ],
+          "description": "침대 옆 탁자에 놓인 두툼한 공책. 옆에는 촛대와 붉은 천이 있습니다.",
+          "note": "일지의 날짜·열쇠를 건넨 기록은 확대 조사 UI에서 표시합니다."
+        }
+      ],
+      "decorations": [
+        "탁자 위 붉은 천",
+        "촛대",
+        "왼쪽 책 세 권",
+        "물주전자와 낮은 의자",
+        "창가 화분",
+        "벽에 걸린 천",
+        "오른쪽 옷장"
+      ],
+      "characterCapacity": 1,
+      "characterPositions": [
+        [
+          268,
+          194
+        ]
+      ],
+      "runtimePeople": [
+        {
+          "id": "buri",
+          "feet": [
+            302,
+            190
+          ],
+          "note": "침대/옷장을 가릴 수 있으므로 서 있는 위치는 실제 대사 화면에서 확인"
+        }
+      ],
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGB",
+      "sha256": "df7e89091fb81083f27ba5b5a56539d1d9987953f92e1b89af4b6c5007af6ce9",
+      "bytes": 1477202,
+      "rgbColorCount": 114667,
+      "centerCrop": [
+        0.0,
+        1.0556,
+        1681,
+        933.8889
+      ]
+    },
+    {
+      "id": "fall-cell",
+      "name": "사무소 지하 철창",
+      "time": "아침 7시 30분",
+      "src": "fall-cell.png",
+      "alt": "차분한 돌벽의 지하 철창, 철창 밖 책상에 펼친 아빠의 외투, 바깥 주머니 손수건과 안주머니 작은 수첩.",
+      "source": "/workspace/generated_images/exec-98b82e16-184f-4b2a-98da-1f156e3e7da6.png",
+      "evidence": [
+        {
+          "spotId": "s2f_hanky",
+          "evidenceId": "f2_hanky",
+          "name": "아빠의 손수건",
+          "point": [
+            258,
+            91
+          ],
+          "bounds": [
+            252,
+            84,
+            14,
+            14
+          ],
+          "description": "외투 바깥 주머니에서 보이는 밝은 손수건. 검은 그을음은 없습니다.",
+          "note": "같은 외투의 바깥 주머니 조사 지점입니다. 작은 세척 얼룩은 확대 조사에서 표현합니다."
+        },
+        {
+          "spotId": "s2f_notebook",
+          "evidenceId": "f2_notebook",
+          "name": "아빠의 작은 수첩",
+          "point": [
+            306,
+            94
+          ],
+          "bounds": [
+            298,
+            87,
+            17,
+            14
+          ],
+          "description": "외투의 자주색 안감 주머니에 꽂힌 작은 수첩.",
+          "note": "120일 기록과 10:08 확인 내용은 확대 조사 UI에서 표시합니다."
+        }
+      ],
+      "decorations": [
+        "위 선반의 푸른 천",
+        "작은 나무 상자",
+        "책상 끝 빈 컵",
+        "철창 안 빈 의자와 접힌 담요"
+      ],
+      "characterCapacity": 1,
+      "characterPositions": [
+        [
+          70,
+          194
+        ]
+      ],
+      "runtimePeople": [
+        {
+          "id": "papa",
+          "feet": [
+            142,
+            120
+          ],
+          "height": 78,
+          "note": "철창 안 의자 앞 위치 예시. 실제 적용 시 인물 위에 철창 전경을 다시 그리는 마스크/레이어 처리가 필요합니다."
+        }
+      ],
+      "coatReference": {
+        "branch": "art/c01-papa-rei-karo-20261007",
+        "commit": "717c5a62af96551714619b4d6a48dba0ca1cee70",
+        "src": "design/retro/chars/papa.png",
+        "status": "C01 제작본 비교 자료, 최종 게임 화면 승인 전"
+      },
+      "size": [
+        1680,
+        936
+      ],
+      "mode": "RGB",
+      "sha256": "c42f7d9acdce75b177112b9ede638c01963e52e04e775382fb701e07f29cea00",
+      "bytes": 1680219,
+      "rgbColorCount": 81504,
+      "centerCrop": [
+        0.0,
+        1.3333,
+        1680,
+        933.3333
+      ]
+    },
+    {
+      "id": "fall-pine",
+      "name": "높은 소나무",
+      "time": "오전",
+      "src": "fall-pine.png",
+      "alt": "높은 소나무 가지의 둥지와 따뜻한 색의 진짜 별빛 돌, 돌 아래 살짝 드러난 검은 봉투 모서리, 앞쪽 빈 풀밭.",
+      "source": "/workspace/generated_images/exec-7236453e-2789-4826-8f0c-82b8ee25c217.png",
+      "draft": "/workspace/generated_images/exec-7a694207-d021-4870-9ef9-4ee449eab995.png",
+      "evidence": [
+        {
+          "spotId": "s2f_nest",
+          "evidenceId": "f2_realstone",
+          "name": "진짜 별빛 돌",
+          "point": [
+            265,
+            47
+          ],
+          "bounds": [
+            258,
+            39,
+            16,
+            16
+          ],
+          "markerOffset": [
+            -21,
+            -12
+          ],
+          "description": "높은 가지 둥지 속의 따뜻한 별빛 돌.",
+          "note": "획득 후에도 원본 PNG의 돌은 남으므로 게임에서 조사 상태를 표현할 별도 오버레이를 검토해 주세요."
+        },
+        {
+          "spotId": "s2f_envelope",
+          "evidenceId": "f2_envelope",
+          "name": "둥지 밑 검은 봉투",
+          "point": [
+            270,
+            53
+          ],
+          "bounds": [
+            264,
+            50,
+            14,
+            5
+          ],
+          "markerOffset": [
+            25,
+            12
+          ],
+          "description": "돌 밑에 납작하게 깔린 봉투. 배경에서는 어두운 모서리만 보입니다.",
+          "note": "둥지 조사 후 확대 검사에서 봉투 전체·도장·지시서를 드러내는 흐름을 권장합니다. markerOffset은 미리보기 번호 간격만 벌리고 실제 좌표는 point입니다."
+        }
+      ],
+      "decorations": [
+        "같은 가지 솔방울과 마른 솔잎",
+        "왼쪽 납작한 돌",
+        "바닥에 떨어진 나뭇가지",
+        "양쪽 들꽃",
+        "드문 풀"
+      ],
+      "characterCapacity": 0,
+      "characterPositions": [],
+      "locationRequirement": "door:pine",
+      "runtimePeople": [],
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGB",
+      "sha256": "7d9081cb2b00ff7657f4a77d9cc46dfd851501dac418a1901d244f40c98fed9c",
+      "bytes": 1667694,
+      "rgbColorCount": 141806,
+      "centerCrop": [
+        0.0,
+        1.0556,
+        1681,
+        933.8889
+      ]
+    }
+  ],
+  "generation": {
+    "commonPrompt": "Generate ONE landscape background for Daram Detective, a calm woodland animal-village mystery adventure. The supplied approved star-hill picture is STYLE ONLY: match its coarse square pixel size, broad simple clean masses, 1990s 16-bit adventure look EXACTLY, not a detailed painting or polished AI illustration. Make a NEW SCENE described below, do not copy the lamp, moon, hill layout. Landscape 9:5 ratio. Look like a 360 x 200 pixel image enlarged 4 times by nearest neighbor. Visible sharp SQUARE pixels, discrete 3 or 4 flat shade bands per material, 1 logical pixel dark outlines on key shapes only. No antialiasing, blur, continuous gradients, glow, glossy highlights, realistic textures, noise or microdetail. Only broad skies may use sparse 2-tone checker dithering. Requested max 26 palette colors from: #1a1c2c #2b2d4a #3b5dc9 #41a6f6 #73eff7 #1f4d3a #2f7a4f #5fa85a #a7d36a #3e2731 #6b3e2e #9a5b3a #c98b52 #e8b878 #f4e4c1 #fff6dc #7a2a35 #b13e53 #ef7d57 #ffcd75 #ffe9a8 #566c86 #94b0c2 #c7d4de #5d275d #ffffff. Clean bright middle tones, no muddy brown monochrome wash. ONE light source from upper left. Theatre stage straight-on composition, no cinematic tilted camera. Back wall-floor boundary or ground horizon around 60% height. Lower 25% mostly empty for overlay characters, top 8% and bottom 5% no essential objects. At most 8-12 simple grouped objects. Every evidence object has a nearby non-evidence decoration of similar size or visual weight, so evidence is discoverable rather than spotlighted. No text, numbers, scribbles pretending to be text, UI, labels, pointers. Absolutely NO baked-in humans, animals, bodies, faces, hands or background silhouettes of people. Quiet, warm but mature detective game mood.",
+    "scenes": [
+      {
+        "key": "fall-owlhouse",
+        "refs": [
+          "/workspace/daaegame/design/retro/star-hill-enriched.png"
+        ],
+        "prompt": "GRANDFATHER OWL'S TREE HOUSE BEDROOM, near noon. Interior built into a wide old tree, pale warm cream wooden plaster-like wall panels framed by a few broad warm wood beams, not all brown. Sparse quiet sickroom with no patient. Single daylight source: modest square window upper LEFT at about logical (66,59), open view of clean green foliage and pale blue sky, no sunbeam or bloom. Low plain wooden bed at rear CENTER-RIGHT, cream pillow and neatly pulled sage-green blanket; EMPTY bed, absolutely no animal or person. Bed roughly logical x172..285 y88..141. Immediately LEFT of bed at (142,118) is a small warm wooden bedside TABLE. On table, a THICK CLOSED dark plum-brown worn patrol JOURNAL with visible cream page edge, no lettering, beside a small brass CANDLESTICK with a short unlit cream candle. Journal should be distinct but not oversized: about 13x9 logical pixels. Its lettered contents will be shown by game UI, not painted into background. Near journal a folded burgundy square cloth of similar size acts as a decoy decoration. One low shelf far left with exactly three plain spine books, a small pale ceramic pitcher on separate low stool, a simple rounded old wardrobe far right, small flat wall hook and folded cloth, one tiny leafy pot by window. Do not add complicated architecture, food or modern medical equipment. Lower quarter empty broad clean pale wood floor with very few hard-edged plank lines, ONE character can stand in front-left or front-right without covering table. Make emotionally quiet, caring lived-in room; bed unoccupied and covers FLAT, do not imply a body under blanket. No clock with numerals, no framed animal portrait."
+      },
+      {
+        "key": "fall-cell",
+        "refs": [
+          "/workspace/daaegame/design/retro/star-hill-enriched.png",
+          "/tmp/daram-b02-papa-reference.png"
+        ],
+        "prompt": "DETECTIVE OFFICE BASEMENT HOLDING CELL, early morning 7:30. Second image shows Papa solely as a CLOTHING COLOR/SHAPE reference: draw ONLY his worn ochre-gold trenchcoat as a loose EMPTY coat, never the raccoon, hat, tie-wearing body or any character. Quiet humane old village holding room, not a frightening dungeon. Broad clean blue-grey stone rear wall, cream and slate accents, pale hard daylight through a small high LEFT window. A simple closed dark-grey iron barred cell door and broad barred partition at BACK LEFT/CENTER, x40..205 y65..145; 5-6 wide-spaced vertical bars, simple latch, no lock digits. Through bars, one EMPTY plain wooden bench and a folded dull green blanket, not a bed with body. RIGHT, clearly OUTSIDE bars in foreground-middle, a plain wooden desk around x218..315 y108..144. Papa's empty worn ochre trenchcoat is neatly spread OPEN on this desk, no wearer, no human shape. The outer coat flap lies to LEFT and has ONE visible exterior patch pocket with corner of a folded ivory HANDKERCHIEF protruding around logical (248,118). Turned-open right flap exposes burgundy lining and ONE inner chest pocket, showing just corner and cream edge of a SMALL CLOSED dark burgundy NOTEBOOK around (279,117). Make the two pocket areas spatially separate and readable as part of the SAME coat; no floating collectible item, not handkerchief or notebook placed on top of random folded cloth. The handkerchief is clean without black soot, notebook worn edges, no writing. Avoid massive shirt-like sleeves or empty coat hanging like an invisible person; laid-flat irregular folds. Compare evidence visual weight with one folded pale-blue cleaning cloth and one small dark wooden block or inkless plain box on a rear shelf, away from pockets. On desk at rear-right one small plain ceramic cup (no papers). Sparse grouping: high window, bars/door, empty bench, desk/coat, cup, rear shelf/cloth/box, 2 stone floor scuffs. Foreground lower 25% EMPTY slate floor with few large flagstones, one character placement front-left. No torch or second light source, no chains, weapons, prisoners, handcuffs, skulls, text or UI."
+      },
+      {
+        "key": "fall-pine",
+        "refs": [
+          "/workspace/daaegame/design/retro/star-hill-enriched.png"
+        ],
+        "prompt": "A HIGH OLD PINE TREE near the woodland village, late MORNING, secret location unlocked by investigation. No physical lock/chain, the gameplay lock is not part of art. Single tall pine trunk at center-right x205, rooted at y149; canopy made of only FOUR broad flat dark/medium green polygon-like needle tiers with stepped square edges, no thousands of individual needles. Show enough tree to understand nest is HIGH, not on ground. Canopy starts below top safe 8% margin, stretches roughly x142..285 y22..114; background pale clean blue sky, distant simplified forest at y120, empty grassy-earth lower quarter. At the END of a thick side branch emerging into a CLEAR canopy gap near logical (250,65) is a compact rough round BIRD NEST, just 6-8 simple straw strokes, width about40 logical pixels. It must be visibly high among branches and NOT at trunk base. Inside nest rests ONE heavy rounded faceted STARLIGHT STONE, warm pale gold/cream, solid pixel facets, about 12-15 logical pixels diameter, readable but no magic glow aura, no bloom or particles. It is the genuine warm-lit counterpart of approved hill's unlit round grey stone. Under stone, nestled into bottom straw, a BLACK ENVELOPE lies FLAT; only its charcoal edge and small triangular flap corner visibly peek out on right near (258,74). Do NOT draw the full envelope beside the nest, below tree or as a giant floating black rectangle. Envelope stamp and inside paper will be revealed by game close inspection; no symbol or lettering needed here. Dark pinecone and loose curled brown needle clump on same branch near but separate from nest act as comparable decorations; leaf shadows behind nest further camouflage dark envelope without concealing stone. On ground only one flat slate-grey rock left, a small fallen branch mid-left, 2 sparse fern/flower tufts near edges. No ladder, rope, squirrel, crow, empty animal icon, decorative lantern or UI. No characters stand here; still keep bottom area calm and empty consistent with other game scenes. All evidence well inside center crop safe zone. Straight-on stage, NO extreme upward camera or bird's-eye perspective."
+      }
+    ],
+    "pineCorrectionPrompt": "Edit supplied pixel art pine-tree background. Preserve entire tree, forest, sky, ground, nest position, golden rounded stone, branch and all pixel style/colors. Change ONLY black envelope in nest. REMOVE the upright black triangular shape immediately LEFT and behind golden stone; that looks like an open bird beak or standing letter. Instead put a CLOSED FLAT CHARCOAL BLACK ENVELOPE beneath the stone in the nest's bottom, lying HORIZONTALLY on straw. The stone sits on top and hides MOST of it. Only a small dark quadrilateral CORNER and a short thin edge peek out to the RIGHT and slightly below stone, from about x1260 to1305 y232 to254 in this 1680x936 frame. This is a small physical envelope, no large flap sticking up. Its dark edge must be readable next to straw, but no glowing outline or bright symbol. Stone remains unchanged, nest straw overlaps envelope edge partly. Do not add any birds, animals, people, text, numbers, stamps, UI or other scene objects. Retain coarse 1990s 16-bit hard square pixels with simple shade blocks, no blur, no glossy glow."
+  },
+  "validation": {
+    "previewWidths": [
+      360,
+      390,
+      844,
+      1280
+    ],
+    "previewStatesChecked": 40,
+    "browserErrors": [],
+    "horizontalOverflow": false,
+    "evidenceMarkersChecked": true,
+    "nearbyEvidenceLeaderLinesChecked": true,
+    "pineCharacterDisplayDisabled": true,
+    "pngsUnmodifiedFromGenerator": true,
+    "gameIntegration": "not_applied",
+    "review": "pending_developer_game_review"
+  }
+}
