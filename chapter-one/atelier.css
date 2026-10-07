@@ -27,3 +27,57 @@
 #game .sheet:has(>.comparison-claim)>.book-tabs{display:none}#game .sheet:has(>.comparison-claim) .record-overview{display:none}#game .sheet:has(>.comparison-claim) .evidence-grid{max-height:29dvh;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}#game .sheet:has(>.comparison-claim) .evidence-grid>button{padding:4px!important;min-height:90px}#game .sheet:has(>.comparison-claim) .evidence-grid b{font-size:10px!important}#game .sheet:has(>.comparison-claim) .evidence-grid small{display:none}#game .sheet:has(>.comparison-claim) .record-instruction{margin:9px 0;font-size:11px}#game .sheet:has(>.comparison-claim) .record-open{margin-top:6px!important}#game .sheet:has(>.comparison-claim) .comparison-claim{margin:0!important;padding:10px!important}#game .sheet:has(>.comparison-claim) .comparison-claim>p{font-size:12px!important;line-height:1.7!important;margin:9px 0!important}#game .sheet:has(>.comparison-claim) .claim-speaker{width:63px;margin-left:8px}#game .sheet:has(>.comparison-claim) .claim-speaker>div{height:55px}#game .sheet:has(>.comparison-claim) .claim-speaker small{display:none}#game .sheet:has(>.comparison-claim) .comparison-claim>small{margin-right:72px;font-size:10px;padding:4px 7px}#game .sheet:has(>.comparison-claim) .comparison-claim>b{font-size:10px!important}#game .sheet:has(>.comparison-claim) .proof-navigation{margin-top:8px;padding-top:5px}#game .sheet:has(>.comparison-claim)>.sheet-head{margin-bottom:10px;padding-block:4px 9px}#game .sheet:has(>.comparison-claim) .book-footer{margin-top:8px;padding-top:7px}
 #game .sheet #selected-record-name,#game .sheet .item-description,#game .sheet .selection-label,#game .sheet .selection-label span{color:#51402e!important}#game .sheet .book-footer{border-color:#b6986a}#game .sheet .book-footer button,#game .sheet .item-tools button{color:#735335!important;border:1px solid #bba078;padding:7px 10px;background:#f0dcba}#game .sheet .record-actions{background:var(--paper)!important;border-top:2px solid #bba078}#game .sheet .record-actions>button:not(.primary){background:#e3cfac!important;color:#584027!important;border:1px solid #a8895b!important;box-shadow:inset 0 0 0 2px #f6e6c8!important}#game .sheet .daram-memo p,#game .sheet .daram-memo summary{color:#715033!important}
 #game .evidence-art{background:#302a39;border:6px solid #e5d0a7;box-shadow:0 0 0 1px #9b7e55,3px 4px #61432425;padding:15px;color:#f6e4bc;transform:rotate(-.5deg)}#game .evidence-art>.pixel-evidence{width:100%;height:170px;margin:auto}#game .evidence-art figcaption{color:#efdab5!important;font-size:10px;padding-top:7px}#game .evidence-art details{transform:none;margin-top:10px;border-top:1px dashed #967a57;padding-top:7px;text-align:center;color:#efdab5;font-size:10px}#game .evidence-art details .evidence-crop{margin-top:10px}
+
+/* Immediate collection feedback, with a persistent receipt in the scene card. */
+#game #scene-effect[data-effect=found] .effect-tag{top:23%;left:12%;right:12%;gap:6px;padding:18px 14px;border:3px solid #d4ac60;background:#fff2cf;color:#443121;box-shadow:0 5px 0 #251c1766;animation:evidence-arrive .24s ease-out}
+#game #scene-effect[data-effect=found] .effect-tag b{font-size:clamp(24px,7vw,32px)}
+.effect-evidence-name{font-size:16px;font-weight:700;text-align:center;overflow-wrap:anywhere}
+.scene-clue-card.newly-found small{color:#795018;font-weight:800}
+@keyframes evidence-arrive{from{opacity:0;transform:translateY(12px) scale(.85)}to{opacity:1;transform:none}}
+#game #scene-effect[data-effect=found][data-motion=simple] .effect-tag{animation:none}
+@media(prefers-reduced-motion:reduce){#game #scene-effect[data-effect=found] .effect-tag{animation:none}}
+@media(orientation:landscape) and (max-height:550px){#game #scene-effect[data-effect=found] .effect-tag{top:26%;left:5%;right:55%;padding:10px}}
+
+/* Next actions stay reachable without covering the investigation scene. */
+#game #case-goal{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:5px 8px;align-items:center;pointer-events:auto}
+#game #case-goal[hidden]{display:none}
+#game #case-goal>span{min-width:0;line-height:1.5}
+#game #goal-action{grid-column:2/4;justify-self:end;min-height:36px;padding:5px 10px;background:#e3bc73;color:#402d28;border:1px solid #ffdea1;font-size:11px;box-shadow:none}
+#game #goal-action:focus-visible{outline:3px solid #fff0cb;outline-offset:2px}
+#game .scene-clue-card.newly-found small{color:#ffe2a1}
+#game #combine-back{min-height:44px;margin-top:8px;background:#ead8b8;color:#584027;border:1px solid #b59970}
+@media(orientation:landscape) and (max-height:550px){#game #case-goal{max-width:48%;font-size:10px}#game #goal-action{min-height:32px}}
+#game #pan-controls{top:calc(166px + env(safe-area-inset-top))}
+@media(orientation:landscape) and (max-height:550px){#game #pan-controls{top:156px}}
+/* Original-game discovery and courtroom presentation, with current chapter art. */
+#recent-evidence{position:absolute;right:12px;top:222px;z-index:9;display:flex;flex-direction:column;gap:6px;max-height:170px;overflow:auto}
+#recent-evidence[hidden]{display:none}
+#game:has(#panorama[hidden]) #recent-evidence{top:90px}
+#recent-evidence button{position:relative;display:flex;align-items:center;justify-content:center;width:48px;height:48px;min-height:48px;background:#20273de8;border:2px solid #d5b57b;box-shadow:2px 2px #111929;padding:3px}
+#recent-evidence .record-thumb{width:36px;height:36px;padding:0;border:0;background:transparent;box-shadow:none}
+#recent-evidence .pixel-evidence,#recent-evidence .original-evidence-icon{width:100%;height:100%}
+#recent-evidence button>span:not(.record-thumb){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#acquired-item{position:absolute;z-index:26;top:24%;left:12%;right:12%;max-height:43%;overflow:auto;text-align:center;padding:16px;background:#fff0ce;border:8px solid transparent;border-image:var(--frame) 20 stretch;box-shadow:0 10px 30px #07102288;color:#443121;animation:acquisition-pop .32s cubic-bezier(.2,.8,.3,1.3)}
+#acquired-item[data-motion=simple]{animation:none}
+.acquisition-kicker{font:19px DaramDotBold;color:#86452b}.acquisition-items{display:flex;justify-content:center;gap:8px;margin:12px 0}.acquisition-items button{padding:4px;border:2px solid #c5a068;background:#253047;box-shadow:none}.acquisition-items button[aria-pressed=true]{border-color:#f4bd54;box-shadow:0 0 0 2px #bf8347}.acquisition-items .record-thumb{width:76px;height:76px;border:0;padding:5px;background:transparent;box-shadow:none}.acquisition-items .pixel-evidence{width:100%;height:100%}
+#acquired-item h3{font:18px DaramDotBold;margin:6px 0}#acquired-item p{font-size:12px;line-height:1.7;margin:8px 0 13px}.acquisition-actions{display:flex;gap:7px}.acquisition-actions button{flex:1;min-height:44px;background:#ead1a5;border:1px solid #a67c4d;color:#483426;font-size:11px}.acquisition-actions #acquired-inspect{background:#783d35;color:#fff0cb}
+.evidence-to-record{position:fixed;z-index:140;pointer-events:none;width:80px;height:80px}.evidence-to-record .record-thumb{width:100%;height:100%;padding:0;background:#253047;border:2px solid #e4bd73}.evidence-to-record .pixel-evidence{width:100%;height:100%}
+@keyframes acquisition-pop{from{opacity:0;transform:translateY(16px) scale(.6) rotate(-5deg)}to{opacity:1;transform:none}}
+.flash,.banner,.ovr{position:fixed;inset:0;z-index:130;display:flex;align-items:center;justify-content:center;background:#0c152866;overflow:hidden;pointer-events:auto;color:#fff0cb;font-family:DaramDotBold}
+.flash .wf{position:absolute;inset:0;background:repeating-linear-gradient(-12deg,#d4bd8b22 0 3px,transparent 3px 24px)}.flash .shout{position:relative;width:min(90vw,650px);height:200px;display:grid;place-items:center;animation:acquisition-pop .2s ease-out}.flash .shout svg{position:absolute;inset:0;width:100%;height:100%;fill:#fff1c5;filter:drop-shadow(5px 7px #142039)}.flash .shout b{position:relative;color:#892d2e;font-size:clamp(32px,8vw,68px);text-shadow:2px 2px #eabf75}.flash.bad .shout b{color:#30435b}.flash .hand{position:absolute;left:12%;top:25%;font-size:100px;color:#efd5a0;transform:rotate(-12deg)}
+.banner .bars{width:100%;text-align:center;background:#18233cf2;border-block:5px double #c5a269;padding:28px 15px}.banner .mid{display:flex;flex-direction:column;gap:10px}.banner small{font-size:15px;color:#e7c083}.banner b{font-size:clamp(30px,8vw,60px)}
+.ovr{background:#142039ed;flex-direction:column;gap:10px}.ovr .plines{position:absolute;inset:0;background:repeating-conic-gradient(from 5deg at 50% 55%,transparent 0 12deg,#fff3cb11 12deg 15deg);animation:panic-lines .8s linear infinite}.ovr .ppor{position:relative;width:180px;height:260px;filter:drop-shadow(8px 6px #071025)}.legacy-portrait{width:100%;height:100%;background-size:300% 100%;background-repeat:no-repeat;image-rendering:pixelated}.ovr .pono{position:relative;font-size:40px;color:#efc775;transform:rotate(-8deg)}.ovr .pq{position:relative;text-align:center;display:flex;flex-direction:column;gap:9px;max-width:90%;background:#fff0cc;color:#543325;border:3px solid #b58b54;padding:12px 20px}.ovr .pq span{font-size:13px}.ovr .pq b{font-size:24px}.ovr.out{opacity:0;transition:opacity .26s}.flyev{position:fixed;width:60px;height:60px;z-index:140;pointer-events:none}.flyev .record-thumb{width:60px;height:60px}.flyev .pixel-evidence{width:100%;height:100%}
+@keyframes panic-lines{to{transform:rotate(12deg)}}
+#game.judging #modal,#game.judging #case-nav,#game.judging #goal-action,#game.judging header{pointer-events:none}
+#original-game{display:flex;align-items:center;justify-content:space-between;gap:7px;min-height:52px;padding:10px;background:#20273ded;color:#ffe3a8;border:2px solid #bf9b62;text-decoration:none;box-shadow:3px 4px #111827;font-size:13px}#original-game small{display:block;font-size:9px;margin-top:5px;color:#dbc59e}
+@media(prefers-reduced-motion:reduce){#acquired-item,.flash .shout,.ovr .plines{animation:none}.ovr.out{transition:none}}
+@media(orientation:landscape) and (max-height:550px){#recent-evidence{right:calc(50% + 16px);top:206px;flex-direction:row;max-height:50px}#game:has(#panorama[hidden]) #recent-evidence{top:140px}#acquired-item{left:5%;right:55%;top:18%;max-height:70%;padding:10px}.acquisition-items .record-thumb{width:54px;height:54px}.ovr .ppor{width:110px;height:150px}.ovr .pono{font-size:24px}.ovr .pq b{font-size:18px}#original-game{min-height:36px;padding:5px;font-size:10px}#original-game small{display:none}}
+/* The discovery art never steals a scene click; its explicit actions remain usable. */
+#acquired-item{pointer-events:none}#acquired-item button{pointer-events:auto}
+#game.title-screen #recent-evidence{display:none}
+#title .title-menu{gap:7px}#title .title-menu button{min-height:62px}
+@media(max-width:375px){#title .title-menu button{min-height:54px}#original-game{min-height:42px;padding:6px;font-size:11px}}
+#original-game>span{min-width:0}#original-game b{display:block;font-size:13px}#original-game small{line-height:1.5;font-size:9px}#original-game em{flex:none;font-style:normal;font-size:20px}
+#game.judging{pointer-events:none}
+.finding{animation:acquisition-pop .25s ease-out}
+@media(prefers-reduced-motion:reduce){.finding{animation:none}}

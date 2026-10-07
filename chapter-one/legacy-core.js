@@ -3,12 +3,15 @@
    are mapped to events. Do not independently rewrite these rule functions. */
 window.DaramLegacy={create:function(c,combos,saved){
 var CASES=[c],COMBO={[c.id]:combos},BATTLE={[c.id]:c.rounds},CAST=c.cast,CONFESS={[c.id]:'confession'};
+var pending=[];function track(p){pending.push(p);return p;}
 var S={players:['다람','아빠']},DL=null,events=[];
 var document={querySelector:function(){return null},getElementById:function(){return null}};
 var window={scrollTo:function(){},__hush:function(){return Promise.resolve()},__testi:function(){return []},__CONF2:{}};
 var SFX=new Proxy({},{get:function(_,name){return function(){if(globalThis.DaramAudio)globalThis.DaramAudio.fx(name)}}});
-function render(){} function floater(){} function bgm(){} function panicFx(w,k,n,done){done()}
-function flash(){return Promise.resolve()} function banner(){return Promise.resolve()}
+function render(){} function floater(){} function bgm(){}
+function panicFx(w,k,n,done){var fx=globalThis.DaramPresentation;if(fx)track(fx.panic(w,k,n).then(done));else done()}
+function flash(text,bad,point){var fx=globalThis.DaramPresentation;return fx?track(fx.flash(text,bad,point)):Promise.resolve()}
+function banner(text,sub){var fx=globalThis.DaramPresentation;return fx?track(fx.banner(text,sub)):Promise.resolve()}
 function jo(n){return n} function itemName(c,id){var e=evById(c,id),t=tById(c,id);return e?e.name:t?CAST[t.who].name+'의 말':id}
 function say(lines,done){events.push({type:'dialogue',lines:lines});if(done)done()}
 function setTimeout(done){done()}
@@ -102,9 +105,9 @@ return {
   if(!G.battle||G.battle.phase!=='fight'||G.battle.round!==round)this.begin(round,si);
   G.battle.si=si;
   var before=G.hp,st=stmsOf(c.rounds[round]),ok=!!(st[si].a&&st[si].a.indexOf(id)>=0),blocked=ok&&gated(c,id);
-  events=[];judgeBattle(c,id);
-  // Original visual timers run synchronously in this adapter; drain its promise effects.
-  await new Promise(function(resolve){globalThis.setTimeout(resolve,0)});
+  events=[];pending=[];judgeBattle(c,id);
+  // Wait for original effect chains before returning their final rule state.
+  do {if(pending.length)await Promise.all(pending.splice(0));await new Promise(function(resolve){globalThis.setTimeout(resolve,0)});}while(pending.length);
   var kind=blocked?'inspect':ok?'success':!G.battle?'exhausted':'wrong';
   if(ok&&!blocked){G.broken['round:'+round]=true;if(round===1&&G.unlocked.indexOf('door:archive')<0)G.unlocked.push('door:archive')}
   return {kind:kind,hp:G.hp,before:before,events:events};
