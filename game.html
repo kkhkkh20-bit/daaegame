@@ -46349,6 +46349,31 @@ var __M={"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열�
 })();
 
 (function(){
+ var MISS=window.__S198MISS=[];
+ function C(id){try{return caseById(id)}catch(e){return null}}
+ function setObs(cid,oid,f){var c=C(cid),n=0;if(c)c.locations.forEach(function(l){(l.obs||[]).forEach(function(o){if(o.id===oid){o.text=f(o.text);n++}})});if(!n)MISS.push("obs "+oid)}
+ function page(cid,part,i){try{var p=BOOK[cid][part][i];if(p)return p}catch(e){}MISS.push("page "+cid+"/"+part+i);return null}
+ function find(lines,who,pre){for(var k=0;k<lines.length;k++)if(lines[k][0]===who&&typeof lines[k][1]==="string"&&lines[k][1].indexOf(pre)===0)return k;return -1}
+ try{
+ setObs("envelope","o_e1_lamp",function(t){return "작은 벽등이 보관함 쪽만 비춘다. 기름 냄새가 없다. 밑동 홈에 별빛 돌 조각이 딱 하나 끼워져 있다. 창고 안쪽은 낮에도 어둡다."});
+ setObs("envelope","o_e1_oil",function(t){return "부리가 켜 둔 작은 등잔. 심지 대신 별빛 돌 조각 하나. 기록실엔 창문이 없고, 종이 곁엔 불꽃을 들이지 않는다고 한다."});
+ setObs("snow","o196_s3",function(t){return t.indexOf("사진 건판")>=0?t:t+" 그 아래 연필로 작게. '창고 옆에 한 달 둔 사진 건판이 뿌옇게 됨. 하루 둔 건 멀쩡. 열 때문은 아닌 듯. 모르겠음.'"});
+ (function(){var o=STORY.kitchen&&STORY.kitchen.outro;if(!o){MISS.push("kitchen outro");return}
+  var k=find(o,"det0","30년 전 그 창고도 그랬을 겁니다");if(k<0){MISS.push("outro det0");return}
+  o.splice(k,0,["det0","하나씩 홈에 끼우면 등잔을 밝히는 돌입니다. 한데 몰아 붙여 두면, 빛 대신 열이 납니다."])})();
+ (function(){var p=page("kitchen","post",15);if(!p)return;var L=p.lines;
+  var k=find(L,"mom","많이 늦었지. 미안해.");if(k>=0)L[k][1]=L[k][1].replace("돌이 한곳에 모이면 불이 난다는 걸 알리러","돌이 한데 모여 닿으면 뜨거워진다는 걸 알리러");else MISS.push("mom late");
+  var j=find(L,"mom","다녀왔어. 이제 셋이서 하자.");if(j<0){MISS.push("mom home");return}
+  L.splice(j,0,
+   ["mom","돌이 닿으면 뜨거워진다는 건, 이번에 너희가 증명했어. 그런데 엄마 수첩엔 아직 물음표가 둘 남았어."],
+   ["mom","분류장에서 오래 일한 사람들이 겨울마다 손끝이 저렸다는 얘기. 창고 옆에 한 달 둔 사진 건판이 뿌옇게 된 일. 돌 때문인지 아닌지는, 아직 몰라."],
+   ["mom","도시는 그 광산 돌을 다 가져다 썼는데, 거기서 일한 사람들 얘기는 아무도 적지 않았어. 그래서 엄마가 적기 시작한 거야.","sad"],
+   ["det1","그럼 그것도 이제 같이 적자. 내가 적을게. 읽을 수 있게.","happy"])})();
+ }catch(e){MISS.push("ERR "+e.message)}
+ if(MISS.length)try{console.warn("story198 miss",MISS)}catch(e){}
+})();
+
+(function(){
  if(window.__ui186)return;window.__ui186={n:0};
  var MAP={
   "27,36,71":"59,36,22",    /* #1B2447 ink */
