@@ -1,0 +1,21 @@
+다람 탐정 · I03 그림 인계
+
+원본 PNG는 생성 도구 출력 그대로 복사했습니다. 원본 게임과 art/는 변경하지 않았습니다.
+이미지 생성은 완료, 사용자 승인 및 실제 게임 적용 검토는 별도입니다.
+미리보기: https://kkhkkh20-bit.github.io/daaegame/design/retro/production/
+manifest.json에 실제 크기·SHA256·투명도·x,y,width,height 좌표·프롬프트가 있습니다.
+엄격한 32픽셀 격자/128픽셀 납품 또는 26색 제한 충족으로 표시하지 마세요.
+화면 크기에 맞춘 축소·색상 정리·반투명 가장자리 정리는 게임 담당자가 사본에서 수행합니다.
+
+각 아이콘은 투명 PNG 한 파일입니다. 기본 표시 32px, 작은 버튼 22px, 큰 버튼 36px.
+아이콘 crop에 투명 여백을 조금 남겨 같은 시각 크기로 표시합니다. 원본 PNG 자체는 잘라내지 않았습니다.
+on/off 및 full/empty 쌍은 두 파일의 공통 crop을 유지하세요.
+
+design/retro/icons/friends.png | 크기 [1254, 1254] | crop [19, 14, 1268, 1268] | SHA256 ca3c3b3c26f79f2b4a469fb6aa9746b207e8cd0935a99a194a84529e8e442f03
+design/retro/icons/mom-notebook.png | 크기 [1254, 1254] | crop [198, 217, 874, 874] | SHA256 3dc30700b8a3cf9137fada1f90e7bc34505f739a312e7b5d2b9093f5bb84d34a
+design/retro/icons/letter.png | 크기 [1254, 1254] | crop [200, 196, 856, 856] | SHA256 3353849b9695875e8c1c555d1335d47183918e8704da1df473b35f6500d1edac
+design/retro/icons/cloak-file.png | 크기 [1254, 1254] | crop [90, 100, 1074, 1074] | SHA256 f6514958574b99e06faa65b9a4fd8e0d8478b8af92fc244195c9b97ca29ca604
+design/retro/icons/world-map.png | 크기 [1254, 1254] | crop [149, 155, 956, 956] | SHA256 313b2c60351f3036f363f56e22aedf88d8dc3aeccda747a83a6a7a5c5a8cc7ca
+design/retro/icons/save.png | 크기 [1254, 1254] | crop [186, 194, 881, 881] | SHA256 ada72d17aa19fd8f000199d562cc8515b5bfc007d089b6076638cf4573b82ec9
+design/retro/icons/settings.png | 크기 [1254, 1254] | crop [72, 72, 1110, 1110] | SHA256 9e87721df3d03075b090e5fba020825e9adc2e2c9bbde37679b0dadff09028ff
+design/retro/icons/lock.png | 크기 [1254, 1254] | crop [158, 165, 939, 939] | SHA256 57c715d5e79d944c9344e4b8c98ef59aa928b498967f5782ee1217bd1b16f4fd

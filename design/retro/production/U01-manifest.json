@@ -1,0 +1,128 @@
+{
+  "batchId": "U01",
+  "assets": [
+    {
+      "id": "wood-tile",
+      "batch": "U01",
+      "path": "design/retro/ui/wood-tile.png",
+      "refs": [
+        "/workspace/daaegame/design/retro/title/title-bg.png",
+        "/workspace/daaegame/design/retro/star-hill-enriched.png"
+      ],
+      "transparent": false,
+      "prompt": "Create ONE SEAMLESS repeating game UI BACKGROUND TILE, horizontal rectangle aspect 2:1. Requested native logical192x96 enlarged nearest-neighbor4x=768x384. Match reference coarse square 1990s 16-bit pixel style only; NO scene, window, character, furniture, sky or UI. Material is old dark WALNUT wood, quiet low contrast, for parchment cards and text over it. EXACTLY FOUR long horizontal plank rows of equal height, each with ONE small vertical end-joint at different x (not at outer edges). Narrow STRAIGHT horizontal wood grain only, short sparse parallel pixel dashes, NOT wavy, sine-shaped, curly or swirling. A few tiny subtle knots formed of short straight angular pixels, one small dull brass nail near some board ends. Worn wood corners, just 3 or4 flat low-contrast walnut color steps. No highlights, shine, photographic texture, smooth gradients, noise or antialias. CRITICAL TILEABILITY: left/right edge pixel pattern must match row-by-row, top/bottom also match to repeat flawlessly on both axes. Border edge continuation must be exact; place no nail/knot/vertical joint within outer 12% left/right. All texture horizontal lines that cross an edge continue at exact same row on opposite edge. Top/bottom meet at identical narrow dark plank-gap stripe. No frame, border embellishment, text, letters, numbers or extra objects. Warm dark quiet walnut throughout, no blue areas.",
+      "source": "/workspace/generated_images/exec-f907b07c-f9df-46cf-a417-c5b317336625.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGB",
+      "bytes": 1212774,
+      "sha256": "eda176440b53ba8cf4ceeadadbaf176ac616b16a1ce17c73d31b9b919c381c8c",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "crop": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalSize": [
+        192,
+        96
+      ],
+      "requestedDeliverySize": [
+        768,
+        384
+      ],
+      "tileabilityReviewed": true,
+      "tileBoundaryValidation": {
+        "horizontalBoundaryMeanRGBDifference": 3.1766,
+        "verticalBoundaryMeanRGBDifference": 1.0344,
+        "exactBoundaryMatch": false,
+        "visualRepeatReviewed": true,
+        "previewTileSize": [
+          192,
+          96
+        ],
+        "reviewNote": "Both axes repeated in Chromium preview; no conspicuous seam observed at display size. Original edge pixels are not mathematically identical."
+      },
+      "tileabilityRule": "Preview actual repeat in both axes; do not claim edge pixels match without measurement."
+    },
+    {
+      "id": "wood-tile-dark",
+      "batch": "U01",
+      "path": "design/retro/ui/wood-tile-dark.png",
+      "refs": [
+        "/workspace/generated_images/exec-f907b07c-f9df-46cf-a417-c5b317336625.png"
+      ],
+      "transparent": false,
+      "prompt": "Edit this EXACT seamless walnut wood UI tile to make a DARK version ONE flat shade step darker throughout. Preserve EXACT rectangular 2:1 canvas dimensions and every pixel-art shape and location: EXACT four plank rows, same joints, grain dashes, knots, tiny brass nails, same repeated-edge continuation. No redraw, new pattern, moved joint, added nail or resized texture. Reduce brightness gently about20%, keep warm walnut hue, low contrast, three/four hard color planes. Coarse square 1990s16-bit pixels, no gradients, antialias, blur, shine, wave grain, vignette or border. The tile should repeat left/right/top/bottom without any obvious new seam. No lettering or scene objects. Only one flat dark wood material tile.",
+      "source": "/workspace/generated_images/exec-03193a19-8f3c-4347-b491-022a48e9dd52.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGB",
+      "bytes": 1317655,
+      "sha256": "ef9a0cd6f689e2999b2a986c3155fe6b9f267e7a5779d1ea6bd5858d3c5b6dba",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "crop": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalSize": [
+        192,
+        96
+      ],
+      "requestedDeliverySize": [
+        768,
+        384
+      ],
+      "tileabilityReviewed": true,
+      "tileBoundaryValidation": {
+        "horizontalBoundaryMeanRGBDifference": 3.3138,
+        "verticalBoundaryMeanRGBDifference": 1.3183,
+        "exactBoundaryMatch": false,
+        "visualRepeatReviewed": true,
+        "previewTileSize": [
+          192,
+          96
+        ],
+        "reviewNote": "Both axes repeated in Chromium preview; no conspicuous seam observed at display size. Original edge pixels are not mathematically identical."
+      },
+      "tileabilityRule": "Preview actual repeat in both axes; do not claim edge pixels match without measurement."
+    }
+  ],
+  "strictRasterCompliant": false,
+  "runtimeReviewed": false
+}

@@ -1,9 +1,9 @@
 {
   "sourceRequestCommit": "ea93961c88cc9c36e1b6dfc9f89f278ad342687f",
   "scope": "사용자 확인: 등록된 미완료 요청 전체",
-  "generatedImageCount": 20,
+  "generatedImageCount": 65,
   "expectedImageCount": 65,
-  "generationCompleted": false,
+  "generationCompleted": true,
   "runtimeReviewed": false,
   "userApproved": false,
   "strictRasterCompliant": false,
@@ -23,9 +23,37 @@
       "path": "design/retro/production/H01-assets.zip",
       "bytes": 1301675
     },
+    "F01": {
+      "path": "design/retro/production/F01-assets.zip",
+      "bytes": 8152575
+    },
+    "C02-F": {
+      "path": "design/retro/production/C02-F-assets.zip",
+      "bytes": 8665746
+    },
+    "T01": {
+      "path": "design/retro/production/T01-assets.zip",
+      "bytes": 2895090
+    },
     "I01": {
       "path": "design/retro/production/I01-assets.zip",
       "bytes": 2161211
+    },
+    "I02": {
+      "path": "design/retro/production/I02-assets.zip",
+      "bytes": 2092187
+    },
+    "I03": {
+      "path": "design/retro/production/I03-assets.zip",
+      "bytes": 2878786
+    },
+    "I04": {
+      "path": "design/retro/production/I04-assets.zip",
+      "bytes": 2056538
+    },
+    "U01": {
+      "path": "design/retro/production/U01-assets.zip",
+      "bytes": 1956596
     }
   },
   "assets": [
@@ -542,21 +570,18 @@
       "batch": "T01",
       "path": "design/retro/title/title-bg.png",
       "refs": [
-        "/workspace/daaegame/design/retro/star-hill-enriched.png",
-        "/workspace/daaegame/design/retro/daram-matched.png",
-        "/workspace/daaegame/design/retro/stickers/lantern-lit.png",
-        "/workspace/daaegame/design/retro/stickers/magnifier.png"
+        "/workspace/generated_images/exec-4289cfe8-8644-4e72-98f1-9cdace0348fb.png"
       ],
       "transparent": false,
-      "prompt": "Draw a tall PORTRAIT 9:19.5 game title BACKGROUND (1080x2340 requested). Match these approved 1990s 16-bit chunky pixel game references exactly in visible pixel density: bold square blocks, 3-4 abrupt flat shade planes per material, sparse sky checker dithering only, no soft gradients/blur/antialias or painterly texture. Quiet mature forest detective story. NIGHT inside a small cozy wooden detective office, warm honey wood walls and amber lantern illumination. NAVY ONLY outside the window, not interior. Top 30% of the image is a calm empty warm wood wall, broad simple planks, suitable for later title overlay; bottom 35% is uncluttered warm wooden floor, suitable for later 3 button overlays, no important objects there. All important scene content is confined between 35% and 65% image HEIGHT: medium window facing distant grassy star hill with a tiny tall iron lamp visibly LIT gold inside (no glow bloom), muted navy-purple star sky, a small wooden desk under window with ONE cream pocket notebook, ONE simple blue-glass magnifier and ONE lit iron lantern. Daram from reference 2 stands beside desk, shown from BEHIND looking out the window: ordinary squirrel, large golden furry tail, red checked hunting cap, cream acorn cardigan, brown skirt, no membrane. Small figure so hat and feet both within central 35%-65% height. Stage-like frontal room, sparse few props. Character should NOT face the viewer. No other people or animals. No lettering, no numbers, no title, no logos, no buttons, no UI, no excessive small clutter or bright polished highlights. Do NOT bake in empty black bars; the warm wall and floor fill the entire tall canvas. Both desk/window/character stay in middle band.",
-      "source": "/workspace/generated_images/exec-4289cfe8-8644-4e72-98f1-9cdace0348fb.png",
+      "prompt": "Edit this exact title background keeping its tall portrait aspect ratio and established chunky 16-bit pixel style. Keep warm wood colors, Daram's squirrel anatomy/outfit/backward-looking pose, the LIT lamp on the hill, and desk notebook/magnifier/lantern. IMPORTANT layout correction: shrink and reposition the ENTIRE central group (window+curtains+desk+chair+Daram) so ALL important parts, including Daram's feet and desk's feet, lie inside the MIDDLE 35%-65% HEIGHT band. Top 30% must be plain quiet warm wooden wall; bottom 35% must be EMPTY warm wood floor. Remove side bookshelf and framed picture (unneeded clutter). Window should be a smaller wide rectangle entirely in the middle band, not a tall window across most of canvas. One sparse stage-like office; bright clean warm middle tones, avoid murky brown. Pixel squares and flat hard shading, no blur or gradient. No text, title, buttons, UI, extra people. Preserve original overall portrait 9:19.5 aspect, no black bars.",
+      "source": "/workspace/generated_images/exec-c9506734-46d3-43e5-a7d1-f7e33c18d384.png",
       "size": [
         853,
         1844
       ],
       "mode": "RGB",
-      "bytes": 1553786,
-      "sha256": "00cc9446e03bdd9493d1b445308e3d9cdc52e722902b7386b8a7f1ccc10e43df",
+      "bytes": 1667011,
+      "sha256": "634e92bd42f8090ec53c256031501219fec6a06d107abe623109a15278733bfb",
       "alphaRange": [
         255,
         255
@@ -592,7 +617,9 @@
           0.65,
           1
         ]
-      }
+      },
+      "strictSafeBandGuaranteed": false,
+      "layoutReview": "Title/menu overlay visually reviewed in preview. Curtain rod and feet slightly extend past nominal importantContent band; preserve aspect ratio and use preview placement."
     },
     {
       "id": "icon-investigate",
@@ -977,6 +1004,2125 @@
         128,
         128
       ]
+    },
+    {
+      "id": "papa-think",
+      "batch": "F01",
+      "path": "design/retro/faces/papa-think.png",
+      "refs": [
+        "/workspace/generated_images/exec-63cda912-2b38-4530-81ca-9aa7bbb9b753.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into think. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Focused brows; a brown furry raccoon paw under chin, mouth visible. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-bc37c3b4-dd03-4d14-b047-281ddcd4bf00.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 889899,
+      "sha256": "3e07a7022a1092599d59fac5bb7655e3aa26154a96b01f87be4d825e5050f887",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 52.549,
+      "partialAlphaPercent": 47.295,
+      "visibleBoundsAlphaOver64": [
+        166,
+        144,
+        1088,
+        1190
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "papa-sad",
+      "batch": "F01",
+      "path": "design/retro/faces/papa-sad.png",
+      "refs": [
+        "/workspace/generated_images/exec-63cda912-2b38-4530-81ca-9aa7bbb9b753.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into sad. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Inner brows lifted, faint downturned mouth, tiny pale cyan bead at lower eyelid, holding back grief; no tear stream. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-2f25da7d-9a3c-4f66-8e00-9f56034583cd.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 885630,
+      "sha256": "6655c389f6613de9b3a4106f7ee0645b21ad20e86b5efa03d599c8782222cdbf",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 52.423,
+      "partialAlphaPercent": 47.419,
+      "visibleBoundsAlphaOver64": [
+        166,
+        143,
+        1089,
+        1190
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "papa-smile",
+      "batch": "F01",
+      "path": "design/retro/faces/papa-smile.png",
+      "refs": [
+        "/workspace/generated_images/exec-63cda912-2b38-4530-81ca-9aa7bbb9b753.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into smile. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Warm tired father's modest closed-mouth smile, round eyes stay open. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-b1d331aa-d593-4741-abf1-04ce71974a09.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 888327,
+      "sha256": "5ee1eaa4fc25899b21eccbef155106b39923ad3215dce1af3152367a164003d7",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 52.288,
+      "partialAlphaPercent": 47.569,
+      "visibleBoundsAlphaOver64": [
+        165,
+        143,
+        1090,
+        1191
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "rei-smug",
+      "batch": "F01",
+      "path": "design/retro/faces/rei-smug.png",
+      "refs": [
+        "/workspace/generated_images/exec-1ed67344-0a64-4ceb-81eb-0f579393a9d1.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into smug. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Brows mildly arched, eyes slightly narrowed but both visible, ONE raised mouth corner, confident quiet rival. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-a487b222-2ce1-4c3b-b230-8a94d91d65ea.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 791503,
+      "sha256": "6712449bbe605c426c402e3461810a5fcd87c201ef2d70cb6401455772fa54b2",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.325,
+      "partialAlphaPercent": 42.559,
+      "visibleBoundsAlphaOver64": [
+        185,
+        163,
+        1070,
+        1195
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "rei-think",
+      "batch": "F01",
+      "path": "design/retro/faces/rei-think.png",
+      "refs": [
+        "/workspace/generated_images/exec-1ed67344-0a64-4ceb-81eb-0f579393a9d1.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into think. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Focused brows; gray feline paw holding a small pen under chin, mouth visible. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-4997f95d-ef28-4710-b773-df7efb500489.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 795881,
+      "sha256": "95ce457655af6caf514b42de47475b070af2dc29ee882149a689dd95848d3a05",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.312,
+      "partialAlphaPercent": 42.502,
+      "visibleBoundsAlphaOver64": [
+        186,
+        163,
+        1069,
+        1195
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "rei-pout",
+      "batch": "F01",
+      "path": "design/retro/faces/rei-pout.png",
+      "refs": [
+        "/workspace/generated_images/exec-1ed67344-0a64-4ceb-81eb-0f579393a9d1.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into pout. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Cheeks slightly puffed, tiny pout, brows lowered a little; restrained frustration. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-a6ddb797-d833-4e27-865b-83d9d7cbd56f.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 791302,
+      "sha256": "cd3b3420fc27346d473bcfbdc2f214e6d193ed1b51779ebcfd5e0eeb19325237",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.34,
+      "partialAlphaPercent": 42.504,
+      "visibleBoundsAlphaOver64": [
+        185,
+        163,
+        1069,
+        1195
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "karo-nervous",
+      "batch": "F01",
+      "path": "design/retro/faces/karo-nervous.png",
+      "refs": [
+        "/workspace/generated_images/exec-52abc0a1-65b5-4462-8f35-791ddc4adb69.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into nervous. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Inner feather brows raised, tense beak mouth, ONE tiny cyan sweat square on cheek, navy wingtip near chest; no human hands. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-ae5685c9-7b9a-4be6-ac3f-7c156bf760a5.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 786877,
+      "sha256": "c52c18af75d9abfdd53253665277815fa5fa23d83e2bcc8a9cd73ef2e142fb70",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 56.573,
+      "partialAlphaPercent": 43.285,
+      "visibleBoundsAlphaOver64": [
+        136,
+        161,
+        1115,
+        1186
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "karo-think",
+      "batch": "F01",
+      "path": "design/retro/faces/karo-think.png",
+      "refs": [
+        "/workspace/generated_images/exec-52abc0a1-65b5-4462-8f35-791ddc4adb69.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into think. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Focused feather brows; navy feathered wingtip under beak tip, both eyes and dark gray crow beak readable. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-dd78d380-4a3d-4f96-9241-f65f804a9501.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 783186,
+      "sha256": "855a488a3dc10e0f3051ed0116b7a95dd86457f7435795222fe33ea4ab4e31f0",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 56.438,
+      "partialAlphaPercent": 43.377,
+      "visibleBoundsAlphaOver64": [
+        137,
+        163,
+        1115,
+        1185
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "karo-shock",
+      "batch": "F01",
+      "path": "design/retro/faces/karo-shock.png",
+      "refs": [
+        "/workspace/generated_images/exec-52abc0a1-65b5-4462-8f35-791ddc4adb69.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into shock. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Raised feather brows, widened eyes, dark gray crow beak slightly open with tiny warm interior; no human lips/teeth. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-c47ca90d-ba21-49ca-a8a5-a3f8ea68ce04.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 786504,
+      "sha256": "5c554c180b397da0da0ec0185afd3b8d2ab55b30e513715bd8d342b4fe28e1ea",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 56.495,
+      "partialAlphaPercent": 43.345,
+      "visibleBoundsAlphaOver64": [
+        137,
+        163,
+        1116,
+        1185
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "buri-think",
+      "batch": "C02-F",
+      "path": "design/retro/faces/buri-think.png",
+      "refs": [
+        "/workspace/generated_images/exec-5f76d9df-adcf-4ba5-b569-4734548bad10.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into think. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Focused feather brows; brown feathered wingtip under tiny amber owl beak, cream facial discs intact. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-0b1344a8-801b-4c70-8cd1-e49dfe62878b.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 927088,
+      "sha256": "8b977b39bfea556fd3ecaf3c0549a15e5eac051820e4f4ac0b7e7515df112154",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 49.733,
+      "partialAlphaPercent": 50.128,
+      "visibleBoundsAlphaOver64": [
+        129,
+        169,
+        1124,
+        1209
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "buri-sad",
+      "batch": "C02-F",
+      "path": "design/retro/faces/buri-sad.png",
+      "refs": [
+        "/workspace/generated_images/exec-5f76d9df-adcf-4ba5-b569-4734548bad10.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into sad. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Quiet shame and hurt from concealing truth: inner feather brows raised, softened forward eyes, closed tiny beak; no exaggerated tears. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-2dec6a7f-b220-4092-9dfe-3bb65f907fa3.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 919704,
+      "sha256": "cedf9a448d3c7ae8ef8d25d73fb706d03593007b94ebb6fd0c361ee8a42af8f6",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 49.844,
+      "partialAlphaPercent": 50.017,
+      "visibleBoundsAlphaOver64": [
+        129,
+        169,
+        1124,
+        1210
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "buri-shock",
+      "batch": "C02-F",
+      "path": "design/retro/faces/buri-shock.png",
+      "refs": [
+        "/workspace/generated_images/exec-5f76d9df-adcf-4ba5-b569-4734548bad10.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into shock. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Raised feather brows, widened eyes, small amber owl beak slightly open. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-e90ebb26-357a-4665-9105-690c69052668.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 929457,
+      "sha256": "8358467ba00b3c37eda8a8f24f8ea195ba1e861529afe7298cb83377f997ab6b",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 49.978,
+      "partialAlphaPercent": 49.894,
+      "visibleBoundsAlphaOver64": [
+        130,
+        170,
+        1123,
+        1211
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "wanggu-think",
+      "batch": "C02-F",
+      "path": "design/retro/faces/wanggu-think.png",
+      "refs": [
+        "/workspace/generated_images/exec-b3aea429-1305-491d-9b0a-5cb68356eb24.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into think. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Focused brows; furry raccoon paw under chin. Orange festival vest and red/cream armband intact. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-70c4cda8-9e40-4301-b890-0ab5407db36e.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 898907,
+      "sha256": "5fe58af25a85797a44474b6976e4315532e6d80dda9512e778568baa01796ede",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 50.255,
+      "partialAlphaPercent": 49.58,
+      "visibleBoundsAlphaOver64": [
+        120,
+        138,
+        1134,
+        1184
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "wanggu-embarrassed",
+      "batch": "C02-F",
+      "path": "design/retro/faces/wanggu-embarrassed.png",
+      "refs": [
+        "/workspace/generated_images/exec-b3aea429-1305-491d-9b0a-5cb68356eb24.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into embarrassed. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Inner brows raised, small awkward crooked smile, ONE muted rusty pink block on each cheek, embarrassed about exaggerated testimony. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-9e82f3c1-f65f-4b3a-a8ca-756db1c9d441.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 900023,
+      "sha256": "d8936f4cf4cb6700f38cb7c59c68921c748bbfe2993834fec7813a063bea83d2",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 50.264,
+      "partialAlphaPercent": 49.597,
+      "visibleBoundsAlphaOver64": [
+        120,
+        138,
+        1134,
+        1185
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "wanggu-shock",
+      "batch": "C02-F",
+      "path": "design/retro/faces/wanggu-shock.png",
+      "refs": [
+        "/workspace/generated_images/exec-b3aea429-1305-491d-9b0a-5cb68356eb24.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into shock. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Raised brows, widened forward eyes, small open round animal mouth; no comic symbols. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-d745df27-1a3b-4e70-9869-ae552209222e.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 910243,
+      "sha256": "a2a650e65ea7a431b7e949e10bd1dfdd69cfb75921b28c3a7b3781b5fa9f4d7e",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 50.3,
+      "partialAlphaPercent": 49.557,
+      "visibleBoundsAlphaOver64": [
+        122,
+        138,
+        1132,
+        1185
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "doto-think",
+      "batch": "C02-F",
+      "path": "design/retro/faces/doto-think.png",
+      "refs": [
+        "/workspace/generated_images/exec-bfc1f479-3064-48e8-b349-4926b2e45c82.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into think. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Focused brows; small chestnut squirrel furry paw under chin. Green checked vest and stopwatch unchanged. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-5bd78923-082f-4194-87d1-3a62913eecb5.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 786523,
+      "sha256": "f369ef9cc555c1b666c2ea66e58add563ca848f2e9f1d02be4aa615b128fd976",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 58.071,
+      "partialAlphaPercent": 41.786,
+      "visibleBoundsAlphaOver64": [
+        187,
+        176,
+        1068,
+        1218
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "doto-shy",
+      "batch": "C02-F",
+      "path": "design/retro/faces/doto-shy.png",
+      "refs": [
+        "/workspace/generated_images/exec-bfc1f479-3064-48e8-b349-4926b2e45c82.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into shy. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Timid crooked smile, gently raised inner brows, small muted rosy cheek blocks; pupils still at player. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-de60a5ff-5f87-4247-860f-af4a94f8ce70.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 788588,
+      "sha256": "0ffd2b6d685c6a4fe3bcffb7be9c9ce40c7e16f5475541227fe49adee49d3a78",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.875,
+      "partialAlphaPercent": 41.983,
+      "visibleBoundsAlphaOver64": [
+        186,
+        175,
+        1068,
+        1217
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "doto-shock",
+      "batch": "C02-F",
+      "path": "design/retro/faces/doto-shock.png",
+      "refs": [
+        "/workspace/generated_images/exec-bfc1f479-3064-48e8-b349-4926b2e45c82.png"
+      ],
+      "transparent": true,
+      "prompt": "Edit this EXACT neutral portrait into shock. Preserve EXACT square canvas dimensions, face position and scale, ears/hat/head and shoulder silhouette, clothing geometry, colors, and transparent padding. Same character, true FRONT view, BOTH eyes/pupils at player, nose/beak centered. Change ONLY facial expression and for think add animal paw/wing under chin without obscuring mouth. Raised brows, widened eyes, small open animal mouth; keep exact ears/head silhouette. No human fingers/skin. Keep coarse clearly square 1990s 16-bit pixel art, hard flat shade planes, one square eye highlight, dark stepped pixel outline, no antialias/blur/gradient/shine. ONE bust on transparent background, no text, extra portraits or emotion graphics. Do not crop, zoom, relocate head or redraw costume.",
+      "source": "/workspace/generated_images/exec-b8345ebf-9bcd-45cd-9258-0967878a3fdf.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 787747,
+      "sha256": "f6563ddab9df804e2772aa730cab1a7691b8d1f9a56d8624e892610e4b5e4d39",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.806,
+      "partialAlphaPercent": 42.03,
+      "visibleBoundsAlphaOver64": [
+        187,
+        173,
+        1068,
+        1216
+      ],
+      "crop": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        96
+      ],
+      "alignmentRule": "Use whole common canvas for every expression; never independently crop visible bounds."
+    },
+    {
+      "id": "wood-tile",
+      "batch": "U01",
+      "path": "design/retro/ui/wood-tile.png",
+      "refs": [
+        "/workspace/daaegame/design/retro/title/title-bg.png",
+        "/workspace/daaegame/design/retro/star-hill-enriched.png"
+      ],
+      "transparent": false,
+      "prompt": "Create ONE SEAMLESS repeating game UI BACKGROUND TILE, horizontal rectangle aspect 2:1. Requested native logical192x96 enlarged nearest-neighbor4x=768x384. Match reference coarse square 1990s 16-bit pixel style only; NO scene, window, character, furniture, sky or UI. Material is old dark WALNUT wood, quiet low contrast, for parchment cards and text over it. EXACTLY FOUR long horizontal plank rows of equal height, each with ONE small vertical end-joint at different x (not at outer edges). Narrow STRAIGHT horizontal wood grain only, short sparse parallel pixel dashes, NOT wavy, sine-shaped, curly or swirling. A few tiny subtle knots formed of short straight angular pixels, one small dull brass nail near some board ends. Worn wood corners, just 3 or4 flat low-contrast walnut color steps. No highlights, shine, photographic texture, smooth gradients, noise or antialias. CRITICAL TILEABILITY: left/right edge pixel pattern must match row-by-row, top/bottom also match to repeat flawlessly on both axes. Border edge continuation must be exact; place no nail/knot/vertical joint within outer 12% left/right. All texture horizontal lines that cross an edge continue at exact same row on opposite edge. Top/bottom meet at identical narrow dark plank-gap stripe. No frame, border embellishment, text, letters, numbers or extra objects. Warm dark quiet walnut throughout, no blue areas.",
+      "source": "/workspace/generated_images/exec-f907b07c-f9df-46cf-a417-c5b317336625.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGB",
+      "bytes": 1212774,
+      "sha256": "eda176440b53ba8cf4ceeadadbaf176ac616b16a1ce17c73d31b9b919c381c8c",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "crop": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalSize": [
+        192,
+        96
+      ],
+      "requestedDeliverySize": [
+        768,
+        384
+      ],
+      "tileabilityReviewed": true,
+      "tileBoundaryValidation": {
+        "horizontalBoundaryMeanRGBDifference": 3.1766,
+        "verticalBoundaryMeanRGBDifference": 1.0344,
+        "exactBoundaryMatch": false,
+        "visualRepeatReviewed": true,
+        "previewTileSize": [
+          192,
+          96
+        ],
+        "reviewNote": "Both axes repeated in Chromium preview; no conspicuous seam observed at display size. Original edge pixels are not mathematically identical."
+      },
+      "tileabilityRule": "Preview actual repeat in both axes; do not claim edge pixels match without measurement."
+    },
+    {
+      "id": "wood-tile-dark",
+      "batch": "U01",
+      "path": "design/retro/ui/wood-tile-dark.png",
+      "refs": [
+        "/workspace/generated_images/exec-f907b07c-f9df-46cf-a417-c5b317336625.png"
+      ],
+      "transparent": false,
+      "prompt": "Edit this EXACT seamless walnut wood UI tile to make a DARK version ONE flat shade step darker throughout. Preserve EXACT rectangular 2:1 canvas dimensions and every pixel-art shape and location: EXACT four plank rows, same joints, grain dashes, knots, tiny brass nails, same repeated-edge continuation. No redraw, new pattern, moved joint, added nail or resized texture. Reduce brightness gently about20%, keep warm walnut hue, low contrast, three/four hard color planes. Coarse square 1990s16-bit pixels, no gradients, antialias, blur, shine, wave grain, vignette or border. The tile should repeat left/right/top/bottom without any obvious new seam. No lettering or scene objects. Only one flat dark wood material tile.",
+      "source": "/workspace/generated_images/exec-03193a19-8f3c-4347-b491-022a48e9dd52.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGB",
+      "bytes": 1317655,
+      "sha256": "ef9a0cd6f689e2999b2a986c3155fe6b9f267e7a5779d1ea6bd5858d3c5b6dba",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "crop": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalSize": [
+        192,
+        96
+      ],
+      "requestedDeliverySize": [
+        768,
+        384
+      ],
+      "tileabilityReviewed": true,
+      "tileBoundaryValidation": {
+        "horizontalBoundaryMeanRGBDifference": 3.3138,
+        "verticalBoundaryMeanRGBDifference": 1.3183,
+        "exactBoundaryMatch": false,
+        "visualRepeatReviewed": true,
+        "previewTileSize": [
+          192,
+          96
+        ],
+        "reviewNote": "Both axes repeated in Chromium preview; no conspicuous seam observed at display size. Original edge pixels are not mathematically identical."
+      },
+      "tileabilityRule": "Preview actual repeat in both axes; do not claim edge pixels match without measurement."
+    },
+    {
+      "id": "icon-back",
+      "batch": "I02",
+      "path": "design/retro/icons/back.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE solid ochre left-pointing arrow, stepped pixel shape.",
+      "source": "/workspace/generated_images/exec-5a0574c9-8a64-414b-ad82-937d26fe059e.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 242403,
+      "sha256": "2b61a95b3faa93639d8da7636a8e603efcd02f9b7cf49f1332e9aa736d982e90",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 88.034,
+      "partialAlphaPercent": 11.901,
+      "visibleBoundsAlphaOver64": [
+        294,
+        365,
+        960,
+        909
+      ],
+      "crop": [
+        234,
+        244,
+        786,
+        786
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-menu",
+      "batch": "I02",
+      "path": "design/retro/icons/menu.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: THREE short evenly spaced cream horizontal bars with dark brown borders, one menu icon.",
+      "source": "/workspace/generated_images/exec-47d508f0-8d97-4b7d-895b-4c4575bb48a1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 225357,
+      "sha256": "b69aaafb839e1d26eb5151122f1b0693f20ac451c53560d8738f4a113cd56891",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 88.621,
+      "partialAlphaPercent": 11.284,
+      "visibleBoundsAlphaOver64": [
+        383,
+        440,
+        871,
+        840
+      ],
+      "crop": [
+        339,
+        352,
+        576,
+        576
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-sound-on",
+      "batch": "I02",
+      "path": "design/retro/icons/sound-on.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE compact ochre speaker silhouette with two short dark pixel sound-wave brackets at right.",
+      "source": "/workspace/generated_images/exec-232345b4-ac71-461c-ba6b-ee5c6d192521.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 333773,
+      "sha256": "30a68670fe50c7422e8b87db9b32ff944b498b7584c11946c4c94e0ca1239dc8",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 82.184,
+      "partialAlphaPercent": 17.656,
+      "visibleBoundsAlphaOver64": [
+        315,
+        331,
+        1049,
+        964
+      ],
+      "crop": [
+        245,
+        203,
+        888,
+        888
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-detective-hat",
+      "batch": "I02",
+      "path": "design/retro/icons/detective-hat.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE red checked squirrel detective hunting cap, compact two side flaps and low brim, no animal or head.",
+      "source": "/workspace/generated_images/exec-c4db855c-c272-4e38-aa14-1f18cf36a8ff.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 433954,
+      "sha256": "dbaf63d8bedd499f96868c36b9f1d7a4c9c4b433be2098b3d22d7a58debac830",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 76.673,
+      "partialAlphaPercent": 23.22,
+      "visibleBoundsAlphaOver64": [
+        193,
+        314,
+        1089,
+        943
+      ],
+      "crop": [
+        112,
+        99,
+        1058,
+        1058
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-flash-idea",
+      "batch": "I02",
+      "path": "design/retro/icons/flash-idea.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE gold lightbulb with three tiny straight hard pixel rays above it, dark gray socket, compact silhouette, distinct from hint.",
+      "source": "/workspace/generated_images/exec-01f89b81-39b7-43d0-939b-23bb5c333bbc.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 395026,
+      "sha256": "2d82481d037c8727a7e7ee78a5a0a83038e8b5c2ae738f616f45a5341fecb1a3",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 78.168,
+      "partialAlphaPercent": 21.712,
+      "visibleBoundsAlphaOver64": [
+        338,
+        151,
+        915,
+        1104
+      ],
+      "crop": [
+        64,
+        65,
+        1125,
+        1125
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-hidden-story",
+      "batch": "I02",
+      "path": "design/retro/icons/hidden-story.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE small closed ochre wooden chest with ONE dark brown padlock centered on front, no coins or other objects.",
+      "source": "/workspace/generated_images/exec-1b2c1f2f-cfee-4f92-b444-e841221b4784.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 418566,
+      "sha256": "814ce3ac95105595abddfe890cedfca0250dd2426dd7127a72e89766ebeaa74f",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 76.271,
+      "partialAlphaPercent": 23.646,
+      "visibleBoundsAlphaOver64": [
+        262,
+        343,
+        993,
+        922
+      ],
+      "crop": [
+        196,
+        201,
+        863,
+        863
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-badge",
+      "batch": "I02",
+      "path": "design/retro/icons/badge.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE small gold medal with rusty red ribbon at top, round medal and single simple engraved star-shape, no text.",
+      "source": "/workspace/generated_images/exec-7d9901ef-65af-4662-be59-89a073f9096a.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 474940,
+      "sha256": "38ec2bca71368e65987b850a9fd1a2539d167e3e9ff5e070f33f11d1822763a6",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 73.795,
+      "partialAlphaPercent": 26.102,
+      "visibleBoundsAlphaOver64": [
+        273,
+        188,
+        981,
+        1082
+      ],
+      "crop": [
+        99,
+        107,
+        1055,
+        1055
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-friends",
+      "batch": "I03",
+      "path": "design/retro/icons/friends.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: TWO small friendly animal faces side by side: golden squirrel and gray raccoon, entirely animal heads, simple round eyes. No people.",
+      "source": "/workspace/generated_images/exec-e01c6907-3591-44ce-9311-9b84d5d93173.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 631314,
+      "sha256": "ca3c3b3c26f79f2b4a469fb6aa9746b207e8cd0935a99a194a84529e8e442f03",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 65.428,
+      "partialAlphaPercent": 34.431,
+      "visibleBoundsAlphaOver64": [
+        116,
+        299,
+        1190,
+        997
+      ],
+      "crop": [
+        19,
+        14,
+        1268,
+        1268
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-mom-notebook",
+      "batch": "I03",
+      "path": "design/retro/icons/mom-notebook.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE closed sage-green notebook with ONE clear ochre acorn pictogram on front and cream page edge; no lettering.",
+      "source": "/workspace/generated_images/exec-cdbcb5e0-bdc5-4be1-bf05-a972f9d14a55.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 424485,
+      "sha256": "3dc30700b8a3cf9137fada1f90e7bc34505f739a312e7b5d2b9093f5bb84d34a",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 76.893,
+      "partialAlphaPercent": 23.009,
+      "visibleBoundsAlphaOver64": [
+        272,
+        284,
+        998,
+        1024
+      ],
+      "crop": [
+        198,
+        217,
+        874,
+        874
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-letter",
+      "batch": "I03",
+      "path": "design/retro/icons/letter.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE sealed cream envelope viewed front, clear dark diagonal fold edges and tiny burgundy wax seal, no letters.",
+      "source": "/workspace/generated_images/exec-6cbd42af-52b9-4683-b124-008a79bb6290.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 416118,
+      "sha256": "3353849b9695875e8c1c555d1335d47183918e8704da1df473b35f6500d1edac",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 76.325,
+      "partialAlphaPercent": 23.533,
+      "visibleBoundsAlphaOver64": [
+        266,
+        369,
+        991,
+        879
+      ],
+      "crop": [
+        200,
+        196,
+        856,
+        856
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-cloak-file",
+      "batch": "I03",
+      "path": "design/retro/icons/cloak-file.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE black-plum hooded cloak silhouette, featureless dark face opening, simple flared shoulders; no visible person or skin, no background.",
+      "source": "/workspace/generated_images/exec-1e7d8963-da91-4ebf-bceb-4e05a349e405.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 470948,
+      "sha256": "f6514958574b99e06faa65b9a4fd8e0d8478b8af92fc244195c9b97ca29ca604",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 72.799,
+      "partialAlphaPercent": 27.097,
+      "visibleBoundsAlphaOver64": [
+        261,
+        182,
+        993,
+        1092
+      ],
+      "crop": [
+        90,
+        100,
+        1074,
+        1074
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-world-map",
+      "batch": "I03",
+      "path": "design/retro/icons/world-map.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE compact folded cream map with three accordion panels, ONE broad green land patch and blue lake, no labels/roads/tiny lines.",
+      "source": "/workspace/generated_images/exec-fc3b6bcf-4eb2-442e-945f-c5856cc4248b.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 498287,
+      "sha256": "313b2c60351f3036f363f56e22aedf88d8dc3aeccda747a83a6a7a5c5a8cc7ca",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 72.043,
+      "partialAlphaPercent": 27.873,
+      "visibleBoundsAlphaOver64": [
+        222,
+        301,
+        1032,
+        965
+      ],
+      "crop": [
+        149,
+        155,
+        956,
+        956
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-save",
+      "batch": "I03",
+      "path": "design/retro/icons/save.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE ochre wooden single drawer viewed front, simple cream handle and dark opening line.",
+      "source": "/workspace/generated_images/exec-edf960e3-259c-43d4-be20-61bb2cefdd13.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 391948,
+      "sha256": "ada72d17aa19fd8f000199d562cc8515b5bfc007d089b6076638cf4573b82ec9",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 77.535,
+      "partialAlphaPercent": 22.426,
+      "visibleBoundsAlphaOver64": [
+        254,
+        373,
+        1000,
+        896
+      ],
+      "crop": [
+        186,
+        194,
+        881,
+        881
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-settings",
+      "batch": "I03",
+      "path": "design/retro/icons/settings.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE gray-blue cog gear with six large teeth and one transparent circular center hole, no decoration.",
+      "source": "/workspace/generated_images/exec-4f88e5f6-2c55-4e81-b795-516078dc19ad.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 521861,
+      "sha256": "9e87721df3d03075b090e5fba020825e9adc2e2c9bbde37679b0dadff09028ff",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 70.074,
+      "partialAlphaPercent": 29.739,
+      "visibleBoundsAlphaOver64": [
+        161,
+        157,
+        1093,
+        1097
+      ],
+      "crop": [
+        72,
+        72,
+        1110,
+        1110
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-lock",
+      "batch": "I03",
+      "path": "design/retro/icons/lock.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE ochre padlock with dark brown semicircle shackle and ONE simple keyhole.",
+      "source": "/workspace/generated_images/exec-b636e576-d593-42d0-9a8b-71d3abb446db.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 424161,
+      "sha256": "57c715d5e79d944c9344e4b8c98ef59aa928b498967f5782ee1217bd1b16f4fd",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 75.175,
+      "partialAlphaPercent": 24.684,
+      "visibleBoundsAlphaOver64": [
+        308,
+        237,
+        947,
+        1032
+      ],
+      "crop": [
+        158,
+        165,
+        939,
+        939
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-trust-full",
+      "batch": "I04",
+      "path": "design/retro/icons/trust-full.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE solid rusty red heart, upper left lighter hard block, lower right burgundy shade, thick brown outline.",
+      "source": "/workspace/generated_images/exec-132f43b2-1096-4205-bbc3-9de0fbb5811d.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 330314,
+      "sha256": "1d1f16ea971b42caaea857f1b382c6682266acdf8330312da072606c30579505",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 82.106,
+      "partialAlphaPercent": 17.801,
+      "visibleBoundsAlphaOver64": [
+        282,
+        340,
+        972,
+        922
+      ],
+      "crop": [
+        219,
+        223,
+        816,
+        816
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-star-full",
+      "batch": "I04",
+      "path": "design/retro/icons/star-full.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE filled ochre five-point star, cream upper-left plane and warm gold lower-right shade, dark brown outline.",
+      "source": "/workspace/generated_images/exec-7e3d5991-da31-40be-b738-2aa2aa852840.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 347487,
+      "sha256": "7a13893f58b04b1584001a7634d95a8d3fe9525ac10dde9c984d7b97188d662b",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 80.716,
+      "partialAlphaPercent": 19.177,
+      "visibleBoundsAlphaOver64": [
+        231,
+        267,
+        1023,
+        988
+      ],
+      "crop": [
+        158,
+        160,
+        937,
+        937
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-lamp-life-on",
+      "batch": "I04",
+      "path": "design/retro/icons/lamp-life-on.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE small lit iron lantern, dark brown and blue-gray metal shell, yellow flat flame inside, no bloom or halo. Very simplified 24x24 logical motif.",
+      "source": "/workspace/generated_images/exec-dcf9f57f-d324-47f0-8d56-e978801a4517.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 375145,
+      "sha256": "f6ab6c43bc43757017e64c21eb4cc9fd935438736a49d7600a5cafae492b5f0a",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 80.107,
+      "partialAlphaPercent": 19.78,
+      "visibleBoundsAlphaOver64": [
+        353,
+        220,
+        901,
+        1032
+      ],
+      "crop": [
+        146,
+        145,
+        961,
+        961
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-press",
+      "batch": "I04",
+      "path": "design/retro/icons/press.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE brown furry animal paw in cream cuff pointing its index digit toward viewer RIGHT, other three fingers folded; no human skin, simple clear silhouette.",
+      "source": "/workspace/generated_images/exec-590279ed-c51c-4255-8fc9-d70a2175d793.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 450427,
+      "sha256": "ca60f295aa25b0c498e2f6e2d11cbe1ab33545c1ed5a42e70556ce74711169c8",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 74.775,
+      "partialAlphaPercent": 25.091,
+      "visibleBoundsAlphaOver64": [
+        169,
+        379,
+        1141,
+        964
+      ],
+      "crop": [
+        81,
+        98,
+        1147,
+        1147
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-objection",
+      "batch": "I04",
+      "path": "design/retro/icons/objection.png",
+      "refs": [
+        "/workspace/generated_images/exec-af133695-73c5-4799-8a9e-993f1e870de9.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nICON: ONE compact rusty red speech bubble with stepped jagged top/right edge, ONE cream exclamation-mark pictogram centered. This single punctuation mark is intentional. No words, no label or background.",
+      "source": "/workspace/generated_images/exec-b531488e-a5be-494f-a282-436f22c5f3b9.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 405202,
+      "sha256": "5e832c7b8d8711e283b02088ef4966b2f49ab5ca284425b652a83eef50e5d7ae",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 76.777,
+      "partialAlphaPercent": 23.13,
+      "visibleBoundsAlphaOver64": [
+        281,
+        288,
+        973,
+        992
+      ],
+      "crop": [
+        211,
+        224,
+        831,
+        831
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-sound-off",
+      "batch": "I02",
+      "path": "design/retro/icons/sound-off.png",
+      "refs": [
+        "/workspace/generated_images/exec-232345b4-ac71-461c-ba6b-ee5c6d192521.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nEDIT THE PROVIDED BASE ICON ONLY. Preserve EXACT canvas size, motif position and scale, pixel-block width, colors, outline and lighting. Keep the speaker silhouette and its placement EXACTLY. Remove the two sound waves; replace with a simple compact rusty-red pixel X on the right. ONE speaker-off icon, no wording.",
+      "pair": {
+        "base": "sound-on",
+        "change": "Keep the speaker silhouette and its placement EXACTLY. Remove the two sound waves; replace with a simple compact rusty-red pixel X on the right. ONE speaker-off icon, no wording."
+      },
+      "source": "/workspace/generated_images/exec-aa9776c1-312a-47b2-8a37-5ba5df42046b.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 309708,
+      "sha256": "5b73b6679999eaa720105a81d361dfb8226992f189f6dbef1e7f0b9055428901",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 83.689,
+      "partialAlphaPercent": 16.183,
+      "visibleBoundsAlphaOver64": [
+        313,
+        330,
+        1065,
+        965
+      ],
+      "crop": [
+        245,
+        203,
+        888,
+        888
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-trust-empty",
+      "batch": "I04",
+      "path": "design/retro/icons/trust-empty.png",
+      "refs": [
+        "/workspace/generated_images/exec-132f43b2-1096-4205-bbc3-9de0fbb5811d.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nEDIT THE PROVIDED BASE ICON ONLY. Preserve EXACT canvas size, motif position and scale, pixel-block width, colors, outline and lighting. Keep EXACT heart outer shape, position, scale and dark brown outline. Replace filled heart interior with TRUE transparent opening, retaining a rusty-red one-logical-pixel inner border. Hollow empty heart icon, no background.",
+      "pair": {
+        "base": "trust-full",
+        "change": "Keep EXACT heart outer shape, position, scale and dark brown outline. Replace filled heart interior with TRUE transparent opening, retaining a rusty-red one-logical-pixel inner border. Hollow empty heart icon, no background."
+      },
+      "source": "/workspace/generated_images/exec-e8379963-a30a-42f9-af21-e83da86ebf8d.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 207788,
+      "sha256": "5f2fa13a40a21469be1230afdb662dc872417af84a38e06816b0530e6c1638e7",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 90.897,
+      "partialAlphaPercent": 8.941,
+      "visibleBoundsAlphaOver64": [
+        282,
+        339,
+        973,
+        924
+      ],
+      "crop": [
+        219,
+        223,
+        816,
+        816
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-star-empty",
+      "batch": "I04",
+      "path": "design/retro/icons/star-empty.png",
+      "refs": [
+        "/workspace/generated_images/exec-7e3d5991-da31-40be-b738-2aa2aa852840.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nEDIT THE PROVIDED BASE ICON ONLY. Preserve EXACT canvas size, motif position and scale, pixel-block width, colors, outline and lighting. Keep EXACT five-point star outline, position and size. Replace gold filled interior with TRUE transparent opening, retain one-logical-pixel gold inside border and dark brown exterior. Hollow star.",
+      "pair": {
+        "base": "star-full",
+        "change": "Keep EXACT five-point star outline, position and size. Replace gold filled interior with TRUE transparent opening, retain one-logical-pixel gold inside border and dark brown exterior. Hollow star."
+      },
+      "source": "/workspace/generated_images/exec-f08f13db-ed32-4252-8b2b-013a50eb4b6a.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 263630,
+      "sha256": "f40759b8ffd2cc4afe16c481e33267116fe7debef20d39274dfa1a01a676fc3a",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 88.064,
+      "partialAlphaPercent": 11.767,
+      "visibleBoundsAlphaOver64": [
+        230,
+        267,
+        1024,
+        990
+      ],
+      "crop": [
+        158,
+        160,
+        937,
+        937
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "icon-lamp-life-off",
+      "batch": "I04",
+      "path": "design/retro/icons/lamp-life-off.png",
+      "refs": [
+        "/workspace/generated_images/exec-dcf9f57f-d324-47f0-8d56-e978801a4517.png"
+      ],
+      "transparent": true,
+      "prompt": "ONE standalone 1990s 16-bit forest detective game UI icon, transparent background, centered on square canvas. This is a tiny icon for a 32x32 logical grid enlarged 4x (128x128 deliverable requested), NOT a large detailed illustration. Very coarse visible square pixels: main motif 24x24 logical pixels, with 4-pixel transparent padding on all sides. Equal ONE-logical-pixel dark brown #3B2416 exterior outline, upper-left light, exactly 3 hard stepped color planes per material. Large clean silhouette readable at 22, 32 and 36 pixel displayed size. Reference is the approved sticker and its palette; SIMPLIFY substantially for a small UI button. No background, floor, frame, extra items, UI panel or text. No blur, antialias, gradients, shine, noise, tiny detail, photorealism, painting or emoji style. Palette warm cream, ochre, rusty red, plum, dark brown and clean muted blue/green. Only ONE icon, no atlas or repeated variants.\nEDIT THE PROVIDED BASE ICON ONLY. Preserve EXACT canvas size, motif position and scale, pixel-block width, colors, outline and lighting. Keep EXACT iron lantern frame, position, size and brown outline. Remove the flame and all yellow illumination. Interior is cool flat muted gray-blue glass containing ONE small dull gray unlit stone. No light, rays, glow, halo.",
+      "pair": {
+        "base": "lamp-life-on",
+        "change": "Keep EXACT iron lantern frame, position, size and brown outline. Remove the flame and all yellow illumination. Interior is cool flat muted gray-blue glass containing ONE small dull gray unlit stone. No light, rays, glow, halo."
+      },
+      "source": "/workspace/generated_images/exec-3ede0bab-cc6d-4d7f-b88b-7170cdf8d894.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "bytes": 384996,
+      "sha256": "6644331abc0d7eb4b6b49dd0a8f8d8bd7691fce7145c29ded965c109d7cef075",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 79.8,
+      "partialAlphaPercent": 20.075,
+      "visibleBoundsAlphaOver64": [
+        352,
+        219,
+        902,
+        1033
+      ],
+      "crop": [
+        146,
+        145,
+        961,
+        961
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "logicalDisplaySizes": [
+        22,
+        32,
+        36
+      ],
+      "requestedDeliverySize": [
+        128,
+        128
+      ]
+    },
+    {
+      "id": "title-bg-wide",
+      "batch": "T01",
+      "path": "design/retro/title/title-bg-wide.png",
+      "transparent": false,
+      "refs": [
+        "/workspace/generated_images/exec-37d10cb9-9dfe-4d6f-b894-c82769353357.png"
+      ],
+      "prompt": "Edit this EXACT wide landscape 16:9 game background without changing its pixel style or palette. CRITICAL UI-safe composition: the combined window+curtains+desk+chair+Daram group currently occupies too much height. SHRINK this ENTIRE GROUP to HALF of its current height, maintaining each object's proportions. Center the reduced group at 50% of image height, so the curtain rod is at 35% height and ALL feet/chair legs finish by 65% height. Top 0%-30% must be empty quiet warm wooden wall. Bottom 65%-100% must be EMPTY wood floor, absolutely NO furniture or character parts there. Keep room wall-floor boundary at 60% height. Preserve Daram back/side view, acorn cardigan, red checked hat, brown skirt, squirrel tail. Preserve exactly window with lit hill lamp, crescent, notebook, magnifier and lantern, all inside smaller group. No additional objects or text or buttons/UI. Keep 16:9 horizontal canvas, same clean hard pixel squares, 3-4 stepped tones, no gradients, blur, texture noise, glow or realism. This is an intentional sparse title screen with large empty areas for game overlays.",
+      "source": "/workspace/generated_images/exec-d0b3ff41-ac0b-4f96-87f5-b8b49a7f8702.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1622088,
+      "sha256": "be7a7658f43f83c4e43e2e0a5947e431e7730846da1d5fae77a4282dea44fdec",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "crop": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "targetAspect": "16:9",
+      "overlaySafeRegions": {
+        "title": [
+          0,
+          0.3
+        ],
+        "importantContent": [
+          0.35,
+          0.65
+        ],
+        "buttons": [
+          0.65,
+          1
+        ]
+      },
+      "strictSafeBandGuaranteed": false,
+      "layoutReview": "Title/menu overlay visually reviewed in preview. Curtain rod and feet slightly extend past nominal importantContent band; preserve aspect ratio and use preview placement."
     }
   ],
   "archivedPeerBodies": {

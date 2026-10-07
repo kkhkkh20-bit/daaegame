@@ -57,11 +57,16 @@ def measure(item):
         elif item['batch'] == 'U01':
             out['logicalSize'] = [192, 96]
             out['requestedDeliverySize'] = [768, 384]
-            out['tileabilityReviewed'] = False
+            tile_review = HERE / 'wood-validation.json'
+            review = json.loads(tile_review.read_text()).get(item['id'], {}) if tile_review.exists() else {}
+            out['tileabilityReviewed'] = review.get('visualRepeatReviewed', False)
+            out['tileBoundaryValidation'] = review
             out['tileabilityRule'] = 'Preview actual repeat in both axes; do not claim edge pixels match without measurement.'
         else:
             out['targetAspect'] = '9:19.5' if item['id']=='title-bg' else '16:9'
             out['overlaySafeRegions'] = {'title':[0,.30], 'importantContent':[.35,.65], 'buttons':[.65,1]}
+            out['strictSafeBandGuaranteed'] = False
+            out['layoutReview'] = 'Title/menu overlay visually reviewed in preview. Curtain rod and feet slightly extend past nominal importantContent band; preserve aspect ratio and use preview placement.'
         return out
 
 def make_archive(batch, assets):
@@ -130,12 +135,14 @@ def main():
         elif batch=='U01':
             instructions+=['UI 바탕 호두나무 타일 기본/어두운 두 버전입니다. 곧은 가로 판자 4줄, 낮은 대비로 요청했습니다.',
                 '원본을 CSS background-repeat로 양 방향 반복해 확인하세요. 실제 native 크기는 manifest 기준입니다.',
-                '정확한 경계 일치는 별도 수치 검토 결과를 참고하세요. 반복에 미세한 차이가 남으면 게임용 사본에서 처리합니다.',
+                '192×96 반복 미리보기에서 두 버전의 연결을 시각 확인했습니다. 원본 경계 픽셀은 완전히 같지 않으며 수치는 wood-validation.json에 있습니다.',
                 '어두운 버전은 기본 버전에서 같은 무늬를 유지하도록 편집 생성했습니다.','']
         else:
             instructions+=['세로용 title-bg와 가로용 title-bg-wide는 서로 다른 구도입니다. 세로 그림을 가로로 억지로 자르지 마세요.',
                 '이미지에는 글자/버튼이 없습니다. 제목 위쪽 30%, 중요 내용 가운데 35~65%, 버튼 아래쪽 35%에 겹칩니다.',
                 '가로 구도는 실제 이미지와 미리보기 안전 영역을 보고 제목 위치를 맞추세요.','']
+            instructions+=['35~65%는 목표 영역입니다. 커튼봉과 의자 발이 가이드 밖으로 조금 나가므로 미리보기의 실제 제목·버튼 배치를 참고하세요.',
+                '세로와 가로 모두 제목·버튼이 주요 그림을 가리지 않는 배치로 확인했습니다.','']
         for a in items:
             instructions.append(a['path']+' | 크기 '+str(a['size'])+' | crop '+str(a['crop'])+' | SHA256 '+a['sha256'])
         (HERE/('HANDOFF-'+batch+'.txt')).write_text('\n'.join(instructions)+'\n')

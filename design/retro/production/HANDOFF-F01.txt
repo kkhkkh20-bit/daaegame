@@ -1,0 +1,26 @@
+다람 탐정 · F01 그림 인계
+
+원본 PNG는 생성 도구 출력 그대로 복사했습니다. 원본 게임과 art/는 변경하지 않았습니다.
+이미지 생성은 완료, 사용자 승인 및 실제 게임 적용 검토는 별도입니다.
+미리보기: https://kkhkkh20-bit.github.io/daaegame/design/retro/production/
+manifest.json에 실제 크기·SHA256·투명도·x,y,width,height 좌표·프롬프트가 있습니다.
+엄격한 32픽셀 격자/128픽셀 납품 또는 26색 제한 충족으로 표시하지 마세요.
+화면 크기에 맞춘 축소·색상 정리·반투명 가장자리 정리는 게임 담당자가 사본에서 수행합니다.
+
+얼굴은 머리와 어깨의 공통 전체 캔버스를 96×96으로 최근접 축소합니다.
+표정별 불투명 경계를 각각 잘라 확대하면 얼굴 위치가 흔들립니다. 같은 인물은 같은 crop을 유지하세요.
+D02는 기존 D01 neutral/happy/think/smug와 함께 총 8표정입니다.
+C01/C02 전신 시트는 다른 채팅 원본을 chars/에 그대로 보관했습니다. 이 얼굴들은 별도 추가 납품입니다.
+
+design/retro/faces/papa-neutral.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 1a7a6de39bac0518b7ed4ab22a13209dffdec2c0880a8a89d59fc51a2c2e6364
+design/retro/faces/rei-neutral.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 d6d8bdd145b32bdeb47f6b0c47881c2b5c56954bb0ab3754e1fdf48cd3119191
+design/retro/faces/karo-neutral.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 e3a46f44533a97854376f7e49d11f00c3b2692bbd5bcf43dfd1dcccd9eed90d2
+design/retro/faces/papa-think.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 3e07a7022a1092599d59fac5bb7655e3aa26154a96b01f87be4d825e5050f887
+design/retro/faces/papa-sad.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 6655c389f6613de9b3a4106f7ee0645b21ad20e86b5efa03d599c8782222cdbf
+design/retro/faces/papa-smile.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 5ee1eaa4fc25899b21eccbef155106b39923ad3215dce1af3152367a164003d7
+design/retro/faces/rei-smug.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 6712449bbe605c426c402e3461810a5fcd87c201ef2d70cb6401455772fa54b2
+design/retro/faces/rei-think.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 95ce457655af6caf514b42de47475b070af2dc29ee882149a689dd95848d3a05
+design/retro/faces/rei-pout.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 cd3b3420fc27346d473bcfbdc2f214e6d193ed1b51779ebcfd5e0eeb19325237
+design/retro/faces/karo-nervous.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 c52c18af75d9abfdd53253665277815fa5fa23d83e2bcc8a9cd73ef2e142fb70
+design/retro/faces/karo-think.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 855a488a3dc10e0f3051ed0116b7a95dd86457f7435795222fe33ea4ab4e31f0
+design/retro/faces/karo-shock.png | 크기 [1254, 1254] | crop [0, 0, 1254, 1254] | SHA256 5c554c180b397da0da0ec0185afd3b8d2ab55b30e513715bd8d342b4fe28e1ea

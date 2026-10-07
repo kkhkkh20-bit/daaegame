@@ -1,0 +1,119 @@
+{
+  "batchId": "T01",
+  "assets": [
+    {
+      "id": "title-bg",
+      "batch": "T01",
+      "path": "design/retro/title/title-bg.png",
+      "refs": [
+        "/workspace/generated_images/exec-4289cfe8-8644-4e72-98f1-9cdace0348fb.png"
+      ],
+      "transparent": false,
+      "prompt": "Edit this exact title background keeping its tall portrait aspect ratio and established chunky 16-bit pixel style. Keep warm wood colors, Daram's squirrel anatomy/outfit/backward-looking pose, the LIT lamp on the hill, and desk notebook/magnifier/lantern. IMPORTANT layout correction: shrink and reposition the ENTIRE central group (window+curtains+desk+chair+Daram) so ALL important parts, including Daram's feet and desk's feet, lie inside the MIDDLE 35%-65% HEIGHT band. Top 30% must be plain quiet warm wooden wall; bottom 35% must be EMPTY warm wood floor. Remove side bookshelf and framed picture (unneeded clutter). Window should be a smaller wide rectangle entirely in the middle band, not a tall window across most of canvas. One sparse stage-like office; bright clean warm middle tones, avoid murky brown. Pixel squares and flat hard shading, no blur or gradient. No text, title, buttons, UI, extra people. Preserve original overall portrait 9:19.5 aspect, no black bars.",
+      "source": "/workspace/generated_images/exec-c9506734-46d3-43e5-a7d1-f7e33c18d384.png",
+      "size": [
+        853,
+        1844
+      ],
+      "mode": "RGB",
+      "bytes": 1667011,
+      "sha256": "634e92bd42f8090ec53c256031501219fec6a06d107abe623109a15278733bfb",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        853,
+        1844
+      ],
+      "crop": [
+        0,
+        0,
+        853,
+        1844
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "targetAspect": "9:19.5",
+      "overlaySafeRegions": {
+        "title": [
+          0,
+          0.3
+        ],
+        "importantContent": [
+          0.35,
+          0.65
+        ],
+        "buttons": [
+          0.65,
+          1
+        ]
+      },
+      "strictSafeBandGuaranteed": false,
+      "layoutReview": "Title/menu overlay visually reviewed in preview. Curtain rod and feet slightly extend past nominal importantContent band; preserve aspect ratio and use preview placement."
+    },
+    {
+      "id": "title-bg-wide",
+      "batch": "T01",
+      "path": "design/retro/title/title-bg-wide.png",
+      "transparent": false,
+      "refs": [
+        "/workspace/generated_images/exec-37d10cb9-9dfe-4d6f-b894-c82769353357.png"
+      ],
+      "prompt": "Edit this EXACT wide landscape 16:9 game background without changing its pixel style or palette. CRITICAL UI-safe composition: the combined window+curtains+desk+chair+Daram group currently occupies too much height. SHRINK this ENTIRE GROUP to HALF of its current height, maintaining each object's proportions. Center the reduced group at 50% of image height, so the curtain rod is at 35% height and ALL feet/chair legs finish by 65% height. Top 0%-30% must be empty quiet warm wooden wall. Bottom 65%-100% must be EMPTY wood floor, absolutely NO furniture or character parts there. Keep room wall-floor boundary at 60% height. Preserve Daram back/side view, acorn cardigan, red checked hat, brown skirt, squirrel tail. Preserve exactly window with lit hill lamp, crescent, notebook, magnifier and lantern, all inside smaller group. No additional objects or text or buttons/UI. Keep 16:9 horizontal canvas, same clean hard pixel squares, 3-4 stepped tones, no gradients, blur, texture noise, glow or realism. This is an intentional sparse title screen with large empty areas for game overlays.",
+      "source": "/workspace/generated_images/exec-d0b3ff41-ac0b-4f96-87f5-b8b49a7f8702.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "bytes": 1622088,
+      "sha256": "be7a7658f43f83c4e43e2e0a5947e431e7730846da1d5fae77a4282dea44fdec",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPercent": 0.0,
+      "partialAlphaPercent": 0.0,
+      "visibleBoundsAlphaOver64": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "crop": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "strictRasterCompliant": false,
+      "userApproved": false,
+      "runtimeReviewed": false,
+      "targetAspect": "16:9",
+      "overlaySafeRegions": {
+        "title": [
+          0,
+          0.3
+        ],
+        "importantContent": [
+          0.35,
+          0.65
+        ],
+        "buttons": [
+          0.65,
+          1
+        ]
+      },
+      "strictSafeBandGuaranteed": false,
+      "layoutReview": "Title/menu overlay visually reviewed in preview. Curtain rod and feet slightly extend past nominal importantContent band; preserve aspect ratio and use preview placement."
+    }
+  ],
+  "strictRasterCompliant": false,
+  "runtimeReviewed": false
+}

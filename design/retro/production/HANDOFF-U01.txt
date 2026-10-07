@@ -1,0 +1,16 @@
+다람 탐정 · U01 그림 인계
+
+원본 PNG는 생성 도구 출력 그대로 복사했습니다. 원본 게임과 art/는 변경하지 않았습니다.
+이미지 생성은 완료, 사용자 승인 및 실제 게임 적용 검토는 별도입니다.
+미리보기: https://kkhkkh20-bit.github.io/daaegame/design/retro/production/
+manifest.json에 실제 크기·SHA256·투명도·x,y,width,height 좌표·프롬프트가 있습니다.
+엄격한 32픽셀 격자/128픽셀 납품 또는 26색 제한 충족으로 표시하지 마세요.
+화면 크기에 맞춘 축소·색상 정리·반투명 가장자리 정리는 게임 담당자가 사본에서 수행합니다.
+
+UI 바탕 호두나무 타일 기본/어두운 두 버전입니다. 곧은 가로 판자 4줄, 낮은 대비로 요청했습니다.
+원본을 CSS background-repeat로 양 방향 반복해 확인하세요. 실제 native 크기는 manifest 기준입니다.
+192×96 반복 미리보기에서 두 버전의 연결을 시각 확인했습니다. 원본 경계 픽셀은 완전히 같지 않으며 수치는 wood-validation.json에 있습니다.
+어두운 버전은 기본 버전에서 같은 무늬를 유지하도록 편집 생성했습니다.
+
+design/retro/ui/wood-tile.png | 크기 [1774, 887] | crop [0, 0, 1774, 887] | SHA256 eda176440b53ba8cf4ceeadadbaf176ac616b16a1ce17c73d31b9b919c381c8c
+design/retro/ui/wood-tile-dark.png | 크기 [1774, 887] | crop [0, 0, 1774, 887] | SHA256 ef9a0cd6f689e2999b2a986c3155fe6b9f267e7a5779d1ea6bd5858d3c5b6dba
