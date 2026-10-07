@@ -46692,6 +46692,34 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  try{new MutationObserver(function(){if(run.t)return;run.t=setTimeout(function(){run.t=0;run()},90)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
 })();
 
+(function(){
+ if(window.__ui197)return;window.__ui197=1;
+ var B="html:root body:not(.ds-mc) ";
+ var css=[
+  B+".status.s2{flex-wrap:wrap!important;row-gap:6px;max-width:100%}",
+  B+".status.s2>*{min-width:0}",
+  B+".status.s2 .sgap{flex:1 1 0!important;width:auto!important;min-width:0!important;padding:0!important;margin:0!important}",
+  "@media (max-width:460px){"+
+   B+".status.s2{gap:4px!important}"+
+   B+".status.s2 .stb{padding-left:6px!important;padding-right:6px!important;font-size:13px!important;letter-spacing:0}"+
+   B+".status.s2 .stb .anic{width:16px!important;height:16px!important;margin-right:2px!important}"+
+   B+".status.s2 .hpbar{padding-left:6px!important;padding-right:6px!important}"+
+   B+".status.s2 .hpbar i{width:12px!important;height:12px!important}"+
+   B+".status.s2 .hpbar small{font-size:11px!important}"+
+  "}",
+  "@media (max-width:400px){"+
+   B+".status.s2 #recbtn,"+B+".status.s2 .stb[data-tab=note]{font-size:0!important;gap:2px}"+
+   B+".status.s2 #recbtn b{font-size:13px!important}"+
+   B+".status.s2 #recbtn .anic,"+B+".status.s2 .stb[data-tab=note] .anic{width:20px!important;height:20px!important;margin:0!important}"+
+  "}"
+  ,"@media (max-width:370px){"+B+".status.s2 .hpbar i{width:9px!important;height:9px!important;margin:0 1px!important}"+B+".status.s2 .hpbar small{display:none}"+B+".status.s2 .stb{padding-left:4px!important;padding-right:4px!important}}"
+ ].join("\n");
+ function put(){var t=document.getElementById("ui18v197");if(!t){t=document.createElement("style");t.id="ui18v197";t.textContent=css}(document.body||document.head).appendChild(t)}
+ function lab(){try{var r=document.getElementById("recbtn");if(r&&!r.title){r.title="기록";r.setAttribute("aria-label","기록")}document.querySelectorAll('.stb[data-tab="note"]').forEach(function(b){if(!b.title){b.title="수첩";b.setAttribute("aria-label","수첩")}})}catch(e){}}
+ try{var _r=render;render=function(){var x=_r.apply(this,arguments);lab();return x}}catch(e){}
+ put();window.addEventListener("load",put);document.addEventListener("DOMContentLoaded",put);
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
