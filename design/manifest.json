@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "game": "다람 탐정 사무소",
   "source": "game.html CAST / BIO / PERSONA / CASES",
   "characterCount": 35,
@@ -1680,7 +1680,7 @@
       "species": "스라소니",
       "role": "등불 검사관 (자칭)",
       "bio": "어느 날 갑자기 나타난 '등불 검사관'. 예의 바르고 말이 느리다. 서류를 늘 들고 다니지만 아무도 그 서류를 읽어 본 적이 없다.",
-      "design": "네로의 동일한 얼굴을 유지한 변장 외형",
+      "design": "네로의 동일한 얼굴을 유지한 검사관 변장 외형",
       "aliasOf": "nero"
     },
     "shadow": {
@@ -1690,27 +1690,27 @@
       "color": "#3B3F52",
       "acc": "hood",
       "id": "shadow",
-      "src": "characters/nero-identities.png",
-      "width": 1254,
-      "height": 1254,
+      "src": "characters/shadow.png",
+      "width": 2172,
+      "height": 724,
       "frames": [
         [
           0,
-          830,
-          441,
-          424
+          0,
+          724,
+          724
         ],
         [
-          441,
-          830,
-          400,
-          424
+          724,
+          0,
+          724,
+          724
         ],
         [
-          841,
-          830,
-          413,
-          424
+          1448,
+          0,
+          724,
+          724
         ]
       ],
       "labels": [
@@ -1722,7 +1722,7 @@
       "species": "스라소니",
       "role": "정체불명",
       "bio": "",
-      "design": "네로의 동일한 얼굴을 유지한 변장 외형",
+      "design": "얼굴을 완전히 숨긴 검은 후드, 푸른 안감과 청동 단추만 단서로 남긴다",
       "aliasOf": "nero"
     },
     "daram": {
