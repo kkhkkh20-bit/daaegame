@@ -141,3 +141,16 @@
  #game .evidence-detail .item-tools{margin:5px 0}
  #game .evidence-detail .daram-memo{margin:5px 0!important;padding:5px 8px!important}
 }
+#father-name-form{padding:4px 0 8px}
+#game .father-name-label{display:block;font-size:13px;margin:18px 0 8px;color:#59402e}
+#game #father-name{display:block;width:100%;box-sizing:border-box;padding:12px;border:2px solid #af8d61;background:#fff4d8;color:#42312a;font:18px DaramDot;min-height:48px}
+#game #father-name:focus{outline:2px solid #80413d;outline-offset:2px}
+#game.cold-open #background{background-image:url(assets/opening-storm.png)!important;background-size:cover!important;background-position:58% 35%!important;filter:brightness(.78) saturate(.85)!important}
+#game.cold-open .shade{background:linear-gradient(#080d1720,#0a111700 40%,#0a1117c9)!important}
+#game.cold-open #chaptermark{max-width:75%;background:#0c111aaa}
+#game.cold-open.storm-beat #background{animation:opening-lightning 1.1s ease-out both}
+@keyframes opening-lightning{0%,100%{filter:brightness(.78) saturate(.85)}20%{filter:brightness(1.16) saturate(.65)}35%{filter:brightness(.85) saturate(.75)}}
+@media(prefers-reduced-motion:reduce){#game.cold-open.storm-beat #background{animation:none!important}}
+#game[data-effects=off].cold-open.storm-beat #background{animation:none!important}
+#game.cold-open[data-opening=lodge] #background{background-position:18% 35%!important}
+#game.cold-open[data-opening=inside] #background{background-position:85% 35%!important}
