@@ -1,0 +1,393 @@
+C02 캐릭터 전달 문서
+상태: ready_for_review · 사용자 최종 승인 및 실제 게임 검토 전
+브랜치: art/c01-papa-rei-karo-20261007
+C01 부모 커밋: 717c5a62af96551714619b4d6a48dba0ca1cee70
+최신 origin/main 기준: 4157210da75c7388c5ac740fef99cd76a32b707d
+제작: 내장 image_gen, daram-matched.png 직접 참조. 이미지 수정도 image_gen 사용.
+기준 다람 및 언덕 PNG 직접 열어 확인, C01 전달 문서와 아빠 PNG 비교.
+최신 CAST/PERSONA 및 fall 대사 참고. 부리=서운함, 왕구=목격 확신이 무너진 당황, 도토=밤샘 관찰을 들킨 민망함.
+
+좌표는 원본 PNG의 x,y,너비,높이. 우측/하단 제외. 3등분 금지.
+
+부리 · design/retro/chars/buri.png
+크기 [2062, 763], 989438 bytes, RGBA, SHA256 da5a820df84de26d7d439e41da5253d4b78432e95bc398b979eda202973e6129
+alpha [0, 255], 완전 투명 57.651%, 반투명 42.214%
+기본: 전신 crop [0, 0, 751, 763] / 얼굴·어깨 crop [280, 0, 400, 400] / 가시 영역(alpha>64) [219, 25, 451, 722] / alpha>0 전체 영역 [65, 19, 686, 731]
+생각: 전신 crop [751, 0, 651, 763] / 얼굴·어깨 crop [890, 0, 400, 400] / 가시 영역(alpha>64) [832, 19, 453, 728] / alpha>0 전체 영역 [752, 9, 650, 754]
+감정: 전신 crop [1402, 0, 660, 763] / 얼굴·어깨 crop [1530, 10, 400, 400] / 가시 영역(alpha>64) [1519, 36, 400, 711] / alpha>0 전체 영역 [1402, 33, 606, 717]
+발 기준선: y=746 (alpha>64, 세 포즈 일치). 공통 전신 배율 0.12362637.
+
+왕구 · design/retro/chars/wanggu.png
+크기 [2061, 763], 1042934 bytes, RGBA, SHA256 2c9a7299aec65975df4c4680eb1d6357c130e03e1aed78071424800a4ef1973d
+alpha [0, 255], 완전 투명 55.448%, 반투명 44.507%
+기본: 전신 crop [0, 0, 682, 763] / 얼굴·어깨 crop [280, 0, 390, 390] / 가시 영역(alpha>64) [72, 35, 583, 689] / alpha>0 전체 영역 [65, 32, 596, 697]
+생각: 전신 crop [682, 0, 624, 763] / 얼굴·어깨 crop [870, 0, 390, 390] / 가시 영역(alpha>64) [709, 36, 523, 688] / alpha>0 전체 영역 [693, 32, 613, 699]
+감정: 전신 crop [1306, 0, 755, 763] / 얼굴·어깨 crop [1540, 5, 390, 390] / 가시 영역(alpha>64) [1380, 39, 540, 685] / alpha>0 전체 영역 [1307, 36, 700, 697]
+발 기준선: y=723 (alpha>64, 세 포즈 일치). 공통 전신 배율 0.13062409.
+
+도토 · design/retro/chars/doto.png
+크기 [2061, 763], 982061 bytes, RGBA, SHA256 dfb84bdc8b7024de05e20c8ef4f7d30de5b1d9764ac8feccd9c0416b222754fa
+alpha [0, 255], 완전 투명 57.762%, 반투명 42.082%
+기본: 전신 crop [0, 0, 682, 763] / 얼굴·어깨 crop [280, 0, 370, 370] / 가시 영역(alpha>64) [120, 26, 511, 701] / alpha>0 전체 영역 [117, 22, 565, 708]
+생각: 전신 crop [682, 0, 621, 763] / 얼굴·어깨 crop [880, 0, 370, 370] / 가시 영역(alpha>64) [734, 26, 498, 701] / alpha>0 전체 영역 [683, 23, 555, 708]
+감정: 전신 crop [1303, 0, 758, 763] / 얼굴·어깨 crop [1520, 20, 370, 370] / 가시 영역(alpha>64) [1374, 51, 464, 676] / alpha>0 전체 영역 [1321, 48, 521, 683]
+발 기준선: y=726 (alpha>64, 세 포즈 일치). 공통 전신 배율 0.12838802.
+
+구별 포인트
+왕구: 모자 없음, 밝은 회갈색 털, 주황 조끼와 빨간 축제 완장. 아빠의 사냥모자·긴 황갈색 코트·넥타이와 구별.
+도토: 모자·리본·치마 없음, 체크 조끼·반바지·초시계·기록 수첩. 다람의 사냥모자·카디건·치마와 구별.
+부리: 둥근 부엉이 얼굴·부리·깃털 손·새 발, 자주색 조끼와 책.
+
+적용 및 미리보기
+C02-preview.html을 이 폴더에서 열면 상대경로 PNG로 96×96 얼굴, 최대 90px 전신, 원본 3포즈 및 다람/아빠 비교를 봅니다.
+HTML은 PNG를 읽어 canvas에서 imageSmoothingEnabled=false로 표시합니다. 승인된 PNG 파일을 축소/덮어쓰지 않습니다.
+전신은 포즈별로 키를 강제로 맞추지 않고 같은 인물 공통 배율과 발 기준선으로 바닥 정렬합니다.
+대화창은 지정한 정사각형 얼굴 crop을 nearest-neighbor로 96×96 표시합니다.
+게임용 사본과 팔레트/반투명 가장자리 처리는 개발 담당이 별도 art/에서 처리합니다. 이 작업은 art/에 쓰지 않았습니다.
+
+검증 범위와 한계
+투명 RGBA, 세 포즈 비중첩, crop 경계 및 alpha>64 발 기준선을 측정했습니다.
+약한 반투명 가장자리가 있어 alpha>0의 마지막 픽셀은 발 기준선과 다를 수 있습니다. nonzeroAlphaBounds에 실제 범위를 별도 기록했습니다.
+정확한 26색/공통 정수 픽셀 격자를 강제한 최종 하드웨어 래스터는 아닙니다. 승인된 보이는 도트 스타일을 따른 시안입니다.
+C01은 보존하고 C02 소유 7개 파일만 추가합니다. main 병합·강제 푸시·게임 적용은 하지 않습니다.
+사용자 승인 및 실제 게임 런타임 검토는 아직 하지 않았습니다.
+
+미리보기 검증: HTML 표시 스크립트에서 PNG 28개 canvas 렌더링·crop 범위·상대 경로 로드를 확인하고 시각 검토했습니다. 브라우저 설치 다운로드 실패로 브라우저 CSS 레이아웃 검토는 미실시입니다.
+
+전체 메타데이터 및 생성/수정 프롬프트
+{
+  "batchId": "C02",
+  "status": "ready_for_review",
+  "referenceCommit": "4157210da75c7388c5ac740fef99cd76a32b707d",
+  "priorBatchCommit": "717c5a62af96551714619b4d6a48dba0ca1cee70",
+  "generationTool": "built-in image_gen",
+  "userApproved": false,
+  "runtimeReviewed": false,
+  "strictRasterCompliant": false,
+  "coordinateConvention": "x,y,width,height; right/bottom exclusive",
+  "baselineAlphaThreshold": 64,
+  "assets": {
+    "buri": {
+      "name": "부리",
+      "src": "buri.png",
+      "size": [
+        2062,
+        763
+      ],
+      "bytes": 989438,
+      "sha256": "da5a820df84de26d7d439e41da5253d4b78432e95bc398b979eda202973e6129",
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.651,
+      "partialAlphaPercent": 42.214,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          751,
+          763
+        ],
+        [
+          751,
+          0,
+          651,
+          763
+        ],
+        [
+          1402,
+          0,
+          660,
+          763
+        ]
+      ],
+      "visibleBoundsAlphaOver64": [
+        [
+          219,
+          25,
+          451,
+          722
+        ],
+        [
+          832,
+          19,
+          453,
+          728
+        ],
+        [
+          1519,
+          36,
+          400,
+          711
+        ]
+      ],
+      "nonzeroAlphaBounds": [
+        [
+          65,
+          19,
+          686,
+          731
+        ],
+        [
+          752,
+          9,
+          650,
+          754
+        ],
+        [
+          1402,
+          33,
+          606,
+          717
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          400,
+          400
+        ],
+        [
+          890,
+          0,
+          400,
+          400
+        ],
+        [
+          1530,
+          10,
+          400,
+          400
+        ]
+      ],
+      "feetBaselineAlphaOver64": 746,
+      "fullBodyScale": 0.12362637362637363,
+      "prompt": "Use case: stylized-concept. ONE animal character sprite sheet, exactly THREE full body poses horizontal on actual transparent RGBA background, generous separate margins. Reference 1 APPROVED Daram is authoritative STYLE: same head/body proportion (head roughly third), chunky square pixels, navy stepped outline, simple dark pupil and single white highlight, broad 3-4 shade clusters, bright readable midtones. Reference 2 environment palette only, no background. Clothes on bipedal animal, slight three quarter right. Same height and EXACT SAME feet baseline for all 3 poses. No text, labels, floor shadow, glossy surfaces, blur, realistic fur, tiny folds, anime eyes, baby giant head, human face/hair/nose/hands. Fully visible ears/tails/props/feet. Left BASIC / middle THINK wing-tip or furry paw under chin / right restrained EMOTION. Keep expressions readable at 96px portrait and full body 90px.\nBuri, young brown OWL bookworm. Full owl head with rounded facial discs, round open eyes yet Daram-style dark simple pupils, small owl beak, few feather tufts, compact wings ending in FEATHER TIPS as hands, owl talons. Burgundy/plum vest over plain cream shirt, dark brown modest trousers. Hold a single closed plain book, no writing. Basic earnest quiet bookworm. Thinking wing tip beneath beak, book tucked by side. Emotion hurt and wistful, brows lifted toward center, gaze slightly down, closed beak: grandfather trusted someone else and Buri is ashamed of concealing it. No tears streaming or slapstick. Simple feather surfaces, similar overall body length to Daram, not a fat spherical mascot.",
+      "editPrompts": []
+    },
+    "wanggu": {
+      "name": "왕구",
+      "src": "wanggu.png",
+      "size": [
+        2061,
+        763
+      ],
+      "bytes": 1042934,
+      "sha256": "2c9a7299aec65975df4c4680eb1d6357c130e03e1aed78071424800a4ef1973d",
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 55.448,
+      "partialAlphaPercent": 44.507,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          682,
+          763
+        ],
+        [
+          682,
+          0,
+          624,
+          763
+        ],
+        [
+          1306,
+          0,
+          755,
+          763
+        ]
+      ],
+      "visibleBoundsAlphaOver64": [
+        [
+          72,
+          35,
+          583,
+          689
+        ],
+        [
+          709,
+          36,
+          523,
+          688
+        ],
+        [
+          1380,
+          39,
+          540,
+          685
+        ]
+      ],
+      "nonzeroAlphaBounds": [
+        [
+          65,
+          32,
+          596,
+          697
+        ],
+        [
+          693,
+          32,
+          613,
+          699
+        ],
+        [
+          1307,
+          36,
+          700,
+          697
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          390,
+          390
+        ],
+        [
+          870,
+          0,
+          390,
+          390
+        ],
+        [
+          1540,
+          5,
+          390,
+          390
+        ]
+      ],
+      "feetBaselineAlphaOver64": 723,
+      "fullBodyScale": 0.13062409288824384,
+      "prompt": "Use case: stylized-concept. ONE animal character sprite sheet, exactly THREE full body poses horizontal on actual transparent RGBA background, generous separate margins. Reference 1 APPROVED Daram is authoritative STYLE: same head/body proportion (head roughly third), chunky square pixels, navy stepped outline, simple dark pupil and single white highlight, broad 3-4 shade clusters, bright readable midtones. Reference 2 environment palette only, no background. Clothes on bipedal animal, slight three quarter right. Same height and EXACT SAME feet baseline for all 3 poses. No text, labels, floor shadow, glossy surfaces, blur, realistic fur, tiny folds, anime eyes, baby giant head, human face/hair/nose/hands. Fully visible ears/tails/props/feet. Left BASIC / middle THINK wing-tip or furry paw under chin / right restrained EMOTION. Keep expressions readable at 96px portrait and full body 90px.\nWanggu, adult RACCOON festival committee chair. Entirely raccoon head with black eye mask, pale sandy warm taupe fur, broad cheeks, small rounded ears, short animal snout, striped tail. Distinct from Papa reference 3: NO HAT, NO trenchcoat, NO tie, shorter wider sturdy torso, bright ORANGE vest over cream shirt, dark olive/brown trousers, animal paws and dark shoes. Plain contrasting red festival ARMBAND around upper arm with a small cream geometric stripe, absolutely no writing. Basic confident loud committee chair, raised brow and small assertive open mouth, paw on hip. Thinking furry paw under chin, brow knit. Emotion embarrassed uncertainty after challenged about what he actually witnessed: mouth small hesitant, brows raised, shoulders slightly tucked; no comic sweat, not raging villain. Same animal proportion and pixel density as Daram.",
+      "editPrompts": [
+        "Two narrowly targeted edits only to this Wanggu sheet. 1) Align lowest visible foot pixel in all three poses to exactly the same horizontal baseline. 2) Festival red/cream armband must consistently stay on his LEFT upper arm, which is the arm on the VIEWER'S RIGHT in this three-quarter view. In third pose move the armband from viewer-left arm to viewer-right arm; first and middle placement already correct. Preserve all face/expressions, no hat, orange vest, fur, tail, poses, design, coarse pixels, palette, transparent RGBA. No text, shadows or other changes."
+      ]
+    },
+    "doto": {
+      "name": "도토",
+      "src": "doto.png",
+      "size": [
+        2061,
+        763
+      ],
+      "bytes": 982061,
+      "sha256": "dfb84bdc8b7024de05e20c8ef4f7d30de5b1d9764ac8feccd9c0416b222754fa",
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPercent": 57.762,
+      "partialAlphaPercent": 42.082,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          682,
+          763
+        ],
+        [
+          682,
+          0,
+          621,
+          763
+        ],
+        [
+          1303,
+          0,
+          758,
+          763
+        ]
+      ],
+      "visibleBoundsAlphaOver64": [
+        [
+          120,
+          26,
+          511,
+          701
+        ],
+        [
+          734,
+          26,
+          498,
+          701
+        ],
+        [
+          1374,
+          51,
+          464,
+          676
+        ]
+      ],
+      "nonzeroAlphaBounds": [
+        [
+          117,
+          22,
+          565,
+          708
+        ],
+        [
+          683,
+          23,
+          555,
+          708
+        ],
+        [
+          1321,
+          48,
+          521,
+          683
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          370,
+          370
+        ],
+        [
+          880,
+          0,
+          370,
+          370
+        ],
+        [
+          1520,
+          20,
+          370,
+          370
+        ]
+      ],
+      "feetBaselineAlphaOver64": 726,
+      "fullBodyScale": 0.12838801711840228,
+      "prompt": "Use case: stylized-concept. ONE animal character sprite sheet, exactly THREE full body poses horizontal on actual transparent RGBA background, generous separate margins. Reference 1 APPROVED Daram is authoritative STYLE: same head/body proportion (head roughly third), chunky square pixels, navy stepped outline, simple dark pupil and single white highlight, broad 3-4 shade clusters, bright readable midtones. Reference 2 environment palette only, no background. Clothes on bipedal animal, slight three quarter right. Same height and EXACT SAME feet baseline for all 3 poses. No text, labels, floor shadow, glossy surfaces, blur, realistic fur, tiny folds, anime eyes, baby giant head, human face/hair/nose/hands. Fully visible ears/tails/props/feet. Left BASIC / middle THINK wing-tip or furry paw under chin / right restrained EMOTION. Keep expressions readable at 96px portrait and full body 90px.\nDoto, young meticulous SQUIRREL record keeper. Entirely squirrel head with upright small rounded ears and compact animal muzzle, chestnut-brown fur distinctly darker than Daram's golden orange. NO HAT, NO ribbon, NO skirt. Neat sage-green and cream CHECK VEST (few large check blocks, not busy texture) over cream shirt, dark brown shorts/trousers and simple shoes, furry paws. Narrower upright oval squirrel tail, distinct silhouette from Daram's huge wide tail. Silver STOPWATCH with tiny plain dial on short chain and small plain brown RECORD NOTEBOOK visible, NO lettering/numbers. Basic attentive serious, holds notebook and displays stopwatch near chest. Thinking one furry paw beneath chin, notebook and stopwatch secured near vest. Emotion shy caught-out embarrassment: hugs notebook close, lowered eyes, tiny hesitant mouth, only subtle warmth on cheeks; afraid mother will learn he stayed up birdwatching. Same Daram proportions/pixel style, restrained.",
+      "editPrompts": [
+        "Edit ONLY Doto's green vest in all three poses: make it unmistakably a neat CHECK/PLAID vest using a few large alternating cream and sage-green square blocks with broad dark green grid stripes; simple coarse pixel checks, not tiny fabric texture. Preserve squirrel face/fur, no hat, notebook, stopwatch, all three expressions, poses, all body proportions, pixel scale and shared feet baseline. No text, no background or shadow. Everything else identical. True transparent RGBA."
+      ]
+    }
+  }
+}
