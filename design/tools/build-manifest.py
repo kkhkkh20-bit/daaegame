@@ -55,9 +55,14 @@ for s in bgs:
  if id not in bgoutputs:
   if args.partial:continue
   raise RuntimeError('Missing background '+id)
+ if (root/'scene-map.json').exists() and not args.partial:
+  backgrounds[id]={'id':id,'name':s['name']};bgorder.append(id);continue
  d=bgoutputs[id];w,h,frames=atlas(d,True);backgrounds[id]={'id':id,'name':s['name'],'src':d['path'],'width':w,'height':h,'frames':[frames[d['row']][d['column']]],'caseId':id if id in [c['id'] for c in canon['cases']] else None};bgorder.append(id)
 if args.partial and 'main' not in backgrounds:
  im=Image.open(root.parent/'chapter-one/assets/home-pixel.png');w,h=im.size;backgrounds['main']={'id':'main','name':'메인 화면 임시 미리보기','src':'../chapter-one/assets/home-pixel.png','width':w,'height':h,'frames':[[0,0,w,h]]};bgorder.insert(0,'main')
 if not args.partial:assert len(order)==35 and len(backgrounds)==17
 manifest={'version':2,'game':'다람 탐정 사무소','source':'game.html CAST / BIO / PERSONA / CASES','characterCount':len(order),'preservedCharacters':['daram'],'aliases':{'luka':'nero','shadow':'nero'},'order':order,'characters':characters,'backgroundOrder':bgorder,'backgrounds':backgrounds,'frameFormat':'[x,y,width,height] in original PNG pixels; render with a clipped SVG viewport or equivalent atlas renderer','representativeBackgrounds':True}
+if (root/'scene-map.json').exists():
+ import runpy
+ manifest=runpy.run_path(str(root/'tools/build-scenes.py'))['augment'](manifest,args.partial)
 (root/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(f'Manifest: {len(order)} unique characters + Daram + Nero costumes; {len(backgrounds)} backgrounds')
