@@ -46722,6 +46722,50 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
 })();
 
 (function(){
+ if(window.__ui198)return;window.__ui198=1;
+ var V="?v=194",B="html:root body:not(.ds-mc) ";
+ var css=[
+  B+".tui .tstats{display:none!important}",
+  B+".tui{gap:10px!important}",
+  B+".tui .t2row{display:flex;gap:10px;width:100%}",
+  B+".tui .t2row .btn{flex:1 1 0;min-width:0;align-self:stretch!important;margin:0!important;font-size:15px!important;white-space:nowrap;display:flex!important;align-items:center;justify-content:center;gap:6px;padding-top:2px!important;padding-bottom:2px!important}",
+  B+".tui .t2row .btn .anic{width:22px!important;height:22px!important;margin:0!important}",
+  B+".tui .bigstart{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.15}",
+  B+".tui .bigstart small{display:block;font-size:13px;font-family:inherit;opacity:.85;letter-spacing:0}",
+  B+".tui .foot{font-size:12px!important;opacity:.8}",
+  B+".tveil{background:linear-gradient(180deg,rgba(20,10,4,0) 45%,rgba(20,10,4,.55) 72%,rgba(20,10,4,.85) 100%)!important}",
+  B+".modal .dossier{border:0!important;border-image:none!important;padding:2px 0!important;background:none!important;box-shadow:none!important;filter:none!important}",
+  B+".modal .dossier .dz-top{padding-right:0!important;padding-top:26px}",
+  B+".modal .dossier .dz-stamp{top:0!important;right:0!important;font-size:14px!important}",
+  B+".modal .dossier .m151card .m1h{padding-right:56px!important}",
+  "@media (max-width:420px){"+B+".modal{padding-left:12px!important;padding-right:12px!important}}",
+  B+".result .notice{border:2px solid #C9A46A!important;border-image:none!important;border-radius:6px!important;padding:10px 12px!important;box-shadow:none!important;filter:none!important;background:#FFF7E3!important}",
+  "@media (max-width:420px){"+B+".result{padding-left:12px!important;padding-right:12px!important}}",
+  B+".files{grid-template-columns:repeat(3,minmax(0,1fr))!important}"
+ ].join("\n");
+ function put(){var t=document.getElementById("ui18v198");if(!t){t=document.createElement("style");t.id="ui18v198";t.textContent=css}(document.body||document.head).appendChild(t)}
+ put();window.addEventListener("load",put);document.addEventListener("DOMContentLoaded",put);
+ function kakao(){try{return /KAKAOTALK/i.test(navigator.userAgent)}catch(e){return false}}
+ function nextCase(){try{for(var i=0;i<CASES.length;i++)if(!S.best[CASES[i].id])return {i:i,c:CASES[i]}}catch(e){}return null}
+ function title(){var tui=document.querySelector(".tui");if(!tui||tui.dataset.v198)return;tui.dataset.v198=1;
+  var go=document.getElementById("go"),wm=document.getElementById("wmapbtn"),ld=document.getElementById("loadbtn");
+  var played=false;try{played=Object.keys(S.best||{}).length>0||Object.keys(S.prog||{}).length>0}catch(e){}
+  if(go){var nx=nextCase();
+   if(played&&nx){go.innerHTML='이어서 수사하기<small>다음 · 사건 '+(nx.i+1)+' '+esc(nx.c.title)+'</small>'}
+   else if(played)go.innerHTML='사건 게시판으로';
+   else go.innerHTML='수사 시작'}
+  if(wm&&ld&&!tui.querySelector(".t2row")){var row=document.createElement("div");row.className="t2row";wm.parentNode.insertBefore(row,wm);row.appendChild(wm);row.appendChild(ld);
+   var tn=[].slice.call(ld.childNodes).filter(function(n){return n.nodeType===3&&n.nodeValue.trim()})[0];if(tn)tn.nodeValue="저장 · 불러오기";ld.title="저장 불러오기 · 다른 기기에서 옮기기"}
+  var ft=tui.querySelector(".foot");if(ft)ft.innerHTML=kakao()?'카카오톡에서 열었다면 오른쪽 위 메뉴의 <b>다른 브라우저로 열기</b>로 열어야 기록이 잘 남아요.':'소리가 나요. 설정에서 언제든 끌 수 있어요.'}
+ function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+ function board(){try{var played=Object.keys(S.best||{}).length>0;if(played)return;
+  ["hiddenst","m151book","letters"].forEach(function(id){var e=document.getElementById(id);if(e&&!e.dataset.v198){e.dataset.v198=1;e.style.display="none"}})}catch(e){}}
+ function run(){try{title()}catch(e){}try{board()}catch(e){}}
+ try{var _r=render;render=function(){var r=_r.apply(this,arguments);run();return r}}catch(e){}
+ try{new MutationObserver(function(){if(run.t)return;run.t=setTimeout(function(){run.t=0;run()},60)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
+})();
+
+(function(){
  if(window.__fix198)return;window.__fix198=1;
  var V="?v=194";
  function bk(){var B=window.__BRK2;if(!B)return false;
