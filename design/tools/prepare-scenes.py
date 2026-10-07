@@ -1,4 +1,4 @@
-"""Build the art brief and evidence mapping from live original-game data."""
+"""Build the art brief and evidence mapping from exported frozen sandbox-game data."""
 import json,hashlib
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
@@ -46,6 +46,6 @@ for i in range(0,len(scenes),4):
  for pos,scene in zip(['TOP LEFT','TOP RIGHT','BOTTOM LEFT','BOTTOM RIGHT'],group):prompt+='\n'+pos+' SCENE:\n'+scene['brief']+'\n'
  if len(group)<4:prompt+='\nBOTTOM RIGHT: quiet empty woodland road continuing the other forest scenery, no evidence, no characters.\n'
  jobs.append({'index':i//4+1,'ids':[v['id'] for v in group],'prompt':prompt})
-(root/'scene-map.json').write_text(json.dumps({'version':3,'coordinateSpace':[360,200],'aspectRatio':[16,9],'source':'game.html CASES / HOTS / window.__ZOOM','sourceSha256':hashlib.sha256((root.parent/'game.html').read_bytes()).hexdigest(),'caseOrder':[c['id'] for c in case_data],'cases':case_data,'locationOrder':list(locations),'locations':locations,'zoomBackgrounds':zoom_backgrounds,'evidenceCount':sum(len(l['evidence']) for l in locations.values())},ensure_ascii=False,indent=2)+'\n')
+(root/'scene-map.json').write_text(json.dumps({'version':3,'coordinateSpace':[360,200],'aspectRatio':[16,9],'source':'game.html CASES / HOTS / window.__ZOOM','sourceSha256':hashlib.sha256((root/'sandbox/game.html').read_bytes()).hexdigest(),'caseOrder':[c['id'] for c in case_data],'cases':case_data,'locationOrder':list(locations),'locations':locations,'zoomBackgrounds':zoom_backgrounds,'evidenceCount':sum(len(l['evidence']) for l in locations.values())},ensure_ascii=False,indent=2)+'\n')
 (root/'scene-jobs.json').write_text(json.dumps(jobs,ensure_ascii=False,indent=2)+'\n')
 print(f'{len(locations)} locations; {sum(len(l["evidence"]) for l in locations.values())} evidence; {len(jobs)} background atlas jobs')

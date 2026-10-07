@@ -10,6 +10,7 @@ code.update(p for p in (root/'reference').iterdir() if p.is_file())
 code.update(p for p in (root/'tools').iterdir() if p.suffix in ['.py','.cjs'])
 code.update((root/'background-results').glob('*.json'))
 code.update((root/'character-results-v4').glob('*.json'))
+code.update(p for p in (root/'sandbox').rglob('*') if p.is_file())
 # Keep full-resolution PNGs intact; split large character delivery into two archives.
 ordered_chars=sorted(chars-code)
 mid=(len(ordered_chars)+1)//2

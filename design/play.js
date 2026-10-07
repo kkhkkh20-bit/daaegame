@@ -1,17 +1,17 @@
-/* Run the current original game with artwork adapters; use a separate preview save namespace. */
+/* Run the frozen sandbox copy; development of the original cannot change this preview. */
 (async () => {
   const frame = document.getElementById('game-frame'), loading = document.getElementById('loading');
   try {
-    const root = new URL('../', location.href), art = new URL('./', location.href);
-    const r = await fetch(new URL('game.html', root), {cache:'no-cache'});
-    if (!r.ok) throw Error('원작 게임을 불러오지 못했습니다.');
+    const art = new URL('./', location.href), sandbox = new URL('sandbox/', art);
+    const r = await fetch(new URL('game.html?v=1', sandbox));
+    if (!r.ok) throw Error('디자인 실험용 사본을 불러오지 못했습니다.');
     let source = await r.text();
     if (!source.includes('function start(data){')) throw Error('원작의 연결 지점이 바뀌었습니다.');
     source = source.replaceAll('localStorage.', 'window.DaramPreviewStorage.');
     source = source.replace('function start(data){', 'window.__DaramBackgroundConnect=function(){return DaramSceneBridge.install({cases:CASES,scenes:SCENES,hots:HOTS,zooms:window.__ZOOM,zoomArt:ZART,portraitSetter:function(fn){pf=fn},portraitFallback:pf,refresh:function(){if(G)render()}})};function start(data){');
     const styles = ['game-scenes.css?v=5','scene-pan.css?v=5'].map(file => '<link rel="stylesheet" href="' + new URL(file,art).href + '">').join('');
     const scripts = ['art-kit.js?v=4','scene-pan.js?v=5','scene-bridge.js?v=5'].map(file => '<script src="' + new URL(file,art).href + '"><\/script>').join('');
-    const prep = '<base href="' + root.href + '">' + styles + '<script>window.DaramPreviewStorage={getItem:function(k){return localStorage.getItem("daram-art-preview-v3:"+k)},setItem:function(k,v){localStorage.setItem("daram-art-preview-v3:"+k,v)},removeItem:function(k){localStorage.removeItem("daram-art-preview-v3:"+k)}};<\/script>' + scripts;
+    const prep = '<base href="' + sandbox.href + '">' + styles + '<script>window.DaramPreviewStorage={getItem:function(k){return localStorage.getItem("daram-design-sandbox-v1:"+k)},setItem:function(k,v){localStorage.setItem("daram-design-sandbox-v1:"+k,v)},removeItem:function(k){localStorage.removeItem("daram-design-sandbox-v1:"+k)}};<\/script>' + scripts;
     source = source.replace('</head>', prep + '</head>');
     const finish = '<script>window.__DaramBackgroundConnect().then(function(result){document.body.classList.add("daram-art-preview");var boot=document.getElementById("bootld");if(boot)boot.remove();window.__DaramArtPreviewReady=result;parent.postMessage({type:"daram-art-preview-ready"},"' + location.origin + '")}).catch(function(e){parent.postMessage({type:"daram-art-preview-error",message:e.message},"' + location.origin + '")});<\/script>';
     source = source.replace('</body>', finish + '</body>');
