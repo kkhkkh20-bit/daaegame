@@ -7,8 +7,8 @@
     if (!r.ok) throw Error('Art data could not load: ' + path);
     return r.json();
   });
-  const ready = read('manifest.json?v=3').then(async m => {
-    if (m.sceneMap) m.sceneData = await read(m.sceneMap + '?v=3');
+  const ready = read('manifest.json?v=4').then(async m => {
+    if (m.sceneMap) m.sceneData = await read(m.sceneMap + '?v=4');
     manifest = m;
     return m;
   });

@@ -4,8 +4,18 @@ import json, argparse
 from PIL import Image
 import numpy as np
 root=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser();parser.add_argument('--partial',action='store_true');args=parser.parse_args()
+parser=argparse.ArgumentParser();parser.add_argument('--partial',action='store_true');parser.add_argument('--characters-v4',action='store_true');args=parser.parse_args()
 spec=json.loads((root/'character-specs.json').read_text());canon=json.loads((root/'canon.json').read_text());generated=json.loads((root/'generated-assets.json').read_text());outputs=generated['characters'];bgoutputs=generated['backgrounds'];bgs=json.loads((root/'background-specs.json').read_text())
+v4ids=[c['id'] for c in spec['characters']]+['luka','shadow']
+v4dir=root/'character-results-v4'
+v4active=args.characters_v4 or all((v4dir/(id+'.json')).is_file() for id in v4ids)
+pending_characters=[]
+if v4active:
+ for id in v4ids:
+  p=v4dir/(id+'.json')
+  if p.exists():outputs[id]=json.loads(p.read_text())
+  else:pending_characters.append(id)
+ if pending_characters and not args.partial:raise RuntimeError('Missing Daram-quality characters: '+', '.join(pending_characters))
 regions={**{k:'silver' for k in ['seol','ppul','tok','bami','sling']},**{k:'mine' for k in ['musoe','somi','seori','ubak','nubi']},**{k:'city' for k in ['eunho','guseul','badook','lamplighter']}}
 species={'rabbit':'토끼','bear':'곰','fox':'여우','cat':'고양이','owl':'부엉이','dog':'개','squirrel':'다람쥐','duck':'오리','crow':'까마귀','lynx':'스라소니','crane':'두루미','goat':'염소','mole':'두더지','bat':'박쥐','weasel':'족제비','woodpecker':'딱따구리','peacock':'공작새','panda':'판다','raccoon':'너구리','flyingsq':'날다람쥐'}
 cache={}
@@ -65,4 +75,7 @@ manifest={'version':2,'game':'다람 탐정 사무소','source':'game.html CAST 
 if (root/'scene-map.json').exists():
  import runpy
  manifest=runpy.run_path(str(root/'tools/build-scenes.py'))['augment'](manifest,args.partial)
+if v4active:
+ manifest.update({'version':4,'characterArtVersion':4,'characterReference':'daram','individualCharacterSheets':True})
+ if pending_characters:manifest['pendingCharacters']=pending_characters
 (root/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n');print(f'Manifest: {len(order)} unique characters + Daram + Nero costumes; {len(backgrounds)} backgrounds')
