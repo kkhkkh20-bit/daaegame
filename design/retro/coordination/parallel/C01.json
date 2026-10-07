@@ -1,8 +1,8 @@
 {
   "batchId": "C01",
   "assignedTo": "other-chat-character",
-  "status": "reserved",
-  "generationStarted": false,
+  "status": "review_pending",
+  "generationStarted": true,
   "brief": "design/retro/coordination/briefs/C01.txt",
   "ownedFiles": [
     "design/retro/chars/papa.png",
@@ -11,5 +11,229 @@
     "design/retro/chars/HANDOFF-C01.txt",
     "design/retro/coordination/parallel/C01.json"
   ],
-  "note": "사용자가 다른 채팅에 시작 문구를 전달하기 위한 담당 예약입니다. 수신이나 생성 시작을 확인한 것으로 표시하지 않습니다."
+  "note": "3명 각 3포즈 제작 완료. 실제 투명 배경·좌표·동일 발 기준선 확인. 사용자 및 Claude 게임 화면 검토 대기. C01 소유 5개 파일만 변경.",
+  "branch": "art/c01-papa-rei-karo-20261007",
+  "generationCompleted": true,
+  "handoff": "design/retro/chars/HANDOFF-C01.txt",
+  "assets": {
+    "papa": {
+      "src": "design/retro/chars/papa.png",
+      "size": [
+        2060,
+        763
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          668,
+          763
+        ],
+        [
+          668,
+          0,
+          652,
+          763
+        ],
+        [
+          1320,
+          0,
+          740,
+          763
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          360,
+          360
+        ],
+        [
+          915,
+          0,
+          360,
+          360
+        ],
+        [
+          1570,
+          12,
+          360,
+          360
+        ]
+      ],
+      "visibleBoundsAlphaOver16": [
+        [
+          70,
+          15,
+          551,
+          725
+        ],
+        [
+          715,
+          14,
+          543,
+          726
+        ],
+        [
+          1381,
+          32,
+          560,
+          708
+        ]
+      ],
+      "feetBaselineAlphaOver16": 739,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ]
+    },
+    "rei": {
+      "src": "design/retro/chars/rei.png",
+      "size": [
+        2061,
+        763
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          721,
+          763
+        ],
+        [
+          721,
+          0,
+          617,
+          763
+        ],
+        [
+          1338,
+          0,
+          723,
+          763
+        ]
+      ],
+      "portraitFrames": [
+        [
+          280,
+          0,
+          360,
+          360
+        ],
+        [
+          910,
+          0,
+          360,
+          360
+        ],
+        [
+          1580,
+          35,
+          360,
+          360
+        ]
+      ],
+      "visibleBoundsAlphaOver16": [
+        [
+          129,
+          26,
+          509,
+          706
+        ],
+        [
+          805,
+          22,
+          460,
+          710
+        ],
+        [
+          1411,
+          59,
+          508,
+          673
+        ]
+      ],
+      "feetBaselineAlphaOver16": 731,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ]
+    },
+    "karo": {
+      "src": "design/retro/chars/karo.png",
+      "size": [
+        2061,
+        763
+      ],
+      "frames": [
+        [
+          0,
+          0,
+          685,
+          763
+        ],
+        [
+          685,
+          0,
+          682,
+          763
+        ],
+        [
+          1367,
+          0,
+          694,
+          763
+        ]
+      ],
+      "portraitFrames": [
+        [
+          240,
+          35,
+          390,
+          390
+        ],
+        [
+          905,
+          35,
+          390,
+          390
+        ],
+        [
+          1565,
+          50,
+          390,
+          390
+        ]
+      ],
+      "visibleBoundsAlphaOver16": [
+        [
+          96,
+          57,
+          510,
+          644
+        ],
+        [
+          764,
+          61,
+          525,
+          640
+        ],
+        [
+          1446,
+          78,
+          492,
+          623
+        ]
+      ],
+      "feetBaselineAlphaOver16": 700,
+      "labels": [
+        "기본",
+        "생각",
+        "감정"
+      ]
+    }
+  }
 }

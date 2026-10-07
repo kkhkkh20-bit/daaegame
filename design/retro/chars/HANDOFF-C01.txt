@@ -1,0 +1,286 @@
+C01 · 아빠 / 레이 / 까로 전달 문서
+브랜치: art/c01-papa-rei-karo-20261007
+상태: 제작 완료 · 검토 대기
+제작: 내장 image_gen, 승인된 daram-matched.png 및 star-hill-enriched.png 직접 참조.
+기준 확인: CONTEXT → README → C01-start → briefs/C01 → requests/review, parallel README/JSON, game.html CAST/PERSONA.
+최신 요청: R-004. 얼굴 96×96, 전신 높이 약 90 논리 픽셀.
+
+파일별 좌표 (원본 PNG 기준, x,y,너비,높이, 우측/하단은 제외):
+
+design/retro/chars/papa.png
+원본: 2060×763, RGBA, SHA256 f7f1b81206b943263ed33158cda88329013eccf91e1dcf23225c1c6c9657cb72
+기본: 전신 프레임 (0, 0, 668, 763) / 가시 영역(alpha>16) (70, 15, 551, 725) / 얼굴·어깨 (280, 0, 360, 360)
+생각: 전신 프레임 (668, 0, 652, 763) / 가시 영역(alpha>16) (715, 14, 543, 726) / 얼굴·어깨 (915, 0, 360, 360)
+감정: 전신 프레임 (1320, 0, 740, 763) / 가시 영역(alpha>16) (1381, 32, 560, 708) / 얼굴·어깨 (1570, 12, 360, 360)
+발 기준선(alpha>16): y=739, 세 포즈 일치. 완전 투명 픽셀 52.79%.
+
+design/retro/chars/rei.png
+원본: 2061×763, RGBA, SHA256 2901965f75a9185e342bbba1c32944eba3703b9cf71913e44dd7cc564c2757a2
+기본: 전신 프레임 (0, 0, 721, 763) / 가시 영역(alpha>16) (129, 26, 509, 706) / 얼굴·어깨 (280, 0, 360, 360)
+생각: 전신 프레임 (721, 0, 617, 763) / 가시 영역(alpha>16) (805, 22, 460, 710) / 얼굴·어깨 (910, 0, 360, 360)
+감정: 전신 프레임 (1338, 0, 723, 763) / 가시 영역(alpha>16) (1411, 59, 508, 673) / 얼굴·어깨 (1580, 35, 360, 360)
+발 기준선(alpha>16): y=731, 세 포즈 일치. 완전 투명 픽셀 63.41%.
+
+design/retro/chars/karo.png
+원본: 2061×763, RGBA, SHA256 4d31bb11c3d291ee86c7f7df505f89a30f9cd0f662d2275df2d746f189835a1a
+기본: 전신 프레임 (0, 0, 685, 763) / 가시 영역(alpha>16) (96, 57, 510, 644) / 얼굴·어깨 (240, 35, 390, 390)
+생각: 전신 프레임 (685, 0, 682, 763) / 가시 영역(alpha>16) (764, 61, 525, 640) / 얼굴·어깨 (905, 35, 390, 390)
+감정: 전신 프레임 (1367, 0, 694, 763) / 가시 영역(alpha>16) (1446, 78, 492, 623) / 얼굴·어깨 (1565, 50, 390, 390)
+발 기준선(alpha>16): y=700, 세 포즈 일치. 완전 투명 픽셀 60.34%.
+
+적용 방법
+1. 이 브랜치의 C01 변경 5개 파일만 가져옵니다. 게임 적용은 Claude 개발 담당이 수행합니다.
+2. PNG를 무조건 3등분하지 말고 위 전신 프레임 좌표로 잘라 씁니다.
+3. 대화창: 얼굴·어깨 정사각 좌표로 crop → nearest-neighbor로 96×96 축소. alpha를 유지합니다.
+4. 장면: 같은 인물의 세 포즈에 공통 배율을 쓰고, 위 발 기준선을 장면 바닥에 맞춥니다.
+   권장 배율은 papa 90/726, rei 90/710, karo 90/644. 감정 포즈가 조금 웅크려 보여도 포즈마다 90으로 늘리지 않습니다.
+5. 게임용 축소본/팔레트/반투명 가장자리 처리는 Claude가 art/에 별도 제작합니다. 원본 PNG는 유지합니다.
+
+검증 및 검토 범위
+- 세 PNG를 직접 시각 확인했습니다. 동물 머리/동물 손(까로는 날개 끝), 의상/소품, 3포즈, 글자/바닥 그림자 없음.
+- 까로 발 기준선만 image_gen으로 추가 수정했습니다. 아빠와 레이는 최초 결과를 유지합니다.
+- 레이 감정은 패배 후 삐침, 까로 감정은 PERSONA의 어둠에 대한 불안에 맞춰 불안한 표정입니다.
+- PNG 실제 alpha 0~255 및 투명 여백, 포즈 비중첩, 원본 캔버스 안의 전신, 동일 발 기준선을 확인했습니다.
+- 공통 정수 픽셀 격자와 정확한 26색/16비트 하드웨어 팔레트는 검증·강제한 결과가 아닙니다. 승인된 보이는 도트 스타일을 따른 시안입니다.
+- 실제 게임 런타임 표시 검토는 아직 하지 않았습니다. 최종 사용자 승인 및 Claude 화면 검토 대기입니다.
+- 원본 게임, 승인 그림, art/, B01/bg/, 공용 관리 파일을 수정하지 않았습니다.
+
+기계 판독용 프레임 정보
+{
+  "papa": {
+    "src": "design/retro/chars/papa.png",
+    "size": [
+      2060,
+      763
+    ],
+    "frames": [
+      [
+        0,
+        0,
+        668,
+        763
+      ],
+      [
+        668,
+        0,
+        652,
+        763
+      ],
+      [
+        1320,
+        0,
+        740,
+        763
+      ]
+    ],
+    "portraitFrames": [
+      [
+        280,
+        0,
+        360,
+        360
+      ],
+      [
+        915,
+        0,
+        360,
+        360
+      ],
+      [
+        1570,
+        12,
+        360,
+        360
+      ]
+    ],
+    "visibleBoundsAlphaOver16": [
+      [
+        70,
+        15,
+        551,
+        725
+      ],
+      [
+        715,
+        14,
+        543,
+        726
+      ],
+      [
+        1381,
+        32,
+        560,
+        708
+      ]
+    ],
+    "feetBaselineAlphaOver16": 739,
+    "labels": [
+      "기본",
+      "생각",
+      "감정"
+    ]
+  },
+  "rei": {
+    "src": "design/retro/chars/rei.png",
+    "size": [
+      2061,
+      763
+    ],
+    "frames": [
+      [
+        0,
+        0,
+        721,
+        763
+      ],
+      [
+        721,
+        0,
+        617,
+        763
+      ],
+      [
+        1338,
+        0,
+        723,
+        763
+      ]
+    ],
+    "portraitFrames": [
+      [
+        280,
+        0,
+        360,
+        360
+      ],
+      [
+        910,
+        0,
+        360,
+        360
+      ],
+      [
+        1580,
+        35,
+        360,
+        360
+      ]
+    ],
+    "visibleBoundsAlphaOver16": [
+      [
+        129,
+        26,
+        509,
+        706
+      ],
+      [
+        805,
+        22,
+        460,
+        710
+      ],
+      [
+        1411,
+        59,
+        508,
+        673
+      ]
+    ],
+    "feetBaselineAlphaOver16": 731,
+    "labels": [
+      "기본",
+      "생각",
+      "감정"
+    ]
+  },
+  "karo": {
+    "src": "design/retro/chars/karo.png",
+    "size": [
+      2061,
+      763
+    ],
+    "frames": [
+      [
+        0,
+        0,
+        685,
+        763
+      ],
+      [
+        685,
+        0,
+        682,
+        763
+      ],
+      [
+        1367,
+        0,
+        694,
+        763
+      ]
+    ],
+    "portraitFrames": [
+      [
+        240,
+        35,
+        390,
+        390
+      ],
+      [
+        905,
+        35,
+        390,
+        390
+      ],
+      [
+        1565,
+        50,
+        390,
+        390
+      ]
+    ],
+    "visibleBoundsAlphaOver16": [
+      [
+        96,
+        57,
+        510,
+        644
+      ],
+      [
+        764,
+        61,
+        525,
+        640
+      ],
+      [
+        1446,
+        78,
+        492,
+        623
+      ]
+    ],
+    "feetBaselineAlphaOver16": 700,
+    "labels": [
+      "기본",
+      "생각",
+      "감정"
+    ]
+  }
+}
+
+생성 프롬프트 원문
+papa
+Use case: stylized-concept. Game character sprite sheet for Daram Detective. Reference image 1 is the APPROVED Daram character STYLE ONLY: match its coarse square pixel density, simple navy outlines, head/body ratio (head roughly one third of body), tiny dark rectangular eyes with ONE white pixel highlight, short readable animal muzzle, simplified 3-4 shade clusters. Reference image 2 is approved environment STYLE/palette only, DO NOT draw a background. Create ONE character repeated in exactly THREE full-body poses in a horizontal row, equally sized with generous transparent margins between poses, perfectly shared feet baseline. Clothes worn by a bipedal animal. Facing slight three-quarter right like Daram. 1990s 16-bit adventure crisp chunky pixel art, square stepped edges, broad clean bright midtone color planes. Sparse details. No human face, human nose, human hair or human fingers, no anime sparkle eyes, no baby proportions, no photoreal fur, no smooth shading, no blur, no glossy specular shading, no floor shadows, no text, no labels, no props floating separately. Actual transparent RGBA background. Render landscape sheet, all feet/ears/tails/props fully within canvas.
+Subject: Papa, a late-30s RACCOON father detective, entirely raccoon head with rounded ears, short animal snout and black raccoon eye mask, muted warm gray-brown fur, banded raccoon tail behind him. Distinctive brown deerstalker hunting hat, worn ochre tan trenchcoat, loose burgundy necktie and dark trousers and boots, only a few coat folds, fur-covered paws. Quiet tired but kind. Left pose neutral calm, paws resting by coat pockets. Middle pose thoughtful arms crossed. Right pose holding back tears: lowered soft brows, tight small mouth, just a small pixel of moisture at lower eyelid, no streaming tears, restrained adult sadness. Same clothing, character identity and height in every pose.
+
+rei
+Use case: stylized-concept. Game character sprite sheet for Daram Detective. Reference image 1 is the APPROVED Daram character STYLE ONLY: match its coarse square pixel density, simple navy outlines, head/body ratio (head roughly one third of body), tiny dark rectangular eyes with ONE white pixel highlight, short readable animal muzzle, simplified 3-4 shade clusters. Reference image 2 is approved environment STYLE/palette only, DO NOT draw a background. Create ONE character repeated in exactly THREE full-body poses in a horizontal row, equally sized with generous transparent margins between poses, perfectly shared feet baseline. Clothes worn by a bipedal animal. Facing slight three-quarter right like Daram. 1990s 16-bit adventure crisp chunky pixel art, square stepped edges, broad clean bright midtone color planes. Sparse details. No human face, human nose, human hair or human fingers, no anime sparkle eyes, no baby proportions, no photoreal fur, no smooth shading, no blur, no glossy specular shading, no floor shadows, no text, no labels, no props floating separately. Actual transparent RGBA background. Render landscape sheet, all feet/ears/tails/props fully within canvas.
+Subject: Rei, silver-gray female CAT young rival detective, completely feline head, triangular ears, compact feline muzzle, neat short tufts of FUR, narrow confident eyes rendered with same simple rectangular pupil/highlight system as Daram. Neat dark PLUM/purple uniform cape with small silver badge, tailored modest uniform underneath, dark ankle boots, feline paws and slim cat tail. No human hair. Left pose prim haughty neutral with closed slight smug mouth. Middle pose thinking, holds a small PEN at chin with furry paw, other arm tucked close. Right pose after losing, small clearly protruding pouting mouth and lowered eyebrows, restrained disappointed frustration, no villain theatrics. Three matching heights.
+
+karo
+Use case: stylized-concept. Game character sprite sheet for Daram Detective. Reference image 1 is the APPROVED Daram character STYLE ONLY: match its coarse square pixel density, simple navy outlines, head/body ratio (head roughly one third of body), tiny dark rectangular eyes with ONE white pixel highlight, short readable animal muzzle, simplified 3-4 shade clusters. Reference image 2 is approved environment STYLE/palette only, DO NOT draw a background. Create ONE character repeated in exactly THREE full-body poses in a horizontal row, equally sized with generous transparent margins between poses, perfectly shared feet baseline. Clothes worn by a bipedal animal. Facing slight three-quarter right like Daram. 1990s 16-bit adventure crisp chunky pixel art, square stepped edges, broad clean bright midtone color planes. Sparse details. No human face, human nose, human hair or human fingers, no anime sparkle eyes, no baby proportions, no photoreal fur, no smooth shading, no blur, no glossy specular shading, no floor shadows, no text, no labels, no props floating separately. Actual transparent RGBA background. Render landscape sheet, all feet/ears/tails/props fully within canvas.
+Subject: Karo, BLACK CROW traveling merchant, completely crow head and prominent dark bird BEAK, simple eyes matching Daram, dark charcoal/navy plumage in broad shades. Distinct RED cap with a single GOLDEN FEATHER tucked into cap band (ornamental feather, bird remains dark black), simple muted brown travel vest/coat over cream shirt, short dark trousers, two bird feet. His wings end in feathered wing tips that act as hands; NO human hands/fingers. Brown rectangular vintage travel suitcase held close in a wing tip and staying near body in all three poses. Left pose polite mildly sly merchant smile. Middle pose thinking with one wing tip beneath beak/chin, other holds suitcase. Right pose uneasy/nervous: tense brows, beak slightly parted and shoulders tucked, a quiet anxious expression consistent with fear of dark, no exaggerated comic sweat. Same identity, clothing and height every pose.
+
+
+까로 추가 수정 프롬프트
+Make the lowest visible pixel of both feet in ALL THREE poses sit on exactly the same horizontal baseline. Preserve every design, expression, pose, red cap, golden feather, black crow beak and wings, suitcase, color, chunky pixel scale, relative size and transparent background. No text or shadow.
