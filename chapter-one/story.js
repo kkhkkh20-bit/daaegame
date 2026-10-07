@@ -200,3 +200,26 @@ STORY.documentMeeting=[
  line('daram','네. 봉투를 숨긴 일과 명단이 잘못된 일은 따로 설명해야 해요.',0,{actor:'daram'}),
  line('dad','다람, 우리가 확인한 일부터 정리해 줄래?',0,{actor:'daram'})
 ];
+
+EVIDENCE.locknote={memo:'번호를 확인했다. 직접 열기 전에는 내용물을 단정하지 말자.',title:'비상 개방 메모',desc:'관리실 업무 책상에 놓인 02번 보관함의 개방 안내.',body:'<h3>02번 보관함 · 비상 개방</h3><p>번호 다이얼은 세 자리. 현재 개방 번호: <strong>021</strong></p><p>예비 열쇠로도 열 수 있습니다. 사용한 뒤 담당자에게 알려 주세요.</p>',note:'보관함 번호 02는 식별 번호다. 개방 번호는 별도로 설정되어 있다.'};
+STORY.keySolved=[
+ line('daram','보관함과 열쇠의 번호가 같아요. 주인님이 안 계셔도 열 수 있어요.',1,{actor:'daram'}),
+ line('mungchi','…제가 넣었어요. 봉투를요.',2,{actor:'mungchi'}),
+ line('daram','그 안에 있는지는 직접 확인할게요. 열쇠를 사용해도 될까요?',0,{actor:'daram'}),
+ line('mungchi','네. 비상 번호로 열 수도 있어요. 안내는 업무 책상에 있고요.',1,{actor:'mungchi'}),
+ line('dad','다람, 열고 나서 본 것을 기록하자.',0,{actor:'daram'})
+];
+STORY.cabinetOpened=[
+ line('narr','아래 칸에서 봉투와 명단이 나왔다. 봉인은 뜯기지 않았다.',0,{actor:null}),
+ line('mungchi','제가 숨겼어요. 할머니 이름이 명단에서 빠졌는데, 지급이 끝나면 고칠 수 없을까 봐요.',2,{actor:'mungchi'}),
+ line('daram','그래서 다른 주민들 돈도 받지 못하게 한 거예요?',1,{actor:'daram'}),
+ line('mungchi','담당자는 내일 다시 연락하라고 했어요. 기다리는 것 말고 다른 방법을 모르겠었어요.',2,{actor:'mungchi'}),
+ line('daram','까로 씨도 의심받았어요. 왜 숨겼는지 설명하고 돌려드려야 해요.',0,{actor:'daram'}),
+ line('mungchi','네. 그런데 명단에 점검자 확인이라고 쓰여 있어요. 그분이 확인했으니 명단도 맞는 거래요.',1,{actor:'mungchi'}),
+ line('narr','첨부란에 아내의 이름이 있었다. 다람이 그 줄을 읽다가 멈췄다.',0,{actor:null}),
+ line('daram','엄마 이름이 있다고 엄마가 명단을 확인한 건 아닐 수도 있어. 원본부터 읽어 볼게요.',1,{actor:'daram',thought:true}),
+ line('mungchi','옆 문서 보관실에서 보고서와 함께 펼쳐 드릴게요.',1,{actor:'mungchi'})
+];
+STORY.cabinetOpened[0].stamp={time:'16:25',place:'눈길 거처 · 접수 담당자 관리실'};
+
+STORY.keySolved[0].stamp={time:'16:15',place:'눈길 거처 · 접수 담당자 관리실'};

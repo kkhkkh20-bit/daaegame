@@ -109,7 +109,7 @@ return {
   // Wait for original effect chains before returning their final rule state.
   do {if(pending.length)await Promise.all(pending.splice(0));await new Promise(function(resolve){globalThis.setTimeout(resolve,0)});}while(pending.length);
   var kind=blocked?'inspect':ok?'success':!G.battle?'exhausted':'wrong';
-  if(ok&&!blocked){G.broken['round:'+round]=true;if(round===0&&G.unlocked.indexOf('door:reception-solved')<0)G.unlocked.push('door:reception-solved');if(round===1&&G.unlocked.indexOf('door:archive')<0)G.unlocked.push('door:archive')}
+  if(ok&&!blocked){G.broken['round:'+round]=true;if(round===0&&G.unlocked.indexOf('door:reception-solved')<0)G.unlocked.push('door:reception-solved');}
   return {kind:kind,hp:G.hp,before:before,events:events};
  },
  hint:function(){if(G.hints>=3)return false;G.hints++;return true},

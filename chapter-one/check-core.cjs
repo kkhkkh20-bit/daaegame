@@ -13,7 +13,7 @@ for(const f of ['story.js','case-data.js','legacy-core.js'])vm.runInContext(fs.r
  if((await e.present(0,0,'receipt')).kind!=='wrong'||e.state.hp!==4)throw Error('wrong statement');
  if((await e.present(0,1,'cx_reception_0')).kind!=='success'||!e.locationOpen(1)||!e.locationOpen(2)||e.locationOpen(3))throw Error('combined evidence accepted');
  e.discover('key');e.discover('cabinet');e.examine('key');e.combine('cabinet','key');
- if((await e.present(1,1,'cx_reception_1')).kind!=='success'||!e.locationOpen(3))throw Error('second round unlock');
+ if((await e.present(1,1,'cx_reception_1')).kind!=='success'||e.locationOpen(3))throw Error('second round unlock');
  if(!e.hint()||!e.hint()||!e.hint()||e.hint())throw Error('hint limit');
  if(e.finish(['karo','window','steal'])||!e.finish(['mungchi','cabinet','hold']))throw Error('deduction');
  const f=window.DaramLegacy.create(CHAPTER_CASE,COMBINATIONS);f.discover('tray');f.begin(0,1);

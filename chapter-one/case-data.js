@@ -42,7 +42,7 @@ const CHAPTER_CASE={id:'reception',lives:5,suspects:['karo','mungchi'],cast:PEOP
  locations:[
   {id:'reception',name:'산장 접수대',pan:.5,spots:['receipt','tray'].map(id=>({ev:asEvidence(id)}))},
   {id:'lounge',name:'손님 휴게실',pan:.5,req:'door:reception-solved',spots:['clock'].map(id=>({ev:asEvidence(id)}))},
-  {id:'cabinet',name:'접수 담당자 관리실',pan:.5,req:'door:reception-solved',spots:['cabinet','key'].map(id=>({ev:asEvidence(id)}))},
+  {id:'cabinet',name:'접수 담당자 관리실',pan:.5,req:'door:reception-solved',spots:['cabinet','key','locknote'].map(id=>({ev:asEvidence(id)}))},
   {id:'archive',name:'문서 보관실',pan:.5,req:'door:archive',spots:['envelope','roster','report',...COMBINATIONS.map(x=>x.id)].map(id=>({ev:asEvidence(id)}))}
  ],talk:{karo:[],mungchi:[]},
  rounds:[
