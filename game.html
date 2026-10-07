@@ -7565,8 +7565,9 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
    for(var i=0;i<n;i++)(function(i){setTimeout(function(){SFX.letter(i)},220+i*60)})(i);
    setTimeout(function(){SFX.impact();quake()},240+n*60);
    var hold=Math.max(1400,560+n*60+700);
-   setTimeout(function(){d.classList.add("out");SFX.whoosh(1,.3,.4)},hold);
-   setTimeout(function(){d.remove();res()},hold+320);
+   var t0=Date.now(),tk,ended=false;function fin(fast){if(ended)return;ended=true;clearTimeout(tk);d.classList.add("out");if(fast)d.classList.add("skip");SFX.whoosh(1,.3,.4);setTimeout(function(){d.remove();res()},fast?170:320)}
+   d.__skip=function(){fin(1)};d.__t0=t0;
+   tk=setTimeout(function(){fin(0)},hold);
   });
  };
  var _fl=flash;flash=function(text,bad,point){if(!bad)setTimeout(function(){SFX.impact()},30);return _fl(text,bad,point)};
@@ -29012,8 +29013,8 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
   if(G.battle&&G.battle.phase==="fight")return false;
   if(document.querySelector(".zoomv,.sbook,.banner,.flash,.lens,.ovr,.rt,.crec2,.cutin,.iris,.stampfx,.secv:not(:empty)"))return false;return true}
  var g0=null;
- setInterval(function(){try{if(G!==g0){g0=G;Q=[]}if(!Q.length||!idle())return;var it=Q.shift(),k=it.k,c=CASES[G.ci],b=(BEATS[c.id]||{})[k];if(!b||(G.beats&&G.beats[k]))return;
-  if(!G.beats)G.beats={};G.beats[k]=1;if(stale(c,k,it))return;say(b,function(){try{render()}catch(e){}})}catch(e){}},700);
+ var idn=0;setInterval(function(){try{if(G!==g0){g0=G;Q=[]}if(!Q.length||!idle()){idn=0;return}if(++idn<2)return;idn=0;var it=Q.shift(),k=it.k,c=CASES[G.ci],b=(BEATS[c.id]||{})[k];if(!b||(G.beats&&G.beats[k]))return;
+  if(!G.beats)G.beats={};G.beats[k]=1;if(stale(c,k,it))return;say(b,function(){try{render()}catch(e){}})}catch(e){}},150);
  var css=document.createElement("style");css.textContent=
   '.stb.spb{display:inline-flex;align-items:center;gap:4px}.stb.spb b{font-size:12px;background:#F2C230;color:#1B2447;border-radius:6px;padding:0 5px}.stb.spb.nw{animation:spbp 1.2s ease-in-out 3}@keyframes spbp{50%{transform:scale(1.12)}}'+
   '.spn h3{margin:.2em 0 .4em}.spn .spq{background:#1B2447;color:#FFE27A;border-radius:10px;padding:8px 10px;font-size:15px;line-height:1.4}'+
@@ -36920,7 +36921,10 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  function blocker(){var o=document.querySelector(".banner:not(.out),.cutin,.stampfx");if(o)return o;
   var ci=document.querySelector(".csx .csintro");if(ci){var cs=getComputedStyle(ci);if(cs.display!=="none"&&+cs.opacity>.05)return ci}return null}
  ["pointerdown","pointerup","click","touchstart","touchend","mousedown","mouseup"].forEach(function(t){
-  window.addEventListener(t,function(e){if(!e.isTrusted)return;var o=blocker();if(!o)return;if(o.contains(e.target)&&o.classList.contains("csintro"))return;
+  window.addEventListener(t,function(e){if(!e.isTrusted)return;var o=blocker();
+   if(!o){if(window.__fxEat&&window.__fxEat(t,e)){e.stopPropagation();if(t!=="touchstart"&&t!=="pointerdown")e.preventDefault();else if(t==="touchstart"&&e.cancelable)e.preventDefault()}return}
+   if(o.contains(e.target)&&o.classList.contains("csintro"))return;
+   if(window.__fxTap)try{window.__fxTap(t,e,o)}catch(x){}
    e.stopPropagation();if(t!=="touchstart"&&t!=="pointerdown")e.preventDefault();else if(t==="touchstart"&&e.cancelable)e.preventDefault()},{capture:true,passive:false})});
 })();
 (function(){
@@ -46844,6 +46848,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   B+".scene.big .hot.obs.seen::after,"+B+".scene.big .hot.obs.seen::before,"+B+".scene.big .hot.obs.seen .hn{content:none!important;display:none!important}",
   B+".scene.big:not(.blink) .hot:not(.done):not(.seen){box-shadow:none!important}",
   ".stimg{white-space:nowrap}",
+  ".banner.out.skip,.banner.out.skip .bars{animation-duration:.16s!important}",
   B+"#app>.ivy.r{right:max(-24px,calc((100% - 100vw) / 2))!important}",".crec2 .cr199 .btn{flex:1 1 auto}",".crec2 .cr199 small{flex:1 1 auto;text-align:center;opacity:.85}"
  ].join("\n");
  function put(){var t=document.getElementById("ui18v199");if(!t){t=document.createElement("style");t.id="ui18v199";t.textContent=css}(document.body||document.head).appendChild(t)}
@@ -46922,6 +46927,28 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
      if(vf&&vf.hidden){var key="det1|"+DL.__d1;if(vf.dataset.k!==key){vf.innerHTML=pf("det1",DL.__d1);vf.dataset.k=key;vf.dataset.w="det1"}vf.hidden=false;vf.classList.add("dim");vf.dataset.keep199="1"}}
     else{var v2=document.getElementById("vnfig");if(v2&&v2.dataset.keep199&&DL&&!DL.stageWho&&DL.lastWho!=="det0"){delete v2.dataset.keep199}}}catch(e){}
    return r}}catch(e){}
+
+ var hold=null,FXB=250;
+ window.__fxTaps=0;window.__fxEaten=0;
+ function hUp(now){if(!hold)return;hold.pressed=false;hold.clickUntil=now+400;if(!hold.up0)hold.up0=now}
+ window.__fxTap=function(t,e,o){var now=Date.now();
+  if(t==="pointerup"||t==="touchend"||t==="mouseup"){if(hold&&(t==="pointerup"||hold.pressed))hUp(now);return}
+  if(t==="touchstart"&&hold&&hold.pressed&&now-hold.down<80)return;
+  if(t!=="pointerdown"&&t!=="touchstart")return;
+  hold={down:now,pressed:true,up0:0,clickUntil:0};window.__fxTaps++;
+  if(o.classList.contains("banner")&&o.__skip){o.__skip();return}
+  if(o.classList.contains("cutin")||o.classList.contains("stampfx")){o.remove();try{SFX.whoosh&&SFX.whoosh(1,.2,.3)}catch(x){}}};
+ window.__fxEat=function(t,e){var now=Date.now();
+  if(t==="pointerdown"&&!(hold&&hold.pressed)){var f=document.querySelector(".banner.out:not(.skip):not([data-gone])");if(f){f.dataset.gone=1;f.style.visibility="hidden";hold={down:now,pressed:true,up0:0,clickUntil:0};window.__fxTaps++;return true}}
+  if(!hold)return false;
+  if(hold.pressed&&now-hold.down>4000){hold=null;return false}
+  if(t==="pointerdown"||t==="touchstart"||t==="mousedown"){
+   if(!hold.pressed&&hold.up0&&now-hold.up0>FXB){hold=null;return false}
+   if(t==="pointerdown"){hold.down=now;hold.pressed=true}
+   window.__fxEaten++;return true}
+  if(t==="pointerup"||t==="touchend"||t==="mouseup"){if(t==="pointerup"||hold.pressed)hUp(now);return true}
+  if(t==="click"){if(hold.pressed||now<hold.clickUntil){window.__fxEaten++;return true}return false}
+  return false};
 
  function run(){try{paginate()}catch(e){}try{recFoot()}catch(e){}}
  try{new MutationObserver(function(){if(run.t)return;run.t=setTimeout(function(){run.t=0;run()},40)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
