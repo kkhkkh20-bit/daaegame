@@ -1,0 +1,2353 @@
+{
+  "version": "expressions2",
+  "sourceCommit": "38d4a4df9f1833c8dd62e84db7988bbc57b60f55",
+  "status": "ready-for-review",
+  "userApproved": false,
+  "browserPlaytest": false,
+  "strictRasterCompliant": false,
+  "notes": "AI-created pixel-style atlases, fixed cells, no independent face trimming. Original approved portraits retained. Grandma anger maps to nervous; shadow identity stays concealed.",
+  "entries": [
+    {
+      "key": "det1",
+      "src": "design/retro/daram-face/neutral.png",
+      "atlas": "design/retro/faces-v2/det1.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "a7605374c45566132b34fb700b65db7c34c6d0c52c179b1013c044ddd4eadb13",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/det1-happy.png",
+          "sha256": "db392fc0d5bd40851c395fca235c521251f4a4fec0f49e3e70f2903021842ee9"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/det1-nervous.png",
+          "sha256": "47c1f5911f11017f575d2cdc6ea9e8f543d04c1fd83ccdb5f36a8146b899c629"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/det1-shock.png",
+          "sha256": "a6d185df9b35f0dc4f7e0e6a56d1f3656d128e21f3db263e6a3c7b51c6cf82dc"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/det1-angry.png",
+          "sha256": "083291f8694165eeb43c9c371a9d53bf306f51de111f03c88315cf99c3673278"
+        }
+      ]
+    },
+    {
+      "key": "badook",
+      "src": "design/retro/faces/badook-neutral.png",
+      "atlas": "design/retro/faces-v2/badook.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "f96858e4a747770de01de9ff856fd95392ea2f49bea36e79bf5a62afc5183625",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/badook-happy.png",
+          "sha256": "a64e01c0825bad7304d910e6231e5c2a4c45447901377a02bdf5811170aec874"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/badook-nervous.png",
+          "sha256": "7fedc18f5f785746d29d84660b83529d4518f053d873cb1bf9c5e9083fd0475a"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/badook-shock.png",
+          "sha256": "a804d70528374999147a54a62c4acecc72ec9c5fb7ecaeb02cd574d0ef78ce56"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/badook-angry.png",
+          "sha256": "4b7ba6ef9aba3d43ecd0b78989ad923853e5d9530b9e41a0424ec995b12b1dfe"
+        }
+      ]
+    },
+    {
+      "key": "bami",
+      "src": "design/retro/faces/bami-neutral.png",
+      "atlas": "design/retro/faces-v2/bami.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "3eef4f56b274cfa7e19ed89a14bbd38286848f04a140231fbaf2bd7a98cf9e50",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bami-happy.png",
+          "sha256": "ff7d4f1b690b9fcff50efd550f3a420b33d1b046bde7a7dc890de0657b41c881"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bami-nervous.png",
+          "sha256": "9de1a38887f5df1513ca5b4ec6596278a10f9393f35612f08eb54a9b04112540"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bami-shock.png",
+          "sha256": "b799efbab4f042bf403b7556c5971bd832cba5fa72e3721ec154fafe69e96802"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bami-angry.png",
+          "sha256": "20a11e2f50a61bd7e1e916b3fa9231db81ae1c4fe4e74798577b51f6a0fc5f0c"
+        }
+      ]
+    },
+    {
+      "key": "bori",
+      "src": "design/retro/faces/bori-neutral.png",
+      "atlas": "design/retro/faces-v2/bori.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "8f8b9b8c3f6255ba02bec5c608bbe1cdff791c19c479b98db438d2970cf93015",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bori-happy.png",
+          "sha256": "a69935a236fdb525363a7e6e63f9d06292b3f66e03474392d19b0b92c1704f18"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bori-nervous.png",
+          "sha256": "0bea32fc5a275766c1f9d86bc49cb38d62ee2cb1b580eda862d3c4f4590cb18c"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bori-shock.png",
+          "sha256": "ced620a2ed888ba8f569bace1a776c409ff86530240c1a56f105d1ca5a0a07c3"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/bori-angry.png",
+          "sha256": "f3289db1d744895d2d194dd4ff83b59901a818dbda3057925fe3e81db6706d00"
+        }
+      ]
+    },
+    {
+      "key": "buri",
+      "src": "design/retro/faces/buri-neutral.png",
+      "atlas": "design/retro/faces-v2/buri.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "310865f84ef665ad7e2e50e8f1818431942a92bac36412fd4f98871f88bbaade",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/buri-happy.png",
+          "sha256": "cdb0f1409c71e89e08d3cec271e1b82151a84ce26d8a78fb1a0d7ba4f47d9400"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/buri-nervous.png",
+          "sha256": "eadd93b5fb891d70bda7ac8f35d669fe56205ce256223c351fcfc8341c4e6900"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/buri-shock.png",
+          "sha256": "c75c508db5a2ad4a8d8bb0126db97a84f04b7c90b1e2ac2e8015a5d337a7818b"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/buri-angry.png",
+          "sha256": "e81eed9212c679f4271327f715584b7ae8d7bffe66371e7c203b603ceea827f4"
+        }
+      ]
+    },
+    {
+      "key": "doto",
+      "src": "design/retro/faces/doto-neutral.png",
+      "atlas": "design/retro/faces-v2/doto.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "be7cbabcbd726f6406061995526e606122734d393736ddd5b4f7e2dad9c207a2",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/doto-happy.png",
+          "sha256": "8553de2f6b50eadfd2eb5fdb0564840404447d518b294f2a23e46166ba988ed7"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/doto-nervous.png",
+          "sha256": "415faf79717e06eb819c63c402508ace491a1bb0370b87344ebf55c016a31448"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/doto-shock.png",
+          "sha256": "b29aa2766db204840aa8db0ae6e41a1c816b27c0ec5fa531025ae59c904ad966"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/doto-angry.png",
+          "sha256": "73f574ab20d77d1dce630e9fa95a86834dd7bd5234a231fbc7de2883bec370a9"
+        }
+      ]
+    },
+    {
+      "key": "eunho",
+      "src": "design/retro/faces/eunho-neutral.png",
+      "atlas": "design/retro/faces-v2/eunho.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "b38c6918fe21d6fd67cde6d026d11ada8dd7bef3fcde1aee5fb2f822f29c4b33",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/eunho-happy.png",
+          "sha256": "5331fbc37ade3f4885ab05f7c4e91dc972b3e2498912c9c1ee169043204dc7d0"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/eunho-nervous.png",
+          "sha256": "a31b20a6a7104a52de404b0f2b1265a22cbf5453c017c2883ac9eb1227c279a0"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/eunho-shock.png",
+          "sha256": "07c2486e7066969424ae0e2ec312479f191642bd83090c8722d43efcfc9e2b4b"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/eunho-angry.png",
+          "sha256": "ce9555ed57820c34cce71fffcc29b4542183923640e762ac28d0a12a522334df"
+        }
+      ]
+    },
+    {
+      "key": "grandma",
+      "src": "design/retro/faces/grandma-neutral.png",
+      "atlas": "design/retro/faces-v2/grandma.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "6afd1a7d77a33884275b512512b219b321d1edb67825d247c98a59a206d5abc2",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/grandma-happy.png",
+          "sha256": "1ce5eff309c18d04c23c69e4185dd5538e20ec6961ab1a3ab7a08a2e67d412a4"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/grandma-nervous.png",
+          "sha256": "4b8ddf7ff6e6d50b62370ef2e5a4d11b02b69ae18b6b288dc6af19ab383a1d58"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/grandma-shock.png",
+          "sha256": "8d88694a41d466690132ce3e8d72e6d5d675f0ba494c03997baaa6586c8ab767"
+        },
+        {
+          "mood": "sad",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/grandma-sad.png",
+          "sha256": "b27b6d13ebb86c26464c93fd9ad309b06aad7f1f7d5479824baa0679ed41c7b1"
+        }
+      ]
+    },
+    {
+      "key": "guseul",
+      "src": "design/retro/faces/guseul-neutral.png",
+      "atlas": "design/retro/faces-v2/guseul.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "1158cb885bc463d82eb754ebb0b8f0725b532105499b47a9df76df8e5b851b6b",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/guseul-happy.png",
+          "sha256": "2af649e61ea5a6e2b54ebde324d1def2020a70e403e7039c37bd467e646bce8d"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/guseul-nervous.png",
+          "sha256": "e7e7ad830e4c8d7becaf891e9b891ae7f5d30df2ef406dbbd40c82f8013dfbc4"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/guseul-shock.png",
+          "sha256": "76e8eb7712e58e079d9e743d8383c67f517d2826974364c4f93083b77bb55a9c"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/guseul-angry.png",
+          "sha256": "eb0a6ddb61e0b8029d02a52033bf78d54f3fca576c33918c955f7fd470e2f370"
+        }
+      ]
+    },
+    {
+      "key": "karo",
+      "src": "design/retro/faces/karo-neutral.png",
+      "atlas": "design/retro/faces-v2/karo.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "1385e0a7a78f3190ba910b53efa68813480d1d8a1a3a53535d186e928d0e1c44",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/karo-happy.png",
+          "sha256": "2ef7066f07d7c4102345e86078898948e4e46807838d4fefdd00dd76a06cba6b"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/karo-nervous.png",
+          "sha256": "1b41cf67f52b03527d43775fb0ba19c1570120c7f2bf6cabb2142ac5447d9a0c"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/karo-shock.png",
+          "sha256": "c7faad29992a3304102184a0a8c46801241a5847ecafd959c46ece171401775b"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/karo-angry.png",
+          "sha256": "94791c376ca05365e649a41743aef4897e82637d957e0dd655d1c4b16077c070"
+        }
+      ]
+    },
+    {
+      "key": "kkwak",
+      "src": "design/retro/faces/kkwak-neutral.png",
+      "atlas": "design/retro/faces-v2/kkwak.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "5460f3a6c0d8b87ac548ca3beec68506efcef85b2bf55abe643e95887c3df391",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kkwak-happy.png",
+          "sha256": "228845d9517e21631d38ad55bceaff3b909da5dddc9cc9dedb03cda4f8bef837"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kkwak-nervous.png",
+          "sha256": "dbcd3ae94f4817d9d3a4a388389990eecb4447de087f23bd064793e8f2a1e7a4"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kkwak-shock.png",
+          "sha256": "c22af27df5fefa6c22fd7b280dc7b530a158b7fc384451176cb0650571448c69"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kkwak-angry.png",
+          "sha256": "d71d676f085004d15d173fcc5d2a4f6f40e99acbfba835caa5e603ad8ef144d4"
+        }
+      ]
+    },
+    {
+      "key": "kongi",
+      "src": "design/retro/faces/kongi-neutral.png",
+      "atlas": "design/retro/faces-v2/kongi.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "ab9cb3252b56879e301ae163acc6ee2ba420d6c6d26afcac3084b5adad5aed82",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kongi-happy.png",
+          "sha256": "74e7d5ac22178b806bbc5785f98c19f614f579a633e5c2d3c30c9d7613e4cbcf"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kongi-nervous.png",
+          "sha256": "caceba33205c532b0b322183a367d9dff546dabb536d4f23ea4178cf00f07b5f"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kongi-shock.png",
+          "sha256": "268b88982d16c226838eb29f4f37e4b9223cb7c298a2a12b0d5e8df910cc7112"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/kongi-angry.png",
+          "sha256": "f79eaa2b41b78d47f54ad57fb54f7ae20e8a147cb9cf4d42375447a2fa42da5c"
+        }
+      ]
+    },
+    {
+      "key": "lamplighter",
+      "src": "design/retro/faces/lamplighter-neutral.png",
+      "atlas": "design/retro/faces-v2/lamplighter.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "0e201f28e537c4db7a90db063bbbe077086f6a8add5d14d7c50470a0c7b0aee1",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/lamplighter-happy.png",
+          "sha256": "28df58545aed47181ac30aa9f8964cedf2a151c75d73a721e5bd1de2a609dd00"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/lamplighter-nervous.png",
+          "sha256": "a82180fe233793c12daff7156e8f458a5a446092cf1c017c5d025104603ff94f"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/lamplighter-shock.png",
+          "sha256": "2783512c3a00af892cac5a2fb65a142010559c277980d8ea03227ea8eed71f37"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/lamplighter-angry.png",
+          "sha256": "d2b1834d08c07fbe6221ed0cd21fd33e34d3a75da0202320412af9f7d5af8406"
+        }
+      ]
+    },
+    {
+      "key": "luka",
+      "src": "design/retro/faces/luka-neutral.png",
+      "atlas": "design/retro/faces-v2/luka.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "f67e4db8267bf0251cf4005757749788521a735c8cddfc6261f2a38c03356133",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/luka-happy.png",
+          "sha256": "ff33aa5f9b32ec7b94588d665ffc29e96d1596f689016aa54900d266c748401d"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/luka-nervous.png",
+          "sha256": "7094d4e4f8a38ba892bd94a8127db1a858c3d5d11110bc7436b48285c62f7914"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/luka-shock.png",
+          "sha256": "af3f738324d773d5b31c2e7c89e649f6ddb51c06a5f18f1bc5733a4230abee9b"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/luka-angry.png",
+          "sha256": "3fe3fe158b4757a097bb2981b1e6ad291989f8a4bfda1ae9c7319f70b339620e"
+        }
+      ]
+    },
+    {
+      "key": "madam",
+      "src": "design/retro/faces/madam-neutral.png",
+      "atlas": "design/retro/faces-v2/madam.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "2595157eda9ea96717bed81ad2293dad0b7ae9be34f7ce83f6cdfa46f23959e4",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/madam-happy.png",
+          "sha256": "008ffcba7e5b43803c97133905fef61799fd925205d4ff8c755d2138f9f76f9d"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/madam-nervous.png",
+          "sha256": "4fb0c2c79cc4022460a4b92b304ae6d474b96dc17dafc39191783bb7030133cb"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/madam-shock.png",
+          "sha256": "e49b500431d39b6a44d72debaa8e91a5712a9eda3512e026262de90aedbfe2c9"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/madam-angry.png",
+          "sha256": "400233fc43d8092b45d45d17e6784c2252ef59ea0e209f619c605aace84bba81"
+        }
+      ]
+    },
+    {
+      "key": "mom",
+      "src": "design/retro/faces/mom-neutral.png",
+      "atlas": "design/retro/faces-v2/mom.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "73a596e96a56f1af33463009fd6d460438f9d20afbec273e4045b7f2a14cf4d2",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mom-happy.png",
+          "sha256": "ee1540254d023ddc0fbffc0becc35a319cf70ef4c2c5510763d4ded702c33825"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mom-nervous.png",
+          "sha256": "09cac90b1bd4508369c0e7d88b68a27e40342c301ee569626a59b3237f50a2d9"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mom-shock.png",
+          "sha256": "6cf55bf4d40ad4eeb3c4a23c8025196832b4d6e54ec453db2fdeaf7abe2814dd"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mom-angry.png",
+          "sha256": "59f056da09571e5eecbc7d0f843dfcce2bf0c3ca6f5f3d83f2ea5cb738caf70b"
+        }
+      ]
+    },
+    {
+      "key": "momo",
+      "src": "design/retro/faces/momo-neutral.png",
+      "atlas": "design/retro/faces-v2/momo.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "15ba09aaaa4e1a365dcc13227ee094743fcea67010c5e4aed20f4a6278ad92f0",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/momo-happy.png",
+          "sha256": "4bfd97494ecc7c8f8a5732edeaf5ced5e04165b48b9b82e9bfc437027c9cf4e8"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/momo-nervous.png",
+          "sha256": "999f37ade7a7a2e48d4f3f1be327588fbffa5e38d1d281f5e1aa218ce35dd4c3"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/momo-shock.png",
+          "sha256": "4f47a4206442d0d594e2a1fea39d5c200f4f3b559ec51f48603fc123a3673589"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/momo-angry.png",
+          "sha256": "caa137492104afa77642e684c6c7ac4f82c2ad23825dcbf331a46a0577c71ac4"
+        }
+      ]
+    },
+    {
+      "key": "mungchi",
+      "src": "design/retro/faces/mungchi-neutral.png",
+      "atlas": "design/retro/faces-v2/mungchi.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "cf82f9f5bb6f81d72027c42416ad251f58ecde759cba2d2693facbfebeb59de1",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mungchi-happy.png",
+          "sha256": "c9a2640802ee7ec853e5e956ff27f8d66ecebca63b9833202459974d58df5a82"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mungchi-nervous.png",
+          "sha256": "f427669dda6497e4acf48d3ef6d8c8e8f2ffe7ca05a7660f55591b14a736eae5"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mungchi-shock.png",
+          "sha256": "3ff5b4dc7999e2472810d76cfef73c2a7e4e93532701189fd3be7862f7287501"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/mungchi-angry.png",
+          "sha256": "75eb5e26acdfe10d0866092425aa329ac071985f8afccc779bf8936d0cc0b485"
+        }
+      ]
+    },
+    {
+      "key": "musoe",
+      "src": "design/retro/faces/musoe-neutral.png",
+      "atlas": "design/retro/faces-v2/musoe.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "d424fa4833250848afb91e3a85c3ce266e2f7afc872d452ff0993a513d950cc2",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/musoe-happy.png",
+          "sha256": "48e1114c76a7697f133f4c96aa32989f425349bbb217b125d0aebfb013782195"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/musoe-nervous.png",
+          "sha256": "09d79352618014c8a3be0fb2e5c236726eb161f4f2738dde118a2670c75e9125"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/musoe-shock.png",
+          "sha256": "f51839823cfacf45046f79b77cd93b957dc04e887d9f4d32d2e9d18e2ac44326"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/musoe-angry.png",
+          "sha256": "8b0b6df390fa54bf4da6ace6e1e19758d52481215065d2ab8455729d4ff782a0"
+        }
+      ]
+    },
+    {
+      "key": "nabi",
+      "src": "design/retro/faces/nabi-neutral.png",
+      "atlas": "design/retro/faces-v2/nabi.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "337db17fd08df1155e672f112a7a70495074aded540ca8bfd43d99c3e47fdcff",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nabi-happy.png",
+          "sha256": "84ef5efc06720013bee7cb242aae982411640b148e620e37952a84fc9beee3f7"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nabi-nervous.png",
+          "sha256": "daabdb4f447f1b0db75920a8647faddc631b7a22294f43269da6facf15b01d0b"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nabi-shock.png",
+          "sha256": "f13b272ea54af59c671082e297ec5385a1272df33f1f7624b2c55b4fe7104ae9"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nabi-angry.png",
+          "sha256": "5ebf46cec4fb7efed5a237dd3775f8f46addf0e2a581259a9ff53e5146be3a8b"
+        }
+      ]
+    },
+    {
+      "key": "nero",
+      "src": "design/retro/faces/nero-neutral.png",
+      "atlas": "design/retro/faces-v2/nero.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "d4c5638fa9ff5b5672bf2e7c22ad02dd1267981c4a4b5871d78fa9562b8ab95c",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nero-happy.png",
+          "sha256": "fdd37f7a8f21d09644278286e96d9b158c434d556c1d2143fa10731dac5888b1"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nero-nervous.png",
+          "sha256": "b51c8eda9a9b9294ed5bba5ff809b0a6031e1682fd474d1c1d4e9bf1b8bf4294"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nero-shock.png",
+          "sha256": "35459aa517591bc276f860042ded555d187cc88e3bf3535661f5ff34eca3e98b"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nero-angry.png",
+          "sha256": "c21b5cb7cae2a190ae4a776e24cf1c95f710153e1397295e5c91bbcec5fd3aba"
+        }
+      ]
+    },
+    {
+      "key": "nubi",
+      "src": "design/retro/faces/nubi-neutral.png",
+      "atlas": "design/retro/faces-v2/nubi.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "978cb94ea9b93ea4263dbddcac2901f1ea3aefc54b292fe07095c2a412e150c5",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nubi-happy.png",
+          "sha256": "a9f189bc60c4aeb8d43cb4db373187005036d59741d1a3e1440455ffc6081522"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nubi-nervous.png",
+          "sha256": "eaa5a76b0ced3fc99a465aa9c2b6ae8ead055be95bc60da60d579549fafc3be1"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nubi-shock.png",
+          "sha256": "04cdc5df6b89f5a394488a3af27ca0185535863bd94edc85f910d13c378f4720"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/nubi-angry.png",
+          "sha256": "397fb2238588cee634e3230de59cb7b3c625f82d6753ac94f5825c76e2356505"
+        }
+      ]
+    },
+    {
+      "key": "owlgp",
+      "src": "design/retro/faces/owlgp-neutral.png",
+      "atlas": "design/retro/faces-v2/owlgp.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "fb55efbc85f66886146deb8083a5794db08ef841446d0391408e9e079f9453ca",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/owlgp-happy.png",
+          "sha256": "7c9db29ad0352239e73fc7218e3048d72c08a3133583bd9c72d48485bc1ed66b"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/owlgp-nervous.png",
+          "sha256": "7aa67b677b8dac83200d1ae4f759c86bac5a812d758412148287fb6cf8197620"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/owlgp-shock.png",
+          "sha256": "772cd643233205a1cb6dc6822beff30a89b5bba4c903529d6c59233cb81642ce"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/owlgp-angry.png",
+          "sha256": "c05cb9a612f8e10d9321a979ff84a51132d8c459baef9de7cd36358d58a1e383"
+        }
+      ]
+    },
+    {
+      "key": "papa",
+      "src": "design/retro/faces/papa-neutral.png",
+      "atlas": "design/retro/faces-v2/papa.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "a07f8335ed9633b012026d4724e5059991423d1f7780aa2b0d964e96baf0e33a",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/papa-happy.png",
+          "sha256": "a32888edc1f52f516e1597df5dfb364580f031f4c4e31c6453f5cf36391e516b"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/papa-nervous.png",
+          "sha256": "4e977fdba3369fe643bf5d9384cf73965d82d5cde78b397ce816d51973cb40fd"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/papa-shock.png",
+          "sha256": "3f1051e06215e2c8c9473b234530bf5ebcc534f4d2130baffa263f95c096dd5b"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/papa-angry.png",
+          "sha256": "5568c039df7444928bde216b0dde4a393566931eaca5a9eacd699cd5371e080c"
+        }
+      ]
+    },
+    {
+      "key": "piko",
+      "src": "design/retro/faces/piko-neutral.png",
+      "atlas": "design/retro/faces-v2/piko.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "8174f06f8339a77f95e807f7449200cd6f012d6957381a82833a9b27fbdfcb9a",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/piko-happy.png",
+          "sha256": "b37d30acd57d1642cc2375c8392f74a31d1f96219b85df0e226054b96b21f0f1"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/piko-nervous.png",
+          "sha256": "0adb9b3436d011d05dd13cc01893003ffc0811c71bef7b8cc4665bb0ca8ad2c6"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/piko-shock.png",
+          "sha256": "088fd8789bcfa74f2a5500b893fec2b3d99d78607092f0e82539ec643edbf8fd"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/piko-angry.png",
+          "sha256": "191946e5879881df5dc2badb53601a4d80046ae540aebec274f134c7ca134641"
+        }
+      ]
+    },
+    {
+      "key": "ppul",
+      "src": "design/retro/faces/ppul-neutral.png",
+      "atlas": "design/retro/faces-v2/ppul.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "23e0b3a2844f1b9b029b6680710ca676ea17d326665069e21d2b4dbc26b37ad8",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ppul-happy.png",
+          "sha256": "d097f4ab8b5d772a160ff112a3c0f3ad15b960ac84413bfdacd6d8029162c67e"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ppul-nervous.png",
+          "sha256": "cb973a10527aded8981dd43739b4f84b2906b9c32bc1d2cd2147490033153615"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ppul-shock.png",
+          "sha256": "773a98a46ea438ec74e4072a45ef3464086fd286358fa25a015f97d9eff662bc"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ppul-angry.png",
+          "sha256": "54632fdbcf9db54883bb4df27faacd802cdbcdd481fabaa34304408aaf331f39"
+        }
+      ]
+    },
+    {
+      "key": "rei",
+      "src": "design/retro/faces/rei-neutral.png",
+      "atlas": "design/retro/faces-v2/rei.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "727b024083eb582f09bce7c35c0745c2a790fd2e0420fd2ff8eca63ddd626bb6",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/rei-happy.png",
+          "sha256": "3208f64a3d6bb8fd538b2172e68abf34a7d945cb7c5a25e29a288fb027c2ad49"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/rei-nervous.png",
+          "sha256": "3ebd6e727a5b8288956a49d73e012c5bef514be9b401ab82bf112d3184f0869b"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/rei-shock.png",
+          "sha256": "63d04f2517b7ea5c3bc0969d91a0da2ac6f5763419d327b00d6e5145d78b1d24"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/rei-angry.png",
+          "sha256": "5eb885b5ff8ebaa93011b2d3f3d372ebd2102bad79e1ae8dff43afe6c5d7bf73"
+        }
+      ]
+    },
+    {
+      "key": "seol",
+      "src": "design/retro/faces/seol-neutral.png",
+      "atlas": "design/retro/faces-v2/seol.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "a31e0b128b0e33b63578f5d43f1654cc4050c46c57203a2f7ed80240799c56a0",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seol-happy.png",
+          "sha256": "3c7d24c3ec5be21c670bbd89e4be24079712db5686ec916bcf5b9dac5750c05f"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seol-nervous.png",
+          "sha256": "3b4782d3a7436ae0f9100b950f799c41fc525def781030dc719eeb4d77101f72"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seol-shock.png",
+          "sha256": "bd1b769a388ad35878bbefe7567e5d4b7999e27562056d7d9e29b73dd4572d5a"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seol-angry.png",
+          "sha256": "dce59017007e2c1e49913540b8b6a673b5a077db7344ef1962c1cfa573310617"
+        }
+      ]
+    },
+    {
+      "key": "seori",
+      "src": "design/retro/faces/seori-neutral.png",
+      "atlas": "design/retro/faces-v2/seori.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "7515928ffbe6b4b8addbe5a8c598cdbdc9313b6477a9c0cd90640f0383d9d4fa",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seori-happy.png",
+          "sha256": "f3ed9a1a64382a47b0d915e54eea25056ccb280c3eda123835e418b8622eadcd"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seori-nervous.png",
+          "sha256": "4da4e1960fca32a1ac753848991a2c8f2c3c2bb3c70359e53dd00a200db05a5c"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seori-shock.png",
+          "sha256": "d58e0009349f20e294838c1eaec3af3e738d2a5eeae962f134f924b87f811062"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/seori-angry.png",
+          "sha256": "107b9f9dcb876fab7337de866d1c96e357b5b83350fbe2b7be858af19e3d4942"
+        }
+      ]
+    },
+    {
+      "key": "shadow",
+      "src": "design/retro/faces/shadow-neutral.png",
+      "atlas": "design/retro/faces-v2/shadow.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "3502cc3903188d8e99753c98e936bbe8c808ef8340698b75906d49c3d3989f5e",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/shadow-happy.png",
+          "sha256": "93b84661552130cf479014627bdd6ca2f5b968abdcf59bec0152ded91b3caaf3"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/shadow-nervous.png",
+          "sha256": "f47d61ef6b474ccbc43c317a08433b64720f02d8ef26fa2a892ace7e468a7697"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/shadow-shock.png",
+          "sha256": "0e356e17d0c15f621ed1f6ee3af7030e59124292c1b585c71096a242f2bedbdd"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/shadow-angry.png",
+          "sha256": "746087520406f8253dc6ec1156aa09b69b2273b5260b2391ae0755064d32fb91"
+        }
+      ]
+    },
+    {
+      "key": "siluk",
+      "src": "design/retro/faces/siluk-neutral.png",
+      "atlas": "design/retro/faces-v2/siluk.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "b4d4007d6629023a3ed4b7dacd2cde406b0494af5d5a6d1fbc1e2ef085e6f73c",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/siluk-happy.png",
+          "sha256": "1d24acb9ac081219bc70609c461cf8ea04e0ccb6d30d07c98cef7429c716e2b3"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/siluk-nervous.png",
+          "sha256": "b67377cf632200b185e0e48f3b0898e4c757dc727b2271496a1f16ff7ea56fac"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/siluk-shock.png",
+          "sha256": "d38c6a48edd6f569c8ae69c4625bd686bb2ccf3dab52a30d2031cd6bfccebb56"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/siluk-angry.png",
+          "sha256": "50dab2df86adcfd1ba0c26d748184ca09ad6c3e0049b71d4051ddec73733ee63"
+        }
+      ]
+    },
+    {
+      "key": "sling",
+      "src": "design/retro/faces/sling-neutral.png",
+      "atlas": "design/retro/faces-v2/sling.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "230d9893b7f908fa9370830168a41230d9a4868f471ba6c6dc26bde7f55b0a9c",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/sling-happy.png",
+          "sha256": "54ffd05d67b67f90628054bab2edf1ba14ee93ab4ae0d575592e99249ca62b37"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/sling-nervous.png",
+          "sha256": "c73621e0fa4e6f97d9bf6b1e1ef5644fbc8bb25b00d51ad4cf68ef752cad8309"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/sling-shock.png",
+          "sha256": "799fbd400ebf4e60ef55f54e0734d235871e72317b167b0a94d4bfb4e3ae80e6"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/sling-angry.png",
+          "sha256": "17821b221a0d64bcea6fedba79fbcc7bfc77245d85e00c991a33ebba37236756"
+        }
+      ]
+    },
+    {
+      "key": "somi",
+      "src": "design/retro/faces/somi-neutral.png",
+      "atlas": "design/retro/faces-v2/somi.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "4137c19218c02850c9b510ab2d0a6e907ab0b7b369b4fedae245b801c19f89b2",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/somi-happy.png",
+          "sha256": "b11a9a8a46cddd6c483999dc0c01d5b6d3b76f9facbb0ccdb931f1c2053e7483"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/somi-nervous.png",
+          "sha256": "663359876e80e63dba18c7c6ecd9b5e8b0a04c22f21d2b5d8cfe153ba229fa38"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/somi-shock.png",
+          "sha256": "0dff8da4c191bbf0ab56be8040c370451dff7f0284b638440c56f807f099df70"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/somi-angry.png",
+          "sha256": "472d8336f1cc873fff731ee8e9475c5e02946c266d7f2957ae0e6e2f8c56424d"
+        }
+      ]
+    },
+    {
+      "key": "tok",
+      "src": "design/retro/faces/tok-neutral.png",
+      "atlas": "design/retro/faces-v2/tok.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "532091345b86b72251572d1e7dfa091fbf3200f882409d3250b8d57b462f5622",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tok-happy.png",
+          "sha256": "2c07607c5eb7def855a28a1cdfdfa5d0d55d0e62d1c7f1805805f083f84f84a8"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tok-nervous.png",
+          "sha256": "7c22b50ab322c05d5765a99c7b765e17f3e6b44354f77986cc43746dedb0388f"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tok-shock.png",
+          "sha256": "e27736e62c2cda5813b9f5907c104fcf84126c8fdd41a6971c29bd20df47f0d5"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tok-angry.png",
+          "sha256": "74de33eeccdbbc3de5cc402ef3cea281bcdd2d79aeb555e639c24069f7b80c28"
+        }
+      ]
+    },
+    {
+      "key": "tori",
+      "src": "design/retro/faces/tori-neutral.png",
+      "atlas": "design/retro/faces-v2/tori.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "ad8cf28b14f39fc52f56715353c8fba0856d1fe56ff9b9dabf132fe97a3de42c",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tori-happy.png",
+          "sha256": "ddadac2794b8e2d2a9b0b3c98ebf481dfba83dad2b43d40e0c9d5d7e12470bd3"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tori-nervous.png",
+          "sha256": "16b40dca2376c814f40f59d574635d91d76b498fd5621ceb4f4533241a47ce7f"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tori-shock.png",
+          "sha256": "aecba9dc7dbbc243574b7bd0367925636fe21dccbbaa5f40408be2eb2053e653"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/tori-angry.png",
+          "sha256": "56159753551115884bcc9001c722da12a6db9cd9df966d0f1c5048240239d579"
+        }
+      ]
+    },
+    {
+      "key": "ttadak",
+      "src": "design/retro/faces/ttadak-neutral.png",
+      "atlas": "design/retro/faces-v2/ttadak.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "969f3837d55fce6d3f289fb1377f4aeebd757c4045f1d41527cd30f37ec9fee4",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ttadak-happy.png",
+          "sha256": "5ee4440256bc780a529f0e17ce8641ad05ad6632732288a358d9528cf17061f3"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ttadak-nervous.png",
+          "sha256": "aa65827681cfad362bee89595f94263030090d55f5f8c937bb710ae6e8e27d9d"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ttadak-shock.png",
+          "sha256": "28bb7e556b5ac8cee2e8f175cd0cb3dd09b98e4c030ac5237cbce5782f3d1ea3"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ttadak-angry.png",
+          "sha256": "6d85bbcc6dac0f53301b9aa54dfe0d6821984d1f7dbd24d0d56590028c85aa0a"
+        }
+      ]
+    },
+    {
+      "key": "ubak",
+      "src": "design/retro/faces/ubak-neutral.png",
+      "atlas": "design/retro/faces-v2/ubak.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "8b016ef387b790d60bd3aa805f80bf55ddbe6f6e54c3c5b72bcb4c69c8e1817c",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ubak-happy.png",
+          "sha256": "16afcbe030ff54a4d101582434d1e45a7197c32b679be41e466237f082b2652d"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ubak-nervous.png",
+          "sha256": "35801099f26e5c01253318c1eff24bb6352af03ecbef51e7983d89342b47d5ae"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ubak-shock.png",
+          "sha256": "63db1a7fc4a09531be01cd166b14c1e60fe92f8e58514770badade5468fe843c"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/ubak-angry.png",
+          "sha256": "060b19577dd9c51bdbdb87c804a42409f08ac3713c77389a3c69ad1a991d1975"
+        }
+      ]
+    },
+    {
+      "key": "wanggu",
+      "src": "design/retro/faces/wanggu-neutral.png",
+      "atlas": "design/retro/faces-v2/wanggu.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "81f03957dcbd48e13a72fd4ab7c921ea2627848804372ac9a93cda393e920b3d",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/wanggu-happy.png",
+          "sha256": "e3c31b876b5df9bad38bc65e491082347338b675af3208397d0c2916a1e66957"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/wanggu-nervous.png",
+          "sha256": "a9ea9dc25038a2416203acb38e4c70e55cca8970cf3db91aa5dddb3a21e48bea"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/wanggu-shock.png",
+          "sha256": "2ebaed7e5d6e8830d7c9826d7cbb639ae134ec535bd68f4fd7d7e54905d4fc06"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/wanggu-angry.png",
+          "sha256": "a11f8e63c299b625e5e26cbd3348d05c9b378b2e978f13500c495cc1b8a4cb36"
+        }
+      ]
+    },
+    {
+      "key": "yeoni",
+      "src": "design/retro/faces/yeoni-neutral.png",
+      "atlas": "design/retro/faces-v2/yeoni.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "676cb74737eee835a2fa7d4e12438e616a79a42f109710fbd84bf52bd123ab00",
+      "exports": [
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/yeoni-happy.png",
+          "sha256": "9227ede2efd9d71f142ec5903a537590375c36b30279ffb5dd9946e723ff3e96"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            627,
+            0,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/yeoni-nervous.png",
+          "sha256": "cb55a0558afe9a3dd5c1ea93c0126a73a99f8e4da8363e3bb007df9fa2aa6b9a"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/yeoni-shock.png",
+          "sha256": "04433914900cbaeebbe3d984236a39dd75b9f4d0229fa07a37a67137ebf1ca1a"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            627,
+            627,
+            627,
+            627
+          ],
+          "path": "art/faces-v2/yeoni-angry.png",
+          "sha256": "e870c41fb257898da2b75a16a13f332e32fd3b388b76dbf8cd8a42b16bd07fce"
+        }
+      ]
+    },
+    {
+      "key": "teacher",
+      "src": "design/retro/daram-face/neutral.png",
+      "costume": "bear, gold glasses, cream shirt, maroon vest and tie",
+      "atlas": "design/retro/faces-v2/teacher.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "b576c60cd6e20465d6d1b295e483fda9f4e027560a38d9c043d8d428d6630542",
+      "exports": [
+        {
+          "mood": "neutral",
+          "crop": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/teacher-neutral.png",
+          "sha256": "817aba9ea41a351699c3eb71ee67d5b6b094d0b4d100c6bd2c1b1bf1cdf8f463"
+        },
+        {
+          "mood": "think",
+          "crop": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/teacher-think.png",
+          "sha256": "00e1c2e77d2be3e0e98bbfeaabbdeab455a8aa11eb42e855b6199f0174a7a2d3"
+        },
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/teacher-happy.png",
+          "sha256": "eee84be61a8d7e9fb906944ad0565ca0084dba9e4102ec7ca3ab6eac74558a20"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/teacher-nervous.png",
+          "sha256": "867741dd9f4c4e93e610e2bb9e00ac5ca05b0cd2dea43683493bcdaf47524e87"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            1024,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/teacher-shock.png",
+          "sha256": "5de8d589dba4ead9188ed4cf41fae7f427cfe9c7177776f4982ab38c4a717dfb"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            512,
+            1024,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/teacher-angry.png",
+          "sha256": "720a4cb4ac1ba24de449e3d4ee2dbf94b0f8d58086fd58dcc8bc257fa9b69b7d"
+        }
+      ]
+    },
+    {
+      "key": "librarian",
+      "src": "design/retro/daram-face/neutral.png",
+      "costume": "grey cat, gold glasses, navy cloak, cream blouse, green bow",
+      "atlas": "design/retro/faces-v2/librarian.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "sha256": "d9edcf5f0a3ac4c08de2acd2bd47c37841f1719ac435579862b070af5414aafa",
+      "exports": [
+        {
+          "mood": "neutral",
+          "crop": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/librarian-neutral.png",
+          "sha256": "b0b5e60991207841fe094e37d45af51bdf209ea3d686bc290d2429fa59bca4d1"
+        },
+        {
+          "mood": "think",
+          "crop": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/librarian-think.png",
+          "sha256": "9d5da0e021fec862ddda66e5711e49e627d86c318373856ac54d304a20fd2b18"
+        },
+        {
+          "mood": "happy",
+          "crop": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/librarian-happy.png",
+          "sha256": "d22a620061197d18d1ab08b797f682ba39c146135fb0132ea10132a26e1c9461"
+        },
+        {
+          "mood": "nervous",
+          "crop": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/librarian-nervous.png",
+          "sha256": "cc89d459d3e6818de8cd3dee898cb44ffd90a1f148b65d955e43d6323e4955c1"
+        },
+        {
+          "mood": "shock",
+          "crop": [
+            0,
+            1024,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/librarian-shock.png",
+          "sha256": "54f5caaf2da2a2d9622931594084abd62513754a7c7d5406d59eacf627df6cca"
+        },
+        {
+          "mood": "angry",
+          "crop": [
+            512,
+            1024,
+            512,
+            512
+          ],
+          "path": "art/faces-v2/librarian-angry.png",
+          "sha256": "78a0d4c21a3f8bb943da0618650c70d9e6e5139f248cbcba66e638a33560c085"
+        }
+      ]
+    }
+  ]
+}
