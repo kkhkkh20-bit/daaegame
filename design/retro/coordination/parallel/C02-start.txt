@@ -1,0 +1,49 @@
+C01 작업을 이어서 C02 캐릭터 3명을 제작해 줘.
+
+저장소: https://github.com/kkhkkh20-bit/daaegame
+기존 작업 브랜치: art/c01-papa-rei-karo-20261007
+C01을 보존하고 이 브랜치에서 C02만 추가해. main 병합은 하지 마.
+
+최신 origin/main을 fetch해서 아래 자료를 읽어. 브랜치를 바꾸거나 원본 게임을 덮어쓰지 않아도 git show origin/main:<경로>로 확인할 수 있어.
+- design/retro/coordination/CONTEXT.md
+- design/retro/coordination/parallel/README.md
+- design/retro/coordination/parallel/C02.json
+- design/retro/coordination/briefs/C02.txt
+- design/retro/coordination/requests.md 및 review.md
+네 브랜치의 HANDOFF-C01.txt와 최신 게임의 CAST/PERSONA도 확인해.
+
+이번 담당 C02
+1. 부리 buri.png: 책벌레 부엉이, 둥근 눈, 자주색 조끼. 손은 날개 끝.
+2. 왕구 wanggu.png: 너구리 위원장, 주황 조끼, 축제 완장. 아빠와 털색·의상·실루엣을 분명히 구별.
+3. 도토 doto.png: 다람쥐, 초시계와 기록 수첩, 단정한 체크 조끼. 다람과 모자·의상·실루엣을 구별.
+
+승인된 daram-matched.png를 주 기준으로 직접 열어 이미지 생성 참조로 사용해.
+star-hill-enriched.png와 네 C01 제작본은 같은 게임으로 보이는지 비교할 자료야.
+C01의 자기 판단을 사용자 최종 승인으로 표시하지 마. 다람의 비율·눈·굵은 도트 기준을 유지해.
+
+인물별 투명 PNG 한 장, 기본 / 생각(손 또는 날개 끝을 턱에) / 감정 세 포즈를 가로로 배치해.
+감정은 CAST/PERSONA와 fall 사건에서의 성격을 따르고 유치한 과장은 피해야 해.
+완전한 동물 머리와 동물 손. 사람 얼굴·머리카락·사람 손 금지.
+글자·배경·바닥 그림자 없이 또렷한 픽셀, 단순한 명암. 얼굴 96×96과 전신 높이 약90 논리 픽셀에서 읽히게 해.
+포즈끼리 겹치지 않게 하고 인물별 세 포즈의 발 기준선을 맞춰.
+이미지 제작/수정은 이미지 생성 도구로 수행해.
+
+결과 파일
+- design/retro/chars/buri.png
+- design/retro/chars/wanggu.png
+- design/retro/chars/doto.png
+- design/retro/chars/HANDOFF-C02.txt
+- design/retro/chars/C02-manifest.json
+- design/retro/chars/C02-preview.html
+- design/retro/coordination/parallel/C02.json
+
+HANDOFF와 JSON에 실제 파일 크기·투명도·해시·세 포즈의 전신/얼굴 crop 좌표·발 기준선·생성 프롬프트를 기록해.
+3등분을 가정하지 말고 그림의 실제 포즈 경계를 확인해.
+C02-preview.html은 상대 경로로 만든 별도 미리보기야. 새 인물을 96×96 얼굴과 전신 크기로 보고 다람과 비교할 수 있게 해. 승인 PNG를 리샘플링하거나 덮어쓰지 말고 HTML에서 표시해.
+
+origin/main의 C02.json 예약을 자기 브랜치에 새 파일로 가져와 자기 상태만 갱신해.
+시작은 in_progress, 완료는 ready_for_review. 실제 게임 검토는 별도로 남겨.
+C01 결과와 B01/bg/, 게임 원본, art/, 승인 이미지, 공용 관리 파일은 수정하지 마.
+다른 요청 R-001~R-008이나 다음 묶음까지 확장하지 마.
+C02 파일만 커밋·푸시하고 main에 병합하지 마. 강제 푸시는 금지.
+완료하면 3명 미리보기와 브랜치 링크·전달 문서 경로를 알려 주고 C02에서 멈춰.
