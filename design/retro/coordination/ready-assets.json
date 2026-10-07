@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "scope": "Existing generated assets; original game integration is outside this handoff request",
+  "count": 17,
+  "assets": [
+    {
+      "id": "star-hill-base",
+      "kind": "background",
+      "path": "design/retro/star-hill.png",
+      "metadata": "design/retro/metadata.json",
+      "preview": "design/retro/"
+    },
+    {
+      "id": "star-hill-enriched",
+      "kind": "background",
+      "path": "design/retro/star-hill-enriched.png",
+      "metadata": "design/retro/star-hill-enriched.json",
+      "preview": "design/retro/hill.html"
+    },
+    {
+      "id": "daram-matched",
+      "kind": "character",
+      "path": "design/retro/daram-matched.png",
+      "metadata": "design/retro/daram-matched.json",
+      "preview": "design/retro/daram.html"
+    },
+    {
+      "id": "lantern-lit",
+      "label": "켜진 랜턴",
+      "kind": "sticker",
+      "path": "design/retro/stickers/lantern-lit.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "books-stack",
+      "label": "책 세 권",
+      "kind": "sticker",
+      "path": "design/retro/stickers/books-stack.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "ink-quill",
+      "label": "잉크병과 깃털 펜",
+      "kind": "sticker",
+      "path": "design/retro/stickers/ink-quill.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "cat-sleeping",
+      "label": "자는 고양이",
+      "kind": "sticker",
+      "path": "design/retro/stickers/cat-sleeping.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "pin-red",
+      "label": "빨간 압정",
+      "kind": "sticker",
+      "path": "design/retro/stickers/pin-red.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "pin-yellow",
+      "label": "노란 압정",
+      "kind": "sticker",
+      "path": "design/retro/stickers/pin-yellow.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "pin-green",
+      "label": "초록 압정",
+      "kind": "sticker",
+      "path": "design/retro/stickers/pin-green.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "pin-blue",
+      "label": "파란 압정",
+      "kind": "sticker",
+      "path": "design/retro/stickers/pin-blue.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "memo-yellow",
+      "label": "노란 메모지",
+      "kind": "sticker",
+      "path": "design/retro/stickers/memo-yellow.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "memo-white",
+      "label": "흰 메모지",
+      "kind": "sticker",
+      "path": "design/retro/stickers/memo-white.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "masking-tape",
+      "label": "마스킹테이프",
+      "kind": "sticker",
+      "path": "design/retro/stickers/masking-tape.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "magnifier",
+      "label": "돋보기",
+      "kind": "sticker",
+      "path": "design/retro/stickers/magnifier.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "ivy-left",
+      "label": "왼쪽 위 담쟁이",
+      "kind": "sticker",
+      "path": "design/retro/stickers/ivy-left.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    },
+    {
+      "id": "ivy-right",
+      "label": "오른쪽 위 담쟁이",
+      "kind": "sticker",
+      "path": "design/retro/stickers/ivy-right.png",
+      "metadata": "design/retro/stickers/manifest.json",
+      "preview": "design/retro/stickers/"
+    }
+  ],
+  "documentBatchDeliveries": {
+    "S01": {
+      "status": "assets_available",
+      "assetIds": [
+        "lantern-lit",
+        "books-stack",
+        "ink-quill",
+        "cat-sleeping"
+      ]
+    },
+    "S02": {
+      "status": "assets_available",
+      "assetIds": [
+        "pin-red",
+        "pin-yellow",
+        "pin-green",
+        "pin-blue",
+        "memo-yellow",
+        "memo-white",
+        "masking-tape",
+        "magnifier",
+        "ivy-left",
+        "ivy-right"
+      ]
+    }
+  },
+  "downloadPacks": [
+    "design/retro/daram-matched-study.zip",
+    "design/retro/star-hill-enriched-study.zip",
+    "design/retro/stickers/daram-stickers.zip"
+  ]
+}
