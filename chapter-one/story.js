@@ -177,3 +177,26 @@ STORY.crowSolved[STORY.crowSolved.length-1].stamp={time:'16:05',place:'눈길 �
 STORY.keySolved[0].stamp={time:'16:15',place:'눈길 거처 · 접수 담당자 관리실'};
 STORY.keySolved[STORY.keySolved.length-1].stamp={time:'16:25',place:'눈길 거처 · 문서 보관실'};
 STORY.ending[0].stamp={time:'16:40',place:'눈길 거처 · 문서 보관실'};
+
+// Investigation leads into a shared conversation; there is no separate battle menu.
+STORY.receptionMeeting=[
+ line('narr','다람이 접수증을 빈 받침 옆에 펼쳤다. 까로가 배달 가방을 내려놓고 다가왔다.',0,{actor:'karo'}),
+ line('daram','배달해 주신 일과 그 뒤에 일어난 일을 나눠서 확인하고 싶어요.',0,{actor:'daram'}),
+ line('karo','좋습니다. 제가 아는 데까지 말씀드리죠.',0,{actor:'karo'}),
+ line('dad','다람, 서로 다른 부분이 있으면 네가 읽은 문구를 보여 드려.',0,{actor:'daram'}),
+ line('daram','네. 누가 잘못했는지부터 정하지 않고요.',1,{actor:'daram'})
+];
+STORY.cabinetMeeting=[
+ line('narr','다람은 보관함 앞에서 멈췄다. 수첩의 열쇠 번호를 손가락으로 짚었다.',0,{actor:'mungchi'}),
+ line('daram','뭉치 씨, 이 보관함을 함께 확인하고 싶어요.',0,{actor:'daram'}),
+ line('mungchi','아까 말씀드렸잖아요. 주인님이 안 계세요.',1,{actor:'mungchi'}),
+ line('daram','그 말씀과 제가 확인한 게 달라서요. 제가 잘못 이해했다면 설명해 주세요.',1,{actor:'daram'}),
+ line('mungchi','…무엇이 다른데요?',1,{actor:'mungchi'})
+];
+STORY.documentMeeting=[
+ line('narr','두 문서를 읽은 다람이 수첩을 가운데 놓았다. 모두가 같은 문구를 볼 수 있도록 종이를 돌렸다.',0,{actor:null}),
+ line('daram','엄마 이름이 있다고 같은 내용을 확인한 건 아니었어요.',1,{actor:'daram'}),
+ line('mungchi','그러면 명단도 다시 확인해 달라고 할 수 있겠네요.',1,{actor:'mungchi'}),
+ line('daram','네. 봉투를 숨긴 일과 명단이 잘못된 일은 따로 설명해야 해요.',0,{actor:'daram'}),
+ line('dad','다람, 우리가 확인한 일부터 정리해 줄래?',0,{actor:'daram'})
+];
