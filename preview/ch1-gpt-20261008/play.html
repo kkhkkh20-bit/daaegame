@@ -32119,6 +32119,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
   if(G.tab==="final")return "deduce";
   var l=c.locations[G.loc]||c.locations[0];return invKey(c,l?l.id:"")}
  function wantKey(){
+  if(window.__innAudioHold)return null;
   if(!S.sound)return null;
   if(A.pursuit){var P=A.pursuit,on=!!DL||!!q(".rt .rt-mid.talk");if(on)P.seen=true;
    if((P.seen&&!on)||(!P.seen&&Date.now()-P.t>15000)||Date.now()-P.t>120000||q(".sbook,.show,.recon")||(G&&G.result))A.pursuit=null;else if(songOf("pursuit"))return "pursuit"}
@@ -32254,6 +32255,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
    duckNow(false);
   }catch(e){lg("err "+e.message)}}
  A.tick=tick;
+ A.sceneGate=function(hold){window.__innAudioHold=!!hold;if(hold){stopTimer();if(L.cur){instKill(L.cur);L.cur=null}L.old.forEach(instKill);L.old=[];A.cur=null;A.want=null;if(L.bus){L.bus.gain.cancelScheduledValues(L.ctx.currentTime);L.bus.gain.setValueAtTime(0,L.ctx.currentTime)}}else{A.hush=null;tick();duckNow(true)}};
  setInterval(function(){if(document.hidden)return;tick();if(!AC||!S.sound)return;try{scanText();scanRt();scanOverlays()}catch(e){}},220);
  document.addEventListener("visibilitychange",function(){if(document.hidden){stopTimer();try{if(AC&&AC.state==="running")AC.suspend()}catch(e){}}else{setTimeout(function(){if(L.cur||L.old.length)startTimer();tick()},120)}});
  window.addEventListener("pagehide",stopTimer);
@@ -47483,7 +47485,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   S("bed13","2층 창고 앞","아침 7시 반",[N("다람이 아빠의 소매를 붙잡는다. 숨이 차다."),L("det1","(작게) 아빠. 부엌에. 누가 있어.","shock"),L("det0","응, 듣고 있어. 누가 있는데?"),
    L("det1","작은 애. 차가워. 숨을… 안 쉬는 것 같아.","sad"),
    N("아빠가 다람의 어깨를 한 번 잡는다. 둘이 뒤 계단으로 내려간다. 부엌. 아빠가 찻주전자 안을 본다. 오래."),
-   {loc:"kitchen"},N("아빠가 두 손으로 작은 몸을 조심스럽게 꺼내 식탁 위 빵 바구니로 옮긴다. 수건을 한 겹 덮는다."),N("너울이 뒤따라 내려온다."),
+   {loc:"kitchen"},{beat:"inn_basket_transferred"},N("아빠가 두 손으로 작은 몸을 조심스럽게 꺼내 식탁 위 빵 바구니로 옮긴다. 수건을 한 겹 덮는다."),N("너울이 뒤따라 내려온다."),
    L("wanggu","무슨 일입니까?"),L("det0","부엌에서 손님이 하나 더 발견됐습니다. 움직이지 않습니다."),N("너울이 기록부에 적고 나간다."),
    L("det1","아빠, 저 애 괜찮을까?","sad"),L("det0","아직은 모르겠어. 같이 알아보자.")])
  ];
@@ -47492,7 +47494,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
     cg: 그림 안에 이미 그려진 인물(대화 칸에 같은 인물 그림을 겹쳐 띄우지 않음)
     plain: 아직 그림이 없는 장소(빈 배경 + 장소 이름) */
  EP.BGS={
-  carriage:{src:"art/ch1/bg/INTRO04_carriage.png",w:1672,h:941,view:[0,0,1672,929],cg:["det1","karo"],note:"인트로 팩 INTRO04 전날 오후의 마차"},
+  carriage:{src:"art/ch1/bg/INTRO04_carriage_empty.png",w:844,h:390,view:[0,0,844,390],cg:["karo"],note:"인트로 팩 INTRO04 전날 오후의 마차"},
   plaza:{plain:"dusk",label:"마을 입구, 광장",note:"광장 배경 그림 대기"},
   reception:{src:"art/ch1/bg/BG01_reception_panorama.png",w:2048,h:768,view:[0,100,900,500],note:"BG01 현관 쪽(문)"},
   corridor:{src:"art/ch1/bg/INTRO01_corridor.png",w:1672,h:941,view:[0,0,1672,929],note:"인트로 팩 INTRO01 2층 복도(밤). 시계는 그림에 없음"},
@@ -47672,14 +47674,6 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
     "black": 450,
     "title": "1장. 열세 번째 침대",
     "sfx": "doorClose"
-  },
-  {
-    "id": "20",
-    "img": "art/ch1/bg/INTRO04_carriage.png",
-    "z": 1.02,
-    "fx": 0.4,
-    "fy": 0.45,
-    "tag": "전날 오후"
   }
 ];
  EP.COLD_SPEAKER="???";
@@ -48143,6 +48137,9 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   [EP.MEET,EP.FINAL].forEach(function(D0){D0.phases.forEach(function(ph){if(ph.lines)ph.lines=dirList(ph.lines,"meet");if(ph.ok)ph.ok=dirList(ph.ok,"meet");
    (ph.stms||[]).forEach(function(st){if(st.ok)st.ok=dirList(st.ok,"meet");if(st.press)st.press=dirList(st.press,"meet");(st.steps||[]).forEach(function(sp){sp.lines=dirList(sp.lines,"meet")});
     if(st.soft)Object.keys(st.soft).forEach(function(k){st.soft[k].lines=dirList(st.soft[k].lines,"meet")});if(st.wr)Object.keys(st.wr).forEach(function(k){st.wr[k]=dirList(st.wr[k],"meet")})})})})}catch(e){MISS.push("dir "+e.message)}
+ // Opening narration is production direction, not dialogue. Commands already
+ // extracted by dirList remain; evidence cards/observations outside this intro remain intact.
+ EP.PRO.forEach(function(sc){sc.items=sc.items.filter(function(x){return !(Array.isArray(x)&&x[0]==="narr")})});
  try{EP.PRO.concat(EP.END).forEach(function(sc){clean(sc.items)});clean(EP.I9);clean(EP.MF);
   EP.LOCS.forEach(function(l){(l.spots||[]).forEach(function(sp){clean(sp.say)});(l.obs||[]).forEach(function(o){clean(o.say)})});
   Object.keys(EP.TALK).forEach(function(k){EP.TALK[k].forEach(function(t){clean(t.lines)})});
@@ -48190,14 +48187,14 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
 
  /* ---- 장면 배경: 대본 장면에 맞는 그림(EP.BGS). 프롤로그·후일담은 장면별(bg), 조사는 장소별(EP.LOC_BG) ---- */
  function bgKey(locId){try{var o=G&&G.beats&&G.beats.inn_bg;if(o)return o}catch(e){}return (EP.LOC_BG||{})[locId]||null}
- function bgSvg(k){var b=EP.BGS[k];if(!b)return null;
+ function bgSvg(k){if(window.__innWorldSvg){var wh=window.__innWorldSvg(k);if(wh)return wh}var b=EP.BGS[k];if(!b)return null;
   if(b.plain)return '<svg viewBox="0 0 360 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+b.label+'" data-bg="'+k+'"><defs><linearGradient id="innpl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A3550"/><stop offset=".6" stop-color="#2A2438"/><stop offset="1" stop-color="#1C1826"/></linearGradient></defs><rect width="360" height="200" fill="url(#innpl)"/><rect y="150" width="360" height="50" fill="#16121E" opacity=".55"/></svg>';
   var v=b.view;return '<svg viewBox="'+v.join(" ")+'" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+(b.note||k)+'" data-bg="'+k+'"><image href="'+b.src+'" x="0" y="0" width="'+b.w+'" height="'+b.h+'" preserveAspectRatio="none" style="image-rendering:pixelated"/></svg>'}
  window.__innBg=function(){var c=cur();if(!c)return null;var l=c.locations[G.loc];var k=l&&bgKey(l.id);return k?{key:k,def:EP.BGS[k]}:null};
  try{C.locations.forEach(function(l){var old=SCENES["inn-"+l.id];SCENES["inn-"+l.id]=function(){var k=bgKey(l.id),h=k&&bgSvg(k);return h||(old?old.apply(this,arguments):"")}})}catch(e){MISS.push("bg "+e.message)}
  /* 그림 속에 이미 있는 인물은 대화 칸에 겹쳐 띄우지 않는다(마차 그림의 다람) */
  function cgSync(){try{var b=window.__innBg&&window.__innBg(),cg=(b&&b.def&&b.def.cg)||[];var f=document.getElementById("vnfig");
-   document.body.classList.toggle("inn-cg",!!cg.length);if(f)f.classList.toggle("inn-cghide",cg.indexOf(f.dataset.w)>=0)}catch(e){}}
+   document.body.classList.toggle("inn-cg",!!cg.length);document.body.classList.toggle("inn-carriage",!!b&&b.key==="carriage");if(f)f.classList.toggle("inn-cghide",cg.indexOf(f.dataset.w)>=0)}catch(e){}}
  try{new MutationObserver(function(){if(cgSync.t)return;cgSync.t=requestAnimationFrame(function(){cgSync.t=0;cgSync()})}).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:["data-w"]})}catch(e){}
 
  /* ---- 대화·컷신 중 조사 숨김: 대사가 떠 있거나 프롤로그·후일담 진행 중이면 조사 버튼·인물·메뉴를 숨긴다 ---- */
@@ -48213,7 +48210,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   "img.b202[data-k=innma]{--bw:148!important}",
   "#vnbox .plate small{display:none!important}",
   "#vnfig.inn-cghide{visibility:hidden!important}",
-  /* 도트 그림이 아직 없는 인물(세련·밤이)은 임시 얼굴을 대화 칸 위에 보이게 한다. 지문(narr)은 인물 칸을 비운다 */
+  /* 도트 그림이 아직 없는 인물(세련)은 임시 얼굴을 대화 칸 위에 보이게 한다. 지문(narr)은 인물 칸을 비운다 */
   "body.w209 #vnfig:not(.b202)>svg{position:absolute;left:50%;top:max(16px,5vh);bottom:auto;transform:translateX(-50%);width:min(58vh,240px);height:min(58vh,240px)}",
   "body.w209 #vnfig:not(.b202){top:0!important;bottom:auto!important;left:0!important;right:0!important;width:auto!important;height:100%!important;transform:none!important}",
   "#vnfig[data-w=narr]{visibility:hidden!important}",
@@ -48250,7 +48247,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
 
  /* ---- 조사 진행 조건: 조건이 안 된 대상은 장면에서 숨김 ---- */
  var FIRST=["C01","C02","C03","C04","C06","C08","C09","C12","C13"];   /* I1~I6에서 얻는 증거 */
- function sun(){return FIRST.every(has)}   /* [임시] I7 창고 햇빛: I1~I6을 마친 뒤 */
+ function sun(){return FIRST.every(has)}
+ window.__innSun=sun;   /* [임시] I7 창고 햇빛: I1~I6을 마친 뒤 */
  function avail(id){
   if(id==="C11")return bt("inn_lock");
   if(id==="C05")return has("C11");                                   /* [임시] I8 돋보기: 장부를 얻은 뒤 */
@@ -48328,7 +48326,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    G.notice={title:EP.GOAL.title,text:EP.GOAL.text+" "+EP.TUT.spot+" "+EP.TUT.talk};saveProg();render();return}
   G.beats.inn_pi=i;var s=EP.PRO[i];G.beats.inn_bg=s.bg||null;G.loc=LI[s.loc];G.tab="scene";saveProg();render();
   var go=function(){play(s.items,function(){if(s.after==="title"){(window.banner?banner(EP.title,EP.chapter):Promise.resolve()).then(function(){runPro(i+1)})}else runPro(i+1)})};
-  try{banner(s.title,s.sub).then(go)}catch(e){go()}}
+  if(i===0&&window.__innColdTransition){go();hint("전날 오후 · 우편 마차")}else try{banner(s.title,s.sub).then(go)}catch(e){go()}}
  /* ---- 후일담 E1~E4 ---- */
  function runEnd(i){var c=cur();if(!c)return;if(i>=EP.END.length){setb("inn_end");G.loc=LI.hall;G.tab="scene";
    var fin=function(){G.notice=EP.THE_END.notice;try{saveProg()}catch(e){}render()};
@@ -48729,7 +48727,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
     바닥 주민(위치 60% 아래): 발이 바닥에 닿게 키 72u. 높은 곳 주민(카운터 뒤): 기준점 아래 15u에서 잘라 상반신만 보인다. */
  (function(){
   var q=0,cache={};
-  function nat(k,cb){if(cache[k])return cb(cache[k]);var im=new Image();im.onload=function(){cache[k]=[im.naturalWidth,im.naturalHeight];cb(cache[k])};im.onerror=function(){};im.src=(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&(k==="karo"||k==="geokkuri"||k==="det1"))?"art/ch1/cast/"+(k==="det1"?"daram-front":k==="karo"?"karo-front":"bami-front")+".png":"art/body/"+k+"-0.png"}
+  function nat(k,cb){if(cache[k])return cb(cache[k]);var im=new Image();im.onload=function(){cache[k]=[im.naturalWidth,im.naturalHeight];cb(cache[k])};im.onerror=function(){};im.src=(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&(k==="karo"||k==="geokkuri"||k==="det1"||k==="nabi"))?"art/ch1/cast/"+(k==="nabi"?"nabi-front":k==="det1"?"daram-front":k==="karo"?"karo-front":"bami-front")+".png":"art/body/"+k+"-0.png"}
   function fix(){q=0;try{var sc=document.querySelector("#bigscene");if(!sc||!B.classList.contains("w209"))return;
    var u=parseFloat(getComputedStyle(sc).getPropertyValue("--u"))||1.95;
    sc.querySelectorAll(".npc").forEach(function(n){var k=n.dataset.npc;if(!k||n.dataset.f210===String(u))return;
@@ -48738,7 +48736,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
      n.classList.add("f210");n.classList.toggle("up",!floor);
      n.style.setProperty("--ih",H+"px");n.style.setProperty("--iw",W+"px");n.style.setProperty("--vh",vis+"px");
      n.style.setProperty("--fw",Math.round(W*.72)+"px");n.style.setProperty("--fh",Math.round(vis)+"px");n.style.setProperty("--ft",ft+"px");
-     var c=n.querySelector(".npcclip");if(!c){c=document.createElement("div");c.className="npcclip";c.innerHTML='<img alt="" draggable="false" src="'+((G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&(k==="karo"||k==="geokkuri"||k==="det1"))?"art/ch1/cast/"+(k==="det1"?"daram-front":k==="karo"?"karo-front":"bami-front")+".png":"art/body/"+k+"-0.png")+'">';n.insertBefore(c,n.firstChild)}
+     var c=n.querySelector(".npcclip");if(!c){c=document.createElement("div");c.className="npcclip";c.innerHTML='<img alt="" draggable="false" src="'+((G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&(k==="karo"||k==="geokkuri"||k==="det1"||k==="nabi"))?"art/ch1/cast/"+(k==="nabi"?"nabi-front":k==="det1"?"daram-front":k==="karo"?"karo-front":"bami-front")+".png":"art/body/"+k+"-0.png")+'">';n.insertBefore(c,n.firstChild)}
      n.dataset.f210=String(u)}catch(e){}})})}catch(e){}}
   try{new MutationObserver(function(){if(!q)q=requestAnimationFrame(fix)}).observe(document.body,{childList:true,subtree:true})}catch(e){}
   window.addEventListener("resize",function(){document.querySelectorAll("#bigscene .npc").forEach(function(n){delete n.dataset.f210});if(!q)q=requestAnimationFrame(fix)});
@@ -48766,10 +48764,10 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    nervous:"fluster",shock:"fluster",embarrassed:"fluster",panic:"fluster",scared:"fluster",worried:"fluster",sad:"fluster",cry:"fluster",shy:"fluster"};
   function exprOf(mood,pose){var m=String(mood||"").split(/\s+/)[0];if(m&&window.__MOOD_EXPR[m])return window.__MOOD_EXPR[m];return pose==="2"?"fluster":pose==="1"?"doubt":"normal"}
   function hiSwap(root){try{(root||document).querySelectorAll("#vnfig img.b202,.tfig img.b202,#sbfocus img.b202").forEach(function(im){
-    var k=im.dataset.k,P=window.__PORT[k],pixel=(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&(k==="karo"||k==="geokkuri"||k==="det1"));if(!P&&!pixel)return;var mood="";
+    var k=im.dataset.k,P=window.__PORT[k],pixel=(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&(k==="karo"||k==="geokkuri"||k==="det1"||k==="nabi"));if(!P&&!pixel)return;var mood="";
     if(im.closest("#vnfig")){try{mood=(typeof DL!=="undefined"&&DL&&DL.stageMood)||""}catch(e){}}
     var ex=exprOf(mood,im.dataset.pose);
-    if(pixel){var ps="art/ch1/cast/"+(k==="det1"?"daram-front":k==="karo"?"karo-front":ex==="fluster"?"bami-shock":"bami-front")+".png";if(im.getAttribute("src")!==ps)im.setAttribute("src",ps);im.classList.remove("hires");im.classList.add("innpixel");im.dataset.expr=ex;return}
+    if(pixel){var ps="art/ch1/cast/"+(k==="nabi"?"nabi-front":k==="det1"?"daram-front":k==="karo"?"karo-front":ex==="fluster"?"bami-shock":"bami-front")+".png";if(im.getAttribute("src")!==ps)im.setAttribute("src",ps);im.classList.remove("hires");im.classList.add("innpixel");im.dataset.expr=ex;return}
     if(!P.file[ex])ex=ex==="fluster"?"fluster":"normal";
     var src="art/portrait/"+k+"-"+P.file[ex]+".png",hs=1100/((P.vh&&P.vh[ex])||P.base);
     if(im.getAttribute("src")!==src)im.setAttribute("src",src);im.dataset.expr=ex;im.style.setProperty("--hs",hs.toFixed(4));im.classList.add("hires")})}catch(e){}}
@@ -48864,8 +48862,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   /* 앉은 그림 (교체 가능): art/seat/{키}-{표정}.png, 800x800, 몸 중심 x400·탁자선 y560. 목록에 없는 표정은 normal */
   window.__RTG_SEAT=window.__RTG_SEAT||{karo:["normal","reaction"],wanggu:["normal","reaction"],nabi:["normal","reaction"],det1:["normal"],buri:["normal"]};
   window.__RTG_EXPR=window.__RTG_EXPR||{fluster:"reaction",rebuttal:"reaction",doubt:"normal",assert:"normal",agree:"normal",normal:"normal"};
-  function seatSrc(k,m){var L=window.__RTG_SEAT[k];if(!L||!L.length)return null;var e=window.__RTG_EXPR[exprOf(m,"0")]||"normal";if(L.indexOf(e)<0)e="normal";return "art/seat/"+k+"-"+e+".png"}
-  function figHtml(k,m){var ss=seatSrc(k,m);if(ss)return '<img alt="" class="sf seat-art" draggable="false" src="'+ss+'">';var h="";try{h=window.__stageFig?window.__stageFig(k,m||""):""}catch(e){}
+  function seatSrc(k,m){if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&["det1","karo","nabi","geokkuri"].indexOf(k)>=0)return null;var L=window.__RTG_SEAT[k];if(!L||!L.length)return null;var e=window.__RTG_EXPR[exprOf(m,"0")]||"normal";if(L.indexOf(e)<0)e="normal";return "art/seat/"+k+"-"+e+".png"}
+  function figHtml(k,m){if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&["det1","karo","nabi","geokkuri"].indexOf(k)>=0){var f=k==="det1"?"daram-front":k==="karo"?"karo-front":k==="nabi"?"nabi-front":exprOf(m,"0")==="fluster"?"bami-shock":"bami-front";return '<img alt="" class="sf innpixel" draggable="false" src="art/ch1/cast/'+f+'.png">'}var ss=seatSrc(k,m);if(ss)return '<img alt="" class="sf seat-art" draggable="false" src="'+ss+'">';var h="";try{h=window.__stageFig?window.__stageFig(k,m||""):""}catch(e){}
    if(!/img/.test(h)){try{h=pf(k,m||"")}catch(e){h=""}return h}return h.replace(/class="b202"/,'class="sf"')}
   function seatsOf(r){return [].map.call(r.querySelectorAll(".rt-seats .rs[data-seat]"),function(x){return x.dataset.seat})}
   function moodOf(r){var g=r.querySelector(".rt-big g[id^='an-']");if(!g)return "";var p=g.id.split("-");return p.slice(2).join("-")}
@@ -48874,7 +48872,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   function build(r){
    if(!SC){SC=document.createElement("div");SC.id="rtg";document.body.appendChild(SC)}
    var ks=seatsOf(r);if(!ks.length&&SC.dataset.k)ks=SC.dataset.k.split(",");var key=ks.join(",");
-   if(SC.dataset.k!==key){var P=layout(ks.length),h='<div class="stg"><div class="bg"></div>';
+   if(SC.dataset.k!==key){var P=layout(ks.length),h='<div class="stg"><div class="bg">'+((G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&window.__innWorldSvg)?window.__innWorldSvg("dining"):"")+'</div>';
     ks.forEach(function(k,i){var p=P[i],sa=!!seatSrc(k,"");
      /* 앉은 그림: 캔버스 높이 44%, y560(70%)을 원탁 먼 가장자리(far)에 맞춤. 없으면 서 있는 도트를 원탁으로 가림(임시) */
      var bot=sa?(p.far+42*.30):p.b,hh=sa?42:p.h;
@@ -48989,6 +48987,67 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   window.__rtgState=function(){return {hist:HIST.length,last:lastKey,paused:paused(),need:tNeed,elapsed:Date.now()-tStart}};
  })();
  if(MISS.length)try{console.warn("w209 miss",MISS)}catch(e){}
+})();
+
+window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dining", "name_ko": "1층 식당과 회의 공간", "sceneIds": ["P5", "I2", "I9", "M0", "M1", "M2", "M3", "M4", "M5", "F1", "F2", "F3", "F4", "E2"], "background": "background/BG02_dining_panorama.png", "foregroundLayers": [], "camera": {"sourceImageSize": [2048, 768], "sourceAspectRatio": "8:3", "worldObservationRect": {"x": 0, "y": 140, "width": 2048, "height": 520}, "observationAspectRatio": 3.9384615384615387, "mobileDesignViewport": [844, 390], "viewRectUnits": "source pixels; top-left origin", "panleft": {"x": 0, "y": 140, "width": 1125.3333333333333, "height": 520}, "panright": {"x": 922.6666666666667, "y": 140, "width": 1125.3333333333333, "height": 520}, "continuousPanXRange": [0, 922.6666666666667], "initialPan": "panleft", "overlapPixels": 202.66666666666652, "maxPanNormalized": 1, "normalizedPanFormula": "sourceX = clamp(pan, 0, 1) * (sourceWidth - viewWidth)", "input": ["horizontal drag", "panleft action", "panright action"], "rendering": "Clip a translated original image to the viewRect and scale x and y uniformly. Never set the image width and height independently. Use image-rendering: pixelated. Do not stretch original to 4:1.", "screenTransform": "screenX=(worldX-viewRect.x)*844/viewRect.width; screenY=(worldY-viewRect.y)*390/viewRect.height", "inversePointerTransform": "worldX=pointerX*viewRect.width/844+viewRect.x; worldY=pointerY*viewRect.height/390+viewRect.y", "cameraQa": "Both actual endpoint crops were visually checked. Required door/counter/table/window/steps remain present across the two views. A long table intentionally crosses the seam; horizontal movement reveals it continuously."}, "states": [{"sceneId": "P5", "storyDay": 1, "time": "night before midnight", "season": "before first snow", "baseUsable": true, "notes": "Closed door depicts end of P5 after Buri repairs it. Earlier repair action requires separate door/tool animation; no such overlay delivered. Gekkuri sprite can hang below the visible beam, separately. Doto notebook is separate, not C08 acquisition."}, {"sceneIds": ["I2", "I9", "M0", "M1", "M2", "M3", "M4", "M5", "F1", "F2", "F3", "F4"], "storyDay": 2, "time": "morning through before noon", "season": "after first snow", "baseUsable": true, "notes": "Reuse long table for discussion. Meeting label 원탁회의 does not require a second literal round-table asset. C10 grants at M2 only. Cast, basket, papers and votes are separate scene-driven assets."}, {"sceneId": "E2", "storyDay": 2, "time": "afternoon", "season": "winter snow", "baseUsable": true, "notes": "C06 clock is carried in as a separate prop, not a new dining-room wall clock. E2 kitchen cutaway is not included."}], "hitboxes": [{"id": "reception_return", "label_ko": "접수대로", "worldSourceRect": {"x": 106, "y": 200, "width": 208, "height": 326}, "normalizedWorldRect": {"x": 0.05175781, "y": 0.26041667, "width": 0.1015625, "height": 0.42447917}, "action": "navigate LOC_reception", "source": "Exact left return door is art proposal.", "enabledWhen": "Only when story phase permits.", "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."}, {"id": "doto_window_seat", "label_ko": "도토의 창가 자리", "worldSourceRect": {"x": 435, "y": 367, "width": 338, "height": 178}, "normalizedWorldRect": {"x": 0.21240234, "y": 0.47786458, "width": 0.16503906, "height": 0.23177083}, "action": "talk Doto / ambient look", "source": "P5 establishes Doto at the dining window.", "enabledWhen": "P5 intro; do not award C08 here.", "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."}, {"id": "communal_table", "label_ko": "식탁과 대화 자리", "worldSourceRect": {"x": 859, "y": 396, "width": 916, "height": 116}, "normalizedWorldRect": {"x": 0.41943359, "y": 0.515625, "width": 0.44726562, "height": 0.15104167}, "action": "open scene-specific dialogue/meeting", "source": "P5 long table; I2/I9/M/F dining scenes.", "enabledWhen": "Bind actual NPC dialogue hitboxes to separately rendered characters. Table click itself grants no testimony.", "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."}, {"id": "kitchen_door", "label_ko": "고쳐 닫힌 부엌문", "worldSourceRect": {"x": 1753, "y": 199, "width": 190, "height": 323}, "normalizedWorldRect": {"x": 0.85595703, "y": 0.25911458, "width": 0.09277344, "height": 0.42057292}, "action": "navigate LOC_kitchen", "source": "P5 Buri repairs the door and it closes; exact right placement is art proposal.", "enabledWhen": "After P5 repair; open only as scripted route transition.", "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."}], "placements": [{"asset": "icons/acquired_here/64/C12.png", "mode": "dialogue UI only", "binding": "Seryeon sprite in I2", "notes": "Use sprite bounds at runtime; no guessed character coordinates."}, {"asset": "icons/acquired_here/72/C10.png", "mode": "dialogue UI only", "binding": "Rowen record at M2", "notes": "No teapot mention or illustration."}, {"asset": "icons/acquired_here/72/C07.png", "mode": "inventory icon only", "binding": "Gekkuri dialogue in P5", "notes": "Beam image is legacy shorthand for testimony, never a new physical clue."}], "geographyStatus": "Window-seat, long table, ceiling position and kitchen door are supported functions. Their left/right placement is art direction, not evidentiary geography. No clock is present in the dining background.", "occlusionWarning": "A separate table occlusion layer is not provided. Place speaking portraits over the scene or keep sprites in front until a deliberate mask is authored."}, "kitchen": {"id": "BG03_kitchen", "locationId": "LOC_kitchen", "mapLocationId": "LOC_kitchen", "name_ko": "부엌", "sceneIds": ["P10", "P11", "I3", "I8", "E2"], "background": "background/BG03_kitchen_base.png", "foregroundLayers": [], "camera": {"sourceImageSize": [1774, 887], "sourceAspectRatio": "2:1", "mode": "single-screen centered cover; no panorama or horizontal stretching", "viewRectUnits": "source pixels; top-left origin", "views": {"844x390": {"viewport": [844, 390], "viewRect": {"x": 0.0, "y": 33.630331753554515, "width": 1774.0, "height": 819.739336492891}, "uniformScale": 0.47576099210823, "panEnabled": false}, "640x360": {"viewport": [640, 360], "viewRect": {"x": 98.55555555555554, "y": 0.0, "width": 1576.888888888889, "height": 887.0}, "uniformScale": 0.40586245772266066, "panEnabled": false}}, "rendering": "Keep source unchanged. Clip translated original and uniformly scale x/y with the recorded scale. image-rendering: pixelated.", "worldToScreen": "screenX=(worldX-viewRect.x)*scale; screenY=(worldY-viewRect.y)*scale", "pointerToWorld": "worldX=screenX/scale+viewRect.x; worldY=screenY/scale+viewRect.y", "normalizedNote": "All normalized bounds are fractions of full original 1774x887, never viewport fractions."}, "baseContent": ["closed opaque teapot on top of cupboard", "rear stairs", "closed dining door", "mixing bowl", "empty table", "stove"], "states": [{"sceneId": "P10", "time": "day2 07:30", "baseUsable": true, "propState": "empty table; C04 hidden", "notes": "Opening teapot and inside discovery need a separate cinematic/inspection asset, not included. Do not use the basket composite here."}, {"sceneId": "P11", "time": "day2 07:30", "baseUsable": true, "propState": "C04 only after father transfers guest to basket", "notes": "The scene begins outside storage and then cuts to kitchen. Do not expose teapot contents to unrelated characters or put teapot in C10."}, {"sceneIds": ["I3", "I8"], "time": "day2 morning investigation", "baseUsable": true, "propState": "C04 on table; C05 is inspection-only after magnifier gate", "notes": "The basket guest is visible after P11. No movement, breath or confirmed survival indicator is added by background or prop. C03 comes from Nabi dialogue, not clicking the mixing bowl."}, {"sceneId": "E2", "time": "day2 afternoon cutaway", "baseUsable": true, "propState": "move the same basket to the cupboard open shelf away from stove", "notes": "Shelf endpoint is a staging proposal. Use an authored transfer animation; not a second copied basket. No E2 composite supplied."}], "hitboxes": [{"id": "back_stairs", "label_ko": "뒤 계단", "worldSourceRect": {"x": 78, "y": 109, "width": 198, "height": 462}, "normalizedWorldRect": {"x": 0.04396843, "y": 0.12288613, "width": 0.11161218, "height": 0.52085682}, "action": "navigate LOC_corridor_2f", "enabledWhen": "story-approved room movement only", "evidenceId": null, "minimumTouchSizeCSSPixels": [48, 48], "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."}, {"id": "dining_door", "label_ko": "식당으로", "worldSourceRect": {"x": 402, "y": 204, "width": 245, "height": 359}, "normalizedWorldRect": {"x": 0.22660654, "y": 0.22998873, "width": 0.13810598, "height": 0.40473506}, "action": "navigate LOC_dining", "enabledWhen": "story-approved room movement only", "evidenceId": null, "minimumTouchSizeCSSPixels": [48, 48], "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."}, {"id": "closed_teapot", "label_ko": "찬장 위 찻주전자", "worldSourceRect": {"x": 819, "y": 106, "width": 152, "height": 88}, "normalizedWorldRect": {"x": 0.46166855, "y": 0.11950395, "width": 0.08568207, "height": 0.09921082}, "action": "P10 scripted inspection only", "enabledWhen": "No investigation-era evidence icon, tooltip naming hidden contents, or new clue. Contents never in this base.", "evidenceId": null, "minimumTouchSizeCSSPixels": [48, 48], "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."}, {"id": "mixing_bowl", "label_ko": "반죽 그릇", "worldSourceRect": {"x": 950, "y": 343, "width": 101, "height": 73}, "normalizedWorldRect": {"x": 0.53551297, "y": 0.38669673, "width": 0.05693348, "height": 0.08229989}, "action": "ambient inspect; Nabi dialogue is separate", "enabledWhen": "Does not award C03", "evidenceId": null, "minimumTouchSizeCSSPixels": [48, 48], "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."}, {"id": "basket_guest", "label_ko": "바구니 속 손님", "worldSourceRect": {"x": 1153, "y": 412, "width": 185, "height": 91}, "normalizedWorldRect": {"x": 0.64994363, "y": 0.46448703, "width": 0.1042841, "height": 0.10259301}, "action": "inspect C04, or C05 magnifier close-up", "enabledWhen": "P11 transfer complete; C05 only after I8 magnifier flag", "evidenceId": "C04", "minimumTouchSizeCSSPixels": [48, 48], "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."}, {"id": "basket_table_area", "label_ko": "바구니 놓는 식탁", "worldSourceRect": {"x": 1012, "y": 447, "width": 542, "height": 51}, "normalizedWorldRect": {"x": 0.57046223, "y": 0.50394589, "width": 0.30552424, "height": 0.05749718}, "action": "prop surface", "enabledWhen": "No evidence from empty table alone", "evidenceId": null, "minimumTouchSizeCSSPixels": [48, 48], "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."}, {"id": "safe_shelf", "label_ko": "후일담 바구니 선반", "worldSourceRect": {"x": 759, "y": 323, "width": 185, "height": 86}, "normalizedWorldRect": {"x": 0.42784667, "y": 0.36414882, "width": 0.1042841, "height": 0.09695603}, "action": "E2 basket endpoint", "enabledWhen": "E2 only; remove same basket from table", "evidenceId": null, "minimumTouchSizeCSSPixels": [48, 48], "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."}], "placements": [{"id": "C04_world_basket", "evidenceId": "C04", "asset": "props/C04_basket_world.png", "role": "new world-prop variant based on existing C04 design; original evidence icon unchanged", "sourceImageSize": [1254, 1254], "sourceAnchor": [628, 945], "sourceAnchorMeaning": "bottom-center contact point, original untrimmed transparent sprite", "worldAnchor": [1244, 492], "worldAnchorNormalized": [0.70124014, 0.55467869], "worldScale": 0.148, "worldDrawRect": {"x": 1151.056, "y": 352.14, "width": 185.59199999999998, "height": 185.59199999999998}, "opaqueVisibleBoundsSource": {"x": 137, "y": 430, "width": 983, "height": 520}, "visibleWorldSize": [145.48399999999998, 76.96], "contactShadow": "thin dark contact shadow baked into alpha prop; no extra screen-space floating drop-shadow", "layer": 30, "occlusion": "Basket wholly on tabletop behind its front lip. Tablefront/character masks are not supplied. Do not let a later larger basket overlap the lip without authored mask.", "shownWhen": "sceneState.basketTransferred=true; hide before P11 transfer", "afterEvidenceAcquired": "Remain in room; knowledge acquisition is not physical pickup.", "E2EndpointProposal": {"worldAnchor": [845, 410], "worldScale": 0.17, "requiresScriptedTransfer": true}, "alphaQA": "Actual RGBA transparency. Very faint alpha=1 edge speckles occur outside main prop; main alpha>1 bounds are x134,y427,x1123,y953. Original preserved unchanged."}, {"id": "C03_nabi_testimony", "asset": "icons/evidence/72/C03.png", "mode": "evidence UI only", "binding": "Nabi sprite dialogue at runtime, no static bowl award", "worldPropRequired": false}, {"id": "C05_fur_inspection", "asset": "icons/evidence/72/C05.png", "mode": "inspection/evidence UI only", "binding": "same C04 basket guest after I8 magnifier", "worldPropRequired": "close-up art still required; do not paint mirrored writing/star onto base basket"}], "compositionReferences": [{"file": "reference/BG03_I3_basket_composition_reference.png", "type": "full-frame AI compositing reference; not pixel-exact separated implementation"}], "geographyStatus": "Back stairs connect kitchen to the corridor near storage in script. Their exact left position, door position, table and cupboard are staging proposals, not new route evidence."}, "storage": {"version": "2026-10-08.3", "locationId": "LOC_storage_bed13", "mapLocationId": "LOC_storage_bed13", "sourceSize": [1774, 887], "backgrounds": {"I1": "BG04_storage_bed13/background/BG04_I1_box_free.png", "I7": "BG04_storage_bed13/background/BG04_I7_box_free.png"}, "props": [{"id": "C01_pouch", "file": "BG04_storage_bed13/props/C01_money_pouch_world_alpha.png", "sourceAnchor": [627, 1106], "worldAnchor": [1218.74, 368.105], "worldScale": 0.06856540084388185, "z": 30, "shownWhen": "I1 onward, unless explicitly carried by a scripted physical action", "afterEvidenceAcquired": "remain", "clipRect": null, "shadow": "thin contact shadow within alpha; do not add a large CSS drop-shadow", "sourceImageSize": [1254, 1254], "alphaRange": [0, 255], "alphaBBoxNonzero": [39, 65, 1192, 1229], "alphaBBoxVisibleGt15": [208, 159, 1047, 1107], "worldAnchorNormalized": [0.687001127395716, 0.41500000000000004], "worldDrawRect": {"x": 1175.749493670886, "y": 292.2716666666667, "width": 85.98101265822784, "height": 85.98101265822784}, "visibleWorldSize": [57.52637130801688, 65.0], "minimumTouchSizeCSSPixels": [48, 48]}, {"id": "C02_trace", "file": "BG04_storage_bed13/props/C02_powder_handprint_decal_alpha.png", "sourceAnchor": [722.5, 578.5], "worldAnchor": [825.5, 453], "worldScale": 0.08438409311348205, "z": 20, "shownWhen": "I1 after blanket exposed; remain in I7", "afterEvidenceAcquired": "remain", "clipRect": null, "shadow": "none; surface decal on quilt", "sourceImageSize": [1365, 1152], "alphaRange": [0, 255], "alphaBBoxNonzero": [49, 47, 1299, 1134], "alphaBBoxVisibleGt15": [207, 155, 1238, 1002], "worldAnchorNormalized": [0.4653325817361894, 0.5107102593010147], "worldDrawRect": {"x": 764.5324927255092, "y": 404.18380213385063, "width": 115.184287099903, "height": 97.21047526673132}, "visibleWorldSize": [87.0, 71.4733268671193], "minimumTouchSizeCSSPixels": [48, 48]}, {"id": "chest_closed", "file": "BG04_storage_bed13/props/chest_closed_world.png", "sourceAnchor": [1062.5, 679], "worldAnchor": [1064, 682], "worldScale": 0.95, "z": 21, "shownWhen": "!boxOpen", "afterEvidenceAcquired": "knowledge flags do not change box state", "clipRect": [780, 579, 610, 130], "shadow": "thin contact shadow within alpha", "sourceImageSize": [1774, 887], "alphaRange": [0, 255], "alphaBBoxNonzero": [259, 247, 1357, 863], "alphaBBoxVisibleGt15": [897, 571, 1228, 681], "worldAnchorNormalized": [0.5997745208568207, 0.7688838782412627], "worldDrawRect": {"x": 54.625, "y": 36.950000000000045, "width": 1685.3, "height": 842.65}, "visibleWorldSize": [314.45, 104.5], "minimumTouchSizeCSSPixels": [48, 48]}, {"id": "chest_open_with_C11", "file": "BG04_storage_bed13/props/chest_open_with_ledger.png", "sourceAnchor": [1034, 718], "worldAnchor": [1064, 696], "worldScale": 0.8, "z": 21, "shownWhen": "I7 && lockSolved && boxOpen", "afterEvidenceAcquired": "remain open with book; knowledge acquisition is not pickup", "clipRect": [780, 579, 610, 130], "shadow": "thin contact shadow within alpha", "sourceImageSize": [1774, 887], "alphaRange": [0, 255], "alphaBBoxNonzero": [114, 112, 1605, 837], "alphaBBoxVisibleGt15": [838, 576, 1230, 721], "worldAnchorNormalized": [0.5997745208568207, 0.7846674182638106], "worldDrawRect": {"x": 236.79999999999995, "y": 121.60000000000002, "width": 1419.2, "height": 709.6}, "visibleWorldSize": [313.6, 116.0], "minimumTouchSizeCSSPixels": [48, 48]}], "rendering": "Keep entire transparent source canvas; do not scale padding to desired visible width. drawXY=worldAnchor-sourceAnchor*worldScale. One uniform scale for x/y. Then apply camera transform.", "camera": {"sourceImageSize": [1774, 887], "sourceAspectRatio": "2:1", "mode": "single-screen centered cover; no panorama or horizontal stretching", "viewRectUnits": "source pixels; top-left origin", "views": {"844x390": {"viewport": [844, 390], "viewRect": {"x": 0.0, "y": 33.630331753554515, "width": 1774.0, "height": 819.739336492891}, "uniformScale": 0.47576099210823, "panEnabled": false}, "640x360": {"viewport": [640, 360], "viewRect": {"x": 98.55555555555554, "y": 0.0, "width": 1576.888888888889, "height": 887.0}, "uniformScale": 0.40586245772266066, "panEnabled": false}}, "rendering": "Keep source unchanged. Clip translated original and uniformly scale x/y with the recorded scale. image-rendering: pixelated.", "worldToScreen": "screenX=(worldX-viewRect.x)*scale; screenY=(worldY-viewRect.y)*scale", "pointerToWorld": "worldX=screenX/scale+viewRect.x; worldY=screenY/scale+viewRect.y", "normalizedNote": "All normalized bounds are fractions of full original 1774x887, never viewport fractions."}, "stateRules": ["C01/C02 remain visible after observation; separate inventory flags from world props.", "Render exactly one of closed/open chest, never both.", "Open-with-ledger is one state sprite; removing just book is unsupported until a book-carried state asset is made.", "The password and headboard wording are not in any PNG.", "I7 morning requires story/revisit gate; sunlight does not solve lock automatically."], "occlusion": "The box props are purpose-built visible fragments that sit below front bed rail. Apply world clip rectangle x780,y579,w610,h130 to avoid thin fringe crossing the rail. This geometric clip is only valid for this composition; no complete foreground occlusion mask is supplied.", "alphaNote": "All four props have true RGBA; very faint low-alpha fringes broaden their nonzero bounds. Original files preserved.", "limits": ["AI redrawn/extracted props are not exact per-pixel cuts.", "Use the recorded sourceAnchor and worldScale even for wide-canvas chest props; raw x=0,y=0 overlay is not recommended.", "Do not paste these props over the previous box-baked base: use the new box-free backgrounds.", "Numeric-looking rectangular lock hardware is unlabelled; no answer encoded.", "No in-game execution or touch-state validation was performed."]}};
+/* Original world PNGs and manifest cameras. Inventory flags never remove props. */
+(function(){
+ var EP=window.EP1INN,D=window.__INN_WORLD_DATA;if(!EP||!D)return;
+ var ROOT='art/ch1/locations/',pan=0;
+ Object.assign(EP.BGS,{dining:{world:'dining'},kitchen:{world:'kitchen'},bed13:{world:'storage'}});
+ Object.assign(EP.LOC_BG,{dining:'dining',kitchen:'kitchen',bed13:'bed13'});
+ function active(){return G&&S.screen==='case'&&CASES[G.ci]&&CASES[G.ci].id==='inn'}
+ function state(){var b=G&&G.beats||{};return {sun:!!(window.__innSun&&__innSun()),box:!!b.inn_lock,basket:!!(b.inn_basket_transferred||b.inn_pro)}}
+ function camera(k){var w=innerWidth,h=innerHeight,s,x,y,vw,vh;
+  if(k==='dining'){vh=520;vw=vh*w/h;x=pan*Math.max(0,2048-vw);y=140;s=h/vh}
+  else{s=Math.max(w/1774,h/887);vw=w/s;vh=h/s;x=(1774-vw)/2;y=(887-vh)/2}
+  return {x:x,y:y,w:vw,h:vh,scale:s,width:w,height:h,pan:pan};
+ }
+ function rect(o){return [o.x,o.y,o.width,o.height]}
+ function image(file,r,attr){return '<image '+(attr||'')+' href="'+ROOT+file+'" x="'+r[0]+'" y="'+r[1]+'" width="'+r[2]+'" height="'+r[3]+'" preserveAspectRatio="xMidYMid meet" style="image-rendering:pixelated"/>'}
+ function prop(p){var file=(p.file||p.asset).split('/').pop(),r=p.worldDrawRect,im=image(file,rect(r),'data-world-prop="'+p.id+'"');
+  if(p.clipRect){var id='innclip-'+p.id;return '<defs><clipPath id="'+id+'"><rect x="'+p.clipRect[0]+'" y="'+p.clipRect[1]+'" width="'+p.clipRect[2]+'" height="'+p.clipRect[3]+'"/></clipPath></defs><g clip-path="url(#'+id+')">'+im+'</g>'}return im}
+ function svg(k){if(!['dining','kitchen','bed13'].includes(k))return null;var c=camera(k),st=state(),body;
+  if(k==='dining')body=image('BG02_dining_panorama.png',[0,0,2048,768]);
+  if(k==='kitchen'){body=image('BG03_kitchen_base.png',[0,0,1774,887]);if(st.basket)body+=prop(D.kitchen.placements[0])}
+  if(k==='bed13'){body=image(st.sun?'BG04_I7_box_free.png':'BG04_I1_box_free.png',[0,0,1774,887]);D.storage.props.forEach(function(p){if(p.id==='chest_closed'&&st.box||p.id==='chest_open_with_C11'&&!st.box)return;body+=prop(p)})}
+  return '<svg data-inn-world="'+k+'" data-bg="'+k+'" viewBox="'+[c.x,c.y,c.w,c.h].join(' ')+'" preserveAspectRatio="xMidYMid meet" role="img" aria-label="'+({dining:'식당',kitchen:'부엌',bed13:'창고 침대'}[k])+'">'+body+'</svg>'
+ }
+ window.__innWorldSvg=svg;
+ var css=document.createElement('style');css.id='inn-world-css';css.textContent=[
+  'body.w209 .stage.inn-world-stage{right:0!important;overflow:hidden!important}',
+  'body.w209 .stage.inn-world-stage .fsscroll{width:100%!important;height:100%!important;overflow:hidden!important}',
+  'body.w209 .stage.inn-world-stage #bigscene{width:100vw!important;min-width:0!important;height:100vh!important;aspect-ratio:auto!important;max-width:none!important;transform:none!important;touch-action:none}',
+  'body.w209 .stage.inn-world-stage #bigscene>svg[data-inn-world]{position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;transform:none!important;pointer-events:none}',
+  'body.w209 .stage.inn-world-stage .hot.done{display:none!important}',
+  'body.w209 .stage.inn-world-stage .hot{background:transparent!important;border:0!important;border-radius:6px!important;box-shadow:none!important;animation:none!important;transform:translate(-50%,-50%)!important;min-width:48px!important;min-height:48px!important}',
+  'body.w209 .stage.inn-world-stage .hot>*{opacity:0!important;pointer-events:none!important}',
+  'body.w209 .stage.inn-world-stage .hot:focus-visible{outline:2px solid #DDB877!important}',
+  'body.w209 .stage.inn-world-stage .fsa{bottom:16px!important;top:auto!important;z-index:8!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important}',
+  '#rtg:has(svg[data-inn-world]) .stg{width:100vw!important;height:100vh!important;aspect-ratio:auto!important}',
+  '#rtg:has(svg[data-inn-world]) .bg{background:none!important}#rtg .bg svg[data-inn-world]{width:100%;height:100%}',
+  '#rtg:has(svg[data-inn-world]) .tbl,#rtg:has(svg[data-inn-world]) .tmp{display:none!important}',
+  'body.w209 .stage.inn-world-stage .fsa.r{right:calc(var(--rail) + 12px)!important}',
+  'body.w209 .stage.inn-world-stage .fsa.l{left:12px!important}'
+ ].join('\n');document.head.appendChild(css);
+ var anchors={bed13:{C01:[1219,335,58,65],C02:[825.5,453,87,72],C11:[1064,646,314,104],o_inn_box:[1064,646,314,104],o_inn_lock:[1064,646,314,104],o_inn_head:[1060,255,170,60],o_inn_head2:[1060,255,170,60]},kitchen:{C04:[1245.5,457.5,185,91],C05:[1245.5,457.5,185,91]}};
+ var npc={dining:{innma:[700,600],seryeon:[1450,600]},kitchen:{nabi:[650,700]}};
+ function position(e,r,c){var x=(r[0]-c.x)*c.scale,y=(r[1]-c.y)*c.scale;
+  e.style.setProperty('left',x+'px','important');e.style.setProperty('top',y+'px','important');
+  if(r.length>2){e.style.setProperty('width',Math.max(48,r[2]*c.scale)+'px','important');e.style.setProperty('height',Math.max(48,r[3]*c.scale)+'px','important');e.dataset.px=x/innerWidth*360;e.dataset.py=y/innerHeight*200}
+ }
+ function update(){if(!active())return;var sc=document.getElementById('bigscene'),im=sc&&sc.querySelector('svg[data-inn-world]');if(!im)return;var k=im.dataset.innWorld,c=camera(k),stage=sc.closest('.stage');stage.classList.add('inn-world-stage');sc.style.setProperty('--u',innerHeight/200+'px');
+  im.setAttribute('viewBox',[c.x,c.y,c.w,c.h].join(' '));var fx=sc.parentElement;fx.scrollLeft=0;
+  sc.querySelectorAll('[data-spot],[data-obs]').forEach(function(e){var id=e.dataset.spot||e.dataset.obs,r=anchors[k]&&anchors[k][id];if(r)position(e,r,c)});
+  sc.querySelectorAll('[data-npc]').forEach(function(e){var r=npc[k]&&npc[k][e.dataset.npc];if(r)position(e,r,c)});
+  ['fsal','fsar'].forEach(function(id,j){var b=document.getElementById(id);if(!b)return;b.style.setProperty('display',k==='dining'?'block':'none','important');b.disabled=k==='dining'&&(j?pan>=1:pan<=0);b.onclick=function(e){e.preventDefault();e.stopPropagation();pan=j?1:0;update()}});
+  if(!sc.__worldDrag){sc.__worldDrag=true;var drag=null;sc.addEventListener('pointerdown',function(e){if(k!=='dining'||e.target.closest('button'))return;drag={x:e.clientX,p:pan};sc.setPointerCapture(e.pointerId)});sc.addEventListener('pointermove',function(e){if(!drag)return;var range=2048-camera('dining').w;pan=Math.max(0,Math.min(1,drag.p-(e.clientX-drag.x)/c.scale/range));update()});sc.addEventListener('pointerup',function(){drag=null});sc.addEventListener('pointercancel',function(){drag=null})}
+ }
+ var pending=0;function schedule(){if(!pending)pending=requestAnimationFrame(function(){pending=0;update()})}
+ var old=render;render=function(){var r=old.apply(this,arguments);update();return r};
+ var oldFs=fsLayout;fsLayout=function(){var r=oldFs.apply(this,arguments);update();return r};
+ new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});window.addEventListener('resize',schedule);
+ window.__innWorld={camera:camera,state:state,update:update,anchors:anchors};
 })();
 
 /* 원탁회의·최종 대결 장면(rtg)에 대본 기능 연결
@@ -49217,7 +49276,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    - 메인은 기존 엔진의 타이틀 대신 보여 준다(엔진 저장·진행 로직은 그대로 사용). 키아트는 메인 3안 중 A안(미리보기, 최종 선택 아님).
    - 설정은 옵션 팩 설계서 기준: 배경 음악·효과음(0~100, 5 단위), 글자 크기(16/18/20px), 대사 속도(45/30/15ms).
      작업 사본에서 조정하고 '저장'을 눌러야 실제 게임에 적용. 저장 키는 이 테스트판 전용(daae-inn1:inn_settings).
-   - 콜드 오픈은 인트로 팩 그림·대사만 사용. 클릭/Space로 진행(자동 넘김 없음). 이미 본 경우에만 건너뛰기.
+   - 콜드 오픈은 인트로 팩 그림·대사만 사용. 클릭/Space로 진행(자동 넘김 없음). 시작부터 건너뛰기.
    - 음원 파일이 없어 콜드 오픈 전용 음악·효과음은 아직 없음(기존 합성음만 사용). */
 (function(){
  var MISS=window.__INNMAIN_MISS=[];var EP=window.EP1INN;if(!EP||!window.__EP1INN)return;
@@ -49333,7 +49392,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   OPT.querySelectorAll(".grp").forEach(function(g){var k=g.dataset.g,bs=[].slice.call(g.querySelectorAll("button"));
    function pick(b){bs.forEach(function(x){var on=x===b;x.setAttribute("aria-checked",on);x.tabIndex=on?0:-1});W[k]=b.dataset.v;preview()}
    bs.forEach(function(b,i){b.onclick=function(){pick(b)};b.onkeydown=function(e){if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();var j=(i+(e.key==="ArrowRight"?1:-1)+bs.length)%bs.length;bs[j].focus();pick(bs[j])}}})});
-  function shut(){clearInterval(pvT);gains(SET);OPT.remove();OPT=null;document.removeEventListener("keydown",kd,true);document.removeEventListener("visibilitychange",hidden);window.removeEventListener("pagehide",hush);back&&back()}
+  function shut(){clearInterval(pvT);gains(SET);OPT.remove();OPT=null;document.removeEventListener("keydown",kd,true);back&&back()}
   function tryClose(){if(!dirty()){shut();return}
    confirmBox("저장하지 않고 나갈까요?","조정한 값은 이전 설정으로 돌아갑니다.","저장 안 함","계속 조정",function(){shut()},function(){var x=OPT&&OPT.querySelector(".x");x&&x.focus()})}
   function kd(e){if(e.key==="Escape"&&!document.querySelector(".innconf")){e.preventDefault();tryClose()}}
@@ -49350,7 +49409,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  var coldAudioReady=false;
  document.addEventListener("pointerdown",function(e){if(e.isTrusted)coldAudioReady=true},true);
  document.addEventListener("keydown",function(e){if(e.isTrusted&&(e.key===" "||e.key==="Enter"))coldAudioReady=true},true);
- function cold(done){var L=EP.COLD||[],i=-1,typing=null,full="",waitT=null,busy=false,ended=false;
+ function cold(done){window.__innAudioHold=true;if(window.__AUD&&__AUD.sceneGate)__AUD.sceneGate(true);var L=EP.COLD||[],i=-1,typing=null,full="",waitT=null,busy=false,ended=false;
   var typingVoices=new Set(),lastTick=-1;
   function stopTyping(){clearInterval(typing);typing=null;typingVoices.forEach(function(o){try{o.stop();o.disconnect()}catch(e){}});typingVoices.clear()}
   function tick(ch){
@@ -49363,12 +49422,12 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    }catch(e){}
   }
   var el=document.createElement("div");el.id="inncold";el.setAttribute("role","region");el.setAttribute("aria-label","콜드 오픈");
-  el.innerHTML='<div class="cbg"></div><div class="blk"></div><div class="tag"></div><div class="ttl"></div><div class="box"><b>'+esc(EP.COLD_SPEAKER||"???")+'</b><p></p></div><div class="nx">▼</div>'+(SET.coldSeen?'<button type="button" class="sk">건너뛰기</button>':'');
+  el.innerHTML='<div class="cbg"></div><div class="blk"></div><div class="tag"></div><div class="ttl"></div><div class="box"><b>'+esc(EP.COLD_SPEAKER||"???")+'</b><p></p></div><div class="nx">▼</div>'+'<button type="button" class="sk">건너뛰기</button>';
   document.body.appendChild(el);var bg=el.querySelector(".cbg"),tag=el.querySelector(".tag"),ttl=el.querySelector(".ttl"),box=el.querySelector(".box"),tx=box.querySelector("p"),nx=el.querySelector(".nx");
   function cam(b,z){bg.style.transition="none";bg.style.backgroundImage="url("+b.img+")";bg.style.transformOrigin=(b.fx*100)+"% "+(b.fy*100)+"%";bg.style.transform="scale("+z+")";void bg.offsetWidth;bg.style.transition=""}
   function type(t){full=t;tx.textContent="";var n=0;stopTyping();typing=setInterval(function(){n++;tx.textContent=full.slice(0,n);tick(full.charAt(n-1));if(n>=full.length){clearInterval(typing);typing=null;nx.classList.add("on")}},MS[SET.dialogueSpeed])}
   function show(){var b=L[i];nx.classList.remove("on");box.classList.remove("on");ttl.classList.remove("on");el.classList.remove("dark");clearTimeout(waitT);busy=false;
-   bg.style.filter=b.shade?"brightness(.35)":"";if(b.sfx)try{if(S.sound&&SET.sfxVolume){var a=ac(),o=a.createOscillator(),g=a.createGain();o.type="sine";o.frequency.setValueAtTime(100,a.currentTime);o.frequency.exponentialRampToValueAtTime(45,a.currentTime+.13);g.gain.setValueAtTime(.2,a.currentTime);g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+.18);o.connect(g);g.connect(SFXG);o.onended=function(){o.disconnect();g.disconnect()};o.start();o.stop(a.currentTime+.2)}}catch(e){}
+   bg.style.filter=b.shade?"brightness(.35)":"";if(b.sfx)try{if(S.sound&&SET.sfxVolume){var a=ac(),o=a.createOscillator(),g=a.createGain();o.type="sine";o.frequency.setValueAtTime(100,a.currentTime);o.frequency.exponentialRampToValueAtTime(45,a.currentTime+.13);g.gain.setValueAtTime(.2,a.currentTime);g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+.18);o.connect(g);g.connect(SFXG);typingVoices.add(o);o.onended=function(){typingVoices.delete(o);o.disconnect();g.disconnect()};o.start();o.stop(a.currentTime+.2)}}catch(e){}
    cam(b,b.z||1);if(b.push)requestAnimationFrame(function(){bg.style.transform="scale("+((b.z||1)*(1+b.push/100))+")"});if(b.pull)requestAnimationFrame(function(){bg.style.transform="scale("+((b.z||1)/(1+b.pull/100))+")"});
    tag.textContent=b.tag||"";tag.classList.toggle("on",!!b.tag);
    if(b.say){box.classList.add("on");tx.textContent="";if(b.wait){busy=true;waitT=setTimeout(function(){busy=false;type(b.say)},b.wait)}else type(b.say)}
@@ -49378,12 +49437,31 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   function hush(){stopTyping();tx.textContent=full;nx.classList.add("on")}
   function hidden(){if(document.hidden)hush()}
   document.addEventListener("visibilitychange",hidden);window.addEventListener("pagehide",hush);
-  function end(){ended=true;clearTimeout(waitT);stopTyping();SET.coldSeen=true;try{saveSet(SET)}catch(e){}document.removeEventListener("keydown",kd,true);document.removeEventListener("visibilitychange",hidden);window.removeEventListener("pagehide",hush);
-   done&&done();setTimeout(function(){el.style.transition="opacity .35s";el.style.opacity="0";setTimeout(function(){el.remove()},380)},650)}
-  function kd(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();next()}}
+  var revealFrame=0,transitioning=false;
+  function end(){if(ended)return;ended=true;transitioning=true;clearTimeout(waitT);stopTyping();
+   SET.coldSeen=true;try{saveSet(SET)}catch(e){}
+   document.removeEventListener("keydown",kd,true);document.removeEventListener("visibilitychange",hidden);window.removeEventListener("pagehide",hush);
+   // Keep one opaque input shield while the next real game state is prepared.
+   bg.style.display="none";box.classList.remove("on");tag.classList.remove("on");ttl.classList.remove("on");nx.classList.remove("on");
+   el.querySelector(".sk").disabled=true;el.querySelector(".sk").style.display="none";
+   el.classList.add("dark");el.querySelector(".blk").style.transition="none";el.querySelector(".blk").style.opacity="1";
+   window.__innColdTransition=true;done&&done();
+   var back=new Image(),bgReady=false;back.onload=function(){bgReady=true};back.src=EP.BGS.carriage.src;
+   function reveal(){if(!el.isConnected)return;
+    var im=document.querySelector('#vnfig img[data-k="det1"][src="art/ch1/cast/daram-front.png"]'),scene=window.__innBg&&window.__innBg();
+    if(!bgReady||!im||!im.complete||!im.naturalWidth||!scene||scene.key!=="carriage"){revealFrame=requestAnimationFrame(reveal);return}
+    // Remove black and resume the existing score within the same render frame.
+    el.remove();window.__innColdTransition=false;transitioning=false;
+    if(window.__AUD&&__AUD.sceneGate)__AUD.sceneGate(false);else window.__innAudioHold=false;
+   }
+   revealFrame=requestAnimationFrame(reveal);
+  }
+  function kd(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();e.stopImmediatePropagation();if(e.target&&e.target.closest&&e.target.closest(".sk"))end();else next()}}
   document.addEventListener("keydown",kd,true);
-  el.addEventListener("click",function(e){var s=e.target.closest&&e.target.closest(".sk");if(s){e.stopPropagation();end();return}next()});
-  try{ac()}catch(e){}window.__innColdState=function(){return {i:i,typing:!!typing,busy:busy,ended:ended}};
+  // Capture the entire gesture, including a skip press; it cannot reach the next dialogue.
+  ["pointerdown","pointerup","touchstart","touchend"].forEach(function(t){el.addEventListener(t,function(e){e.stopPropagation()},{passive:true})});
+  el.addEventListener("click",function(e){e.preventDefault();e.stopImmediatePropagation();var skip=e.target.closest&&e.target.closest(".sk");if(skip){end();return}next()},true);
+  try{ac()}catch(e){}window.__innColdState=function(){return {i:i,typing:!!typing,busy:busy,ended:ended,transitioning:transitioning,audioHold:!!window.__innAudioHold}};
   next()}
  window.__innCold=cold;
 

@@ -1,0 +1,214 @@
+{
+  "id": "BG02_dining",
+  "locationId": "LOC_dining",
+  "name_ko": "1층 식당과 회의 공간",
+  "sceneIds": [
+    "P5",
+    "I2",
+    "I9",
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "E2"
+  ],
+  "background": "background/BG02_dining_panorama.png",
+  "foregroundLayers": [],
+  "camera": {
+    "sourceImageSize": [
+      2048,
+      768
+    ],
+    "sourceAspectRatio": "8:3",
+    "worldObservationRect": {
+      "x": 0,
+      "y": 140,
+      "width": 2048,
+      "height": 520
+    },
+    "observationAspectRatio": 3.9384615384615387,
+    "mobileDesignViewport": [
+      844,
+      390
+    ],
+    "viewRectUnits": "source pixels; top-left origin",
+    "panleft": {
+      "x": 0,
+      "y": 140,
+      "width": 1125.3333333333333,
+      "height": 520
+    },
+    "panright": {
+      "x": 922.6666666666667,
+      "y": 140,
+      "width": 1125.3333333333333,
+      "height": 520
+    },
+    "continuousPanXRange": [
+      0,
+      922.6666666666667
+    ],
+    "initialPan": "panleft",
+    "overlapPixels": 202.66666666666652,
+    "maxPanNormalized": 1,
+    "normalizedPanFormula": "sourceX = clamp(pan, 0, 1) * (sourceWidth - viewWidth)",
+    "input": [
+      "horizontal drag",
+      "panleft action",
+      "panright action"
+    ],
+    "rendering": "Clip a translated original image to the viewRect and scale x and y uniformly. Never set the image width and height independently. Use image-rendering: pixelated. Do not stretch original to 4:1.",
+    "screenTransform": "screenX=(worldX-viewRect.x)*844/viewRect.width; screenY=(worldY-viewRect.y)*390/viewRect.height",
+    "inversePointerTransform": "worldX=pointerX*viewRect.width/844+viewRect.x; worldY=pointerY*viewRect.height/390+viewRect.y",
+    "cameraQa": "Both actual endpoint crops were visually checked. Required door/counter/table/window/steps remain present across the two views. A long table intentionally crosses the seam; horizontal movement reveals it continuously."
+  },
+  "states": [
+    {
+      "sceneId": "P5",
+      "storyDay": 1,
+      "time": "night before midnight",
+      "season": "before first snow",
+      "baseUsable": true,
+      "notes": "Closed door depicts end of P5 after Buri repairs it. Earlier repair action requires separate door/tool animation; no such overlay delivered. Gekkuri sprite can hang below the visible beam, separately. Doto notebook is separate, not C08 acquisition."
+    },
+    {
+      "sceneIds": [
+        "I2",
+        "I9",
+        "M0",
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "storyDay": 2,
+      "time": "morning through before noon",
+      "season": "after first snow",
+      "baseUsable": true,
+      "notes": "Reuse long table for discussion. Meeting label 원탁회의 does not require a second literal round-table asset. C10 grants at M2 only. Cast, basket, papers and votes are separate scene-driven assets."
+    },
+    {
+      "sceneId": "E2",
+      "storyDay": 2,
+      "time": "afternoon",
+      "season": "winter snow",
+      "baseUsable": true,
+      "notes": "C06 clock is carried in as a separate prop, not a new dining-room wall clock. E2 kitchen cutaway is not included."
+    }
+  ],
+  "hitboxes": [
+    {
+      "id": "reception_return",
+      "label_ko": "접수대로",
+      "worldSourceRect": {
+        "x": 106,
+        "y": 200,
+        "width": 208,
+        "height": 326
+      },
+      "normalizedWorldRect": {
+        "x": 0.05175781,
+        "y": 0.26041667,
+        "width": 0.1015625,
+        "height": 0.42447917
+      },
+      "action": "navigate LOC_reception",
+      "source": "Exact left return door is art proposal.",
+      "enabledWhen": "Only when story phase permits.",
+      "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."
+    },
+    {
+      "id": "doto_window_seat",
+      "label_ko": "도토의 창가 자리",
+      "worldSourceRect": {
+        "x": 435,
+        "y": 367,
+        "width": 338,
+        "height": 178
+      },
+      "normalizedWorldRect": {
+        "x": 0.21240234,
+        "y": 0.47786458,
+        "width": 0.16503906,
+        "height": 0.23177083
+      },
+      "action": "talk Doto / ambient look",
+      "source": "P5 establishes Doto at the dining window.",
+      "enabledWhen": "P5 intro; do not award C08 here.",
+      "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."
+    },
+    {
+      "id": "communal_table",
+      "label_ko": "식탁과 대화 자리",
+      "worldSourceRect": {
+        "x": 859,
+        "y": 396,
+        "width": 916,
+        "height": 116
+      },
+      "normalizedWorldRect": {
+        "x": 0.41943359,
+        "y": 0.515625,
+        "width": 0.44726562,
+        "height": 0.15104167
+      },
+      "action": "open scene-specific dialogue/meeting",
+      "source": "P5 long table; I2/I9/M/F dining scenes.",
+      "enabledWhen": "Bind actual NPC dialogue hitboxes to separately rendered characters. Table click itself grants no testimony.",
+      "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."
+    },
+    {
+      "id": "kitchen_door",
+      "label_ko": "고쳐 닫힌 부엌문",
+      "worldSourceRect": {
+        "x": 1753,
+        "y": 199,
+        "width": 190,
+        "height": 323
+      },
+      "normalizedWorldRect": {
+        "x": 0.85595703,
+        "y": 0.25911458,
+        "width": 0.09277344,
+        "height": 0.42057292
+      },
+      "action": "navigate LOC_kitchen",
+      "source": "P5 Buri repairs the door and it closes; exact right placement is art proposal.",
+      "enabledWhen": "After P5 repair; open only as scripted route transition.",
+      "qa": "Bounds measured against the delivered generated 2048x768 artwork; not guessed before generation."
+    }
+  ],
+  "placements": [
+    {
+      "asset": "icons/acquired_here/64/C12.png",
+      "mode": "dialogue UI only",
+      "binding": "Seryeon sprite in I2",
+      "notes": "Use sprite bounds at runtime; no guessed character coordinates."
+    },
+    {
+      "asset": "icons/acquired_here/72/C10.png",
+      "mode": "dialogue UI only",
+      "binding": "Rowen record at M2",
+      "notes": "No teapot mention or illustration."
+    },
+    {
+      "asset": "icons/acquired_here/72/C07.png",
+      "mode": "inventory icon only",
+      "binding": "Gekkuri dialogue in P5",
+      "notes": "Beam image is legacy shorthand for testimony, never a new physical clue."
+    }
+  ],
+  "geographyStatus": "Window-seat, long table, ceiling position and kitchen door are supported functions. Their left/right placement is art direction, not evidentiary geography. No clock is present in the dining background.",
+  "occlusionWarning": "A separate table occlusion layer is not provided. Place speaking portraits over the scene or keep sprites in front until a deliberate mask is authored."
+}
