@@ -5618,7 +5618,7 @@ function playBook(title,pages,done){
     var l=pg.lines[st.i++],t=l[0],box=el.querySelector("#sbtext"),nm=el.querySelector("#sbname"),fx=el.querySelector("#sbfx");
     fx.innerHTML="";
     if(t==="enter"){st.cast[l[1]]={x:l[2],mood:l[3]||"",fresh:true};drawCast();SFX.steps();st.lock=true;setTimeout(step,260);return}
-    if(t==="exit"){delete st.cast[l[1]];drawCast();st.lock=true;setTimeout(step,160);return}
+    if(t==="exit"){delete st.cast[l[1]];if(st.focus===l[1])st.focus=null;drawCast();st.lock=true;setTimeout(step,160);return}
     if(t==="fx"){
       fx.innerHTML='<b class="'+(l[2]==="hush"?'hush':'')+'">'+l[1]+'</b>';
       if(SFX[l[2]])SFX[l[2]]();try{navigator.vibrate&&navigator.vibrate(l[2]==="hush"?0:[80,40,120])}catch(e){}
@@ -7510,7 +7510,7 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
    if(st.i>=pg.lines.length){if(st.p<pages.length-1){st.p++;drawPage(true)}else fin();return}
    var l=pg.lines[st.i++],t=l[0];FX.innerHTML="";
    if(t==="enter"){st.cast[l[1]]={x:l[2],mood:l[3]||"",fresh:true};drawCast();if(l[1]!=="det0")camTo(l[2]);SFX.steps();st.lock=true;setTimeout(step,420);return}
-   if(t==="exit"){delete st.cast[l[1]];drawCast();st.lock=true;setTimeout(step,200);return}
+   if(t==="exit"){delete st.cast[l[1]];if(st.focus===l[1])st.focus=null;drawCast();st.lock=true;setTimeout(step,200);return}
    if(t==="fx"){
     FX.innerHTML='<b class="'+(l[2]==="hush"?'hush':'')+'">'+l[1]+'</b>';
     if(SFX[l[2]])SFX[l[2]]();try{navigator.vibrate&&navigator.vibrate(l[2]==="hush"?0:[80,40,120])}catch(e){}
@@ -32069,7 +32069,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
 
  var INDOOR=/^(kitchen|lib|props|dressing|hall|post|shop|office|school|parlor|inn|postoffice|study|station|owlhouse|museum|coach|stage)$/,
      CELLAR=/^(cellar|basement|fuse|jail|backroom|attic|storeroom|shelter|stable|shed|vault)$/;
- function invKey(c,lid){var id=c.id;
+ function invKey(c,lid){var id=c.id;if(id==="envelope"){if(lid==="post")return "inv_room";if(lid==="store")return "inv_snow";if(lid==="records")return "inv_night"}
   if(id==="snow")return "inv_snow";
   if(CELLAR.test(lid))return "inv_cellar";
   if(id==="festival")return (lid==="square"||lid==="road")?"inv_fest":"inv_tense";
@@ -47106,6 +47106,58 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  }
  try{new MutationObserver(function(){if(deco.t)return;deco.t=requestAnimationFrame(function(){deco.t=0;deco()})}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
  deco();
+})();
+
+(function(){
+ var MISS=window.__S204MISS=[];
+ try{
+  var pg=BOOK.envelope&&BOOK.envelope.pre&&BOOK.envelope.pre[1];
+  if(pg&&pg.bg==="festival-road"){
+   pg.time="이른 봄 · 마을 어귀 정류장";
+   var k=-1;pg.lines.forEach(function(l,i){if(l[0]==="det0"&&l[1]==="문맥도 안 보인다.")k=i});
+   if(k>=0&&!pg.lines.some(function(l){return l[0]==="wanggu"}))pg.lines.splice(k+1,0,
+    ["enter","wanggu",268,"happy"],
+    ["wanggu","어서 와요! 새로 온 탐정님들이죠? 결론부터 말하면, 잘 오셨어요!","happy"],
+    ["wanggu","잔치 준비위원장 왕구예요. 철새 마중 잔치 안내지, 하나씩 가져가요!","happy"],
+    ["det1","…근거는 나중에 나오는 거예요?","confused"],
+    ["exit","wanggu"]);
+   else if(k<0)MISS.push("pre1 anchor")
+  }else MISS.push("pre1");
+  var MX=window.MEETX&&window.MEETX.envelope;
+  if(MX){
+   MX.wanggu=[["wanggu","결론부터 말할게요! 봉투가 없어졌어요!","nervous"],["det1","…근거는요?","confused"],["wanggu","그건 탐정님들이 찾아 주시는 거죠! 위원장은 발표 담당!","happy"]];
+   MX.nabi=[["nabi","흥. 우체국 볼일이면 줄 서. 창구 도우미 나비야.","smug"],["det1","…우리밖에 없는데?","confused"],["nabi","그러니까 맨 앞이잖아. 빠지는 사람 없이, 순서대로.","smug"]];
+   MX.doto=[["doto","10시 1분 12초. 탐정 둘 도착. 도서관 조수 도토, 기록했어. (딸깍)","happy"],["det1","잠깐, 우리를 적은 거야?","confused"],["doto","'잠깐'이 아니라 3초 걸렸어. 그것도 적었어. (딸깍)","happy"]];
+   MX.buri=[["buri","부엉… 여긴 기록실이옵니다. 할아버지 손자 부리, 순찰일지 정리 임무 중이옵니다.","nervous"],["det1","…임무?","confused"],["buri","저, 정리도 탐정 일이에요. 할아버지가 그러셨어요.","shy"]];
+   MX.karo=[["karo","후후. 장사꾼 까로예요. 이번엔 봉투 심부름을 맡았을 뿐이고요.","shy"],["karo","서명은 확실히 받았어요. 확실히요. …무슨 일이 생기면 다들 저부터 보거든요.","sad"],["det1","…아직 아무도 의심 안 했어요.","confused"]];
+  }else MISS.push("MEETX");
+  try{var CH=CHAT.envelope.nabi;if(CH&&CH[0])CH[0]=[["det1","철새는 아직 안 왔는데, 칸은 비워 두네?","think"],["nabi","주소가 있잖아. 돌아오면 써야지.","smug"]]}catch(e){MISS.push("chat nabi")}
+ }catch(e){MISS.push("ERR "+e.message)}
+
+ var PL={store:function(){return (G.met||[]).indexOf("doto")<0?"오전 10:01":"같은 날 오전"},records:function(){return "같은 날 오전"}};
+ function busy(){return !!(DL||document.querySelector("#ov .modal,.sbook,.csx,.banner,.cutin,.crec2,.rt,.ovr,.flash,.show,.recon"))}
+ var pending=null;
+ function check(){try{
+  if(typeof G==="undefined"||!G||S.screen!=="case"||G.result||G.battle)return;var c=CASES[G.ci];if(!c||c.id!=="envelope"||!G.introDone)return;
+  var l=c.locations[G.loc];if(!l)return;var key="place204:"+l.id;G.beats=G.beats||{};
+  if(G.beats[key])return;
+  if(l.id==="post"){G.beats[key]=1;return}          /* 우체국은 기존 현장 소개(오전 9:20)가 이미 보여 줌 */
+  if(!PL[l.id]||G.tab!=="scene")return;
+  window.__pl204=l.name;                              /* 같은 이동의 '장소 이동' 카드는 이번엔 생략 */
+  if(pending)return;
+  pending=setTimeout(function run(){pending=null;try{
+   if(!G||CASES[G.ci].id!=="envelope"||c.locations[G.loc]!==l||G.beats[key])return;
+   if(busy()){pending=setTimeout(run,300);return}
+   G.beats[key]=1;try{saveProg()}catch(e){}
+   banner(l.name,PL[l.id]())}catch(e){}},60)}catch(e){}}
+ try{var _r=render;render=function(){var r=_r.apply(this,arguments);check();return r}}catch(e){}
+ try{var _pc=placeCard;placeCard=function(name,sub){if(window.__pl204===name){window.__pl204=null;return}return _pc.apply(this,arguments)}}catch(e){}
+
+ var css=document.createElement("style");css.id="s204css";
+ css.textContent='body.fs .fsa{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:2px}'+
+  'body.fs .fsa::after{content:"보기";font-size:11px;line-height:1;letter-spacing:0;font-family:var(--body,sans-serif);opacity:.9}';
+ (document.head||document.documentElement).appendChild(css);
+ if(MISS.length)try{console.warn("story204 miss",MISS)}catch(e){}
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
