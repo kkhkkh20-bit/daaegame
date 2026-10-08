@@ -48214,6 +48214,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   "body.w209 #vnfig:not(.b202)>svg{position:absolute;left:50%;top:max(16px,5vh);bottom:auto;transform:translateX(-50%);width:min(58vh,240px);height:min(58vh,240px)}",
   "body.w209 #vnfig:not(.b202){top:0!important;bottom:auto!important;left:0!important;right:0!important;width:auto!important;height:100%!important;transform:none!important}",
   "#vnfig[data-w=narr]{visibility:hidden!important}",
+  /* The temporary face must not occupy a full-body seat and cover neighbours. */
+  "#rtg .seat[data-k=seryeon]>svg{height:48%!important;max-width:100%;margin:0 auto;position:relative;top:6%}",
   "html body.w209 #dlgveil #vnfig,html body.w209 #dlgveil #vnfig img,html body.w209 #dlgveil #vnfig svg,html body.w209 .fstalk .tstage .tfig,html body.w209 .fstalk .tstage .tfig img{animation:none!important;transition:filter .12s linear!important}",
   "body.titlescreen #app{visibility:hidden!important}",
   "body.inn-cut #w209rail,body.inn-cut #bigscene .hot,body.inn-cut #bigscene .npc,body.inn-cut .fsa,body.inn-cut .stagebar,body.inn-cut .fsbar,body.inn-cut #w209back{visibility:hidden!important;pointer-events:none!important}",
@@ -49292,7 +49294,8 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
  function saveSet(o){var s=JSON.stringify(norm(o));localStorage.setItem(SKEY,s);if(localStorage.getItem(SKEY)!==s)throw new Error("verify")}
  var SET=loadSet();window.__innSettings=function(){return JSON.parse(JSON.stringify(SET))};
  var MS={slow:45,normal:30,fast:15};
- function gains(o){try{if(typeof BGMG!=="undefined"&&BGMG)BGMG.gain.value=.1*o.musicVolume/70;if(typeof SFXG!=="undefined"&&SFXG)SFXG.gain.value=.42*o.sfxVolume/80}catch(e){}}
+ var gainMusic=null,gainSfx=null;
+ function gains(o){try{if(window.__AUD&&__AUD.setVol&&(gainMusic!==o.musicVolume||gainSfx!==o.sfxVolume)){__AUD.setVol(o.musicVolume/100,o.sfxVolume/100);gainMusic=o.musicVolume;gainSfx=o.sfxVolume}if(typeof BGMG!=="undefined"&&BGMG)BGMG.gain.value=.1*o.musicVolume/70;if(typeof SFXG!=="undefined"&&SFXG)SFXG.gain.value=.42*o.sfxVolume/100}catch(e){}}
  function apply(o){["small","normal","large"].forEach(function(k){B.classList.toggle("inn-fs-"+k,o.fontSize===k)});
   try{TSPD.s=MS.slow;TSPD.n=MS.normal;TSPD.f=MS.fast;S.tspeed={slow:"s",normal:"n",fast:"f"}[o.dialogueSpeed]}catch(e){MISS.push("tspd")}
   gains(o)}
@@ -49475,7 +49478,7 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
   if(startNew){cold(boot);return}
   var M=document.createElement("div");M.id="innmain";M.setAttribute("aria-label","다람탐정 메인");
   M.innerHTML='<div class="kv" style="background-image:url('+EP.MAIN.keyart+')"></div><div class="tt"><small>'+esc(EP.MAIN.eyebrow)+'</small><h1>'+esc(EP.MAIN.title)+'</h1><i></i></div>'
-   +'<div class="st" id="innst">저장 확인 중</div><div class="menu" role="menu"><button type="button" data-m="cont" disabled>이어하기</button><button type="button" data-m="new" disabled>새 게임</button><button type="button" data-m="set" disabled>설정</button></div><div class="pv">메인 A안 미리보기</div>';
+   +'<div class="st" id="innst">저장 확인 중</div><div class="menu" role="menu"><button type="button" data-m="cont" disabled>이어하기</button><button type="button" data-m="new" disabled>새 게임</button><button type="button" data-m="set" disabled>설정</button></div><div class="pv">1장 플레이테스트</div>';
   document.body.appendChild(M);var bs=[].slice.call(M.querySelectorAll(".menu button")),busy=false,st=M.querySelector("#innst");
   var save=hasSave();
   function enable(){bs.forEach(function(b){b.disabled=false});var c=bs[0];if(!save){c.disabled=true;c.innerHTML='이어하기<small>저장 없음</small>'}st.textContent="";focus(save?0:1)}
