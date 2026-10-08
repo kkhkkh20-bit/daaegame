@@ -1,0 +1,57 @@
+B03 FIRST-CHAPTER MINIMAL DELTA CANDIDATES — 2026-10-07
+
+Scope
+Only Chapter 1 (envelope). Three transparent observation layers and one morning post-office variant. No repository changes, no R-014/B04 work, no story or timeline changes. These are review candidates, not final approval or runtime integration.
+
+Sources
+Art: kkhkkh20-bit/daaegame at a745906b22feb039b85ea7b5232974c03ccd01d1, branch art/b03-envelope-backgrounds-20261007.
+Game observations: game.html at main 9503130f2bc12f742d874602124e4a545aa1ccef (v197), lines 45062–45066.
+All four original PNG files plus original B03 manifest/HANDOFF are preserved verbatim in source-reference. SHA-256 hashes in delta manifest. Exact imagegen prompts in PROMPTS.json. All added artwork came from imagegen; subsequent operations were deterministic extraction, placement, nearest-neighbor scaling and compositing, not new drawing.
+
+Use these four candidate files from assets
+- envelope-post-morning-candidate.png: original post interior with daylight confined to two window regions.
+- envelope-post-observations-candidate.png: transparent perch/feather and postal scale.
+- envelope-store-observations-candidate.png: transparent grain sack and muddy bootprint trail.
+- envelope-records-observations-candidate.png: transparent red pencil and circled paper.
+Each final candidate is 1681×936; observation layers are true RGBA. Original dusk envelope-post.png remains available for ending. Store already has clear daylight. Records has no window and its lamp is compatible with an interior morning scene, so no relighting was necessary.
+
+Composition order
+Post investigation: morning candidate → post observation overlay → characters using original B03 depth rules. If using counter foreground, keep original envelope-post-front.png at the same canvas origin/crop. None of the new post props falls inside the counter foreground’s visible central area. Original foreground is untouched, including existing AI-extraction fringe; this pack does not claim a new mask or exact pixel-matched fringe.
+Store/records: original background → respective observation overlay → characters.
+Do not use the raw full daylight-generated-candidate as the room replacement. Its window regions alone were composited onto original, making every original pixel outside the specified two regions exactly unchanged.
+The three *-composite-QA.png files are merged previews only, not substitutes that require overwriting original assets.
+
+Coordinates and crop
+All layers use original canvas origin (0,0), 1681×936. Exact centered 9:5 source crop: x0, y1.055556, width1681, height933.888889. Apply identical crop to background, overlays and counter, then nearest-neighbor display at logical360×200. Never center visible alpha bounds independently.
+Static360/390 preview sheets use nearest integral crop [0,1,1681,934], within0.056 original pixel of the mathematical crop. 390 preview height217 is rounded from216.666667. Actual integration should use the exact crop above.
+
+Preserved existing targets
+All 13 evidence and seven prior observation objects remain at original B03 visual positions. Use the original HANDOFF-B03.txt and B03-manifest.json for those positions. No new evidence IDs, no changed evidence text, no moved old props.
+
+New observation target centers, logical360×200
+- post o_e1_perch: (299,61). Small exterior wooden perch with hanging black feather, supported beside window frame. Original v197 text: 창구 밖 나무 횃대. 까만 깃털 한 가닥이 걸려 있다. 반들반들하다.
+- post o_e1_scale: (286,77). Postal scale on right raised side table, yellow crumbs on pan and dial needle off upright zero position. Original text: 우편 저울. 접시에 누런 종이 부스러기가 붙어 있다. 바늘이 0에서 조금 비켜 서 있다.
+- store o_e1_sack: (70,140). Tan grain sack left of chest, loosely tied asymmetric knot and spilled kernels. Original text: 곡식 자루 하나. 끈이 풀렸다가 다시 묶여 있다. 매듭이 엉성하다.
+- store o_e1_boots: (236,162). Five large muddy sole-and-heel prints curve between side door and chest. Original text: 흙 묻은 장화 자국. 옆문에서 보관함까지 몇 번이나 오갔다. 아주 크다.
+- records o_e1_pencil: (211,106). Short blunt red colored pencil at front-right table edge with five red circles on adjacent paper. Original text: 탁자 끝에 빨간 색연필. 끝이 뭉툭하다. 옆 종이에 빨간 동그라미가 잔뜩.
+These replace only the five old OBS coordinates, which referred to the previous game art. Existing20 B03 targets stay unchanged. Nearby window/perch/scale targets need selection UI overlap check. Do not create extra evidence outcomes from these observations.
+
+Exact crop/placement recipe (rectangles are x,y,width,height in original image pixels)
+Source image assets/post-daylight-generated-candidate.png:
+  right window source[1318,60,310,312] → destination[1318,60,310,312]
+  far-left door window source[0,157,77,170] → destination[0,157,77,170]
+These bounded regions include small parts of window frames/plant, not exclusively individual glass pixels. Window geometry visually aligns; no sunset rim was visible in closeup. Every pixel outside both rectangles is exactly original.
+Source assets/post-props-source.png:
+  perch source[1365,245,155,108] → destination[1346,257,97,68]
+  scale source[1184,283,152,160] → destination[1295,317,80,84]
+Source assets/store-props-source.png (raw generator width1680; never stretch full canvas to1681):
+  grain sack source[200,463,251,267] → destination[245,568,166,177]
+  boot trail source[705,575,873,155] → destination[705,650,873,155]
+Source assets/records-props-source.png:
+  paper+pencil source[764,429,691,249] → destination[883,472,145,36]
+A blank full1681×936 transparent canvas under each scene's additions preserves geometry. The paper/pencil was intentionally scaled flatter to tabletop perspective; it is a modest desk prop rather than the oversized raw generator output.
+
+QA and limits
+PNG files decoded; final dimensions and true alpha verified. Post morning pixels outside two windows:0 changed. Source files and counter SHA-256 verified. Three360px and390px composites and closeups visually inspected. Props have recognizable silhouettes at small display size, while feather, crumbs, needle and paper-circle details depend on selected closeup. No claim that microscopic details are legible at base360px.
+The current previews contain no characters. Actual target hit areas, actor occlusion, dialogue UI and touchscreen interaction must be checked after selective integration. Store trail may be partly covered by a character; choose an unobscured trail print or closeup affordance. The existing foreground fringe warning still applies.
+No strict common pixel grid or reduced-color palette compliance claimed; art follows existing pixel-inspired illustration. Runtime browser launch was blocked by environment socket permission, so supplied static composites are verified raster previews rather than an actual playable game QA pass.

@@ -1,0 +1,115 @@
+{
+  "sourceRepository": "kkhkkh20-bit/daaegame",
+  "sourceArtCommit": "a745906b22feb039b85ea7b5232974c03ccd01d1",
+  "gameSourceCommit": "9503130f2bc12f742d874602124e4a545aa1ccef",
+  "gameVersion": "v197",
+  "status": "candidate; not integrated or user approved",
+  "canvas": [
+    1681,
+    936
+  ],
+  "exactCenteredCrop": [
+    0,
+    1.0555555556,
+    1681,
+    933.8888888889
+  ],
+  "logicalSize": [
+    360,
+    200
+  ],
+  "observations": [
+    {
+      "id": "o_e1_perch",
+      "scene": "post",
+      "x": 299,
+      "y": 61,
+      "text": "창구 밖 나무 횃대. 까만 깃털 한 가닥이 걸려 있다. 반들반들하다."
+    },
+    {
+      "id": "o_e1_scale",
+      "scene": "post",
+      "x": 286,
+      "y": 77,
+      "text": "우편 저울. 접시에 누런 종이 부스러기가 붙어 있다. 바늘이 0에서 조금 비켜 서 있다."
+    },
+    {
+      "id": "o_e1_sack",
+      "scene": "store",
+      "x": 70,
+      "y": 140,
+      "text": "곡식 자루 하나. 끈이 풀렸다가 다시 묶여 있다. 매듭이 엉성하다."
+    },
+    {
+      "id": "o_e1_boots",
+      "scene": "store",
+      "x": 236,
+      "y": 162,
+      "text": "흙 묻은 장화 자국. 옆문에서 보관함까지 몇 번이나 오갔다. 아주 크다."
+    },
+    {
+      "id": "o_e1_pencil",
+      "scene": "records",
+      "x": 211,
+      "y": 106,
+      "text": "탁자 끝에 빨간 색연필. 끝이 뭉툭하다. 옆 종이에 빨간 동그라미가 잔뜩."
+    }
+  ],
+  "originalHandoff": "source-reference/HANDOFF-B03.txt",
+  "validation": {
+    "outside_daylight_regions_pixel_exact": true,
+    "outside_regions_changed_pixels": 0,
+    "original_counter_unchanged": "dc71fd1eb7e2321de79524adf217ce947afbc72c435cd3b17b155fb37cf815ea",
+    "envelope-records-observations-candidate.png": {
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGBA",
+      "alphaZeroFraction": 0.9980761604051313,
+      "alphaMax": 255,
+      "bboxAlpha": [
+        884,
+        473,
+        1027,
+        508
+      ]
+    },
+    "envelope-post-observations-candidate.png": {
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGBA",
+      "alphaZeroFraction": 0.9954519338814402,
+      "alphaMax": 255,
+      "bboxAlpha": [
+        1296,
+        260,
+        1441,
+        398
+      ]
+    },
+    "envelope-store-observations-candidate.png": {
+      "size": [
+        1681,
+        936
+      ],
+      "mode": "RGBA",
+      "alphaZeroFraction": 0.9713089227515165,
+      "alphaMax": 255,
+      "bboxAlpha": [
+        247,
+        571,
+        1578,
+        804
+      ]
+    }
+  },
+  "sourceHashes": {
+    "envelope-records.png": "c6ccf2ab801e80f8e21c2969f55eafb786e9eaea3eb41ce4d209658f92894404",
+    "envelope-post.png": "21e1857e607177bf25320176557ea3635366571607edf49ff51f7723963591bd",
+    "envelope-store.png": "3babd7cdf330e816c68a5af081ad4241045d8669e3faa9c76ab6be2712f37bb8",
+    "envelope-post-front.png": "dc71fd1eb7e2321de79524adf217ce947afbc72c435cd3b17b155fb37cf815ea"
+  }
+}
