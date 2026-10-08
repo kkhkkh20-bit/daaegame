@@ -1,0 +1,26 @@
+[
+  {
+    "name": "post-daylight",
+    "transparent": false,
+    "file": "envelope-post.png",
+    "prompt": "Edit the supplied game background minimally. Preserve exact 1681x936 framing, camera, every object, all furniture and its edges, floor, clock hands reading 9:25, evidence props, colors indoors. Change ONLY the scenery visible through the big right window's glass and small far-left door window's glass from sunset to clear morning 9:25 daylight: pale blue sky, soft pale clouds, same snowy landscape and same bare tree silhouettes; remove low sunset sun and pink-purple sky. Do not change window frames, plant, counter or any indoor pixel. This is a targeted time-of-day variant, not a redraw. Match existing chunky pixel-inspired illustrated art exactly. No new props, text or characters. Output same full canvas."
+  },
+  {
+    "name": "post-clues-overlay",
+    "transparent": true,
+    "file": "envelope-post.png",
+    "prompt": "Create ONLY a transparent full-canvas prop overlay precisely aligned with supplied 1681x936 post office game background. Do not output the background; all pixels except requested two additions must have genuine alpha 0. Preserve camera and canvas framing, do not center the props. Match the existing chunky pixel-inspired art palette and scale. Add just two additions at these exact original-image positions: (1) a small outdoor smooth wooden bird perch extending horizontally at x1390..1500,y267..301, visible through the bottom-left pane of the right window, with ONE small black feather hanging on it, no bird. (2) a vintage tabletop postal scale at x1240..1345,y305..410, its base resting on the small raised side table beside the existing cardboard box, without covering the box, white cup, chair or window frame. Scale has metal weighing pan, a couple of yellow paper crumbs on pan, cream round analog dial with simple black tick marks and needle slightly away from zero, no numerals or words. Keep tiny readable silhouettes, plausible existing perspective. All other objects/background absent, no labels, no decorative extras. Transparent overlay 1681x936."
+  },
+  {
+    "name": "store-clues-overlay",
+    "transparent": true,
+    "file": "envelope-store.png",
+    "prompt": "Create ONLY a transparent full-canvas prop overlay precisely aligned with supplied 1681x936 storeroom game background. Do not output background; all pixels except requested additions are alpha 0. Keep exact same framing, camera, scale and chunky pixel-inspired illustration style. Do not center or enlarge props. Add one tan burlap grain sack with visibly awkward loosely retied twine bow at x245..387,y590..748, standing on floor in front of lower coat area and just left of chest. Sack top closed, a few golden grain kernels near base, no text. Add large muddy BOOT SOLE PRINTS (humanlike large boots, distinct sole+heel, not animal paws), a repeated trail from right side door floor x1500,y650 bending via x1290,y700 and x1070,y739 toward chest base x850,y676. 6-8 discrete prints, each approximately 65x32 pixels, dark subdued muddy brown, matching floor perspective, visible at 360px view; no actual boots. Do not cover chest lock, red paw on lid, paper atop box, coat, door or wall lamp. All remaining canvas transparent. No lettering, outlines around whole canvas, borders or extra props. Output1681x936."
+  },
+  {
+    "name": "records-clues-overlay",
+    "transparent": true,
+    "file": "envelope-records.png",
+    "prompt": "Create ONLY a transparent full-canvas small clue overlay aligned precisely with supplied 1681x936 records-room game background. All pixels except the new paper and red pencil are genuine alpha 0; do not output existing room. Same full canvas and camera; do not center or enlarge objects. Match existing chunky pixel-inspired hand-drawn raster art. At right-front end of reading tabletop, directly in front of existing white mug and between open book and lamp, add small cream loose paper in perspective covering x887..992,y467..498 and a blunt red colored pencil lying diagonally across lower-right edge x949..1015,y476..502. Paper has 5 or 6 clear RED CIRCLES only, no letters, no words, no black scribble. Pencil clearly red-painted wood with exposed blunt red tip; long enough to read at 360px. Do not cover the existing open book (ends x861), white mug above, oil lamp, table edge, shelf or any evidence. No other objects or shadows outside this tight local area. Output transparent1681x936 overlay."
+  }
+]
