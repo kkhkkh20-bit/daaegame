@@ -2899,7 +2899,7 @@ var TOOLS={
  chat:{at:1,name:"수다 떨기",where:"심문",text:"사건 말고 다른 이야기로 친구와 친해져요. 많이 친해지면 비밀을 알려 줘요."},
  riddle:{at:2,name:"암호 상자",where:"수첩 > 힌트",text:"수수께끼를 풀면 별이 줄지 않는 힌트가 나와요."},
  uv:{at:2,name:"자외선 등",where:"현장 그림 아래 버튼",text:"맨눈으로 안 보이는 형광 자국을 비춰요."},
- logic:{at:0,name:"증거 결합",where:"기록 > 결합",text:"이어지는 증거 두 개를 골라 새 추리를 만들어요."}
+ logic:{at:0,name:"증거 결합",where:"증거 > 결합",text:"이어지는 증거 두 개를 골라 새 추리를 만들어요."}
 };
 function toolOnC(c,k){var t=TOOLS[k];if(!t)return true;var i=CASES.indexOf(c);return i>=t.at||!!S.best[CASES[t.at-1].id]}
 function toolOn(k){return !G||toolOnC(CASES[G.ci],k)}
@@ -3185,6 +3185,7 @@ function showLine(){
   if(DL.bgHtml==null)DL.bgHtml=vnBg();
   var prevWho=DL.lastWho;DL.lastWho=(l.who==="det"||l.who==="think")?((l.name&&S.players[1]!==S.players[0]&&l.name.indexOf(S.players[1])===0)?"det1":"det0"):l.who;
   if(!mine&&!isN&&CAST[l.who]){DL.stageWho=l.who;DL.stageMood=l.mood}
+  else if((l.who==="det1"||l.who==="det0")&&window.__pov202)window.__pov202(l);
   else if(isN&&l.narrWho&&CAST[l.narrWho]){DL.stageWho=l.narrWho;DL.stageMood=l.mood}
   if(!DL.stageWho){for(var q=DL.i;q<DL.lines.length;q++){var lw=DL.lines[q][0];if(lw&&CAST[lw]&&lw!=="det0"&&lw!=="det1"){DL.stageWho=lw;DL.stageMood=DL.lines[q][2]||"";break}if(lw==="narr"&&DL.lines[q][3]&&CAST[DL.lines[q][3]]){DL.stageWho=DL.lines[q][3];DL.stageMood=DL.lines[q][2]||"";break}}
     if(!DL.stageWho&&typeof G!=="undefined"&&G&&S.screen==="case"&&G.tab==="talk"&&G.who&&CAST[G.who]&&G.who!=="det0"&&G.who!=="det1"){DL.stageWho=G.who;DL.stageMood=""}}
@@ -3200,17 +3201,17 @@ function showLine(){
   }else veil.className=cls;
   var vf=document.getElementById("vnfig");
   if(sw&&CAST[sw]){var key=sw+"|"+(DL.stageMood||"");
-    if(vf.dataset.k!==key){var nw=vf.dataset.w!==sw;vf.innerHTML=pf(sw,DL.stageMood||"");vf.dataset.k=key;vf.dataset.w=sw;if(nw){vf.classList.remove("in");void vf.offsetWidth;vf.classList.add("in")}}
+    if(vf.dataset.k!==key){var nw=vf.dataset.w!==sw;vf.innerHTML=window.__stageFig?window.__stageFig(sw,DL.stageMood||""):pf(sw,DL.stageMood||"");vf.classList.toggle("b202",!!(window.__bodyOn&&window.__bodyOn(sw)));vf.dataset.k=key;vf.dataset.w=sw;if(nw){vf.classList.remove("in");void vf.offsetWidth;vf.classList.add("in")}}
     vf.hidden=false}else{vf.hidden=true;vf.dataset.k="";vf.dataset.w=""}
-  vf.classList.toggle("dim",mine||(isN&&!l.narrWho));
+  vf.classList.toggle("dim",(mine&&DL.stageWho!==DL.lastWho)||(isN&&!l.narrWho));
   Object.keys(window.QUIRK||{}).forEach(function(k){vf.classList.remove(QUIRK[k].cls)});if(sw&&window.QUIRK&&QUIRK[sw])vf.classList.add(QUIRK[sw].cls);
   if(qk&&qk.hit){var qq=QUIRK[l.who];if(qq.sfx&&SFX[qq.sfx])setTimeout(function(){SFX[qq.sfx]()},120);if(!l.fx&&qq.tic.length<=4){vf.setAttribute("data-ono",qq.tic)}}
   if(ONO[l.fx]&&!mine&&sw)vf.setAttribute("data-ono",ONO[l.fx]);else vf.removeAttribute("data-ono");
   vf.classList.remove("fxa");void vf.offsetWidth;if(l.fx&&!mine)vf.classList.add("fxa");
-  var fig=mine?vnFigure(l):"";
+  var fig="";/* v202 대화창 얼굴 없음: 아빠는 그리지 않고, 상대는 무대 전신으로만 */
   var oldF=document.querySelector("#vnbox .vface"),FK=fig?(l.who+"|"+fig.length+"|"+fig.slice(-80)):"";
-  document.getElementById("vnbox").innerHTML='<div class="vband bot'+(mine?' mine':'')+(isN?' narr':'')+(l.testi?' testi':'')+(prevWho===DL.lastWho?' stay':' enter')+'" role="dialog" aria-live="polite">'+
-    (fig?'<div class="vface r"'+(ONO[l.fx]?' data-ono="'+ONO[l.fx]+'"':'')+'>'+fig+'</div>':'')+
+  document.getElementById("vnbox").innerHTML='<div class="vband bot'+(mine?' mine':'')+(fig?' hasf':'')+(isN?' narr':'')+(l.testi?' testi':'')+(prevWho===DL.lastWho?' stay':' enter')+'" role="dialog" aria-live="polite">'+
+    (fig?'<div class="vface r'+(mine?'':' np')+'"'+(ONO[l.fx]?' data-ono="'+ONO[l.fx]+'"':'')+'>'+fig+'</div>':'')+
     '<div class="vtxt">'+(l.name?'<span class="plate">'+tag+esc(l.name)+'</span>':'')+(isT?'<span class="tdots"><i></i><i></i><i></i></span>':'')+'<div class="txt" id="dtxt"></div>'+(presTid()?'<button class="dpres" id="dpres">'+IC.present+'제시!</button>':'')+'<span class="nx">'+(DL.i<DL.lines.length-1?'▼':'닫기')+'</span></div></div>';
   try{var nF=document.querySelector("#vnbox .vface");if(nF){nF.dataset.fk=FK;if(oldF&&oldF.dataset.fk===FK){if(nF.dataset.ono)oldF.dataset.ono=nF.dataset.ono;else delete oldF.dataset.ono;nF.replaceWith(oldF)}}}catch(e){}
   var dp=document.getElementById("dpres");if(dp)dp.onclick=function(e){e.stopPropagation();var tid=presTid();if(!tid)return;var c=CASES[G.ci],w=tById(c,tid).who;SFX.select();G.lastT=tid;endDlg();setTimeout(function(){if(!DL&&G)openRecord(c,"present",{tid:tid,who:w})},60)};
@@ -3450,7 +3451,7 @@ function renderBoard(){
   var lk=letterKeys(),unread=lk.filter(function(k){return k.has&&!S.story.read[k.k]}).length,got=lk.filter(function(k){return k.has}).length;
   var vfN=VFILE.filter(function(v){return v.req()}).length;
   function tile(id,icon,label,sub,dot){return '<button class="ftile" id="'+id+'">'+(dot?'<i class="nd"></i>':'')+'<span class="fi">'+icon+'</span><b>'+label+'</b><small>'+sub+'</small></button>'}
-  h+='<nav class="files" aria-label="수사 파일">'+tile("detlook",pf("det1","happy"),"탐정","꾸미기")+(window.__flashTile?window.__flashTile(tile):'')+(window.__hiddenTile?window.__hiddenTile(tile):'')+tile("achbook",achIcon(achN?"gold":"off"),"배지",achN+" / "+ACH.length)+
+  h+='<nav class="files" aria-label="수사 파일">'+(window.__flashTile?window.__flashTile(tile):'')+(window.__hiddenTile?window.__hiddenTile(tile):'')+tile("achbook",achIcon(achN?"gold":"off"),"배지",achN+" / "+ACH.length)+
      (S.best[CASES[0].id]?tile("friends",pf(friendIds()[0]||"tori","happy"),"친구",friendIds().length+"명"):'')+
      tile("letters",ENV,"편지",got+"통",unread>0)+(window.__traceTile?window.__traceTile(tile):'')+
      (vfN?tile("vfile",pf("shadow","smug"),"망토단",vfN+" / "+VFILE.length):'')+'</nav>';
@@ -5595,7 +5596,7 @@ function playBook(title,pages,done){
   }
   function drawCast(speaker){var cc=el.querySelector(".sbcast");if(cc)cc.innerHTML=castHtml(speaker);Object.keys(st.cast).forEach(function(k){st.cast[k].fresh=false})}
   function drawPage(turn){
-    var pg=pages[st.p];st.cast={};Object.keys(pg.cast||{}).forEach(function(k){st.cast[k]={x:pg.cast[k],mood:""}});
+    var pg=pages[st.p];st.cast={};st.focus=null;st.fmood="";st.ftxt="";Object.keys(pg.cast||{}).forEach(function(k){st.cast[k]={x:pg.cast[k],mood:""}});
     el.innerHTML='<div class="sbin'+(turn?' turn':'')+'"><div class="sbhead"><small>'+title+'</small>'+(pages.length>1?'<span>'+(st.p+1)+' / '+pages.length+'</span>':'<span></span>')+'<button class="sbskip" id="sbskip">건너뛰기</button></div>'+
       '<div class="sbart" id="sbart">'+(SCENES[pg.bg]?SCENES[pg.bg]():'')+'<div class="sbcast"></div>'+(pg.time?'<span class="sbtime">'+pg.time+'</span>':'')+'<div class="sbfx" id="sbfx"></div></div>'+
       '<div class="sbtext" id="sbtext"><span class="sbname" id="sbname"></span><p id="sbp"></p><span class="nx">눌러서 계속</span></div></div>';
@@ -7481,12 +7482,12 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
   function onRs(){camTo(st.cam==null?groupX():st.cam,true)}
   window.addEventListener("resize",onRs);
   function drawCast(speaker){
-   CC.innerHTML=Object.keys(st.cast).map(function(k){var q=st.cast[k];
+   CC.innerHTML=Object.keys(st.cast).filter(function(k){return k!=="det0"}).map(function(k){var q=st.cast[k];
     return '<div class="sb2fig'+(k===speaker?' talk':'')+((speaker||st.narr)&&k!==speaker?' dim':'')+(q.fresh?' fresh':'')+'" style="left:'+(q.x/3.6).toFixed(2)+'%">'+pf(k,q.mood)+'</div>'}).join("");
-   Object.keys(st.cast).forEach(function(k){st.cast[k].fresh=false});
+   Object.keys(st.cast).forEach(function(k){st.cast[k].fresh=false});if(window.__sbFocus)try{window.__sbFocus(el,st,pages,speaker)}catch(e){}
   }
   function drawPage(turn){
-   var pg=pages[st.p];st.cast={};Object.keys(pg.cast||{}).forEach(function(k){st.cast[k]={x:pg.cast[k],mood:""}});
+   var pg=pages[st.p];st.cast={};st.focus=null;st.fmood="";st.ftxt="";Object.keys(pg.cast||{}).forEach(function(k){st.cast[k]={x:pg.cast[k],mood:""}});
    el.querySelector("#sbbg").innerHTML=SCENES[pg.bg]?SCENES[pg.bg]():"";el.dataset.bg=pg.bg||"";
    el.querySelector("#sbtime").textContent=pg.time||"";
    el.querySelector("#sbpg").textContent=pages.length>1?(st.p+1)+" / "+pages.length:"";
@@ -7508,7 +7509,7 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
    var pg=pages[st.p];
    if(st.i>=pg.lines.length){if(st.p<pages.length-1){st.p++;drawPage(true)}else fin();return}
    var l=pg.lines[st.i++],t=l[0];FX.innerHTML="";
-   if(t==="enter"){st.cast[l[1]]={x:l[2],mood:l[3]||"",fresh:true};drawCast();camTo(l[2]);SFX.steps();st.lock=true;setTimeout(step,420);return}
+   if(t==="enter"){st.cast[l[1]]={x:l[2],mood:l[3]||"",fresh:true};drawCast();if(l[1]!=="det0")camTo(l[2]);SFX.steps();st.lock=true;setTimeout(step,420);return}
    if(t==="exit"){delete st.cast[l[1]];drawCast();st.lock=true;setTimeout(step,200);return}
    if(t==="fx"){
     FX.innerHTML='<b class="'+(l[2]==="hush"?'hush':'')+'">'+l[1]+'</b>';
@@ -7520,7 +7521,7 @@ ZART.shelf=function(){var s='<svg viewBox="0 0 360 200" aria-hidden="true"><rect
    if(t==="narr"){st.narr=true;BOX.className="sb2box narr";NM.textContent="";drawCast();type(l[1],"narr");return}
    if(!CAST[t]){step();return}
    st.narr=false;
-   if(st.cast[t]){st.cast[t].mood=l[2]||"";camTo(st.cast[t].x)}
+   if(t!=="det0"){st.focus=t;st.fmood=l[2]||"";st.ftxt=l[1]||""}if(st.cast[t]){st.cast[t].mood=l[2]||"";if(t!=="det0")camTo(st.cast[t].x)}
    BOX.className="sb2box";NM.textContent=CAST[t].name;drawCast(t);
    var fxs={shock:"shock",blush:"blush",huh:"huh",smug:"laugh",cry:"cry"};if(l[3]&&fxs[l[3]])SFX[fxs[l[3]]]();
    if(l[3]==="shock")shake();
@@ -9242,7 +9243,7 @@ var DEF={d0:{a:"raccoon",c:"#A9A2A0",acc:"dhat",eye:"none",ext:"t-pencil",fit:"f
 var OLDDEF={d0:{a:"raccoon",c:"#A9A2A0",acc:"dhat",eye:"none",ext:"none"},d1:{a:"flyingsq",c:"#D9A47A",acc:"ribbon",eye:"none",ext:"none"}};
 window.__LOOKITEMS=HEAD.concat(EYE,EXT,FIT).filter(function(x){return x[2]});
 function has(list,v){for(var i=0;i<list.length;i++){if((list[i][0]||list[i])===v)return true}return false}
-function cleanLook(x){var o={};["d0","d1"].forEach(function(k){var v=(x&&typeof x==="object"&&x[k]&&typeof x[k]==="object")?x[k]:{};
+function cleanLook(x){x=null;var o={};["d0","d1"].forEach(function(k){var v=(x&&typeof x==="object"&&x[k]&&typeof x[k]==="object")?x[k]:{};
   if(!v.fit){var od=OLDDEF[k];if(v.a===od.a&&v.c===od.c&&v.acc===od.acc&&(v.eye||"none")==="none"&&(v.ext||"none")==="none")v={a:od.a,c:od.c,acc:DEF[k].acc,eye:"none",ext:DEF[k].ext}}
   var acc=has(HEAD,v.acc)?v.acc:has(EYE,v.acc)?"none":DEF[k].acc,leg=has(EYE,v.acc)?v.acc:null;
   o[k]={a:has(AN,v.a)?v.a:DEF[k].a,c:COLS.indexOf(v.c)>=0?v.c:DEF[k].c,acc:acc,eye:has(EYE,v.eye)?v.eye:(leg||DEF[k].eye),ext:has(EXT,v.ext)?v.ext:DEF[k].ext,fit:has(FIT,v.fit)?v.fit:DEF[k].fit}});return o}
@@ -16577,7 +16578,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(el){var busy=false;mark(el,c);new MutationObserver(function(){if(busy)return;busy=true;try{mark(el,c)}finally{busy=false}}).observe(el,{childList:true})}
   return r};
  var _say=say;say=function(lines){try{if(lines&&lines[0]&&lines[0][0]==="think"&&String(lines[0][1]).indexOf("합치면 확실해질 것 같아")>=0&&window.__cxHalf){window.__cxNudged=window.__cxHalf;
-    lines=lines.slice();lines[0]=lines[0].slice();lines[0][1]+=" 기록에서 '결합'을 누르면 맞는 짝이 반짝일 거야."}}catch(e){}
+    lines=lines.slice();lines[0]=lines[0].slice();lines[0][1]+=" 아래 '증거'에서 '결합'을 누르면 맞는 짝이 반짝일 거야."}}catch(e){}
   return _say.apply(this,[lines].concat([].slice.call(arguments,1)))};
  var css=document.createElement("style");
  css.textContent='.cxpair{margin:8px 0 0;font-size:14px;color:#8A5A00;background:#FFF1C9;border-radius:10px;padding:6px 10px}'
@@ -16651,7 +16652,7 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   var pairs=L.filter(function(o){return G.found.indexOf(o.id)<0&&G.found.indexOf(o.x.a)>=0&&G.found.indexOf(o.x.b)>=0}).length;
   return '<section class="panel logic"><div class="label">조각 맞추기 · '+got.length+' / '+L.length+'</div>'
    +(got.length?'<div class="cxlist">'+got.map(function(o){return '<div>'+evIcon(o.id)+'<span><b>'+esc(o.x.name)+'</b>'+esc(o.x.text)+'</span></div>'}).join(""):'')
-   +(got.length?'</div>':'<p class="soft">기록에서 <b>빈 곳</b>이 있는 조각 증거를 고르고 <b>결합</b>을 눌러, 빈 곳에 딱 맞는 증거와 합쳐 보세요.</p>')
+   +(got.length?'</div>':'<p class="soft">아래 <b>증거</b>에서 <b>빈 곳</b>이 있는 조각 증거를 고르고 <b>결합</b>을 눌러, 빈 곳에 딱 맞는 증거와 합쳐 보세요.</p>')
    +(gaps?'<p class="cxpair">빈 곳이 남은 조각이 '+gaps+'개 있어요.'+(pairs?' 그중 '+pairs+'개는 맞는 짝도 이미 찾았어요.':'')+'</p>':'')+'</section>'};
  function mark(el,c){
   el.querySelectorAll(".cr-th").forEach(function(b){var id=b.dataset.crs;b.classList.toggle("piece",!!(openGap(c,id)&&!gated(c,id)))});
@@ -17019,12 +17020,12 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(ph.type==="mob"){mobHit=false;banner("투표",ph.q).then(function(){draw();setTimeout(function(){mobHit=true;try{SFX.stamp();quake()}catch(e){}draw();setTimeout(function(){sayQ(ph.lines||[],nextPh)},1300)},1200)});return}
   if(ph.type==="adjourn"){sayQ(ph.lines||[],function(){adjourn(ph)});return}}
  var mobHit=false;
- function leave(){if(busy)return;Q=null;qi=0;sel=null;si=0;try{saveProg()}catch(e){}if(el){el.remove();el=null}window.__inMeeting=false;try{bgm("sneak")}catch(e){}var gp=window.__rtGap?window.__rtGap(C,has):[];G.tab="scene";G.notice={title:"회의를 잠시 멈췄어요",text:(gp.length?"지금 가진 증거로는 이 토론을 풀 수 없어요. 수사를 더 해 봐요. ":"")+"준비되면 대결 탭에서 회의를 이어서 열 수 있어요."};render()}
+ function leave(){if(busy)return;Q=null;qi=0;sel=null;si=0;try{saveProg()}catch(e){}if(el){el.remove();el=null}window.__inMeeting=false;try{bgm("sneak")}catch(e){}var gp=window.__rtGap?window.__rtGap(C,has):[];G.tab="scene";G.notice={title:"회의를 잠시 멈췄어요",text:(gp.length?"지금 가진 증거로는 이 토론을 풀 수 없어요. 수사를 더 해 봐요. ":"")+"준비되면 아래 '증거'에서 '원탁 회의 열기'로 회의를 이어서 열 수 있어요."};render()}
  function adjourn(ph){var s=stt();
   if((ph.need||[]).every(has)){sayQ([{w:"det1",t:"잠깐! 그거라면 우리가 이미 찾아 뒀어!"}].concat(ph.resume||[]),nextPh);return}
   s.pi++;s.hold={need:ph.need||[],task:ph.task||""};try{saveProg()}catch(e){}
   banner("회의 중단","증거를 더 찾아 와야 해요").then(function(){if(el){el.remove();el=null}window.__inMeeting=false;try{bgm("sneak")}catch(e){}
-   G.tab="scene";G.notice={title:"회의가 중단됐어요",text:esc(ph.task||"증거를 더 찾아 오세요.")+" 찾으면 대결 탭에서 회의를 다시 열 수 있어요."};render()})}
+   G.tab="scene";G.notice={title:"회의가 중단됐어요",text:esc(ph.task||"증거를 더 찾아 오세요.")+" 찾으면 아래 '증거'에서 '원탁 회의 열기'로 다시 열 수 있어요."};render()})}
  function hurt(msg){G.wrong=(G.wrong|0)+1;if(G.hp==null)G.hp=hpMax(C);G.hp=Math.max(1,G.hp-1);try{saveProg()}catch(e){}
   flash("헛짚었다!",true).then(function(){sayQ([{w:"det1",t:msg}],function(){draw()})})}
  function fire(){var ph=curPh(),st=ph.stms[si];if(!sel){try{SFX.huh()}catch(e){}var n=el.querySelector(".rt-nav span");if(n){n.classList.remove("shake");void n.offsetWidth;n.classList.add("shake")}return}
@@ -18094,7 +18095,7 @@ DEBATE.kitchen={
   try{document.body.classList.toggle("nx",NEWc(c));
    if(NEWc(c)&&!G.result){
     if(pending.length)setTimeout(function(){announce(c)},500);
-    var HB=G.battle;if(HB&&HB.hold&&!HB.hold.told&&HB.hold.need.every(function(id){return G.found.indexOf(id)>=0})){HB.hold.told=1;try{saveProg()}catch(e){}setTimeout(function(){if(busy())return;say([["det1","{p0}, 찾았어! 이거면 다시 결판을 낼 수 있어!","happy"]],function(){G.notice={good:true,title:"결판을 다시 열 수 있어요",text:"대결 탭에서 결판을 다시 여세요."};render()})},700)}
+    var HB=G.battle;if(HB&&HB.hold&&!HB.hold.told&&HB.hold.need.every(function(id){return G.found.indexOf(id)>=0})){HB.hold.told=1;try{saveProg()}catch(e){}setTimeout(function(){if(busy())return;say([["det1","{p0}, 찾았어! 이거면 다시 결판을 낼 수 있어!","happy"]],function(){G.notice={good:true,title:"결판을 다시 열 수 있어요",text:"아래 '증거'에서 '대결로 가기'를 눌러 결판을 다시 여세요."};render()})},700)}
     var pb=document.getElementById("presentbtn");if(pb){pb.innerHTML=pb.innerHTML.replace("제시한다","회의한다");pb.classList.toggle("go",!G.battle&&!(G.debate&&G.debate.done)&&!!(window.__rtReady&&window.__rtReady(c)));pb.onclick=function(){if(DL||busy())return;SFX.tap();goTab("final")}}
     if(!G.battle&&!(G.debate&&G.debate.done)&&!(G.beats&&G.beats.toMeet)&&window.__rtReady&&window.__rtReady(c)&&S.screen==="case")setTimeout(function(){meetPrompt(c)},600);
    }}catch(e){}
@@ -18117,7 +18118,7 @@ DEBATE.kitchen={
   if(br.type==="re"){
    if((br.need||[]).every(function(id){return G.found.indexOf(id)>=0})){say(fixP([["det1","잠깐! 그거라면 우리가 이미 찾아 뒀어!","happy"]].concat(br.resume||[])),function(){render();res()});return}
    say(fixP(br.lines||[]),function(){B.hold={need:br.need||[],task:br.task||""};B.holdRes=res;try{saveProg()}catch(e){}
-    banner("결판 중단","증거를 찾아 다시 오자").then(function(){G.tab="scene";G.notice={title:"결판이 멈췄어요",text:esc(br.task||"")+" 찾으면 대결 탭에서 결판을 다시 열 수 있어요."};render()})});return}
+    banner("결판 중단","증거를 찾아 다시 오자").then(function(){G.tab="scene";G.notice={title:"결판이 멈췄어요",text:esc(br.task||"")+" 찾으면 아래 '증거'에서 '대결로 가기'로 다시 열 수 있어요."};render()})});return}
   window.__rtOpen(c,subSpec(c,br,function(){
    var R=BATTLE[c.id]||[],r=R[B.round];B.round=Math.min(B.round+1,R.length-1);B.si=0;B.miss=0;G.tab="final";render();
    try{floater(".comp","여유 -1","bad")}catch(e){}
@@ -18391,7 +18392,7 @@ TWBR.kitchen={type:"fail",phases:[
  function needTip(c){var D=window.DEBATE&&DEBATE[c.id];if(!D||!D.need)return null;
   var NL=window.__rtGap?window.__rtGap(c,function(id){return haveItem(c,id)}):D.need;for(var k=0;k<NL.length;k++){var id=NL[k];if(haveItem(c,id))continue;
    var m=/^cx_[a-z]+_(\d+)$/.exec(id);
-   if(m){var x=(COMBO[c.id]||[])[+m[1]];if(x){if(haveItem(c,x.a)&&haveItem(c,x.b))return {say:"'기록'을 열어 '"+itemName(c,x.a)+"'와(과) '"+itemName(c,x.b)+"'"+"을(를) 결합해 봐. 둘을 합치면 새 단서가 나와.",tab:"scene",pt:"#recbtn"};
+   if(m){var x=(COMBO[c.id]||[])[+m[1]];if(x){if(haveItem(c,x.a)&&haveItem(c,x.b))return {say:"아래 '증거'를 열어 '"+itemName(c,x.a)+"'와(과) '"+itemName(c,x.b)+"'"+"을(를) 결합해 봐. 둘을 합치면 새 단서가 나와.",tab:"scene",pt:"#recbtn"};
      var miss=haveItem(c,x.a)?x.b:x.a,L2=locOf(c,miss);if(L2&&locOpen(c,L2.i))return {say:c.locations[L2.i].name+"에서 '"+itemName(c,miss)+"'"+"을(를) 찾아야 해.",tab:"scene",loc:L2.i,blink:true,pt:L2.s.uv&&!uvOn()?"#uvbtn":'[data-spot="'+miss+'"]'};}
      continue}
    var L=locOf(c,id);if(!L){var tt=window.__rtTalkTip&&window.__rtTalkTip(c,id);if(tt)return tt;continue}
@@ -18544,7 +18545,7 @@ TWBR.kitchen={type:"fail",phases:[
  function faceOpt(o){return typeof o==="string"?esc(o):face(o.f[0],o.f[1],"")+'<span>'+esc(o.t)+'</span>'}
  function close(){if(el){el.remove();el=null}render()}
  function list(){var n=done(),h='<div class="flq-top"><b>번뜩 추리</b><span>'+Math.min(n,Q.length)+' / '+Q.length+'</span><button class="flq-x" id="fqx" aria-label="닫기">×</button></div>';
-  h+='<p class="flq-sub">짧은 문제를 버튼으로 맞혀요. 틀려도 괜찮아요. 단계를 깨면 새 꾸미기가 열려요.</p><div class="flq-grid">';
+  h+='<p class="flq-sub">짧은 문제를 버튼으로 맞혀요. 틀려도 괜찮아요.</p><div class="flq-grid">';
   for(var i=0;i<Q.length;i++){var st=i<n?'ok':i===n?'next':'lock';h+='<button type="button" class="flqn '+st+'" data-fq="'+i+'"'+(st==="lock"?' disabled':'')+'>'+(i+1)+(st==="ok"?'<i>★</i>':'')+'</button>'}
   h+='</div>';el.innerHTML='<div class="flq-in">'+h+'</div>';
   el.querySelector("#fqx").onclick=function(){SFX.tap();close()};
@@ -18568,7 +18569,7 @@ TWBR.kitchen={type:"fail",phases:[
    if(j===p.a){solved=true;try{SFX.ok();setTimeout(function(){SFX.stamp&&SFX.stamp()},120)}catch(e){}
     if(cur>=done()){var before=done();S.flash=cur+1;persist();
      var got=(window.__LOOKITEMS||[]).filter(function(it){return it[2]>before&&it[2]<=S.flash});
-     if(got.length)window.__flashMsg="새 꾸미기가 열렸어요: <b>"+got.map(function(it){return esc(it[1])}).join(", ")+"</b> (탐정 꾸미기에서 골라요)"}
+     if(false)window.__flashMsg="새 꾸미기가 열렸어요: <b>"+got.map(function(it){return esc(it[1])}).join(", ")+"</b> (탐정 꾸미기에서 골라요)"}
     draw()}
    else{tried[j]=1;try{SFX.ng()}catch(e){}draw();var c=el.querySelector(".flq-card");if(c){c.classList.add("shake")}}}})}
  window.__openFlash=function(){if(el)el.remove();el=document.createElement("div");el.className="flq";document.body.appendChild(el);SFX.page?SFX.page():SFX.tap();
@@ -18943,7 +18944,7 @@ TWBR.kitchen={type:"fail",phases:[
  function lockI(){return '<svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><rect x="4" y="9" width="12" height="9" rx="2" fill="currentColor"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9" fill="none" stroke="currentColor" stroke-width="2"/></svg>'}
  function play(item){closeModal();var first=!rd()[item.id];
   playBook(item.title,item.pages,function(){rd()[item.id]=true;persist();render();
-   if(item.id==="trueend"&&first)setTimeout(function(){modal('<span class="kicker">진엔딩</span><h3>새 꾸미기가 열렸어요</h3><div class="bigic">'+face("flyingsq","#C99E78","","x-momgog")+'</div><p style="text-align:center"><b>비행 고글</b><br><span class="soft">탐정 꾸미기 · 얼굴 칸에서 고를 수 있어요.</span></p><button class="btn" id="tex">좋아요</button>',function(){document.getElementById("tex").onclick=function(){SFX.tap();closeModal()}})},300);
+   if(false)setTimeout(function(){modal('<span class="kicker">진엔딩</span><h3>새 꾸미기가 열렸어요</h3><div class="bigic">'+face("flyingsq","#C99E78","","x-momgog")+'</div><p style="text-align:center"><b>비행 고글</b><br><span class="soft">탐정 꾸미기 · 얼굴 칸에서 고를 수 있어요.</span></p><button class="btn" id="tex">좋아요</button>',function(){document.getElementById("tex").onclick=function(){SFX.tap();closeModal()}})},300);
    else if(first)setTimeout(openList,250)})}
  function openList(){SFX.page?SFX.page():SFX.tap();var r=rd(),ts=totalStars(),mx=maxStars();
   var h='<span class="kicker">히든 스토리</span><h3>별로 여는 이야기</h3><p class="soft" style="text-align:center;margin:0">부마다 사건을 모두 별 3개로 풀면 숨은 이야기가 열려요.</p><div class="hsl">';
@@ -28163,7 +28164,7 @@ REI2("kitchen",{
  function close(){if(el){el.remove();el=null}render()}
  function stars(lv){return lv?'<em class="flq-lv" aria-label="난이도 '+lv+'">'+"★★★".slice(0,lv)+'<s>'+"★★★".slice(lv)+'</s></em>':''}
  function list(){var n=done(),h='<div class="flq-top"><b>번뜩 추리</b><span>'+Math.min(n,Q.length)+' / '+Q.length+'</span><button class="flq-x" id="fqx" aria-label="닫기">×</button></div>';
-  h+='<p class="flq-sub">짧은 문제를 버튼으로 맞혀요. 틀려도 괜찮아요. 단계를 깨면 새 꾸미기가 열려요.<br>'+(OLDN+1)+'단계부터는 그림을 보고 푸는 문제예요!</p><div class="flq-grid">';
+  h+='<p class="flq-sub">짧은 문제를 버튼으로 맞혀요. 틀려도 괜찮아요.<br>'+(OLDN+1)+'단계부터는 그림을 보고 푸는 문제예요!</p><div class="flq-grid">';
   for(var i=0;i<Q.length;i++){if(i===OLDN)h+='<div class="flq-sec"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="#FFF6C8" stroke="#1B2447" stroke-width="2"/><path d="M5 17l5-6 4 4 2-2 3 4z" fill="#5FA35A"/><circle cx="16" cy="9" r="2" fill="#FFD84D"/></svg>그림 추리</div>';
    var st=i<n?'ok':i===n?'next':'lock';h+='<button type="button" class="flqn '+st+(i>=OLDN?' pic':'')+'" data-fq="'+i+'"'+(st==="lock"?' disabled':'')+'>'+(i+1)+(st==="ok"?'<i>★</i>':'')+'</button>'}
   h+='</div>';el.innerHTML='<div class="flq-in">'+h+'</div>';
@@ -28174,7 +28175,7 @@ REI2("kitchen",{
  function win(){solved=true;try{SFX.ok();setTimeout(function(){SFX.stamp&&SFX.stamp()},120)}catch(e){}
   if(cur>=done()){var before=done();S.flash=cur+1;persist();
    var got=(window.__LOOKITEMS||[]).filter(function(it){return !it[3]&&it[2]>before&&it[2]<=S.flash});
-   if(got.length)window.__flashMsg="새 꾸미기가 열렸어요: <b>"+got.map(function(it){return esc(it[1])}).join(", ")+"</b> (탐정 꾸미기에서 골라요)"}
+   if(false)window.__flashMsg="새 꾸미기가 열렸어요: <b>"+got.map(function(it){return esc(it[1])}).join(", ")+"</b> (탐정 꾸미기에서 골라요)"}
   draw()}
  function oops(){nmiss++;try{SFX.ng()}catch(e){}draw();var c=el.querySelector(".flq-card");if(c)c.classList.add("shake")}
  function marks(p){var zs=zones(p),h="";zs.forEach(function(z,i){if(found[i]||solved)h+='<i class="fz" style="left:'+(z.x/3.6)+'%;top:'+(z.y/2)+'%;width:'+(z.r*2/3.6)+'%;height:'+(z.r*2/2)+'%"></i>'});
@@ -38231,11 +38232,11 @@ CASES.push({id:"envelope",part:1,title:"사라진 지원금 봉투",level:1,live
   {q:"왜 숨겼을까?",type:"text",opts:["지원금을 혼자 가지려고","까로에게 누명을 씌우려고","명단에서 빠진 꽥순네 몫이 사라질까 봐","왕구 아저씨를 골탕 먹이려고"],answer:"명단에서 빠진 꽥순네 몫이 사라질까 봐"},
   {q:"까로가 받은 접수증의 서명이 증명하는 것은?",type:"text",opts:["봉투를 받았다는 것까지","지원금을 다 나눠 줬다는 것","봉투 속 돈을 세어 봤다는 것","보관함에 넣었다는 것"],answer:"봉투를 받았다는 것까지"}
  ],
- hints:["접수증의 서명이 무엇을 확인해 주는지 끝까지 읽어 보세요. 본 것과 짐작한 것은 달라요.","보관함을 연 열쇠가 정말 하나뿐인지 우체국 창구 쪽을 살펴보세요. 번호를 맞춰 봐요.","지급 명단과 마을 집 명부를 결합해 보세요. 빠진 집을 아는 사람이 오늘 아침 편지를 보냈어요."],
+ hints:["접수증의 서명이 무엇을 확인해 주는지 끝까지 읽어 보세요. 본 것과 짐작한 것은 달라요.","보관함을 연 열쇠가 정말 하나뿐인지 우체국 창구 쪽을 살펴보세요. 번호를 맞춰 봐요.","지급 명단과 마을 집 명부를 결합해 보세요. 빠진 집을 아는 사람이 오늘 아침 편지에 소인을 찍어 발송 자루에 넣었어요."],
  solution:["까로는 7시에 봉투를 우체국에 넘겼다. 접수증은 '받았음'만 확인한다. 나눠 줬다는 칸은 없고, 명단의 받는 사람 서명 칸도 비어 있었다. 까로의 '지급 완료'는 빈 받침을 보고 한 짐작이었다.",
   "왕구는 7시 20분에 봉투를 02번 보관함에 넣고 잠갔다. 자물쇠엔 부순 자국이 없었다. 우체국 창구 서랍에 같은 02번 예비 열쇠가 있었다.",
   "8시 1분 30초에 창고 옆문이 열렸다(도토). 그 시각 까로는 광장 좌판에 있었고, 높은 창문은 안에서 잠겨 있었다. 보관함 뚜껑의 고양이만 한 발자국과 예비 열쇠 홈에는 창구에서만 쓰는 빨간 소인 잉크가 묻어 있었다.",
-  "지급 명단은 겨울 굴뚝 기록을 보고 만들어서, 겨울에 집을 비운 꽥순네가 빠졌다. 창구는 7시 50분에 도시로 '지급 명단을 고쳐 주세요'라는 편지를 보냈다.",
+  "지급 명단은 겨울 굴뚝 기록을 보고 만들어서, 겨울에 집을 비운 꽥순네가 빠졌다. 창구는 7시 50분에 '지급 명단을 고쳐 주세요'라는 도시행 편지에 소인을 찍어 발송 자루에 넣었다.",
   "나비는 5시 지급이 끝나면 꽥순네 몫이 사라질까 봐 봉투를 철새 우편함 꽥순네 칸에 숨겼다. 그리고 까로가 의심받는 동안 입을 다물었다."],
  ending:"오후 5시. 광장에서 스물세 집이 봄 지원금을 받았다. 확성기를 든 왕구는 맨 마지막에 한 줄을 더 읽었다. '연못가 꽥순네 몫, 우체국 보관.' 나비는 창구 뒤에서 그 소리를 들었다."
 });
@@ -38425,7 +38426,7 @@ BATTLE.envelope=[
    {t:"꽥순네 칸은 원래 잠가 두는 칸이야. 주인이 없으니까.",p:"주인 없는 편지는 우체국이 지켜.",
     pq:"원래? 그럼 어제도 잠겨 있었어?",pt:"주인이 없어서 지켜 준다는 말은 맞는 말 같아. 그런데 지키는 게 편지뿐일까."},
    {t:"그리고 내가 그 봉투를 왜 숨겨? 명단 같은 건 읽어 보지도 않았어.",p:"남의 우편을 읽지 않는 게 우체국 규칙이야.",a:["e1_letter","cx_envelope_1","e1_nabi4b"],
-    pq:"읽어 보지도 않았다고? 꽥순네가 빠진 것도 몰랐어?",pt:"규칙을 앞세울수록 수상해. 오늘 아침 7시 50분, 창구에서 도시로 나간 편지가 한 통 있었지."}],
+    pq:"읽어 보지도 않았다고? 꽥순네가 빠진 것도 몰랐어?",pt:"규칙을 앞세울수록 수상해. 오늘 아침 7시 50분, 창구에서 소인을 찍어 도시행 발송 자루에 넣은 편지가 한 통 있었지."}],
   hit:"…'지급 명단을 고쳐 주세요.' 그거, 내가 쓴 거야. 흥. …다 들켰네."}
 ];
 window.__CONF2=window.__CONF2||{};
@@ -38495,7 +38496,7 @@ DEBATE.envelope={title:"원탁 회의",sub:"보관함에서 봉투를 꺼낸 사
 
 COMBO.envelope=[
  {a:"e1_hook",b:"e1_box",name:"두 번째 열쇠",text:"예비 열쇠도 02번, 보관함 자물쇠도 02번. 왕구의 열쇠가 없어도 보관함을 열 수 있었다. 그 열쇠는 우체국 창구 서랍에 있었다."},
- {a:"e1_list",b:"e1_houses",name:"빠진 한 집",text:"집 명부엔 스물네 집, 지급 명단엔 스물세 집. 빠진 건 연못가 꽥순네다. 겨울에 집이 비어 굴뚝 기록에 오르지 않았다."},
+ {a:"e1_list",b:"e1_houses",name:"빠진 한 집",text:"집 명부엔 스물네 집, 지급 명단엔 스물세 집. 스물네 집 중 빠진 건 연못가 꽥순네다. 왜 빠졌는지는 아직 모른다."},
  {a:"e1_paw",b:"e1_ink",name:"빨간 발자국의 잉크",text:"보관함 뚜껑의 빨간 발자국은 창구 소인 잉크와 같다. 오늘 아침 창구에 있던 발이 보관함에 다녀갔다."}
 ];
 
@@ -38506,7 +38507,7 @@ TIMELINE.envelope=[
  {s:711,t:"아침",who:"nabi",loc:"post",claim:"e1_nabi4",txt:"나비: 명단은 읽지 않았다",src:["e1_nabi4"],vs:"n"},
  {s:720,t:"아침 7:20",who:"wanggu",loc:"store",txt:"왕구가 봉투를 02번 보관함에 넣고 잠금",src:["e1_wanggu1"]},
  {s:740,t:"아침 7:40",who:"karo",loc:"post",txt:"까로가 빈 받침을 보고 지급이 끝난 줄 앎",src:["e1_karo1b","e1_tray"],vs:"k"},
- {s:750,t:"아침 7:50",who:"nabi",loc:"post",txt:"창구에서 '지급 명단을 고쳐 주세요' 편지를 도시로 부침",src:["e1_letter"],vs:"n"},
+ {s:750,t:"아침 7:50",who:"nabi",loc:"post",txt:"창구에서 '지급 명단을 고쳐 주세요' 편지에 소인을 찍어 도시행 발송 자루에 넣음(마차는 내일 아침)",src:["e1_letter"],vs:"n"},
  {s:751,t:"아침 7:50~8:30",who:"karo",loc:null,place:"광장 좌판",txt:"까로가 광장 좌판에서 반짝이 마흔두 개를 닦음",src:["e1_doto3","e1_karo3"],vs:"k"},
  {s:752,t:"아침 8:00쯤",who:"wanggu",loc:"store",claim:"e1_wanggu3",txt:"왕구: 까로가 창고 높은 창문으로 날아 들어갔다",src:["e1_wanggu3"],vs:"w"},
  {s:801,t:"아침 8:01:30",who:"nabi",loc:"store",txt:"창고 옆문이 끼익 열림 (도토가 소리로 기록)",src:["e1_doto2"],vs:"n"},
@@ -38521,7 +38522,7 @@ RECON.envelope={sum:{who:"나비",what:"지원금 봉투를 보관함에서 꺼�
  {t:"아침 7:00",loc:"post",who:"karo",txt:"까로가 지원금 봉투를 창구에 넘겼다. 나비가 접수증에 서명했다."},
  {t:"아침 7:10",loc:"post",who:"nabi",txt:"나비는 봉투에 붙은 지급 명단을 읽다가 연못가 꽥순네가 빠진 걸 알았다."},
  {t:"아침 7:20",loc:"store",who:"wanggu",txt:"왕구는 나비의 말을 듣고도 '그대로 나눠'라며 봉투를 02번 보관함에 넣고 잠갔다."},
- {t:"아침 7:50",loc:"post",who:"nabi",txt:"나비는 도시 사무소에 명단을 고쳐 달라는 편지를 부쳤다. 답장은 열흘 뒤다."},
+ {t:"아침 7:50",loc:"post",who:"nabi",txt:"나비는 도시 사무소에 명단을 고쳐 달라는 편지에 소인을 찍어 발송 자루에 넣었다. 마차는 내일 아침, 답장은 열흘 뒤다."},
  {t:"아침 8:01",loc:"store",who:"nabi",txt:"나비는 창구 서랍의 예비 열쇠로 옆문을 지나 보관함을 열었다. 열쇠와 뚜껑에 소인 잉크가 묻었다."},
  {t:"아침 8:05",loc:"post",who:"nabi",txt:"봉투는 철새 우편함 꽥순네 칸에 들어갔다. 나비는 그 칸을 잠갔다."},
  {t:"아침 8:30",loc:"store",who:"wanggu",txt:"빈 보관함을 본 왕구는 광장의 까로부터 의심했고, 탐정 사무소로 달려갔다."}]};
@@ -38559,7 +38560,7 @@ Object.assign(THINK,{
  e1_tray:"받침이 비었다. 봉투는 여기서 어디로 갔지?",
  e1_hook:"창고 예비 열쇠가 우체국 서랍에 있었다. 하나뿐이라던 열쇠가 둘이 됐다.",
  e1_ink:"빨간 소인 잉크. 창구 밖으로는 안 나가는 잉크다.",
- e1_letter:"오늘 아침 도시로 나간 편지. 누가, 무슨 일로 보냈을까?",
+ e1_letter:"오늘 아침 소인을 찍어 발송 자루에 넣은 도시행 편지. 누가, 무슨 일로 썼을까?",
  e1_cubby:"다 열린 칸 사이에 혼자 잠긴 칸. 왜 하필 이 칸만?",
  e1_box:"부순 자국이 없다. 누군가 열쇠로 열었다.",
  e1_paw:"고양이만 한 발자국. 그리고 빨간색.",
@@ -38627,18 +38628,18 @@ try{if(window.__SPINE_ADD)window.__SPINE_ADD("envelope",{
   {id:"en_rcpt",title:"서명은 무엇을 확인해 줄까?",need:["e1_receipt","e1_karo1b"],open:"까로 씨에게 배달 이야기를 듣고, 접수증을 끝까지 읽어 보자.",done:"접수증은 봉투를 받았다는 것까지만 확인한다. 돈은 아직 아무에게도 가지 않았다."},
   {id:"en_key",title:"잠긴 보관함은 어떻게 열렸을까?",need:["cx_envelope_0"],open:"보관함 자물쇠를 살펴보고, 같은 번호의 열쇠가 또 있는지 찾아 나란히 놓아 보자.",done:"02번 예비 열쇠가 우체국 창구 서랍에 있었다. 왕구의 열쇠 없이도 열 수 있었다."},
   {id:"en_paw",title:"8시, 보관함에 다녀간 발은 누구?",need:["e1_doto2","cx_envelope_2"],open:"창고 앞에 있던 사람에게 소리를 물어보고, 보관함 뚜껑을 꼼꼼히 보자.",done:"8시 1분 30초에 창고 옆문이 열렸다. 뚜껑의 발자국은 창구 소인 잉크였다."},
-  {id:"en_list",title:"명단에서 빠진 집은?",need:["cx_envelope_1","e1_letter"],open:"지급 명단을 마을 집 명부와 맞춰 보자. 도시로 가는 편지도 확인하자.",done:"연못가 꽥순네가 빠졌다. 우체국 창구는 오늘 아침 명단을 고쳐 달라는 편지를 보냈다."}],
+  {id:"en_list",title:"명단에서 빠진 집은?",need:["cx_envelope_1","e1_letter"],open:"지급 명단을 마을 집 명부와 맞춰 보자. 도시로 가는 편지도 확인하자.",done:"연못가 꽥순네가 빠졌다. 우체국 창구는 오늘 아침 명단을 고쳐 달라는 편지에 소인을 찍어 발송 자루에 넣었다."}],
  beats:{
-  "ev:e1_receipt":[["det0","찾은 증거는 수첩에 남는다. 살펴볼 곳이 있는 증거는 한 번 더 눌러 자세히 봐라."],["det1","작은 글씨까지 읽으라는 거지? 작은 글씨는 원래 중요한 거야.","smug"]],
+  "ev:e1_receipt":[["det0","찾은 증거는 아래 '증거'에 모인다. 살펴볼 곳이 있는 증거는 거기서 한 번 더 눌러 자세히 봐라."],["det1","작은 글씨까지 읽으라는 거지? 작은 글씨는 원래 중요한 거야.","smug"]],
   "ask:e1_karo1":[["det1","아빠, 까로 아저씨가 '나눠 주는 데까지 끝났다'고 했어.","confused"],["det0","말이 증거와 안 맞으면 그 말을 지목하고 증거를 내밀면 된다. 접수증을 끝까지 읽었는지부터 보자."]],
   "lie:e1_karo1":[["det1","본 거랑 짐작한 거, 따로 적을게. 서명은 본 것. 지급은 짐작.","think"],["det0","그래. 봉투는 아직 마을 어딘가에 있다. 평소 어디에 두는지 왕구 씨에게 묻자."]],
-  "ev:e1_box":[["det1","자물쇠는 멀쩡해. 누가 열쇠로 연 거야.","think"],["det0","열쇠가 정말 하나뿐인지 보자. 같은 번호를 찾으면 수첩에서 둘을 '결합'해 봐라."]],
-  "ev:e1_hook":[["det1","02번 열쇠! 창고 보관함 번호랑 맞춰 봐야겠어.","happy"],["det0","수첩에서 열쇠와 보관함을 골라 '결합'하면 된다. 보관함을 아직 못 봤다면 창고부터 가자."]],
+  "ev:e1_box":[["det1","자물쇠는 멀쩡해. 누가 열쇠로 연 거야.","think"],["det0","열쇠가 정말 하나뿐인지 보자. 같은 번호를 찾으면 아래 '증거'에서 둘을 '결합'해 봐라."]],
+  "ev:e1_hook":[["det1","02번 열쇠! 창고 보관함 번호랑 맞춰 봐야겠어.","happy"],["det0","아래 '증거'를 눌러 열쇠와 보관함을 골라 '결합'하면 된다. 보관함을 아직 못 봤다면 창고부터 가자."]],
   "ask:e1_doto2":[["det1","8시 1분 30초에 끼익, 8시 4분 50초에 끼익. 3분 20초 동안 누가 창고에 있었어.","think"],["det0","누구였는지는 소리가 아니라 남은 흔적이 말해 줄 거다."]],
   "ev:e1_list":[["det1","받는 사람 서명 칸이 전부 비었어. 돈은 아직 아무도 안 받았네.","think"],["det0","집 이름도 하나씩 짚어 봐라. 마을에 집이 몇 채인지는 기록실에 있을 거다."]],
   "thread:en_list":[["det1","꽥순네만 빠졌어. 겨울에 집에 없었다고.","sad"],["det0","그리고 그걸 알고 있던 사람이 있었다. 편지 뒷면의 그 한 줄."]],
   lie1:[["det1","깼다! 말이 증거랑 부딪치니까 그대로 무너졌어.","happy"],["det0","그게 방법이다. 이상한 말을 찾으면 지목하고, 맞는 증거를 내민다."]],
-  lieAll:[["det1","이상한 말은 다 짚었어. 이제 다 같이 모여서 따져 볼 차례야.","think"],["det0","원탁 회의다. '대결'에서 모두를 불러 모으자."]]
+  lieAll:[["det1","이상한 말은 다 짚었어. 이제 다 같이 모여서 따져 볼 차례야.","think"],["det0","원탁 회의다. 아래 '증거'에서 '원탁 회의 열기'를 눌러 모두를 불러 모으자."]]
  }})}catch(e){}
 try{if(window.__ACT_ADD)window.__ACT_ADD("envelope",[
  {id:"en1",locs:["post"]},
@@ -40306,7 +40307,7 @@ LETTERS.fall={title:"검은 봉투의 지시서",body:["소나무 둥지에서 �
   [["nabi","이 방울? 비 오는 날 받았어.","shy"],["nabi","…왜 웃어.","shy"],["det1","안 웃었어. 진짜로.","happy"]]
  ]);
 
-var __M={"다들 모였지? 5시까지 일곱 시간이야!": "다 모였지?! 5시까지 일곱 시간이야!", "흥. 나는 창구만 지켰어. 나머지는 몰라.": "흥. 난 창구만 지켰어. 나머진 몰라.", "정확히 말하면, 회의 시작은 10시 12분. 기록해 둘게. (딸깍)": "정확히는요, 회의 시작 10시 12분. 적어 둘게요. (딸깍)", "부엉… 저는 기록실에서 찾은 걸 들고 왔어요.": "부엉… 저, 기록실에서 찾은 거 들고 왔어요.", "좋아. 틀린 말에는 증거를 쏘고, 맞는 말은 편들어 주자.": "좋아. 틀린 말엔 증거를 쏘고, 맞는 말은 편들어 주자.", "그건 아니야! 도토가 봤어. 까로 아저씨는 7시 50분부터 광장 좌판에서 반짝이를 닦았어.": "그건 아니야! 도토가 봤어. 까로 아저씨는 7시 50분부터 광장 좌판에 있었어.", "정확히 말하면 마흔두 개. 8시 30분까지 한 번도 안 날았어.": "정확히는요, 반짝이 마흔두 개. 8시 30분까지 한 번도 안 날았어요.", "창고 높은 창문은 안에서 걸쇠가 걸려 있었습니다. 창틀 먼지에도 자국이 없었고요.": "창고 높은 창문은 안에서 걸쇠가 걸려 있었습니다. 창틀 먼지도 그대로고요.", "그, 그래? …직접 본 건 아니긴 해. 다들 까마귀라고 해서.": "그, 그래? …직접 본 건 아니긴 해. 다들 까마귀래서.", "후후. 반짝이 마흔두 개. 하나하나 다 닦았습니다.": "후후. 마흔두 개. 하나하나 정성껏 닦았습니다.", "그건 아닙니다. 우체국 창구 서랍에 예비 열쇠가 있습니다. 번호는 02. 보관함 자물쇠와 같습니다.": "아닙니다. 우체국 창구 서랍에 예비 열쇠가 있습니다. 번호는 02. 보관함과 같습니다.", "아, 그거! 부엉이 영감님이 맡겨 둔 거! 까맣게 잊고 있었네.": "아, 그거! 부엉이 영감님이 맡겨 둔 거! 까맣게 잊고 있었네!", "그리고 그 서랍은 창구 안쪽이야. 오늘 아침 창구는 누가 지켰더라?": "그 서랍은 창구 안쪽이야. 오늘 아침 창구는 누가 지켰더라?", "그 말이 맞아! 보관함 뚜껑의 빨간 발자국은 소인 잉크야. 그 잉크는 창구에서만 써.": "그 말이 맞아! 뚜껑의 빨간 발자국은 소인 잉크야. 그 잉크는 창구에서만 써.", "오늘 아침 창구에서 소인을 찍은 사람은 한 명입니다.": "오늘 아침 창구에서 소인을 찍은 사람은… 한 명입니다.", "나비야…? 설마.": "나비야…? 서, 설마.", "모두의 생각이 한 사람에게 모였다.": "…다들 한 사람을 보고 있다.", "나비야. 이제 네 얘기를 들어야겠어.": "나비야. 이제 네 얘기 듣고 싶어.", "흥. …증거로 해 봐. 나도 할 말은 있어.": "흥. …증거로 해 봐. 나도 할 말 있어.", "서랍은 창구 손님도 들여다볼 수 있는 자리야.": "서랍은 손님도 들여다볼 수 있어. 아무나.", "아무나 볼 수 있다면서 자기는 안 열었대. 열쇠에 뭐가 남았는지부터 다시 보자.": "아무나 볼 수 있다면서 자긴 안 열었대. 열쇠 머리부터 다시 보자.", "우체국 사람은 자리를 지키는 게 일이야.": "우체국 사람은 자리 지키는 게 일이야.", "'편지가 길을 잃는다'는 핑계가 너무 매끄러워. 보관함 뚜껑에 남은 발자국은 누구 발이었지?": "'편지가 길을 잃는다.' 너무 매끄러워. 보관함 뚜껑의 발자국, 누구 발이었지?", "아까는 까로 아저씨 편도 안 들더니, 이제는 아저씨한테 넘기네. 봉투가 정말 멀리 갔다면 왜 이렇게 우체국 쪽만 피하지?": "아까는 까로 아저씨 편도 안 들더니, 이젠 떠넘기네. 그리고 자꾸 우체국 얘기만 피해.", "그럼 우체국 안은? 오늘 잠가 둔 데는 없어?": "그럼 우체국 안은? 오늘 잠가 둔 데 없어?", "전부 열려 있다는 말이 우리가 본 것과 맞을까. 철새 우편함 칸 하나가 마음에 걸려.": "전부 열려 있다고? 철새 우편함 칸 하나가 걸려.", "'다들 그렇게 말한다'는 증거가 아니야. 오늘 아침 왕구 아저씨도 그 말 때문에 헛짚었지.": "'다들 그렇게 말한다'는 증거가 아니야. 왕구 아저씨도 오늘 그 말에 헛짚었어.", "…칸 틈으로 빨간 끈이 보인다고? 빠, 빨간 끈은 우체국에도 많아!": "…칸 틈에 빨간 끈? 빠, 빨간 끈은 우체국에 많아!", "주인이 없어서 지켜 준다는 말은 맞는 말 같아. 그런데 지키는 게 편지뿐일까.": "주인이 없어서 지켜 준다. 말은 맞아. 근데 지키는 게 편지뿐일까.", "규칙을 앞세울수록 수상해. 오늘 아침 7시 50분, 창구에서 도시로 나간 편지가 한 통 있었지.": "규칙을 앞세울수록 수상해. 7시 50분, 창구에서 도시로 나간 편지가 한 통 있었지.", "하나 더 부탁드립니다. 마을 게시판에 사무소 이름을 붙여 주십시오.": "하나 더. 마을 게시판에 사무소 이름을 붙여 주십시오.", "…떡부터 세어 봐라. 두 개는 내 거다.": "…떡부터 세라. 두 개는 내 거다.", "창구 끝 받침은 텅 비었어. 봉투는 여기 있다가 어디로 갔지?": "창구 끝 받침은 텅 비었어. 봉투는 여기서 어디로 갔지?", "까마귀라서 범인이면, 너구리인 왕구 아저씨랑 아빠는 뭐가 되는데?": "까마귀라서 범인이면… 너구리 둘은 뭐가 되는데?", "…둘 다 설거지 담당이겠지.": "…설거지 담당.", "봉투가 들어온 곳, 마지막으로 있던 곳, 그 사이에 있던 사람. 이 셋부터 보자.": "봉투가 들어온 곳. 마지막에 있던 곳. 그 사이에 있던 사람. 이 셋부터 보자."};
+var __M={"다들 모였지? 5시까지 일곱 시간이야!": "다 모였지?! 5시까지 일곱 시간이야!", "흥. 나는 창구만 지켰어. 나머지는 몰라.": "흥. 난 창구만 지켰어. 나머진 몰라.", "정확히 말하면, 회의 시작은 10시 12분. 기록해 둘게. (딸깍)": "정확히는요, 회의 시작 10시 12분. 적어 둘게요. (딸깍)", "부엉… 저는 기록실에서 찾은 걸 들고 왔어요.": "부엉… 저, 기록실에서 찾은 거 들고 왔어요.", "좋아. 틀린 말에는 증거를 쏘고, 맞는 말은 편들어 주자.": "좋아. 틀린 말엔 증거를 쏘고, 맞는 말은 편들어 주자.", "그건 아니야! 도토가 봤어. 까로 아저씨는 7시 50분부터 광장 좌판에서 반짝이를 닦았어.": "그건 아니야! 도토가 봤어. 까로 아저씨는 7시 50분부터 광장 좌판에 있었어.", "정확히 말하면 마흔두 개. 8시 30분까지 한 번도 안 날았어.": "정확히는요, 반짝이 마흔두 개. 8시 30분까지 한 번도 안 날았어요.", "창고 높은 창문은 안에서 걸쇠가 걸려 있었습니다. 창틀 먼지에도 자국이 없었고요.": "창고 높은 창문은 안에서 걸쇠가 걸려 있었습니다. 창틀 먼지도 그대로고요.", "그, 그래? …직접 본 건 아니긴 해. 다들 까마귀라고 해서.": "그, 그래? …직접 본 건 아니긴 해. 다들 까마귀래서.", "후후. 반짝이 마흔두 개. 하나하나 다 닦았습니다.": "후후. 마흔두 개. 하나하나 정성껏 닦았습니다.", "그건 아닙니다. 우체국 창구 서랍에 예비 열쇠가 있습니다. 번호는 02. 보관함 자물쇠와 같습니다.": "아닙니다. 우체국 창구 서랍에 예비 열쇠가 있습니다. 번호는 02. 보관함과 같습니다.", "아, 그거! 부엉이 영감님이 맡겨 둔 거! 까맣게 잊고 있었네.": "아, 그거! 부엉이 영감님이 맡겨 둔 거! 까맣게 잊고 있었네!", "그리고 그 서랍은 창구 안쪽이야. 오늘 아침 창구는 누가 지켰더라?": "그 서랍은 창구 안쪽이야. 오늘 아침 창구는 누가 지켰더라?", "그 말이 맞아! 보관함 뚜껑의 빨간 발자국은 소인 잉크야. 그 잉크는 창구에서만 써.": "그 말이 맞아! 뚜껑의 빨간 발자국은 소인 잉크야. 그 잉크는 창구에서만 써.", "오늘 아침 창구에서 소인을 찍은 사람은 한 명입니다.": "오늘 아침 창구에서 소인을 찍은 사람은… 한 명입니다.", "나비야…? 설마.": "나비야…? 서, 설마.", "모두의 생각이 한 사람에게 모였다.": "…다들 한 사람을 보고 있다.", "나비야. 이제 네 얘기를 들어야겠어.": "나비야. 이제 네 얘기 듣고 싶어.", "흥. …증거로 해 봐. 나도 할 말은 있어.": "흥. …증거로 해 봐. 나도 할 말 있어.", "서랍은 창구 손님도 들여다볼 수 있는 자리야.": "서랍은 손님도 들여다볼 수 있어. 아무나.", "아무나 볼 수 있다면서 자기는 안 열었대. 열쇠에 뭐가 남았는지부터 다시 보자.": "아무나 볼 수 있다면서 자긴 안 열었대. 열쇠 머리부터 다시 보자.", "우체국 사람은 자리를 지키는 게 일이야.": "우체국 사람은 자리 지키는 게 일이야.", "'편지가 길을 잃는다'는 핑계가 너무 매끄러워. 보관함 뚜껑에 남은 발자국은 누구 발이었지?": "'편지가 길을 잃는다.' 너무 매끄러워. 보관함 뚜껑의 발자국, 누구 발이었지?", "아까는 까로 아저씨 편도 안 들더니, 이제는 아저씨한테 넘기네. 봉투가 정말 멀리 갔다면 왜 이렇게 우체국 쪽만 피하지?": "아까는 까로 아저씨 편도 안 들더니, 이젠 떠넘기네. 그리고 자꾸 우체국 얘기만 피해.", "그럼 우체국 안은? 오늘 잠가 둔 데는 없어?": "그럼 우체국 안은? 오늘 잠가 둔 데 없어?", "전부 열려 있다는 말이 우리가 본 것과 맞을까. 철새 우편함 칸 하나가 마음에 걸려.": "전부 열려 있다고? 철새 우편함 칸 하나가 걸려.", "'다들 그렇게 말한다'는 증거가 아니야. 오늘 아침 왕구 아저씨도 그 말 때문에 헛짚었지.": "'다들 그렇게 말한다'는 증거가 아니야. 왕구 아저씨도 오늘 그 말에 헛짚었어.", "…칸 틈으로 빨간 끈이 보인다고? 빠, 빨간 끈은 우체국에도 많아!": "…칸 틈에 빨간 끈? 빠, 빨간 끈은 우체국에 많아!", "주인이 없어서 지켜 준다는 말은 맞는 말 같아. 그런데 지키는 게 편지뿐일까.": "주인이 없어서 지켜 준다. 말은 맞아. 근데 지키는 게 편지뿐일까.", "규칙을 앞세울수록 수상해. 오늘 아침 7시 50분, 창구에서 소인을 찍어 도시행 발송 자루에 넣은 편지가 한 통 있었지.": "규칙을 앞세울수록 수상해. 7시 50분, 창구에서 소인을 찍어 도시행 발송 자루에 넣은 편지가 한 통 있었지.", "하나 더 부탁드립니다. 마을 게시판에 사무소 이름을 붙여 주십시오.": "하나 더. 마을 게시판에 사무소 이름을 붙여 주십시오.", "…떡부터 세어 봐라. 두 개는 내 거다.": "…떡부터 세라. 두 개는 내 거다.", "창구 끝 받침은 텅 비었어. 봉투는 여기 있다가 어디로 갔지?": "창구 끝 받침은 텅 비었어. 봉투는 여기서 어디로 갔지?", "까마귀라서 범인이면, 너구리인 왕구 아저씨랑 아빠는 뭐가 되는데?": "까마귀라서 범인이면… 너구리 둘은 뭐가 되는데?", "…둘 다 설거지 담당이겠지.": "…설거지 담당.", "봉투가 들어온 곳, 마지막으로 있던 곳, 그 사이에 있던 사람. 이 셋부터 보자.": "봉투가 들어온 곳. 마지막에 있던 곳. 그 사이에 있던 사람. 이 셋부터 보자."};
  RX(__M);
 
  window.__VNMISS=window.__VNMISS||{};window.__VNMISS[ID]=MISS;
@@ -44982,11 +44983,10 @@ var __M={"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열�
  try{(DEBATE.envelope.phases||[]).forEach(function(ph){(ph.stms||[]).forEach(function(st){if(!st.ok)return;
   if(st.ok[0]&&/도토가 봤어/.test(st.ok[0].t)){st.ok.splice(0,1,
    {w:"det1",t:"그건 아니야! 창고 높은 창문. 걸쇠가 안에서 걸려 있었어."},
-   {w:"doto",t:"…저기요. 정확히는요.",m:"shy"},
+   {w:"det1",t:"도토, 다 같이 듣게 다시 말해 줘.",m:"think"},
+   {w:"doto",t:"네. 정확히 말씀드릴게요.",m:"shy"},
    {w:"doto",t:"저 그때 창고 계단에 있었어요. 철새 기다리느라.",m:"shy"},
-   {w:"doto",t:"까로 아저씨는 7시 50분부터 광장 좌판에 있었어요. 한 번도 안 날았어요.",m:"shy"},
-   {w:"det1",t:"…도토, 그거 왜 이제 말해?",m:"confused"},
-   {w:"doto",t:"아무도 안 물어봤잖아요. (딸깍)",m:"happy"})}})})}catch(e){}
+   {w:"doto",t:"까로 아저씨는 7시 50분부터 광장 좌판에 있었어요. 한 번도 안 날았어요. (딸깍)",m:"shy"})}})})}catch(e){}
  var TH={
   e1_receipt:"서명은 있다. 근데 무슨 서명이지?",
   e1_tray:"받침이 비었다. 봉투는 어디로 갔지?",
@@ -45049,7 +45049,7 @@ var __M={"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열�
 
  c.hints=["접수증 서명 위에 작은 글씨가 있어요. 그 서명이 확인해 주는 건 어디까지일까요?",
   "'열쇠는 하나뿐'이라는 말, 누가 확인했나요? 우체국 창구 쪽도 뒤져 보세요.",
-  "지급 명단의 집 수를 마을의 다른 기록과 세어 맞춰 보세요. 그리고 오늘 아침 우체국에서 나간 편지가 한 통 있어요."];
+  "지급 명단의 집 수를 마을의 다른 기록과 세어 맞춰 보세요. 그리고 오늘 아침 7시 50분에 우체국 창구에서 소인을 찍어 발송 자루에 넣은 편지가 한 통 있어요."];
  IH(["본 것과 짐작한 것은 따로 적자. 누가 뭘 '직접' 봤지?",
   "'하나뿐'이라는 말은 누가 했더라. 그 사람이 다 알 수 있는 자리였나?",
   "명단에 적힌 숫자, 마을 어디서 또 셀 수 있을까?"]);
@@ -45060,7 +45060,7 @@ var __M={"규정상, 회의를 시작하겠습니다. 등불은 꺼졌고, 열�
   "아무나 볼 수 있다면서 자긴 안 열었대. 열쇠 머리부터 다시 보자.":"아무나 볼 수 있다면서 자긴 안 열었대. 그 서랍 속 열쇠, 깨끗했던가?",
   "'편지가 길을 잃는다.' 너무 매끄러워. 보관함 뚜껑의 발자국, 누구 발이었지?":"'편지가 길을 잃는다.' 너무 매끄러워. 오늘 아침 창고엔 흔적이 하나 남아 있었는데.",
   "전부 열려 있다고? 철새 우편함 칸 하나가 걸려.":"전부? 정말 전부였나.",
-  "규칙을 앞세울수록 수상해. 7시 50분, 창구에서 도시로 나간 편지가 한 통 있었지.":"규칙을 앞세울수록 수상해. 오늘 아침 창구는 누구한테 편지를 썼을까."
+  "규칙을 앞세울수록 수상해. 7시 50분, 창구에서 소인을 찍어 도시행 발송 자루에 넣은 편지가 한 통 있었지.":"규칙을 앞세울수록 수상해. 오늘 아침 창구는 누구한테 편지를 썼을까."
  });
 
  OBS("post",{id:"o_e1_perch",name:"창구 밖 횃대",x:290,y:36,text:"창구 밖 나무 횃대. 까만 깃털 한 가닥이 걸려 있다. 반들반들하다."});
@@ -46621,7 +46621,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   return '<svg class="nodot" viewBox="0 0 100 101" aria-hidden="true"><g id="an-'+k+'-'+e+'"><image x="0" y="0" width="100" height="101" preserveAspectRatio="xMidYMax meet" href="'+fsrc(k,e)+V+'"/></g></svg>'}
   return _pf.apply(this,arguments)};
  try{var _vf=vnFigure;vnFigure=function(l){var w=l&&l.who;if(w==="det"||w==="think")w=(l.name&&S.players[1]!==S.players[0]&&l.name.indexOf(S.players[1])===0)?"det1":"det0";
-  if(w==="det0"){var c=(typeof G!=="undefined"&&G&&CASES[G.ci])?CASES[G.ci].id:"";if(c!=="fall")return ""}
+  if(w==="det0")return "";   /* v202 아빠는 플레이어: 어느 장(2장 포함)에서도 대사창에 아빠 얼굴을 그리지 않음 */
   return _vf.apply(this,arguments)}}catch(e){}
  try{var _ld=lineData;lineData=function(l){if(l&&l[0]==="det1"&&(/^(happy|smile|smug)?$/.test(String(l[2]||""))&&/하하|헤헤|히히|푸하|깔깔|ㅎㅎ|ㅋㅋ/.test(String(l[1]||""))||l[2]==="happy"&&/!\s*$/.test(String(l[1]||"")))){l=l.slice();l[2]="laugh"}return _ld.call(this,l)}}catch(e){}
 
@@ -46920,13 +46920,6 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    try{goTab("final")}catch(e){G.tab="final";render()}
    if(bt.dataset.cr199==="meet")setTimeout(function(){var g=document.getElementById("rtgo");if(g)g.click()},60)}}
 
- try{var _sl=showLine;showLine=function(){var raw=DL&&DL.lines&&DL.lines[DL.i];
-   if(raw&&raw[0]==="det1"){DL.__d1=String(raw[2]||"")}
-   var r=_sl.apply(this,arguments);
-   try{if(DL&&DL.lastWho==="det0"&&DL.__d1!=null&&!DL.stageWho){var vf=document.getElementById("vnfig");
-     if(vf&&vf.hidden){var key="det1|"+DL.__d1;if(vf.dataset.k!==key){vf.innerHTML=pf("det1",DL.__d1);vf.dataset.k=key;vf.dataset.w="det1"}vf.hidden=false;vf.classList.add("dim");vf.dataset.keep199="1"}}
-    else{var v2=document.getElementById("vnfig");if(v2&&v2.dataset.keep199&&DL&&!DL.stageWho&&DL.lastWho!=="det0"){delete v2.dataset.keep199}}}catch(e){}
-   return r}}catch(e){}
 
  var hold=null,FXB=250;
  window.__fxTaps=0;window.__fxEaten=0;
@@ -46952,6 +46945,122 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
 
  function run(){try{paginate()}catch(e){}try{recFoot()}catch(e){}}
  try{new MutationObserver(function(){if(run.t)return;run.t=setTimeout(function(){run.t=0;run()},40)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
+})();
+
+(function(){
+ if(window.__pov202)return;
+ var V="?v=202";
+ var EMO={
+  det1:"smug tense claim",                             /* 수첩을 높이 내미는 자신 있는 주장·발견(분노 아님). 느낌표로 끝나는 기쁨 대사도 여기 */
+  papa:"sad worried",
+  rei:"pout sad angry cry",                          /* 팔짱 낀 삐침 */
+  karo:"nervous shock worried sad panic scared",     /* 가방을 움켜쥔 걱정(기본은 가방 잡은 여유) */
+  buri:"nervous worried sad cry",
+  wanggu:"nervous sad worried embarrassed cry shy",  /* 가슴 앞 손 모은 불안(기본은 크게 웃으며 손 허리) */
+  doto:"sad shy nervous worried cry embarrassed",    /* 수첩 안고 고개 내린 수줍음(기본은 수첩·시계 든 또렷함) */
+  kkwak:"sad shy nervous worried cry",
+  kongi:"sad nervous worried shy",
+  owlgp:"happy smile",                               /* 등불을 들어 올림 */
+  grandma:"happy smile laugh",                       /* 눈 감고 웃음 */
+  nabi:"sad shy nervous worried cry embarrassed",    /* 귀·어깨 내리고 손 모은 위축(기본은 손 뒤로, 생각은 팔짱+턱) */
+  shadow:"sad nervous",
+  bami:"sad shy worried nervous",
+  ppul:"nervous embarrassed worried sad",            /* 머리에 손 */
+  seol:"sad worried nervous shy",
+  sling:"happy smug embarrassed laugh smile",        /* 머리 긁으며 웃음 */
+  tok:"nervous worried shock embarrassed",           /* 이마에 손 */
+  nero:"smug angry",
+  momo:"sad shy worried nervous",
+  yeoni:"shock nervous worried sad embarrassed",     /* 입 가림 */
+  piko:"shy sad embarrassed nervous",                /* 날개로 얼굴 가림 */
+  ttadak:"shy embarrassed nervous",
+  mungchi:"sad nervous worried",
+  bori:"happy shy smile",                            /* 꿀단지 안고 웃음 */
+  madam:"angry smug pout tense",                     /* 팔짱 */
+  siluk:"sad worried nervous",
+  nubi:"shock angry panic",                          /* 두 팔 벌림 */
+  musoe:"sad cry worried",                           /* 주저앉음 */
+  seori:"shock nervous embarrassed worried",
+  somi:"smug happy angry",                           /* 망토 펼침 */
+  ubak:"sad shy worried",
+  guseul:"shock nervous panic",                      /* 놀라 뒤로 */
+  lamplighter:"happy smile",
+  badook:"embarrassed nervous shy",
+  eunho:"angry pout smug",
+  tori:"nervous worried sad shy",
+  mom:"happy smile smug",
+  luka:"angry smug pout tense"
+ };
+ var BODY={};Object.keys(EMO).forEach(function(k){BODY[k]=EMO[k].split(" ")});
+ var THINK=["think","confused","doubt","huh"];
+ function mood0(m){return String(m||"").split(/\s+/)[0]}
+ function pose(k,mood){var b=BODY[k];if(!b)return 0;var m=mood0(mood);if(THINK.indexOf(m)>=0)return 1;if(b.indexOf(m)>=0)return 2;return 0}
+ function on(k){return !!BODY[k]&&k!=="papa"&&k!=="det0"&&!document.body.classList.contains("ds-mc")}
+ function src(k,p){return "art/body/"+k+"-"+p+".png"+V}
+ function img(k,mood){var p=pose(k,mood);return '<img class="b202" src="'+src(k,p)+'" alt="" draggable="false" data-k="'+k+'" data-pose="'+p+'">'}
+ window.__bodyOn=on;window.__bodyPose=pose;window.__BODY202=BODY;
+ window.__stageFig=function(k,mood){return on(k)?img(k,mood):pf(k,mood)};
+ try{["det1","nabi","wanggu","karo","doto","buri"].forEach(function(k){[0,1,2].forEach(function(p){var im=new Image();im.src=src(k,p)})})}catch(e){}
+
+ window.__pov202=function(l){if(!DL)return;
+  if(l.who==="det1"){DL.stageWho="det1";var m=mood0(l.mood);
+   DL.stageMood=((m==="happy"||m==="laugh")&&/!\s*$/.test(String(l.txt||"")))?"claim":(l.mood||"");return}
+  if(DL.stageWho)return;
+  for(var q=DL.i;q<DL.lines.length;q++){var L=DL.lines[q],w=L&&L[0];
+   if(w&&CAST[w]&&w!=="det0"){DL.stageWho=w;DL.stageMood=L[2]||"";return}
+   if(w==="narr"&&L[3]&&CAST[L[3]]&&L[3]!=="det0"){DL.stageWho=L[3];DL.stageMood=L[2]||"";return}}};
+ window.__inset202=function(){return ""};
+
+ function talkFig(){try{var tf=document.querySelector(".fstalk .tstage .tfig");if(!tf||typeof G==="undefined"||!G||!G.who)return;var k=G.who;
+   if(!on(k)){tf.classList.remove("b202");return}
+   var m=(DL&&DL.stageWho===k)?(DL.stageMood||""):(function(){try{return moodOf(CASES[G.ci],k)}catch(e){return ""}})();
+   var p=pose(k,m),cur=tf.querySelector("img.b202");
+   if(cur&&cur.dataset.k===k){if(cur.dataset.pose!==String(p)){cur.src=src(k,p);cur.dataset.pose=p}}
+   else{tf.innerHTML=img(k,m)}
+   tf.classList.add("b202")}catch(e){}}
+ try{var _rt=renderTalk;renderTalk=function(c){var h=_rt.apply(this,arguments);try{if(G&&on(G.who))h=h.replace(/(<div class="tfig[^"]*)(">)[\s\S]*?(<\/div><span class="tname">)/,function(m,a,b,d){return a+' b202'+b+img(G.who,moodOf(c,G.who))+d})}catch(e){}return h}}catch(e){}
+ try{var _sl=showLine;showLine=function(){var r=_sl.apply(this,arguments);talkFig();return r}}catch(e){}
+ try{var _r=render;render=function(){var r=_r.apply(this,arguments);talkFig();return r}}catch(e){}
+
+ try{var _nf=npcFig;npcFig=function(k,mood){if(k==="det1"||k==="det0"){var f=k==="det1"?"det1":"papa",p=k==="det1"?pose("det1",mood):(THINK.indexOf(mood0(mood))>=0?1:0);
+   return '<svg class="fig b202f" viewBox="-8 -4 116 164" aria-hidden="true"><image x="-8" y="-4" width="116" height="164" preserveAspectRatio="xMidYMax meet" href="'+src(f,p)+'" style="image-rendering:pixelated"/></svg>'}
+  return _nf.apply(this,arguments)}}catch(e){}
+
+ function claim(k,m,t){m=mood0(m);return (k==="det1"&&(m==="happy"||m==="laugh")&&/!\s*$/.test(String(t||"")))?"claim":m}
+ window.__sbFocus=function(el,st,pages,speaker){var STG=el.querySelector("#sbstage");if(!STG)return;
+  var f=st.focus,m=st.focus?claim(st.focus,st.fmood,st.ftxt):"";
+  if(!f){var pg=pages[st.p],L=(pg&&pg.lines)||[];for(var q=0;q<L.length;q++){var w=L[q]&&L[q][0];if(w&&CAST[w]&&w!=="det0"){f=w;break}}}
+  var box=el.querySelector("#sbfocus");
+  if(!f||!on(f)){if(box)box.remove();el.classList.remove("sbf");return}
+  if(!box){box=document.createElement("div");box.id="sbfocus";STG.appendChild(box)}
+  var p=pose(f,m),key=f+"|"+p;
+  if(box.dataset.k!==key){var nw=box.dataset.w!==f;box.innerHTML='<img class="b202" src="'+src(f,p)+'" alt="" draggable="false" data-k="'+f+'" data-pose="'+p+'">';box.dataset.k=key;box.dataset.w=f;
+   if(nw){box.classList.remove("in");void box.offsetWidth;box.classList.add("in")}}
+  box.classList.toggle("dim",!!speaker&&speaker!==f);el.classList.add("sbf");
+  try{var sr=STG.getBoundingClientRect(),bx=el.querySelector("#sbtext"),br=bx?bx.getBoundingClientRect():{top:sr.bottom-180};
+   var bottom=Math.max(0,sr.bottom-br.top-26),h=Math.max(160,Math.min(460,br.top+26-sr.top-70,innerWidth*0.92));
+   box.style.cssText="position:absolute;left:0;right:0;bottom:"+bottom+"px;height:"+Math.round(h)+"px;z-index:4;pointer-events:none"}catch(e){}};
+
+ window.__openLook=function(){};
+
+ var GEO="left:0!important;right:0!important;width:100%!important;top:auto!important;transform:none!important;bottom:calc(var(--fsb,0px) + var(--pH,190px) - 26px)!important;height:min(clamp(190px,calc(100svh - var(--pH,190px) - var(--fsb,0px) - 140px),460px),92vw,calc(100% - var(--pH,190px) - var(--fsb,0px) + 18px))!important";
+ var IMG="display:block;position:absolute;left:50%;bottom:0;height:100%;width:auto;max-width:none;margin:0;image-rendering:pixelated;filter:drop-shadow(0 0 1.5px rgba(255,255,255,.7)) drop-shadow(0 6px 0 rgba(0,0,0,.35));animation:none!important;transform:translateX(-50%)!important";
+ var css=[
+  "#dlgveil #vnfig.b202{"+GEO+"}",
+  "#dlgveil #vnfig.b202 img.b202{"+IMG+"}",
+  "#dlgveil #vnfig.b202.dim{filter:none!important}",
+  "#dlgveil #vnfig.b202.dim img.b202{filter:brightness(.9) drop-shadow(0 0 1.5px rgba(255,255,255,.5)) drop-shadow(0 6px 0 rgba(0,0,0,.3))}",
+  "html body .fstalk .tstage .tfig.b202{position:absolute!important;"+GEO+";overflow:visible}",
+  "html body .fstalk .tstage .tfig.b202 img.b202{"+IMG+"}",
+  "#sbfocus img.b202{"+IMG+"}",
+  "#sbfocus.dim img.b202{filter:brightness(.9) drop-shadow(0 0 1.5px rgba(255,255,255,.5)) drop-shadow(0 6px 0 rgba(0,0,0,.3))}",
+  "#sbfocus.in img.b202{animation:f202in .28s ease-out!important}",
+  "@keyframes f202in{from{opacity:0;transform:translateX(-50%) translateY(14px)}to{opacity:1;transform:translateX(-50%)}}",
+  ".sbook2.sbf .sb2cast{visibility:hidden}",
+  "#detlook{display:none!important}"
+ ].join("\n");
+ function put(){var t=document.getElementById("pov202css");if(!t){t=document.createElement("style");t.id="pov202css";t.textContent=css}(document.body||document.head).appendChild(t)}
+ put();window.addEventListener("load",put);document.addEventListener("DOMContentLoaded",put);
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
