@@ -47161,6 +47161,70 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  if(MISS.length)try{console.warn("story204 miss",MISS)}catch(e){}
 })();
 
+(function(){
+ var MISS=window.__U207MISS=[];
+ function cur(){try{return (typeof G!=="undefined"&&G&&S.screen==="case")?CASES[G.ci]:null}catch(e){return null}}
+ function on(c){return !!(c&&c.id==="envelope")}
+ function here(c,lid){return ((c.ppl&&c.ppl[lid])||[]).map(function(q){return q[0]}).filter(function(k){return !!CAST[k]})}
+ function pend(c,k){try{return !!(c.talk[k]&&visibleTalk(c,k).some(function(t){return G.asked.indexOf(t.id)<0}))}catch(e){return false}}
+ function met(c,k){try{var m=window.__metOf?window.__metOf(c):null;return !m||m.indexOf(k)>=0}catch(e){return true}}
+ function open(c,k){try{return visibleTalk(c,k).filter(function(t){return t.q!==""&&G.asked.indexOf(t.id)<0}).map(function(t){return t.id})}catch(e){return []}}
+
+ try{var E=window.__EVI;if(E&&E.byId&&E.icons){
+  [["e1_cubby","lock"],["e1_winter","stove"],["e1_damage","snow"]].forEach(function(p){if(E.icons[p[1]])E.byId[p[0]]=p[1];else MISS.push("icon "+p[1])})
+ }else MISS.push("EVI")}catch(e){MISS.push("EVI "+e.message)}
+
+ var css=document.createElement("style");css.id="u207css";
+ css.textContent=
+  '.fsmap .mvf207{position:absolute;inset:0;pointer-events:none;z-index:4}'+
+  '.fsmap .mvf207 .row{position:absolute;display:flex;gap:9px;transform:translateX(-50%);white-space:nowrap}'+
+  '.fsmap .mvf207 button{pointer-events:auto;position:relative;display:inline-flex;align-items:center;gap:3px;height:28px;min-width:44px;padding:0 9px 0 2px!important;margin:0;border:2px solid #2A2F45!important;border-radius:999px!important;background:#FFFCF3!important;box-shadow:none!important;color:#2A2F45;font-family:Jua,var(--display),sans-serif;font-size:13px;line-height:1;cursor:pointer}'+
+  '.fsmap .mvf207 button>svg{width:22px!important;height:22px!important;flex:none;border-radius:50%;background:#F3E6CB;overflow:hidden;clip-path:circle(50%)}'+
+  '.fsmap .mvf207 button i{position:absolute;top:-7px;right:-6px;width:16px;height:16px;border-radius:50% 50% 50% 4px;background:#FFD84D;color:#1B2447;border:2px solid #1B2447;font:700 10px/12px var(--display,sans-serif);font-style:normal;text-align:center}';
+ (document.head||document.documentElement).appendChild(css);
+ function faces(){try{
+  var c=cur();if(!on(c)||G.tab!=="move")return;var fm=document.querySelector(".fsmap"),sv=fm&&fm.querySelector("svg");if(!fm||!sv||!sv.getScreenCTM)return;
+  var old=fm.querySelector(".mvf207");if(old)old.remove();
+  var M=sv.getScreenCTM(),fr=fm.getBoundingClientRect(),pt=sv.createSVGPoint(),h="";if(!M)return;
+  c.locations.forEach(function(l,i){
+   if(!locOpen(c,i))return;var ks=here(c,l.id);if(!ks.length)return;
+   var p=mapP(c,i);pt.x=p[0];pt.y=p[1]+60;var s=pt.matrixTransform(M);
+   h+='<div class="row" style="left:'+Math.round(s.x-fr.left)+'px;top:'+Math.round(s.y-fr.top+3)+'px">'+ks.map(function(k){
+    var nm=CAST[k].name,q=pend(c,k);
+    return '<button type="button" data-mvf="'+i+'" aria-label="'+esc(l.name)+'에 있는 '+esc(nm)+(q?' · 물어볼 말 있음':'')+'">'+pf(k,"")+'<span>'+esc(nm)+'</span>'+(q?'<i aria-hidden="true">?</i>':'')+'</button>'}).join("")+'</div>'});
+  if(!h)return;
+  fm.insertAdjacentHTML("beforeend",'<div class="mvf207">'+h+'</div>');
+  fm.querySelectorAll("[data-mvf]").forEach(function(b){b.onclick=function(e){e.stopPropagation();var g=fm.querySelector('g.mvp[data-mvp="'+b.dataset.mvf+'"]');
+   if(g)g.dispatchEvent(new MouseEvent("click",{bubbles:true}))}});
+  fm.querySelectorAll(".mvf207 .row").forEach(function(r){var b=r.getBoundingClientRect(),dx=0;if(b.left<fr.left+4)dx=fr.left+4-b.left;else if(b.right>fr.right-4)dx=fr.right-4-b.right;if(dx)r.style.left=(parseFloat(r.style.left)+dx)+"px"});
+ }catch(e){MISS.push("faces "+e.message)}}
+ try{var _r=render;render=function(){var r=_r.apply(this,arguments);faces();return r}}catch(e){MISS.push("render")}
+ window.addEventListener("resize",function(){setTimeout(faces,0)});
+
+ var SNAP={},REV=null;
+ try{var _mt=moveTo;moveTo=function(c,i){try{if(on(c)&&G&&!MOVING&&G.loc!==i&&locOpen(c,i)){
+   var from=c.locations[G.loc],qs=[];if(from)here(c,from.id).forEach(function(k){qs=qs.concat(open(c,k))});if(from)SNAP[from.id]=qs;
+   REV={name:c.locations[i].name,rev:(G.visited||[]).indexOf(i)>=0,lid:c.locations[i].id}}}catch(e){}
+  return _mt.apply(this,arguments)}}catch(e){MISS.push("moveTo")}
+ function hint(c,lid){var nw=[],left=[],fresh=[],sn=SNAP[lid];
+  here(c,lid).forEach(function(k){var nm=CAST[k].name;
+   if(!met(c,k)){fresh.push(nm);return}
+   var o=open(c,k);if(!o.length)return;
+   if(sn&&o.some(function(id){return sn.indexOf(id)<0}))nw.push(nm);else left.push(nm)});
+  var a=[];if(fresh.length)a.push("처음 만날 주민: "+fresh.join(", "));if(nw.length)a.push("새로 물어볼 말: "+nw.join(", "));if(left.length)a.push("남은 질문: "+left.join(", "));
+  return a}
+ try{var _pc=placeCard;placeCard=function(name,sub){var r=_pc.apply(this,arguments);try{
+   var c=cur(),v=REV;REV=null;if(!on(c)||!v||!v.rev||v.name!==name)return r;
+   var t=hint(c,v.lid);if(!t.length)return r;
+   var cards=document.querySelectorAll(".placecard"),d=cards[cards.length-1];if(!d)return r;
+   var n=document.createElement("div");n.className="placecard rv207on";n.innerHTML=d.innerHTML+t.map(function(x){return '<em class="rv207">'+esc(x)+'</em>'}).join("");
+   d.remove();document.body.appendChild(n);setTimeout(function(){try{n.remove()}catch(e){}},2300)}catch(e){}return r}}catch(e){MISS.push("placeCard")}
+ var css2=document.createElement("style");
+ css2.textContent='.placecard.rv207on{animation-duration:2.3s;width:max-content;max-width:calc(100vw - 32px);box-sizing:border-box;padding-left:18px;padding-right:18px}.placecard.rv207on b{word-break:keep-all}.placecard .rv207{display:block;margin-top:4px;font-style:normal;font-size:14px;line-height:1.35;color:#FFE6A0;word-break:keep-all}.placecard .rv207:first-of-type{margin-top:8px}';
+ (document.head||document.documentElement).appendChild(css2);
+ if(MISS.length)try{console.warn("ui207 miss",MISS)}catch(e){}
+})();
+
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
 if(window.claude&&window.claude.hot){try{window.claude.hot.snapshot(function(){return {S:S,G:G}})}catch(e){}}
