@@ -1,39 +1,37 @@
-# 다람 탐정 사무소
+# 다람탐정
 
-아이와 함께 푸는 동물 마을 추리 게임. 역전재판처럼 증언과 증거를 모으고, 결합하고, 제때 내밀어 거짓말을 깨뜨린다.
+아이와 함께 푸는 동물 마을 추리 게임.
+
+지금 main은 **1장 「열세 번째 침대」 테스트판**이다(가로 화면, 고정 성공 경로).
+기존 게임(세로 `game.html`, `chapter-one/` 등)은 `archive/legacy-20261008` 브랜치에 보관했다 — 복구는 `docs/LEGACY_RESTORE.md`.
 
 ## 실행
 
 - 웹: `https://kkhkkh20-bit.github.io/daaegame/`
-- 앱 설치(PWA)
-  - PC(크롬·엣지): 주소창 오른쪽의 설치 아이콘, 또는 메뉴 > 앱 설치
-  - 안드로이드: 크롬 메뉴 > 홈 화면에 추가
-  - 아이폰: 사파리 공유 버튼 > 홈 화면에 추가
-- 설치하면 오프라인에서도 실행된다. PC에서는 세로 화면으로 고정된다.
+- 가로 화면 기준(844×390, 640×360에서 검수). 진행 기록은 브라우저 저장소의 `daae-inn1:` 키에 따로 남는다.
 
 ## 파일
 
-| 파일 | 역할 |
+| 경로 | 역할 |
 | --- | --- |
-| `game.html` | 게임 본체(단일 파일) |
-| `index.html` | PWA 껍데기. 넓은 화면에서 게임을 세로 비율로 고정 |
-| `manifest.webmanifest` | 앱 이름, 아이콘, 세로 방향 |
-| `sw.js` | 오프라인 캐시. `game.html`을 바꾸면 `VERSION`을 올린다 |
-| `icons/` | 앱 아이콘 |
+| `index.html` | 1장 테스트판(빌드 결과, 단일 파일) |
+| `art/` | 게임 그림(배경·인물·증거·지도) |
+| `ch1/src/ep1_inn_script.js` | 1장 대본·증거·회의·최종 대결·후일담 데이터. 대본 교체는 이 파일 |
+| `ch1/src/ep1_inn.js` | 대본 데이터를 엔진에 연결(조사 조건, 프롤로그·후일담 진행, 실패 재개) |
+| `ch1/src/rtg_inn.js` | 원탁 회의·최종 대결 판정 확장 |
+| `ch1/src/worldmap.js` | 전체 지도(승인 시안 v1) |
+| `ch1/src/wide209_J.js`, `inn_early.js` | 가로 화면 구성, 저장 분리 |
+| `ch1/build/build.py` | `base-engine.html` + `ch1/src` → `index.html` |
+| `ch1/STATUS.txt` | 구현 규칙, 실제 검수 결과(1장 완료 규칙 20항목 대조), 남은 일 |
+| `ch1/qa/` | 실제 탭 완주 로그와 캡처 |
+| `ch1/tests/` | 완주·배치 검사 스크립트(Playwright, 경로는 작업 환경 기준) |
+| `sw.js`, `manifest.webmanifest`, `icons/` | 오프라인 캐시와 앱 설치 정보. `index.html`을 바꾸면 `sw.js`의 `VERSION`을 올린다 |
+| `design/`, `docs/` | 디자인 자료와 문서 |
+| `tools/` | 기존 게임(`game.html`)용 개발 도구. 보관 브랜치와 함께 쓴다 |
 
-진행 기록은 브라우저 저장소에 남는다. 주소(도메인)가 다르면 기록도 따로다.
+## 빌드
 
-## 개발 도구 (`tools/`)
-
-게임 본체는 `game.html` 한 파일이다. 새 사건이나 수정은 별도 JS 파일로 작성해 끼워 넣고, 아래 도구로 검사한다. 도구 안의 경로는 작업 환경 기준(`/home/claude/daae`)이라 쓰기 전에 맞춰 바꾼다.
-
-| 도구 | 역할 |
-| --- | --- |
-| `mkTest.py` | 테스트용 빌드(검사용 훅 추가) |
-| `build_with.py` | 새 사건 파일을 끼워 넣은 테스트 빌드 |
-| `validate.js` | 데이터 무결성과 해결 가능성 검사 |
-| `autoplay.js` | 모든 사건을 자동으로 끝까지 풀어 보기 |
-| `shot.js`, `flavshot.js` | 장면 그림과 클릭 위치 확인용 캡처 |
-| `dumpstory.js` | 모든 대사와 설명을 사건별 텍스트로 뽑기(일관성 검토용) |
-
-새 사건 작성 규칙은 `docs/CHAPTER_GUIDE.md`를 따른다.
+```sh
+python ch1/build/build.py                 # index.html 생성
+python ch1/build/build.py --test /tmp/t.html   # 검사용(window.__T 훅). 공개 경로에 두지 않는다
+```
