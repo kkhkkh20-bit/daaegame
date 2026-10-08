@@ -1,9 +1,9 @@
-// 다람 탐정 사무소 service worker
-// Bump VERSION whenever game.html changes so installed apps pick up the new build.
-const VERSION = "v209";
+// 다람탐정 service worker
+// index.html(1장 테스트판)이 바뀌면 VERSION을 올린다. 옛 캐시(daae-core-v*)는 activate에서 지운다.
+const VERSION = "ch1-test-1";
 const CORE = "daae-core-" + VERSION;
 const FONTS = "daae-fonts";
-const FILES = ["./", "index.html", "game.html", "manifest.webmanifest",
+const FILES = ["./", "index.html", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "icons/apple-180.png",
   "art/ui/wood-tile.png", "art/ui/books-stack.png", "art/ui/cat-sleeping.png", "art/ui/ink-quill.png", "art/ui/ivy-left.png", "art/ui/ivy-right.png", "art/ui/lantern-lit.png", "art/ui/magnifier.png", "art/ui/masking-tape.png", "art/ui/memo-white.png", "art/ui/memo-yellow.png", "art/ui/pin-blue.png", "art/ui/pin-green.png", "art/ui/pin-red.png", "art/ui/pin-yellow.png"];
 
