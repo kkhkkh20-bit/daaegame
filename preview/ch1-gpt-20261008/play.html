@@ -32083,8 +32083,8 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
   if(L.cur){fadeOut(L.cur,key?XF:.6);L.cur=null}
   A.cur=key||null;if(!key||!a)return;
   var s=songOf(key);if(!s){A.cur=null;return}
-  var t0=a.currentTime+.08,I=Inst(a,key,s,L.bus,L.wet,t0);
-  I.g.gain.setValueAtTime(.0001,t0);I.g.gain.exponentialRampToValueAtTime(s.vol||1,t0+(L.old.length?.9:.35));
+  var t0=a.currentTime+(L.sceneStart?.005:.08),I=Inst(a,key,s,L.bus,L.wet,t0);
+  I.g.gain.setValueAtTime(.0001,t0);I.g.gain.exponentialRampToValueAtTime(s.vol||1,t0+(L.sceneStart?.012:(L.old.length?.9:.35)));
   L.cur=I;lg("play "+key);startTimer()}
  function fadeOut(I,dur){var a=I.ctx,t=a.currentTime;I.stopAt=t+dur;try{I.g.gain.cancelScheduledValues(t);I.g.gain.setValueAtTime(Math.max(.0001,I.g.gain.value),t);I.g.gain.exponentialRampToValueAtTime(.0001,t+dur);I.w.gain.setTargetAtTime(0,t+dur*.6,.2)}catch(e){}
   L.old.push(I);setTimeout(function(){instKill(I);var k=L.old.indexOf(I);if(k>=0)L.old.splice(k,1)},(dur+2.6)*1000)}
@@ -32154,7 +32154,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
  function duckNow(force){var d=1;
   try{if(window.speechSynthesis&&speechSynthesis.speaking)d=.38}catch(e){}
   if(d===1){if(DL)d=.62;else if(q(".sbook"))d=.85;else if(q(".modal,.zoomv"))d=.72;else if(q(".rt .rt-mid.talk"))d=.8}
-  A.duck=d;if(!L.bus||!L.ctx)return;if(!force&&Math.abs(d-lastDuck)<.01)return;lastDuck=d;
+  if(window.__innAudioHold)d=0;A.duck=d;if(!L.bus||!L.ctx)return;if(!force&&Math.abs(d-lastDuck)<.01)return;lastDuck=d;
   try{L.bus.gain.setTargetAtTime(MBASE*MUSV*d,L.ctx.currentTime,.25)}catch(e){}}
 
  var TRIM={impact:.6,heart:.55,lock:.6,unlock:.72,knock:.75,crash:.75,gavel:.8,gulp:.7,confetti:.7,slam:.85,hold:.85,cutin:.85,stamp:.85};
@@ -32255,7 +32255,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
    duckNow(false);
   }catch(e){lg("err "+e.message)}}
  A.tick=tick;
- A.sceneGate=function(hold){window.__innAudioHold=!!hold;if(hold){stopTimer();if(L.cur){instKill(L.cur);L.cur=null}L.old.forEach(instKill);L.old=[];A.cur=null;A.want=null;if(L.bus){L.bus.gain.cancelScheduledValues(L.ctx.currentTime);L.bus.gain.setValueAtTime(0,L.ctx.currentTime)}}else{A.hush=null;tick();duckNow(true)}};
+ A.sceneGate=function(hold){window.__innAudioHold=!!hold;if(hold){stopTimer();if(L.cur){instKill(L.cur);L.cur=null}L.old.forEach(instKill);L.old=[];A.cur=null;A.want=null;if(L.bus){L.bus.gain.cancelScheduledValues(L.ctx.currentTime);L.bus.gain.setValueAtTime(0,L.ctx.currentTime)}}else{A.hush=null;L.sceneStart=true;try{tick();duckNow(true);if(L.bus){L.bus.gain.cancelScheduledValues(L.ctx.currentTime);L.bus.gain.setValueAtTime(MBASE*MUSV*A.duck,L.ctx.currentTime)}}finally{L.sceneStart=false}}};
  setInterval(function(){if(document.hidden)return;tick();if(!AC||!S.sound)return;try{scanText();scanRt();scanOverlays()}catch(e){}},220);
  document.addEventListener("visibilitychange",function(){if(document.hidden){stopTimer();try{if(AC&&AC.state==="running")AC.suspend()}catch(e){}}else{setTimeout(function(){if(L.cur||L.old.length)startTimer();tick()},120)}});
  window.addEventListener("pagehide",stopTimer);
