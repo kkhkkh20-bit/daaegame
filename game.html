@@ -47222,6 +47222,18 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  var css2=document.createElement("style");
  css2.textContent='.placecard.rv207on{animation-duration:2.3s;width:max-content;max-width:calc(100vw - 32px);box-sizing:border-box;padding-left:18px;padding-right:18px}.placecard.rv207on b{word-break:keep-all}.placecard .rv207{display:block;margin-top:4px;font-style:normal;font-size:14px;line-height:1.35;color:#FFE6A0;word-break:keep-all}.placecard .rv207:first-of-type{margin-top:8px}';
  (document.head||document.documentElement).appendChild(css2);
+ var MG=window.__mg207={mapDown:0,T:0,until:0,cap:0,eaten:0},eat=false,eatUntil=0,prevTab=null;
+ function isMap(t){return !!(t&&t.closest&&t.closest(".fsmap"))}
+ function mark(){var now=Date.now();if(now-MG.mapDown<1500){MG.T=now;MG.until=now+400;MG.cap=now+1200}}
+ try{var _r2=render;render=function(){var was=prevTab,arr=false;try{arr=!!(G&&G.arrive)}catch(e){}
+   var r=_r2.apply(this,arguments);try{prevTab=G?G.tab:null;if(G&&G.tab==="scene"&&(arr||was==="move"))mark()}catch(e){}return r}}catch(e){MISS.push("render2")}
+ function down(e){var now=Date.now(),t=e.target;
+  if(isMap(t)){MG.mapDown=now;eat=false;return}
+  if(now<MG.until&&now<MG.cap){eat=true;eatUntil=now+900;MG.until=Math.min(now+350,MG.cap);MG.eaten++;e.stopImmediatePropagation();e.preventDefault();return}
+  eat=false}
+ function rest(e){if(!eat)return;if(Date.now()>eatUntil){eat=false;return}e.stopImmediatePropagation();e.preventDefault();if(e.type==="click")eat=false}
+ window.addEventListener("pointerdown",down,true);
+ ["pointerup","mousedown","mouseup","click"].forEach(function(n){window.addEventListener(n,rest,true)});
  if(MISS.length)try{console.warn("ui207 miss",MISS)}catch(e){}
 })();
 
