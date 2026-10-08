@@ -250,12 +250,12 @@
   var r=q("#w209rail");if(!r){r=document.createElement("nav");r.id="w209rail";r.setAttribute("aria-label","가로 시험 메뉴");document.body.appendChild(r)}
   if(!B.classList.contains("w209")){return}
   var hp=0,hpMax=5;try{hpMax=(typeof window.hpMax==="function")?window.hpMax(CASES[G.ci]):5;hp=G.hp==null?hpMax:G.hp}catch(e){}
-  var h='<div class="rh"><span class="tag">가로 시험본</span><b>1장 · 우체국</b><small>조사·대화만</small><span class="hp" aria-label="신뢰 '+hp+'/'+hpMax+'">';
+  var h='<div class="rh"><span class="tag">테스트판</span><b>1장 · 열세 번째 침대</b><small>다람탐정</small><span class="hp" aria-label="신뢰 '+hp+'/'+hpMax+'">';
   for(var i=0;i<hpMax;i++)h+='<i'+(i<hp?'':' class="off"')+'></i>';
   h+='</span></div><div class="g">';
   BTN.forEach(function(x){var n=x[0]==="rec"?num("#recbtn"):x[0]==="hint"?num("#helpnav"):"";
    h+='<button type="button" data-w="'+x[0]+'" class="'+(x[0]==="scene"&&G&&G.tab==="scene"?"on":"")+""+'" aria-label="'+x[2]+'"><img src="'+ICON+x[1]+'" alt="">'+x[2]+(n&&n!=="0"?'<span class="n">'+n+'</span>':'')+'</button>'});
-  h+='</div><div class="ft"><button type="button" data-w="reset">시험 처음부터</button><a href="game.html" target="_top">기본 게임(세로)</a></div>';
+  h+='</div><div class="ft"><button type="button" data-w="reset">시험 처음부터</button></div>';
   r.innerHTML=h;
   r.querySelectorAll("[data-w]").forEach(function(b){b.onclick=function(e){e.preventDefault();var k=b.dataset.w;
    if(k==="reset"){if(b.dataset.arm){try{localStorage.clear()}catch(x){}location.reload();return}b.dataset.arm=1;b.textContent="한 번 더 누르면 초기화";setTimeout(function(){if(b.isConnected){delete b.dataset.arm;b.textContent="시험 처음부터"}},3000);return}
@@ -271,7 +271,7 @@
  try{new MutationObserver(function(){if(apply.t)return;apply.t=setTimeout(function(){apply.t=0;if(inScope()&&safe()&&!B.classList.contains("w209"))apply()},30)}).observe(B,{attributes:true,attributeFilter:["class"]})}catch(e){}
 
  /* 세로 안내 */
- var rot=document.createElement("div");rot.id="w209rot";rot.innerHTML='<b>가로 시험본</b><div>기기를 가로로 돌려 주세요.<br>1장 우체국 장면만 가로로 시험합니다.</div><a href="game.html" target="_top">기본 게임(세로)으로 가기</a>';
+ var rot=document.createElement("div");rot.id="w209rot";rot.innerHTML='<b>다람탐정</b><div>기기를 가로로 돌려 주세요.<br>1장은 가로 화면으로 플레이해요.</div>';
  document.body.appendChild(rot);
 
  /* 시작: 격리 저장에 1장 진행이 있으면 이어서, 없으면 1장 우체국 첫 조사 상태로 */
@@ -289,7 +289,9 @@
   }catch(e){MISS.push("boot "+e.message);note("시험 시작 오류",String(e.message||e))}
  }
  window.__w209boot=boot;
- if(document.readyState==="complete")setTimeout(boot,60);else window.addEventListener("load",function(){setTimeout(boot,60)});
+ /* 1장 테스트판: 접속하면 바로 시작하지 않고 메인 화면(이어하기·새 게임·설정)을 먼저 보여 준다(inn_main.js) */
+ function start(){if(window.__EP1INN&&window.__innMain){try{window.__innMain(boot);return}catch(e){MISS.push("main "+e.message)}}boot()}
+ if(document.readyState==="complete")setTimeout(start,60);else window.addEventListener("load",function(){setTimeout(start,60)});
 
  /* 후보 D: 다람에게 물어보기 — 기존 다람 메모(window.__memoOf)를 기존 say 대화로 재사용. 새 대사·상태 변경 없음 */
  (function(){
@@ -336,7 +338,7 @@
    var g=r.querySelector(".g");if(!g)return;
    var mb=document.createElement("button");mb.type="button";mb.dataset.more="1";mb.setAttribute("aria-label","더보기");mb.innerHTML='<span style="font-size:18px;line-height:18px">&#8943;</span>더보기';g.appendChild(mb);
    var hp=r.querySelector(".rh .hp"),m=document.createElement("div");m.id="w209more";
-   m.innerHTML='<div class="hd"><b>가로 시험본 · 1장</b>'+(hp?'<span class="hp">'+hp.innerHTML+'</span>':'')+'</div>';
+   m.innerHTML='<div class="hd"><b>1장 · 열세 번째 침대</b>'+(hp?'<span class="hp">'+hp.innerHTML+'</span>':'')+'</div>';
    ["hint","spine","move","set"].forEach(function(k){var b=g.querySelector('[data-w="'+k+'"]');if(b){var c=b.cloneNode(true);c.style.display="flex";c.onclick=function(e){e.preventDefault();r.classList.remove("more");b.click()};m.appendChild(c)}});
    var ft=r.querySelector(".ft");if(ft){var rs=ft.querySelector('[data-w="reset"]');if(rs)m.appendChild(rs);var a=ft.querySelector("a");if(a)m.appendChild(a)}
    var cl=document.createElement("button");cl.type="button";cl.textContent="닫기";cl.onclick=function(e){e.preventDefault();r.classList.remove("more")};m.appendChild(cl);

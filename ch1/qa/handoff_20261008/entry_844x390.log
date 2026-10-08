@@ -1,0 +1,17 @@
+1 메인(저장 없음): {"menu":["이어하기저장 없음(꺼짐)","새 게임(포커스)","설정"],"case":false,"dl":false,"hit":["159x48","94x48","88x48"]}
+2 설정 변경: 30/80 크게/빠르게
+  변경 후 닫기 확인창: 저장하지 않고 나갈까요? 조정한 값은 이전 설정으로 돌아갑니다. 저장 안 함 계속 조정 포커스=계속 조정
+  저장 후 메인 복귀: true 저장값 {"schemaVersion":1,"musicVolume":30,"sfxVolume":80,"fontSize":"large","dialogueSpeed":"fast","coldSeen":false}
+3 새로고침 후 설정: 30/80 크게/빠르게
+  자동 넘김 없음 확인(5초 대기): true
+4 콜드 오픈 비트: 01 INTRO01_corridor.png 그날 새벽 / 02 INTRO02_bed.png 그대로 있네. / 03 INTRO02_bed.png …잠깐. / 04 INTRO02_bed.png 왜 이렇게 차가워. / 05 INTRO03_door.png / 06 INTRO03_door.png 여기서 발견되면…. / 07 INTRO02_bed.png / 08 INTRO04_carriage.png 전날 오후 / 09 INTRO04_carriage.png 전날 오후 건너뛰기 버튼(첫 회): false
+5 P1 진입: {"pi":0,"bg":"carriage","line":"아빠. 이거 이제 진짜 마지막 봉지야."}
+6 프롤로그 끝: {"pro":true,"loc":"bed13","found":["C07"],"notice":"목표"}
+7 조사 핫스폿 C01 탭 true → 획득 true
+7 조사 핫스폿 C02 탭 true → 획득 true
+8 새로고침 후 메인: ["이어하기(포커스)","새 게임","설정"]
+9 이어하기: {"loc":0,"found":3,"asked":0,"cold":false,"dl":false} 이전 {"loc":0,"found":3,"asked":0}
+10 저장 있을 때 새 게임: 처음부터 새로 시작할까요? 지금까지의 1장 진행 기록이 지워져요. 설정은 그대로예요. 새로 시작 취소 기본 포커스=취소
+   취소 후 저장 유지: true
+기본 게임 저장 그대로: true
+errs [] MISS {"main":[],"inn":[]}
