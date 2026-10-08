@@ -1,0 +1,346 @@
+{
+  "id": "BG03_kitchen",
+  "locationId": "LOC_kitchen",
+  "mapLocationId": "LOC_kitchen",
+  "name_ko": "부엌",
+  "sceneIds": [
+    "P10",
+    "P11",
+    "I3",
+    "I8",
+    "E2"
+  ],
+  "background": "background/BG03_kitchen_base.png",
+  "foregroundLayers": [],
+  "camera": {
+    "sourceImageSize": [
+      1774,
+      887
+    ],
+    "sourceAspectRatio": "2:1",
+    "mode": "single-screen centered cover; no panorama or horizontal stretching",
+    "viewRectUnits": "source pixels; top-left origin",
+    "views": {
+      "844x390": {
+        "viewport": [
+          844,
+          390
+        ],
+        "viewRect": {
+          "x": 0.0,
+          "y": 33.630331753554515,
+          "width": 1774.0,
+          "height": 819.739336492891
+        },
+        "uniformScale": 0.47576099210823,
+        "panEnabled": false
+      },
+      "640x360": {
+        "viewport": [
+          640,
+          360
+        ],
+        "viewRect": {
+          "x": 98.55555555555554,
+          "y": 0.0,
+          "width": 1576.888888888889,
+          "height": 887.0
+        },
+        "uniformScale": 0.40586245772266066,
+        "panEnabled": false
+      }
+    },
+    "rendering": "Keep source unchanged. Clip translated original and uniformly scale x/y with the recorded scale. image-rendering: pixelated.",
+    "worldToScreen": "screenX=(worldX-viewRect.x)*scale; screenY=(worldY-viewRect.y)*scale",
+    "pointerToWorld": "worldX=screenX/scale+viewRect.x; worldY=screenY/scale+viewRect.y",
+    "normalizedNote": "All normalized bounds are fractions of full original 1774x887, never viewport fractions."
+  },
+  "baseContent": [
+    "closed opaque teapot on top of cupboard",
+    "rear stairs",
+    "closed dining door",
+    "mixing bowl",
+    "empty table",
+    "stove"
+  ],
+  "states": [
+    {
+      "sceneId": "P10",
+      "time": "day2 07:30",
+      "baseUsable": true,
+      "propState": "empty table; C04 hidden",
+      "notes": "Opening teapot and inside discovery need a separate cinematic/inspection asset, not included. Do not use the basket composite here."
+    },
+    {
+      "sceneId": "P11",
+      "time": "day2 07:30",
+      "baseUsable": true,
+      "propState": "C04 only after father transfers guest to basket",
+      "notes": "The scene begins outside storage and then cuts to kitchen. Do not expose teapot contents to unrelated characters or put teapot in C10."
+    },
+    {
+      "sceneIds": [
+        "I3",
+        "I8"
+      ],
+      "time": "day2 morning investigation",
+      "baseUsable": true,
+      "propState": "C04 on table; C05 is inspection-only after magnifier gate",
+      "notes": "The basket guest is visible after P11. No movement, breath or confirmed survival indicator is added by background or prop. C03 comes from Nabi dialogue, not clicking the mixing bowl."
+    },
+    {
+      "sceneId": "E2",
+      "time": "day2 afternoon cutaway",
+      "baseUsable": true,
+      "propState": "move the same basket to the cupboard open shelf away from stove",
+      "notes": "Shelf endpoint is a staging proposal. Use an authored transfer animation; not a second copied basket. No E2 composite supplied."
+    }
+  ],
+  "hitboxes": [
+    {
+      "id": "back_stairs",
+      "label_ko": "뒤 계단",
+      "worldSourceRect": {
+        "x": 78,
+        "y": 109,
+        "width": 198,
+        "height": 462
+      },
+      "normalizedWorldRect": {
+        "x": 0.04396843,
+        "y": 0.12288613,
+        "width": 0.11161218,
+        "height": 0.52085682
+      },
+      "action": "navigate LOC_corridor_2f",
+      "enabledWhen": "story-approved room movement only",
+      "evidenceId": null,
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ],
+      "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."
+    },
+    {
+      "id": "dining_door",
+      "label_ko": "식당으로",
+      "worldSourceRect": {
+        "x": 402,
+        "y": 204,
+        "width": 245,
+        "height": 359
+      },
+      "normalizedWorldRect": {
+        "x": 0.22660654,
+        "y": 0.22998873,
+        "width": 0.13810598,
+        "height": 0.40473506
+      },
+      "action": "navigate LOC_dining",
+      "enabledWhen": "story-approved room movement only",
+      "evidenceId": null,
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ],
+      "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."
+    },
+    {
+      "id": "closed_teapot",
+      "label_ko": "찬장 위 찻주전자",
+      "worldSourceRect": {
+        "x": 819,
+        "y": 106,
+        "width": 152,
+        "height": 88
+      },
+      "normalizedWorldRect": {
+        "x": 0.46166855,
+        "y": 0.11950395,
+        "width": 0.08568207,
+        "height": 0.09921082
+      },
+      "action": "P10 scripted inspection only",
+      "enabledWhen": "No investigation-era evidence icon, tooltip naming hidden contents, or new clue. Contents never in this base.",
+      "evidenceId": null,
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ],
+      "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."
+    },
+    {
+      "id": "mixing_bowl",
+      "label_ko": "반죽 그릇",
+      "worldSourceRect": {
+        "x": 950,
+        "y": 343,
+        "width": 101,
+        "height": 73
+      },
+      "normalizedWorldRect": {
+        "x": 0.53551297,
+        "y": 0.38669673,
+        "width": 0.05693348,
+        "height": 0.08229989
+      },
+      "action": "ambient inspect; Nabi dialogue is separate",
+      "enabledWhen": "Does not award C03",
+      "evidenceId": null,
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ],
+      "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."
+    },
+    {
+      "id": "basket_guest",
+      "label_ko": "바구니 속 손님",
+      "worldSourceRect": {
+        "x": 1153,
+        "y": 412,
+        "width": 185,
+        "height": 91
+      },
+      "normalizedWorldRect": {
+        "x": 0.64994363,
+        "y": 0.46448703,
+        "width": 0.1042841,
+        "height": 0.10259301
+      },
+      "action": "inspect C04, or C05 magnifier close-up",
+      "enabledWhen": "P11 transfer complete; C05 only after I8 magnifier flag",
+      "evidenceId": "C04",
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ],
+      "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."
+    },
+    {
+      "id": "basket_table_area",
+      "label_ko": "바구니 놓는 식탁",
+      "worldSourceRect": {
+        "x": 1012,
+        "y": 447,
+        "width": 542,
+        "height": 51
+      },
+      "normalizedWorldRect": {
+        "x": 0.57046223,
+        "y": 0.50394589,
+        "width": 0.30552424,
+        "height": 0.05749718
+      },
+      "action": "prop surface",
+      "enabledWhen": "No evidence from empty table alone",
+      "evidenceId": null,
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ],
+      "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."
+    },
+    {
+      "id": "safe_shelf",
+      "label_ko": "후일담 바구니 선반",
+      "worldSourceRect": {
+        "x": 759,
+        "y": 323,
+        "width": 185,
+        "height": 86
+      },
+      "normalizedWorldRect": {
+        "x": 0.42784667,
+        "y": 0.36414882,
+        "width": 0.1042841,
+        "height": 0.09695603
+      },
+      "action": "E2 basket endpoint",
+      "enabledWhen": "E2 only; remove same basket from table",
+      "evidenceId": null,
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ],
+      "touchPolicy": "Transform world bounds through the active camera, then enlarge around center to at least 48 CSS pixels; retain story gate; resolve overlap by closest intended anchor, not drawing order."
+    }
+  ],
+  "placements": [
+    {
+      "id": "C04_world_basket",
+      "evidenceId": "C04",
+      "asset": "props/C04_basket_world.png",
+      "role": "new world-prop variant based on existing C04 design; original evidence icon unchanged",
+      "sourceImageSize": [
+        1254,
+        1254
+      ],
+      "sourceAnchor": [
+        628,
+        945
+      ],
+      "sourceAnchorMeaning": "bottom-center contact point, original untrimmed transparent sprite",
+      "worldAnchor": [
+        1244,
+        492
+      ],
+      "worldAnchorNormalized": [
+        0.70124014,
+        0.55467869
+      ],
+      "worldScale": 0.148,
+      "worldDrawRect": {
+        "x": 1151.056,
+        "y": 352.14,
+        "width": 185.59199999999998,
+        "height": 185.59199999999998
+      },
+      "opaqueVisibleBoundsSource": {
+        "x": 137,
+        "y": 430,
+        "width": 983,
+        "height": 520
+      },
+      "visibleWorldSize": [
+        145.48399999999998,
+        76.96
+      ],
+      "contactShadow": "thin dark contact shadow baked into alpha prop; no extra screen-space floating drop-shadow",
+      "layer": 30,
+      "occlusion": "Basket wholly on tabletop behind its front lip. Tablefront/character masks are not supplied. Do not let a later larger basket overlap the lip without authored mask.",
+      "shownWhen": "sceneState.basketTransferred=true; hide before P11 transfer",
+      "afterEvidenceAcquired": "Remain in room; knowledge acquisition is not physical pickup.",
+      "E2EndpointProposal": {
+        "worldAnchor": [
+          845,
+          410
+        ],
+        "worldScale": 0.17,
+        "requiresScriptedTransfer": true
+      },
+      "alphaQA": "Actual RGBA transparency. Very faint alpha=1 edge speckles occur outside main prop; main alpha>1 bounds are x134,y427,x1123,y953. Original preserved unchanged."
+    },
+    {
+      "id": "C03_nabi_testimony",
+      "asset": "icons/evidence/72/C03.png",
+      "mode": "evidence UI only",
+      "binding": "Nabi sprite dialogue at runtime, no static bowl award",
+      "worldPropRequired": false
+    },
+    {
+      "id": "C05_fur_inspection",
+      "asset": "icons/evidence/72/C05.png",
+      "mode": "inspection/evidence UI only",
+      "binding": "same C04 basket guest after I8 magnifier",
+      "worldPropRequired": "close-up art still required; do not paint mirrored writing/star onto base basket"
+    }
+  ],
+  "compositionReferences": [
+    {
+      "file": "reference/BG03_I3_basket_composition_reference.png",
+      "type": "full-frame AI compositing reference; not pixel-exact separated implementation"
+    }
+  ],
+  "geographyStatus": "Back stairs connect kitchen to the corridor near storage in script. Their exact left position, door position, table and cupboard are staging proposals, not new route evidence."
+}

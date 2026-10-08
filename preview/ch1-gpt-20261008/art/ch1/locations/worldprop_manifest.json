@@ -1,0 +1,309 @@
+{
+  "version": "2026-10-08.3",
+  "locationId": "LOC_storage_bed13",
+  "mapLocationId": "LOC_storage_bed13",
+  "sourceSize": [
+    1774,
+    887
+  ],
+  "backgrounds": {
+    "I1": "BG04_storage_bed13/background/BG04_I1_box_free.png",
+    "I7": "BG04_storage_bed13/background/BG04_I7_box_free.png"
+  },
+  "props": [
+    {
+      "id": "C01_pouch",
+      "file": "BG04_storage_bed13/props/C01_money_pouch_world_alpha.png",
+      "sourceAnchor": [
+        627,
+        1106
+      ],
+      "worldAnchor": [
+        1218.74,
+        368.105
+      ],
+      "worldScale": 0.06856540084388185,
+      "z": 30,
+      "shownWhen": "I1 onward, unless explicitly carried by a scripted physical action",
+      "afterEvidenceAcquired": "remain",
+      "clipRect": null,
+      "shadow": "thin contact shadow within alpha; do not add a large CSS drop-shadow",
+      "sourceImageSize": [
+        1254,
+        1254
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBBoxNonzero": [
+        39,
+        65,
+        1192,
+        1229
+      ],
+      "alphaBBoxVisibleGt15": [
+        208,
+        159,
+        1047,
+        1107
+      ],
+      "worldAnchorNormalized": [
+        0.687001127395716,
+        0.41500000000000004
+      ],
+      "worldDrawRect": {
+        "x": 1175.749493670886,
+        "y": 292.2716666666667,
+        "width": 85.98101265822784,
+        "height": 85.98101265822784
+      },
+      "visibleWorldSize": [
+        57.52637130801688,
+        65.0
+      ],
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "id": "C02_trace",
+      "file": "BG04_storage_bed13/props/C02_powder_handprint_decal_alpha.png",
+      "sourceAnchor": [
+        722.5,
+        578.5
+      ],
+      "worldAnchor": [
+        825.5,
+        453
+      ],
+      "worldScale": 0.08438409311348205,
+      "z": 20,
+      "shownWhen": "I1 after blanket exposed; remain in I7",
+      "afterEvidenceAcquired": "remain",
+      "clipRect": null,
+      "shadow": "none; surface decal on quilt",
+      "sourceImageSize": [
+        1365,
+        1152
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBBoxNonzero": [
+        49,
+        47,
+        1299,
+        1134
+      ],
+      "alphaBBoxVisibleGt15": [
+        207,
+        155,
+        1238,
+        1002
+      ],
+      "worldAnchorNormalized": [
+        0.4653325817361894,
+        0.5107102593010147
+      ],
+      "worldDrawRect": {
+        "x": 764.5324927255092,
+        "y": 404.18380213385063,
+        "width": 115.184287099903,
+        "height": 97.21047526673132
+      },
+      "visibleWorldSize": [
+        87.0,
+        71.4733268671193
+      ],
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "id": "chest_closed",
+      "file": "BG04_storage_bed13/props/chest_closed_world.png",
+      "sourceAnchor": [
+        1062.5,
+        679
+      ],
+      "worldAnchor": [
+        1064,
+        682
+      ],
+      "worldScale": 0.95,
+      "z": 21,
+      "shownWhen": "!boxOpen",
+      "afterEvidenceAcquired": "knowledge flags do not change box state",
+      "clipRect": [
+        780,
+        579,
+        610,
+        130
+      ],
+      "shadow": "thin contact shadow within alpha",
+      "sourceImageSize": [
+        1774,
+        887
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBBoxNonzero": [
+        259,
+        247,
+        1357,
+        863
+      ],
+      "alphaBBoxVisibleGt15": [
+        897,
+        571,
+        1228,
+        681
+      ],
+      "worldAnchorNormalized": [
+        0.5997745208568207,
+        0.7688838782412627
+      ],
+      "worldDrawRect": {
+        "x": 54.625,
+        "y": 36.950000000000045,
+        "width": 1685.3,
+        "height": 842.65
+      },
+      "visibleWorldSize": [
+        314.45,
+        104.5
+      ],
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ]
+    },
+    {
+      "id": "chest_open_with_C11",
+      "file": "BG04_storage_bed13/props/chest_open_with_ledger.png",
+      "sourceAnchor": [
+        1034,
+        718
+      ],
+      "worldAnchor": [
+        1064,
+        696
+      ],
+      "worldScale": 0.8,
+      "z": 21,
+      "shownWhen": "I7 && lockSolved && boxOpen",
+      "afterEvidenceAcquired": "remain open with book; knowledge acquisition is not pickup",
+      "clipRect": [
+        780,
+        579,
+        610,
+        130
+      ],
+      "shadow": "thin contact shadow within alpha",
+      "sourceImageSize": [
+        1774,
+        887
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "alphaBBoxNonzero": [
+        114,
+        112,
+        1605,
+        837
+      ],
+      "alphaBBoxVisibleGt15": [
+        838,
+        576,
+        1230,
+        721
+      ],
+      "worldAnchorNormalized": [
+        0.5997745208568207,
+        0.7846674182638106
+      ],
+      "worldDrawRect": {
+        "x": 236.79999999999995,
+        "y": 121.60000000000002,
+        "width": 1419.2,
+        "height": 709.6
+      },
+      "visibleWorldSize": [
+        313.6,
+        116.0
+      ],
+      "minimumTouchSizeCSSPixels": [
+        48,
+        48
+      ]
+    }
+  ],
+  "rendering": "Keep entire transparent source canvas; do not scale padding to desired visible width. drawXY=worldAnchor-sourceAnchor*worldScale. One uniform scale for x/y. Then apply camera transform.",
+  "camera": {
+    "sourceImageSize": [
+      1774,
+      887
+    ],
+    "sourceAspectRatio": "2:1",
+    "mode": "single-screen centered cover; no panorama or horizontal stretching",
+    "viewRectUnits": "source pixels; top-left origin",
+    "views": {
+      "844x390": {
+        "viewport": [
+          844,
+          390
+        ],
+        "viewRect": {
+          "x": 0.0,
+          "y": 33.630331753554515,
+          "width": 1774.0,
+          "height": 819.739336492891
+        },
+        "uniformScale": 0.47576099210823,
+        "panEnabled": false
+      },
+      "640x360": {
+        "viewport": [
+          640,
+          360
+        ],
+        "viewRect": {
+          "x": 98.55555555555554,
+          "y": 0.0,
+          "width": 1576.888888888889,
+          "height": 887.0
+        },
+        "uniformScale": 0.40586245772266066,
+        "panEnabled": false
+      }
+    },
+    "rendering": "Keep source unchanged. Clip translated original and uniformly scale x/y with the recorded scale. image-rendering: pixelated.",
+    "worldToScreen": "screenX=(worldX-viewRect.x)*scale; screenY=(worldY-viewRect.y)*scale",
+    "pointerToWorld": "worldX=screenX/scale+viewRect.x; worldY=screenY/scale+viewRect.y",
+    "normalizedNote": "All normalized bounds are fractions of full original 1774x887, never viewport fractions."
+  },
+  "stateRules": [
+    "C01/C02 remain visible after observation; separate inventory flags from world props.",
+    "Render exactly one of closed/open chest, never both.",
+    "Open-with-ledger is one state sprite; removing just book is unsupported until a book-carried state asset is made.",
+    "The password and headboard wording are not in any PNG.",
+    "I7 morning requires story/revisit gate; sunlight does not solve lock automatically."
+  ],
+  "occlusion": "The box props are purpose-built visible fragments that sit below front bed rail. Apply world clip rectangle x780,y579,w610,h130 to avoid thin fringe crossing the rail. This geometric clip is only valid for this composition; no complete foreground occlusion mask is supplied.",
+  "alphaNote": "All four props have true RGBA; very faint low-alpha fringes broaden their nonzero bounds. Original files preserved.",
+  "limits": [
+    "AI redrawn/extracted props are not exact per-pixel cuts.",
+    "Use the recorded sourceAnchor and worldScale even for wide-canvas chest props; raw x=0,y=0 overlay is not recommended.",
+    "Do not paste these props over the previous box-baked base: use the new box-free backgrounds.",
+    "Numeric-looking rectangular lock hardware is unlabelled; no answer encoded.",
+    "No in-game execution or touch-state validation was performed."
+  ]
+}
