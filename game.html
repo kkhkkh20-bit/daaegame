@@ -46588,11 +46588,11 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   "fall-owlhouse":{hots:{s2f_log:[132,91]},ppl:[["buri",296,168]],obs:{o2f_cal:[200,44],o2f_desk:[36,100]}},
   "fall-cell":{hots:{s2f_hanky:[258,91],s2f_notebook:[306,94]},ppl:[["papa",112,104]],obs:{o2f_lock:[200,72],o2f_sleeve:[244,122]},bars:1},
   "fall-pine":{hots:{s2f_nest:[262,45],s2f_envelope:[276,58]},obs:{o2f_trunk:[214,172]}},
-  "envelope-post":{hots:{s1e_receipt:[217,96],s1e_tray:[94,93],s1e_hook:[243,120],s1e_ink:[156,89],s1e_letter:[308,102],s1e_cubby:[143,67]},ppl:[["karo",56,176],["wanggu",126,176],["nabi",238,80]],feet:{karo:[56,176,78],wanggu:[126,176,78],nabi:[238,136,90]},obs:{o_e1_clock:[205,40],o_e1_win:[315,46]},front:"envelope-post-front",b03:1},
-  "envelope-store":{hots:{s1e_box:[136,118],s1e_paw:[170,76],s1e_list:[210,107],s1e_window:[214,43]},ppl:[["doto",277,176]],feet:{doto:[277,176,78]},obs:{o_e1_lamp:[130,39],o_e1_door:[335,82],o_e1_coat:[62,84]},b03:1},
-  "envelope-records":{hots:{s1e_houses:[173,52],s1e_winter:[160,98],s1e_damage:[282,74]},ppl:[["buri",267,176]],feet:{buri:[267,176,78]},obs:{o_e1_ladder:[343,96],o_e1_oil:[221,90]},b03:1}
+  "envelope-post":{hots:{s1e_receipt:[217,96],s1e_tray:[94,93],s1e_hook:[243,120],s1e_ink:[156,89],s1e_letter:[308,102],s1e_cubby:[143,67]},ppl:[["karo",56,176],["wanggu",126,176],["nabi",238,80]],feet:{karo:[56,176,78],wanggu:[126,176,78],nabi:[238,136,90]},obs:{o_e1_clock:[205,40],o_e1_win:[315,46],o_e1_perch:[299,61],o_e1_scale:[286,77]},front:"envelope-post-front",b03:1},
+  "envelope-store":{hots:{s1e_box:[136,118],s1e_paw:[170,76],s1e_list:[210,107],s1e_window:[214,43]},ppl:[["doto",277,176]],feet:{doto:[277,176,78]},obs:{o_e1_lamp:[130,39],o_e1_door:[335,82],o_e1_coat:[62,84],o_e1_sack:[70,140],o_e1_boots:[236,162]},b03:1},
+  "envelope-records":{hots:{s1e_houses:[173,52],s1e_winter:[160,98],s1e_damage:[282,74]},ppl:[["buri",267,176]],feet:{buri:[267,176,78]},obs:{o_e1_ladder:[343,96],o_e1_oil:[221,90],o_e1_pencil:[211,106]},b03:1}
  };
- var B03=false;try{var qb=location.search.match(/[?&]b03=([01])/);if(qb){if(qb[1]==="1")localStorage.setItem("daram-b03","1");else localStorage.removeItem("daram-b03")}B03=localStorage.getItem("daram-b03")==="1"}catch(e){}
+ var B03=true;try{var qb=location.search.match(/[?&]b03=([01])/);if(qb){if(qb[1]==="1")localStorage.removeItem("daram-b03");else localStorage.setItem("daram-b03","0")}B03=localStorage.getItem("daram-b03")!=="0"}catch(e){}
  window.__b03=B03;Object.keys(BG).forEach(function(k){if(BG[k].b03&&!B03)delete BG[k]});
  Object.keys(BG).forEach(function(k){var b=BG[k],src="art/"+k+".png";
   SCENES[k]=function(){return '<svg class="nodot" viewBox="0 0 360 200" preserveAspectRatio="none"><g id="an-bg-'+k+'"><image href="'+src+V+'" width="360" height="200" style="image-rendering:pixelated"/></g></svg>'};
