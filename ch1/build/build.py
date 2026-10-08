@@ -21,12 +21,15 @@ def build():
     s = read(ROOT, "ch1", "build", "base-engine.html")
     early = read(SRC, "inn_early.js")
     late = read(SRC, "wide209_J.js")
-    ep = read(SRC, "ep1_inn_script.js") + "\n" + read(SRC, "ep1_inn.js")
-    rti = read(SRC, "rtg_inn.js") + "\n" + read(SRC, "worldmap.js")
+    ep = read(SRC, "ep1_inn_script.js") + "\n" + read(SRC, "ep1_inn_direction.js") + "\n" + read(SRC, "ep1_inn.js")
+    rti = read(SRC, "rtg_inn.js") + "\n" + read(SRC, "worldmap.js") + "\n" + read(SRC, "inn_main.js")
     V = '<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">'
     assert s.count(V) == 1
     s = s.replace(V, V + "<script>" + early + "</script>", 1)
     s = s.replace("<title>다람 탐정 사무소</title>", "<title>다람탐정 · 1장 열세 번째 침대 (테스트판)</title>", 1)
+    L0 = '<div>다람 탐정 사무소</div><div class="bl">'
+    assert s.count(L0) == 1
+    s = s.replace(L0, '<div>다람탐정</div><div class="bl">', 1)  # 첫 로딩 문구
     A = 'if(MISS.length)try{console.warn("ui207 miss",MISS)}catch(e){}\n})();'
     assert s.count(A) == 1
     s = s.replace(A, A + "\n" + ep + "\n" + late + "\n" + rti, 1)
