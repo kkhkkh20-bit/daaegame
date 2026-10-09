@@ -7,6 +7,7 @@
    4) 대화 창: 두 줄 높이로 줄여 인물 상반신이 보이게. */
 (function(){
  var MISS=window.__INNMISS||(window.__INNMISS=[]);var EP=window.EP1INN;if(!EP){MISS.push("stage: no EP");return}
+ function bgDef(){try{var b=window.__innBg&&window.__innBg();return b||{}}catch(e){return {}}}
  function cur(){try{return !!(G&&CASES[G.ci]&&CASES[G.ci].id==="inn")}catch(e){return false}}
  /* 그림 크기표: [캔버스 너비, 높이, 몸 왼쪽, 몸 오른쪽, 위 여백, 아래 여백] (PNG 실측) */
  var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
@@ -31,7 +32,14 @@
  var st={scene:"",dl:0,who:null,i:-1,m:null,size:""},layer=null,fig=null;
  function ensure(){var v=document.getElementById("dlgveil");if(!v)return null;if(layer&&layer.parentNode===v)return layer;
   layer=document.createElement("div");layer.id="innstage";layer.setAttribute("aria-hidden","true");v.insertBefore(layer,document.getElementById("vnbox"));fig=null;st.size="";return layer}
+ /* 등장 효과음 '띠링': 새 인물이 화면에 처음 나타날 때 1회. 표정 변화·같은 인물의 다음 대사에는 없음.
+    심각한 장면(돈주머니 발견·부엌의 작은 손님·장부의 엄마 글씨)은 낮게 또는 무음 */
+ var QUIET={P11:"low",P12:"mute",E3:"low"};
+ function chime(){try{var sc=scene(),q=sc&&QUIET[sc.key];if(q==="mute")return;
+  if(q==="low"){tone(523,.16,"sine",.035);tone(659,.22,"sine",.03,.09);return}
+  tone(1319,.12,"sine",.05);tone(1760,.2,"sine",.04,.08)}catch(e){}}
  function draw(k,m){var W=innerWidth,H=innerHeight;
+  if(k!==st.shown){if(k)chime();st.shown=k||null}
   if(!k){if(fig){fig.remove();fig=null}return}
   var s=src(k,m);
   if(!fig||fig.dataset.k!==k){if(fig)fig.remove();fig=document.createElement("div");fig.className="isf";fig.dataset.k=k;
@@ -52,19 +60,20 @@
   if(cur()&&v&&typeof DL!=="undefined"&&DL&&DL.lines&&!document.getElementById("rtg")&&!document.querySelector(".fstalk")){
    on=true;if(!ensure())return;
    var sc=scene(),sk=sc?sc.key:"D"+dlid(DL),id=dlid(DL),size=innerWidth+"x"+innerHeight;
-   if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null;st.whoDl=0}
+   if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null;st.whoDl=0;st.shown=null}
    if(id!==st.dl){st.dl=id;st.i=-1}
    if(DL.i!==st.i||size!==st.size){for(var q=Math.max(0,st.i+1);q<=DL.i&&q<DL.lines.length;q++)step1(DL.lines[q],id);st.i=DL.i;st.size=size;
     var ln=DL.lines[DL.i]||[],w=lw(ln),t=String(lt(ln)||"");
     draw(st.who,st.m);if(fig)fig.classList.toggle("ls",w!==st.who);
-    var vb=document.querySelector("#vnbox .vband");if(vb){var inr=w==="narr"&&t.charAt(0)==="(";vb.classList.toggle("inner",inr);
-     /* 속마음 이름표: 누구의 생각인지 보이게 '아빠' */
-     var vt=vb.querySelector(".vtxt");if(inr&&vt&&!vt.querySelector(".plate")){var pl=document.createElement("span");pl.className="plate inner-plate";pl.textContent="아빠";vt.insertBefore(pl,vt.firstChild)}}}
+    }
   }}catch(e){if(!sync.err){sync.err=1;MISS.push("stage "+e.message)}}
   document.body.classList.toggle("inn-st2",on);
   if(!on&&st.dl){st.dl=0;st.i=-1}
   var full=false;try{full=cur()&&!!(G.beats&&G.beats.inn_bg)&&!!document.querySelector("#bigscene>svg[data-bg]:not([data-inn-world])")}catch(e){}
-  document.body.classList.toggle("inn-full",full)}
+  document.body.classList.toggle("inn-full",full);
+  /* 조사 화면(접수대·2층 복도)의 양옆 빈칸: 검은 띠 대신 같은 그림을 흐리고 어둡게 깔아 화면 전체를 장소로 채운다(조사 지점 위치는 그대로) */
+  try{var stg=document.querySelector(".stage"),fill=null;if(cur()&&!full&&stg&&document.querySelector("#bigscene svg[data-bg]:not([data-inn-world])")){var bd=bgDef();if(bd&&bd.def&&bd.def.src)fill=bd.def.src}
+   if(stg){if(fill){var u='url("'+fill+'")';if(stg.style.getPropertyValue("--innfill")!==u)stg.style.setProperty("--innfill",u);stg.classList.add("inn-fill")}else stg.classList.remove("inn-fill")}}catch(e){}}
  (function loop(){sync();requestAnimationFrame(loop)})();
  /* 새 대사창이 생기는 순간(그리기 전)에 바로 맞춘다: 첫 프레임에 옛 그림이 비치지 않게 */
  try{var mq=false;new MutationObserver(function(){if(mq)return;mq=true;Promise.resolve().then(function(){mq=false;sync();try{cutSync();plateSync()}catch(e){}})}).observe(document.getElementById("ov")||document.body,{childList:true,subtree:true})}catch(e){}
@@ -89,11 +98,15 @@
  /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
  function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
  /* 이름표: 아빠가 이름을 듣기 전까지는 '???' (프롤로그 첫 만남). 이름을 말하는 그 줄부터 이름이 뜬다 */
- var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"세련이라는 손님이 숙박부에 이름을 적는다",wanggu:"마을 규정 담당, 너울입니다"};
+ var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"숙박부에 적힌 이름은 '세련'",wanggu:"마을 규정 담당, 너울입니다"};
  function revealAt(k){for(var i=0;i<EP.PRO.length;i++){var it=EP.PRO[i].items;for(var j=0;j<it.length;j++){var t=lt(it[j]);if(typeof t==="string"&&t.indexOf(REVEAL[k])>=0)return i}}return -1}
  var RPI={};Object.keys(REVEAL).forEach(function(k){RPI[k]=revealAt(k)});var heard={};
  function known(k){if(!REVEAL[k])return true;try{if(G.beats&&G.beats.inn_pro)return true;var pi=G.beats&&G.beats.inn_pi;if(pi==null)return true;if(pi>RPI[k])return true;if(pi<RPI[k])return false}catch(e){return true}return !!heard[k]}
- function plateSync(){try{if(!cur()||typeof DL==="undefined"||!DL)return;var ln=DL.lines[DL.i];if(!ln)return;var t=String(lt(ln)||"");
+ /* 아빠 속마음(괄호로 시작하는 지문): 푸른 글씨와 '아빠' 이름표. 질문 화면을 포함한 모든 대사창에 적용 */
+ function innerSync(){try{if(!cur()||typeof DL==="undefined"||!DL)return;var ln=DL.lines[DL.i];var vb=document.querySelector("#vnbox .vband");if(!ln||!vb)return;
+  var inr=lw(ln)==="narr"&&String(lt(ln)||"").charAt(0)==="(";vb.classList.toggle("inner",inr);
+  var vt=vb.querySelector(".vtxt");if(inr&&vt&&!vt.querySelector(".plate")){var pl=document.createElement("span");pl.className="plate inner-plate";pl.textContent="아빠";vt.insertBefore(pl,vt.firstChild)}}catch(e){}}
+ function plateSync(){try{innerSync();if(!cur()||typeof DL==="undefined"||!DL)return;var ln=DL.lines[DL.i];if(!ln)return;var t=String(lt(ln)||"");
   Object.keys(REVEAL).forEach(function(k){if(t.indexOf(REVEAL[k])>=0)heard[k]=1});
   var w=lw(ln),pl=document.querySelector("#vnbox .plate:not(.inner-plate)");if(!pl||!REVEAL[w])return;
   if(!known(w)){if(pl.textContent!=="???"){pl.dataset.real=pl.textContent;pl.textContent="???"}}}catch(e){}}
@@ -102,7 +115,9 @@
  function cardSync(){try{if(!cur())return;var m=document.querySelector("#mveil .modal,#ov .modal");if(!m||m.dataset.found)return;var h=m.querySelector("h3");if(!h)return;var nm=h.textContent.trim(),id=null;
   Object.keys(EP.EV).forEach(function(k){if(EP.EV[k].name===nm)id=k});m.dataset.found="1";if(!id||!FOUND[id])return;
   var sm=document.createElement("small");sm.className="found-at";sm.textContent="발견 장소 · "+FOUND[id];h.insertAdjacentElement("afterend",sm)}catch(e){}}
- function tick(){try{document.body.classList.toggle("inn1",cur());metAll();plateSync();cardSync();
+ var talkWho=null;
+ function talkChime(){try{var ft=document.querySelector(".fstalk");var w=ft&&G&&G.tab==="talk"?G.who:null;if(w&&w!==talkWho)chime();talkWho=w}catch(e){}}
+ function tick(){try{document.body.classList.toggle("inn1",cur());talkChime();metAll();plateSync();cardSync();
   if(cur()){if(!tick.q)tick.q={};if(window.QUIRK!==tick.q)window.QUIRK=tick.q}else if(window.QUIRK!==Q0)window.QUIRK=Q0;
   var nx=document.querySelector("#vnbox .nx");
   if(nx&&cur()&&typeof DL!=="undefined"&&DL){var last=DL.i>=DL.lines.length-1,cont=seq()||DL.__more||(!lastSpot.got&&Date.now()-lastSpot.t<120000);
@@ -127,7 +142,7 @@
    '<rect class="dopen" x="362" y="150" width="6" height="26" fill="#8A5E36"/><rect class="dshut" x="366" y="140" width="66" height="54" fill="#8A5E36" stroke="#6B4A2B" stroke-width="2"/><text class="lb" x="399" y="136" text-anchor="middle">창고</text></g>'+
    '<g><rect x="336" y="166" width="26" height="28" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2].map(function(k){return '<rect x="338" y="'+(170+k*8)+'" width="22" height="2" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="330" y="186" text-anchor="end">부엌 계단</text></g></g>');
   return '<svg viewBox="0 0 440 200" shape-rendering="crispEdges" role="img" aria-label="2층 복도 배치도: 양쪽 방에 침대 열둘, 꺾인 끝 창고에 열세 번째 침대">'+r.join("")+'</svg>'}
- var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 창고예요/,s:3},{re:/창고 문을 닫으셨다/,s:4}];
+ var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 창고예요/,s:3},{re:/^짐 풀고 내려와요/,s:4}];
  var CUT2=[{re:/찻주전자의 뚜껑을 들어 올린다/,c:"teapot"},{re:/겨울잠쥐가 동그랗게 웅크리고 있다/,c:"teapot"},{re:/손끝에 닿는 작은 몸이/,c:"teapot"}];
  var cut2El=null;
  function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&lt(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
@@ -162,11 +177,18 @@
    var f=el.querySelector('[data-k="next"],[data-k="ok"]');if(f)try{f.focus({preventScroll:true})}catch(x){}}
   document.body.appendChild(el);try{SFX.page()}catch(x){}draw()}
  window.__innInspect=inspect;
+ /* 연출 지시(글자 없음): 화면 상대 교체·퇴장, 효과음. 대사 사이 잠깐 멈춤 동안 실행된다 */
+ function dirRun(d){try{if(!d)return;if(d.sfx)try{SFX[d.sfx]&&SFX[d.sfx]()}catch(e){}
+  if(Object.prototype.hasOwnProperty.call(d,"who")){var sc=scene();if(sc)st.scene=sc.key;st.who=d.who==="none"?null:d.who;st.whoDl=-1;st.m=null;
+   var v=document.getElementById("dlgveil");if(v&&ensure()){if(!st.who&&fig){var f=fig;fig=null;f.classList.remove("in");setTimeout(function(){f.remove()},260)}else draw(st.who,null)}}}catch(e){}}
+ window.__innDir=dirRun;
+ function parseDir(t){var o={};String(t||"").split(";").forEach(function(kv){var i=kv.indexOf(":");if(i>0){var k=kv.slice(0,i).trim(),v=kv.slice(i+1).trim();o[k]=k==="ms"?+v:v}});return o}
  /* 대사 묶음 안의 ["@inspect", 키] 줄에서 대사를 멈추고 근접 조사를 연 뒤 이어서 진행 */
- try{var _say2=say;say=function(lines,done,sk){try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&x[0]==="@inspect"})){
-    var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else curp.push(x)});parts.push(curp);
+ try{var _say2=say;say=function(lines,done,sk){try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&(x[0]==="@inspect"||x[0]==="@dir")})){
+    var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else if(Array.isArray(x)&&x[0]==="@dir"){parts.push(curp);parts.push({dir:parseDir(x[1])});curp=[]}else curp.push(x)});parts.push(curp);
     var k=0;(function next(){if(k>=parts.length){done&&done();return}var p=parts[k++];
      if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
+     if(p&&p.dir){dirRun(p.dir);setTimeout(next,p.dir.ms!=null?p.dir.ms:420);return}
      if(!p.length){next();return}var more=k<parts.length;_say2(p,function(){next()},sk);try{if(DL)DL.__more=more}catch(e){}})();return}}catch(e){}
    return _say2.apply(this,arguments)}}catch(e){MISS.push("stage say")}
  var css=document.createElement("style");css.id="inn-stage-css";css.textContent=[
@@ -225,6 +247,9 @@
   "html body.w209.inn1 #vnbox .vband.inner .txt,html body.w209.inn1 #vnbox .vband.inner #dtxt{color:#8CC4FF!important}",
   /* 대화·연출 중 이동 버튼은 보이지도 눌리지도 않게 */
   "html body.w209.inn-cut .stage .fsa,html body.w209.inn-cut .stage.inn-world-stage .fsa,html body.w209.dl-on .stage.inn-world-stage .fsa{visibility:hidden!important;pointer-events:none!important}",
+  "html body.w209 .stage.inn-fill{background:#120d0a!important;overflow:hidden}",
+  "html body.w209 .stage.inn-fill::before{content:'';position:absolute;inset:-24px;background:var(--innfill) center/cover no-repeat;filter:blur(10px) brightness(.42) saturate(.85);z-index:0;pointer-events:none}",
+  "html body.w209 .stage.inn-fill>.fsscroll{position:relative;z-index:1}",
   "html body.w209.inn-full .stage>.fsscroll>#bigscene{width:100vw!important;max-width:none!important;margin:0!important;left:0!important}",
   "html body.w209.inn-full #bigscene>svg[data-bg]{width:100%!important;height:100%!important}",
   ":root{--t-story:18px;--t-ui:16px;--t-label:15px;--t-cap:13px;--t-head:22px}",
