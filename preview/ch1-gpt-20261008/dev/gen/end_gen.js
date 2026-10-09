@@ -117,9 +117,9 @@
    FL("det1","그림으로 서명한 사람도 있어. 글씨를 몰랐나 봐."),
    FL("det0","아니면 이름을 남기고 싶지 않았거나."),
    FL("det1","…이 장부, 할머니가 왜 침대 밑에 숨겨 놨을까.")];})();
- (function(){var x=FIND("bed13","obs","o_inn_box");if(x)x.say=[I("침대 밑에 상자가 있다. 자물쇠까지 채워 두신 물건인데, 함부로 건드리면 곤란하겠지.",null,1),
+ (function(){var x=FIND("bed13","obs","o_inn_box");if(x)x.say=[I("침대 밑에 작은 나무 상자가 있다. 숫자 네 개를 맞추는 자물쇠다.",null,1),
    L("@dir","who:det1;chime:1;ms:380;entry:1"),
-   FL("det1","아빠, 침대 밑에 상자가 있어. 잠겨 있어."),
+   FL("det1","아빠, 이 상자 잠겨 있어. 열어 보면 안 돼?"),
    L("@dir","sfx:steps;ms:380"),
    L("@dir","who:innma;chime:1;ms:380"),
    FL("innma","거기 있는 건 옛날 숙박부예요. 볼 것 없어요.","think"),
@@ -130,7 +130,7 @@
    L("@dir","who:det1;chime:1;ms:380;entry:1"),
    FL("det1","뭐라고 새겨져 있는데… 안 보여."),
    FL("det0","해가 들 때 다시 와 보자.")];})();
- (function(){var x=FIND("bed13","obs","o_inn_head2");if(x)x.say=[I("이제 글씨가 보인다. 다람이가 아까부터 기다리던 보람이 있네.",null,1),
+ (function(){var x=FIND("bed13","obs","o_inn_head2");if(x)x.say=[I("해가 들어 창고가 밝아졌다. 아까 못 읽은 머리판 글씨를 다시 보자.",null,1),
    L("@dir","who:det1;chime:1;ms:380;entry:1"),
    FL("det1","창문이 조금 열려 있어. 그래서 여기만 이렇게 추웠나 봐."),
    FL("det1","아빠, 이제 글씨가 보여. 「첫 손님」. 이 침대에 처음 묵은 사람인가 봐."),
@@ -140,13 +140,14 @@
    I("열한 번째 달 둘째 날. 네 자리 숫자로 옮기면 될까.")];})();
  (function(){var x=FIND("kitchen","spots","basket");if(x)x.say=[I("여전히 웅크린 채다. 내가 봐도 잘 모르겠다. 먼저 살펴본 분에게 들어 보자.",null,1),
    L("@dir","who:buri;chime:0;ms:380;entry:1"),
+   FL("det0","부리 씨, 이 아이 상태를 보셨습니까?"),
    FL("buri","차갑고, 숨도 안 쉬어요. 아까 내가 확인했어요."),
    FL("det1","…진짜요? 오래 보셨어요?"),
    FL("buri","다 식은 건 다시 안 움직여요. 장치든 뭐든."),
    FL("det1","그래도… 장치하고는 다를 수도 있잖아요."),
    L("@dir","who:none;sfx:steps;ms:380"),
    L("@dir","who:det1;chime:0;ms:220")];})();
- (function(){var x=FIND("kitchen","spots","fur");if(x)x.say=[I("작은 자국이라 맨눈으로는 어렵다. 돋보기를 빌려 온 다람이 덕을 또 본다.",null,1),
+ (function(){var x=FIND("kitchen","spots","fur");if(x)x.say=[I("바구니 속 아이 옆구리에 붉은 것이 묻어 있다. 맨눈으로는 잘 안 보인다.",null,1),
    L("@dir","who:det1;chime:0;ms:380;entry:1"),
    FL("det1","아빠, 할머니가 돋보기 빌려주셨어. 작은 글씨 볼 때 쓰시는 거래."),
    L("@inspect","C05"),
@@ -161,6 +162,7 @@
    FL("det1","할머니는 매일 이걸 보시는구나.")];})();
  (function(){var x=FIND("dotoroom","spots","diary");if(x)x.say=[I("어제 첫눈 시간을 적어 두겠다고 하셨다. 직접 확인해 보자.",null,1),
    L("@dir","who:doto;chime:1;ms:380;entry:1"),
+   FL("det0","도토 씨, 어젯밤 첫눈 시간도 적어 두셨습니까?"),
    L("@inspect","C08"),
    FL("doto","어젯밤에 올해 첫눈이 왔어요. 정확히 자정에요."),
    FL("det0","자정인 건 어떻게 아셨습니까?"),
@@ -184,8 +186,8 @@
  (function(){var t=EP.TALK["innma"].filter(function(x){return x.id==="T_ma2"})[0];if(t)t.lines=[FL("det0","어젯밤에는 몇 시쯤 주무셨습니까?","think"),
    FL("innma","열한 시쯤 방에 들어갔어요. 늙은이는 일찍 자야 하루를 버티거든.","think")].concat(t.__follow||[]);})();
  (function(){var t=EP.TALK["innma"].filter(function(x){return x.id==="T_ma3"})[0];if(t)t.lines=[FL("det0","세련 씨는 전에 본 적이 있는 손님입니까?","think"),
-   I("대답을 망설이신다. 지금은 더 다그치지 말자."),
-   FL("innma","…처음 보는 사람이에요.","think")].concat(t.__follow||[]);})();
+   FL("innma","…처음 보는 사람이에요.","think"),
+   I("대답을 망설이셨다. 몰아세우지 말고, 어젯밤 본 것만 조심스럽게 여쭤보자.")].concat(t.__follow||[]);})();
  (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["seryeon"]="(잃어버린 분의 말부터 정확히 적자. 시간이 섞이면 나중에 더 어려워진다.)";
  (function(){var t=EP.TALK["seryeon"].filter(function(x){return x.id==="T_se1"})[0];if(t)t.lines=[FL("det0","잃어버리신 주머니에는 무엇이 들어 있었습니까?"),
    FL("seryeon","계약금입니다. 이 여관을 사려고 가져왔죠."),
@@ -198,7 +200,7 @@
    FL("seryeon","그래도 없어서 일곱 시에 모두를 불렀고요.")].concat(t.__follow||[]);})();
  (function(){var t=EP.TALK["seryeon"].filter(function(x){return x.id==="C12"})[0];if(t)t.lines=[FL("det0","이 여관에는 전에 와 보신 적이 있습니까?"),
    FL("seryeon","어제가 처음입니다. 이렇게 오래된 집일 줄은 몰랐네요.")].concat(t.__follow||[]);})();
- (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["nabi"]="(아침 빵도 못 구웠다고 했다. 바쁜 와중이지만 어젯밤 일을 여쭤봐야겠다.)";
+ (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["nabi"]="(오늘 아침엔 빵 냄새가 나지 않는다. 바쁘시겠지만 어젯밤 일을 여쭤봐야겠다.)";
  (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="C03"})[0];if(t)t.lines=[FL("det0","어젯밤에는 무엇을 하셨습니까?"),
    FL("nabi","열한 시엔 빵 반죽하고 잤어요. 아침에 구우려면 밤에 해 둬야 하거든요."),
    FL("det1","그럼 오늘 아침 빵은요?"),
@@ -211,7 +213,7 @@
    FL("nabi","할머니가 남의 돈에 손대실 리 없어요. 제가 여기서 일하면서 봤어요. 그건 정말이에요.")].concat(t.__follow||[]);})();
  (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["geokkuri"]="(밤새 복도가 보인다고 하셨다. 졸리시겠지만 잠깐만 여쭤보자.)";
  (function(){var t=EP.TALK["geokkuri"].filter(function(x){return x.id==="C13"})[0];if(t)t.lines=[FL("det0","밤에 복도에서 무엇을 보셨습니까?"),
-   FL("geokkuri","봤어요. 족제비 손님이 시계 앞을 지나 저쪽으로 갔다가 금방 돌아왔어요. 여섯 시 반쯤."),
+   FL("geokkuri","족제비 손님이 시계 앞을 지나 저쪽으로 갔다가 금방 돌아왔어요. 여섯 시 반쯤."),
    FL("det0","시각은 확실합니까?"),
    FL("geokkuri","종이 막 그쳤거든요. 그래서 시계를 봤죠. 갈 땐 뭘 꼭 쥐고 있었고요."),
    FL("det0","무엇을 쥐고 있었습니까?"),

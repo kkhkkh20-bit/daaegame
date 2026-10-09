@@ -29,7 +29,7 @@
   if(BODYK[k])return "art/body/"+BODYK[k]+"-"+pose(m,k)+".png";return null}
  var DUO={det0:1,det1:1,narr:1};
  /* 상대가 실제로 자리를 뜨는 지문(화면 표시 문구) */
- function lw(x){return Array.isArray(x)?x[0]:(x&&x.w)}function lt(x){return Array.isArray(x)?x[1]:(x&&x.t)}function lm(x){return Array.isArray(x)?x[2]:(x&&x.m)}
+ function lw(x){return Array.isArray(x)?x[0]:(x&&x.w)}function lt(x){return Array.isArray(x)?x[1]:(x&&x.t)}function ot(x){return Array.isArray(x)&&x[7]!=null?x[7]:lt(x)}function lm(x){return Array.isArray(x)?x[2]:(x&&x.m)}
  function cgList(){try{var b=window.__innBg&&window.__innBg();return (b&&b.def&&b.def.cg)||[]}catch(e){return []}}
  function firstResident(lines){var cg=cgList();for(var i=0;i<(lines||[]).length;i++){var w=lw(lines[i]);if(typeof w==="string"&&!DUO[w]&&cg.indexOf(w)<0)return w}return null}
  function hasDuo(lines){return (lines||[]).some(function(x){var w=lw(x);return w==="det1"||w==="det0"})}
@@ -44,6 +44,8 @@
  /* 등장 효과음 '띠링': 새 인물이 화면에 처음 나타날 때 1회. 표정 변화·같은 인물의 다음 대사에는 없음.
     심각한 장면(돈주머니 발견·부엌의 작은 손님·장부의 엄마 글씨)은 낮게 또는 무음 */
  function chime(){try{if(st.quiet){st.quiet=0;return}tone(1319,.12,"sine",.05);tone(1760,.2,"sine",.04,.08)}catch(e){}}
+ /* 인물 크기·위치: 머리(귀) 끝을 화면 높이의 FIGTOP에 맞추고 FIGK로 배율을 정한다(이전: H/180, 머리가 화면 꼭대기에 닿음) */
+ var FIGK=215,FIGTOP=.16;
  function draw(k,m){var W=innerWidth,H=innerHeight;
   if(k!==st.shown){if(k)chime();st.shown=k||null}
   if(!k){if(fig){fig.remove();fig=null}return}
@@ -52,15 +54,15 @@
    if(s){var im=document.createElement("img");im.alt="";im.draggable=false;fig.appendChild(im)}else{fig.dataset.face="1";try{fig.innerHTML=typeof pf==="function"?pf(k,m):""}catch(e){}}
    layer.appendChild(fig);requestAnimationFrame(function(){fig&&fig.classList.add("in")})}
   if(s){var im2=fig.firstChild;if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
-   var sc=H/180,w=b[0]*sc,h=b[1]*sc,cx=(b[2]+b[3])/2*sc;im2.style.width=w+"px";im2.style.height=h+"px";
-   fig.style.width=Math.round(w)+"px";fig.style.height=Math.round(h)+"px";var gy=H*.1+166*sc;fig.style.left=Math.round(W/2-cx)+"px";fig.style.top=Math.round(gy-(b[1]-b[5])*sc)+"px"}
+   var sc=H/FIGK,w=b[0]*sc,h=b[1]*sc,cx=(b[2]+b[3])/2*sc;im2.style.width=w+"px";im2.style.height=h+"px";
+   fig.style.width=Math.round(w)+"px";fig.style.height=Math.round(h)+"px";fig.style.left=Math.round(W/2-cx)+"px";fig.style.top=Math.round(H*FIGTOP-b[4]*sc)+"px"}
   else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
  function step1(ln,id){var w=lw(ln),cg=cgList();
   if(Array.isArray(ln)&&w!=="narr"&&w!=="@dir"){st.m=ln.length>6?ln[6]||null:null}
-  if(w==="narr"){var cue0=(window.__INNCUE||{})[lt(ln)];if(cue0){st.who=cue0==="none"?null:cue0;st.whoDl=id;st.m=null}return}
+  if(w==="narr"){var cue0=(window.__INNCUE||{})[ot(ln)];if(cue0){st.who=cue0==="none"?null:cue0;st.whoDl=id;st.m=null}return}
   if(!st.who&&(w==="det1"||w==="det0")){st.who="det1";st.whoDl=id;st.quiet=1}
   return;
-  if(w==="narr"){var cue=(window.__INNCUE||{})[lt(ln)];if(cue==="none"){st.who=null;st.whoDl=id}else if(cue&&cue!=="det0"&&cg.indexOf(cue)<0&&(src(cue)||cue==="seryeon"||typeof pf==="function")){st.who=cue;st.whoDl=id;st.m=null}return}
+  if(w==="narr"){var cue=(window.__INNCUE||{})[ot(ln)];if(cue==="none"){st.who=null;st.whoDl=id}else if(cue&&cue!=="det0"&&cg.indexOf(cue)<0&&(src(cue)||cue==="seryeon"||typeof pf==="function")){st.who=cue;st.whoDl=id;st.m=null}return}
   if(typeof w!=="string"||w==="det0")return;
   if(w==="det1"){if(!st.who){st.who="det1";st.whoDl=id;st.m=null}}
   else if(cg.indexOf(w)<0&&w!==st.who&&(!st.who||st.who==="det1"||st.whoDl!==id)){st.who=w;st.whoDl=id;st.m=null}
@@ -90,10 +92,14 @@
  var seat={on:false,scene:""};
  function seatSync(dlgOn){try{var b=bgDef(),car=cur()&&b&&b.key==="carriage";
   if(!car){if(seat.on){seat.on=false;document.querySelectorAll("image.innseat").forEach(function(x){x.remove()})}if(layer)layer.classList.remove("seated");return}
-  if(st.scene!==seat.scene){seat.scene=st.scene;seat.on=false}
+  if(st.scene!==seat.scene){seat.scene=st.scene;seat.on=false;seat.snack=null}
   if(st.who==="det1")seat.on=true;
   var worried=seat.on&&(st.m==="sad"||st.m==="cower");
-  var href="art/ch1/cast/daram-seated-"+(worried?"worried":"neutral")+"-192x256.png";
+  /* 간식 포즈(2026-10-09 전달): '마지막 봉지' → 보여 주기, '안 뜯을 거야' → 품으로 당기기, 편지를 꺼내면 기본으로. 이 세 지점에서만 바꾼다 */
+  try{var sl=typeof DL!=="undefined"&&DL&&DL.lines[DL.i],stx=sl?String(lt(sl)||""):"";
+   if(/^아빠, 이게 마지막 봉지야/.test(stx))seat.snack="show";else if(/^이건 안 뜯을 거야/.test(stx))seat.snack="protect";else if(/^아빠가 안주머니에서 접힌 편지를 꺼낸다/.test(stx)||/엄마 편지/.test(stx))seat.snack=null}catch(e){}
+  var pose=worried?"worried":(seat.snack?"snack-"+seat.snack:"neutral");
+  var href="art/ch1/cast/daram-seated-"+pose+"-192x256.png";
   document.querySelectorAll('svg[data-bg="carriage"]').forEach(function(sv){
    var vb=dlgOn?"318 124 422 195":"0 0 844 390";if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
    var im=sv.querySelector("image.innseat");
@@ -172,13 +178,13 @@
  var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 창고예요/,s:3},{re:/^짐 풀고 내려와요/,s:4}];
  var CUT2=[{re:/^\(차갑다\. 이렇게 작은 몸은/,c:"teapot"},{re:/^…이렇게 좁은 데 둘 수는 없겠다/,c:"teapot"}];
  var cut2El=null;
- function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&lt(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
+ function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&ot(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
   var v=document.getElementById("innstage");
   if(on&&v){if(!cut2El||cut2El.parentNode!==v){cut2El=document.createElement("div");cut2El.id="inncut";cut2El.innerHTML='<img alt="찻주전자 안에 작은 겨울잠쥐가 웅크리고 있다" src="art/ch1/cuts/P13-teapot-observation-640x360.png">';v.appendChild(cut2El);requestAnimationFrame(function(){cut2El&&cut2El.classList.add("in")})}v.classList.add("cut2")}
   else{if(cut2El){cut2El.remove();cut2El=null}if(v)v.classList.remove("cut2")}}catch(e){}}
  (function loop4(){cut2Sync();requestAnimationFrame(loop4)})();
  var cutEl=null;
- function cutSync(){try{var on=0;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&lt(ln);CUT.forEach(function(c){if(t&&c.re.test(t))on=c.s})}
+ function cutSync(){try{var on=0;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&ot(ln);CUT.forEach(function(c){if(t&&c.re.test(t))on=c.s})}
   var v=document.getElementById("innstage");
   if(on&&v){if(!cutEl||cutEl.parentNode!==v){cutEl=document.createElement("div");cutEl.id="innplan";cutEl.innerHTML=planSvg();v.appendChild(cutEl);requestAnimationFrame(function(){cutEl&&cutEl.classList.add("in")})}
    for(var k=1;k<=4;k++)cutEl.classList.toggle("s"+k,on>=k);v.classList.add("cut")}
@@ -230,7 +236,9 @@
    }catch(e){}return lines}
  function talkEntry(lines){try{if(cur()&&G.tab==="talk"&&G.who&&Array.isArray(lines)){var TE=window.__INNTALKENTRY||{},tk=G.who;if(TE[tk]&&!talkEntered[tk]){talkEntered[tk]=1;lines=[["narr",TE[tk]]].concat(lines)}}}catch(e){}return lines}
  var talkEntered={};
- try{var _say0=say;say=function(lines,done,sk){return _say0.call(this,entryFilter(lines),done,sk)}}catch(e){MISS.push("stage entry")}
+ /* 엔진의 관찰 뒤 한 줄 메모('다람의 속마음' 이름표, [나중에]·[잠김] 꼬리표)는 1장에서 띄우지 않는다: 아빠 시점 규칙과 어긋나고 관찰 대사가 이미 같은 내용을 말한다. 현장 메모 목록에는 남는다 */
+ function obsNote(lines){try{return cur()&&G.beats&&G.beats.inn_pro&&G.tab==="scene"&&Array.isArray(lines)&&lines.length===1&&Array.isArray(lines[0])&&lines[0][0]==="think"}catch(e){return false}}
+ try{var _say0=say;say=function(lines,done,sk){if(obsNote(lines)){setTimeout(function(){done&&done()},0);return}return _say0.call(this,entryFilter(lines),done,sk)}}catch(e){MISS.push("stage entry")}
  function split(base,self,lines,done,sk){try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&(x[0]==="@inspect"||x[0]==="@dir")})){
     var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else if(Array.isArray(x)&&x[0]==="@dir"){parts.push(curp);parts.push({dir:parseDir(x[1])});curp=[]}else curp.push(x)});parts.push(curp);
     var k=0;(function next(){if(k>=parts.length){done&&done();return}var p=parts[k++];
@@ -238,7 +246,35 @@
      if(p&&p.dir){dirRun(p.dir);setTimeout(next,p.dir.ms!=null?p.dir.ms:420);return}
      if(!p.length){next();return}var more=k<parts.length;base.call(self,p,function(){next()},sk);try{if(DL)DL.__more=more}catch(e){}})();return}}catch(e){}
    return base.call(self,lines,done,sk)}
+
+ /* ---- 대사 쪽 나누기(2026-10-09 실기기 피드백): 한 번 누를 때 한 문장, 긴 문장은 뜻이 이어지는 자리에서 두 줄 ----
+    문장 끝(. ? ! 뒤 띄어쓰기)에서 나누되, 합쳐도 아주 짧은 줄("응. 도착하면.")은 한 쪽에 둔다. 말줄임(…) 뒤에서는 나누지 않는다.
+    줄바꿈은 가운데에 가까운 띄어쓰기 중 쉼표·연결 어미·조사 뒤를 우선한다. 원래 줄 글은 [7]에 남겨 무대 연출·컷 판정에 쓴다. */
+ var PG_JOIN=12,PG_WRAP=22;
+ function sents(s){var out=[],buf="",i,ch;for(i=0;i<s.length;i++){ch=s.charAt(i);buf+=ch;
+   if(/[.?!]/.test(ch)){var j=i+1;while(j<s.length&&/['"」』)’”]/.test(s.charAt(j))){buf+=s.charAt(j);j++}
+    if(j<s.length&&s.charAt(j)===" "){out.push(buf);buf="";i=j;continue}i=j-1}}
+  if(buf.trim())out.push(buf);return out.map(function(x){return x.trim()}).filter(Boolean)}
+ var ACK=/^(네|응|예|음|아|어|그래|그럼)[.,]$/;   /* 짧은 대답은 다음 문장과 한 쪽에 */
+ function joinShort(a){var r=[];a.forEach(function(x){var p=r.length?r[r.length-1]:null;if(p!==null&&((p+" "+x).length<=PG_JOIN||(ACK.test(p)&&(p+" "+x).length<=34)||(x.length<=4&&(p+" "+x).length<=24)))r[r.length-1]+=" "+x;else r.push(x)});return r}
+ var GOOD=/(,|고|서|면|데|니까|지만|는데|려고|다가|며|를|에|에서|으로|께|한테)$/,GOOD3=/[이가도로]$/;   /* 이·가·도·로는 세 글자 이상 낱말 끝일 때만(복도·아이·누가 오판 방지) */
+ function wrap1(s){if(s.length<=PG_WRAP||s.indexOf("\n")>=0)return s;var best=-1,bs=1e9,mid=s.length/2;
+  for(var i=0;i<s.length;i++){if(s.charAt(i)!==" ")continue;var L=s.slice(0,i),R=s.slice(i+1);if(L.length<7||R.length<6)continue;
+   var w=L.split(" ").pop(),sc=Math.abs(i-mid);if(/,$/.test(w))sc-=9;else if(GOOD.test(w)||(w.length>=3&&GOOD3.test(w)))sc-=4;if(/[…]$/.test(w))sc-=3;if(sc<bs){bs=sc;best=i}}
+  if(best<0)return s;var a=s.slice(0,best),b=s.slice(best+1);return wrap1(a)+"\n"+wrap1(b)}
+ function pageLine(x){if(!Array.isArray(x)||typeof x[1]!=="string"||typeof x[0]!=="string"||x[0].charAt(0)==="@")return [x];
+  var t=x[1];if(t.indexOf("<")>=0)return [x];var inner=x[0]==="narr"&&/^\(.*\)$/.test(t),body=inner?t.slice(1,-1):t;
+  var parts=joinShort(sents(body));if(!parts.length)return [x];
+  return parts.map(function(p,k){var y=x.slice();y[1]=inner?"("+wrap1(p)+")":wrap1(p);y[7]=t;if(k>0){if(y[3]==="testi")y[3]="";if(y[5]!=null)y[5]=""}return y})}
+ window.__innPage=function(lines){try{if(!cur()||!Array.isArray(lines))return lines;var o=[];lines.forEach(function(x){pageLine(x).forEach(function(y){o.push(y)})});return o}catch(e){return lines}};
  window.__innSayX=function(base,self,lines,done,sk){return split(base,self,talkEntry(lines),done,sk)};
+ /* 조사 화면에서 배경 그림에 없는 단서 물건(복도 벽시계, 접수대 숙박부)을 증거 도트로 그 자리에 보여 준다. 정식 소품 그림이 오면 교체 */
+ var PROP={hall:[["C06","art/evidence/inn/C06.png",6.4]],front:[["C09","art/evidence/inn/C09.png",5.2]]};
+ function props(){try{var sc=document.getElementById("bigscene");if(!sc)return;[].slice.call(sc.querySelectorAll(".innprop")).forEach(function(e){e.remove()});
+  if(!cur()||G.tab!=="scene"||!(G.beats&&G.beats.inn_pro)||G.beats.inn_final)return;var l=CASES[G.ci].locations[G.loc],P=l&&PROP[l.id];if(!P)return;
+  P.forEach(function(p){var h=sc.querySelector('[data-spot="'+p[0]+'"]');if(!h||!h.parentElement)return;var im=document.createElement("img");im.className="innprop";im.alt="";im.src=p[1];
+   im.style.left=h.style.left;im.style.top=h.style.top;im.style.width=p[2]+"%";h.parentElement.insertBefore(im,h)})}catch(e){}}
+ try{var _rp=render;render=function(){var r=_rp.apply(this,arguments);props();return r}}catch(e){MISS.push("stage props")}
  try{var _say2=say;say=function(lines,done,sk){return split(_say2,this,lines,done,sk)}}catch(e){MISS.push("stage say")}
  var css=document.createElement("style");css.id="inn-stage-css";css.textContent=[
 
@@ -344,6 +380,7 @@
   "html body.w209.inn1 #w209rail{gap:6px!important}",
   "html body.w209.inn1 #w209rail button{width:42px!important;height:42px!important;min-height:0!important;border-width:1.5px!important}",
   /* 회의: 공개 득표 칸이 말풍선 위쪽(이름표)과 겹치던 문제 → 왼쪽 시계 아래로, 두 줄까지 접힘 */
+  "#bigscene .innprop{position:absolute;transform:translate(-50%,-50%);height:auto;image-rendering:pixelated;pointer-events:none;z-index:1;filter:drop-shadow(0 2px 0 rgba(0,0,0,.45))}",
   "html body.rtg #rtgtal{left:8px!important;top:66px!important;transform:none!important;white-space:normal!important;max-width:150px!important;text-align:left!important;line-height:1.35!important}"
  ].join("\n");document.head.appendChild(css);
  window.__innStage=function(){var r=fig&&fig.getBoundingClientRect();return {src:fig&&fig.firstChild&&fig.firstChild.getAttribute?String(fig.firstChild.getAttribute("src")||"").split("/").pop():"",scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};
