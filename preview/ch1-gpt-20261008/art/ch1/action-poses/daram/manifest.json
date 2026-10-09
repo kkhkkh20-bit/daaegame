@@ -1,0 +1,153 @@
+{
+  "id": "daram",
+  "name_ko": "다람",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/daram/master.png",
+      "size_px": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "d131cad6dca2a9777790e423843e583de5e1cfd4f22650ce18897f0a5f70711e",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/daram/npc.png",
+      "size_px": [
+        251,
+        251
+      ],
+      "mode": "RGBA",
+      "sha256": "8b9984a84248fd7fb45ed7faa0744f2dfd93b841cceed6abba7644e1ff271082",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/daram/dialogue.png",
+      "size_px": [
+        760,
+        705
+      ],
+      "mode": "RGBA",
+      "sha256": "eba11595fe2aa57814b46520c2e72e5a8ecff2ac48adf0e8c5937fa3c122540e",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/daram/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "116c8d174415b9dd71590efeb299164c8a9fe8aa5292b686e21124a695204060",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "references/INTRO04_carriage_empty.png",
+    "background_size_px": [
+      844,
+      390
+    ],
+    "npc_top_left_px": [
+      415,
+      137
+    ],
+    "npc_draw_size_px": [
+      251,
+      251
+    ],
+    "anchor_type": "seated hip on red carriage bench",
+    "source_anchor_px": [
+      744,
+      820
+    ],
+    "runtime_local_anchor_px": [
+      148.919,
+      164.131
+    ],
+    "world_anchor_approx": [
+      564,
+      301
+    ],
+    "feet_baseline_approx": 372,
+    "layer_order": [
+      "original empty carriage",
+      "DARAM seated"
+    ],
+    "occlusion_required_in_provided_reference": false,
+    "notes": "Do not stand Daram on carriage floor. Tail rests at bench and folds slightly over the front edge; both boots dangle. Biscuit and tail stay present in dialogue. Head was regenerated twice with approved face reference; recognizable identity retained, but face is not pixel-exact original and needs individual approval."
+  },
+  "mechanical_export": {
+    "npc_source_crop_xyxy": [
+      0,
+      0,
+      1254,
+      1254
+    ],
+    "dialogue_source_crop_xyxy": [
+      195,
+      170,
+      955,
+      875
+    ],
+    "sampler": "nearest-neighbor",
+    "runtime_alpha": "original alpha retained",
+    "master_preserved": true,
+    "profile_source_crop_xyxy": [
+      420,
+      150,
+      990,
+      720
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "single_pose_rule": "Use this same pose in dialogue. Do not fabricate expressions, mouth loops, animation or standing variants.",
+  "identity_reference": {
+    "file": "identity-reference/daram-original.png",
+    "size_px": [
+      192,
+      192
+    ],
+    "mode": "RGBA",
+    "sha256": "f6d1393c93a7967d5d81b8284d1d0ecfe048ed40734bb7a47d70afdaf9806dc9",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "det1",
+  "suggested_game_asset_directory": "art/ch1/action-poses/daram/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "det1",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}

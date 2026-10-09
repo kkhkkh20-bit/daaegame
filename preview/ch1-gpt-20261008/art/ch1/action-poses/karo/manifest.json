@@ -1,0 +1,155 @@
+{
+  "id": "karo",
+  "name_ko": "까로",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/karo/master.png",
+      "size_px": [
+        1145,
+        1374
+      ],
+      "mode": "RGBA",
+      "sha256": "2812d9519349c760db43b420fd68c8e175ca29ce78d4544d97536b0fc2c91f26",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/karo/npc.png",
+      "size_px": [
+        169,
+        288
+      ],
+      "mode": "RGBA",
+      "sha256": "8376f54fb33ff0b0e171c28c2ec3deeae41018ba3f69711529231a2bf9880f0c",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/karo/dialogue.png",
+      "size_px": [
+        279,
+        320
+      ],
+      "mode": "RGBA",
+      "sha256": "7b4fcc087ed320975e14faaebab55b2e0a86df76a720c4b7076bfb8c5fd6a63d",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/karo/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "7ba7c08ad743e67ced32e22cefac48245ed689b13655d21708985b263f3a53d8",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "references/BG02_dining_panorama.png",
+    "background_size_px": [
+      2048,
+      768
+    ],
+    "npc_top_left_px": [
+      198,
+      340
+    ],
+    "npc_draw_size_px": [
+      169,
+      288
+    ],
+    "ground_anchor_local_px": [
+      88.97,
+      287.54
+    ],
+    "prop_ground_anchor_local_px": [
+      150.19,
+      279.75
+    ],
+    "layer_order": [
+      "background",
+      "whole NPC with its included support furniture"
+    ],
+    "occlusion_required_in_provided_reference": false,
+    "furniture_rule": "Use empty floor space. Do not overlay a second existing post/chair/bench."
+  },
+  "mechanical_export": {
+    "npc_source_bbox_xyxy": [
+      172,
+      69,
+      910,
+      1325
+    ],
+    "dialogue_source_crop_xyxy": [
+      160,
+      40,
+      945,
+      940
+    ],
+    "sampler": "nearest-neighbor",
+    "runtime_alpha": "binary at 50% threshold",
+    "master_preserved": true,
+    "canonical_runtime_export_pipeline": "ImageMagick: alpha threshold 50% → point sampling resize to height 320 for dialogue; library-specific sampling differs slightly from Pillow NEAREST.",
+    "profile_source_crop_xyxy": [
+      300,
+      40,
+      960,
+      700
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "caveats": [
+    "All three action poses remain new unapproved candidates.",
+    "Large source images have pixel-style clusters; this is not a fully hand-authored common native pixel grid. Engine derivatives use nearest-neighbor reduction.",
+    "Neoul retains a fairly large original-style striped tail; it was not slimmed down.",
+    "Props are baked into each action sprite and scale jointly with the body. Use empty floor space rather than overlaying a second existing post, chair, or bench.",
+    "Buri face and clothing were based on the original buri-0 artwork, not the unapproved front candidate. Head is turned toward the player but retains a three-quarter angle."
+  ],
+  "single_pose_rule": "Do not infer or synthesize extra expression states from this one pose.",
+  "identity_reference": {
+    "file": "identity-reference/karo-original.png",
+    "size_px": [
+      192,
+      192
+    ],
+    "mode": "RGBA",
+    "sha256": "b01e968cfba69d056dae14cb35176550649dbf52dd77d550523c347006066fb1",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "karo",
+  "suggested_game_asset_directory": "art/ch1/action-poses/karo/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "karo",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}

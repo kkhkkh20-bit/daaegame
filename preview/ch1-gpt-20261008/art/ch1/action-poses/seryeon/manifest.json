@@ -1,0 +1,166 @@
+{
+  "id": "seryeon",
+  "name_ko": "세련",
+  "status": "existing_seated_paperwork_v2_candidate_reused; no new art generated",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/seryeon/master.png",
+      "size_px": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "sha256": "4c0fd0a77e782073bec19cecbe966d1f371a4bf221b83ee3f4852206d9698975",
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "npc": {
+      "file": "characters/seryeon/npc.png",
+      "size_px": [
+        241,
+        361
+      ],
+      "mode": "RGBA",
+      "sha256": "03d9a7195b0368ca5c3712e247202b92552c577fec2d1d69b68b93d9f8884151",
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "dialogue": {
+      "file": "characters/seryeon/dialogue.png",
+      "size_px": [
+        329,
+        400
+      ],
+      "mode": "RGBA",
+      "sha256": "1e1022f961b31f2b5acf81fd99295b4a5689b482e0efe309b87f4ce8282d2b95",
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "profile": {
+      "file": "characters/seryeon/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "sha256": "fd87063abf0c85f87bbc458baa6f381d8dd29c7e8204c770465dad03e1542b4c",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "references/BG02_dining_panorama.png",
+    "background_size_px": [
+      2048,
+      768
+    ],
+    "npc_top_left_px": [
+      735,
+      283
+    ],
+    "npc_draw_size_px": [
+      241,
+      361
+    ],
+    "chair_seat_local_px": [
+      108,
+      235
+    ],
+    "chair_seat_world_px_approx": [
+      843,
+      518
+    ],
+    "chair_leg_end_world_y_approx": 607,
+    "shoe_floor_world_y_approx": 624,
+    "layer_order": [
+      "background",
+      "whole seated NPC including chair and bag",
+      "original background clipped to tabletop"
+    ],
+    "occlusion_svg_path": "M 862 444 L 990 437 L 1763 427 L 1763 447 L 1008 512 L 858 467 Z",
+    "occlusion_status": "review mask; recheck with game camera",
+    "portable_occlusion_file": "foregrounds/dining_tabletop_occluder.png",
+    "portable_occlusion_manifest": "foregrounds/dining_tabletop_occluder.json"
+  },
+  "mechanical_export": {
+    "npc_source_crop_xyxy": [
+      0,
+      0,
+      1024,
+      1536
+    ],
+    "npc_size_px": [
+      241,
+      361
+    ],
+    "source_scale_approx": 0.235,
+    "dialogue_source_crop_xyxy": [
+      200,
+      30,
+      875,
+      850
+    ],
+    "dialogue_size_px": [
+      329,
+      400
+    ],
+    "sampler": "nearest-neighbor",
+    "alpha": "unaltered source alpha, only resampled",
+    "master_preserved": true,
+    "profile_source_crop_xyxy": [
+      245,
+      25,
+      775,
+      555
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "caveats": [
+    "Original fractional review used 240.64×360.96 at (735,283); runtime export rounds once to 241×361.",
+    "This is the preferred near-end reference only. Superseded rear-seat proposals are excluded.",
+    "Furniture-scale comparison is approximate; final in-game camera/tone QA remains necessary."
+  ],
+  "single_pose_rule": "Do not infer or synthesize extra expression states from this one pose.",
+  "identity_reference": {
+    "file": "identity-reference/seryeon-original.png",
+    "size_px": [
+      192,
+      192
+    ],
+    "mode": "RGBA",
+    "sha256": "d5635fabf2ef3d419dfec77451c9a8eaca125ad2fc66167f08354d4371b641a2",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "seryeon",
+  "suggested_game_asset_directory": "art/ch1/action-poses/seryeon/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "seryeon",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}

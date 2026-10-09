@@ -1,0 +1,44 @@
+{
+  "background": "references/BG02_dining_panorama.png",
+  "file": "foregrounds/dining_tabletop_occluder.png",
+  "top_left_px": [
+    858,
+    427
+  ],
+  "size_px": [
+    906,
+    86
+  ],
+  "polygon_world_px": [
+    [
+      862,
+      444
+    ],
+    [
+      990,
+      437
+    ],
+    [
+      1763,
+      427
+    ],
+    [
+      1763,
+      447
+    ],
+    [
+      1008,
+      512
+    ],
+    [
+      858,
+      467
+    ]
+  ],
+  "use_for": [
+    "nabi",
+    "seryeon"
+  ],
+  "recipe": "background → whole NPC → this foreground extracted from original background; apply the same world/camera transform to every layer.",
+  "status": "review occlusion recipe; confirm current camera and final layering in game"
+}

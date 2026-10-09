@@ -1,0 +1,155 @@
+{
+  "id": "buri",
+  "name_ko": "부리",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/buri/master.png",
+      "size_px": [
+        1145,
+        1374
+      ],
+      "mode": "RGBA",
+      "sha256": "a3b0fe6a46207f0ace4dce3595242ec268f141ac97ae23cc50bfe75c1bc2d343",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/buri/npc.png",
+      "size_px": [
+        156,
+        248
+      ],
+      "mode": "RGBA",
+      "sha256": "f6e0027df8d47c989553b5d56c1b6fcfaf059a8eafb454abf716570020a923fe",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/buri/dialogue.png",
+      "size_px": [
+        297,
+        320
+      ],
+      "mode": "RGBA",
+      "sha256": "83dd2e91b0577bac9e4fbc1ad106a52734f81d54bca2fa30d4fa97240bb61579",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/buri/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "c4b1903c734b15822e407d9ddc4e437608c6b68e62c29b8106e5fe5acd09d702",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "references/BG02_dining_panorama.png",
+    "background_size_px": [
+      2048,
+      768
+    ],
+    "npc_top_left_px": [
+      322,
+      358
+    ],
+    "npc_draw_size_px": [
+      156,
+      248
+    ],
+    "ground_anchor_local_px": [
+      120.74,
+      241.69
+    ],
+    "prop_ground_anchor_local_px": [
+      55.95,
+      247.79
+    ],
+    "layer_order": [
+      "background",
+      "whole NPC with its included support furniture"
+    ],
+    "occlusion_required_in_provided_reference": false,
+    "furniture_rule": "Use empty floor space. Do not overlay a second existing post/chair/bench."
+  },
+  "mechanical_export": {
+    "npc_source_bbox_xyxy": [
+      220,
+      105,
+      964,
+      1284
+    ],
+    "dialogue_source_crop_xyxy": [
+      204,
+      80,
+      984,
+      920
+    ],
+    "sampler": "nearest-neighbor",
+    "runtime_alpha": "binary at 50% threshold",
+    "master_preserved": true,
+    "canonical_runtime_export_pipeline": "ImageMagick: alpha threshold 50% → point sampling resize to height 320 for dialogue; library-specific sampling differs slightly from Pillow NEAREST.",
+    "profile_source_crop_xyxy": [
+      300,
+      70,
+      890,
+      660
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "caveats": [
+    "All three action poses remain new unapproved candidates.",
+    "Large source images have pixel-style clusters; this is not a fully hand-authored common native pixel grid. Engine derivatives use nearest-neighbor reduction.",
+    "Neoul retains a fairly large original-style striped tail; it was not slimmed down.",
+    "Props are baked into each action sprite and scale jointly with the body. Use empty floor space rather than overlaying a second existing post, chair, or bench.",
+    "Buri face and clothing were based on the original buri-0 artwork, not the unapproved front candidate. Head is turned toward the player but retains a three-quarter angle."
+  ],
+  "single_pose_rule": "Do not infer or synthesize extra expression states from this one pose.",
+  "identity_reference": {
+    "file": "identity-reference/buri-original.png",
+    "size_px": [
+      136,
+      182
+    ],
+    "mode": "RGBA",
+    "sha256": "a8e90f35f3e3c233762a6be40d4710a378d37910c9536ed1f231f40d71aa5d8b",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "buri",
+  "suggested_game_asset_directory": "art/ch1/action-poses/buri/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "buri",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}

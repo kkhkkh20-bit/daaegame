@@ -1,0 +1,141 @@
+{
+  "id": "grandma",
+  "name_ko": "할머니",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/grandma/master.png",
+      "size_px": [
+        1123,
+        1400
+      ],
+      "mode": "RGBA",
+      "sha256": "218a8aac3042e9c4e8671d1caa4e673e784ed03f86f2d6935227b9de473fc7e8",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/grandma/npc.png",
+      "size_px": [
+        162,
+        276
+      ],
+      "mode": "RGBA",
+      "sha256": "26acf39cb99743d190f3cacb9902b3fed48c05785c33d8070a6294ad9e6f22fa",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/grandma/dialogue.png",
+      "size_px": [
+        552,
+        680
+      ],
+      "mode": "RGBA",
+      "sha256": "5ba00fee98014c114ba6237e4edf7bfd3a6a30c4c332a6c77593bd27c1fb24b8",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/grandma/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "81bfd01b72cad6ceb2e3b957a0d2350712d964e98e6500f1fea83b4b5dd150c2",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "references/BG02_dining_panorama.png",
+    "background_size_px": [
+      2048,
+      768
+    ],
+    "npc_top_left_px": [
+      329,
+      304
+    ],
+    "npc_draw_size_px": [
+      162,
+      276
+    ],
+    "anchor_type": "feet/furniture contact",
+    "floor_y_approx": 579,
+    "chair_seat_y_approx": null,
+    "layer_order": [
+      "background",
+      "whole cloth-folding PNG"
+    ],
+    "occlusion_svg_path": null
+  },
+  "mechanical_export": {
+    "npc_source_crop": {
+      "left": 210,
+      "top": 146,
+      "width": 660,
+      "height": 1125
+    },
+    "dialogue_source_crop": {
+      "left": 200,
+      "top": 135,
+      "width": 690,
+      "height": 850
+    },
+    "sampler": "nearest-neighbor",
+    "master_preserved": true,
+    "canonical_runtime_export_pipeline": "sharp extract crop → nearest resize fit:fill",
+    "profile_source_crop_xyxy": [
+      200,
+      120,
+      875,
+      795
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "single_pose_rule": "Do not infer or synthesize extra expression states from this one pose.",
+  "identity_reference": {
+    "file": "identity-reference/grandma-original.png",
+    "size_px": [
+      146,
+      182
+    ],
+    "mode": "RGBA",
+    "sha256": "c3b63774ac61e60379a9c7822c731ebce4fa2affdd14410977bf1e02940bac5f",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "innma",
+  "suggested_game_asset_directory": "art/ch1/action-poses/grandma/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "innma",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}
