@@ -141,7 +141,7 @@ def emit(items,mode):
         elif k=='beat':r.append('{beat:%s}'%js(it[1]) if mode=='play' else '')
         elif k=='inspect':r.append('L("@inspect",%s)'%js(it[1]))
     return ',\n   '.join(x for x in r if x)
-BG={'P1':'carriage','P2':'plaza','P3':'reception','P4':'reception_desk','P5':'corridor','P6':None,'P7':None,'P8':None,'P9':'reception','P10':'room','P11':'corridor','P12':None,'P13':None,
+BG={'P1':'carriage','P2':'plaza','P3':'reception','P4':'reception_desk_wide','P5':'corridor','P6':None,'P7':None,'P8':None,'P9':'reception','P10':'room','P11':'corridor','P12':None,'P13':None,
     'E1':'reception','E2':'reception','E3':None,'E4':'corridor','E5':'corridor'}
 LOC={'P1':'front','P2':'front','P3':'front','P4':'front','P5':'hall','P6':'dining','P7':'dining','P8':'dining','P9':'front','P10':'hall','P11':'hall','P12':'bed13','P13':'kitchen',
      'E1':'front','E2':'front','E3':'dining','E4':'hall','E5':'hall'}
