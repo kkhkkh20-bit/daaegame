@@ -248,10 +248,12 @@
   var PP=null;function pplClose(){if(PP){PP.remove();PP=null}}
   function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+ks.length+'명 · 직접 들은 말만 적어요</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
    ks.forEach(function(k){var nm=(CAST[k]&&CAST[k].name)||k,r=ROLE[k]||["",""],said=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q});
-    var face="";try{face=PROF[k]?'<img alt="" src="'+AP+PROF[k]+'/profile.png">':pf(k,"neutral")}catch(e){}
+    var face="";try{face=PROF[k]?'<img alt="" data-k="'+k+'" src="'+AP+PROF[k]+'/profile.png?v=e4">':pf(k,"neutral")}catch(e){}
     h+='<section class="pc"><div class="pf">'+face+'</div><div class="pt"><h4>'+esc(nm)+'</h4><small>'+esc(r[0])+'</small><p>'+esc(r[1])+'</p>'+
      (said.length?'<ul>'+said.map(function(t){return '<li><b>'+esc(t.q)+'</b>'+esc(String(t.a||"").replace(/[{}]/g,""))+'</li>'}).join("")+'</ul>':'<p class="no">아직 직접 물어본 이야기는 없어요.</p>')+'</div></section>'});
    h+='</div></div>';PP=document.createElement("div");PP.id="innppl";PP.setAttribute("role","dialog");PP.setAttribute("aria-label","인물");PP.innerHTML=h;B.appendChild(PP);
+   /* 초상 파일을 못 받으면(배포 직후 캐시 등) 깨진 그림 대신 같은 인물의 작은 얼굴로 */
+   [].slice.call(PP.querySelectorAll(".pf img[data-k]")).forEach(function(im){function fb(){var k=im.dataset.k,w=im.parentNode;if(!w)return;try{w.innerHTML=pf(k,"neutral")}catch(e){w.innerHTML=""}}im.addEventListener("error",fb);if(im.complete&&!im.naturalWidth)fb()});
    PP.addEventListener("click",function(e){var t=e.target;if(t===PP||(t.closest&&t.closest("[data-x]"))){e.stopPropagation();try{SFX.tap()}catch(x){}pplClose()}})}
   function pplTab(){try{var r=document.querySelector(".crec2");if(!r||!inn()){pplClose();return}if(r.querySelector('[data-crt="ppl9"]'))return;var t=r.querySelector('[data-crt="t"]');if(!t)return;
     var b=document.createElement("button");b.type="button";b.className=t.className.replace(/\bon\b/,"");b.dataset.crt="ppl9";b.textContent="인물 "+metList().length;b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();try{SFX.page()}catch(x){}pplOpen()},true);t.parentNode.insertBefore(b,t.nextSibling)}catch(e){}}
