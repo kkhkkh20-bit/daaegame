@@ -149,7 +149,9 @@
  var FOUND={C01:"2층 창고 · 열세 번째 침대 베개 밑",C02:"2층 창고 · 열세 번째 침대 이불",C03:"식당 · 나비에게 들은 말",C04:"부엌 · 빵 바구니",C05:"부엌 · 바구니 속 손님의 옆구리털",C06:"2층 복도 · 꺾이는 곳",C07:"식당 · 첫날 저녁 밤이에게 들은 말",C08:"도토의 방 · 창가",C09:"접수대 · 숙박부",C10:"원탁회의 · 너울의 기록부",C11:"2층 창고 · 침대 밑 상자",C12:"식당 · 세련에게 들은 말",C13:"2층 복도 · 밤이에게 들은 말"};
  function cardSync(){try{if(!cur())return;var m=document.querySelector("#mveil .modal,#ov .modal");if(!m||m.dataset.found)return;var h=m.querySelector("h3");if(!h)return;var nm=h.textContent.trim(),id=null;
   Object.keys(EP.EV).forEach(function(k){if(EP.EV[k].name===nm)id=k});m.dataset.found="1";if(!id||!FOUND[id])return;
-  var sm=document.createElement("small");sm.className="found-at";sm.textContent="발견 장소 · "+FOUND[id];h.insertAdjacentElement("afterend",sm)}catch(e){}}
+  /* 들은 말(증언)은 실제로 대화한 장소를 쓴다(나비는 식당·부엌 어디서든 만날 수 있다). 첫날 저녁 밤이의 말(C07)은 고정 */
+  var TALKF={C03:"나비",C12:"세련",C13:"밤이"},place=FOUND[id];if(TALKF[id]){try{var lc=CASES[G.ci].locations[G.loc];if(lc)place=(lc.short||lc.name)+" · "+TALKF[id]+"에게 들은 말"}catch(e){}}
+  var sm=document.createElement("small");sm.className="found-at";sm.textContent="발견 장소 · "+place;h.insertAdjacentElement("afterend",sm)}catch(e){}}
  var talkWho=null;
  function talkChime(){try{var ft=document.querySelector(".fstalk");var w=ft&&G&&G.tab==="talk"?G.who:null;if(w&&w!==talkWho)chime();talkWho=w}catch(e){}}
  function tick(){try{document.body.classList.toggle("inn1",cur());talkChime();metAll();plateSync();cardSync();
@@ -388,6 +390,9 @@
   "html body.w209.inn1 #w209rail button{width:42px!important;height:42px!important;min-height:0!important;border-width:1.5px!important}",
   /* 회의: 공개 득표 칸이 말풍선 위쪽(이름표)과 겹치던 문제 → 왼쪽 시계 아래로, 두 줄까지 접힘 */
   "#bigscene .innprop{position:absolute;transform:translate(-50%,-50%);height:auto;image-rendering:pixelated;pointer-events:none;z-index:1;filter:drop-shadow(0 2px 0 rgba(0,0,0,.45))}",
+  /* 질문 대화 중 아빠·다람·속마음 줄에서도 상대(질문 대상)를 화면에 그대로 둔다. 다람 큰 그림으로 바뀌지 않게(대화 중 상대 유지 기준) */
+  "html body.w209.inn1.tab-talk.vn-other .fstalk .tfig{visibility:visible!important}",
+  "html body.w209.inn1.tab-talk #dlgveil #vnfig{display:none!important}",
   "html body.rtg #rtgtal{left:8px!important;top:66px!important;transform:none!important;white-space:normal!important;max-width:150px!important;text-align:left!important;line-height:1.35!important}"
  ].join("\n");document.head.appendChild(css);
  window.__innStage=function(){var r=fig&&fig.getBoundingClientRect();return {src:fig&&fig.firstChild&&fig.firstChild.getAttribute?String(fig.firstChild.getAttribute("src")||"").split("/").pop():"",scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};

@@ -208,7 +208,7 @@
    FL("det1","…괜찮아요. 지금은 빵 생각 안 나요.")].concat(t.__follow||[]);})();
  (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="T_na2"})[0];if(t)t.lines=[FL("det0","창고 쪽에서 밤에 무슨 소리를 듣거나 보신 적은 없습니까?"),
    FL("nabi","그 방 쪽엔 아무도 없었어요."),
-   I("앞치마만 자꾸 만지신다. 숨기려는 말이 있는 걸까. 아직은 모른다.")].concat(t.__follow||[]);})();
+   I("듣거나 본 걸 여쭸는데, 아무도 없었다는 대답부터 하신다. 숨기려는 말이 있는 걸까. 아직은 모른다.")].concat(t.__follow||[]);})();
  (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="T_na3"})[0];if(t)t.lines=[FL("det0","할머니는 어떤 분입니까?"),
    FL("nabi","할머니가 남의 돈에 손대실 리 없어요. 제가 여기서 일하면서 봤어요. 그건 정말이에요.")].concat(t.__follow||[]);})();
  (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["geokkuri"]="(밤새 복도가 보인다고 하셨다. 졸리시겠지만 잠깐만 여쭤보자.)";
