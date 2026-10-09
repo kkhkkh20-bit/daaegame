@@ -11,7 +11,7 @@
  function cur(){try{return !!(G&&CASES[G.ci]&&CASES[G.ci].id==="inn")}catch(e){return false}}
  /* 그림 크기표: [캔버스 너비, 높이, 몸 왼쪽, 몸 오른쪽, 위 여백, 아래 여백] (PNG 실측) */
  var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/daram-ear-grab-signature-v1.png":[192,192,18,163,15,6],"art/ch1/cast/daram-tail-hide-signature-v1.png":[192,192,51,142,9,6],"art/ch1/cast/daram-tail-hide-caught-signature-v2.png":[192,192,51,145,8,6],"art/ch1/cast/daram-surprised-front-v3.png":[192,192,22,164,24,6],"art/ch1/cast/daram-happy-front-v3.png":[192,192,21,148,18,6],"art/ch1/cast/daram-worried-front-v3.png":[192,192,38,141,50,6],"art/ch1/cast/daram-determined-front-v3.png":[192,192,22,183,9,6],"art/ch1/cast/daram-angry-front-v3.png":[192,192,14,162,17,6],"art/ch1/cast/daram-happy-front-v2.png":[192,192,21,141,21,6],"art/ch1/cast/daram-surprised-front-v2.png":[192,192,19,141,23,6],"art/ch1/cast/daram-worried-front-v2.png":[192,192,31,137,23,6],"art/ch1/cast/daram-determined-front-v2.png":[192,192,19,135,22,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
-  "art/body/innma-0.png":[146,182,1,115,2,0],"art/body/innma-1.png":[148,182,2,115,4,0],"art/body/innma-2.png":[146,182,2,123,4,0],
+  "art/body/innma-0.png":[146,182,1,115,2,0],"art/ch1/cast/innma-0-gaze-neutral-v2.png":[146,182,1,115,2,0],"art/ch1/cast/innma-0-gaze-gentle-smile-v2.png":[146,182,1,115,2,0],"art/body/innma-1.png":[148,182,2,115,4,0],"art/body/innma-2.png":[146,182,2,123,4,0],
   "art/body/wanggu-0.png":[230,182,22,165,3,0],"art/body/wanggu-1.png":[230,182,22,165,3,0],"art/body/wanggu-2.png":[230,182,2,192,1,0],"art/body/doto-0.png":[182,182,1,133,2,0],"art/body/doto-1.png":[180,182,1,129,2,0],"art/body/doto-2.png":[174,182,1,120,9,0],
   "art/body/buri-0.png":[136,182,2,113,3,0],"art/body/buri-1.png":[130,182,2,114,2,0],"art/body/buri-2.png":[110,182,2,101,6,0]};
  var CASTF={det1:"daram-front",nabi:"nabi-front",karo:"karo-front"},BODYK={innma:"innma",wanggu:"wanggu",doto:"doto",buri:"buri"};
@@ -26,6 +26,8 @@
   if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
   if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
   if(k==="seryeon")return "art/ch1/cast/"+(pose(m)==="2"?"seryeon-surprise-front-v1":"seryeon-normal-front-v1")+".png";
+  /* 토끼 할머니: 원본 innma-0(책 든 자세)에서 눈만 플레이어 쪽으로 고친 v2(2026-10-09 전달). 기본=neutral, 옅은 미소=같은 자세의 gentle-smile. 생각(innma-1)은 원본 그대로 */
+  if(k==="innma"){var ip=pose(m,k);if(ip==="0")return "art/ch1/cast/innma-0-gaze-neutral-v2.png";if(ip==="2")return "art/ch1/cast/innma-0-gaze-gentle-smile-v2.png"}
   if(BODYK[k])return "art/body/"+BODYK[k]+"-"+pose(m,k)+".png";return null}
  var DUO={det0:1,det1:1,narr:1};
  /* 상대가 실제로 자리를 뜨는 지문(화면 표시 문구) */
@@ -269,9 +271,14 @@
  window.__innPage=function(lines){try{if(!cur()||!Array.isArray(lines))return lines;var o=[];lines.forEach(function(x){pageLine(x).forEach(function(y){o.push(y)})});return o}catch(e){return lines}};
  window.__innSayX=function(base,self,lines,done,sk){return split(base,self,talkEntry(lines),done,sk)};
  /* 조사 화면에서 배경 그림에 없는 단서 물건(복도 벽시계, 접수대 숙박부)을 증거 도트로 그 자리에 보여 준다. 정식 소품 그림이 오면 교체 */
- var PROP={hall:[["C06","art/evidence/inn/C06.png",6.4]],front:[["C09","art/evidence/inn/C09.png",5.2]]};
+ var PROP={hall:[["C06","art/evidence/inn/C06.png",6.4]]};   /* 복도 벽시계: 월드 소품 납품 전까지 증거 도트(C06, 숫자 없음·바늘 없음 그대로) */
+ /* 접수대 숙박부: 납품된 월드 소품 WP_C09(빈 종이)를 배경 파노라마 좌표(858,372,174,38)에 그대로 놓는다 */
+ var WPROP={front:[["art/ch1/bg/WP_C09_lodging_ledger.png",858,372,174,38]]};
  function props(){try{var sc=document.getElementById("bigscene");if(!sc)return;[].slice.call(sc.querySelectorAll(".innprop")).forEach(function(e){e.remove()});
-  if(!cur()||G.tab!=="scene"||!(G.beats&&G.beats.inn_pro)||G.beats.inn_final)return;var l=CASES[G.ci].locations[G.loc],P=l&&PROP[l.id];if(!P)return;
+  [].slice.call(sc.querySelectorAll("image.innwprop")).forEach(function(e){e.remove()});
+  if(!cur()||G.tab!=="scene"||!(G.beats&&G.beats.inn_pro)||G.beats.inn_final)return;var l=CASES[G.ci].locations[G.loc],P=l&&PROP[l.id],WP=l&&WPROP[l.id];
+  if(WP){var sv=sc.querySelector("svg[data-bg]");if(sv)WP.forEach(function(w){var im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innwprop");im.setAttribute("href",w[0]);im.setAttribute("x",w[1]);im.setAttribute("y",w[2]);im.setAttribute("width",w[3]);im.setAttribute("height",w[4]);im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)})}
+  if(!P)return;
   P.forEach(function(p){var h=sc.querySelector('[data-spot="'+p[0]+'"]');if(!h||!h.parentElement)return;var im=document.createElement("img");im.className="innprop";im.alt="";im.src=p[1];
    im.style.left=h.style.left;im.style.top=h.style.top;im.style.width=p[2]+"%";h.parentElement.insertBefore(im,h)})}catch(e){}}
  try{var _rp=render;render=function(){var r=_rp.apply(this,arguments);props();return r}}catch(e){MISS.push("stage props")}
