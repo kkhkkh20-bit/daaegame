@@ -48201,6 +48201,13 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  function cutSync(){try{var c=cur(),on=false;if(c){var dl=(typeof DL!=="undefined"&&!!DL)||!!document.getElementById("dlgveil");
    on=dl||!bt("inn_pro")||(bt("inn_final")&&!bt("inn_end"))||!!window.__innCutting}document.body.classList.toggle("inn-cut",on)}catch(e){}}
  try{new MutationObserver(function(){if(cutSync.t)return;cutSync.t=requestAnimationFrame(function(){cutSync.t=0;cutSync()})}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
+ /* Chapter-only small portraits reuse approved full-body PNGs; legacy files stay intact. */
+ var _innFace=pf,FACE_CROP={det1:["daram-front",58,10,92,92],nabi:["nabi-front",54,3,92,92],karo:["karo-front",48,2,100,100],geokkuri:["bami-front",53,0,100,100],bami:["bami-front",53,0,100,100]};
+ pf=function(k,mood){var c=cur(),f=FACE_CROP[k];if(!c||!f)return _innFace.apply(this,arguments);
+  var m=String(mood||"neutral").split(/\s+/)[0].replace(/[^a-z0-9_-]/gi,"")||"neutral",file=f[0];
+  if((k==="geokkuri"||k==="bami")&&/^(nervous|shock|embarrassed|panic|scared|worried|sad|cry|shy)$/.test(m)){file="bami-shock";f=[file,28,0,136,114]}
+  return '<svg class="nodot inn-pixel-face" data-face="'+k+'" viewBox="0 0 100 101" aria-hidden="true" style="image-rendering:pixelated"><g id="an-'+k+'-'+m+'"><svg width="100" height="101" viewBox="'+f.slice(1).join(' ')+'" preserveAspectRatio="xMidYMid meet" overflow="hidden"><image href="art/ch1/cast/'+file+'.png" width="192" height="192" style="image-rendering:pixelated"/></svg></g></svg>';
+ };
  /* geokkuri is the preserved save/script ID for the display character 밤이. */
  try{if(window.__BODY202&&window.__BODY202.bami)window.__BODY202.geokkuri=window.__BODY202.bami.slice()}catch(e){MISS.push("bami body")}
  /* ---- 할머니(여관 주인) 그림: 1장 전용 도트가 아직 없어 기존 토끼 할머니 도트(art/body/innma-*.png = grandma 복사본)를 임시로 쓴다 ---- */
@@ -48214,6 +48221,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   "body.w209 #vnfig:not(.b202)>svg{position:absolute;left:50%;top:max(16px,5vh);bottom:auto;transform:translateX(-50%);width:min(58vh,240px);height:min(58vh,240px)}",
   "body.w209 #vnfig:not(.b202){top:0!important;bottom:auto!important;left:0!important;right:0!important;width:auto!important;height:100%!important;transform:none!important}",
   "#vnfig[data-w=narr]{visibility:hidden!important}",
+  "body.w209 .crec2 .cr-det:not(.empty) .cr-tx>#crdaram>svg.inn-pixel-face{width:26px!important;height:26px!important}",
   /* The temporary face must not occupy a full-body seat and cover neighbours. */
   "#rtg .seat[data-k=seryeon]>svg{height:48%!important;max-width:100%;margin:0 auto;position:relative;top:6%}",
   "html body.w209 #dlgveil #vnfig,html body.w209 #dlgveil #vnfig img,html body.w209 #dlgveil #vnfig svg,html body.w209 .fstalk .tstage .tfig,html body.w209 .fstalk .tstage .tfig img{animation:none!important;transition:filter .12s linear!important}",
