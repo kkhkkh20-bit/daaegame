@@ -303,7 +303,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
   return splitLong(s.slice(0,b),inner).concat(splitLong(s.slice(b+1),inner))}
  function pageLine(x){if(!Array.isArray(x)||typeof x[1]!=="string"||typeof x[0]!=="string"||x[0].charAt(0)==="@")return [x];
   var t=x[1];if(t.indexOf("<")>=0)return [x];var inner=x[0]==="narr"&&/^\(.*\)$/.test(t),body=inner?t.slice(1,-1):t;
-  var parts=joinShort(sents(body)).map(function(p){return BRK[p]||p});if(!parts.length)return [x];
+  var parts=joinShort(sents(body)).map(function(p){return BRK[p]||commaBreak(p)});if(!parts.length)return [x];
   var segs=[];parts.forEach(function(p){splitLong(p,inner).forEach(function(q){segs.push(q)})});
   return segs.map(function(p,k){var y=x.slice();y[1]=inner?"("+p+")":p;y[7]=t;if(k>0){if(y[3]==="testi")y[3]="";if(y[5]!=null)y[5]=""}return y})}
  window.__innPageCold=function(L){try{var o=[];(L||[]).forEach(function(b){if(!b||typeof b.say!=="string"){o.push(b);return}var parts=joinShort(sents(b.say));if(parts.length<2&&fits2(b.say)){o.push(b);return}
@@ -311,13 +311,16 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
    segs.forEach(function(p,i){var c={};for(var k in b)c[k]=b[k];c.say=p;if(i>0){delete c.sfx;delete c.wait;delete c.push;delete c.pull;delete c.fxs;c.z=zEnd;c.id=(b.id||"")+"_"+i}o.push(c)})});return o}catch(e){return L}};
  /* 타이핑 호흡: 방금 찍은 글자 뒤에 쉴 틱 수(1틱 = 대사 속도 간격). 1장에서만 */
  window.__innPace=function(full,n){if(!cur())return 0;var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
-  if(ch==="…"||(ch==="."&&nx==="."))return 5;                          /* 말줄임: 점마다 */
-  if(/[.?!]/.test(ch)&&/[\s)」"”]/.test(nx||" "))return 9;              /* 문장 끝 */
-  if(ch===",")return 4;                                                /* 쉼표 */
-  if(ch==="\n")return 3;
+  if(ch==="…"||(ch==="."&&nx==="."))return 7;                          /* 말줄임: 점마다 */
+  if(/[.?!]/.test(ch)&&/[\s)」"”]/.test(nx||" "))return 12;              /* 문장 끝 */
+  if(ch===",")return 8;                                                /* 2026-10-10: 쉼표에서 한 박자 멈춤(약 0.25초) */                                                /* 쉼표 */
+  if(ch==="\n")return 2;
   var k=full.indexOf("…",n);if(k>0&&k-n<2&&k-n>=0&&/[^\s]/.test(nx))return 1;   /* 말줄임 바로 앞 글자는 느리게 */
   return 0};
  /* 대본에서 의도한 줄바꿈(같은 쪽 두 줄). 문장은 그대로, 줄만 나눈다 */
+ /* 2026-10-10 "대사를 두 줄로": 한 줄에 들어가도 18자 이상이고 쉼표가 있으면, 가운데에 가까운 쉼표 뒤에서 줄을 바꿔 두 줄 한 쪽으로(문장은 그대로) */
+ function commaBreak(p){if(p.indexOf("\n")>=0||p.length<18)return p;var best=-1,bs=1e9,mid=p.length/2;for(var i=0;i<p.length-1;i++){if(p.charAt(i)===","&&p.charAt(i+1)===" "){var L=i+1,R=p.length-i-2;if(L<7||R<6)continue;var sc=Math.abs(i-mid);if(sc<bs){bs=sc;best=i}}}
+  if(best<0)return p;var a=p.slice(0,best+1),b=p.slice(best+2);try{if(nLines(a,textW())>1||nLines(b,textW())>1)return p}catch(e){}return a+"\n"+b}
  var BRK={"두 사람 방은 앞 계단 쪽, 끝에서 둘째 방이에요.":"두 사람 방은 앞 계단 쪽,\n끝에서 둘째 방이에요."};
  window.__innPage=function(lines){try{if(!cur()||!Array.isArray(lines))return lines;var o=[];lines.forEach(function(x){pageLine(x).forEach(function(y){o.push(y)})});return o}catch(e){return lines}};
  window.__innSayX=function(base,self,lines,done,sk){return split(base,self,talkEntry(lines),done,sk)};

@@ -19,7 +19,18 @@
   A.SONGS.inn_travel={bpm:92,spb:12,vol:1.05,prog:["F","C/E","Dm","Bb","F","Gm","Bb C","F"],   /* 따뜻한 6/8: 칼림바 선율 + 일렉 피아노 분산화음 + 현 패드, 타악기 없음 */
    mel:[{n:"C5 _ A4 _ C5 F5 | E5 _ _ _ C5 _ | D5 _ F5 _ A5 G5 | F5 _ _ _ D5 _ | C5 _ A4 _ C5 F5 | G5 _ F5 _ E5 D5 | D5 _ C5 _ Bb4 E5 | F5 _ _ _ . .",i:"kal",v:.24}],
    arp:{n:"1 5 8 10 8 5",r:2,i:"ep",v:.05,o:48},bass:{n:"1 _ _ 5 _ _",i:"sub",v:.4,o:36},pad:{i:"string",v:.04,o:57},echo:.28};
-  A.SONGS.inn_inv={bpm:76,vol:.85,prog:["Em","CM7","Am7","B7","Em","G","Am C","B7"],
+  /* 2026-10-10 "수사 중인데도 몽환적·평화롭다": 조사·회의·최종 대결을 다른 곡으로. 하이햇('똑딱')은 쓰지 않고 낮은 킥만 */
+  A.SONGS.inn_inv={bpm:92,vol:1.25,prog:["Am","Am","F","E","Am","Dm","F E","Am"],   /* 조사: 단조, 피치카토 베이스 반복, 짧은 스타카토 */
+   mel:[{n:"E5 _ _ _ . . C5 _ | B4 _ _ _ . . . . | A4 _ _ _ C5 _ E5 _ | G#4 _ _ _ . . . . | E5 _ _ _ F5 _ E5 _ | D5 _ _ _ . . F5 _ | E5 _ D5 _ C5 _ B4 _ | A4 _ _ _ . . . .",i:"vibe",v:.2}],
+   arp:{n:"1 . 5 . 8 . 5 .",r:1,i:"stac",v:.05,o:48},bass:{n:"1 . 1 . 5 . 1 .",i:"pizz",v:.6,o:33},pad:{i:"pad",v:.04,o:55},
+   dr:["k.......k......."],echo:.14};
+  A.SONGS.inn_meet={bpm:100,vol:1.05,prog:["Dm","Bb","Gm","A","Dm","Bb","Gm A","Dm"],   /* 회의: 맥박처럼 이어지는 베이스, 금관 짧게 */
+   mel:[{n:"D5 _ _ _ . . F5 _ | F5 _ D5 _ . . . . | G5 _ _ _ Bb5 _ A5 _ | A5 _ _ _ C#5 _ . . | D5 _ _ _ . . A5 _ | Bb5 _ A5 _ G5 _ F5 _ | G5 _ _ _ E5 _ C#5 _ | D5 _ _ _ . . . .",i:"brass",v:.14}],
+   bass:{n:"1 1 1 1 1 1 1 1",i:"bsyn",v:.3,o:30},pad:{i:"string",v:.05,o:54},dr:["k.......k.......","..........d....."],echo:.18};
+  A.SONGS.inn_climax={bpm:112,vol:.6,prog:["Cm","Cm","Ab","G","Cm","Fm","Ab Bb","G"],   /* 최종 대결: 빠르고 날카롭게 */
+   mel:[{n:"G5 _ _ _ Ab5 _ G5 _ | Eb5 _ _ _ _ _ D5 _ | C5 _ _ _ Eb5 _ D5 C5 | B4 _ _ _ D5 _ _ _ | G5 _ _ _ C6 _ Bb5 _ | Ab5 _ _ _ G5 _ F5 _ | Eb5 _ F5 _ G5 _ Ab5 _ | B5 _ _ _ _ _ . .",i:"brass",v:.16}],
+   arp:{n:"1 5 8 5",r:1,i:"stac",v:.05,o:48},bass:{n:"1 . 1 . 1 . 5 .",i:"bsq",v:.45,o:36},dr:["k.....k...k.....","........s......."],echo:.12};
+  A.SONGS.inn_inv_old={bpm:76,vol:.85,prog:["Em","CM7","Am7","B7","Em","G","Am C","B7"],
    mel:[{n:"B5 _ _ _ G5 _ E5 _ | E5 _ _ _ D5 _ B4 _ | C5 _ E5 _ A5 _ G5 _ | F#5 _ _ _ D#5 _ _ _ | E5 _ G5 _ B5 _ E6 _ | D6 _ _ B5 _ _ G5 _ | A5 _ C6 _ E6 _ D6 _ | D#6 _ _ _ _ _ . .",i:"kal",v:.2}],
    arp:{n:"1 5 8 10 8 5 . .",r:2,i:"pluck",v:.08,o:52},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.42,o:36},pad:{i:"glass",v:.045,o:60},echo:.3};
   A.SONGS.inn_after={bpm:72,vol:.85,prog:["F","C/E","Dm","Bb","F/A","Gm","Bb C","F"],
@@ -36,7 +47,9 @@
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
     if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 긴장곡 */return M.inv?"inn_inv":null}   /* P11: 신고 확인 뒤 */
     return "inn_inv"}
-   if(!b.inn_final)return "inn_inv";                /* 조사·회의·최종: 같은 곡, 같은 재생 위치 */
+   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return "inn_inv";
+    try{var ph=window.__rtPh&&__rtPh(),E=window.EP1INN||{};if(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)return "inn_climax"}catch(e){}
+    return "inn_meet"}                              /* 조사 / 원탁회의 / 최종 대결: 장면마다 다른 곡 */
    if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
    return "inn_after"};
   window.__innDuck=function(){
@@ -59,9 +72,9 @@
   /* ---- 타이핑음 ---- */
   var lastT=0;
   window.__innType=function(kind){try{
-   if(!S.sound||!AC||AC.state!=="running")return;var now=AC.currentTime;if(now-lastT<.075)return;lastT=now;
+   if(!S.sound||!AC||AC.state!=="running")return;var now=AC.currentTime;if(now-lastT<.055)return;lastT=now;
    var v=kind==="inner"?.6:kind==="narr"?.7:1;   /* 2026-10-10: 타이핑 약 +10dB, 소리 높이를 조금씩 달리해 반복 피로를 줄임 */
-   noise(.016,.11*v,0,2100+Math.random()*500,"bandpass");tone(420+Math.random()*90,.028,"triangle",.07*v)}catch(e){}};
+   tone(560+Math.random()*60,.026,"square",.045*v);noise(.01,.06*v,0,2600,"bandpass")}catch(e){}};   /* 2026-10-10 "따따따 전자음": 짧은 사각파 블립 + 작은 클릭 */
   var _blip=SFX.blip;
   SFX.blip=function(){if(!cur())return _blip.apply(this,arguments);window.__innType(lineKind())};
 

@@ -10,5 +10,23 @@
   "rendering": "Profile native logical size 64x64; 128x128 is exact 2x nearest neighbor. Full body 128x192. Alpha strictly 0 or 255. Use image-rendering: pixelated.",
   "scope": "Only visual assets. No behavior or dialogue changes.",
   "source": "Built-in image generation, followed by deterministic alpha and pixel export.",
-  "profile_master": "father-profile-master.png"
+  "profile_master": "father-profile-master.png",
+  "profile_default": {
+    "files": [
+      "father-profile-128.png",
+      "father-profile-64.png",
+      "father-speaker128.png"
+    ],
+    "master": "../source/father-profile-neutral-master.png",
+    "design": "Neutral honest warm face, eyes comfortably open; same chestnut squirrel and outfit (user-approved 2026-10-09).",
+    "export": "Master 1254x1254 RGBA -> 56x58 logical bust (cell majority, thin dark lines kept when >=30% of a cell), placed at (4,3) on 64x64, alpha 0/255; 128 = exact 2x nearest; speaker128 = 128 crop (10,0,126,116) nearest-scaled to 128 (same framing as before)."
+  },
+  "profile_alt_sly": {
+    "files": [
+      "father-sly-profile-128.png",
+      "father-sly-profile-64.png",
+      "father-sly-speaker128.png"
+    ],
+    "note": "Previous half-lidded sly profile, kept as a separate expression. Not wired to any line."
+  }
 }
