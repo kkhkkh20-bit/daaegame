@@ -1,0 +1,14 @@
+{
+  "design": "Chestnut squirrel father, mid-30s; warm sly half-lidded eyes; relaxed leaning pose; subtly broader shoulders.",
+  "master": "father-master-v4.png",
+  "fullbody": "father-fullbody-128x192.png",
+  "profiles": [
+    "father-profile-128.png",
+    "father-profile-64.png"
+  ],
+  "profile_layout": "Dedicated bust derived from full-body reference; no post or hands; identical character design; 2px padding on logical 64px canvas.",
+  "rendering": "Profile native logical size 64x64; 128x128 is exact 2x nearest neighbor. Full body 128x192. Alpha strictly 0 or 255. Use image-rendering: pixelated.",
+  "scope": "Only visual assets. No behavior or dialogue changes.",
+  "source": "Built-in image generation, followed by deterministic alpha and pixel export.",
+  "profile_master": "father-profile-master.png"
+}
