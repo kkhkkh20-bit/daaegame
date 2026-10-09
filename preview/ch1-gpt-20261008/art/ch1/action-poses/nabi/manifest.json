@@ -1,0 +1,144 @@
+{
+  "id": "nabi",
+  "name_ko": "나비",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/nabi/master.png",
+      "size_px": [
+        1222,
+        1287
+      ],
+      "mode": "RGBA",
+      "sha256": "1da76dc0901b3046f31785b33174cc4fabff76151cb41316e2346d6aabc2ed37",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/nabi/npc.png",
+      "size_px": [
+        212,
+        315
+      ],
+      "mode": "RGBA",
+      "sha256": "18624a7dc3ab573730ffeeea72a618deb440061a96a2de4b7504e56fdac1f96a",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/nabi/dialogue.png",
+      "size_px": [
+        620,
+        588
+      ],
+      "mode": "RGBA",
+      "sha256": "17865bccbf6263a1f366efaacbdd0888f4d829adca9d088db93d49713f284ebb",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/nabi/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "cc981a4cb63083b87b83f7e745292ed82b0b0d77a972bd16db87c0134d4c0989",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "references/BG02_dining_panorama.png",
+    "background_size_px": [
+      2048,
+      768
+    ],
+    "npc_top_left_px": [
+      690,
+      302
+    ],
+    "npc_draw_size_px": [
+      212,
+      315
+    ],
+    "anchor_type": "feet/furniture contact",
+    "floor_y_approx": 617,
+    "chair_seat_y_approx": 533,
+    "layer_order": [
+      "background",
+      "whole seated PNG including chair",
+      "original background clipped to tabletop"
+    ],
+    "occlusion_svg_path": "M 862 444 L 990 437 L 1763 427 L 1763 447 L 1008 512 L 858 467 Z",
+    "portable_occlusion_file": "foregrounds/dining_tabletop_occluder.png",
+    "portable_occlusion_manifest": "foregrounds/dining_tabletop_occluder.json"
+  },
+  "mechanical_export": {
+    "npc_source_crop": {
+      "left": 175,
+      "top": 106,
+      "width": 744,
+      "height": 1106
+    },
+    "dialogue_source_crop": {
+      "left": 165,
+      "top": 97,
+      "width": 775,
+      "height": 735
+    },
+    "sampler": "nearest-neighbor",
+    "master_preserved": true,
+    "canonical_runtime_export_pipeline": "sharp extract crop → nearest resize fit:fill",
+    "profile_source_crop_xyxy": [
+      395,
+      80,
+      945,
+      630
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "single_pose_rule": "Do not infer or synthesize extra expression states from this one pose.",
+  "identity_reference": {
+    "file": "identity-reference/nabi-original.png",
+    "size_px": [
+      192,
+      192
+    ],
+    "mode": "RGBA",
+    "sha256": "b70d3b1c0c47b9368ac0e08af65d8cf5aab15baec3ef8fcbc5063298162a137c",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "nabi",
+  "suggested_game_asset_directory": "art/ch1/action-poses/nabi/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "nabi",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "bami",
+  "name_ko": "밤이",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/bami/master.png",
+      "size_px": [
+        1247,
+        1261
+      ],
+      "mode": "RGBA",
+      "sha256": "d6d6b7de23df989eea561d211f7718884d1460b2962c3d74cb4ed391fb8d797b",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/bami/npc.png",
+      "size_px": [
+        424,
+        429
+      ],
+      "mode": "RGBA",
+      "sha256": "f67c7d3b42fcb4f9fd58ad769794b3f489c5f307c408e708b775676db53f2c6a",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/bami/dialogue.png",
+      "size_px": [
+        660,
+        830
+      ],
+      "mode": "RGBA",
+      "sha256": "b17cb001e1aeaba62377a68026ef8a75c2f360b63fd5fa79881686a2ca548df5",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/bami/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "1c8bbea5b01c4b4dd5bddd8593364e8436f8ada19d22882c7135a958eb2382e0",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "backgrounds/BG_corridor_2f_pixel_v1.png",
+    "background_size_px": [
+      1672,
+      941
+    ],
+    "npc_top_left_px": [
+      100,
+      25
+    ],
+    "npc_draw_size_px": [
+      424,
+      429
+    ],
+    "anchor_type": "both feet at beam, not floor baseline",
+    "source_anchor_px": [
+      638,
+      62
+    ],
+    "runtime_local_anchor_px": [
+      216.93,
+      21.093
+    ],
+    "world_anchor_approx": [
+      317,
+      46
+    ],
+    "feet_baseline_approx": null,
+    "layer_order": [
+      "background",
+      "beam",
+      "BAMI"
+    ],
+    "occlusion_required_in_provided_reference": false,
+    "notes": "Keep upside-down orientation in dialogue; do not flip upright. Hanging support is separate; feet overlap beam face. Foreground post placement reads as full-size hanging bat, not a tiny standing sprite over a door.",
+    "support": {
+      "file": "props/supports/BAMI_beam_prop_v1.png",
+      "draw_size_px": [
+        145,
+        22
+      ],
+      "top_left_px": [
+        251,
+        36
+      ]
+    }
+  },
+  "mechanical_export": {
+    "npc_source_crop_xyxy": [
+      0,
+      0,
+      1247,
+      1261
+    ],
+    "dialogue_source_crop_xyxy": [
+      315,
+      405,
+      975,
+      1235
+    ],
+    "sampler": "nearest-neighbor",
+    "runtime_alpha": "original alpha retained",
+    "master_preserved": true,
+    "profile_source_crop_xyxy": [
+      300,
+      565,
+      1010,
+      1275
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "single_pose_rule": "Use this same pose in dialogue. Do not fabricate expressions, mouth loops, animation or standing variants.",
+  "identity_reference": {
+    "file": "identity-reference/bami-original.png",
+    "size_px": [
+      192,
+      192
+    ],
+    "mode": "RGBA",
+    "sha256": "85ed5eb02e57317d8ae756b54c6c9d4c0d9d729a9d524b3b7a49da83da476204",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "geokkuri",
+  "suggested_game_asset_directory": "art/ch1/action-poses/bami/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "geokkuri",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}

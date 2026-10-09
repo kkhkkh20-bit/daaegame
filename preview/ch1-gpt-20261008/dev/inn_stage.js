@@ -23,7 +23,8 @@
  var DFACE={shock:"daram-surprised-front-v2",sad:"daram-worried-front-v2",laugh:"daram-happy-front-v2",resolve:"daram-determined-front-v2",
   oops:"daram-ear-grab-signature-v1",shy:"daram-tail-hide-signature-v1",caught:"daram-tail-hide-caught-signature-v2",
   panic:"daram-surprised-front-v3",cower:"daram-worried-front-v3",joy:"daram-happy-front-v3",confront:"daram-determined-front-v3",mad:"daram-angry-front-v3"};
- function src(k,m){if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
+ function src(k,m){var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
+if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
   if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
   if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
   /* 세련: 앉아서 서류를 보는 v2(2026-10-09 전달, 개별 시안·최종 승인 아님). 대화에서도 앉은 맥락 유지 → 놀람 차분(서 있는 v1)은 쓰지 않는다 */
@@ -55,7 +56,12 @@
  /* 2026-10-09 대화판 03(상반신 구도) 기준: 인물별 배율(화면 높이 390 기준 원본 픽셀 배율)과 머리 끝 12px.
     얼굴·어깨·손이 읽히고 아래(다리)는 대사창 쪽으로 잘린다. 배경은 확대하지 않는다 */
  var DS={det1:3.15,innma:2.739,geokkuri:2.739,nabi:2.759,karo:2.739,seryeon:2.82,wanggu:2.739,doto:2.132,buri:2.739};
- function frame(k,s,W,H){var b=BOX[s]||[192,192,20,170,10,6],sc=(DS[k]||2.739)*H/390;return {w:b[0]*sc,h:b[1]*sc,left:W/2-(b[2]+b[3])/2*sc,top:H*12/390-b[4]*sc}}
+ /* 통합 아트 행동 포즈의 대화 그림(상반신 crop): 그림 높이를 화면 높이 비율로 맞춘다. 밤이는 거꾸로 매달린 그림이라 얼굴이 대사창 위에 오도록 위로 올린다 */
+ var FSC={"art/ch1/action-poses/grandma/dialogue.png":[552,680,9,535,10,.96,0],"art/ch1/action-poses/seryeon/dialogue.png":[329,400,0,319,10,.96,0],"art/ch1/action-poses/nabi/dialogue.png":[620,588,9,590,8,.92,0],
+  "art/ch1/action-poses/doto/dialogue.png":[960,865,14,928,16,.92,0],"art/ch1/action-poses/bami/dialogue.png":[660,830,15,647,0,.92,-.16],"art/ch1/action-poses/daram/dialogue.png":[760,705,15,738,12,.92,0],
+  "art/ch1/action-poses/karo/dialogue.png":[279,320,4,267,10,.92,0],"art/ch1/action-poses/buri/dialogue.png":[297,320,10,289,10,.92,0],"art/ch1/action-poses/neoul/dialogue.png":[459,320,4,441,9,.92,0]};
+ function frame(k,s,W,H){var f=FSC[s];if(f){var sc=f[5]*H/f[1];return {w:f[0]*sc,h:f[1]*sc,left:W/2-(f[2]+f[3])/2*sc,top:H*12/390-f[4]*sc+f[6]*H}}
+  var b=BOX[s]||[192,192,20,170,10,6],sc=(DS[k]||2.739)*H/390;return {w:b[0]*sc,h:b[1]*sc,left:W/2-(b[2]+b[3])/2*sc,top:H*12/390-b[4]*sc}}
  window.__innFrame=function(k,s){return frame(k,String(s||"").split("?")[0],innerWidth,innerHeight)};
  function draw(k,m){var W=innerWidth,H=innerHeight;
   if(k!==st.shown){if(k)chime();st.shown=k||null}
@@ -284,7 +290,7 @@
     실제 대사창과 같은 글꼴·폭으로 줄 수를 재서, 두 줄 안에 들어가면 문장을 통째로 한 쪽에 둔다.
     세 줄 이상이 될 때만 뜻이 이어지는 자리(쉼표·연결 어미·조사)에서 다음 쪽으로 넘긴다. 글자 크기는 바꾸지 않는다. */
  var MZ=null,MC={};
- function textW(){try{var d=document.getElementById("dtxt");if(d&&d.clientWidth>40)return d.clientWidth}catch(e){}return Math.min(540,innerWidth-32)-32}
+ function textW(){try{var d=document.getElementById("dtxt");if(d&&d.clientWidth>40)return d.clientWidth}catch(e){}return Math.min(innerWidth*.75,900,innerWidth-32)-32-(innerHeight<380?68:76)}
  function nLines(t,w){var k=w+"|"+t;if(MC[k])return MC[k];try{if(!MZ){MZ=document.createElement("div");MZ.setAttribute("aria-hidden","true");MZ.style.cssText="position:fixed;left:-9999px;top:0;visibility:hidden;pointer-events:none;font-family:Galmuri11B,Galmuri11,monospace;line-height:24px;word-break:keep-all;white-space:pre-wrap;overflow-wrap:break-word;padding:0;margin:0";document.body.appendChild(MZ)}
    var d=document.getElementById("dtxt"),fs=d?getComputedStyle(d).fontSize:(getComputedStyle(document.body).getPropertyValue("--t-story")||"16px");MZ.style.fontSize=fs;MZ.style.lineHeight=(parseFloat(fs)*1.5)+"px";MZ.style.width=w+"px";MZ.textContent=t;var n=Math.max(1,Math.round(MZ.offsetHeight/(parseFloat(fs)*1.5)));MC[k]=n;return n}catch(e){return Math.ceil(t.length/30)}}
  window.__innLines=function(t){return nLines(t,textW())};
@@ -321,7 +327,7 @@
   if(!cur()||G.tab!=="scene"||!(G.beats&&G.beats.inn_pro)||G.beats.inn_final)return;var l=CASES[G.ci].locations[G.loc],P=l&&PROP[l.id],WP=l&&WPROP[l.id];
   if(WP){var sv=sc.querySelector("svg[data-bg]");if(sv)WP.forEach(function(w){var im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innwprop");im.setAttribute("href",w[0]);im.setAttribute("x",w[1]);im.setAttribute("y",w[2]);im.setAttribute("width",w[3]);im.setAttribute("height",w[4]);im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)})}
   if(!P)return;
-  P.forEach(function(p){var h=sc.querySelector('[data-spot="'+p[0]+'"]');if(!h||!h.parentElement)return;var im=document.createElement("img");im.className="innprop";im.alt="";im.src=p[1];
+  P.forEach(function(p){var h=sc.querySelector('[data-spot="'+p[0]+'"]')||sc.querySelector('[data-done="'+p[0]+'"]');   /* 살펴본 뒤(체크 표시)에도 벽시계는 그 자리에 남는다 */if(!h||!h.parentElement)return;var im=document.createElement("img");im.className="innprop";im.alt="";im.src=p[1];
    im.style.left=h.style.left;im.style.top=h.style.top;im.style.width=p[2]+"%";h.parentElement.insertBefore(im,h)})}catch(e){}}
  try{var _rp=render;render=function(){var r=_rp.apply(this,arguments);props();return r}}catch(e){MISS.push("stage props")}
  /* 아침 해: 첫 조사 단서(I1~I6)를 다 모은 순간 한 번, 창고가 달라졌다는 것을 이야기로 알린다(힌트를 쓰지 않아도 다음 단계가 보이게) */
@@ -421,7 +427,7 @@
   /* 대사 본문: 모든 줄 종류(발화·속마음·지문) 같은 크기·행간, 두 줄 높이를 미리 잡아 줄 수가 바뀌어도 창이 출렁이지 않게 */
   "html body.w209 #dlgveil #vnbox #dtxt,html body.w209 #dlgveil #vnbox .txt{font-size:var(--t-story)!important;line-height:1.5!important;min-height:1.5em;text-align:left!important}",
   /* 대사창: 인물이 서는 가운데에 좁게(눈이 화면 왼쪽 끝까지 가지 않게), 그 안에서 왼쪽 정렬. 한 쪽에 한 줄 */
-  "html body.w209.inn1 #dlgveil #vnbox .vband.bot{left:50%!important;right:auto!important;width:min(540px,calc(100vw - 32px))!important;max-width:none!important;transform:translateX(-50%)!important}",
+  "html body.w209.inn1 #dlgveil #vnbox .vband.bot{left:50%!important;right:auto!important;width:min(75vw,900px,calc(100vw - 32px))!important;max-width:none!important;transform:translateX(-50%)!important}",   /* 대화 UI v3(2026-10-09 확정): 가운데 약 75% 폭 */
   "html body #inncold .box{left:50%!important;right:auto!important;width:min(540px,calc(100vw - 32px))!important;transform:translateX(-50%)!important}",
   "html body.w209.inn1 #dlgveil #vnbox .plate{font-size:var(--t-label)!important;line-height:16px!important;padding:0 8px!important;top:-16px!important;min-height:0!important}",
   "html body.w209 #dlgveil #vnbox .nx{bottom:3px!important}",

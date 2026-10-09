@@ -1,0 +1,155 @@
+{
+  "id": "neoul",
+  "name_ko": "너울",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/neoul/master.png",
+      "size_px": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "sha256": "6edd6fc6c3eec4cd00bc51f64fb9d6f45af2a95c6e5ab54951a85d5dd91333c6",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/neoul/npc.png",
+      "size_px": [
+        279,
+        266
+      ],
+      "mode": "RGBA",
+      "sha256": "809b9b0b12e9c0cdadbc069898ef90a72b557240f45dc9529ce9d364915d57a5",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/neoul/dialogue.png",
+      "size_px": [
+        459,
+        320
+      ],
+      "mode": "RGBA",
+      "sha256": "f45a143f6621f74e69f17fd26ea445c7e20eed7acdf5418f96301c951af0be4d",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/neoul/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "dfd6cc4458b43e1fe1f4abc216c67d99e66d75d31280d266c6d67358948f5ad4",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "references/BG02_dining_panorama.png",
+    "background_size_px": [
+      2048,
+      768
+    ],
+    "npc_top_left_px": [
+      1600,
+      376
+    ],
+    "npc_draw_size_px": [
+      279,
+      266
+    ],
+    "ground_anchor_local_px": [
+      178.77,
+      265.75
+    ],
+    "prop_ground_anchor_local_px": [
+      68.66,
+      258.63
+    ],
+    "layer_order": [
+      "background",
+      "whole NPC with its included support furniture"
+    ],
+    "occlusion_required_in_provided_reference": false,
+    "furniture_rule": "Use empty floor space. Do not overlay a second existing post/chair/bench."
+  },
+  "mechanical_export": {
+    "npc_source_bbox_xyxy": [
+      120,
+      97,
+      1217,
+      1143
+    ],
+    "dialogue_source_crop_xyxy": [
+      110,
+      75,
+      1230,
+      855
+    ],
+    "sampler": "nearest-neighbor",
+    "runtime_alpha": "binary at 50% threshold",
+    "master_preserved": true,
+    "canonical_runtime_export_pipeline": "ImageMagick: alpha threshold 50% → point sampling resize to height 320 for dialogue; library-specific sampling differs slightly from Pillow NEAREST.",
+    "profile_source_crop_xyxy": [
+      435,
+      75,
+      1045,
+      685
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "caveats": [
+    "All three action poses remain new unapproved candidates.",
+    "Large source images have pixel-style clusters; this is not a fully hand-authored common native pixel grid. Engine derivatives use nearest-neighbor reduction.",
+    "Neoul retains a fairly large original-style striped tail; it was not slimmed down.",
+    "Props are baked into each action sprite and scale jointly with the body. Use empty floor space rather than overlaying a second existing post, chair, or bench.",
+    "Buri face and clothing were based on the original buri-0 artwork, not the unapproved front candidate. Head is turned toward the player but retains a three-quarter angle."
+  ],
+  "single_pose_rule": "Do not infer or synthesize extra expression states from this one pose.",
+  "identity_reference": {
+    "file": "identity-reference/neoul-original.png",
+    "size_px": [
+      230,
+      182
+    ],
+    "mode": "RGBA",
+    "sha256": "e1d957fb8ebc2e8cadc06f2c94fb4a7ff8afa4428a5865fd6a7162db4550932a",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "wanggu",
+  "suggested_game_asset_directory": "art/ch1/action-poses/neoul/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "wanggu",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "id": "doto",
+  "name_ko": "도토",
+  "status": "new_pose_candidate_not_individually_approved",
+  "state_count": 1,
+  "assets": {
+    "master": {
+      "file": "characters/doto/master.png",
+      "size_px": [
+        1181,
+        1332
+      ],
+      "mode": "RGBA",
+      "sha256": "2fed76b30658c16f1a87f7aa6f1061ebce8b81385895d28caae858e6a9c5f012",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "npc": {
+      "file": "characters/doto/npc.png",
+      "size_px": [
+        472,
+        533
+      ],
+      "mode": "RGBA",
+      "sha256": "c77c7872a37d832411d6b2c9a3c059cf8d50ed4c6383736bda55fdec72ba17ea",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "dialogue": {
+      "file": "characters/doto/dialogue.png",
+      "size_px": [
+        960,
+        865
+      ],
+      "mode": "RGBA",
+      "sha256": "5a8c19de05b553fe906d573c0ed7e34f1e1e19a403b009f2b9717cb1eb862a00",
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    "profile": {
+      "file": "characters/doto/profile.png",
+      "size_px": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "43a2d0daae7734b90fb6e3758766e59681f0ec2843770827331a0986d4152c71",
+      "role": "character information / relationship roster face-and-shoulders thumbnail"
+    }
+  },
+  "placement": {
+    "background": "backgrounds/BG_doto_room_pixel_v1.png",
+    "background_size_px": [
+      1672,
+      941
+    ],
+    "npc_top_left_px": [
+      690,
+      161
+    ],
+    "npc_draw_size_px": [
+      472,
+      533
+    ],
+    "anchor_type": "seated hip on existing chair",
+    "source_anchor_px": [
+      650,
+      1000
+    ],
+    "runtime_local_anchor_px": [
+      259.78,
+      400.15
+    ],
+    "world_anchor_approx": [
+      950,
+      561
+    ],
+    "feet_baseline_approx": 671,
+    "layer_order": [
+      "room including chair",
+      "room props including C08",
+      "DOTO body only"
+    ],
+    "occlusion_required_in_provided_reference": false,
+    "notes": "No chair or desk in sprite. Feet dangle above floor baseline 700. Personal open reading book remains in same pose in both views. C08 notebook image x1106–1270,y450–479 remains clear. Keep independent C08 hit region [1092,438,192,62] active and use pointer-events:none on character visual, since the personal book nears its left padding. No occluder required for this preview placement."
+  },
+  "mechanical_export": {
+    "npc_source_crop_xyxy": [
+      0,
+      0,
+      1181,
+      1332
+    ],
+    "dialogue_source_crop_xyxy": [
+      95,
+      115,
+      1055,
+      980
+    ],
+    "sampler": "nearest-neighbor",
+    "runtime_alpha": "original alpha retained",
+    "master_preserved": true,
+    "profile_source_crop_xyxy": [
+      440,
+      105,
+      1040,
+      705
+    ],
+    "profile_size_px": [
+      256,
+      256
+    ],
+    "profile_sampler": "Pillow NEAREST; original pose, colours and orientation retained; no redraw"
+  },
+  "single_pose_rule": "Use this same pose in dialogue. Do not fabricate expressions, mouth loops, animation or standing variants.",
+  "identity_reference": {
+    "file": "identity-reference/doto-original.png",
+    "size_px": [
+      1181,
+      1332
+    ],
+    "mode": "RGBA",
+    "sha256": "166b32f4dc003ff1802b7adf59a2b061a0c9cc550c2fa600b6fde1780b1e4df8",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "role": "Existing design reference only; the Doto file is the user-selected v4 base. Not an additional new action state."
+  },
+  "existing_runtime_key": "doto",
+  "suggested_game_asset_directory": "art/ch1/action-poses/doto/",
+  "apply_rule": "Keep the canonical speaker/runtime key. Update only the explicit action-pose asset binding; do not fabricate missing states.",
+  "caveats": [
+    "The new seated pose has a prominent head. Keep the user constraint against an exaggerated large head and compare against the included selected v4 base; final visual approval is pending."
+  ],
+  "profile_visibility": {
+    "rule": "Show only after the existing encounter/reveal state for this canonical runtime character is satisfied. Keep existing unknown/silhouette behavior before encounter.",
+    "canonical_runtime_key": "doto",
+    "do_not_invent": [
+      "biography",
+      "relationship",
+      "deduction",
+      "character facts",
+      "new encounter flag names"
+    ]
+  }
+}
