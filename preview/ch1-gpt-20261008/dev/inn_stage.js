@@ -1,0 +1,223 @@
+/* ===== 1장 대화 무대 정리 (inn_stage) =====
+   기준(2026-10-09 확정): 원탁 회의 밖의 대화는 아빠·다람과 상대 한 명. 화면은 아빠 시점이라 아빠 얼굴은 띄우지 않는다.
+   1) 대화 상대 고정: 한 대화(대사 묶음)의 상대를 처음에 정해 끝까지 그 인물만 세운다. 다람·아빠가 말해도 상대를 바꾸지 않는다.
+      주민이 없는 부녀 대화는 다람. 상대가 실제로 퇴장하는 지문 뒤에만 다람으로 바뀐다.
+   2) 배경 고정: 대화 중에는 장소 이동 입력(좌우 화살표·메뉴·지도)을 막는다. 장면 그림은 화면 너비 전체로(양옆 검은 띠 제거).
+   3) 글자 크기 체계: 이야기 글 18 / 버튼 16 / 이름표·소제목 15 / 보조 글 13 / 카드 제목 22 (글자 크기 설정은 이야기 글에 적용).
+   4) 대화 창: 두 줄 높이로 줄여 인물 상반신이 보이게. */
+(function(){
+ var MISS=window.__INNMISS||(window.__INNMISS=[]);var EP=window.EP1INN;if(!EP){MISS.push("stage: no EP");return}
+ function cur(){try{return !!(G&&CASES[G.ci]&&CASES[G.ci].id==="inn")}catch(e){return false}}
+ /* 그림 크기표: [캔버스 너비, 높이, 몸 왼쪽, 몸 오른쪽, 위 여백, 아래 여백] (PNG 실측) */
+ var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
+  "art/body/innma-0.png":[146,182,1,115,2,0],"art/body/innma-1.png":[148,182,2,115,4,0],"art/body/innma-2.png":[146,182,2,123,4,0],
+  "art/body/wanggu-0.png":[230,182,22,165,3,0],"art/body/wanggu-1.png":[230,182,22,165,3,0],"art/body/wanggu-2.png":[230,182,2,192,1,0],"art/body/doto-0.png":[182,182,1,133,2,0],"art/body/doto-1.png":[180,182,1,129,2,0],"art/body/doto-2.png":[174,182,1,120,9,0],
+  "art/body/buri-0.png":[136,182,2,113,3,0],"art/body/buri-1.png":[130,182,2,114,2,0],"art/body/buri-2.png":[110,182,2,101,6,0]};
+ var CASTF={det1:"daram-front",nabi:"nabi-front",karo:"karo-front"},BODYK={innma:"innma",wanggu:"wanggu",doto:"doto",buri:"buri"};
+ function pose(m){var e=(window.__MOOD_EXPR||{})[String(m||"").split(/\s+/)[0]]||"normal";return e==="fluster"?"2":e==="doubt"?"1":"0"}
+ function src(k,m){if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
+  if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
+  if(k==="seryeon")return "art/ch1/cast/"+(pose(m)==="2"?"seryeon-surprise-front-v1":"seryeon-normal-front-v1")+".png";
+  if(BODYK[k])return "art/body/"+BODYK[k]+"-"+pose(m)+".png";return null}
+ var DUO={det0:1,det1:1,narr:1};
+ /* 상대가 실제로 자리를 뜨는 지문(화면 표시 문구) */
+ var EXIT={"할머니가 서둘러 먼저 안으로 들어간다. 다람이 아빠를 올려다본다.":1,"너울이 기록부에 적고 나간다.":1};
+ function lw(x){return Array.isArray(x)?x[0]:(x&&x.w)}function lt(x){return Array.isArray(x)?x[1]:(x&&x.t)}function lm(x){return Array.isArray(x)?x[2]:(x&&x.m)}
+ function cgList(){try{var b=window.__innBg&&window.__innBg();return (b&&b.def&&b.def.cg)||[]}catch(e){return []}}
+ function firstResident(lines){var cg=cgList();for(var i=0;i<(lines||[]).length;i++){var w=lw(lines[i]);if(typeof w==="string"&&!DUO[w]&&cg.indexOf(w)<0)return w}return null}
+ function hasDuo(lines){return (lines||[]).some(function(x){var w=lw(x);return w==="det1"||w==="det0"})}
+ function scene(){try{if(G.beats&&G.beats.inn_pi!=null&&!G.beats.inn_pro)return {key:"P"+G.beats.inn_pi,s:EP.PRO[G.beats.inn_pi]};
+  if(G.beats&&G.beats.inn_ei!=null&&G.beats.inn_final&&!G.beats.inn_end)return {key:"E"+G.beats.inn_ei,s:EP.END[G.beats.inn_ei]}}catch(e){}return null}
+ var IDS=new WeakMap(),idn=0;function dlid(o){if(!IDS.has(o))IDS.set(o,++idn);return IDS.get(o)}
+ var st={scene:"",dl:0,who:null,i:-1,m:null,size:""},layer=null,fig=null;
+ function ensure(){var v=document.getElementById("dlgveil");if(!v)return null;if(layer&&layer.parentNode===v)return layer;
+  layer=document.createElement("div");layer.id="innstage";layer.setAttribute("aria-hidden","true");v.insertBefore(layer,document.getElementById("vnbox"));fig=null;st.who=null;return layer}
+ function draw(k,m){var W=innerWidth,H=innerHeight;
+  if(!k){if(fig){fig.remove();fig=null}return}
+  var s=src(k,m);
+  if(!fig||fig.dataset.k!==k){if(fig)fig.remove();fig=document.createElement("div");fig.className="isf";fig.dataset.k=k;
+   if(s){var im=document.createElement("img");im.alt="";im.draggable=false;fig.appendChild(im)}else{fig.dataset.face="1";try{fig.innerHTML=typeof pf==="function"?pf(k,m):""}catch(e){}}
+   layer.appendChild(fig);requestAnimationFrame(function(){fig&&fig.classList.add("in")})}
+  if(s){var im2=fig.firstChild;if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
+   var sc=H/180,w=b[0]*sc,h=b[1]*sc,cx=(b[2]+b[3])/2*sc;im2.style.width=w+"px";im2.style.height=h+"px";
+   fig.style.width=Math.round(w)+"px";fig.style.height=Math.round(h)+"px";fig.style.left=Math.round(W/2-cx)+"px";fig.style.top=Math.round(H*.1-b[4]*sc)+"px"}
+  else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
+ function sync(){var on=false;try{
+  var v=document.getElementById("dlgveil");
+  if(cur()&&v&&typeof DL!=="undefined"&&DL&&DL.lines&&!document.getElementById("rtg")&&!document.querySelector(".fstalk")){
+   on=true;if(!ensure())return;
+   var sc=scene(),sk=sc?sc.key:"D",id=dlid(DL),size=innerWidth+"x"+innerHeight;
+   if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null}
+   if(id!==st.dl){st.dl=id;st.i=-1;
+    var r=firstResident(DL.lines);
+    if(r)st.who=r;else if(!st.who)st.who=(sc&&sc.s&&sc.s.who)||(hasDuo(DL.lines)?"det1":null);
+    if(!sc&&!r)st.who=hasDuo(DL.lines)?"det1":null;st.m=null}
+   if(DL.i!==st.i||size!==st.size){st.i=DL.i;st.size=size;var ln=DL.lines[DL.i]||[],w=lw(ln);
+    if(w==="narr"&&EXIT[lt(ln)]&&st.who&&st.who!=="det1")st.who="det1";
+    if(w===st.who)st.m=lm(ln)||null;
+    draw(st.who,st.m);if(fig)fig.classList.toggle("ls",w!==st.who)}
+  }}catch(e){if(!sync.err){sync.err=1;MISS.push("stage "+e.message)}}
+  document.body.classList.toggle("inn-st2",on);
+  if(!on&&st.dl){st.dl=0;st.i=-1}
+  var full=false;try{full=cur()&&!!(G.beats&&G.beats.inn_bg)&&!!document.querySelector("#bigscene>svg[data-bg]:not([data-inn-world])")}catch(e){}
+  document.body.classList.toggle("inn-full",full)}
+ (function loop(){sync();requestAnimationFrame(loop)})();
+ /* 새 대사창이 생기는 순간(그리기 전)에 바로 맞춘다: 첫 프레임에 옛 그림이 비치지 않게 */
+ try{var mq=false;new MutationObserver(function(){if(mq)return;mq=true;Promise.resolve().then(function(){mq=false;sync();try{cutSync()}catch(e){}})}).observe(document.getElementById("ov")||document.body,{childList:true,subtree:true})}catch(e){}
+ /* 대화 중 장소 이동 입력 차단: 좌우 화살표·하단 메뉴·지도·장소 버튼 */
+ function talking(){try{return cur()&&((typeof DL!=="undefined"&&!!DL)||!!document.getElementById("dlgveil")||!!document.querySelector("#ov .modal")||document.body.classList.contains("inn-cut")&&!(G.beats&&G.beats.inn_pro))}catch(e){return false}}
+ var MOVESEL=".fsa,#fsal,#fsar,#w209rail,#w209more,#wmap,.mapbtn,[data-room],[data-node],#w209back";
+ ["pointerdown","touchstart","click"].forEach(function(ev){document.addEventListener(ev,function(e){try{if(!talking())return;var t=e.target&&e.target.closest&&e.target.closest(MOVESEL);if(!t)return;
+  e.stopImmediatePropagation();e.preventDefault()}catch(x){}},{capture:true,passive:false})});
+
+ /* ===== 이동·전환 정리 ===== */
+ /* 장소 이름 띠가 뜨기 전에 남은 대사창을 치운다(대사가 진행 중이 아닐 때만) */
+ function clearDlg(){try{if(cur()&&!(typeof DL!=="undefined"&&DL)){var f=document.getElementById("ovfz");if(f)f.innerHTML="";window.__dlFreeze=false;var v=document.getElementById("dlgveil");if(v)v.remove();document.body.classList.remove("dl-on","inn-st2")}}catch(e){}}
+ try{var _bn=banner;banner=function(){clearDlg();setTimeout(clearDlg,0);setTimeout(clearDlg,60);return _bn.apply(this,arguments)}}catch(e){MISS.push("stage banner")}
+ /* 1장에서는 옛 사건의 말버릇(도토 초시계 등)을 끈다 */
+ var Q0=window.QUIRK;
+ /* 마지막 줄 표시: 이어지는 장면·증거 카드가 있으면 ▼, 실제로 대화가 끝나 조사로 돌아갈 때만 '닫기' */
+ var lastSpot={id:null,t:0,got:true};
+ function spotDown(e){try{var b=e.target.closest&&e.target.closest("#bigscene [data-spot]");if(!b)return;var id=b.dataset.spot,sp=null;
+  EP.LOCS.forEach(function(l){(l.spots||[]).forEach(function(x){if(x.id===id||x.ev===id)sp=x})});lastSpot={id:id,t:Date.now(),got:!sp||G.found.indexOf(sp.ev)>=0}}catch(x){}}
+ ["pointerdown","touchstart","click"].forEach(function(ev){document.addEventListener(ev,spotDown,{capture:true,passive:true})});
+ function seq(){try{return !(G.beats&&G.beats.inn_pro)||(G.beats.inn_final&&!G.beats.inn_end)||!!window.__innCutting}catch(e){return false}}
+ /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
+ function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
+ function tick(){try{document.body.classList.toggle("inn1",cur());metAll();
+  if(cur()){if(!tick.q)tick.q={};if(window.QUIRK!==tick.q)window.QUIRK=tick.q}else if(window.QUIRK!==Q0)window.QUIRK=Q0;
+  var nx=document.querySelector("#vnbox .nx");
+  if(nx&&cur()&&typeof DL!=="undefined"&&DL){var last=DL.i>=DL.lines.length-1,cont=seq()||DL.__more||(!lastSpot.got&&Date.now()-lastSpot.t<120000);
+   var want=last?(cont?"▼":"닫기"):"▼";if(nx.textContent!==want)nx.textContent=want;nx.classList.toggle("end",want==="닫기")}
+  var h=document.getElementById("innhintt");if(h&&!h.classList.contains("on")&&h.textContent)h.textContent="";
+  if(cur()&&G.beats&&G.beats.inn_pro&&h&&/다음 대사/.test(h.textContent))h.textContent="";
+ }catch(e){}}
+ (function loop2(){tick();requestAnimationFrame(loop2)})();
+
+ /* ===== 관찰 컷: 2층 복도 배치도(침대 세기 근거) ===== */
+ function planSvg(){var r=[];var X=[60,106,152,198,244,290];
+  function bed(x,y,n,cls){return '<g class="bed '+(cls||"")+'"><rect x="'+(x+8)+'" y="'+(y+8)+'" width="26" height="34" fill="#7A5534"/><rect x="'+(x+10)+'" y="'+(y+10)+'" width="22" height="8" fill="#EFE6D2"/><rect x="'+(x+10)+'" y="'+(y+19)+'" width="22" height="21" fill="#2F6672"/>'+(n?'<text class="bn" x="'+(x+21)+'" y="'+(y+34)+'" text-anchor="middle" style="transition-delay:'+(n*0.12).toFixed(2)+'s">'+n+'</text>':'')+'</g>'}
+  r.push('<rect x="2" y="2" width="436" height="196" fill="#F6EEDA" stroke="#6B4A2B" stroke-width="4"/>');
+  r.push('<text class="pt" x="14" y="24">2층 복도</text>');
+  r.push('<rect x="50" y="88" width="312" height="26" fill="#D9C49A"/>');
+  X.forEach(function(x,i){r.push('<rect x="'+x+'" y="36" width="42" height="50" fill="#E9DDBF" stroke="#6B4A2B" stroke-width="2"/>'+bed(x,36,i+1));r.push('<rect x="'+x+'" y="116" width="42" height="50" fill="#E9DDBF" stroke="#6B4A2B" stroke-width="2"/>'+bed(x,116,i+7))});
+  r.push('<g><rect x="18" y="86" width="32" height="30" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2,3].map(function(k){return '<rect x="'+(22+k*7)+'" y="88" width="2" height="26" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="34" y="132" text-anchor="middle">앞 계단</text></g>');
+  r.push('<g class="far"><rect x="336" y="88" width="26" height="76" fill="#D9C49A"/>'+
+   '<g class="clk"><circle cx="376" cy="100" r="11" fill="#F2E6C8" stroke="#3B2A1E" stroke-width="3"/><rect x="375" y="92" width="2" height="9" fill="#3B2A1E"/><rect x="376" y="99" width="6" height="2" fill="#3B2A1E"/><text class="lb" x="392" y="80" text-anchor="middle">벽시계</text></g>'+
+   '<rect x="300" y="166" width="62" height="28" fill="none"/>'+
+   '<g><rect x="366" y="140" width="66" height="54" fill="#E9DDBF" stroke="#6B4A2B" stroke-width="2"/><g class="b13">'+bed(380,146,0)+'<text class="bn n13" x="401" y="180" text-anchor="middle">13</text></g>'+
+   '<rect class="dopen" x="362" y="150" width="6" height="26" fill="#8A5E36"/><rect class="dshut" x="366" y="140" width="66" height="54" fill="#8A5E36" stroke="#6B4A2B" stroke-width="2"/><text class="lb" x="399" y="136" text-anchor="middle">창고</text></g>'+
+   '<g><rect x="336" y="166" width="26" height="28" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2].map(function(k){return '<rect x="338" y="'+(170+k*8)+'" width="22" height="2" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="330" y="186" text-anchor="end">부엌 계단</text></g></g>');
+  return '<svg viewBox="0 0 440 200" shape-rendering="crispEdges" role="img" aria-label="2층 복도 배치도: 양쪽 방에 침대 열둘, 꺾인 끝 창고에 열세 번째 침대">'+r.join("")+'</svg>'}
+ var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/^복도는 (커다란 )?벽시계 앞/,s:2},{re:/^열셋\. 할머니, 침대 열세 개인데요\?$/,s:3},{re:/^열둘이야\. 늙으면/,s:3},{re:/^할머니가 웃으며 창고 문을 닫는다/,s:4}];
+ var CUT2=[{re:/찻주전자의? 뚜껑을 연다/,c:"teapot"},{re:/^안에 작은 겨울잠쥐 하나가 웅크려/,c:"teapot"},{re:/^다람이 손끝으로 살짝 건드린다/,c:"teapot"}];
+ var cut2El=null;
+ function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&lt(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
+  var v=document.getElementById("innstage");
+  if(on&&v){if(!cut2El||cut2El.parentNode!==v){cut2El=document.createElement("div");cut2El.id="inncut";cut2El.innerHTML='<img alt="찻주전자 안에 작은 겨울잠쥐가 웅크리고 있다" src="art/ch1/cuts/P13-teapot-observation-640x360.png">';v.appendChild(cut2El);requestAnimationFrame(function(){cut2El&&cut2El.classList.add("in")})}v.classList.add("cut2")}
+  else{if(cut2El){cut2El.remove();cut2El=null}if(v)v.classList.remove("cut2")}}catch(e){}}
+ (function loop4(){cut2Sync();requestAnimationFrame(loop4)})();
+ var cutEl=null;
+ function cutSync(){try{var on=0;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&lt(ln);CUT.forEach(function(c){if(t&&c.re.test(t))on=c.s})}
+  var v=document.getElementById("innstage");
+  if(on&&v){if(!cutEl||cutEl.parentNode!==v){cutEl=document.createElement("div");cutEl.id="innplan";cutEl.innerHTML=planSvg();v.appendChild(cutEl);requestAnimationFrame(function(){cutEl&&cutEl.classList.add("in")})}
+   for(var k=1;k<=4;k++)cutEl.classList.toggle("s"+k,on>=k);v.classList.add("cut")}
+  else{if(cutEl){cutEl.remove();cutEl=null}if(v)v.classList.remove("cut")}}catch(e){}}
+ (function loop3(){cutSync();requestAnimationFrame(loop3)})();
+
+ /* ===== 근접 조사: 돈주머니·봉인띠·계약서 앞뒤를 직접 넘겨 본다 ===== */
+ var STAR='<svg class="cstar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L14.6 8.6 L21.5 9 L16.2 13.4 L18 20.5 L12 16.6 L6 20.5 L7.8 13.4 L2.5 9 L9.4 8.6 Z" fill="currentColor"/><path d="M21.5 9 Q24 6 21 4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+ var INSPECT={
+  C01a:{title:"돈주머니",pages:[{art:'<div class="ipouch"><img src="art/ch1/locations/C01_money_pouch_world_alpha.png" alt=""><div class="iband"><span class="istamp">세련'+STAR+'</span></div></div>',
+    cap:"주머니 입구를 종이 봉인띠가 감고 있다. 붉은 도장 「세련」과 끝이 말린 별. 만진 손끝에 인주가 묻어난다.",look:"봉인띠"}]},
+  C01b:{title:"여관 매매 계약서",pages:[
+   {art:'<div class="ipaper"><b>여관 매매 계약서</b><p>겨울잠 여관을 아래 사람에게 판다.</p><div class="isig"><span>매도인</span><i class="iblank"></i></div><div class="isig"><span>매수인</span><em>세련'+STAR+'</em></div></div>',
+    cap:"봉인띠 밑에 접혀 있던 종이. 앞면: 할머니(매도인) 서명 칸은 비어 있다. 세련(매수인) 서명 끝에 손으로 그린 별.",look:"앞면"},
+   {art:'<div class="ipaper back"><p class="iclause">「매도인이 숙박 허가를 잃는 날,<br>이 계약은 효력이 생긴다.」</p></div>',
+    cap:"뒷면: 「매도인이 숙박 허가를 잃는 날, 이 계약은 효력이 생긴다.」",look:"뒷면"}]}};
+ function inspect(key,done){var D=INSPECT[key];if(!D){done&&done();return}var i=0;
+  var el=document.createElement("div");el.id="innins";el.setAttribute("role","dialog");el.setAttribute("aria-label",D.title+" 자세히 보기");
+  function draw(){var p=D.pages[i],last=i>=D.pages.length-1;
+   el.innerHTML='<div class="iin"><div class="ihd"><small>자세히 보기</small><b>'+D.title+'</b>'+(D.pages.length>1?'<span class="ipg">'+D.pages.map(function(x,k){return '<i class="'+(k===i?"on":"")+'">'+x.look+'</i>'}).join("")+'</span>':'')+'</div>'+
+    '<div class="iart">'+p.art+'</div><p class="icap">'+p.cap+'</p><div class="ibtns">'+(i>0?'<button class="ib ghost" data-k="prev">◀ 앞면</button>':'')+'<button class="ib" data-k="'+(last?"ok":"next")+'">'+(last?"다 봤어":"뒤집어 보기 ▶")+'</button></div></div>';
+   el.querySelectorAll("[data-k]").forEach(function(b){b.onclick=function(e){e.stopPropagation();try{SFX.page()}catch(x){}var k=b.dataset.k;if(k==="next")i++;else if(k==="prev")i--;else{el.remove();done&&done();return}draw()}});
+   var f=el.querySelector('[data-k="next"],[data-k="ok"]');if(f)try{f.focus({preventScroll:true})}catch(x){}}
+  document.body.appendChild(el);try{SFX.page()}catch(x){}draw()}
+ window.__innInspect=inspect;
+ /* 대사 묶음 안의 ["@inspect", 키] 줄에서 대사를 멈추고 근접 조사를 연 뒤 이어서 진행 */
+ try{var _say2=say;say=function(lines,done,sk){try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&x[0]==="@inspect"})){
+    var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else curp.push(x)});parts.push(curp);
+    var k=0;(function next(){if(k>=parts.length){done&&done();return}var p=parts[k++];
+     if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
+     if(!p.length){next();return}var more=k<parts.length;_say2(p,function(){next()},sk);try{if(DL)DL.__more=more}catch(e){}})();return}}catch(e){}
+   return _say2.apply(this,arguments)}}catch(e){MISS.push("stage say")}
+ var css=document.createElement("style");css.id="inn-stage-css";css.textContent=[
+
+  /* 관찰 컷: 복도 배치도 */
+  "#innplan{position:absolute;left:50%;top:max(10px,3vh);width:min(560px,70vw);transform:translateX(-50%) translateY(6px);opacity:0;transition:opacity .25s,transform .25s;z-index:4;filter:drop-shadow(0 6px 0 rgba(0,0,0,.35))}",
+  "#innplan.in{opacity:1;transform:translateX(-50%)}#innplan svg{display:block;width:100%;height:auto;max-height:calc(100vh - 150px)}",
+  "#innstage.cut .isf{filter:brightness(.55)!important}",
+  "#inncut{position:absolute;left:50%;top:max(8px,2vh);height:calc(100vh - 118px);aspect-ratio:16/9;max-width:calc(100vw - 32px);transform:translateX(-50%);opacity:0;transition:opacity .3s;z-index:4;border:4px solid #3B2A1E;box-shadow:0 0 0 3px #B98A3E,0 8px 0 rgba(0,0,0,.4);background:#000}",
+  "#inncut.in{opacity:1}#inncut img{display:block;width:100%;height:100%;object-fit:cover;image-rendering:pixelated}#innstage.cut2 .isf{opacity:0!important}",
+  "#innplan text{font-family:var(--display,sans-serif);fill:#3B2A1E}#innplan .pt{font-size:15px}#innplan .lb{font-size:12px}",
+  "#innplan .bn{font-size:14px;fill:#FFF6DA;stroke:#1C2A30;stroke-width:3px;paint-order:stroke;opacity:0;transition:opacity .2s}#innplan.s1 .bn{opacity:1}",
+  "#innplan .far{opacity:0;transition:opacity .4s}#innplan.s2 .far{opacity:1}",
+  "#innplan .n13{opacity:0!important}#innplan.s3 .n13{opacity:1!important;fill:#FFD9D0;stroke:#9A2A1E}",
+  "#innplan .dshut{opacity:0;transition:opacity .3s}#innplan.s4 .dshut{opacity:1}#innplan.s4 .dopen{opacity:0}",
+  /* 근접 조사 */
+  "#innins{position:fixed;inset:0;z-index:120;background:rgba(14,10,8,.72);display:flex;align-items:center;justify-content:center;padding:10px 16px;box-sizing:border-box}",
+  "#innins .iin{background:#F8F0DC;border:4px solid #B98A3E;box-shadow:0 0 0 3px #3B2A1E,0 8px 0 rgba(0,0,0,.4);width:min(720px,100%);height:min(340px,100%);box-sizing:border-box;padding:10px 18px 12px;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;gap:6px 20px;color:#3B2A1E;overflow:hidden}",
+  "#innins .ihd{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}#innins .ihd small{font-size:var(--t-cap);color:#8A5E36}#innins .ihd b{font-size:var(--t-head);font-family:var(--display,sans-serif)}",
+  "#innins .ipg{margin-left:auto;display:flex;gap:6px}#innins .ipg i{font-style:normal;font-size:var(--t-cap);padding:2px 8px;border:2px solid #B98A3E;color:#8A5E36}#innins .ipg i.on{background:#B98A3E;color:#FFF6DA}",
+  "#innins .iart{grid-row:2/4;grid-column:1;display:flex;align-items:center;justify-content:center;min-height:0;height:100%}",
+  "#innins .icap{grid-column:2;font-size:var(--t-story);line-height:1.55;margin:0;align-self:center}",
+  "#innins .ibtns{grid-column:2;display:flex;gap:8px;justify-content:flex-end;align-self:end}",
+  "html body #innins button.ib{all:unset;box-sizing:border-box;font-family:var(--display,sans-serif);font-size:var(--t-ui);min-height:44px;padding:8px 18px;background:#E2B655;border:3px solid #3B2A1E;color:#2A1C10;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center}",
+  "html body #innins button.ib.ghost{background:#F8F0DC}html body #innins button.ib:focus-visible{outline:3px solid #2F6672;outline-offset:2px}",
+  "#innins .ipouch{position:relative;height:min(230px,calc(100vh - 150px));aspect-ratio:1}#innins .ipouch img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}",
+  "#innins .iband{position:absolute;left:14%;right:14%;top:30%;height:17%;background:#EFE3C4;border:2px solid #6B4A2B;display:flex;align-items:center;justify-content:center;transform:rotate(-4deg)}",
+  "#innins .istamp{color:#B3261E;border:2px solid #B3261E;padding:0 6px;font-size:var(--t-label);font-family:var(--display,sans-serif);display:inline-flex;align-items:center;gap:2px;background:rgba(255,255,255,.35)}",
+  "#innins .cstar{width:1.1em;height:1.1em;color:#B3261E}",
+  "#innins .ipaper{height:min(250px,calc(100vh - 140px));aspect-ratio:3/4;background:#FFFBEF;border:2px solid #6B4A2B;box-shadow:4px 4px 0 #C9B48A;padding:12px;box-sizing:border-box;display:flex;flex-direction:column;gap:8px}",
+  "#innins .ipaper b{font-size:var(--t-label);text-align:center}#innins .ipaper p{margin:0;font-size:var(--t-cap);line-height:1.5}",
+  "#innins .isig{display:flex;align-items:center;gap:8px}#innins .isig:first-of-type{margin-top:auto}#innins .isig span{font-size:var(--t-cap);width:3.5em;flex:none}#innins .iblank{flex:1;height:26px;border:2px dashed #8A5E36}",
+  "#innins .isig em{flex:1;font-style:normal;font-size:var(--t-label);border-bottom:2px solid #3B2A1E;display:flex;align-items:center;gap:2px}#innins .isig em .cstar{color:#3B2A1E}",
+  "#innins .ipaper.back{justify-content:center}#innins .iclause{text-align:center;font-size:var(--t-cap)!important;border:2px solid #8A5E36;padding:10px 6px}",
+  "@media (max-height:380px){#innins .iin{padding:10px 14px}#innins .icap{line-height:1.45}}",
+  /* 이불 손자국: 천 위 가루처럼 */
+  "svg[data-inn-world=\"bed13\"] image[data-world-prop=\"C02_trace\"]{opacity:.55;mix-blend-mode:screen;filter:sepia(.25) saturate(.7)}",
+  "#vnbox .nx.end{font-size:var(--t-cap)!important}",
+  "#innstage{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}",
+  "#innstage .isf{position:absolute;opacity:0;transition:opacity .22s,filter .15s}",
+  "#innstage .isf.in{opacity:1}#innstage .isf.ls{filter:brightness(.84) saturate(.9)}",
+  "#innstage .isf img{position:absolute;left:0;top:0;image-rendering:pixelated;max-width:none}",
+  "#innstage .isf[data-face] svg{width:100%;height:100%}",
+  "html body.w209.inn-st2 #dlgveil #vnfig,html body.w209.inn1.tab-scene #dlgveil #vnfig{display:none!important}",
+  /* 얇은 대사창(레퍼런스: 배경을 넓게, 하단에 얇게) */
+  "html body.w209.inn1 #dlgveil #vnbox .vband.bot{height:auto!important;min-height:88px!important;max-height:40vh}",
+  "html body.w209.inn1 #dlgveil #vnbox .vband.bot .vtxt{padding:22px 20px 12px!important;min-height:0!important}",
+  /* 질문 화면의 이전·다음 사람(명단) 넘기기: 다른 장소 인물로 배경이 바뀌므로 1장에서는 쓰지 않는다. 같은 장소의 다른 인물은 조사 화면에서 직접 눌러 만난다 */
+  "html body.w209.inn1 .fstalk .whonav{display:none!important}",
+  /* 질문 목록: 이미 물어본 주제는 체크 표시(흐림과 함께) */
+  "html body.w209.inn1 .fstalk .topic.done::after{content:'✓';margin-left:auto;padding-left:8px;color:#2F6672;font-weight:700}",
+  "html body.w209.inn-st2 #vnbox .vband.narr .txt,html body.w209.inn-st2 .veil.vn2 .vband.bot.narr .vtxt{color:#E8DCBC!important}",
+  /* 대화·연출 중 이동 버튼은 보이지도 눌리지도 않게 */
+  "html body.w209.inn-cut .stage .fsa,html body.w209.inn-cut .stage.inn-world-stage .fsa,html body.w209.dl-on .stage.inn-world-stage .fsa{visibility:hidden!important;pointer-events:none!important}",
+  "html body.w209.inn-full .stage>.fsscroll>#bigscene{width:100vw!important;max-width:none!important;margin:0!important;left:0!important}",
+  "html body.w209.inn-full #bigscene>svg[data-bg]{width:100%!important;height:100%!important}",
+  ":root{--t-story:18px;--t-ui:16px;--t-label:15px;--t-cap:13px;--t-head:22px}",
+  "body.inn-fs-small{--t-story:16px}body.inn-fs-large{--t-story:20px}",
+  /* 이야기 글 18 */
+  "html body #inncold .box p,html body #mveil .modal p,html body #mveil .modal .soft,html body #mveil .modal span:not(.kicker):not(.n),html body #app .nt,html body #innpvt{font-size:var(--t-story)!important;line-height:1.55!important}",
+  /* 버튼 16 */
+  "html body #innmain .menu button,html body #innopt button,html body #innopt .lb,html body #innopt .vv,html body #mveil .modal .btn,html body #okfind,html body .innconf button{font-size:var(--t-ui)!important}",
+  /* 이름표·소제목 15 */
+  "html body #vnbox .plate,html body #inncold .box b,html body #inncold .tag,html body #inncold .sk,html body #logb,html body #mveil .modal .kicker,html body #mveil .modal b,html body #app .notice b,html body #app .nt b,html body #closeNotice,html body #app .hud b,html body #app b{font-size:var(--t-label)!important}",
+  /* 보조 글 13 */
+  "html body #innmain small,html body #innmain .pv,html body #innopt small,html body #app small,html body #memobtn .sb,html body #memobtn button,html body #w209rail button,html body #w209rail .n,html body #mveil .modal small{font-size:var(--t-cap)!important}",
+  "html body.w209.inn1 #w209rail button,html body.w209.inn1 #w209rail button.on,html body.w209.inn1 #memobtn button.sb,html body.w209.inn1 #memobtn button{font-size:var(--t-cap)!important}",
+  /* 제목 22 */
+  "html body #mveil .modal h3,html body #innopt h2{font-size:var(--t-head)!important}"
+ ].join("\n");document.head.appendChild(css);
+ window.__innStage=function(){var r=fig&&fig.getBoundingClientRect();return {scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};
+})();
