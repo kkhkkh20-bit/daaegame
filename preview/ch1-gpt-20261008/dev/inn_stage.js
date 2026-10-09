@@ -12,7 +12,7 @@
  /* 그림 크기표: [캔버스 너비, 높이, 몸 왼쪽, 몸 오른쪽, 위 여백, 아래 여백] (PNG 실측) */
  var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/daram-ear-grab-signature-v1.png":[192,192,18,163,15,6],"art/ch1/cast/daram-tail-hide-signature-v1.png":[192,192,51,142,9,6],"art/ch1/cast/daram-tail-hide-caught-signature-v2.png":[192,192,51,145,8,6],"art/ch1/cast/daram-surprised-front-v3.png":[192,192,22,164,24,6],"art/ch1/cast/daram-happy-front-v3.png":[192,192,21,148,18,6],"art/ch1/cast/daram-worried-front-v3.png":[192,192,38,141,50,6],"art/ch1/cast/daram-determined-front-v3.png":[192,192,22,183,9,6],"art/ch1/cast/daram-angry-front-v3.png":[192,192,14,162,17,6],"art/ch1/cast/daram-happy-front-v2.png":[192,192,21,141,21,6],"art/ch1/cast/daram-surprised-front-v2.png":[192,192,19,141,23,6],"art/ch1/cast/daram-worried-front-v2.png":[192,192,31,137,23,6],"art/ch1/cast/daram-determined-front-v2.png":[192,192,19,135,22,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
   "art/body/innma-0.png":[146,182,1,115,2,0],"art/ch1/cast/innma-neutral-v5.png":[146,182,5,111,2,0],"art/ch1/cast/innma-concerned-v5.png":[146,182,5,111,2,0],"art/ch1/cast/innma-bright-smile-v6.png":[146,182,5,111,2,0],"art/ch1/cast/innma-0-gaze-neutral-v2.png":[146,182,1,115,2,0],"art/ch1/cast/innma-0-gaze-gentle-smile-v2.png":[146,182,1,115,2,0],"art/body/innma-1.png":[148,182,2,115,4,0],"art/body/innma-2.png":[146,182,2,123,4,0],
-  "art/body/wanggu-0.png":[230,182,22,165,3,0],"art/body/wanggu-1.png":[230,182,22,165,3,0],"art/body/wanggu-2.png":[230,182,2,192,1,0],"art/body/doto-0.png":[182,182,1,133,2,0],"art/body/doto-1.png":[180,182,1,129,2,0],"art/body/doto-2.png":[174,182,1,120,9,0],
+  "art/body/wanggu-0.png":[230,182,22,165,3,0],"art/body/wanggu-1.png":[230,182,22,165,3,0],"art/body/wanggu-2.png":[230,182,2,192,1,0],"art/body/doto-0.png":[182,182,1,133,2,0],"art/ch1/cast/doto-v4-182.png":[182,182,0,142,2,0],"art/ch1/cast/seryeon-seated-paperwork-v2-talk.png":[160,216,4,155,2,0],"art/body/doto-1.png":[180,182,1,129,2,0],"art/body/doto-2.png":[174,182,1,120,9,0],
   "art/body/buri-0.png":[136,182,2,113,3,0],"art/body/buri-1.png":[130,182,2,114,2,0],"art/body/buri-2.png":[110,182,2,101,6,0]};
  var INNMA={"0":"art/ch1/cast/innma-neutral-v5.png","1":"art/ch1/cast/innma-concerned-v5.png","2":"art/ch1/cast/innma-bright-smile-v6.png"};
  var CASTF={det1:"daram-front",nabi:"nabi-front",karo:"karo-front"},BODYK={innma:"innma",wanggu:"wanggu",doto:"doto",buri:"buri"};
@@ -26,7 +26,9 @@
  function src(k,m){if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
   if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
   if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
-  if(k==="seryeon")return "art/ch1/cast/"+(pose(m)==="2"?"seryeon-surprise-front-v1":"seryeon-normal-front-v1")+".png";
+  /* 세련: 앉아서 서류를 보는 v2(2026-10-09 전달, 개별 시안·최종 승인 아님). 대화에서도 앉은 맥락 유지 → 놀람 차분(서 있는 v1)은 쓰지 않는다 */
+  if(k==="seryeon")return "art/ch1/cast/seryeon-seated-paperwork-v2-talk.png";
+  if(k==="doto")return "art/ch1/cast/doto-v4-182.png";   /* 도토 v4(사용자 선택, 2026-10-09): 표정 차분은 아직 없어 한 장 */
   /* 토끼 할머니 v5(2026-10-09 전달): 머리·목·어깨·책 든 팔을 한 자세로 상대에게. 기본=neutral, 걱정·경계·망설임(think)=concerned(책을 끌어안고 시선을 내림).
      미소(smile)=v6 밝은 미소(따뜻한 인사·안심시키는 말에만, 대본 표정이 '옅은 미소/안도'인 줄) */
   if(k==="innma"){var ip=pose(m,k);return INNMA[ip]||INNMA["0"]}
@@ -50,6 +52,11 @@
  function chime(){try{if(st.quiet){st.quiet=0;return}tone(1319,.12,"sine",.05);tone(1760,.2,"sine",.04,.08)}catch(e){}}
  /* 인물 크기·위치: 머리(귀) 끝을 화면 높이의 FIGTOP에 맞추고 FIGK로 배율을 정한다(이전: H/180, 머리가 화면 꼭대기에 닿음) */
  var FIGK=215,FIGTOP=.16;
+ /* 2026-10-09 대화판 03(상반신 구도) 기준: 인물별 배율(화면 높이 390 기준 원본 픽셀 배율)과 머리 끝 12px.
+    얼굴·어깨·손이 읽히고 아래(다리)는 대사창 쪽으로 잘린다. 배경은 확대하지 않는다 */
+ var DS={det1:3.15,innma:2.739,geokkuri:2.739,nabi:2.759,karo:2.739,seryeon:2.82,wanggu:2.739,doto:2.132,buri:2.739};
+ function frame(k,s,W,H){var b=BOX[s]||[192,192,20,170,10,6],sc=(DS[k]||2.739)*H/390;return {w:b[0]*sc,h:b[1]*sc,left:W/2-(b[2]+b[3])/2*sc,top:H*12/390-b[4]*sc}}
+ window.__innFrame=function(k,s){return frame(k,String(s||"").split("?")[0],innerWidth,innerHeight)};
  function draw(k,m){var W=innerWidth,H=innerHeight;
   if(k!==st.shown){if(k)chime();st.shown=k||null}
   if(!k){if(fig){fig.remove();fig=null}return}
@@ -58,8 +65,8 @@
    if(s){var im=document.createElement("img");im.alt="";im.draggable=false;fig.appendChild(im)}else{fig.dataset.face="1";try{fig.innerHTML=typeof pf==="function"?pf(k,m):""}catch(e){}}
    layer.appendChild(fig);requestAnimationFrame(function(){fig&&fig.classList.add("in")})}
   if(s){var im2=fig.firstChild;if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
-   var sc=H/FIGK,w=b[0]*sc,h=b[1]*sc,cx=(b[2]+b[3])/2*sc;im2.style.width=w+"px";im2.style.height=h+"px";
-   fig.style.width=Math.round(w)+"px";fig.style.height=Math.round(h)+"px";fig.style.left=Math.round(W/2-cx)+"px";fig.style.top=Math.round(H*FIGTOP-b[4]*sc)+"px"}
+   var F=frame(k,s,W,H);im2.style.width=F.w+"px";im2.style.height=F.h+"px";
+   fig.style.width=Math.round(F.w)+"px";fig.style.height=Math.round(F.h)+"px";fig.style.left=Math.round(F.left)+"px";fig.style.top=Math.round(F.top)+"px"}
   else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
  function step1(ln,id){var w=lw(ln),cg=cgList();
   /* 상대가 아닌 사람(아빠·다람)이 말할 때 표정 지정이 없으면 상대의 직전 표정을 유지한다(줄마다 표정이 바뀌어 깜빡이지 않게) */
@@ -273,15 +280,27 @@
   for(var i=0;i<s.length;i++){if(s.charAt(i)!==" ")continue;var L=s.slice(0,i),R=s.slice(i+1);if(L.length<8||R.length<8)continue;
    var w=L.split(" ").pop(),sc=Math.abs(i-mid);if(/,$/.test(w))sc-=9;else if(GOOD.test(w)||(w.length>=3&&GOOD3.test(w)))sc-=4;if(/[…]$/.test(w))sc-=3;if(sc<bs){bs=sc;best=i}}
   if(best<0)return s;var a=s.slice(0,best),b=s.slice(best+1);return wrap1(a)+"\n"+wrap1(b)}
- /* 한 쪽에 한 줄(2026-10-09 피드백: 두 줄 쪽도 한 줄씩 눌러 넘기기). 긴 문장은 뜻이 이어지는 자리(쉼표·연결 어미·조사)에서 다음 쪽으로 */
- function splitLong(s){var w=wrap1(s);return w.split("\n")}
+ /* 한 쪽에 한 의미 문장, 최대 두 줄(2026-10-09 2차 피드백: '한 번 누를 때 시각적 한 줄' 정책 정정).
+    실제 대사창과 같은 글꼴·폭으로 줄 수를 재서, 두 줄 안에 들어가면 문장을 통째로 한 쪽에 둔다.
+    세 줄 이상이 될 때만 뜻이 이어지는 자리(쉼표·연결 어미·조사)에서 다음 쪽으로 넘긴다. 글자 크기는 바꾸지 않는다. */
+ var MZ=null,MC={};
+ function textW(){try{var d=document.getElementById("dtxt");if(d&&d.clientWidth>40)return d.clientWidth}catch(e){}return Math.min(540,innerWidth-32)-32}
+ function nLines(t,w){var k=w+"|"+t;if(MC[k])return MC[k];try{if(!MZ){MZ=document.createElement("div");MZ.setAttribute("aria-hidden","true");MZ.style.cssText="position:fixed;left:-9999px;top:0;visibility:hidden;pointer-events:none;font-family:Galmuri11B,Galmuri11,monospace;line-height:24px;word-break:keep-all;white-space:pre-wrap;overflow-wrap:break-word;padding:0;margin:0";document.body.appendChild(MZ)}
+   var d=document.getElementById("dtxt"),fs=d?getComputedStyle(d).fontSize:(getComputedStyle(document.body).getPropertyValue("--t-story")||"16px");MZ.style.fontSize=fs;MZ.style.lineHeight=(parseFloat(fs)*1.5)+"px";MZ.style.width=w+"px";MZ.textContent=t;var n=Math.max(1,Math.round(MZ.offsetHeight/(parseFloat(fs)*1.5)));MC[k]=n;return n}catch(e){return Math.ceil(t.length/30)}}
+ window.__innLines=function(t){return nLines(t,textW())};
+ function fits2(t,wrapInner){return nLines(wrapInner?"("+t+")":t,textW())<=2}
+ function splitAt(s){var best=-1,bs=1e9,mid=s.length/2;
+  for(var i=0;i<s.length;i++){if(s.charAt(i)!==" ")continue;var L=s.slice(0,i),R=s.slice(i+1);if(L.length<8||R.length<8)continue;
+   var w=L.split(" ").pop(),sc=Math.abs(i-mid);if(/,$/.test(w))sc-=9;else if(GOOD.test(w)||(w.length>=3&&GOOD3.test(w)))sc-=4;if(/[…]$/.test(w))sc-=3;if(sc<bs){bs=sc;best=i}}
+  return best}
+ function splitLong(s,inner){if(s.indexOf("\n")>=0||fits2(s,inner))return [s];var b=splitAt(s);if(b<0)return [s];
+  return splitLong(s.slice(0,b),inner).concat(splitLong(s.slice(b+1),inner))}
  function pageLine(x){if(!Array.isArray(x)||typeof x[1]!=="string"||typeof x[0]!=="string"||x[0].charAt(0)==="@")return [x];
   var t=x[1];if(t.indexOf("<")>=0)return [x];var inner=x[0]==="narr"&&/^\(.*\)$/.test(t),body=inner?t.slice(1,-1):t;
   var parts=joinShort(sents(body));if(!parts.length)return [x];
-  var segs=[];parts.forEach(function(p){splitLong(p).forEach(function(q){segs.push(q)})});
+  var segs=[];parts.forEach(function(p){splitLong(p,inner).forEach(function(q){segs.push(q)})});
   return segs.map(function(p,k){var y=x.slice();y[1]=inner?"("+p+")":p;y[7]=t;if(k>0){if(y[3]==="testi")y[3]="";if(y[5]!=null)y[5]=""}return y})}
- /* 콜드 오픈도 같은 규칙으로: 한 비트의 여러 문장은 한 번 누를 때 한 문장. 뒤 조각은 소리·대기·카메라 밀기 없이 같은 화면(밀린 배율 그대로)에서 이어진다 */
- window.__innPageCold=function(L){try{var o=[];(L||[]).forEach(function(b){if(!b||typeof b.say!=="string"){o.push(b);return}var parts=joinShort(sents(b.say));if(parts.length<2&&b.say.length<=PG_WRAP){o.push(b);return}
+ window.__innPageCold=function(L){try{var o=[];(L||[]).forEach(function(b){if(!b||typeof b.say!=="string"){o.push(b);return}var parts=joinShort(sents(b.say));if(parts.length<2&&fits2(b.say)){o.push(b);return}
    var zEnd=(b.z||1)*(b.push?1+b.push/100:1)/(b.pull?1+b.pull/100:1),segs=[];parts.forEach(function(p){splitLong(p).forEach(function(q){segs.push(q)})});
    segs.forEach(function(p,i){var c={};for(var k in b)c[k]=b[k];c.say=p;if(i>0){delete c.sfx;delete c.wait;delete c.push;delete c.pull;c.z=zEnd;c.id=(b.id||"")+"_"+i}o.push(c)})});return o}catch(e){return L}};
  window.__innPage=function(lines){try{if(!cur()||!Array.isArray(lines))return lines;var o=[];lines.forEach(function(x){pageLine(x).forEach(function(y){o.push(y)})});return o}catch(e){return lines}};
@@ -294,7 +313,7 @@
    if(has("C11")&&!has("C05"))return {say:"부엌 바구니 속 아이를 할머니 돋보기로 다시 보자.",tab:"scene",loc:LI("kitchen")};
   }}catch(e){}return _ns2.apply(this,arguments)}}catch(e){MISS.push("stage hint")}
  /* 조사 화면에서 배경 그림에 없는 단서 물건(복도 벽시계, 접수대 숙박부)을 증거 도트로 그 자리에 보여 준다. 정식 소품 그림이 오면 교체 */
- var PROP={hall:[["C06","art/evidence/inn/C06.png",6.4]]};   /* 복도 벽시계: 월드 소품 납품 전까지 증거 도트(C06, 숫자 없음·바늘 없음 그대로) */
+ var PROP={hall:[["C06","art/evidence/inn/C06.png",5]]};   /* 2026-10-09: 문틀 위에 떠 보이던 자리 → 문 오른쪽 벽면(patches/15_hall.py) */   /* 복도 벽시계: 월드 소품 납품 전까지 증거 도트(C06, 숫자 없음·바늘 없음 그대로) */
  /* 접수대 숙박부: 납품된 월드 소품 WP_C09(빈 종이)를 배경 파노라마 좌표(858,372,174,38)에 그대로 놓는다 */
  var WPROP={front:[["art/ch1/bg/WP_C09_lodging_ledger.png",858,372,174,38]]};
  function props(){try{var sc=document.getElementById("bigscene");if(!sc)return;[].slice.call(sc.querySelectorAll(".innprop")).forEach(function(e){e.remove()});

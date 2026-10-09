@@ -18,8 +18,11 @@
    if(!live.has(el))return false;                                              /* 가운데가 가려진 대상 등: 기록이 없으면 막지 않는다 */
    var at=AP.get(el),now=performance.now();
    if(downT<at)return true;                                                    /* 나타나기 전에 시작된 누름 */
-   return now-at<600&&at-endT<1500&&at>=endT}                                  /* 대화가 끝난 직후 나타난 것은 600ms 동안 보호(직접 연 메뉴는 즉시 반응) */
-  function guard(e){if(e.type==="pointerdown"||e.type==="touchstart"||e.type==="mousedown"){if(!(e.type!=="pointerdown"&&performance.now()-downT<80))downT=performance.now()}
+   if(!(at-endT<1500&&at>=endT))return false;                                  /* 직접 연 메뉴는 즉시 반응 */
+   if(now-at<600)return true;                                                  /* 대화가 끝난 직후 나타난 것은 600ms 동안 보호 */
+   return now-at<1800&&gap<350}                                                /* 그 뒤에도 연타가 이어지는 중(앞 누름과 350ms 미만 간격)이면 1.8초까지 막는다(2026-10-09 연타 시험) */
+  var gap=1e9;
+  function guard(e){if(e.type==="pointerdown"||e.type==="touchstart"||e.type==="mousedown"){if(!(e.type!=="pointerdown"&&performance.now()-downT<80)){var n0=performance.now();gap=n0-downT;downT=n0}}
    if(blocked(e)){e.stopImmediatePropagation();if(e.cancelable)e.preventDefault();window.__innGuarded=(window.__innGuarded||0)+1}}
   ["pointerdown","touchstart","mousedown","pointerup","touchend","mouseup","click"].forEach(function(t){document.addEventListener(t,guard,{capture:true,passive:false})});
  })();
