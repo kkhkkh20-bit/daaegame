@@ -20,16 +20,41 @@
    mel:[{n:"C5 _ A4 _ C5 F5 | E5 _ _ _ C5 _ | D5 _ F5 _ A5 G5 | F5 _ _ _ D5 _ | C5 _ A4 _ C5 F5 | G5 _ F5 _ E5 D5 | D5 _ C5 _ Bb4 E5 | F5 _ _ _ . .",i:"kal",v:.24}],
    arp:{n:"1 5 8 10 8 5",r:2,i:"ep",v:.05,o:48},bass:{n:"1 _ _ 5 _ _",i:"sub",v:.4,o:36},pad:{i:"string",v:.04,o:57},echo:.28};
   /* 2026-10-10 "수사 중인데도 몽환적·평화롭다": 조사·회의·최종 대결을 다른 곡으로. 하이햇('똑딱')은 쓰지 않고 낮은 킥만 */
-  A.SONGS.inn_inv={bpm:92,vol:1.25,prog:["Am","Am","F","E","Am","Dm","F E","Am"],   /* 조사: 단조, 피치카토 베이스 반복, 짧은 스타카토 */
+  A.SONGS.inn_inv={bpm:92,vol:2.1,prog:["Am","Am","F","E","Am","Dm","F E","Am"],   /* 조사: 단조, 피치카토 베이스 반복, 짧은 스타카토 */
    mel:[{n:"E5 _ _ _ . . C5 _ | B4 _ _ _ . . . . | A4 _ _ _ C5 _ E5 _ | G#4 _ _ _ . . . . | E5 _ _ _ F5 _ E5 _ | D5 _ _ _ . . F5 _ | E5 _ D5 _ C5 _ B4 _ | A4 _ _ _ . . . .",i:"vibe",v:.2}],
    arp:{n:"1 . 5 . 8 . 5 .",r:1,i:"stac",v:.05,o:48},bass:{n:"1 . 1 . 5 . 1 .",i:"pizz",v:.6,o:33},pad:{i:"pad",v:.04,o:55},
    dr:["k.......k......."],echo:.14};
-  A.SONGS.inn_meet={bpm:100,vol:1.05,prog:["Dm","Bb","Gm","A","Dm","Bb","Gm A","Dm"],   /* 회의: 맥박처럼 이어지는 베이스, 금관 짧게 */
+  A.SONGS.inn_meet={bpm:100,vol:1.4,prog:["Dm","Bb","Gm","A","Dm","Bb","Gm A","Dm"],   /* 회의: 맥박처럼 이어지는 베이스, 금관 짧게 */
    mel:[{n:"D5 _ _ _ . . F5 _ | F5 _ D5 _ . . . . | G5 _ _ _ Bb5 _ A5 _ | A5 _ _ _ C#5 _ . . | D5 _ _ _ . . A5 _ | Bb5 _ A5 _ G5 _ F5 _ | G5 _ _ _ E5 _ C#5 _ | D5 _ _ _ . . . .",i:"brass",v:.14}],
    bass:{n:"1 1 1 1 1 1 1 1",i:"bsyn",v:.3,o:30},pad:{i:"string",v:.05,o:54},dr:["k.......k.......","..........d....."],echo:.18};
   A.SONGS.inn_climax={bpm:112,vol:.6,prog:["Cm","Cm","Ab","G","Cm","Fm","Ab Bb","G"],   /* 최종 대결: 빠르고 날카롭게 */
    mel:[{n:"G5 _ _ _ Ab5 _ G5 _ | Eb5 _ _ _ _ _ D5 _ | C5 _ _ _ Eb5 _ D5 C5 | B4 _ _ _ D5 _ _ _ | G5 _ _ _ C6 _ Bb5 _ | Ab5 _ _ _ G5 _ F5 _ | Eb5 _ F5 _ G5 _ Ab5 _ | B5 _ _ _ _ _ . .",i:"brass",v:.16}],
    arp:{n:"1 5 8 5",r:1,i:"stac",v:.05,o:48},bass:{n:"1 . 1 . 1 . 5 .",i:"bsq",v:.45,o:36},dr:["k.....k...k.....","........s......."],echo:.12};
+  /* 2026-10-10 사용자: "캐릭터마다 배경음, 사건이 벌어질 땐 심각한 배경음, 배경음이 생명" → 인물 대화 테마 7곡 + 사건곡. 하이햇 없음 */
+  A.SONGS.inn_serious={bpm:76,vol:1.35,prog:["Bm","Bm","G","F#","Bm","Em","G F#","Bm"],   /* 사건: 낮은 현·심장 박동 같은 킥·짧은 금관 */
+   mel:[{n:"F#5 _ _ _ _ _ . . | . . . . G5 _ F#5 _ | E5 _ _ _ _ _ . . | A#4 _ _ _ _ _ . . | F#5 _ _ _ _ _ B5 _ | A5 _ G5 _ F#5 _ E5 _ | D5 _ _ _ C#5 _ _ _ | B4 _ _ _ _ _ . .",i:"choir",v:.16},{n:"B3 _ _ _ _ _ _ _ | . . . . . . . . | G3 _ _ _ _ _ _ _ | F#3 _ _ _ _ _ _ _ | B3 _ _ _ _ _ _ _ | . . . . . . . . | G3 _ _ _ F#3 _ _ _ | B3 _ _ _ _ _ _ _",i:"brass",v:.1}],
+   bass:{n:"1 _ _ _ 1 _ _ _",i:"bsyn",v:.5,o:30},pad:{i:"string",v:.07,o:50},dr:["k..k............"],echo:.2};
+  A.SONGS.inn_t_innma={bpm:84,spb:12,vol:.78,prog:["F","Dm","Bb","C","F","Am","Bb C","F"],   /* 할머니: 따뜻한 왈츠, 클라리넷. 끝마디는 단단하게 */
+   mel:[{n:"A4 _ C5 _ F5 _ | E5 _ _ _ D5 _ | D5 _ F5 _ Bb5 _ | A5 _ _ _ G5 _ | A4 _ C5 _ F5 _ | E5 _ D5 _ C5 _ | D5 _ C5 _ Bb4 _ | A4 _ _ _ . .",i:"clar",v:.22}],
+   arp:{n:"1 . 5 . 8 .",r:2,i:"pizz",v:.08,o:48},bass:{n:"1 _ _ 5 _ _",i:"sub",v:.45,o:36},pad:{i:"warm",v:.05,o:55},echo:.2};
+  A.SONGS.inn_t_seryeon={bpm:98,vol:1.84,prog:["Gm","Gm","Eb","D","Gm","Cm","Eb D","Gm"],   /* 세련: 미끄러지는 반음, 리드 악기, 걷는 베이스 */
+   mel:[{n:"D5 _ . Eb5 D5 _ . . | C#5 D5 _ . Bb4 _ . . | G5 _ . F#5 G5 _ Eb5 _ | D5 _ _ _ . . A4 _ | D5 _ . Eb5 D5 _ . . | C5 _ Eb5 _ G5 _ . . | Bb5 _ A5 _ G5 _ F#5 _ | G5 _ _ _ . . . .",i:"reed",v:.18}],
+   bass:{n:"1 . 3 . 5 . 6 .",i:"pizz",v:.55,o:31},pad:{i:"ep",v:.05,o:55},dr:["k.......k.......","....s.......s..."],echo:.16};
+  A.SONGS.inn_t_nabi={bpm:116,vol:3.2,prog:["C","Am","F","G","C","Em","F G","C"],   /* 나비: 밝고 바지런한 마림바 */
+   mel:[{n:"E5 G5 C6 _ G5 _ E5 _ | A5 _ G5 E5 C5 _ . . | F5 A5 C6 _ A5 _ F5 _ | G5 _ _ _ B4 _ D5 _ | E5 G5 C6 _ G5 _ E5 _ | B4 _ E5 _ G5 _ B5 _ | A5 G5 F5 _ D5 E5 F5 _ | E5 _ C5 _ C6 _ . .",i:"marimba",v:.22}],
+   arp:{n:"1 5 8 5",r:1,i:"stac",v:.05,o:48},bass:{n:"1 . 5 . 1 . 5 .",i:"pizz",v:.5,o:36},pad:{i:"string",v:.04,o:55},echo:.12};
+  A.SONGS.inn_t_bami={bpm:68,vol:1.0,prog:["Em","C","Am","B7","Em","C","Am B7","Em"],   /* 밤이: 졸린 밤, 유리·종소리 */
+   mel:[{n:"B5 _ _ _ . . G5 _ | E5 _ _ _ _ _ . . | C6 _ _ _ B5 _ A5 _ | D#5 _ _ _ _ _ . . | B5 _ _ _ . . E6 _ | D6 _ _ _ B5 _ . . | C6 _ B5 _ A5 _ F#5 _ | E5 _ _ _ _ _ . .",i:"bell",v:.14}],
+   arp:{n:"1 5 8 10 8 5 . .",r:2,i:"glass",v:.05,o:60},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.45,o:33},pad:{i:"pad",v:.06,o:52},echo:.38};
+  A.SONGS.inn_t_buri={bpm:104,vol:.85,prog:["D","D","C","G","D","Bm","C G","D"],   /* 부리: 톱니바퀴처럼 맞물리는 반복 */
+   mel:[{n:"A5 . A5 . F#5 . D5 . | A5 . B5 . A5 _ . . | G5 . G5 . E5 . C5 . | D5 . E5 . D5 _ . . | A5 . A5 . F#5 . D5 . | B5 . A5 . F#5 _ . . | G5 . E5 . D5 . B4 . | D5 _ _ _ . . . .",i:"chip",v:.1}],
+   arp:{n:"1 8 5 8 1 8 5 8",r:1,i:"pizz",v:.08,o:48},bass:{n:"1 . 1 . 5 . 1 .",i:"bsq",v:.35,o:36},dr:["k...k...k...k..."],echo:.1};
+  A.SONGS.inn_t_neoul={bpm:88,vol:.89,prog:["Cm","Cm","Ab","G","Cm","Fm","Ab G","Cm"],   /* 너울: 규약과 기록, 오르간·금관으로 또박또박 */
+   mel:[{n:"C5 _ _ _ Eb5 _ _ _ | G5 _ _ _ _ _ . . | Ab5 _ _ _ G5 _ F5 _ | D5 _ _ _ _ _ . . | C5 _ _ _ Eb5 _ G5 _ | C6 _ _ _ Bb5 _ Ab5 _ | Ab5 _ G5 _ F5 _ D5 _ | C5 _ _ _ _ _ . .",i:"brass",v:.15}],
+   bass:{n:"1 _ _ _ 5 _ _ _",i:"sub",v:.5,o:33},pad:{i:"organ",v:.05,o:52},dr:["k.......k.......","........s......."],echo:.18};
+  A.SONGS.inn_t_doto={bpm:80,vol:.96,prog:["Am","F","C","G","Am","F","Dm E","Am"],   /* 도토: 머뭇거리는 플루트, 쉼이 많다 */
+   mel:[{n:"E5 _ . . . . D5 _ | C5 _ _ _ . . . . | G5 _ . . E5 _ . . | D5 _ _ _ . . . . | E5 _ . . A5 _ . . | G5 _ F5 _ . . . . | F5 _ E5 _ D5 _ G#4 _ | A4 _ _ _ . . . .",i:"flute",v:.2}],
+   arp:{n:"1 5 8 5",r:2,i:"ep",v:.05,o:48},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.42,o:33},pad:{i:"string",v:.05,o:55},echo:.3};
   A.SONGS.inn_inv_old={bpm:76,vol:.85,prog:["Em","CM7","Am7","B7","Em","G","Am C","B7"],
    mel:[{n:"B5 _ _ _ G5 _ E5 _ | E5 _ _ _ D5 _ B4 _ | C5 _ E5 _ A5 _ G5 _ | F#5 _ _ _ D#5 _ _ _ | E5 _ G5 _ B5 _ E6 _ | D6 _ _ B5 _ _ G5 _ | A5 _ C6 _ E6 _ D6 _ | D#6 _ _ _ _ _ . .",i:"kal",v:.2}],
    arp:{n:"1 5 8 10 8 5 . .",r:2,i:"pluck",v:.08,o:52},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.42,o:36},pad:{i:"glass",v:.045,o:60},echo:.3};
@@ -39,20 +64,27 @@
 
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0};
+  var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
   window.__innWant=function(){
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    var b=beats();
    if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
-    if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 긴장곡 */return M.inv?"inn_inv":null}   /* P11: 신고 확인 뒤 */
-    return "inn_inv"}
-   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return "inn_inv";
+    if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
+    return "inn_serious"}                         /* P12 창고 앞·P13 찻주전자: 사건곡 */
+   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt){var th=null;try{if(G.tab==="talk"&&G.who)th=THEME[G.who]}catch(e){}return th||"inn_inv"}   /* 조사 중 인물과 대화: 그 인물의 테마 */
     try{var ph=window.__rtPh&&__rtPh(),E=window.EP1INN||{};if(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)return "inn_climax"}catch(e){}
     return "inn_meet"}                              /* 조사 / 원탁회의 / 최종 대결: 장면마다 다른 곡 */
    if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
    return "inn_after"};
-  window.__innDuck=function(){
+  /* 2026-10-10 "배경음이 다들 약하다": 1장 배경음 +4.6dB(×1.7), 대화 중 기본 낮춤(.62)도 .85로 덜 낮춘다. 결정적 대사(아래 KEY)에서는 배경음을 끊는다 */
+  var KEY=/^종이 막 그쳤다고도|^자정에 겹친 바늘을 거꾸로|^솜솜은 살아 있습니다|^솜솜의 털에 묻은 글씨를 보시죠|^아침에는 솜솜 아래에서 주머니를 봤다고|^그럼 어제가 처음이라는 말씀은|^그래서 여쭙겠습니다\. 주머니를 되찾으려던/;
+  window.__innKeyLine=function(){var t=lineText();return !!t&&KEY.test(t)};
+  window.__innDuck=function(){var r=window.__innDuck0.apply(this,arguments);if(!cur()||document.getElementById("inncold"))return r;
+   if(window.__innKeyLine())return 0;
+   return r*1.7*((typeof DL!=="undefined"&&DL)?.85/.62:1)};
+  window.__innDuck0=function(){
    if(document.getElementById("inncold"))return COLDD;   /* 콜드 오픈: 비트마다 정한 낮춤(정적으로 갈수록 작게) */
    if(!cur())return 1;
    var b=beats(),now=Date.now(),f=(typeof DL!=="undefined"&&DL)?.9:1,t=lineText();   /* 2026-10-10: 대화 중 배경음 .62×.9≈.56(-5dB) — 타이핑·효과음이 묻히지 않게 */
@@ -86,6 +118,17 @@
   wrap("impact",function(){if(!S.sound)return;tone(98,.5,"sine",.3,0,null,62);noise(.25,.12,0,300)});
   wrap("tick2",function(){});                      /* 빈 곳 터치 '틱' 없음 */
   wrap("roll",function(){});                       /* 옛 드럼롤(마차 대용) 없음 */
+  /* 2026-10-10 "앗! 헉! 같은 말에 빠악! 충격음": 날카로운 타격 + 짧은 하강음 */
+  SFX.shock9=function(){if(!S.sound)return;try{noise(.09,.5,0,2600,"highpass");tone(1500,.16,"square",.09,0,null,380);tone(110,.28,"sine",.5,0,null,55);noise(.22,.18,.02,700,"lowpass")}catch(e){}};
+  /* 증거·재미있는 물건이 튀어나올 때: 짧은 반짝 */
+  SFX.pop9=function(){if(!S.sound)return;try{[880,1320,1760].forEach(function(f,i){tone(f,.12,"triangle",.14,i*.05)});noise(.05,.05,0,6000,"highpass")}catch(e){}};
+  /* 결정적 대사: 배경음이 끊길 때 둔탁한 한 방 */
+  SFX.cut9=function(){if(!S.sound)return;try{tone(70,.6,"sine",.55,0,null,40);noise(.35,.25,0,240,"lowpass");tone(2200,.05,"square",.05)}catch(e){}};
+  var lastLn=null;setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL||!DL.lines)return;var ln=DL.lines[DL.i];if(!ln||ln===lastLn)return;lastLn=ln;var t=String(ln[1]||"");
+    var md=String(ln[2]||"");
+    if(/^(앗|헉|엇|으악|아악|어머|세상에)[!?.…,\s]|^…?(앗|헉)/.test(t)||/shock|surprise/.test(md)||/\?!|!\?/.test(t))SFX.shock9();
+    else if(/^…움직였어|^안에 작은 애가 있어/.test(t))SFX.pop9();
+    else if(KEY.test(t))SFX.cut9()}catch(e){}},60);
   SFX.bell10=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
 
   /* ---- 콜드 오픈 연출(2026-10-10): 어둠·정적·행동 소리. 대사·그림·단서는 그대로, 카메라와 소리만 ---- */

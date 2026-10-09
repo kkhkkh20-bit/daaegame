@@ -234,7 +234,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
     cap:"창고에서 본 돈주머니의 붉은 봉인띠. 현장 물건은 옮기지 않고 조사 기록으로 보여 드린다.",look:"증거"}]}};
  function lay(k,alt){return '<span class="ilay"><img class="ib0" src="art/ch1/closeup/'+k+'-base-512.png" alt="'+alt+'"><img class="ib1" src="art/ch1/closeup/'+k+'-exact-overlay-512.png" alt=""></span>'}
  function inspect(key,done){var D=INSPECT[key];if(!D){done&&done();return}var i=0;
-  var el=document.createElement("div");el.id="innins";el.setAttribute("role","dialog");el.setAttribute("aria-label",D.title+" 자세히 보기");
+  try{SFX.pop9&&SFX.pop9()}catch(e){}var el=document.createElement("div");el.id="innins";el.setAttribute("role","dialog");el.setAttribute("aria-label",D.title+" 자세히 보기");
   function draw(){var p=D.pages[i],last=i>=D.pages.length-1;
    el.innerHTML='<div class="iin"><div class="ihd"><small>자세히 보기</small><b>'+D.title+'</b>'+(D.pages.length>1?'<span class="ipg">'+D.pages.map(function(x,k){return '<i class="'+(k===i?"on":"")+'">'+x.look+'</i>'}).join("")+'</span>':'')+'</div>'+
     '<div class="iart">'+p.art+'</div><p class="icap">'+p.cap+'</p><div class="ibtns">'+(i>0?'<button class="ib ghost" data-k="prev">◀ 앞면</button>':'')+'<button class="ib" data-k="'+(last?"ok":"next")+'">'+(last?"다 봤어":"뒤집어 보기 ▶")+'</button></div></div>';
@@ -310,6 +310,17 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
    var zEnd=(b.z||1)*(b.push?1+b.push/100:1)/(b.pull?1+b.pull/100:1),segs=[];parts.forEach(function(p){splitLong(p).forEach(function(q){segs.push(q)})});
    segs.forEach(function(p,i){var c={};for(var k in b)c[k]=b[k];c.say=p;if(i>0){delete c.sfx;delete c.wait;delete c.push;delete c.pull;delete c.fxs;c.z=zEnd;c.id=(b.id||"")+"_"+i}o.push(c)})});return o}catch(e){return L}};
  /* 타이핑 호흡: 방금 찍은 글자 뒤에 쉴 틱 수(1틱 = 대사 속도 간격). 1장에서만 */
+ /* 대사 빠르기(2026-10-10): 인물 성격 기본값 × 대사 내용. 1보다 크면 느리게.
+    나비·다람은 밝고 빠르게, 세련은 매끄럽게 조금 빠르게, 할머니·도토·밤이는 느리게(나이·망설임·졸음), 너울은 또박또박 */
+ var TEMPO={det0:1,det1:.85,innma:1.18,seryeon:.9,nabi:.8,geokkuri:1.28,buri:.92,wanggu:1.06,doto:1.22,karo:.95};
+ window.__innTempo=function(l,full){if(!cur()||!l)return 1;var w=l.who,t=String(full||""),m=String(l.mood||"");var f=TEMPO[w]||1;
+  if(/^\(/.test(t))f=Math.max(f,1)*1.0;                                   /* 속마음: 차분히 */
+  var ex=(t.match(/!/g)||[]).length,el=(t.match(/…|\.\./g)||[]).length;
+  if(ex)f*=t.length<14?.72:.85;                                            /* 외침·다급: 빠르게 */
+  if(el>=2)f*=1.18;else if(el===1&&!ex)f*=1.08;                          /* 머뭇거림: 느리게 */
+  if(/nervous|panic|shock/.test(m))f*=.86;if(/sad/.test(m))f*=1.2;
+  if(/^(앗|헉|엇|으악|아악|어머|어\?)/.test(t))f*=.7;
+  return Math.max(.6,Math.min(1.55,f))};
  window.__innPace=function(full,n){if(!cur())return 0;var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
   if(ch==="…"||(ch==="."&&nx==="."))return 7;                          /* 말줄임: 점마다 */
   if(/[.?!]/.test(ch)&&/[\s)」"”]/.test(nx||" "))return 12;              /* 문장 끝 */

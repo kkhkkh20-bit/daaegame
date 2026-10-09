@@ -75,7 +75,12 @@
   document.addEventListener("pointerdown",function(e){var sc=tappable(e.target);down=sc?{x:e.clientX,y:e.clientY,t:performance.now(),sc:sc}:null},true);
   document.addEventListener("pointerup",function(e){var d=down;down=null;if(!d)return;if(Math.abs(e.clientX-d.x)>12||Math.abs(e.clientY-d.y)>12||performance.now()-d.t>700)return;if(!tappable(e.target)&&!d.sc.contains(e.target))return;
    /* 2026-10-10 "가방 누르는 범위가 그림과 안 맞는다": 증거 지점·인물 바로 옆(28px 안)을 누르면 큰 물건 관찰(예: 침대) 대신 그 지점을 연다 */
-   var near=null,nd=1e9;[].slice.call(d.sc.querySelectorAll(".hot:not(.done),.npc")).forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;var dx=Math.max(r.left-e.clientX,0,e.clientX-r.right),dy=Math.max(r.top-e.clientY,0,e.clientY-r.bottom),dd=Math.max(dx,dy);if(dd<=28&&dd<nd){nd=dd;near=h}});
+   /* 2026-10-10 "조사할 때 인물 선택 범위가 너무 크다, 몸에 닿았을 때만": 장면 속 인물(.npc.w9)은 단추 사각형이 아니라 그림의 불투명 픽셀에 닿아야 연다 */
+   /* 이미 본 관찰 지점(침대 밑 상자 등)은 엔진이 숨겨 버려 다시 누르면 뒤의 침대 관찰로 새던 문제: 그 자리면 그 지점의 아빠 속마음 한 줄(예: 할머니가 손대지 말라고 하셨지…) */
+   var so=null;[].slice.call(d.sc.querySelectorAll(".hot.obs[data-obs]")).some(function(h){var cs=getComputedStyle(h);if(cs.visibility!=="hidden"&&cs.pointerEvents!=="none")return false;var r=h.getBoundingClientRect();if(r.width&&e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom){so=h;return true}return false});
+   if(so){var oo=null;try{oo=(loc().obs||[]).filter(function(x){return x.id===so.dataset.obs})[0]}catch(x){}if(oo&&oo.text){try{SFX.select()}catch(x){}obShow("("+String(oo.text).replace(/^\(|\)$/g,"")+")");return}}
+   var nh=npcHit(d.sc,e.clientX,e.clientY);if(nh){setTimeout(function(){try{nh.click()}catch(x){}},0);return}
+   var near=null,nd=1e9;[].slice.call(d.sc.querySelectorAll(".hot:not(.done),.npc:not(.w9)")).forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;var dx=Math.max(r.left-e.clientX,0,e.clientX-r.right),dy=Math.max(r.top-e.clientY,0,e.clientY-r.bottom),dd=Math.max(dx,dy);if(dd<=28&&dd<nd){nd=dd;near=h}});
    if(near){setTimeout(function(){try{near.click()}catch(x){}},0);return}
    /* 2026-10-10 "침대·자물쇠 상자를 다시 누르면 다른 네모 상자가 생긴다": 이미 챙긴 증거 자리(주머니·손자국·상자)를 다시 누르면 뒤의 침대 관찰로 새어 나가 엉뚱한 자리에 표시가 생기던 문제. 그 증거 이름만 짧게 알려 준다 */
    var dn=null;nd=1e9;[].slice.call(d.sc.querySelectorAll(".hot.done[data-done]")).forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;var dx=Math.max(r.left-e.clientX,0,e.clientX-r.right),dy=Math.max(r.top-e.clientY,0,e.clientY-r.bottom),dd=Math.max(dx,dy);if(dd<=28&&dd<nd){nd=dd;dn=h}});
@@ -170,7 +175,23 @@
    "html body.w209.inn1 .fstalk .tstage .tfig img:not([data-fr9]){visibility:hidden!important}",
    "html body.w209.inn1 .fstalk .tstage .tfig img[data-fr9]{animation:in9 .24s ease-out}@keyframes in9{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}",
    "html body.w209.inn1 .fstalk .tstage .tfig img.bump9{animation:bump9 .28s ease-out!important}@keyframes bump9{40%{translate:0 -8px}100%{translate:0 0}}",
+   /* 2026-10-10 "증거 글씨가 그림자처럼 흔들려 보인다": 상세 칸 전체에 걸린 drop-shadow 필터가 글자에도 3px 아래 그림자를 만들던 것 제거. 크기는 16px(3배 화면에서 픽셀 격자와 맞음) */
+   "html body.w209.inn1 .crec2 .cr-det{filter:none!important}",
+   "html body.w209.inn1 .crec2 .cr-det .cr-tx>p{font-size:16px!important;border-bottom:0!important;text-shadow:none!important}",
    /* 증거 획득 창: 그림 왼쪽·글 오른쪽, 확인 단추는 글자 크기에 맞춘 보통 크기 */
+   "html body.w209.inn1 #vnbox .vtxt .spk9 img{animation:br9 3.6s steps(1,end) infinite}",
+   "@keyframes br9{0%{translate:0 0}45%{translate:0 -1px}55%{translate:0 -1px}100%{translate:0 0}}",
+   "html body.w209.inn1 #vnbox .vtxt .spk9 .sw9{position:absolute;right:14%;top:18%;width:12px;height:18px;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12' shape-rendering='crispEdges'%3E%3Cpath d='M3 0h2v2h1v2h1v2h1v4h-1v1h-1v1h-4v-1h-1v-1h-1v-4h1v-2h1v-2h1z' fill='%232E5E8C'/%3E%3Cpath d='M3 2h2v2h1v2h1v4h-1v1h-4v-1h-1v-4h1v-2h1z' fill='%23A9DDFF'/%3E%3Crect x='2' y='6' width='1' height='2' fill='%23ffffff'/%3E%3C/svg%3E\") center/100% 100% no-repeat;image-rendering:pixelated;animation:sw9 1.5s steps(5,end) infinite;pointer-events:none}",
+   "@keyframes sw9{0%{opacity:0;transform:translateY(-2px)}20%{opacity:1;transform:translateY(0)}80%{opacity:1;transform:translateY(8px)}100%{opacity:0;transform:translateY(10px)}}",
+   "html body.w209.inn1 #vnbox .vtxt .spk9.jolt9{animation:jolt9 .32s steps(4,end) 1}",
+   "@keyframes jolt9{0%{translate:0 0}25%{translate:-2px -2px}50%{translate:2px 0}75%{translate:-1px 0}100%{translate:0 0}}",
+   "@media (prefers-reduced-motion:reduce){html body.w209.inn1 #vnbox .vtxt .spk9 img,html body.w209.inn1 #vnbox .vtxt .spk9 .sw9,html body.w209.inn1 #vnbox .vtxt .spk9.jolt9{animation:none}}",
+   "#e9pop ol.e9log{margin:8px 0 6px;padding:0 0 0 4px;list-style:none;display:flex;flex-direction:column;gap:8px}",
+   "#e9pop ol.e9log li{font:400 16px/1.6 Galmuri11,monospace;color:#2A1C12;word-break:keep-all;border-bottom:1px dashed #C9B48C;padding-bottom:6px}",
+   "#e9pop ol.e9log em{display:block;font-style:normal;font-size:13px;color:#2F6B3A;margin-bottom:2px}",
+   "#innppl button.e9b.plog{all:unset;cursor:pointer;box-sizing:border-box;margin-top:6px;font:400 13px/20px Galmuri11,monospace;padding:4px 12px;min-height:32px;border:2px solid #8A5E36;border-radius:4px;color:#6B4A2B;background:#FFF9EA}",
+   "#innppl button.e9b.plog i{font-style:normal;color:#A23B2A;margin-left:4px}",
+   "html body.w209.inn1 #bigscene .npc.w9{pointer-events:none!important}",
    "#e9pop{position:fixed;inset:0;z-index:2000;background:rgba(10,8,6,.55);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;cursor:pointer}",
    "#e9pop .e9pc{width:min(580px,100%);max-height:100%;overflow-y:auto;box-sizing:border-box;background:#FBF4E2;border:3px solid #6B4A2B;box-shadow:0 0 0 3px #2A1C12;padding:12px 18px 10px;text-align:left}",
    "#e9pop b{display:inline-block;background:#F2C230;color:#2A1C12;padding:2px 10px;font:400 16px/1.4 Galmuri11B,Galmuri11,monospace}",
@@ -302,19 +323,29 @@
    doto:["투숙객","여관 2층 방에 묵는다"],buri:["장치공","여관 일을 손봐 준다"],wanggu:["마을 규정 담당","주민 규약과 기록을 맡는다"],karo:["마차 마부","우리를 태우고 마을에 왔다"]};
   var ORDER=["innma","nabi","seryeon","buri","wanggu","karo","geokkuri","doto"];
   /* 아빠·다람은 늘 맨 앞에(기본 정보만, 증언 없음) */
-  var SELF=[["det0","아빠","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n2"],["det1","다람","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/action-poses/daram/profile.png"]];
+  var SELF=[["det0","아빠 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n2"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/action-poses/daram/profile.png"]];
   function metMark(){try{if(!inn()||!dl())return;var ln=DL.lines[DL.i];var w=ln&&ln[0];if(!ROLE[w])return;var pl=document.querySelector("#vnbox .plate");if(pl&&/\?\?\?/.test(pl.textContent))return;G.beats=G.beats||{};if(!G.beats["inn_met_"+w]){G.beats["inn_met_"+w]=1}}catch(e){}}
   function metList(){var b=G.beats||{},pro=!!b.inn_pro;return ORDER.filter(function(k){if(b["inn_met_"+k])return true;if(k==="geokkuri")return G.found.indexOf("C07")>=0;if(k==="doto")return G.found.indexOf("C08")>=0;return pro&&["innma","nabi","seryeon","buri","wanggu","karo"].indexOf(k)>=0})}
   var PP=null;function pplClose(){if(PP){PP.remove();PP=null}}
-  function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+ks.length+'명 · 직접 들은 말만 적어요</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
+  /* 인물별 대사 기록(인물 탭 [대사 열기]용): 화면에 나온 대사 줄을 화자별로 G.said9에 쌓는다(속마음·서술·아빠/다람 제외, 저장 데이터에 같이 남음) */
+  function sayLog(){try{if(!inn()||typeof DL==="undefined"||!DL||!DL.lines)return;var ln=DL.lines[DL.i];if(!ln)return;var key=DL.i+"|"+DL.lines.length;if(sayLog.d===DL&&sayLog.k===key)return;sayLog.d=DL;sayLog.k=key;
+    var w=Array.isArray(ln)?ln[0]:ln.w,t=String((Array.isArray(ln)?ln[1]:ln.t)||"").replace(/[{}]/g,"").replace(/\s*\n\s*/g," ").trim();if(!w||!PROF[w]||w==="det1"||!t||/^\(/.test(t))return;
+    var S=G.said9=G.said9||{},a=S[w]=S[w]||[];if(a.indexOf(t)>=0)return;a.push(t);if(a.length>300)a.shift()}catch(e){}}
+  setInterval(sayLog,120);
+  function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+ks.length+'명 · [대사 열기]로 들은 말 보기</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
    SELF.forEach(function(x){h+='<section class="pc self"><div class="pf"><img alt="" src="'+x[4]+'"></div><div class="pt"><h4>'+esc(x[1])+'</h4><small>'+esc(x[2])+'</small><p>'+esc(x[3])+'</p></div></section>'});
-   ks.forEach(function(k){var nm=(CAST[k]&&CAST[k].name)||k,r=ROLE[k]||["",""],said=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q});
+   ks.forEach(function(k){var nm=({innma:"복례 할머니"})[k]||(CAST[k]&&CAST[k].name)||k,r=ROLE[k]||["",""],said=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q});
     var face="";try{face=PROF[k]?'<img alt="" data-k="'+k+'" src="'+AP+PROF[k]+'/profile.png?v=e4">':pf(k,"neutral")}catch(e){}
     h+='<section class="pc"><div class="pf">'+face+'</div><div class="pt"><h4>'+esc(nm)+'</h4><small>'+esc(r[0])+'</small><p>'+esc(r[1])+'</p>'+
-     (said.length?'<ul>'+said.map(function(t){return '<li><b>'+esc(t.q)+'</b>'+esc(String(t.a||"").replace(/[{}]/g,""))+'</li>'}).join("")+'</ul>':'<p class="no">아직 직접 물어본 이야기는 없어요.</p>')+'</div></section>'});
+     (function(){var n=((G.said9||{})[k]||[]).length+said.length;return n?'<button type="button" class="e9b plog" data-k="'+k+'">대사 열기 <i>'+n+'</i></button>':'<p class="no">아직 나눈 대화가 없어요.</p>'})()+'</div></section>'});
    h+='</div></div>';PP=document.createElement("div");PP.id="innppl";PP.setAttribute("role","dialog");PP.setAttribute("aria-label","인물");PP.innerHTML=h;B.appendChild(PP);
    /* 초상 파일을 못 받으면(배포 직후 캐시 등) 깨진 그림 대신 같은 인물의 작은 얼굴로 */
    [].slice.call(PP.querySelectorAll(".pf img[data-k]")).forEach(function(im){function fb(){var k=im.dataset.k,w=im.parentNode;if(!w)return;try{w.innerHTML=pf(k,"neutral")}catch(e){w.innerHTML=""}}im.addEventListener("error",fb);if(im.complete&&!im.naturalWidth)fb()});
+   /* 2026-10-10 사용자: 인물 카드는 기본 정보만, [대사 열기]를 누르면 그 인물에게 들은 말 기록(물어본 질문의 답 + 대화 중 그 인물이 한 말, 나온 순서) */
+   PP.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".plog");if(!b)return;e.stopPropagation();var k=b.dataset.k,nm=({innma:"복례 할머니"})[k]||(CAST[k]&&CAST[k].name)||k,c=CASES[G.ci];
+     var qa=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q}).map(function(t){return [t.q,String(t.a||"").replace(/[{}]/g,"")]});
+     var lines=((G.said9||{})[k]||[]).slice(),seen={};qa.forEach(function(x){seen[x[1]]=1});lines=lines.filter(function(t){return !seen[t]});
+     pop9(nm+"에게 들은 말",qa.concat(lines))},true);
    PP.addEventListener("click",function(e){var t=e.target;if(t===PP||(t.closest&&t.closest("[data-x]"))){e.stopPropagation();try{SFX.tap()}catch(x){}pplClose()}})}
   function pplTab(){try{var r=document.querySelector(".crec2");if(!r||!inn()){pplClose();return}if(r.querySelector('[data-crt="ppl9"]'))return;var t=r.querySelector('[data-crt="t"]');if(!t)return;
     var b=document.createElement("button");b.type="button";b.className=t.className.replace(/\bon\b/,"");b.dataset.crt="ppl9";b.textContent="인물 "+metList().length;b.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();try{SFX.page()}catch(x){}pplOpen()},true);t.parentNode.insertBefore(b,t.nextSibling)}catch(e){}}
@@ -336,7 +367,7 @@
     var T={C03:1,C07:1,C12:1,C13:1};try{if(!T[id]&&window.__memoOf)memo=window.__memoOf(CASES[G.ci],id)||""}catch(e){}
     var at=m.querySelector(".found-at"),place=at?at.textContent:"",who=(kk.textContent.split("·")[1]||"").trim();
     if(!short){var p0=m.querySelector(":scope>p");short=p0?p0.textContent:""}
-    var nm=h3.textContent.trim();m.classList.add("ev9");
+    var nm=h3.textContent.trim();m.classList.add("ev9");if(/증거 획득/.test(kk.textContent)){try{SFX.found()}catch(e){}}   /* 증언 카드는 효과음이 없던 것 */
     var card=document.createElement("div");card.className="e9card";card.innerHTML='<div class="e9ic"></div><div class="e9tx"><div class="e9k"></div><h3 class="e9t"></h3><p class="e9d"></p><div class="e9opt"></div><div class="e9pan" hidden></div></div>';
     card.querySelector(".e9ic").appendChild(ic);card.querySelector(".e9k").textContent="증거 발견"+(who?" · "+who:"");card.querySelector(".e9t").textContent=nm;card.querySelector(".e9d").textContent=short;
     var opt=card.querySelector(".e9opt"),pan=card.querySelector(".e9pan");
@@ -367,18 +398,33 @@
   var WPX={dotoroom:[["art/ch1/props/doto_room/prop_weather_notebook_open_rgba.png",1106,450.45,164,28.55],["art/ch1/props/doto_room/prop_bookstack_rgba.png",1309.5,408.7,105,53.3],["art/ch1/props/doto_room/prop_pencilcup_rgba.png",1435,396.4,30,65.6]]};
   function svgOf(sc){return sc&&(sc.querySelector("svg[data-inn-world]")||sc.querySelector("svg[data-bg]"))}
   function img(sv,f,x,y,w,h,cls){var im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class",cls);im.setAttribute("href",f);im.setAttribute("x",x);im.setAttribute("y",y);im.setAttribute("width",w);im.setAttribute("height",h);im.setAttribute("preserveAspectRatio","none");im.setAttribute("style","image-rendering:pixelated;pointer-events:none");sv.appendChild(im);return im}
+  /* 인물 그림 알파 마스크(같은 출처 이미지). 읽지 못하면 그림 가운데 기둥(가로 40%)만 인정 */
+  var MASK={};
+  function maskOf(src){if(!src)return {};if(MASK[src])return MASK[src];var o={ready:false};MASK[src]=o;var im=new Image();
+    im.onload=function(){try{var c=document.createElement("canvas");c.width=im.naturalWidth;c.height=im.naturalHeight;var x=c.getContext("2d");x.drawImage(im,0,0);var dd=x.getImageData(0,0,c.width,c.height).data,a=new Uint8Array(c.width*c.height);for(var i=0;i<a.length;i++)a[i]=dd[i*4+3];o.a=a;o.w=c.width;o.h=c.height;o.ready=true}catch(e){o.bad=true}};
+    im.onerror=function(){o.bad=true};im.src=src;return o}
+  function alphaAt(im,x,y,R){var r=im.getBoundingClientRect();if(!r.width||x<r.left||x>r.right||y<r.top||y>r.bottom)return -1;var M=maskOf(im.getAttribute("href")),u=(x-r.left)/r.width,v=(y-r.top)/r.height;
+    if(!M.ready)return (Math.abs(u-.5)<.2&&v>.06&&v<.97)?255:0;var px=Math.floor(u*M.w),py=Math.floor(v*M.h),best=0;
+    for(var dy=-R;dy<=R;dy++)for(var dx=-R;dx<=R;dx++){var X=px+dx,Y=py+dy;if(X<0||Y<0||X>=M.w||Y>=M.h)continue;var a=M.a[Y*M.w+X];if(a>best)best=a}return best}
+  window.__innMask=function(){var o={};Object.keys(MASK).forEach(function(k){o[k]=MASK[k].ready?"ok":MASK[k].bad?"bad":"wait"});return o};
+  function npcHit(sc,x,y){try{var sv=svgOf(sc);if(!sv)return null;
+    /* 앞가림(식탁 상판 등)의 불투명 부분을 누르면 그 뒤 인물은 열지 않는다 */
+    var occ=[].slice.call(sv.querySelectorAll("image.wo9")).some(function(im){return alphaAt(im,x,y,0)>60});if(occ)return null;
+    var hit=null;[].slice.call(sv.querySelectorAll("image.wn9")).reverse().some(function(im){var bt=sc.querySelector('.npc.w9[data-npc="'+im.dataset.k+'"]');if(!bt||bt.dataset.nohit)return false;
+      if(alphaAt(im,x,y,1)>60){hit=bt;return true}return false});return hit}catch(e){return null}}
+  window.__innNpcHit=function(x,y){var b=npcHit(document.getElementById("bigscene"),x,y);return b?b.dataset.npc:""};
   function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[],key=lid+"|"+L.length;
     if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
      (WPX[lid]||[]).forEach(function(p){img(sv,p[0],p[1],p[2],p[3],p[4],"wp9")});
-     L.forEach(function(n){var e=img(sv,n[1],n[2],n[3],n[4],n[5],"wn9");e.dataset.k=n[0]});
-     (OCC[lid]||[]).forEach(function(o){img(sv,o[0],o[1],o[2],o[3],o[4],"wo9")});sv.dataset.wn9=key}
+     L.forEach(function(n){var e=img(sv,n[1],n[2],n[3],n[4],n[5],"wn9");e.dataset.k=n[0];maskOf(n[1])});
+     (OCC[lid]||[]).forEach(function(o){img(sv,o[0],o[1],o[2],o[3],o[4],"wo9");maskOf(o[0])});sv.dataset.wn9=key}
     /* 인물 단추를 그림 자리로(누름 영역 = 그림 사각형, 최소 48px). 옛 전신 그림은 숨긴다 */
     var m=sv.getScreenCTM(),br=sc.getBoundingClientRect();if(!m)return;
     L.forEach(function(n){var bt=sc.querySelector('.npc[data-npc="'+n[0]+'"]');if(!bt)return;bt.classList.add("w9");
      var p1=sv.createSVGPoint();p1.x=n[2];p1.y=n[3];var a=p1.matrixTransform(m);var p2=sv.createSVGPoint();p2.x=n[2]+n[4];p2.y=n[3]+n[5];var z=p2.matrixTransform(m);
      var w=Math.max(48,z.x-a.x),h=Math.max(48,z.y-a.y),l=a.x-br.left,t=a.y-br.top;
      [["left",l+"px"],["top",t+"px"],["width",w+"px"],["height",h+"px"],["transform","none"],["margin","0"]].forEach(function(d){bt.style.setProperty(d[0],d[1],"important")})});
-    if(lid==="dotoroom"){var d=sc.querySelector('.npc[data-npc="doto"]');if(d)d.style.setProperty("pointer-events","none","important")}}catch(e){}}
+    if(lid==="dotoroom"){var d=sc.querySelector('.npc[data-npc="doto"]');if(d){d.style.setProperty("pointer-events","none","important");d.dataset.nohit="1"}}}catch(e){}}
   var PROF={det1:"daram",innma:"grandma",geokkuri:"bami",nabi:"nabi",karo:"karo",seryeon:"seryeon",wanggu:"neoul",doto:"doto",buri:"buri"};
 
   /* ==== 대화 UI v3(2026-10-09 확정): 대사창 안 왼쪽에 작은 화자 초상(누구 말인지 표시용, 표정·행동은 장면 인물이 맡음) ====
@@ -392,6 +438,10 @@
   function speaker(){try{if(!inn()||!dl())return;var vt=document.querySelector("#vnbox .vtxt");if(!vt)return;var ln=DL.lines[DL.i]||[],w=ln[0],vb=vt.closest(".vband");
     var inner=vb&&vb.classList.contains("inner");var k=inner?"det0":w;if(SPK.parentNode!==vt)vt.insertBefore(SPK,vt.firstChild);
     var f=spkSrc(k),mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"");if(f){if(SPKIMG.getAttribute("src")!==f)SPKIMG.setAttribute("src",f)}else SPKIMG.removeAttribute("src")}
+    /* 2026-10-10 작은 연출: 긴장·당황 표정(nervous/shock/worried) 줄에서는 초상 옆으로 땀방울이 조금씩 흐르고, 놀람(shock)·"?!" 줄은 한 번 움찔한다 */
+    var md=String(ln[2]||""),tx=String(ln[1]||""),fx=/nervous|shock|worried|panic|sweat/.test(md)||/땀/.test(tx)?"sweat":"",jolt=/shock|surprise/.test(md)||/\?!|!\?/.test(tx);
+    if(SPK.dataset.fx!==fx){SPK.dataset.fx=fx;var sw=SPK.querySelector(".sw9");if(fx&&!sw){sw=document.createElement("i");sw.className="sw9";SPK.appendChild(sw)}else if(!fx&&sw)sw.remove()}
+    var lk=DL.i+"|"+tx.length;if(jolt&&SPK.dataset.jk!==lk){SPK.dataset.jk=lk;SPK.classList.remove("jolt9");void SPK.offsetWidth;SPK.classList.add("jolt9")}
     if(!vt.classList.contains("v3"))vt.classList.add("v3")}catch(e){}}
   try{new MutationObserver(speaker).observe(document.getElementById("ov")||document.body,{childList:true,subtree:true})}catch(e){}
   setInterval(speaker,120);
@@ -399,9 +449,10 @@
   /* 기록 증거 상세: '원문 보기'로 축약 전 원문(그대로 보존)을 펼친다 */
   /* 기록 화면의 [자세히 보기]·[다람 메모]: 화면 가운데 쪽지로 띄우고, 누르면 닫힌다(좁은 화면에서 목록에 가려지지 않게 body에 붙인다) */
   function pop9(title,text,onClose){var o=document.getElementById("e9pop");if(o){var f=o._c;o.remove();if(f)try{f()}catch(e){}}if(!title)return;
-    o=document.createElement("div");o.id="e9pop";o._c=onClose;o.innerHTML='<div class="e9pc"><b></b><p></p><small>눌러서 닫기</small></div>';o.querySelector("b").textContent=title;o.querySelector("p").textContent=text;
+    o=document.createElement("div");o.id="e9pop";o._c=onClose;o.innerHTML='<div class="e9pc"><b></b><p></p><small>눌러서 닫기</small></div>';o.querySelector("b").textContent=title;
+    if(Array.isArray(text)){var ol=document.createElement("ol");ol.className="e9log";text.forEach(function(it){var li=document.createElement("li");if(Array.isArray(it)){var q=document.createElement("em");q.textContent=it[0];li.appendChild(q);li.appendChild(document.createTextNode(it[1]))}else li.textContent=it;ol.appendChild(li)});o.querySelector("p").replaceWith(ol)}else o.querySelector("p").textContent=text;
     o.addEventListener("click",function(e){e.stopPropagation();pop9()});document.body.appendChild(o);try{SFX.select()}catch(e){}}
-  setInterval(function(){if(document.getElementById("e9pop")&&!document.querySelector(".crec2"))pop9()},400);
+  setInterval(function(){if(document.getElementById("e9pop")&&!document.querySelector(".crec2,#innppl"))pop9()},400);
   /* C12·C13(증언 기록)은 아직 전용 아이콘이 없어 노란 동그라미가 나오던 자리: 아이콘 납품 전까지 말한 사람 얼굴로 둔다 */
   try{var _ev9=evIcon;evIcon=function(id){if(inn()&&(id==="C12"||id==="C13")){try{return pf(id==="C12"?"seryeon":"geokkuri").replace("<svg ",'<svg class="evic ev9face" ')}catch(e){}}return _ev9.apply(this,arguments)}}catch(e){}
   function recDetail(){try{var r=document.querySelector(".crec2");if(!r||!inn())return;var th=r.querySelector(".cr-th.on");var id=th&&th.dataset.crs;var EPX=window.EP1INN||{},x=id&&EPX.EV&&EPX.EV[id];
