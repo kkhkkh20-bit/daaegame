@@ -2,7 +2,7 @@
     버튼·질문·조사 지점이 '눌릴 수 있게 보이기 시작한 시각'을 기록한다. 나타나기 전에 시작된 누름은 무시하고, 대화가 끝난 직후 나타난 것은 600ms 동안 입력을 받지 않는다.
     대화창 넘기기(타이핑 중 첫 입력=문장 완성, 다음 입력=다음 문장)는 엔진 규칙 그대로(220ms 이중 입력 방지 포함). */
  (function(){
-  var SEL=".topic,[data-spot],[data-obs],.npc,#ov .modal .btn,#ov .modal button,#mveil .modal .btn,#mveil .modal button";   /* 질문·조사 지점·증거 카드 확인만. 메뉴·레일·회의 버튼은 즉시 반응 */
+  var SEL=".topic,#ov .modal .btn,#ov .modal button,#mveil .modal .btn,#mveil .modal button";   /* 질문·증거 카드 확인만. 조사 지점·인물은 힌트 포인터를 보고 바로 누를 수 있게 막지 않는다 */   /* 질문·조사 지점·증거 카드 확인만. 메뉴·레일·회의 버튼은 즉시 반응 */
   var AP=new WeakMap(),downT=0,live=new Set(),endT=-1e9;
   try{var _ed=endDlg;endDlg=function(){endT=performance.now();return _ed.apply(this,arguments)}}catch(e){}
   function inn(){try{return S.screen==="case"&&G&&CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}

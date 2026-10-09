@@ -7,6 +7,7 @@
   if(!window.__AUD||!__AUD.SONGS)return;
   var A=__AUD;
   function cur(){try{return S.screen==="case"&&!!G&&!!CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}
+  function sidOf(pi){try{return (EP.PRO[pi]&&EP.PRO[pi].sid)||("P"+(pi+1))}catch(e){return "P"+(pi+1)}}
   function beats(){try{return (G&&G.beats)||{}}catch(e){return {}}}
   function lineText(){try{var l=DL&&DL.lines&&DL.lines[DL.i];return l?String(l[1]||""):""}catch(e){return ""}}
   function lineKind(){try{var l=DL&&DL.lines&&DL.lines[DL.i];if(!l)return "say";if(l[0]==="narr")return /^\(/.test(String(l[1]))?"inner":"narr";return "say"}catch(e){return "say"}}
@@ -15,9 +16,9 @@
   A.SONGS.inn_cold={bpm:60,vol:.85,prog:["Dm","Dm","Bb","A","Dm","Dm","Gm","A"],
    mel:[{n:"D5 _ _ _ . . . . | . . . . C5 _ A4 _ | Bb4 _ _ _ . . . . | A4 _ _ _ _ _ . . | D5 _ _ _ . . . . | . . . . E5 _ F5 _ | D5 _ _ _ Bb4 _ . . | C#5 _ _ _ _ _ . .",i:"glass",v:.07}],
    bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.42,o:33},pad:{i:"string",v:.04,o:50},fx:"drone",echo:.4};
-  A.SONGS.inn_travel={bpm:100,spb:12,vol:.9,prog:["F","C/E","Dm","Bb","F","Gm","Bb C","F"],
-   mel:[{n:"C5 _ A4 _ C5 F5 | E5 _ _ _ C5 _ | D5 _ F5 _ A5 G5 | F5 _ _ _ D5 _ | C5 _ A4 _ C5 F5 | G5 _ F5 _ E5 D5 | D5 _ C5 _ Bb4 E5 | F5 _ _ _ . .",i:"kal",v:.26}],
-   bass:{n:"1 . 5 8 . 5",i:"bpl",v:.48,o:36},pad:{i:"warm",v:.055,o:57},echo:.2};
+  A.SONGS.inn_travel={bpm:92,spb:12,vol:1.05,prog:["F","C/E","Dm","Bb","F","Gm","Bb C","F"],   /* 따뜻한 6/8: 칼림바 선율 + 일렉 피아노 분산화음 + 현 패드, 타악기 없음 */
+   mel:[{n:"C5 _ A4 _ C5 F5 | E5 _ _ _ C5 _ | D5 _ F5 _ A5 G5 | F5 _ _ _ D5 _ | C5 _ A4 _ C5 F5 | G5 _ F5 _ E5 D5 | D5 _ C5 _ Bb4 E5 | F5 _ _ _ . .",i:"kal",v:.24}],
+   arp:{n:"1 5 8 10 8 5",r:2,i:"ep",v:.05,o:48},bass:{n:"1 _ _ 5 _ _",i:"sub",v:.4,o:36},pad:{i:"string",v:.04,o:57},echo:.28};
   A.SONGS.inn_inv={bpm:76,vol:.85,prog:["Em","CM7","Am7","B7","Em","G","Am C","B7"],
    mel:[{n:"B5 _ _ _ G5 _ E5 _ | E5 _ _ _ D5 _ B4 _ | C5 _ E5 _ A5 _ G5 _ | F#5 _ _ _ D#5 _ _ _ | E5 _ G5 _ B5 _ E6 _ | D6 _ _ B5 _ _ G5 _ | A5 _ C6 _ E6 _ D6 _ | D#6 _ _ _ _ _ . .",i:"kal",v:.2}],
    arp:{n:"1 5 8 10 8 5 . .",r:2,i:"pluck",v:.08,o:52},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.42,o:36},pad:{i:"glass",v:.045,o:60},echo:.3};
@@ -31,21 +32,21 @@
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    var b=beats();
-   if(!b.inn_pro){var pi=b.inn_pi|0;
-    if(pi<=9)return "inn_travel";                   /* P1~P10 */
-    if(pi===10){if(/^계약금이 든 주머니/.test(lineText()))M.inv=true;return M.inv?"inn_inv":null}   /* P11: 신고 확인 뒤 */
+   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);
+    if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
+    if(sid==="P11"){if(/^계약금이 든 주머니/.test(lineText()))M.inv=true;return M.inv?"inn_inv":null}   /* P11: 신고 확인 뒤 */
     return "inn_inv"}
    if(!b.inn_final)return "inn_inv";                /* 조사·회의·최종: 같은 곡, 같은 재생 위치 */
    if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
    return "inn_after"};
   window.__innDuck=function(){
    if(!cur())return 1;
-   var b=beats(),now=Date.now(),f=1,t=lineText();
+   var b=beats(),now=Date.now(),f=(typeof DL!=="undefined"&&DL)?1.25:1,t=lineText();   /* 대화 중 덕킹 .62 → 약 .78 */
    if(!b.inn_pro){var pi=b.inn_pi|0;
-    if(pi!==9)M.p10=0;
-    if(pi===4)f=.8;                                 /* P5 복도: 같은 곡 낮게 */
-    if(pi===9){if(!M.p10)M.p10=now;f=Math.max(0,1-(now-M.p10)/14000)}   /* P10: 여행곡 천천히 종료 */
-    if(pi===11)f=.75;if(pi===12)f=.5;               /* P12 낮게, P13 더 낮게 */
+    var sd=sidOf(pi);if(sd!=="P10")M.p10=0;
+    if(sd==="P5")f=.8;                             /* P5 복도: 같은 곡 낮게 */
+    if(sd==="P10"){if(!M.p10)M.p10=now;f=Math.max(0,1-(now-M.p10)/14000)}   /* P10: 여행곡 천천히 종료 */
+    if(sd==="P12")f=.75;if(sd==="P13")f=.5;     /* P12 낮게, P13 더 낮게 */
     return f}
    if(!b.inn_final){try{var l=CASES[G.ci].locations[G.loc];if(l&&l.id==="kitchen"&&G.tab==="scene")f=.75}catch(e){}return f}
    var ei=b.inn_ei|0;
@@ -59,7 +60,7 @@
   window.__innType=function(kind){try{
    if(!S.sound||!AC||AC.state!=="running")return;var now=AC.currentTime;if(now-lastT<.075)return;lastT=now;
    var v=kind==="inner"?.45:kind==="narr"?.55:1;
-   noise(.014,.05*v,0,1700,"bandpass");tone(300+Math.random()*40,.03,"sine",.035*v)}catch(e){}};
+   noise(.014,.035*v,0,1700,"bandpass");tone(300+Math.random()*40,.03,"sine",.025*v)}catch(e){}};
   var _blip=SFX.blip;
   SFX.blip=function(){if(!cur())return _blip.apply(this,arguments);window.__innType(lineKind())};
 
@@ -101,7 +102,7 @@
    setTimeout(function(){I.dead=true;var k=AMB.old.indexOf(I);if(k>=0)AMB.old.splice(k,1);I.src.forEach(function(s){try{s.stop()}catch(e){}});try{I.out.disconnect()}catch(e){}},dur*1000+300)}
   var AMB={cur:null,dep:null,old:[]};
   function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||document.getElementById("inncold"))return null;var b=beats();
-   if(!b.inn_pro){var pi=b.inn_pi|0;if(pi===0&&b.inn_bg==="carriage")return "carriage";if(pi===1)return "wind";return null}
+   if(!b.inn_pro){var sd=sidOf(b.inn_pi|0);if(sd==="P1"&&b.inn_bg==="carriage")return "carriage";if(sd==="P2")return "wind";return null}
    if(b.inn_final&&!b.inn_end){var ei=b.inn_ei|0;if(ei===0||ei===1)return "wind"}
    return null}
   /* E2 마지막 마차: 출발해서 멀어지며 사라진다(약 7초) */
