@@ -1,0 +1,121 @@
+{
+ "id": "daram-v4",
+ "design": "초기 복장(크림 블라우스·갈색 멜빵치마·체크 모자·목걸이·수첩)",
+ "source": "daram-dialogue-sources-v1.zip (1254 RGBA)",
+ "export": "전체 캔버스 1254→논리 209(셀 6px) 다수결+이진 알파, 대화 crop (16,2,200x150) 2배 368x300. 기본 상태는 몸만+재구성 꼬리(manifest 시작값 scale .856, offset 56.7/41.3, 원본과 알파 IoU .979)로 합성, 꼬리 -5/0/+6도 3프레임(pivot 625,880 원본좌표)",
+ "states": {
+  "idle": "idle-t0/t1/t2",
+  "memo": "think/memo",
+  "joy": "laugh/joy/smile",
+  "flustered": "oops/panic/nervous/shock",
+  "held-anger": "pout/held",
+  "comic-anger": "mad/angry"
+ },
+ "kept_old": "sad/cower/resolve/confront/shy/caught 기존 그림",
+ "files": [
+  {
+   "file": "daram-comic-anger-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    22,
+    10,
+    282,
+    300
+   ]
+  },
+  {
+   "file": "daram-flustered-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    20,
+    10,
+    300,
+    300
+   ]
+  },
+  {
+   "file": "daram-held-anger-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    20,
+    10,
+    282,
+    300
+   ]
+  },
+  {
+   "file": "daram-idle-t0-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    22,
+    10,
+    300,
+    300
+   ]
+  },
+  {
+   "file": "daram-idle-t1-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    14,
+    10,
+    300,
+    300
+   ]
+  },
+  {
+   "file": "daram-idle-t2-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    30,
+    10,
+    300,
+    300
+   ]
+  },
+  {
+   "file": "daram-joy-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    22,
+    10,
+    300,
+    300
+   ]
+  },
+  {
+   "file": "daram-memo-dialogue.png",
+   "size": [
+    368,
+    300
+   ],
+   "bbox": [
+    22,
+    8,
+    296,
+    300
+   ]
+  }
+ ]
+}

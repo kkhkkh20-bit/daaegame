@@ -178,6 +178,12 @@
    /* 2026-10-10 "증거 글씨가 그림자처럼 흔들려 보인다": 상세 칸 전체에 걸린 drop-shadow 필터가 글자에도 3px 아래 그림자를 만들던 것 제거. 크기는 16px(3배 화면에서 픽셀 격자와 맞음) */
    "html body.w209.inn1 .crec2 .cr-det{filter:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>p{font-size:16px!important;border-bottom:0!important;text-shadow:none!important}",
+   /* 2026-10-10 "프롤로그·대사 중에도 더보기 칸은 항상 보여 줘(소리 조절·저장)" */
+   "html body.w209.inn1.dl-on #w209rail [data-more]{visibility:visible!important;pointer-events:auto!important}",
+   "html body.w209.inn1.dl-on #w209rail{z-index:60!important}",
+   "html body.w209.inn1.dl-on #w209rail.more #w209more{visibility:visible!important;pointer-events:auto!important}",
+   "html body.w209.inn1.dl-on #w209rail.more #w209more *{visibility:visible!important}",
+   "html body.w209.inn1.dl-on #w209more [data-w=\"move\"],html body.w209.inn1.dl-on #w209more [data-w=\"hint\"],html body.w209.inn1.dl-on #w209more [data-w=\"reset\"]{display:none!important}",
    /* 증거 획득 창: 그림 왼쪽·글 오른쪽, 확인 단추는 글자 크기에 맞춘 보통 크기 */
    "html body.w209.inn1 #vnbox .vtxt .spk9 img{animation:br9 3.6s steps(1,end) infinite}",
    "@keyframes br9{0%{translate:0 0}45%{translate:0 -1px}55%{translate:0 -1px}100%{translate:0 0}}",
@@ -323,7 +329,7 @@
    doto:["투숙객","여관 2층 방에 묵는다"],buri:["장치공","여관 일을 손봐 준다"],wanggu:["마을 규정 담당","주민 규약과 기록을 맡는다"],karo:["마차 마부","우리를 태우고 마을에 왔다"]};
   var ORDER=["innma","nabi","seryeon","buri","wanggu","karo","geokkuri","doto"];
   /* 아빠·다람은 늘 맨 앞에(기본 정보만, 증언 없음) */
-  var SELF=[["det0","아빠 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n2"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/action-poses/daram/profile.png"]];
+  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n2"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/action-poses/daram/profile.png"]];
   function metMark(){try{if(!inn()||!dl())return;var ln=DL.lines[DL.i];var w=ln&&ln[0];if(!ROLE[w])return;var pl=document.querySelector("#vnbox .plate");if(pl&&/\?\?\?/.test(pl.textContent))return;G.beats=G.beats||{};if(!G.beats["inn_met_"+w]){G.beats["inn_met_"+w]=1}}catch(e){}}
   function metList(){var b=G.beats||{},pro=!!b.inn_pro;return ORDER.filter(function(k){if(b["inn_met_"+k])return true;if(k==="geokkuri")return G.found.indexOf("C07")>=0;if(k==="doto")return G.found.indexOf("C08")>=0;return pro&&["innma","nabi","seryeon","buri","wanggu","karo"].indexOf(k)>=0})}
   var PP=null;function pplClose(){if(PP){PP.remove();PP=null}}
@@ -332,6 +338,9 @@
     var w=Array.isArray(ln)?ln[0]:ln.w,t=String((Array.isArray(ln)?ln[1]:ln.t)||"").replace(/[{}]/g,"").replace(/\s*\n\s*/g," ").trim();if(!w||!PROF[w]||w==="det1"||!t||/^\(/.test(t))return;
     var S=G.said9=G.said9||{},a=S[w]=S[w]||[];if(a.indexOf(t)>=0)return;a.push(t);if(a.length>300)a.shift()}catch(e){}}
   setInterval(sayLog,120);
+  /* 더보기: 대사 중에도 열리게(대사 중 클릭이 두 번 전달돼 열렸다 바로 닫히던 것) — 문서 캡처 단계에서 한 번만 열고 닫는다 */
+  document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#w209rail [data-more]");if(!b||!inn())return;e.preventDefault();e.stopImmediatePropagation();
+    var r=document.getElementById("w209rail");if(!r)return;var now=performance.now();if(now-(b.__t||0)<250)return;b.__t=now;r.classList.toggle("more");try{SFX.tap()}catch(x){}},true);
   function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+ks.length+'명 · [대사 열기]로 들은 말 보기</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
    SELF.forEach(function(x){h+='<section class="pc self"><div class="pf"><img alt="" src="'+x[4]+'"></div><div class="pt"><h4>'+esc(x[1])+'</h4><small>'+esc(x[2])+'</small><p>'+esc(x[3])+'</p></div></section>'});
    ks.forEach(function(k){var nm=({innma:"복례 할머니"})[k]||(CAST[k]&&CAST[k].name)||k,r=ROLE[k]||["",""],said=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q});
@@ -413,7 +422,7 @@
     var hit=null;[].slice.call(sv.querySelectorAll("image.wn9")).reverse().some(function(im){var bt=sc.querySelector('.npc.w9[data-npc="'+im.dataset.k+'"]');if(!bt||bt.dataset.nohit)return false;
       if(alphaAt(im,x,y,1)>60){hit=bt;return true}return false});return hit}catch(e){return null}}
   window.__innNpcHit=function(x,y){var b=npcHit(document.getElementById("bigscene"),x,y);return b?b.dataset.npc:""};
-  function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[],key=lid+"|"+L.length;
+  function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[];var tp=(G.obsSeen||[]).indexOf("o_teapot")>=0||G.found.indexOf("C04")>=0;if(lid==="kitchen"&&!tp)L=L.filter(function(n){return n[0]!=="nabi"});var key=lid+"|"+L.length;   /* 나비는 너울을 부르러 갔다가, 찻주전자 발견 뒤 부엌에 돌아와 있다(찻주전자를 본 사람은 부녀뿐) */
     if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
      (WPX[lid]||[]).forEach(function(p){img(sv,p[0],p[1],p[2],p[3],p[4],"wp9")});
      L.forEach(function(n){var e=img(sv,n[1],n[2],n[3],n[4],n[5],"wn9");e.dataset.k=n[0];maskOf(n[1])});
@@ -424,6 +433,7 @@
      var p1=sv.createSVGPoint();p1.x=n[2];p1.y=n[3];var a=p1.matrixTransform(m);var p2=sv.createSVGPoint();p2.x=n[2]+n[4];p2.y=n[3]+n[5];var z=p2.matrixTransform(m);
      var w=Math.max(48,z.x-a.x),h=Math.max(48,z.y-a.y),l=a.x-br.left,t=a.y-br.top;
      [["left",l+"px"],["top",t+"px"],["width",w+"px"],["height",h+"px"],["transform","none"],["margin","0"]].forEach(function(d){bt.style.setProperty(d[0],d[1],"important")})});
+    if(lid==="kitchen"){var nb=sc.querySelector('.npc[data-npc="nabi"]');if(nb){if(!tp)nb.style.setProperty("display","none","important");else nb.style.removeProperty("display")}}
     if(lid==="dotoroom"){var d=sc.querySelector('.npc[data-npc="doto"]');if(d){d.style.setProperty("pointer-events","none","important");d.dataset.nohit="1"}}}catch(e){}}
   var PROF={det1:"daram",innma:"grandma",geokkuri:"bami",nabi:"nabi",karo:"karo",seryeon:"seryeon",wanggu:"neoul",doto:"doto",buri:"buri"};
 
@@ -432,12 +442,18 @@
   /* 2026-10-10 깜빡임 수정: 엔진은 대사마다 대사창 노드를 새로 만든다. 예전엔 초상·여백을 최대 60ms 뒤에 붙여 창 높이·글 위치가 한 프레임씩 튀었다.
      이제 여백·높이는 CSS로 늘 같고, 초상은 같은 img 요소 하나를 새 창으로 옮겨 붙인다(새로 받지 않음). 노드가 생기는 즉시(그리기 전, MutationObserver) 처리 */
   var SPK=document.createElement("span");SPK.className="spk9";SPK.setAttribute("aria-hidden","true");SPK.innerHTML="<img alt=''>";var SPKIMG=SPK.firstChild,SPKC={};
+  var FW="art/ch1/father/father-warm-";[FW+"base-speaker128.png",FW+"raised-speaker128.png"].forEach(function(f){var im=new Image();im.src=f});
   var DAD="art/ch1/father/father-speaker128.png?v=n2";   /* 아빠 기본 프로필: 2026-10-09 사용자 확정 정직·따뜻한 얼굴(이전 능청 얼굴은 father-sly-*로 보존, 연결 없음) — 화자 칸에만 */
   function spkSrc(k){return k==="det0"?DAD:(PROF[k]?AP+PROF[k]+"/speaker128.png":"")}
   [DAD].concat(Object.keys(PROF).map(function(k){return AP+PROF[k]+"/speaker128.png"})).forEach(function(f){var im=new Image();im.src=f;SPKC[f]=im;try{im.decode&&im.decode().catch(function(){})}catch(e){}});
   function speaker(){try{if(!inn()||!dl())return;var vt=document.querySelector("#vnbox .vtxt");if(!vt)return;var ln=DL.lines[DL.i]||[],w=ln[0],vb=vt.closest(".vband");
     var inner=vb&&vb.classList.contains("inner");var k=inner?"det0":w;if(SPK.parentNode!==vt)vt.insertBefore(SPK,vt.firstChild);
     var f=spkSrc(k),mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"");if(f){if(SPKIMG.getAttribute("src")!==f)SPKIMG.setAttribute("src",f)}else SPKIMG.removeAttribute("src")}
+    /* 아빠 손동작(2026-10-09 확정 2프레임): 결정적 대사·짚어 말하는 줄에서 주먹→검지 들기. 얼굴·몸은 고정, 손만 바뀐다. 다른 줄은 기본 정직한 프로필 */
+    if(k==="det0"&&!inner){var ft=String(ln[1]||""),fk=DL.i+"|"+ft.length;var fing=(window.__innKeyLine&&window.__innKeyLine())||/^(잠깐|그런데|그렇다면|하나만|한 가지)|보시죠|확인하겠습니다|여쭙겠습니다/.test(ft);
+      if(fing&&SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FW+"base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FW+"raised-speaker128.png")},200)}
+      else if(!fing&&SPK.dataset.fk){SPK.dataset.fk="";clearTimeout(SPK.__ft);SPKIMG.setAttribute("src",DAD)}}
+    else if(SPK.dataset.fk){SPK.dataset.fk="";clearTimeout(SPK.__ft);if(k==="det0")SPKIMG.setAttribute("src",DAD)}
     /* 2026-10-10 작은 연출: 긴장·당황 표정(nervous/shock/worried) 줄에서는 초상 옆으로 땀방울이 조금씩 흐르고, 놀람(shock)·"?!" 줄은 한 번 움찔한다 */
     var md=String(ln[2]||""),tx=String(ln[1]||""),fx=/nervous|shock|worried|panic|sweat/.test(md)||/땀/.test(tx)?"sweat":"",jolt=/shock|surprise/.test(md)||/\?!|!\?/.test(tx);
     if(SPK.dataset.fx!==fx){SPK.dataset.fx=fx;var sw=SPK.querySelector(".sw9");if(fx&&!sw){sw=document.createElement("i");sw.className="sw9";SPK.appendChild(sw)}else if(!fx&&sw)sw.remove()}
@@ -453,8 +469,6 @@
     if(Array.isArray(text)){var ol=document.createElement("ol");ol.className="e9log";text.forEach(function(it){var li=document.createElement("li");if(Array.isArray(it)){var q=document.createElement("em");q.textContent=it[0];li.appendChild(q);li.appendChild(document.createTextNode(it[1]))}else li.textContent=it;ol.appendChild(li)});o.querySelector("p").replaceWith(ol)}else o.querySelector("p").textContent=text;
     o.addEventListener("click",function(e){e.stopPropagation();pop9()});document.body.appendChild(o);try{SFX.select()}catch(e){}}
   setInterval(function(){if(document.getElementById("e9pop")&&!document.querySelector(".crec2,#innppl"))pop9()},400);
-  /* C12·C13(증언 기록)은 아직 전용 아이콘이 없어 노란 동그라미가 나오던 자리: 아이콘 납품 전까지 말한 사람 얼굴로 둔다 */
-  try{var _ev9=evIcon;evIcon=function(id){if(inn()&&(id==="C12"||id==="C13")){try{return pf(id==="C12"?"seryeon":"geokkuri").replace("<svg ",'<svg class="evic ev9face" ')}catch(e){}}return _ev9.apply(this,arguments)}}catch(e){}
   function recDetail(){try{var r=document.querySelector(".crec2");if(!r||!inn())return;var th=r.querySelector(".cr-th.on");var id=th&&th.dataset.crs;var EPX=window.EP1INN||{},x=id&&EPX.EV&&EPX.EV[id];
     var host=r.querySelector(".cr-in");if(!host)return;var box=r.querySelector(".orig9");if(box&&!r.querySelector(".cr-det .cr-tx .orig9")){box.remove();box=null}
     if(!x||!x.detail){if(box)box.remove();return}
