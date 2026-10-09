@@ -26,8 +26,14 @@ js=open(D+'inn_stage.js',encoding='utf-8').read()+'\n'+open(D+'inn_audio.js',enc
 hk='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'
 rep(hk,js+'\n'+hk)
 out='/home/claude/daaegame/preview/ch1-gpt-20261008/play.html'
-open(out,'w',encoding='utf-8').write(s)
 hook='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'
 assert s.count(hook)==1
 open('/tmp/claude-0/P/playT.html','w',encoding='utf-8').write(s.replace(hook,hook+'window.__T=function(code){return eval(code)};\n'))
 print('ok',len(s))
+# 빌드 후 스크립트 문법 검사(괄호 하나 빠진 패치가 게임 전체를 멈추게 한 일이 있어 상시 확인)
+import subprocess
+chk=subprocess.run(['node','-e',"const s=require('fs').readFileSync('/tmp/claude-0/P/playT.html','utf8');const re=/<script>([\\s\\S]*?)<\\/script>/g;let m,i=0,bad=0;while((m=re.exec(s))){i++;try{new Function(m[1])}catch(e){bad++;console.log('script',i,e.message)}}if(bad)process.exit(1)"],capture_output=True,text=True)
+if chk.returncode!=0: sys.exit('문법 오류: '+chk.stdout)
+print('syntax ok')
+open(out,'w',encoding='utf-8').write(s)   # 문법 검사를 통과한 뒤에만 공개 파일에 쓴다
+print('written',out)
