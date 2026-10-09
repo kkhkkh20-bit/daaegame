@@ -23,12 +23,17 @@
  var DFACE={shock:"daram-surprised-front-v2",sad:"daram-worried-front-v2",laugh:"daram-happy-front-v2",resolve:"daram-determined-front-v2",
   oops:"daram-ear-grab-signature-v1",shy:"daram-tail-hide-signature-v1",caught:"daram-tail-hide-caught-signature-v2",
   panic:"daram-surprised-front-v3",cower:"daram-worried-front-v3",joy:"daram-happy-front-v3",confront:"daram-determined-front-v3",mad:"daram-angry-front-v3"};
- function src(k,m){var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
-if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
+ function src(k,m){if(k==="wanggu")return "art/ch1/neoul-v2/neoul-"+neoState(m)+"-dialogue.png";var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
+if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
+   /* 다람 v4(2026-10-09 확정 초기 복장) 6상태: 기본(수첩·꼬리 분리 합성, 꼬리 흔들기)/메모/활짝/땀 당황/참는 분노/코믹 분노. 슬픔·겁·결심·꼬리숨김은 기존 그림 유지 */
+   var DV4={"":"idle-t0",neutral:"idle-t0",think:"memo",memo:"memo",laugh:"joy",joy:"joy",smile:"joy",oops:"flustered",panic:"flustered",nervous:"flustered",shock:"flustered",mad:"comic-anger",angry:"comic-anger",pout:"held-anger",held:"held-anger"};
+   if(Object.prototype.hasOwnProperty.call(DV4,dm))return "art/ch1/daram-v4/daram-"+DV4[dm]+"-dialogue.png";
+   return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
   if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
   if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
   /* 세련: 앉아서 서류를 보는 v2(2026-10-09 전달, 개별 시안·최종 승인 아님). 대화에서도 앉은 맥락 유지 → 놀람 차분(서 있는 v1)은 쓰지 않는다 */
-  if(k==="seryeon")return "art/ch1/cast/seryeon-seated-paperwork-v2-talk.png";
+  /* 2026-10-10 사용자 "세련 첫 만남(현관 방문)·복도 신고는 서 있어야": 프롤로그·후일담은 서 있는 그림, 조사 중 식당 대화만 앉은 그림 */
+  if(k==="seryeon"){var bb=(G&&G.beats)||{};if(!bb.inn_pro||bb.inn_final)return "art/ch1/cast/"+(/nervous|shock|panic|angry|surpr/.test(String(m||""))?"seryeon-surprise-front-v1":"seryeon-normal-front-v1")+".png";return "art/ch1/cast/seryeon-seated-paperwork-v2-talk.png"}
   if(k==="doto")return "art/ch1/cast/doto-v4-182.png";   /* 도토 v4(사용자 선택, 2026-10-09): 표정 차분은 아직 없어 한 장 */
   /* 토끼 할머니 v5(2026-10-09 전달): 머리·목·어깨·책 든 팔을 한 자세로 상대에게. 기본=neutral, 걱정·경계·망설임(think)=concerned(책을 끌어안고 시선을 내림).
      미소(smile)=v6 밝은 미소(따뜻한 인사·안심시키는 말에만, 대본 표정이 '옅은 미소/안도'인 줄) */
@@ -60,6 +65,18 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
  var FSC={"art/ch1/action-poses/grandma/dialogue.png":[552,680,9,535,10,.96,0],"art/ch1/action-poses/seryeon/dialogue.png":[329,400,0,319,10,.96,0],"art/ch1/action-poses/nabi/dialogue.png":[620,588,9,590,8,.92,0],
   "art/ch1/action-poses/doto/dialogue.png":[960,865,14,928,16,.92,0],"art/ch1/action-poses/bami/dialogue.png":[660,830,15,647,0,.92,-.16],"art/ch1/action-poses/daram/dialogue.png":[760,705,15,738,12,.92,0],
   "art/ch1/action-poses/karo/dialogue.png":[279,320,4,267,10,.92,0],"art/ch1/action-poses/buri/dialogue.png":[297,320,10,289,10,.92,0],"art/ch1/action-poses/neoul/dialogue.png":[459,320,4,441,9,.92,0]};
+ /* 너울 v2(2026-10-09 확정: 보안관 복장 자경단장 라쿤) 4상태 — 같은 전신 원본을 같은 축소율로 정규화(240x320, 발선 304), 대화는 같은 창(20,8,200x200)을 2배.
+    몸통 중심(181.5)을 고정해 상태가 바뀌어도 몸이 옆으로 튀지 않게, 분노는 넓게 버틴 자세라 머리가 낮은 그대로 */
+ ["default","admonish","angry","sheepish"].forEach(function(k){FSC["art/ch1/neoul-v2/neoul-"+k+"-dialogue.png"]=[400,400,181,182,16,.92,0]});
+ ["idle-t0","idle-t1","idle-t2","memo","joy","flustered","held-anger","comic-anger"].forEach(function(k){var f="art/ch1/daram-v4/daram-"+k+"-dialogue.png";FSC[f]=[368,300,195,195,10,.92,0];try{var im=new Image();im.src=f}catch(e){}});
+ /* 다람 기본 그림의 꼬리 흔들기: 2.6초마다 짧게(t0→t1→t0→t2→t0). 다른 표정은 꼬리가 그림에 포함돼 있어 움직이지 않는다 */
+ (function(){var SEQ=["t1","t0","t2","t0"],ph=-1,wait=0;setInterval(function(){try{var im=document.querySelector(".isf img[src*='daram-idle-t']");if(!im){ph=-1;return}
+   if(ph<0){if(++wait<16)return;wait=0;ph=0}var f=SEQ[ph];im.setAttribute("src",im.getAttribute("src").replace(/daram-idle-t\d/,"daram-idle-"+f));ph++;if(ph>=SEQ.length)ph=-1}catch(e){}},160)})();
+ function neoState(m){var t="";try{var l=DL&&DL.lines&&DL.lines[DL.i];t=String((l&&(l[1]||l.t))||"")}catch(e){}var md=String(m||"");
+  if(/angry|mad|shock/.test(md)||/!/.test(t))return "angry";
+  if(/크흠|흠\.|머쓱|실례|죄송|미안|그렇군요|제가 잘못/.test(t))return "sheepish";
+  if(/규정|규약|규칙|두십시오|해야 합니다|안 됩니다|벌금|허가|회의를 엽니다|정오 우편 마차|옮기지만 않는다면|기록하겠습니다|안건/.test(t))return "admonish";
+  return "default"}
  function frame(k,s,W,H){var f=FSC[s];if(f){var sc=f[5]*H/f[1];return {w:f[0]*sc,h:f[1]*sc,left:W/2-(f[2]+f[3])/2*sc,top:H*12/390-f[4]*sc+f[6]*H}}
   var b=BOX[s]||[192,192,20,170,10,6],sc=(DS[k]||2.739)*H/390;return {w:b[0]*sc,h:b[1]*sc,left:W/2-(b[2]+b[3])/2*sc,top:H*12/390-b[4]*sc}}
  window.__innFrame=function(k,s){return frame(k,String(s||"").split("?")[0],innerWidth,innerHeight)};
@@ -121,7 +138,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
   document.querySelectorAll('svg[data-bg="carriage"]').forEach(function(sv){
    var vb="0 0 844 390";   /* 2026-10-10: 대화 중 2배 확대 → 1.1배만(배경을 넓게, 다람 도트가 과하게 커지지 않게) */if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
    var im=sv.querySelector("image.innseat");
-   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","504");im.setAttribute("y","132");im.setAttribute("width","138");im.setAttribute("height","184");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
+   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","490");im.setAttribute("y","143");im.setAttribute("width","166");im.setAttribute("height","221");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
     if(im.getAttribute("href")!==href)im.setAttribute("href",href)}
    else if(im)im.remove()});
   if(layer)layer.classList.toggle("seated",true)}catch(e){}}
@@ -132,6 +149,8 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
  function talking(){try{return cur()&&((typeof DL!=="undefined"&&!!DL)||!!document.getElementById("dlgveil")||!!document.querySelector("#ov .modal")||document.body.classList.contains("inn-cut")&&!(G.beats&&G.beats.inn_pro))}catch(e){return false}}
  var MOVESEL=".fsa,#fsal,#fsar,#w209rail,#w209more,#wmap,.mapbtn,[data-room],[data-node],#w209back";
  ["pointerdown","touchstart","click"].forEach(function(ev){document.addEventListener(ev,function(e){try{if(!talking())return;var t=e.target&&e.target.closest&&e.target.closest(MOVESEL);if(!t)return;
+  /* 2026-10-10 "대사 중에도 더보기(소리 조절·저장)는 항상": 더보기 단추와 펼침 안의 설정·메인으로·닫기는 막지 않는다(이동·힌트는 계속 막음) */
+  var ok=e.target.closest("#w209rail [data-more]")||e.target.closest('#w209more [data-w="set"],#w209more [data-w="main"]')||(e.target.closest("#w209more button")&&!e.target.closest("#w209more [data-w]"));if(ok)return;
   e.stopImmediatePropagation();e.preventDefault()}catch(x){}},{capture:true,passive:false})});
 
  /* ===== 이동·전환 정리 ===== */
@@ -196,9 +215,9 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
    '<g><rect x="336" y="166" width="26" height="28" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2].map(function(k){return '<rect x="338" y="'+(170+k*8)+'" width="22" height="2" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="330" y="186" text-anchor="end">부엌 계단</text></g></g>');
   return '<svg viewBox="0 0 440 200" shape-rendering="crispEdges" role="img" aria-label="2층 복도 배치도: 양쪽 방에 침대 열둘, 꺾인 끝 창고에 열세 번째 침대">'+r.join("")+'</svg>'}
  var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 창고예요/,s:3},{re:/^짐 풀고 내려와요/,s:4}];
- var CUT2=[{re:/^\(차갑다\. 이렇게 작은 몸은/,c:"teapot"},{re:/^…이렇게 좁은 데 둘 수는 없겠다/,c:"teapot"}];
+ var CUT2=[{re:/^안에 작은 애가 있어|^숨을… 안 쉬는 것 같아|^아빠가 볼게|^뚜껑만 살짝|^\(차갑다|^\(이렇게 작은 몸은|^\(함부로 판단하지|^…이렇게 좁은 데 둘 수는 없겠다/,c:"teapot"}];   /* 2026-10-10: 조사 중 찻주전자 발견(대사가 문장 단위로 나뉘어 표시됨) */
  var cut2El=null;
- function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&ot(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
+ function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats){var ln=DL.lines[DL.i];var t=ln&&ot(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
   var v=document.getElementById("innstage");
   if(on&&v){if(!cut2El||cut2El.parentNode!==v){cut2El=document.createElement("div");cut2El.id="inncut";cut2El.innerHTML='<img alt="찻주전자 안에 작은 겨울잠쥐가 웅크리고 있다" src="art/ch1/cuts/P13-teapot-observation-640x360.png">';v.appendChild(cut2El);requestAnimationFrame(function(){cut2El&&cut2El.classList.add("in")})}v.classList.add("cut2")}
   else{if(cut2El){cut2El.remove();cut2El=null}if(v)v.classList.remove("cut2")}}catch(e){}}
@@ -312,7 +331,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
  /* 타이핑 호흡: 방금 찍은 글자 뒤에 쉴 틱 수(1틱 = 대사 속도 간격). 1장에서만 */
  /* 대사 빠르기(2026-10-10): 인물 성격 기본값 × 대사 내용. 1보다 크면 느리게.
     나비·다람은 밝고 빠르게, 세련은 매끄럽게 조금 빠르게, 할머니·도토·밤이는 느리게(나이·망설임·졸음), 너울은 또박또박 */
- var TEMPO={det0:1,det1:.85,innma:1.18,seryeon:.9,nabi:.8,geokkuri:1.28,buri:.92,wanggu:1.06,doto:1.22,karo:.95};
+ var TEMPO={det0:1.05,det1:.8,innma:1.6,seryeon:.9,nabi:.75,geokkuri:1.6,buri:.95,wanggu:1.2,doto:1.45,karo:1};   /* 2026-10-10 "할머니 대사가 다람이 속도": 차이를 크게(할머니 48ms/자 vs 다람 24ms/자) */
  window.__innTempo=function(l,full){if(!cur()||!l)return 1;var w=l.who,t=String(full||""),m=String(l.mood||"");var f=TEMPO[w]||1;
   if(/^\(/.test(t))f=Math.max(f,1)*1.0;                                   /* 속마음: 차분히 */
   var ex=(t.match(/!/g)||[]).length,el=(t.match(/…|\.\./g)||[]).length;
@@ -320,7 +339,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
   if(el>=2)f*=1.18;else if(el===1&&!ex)f*=1.08;                          /* 머뭇거림: 느리게 */
   if(/nervous|panic|shock/.test(m))f*=.86;if(/sad/.test(m))f*=1.2;
   if(/^(앗|헉|엇|으악|아악|어머|어\?)/.test(t))f*=.7;
-  return Math.max(.6,Math.min(1.55,f))};
+  return Math.max(.55,Math.min(1.9,f))};
  window.__innPace=function(full,n){if(!cur())return 0;var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
   if(ch==="…"||(ch==="."&&nx==="."))return 7;                          /* 말줄임: 점마다 */
   if(/[.?!]/.test(ch)&&/[\s)」"”]/.test(nx||" "))return 12;              /* 문장 끝 */

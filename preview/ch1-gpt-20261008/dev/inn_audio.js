@@ -7,7 +7,7 @@
   if(!window.__AUD||!__AUD.SONGS)return;
   var A=__AUD;
   function cur(){try{return S.screen==="case"&&!!G&&!!CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}
-  function sidOf(pi){try{return (EP.PRO[pi]&&EP.PRO[pi].sid)||("P"+(pi+1))}catch(e){return "P"+(pi+1)}}
+  function sidOf(pi){try{var E=window.EP1INN||EP;return (E.PRO[pi]&&E.PRO[pi].sid)||("P"+(pi+1))}catch(e){return "P"+(pi+1)}}   /* 2026-10-10: EP는 이 모듈 범위에 없어 장면 번호가 밀려(P6·P8 제외 뒤) 신고 장면에서도 여행곡이 나오던 문제 */
   function beats(){try{return (G&&G.beats)||{}}catch(e){return {}}}
   function lineText(){try{var l=DL&&DL.lines&&DL.lines[DL.i];return l?String(l[1]||""):""}catch(e){return ""}}
   function lineKind(){try{var l=DL&&DL.lines&&DL.lines[DL.i];if(!l)return "say";if(l[0]==="narr")return /^\(/.test(String(l[1]))?"inner":"narr";return "say"}catch(e){return "say"}}
@@ -20,7 +20,13 @@
    mel:[{n:"C5 _ A4 _ C5 F5 | E5 _ _ _ C5 _ | D5 _ F5 _ A5 G5 | F5 _ _ _ D5 _ | C5 _ A4 _ C5 F5 | G5 _ F5 _ E5 D5 | D5 _ C5 _ Bb4 E5 | F5 _ _ _ . .",i:"kal",v:.24}],
    arp:{n:"1 5 8 10 8 5",r:2,i:"ep",v:.05,o:48},bass:{n:"1 _ _ 5 _ _",i:"sub",v:.4,o:36},pad:{i:"string",v:.04,o:57},echo:.28};
   /* 2026-10-10 "수사 중인데도 몽환적·평화롭다": 조사·회의·최종 대결을 다른 곡으로. 하이햇('똑딱')은 쓰지 않고 낮은 킥만 */
-  A.SONGS.inn_inv={bpm:92,vol:2.1,prog:["Am","Am","F","E","Am","Dm","F E","Am"],   /* 조사: 단조, 피치카토 베이스 반복, 짧은 스타카토 */
+  /* 2026-10-10 "배경음이 계속 평화롭다": 조사곡을 8분음 베이스가 몰아붙이는 단조 추적곡으로. 이전 곡은 inn_inv_soft로 보존 */
+  A.SONGS.inn_inv={bpm:108,vol:1.6,prog:["Am","Am","F","E","Dm","Am","F","E"],
+   mel:[{n:"A4 . C5 . E5 . D#5 E5 | . . . . A4 . B4 . | C5 . A4 . F4 . A4 . | G#4 _ _ _ B4 _ E5 _ | D5 . F5 . A5 . G#5 A5 | . . E5 . C5 . A4 . | C5 . F5 . A5 . C6 . | B5 _ G#5 _ E5 _ . .",i:"stac",v:.16},
+        {n:"A3 _ _ _ _ _ _ _ | . . . . . . . . | F3 _ _ _ _ _ _ _ | E3 _ _ _ _ _ _ _ | D3 _ _ _ _ _ _ _ | . . . . . . . . | F3 _ _ _ _ _ _ _ | E3 _ _ _ _ _ _ _",i:"brass",v:.07}],
+   arp:{n:"1 5 8 5 1 5 8 5",r:1,i:"pizz",v:.06,o:48},bass:{n:"1 1 1 1 1 1 1 1",i:"bsyn",v:.32,o:30},pad:{i:"string",v:.05,o:52},
+   dr:["k.....k.k......."],echo:.12};
+  A.SONGS.inn_inv_soft={bpm:92,vol:2.1,prog:["Am","Am","F","E","Am","Dm","F E","Am"],   /* 조사: 단조, 피치카토 베이스 반복, 짧은 스타카토 */
    mel:[{n:"E5 _ _ _ . . C5 _ | B4 _ _ _ . . . . | A4 _ _ _ C5 _ E5 _ | G#4 _ _ _ . . . . | E5 _ _ _ F5 _ E5 _ | D5 _ _ _ . . F5 _ | E5 _ D5 _ C5 _ B4 _ | A4 _ _ _ . . . .",i:"vibe",v:.2}],
    arp:{n:"1 . 5 . 8 . 5 .",r:1,i:"stac",v:.05,o:48},bass:{n:"1 . 1 . 5 . 1 .",i:"pizz",v:.6,o:33},pad:{i:"pad",v:.04,o:55},
    dr:["k.......k......."],echo:.14};
@@ -129,7 +135,19 @@
     if(/^(앗|헉|엇|으악|아악|어머|세상에)[!?.…,\s]|^…?(앗|헉)/.test(t)||/shock|surprise/.test(md)||/\?!|!\?/.test(t))SFX.shock9();
     else if(/^…움직였어|^안에 작은 애가 있어/.test(t))SFX.pop9();
     else if(KEY.test(t))SFX.cut9()}catch(e){}},60);
-  SFX.bell10=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
+  /* 2026-10-10 사용자: "문 여는 소리는 끼익", "마차 멈추는 소리가 배고픈 소리 같다", "종소리가 경보음 같다" */
+  function creakAt(a,t,dur,f0,f1,vol){var o=a.createOscillator(),bp=a.createBiquadFilter(),g=a.createGain(),am=a.createOscillator(),ag=a.createGain();
+   o.type="sawtooth";o.frequency.setValueAtTime(f0,t);o.frequency.linearRampToValueAtTime(f1,t+dur*.7);o.frequency.linearRampToValueAtTime(f1*.92,t+dur);
+   bp.type="bandpass";bp.frequency.value=1500;bp.Q.value=3.5;am.frequency.value=38;ag.gain.value=.45;am.connect(ag);ag.connect(g.gain);   /* 마찰로 떨리는 경첩 */
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.05);g.gain.setValueAtTime(vol*.8,t+dur*.8);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   o.connect(bp);bp.connect(g);g.connect(SFXG);o.start(t);am.start(t);o.stop(t+dur+.05);am.stop(t+dur+.05)}
+  wrap("doorOpen",function(){if(!S.sound||!AC)return;var t=AC.currentTime;creakAt(AC,t,.85,420,760,.16);noise(.08,.12,.82,700,"lowpass")});
+  SFX.carStop=function(){if(!S.sound||!AC)return;var t=AC.currentTime;
+   [0,.32,.7,1.15].forEach(function(w,i){var v=.32-i*.06;tone(820,.05,"triangle",v,w,null,560);noise(.04,v*.7,w,2200,"bandpass")});   /* 말발굽이 느려지며 */
+   creakAt(AC,t+.9,.7,300,520,.1);noise(.5,.06,1.3,500,"bandpass")};   /* 차체 삐걱 + 바퀴 멎음 */
+  SFX.bell10=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*1.15;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
+    tone(196,3,"sine",.16,w);tone(392,1.6,"sine",.05,w);tone(470,1.2,"sine",.025,w);noise(.05,.05,w,900,"lowpass")}}catch(e){}};
+  SFX.bell10_old=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
 
   /* ---- 콜드 오픈 연출(2026-10-10): 어둠·정적·행동 소리. 대사·그림·단서는 그대로, 카메라와 소리만 ---- */
   var COLDD=1;
@@ -138,7 +156,15 @@
   function breath(){noise(1.1,.05,0,900,"bandpass",null,520)}
   function heart(){[0,.32,1.2,1.52].forEach(function(w,i){tone(58,.16,"sine",i%2?.22:.3,w,null,44)})}
   var COLDFX={creak:creak,step:step,breath:breath,heart:heart};
-  window.__innColdFx=function(b){try{if(b.duck!=null)COLDD=b.duck;if(b.fxs&&S.sound&&COLDFX[b.fxs])COLDFX[b.fxs]()}catch(e){}};
+  /* 2026-10-10 "프롤로그는 아주 긴장되게, 심장 박동이 점점 커지며 빨라지게": 콜드 오픈 내내 심장 소리가 이어지고 비트가 지날수록 빠르고 크게(약 55→130bpm) */
+  var HB={k:0,n:1,next:0,on:false};
+  function hbTick(){try{if(!document.getElementById("inncold")){HB.on=false;return}if(!AC||AC.state!=="running"||!S.sound){setTimeout(hbTick,200);return}
+    var p=Math.min(1,HB.k/Math.max(1,HB.n-1)),bpm=55+75*p*p,v=.14+.4*p,gap=60/bpm;
+    tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*.32,null,38);noise(.06,v*.25,0,160,"lowpass");
+    setTimeout(hbTick,gap*1000)}catch(e){setTimeout(hbTick,400)}}
+  window.__innColdFx=function(b){try{if(b.duck!=null)COLDD=b.duck;var L=(window.EP1INN&&window.EP1INN.COLD)||[];var i=L.indexOf(b);if(i>=0){HB.k=i;HB.n=L.length}
+    if(!HB.on){HB.on=true;setTimeout(hbTick,300)}
+    if(b.fxs&&b.fxs!=="heart"&&S.sound&&COLDFX[b.fxs])COLDFX[b.fxs]()}catch(e){}};
   /* 비트별 연출: 침대 컷은 '침대 다리'가 아니라 이불 덮인 침대 쪽으로 다가가며 점점 어둡고 조용해진다 */
   try{var STAGE={"01":{fxs:"step",duck:1},"02":{push:3,duck:.9},
    "03":{z:1,fx:.72,fy:.6,push:5,fxs:"creak",duck:.6},"04":{z:1.45,fx:.74,fy:.6,push:6,fxs:"step",duck:.5},"05":{z:1.8,fx:.74,fy:.62,push:4,dim:.8,duck:.4},
@@ -162,23 +188,25 @@
    var I={key:key,out:out,src:[],lp:null,next:{},a:a};
    if(key==="carriage"){
     var lp=a.createBiquadFilter();lp.type="lowpass";lp.frequency.value=2400;lp.connect(out);I.lp=lp;
-    var r=loopSrc(a,lp,"lowpass",150,0,.32);I.src.push(r.s);                      /* 바퀴 구름음(낮게 지속) */
-    var w=loopSrc(a,lp,"bandpass",430,1.6,.035);I.src.push(w.s);                  /* 바퀴 마찰 */
-    var lfo=a.createOscillator(),lg=a.createGain();lfo.frequency.value=1.7;lg.gain.value=.015;lfo.connect(lg);lg.connect(w.g.gain);lfo.start();I.src.push(lfo);
-    I.bus=lp;I.peak=.45}   /* 2026-10-10 "마차 소리가 거슬린다": 전체 -6dB, 마찰음·덜컹 더 낮게 */
+    /* 2026-10-10 "자동차처럼 웅웅거린다, 마차면 말발굽이 들려야": 낮은 구름음·마찰음 없앰 → 또각또각 말발굽 + 가끔 나무 삐걱·마구 방울 */
+    I.bus=lp;I.peak=.7}   /* 2026-10-10 "마차 소리가 거슬린다": 전체 -6dB, 마찰음·덜컹 더 낮게 */
    else if(key==="wind"){var wd=loopSrc(a,out,"bandpass",480,.8,.35);I.src.push(wd.s);
     var l2=a.createOscillator(),g2=a.createGain();l2.frequency.value=.11;g2.gain.value=220;l2.connect(g2);g2.connect(wd.f.frequency);l2.start();I.src.push(l2);I.peak=.5}
    out.gain.exponentialRampToValueAtTime(I.peak,a.currentTime+.4);return I}
   function sched(I){if(I.key!=="carriage"||I.dead)return;if(I.ending&&I.a.currentTime>I.ending)return;var a=I.a,now=a.currentTime,n=I.next;
    if(n.r==null)n.r=now+1+Math.random()*2;if(n.h==null)n.h=now+.3;
    while(n.r<now+.3){var k=3+(Math.random()*3|0),t=n.r;for(var j=0;j<k;j++){burst(a,I.bus,t,.03,.03+Math.random()*.02,"bandpass",900+Math.random()*500,2.5);t+=.03+Math.random()*.05}n.r+=4+Math.random()*4}   /* 차체 덜컹: 간헐적 */
-   while(n.h<now+.3){thud(a,I.bus,n.h,.05);thud(a,I.bus,n.h+.2+Math.random()*.03,.04);n.h+=.86+Math.random()*.1}}   /* 먼 말발굽: 바퀴보다 낮고 둔하게 */
+   while(n.h<now+.3){clop(a,I.bus,n.h,.16);clop(a,I.bus,n.h+.19+Math.random()*.02,.12);n.h+=.62+Math.random()*.04}   /* 또각또각(빠른 걸음) */
+   if(n.c==null)n.c=now+3;while(n.c<now+.3){creakAt(a,n.c,.5,260+Math.random()*80,420+Math.random()*120,.035);n.c+=6+Math.random()*5}   /* 차체 나무 삐걱 */
+   if(n.j==null)n.j=now+2;while(n.j<now+.3){[0,.09,.2].forEach(function(w){var o=a.createOscillator(),g=a.createGain();o.frequency.value=2900+Math.random()*500;g.gain.setValueAtTime(.0001,n.j+w);g.gain.exponentialRampToValueAtTime(.025,n.j+w+.005);g.gain.exponentialRampToValueAtTime(.0001,n.j+w+.25);o.connect(g);g.connect(I.bus);o.start(n.j+w);o.stop(n.j+w+.3)});n.j+=4+Math.random()*5}}   /* 마구 방울 */
+  function clop(a,out,t,vol){var o=a.createOscillator(),g=a.createGain();o.type="triangle";o.frequency.setValueAtTime(900+Math.random()*160,t);o.frequency.exponentialRampToValueAtTime(520,t+.05);
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+.07);o.connect(g);g.connect(out);o.start(t);o.stop(t+.09);burst(a,out,t,.04,vol*.8,"bandpass",2000,2)}
   function stop(I,dur){if(!I||I.ending)return;var a=I.a,t=a.currentTime;dur=dur||.8;I.ending=t+dur*.8;AMB.old.push(I);
    try{I.out.gain.cancelScheduledValues(t);I.out.gain.setValueAtTime(Math.max(.0001,I.out.gain.value),t);I.out.gain.exponentialRampToValueAtTime(.0001,t+dur);if(I.lp){I.lp.frequency.setValueAtTime(I.lp.frequency.value,t);I.lp.frequency.exponentialRampToValueAtTime(180,t+dur)}}catch(e){}
    setTimeout(function(){I.dead=true;var k=AMB.old.indexOf(I);if(k>=0)AMB.old.splice(k,1);I.src.forEach(function(s){try{s.stop()}catch(e){}});try{I.out.disconnect()}catch(e){}},dur*1000+300)}
   var AMB={cur:null,dep:null,old:[]};
   function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||document.getElementById("inncold"))return null;var b=beats();
-   if(!b.inn_pro){var sd=sidOf(b.inn_pi|0);if(sd==="P1"&&b.inn_bg==="carriage")return "carriage";if(sd==="P2")return "wind";return null}
+   if(!b.inn_pro){var sd=sidOf(b.inn_pi|0);if(sd==="P1"&&b.inn_bg==="carriage")return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
    if(b.inn_final&&!b.inn_end){var ei=b.inn_ei|0;if(ei===0||ei===1)return "wind"}
    return null}
   /* E2 마지막 마차: 출발해서 멀어지며 사라진다(약 7초) */
