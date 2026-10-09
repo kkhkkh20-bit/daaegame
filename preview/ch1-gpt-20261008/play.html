@@ -48328,7 +48328,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("det1","…괜찮아요. 지금은 빵 생각 안 나요.")].concat(t.__follow||[]);})();
  (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="T_na2"})[0];if(t)t.lines=[FL("det0","창고 쪽에서 밤에 무슨 소리를 듣거나 보신 적은 없습니까?"),
    FL("nabi","그 방 쪽엔 아무도 없었어요."),
-   I("앞치마만 자꾸 만지신다. 숨기려는 말이 있는 걸까. 아직은 모른다.")].concat(t.__follow||[]);})();
+   I("듣거나 본 걸 여쭸는데, 아무도 없었다는 대답부터 하신다. 숨기려는 말이 있는 걸까. 아직은 모른다.")].concat(t.__follow||[]);})();
  (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="T_na3"})[0];if(t)t.lines=[FL("det0","할머니는 어떤 분입니까?"),
    FL("nabi","할머니가 남의 돈에 손대실 리 없어요. 제가 여기서 일하면서 봤어요. 그건 정말이에요.")].concat(t.__follow||[]);})();
  (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["geokkuri"]="(밤새 복도가 보인다고 하셨다. 졸리시겠지만 잠깐만 여쭤보자.)";
@@ -50069,7 +50069,9 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
  var FOUND={C01:"2층 창고 · 열세 번째 침대 베개 밑",C02:"2층 창고 · 열세 번째 침대 이불",C03:"식당 · 나비에게 들은 말",C04:"부엌 · 빵 바구니",C05:"부엌 · 바구니 속 손님의 옆구리털",C06:"2층 복도 · 꺾이는 곳",C07:"식당 · 첫날 저녁 밤이에게 들은 말",C08:"도토의 방 · 창가",C09:"접수대 · 숙박부",C10:"원탁회의 · 너울의 기록부",C11:"2층 창고 · 침대 밑 상자",C12:"식당 · 세련에게 들은 말",C13:"2층 복도 · 밤이에게 들은 말"};
  function cardSync(){try{if(!cur())return;var m=document.querySelector("#mveil .modal,#ov .modal");if(!m||m.dataset.found)return;var h=m.querySelector("h3");if(!h)return;var nm=h.textContent.trim(),id=null;
   Object.keys(EP.EV).forEach(function(k){if(EP.EV[k].name===nm)id=k});m.dataset.found="1";if(!id||!FOUND[id])return;
-  var sm=document.createElement("small");sm.className="found-at";sm.textContent="발견 장소 · "+FOUND[id];h.insertAdjacentElement("afterend",sm)}catch(e){}}
+  /* 들은 말(증언)은 실제로 대화한 장소를 쓴다(나비는 식당·부엌 어디서든 만날 수 있다). 첫날 저녁 밤이의 말(C07)은 고정 */
+  var TALKF={C03:"나비",C12:"세련",C13:"밤이"},place=FOUND[id];if(TALKF[id]){try{var lc=CASES[G.ci].locations[G.loc];if(lc)place=(lc.short||lc.name)+" · "+TALKF[id]+"에게 들은 말"}catch(e){}}
+  var sm=document.createElement("small");sm.className="found-at";sm.textContent="발견 장소 · "+place;h.insertAdjacentElement("afterend",sm)}catch(e){}}
  var talkWho=null;
  function talkChime(){try{var ft=document.querySelector(".fstalk");var w=ft&&G&&G.tab==="talk"?G.who:null;if(w&&w!==talkWho)chime();talkWho=w}catch(e){}}
  function tick(){try{document.body.classList.toggle("inn1",cur());talkChime();metAll();plateSync();cardSync();
@@ -50308,6 +50310,9 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
   "html body.w209.inn1 #w209rail button{width:42px!important;height:42px!important;min-height:0!important;border-width:1.5px!important}",
   /* 회의: 공개 득표 칸이 말풍선 위쪽(이름표)과 겹치던 문제 → 왼쪽 시계 아래로, 두 줄까지 접힘 */
   "#bigscene .innprop{position:absolute;transform:translate(-50%,-50%);height:auto;image-rendering:pixelated;pointer-events:none;z-index:1;filter:drop-shadow(0 2px 0 rgba(0,0,0,.45))}",
+  /* 질문 대화 중 아빠·다람·속마음 줄에서도 상대(질문 대상)를 화면에 그대로 둔다. 다람 큰 그림으로 바뀌지 않게(대화 중 상대 유지 기준) */
+  "html body.w209.inn1.tab-talk.vn-other .fstalk .tfig{visibility:visible!important}",
+  "html body.w209.inn1.tab-talk #dlgveil #vnfig{display:none!important}",
   "html body.rtg #rtgtal{left:8px!important;top:66px!important;transform:none!important;white-space:normal!important;max-width:150px!important;text-align:left!important;line-height:1.35!important}"
  ].join("\n");document.head.appendChild(css);
  window.__innStage=function(){var r=fig&&fig.getBoundingClientRect();return {src:fig&&fig.firstChild&&fig.firstChild.getAttribute?String(fig.firstChild.getAttribute("src")||"").split("/").pop():"",scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};
