@@ -47327,7 +47327,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    spots:[
     {id:"bag",name:"돈주머니",ev:"C01",say:[L("det1","아빠, 이게 아까 베개 밑에서 나온 주머니지?"),L("det0","응. 세련 씨가 잃어버렸다는 주머니야. 열지는 말고, 겉에 보이는 것만 보자."),
      L("@inspect","C01a"),
-     L("det1","앗, 손에 빨간 게 묻었어. 아직 안 말랐나 봐.","shock"),L("det0","도장을 찍은 지 얼마 안 됐다는 거네. 손은 이따 씻자."),
+     L("det1","앗, 손에 빨간 게 묻었어. 아직 안 말랐나 봐."),L("det0","도장을 찍은 지 얼마 안 됐다는 거네. 손은 이따 씻자."),
      L("det0","봉인띠 밑에 종이가 접혀 끼워져 있네. 펼쳐 볼게."),L("@inspect","C01b"),
      L("det1","할머니 이름 칸은 비어 있어. 세련 아저씨 이름 끝에는 별이 있고."),L("det0","할머니는 서명하지 않았다는 거지. 뒷면 조항도 기억해 두자."),
      L("det1","…'허가를 잃는 날'. 아까 너울 아저씨가 한 말이랑 같아.","think")]},
@@ -47521,7 +47521,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    D({who:"none",sfx:"steps",ms:500}),
    L("det1","아빠. 헷갈린 건 할머니야, 나야?"),L("det0","네가 맞게 셌어. 아빠도 열셋이었어."),
    L("det1","그런데 왜 창고라고 하셨을까."),L("det0","손님한테 보여 주고 싶지 않은 방일 수도 있지. 우리가 따질 일은 아니야."),
-   L("det1","응. 그래도 열셋."),I("숫자 하나에 웃으며 문까지 닫으실 일인가. …마음 한쪽에 접어 두자.")],"title")),
+   L("det1","응. 그래도 열셋.","resolve"),I("숫자 하나에 웃으며 문까지 닫으실 일인가. …마음 한쪽에 접어 두자.")],"title")),
   /* P6 식당: 밤이 */
   B(null,"geokkuri",S("dining","여관 식당","첫날 저녁",[I("따뜻한 수프. 오늘 처음 제대로 앉아 보는 의자다. 다람이 볼에 겨우 혈색이 돈다."),
    L("det1","아빠, 이 수프 맛있어. 감자가 커."),L("det0","천천히 먹어. 데겠다."),
@@ -47600,7 +47600,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    L("wanggu","현장의 물건을 옮기지만 않는다면요. 기록은 제가 합니다."),
    D({who:"none",sfx:"steps",ms:500}),
    I("…다람이가 안 보인다. 방금까지 옆에 있었는데."),D({sfx:"steps",ms:450}),
-   L("det1","아빠.","shock"),
+   L("det1","아빠.","sad"),
    I("뒤 계단에서 올라온 다람이가 내 소매를 붙잡는다. 숨이 차 있다."),
    L("det1","아빠. 부엌에… 누가 있어."),L("det0","응, 듣고 있어. 천천히. 누가 있어?"),
    L("det1","빵이 있나 보려고 내려갔는데… 할머니한테 차라도 드리려고 찻주전자를 열었는데.","sad"),
@@ -49671,13 +49671,17 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
  function bgDef(){try{var b=window.__innBg&&window.__innBg();return b||{}}catch(e){return {}}}
  function cur(){try{return !!(G&&CASES[G.ci]&&CASES[G.ci].id==="inn")}catch(e){return false}}
  /* 그림 크기표: [캔버스 너비, 높이, 몸 왼쪽, 몸 오른쪽, 위 여백, 아래 여백] (PNG 실측) */
- var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
+ var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/daram-happy-front-v2.png":[192,192,21,141,21,6],"art/ch1/cast/daram-surprised-front-v2.png":[192,192,19,141,23,6],"art/ch1/cast/daram-worried-front-v2.png":[192,192,31,137,23,6],"art/ch1/cast/daram-determined-front-v2.png":[192,192,19,135,22,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
   "art/body/innma-0.png":[146,182,1,115,2,0],"art/body/innma-1.png":[148,182,2,115,4,0],"art/body/innma-2.png":[146,182,2,123,4,0],
   "art/body/wanggu-0.png":[230,182,22,165,3,0],"art/body/wanggu-1.png":[230,182,22,165,3,0],"art/body/wanggu-2.png":[230,182,2,192,1,0],"art/body/doto-0.png":[182,182,1,133,2,0],"art/body/doto-1.png":[180,182,1,129,2,0],"art/body/doto-2.png":[174,182,1,120,9,0],
   "art/body/buri-0.png":[136,182,2,113,3,0],"art/body/buri-1.png":[130,182,2,114,2,0],"art/body/buri-2.png":[110,182,2,101,6,0]};
  var CASTF={det1:"daram-front",nabi:"nabi-front",karo:"karo-front"},BODYK={innma:"innma",wanggu:"wanggu",doto:"doto",buri:"buri"};
  function pose(m){var e=(window.__MOOD_EXPR||{})[String(m||"").split(/\s+/)[0]]||"normal";return e==="fluster"?"2":e==="doubt"?"1":"0"}
- function src(k,m){if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
+ /* 다람 표정: 그림의 감정 강도로 연결한다. 대본의 표정 표시 중 아래 넷만 새 그림을 쓰고, 나머지(가벼운 미소·생각 등)는 기본 그림.
+    shock=당황(손을 뺨에 댄 놀람), sad=걱정(손 모음·귀 처짐), laugh=큰 웃음(눈 감은 활짝 웃음, 그만큼 기쁜 대사만), resolve=결심 */
+ var DFACE={shock:"daram-surprised-front-v2",sad:"daram-worried-front-v2",laugh:"daram-happy-front-v2",resolve:"daram-determined-front-v2"};
+ function src(k,m){if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
+  if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
   if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
   if(k==="seryeon")return "art/ch1/cast/"+(pose(m)==="2"?"seryeon-surprise-front-v1":"seryeon-normal-front-v1")+".png";
   if(BODYK[k])return "art/body/"+BODYK[k]+"-"+pose(m)+".png";return null}

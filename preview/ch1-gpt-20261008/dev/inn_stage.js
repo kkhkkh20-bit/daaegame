@@ -10,13 +10,17 @@
  function bgDef(){try{var b=window.__innBg&&window.__innBg();return b||{}}catch(e){return {}}}
  function cur(){try{return !!(G&&CASES[G.ci]&&CASES[G.ci].id==="inn")}catch(e){return false}}
  /* 그림 크기표: [캔버스 너비, 높이, 몸 왼쪽, 몸 오른쪽, 위 여백, 아래 여백] (PNG 실측) */
- var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
+ var BOX={"art/ch1/cast/daram-front.png":[192,192,20,136,20,6],"art/ch1/cast/nabi-front.png":[192,192,24,138,10,6],"art/ch1/cast/bami-front.png":[192,192,43,143,9,6],"art/ch1/cast/bami-shock.png":[192,192,4,189,8,6],"art/ch1/cast/karo-front.png":[192,192,27,141,5,6],"art/ch1/cast/daram-happy-front-v2.png":[192,192,21,141,21,6],"art/ch1/cast/daram-surprised-front-v2.png":[192,192,19,141,23,6],"art/ch1/cast/daram-worried-front-v2.png":[192,192,31,137,23,6],"art/ch1/cast/daram-determined-front-v2.png":[192,192,19,135,22,6],"art/ch1/cast/seryeon-normal-front-v1.png":[192,192,44,155,10,6],"art/ch1/cast/seryeon-surprise-front-v1.png":[192,192,44,156,10,6],
   "art/body/innma-0.png":[146,182,1,115,2,0],"art/body/innma-1.png":[148,182,2,115,4,0],"art/body/innma-2.png":[146,182,2,123,4,0],
   "art/body/wanggu-0.png":[230,182,22,165,3,0],"art/body/wanggu-1.png":[230,182,22,165,3,0],"art/body/wanggu-2.png":[230,182,2,192,1,0],"art/body/doto-0.png":[182,182,1,133,2,0],"art/body/doto-1.png":[180,182,1,129,2,0],"art/body/doto-2.png":[174,182,1,120,9,0],
   "art/body/buri-0.png":[136,182,2,113,3,0],"art/body/buri-1.png":[130,182,2,114,2,0],"art/body/buri-2.png":[110,182,2,101,6,0]};
  var CASTF={det1:"daram-front",nabi:"nabi-front",karo:"karo-front"},BODYK={innma:"innma",wanggu:"wanggu",doto:"doto",buri:"buri"};
  function pose(m){var e=(window.__MOOD_EXPR||{})[String(m||"").split(/\s+/)[0]]||"normal";return e==="fluster"?"2":e==="doubt"?"1":"0"}
- function src(k,m){if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
+ /* 다람 표정: 그림의 감정 강도로 연결한다. 대본의 표정 표시 중 아래 넷만 새 그림을 쓰고, 나머지(가벼운 미소·생각 등)는 기본 그림.
+    shock=당황(손을 뺨에 댄 놀람), sad=걱정(손 모음·귀 처짐), laugh=큰 웃음(눈 감은 활짝 웃음, 그만큼 기쁜 대사만), resolve=결심 */
+ var DFACE={shock:"daram-surprised-front-v2",sad:"daram-worried-front-v2",laugh:"daram-happy-front-v2",resolve:"daram-determined-front-v2"};
+ function src(k,m){if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
+  if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
   if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
   if(k==="seryeon")return "art/ch1/cast/"+(pose(m)==="2"?"seryeon-surprise-front-v1":"seryeon-normal-front-v1")+".png";
   if(BODYK[k])return "art/body/"+BODYK[k]+"-"+pose(m)+".png";return null}
