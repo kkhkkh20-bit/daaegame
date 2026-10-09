@@ -10,6 +10,11 @@ def rep(old,new,cnt=1):
 # 1) 프롤로그 관찰 지문 복구(무대 지문 stage는 dirList에서 이미 빠짐)
 rep('EP.PRO.forEach(function(sc){sc.items=sc.items.filter(function(x){return !(Array.isArray(x)&&x[0]==="narr")})});',
     '/* 프롤로그: 무대 지문(stage)은 dirList에서 빠지고, 이야기에 필요한 관찰(obs)만 짧은 지문으로 남긴다(inn_stage). */')
+# 1-1) 대본 전면 교체(증거·조사·질문 / 회의 직전~후일담)
+a=s.index(' /* ---- 증거 C01~C13');b=s.index(' /* ---- 프롤로그 P1~P11 ---- */',a)
+s=s[:a]+open(D+'script_a.js',encoding='utf-8').read()+s[b:]
+a=s.index(' /* ---- I9 회의 직전 ---- */');b=s.index(' /* 대본·구현에서 아직 확정되지 않았거나',a)
+s=s[:a]+open(D+'script_b.js',encoding='utf-8').read()+s[b:]
 for f in sorted(os.listdir(D+'patches')) if os.path.isdir(D+'patches') else []:
     exec(open(D+'patches/'+f,encoding='utf-8').read())
 # 2) 프롤로그 대사본 교체(개별 만남 구도)

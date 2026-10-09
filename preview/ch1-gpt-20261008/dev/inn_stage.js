@@ -21,7 +21,6 @@
   if(BODYK[k])return "art/body/"+BODYK[k]+"-"+pose(m)+".png";return null}
  var DUO={det0:1,det1:1,narr:1};
  /* 상대가 실제로 자리를 뜨는 지문(화면 표시 문구) */
- var EXIT={"할머니가 서둘러 먼저 안으로 들어간다. 다람이 아빠를 올려다본다.":1,"너울이 기록부에 적고 나간다.":1};
  function lw(x){return Array.isArray(x)?x[0]:(x&&x.w)}function lt(x){return Array.isArray(x)?x[1]:(x&&x.t)}function lm(x){return Array.isArray(x)?x[2]:(x&&x.m)}
  function cgList(){try{var b=window.__innBg&&window.__innBg();return (b&&b.def&&b.def.cg)||[]}catch(e){return []}}
  function firstResident(lines){var cg=cgList();for(var i=0;i<(lines||[]).length;i++){var w=lw(lines[i]);if(typeof w==="string"&&!DUO[w]&&cg.indexOf(w)<0)return w}return null}
@@ -31,7 +30,7 @@
  var IDS=new WeakMap(),idn=0;function dlid(o){if(!IDS.has(o))IDS.set(o,++idn);return IDS.get(o)}
  var st={scene:"",dl:0,who:null,i:-1,m:null,size:""},layer=null,fig=null;
  function ensure(){var v=document.getElementById("dlgveil");if(!v)return null;if(layer&&layer.parentNode===v)return layer;
-  layer=document.createElement("div");layer.id="innstage";layer.setAttribute("aria-hidden","true");v.insertBefore(layer,document.getElementById("vnbox"));fig=null;st.who=null;return layer}
+  layer=document.createElement("div");layer.id="innstage";layer.setAttribute("aria-hidden","true");v.insertBefore(layer,document.getElementById("vnbox"));fig=null;st.size="";return layer}
  function draw(k,m){var W=innerWidth,H=innerHeight;
   if(!k){if(fig){fig.remove();fig=null}return}
   var s=src(k,m);
@@ -42,20 +41,25 @@
    var sc=H/180,w=b[0]*sc,h=b[1]*sc,cx=(b[2]+b[3])/2*sc;im2.style.width=w+"px";im2.style.height=h+"px";
    fig.style.width=Math.round(w)+"px";fig.style.height=Math.round(h)+"px";fig.style.left=Math.round(W/2-cx)+"px";fig.style.top=Math.round(H*.1-b[4]*sc)+"px"}
   else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
+ function step1(ln,id){var w=lw(ln),cg=cgList();
+  if(w==="narr"){var cue=(window.__INNCUE||{})[lt(ln)];if(cue==="none"){st.who=null;st.whoDl=id}else if(cue&&cue!=="det0"&&cg.indexOf(cue)<0&&(src(cue)||cue==="seryeon"||typeof pf==="function")){st.who=cue;st.whoDl=id;st.m=null}return}
+  if(typeof w!=="string"||w==="det0")return;
+  if(w==="det1"){if(!st.who){st.who="det1";st.whoDl=id;st.m=null}}
+  else if(cg.indexOf(w)<0&&w!==st.who&&(!st.who||st.who==="det1"||st.whoDl!==id)){st.who=w;st.whoDl=id;st.m=null}
+  if(w===st.who)st.m=lm(ln)||null}
  function sync(){var on=false;try{
   var v=document.getElementById("dlgveil");
   if(cur()&&v&&typeof DL!=="undefined"&&DL&&DL.lines&&!document.getElementById("rtg")&&!document.querySelector(".fstalk")){
    on=true;if(!ensure())return;
-   var sc=scene(),sk=sc?sc.key:"D",id=dlid(DL),size=innerWidth+"x"+innerHeight;
-   if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null}
-   if(id!==st.dl){st.dl=id;st.i=-1;
-    var r=firstResident(DL.lines);
-    if(r)st.who=r;else if(!st.who)st.who=(sc&&sc.s&&sc.s.who)||(hasDuo(DL.lines)?"det1":null);
-    if(!sc&&!r)st.who=hasDuo(DL.lines)?"det1":null;st.m=null}
-   if(DL.i!==st.i||size!==st.size){st.i=DL.i;st.size=size;var ln=DL.lines[DL.i]||[],w=lw(ln);
-    if(w==="narr"&&EXIT[lt(ln)]&&st.who&&st.who!=="det1")st.who="det1";
-    if(w===st.who)st.m=lm(ln)||null;
-    draw(st.who,st.m);if(fig)fig.classList.toggle("ls",w!==st.who)}
+   var sc=scene(),sk=sc?sc.key:"D"+dlid(DL),id=dlid(DL),size=innerWidth+"x"+innerHeight;
+   if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null;st.whoDl=0}
+   if(id!==st.dl){st.dl=id;st.i=-1}
+   if(DL.i!==st.i||size!==st.size){for(var q=Math.max(0,st.i+1);q<=DL.i&&q<DL.lines.length;q++)step1(DL.lines[q],id);st.i=DL.i;st.size=size;
+    var ln=DL.lines[DL.i]||[],w=lw(ln),t=String(lt(ln)||"");
+    draw(st.who,st.m);if(fig)fig.classList.toggle("ls",w!==st.who);
+    var vb=document.querySelector("#vnbox .vband");if(vb){var inr=w==="narr"&&t.charAt(0)==="(";vb.classList.toggle("inner",inr);
+     /* 속마음 이름표: 누구의 생각인지 보이게 '아빠' */
+     var vt=vb.querySelector(".vtxt");if(inr&&vt&&!vt.querySelector(".plate")){var pl=document.createElement("span");pl.className="plate inner-plate";pl.textContent="아빠";vt.insertBefore(pl,vt.firstChild)}}}
   }}catch(e){if(!sync.err){sync.err=1;MISS.push("stage "+e.message)}}
   document.body.classList.toggle("inn-st2",on);
   if(!on&&st.dl){st.dl=0;st.i=-1}
@@ -63,7 +67,7 @@
   document.body.classList.toggle("inn-full",full)}
  (function loop(){sync();requestAnimationFrame(loop)})();
  /* 새 대사창이 생기는 순간(그리기 전)에 바로 맞춘다: 첫 프레임에 옛 그림이 비치지 않게 */
- try{var mq=false;new MutationObserver(function(){if(mq)return;mq=true;Promise.resolve().then(function(){mq=false;sync();try{cutSync()}catch(e){}})}).observe(document.getElementById("ov")||document.body,{childList:true,subtree:true})}catch(e){}
+ try{var mq=false;new MutationObserver(function(){if(mq)return;mq=true;Promise.resolve().then(function(){mq=false;sync();try{cutSync();plateSync()}catch(e){}})}).observe(document.getElementById("ov")||document.body,{childList:true,subtree:true})}catch(e){}
  /* 대화 중 장소 이동 입력 차단: 좌우 화살표·하단 메뉴·지도·장소 버튼 */
  function talking(){try{return cur()&&((typeof DL!=="undefined"&&!!DL)||!!document.getElementById("dlgveil")||!!document.querySelector("#ov .modal")||document.body.classList.contains("inn-cut")&&!(G.beats&&G.beats.inn_pro))}catch(e){return false}}
  var MOVESEL=".fsa,#fsal,#fsar,#w209rail,#w209more,#wmap,.mapbtn,[data-room],[data-node],#w209back";
@@ -84,7 +88,21 @@
  function seq(){try{return !(G.beats&&G.beats.inn_pro)||(G.beats.inn_final&&!G.beats.inn_end)||!!window.__innCutting}catch(e){return false}}
  /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
  function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
- function tick(){try{document.body.classList.toggle("inn1",cur());metAll();
+ /* 이름표: 아빠가 이름을 듣기 전까지는 '???' (프롤로그 첫 만남). 이름을 말하는 그 줄부터 이름이 뜬다 */
+ var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"세련이라는 손님이 숙박부에 이름을 적는다",wanggu:"마을 규정 담당, 너울입니다"};
+ function revealAt(k){for(var i=0;i<EP.PRO.length;i++){var it=EP.PRO[i].items;for(var j=0;j<it.length;j++){var t=lt(it[j]);if(typeof t==="string"&&t.indexOf(REVEAL[k])>=0)return i}}return -1}
+ var RPI={};Object.keys(REVEAL).forEach(function(k){RPI[k]=revealAt(k)});var heard={};
+ function known(k){if(!REVEAL[k])return true;try{if(G.beats&&G.beats.inn_pro)return true;var pi=G.beats&&G.beats.inn_pi;if(pi==null)return true;if(pi>RPI[k])return true;if(pi<RPI[k])return false}catch(e){return true}return !!heard[k]}
+ function plateSync(){try{if(!cur()||typeof DL==="undefined"||!DL)return;var ln=DL.lines[DL.i];if(!ln)return;var t=String(lt(ln)||"");
+  Object.keys(REVEAL).forEach(function(k){if(t.indexOf(REVEAL[k])>=0)heard[k]=1});
+  var w=lw(ln),pl=document.querySelector("#vnbox .plate:not(.inner-plate)");if(!pl||!REVEAL[w])return;
+  if(!known(w)){if(pl.textContent!=="???"){pl.dataset.real=pl.textContent;pl.textContent="???"}}}catch(e){}}
+ /* 증거 카드: 그림·이름 아래 발견 장소(어디서, 누구에게서)를 한 줄로 남긴다 */
+ var FOUND={C01:"2층 창고 · 열세 번째 침대 베개 밑",C02:"2층 창고 · 열세 번째 침대 이불",C03:"식당 · 나비에게 들은 말",C04:"부엌 · 빵 바구니",C05:"부엌 · 바구니 속 손님의 옆구리털",C06:"2층 복도 · 꺾이는 곳",C07:"식당 · 첫날 저녁 밤이에게 들은 말",C08:"도토의 방 · 창가",C09:"접수대 · 숙박부",C10:"원탁회의 · 너울의 기록부",C11:"2층 창고 · 침대 밑 상자",C12:"식당 · 세련에게 들은 말",C13:"2층 복도 · 밤이에게 들은 말"};
+ function cardSync(){try{if(!cur())return;var m=document.querySelector("#mveil .modal,#ov .modal");if(!m||m.dataset.found)return;var h=m.querySelector("h3");if(!h)return;var nm=h.textContent.trim(),id=null;
+  Object.keys(EP.EV).forEach(function(k){if(EP.EV[k].name===nm)id=k});m.dataset.found="1";if(!id||!FOUND[id])return;
+  var sm=document.createElement("small");sm.className="found-at";sm.textContent="발견 장소 · "+FOUND[id];h.insertAdjacentElement("afterend",sm)}catch(e){}}
+ function tick(){try{document.body.classList.toggle("inn1",cur());metAll();plateSync();cardSync();
   if(cur()){if(!tick.q)tick.q={};if(window.QUIRK!==tick.q)window.QUIRK=tick.q}else if(window.QUIRK!==Q0)window.QUIRK=Q0;
   var nx=document.querySelector("#vnbox .nx");
   if(nx&&cur()&&typeof DL!=="undefined"&&DL){var last=DL.i>=DL.lines.length-1,cont=seq()||DL.__more||(!lastSpot.got&&Date.now()-lastSpot.t<120000);
@@ -109,8 +127,8 @@
    '<rect class="dopen" x="362" y="150" width="6" height="26" fill="#8A5E36"/><rect class="dshut" x="366" y="140" width="66" height="54" fill="#8A5E36" stroke="#6B4A2B" stroke-width="2"/><text class="lb" x="399" y="136" text-anchor="middle">창고</text></g>'+
    '<g><rect x="336" y="166" width="26" height="28" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2].map(function(k){return '<rect x="338" y="'+(170+k*8)+'" width="22" height="2" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="330" y="186" text-anchor="end">부엌 계단</text></g></g>');
   return '<svg viewBox="0 0 440 200" shape-rendering="crispEdges" role="img" aria-label="2층 복도 배치도: 양쪽 방에 침대 열둘, 꺾인 끝 창고에 열세 번째 침대">'+r.join("")+'</svg>'}
- var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/^복도는 (커다란 )?벽시계 앞/,s:2},{re:/^열셋\. 할머니, 침대 열세 개인데요\?$/,s:3},{re:/^열둘이야\. 늙으면/,s:3},{re:/^할머니가 웃으며 창고 문을 닫는다/,s:4}];
- var CUT2=[{re:/찻주전자의? 뚜껑을 연다/,c:"teapot"},{re:/^안에 작은 겨울잠쥐 하나가 웅크려/,c:"teapot"},{re:/^다람이 손끝으로 살짝 건드린다/,c:"teapot"}];
+ var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 창고예요/,s:3},{re:/창고 문을 닫으셨다/,s:4}];
+ var CUT2=[{re:/찻주전자의 뚜껑을 들어 올린다/,c:"teapot"},{re:/겨울잠쥐가 동그랗게 웅크리고 있다/,c:"teapot"},{re:/손끝에 닿는 작은 몸이/,c:"teapot"}];
  var cut2El=null;
  function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats&&!G.beats.inn_pro){var ln=DL.lines[DL.i];var t=ln&&lt(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
   var v=document.getElementById("innstage");
@@ -128,12 +146,12 @@
  /* ===== 근접 조사: 돈주머니·봉인띠·계약서 앞뒤를 직접 넘겨 본다 ===== */
  var STAR='<svg class="cstar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L14.6 8.6 L21.5 9 L16.2 13.4 L18 20.5 L12 16.6 L6 20.5 L7.8 13.4 L2.5 9 L9.4 8.6 Z" fill="currentColor"/><path d="M21.5 9 Q24 6 21 4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
  var INSPECT={
-  C01a:{title:"돈주머니",pages:[{art:'<div class="ipouch"><img src="art/ch1/locations/C01_money_pouch_world_alpha.png" alt=""><div class="iband"><span class="istamp">세련'+STAR+'</span></div></div>',
-    cap:"주머니 입구를 종이 봉인띠가 감고 있다. 붉은 도장 「세련」과 끝이 말린 별. 만진 손끝에 인주가 묻어난다.",look:"봉인띠"}]},
+  C01a:{title:"돈주머니의 봉인띠",pages:[{art:'<img class="icl" src="art/ch1/closeup/I1-seal-strip-complete-512.png" alt="종이 봉인띠. 붉은 도장 「세련」과 끝이 말린 별">',
+    cap:"주머니 입구를 감은 종이 봉인띠. 붉은 도장 「세련」, 그리고 끝이 말린 별. 만진 손끝에 인주가 묻어난다.",look:"봉인띠"}]},
   C01b:{title:"여관 매매 계약서",pages:[
-   {art:'<div class="ipaper"><b>여관 매매 계약서</b><p>겨울잠 여관을 아래 사람에게 판다.</p><div class="isig"><span>매도인</span><i class="iblank"></i></div><div class="isig"><span>매수인</span><em>세련'+STAR+'</em></div></div>',
-    cap:"봉인띠 밑에 접혀 있던 종이. 앞면: 할머니(매도인) 서명 칸은 비어 있다. 세련(매수인) 서명 끝에 손으로 그린 별.",look:"앞면"},
-   {art:'<div class="ipaper back"><p class="iclause">「매도인이 숙박 허가를 잃는 날,<br>이 계약은 효력이 생긴다.」</p></div>',
+   {art:'<img class="icl" src="art/ch1/closeup/I1-contract-front-complete-512.png" alt="계약서 앞면. 매도인 서명 칸은 비어 있고 매수인 세련 서명 끝에 별">',
+    cap:"봉인띠 밑에 접혀 있던 종이. 앞면: 매도인(할머니) 서명 칸은 비어 있다. 매수인 「세련」 서명 끝에 같은 모양의 별.",look:"앞면"},
+   {art:'<img class="icl" src="art/ch1/closeup/I1-contract-back-complete-512.png" alt="계약서 뒷면 조항">',
     cap:"뒷면: 「매도인이 숙박 허가를 잃는 날, 이 계약은 효력이 생긴다.」",look:"뒷면"}]}};
  function inspect(key,done){var D=INSPECT[key];if(!D){done&&done();return}var i=0;
   var el=document.createElement("div");el.id="innins";el.setAttribute("role","dialog");el.setAttribute("aria-label",D.title+" 자세히 보기");
@@ -174,6 +192,7 @@
   "#innins .ibtns{grid-column:2;display:flex;gap:8px;justify-content:flex-end;align-self:end}",
   "html body #innins button.ib{all:unset;box-sizing:border-box;font-family:var(--display,sans-serif);font-size:var(--t-ui);min-height:44px;padding:8px 18px;background:#E2B655;border:3px solid #3B2A1E;color:#2A1C10;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center}",
   "html body #innins button.ib.ghost{background:#F8F0DC}html body #innins button.ib:focus-visible{outline:3px solid #2F6672;outline-offset:2px}",
+  "#innins .icl{display:block;height:min(260px,calc(100vh - 130px));aspect-ratio:1;image-rendering:pixelated}",
   "#innins .ipouch{position:relative;height:min(230px,calc(100vh - 150px));aspect-ratio:1}#innins .ipouch img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}",
   "#innins .iband{position:absolute;left:14%;right:14%;top:30%;height:17%;background:#EFE3C4;border:2px solid #6B4A2B;display:flex;align-items:center;justify-content:center;transform:rotate(-4deg)}",
   "#innins .istamp{color:#B3261E;border:2px solid #B3261E;padding:0 6px;font-size:var(--t-label);font-family:var(--display,sans-serif);display:inline-flex;align-items:center;gap:2px;background:rgba(255,255,255,.35)}",
@@ -187,6 +206,7 @@
   /* 이불 손자국: 천 위 가루처럼 */
   "svg[data-inn-world=\"bed13\"] image[data-world-prop=\"C02_trace\"]{opacity:.55;mix-blend-mode:screen;filter:sepia(.25) saturate(.7)}",
   "#vnbox .nx.end{font-size:var(--t-cap)!important}",
+  "html body #mveil .modal small.found-at,html body #ov .modal small.found-at{display:block;margin:-2px 0 6px;color:#8A5E36;font-size:var(--t-cap)!important}",
   "#innstage{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}",
   "#innstage .isf{position:absolute;opacity:0;transition:opacity .22s,filter .15s}",
   "#innstage .isf.in{opacity:1}#innstage .isf.ls{filter:brightness(.84) saturate(.9)}",
@@ -201,6 +221,8 @@
   /* 질문 목록: 이미 물어본 주제는 체크 표시(흐림과 함께) */
   "html body.w209.inn1 .fstalk .topic.done::after{content:'✓';margin-left:auto;padding-left:8px;color:#2F6672;font-weight:700}",
   "html body.w209.inn-st2 #vnbox .vband.narr .txt,html body.w209.inn-st2 .veil.vn2 .vband.bot.narr .vtxt{color:#E8DCBC!important}",
+  /* 아빠의 속마음(괄호): 옅은 푸른 글씨, 크기는 일반 대사와 같게 */
+  "html body.w209.inn1 #vnbox .vband.inner .txt,html body.w209.inn1 #vnbox .vband.inner #dtxt{color:#8CC4FF!important}",
   /* 대화·연출 중 이동 버튼은 보이지도 눌리지도 않게 */
   "html body.w209.inn-cut .stage .fsa,html body.w209.inn-cut .stage.inn-world-stage .fsa,html body.w209.dl-on .stage.inn-world-stage .fsa{visibility:hidden!important;pointer-events:none!important}",
   "html body.w209.inn-full .stage>.fsscroll>#bigscene{width:100vw!important;max-width:none!important;margin:0!important;left:0!important}",
