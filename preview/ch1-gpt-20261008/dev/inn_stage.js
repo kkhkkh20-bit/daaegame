@@ -119,9 +119,9 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
   var pose=worried?"worried":(seat.snack?"snack-"+seat.snack:"neutral");
   var href="art/ch1/cast/daram-seated-"+pose+"-192x256.png";
   document.querySelectorAll('svg[data-bg="carriage"]').forEach(function(sv){
-   var vb=dlgOn?"318 124 422 195":"0 0 844 390";if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
+   var vb="0 0 844 390";   /* 2026-10-10: 대화 중 2배 확대 → 1.1배만(배경을 넓게, 다람 도트가 과하게 커지지 않게) */if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
    var im=sv.querySelector("image.innseat");
-   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","448");im.setAttribute("y","124");im.setAttribute("width","192");im.setAttribute("height","256");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
+   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","504");im.setAttribute("y","132");im.setAttribute("width","138");im.setAttribute("height","184");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
     if(im.getAttribute("href")!==href)im.setAttribute("href",href)}
    else if(im)im.remove()});
   if(layer)layer.classList.toggle("seated",true)}catch(e){}}
@@ -290,7 +290,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
     실제 대사창과 같은 글꼴·폭으로 줄 수를 재서, 두 줄 안에 들어가면 문장을 통째로 한 쪽에 둔다.
     세 줄 이상이 될 때만 뜻이 이어지는 자리(쉼표·연결 어미·조사)에서 다음 쪽으로 넘긴다. 글자 크기는 바꾸지 않는다. */
  var MZ=null,MC={};
- function textW(){try{var d=document.getElementById("dtxt");if(d&&d.clientWidth>40)return d.clientWidth}catch(e){}return Math.min(innerWidth*.75,900,innerWidth-32)-32-(innerHeight<380?68:76)}
+ function textW(){try{var d=document.getElementById("dtxt");if(d&&d.clientWidth>40)return d.clientWidth}catch(e){}return Math.min(innerWidth*.75,900,innerWidth-32)-32-(innerHeight<380?110:122)}
  function nLines(t,w){var k=w+"|"+t;if(MC[k])return MC[k];try{if(!MZ){MZ=document.createElement("div");MZ.setAttribute("aria-hidden","true");MZ.style.cssText="position:fixed;left:-9999px;top:0;visibility:hidden;pointer-events:none;font-family:Galmuri11B,Galmuri11,monospace;line-height:24px;word-break:keep-all;white-space:pre-wrap;overflow-wrap:break-word;padding:0;margin:0";document.body.appendChild(MZ)}
    var d=document.getElementById("dtxt"),fs=d?getComputedStyle(d).fontSize:(getComputedStyle(document.body).getPropertyValue("--t-story")||"16px");MZ.style.fontSize=fs;MZ.style.lineHeight=(parseFloat(fs)*1.5)+"px";MZ.style.width=w+"px";MZ.textContent=t;var n=Math.max(1,Math.round(MZ.offsetHeight/(parseFloat(fs)*1.5)));MC[k]=n;return n}catch(e){return Math.ceil(t.length/30)}}
  window.__innLines=function(t){return nLines(t,textW())};
@@ -303,12 +303,22 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];return "art/ch1/cast/"+(DFAC
   return splitLong(s.slice(0,b),inner).concat(splitLong(s.slice(b+1),inner))}
  function pageLine(x){if(!Array.isArray(x)||typeof x[1]!=="string"||typeof x[0]!=="string"||x[0].charAt(0)==="@")return [x];
   var t=x[1];if(t.indexOf("<")>=0)return [x];var inner=x[0]==="narr"&&/^\(.*\)$/.test(t),body=inner?t.slice(1,-1):t;
-  var parts=joinShort(sents(body));if(!parts.length)return [x];
+  var parts=joinShort(sents(body)).map(function(p){return BRK[p]||p});if(!parts.length)return [x];
   var segs=[];parts.forEach(function(p){splitLong(p,inner).forEach(function(q){segs.push(q)})});
   return segs.map(function(p,k){var y=x.slice();y[1]=inner?"("+p+")":p;y[7]=t;if(k>0){if(y[3]==="testi")y[3]="";if(y[5]!=null)y[5]=""}return y})}
  window.__innPageCold=function(L){try{var o=[];(L||[]).forEach(function(b){if(!b||typeof b.say!=="string"){o.push(b);return}var parts=joinShort(sents(b.say));if(parts.length<2&&fits2(b.say)){o.push(b);return}
    var zEnd=(b.z||1)*(b.push?1+b.push/100:1)/(b.pull?1+b.pull/100:1),segs=[];parts.forEach(function(p){splitLong(p).forEach(function(q){segs.push(q)})});
-   segs.forEach(function(p,i){var c={};for(var k in b)c[k]=b[k];c.say=p;if(i>0){delete c.sfx;delete c.wait;delete c.push;delete c.pull;c.z=zEnd;c.id=(b.id||"")+"_"+i}o.push(c)})});return o}catch(e){return L}};
+   segs.forEach(function(p,i){var c={};for(var k in b)c[k]=b[k];c.say=p;if(i>0){delete c.sfx;delete c.wait;delete c.push;delete c.pull;delete c.fxs;c.z=zEnd;c.id=(b.id||"")+"_"+i}o.push(c)})});return o}catch(e){return L}};
+ /* 타이핑 호흡: 방금 찍은 글자 뒤에 쉴 틱 수(1틱 = 대사 속도 간격). 1장에서만 */
+ window.__innPace=function(full,n){if(!cur())return 0;var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
+  if(ch==="…"||(ch==="."&&nx==="."))return 5;                          /* 말줄임: 점마다 */
+  if(/[.?!]/.test(ch)&&/[\s)」"”]/.test(nx||" "))return 9;              /* 문장 끝 */
+  if(ch===",")return 4;                                                /* 쉼표 */
+  if(ch==="\n")return 3;
+  var k=full.indexOf("…",n);if(k>0&&k-n<2&&k-n>=0&&/[^\s]/.test(nx))return 1;   /* 말줄임 바로 앞 글자는 느리게 */
+  return 0};
+ /* 대본에서 의도한 줄바꿈(같은 쪽 두 줄). 문장은 그대로, 줄만 나눈다 */
+ var BRK={"두 사람 방은 앞 계단 쪽, 끝에서 둘째 방이에요.":"두 사람 방은 앞 계단 쪽,\n끝에서 둘째 방이에요."};
  window.__innPage=function(lines){try{if(!cur()||!Array.isArray(lines))return lines;var o=[];lines.forEach(function(x){pageLine(x).forEach(function(y){o.push(y)})});return o}catch(e){return lines}};
  window.__innSayX=function(base,self,lines,done,sk){return split(base,self,talkEntry(lines),done,sk)};
  /* 힌트: 1장은 단계가 잠겨 있다(햇빛 → 머리판 → 자물쇠 → 장부 → 돋보기). 잠긴 지점을 '남은 곳'으로 세거나 가리키지 않고, 지금 해야 할 단계를 말한다 */

@@ -34,14 +34,15 @@
    var b=beats();
    if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
-    if(sid==="P11"){if(/^계약금이 든 주머니/.test(lineText()))M.inv=true;return M.inv?"inn_inv":null}   /* P11: 신고 확인 뒤 */
+    if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 긴장곡 */return M.inv?"inn_inv":null}   /* P11: 신고 확인 뒤 */
     return "inn_inv"}
    if(!b.inn_final)return "inn_inv";                /* 조사·회의·최종: 같은 곡, 같은 재생 위치 */
    if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
    return "inn_after"};
   window.__innDuck=function(){
+   if(document.getElementById("inncold"))return COLDD;   /* 콜드 오픈: 비트마다 정한 낮춤(정적으로 갈수록 작게) */
    if(!cur())return 1;
-   var b=beats(),now=Date.now(),f=(typeof DL!=="undefined"&&DL)?1.25:1,t=lineText();   /* 대화 중 덕킹 .62 → 약 .78 */
+   var b=beats(),now=Date.now(),f=(typeof DL!=="undefined"&&DL)?.9:1,t=lineText();   /* 2026-10-10: 대화 중 배경음 .62×.9≈.56(-5dB) — 타이핑·효과음이 묻히지 않게 */
    if(!b.inn_pro){var pi=b.inn_pi|0;
     var sd=sidOf(pi);if(sd!=="P10")M.p10=0;
     if(sd==="P5")f=.8;                             /* P5 복도: 같은 곡 낮게 */
@@ -59,8 +60,8 @@
   var lastT=0;
   window.__innType=function(kind){try{
    if(!S.sound||!AC||AC.state!=="running")return;var now=AC.currentTime;if(now-lastT<.075)return;lastT=now;
-   var v=kind==="inner"?.45:kind==="narr"?.55:1;
-   noise(.014,.035*v,0,1700,"bandpass");tone(300+Math.random()*40,.03,"sine",.025*v)}catch(e){}};
+   var v=kind==="inner"?.6:kind==="narr"?.7:1;   /* 2026-10-10: 타이핑 약 +10dB, 소리 높이를 조금씩 달리해 반복 피로를 줄임 */
+   noise(.016,.11*v,0,2100+Math.random()*500,"bandpass");tone(420+Math.random()*90,.028,"triangle",.07*v)}catch(e){}};
   var _blip=SFX.blip;
   SFX.blip=function(){if(!cur())return _blip.apply(this,arguments);window.__innType(lineKind())};
 
@@ -74,6 +75,25 @@
   wrap("roll",function(){});                       /* 옛 드럼롤(마차 대용) 없음 */
   SFX.bell10=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
 
+  /* ---- 콜드 오픈 연출(2026-10-10): 어둠·정적·행동 소리. 대사·그림·단서는 그대로, 카메라와 소리만 ---- */
+  var COLDD=1;
+  function creak(){noise(.5,.09,0,320,"bandpass",null,190);tone(150,.45,"triangle",.05,0,null,118)}
+  function step(){[0,.42].forEach(function(w){noise(.07,.16,w,520,"lowpass");tone(95,.08,"sine",.14,w,null,62)})}
+  function breath(){noise(1.1,.05,0,900,"bandpass",null,520)}
+  function heart(){[0,.32,1.2,1.52].forEach(function(w,i){tone(58,.16,"sine",i%2?.22:.3,w,null,44)})}
+  var COLDFX={creak:creak,step:step,breath:breath,heart:heart};
+  window.__innColdFx=function(b){try{if(b.duck!=null)COLDD=b.duck;if(b.fxs&&S.sound&&COLDFX[b.fxs])COLDFX[b.fxs]()}catch(e){}};
+  /* 비트별 연출: 침대 컷은 '침대 다리'가 아니라 이불 덮인 침대 쪽으로 다가가며 점점 어둡고 조용해진다 */
+  try{var STAGE={"01":{fxs:"step",duck:1},"02":{push:3,duck:.9},
+   "03":{z:1,fx:.72,fy:.6,push:5,fxs:"creak",duck:.6},"04":{z:1.45,fx:.74,fy:.6,push:6,fxs:"step",duck:.5},"05":{z:1.8,fx:.74,fy:.62,push:4,dim:.8,duck:.4},
+   "06":{z:1.8,fx:.74,fy:.62,push:3,dim:.75,duck:.35},"07":{z:2.1,fx:.74,fy:.62,push:3,dim:.7,fxs:"breath",duck:.25},"08":{z:2.1,fx:.74,fy:.62,dim:.65,fxs:"heart",duck:.15},
+   "09":{z:2.3,fx:.74,fy:.62,push:2,dim:.6,duck:.08},"10":{fxs:"heart",duck:.3},"11":{duck:.3},"12":{duck:.35},"13":{duck:.35},"14":{duck:.4},"15":{fxs:"step",duck:.45},
+   "16":{fxs:"heart",duck:.5},"17":{duck:.5},"18":{duck:.3},"19":{duck:0}};
+   var EPC=window.EP1INN||(typeof EP!=="undefined"?EP:{});(EPC.COLD||[]).forEach(function(b){var o=STAGE[b.id];if(o)for(var k in o)b[k]=o[k]});
+   /* 2026-10-10 "오프닝이 너무 길다": 같은 망설임이 되풀이되는 줄만 뺀다(대사를 새로 쓰지 않음). 19비트 → 13비트 */
+   var DROPC={"06":1,"08":1,"09":1,"11":1,"12":1,"14":1};if(EPC.COLD)EPC.COLD=EPC.COLD.filter(function(b){return !DROPC[b.id]});
+   (EPC.COLD||[]).forEach(function(b){if(b.id==="07"){b.duck=.15;b.fxs="heart"}})}catch(e){window.__innColdErr=e.message}
+
   /* ---- 환경음 ---- */
   window.__innOwnAmb=function(){return !!document.getElementById("innmain")||!!document.getElementById("inncold")||cur()};
   var BUF=null;
@@ -86,16 +106,16 @@
    var I={key:key,out:out,src:[],lp:null,next:{},a:a};
    if(key==="carriage"){
     var lp=a.createBiquadFilter();lp.type="lowpass";lp.frequency.value=2400;lp.connect(out);I.lp=lp;
-    var r=loopSrc(a,lp,"lowpass",170,0,.5);I.src.push(r.s);                      /* 바퀴 구름음(낮게 지속) */
-    var w=loopSrc(a,lp,"bandpass",430,1.6,.1);I.src.push(w.s);                  /* 바퀴 마찰 */
-    var lfo=a.createOscillator(),lg=a.createGain();lfo.frequency.value=1.7;lg.gain.value=.05;lfo.connect(lg);lg.connect(w.g.gain);lfo.start();I.src.push(lfo);
-    I.bus=lp;I.peak=.9}
+    var r=loopSrc(a,lp,"lowpass",150,0,.32);I.src.push(r.s);                      /* 바퀴 구름음(낮게 지속) */
+    var w=loopSrc(a,lp,"bandpass",430,1.6,.035);I.src.push(w.s);                  /* 바퀴 마찰 */
+    var lfo=a.createOscillator(),lg=a.createGain();lfo.frequency.value=1.7;lg.gain.value=.015;lfo.connect(lg);lg.connect(w.g.gain);lfo.start();I.src.push(lfo);
+    I.bus=lp;I.peak=.45}   /* 2026-10-10 "마차 소리가 거슬린다": 전체 -6dB, 마찰음·덜컹 더 낮게 */
    else if(key==="wind"){var wd=loopSrc(a,out,"bandpass",480,.8,.35);I.src.push(wd.s);
     var l2=a.createOscillator(),g2=a.createGain();l2.frequency.value=.11;g2.gain.value=220;l2.connect(g2);g2.connect(wd.f.frequency);l2.start();I.src.push(l2);I.peak=.5}
    out.gain.exponentialRampToValueAtTime(I.peak,a.currentTime+.4);return I}
   function sched(I){if(I.key!=="carriage"||I.dead)return;if(I.ending&&I.a.currentTime>I.ending)return;var a=I.a,now=a.currentTime,n=I.next;
    if(n.r==null)n.r=now+1+Math.random()*2;if(n.h==null)n.h=now+.3;
-   while(n.r<now+.3){var k=3+(Math.random()*3|0),t=n.r;for(var j=0;j<k;j++){burst(a,I.bus,t,.03,.07+Math.random()*.05,"bandpass",1000+Math.random()*700,2.5);t+=.03+Math.random()*.05}n.r+=2.4+Math.random()*3.2}   /* 차체 덜컹: 간헐적 */
+   while(n.r<now+.3){var k=3+(Math.random()*3|0),t=n.r;for(var j=0;j<k;j++){burst(a,I.bus,t,.03,.03+Math.random()*.02,"bandpass",900+Math.random()*500,2.5);t+=.03+Math.random()*.05}n.r+=4+Math.random()*4}   /* 차체 덜컹: 간헐적 */
    while(n.h<now+.3){thud(a,I.bus,n.h,.05);thud(a,I.bus,n.h+.2+Math.random()*.03,.04);n.h+=.86+Math.random()*.1}}   /* 먼 말발굽: 바퀴보다 낮고 둔하게 */
   function stop(I,dur){if(!I||I.ending)return;var a=I.a,t=a.currentTime;dur=dur||.8;I.ending=t+dur*.8;AMB.old.push(I);
    try{I.out.gain.cancelScheduledValues(t);I.out.gain.setValueAtTime(Math.max(.0001,I.out.gain.value),t);I.out.gain.exponentialRampToValueAtTime(.0001,t+dur);if(I.lp){I.lp.frequency.setValueAtTime(I.lp.frequency.value,t);I.lp.frequency.exponentialRampToValueAtTime(180,t+dur)}}catch(e){}
