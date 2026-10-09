@@ -70,7 +70,7 @@
   function worldPt(sc,x,y){var sv=sc.querySelector("svg[data-inn-world]")||sc.querySelector("svg[data-bg]")||sc.querySelector("svg");if(!sv||!sv.getScreenCTM)return null;try{var p=sv.createSVGPoint();p.x=x;p.y=y;var m=sv.getScreenCTM();if(!m)return null;var q=p.matrixTransform(m.inverse());return {x:q.x,y:q.y}}catch(e){return null}}
   var SKIP=".hot,.npc,button,[data-spot],[data-obs],[data-loc],.lens,.flavb,.innobs,a,input";
   function tappable(t){if(!inn()||G.tab!=="scene"||dl())return false;if(!t||!t.closest)return false;var sc=t.closest("#bigscene");if(!sc)return false;if(t.closest(SKIP))return false;
-   if(document.querySelector("#ov .modal,#mveil .modal,#innins,#wmap,.crec2,#innmove,body>.rt"))return false;return sc}
+   if(document.querySelector("#ov .modal,#mveil .modal,#innins,#wmap,.crec2,#innmove,body>.rt"))return false;if(document.getElementById("closeNotice")){if(!t.closest("#app .notice")){try{document.getElementById("closeNotice").click()}catch(x){}}return false}return sc}
   var down=null;
   document.addEventListener("pointerdown",function(e){var sc=tappable(e.target);down=sc?{x:e.clientX,y:e.clientY,t:performance.now(),sc:sc}:null},true);
   document.addEventListener("pointerup",function(e){var d=down;down=null;if(!d)return;if(Math.abs(e.clientX-d.x)>12||Math.abs(e.clientY-d.y)>12||performance.now()-d.t>700)return;if(!tappable(e.target)&&!d.sc.contains(e.target))return;
@@ -80,6 +80,8 @@
    var so=null;[].slice.call(d.sc.querySelectorAll(".hot.obs[data-obs]")).some(function(h){var cs=getComputedStyle(h);if(cs.visibility!=="hidden"&&cs.pointerEvents!=="none")return false;var r=h.getBoundingClientRect();if(r.width&&e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom){so=h;return true}return false});
    if(so){var oo=null;try{oo=(loc().obs||[]).filter(function(x){return x.id===so.dataset.obs})[0]}catch(x){}if(oo&&oo.text){try{SFX.select()}catch(x){}obShow("("+String(oo.text).replace(/^\(|\)$/g,"")+")");return}}
    var nh=npcHit(d.sc,e.clientX,e.clientY);if(nh){setTimeout(function(){try{nh.click()}catch(x){}},0);return}
+   /* 도토의 방: 도토 단추는 일지 지점과 겹쳐 꺼 두었다 — 도토 몸을 누르면 '아무것도 없다' 대신 안내 한 줄 */
+   try{var dimg=d.sc.querySelector('svg image.wn9[data-k="doto"]');if(dimg&&alphaAt(dimg,e.clientX,e.clientY,3)>60){try{SFX.select()}catch(x){}obShow("(도토 씨가 앉아 있다. 창가의 일지부터 보자.)");return}}catch(x){}
    var near=null,nd=1e9;[].slice.call(d.sc.querySelectorAll(".hot:not(.done),.npc:not(.w9)")).forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;var dx=Math.max(r.left-e.clientX,0,e.clientX-r.right),dy=Math.max(r.top-e.clientY,0,e.clientY-r.bottom),dd=Math.max(dx,dy);if(dd<=28&&dd<nd){nd=dd;near=h}});
    if(near){setTimeout(function(){try{near.click()}catch(x){}},0);return}
    /* 2026-10-10 "침대·자물쇠 상자를 다시 누르면 다른 네모 상자가 생긴다": 이미 챙긴 증거 자리(주머니·손자국·상자)를 다시 누르면 뒤의 침대 관찰로 새어 나가 엉뚱한 자리에 표시가 생기던 문제. 그 증거 이름만 짧게 알려 준다 */
@@ -184,6 +186,13 @@
    "html body.w209.inn1.dl-on #w209rail.more #w209more{visibility:visible!important;pointer-events:auto!important}",
    "html body.w209.inn1.dl-on #w209rail.more #w209more *{visibility:visible!important}",
    "html body.w209.inn1.dl-on #w209more [data-w=\"move\"],html body.w209.inn1.dl-on #w209more [data-w=\"hint\"],html body.w209.inn1.dl-on #w209more [data-w=\"reset\"]{display:none!important}",
+   /* 2026-10-10 UI 검수 반영 */
+   "@media (max-width:700px){html body.w209.inn1 #rtgtpc{left:158px!important;right:auto!important;transform:none!important;max-width:calc(100vw - 158px - 240px)!important;overflow:hidden!important;white-space:nowrap!important;text-overflow:ellipsis!important}html body.w209.inn1 #rtgtop{max-width:none!important;white-space:nowrap!important}}",
+   "html body.w209.inn1 .rt .wk{padding:6px 4px!important;margin:-6px 0!important}",
+   "html body.w209.inn1 #closeNotice{min-width:44px!important;min-height:44px!important}",
+   "html body.w209.inn1 button.e9b,html body.w209.inn1 #innppl .plog{position:relative}html body.w209.inn1 button.e9b::after,html body.w209.inn1 #innppl .plog::after{content:\"\";position:absolute;inset:-7px -3px}",
+   "html body.w209.inn1{overflow-x:hidden}",
+   "html body.w209.inn1 .crec2 .cr-det .cr-ic svg{transform:none!important;animation:none!important}",
    /* 증거 획득 창: 그림 왼쪽·글 오른쪽, 확인 단추는 글자 크기에 맞춘 보통 크기 */
    "html body.w209.inn1 #vnbox .vtxt .spk9 img{animation:br9 3.6s steps(1,end) infinite}",
    "@keyframes br9{0%{translate:0 0}45%{translate:0 -1px}55%{translate:0 -1px}100%{translate:0 0}}",
@@ -326,10 +335,10 @@
 
   /* (8) 기록 안 '인물' 탭: 만난 사람만, 이미 나온 정보(이름·하는 일·이 여관과의 관계)와 직접 물어 들은 말만. 새 설정·스포일러 없음 */
   var ROLE={innma:["여관 주인","이 여관을 꾸려 가는 토끼 할머니"],seryeon:["외지 손님","어젯밤 이 여관에 묵은 손님"],nabi:["여관 일을 돕는 고양이","여관에서 일한다"],geokkuri:["겨울 장기 투숙객","이 여관 2층에 겨울 동안 묵는다"],
-   doto:["투숙객","여관 2층 방에 묵는다"],buri:["장치공","여관 일을 손봐 준다"],wanggu:["마을 규정 담당","주민 규약과 기록을 맡는다"],karo:["마차 마부","우리를 태우고 마을에 왔다"]};
+   doto:["투숙객","여관 2층 방에 묵는다"],buri:["장치공","여관 일을 손봐 준다"],wanggu:["마을 자경단장","주민 규약을 지키게 하고 회의를 기록한다"],karo:["마차 마부","우리를 태우고 마을에 왔다"]};
   var ORDER=["innma","nabi","seryeon","buri","wanggu","karo","geokkuri","doto"];
   /* 아빠·다람은 늘 맨 앞에(기본 정보만, 증언 없음) */
-  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n2"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/action-poses/daram/profile.png"]];
+  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n3"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/daram-v4/daram-idle-profile.png"]];
   function metMark(){try{if(!inn()||!dl())return;var ln=DL.lines[DL.i];var w=ln&&ln[0];if(!ROLE[w])return;var pl=document.querySelector("#vnbox .plate");if(pl&&/\?\?\?/.test(pl.textContent))return;G.beats=G.beats||{};if(!G.beats["inn_met_"+w]){G.beats["inn_met_"+w]=1}}catch(e){}}
   function metList(){var b=G.beats||{},pro=!!b.inn_pro;return ORDER.filter(function(k){if(b["inn_met_"+k])return true;if(k==="geokkuri")return G.found.indexOf("C07")>=0;if(k==="doto")return G.found.indexOf("C08")>=0;return pro&&["innma","nabi","seryeon","buri","wanggu","karo"].indexOf(k)>=0})}
   var PP=null;function pplClose(){if(PP){PP.remove();PP=null}}
@@ -341,10 +350,12 @@
   /* 더보기: 대사 중에도 열리게(대사 중 클릭이 두 번 전달돼 열렸다 바로 닫히던 것) — 문서 캡처 단계에서 한 번만 열고 닫는다 */
   document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#w209rail [data-more]");if(!b||!inn())return;e.preventDefault();e.stopImmediatePropagation();
     var r=document.getElementById("w209rail");if(!r)return;var now=performance.now();if(now-(b.__t||0)<250)return;b.__t=now;r.classList.toggle("more");try{SFX.tap()}catch(x){}},true);
-  function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+ks.length+'명 · [대사 열기]로 들은 말 보기</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
+  /* QA 저장칸 표시(?qa=1 / ?slot=이름) */
+  try{if(window.__QASLOT){var qb=document.createElement("div");qb.id="qaslot9";qb.textContent="QA 저장칸 · "+window.__QASLOT;qb.style.cssText="position:fixed;left:6px;bottom:6px;z-index:3000;padding:2px 8px;border-radius:6px;background:rgba(162,59,42,.85);color:#fff;font:12px Galmuri11,monospace;pointer-events:none";(document.body||document.documentElement).appendChild(qb)}}catch(e){}
+  function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+(ks.length+SELF.length)+'명 · [대사 열기]로 들은 말 보기</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
    SELF.forEach(function(x){h+='<section class="pc self"><div class="pf"><img alt="" src="'+x[4]+'"></div><div class="pt"><h4>'+esc(x[1])+'</h4><small>'+esc(x[2])+'</small><p>'+esc(x[3])+'</p></div></section>'});
    ks.forEach(function(k){var nm=({innma:"복례 할머니"})[k]||(CAST[k]&&CAST[k].name)||k,r=ROLE[k]||["",""],said=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q});
-    var face="";try{face=PROF[k]?'<img alt="" data-k="'+k+'" src="'+AP+PROF[k]+'/profile.png?v=e4">':pf(k,"neutral")}catch(e){}
+    var face="";try{face=PROF[k]?'<img alt="" data-k="'+k+'" src="'+(k==="wanggu"?NV2+"neoul-default-profile.png":AP+PROF[k]+'/profile.png?v=e4')+'">':pf(k,"neutral")}catch(e){}
     h+='<section class="pc"><div class="pf">'+face+'</div><div class="pt"><h4>'+esc(nm)+'</h4><small>'+esc(r[0])+'</small><p>'+esc(r[1])+'</p>'+
      (function(){var n=((G.said9||{})[k]||[]).length+said.length;return n?'<button type="button" class="e9b plog" data-k="'+k+'">대사 열기 <i>'+n+'</i></button>':'<p class="no">아직 나눈 대화가 없어요.</p>'})()+'</div></section>'});
    h+='</div></div>';PP=document.createElement("div");PP.id="innppl";PP.setAttribute("role","dialog");PP.setAttribute("aria-label","인물");PP.innerHTML=h;B.appendChild(PP);
@@ -394,7 +405,7 @@
   /* ==== 통합 아트(2026-10-09): 장소 인물 행동 포즈를 배경과 같은 좌표·같은 팬 변환으로 ====
      배경 svg 안에 원본 픽셀 좌표로 넣는다(식당 2048x768, 부엌 1774x887, 복도·도토 방 1672x941). 누르는 영역은 그림 자리에 맞춘 기존 인물 단추 */
   var AP="art/ch1/action-poses/";
-  window.__innPose=function(k){try{if(!inn())return null;if(k==="buri")return AP+"buri/dialogue.png";   /* 2026-10-10 "부엉이 시선은 플레이어로": 통합 아트 후보(정면 시선) */
+  window.__innPose=function(k){try{if(!inn())return null;if(k==="buri")return AP+"buri/dialogue.png";if(k==="wanggu")return "art/ch1/neoul-v2/neoul-default-dialogue.png";   /* 너울 v2: 옛 주황 조끼 고해상 그림 대신 */   /* 2026-10-10 "부엉이 시선은 플레이어로": 통합 아트 후보(정면 시선) */
    var b=G.beats||{};if(!b.inn_pro||b.inn_final)return null;var lid=(loc()||{}).id;
     if(k==="seryeon")return AP+"seryeon/dialogue.png";if(k==="innma"&&lid==="dining")return AP+"grandma/dialogue.png";if(k==="geokkuri"&&lid==="hall")return AP+"bami/dialogue.png";
     if(k==="nabi"&&lid==="kitchen")return AP+"nabi/dialogue.png";if(k==="doto"&&lid==="dotoroom")return AP+"doto/dialogue.png";}catch(e){}return null};
@@ -420,7 +431,7 @@
     /* 앞가림(식탁 상판 등)의 불투명 부분을 누르면 그 뒤 인물은 열지 않는다 */
     var occ=[].slice.call(sv.querySelectorAll("image.wo9")).some(function(im){return alphaAt(im,x,y,0)>60});if(occ)return null;
     var hit=null;[].slice.call(sv.querySelectorAll("image.wn9")).reverse().some(function(im){var bt=sc.querySelector('.npc.w9[data-npc="'+im.dataset.k+'"]');if(!bt||bt.dataset.nohit)return false;
-      if(alphaAt(im,x,y,1)>60){hit=bt;return true}return false});return hit}catch(e){return null}}
+      if(alphaAt(im,x,y,3)>60){hit=bt;return true}var tg=bt.querySelector("span");if(tg){var r=tg.getBoundingClientRect();if(r.width&&x>=r.left-4&&x<=r.right+4&&y>=r.top-4&&y<=r.bottom+4){hit=bt;return true}}return false});return hit}catch(e){return null}}
   window.__innNpcHit=function(x,y){var b=npcHit(document.getElementById("bigscene"),x,y);return b?b.dataset.npc:""};
   function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[];var tp=(G.obsSeen||[]).indexOf("o_teapot")>=0||G.found.indexOf("C04")>=0;if(lid==="kitchen"&&!tp)L=L.filter(function(n){return n[0]!=="nabi"});var key=lid+"|"+L.length;   /* 나비는 너울을 부르러 갔다가, 찻주전자 발견 뒤 부엌에 돌아와 있다(찻주전자를 본 사람은 부녀뿐) */
     if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
@@ -442,20 +453,34 @@
   /* 2026-10-10 깜빡임 수정: 엔진은 대사마다 대사창 노드를 새로 만든다. 예전엔 초상·여백을 최대 60ms 뒤에 붙여 창 높이·글 위치가 한 프레임씩 튀었다.
      이제 여백·높이는 CSS로 늘 같고, 초상은 같은 img 요소 하나를 새 창으로 옮겨 붙인다(새로 받지 않음). 노드가 생기는 즉시(그리기 전, MutationObserver) 처리 */
   var SPK=document.createElement("span");SPK.className="spk9";SPK.setAttribute("aria-hidden","true");SPK.innerHTML="<img alt=''>";var SPKIMG=SPK.firstChild,SPKC={};
-  var FW="art/ch1/father/father-warm-";[FW+"base-speaker128.png",FW+"raised-speaker128.png"].forEach(function(f){var im=new Image();im.src=f});
-  var DAD="art/ch1/father/father-speaker128.png?v=n2";   /* 아빠 기본 프로필: 2026-10-09 사용자 확정 정직·따뜻한 얼굴(이전 능청 얼굴은 father-sly-*로 보존, 연결 없음) — 화자 칸에만 */
+  var FV="art/ch1/father/father-v5-",V4="art/ch1/daram-v4/",NV2="art/ch1/neoul-v2/";
+  ["default-smile","finger-base","finger-raised","pose-thinking","pose-surprised","pose-sheepish"].map(function(n){return FV+n+"-speaker128.png"})
+   .concat(["idle","memo","joy","flustered","held-anger","comic-anger"].map(function(n){return V4+"daram-"+n+"-speaker128.png"}))
+   .concat(["default","admonish","angry","sheepish"].map(function(n){return NV2+"neoul-"+n+"-speaker128.png"})).forEach(function(f){var im=new Image();im.src=f});
+  /* 작은 얼굴(질문 목록·대화 화면·기록 등 pf)도 새 외형으로: 아빠 v5·다람 v4·너울 v2. 옛 갈색 모자 다람·주황 조끼 너울이 섞여 뜨지 않게 */
+  try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-v5-default-smile-64.png":k==="det1"?V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png":NV2+"neoul-default-64.png";
+    return '<svg class="nodot inn-pixel-face" data-face="'+k+'" viewBox="0 0 100 101" aria-hidden="true" style="image-rendering:pixelated"><image href="'+f+'" x="0" y="0" width="100" height="100" style="image-rendering:pixelated"/></svg>'}}catch(e){}return _pf9.apply(this,arguments)}}catch(e){}
+  /* 아빠 화자 포즈: 놀람(?! · 설마), 머쓱(죄송·하하·벌금은 내겠), 생각(물음으로 끝나는 속마음), 그 밖은 둥근 미소 기본 */
+  function dadPose(t,inner,md){if(/shock|surpr|panic/.test(md)||/\?!|!\?|^(뭐라|설마|네\?|어\?)/.test(t))return "pose-surprised";
+   if(/죄송|미안|하하|벌금은 내겠|머쓱|그 말 내일 아침/.test(t))return "pose-sheepish";
+   if(inner&&/\?\)?$|^\(?(흠|글쎄)/.test(t))return "pose-thinking";return "default-smile"}
+  var DAD="art/ch1/father/father-speaker128.png?v=n3";   /* 아빠 기본 프로필: 2026-10-09 사용자 확정 정직·따뜻한 얼굴(이전 능청 얼굴은 father-sly-*로 보존, 연결 없음) — 화자 칸에만 */
   function spkSrc(k){return k==="det0"?DAD:(PROF[k]?AP+PROF[k]+"/speaker128.png":"")}
   [DAD].concat(Object.keys(PROF).map(function(k){return AP+PROF[k]+"/speaker128.png"})).forEach(function(f){var im=new Image();im.src=f;SPKC[f]=im;try{im.decode&&im.decode().catch(function(){})}catch(e){}});
   function speaker(){try{if(!inn()||!dl())return;var vt=document.querySelector("#vnbox .vtxt");if(!vt)return;var ln=DL.lines[DL.i]||[],w=ln[0],vb=vt.closest(".vband");
     var inner=vb&&vb.classList.contains("inner");var k=inner?"det0":w;if(SPK.parentNode!==vt)vt.insertBefore(SPK,vt.firstChild);
-    var f=spkSrc(k),mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"");if(f){if(SPKIMG.getAttribute("src")!==f)SPKIMG.setAttribute("src",f)}else SPKIMG.removeAttribute("src")}
-    /* 아빠 손동작(2026-10-09 확정 2프레임): 결정적 대사·짚어 말하는 줄에서 주먹→검지 들기. 얼굴·몸은 고정, 손만 바뀐다. 다른 줄은 기본 정직한 프로필 */
-    if(k==="det0"&&!inner){var ft=String(ln[1]||""),fk=DL.i+"|"+ft.length;var fing=(window.__innKeyLine&&window.__innKeyLine())||/^(잠깐|그런데|그렇다면|하나만|한 가지)|보시죠|확인하겠습니다|여쭙겠습니다/.test(ft);
-      if(fing&&SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FW+"base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FW+"raised-speaker128.png")},200)}
-      else if(!fing&&SPK.dataset.fk){SPK.dataset.fk="";clearTimeout(SPK.__ft);SPKIMG.setAttribute("src",DAD)}}
-    else if(SPK.dataset.fk){SPK.dataset.fk="";clearTimeout(SPK.__ft);if(k==="det0")SPKIMG.setAttribute("src",DAD)}
+    var md=String(ln[2]||""),tx=String(ln[1]||"");
+    /* 2026-10-10 화자 초상 통일(GPT·사용자): 아빠 v5(둥근 미소 기본 + 생각/놀람/머쓱 + 손가락 2프레임), 다람 v4 6상태, 너울 v2 4상태 — 모두 확정 원본에서 직접 크롭 */
+    var f=spkSrc(k),fing=false;
+    if(k==="det1")f=V4+"daram-"+String(window.__innDV4?window.__innDV4(md):"idle").replace("idle-t0","idle")+"-speaker128.png";
+    else if(k==="wanggu")f=NV2+"neoul-"+(window.__innNeoState?window.__innNeoState(md):"default")+"-speaker128.png";
+    else if(k==="det0"){fing=!inner&&((window.__innKeyLine&&window.__innKeyLine())||/^(잠깐|그런데|그렇다면|하나만|한 가지)|보시죠|확인하겠습니다|여쭙겠습니다/.test(tx));f=FV+dadPose(tx,inner,md)+"-speaker128.png"}
+    var mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"")}
+    var fk=DL.i+"|"+tx.length;
+    if(fing){if(SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FV+"finger-base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FV+"finger-raised-speaker128.png")},200)}}
+    else{if(SPK.dataset.fk){SPK.dataset.fk="";clearTimeout(SPK.__ft)}if(f){if(SPKIMG.getAttribute("src")!==f)SPKIMG.setAttribute("src",f)}else SPKIMG.removeAttribute("src")}
     /* 2026-10-10 작은 연출: 긴장·당황 표정(nervous/shock/worried) 줄에서는 초상 옆으로 땀방울이 조금씩 흐르고, 놀람(shock)·"?!" 줄은 한 번 움찔한다 */
-    var md=String(ln[2]||""),tx=String(ln[1]||""),fx=/nervous|shock|worried|panic|sweat/.test(md)||/땀/.test(tx)?"sweat":"",jolt=/shock|surprise/.test(md)||/\?!|!\?/.test(tx);
+    var fx=/nervous|shock|worried|panic|sweat/.test(md)||/땀/.test(tx)?"sweat":"",jolt=/shock|surprise/.test(md)||/\?!|!\?/.test(tx);
     if(SPK.dataset.fx!==fx){SPK.dataset.fx=fx;var sw=SPK.querySelector(".sw9");if(fx&&!sw){sw=document.createElement("i");sw.className="sw9";SPK.appendChild(sw)}else if(!fx&&sw)sw.remove()}
     var lk=DL.i+"|"+tx.length;if(jolt&&SPK.dataset.jk!==lk){SPK.dataset.jk=lk;SPK.classList.remove("jolt9");void SPK.offsetWidth;SPK.classList.add("jolt9")}
     if(!vt.classList.contains("v3"))vt.classList.add("v3")}catch(e){}}

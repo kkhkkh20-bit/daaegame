@@ -26,9 +26,8 @@
  function src(k,m){if(k==="wanggu")return "art/ch1/neoul-v2/neoul-"+neoState(m)+"-dialogue.png";var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
 if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    /* 다람 v4(2026-10-09 확정 초기 복장) 6상태: 기본(수첩·꼬리 분리 합성, 꼬리 흔들기)/메모/활짝/땀 당황/참는 분노/코믹 분노. 슬픔·겁·결심·꼬리숨김은 기존 그림 유지 */
-   var DV4={"":"idle-t0",neutral:"idle-t0",think:"memo",memo:"memo",laugh:"joy",joy:"joy",smile:"joy",oops:"flustered",panic:"flustered",nervous:"flustered",shock:"flustered",mad:"comic-anger",angry:"comic-anger",pout:"held-anger",held:"held-anger"};
-   if(Object.prototype.hasOwnProperty.call(DV4,dm))return "art/ch1/daram-v4/daram-"+DV4[dm]+"-dialogue.png";
-   return "art/ch1/cast/"+(DFACE[dm]||"daram-front")+".png"}
+   /* 2026-10-10 GPT·사용자: 옛 외형(갈색 모자 v2/v3)이 섞여 번쩍이지 않게 모든 표정을 v4로. 정확한 슬픔·겁·결심 표정은 후속 아트 대기 → 가장 가까운 상태 */
+   return "art/ch1/daram-v4/daram-"+dv4(dm)+"-dialogue.png"}
   if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
   if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
   /* 세련: 앉아서 서류를 보는 v2(2026-10-09 전달, 개별 시안·최종 승인 아님). 대화에서도 앉은 맥락 유지 → 놀람 차분(서 있는 v1)은 쓰지 않는다 */
@@ -72,11 +71,17 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 다람 기본 그림의 꼬리 흔들기: 2.6초마다 짧게(t0→t1→t0→t2→t0). 다른 표정은 꼬리가 그림에 포함돼 있어 움직이지 않는다 */
  (function(){var SEQ=["t1","t0","t2","t0"],ph=-1,wait=0;setInterval(function(){try{var im=document.querySelector(".isf img[src*='daram-idle-t']");if(!im){ph=-1;return}
    if(ph<0){if(++wait<16)return;wait=0;ph=0}var f=SEQ[ph];im.setAttribute("src",im.getAttribute("src").replace(/daram-idle-t\d/,"daram-idle-"+f));ph++;if(ph>=SEQ.length)ph=-1}catch(e){}},160)})();
- function neoState(m){var t="";try{var l=DL&&DL.lines&&DL.lines[DL.i];t=String((l&&(l[1]||l.t))||"")}catch(e){}var md=String(m||"");
+ var DV4={"":"idle-t0",neutral:"idle-t0",think:"memo",memo:"memo",laugh:"joy",joy:"joy",smile:"joy",oops:"flustered",panic:"flustered",nervous:"flustered",shock:"flustered",shy:"flustered",caught:"flustered",cower:"flustered",
+   mad:"comic-anger",angry:"comic-anger",pout:"held-anger",held:"held-anger",resolve:"held-anger",confront:"held-anger",sad:"idle-t0",worried:"idle-t0"};
+ function dv4(m){var k=String(m||"").split(/\s+/)[0];return Object.prototype.hasOwnProperty.call(DV4,k)?DV4[k]:"idle-t0"}
+ window.__innDV4=dv4;
+ function neoState(m){var t="";try{var l=DL&&DL.lines&&DL.lines[DL.i];t=String((l&&(l[1]||l.t))||"");   /* 한 대사가 여러 쪽으로 나뉘어도 같은 상태를 유지: 같은 묶음(__pg.g)의 글을 합쳐 판단 */
+   if(l&&l.__pg){t=DL.lines.filter(function(x){return x&&x.__pg&&x.__pg.g===l.__pg.g}).map(function(x){return String(x[1]||x.t||"")}).join(" ")}}catch(e){}var md=String(m||"");
   if(/angry|mad|shock/.test(md)||/!/.test(t))return "angry";
-  if(/크흠|흠\.|머쓱|실례|죄송|미안|그렇군요|제가 잘못/.test(t))return "sheepish";
+  if(/크흠|흠\.|머쓱|실례|죄송|미안|제가 성급|제가 잘못/.test(t))return "sheepish";
   if(/규정|규약|규칙|두십시오|해야 합니다|안 됩니다|벌금|허가|회의를 엽니다|정오 우편 마차|옮기지만 않는다면|기록하겠습니다|안건/.test(t))return "admonish";
   return "default"}
+ window.__innNeoState=function(m){try{return neoState(m)}catch(e){return "default"}};
  function frame(k,s,W,H){var f=FSC[s];if(f){var sc=f[5]*H/f[1];return {w:f[0]*sc,h:f[1]*sc,left:W/2-(f[2]+f[3])/2*sc,top:H*12/390-f[4]*sc+f[6]*H}}
   var b=BOX[s]||[192,192,20,170,10,6],sc=(DS[k]||2.739)*H/390;return {w:b[0]*sc,h:b[1]*sc,left:W/2-(b[2]+b[3])/2*sc,top:H*12/390-b[4]*sc}}
  window.__innFrame=function(k,s){return frame(k,String(s||"").split("?")[0],innerWidth,innerHeight)};
@@ -168,10 +173,11 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
  function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
  /* 이름표: 아빠가 이름을 듣기 전까지는 '???' (프롤로그 첫 만남). 이름을 말하는 그 줄부터 이름이 뜬다 */
- var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"숙박부에 적힌 이름은 '세련'",wanggu:"마을 규정 담당, 너울입니다"};
+ var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"숙박부에 적힌 이름은 '세련'",wanggu:"자경단장 너울입니다"};
  function revealAt(k){for(var i=0;i<EP.PRO.length;i++){var it=EP.PRO[i].items;for(var j=0;j<it.length;j++){var t=lt(it[j]);if(typeof t==="string"&&t.indexOf(REVEAL[k])>=0)return i}}return -1}
  var RPI={};Object.keys(REVEAL).forEach(function(k){RPI[k]=revealAt(k)});var heard={};
- function known(k){if(!REVEAL[k])return true;try{if(G.beats&&G.beats.inn_pro)return true;var pi=G.beats&&G.beats.inn_pi;if(pi==null)return true;if(pi>RPI[k])return true;if(pi<RPI[k])return false}catch(e){return true}return !!heard[k]}
+ var INVINTRO={buri:1,doto:1,geokkuri:1};   /* 2026-10-10: 프롤로그에서 빠져 조사 중에 처음 만나는 인물 — 자기소개 줄을 듣기 전까지 ??? (들은 것은 저장) */
+ function known(k){if(!REVEAL[k])return true;try{if(INVINTRO[k]&&G.beats&&G.beats.inn_pro){if(heard[k]&&!G.beats["inn_heard_"+k])G.beats["inn_heard_"+k]=1;var EVK={buri:"C04",doto:"C08",geokkuri:"C07"};return !!(G.beats["inn_heard_"+k]||heard[k]||G.beats.inn_final||G.found.indexOf(EVK[k])>=0)}if(G.beats&&G.beats.inn_pro)return true;var pi=G.beats&&G.beats.inn_pi;if(pi==null)return true;if(pi>RPI[k])return true;if(pi<RPI[k])return false}catch(e){return true}return !!heard[k]}
  /* 아빠 속마음(괄호로 시작하는 지문): 푸른 글씨와 '아빠' 이름표. 질문 화면을 포함한 모든 대사창에 적용 */
  function innerSync(){try{if(!cur()||typeof DL==="undefined"||!DL)return;var ln=DL.lines[DL.i];var vb=document.querySelector("#vnbox .vband");if(!ln||!vb)return;
   var inr=lw(ln)==="narr"&&String(lt(ln)||"").charAt(0)==="(";vb.classList.toggle("inner",inr);
@@ -281,7 +287,10 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 힌트 등 엔진의 한 줄 '속마음'(다람의 속마음 이름표)은 1장에서 다람이 직접 말하는 줄로 바꾼다(아빠 시점: 속마음 이름표는 아빠만) */
  try{var _say0=say;say=function(lines,done,sk){if(obsNote(lines)){setTimeout(function(){done&&done()},0);return}
    if(think1(lines))lines=[["det1",String(lines[0][1]||"")]];return _say0.call(this,entryFilter(lines),done,sk)}}catch(e){MISS.push("stage entry")}
- function split(base,self,lines,done,sk){try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&(x[0]==="@inspect"||x[0]==="@dir"||x[0]==="@grant")})){
+ /* 2026-10-10 장르 비교 검수: "[표 변화]·[감점 없음]·[연결]" 같은 시스템 꼬리표가 대사창에 그대로 보여 몰입을 깨던 것 — 표시할 때만 떼어 낸다(데이터·판정은 그대로) */
+ var TAGRE=/^\[(표 변화|감점 없음|연결|결정|순서|상황|지목|잠정 투표|다시|추가 질문)\]\s*/;
+ function untag(lines){try{if(!cur()||!Array.isArray(lines))return;lines.forEach(function(x){if(Array.isArray(x)&&typeof x[1]==="string"&&TAGRE.test(x[1]))x[1]=x[1].replace(TAGRE,"");else if(x&&typeof x.t==="string"&&TAGRE.test(x.t))x.t=x.t.replace(TAGRE,"")})}catch(e){}}
+ function split(base,self,lines,done,sk){untag(lines);try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&(x[0]==="@inspect"||x[0]==="@dir"||x[0]==="@grant")})){
     var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else if(Array.isArray(x)&&x[0]==="@dir"){parts.push(curp);parts.push({dir:parseDir(x[1])});curp=[]}else if(Array.isArray(x)&&x[0]==="@grant"){parts.push(curp);parts.push({grant:x[1]});curp=[]}else curp.push(x)});parts.push(curp);
     var k=0;(function next(){if(k>=parts.length){done&&done();return}var p=parts[k++];
      if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
