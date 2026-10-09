@@ -75,11 +75,11 @@
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    var b=beats();
-   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);
+   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(pi<6)M.inv=false;
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
     if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 창고 앞·P13 찻주전자: 사건곡 */
-   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt){var th=null;try{if(G.tab==="talk"&&G.who)th=THEME[G.who]}catch(e){}return th||"inn_inv"}   /* 조사 중 인물과 대화: 그 인물의 테마 */
+   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt){var th=null;try{if(G.tab==="talk"&&G.who){if(M.tw!==G.who){M.tw=G.who;M.tt=Date.now()}if(Date.now()-M.tt>2500)th=THEME[G.who]}else M.tw=null}catch(e){}return th||"inn_inv"}   /* 짧게 한 마디 묻고 나오면 조사곡이 처음부터 다시 시작하지 않게: 대화 2.5초 뒤에 테마로 */   /* 조사 중 인물과 대화: 그 인물의 테마 */
     try{var ph=window.__rtPh&&__rtPh(),E=window.EP1INN||{};if(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)return "inn_climax"}catch(e){}
     return "inn_meet"}                              /* 조사 / 원탁회의 / 최종 대결: 장면마다 다른 곡 */
    if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
@@ -121,7 +121,7 @@
   wrap("door",function(){if(!S.sound)return;noise(.06,.3,0,900,"lowpass");tone(140,.09,"sine",.28,0,null,90);noise(.015,.1,.03,3000,"highpass")});   /* 문 닫힘: 달칵(옛 '딩동' 아님) */
   wrap("slam",function(){if(!S.sound)return;tone(100,.26,"sine",.55,0,null,45);noise(.18,.45,0,520)});   /* P11 기상: 쾅 1회, 과하지 않게 */
   wrap("letter",function(){});                     /* 장면 제목 글자마다 '틱' 없음 */
-  wrap("impact",function(){if(!S.sound)return;tone(98,.5,"sine",.3,0,null,62);noise(.25,.12,0,300)});
+  wrap("impact",function(){if(!S.sound)return;if(!document.querySelector("body>.rt")&&!(beats().inn_final&&!beats().inn_end)){tone(660,.5,"sine",.06);tone(990,.35,"sine",.025,.04);return}tone(98,.5,"sine",.3,0,null,62);noise(.25,.12,0,300)});   /* 2026-10-10 검수: 장소·시각 띠마다 쿵 → 회의·최종 대결 밖에서는 부드러운 종 */
   wrap("tick2",function(){});                      /* 빈 곳 터치 '틱' 없음 */
   wrap("roll",function(){});                       /* 옛 드럼롤(마차 대용) 없음 */
   /* 2026-10-10 "앗! 헉! 같은 말에 빠악! 충격음": 날카로운 타격 + 짧은 하강음 */
