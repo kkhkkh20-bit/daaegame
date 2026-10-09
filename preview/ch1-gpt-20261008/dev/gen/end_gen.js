@@ -1,0 +1,223 @@
+ var FL=window.__INNFL;
+ /* ---- 후일담 E1~E5 · 회의 직전 R0 (장면 대본 JSON에서 생성) ---- */
+ EP.END=[
+  /* E1 너울의 사건 처리 */
+  B("reception","wanggu",S("front","여관 앞","정오",[
+   I("회의는 끝났다. 밖에 서니 눈발이 보인다. 아직 물어볼 것이 남아 있다."),
+   D({"who": "wanggu", "chime": 0, "ms": 380}),
+   FL("wanggu","세련 씨는 마을 감옥으로 인계했습니다. 규정대로 처리하겠습니다."),
+   FL("wanggu","가방 안의 편지들은 제가 보관하겠습니다."),
+   N("너울의 기록부 사이로, 처음 보는 봉인이 찍힌 편지 묶음이 들어간다."),
+   FL("det1","그 편지, 누가 보낸 거예요?"),
+   FL("wanggu","아직 모릅니다. 그래서 보관하는 겁니다."),
+   FL("det0","수고 많으셨습니다. 저희가 낼 벌금도 잊지 않겠습니다."),
+   FL("wanggu","기록해 두었습니다. 봄 전까지만 내시면 됩니다.")])),
+  /* E2 마지막 우편 마차 */
+  B("reception","karo",S("front","여관 앞, 우편 마차","정오",[
+   I("정말 마지막 마차다. 이제 돌아갈 길보다 여기서 알아볼 일이 더 많아졌다."),
+   D({"who": "karo", "chime": 1, "ms": 380}),
+   FL("karo","마지막 우편 갑니다. 다음 마차는 봄이에요."),
+   FL("det0","길 조심하십시오."),
+   FL("karo","다람 손님 서명은 명부에 잘 보관해 둘게요. 봄에 다시 뵙죠."),
+   FL("det1","네. 봄에는 안 흔들릴 때 쓸게요."),
+   D({"sfx": "carDepart", "who": "det1", "chime": 1, "ms": 380}),
+   N("마차가 고개 너머로 멀어진다. 길이 금세 하얗게 지워진다."),
+   FL("det1","아빠, 마차 갔어. 이제 봄까지 못 나가?"),
+   FL("det0","응. 우린 여기서 겨울을 나겠네."),
+   FL("det1","그럼 엄마 찾을 시간은 많네.","resolve"),
+   FL("det0","응. 찾아보자.","resolve")])),
+  /* E3 할머니의 시계 */
+  B(null,"innma",S("dining","식당","오후",[
+   I("식당이 다시 조용해졌다. 그런데 복도에서 들리던 시계 소리가 없다."),
+   D({"who": "innma", "chime": 1, "ms": 380}),
+   FL("innma","너울 씨한테 벌금은 치렀어요. 복도의 그 시계로요."),
+   FL("innma","오래된 거라 값은 좀 나가더라고요."),
+   FL("det1","할머니, 그 시계가 할머니를 구해 줬잖아요."),
+   FL("innma","그러게. 오래 매달려 있더니, 마지막 날 일을 많이 했네.","smile"),
+   FL("det0","괜찮으시겠습니까? 아끼시던 물건 같은데요.","smile"),
+   FL("innma","시계는 또 걸면 되지요. 사람은 또 못 구해요.","smile"),
+   I("아까 부리 씨가 바구니를 난로에서 조금 떨어뜨려 놓았다. 말없이 손부터 조심스러워지셨다.")])),
+  /* E4 두 번째 장부의 글씨 */
+  B("corridor","det1",S("hall","할머니 방 앞","밤",[
+   I("돋보기를 돌려드리러 왔는데 안 계신다. 책상에 두고 바로 나와야겠다."),
+   D({"who": "det1", "chime": 0, "ms": 380}),
+   FL("det1","아빠, 할머니 안 계셔. 돋보기는 책상에 두고 가자."),
+   N("펼쳐진 공책. 표지에 「손님 장부 둘째 권」."),
+   FL("det1","…아빠. 이 글씨.","shock"),
+   I("지난겨울, 열세 번째 침대. 이 글씨를 내가 모를 리 없다. 몇 해 동안 같은 편지를 읽었는데."),
+   FL("det1","엄마 글씨야. 편지랑 똑같아.","shock"),
+   D({"sfx": "steps", "ms": 380}),
+   D({"who": "innma", "chime": 0, "ms": 380}),
+   FL("innma","남의 장부를 함부로 보면 못써요.","think"),
+   FL("det0","죄송합니다. 돋보기를 돌려드리러 왔다가 펼쳐져 있는 걸 봤습니다.","think"),
+   FL("det1","할머니, 이거 우리 엄마 글씨예요. 엄마가 여기 왔었어요?","think"),
+   FL("det0","이 사람입니다. 혹시 기억나시는 게 있으시면…","think"),
+   N("할머니가 다람이 내민 엄마 사진을 한참 들여다보다가, 장부를 천천히 덮는다."),
+   FL("innma","…오늘은 다들 힘들었잖니. 늦었다, 아가. 이제 자러 가.","think"),
+   D({"who": "none", "sfx": "door", "ms": 450}),
+   D({"who": "det1", "chime": 0, "ms": 250})])),
+  /* E5 열네 번째 침대 */
+  B("corridor","det1",S("hall","2층 복도","다음 날 저녁",[
+   I("오늘도 다람이는 침대를 센다. 나도 어느새 같이 세고 있다."),
+   D({"who": "det1", "chime": 1, "ms": 380}),
+   FL("det1","열하나, 열둘, 열셋."),
+   D({"who": "innma", "chime": 1, "ms": 380}),
+   N("창고 안쪽에서 이불 펴는 소리가 난다."),
+   FL("det1","…열넷."),
+   FL("innma","봄까지 길 잃은 손님이 또 올지 모르니까."),
+   D({"who": "none", "sfx": "steps", "ms": 380}),
+   D({"who": "det1", "chime": 1, "ms": 220}),
+   FL("det1","아빠. 할머니는 엄마를 기억하시는 것 같아.","sad"),
+   FL("det0","응. 아빠도 그렇게 느꼈어.","sad"),
+   FL("det1","그런데 왜 말을 안 해 주셔?","sad"),
+   FL("det0","말 못 할 이유가 있으신지도 몰라. 서두르지 말자. 겨울은 기니까.","sad"),
+   N("다람이 마차에서부터 아껴 둔 마지막 간식 봉지를 뜯어, 절반을 아빠 손에 올린다."),
+   FL("det1","아껴 먹어. 겨울 길대."),
+   I("마차에서부터 내 몫을 남겨 뒀구나. 나는 까맣게 잊고 있었는데."),
+   FL("det0","반은 잘 지켜 놨네.")]))
+ ];
+ EP.THE_END={banner:["1장 끝","열세 번째 침대"],notice:{title:"1장 끝 · 열세 번째 침대",text:"다람탐정 1장을 마쳤어요."}};
+ EP.I9=[{loc:"dining"},
+   I("우리가 본 것을 빠뜨리지 말자. 다람이 수첩이 내 기억보다 나을 때도 있으니까."),
+   D({"who": "wanggu", "chime": 0, "ms": 380}),
+   D({"who": "karo", "chime": 0, "ms": 260}),
+   FL("karo","정오엔 출발합니다. 눈이 쌓이기 시작해서, 더 늦으면 고개를 못 넘어요."),
+   D({"who": "wanggu", "chime": 0, "ms": 260}),
+   FL("wanggu","그럼 시작하겠습니다. 기록은 제가 합니다."),
+   FL("det1","아빠, 우리가 본 거 다 말할 수 있을까?"),
+   FL("det0","본 것만 말하면 돼. 모르는 건 모른다고 하고."),
+   FL("det1","수첩도 펼쳐 놓을게."),
+   FL("det0","응. 네가 적은 게 도움이 될 거야."),
+   {hint:"원탁회의: 주민들의 발언 중 하나를 골라 되묻거나, 증거를 내밀어 반박해요"}];
+ /* ---- 조사·질문 대사 (장면 대본 JSON에서 생성) ---- */
+ function FIND(loc,kind,id){var l=EP.LOCS.filter(function(x){return x.id===loc})[0];return l&&(l[kind]||[]).filter(function(x){return x.id===id})[0]}
+ (function(){var x=FIND("bed13","spots","bag");if(x)x.say=[I("돈은 찾았는데 일이 더 커졌다. 눈앞에 있는 것부터 차근차근 보자.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   FL("det1","아빠, 이게 아까 베개 밑에서 나온 주머니지?"),
+   FL("det0","응. 세련 씨가 잃어버렸다는 주머니야. 열지는 말고, 겉에 보이는 것만 보자."),
+   L("@inspect","C01a"),
+   FL("det1","앗, 손에 빨간 게 묻었어. 아직 안 말랐나 봐.","oops"),
+   FL("det0","도장을 찍은 지 얼마 안 됐다는 거네. 손은 이따 씻자.","oops"),
+   FL("det0","봉인띠 밑에 종이가 접혀 끼워져 있네. 펼쳐 볼게."),
+   L("@inspect","C01b"),
+   FL("det1","할머니 이름 칸은 비어 있어. 세련 아저씨 이름 끝에는 별이 있고."),
+   FL("det0","할머니는 서명하지 않았다는 거지. 뒷면 조항도 기억해 두자."),
+   FL("det1","…'허가를 잃는 날'. 아까 너울 아저씨가 한 말이랑 같아.")];})();
+ (function(){var x=FIND("bed13","spots","quilt");if(x)x.say=[I("이불 모서리가 하얗다. 다른 곳과 섞이기 전에 모양을 봐 두자.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   FL("det1","아빠, 이불 모서리에 손자국이 있어. 하얀 걸로 찍혔어."),
+   FL("det0","가루가 묻은 손으로 이불을 잡았나 보다."),
+   FL("det1","분필 같기도 하고, 밀가루 같기도 해."),
+   FL("det0","누구 손인지는 아직 몰라. 묻은 자리만 정확히 기억해 두자.")];})();
+ (function(){var x=FIND("bed13","spots","ledger");if(x)x.say=[I("이름 없는 손님들이 이렇게 많았구나. 어떤 사정이 있었던 걸까.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   FL("det1","이름을 모르는 손님이 이렇게 많아? 할머니가 이름을 안 물어보셨나?"),
+   FL("det0","이름을 못 대는 손님도 재워 줬다는 뜻일 수도 있어."),
+   L("@inspect","C11"),
+   FL("det1","그림으로 서명한 사람도 있어. 글씨를 몰랐나 봐."),
+   FL("det0","아니면 이름을 남기고 싶지 않았거나."),
+   FL("det1","…이 장부, 할머니가 왜 침대 밑에 숨겨 놨을까.")];})();
+ (function(){var x=FIND("bed13","obs","o_inn_box");if(x)x.say=[I("침대 밑에 상자가 있다. 자물쇠까지 채워 두신 물건인데, 함부로 건드리면 곤란하겠지.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   FL("det1","아빠, 침대 밑에 상자가 있어. 잠겨 있어."),
+   L("@dir","sfx:steps;ms:380"),
+   L("@dir","who:innma;chime:1;ms:380"),
+   FL("innma","거기 있는 건 옛날 숙박부예요. 볼 것 없어요.","think"),
+   FL("det1","숙박부인데 왜 침대 밑에 둬요?","think"),
+   FL("innma","늙으면 물건을 아무 데나 두게 돼. 손대지 마라, 아가.","think"),
+   L("@dir","who:none;sfx:steps;ms:380")];})();
+ (function(){var x=FIND("bed13","obs","o_inn_head");if(x)x.say=[I("머리판에 뭔가 새겨져 있다. 눈을 가까이 대도 잘 안 보인다. 나이 탓만은 아닌 것 같다.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   FL("det1","뭐라고 새겨져 있는데… 안 보여."),
+   FL("det0","해가 들 때 다시 와 보자.")];})();
+ (function(){var x=FIND("bed13","obs","o_inn_head2");if(x)x.say=[I("이제 글씨가 보인다. 다람이가 아까부터 기다리던 보람이 있네.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   FL("det1","창문이 조금 열려 있어. 그래서 여기만 이렇게 추웠나 봐."),
+   FL("det1","아빠, 이제 글씨가 보여. 「첫 손님」. 이 침대에 처음 묵은 사람인가 봐."),
+   FL("det0","그 뒤는 날짜네."),
+   FL("det1","열한 번째 달, 둘째 날…."),
+   FL("det0","침대 밑 상자는 숫자 네 개였지."),
+   I("열한 번째 달 둘째 날. 네 자리 숫자로 옮기면 될까.")];})();
+ (function(){var x=FIND("kitchen","spots","basket");if(x)x.say=[I("여전히 웅크린 채다. 내가 봐도 잘 모르겠다. 먼저 살펴본 분에게 들어 보자.",null,1),
+   L("@dir","who:buri;chime:0;ms:380;entry:1"),
+   FL("buri","차갑고, 숨도 안 쉬어요. 아까 내가 확인했어요."),
+   FL("det1","…진짜요? 오래 보셨어요?"),
+   FL("buri","다 식은 건 다시 안 움직여요. 장치든 뭐든."),
+   FL("det1","그래도… 장치하고는 다를 수도 있잖아요."),
+   L("@dir","who:none;sfx:steps;ms:380"),
+   L("@dir","who:det1;chime:0;ms:220")];})();
+ (function(){var x=FIND("kitchen","spots","fur");if(x)x.say=[I("작은 자국이라 맨눈으로는 어렵다. 돋보기를 빌려 온 다람이 덕을 또 본다.",null,1),
+   L("@dir","who:det1;chime:0;ms:380;entry:1"),
+   FL("det1","아빠, 할머니가 돋보기 빌려주셨어. 작은 글씨 볼 때 쓰시는 거래."),
+   L("@inspect","C05"),
+   I("이 작은 털 사이에 글씨가 남아 있다. 다람이가 아니었으면 그냥 지나쳤겠다."),
+   FL("det1","글씨가 거꾸로야. 별도 거꾸로고."),
+   FL("det0","이 애가 쓴 게 아니야. 다른 데 찍혀 있던 게 눌려서 묻은 거지."),
+   FL("det1","…빨간색이 아까 그 인주 같아.")];})();
+ (function(){var x=FIND("hall","spots","clock");if(x)x.say=[I("복도에 걸린 시계다. 눈금과 바늘을 가까이서 확인하자.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   FL("det1","아빠, 이 시계는 숫자가 하나도 없어."),
+   FL("det0","바늘이 어디를 가리키는지 보면 읽을 수 있어. 익숙한 사람한텐 충분하지."),
+   FL("det1","할머니는 매일 이걸 보시는구나.")];})();
+ (function(){var x=FIND("dotoroom","spots","diary");if(x)x.say=[I("어제 첫눈 시간을 적어 두겠다고 하셨다. 직접 확인해 보자.",null,1),
+   L("@dir","who:doto;chime:1;ms:380;entry:1"),
+   L("@inspect","C08"),
+   FL("doto","어젯밤에 올해 첫눈이 왔어요. 정확히 자정에요."),
+   FL("det0","자정인 건 어떻게 아셨습니까?"),
+   FL("doto","종이 열두 번 쳤거든요. 하나하나 세면서 창밖을 봤어요."),
+   FL("det1","눈이 오는 걸 보려고 안 주무셨어요?"),
+   FL("doto","첫눈은 한 해에 한 번뿐이라서요. 적어 둬야 하거든요.")];})();
+ (function(){var x=FIND("front","spots","book");if(x)x.say=[I("우리 이름 바로 아래에 세련 씨 이름이 있다. 하룻밤. 급한 볼일이었던 모양이다.",null,1),
+   L("@dir","who:det1;chime:1;ms:380;entry:1"),
+   L("@inspect","C09"),
+   FL("det1","세련 아저씨는 하룻밤만 자고 가는 거였네."),
+   FL("det0","겨울을 나러 온 손님은 아니라는 거지. 볼일이 있어서 왔던 거야."),
+   FL("det1","볼일… 아까 그 계약서?")];})();
+ EP.LOCK.open=[L("@dir","sfx:lock;ms:500")];
+ (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["innma"]="(할머니 말씀도 들어야 한다. 몰아세우지 말고, 어젯밤부터 여쭤보자.)";
+ (function(){var t=EP.TALK["innma"].filter(function(x){return x.id==="T_ma1"})[0];if(t)t.lines=[FL("det0","창고에 있던 침대 말입니다. 어떤 침대입니까?","think"),
+   FL("innma","남는 침대예요. 손님이 몰리면 쓰려고 둔 거지.","think"),
+   FL("det0","어젯밤에 누가 그 침대를 썼습니까?","think"),
+   FL("innma","아무도 안 썼어요. 장부에도 없는 침대니까… 없는 셈 쳐도 돼요.","think"),
+   FL("det1","그런데 침대는 있잖아요. 제가 두 번 세 봤어요.","think"),
+   FL("innma","아가, 잘 세는 건 좋은 버릇이야. 그래도 세상엔 굳이 안 세도 되는 것도 있단다.","think")].concat(t.__follow||[]);})();
+ (function(){var t=EP.TALK["innma"].filter(function(x){return x.id==="T_ma2"})[0];if(t)t.lines=[FL("det0","어젯밤에는 몇 시쯤 주무셨습니까?","think"),
+   FL("innma","열한 시쯤 방에 들어갔어요. 늙은이는 일찍 자야 하루를 버티거든.","think")].concat(t.__follow||[]);})();
+ (function(){var t=EP.TALK["innma"].filter(function(x){return x.id==="T_ma3"})[0];if(t)t.lines=[FL("det0","세련 씨는 전에 본 적이 있는 손님입니까?","think"),
+   I("대답을 망설이신다. 지금은 더 다그치지 말자."),
+   FL("innma","…처음 보는 사람이에요.","think")].concat(t.__follow||[]);})();
+ (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["seryeon"]="(잃어버린 분의 말부터 정확히 적자. 시간이 섞이면 나중에 더 어려워진다.)";
+ (function(){var t=EP.TALK["seryeon"].filter(function(x){return x.id==="T_se1"})[0];if(t)t.lines=[FL("det0","잃어버리신 주머니에는 무엇이 들어 있었습니까?"),
+   FL("seryeon","계약금입니다. 이 여관을 사려고 가져왔죠."),
+   FL("det1","할머니가 여관을 판대요?"),
+   FL("seryeon","아직은 안 파신다더군요. 그래서 직접 와서 다시 말씀드리려던 참입니다.")].concat(t.__follow||[]);})();
+ (function(){var t=EP.TALK["seryeon"].filter(function(x){return x.id==="T_se2"})[0];if(t)t.lines=[FL("det0","어젯밤 일을 처음부터 말씀해 주시겠습니까?"),
+   FL("seryeon","열한 시 종을 들으면서 계약금을 세고, 주머니를 봉했습니다. 머리맡에 두고 잤죠."),
+   FL("seryeon","자정에는 자고 있었습니다."),
+   FL("seryeon","일어나서 회중시계를 보니 여섯 시 반이더군요. 주머니가 없길래 복도까지 나가 찾아봤습니다."),
+   FL("seryeon","그래도 없어서 일곱 시에 모두를 불렀고요.")].concat(t.__follow||[]);})();
+ (function(){var t=EP.TALK["seryeon"].filter(function(x){return x.id==="C12"})[0];if(t)t.lines=[FL("det0","이 여관에는 전에 와 보신 적이 있습니까?"),
+   FL("seryeon","어제가 처음입니다. 이렇게 오래된 집일 줄은 몰랐네요.")].concat(t.__follow||[]);})();
+ (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["nabi"]="(아침 빵도 못 구웠다고 했다. 바쁜 와중이지만 어젯밤 일을 여쭤봐야겠다.)";
+ (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="C03"})[0];if(t)t.lines=[FL("det0","어젯밤에는 무엇을 하셨습니까?"),
+   FL("nabi","열한 시엔 빵 반죽하고 잤어요. 아침에 구우려면 밤에 해 둬야 하거든요."),
+   FL("det1","그럼 오늘 아침 빵은요?"),
+   FL("nabi","굽기도 전에 이 일이 터져서요. 기다렸죠? 미안해요."),
+   FL("det1","…괜찮아요. 지금은 빵 생각 안 나요.")].concat(t.__follow||[]);})();
+ (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="T_na2"})[0];if(t)t.lines=[FL("det0","창고 쪽에서 밤에 무슨 소리를 듣거나 보신 적은 없습니까?"),
+   FL("nabi","그 방 쪽엔 아무도 없었어요."),
+   I("앞치마만 자꾸 만지신다. 숨기려는 말이 있는 걸까. 아직은 모른다.")].concat(t.__follow||[]);})();
+ (function(){var t=EP.TALK["nabi"].filter(function(x){return x.id==="T_na3"})[0];if(t)t.lines=[FL("det0","할머니는 어떤 분입니까?"),
+   FL("nabi","할머니가 남의 돈에 손대실 리 없어요. 제가 여기서 일하면서 봤어요. 그건 정말이에요.")].concat(t.__follow||[]);})();
+ (window.__INNTALKENTRY=window.__INNTALKENTRY||{})["geokkuri"]="(밤새 복도가 보인다고 하셨다. 졸리시겠지만 잠깐만 여쭤보자.)";
+ (function(){var t=EP.TALK["geokkuri"].filter(function(x){return x.id==="C13"})[0];if(t)t.lines=[FL("det0","밤에 복도에서 무엇을 보셨습니까?"),
+   FL("geokkuri","봤어요. 족제비 손님이 시계 앞을 지나 저쪽으로 갔다가 금방 돌아왔어요. 여섯 시 반쯤."),
+   FL("det0","시각은 확실합니까?"),
+   FL("geokkuri","종이 막 그쳤거든요. 그래서 시계를 봤죠. 갈 땐 뭘 꼭 쥐고 있었고요."),
+   FL("det0","무엇을 쥐고 있었습니까?"),
+   FL("geokkuri","뭔지는 몰라요. 빨간 띠가 보이긴 했어요. 돌아올 때는 빈손이었고요."),
+   L("@inspect","C01show"),
+   FL("det0","이 주머니였습니까?"),
+   FL("geokkuri","어, 그거예요. 그 빨간 띠. 등잔 밑을 지나가서 잘 보였어요."),
+   FL("det0","갈 때는 들고 있었고, 돌아올 때는 없었다는 거죠?"),
+   FL("geokkuri","네. 그건 똑똑히 봤어요. 자기 물건 들고 다니는 줄 알았죠.")].concat(t.__follow||[]);})();
