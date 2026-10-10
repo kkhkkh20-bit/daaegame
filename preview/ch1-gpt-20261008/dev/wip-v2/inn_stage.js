@@ -27,6 +27,9 @@
   oops:"daram-ear-grab-signature-v1",shy:"daram-tail-hide-signature-v1",caught:"daram-tail-hide-caught-signature-v2",
   panic:"daram-surprised-front-v3",cower:"daram-worried-front-v3",joy:"daram-happy-front-v3",confront:"daram-determined-front-v3",mad:"daram-angry-front-v3"};
  function src(k,m){if(k==="wanggu")return window.__innNeoulSrc(m);
+  /* A room's seated work sprite must not override a standing dialogue actor.
+     The shared hook keeps stage expressions and question-screen posture aligned. */
+  var upright=window.__innPostureSrc&&window.__innPostureSrc(k,m);if(upright)return upright;
   if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(String(m||"")))return INNMA[pose(m,k)];
   var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
 if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
