@@ -49184,8 +49184,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   /* 앉은 그림 (교체 가능): art/seat/{키}-{표정}.png, 800x800, 몸 중심 x400·탁자선 y560. 목록에 없는 표정은 normal */
   window.__RTG_SEAT=window.__RTG_SEAT||{karo:["normal","reaction"],wanggu:["normal","reaction"],nabi:["normal","reaction"],det1:["normal"],buri:["normal"]};
   window.__RTG_EXPR=window.__RTG_EXPR||{fluster:"reaction",rebuttal:"reaction",doubt:"normal",assert:"normal",agree:"normal",normal:"normal"};
-  function seatSrc(k,m){if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&["det1","karo","nabi","geokkuri","seryeon"].indexOf(k)>=0)return null;var L=window.__RTG_SEAT[k];if(!L||!L.length)return null;var e=window.__RTG_EXPR[exprOf(m,"0")]||"normal";if(L.indexOf(e)<0)e="normal";return "art/seat/"+k+"-"+e+".png"}
-  function figHtml(k,m){if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&["det1","karo","nabi","geokkuri","seryeon"].indexOf(k)>=0){var f=k==="det1"?"daram-front":k==="karo"?"karo-front":k==="nabi"?"nabi-front":k==="seryeon"?(exprOf(m,"0")==="fluster"?"seryeon-surprise-front-v1":"seryeon-normal-front-v1"):exprOf(m,"0")==="fluster"?"bami-shock":"bami-front";return '<img alt="" class="sf innpixel" draggable="false" src="art/ch1/cast/'+f+'.png">'}var ss=seatSrc(k,m);if(ss)return '<img alt="" class="sf seat-art" draggable="false" src="'+ss+'">';var h="";try{h=window.__stageFig?window.__stageFig(k,m||""):""}catch(e){}
+  function seatSrc(k,m){if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&["det1","karo","nabi","geokkuri","seryeon","wanggu"].indexOf(k)>=0)return null;var L=window.__RTG_SEAT[k];if(!L||!L.length)return null;var e=window.__RTG_EXPR[exprOf(m,"0")]||"normal";if(L.indexOf(e)<0)e="normal";return "art/seat/"+k+"-"+e+".png"}
+  function figHtml(k,m){if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&k==="wanggu"){var nv=/fluster|rebuttal/.test(exprOf(m,"0"))?"neoul-admonish-profile":"neoul-default-profile";return '<img alt="" class="sf innpixel neoul9" draggable="false" src="art/ch1/neoul-v2/'+nv+'.png">'}if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&["det1","karo","nabi","geokkuri","seryeon"].indexOf(k)>=0){var f=k==="det1"?"daram-front":k==="karo"?"karo-front":k==="nabi"?"nabi-front":k==="seryeon"?(exprOf(m,"0")==="fluster"?"seryeon-surprise-front-v1":"seryeon-normal-front-v1"):exprOf(m,"0")==="fluster"?"bami-shock":"bami-front";return '<img alt="" class="sf innpixel" draggable="false" src="art/ch1/cast/'+f+'.png">'}var ss=seatSrc(k,m);if(ss)return '<img alt="" class="sf seat-art" draggable="false" src="'+ss+'">';var h="";try{h=window.__stageFig?window.__stageFig(k,m||""):""}catch(e){}
    if(!/img/.test(h)){try{h=pf(k,m||"")}catch(e){h=""}return h}return h.replace(/class="b202"/,'class="sf"')}
   function seatsOf(r){return [].map.call(r.querySelectorAll(".rt-seats .rs[data-seat]"),function(x){return x.dataset.seat})}
   function moodOf(r){var g=r.querySelector(".rt-big g[id^='an-']");if(!g)return "";var p=g.id.split("-");return p.slice(2).join("-")}
@@ -49194,7 +49194,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   function build(r){
    if(!SC){SC=document.createElement("div");SC.id="rtg";document.body.appendChild(SC)}
    var ks=seatsOf(r);if(!ks.length&&SC.dataset.k)ks=SC.dataset.k.split(",");var key=ks.join(",");
-   if(SC.dataset.k!==key){var P=layout(ks.length),h='<div class="stg"><div class="bg">'+((G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&window.__innWorldSvg)?window.__innWorldSvg("dining"):"")+'</div>';
+   if(SC.dataset.k!==key){var P=layout(ks.length),h='<div class="stg"><div class="bg">'+""+'</div>';
     ks.forEach(function(k,i){var p=P[i],sa=!!seatSrc(k,"");
      /* 앉은 그림: 캔버스 높이 44%, y560(70%)을 원탁 먼 가장자리(far)에 맞춤. 없으면 서 있는 도트를 원탁으로 가림(임시) */
      var bot=sa?(p.far+42*.30):p.b,hh=sa?42:p.h;
@@ -51187,6 +51187,9 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   try{new MutationObserver(testiMark).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
   window.__innUI9={obs:function(){return window.__innObsLast||""},HK:HK,OBS:OBS};
  })();
+
+ /* 2026-10-10 원탁 회귀 복구(핫픽스): 개발용 '임시 자산' 표기 숨김, 너울 착석 그림 미승인(missing) → 승인 프로필을 둥근 자리표로만 */
+ (function(){try{var st9=document.createElement("style");st9.textContent="body.inn1 #rtg .tmp{display:none!important}#rtg .seat img.neoul9{height:52%!important;width:auto!important;position:relative;top:34%;border-radius:50%;border:3px solid #C9A96A;background:#3A2A1E;box-sizing:border-box}";document.head.appendChild(st9)}catch(e){}})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}

@@ -32,7 +32,7 @@
     if(world)return;var fx=document.getElementById("fsscroll");if(!fx)return;var m=fx.scrollWidth-fx.clientWidth;fx.style.setProperty("overflow-x","hidden","important");var c=Math.max(0,Math.round(m/2));if(Math.abs(fx.scrollLeft-c)>1)fx.scrollLeft=c}catch(e){}}
 
   /* ---------- 1) 장소 이동 목록 ---------- */
-  var SHORT={bed13:"창고 · 열세 번째 침대",dining:"식당",kitchen:"부엌",hall:"2층 복도",dotoroom:"도토의 방",front:"접수대",plaza:"광장 (여관 밖)"};
+  var SHORT={bed13:"안 쓰는 방 · 열세 번째 침대",dining:"식당",kitchen:"부엌",hall:"2층 복도",dotoroom:"도토의 방",front:"접수대",plaza:"광장 (여관 밖)"};
   var MV=null,pass=false;
   function mvClose(){if(MV){MV.remove();MV=null}B.classList.remove("innmv-on")}
   function mvOpen(btn){mvClose();var c=CASES[G.ci],h='<div class="hd"><b>장소 이동</b><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="ls">';
@@ -87,9 +87,12 @@
    /* 2026-10-10 "침대·자물쇠 상자를 다시 누르면 다른 네모 상자가 생긴다": 이미 챙긴 증거 자리(주머니·손자국·상자)를 다시 누르면 뒤의 침대 관찰로 새어 나가 엉뚱한 자리에 표시가 생기던 문제. 그 증거 이름만 짧게 알려 준다 */
    var dn=null;nd=1e9;[].slice.call(d.sc.querySelectorAll(".hot.done[data-done]")).forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;var dx=Math.max(r.left-e.clientX,0,e.clientX-r.right),dy=Math.max(r.top-e.clientY,0,e.clientY-r.bottom),dd=Math.max(dx,dy);if(dd<=28&&dd<nd){nd=dd;dn=h}});
    if(dn){var ev=(window.EP1INN&&window.EP1INN.EV||{})[dn.dataset.done];try{SFX.select()}catch(x){}obShow("("+(ev?ev.name:"이미 살펴본 곳")+". 이미 증거로 챙겼다.)");return}
-   var l=loc(),list=l&&OBS[l.id],p=worldPt(d.sc,e.clientX,e.clientY),hit=null;
+   var l=loc(),list=l&&((((window.EP1INN||{}).LOOK||{})[l.id]||[]).concat(OBS[l.id]||[])),p=worldPt(d.sc,e.clientX,e.clientY),hit=null;
    var hi=-1;if(list&&p)for(var i=0;i<list.length;i++){var r=list[i];if(p.x>=r[0]&&p.x<=r[0]+r[2]&&p.y>=r[1]&&p.y<=r[1]+r[3]){hit=r[4];hi=i;break}}
    if(hi>=0){markSeen(l.id,hi);setTimeout(drawMarks,0)}
+   var rr=hi>=0?list[hi]:null,lk=rr&&rr[5]?l.id+":"+rr[0]+","+rr[1]:null;   /* 2026-10-10 v2 "방마다 누를 게 너무 적다": 처음 누르면 아빠·다람 주고받기, 그 뒤엔 한 줄 */
+   if(lk&&(G.look9||[]).indexOf(lk)<0){(G.look9=G.look9||[]).push(lk);try{SFX.select()}catch(x){}obHide();window.__innObsLast=hit;try{saveProg()}catch(x){}
+    try{say(rr[5].map(function(x){return x.slice()}),function(){try{render()}catch(x){}})}catch(x){obShow(hit)}return}
    try{SFX.select()}catch(x){}obShow(hit||EMPTY9[(ei++)%EMPTY9.length]);window.__innObsLast=hit||"(빈 곳)"},true);
   /* 엔진의 빈 탭 말풍선(EMPTY·FLAV)은 1장 장면에선 이 관찰로 대신한다. 증거 지점·인물 단추는 막지 않는다 */
   document.addEventListener("click",function(e){if(tappable(e.target))e.stopPropagation()},true);
@@ -364,13 +367,13 @@
     var r=document.getElementById("w209rail");if(!r)return;var now=performance.now();if(now-(b.__t||0)<250)return;b.__t=now;r.classList.toggle("more");try{SFX.tap()}catch(x){}},true);
   /* QA 저장칸 표시(?qa=1 / ?slot=이름) */
   try{if(window.__QASLOT){var qb=document.createElement("div");qb.id="qaslot9";qb.textContent="QA 저장칸 · "+window.__QASLOT;qb.style.cssText="position:fixed;left:6px;bottom:6px;z-index:3000;padding:2px 8px;border-radius:6px;background:rgba(162,59,42,.85);color:#fff;font:12px Galmuri11,monospace;pointer-events:none";(document.body||document.documentElement).appendChild(qb)}}catch(e){}
-  /* 2026-10-10 독립 QA ⑤: 찻주전자를 보기 전, 힌트가 아직 부엌에 없는 나비·부리 대화나 숨은 바구니로 보내던 것 → 찬장 위 찻주전자로 */
+  /* 2026-10-10 v2: 주머니·이불을 본 뒤에도 침대 밑을 안 봤으면, 다음 할 일은 안 쓰는 방 침대 밑 */
   try{var _nsx=nextStep;nextStep=function(c){var r=_nsx.apply(this,arguments);try{if(!inn()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||!r)return r;
-    if((G.obsSeen||[]).indexOf("o_teapot")>=0||G.found.indexOf("C04")>=0)return r;var ki=-1;c.locations.forEach(function(l,i){if(l.id==="kitchen")ki=i});if(ki<0)return r;
-    if((r.tab==="talk"&&(r.who==="nabi"||r.who==="buri"))||(r.tab==="scene"&&r.loc===ki)){setTimeout(function(){try{window.__pointAt&&window.__pointAt('[data-obs="o_teapot"]')}catch(e){}},900);
-     return {say:"부엌 찬장 위 커다란 찻주전자가 마음에 걸려. 한번 살펴보자.",tab:"scene",loc:ki}}}catch(e){}return r}}catch(e){}
+    if((G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return r;var bi=-1;c.locations.forEach(function(l,i){if(l.id==="bed13")bi=i});if(bi<0)return r;
+    setTimeout(function(){try{window.__pointAt&&window.__pointAt('[data-obs="o_under"]')}catch(e){}},900);
+    return {say:"아빠, 침대 밑이 너무 어두워. 안쪽까지 한번 들여다보자.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
   /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
-  var KEYOBS={o_teapot:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
+  var KEYOBS={o_under:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
   function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!/^증거 수집 완료/.test(sm.textContent))return;var sc=document.getElementById("bigscene");if(!sc)return;
     var k=[].slice.call(sc.querySelectorAll("[data-obs]")).filter(function(b){var id=b.dataset.obs,cs=getComputedStyle(b);return KEYOBS[id]&&G.found.indexOf(KEYOBS[id])<0&&cs.visibility!=="hidden"&&(G.obsSeen||[]).indexOf(id)<0}).length;
     if(!k)return;var m=sm.textContent.match(/관찰\s*(\d+)/);sm.textContent="살펴볼 곳 "+(m?+m[1]:k)+"군데 남음"}catch(e){}}
@@ -439,7 +442,9 @@
     if(k==="nabi"&&lid==="kitchen")return AP+"nabi/dialogue.png";if(k==="doto"&&lid==="dotoroom")return AP+"doto/dialogue.png";}catch(e){}return null};
   /* [인물, 파일, x, y, 폭, 높이] — 식당은 통합 아트 배치표 그대로(세련 735,283 / 할머니는 좌우 보기 반대쪽 끝 부엌문 앞 바닥 579에 발), 부엌 나비는 식당 대비 가구 배율 1.6(의자 좌석 높이 비교) */
   var WN={dining:[["innma",AP+"grandma/npc.png",1800,303,162,276],["seryeon",AP+"seryeon/npc.png",735,283,241,361]],
-   kitchen:[["nabi",AP+"nabi/npc.png",830,190,339,504]],
+   kitchen:[["nabi",AP+"nabi/npc.png",830,190,339,504],["buri",AP+"buri/npc.png",1380,297,250,397]],
+   front:[["wanggu","art/ch1/neoul-v2/neoul-default-full240.png",1120,240,260,347]],
+   plaza:[["karo",AP+"karo/npc.png",1130,420,254,432]],
    hall:[["geokkuri",AP+"bami/npc.png",100,25,424,429]],
    dotoroom:[["doto",AP+"doto/npc.png",690,161,472,533,1]]};
   var OCC={dining:[["art/ch1/fg/dining_tabletop_occluder.png",858,427,906,86]]};
@@ -461,7 +466,7 @@
     var hit=null;[].slice.call(sv.querySelectorAll("image.wn9")).reverse().some(function(im){var bt=sc.querySelector('.npc.w9[data-npc="'+im.dataset.k+'"]');if(!bt||bt.dataset.nohit)return false;
       if(alphaAt(im,x,y,3)>60){hit=bt;return true}var tg=bt.querySelector("span");if(tg){var r=tg.getBoundingClientRect();if(r.width&&x>=r.left-4&&x<=r.right+4&&y>=r.top-4&&y<=r.bottom+4){hit=bt;return true}}return false});return hit}catch(e){return null}}
   window.__innNpcHit=function(x,y){var b=npcHit(document.getElementById("bigscene"),x,y);return b?b.dataset.npc:""};
-  function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[];var tp=(G.obsSeen||[]).indexOf("o_teapot")>=0||G.found.indexOf("C04")>=0;if(lid==="kitchen"&&!tp)L=L.filter(function(n){return n[0]!=="nabi"});var key=lid+"|"+L.length;   /* 나비는 너울을 부르러 갔다가, 찻주전자 발견 뒤 부엌에 돌아와 있다(찻주전자를 본 사람은 부녀뿐) */
+  function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[];var key=lid+"|"+L.length;   /* 나비는 너울을 부르러 갔다가, 찻주전자 발견 뒤 부엌에 돌아와 있다(찻주전자를 본 사람은 부녀뿐) */
     if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
      (WPX[lid]||[]).forEach(function(p){img(sv,p[0],p[1],p[2],p[3],p[4],"wp9")});
      L.forEach(function(n){var e=img(sv,n[1],n[2],n[3],n[4],n[5],"wn9");e.dataset.k=n[0];maskOf(n[1])});
@@ -472,8 +477,7 @@
      var p1=sv.createSVGPoint();p1.x=n[2];p1.y=n[3];var a=p1.matrixTransform(m);var p2=sv.createSVGPoint();p2.x=n[2]+n[4];p2.y=n[3]+n[5];var z=p2.matrixTransform(m);
      var w=Math.max(48,z.x-a.x),h=Math.max(48,z.y-a.y),l=a.x-br.left,t=a.y-br.top;
      [["left",l+"px"],["top",t+"px"],["width",w+"px"],["height",h+"px"],["transform","none"],["margin","0"]].forEach(function(d){bt.style.setProperty(d[0],d[1],"important")})});
-    if(lid==="kitchen"){var nb=sc.querySelector('.npc[data-npc="nabi"]');if(nb){if(!tp)nb.style.setProperty("display","none","important");else nb.style.removeProperty("display")}}
-    if(lid==="dotoroom"){var d=sc.querySelector('.npc[data-npc="doto"]');if(d){d.style.setProperty("pointer-events","none","important");d.dataset.nohit="1"}}}catch(e){}}
+    }catch(e){}}   /* 2026-10-10 v2 "도토 클릭해도 말 안 걸어짐": 도토에게도 질문이 생겨 단추를 켠다(일지 지점은 따로) */
   var PROF={det1:"daram",innma:"grandma",geokkuri:"bami",nabi:"nabi",karo:"karo",seryeon:"seryeon",wanggu:"neoul",doto:"doto",buri:"buri"};
 
   /* ==== 대화 UI v3(2026-10-09 확정): 대사창 안 왼쪽에 작은 화자 초상(누구 말인지 표시용, 표정·행동은 장면 인물이 맡음) ====
@@ -536,7 +540,32 @@
     var r=document.querySelector(".crec2");if(r){var th=r.querySelector(".cr-th.on"),tid=th&&th.dataset.crs,tab=r.querySelector('[data-crt="t"]');var testi=(tid&&TESTI[tid])||(tab&&/on|true/.test(tab.className+" "+tab.getAttribute("aria-pressed")));r.classList.toggle("testi9",!!testi)}}catch(e){}}
   try{new MutationObserver(testiMark).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
   window.__innUI9={obs:function(){return window.__innObsLast||""},HK:HK,OBS:OBS};
- })();
 
- /* 2026-10-10 원탁 회귀 복구(핫픽스): 개발용 '임시 자산' 표기 숨김, 너울 착석 그림 미승인(missing) → 승인 프로필을 둥근 자리표로만 */
- (function(){try{var st9=document.createElement("style");st9.textContent="body.inn1 #rtg .tmp{display:none!important}#rtg .seat img.neoul9{height:52%!important;width:auto!important;position:relative;top:34%;border-radius:50%;border:3px solid #C9A96A;background:#3A2A1E;box-sizing:border-box}";document.head.appendChild(st9)}catch(e){}})();
+  /* ==== 2026-10-10 v2 구조 피드백(사용자 승인) ==== */
+  /* (1) 위기가 눈앞에: 솜솜을 찾은 뒤 식당에 처음 들어서면, 세련이 계약서와 펜을 펴 두고 할머니는 동전 깡통을 센다(한 번) */
+  var STAKES=[["narr","(식당 공기가 아까와 다르다.)"],["seryeon","할머니. 회의가 끝나면 이백 냥을 물어내시든지, 여기 서명하시든지 둘 중 하나입니다.","smug"],
+   ["seryeon","미리 펴 두는 겁니다. 정오엔 바쁠 테니까요.","smug"],
+   ["narr","(식탁 위에 계약서와 펜, 인주가 가지런히 놓였다. 할머니는 대답 대신 무릎 위 낡은 깡통에서 동전을 한 닢씩 꺼내 세고 계신다.)"],
+   ["det1","…할머니, 그거 뭐예요?","sad"],["innma","…봄에 이불 새로 사려고 모아 둔 거야.","sad"],
+   ["narr","(깡통 바닥이 보인다. 이백 냥에는 한참 모자란다.)"],["narr","(다람이가 내 소매를 꽉 쥔다. 아무 말도 하지 않는다. 정오까지. 이게 진짜 시간이다.)"]];
+  setInterval(function(){try{if(!inn()||G.tab!=="scene"||dl()||!G.beats||!G.beats.inn_pro||G.beats.inn_meet||G.beats.inn_stakes)return;if(document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard"))return;
+    var l=loc();if(!l||l.id!=="dining"||G.found.indexOf("C04")<0)return;G.beats.inn_stakes=1;try{saveProg()}catch(e){}say(STAKES.map(function(x){return x.slice()}),function(){try{render()}catch(e){}})}catch(e){}},700);
+  /* (2) 회의 힌트 단계화: 1번째 방향만 → 2번째 어느 발언인지 → 3번째부터 다음에 낼 증거까지 */
+  setTimeout(function(){var _rh9=window.__rtHint;if(!_rh9)return;window.__rtHint=function(C,ph,has,setSi){if(!inn()||!ph||!ph.stms)return _rh9.apply(this,arguments);
+    var left=window.__hintLeft?window.__hintLeft():3;if(left<=0)return _rh9.apply(this,arguments);
+    G.hints=(G.hints|0)+1;G.beats=G.beats||{};var key="rth|"+(ph.topic||""),n=G.beats[key]=(G.beats[key]|0)+1;window.__rtPt=null;
+    if(n===1)return ph.hint;
+    for(var i=0;i<ph.stms.length;i++){var st=ph.stms[i];if(!st.a||!st.k)continue;var nmk=(CAST[st.w]||{}).name||st.w;setSi(i);
+     if(n===2){window.__rtPt=[".rt-bub.stm .wk"];return nmk+"의 이 말, 우리가 본 것과 맞아? 밑줄 친 부분을 다시 들어 보자."}
+     var need=(st.steps||[]).map(function(x){return x.ids}).concat([st.a]),sp=0;try{sp=window.__rtgStep?window.__rtgStep(st):0}catch(e){}
+     var ids=need[Math.min(sp,need.length-1)]||st.a,it=ids.filter(function(x){return has(x)})[0];
+     if(!it)return nmk+"의 이 말을 깰 증거가 아직 없어. 회의를 잠깐 멈추고 더 조사해 보자.";
+     window.__rtPt=[".rt-bub.stm .wk",'[data-bl="'+it+'"]'];var inm=itemName(C,it);return "'"+inm+"'"+josa(inm,"을","를")+" 떠올려 봐. "+nmk+"의 그 말과 부딪쳐."}
+    return ph.hint}},0);
+  /* 원탁 복구 보정: 개발용 '임시 자산' 표기는 숨기고, 너울(서 있는 진행자)은 다른 인물과 같은 크기로 */
+  try{var st9=document.createElement("style");st9.textContent="body.inn1 #rtg .tmp{display:none!important}#rtg .seat img.neoul9{height:52%!important;width:auto!important;position:relative;top:34%;border-radius:50%;border:3px solid #C9A96A;background:#3A2A1E;box-sizing:border-box}";document.head.appendChild(st9)}catch(e){}
+  /* (3) 설득력이 바닥나면: 할머니 서명 장면(EP.MF) → 처음부터 다시(모은 증거 유지) */
+  setTimeout(function(){var _f=window.__innFail;if(!_f)return;window.__innFail=function(kind){var a=arguments,self=this;if(!inn()||!window.__innPlay||!(window.EP1INN||{}).MF)return _f.apply(self,a);
+    try{var r=document.querySelector("body>.rt");if(r)r.remove();window.__inMeeting=false;document.body.classList.remove("rtg","rtg-drw")}catch(e){}
+    try{window.__innPlay(window.EP1INN.MF,function(){_f.apply(self,a)})}catch(e){_f.apply(self,a)}}},0);
+ })();
