@@ -214,6 +214,8 @@
    "#e9pop small{display:block;text-align:right;font:400 12px Galmuri11,monospace;color:#8A5E36}",
    "html body.w209.inn1 .crec2 #crdaram,html body.w209.inn1 .crec2 .cr-det:not(.empty) .cr-tx>#crdaram{display:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .dmemo{display:none!important}",
+   "html body.rtg .crec2{z-index:66!important}",
+   "html body.rtg .rtpanel{visibility:hidden!important}",   /* 회의 화면 아래 남은 소개 화면의 '원탁 회의 열기'(rtgo)가 키보드·접근성 클릭으로 눌려 회의가 두 장 열리던 것(dot QA 진행 차단의 실제 원인) */   /* 회의 중 연 사건 기록 창이 회의 화면(z60)·하단 단추(z62)·증거 서랍(z63) 아래에 깔려 닫히지 않던 것(dot QA 2026-10-10) */
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>h3{background:#F2C230!important;color:#2A1C12!important;padding:3px 10px!important;margin:0 0 4px!important;border:0!important;background-image:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>p{line-height:30px!important;background:repeating-linear-gradient(to bottom,transparent 0 28px,#C9B48C 28px 29px,transparent 29px 30px)}",
    "html body.w209.inn1 .crec2 .orig9{margin:6px 0 0}",
@@ -352,6 +354,22 @@
     var r=document.getElementById("w209rail");if(!r)return;var now=performance.now();if(now-(b.__t||0)<250)return;b.__t=now;r.classList.toggle("more");try{SFX.tap()}catch(x){}},true);
   /* QA 저장칸 표시(?qa=1 / ?slot=이름) */
   try{if(window.__QASLOT){var qb=document.createElement("div");qb.id="qaslot9";qb.textContent="QA 저장칸 · "+window.__QASLOT;qb.style.cssText="position:fixed;left:6px;bottom:6px;z-index:3000;padding:2px 8px;border-radius:6px;background:rgba(162,59,42,.85);color:#fff;font:12px Galmuri11,monospace;pointer-events:none";(document.body||document.documentElement).appendChild(qb)}}catch(e){}
+  /* 2026-10-10 독립 QA ⑤: 찻주전자를 보기 전, 힌트가 아직 부엌에 없는 나비·부리 대화나 숨은 바구니로 보내던 것 → 찬장 위 찻주전자로 */
+  try{var _nsx=nextStep;nextStep=function(c){var r=_nsx.apply(this,arguments);try{if(!inn()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||!r)return r;
+    if((G.obsSeen||[]).indexOf("o_teapot")>=0||G.found.indexOf("C04")>=0)return r;var ki=-1;c.locations.forEach(function(l,i){if(l.id==="kitchen")ki=i});if(ki<0)return r;
+    if((r.tab==="talk"&&(r.who==="nabi"||r.who==="buri"))||(r.tab==="scene"&&r.loc===ki)){setTimeout(function(){try{window.__pointAt&&window.__pointAt('[data-obs="o_teapot"]')}catch(e){}},900);
+     return {say:"부엌 찬장 위 커다란 찻주전자가 마음에 걸려. 한번 살펴보자.",tab:"scene",loc:ki}}}catch(e){}return r}}catch(e){}
+  /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
+  var KEYOBS={o_teapot:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
+  function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!/^증거 수집 완료/.test(sm.textContent))return;var sc=document.getElementById("bigscene");if(!sc)return;
+    var k=[].slice.call(sc.querySelectorAll("[data-obs]")).filter(function(b){var id=b.dataset.obs,cs=getComputedStyle(b);return KEYOBS[id]&&G.found.indexOf(KEYOBS[id])<0&&cs.visibility!=="hidden"&&(G.obsSeen||[]).indexOf(id)<0}).length;
+    if(!k)return;var m=sm.textContent.match(/관찰\s*(\d+)/);sm.textContent="살펴볼 곳 "+(m?+m[1]:k)+"군데 남음"}catch(e){}}
+  setInterval(statusFix,300);
+  /* 독립 QA ③: 넓은 화면(1180)에서 회의 말풍선이 왼쪽 위 상태판(설득력·시각·득표)을 가리던 것 → 겹치면 상태판 아래로 내린다 */
+  function bubFix(){try{var b=document.querySelector("body>.rt .rt-bub");if(!b)return;var hs=["#rtgtop","#rtgtal","#rtgclk",".rt-clock"].map(function(q){return document.querySelector(q)}).filter(Boolean);if(!hs.length)return;
+    var br=b.getBoundingClientRect(),dy=0;hs.forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;if(br.left<r.right&&br.right>r.left&&br.top<r.bottom&&br.bottom>r.top)dy=Math.max(dy,r.bottom+6-br.top)});
+    if(dy>0){var t0=parseFloat(b.style.top);if(isNaN(t0))t0=br.top;b.style.top=(t0+dy)+"px"}}catch(e){}}
+  setInterval(bubFix,250);
   function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+(ks.length+SELF.length)+'명 · [대사 열기]로 들은 말 보기</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
    SELF.forEach(function(x){h+='<section class="pc self"><div class="pf"><img alt="" src="'+x[4]+'"></div><div class="pt"><h4>'+esc(x[1])+'</h4><small>'+esc(x[2])+'</small><p>'+esc(x[3])+'</p></div></section>'});
    ks.forEach(function(k){var nm=({innma:"복례 할머니"})[k]||(CAST[k]&&CAST[k].name)||k,r=ROLE[k]||["",""],said=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q});
