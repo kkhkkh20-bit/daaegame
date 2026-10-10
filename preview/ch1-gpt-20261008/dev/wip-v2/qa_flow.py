@@ -5,6 +5,7 @@ parser.add_argument("--url", default="http://127.0.0.1:8000/playT.html")
 parser.add_argument("--retry", action="store_true", help="Check the first conclusion question appears again after reset")
 parser.add_argument("--failure", action="store_true", help="Choose five wrong conclusions and check M-F/restart preserves evidence")
 parser.add_argument("--final", action="store_true", help="Start at the final confrontation (use with --failure)")
+parser.add_argument("--without-ledger", action="store_true", help="Complete the story without optional C11 ledger discovery")
 args = parser.parse_args()
 TICK=r'''() => {
  const q=s=>document.querySelector(s), click=s=>{const e=q(s);if(e&&!e.disabled){e.click();return true}return false};
@@ -34,6 +35,7 @@ with sync_playwright() as p:
  pg.goto(args.url,wait_until='domcontentloaded');pg.wait_for_timeout(16000)
  pg.evaluate('''window.__T('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};');document.querySelector('#innmain').remove();window.__w209boot()''');pg.wait_for_timeout(1000)
  prepared='G.found=Object.keys(window.EP1INN.EV);G.exam={};allSpots(CASES[G.ci]).forEach(s=>G.exam[s.ev.id]=true);G.unlocked=CASES[G.ci].locations.map(l=>l.req).filter(Boolean);'
+ if args.without_ledger:prepared+='G.found=G.found.filter(id=>id!=="C11");'
  prepared += 'G.beats.inn_meet=1;window.__innOpenFinal()' if args.final else 'window.__rtOpen(CASES[G.ci])'
  pg.evaluate('(code)=>window.__T(code)', prepared)
  pg.evaluate('''window.__audioSeen={};setInterval(()=>{const s=window.__innAudioState();if(s.line)window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant()}},60)''')
@@ -91,6 +93,7 @@ with sync_playwright() as p:
    pg.wait_for_timeout(180)
   assert state['beats'].get('inn_end'), state
   assert state['wrong']==0, state
+  if args.without_ledger:assert not pg.evaluate('(code)=>window.__T(code)', 'G.found.includes("C11")')
   audio=pg.evaluate('window.__audioSeen')
   assert audio.get('…네.',{}).get('confession'), audio.get('…네.')
   assert any(v['key'] for k,v in audio.items() if k.startswith('첫눈은 자정')), 'Council dialogue audio hook missing'

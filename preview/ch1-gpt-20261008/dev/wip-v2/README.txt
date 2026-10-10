@@ -37,6 +37,11 @@
   https://kkhkkh20-bit.github.io/daaegame/preview/ch1-gpt-20261008/v2.html
   preview 루트의 v2.html은 기존 화면 맞춤 래퍼를 재사용하고 play_v2.html을 연다.
   기존 index.html/play.html 및 루트 공개 게임은 유지한다. 미승인 아트 변경 없음.
-  갱신: build.py 실행 후 build/play_v2.html을 preview 루트의 play_v2.html로 복사하여 커밋한다.
+  갱신: python3 preview/ch1-gpt-20261008/dev/wip-v2/publish.py 실행 후 커밋한다.
+  실제 v2 빌드를 복사하고 파일 해시로 게임 iframe의 캐시 버전을 갱신한다.
   build/playT.html은 시험용 평가 함수가 있으므로 배포하지 않는다.
   GitHub Pages는 main / 루트를 배포한다.
+
+- 이야기 논리 검사: qa_story.py (발견 위치 공개 순서·상자 허락), qa_intro.py (새 게임 도입).
+- qa_flow.py --without-ledger: 선택 장부 C11을 얻지 않은 경로에서도 결말까지 진행한다.
+- 전체 동기·인과관계 검수: CODEX_STORY_LOGIC_20261010.txt
