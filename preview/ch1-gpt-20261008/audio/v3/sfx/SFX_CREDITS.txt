@@ -1,0 +1,30 @@
+Chapter-one v3 sampled sound effects
+
+These are adaptations of existing game audio assets, not new oscillator synthesis.
+Original recording sessions/equipment are not independently verified.
+No claim of direct listening is made by this build.
+
+horse-carriage-loop.wav
+Original author: Wildfire Games (Copyright 2009).
+Source: https://github.com/0ad/0ad/blob/master/binaries/data/mods/public/audio/actor/mounted/movement/mstep113.ogg
+Author site: https://www.wildfiregames.com/
+License: CC BY-SA 3.0 — https://creativecommons.org/licenses/by-sa/3.0/
+This adapted horse audio is distributed under CC BY-SA 3.0.
+Changes: two impact excerpts, two-beat edit, EQ, fades, gain, WAV conversion.
+
+wood-door-open.wav
+Original author: CGEffex; modified by BlockMen.
+Source: https://github.com/minetest/minetest_game/blob/master/mods/doors/sounds/doors_door_open.ogg
+License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+Changes: EQ, short fades, gain, mono 44.1kHz WAV conversion; timing retained.
+
+wood-door-close.wav
+Original author: bennstir.
+Source: https://github.com/minetest/minetest_game/blob/master/mods/doors/sounds/doors_door_close.ogg
+License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+Changes: EQ, short fades, gain, mono 44.1kHz WAV conversion; timing retained.
+
+Attribution/license evidence is retained in source/ alongside the original OGGs.
+The credits above accompany these files; no endorsement by the original authors is implied.
+This notice covers the sound assets only; the game and its other assets retain their own licenses.
+Rebuild: python3 dev/wip-v2/gen/sfx_v3.py; source audio is pinned by SHA-256.

@@ -35,9 +35,8 @@ class Investigation:
                                '[DL.lines[DL.i][0],String(DL.lines[DL.i][7]||DL.lines[DL.i][1]||"")]:null')
             if line and (not self.spoken or self.spoken[-1] != line):
                 self.spoken.append(line)
-            cut = self.page.locator('#inn-under-scene')
-            if cut.count():
-                stage = cut.get_attribute('data-stage')
+            stage = self.page.evaluate("document.querySelector('#inn-under-scene')?.getAttribute('data-stage') || null")
+            if stage:
                 if stage not in self.captured:
                     self.page.screenshot(path='/tmp/scene-guidance-' + stage + '.png')
                     self.captured.add(stage)

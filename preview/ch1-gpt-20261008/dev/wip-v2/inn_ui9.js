@@ -424,7 +424,7 @@
     var T={C03:1,C07:1,C12:1,C13:1};try{if(!T[id]&&window.__memoOf)memo=window.__memoOf(CASES[G.ci],id)||""}catch(e){}
     var at=m.querySelector(".found-at"),place=at?at.textContent:"",who=(kk.textContent.split("·")[1]||"").trim();
     if(!short){var p0=m.querySelector(":scope>p");short=p0?p0.textContent:""}
-    var nm=h3.textContent.trim();m.classList.add("ev9");if(/증거 획득/.test(kk.textContent)){try{SFX.found()}catch(e){}}   /* 증언 카드는 효과음이 없던 것 */
+    var nm=h3.textContent.trim();m.classList.add("ev9");   /* 획득음은 지급 경로에서 한 번만. 카드 꾸미기는 소리를 재생하지 않는다. */
     var card=document.createElement("div");card.className="e9card";card.innerHTML='<div class="e9ic"></div><div class="e9tx"><div class="e9k"></div><h3 class="e9t"></h3><p class="e9d"></p><div class="e9opt"></div><div class="e9pan" hidden></div></div>';
     card.querySelector(".e9ic").appendChild(ic);card.querySelector(".e9k").textContent="증거 발견"+(who?" · "+who:"");card.querySelector(".e9t").textContent=nm;card.querySelector(".e9d").textContent=short;
     var opt=card.querySelector(".e9opt"),pan=card.querySelector(".e9pan");

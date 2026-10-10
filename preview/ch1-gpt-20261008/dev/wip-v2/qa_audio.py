@@ -51,18 +51,18 @@ with sync_playwright() as p:
     assert page.evaluate('window.__innWant()') == 'inn_climax_press'
     page.evaluate('window.__qaLine({w:"det0",t:"왜 숨기셨습니까?",audio:"silence"})')
     assert page.evaluate('window.__innWant()') is None
-    page.evaluate('window.__qaLine({w:"seryeon",t:"…네."});window.__innWant()')
+    page.evaluate('window.__audioOriginalPhase=window.__rtPh;window.__rtPh=()=>EP1INN.FINAL.phases.at(-1);window.__qaLine({w:"seryeon",t:"…네."});window.__innWant()')
     assert page.evaluate('window.__innAudioState().confession')
     assert page.evaluate('window.__innWant()') is None
     page.wait_for_timeout(2700)
     assert page.evaluate('window.__innWant()') == 'inn_t_innma'
     page.evaluate('window.__innAudioFailure(true)')
     assert page.evaluate('window.__innWant()') is None
-    page.evaluate('window.__innAudioFailure(false);window.__innAudioReset()')
+    page.evaluate('window.__rtPh=window.__audioOriginalPhase;window.__innAudioFailure(false);window.__innAudioReset()')
     assert not page.evaluate('window.__innAudioState().confession')
     stats = page.evaluate('''async()=>{
       const result={};
-      for(const key of Object.keys(window.__INN_PIANO)){
+      for(const key of Object.keys(window.__INN_MUSIC)){
         const b=await __AUD.render(key,8);let peak=0,sum=0,clipped=0;
         for(let c=0;c<b.numberOfChannels;c++)for(const x of b.getChannelData(c)){
           if(!Number.isFinite(x))throw Error(key+' non-finite audio');
@@ -82,6 +82,6 @@ with sync_playwright() as p:
     assert loop['relativeError']<.02,loop
     assert not errors, errors
     assert not bad,bad
-    print('Piano score: 16 decoded cues, pressure tempo, bounded media cache and full title loop OK',cache,loop)
+    print('String score: decoded cues, pressure tempo, bounded media cache and full title loop OK',cache,loop)
     print('Audio cues OK; offline 8-second samples (default mix, no live duck multiplier):', stats)
     browser.close()

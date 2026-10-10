@@ -257,7 +257,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
     cap:"창고에서 본 돈주머니의 붉은 봉인띠. 현장 물건은 옮기지 않고 조사 기록으로 보여 드린다.",look:"증거"}]}};
  function lay(k,alt){return '<span class="ilay"><img class="ib0" src="art/ch1/closeup/'+k+'-base-512.png" alt="'+alt+'"><img class="ib1" src="art/ch1/closeup/'+k+'-exact-overlay-512.png" alt=""></span>'}
  function inspect(key,done){var D=INSPECT[key];if(!D){done&&done();return}var i=0;
-  try{SFX.pop9&&SFX.pop9()}catch(e){}var el=document.createElement("div");el.id="innins";el.setAttribute("role","dialog");el.setAttribute("aria-label",D.title+" 자세히 보기");
+  try{SFX.page()}catch(e){}var el=document.createElement("div");el.id="innins";el.setAttribute("role","dialog");el.setAttribute("aria-label",D.title+" 자세히 보기");
   function draw(){var p=D.pages[i],last=i>=D.pages.length-1;
    el.innerHTML='<div class="iin"><div class="ihd"><small>자세히 보기</small><b>'+D.title+'</b>'+(D.pages.length>1?'<span class="ipg">'+D.pages.map(function(x,k){return '<i class="'+(k===i?"on":"")+'">'+x.look+'</i>'}).join("")+'</span>':'')+'</div>'+
     '<div class="iart">'+p.art+'</div><p class="icap">'+p.cap+'</p><div class="ibtns">'+(i>0?'<button class="ib ghost" data-k="prev">◀ 앞면</button>':'')+'<button class="ib" data-k="'+(last?"ok":"next")+'">'+(last?"다 봤어":"뒤집어 보기 ▶")+'</button></div></div>';
@@ -292,7 +292,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
     var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else if(Array.isArray(x)&&x[0]==="@dir"){parts.push(curp);parts.push({dir:parseDir(x[1])});curp=[]}else if(Array.isArray(x)&&x[0]==="@grant"){parts.push(curp);parts.push({grant:x[1]});curp=[]}else curp.push(x)});parts.push(curp);
     var splitGame=G,k=0;(function next(){if(G!==splitGame||!cur())return;if(k>=parts.length){done&&done();return}var p=parts[k++];
      if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
-     if(p&&p.grant){var gid=p.grant;if(G.found.indexOf(gid)>=0){next();return}try{window.__innGrant&&window.__innGrant(gid)}catch(e){}var v2=document.getElementById("dlgveil");if(v2&&!(typeof DL!=="undefined"&&DL))v2.remove();try{SFX.found()}catch(e){}if(window.__innCard)window.__innCard(gid,function(){next()});else next();return}
+     if(p&&p.grant){var gid=p.grant;if(G.found.indexOf(gid)>=0){next();return}try{window.__innGrant&&window.__innGrant(gid)}catch(e){}var v2=document.getElementById("dlgveil");if(v2&&!(typeof DL!=="undefined"&&DL))v2.remove();if(window.__innCard)window.__innCard(gid,function(){next()});else{try{SFX.found()}catch(e){}next()}return}
      if(p&&p.dir){dirRun(p.dir);setTimeout(next,p.dir.ms!=null?p.dir.ms:420);return}
      if(!p.length){next();return}var more=k<parts.length;base.call(self,p,function(){next()},sk);try{if(DL)DL.__more=more}catch(e){}})();return}}catch(e){}
    return base.call(self,lines,done,sk)}

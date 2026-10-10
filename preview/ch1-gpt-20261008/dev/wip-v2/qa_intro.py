@@ -18,12 +18,22 @@ with sync_playwright() as p:
         else:pg.keyboard.press('Enter')
         pg.wait_for_timeout(180)
     assert st['beats'].get('inn_pro'),st
-    assert any('편지를 보고 왔습니다' in t for t in seen),'Mother-search purpose missing'
-    assert any('먼저 주머니가 왜 여기 있었는지만' in t for t in seen),'Limited investigation motive missing'
-    for family_beat in ('탐정 일을 그만두고 작은 서점', '엄마가 갑자기 사라진 뒤',
-                        '나도 아빠처럼 탐정', '위험한 곳은 아빠가 먼저',
-                        '예전에 탐정 일을 했습니다', '수첩에 적을게'):
-        assert any(family_beat in t for t in seen),('Required family introduction missing',family_beat)
+    # Assert the actual story facts rather than the former explanatory wording.
+    required_facts = {
+        'Marriage, detective retirement and bookstore': '결혼 뒤 탐정 일을 접고 서점을 열었다',
+        'Sudden disappearance and old letter': '엄마가 갑자기 사라지고 옛 편지를 꺼냈다',
+        'Letter is years old': '몇 해 전 편지야',
+        'Mother search leads to this village': '아이 엄마를 아십니까? 이 마을에서 편지를 부쳤는데요',
+        'Child wants to help find mother': '나도 아빠처럼 탐정 할래. 엄마 찾는 것도 같이 할래',
+        'Father accepts child observations': '아빠가 놓친 건 네가 알려 줘',
+        'Child must not go ahead alone': '대신 혼자 먼저 가지 않기',
+        'Former detective disclosed to villagers': '예전에 탐정 일을 했습니다',
+        'Mother information motivates intervention': '할머니가 가시면 엄마 얘기도 못 듣겠네',
+        'Search starts with limited physical clues': '주머니와 이불부터 살펴보자',
+        'Child records observed behavior': '할머니가 이불 보던 것도 적을게',
+    }
+    for fact, phrase in required_facts.items():
+        assert any(phrase in t for t in seen), ('Required introduction fact missing', fact, phrase)
     assert any('크르르. 내 책을' in t for t in seen), 'Shared bedtime routine not played'
     assert any('책 말고 간식이야' in t for t in seen), 'Child did not correct the familiar story'
     assert not errors,errors

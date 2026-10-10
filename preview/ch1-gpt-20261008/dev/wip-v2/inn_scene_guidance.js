@@ -56,7 +56,7 @@
  function record(s){
   if(!valid(s)){clear(s);return}
   stage(s,'basket');G.beats.inn_basket_transferred=1;markObs('o_under');var fresh=!has('C04');window.__innGrant('C04');try{saveProg()}catch(e){}clear(s);render();
-  if(fresh){try{SFX.found()}catch(e){}window.__innCard('C04',function(){if(G===s.game&&bedroom()&&G.tab==='scene')render()})}
+  if(fresh){window.__innCard('C04',function(){if(G===s.game&&bedroom()&&G.tab==='scene')render()})}
  }
  window.__innDiscover=function(){
   if(!bedroom()||G.tab!=='scene'||!G.beats.inn_pro||DL||shot||document.querySelector('#ov .modal,#innmove,#wmap,body>.rt'))return;
