@@ -100,14 +100,14 @@ with sync_playwright() as p:
   assert not pg.locator('#logic-panel,#logic-note').count(), 'Separate deduction quiz returned'
   turns=pg.evaluate('window.__caseTurns')
   expected_turns=[
-   '나비 씨도 갔군요. 할머니만 드나들 줄 알았는데…. 제 표는 거둡니다.',
-   '살아 있군요. 죽였다는 의심은 거둡니다.',
+   '나비 씨도 갔네요. 할머니 표는 거둡니다.',
+   '살아 있습니다. 살해 의심은 거둡니다.',
    '[표 변화] 세련 3 · 할머니 2 · 부녀 1',
-   '부녀 손님께 둔 표는 거둡니다. 발견한 사람을 의심했군요.',
-   '같은 도장입니다. 덜 마른 봉인띠에 털이 눌렸군요.',
-   '…제가 넣었습니다. 제 돈을 제가 숨겨 둔 겁니다.',
-   '…거기서 잃었습니다. 이백 냥.',
-   '…물어내라는 말은 거두겠습니다. 계약서도 가져가겠습니다.',
+   '두 분께 둔 표는 거둡니다. 내가 서둘렀네요.',
+   '같은 도장입니다. 덜 마른 띠에 털이 눌렸죠.',
+   '…제가 넣었습니다. 제 돈을 숨긴 겁니다.',
+   '…노름판에서 잃었습니다. 이백 냥.',
+   '…배상 요구는 거두겠습니다. 계약서도요.',
   ]
   assert all(t in turns for t in expected_turns),turns
   first=list(turns[expected_turns[0]].values())
@@ -119,21 +119,21 @@ with sync_playwright() as p:
   print('Reversals: first objection withdraws a vote; eight accepted outcomes through accusation/payment withdrawal OK',flush=True)
   if args.without_ledger:assert not pg.evaluate('(code)=>window.__T(code)', 'G.found.includes("C11")')
   audio=pg.evaluate('window.__audioSeen')
-  for relationship_beat in ('죽였다는 의심은 거둡니다', '다니면서 물어볼게요',
-                            '엄마 단서가 여기 있잖아', '내일은 우체국에서',
+  for relationship_beat in ('살해 의심은 거둡니다', '다니면서 물어볼게요',
+                            '엄마 편지는 여기서 왔잖아', '우체국에도 가봐야지',
                             '엄마 찾으면 서점 다시 열자'):
    assert any(relationship_beat in t for t in audio),('Epilogue relationship missing',relationship_beat)
   print('Family epilogue: child testimony accepted, village allies and active mother search before bookstore return OK',flush=True)
-  comfort=next((v for t,v in audio.items() if '그 손을 감싼다' in t),None)
+  comfort=next((v for t,v in audio.items() if '다람의 손을 감싼다' in t),None)
   assert comfort and comfort['want'] is None and not comfort['tense'],('Comfort must use quiet without heartbeat',comfort)
-  following=next((v for t,v in audio.items() if t.startswith('처음 있던 자리는 저희가 못 봤어요')),None)
+  following=next((v for t,v in audio.items() if t.startswith('옮기기 전 일은 두 분께도')),None)
   assert following and following['want'] in ('inn_meet','inn_meet_press','inn_climax'),('Comfort quiet leaked into the next testimony',following)
-  for emotional_beat in ('엄마가 그랬어요. 겨울잠 땐', '두 사람 몫도 같이 끓여',
-                         '솜솜을 베개 구석에', '그동안은 아빠한테 읽어 줘',
-                         '아빠는 다람이 먼저 한 입', '할머니가 머리판을 쓰다듬는다'):
+  for emotional_beat in ('엄마가 그랬어요. 겨울잠 땐', '두 사람 몫도 끓여',
+                         '솜솜을 베개 구석에', '오늘은 아빠한테 읽어줘',
+                         '다람이 먼저 한 입', '할머니가 머리판을 쓸어본다'):
    assert any(emotional_beat in t for t in audio),('Emotional payoff missing from played route',emotional_beat)
   for t,v in audio.items():
-   if t.startswith(('식사를 마친 뒤, 할머니가 바구니', '그동안은 아빠한테 읽어 줘', '아껴 먹어', '고맙다. 같이 먹자', '아빠는 다람이 먼저')):
+   if t.startswith(('할머니가 솜솜을 베개 구석에 눕힌다', '오늘은 아빠한테 읽어줘', '아껴 먹어', '고맙다. 같이 먹자', '(다람이 먼저 한 입')):
     assert v['want']=='inn_after' and 0<v['duck']<=.5 and not v['tense'],('Gentle epilogue cue missing',t,v)
   assert not any('빈 열세 번째 침대' in t for t in audio), 'Epilogue contradicts Somsom returning to the bed'
   print('Emotional beats: quiet comfort → next testimony restores music; winter home, sleeping guest and shared reading/snack all played with gentle strings OK',flush=True)

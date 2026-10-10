@@ -29,7 +29,7 @@
   if(s.sid==='P2'&&G.beats.inn_bg==='plaza')return 'village';
   // Show the intact seal before counting starts. No picture invents a coin
   // count or suggests who put the pouch there.
-  if(s.sid==='P13'&&/베개 밑[….\s]*여기 있군요|세련 씨 주머니가 맞습니까|맞습니다\. 제 도장이에요|뜯긴 데도 없고요/.test(t))return 'seal';
+  if(s.sid==='P13'&&/베개 밑[….\s]*여기 있군요|세련 씨 주머니가 맞습니까|맞습니다\. 제 도장이에요|봉인도 뜯기지 않았습니다/.test(t))return 'seal';
   return null;
  }
  function ready(k){return !!(k&&!failed[k]&&window.__innStoryArt&&window.__innStoryArt[k]===true)}
@@ -61,7 +61,7 @@
   if(!k||!ready(k)||!v){if(node)cleanup();return}
   show(k,v);
   var l=DL&&DL.lines[DL.i];
-  node.classList.toggle('memory',k==='carriage'&&/엄마 찾으면|엄마가 갑자기 사라지고|편지 도장|골짜기…|몇 해 전 편지/.test(text(l)));
+  node.classList.toggle('memory',k==='carriage'&&/엄마 찾으면|엄마가 갑자기 사라져|편지 도장|골짜기…|몇 해 전 편지/.test(text(l)));
  }catch(e){cleanup()}}
  var css=document.createElement('style');css.id='inn-story-cinematics';css.textContent=
  '#inn-story-cg{position:fixed;inset:0;z-index:1;pointer-events:none!important;overflow:hidden;background:#211c20;visibility:hidden}#inn-story-cg.ready{visibility:visible}'+

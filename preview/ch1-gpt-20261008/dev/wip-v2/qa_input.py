@@ -8,6 +8,9 @@ with sync_playwright() as p:
  if not args.baseline:viewports.append({'width':390,'height':844})
  for viewport in viewports:
   pg=b.new_page(viewport=viewport);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)))
+  # Record trusted pointer timing before the production capture guard. Browser
+  # scheduling can turn a nominal 170ms Python wait into a fresh 500ms pause.
+  pg.add_init_script("window.__inputTimes=[];window.addEventListener('pointerdown',function(){window.__inputTimes.push(performance.now())},true)")
   if args.baseline:
    source=subprocess.check_output(['git','show','cd0b802:preview/ch1-gpt-20261008/play_v2.html'],text=True)
    hook='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'
@@ -35,6 +38,7 @@ with sync_playwright() as p:
   else:x,y=clock_point()
   # Complete the final spoken line with a genuine click over the clock's screen position.
   pg.evaluate('''window.__T('say([["det0","조사를 시작하자."]],function(){render()});clearInterval(DL.timer);DL.timer=null')''')
+  pg.evaluate('window.__inputTimes=[]')
   pg.mouse.click(x,y)
   assert not pg.evaluate('window.__T("!!DL")'),'Final dialogue did not close'
   # Keep a continuous burst past the old 1.8-second guard limit. Re-read the
@@ -42,6 +46,9 @@ with sync_playwright() as p:
   if not args.baseline:clock_point()
   for i in range(18):
    pg.wait_for_timeout(170)
+   times=pg.evaluate('window.__inputTimes')
+   if not args.baseline:assert all(b-a<500 for a,b in zip(times,times[1:])),('Burst fixture paused long enough for a deliberate fresh click',times)
+   assert pg.locator('[data-spot="C06"]').count(),('Clock vanished',pg.evaluate('window.__T("({tab:G.tab,found:G.found,dl:!!DL})")'),times)
    box=pg.locator('[data-spot="C06"]').bounding_box()
    if not args.baseline:assert 5<box['x']+box['width']/2<viewport['width']-5,('Clock moved offscreen after dialogue',box)
    pg.mouse.click(box['x']+box['width']/2,box['y']+box['height']/2)

@@ -50,8 +50,8 @@ with sync_playwright() as playwright:
 
     clear();engine('G.tab="talk";G.who="buri";say([EP1INN.TALK.buri.find(t=>t.id==="T_bu3").lines[1]],function(){})')
     expect('Cold guest claim','inn_serious','차갑고')
-    clear();engine('G.tab="talk";G.who="geokkuri";say([EP1INN.TALK.geokkuri.find(t=>t.id==="T_ba3").lines.find(l=>String(l[1]).includes("저한텐 그게 똑바로"))],function(){})')
-    expect('Bami upside-down joke','inn_comic','저한텐 그게 똑바로')
+    clear();engine('G.tab="talk";G.who="geokkuri";say([EP1INN.TALK.geokkuri.find(t=>t.id==="T_ba3").lines.find(l=>String(l[1]).includes("당연하죠. 그게 똑바론데요"))],function(){})')
+    expect('Bami upside-down joke','inn_comic','당연하죠. 그게 똑바론데요')
     clear();engine('G.tab="talk";G.who="geokkuri";say([EP1INN.TALK.geokkuri.find(t=>t.id==="C13").lines[1]],function(){})')
     expect('Bami useful witness account','inn_inv')
 
@@ -63,7 +63,7 @@ with sync_playwright() as playwright:
     expect('Welcome returns gently','inn_friend')
     clear();engine('G.beats={inn_pi:EP1INN.PRO.findIndex(s=>s.sid==="P10")};say([EP1INN.PRO.find(s=>s.sid==="P10").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("크르르"))],function(){})')
     expect('Family monster voice','inn_comic')
-    engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P10").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("나도 아빠처럼 탐정"))],function(){})')
+    engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P10").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("아빠처럼 탐정 할래"))],function(){})')
     expect('Family promise','inn_friend')
 
     clear();engine('say([EP1INN.LOCS.find(l=>l.id==="bed13").obs.find(o=>o.id==="o_under").say.find(l=>String(l[1]).startsWith("…상자 뒤"))],function(){})')

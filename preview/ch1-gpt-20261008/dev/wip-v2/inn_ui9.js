@@ -105,7 +105,8 @@
   function seated(){try{document.querySelectorAll('#bigscene .npc[data-npc="seryeon"] .npcclip img').forEach(function(i){if(i.getAttribute("src")!==SER_SCENE)i.setAttribute("src",SER_SCENE)})}catch(e){}}
   function talkFrame(){try{if(!window.__innFrame)return;var W=innerWidth,H=innerHeight;document.querySelectorAll(".fstalk .tstage .tfig img").forEach(function(i){var k=i.dataset.k;if(!k)return;
     var want=(window.__innPose&&window.__innPose(k))||(k==="seryeon"?SER_TALK:null);if(want&&i.getAttribute("src")!==want)i.setAttribute("src",want);if(!want&&k==="doto"&&/^art\/body\/doto-/.test(i.getAttribute("src")||""))i.setAttribute("src",DOTO);
-    var F=window.__innFrame(k,i.getAttribute("src")),f=i.parentElement,key=[W,H,i.getAttribute("src")].join("|");if(i.dataset.fr9===key)return;i.dataset.fr9=key;
+    var panel=document.querySelector(".fstalk .tpanel"),pr=panel&&panel.getBoundingClientRect();
+    var F=window.__innFrame(k,i.getAttribute("src"),{surface:"talk",panel:pr}),f=i.parentElement,key=[W,H,i.getAttribute("src"),Math.round(F.left),Math.round(F.top),Math.round(F.w)].join("|");if(i.dataset.fr9===key)return;i.dataset.fr9=key;
     ["top:0","height:100vh","left:0","right:0","width:auto","transform:none"].forEach(function(d){var q=d.split(":");f.style.setProperty(q[0],q[1],"important")});
     [["position","absolute"],["left",F.left+"px"],["top",F.top+"px"],["width",F.w+"px"],["height",F.h+"px"],["transform","none"],["max-width","none"],["max-height","none"]].forEach(function(d){i.style.setProperty(d[0],d[1],"important")})})}catch(e){}}
 
@@ -132,6 +133,7 @@
    /* 대사창: 두 줄 자리를 늘 확보(한 줄 쪽·두 줄 쪽에서 창 높이가 출렁이지 않게). 글자 크기는 그대로 */
    "html body.w209.inn1 #dlgveil #vnbox #dtxt{min-height:3em!important}",
    /* 질문 목록: 오른쪽 위 여백의 세로 목록 */
+   "html body.w209.inn1 .fstalk .tname{left:12px!important;right:auto!important;top:62px!important;bottom:auto!important;transform:none!important;max-width:calc(58vw - 24px)!important}",
    "html body.w209.inn1 .fstalk .tpanel{left:auto!important;right:12px!important;top:60px!important;bottom:auto!important;transform:none!important;width:min(260px,36vw)!important;max-height:calc(100% - 76px)!important;padding:6px!important;background:rgba(14,18,38,.58)!important;border-radius:10px!important}",
    "html body.w209.inn1 .fstalk .tpanel .topics{grid-template-columns:1fr!important;gap:5px!important}",
    "html body.w209.inn1 .fstalk .tpanel .topic{position:relative!important;min-height:40px!important;padding:6px 10px 6px 30px!important;text-align:left!important;border-width:1.5px!important}",
@@ -350,7 +352,7 @@
    doto:["투숙객","여관 2층 방에 묵는다"],buri:["장치공","여관 일을 손봐 준다"],wanggu:["마을 자경단장","주민 규약을 지키게 하고 회의를 기록한다"],karo:["마차 마부","우리를 태우고 마을에 왔다"]};
   var ORDER=["innma","nabi","seryeon","buri","wanggu","karo","geokkuri","doto"];
   /* 아빠·다람은 늘 맨 앞에(기본 정보만, 증언 없음) */
-  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n4"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/daram-v4/daram-idle-profile.png"]];
+  var SELF=[["det0","다돌 (36)","서점 주인 · 전직 탐정","엄마의 옛 편지를 따라 다람과 함께 마을에 온 아빠","art/ch1/father/father-profile-128.png?v=n4"],["det1","다람 (11)","탐정 지망생 · 다돌의 딸","엄마를 함께 찾고 싶은 아이. 본 것은 수첩에 적는다.","art/ch1/daram-v4/daram-idle-profile.png"]];
   function metMark(){try{if(!inn()||!dl())return;var ln=DL.lines[DL.i];var w=ln&&ln[0];if(!ROLE[w])return;var pl=document.querySelector("#vnbox .plate");if(pl&&/\?\?\?/.test(pl.textContent))return;G.beats=G.beats||{};if(!G.beats["inn_met_"+w]){G.beats["inn_met_"+w]=1}}catch(e){}}
   function metList(){var b=G.beats||{},pro=!!b.inn_pro;return ORDER.filter(function(k){if(b["inn_met_"+k])return true;if(k==="geokkuri")return G.found.indexOf("C07")>=0;if(k==="doto")return G.found.indexOf("C08")>=0;return pro&&["innma","nabi","seryeon","buri","wanggu","karo"].indexOf(k)>=0})}
   var PP=null;function pplClose(){if(PP){PP.remove();PP=null}}
@@ -367,7 +369,7 @@
   /* 2026-10-10 v2: 주머니·이불을 본 뒤에도 침대 밑을 안 봤으면, 다음 할 일은 안 쓰는 방 침대 밑 */
   try{var _nsx=nextStep;nextStep=function(c){var r=_nsx.apply(this,arguments);try{if(!inn()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||!r)return r;
     if((G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return r;var bi=-1;c.locations.forEach(function(l,i){if(l.id==="bed13")bi=i});if(bi<0)return r;
-    return {say:"아빠, 침대 밑이 너무 어두워. 안쪽까지 한번 들여다보자.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
+    return {say:"아빠, 침대 밑도 보자. 안쪽이 어두워.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
   /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
   var KEYOBS={o_under:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
   function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!inn()||!G.beats.inn_pro)return;var base=sm.dataset.innStatusBase||(sm.dataset.innStatusBase=sm.textContent);if(!/^(증거 수집 완료|모두 조사했어요)/.test(base))return;var sc=document.getElementById("bigscene");if(!sc)return;
@@ -435,14 +437,14 @@
   /* ==== 통합 아트(2026-10-09): 장소 인물 행동 포즈를 배경과 같은 좌표·같은 팬 변환으로 ====
      배경 svg 안에 원본 픽셀 좌표로 넣는다(식당 2048x768, 부엌 1774x887, 복도·도토 방 1672x941). 누르는 영역은 그림 자리에 맞춘 기존 인물 단추 */
   var AP="art/ch1/action-poses/";
-  window.__innPose=function(k){try{if(!inn())return null;if(k==="buri")return AP+"buri/dialogue.png";if(k==="geokkuri")return AP+"bami/dialogue.png";if(k==="wanggu")return window.__innNeoulSrc?window.__innNeoulSrc(""):"art/ch1/neoul-v3/neoul-default-dialogue.png";
+  window.__innPose=function(k){try{if(!inn())return null;if(k==="buri")return AP+"buri/dialogue.png";if(k==="geokkuri")return AP+"bami/dialogue.png";if(k==="wanggu")return window.__innNeoulSrc?window.__innNeoulSrc(""):"art/ch1/neoul-v4/neoul-default.png";
    var b=G.beats||{};if(!b.inn_pro||b.inn_final)return null;var lid=(loc()||{}).id;
     if(k==="seryeon")return AP+"seryeon/dialogue.png";if(k==="innma"&&lid==="dining")return AP+"grandma/dialogue.png";if(k==="geokkuri"&&lid==="hall")return AP+"bami/dialogue.png";
     if(k==="nabi"&&lid==="kitchen")return AP+"nabi/dialogue.png";if(k==="doto"&&lid==="dotoroom")return AP+"doto/dialogue.png";}catch(e){}return null};
   /* [인물, 파일, x, y, 폭, 높이] — 식당은 통합 아트 배치표 그대로(세련 735,283 / 할머니는 좌우 보기 반대쪽 끝 부엌문 앞 바닥 579에 발), 부엌 나비는 식당 대비 가구 배율 1.6(의자 좌석 높이 비교) */
   var WN={dining:[["innma",AP+"grandma/npc.png",1800,303,162,276],["seryeon",AP+"seryeon/npc.png",735,283,241,361]],
    kitchen:[["nabi",AP+"nabi/npc.png",830,190,339,504],["buri",AP+"buri/npc.png",1380,297,250,397]],
-   front:[["wanggu","art/ch1/neoul-v3/neoul-standing.png",1100,239,240,360]],
+   front:[["wanggu","art/ch1/neoul-v4/neoul-default.png",1076,213,268,402]],
    plaza:[["karo",AP+"karo/npc.png",1130,420,254,432]],
    hall:[["geokkuri",AP+"bami/npc.png",100,25,424,429]],
    dotoroom:[["doto",AP+"doto/npc.png",690,161,472,533,1]]};
@@ -499,7 +501,7 @@
   var FV="art/ch1/father/father-v5-",V4="art/ch1/daram-v4/";
   ["default-smile","finger-base","finger-raised","pose-thinking","pose-surprised","pose-sheepish"].map(function(n){return FV+n+"-speaker128.png"})
    .concat(["idle","memo","joy","flustered","held-anger","comic-anger"].map(function(n){return V4+"daram-"+n+"-speaker128.png"}))
-   .concat(["default","admonish","angry","sheepish"].map(function(n){return "art/ch1/neoul-v3/neoul-"+n+"-dialogue.png"})).concat([V4+"daram-worried-dialogue.png"]).forEach(function(f){var im=new Image();im.src=f});
+   .concat(["default","admonish","angry","sheepish"].map(function(n){return "art/ch1/neoul-v4/neoul-"+n+".png"})).concat([V4+"daram-worried-dialogue.png"]).forEach(function(f){var im=new Image();im.src=f});
   /* 작은 얼굴(질문 목록·대화 화면·기록 등 pf)도 새 외형으로: 아빠 v5·다람 v4·너울 v2. 옛 갈색 모자 다람·주황 조끼 너울이 섞여 뜨지 않게 */
   try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var custom=window.__innCropSvg&&window.__innCropSvg(k,mood);if(custom)return custom;var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-profile-64.png?v=n4":V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png";
     return '<svg class="nodot inn-pixel-face" data-face="'+k+'" viewBox="0 0 100 101" aria-hidden="true" style="image-rendering:pixelated"><image href="'+f+'" x="0" y="0" width="100" height="100" style="image-rendering:pixelated"/></svg>'}}catch(e){}return _pf9.apply(this,arguments)}}catch(e){}
@@ -559,11 +561,11 @@
 
   /* ==== 2026-10-10 v2 구조 피드백(사용자 승인) ==== */
   /* (1) 위기가 눈앞에: 솜솜을 찾은 뒤 식당에 처음 들어서면, 세련이 계약서와 펜을 펴 두고 할머니는 동전 깡통을 센다(한 번) */
-  var STAKES=[["narr","(식당 공기가 아까와 다르다.)"],["seryeon","할머니. 회의가 끝나면 이백 냥을 물어내시든지, 여기 서명하시든지 둘 중 하나입니다.","smug"],
-   ["seryeon","미리 펴 두는 겁니다. 정오엔 바쁠 테니까요.","smug"],
-   ["narr","(식탁 위에 계약서와 펜, 인주가 가지런히 놓였다. 할머니는 대답 대신 무릎 위 낡은 깡통에서 동전을 한 닢씩 꺼내 세고 계신다.)"],
-   ["det1","…할머니, 그거 뭐예요?","sad"],["innma","…봄에 이불 새로 사려고 모아 둔 거야.","sad"],
-   ["narr","(깡통 바닥이 보인다. 이백 냥에는 한참 모자란다.)"],["narr","(다람이가 내 소매를 꽉 쥔다. 아무 말도 하지 않는다. 정오까지. 이게 진짜 시간이다.)"]];
+  var STAKES=[["narr","세련 씨가 계약서 옆에 펜을 놓는다."],["seryeon","이백 냥. 아니면 여기 서명입니다.","smug"],
+   ["seryeon","정오엔 떠나야 해서요.","smug"],
+   ["narr","할머니가 낡은 깡통에서 동전을 센다."],
+   ["det1","할머니, 그 돈은…?","sad"],["innma","봄 이불 값이야. 아직 멀었지.","sad"],
+   ["narr","(벌써 깡통 바닥이 보인다.)"],["narr","다람이 내 소매를 꼭 쥔다."],["det0","아직 회의도 안 끝났습니다.","resolve"]];
   setInterval(function(){try{if(!inn()||G.tab!=="scene"||dl()||!G.beats||!G.beats.inn_pro||G.beats.inn_meet||G.beats.inn_stakes)return;if(document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard"))return;
     var l=loc();if(!l||l.id!=="dining"||G.found.indexOf("C04")<0)return;G.beats.inn_stakes=1;try{saveProg()}catch(e){}say(STAKES.map(function(x){return x.slice()}),function(){try{render()}catch(e){}})}catch(e){}},700);
   /* (2) 회의 힌트 단계화: 1번째 방향만 → 2번째 어느 발언인지 → 3번째부터 다음에 낼 증거까지 */

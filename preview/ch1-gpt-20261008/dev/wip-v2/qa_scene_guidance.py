@@ -35,13 +35,19 @@ class Investigation:
                                '[DL.lines[DL.i][0],String(DL.lines[DL.i][7]||DL.lines[DL.i][1]||"")]:null')
             if line and (not self.spoken or self.spoken[-1] != line):
                 self.spoken.append(line)
-            stage = self.page.evaluate("document.querySelector('#inn-under-scene')?.getAttribute('data-stage') || null")
+            shot = self.page.evaluate("""()=>{
+                const scene=document.querySelector('#inn-under-scene'),image=scene&&scene.querySelector('.under-held');
+                const rect=image&&image.getBoundingClientRect(),style=image&&getComputedStyle(image);
+                return {stage:scene&&scene.dataset.stage,held:image?{loaded:image.complete&&image.naturalWidth>0,
+                    src:image.getAttribute('src'),visible:rect.width>0&&rect.height>0&&style.display!=='none'&&style.visibility!=='hidden'&&+style.opacity>0}:null};
+            }""")
+            stage = shot['stage']
             if stage:
                 if stage == 'held':
-                    held = self.page.locator('#inn-under-scene .under-held')
-                    assert held.is_visible(), 'Rescued guest illustration is hidden'
-                    assert held.evaluate('i=>i.complete&&i.naturalWidth>0'), 'Rescued guest illustration failed to load'
-                    assert 'somsom-held.png' in held.get_attribute('src'), 'Wrong rescue illustration'
+                    held = shot['held']
+                    assert held and held['visible'], 'Rescued guest illustration is hidden'
+                    assert held['loaded'], 'Rescued guest illustration failed to load'
+                    assert 'somsom-held.png' in held['src'], 'Wrong rescue illustration'
                 if stage not in self.captured:
                     self.page.screenshot(path='/tmp/scene-guidance-' + stage + '.png')
                     self.captured.add(stage)
@@ -178,7 +184,7 @@ def main():
         assert qa.state()['found'].count('C04') == 1 and 'o_under' in qa.state()['obs'], (
             'Single investigation did not complete observation and evidence', qa.state())
         buri_lines = ' '.join(text for speaker,text in qa.spoken if speaker == 'buri')
-        assert '장치공 부리' in buri_lines and '차갑고' in buri_lines and '다 식은 건' in buri_lines, (
+        assert '장치공 부리' in buri_lines and '차갑고' in buri_lines and '다 식으면 끝이죠' in buri_lines, (
             'Automatic discovery skipped the Buri testimony needed for the meeting', qa.spoken)
         assert not page.locator('#inn-under-scene').count(), 'Discovery visual did not close'
         assert 'held' in qa.captured, 'Rescue illustration was never checked while visible'
