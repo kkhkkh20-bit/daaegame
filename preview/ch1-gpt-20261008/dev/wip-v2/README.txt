@@ -82,3 +82,7 @@ qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수�
   일반 build/publish는 커밋된 MP3와 inn_piano_tracks.js만 사용하며 큰 악기 라이브러리가 필요 없다.
   qa_piano_assets.py: 인코딩된 전체 16곡의 음량·최대 레벨·스테레오·반복 경계를 검사.
   qa_audio.py: 16곡 Web Audio 디코딩, 전체 메인곡 반복, 장면 큐와 음원 캐시 상한 검사.
+
+- 가족의 감정선과 사건 뒤 일상의 회복: CODEX_EMOTION_20261010.txt.
+  낭독 놀이, 다람의 기다림 인정, 아빠의 손잡기, 겨울 숙식과 솜솜의 잠자리 복귀.
+  qa_intro.py / qa_flow.py --without-ledger가 재생과 감정 장면의 오디오 전환을 검사한다.
