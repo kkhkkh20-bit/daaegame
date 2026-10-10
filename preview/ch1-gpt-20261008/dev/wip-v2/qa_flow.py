@@ -9,6 +9,14 @@ parser.add_argument("--without-ledger", action="store_true", help="Complete the 
 args = parser.parse_args()
 TICK=r'''() => {
  const q=s=>document.querySelector(s), click=s=>{const e=q(s);if(e&&!e.disabled){e.click();return true}return false};
+ if(q('#logic-panel')){
+  if(q('#logic-panel [data-act="finish"]')){click('#logic-panel [data-act="finish"]');return 'reason finish'}
+  const solutions={linen:[['C02','C03']],time:[['C06','C07'],['C13','C08']],location:[['C04','C10']],contact:[['C05','C01']],seal:[['C10','C12']]};
+  const root=q('#logic-panel'),ids=(solutions[root.dataset.reason]||[])[Number(root.dataset.stage)];if(!ids)return 'unknown reason';
+  for(const id of ids)if(!q('#logic-panel [data-card="'+id+'"][aria-pressed="true"]')){click('#logic-panel [data-card="'+id+'"]');return 'reason card '+id}
+  if(!q('#logic-panel [data-option="0"][aria-pressed="true"]')){click('#logic-panel [data-option="0"]');return 'reason conclusion'}
+  click('#logic-panel [data-act="submit"]');return 'reason submit';
+ }
  if(q('#rtgpick')){const title=q('#rtgpick b').textContent;let opts=[];const ph=window.__rtPh();
  for(const L of [...(ph.lines||[]),...(ph.stms||[]).flatMap(s=>[...(s.ok||[]),...(s.steps||[]).flatMap(x=>x.lines||[])])])if(L.ask&&L.ask.title===title)opts=L.ask.items;
  for(const st of ph.stms||[])for(const step of st.steps||[])if(step.pick&&step.pick.title===title)opts=step.pick.items;
@@ -46,7 +54,9 @@ with sync_playwright() as p:
    if st['wrong']>=5 and st['dl']:saw_mf=True
    if saw_mf and st['hp']==5 and st['rt']:
     recovered=True;break
-   if pg.locator('#rtgpick').count():
+   if pg.locator('#logic-panel').count():
+    pg.evaluate('''()=>{const root=document.querySelector('#logic-panel'),maps={linen:[['C02','C03']],time:[['C06','C07'],['C13','C08']],location:[['C04','C10']],contact:[['C05','C01']],seal:[['C10','C12']]},ids=maps[root.dataset.reason][Number(root.dataset.stage)];for(const id of ids){const b=root.querySelector('[data-card="'+id+'"]');if(b.getAttribute('aria-pressed')!=='true')b.click()}root.querySelector('[data-option="1"]').click();root.querySelector('[data-act="submit"]').click()}''')
+   elif pg.locator('#rtgpick').count():
     pg.locator('#rtgpick [data-pi="1"]').click();wr+=1
    else:pg.evaluate(TICK)
    pg.wait_for_timeout(220)
@@ -68,14 +78,17 @@ with sync_playwright() as p:
    pg.evaluate('(code)=>window.__T(code)', 'if(DL){DL.done=null;endDlg()};document.querySelectorAll("body>.rt").forEach(x=>x.remove());window.__inMeeting=false;window.__rtgReset();G.debate={pi:1,sus:{}};window.__rtOpen(CASES[G.ci])')
    title=None
    for i in range(180):
-    if pg.locator('#rtgpick').count():
-     title=pg.locator('#rtgpick b').inner_text()
-     if run==0:pg.locator('#rtgpick [data-pi="0"]').click()
+    if pg.locator('#logic-panel').count():
+     title=pg.locator('#logic-panel h2').inner_text()
+     if run==0:
+      for _ in range(15):
+       if not pg.locator('#logic-panel').count():break
+       pg.evaluate(TICK);pg.wait_for_timeout(200)
      break
     pg.evaluate(TICK);pg.wait_for_timeout(180)
    titles.append(title)
    pg.wait_for_timeout(700)
-  assert titles[0] == '이불의 하얀 가루 손자국은 누구 손일까?', titles
+  assert titles[0] == '이불의 손자국을 누구에게 다시 물어볼까?', titles
   assert titles[1] == titles[0], titles
   assert not errs, errs
   assert not bad, bad

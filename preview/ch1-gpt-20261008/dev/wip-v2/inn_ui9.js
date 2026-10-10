@@ -552,11 +552,30 @@
    ["narr","(깡통 바닥이 보인다. 이백 냥에는 한참 모자란다.)"],["narr","(다람이가 내 소매를 꽉 쥔다. 아무 말도 하지 않는다. 정오까지. 이게 진짜 시간이다.)"]];
   setInterval(function(){try{if(!inn()||G.tab!=="scene"||dl()||!G.beats||!G.beats.inn_pro||G.beats.inn_meet||G.beats.inn_stakes)return;if(document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard"))return;
     var l=loc();if(!l||l.id!=="dining"||G.found.indexOf("C04")<0)return;G.beats.inn_stakes=1;try{saveProg()}catch(e){}say(STAKES.map(function(x){return x.slice()}),function(){try{render()}catch(e){}})}catch(e){}},700);
-  /* (1-2) 「훅 연출 요청」 9: 침대 밑 발견은 반드시 지나가는 장면 — 주머니·이불을 본 뒤 안 쓰는 방에 있으면, 할머니가 찾던 것을 따라 침대 밑을 본다 */
-  setInterval(function(){try{if(!inn()||G.tab!=="scene"||dl()||!G.beats||!G.beats.inn_pro||G.beats.inn_meet)return;if(document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard,#innins"))return;
-    var l=loc();if(!l||l.id!=="bed13"||(G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return;
-    var b=document.querySelector('#bigscene [data-obs="o_under"]');if(b&&!under9.t){under9.t=1;setTimeout(function(){under9.t=0;try{if(!dl())b.click()}catch(e){}},600)}}catch(e){}},500);
-  var under9={t:0};
+  /* 침대 밑은 플레이어가 직접 살펴본다. 단서는 안내만 하고 발견 대사를 자동 실행하지 않는다.
+     마커는 현재 장면 노드에 다시 붙이므로 탭 이동·재렌더 뒤에도 남은 조사 지점을 찾을 수 있다. */
+  var under9={game:null,shown:false,hint:null,timer:0};
+  function underHintClose9(){clearTimeout(under9.timer);if(under9.hint){under9.hint.remove();under9.hint=null}}
+  var underStyle9=document.createElement("style");underStyle9.textContent=
+   "html body.inn1 #bigscene .hot.innunderlook9{opacity:1!important;visibility:visible!important;outline:2px solid #F2D681!important;outline-offset:3px;animation:innunderpulse9 2.4s ease-in-out infinite!important}"+
+   "html body.inn1 #bigscene .hot.innunderlook9::after{content:'침대 밑 살펴보기';position:absolute;left:50%;top:100%;transform:translateX(-50%);padding:3px 7px;border:1px solid #C9A96A;border-radius:5px;background:rgba(30,25,23,.94);color:#FFF6E0;white-space:nowrap;font:13px/1.4 var(--display,Galmuri11,sans-serif);pointer-events:none}"+
+   "#innunderhint9{position:fixed;z-index:35;top:64px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 32px);box-sizing:border-box;padding:7px 12px;border:1px solid #C9A96A;border-radius:7px;background:rgba(30,25,23,.9);color:#FFF6E0;font:14px/1.5 var(--display,Galmuri11,sans-serif);pointer-events:none}"+
+   "@keyframes innunderpulse9{0%,100%{box-shadow:0 0 0 2px rgba(242,214,129,.08)}50%{box-shadow:0 0 0 7px rgba(242,214,129,.3)}}"+
+   "@media(prefers-reduced-motion:reduce){html body.inn1 #bigscene .hot.innunderlook9{animation:none!important}}";
+  document.head.appendChild(underStyle9);
+  setInterval(function(){try{
+    if(!inn()||!G)return underHintClose9();
+    if(under9.game!==G){underHintClose9();under9.game=G;under9.shown=false}
+    var l=loc(),ready=G.tab==="scene"&&!dl()&&G.beats&&G.beats.inn_pro&&!G.beats.inn_meet&&
+      l&&l.id==="bed13"&&(G.obsSeen||[]).indexOf("o_under")<0&&G.found.indexOf("C04")<0&&G.found.indexOf("C01")>=0&&G.found.indexOf("C02")>=0&&
+      !document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard,#innins");
+    var hot=document.querySelector('#bigscene [data-obs="o_under"]');
+    if(!ready){if(hot)hot.classList.remove("innunderlook9");underHintClose9();return}
+    if(!hot)return;
+    hot.classList.add("innunderlook9");hot.setAttribute("aria-label","침대 밑 살펴보기");
+    if(!under9.shown){under9.shown=true;under9.hint=document.createElement("div");under9.hint.id="innunderhint9";under9.hint.setAttribute("role","status");
+      under9.hint.textContent="다람: 아빠, 침대 밑은 아직 안 봤어.";B.appendChild(under9.hint);under9.timer=setTimeout(underHintClose9,6000)}
+  }catch(e){}},500);
   /* (2) 회의 힌트 단계화: 1번째 방향만 → 2번째 어느 발언인지 → 3번째부터 다음에 낼 증거까지 */
   setTimeout(function(){var _rh9=window.__rtHint;if(!_rh9)return;window.__rtHint=function(C,ph,has,setSi){if(!inn()||!ph||!ph.stms)return _rh9.apply(this,arguments);
     var left=window.__hintLeft?window.__hintLeft():3;if(left<=0)return _rh9.apply(this,arguments);

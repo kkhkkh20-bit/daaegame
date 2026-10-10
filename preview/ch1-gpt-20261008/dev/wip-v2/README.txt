@@ -16,7 +16,7 @@
   --failure: 실제 오답 5회 → M-F → 증거 유지·설득력 복구를 검사한다.
   --failure --final: 최종 대결에서 같은 실패 검사를 한다.
   새 게임의 조사 전체 완주·실기기·청취 검사를 대신하지 않는다.
-- 2026-10-10 훅 연출 요청(dot) 반영: 콜드오픈 8비트(자정), P1+P3 압축, P5 문소리 끊기, P10 압축+밤 장면, P12 수색 장면, P13 할머니 베개 구석 훅·세련 '나머지 이백 냥' 추궁·너울 물러서지 않음, 다람 첫 단서 한 줄, 침대 밑 솜솜 발견 자동 진입(정적).
+- 2026-10-10 훅 연출 요청(dot) 반영: 콜드오픈 8비트(자정), P1+P3 압축, P5 문소리 끊기, P10 압축+밤 장면, P12 수색 장면, P13 할머니 베개 구석 훅·세련 '나머지 이백 냥' 추궁·너울 물러서지 않음, 다람 첫 단서 한 줄, 침대 밑 솜솜 발견(정적·심박, 현재는 직접 조사로 진입).
 - 46_meet_gate: 회의 물음(C01~C04)은 유지, 주민 소집 장면(I9)은 '원탁 회의 열기'를 고른 뒤에만 재생.
 - 클라우드 Playwright 완주(새 게임→후일담) 844×390·1180×820 확인. 실기기·청취 확인 아님.
 - 설계 문서: ../review/CH1_NEW_STRUCTURE.txt. 최신 노션 초안과 구현의 차이는 CODEX_AGENT_REVIEW_20261010.txt 참고.
@@ -58,3 +58,11 @@
   재생성: python3 gen/music_v2.py (NumPy, libfluidsynth.so.3, TimGM6mb.sf2, ffmpeg 필요).
   일반 build/publish는 기존 MP3를 사용하며 악기 렌더 의존성이 필요 없다.
 - UI/음악 통합 검사: 서버를 켠 뒤 python3 qa_polish.py (가로/세로, 설정, 증거 창, 실제 MP3 재생).
+
+- 조사→회의→대결 직접 추리: CODEX_DEDUCTION_DESIGN_20261010.txt.
+  inn_reasoning.js와 53_logic_gate.py가 기존 회의 엔진을 유지하며 핵심 다섯 문제를 검증한다.
+  '추리' 버튼: 조사 수첩, 두 근거+결론, 무료 세 단계 도움. 회의/대결 제시는 같은 UI의 필수 검증.
+  qa_logic_ui.py / qa_reasoning.py / qa_investigation.py가 실클릭/저장/새 게임 조사를 검사한다.
+  qa_flow.py의 실제 추리 입력은 작성된 독립 기대값으로 진행한다.
+
+qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수집 저장으로 깨끗한 배포판의 이어하기·추리 수첩 저장을 확인.

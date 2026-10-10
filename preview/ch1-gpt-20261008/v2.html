@@ -39,7 +39,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0E1128;ove
     surface.dataset.rotated=rotated?'true':'false';
   }
   function schedule(){if(!pending)pending=requestAnimationFrame(fit)}
-  fit();(function(){var q='';try{var u=new URLSearchParams(location.search),o=new URLSearchParams();['qa','slot'].forEach(function(k){if(u.has(k))o.set(k,u.get(k))});q=o.toString()}catch(e){}frame.src='play_v2.html?build=02e889d6f8cd'+(q?'&'+q:'')})();   /* QA 저장칸(?qa=1·?slot=이름)을 게임 iframe에 그대로 전달 */
+  fit();(function(){var q='';try{var u=new URLSearchParams(location.search),o=new URLSearchParams();['qa','slot'].forEach(function(k){if(u.has(k))o.set(k,u.get(k))});q=o.toString()}catch(e){}frame.src='play_v2.html?build=2fbbc7018fcd'+(q?'&'+q:'')})();   /* QA 저장칸(?qa=1·?slot=이름)을 게임 iframe에 그대로 전달 */
   window.addEventListener('resize',schedule);window.addEventListener('orientationchange',schedule);
   window.addEventListener('pageshow',schedule);
   if(window.visualViewport){visualViewport.addEventListener('resize',schedule);visualViewport.addEventListener('scroll',schedule)}
