@@ -74,20 +74,25 @@
 
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0,carStopped:false,bell:false,failure:false};
-  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null};
-  window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;TENSE.on=false};
+  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null;tenseStop()};
+  window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
   window.__innAudioState=function(){return {line:lineText(),who:lineWho(),failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine()}};
   var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
-  /* 2026-10-10 사용자 "솜솜을 발견하는 순간은 배경음을 끄고 긴장되고 두근거리는 순간으로, 다람에게도 충격": 발견 줄부터 그 대화가 끝날 때까지 음악을 끄고 심장 박동만.
-     (발견 장소는 새 구조에서 침대 밑으로 옮길 예정 — 줄 글로 걸어 두어 장소가 바뀌어도 같은 연출) */
-  var TENSE={on:false,k:0};
-  var TENSE_ON=/안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
-  function tenseTick(){try{if(!TENSE.on)return;if(!cur()){TENSE.on=false;return}
-    if(AC&&AC.state==="running"&&S.sound){var v=.34,gap=Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*.32,null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(tenseTick,gap*1000)}
-    else setTimeout(tenseTick,300)}catch(e){TENSE.on=false}}
+  /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.
+     몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
+  var TENSE={on:false,k:0,gen:0,nul:0};
+  var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
+  function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0}
+  function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!cur()){tenseStop();return}
+    if(AC&&AC.state==="running"&&S.sound){var v=TENSE.discovery?.28:.34,gap=TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
+    else setTimeout(function(){tenseTick(gen)},300)}catch(e){tenseStop()}}
   window.__innTense=function(){return TENSE.on};
-  setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)TENSE.on=false}return}TENSE.nul=0;var l=DL.lines&&DL.lines[DL.i],t=l?String(l[1]||""):"";   /* 연출(인물 들고 남) 사이 잠깐 대사가 끊겨도 긴장을 유지 */
-    if(!TENSE.on&&TENSE_ON.test(t)){TENSE.on=true;TENSE.k=0;try{SFX.cut9&&SFX.cut9()}catch(e){}setTimeout(tenseTick,450)}else if(TENSE.on&&TENSE_OFF.test(t))TENSE.on=false}catch(e){}},60);
+  setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
+    var t=lineText(); /* 좁은 화면에서도 페이지 분할 전 원문으로 큐를 판별 */
+    if(!TENSE.on&&TENSE_ON.test(t)){TENSE.on=true;TENSE.k=0;var gen=++TENSE.gen;
+      var discovery=TENSE.discovery=/상자 뒤|작은 애가/.test(t);if(!discovery)try{SFX.cut9&&SFX.cut9()}catch(e){}
+      setTimeout(function(){tenseTick(gen)},discovery?1200:450);
+    }else if(TENSE.on&&TENSE_OFF.test(t))tenseStop()}catch(e){}},60);
   window.__innWant=function(){
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */

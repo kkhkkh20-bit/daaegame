@@ -30,3 +30,5 @@
 - 오디오 검사: 서버를 켠 뒤 python3 preview/ch1-gpt-20261008/dev/wip-v2/qa_audio.py
   실제 청취 대신 큐 전환과 오프라인 신호를 검사한다.
 - 대사·스토리·오디오 검수: CODEX_STORY_AUDIO_20261010.txt
+- 솜솜 발견 장면 검사: 서버를 켠 뒤 python3 preview/ch1-gpt-20261008/dev/wip-v2/qa_somsom.py
+  가로/세로에서 발견 전 음악 중단, 긴장 유지, 종료 후 음악 복귀를 검사한다.
