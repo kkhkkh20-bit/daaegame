@@ -36,6 +36,7 @@ with sync_playwright() as p:
  prepared='G.found=Object.keys(window.EP1INN.EV);G.exam={};allSpots(CASES[G.ci]).forEach(s=>G.exam[s.ev.id]=true);G.unlocked=CASES[G.ci].locations.map(l=>l.req).filter(Boolean);'
  prepared += 'G.beats.inn_meet=1;window.__innOpenFinal()' if args.final else 'window.__rtOpen(CASES[G.ci])'
  pg.evaluate('(code)=>window.__T(code)', prepared)
+ pg.evaluate('''window.__audioSeen={};setInterval(()=>{const s=window.__innAudioState();if(s.line)window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,want:window.__innWant()}},60)''')
  if args.failure:
   initial=pg.evaluate('window.__T("G.found.slice()")');wr=0;saw_mf=False;recovered=False
   for i in range(700):
@@ -49,6 +50,7 @@ with sync_playwright() as p:
    pg.wait_for_timeout(220)
   assert recovered,st
   assert st['wrong']==5, (wr,st)
+  assert not pg.evaluate('window.__innAudioState().failure')
   pg.wait_for_timeout(500)
   assert pg.evaluate('window.__T("G.wrong")')==5
   if args.final:
@@ -89,6 +91,10 @@ with sync_playwright() as p:
    pg.wait_for_timeout(180)
   assert state['beats'].get('inn_end'), state
   assert state['wrong']==0, state
+  audio=pg.evaluate('window.__audioSeen')
+  assert audio.get('…네.',{}).get('confession'), audio.get('…네.')
+  assert any(v['key'] for k,v in audio.items() if k.startswith('첫눈은 자정')), 'Council dialogue audio hook missing'
+  print('Audio hooks: council key line and final confession OK',flush=True)
   assert not errs, errs
   assert not bad, bad
   print('RESULT',state,'errors',errs,'bad',bad,flush=True)
