@@ -46,7 +46,7 @@ with sync_playwright() as p:
  if args.without_ledger:prepared+='G.found=G.found.filter(id=>id!=="C11");'
  prepared += 'G.beats.inn_meet=1;window.__innOpenFinal()' if args.final else 'window.__rtOpen(CASES[G.ci])'
  pg.evaluate('(code)=>window.__T(code)', prepared)
- pg.evaluate('''window.__audioSeen={};setInterval(()=>{const s=window.__innAudioState();if(s.line)window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant()}},60)''')
+ pg.evaluate('''window.__audioSeen={};window.__caseTurns={};setInterval(()=>{const s=window.__innAudioState();if(s.line){window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant()};if(s.line.startsWith('[반박 결과]'))window.__caseTurns[s.line]=window.__T('Object.assign({},G.beats.rtVotes)')}},60)''')
  if args.failure:
   initial=pg.evaluate('window.__T("G.found.slice()")');wr=0;saw_mf=False;recovered=False
   for i in range(700):
@@ -106,6 +106,25 @@ with sync_playwright() as p:
    pg.wait_for_timeout(180)
   assert state['beats'].get('inn_end'), state
   assert state['wrong']==0, state
+  turns=pg.evaluate('window.__caseTurns')
+  expected_turns=[
+   '[반박 결과] 할머니만 그 방을 드나들었다는 생각이 깨졌다.',
+   '[반박 결과] 차갑다는 이유로 손님을 죽였다고 몰아갈 수 없다.',
+   '[반박 결과] 우리를 몰아붙이던 목격담이 세련의 알리바이를 무너뜨렸다.',
+   '[반박 결과] 처음 발견했다는 이유로 부녀를 몰아가던 의심이 걷혔다.',
+   '[반박 결과] 주머니를 보지도 못했다는 말이 바뀌었다.',
+   '[반박 결과] 남을 도둑으로 몰던 사람이 직접 주머니를 숨겼다고 인정했다.',
+   '[반박 결과] 사라진 이백 냥은 도난 피해가 아니라 세련의 노름 손실이었다.',
+   '[반박 결과] 도난 누명과 이백 냥 배상 요구가 철회됐다. 여관을 넘기라는 압박도 끝났다.',
+  ]
+  assert all(t in turns for t in expected_turns),turns
+  first=list(turns[expected_turns[0]].values())
+  assert first.count('innma')==4 and first.count('기권')==2,first
+  middle=list(turns[expected_turns[2]].values())
+  assert middle.count('seryeon')==3 and middle.count('부녀')==1,middle
+  assert '부녀' not in turns[expected_turns[3]].values(),turns[expected_turns[3]]
+  assert all(v=='seryeon' for v in turns[expected_turns[-1]].values()),turns[expected_turns[-1]]
+  print('Reversals: first objection withdraws a vote; eight accepted outcomes through accusation/payment withdrawal OK',flush=True)
   if args.without_ledger:assert not pg.evaluate('(code)=>window.__T(code)', 'G.found.includes("C11")')
   audio=pg.evaluate('window.__audioSeen')
   assert audio.get('…네.',{}).get('confession'), audio.get('…네.')
