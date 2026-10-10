@@ -137,7 +137,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   var worried=seat.on&&(st.m==="sad"||st.m==="cower");
   /* 간식 포즈(2026-10-09 전달): '마지막 봉지' → 보여 주기, '안 뜯을 거야' → 품으로 당기기, 편지를 꺼내면 기본으로. 이 세 지점에서만 바꾼다 */
   try{var sl=typeof DL!=="undefined"&&DL&&DL.lines[DL.i],stx=sl?String(lt(sl)||""):"";
-   if(/^아빠, 이게 마지막 봉지야/.test(stx))seat.snack="show";else if(/^이건 안 뜯을 거야/.test(stx))seat.snack="protect";else if(/^아빠가 안주머니에서 접힌 편지를 꺼낸다/.test(stx)||/엄마 편지/.test(stx))seat.snack=null}catch(e){}
+   if(/^아빠, 이게 마지막 봉지야/.test(stx))seat.snack="show";else if(/^이건 안 뜯을 거야/.test(stx))seat.snack="protect";else if(/^아빠가 안주머니에서 접힌 편지를 꺼낸다/.test(stx)||/^여기 우체국 도장/.test(stx)||/엄마 편지/.test(stx))seat.snack=null}catch(e){}
   var pose=worried?"worried":(seat.snack?"snack-"+seat.snack:"neutral");
   var href="art/ch1/cast/daram-seated-"+pose+"-192x256.png";
   document.querySelectorAll('svg[data-bg="carriage"]').forEach(function(sv){
