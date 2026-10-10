@@ -1,4 +1,4 @@
- /* ==== 1장 오디오 연출 (큐·효과음 유지, 음악은 피아노 없는 현악 v3 음원) ====
+ /* ==== 1장 오디오 연출 (상황별 피아노 없는 목관·현악, 기존 회의 큐 유지) ====
     - 음악: 타이틀 -> 도입(inn_cold) -> 여행·여관 -> 사건 신고 -> 조사 -> 회의·압박 -> 최종 대결·압박 -> 후일담
       같은 곡 안에서는 장면·화자·장소가 바뀌어도 다시 시작하지 않는다(엔진: 같은 키면 그대로 둠). 낮춤은 덕킹으로만.
     - 환경음: 마차(녹음 말발굽 2박 루프), 바깥바람. 장소에 머무는 동안 한 인스턴스만.
@@ -19,18 +19,35 @@
 
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0,carStopped:false,bell:false,failure:false};
-  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
+  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
   window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
-  window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine()}};
+  window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine(),context:M.ctxKey}};
   /* Complete media definitions: no synthesized piano or mismatched character themes. */
   Object.keys(window.__INN_MUSIC||{}).forEach(function(k){A.SONGS[k]=window.__INN_MUSIC[k]});
+  /* Authored turns, not punctuation or a sad face, change the music. A cue
+     lasts through the rest of its conversation/scene until another cue. */
+  var CONTEXT=[
+   [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|저한텐 그게 똑바로/, 'inn_comic'],
+   [/어서 와요\. 추웠지|우선 들어와요|나도 아빠처럼 탐정|잘 자, 다람|이 수건은 네가 두르고|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
+   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고,? 숨|^다 식은 건|^그 애… 괜찮아요|혼자 먼저 가지 않기로/, 'inn_serious'],
+   [/밤에 복도에서 무엇을|족제비 손님이 시계|무엇을 들고 있었|빨간 띠가 보이긴/, 'inn_inv']
+  ];
+  function contextMusic(fallback,scope){
+   if(M.ctxScope!==scope){M.ctxScope=scope;M.ctxKey=fallback;M.ctxLine=null}
+   var ln=liveLine();if(ln&&ln!==M.ctxLine){M.ctxLine=ln;var t=lineText();for(var i=0;i<CONTEXT.length;i++)if(CONTEXT[i][0].test(t)){M.ctxKey=CONTEXT[i][1];break}}
+   return M.ctxKey||fallback;
+  }
+  function investigationMusic(){
+   var social=G.tab==='talk'&&G.who,base=social&&['nabi','karo','innma'].indexOf(social)>=0?'inn_friend':social==='geokkuri'?'inn_comic':social==='wanggu'?'inn_serious':'inn_inv';
+   return contextMusic(base,DL||('idle:'+G.loc+':'+G.tab+':'+(social||'')));
+  }
   /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
   var TENSE={on:false,k:0,gen:0,nul:0};
   var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
   function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0}
   function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!cur()){tenseStop();return}
-    if(AC&&AC.state==="running"&&S.sound){var v=TENSE.discovery?.28:.34,gap=TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
+    if(AC&&AC.state==="running"&&S.sound){var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
     else setTimeout(function(){tenseTick(gen)},300)}catch(e){tenseStop()}}
   window.__innTense=function(){return TENSE.on};
   setInterval(function(){try{if(!cur()||!liveLine()){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
@@ -52,10 +69,10 @@
     if(sid==="P10"&&M.bell)return null;
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
     if(sid==="P13"){if(!M.hit&&/^베개 밑…/.test(lineText())){M.hit=now;try{SFX.cut9()}catch(e){}}if(M.hit&&now-M.hit<1500)return null}   /* 주머니 발견: 음악 끊고 한 방 → 1.5초 정적 */   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
-    if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
+    if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
     if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 수색·P13 안 쓰는 방: 사건곡(낮게) */
-   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return "inn_inv";   /* 인물과 짧게 대화해도 같은 조사곡의 재생 위치를 유지한다. */
+   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return investigationMusic();   /* 동일 상황의 곡은 재시작하지 않는다. */
     var ph=null,E=window.EP1INN||{},fin=false;try{ph=window.__rtPh&&__rtPh();fin=!!(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)}catch(e){}
     /* 정답 제시('그건 아니야!'/'이걸 봐!') 순간: 음악을 끊고 외침 → 이어서 추궁곡. 그 발언의 대화가 끝나고 1.5초 뒤(또는 단계가 바뀌면) 원래 곡으로 */
     if(fin&&ph===E.FINAL.phases[E.FINAL.phases.length-1]&&lineWho()==="seryeon"&&/^…네\.$/.test(lineText())&&!M.f4){M.f4=now;M.obj=0;try{SFX.cut9()}catch(e){}return null}
@@ -79,7 +96,7 @@
    if(!b.inn_pro){var pi=b.inn_pi|0;
     var sd=sidOf(pi);if(sd!=="P10")M.p10=0;
     if(sd==="P5"){f=.8;if(/^열셋/.test(t))M.p5c=1;if(M.p5c)f=.38}   /* P5 복도: 같은 곡 낮게, "열셋."부터 더 낮게 */
-    if(sd==="P10"){if(!M.p10)M.p10=now;f=Math.max(0,1-(now-M.p10)/14000)}   /* P10: 여행곡 천천히 종료 */
+    if(sd==="P10")f=.55;   /* 가족 대화는 낮게 유지하고 열 시 종에서 음악을 끊는다. */
     if(sd==="P12")f=.7;if(sd==="P13")f=.6;     /* 수색·발견: 사건곡 낮게 */
     return f}
    if(!b.inn_final){if(M.obj&&document.querySelector("body>.rt"))f*=.72;if(M.f4)f*=.55;return f}   /* 추궁곡·인정 뒤 할머니 테마는 낮게 */

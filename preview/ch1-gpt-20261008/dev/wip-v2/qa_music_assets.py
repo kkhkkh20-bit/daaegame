@@ -1,4 +1,4 @@
-"""Measure v3 audio assets and validate scores, URLs and attribution.
+"""Measure preserved v3, new v4 context audio, scores, URLs and attribution.
 
 This checks files and notation; it does not claim subjective listening, natural
 recording provenance beyond the upstream attribution, or engine transition QA.
@@ -81,9 +81,11 @@ def main():
         'climax','climax-press','after'}, 'Missing or unexpected string track'
     source = (BASE/'inn_music_tracks.js').read_text()
     mapping = json.JSONDecoder().raw_decode(source.split('window.__INN_MUSIC=',1)[1])[0]
-    files = {row['file']:row for row in tracks}
+    context_root = PREVIEW/'audio/v4'
+    context = json.loads((context_root/'score-context-v4.json').read_text())
+    files = {row['file']:row for row in tracks+context}
     for key, song in mapping.items():
-        assert song['media'].startswith('audio/v3/') and 'piano' not in song['media'], (key,song)
+        assert song['media'].startswith(('audio/v3/','audio/v4/')) and 'piano' not in song['media'], (key,song)
         assert not any(song.get(lane) for lane in ('mel','bass','pad','arp','dr','comp')), (
             'Sampled track also schedules an old synthesized accompaniment', key)
         row = files[Path(song['media']).name]
@@ -112,6 +114,51 @@ def main():
     assert all(text in credits for text in ('FluidR3','Frank Wen','Toby Smithe','MIT')), credits
     assert (PREVIEW/'audio/v2/FLUIDR3-LICENSE.txt').is_file(), 'Missing instrument license'
     print('PASS nine non-piano tracks: triads, attack grid, headroom, loop seams, manifest paths and instrument credits',flush=True)
+
+    # Context cues must be distinct authored scores, not tempo-adjusted copies.
+    assert {r['key'] for r in context} == {'inn_inv','inn_serious','inn_comic','inn_friend'}
+    expected_tonics={'inn_inv':'D minor','inn_serious':'D minor','inn_comic':'G major','inn_friend':'F major'}
+    themes=[]
+    assert len({r['sha256'] for r in context})==4, 'Duplicated context recordings'
+    for row in context:
+        assert row['beatsPerBar']==4 and row['bars'] in (16,24) and row['gridSubdivision']==2
+        assert row['tonic']==expected_tonics[row['key']]
+        assert len(row['chords'])==row['bars'] and len(row['form'])==row['bars']
+        assert {'A','B'} <= set(row['form']), ('Missing distinct A/B sections',row['name'])
+        assert abs(row['seconds']-row['bars']*4*60/row['bpm']) <= 1/RATE
+        assert all(int(lane)>0 and int(program) not in range(8) for lane,program in row['programs'].items()), ('Piano instrument mapped',row['name'])
+        motif=[];sections={'A':[],'B':[]}
+        for note in row['notes']:
+            assert str(note['lane']) in row['programs'] and note['lane']!=0
+            beat=note['at']*row['bpm']/60
+            assert abs(beat*2-round(beat*2))<3e-5, ('Off eighth-note grid',row['name'],note)
+            bar=min(row['bars']-1,int((beat+1e-5)//4))
+            chord=row['triads'][row['chords'][bar]]
+            assert note['midi']%12 in {n%12 for n in chord}, ('Note outside active chord',row['name'],note,chord)
+            assert 0<note['duration'] and note['at']+note['duration']<=row['seconds']+1e-5
+            pattern=(round(beat%4,4),note['midi']%12,round(note['duration']*row['bpm']/60,4))
+            motif.append(pattern)
+            label=row['form'][bar]
+            if label in sections:sections[label].append(pattern)
+        assert sections['A']!=sections['B'], ('A/B merely repeats same phrase',row['name'])
+        themes.append(motif)
+        assert -25.2<=row['integrated_lufs']<=-22.8, ('Context outside -23 to -25 LUFS',row['name'],row['integrated_lufs'])
+        assert row['true_peak_db']<=-3.5, ('Context lacks true-peak headroom',row['name'])
+        assert mapping[row['key']]['media']=='audio/v4/'+row['file']
+        assert abs(mapping[row['key']]['loopSeconds']-row['seconds'])<=1/RATE
+        audio=measure(row,context_root/row['file']);del audio
+        meter=subprocess.run(['ffmpeg','-v','info','-i',str(context_root/row['file']),'-af','loudnorm=print_format=json','-f','null','-'],capture_output=True,text=True,check=True)
+        measured=json.JSONDecoder().raw_decode(meter.stderr[meter.stderr.rfind('{'):].lstrip())[0]
+        assert -25<=float(measured['input_i'])<=-23, ('Decoded MP3 loudness outside dialogue range',row['name'],measured)
+        assert abs(float(measured['input_i'])-row['integrated_lufs'])<=.05, ('Stale loudness metadata',row['name'])
+        assert float(measured['input_tp'])<=-3.5, ('Decoded MP3 true peak lacks headroom',row['name'])
+        if not args.offline:download(args.base_url,'audio/v4/'+row['file'],context_root/row['file'])
+    assert all(a!=b for i,a in enumerate(themes) for b in themes[i+1:]), 'Context cues only change tempo or timbre'
+    for key in ('inn_title','inn_travel','inn_meet','inn_meet_press','inn_climax','inn_climax_press','inn_after'):
+        assert mapping[key]['media'].startswith('audio/v3/'), ('Existing v3 cue replaced',key)
+    ccredits=(context_root/'CREDITS.txt').read_text()
+    assert all(x in ccredits for x in ('FluidR3','Frank Wen','Toby Smithe','MIT','../v2/FLUIDR3-LICENSE.txt'))
+    print('PASS four distinct original context cues: A/B motifs, harmony/grid, -23 to -25 LUFS, headroom, loopEnd, URLs and credits',flush=True)
 
     sfx_root = root/'sfx'
     sfx = json.loads((sfx_root/'manifest.json').read_text())

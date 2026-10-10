@@ -47432,8 +47432,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
       L("det1","……"),I("그 뒤에, 작은 몸이 웅크리고 있다. 움직이지 않는다."),
       ["det1","아빠. 침대 밑에 작은 애가 있어. 차가워… 숨을 안 쉬는 것 같아.","sad","","","","cower"],
       L("det0","다람아, 뒤로 물러나 있어. 아빠가 꺼낼게."),
-
-
+      I("아빠가 두 손으로 작은 몸을 받쳐 든다."),
       L("det0","살아 있을지도 몰라. 꺼내자."),
       L("det0","바구니랑 수건 좀 빌려 와. 너울 씨께도 알리고."),L("@dir","who:none;sfx:steps;ms:420"),
       I("작은 몸을 바구니에 옮기고 수건을 느슨하게 덮는다."),
@@ -50650,8 +50649,8 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    if(x.beat&&G&&G.beats&&!G.beats[x.beat]){G.beats[x.beat]=1;try{saveProg()}catch(e){}}
    return (ls||[]).map(function(l){return l.slice()})}catch(e){return null}};
 
-/* Generated original string score; no piano instruments. */
-window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/title-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_travel":{"bpm":76,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/travel-strings-v3.mp3","loopSeconds":50.526326530612245},"inn_inv":{"bpm":80,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/investigation-strings-v3.mp3","loopSeconds":48.0},"inn_serious":{"bpm":64,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/serious-strings-v3.mp3","loopSeconds":60.0},"inn_meet":{"bpm":88,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-strings-v3.mp3","loopSeconds":43.636371882086166,"preload":["audio/v3/meeting-press-strings-v3.mp3","audio/v3/climax-strings-v3.mp3"]},"inn_meet_press":{"bpm":104,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-press-strings-v3.mp3","loopSeconds":36.92308390022676},"inn_climax":{"bpm":96,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-strings-v3.mp3","loopSeconds":40.0,"preload":["audio/v3/climax-press-strings-v3.mp3","audio/v3/after-strings-v3.mp3"]},"inn_climax_press":{"bpm":112,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-press-strings-v3.mp3","loopSeconds":34.285714285714285},"inn_after":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/after-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_cold":{"bpm":64,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/serious-strings-v3.mp3","loopSeconds":60.0},"inn_t_seryeon":{"bpm":80,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/investigation-strings-v3.mp3","loopSeconds":48.0},"inn_t_nabi":{"bpm":80,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/investigation-strings-v3.mp3","loopSeconds":48.0},"inn_t_bami":{"bpm":80,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/investigation-strings-v3.mp3","loopSeconds":48.0},"inn_t_doto":{"bpm":80,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/investigation-strings-v3.mp3","loopSeconds":48.0},"inn_t_buri":{"bpm":80,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/investigation-strings-v3.mp3","loopSeconds":48.0},"inn_t_neoul":{"bpm":80,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/investigation-strings-v3.mp3","loopSeconds":48.0},"inn_t_innma":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/after-strings-v3.mp3","loopSeconds":53.333333333333336}};
+/* Original piano-free v4 context cues; other v3 score retained. */
+window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/title-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_travel":{"bpm":76,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/travel-strings-v3.mp3","loopSeconds":50.526326530612245},"inn_inv":{"bpm":88,"vol":0.8,"prog":["Dm","Bb","Dm","Am","F","C","Gm","Am","Gm","C","F","Bb","Dm","Gm","Am","Dm"],"mel":[],"media":"audio/v4/investigation-context-v4.mp3","loopSeconds":43.636371882086166},"inn_serious":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_meet":{"bpm":88,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-strings-v3.mp3","loopSeconds":43.636371882086166,"preload":["audio/v3/meeting-press-strings-v3.mp3","audio/v3/climax-strings-v3.mp3"]},"inn_meet_press":{"bpm":104,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-press-strings-v3.mp3","loopSeconds":36.92308390022676},"inn_climax":{"bpm":96,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-strings-v3.mp3","loopSeconds":40.0,"preload":["audio/v3/climax-press-strings-v3.mp3","audio/v3/after-strings-v3.mp3"]},"inn_climax_press":{"bpm":112,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-press-strings-v3.mp3","loopSeconds":34.285714285714285},"inn_after":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/after-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_cold":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_seryeon":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_nabi":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_bami":{"bpm":100,"vol":0.8,"prog":["G","D","C","G","Em","C","Am","D","C","G","Am","D","Em","C","D","G"],"mel":[],"media":"audio/v4/comic-context-v4.mp3","loopSeconds":38.4},"inn_t_doto":{"bpm":88,"vol":0.8,"prog":["Dm","Bb","Dm","Am","F","C","Gm","Am","Gm","C","F","Bb","Dm","Gm","Am","Dm"],"mel":[],"media":"audio/v4/investigation-context-v4.mp3","loopSeconds":43.636371882086166},"inn_t_buri":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_neoul":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_innma":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_comic":{"bpm":100,"vol":0.8,"prog":["G","D","C","G","Em","C","Am","D","C","G","Am","D","Em","C","D","G"],"mel":[],"media":"audio/v4/comic-context-v4.mp3","loopSeconds":38.4},"inn_friend":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_karo":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989}};
 
 /* Recorded wood doors and carriage hooves. Sources and adaptations: audio/v3/sfx/SFX_CREDITS.txt. */
 (function(){
@@ -50687,7 +50686,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  setInterval(function(){if(AC&&AC.state==="running"&&S.sound&&(chapter()||document.getElementById("innmain")))Object.keys(files).forEach(function(k){load(AC,k).catch(function(){})})},800);
 })();
 
- /* ==== 1장 오디오 연출 (큐·효과음 유지, 음악은 피아노 없는 현악 v3 음원) ====
+ /* ==== 1장 오디오 연출 (상황별 피아노 없는 목관·현악, 기존 회의 큐 유지) ====
     - 음악: 타이틀 -> 도입(inn_cold) -> 여행·여관 -> 사건 신고 -> 조사 -> 회의·압박 -> 최종 대결·압박 -> 후일담
       같은 곡 안에서는 장면·화자·장소가 바뀌어도 다시 시작하지 않는다(엔진: 같은 키면 그대로 둠). 낮춤은 덕킹으로만.
     - 환경음: 마차(녹음 말발굽 2박 루프), 바깥바람. 장소에 머무는 동안 한 인스턴스만.
@@ -50708,18 +50707,35 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
 
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0,carStopped:false,bell:false,failure:false};
-  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
+  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
   window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
-  window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine()}};
+  window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine(),context:M.ctxKey}};
   /* Complete media definitions: no synthesized piano or mismatched character themes. */
   Object.keys(window.__INN_MUSIC||{}).forEach(function(k){A.SONGS[k]=window.__INN_MUSIC[k]});
+  /* Authored turns, not punctuation or a sad face, change the music. A cue
+     lasts through the rest of its conversation/scene until another cue. */
+  var CONTEXT=[
+   [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|저한텐 그게 똑바로/, 'inn_comic'],
+   [/어서 와요\. 추웠지|우선 들어와요|나도 아빠처럼 탐정|잘 자, 다람|이 수건은 네가 두르고|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
+   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고,? 숨|^다 식은 건|^그 애… 괜찮아요|혼자 먼저 가지 않기로/, 'inn_serious'],
+   [/밤에 복도에서 무엇을|족제비 손님이 시계|무엇을 들고 있었|빨간 띠가 보이긴/, 'inn_inv']
+  ];
+  function contextMusic(fallback,scope){
+   if(M.ctxScope!==scope){M.ctxScope=scope;M.ctxKey=fallback;M.ctxLine=null}
+   var ln=liveLine();if(ln&&ln!==M.ctxLine){M.ctxLine=ln;var t=lineText();for(var i=0;i<CONTEXT.length;i++)if(CONTEXT[i][0].test(t)){M.ctxKey=CONTEXT[i][1];break}}
+   return M.ctxKey||fallback;
+  }
+  function investigationMusic(){
+   var social=G.tab==='talk'&&G.who,base=social&&['nabi','karo','innma'].indexOf(social)>=0?'inn_friend':social==='geokkuri'?'inn_comic':social==='wanggu'?'inn_serious':'inn_inv';
+   return contextMusic(base,DL||('idle:'+G.loc+':'+G.tab+':'+(social||'')));
+  }
   /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
   var TENSE={on:false,k:0,gen:0,nul:0};
   var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
   function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0}
   function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!cur()){tenseStop();return}
-    if(AC&&AC.state==="running"&&S.sound){var v=TENSE.discovery?.28:.34,gap=TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
+    if(AC&&AC.state==="running"&&S.sound){var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
     else setTimeout(function(){tenseTick(gen)},300)}catch(e){tenseStop()}}
   window.__innTense=function(){return TENSE.on};
   setInterval(function(){try{if(!cur()||!liveLine()){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
@@ -50741,10 +50757,10 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
     if(sid==="P10"&&M.bell)return null;
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
     if(sid==="P13"){if(!M.hit&&/^베개 밑…/.test(lineText())){M.hit=now;try{SFX.cut9()}catch(e){}}if(M.hit&&now-M.hit<1500)return null}   /* 주머니 발견: 음악 끊고 한 방 → 1.5초 정적 */   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
-    if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
+    if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
     if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 수색·P13 안 쓰는 방: 사건곡(낮게) */
-   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return "inn_inv";   /* 인물과 짧게 대화해도 같은 조사곡의 재생 위치를 유지한다. */
+   if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return investigationMusic();   /* 동일 상황의 곡은 재시작하지 않는다. */
     var ph=null,E=window.EP1INN||{},fin=false;try{ph=window.__rtPh&&__rtPh();fin=!!(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)}catch(e){}
     /* 정답 제시('그건 아니야!'/'이걸 봐!') 순간: 음악을 끊고 외침 → 이어서 추궁곡. 그 발언의 대화가 끝나고 1.5초 뒤(또는 단계가 바뀌면) 원래 곡으로 */
     if(fin&&ph===E.FINAL.phases[E.FINAL.phases.length-1]&&lineWho()==="seryeon"&&/^…네\.$/.test(lineText())&&!M.f4){M.f4=now;M.obj=0;try{SFX.cut9()}catch(e){}return null}
@@ -50768,7 +50784,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    if(!b.inn_pro){var pi=b.inn_pi|0;
     var sd=sidOf(pi);if(sd!=="P10")M.p10=0;
     if(sd==="P5"){f=.8;if(/^열셋/.test(t))M.p5c=1;if(M.p5c)f=.38}   /* P5 복도: 같은 곡 낮게, "열셋."부터 더 낮게 */
-    if(sd==="P10"){if(!M.p10)M.p10=now;f=Math.max(0,1-(now-M.p10)/14000)}   /* P10: 여행곡 천천히 종료 */
+    if(sd==="P10")f=.55;   /* 가족 대화는 낮게 유지하고 열 시 종에서 음악을 끊는다. */
     if(sd==="P12")f=.7;if(sd==="P13")f=.6;     /* 수색·발견: 사건곡 낮게 */
     return f}
    if(!b.inn_final){if(M.obj&&document.querySelector("body>.rt"))f*=.72;if(M.f4)f*=.55;return f}   /* 추궁곡·인정 뒤 할머니 테마는 낮게 */
@@ -51250,11 +51266,11 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   var lastBan=-1e9;
   try{var _bn9=banner;banner=function(){if(inn())lastBan=performance.now();return _bn9.apply(this,arguments)}}catch(e){}
   try{var _qk9=quake;quake=function(){if(inn()&&performance.now()-lastBan<3500&&!document.querySelector("body>.rt .flash,.flash,.shout"))return;return _qk9.apply(this,arguments)}}catch(e){}
-  /* 도착 연출(2026-10-10): 방에 도착하는 순간 한 번만, 화면 위쪽 가운데에 큰 장소 이름과 얇은 선이 잠깐 떴다 사라진다(흔들림 없음). 상단 상시 위치 표시는 그대로 */
+  /* 도착 연출: 초반 장면과 같은 작은 장소·시간 카드. 진행과 이동 대기는 그대로. */
   var ARR=null,arrT=0;
   try{var _pc9=placeCard;placeCard=function(){if(!inn())return _pc9.apply(this,arguments);document.querySelectorAll(".placecard").forEach(function(e){e.remove()});
    var l=loc();if(!l)return;var nm=SHORT[l.id]||l.name;clearTimeout(arrT);if(ARR)ARR.remove();ARR=document.createElement("div");ARR.className="arr10";ARR.setAttribute("role","status");
-   ARR.innerHTML='<span class="ln"></span><b></b><span class="ln"></span>';ARR.querySelector("b").textContent=nm;B.appendChild(ARR);arrT=setTimeout(function(){if(ARR){ARR.remove();ARR=null}},1700)}}catch(e){}
+   if(window.__innPlaceCard)ARR.appendChild(window.__innPlaceCard(nm,G.beats&&G.beats.inn_end?'다음 날 오후':'다음 날 오전'));else{ARR.innerHTML='<span class="ln"></span><b></b><span class="ln"></span>';ARR.querySelector("b").textContent=nm}B.appendChild(ARR);arrT=setTimeout(function(){if(ARR){ARR.remove();ARR=null}},1700)}}catch(e){}
   /* (4) 방 이동: 옛 지도 말이 걷는 820ms 대기 없이 곧바로(그동안 이전 방·옛 지도가 그대로 보이던 문제) */
   try{var _mt9=moveTo;moveTo=function(c,i,pp){if(!inn())return _mt9.apply(this,arguments);
     if(MOVING||G.loc===i||!locOpen(c,i)||dl())return;MOVING=true;var g0=G;try{SFX.steps()}catch(e){}
@@ -51305,7 +51321,6 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   /* 2026-10-10 v2: 주머니·이불을 본 뒤에도 침대 밑을 안 봤으면, 다음 할 일은 안 쓰는 방 침대 밑 */
   try{var _nsx=nextStep;nextStep=function(c){var r=_nsx.apply(this,arguments);try{if(!inn()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||!r)return r;
     if((G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return r;var bi=-1;c.locations.forEach(function(l,i){if(l.id==="bed13")bi=i});if(bi<0)return r;
-    var hintGame=G;setTimeout(function(){try{if(G===hintGame&&G.tab==="scene"&&G.loc===bi&&!dl()&&!document.querySelector('#innmove,#wmap,#ov .modal'))window.__pointAt&&window.__pointAt('[data-obs="o_under"]')}catch(e){}},900);
     return {say:"아빠, 침대 밑이 너무 어두워. 안쪽까지 한번 들여다보자.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
   /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
   var KEYOBS={o_under:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
@@ -51772,8 +51787,8 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  ].join('\n');document.head.appendChild(style);schedule();
 })();
 
-/* Persistent physical traces and a deliberate, single discovery scene.
-   Uses approved world art as SVG viewports; does not replace image files. */
+/* Physical traces, a faint sleeping guest and a single rescue transaction.
+   Discovery illustrations are shown only at the authored rescue moment. */
 (function(){
  'use strict';
  var shot=null,NS='http://www.w3.org/2000/svg';
@@ -51781,6 +51796,11 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  function bedroom(){return inn()&&CASES[G.ci].locations[G.loc].id==='bed13'}
  function has(id){return (G.found||[]).indexOf(id)>=0}
  function node(tag,attrs){var n=document.createElementNS(NS,tag);Object.keys(attrs||{}).forEach(function(k){n.setAttribute(k,attrs[k])});return n}
+ function sleepingBody(svg,cls){
+  var defs=node('defs'),clip=node('clipPath',{id:cls+'-clip'});clip.appendChild(node('path',{d:'M448 645l27-20 5-35 35-26v-37l23-15h36l11 31 33 2 32-22 35 10 20 19 42 13 26 24 33 26v31l-32 18-33 14h-70l-29-14-20-14-50 8-25-18-46 16h-37z'}));defs.appendChild(clip);svg.appendChild(defs);
+  var body=node('g',{'class':cls,transform:'translate(650 450) scale(.36)','clip-path':'url(#'+cls+'-clip)'});body.appendChild(node('image',{href:'art/ch1/locations/C04_basket_world.png',x:0,y:0,width:1280,height:1280}));
+  var box=svg.querySelector('image[data-world-prop="chest_closed"]');while(box&&box.parentNode!==svg)box=box.parentNode;svg.insertBefore(body,box||null);return body;
+ }
  function valid(s){return shot===s&&G===s.game&&bedroom()&&G.tab==='scene'}
  function clear(s){if(!s||shot!==s)return;clearInterval(s.timer);if(s.el)s.el.remove();document.body.classList.remove('inn-under-cut');window.__innDiscoveryTransferred=null;shot=null;if(window.__innWorld)window.__innWorld.update()}
  function traces(){
@@ -51793,7 +51813,10 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    else g.appendChild(node('path',{d:'M987 239h6m-3 0v9m-4-3h8m8-6v9m0-5h7m-3-4v10m10-10h8m-4 0v9m-4-4h8m11-5v8m0-3h6m-3-5v10 M988 258h5m-2 0v7m7-7v8m0-4h5m8-4h7m-3 0v8m-4-3h8m7-5v8m0-4h6m6-4h8m-4 0v8m-4-3h8m9-5v8m7-7h6m-3 0v8m-3-4h7',fill:'none',stroke:'#b1946c','stroke-width':1.5,opacity:.8}));
    world.appendChild(g);
   }
-  var hot=document.querySelector('#bigscene [data-obs="o_under"]');if(hot){hot.classList.add('inn-under-cue');hot.setAttribute('aria-label',has('C04')?'침대 밑 발견 자리 살펴보기':'어두운 침대 밑 살펴보기');if(!hot.querySelector('.under-cue-icon')){var icon=document.createElement('span');icon.className='under-cue-icon';icon.setAttribute('aria-hidden','true');icon.innerHTML='<svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg>';hot.appendChild(icon)}}
+  var hidden=world.querySelector('[data-scene-trace="sleeping-guest"]'),moved=has('C04')||(G.obsSeen||[]).indexOf('o_under')>=0||window.__innDiscoveryTransferred===G;
+  if(moved&&hidden){hidden.remove();var d=world.querySelector('#under-hidden-clip');if(d)d.parentNode.remove()}
+  if(!moved&&!hidden){hidden=sleepingBody(world,'under-hidden');hidden.dataset.sceneTrace='sleeping-guest';hidden.setAttribute('aria-hidden','true')}
+  var hot=document.querySelector('#bigscene [data-obs="o_under"]');if(hot){hot.classList.add('inn-under-cue');hot.setAttribute('aria-label',has('C04')?'침대 밑 발견 자리 살펴보기':'어두운 침대 밑 살펴보기');var oldIcon=hot.querySelector('.under-cue-icon');if(oldIcon)oldIcon.remove()}
  }
  function stage(s,next){
   if(!valid(s)||s.phase===next)return;s.phase=next;
@@ -51811,21 +51834,20 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   if(!DL||!DL.lines||!DL.lines[DL.i])return;
   var l=DL.lines[DL.i],t=String(l[7]||l[1]||'');
   if(/빵 바구니와 수건을 빌려 왔다|작은 몸을 바구니에 옮기고/.test(t))stage(s,'basket');
-  else if(s.phase!=='basket'&&/작은 몸이 웅크리고 있다|침대 밑에 작은 애가 있어|아빠가 꺼낼게|이렇게 작은 몸/.test(t))stage(s,'body');
+  else if(s.phase!=='basket'&&/두 손으로 작은 몸을 받쳐|살아 있을지도 몰라|바구니랑 수건 좀 빌려/.test(t))stage(s,'held');
+  else if(s.phase!=='basket'&&s.phase!=='held'&&/작은 몸이 웅크리고 있다|침대 밑에 작은 애가 있어|아빠가 꺼낼게|이렇게 작은 몸/.test(t))stage(s,'body');
   else if(s.phase==='fur'&&/등잔 빛이 상자 모서리/.test(t))stage(s,'light');
   else if(s.phase==='dark'&&/상자 뒤에 뭐가 있어/.test(t))stage(s,'fur');
  }
  function closeup(s){
   var source=document.querySelector('#bigscene svg[data-inn-world="bed13"]');if(!source)return;
   var frame=document.createElement('div');frame.id='inn-under-scene';frame.dataset.stage='dark';frame.setAttribute('aria-hidden','true');
-  var svg=source.cloneNode(true);svg.setAttribute('viewBox','760 520 650 285');svg.setAttribute('preserveAspectRatio','xMidYMid slice');svg.removeAttribute('data-inn-world');svg.querySelectorAll('[data-scene-trace],.wn9').forEach(function(n){n.remove()});
-  var defs=node('defs'),clip=node('clipPath',{id:'inn-under-body-clip'});clip.appendChild(node('path',{d:'M448 645l27-20 5-35 35-26v-37l23-15h36l11 31 33 2 32-22 35 10 20 19 42 13 26 24 33 26v31l-32 18-33 14h-70l-29-14-20-14-50 8-25-18-46 16h-37z'}));defs.appendChild(clip);svg.appendChild(defs);
-  // Frame just the already approved mouse from the basket art, behind the box.
-  var body=node('g',{'class':'under-body',transform:'translate(650 450) scale(.36)','clip-path':'url(#inn-under-body-clip)'}),im=node('image',{href:'art/ch1/locations/C04_basket_world.png',x:0,y:0,width:1280,height:1280});body.appendChild(im);
-  var box=svg.querySelector('image[data-world-prop="chest_closed"]');while(box&&box.parentNode!==svg)box=box.parentNode;svg.insertBefore(body,box||null);
+  var svg=source.cloneNode(true);svg.setAttribute('viewBox','760 520 650 285');svg.setAttribute('preserveAspectRatio','xMidYMid slice');svg.removeAttribute('data-inn-world');svg.querySelectorAll('[data-scene-trace],.wn9').forEach(function(n){n.remove()});var hiddenClip=svg.querySelector('#under-hidden-clip');if(hiddenClip)hiddenClip.parentNode.remove();
+  // The same sleeping guest is under the bed in both the world and close-up.
+  sleepingBody(svg,'under-body');var defs=node('defs');svg.appendChild(defs);
   svg.appendChild(node('rect',{'class':'under-dark',x:760,y:520,width:650,height:285,fill:'#090807'}));
   var beam=node('radialGradient',{id:'inn-under-light',cx:'34%',cy:'56%',r:'62%'});beam.appendChild(node('stop',{offset:'0%','stop-color':'#f6d398','stop-opacity':'.22'}));beam.appendChild(node('stop',{offset:'100%','stop-color':'#f6d398','stop-opacity':'0'}));defs.appendChild(beam);svg.appendChild(node('rect',{'class':'under-beam',x:760,y:520,width:650,height:285,fill:'url(#inn-under-light)'}));
-  frame.appendChild(svg);s.el=frame;
+  frame.appendChild(svg);var held=document.createElement('img');held.className='under-held';held.src='art/ch1/discovery/somsom-held.png';held.alt='';held.draggable=false;frame.appendChild(held);s.el=frame;
  }
  function record(s){
   if(!valid(s)){clear(s);return}
@@ -51843,18 +51865,21 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   try{closeup(s);say(obs.say.map(function(l){return l.slice()}),assess);watch(s);s.timer=setInterval(function(){watch(s)},50)}catch(e){clear(s);throw e}
  };
  var css=document.createElement('style');css.textContent=[
-  'html body.inn1 #bigscene .hot.inn-under-cue{pointer-events:auto!important;opacity:1!important;visibility:visible!important;outline:0!important;box-shadow:none!important;animation:none!important}',
-  'html body.inn1 #bigscene .hot.inn-under-cue::after{display:none!important}.under-cue-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:22px;height:22px;border:1px solid #c8b38b;border-radius:50%;background:#30271bd9;pointer-events:none;display:grid;place-items:center}.under-cue-icon svg{width:15px;height:15px;fill:none;stroke:#f2dfb7;stroke-width:2}',
-  'html body.inn1 #bigscene .hot.inn-under-cue>svg,html body.inn1 #bigscene .hot.inn-under-cue>.hn{display:none!important}html body.inn1 #bigscene .hot.inn-under-cue>.under-cue-icon{display:grid!important;opacity:1!important;visibility:visible!important}',
+  'html body.inn1 #bigscene .hot.inn-under-cue{pointer-events:auto!important;opacity:1!important;visibility:visible!important;outline:0!important;border:0!important;background:transparent!important;box-shadow:none!important;animation:none!important}',
+  'html body.inn1 #bigscene .hot.inn-under-cue::before,html body.inn1 #bigscene .hot.inn-under-cue::after,html body.inn1 #bigscene .hot.inn-under-cue>*{display:none!important}html body.inn1 #bigscene .hot.inn-under-cue:focus-visible{outline:1px dashed #e6ddc9!important;outline-offset:2px}',
+  'svg[data-inn-world="bed13"] .under-hidden{opacity:.46;filter:brightness(.72);pointer-events:none}',
   'svg[data-inn-world="bed13"] image[data-world-prop="C02_trace"]{opacity:.88!important;mix-blend-mode:normal!important;filter:none!important}',
   '#inn-under-scene{position:absolute;z-index:3;top:18px;left:50%;transform:translateX(-50%);width:min(650px,calc(100vw - 36px));height:calc(100dvh - 156px);max-height:410px;background:#090807;border:2px solid #8c704a;box-shadow:0 0 0 4px #16110c,0 8px 26px #0009;overflow:hidden;pointer-events:none}',
   '#inn-under-scene>svg{display:block;width:100%;height:100%;image-rendering:pixelated}body.inn-under-cut #innstage .isf{opacity:0!important}',
+  '#inn-under-scene .under-held{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;pointer-events:none}#inn-under-scene[data-stage="held"]{background:radial-gradient(ellipse at 50% 38%,#53432d,#171a20 85%)}#inn-under-scene[data-stage="held"]>svg{opacity:.12}#inn-under-scene[data-stage="held"] .under-held{display:block}#inn-under-scene[data-stage="held"]::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,transparent 32%,#0a0c1360);pointer-events:none}',
   '#inn-under-scene .under-body{opacity:0;filter:brightness(.2)}#inn-under-scene .under-dark{opacity:.86}#inn-under-scene .under-beam{opacity:0}',
   '#inn-under-scene[data-stage="fur"] .under-body{opacity:.5}#inn-under-scene[data-stage="fur"] .under-dark{opacity:.67}',
   '#inn-under-scene[data-stage="light"] .under-body{opacity:.85;filter:brightness(.6)}#inn-under-scene[data-stage="light"] .under-dark{opacity:.35}#inn-under-scene[data-stage="light"] .under-beam{opacity:1}',
   '#inn-under-scene[data-stage="body"] .under-body{opacity:1;filter:brightness(.85)}#inn-under-scene[data-stage="body"] .under-dark{opacity:.14}#inn-under-scene[data-stage="body"] .under-beam{opacity:1}',
-  '@media(prefers-reduced-motion:no-preference){#inn-under-scene .under-body,#inn-under-scene .under-dark,#inn-under-scene .under-beam{transition:opacity .5s ease,filter .5s ease}}'
+  '@media(prefers-reduced-motion:no-preference){#inn-under-scene .under-body,#inn-under-scene .under-dark,#inn-under-scene .under-beam{transition:opacity .8s ease,filter .8s ease}#inn-under-scene[data-stage="held"] .under-held{animation:inn-held-light .8s ease-out both}}@keyframes inn-held-light{from{opacity:0;filter:brightness(.55)}to{opacity:1;filter:brightness(1)}}'
  ].join('\n');document.head.appendChild(css);
+ // Hints may still name the dark space, but never draw a target around it.
+ try{var point=window.__pointAt;window.__pointAt=function(sels,ms){if(inn()){var list=Array.isArray(sels)?sels:[sels];if(list.some(function(sel){return typeof sel==='string'&&sel.indexOf('o_under')>=0})){window.__clearPt&&window.__clearPt();list=list.filter(function(sel){return typeof sel!=='string'||sel.indexOf('o_under')<0});if(!list.length)return;return point(list,ms)}}return point.apply(this,arguments)}}catch(e){}
  setInterval(function(){try{traces();if(shot&&!valid(shot))clear(shot)}catch(e){}},160);
 })();
 
@@ -52008,28 +52033,39 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   if(/다람이 문에 손을 댄다/.test(t))cue('touch');
   if(/다람이 뛰어 돌아가/.test(t))cue('return');
  }
- /* Native banner stays alive for its original promise/timing and input guard.
-    Only its presentation changes; no replacement overlay or click handler. */
- function decorate(b){if(!b||b.classList.contains('inn-place-panel'))return;b.classList.add('inn-place-panel');
-  var sub=b.querySelector('.mid small'),text=sub?sub.textContent:'';var dark=/밤|저녁|열한|자정/.test(text);
-  var icon=document.createElement('span');icon.className='place-time-icon';icon.setAttribute('aria-hidden','true');
-  icon.innerHTML=dark?'<svg viewBox="0 0 24 24"><path d="M18 16A8 8 0 0 1 8 6a8 8 0 1 0 10 10Z"/></svg>':'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></svg>';
-  var mid=b.querySelector('.mid');if(mid)mid.insertBefore(icon,mid.firstChild);
+ /* Native banner keeps its promise, duration and tap guard. Place/time cards
+    share the arrival presentation; verdicts and debate titles keep theirs. */
+ function placeCard(title,time){
+  var card=document.createElement('div');card.className='mid inn-place-card';
+  card.innerHTML='<span class="location-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#81603d" stroke-width="1.7" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div class="place-copy"><b></b><small><span class="place-time-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#80694b" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><span class="place-time-text"></span></small></div>';
+  card.querySelector('b').textContent=title||'';card.querySelector('.place-time-text').textContent=time||'';return card;
  }
- try{var oldBanner=banner;banner=function(){var yes=active(),r=oldBanner.apply(this,arguments);if(yes)document.querySelectorAll('.banner').forEach(decorate);return r}}catch(e){}
+ window.__innPlaceCard=placeCard;
+ function isPlace(title,sub){
+  if(!active()||!sub)return false;
+  var list=window.EP1INN&&window.EP1INN.PRO||[];
+  return list.some(function(s){return s.title===title&&s.sub===sub})||/^(첫날|다음 날|그 밤|아침|오전|오후|저녁|한밤)/.test(String(sub));
+ }
+ function decorate(b){if(!b||b.classList.contains('inn-place-panel'))return;
+  var mid=b.querySelector('.mid'),title=mid&&mid.querySelector('b'),sub=mid&&mid.querySelector('small');if(!mid||!title)return;
+  var card=placeCard(title.textContent,sub?sub.textContent:'');mid.replaceWith(card);b.classList.add('inn-place-panel');
+ }
+ try{var oldBanner=banner;banner=function(title,sub){var yes=isPlace(title,sub),r=oldBanner.apply(this,arguments);if(yes)document.querySelectorAll('.banner:not(.inn-place-panel)').forEach(decorate);return r}}catch(e){}
  var css=document.createElement('style');css.id='inn-opening-direction';css.textContent=
- '.banner.inn-place-panel{background:transparent!important}.banner.inn-place-panel .bars{width:auto!important;max-width:calc(100vw - 40px);align-self:start;margin-top:clamp(68px,18vh,100px)}'+
- '.banner.inn-place-panel .bar1,.banner.inn-place-panel .bar2{display:none!important}.banner.inn-place-panel .mid{display:grid!important;grid-template-columns:28px minmax(0,1fr);gap:3px 10px;width:auto!important;min-width:180px;max-width:min(430px,calc(100vw - 40px));padding:12px 20px!important;text-align:left!important;background:#f4e9d1!important;border:1px solid #9b7b47;border-radius:4px;box-shadow:0 4px 16px #24170b40;animation:inn-panel-in .24s ease-out!important;overflow:visible!important}'+
- '.banner.inn-place-panel .mid::after{display:none!important}.banner.inn-place-panel .mid b{grid-column:2;grid-row:1;font:600 clamp(16px,3vw,22px)/1.3 var(--font,sans-serif)!important;color:#49341f!important;letter-spacing:.035em!important;text-shadow:none!important;overflow-wrap:anywhere}.banner.inn-place-panel .mid b span{animation:none!important}'+
- '.banner.inn-place-panel .mid small{grid-column:2;grid-row:2;font:12px/1.4 var(--font,sans-serif)!important;color:#846a45!important;letter-spacing:.015em!important}.place-time-icon{grid-column:1;grid-row:1 / 3;align-self:center;color:#967440}.place-time-icon svg{display:block;width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}'+
- '@keyframes inn-panel-in{from{opacity:0;translate:0 5px}to{opacity:1;translate:0 0}}'+
+ '.banner.inn-place-panel{display:block!important;background:transparent!important}.banner.inn-place-panel .bars{position:absolute!important;left:22px;top:74px;width:auto!important;max-width:calc(100vw - 44px);margin:0!important;align-items:flex-start!important}'+
+ '.banner.inn-place-panel .bar1,.banner.inn-place-panel .bar2{display:none!important}.banner.inn-place-panel .mid.inn-place-card,.arr10 .inn-place-card{box-sizing:border-box;display:flex!important;align-items:center;gap:12px;width:max-content!important;min-width:200px;max-width:min(410px,calc(100vw - 44px));padding:11px 16px 11px 12px!important;text-align:left!important;background:#f6edd8!important;border:1px solid #9b8059;border-left:4px solid #85623d;border-radius:8px 3px 3px 8px;box-shadow:0 3px 0 #24170b35,0 7px 20px #24170b30;animation:inn-panel-in .24s ease-out!important;overflow:visible!important}'+
+ '.inn-place-card .location-mark{display:grid;place-items:center;flex:0 0 36px;width:36px;height:42px;border-right:1px solid #d6c4a2;padding-right:10px;color:#81603d}.inn-place-card .location-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}.inn-place-card .place-copy{min-width:0}'+
+ '.banner.inn-place-panel .mid::after{display:none!important}.banner.inn-place-panel .mid b,.arr10 .inn-place-card b{display:block!important;font:400 20px/1.4 Galmuri11,monospace!important;color:#3d2e21!important;letter-spacing:0!important;text-shadow:none!important;white-space:normal!important;overflow-wrap:anywhere}.banner.inn-place-panel .mid b span{opacity:1!important;transform:none!important;animation:none!important}'+
+ '.banner.inn-place-panel .mid small,.arr10 .inn-place-card small{display:flex!important;align-items:center;gap:5px;margin-top:3px;font:400 12px/1.4 Galmuri11,monospace!important;color:#80694b!important;letter-spacing:0!important}.place-time-icon svg{display:block;width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}'+
+ '.arr10:has(.inn-place-card){left:22px!important;top:74px!important;transform:none!important;gap:0!important;white-space:normal!important}.arr10:has(.inn-place-card) .mid::after{display:none!important}'+
+ '@keyframes inn-panel-in{from{opacity:0;translate:-6px 0}to{opacity:1;translate:0 0}}'+
  '#inn-night-walk{position:fixed;inset:0;z-index:42;pointer-events:none!important;overflow:hidden}#inn-night-walk svg{width:100%;height:100%;display:block;image-rendering:pixelated}#inn-night-walk image{image-rendering:pixelated}.inn-night-direction #innstage .isf[data-k="det1"]{visibility:hidden!important}'+
  '.inn-night-direction #bigscene>svg[data-bg]{filter:brightness(.58) saturate(.72);transition:filter .3s}.inn-night-direction.inn-night-dark #bigscene>svg[data-bg]{filter:brightness(.43) saturate(.6)}#inn-night-walk .night-room-child{transform:translate(1070px,415px)}#inn-night-walk .night-bedroom{opacity:1;transition:opacity .25s}#inn-night-walk.out .night-bedroom{opacity:0}#inn-night-walk.return .night-bedroom{opacity:1;transition-delay:.85s}#inn-night-walk .night-child{filter:brightness(.86)}'+
  '#inn-night-walk .night-light{opacity:0;transition:opacity .3s}#inn-night-walk.out .night-light{opacity:1}#inn-night-walk.dark .night-light{opacity:0}#inn-night-walk .night-child{opacity:0;transform:translate(1100px,595px)}'+
  '#inn-night-walk.out .night-child{opacity:1;animation:inn-night-out 1.8s steps(16,end) forwards}#inn-night-walk.return .night-child{animation:inn-night-return .85s steps(10,end) forwards}'+
  '@keyframes inn-night-out{0%{opacity:0;transform:translate(1100px,595px)}12%{opacity:1}100%{opacity:1;transform:translate(625px,425px)}}@keyframes inn-night-return{0%{opacity:1;transform:translate(625px,425px)}86%{opacity:1;transform:translate(1100px,595px)}100%{opacity:0;transform:translate(1135px,610px)}}'+
- '@media(max-aspect-ratio:3/4){#inn-night-walk .night-room-child{transform:translate(720px,415px)}.banner.inn-place-panel .bars{margin-top:76px}.banner.inn-place-panel .mid{min-width:160px;padding:11px 16px!important}}'+
- '@media(prefers-reduced-motion:reduce){.banner.inn-place-panel .mid{animation:none!important}#inn-night-walk .night-light,#inn-night-walk .night-bedroom,.inn-night-direction #bigscene>svg[data-bg]{transition:none!important}#inn-night-walk.out .night-child{animation:none;opacity:1;transform:translate(625px,425px)}#inn-night-walk.return .night-child{animation:none;opacity:0}}';
+ '@media(max-aspect-ratio:3/4){#inn-night-walk .night-room-child{transform:translate(720px,415px)}.banner.inn-place-panel .bars,.arr10:has(.inn-place-card){left:16px!important;top:80px!important}.banner.inn-place-panel .mid.inn-place-card,.arr10 .inn-place-card{max-width:calc(100vw - 32px);min-width:180px}.banner.inn-place-panel .mid b,.arr10 .inn-place-card b{font-size:18px!important}}'+
+ '@media(prefers-reduced-motion:reduce){.banner.inn-place-panel .mid,.arr10:has(.inn-place-card){animation:none!important}#inn-night-walk .night-light,#inn-night-walk .night-bedroom,.inn-night-direction #bigscene>svg[data-bg]{transition:none!important}#inn-night-walk.out .night-child{animation:none;opacity:1;transform:translate(625px,425px)}#inn-night-walk.return .night-child{animation:none;opacity:0}}';
  document.head.appendChild(css);setInterval(sync,100);
  window.__innOpeningDirection=function(){return {night:!!night,cue:night&&night.dataset.cue,scene:lastScene&&lastScene.sid,reduced:reduced.matches}};
 })();
