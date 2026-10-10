@@ -75,11 +75,11 @@
      (발견 장소는 새 구조에서 침대 밑으로 옮길 예정 — 줄 글로 걸어 두어 장소가 바뀌어도 같은 연출) */
   var TENSE={on:false,k:0};
   var TENSE_ON=/안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
-  function tenseTick(){try{if(!TENSE.on)return;if(!cur()||typeof DL==="undefined"||!DL){TENSE.on=false;return}
+  function tenseTick(){try{if(!TENSE.on)return;if(!cur()){TENSE.on=false;return}
     if(AC&&AC.state==="running"&&S.sound){var v=.34,gap=Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*.32,null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(tenseTick,gap*1000)}
     else setTimeout(tenseTick,300)}catch(e){TENSE.on=false}}
   window.__innTense=function(){return TENSE.on};
-  setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL){TENSE.on=false;return}var l=DL.lines&&DL.lines[DL.i],t=l?String(l[1]||""):"";
+  setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)TENSE.on=false}return}TENSE.nul=0;var l=DL.lines&&DL.lines[DL.i],t=l?String(l[1]||""):"";   /* 연출(인물 들고 남) 사이 잠깐 대사가 끊겨도 긴장을 유지 */
     if(!TENSE.on&&TENSE_ON.test(t)){TENSE.on=true;TENSE.k=0;try{SFX.cut9&&SFX.cut9()}catch(e){}setTimeout(tenseTick,450)}else if(TENSE.on&&TENSE_OFF.test(t))TENSE.on=false}catch(e){}},60);
   window.__innWant=function(){
    if(!cur())return undefined;

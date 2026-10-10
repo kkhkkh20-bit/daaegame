@@ -25,7 +25,7 @@ rep(' EP.PRO[0].bg="carriage";EP.PRO[1].bg="plaza";EP.PRO[2].bg="reception";EP.P
 js=open(D+'inn_stage.js',encoding='utf-8').read()+'\n'+open(D+'inn_audio.js',encoding='utf-8').read()+'\n'+open(D+'inn_input.js',encoding='utf-8').read()+'\n'+open(D+'inn_ui9.js',encoding='utf-8').read()
 hk='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'
 rep(hk,js+'\n'+hk)
-out='/home/claude/daaegame/preview/ch1-gpt-20261008/play.html'
+out='/tmp/claude-0/P/play_v2.html'   # 2026-10-10: 작업 중 v2는 공개 파일에 쓰지 않는다(배포는 dev/ 소스로 따로)
 hook='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'
 assert s.count(hook)==1
 open('/tmp/claude-0/P/playT.html','w',encoding='utf-8').write(s.replace(hook,hook+'window.__T=function(code){return eval(code)};\n'))
