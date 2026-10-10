@@ -1,10 +1,10 @@
  /* ==== 1장 입력 안정: 연타로 대화를 넘기다가 새로 나타난 질문·버튼·조사 지점이 바로 눌리지 않게 ====
-    버튼·질문·조사 지점이 '눌릴 수 있게 보이기 시작한 시각'을 기록한다. 나타나기 전에 시작된 누름은 무시하고, 대화가 끝난 직후 나타난 것은 600ms 동안 입력을 받지 않는다.
+    버튼·질문·조사 지점이 '눌릴 수 있게 보이기 시작한 시각'을 기록한다. 나타나기 전에 시작된 누름은 무시하고, 대화가 끝난 직후 나타난 것은 600ms 동안 입력을 받지 않는다. 장면 조사는 연타를 500ms 이상 멈춘 새 누름부터 받는다.
     대화창 넘기기(타이핑 중 첫 입력=문장 완성, 다음 입력=다음 문장)는 엔진 규칙 그대로(220ms 이중 입력 방지 포함). */
  (function(){
   var SEL=".topic,#ov .modal .btn,#ov .modal button,#mveil .modal .btn,#mveil .modal button";   /* 질문·증거 카드는 가시성 기준, 장면 조사·인물은 아래 전환 보호를 적용. */
-  var AP=new WeakMap(),downT=0,live=new Set(),endT=-1e9,downUnavailable=false;
-  try{var _ed=endDlg;endDlg=function(){endT=performance.now();return _ed.apply(this,arguments)}}catch(e){}
+  var AP=new WeakMap(),downT=0,live=new Set(),endT=-1e9,downUnavailable=false,sceneProtected=false;
+  try{var _ed=endDlg;endDlg=function(){endT=performance.now();sceneProtected=true;return _ed.apply(this,arguments)}}catch(e){}
   function inn(){try{return S.screen==="case"&&G&&CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}
   function hittable(el){var r=el.getBoundingClientRect();if(r.width<4||r.height<4)return false;var x=r.left+r.width/2,y=r.top+r.height/2;
    if(x<0||y<0||x>innerWidth||y>innerHeight)return false;var h=document.elementFromPoint(x,y);return !!h&&(h===el||el.contains(h))}
@@ -16,7 +16,7 @@
    /* 장면 관찰은 pointerup에서 실행되기도 한다. DOM 가시성 조사나 click까지 기다리지 않고 모든 장면 입력을 보호한다. */
    if(t.closest("#bigscene")){
     var elapsed=performance.now()-endT;
-    return sceneUnavailable()||downUnavailable||elapsed<600||(elapsed<1800&&gap<350);
+    return sceneUnavailable()||downUnavailable||elapsed<600||sceneProtected;
    }
    if(typeof DL!=="undefined"&&DL&&t.closest("#ov"))return false;           /* 대화창 자체는 엔진이 처리 */
    if(t.closest(".rt,#w209rail,#w209more,.crec2,#wmap"))return false;
@@ -28,7 +28,9 @@
    if(now-at<600)return true;                                                  /* 대화가 끝난 직후 나타난 것은 600ms 동안 보호 */
    return now-at<1800&&gap<350}                                                /* 그 뒤에도 연타가 이어지는 중(앞 누름과 350ms 미만 간격)이면 1.8초까지 막는다(2026-10-09 연타 시험) */
   var gap=1e9;
-  function guard(e){if(e.type==="pointerdown"||e.type==="touchstart"||e.type==="mousedown"){if(!(e.type!=="pointerdown"&&performance.now()-downT<80)){var n0=performance.now();gap=n0-downT;downT=n0;downUnavailable=inn()&&sceneUnavailable()}}
+  /* 연타 보호는 시간만 지나서 풀리지 않는다. 대화 종료 600ms 후, 마지막 누름에서
+     500ms 이상 멈춘 새 입력으로만 해제한다. 이전 대화에서 시작한 누름은 그대로 차단한다. */
+  function guard(e){if(e.type==="pointerdown"||e.type==="touchstart"||e.type==="mousedown"){if(!(e.type!=="pointerdown"&&performance.now()-downT<80)){var n0=performance.now();gap=n0-downT;downT=n0;downUnavailable=inn()&&sceneUnavailable();if(!downUnavailable&&n0-endT>=600&&gap>=500)sceneProtected=false}}
    if(blocked(e)){e.stopImmediatePropagation();if(e.cancelable)e.preventDefault();window.__innGuarded=(window.__innGuarded||0)+1}}
   ["pointerdown","touchstart","mousedown","pointerup","touchend","mouseup","click"].forEach(function(t){window.addEventListener(t,guard,{capture:true,passive:false})});
  })();
