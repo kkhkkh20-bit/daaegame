@@ -25,8 +25,13 @@ with sync_playwright() as p:
   pg.evaluate('''window.__T('say([["det0","조사를 시작하자."]],function(){render()});clearInterval(DL.timer);DL.timer=null')''')
   pg.mouse.click(x,y)
   assert not pg.evaluate('window.__T("!!DL")'),'Final dialogue did not close'
-  for i in range(7):
-   pg.wait_for_timeout(170);pg.mouse.click(*clock_point())
+  # Keep a continuous burst past the old 1.8-second guard limit. Re-read the
+  # hotspot rectangle because the portrait layout can settle after dialogue.
+  clock_point()
+  for i in range(18):
+   pg.wait_for_timeout(170)
+   box=pg.locator('[data-spot="C06"]').bounding_box()
+   pg.mouse.click(box['x']+box['width']/2,box['y']+box['height']/2)
    if args.baseline and pg.evaluate('window.__T("!!DL")'):break
   leaked=pg.evaluate('window.__T("!!DL||G.found.includes(\\"C06\\")")')
   if args.baseline:
