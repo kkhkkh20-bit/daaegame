@@ -1,4 +1,4 @@
-작업 중(배포 안 됨) — 1장 v2 소스 보관용 (2026-10-10)
+1장 v2 소스 — 별도 미리보기 배포 (2026-10-10)
 - 공개 play.html은 이 폴더가 아니라 dev/ 바로 아래 소스(5ae250d 대본 + 43_council 원탁 복구)로 만든다.
 - 이 폴더: 오늘 오전 확정 구조(세련 인수 대리인·노름, 솜솜 침대 밑, 너울 수색) + 조사 확장(방마다 살펴보기, 인물별 질문, 증인에게 증거 보여 주기)
   + 회의 구조(결론 고르기 ask, 주민별 표 바뀜 votes, 휴회 adjourn, 힌트 단계화) + 음악 큐시트 + 사용자 '훅만'(Notion 1막 큰 그림의 훅) 반영 중.
@@ -32,3 +32,11 @@
 - 대사·스토리·오디오 검수: CODEX_STORY_AUDIO_20261010.txt
 - 솜솜 발견 장면 검사: 서버를 켠 뒤 python3 preview/ch1-gpt-20261008/dev/wip-v2/qa_somsom.py
   가로/세로에서 발견 전 음악 중단, 긴장 유지, 종료 후 음악 복귀를 검사한다.
+
+- 사용자 배포 요청에 따라 별도 v2 주소를 공개한다:
+  https://kkhkkh20-bit.github.io/daaegame/preview/ch1-gpt-20261008/v2.html
+  preview 루트의 v2.html은 기존 화면 맞춤 래퍼를 재사용하고 play_v2.html을 연다.
+  기존 index.html/play.html 및 루트 공개 게임은 유지한다. 미승인 아트 변경 없음.
+  갱신: build.py 실행 후 build/play_v2.html을 preview 루트의 play_v2.html로 복사하여 커밋한다.
+  build/playT.html은 시험용 평가 함수가 있으므로 배포하지 않는다.
+  GitHub Pages는 main / 루트를 배포한다.
