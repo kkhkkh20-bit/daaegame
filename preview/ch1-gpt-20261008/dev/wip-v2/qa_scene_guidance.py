@@ -37,6 +37,11 @@ class Investigation:
                 self.spoken.append(line)
             stage = self.page.evaluate("document.querySelector('#inn-under-scene')?.getAttribute('data-stage') || null")
             if stage:
+                if stage == 'held':
+                    held = self.page.locator('#inn-under-scene .under-held')
+                    assert held.is_visible(), 'Rescued guest illustration is hidden'
+                    assert held.evaluate('i=>i.complete&&i.naturalWidth>0'), 'Rescued guest illustration failed to load'
+                    assert 'somsom-held.png' in held.get_attribute('src'), 'Wrong rescue illustration'
                 if stage not in self.captured:
                     self.page.screenshot(path='/tmp/scene-guidance-' + stage + '.png')
                     self.captured.add(stage)
@@ -120,6 +125,16 @@ def main():
         assert float(page.locator(powder).evaluate('e=>getComputedStyle(e).opacity')) >= .8, (
             'Powder trace is too faint to see')
         under = '#bigscene [data-obs="o_under"]'
+        sleeping = '#bigscene [data-scene-trace="sleeping-guest"]'
+        assert page.locator(sleeping).count() == 1, 'Sleeping guest has no physical trace before discovery'
+        assert 0 < float(page.locator(sleeping).evaluate('e=>getComputedStyle(e).opacity')) < .6, 'Sleeping guest is not faint'
+        decoration = page.locator(under).evaluate('''e=>{let c=getComputedStyle(e);return {
+          border:c.borderWidth,background:c.backgroundColor,shadow:c.boxShadow,
+          before:getComputedStyle(e,'::before').display,after:getComputedStyle(e,'::after').display,
+          icon:e.querySelectorAll('.under-cue-icon').length}}''')
+        assert decoration == {'border':'0px','background':'rgba(0, 0, 0, 0)','shadow':'none','before':'none','after':'none','icon':0}, ('Under-bed target has a visible box or icon', decoration)
+        page.evaluate('window.__pointAt("[data-obs=o_under]")')
+        assert not page.locator('.ptring').count(), 'Explicit hint draws an answer ring around the hidden guest'
         initial = page.locator(under).bounding_box()
         assert initial and page.locator(under).is_visible(), 'Under-bed curiosity is hidden'
         assert 'innunderlook9' not in (page.locator(under).get_attribute('class') or ''), (
@@ -127,6 +142,9 @@ def main():
         assert not page.locator('#inn-under-scene').count()
         qa.collect('C01')
         qa.collect('C02')
+        page.wait_for_timeout(1100)
+        assert not page.locator('.ptring').count(), 'Collecting early clues automatically draws an answer ring'
+        assert page.locator(sleeping).count() == 1, 'Early clue collection removed the sleeping guest'
         after = page.locator(under).bounding_box()
         assert all(abs(initial[key]-after[key]) < 2 for key in ('x','y')), (
             'Under-bed target appeared at a new position', initial, after)
@@ -155,7 +173,7 @@ def main():
         assert 'C04' not in qa.state()['found'], 'Discovery granted evidence before its scene'
         qa.drain()
         stages = page.evaluate('window.__sceneQAStages')
-        assert stages == ['dark','fur','light','body','basket'], (
+        assert stages == ['dark','fur','light','body','held','basket'], (
             'Missing authored discovery stages', stages, qa.errors, qa.state())
         assert qa.state()['found'].count('C04') == 1 and 'o_under' in qa.state()['obs'], (
             'Single investigation did not complete observation and evidence', qa.state())
@@ -163,7 +181,9 @@ def main():
         assert '장치공 부리' in buri_lines and '차갑고' in buri_lines and '다 식은 건' in buri_lines, (
             'Automatic discovery skipped the Buri testimony needed for the meeting', qa.spoken)
         assert not page.locator('#inn-under-scene').count(), 'Discovery visual did not close'
-        print('PASS stable curiosity target → five discovery stages → Buri introduction/cold claim → one C04', flush=True)
+        assert 'held' in qa.captured, 'Rescue illustration was never checked while visible'
+        assert not page.locator(sleeping).count(), 'Rescued guest remains hidden under the bed'
+        print('PASS faint physical trace → six discovery stages/loaded rescue illustration → Buri introduction/cold claim → one C04', flush=True)
 
         # The scene remains legible after a modal and an actual room round trip.
         trace = '#bigscene [data-scene-trace="headboard"]'
@@ -192,6 +212,7 @@ def main():
         assert page.locator(powder).is_visible(), 'Collecting the clue removed its physical powder trace'
         assert qa.state()['found'].count('C04') == 1, 'Room return duplicated discovery evidence'
         assert not page.locator('#inn-under-scene').count(), 'Collected discovery replayed on return'
+        assert not page.locator(sleeping).count(), 'Room return restored an already rescued guest'
         print('PASS floor map, Doto diary purpose, actual C08, persistent trace', flush=True)
 
         # Long clicking while finishing dialogue cannot spill onto the under-bed
@@ -221,6 +242,7 @@ def main():
         assert page.locator(trace).is_visible(), 'Reload lost the scene trace'
         assert page.locator(powder).is_visible(), 'Reload lost the physical powder trace'
         assert not page.locator('#inn-under-scene').count(), 'Reload replayed a completed discovery'
+        assert not page.locator(sleeping).count(), 'Reload restored an already rescued guest'
         print('PASS actual save reload preserves discovery and scene trace', flush=True)
         print('Reloaded actual collection:', json.dumps(qa.state(), ensure_ascii=False), flush=True)
 
@@ -232,6 +254,7 @@ def main():
         assert not page.locator('#inn-under-scene').count(), 'C04-only save replayed discovery'
         qa.drain()
         assert qa.state()['found'].count('C04') == 1
+        assert not page.locator(sleeping).count(), 'C04-only save restored the hidden guest'
         qa.engine('G.found=G.found.filter(x=>x!=="C04");'
                   'if(!G.obsSeen.includes("o_under"))G.obsSeen.push("o_under");render();')
         qa.spoken = []
@@ -242,6 +265,7 @@ def main():
             'Legacy observation-only save failed to complete evidence', qa.state())
         assert any(speaker == 'buri' and '차갑고' in text for speaker,text in qa.spoken), (
             'Legacy observation-only save skipped the basket testimony', qa.spoken)
+        assert not page.locator(sleeping).count(), 'Legacy discovery completion restored the hidden guest'
         print('PASS explicit C04-only and observation-only compatibility fixtures', flush=True)
 
         # A prepared state replacement models retry/load during pending dialogue.
@@ -261,6 +285,7 @@ def main():
         assert 'C04' not in result['oldFound'] and 'C04' not in result['newFound'], result
         assert not page.locator('#inn-under-scene').count(), 'State replacement left a stale cutscene'
         assert not page.evaluate('Boolean(window.__innDiscoveryTransferred)'), 'Transient basket survived cancel'
+        assert page.locator(sleeping).count() == 1, 'Cancel removed the new game sleeping guest'
         print('PASS stale completion rejected after game-state replacement', flush=True)
         assert not qa.errors, qa.errors
         print('PASS all scene guidance checks; JavaScript errors: 0', flush=True)

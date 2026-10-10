@@ -22,28 +22,39 @@
   if(/다람이 문에 손을 댄다/.test(t))cue('touch');
   if(/다람이 뛰어 돌아가/.test(t))cue('return');
  }
- /* Native banner stays alive for its original promise/timing and input guard.
-    Only its presentation changes; no replacement overlay or click handler. */
- function decorate(b){if(!b||b.classList.contains('inn-place-panel'))return;b.classList.add('inn-place-panel');
-  var sub=b.querySelector('.mid small'),text=sub?sub.textContent:'';var dark=/밤|저녁|열한|자정/.test(text);
-  var icon=document.createElement('span');icon.className='place-time-icon';icon.setAttribute('aria-hidden','true');
-  icon.innerHTML=dark?'<svg viewBox="0 0 24 24"><path d="M18 16A8 8 0 0 1 8 6a8 8 0 1 0 10 10Z"/></svg>':'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></svg>';
-  var mid=b.querySelector('.mid');if(mid)mid.insertBefore(icon,mid.firstChild);
+ /* Native banner keeps its promise, duration and tap guard. Place/time cards
+    share the arrival presentation; verdicts and debate titles keep theirs. */
+ function placeCard(title,time){
+  var card=document.createElement('div');card.className='mid inn-place-card';
+  card.innerHTML='<span class="location-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#81603d" stroke-width="1.7" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div class="place-copy"><b></b><small><span class="place-time-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#80694b" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><span class="place-time-text"></span></small></div>';
+  card.querySelector('b').textContent=title||'';card.querySelector('.place-time-text').textContent=time||'';return card;
  }
- try{var oldBanner=banner;banner=function(){var yes=active(),r=oldBanner.apply(this,arguments);if(yes)document.querySelectorAll('.banner').forEach(decorate);return r}}catch(e){}
+ window.__innPlaceCard=placeCard;
+ function isPlace(title,sub){
+  if(!active()||!sub)return false;
+  var list=window.EP1INN&&window.EP1INN.PRO||[];
+  return list.some(function(s){return s.title===title&&s.sub===sub})||/^(첫날|다음 날|그 밤|아침|오전|오후|저녁|한밤)/.test(String(sub));
+ }
+ function decorate(b){if(!b||b.classList.contains('inn-place-panel'))return;
+  var mid=b.querySelector('.mid'),title=mid&&mid.querySelector('b'),sub=mid&&mid.querySelector('small');if(!mid||!title)return;
+  var card=placeCard(title.textContent,sub?sub.textContent:'');mid.replaceWith(card);b.classList.add('inn-place-panel');
+ }
+ try{var oldBanner=banner;banner=function(title,sub){var yes=isPlace(title,sub),r=oldBanner.apply(this,arguments);if(yes)document.querySelectorAll('.banner:not(.inn-place-panel)').forEach(decorate);return r}}catch(e){}
  var css=document.createElement('style');css.id='inn-opening-direction';css.textContent=
- '.banner.inn-place-panel{background:transparent!important}.banner.inn-place-panel .bars{width:auto!important;max-width:calc(100vw - 40px);align-self:start;margin-top:clamp(68px,18vh,100px)}'+
- '.banner.inn-place-panel .bar1,.banner.inn-place-panel .bar2{display:none!important}.banner.inn-place-panel .mid{display:grid!important;grid-template-columns:28px minmax(0,1fr);gap:3px 10px;width:auto!important;min-width:180px;max-width:min(430px,calc(100vw - 40px));padding:12px 20px!important;text-align:left!important;background:#f4e9d1!important;border:1px solid #9b7b47;border-radius:4px;box-shadow:0 4px 16px #24170b40;animation:inn-panel-in .24s ease-out!important;overflow:visible!important}'+
- '.banner.inn-place-panel .mid::after{display:none!important}.banner.inn-place-panel .mid b{grid-column:2;grid-row:1;font:600 clamp(16px,3vw,22px)/1.3 var(--font,sans-serif)!important;color:#49341f!important;letter-spacing:.035em!important;text-shadow:none!important;overflow-wrap:anywhere}.banner.inn-place-panel .mid b span{animation:none!important}'+
- '.banner.inn-place-panel .mid small{grid-column:2;grid-row:2;font:12px/1.4 var(--font,sans-serif)!important;color:#846a45!important;letter-spacing:.015em!important}.place-time-icon{grid-column:1;grid-row:1 / 3;align-self:center;color:#967440}.place-time-icon svg{display:block;width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}'+
- '@keyframes inn-panel-in{from{opacity:0;translate:0 5px}to{opacity:1;translate:0 0}}'+
+ '.banner.inn-place-panel{display:block!important;background:transparent!important}.banner.inn-place-panel .bars{position:absolute!important;left:22px;top:74px;width:auto!important;max-width:calc(100vw - 44px);margin:0!important;align-items:flex-start!important}'+
+ '.banner.inn-place-panel .bar1,.banner.inn-place-panel .bar2{display:none!important}.banner.inn-place-panel .mid.inn-place-card,.arr10 .inn-place-card{box-sizing:border-box;display:flex!important;align-items:center;gap:12px;width:max-content!important;min-width:200px;max-width:min(410px,calc(100vw - 44px));padding:11px 16px 11px 12px!important;text-align:left!important;background:#f6edd8!important;border:1px solid #9b8059;border-left:4px solid #85623d;border-radius:8px 3px 3px 8px;box-shadow:0 3px 0 #24170b35,0 7px 20px #24170b30;animation:inn-panel-in .24s ease-out!important;overflow:visible!important}'+
+ '.inn-place-card .location-mark{display:grid;place-items:center;flex:0 0 36px;width:36px;height:42px;border-right:1px solid #d6c4a2;padding-right:10px;color:#81603d}.inn-place-card .location-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}.inn-place-card .place-copy{min-width:0}'+
+ '.banner.inn-place-panel .mid::after{display:none!important}.banner.inn-place-panel .mid b,.arr10 .inn-place-card b{display:block!important;font:400 20px/1.4 Galmuri11,monospace!important;color:#3d2e21!important;letter-spacing:0!important;text-shadow:none!important;white-space:normal!important;overflow-wrap:anywhere}.banner.inn-place-panel .mid b span{opacity:1!important;transform:none!important;animation:none!important}'+
+ '.banner.inn-place-panel .mid small,.arr10 .inn-place-card small{display:flex!important;align-items:center;gap:5px;margin-top:3px;font:400 12px/1.4 Galmuri11,monospace!important;color:#80694b!important;letter-spacing:0!important}.place-time-icon svg{display:block;width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}'+
+ '.arr10:has(.inn-place-card){left:22px!important;top:74px!important;transform:none!important;gap:0!important;white-space:normal!important}.arr10:has(.inn-place-card) .mid::after{display:none!important}'+
+ '@keyframes inn-panel-in{from{opacity:0;translate:-6px 0}to{opacity:1;translate:0 0}}'+
  '#inn-night-walk{position:fixed;inset:0;z-index:42;pointer-events:none!important;overflow:hidden}#inn-night-walk svg{width:100%;height:100%;display:block;image-rendering:pixelated}#inn-night-walk image{image-rendering:pixelated}.inn-night-direction #innstage .isf[data-k="det1"]{visibility:hidden!important}'+
  '.inn-night-direction #bigscene>svg[data-bg]{filter:brightness(.58) saturate(.72);transition:filter .3s}.inn-night-direction.inn-night-dark #bigscene>svg[data-bg]{filter:brightness(.43) saturate(.6)}#inn-night-walk .night-room-child{transform:translate(1070px,415px)}#inn-night-walk .night-bedroom{opacity:1;transition:opacity .25s}#inn-night-walk.out .night-bedroom{opacity:0}#inn-night-walk.return .night-bedroom{opacity:1;transition-delay:.85s}#inn-night-walk .night-child{filter:brightness(.86)}'+
  '#inn-night-walk .night-light{opacity:0;transition:opacity .3s}#inn-night-walk.out .night-light{opacity:1}#inn-night-walk.dark .night-light{opacity:0}#inn-night-walk .night-child{opacity:0;transform:translate(1100px,595px)}'+
  '#inn-night-walk.out .night-child{opacity:1;animation:inn-night-out 1.8s steps(16,end) forwards}#inn-night-walk.return .night-child{animation:inn-night-return .85s steps(10,end) forwards}'+
  '@keyframes inn-night-out{0%{opacity:0;transform:translate(1100px,595px)}12%{opacity:1}100%{opacity:1;transform:translate(625px,425px)}}@keyframes inn-night-return{0%{opacity:1;transform:translate(625px,425px)}86%{opacity:1;transform:translate(1100px,595px)}100%{opacity:0;transform:translate(1135px,610px)}}'+
- '@media(max-aspect-ratio:3/4){#inn-night-walk .night-room-child{transform:translate(720px,415px)}.banner.inn-place-panel .bars{margin-top:76px}.banner.inn-place-panel .mid{min-width:160px;padding:11px 16px!important}}'+
- '@media(prefers-reduced-motion:reduce){.banner.inn-place-panel .mid{animation:none!important}#inn-night-walk .night-light,#inn-night-walk .night-bedroom,.inn-night-direction #bigscene>svg[data-bg]{transition:none!important}#inn-night-walk.out .night-child{animation:none;opacity:1;transform:translate(625px,425px)}#inn-night-walk.return .night-child{animation:none;opacity:0}}';
+ '@media(max-aspect-ratio:3/4){#inn-night-walk .night-room-child{transform:translate(720px,415px)}.banner.inn-place-panel .bars,.arr10:has(.inn-place-card){left:16px!important;top:80px!important}.banner.inn-place-panel .mid.inn-place-card,.arr10 .inn-place-card{max-width:calc(100vw - 32px);min-width:180px}.banner.inn-place-panel .mid b,.arr10 .inn-place-card b{font-size:18px!important}}'+
+ '@media(prefers-reduced-motion:reduce){.banner.inn-place-panel .mid,.arr10:has(.inn-place-card){animation:none!important}#inn-night-walk .night-light,#inn-night-walk .night-bedroom,.inn-night-direction #bigscene>svg[data-bg]{transition:none!important}#inn-night-walk.out .night-child{animation:none;opacity:1;transform:translate(625px,425px)}#inn-night-walk.return .night-child{animation:none;opacity:0}}';
  document.head.appendChild(css);setInterval(sync,100);
  window.__innOpeningDirection=function(){return {night:!!night,cue:night&&night.dataset.cue,scene:lastScene&&lastScene.sid,reduced:reduced.matches}};
 })();

@@ -312,11 +312,11 @@
   var lastBan=-1e9;
   try{var _bn9=banner;banner=function(){if(inn())lastBan=performance.now();return _bn9.apply(this,arguments)}}catch(e){}
   try{var _qk9=quake;quake=function(){if(inn()&&performance.now()-lastBan<3500&&!document.querySelector("body>.rt .flash,.flash,.shout"))return;return _qk9.apply(this,arguments)}}catch(e){}
-  /* 도착 연출(2026-10-10): 방에 도착하는 순간 한 번만, 화면 위쪽 가운데에 큰 장소 이름과 얇은 선이 잠깐 떴다 사라진다(흔들림 없음). 상단 상시 위치 표시는 그대로 */
+  /* 도착 연출: 초반 장면과 같은 작은 장소·시간 카드. 진행과 이동 대기는 그대로. */
   var ARR=null,arrT=0;
   try{var _pc9=placeCard;placeCard=function(){if(!inn())return _pc9.apply(this,arguments);document.querySelectorAll(".placecard").forEach(function(e){e.remove()});
    var l=loc();if(!l)return;var nm=SHORT[l.id]||l.name;clearTimeout(arrT);if(ARR)ARR.remove();ARR=document.createElement("div");ARR.className="arr10";ARR.setAttribute("role","status");
-   ARR.innerHTML='<span class="ln"></span><b></b><span class="ln"></span>';ARR.querySelector("b").textContent=nm;B.appendChild(ARR);arrT=setTimeout(function(){if(ARR){ARR.remove();ARR=null}},1700)}}catch(e){}
+   if(window.__innPlaceCard)ARR.appendChild(window.__innPlaceCard(nm,G.beats&&G.beats.inn_end?'다음 날 오후':'다음 날 오전'));else{ARR.innerHTML='<span class="ln"></span><b></b><span class="ln"></span>';ARR.querySelector("b").textContent=nm}B.appendChild(ARR);arrT=setTimeout(function(){if(ARR){ARR.remove();ARR=null}},1700)}}catch(e){}
   /* (4) 방 이동: 옛 지도 말이 걷는 820ms 대기 없이 곧바로(그동안 이전 방·옛 지도가 그대로 보이던 문제) */
   try{var _mt9=moveTo;moveTo=function(c,i,pp){if(!inn())return _mt9.apply(this,arguments);
     if(MOVING||G.loc===i||!locOpen(c,i)||dl())return;MOVING=true;var g0=G;try{SFX.steps()}catch(e){}
@@ -367,7 +367,6 @@
   /* 2026-10-10 v2: 주머니·이불을 본 뒤에도 침대 밑을 안 봤으면, 다음 할 일은 안 쓰는 방 침대 밑 */
   try{var _nsx=nextStep;nextStep=function(c){var r=_nsx.apply(this,arguments);try{if(!inn()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||!r)return r;
     if((G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return r;var bi=-1;c.locations.forEach(function(l,i){if(l.id==="bed13")bi=i});if(bi<0)return r;
-    var hintGame=G;setTimeout(function(){try{if(G===hintGame&&G.tab==="scene"&&G.loc===bi&&!dl()&&!document.querySelector('#innmove,#wmap,#ov .modal'))window.__pointAt&&window.__pointAt('[data-obs="o_under"]')}catch(e){}},900);
     return {say:"아빠, 침대 밑이 너무 어두워. 안쪽까지 한번 들여다보자.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
   /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
   var KEYOBS={o_under:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
