@@ -537,3 +537,6 @@
   try{new MutationObserver(testiMark).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
   window.__innUI9={obs:function(){return window.__innObsLast||""},HK:HK,OBS:OBS};
  })();
+
+ /* 2026-10-10 원탁 회귀 복구(핫픽스): 개발용 '임시 자산' 표기 숨김, 너울 착석 그림 미승인(missing) → 승인 프로필을 둥근 자리표로만 */
+ (function(){try{var st9=document.createElement("style");st9.textContent="body.inn1 #rtg .tmp{display:none!important}#rtg .seat img.neoul9{height:52%!important;width:auto!important;position:relative;top:34%;border-radius:50%;border:3px solid #C9A96A;background:#3A2A1E;box-sizing:border-box}";document.head.appendChild(st9)}catch(e){}})();

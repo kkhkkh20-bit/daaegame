@@ -1,0 +1,5 @@
+# 1장 조사: 관찰 지점을 누를 때 엔진의 옛 돋보기(360x200 좌표 기준)가 엉뚱한 자리에 노란 네모로 떠서 다른 곳을 확대해 보이던 문제(사용자: "두 번째 클릭하면 오류처럼 네모 박스만 뜬다"). 1장에서는 돋보기 없이 바로 대사로 넘어간다
+rep('function lensAt(sc,px,py,cb){\n  if(window.__lensBusy)return;','function lensAt(sc,px,py,cb){\n  if(document.body.classList.contains("inn1")){cb();return}\n  if(window.__lensBusy)return;')
+# 같은 관찰 지점을 다시 누르면(첫 대사는 이미 봄): 엔진의 'think' 한 줄은 1장 대사창에서 보이지 않아 아무 반응이 없던 문제 → 아빠 속마음 한 줄로(예: 할머니가 손대지 말라고 하셨지…)
+rep('var L0=b.dataset.spot?SPOTSAY[id]:OBSSAY[id];if(!L0||played[id]||(b.dataset.spot&&G.found.indexOf(id)>=0))return;',
+    'var L0=b.dataset.spot?SPOTSAY[id]:OBSSAY[id];if(L0&&played[id]&&b.dataset.obs){var oo=null;try{oo=(CASES[G.ci].locations[G.loc].obs||[]).filter(function(x){return x.id===id})[0]}catch(x){}if(oo&&oo.text){e.stopImmediatePropagation();e.preventDefault();try{markObs(id)}catch(x){}say([["narr","("+String(oo.text).replace(/^\\(|\\)$/g,"")+")"]],function(){render()});return}}if(!L0||played[id]||(b.dataset.spot&&G.found.indexOf(id)>=0))return;')
