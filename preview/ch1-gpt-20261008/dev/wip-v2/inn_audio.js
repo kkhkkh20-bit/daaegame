@@ -9,8 +9,12 @@
   function cur(){try{return S.screen==="case"&&!!G&&!!CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}
   function sidOf(pi){try{var E=window.EP1INN||EP;return (E.PRO[pi]&&E.PRO[pi].sid)||("P"+(pi+1))}catch(e){return "P"+(pi+1)}}   /* 2026-10-10: EP는 이 모듈 범위에 없어 장면 번호가 밀려(P6·P8 제외 뒤) 신고 장면에서도 여행곡이 나오던 문제 */
   function beats(){try{return (G&&G.beats)||{}}catch(e){return {}}}
-  function lineText(){try{var l=DL&&DL.lines&&DL.lines[DL.i];return l?String(l[1]||""):""}catch(e){return ""}}
-  function lineKind(){try{var l=DL&&DL.lines&&DL.lines[DL.i];if(!l)return "say";if(l[0]==="narr")return /^\(/.test(String(l[1]))?"inner":"narr";return "say"}catch(e){return "say"}}
+  var RTLINE=null;
+  window.__innAudioLine=function(l){RTLINE=l||null};
+  function liveLine(){try{if(DL&&DL.lines)return DL.lines[DL.i];if(document.querySelector("body>.rt"))return RTLINE}catch(e){}return null}
+  function lineText(){var l=liveLine();return l?String(Array.isArray(l)?(l[7]||l[1]||""):(l.t||"")):""}
+  function lineWho(){var l=liveLine();return l?(Array.isArray(l)?l[0]:l.w):""}
+  function lineKind(){if(lineWho()==="narr")return /^\(/.test(lineText())?"inner":"narr";return "say"}
 
   /* ---- 곡: 타악기 없음(박자감이 '똑딱'으로 들리지 않게) ---- */
   A.SONGS.inn_cold={bpm:60,vol:.85,prog:["Dm","Dm","Bb","A","Dm","Dm","Gm","A"],
@@ -69,7 +73,10 @@
    arp:{n:"1 5 8 10 12 10 8 5",r:2,i:"ep",v:.06,o:48},bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.38,o:33},pad:{i:"string",v:.045,o:57},echo:.3};
 
   /* ---- 음악 선택 ---- */
-  var M={inv:false,p10:0,fin:0};
+  var M={inv:false,p10:0,fin:0,carStopped:false,bell:false,failure:false};
+  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null};
+  window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;TENSE.on=false};
+  window.__innAudioState=function(){return {line:lineText(),who:lineWho(),failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine()}};
   var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
   /* 2026-10-10 사용자 "솜솜을 발견하는 순간은 배경음을 끄고 긴장되고 두근거리는 순간으로, 다람에게도 충격": 발견 줄부터 그 대화가 끝날 때까지 음악을 끄고 심장 박동만.
      (발견 장소는 새 구조에서 침대 밑으로 옮길 예정 — 줄 글로 걸어 두어 장소가 바뀌어도 같은 연출) */
@@ -84,11 +91,12 @@
   window.__innWant=function(){
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
-   if(TENSE.on)return null;                         /* 발견 순간: 음악 없음 */
+   if(TENSE.on||M.failure)return null;                         /* 발견 순간: 음악 없음 */
    var b=beats(),now=Date.now();
    /* 2026-10-10 v2 음악 큐시트(dev/review/CH1_V2_DESIGN.txt 5장): 영화처럼 줄·장면 시점에 맞춰 끊고, 한 방 치고, 다시 들어온다 */
-   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0}if(+String(sid).slice(1)<11)M.inv=false;
+   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0;M.carStopped=false;M.bell=false}if(+String(sid).slice(1)<11)M.inv=false;
     if(sid==="P1"&&now-M.sidT<2000)return null;
+    if(sid==="P10"&&M.bell)return null;
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
     if(sid==="P13"){if(!M.hit&&/^베개 밑…/.test(lineText())){M.hit=now;try{SFX.cut9()}catch(e){}}if(M.hit&&now-M.hit<1500)return null}   /* 주머니 발견: 음악 끊고 한 방 → 1.5초 정적 */   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
@@ -97,14 +105,15 @@
    if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt){var th=null;try{if(G.tab==="talk"&&G.who){if(M.tw!==G.who){M.tw=G.who;M.tt=Date.now()}if(Date.now()-M.tt>2500)th=THEME[G.who]}else M.tw=null}catch(e){}return th||"inn_inv"}   /* 짧게 한 마디 묻고 나오면 조사곡이 처음부터 다시 시작하지 않게: 대화 2.5초 뒤에 테마로 */   /* 조사 중 인물과 대화: 그 인물의 테마 */
     var ph=null,E=window.EP1INN||{},fin=false;try{ph=window.__rtPh&&__rtPh();fin=!!(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)}catch(e){}
     /* 정답 제시('그건 아니야!'/'이걸 봐!') 순간: 음악을 끊고 외침 → 이어서 추궁곡. 그 발언의 대화가 끝나고 1.5초 뒤(또는 단계가 바뀌면) 원래 곡으로 */
-    if(M.obj){if(now-M.obj<1400)return null;var dl0=(typeof DL!=="undefined"&&DL);if(dl0)M.objDL=now;if(ph!==M.objPh||(!dl0&&now-(M.objDL||M.obj)>1500))M.obj=0;else return "inn_climax"}
+    if(fin&&lineWho()==="seryeon"&&/^…네\.$/.test(lineText())&&!M.f4){M.f4=now;M.obj=0;try{SFX.cut9()}catch(e){}return null}
+    if(M.obj){if(now-M.obj<1400)return null;var dl0=liveLine();if(dl0)M.objDL=now;if(ph!==M.objPh||(!dl0&&now-(M.objDL||M.obj)>1500))M.obj=0;else return "inn_climax"}
     if(fin&&M.f4){if(now-M.f4<2500)return null;return "inn_t_innma"}   /* 세련 인정("…네.") 뒤: 정적 → 할머니 테마 작게 */
-    if(fin){if(typeof DL!=="undefined"&&DL&&DL.lines){var l4=DL.lines[DL.i];if(l4&&l4[0]==="seryeon"&&/^…네\.$/.test(String(l4[1]||""))&&!M.f4){M.f4=now;try{SFX.cut9()}catch(e){}return null}}return "inn_climax"}
+    if(fin)return "inn_climax";
     return "inn_meet"}                              /* 조사 / 원탁회의 / 최종 대결: 장면마다 다른 곡 */
    M.f4=0;if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
    return "inn_after"};
   /* 2026-10-10 "배경음이 다들 약하다": 1장 배경음 +4.6dB(×1.7), 대화 중 기본 낮춤(.62)도 .85로 덜 낮춘다. 결정적 대사(아래 KEY)에서는 배경음을 끊는다 */
-  var KEY=/^종이 막 그쳤다고도|^자정에 겹친 바늘을 거꾸로|^솜솜은 살아 있습니다|^솜솜의 털에 묻은 글씨를 보시죠|^아침에는 솜솜 아래에서 주머니를 봤다고|^저희 부녀 말고 그 자리를 아는 사람은|^봉인이 온전하다면 봉한 뒤로|^그래서 여쭙겠습니다\. 주머니를 되찾으려던|^…엄마 글씨야/;
+  var KEY=/^…엄마 글씨야|^긴 정적\. 모두 바구니|^…움직였어|^첫눈은 자정이었어요|^솜솜의 털을 다시 보시죠|^주머니엔 처음부터 백 냥|^그래서 여쭙겠습니다/;
   window.__innKeyLine=function(){var t=lineText();return !!t&&KEY.test(t)};
   window.__innDuck=function(){var r=window.__innDuck0.apply(this,arguments);if(!cur()||document.getElementById("inncold"))return r;
    if(window.__innKeyLine())return 0;
@@ -121,7 +130,7 @@
     return f}
    if(!b.inn_final){if(M.obj&&document.querySelector("body>.rt"))f*=.72;if(M.f4)f*=.55;return f}   /* 추궁곡·인정 뒤 할머니 테마는 낮게 */
    var ei=b.inn_ei|0;
-   if(!b.inn_end&&ei===3){f=.6;if(/^이 사람입니다|^할머니, 아까 그 장부/.test(t))f=.12}   /* E4: 엄마 사진을 내미는 순간 정적 */
+   if(!b.inn_end&&ei===3){f=.6;if(/^이 사람입니다|^할머니, 아까 그 장부/.test(t))f=0}   /* E4: 엄마 사진을 내미는 순간 정적 */
    if((!b.inn_end&&ei===4&&/^…올해는 네 딸이 왔다/.test(t))||b.inn_end){if(!M.fin)M.fin=now}
    if(M.fin)f*=Math.max(0,1-(now-M.fin)/6500);
    return f};
@@ -149,10 +158,12 @@
   SFX.pop9=function(){if(!S.sound)return;try{[880,1320,1760].forEach(function(f,i){tone(f,.12,"triangle",.14,i*.05)});noise(.05,.05,0,6000,"highpass")}catch(e){}};
   /* 결정적 대사: 배경음이 끊길 때 둔탁한 한 방 */
   SFX.cut9=function(){if(!S.sound)return;try{tone(70,.6,"sine",.55,0,null,40);noise(.35,.25,0,240,"lowpass");tone(2200,.05,"square",.05)}catch(e){}};
-  var lastLn=null;setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL||!DL.lines)return;var ln=DL.lines[DL.i];if(!ln||ln===lastLn)return;lastLn=ln;var t=String(ln[1]||"");
-    var md=String(ln[2]||"");
-    if(/^(앗|헉|엇|으악|아악|어머|세상에)[!?.…,\s]|^…?(앗|헉)/.test(t)||/shock|surprise/.test(md)||/\?!|!\?/.test(t))SFX.shock9();
-    else if(/^…움직였어/.test(t))SFX.pop9();   /* 2026-10-10: 솜솜 발견 줄은 충격 연출(TENSE)이라 반짝 효과음 제외 */
+  var lastLn=null;setInterval(function(){try{if(!cur())return;var ln=liveLine();if(!ln){lastLn=null;return}
+    var t=lineText(),who=lineWho(),token=who+"|"+t;
+    if(token===lastLn)return;lastLn=token;   /* 분할된 다음 쪽에서도 원문 기준으로 효과음은 한 번만 */
+    var md=String(Array.isArray(ln)?(ln[2]||ln[6]||""):(ln.m||""));
+    if(/^…움직였어/.test(t))SFX.pop9();   /* 살아 있음을 확인하는 순간: 놀람 타격 대신 작은 반짝 */
+    else if(/^(앗|헉|엇|으악|아악|어머|세상에)[!?.…,\s]|^…?(앗|헉)/.test(t)||/shock|surprise/.test(md)||/\?!|!\?/.test(t))SFX.shock9();
     else if(/^거긴 (창고|지금은 안 쓰는 방)/.test(t))SFX.low9();   /* P5: 안 쓰는 방이라는 말에 낮은 단음 하나 */
     else if(KEY.test(t))SFX.cut9()}catch(e){}},60);
   /* 낮은 단음(현 피치카토 + 저음): 분위기만 바꾸는 한 음 */
@@ -175,10 +186,10 @@
    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.12);g.gain.setValueAtTime(vol*.85,t+dur*.75);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
    o.connect(lp);g2.connect(lp);lp.connect(bp);bp.connect(g);g.connect(SFXG);[o,o2,am].forEach(function(x){x.start(t);x.stop(t+dur+.05)})}
   wrap("doorOpen",function(){if(!S.sound||!AC)return;var t=AC.currentTime;hingeAt(AC,t,1.1,190,250,.12);noise(.09,.1,1.08,380,"lowpass");tone(110,.12,"sine",.12,1.08,null,80)});
-  SFX.carStop=function(){if(!S.sound||!AC)return;var t=AC.currentTime;
+  SFX.carStop=function(){M.carStopped=true;if(!S.sound||!AC)return;var t=AC.currentTime;
    [0,.32,.7,1.15].forEach(function(w,i){var v=.32-i*.06;tone(820,.05,"triangle",v,w,null,560);noise(.04,v*.7,w,2200,"bandpass")});   /* 말발굽이 느려지며 */
    noise(.5,.06,1.3,500,"bandpass")};   /* 바퀴 멎음(2026-10-10 까마귀처럼 들리던 차체 삐걱 제거) */
-  SFX.bell10=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*1.15;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
+  SFX.bell10=function(){M.bell=true;if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
     tone(196,3,"sine",.16,w);tone(392,1.6,"sine",.05,w);tone(470,1.2,"sine",.025,w);noise(.05,.05,w,900,"lowpass")}}catch(e){}};
   SFX.bell10_old=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
 
@@ -238,8 +249,8 @@
    try{I.out.gain.cancelScheduledValues(t);I.out.gain.setValueAtTime(Math.max(.0001,I.out.gain.value),t);I.out.gain.exponentialRampToValueAtTime(.0001,t+dur);if(I.lp){I.lp.frequency.setValueAtTime(I.lp.frequency.value,t);I.lp.frequency.exponentialRampToValueAtTime(180,t+dur)}}catch(e){}
    setTimeout(function(){I.dead=true;var k=AMB.old.indexOf(I);if(k>=0)AMB.old.splice(k,1);I.src.forEach(function(s){try{s.stop()}catch(e){}});try{I.out.disconnect()}catch(e){}},dur*1000+300)}
   var AMB={cur:null,dep:null,old:[]};
-  function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||document.getElementById("inncold"))return null;var b=beats();
-   if(!b.inn_pro){var sd=sidOf(b.inn_pi|0);if(sd==="P1"&&b.inn_bg==="carriage")return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
+  function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||document.getElementById("inncold"))return null;var b=beats();if(M.failure)return "wind";
+   if(!b.inn_pro){var sd=sidOf(b.inn_pi|0);if(sd==="P1"&&b.inn_bg==="carriage"&&!M.carStopped)return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
    if(b.inn_final&&!b.inn_end){var ei=b.inn_ei|0;if(ei===0||ei===1)return "wind"}
    return null}
   /* E2 마지막 마차: 출발해서 멀어지며 사라진다(약 7초) */

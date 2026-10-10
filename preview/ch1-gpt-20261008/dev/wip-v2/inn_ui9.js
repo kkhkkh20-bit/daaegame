@@ -571,10 +571,10 @@
     return ph.hint}},0);
   /* 원탁 복구 보정: 개발용 '임시 자산' 표기는 숨기고, 너울(서 있는 진행자)은 다른 인물과 같은 크기로 */
   try{var st9=document.createElement("style");st9.textContent="body.inn1 #rtg .tmp{display:none!important}#rtg .seat img.neoul9{height:52%!important;width:auto!important;position:relative;top:34%;border-radius:50%;border:3px solid #C9A96A;background:#3A2A1E;box-sizing:border-box}";document.head.appendChild(st9)}catch(e){}
-  /* (3) 설득력이 바닥나면: 할머니 서명 장면(EP.MF) → 처음부터 다시(모은 증거 유지) */
+  /* (3) 설득력이 바닥나면: 할머니의 마지막 마차 장면(EP.MF) → 처음부터 다시(모은 증거 유지) */
   setTimeout(function(){var _f=window.__innFail;if(!_f)return;window.__innFail=function(kind){var a=arguments,self=this;if(!inn()||!window.__innPlay||!(window.EP1INN||{}).MF)return _f.apply(self,a);
     try{var r=document.querySelector("body>.rt");if(r)r.remove();window.__inMeeting=false;document.body.classList.remove("rtg","rtg-drw")}catch(e){}
-    try{window.__innPlay(window.EP1INN.MF,function(){_f.apply(self,a)})}catch(e){_f.apply(self,a)}}},0);
+    try{window.__innAudioFailure&&window.__innAudioFailure(true);window.__innPlay(window.EP1INN.MF,function(){window.__innAudioFailure&&window.__innAudioFailure(false);_f.apply(self,a)})}catch(e){window.__innAudioFailure&&window.__innAudioFailure(false);_f.apply(self,a)}}},0);
   /* (4) 회의 진입: 주민 소집(I9)은 플레이어가 '원탁 회의 열기'를 고른 뒤 한 번만 */
   window.__innPreOpen=function(c,spec,op){try{if(!inn()||!G)return false;G.beats=G.beats||{};if(G.beats.inn_i9||G.battle||!window.__innPlay||!(window.EP1INN||{}).I9)return false;
     G.beats.inn_i9=1;try{saveProg()}catch(e){}window.__innCutting=true;
