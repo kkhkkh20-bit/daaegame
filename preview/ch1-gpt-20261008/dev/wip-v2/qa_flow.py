@@ -127,6 +127,11 @@ with sync_playwright() as p:
   print('Reversals: first objection withdraws a vote; eight accepted outcomes through accusation/payment withdrawal OK',flush=True)
   if args.without_ledger:assert not pg.evaluate('(code)=>window.__T(code)', 'G.found.includes("C11")')
   audio=pg.evaluate('window.__audioSeen')
+  for relationship_beat in ('다람 양이 본 것도 기록', '다니는 길에 물어볼게요',
+                            '엄마 단서를 그냥 두고', '내일은 우체국에서',
+                            '엄마 찾으면 서점 다시 열자'):
+   assert any(relationship_beat in t for t in audio),('Epilogue relationship missing',relationship_beat)
+  print('Family epilogue: child testimony accepted, village allies and active mother search before bookstore return OK',flush=True)
   assert audio.get('…네.',{}).get('confession'), audio.get('…네.')
   assert any(v['key'] for k,v in audio.items() if k.startswith('첫눈은 자정')), 'Council dialogue audio hook missing'
   assert any(v['want']=='inn_meet_press' for v in audio.values()), 'Council pressure tempo missing'

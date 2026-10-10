@@ -20,7 +20,11 @@ with sync_playwright() as p:
     assert st['beats'].get('inn_pro'),st
     assert any('편지를 보고 왔습니다' in t for t in seen),'Mother-search purpose missing'
     assert any('먼저 주머니가 왜 여기 있었는지만' in t for t in seen),'Limited investigation motive missing'
+    for family_beat in ('탐정 일을 그만두고 작은 서점', '엄마가 갑자기 사라진 뒤',
+                        '나도 아빠처럼 탐정', '위험한 곳은 아빠가 먼저',
+                        '예전에 탐정 일을 했습니다', '수첩에 적을게'):
+        assert any(family_beat in t for t in seen),('Required family introduction missing',family_beat)
     assert not errors,errors
     assert not bad,bad
-    print('Fresh intro → investigation OK; mother-search purpose and limited intervention shown; errors/HTTP failures 0')
+    print('Fresh intro → investigation OK; family bookstore, sudden disappearance, former detective, child observer and limited intervention shown; errors/HTTP failures 0')
     b.close()

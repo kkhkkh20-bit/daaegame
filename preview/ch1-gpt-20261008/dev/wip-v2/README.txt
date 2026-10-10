@@ -70,3 +70,7 @@ qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수�
 - 추리로 누명을 뒤집는 단계별 반전: CODEX_REVERSAL_20261010.txt.
   첫 반박의 실제 표 철회부터 최종 배상·여관 양도 요구 철회까지 qa_flow.py로 검증.
   qa_reversal_route.py: 관련 증거를 세련의 발언에 내도 감점 없이 핵심 추리로 이어지는 실제 포인터 검사.
+
+- 가족 설정·인물 관계 보강: CODEX_FAMILY_STORY_20261010.txt.
+  전직 탐정이 가족 서점을 열었다는 과거, 엄마의 갑작스러운 실종,
+  다람의 관찰 역할과 아빠의 보호 책임을 도입·조사·후일담에 연결한다.
