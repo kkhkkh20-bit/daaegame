@@ -141,9 +141,9 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   var pose=worried?"worried":(seat.snack?"snack-"+seat.snack:"neutral");
   var href="art/ch1/cast/daram-seated-"+pose+"-192x256.png";
   document.querySelectorAll('svg[data-bg="carriage"]').forEach(function(sv){
-   var vb="0 0 844 390";   /* 2026-10-10: 대화 중 2배 확대 → 1.1배만(배경을 넓게, 다람 도트가 과하게 커지지 않게) */if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
+   var vb="100 48 740 342";   /* 2026-10-10 사용자 마차 QA "다람이 너무 오른쪽, 빈 좌석·창문이 화면을 많이 차지, 몸이 대화창에 가림, 배경을 크게 보여 줄 필요 없음": 다람을 의자 왼쪽 자리로 옮기고 화면 가운데·조금 위로 오게 잘라 본다(약 1.14배, 다람 도트 원본 192px 이하로만 확대). 이전: "0 0 844 390" */    /* 2026-10-10: 대화 중 2배 확대 → 1.1배만(배경을 넓게, 다람 도트가 과하게 커지지 않게) */if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
    var im=sv.querySelector("image.innseat");
-   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","490");im.setAttribute("y","143");im.setAttribute("width","166");im.setAttribute("height","221");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
+   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","387");im.setAttribute("y","143");im.setAttribute("width","166");im.setAttribute("height","221");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
     if(im.getAttribute("href")!==href)im.setAttribute("href",href)}
    else if(im)im.remove()});
   if(layer)layer.classList.toggle("seated",true)}catch(e){}}
@@ -173,7 +173,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
  function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
  /* 이름표: 아빠가 이름을 듣기 전까지는 '???' (프롤로그 첫 만남). 이름을 말하는 그 줄부터 이름이 뜬다 */
- var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"늦게 든 세련입니다",wanggu:"자경단장 너울입니다"};
+ var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"여행객, 세련입니다",wanggu:"자경단장 너울입니다"};
  function revealAt(k){for(var i=0;i<EP.PRO.length;i++){var it=EP.PRO[i].items;for(var j=0;j<it.length;j++){var t=lt(it[j]);if(typeof t==="string"&&t.indexOf(REVEAL[k])>=0)return i}}return -1}
  var RPI={};Object.keys(REVEAL).forEach(function(k){RPI[k]=revealAt(k)});var heard={};
  var INVINTRO={buri:1,doto:1,geokkuri:1};   /* 2026-10-10: 프롤로그에서 빠져 조사 중에 처음 만나는 인물 — 자기소개 줄을 듣기 전까지 ??? (들은 것은 저장) */
@@ -243,9 +243,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
     cap:"주머니 입구를 감은 종이 봉인띠. 붉은 도장 「세련」, 그리고 끝이 말린 별. 만진 손끝에 인주가 묻어난다.",look:"봉인띠"}]},
   C01b:{title:"여관 매매 계약서",pages:[
    {art:'<img class="icl" src="art/ch1/closeup/I1-contract-front-complete-512.png" alt="계약서 앞면. 매도인 서명 칸은 비어 있고 매수인 세련 서명 끝에 별">',
-    cap:"봉인띠 밑에 접혀 있던 종이. 앞면: 매도인(할머니) 서명 칸은 비어 있다. 매수인 「세련」 서명 끝에 같은 모양의 별.",look:"앞면"},
-   {art:'<img class="icl" src="art/ch1/closeup/I1-contract-back-complete-512.png" alt="계약서 뒷면 조항">',
-    cap:"뒷면: 「매도인이 숙박 허가를 잃는 날, 이 계약은 효력이 생긴다.」",look:"뒷면"}]},
+    cap:"봉인띠 밑에 접혀 있던 종이. 앞면: 매도인(할머니) 서명 칸은 비어 있다. 매수인 「세련」 서명 끝에 같은 모양의 별.",look:"앞면"}]},   /* 2026-10-10 새 1장 구조: 강제 양도 규약 삭제에 따라 뒷면 조항 쪽(I1-contract-back) 연결 해제(그림 파일은 보존) */
   /* 정본 = 바탕 그림 + 정확한 글자·문양 덧그림(같은 512 좌표). 미리보기용 합성 그림은 쓰지 않는다 */
   C11:{title:"손님 장부 첫째 권",pages:[{art:lay("guest-ledger","펼친 장부. 이름 대신 발자국, 꽃, 동그라미, 끝이 말린 별을 그린 줄"),
     cap:"30년 전부터 10년 전까지의 손님 장부. 이름 대신 「이름 모르는 손님」이라 적힌 줄이 많고, 그림으로 서명한 줄도 있다. 발자국, 꽃, 동그라미, 별.",look:"장부"}]},
@@ -359,13 +357,20 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   if(/nervous|panic|shock/.test(m))f*=.86;if(/sad/.test(m))f*=1.2;
   if(/^(앗|헉|엇|으악|아악|어머|어\?)/.test(t))f*=.7;
   return Math.max(.55,Math.min(1.9,f))};
- window.__innPace=function(full,n){if(!cur())return 0;var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
-  if(ch==="…"||(ch==="."&&nx==="."))return 7;                          /* 말줄임: 점마다 */
+ /* 2026-10-10 사용자 "프롤로그 대사 . 있으면 멈추는 게 적용 안 됨": 콜드오픈은 따로 그리는 타자기라 이 규칙이 안 걸렸다 → 같은 규칙을 __innPaceCold로 공용.
+    말줄임은 '…'·'...'·'. . .' 모두 점마다 같은 간격, 마지막 점 뒤 다음 말은 보통 빠르기 */
+ function dotRun(full,i){var c=full.charAt(i);if(c==="…")return true;if(c!==".")return false;var p1=full.charAt(i-1),p2=full.charAt(i-2),n1=full.charAt(i+1),n2=full.charAt(i+2);
+  return p1==="."||n1==="."||p1==="…"||n1==="…"||(p1===" "&&p2===".")||(n1===" "&&n2===".")}
+ window.__innPaceCold=function(full,n){try{return paceOf(String(full||""),n)}catch(e){return 0}};
+ window.__innPace=function(full,n){if(!cur())return 0;return paceOf(full,n)};
+ function paceOf(full,n){var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
+  if(dotRun(full,n-1)){var nn=nx===" "&&full.charAt(n+1)==="."?full.charAt(n+1):nx;return (nn==="."||nn==="…")?7:(/[\s)」"”]/.test(nx)?10:7)}   /* 말줄임: 점마다 7틱, 끝난 뒤 문장 사이면 조금 더 */
+  if(ch===" "&&full.charAt(n-2)==="."&&nx===".")return 0;               /* '. . .' 사이 띄어쓰기는 쉬지 않음(점에서 이미 쉼) */
   if(/[.?!]/.test(ch)&&/[\s)」"”]/.test(nx||" "))return 12;              /* 문장 끝 */
   if(ch===",")return 8;                                                /* 2026-10-10: 쉼표에서 한 박자 멈춤(약 0.25초) */                                                /* 쉼표 */
   if(ch==="\n")return 2;
   var k=full.indexOf("…",n);if(k>0&&k-n<2&&k-n>=0&&/[^\s]/.test(nx))return 1;   /* 말줄임 바로 앞 글자는 느리게 */
-  return 0};
+  return 0}
  /* 대본에서 의도한 줄바꿈(같은 쪽 두 줄). 문장은 그대로, 줄만 나눈다 */
  /* 2026-10-10 "대사를 두 줄로": 한 줄에 들어가도 18자 이상이고 쉼표가 있으면, 가운데에 가까운 쉼표 뒤에서 줄을 바꿔 두 줄 한 쪽으로(문장은 그대로) */
  function commaBreak(p){if(p.indexOf("\n")>=0||p.length<18)return p;var best=-1,bs=1e9,mid=p.length/2;for(var i=0;i<p.length-1;i++){if(p.charAt(i)===","&&p.charAt(i+1)===" "){var L=i+1,R=p.length-i-2;if(L<7||R<6)continue;var sc=Math.abs(i-mid);if(sc<bs){bs=sc;best=i}}}

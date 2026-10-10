@@ -1,48 +1,63 @@
 {
-  "design": "Chestnut squirrel father, mid-30s; warm sly half-lidded eyes; relaxed leaning pose; subtly broader shoulders.",
-  "master": "father-master-v4.png",
-  "fullbody": "father-fullbody-128x192.png",
-  "profiles": [
-    "father-profile-128.png",
-    "father-profile-64.png"
+ "design": "Chestnut squirrel father, mid-30s; warm sly half-lidded eyes; relaxed leaning pose; subtly broader shoulders.",
+ "master": "father-master-v4.png",
+ "fullbody": "father-fullbody-128x192.png",
+ "profiles": [
+  "father-profile-128.png",
+  "father-profile-64.png"
+ ],
+ "profile_layout": "Dedicated bust derived from full-body reference; no post or hands; identical character design; 2px padding on logical 64px canvas.",
+ "rendering": "Profile native logical size 64x64; 128x128 is exact 2x nearest neighbor. Full body 128x192. Alpha strictly 0 or 255. Use image-rendering: pixelated.",
+ "scope": "Only visual assets. No behavior or dialogue changes.",
+ "source": "Built-in image generation, followed by deterministic alpha and pixel export.",
+ "profile_master": "father-profile-master.png",
+ "profile_default": {
+  "files": [
+   "father-profile-128.png",
+   "father-profile-64.png",
+   "father-speaker128.png"
   ],
-  "profile_layout": "Dedicated bust derived from full-body reference; no post or hands; identical character design; 2px padding on logical 64px canvas.",
-  "rendering": "Profile native logical size 64x64; 128x128 is exact 2x nearest neighbor. Full body 128x192. Alpha strictly 0 or 255. Use image-rendering: pixelated.",
-  "scope": "Only visual assets. No behavior or dialogue changes.",
-  "source": "Built-in image generation, followed by deterministic alpha and pixel export.",
-  "profile_master": "father-profile-master.png",
-  "profile_default": {
-    "files": [
-      "father-profile-128.png",
-      "father-profile-64.png",
-      "father-speaker128.png"
-    ],
-    "master": "../source/father-profile-neutral-master.png",
-    "design": "Neutral honest warm face, eyes comfortably open; same chestnut squirrel and outfit (user-approved 2026-10-09).",
-    "export": "Master 1254x1254 RGBA -> 56x58 logical bust (cell majority, thin dark lines kept when >=30% of a cell), placed at (4,3) on 64x64, alpha 0/255; 128 = exact 2x nearest; speaker128 = 128 crop (10,0,126,116) nearest-scaled to 128 (same framing as before)."
-  },
-  "profile_alt_sly": {
-    "files": [
-      "father-sly-profile-128.png",
-      "father-sly-profile-64.png",
-      "father-sly-speaker128.png"
-    ],
-    "note": "Previous half-lidded sly profile, kept as a separate expression. Not wired to any line."
-  },
-  "finger_warm": {
-    "files": [
-      "father-warm-base-64.png",
-      "father-warm-raised-64.png",
-      "father-warm-base-128.png",
-      "father-warm-raised-128.png",
-      "father-warm-base-speaker128.png",
-      "father-warm-raised-speaker128.png"
-    ],
-    "source": [
-      "../source/father-warm-01-base.png",
-      "../source/father-warm-02-raised.png"
-    ],
-    "export": "기본 정직한 프로필과 같은 원본 상자(49,27,1221,1236)→56x58 논리, (4,3)에 배치. 손 영역(x<28,y>=30)만 2프레임에서 가져와 얼굴·몸 고정",
-    "use": "결정적 대사·짚어 말하는 줄의 화자 초상에서 주먹→검지"
-  }
+  "master": "../source/father-profile-neutral-master.png",
+  "design": "Neutral honest warm face, eyes comfortably open; same chestnut squirrel and outfit (user-approved 2026-10-09).",
+  "export": "Master 1254x1254 RGBA -> 56x58 logical bust (cell majority, thin dark lines kept when >=30% of a cell), placed at (4,3) on 64x64, alpha 0/255; 128 = exact 2x nearest; speaker128 = 128 crop (10,0,126,116) nearest-scaled to 128 (same framing as before)."
+ },
+ "profile_alt_sly": {
+  "files": [
+   "father-sly-profile-128.png",
+   "father-sly-profile-64.png",
+   "father-sly-speaker128.png"
+  ],
+  "note": "Previous half-lidded sly profile, kept as a separate expression. Not wired to any line."
+ },
+ "finger_warm": {
+  "files": [
+   "father-warm-base-64.png",
+   "father-warm-raised-64.png",
+   "father-warm-base-128.png",
+   "father-warm-raised-128.png",
+   "father-warm-base-speaker128.png",
+   "father-warm-raised-speaker128.png"
+  ],
+  "source": [
+   "../source/father-warm-01-base.png",
+   "../source/father-warm-02-raised.png"
+  ],
+  "export": "기본 정직한 프로필과 같은 원본 상자(49,27,1221,1236)→56x58 논리, (4,3)에 배치. 손 영역(x<28,y>=30)만 2프레임에서 가져와 얼굴·몸 고정",
+  "use": "결정적 대사·짚어 말하는 줄의 화자 초상에서 주먹→검지"
+ },
+ "profile_v6_matched": {
+  "files": [
+   "father-v6-matched-128.png",
+   "father-v6-matched-64.png",
+   "father-v6-matched-speaker128.png"
+  ],
+  "also_written_to": [
+   "father-profile-128.png",
+   "father-profile-64.png",
+   "father-speaker128.png"
+  ],
+  "master": "../source/dadol-profile-daram-matched-v2.png",
+  "approved": "2026-10-10 사용자 '아빠는 좋아' 채택(dadol-profile-daram-matched-v2.png). 인물 프로필·대화 화자 프사·작은 얼굴을 이 한 장으로 통일, 포즈·손가락 프레임 연결 해제",
+  "export": "Master 1254x1254 RGBA -> 64x64 logical (cell majority, dark lines kept when >=30% of a cell, alpha 0/255); 128 and speaker128 = exact 2x nearest. Previous default (v5 default-smile) kept as father-v5-default-smile-*."
+ }
 }

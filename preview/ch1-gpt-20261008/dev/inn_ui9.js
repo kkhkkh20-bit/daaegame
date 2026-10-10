@@ -215,6 +215,16 @@
    "html body.w209.inn1 .crec2 #crdaram,html body.w209.inn1 .crec2 .cr-det:not(.empty) .cr-tx>#crdaram{display:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .dmemo{display:none!important}",
    "html body.rtg .crec2{z-index:66!important}",
+   /* 2026-10-10 사용자 "모든 캐릭터 다람이 꼬리처럼 무빙 가볍게": 새 그림 없이 아주 작은 숨쉬기·흔들림(발밑 기준 ±0.5도, 세로 1.2%). 다람은 꼬리 프레임이 있어 무대 그림에서는 제외.
+      줄이기 설정(prefers-reduced-motion)이면 멈춘다 */
+   "@keyframes idle9{0%,100%{rotate:0deg;scale:1 1}25%{rotate:-.5deg}50%{scale:1 1.012}75%{rotate:.5deg}}",
+   "html body.w209.inn1 #innstage .isf.in:not([data-k=\"det1\"]) img{transform-origin:50% 100%;animation:idle9 3.6s ease-in-out infinite}",
+   "html body.w209.inn1 .fstalk .tstage .tfig img[data-fr9]{transform-origin:50% 100%;animation:in9 .24s ease-out,idle9 3.6s ease-in-out .3s infinite}",
+   "html body.w209.inn1 #bigscene svg image.wn9{transform-box:fill-box;transform-origin:50% 100%;animation:idle9 4s ease-in-out infinite}",
+   "html body.w209.inn1 svg[data-bg=\"carriage\"] image.innseat{transform-box:fill-box;transform-origin:50% 100%;animation:idle9 3.8s ease-in-out infinite}",
+   "html body.w209.inn1 #bigscene svg image.wn9:nth-of-type(2n){animation-delay:-1.3s}html body.w209.inn1 #bigscene svg image.wn9:nth-of-type(3n){animation-delay:-2.6s}",
+   "html body.rtg #rtg .seat:not(.front) img{transform-origin:50% 100%;animation:idle9 4.2s ease-in-out infinite}html body.rtg #rtg .seat:nth-child(2n) img{animation-delay:-1.5s}html body.rtg #rtg .seat:nth-child(3n) img{animation-delay:-2.8s}",
+   "@media (prefers-reduced-motion:reduce){html body.w209.inn1 #innstage .isf img,html body.w209.inn1 .fstalk .tstage .tfig img,html body.w209.inn1 #bigscene svg image.wn9,html body.rtg #rtg .seat img{animation:none!important}}",
    "html body.rtg .rtpanel{visibility:hidden!important}",   /* 회의 화면 아래 남은 소개 화면의 '원탁 회의 열기'(rtgo)가 키보드·접근성 클릭으로 눌려 회의가 두 장 열리던 것(dot QA 진행 차단의 실제 원인) */   /* 회의 중 연 사건 기록 창이 회의 화면(z60)·하단 단추(z62)·증거 서랍(z63) 아래에 깔려 닫히지 않던 것(dot QA 2026-10-10) */
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>h3{background:#F2C230!important;color:#2A1C12!important;padding:3px 10px!important;margin:0 0 4px!important;border:0!important;background-image:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>p{line-height:30px!important;background:repeating-linear-gradient(to bottom,transparent 0 28px,#C9B48C 28px 29px,transparent 29px 30px)}",
@@ -340,7 +350,7 @@
    doto:["투숙객","여관 2층 방에 묵는다"],buri:["장치공","여관 일을 손봐 준다"],wanggu:["마을 자경단장","주민 규약을 지키게 하고 회의를 기록한다"],karo:["마차 마부","우리를 태우고 마을에 왔다"]};
   var ORDER=["innma","nabi","seryeon","buri","wanggu","karo","geokkuri","doto"];
   /* 아빠·다람은 늘 맨 앞에(기본 정보만, 증언 없음) */
-  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n3"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/daram-v4/daram-idle-profile.png"]];
+  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n4"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/daram-v4/daram-idle-profile.png"]];
   function metMark(){try{if(!inn()||!dl())return;var ln=DL.lines[DL.i];var w=ln&&ln[0];if(!ROLE[w])return;var pl=document.querySelector("#vnbox .plate");if(pl&&/\?\?\?/.test(pl.textContent))return;G.beats=G.beats||{};if(!G.beats["inn_met_"+w]){G.beats["inn_met_"+w]=1}}catch(e){}}
   function metList(){var b=G.beats||{},pro=!!b.inn_pro;return ORDER.filter(function(k){if(b["inn_met_"+k])return true;if(k==="geokkuri")return G.found.indexOf("C07")>=0;if(k==="doto")return G.found.indexOf("C08")>=0;return pro&&["innma","nabi","seryeon","buri","wanggu","karo"].indexOf(k)>=0})}
   var PP=null;function pplClose(){if(PP){PP.remove();PP=null}}
@@ -476,13 +486,13 @@
    .concat(["idle","memo","joy","flustered","held-anger","comic-anger"].map(function(n){return V4+"daram-"+n+"-speaker128.png"}))
    .concat(["default","admonish","angry","sheepish"].map(function(n){return NV2+"neoul-"+n+"-speaker128.png"})).forEach(function(f){var im=new Image();im.src=f});
   /* 작은 얼굴(질문 목록·대화 화면·기록 등 pf)도 새 외형으로: 아빠 v5·다람 v4·너울 v2. 옛 갈색 모자 다람·주황 조끼 너울이 섞여 뜨지 않게 */
-  try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-v5-default-smile-64.png":k==="det1"?V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png":NV2+"neoul-default-64.png";
+  try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-profile-64.png?v=n4":k==="det1"?V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png":NV2+"neoul-default-64.png";
     return '<svg class="nodot inn-pixel-face" data-face="'+k+'" viewBox="0 0 100 101" aria-hidden="true" style="image-rendering:pixelated"><image href="'+f+'" x="0" y="0" width="100" height="100" style="image-rendering:pixelated"/></svg>'}}catch(e){}return _pf9.apply(this,arguments)}}catch(e){}
   /* 아빠 화자 포즈: 놀람(?! · 설마), 머쓱(죄송·하하·벌금은 내겠), 생각(물음으로 끝나는 속마음), 그 밖은 둥근 미소 기본 */
   function dadPose(t,inner,md){if(/shock|surpr|panic/.test(md)||/\?!|!\?|^(뭐라|설마|네\?|어\?)/.test(t))return "pose-surprised";
    if(/죄송|미안|하하|벌금은 내겠|머쓱|그 말 내일 아침/.test(t))return "pose-sheepish";
    if(inner&&/\?\)?$|^\(?(흠|글쎄)/.test(t))return "pose-thinking";return "default-smile"}
-  var DAD="art/ch1/father/father-speaker128.png?v=n3";   /* 아빠 기본 프로필: 2026-10-09 사용자 확정 정직·따뜻한 얼굴(이전 능청 얼굴은 father-sly-*로 보존, 연결 없음) — 화자 칸에만 */
+  var DAD="art/ch1/father/father-speaker128.png?v=n4";   /* 2026-10-10 사용자 채택 dadol-profile-daram-matched-v2(father-v6-matched) */   /* 아빠 기본 프로필: 2026-10-09 사용자 확정 정직·따뜻한 얼굴(이전 능청 얼굴은 father-sly-*로 보존, 연결 없음) — 화자 칸에만 */
   function spkSrc(k){return k==="det0"?DAD:(PROF[k]?AP+PROF[k]+"/speaker128.png":"")}
   [DAD].concat(Object.keys(PROF).map(function(k){return AP+PROF[k]+"/speaker128.png"})).forEach(function(f){var im=new Image();im.src=f;SPKC[f]=im;try{im.decode&&im.decode().catch(function(){})}catch(e){}});
   function speaker(){try{if(!inn()||!dl())return;var vt=document.querySelector("#vnbox .vtxt");if(!vt)return;var ln=DL.lines[DL.i]||[],w=ln[0],vb=vt.closest(".vband");
@@ -492,7 +502,7 @@
     var f=spkSrc(k),fing=false;
     if(k==="det1")f=V4+"daram-"+String(window.__innDV4?window.__innDV4(md):"idle").replace("idle-t0","idle")+"-speaker128.png";
     else if(k==="wanggu")f=NV2+"neoul-"+(window.__innNeoState?window.__innNeoState(md):"default")+"-speaker128.png";
-    else if(k==="det0"){fing=!inner&&((window.__innKeyLine&&window.__innKeyLine())||/^(잠깐|그런데|그렇다면|하나만|한 가지)|보시죠|확인하겠습니다|여쭙겠습니다/.test(tx));f=FV+dadPose(tx,inner,md)+"-speaker128.png"}
+    else if(k==="det0"){fing=false;f=DAD}   /* 2026-10-10 사용자 "아빠 프로필·대화 프사를 채택한 한 장으로 통일": 옛 v5 포즈·손가락 프레임(다른 얼굴) 연결 해제 */
     var mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"")}
     var fk=DL.i+"|"+tx.length;
     if(fing){if(SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FV+"finger-base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FV+"finger-raised-speaker128.png")},200)}}

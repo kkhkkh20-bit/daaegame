@@ -1,0 +1,4 @@
+# 콜드오픈 타자기에도 대사와 같은 구두점 쉼(마침표·물음표·느낌표·쉼표·말줄임 …/.../. . .)을 적용(2026-10-10 사용자 "프롤로그 대사 . 있으면 멈추는 게 적용 안 됨").
+# 쉬는 동안엔 글자·소리가 나오지 않는다. 한 번 누르면 즉시 전체 표시(타이머 해제), 다음 누름에 진행 — 기존 next()/stopTyping 그대로라 남는 타이머·소리 없음.
+rep('  function type(t){full=t;tx.textContent="";var n=0;stopTyping();typing=setInterval(function(){n++;tx.textContent=full.slice(0,n);tick(full.charAt(n-1));if(n>=full.length){clearInterval(typing);typing=null;nx.classList.add("on")}},MS[SET.dialogueSpeed])}',
+    '  function type(t){full=t;tx.textContent="";var n=0,hold=0;stopTyping();typing=setInterval(function(){if(hold>0){hold--;return}n++;tx.textContent=full.slice(0,n);var ch=full.charAt(n-1);if(!/[.,?!…·]/.test(ch))tick(ch);try{hold=window.__innPaceCold?window.__innPaceCold(full,n):0}catch(e){hold=0}if(n>=full.length){clearInterval(typing);typing=null;nx.classList.add("on")}},MS[SET.dialogueSpeed])}')
