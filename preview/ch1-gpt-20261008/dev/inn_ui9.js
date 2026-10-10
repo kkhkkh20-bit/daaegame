@@ -32,7 +32,7 @@
     if(world)return;var fx=document.getElementById("fsscroll");if(!fx)return;var m=fx.scrollWidth-fx.clientWidth;fx.style.setProperty("overflow-x","hidden","important");var c=Math.max(0,Math.round(m/2));if(Math.abs(fx.scrollLeft-c)>1)fx.scrollLeft=c}catch(e){}}
 
   /* ---------- 1) 장소 이동 목록 ---------- */
-  var SHORT={bed13:"창고 · 열세 번째 침대",dining:"식당",kitchen:"부엌",hall:"2층 복도",dotoroom:"도토의 방",front:"접수대"};
+  var SHORT={bed13:"창고 · 열세 번째 침대",dining:"식당",kitchen:"부엌",hall:"2층 복도",dotoroom:"도토의 방",front:"접수대",plaza:"광장 (여관 밖)"};
   var MV=null,pass=false;
   function mvClose(){if(MV){MV.remove();MV=null}B.classList.remove("innmv-on")}
   function mvOpen(btn){mvClose();var c=CASES[G.ci],h='<div class="hd"><b>장소 이동</b><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="ls">';

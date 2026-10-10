@@ -173,7 +173,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
  function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
  /* 이름표: 아빠가 이름을 듣기 전까지는 '???' (프롤로그 첫 만남). 이름을 말하는 그 줄부터 이름이 뜬다 */
- var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"숙박부에 적힌 이름은 '세련'",wanggu:"자경단장 너울입니다"};
+ var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"늦게 든 세련입니다",wanggu:"자경단장 너울입니다"};
  function revealAt(k){for(var i=0;i<EP.PRO.length;i++){var it=EP.PRO[i].items;for(var j=0;j<it.length;j++){var t=lt(it[j]);if(typeof t==="string"&&t.indexOf(REVEAL[k])>=0)return i}}return -1}
  var RPI={};Object.keys(REVEAL).forEach(function(k){RPI[k]=revealAt(k)});var heard={};
  var INVINTRO={buri:1,doto:1,geokkuri:1};   /* 2026-10-10: 프롤로그에서 빠져 조사 중에 처음 만나는 인물 — 자기소개 줄을 듣기 전까지 ??? (들은 것은 저장) */
@@ -220,7 +220,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    '<rect class="dopen" x="362" y="150" width="6" height="26" fill="#8A5E36"/><rect class="dshut" x="366" y="140" width="66" height="54" fill="#8A5E36" stroke="#6B4A2B" stroke-width="2"/><text class="lb" x="399" y="136" text-anchor="middle">창고</text></g>'+
    '<g><rect x="336" y="166" width="26" height="28" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2].map(function(k){return '<rect x="338" y="'+(170+k*8)+'" width="22" height="2" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="330" y="186" text-anchor="end">부엌 계단</text></g></g>');
   return '<svg viewBox="0 0 440 200" shape-rendering="crispEdges" role="img" aria-label="2층 복도 배치도: 양쪽 방에 침대 열둘, 꺾인 끝 창고에 열세 번째 침대">'+r.join("")+'</svg>'}
- var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 창고예요/,s:3},{re:/^짐 풀고 내려와요/,s:4}];
+ var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 (창고|지금은 안 쓰는 방)/,s:3},{re:/^짐 풀고 내려와요/,s:4}];
  var CUT2=[{re:/^안에 작은 애가 있어|^숨을… 안 쉬는 것 같아|^아빠가 볼게|^뚜껑만 살짝|^\(차갑다|^\(이렇게 작은 몸은|^\(함부로 판단하지|^…이렇게 좁은 데 둘 수는 없겠다/,c:"teapot"}];   /* 2026-10-10: 조사 중 찻주전자 발견(대사가 문장 단위로 나뉘어 표시됨) */
  var cut2El=null;
  function cut2Sync(){try{var on=null;if(cur()&&typeof DL!=="undefined"&&DL&&G.beats){var ln=DL.lines[DL.i];var t=ln&&ot(ln);CUT2.forEach(function(c){if(t&&c.re.test(t))on=c.c})}
@@ -331,11 +331,21 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   return splitLong(s.slice(0,b),inner).concat(splitLong(s.slice(b+1),inner))}
  function pageLine(x){if(!Array.isArray(x)||typeof x[1]!=="string"||typeof x[0]!=="string"||x[0].charAt(0)==="@")return [x];
   var t=x[1];if(t.indexOf("<")>=0)return [x];var inner=x[0]==="narr"&&/^\(.*\)$/.test(t),body=inner?t.slice(1,-1):t;
-  var parts=joinShort(sents(body)).map(function(p){return BRK[p]||commaBreak(p)});if(!parts.length)return [x];
-  var segs=[];parts.forEach(function(p){splitLong(p,inner).forEach(function(q){segs.push(q)})});
+  /* 2026-10-10 사용자 확정 "클릭이 너무 많다": 같은 줄의 짧은 문장 둘이 각각 한 줄에 들고 합쳐 두 줄 안이면 한 쪽에 문장마다 줄을 바꿔 담는다.
+     그 밖의 문장만 예전처럼 쉼표 두 줄·긴 문장 나누기. 글자 크기는 바꾸지 않고, 한 줄로 길게 밀어 넣지 않는다 */
+  var raw=joinShort(sents(body));if(!raw.length)return [x];var W0=textW(),wr=function(t){return inner?"("+t+")":t},one=function(t){return t.indexOf("\n")<0&&nLines(wr(t),W0)===1};
+  var packed=[];raw.forEach(function(q){var pv=packed.length?packed[packed.length-1]:null;
+   if(pv&&!pv.j&&one(pv.t)&&one(q)&&nLines(wr(pv.t+"\n"+q),W0)<=2){pv.t=pv.t+"\n"+q;pv.j=1}
+   else if(pv&&pv.j&&q.length<=8&&nLines(wr(pv.t+" "+q),W0)<=2){pv.t=pv.t+" "+q}   /* 짧은 꼬리 문장("둘입니다.")만 따로 한 쪽이 되지 않게 둘째 줄 끝에 */
+   else packed.push({t:q,j:0})});
+  var parts=packed.map(function(o){return o.j?o.t:(BRK[o.t]||commaBreak(o.t))});
+  var segs=[];parts.forEach(function(p){if(p.indexOf("\n")>=0&&nLines(wr(p),W0)<=2){segs.push(p);return}splitLong(p,inner).forEach(function(q){segs.push(q)})});
   return segs.map(function(p,k){var y=x.slice();y[1]=inner?"("+p+")":p;y[7]=t;if(k>0){if(y[3]==="testi")y[3]="";if(y[5]!=null)y[5]=""}return y})}
  window.__innPageCold=function(L){try{var o=[];(L||[]).forEach(function(b){if(!b||typeof b.say!=="string"){o.push(b);return}var parts=joinShort(sents(b.say));if(parts.length<2&&fits2(b.say)){o.push(b);return}
-   var zEnd=(b.z||1)*(b.push?1+b.push/100:1)/(b.pull?1+b.pull/100:1),segs=[];parts.forEach(function(p){splitLong(p).forEach(function(q){segs.push(q)})});
+   /* 2026-10-10 대사 쪽 규칙과 같게: 한 줄짜리 짧은 문장 둘은 한 쪽에 문장마다 줄바꿈 */
+   var W1=textW(),pk=[];parts.forEach(function(q){var pv=pk.length?pk[pk.length-1]:null;if(pv&&pv.indexOf("\n")<0&&nLines(pv,W1)===1&&nLines(q,W1)===1&&nLines(pv+"\n"+q,W1)<=2)pk[pk.length-1]=pv+"\n"+q;else pk.push(q)});
+   if(pk.length===1&&pk[0].indexOf("\n")>=0){var c1={};for(var k1 in b)c1[k1]=b[k1];c1.say=pk[0];o.push(c1);return}parts=pk;
+   var zEnd=(b.z||1)*(b.push?1+b.push/100:1)/(b.pull?1+b.pull/100:1),segs=[];parts.forEach(function(p){if(p.indexOf("\n")>=0){segs.push(p);return}splitLong(p).forEach(function(q){segs.push(q)})});
    segs.forEach(function(p,i){var c={};for(var k in b)c[k]=b[k];c.say=p;if(i>0){delete c.sfx;delete c.wait;delete c.push;delete c.pull;delete c.fxs;c.z=zEnd;c.id=(b.id||"")+"_"+i}o.push(c)})});return o}catch(e){return L}};
  /* 타이핑 호흡: 방금 찍은 글자 뒤에 쉴 틱 수(1틱 = 대사 속도 간격). 1장에서만 */
  /* 대사 빠르기(2026-10-10): 인물 성격 기본값 × 대사 내용. 1보다 크면 느리게.
@@ -361,7 +371,20 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  function commaBreak(p){if(p.indexOf("\n")>=0||p.length<18)return p;var best=-1,bs=1e9,mid=p.length/2;for(var i=0;i<p.length-1;i++){if(p.charAt(i)===","&&p.charAt(i+1)===" "){var L=i+1,R=p.length-i-2;if(L<7||R<6)continue;var sc=Math.abs(i-mid);if(sc<bs){bs=sc;best=i}}}
   if(best<0)return p;var a=p.slice(0,best+1),b=p.slice(best+2);try{if(nLines(a,textW())>1||nLines(b,textW())>1)return p}catch(e){}return a+"\n"+b}
  var BRK={"두 사람 방은 앞 계단 쪽, 끝에서 둘째 방이에요.":"두 사람 방은 앞 계단 쪽,\n끝에서 둘째 방이에요."};
- window.__innPage=function(lines){try{if(!cur()||!Array.isArray(lines))return lines;var o=[];lines.forEach(function(x){pageLine(x).forEach(function(y){o.push(y)})});return o}catch(e){return lines}};
+ /* 같은 화자의 이어진 짧은 줄(한 쪽짜리 두 줄)도 합쳐 두 줄 안이면 한 쪽으로. 화자가 바뀌면 따로. 표정·얼굴·증언 표시·연출 신호가 있는 줄, 무대 연출(컷·이름 공개·인물 신호)이나
+    놀람 효과음이 걸린 줄은 합치지 않는다 */
+ function cueHit(t){try{if((window.__INNCUE||{})[t])return true;if(/^(앗|헉|엇|으악|아악|어머|세상에)|\?!|!\?/.test(t))return true;
+   var L=[].concat(typeof CUT!=="undefined"?CUT:[],typeof CUT2!=="undefined"?CUT2:[]);for(var i=0;i<L.length;i++)if(L[i].re&&L[i].re.test(t))return true;
+   if(typeof REVEAL!=="undefined")for(var k in REVEAL)if(t.indexOf(REVEAL[k])>=0)return true}catch(e){return true}return false}
+ function plain(x){if(!Array.isArray(x)||typeof x[0]!=="string"||typeof x[1]!=="string"||x[0].charAt(0)==="@"||/[<{]/.test(x[1])||x.length>8)return false;for(var i=3;i<=5;i++)if(x[i])return false;return true}
+ function mergeSame(a){var o=[];for(var i=0;i<a.length;i++){var y=a[i],p=o.length?o[o.length-1]:null;
+   if(p&&p.__one&&y&&y.__one&&p[0]===y[0]&&String(p[2]||"")===String(y[2]||"")&&String(p[6]||"")===String(y[6]||"")){
+    var pi=/^\(.*\)$/.test(p[1]),yi=/^\(.*\)$/.test(y[1]);if(pi===yi){var tx=pi?"("+p[1].slice(1,-1)+"\n"+y[1].slice(1,-1)+")":p[1]+"\n"+y[1];
+     if(nLines(tx,textW())<=2){var m=p.slice();m[1]=tx;m[7]=ot(p)+" "+ot(y);m.__one=false;o[o.length-1]=m;continue}}}
+   o.push(y)}return o}
+ window.__innPage=function(lines){try{if(!cur()||!Array.isArray(lines))return lines;var o=[];lines.forEach(function(x){var pg=pageLine(x);
+   if(pg.length===1&&plain(x)&&!cueHit(ot(x))&&!cueHit(String(x[1]))&&pg[0][1].indexOf("\n")<0&&nLines(pg[0][1],textW())===1){var z=pg[0].slice();z.__one=true;if(z[7]==null)z[7]=x[1];pg=[z]}
+   pg.forEach(function(y){o.push(y)})});o=mergeSame(o);o.forEach(function(y){if(y&&y.__one)delete y.__one});return o}catch(e){return lines}};
  window.__innSayX=function(base,self,lines,done,sk){return split(base,self,talkEntry(lines),done,sk)};
  /* 힌트: 1장은 단계가 잠겨 있다(햇빛 → 머리판 → 자물쇠 → 장부 → 돋보기). 잠긴 지점을 '남은 곳'으로 세거나 가리키지 않고, 지금 해야 할 단계를 말한다 */
  try{var _ns2=nextStep;nextStep=function(c){try{if(cur()&&!G.battle){var b=G.beats||{},has=function(id){return G.found.indexOf(id)>=0},LI=function(id){for(var i=0;i<c.locations.length;i++)if(c.locations[i].id===id)return i;return null};

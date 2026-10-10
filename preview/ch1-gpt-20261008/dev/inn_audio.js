@@ -144,7 +144,7 @@
   wrap("doorOpen",function(){if(!S.sound||!AC)return;var t=AC.currentTime;creakAt(AC,t,.85,420,760,.16);noise(.08,.12,.82,700,"lowpass")});
   SFX.carStop=function(){if(!S.sound||!AC)return;var t=AC.currentTime;
    [0,.32,.7,1.15].forEach(function(w,i){var v=.32-i*.06;tone(820,.05,"triangle",v,w,null,560);noise(.04,v*.7,w,2200,"bandpass")});   /* 말발굽이 느려지며 */
-   creakAt(AC,t+.9,.7,300,520,.1);noise(.5,.06,1.3,500,"bandpass")};   /* 차체 삐걱 + 바퀴 멎음 */
+   noise(.5,.06,1.3,500,"bandpass")};   /* 바퀴 멎음(2026-10-10 까마귀처럼 들리던 차체 삐걱 제거) */
   SFX.bell10=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*1.15;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
     tone(196,3,"sine",.16,w);tone(392,1.6,"sine",.05,w);tone(470,1.2,"sine",.025,w);noise(.05,.05,w,900,"lowpass")}}catch(e){}};
   SFX.bell10_old=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
@@ -197,7 +197,7 @@
    if(n.r==null)n.r=now+1+Math.random()*2;if(n.h==null)n.h=now+.3;
    while(n.r<now+.3){var k=3+(Math.random()*3|0),t=n.r;for(var j=0;j<k;j++){burst(a,I.bus,t,.03,.03+Math.random()*.02,"bandpass",900+Math.random()*500,2.5);t+=.03+Math.random()*.05}n.r+=4+Math.random()*4}   /* 차체 덜컹: 간헐적 */
    while(n.h<now+.3){clop(a,I.bus,n.h,.16);clop(a,I.bus,n.h+.19+Math.random()*.02,.12);n.h+=.62+Math.random()*.04}   /* 또각또각(빠른 걸음) */
-   if(n.c==null)n.c=now+3;while(n.c<now+.3){creakAt(a,n.c,.5,260+Math.random()*80,420+Math.random()*120,.035);n.c+=6+Math.random()*5}   /* 차체 나무 삐걱 */
+   /* 2026-10-10 사용자 "마차의 까악거리는 까마귀 소리 제거": 오르는 톱니파 삐걱이 까마귀 울음처럼 들림 → 마차 장면 반복 삐걱 삭제(말발굽·덜컹·방울은 유지) */   /* 차체 나무 삐걱 */
    if(n.j==null)n.j=now+2;while(n.j<now+.3){[0,.09,.2].forEach(function(w){var o=a.createOscillator(),g=a.createGain();o.frequency.value=2900+Math.random()*500;g.gain.setValueAtTime(.0001,n.j+w);g.gain.exponentialRampToValueAtTime(.025,n.j+w+.005);g.gain.exponentialRampToValueAtTime(.0001,n.j+w+.25);o.connect(g);g.connect(I.bus);o.start(n.j+w);o.stop(n.j+w+.3)});n.j+=4+Math.random()*5}}   /* 마구 방울 */
   function clop(a,out,t,vol){var o=a.createOscillator(),g=a.createGain();o.type="triangle";o.frequency.setValueAtTime(900+Math.random()*160,t);o.frequency.exponentialRampToValueAtTime(520,t+.05);
    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+.07);o.connect(g);g.connect(out);o.start(t);o.stop(t+.09);burst(a,out,t,.04,vol*.8,"bandpass",2000,2)}
