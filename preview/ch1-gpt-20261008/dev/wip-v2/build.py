@@ -24,13 +24,15 @@ s=s[:a]+open(D+'script_a.js',encoding='utf-8').read()+s[b:]
 a=s.index(' /* ---- I9 회의 직전 ---- */');b=s.index(' /* 대본·구현에서 아직 확정되지 않았거나',a)
 s=s[:a]+open(D+'script_b.js',encoding='utf-8').read()+open(D+'gen/end_gen.js',encoding='utf-8').read()+s[b:]
 for f in sorted(os.listdir(D+'patches')) if os.path.isdir(D+'patches') else []:
+    if not f.endswith('.py') or not os.path.isfile(D+'patches/'+f):
+        continue
     exec(open(D+'patches/'+f,encoding='utf-8').read())
 # 2) 프롤로그 대사본 교체(개별 만남 구도)
 a=s.index(' EP.PRO=[\n');b=s.index(' /* ---- 장면 배경 ----',a)
 s=s[:a]+open(D+'pro_new.js',encoding='utf-8').read()+s[b:]
 rep(' EP.PRO[0].bg="carriage";EP.PRO[1].bg="plaza";EP.PRO[2].bg="reception";EP.PRO[3].bg="corridor";EP.PRO[5].bg="reception";EP.PRO[6].bg="room";EP.PRO[7].bg="corridor";',' /* 프롤로그 장면 배경은 EP.PRO의 B(배경, 상대, 장면)에서 지정 */')
 # 3) 대화 무대 모듈: 엔진 클로저 안(첫 실행 직전)에 넣는다
-js=open(D+'inn_stage.js',encoding='utf-8').read()+'\n'+open(D+'inn_piano_tracks.js',encoding='utf-8').read()+'\n'+open(D+'inn_audio.js',encoding='utf-8').read()+'\n'+open(D+'inn_input.js',encoding='utf-8').read()+'\n'+open(D+'inn_ui9.js',encoding='utf-8').read()+'\n'+open(D+'inn_polish.js',encoding='utf-8').read()+'\n'+open(D+'inn_evidence.js',encoding='utf-8').read()+'\n'+open(D+'inn_simple_ui.js',encoding='utf-8').read()+'\n'+open(D+'inn_map_navigation.js',encoding='utf-8').read()+'\n'+open(D+'inn_scene_guidance.js',encoding='utf-8').read()
+js=open(D+'inn_stage.js',encoding='utf-8').read()+'\n'+open(D+'inn_music_tracks.js',encoding='utf-8').read()+'\n'+open(D+'inn_recorded_sfx.js',encoding='utf-8').read()+'\n'+open(D+'inn_audio.js',encoding='utf-8').read()+'\n'+open(D+'inn_input.js',encoding='utf-8').read()+'\n'+open(D+'inn_ui9.js',encoding='utf-8').read()+'\n'+open(D+'inn_polish.js',encoding='utf-8').read()+'\n'+open(D+'inn_evidence.js',encoding='utf-8').read()+'\n'+open(D+'inn_simple_ui.js',encoding='utf-8').read()+'\n'+open(D+'inn_map_navigation.js',encoding='utf-8').read()+'\n'+open(D+'inn_scene_guidance.js',encoding='utf-8').read()
 hk='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'
 rep(hk,js+'\n'+hk)
 out=str(OUTPUT / 'play_v2.html')   # 2026-10-10: 작업 중 v2는 공개 파일에 쓰지 않는다(배포는 dev/ 소스로 따로)

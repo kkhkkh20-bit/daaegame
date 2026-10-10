@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "file": "horse-carriage-loop.wav",
+      "duration_seconds": 1.2,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -6.375175252488257,
+      "rms_dbfs": -34.365177526507736,
+      "clipped_samples": 0,
+      "loop": true,
+      "loop_start_seconds": 0,
+      "loop_end_seconds": 1.2,
+      "boundary_jump": 0.0,
+      "source": {
+        "url": "https://raw.githubusercontent.com/0ad/0ad/master/binaries/data/mods/public/audio/actor/mounted/movement/mstep113.ogg",
+        "sha256": "e069e264983fa31700cf73aea6fc905790184d9d2b49d0f1327cd7ba162a6dfe",
+        "author": "Wildfire Games",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "page": "https://github.com/0ad/0ad/blob/master/binaries/data/mods/public/audio/actor/mounted/movement/mstep113.ogg"
+      },
+      "modifications": "Two recorded impact excerpts (.32-.71s, .88-1.27s), placed at .04/.64s in a 1.2s two-beat loop; 45Hz high-pass/3kHz low-pass; 3ms attack/35ms release; fixed gain. No pitch shift.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sha256": "29274a7ef3186f28c60a27c3d62c5383f375f7b993915ee2e90087f92b950480",
+      "beat_period_seconds": 0.6,
+      "beats_per_loop": 2,
+      "impact_peak_seconds": [
+        0.09,
+        0.69
+      ],
+      "runtime_fade_in_seconds": 0.12,
+      "runtime_fade_out_seconds": 0.3,
+      "single_source_required": true
+    },
+    {
+      "file": "wood-door-open.wav",
+      "duration_seconds": 0.43537414965986393,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -6.375175252488256,
+      "rms_dbfs": -22.481364027614767,
+      "clipped_samples": 0,
+      "loop": false,
+      "loop_start_seconds": null,
+      "loop_end_seconds": null,
+      "boundary_jump": 0.0,
+      "source": {
+        "url": "https://raw.githubusercontent.com/minetest/minetest_game/master/mods/doors/sounds/doors_door_open.ogg",
+        "sha256": "e256ed15794ef17a6a2df0c9a79b97e1e8e8d697ab063b4870a752ed4b791a73",
+        "author": "CGEffex; modified by BlockMen",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "page": "https://github.com/minetest/minetest_game/blob/master/mods/doors/sounds/doors_door_open.ogg"
+      },
+      "modifications": "Mono 44.1kHz PCM conversion; 45Hz high-pass/3.5kHz low-pass; 2ms attack/35ms release; fixed peak gain. Original timing retained; no bell, pitch shift or extra synthesized layer.",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "sha256": "6fc3e70180cee26633a3af7faf33e5f31921f7739a896a8267e7c0b653591ad9"
+    },
+    {
+      "file": "wood-door-close.wav",
+      "duration_seconds": 0.5863038548752835,
+      "sample_rate": 44100,
+      "channels": 1,
+      "peak_dbfs": -6.375175252488256,
+      "rms_dbfs": -24.49867742578374,
+      "clipped_samples": 0,
+      "loop": false,
+      "loop_start_seconds": null,
+      "loop_end_seconds": null,
+      "boundary_jump": 0.0,
+      "source": {
+        "url": "https://raw.githubusercontent.com/minetest/minetest_game/master/mods/doors/sounds/doors_door_close.ogg",
+        "sha256": "e556561e8463491639a59f5cebe2cbc7c9ee6967a9c2faf8f3df90a1931483d6",
+        "author": "bennstir",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "page": "https://github.com/minetest/minetest_game/blob/master/mods/doors/sounds/doors_door_close.ogg"
+      },
+      "modifications": "Mono 44.1kHz PCM conversion; 45Hz high-pass/3.5kHz low-pass; 2ms attack/35ms release; fixed peak gain. Original timing retained; no bell, pitch shift or extra synthesized layer.",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "sha256": "e67212567346c47d3dc4276e98c0557308cdddae8064096395dbea153c9f7d2d"
+    }
+  ],
+  "source_documents": [
+    {
+      "file": "source/0AD-AUDIO-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/master/binaries/data/mods/public/audio/LICENSE.txt",
+      "sha256": "dabb2ee881522112ee70539aec179f3a639b8fc58e6a7ca06df2791fabd51537"
+    },
+    {
+      "file": "source/MINETEST-DOORS-README.md",
+      "url": "https://raw.githubusercontent.com/minetest/minetest_game/master/mods/doors/README.md",
+      "sha256": "a0d3a84c267e52e63e9b251955197a7d1925eea425440aeebb74cadaafd573ce"
+    },
+    {
+      "file": "source/MINETEST-DOORS-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/minetest/minetest_game/master/mods/doors/license.txt",
+      "sha256": "aa7ef3972837e860095adcd0cd821f0efbb711bee690b1d386cccf336e9579bd"
+    },
+    {
+      "file": "source/0AD-HORSE-WALK.xml",
+      "url": "https://raw.githubusercontent.com/0ad/0ad/master/binaries/data/mods/public/audio/actor/mounted/movement/walk.xml",
+      "sha256": "b95baa8cff82211dce281798f07c3cf007a6adcb75a0cc9970aad6e92bfd1b7c"
+    }
+  ],
+  "listening_status": "No direct listening tool was available. Source attribution, decoded waveforms, impact timing, clipping, spectral energy and output files were checked; human listening is still possible via these WAV files."
+}

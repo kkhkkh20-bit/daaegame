@@ -38,7 +38,7 @@ with sync_playwright() as p:
  if args.without_ledger:prepared+='G.found=G.found.filter(id=>id!=="C11");'
  prepared += 'G.beats.inn_meet=1;window.__innOpenFinal()' if args.final else 'window.__rtOpen(CASES[G.ci])'
  pg.evaluate('(code)=>window.__T(code)', prepared)
- pg.evaluate('''window.__audioSeen={};window.__caseTurns={};setInterval(()=>{const s=window.__innAudioState();if(s.line){window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant(),duck:window.__innDuck(),tense:window.__innTense()};if(s.line.startsWith('[반박 결과]'))window.__caseTurns[s.line]=window.__T('Object.assign({},G.beats.rtVotes)')}},60)''')
+ pg.evaluate('''window.__audioSeen={};window.__caseTurns={};setInterval(()=>{const s=window.__innAudioState();if(s.line){window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant(),duck:window.__innDuck(),tense:window.__innTense()};window.__caseTurns[s.line]=window.__T('Object.assign({},G.beats.rtVotes)')}},60)''')
  if args.failure:
   initial=pg.evaluate('window.__T("G.found.slice()")');wr=0;saw_mf=False;recovered=False
   for i in range(700):
@@ -100,14 +100,14 @@ with sync_playwright() as p:
   assert not pg.locator('#logic-panel,#logic-note').count(), 'Separate deduction quiz returned'
   turns=pg.evaluate('window.__caseTurns')
   expected_turns=[
-   '[반박 결과] 할머니만 그 방을 드나들었다는 생각이 깨졌다.',
-   '[반박 결과] 차갑다는 이유로 손님을 죽였다고 몰아갈 수 없다.',
-   '[반박 결과] 우리를 몰아붙이던 목격담이 세련의 알리바이를 무너뜨렸다.',
-   '[반박 결과] 처음 발견했다는 이유로 부녀를 몰아가던 의심이 걷혔다.',
-   '[반박 결과] 주머니를 보지도 못했다는 말이 바뀌었다.',
-   '[반박 결과] 남을 도둑으로 몰던 사람이 직접 주머니를 숨겼다고 인정했다.',
-   '[반박 결과] 사라진 이백 냥은 도난 피해가 아니라 세련의 노름 손실이었다.',
-   '[반박 결과] 도난 누명과 이백 냥 배상 요구가 철회됐다. 여관을 넘기라는 압박도 끝났다.',
+   '나비 씨도 갔군요. 할머니만 드나들 줄 알았는데…. 제 표는 거둡니다.',
+   '살아 있군요. 죽였다는 의심은 거둡니다.',
+   '[표 변화] 세련 3 · 할머니 2 · 부녀 1',
+   '부녀 손님께 둔 표는 거둡니다. 발견한 사람을 의심했군요.',
+   '같은 도장입니다. 덜 마른 봉인띠에 털이 눌렸군요.',
+   '…제가 넣었습니다. 제 돈을 제가 숨겨 둔 겁니다.',
+   '…거기서 잃었습니다. 이백 냥.',
+   '…물어내라는 말은 거두겠습니다. 계약서도 가져가겠습니다.',
   ]
   assert all(t in turns for t in expected_turns),turns
   first=list(turns[expected_turns[0]].values())
@@ -119,24 +119,24 @@ with sync_playwright() as p:
   print('Reversals: first objection withdraws a vote; eight accepted outcomes through accusation/payment withdrawal OK',flush=True)
   if args.without_ledger:assert not pg.evaluate('(code)=>window.__T(code)', 'G.found.includes("C11")')
   audio=pg.evaluate('window.__audioSeen')
-  for relationship_beat in ('다람 양이 본 것도 기록', '다니는 길에 물어볼게요',
-                            '엄마 단서를 그냥 두고', '내일은 우체국에서',
+  for relationship_beat in ('죽였다는 의심은 거둡니다', '다니면서 물어볼게요',
+                            '엄마 단서가 여기 있잖아', '내일은 우체국에서',
                             '엄마 찾으면 서점 다시 열자'):
    assert any(relationship_beat in t for t in audio),('Epilogue relationship missing',relationship_beat)
   print('Family epilogue: child testimony accepted, village allies and active mother search before bookstore return OK',flush=True)
-  comfort=next((v for t,v in audio.items() if '나는 그 손을 잠깐 감싸 쥔다' in t),None)
+  comfort=next((v for t,v in audio.items() if '그 손을 감싼다' in t),None)
   assert comfort and comfort['want'] is None and not comfort['tense'],('Comfort must use quiet without heartbeat',comfort)
-  following=next((v for t,v in audio.items() if t.startswith('처음 있던 자리는 말씀하지 않고')),None)
+  following=next((v for t,v in audio.items() if t.startswith('처음 있던 자리는 저희가 못 봤어요')),None)
   assert following and following['want'] in ('inn_meet','inn_meet_press','inn_climax'),('Comfort quiet leaked into the next testimony',following)
-  for emotional_beat in ('다람이가 더 기다려 보자고', '두 사람 몫도 같이 끓여',
-                         '솜솜을 원래 베개 구석에', '그동안은 아빠한테 읽어 줘',
-                         '아빠는 다람이 먼저 한 입', '침대 머리판을 쓰다듬는다'):
+  for emotional_beat in ('엄마가 그랬어요. 겨울잠 땐', '두 사람 몫도 같이 끓여',
+                         '솜솜을 베개 구석에', '그동안은 아빠한테 읽어 줘',
+                         '아빠는 다람이 먼저 한 입', '할머니가 머리판을 쓰다듬는다'):
    assert any(emotional_beat in t for t in audio),('Emotional payoff missing from played route',emotional_beat)
   for t,v in audio.items():
    if t.startswith(('식사를 마친 뒤, 할머니가 바구니', '그동안은 아빠한테 읽어 줘', '아껴 먹어', '고맙다. 같이 먹자', '아빠는 다람이 먼저')):
     assert v['want']=='inn_after' and 0<v['duck']<=.5 and not v['tense'],('Gentle epilogue cue missing',t,v)
   assert not any('빈 열세 번째 침대' in t for t in audio), 'Epilogue contradicts Somsom returning to the bed'
-  print('Emotional beats: quiet comfort → next testimony restores music; winter home, sleeping guest and shared reading/snack all played with gentle piano OK',flush=True)
+  print('Emotional beats: quiet comfort → next testimony restores music; winter home, sleeping guest and shared reading/snack all played with gentle strings OK',flush=True)
   assert audio.get('…네.',{}).get('confession'), audio.get('…네.')
   assert any(v['key'] for k,v in audio.items() if k.startswith('첫눈은 자정')), 'Council dialogue audio hook missing'
   assert any(v['want']=='inn_meet_press' for v in audio.values()), 'Council pressure tempo missing'
