@@ -65,7 +65,7 @@
   paused=!active||document.hidden||!!document.querySelector('#innmove,#innppl,.crec2,#innins,#e9pop,#ov .modal,#mveil .modal,#inn-settings');
   document.body.classList.toggle('cm-paused',paused||reduced.matches);actors=[];
   if(!active)return;
-  document.querySelectorAll('#innstage .isf>img,.fstalk .tstage .tfig>img,#vnbox .spk9>img,#bigscene image.wn9,#rtg .seat>img,image.innseat').forEach(function(im){
+  document.querySelectorAll('#innstage .isf>img,.fstalk .tstage .tfig>img,#vnbox .spk9>img,#bigscene image.wn9,#rtg .seat>img,#rtg .seat>svg>image,image.innseat').forEach(function(im){
    var host=im.closest('.isf,.spk9,.seat'),k=(host&&host.dataset.k||im.dataset.k||'det1').split('|')[0];
    if(!GESTURE[k])return;
    var m=host&&host.dataset.mood!=null?host.dataset.mood:(sp===k?lm:'');
@@ -87,6 +87,7 @@
   /* Translations step between integer screen pixels; never rotate/stretch art. */
   '.cm-layer{position:absolute;max-width:none!important;max-height:none!important;pointer-events:none!important;overflow:visible;image-rendering:pixelated}',
   '.cm-layer image{image-rendering:pixelated}.cm-source{opacity:0!important;animation:none!important;translate:0 0!important}',
+  'html body.inn1 #rtg .seat>svg.sf{height:65%;position:relative;top:25%;width:auto;image-rendering:pixelated}html body.inn1 #rtg .seat[data-k="geokkuri"]{bottom:auto!important;top:0!important;height:25%!important}html body.inn1 #rtg .seat[data-k="geokkuri"] img{transform:none!important}',
   'html body.w209.inn1 [data-cm-k]{image-rendering:pixelated!important;rotate:none!important;scale:none!important}',
   'html body.w209.inn1 #vnbox .spk9 img{animation:none}',
   'html body.w209.inn1 .fstalk .tfig>img[data-cm-k]{animation:none}',

@@ -307,7 +307,7 @@
 
   /* ==== 2026-10-09 3차: 전환 플래시·흔들림 정리, 조사 체크 표시, 인물 탭, 인물 연출 ==== */
   /* (1) 장면 속 주민 전신 경로(엔진 F 모듈이 처음부터 이 그림을 쓴다: patches/18_ui_flash.py) */
-  window.__innBody=function(k){if(!inn())return null;return {innma:"art/ch1/cast/innma-neutral-v5.png",seryeon:SER_SCENE,doto:DOTO,karo:"art/ch1/cast/karo-front.png",geokkuri:"art/ch1/cast/bami-front.png",det1:"art/ch1/cast/daram-front.png",nabi:"art/ch1/cast/nabi-front.png"}[k]||null};
+  window.__innBody=function(k){if(!inn())return null;return {innma:"art/ch1/cast/innma-neutral-v5.png",seryeon:SER_SCENE,doto:DOTO,karo:"art/ch1/cast/karo-front.png",geokkuri:"art/ch1/action-poses/bami/dialogue.png",det1:"art/ch1/cast/daram-front.png",nabi:"art/ch1/cast/nabi-front.png"}[k]||null};
   /* (2) 장면 제목 띠가 나올 때마다 화면 전체가 흔들리던 것(배너 → quake) 제거. 회의·대결의 '헛짚었다' 같은 판정 연출의 흔들림은 둔다 */
   var lastBan=-1e9;
   try{var _bn9=banner;banner=function(){if(inn())lastBan=performance.now();return _bn9.apply(this,arguments)}}catch(e){}
@@ -383,7 +383,7 @@
   function pplOpen(){pplClose();var c=CASES[G.ci],ks=metList(),h='<div class="pin"><div class="phd"><b>인물</b><small>만난 사람 '+(ks.length+SELF.length)+'명 · [대사 열기]로 들은 말 보기</small><button type="button" data-x="1" aria-label="닫기">×</button></div><div class="pls">';
    SELF.forEach(function(x){h+='<section class="pc self"><div class="pf"><img alt="" src="'+x[4]+'"></div><div class="pt"><h4>'+esc(x[1])+'</h4><small>'+esc(x[2])+'</small><p>'+esc(x[3])+'</p></div></section>'});
    ks.forEach(function(k){var nm=({innma:"복례 할머니"})[k]||(CAST[k]&&CAST[k].name)||k,r=ROLE[k]||["",""],said=((c.talk&&c.talk[k])||[]).filter(function(t){return G.asked.indexOf(t.id)>=0&&t.q});
-    var face="";try{face=PROF[k]?'<img alt="" data-k="'+k+'" src="'+(k==="wanggu"?NV2+"neoul-default-profile.png":AP+PROF[k]+'/profile.png?v=e4')+'">':pf(k,"neutral")}catch(e){}
+    var face="";try{face=k==="wanggu"?pf(k,"neutral"):PROF[k]?'<img alt="" data-k="'+k+'" src="'+AP+PROF[k]+'/profile.png?v=e4">':pf(k,"neutral")}catch(e){}
     h+='<section class="pc"><div class="pf">'+face+'</div><div class="pt"><h4>'+esc(nm)+'</h4><small>'+esc(r[0])+'</small><p>'+esc(r[1])+'</p>'+
      (function(){var n=((G.said9||{})[k]||[]).length+said.length;return n?'<button type="button" class="e9b plog" data-k="'+k+'">대사 열기 <i>'+n+'</i></button>':'<p class="no">아직 나눈 대화가 없어요.</p>'})()+'</div></section>'});
    h+='</div></div>';PP=document.createElement("div");PP.id="innppl";PP.setAttribute("role","dialog");PP.setAttribute("aria-label","인물");PP.innerHTML=h;B.appendChild(PP);
@@ -433,14 +433,14 @@
   /* ==== 통합 아트(2026-10-09): 장소 인물 행동 포즈를 배경과 같은 좌표·같은 팬 변환으로 ====
      배경 svg 안에 원본 픽셀 좌표로 넣는다(식당 2048x768, 부엌 1774x887, 복도·도토 방 1672x941). 누르는 영역은 그림 자리에 맞춘 기존 인물 단추 */
   var AP="art/ch1/action-poses/";
-  window.__innPose=function(k){try{if(!inn())return null;if(k==="buri")return AP+"buri/dialogue.png";if(k==="wanggu")return "art/ch1/neoul-v2/neoul-default-dialogue.png";   /* 너울 v2: 옛 주황 조끼 고해상 그림 대신 */   /* 2026-10-10 "부엉이 시선은 플레이어로": 통합 아트 후보(정면 시선) */
+  window.__innPose=function(k){try{if(!inn())return null;if(k==="buri")return AP+"buri/dialogue.png";if(k==="geokkuri")return AP+"bami/dialogue.png";if(k==="wanggu")return window.__innNeoulSrc?window.__innNeoulSrc(""):"art/ch1/neoul-v3/neoul-default-dialogue.png";
    var b=G.beats||{};if(!b.inn_pro||b.inn_final)return null;var lid=(loc()||{}).id;
     if(k==="seryeon")return AP+"seryeon/dialogue.png";if(k==="innma"&&lid==="dining")return AP+"grandma/dialogue.png";if(k==="geokkuri"&&lid==="hall")return AP+"bami/dialogue.png";
     if(k==="nabi"&&lid==="kitchen")return AP+"nabi/dialogue.png";if(k==="doto"&&lid==="dotoroom")return AP+"doto/dialogue.png";}catch(e){}return null};
   /* [인물, 파일, x, y, 폭, 높이] — 식당은 통합 아트 배치표 그대로(세련 735,283 / 할머니는 좌우 보기 반대쪽 끝 부엌문 앞 바닥 579에 발), 부엌 나비는 식당 대비 가구 배율 1.6(의자 좌석 높이 비교) */
   var WN={dining:[["innma",AP+"grandma/npc.png",1800,303,162,276],["seryeon",AP+"seryeon/npc.png",735,283,241,361]],
    kitchen:[["nabi",AP+"nabi/npc.png",830,190,339,504],["buri",AP+"buri/npc.png",1380,297,250,397]],
-   front:[["wanggu","art/ch1/neoul-v2/neoul-default-full240.png",1120,240,260,347]],
+   front:[["wanggu","art/ch1/neoul-v3/neoul-standing.png",1100,239,240,360]],
    plaza:[["karo",AP+"karo/npc.png",1130,420,254,432]],
    hall:[["geokkuri",AP+"bami/npc.png",100,25,424,429]],
    dotoroom:[["doto",AP+"doto/npc.png",690,161,472,533,1]]};
@@ -482,12 +482,12 @@
   /* 2026-10-10 깜빡임 수정: 엔진은 대사마다 대사창 노드를 새로 만든다. 예전엔 초상·여백을 최대 60ms 뒤에 붙여 창 높이·글 위치가 한 프레임씩 튀었다.
      이제 여백·높이는 CSS로 늘 같고, 초상은 같은 img 요소 하나를 새 창으로 옮겨 붙인다(새로 받지 않음). 노드가 생기는 즉시(그리기 전, MutationObserver) 처리 */
   var SPK=document.createElement("span");SPK.className="spk9";SPK.setAttribute("aria-hidden","true");SPK.innerHTML="<img alt=''>";var SPKIMG=SPK.firstChild,SPKC={};
-  var FV="art/ch1/father/father-v5-",V4="art/ch1/daram-v4/",NV2="art/ch1/neoul-v2/";
+  var FV="art/ch1/father/father-v5-",V4="art/ch1/daram-v4/";
   ["default-smile","finger-base","finger-raised","pose-thinking","pose-surprised","pose-sheepish"].map(function(n){return FV+n+"-speaker128.png"})
    .concat(["idle","memo","joy","flustered","held-anger","comic-anger"].map(function(n){return V4+"daram-"+n+"-speaker128.png"}))
-   .concat(["default","admonish","angry","sheepish"].map(function(n){return NV2+"neoul-"+n+"-speaker128.png"})).forEach(function(f){var im=new Image();im.src=f});
+   .concat(["default","admonish","angry","sheepish"].map(function(n){return "art/ch1/neoul-v3/neoul-"+n+"-dialogue.png"})).concat([V4+"daram-worried-dialogue.png"]).forEach(function(f){var im=new Image();im.src=f});
   /* 작은 얼굴(질문 목록·대화 화면·기록 등 pf)도 새 외형으로: 아빠 v5·다람 v4·너울 v2. 옛 갈색 모자 다람·주황 조끼 너울이 섞여 뜨지 않게 */
-  try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-profile-64.png?v=n4":k==="det1"?V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png":NV2+"neoul-default-64.png";
+  try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var custom=window.__innCropSvg&&window.__innCropSvg(k,mood);if(custom)return custom;var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-profile-64.png?v=n4":V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png";
     return '<svg class="nodot inn-pixel-face" data-face="'+k+'" viewBox="0 0 100 101" aria-hidden="true" style="image-rendering:pixelated"><image href="'+f+'" x="0" y="0" width="100" height="100" style="image-rendering:pixelated"/></svg>'}}catch(e){}return _pf9.apply(this,arguments)}}catch(e){}
   /* 아빠 화자 포즈: 놀람(?! · 설마), 머쓱(죄송·하하·벌금은 내겠), 생각(물음으로 끝나는 속마음), 그 밖은 둥근 미소 기본 */
   function dadPose(t,inner,md){if(/shock|surpr|panic/.test(md)||/\?!|!\?|^(뭐라|설마|네\?|어\?)/.test(t))return "pose-surprised";
@@ -502,12 +502,13 @@
     /* 2026-10-10 화자 초상 통일(GPT·사용자): 아빠 v5(둥근 미소 기본 + 생각/놀람/머쓱 + 손가락 2프레임), 다람 v4 6상태, 너울 v2 4상태 — 모두 확정 원본에서 직접 크롭 */
     var f=spkSrc(k),fing=false;
     if(k==="det1")f=V4+"daram-"+String(window.__innDV4?window.__innDV4(md):"idle").replace("idle-t0","idle")+"-speaker128.png";
-    else if(k==="wanggu")f=NV2+"neoul-"+(window.__innNeoState?window.__innNeoState(md):"default")+"-speaker128.png";
+    else if(k==="wanggu")f=window.__innNeoulSrc(md,"");
     else if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(md)&&window.__innGrandmaSrc)f=window.__innGrandmaSrc(md);
     else if(k==="det0"){fing=false;f=DAD}   /* 2026-10-10 사용자 "아빠 프로필·대화 프사를 채택한 한 장으로 통일": 옛 v5 포즈·손가락 프레임(다른 얼굴) 연결 해제 */
     /* 기존 승인 전신에서 얼굴을 같은 정사각 창으로 잘라 보여준다. 원본 PNG와 비율은 그대로. */
-    var crop=k==="innma"&&f.indexOf('/cast/innma-')>=0,ck=crop?'grandma':'normal';
-    if(SPKIMG.dataset.crop!==ck){SPKIMG.dataset.crop=ck;SPKIMG.style.cssText=crop?'position:absolute;width:115.87%;height:144.44%;max-width:none;max-height:none;left:-1.59%;top:0':' '}
+    var fc=window.__innFaceCrop&&window.__innFaceCrop(k,md);if(fc)f=k==="wanggu"?window.__innNeoulSrc(md):fc.src;
+    var crop=k==="innma"&&f.indexOf('/cast/innma-')>=0,ck=fc?k+'-source':crop?'grandma':'normal';
+    if(SPKIMG.dataset.crop!==ck){SPKIMG.dataset.crop=ck;SPKIMG.style.cssText=fc?'position:absolute;width:'+(100*fc.w/fc.size)+'%;height:'+(100*fc.h/fc.size)+'%;max-width:none;max-height:none;left:'+(-100*fc.x/fc.size)+'%;top:'+(-100*fc.y/fc.size)+'%':crop?'position:absolute;width:115.87%;height:144.44%;max-width:none;max-height:none;left:-1.59%;top:0':' '}
     var mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"")}
     var fk=DL.i+"|"+tx.length;
     if(fing){if(SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FV+"finger-base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FV+"finger-raised-speaker128.png")},200)}}

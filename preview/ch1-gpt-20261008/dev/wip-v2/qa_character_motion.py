@@ -114,6 +114,8 @@ def main():
                 check_art()
             assert len(set(expression_sources))==2,expression_sources
             state=show(pick('det1',{'sad','worried','cower'}))
+            assert 'daram-worried-dialogue.png' in page.locator('#innstage .isf img').get_attribute('src'), 'Distress still uses smiling neutral art'
+            assert 'daram-worried-dialogue.png' in page.locator('.spk9 img').get_attribute('src'), 'Body/portrait worry expression diverges'
             relevant=[actor for actor in state['actors'] if actor['k']=='det1']
             assert relevant and all(actor['quiet'] for actor in relevant), ('Distress line receives idle/playful motion',state)
             print(reduced,'PASS native available expressions and restrained distress motion',flush=True)
@@ -128,6 +130,12 @@ def main():
             neutral_neoul[0][1]+='!'
             show(neutral_neoul[0])
             assert '/neoul-angry-' not in page.locator('#innstage .isf img').get_attribute('src')
+            # Some authored rules have no mood tag. Text-based admonishment must
+            # choose the same expression for the large actor and speaker crop.
+            rule=next((l for l in lines if l[0]=='wanggu' and any(word in l[1] for word in ['규정','규약','규칙','기록하겠습니다'])),None)
+            assert rule, 'Authored regulation dialogue missing'
+            show(rule)
+            assert page.locator('#innstage .isf img').get_attribute('src')==page.locator('.spk9 img').get_attribute('src'), 'Neoul rule body/speaker expression diverges'
 
 
             # Repeated native updates must not append duplicate motion layers or
@@ -185,7 +193,11 @@ def main():
                 engine(code)
                 page.wait_for_function('(t)=>{const p=document.querySelector("body>.rt #rtnext .rt-bub p");return p&&p.textContent===t}',arg=council['t'],timeout=12000)
                 page.wait_for_timeout(500)
-                sources=page.locator('#rtg .seat img').evaluate_all('xs=>xs.map(x=>({src:x.getAttribute("src"),ok:x.complete&&x.naturalWidth>0}))')
+                sources=page.locator('#rtg .seat img,#rtg .seat>svg>image').evaluate_all('''async xs=>Promise.all(xs.map(async x=>{
+                  const src=x.getAttribute('src')||x.getAttribute('href');
+                  if(x.tagName.toLowerCase()==='img')return {src,ok:x.complete&&x.naturalWidth>0};
+                  const probe=new Image();probe.src=src;try{await probe.decode()}catch(e){}return {src,ok:probe.complete&&probe.naturalWidth>0};
+                }))''')
                 assert sources and all(x['ok'] for x in sources), ('Native council images missing',sources)
                 if expected:
                     assert any(expected in x['src'] for x in sources), ('Native approved expression missing',council,sources)
