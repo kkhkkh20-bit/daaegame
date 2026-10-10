@@ -31803,7 +31803,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
 
  var GEST=false;
  ["pointerdown","touchstart","touchend","mousedown","keydown","click"].forEach(function(t){window.addEventListener(t,function(){GEST=true},true)});
- function hasGest(){if(GEST)return true;try{if(navigator.userActivation&&navigator.userActivation.hasBeenActive)return true}catch(e){}return false}
+ function hasGest(){if(GEST)return true;try{if(navigator.userActivation&&navigator.userActivation.hasBeenActive)return true}catch(e){}if(window.__innAutoOK)return true;try{if(navigator.getAutoplayPolicy&&navigator.getAutoplayPolicy("audiocontext")==="allowed")return true}catch(e){}return false}
  var _ac=ac;ac=function(){if(A.ovr)return A.ovr;if(!AC&&!hasGest())return null;if(document.hidden&&AC&&AC.state!=="running")return null;return _ac.apply(this,arguments)};
  function live(){if(!S.sound)return null;var a=ac();return a||null}
 
@@ -47295,7 +47295,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
 
  /* ---- 증거 C01~C13 (증거 카드 = 관찰 사실과 진술. 진술이 곧 검증된 사실은 아님) ---- */
  EP.EV={
-  C01:{name:"돈주머니와 매매 계약서",desc:"봉인띠에 붉은 「세련」 도장과 끝이 말린 별. 인주가 덜 말라 손에 묻는다. 봉인띠 밑의 여관 매매 계약서는 할머니(매도인) 서명 칸이 비어 있고, 세련(매수인) 서명 끝에 별이 있다. 뒷면 조항: 「매도인이 숙박 허가를 잃는 날, 이 계약은 효력이 생긴다.」"},
+  C01:{name:"돈주머니와 매매 계약서",desc:"봉인띠에 붉은 「세련」 도장과 끝이 말린 별. 인주가 덜 말라 손에 묻는다. 봉인띠 밑의 여관 매매 계약서는 할머니(매도인) 서명 칸이 비어 있고, 세련(매수인) 서명 끝에 별이 있다."},
   C02:{name:"이불의 하얀 가루 손자국",desc:"열세 번째 침대 이불 모서리에 하얀 가루가 손 모양으로 묻어 있다."},
   C03:{name:"나비의 말",desc:"“열한 시엔 빵 반죽하고 잤어요.”"},
   C04:{name:"바구니 속 손님",desc:"작은 겨울잠쥐. 몸을 동그랗게 말고 있고, 방 안 공기처럼 차갑다. 눈에 띄는 움직임은 없다."},
@@ -47312,7 +47312,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  };
  /* 증거 카드 짧은 문구(2026-10-09 축약안, e3e83ed 원문 대조): 첫 화면은 짧은 이름 + 핵심 사실, 원문은 detail(기록 '원문 보기').
     ID·획득 조건·제시 판정·수첩·대화 원문은 그대로. C13은 정정 전/후를 그대로 나눈다(fixBeat) */
- (function(){var SH={C01:"봉인띠에 붉은 ‘세련’ 도장. 띠 밑에 여관 매매 계약서가 있다.",C02:"열세 번째 침대 이불에 하얀 가루 손자국.",C03:"“열한 시엔 빵 반죽하고 잤어요.”",C04:"빵 바구니 속, 몸을 둥글게 만 작은 겨울잠쥐.",C05:"옆구리털에 붉은 글씨와 별이 거꾸로 찍혀 있다.",C06:"2층 복도의 벽시계. 숫자 없이 눈금만 있다.",C07:"밤에는 2층 시계 맞은편 천장. 새벽 5시 종에 잔다고 한다.",C08:"어젯밤 기록: 「자정, 첫눈」",C09:"1박, 정오 마차로 출발 예정.",C10:"「부엌에서 손님 하나 추가 발견.」",C11:"30년 전~10년 전 손님 기록. 이름 대신 그림을 남긴 줄이 있다.",C12:"11시 종에 주머니를 봉해 머리맡에 두고 잤다고 한다.",C13:"6시 반쯤 족제비 손님이 주머니를 들고 갔다가 빈손으로 왔다고 한다."},SH2={C13:"자정쯤 족제비 손님이 주머니를 들고 갔다가 빈손으로 왔다고 한다."};var S={"C01": {"n": "주머니와 계약서", "t": "봉인띠의 붉은 ‘세련’ 도장과 끝이 말린 별은 인주가 덜 말라 손에 묻는다. 띠 밑 여관 매매 계약서에는 할머니(매도인) 서명 없이 세련(매수인) 서명 끝에 별이 있고, 뒷면 조항은 「매도인이 숙박 허가를 잃는 날, 이 계약은 효력이 생긴다.」이다."}, "C02": {"n": "하얀 손자국", "t": "열세 번째 침대 이불 모서리에 하얀 가루 손자국이 있다."}, "C03": {"n": "나비의 말", "t": "“열한 시엔 빵 반죽하고 잤어요.”"}, "C04": {"n": "바구니 속 손님", "t": "작은 겨울잠쥐가 둥글게 몸을 말고 있다. 방 안 공기처럼 차갑고, 눈에 띄는 움직임은 없다."}, "C05": {"n": "털의 붉은 자국", "t": "옆구리털의 붉은 글씨와 별이 거꾸로 찍혀 있다. 번져도 읽히며, 붉은색은 털 안까지 배어 있다."}, "C06": {"n": "숫자 없는 시계", "t": "2층 복도가 꺾이는 곳의 벽시계는 숫자 없이 눈금만 있다. 등잔이 비추며, 옆에 작은 창이 있다."}, "C07": {"n": "밤이의 잠자리", "t": "밤이: “밤엔 2층 복도 시계 맞은편 천장에 매달려 있어요. 새벽 5시 종에 자요.”"}, "C08": {"n": "날씨 일지", "t": "어젯밤 기록: 「자정, 첫눈」. 도토는 종이 12번 친 것을 세었다고 한다."}, "C09": {"n": "세련의 숙박부", "t": "1박, 정오 마차로 출발 예정."}, "C10": {"n": "너울의 기록", "t": "「부엌에서 손님 하나 추가 발견.」"}, "C11": {"n": "옛 손님 장부", "t": "비공식 손님 장부 첫째 권: 30년 전~10년 전 기록. ‘이름 모르는 손님’이 많고, 이름 대신 발자국·꽃·동그라미·별을 그린 줄이 있다."}, "C12": {"n": "세련의 말", "t": "세련: “11시 종에 주머니를 봉해 머리맡에 두고 잤고, 자정에도 잤다. 회중시계로 6시 반 기상을 확인했고, 주머니가 없어 복도까지 찾다 7시에 알렸으며, 여관은 어제가 처음이다.”"}, "C13": {"n": "밤이의 목격담", "t": "밤이: “6시 반쯤 족제비 손님이 붉은 봉인띠를 두른 가죽 주머니를 들고 시계 앞을 지나 저쪽으로 갔다가 금방 빈손으로 왔다.” 보여 준 돈주머니가 맞다고 했다.", "t2": "밤이: “자정쯤 족제비 손님이 붉은 봉인띠를 두른 가죽 주머니를 들고 시계 앞을 지나 저쪽으로 갔다가 금방 빈손으로 왔다.” 보여 준 돈주머니가 맞다고 했으며, 회의에서 목격 시각을 자정으로 정정했다."}};Object.keys(S).forEach(function(id){var x=EP.EV[id],o=S[id];if(!x)return;x.full=x.name;x.detail=x.desc;x.name=o.n;x.card=o.t;x.desc=SH[id]||o.t;if(x.desc2&&o.t2){x.detail2=x.desc2;x.card2=o.t2;x.desc2=SH2[id]||o.t2}})})();
+ (function(){var SH={C01:"봉인띠에 붉은 ‘세련’ 도장. 띠 밑에 여관 매매 계약서가 있다.",C02:"열세 번째 침대 이불에 하얀 가루 손자국.",C03:"“열한 시엔 빵 반죽하고 잤어요.”",C04:"빵 바구니 속, 몸을 둥글게 만 작은 겨울잠쥐.",C05:"옆구리털에 붉은 글씨와 별이 거꾸로 찍혀 있다.",C06:"2층 복도의 벽시계. 숫자 없이 눈금만 있다.",C07:"밤에는 2층 시계 맞은편 천장. 새벽 5시 종에 잔다고 한다.",C08:"어젯밤 기록: 「자정, 첫눈」",C09:"1박, 정오 마차로 출발 예정.",C10:"「부엌에서 손님 하나 추가 발견.」",C11:"30년 전~10년 전 손님 기록. 이름 대신 그림을 남긴 줄이 있다.",C12:"11시 종에 주머니를 봉해 머리맡에 두고 잤다고 한다.",C13:"6시 반쯤 족제비 손님이 주머니를 들고 갔다가 빈손으로 왔다고 한다."},SH2={C13:"자정쯤 족제비 손님이 주머니를 들고 갔다가 빈손으로 왔다고 한다."};var S={"C01": {"n": "주머니와 계약서", "t": "봉인띠의 붉은 ‘세련’ 도장과 끝이 말린 별은 인주가 덜 말라 손에 묻는다. 띠 밑 여관 매매 계약서에는 할머니(매도인) 서명 없이 세련(매수인) 서명 끝에 별이 있다."}, "C02": {"n": "하얀 손자국", "t": "열세 번째 침대 이불 모서리에 하얀 가루 손자국이 있다."}, "C03": {"n": "나비의 말", "t": "“열한 시엔 빵 반죽하고 잤어요.”"}, "C04": {"n": "바구니 속 손님", "t": "작은 겨울잠쥐가 둥글게 몸을 말고 있다. 방 안 공기처럼 차갑고, 눈에 띄는 움직임은 없다."}, "C05": {"n": "털의 붉은 자국", "t": "옆구리털의 붉은 글씨와 별이 거꾸로 찍혀 있다. 번져도 읽히며, 붉은색은 털 안까지 배어 있다."}, "C06": {"n": "숫자 없는 시계", "t": "2층 복도가 꺾이는 곳의 벽시계는 숫자 없이 눈금만 있다. 등잔이 비추며, 옆에 작은 창이 있다."}, "C07": {"n": "밤이의 잠자리", "t": "밤이: “밤엔 2층 복도 시계 맞은편 천장에 매달려 있어요. 새벽 5시 종에 자요.”"}, "C08": {"n": "날씨 일지", "t": "어젯밤 기록: 「자정, 첫눈」. 도토는 종이 12번 친 것을 세었다고 한다."}, "C09": {"n": "세련의 숙박부", "t": "1박, 정오 마차로 출발 예정."}, "C10": {"n": "너울의 기록", "t": "「부엌에서 손님 하나 추가 발견.」"}, "C11": {"n": "옛 손님 장부", "t": "비공식 손님 장부 첫째 권: 30년 전~10년 전 기록. ‘이름 모르는 손님’이 많고, 이름 대신 발자국·꽃·동그라미·별을 그린 줄이 있다."}, "C12": {"n": "세련의 말", "t": "세련: “11시 종에 주머니를 봉해 머리맡에 두고 잤고, 자정에도 잤다. 회중시계로 6시 반 기상을 확인했고, 주머니가 없어 복도까지 찾다 7시에 알렸으며, 여관은 어제가 처음이다.”"}, "C13": {"n": "밤이의 목격담", "t": "밤이: “6시 반쯤 족제비 손님이 붉은 봉인띠를 두른 가죽 주머니를 들고 시계 앞을 지나 저쪽으로 갔다가 금방 빈손으로 왔다.” 보여 준 돈주머니가 맞다고 했다.", "t2": "밤이: “자정쯤 족제비 손님이 붉은 봉인띠를 두른 가죽 주머니를 들고 시계 앞을 지나 저쪽으로 갔다가 금방 빈손으로 왔다.” 보여 준 돈주머니가 맞다고 했으며, 회의에서 목격 시각을 자정으로 정정했다."}};Object.keys(S).forEach(function(id){var x=EP.EV[id],o=S[id];if(!x)return;x.full=x.name;x.detail=x.desc;x.name=o.n;x.card=o.t;x.desc=SH[id]||o.t;if(x.desc2&&o.t2){x.detail2=x.desc2;x.card2=o.t2;x.desc2=SH2[id]||o.t2}})})();
 
  /* 다람 수첩: 다람이 직접 적은 메모(확인된 사실 카드와 따로 표시) */
  EP.MEMO={C01:"별 도장. 끝이 동그랗게 말려 있음. 빨간 인주가 손에 묻었다. 아직 덜 말랐다.",C02:"이불 모서리에 하얀 손자국. 분필인지 밀가루인지 모르겠다.",C03:"나비: 11시까지 빵 반죽, 그리고 잠.",
@@ -47340,8 +47340,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
      L("@inspect","C01a"),
      L("det1","앗, 손에 빨간 게 묻었어. 아직 안 말랐나 봐."),L("det0","도장을 찍은 지 얼마 안 됐다는 거네. 손은 이따 씻자."),
      L("det0","봉인띠 밑에 종이가 접혀 끼워져 있네. 펼쳐 볼게."),L("@inspect","C01b"),
-     L("det1","할머니 이름 칸은 비어 있어. 세련 아저씨 이름 끝에는 별이 있고."),L("det0","할머니는 서명하지 않았다는 거지. 뒷면 조항도 기억해 두자."),
-     L("det1","…'허가를 잃는 날'. 아까 너울 아저씨가 한 말이랑 같아.","think")]},
+     L("det1","할머니 이름 칸은 비어 있어. 세련 아저씨 이름 끝에는 별이 있고."),L("det0","할머니는 서명하지 않았다는 거지. 이 계약서도 기억해 두자.")]},
     {id:"quilt",name:"이불",ev:"C02",say:[L("det1","아빠, 이불 모서리에 손자국이 있어. 하얀 걸로 찍혔어.","think"),
      L("det0","가루가 묻은 손으로 이불을 잡았나 보다."),L("det1","분필 같기도 하고, 밀가루 같기도 해."),
      L("det0","누구 손인지는 아직 몰라. 묻은 자리만 정확히 기억해 두자.")]},
@@ -47432,7 +47431,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
     L("seryeon","일어나서 회중시계를 보니 여섯 시 반이더군요. 주머니가 없길래 복도까지 나가 찾아봤습니다."),L("seryeon","그래도 없어서 일곱 시에 모두를 불렀고요."),
     L("det0","일어나신 시각은 회중시계로 확인하셨고요?"),L("seryeon","습관입니다. 눈을 뜨면 시계부터 봅니다.")]},
    {id:"C12",q:"이 여관에 와 본 적은",after:"T_se2",ev:1,rec:"어제가 처음입니다. 이렇게 오래된 집일 줄은 몰랐네요.",lines:[L("det0","이 여관에는 전에 와 보신 적이 있습니까?"),L("seryeon","어제가 처음입니다. 이렇게 오래된 집일 줄은 몰랐네요.","smug"),
-    I("아침 복도에서도 '처음 묵는다'고 했었지. 같은 말을 두 번 한다.")]}],
+    I("처음이라고 딱 잘라 말한다. 기억해 두자.")]}],
   nabi:[
    {id:"C03",q:"어젯밤 무엇을 했나",ev:1,rec:"열한 시엔 빵 반죽하고 잤어요.",lines:[L("det0","어젯밤에는 무엇을 하셨습니까?"),L("nabi","열한 시엔 빵 반죽하고 잤어요. 아침에 구우려면 밤에 해 둬야 하거든요."),
     L("det1","그럼 오늘 아침 빵은요?"),L("nabi","굽기도 전에 이 일이 터져서요. 기다렸죠? 미안해요.","sad"),L("det1","…괜찮아요. 지금은 빵 생각 안 나요."),
@@ -47451,7 +47450,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  };
 
  /* 질문 후속(2026-10-09 추가분, 장면 대본 생성본 뒤에 이어 붙임) */
- (function(){var F={T_ma1:[I("대답을 돌리신다. 그 침대에 대해서는 더 말하고 싶지 않으신 모양이다.")],T_ma2:[L("det0","그 뒤로 복도에 나오신 적은 없으십니까?"),L("innma","…늙은이가 밤에 어딜 다니겠어요."),I("대답이 반 박자 늦었다.")],T_ma3:[L("det0","아까 창고 앞에서 세련 씨 얼굴을 자꾸 보시던데요."),L("innma","눈이 침침해서 그랬지. 늙으면 얼굴도 한 번에 안 들어와요."),L("det1","할머니, 눈이 침침하면 제가 대신 봐 드릴게요."),L("innma","…괜찮다, 아가. 마음만 받을게.")],T_se1:[L("det0","파실 생각이 없으신 분께 계약금부터 가져오신 겁니까?"),L("seryeon","마음은 바뀌기도 하니까요. 그때를 위해 준비해 두는 게 제 일입니다.")],T_se2:[L("det0","일어나신 시각은 회중시계로 확인하셨고요?"),L("seryeon","습관입니다. 눈을 뜨면 시계부터 봅니다.")],C12:[I("아침 복도에서도 '처음 묵는다'고 했었지. 같은 말을 두 번 한다.")],C03:[L("det0","반죽은 부엌에서 하셨습니까?"),L("nabi","네. 끝나고 손 씻고 바로 방에 들어갔어요.")],T_na3:[L("det1","나비 언니는 할머니를 많이 좋아하는구나."),L("nabi","…네. 갈 데 없을 때 여기서 일하게 해 주셨거든요.")]};Object.keys(EP.TALK).forEach(function(k){EP.TALK[k].forEach(function(t){if(F[t.id])t.__follow=F[t.id]})})})();
+ (function(){var F={T_ma1:[I("대답을 돌리신다. 그 침대에 대해서는 더 말하고 싶지 않으신 모양이다.")],T_ma2:[L("det0","그 뒤로 복도에 나오신 적은 없으십니까?"),L("innma","…늙은이가 밤에 어딜 다니겠어요."),I("대답이 반 박자 늦었다.")],T_ma3:[L("det0","아까 창고 앞에서 세련 씨 얼굴을 자꾸 보시던데요."),L("innma","눈이 침침해서 그랬지. 늙으면 얼굴도 한 번에 안 들어와요."),L("det1","할머니, 눈이 침침하면 제가 대신 봐 드릴게요."),L("innma","…괜찮다, 아가. 마음만 받을게.")],T_se1:[L("det0","파실 생각이 없으신 분께 계약금부터 가져오신 겁니까?"),L("seryeon","마음은 바뀌기도 하니까요. 그때를 위해 준비해 두는 게 제 일입니다.")],T_se2:[L("det0","일어나신 시각은 회중시계로 확인하셨고요?"),L("seryeon","습관입니다. 눈을 뜨면 시계부터 봅니다.")],C12:[I("처음이라고 딱 잘라 말한다. 기억해 두자.")],C03:[L("det0","반죽은 부엌에서 하셨습니까?"),L("nabi","네. 끝나고 손 씻고 바로 방에 들어갔어요.")],T_na3:[L("det1","나비 언니는 할머니를 많이 좋아하는구나."),L("nabi","…네. 갈 데 없을 때 여기서 일하게 해 주셨거든요.")]};Object.keys(EP.TALK).forEach(function(k){EP.TALK[k].forEach(function(t){if(F[t.id])t.__follow=F[t.id]})})})();
  /* ---- 숫자 자물쇠(I7) ---- */
  EP.LOCK={code:"1102",title:"숫자 자물쇠",sub:"숫자 네 개를 맞춰요",clue:"머리판: 「첫 손님, 열한 번째 달 둘째 날」",
   hint:L("det1","열한 번째 달이면 일, 일. 둘째 날이면 공, 이. 네 자리네."),   /* [선택 힌트] 힌트를 요청했을 때만 */
@@ -47512,15 +47511,12 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("innma","그럼. 방 하나에 침대 하나."),
    FL("det1","하나, 둘, 셋… 열하나, 열둘."),
    FL("det1","열셋. 할머니, 저기도 침대가 있어요. 그럼 열세 개예요."),
-   FL("innma","거긴 지금은 안 쓰는 방이에요. 손님 받는 침대는 열둘. 늙으면 숫자도 헷갈린다니까.","think"),
+   FL("innma","거긴 지금은 안 쓰는 방이에요. 손님 받는 침대는 열둘이에요.","think"),
+   FL("det1","아, 안 쓰는 방이구나."),
    D({"sfx": "door", "ms": 420}),
    FL("innma","짐 풀고 편히 쉬어요. 필요한 건 아래층에 말하고.","think"),
    D({"who": "none", "sfx": "steps", "ms": 380}),
-   D({"who": "det1", "chime": 1, "ms": 220}),
-   D({"who": "det1", "chime": 1, "ms": 260}),
-   FL("det1","아빠. 헷갈린 건 할머니야, 나야?"),
-   FL("det0","네가 맞게 셌어. 아빠도 열셋이었어."),
-   FL("det1","그런데 왜 안 쓰는 방이라고 하셨을까.")],"title"))),
+   D({"who": "det1", "chime": 1, "ms": 220})],"title"))),
   /* P10 부녀의 방 */
   SID("P10",B("room","det1",S("hall","부녀의 방","첫날 한밤",[
    I("오늘은 사진을 꺼내지도 못했다. 내일은 물어볼 수 있겠지. 우선 다람이부터 재우자."),
@@ -47541,7 +47537,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    D({"who": "seryeon", "chime": 0, "ms": 380}),
    FL("seryeon","제 주머니가 없어졌습니다! 다들 나와 보세요!","shock"),
    FL("det0","무슨 일이십니까?","shock"),
-   FL("seryeon","어젯밤 늦게 든 세련입니다. 이 여관엔 처음 묵는데, 계약금이 든 주머니가 없어졌어요.","shock"),
+   FL("seryeon","여기 묵는 여행객, 세련입니다. 계약금이 든 주머니가 없어졌습니다.","shock"),
    FL("seryeon","어젯밤 침대 머리맡에 두고 잤는데, 일어나 보니 없었습니다."),
    FL("det0","방 안은 다 찾아보셨습니까?","shock"),
    FL("seryeon","당연하죠. 여섯 시 반에 일어나서 방부터 복도까지 다 뒤졌습니다. 그래도 없으니까 이렇게 부르는 겁니다.","shock")]))),
@@ -47573,8 +47569,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("wanggu","게다가 주인 창고 침대에서 손님 돈이 나왔다… 이거 뻔한 일 아닙니까!"),
    FL("det0","할머니가 훔치셨다는 증거는 아직 없습니다. 돈이 거기 있었다는 것뿐입니다."),
    FL("wanggu","…크흠. 맞는 말입니다. 제가 성급했군요."),
-   FL("wanggu","규약대로라면, 여관 주인이 손님 돈을 훔쳤다고 회의에서 정해지면 허가를 잃고, 봄 첫 마차 전까지 여관을 새 주인에게 넘겨야 합니다."),
-   FL("wanggu","그래서 회의를 엽니다. 정오 우편 마차가 떠나기 전에요."),
+   FL("wanggu","회의를 열어 경위를 듣겠습니다. 정오 우편 마차가 떠나기 전에요."),
    FL("det1","왜 정오까지예요?"),
    FL("wanggu","세련 씨가 정오 마차로 떠나시니까요. 그 뒤로는 봄까지 길이 막힙니다."),
    I("지금 이대로 회의를 열면, 다들 할머니를 지목하겠지."),
@@ -47976,16 +47971,16 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
        W("seryeon","돈 없는 손님을 재워 주는 침대였죠. 압니다.")]}),
      W("seryeon","{할머니한테 누명을 씌울 생각은} 없었습니다.","nervous")]},
    /* F4 */
-   {type:"talk",clock:"정오까지 10분",lines:[W("narr","계약서 뒷면의 조항이 다시 비친다.","",{show:["C01"]}),
-    W("det0","너울 씨. 이 조항과 마을 규약을 함께 확인해 주시겠습니까?"),W("wanggu","「매도인이 숙박 허가를 잃는 날, 이 계약은 효력이 생긴다.」","",{show:["C01"]}),
-    W("wanggu","다만 할머니 서명은 없습니다. 할머니가 동의한 계약이 아니라, 세련 씨가 준비해 온 조건입니다."),
-    W("det0","장부에 없는 손님을 받으면 벌금입니다. 손님 돈을 훔쳤다면 허가를 잃고, 여관을 넘겨야 하죠."),
+   {type:"talk",clock:"정오까지 10분",lines:[W("narr","봉인띠 밑의 매매 계약서가 다시 비친다.","",{show:["C01"]}),   /* 2026-10-10 강제 양도 규약 삭제: 뒷면 조항·허가 상실 대신 '배상을 빌미로 한 서명 압박' */
+    W("det0","너울 씨. 이 계약서를 함께 봐 주시겠습니까?"),
+    W("wanggu","할머니 서명은 없습니다. 할머니가 동의한 계약이 아니라, 세련 씨가 준비해 온 조건입니다.","",{show:["C01"]}),
+    W("det0","할머니가 돈을 가져간 사람으로 정해지면, 세련 씨는 그 돈을 물어내라고 하실 수 있었겠죠."),
     W("det0","그래서 여쭙겠습니다. 주머니를 되찾으려던 겁니까, 할머니가 도둑으로 몰리기를 바란 겁니까?"),
-    W("seryeon","…어차피 할머니 혼자서는 이 여관 못 버팁니다."),W("seryeon","제가 사서 지키려고 했습니다. 정당한 값을 쳐 드린대도 안 파신다고 하시니까."),
+    W("seryeon","…어차피 할머니 혼자서는 이 여관 못 버팁니다."),W("seryeon","맡은 일이었습니다. 정당한 값을 쳐 드린대도 안 파신다고 하시니까."),
     W("det0","그래서 주머니를 숨기고, 찾은 뒤에도 도둑맞았다고 하셨습니까?"),
-    W("seryeon","…허가를 잃으면 생각이 바뀌실 줄 알았습니다. 그때는 계약서에 서명하실 줄 알았어요.","sad"),
-    W("wanggu","정오 마차가 떠나기 전에 할머니가 허가를 잃게 만들고, 그 자리에서 이 계약서를 내밀 생각이었군요."),W("seryeon","…네.","sad"),
-    W("narr","[결정] 세련의 운반과 허위 신고, 할머니의 허가 상실을 노린 의도가 본인의 진술까지 합쳐 확인됐다."),
+    W("seryeon","…물어낼 돈이 없으시면, 그때는 계약서에 서명하실 줄 알았습니다.","sad"),
+    W("wanggu","도둑맞았다는 돈을 물어내라며 그 자리에서 이 계약서를 내밀 생각이었군요."),W("seryeon","…네.","sad"),
+    W("narr","[결정] 세련의 운반과 허위 신고, 배상을 빌미로 할머니의 서명을 받아 내려던 의도가 본인의 진술까지 합쳐 확인됐다."),
     W("innma","숙박부 앞에 선 얼굴을 볼 때부터 알았어요. 그때 그 아이인 거."),W("innma","말을 안 했을 뿐이지."),W("seryeon","…"),
     W("innma","도장에까지 그 별을 새겼더구나. 그 침대를 잊지도 않았으면서."),W("innma","그 겨울에 별 그리면서 그랬지. 나중에 돈 벌면 꼭 갚겠다고."),
     W("innma","갚으라고 내준 침대가 아니었다.","sad")]}
@@ -48099,8 +48094,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("det0","봉인띠 밑에 종이가 접혀 끼워져 있네. 펼쳐 볼게."),
    L("@inspect","C01b"),
    FL("det1","할머니 이름 칸은 비어 있어. 세련 아저씨 이름 끝에는 별이 있고."),
-   FL("det0","할머니는 서명하지 않았다는 거지. 뒷면 조항도 기억해 두자."),
-   FL("det1","…'허가를 잃는 날'. 아까 너울 아저씨가 한 말이랑 같아.")];})();
+   FL("det0","할머니는 서명하지 않았다는 거지. 이 계약서도 기억해 두자.")];})();
  (function(){var x=FIND("bed13","spots","quilt");if(x)x.say=[I("이불 모서리가 하얗다. 다른 곳과 섞이기 전에 모양을 봐 두자.",null,1),
    L("@dir","who:det1;chime:1;ms:380;entry:1"),
    FL("det1","아빠, 이불 모서리에 손자국이 있어. 하얀 걸로 찍혔어."),
@@ -48541,7 +48535,18 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   if(!g||!n||!g.beats||typeof g.beats!=="object")return out;
   var b=g.beats;
   function index(k,length){delete n.beats[k];if(typeof b[k]==="number"&&Number.isInteger(b[k])&&b[k]>=0&&b[k]<length)n.beats[k]=b[k]}
-  index("inn_pi",EP.PRO.length);index("inn_ei",EP.END.length);
+  (function(){try{if(b.inn_pro||typeof b.inn_pi!=="number")return;var pi=b.inn_pi,sid=(typeof b.inn_psid==="string"&&/^P\d+$/.test(b.inn_psid))?b.inn_psid:null;
+    if(!sid){var lid=((EP.LOCS||[])[g.loc]||{}).id,bg=typeof b.inn_bg==="string"?b.inn_bg:null;
+     /* 배경으로 먼저: 같은 배경이 두 번 나오는 현관(P3·P9)·복도(P5·P11)는 번호 앞뒤로 가른다(모든 옛 배열·f91cb14에서 성립) */
+     if(bg==="carriage")sid="P1";else if(bg==="plaza")sid="P2";else if(bg==="reception_desk_wide")sid="P4";else if(bg==="room")sid="P10";
+     else if(bg==="reception")sid=pi<=2?"P3":"P9";else if(bg==="corridor")sid=pi<=4?"P5":"P11";
+     else if(!bg&&lid==="bed13")sid="P12";else if(!bg&&lid==="kitchen")sid="P13";else if(!bg&&lid==="dining")sid="P8";
+     else if(!bg&&pi<=4)sid=["P1","P2","P3","P4","P5"][pi]}
+    if(!sid)return;var n0=+sid.slice(1),k=-1;for(var i=0;i<EP.PRO.length;i++){var si=EP.PRO[i]&&EP.PRO[i].sid;if(si&&+si.slice(1)>=n0){k=i;break}}
+    b.inn_pi=k<0?EP.PRO.length:k;   /* 지금 목록에 없으면 다음 장면, 뒤에 남은 장면이 없으면 도입 끝(조사 시작) */
+    if(window.__innSaveMap)window.__innSaveMap.push(sid+"→"+b.inn_pi)}catch(e){}})();
+  index("inn_pi",EP.PRO.length+1);index("inn_ei",EP.END.length);
+  delete n.beats.inn_psid;if(typeof b.inn_psid==="string"&&/^P\d+$/.test(b.inn_psid)&&n.beats.inn_pi!=null)n.beats.inn_psid=(EP.PRO[n.beats.inn_pi]||{}).sid||b.inn_psid;
   delete n.beats.inn_bg;
   if(typeof b.inn_bg==="string"&&Object.prototype.hasOwnProperty.call(EP.BGS||{},b.inn_bg))n.beats.inn_bg=b.inn_bg;
   delete n.beats.rtTally;
@@ -48639,7 +48644,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  /* ---- 프롤로그 P1~P11 ---- */
  function runPro(i){var c=cur();if(!c)return;if(i>=EP.PRO.length){setb("inn_pro");G.beats.inn_bg=null;G.loc=LI.bed13;G.tab="scene";
    G.notice={title:EP.GOAL.title,text:EP.GOAL.text+" "+EP.TUT.spot+" "+EP.TUT.talk};saveProg();render();return}
-  G.beats.inn_pi=i;var s=EP.PRO[i];G.beats.inn_bg=s.bg||null;G.loc=LI[s.loc];G.tab="scene";saveProg();render();
+  G.beats.inn_pi=i;var s=EP.PRO[i];G.beats.inn_psid=s.sid||null;G.beats.inn_bg=s.bg||null;G.loc=LI[s.loc];G.tab="scene";saveProg();render();
   var go=function(){play(s.items,function(){if(s.after==="title"){(window.banner?banner(EP.title,EP.chapter):Promise.resolve()).then(function(){runPro(i+1)})}else runPro(i+1)})};
   if(i===0&&window.__innColdTransition){go();hint("전날 오후 · 우편 마차")}else try{banner(s.title,s.sub).then(go)}catch(e){go()}}
  /* ---- 후일담 E1~E4 ---- */
@@ -49747,7 +49752,7 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
   el.innerHTML='<div class="cbg"></div><div class="blk"></div><div class="tag"></div><div class="ttl"></div><div class="box"><b>'+esc(EP.COLD_SPEAKER||"???")+'</b><p></p></div><div class="nx">▼</div>'+'<button type="button" class="sk">건너뛰기</button>';
   document.body.appendChild(el);var bg=el.querySelector(".cbg"),tag=el.querySelector(".tag"),ttl=el.querySelector(".ttl"),box=el.querySelector(".box"),tx=box.querySelector("p"),nx=el.querySelector(".nx");
   function cam(b,z){bg.style.transition="none";bg.style.backgroundImage="url("+b.img+")";bg.style.transformOrigin=(b.fx*100)+"% "+(b.fy*100)+"%";bg.style.transform="scale("+z+")";void bg.offsetWidth;bg.style.transition=""}
-  function type(t){full=t;tx.textContent="";var n=0;stopTyping();typing=setInterval(function(){n++;tx.textContent=full.slice(0,n);tick(full.charAt(n-1));if(n>=full.length){clearInterval(typing);typing=null;nx.classList.add("on")}},MS[SET.dialogueSpeed])}
+  function type(t){full=t;tx.textContent="";var n=0,hold=0;stopTyping();typing=setInterval(function(){if(hold>0){hold--;return}n++;tx.textContent=full.slice(0,n);var ch=full.charAt(n-1);if(!/[.,?!…·]/.test(ch))tick(ch);try{hold=window.__innPaceCold?window.__innPaceCold(full,n):0}catch(e){hold=0}if(n>=full.length){clearInterval(typing);typing=null;nx.classList.add("on")}},MS[SET.dialogueSpeed])}
   function show(){var b=L[i];nx.classList.remove("on");box.classList.remove("on");ttl.classList.remove("on");el.classList.remove("dark");clearTimeout(waitT);busy=false;
    bg.style.filter=b.shade?"brightness(.35)":(b.dim?"brightness("+b.dim+")":"");try{window.__innColdFx&&window.__innColdFx(b)}catch(e){}if(b.sfx)try{if(S.sound&&SET.sfxVolume){var a=ac(),o=a.createOscillator(),g=a.createGain();o.type="sine";o.frequency.setValueAtTime(100,a.currentTime);o.frequency.exponentialRampToValueAtTime(45,a.currentTime+.13);g.gain.setValueAtTime(.2,a.currentTime);g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+.18);o.connect(g);g.connect(SFXG);typingVoices.add(o);o.onended=function(){typingVoices.delete(o);o.disconnect();g.disconnect()};o.start();o.stop(a.currentTime+.2)}}catch(e){}
    cam(b,b.z||1);if(b.push)requestAnimationFrame(function(){bg.style.transform="scale("+((b.z||1)*(1+b.push/100))+")"});if(b.pull)requestAnimationFrame(function(){bg.style.transform="scale("+((b.z||1)/(1+b.pull/100))+")"});
@@ -49788,7 +49793,7 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
  window.__innCold=cold;
 
  // 대사 중에는 레일 자체가 숨겨진다. 조사 화면에서 저장 후 재진입해 임시 UI/타이머를 정리한다.
- window.__innReturnMain=function(){if(typeof DL!=="undefined"&&DL)return;saveProg();location.reload()};
+ window.__innReturnMain=function(){try{saveProg()}catch(e){}location.reload()};
 
  /* ---------- 메인 화면 ---------- */
  function hasSave(){try{return !!(S.prog&&S.prog.inn)}catch(e){return false}}
@@ -49960,9 +49965,9 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   var pose=worried?"worried":(seat.snack?"snack-"+seat.snack:"neutral");
   var href="art/ch1/cast/daram-seated-"+pose+"-192x256.png";
   document.querySelectorAll('svg[data-bg="carriage"]').forEach(function(sv){
-   var vb="0 0 844 390";   /* 2026-10-10: 대화 중 2배 확대 → 1.1배만(배경을 넓게, 다람 도트가 과하게 커지지 않게) */if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
+   var vb="100 48 740 342";   /* 2026-10-10 사용자 마차 QA "다람이 너무 오른쪽, 빈 좌석·창문이 화면을 많이 차지, 몸이 대화창에 가림, 배경을 크게 보여 줄 필요 없음": 다람을 의자 왼쪽 자리로 옮기고 화면 가운데·조금 위로 오게 잘라 본다(약 1.14배, 다람 도트 원본 192px 이하로만 확대). 이전: "0 0 844 390" */    /* 2026-10-10: 대화 중 2배 확대 → 1.1배만(배경을 넓게, 다람 도트가 과하게 커지지 않게) */if(sv.getAttribute("viewBox")!==vb)sv.setAttribute("viewBox",vb);
    var im=sv.querySelector("image.innseat");
-   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","490");im.setAttribute("y","143");im.setAttribute("width","166");im.setAttribute("height","221");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
+   if(seat.on){if(!im){im=document.createElementNS("http://www.w3.org/2000/svg","image");im.setAttribute("class","innseat");im.setAttribute("x","387");im.setAttribute("y","143");im.setAttribute("width","166");im.setAttribute("height","221");im.setAttribute("style","image-rendering:pixelated");sv.appendChild(im)}
     if(im.getAttribute("href")!==href)im.setAttribute("href",href)}
    else if(im)im.remove()});
   if(layer)layer.classList.toggle("seated",true)}catch(e){}}
@@ -49992,7 +49997,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
  function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
  /* 이름표: 아빠가 이름을 듣기 전까지는 '???' (프롤로그 첫 만남). 이름을 말하는 그 줄부터 이름이 뜬다 */
- var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"늦게 든 세련입니다",wanggu:"자경단장 너울입니다"};
+ var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"여행객, 세련입니다",wanggu:"자경단장 너울입니다"};
  function revealAt(k){for(var i=0;i<EP.PRO.length;i++){var it=EP.PRO[i].items;for(var j=0;j<it.length;j++){var t=lt(it[j]);if(typeof t==="string"&&t.indexOf(REVEAL[k])>=0)return i}}return -1}
  var RPI={};Object.keys(REVEAL).forEach(function(k){RPI[k]=revealAt(k)});var heard={};
  var INVINTRO={buri:1,doto:1,geokkuri:1};   /* 2026-10-10: 프롤로그에서 빠져 조사 중에 처음 만나는 인물 — 자기소개 줄을 듣기 전까지 ??? (들은 것은 저장) */
@@ -50062,9 +50067,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
     cap:"주머니 입구를 감은 종이 봉인띠. 붉은 도장 「세련」, 그리고 끝이 말린 별. 만진 손끝에 인주가 묻어난다.",look:"봉인띠"}]},
   C01b:{title:"여관 매매 계약서",pages:[
    {art:'<img class="icl" src="art/ch1/closeup/I1-contract-front-complete-512.png" alt="계약서 앞면. 매도인 서명 칸은 비어 있고 매수인 세련 서명 끝에 별">',
-    cap:"봉인띠 밑에 접혀 있던 종이. 앞면: 매도인(할머니) 서명 칸은 비어 있다. 매수인 「세련」 서명 끝에 같은 모양의 별.",look:"앞면"},
-   {art:'<img class="icl" src="art/ch1/closeup/I1-contract-back-complete-512.png" alt="계약서 뒷면 조항">',
-    cap:"뒷면: 「매도인이 숙박 허가를 잃는 날, 이 계약은 효력이 생긴다.」",look:"뒷면"}]},
+    cap:"봉인띠 밑에 접혀 있던 종이. 앞면: 매도인(할머니) 서명 칸은 비어 있다. 매수인 「세련」 서명 끝에 같은 모양의 별.",look:"앞면"}]},   /* 2026-10-10 새 1장 구조: 강제 양도 규약 삭제에 따라 뒷면 조항 쪽(I1-contract-back) 연결 해제(그림 파일은 보존) */
   /* 정본 = 바탕 그림 + 정확한 글자·문양 덧그림(같은 512 좌표). 미리보기용 합성 그림은 쓰지 않는다 */
   C11:{title:"손님 장부 첫째 권",pages:[{art:lay("guest-ledger","펼친 장부. 이름 대신 발자국, 꽃, 동그라미, 끝이 말린 별을 그린 줄"),
     cap:"30년 전부터 10년 전까지의 손님 장부. 이름 대신 「이름 모르는 손님」이라 적힌 줄이 많고, 그림으로 서명한 줄도 있다. 발자국, 꽃, 동그라미, 별.",look:"장부"}]},
@@ -50178,13 +50181,20 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   if(/nervous|panic|shock/.test(m))f*=.86;if(/sad/.test(m))f*=1.2;
   if(/^(앗|헉|엇|으악|아악|어머|어\?)/.test(t))f*=.7;
   return Math.max(.55,Math.min(1.9,f))};
- window.__innPace=function(full,n){if(!cur())return 0;var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
-  if(ch==="…"||(ch==="."&&nx==="."))return 7;                          /* 말줄임: 점마다 */
+ /* 2026-10-10 사용자 "프롤로그 대사 . 있으면 멈추는 게 적용 안 됨": 콜드오픈은 따로 그리는 타자기라 이 규칙이 안 걸렸다 → 같은 규칙을 __innPaceCold로 공용.
+    말줄임은 '…'·'...'·'. . .' 모두 점마다 같은 간격, 마지막 점 뒤 다음 말은 보통 빠르기 */
+ function dotRun(full,i){var c=full.charAt(i);if(c==="…")return true;if(c!==".")return false;var p1=full.charAt(i-1),p2=full.charAt(i-2),n1=full.charAt(i+1),n2=full.charAt(i+2);
+  return p1==="."||n1==="."||p1==="…"||n1==="…"||(p1===" "&&p2===".")||(n1===" "&&n2===".")}
+ window.__innPaceCold=function(full,n){try{return paceOf(String(full||""),n)}catch(e){return 0}};
+ window.__innPace=function(full,n){if(!cur())return 0;return paceOf(full,n)};
+ function paceOf(full,n){var ch=full.charAt(n-1),nx=full.charAt(n);if(n>=full.length)return 0;
+  if(dotRun(full,n-1)){var nn=nx===" "&&full.charAt(n+1)==="."?full.charAt(n+1):nx;return (nn==="."||nn==="…")?7:(/[\s)」"”]/.test(nx)?10:7)}   /* 말줄임: 점마다 7틱, 끝난 뒤 문장 사이면 조금 더 */
+  if(ch===" "&&full.charAt(n-2)==="."&&nx===".")return 0;               /* '. . .' 사이 띄어쓰기는 쉬지 않음(점에서 이미 쉼) */
   if(/[.?!]/.test(ch)&&/[\s)」"”]/.test(nx||" "))return 12;              /* 문장 끝 */
   if(ch===",")return 8;                                                /* 2026-10-10: 쉼표에서 한 박자 멈춤(약 0.25초) */                                                /* 쉼표 */
   if(ch==="\n")return 2;
   var k=full.indexOf("…",n);if(k>0&&k-n<2&&k-n>=0&&/[^\s]/.test(nx))return 1;   /* 말줄임 바로 앞 글자는 느리게 */
-  return 0};
+  return 0}
  /* 대본에서 의도한 줄바꿈(같은 쪽 두 줄). 문장은 그대로, 줄만 나눈다 */
  /* 2026-10-10 "대사를 두 줄로": 한 줄에 들어가도 18자 이상이고 쉼표가 있으면, 가운데에 가까운 쉼표 뒤에서 줄을 바꿔 두 줄 한 쪽으로(문장은 그대로) */
  function commaBreak(p){if(p.indexOf("\n")>=0||p.length<18)return p;var best=-1,bs=1e9,mid=p.length/2;for(var i=0;i<p.length-1;i++){if(p.charAt(i)===","&&p.charAt(i+1)===" "){var L=i+1,R=p.length-i-2;if(L<7||R<6)continue;var sc=Math.abs(i-mid);if(sc<bs){bs=sc;best=i}}}
@@ -50428,11 +50438,22 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0};
   var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
+  /* 2026-10-10 사용자 "솜솜을 발견하는 순간은 배경음을 끄고 긴장되고 두근거리는 순간으로, 다람에게도 충격": 발견 줄부터 그 대화가 끝날 때까지 음악을 끄고 심장 박동만.
+     (발견 장소는 새 구조에서 침대 밑으로 옮길 예정 — 줄 글로 걸어 두어 장소가 바뀌어도 같은 연출) */
+  var TENSE={on:false,k:0};
+  var TENSE_ON=/안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가/,TENSE_OFF=/^모르겠어\. 그러니까 알아봐야지/;
+  function tenseTick(){try{if(!TENSE.on)return;if(!cur()||typeof DL==="undefined"||!DL){TENSE.on=false;return}
+    if(AC&&AC.state==="running"&&S.sound){var v=.34,gap=Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*.32,null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(tenseTick,gap*1000)}
+    else setTimeout(tenseTick,300)}catch(e){TENSE.on=false}}
+  window.__innTense=function(){return TENSE.on};
+  setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL){TENSE.on=false;return}var l=DL.lines&&DL.lines[DL.i],t=l?String(l[1]||""):"";
+    if(!TENSE.on&&TENSE_ON.test(t)){TENSE.on=true;TENSE.k=0;try{SFX.cut9&&SFX.cut9()}catch(e){}setTimeout(tenseTick,450)}else if(TENSE.on&&TENSE_OFF.test(t))TENSE.on=false}catch(e){}},60);
   window.__innWant=function(){
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
+   if(TENSE.on)return null;                         /* 발견 순간: 음악 없음 */
    var b=beats();
-   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(pi<6)M.inv=false;
+   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(+String(sid).slice(1)<11)M.inv=false;   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
     if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 창고 앞·P13 찻주전자: 사건곡 */
@@ -50490,7 +50511,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   var lastLn=null;setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL||!DL.lines)return;var ln=DL.lines[DL.i];if(!ln||ln===lastLn)return;lastLn=ln;var t=String(ln[1]||"");
     var md=String(ln[2]||"");
     if(/^(앗|헉|엇|으악|아악|어머|세상에)[!?.…,\s]|^…?(앗|헉)/.test(t)||/shock|surprise/.test(md)||/\?!|!\?/.test(t))SFX.shock9();
-    else if(/^…움직였어|^안에 작은 애가 있어/.test(t))SFX.pop9();
+    else if(/^…움직였어/.test(t))SFX.pop9();   /* 2026-10-10: 솜솜 발견 줄은 충격 연출(TENSE)이라 반짝 효과음 제외 */
     else if(KEY.test(t))SFX.cut9()}catch(e){}},60);
   /* 2026-10-10 사용자: "문 여는 소리는 끼익", "마차 멈추는 소리가 배고픈 소리 같다", "종소리가 경보음 같다" */
   function creakAt(a,t,dur,f0,f1,vol){var o=a.createOscillator(),bp=a.createBiquadFilter(),g=a.createGain(),am=a.createOscillator(),ag=a.createGain();
@@ -50498,7 +50519,16 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    bp.type="bandpass";bp.frequency.value=1500;bp.Q.value=3.5;am.frequency.value=38;ag.gain.value=.45;am.connect(ag);ag.connect(g.gain);   /* 마찰로 떨리는 경첩 */
    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.05);g.gain.setValueAtTime(vol*.8,t+dur*.8);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
    o.connect(bp);bp.connect(g);g.connect(SFXG);o.start(t);am.start(t);o.stop(t+dur+.05);am.stop(t+dur+.05)}
-  wrap("doorOpen",function(){if(!S.sound||!AC)return;var t=AC.currentTime;creakAt(AC,t,.85,420,760,.16);noise(.08,.12,.82,700,"lowpass")});
+  /* 2026-10-10 사용자 "문 여는 소리가 이상하다, 더 예쁜 중저음 끼익으로": 높은 톱니파(1.5kHz 대역) 대신 낮은 삼각파 두 겹을 저역 통과로 둥글게.
+     경첩이 천천히 도는 느낌(약 190→250→225Hz, 1.1초), 떨림은 약하게(17Hz), 끝에 문이 멈추는 나무 소리 한 번 */
+  function hingeAt(a,t,dur,f0,f1,vol){var o=a.createOscillator(),o2=a.createOscillator(),lp=a.createBiquadFilter(),bp=a.createBiquadFilter(),g=a.createGain(),am=a.createOscillator(),ag=a.createGain();
+   o.type="triangle";o2.type="triangle";[o,o2].forEach(function(x,k){var m=k?2.005:1;x.frequency.setValueAtTime(f0*m,t);x.frequency.linearRampToValueAtTime(f1*m,t+dur*.55);x.frequency.linearRampToValueAtTime(f1*.9*m,t+dur)});
+   var g2=a.createGain();g2.gain.value=.35;o2.connect(g2);
+   lp.type="lowpass";lp.frequency.value=700;lp.Q.value=.7;bp.type="bandpass";bp.frequency.value=380;bp.Q.value=1;
+   am.frequency.value=17;ag.gain.value=.3;am.connect(ag);ag.connect(g.gain);
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.12);g.gain.setValueAtTime(vol*.85,t+dur*.75);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   o.connect(lp);g2.connect(lp);lp.connect(bp);bp.connect(g);g.connect(SFXG);[o,o2,am].forEach(function(x){x.start(t);x.stop(t+dur+.05)})}
+  wrap("doorOpen",function(){if(!S.sound||!AC)return;var t=AC.currentTime;hingeAt(AC,t,1.1,190,250,.12);noise(.09,.1,1.08,380,"lowpass");tone(110,.12,"sine",.12,1.08,null,80)});
   SFX.carStop=function(){if(!S.sound||!AC)return;var t=AC.currentTime;
    [0,.32,.7,1.15].forEach(function(w,i){var v=.32-i*.06;tone(820,.05,"triangle",v,w,null,560);noise(.04,v*.7,w,2200,"bandpass")});   /* 말발굽이 느려지며 */
    noise(.5,.06,1.3,500,"bandpass")};   /* 바퀴 멎음(2026-10-10 까마귀처럼 들리던 차체 삐걱 제거) */
@@ -50574,6 +50604,18 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    if((AMB.cur&&AMB.cur.key)!==k){var was=AMB.cur;if(was)stop(was,(was.key==="carriage"&&k==="wind")?5:.8);AMB.cur=k?build(AC,k):null}   /* 마차 -> 광장: 멀어지며 5초에 걸쳐 사라짐 */
    if(AMB.cur)sched(AMB.cur);AMB.old.forEach(sched)}catch(e){}},120);
   window.__innAmb=function(){return {cur:AMB.cur&&AMB.cur.key,old:AMB.old.length,dep:!!(AMB.dep&&!AMB.dep.dead),music:A.cur,want:A.want,duck:A.duck}};
+  /* 2026-10-10 사용자 "메인 화면 진입 시 클릭 전에 노래가 안 나옴": 브라우저 자동재생 정책(iOS Safari는 첫 터치 전 소리 금지)은 우회하지 않는다.
+     메인 화면이 뜨면 한 번 소리 시작을 시도하고(허용된 환경이면 바로 재생), 막혀 있으면 '소리 켜기' 안내를 보여 첫 터치로 시작하게 한다.
+     실제 시작은 엔진의 첫 터치 잠금 해제(touchend·pointerup·click·keydown)가 맡는다. 소리를 끈 설정이면 안내하지 않는다 */
+  (function(){var tried=false,HB9=null;
+   function running(){try{return !!AC&&AC.state==="running"}catch(e){return false}}
+   function hint(on,m){if(on&&!HB9&&m){HB9=document.createElement("button");HB9.type="button";HB9.id="sndhint9";HB9.textContent="소리 켜기";HB9.setAttribute("aria-label","소리 켜기: 화면을 누르면 음악이 나와요");
+     HB9.style.cssText="position:absolute;right:calc(10px + env(safe-area-inset-right,0px));top:calc(10px + env(safe-area-inset-top,0px));z-index:5;min-height:44px;padding:0 16px;border:2px solid #C9A96A;border-radius:10px;background:rgba(20,16,30,.88);color:#FFF6E0;font:13px/1 Galmuri11,monospace;cursor:pointer";
+     m.appendChild(HB9)}else if(!on&&HB9){HB9.remove();HB9=null}}
+   setInterval(function(){try{var m=document.getElementById("innmain");if(!m||!S.sound){hint(false);return}
+     if(!tried){tried=true;   /* 시험용 소리 장치를 하나 만들어 브라우저가 지금 재생을 허락하는지 본다(허락 안 하면 곧바로 닫고 안내만) */
+      try{if(!AC){var C9=window.AudioContext||window.webkitAudioContext,pz=C9?new C9():null;if(pz)setTimeout(function(){try{if(pz.state==="running"){window.__innAutoOK=true;try{ac()}catch(x){}}pz.close()}catch(x){}},250)}}catch(e){}}
+     hint(!running(),m)}catch(e){}},400)})();
  })();
 
  /* ==== 1장 입력 안정: 연타로 대화를 넘기다가 새로 나타난 질문·버튼·조사 지점이 바로 눌리지 않게 ====
@@ -50822,6 +50864,16 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    "html body.w209.inn1 .crec2 #crdaram,html body.w209.inn1 .crec2 .cr-det:not(.empty) .cr-tx>#crdaram{display:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .dmemo{display:none!important}",
    "html body.rtg .crec2{z-index:66!important}",
+   /* 2026-10-10 사용자 "모든 캐릭터 다람이 꼬리처럼 무빙 가볍게": 새 그림 없이 아주 작은 숨쉬기·흔들림(발밑 기준 ±0.5도, 세로 1.2%). 다람은 꼬리 프레임이 있어 무대 그림에서는 제외.
+      줄이기 설정(prefers-reduced-motion)이면 멈춘다 */
+   "@keyframes idle9{0%,100%{rotate:0deg;scale:1 1}25%{rotate:-.5deg}50%{scale:1 1.012}75%{rotate:.5deg}}",
+   "html body.w209.inn1 #innstage .isf.in:not([data-k=\"det1\"]) img{transform-origin:50% 100%;animation:idle9 3.6s ease-in-out infinite}",
+   "html body.w209.inn1 .fstalk .tstage .tfig img[data-fr9]{transform-origin:50% 100%;animation:in9 .24s ease-out,idle9 3.6s ease-in-out .3s infinite}",
+   "html body.w209.inn1 #bigscene svg image.wn9{transform-box:fill-box;transform-origin:50% 100%;animation:idle9 4s ease-in-out infinite}",
+   "html body.w209.inn1 svg[data-bg=\"carriage\"] image.innseat{transform-box:fill-box;transform-origin:50% 100%;animation:idle9 3.8s ease-in-out infinite}",
+   "html body.w209.inn1 #bigscene svg image.wn9:nth-of-type(2n){animation-delay:-1.3s}html body.w209.inn1 #bigscene svg image.wn9:nth-of-type(3n){animation-delay:-2.6s}",
+   "html body.rtg #rtg .seat:not(.front) img{transform-origin:50% 100%;animation:idle9 4.2s ease-in-out infinite}html body.rtg #rtg .seat:nth-child(2n) img{animation-delay:-1.5s}html body.rtg #rtg .seat:nth-child(3n) img{animation-delay:-2.8s}",
+   "@media (prefers-reduced-motion:reduce){html body.w209.inn1 #innstage .isf img,html body.w209.inn1 .fstalk .tstage .tfig img,html body.w209.inn1 #bigscene svg image.wn9,html body.rtg #rtg .seat img{animation:none!important}}",
    "html body.rtg .rtpanel{visibility:hidden!important}",   /* 회의 화면 아래 남은 소개 화면의 '원탁 회의 열기'(rtgo)가 키보드·접근성 클릭으로 눌려 회의가 두 장 열리던 것(dot QA 진행 차단의 실제 원인) */   /* 회의 중 연 사건 기록 창이 회의 화면(z60)·하단 단추(z62)·증거 서랍(z63) 아래에 깔려 닫히지 않던 것(dot QA 2026-10-10) */
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>h3{background:#F2C230!important;color:#2A1C12!important;padding:3px 10px!important;margin:0 0 4px!important;border:0!important;background-image:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>p{line-height:30px!important;background:repeating-linear-gradient(to bottom,transparent 0 28px,#C9B48C 28px 29px,transparent 29px 30px)}",
@@ -50947,7 +50999,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    doto:["투숙객","여관 2층 방에 묵는다"],buri:["장치공","여관 일을 손봐 준다"],wanggu:["마을 자경단장","주민 규약을 지키게 하고 회의를 기록한다"],karo:["마차 마부","우리를 태우고 마을에 왔다"]};
   var ORDER=["innma","nabi","seryeon","buri","wanggu","karo","geokkuri","doto"];
   /* 아빠·다람은 늘 맨 앞에(기본 정보만, 증언 없음) */
-  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n3"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/daram-v4/daram-idle-profile.png"]];
+  var SELF=[["det0","다돌 (36)","탐정 · 다람의 아빠","다람과 함께 마차를 타고 와서 이 여관에 묵는 손님","art/ch1/father/father-profile-128.png?v=n4"],["det1","다람 (11)","탐정 · 아빠의 딸","아빠와 함께 이 여관에 묵는 손님","art/ch1/daram-v4/daram-idle-profile.png"]];
   function metMark(){try{if(!inn()||!dl())return;var ln=DL.lines[DL.i];var w=ln&&ln[0];if(!ROLE[w])return;var pl=document.querySelector("#vnbox .plate");if(pl&&/\?\?\?/.test(pl.textContent))return;G.beats=G.beats||{};if(!G.beats["inn_met_"+w]){G.beats["inn_met_"+w]=1}}catch(e){}}
   function metList(){var b=G.beats||{},pro=!!b.inn_pro;return ORDER.filter(function(k){if(b["inn_met_"+k])return true;if(k==="geokkuri")return G.found.indexOf("C07")>=0;if(k==="doto")return G.found.indexOf("C08")>=0;return pro&&["innma","nabi","seryeon","buri","wanggu","karo"].indexOf(k)>=0})}
   var PP=null;function pplClose(){if(PP){PP.remove();PP=null}}
@@ -51083,13 +51135,13 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    .concat(["idle","memo","joy","flustered","held-anger","comic-anger"].map(function(n){return V4+"daram-"+n+"-speaker128.png"}))
    .concat(["default","admonish","angry","sheepish"].map(function(n){return NV2+"neoul-"+n+"-speaker128.png"})).forEach(function(f){var im=new Image();im.src=f});
   /* 작은 얼굴(질문 목록·대화 화면·기록 등 pf)도 새 외형으로: 아빠 v5·다람 v4·너울 v2. 옛 갈색 모자 다람·주황 조끼 너울이 섞여 뜨지 않게 */
-  try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-v5-default-smile-64.png":k==="det1"?V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png":NV2+"neoul-default-64.png";
+  try{var _pf9=pf;pf=function(k,mood){try{if(inn()&&(k==="det0"||k==="det1"||k==="wanggu")){var m=String(mood||""),f=k==="det0"?"art/ch1/father/father-profile-64.png?v=n4":k==="det1"?V4+"daram-"+String(window.__innDV4?window.__innDV4(m):"idle").replace("idle-t0","idle")+"-64.png":NV2+"neoul-default-64.png";
     return '<svg class="nodot inn-pixel-face" data-face="'+k+'" viewBox="0 0 100 101" aria-hidden="true" style="image-rendering:pixelated"><image href="'+f+'" x="0" y="0" width="100" height="100" style="image-rendering:pixelated"/></svg>'}}catch(e){}return _pf9.apply(this,arguments)}}catch(e){}
   /* 아빠 화자 포즈: 놀람(?! · 설마), 머쓱(죄송·하하·벌금은 내겠), 생각(물음으로 끝나는 속마음), 그 밖은 둥근 미소 기본 */
   function dadPose(t,inner,md){if(/shock|surpr|panic/.test(md)||/\?!|!\?|^(뭐라|설마|네\?|어\?)/.test(t))return "pose-surprised";
    if(/죄송|미안|하하|벌금은 내겠|머쓱|그 말 내일 아침/.test(t))return "pose-sheepish";
    if(inner&&/\?\)?$|^\(?(흠|글쎄)/.test(t))return "pose-thinking";return "default-smile"}
-  var DAD="art/ch1/father/father-speaker128.png?v=n3";   /* 아빠 기본 프로필: 2026-10-09 사용자 확정 정직·따뜻한 얼굴(이전 능청 얼굴은 father-sly-*로 보존, 연결 없음) — 화자 칸에만 */
+  var DAD="art/ch1/father/father-speaker128.png?v=n4";   /* 2026-10-10 사용자 채택 dadol-profile-daram-matched-v2(father-v6-matched) */   /* 아빠 기본 프로필: 2026-10-09 사용자 확정 정직·따뜻한 얼굴(이전 능청 얼굴은 father-sly-*로 보존, 연결 없음) — 화자 칸에만 */
   function spkSrc(k){return k==="det0"?DAD:(PROF[k]?AP+PROF[k]+"/speaker128.png":"")}
   [DAD].concat(Object.keys(PROF).map(function(k){return AP+PROF[k]+"/speaker128.png"})).forEach(function(f){var im=new Image();im.src=f;SPKC[f]=im;try{im.decode&&im.decode().catch(function(){})}catch(e){}});
   function speaker(){try{if(!inn()||!dl())return;var vt=document.querySelector("#vnbox .vtxt");if(!vt)return;var ln=DL.lines[DL.i]||[],w=ln[0],vb=vt.closest(".vband");
@@ -51099,7 +51151,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
     var f=spkSrc(k),fing=false;
     if(k==="det1")f=V4+"daram-"+String(window.__innDV4?window.__innDV4(md):"idle").replace("idle-t0","idle")+"-speaker128.png";
     else if(k==="wanggu")f=NV2+"neoul-"+(window.__innNeoState?window.__innNeoState(md):"default")+"-speaker128.png";
-    else if(k==="det0"){fing=!inner&&((window.__innKeyLine&&window.__innKeyLine())||/^(잠깐|그런데|그렇다면|하나만|한 가지)|보시죠|확인하겠습니다|여쭙겠습니다/.test(tx));f=FV+dadPose(tx,inner,md)+"-speaker128.png"}
+    else if(k==="det0"){fing=false;f=DAD}   /* 2026-10-10 사용자 "아빠 프로필·대화 프사를 채택한 한 장으로 통일": 옛 v5 포즈·손가락 프레임(다른 얼굴) 연결 해제 */
     var mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"")}
     var fk=DL.i+"|"+tx.length;
     if(fing){if(SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FV+"finger-base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FV+"finger-raised-speaker128.png")},200)}}

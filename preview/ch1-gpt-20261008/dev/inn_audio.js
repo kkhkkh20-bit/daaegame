@@ -71,11 +71,22 @@
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0};
   var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
+  /* 2026-10-10 사용자 "솜솜을 발견하는 순간은 배경음을 끄고 긴장되고 두근거리는 순간으로, 다람에게도 충격": 발견 줄부터 그 대화가 끝날 때까지 음악을 끄고 심장 박동만.
+     (발견 장소는 새 구조에서 침대 밑으로 옮길 예정 — 줄 글로 걸어 두어 장소가 바뀌어도 같은 연출) */
+  var TENSE={on:false,k:0};
+  var TENSE_ON=/안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가/,TENSE_OFF=/^모르겠어\. 그러니까 알아봐야지/;
+  function tenseTick(){try{if(!TENSE.on)return;if(!cur()||typeof DL==="undefined"||!DL){TENSE.on=false;return}
+    if(AC&&AC.state==="running"&&S.sound){var v=.34,gap=Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*.32,null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(tenseTick,gap*1000)}
+    else setTimeout(tenseTick,300)}catch(e){TENSE.on=false}}
+  window.__innTense=function(){return TENSE.on};
+  setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL){TENSE.on=false;return}var l=DL.lines&&DL.lines[DL.i],t=l?String(l[1]||""):"";
+    if(!TENSE.on&&TENSE_ON.test(t)){TENSE.on=true;TENSE.k=0;try{SFX.cut9&&SFX.cut9()}catch(e){}setTimeout(tenseTick,450)}else if(TENSE.on&&TENSE_OFF.test(t))TENSE.on=false}catch(e){}},60);
   window.__innWant=function(){
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
+   if(TENSE.on)return null;                         /* 발견 순간: 음악 없음 */
    var b=beats();
-   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(pi<6)M.inv=false;
+   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(+String(sid).slice(1)<11)M.inv=false;   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return "inn_travel";   /* P1~P10 */
     if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 창고 앞·P13 찻주전자: 사건곡 */
@@ -133,7 +144,7 @@
   var lastLn=null;setInterval(function(){try{if(!cur()||typeof DL==="undefined"||!DL||!DL.lines)return;var ln=DL.lines[DL.i];if(!ln||ln===lastLn)return;lastLn=ln;var t=String(ln[1]||"");
     var md=String(ln[2]||"");
     if(/^(앗|헉|엇|으악|아악|어머|세상에)[!?.…,\s]|^…?(앗|헉)/.test(t)||/shock|surprise/.test(md)||/\?!|!\?/.test(t))SFX.shock9();
-    else if(/^…움직였어|^안에 작은 애가 있어/.test(t))SFX.pop9();
+    else if(/^…움직였어/.test(t))SFX.pop9();   /* 2026-10-10: 솜솜 발견 줄은 충격 연출(TENSE)이라 반짝 효과음 제외 */
     else if(KEY.test(t))SFX.cut9()}catch(e){}},60);
   /* 2026-10-10 사용자: "문 여는 소리는 끼익", "마차 멈추는 소리가 배고픈 소리 같다", "종소리가 경보음 같다" */
   function creakAt(a,t,dur,f0,f1,vol){var o=a.createOscillator(),bp=a.createBiquadFilter(),g=a.createGain(),am=a.createOscillator(),ag=a.createGain();
@@ -141,7 +152,16 @@
    bp.type="bandpass";bp.frequency.value=1500;bp.Q.value=3.5;am.frequency.value=38;ag.gain.value=.45;am.connect(ag);ag.connect(g.gain);   /* 마찰로 떨리는 경첩 */
    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.05);g.gain.setValueAtTime(vol*.8,t+dur*.8);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
    o.connect(bp);bp.connect(g);g.connect(SFXG);o.start(t);am.start(t);o.stop(t+dur+.05);am.stop(t+dur+.05)}
-  wrap("doorOpen",function(){if(!S.sound||!AC)return;var t=AC.currentTime;creakAt(AC,t,.85,420,760,.16);noise(.08,.12,.82,700,"lowpass")});
+  /* 2026-10-10 사용자 "문 여는 소리가 이상하다, 더 예쁜 중저음 끼익으로": 높은 톱니파(1.5kHz 대역) 대신 낮은 삼각파 두 겹을 저역 통과로 둥글게.
+     경첩이 천천히 도는 느낌(약 190→250→225Hz, 1.1초), 떨림은 약하게(17Hz), 끝에 문이 멈추는 나무 소리 한 번 */
+  function hingeAt(a,t,dur,f0,f1,vol){var o=a.createOscillator(),o2=a.createOscillator(),lp=a.createBiquadFilter(),bp=a.createBiquadFilter(),g=a.createGain(),am=a.createOscillator(),ag=a.createGain();
+   o.type="triangle";o2.type="triangle";[o,o2].forEach(function(x,k){var m=k?2.005:1;x.frequency.setValueAtTime(f0*m,t);x.frequency.linearRampToValueAtTime(f1*m,t+dur*.55);x.frequency.linearRampToValueAtTime(f1*.9*m,t+dur)});
+   var g2=a.createGain();g2.gain.value=.35;o2.connect(g2);
+   lp.type="lowpass";lp.frequency.value=700;lp.Q.value=.7;bp.type="bandpass";bp.frequency.value=380;bp.Q.value=1;
+   am.frequency.value=17;ag.gain.value=.3;am.connect(ag);ag.connect(g.gain);
+   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.12);g.gain.setValueAtTime(vol*.85,t+dur*.75);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   o.connect(lp);g2.connect(lp);lp.connect(bp);bp.connect(g);g.connect(SFXG);[o,o2,am].forEach(function(x){x.start(t);x.stop(t+dur+.05)})}
+  wrap("doorOpen",function(){if(!S.sound||!AC)return;var t=AC.currentTime;hingeAt(AC,t,1.1,190,250,.12);noise(.09,.1,1.08,380,"lowpass");tone(110,.12,"sine",.12,1.08,null,80)});
   SFX.carStop=function(){if(!S.sound||!AC)return;var t=AC.currentTime;
    [0,.32,.7,1.15].forEach(function(w,i){var v=.32-i*.06;tone(820,.05,"triangle",v,w,null,560);noise(.04,v*.7,w,2200,"bandpass")});   /* 말발굽이 느려지며 */
    noise(.5,.06,1.3,500,"bandpass")};   /* 바퀴 멎음(2026-10-10 까마귀처럼 들리던 차체 삐걱 제거) */
@@ -217,4 +237,16 @@
    if((AMB.cur&&AMB.cur.key)!==k){var was=AMB.cur;if(was)stop(was,(was.key==="carriage"&&k==="wind")?5:.8);AMB.cur=k?build(AC,k):null}   /* 마차 -> 광장: 멀어지며 5초에 걸쳐 사라짐 */
    if(AMB.cur)sched(AMB.cur);AMB.old.forEach(sched)}catch(e){}},120);
   window.__innAmb=function(){return {cur:AMB.cur&&AMB.cur.key,old:AMB.old.length,dep:!!(AMB.dep&&!AMB.dep.dead),music:A.cur,want:A.want,duck:A.duck}};
+  /* 2026-10-10 사용자 "메인 화면 진입 시 클릭 전에 노래가 안 나옴": 브라우저 자동재생 정책(iOS Safari는 첫 터치 전 소리 금지)은 우회하지 않는다.
+     메인 화면이 뜨면 한 번 소리 시작을 시도하고(허용된 환경이면 바로 재생), 막혀 있으면 '소리 켜기' 안내를 보여 첫 터치로 시작하게 한다.
+     실제 시작은 엔진의 첫 터치 잠금 해제(touchend·pointerup·click·keydown)가 맡는다. 소리를 끈 설정이면 안내하지 않는다 */
+  (function(){var tried=false,HB9=null;
+   function running(){try{return !!AC&&AC.state==="running"}catch(e){return false}}
+   function hint(on,m){if(on&&!HB9&&m){HB9=document.createElement("button");HB9.type="button";HB9.id="sndhint9";HB9.textContent="소리 켜기";HB9.setAttribute("aria-label","소리 켜기: 화면을 누르면 음악이 나와요");
+     HB9.style.cssText="position:absolute;right:calc(10px + env(safe-area-inset-right,0px));top:calc(10px + env(safe-area-inset-top,0px));z-index:5;min-height:44px;padding:0 16px;border:2px solid #C9A96A;border-radius:10px;background:rgba(20,16,30,.88);color:#FFF6E0;font:13px/1 Galmuri11,monospace;cursor:pointer";
+     m.appendChild(HB9)}else if(!on&&HB9){HB9.remove();HB9=null}}
+   setInterval(function(){try{var m=document.getElementById("innmain");if(!m||!S.sound){hint(false);return}
+     if(!tried){tried=true;   /* 시험용 소리 장치를 하나 만들어 브라우저가 지금 재생을 허락하는지 본다(허락 안 하면 곧바로 닫고 안내만) */
+      try{if(!AC){var C9=window.AudioContext||window.webkitAudioContext,pz=C9?new C9():null;if(pz)setTimeout(function(){try{if(pz.state==="running"){window.__innAutoOK=true;try{ac()}catch(x){}}pz.close()}catch(x){}},250)}}catch(e){}}
+     hint(!running(),m)}catch(e){}},400)})();
  })();
