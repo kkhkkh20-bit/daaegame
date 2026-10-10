@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0E1128">
+<title>다람탐정 · 1장 v2 미리보기</title>
+<link rel="icon" href="icons/icon-192.png">
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0E1128;overscroll-behavior:none}
+#safe{position:fixed;visibility:hidden;pointer-events:none;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#surface{position:fixed;overflow:hidden;contain:strict;background:#0E1128}
+#game{position:absolute;left:0;top:0;border:0;display:block;transform-origin:0 0;background:#0E1128}
+</style>
+</head>
+<body>
+<div id="safe" aria-hidden="true"></div>
+<div id="surface"><iframe id="game" title="다람탐정 게임" allow="autoplay; fullscreen"></iframe></div>
+<script>
+(function(){
+  var surface=document.getElementById('surface'),frame=document.getElementById('game'),safe=document.getElementById('safe'),pending=0,last='';
+  function fit(){
+    pending=0;
+    var vv=window.visualViewport,w=vv?Math.min(vv.width,document.documentElement.clientWidth):innerWidth,h=vv?Math.min(vv.height,document.documentElement.clientHeight):innerHeight;
+    var ox=vv?vv.offsetLeft:0,oy=vv?vv.offsetTop:0,cs=getComputedStyle(safe);
+    var top=parseFloat(cs.paddingTop)||0,right=parseFloat(cs.paddingRight)||0,bottom=parseFloat(cs.paddingBottom)||0,left=parseFloat(cs.paddingLeft)||0;
+    var aw=Math.max(1,w-left-right),ah=Math.max(1,h-top-bottom),rotated=ah>aw;
+    var long=rotated?ah:aw,short=rotated?aw:ah;
+    // Keep the existing game's minimum usable viewport, with one uniform scale.
+    var scale=Math.min(1,long/640,short/360),gw=long/scale,gh=short/scale;
+    var next=[aw,ah,ox+left,oy+top,gw,gh,scale,rotated].join('|');
+    if(next===last)return;last=next;
+    surface.style.left=(ox+left)+'px';surface.style.top=(oy+top)+'px';
+    surface.style.width=aw+'px';surface.style.height=ah+'px';
+    frame.style.width=gw+'px';frame.style.height=gh+'px';
+    // A transformed iframe also transforms native hit-testing into its own viewport.
+    // clientX/Y, canvas coordinates, fixed overlays and CSS vw/vh stay landscape-local.
+    frame.style.transform=rotated?'matrix(0,'+scale+','+(-scale)+',0,'+aw+',0)':'matrix('+scale+',0,0,'+scale+',0,0)';
+    surface.dataset.rotated=rotated?'true':'false';
+  }
+  function schedule(){if(!pending)pending=requestAnimationFrame(fit)}
+  fit();(function(){var q='';try{var u=new URLSearchParams(location.search),o=new URLSearchParams();['qa','slot'].forEach(function(k){if(u.has(k))o.set(k,u.get(k))});q=o.toString()}catch(e){}frame.src='play_v2.html'+(q?'?'+q:'')})();   /* QA 저장칸(?qa=1·?slot=이름)을 게임 iframe에 그대로 전달 */
+  window.addEventListener('resize',schedule);window.addEventListener('orientationchange',schedule);
+  window.addEventListener('pageshow',schedule);
+  if(window.visualViewport){visualViewport.addEventListener('resize',schedule);visualViewport.addEventListener('scroll',schedule)}
+})();
+</script>
+</body>
+</html>
