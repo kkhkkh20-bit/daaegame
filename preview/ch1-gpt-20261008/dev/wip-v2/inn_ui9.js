@@ -550,6 +550,11 @@
    ["narr","(깡통 바닥이 보인다. 이백 냥에는 한참 모자란다.)"],["narr","(다람이가 내 소매를 꽉 쥔다. 아무 말도 하지 않는다. 정오까지. 이게 진짜 시간이다.)"]];
   setInterval(function(){try{if(!inn()||G.tab!=="scene"||dl()||!G.beats||!G.beats.inn_pro||G.beats.inn_meet||G.beats.inn_stakes)return;if(document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard"))return;
     var l=loc();if(!l||l.id!=="dining"||G.found.indexOf("C04")<0)return;G.beats.inn_stakes=1;try{saveProg()}catch(e){}say(STAKES.map(function(x){return x.slice()}),function(){try{render()}catch(e){}})}catch(e){}},700);
+  /* (1-2) 「훅 연출 요청」 9: 침대 밑 발견은 반드시 지나가는 장면 — 주머니·이불을 본 뒤 안 쓰는 방에 있으면, 할머니가 찾던 것을 따라 침대 밑을 본다 */
+  setInterval(function(){try{if(!inn()||G.tab!=="scene"||dl()||!G.beats||!G.beats.inn_pro||G.beats.inn_meet)return;if(document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard,#innins"))return;
+    var l=loc();if(!l||l.id!=="bed13"||(G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return;
+    var b=document.querySelector('#bigscene [data-obs="o_under"]');if(b&&!under9.t){under9.t=1;setTimeout(function(){under9.t=0;try{if(!dl())b.click()}catch(e){}},600)}}catch(e){}},500);
+  var under9={t:0};
   /* (2) 회의 힌트 단계화: 1번째 방향만 → 2번째 어느 발언인지 → 3번째부터 다음에 낼 증거까지 */
   setTimeout(function(){var _rh9=window.__rtHint;if(!_rh9)return;window.__rtHint=function(C,ph,has,setSi){if(!inn()||!ph||!ph.stms)return _rh9.apply(this,arguments);
     var left=window.__hintLeft?window.__hintLeft():3;if(left<=0)return _rh9.apply(this,arguments);
@@ -568,4 +573,8 @@
   setTimeout(function(){var _f=window.__innFail;if(!_f)return;window.__innFail=function(kind){var a=arguments,self=this;if(!inn()||!window.__innPlay||!(window.EP1INN||{}).MF)return _f.apply(self,a);
     try{var r=document.querySelector("body>.rt");if(r)r.remove();window.__inMeeting=false;document.body.classList.remove("rtg","rtg-drw")}catch(e){}
     try{window.__innPlay(window.EP1INN.MF,function(){_f.apply(self,a)})}catch(e){_f.apply(self,a)}}},0);
+  /* (4) 회의 진입: 주민 소집(I9)은 플레이어가 '원탁 회의 열기'를 고른 뒤 한 번만 */
+  window.__innPreOpen=function(c,spec,op){try{if(!inn()||!G)return false;G.beats=G.beats||{};if(G.beats.inn_i9||G.battle||!window.__innPlay||!(window.EP1INN||{}).I9)return false;
+    G.beats.inn_i9=1;try{saveProg()}catch(e){}window.__innCutting=true;
+    window.__innPlay(window.EP1INN.I9,function(){window.__innCutting=false;try{goTab("final")}catch(e){}setTimeout(function(){op(c,spec)},120)});return true}catch(e){return false}};
  })();
