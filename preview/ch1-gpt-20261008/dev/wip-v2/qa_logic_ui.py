@@ -14,7 +14,7 @@ with sync_playwright() as p:
  def state(code):return page.evaluate('(code)=>window.__T(code)',code)
  state('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};')
  page.evaluate('document.querySelector("#innmain").remove();window.__w209boot()');page.wait_for_timeout(1000)
- state('if(DL){DL.done=null;endDlg()};G.found=Object.keys(EP1INN.EV).filter(id=>!["C03","C07","C12","C13"].includes(id));G.asked=["C03","C07","C12","C13"];G.debate={pi:1,sus:{}};window.__rtOpen(CASES[G.ci])')
+ state('if(DL){DL.done=null;endDlg()};G.found=Object.keys(EP1INN.EV).filter(id=>!["C03","C07","C12","C13"].includes(id));G.asked=["C03","C07","C12","C13"];G.beats.inn_meeting_version=2;G.beats.inn_life_confirmed=1;G.debate={pi:3,sus:{}};window.__rtOpen(CASES[G.ci])')
  page.wait_for_timeout(4400)
  def buttons(expected):
   controls=page.locator('#rtgbar button:visible')

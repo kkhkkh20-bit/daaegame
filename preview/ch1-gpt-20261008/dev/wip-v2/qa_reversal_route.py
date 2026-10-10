@@ -8,7 +8,7 @@ with sync_playwright() as p:
  page.goto('http://127.0.0.1:8000/playT.html');page.wait_for_timeout(16000)
  page.evaluate('''window.__T('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};');document.querySelector('#innmain').remove();window.__w209boot()''')
  page.wait_for_timeout(1200)
- page.evaluate('''window.__T('if(DL){DL.done=null;endDlg()};G.found=["C01","C02","C04"];G.asked=["C03"];G.exam={};allSpots(CASES[G.ci]).forEach(s=>G.exam[s.ev.id]=true);G.debate={pi:1,sus:{}};window.__rtgReset();window.__rtOpen(CASES[G.ci])')''')
+ page.evaluate('''window.__T('if(DL){DL.done=null;endDlg()};G.found=["C01","C02","C04"];G.asked=["C03"];G.exam={};allSpots(CASES[G.ci]).forEach(s=>G.exam[s.ev.id]=true);G.beats.inn_meeting_version=2;G.beats.inn_life_confirmed=1;G.debate={pi:3,sus:{}};window.__rtgReset();window.__rtOpen(CASES[G.ci])')''')
  page.wait_for_timeout(2200)
  for _ in range(6):
   if page.locator('.rt-bub.stm em').inner_text().startswith('3'):break
@@ -32,7 +32,7 @@ with sync_playwright() as p:
  assert not page.locator('#logic-panel').count()
  assert page.evaluate('window.__rtgStep(window.__rtPh().stms[1])')==1
  assert not page.locator('.rt .bl.on').count()
- assert page.evaluate('window.__T("G.debate.pi")')==1
+ assert page.evaluate('window.__T("G.debate.pi")')==3
  assert page.evaluate('window.__T("G.hp===5&&G.wrong===0")')
  assert not errors,errors
  print('Related clue on Seryeon claim → Nabi native proof; explicit first observation, no auto completion or wrongful damage, errors 0',flush=True)

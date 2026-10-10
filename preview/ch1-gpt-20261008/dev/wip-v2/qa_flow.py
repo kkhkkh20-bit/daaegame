@@ -6,6 +6,7 @@ parser.add_argument("--retry", action="store_true", help="Check the first conclu
 parser.add_argument("--failure", action="store_true", help="Present five wrong clues and check failure/restart preserves evidence")
 parser.add_argument("--final", action="store_true", help="Start at the final confrontation (use with --failure)")
 parser.add_argument("--without-ledger", action="store_true", help="Complete the story without optional C11 ledger discovery")
+parser.add_argument("--resume", help="Use actual collected storage; acquire the final fur clue through native UI instead of injecting evidence")
 args = parser.parse_args()
 TICK=r'''() => {
  const q=s=>document.querySelector(s), click=s=>{const e=q(s);if(e&&!e.disabled){e.click();return true}return false};
@@ -29,15 +30,21 @@ TICK=r'''() => {
 }'''
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox'])
- pg=b.new_page(viewport={'width':844,'height':390});errs=[];bad=[]
+ context=b.new_context(viewport={'width':844,'height':390},storage_state=args.resume if args.resume else None)
+ pg=context.new_page();errs=[];bad=[]
  pg.on('pageerror',lambda e:errs.append(str(e)))
  pg.on('response',lambda r:bad.append(r.url) if r.status>=400 and 'favicon' not in r.url else None)
  pg.goto(args.url,wait_until='domcontentloaded');pg.wait_for_timeout(16000)
- pg.evaluate('''window.__T('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};');document.querySelector('#innmain').remove();window.__w209boot()''');pg.wait_for_timeout(1000)
+ if args.resume:
+  pg.locator('#innmain [data-m="cont"]').click();pg.wait_for_timeout(1000)
+ else:
+  pg.evaluate('''window.__T('S.prog.inn=fresh(CASES.findIndex(c=>c.id=="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};');document.querySelector('#innmain').remove();window.__w209boot()''');pg.wait_for_timeout(1000)
  prepared='G.found=Object.keys(window.EP1INN.EV);G.exam={};allSpots(CASES[G.ci]).forEach(s=>G.exam[s.ev.id]=true);G.unlocked=CASES[G.ci].locations.map(l=>l.req).filter(Boolean);'
  if args.without_ledger:prepared+='G.found=G.found.filter(id=>id!=="C11");'
- prepared += 'G.beats.inn_meet=1;window.__innOpenFinal()' if args.final else 'window.__rtOpen(CASES[G.ci])'
- pg.evaluate('(code)=>window.__T(code)', prepared)
+ prepared += 'G.beats.inn_meet=1;window.__innOpenFinal()' if args.final else ('G.beats.inn_meeting_version=2;G.beats.inn_life_confirmed=1;G.debate={pi:3,sus:{}};window.__rtOpen(CASES[G.ci])' if args.failure else 'window.__rtOpen(CASES[G.ci])')
+ if args.resume:
+  pg.evaluate('(code)=>window.__T(code)', 'window.__rtOpen(CASES[G.ci])')
+ else:pg.evaluate('(code)=>window.__T(code)', prepared)
  pg.evaluate('''window.__audioSeen={};window.__caseTurns={};setInterval(()=>{const s=window.__innAudioState();if(s.line){window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant(),duck:window.__innDuck(),tense:window.__innTense()};window.__caseTurns[s.line]=window.__T('Object.assign({},G.beats.rtVotes)')}},60)''')
  if args.failure:
   initial=pg.evaluate('window.__T("G.found.slice()")');wr=0;saw_mf=False;recovered=False
@@ -69,7 +76,7 @@ with sync_playwright() as p:
  elif args.retry:
   steps=[]
   for run in range(2):
-   pg.evaluate('(code)=>window.__T(code)', 'if(DL){DL.done=null;endDlg()};document.querySelectorAll("body>.rt").forEach(x=>x.remove());window.__inMeeting=false;window.__rtgReset();G.debate={pi:1,sus:{}};window.__rtOpen(CASES[G.ci])')
+   pg.evaluate('(code)=>window.__T(code)', 'if(DL){DL.done=null;endDlg()};document.querySelectorAll("body>.rt").forEach(x=>x.remove());window.__inMeeting=false;window.__rtgReset();G.beats.inn_meeting_version=2;G.debate={pi:3,sus:{}};window.__rtOpen(CASES[G.ci])')
    pg.wait_for_timeout(2500)
    steps.append(pg.evaluate('window.__rtgStep(window.__rtPh().stms[1])'))
    if run==0:
@@ -86,10 +93,33 @@ with sync_playwright() as p:
   print('Retry direct proof OK: first evidence step is required again',steps,flush=True)
   b.close()
  else:
+  if args.resume:
+   from qa_scene_guidance import Investigation
+   actual=Investigation(pg)
+   def collect_fur():
+    assert pg.evaluate('window.__T("!!G.beats.inn_life_confirmed")'), 'Fur collection began before clinical confirmation'
+    actual.drain();actual.move('dining')
+    pg.wait_for_function('()=>{const im=document.querySelector("#bigscene svg image.wn9[data-k=innma]");return im&&window.__innMask()[im.getAttribute("href")]==="ok"}')
+    point=None
+    for direction in [None,'#fsar','#fsar','#fsal']:
+     if direction and pg.locator(direction+':visible').count():actual.click(direction);pg.wait_for_timeout(550)
+     point=pg.evaluate('''()=>{const r=document.querySelector('#bigscene').getBoundingClientRect();for(let y=Math.max(12,r.top+12);y<Math.min(innerHeight-12,r.bottom-12);y+=6)for(let x=Math.max(12,r.left+12);x<Math.min(innerWidth-12,r.right-12);x+=6)if(document.elementFromPoint(x,y)?.closest('#bigscene')&&[[0,0],[-6,0],[6,0],[0,-6],[0,6]].every(([dx,dy])=>window.__innNpcHit(x+dx,y+dy)==='innma'))return {x,y};return null}''')
+     if point:break
+    assert point, 'Grandma has no reachable opaque character pixels'
+    pg.mouse.click(point['x'],point['y']);pg.wait_for_timeout(400);actual.drain()
+    actual.click('#showev');actual.click('[data-show="C04"]');actual.drain()
+    assert pg.evaluate('window.__T("!!G.beats.inn_show_innma_C04")')
+    actual.click('#w209rail .g>[data-w="scene"]');actual.drain();actual.move('bed13');actual.collect('C05')
+    assert not pg.evaluate('(code)=>window.__T(code)', 'G.found.includes("C11")')
+    context.storage_state(path='/tmp/late-actual-before-final.json')
+    pg.evaluate('(code)=>window.__T(code)', 'window.__rtOpen(CASES[G.ci])')
+    print('Actual adjournment → grandma lends magnifier → native C05 → resume; no evidence injection',flush=True)
   last=None
   for i in range(1600):
    state=pg.evaluate('window.__T("({beats:G.beats,wrong:G.wrong,dl:DL&&DL.full,phase:window.__rtPh&&window.__rtPh()&&window.__rtPh().topic})")')
    if state['beats'].get('inn_end'):break
+   if args.resume and pg.evaluate('(code)=>window.__T(code)', '!!(G.debate&&G.debate.hold)&&!G.found.includes("C05")'):
+    collect_fur();continue
    action=pg.evaluate(TICK)
    key=state.get('phase')
    if key!=last or i%200==0:print('progress',i,key,action,flush=True);last=key
@@ -99,6 +129,9 @@ with sync_playwright() as p:
   assert state['wrong']==0, state
   assert not pg.locator('#logic-panel,#logic-note').count(), 'Separate deduction quiz returned'
   turns=pg.evaluate('window.__caseTurns')
+  assert '살아 있습니다. 살해 의심은 거둡니다.' in turns
+  assert all(v=='기권' for v in turns['살아 있습니다. 살해 의심은 거둡니다.'].values()), 'Guilty votes were cast before life was confirmed'
+  assert list(turns).index('살아 있습니다. 살해 의심은 거둡니다.')<list(turns).index('[잠정 투표] 할머니 5 · 기권 1 나비')
   expected_turns=[
    '나비 씨도 갔네요. 할머니 표는 거둡니다.',
    '살아 있습니다. 살해 의심은 거둡니다.',
@@ -119,6 +152,7 @@ with sync_playwright() as p:
   print('Reversals: first objection withdraws a vote; eight accepted outcomes through accusation/payment withdrawal OK',flush=True)
   if args.without_ledger:assert not pg.evaluate('(code)=>window.__T(code)', 'G.found.includes("C11")')
   audio=pg.evaluate('window.__audioSeen')
+  assert audio.get('너울이 바구니를 식탁에 놓는다.',{}).get('want')=='inn_serious', 'Clinical opening lost its restrained music'
   for relationship_beat in ('살해 의심은 거둡니다', '다니면서 물어볼게요',
                             '엄마 편지는 여기서 왔잖아', '우체국에도 가봐야지',
                             '엄마 찾으면 서점 다시 열자'):

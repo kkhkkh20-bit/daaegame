@@ -16,7 +16,7 @@
   more:'<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>'
  };
  function icon(key){return '<svg class="simple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(PATH[key]||PATH.ev)+'</svg>'}
- var SHORT={C01:"주머니",C02:"손자국",C03:"나비의 말",C04:"솜솜",C05:"붉은 털",C06:"시계",C07:"잠자리",C08:"첫눈 일지",C09:"숙박부",C10:"발견 기록",C11:"옛 장부",C12:"세련의 말",C13:"목격담"};
+ var SHORT={C01:"주머니",C02:"손자국",C03:"나비의 말",C04:"손님",C05:"붉은 털",C06:"시계",C07:"잠자리",C08:"첫눈 일지",C09:"숙박부",C10:"발견 기록",C11:"옛 장부",C12:"세련의 말",C13:"목격담"};
  var LABEL={scene:['조사','장면 조사'],move:['이동','장소 이동'],ev:['증거','증거 보기'],rec:['증언','주민의 증언 기록'],press:['질문','발언 되묻기'],next:['다음','다음 발언 듣기'],present:['제시','선택한 증거 제시하기'],back:['취소','증거 선택 취소하고 회의로'],hint:['도움','추리 도움말'],leave:['조사','조사로 돌아가기'],log:['기록','공개 발언 기록 열기'],more:['메뉴','게임 메뉴']};
  function decorate(b,key){var spec=LABEL[key];if(!b||!spec)return;
   if(b.querySelector('.simple-icon'))return;

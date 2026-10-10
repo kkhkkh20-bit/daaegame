@@ -1,4 +1,4 @@
-"""Fresh game, actual clues/testimony and manual Somsom discovery. No clue injection."""
+"""Actual money investigation, late rescue and testimony. No clue injection."""
 from playwright.sync_api import sync_playwright
 import shutil
 import argparse
@@ -78,10 +78,34 @@ with sync_playwright() as p:
   assert page.locator('#bigscene .innunderlook9').count()==0
   page.screenshot(path='/tmp/investigation-manual-discovery.png')
   scene_click('#bigscene [data-obs="o_under"]')
+  assert 'C04' not in state()['found'] and 'o_under' not in state()['obs'],state()
+  assert not page.locator('#inn-under-scene').count()
+  print('Early under-bed investigation stays dark: no card, observation or rescue',flush=True)
+  move(2)
+  if 'C03' not in state()['asked']:
+   scene_npc('nabi');click('[data-ask="C03"]:visible')
+  assert 'C04' not in state()['found'],state()
+  move(5)
+  if 'C09' not in state()['found']:scene_click('#bigscene [data-spot="C09"]')
+  assert 'C04' not in state()['found'],state()
+  move(1)
+  if 'C12' not in state()['asked']:
+   scene_npc('seryeon')
+   if 'T_se2' not in state()['asked']:click('[data-ask="T_se2"]:visible')
+   click('[data-ask="C12"]:visible')
+  if state()['tab']!='scene':click('#w209rail .g>[data-w="scene"]')
+  drain()
+  assert page.evaluate('window.__innDiscoveryReady()')
+  assert 'C04' not in state()['found'],state()
+  assert state()['beats'].get('inn_stakes'), 'Contract pressure did not occur before the rescue'
+  move(0)
+  assert page.locator('#bigscene [data-scene-trace="sleeping-guest"]').get_attribute('data-light')=='morning'
+  assert page.locator('#bigscene [data-scene-trace="morning-floor"]').count()==1
+  scene_click('#bigscene [data-obs="o_under"]')
   assert 'o_under' in state()['obs'],state()
   assert 'C04' in state()['found'],state()
   context.storage_state(path='/tmp/investigation-after-somsom.json')
-  print('Somsom found by deliberate scene click',flush=True)
+  print('Somsom found only after actual Nabi testimony, reception registry, Seryeon claim and room return',flush=True)
  else:
   assert 'o_under' in state()['obs'],state()
   print('Resumed real collected Somsom state; manual discovery already verified in previous run',flush=True)
@@ -108,5 +132,6 @@ with sync_playwright() as p:
  assert not page.locator('#logic-note,#logic-panel').count()
  assert not errors,errors
  assert not bad,bad
+ context.storage_state(path='/tmp/late-actual-investigation-ready.json')
  print('Actual scene clues, witness questions and weather follow-up collected without a separate quiz OK',state(),flush=True)
  b.close()

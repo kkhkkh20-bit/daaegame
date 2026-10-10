@@ -10,6 +10,8 @@
  function close(d){var b=d&&d.querySelector('[data-x]');if(b)b.click()}
  function purpose(){
   var found=G.found||[];
+  if(found.indexOf('C04')>=0&&!(G.beats||{}).inn_life_confirmed&&!(G.beats||{}).inn_meet)return '모두 식당에 모여 작은 손님부터 살펴보자.';
+  if(found.indexOf('C04')<0&&window.__innDiscoveryReady&&window.__innDiscoveryReady())return '밝아진 아침. 열세 번째 침대의 어두웠던 곳을 다시 살펴보자.';
   /* 찾은 정보만 연결한다. 기록 내용과 사건의 답은 안내에 넣지 않는다. */
   if(found.indexOf('C06')>=0&&found.indexOf('C08')<0)return '시간을 더 확인하려면 도토의 날씨 일지를 살펴보자.';
   if(found.length)return '살펴본 물건과 사람들의 말을 비교해 보자. 다른 방에도 들러볼까?';

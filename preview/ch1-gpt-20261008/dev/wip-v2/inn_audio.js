@@ -29,7 +29,7 @@
   var CONTEXT=[
    [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|당연하죠\. 그게 똑바론데요/, 'inn_comic'],
    [/어서 와요\. 추웠지|우선 들어와요|아빠처럼 탐정 할래|잘 자, 다람|수건은 네가 차지해요|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
-   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고,? 숨|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
+   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고(?:…|,)?\s*숨|^바구니랑 수건 좀 빌려|누가 죽었대요|낮게 수군|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
    [/어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
   ];
   function contextMusic(fallback,scope){
@@ -80,6 +80,7 @@
     if(fin&&M.f4){if(now-M.f4<2500)return null;return "inn_t_innma"}   /* 세련 인정("…네.") 뒤: 정적 → 할머니 테마 작게 */
     if(CUE.press&&CUE.ph===ph)return fin?"inn_climax_press":"inn_meet_press";
     if(fin)return "inn_climax";
+    var medical=(window.EP1INN||{}).MEET;if(medical&&medical.phases.slice(0,2).indexOf(ph)>=0)return b.inn_life_confirmed?"inn_friend":"inn_serious";
     return "inn_meet"}                              /* 조사 / 원탁회의 / 최종 대결: 장면마다 다른 곡 */
    M.f4=0;if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
    return "inn_after"};

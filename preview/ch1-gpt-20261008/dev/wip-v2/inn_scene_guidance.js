@@ -6,6 +6,19 @@
  function inn(){return G&&CASES[G.ci]&&CASES[G.ci].id==='inn'}
  function bedroom(){return inn()&&CASES[G.ci].locations[G.loc].id==='bed13'}
  function has(id){return (G.found||[]).indexOf(id)>=0}
+ function known(id){return has(id)||(G.asked||[]).indexOf(id)>=0}
+ // Testimony lives in asked, physical clues in found. Old rescues remain valid.
+ window.__innDiscoveryReady=function(){return !!(inn()&&(has('C04')||(G.obsSeen||[]).indexOf('o_under')>=0||['C01','C02','C03','C09','C12'].every(known)))};
+ // Showing a record is not a medical examination. Grandma comes to see him.
+ var ma=(window.EP1INN.SHOW||{}).innma,afterCare=ma&&ma.C04;
+ if(ma)Object.defineProperty(ma,'C04',{enumerable:true,configurable:true,get:function(){
+  if(G&&G.beats&&(G.beats.inn_life_confirmed||G.beats.inn_meet))return afterCare;
+  return {lines:[['innma','움직이지 않는다고? 내가 직접 볼게.','shock'],['innma','흔들지 말고. 식당으로 함께 가자.','sad']]};
+ }});
+ function afterRescue(k,lines){var table=window.EP1INN.SHOW[k],before=table.C04;Object.defineProperty(table,'C04',{enumerable:true,configurable:true,get:function(){return G&&G.beats&&(G.beats.inn_life_confirmed||G.beats.inn_meet)?lines:before}})}
+ afterRescue('nabi',[['nabi','숨 쉬는 거 봤죠? 수건은 그대로 두세요.','smile']]);
+ afterRescue('wanggu',[['wanggu','숨은 확인했습니다. 발견 당시 얘기를 듣죠.']]);
+ afterRescue('buri',[['buri','장치처럼 보면 안 됐는데… 내가 서둘렀어요.','sad']]);
  function node(tag,attrs){var n=document.createElementNS(NS,tag);Object.keys(attrs||{}).forEach(function(k){n.setAttribute(k,attrs[k])});return n}
  function sleepingBody(svg,cls){
   var defs=node('defs'),clip=node('clipPath',{id:cls+'-clip'});clip.appendChild(node('path',{d:'M448 645l27-20 5-35 35-26v-37l23-15h36l11 31 33 2 32-22 35 10 20 19 42 13 26 24 33 26v31l-32 18-33 14h-70l-29-14-20-14-50 8-25-18-46 16h-37z'}));defs.appendChild(clip);svg.appendChild(defs);
@@ -27,6 +40,10 @@
   var hidden=world.querySelector('[data-scene-trace="sleeping-guest"]'),moved=has('C04')||(G.obsSeen||[]).indexOf('o_under')>=0||window.__innDiscoveryTransferred===G;
   if(moved&&hidden){hidden.remove();var d=world.querySelector('#under-hidden-clip');if(d)d.parentNode.remove()}
   if(!moved&&!hidden){hidden=sleepingBody(world,'under-hidden');hidden.dataset.sceneTrace='sleeping-guest';hidden.setAttribute('aria-hidden','true')}
+  var ready=window.__innDiscoveryReady();if(hidden)hidden.dataset.light=ready?'morning':'dark';
+  var beam=world.querySelector('[data-scene-trace="morning-floor"]');
+  if(ready&&!moved&&!beam){beam=node('path',{'data-scene-trace':'morning-floor',d:'M825 345L890 345 1150 805 780 805Z',fill:'#eadab1',opacity:'.075','pointer-events':'none'});world.insertBefore(beam,hidden||null)}
+  if((!ready||moved)&&beam)beam.remove();
   var hot=document.querySelector('#bigscene [data-obs="o_under"]');if(hot){hot.classList.add('inn-under-cue');hot.setAttribute('aria-label',has('C04')?'침대 밑 발견 자리 살펴보기':'어두운 침대 밑 살펴보기');var oldIcon=hot.querySelector('.under-cue-icon');if(oldIcon)oldIcon.remove()}
  }
  function stage(s,next){
@@ -70,6 +87,9 @@
   // CASES keeps only observation metadata; the authored dialogue lives in EP.
   var room=window.EP1INN.LOCS.filter(function(l){return l.id==='bed13'})[0],obs=room&&room.obs.filter(function(o){return o.id==='o_under'})[0],basket=room&&room.spots.filter(function(o){return o.ev==='C04'})[0];if(!obs||!basket)return;
   if(has('C04')){say([['det1','침대 밑 상자 뒤. 작은 손님이 있던 자리야.']],function(){render()});return}
+  if(!window.__innDiscoveryReady()){
+   say([['det1','상자 뒤는 캄캄해. 등잔도 안 닿아.'],['det0','해가 더 들면 다시 보자.']],function(){render()});return;
+  }
   var s=shot={game:G,phase:'dark',el:null,timer:0};
   function assess(){if(!valid(s)){clear(s);return}say(basket.say.map(function(l){return l.slice()}),function(){record(s)})}
   if((G.obsSeen||[]).indexOf('o_under')>=0){assess();return}
@@ -78,7 +98,7 @@
  var css=document.createElement('style');css.textContent=[
   'html body.inn1 #bigscene .hot.inn-under-cue{pointer-events:auto!important;opacity:1!important;visibility:visible!important;outline:0!important;border:0!important;background:transparent!important;box-shadow:none!important;animation:none!important}',
   'html body.inn1 #bigscene .hot.inn-under-cue::before,html body.inn1 #bigscene .hot.inn-under-cue::after,html body.inn1 #bigscene .hot.inn-under-cue>*{display:none!important}html body.inn1 #bigscene .hot.inn-under-cue:focus-visible{outline:1px dashed #e6ddc9!important;outline-offset:2px}',
-  'svg[data-inn-world="bed13"] .under-hidden{opacity:.46;filter:brightness(.72);pointer-events:none}',
+  'svg[data-inn-world="bed13"] .under-hidden{opacity:.12;filter:brightness(.35);pointer-events:none}svg[data-inn-world="bed13"] .under-hidden[data-light="morning"]{opacity:.46;filter:brightness(.72)}',
   'svg[data-inn-world="bed13"] image[data-world-prop="C02_trace"]{opacity:.88!important;mix-blend-mode:normal!important;filter:none!important}',
   '#inn-under-scene{position:absolute;z-index:3;top:18px;left:50%;transform:translateX(-50%);width:min(650px,calc(100vw - 36px));height:calc(100dvh - 156px);max-height:410px;background:#090807;border:2px solid #8c704a;box-shadow:0 0 0 4px #16110c,0 8px 26px #0009;overflow:hidden;pointer-events:none}',
   '#inn-under-scene>svg{display:block;width:100%;height:100%;image-rendering:pixelated}body.inn-under-cut #innstage .isf{opacity:0!important}',
@@ -92,4 +112,10 @@
  // Hints may still name the dark space, but never draw a target around it.
  try{var point=window.__pointAt;window.__pointAt=function(sels,ms){if(inn()){var list=Array.isArray(sels)?sels:[sels];if(list.some(function(sel){return typeof sel==='string'&&sel.indexOf('o_under')>=0})){window.__clearPt&&window.__clearPt();list=list.filter(function(sel){return typeof sel!=='string'||sel.indexOf('o_under')<0});if(!list.length)return;return point(list,ms)}}return point.apply(this,arguments)}}catch(e){}
  setInterval(function(){try{traces();if(shot&&!valid(shot))clear(shot)}catch(e){}},160);
+ // A return cue after the first money investigation; never discover for the player.
+ setInterval(function(){try{
+  if(!inn()||!G.beats.inn_pro||has('C04')||G.beats.inn_discovery_return||!window.__innDiscoveryReady()||G.tab!=='scene'||DL||shot||window.__innCutting||document.querySelector('#ov .modal,#innmove,#wmap,body>.rt,.placecard'))return;
+  var game=G;G.beats.inn_discovery_return=1;saveProg();
+  say([['det1','아빠, 그 방도 다시 살펴볼까?'],['det0','해가 더 들겠군. 상자 뒤도 보자.']],function(){if(G===game)render()});
+ }catch(e){}},700);
 })();

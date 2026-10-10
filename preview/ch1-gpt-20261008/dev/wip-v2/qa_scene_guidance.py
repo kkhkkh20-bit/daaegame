@@ -1,7 +1,9 @@
 """Scene guidance regression through real pointer inputs.
 
-The fixture completes the introduction only. Evidence is never seeded: C01,
-C02, C04 and C08 must be collected through the player's scene interactions.
+The fixture completes the introduction. C01/C02/C04/C08 are collected through
+actual scene inputs. After verifying the early discovery refusal, the required
+C09 physical clue and C03/C12 witness records are explicitly prepared; this
+is a focused visual/state regression, not the full money-investigation route.
 Run against the generated QA bundle (which exposes the read-only/state setup
 __T hook). This is focused investigation QA, not an entire fresh-game run.
 """
@@ -45,8 +47,17 @@ class Investigation:
             if stage:
                 if stage == 'held':
                     held = shot['held']
-                    assert held and held['visible'], 'Rescued guest illustration is hidden'
-                    assert held['loaded'], 'Rescued guest illustration failed to load'
+                    # The authored .8s reveal begins at opacity=0. Wait for
+                    # decoded visible art while holding this real dialogue;
+                    # never advance past a failed or permanently hidden image.
+                    if not held or not held['visible'] or not held['loaded']:
+                        self.page.wait_for_function('''()=>{
+                            const s=document.querySelector('#inn-under-scene'),i=s&&s.querySelector('.under-held');
+                            if(!s||s.dataset.stage!=='held'||!i)return false;
+                            const r=i.getBoundingClientRect(),c=getComputedStyle(i);
+                            return i.complete&&i.naturalWidth>0&&r.width>0&&r.height>0&&c.display!=='none'&&c.visibility!=='hidden'&&+c.opacity>0;
+                        }''',timeout=3000)
+                    assert held and 'somsom-held.png' in held['src'], ('Missing rescue image',shot)
                     assert 'somsom-held.png' in held['src'], 'Wrong rescue illustration'
                 if stage not in self.captured:
                     self.page.screenshot(path='/tmp/scene-guidance-' + stage + '.png')
@@ -160,6 +171,16 @@ def main():
         assert not page.locator('#bigscene [data-spot="C04"]:visible').count(), (
             'Basket appeared before the under-bed investigation')
 
+        # Early curiosity must not reveal the guest before the money-case route.
+        qa.click(under);qa.drain()
+        assert 'C04' not in qa.state()['found'] and 'o_under' not in qa.state()['obs']
+        assert not page.locator('#inn-under-scene').count()
+        # Explicit prepared prerequisite records; full actual route is tested separately.
+        qa.engine('if(!G.found.includes("C09"))G.found.push("C09");'
+                  '["C03","C12"].forEach(id=>{if(!G.asked.includes(id))G.asked.push(id)});'
+                  'G.beats.toMeet=1;render();')
+        page.wait_for_timeout(1200);qa.drain()
+        assert page.evaluate('window.__innDiscoveryReady()')
         # Record every authored visual stage independently of polling intervals.
         page.evaluate('''()=>{
           window.__sceneQAStages=[];
@@ -278,7 +299,7 @@ def main():
         # Invoke the saved completion after the new G exists: it must not grant
         # the old discovery to either object or leave the cutscene visible.
         qa.engine('G=fresh(CASES.findIndex(c=>c.id==="inn"));'
-                  'G.introDone=true;G.beats={inn_pro:1};G.loc=0;G.tab="scene";render();')
+                  'G.introDone=true;G.beats={inn_pro:1,toMeet:1};G.found=["C01","C02","C09"];G.asked=["C03","C12"];G.loc=0;G.tab="scene";render();')
         page.wait_for_timeout(2000)
         qa.drain()
         qa.click(under)
