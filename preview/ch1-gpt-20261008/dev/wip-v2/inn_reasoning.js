@@ -26,6 +26,15 @@
     ['세련의 말대로라면 다른 사람이 돈을 빼고 다시 봉할 수 없다.',true],['할머니가 돈을 빼고 세련의 도장으로 다시 봉했다.',false,'세련은 도장을 계속 품에 두었다고 했다. 할머니가 그 도장을 얻었다는 근거가 없다.'],['삼백 냥이었다는 피해자의 말을 그대로 사실로 삼는다.',false,'처음 액수를 확인한 다른 사람은 없다. 온전한 봉인과 확인된 백 냥을 먼저 설명해야 한다.']],
    result:'너울은 온전한 봉인과 백 냥을 확인했다. 세련은 혼자 봉했고 도장을 품에 뒀다고 했다. 이 설명대로라면 다른 사람이 이백 냥을 빼고 다시 봉할 수 없다.',hints:['돈을 꺼냈다면 주머니에 어떤 변화가 남을까?','발견 당시 봉인 상태와 다시 봉할 수 있는 사람을 나눠 보자.','너울의 기록과 세련의 말을 연결해 봉인과 도장 위치를 비교하자.']}]}
  };
+ // These are questions the player can now put to the speaker, not verdicts
+ // granted by the notebook. Changes in votes and admissions happen afterward.
+ var REBUTTAL={
+  linen:'“나비 씨도 그 방에 갔다면, 침대 주인만 돈을 숨길 수 있었다는 말은 맞습니까?”',
+  time:'“자정에 주머니를 들고 지나갔다면, 자정엔 자고 있었다는 말씀은 어떻게 된 겁니까?”',
+  location:'“침대 밑이라는 말은 공개한 적 없습니다. 우리를 의심하는 분이 그 자리를 어떻게 아셨습니까?”',
+  contact:'“털에 봉인띠 자국이 남았습니다. 솜솜을 들어 올렸을 때 주머니는 어디에 있었습니까?”',
+  seal:'“도장은 계속 품에 있었다면서, 할머니는 어떤 도장으로 다시 봉했다는 겁니까?”'
+ };
  var active=null,gen=0,owner=null,returnFocus=null;
  function inn(){return G&&CASES[G.ci]&&CASES[G.ci].id==='inn'}
  function has(id){return !!G&&((G.found||[]).indexOf(id)>=0||(G.asked||[]).indexOf(id)>=0)}
@@ -73,7 +82,7 @@
    var missing=[];d.stages.forEach(function(st){st.ids.forEach(function(id){if(!has(id)&&missing.indexOf(id)<0)missing.push(id)})});
    h+='<section class="lp-locked"><b>아직 비교할 기록이 부족해.</b><p>'+(a.id==='time'&&!snow()?'밤이에게 날씨 일지를 보여 주고, 목격 당시 창밖에 무엇이 있었는지 물어보자.':a.id==='location'&&!beat('inn_locationClaim')?'발견 위치는 공개하지 않았다. 회의에서 사람들이 무슨 말을 하는지 들어 보자.':'현장을 살피고 주민의 말을 더 들어 보자.')+'</p>'+(missing.length?'<p>아직 없는 기록: '+missing.map(name).map(e).join(', ')+'</p>':'')+'</section>';
   }else if(a.complete){
-   h+='<section class="lp-summary" role="status"><h3>'+(a.mode==='notebook'?'가설을 정리했어':'주장에 반박할 근거가 모였어')+'</h3>'+a.results.map(function(t){return '<p>'+e(t)+'</p>'}).join('')+'<b>다음에 확인할 일</b><p>'+e(a.mode==='notebook'&&a.id==='contact'?'솜솜과 주머니가 같은 자리에 있었는지, 각각을 옮긴 사람에게 확인한다.':d.next)+'</p></section><div class="lp-actions"><button class="lp-primary" data-act="finish">'+(a.mode==='notebook'?'수첩에 남기기':'이 근거로 제시하기')+'</button></div>';
+   h+='<section class="lp-summary" role="status"><h3>'+(a.mode==='notebook'?'가설을 정리했어':'반박할 근거를 찾았어')+'</h3>'+a.results.map(function(t){return '<p>'+e(t)+'</p>'}).join('')+'<b>'+(a.mode==='notebook'?'다음에 확인할 일':'이 근거로 되물을 말')+'</b><p>'+e(a.mode!=='notebook'?REBUTTAL[a.id]:a.id==='contact'?'솜솜과 주머니가 같은 자리에 있었는지, 각각을 옮긴 사람에게 확인한다.':d.next)+'</p></section><div class="lp-actions"><button class="lp-primary" data-act="finish">'+(a.mode==='notebook'?'수첩에 남기기':'이 근거로 제시하기')+'</button></div>';
   }else{
    h+='<p class="lp-claim">'+e(a.mode==='notebook'?notebookClaim(a.id):d.claim)+'</p><p>'+e(s.prompt)+' <small>('+ (a.stage+1)+' / '+d.stages.length+')</small></p><div class="lp-layout"><section><div class="lp-cards" aria-label="가진 기록">'+Object.keys(window.EP1INN.EV).filter(has).map(function(id){return '<button data-card="'+id+'" aria-pressed="'+(a.selected.indexOf(id)>=0)+'"><small>'+(id==='C03'||id==='C07'||id==='C12'||id==='C13'?'주민의 진술':'현장·관찰 기록')+'</small>'+e(name(id))+'</button>'}).join('')+'</div><div class="lp-detail" aria-live="polite">'+(a.detail?'<b>'+e(name(a.detail))+'</b><small>기록 원문 · 긴 내용은 이 칸에서 스크롤</small>'+e(text(a.detail)):'기록을 누르면 원문을 읽고 근거 칸에 놓을 수 있어. 같은 기록은 한 번만 쓸 수 있어.')+'</div></section><section><div class="lp-slots">'+[0,1].map(function(i){return '<button data-slot="'+i+'">근거 '+(i+1)+'<br>'+e(a.selected[i]?name(a.selected[i]):'기록 고르기')+'</button>'}).join('')+'</div>';
    if(s.clock)h+='<div class="lp-clock"><svg viewBox="0 0 100 100" role="img" aria-label="숫자 없는 시계. 두 바늘이 겹쳐 '+(a.rotated?'위':'아래')+'를 가리킴"><g transform="rotate('+(a.rotated?0:180)+' 50 50)"><circle cx="50" cy="50" r="43" fill="#fcf1d6" stroke="#635136" stroke-width="3"/>'+Array.from({length:12},function(_,i){return '<path d="M50 10v5" stroke="#806946" stroke-width="2" transform="rotate('+(i*30)+' 50 50)"/>'}).join('')+'<path d="M50 50V21 M50 50V31" stroke="#332c24" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="50" r="4" fill="#332c24"/></g></svg><p>'+(a.rotated?'바닥에서 보는 방향':'밤이처럼 거꾸로 보는 방향')+'<br>실제 시각은 다음 단계에서 다른 기록과 맞춘다.</p><button data-act="rotate">시계 돌려 보기</button></div>';

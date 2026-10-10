@@ -66,3 +66,7 @@
   qa_flow.py의 실제 추리 입력은 작성된 독립 기대값으로 진행한다.
 
 qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수집 저장으로 깨끗한 배포판의 이어하기·추리 수첩 저장을 확인.
+
+- 추리로 누명을 뒤집는 단계별 반전: CODEX_REVERSAL_20261010.txt.
+  첫 반박의 실제 표 철회부터 최종 배상·여관 양도 요구 철회까지 qa_flow.py로 검증.
+  qa_reversal_route.py: 관련 증거를 세련의 발언에 내도 감점 없이 핵심 추리로 이어지는 실제 포인터 검사.
