@@ -45,3 +45,6 @@
 - 이야기 논리 검사: qa_story.py (발견 위치 공개 순서·상자 허락), qa_intro.py (새 게임 도입).
 - qa_flow.py --without-ledger: 선택 장부 C11을 얻지 않은 경로에서도 결말까지 진행한다.
 - 전체 동기·인과관계 검수: CODEX_STORY_LOGIC_20261010.txt
+
+대사 연타 입력 회귀 검사: python3 qa_input.py
+수정 전 재현: python3 qa_input.py --baseline (cd0b802 비교)
