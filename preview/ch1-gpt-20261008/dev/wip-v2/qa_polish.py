@@ -17,7 +17,9 @@ with sync_playwright() as p:
             assert r['height']>=44,r
         if page.locator('#sndhint9').count():page.locator('#sndhint9').click()
         else:page.mouse.click(vp['width']-40,150)
-        page.wait_for_function('__AUD.cur==="inn_title" && __AUD.mediaState["audio/v2/title-v1.mp3"]==="ready"')
+        title_media=page.evaluate('__AUD.SONGS.inn_title.media')
+        assert title_media.endswith('title-piano-v2.mp3'),title_media
+        page.wait_for_function('__AUD.cur==="inn_title" && __AUD.mediaState[__AUD.SONGS.inn_title.media]==="ready"')
         assert page.evaluate('window.__T("AC.state")')=='running'
         page.screenshot(path=f'/tmp/polish-main-{vp["width"]}.png')
         # Muting must stop the existing music path; unmuting reuses the buffer.
@@ -25,7 +27,7 @@ with sync_playwright() as p:
         assert page.evaluate('__AUD.cur') is None
         page.evaluate('window.__T("setSound(true)")');page.wait_for_timeout(1000)
         assert page.evaluate('__AUD.cur')=='inn_title'
-        assert sum('title-v1.mp3' in u for u in requests)==1,requests
+        assert sum(u.endswith(title_media) for u in requests)==1,requests
         page.locator('#innmain [data-m="set"]').click()
         music=page.locator('#innopt [data-s="musicVolume"]')
         previous=int(music.input_value());music.focus();page.keyboard.press('ArrowLeft');page.wait_for_timeout(500)
