@@ -80,6 +80,12 @@
   window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
   window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
   window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine()}};
+  /* New original, sampled score. One musical motif connects the menu, road and
+     investigation; live synthesis remains for scene-specific council cues. */
+  A.SONGS.inn_title={bpm:70,vol:.9,prog:["Am"],mel:[],media:"audio/v2/title-v1.mp3"};
+  A.SONGS.inn_travel={bpm:84,vol:.88,prog:["Am"],mel:[],media:"audio/v2/travel-v1.mp3"};
+  A.SONGS.inn_inv={bpm:96,vol:.84,prog:["Am"],mel:[],media:"audio/v2/investigation-v1.mp3"};
+  Object.keys(A.SONGS).filter(function(k){return k.indexOf("inn_t_")===0}).forEach(function(k){A.SONGS[k].vol=Math.min(.9,A.SONGS[k].vol)});
   var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
   /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
@@ -98,6 +104,7 @@
       setTimeout(function(){tenseTick(gen)},discovery?1200:450);
     }else if(TENSE.on&&TENSE_OFF.test(t))tenseStop()}catch(e){}},60);
   window.__innWant=function(){
+   if(document.getElementById("innmain"))return "inn_title";
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    if(TENSE.on||M.failure||(CUE.ph===(window.__rtPh&&window.__rtPh())&&(CUE.mode==="silence"||CUE.mode==="pulse"||(CUE.mode==="impact"&&Date.now()-CUE.at<800))))return null;                         /* 발견 순간: 음악 없음 */
@@ -127,7 +134,7 @@
   window.__innKeyLine=function(){var t=lineText();return !!t&&KEY.test(t)};
   window.__innDuck=function(){var r=window.__innDuck0.apply(this,arguments);if(!cur()||document.getElementById("inncold"))return r;
    if(window.__innKeyLine())return 0;
-   return r*1.7*((typeof DL!=="undefined"&&DL)?.85/.62:1)};
+   return r*((typeof DL!=="undefined"&&DL)?.72/.62:1)};
   window.__innDuck0=function(){
    if(document.getElementById("inncold"))return COLDD;   /* 콜드 오픈: 비트마다 정한 낮춤(정적으로 갈수록 작게) */
    if(!cur())return 1;
