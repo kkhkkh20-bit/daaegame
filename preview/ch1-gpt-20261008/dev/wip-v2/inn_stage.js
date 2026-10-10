@@ -290,7 +290,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  function untag(lines){try{if(!cur()||!Array.isArray(lines))return;lines.forEach(function(x){if(Array.isArray(x)&&typeof x[1]==="string"&&TAGRE.test(x[1]))x[1]=x[1].replace(TAGRE,"");else if(x&&typeof x.t==="string"&&TAGRE.test(x.t))x.t=x.t.replace(TAGRE,"")})}catch(e){}}
  function split(base,self,lines,done,sk){untag(lines);try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&(x[0]==="@inspect"||x[0]==="@dir"||x[0]==="@grant")})){
     var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else if(Array.isArray(x)&&x[0]==="@dir"){parts.push(curp);parts.push({dir:parseDir(x[1])});curp=[]}else if(Array.isArray(x)&&x[0]==="@grant"){parts.push(curp);parts.push({grant:x[1]});curp=[]}else curp.push(x)});parts.push(curp);
-    var k=0;(function next(){if(k>=parts.length){done&&done();return}var p=parts[k++];
+    var splitGame=G,k=0;(function next(){if(G!==splitGame||!cur())return;if(k>=parts.length){done&&done();return}var p=parts[k++];
      if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
      if(p&&p.grant){var gid=p.grant;if(G.found.indexOf(gid)>=0){next();return}try{window.__innGrant&&window.__innGrant(gid)}catch(e){}var v2=document.getElementById("dlgveil");if(v2&&!(typeof DL!=="undefined"&&DL))v2.remove();try{SFX.found()}catch(e){}if(window.__innCard)window.__innCard(gid,function(){next()});else next();return}
      if(p&&p.dir){dirRun(p.dir);setTimeout(next,p.dir.ms!=null?p.dir.ms:420);return}

@@ -10,4 +10,4 @@ rep("if(k==='kitchen'){body=image('BG03_kitchen_base.png',[0,0,1774,887]);if(st.
 rep("D.storage.props.forEach(function(p){if(p.id==='chest_closed'&&st.box||p.id==='chest_open_with_C11'&&!st.box)return;body+=prop(p)})}",
     "D.storage.props.forEach(function(p){if(p.id==='chest_closed'&&st.box||p.id==='chest_open_with_C11'&&!st.box)return;body+=prop(p)});if(st.basket)body+=prop({id:'C04_world_basket_bed13',file:'C04_basket_world.png',worldDrawRect:{x:267.2,y:630.1,width:185.6,height:185.6}})}")
 rep("return {sun:!!(window.__innSun&&__innSun()),box:!!b.inn_lock,basket:!!(b.inn_basket_transferred||b.inn_pro)}",
-    "return {sun:!!(window.__innSun&&__innSun()),box:!!b.inn_lock,basket:(G.obsSeen||[]).indexOf('o_under')>=0||(G.found||[]).indexOf('C04')>=0}")
+    "return {sun:!!(window.__innSun&&__innSun()),box:!!b.inn_lock,basket:window.__innDiscoveryTransferred===G||!!b.inn_basket_transferred||(G.obsSeen||[]).indexOf('o_under')>=0||(G.found||[]).indexOf('C04')>=0}")
