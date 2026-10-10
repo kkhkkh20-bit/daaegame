@@ -1,0 +1,47 @@
+1장 장소·시간 패널 및 P10b 밤 이동 연출 (2026-10-10)
+
+담당 범위: inn_opening_direction.js 신규 모듈. 기존 대본/아트/빌드 파일은 변경하지 않음.
+
+장소/시간:
+- 기존 native banner DOM, Promise, 종료 타이밍, 입력 보호를 그대로 유지.
+- .inn-place-panel 클래스만 추가해 큰 금색 가로띠를 작은 크림 종이색 패널로 변경.
+- 원래 장소명/시간 문구를 그대로 표시. 시간 문구의 밤/저녁/열한/자정은 달, 그 외는 해 아이콘.
+- banner 애니메이션 문자 흔들기/금색 sweep 대신 5px 진입 1회. motion-reduce는 진입도 정적.
+
+P10b:
+- scene.sid === P10b로 제한. 승인 art/ch1/daram-v4/daram-idle-t0-dialogue.png를 그대로 사용.
+- 출발: '다람이 방문을 조금 연다' (기존 '다람이 살금살금 복도로 나온다' 호환).
+- 접촉/불 꺼짐: '다람이 문에 손을 댄다'.
+- 회귀: '다람이 뛰어 돌아가'.
+- 오른쪽 방문에서 나와 닫힌 안쪽 문 앞까지 이동하고 같은 방문으로 되돌아감.
+- 16단계 1.8초 출발/10단계 .85초 회귀. 애니메이션은 진행을 잠그지 않음.
+- 문 밑 빛은 단일 등장/소멸. 깜빡임 없음. 미획득 단서/정답 추가 없음.
+- 큰 다람 배우는 이 장면 동안 숨겨 작은 실제 이동 배우와 겹치지 않음. 다른 배우/발언 초상은 유지.
+- reduce에서는 이동 없이 문앞 정지/회귀 시 사라짐.
+- 소스 기준 1672×941 기존 복도 좌표, SVG slice cover로 가로/세로 균등 배율.
+
+읽기 전용 진단:
+__innOpeningDirection() => {night, cue, scene, reduced}
+DOM #inn-night-walk[data-cue=out|touch|return], .night-child, .night-light
+body.inn-night-direction / .banner.inn-place-panel / .place-time-icon
+
+검증: node --check 통과. 실제 최신 통합 빌드 시각 검수 결과는 부모의 QA에 기록.
+제약: 신규 포즈를 그리지 않았으므로 기존 수첩 든 복장/자세를 유지한 전신 이동임.
+
+추가 시각 검수:
+- /tmp/qa-opening-visual.py로 844×390 / 직접 세로390×844 확인.
+- 최신 게임 페이지 엔진에 신규 모듈을 __T로 주입한 준비 상태. P10b native __innStart 호출 후
+  각 출발/접촉/회귀 문장을 준비 say로 확인. 전체 새게임 완주/최종 통합 빌드 QA로 표현하지 않음.
+- 두 화면 모두 night=true, cue out→touch→return 확인.
+- 장소패널 글자와 달 아이콘, 작은 다람의 문 앞 배치/문밑빛이 대사창과 겹치지 않음을 시각 확인.
+- 스크린샷 /tmp/opening-{844,390}-{panel,out,touch,return}.png.
+
+통합 후 시각 개선 (root):
+- 새 사용자 지시로 제작한 같은 복장 다람 worried PNG로 밤 배우를 교체.
+- 눈뜨기/아빠 부르기는 기존 부녀방 배경 위의 다람으로 먼저 보여 준다.
+  문을 여는 줄에서 복도로 전환하고, 귀환 뒤 침실을 다시 보여 준 뒤 fade.
+- 복도 brightness .58/saturate .72, 문밑빛이 꺼지면 .43/.6.
+  장소/시간 패널·대사·인물 초상은 어둡게 하지 않는다.
+- P10b 제목은 부녀의 방 → 2층 복도. 귀환 뒤 native 900ms 정적을 추가.
+- 직접 세로의 침실 다람은 별도 중앙 좌표. reduced에서는 이동/진입/밝기 전환 모두 정적.
+- 실제 최종 검증은 CODEX_OPENING_CAST_20261010.txt 참조.

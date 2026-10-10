@@ -26,15 +26,15 @@
  var DFACE={shock:"daram-surprised-front-v2",sad:"daram-worried-front-v2",laugh:"daram-happy-front-v2",resolve:"daram-determined-front-v2",
   oops:"daram-ear-grab-signature-v1",shy:"daram-tail-hide-signature-v1",caught:"daram-tail-hide-caught-signature-v2",
   panic:"daram-surprised-front-v3",cower:"daram-worried-front-v3",joy:"daram-happy-front-v3",confront:"daram-determined-front-v3",mad:"daram-angry-front-v3"};
- function src(k,m){if(k==="wanggu")return "art/ch1/neoul-v2/neoul-"+neoState(m)+"-dialogue.png";
+ function src(k,m){if(k==="wanggu")return window.__innNeoulSrc(m);
   if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(String(m||"")))return INNMA[pose(m,k)];
   var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
 if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    /* 다람 v4(2026-10-09 확정 초기 복장) 6상태: 기본(수첩·꼬리 분리 합성, 꼬리 흔들기)/메모/활짝/땀 당황/참는 분노/코믹 분노. 슬픔·겁·결심·꼬리숨김은 기존 그림 유지 */
-   /* 2026-10-10 GPT·사용자: 옛 외형(갈색 모자 v2/v3)이 섞여 번쩍이지 않게 모든 표정을 v4로. 정확한 슬픔·겁·결심 표정은 후속 아트 대기 → 가장 가까운 상태 */
+   /* 2026-10-10: v4 복장 유지. 사용자 요청으로 제작한 worried는 슬픔/걱정/겁 줄에만 연결. */
    return "art/ch1/daram-v4/daram-"+dv4(dm)+"-dialogue.png"}
   if(CASTF[k])return "art/ch1/cast/"+CASTF[k]+".png";
-  if(k==="geokkuri")return "art/ch1/cast/"+(pose(m)==="2"?"bami-shock":"bami-front")+".png";
+  if(k==="geokkuri")return "art/ch1/action-poses/bami/dialogue.png";
   /* 세련: 앉아서 서류를 보는 v2(2026-10-09 전달, 개별 시안·최종 승인 아님). 대화에서도 앉은 맥락 유지 → 놀람 차분(서 있는 v1)은 쓰지 않는다 */
   /* 2026-10-10 사용자 "세련 첫 만남(현관 방문)·복도 신고는 서 있어야": 프롤로그·후일담은 서 있는 그림, 조사 중 식당 대화만 앉은 그림 */
   if(k==="seryeon"){var bb=(G&&G.beats)||{};if(!bb.inn_pro||bb.inn_final)return "art/ch1/cast/"+(/nervous|shock|panic|angry|surpr/.test(String(m||""))?"seryeon-surprise-front-v1":"seryeon-normal-front-v1")+".png";return "art/ch1/cast/seryeon-seated-paperwork-v2-talk.png"}
@@ -71,13 +71,13 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   "art/ch1/action-poses/karo/dialogue.png":[279,320,4,267,10,.92,0],"art/ch1/action-poses/buri/dialogue.png":[297,320,10,289,10,.92,0],"art/ch1/action-poses/neoul/dialogue.png":[459,320,4,441,9,.92,0]};
  /* 같은 승인 복장의 할머니 표정: 고정 수건 자세가 감정 그림을 가리지 않게, 전신의 발선 대신 얼굴/어깨 구도를 맞춘다. */
  Object.keys(INNMA).forEach(function(k){FSC[INNMA[k]]=[146,182,5,111,2,1.2,0]});
- /* 너울 v2(2026-10-09 확정: 보안관 복장 자경단장 라쿤) 4상태 — 같은 전신 원본을 같은 축소율로 정규화(240x320, 발선 304), 대화는 같은 창(20,8,200x200)을 2배.
-    몸통 중심(181.5)을 고정해 상태가 바뀌어도 몸이 옆으로 튀지 않게, 분노는 넓게 버틴 자세라 머리가 낮은 그대로 */
- ["default","admonish","angry","sheepish"].forEach(function(k){FSC["art/ch1/neoul-v2/neoul-"+k+"-dialogue.png"]=[400,400,181,182,16,.92,0]});
+ /* 너울 새 도트: Drive 2026-10-10 4표정의 같은 캔버스/상반신 축. 아래는 대사창 뒤에 이어지고, 전신은 현관에서만 별도 발선에 맞춘다. */
+ ["default","admonish","angry","sheepish"].forEach(function(k){FSC["art/ch1/neoul-v3/neoul-"+k+"-dialogue.png"]=[1334,1179,620,620,6,1.06,0]});
+ FSC["art/ch1/daram-v4/daram-worried-dialogue.png"]=[1389,1132,736,736,39,.92,0];
  ["idle-t0","idle-t1","idle-t2","memo","joy","flustered","held-anger","comic-anger"].forEach(function(k){var f="art/ch1/daram-v4/daram-"+k+"-dialogue.png";FSC[f]=[368,300,195,195,10,.92,0];try{var im=new Image();im.src=f}catch(e){}});
  /* 꼬리 프레임은 inn_character_motion의 단일 타이머가 감정·접근성·가시성을 확인하고 관리한다. */
  var DV4={"":"idle-t0",neutral:"idle-t0",think:"memo",memo:"memo",laugh:"joy",joy:"joy",smile:"joy",oops:"flustered",panic:"flustered",nervous:"flustered",shock:"flustered",shy:"flustered",caught:"flustered",cower:"flustered",
-   mad:"comic-anger",angry:"comic-anger",pout:"held-anger",held:"held-anger",resolve:"memo",confront:"held-anger",sad:"idle-t0",worried:"idle-t0"};
+   mad:"comic-anger",angry:"comic-anger",pout:"held-anger",held:"held-anger",resolve:"memo",confront:"held-anger",sad:"worried",worried:"worried",cower:"worried"};
  function dv4(m){var k=String(m||"").split(/\s+/)[0];return Object.prototype.hasOwnProperty.call(DV4,k)?DV4[k]:"idle-t0"}
  window.__innDV4=dv4;
  function neoState(m,text){var t=text==null?"":String(text);try{var l=DL&&DL.lines&&DL.lines[DL.i];if(text==null)t=String((l&&(l[1]||l.t))||"");   /* 한 대사가 여러 쪽으로 나뉘어도 같은 상태를 유지: 같은 묶음(__pg.g)의 글을 합쳐 판단 */
@@ -90,12 +90,22 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   if(/규정|규약|규칙|두십시오|해야 합니다|안 됩니다|벌금|허가|회의를 엽니다|정오 우편 마차|옮기지만 않는다면|기록하겠습니다|안건/.test(t))return "admonish";
   return "default"}
  window.__innNeoState=function(m,t){try{return neoState(m,t)}catch(e){return "default"}};
+ window.__innNeoulSrc=function(m,t){return "art/ch1/neoul-v3/neoul-"+neoState(m,t)+"-dialogue.png"};
+ /* Portraits crop the same immutable PNG at render time; no stretched or
+    separately drawn face can drift from the full actor's expression. */
+ window.__innFaceCrop=function(k,m){
+  if(k==="wanggu")return {src:window.__innNeoulSrc(m,""),w:1334,h:1179,x:280,y:0,size:720};
+  if(k==="det1"&&dv4(m)==="worried")return {src:"art/ch1/daram-v4/daram-worried-dialogue.png",w:1389,h:1132,x:470,y:15,size:640};
+  return null;
+ };
+ window.__innCropSvg=function(k,m,cls){var c=window.__innFaceCrop(k,m);if(!c)return null;return '<svg class="'+(cls||'nodot inn-pixel-face')+'" data-face="'+k+'" viewBox="'+[c.x,c.y,c.size,c.size].join(' ')+'" aria-hidden="true" style="image-rendering:pixelated"><image href="'+c.src+'" width="'+c.w+'" height="'+c.h+'" style="image-rendering:pixelated"/></svg>'};
  function frame(k,s,W,H){var f=FSC[s],b=BOX[s]||[192,192,20,170,10,6];
   var cw=f?f[0]:b[0],ch=f?f[1]:b[1],sc=f?f[5]*H/ch:(DS[k]||2.739)*H/390;
   /* 세로 화면에서 높이만 따라 2배 커지던 배우: 원본 비율을 유지하고 너비를 제한, 몸 끝은 대사창 쪽에 둔다. */
   var portrait=H>W*1.15;if(portrait)sc=Math.min(sc,W*.97/cw);
   var cx=f?(f[2]+f[3])/2:(b[2]+b[3])/2,top=H*12/390-(f?f[4]:b[4])*sc+(f?f[6]*H:0);
-  if(portrait)top=Math.max(12,H-Math.max(132,H*.18)-ch*sc*.94);
+  if(portrait){var plate=document.querySelector('#vnbox .vtxt'),pr=plate&&plate.getBoundingClientRect(),base=pr&&pr.height>10?pr.top:H-94;top=Math.max(12,base-ch*sc+12)}
+  if(k==="geokkuri")top=portrait?0:Math.min(0,top); /* feet attach to the ceiling */
   return {w:cw*sc,h:ch*sc,left:Math.round(W/2-cx*sc),top:Math.round(top)}}
  window.__innFrame=function(k,s){return frame(k,String(s||"").split("?")[0],innerWidth,innerHeight)};
  function draw(k,m){var W=innerWidth,H=innerHeight;

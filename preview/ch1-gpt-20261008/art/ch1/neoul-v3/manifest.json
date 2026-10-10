@@ -1,0 +1,59 @@
+{
+  "source": "Google Drive 새 도트/너울",
+  "authorization": "2026-10-10 user requested alternate Drive Neoul and matching style",
+  "processing": "Source PNG bytes preserved; crop/anchor at runtime",
+  "files": {
+    "neoul-default-dialogue.png": {
+      "source_name": "neoul-dialogue-default-pixel-v01.png",
+      "sha256": "b2374b56e590ae12ad65a3547347fa58625407db29df5f755288f92394d64d36",
+      "drive_file_id": "1atM2jZUCoTbRm9ckc9WZ1qrwdUccragw"
+    },
+    "neoul-admonish-dialogue.png": {
+      "source_name": "neoul-dialogue-admonish-pixel-v01.png",
+      "sha256": "c685a6670a85cf6ef4e715372c90c01edff6ca8295a255c4472f30b201fffff6",
+      "drive_file_id": "1OSOmvRM5qFhfGsikrHpGoJHM7T_mK-N5"
+    },
+    "neoul-angry-dialogue.png": {
+      "source_name": "neoul-dialogue-angry-pixel-v01.png",
+      "sha256": "bd0b8d3040893eaa15ca907d7e50ce79d585469bdbe683785c006e97741b4df0",
+      "drive_file_id": "18kh49e53KSQSS27txbfJYk_20_k6an1s"
+    },
+    "neoul-sheepish-dialogue.png": {
+      "source_name": "neoul-dialogue-sheepish-pixel-v01.png",
+      "sha256": "547dac581d6ec88d77323c0a4b97d461becb388ff39b09d776ff35cc349a3c66",
+      "drive_file_id": "1MiFtYdAtG2p4KZiiJviYLeMPC2knZcS6"
+    },
+    "neoul-standing.png": {
+      "source_name": "neoul-standing-default-pixel-v01.png",
+      "sha256": "e8081da78cb33a1eb8f5ec50a9114ebbc00caa36618bffff3d725bd6063a56a0",
+      "drive_file_id": "1cRa_eKahDx-R6XMSmdZT0pptYRDPKjzW"
+    },
+    "neoul-profile.png": {
+      "source_name": "neoul-profile-default-pixel-v01.png",
+      "sha256": "69d720d49aec653d38a2ffbab1c41f6bdfaf09a7711346fcb8c17af3e18581a2",
+      "drive_file_id": "15xdU3IVyxfslC9ksLf92caakrTDKYaRw"
+    }
+  },
+  "runtime": {
+    "dialogue": "four aligned 1334x1179 source PNGs; torso continues behind text",
+    "face_crop": [
+      280,
+      0,
+      720,
+      720
+    ],
+    "standing_world": [
+      1100,
+      239,
+      240,
+      360
+    ],
+    "standing_alpha_bbox": [
+      127,
+      12,
+      1007,
+      1524
+    ],
+    "profile": "retained Drive source; shared emotion crops used in runtime"
+  }
+}
