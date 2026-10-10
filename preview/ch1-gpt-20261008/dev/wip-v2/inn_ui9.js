@@ -164,6 +164,8 @@
    /* 장소 이름표: 그림자 겹침 제거·줄 간격 */
    "html body.w209.inn1 #app .stagebar .scap b{text-shadow:none!important;font-size:14px!important;line-height:1.25!important;display:block!important}",
    "html body.w209.inn1 #app .stagebar .scap small{text-shadow:none!important;line-height:1.25!important;display:block!important;margin-top:1px!important}",
+   /* 좁은 세로 화면: 상단 메뉴 아래에서 장소 이름을 읽을 수 있게 한다. */
+   "@media (max-width:560px){html body.w209.inn1 #app .stage .scenerow.stagebar{top:60px!important;left:10px!important;max-width:calc(100% - 20px)!important}html body.w209.inn1 #app .stagebar .scap{min-width:0!important;flex:1 1 auto!important}html body.w209.inn1 #app .stagebar .scap b{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;word-break:keep-all!important}html body.w209.inn1 #app .stagebar .scap small{word-break:keep-all!important}}",
    /* 장면 관찰: 대사창과 같은 가운데 좁은 띠, 아빠 속마음 색 */
    ".innobs{position:fixed;z-index:40;left:50%;bottom:10px;transform:translateX(-50%);width:min(540px,calc(100vw - 32px));box-sizing:border-box;padding:12px 16px 10px;border-radius:12px;background:rgba(14,17,40,.93);border:1.5px solid #3A4480;box-shadow:0 6px 18px rgba(0,0,0,.35);animation:innobs .14s ease-out;cursor:pointer}",
    ".innobs .nm{position:absolute;top:-11px;left:12px;padding:1px 8px;border-radius:6px;background:#2F4E86;color:#FFF6E0;font:var(--t-label,13px)/1.4 var(--display,Galmuri11,sans-serif)}",
