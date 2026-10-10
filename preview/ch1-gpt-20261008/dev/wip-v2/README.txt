@@ -74,3 +74,11 @@ qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수�
 - 가족 설정·인물 관계 보강: CODEX_FAMILY_STORY_20261010.txt.
   전직 탐정이 가족 서점을 열었다는 과거, 엄마의 갑작스러운 실종,
   다람의 관찰 역할과 아빠의 보호 책임을 도입·조사·후일담에 연결한다.
+
+- 피아노·관현악 음악 v2: CODEX_PIANO_MUSIC_20261010.txt.
+  메인·이동·조사·사건·회의/압박·대결/압박·후일담·인물 7곡을 실제 피아노 녹음으로 제작.
+  재제작 준비: python3 gen/fetch_piano_samples.py (악기 데이터를 Git 밖 캐시에 저장).
+  재제작: python3 gen/music_piano_v2.py (NumPy, SciPy, ffmpeg, libfluidsynth).
+  일반 build/publish는 커밋된 MP3와 inn_piano_tracks.js만 사용하며 큰 악기 라이브러리가 필요 없다.
+  qa_piano_assets.py: 인코딩된 전체 16곡의 음량·최대 레벨·스테레오·반복 경계를 검사.
+  qa_audio.py: 16곡 Web Audio 디코딩, 전체 메인곡 반복, 장면 큐와 음원 캐시 상한 검사.

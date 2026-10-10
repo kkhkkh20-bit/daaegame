@@ -1,5 +1,5 @@
- /* ==== 1장 오디오 연출 (오디오 큐시트 2026-10-09 기준, 실제 음원 파일 없이 합성음) ====
-    - 음악: 도입(inn_cold) -> 여행·여관(inn_travel, P1~P10) -> 조사(inn_inv, P11 신고 확인~회의·최종) -> 여운(inn_after, 후일담)
+ /* ==== 1장 오디오 연출 (큐·효과음 유지, 음악은 피아노 녹음 기반 v2 음원) ====
+    - 음악: 타이틀 -> 도입(inn_cold) -> 여행·여관 -> 사건 신고 -> 조사 -> 회의·압박 -> 최종 대결·압박 -> 후일담
       같은 곡 안에서는 장면·화자·장소가 바뀌어도 다시 시작하지 않는다(엔진: 같은 키면 그대로 둠). 낮춤은 덕킹으로만.
     - 환경음: 마차(구름음+덜컹+먼 말발굽), 바깥바람. 장소에 머무는 동안 한 인스턴스만.
     - 타이핑음: 부드럽고 낮게, 최소 간격 75ms. 속마음·지문은 발화보다 낮게. 문장 완성·넘김 때 몰아서 나지 않음(예약 재생 없음). */
@@ -17,7 +17,8 @@
   function lineWho(){var l=liveLine();return l?(Array.isArray(l)?l[0]:l.w):""}
   function lineKind(){if(lineWho()==="narr")return /^\(/.test(lineText())?"inner":"narr";return "say"}
 
-  /* ---- 곡: 타악기 없음(박자감이 '똑딱'으로 들리지 않게) ---- */
+  /* ---- 기존 합성 악보: 아래 __INN_PIANO가 일반 장면과 인물 테마를 녹음 기반 곡으로 교체한다.
+     콜드오픈의 짧은 합성과 정적·심박·효과음은 기존 연출을 유지한다. ---- */
   A.SONGS.inn_cold={bpm:60,vol:.85,prog:["Dm","Dm","Bb","A","Dm","Dm","Gm","A"],
    mel:[{n:"D5 _ _ _ . . . . | . . . . C5 _ A4 _ | Bb4 _ _ _ . . . . | A4 _ _ _ _ _ . . | D5 _ _ _ . . . . | . . . . E5 _ F5 _ | D5 _ _ _ Bb4 _ . . | C#5 _ _ _ _ _ . .",i:"glass",v:.07}],
    bass:{n:"1 _ _ _ _ _ _ _",i:"sub",v:.42,o:33},pad:{i:"string",v:.04,o:50},fx:"drone",echo:.4};
@@ -80,11 +81,12 @@
   window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
   window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
   window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine()}};
-  /* New original, sampled score. One musical motif connects the menu, road and
-     investigation; live synthesis remains for scene-specific council cues. */
+  /* Previous score is retained in Git. The complete piano score below replaces
+     whole song definitions, so old synthesized accompaniment cannot overlap. */
   A.SONGS.inn_title={bpm:70,vol:.9,prog:["Am"],mel:[],media:"audio/v2/title-v1.mp3"};
   A.SONGS.inn_travel={bpm:84,vol:.88,prog:["Am"],mel:[],media:"audio/v2/travel-v1.mp3"};
   A.SONGS.inn_inv={bpm:96,vol:.84,prog:["Am"],mel:[],media:"audio/v2/investigation-v1.mp3"};
+  Object.keys(window.__INN_PIANO||{}).forEach(function(k){A.SONGS[k]=window.__INN_PIANO[k]});
   Object.keys(A.SONGS).filter(function(k){return k.indexOf("inn_t_")===0}).forEach(function(k){A.SONGS[k].vol=Math.min(.9,A.SONGS[k].vol)});
   var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
   /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.

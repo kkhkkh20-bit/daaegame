@@ -5,8 +5,9 @@ from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path=shutil.which('chromium'), args=['--no-sandbox'])
     page = browser.new_page(viewport={'width': 844, 'height': 390})
-    errors = []
+    errors = []; bad=[]
     page.on('pageerror', lambda e: errors.append(str(e)))
+    page.on('response',lambda r:bad.append(r.url) if r.status>=400 and 'favicon' not in r.url else None)
     page.goto('http://127.0.0.1:8000/playT.html', wait_until='domcontentloaded')
     page.wait_for_timeout(16000)
     page.evaluate('''window.__T('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};');document.querySelector('#innmain').remove();window.__w209boot()''')
@@ -61,7 +62,7 @@ with sync_playwright() as p:
     assert not page.evaluate('window.__innAudioState().confession')
     stats = page.evaluate('''async()=>{
       const result={};
-      for(const key of ['inn_travel','inn_serious','inn_inv','inn_meet','inn_climax','inn_t_innma','inn_after','inn_meet_press','inn_climax_press']){
+      for(const key of Object.keys(window.__INN_PIANO)){
         const b=await __AUD.render(key,8);let peak=0,sum=0,clipped=0;
         for(let c=0;c<b.numberOfChannels;c++)for(const x of b.getChannelData(c)){
           if(!Number.isFinite(x))throw Error(key+' non-finite audio');
@@ -73,6 +74,14 @@ with sync_playwright() as p:
     for key, st in stats.items():
         assert st['rms'] > 0, (key, st)
         assert st['clipped'] == 0, (key, st)
+    cache=page.evaluate('__AUD.mediaCacheInfo()')
+    assert len(cache['urls'])<=3 and cache['bytes']<115_000_000,cache
+    assert page.evaluate('__AUD.SONGS.inn_meet_press.bpm>__AUD.SONGS.inn_meet.bpm && __AUD.SONGS.inn_climax_press.bpm>__AUD.SONGS.inn_climax.bpm')
+    # Render across a whole loop in Web Audio, accelerated offline.
+    loop=page.evaluate('''async()=>{const seconds=__AUD.SONGS.inn_title.loopSeconds,b=await __AUD.render('inn_title',seconds+3),x=b.getChannelData(0),offset=Math.round(seconds*b.sampleRate);let diff=0,power=0;for(let i=Math.round(.2*b.sampleRate);i<Math.round(1.2*b.sampleRate);i++){diff+=(x[i]-x[i+offset])**2;power+=x[i]**2}return {relativeError:Math.sqrt(diff/power),seconds}}''')
+    assert loop['relativeError']<.02,loop
     assert not errors, errors
+    assert not bad,bad
+    print('Piano score: 16 decoded cues, pressure tempo, bounded media cache and full title loop OK',cache,loop)
     print('Audio cues OK; offline 8-second samples (default mix, no live duck multiplier):', stats)
     browser.close()
