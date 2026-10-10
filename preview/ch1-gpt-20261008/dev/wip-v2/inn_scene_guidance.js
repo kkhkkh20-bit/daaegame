@@ -58,7 +58,7 @@
   sleepingBody(svg,'under-body');var defs=node('defs');svg.appendChild(defs);
   svg.appendChild(node('rect',{'class':'under-dark',x:760,y:520,width:650,height:285,fill:'#090807'}));
   var beam=node('radialGradient',{id:'inn-under-light',cx:'34%',cy:'56%',r:'62%'});beam.appendChild(node('stop',{offset:'0%','stop-color':'#f6d398','stop-opacity':'.22'}));beam.appendChild(node('stop',{offset:'100%','stop-color':'#f6d398','stop-opacity':'0'}));defs.appendChild(beam);svg.appendChild(node('rect',{'class':'under-beam',x:760,y:520,width:650,height:285,fill:'url(#inn-under-light)'}));
-  frame.appendChild(svg);var held=document.createElement('img');held.className='under-held';held.src='art/ch1/discovery/somsom-held.png';held.alt='';held.draggable=false;frame.appendChild(held);s.el=frame;
+  frame.appendChild(svg);var held=document.createElement('img');held.className='under-held';held.src='art/ch1/discovery/somsom-held.png?v=cute-paws-2';held.alt='';held.draggable=false;frame.appendChild(held);s.el=frame;
  }
  function record(s){
   if(!valid(s)){clear(s);return}

@@ -370,10 +370,13 @@
     return {say:"아빠, 침대 밑이 너무 어두워. 안쪽까지 한번 들여다보자.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
   /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
   var KEYOBS={o_under:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
-  function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!/^증거 수집 완료/.test(sm.textContent))return;var sc=document.getElementById("bigscene");if(!sc)return;
+  function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!inn()||!G.beats.inn_pro)return;var base=sm.dataset.innStatusBase||(sm.dataset.innStatusBase=sm.textContent);if(!/^(증거 수집 완료|모두 조사했어요)/.test(base))return;var sc=document.getElementById("bigscene");if(!sc)return;
     var k=[].slice.call(sc.querySelectorAll("[data-obs]")).filter(function(b){var id=b.dataset.obs,cs=getComputedStyle(b);return KEYOBS[id]&&G.found.indexOf(KEYOBS[id])<0&&cs.visibility!=="hidden"&&(G.obsSeen||[]).indexOf(id)<0}).length;
-    if(!k)return;var m=sm.textContent.match(/관찰\s*(\d+)/);sm.textContent="살펴볼 곳 "+(m?+m[1]:k)+"군데 남음"}catch(e){}}
+    if(k){var m=base.match(/관찰\s*(\d+)/);sm.textContent="살펴볼 곳 "+(m?+m[1]:k)+"군데 남음";return}
+    var c=CASES[G.ci],l=loc(),pending=0;(c.ppl&&c.ppl[l.id]||[]).forEach(function(p){if(c.talk&&c.talk[p[0]])pending+=visibleTalk(c,p[0]).filter(function(t){return (G.asked||[]).indexOf(t.id)<0}).length});
+    sm.textContent=pending?"물어볼 이야기 "+pending+"개 남음":base}catch(e){}}
   setInterval(statusFix,300);
+  var panLabel=document.createElement("style");panLabel.textContent='html body.w209.inn1 .stage.inn-world-stage .fsa[data-person]{width:auto!important;min-width:48px!important;padding:9px 12px!important;border-radius:5px!important;background:#2b211be8!important}html body.w209.inn1 .stage.inn-world-stage .fsa[data-person]::after{content:attr(data-person);display:inline-block;font:12px/1.2 Galmuri11,monospace;color:#f4e8cc;margin:0 5px;text-shadow:none}';document.head.appendChild(panLabel);
   /* 독립 QA ③: 넓은 화면(1180)에서 회의 말풍선이 왼쪽 위 상태판(설득력·시각·득표)을 가리던 것 → 겹치면 상태판 아래로 내린다 */
   function bubFix(){try{var b=document.querySelector("body>.rt .rt-bub");if(!b)return;var hs=["#rtgtop","#rtgtal","#rtgclk",".rt-clock"].map(function(q){return document.querySelector(q)}).filter(Boolean);if(!hs.length)return;
     var br=b.getBoundingClientRect(),dy=0;hs.forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;if(br.left<r.right&&br.right>r.left&&br.top<r.bottom&&br.bottom>r.top)dy=Math.max(dy,r.bottom+6-br.top)});
@@ -456,17 +459,29 @@
     if(!M.ready)return (Math.abs(u-.5)<.2&&v>.06&&v<.97)?255:0;var px=Math.floor(u*M.w),py=Math.floor(v*M.h),best=0;
     for(var dy=-R;dy<=R;dy++)for(var dx=-R;dx<=R;dx++){var X=px+dx,Y=py+dy;if(X<0||Y<0||X>=M.w||Y>=M.h)continue;var a=M.a[Y*M.w+X];if(a>best)best=a}return best}
   window.__innMask=function(){var o={};Object.keys(MASK).forEach(function(k){o[k]=MASK[k].ready?"ok":MASK[k].bad?"bad":"wait"});return o};
+  window.__innWarmNpcMask=function(src){if(src)maskOf(src)};
   function npcHit(sc,x,y){try{var sv=svgOf(sc);if(!sv)return null;
     /* 앞가림(식탁 상판 등)의 불투명 부분을 누르면 그 뒤 인물은 열지 않는다 */
     var occ=[].slice.call(sv.querySelectorAll("image.wo9")).some(function(im){return alphaAt(im,x,y,0)>60});if(occ)return null;
     var hit=null;[].slice.call(sv.querySelectorAll("image.wn9")).reverse().some(function(im){var bt=sc.querySelector('.npc.w9[data-npc="'+im.dataset.k+'"]');if(!bt||bt.dataset.nohit)return false;
       if(alphaAt(im,x,y,3)>60){hit=bt;return true}var tg=bt.querySelector("span");if(tg){var r=tg.getBoundingClientRect();if(r.width&&x>=r.left-4&&x<=r.right+4&&y>=r.top-4&&y<=r.bottom+4){hit=bt;return true}}return false});return hit}catch(e){return null}}
   window.__innNpcHit=function(x,y){var b=npcHit(document.getElementById("bigscene"),x,y);return b?b.dataset.npc:""};
+  var nativeFocusGame=null,nativeFocused={};
   function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[];var key=lid+"|"+L.length;   /* 나비는 너울을 부르러 갔다가, 찻주전자 발견 뒤 부엌에 돌아와 있다(찻주전자를 본 사람은 부녀뿐) */
     if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
      (WPX[lid]||[]).forEach(function(p){img(sv,p[0],p[1],p[2],p[3],p[4],"wp9")});
      L.forEach(function(n){var e=img(sv,n[1],n[2],n[3],n[4],n[5],"wn9");e.dataset.k=n[0];maskOf(n[1])});
      (OCC[lid]||[]).forEach(function(o){img(sv,o[0],o[1],o[2],o[3],o[4],"wo9");maskOf(o[0])});sv.dataset.wn9=key}
+    // These native rooms insert their world actor after fsLayout. Focus only
+    // after that insertion, once per game/room; later renders keep player pan.
+    if(nativeFocusGame!==G){nativeFocusGame=G;nativeFocused={}}
+    if(!sv.dataset.innWorld&&L.length&&!nativeFocused[lid]){
+      var fx=document.getElementById('fsscroll'),actor=sv.querySelector('image.wn9');
+      if(fx&&actor){var ar=actor.getBoundingClientRect(),fr=fx.getBoundingClientRect();
+        fx.scrollLeft=Math.max(0,Math.min(fx.scrollWidth-fx.clientWidth,fx.scrollLeft+ar.left+ar.width/2-fr.left-fx.clientWidth/2));
+        FSX[G.ci+':'+G.loc]=fx.scrollLeft;nativeFocused[lid]=true;fsArrows();
+      }
+    }
     /* 인물 단추를 그림 자리로(누름 영역 = 그림 사각형, 최소 48px). 옛 전신 그림은 숨긴다 */
     var m=sv.getScreenCTM(),br=sc.getBoundingClientRect();if(!m)return;
     L.forEach(function(n){var bt=sc.querySelector('.npc[data-npc="'+n[0]+'"]');if(!bt)return;bt.classList.add("w9");

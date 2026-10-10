@@ -3852,7 +3852,7 @@ function presentTo(c,who,item){
     say([[who,'"'+iname+'"? 그게 나랑 무슨 상관이야?',moodOf(c,who),"",lie?"smug":"huh"]],function(){render()});
   });
 }
-var FSX={};
+var FSX={},FSGame=null;
 function fsArrows(){var fx=document.getElementById("fsscroll"),l=document.getElementById("fsal"),r=document.getElementById("fsar");if(!fx||!l||!r)return;var m=fx.scrollWidth-fx.clientWidth;l.classList.toggle("on",fx.scrollLeft>8);r.classList.toggle("on",fx.scrollLeft<m-8)}
 function fsLayout(){
   var root=document.documentElement;
@@ -3863,8 +3863,13 @@ function fsLayout(){
   var sc=document.getElementById("bigscene"),fx=document.getElementById("fsscroll");
   if(sc&&fx){
     sc.style.setProperty("--u",(sc.getBoundingClientRect().height/200)+"px");
-    var key=G.ci+":"+G.loc,v=FSX[key];
-    fx.scrollLeft=v!=null?v:(fx.scrollWidth-fx.clientWidth)/2;
+    if(FSGame!==G){FSGame=G;FSX={}}
+    var key=G.ci+":"+G.loc,v=FSX[key],initial=(fx.scrollWidth-fx.clientWidth)/2;
+    if(v==null&&CASES[G.ci].id==='inn'){
+      var actor=sc.querySelector('image.wn9[data-k]');
+      if(actor){var ar=actor.getBoundingClientRect(),fr=fx.getBoundingClientRect();initial=fx.scrollLeft+ar.left+ar.width/2-fr.left-fx.clientWidth/2}
+    }
+    fx.scrollLeft=v!=null?v:Math.max(0,Math.min(fx.scrollWidth-fx.clientWidth,initial));
     fx.onscroll=function(){FSX[key]=fx.scrollLeft;fsArrows()};fsArrows();
     var l=document.getElementById("fsal"),r=document.getElementById("fsar");
     if(l)l.onclick=function(){SFX.tap();fx.scrollBy({left:-fx.clientWidth*.6,behavior:"smooth"})};
@@ -49533,15 +49538,19 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
 /* Original world PNGs and manifest cameras. Inventory flags never remove props. */
 (function(){
  var EP=window.EP1INN,D=window.__INN_WORLD_DATA;if(!EP||!D)return;
- var ROOT='art/ch1/locations/',pan=0;
+ var ROOT='art/ch1/locations/',panByRoom={},panGame=null;
  Object.assign(EP.BGS,{dining:{world:'dining'},kitchen:{world:'kitchen'},bed13:{world:'storage'}});
  Object.assign(EP.LOC_BG,{dining:'dining',kitchen:'kitchen',bed13:'bed13'});
  function active(){return G&&S.screen==='case'&&CASES[G.ci]&&CASES[G.ci].id==='inn'}
  function state(){var b=G&&G.beats||{};return {sun:!!(window.__innSun&&__innSun()),box:!!b.inn_lock,basket:window.__innDiscoveryTransferred===G||!!b.inn_basket_transferred||(G.obsSeen||[]).indexOf('o_under')>=0||(G.found||[]).indexOf('C04')>=0}}
- function camera(k){var w=innerWidth,h=innerHeight,s,x,y,vw,vh;
-  if(k==='dining'){vh=Math.min(768,Math.max(520,1125*h/w));vw=vh*w/h;x=pan*Math.max(0,2048-vw);y=Math.max(0,Math.min(768-vh,400-vh/2));s=h/vh}
-  else{s=Math.max(w/1774,h/887);vw=w/s;vh=h/s;x=(1774-vw)/2;y=(887-vh)/2}
-  return {x:x,y:y,w:vw,h:vh,scale:s,width:w,height:h,pan:pan};
+ function camera(k){var w=innerWidth,h=innerHeight,s,x,y,vw,vh,wide=k==='dining'?2048:1774;
+  if(panGame!==G){panGame=G;panByRoom={}}
+  if(k==='dining'){vh=Math.min(768,Math.max(520,1125*h/w));vw=vh*w/h;y=Math.max(0,Math.min(768-vh,400-vh/2));s=h/vh}
+  else{s=Math.max(w/1774,h/887);vw=w/s;vh=h/s;y=(887-vh)/2}
+  var range=Math.max(0,wide-vw),focus=k==='dining'?855.5:k==='kitchen'?999.5:wide/2;
+  if(panByRoom[k]==null)panByRoom[k]=range?Math.max(0,Math.min(1,(focus-vw/2)/range)):0;
+  var p=panByRoom[k];x=p*range;
+  return {x:x,y:y,w:vw,h:vh,scale:s,width:w,height:h,pan:p};
  }
  function rect(o){return [o.x,o.y,o.width,o.height]}
  function image(file,r,attr){return '<image '+(attr||'')+' href="'+ROOT+file+'" x="'+r[0]+'" y="'+r[1]+'" width="'+r[2]+'" height="'+r[3]+'" preserveAspectRatio="xMidYMid meet" style="image-rendering:pixelated"/>'}
@@ -49580,8 +49589,19 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
   im.setAttribute('viewBox',[c.x,c.y,c.w,c.h].join(' '));var fx=sc.parentElement;fx.scrollLeft=0;
   sc.querySelectorAll('[data-spot],[data-obs]').forEach(function(e){var id=e.dataset.spot||e.dataset.obs,r=anchors[k]&&anchors[k][id];if(r)position(e,r,c)});
   sc.querySelectorAll('[data-npc]').forEach(function(e){var r=npc[k]&&npc[k][e.dataset.npc];if(r)position(e,r,c)});
-  ['fsal','fsar'].forEach(function(id,j){var b=document.getElementById(id);if(!b)return;b.style.setProperty('display',k==='dining'?'block':'none','important');b.disabled=k==='dining'&&(j?pan>=1:pan<=0);b.onclick=function(e){e.preventDefault();e.stopPropagation();pan=j?1:0;update()}});
-  if(!sc.__worldDrag){sc.__worldDrag=true;var drag=null;sc.addEventListener('pointerdown',function(e){if(k!=='dining'||e.target.closest('button'))return;drag={x:e.clientX,p:pan};sc.setPointerCapture(e.pointerId)});sc.addEventListener('pointermove',function(e){if(!drag)return;var range=2048-camera('dining').w;pan=Math.max(0,Math.min(1,drag.p-(e.clientX-drag.x)/c.scale/range));update()});sc.addEventListener('pointerup',function(){drag=null});sc.addEventListener('pointercancel',function(){drag=null})}
+  ['fsal','fsar'].forEach(function(id,j){var b=document.getElementById(id);if(!b)return;var wide=k==='dining'?2048:1774,range=Math.max(0,wide-c.w),canPan=range>1;
+   b.style.setProperty('display',canPan?'block':'none','important');b.disabled=!canPan||(j?c.pan>=.999:c.pan<=.001);
+   var who=k==='dining'?[[855.5,'세련'],[1881,'할머니']]:k==='kitchen'?[[999.5,'나비'],[1505,'부리']]:[];
+   var out=who.filter(function(p){return j?p[0]>c.x+c.w:p[0]<c.x});if(j)out.sort(function(a,b){return a[0]-b[0]});else out.sort(function(a,b){return b[0]-a[0]});
+   if(out.length)b.dataset.person=out[0][1];else delete b.dataset.person;
+   b.setAttribute('aria-label',(j?'오른쪽':'왼쪽')+' 둘러보기'+(out.length?' · '+out[0][1]:''));
+   b.onclick=function(e){e.preventDefault();e.stopPropagation();if(DL||window.__dlFreeze)return;var now=camera(k);panByRoom[k]=Math.max(0,Math.min(1,now.pan+(j?1:-1)*Math.max(.15,now.w*.75/Math.max(1,range))));update()};
+  });
+  if(!sc.__worldDrag){sc.__worldDrag=true;var drag=null;
+   sc.addEventListener('pointerdown',function(e){if(DL||window.__dlFreeze||e.target.closest('button'))return;var now=camera(k),range=(k==='dining'?2048:1774)-now.w;if(range<=1)return;drag={x:e.clientX,p:now.pan,c:now,range:range};sc.setPointerCapture(e.pointerId)});
+   sc.addEventListener('pointermove',function(e){if(!drag)return;panByRoom[k]=Math.max(0,Math.min(1,drag.p-(e.clientX-drag.x)/drag.c.scale/drag.range));update()});
+   sc.addEventListener('pointerup',function(){drag=null});sc.addEventListener('pointercancel',function(){drag=null});
+  }
  }
  var pending=0;function schedule(){if(!pending)pending=requestAnimationFrame(function(){pending=0;update()})}
  var old=render;render=function(){var r=old.apply(this,arguments);update();return r};
@@ -50076,6 +50096,7 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
 })();
 
 
+window.__innStoryArt={"carriage": true, "village": true, "seal": true};
 /* ===== 1장 대화 무대 정리 (inn_stage) =====
    기준(2026-10-09 확정): 원탁 회의 밖의 대화는 아빠·다람과 상대 한 명. 화면은 아빠 시점이라 아빠 얼굴은 띄우지 않는다.
    1) 대화 상대 고정: 한 대화(대사 묶음)의 상대를 처음에 정해 끝까지 그 인물만 세운다. 다람·아빠가 말해도 상대를 바꾸지 않는다.
@@ -50105,6 +50126,9 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
   oops:"daram-ear-grab-signature-v1",shy:"daram-tail-hide-signature-v1",caught:"daram-tail-hide-caught-signature-v2",
   panic:"daram-surprised-front-v3",cower:"daram-worried-front-v3",joy:"daram-happy-front-v3",confront:"daram-determined-front-v3",mad:"daram-angry-front-v3"};
  function src(k,m){if(k==="wanggu")return window.__innNeoulSrc(m);
+  /* A room's seated work sprite must not override a standing dialogue actor.
+     The shared hook keeps stage expressions and question-screen posture aligned. */
+  var upright=window.__innPostureSrc&&window.__innPostureSrc(k,m);if(upright)return upright;
   if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(String(m||"")))return INNMA[pose(m,k)];
   var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
 if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
@@ -51324,10 +51348,13 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
     return {say:"아빠, 침대 밑이 너무 어두워. 안쪽까지 한번 들여다보자.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
   /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
   var KEYOBS={o_under:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
-  function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!/^증거 수집 완료/.test(sm.textContent))return;var sc=document.getElementById("bigscene");if(!sc)return;
+  function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!inn()||!G.beats.inn_pro)return;var base=sm.dataset.innStatusBase||(sm.dataset.innStatusBase=sm.textContent);if(!/^(증거 수집 완료|모두 조사했어요)/.test(base))return;var sc=document.getElementById("bigscene");if(!sc)return;
     var k=[].slice.call(sc.querySelectorAll("[data-obs]")).filter(function(b){var id=b.dataset.obs,cs=getComputedStyle(b);return KEYOBS[id]&&G.found.indexOf(KEYOBS[id])<0&&cs.visibility!=="hidden"&&(G.obsSeen||[]).indexOf(id)<0}).length;
-    if(!k)return;var m=sm.textContent.match(/관찰\s*(\d+)/);sm.textContent="살펴볼 곳 "+(m?+m[1]:k)+"군데 남음"}catch(e){}}
+    if(k){var m=base.match(/관찰\s*(\d+)/);sm.textContent="살펴볼 곳 "+(m?+m[1]:k)+"군데 남음";return}
+    var c=CASES[G.ci],l=loc(),pending=0;(c.ppl&&c.ppl[l.id]||[]).forEach(function(p){if(c.talk&&c.talk[p[0]])pending+=visibleTalk(c,p[0]).filter(function(t){return (G.asked||[]).indexOf(t.id)<0}).length});
+    sm.textContent=pending?"물어볼 이야기 "+pending+"개 남음":base}catch(e){}}
   setInterval(statusFix,300);
+  var panLabel=document.createElement("style");panLabel.textContent='html body.w209.inn1 .stage.inn-world-stage .fsa[data-person]{width:auto!important;min-width:48px!important;padding:9px 12px!important;border-radius:5px!important;background:#2b211be8!important}html body.w209.inn1 .stage.inn-world-stage .fsa[data-person]::after{content:attr(data-person);display:inline-block;font:12px/1.2 Galmuri11,monospace;color:#f4e8cc;margin:0 5px;text-shadow:none}';document.head.appendChild(panLabel);
   /* 독립 QA ③: 넓은 화면(1180)에서 회의 말풍선이 왼쪽 위 상태판(설득력·시각·득표)을 가리던 것 → 겹치면 상태판 아래로 내린다 */
   function bubFix(){try{var b=document.querySelector("body>.rt .rt-bub");if(!b)return;var hs=["#rtgtop","#rtgtal","#rtgclk",".rt-clock"].map(function(q){return document.querySelector(q)}).filter(Boolean);if(!hs.length)return;
     var br=b.getBoundingClientRect(),dy=0;hs.forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;if(br.left<r.right&&br.right>r.left&&br.top<r.bottom&&br.bottom>r.top)dy=Math.max(dy,r.bottom+6-br.top)});
@@ -51410,17 +51437,29 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
     if(!M.ready)return (Math.abs(u-.5)<.2&&v>.06&&v<.97)?255:0;var px=Math.floor(u*M.w),py=Math.floor(v*M.h),best=0;
     for(var dy=-R;dy<=R;dy++)for(var dx=-R;dx<=R;dx++){var X=px+dx,Y=py+dy;if(X<0||Y<0||X>=M.w||Y>=M.h)continue;var a=M.a[Y*M.w+X];if(a>best)best=a}return best}
   window.__innMask=function(){var o={};Object.keys(MASK).forEach(function(k){o[k]=MASK[k].ready?"ok":MASK[k].bad?"bad":"wait"});return o};
+  window.__innWarmNpcMask=function(src){if(src)maskOf(src)};
   function npcHit(sc,x,y){try{var sv=svgOf(sc);if(!sv)return null;
     /* 앞가림(식탁 상판 등)의 불투명 부분을 누르면 그 뒤 인물은 열지 않는다 */
     var occ=[].slice.call(sv.querySelectorAll("image.wo9")).some(function(im){return alphaAt(im,x,y,0)>60});if(occ)return null;
     var hit=null;[].slice.call(sv.querySelectorAll("image.wn9")).reverse().some(function(im){var bt=sc.querySelector('.npc.w9[data-npc="'+im.dataset.k+'"]');if(!bt||bt.dataset.nohit)return false;
       if(alphaAt(im,x,y,3)>60){hit=bt;return true}var tg=bt.querySelector("span");if(tg){var r=tg.getBoundingClientRect();if(r.width&&x>=r.left-4&&x<=r.right+4&&y>=r.top-4&&y<=r.bottom+4){hit=bt;return true}}return false});return hit}catch(e){return null}}
   window.__innNpcHit=function(x,y){var b=npcHit(document.getElementById("bigscene"),x,y);return b?b.dataset.npc:""};
+  var nativeFocusGame=null,nativeFocused={};
   function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[];var key=lid+"|"+L.length;   /* 나비는 너울을 부르러 갔다가, 찻주전자 발견 뒤 부엌에 돌아와 있다(찻주전자를 본 사람은 부녀뿐) */
     if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
      (WPX[lid]||[]).forEach(function(p){img(sv,p[0],p[1],p[2],p[3],p[4],"wp9")});
      L.forEach(function(n){var e=img(sv,n[1],n[2],n[3],n[4],n[5],"wn9");e.dataset.k=n[0];maskOf(n[1])});
      (OCC[lid]||[]).forEach(function(o){img(sv,o[0],o[1],o[2],o[3],o[4],"wo9");maskOf(o[0])});sv.dataset.wn9=key}
+    // These native rooms insert their world actor after fsLayout. Focus only
+    // after that insertion, once per game/room; later renders keep player pan.
+    if(nativeFocusGame!==G){nativeFocusGame=G;nativeFocused={}}
+    if(!sv.dataset.innWorld&&L.length&&!nativeFocused[lid]){
+      var fx=document.getElementById('fsscroll'),actor=sv.querySelector('image.wn9');
+      if(fx&&actor){var ar=actor.getBoundingClientRect(),fr=fx.getBoundingClientRect();
+        fx.scrollLeft=Math.max(0,Math.min(fx.scrollWidth-fx.clientWidth,fx.scrollLeft+ar.left+ar.width/2-fr.left-fx.clientWidth/2));
+        FSX[G.ci+':'+G.loc]=fx.scrollLeft;nativeFocused[lid]=true;fsArrows();
+      }
+    }
     /* 인물 단추를 그림 자리로(누름 영역 = 그림 사각형, 최소 48px). 옛 전신 그림은 숨긴다 */
     var m=sv.getScreenCTM(),br=sc.getBoundingClientRect();if(!m)return;
     L.forEach(function(n){var bt=sc.querySelector('.npc[data-npc="'+n[0]+'"]');if(!bt)return;bt.classList.add("w9");
@@ -51847,7 +51886,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   sleepingBody(svg,'under-body');var defs=node('defs');svg.appendChild(defs);
   svg.appendChild(node('rect',{'class':'under-dark',x:760,y:520,width:650,height:285,fill:'#090807'}));
   var beam=node('radialGradient',{id:'inn-under-light',cx:'34%',cy:'56%',r:'62%'});beam.appendChild(node('stop',{offset:'0%','stop-color':'#f6d398','stop-opacity':'.22'}));beam.appendChild(node('stop',{offset:'100%','stop-color':'#f6d398','stop-opacity':'0'}));defs.appendChild(beam);svg.appendChild(node('rect',{'class':'under-beam',x:760,y:520,width:650,height:285,fill:'url(#inn-under-light)'}));
-  frame.appendChild(svg);var held=document.createElement('img');held.className='under-held';held.src='art/ch1/discovery/somsom-held.png';held.alt='';held.draggable=false;frame.appendChild(held);s.el=frame;
+  frame.appendChild(svg);var held=document.createElement('img');held.className='under-held';held.src='art/ch1/discovery/somsom-held.png?v=cute-paws-2';held.alt='';held.draggable=false;frame.appendChild(held);s.el=frame;
  }
  function record(s){
   if(!valid(s)){clear(s);return}
@@ -51881,6 +51920,256 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  // Hints may still name the dark space, but never draw a target around it.
  try{var point=window.__pointAt;window.__pointAt=function(sels,ms){if(inn()){var list=Array.isArray(sels)?sels:[sels];if(list.some(function(sel){return typeof sel==='string'&&sel.indexOf('o_under')>=0})){window.__clearPt&&window.__clearPt();list=list.filter(function(sel){return typeof sel!=='string'||sel.indexOf('o_under')<0});if(!list.length)return;return point(list,ms)}}return point.apply(this,arguments)}}catch(e){}
  setInterval(function(){try{traces();if(shot&&!valid(shot))clear(shot)}catch(e){}},160);
+})();
+
+/* Chapter 1 physical puzzles. Native proof IDs, consent and meeting gates stay
+   authoritative: the lock opens its box; the optional ink study grants no item. */
+(function(){
+ var active=null,pending=null,EP=window.EP1INN;if(!EP||!EP.LOCK)return;
+ function inn(){return !!(S.screen==='case'&&G&&CASES[G.ci]&&CASES[G.ci].id==='inn')}
+ function has(id){return !!(G&&(G.found||[]).indexOf(id)>=0)}
+ function readDate(){return !!(G&&(G.obsSeen||[]).indexOf('o_inn_head2')>=0)}
+ function available(){return inn()&&G.beats&&G.beats.inn_pro&&!DL&&!window.__dlFreeze&&!window.__innCutting&&!document.querySelector('body>.rt,#innmove,#wmap,.banner,.placecard,#innopt,.innconf,#innppl,#e9pop,#w209rail.more')}
+ function valid(s){return !!(s&&active===s&&G===s.game&&inn()&&!DL&&G.loc===s.loc&&G.tab===s.tab&&s.panel&&s.panel.isConnected)}
+ function save(){try{saveProg()}catch(e){}}
+ function beat(k,v){G.beats=G.beats||{};G.beats[k]=v;save()}
+ function sound(k){try{SFX[k]&&SFX[k]()}catch(e){}}
+ var paths={calendar:'<path d="M4 6h16v15H4zM4 10h16M8 3v5M16 3v5M8 14h2M14 14h2M8 18h2"/>',day:'<path d="M4 6h16v15H4zM4 10h16M8 3v5M16 3v5M12 13v5M10 18h4"/>',up:'<path d="m6 15 6-6 6 6"/>',down:'<path d="m6 9 6 6 6-6"/>',hint:'<path d="M8 16a7 7 0 1 1 8 0v2H8zM9 21h6"/>',back:'<path d="m10 5-7 7 7 7M3 12h12a5 5 0 0 1 5 5"/>',lock:'<path d="M6 10h12v11H6zM8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',mirror:'<path d="M12 2v20M3 6l6 6-6 6zM21 6l-6 6 6 6z"/>',overlap:'<path d="M3 3h12v12H3zM9 9h12v12H9z"/>',ok:'<path d="m4 12 5 5L20 5"/>'};
+ function icon(k){return '<svg viewBox="0 0 24 24" fill="none" stroke="#59442d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[k]||paths.lock)+'</svg>'}
+ function button(k,label,id){return '<button type="button" class="rp-action" id="'+id+'" aria-label="'+label+'">'+icon(k)+'<span>'+label+'</span></button>'}
+ function close(s,focus){if(!s||active!==s)return;active=null;if(s.panel&&s.panel.isConnected)closeModal();if(focus!==false&&s.origin&&s.origin.isConnected)try{s.origin.focus({preventScroll:true})}catch(e){}}
+ function show(s,html,bind){
+  if(active)close(active,false);active=s;s.loc=G.loc;s.tab=G.tab;s.ready=performance.now()+650;
+  modal(html,function(){s.panel=document.querySelector('#mveil .modal');s.panel.classList.add('inn-room-puzzle');s.panel.dataset.puzzle=s.kind;s.panel.setAttribute('aria-modal','true');s.panel.setAttribute('aria-label',s.kind==='date'?'숫자 자물쇠: 달과 날':'털 자국과 봉인띠 비교');
+   document.getElementById('mveil').onclick=function(e){if(e.target.id==='mveil')close(s)};bind();
+  });
+ }
+ function message(s,text){var el=s.panel&&s.panel.querySelector('.rp-message');if(el)el.textContent=text}
+ function rememberDigits(s){if(!valid(s))return;for(var i=0;i<4;i++)G.beats['inn_pin_d'+i]=s.digits[i];save()}
+ function digit(s,i,step){if(!valid(s)||performance.now()<s.ready)return;s.digits[i]=(s.digits[i]+step+10)%10;paintDigits(s);rememberDigits(s);sound('tap')}
+ function paintDigits(s){s.panel.querySelectorAll('#innpad [data-d]').forEach(function(b){var i=+b.dataset.d;b.textContent=s.digits[i];b.setAttribute('aria-label',(i<2?'달':'날')+' '+(i%2?'둘째':'첫째')+' 자리 '+s.digits[i])})}
+ function clue(s){var p=s.panel.querySelector('.rp-clue');p.textContent=readDate()?EP.LOCK.clue:'머리판에 남은 자국을 먼저 살펴보자.'}
+ function hint(s){if(!valid(s)||performance.now()<s.ready)return;s.hint=Math.min(2,s.hint+1);beat('inn_pin_hint',s.hint);beat('inn_lockhint',1);clue(s);message(s,!readDate()?'머리판을 직접 살펴보면 숫자의 뜻을 알 수 있을 거야.':s.hint===1?'날짜를 옮겨 보자. 달 두 칸, 날 두 칸.':'한 자리 날짜도 두 칸에 넣어야 해.');sound('tap')}
+ function unlock(s){if(!valid(s)||performance.now()<s.ready)return;
+  if(s.digits.join('')!==EP.LOCK.code){message(s,readDate()?'딸깍… 그대로야. 달과 날을 두 칸씩 넣었을까?':'딸깍… 그대로야. 머리판의 자국을 먼저 읽어 보자.');sound('huh');return}
+  var game=s.game;close(s,false);if(G!==game||!inn())return;beat('inn_lock',1);
+  say(EP.LOCK.open.map(function(x){return x.slice()}),function(){if(G===game&&inn())render()});
+ }
+ function openDate(origin){if(!available()||G.beats.inn_lock||active||pending)return;var game=G;
+  if(EP.LOCK.permission&&!G.beats.inn_ledger_permission){var room=G.loc,tab=G.tab;say(EP.LOCK.permission.map(function(x){return x.slice()}),function(){if(G!==game||!inn()||G.loc!==room||G.tab!==tab)return;beat('inn_ledger_permission',1);
+    // endDlg intentionally holds its previous frame for 700ms. The final
+    // authored @dir lasts only 300ms, so its callback can precede that release.
+    var wait={game:game,loc:room,tab:tab};pending=wait;var until=performance.now()+1800;(function ready(){if(pending!==wait)return;if(G!==game||!inn()||G.loc!==room||G.tab!==tab||G.beats.inn_lock||active||DL||window.__innCutting||document.querySelector('body>.rt,#innmove,#wmap,.banner,.placecard,#ov .modal,.crec2,#innopt,.innconf,#w209rail.more')){pending=null;return}if(available()){pending=null;openDate(origin);return}if(performance.now()<until)setTimeout(ready,40);else pending=null})();
+   });return}
+  var s={kind:'date',game:game,origin:origin,digits:[0,1,2,3].map(function(i){var v=G.beats['inn_pin_d'+i];return Number.isInteger(v)&&v>=0&&v<=9?v:0}),hint:G.beats.inn_pin_hint||0};
+  var h='<header class="rp-heading">'+icon('lock')+'<b>숫자 자물쇠</b></header><p class="rp-clue"></p><div class="rp-date" id="innpad">';
+  [['calendar','달',0],['day','날',2]].forEach(function(g){h+='<section class="rp-date-group"><div class="rp-date-label">'+icon(g[0])+'<span>'+g[1]+'</span></div><div class="rp-wheels">';for(var j=g[2];j<g[2]+2;j++)h+='<div class="rp-wheel"><button type="button" class="rp-number" data-d="'+j+'" title="누르면 한 칸 올라가요">0</button><button type="button" data-digit="'+j+'" data-step="-1" aria-label="'+g[1]+' '+(j%2?'둘째':'첫째')+' 자리 내리기">'+icon('down')+'</button></div>';h+='</div></section>'});
+  h+='</div><div class="rp-actions">'+button('hint','도움','innhint')+button('back','닫기','innclose')+button('lock','열기','innopen')+'</div><p class="rp-message" id="innmsg" role="status" aria-live="polite">작은 손님을 돌본 기록이 있을까.</p>';
+  show(s,h,function(){clue(s);paintDigits(s);s.panel.querySelectorAll('[data-digit]').forEach(function(b){b.onclick=function(){digit(s,+b.dataset.digit,+b.dataset.step)}});s.panel.querySelectorAll('[data-d]').forEach(function(b){b.onclick=function(){digit(s,+b.dataset.d,1)}});
+   document.getElementById('innhint').onclick=function(){hint(s)};document.getElementById('innclose').onclick=function(){close(s)};document.getElementById('innopen').onclick=function(){unlock(s)};s.panel.querySelector('[data-d="0"]').focus({preventScroll:true});
+  });
+ }
+ function mirrorPaint(s){var mark=s.panel.querySelector('.rp-ink-mark');mark.style.transform=s.mirrored?'scaleX(-1)':'none';s.panel.querySelector('#rp-mirror').setAttribute('aria-pressed',String(s.mirrored));s.panel.dataset.overlaid=String(s.overlaid);s.panel.querySelector('#rp-overlap').setAttribute('aria-pressed',String(s.overlaid));}
+ function mirror(s){if(!valid(s)||performance.now()<s.ready)return;s.mirrored=!s.mirrored;s.overlaid=false;beat('inn_ink_mirror',s.mirrored?1:0);mirrorPaint(s);message(s,'기록 그림을 뒤집어 봉인띠와 비교해.');sound('page')}
+ function compare(s){if(!valid(s)||performance.now()<s.ready)return;
+  if(!s.mirrored){s.overlaid=false;mirrorPaint(s);message(s,'글씨의 방향이 달라. 털 자국을 옮긴 종이를 뒤집어 볼까?');sound('huh');return}
+  s.overlaid=!s.overlaid;mirrorPaint(s);if(s.overlaid){beat('inn_ink_compared',1);message(s,'글씨와 별이 같은 방향이야. 왜 묻었는지는 회의에서 확인하자.');sound('select')}else message(s,'원래 기록 두 장을 나란히 살펴보자.');
+ }
+ function openInk(origin){if(!available()||!has('C01')||!has('C05')||active)return;
+  var s={kind:'ink',game:G,origin:origin,mirrored:!!G.beats.inn_ink_mirror,overlaid:false};
+  var h='<header class="rp-heading">'+icon('overlap')+'<b>붉은 자국 비교</b></header><p class="rp-clue">털 자국을 옮긴 종이와 봉인띠</p><div class="rp-ink-board"><section class="rp-seal"><span>봉인띠</span><div class="rp-ink-crop"><img src="art/ch1/closeup/I1-seal-strip-complete-512.png" alt="봉인띠의 세련 글씨와 꼬리가 말린 별"></div></section><section class="rp-trace"><span>털 자국 기록</span><div class="rp-ink-crop"><div class="rp-ink-mark"><img src="art/ch1/closeup/dormouse-flank-exact-overlay-512.png" alt="털 자국을 옮긴 거울상 기록"></div></div></section></div><div class="rp-actions">'+button('mirror','뒤집기','rp-mirror')+button('overlap','겹치기','rp-overlap')+button('back','닫기','rp-close')+'</div><p class="rp-message" role="status" aria-live="polite">기록 그림을 뒤집어 봉인띠와 비교해.</p>';
+  show(s,h,function(){mirrorPaint(s);document.getElementById('rp-mirror').onclick=function(){mirror(s)};document.getElementById('rp-overlap').onclick=function(){compare(s)};document.getElementById('rp-close').onclick=function(){close(s)};document.getElementById('rp-mirror').focus({preventScroll:true})});
+ }
+ // Catch the native lock only after inn_input's window capture guard has allowed
+ // this gesture. A dialogue that is still active never starts a puzzle.
+ window.addEventListener('click',function(e){if(!inn()||!e.target.closest)return;if(pending&&e.target.closest('#w209rail,#w209more'))pending=null;var b=e.target.closest('#bigscene [data-obs="o_inn_lock"]');if(!b)return;e.stopImmediatePropagation();e.preventDefault();if(available())openDate(b)},true);
+ function attachInk(){if(!available()||!has('C01')||!has('C05'))return;
+  var records=document.querySelector('.crec2'),selected=records&&records.querySelector('.cr-th.on'),id=selected&&selected.dataset.crs;
+  var detail=records&&records.querySelector('.cr-det .cr-tx'),inspect=document.querySelector('#innins .ihd b'),host=null;
+  if(detail&&(id==='C01'||id==='C05'))host=detail.querySelector('.orig9 .e9opt');
+  else if(inspect&&/옆구리털/.test(inspect.textContent))host=document.querySelector('#innins .ibtns');
+  document.querySelectorAll('[data-room-puzzle="ink"]').forEach(function(b){if(b.parentNode!==host)b.remove()});
+  if(!host||host.querySelector('[data-room-puzzle="ink"]'))return;
+  var b=document.createElement('button');b.type='button';b.className='rp-study';b.dataset.roomPuzzle='ink';b.innerHTML=icon('overlap')+'<span>겹쳐 보기</span>';b.setAttribute('aria-label','털 자국과 봉인띠 겹쳐 보기');b.onclick=function(e){e.stopPropagation();openInk(b)};host.appendChild(b);
+ }
+ window.addEventListener('keydown',function(e){if(pending&&e.key==='Escape'){pending=null;e.preventDefault();e.stopImmediatePropagation();return}var s=active;if(!s)return;if(!valid(s)){close(s,false);return}
+  if(e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();close(s);return}
+  if(e.key==='Tab'){var bs=Array.prototype.slice.call(s.panel.querySelectorAll('button:not(:disabled)')),at=bs.indexOf(document.activeElement);e.preventDefault();e.stopImmediatePropagation();bs[(at+(e.shiftKey?-1:1)+bs.length)%bs.length].focus();return}
+  if(e.repeat||performance.now()<s.ready){e.preventDefault();e.stopImmediatePropagation();return}
+  var b=document.activeElement,index=b&&b.dataset.d!=null?+b.dataset.d:0;
+  if(s.kind==='date'&&/^\d$/.test(e.key)){e.preventDefault();e.stopImmediatePropagation();s.digits[index]=+e.key;paintDigits(s);rememberDigits(s);s.panel.querySelector('[data-d="'+Math.min(3,index+1)+'"]').focus();sound('tap');return}
+  if(s.kind==='date'&&/^Arrow/.test(e.key)){e.preventDefault();e.stopImmediatePropagation();if(e.key==='ArrowUp'||e.key==='ArrowDown')digit(s,index,e.key==='ArrowUp'?1:-1);else s.panel.querySelector('[data-d="'+((index+(e.key==='ArrowRight'?1:3))%4)+'"]').focus();return}
+  if(s.kind==='date'&&e.key==='Backspace'){e.preventDefault();e.stopImmediatePropagation();s.digits[index]=0;paintDigits(s);rememberDigits(s);s.panel.querySelector('[data-d="'+Math.max(0,index-1)+'"]').focus();return}
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopImmediatePropagation();if(s.kind==='date'&&b&&b.dataset.d!=null)unlock(s);else if(b&&s.panel.contains(b)&&typeof b.onclick==='function')b.onclick();}
+ },true);
+ // Unlike the original boolean-only beat sanitizer, preserve only our bounded
+ // integer drafts. Old saves without these fields still open at 0000.
+ var sanitize=sanitizeState;sanitizeState=function(d){var keys=['inn_pin_d0','inn_pin_d1','inn_pin_d2','inn_pin_d3','inn_pin_hint'],g=d&&d.prog&&d.prog.inn,raw={};keys.forEach(function(k){if(g&&g.beats){var v=g.beats[k],max=k==='inn_pin_hint'?2:9;if(Number.isInteger(v)&&v>=0&&v<=max)raw[k]=v}});var out=sanitize(d),n=out.prog&&out.prog.inn;if(n&&n.beats)keys.forEach(function(k){delete n.beats[k];if(Object.prototype.hasOwnProperty.call(raw,k))n.beats[k]=raw[k]});return out};
+ // Keep the information boundary even if another integration calls the legacy
+ // pad. Opening a UI does not count as observing the authored headboard.
+ var authoredClue=EP.LOCK.clue;
+ Object.defineProperty(EP.LOCK,'clue',{configurable:true,enumerable:true,get:function(){return readDate()?authoredClue:'머리판에 남은 자국을 먼저 살펴보자.'}});
+ Object.defineProperty(EP.LOCK,'hint',{configurable:true,enumerable:true,get:function(){return ['det1',readDate()?'날짜를 옮겨 보자. 달 두 칸, 날 두 칸.':'머리판을 직접 살펴보면 숫자의 뜻을 알 수 있을 거야.']}});
+ var css=document.createElement('style');css.id='inn-room-puzzle-style';css.textContent=`
+ html body.inn1 #ov:has(.inn-room-puzzle){z-index:205!important}
+ html body.inn1 #ov #mveil:has(.inn-room-puzzle){z-index:205!important;background:#11131ab8}
+ html body.inn1 #ov .modal.inn-room-puzzle{box-sizing:border-box!important;display:block!important;gap:0!important;width:min(580px,calc(100vw - 24px))!important;max-width:none!important;max-height:calc(100vh - 20px)!important;overflow:auto!important;min-height:0!important;padding:15px 20px 12px!important;border:2px solid #947248!important;border-radius:8px!important;background:#f5eddb!important;color:#493725!important;box-shadow:0 8px 24px #07080a80!important;text-align:center!important;background-image:none!important}
+ html body.inn1 #ov .inn-room-puzzle::before,html body.inn1 #ov .inn-room-puzzle::after{display:none!important}
+ .inn-room-puzzle .rp-heading{display:flex;align-items:center;justify-content:center;gap:9px;font:19px/1.3 var(--display,sans-serif);margin:0}
+ .inn-room-puzzle svg,.rp-study svg{display:block;width:24px;height:24px;flex:none;pointer-events:none}
+ .inn-room-puzzle .rp-clue{font:13px/1.5 var(--display,sans-serif);margin:8px 0 12px!important;min-height:20px}
+ .inn-room-puzzle .rp-date{display:flex!important;justify-content:center;gap:26px!important;margin:0 0 12px!important}
+ .inn-room-puzzle .rp-date-label{display:flex;align-items:center;justify-content:center;gap:6px;font:12px/1.3 var(--display,sans-serif);margin-bottom:5px}
+ .inn-room-puzzle .rp-wheels{display:flex;gap:6px}.inn-room-puzzle .rp-wheel{display:grid;gap:3px}
+ html body.inn1 #ov .inn-room-puzzle .rp-wheel button{all:unset;display:flex!important;box-sizing:border-box!important;align-items:center;justify-content:center;width:52px!important;height:44px!important;min-height:0!important;color:#493725!important;background:#e5d6b5!important;border:1px solid #ad946a!important;border-radius:3px!important;cursor:pointer!important}
+ html body.inn1 #ov .inn-room-puzzle .rp-wheel .rp-number{height:52px!important;background:#fff9ec!important;font:28px/1 var(--display,sans-serif)!important;border:2px solid #8c7350!important}
+ .inn-room-puzzle .rp-actions{display:flex;justify-content:center;gap:8px}
+ html body.inn1 #ov .inn-room-puzzle .rp-action,.rp-study{all:unset;box-sizing:border-box!important;display:inline-flex!important;align-items:center;justify-content:center;gap:6px;cursor:pointer!important;border:1px solid #aa8f61!important;border-radius:4px!important;background:#e8d8b6!important;color:#493725!important;font:13px/1.2 var(--display,sans-serif)!important;min-height:44px!important;padding:7px 12px!important;white-space:nowrap!important}
+ html body.inn1 #ov .inn-room-puzzle .rp-action{flex:1;max-width:154px}
+ html body.inn1 #ov .inn-room-puzzle .rp-action[aria-pressed="true"]{background:#d2c28e!important;border-color:#695733!important}
+ html body.inn1 #ov .inn-room-puzzle button:focus-visible,.rp-study:focus-visible{outline:3px solid #3c706d!important;outline-offset:2px!important}
+ .inn-room-puzzle .rp-message{font:12px/1.5 var(--display,sans-serif);min-height:36px!important;margin:9px 0 0!important;color:#6f5337!important}
+ .rp-study{position:relative!important;z-index:1;margin:8px 0!important;flex:none!important}.rp-study svg{width:21px;height:21px}
+ /* Native all:unset removed the relative anchor from these buttons. Their
+    enlarged ::after areas then covered the entire 562px record detail panel. */
+ html body.w209.inn1 .crec2 .orig9 .e9opt button.e9b{position:relative!important}
+ .inn-room-puzzle .rp-ink-board{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px;height:190px;margin:0 0 12px}
+ .inn-room-puzzle .rp-ink-board section{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:0;background:#ede0c4;border:1px solid #b7a078;border-radius:4px;font:12px/1.3 var(--display,sans-serif)}
+ .inn-room-puzzle .rp-ink-board section>span{position:absolute;top:4px;left:0;right:0;text-align:center}
+ .inn-room-puzzle .rp-ink-crop{position:relative;flex:none;width:110px;height:145px;overflow:hidden;image-rendering:pixelated}
+ .inn-room-puzzle .rp-seal img{position:absolute;width:512px;max-width:none!important;height:512px;left:-201px;top:-159px;image-rendering:pixelated}
+ .inn-room-puzzle .rp-ink-mark{position:absolute;inset:0;transform-origin:55px 72.5px}
+ .inn-room-puzzle .rp-trace img{position:absolute;width:512px;max-width:none!important;height:512px;left:-201px;top:-159px;image-rendering:pixelated}
+ .inn-room-puzzle[data-overlaid="true"] .rp-ink-board{display:block}
+ .inn-room-puzzle[data-overlaid="true"] .rp-ink-board section{position:absolute;left:50%;top:0;transform:translateX(-50%);width:220px;height:190px}
+ .inn-room-puzzle[data-overlaid="true"] .rp-trace{border-color:transparent;background:transparent!important}
+ .inn-room-puzzle[data-overlaid="true"] .rp-trace>span{visibility:hidden}
+ .inn-room-puzzle[data-overlaid="true"] .rp-trace .rp-ink-crop{opacity:.58}
+ @media(max-height:430px){html body.inn1 #ov .modal.inn-room-puzzle{padding:10px 16px 8px!important}.inn-room-puzzle .rp-clue{margin:5px 0 7px!important}.inn-room-puzzle .rp-date{margin-bottom:9px!important}.inn-room-puzzle .rp-date-label{margin-bottom:3px}html body.inn1 #ov .inn-room-puzzle .rp-wheel button{height:44px!important}html body.inn1 #ov .inn-room-puzzle .rp-wheel .rp-number{height:44px!important}.inn-room-puzzle .rp-ink-board{height:160px;margin-bottom:9px}.inn-room-puzzle[data-overlaid="true"] .rp-ink-board section{height:160px}.inn-room-puzzle .rp-message{margin-top:7px!important;min-height:32px!important}}
+ @media(prefers-reduced-motion:no-preference){.inn-room-puzzle .rp-ink-mark{transition:transform .25s ease}.inn-room-puzzle{animation:rp-appear .18s ease-out}@keyframes rp-appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}}
+ `;document.head.appendChild(css);
+ setInterval(function(){if(active&&(!valid(active)||(active.kind==='date'&&G.beats.inn_lock)))close(active,false);if(!active)attachInk()},180);
+})();
+
+/* 1장 자세 구분. 배경 NPC의 작업 자세와 대화 배우의 서 있는 자세를 분리한다.
+   기존 승인 그림만 재사용한다. 회의 좌석/증거·소품 지급/핫스폿은 건드리지 않는다. */
+(function(){
+ 'use strict';
+ var ROOT='art/ch1/',standing={
+  nabi:ROOT+'cast/nabi-front.png',karo:ROOT+'cast/karo-front.png',
+  doto:ROOT+'cast/doto-v4-182.png',buri:'art/body/buri-0.png',
+  seryeon:ROOT+'cast/seryeon-normal-front-v1.png'
+ };
+ var props={
+  bed13:{icon:'bed',actors:[],role:'침대·보관함',additional:[]},
+  hall:{icon:'hall',actors:['geokkuri'],role:'문·복도 시계',additional:[]},
+  dotoroom:{icon:'room',actors:['doto'],role:'기록하는 방',additional:[ROOT+'props/doto_room/prop_weather_notebook_open_rgba.png',ROOT+'props/doto_room/prop_bookstack_rgba.png',ROOT+'props/doto_room/prop_pencilcup_rgba.png']},
+  front:{icon:'desk',actors:['wanggu'],role:'접수대·기록',additional:[]},
+  dining:{icon:'table',actors:['innma','seryeon'],role:'식탁·서류',additional:[]},
+  kitchen:{icon:'pot',actors:['nabi','buri'],role:'조리 도구·책',additional:[]},
+  plaza:{icon:'tree',actors:['karo'],role:'여관 밖·우편 가방',additional:[]}
+ };
+ function active(){try{return S.screen==='case'&&G&&CASES[G.ci].id==='inn'}catch(e){return false}}
+ var lastDialogue=null,heldMoods={};
+ function mood(k,m){
+  var dl=null;try{dl=DL}catch(e){}
+  if(dl!==lastDialogue){lastDialogue=dl;heldMoods={}}
+  if(m!=null)return String(m).split(/\s+/)[0];
+  try{var l=dl&&dl.lines&&dl.lines[dl.i];if(l&&(Array.isArray(l)?l[0]:l.w)===k)heldMoods[k]=window.__innMood?window.__innMood(l):''}catch(e){}
+  return heldMoods[k]||'';
+ }
+ function source(k,m){
+  if(!active())return null;var f=mood(k,m);
+  if(k==='geokkuri')return ROOT+'action-poses/bami/dialogue.png'; // feet remain attached to ceiling
+  if(k==='innma')return window.__innGrandmaSrc?window.__innGrandmaSrc(f):ROOT+'cast/innma-neutral-v5.png';
+  if(k==='seryeon')return ROOT+'cast/seryeon-'+(/^(nervous|shock|panic|angry|mad|surprise)$/.test(f)?'surprise':'normal')+'-front-v1.png';
+  if(k==='buri'&&/^(shock|surprise|panic)$/.test(f))return 'art/body/buri-2.png';
+  return standing[k]||null;
+ }
+ window.__innPostureSrc=source;
+ /* __innPose is only consumed by stage and .fstalk, not world NPC draw/alphaHit.
+    Wrapping it also fixes the native question-screen updater in inn_ui9. */
+ var previous=window.__innPose;
+ window.__innPose=function(k){var f=source(k);return f||(previous&&previous.apply(this,arguments))||null};
+ // World alpha-hit reads each live SVG image href, so changing its paint
+ // also changes the alpha source; native buttons, data-npc and handlers stay.
+ // Visible alpha rectangles retain the old feet (world y=694) and actor centre.
+ var WORLD_STANDING={
+  nabi:{src:standing.nabi,r:[767.5454545,161.3636364,549.8181818,549.8181818],foot:[999.5,694]},
+  buri:{src:standing.buri,r:[1377.472067,290.346369,301.631285,403.653631],foot:[1505,694]}
+ };
+ function worldStanding(){
+  var sc=document.getElementById('bigscene');if(!sc)return;
+  var room;try{room=CASES[G.ci].locations[G.loc].id}catch(e){}if(room!=='kitchen')return;
+  sc.querySelectorAll('image.wn9').forEach(function(im){var spec=WORLD_STANDING[im.dataset.k];if(!spec)return;
+   // Reuse the engine's alpha cache before any pointer reaches a new pose.
+   if(window.__innWarmNpcMask)window.__innWarmNpcMask(spec.src);
+   if(im.getAttribute('href')!==spec.src)im.setAttribute('href',spec.src);
+   ['x','y','width','height'].forEach(function(k,i){if(im.getAttribute(k)!==String(spec.r[i]))im.setAttribute(k,spec.r[i])});
+   im.dataset.posture='standing';im.setAttribute('preserveAspectRatio','xMidYMid meet');
+  });
+ }
+ // The atlas remains disabled until its actual transparency/grid is reviewed.
+ // Never request a candidate or nonexistent image. Root enables the inspected
+ // dimensions here (or through the explicit QA helper) once generation ends.
+ var ATLAS={ready:true,src:ROOT+'props/inn-set-dressing-v1.png',width:1254,height:1254,
+  // Inspected RGBA source: nominal 418px cells bleed (bag strap, crate leaves).
+  // Tight SVG views include each entire object and exclude neighbouring pixels.
+  crops:[[15,120,430,317],[460,90,353,340],[838,110,398,318],
+         [82,455,280,340],[422,447,409,347],[846,503,384,281],
+         [35,858,441,325],[470,818,390,374],[880,893,354,287]]};
+ var clipSerial=0;
+ var DECOR={
+  dining:[{cell:4,r:[1200,369,100,60]},{cell:5,r:[1500,351,120,75]}],
+  kitchen:[{cell:3,r:[760,333,68,76]},{cell:5,r:[1250,370,110,85]},{cell:7,r:[110,680,140,102]}],
+  front:[{cell:4,r:[1010,340,95,62]},{cell:6,r:[1270,558,94,87]}],
+  plaza:[{cell:6,r:[1050,780,104,77]},{cell:7,r:[445,690,123,94]},{cell:8,r:[1220,695,97,77]}],
+  dotoroom:[{cell:0,r:[120,480,190,78]},{cell:1,r:[465,675,84,80]},{cell:2,r:[1550,620,102,82]}]
+ };
+ function dress(){
+  if(!ATLAS.ready||!ATLAS.width||!ATLAS.height)return;
+  var sc=document.getElementById('bigscene'),sv=sc&&sc.querySelector('svg[data-inn-world],svg[data-bg]');if(!sv)return;
+  var room;try{room=CASES[G.ci].locations[G.loc].id}catch(e){}var list=DECOR[room]||[];
+  var key=room+'|'+ATLAS.width+'|'+ATLAS.height;if(sv.dataset.postureDecor===key)return;
+  sv.querySelectorAll('.inn-set-dressing').forEach(function(e){e.remove()});sv.dataset.postureDecor=key;
+  var NS='http://www.w3.org/2000/svg',group=document.createElementNS(NS,'g');group.classList.add('inn-set-dressing');group.setAttribute('aria-hidden','true');group.style.pointerEvents='none';
+  list.forEach(function(p){
+   var tile=document.createElementNS(NS,'svg'),cw=ATLAS.width/3,ch=ATLAS.height/3;
+   ['x','y','width','height'].forEach(function(k,i){tile.setAttribute(k,p.r[i])});
+   var crop=ATLAS.crops[p.cell]||[(p.cell%3)*cw,Math.floor(p.cell/3)*ch,cw,ch];
+   tile.setAttribute('viewBox',crop.join(' '));tile.setAttribute('preserveAspectRatio','xMidYMax meet');tile.setAttribute('overflow','hidden');tile.dataset.cell=p.cell;
+   // Meet can leave viewport letterboxing: overflow alone does not clip the
+   // source viewBox. Explicit source-space clipping prevents adjacent cells
+   // from bleeding into those transparent margins.
+   var defs=document.createElementNS(NS,'defs'),clip=document.createElementNS(NS,'clipPath'),rect=document.createElementNS(NS,'rect'),id='inn-prop-crop-'+(++clipSerial);
+   clip.setAttribute('id',id);clip.setAttribute('clipPathUnits','userSpaceOnUse');
+   ['x','y','width','height'].forEach(function(k,i){rect.setAttribute(k,crop[i])});clip.appendChild(rect);defs.appendChild(clip);tile.appendChild(defs);
+   var im=document.createElementNS(NS,'image');im.setAttribute('clip-path','url(#'+id+')');im.setAttribute('href',ATLAS.src);im.setAttribute('width',ATLAS.width);im.setAttribute('height',ATLAS.height);im.style.imageRendering='pixelated';tile.appendChild(im);group.appendChild(tile);
+  });
+  // Behind live actors and foreground occluders; decoration never captures input.
+  var actor=sv.querySelector('image.wn9,image.wo9');if(actor)sv.insertBefore(group,actor);else sv.appendChild(group);
+ }
+ window.__innSetDressingEnable=function(width,height){ATLAS.width=width;ATLAS.height=height;ATLAS.ready=!!(width&&height);dress()};
+ function stamp(){
+  if(!active())return;worldStanding();dress();
+  document.querySelectorAll('#innstage .isf,.fstalk .tfig').forEach(function(host){
+   var im=host.querySelector('img'),k=host.dataset.k||(im&&im.dataset.k);if(!k)return;
+   var p=k==='geokkuri'?'hanging':standing[k]||k==='innma'?'standing':'native';
+   if(host.dataset.posture!==p)host.dataset.posture=p;
+  });
+ }
+ window.__innPostureState=function(){
+  var room=null;try{room=active()&&CASES[G.ci].locations[G.loc].id}catch(e){}
+  return {room:room,roomProps:Object.assign({},props[room]||{}, {actualAssets:Array.from(document.querySelectorAll('#bigscene image.wp9,#bigscene .inn-set-dressing image')).map(function(i){return i.getAttribute('href')})}),setDressing:{ready:ATLAS.ready,src:ATLAS.ready?ATLAS.src:null,cells:ATLAS.ready?(DECOR[room]||[]).map(function(p){return p.cell}):[]},worldActors:Array.from(document.querySelectorAll('#bigscene image.wn9')).map(function(i){return {k:i.dataset.k,src:i.getAttribute('href'),posture:i.dataset.posture||'native',x:i.getAttribute('x'),y:i.getAttribute('y'),width:i.getAttribute('width'),height:i.getAttribute('height')}}),dialogue:'standing',meeting:'native-seated',
+   actors:Array.from(document.querySelectorAll('#innstage .isf,.fstalk .tfig')).map(function(h){var i=h.querySelector('img');return {k:h.dataset.k||(i&&i.dataset.k),posture:h.dataset.posture,src:i&&i.getAttribute('src')}})};
+ };
+ // Warm the six existing images without altering world assets or source canvases.
+ Object.values(standing).concat([ROOT+'cast/innma-neutral-v5.png']).forEach(function(s){var i=new Image();i.src=s});
+ // Apply to newly-rendered world actors before the browser paints a seated
+ // frame. Only child-list changes are observed, so our attribute writes cannot
+ // create a MutationObserver loop.
+ var pending=false;new MutationObserver(function(){if(pending)return;pending=true;Promise.resolve().then(function(){pending=false;stamp()})}).observe(document.body,{childList:true,subtree:true});
+ setInterval(stamp,250);stamp();
 })();
 
 /* 1장 배우 연기: 승인 PNG를 그대로 쓰는 픽셀 이동/분리 레이어.
@@ -52068,6 +52357,89 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  '@media(prefers-reduced-motion:reduce){.banner.inn-place-panel .mid,.arr10:has(.inn-place-card){animation:none!important}#inn-night-walk .night-light,#inn-night-walk .night-bedroom,.inn-night-direction #bigscene>svg[data-bg]{transition:none!important}#inn-night-walk.out .night-child{animation:none;opacity:1;transform:translate(625px,425px)}#inn-night-walk.return .night-child{animation:none;opacity:0}}';
  document.head.appendChild(css);setInterval(sync,100);
  window.__innOpeningDirection=function(){return {night:!!night,cue:night&&night.dataset.cue,scene:lastScene&&lastScene.sid,reduced:reduced.matches}};
+})();
+
+/* Important opening pictures. This layer reads the authored scene/dialogue;
+   it never advances dialogue, changes clues, or schedules an input handler.
+   build.py supplies __innStoryArt from local file existence, so an absent
+   approved picture falls back to the existing stage without an HTTP request. */
+(function(){
+ 'use strict';
+ var node=null,shown=null,lastGame=null,failed={},reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ var ART={
+  carriage:{src:'art/ch1/cinematics/carriage-family-close.png',alt:'마차 안에서 나란히 앉아 이야기하는 다람과 아빠'},
+  village:{src:'art/ch1/cinematics/village-arrival-wide.png',alt:'저녁빛의 골짜기 마을에 도착한 다람과 아빠'},
+  seal:{src:'art/ch1/cinematics/sealed-pouch-close.png',alt:'베개 밑에서 발견한 주머니와 아직 뜯기지 않은 붉은 봉인띠'}
+ };
+ function scene(){try{
+  if(S.screen!=='case'||!G||CASES[G.ci].id!=='inn'||!G.beats||G.beats.inn_pro||document.getElementById('innmain'))return null;
+  return window.EP1INN&&window.EP1INN.PRO[G.beats.inn_pi]||null;
+ }catch(e){return null}}
+ function text(l){return l?String(Array.isArray(l)?(l[7]!=null?l[7]:l[1]||''):l.t||''):''}
+ function who(l){return l&&(Array.isArray(l)?l[0]:l.w)||''}
+ function desired(){
+  var s=scene(),v=document.querySelector('#ov > #dlgveil');
+  if(!s||!v||typeof DL==='undefined'||!DL||!DL.lines)return null;
+  var l=DL.lines[DL.i],t=text(l);if(!l)return null;
+  if(s.sid==='P1'&&G.beats.inn_bg==='carriage'){
+   // The driver's arrival changes the camera back to his actual stage. The
+   // father's reply in that same dialogue must not restore the family cut.
+   for(var i=0;i<=DL.i;i++)if(who(DL.lines[i])==='karo')return null;
+   if(who(l)==='det1'||who(l)==='det0'||who(l)==='narr')return 'carriage';
+  }
+  if(s.sid==='P2'&&G.beats.inn_bg==='plaza')return 'village';
+  // Show the intact seal before counting starts. No picture invents a coin
+  // count or suggests who put the pouch there.
+  if(s.sid==='P13'&&/베개 밑[….\s]*여기 있군요|세련 씨 주머니가 맞습니까|맞습니다\. 제 도장이에요|뜯긴 데도 없고요/.test(t))return 'seal';
+  return null;
+ }
+ function ready(k){return !!(k&&!failed[k]&&window.__innStoryArt&&window.__innStoryArt[k]===true)}
+ function cleanup(){
+  if(node)node.remove();node=null;shown=null;
+  // The engine briefly clones a closing dialogue into #ovfz. Its cloned
+  // picture is presentation state, never a second live/stale CG layer.
+  document.querySelectorAll('#ovfz #inn-story-cg').forEach(function(n){n.remove()});
+  document.body.classList.remove('inn-story-cg-active');delete document.body.dataset.innStoryCut;
+ }
+ function show(k,v){
+  if(shown!==k||!node){
+   cleanup();node=document.createElement('div');node.id='inn-story-cg';node.dataset.cut=k;
+   node.setAttribute('role','img');node.setAttribute('aria-label',ART[k].alt);
+   var surround=document.createElement('img');surround.className='cinema-surround';surround.alt='';surround.setAttribute('aria-hidden','true');surround.src=ART[k].src;
+   var picture=document.createElement('img');picture.className='cinema-picture';picture.alt='';picture.src=ART[k].src;
+   // A late failed/slow asset may never hide the working original stage.
+   picture.onload=function(){if(node&&node.contains(picture)&&shown===k){node.classList.add('ready');document.body.classList.add('inn-story-cg-active');document.body.dataset.innStoryCut=k}};
+   picture.onerror=function(){failed[k]=true;if(node&&node.contains(picture))cleanup()};
+   node.append(surround,picture);shown=k;
+   if(picture.complete&&picture.naturalWidth)picture.onload();
+  }
+  if(node.parentNode!==v)v.insertBefore(node,v.firstChild);
+ }
+ function sync(){try{
+  document.querySelectorAll('#ovfz #inn-story-cg').forEach(function(n){n.remove()});
+  if(lastGame!==G){cleanup();lastGame=G}
+  var k=desired(),v=document.querySelector('#ov > #dlgveil');
+  if(!k||!ready(k)||!v){if(node)cleanup();return}
+  show(k,v);
+  var l=DL&&DL.lines[DL.i];
+  node.classList.toggle('memory',k==='carriage'&&/엄마 찾으면|엄마가 갑자기 사라지고|편지 도장|골짜기…|몇 해 전 편지/.test(text(l)));
+ }catch(e){cleanup()}}
+ var css=document.createElement('style');css.id='inn-story-cinematics';css.textContent=
+ '#inn-story-cg{position:fixed;inset:0;z-index:1;pointer-events:none!important;overflow:hidden;background:#211c20;visibility:hidden}#inn-story-cg.ready{visibility:visible}'+
+ '#inn-story-cg img{position:absolute;inset:0;width:100%;height:100%;max-width:none;image-rendering:pixelated;pointer-events:none!important}#inn-story-cg .cinema-picture{object-fit:cover;object-position:50% 38%;transition:filter .35s ease-out}#inn-story-cg.ready .cinema-picture{animation:inn-cinema-reveal .38s ease-out both}#inn-story-cg.memory .cinema-picture{filter:brightness(.9) saturate(.85)}'+
+ '#inn-story-cg .cinema-surround{display:none;object-fit:cover;filter:blur(20px) brightness(.24) saturate(.55);transform:scale(1.08)}'+
+ '#inn-story-cg[data-cut="carriage"] .cinema-picture{object-position:50% 0%}#inn-story-cg[data-cut="village"] .cinema-picture{object-position:50% 44%}#inn-story-cg[data-cut="seal"] .cinema-picture{object-position:50% 44%}'+
+ 'body.inn-story-cg-active #dlgveil>.vnbg,body.inn-story-cg-active #dlgveil>.vnshade,body.inn-story-cg-active #dlgveil>#innstage,body.inn-story-cg-active #dlgveil>#vnfig{visibility:hidden!important}'+
+ '@keyframes inn-cinema-reveal{from{opacity:.45}to{opacity:1}}'+
+ '@media(max-aspect-ratio:3/4){#inn-story-cg .cinema-surround{display:block}#inn-story-cg .cinema-picture,#inn-story-cg[data-cut] .cinema-picture{object-fit:contain;object-position:50% 24%}}'+
+ '@media(prefers-reduced-motion:reduce){#inn-story-cg .cinema-picture{animation:none!important;transition:none!important}}';
+ document.head.appendChild(css);
+ // The native controller removes/replaces the veil on skips and save loads.
+ // Remove its visual layer at that same DOM turn, before the next paint.
+ var queued=false;new MutationObserver(function(){if(queued)return;queued=true;Promise.resolve().then(function(){queued=false;sync()})}).observe(document.getElementById('ov')||document.body,{childList:true,subtree:true});
+ (function loop(){sync();requestAnimationFrame(loop)})();
+ window.__innStoryCinematics=function(){var s=scene();return {cut:shown,visible:!!(node&&node.classList.contains('ready')),tone:node&&node.classList.contains('memory')?'memory':'normal',wanted:desired(),scene:s&&s.sid,cue:typeof DL!=='undefined'&&DL&&text(DL.lines[DL.i])||'',artReady:ready(desired()),reduced:reduced.matches}};
+ window.__innStoryCinematicReset=cleanup;
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});

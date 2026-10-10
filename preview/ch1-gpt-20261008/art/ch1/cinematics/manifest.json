@@ -1,0 +1,47 @@
+{
+  "created": "2026-10-10",
+  "authorization": "User requested full illustrations at key story moments, stronger prologue/village staging and a closer carriage shot of Daram.",
+  "method": "image_gen edits of inspected approved references; generated originals copied unchanged.",
+  "facts": "Only existing father/daughter, village arrival and unopened sealed pouch shown. No invented mother face, coins, culprit, injuries or new evidence.",
+  "assets": [
+    {
+      "file": "carriage-family-close.png",
+      "size": [
+        1672,
+        941
+      ],
+      "references": [
+        "bg/INTRO04_carriage_empty.png",
+        "cast/daram-seated-snack-show-192x256.png",
+        "father/father-fullbody-128x192.png"
+      ],
+      "sha256": "a0947935e50261d65a7dd53fc8c88305649e3f66c9b6dafcd11bb97b723cd131"
+    },
+    {
+      "file": "village-arrival-wide.png",
+      "size": [
+        1672,
+        941
+      ],
+      "references": [
+        "bg/P2-village-entrance-autumn-evening-background-only-1672x941.png",
+        "cast/daram-seated-neutral-192x256.png",
+        "father/father-fullbody-128x192.png"
+      ],
+      "sha256": "52085b4afa9bcc256e0193713cb44ee928abc9cbd6bfbba3d323046d1b184194"
+    },
+    {
+      "file": "sealed-pouch-close.png",
+      "size": [
+        1671,
+        941
+      ],
+      "references": [
+        "locations/BG04_I1_box_free.png",
+        "locations/C01_money_pouch_world_alpha.png"
+      ],
+      "sha256": "062c904c4daada88f0978d508ed82fc09e7f2610d8e1dfb7bddae333fc33558d",
+      "refinement": "Mouth pinched shut under the intact red paper band, removing ambiguous open rim."
+    }
+  ]
+}
