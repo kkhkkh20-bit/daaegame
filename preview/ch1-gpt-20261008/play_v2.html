@@ -3263,7 +3263,6 @@ function showLine(){
   },sp)}
 }
 function advance(){
- if(window.__logicBusy&&window.__logicBusy())return;
   if(!DL)return;
   if(DL.timer){clearInterval(DL.timer);DL.timer=null;document.getElementById("dtxt").innerHTML=hl(DL.full);return}
   DL.i++;
@@ -17050,7 +17049,9 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(!ph){finish();return}
   if(ph.type==="talk"){el.classList.toggle("shaken",!!ph.ban);if(ph.ban){try{SFX.shock()}catch(e){}banner(ph.ban,SPEC.sub).then(function(){sayQ(ph.lines,nextPh)});return}sayQ(ph.lines,nextPh);return}
   el.classList.remove("shaken");
-  if(ph.type==="debate"){try{banner(modeOf(ph)==="no"?"토론 개시 · 틀린 말 찾기":"토론 개시 · 맞는 말 찾기",ph.topic)}catch(e){}draw();return}
+  if(ph.type==="debate"){
+   var begin=function(){try{banner(modeOf(ph)==="no"?"토론 개시 · 틀린 말 찾기":"토론 개시 · 맞는 말 찾기",ph.topic)}catch(e){}draw()};
+   if(ph.intro&&ph.intro.length){sayQ(ph.intro,begin);return}begin();return}
   if(ph.type==="vote"){try{banner("투표",ph.q)}catch(e){}draw();return}
   if(ph.type==="mob"){mobHit=false;banner("투표",ph.q).then(function(){draw();setTimeout(function(){mobHit=true;try{SFX.stamp();quake()}catch(e){}draw();setTimeout(function(){sayQ(ph.lines||[],nextPh)},1300)},1200)});return}
   if(ph.type==="adjourn"){sayQ(ph.lines||[],function(){adjourn(ph)});return}}
@@ -17061,9 +17062,13 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   s.pi++;s.hold={need:ph.need||[],task:ph.task||""};try{saveProg()}catch(e){}
   banner("회의 중단","증거를 더 찾아 와야 해요").then(function(){if(el){el.remove();el=null}window.__inMeeting=false;try{bgm("sneak")}catch(e){}
    G.tab="scene";G.notice={title:"회의가 중단됐어요",text:esc(ph.task||"증거를 더 찾아 오세요.")+" 찾으면 아래 '증거'에서 '원탁 회의 열기'로 다시 열 수 있어요."};render()})}
- function hurt(msg){G.wrong=(G.wrong|0)+1;if(G.hp==null)G.hp=hpMax(C);G.hp=Math.max(1,G.hp-1);try{saveProg()}catch(e){}
-  flash("헛짚었다!",true).then(function(){sayQ([{w:"det1",t:msg}],function(){draw()})})}
- function fire(){var ph=curPh(),st=ph.stms[si];if(!sel){try{SFX.huh()}catch(e){}var n=el.querySelector(".rt-nav span");if(n){n.classList.remove("shake");void n.offsetWidth;n.classList.add("shake")}return}
+ function hurt(msg){if(busy)return;busy=true;
+  var hg=G,he=el,hs=SPEC,hp=curPh(),hinn=C.id==="inn",epoch=window.__logicNativeEpoch||0;
+  G.wrong=(G.wrong|0)+1;if(G.hp==null)G.hp=hpMax(C);G.hp=Math.max(1,G.hp-1);try{saveProg()}catch(e){}
+  flash("헛짚었다!",true).then(function(){
+   if(hinn&&(G!==hg||el!==he||!he||!he.isConnected||SPEC!==hs||curPh()!==hp||S.screen!=="case"||(window.__logicNativeEpoch||0)!==epoch))return;
+   busy=false;sayQ([{w:"det1",t:msg}],function(){draw()})})}
+ function fire(){if(busy)return;var ph=curPh(),st=ph.stms[si];if(!sel){try{SFX.huh()}catch(e){}var n=el.querySelector(".rt-nav span");if(n){n.classList.remove("shake");void n.offsetWidth;n.classList.add("shake")}return}
   busy=true;
   var ng=G,ne=el,np=ph,ns=SPEC,ninn=C.id==="inn",epoch=window.__logicNativeEpoch||0;
   function nativeAlive(){return !ninn||(G===ng&&el===ne&&ne&&ne.isConnected&&SPEC===ns&&curPh()===np&&S.screen==="case"&&(window.__logicNativeEpoch||0)===epoch)}
@@ -17072,9 +17077,12 @@ if("serviceWorker" in navigator&&window.top===window)window.addEventListener("lo
   if(hit&&st.a.indexOf(sel)>=0){SFX.gotcha();
    (window.__hush?window.__hush(false):Promise.resolve()).then(function(){if(nativeAlive())return flash(md==="yes"?"그 말이 맞아!":"그건 아니야!",false,true)}).then(function(){if(!nativeAlive())return;busy=false;if(window.__crowd)window.__crowd();sayQ(st.ok||[],nextPh)})}
   else{busy=false;hurt(hit?(md==="yes"?"이 증거로는 그 말이 맞다고 증명할 수 없어. 다른 증거를 골라 보자.":"이 증거로는 그 말을 반박할 수 없어. 다른 증거를 골라 보자."):(md==="yes"?"그 말은 편들 수 없어. 증거가 없는 말이야. 다른 문장을 살펴보자.":"그 말은 사실이야. 틀린 말을 찾아야 해. 다른 문장을 살펴보자."))}}
- function vote(k){var ph=curPh(),cul=culOf(C);
+ function vote(k){if(busy)return;var ph=curPh(),cul=culOf(C);
   if(k!==cul){hurt("그렇게 보기엔 증거가 부족해. 지금까지 나온 이야기를 다시 떠올려 보자.");return}
-  SFX.gotcha();flash("범인은 너다!",false,true).then(function(){sayQ(ph.ok||[],nextPh)})}
+  busy=true;var vg=G,ve=el,vs=SPEC,vinn=C.id==="inn",epoch=window.__logicNativeEpoch||0;
+  SFX.gotcha();flash("범인은 너다!",false,true).then(function(){
+   if(vinn&&(G!==vg||el!==ve||!ve||!ve.isConnected||SPEC!==vs||curPh()!==ph||S.screen!=="case"||(window.__logicNativeEpoch||0)!==epoch))return;
+   busy=false;sayQ(ph.ok||[],nextPh)})}
  function finish(){var s=stt();s.done=true;try{saveProg()}catch(e){}if(el){el.remove();el=null}window.__inMeeting=false;
   if(SPEC.onDone){var f=SPEC.onDone;f();return}
   if(window.__onMeetDone)try{window.__onMeetDone(C)}catch(e){}
@@ -36980,7 +36988,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  function blocker(){var o=document.querySelector(".banner:not(.out),.cutin,.stampfx");if(o)return o;
   var ci=document.querySelector(".csx .csintro");if(ci){var cs=getComputedStyle(ci);if(cs.display!=="none"&&+cs.opacity>.05)return ci}return null}
  ["pointerdown","pointerup","click","touchstart","touchend","mousedown","mouseup"].forEach(function(t){
-  window.addEventListener(t,function(e){if(!e.isTrusted)return;if(e.target&&e.target.closest&&e.target.closest("#logic-panel"))return;var o=blocker();
+  window.addEventListener(t,function(e){if(!e.isTrusted)return;var o=blocker();
    if(!o){if(window.__fxEat&&window.__fxEat(t,e)){e.stopPropagation();if(t!=="touchstart"&&t!=="pointerdown")e.preventDefault();else if(t==="touchstart"&&e.cancelable)e.preventDefault()}return}
    if(o.contains(e.target)&&o.classList.contains("csintro"))return;
    if(window.__fxTap)try{window.__fxTap(t,e,o)}catch(x){}
@@ -46926,10 +46934,10 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  function swallow(e){
   if(!gest||!gest.dlg)return false;
   if(dlgOpen())return false;                       /* 대화가 아직 열려 있으면 평소처럼 넘김 */
-  var t=e.target;if(t&&t.closest&&t.closest("#dlgveil,.sbook,.csx,#logic-panel"))return false;
+  var t=e.target;if(t&&t.closest&&t.closest("#dlgveil,.sbook,.csx"))return false;
   e.stopImmediatePropagation();e.preventDefault();window.__swallowed=(window.__swallowed|0)+1;return true}
  document.addEventListener("click",function(e){if(swallow(e))gest=null},true);
- document.addEventListener("pointerup",function(e){if(gest&&gest.dlg&&!dlgOpen()){var t=e.target;if(!(t&&t.closest&&t.closest("#dlgveil,.sbook,.csx,#logic-panel"))){e.stopImmediatePropagation()}}},true);
+ document.addEventListener("pointerup",function(e){if(gest&&gest.dlg&&!dlgOpen()){var t=e.target;if(!(t&&t.closest&&t.closest("#dlgveil,.sbook,.csx"))){e.stopImmediatePropagation()}}},true);
  document.addEventListener("dblclick",function(e){e.preventDefault()},true);
 
  document.addEventListener("click",function(e){
@@ -48172,7 +48180,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
     stms:[
      W("innma","① 열세 번째 침대 같은 건 없어요. {지금은 안 쓰는 방에 남는 걸 둔 것뿐}이에요.","",{press:[W("det0","남는 침대에 새 이불까지 깔아 두십니까?"),W("innma","…손님이 언제 올지 모르니까.")],
       wr:{C01:[W("innma","돈이 거기서 나온 건 알아요. 그게 내가 침대를 폈다는 증거예요?")]}}),
-     W("nabi","② {열한 시엔 빵 반죽하고 잤어요}. 그 방 쪽엔 아무도 없었어요.","",{k:"no",reason:"linen",a:["C03"],
+     W("nabi","② {열한 시엔 빵 반죽하고 잤어요}. 그 방 쪽엔 아무도 없었어요.","",{k:"no",a:["C03"],
       steps:[{ids:["C02"],lines:[W("det0","나비 씨. 열세 번째 침대 이불 모서리에 하얀 가루 손자국이 있습니다."),W("narr",CONNECT)]}],
       press:[W("det0","반죽은 몇 시까지 하셨습니까?"),W("nabi","열한 시쯤이요. 손에 밀가루가 잔뜩 묻어서 씻고 바로 잤어요.")],
       ok:[W("narr","하얀 손자국과 나비의 반죽 이야기가 나란히 비친다."),W("nabi","…","nervous"),
@@ -48226,7 +48234,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
      W("seryeon","① {저는 자정엔 자고 있었습니다}. 여섯 시 반에 일어나니 주머니가 없어서, 복도까지 찾아봤죠.","",{
       soft:{C06:{lines:[W("seryeon","시계가 어쨌다는 겁니까?"),W("det0","밤이 씨가 본 시각부터 확인하겠습니다.")],mark:"m3c06"},
             C13:{lines:[W("det0","밤이 씨 말씀을 다시 듣겠습니다.")],req:"m3c06",to:1,step:1}}}),
-     W("geokkuri","② 맞아요. {여섯 시 반쯤} 족제비 손님이 시계 앞을 지나 저쪽으로 갔다가 금방 돌아왔어요. 종이 막 그쳐서 시계도 봤고요.","",{k:"no",reason:"time",a:["C08"],
+     W("geokkuri","② 맞아요. {여섯 시 반쯤} 족제비 손님이 시계 앞을 지나 저쪽으로 갔다가 금방 돌아왔어요. 종이 막 그쳐서 시계도 봤고요.","",{k:"no",a:["C08"],
       press:[W("det0","시계는 어디서 보셨습니까?"),W("geokkuri","제 자리에서요. 시계 맞은편 천장.")],
       steps:[{ids:["C06"],lines:[W("narr",CONNECT)]},
        {ids:["C07"],lines:[W("det0","밤이 씨. 밤에는 시계 맞은편 천장에 매달려 계시죠. 시계도 그 자세로 보셨습니까?"),
@@ -48255,7 +48263,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
       soft:{C13:{lines:[W("wanggu","밤에 주머니를 들고 간 목격과, 솜솜이 자리를 옮긴 일은 구분해야 합니다.")]}}}),
      W("wanggu","② 솜솜이 왜 제 잠자리에 없었는지 아직 모릅니다. {처음 발견한 건 부녀}고요.","",{
       soft:{C04:{lines:[W("wanggu","살아 있다는 건 확인했습니다. 이제 왜 거기 있었는지 알아봐야 합니다.")]}}}),
-     W("seryeon","③ 그렇죠. {침대 밑에 처박혀 있던 쥐} 하나 꺼내 놓고 탐정 흉내라니요.","",{k:"no",reason:"location",a:["C10"],
+     W("seryeon","③ 그렇죠. {침대 밑에 처박혀 있던 쥐} 하나 꺼내 놓고 탐정 흉내라니요.","",{k:"no",a:["C10"],
+      steps:[{ids:["C04"],lines:[W("det0","저희가 직접 본 자리와 모두에게 읽어 준 기록을 비교해 보겠습니다.","",{show:["C04"]}),W("narr",CONNECT)]}],
       wr:{C09:[W("seryeon","하룻밤 예약한 게 쥐와 무슨 상관입니까?")]},
       ok:[W("det0","너울 씨. 기록부에 손님을 찾은 자리가 어떻게 적혀 있습니까?"),W("wanggu","「같은 방에서 손님 하나 추가 발견.」 이게 전부입니다. 어디서인지는 저도 듣지 못했습니다."),
        W("narr","세련의 얼굴이 크게 비친다. 입이 열렸다 닫힌다."),W("seryeon","……","nervous"),
@@ -48285,24 +48294,28 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   N("[다시] 놓친 단서를 다시 짚어 본다. 모은 증거는 그대로 남는다.")];
 
  /* ---- 4부 최종 대결 「돈은 도둑맞았다」 F1~F4 ----
-    F1 결론 고르기(C05가 증명하는 것), F2·F3 핵심 선택 두 논점, F4 동기와 인정 뒤 감정 장면. 설득력 0칸이면 F1부터 다시(모은 증거 유지) */
+    F1 털→봉인띠를 직접 제시, F2·F3 증거 반박, F4 동기와 인정 뒤 감정 장면. 설득력 0칸이면 F1부터 다시(모은 증거 유지) */
  EP.FINAL={key:"innfinal",title:"최종 대결",sub:"돈은 도둑맞았다",ban:"최종 대결",
   seats:["innma","seryeon","nabi","buri","doto","geokkuri","karo","wanggu"],
   phases:[
    /* F1 */
-   {type:"talk",clock:"정오까지 30분",lines:[
+   {type:"debate",mode:"no",clock:"정오까지 30분",topic:"대결 · 털에 남은 자국",bullets:ALL,
+    hint:"털의 붉은 무늬는 무엇에 닿아 생겼을까?",
+    intro:[
     W("seryeon","쥐를 옮겼다는 건 인정했습니다. 그렇다고 제 돈이 도둑맞지 않은 건 아니죠."),
     W("seryeon","아침에 주머니를 찾아다니다 그 방 문이 열려 있길래 들어가 봤습니다. 베개 구석에 쥐가 차갑게 굳어 있었어요."),
     W("seryeon","죽은 줄 알았습니다. 남의 빈방에 들어갔다고 하면 저부터 의심받을까 봐… 침대 밑으로 치웠습니다.","nervous"),
-    W("seryeon","하지만 주머니는 보지도 못했습니다. 쥐를 치운 일과 제 돈은 별개입니다."),
-    W("det1","…아빠."),
-    W("det0","이 붉은 자국이 왜 털에 붙었는지, 주머니 봉인띠와 함께 확인해 보겠습니다.","",{show:["C05","C01"],reason:"contact"}),
+    W("det1","…아빠.")],
+    stms:[W("seryeon","쥐는 옮겼지만, {주머니는 보지도 못했습니다}.","",{k:"no",a:["C01"],
+     steps:[{ids:["C05"],lines:[W("det0","솜솜의 털에 붉은 글씨와 별이 거꾸로 남아 있습니다.","",{show:["C05"]}),W("narr","(이 무늬가 묻을 만한 물건을 찾아보자.)")]}],
+     press:[W("det0","솜솜을 어디서 들어 올리셨습니까?"),W("seryeon","베개 구석이라고 했지 않습니까.")],
+     ok:[W("det0","이 붉은 자국이 왜 털에 붙었는지, 주머니 봉인띠와 함께 확인해 보겠습니다.","",{show:["C05","C01"]}),
     W("det0","글씨와 별이 봉인띠의 도장과 같습니다. 거꾸로 찍혔으니, 덜 마른 그 띠에 털이 눌려 닿았다는 뜻이지요.","",{show:["C05","C01"]}),
     W("det0","베개 구석에서 솜솜을 직접 들어 올리셨다고 했지요. 그때 아래에 주머니는 없었습니까?"),
     W("narr","세련이 주머니와 바구니를 번갈아 본다."),
     W("seryeon","…주머니가 있었습니다. 베개 구석, 쥐 바로 밑에요.","nervous"),
     W("narr","[반박 결과] 주머니를 보지도 못했다는 말이 바뀌었다."),
-    W("seryeon","본 건 맞습니다. 하지만 제가 거기 넣었다는 말은 아닙니다.")]},
+    W("seryeon","본 건 맞습니다. 하지만 제가 거기 넣었다는 말은 아닙니다.")]})]},
    /* F2 */
    {type:"debate",mode:"no",clock:"정오까지 30분",topic:"핵심 선택 1 · 돈주머니를 옮긴 사람",bullets:ALL,
     hint:"주머니를 들고 복도를 지나간 사람을 본 증인이 있었다.",
@@ -48327,7 +48340,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    {type:"debate",mode:"no",clock:"정오까지 20분",topic:"핵심 선택 2 · 나머지 이백 냥",bullets:ALL,
     hint:"주머니를 찾았을 때 봉인은 어땠나. 그 봉인은 누가 할 수 있었나.",
     stms:[
-     W("seryeon","봉하기 전엔 분명 삼백 냥이었습니다. {이백 냥은 그 방 주인이 빼 갔겠죠}.","angry",{k:"no",reason:"seal",a:["C12"],
+     W("seryeon","봉하기 전엔 분명 삼백 냥이었습니다. {이백 냥은 그 방 주인이 빼 갔겠죠}.","angry",{k:"no",a:["C12"],
       steps:[{ids:["C10"],lines:[W("det0","너울 씨 기록입니다. 베개 밑에서 찾았을 때 봉인은 온전했고, 세련 씨가 직접 확인하셨습니다.","",{show:["C10"]}),
         W("wanggu","맞습니다. '제가 봉한 그대로'라고 하셨지요."),W("seryeon","누가 뜯고 빼낸 다음 다시 봉했을 수도 있잖습니까.","smug"),W("narr",CONNECT)]}],
       wr:{C11:[W("seryeon","옛날 장부가 제 돈과 무슨 상관입니까?")],C09:[W("seryeon","하룻밤 예약한 게 돈 액수와 무슨 상관입니까?")]},
@@ -49630,12 +49643,11 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
  function isFinal(p){var e=EP();return !!(e&&e.FINAL&&p&&e.FINAL.phases.indexOf(p)>=0)}
  function curStm(){var p=ph(),b=document.querySelector(".rt .rt-bub.stm p");if(!p||!p.stms||!b)return null;var t=b.textContent;return p.stms.filter(function(s){return strip(s.t)===t})[0]||null}
  function curLine(){var p=ph(),b=document.querySelector(".rt #rtnext .rt-bub p, .rt .rt-mid.talk .rt-bub p");if(!p||!b)return null;var t=b.textContent,pool=[];
-  (p.lines||[]).forEach(function(x){pool.push(x)});(p.stms||[]).forEach(function(s){(s.ok||[]).forEach(function(x){pool.push(x)})});(p.ok||[]).forEach(function(x){pool.push(x)});
+  (p.intro||[]).concat(p.lines||[]).forEach(function(x){pool.push(x)});(p.stms||[]).forEach(function(s){(s.ok||[]).forEach(function(x){pool.push(x)})});(p.ok||[]).forEach(function(x){pool.push(x)});
   return pool.filter(function(x){return x&&strip(x.t)===t})[0]||null}
  function setBeat(k){try{G.beats=G.beats||{};G.beats[k]=1;saveProg()}catch(e){}}
  /* 대사에 붙은 부가 정보: 득표·증거 지급·상태·증거 보여 주기 */
  function meta(L){if(!L)return;
-  if(L.reason)reasonStart(L);
   if(window.__innAudioLine)window.__innAudioLine(L);
   if(L.votes)setVotes(L.votes);
   if(L.ask)askOpen(L);
@@ -49676,37 +49688,7 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
  var CLK=null,TAL=null,Q=null,QI=0,QEL=null,QDONE=null,SHOW=null;
  /* 단계·되묻기·표시 상태: 회의를 다시 열면 초기화 */
  var STEP=new Map(),PRESSED=new Set(),MARK={};
- var REASONPASS=new WeakSet(),REASONWAIT=null,REASONGEN=0,REASONOWNER=null;
- var REASONIDS=["linen","time","location","seal","contact"];
- function reasonId(value){return typeof value==="string"&&REASONIDS.indexOf(value)>=0}
- function reasonInn(){try{if(G!==REASONOWNER){REASONOWNER=G;REASONGEN++;REASONWAIT=null;REASONPASS=new WeakSet()}return G&&S.screen==="case"&&CASES[G.ci].id==="inn"}catch(e){return false}}
- window.__logicGateCancel=function(){REASONGEN++;REASONWAIT=null};
- function reasonStart(value,done){
-  if(!reasonInn()||!value||!reasonId(value.reason)||REASONPASS.has(value))return false;
-  if(REASONWAIT)return true;
-  /* Fail closed when a bundle omits the required UI module. */
-  if(typeof window.__logicOpen!=="function"){window.__logicEngineError="Missing reasoning UI";return true}
-  var token={gen:REASONGEN,g:G,r:rt(),p:ph(),value:value},committed=false;
-  REASONWAIT=token;
-  window.__logicOpen(value.reason,{mode:isFinal(token.p)?"final":"meet",done:function(){
-   if(committed||REASONWAIT!==token||token.gen!==REASONGEN||G!==token.g||S.screen!=="case"||rt()!==token.r||ph()!==token.p)return;
-   committed=true;REASONWAIT=null;REASONPASS.add(value);done&&done();
-  }});
-  return true;
- }
- /* Pending contact lines must survive clicks before meta's observer runs. */
- document.addEventListener("click",function(e){
-  if(!reasonInn())return;
-  var t=e.target&&e.target.closest&&e.target.closest('#rtnext,#rtgq,#rtgbar [data-g="next"],.rt .rt-bub.stm .wk,#rtgbar [data-g="present"],#rtnx,#rtprev,#rtleave,#rtgtr [data-g="leave"]');
-  if(!t)return;
-  if(REASONWAIT||(window.__logicBusy&&window.__logicBusy())){e.stopImmediatePropagation();e.preventDefault();return}
-  if(t.matches('#rtnext,#rtgq,#rtgbar [data-g="next"]')){
-   var line=Q?Q[QI]:curLine();
-   if(reasonStart(line)){e.stopImmediatePropagation();e.preventDefault()}
-  }
- },true);
-
- window.__rtgReset=function(){window.__logicNativeEpoch=(window.__logicNativeEpoch||0)+1;REASONGEN++;REASONWAIT=null;REASONPASS=new WeakSet();if(window.__logicReset)window.__logicReset();STEP=new Map();PRESSED=new Set();MARK={};ASKGEN++;clear();lastLine=null;if(ANS)ANS.clear();if(window.__innAudioReset)window.__innAudioReset();FAILP=false;LW=null;LH=null};
+ window.__rtgReset=function(){window.__logicNativeEpoch=(window.__logicNativeEpoch||0)+1;STEP=new Map();PRESSED=new Set();MARK={};ASKGEN++;clear();lastLine=null;if(ANS)ANS.clear();if(window.__innAudioReset)window.__innAudioReset();FAILP=false;LW=null;LH=null};
  function ensure(){if(!CLK){CLK=document.createElement("div");CLK.id="rtgclk";document.body.appendChild(CLK)}if(!TAL){TAL=document.createElement("div");TAL.id="rtgtal";document.body.appendChild(TAL)}}
  function clear(){if(window.__innAudioLine)window.__innAudioLine(null);[CLK,TAL,QEL,SHOW].forEach(function(x){if(x)x.remove()});CLK=TAL=QEL=SHOW=null;Q=null;B.classList.remove("rtgq-on");closePick()}
  function showEv(ids){if(!ids||!ids.length){if(SHOW){SHOW.remove();SHOW=null}return}
@@ -49799,23 +49781,6 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
   function stop(){e.stopImmediatePropagation();e.preventDefault();B.classList.remove("rtg-drw")}
   function resend(){b.dataset.go="1";B.classList.add("rtg-drw");b.click();delete b.dataset.go}
   var steps=s.steps||[],step=STEP.get(s)||0,a=s.a||[];
-  if(reasonInn()&&reasonId(s.reason)&&!REASONPASS.has(s)){
-   stop();
-   reasonStart(s,function(){
-    if(curStm()!==s){REASONPASS.delete(s);return}
-    var id0=a[0],pick=[].slice.call(document.querySelectorAll(".rt .rt-bul [data-bl]")).filter(function(x){return x.dataset.bl===id0})[0];
-    if(!pick){REASONPASS.delete(s);window.__logicEngineError="Required evidence is unavailable: "+id0;return}
-    STEP.set(s,steps.length);
-    /* Selecting the native evidence redraws the statement and supplies the
-       legacy fire() closure with a[0].  No proof result invokes fire directly. */
-    pick.click();
-    if(curStm()!==s){REASONPASS.delete(s);return}
-    var live=document.querySelector('#rtgbar [data-g="present"]');
-    if(!live)return;
-    live.dataset.go="1";B.classList.add("rtg-drw");
-    try{live.click()}finally{delete live.dataset.go}
-   });return;
-  }
   /* 1) 다음 단계 증거 */
   if(step<steps.length&&steps[step].ids.indexOf(id)>=0){stop();var sp=steps[step];
    var adv=function(){STEP.set(s,step+1);try{var _on=document.querySelectorAll(".rt .rt-bul .bl.on");for(var _i=0;_i<_on.length;_i++)_on[_i].classList.remove("on");delete B.dataset.rtgsel;window.__rtClearSel&&window.__rtClearSel()}catch(x){}try{SFX.found()}catch(x){}queue(sp.lines)};
@@ -49837,7 +49802,7 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
   /* 6) 그 밖: 엔진 판정(감점) */
  },true);
  /* 자동 진행: 대기열·줄 고르기 중에는 멈춤 */
- try{window.__rtgPausedExtra=function(){return !!Q||!!PK||!!REASONWAIT||!!(window.__logicBusy&&window.__logicBusy())}}catch(e){}
+ try{window.__rtgPausedExtra=function(){return !!Q||!!PK}}catch(e){}
  var qd=0;try{new MutationObserver(function(ms){if(ms.every(function(m){return m.target&&m.target.closest&&m.target.closest("#rtgq,#rtgclk,#rtgtal,#rtgshow,#rtgpick")}))return;if(!qd)qd=requestAnimationFrame(function(){qd=0;sync()})}).observe(document.body,{childList:true,subtree:true,characterData:true})}catch(e){MISS.push("obs")}
 })();
 
@@ -51066,9 +51031,9 @@ window.__INN_PIANO={"inn_title":{"bpm":76,"vol":0.9,"prog":["Dm"],"mel":[],"medi
   function npcScale(){try{if(!inn())return;var lid=(loc()||{}).id;document.querySelectorAll("#bigscene .npc.f210").forEach(function(n){var k=n.dataset.npc,f=(lid==="dining"&&DINE[k])||HK[k];if(!f||f===1)return;var key=n.dataset.f210+"|"+f;if(n.dataset.h9===key)return;
     ["--ih","--iw","--vh","--fw","--fh"].forEach(function(v){var x=parseFloat(n.style.getPropertyValue(v));if(isFinite(x))n.style.setProperty(v,(x*f)+"px")});n.dataset.h9=key})}catch(e){}}
 
-  /* ---------- 3) 한 화면 장소는 가운데 고정 ---------- */
+  /* ---------- 3) 원본 장면이 넘치면 기존 좌우 이동 유지 ---------- */
   function lockScroll(){try{if(!inn()||G.tab!=="scene")return;var st=document.querySelector("#app .stage");if(!st)return;var world=st.classList.contains("inn-world-stage");B.classList.toggle("inn-pan9",world);
-    if(world)return;var fx=document.getElementById("fsscroll");if(!fx)return;var m=fx.scrollWidth-fx.clientWidth;fx.style.setProperty("overflow-x","hidden","important");var c=Math.max(0,Math.round(m/2));if(Math.abs(fx.scrollLeft-c)>1)fx.scrollLeft=c}catch(e){}}
+    if(world)return;var fx=document.getElementById("fsscroll");if(!fx)return;var m=fx.scrollWidth-fx.clientWidth,pan=m>2;st.classList.toggle("inn-scroll-pan9",pan);fx.style.setProperty("overflow-x",pan?"auto":"hidden","important");/* fsLayout/FSX가 초기 위치와 사용자 이동을 관리한다. 반복 중앙 복귀 금지. */}catch(e){}}
 
   /* ---------- 1) 장소 이동 목록 ---------- */
   var SHORT={bed13:"안 쓰는 방 · 열세 번째 침대",dining:"식당",kitchen:"부엌",hall:"2층 복도",dotoroom:"도토의 방",front:"접수대",plaza:"광장 (여관 밖)"};
@@ -51191,8 +51156,12 @@ window.__INN_PIANO={"inn_title":{"bpm":76,"vol":0.9,"prog":["Dm"],"mel":[],"medi
    "#innmove .ls button i{font-style:normal;font-size:18px;color:#8A6A3A}#innmove .ls button small{font-size:var(--t-cap,12px);color:#5E5638}",
    "#innmove .ls button[disabled]{background:#3D5E45;color:#FFF6E0;border-color:#3D5E45;opacity:1}#innmove .ls button[disabled] small{color:#DCEBD8}",
    "#innmove .wm{display:block;width:100%;margin-top:8px;min-height:36px;border-radius:9px;border:1px solid #4A5590;background:#2E3766;color:#FFF6E0;font:inherit}",
-   /* 좌우 보기: 식당 파노라마에서만. 화면 가장자리 세로 띠, 끝에서는 흐리게 '끝' */
-   "html body.w209.inn1 .stage:not(.inn-world-stage) .fsa,html body.w209.inn1 .stage:not(.inn-world-stage) .fsbar{display:none!important;pointer-events:none!important}",
+   /* 좌우 보기: 넘치는 기존 장면은 native 이동, 식당 파노라마는 기존 세로 띠. */
+   "html body.w209.inn1 .stage:not(.inn-world-stage):not(.inn-scroll-pan9) .fsa,html body.w209.inn1 .stage:not(.inn-world-stage) .fsbar{display:none!important;pointer-events:none!important}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;width:48px!important;height:72px!important;top:calc(50% - 36px)!important;bottom:auto!important;font-size:20px!important;z-index:12!important}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa::after{content:'왼쪽';font-size:12px!important;line-height:1.2!important}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa.r::after{content:'오른쪽'}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa:not(.on){visibility:hidden!important;pointer-events:none!important}",
    "html body.w209.inn1 .stage.inn-world-stage .fsa{top:24%!important;bottom:auto!important;height:46%!important;width:48px!important;min-height:0!important;margin:0!important;padding:0!important;border-radius:0!important;border:0!important;box-shadow:none!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;color:#FFF6E0!important;font-size:20px!important;background:linear-gradient(90deg,rgba(14,18,38,.62),rgba(14,18,38,0))!important;transform:none!important}",
    "html body.w209.inn1 .stage.inn-world-stage .fsa.l{left:0!important}",
    "html body.w209.inn1 .stage.inn-world-stage .fsa.r{right:0!important;left:auto!important;background:linear-gradient(270deg,rgba(14,18,38,.62),rgba(14,18,38,0))!important}",
@@ -51696,135 +51665,119 @@ window.__INN_PIANO={"inn_title":{"bpm":76,"vol":0.9,"prog":["Dm"],"mel":[],"medi
  var scheduled=false;new MutationObserver(function(){if(scheduled)return;scheduled=true;requestAnimationFrame(function(){scheduled=false;update()})}).observe(document.body,{childList:true,subtree:true});update();
 })();
 
-/* Shared deduction notebook and compulsory council/confrontation reasoning.
-   Cards are observations or testimony; conclusions never exceed their scope. */
+/* Keep the extra snow observation in the authored witness card. UI changes
+   must not turn an unasked observation into a fact or erase it on a reload. */
 (function(){
- var DB={
-  linen:{title:'이불을 만진 사람',question:'이불의 손자국을 누구에게 다시 물어볼까?',claim:'나비: “열한 시엔 빵 반죽하고 잤어요. 그 방 쪽엔 아무도 없었어요.”',next:'나비에게 이불을 만졌는지 물어본다. 돈을 옮긴 사람은 아직 모른다.',stages:[{
-   ids:['C02','C03'],prompt:'흔적과 어젯밤 행동을 연결해 보자.',options:[
-    ['나비도 이불을 만졌는지 확인할 필요가 있다.',true],['나비가 돈을 훔쳤다는 뜻이다.',false,'가루는 이불을 만진 흔적이다. 돈을 옮겼다는 증거는 아니다.'],['방 주인인 할머니의 손자국으로 확정할 수 있다.',false,'방의 주인이라는 사실만으로 가루 묻은 손의 주인을 알 수는 없다.']],
-   result:'이불의 가루와 나비의 반죽 일을 함께 보면, 나비에게 그 방에 간 적을 다시 물어볼 이유가 생긴다.',hints:['흔적의 재료와 어젯밤 한 일을 나눠 보자.','이불의 가루와 반죽한 사람의 말을 비교해 보자.','하얀 손자국과 나비의 말을 연결해 보자.']}]},
-  time:{title:'밤이의 목격 시각',question:'밤이가 본 시각은 믿어도 될까?',claim:'밤이: “여섯 시 반쯤 세련이 주머니를 들고 갔다가 빈손으로 왔어요.”',next:'세련의 아침 수색 주장과 밤이의 실제 목격을 구분한다. 방에서 한 일은 아직 확인해야 한다.',stages:[{
-   ids:['C06','C07'],prompt:'1 · 시계를 본 위치와 자세를 확인하자.',clock:true,options:[
-    ['거꾸로 본 시계라면 읽은 시각도 달라질 수 있다.',true],['숫자가 없으니 목격한 사람도 틀렸을 것이다.',false,'시각을 잘못 읽는 것과 사람을 잘못 보는 것은 별개다.'],['이 두 기록만으로 세련의 범행을 확정한다.',false,'시계와 자세는 시각 착오를 확인하는 근거다. 방에서 한 일은 보여주지 않는다.']],
-   result:'같은 두 바늘도 거꾸로 보면 아래를 가리킨다. 실제 시각은 다른 기록과 맞춰야 한다.',hints:['밤이가 시계를 본 방향을 생각해 보자.','시계의 숫자 유무와 밤이의 잠자리를 비교하자.','숫자 없는 시계와 밤이의 잠자리를 연결하고, 시계를 돌려 보자.']},{
-   ids:['C13','C08'],prompt:'2 · 목격 당시의 날씨를 독립된 기록과 맞추자.',options:[
-    ['첫눈이 시작된 자정에 본 것이다.',true],['세련의 기상 시각이 6시 반이므로 목격도 6시 반이다.',false,'세련의 기상 시각은 본인의 말이다. 밤이가 본 순간의 날씨를 설명하지 못한다.'],['밤이가 시각을 틀렸으니 목격 전체를 버린다.',false,'날씨 기록으로 시각을 확인할 수 있다. 사람과 주머니에 관한 목격까지 지울 근거는 없다.']],
-   result:'밤이가 말한 “첫눈이 막 시작된 때”와 도토의 “자정, 첫눈” 기록이 맞는다. 아침이 아닌 자정의 목격이다.',hints:['시계 말고 그 순간 함께 본 것이 있다.','밤이의 창밖 관찰과 도토의 날씨 기록을 비교하자.','첫눈을 본 밤이의 목격담과 날씨 일지를 연결하자.']}]},
-  location:{title:'공개되지 않은 자리',question:'세련은 발견 위치를 어떻게 알았을까?',claim:'세련: “침대 밑에 처박혀 있던 쥐 하나 꺼내 놓고…”',next:'세련에게 직접 방을 보거나 솜솜을 옮긴 적이 있는지 묻는다. 돈을 숨겼는지는 별도로 증명해야 한다.',stages:[{
-   ids:['C04','C10'],prompt:'직접 본 위치와 모두에게 읽어 준 기록을 비교하자.',options:[
-    ['세련이 직접 그 자리를 보았을 가능성을 확인해야 한다.',true],['기록부에 침대 밑이라고 적혀 있어 알았을 것이다.',false,'공개 기록은 “같은 방”이라고만 적었다. 침대 밑이라는 위치는 적혀 있지 않다.'],['위치를 안다는 말만으로 돈을 숨긴 범인이 확정된다.',false,'발견 위치를 아는 이유는 물을 수 있다. 그 말만으로 돈을 옮긴 행동까지 증명할 수는 없다.']],
-   result:'부녀가 직접 본 자리는 침대 밑 상자 뒤. 공개된 기록에는 “같은 방”만 있다. 세련은 공개되지 않은 위치를 알고 있다.',hints:['어떤 말이 공개된 정보였는지 구분해 보자.','실제 발견 위치와 너울이 읽은 문장을 비교하자.','바구니 속 손님의 발견 기록과 너울의 기록을 연결하자.']}]},
-  contact:{title:'털에 남은 붉은 자국',question:'털의 자국으로 어디까지 알 수 있을까?',claim:'세련: “쥐는 옮겼지만 주머니는 보지도 못했습니다.”',next:'솜솜 아래에 주머니가 있었는지 세련에게 묻는다. 붉은 자국은 접촉의 증거이며 살해의 증거가 아니다.',stages:[{
-   ids:['C05','C01'],prompt:'글씨의 방향, 별 모양, 잉크 상태를 비교하자.',options:[
-    ['솜솜의 털이 덜 마른 주머니 봉인띠에 닿았다.',true],['누군가 솜솜에게 도장을 직접 찍었다.',false,'봉인띠의 글씨와 같은 무늬가 거꾸로 옮겨 묻었다. 직접 찍었다는 설명으로는 이 뒤집힌 방향이 맞지 않는다.'],['이 자국으로 세련이 솜솜을 죽였다고 증명한다.',false,'자국은 무엇과 닿았는지 보여준다. 솜솜의 생사나 가해 행위는 보여주지 않는다.']],
-   result:'같은 붉은 글씨와 끝이 말린 별, 뒤집힌 방향. 덜 마른 봉인띠에서 솜솜의 털로 옮겨 묻은 자국이다.',hints:['색만 같은지, 무늬와 방향까지 같은지 살펴보자.','털의 글씨와 봉인띠의 도장을 비교하자.','털의 붉은 자국과 주머니와 계약서를 연결하자.']}]},
-  seal:{title:'사라진 이백 냥',question:'봉인이 그대로인데 돈만 빠질 수 있을까?',claim:'세련: “삼백 냥을 봉했습니다. 이백 냥은 그 방 주인이 빼 갔겠죠.”',next:'다른 사람이 돈을 빼 갔다는 설명이 성립하지 않는다. 세련에게 봉하기 전 돈의 행방을 다시 묻는다.',stages:[{
-   ids:['C10','C12'],prompt:'발견 때의 상태와 다시 봉할 수 있는 사람을 연결하자.',options:[
-    ['세련의 말대로라면 다른 사람이 돈을 빼고 다시 봉할 수 없다.',true],['할머니가 돈을 빼고 세련의 도장으로 다시 봉했다.',false,'세련은 도장을 계속 품에 두었다고 했다. 할머니가 그 도장을 얻었다는 근거가 없다.'],['삼백 냥이었다는 피해자의 말을 그대로 사실로 삼는다.',false,'처음 액수를 확인한 다른 사람은 없다. 온전한 봉인과 확인된 백 냥을 먼저 설명해야 한다.']],
-   result:'너울은 온전한 봉인과 백 냥을 확인했다. 세련은 혼자 봉했고 도장을 품에 뒀다고 했다. 이 설명대로라면 다른 사람이 이백 냥을 빼고 다시 봉할 수 없다.',hints:['돈을 꺼냈다면 주머니에 어떤 변화가 남을까?','발견 당시 봉인 상태와 다시 봉할 수 있는 사람을 나눠 보자.','너울의 기록과 세련의 말을 연결해 봉인과 도장 위치를 비교하자.']}]}
+ function snow(){var b=G&&G.beats||{};return !!(b.inn_show_geokkuri_C08||b.inn_snowWitness||b.inn_c13fix)}
+ var x=window.EP1INN&&window.EP1INN.EV.C13;if(!x)return;
+ ['desc','card','detail','desc2','card2','detail2'].forEach(function(k){var base=x[k];if(!base)return;Object.defineProperty(x,k,{enumerable:true,configurable:true,get:function(){return base+(snow()?' 추가 관찰: 그 사람이 지나갈 때 창밖에 올해 첫눈이 막 내리기 시작했다.':'')}})});
+})();
+
+/* Chapter 1: decorate native controls; never replace their input handlers or proof state. */
+(function(){
+ function own(){return !!(G&&CASES[G.ci]&&CASES[G.ci].id==='inn')}
+ var PATH={
+  scene:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',
+  move:'<path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2zM9 3v16M15 5v16"/>',
+  ev:'<path d="M5 7h14v14H5zM8 7V3h8v4M8 12h8M8 16h5"/>',
+  rec:'<path d="M4 3h16v18H4zM8 7h8M8 11h8M8 15h5"/>',
+  press:'<path d="M3 4h18v12H10l-5 5v-5H3zM8 8h8M8 12h5"/>',
+  next:'<path d="m8 4 9 8-9 8"/>',
+  present:'<path d="M3 14h9l3-3h6v7l-5 3H8l-5-3zM10 3h9v7h-9z"/>',
+  back:'<path d="m10 4-7 7 7 7M3 11h12a6 6 0 0 1 6 6"/>',
+  hint:'<path d="M8 17h8M9 21h6M8 14a7 7 0 1 1 8 0v3H8z"/>',
+  leave:'<path d="M13 3H4v18h9M10 12h11m-5-5 5 5-5 5"/>',
+  log:'<path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/>',
+  more:'<circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>'
  };
- // These are questions the player can now put to the speaker, not verdicts
- // granted by the notebook. Changes in votes and admissions happen afterward.
- var REBUTTAL={
-  linen:'“나비 씨도 그 방에 갔다면, 침대 주인만 돈을 숨길 수 있었다는 말은 맞습니까?”',
-  time:'“자정에 주머니를 들고 지나갔다면, 자정엔 자고 있었다는 말씀은 어떻게 된 겁니까?”',
-  location:'“침대 밑이라는 말은 공개한 적 없습니다. 우리를 의심하는 분이 그 자리를 어떻게 아셨습니까?”',
-  contact:'“털에 봉인띠 자국이 남았습니다. 솜솜을 들어 올렸을 때 주머니는 어디에 있었습니까?”',
-  seal:'“도장은 계속 품에 있었다면서, 할머니는 어떤 도장으로 다시 봉했다는 겁니까?”'
- };
- var active=null,gen=0,owner=null,returnFocus=null;
- function inn(){return G&&CASES[G.ci]&&CASES[G.ci].id==='inn'}
- function has(id){return !!G&&((G.found||[]).indexOf(id)>=0||(G.asked||[]).indexOf(id)>=0)}
- function beat(k){return !!(G&&G.beats&&G.beats[k])}
- function snow(){return beat('inn_show_geokkuri_C08')||beat('inn_snowWitness')||beat('inn_c13fix')}
- function record(){if(!G.reason||G.reason.version!==1)G.reason={version:1,solved:[]};return G.reason}
- function ready(id){var d=DB[id];return d&&d.stages.every(function(s){return s.ids.every(has)})&&(id!=='time'||snow())&&(id!=='location'||beat('inn_locationClaim'))}
- function text(id){var x=(window.EP1INN.EV||{})[id];if(!x)return '';var fixed=x.fixBeat&&beat(x.fixBeat);return fixed?(x.card2||x.detail2||x.desc2):(x.card||x.detail||x.desc)}
- function name(id){return ((window.EP1INN.EV||{})[id]||{}).name||id}
- function order(id,stage){return ({linen:[1,0,2],time:stage?[0,2,1]:[1,2,0],location:[2,0,1],contact:[1,2,0],seal:[2,1,0]})[id]}
- function notebookClaim(id){return ({linen:'이불에 가루 손자국이 있다. 나비는 어젯밤 반죽을 했다고 말했다.',time:'밤이는 여섯 시 반쯤 보았다고 한다. 목격 당시 첫눈이 막 시작됐다는 관찰도 얻었다.',location:'직접 본 발견 위치와 모두에게 공개된 기록은 같은 정보를 담고 있을까?',contact:'솜솜의 털에 뒤집힌 글씨와 별이 있다. 주머니 봉인띠의 무늬와 비교해 보자.',seal:'세련은 삼백 냥을 혼자 봉했다고 한다. 발견된 백 냥의 봉인은 온전했다.'})[id]}
- function e(s){return esc(String(s||''))}
- function reset(keepGate){gen++;if(!keepGate&&window.__logicGateCancel)window.__logicGateCancel();if(active&&active.el)active.el.remove();active=null;document.body.classList.remove('logic-open');if(returnFocus&&returnFocus.isConnected)returnFocus.focus();returnFocus=null}
- window.__logicReset=reset;
- window.__logicBusy=function(){return !!active};
- // Expose authored questions for tools/accessibility inspection, never progress state.
- window.__logicQuestions=DB;
- // An old dialogue-effect skip hold can swallow clicks in the newly opened
- // notebook. This modal owns its inputs; scene tap protection remains intact.
- var fxEat=window.__fxEat;if(fxEat)window.__fxEat=function(t,ev){if(ev&&ev.target&&ev.target.closest&&ev.target.closest('#logic-panel'))return false;return fxEat.apply(this,arguments)};
- var css=document.createElement('style');css.id='logic-style';css.textContent=`
- #logic-panel{position:fixed;inset:0;z-index:130;background:#151c19e8;color:#332c22;display:grid;place-items:center;padding:10px;box-sizing:border-box;font:15px/1.5 var(--body,sans-serif)}
- #logic-panel *{box-sizing:border-box}#logic-panel .lp-shell{width:min(100%,960px);max-height:100%;background:#f1e5c8;border:2px solid #ae925b;box-shadow:0 12px 60px #0008;display:flex;flex-direction:column;overflow:hidden;border-radius:6px}
- #logic-panel .lp-head{display:flex;gap:12px;align-items:center;padding:9px 14px;background:#353e32;color:#f7eacb;flex:none}#logic-panel .lp-head b{font:18px var(--display,sans-serif)}#logic-panel .lp-head small{flex:1}#logic-panel .lp-close{width:44px;flex:none}
- #logic-panel button{font:14px/1.4 var(--body,sans-serif);border:1px solid #927b50!important;border-image:none!important;border-radius:3px!important;background:#faf0da!important;color:#392f22!important;box-shadow:none!important;min-height:44px;cursor:pointer;padding:7px 10px;white-space:normal;text-shadow:none!important}
- #logic-panel button:before,#logic-panel button:after{display:none!important}#logic-panel button:focus-visible{outline:3px solid #b56734;outline-offset:1px}#logic-panel button:disabled{opacity:.5;cursor:default}
- #logic-panel button[aria-pressed=true],#logic-panel .lp-primary{background:#465443!important;color:#fff2d7!important;border-color:#607752!important}#logic-panel button small{display:block;font-size:11px;opacity:.8}
- #logic-panel .lp-body{overflow:auto;padding:12px 14px;min-height:0;overscroll-behavior:contain}#logic-panel .lp-questions{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}#logic-panel .lp-questions button{flex:1;min-width:125px}
- #logic-panel h2{font:20px/1.3 var(--display,sans-serif);margin:0 0 5px}#logic-panel p{margin:4px 0 9px}#logic-panel .lp-claim{padding:8px 10px;border-left:4px solid #997246;background:#e6d6b5;font-size:14px}
- #logic-panel .lp-layout{display:grid;grid-template-columns:minmax(210px,1fr) minmax(290px,1.45fr);gap:12px}#logic-panel .lp-cards{display:grid;grid-template-columns:1fr 1fr;gap:5px;max-height:190px;overflow:auto;align-content:start;padding:2px}#logic-panel .lp-cards button{text-align:left;min-height:50px}
- #logic-panel .lp-detail{padding:8px;background:#fcf4e1;border:1px solid #b6a17d;font-size:13px;min-height:60px;max-height:100px;overflow:auto;margin-top:7px}#logic-panel .lp-detail b{display:block}#logic-panel .lp-slots{display:flex;gap:6px;margin-bottom:7px}#logic-panel .lp-slots button{flex:1;min-width:0;border-style:dashed!important}
- #logic-panel .lp-options{display:grid;gap:5px}#logic-panel .lp-options button{text-align:left}#logic-panel .lp-feedback{padding:9px;background:#e3dec4;border-left:4px solid #687853;margin-top:7px;font-size:14px}#logic-panel .lp-feedback.error{background:#efddc7;border-left-color:#a35335}
- #logic-panel .lp-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:9px}#logic-panel .lp-actions .lp-primary{margin-left:auto;min-width:130px}#logic-panel .lp-help{font-size:13px;margin-top:7px;color:#615039}
- #logic-panel .lp-clock{display:flex;gap:10px;align-items:center;background:#e8dcc1;padding:6px;margin:6px 0}#logic-panel .lp-clock svg{width:72px;height:72px;flex:none}#logic-panel .lp-clock p{font-size:12px;margin:0}#logic-panel .lp-clock button{min-width:90px}
- #logic-panel .lp-summary{padding:15px;background:#fff5df;border:1px solid #b4a17b}#logic-panel .lp-summary h3{font:21px var(--display,sans-serif);margin:0 0 6px}#logic-panel .lp-summary b{display:block;margin-bottom:6px}
- #logic-panel .lp-body,#logic-panel .lp-cards,#logic-panel .lp-detail{scrollbar-color:#8b7751 #e7dac0;scrollbar-width:auto}#logic-panel .lp-detail small{display:block;color:#726044;font-size:11px;margin-bottom:4px}
- #logic-note{min-height:44px!important}#logic-panel .lp-locked{padding:20px;border:1px dashed #9e885f;background:#f8eed7}
- @media(max-width:550px){#logic-panel{padding:5px}#logic-panel .lp-layout{grid-template-columns:1fr}#logic-panel .lp-cards{max-height:120px}#logic-panel .lp-detail{max-height:100px}#logic-panel .lp-head small{font-size:11px}#logic-panel .lp-questions button{min-width:100px}#logic-panel .lp-body{padding:10px}}
- @media(max-height:450px) and (min-width:551px){#logic-panel .lp-head{padding:5px 12px}#logic-panel .lp-body{padding:8px 12px}#logic-panel .lp-cards{max-height:135px}#logic-panel .lp-detail{max-height:75px}#logic-panel .lp-options button{min-height:40px;padding:5px 8px}#logic-panel h2{font-size:18px}#logic-panel .lp-claim{padding:5px 8px;margin-bottom:5px}}
- `;document.head.appendChild(css);
- function draw(){var a=active;if(!a)return;var previous=document.activeElement,focusKey=null;if(previous&&a.el.contains(previous))Object.keys(previous.dataset).some(function(k){if(['act','card','slot','option','question'].indexOf(k)<0)return false;focusKey=[k,previous.dataset[k]];return true});var scroll=a.el.querySelector('.lp-body'),scrollTop=scroll?scroll.scrollTop:0,cardList=a.el.querySelector('.lp-cards'),cardScroll=cardList?cardList.scrollTop:0;var d=DB[a.id],s=d.stages[a.stage],r=record(),h='<div class="lp-shell"><header class="lp-head"><b>추리 수첩</b><small>'+(a.mode==='notebook'?'조사 · 가설을 세워 보기 (감점 없음)':'주장 검증 · 틀린 제시는 설득력 1칸')+'</small>'+(a.mode==='notebook'?'<button class="lp-close" data-act="close" aria-label="수첩 닫기">×</button>':'')+'</header><main class="lp-body">';
-  if(a.mode==='notebook')h+='<nav class="lp-questions" aria-label="풀리지 않은 질문">'+Object.keys(DB).map(function(k){return '<button data-question="'+k+'" aria-pressed="'+(k===a.id)+'">'+e(DB[k].title)+'<small>'+(r.solved.indexOf(k)>=0?'수첩에 정리됨':ready(k)?'근거 비교 가능':'더 조사할 질문')+'</small></button>'}).join('')+'</nav>';
-  h+='<h2>'+e(d.question)+'</h2>';
-  if(a.mode==='notebook'&&!ready(a.id)){
-   var missing=[];d.stages.forEach(function(st){st.ids.forEach(function(id){if(!has(id)&&missing.indexOf(id)<0)missing.push(id)})});
-   h+='<section class="lp-locked"><b>아직 비교할 기록이 부족해.</b><p>'+(a.id==='time'&&!snow()?'밤이에게 날씨 일지를 보여 주고, 목격 당시 창밖에 무엇이 있었는지 물어보자.':a.id==='location'&&!beat('inn_locationClaim')?'발견 위치는 공개하지 않았다. 회의에서 사람들이 무슨 말을 하는지 들어 보자.':'현장을 살피고 주민의 말을 더 들어 보자.')+'</p>'+(missing.length?'<p>아직 없는 기록: '+missing.map(name).map(e).join(', ')+'</p>':'')+'</section>';
-  }else if(a.complete){
-   h+='<section class="lp-summary" role="status"><h3>'+(a.mode==='notebook'?'가설을 정리했어':'반박할 근거를 찾았어')+'</h3>'+a.results.map(function(t){return '<p>'+e(t)+'</p>'}).join('')+'<b>'+(a.mode==='notebook'?'다음에 확인할 일':'이 근거로 되물을 말')+'</b><p>'+e(a.mode!=='notebook'?REBUTTAL[a.id]:a.id==='contact'?'솜솜과 주머니가 같은 자리에 있었는지, 각각을 옮긴 사람에게 확인한다.':d.next)+'</p></section><div class="lp-actions"><button class="lp-primary" data-act="finish">'+(a.mode==='notebook'?'수첩에 남기기':'이 근거로 제시하기')+'</button></div>';
-  }else{
-   h+='<p class="lp-claim">'+e(a.mode==='notebook'?notebookClaim(a.id):d.claim)+'</p><p>'+e(s.prompt)+' <small>('+ (a.stage+1)+' / '+d.stages.length+')</small></p><div class="lp-layout"><section><div class="lp-cards" aria-label="가진 기록">'+Object.keys(window.EP1INN.EV).filter(has).map(function(id){return '<button data-card="'+id+'" aria-pressed="'+(a.selected.indexOf(id)>=0)+'"><small>'+(id==='C03'||id==='C07'||id==='C12'||id==='C13'?'주민의 진술':'현장·관찰 기록')+'</small>'+e(name(id))+'</button>'}).join('')+'</div><div class="lp-detail" aria-live="polite">'+(a.detail?'<b>'+e(name(a.detail))+'</b><small>기록 원문 · 긴 내용은 이 칸에서 스크롤</small>'+e(text(a.detail)):'기록을 누르면 원문을 읽고 근거 칸에 놓을 수 있어. 같은 기록은 한 번만 쓸 수 있어.')+'</div></section><section><div class="lp-slots">'+[0,1].map(function(i){return '<button data-slot="'+i+'">근거 '+(i+1)+'<br>'+e(a.selected[i]?name(a.selected[i]):'기록 고르기')+'</button>'}).join('')+'</div>';
-   if(s.clock)h+='<div class="lp-clock"><svg viewBox="0 0 100 100" role="img" aria-label="숫자 없는 시계. 두 바늘이 겹쳐 '+(a.rotated?'위':'아래')+'를 가리킴"><g transform="rotate('+(a.rotated?0:180)+' 50 50)"><circle cx="50" cy="50" r="43" fill="#fcf1d6" stroke="#635136" stroke-width="3"/>'+Array.from({length:12},function(_,i){return '<path d="M50 10v5" stroke="#806946" stroke-width="2" transform="rotate('+(i*30)+' 50 50)"/>'}).join('')+'<path d="M50 50V21 M50 50V31" stroke="#332c24" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="50" r="4" fill="#332c24"/></g></svg><p>'+(a.rotated?'바닥에서 보는 방향':'밤이처럼 거꾸로 보는 방향')+'<br>실제 시각은 다음 단계에서 다른 기록과 맞춘다.</p><button data-act="rotate">시계 돌려 보기</button></div>';
-   h+='<div class="lp-options" aria-label="이 두 근거로 말할 수 있는 결론">'+order(a.id,a.stage).map(function(i){var o=s.options[i];return '<button data-option="'+i+'" aria-pressed="'+(a.choice===i)+'">'+e(o[0])+'</button>'}).join('')+'</div><div class="lp-actions"><button data-act="help">생각할 거리 '+(a.hint?Math.min(a.hint,3)+'/3':'')+'</button><button class="lp-primary" data-act="submit" '+(a.selected.length!==2||a.choice==null?'disabled':'')+'>근거와 결론 검증</button></div>'+(a.hint?'<p class="lp-help">'+e(s.hints[Math.min(a.hint,3)-1])+'</p>':'')+(a.feedback?'<div class="lp-feedback '+(a.error?'error':'')+'" role="status">'+e(a.feedback)+'</div>':'')+'</section></div>';
-  }
-  h+='</main></div>';a.el.dataset.reason=a.id;a.el.dataset.stage=a.stage;a.el.innerHTML=h;var target=focusKey&&a.el.querySelector('[data-'+focusKey[0]+'="'+focusKey[1]+'"]');if(!target&&a.complete)target=a.el.querySelector('[data-act=finish]');if(target)target.focus({preventScroll:true});a.el.querySelector('.lp-body').scrollTop=scrollTop;var cards=a.el.querySelector('.lp-cards');if(cards)cards.scrollTop=cardScroll;
+ function icon(key){return '<svg class="simple-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(PATH[key]||PATH.ev)+'</svg>'}
+ var SHORT={C01:"주머니",C02:"손자국",C03:"나비의 말",C04:"솜솜",C05:"붉은 털",C06:"시계",C07:"잠자리",C08:"첫눈 일지",C09:"숙박부",C10:"발견 기록",C11:"옛 장부",C12:"세련의 말",C13:"목격담"};
+ var LABEL={scene:['조사','장면 조사'],move:['이동','장소 이동'],ev:['증거','증거 보기'],rec:['증언','주민의 증언 기록'],press:['질문','발언 되묻기'],next:['다음','다음 발언 듣기'],present:['제시','선택한 증거 제시하기'],back:['취소','증거 선택 취소하고 회의로'],hint:['도움','추리 도움말'],leave:['조사','조사로 돌아가기'],log:['기록','공개 발언 기록 열기'],more:['메뉴','게임 메뉴']};
+ function decorate(b,key){var spec=LABEL[key];if(!b||!spec)return;
+  if(b.querySelector('.simple-icon'))return;
+  var badge=b.querySelector('.n'),badgeCopy=badge&&badge.cloneNode(true);
+  b.innerHTML=icon(key)+'<span class="simple-label">'+spec[0]+'</span>';
+  if(badgeCopy)b.appendChild(badgeCopy);
+  b.setAttribute('aria-label',spec[1]);b.title=spec[1];
  }
- function wrong(a,message){a.feedback=message;a.error=true;if(a.mode!=='notebook'){
-  var was=G.hp==null?5:G.hp;G.hp=Math.max(1,was-1);G.wrong=(G.wrong|0)+1;saveProg();a.feedback+=' 설득력 1칸을 잃었어.';
-  if(was<=1){var kind=a.mode;reset();window.__innFail(kind);return}
+ var style=document.createElement('style');style.id='inn-simple-ui-style';style.textContent=`
+ html body.inn1 #logic-note{display:none!important}
+ html body.inn1 .simple-icon{width:25px!important;height:25px!important;flex:none;pointer-events:none}
+ html body.inn1 .simple-label{font:12px/1.2 var(--display,sans-serif)!important;white-space:nowrap;pointer-events:none}
+ html body.inn1 #w209rail .g>button,html body.inn1 #rtgbar button,html body.inn1 #rtgtr button{min-width:44px!important;min-height:44px!important;border:1px solid #aa915f!important;border-image:none!important;background:#f2e6cc!important;color:#493725!important;box-shadow:0 2px 0 #604c32!important;border-radius:5px!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:5px 8px!important}
+ html body.inn1 #w209rail .g>button.on,html body.inn1 #rtgbar button.rtghot{background:#e4cb8b!important;outline:2px solid #ad7e32}
+ html body.inn1 #w209rail .g>button:disabled,html body.inn1 #rtgbar button:disabled,html body.inn1 #rtgtr button:disabled{opacity:.45!important}
+ html body.inn1 #rtgbar{left:50%!important;right:auto!important;bottom:8px!important;transform:translateX(-50%)!important;gap:8px!important;width:auto!important;max-width:calc(100vw - 16px)}
+ html body.inn1 #rtgbar button{width:72px!important;height:58px!important;min-width:72px!important}
+ html body.inn1 #rtgbar [data-g=obj]{display:none!important}
+ html body.inn1 #rtgbar button[style*="display: none"],html body.inn1 #rtgtr button[style*="display: none"]{display:none!important}
+ html body.inn1 #rtgtr{gap:5px!important;top:8px!important;right:8px!important}
+ html body.inn1 #rtgtr button{width:48px!important;height:48px!important;padding:3px!important}
+ html body.inn1 #rtgtr .simple-icon{width:21px!important;height:21px!important}
+ html body.inn1 #rtgtr .simple-label{font-size:11px!important}
+ html body.inn1 #rtgbar button::before,html body.inn1 #rtgbar button::after,html body.inn1 #rtgtr button::before,html body.inn1 #rtgtr button::after{display:none!important}
+ html body.inn1 #rtgbar button:focus-visible,html body.inn1 #rtgtr button:focus-visible,html body.inn1 #w209rail button:focus-visible,html body.inn1 .rt-bul button:focus-visible,html body.inn1 #rtexam:focus-visible,html body.inn1 #rtgvote [data-pick]:focus-visible{outline:3px solid #bd7730!important;outline-offset:2px!important}
+ html body.inn1.rtg.rtg-drw .rt-bul{left:calc(36vw + 12px)!important;right:8px!important;bottom:78px!important;top:156px!important;width:auto!important;max-height:none!important;height:auto!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));align-content:start;gap:7px!important;background:#e9dab8!important;border:2px solid #aa915f!important;border-radius:6px!important;overflow:auto!important;padding:9px!important}
+ html body.inn1.rtg.rtg-drw .rt-bul .bl{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:4px;min-height:86px!important;min-width:0!important;padding:6px!important;background:#faf2df!important;color:#493725!important;border:1px solid #af996a!important;border-radius:5px!important;text-align:center!important;box-shadow:none!important;font-size:12px!important}
+ html body.inn1.rtg.rtg-drw .rt-bul .bl.on{background:#e2c97e!important;outline:2px solid #a5772e!important}
+ html body.inn1.rtg.rtg-drw .rt-bul .bl .evic{display:block!important;width:42px!important;height:42px!important;flex:none}
+ html body.inn1.rtg.rtg-drw .rt-bul .bl>span{font:12px/1.3 var(--display,sans-serif)!important;word-break:keep-all;white-space:normal}
+ html body.inn1.rtg.rtg-drw .rt-evd{display:block!important;left:8px!important;right:auto!important;top:156px!important;bottom:78px!important;width:36vw!important;max-height:none!important;overflow:auto!important;padding:10px!important;background:#faf2df!important;color:#493725!important;border:2px solid #aa915f!important;box-sizing:border-box!important}
+ html body.inn1.rtg.rtg-drw .rt-evd>.evic{width:62px!important;height:62px!important;display:block!important;margin:0 auto 8px!important}
+ html body.inn1.rtg.rtg-drw .rt-evd p{font-size:14px!important;line-height:1.55!important;word-break:keep-all}
+ html body.inn1 #rtexam{position:sticky!important;bottom:0!important;min-height:44px!important;width:100%;background:#e4cb8b!important;color:#493725!important;border:1px solid #aa915f!important;white-space:normal}
+ html body.inn1 #rtg .seat .vt9{display:flex!important;align-items:center;justify-content:center;gap:2px;padding:2px 4px!important;min-width:30px;background:#f4e8cc!important;color:#493725!important;border:1px solid #b99b61!important}
+ html body.inn1 #rtg .seat .vt9 svg,html body.inn1 #rtg .seat .vt9 img{width:23px!important;height:23px!important;flex:none}
+ html body.inn1 #rtg .seat .vt9 span{font:10px/1.2 var(--display,sans-serif)}
+ html body.inn1 #rtgvote [data-pick]{min-height:60px!important;min-width:70px!important;display:inline-flex!important;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px!important;white-space:normal}
+ html body.inn1 #rtgvote [data-pick] svg,html body.inn1 #rtgvote [data-pick] img{width:36px!important;height:36px!important}
+ html body.inn1 #simple-drawer-claim{display:none!important;position:fixed;z-index:64;left:8px;right:8px;top:72px;height:76px;box-sizing:border-box;padding:7px 10px;overflow:auto;overscroll-behavior:contain;background:#faf2df;border:2px solid #aa915f;border-radius:6px;color:#493725;font:14px/1.4 var(--display,sans-serif)}
+ html body.inn1.rtg.rtg-drw:not(.rtgq-on) #simple-drawer-claim{display:block!important}
+ html body.inn1:has(.rt-mid.vote) #simple-drawer-claim{display:none!important}
+ html body.inn1 #simple-drawer-claim b{display:block;color:#795021;font-size:12px;margin-bottom:3px}
+ html body.inn1 #simple-drawer-claim p{margin:0;word-break:keep-all}
+ html body.inn1.rtg-drw #rtgtal{display:none!important}
+ html body.inn1.rtg.rtg-drw .rt .rt-bub.stm{visibility:hidden!important}
+ html body.inn1.rtg .rt .rt-nav{display:none!important}
+ @media(max-height:450px){html body.inn1.rtg.rtg-drw .rt-evd>.evic{width:40px!important;height:40px!important;margin:0 auto 4px!important}}
+ @media(max-width:550px){
+  html body.inn1 #simple-drawer-claim{top:112px;height:74px}
+  html body.inn1.rtg:not(.rtg-drw) .rt .rt-bub,html body.inn1.rtg #rtgq{top:clamp(120px,15vh,160px)!important;left:12px!important;right:12px!important;width:calc(100vw - 24px)!important;max-width:none!important;transform:none!important;max-height:calc(100vh - 220px)!important;overflow-y:auto!important;box-sizing:border-box!important}
+
+  html body.inn1.rtg.rtg-drw .rt-evd{left:8px!important;right:8px!important;top:194px!important;bottom:auto!important;width:calc(100vw - 16px)!important;height:24vh!important;max-height:24vh!important;min-height:90px}
+  html body.inn1.rtg.rtg-drw .rt-bul{left:8px!important;right:8px!important;top:calc(194px + 24vh + 8px)!important;bottom:78px!important;grid-template-columns:repeat(3,minmax(0,1fr))}
+  html body.inn1 #rtgbar{gap:7px!important}html body.inn1 #rtgbar button{width:70px!important;min-width:70px!important}
+  html body.inn1 #rtgtop{max-width:calc(100vw - 172px)!important;overflow:hidden!important}
+  html body.inn1 #rtgvote .pk{display:flex!important;flex-wrap:wrap!important;justify-content:center;gap:5px}
  }
- try{SFX.huh()}catch(x){}draw()}
- function submit(){var a=active;if(!a||a.complete||a.selected.length!==2||a.choice==null||Date.now()-(a.lastSubmit||0)<550)return;a.lastSubmit=Date.now();var st=DB[a.id].stages[a.stage],right=a.selected.every(function(id){return st.ids.indexOf(id)>=0});
-  if(!right){var good=a.selected.filter(function(id){return st.ids.indexOf(id)>=0});wrong(a,good.length?'“'+name(good[0])+'”는 관련 있다. 다른 기록은 이 주장에 필요한 사실을 확인하지 못한다. 원문을 다시 비교해 보자.':'이 두 기록으로는 지금 주장의 사실을 연결할 수 없다. 무엇을 언제 보았는지 원문을 다시 비교해 보자.');return}
-  var op=st.options[a.choice];if(!op[1]){wrong(a,op[2]);return}
-  a.results.push(st.result);try{SFX.found()}catch(x){}
-  if(a.stage+1<DB[a.id].stages.length){a.stage++;a.selected=[];a.choice=null;a.detail=null;a.hint=0;a.feedback='시각을 잘못 읽었을 가능성을 확인했어. 이제 실제 시각을 다른 기록으로 확인하자.';a.error=false}else{a.complete=true}draw();
+ `;document.head.appendChild(style);
+ function decorateVotes(){var v=G.beats&&G.beats.rtVotes;if(!v)return;
+  document.querySelectorAll('#rtg .seat[data-k] .vt9').forEach(function(b){var seat=b.closest('[data-k]'),target=v[seat.dataset.k];if(!target)return;
+   var labels={innma:'할머니',seryeon:'세련','부녀':'부녀','기권':'기권'},label=labels[target]||target,k=target==='부녀'?'det1':target;
+   b.setAttribute('aria-label',((CAST[seat.dataset.k]||{}).name||seat.dataset.k)+'의 의심 대상: '+label);b.setAttribute('role','img');b.title=b.getAttribute('aria-label');
+   if(b.dataset.simpleVote===target&&b.querySelector('.simple-vote-label'))return;b.dataset.simpleVote=target;
+   var face='';try{if(target!=='기권')face=pf(k,'')}catch(e){}
+   b.innerHTML=face+'<span class="simple-vote-label">'+esc(label)+'</span>';
+  });
  }
- function open(id,opt){opt=opt||{};if(!inn()||!DB[id]||active)return false;var mode=opt.mode||'notebook';if(mode==='notebook'&&(typeof DL!=='undefined'&&DL||document.querySelector('body>.rt')))return false;
-  if(mode!=='notebook'&&id==='location'){G.beats=G.beats||{};G.beats.inn_locationClaim=1;saveProg()}
-  owner=G;returnFocus=document.activeElement;var el=document.createElement('div');el.id='logic-panel';el.setAttribute('role','dialog');el.setAttribute('aria-modal','true');el.setAttribute('aria-label','추리 수첩');document.body.appendChild(el);document.body.classList.add('logic-open');
-  active={id:id,mode:mode,el:el,game:G,rt:document.querySelector('body>.rt'),stage:0,selected:[],choice:null,detail:null,hint:0,rotated:false,results:[],done:opt.done,token:++gen};draw();
-  el.addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b||!el.contains(b))return;ev.stopPropagation();var a=active;if(!a||a.el!==el)return;
-   if(b.dataset.question){a.id=b.dataset.question;a.stage=0;a.selected=[];a.choice=null;a.detail=null;a.complete=false;a.hint=0;a.feedback='';a.results=[];draw();return}
-   if(b.dataset.card){var id=b.dataset.card;if(!has(id))return;a.detail=id;var i=a.selected.indexOf(id);if(i>=0)a.selected.splice(i,1);else if(a.selected.length<2)a.selected.push(id);else{a.feedback='근거 칸이 가득 찼어. 바꿀 칸을 먼저 눌러 비워 줘.';a.error=false}draw();var detail=el.querySelector('.lp-detail');if(detail)detail.scrollIntoView({block:'nearest'});return}
-   if(b.dataset.slot!=null){a.selected.splice(+b.dataset.slot,1);draw();return}
-   if(b.dataset.option!=null){a.choice=+b.dataset.option;draw();return}
-   var act=b.dataset.act;if(act==='close'){reset();return}if(act==='rotate'){a.rotated=!a.rotated;draw();return}if(act==='help'){a.hint=Math.min(3,a.hint+1);draw();return}if(act==='submit'){submit();return}
-   if(act==='finish'&&a.complete){var done=a.done,g=a.game;var r=record();if(r.solved.indexOf(a.id)<0)r.solved.push(a.id);saveProg();reset(true);if(done&&G===g)done()}
-  });el.querySelector('button').focus();return true;
+ function drawerClaim(){var stmt=document.querySelector('body>.rt .rt-bub.stm'),queue=document.querySelector('#rtgq'),open=own()&&document.body.classList.contains('rtg-drw')&&stmt&&!queue&&!document.querySelector('body>.rt #rtnext,body>.rt .rt-mid.vote');
+  var box=document.getElementById('simple-drawer-claim');if(!open){if(box)box.remove();return}
+  var heading=stmt.querySelector('small'),paragraph=stmt.querySelector('p'),who=heading?heading.cloneNode(true):null;
+  if(who){var counter=who.querySelector('em');if(counter)counter.remove()}
+  var name=who?who.textContent.trim():'현재 발언',line=paragraph?paragraph.textContent.trim():'';
+  if(!box){box=document.createElement('section');box.id='simple-drawer-claim';box.setAttribute('aria-label','비교할 현재 발언');document.body.appendChild(box)}
+  var key=name+'|'+line;if(box.dataset.claim===key)return;box.dataset.claim=key;box.innerHTML='<b>'+esc(name)+'의 말</b><p>'+esc(line)+'</p>';
  }
- window.__logicOpen=open;
- document.addEventListener('keydown',function(ev){if(!active)return;var el=active.el;if(ev.key==='Escape'&&active.mode==='notebook'){ev.preventDefault();ev.stopImmediatePropagation();reset();return}
-  if(ev.key==='Tab'){var list=[].slice.call(el.querySelectorAll('button:not(:disabled)'));if(!list.length)return;var i=list.indexOf(document.activeElement);list[(i+(ev.shiftKey?-1:1)+list.length)%list.length].focus();ev.preventDefault();ev.stopImmediatePropagation();return}
-  // Enter/Space still activate the focused button, never underlying dialogue.
-  ev.stopImmediatePropagation();
- },true);
- function sync(){if(active&&(G!==active.game||!inn()||(active.mode!=='notebook'&&document.querySelector('body>.rt')!==active.rt))){reset();return}
-  if(owner&&owner!==G){reset();owner=G}
-  var rail=document.querySelector('#w209rail .g');if(inn()&&rail&&!document.getElementById('innmain')){var b=rail.querySelector('#logic-note');if(!b){b=document.createElement('button');b.id='logic-note';b.type='button';b.textContent='추리';b.setAttribute('aria-label','추리 수첩 열기');b.addEventListener('click',function(ev){ev.stopPropagation();if(typeof DL!=='undefined'&&DL)return;open('linen',{mode:'notebook'})});rail.appendChild(b)}b.disabled=!!(typeof DL!=='undefined'&&DL)}
+ function sync(){if(!own()){var old=document.getElementById('simple-drawer-claim');if(old)old.remove();return}
+  document.querySelectorAll('#w209rail .g>[data-w]').forEach(function(b){decorate(b,b.dataset.w)});
+  decorate(document.querySelector('#w209rail [data-more]'),'more');
+  document.querySelectorAll('#rtgbar [data-g],#rtgtr [data-g]').forEach(function(b){decorate(b,b.dataset.g)});
+  document.querySelectorAll('body>.rt .rt-bul [data-bl]').forEach(function(b){var id=b.dataset.bl,x=(window.EP1INN.EV||{})[id];if(x){var full=x.full||x.name;b.setAttribute('aria-label',full+' 선택');b.title=full;var label=b.querySelector(':scope>span');if(label&&label.textContent!==(SHORT[id]||x.name))label.textContent=SHORT[id]||x.name}});
+  document.querySelectorAll('#rtgvote [data-pick]').forEach(function(b){var k=b.dataset.pick;if(b.querySelector('.simple-pick-name'))return;var name=(CAST[k]||{}).name||b.textContent;var face='';try{face=pf(k,'')}catch(e){}b.innerHTML=face+'<span class="simple-pick-name">'+esc(name)+'</span>';b.setAttribute('aria-label',name+' 지목')});
+  decorateVotes();drawerClaim();
  }
- setInterval(sync,150);
- // C13 keeps the observation obtained by questioning, separate from correction.
- var x=window.EP1INN&&window.EP1INN.EV.C13;if(x)['desc','card','detail','desc2','card2','detail2'].forEach(function(k){var base=x[k];if(!base)return;Object.defineProperty(x,k,{enumerable:true,configurable:true,get:function(){return base+(snow()?' 추가 관찰: 그 사람이 지나갈 때 창밖에 올해 첫눈이 막 내리기 시작했다.':'')}})});
+ document.addEventListener('click',function(e){if(own()&&e.target.closest&&e.target.closest('#rtgbar [data-g="back"]')&&window.__rtClearSel)window.__rtClearSel()},true);
+ setInterval(sync,180);
 })();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});

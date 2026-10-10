@@ -1,4 +1,4 @@
-"""Prepared-state actual pointer check: related evidence routes to mandatory proof."""
+"""Prepared-state actual pointer check: related evidence routes to native proof."""
 from playwright.sync_api import sync_playwright
 import shutil
 with sync_playwright() as p:
@@ -25,12 +25,15 @@ with sync_playwright() as p:
   page.wait_for_timeout(250)
  assert page.evaluate('window.__T("G.hp===5&&G.wrong===0")')
  assert page.locator('.rt-bub.stm em').inner_text().startswith('2'),page.locator('.rt-bub.stm').inner_text()
- if not page.locator('#logic-panel').count():
-  if not page.evaluate('document.body.classList.contains("rtg-drw")'):page.locator('#rtgbar [data-g="ev"]').click()
-  page.locator('.rt [data-bl="C02"]').click();page.wait_for_timeout(250)
-  page.locator('#rtgbar [data-g="present"]').click();page.wait_for_timeout(250)
- assert page.locator('#logic-panel').get_attribute('data-reason')=='linen'
+ assert page.evaluate('window.__rtgStep(window.__rtPh().stms[1])')==0
+ if not page.evaluate('document.body.classList.contains("rtg-drw")'):page.locator('#rtgbar [data-g="ev"]').click()
+ page.locator('.rt [data-bl="C02"]').click();page.wait_for_timeout(250)
+ page.locator('#rtgbar [data-g="present"]').click();page.wait_for_timeout(250)
+ assert not page.locator('#logic-panel').count()
+ assert page.evaluate('window.__rtgStep(window.__rtPh().stms[1])')==1
+ assert not page.locator('.rt .bl.on').count()
+ assert page.evaluate('window.__T("G.debate.pi")')==1
  assert page.evaluate('window.__T("G.hp===5&&G.wrong===0")')
  assert not errors,errors
- print('Related clue on Seryeon claim → Nabi proof gate; no wrongful damage, errors 0',flush=True)
+ print('Related clue on Seryeon claim → Nabi native proof; explicit first observation, no auto completion or wrongful damage, errors 0',flush=True)
  b.close()

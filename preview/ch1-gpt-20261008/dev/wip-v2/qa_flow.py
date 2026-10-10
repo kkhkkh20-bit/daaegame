@@ -3,20 +3,12 @@ import argparse, shutil
 parser = argparse.ArgumentParser(description="Prepared-evidence browser regression: council to epilogue (not a fresh-game walkthrough).")
 parser.add_argument("--url", default="http://127.0.0.1:8000/playT.html")
 parser.add_argument("--retry", action="store_true", help="Check the first conclusion question appears again after reset")
-parser.add_argument("--failure", action="store_true", help="Choose five wrong conclusions and check M-F/restart preserves evidence")
+parser.add_argument("--failure", action="store_true", help="Present five wrong clues and check failure/restart preserves evidence")
 parser.add_argument("--final", action="store_true", help="Start at the final confrontation (use with --failure)")
 parser.add_argument("--without-ledger", action="store_true", help="Complete the story without optional C11 ledger discovery")
 args = parser.parse_args()
 TICK=r'''() => {
  const q=s=>document.querySelector(s), click=s=>{const e=q(s);if(e&&!e.disabled){e.click();return true}return false};
- if(q('#logic-panel')){
-  if(q('#logic-panel [data-act="finish"]')){click('#logic-panel [data-act="finish"]');return 'reason finish'}
-  const solutions={linen:[['C02','C03']],time:[['C06','C07'],['C13','C08']],location:[['C04','C10']],contact:[['C05','C01']],seal:[['C10','C12']]};
-  const root=q('#logic-panel'),ids=(solutions[root.dataset.reason]||[])[Number(root.dataset.stage)];if(!ids)return 'unknown reason';
-  for(const id of ids)if(!q('#logic-panel [data-card="'+id+'"][aria-pressed="true"]')){click('#logic-panel [data-card="'+id+'"]');return 'reason card '+id}
-  if(!q('#logic-panel [data-option="0"][aria-pressed="true"]')){click('#logic-panel [data-option="0"]');return 'reason conclusion'}
-  click('#logic-panel [data-act="submit"]');return 'reason submit';
- }
  if(q('#rtgpick')){const title=q('#rtgpick b').textContent;let opts=[];const ph=window.__rtPh();
  for(const L of [...(ph.lines||[]),...(ph.stms||[]).flatMap(s=>[...(s.ok||[]),...(s.steps||[]).flatMap(x=>x.lines||[])])])if(L.ask&&L.ask.title===title)opts=L.ask.items;
  for(const st of ph.stms||[])for(const step of st.steps||[])if(step.pick&&step.pick.title===title)opts=step.pick.items;
@@ -54,10 +46,12 @@ with sync_playwright() as p:
    if st['wrong']>=5 and st['dl']:saw_mf=True
    if saw_mf and st['hp']==5 and st['rt']:
     recovered=True;break
-   if pg.locator('#logic-panel').count():
-    pg.evaluate('''()=>{const root=document.querySelector('#logic-panel'),maps={linen:[['C02','C03']],time:[['C06','C07'],['C13','C08']],location:[['C04','C10']],contact:[['C05','C01']],seal:[['C10','C12']]},ids=maps[root.dataset.reason][Number(root.dataset.stage)];for(const id of ids){const b=root.querySelector('[data-card="'+id+'"]');if(b.getAttribute('aria-pressed')!=='true')b.click()}root.querySelector('[data-option="1"]').click();root.querySelector('[data-act="submit"]').click()}''')
-   elif pg.locator('#rtgpick').count():
+   if pg.locator('#rtgpick').count():
     pg.locator('#rtgpick [data-pi="1"]').click();wr+=1
+   elif pg.evaluate('!!window.__rtgQueue()') or pg.locator('#rtnext').count() or pg.evaluate('window.__T("!!DL")'):
+    pg.evaluate(TICK)
+   elif pg.evaluate('window.__rtPh()?.type')=='debate':
+    pg.evaluate('''()=>{if(!document.body.classList.contains('rtg-drw')){document.querySelector('#rtgbar [data-g="ev"]').click();return}const c=document.querySelector('.rt .bl.on');if(!c||c.dataset.bl!=='C09'){document.querySelector('.rt [data-bl="C09"]').click();return}document.querySelector('#rtgbar [data-g="present"]').click()}''')
    else:pg.evaluate(TICK)
    pg.wait_for_timeout(220)
   assert recovered,st
@@ -70,29 +64,26 @@ with sync_playwright() as p:
   assert pg.evaluate('window.__T("G.found.slice()")')==initial
   assert not errs,errs
   assert not bad,bad
-  print('Five wrong choices → M-F → restart OK', st, flush=True)
+  print('Five wrong presentations → failure → restart OK', st, flush=True)
   b.close()
  elif args.retry:
-  titles=[]
+  steps=[]
   for run in range(2):
    pg.evaluate('(code)=>window.__T(code)', 'if(DL){DL.done=null;endDlg()};document.querySelectorAll("body>.rt").forEach(x=>x.remove());window.__inMeeting=false;window.__rtgReset();G.debate={pi:1,sus:{}};window.__rtOpen(CASES[G.ci])')
-   title=None
-   for i in range(180):
-    if pg.locator('#logic-panel').count():
-     title=pg.locator('#logic-panel h2').inner_text()
-     if run==0:
-      for _ in range(15):
-       if not pg.locator('#logic-panel').count():break
-       pg.evaluate(TICK);pg.wait_for_timeout(200)
-     break
-    pg.evaluate(TICK);pg.wait_for_timeout(180)
-   titles.append(title)
-   pg.wait_for_timeout(700)
-  assert titles[0] == '이불의 손자국을 누구에게 다시 물어볼까?', titles
-  assert titles[1] == titles[0], titles
+   pg.wait_for_timeout(2500)
+   steps.append(pg.evaluate('window.__rtgStep(window.__rtPh().stms[1])'))
+   if run==0:
+    pg.evaluate('document.querySelector("#rtnx").click();document.querySelector("#rtgbar [data-g=ev]").click()')
+    pg.wait_for_timeout(250)
+    pg.evaluate('document.querySelector(".rt [data-bl=C02]").click()')
+    pg.wait_for_timeout(250)
+    pg.evaluate('document.querySelector("#rtgbar [data-g=present]").click()')
+    pg.wait_for_timeout(250)
+    assert pg.evaluate('window.__rtgStep(window.__rtPh().stms[1])')==1
+  assert steps==[0,0],steps
   assert not errs, errs
   assert not bad, bad
-  print('Retry choices OK:', titles, flush=True)
+  print('Retry direct proof OK: first evidence step is required again',steps,flush=True)
   b.close()
  else:
   last=None
@@ -106,6 +97,7 @@ with sync_playwright() as p:
    pg.wait_for_timeout(180)
   assert state['beats'].get('inn_end'), state
   assert state['wrong']==0, state
+  assert not pg.locator('#logic-panel,#logic-note').count(), 'Separate deduction quiz returned'
   turns=pg.evaluate('window.__caseTurns')
   expected_turns=[
    '[반박 결과] 할머니만 그 방을 드나들었다는 생각이 깨졌다.',
