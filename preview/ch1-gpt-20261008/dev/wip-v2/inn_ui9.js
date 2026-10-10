@@ -27,9 +27,9 @@
   function npcScale(){try{if(!inn())return;var lid=(loc()||{}).id;document.querySelectorAll("#bigscene .npc.f210").forEach(function(n){var k=n.dataset.npc,f=(lid==="dining"&&DINE[k])||HK[k];if(!f||f===1)return;var key=n.dataset.f210+"|"+f;if(n.dataset.h9===key)return;
     ["--ih","--iw","--vh","--fw","--fh"].forEach(function(v){var x=parseFloat(n.style.getPropertyValue(v));if(isFinite(x))n.style.setProperty(v,(x*f)+"px")});n.dataset.h9=key})}catch(e){}}
 
-  /* ---------- 3) 한 화면 장소는 가운데 고정 ---------- */
+  /* ---------- 3) 원본 장면이 넘치면 기존 좌우 이동 유지 ---------- */
   function lockScroll(){try{if(!inn()||G.tab!=="scene")return;var st=document.querySelector("#app .stage");if(!st)return;var world=st.classList.contains("inn-world-stage");B.classList.toggle("inn-pan9",world);
-    if(world)return;var fx=document.getElementById("fsscroll");if(!fx)return;var m=fx.scrollWidth-fx.clientWidth;fx.style.setProperty("overflow-x","hidden","important");var c=Math.max(0,Math.round(m/2));if(Math.abs(fx.scrollLeft-c)>1)fx.scrollLeft=c}catch(e){}}
+    if(world)return;var fx=document.getElementById("fsscroll");if(!fx)return;var m=fx.scrollWidth-fx.clientWidth,pan=m>2;st.classList.toggle("inn-scroll-pan9",pan);fx.style.setProperty("overflow-x",pan?"auto":"hidden","important");/* fsLayout/FSX가 초기 위치와 사용자 이동을 관리한다. 반복 중앙 복귀 금지. */}catch(e){}}
 
   /* ---------- 1) 장소 이동 목록 ---------- */
   var SHORT={bed13:"안 쓰는 방 · 열세 번째 침대",dining:"식당",kitchen:"부엌",hall:"2층 복도",dotoroom:"도토의 방",front:"접수대",plaza:"광장 (여관 밖)"};
@@ -152,8 +152,12 @@
    "#innmove .ls button i{font-style:normal;font-size:18px;color:#8A6A3A}#innmove .ls button small{font-size:var(--t-cap,12px);color:#5E5638}",
    "#innmove .ls button[disabled]{background:#3D5E45;color:#FFF6E0;border-color:#3D5E45;opacity:1}#innmove .ls button[disabled] small{color:#DCEBD8}",
    "#innmove .wm{display:block;width:100%;margin-top:8px;min-height:36px;border-radius:9px;border:1px solid #4A5590;background:#2E3766;color:#FFF6E0;font:inherit}",
-   /* 좌우 보기: 식당 파노라마에서만. 화면 가장자리 세로 띠, 끝에서는 흐리게 '끝' */
-   "html body.w209.inn1 .stage:not(.inn-world-stage) .fsa,html body.w209.inn1 .stage:not(.inn-world-stage) .fsbar{display:none!important;pointer-events:none!important}",
+   /* 좌우 보기: 넘치는 기존 장면은 native 이동, 식당 파노라마는 기존 세로 띠. */
+   "html body.w209.inn1 .stage:not(.inn-world-stage):not(.inn-scroll-pan9) .fsa,html body.w209.inn1 .stage:not(.inn-world-stage) .fsbar{display:none!important;pointer-events:none!important}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;width:48px!important;height:72px!important;top:calc(50% - 36px)!important;bottom:auto!important;font-size:20px!important;z-index:12!important}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa::after{content:'왼쪽';font-size:12px!important;line-height:1.2!important}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa.r::after{content:'오른쪽'}",
+   "html body.w209.inn1 .stage.inn-scroll-pan9 .fsa:not(.on){visibility:hidden!important;pointer-events:none!important}",
    "html body.w209.inn1 .stage.inn-world-stage .fsa{top:24%!important;bottom:auto!important;height:46%!important;width:48px!important;min-height:0!important;margin:0!important;padding:0!important;border-radius:0!important;border:0!important;box-shadow:none!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;color:#FFF6E0!important;font-size:20px!important;background:linear-gradient(90deg,rgba(14,18,38,.62),rgba(14,18,38,0))!important;transform:none!important}",
    "html body.w209.inn1 .stage.inn-world-stage .fsa.l{left:0!important}",
    "html body.w209.inn1 .stage.inn-world-stage .fsa.r{right:0!important;left:auto!important;background:linear-gradient(270deg,rgba(14,18,38,.62),rgba(14,18,38,0))!important}",

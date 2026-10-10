@@ -39,9 +39,13 @@ with sync_playwright() as p:
  def scene_npc(npc):
   # Sprite buttons intentionally ignore DOM hit testing; the game checks opaque
   # character pixels instead. Use a genuine pointer on that visible character.
-  point=page.evaluate('(npc)=>{const r=document.querySelector("#bigscene").getBoundingClientRect();for(let y=Math.max(5,r.top);y<Math.min(innerHeight-5,r.bottom);y+=6)for(let x=Math.max(5,r.left);x<Math.min(700,r.right);x+=6)if(document.elementFromPoint(x,y)?.closest("#bigscene")&&window.__innNpcHit(x,y)===npc)return {x,y};return null}',npc)
+  page.wait_for_timeout(700)
+  # Wait for the real alpha mask, then tap inside the body instead of the
+  # fallback rectangle or a hair-edge pixel that moves with the idle animation.
+  page.wait_for_function('(npc)=>{const im=document.querySelector("#bigscene svg image.wn9[data-k="+npc+"]");return im&&window.__innMask()[im.getAttribute("href")]==="ok"}',arg=npc)
+  point=page.evaluate('(npc)=>{const r=document.querySelector("#bigscene").getBoundingClientRect();for(let y=Math.max(12,r.top+12);y<Math.min(innerHeight-12,r.bottom-12);y+=6)for(let x=Math.max(12,r.left+12);x<Math.min(688,r.right-12);x+=6)if(document.elementFromPoint(x,y)?.closest("#bigscene")&&[[0,0],[-6,0],[6,0],[0,-6],[0,6]].every(([dx,dy])=>window.__innNpcHit(x+dx,y+dy)===npc))return {x,y};return null}',npc)
   assert point,('No visible character pixel',npc,state())
-  page.wait_for_timeout(700);page.mouse.click(point['x'],point['y']);page.wait_for_timeout(400);drain();assert state()['tab']=='talk',(npc,point,state())
+  page.mouse.click(point['x'],point['y']);page.wait_for_timeout(400);drain();assert state()['tab']=='talk',(npc,point,state())
  def move(i):
   if state()['loc']==i:
    if state()['tab']!='scene':click('#w209rail .g>[data-w="scene"]')
@@ -85,14 +89,10 @@ with sync_playwright() as p:
  if 'C03' not in state()['asked']:
   scene_npc('nabi');click('[data-ask="C03"]:visible')
  assert 'C03' in state()['asked'],state()
- # The new notebook is accessible from an actual investigation toolbar.
+ # Investigation now collects clues directly, without a separate quiz.
  if state()['tab']!='scene':click('#w209rail .g>[data-w="scene"]')
- click('#logic-note')
- for cid in ['C03','C02']:page.locator('#logic-panel [data-card="'+cid+'"]').click()
- page.locator('#logic-panel [data-option="0"]').click();page.locator('#logic-panel [data-act="submit"]').click()
- assert page.locator('.lp-summary').count()
- page.locator('#logic-panel [data-act="finish"]').click()
- assert 'linen' in page.evaluate('window.__T("G.reason.solved")')
+ assert not page.locator('#logic-note,#logic-panel').count()
+ assert all(cid in state()['found'] for cid in ['C01','C02','C04'])
  context.storage_state(path='/tmp/investigation-after-linen.json')
  move(3);scene_click('#bigscene [data-spot="C06"]');scene_npc('geokkuri')
  click('[data-ask="C07"]:visible');click('[data-ask="C13"]:visible')
@@ -103,14 +103,10 @@ with sync_playwright() as p:
  assert '첫눈이 막 내리기 시작했다' in page.evaluate('EP1INN.EV.C13.card')
  print('Weather follow-up acquired through actual evidence presentation',flush=True)
  if state()['tab']!='scene':click('#w209rail .g>[data-w="scene"]')
- click('#logic-note');page.locator('#logic-panel [data-question="time"]').click()
- for pair in [['C07','C06'],['C08','C13']]:
-  for cid in pair:page.locator('#logic-panel [data-card="'+cid+'"]').click()
-  page.locator('#logic-panel [data-option="0"]').click();page.wait_for_timeout(600)
-  page.locator('#logic-panel [data-act="submit"]').click()
- assert page.locator('.lp-summary').count()
- page.locator('#logic-panel [data-act="finish"]').click()
+ assert all(cid in state()['found'] for cid in ['C06','C08']),state()
+ assert all(cid in state()['asked'] for cid in ['C07','C13']),state()
+ assert not page.locator('#logic-note,#logic-panel').count()
  assert not errors,errors
  assert not bad,bad
- print('Actual collected investigation → two notebook deductions OK',state(),flush=True)
+ print('Actual scene clues, witness questions and weather follow-up collected without a separate quiz OK',state(),flush=True)
  b.close()

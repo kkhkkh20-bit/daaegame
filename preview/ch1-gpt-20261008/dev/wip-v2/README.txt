@@ -12,8 +12,8 @@
   기존 preview 폴더의 자산을 연결한다. 배포 작업은 하지 않는다.
 - 브라우저 회귀 검사: 서버를 켠 뒤 python3 preview/ch1-gpt-20261008/dev/wip-v2/qa_flow.py
   Python Playwright와 Chromium 필요. 증거를 준비한 시험 상태에서 회의→최종 대결→후일담을 검사한다.
-  --retry: 정답 선택 후 재시작해 같은 결론 선택지가 다시 나타나는지 검사한다.
-  --failure: 실제 오답 5회 → M-F → 증거 유지·설득력 복구를 검사한다.
+  --retry: 첫 증거 제시 후 재시작해 증거 단계가 처음부터 다시 진행되는지 검사한다.
+  --failure: 실제 오답 제시 5회 → 실패 → 증거 유지·설득력 복구를 검사한다.
   --failure --final: 최종 대결에서 같은 실패 검사를 한다.
   새 게임의 조사 전체 완주·실기기·청취 검사를 대신하지 않는다.
 - 2026-10-10 훅 연출 요청(dot) 반영: 콜드오픈 8비트(자정), P1+P3 압축, P5 문소리 끊기, P10 압축+밤 장면, P12 수색 장면, P13 할머니 베개 구석 훅·세련 '나머지 이백 냥' 추궁·너울 물러서지 않음, 다람 첫 단서 한 줄, 침대 밑 솜솜 발견(정적·심박, 현재는 직접 조사로 진입).
@@ -59,17 +59,19 @@
   일반 build/publish는 기존 MP3를 사용하며 악기 렌더 의존성이 필요 없다.
 - UI/음악 통합 검사: 서버를 켠 뒤 python3 qa_polish.py (가로/세로, 설정, 증거 창, 실제 MP3 재생).
 
-- 조사→회의→대결 직접 추리: CODEX_DEDUCTION_DESIGN_20261010.txt.
-  inn_reasoning.js와 53_logic_gate.py가 기존 회의 엔진을 유지하며 핵심 다섯 문제를 검증한다.
-  '추리' 버튼: 조사 수첩, 두 근거+결론, 무료 세 단계 도움. 회의/대결 제시는 같은 UI의 필수 검증.
-  qa_logic_ui.py / qa_reasoning.py / qa_investigation.py가 실클릭/저장/새 게임 조사를 검사한다.
-  qa_flow.py의 실제 추리 입력은 작성된 독립 기대값으로 진행한다.
+- 현재 조사→회의→대결과 아이콘 UI: CODEX_SIMPLE_UI_20261010.txt.
+  조사로 증거 수집 → 회의에서 발언/증거 비교와 표 변화 → 대결에서 직접 증거 제시.
+  inn_simple_ui.js가 원래 조작을 증거/질문/다음 아이콘으로 정리한다.
+  별도 두 카드+결론 퀴즈와 '추리' 수첩은 제거했다. 단계별 증거 제시는 유지한다.
+  CODEX_DEDUCTION_DESIGN_20261010.txt는 제거 전 설계 이력이며 현재 UI와 다르다.
+  qa_logic_ui.py / qa_reasoning.py / qa_native_async.py / qa_investigation.py: 현재 UI/반박/비동기/조사 검사.
+  qa_flow.py: 기존 회의와 대결의 실제 증거 제시로 결말까지 검사한다.
 
-qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수집 저장으로 깨끗한 배포판의 이어하기·추리 수첩 저장을 확인.
+qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수집 저장으로 깨끗한 배포판의 이어하기·증거/증언 보존을 확인한다. 파일명은 이전 검사와 호환되며 수첩 퀴즈는 없다.
 
 - 추리로 누명을 뒤집는 단계별 반전: CODEX_REVERSAL_20261010.txt.
   첫 반박의 실제 표 철회부터 최종 배상·여관 양도 요구 철회까지 qa_flow.py로 검증.
-  qa_reversal_route.py: 관련 증거를 세련의 발언에 내도 감점 없이 핵심 추리로 이어지는 실제 포인터 검사.
+  qa_reversal_route.py: 관련 증거를 세련의 발언에 내도 감점 없이 나비의 발언으로 이어지는 실제 포인터 검사.
 
 - 가족 설정·인물 관계 보강: CODEX_FAMILY_STORY_20261010.txt.
   전직 탐정이 가족 서점을 열었다는 과거, 엄마의 갑작스러운 실종,
