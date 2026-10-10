@@ -224,16 +224,7 @@
    "html body.w209.inn1 .crec2 #crdaram,html body.w209.inn1 .crec2 .cr-det:not(.empty) .cr-tx>#crdaram{display:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .dmemo{display:none!important}",
    "html body.rtg .crec2{z-index:66!important}",
-   /* 2026-10-10 사용자 "모든 캐릭터 다람이 꼬리처럼 무빙 가볍게": 새 그림 없이 아주 작은 숨쉬기·흔들림(발밑 기준 ±0.5도, 세로 1.2%). 다람은 꼬리 프레임이 있어 무대 그림에서는 제외.
-      줄이기 설정(prefers-reduced-motion)이면 멈춘다 */
-   "@keyframes idle9{0%,100%{rotate:0deg;scale:1 1}25%{rotate:-.5deg}50%{scale:1 1.012}75%{rotate:.5deg}}",
-   "html body.w209.inn1 #innstage .isf.in:not([data-k=\"det1\"]) img{transform-origin:50% 100%;animation:idle9 3.6s ease-in-out infinite}",
-   "html body.w209.inn1 .fstalk .tstage .tfig img[data-fr9]{transform-origin:50% 100%;animation:in9 .24s ease-out,idle9 3.6s ease-in-out .3s infinite}",
-   "html body.w209.inn1 #bigscene svg image.wn9{transform-box:fill-box;transform-origin:50% 100%;animation:idle9 4s ease-in-out infinite}",
-   "html body.w209.inn1 svg[data-bg=\"carriage\"] image.innseat{transform-box:fill-box;transform-origin:50% 100%;animation:idle9 3.8s ease-in-out infinite}",
-   "html body.w209.inn1 #bigscene svg image.wn9:nth-of-type(2n){animation-delay:-1.3s}html body.w209.inn1 #bigscene svg image.wn9:nth-of-type(3n){animation-delay:-2.6s}",
-   "html body.rtg #rtg .seat:not(.front) img{transform-origin:50% 100%;animation:idle9 4.2s ease-in-out infinite}html body.rtg #rtg .seat:nth-child(2n) img{animation-delay:-1.5s}html body.rtg #rtg .seat:nth-child(3n) img{animation-delay:-2.8s}",
-   "@media (prefers-reduced-motion:reduce){html body.w209.inn1 #innstage .isf img,html body.w209.inn1 .fstalk .tstage .tfig img,html body.w209.inn1 #bigscene svg image.wn9,html body.rtg #rtg .seat img{animation:none!important}}",
+   /* 인물 고유 동작·감정 정적은 inn_character_motion이 담당. 회전/늘이기로 도트 경계를 흔들지 않는다. */
    "html body.rtg .rtpanel{visibility:hidden!important}",   /* 회의 화면 아래 남은 소개 화면의 '원탁 회의 열기'(rtgo)가 키보드·접근성 클릭으로 눌려 회의가 두 장 열리던 것(dot QA 진행 차단의 실제 원인) */   /* 회의 중 연 사건 기록 창이 회의 화면(z60)·하단 단추(z62)·증거 서랍(z63) 아래에 깔려 닫히지 않던 것(dot QA 2026-10-10) */
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>h3{background:#F2C230!important;color:#2A1C12!important;padding:3px 10px!important;margin:0 0 4px!important;border:0!important;background-image:none!important}",
    "html body.w209.inn1 .crec2 .cr-det .cr-tx>p{line-height:30px!important;background:repeating-linear-gradient(to bottom,transparent 0 28px,#C9B48C 28px 29px,transparent 29px 30px)}",
@@ -289,7 +280,7 @@
    "html body.w209.inn1{--spk:96px}@media (max-height:380px){html body.w209.inn1{--spk:84px}}",   /* 2026-10-10: 화자 초상 1.5배, 대사창 위로 조금 나오게(창 높이·폭·글자 크기는 그대로) */
    "html body.w209.inn1 #dlgveil #vnbox .vband.bot .vtxt{position:relative!important;padding-left:calc(var(--spk) + 26px)!important;min-height:82px!important;box-sizing:border-box!important}",
    "html body.w209.inn1 #vnbox .vtxt .spk9{position:absolute;left:12px;bottom:8px;width:var(--spk);height:var(--spk);border-radius:10px;overflow:hidden;background:#2B2130;box-shadow:0 0 0 2px #C9A96A,0 4px 10px rgba(0,0,0,.35);z-index:2}",
-   "html body.w209.inn1 #vnbox .vtxt .spk9 img{width:100%;height:100%;image-rendering:auto;display:block}",
+   "html body.w209.inn1 #vnbox .vtxt .spk9 img{width:100%;height:100%;image-rendering:pixelated;display:block}",
    "html body.w209.inn1 #vnbox .vtxt .spk9.none{display:none}html body.w209.inn1 #vnbox .vtxt .spk9.sil img{display:none}",
    "html body.w209.inn1 #vnbox .vtxt .spk9.sil{background:radial-gradient(circle at 50% 38%,rgba(18,22,40,.9) 0 22%,transparent 23%),radial-gradient(ellipse 46% 30% at 50% 100%,rgba(18,22,40,.9) 0 98%,transparent 100%),rgba(255,246,224,.07)}",
    "html body.w209.inn1 #dlgveil #vnbox .vband.bot .vtxt .plate{left:calc(var(--spk) + 22px)!important}",
@@ -507,18 +498,22 @@
   [DAD].concat(Object.keys(PROF).map(function(k){return AP+PROF[k]+"/speaker128.png"})).forEach(function(f){var im=new Image();im.src=f;SPKC[f]=im;try{im.decode&&im.decode().catch(function(){})}catch(e){}});
   function speaker(){try{if(!inn()||!dl())return;var vt=document.querySelector("#vnbox .vtxt");if(!vt)return;var ln=DL.lines[DL.i]||[],w=ln[0],vb=vt.closest(".vband");
     var inner=vb&&vb.classList.contains("inner");var k=inner?"det0":w;if(SPK.parentNode!==vt)vt.insertBefore(SPK,vt.firstChild);
-    var md=String(ln[2]||""),tx=String(ln[1]||"");
+    var md=window.__innMood?window.__innMood(ln):String(ln[6]||ln[2]||""),tx=String(ln[1]||"");SPK.dataset.mood=md;
     /* 2026-10-10 화자 초상 통일(GPT·사용자): 아빠 v5(둥근 미소 기본 + 생각/놀람/머쓱 + 손가락 2프레임), 다람 v4 6상태, 너울 v2 4상태 — 모두 확정 원본에서 직접 크롭 */
     var f=spkSrc(k),fing=false;
     if(k==="det1")f=V4+"daram-"+String(window.__innDV4?window.__innDV4(md):"idle").replace("idle-t0","idle")+"-speaker128.png";
     else if(k==="wanggu")f=NV2+"neoul-"+(window.__innNeoState?window.__innNeoState(md):"default")+"-speaker128.png";
+    else if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(md)&&window.__innGrandmaSrc)f=window.__innGrandmaSrc(md);
     else if(k==="det0"){fing=false;f=DAD}   /* 2026-10-10 사용자 "아빠 프로필·대화 프사를 채택한 한 장으로 통일": 옛 v5 포즈·손가락 프레임(다른 얼굴) 연결 해제 */
+    /* 기존 승인 전신에서 얼굴을 같은 정사각 창으로 잘라 보여준다. 원본 PNG와 비율은 그대로. */
+    var crop=k==="innma"&&f.indexOf('/cast/innma-')>=0,ck=crop?'grandma':'normal';
+    if(SPKIMG.dataset.crop!==ck){SPKIMG.dataset.crop=ck;SPKIMG.style.cssText=crop?'position:absolute;width:115.87%;height:144.44%;max-width:none;max-height:none;left:-1.59%;top:0':' '}
     var mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"")}
     var fk=DL.i+"|"+tx.length;
     if(fing){if(SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FV+"finger-base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FV+"finger-raised-speaker128.png")},200)}}
     else{if(SPK.dataset.fk){SPK.dataset.fk="";clearTimeout(SPK.__ft)}if(f){if(SPKIMG.getAttribute("src")!==f)SPKIMG.setAttribute("src",f)}else SPKIMG.removeAttribute("src")}
     /* 2026-10-10 작은 연출: 긴장·당황 표정(nervous/shock/worried) 줄에서는 초상 옆으로 땀방울이 조금씩 흐르고, 놀람(shock)·"?!" 줄은 한 번 움찔한다 */
-    var fx=/nervous|shock|worried|panic|sweat/.test(md)||/땀/.test(tx)?"sweat":"",jolt=/shock|surprise/.test(md)||/\?!|!\?/.test(tx);
+    var fx=/^(nervous|panic|sweat|oops)$/.test(md)?"sweat":"",jolt=/^(shock|surprise)$/.test(md);
     if(SPK.dataset.fx!==fx){SPK.dataset.fx=fx;var sw=SPK.querySelector(".sw9");if(fx&&!sw){sw=document.createElement("i");sw.className="sw9";SPK.appendChild(sw)}else if(!fx&&sw)sw.remove()}
     var lk=DL.i+"|"+tx.length;if(jolt&&SPK.dataset.jk!==lk){SPK.dataset.jk=lk;SPK.classList.remove("jolt9");void SPK.offsetWidth;SPK.classList.add("jolt9")}
     if(!vt.classList.contains("v3"))vt.classList.add("v3")}catch(e){}}

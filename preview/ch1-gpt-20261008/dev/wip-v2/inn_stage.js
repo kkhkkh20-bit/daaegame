@@ -16,14 +16,19 @@
   "art/body/buri-0.png":[136,182,2,113,3,0],"art/body/buri-1.png":[130,182,2,114,2,0],"art/body/buri-2.png":[110,182,2,101,6,0]};
  var INNMA={"0":"art/ch1/cast/innma-neutral-v5.png","1":"art/ch1/cast/innma-concerned-v5.png","2":"art/ch1/cast/innma-bright-smile-v6.png"};
  var CASTF={det1:"daram-front",nabi:"nabi-front",karo:"karo-front"},BODYK={innma:"innma",wanggu:"wanggu",doto:"doto",buri:"buri"};
- function pose(m,k){var f=String(m||"").split(/\s+/)[0];var FP={innma:{think:"1",smile:"2"},doto:{shock:"2",think:"1"},buri:{shock:"2"},wanggu:{think:"1"}};if(k&&FP[k])return FP[k][f]||"0";var e=(window.__MOOD_EXPR||{})[f]||"normal";return e==="fluster"?"2":e==="doubt"?"1":"0"}
+ function pose(m,k){var f=String(m||"").split(/\s+/)[0];var FP={innma:{think:"1",sad:"1",worried:"1",nervous:"1",shock:"1",smile:"2"},doto:{shock:"2",think:"1"},buri:{shock:"2"},wanggu:{think:"1"}};if(k&&FP[k])return FP[k][f]||"0";var e=(window.__MOOD_EXPR||{})[f]||"normal";return e==="fluster"?"2":e==="doubt"?"1":"0"}
+ window.__innGrandmaSrc=function(m){return INNMA[pose(m,'innma')]||INNMA['0']};
+ /* FL의 6번(무대 표정)과 L/W의 2번/m(발화 표정)을 같은 규칙으로 읽는다. */
+ window.__innMood=function(l){return String((Array.isArray(l)?(l[6]||l[2]):l&&(l.m||l.mood))||"").split(/\s+/)[0]};
  /* 다람 표정: 그림의 감정 강도로 연결한다. 대본의 표정 표시 중 아래 넷만 새 그림을 쓰고, 나머지(가벼운 미소·생각 등)는 기본 그림.
     shock=당황(손을 뺨에 댄 놀람), sad=걱정(손 모음·귀 처짐), laugh=큰 웃음(눈 감은 활짝 웃음, 그만큼 기쁜 대사만), resolve=결심 */
  /* v2 = 약한 감정, v3 = 강한 감정(전신 포즈). 같은 캔버스 배율·같은 접지선으로 그린다(웅크린 걱정을 키 맞춰 키우지 않음) */
  var DFACE={shock:"daram-surprised-front-v2",sad:"daram-worried-front-v2",laugh:"daram-happy-front-v2",resolve:"daram-determined-front-v2",
   oops:"daram-ear-grab-signature-v1",shy:"daram-tail-hide-signature-v1",caught:"daram-tail-hide-caught-signature-v2",
   panic:"daram-surprised-front-v3",cower:"daram-worried-front-v3",joy:"daram-happy-front-v3",confront:"daram-determined-front-v3",mad:"daram-angry-front-v3"};
- function src(k,m){if(k==="wanggu")return "art/ch1/neoul-v2/neoul-"+neoState(m)+"-dialogue.png";var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
+ function src(k,m){if(k==="wanggu")return "art/ch1/neoul-v2/neoul-"+neoState(m)+"-dialogue.png";
+  if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(String(m||"")))return INNMA[pose(m,k)];
+  var pz=window.__innPose&&window.__innPose(k);if(pz)return pz;   /* 장소의 행동 포즈를 대화에서도 그대로(통합 아트) */
 if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    /* 다람 v4(2026-10-09 확정 초기 복장) 6상태: 기본(수첩·꼬리 분리 합성, 꼬리 흔들기)/메모/활짝/땀 당황/참는 분노/코믹 분노. 슬픔·겁·결심·꼬리숨김은 기존 그림 유지 */
    /* 2026-10-10 GPT·사용자: 옛 외형(갈색 모자 v2/v3)이 섞여 번쩍이지 않게 모든 표정을 v4로. 정확한 슬픔·겁·결심 표정은 후속 아트 대기 → 가장 가까운 상태 */
@@ -64,26 +69,34 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  var FSC={"art/ch1/action-poses/grandma/dialogue.png":[552,680,9,535,10,.96,0],"art/ch1/action-poses/seryeon/dialogue.png":[329,400,0,319,10,.96,0],"art/ch1/action-poses/nabi/dialogue.png":[620,588,9,590,8,.92,0],
   "art/ch1/action-poses/doto/dialogue.png":[960,865,14,928,16,.92,0],"art/ch1/action-poses/bami/dialogue.png":[660,830,15,647,0,.92,-.16],"art/ch1/action-poses/daram/dialogue.png":[760,705,15,738,12,.92,0],
   "art/ch1/action-poses/karo/dialogue.png":[279,320,4,267,10,.92,0],"art/ch1/action-poses/buri/dialogue.png":[297,320,10,289,10,.92,0],"art/ch1/action-poses/neoul/dialogue.png":[459,320,4,441,9,.92,0]};
+ /* 같은 승인 복장의 할머니 표정: 고정 수건 자세가 감정 그림을 가리지 않게, 전신의 발선 대신 얼굴/어깨 구도를 맞춘다. */
+ Object.keys(INNMA).forEach(function(k){FSC[INNMA[k]]=[146,182,5,111,2,1.2,0]});
  /* 너울 v2(2026-10-09 확정: 보안관 복장 자경단장 라쿤) 4상태 — 같은 전신 원본을 같은 축소율로 정규화(240x320, 발선 304), 대화는 같은 창(20,8,200x200)을 2배.
     몸통 중심(181.5)을 고정해 상태가 바뀌어도 몸이 옆으로 튀지 않게, 분노는 넓게 버틴 자세라 머리가 낮은 그대로 */
  ["default","admonish","angry","sheepish"].forEach(function(k){FSC["art/ch1/neoul-v2/neoul-"+k+"-dialogue.png"]=[400,400,181,182,16,.92,0]});
  ["idle-t0","idle-t1","idle-t2","memo","joy","flustered","held-anger","comic-anger"].forEach(function(k){var f="art/ch1/daram-v4/daram-"+k+"-dialogue.png";FSC[f]=[368,300,195,195,10,.92,0];try{var im=new Image();im.src=f}catch(e){}});
- /* 다람 기본 그림의 꼬리 흔들기: 2.6초마다 짧게(t0→t1→t0→t2→t0). 다른 표정은 꼬리가 그림에 포함돼 있어 움직이지 않는다 */
- (function(){var SEQ=["t1","t0","t2","t0"],ph=-1,wait=0;setInterval(function(){try{var im=document.querySelector(".isf img[src*='daram-idle-t']");if(!im){ph=-1;return}
-   if(ph<0){if(++wait<16)return;wait=0;ph=0}var f=SEQ[ph];im.setAttribute("src",im.getAttribute("src").replace(/daram-idle-t\d/,"daram-idle-"+f));ph++;if(ph>=SEQ.length)ph=-1}catch(e){}},160)})();
+ /* 꼬리 프레임은 inn_character_motion의 단일 타이머가 감정·접근성·가시성을 확인하고 관리한다. */
  var DV4={"":"idle-t0",neutral:"idle-t0",think:"memo",memo:"memo",laugh:"joy",joy:"joy",smile:"joy",oops:"flustered",panic:"flustered",nervous:"flustered",shock:"flustered",shy:"flustered",caught:"flustered",cower:"flustered",
-   mad:"comic-anger",angry:"comic-anger",pout:"held-anger",held:"held-anger",resolve:"held-anger",confront:"held-anger",sad:"idle-t0",worried:"idle-t0"};
+   mad:"comic-anger",angry:"comic-anger",pout:"held-anger",held:"held-anger",resolve:"memo",confront:"held-anger",sad:"idle-t0",worried:"idle-t0"};
  function dv4(m){var k=String(m||"").split(/\s+/)[0];return Object.prototype.hasOwnProperty.call(DV4,k)?DV4[k]:"idle-t0"}
  window.__innDV4=dv4;
- function neoState(m){var t="";try{var l=DL&&DL.lines&&DL.lines[DL.i];t=String((l&&(l[1]||l.t))||"");   /* 한 대사가 여러 쪽으로 나뉘어도 같은 상태를 유지: 같은 묶음(__pg.g)의 글을 합쳐 판단 */
-   if(l&&l.__pg){t=DL.lines.filter(function(x){return x&&x.__pg&&x.__pg.g===l.__pg.g}).map(function(x){return String(x[1]||x.t||"")}).join(" ")}}catch(e){}var md=String(m||"");
-  if(/angry|mad|shock/.test(md)||/!/.test(t))return "angry";
+ function neoState(m,text){var t=text==null?"":String(text);try{var l=DL&&DL.lines&&DL.lines[DL.i];if(text==null)t=String((l&&(l[1]||l.t))||"");   /* 한 대사가 여러 쪽으로 나뉘어도 같은 상태를 유지: 같은 묶음(__pg.g)의 글을 합쳐 판단 */
+   if(text==null&&l&&l.__pg){t=DL.lines.filter(function(x){return x&&x.__pg&&x.__pg.g===l.__pg.g}).map(function(x){return String(x[1]||x.t||"")}).join(" ")}}catch(e){}var md=String(m||"").split(/\s+/)[0];
+  if(/^(angry|mad|confront)$/.test(md))return "angry";
+  if(/^(sheepish|shy|oops|caught)$/.test(md))return "sheepish";
+  if(/^(admonish|claim|resolve|held|pout)$/.test(md))return "admonish";
+  if(md&&md!=="neutral")return "default";
   if(/크흠|흠\.|머쓱|실례|죄송|미안|제가 성급|제가 잘못/.test(t))return "sheepish";
   if(/규정|규약|규칙|두십시오|해야 합니다|안 됩니다|벌금|허가|회의를 엽니다|정오 우편 마차|옮기지만 않는다면|기록하겠습니다|안건/.test(t))return "admonish";
   return "default"}
- window.__innNeoState=function(m){try{return neoState(m)}catch(e){return "default"}};
- function frame(k,s,W,H){var f=FSC[s];if(f){var sc=f[5]*H/f[1];return {w:f[0]*sc,h:f[1]*sc,left:W/2-(f[2]+f[3])/2*sc,top:H*12/390-f[4]*sc+f[6]*H}}
-  var b=BOX[s]||[192,192,20,170,10,6],sc=(DS[k]||2.739)*H/390;return {w:b[0]*sc,h:b[1]*sc,left:W/2-(b[2]+b[3])/2*sc,top:H*12/390-b[4]*sc}}
+ window.__innNeoState=function(m,t){try{return neoState(m,t)}catch(e){return "default"}};
+ function frame(k,s,W,H){var f=FSC[s],b=BOX[s]||[192,192,20,170,10,6];
+  var cw=f?f[0]:b[0],ch=f?f[1]:b[1],sc=f?f[5]*H/ch:(DS[k]||2.739)*H/390;
+  /* 세로 화면에서 높이만 따라 2배 커지던 배우: 원본 비율을 유지하고 너비를 제한, 몸 끝은 대사창 쪽에 둔다. */
+  var portrait=H>W*1.15;if(portrait)sc=Math.min(sc,W*.97/cw);
+  var cx=f?(f[2]+f[3])/2:(b[2]+b[3])/2,top=H*12/390-(f?f[4]:b[4])*sc+(f?f[6]*H:0);
+  if(portrait)top=Math.max(12,H-Math.max(132,H*.18)-ch*sc*.94);
+  return {w:cw*sc,h:ch*sc,left:Math.round(W/2-cx*sc),top:Math.round(top)}}
  window.__innFrame=function(k,s){return frame(k,String(s||"").split("?")[0],innerWidth,innerHeight)};
  function draw(k,m){var W=innerWidth,H=innerHeight;
   if(k!==st.shown){if(k)chime();st.shown=k||null}
@@ -92,13 +105,14 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   if(!fig||fig.dataset.k!==k){if(fig)fig.remove();fig=document.createElement("div");fig.className="isf";fig.dataset.k=k;
    if(s){var im=document.createElement("img");im.alt="";im.draggable=false;fig.appendChild(im)}else{fig.dataset.face="1";try{fig.innerHTML=typeof pf==="function"?pf(k,m):""}catch(e){}}
    layer.appendChild(fig);requestAnimationFrame(function(){fig&&fig.classList.add("in")})}
+  fig.dataset.mood=String(m||"").split(/\s+/)[0];
   if(s){var im2=fig.firstChild;if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
    var F=frame(k,s,W,H);im2.style.width=F.w+"px";im2.style.height=F.h+"px";
    fig.style.width=Math.round(F.w)+"px";fig.style.height=Math.round(F.h)+"px";fig.style.left=Math.round(F.left)+"px";fig.style.top=Math.round(F.top)+"px"}
   else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
  function step1(ln,id){var w=lw(ln),cg=cgList();
   /* 상대가 아닌 사람(아빠·다람)이 말할 때 표정 지정이 없으면 상대의 직전 표정을 유지한다(줄마다 표정이 바뀌어 깜빡이지 않게) */
-  if(Array.isArray(ln)&&w!=="narr"&&w!=="@dir"){var f6=ln.length>6?ln[6]||null:null;if(f6||w===st.who||!st.who||st.who==="det1")st.m=f6}
+  if(Array.isArray(ln)&&w!=="narr"&&w!=="@dir"){var f6=ln[6]||null;if(f6)st.m=f6;else if(w===st.who||!st.who)st.m=window.__innMood(ln)||null}
   if(w==="narr"){var cue0=(window.__INNCUE||{})[ot(ln)];if(cue0){st.who=cue0==="none"?null:cue0;st.whoDl=id;st.m=null}return}
   if(!st.who&&(w==="det1"||w==="det0")){st.who="det1";st.whoDl=id;st.quiet=1}
   return;
