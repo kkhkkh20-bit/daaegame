@@ -195,7 +195,7 @@ def main():
                 page.wait_for_timeout(500)
                 sources=page.locator('#rtg .seat img,#rtg .seat>svg>image').evaluate_all('''async xs=>Promise.all(xs.map(async x=>{
                   const src=x.getAttribute('src')||x.getAttribute('href');
-                  if(x.tagName.toLowerCase()==='img')return {src,ok:x.complete&&x.naturalWidth>0};
+                  if(x.tagName.toLowerCase()==='img'){try{await x.decode()}catch(e){}return {src,ok:x.complete&&x.naturalWidth>0}};
                   const probe=new Image();probe.src=src;try{await probe.decode()}catch(e){}return {src,ok:probe.complete&&probe.naturalWidth>0};
                 }))''')
                 assert sources and all(x['ok'] for x in sources), ('Native council images missing',sources)

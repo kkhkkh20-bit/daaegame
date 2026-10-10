@@ -26,7 +26,7 @@ with sync_playwright() as p:
     page.wait_for_timeout(300)
     # Isolate injected cue timing from live engine metadata; qa_flow checks integration.
     page.evaluate('window.__qaLine=window.__innAudioLine;window.__innAudioLine=function(){}')
-    page.evaluate('window.__qaLine({w:"doto",t:"첫눈은 자정이었어요. 종이 열두 번 쳤고요."})')
+    page.evaluate('window.__qaLine({w:"doto",t:"첫눈은 자정. 종 열두 번을 기록했어요."})')
     assert page.evaluate('window.__innKeyLine()')
     assert page.evaluate('window.__innDuck()') == 0
     page.mouse.click(2,2)

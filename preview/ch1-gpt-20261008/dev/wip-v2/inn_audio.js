@@ -27,10 +27,10 @@
   /* Authored turns, not punctuation or a sad face, change the music. A cue
      lasts through the rest of its conversation/scene until another cue. */
   var CONTEXT=[
-   [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|저한텐 그게 똑바로/, 'inn_comic'],
-   [/어서 와요\. 추웠지|우선 들어와요|나도 아빠처럼 탐정|잘 자, 다람|이 수건은 네가 두르고|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
-   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고,? 숨|^다 식은 건|^그 애… 괜찮아요|혼자 먼저 가지 않기로/, 'inn_serious'],
-   [/밤에 복도에서 무엇을|족제비 손님이 시계|무엇을 들고 있었|빨간 띠가 보이긴/, 'inn_inv']
+   [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|당연하죠\. 그게 똑바론데요/, 'inn_comic'],
+   [/어서 와요\. 추웠지|우선 들어와요|아빠처럼 탐정 할래|잘 자, 다람|수건은 네가 차지해요|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
+   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고,? 숨|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
+   [/어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
   ];
   function contextMusic(fallback,scope){
    if(M.ctxScope!==scope){M.ctxScope=scope;M.ctxKey=fallback;M.ctxLine=null}
@@ -70,7 +70,7 @@
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
     if(sid==="P13"){if(!M.hit&&/^베개 밑…/.test(lineText())){M.hit=now;try{SFX.cut9()}catch(e){}}if(M.hit&&now-M.hit<1500)return null}   /* 주머니 발견: 음악 끊고 한 방 → 1.5초 정적 */   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
     if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
-    if(sid==="P11"){if(/^제 주머니가 없어졌|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 2026-10-10: 범죄를 처음 알아채는 줄(세련의 외침)에서 바로 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
+    if(sid==="P11"){if(/^제 주머니가 (?:없어요|없어졌)|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 범죄를 처음 알아채는 세련의 외침에서 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 수색·P13 안 쓰는 방: 사건곡(낮게) */
    if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return investigationMusic();   /* 동일 상황의 곡은 재시작하지 않는다. */
     var ph=null,E=window.EP1INN||{},fin=false;try{ph=window.__rtPh&&__rtPh();fin=!!(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)}catch(e){}
@@ -84,7 +84,7 @@
    M.f4=0;if(M.fin&&Date.now()-M.fin>7000)return null;     /* 마지막 줄 뒤 천천히 끝난 다음 */
    return "inn_after"};
   /* Important facts/emotional lines take a breath; silence does not imply a hit. */
-  var KEY=/^…엄마 글씨(?:야|가 맞아)|^긴 정적\. 모두 바구니|^…움직였어|^첫눈은 자정이었어요|^봉인띠와 겹쳐 보시죠|^그렇다면 주막에서 남은 백 냥|^그래서 여쭙겠습니다/;
+  var KEY=/^…엄마 글씨(?:야|가 맞아)|^콧수염 하나가 움직인다|^…움직였어|^첫눈은 자정(?:이었어요|\.)|^봉인띠와 겹쳐 보시죠|^그럼 남은 백 냥만 봉한|^돈입니까, 여관입니까/;
   window.__innKeyLine=function(){var t=lineText();return !!t&&KEY.test(t)};
   window.__innDuck=function(){var r=window.__innDuck0.apply(this,arguments);if(!cur()||document.getElementById("inncold"))return r;
    if(window.__innKeyLine())return 0;
@@ -101,9 +101,9 @@
     return f}
    if(!b.inn_final){if(M.obj&&document.querySelector("body>.rt"))f*=.72;if(M.f4)f*=.55;return f}   /* 추궁곡·인정 뒤 할머니 테마는 낮게 */
    var ei=b.inn_ei|0;
-   if(!b.inn_end&&ei===3){f=.6;if(/^이 사람입니다|^할머니, 아까 그 장부/.test(t))f=0}   /* E4: 엄마 사진을 내미는 순간 정적 */
-   if(!b.inn_end&&((ei===2&&/^식사를 마친 뒤, 할머니가 바구니/.test(t))||
-      (ei===4&&/^그동안은 아빠한테 읽어 줘|^다람이 마차에서부터 아껴 둔|^아껴 먹어|^고맙다\. 같이 먹자|^아빠는 다람이 먼저/.test(t))))f=.42;   /* 돌봄의 회수: 같은 후일담 현악을 낮게 유지, 충격음·심박 없이 */
+   if(!b.inn_end&&ei===3){f=.6;if(/^이 사진, 다시 봐주시겠습니까|^할머니, 아까 그 장부/.test(t))f=0}   /* E4: 엄마 사진을 내미는 순간 정적 */
+   if(!b.inn_end&&((ei===2&&/^할머니가 솜솜을 베개 구석에 눕힌다/.test(t))||
+      (ei===4&&/^오늘은 아빠한테 읽어줘|^다람이 남은 간식을 뜯어|^아껴 먹어|^고맙다\. 같이 먹자|^\(다람이 먼저 한 입/.test(t))))f=.42;   /* 돌봄의 회수: 같은 후일담 현악을 낮게 유지, 충격음·심박 없이 */
    if((!b.inn_end&&ei===4&&/^…올해는 네 딸이 왔다/.test(t))||b.inn_end){if(!M.fin)M.fin=now}
    if(M.fin)f*=Math.max(0,1-(now-M.fin)/6500);
    return f};

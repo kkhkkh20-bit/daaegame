@@ -85,7 +85,7 @@
  // pad. Opening a UI does not count as observing the authored headboard.
  var authoredClue=EP.LOCK.clue;
  Object.defineProperty(EP.LOCK,'clue',{configurable:true,enumerable:true,get:function(){return readDate()?authoredClue:'머리판에 남은 자국을 먼저 살펴보자.'}});
- Object.defineProperty(EP.LOCK,'hint',{configurable:true,enumerable:true,get:function(){return ['det1',readDate()?'날짜를 옮겨 보자. 달 두 칸, 날 두 칸.':'머리판을 직접 살펴보면 숫자의 뜻을 알 수 있을 거야.']}});
+ Object.defineProperty(EP.LOCK,'hint',{configurable:true,enumerable:true,get:function(){return ['det1',readDate()?'달 두 칸, 날 두 칸. 날짜를 옮겨 보자.':'머리판부터 보자. 숫자 힌트가 있을까?']}});
  var css=document.createElement('style');css.id='inn-room-puzzle-style';css.textContent=`
  html body.inn1 #ov:has(.inn-room-puzzle){z-index:205!important}
  html body.inn1 #ov #mveil:has(.inn-room-puzzle){z-index:205!important;background:#11131ab8}

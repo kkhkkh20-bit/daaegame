@@ -93,24 +93,47 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   if(/규정|규약|규칙|두십시오|해야 합니다|안 됩니다|벌금|허가|회의를 엽니다|정오 우편 마차|옮기지만 않는다면|기록하겠습니다|안건/.test(t))return "admonish";
   return "default"}
  window.__innNeoState=function(m,t){try{return neoState(m,t)}catch(e){return "default"}};
- window.__innNeoulSrc=function(m,t){return "art/ch1/neoul-v3/neoul-"+neoState(m,t)+"-dialogue.png"};
+ window.__innNeoulSrc=function(m,t){return "art/ch1/neoul-v4/neoul-"+neoState(m,t)+".png"};
  /* Portraits crop the same immutable PNG at render time; no stretched or
     separately drawn face can drift from the full actor's expression. */
  window.__innFaceCrop=function(k,m){
-  if(k==="wanggu")return {src:window.__innNeoulSrc(m,""),w:1334,h:1179,x:280,y:0,size:720};
+  if(k==="wanggu")return {src:window.__innNeoulSrc(m,""),w:1024,h:1536,x:180,y:60,size:600};
   if(k==="det1"&&dv4(m)==="worried")return {src:"art/ch1/daram-v4/daram-worried-dialogue.png",w:1389,h:1132,x:470,y:15,size:640};
   return null;
  };
  window.__innCropSvg=function(k,m,cls){var c=window.__innFaceCrop(k,m);if(!c)return null;return '<svg class="'+(cls||'nodot inn-pixel-face')+'" data-face="'+k+'" viewBox="'+[c.x,c.y,c.size,c.size].join(' ')+'" aria-hidden="true" style="image-rendering:pixelated"><image href="'+c.src+'" width="'+c.w+'" height="'+c.h+'" style="image-rendering:pixelated"/></svg>'};
- function frame(k,s,W,H){var f=FSC[s],b=BOX[s]||[192,192,20,170,10,6];
-  var cw=f?f[0]:b[0],ch=f?f[1]:b[1],sc=f?f[5]*H/ch:(DS[k]||2.739)*H/390;
-  /* 세로 화면에서 높이만 따라 2배 커지던 배우: 원본 비율을 유지하고 너비를 제한, 몸 끝은 대사창 쪽에 둔다. */
-  var portrait=H>W*1.15;if(portrait)sc=Math.min(sc,W*.97/cw);
-  var cx=f?(f[2]+f[3])/2:(b[2]+b[3])/2,top=H*12/390-(f?f[4]:b[4])*sc+(f?f[6]*H:0);
-  if(portrait){var plate=document.querySelector('#vnbox .vtxt'),pr=plate&&plate.getBoundingClientRect(),base=pr&&pr.height>10?pr.top:H-94;top=Math.max(12,base-ch*sc+12)}
-  if(k==="geokkuri")top=portrait?0:Math.min(0,top); /* feet attach to the ceiling */
-  return {w:cw*sc,h:ch*sc,left:Math.round(W/2-cx*sc),top:Math.round(top)}}
- window.__innFrame=function(k,s){return frame(k,String(s||"").split("?")[0],innerWidth,innerHeight)};
+ /* Display the opaque sprite, not its transparent canvas. Small standing
+    originals stay below 1.75 screen pixels per source pixel; larger authored
+    medium shots fit the same readable stage area. No art resampling/blur. */
+ var FRAME_BOX={"art/ch1/action-poses/bami/dialogue.png":[660,830,15,0,648,817],"art/ch1/neoul-v3/neoul-default-dialogue.png":[1334,1179,26,6,1334,1179],"art/ch1/neoul-v3/neoul-admonish-dialogue.png":[1334,1179,25,5,1334,1179],"art/ch1/neoul-v3/neoul-angry-dialogue.png":[1334,1179,25,4,1334,1179],"art/ch1/neoul-v3/neoul-sheepish-dialogue.png":[1334,1179,25,5,1334,1179],"art/ch1/daram-v4/daram-idle-t0-dialogue.png":[368,300,22,10,300,300],"art/ch1/daram-v4/daram-idle-t1-dialogue.png":[368,300,14,10,300,300],"art/ch1/daram-v4/daram-idle-t2-dialogue.png":[368,300,30,10,300,300],"art/ch1/daram-v4/daram-memo-dialogue.png":[368,300,22,8,296,300],"art/ch1/daram-v4/daram-joy-dialogue.png":[368,300,22,10,300,300],"art/ch1/daram-v4/daram-flustered-dialogue.png":[368,300,20,10,300,300],"art/ch1/daram-v4/daram-held-anger-dialogue.png":[368,300,20,10,282,300],"art/ch1/daram-v4/daram-comic-anger-dialogue.png":[368,300,22,10,282,300],"art/ch1/daram-v4/daram-worried-dialogue.png":[1389,1132,88,39,1150,1132]};
+ function actorBox(s){var b=FRAME_BOX[s],old=BOX[s],f=FSC[s];
+  if(b)return b;if(old)return [old[0],old[1],old[2],old[4],old[3],old[1]-old[5]];
+  if(f)return [f[0],f[1],Math.max(0,f[2]),f[4],Math.min(f[0],Math.max(f[3],f[2]+f[0]*.65)),f[1]];
+  return [192,192,20,10,170,186]}
+ // New approved sprites can register exact native canvas/opaque bounds without
+ // replacing geometry or guessing a scale from the previous character art.
+ window.__innSetActorFrame=function(s,b){if(typeof s==='string'&&Array.isArray(b)&&b.length===6&&b.every(Number.isFinite)&&b[0]>0&&b[1]>0&&b[4]>b[2]&&b[5]>b[3])FRAME_BOX[s]=b.slice()};
+ // 2026-10-10 requested style match: generated raw full-body PNGs. The same
+ // expression supplies dialogue, record portrait and council face crop.
+ var NEO4={default:[1024,1536,115,100,985,1476],admonish:[1024,1536,116,80,985,1444],angry:[1024,1536,116,95,986,1475],sheepish:[1024,1536,116,100,985,1476]};
+ Object.keys(NEO4).forEach(function(k){window.__innSetActorFrame('art/ch1/neoul-v4/neoul-'+k+'.png',NEO4[k])});
+ function frame(k,s,W,H,opt){var b=actorBox(s),cw=b[0],ch=b[1],ow=b[4]-b[2],oh=b[5]-b[3],portrait=H>W*1.15;
+  var topSafe=portrait?112:50,bottom=H-20,x0=12,x1=W-12;
+  if(opt&&opt.surface==='talk'){
+   var panel=opt.panel;if(panel&&panel.width>0&&panel.left>W*.3)x1=Math.max(x0+100,panel.left-16);
+  }else{
+   var plate=document.querySelector('#vnbox .vtxt'),pr=plate&&plate.getBoundingClientRect();
+   bottom=pr&&pr.height>10?pr.top-12:H-108;
+  }
+  var available=Math.max(96,bottom-topSafe),target=Math.min(available,H*.64,360);
+  if(k==='det1'||k==='doto')target*=.92;
+  var nativeCap=Math.max(cw,ch)<=256?1.75:1;
+  var sc=Math.min(target/oh,(x1-x0)/ow,nativeCap);
+  // Keep feet above the dialogue plate; suspended Bami remains ceiling attached.
+  var top=k==='geokkuri'?-b[3]*sc:bottom-b[5]*sc;
+  return {w:cw*sc,h:ch*sc,left:Math.round((x0+x1)/2-(b[2]+b[4])*sc/2),top:Math.round(top),scale:sc,opaque:b.slice(2),canvas:b.slice(0,2),floor:bottom};
+ }
+ window.__innFrame=function(k,s,opt){return frame(k,String(s||'').split('?')[0],innerWidth,innerHeight,opt)};
  function draw(k,m){var W=innerWidth,H=innerHeight;
   if(k!==st.shown){if(k)chime();st.shown=k||null}
   if(!k){if(fig){fig.remove();fig=null}return}
@@ -138,7 +161,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   var v=document.getElementById("dlgveil");
   if(cur()&&v&&typeof DL!=="undefined"&&DL&&DL.lines&&!document.getElementById("rtg")&&!document.querySelector(".fstalk")){
    on=true;if(!ensure())return;
-   var sc=scene(),sk=sc?sc.key:"D"+dlid(DL),id=dlid(DL),size=innerWidth+"x"+innerHeight;
+   var sc=scene(),sk=sc?sc.key:"D"+dlid(DL),id=dlid(DL),size=innerWidth+"x"+innerHeight+"|"+Math.round((document.querySelector("#vnbox .vtxt")||v).getBoundingClientRect().top);
    if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null;st.whoDl=0;st.shown=null}
    if(id!==st.dl){st.dl=id;st.i=-1}
    if(DL.i!==st.i||size!==st.size){for(var q=Math.max(0,st.i+1);q<=DL.i&&q<DL.lines.length;q++)step1(DL.lines[q],id);st.i=DL.i;st.size=size;
@@ -200,7 +223,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 1장 인물은 프롤로그에서 이미 만났다: 조사 중 첫 질문 때 '새 인물·안녕하세요' 인사를 띄우지 않는다 */
  function metAll(){try{if(!cur()||!window.__metOf)return;var c=CASES[G.ci],m=window.__metOf(c);if(!Array.isArray(m))return;Object.keys(c.talk||{}).forEach(function(k){if(m.indexOf(k)<0)m.push(k)})}catch(e){}}
  /* 이름표: 아빠가 이름을 듣기 전까지는 '???' (프롤로그 첫 만남). 이름을 말하는 그 줄부터 이름이 뜬다 */
- var REVEAL={karo:"이 마차 마부 까로예요",nabi:"저는 여기 일 돕는 나비예요",geokkuri:"저는 밤이예요",doto:"저는 도토라고 해요",buri:"장치공 부리예요",seryeon:"여행객, 세련입니다",wanggu:"자경단장 너울입니다"};
+ var REVEAL={karo:"마부 까로예요",nabi:"나비예요",geokkuri:"밤이예요",doto:"도토예요",buri:"장치공 부리예요",seryeon:"세련입니다",wanggu:"자경단장 너울입니다"};
  function revealAt(k){for(var i=0;i<EP.PRO.length;i++){var it=EP.PRO[i].items;for(var j=0;j<it.length;j++){var t=lt(it[j]);if(typeof t==="string"&&t.indexOf(REVEAL[k])>=0)return i}}return -1}
  var RPI={};Object.keys(REVEAL).forEach(function(k){RPI[k]=revealAt(k)});var heard={};
  var INVINTRO={buri:1,doto:1,geokkuri:1};   /* 2026-10-10: 프롤로그에서 빠져 조사 중에 처음 만나는 인물 — 자기소개 줄을 듣기 전까지 ??? (들은 것은 저장) */
@@ -421,10 +444,10 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 힌트: 1장은 단계가 잠겨 있다(햇빛 → 머리판 → 자물쇠 → 장부 → 돋보기). 잠긴 지점을 '남은 곳'으로 세거나 가리키지 않고, 지금 해야 할 단계를 말한다 */
  try{var _ns2=nextStep;nextStep=function(c){try{if(cur()&&!G.battle){var b=G.beats||{},has=function(id){return G.found.indexOf(id)>=0},LI=function(id){for(var i=0;i<c.locations.length;i++)if(c.locations[i].id===id)return i;return null};
    var sun=!!(window.__innSun&&window.__innSun());
-   if(sun&&!b.inn_lock&&!has("C11"))return {say:"아빠, 안 쓰는 방에 해가 들었을 거야. 열세 번째 침대 머리판을 다시 보자. 아까 안 보이던 글씨가 보일지도 몰라.",tab:"scene",loc:LI("bed13")};
+   if(sun&&!b.inn_lock&&!has("C11"))return {say:"해가 들었어. 안 쓰는 방 머리판을 다시 보자.",tab:"scene",loc:LI("bed13")};
    if(b.inn_lock&&!has("C11"))return {say:"상자가 열렸어. 침대 밑 상자 안을 살펴보자.",tab:"scene",loc:LI("bed13")};
-   if(!has("C05")&&(has("C11")||b.inn_show_innma_C04))return {say:"바구니 속 아이를 할머니 돋보기로 다시 보자. 안 쓰는 방에 있어.",tab:"scene",loc:LI("bed13")};
-   if(has("C04")&&!has("C05")&&!b.inn_show_innma_C04&&has("C13"))return {say:"할머니는 바구니 속 손님 일을 아직 모르셔. 식당에서 할머니께 그 증거를 보여 드리자.",tab:"scene",loc:LI("dining")};
+   if(!has("C05")&&(has("C11")||b.inn_show_innma_C04))return {say:"안 쓰는 방에서 바구니를 돋보기로 보자.",tab:"scene",loc:LI("bed13")};
+   if(has("C04")&&!has("C05")&&!b.inn_show_innma_C04&&has("C13"))return {say:"식당 할머니께 바구니 속 손님을 보여 드리자.",tab:"scene",loc:LI("dining")};
   }}catch(e){}return _ns2.apply(this,arguments)}}catch(e){MISS.push("stage hint")}
  /* 조사 화면에서 배경 그림에 없는 단서 물건(복도 벽시계, 접수대 숙박부)을 증거 도트로 그 자리에 보여 준다. 정식 소품 그림이 오면 교체 */
  var PROP={hall:[["C06","art/evidence/inn/C06.png",5]]};   /* 2026-10-09: 문틀 위에 떠 보이던 자리 → 문 오른쪽 벽면(patches/15_hall.py) */   /* 복도 벽시계: 월드 소품 납품 전까지 증거 도트(C06, 숫자 없음·바늘 없음 그대로) */
@@ -441,7 +464,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* 아침 해: 첫 조사 단서(I1~I6)를 다 모은 순간 한 번, 창고가 달라졌다는 것을 이야기로 알린다(힌트를 쓰지 않아도 다음 단계가 보이게) */
  setInterval(function(){try{if(!cur()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||G.beats.inn_sunnote||G.tab!=="scene")return;if(!(window.__innSun&&window.__innSun()))return;
   if((typeof DL!=="undefined"&&DL)||document.querySelector("#ov .modal,#mveil .modal,#innins,.banner,body>.rt,#wmap,#w209rail.more,.crec2,.placecard"))return;G.beats.inn_sunnote=1;try{saveProg()}catch(e){}
-  say([["narr","(창밖이 환해졌다. 아침 해가 창고 창에도 들었겠다.)"],["det1","아빠, 해 떴다! 창고 침대 머리판 글씨, 이제 보일까?"],["det0","가 보자. 아까는 어두워서 못 읽었으니까."]],function(){render()})}catch(e){}},250);
+  say([["det1","아빠, 해 떴다! 머리판 글씨도 보일까?"],["det0","가 보자. 아까는 어두웠지."]],function(){render()})}catch(e){}},250);
  /* 질문 화면·조사 화면에서 엔진이 그리는 할머니(art/body/innma-N)도 같은 v5로 맞춘다. 같은 146×182 캔버스라 위치는 그대로 */
  var BODY2V5={"art/body/innma-0.png":INNMA["0"],"art/body/innma-1.png":INNMA["1"],"art/body/innma-2.png":INNMA["2"]};
  function innmaSwap(){try{if(!cur())return;document.querySelectorAll('img[src^="art/body/innma-"],image[href^="art/body/innma-"]').forEach(function(e){var a=e.tagName.toLowerCase()==="img"?"src":"href",v=BODY2V5[String(e.getAttribute(a)||"").split("?")[0]];if(v)e.setAttribute(a,v)})}catch(e){}}

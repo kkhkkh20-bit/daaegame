@@ -100,7 +100,7 @@ with sync_playwright() as p:
  move(3);scene_npc('geokkuri')
  click('#showev');click('[data-show="C08"]')
  assert state()['beats'].get('inn_show_geokkuri_C08'),state()
- assert '첫눈이 막 내리기 시작했다' in page.evaluate('EP1INN.EV.C13.card')
+ assert '올해 첫눈이 내리기 시작했다' in page.evaluate('EP1INN.EV.C13.card')
  print('Weather follow-up acquired through actual evidence presentation',flush=True)
  if state()['tab']!='scene':click('#w209rail .g>[data-w="scene"]')
  assert all(cid in state()['found'] for cid in ['C06','C08']),state()

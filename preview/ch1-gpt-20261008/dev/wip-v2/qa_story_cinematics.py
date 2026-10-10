@@ -110,7 +110,7 @@ with sync_playwright() as playwright:
         engine('say(EP1INN.PRO.find(s=>s.sid==="P13").items.filter(l=>Array.isArray(l)&&(/베개 밑|세련 씨 주머니가 맞습니까|맞습니다. 제 도장이에요/.test(l[1]))),function(){})')
         expect('seal')
         stop()
-        engine('say([EP1INN.PRO.find(s=>s.sid==="P13").items.find(l=>Array.isArray(l)&&/너울 씨가 봉인띠를 자르고/.test(l[1]))],function(){})')
+        engine('say([EP1INN.PRO.find(s=>s.sid==="P13").items.find(l=>Array.isArray(l)&&/너울이 봉인띠를 자르고/.test(l[1]))],function(){})')
         page.wait_for_timeout(150)
         assert page.locator('#inn-story-cg').count()==0,'Intact seal still shown after it was cut'
 
