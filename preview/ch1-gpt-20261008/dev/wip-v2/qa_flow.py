@@ -46,7 +46,7 @@ with sync_playwright() as p:
  if args.without_ledger:prepared+='G.found=G.found.filter(id=>id!=="C11");'
  prepared += 'G.beats.inn_meet=1;window.__innOpenFinal()' if args.final else 'window.__rtOpen(CASES[G.ci])'
  pg.evaluate('(code)=>window.__T(code)', prepared)
- pg.evaluate('''window.__audioSeen={};window.__caseTurns={};setInterval(()=>{const s=window.__innAudioState();if(s.line){window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant()};if(s.line.startsWith('[반박 결과]'))window.__caseTurns[s.line]=window.__T('Object.assign({},G.beats.rtVotes)')}},60)''')
+ pg.evaluate('''window.__audioSeen={};window.__caseTurns={};setInterval(()=>{const s=window.__innAudioState();if(s.line){window.__audioSeen[s.line]={who:s.who,key:s.key,confession:s.confession,cue:s.cue,want:window.__innWant(),duck:window.__innDuck(),tense:window.__innTense()};if(s.line.startsWith('[반박 결과]'))window.__caseTurns[s.line]=window.__T('Object.assign({},G.beats.rtVotes)')}},60)''')
  if args.failure:
   initial=pg.evaluate('window.__T("G.found.slice()")');wr=0;saw_mf=False;recovered=False
   for i in range(700):
@@ -132,6 +132,19 @@ with sync_playwright() as p:
                             '엄마 찾으면 서점 다시 열자'):
    assert any(relationship_beat in t for t in audio),('Epilogue relationship missing',relationship_beat)
   print('Family epilogue: child testimony accepted, village allies and active mother search before bookstore return OK',flush=True)
+  comfort=next((v for t,v in audio.items() if '나는 그 손을 잠깐 감싸 쥔다' in t),None)
+  assert comfort and comfort['want'] is None and not comfort['tense'],('Comfort must use quiet without heartbeat',comfort)
+  following=next((v for t,v in audio.items() if t.startswith('처음 있던 자리는 말씀하지 않고')),None)
+  assert following and following['want'] in ('inn_meet','inn_meet_press','inn_climax'),('Comfort quiet leaked into the next testimony',following)
+  for emotional_beat in ('다람이가 더 기다려 보자고', '두 사람 몫도 같이 끓여',
+                         '솜솜을 원래 베개 구석에', '그동안은 아빠한테 읽어 줘',
+                         '아빠는 다람이 먼저 한 입', '침대 머리판을 쓰다듬는다'):
+   assert any(emotional_beat in t for t in audio),('Emotional payoff missing from played route',emotional_beat)
+  for t,v in audio.items():
+   if t.startswith(('식사를 마친 뒤, 할머니가 바구니', '그동안은 아빠한테 읽어 줘', '아껴 먹어', '고맙다. 같이 먹자', '아빠는 다람이 먼저')):
+    assert v['want']=='inn_after' and 0<v['duck']<=.5 and not v['tense'],('Gentle epilogue cue missing',t,v)
+  assert not any('빈 열세 번째 침대' in t for t in audio), 'Epilogue contradicts Somsom returning to the bed'
+  print('Emotional beats: quiet comfort → next testimony restores music; winter home, sleeping guest and shared reading/snack all played with gentle piano OK',flush=True)
   assert audio.get('…네.',{}).get('confession'), audio.get('…네.')
   assert any(v['key'] for k,v in audio.items() if k.startswith('첫눈은 자정')), 'Council dialogue audio hook missing'
   assert any(v['want']=='inn_meet_press' for v in audio.values()), 'Council pressure tempo missing'

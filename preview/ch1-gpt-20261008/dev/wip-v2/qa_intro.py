@@ -24,6 +24,8 @@ with sync_playwright() as p:
                         '나도 아빠처럼 탐정', '위험한 곳은 아빠가 먼저',
                         '예전에 탐정 일을 했습니다', '수첩에 적을게'):
         assert any(family_beat in t for t in seen),('Required family introduction missing',family_beat)
+    assert any('크르르. 내 책을' in t for t in seen), 'Shared bedtime routine not played'
+    assert any('책 말고 간식이야' in t for t in seen), 'Child did not correct the familiar story'
     assert not errors,errors
     assert not bad,bad
     print('Fresh intro → investigation OK; family bookstore, sudden disappearance, former detective, child observer and limited intervention shown; errors/HTTP failures 0')

@@ -150,6 +150,8 @@
    if(!b.inn_final){if(M.obj&&document.querySelector("body>.rt"))f*=.72;if(M.f4)f*=.55;return f}   /* 추궁곡·인정 뒤 할머니 테마는 낮게 */
    var ei=b.inn_ei|0;
    if(!b.inn_end&&ei===3){f=.6;if(/^이 사람입니다|^할머니, 아까 그 장부/.test(t))f=0}   /* E4: 엄마 사진을 내미는 순간 정적 */
+   if(!b.inn_end&&((ei===2&&/^식사를 마친 뒤, 할머니가 바구니/.test(t))||
+      (ei===4&&/^그동안은 아빠한테 읽어 줘|^다람이 마차에서부터 아껴 둔|^아껴 먹어|^고맙다\. 같이 먹자|^아빠는 다람이 먼저/.test(t))))f=.42;   /* 돌봄의 회수: 같은 후일담 피아노를 낮게 유지, 충격음·심박 없이 */
    if((!b.inn_end&&ei===4&&/^…올해는 네 딸이 왔다/.test(t))||b.inn_end){if(!M.fin)M.fin=now}
    if(M.fin)f*=Math.max(0,1-(now-M.fin)/6500);
    return f};
