@@ -50,6 +50,8 @@ with sync_playwright() as playwright:
 
     clear();engine('G.tab="talk";G.who="buri";say([EP1INN.TALK.buri.find(t=>t.id==="T_bu3").lines[1]],function(){})')
     expect('Cold guest claim','inn_serious','차갑고')
+    clear();engine('say([EP1INN.LOCS.find(l=>l.id==="bed13").spots.find(s=>s.ev==="C04").say.find(l=>l[0]==="buri"&&String(l[1]).startsWith("차갑고…"))],function(){})')
+    expect('Actual rescue examination','inn_serious','차갑고…')
     clear();engine('G.tab="talk";G.who="geokkuri";say([EP1INN.TALK.geokkuri.find(t=>t.id==="T_ba3").lines.find(l=>String(l[1]).includes("당연하죠. 그게 똑바론데요"))],function(){})')
     expect('Bami upside-down joke','inn_comic','당연하죠. 그게 똑바론데요')
     clear();engine('G.tab="talk";G.who="geokkuri";say([EP1INN.TALK.geokkuri.find(t=>t.id==="C13").lines[1]],function(){})')

@@ -366,10 +366,16 @@
     var r=document.getElementById("w209rail");if(!r)return;var now=performance.now();if(now-(b.__t||0)<250)return;b.__t=now;r.classList.toggle("more");try{SFX.tap()}catch(x){}},true);
   /* QA 저장칸 표시(?qa=1 / ?slot=이름) */
   try{if(window.__QASLOT){var qb=document.createElement("div");qb.id="qaslot9";qb.textContent="QA 저장칸 · "+window.__QASLOT;qb.style.cssText="position:fixed;left:6px;bottom:6px;z-index:3000;padding:2px 8px;border-radius:6px;background:rgba(162,59,42,.85);color:#fff;font:12px Galmuri11,monospace;pointer-events:none";(document.body||document.documentElement).appendChild(qb)}}catch(e){}
-  /* 2026-10-10 v2: 주머니·이불을 본 뒤에도 침대 밑을 안 봤으면, 다음 할 일은 안 쓰는 방 침대 밑 */
+  /* Money clues lead through testimony and the register before the return. */
   try{var _nsx=nextStep;nextStep=function(c){var r=_nsx.apply(this,arguments);try{if(!inn()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||!r)return r;
-    if((G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return r;var bi=-1;c.locations.forEach(function(l,i){if(l.id==="bed13")bi=i});if(bi<0)return r;
-    return {say:"아빠, 침대 밑도 보자. 안쪽이 어두워.",tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
+    if(G.found.indexOf("C04")>=0&&!G.beats.inn_life_confirmed&&!G.beats.inn_meet)return {say:"모두 식당에 모여 작은 손님부터 살펴보자.",tab:"final"};
+    if((G.obsSeen||[]).indexOf("o_under")>=0||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return r;
+    var known=function(id){return G.found.indexOf(id)>=0||(G.asked||[]).indexOf(id)>=0},target="bed13",text="밝아졌으니 그 방 상자 뒤도 다시 보자.";
+    if(!known("C03")){target="kitchen";text="가루 묻은 이불. 나비에게 어젯밤 일을 묻자."}
+    else if(!known("C09")){target="front";text="접수대 숙박부에서 어젯밤 손님을 확인하자."}
+    else if(!known("C12")){target="dining";text="세련 씨에게 어젯밤과 돈을 봉한 일을 묻자."}
+    var bi=-1;c.locations.forEach(function(l,i){if(l.id===target)bi=i});if(bi<0)return r;
+    return {say:text,tab:"scene",loc:bi}}catch(e){}return r}}catch(e){}
   /* 독립 QA ④: 증거로 이어지는 관찰(찻주전자, 햇빛 든 머리판, 숫자 자물쇠)이 남았는데 '증거 수집 완료'로 뜨던 것 → '살펴볼 곳 N군데 남음' */
   var KEYOBS={o_under:"C04",o_inn_head2:"C11",o_inn_lock:"C11"};
   function statusFix(){try{var sm=document.querySelector(".stagebar .scap small");if(!sm||!inn()||!G.beats.inn_pro)return;var base=sm.dataset.innStatusBase||(sm.dataset.innStatusBase=sm.textContent);if(!/^(증거 수집 완료|모두 조사했어요)/.test(base))return;var sc=document.getElementById("bigscene");if(!sc)return;
@@ -560,14 +566,14 @@
   window.__innUI9={obs:function(){return window.__innObsLast||""},HK:HK,OBS:OBS};
 
   /* ==== 2026-10-10 v2 구조 피드백(사용자 승인) ==== */
-  /* (1) 위기가 눈앞에: 솜솜을 찾은 뒤 식당에 처음 들어서면, 세련이 계약서와 펜을 펴 두고 할머니는 동전 깡통을 센다(한 번) */
+  /* Contract pressure belongs before the rescue. Afterwards, life comes first. */
   var STAKES=[["narr","세련 씨가 계약서 옆에 펜을 놓는다."],["seryeon","이백 냥. 아니면 여기 서명입니다.","smug"],
    ["seryeon","정오엔 떠나야 해서요.","smug"],
    ["narr","할머니가 낡은 깡통에서 동전을 센다."],
    ["det1","할머니, 그 돈은…?","sad"],["innma","봄 이불 값이야. 아직 멀었지.","sad"],
-   ["narr","(벌써 깡통 바닥이 보인다.)"],["narr","다람이 내 소매를 꼭 쥔다."],["det0","아직 회의도 안 끝났습니다.","resolve"]];
+   ["narr","다람이 내 소매를 꼭 쥔다."],["det0","확인도 안 끝났습니다.","resolve"]];
   setInterval(function(){try{if(!inn()||G.tab!=="scene"||dl()||!G.beats||!G.beats.inn_pro||G.beats.inn_meet||G.beats.inn_stakes)return;if(document.querySelector("#ov .modal,#innmove,#wmap,.crec2,body>.rt,.placecard"))return;
-    var l=loc();if(!l||l.id!=="dining"||G.found.indexOf("C04")<0)return;G.beats.inn_stakes=1;try{saveProg()}catch(e){}say(STAKES.map(function(x){return x.slice()}),function(){try{render()}catch(e){}})}catch(e){}},700);
+    var l=loc();if(!l||l.id!=="dining"||G.found.indexOf("C04")>=0||G.found.indexOf("C01")<0||G.found.indexOf("C02")<0)return;G.beats.inn_stakes=1;try{saveProg()}catch(e){}say(STAKES.map(function(x){return x.slice()}),function(){try{render()}catch(e){}})}catch(e){}},700);
   /* (2) 회의 힌트 단계화: 1번째 방향만 → 2번째 어느 발언인지 → 3번째부터 다음에 낼 증거까지 */
   setTimeout(function(){var _rh9=window.__rtHint;if(!_rh9)return;window.__rtHint=function(C,ph,has,setSi){if(!inn()||!ph||!ph.stms)return _rh9.apply(this,arguments);
     var left=window.__hintLeft?window.__hintLeft():3;if(left<=0)return _rh9.apply(this,arguments);
@@ -584,10 +590,11 @@
   try{var st9=document.createElement("style");st9.textContent="body.inn1 #rtg .tmp{display:none!important}#rtg .seat img.neoul9{height:52%!important;width:auto!important;position:relative;top:34%;border-radius:50%;border:3px solid #C9A96A;background:#3A2A1E;box-sizing:border-box}";document.head.appendChild(st9)}catch(e){}
   /* (3) 설득력이 바닥나면: 할머니의 마지막 마차 장면(EP.MF) → 처음부터 다시(모은 증거 유지) */
   setTimeout(function(){var _f=window.__innFail;if(!_f)return;window.__innFail=function(kind){var a=arguments,self=this;if(!inn()||!window.__innPlay||!(window.EP1INN||{}).MF)return _f.apply(self,a);
+    if(kind!=="final"&&(!G.beats.inn_life_confirmed||(G.debate&&G.debate.pi<=1)))return _f.apply(self,a);
     try{var r=document.querySelector("body>.rt");if(r)r.remove();window.__inMeeting=false;document.body.classList.remove("rtg","rtg-drw")}catch(e){}
     try{window.__innAudioFailure&&window.__innAudioFailure(true);window.__innPlay(window.EP1INN.MF,function(){window.__innAudioFailure&&window.__innAudioFailure(false);_f.apply(self,a)})}catch(e){window.__innAudioFailure&&window.__innAudioFailure(false);_f.apply(self,a)}}},0);
   /* (4) 회의 진입: 주민 소집(I9)은 플레이어가 '원탁 회의 열기'를 고른 뒤 한 번만 */
-  window.__innPreOpen=function(c,spec,op){try{if(!inn()||!G)return false;G.beats=G.beats||{};if(G.beats.inn_i9||G.battle||!window.__innPlay||!(window.EP1INN||{}).I9)return false;
-    G.beats.inn_i9=1;try{saveProg()}catch(e){}window.__innCutting=true;
-    window.__innPlay(window.EP1INN.I9,function(){window.__innCutting=false;try{goTab("final")}catch(e){}setTimeout(function(){op(c,spec)},120)});return true}catch(e){return false}};
+  window.__innPreOpen=function(c,spec,op){try{if(!inn()||!G||spec)return false;G.beats=G.beats||{};if(G.beats.inn_i9||G.battle||!window.__innPlay||!(window.EP1INN||{}).I9)return false;
+    var game=G;G.beats.inn_i9=1;try{saveProg()}catch(e){}window.__innCutting=true;
+    window.__innPlay(window.EP1INN.I9,function(){window.__innCutting=false;if(G!==game)return;try{goTab("final")}catch(e){}setTimeout(function(){if(G===game)op(c,spec)},120)});return true}catch(e){return false}};
  })();

@@ -90,14 +90,5 @@
    FL("narr","등잔이 꺼진다.")])))
  ];
  EP.THE_END={banner:["1장 끝","열세 번째 침대"],notice:{title:"1장 끝 · 열세 번째 침대",text:"다람탐정 1장을 마쳤어요."}};
- EP.I9=[{loc:"dining"},
-   D({"who": "wanggu", "chime": 0, "ms": 380}),
-   D({"who": "karo", "chime": 0, "ms": 260}),
-   FL("karo","정오엔 떠납니다. 눈 쌓이면 고개를 못 넘어요."),
-   D({"who": "wanggu", "chime": 0, "ms": 260}),
-   FL("wanggu","시작합니다. 기록은 제가 맡죠."),
-   FL("det1","…나도 말해도 돼?"),
-   FL("det0","그럼. 본 것만 말하자."),
-   FL("det1","…수첩 펴놓을게."),
-   {hint:"발언을 골라 되묻거나, 증거를 제시하세요"}];
+ EP.I9=EP.EMERGENCY_I9;
 

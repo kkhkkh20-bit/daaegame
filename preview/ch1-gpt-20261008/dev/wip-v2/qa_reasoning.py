@@ -27,7 +27,7 @@ with sync_playwright() as p:
      if quiet>=12:break
    assert not page.locator('#rtgq,#rtnext').count(),'Dialogue did not return to the statement'
   def open_linen():
-   state('if(DL){DL.done=null;endDlg()};document.querySelectorAll("body>.rt").forEach(x=>x.remove());window.__inMeeting=false;window.__rtgReset();G.debate={pi:1,sus:{}};window.__rtOpen(CASES[G.ci])')
+   state('if(DL){DL.done=null;endDlg()};document.querySelectorAll("body>.rt").forEach(x=>x.remove());window.__inMeeting=false;window.__rtgReset();G.beats.inn_meeting_version=2;G.beats.inn_life_confirmed=1;G.debate={pi:3,sus:{}};window.__rtOpen(CASES[G.ci])')
    page.wait_for_timeout(4300)
    page.locator('#rtgbar [data-g="next"]').click();page.wait_for_timeout(300)
    assert page.evaluate('window.__rtPh().stms[1].w')=='nabi'
@@ -45,13 +45,13 @@ with sync_playwright() as p:
   assert state('G.hp')==5 and state('G.wrong')==0
   present();drain()
   print(width,height,'premature card checked',flush=True)
-  assert state('G.debate.pi')==1 and state('G.hp')==5
+  assert state('G.debate.pi')==3 and state('G.hp')==5
   assert page.evaluate('window.__rtgStep(window.__rtPh().stms[1])')==0,'A final card bypassed its first observation'
   select('C02');present();drain()
   print(width,height,'first observation checked',flush=True)
   assert page.evaluate('window.__rtgStep(window.__rtPh().stms[1])')==1
   assert not page.locator('.rt .bl.on').count(),'Next evidence was selected automatically'
-  assert state('G.debate.pi')==1,'First observation auto-completed the accusation'
+  assert state('G.debate.pi')==3,'First observation auto-completed the accusation'
   select('C09')
   assert state('G.hp')==5,'Selecting an unrelated clue dealt damage before presenting'
   present();drain()
@@ -66,7 +66,7 @@ with sync_playwright() as p:
   open_linen()
   print(width,height,'pending proof reset',flush=True)
   page.evaluate('window.__releaseHush();window.__hush=window.__qaHush');page.wait_for_timeout(1800)
-  assert state('G.debate.pi')==1 and not page.locator('#rtnext,#rtgq').count()
+  assert state('G.debate.pi')==3 and not page.locator('#rtnext,#rtgq').count()
   assert page.evaluate('window.__rtgStep(window.__rtPh().stms[1])')==0
   # F1 keeps its phase index but requires the player to present fur, then bag.
   state('document.querySelectorAll("body>.rt").forEach(x=>x.remove());window.__inMeeting=false;window.__rtgReset();G.beats.inn_meet=1;G.hp=5;window.__rtOpen(CASES[G.ci],EP1INN.FINAL)')

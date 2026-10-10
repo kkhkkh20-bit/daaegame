@@ -34,7 +34,7 @@ with sync_playwright() as playwright:
             raise
         print('PASS:', name, flush=True)
 
-    state('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};')
+    state('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1,inn_meeting_version:2,inn_life_confirmed:1};')
     page.evaluate('document.querySelector("#innmain").remove();window.__w209boot()')
     page.wait_for_timeout(1000)
     state('if(DL){DL.done=null;endDlg()};G.found=Object.keys(EP1INN.EV).filter(id=>!["C03","C07","C12","C13"].includes(id));G.asked=["C03","C07","C12","C13"];G.exam={};allSpots(CASES[G.ci]).forEach(s=>G.exam[s.ev.id]=true);window.__qaInn=G;window.__savedFlash=flash;window.__savedBanner=banner;window.__qaPending=[];flash=function(){return new Promise(resolve=>window.__qaPending.push(resolve))};banner=function(){return Promise.resolve()};')
@@ -58,13 +58,13 @@ with sync_playwright() as playwright:
         click_vote('innma')
         assert state('G.hp') == 4 and state('G.wrong') == 1, 'Repeated wrong vote caused duplicate damage'
         assert page.evaluate('window.__qaPending.length') == 1
-        state('window.__rtgReset();G.debate={pi:1,sus:{}};window.__inMeeting=false;document.querySelector("body>.rt").remove();window.__rtOpen(CASES[G.ci]);')
+        state('window.__rtgReset();G.beats.inn_meeting_version=2;G.beats.inn_life_confirmed=1;G.debate={pi:3,sus:{}};window.__inMeeting=false;document.querySelector("body>.rt").remove();window.__rtOpen(CASES[G.ci]);')
         page.wait_for_timeout(150)
         before = line()
-        assert '열세 번째 침대' in before
+        assert '남는 침대' in before, before
         release()
         assert line() == before, 'Old wrong verdict overwrote the retried meeting'
-        assert state('G.debate.pi') == 1
+        assert state('G.debate.pi') == 3
         assert not page.locator('body>.rt #rtnext').count()
 
     def successful_vote_case_change():
