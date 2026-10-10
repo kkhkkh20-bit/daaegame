@@ -74,11 +74,11 @@ with sync_playwright() as p:
   page.wait_for_timeout(2500)
   assert 'C04' not in state()['found'], 'Somsom was still auto-discovered'
   assert not state()['dl'], 'Somsom dialogue started without an investigation click'
-  assert page.locator('#bigscene .innunderlook9').count()==1
+  assert page.locator('#bigscene .inn-under-cue').count()==1
+  assert page.locator('#bigscene .innunderlook9').count()==0
   page.screenshot(path='/tmp/investigation-manual-discovery.png')
   scene_click('#bigscene [data-obs="o_under"]')
   assert 'o_under' in state()['obs'],state()
-  scene_click('#bigscene [data-spot="C04"]')
   assert 'C04' in state()['found'],state()
   context.storage_state(path='/tmp/investigation-after-somsom.json')
   print('Somsom found by deliberate scene click',flush=True)

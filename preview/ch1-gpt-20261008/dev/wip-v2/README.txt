@@ -88,3 +88,7 @@ qa_saved_notebook.py --storage /tmp/investigation-after-linen.json: 실제 수�
 - 가족의 감정선과 사건 뒤 일상의 회복: CODEX_EMOTION_20261010.txt.
   낭독 놀이, 다람의 기다림 인정, 아빠의 손잡기, 겨울 숙식과 솜솜의 잠자리 복귀.
   qa_intro.py / qa_flow.py --without-ledger가 재생과 감정 장면의 오디오 전환을 검사한다.
+
+- 현장 흔적·발견·공간 지도 개선: CODEX_SCENE_GUIDANCE_20261010.txt
+  qa_scene_guidance.py: 실제 증거 수집·발견 5단계·도토 일지·구 저장·입력 보호.
+  qa_map_navigation.py: 844×390/390×844/640×360 실제 지도 이동과 키보드.
