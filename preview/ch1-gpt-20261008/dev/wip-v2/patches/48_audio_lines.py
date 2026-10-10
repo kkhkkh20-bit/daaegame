@@ -7,3 +7,7 @@ rep(' function clear(){[CLK,TAL,QEL,SHOW]',
     ' function clear(){if(window.__innAudioLine)window.__innAudioLine(null);[CLK,TAL,QEL,SHOW]')
 rep('if(ANS)ANS.clear();FAILP=false;',
     'if(ANS)ANS.clear();if(window.__innAudioReset)window.__innAudioReset();FAILP=false;')
+
+# 확장 대기열이 말하는 동안 숨은 엔진 대사가 오디오 큐를 덮지 않게 한다.
+rep('function onLine(){var L=curLine();', 'function onLine(){if(Q)return;var L=curLine();')
+rep('if(QI>=Q.length){Q=null;', 'if(QI>=Q.length){Q=null;lastLine=null;')

@@ -23,10 +23,34 @@ with sync_playwright() as p:
     assert not page.evaluate('window.__innAudioState().bell')
     run('G.beats.inn_pro=1;G.beats.inn_meet=1;window.__innOpenFinal()')
     page.wait_for_timeout(300)
-    page.evaluate('window.__innAudioLine({w:"doto",t:"첫눈은 자정이었어요. 종이 열두 번 쳤고요."})')
+    # Isolate injected cue timing from live engine metadata; qa_flow checks integration.
+    page.evaluate('window.__qaLine=window.__innAudioLine;window.__innAudioLine=function(){}')
+    page.evaluate('window.__qaLine({w:"doto",t:"첫눈은 자정이었어요. 종이 열두 번 쳤고요."})')
     assert page.evaluate('window.__innKeyLine()')
     assert page.evaluate('window.__innDuck()') == 0
-    page.evaluate('window.__innAudioLine({w:"seryeon",t:"…네."});window.__innWant()')
+    page.mouse.click(2,2)
+    run('S.sound=true;ac();MASTER.gain.value=MGAIN;AC.resume()')
+    assert run('AC.state') == 'running'
+    page.evaluate('window.__qaLine({w:"narr",t:"바구니를 지켜본다.",audio:"pulse"})')
+    page.wait_for_timeout(200)
+    assert page.evaluate('window.__innTense()')
+    assert page.evaluate('window.__innAudioState().heartbeat') == 0
+    assert page.evaluate('window.__innWant()') is None
+    page.wait_for_timeout(1400)
+    assert page.evaluate('window.__innAudioState().heartbeat') >= 1, (page.evaluate('window.__innAudioState()'),run('({sound:S.sound,ac:AC&&AC.state,screen:S.screen})'),errors)
+    page.evaluate('window.__qaLine({w:"det0",t:"다시 여쭙겠습니다.",audio:"press"})')
+    page.wait_for_timeout(100)
+    assert not page.evaluate('window.__innTense()')
+    assert page.evaluate('window.__innWant()') == 'inn_climax_press'
+    page.evaluate('window.__qaLine({w:"seryeon",t:"그건..."})')
+    assert page.evaluate('window.__innWant()') == 'inn_climax_press'
+    page.evaluate('window.__qaLine({w:"det0",t:"처음부터 백 냥입니다.",audio:"impact"})')
+    assert page.evaluate('window.__innWant()') is None
+    page.wait_for_timeout(900)
+    assert page.evaluate('window.__innWant()') == 'inn_climax_press'
+    page.evaluate('window.__qaLine({w:"det0",t:"왜 숨기셨습니까?",audio:"silence"})')
+    assert page.evaluate('window.__innWant()') is None
+    page.evaluate('window.__qaLine({w:"seryeon",t:"…네."});window.__innWant()')
     assert page.evaluate('window.__innAudioState().confession')
     assert page.evaluate('window.__innWant()') is None
     page.wait_for_timeout(2700)
@@ -37,7 +61,7 @@ with sync_playwright() as p:
     assert not page.evaluate('window.__innAudioState().confession')
     stats = page.evaluate('''async()=>{
       const result={};
-      for(const key of ['inn_travel','inn_serious','inn_inv','inn_meet','inn_climax','inn_t_innma','inn_after']){
+      for(const key of ['inn_travel','inn_serious','inn_inv','inn_meet','inn_climax','inn_t_innma','inn_after','inn_meet_press','inn_climax_press']){
         const b=await __AUD.render(key,8);let peak=0,sum=0,clipped=0;
         for(let c=0;c<b.numberOfChannels;c++)for(const x of b.getChannelData(c)){
           if(!Number.isFinite(x))throw Error(key+' non-finite audio');
