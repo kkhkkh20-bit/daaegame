@@ -17,9 +17,15 @@ with sync_playwright() as p:
     assert result=={'leaked':[],'speaker':'seryeon'},result
     pg.evaluate('''window.__T('S.prog.inn=fresh(CASES.findIndex(c=>c.id==="inn"));S.prog.inn.introDone=true;S.prog.inn.beats={inn_pro:1,inn_i9:1};');document.querySelector('#innmain').remove();window.__w209boot()''');pg.wait_for_timeout(1000)
     pg.evaluate('''window.__T('if(DL){DL.done=null;endDlg()};G.found=["C04","C03"];G.loc=0;G.tab="scene";render()')''')
-    pg.wait_for_timeout(600)
+    pg.wait_for_timeout(900)
+    # Entering the room can trigger its sunbeam observation. Finish that dialogue first.
+    for _ in range(80):
+        if not pg.evaluate('window.__T("!!DL")'):break
+        pg.keyboard.press('Enter');pg.wait_for_timeout(250)
+    assert not pg.evaluate('window.__T("!!DL")')
+    pg.wait_for_timeout(900)
     # Start at the lock itself: reading the headboard first is not assumed.
-    pg.evaluate('document.querySelector("[data-obs=\\"o_inn_lock\\"]").click()')
+    pg.locator('[data-obs="o_inn_lock"]').click(force=True)
     assert not pg.locator('#innpad').count(), 'Lock opened before consent dialogue'
     permission=False
     for i in range(120):
