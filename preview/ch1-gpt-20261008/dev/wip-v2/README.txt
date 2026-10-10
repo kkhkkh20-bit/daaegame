@@ -52,3 +52,9 @@
 - 사용자 요청으로 스토리·연출·오류 담당 에이전트 3개 독립 검수. 반영 내용과 검증 범위: CODEX_AGENT_REVIEW_20261010.txt
 
 - 2026-10-10 에이전트 통합 검수: 1.8초 이후에도 지속되는 대사 연타가 조사로 넘어가는 오류 추가 수정. qa_input.py는 18회 연타를 검사한다.
+
+- UI/메인 음악 개선: CODEX_UI_MUSIC_20261010.txt. inn_polish.js는 기존 화면 위에 디자인만 적용한다.
+- 음악 소스: gen/music_v2.py. 재생 자산은 preview 루트 audio/v2/에 보관한다.
+  재생성: python3 gen/music_v2.py (NumPy, libfluidsynth.so.3, TimGM6mb.sf2, ffmpeg 필요).
+  일반 build/publish는 기존 MP3를 사용하며 악기 렌더 의존성이 필요 없다.
+- UI/음악 통합 검사: 서버를 켠 뒤 python3 qa_polish.py (가로/세로, 설정, 증거 창, 실제 MP3 재생).

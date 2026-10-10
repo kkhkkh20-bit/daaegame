@@ -32051,12 +32051,25 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
  function fxStop(I,t){if(!I.persist)return;I.persist.forEach(function(n){try{n.stop(t)}catch(e){}});var nodes=I.pnodes;I.persist=null;
   var done=function(){nodes.forEach(function(n){try{n.disconnect()}catch(e){}});A.stats.live-=nodes.length;A.stats.ended+=nodes.length};
   if(nodes[0])nodes[0].onended=done;else done()}
+
+ var MEDIA={},MEDIA_DATA={};A.mediaState={};
+ function mediaBuffer(ctx,url){
+  if(MEDIA_DATA[url])return Promise.resolve(MEDIA_DATA[url]);
+  if(!MEDIA[url]){A.mediaState[url]="loading";MEDIA[url]=fetch(url).then(function(r){if(!r.ok)throw Error("music "+r.status+" "+url);return r.arrayBuffer()}).then(function(b){return ctx.decodeAudioData(b)}).then(function(b){MEDIA_DATA[url]=b;A.mediaState[url]="ready";return b}).catch(function(e){A.mediaState[url]="error";delete MEDIA[url];throw e})}
+  return MEDIA[url];
+ }
+ function mediaStart(I){if(!I.s.media)return;
+  function start(buf){if(I.dead||I.stopAt)return;var src=I.ctx.createBufferSource();src.buffer=buf;src.loop=true;src.connect(I.g);I.mediaSource=src;A.stats.made++;A.stats.live++;
+   src.onended=function(){try{src.disconnect()}catch(e){}A.stats.live--;A.stats.ended++};
+   var at=Math.max(I.t0,I.ctx.currentTime);src.start(at,Math.max(0,at-I.t0)%buf.duration)}
+  if(MEDIA_DATA[I.s.media])start(MEDIA_DATA[I.s.media]);else mediaBuffer(I.ctx,I.s.media).then(start).catch(function(e){lg("music error "+e.message)});
+ }
  function Inst(ctx,key,s,bus,wetIn,t0){
   var I={key:key,s:s,ctx:ctx,t0:t0,next:t0,step:0,stopAt:0,sd:60/s.bpm/4};
   I.g=ctx.createGain();I.g.gain.value=.0001;I.g.connect(bus);
   I.w=ctx.createGain();I.w.gain.value=s.echo||0;I.w.connect(wetIn);
-  A.stats.made+=2;A.stats.live+=2;A.stats.inst++;fxStart(ctx,I);return I}
- function instKill(I){if(I.dead)return;I.dead=true;fxStop(I,I.ctx.currentTime);try{I.g.disconnect();I.w.disconnect()}catch(e){}A.stats.live-=2;A.stats.ended+=2;A.stats.inst--}
+  A.stats.made+=2;A.stats.live+=2;A.stats.inst++;fxStart(ctx,I);mediaStart(I);return I}
+ function instKill(I){if(I.dead)return;I.dead=true;if(I.mediaSource){try{I.mediaSource.stop()}catch(e){}I.mediaSource=null}fxStop(I,I.ctx.currentTime);try{I.g.disconnect();I.w.disconnect()}catch(e){}A.stats.live-=2;A.stats.ended+=2;A.stats.inst--}
  function stepAt(I,st,t){
   var s=I.s,ctx=I.ctx,sd=I.sd,dest=I.g,wet=I.w,spb=s._spb;
   if(s.sw&&st%4===2)t+=s.sw*sd*2;
@@ -32272,6 +32285,7 @@ FIX("kitchen","그리고 걸었다. 30년 전 고개에서 돌아섰던 그 길�
   var sr=44100,ctx=new OfflineAudioContext(2,Math.ceil(sr*secs),sr);
   var master=ctx.createGain();master.gain.value=MGAIN;var cmp=ctx.createDynamicsCompressor();cmp.threshold.value=-16;cmp.knee.value=10;cmp.ratio.value=5;cmp.attack.value=.004;cmp.release.value=.22;master.connect(cmp);cmp.connect(ctx.destination);
   var bus=ctx.createGain();bus.gain.value=MBASE*MUSV*(withMur==="duck"?.62:1);bus.connect(master);var wet=echoChain(ctx,bus);
+  if(s.media)return mediaBuffer(ctx,s.media).then(function(){var J=Inst(ctx,key,s,bus,wet,0.02);J.g.gain.setValueAtTime(s.vol||1,0);return ctx.startRendering().then(function(buf){instKill(J);return buf})});
   var I=Inst(ctx,key,s,bus,wet,0.02);I.g.gain.setValueAtTime(s.vol||1,0);for(var gd=0;I.next<secs-.05&&gd<200;gd++)schedule(I,secs-.05);
   if(withMur==="murmur"){var sg=ctx.createGain();sg.gain.value=.42;sg.connect(master);NEW.murmur(ctx,sg,.3,2.8,1)}
   return ctx.startRendering().then(function(buf){instKill(I);return buf})};
@@ -50674,6 +50688,12 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
   window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
   window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine()}};
+  /* New original, sampled score. One musical motif connects the menu, road and
+     investigation; live synthesis remains for scene-specific council cues. */
+  A.SONGS.inn_title={bpm:70,vol:.9,prog:["Am"],mel:[],media:"audio/v2/title-v1.mp3"};
+  A.SONGS.inn_travel={bpm:84,vol:.88,prog:["Am"],mel:[],media:"audio/v2/travel-v1.mp3"};
+  A.SONGS.inn_inv={bpm:96,vol:.84,prog:["Am"],mel:[],media:"audio/v2/investigation-v1.mp3"};
+  Object.keys(A.SONGS).filter(function(k){return k.indexOf("inn_t_")===0}).forEach(function(k){A.SONGS[k].vol=Math.min(.9,A.SONGS[k].vol)});
   var THEME={innma:"inn_t_innma",seryeon:"inn_t_seryeon",nabi:"inn_t_nabi",geokkuri:"inn_t_bami",buri:"inn_t_buri",wanggu:"inn_t_neoul",doto:"inn_t_doto"};
   /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
@@ -50692,6 +50712,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
       setTimeout(function(){tenseTick(gen)},discovery?1200:450);
     }else if(TENSE.on&&TENSE_OFF.test(t))tenseStop()}catch(e){}},60);
   window.__innWant=function(){
+   if(document.getElementById("innmain"))return "inn_title";
    if(!cur())return undefined;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    if(TENSE.on||M.failure||(CUE.ph===(window.__rtPh&&window.__rtPh())&&(CUE.mode==="silence"||CUE.mode==="pulse"||(CUE.mode==="impact"&&Date.now()-CUE.at<800))))return null;                         /* 발견 순간: 음악 없음 */
@@ -50721,7 +50742,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   window.__innKeyLine=function(){var t=lineText();return !!t&&KEY.test(t)};
   window.__innDuck=function(){var r=window.__innDuck0.apply(this,arguments);if(!cur()||document.getElementById("inncold"))return r;
    if(window.__innKeyLine())return 0;
-   return r*1.7*((typeof DL!=="undefined"&&DL)?.85/.62:1)};
+   return r*((typeof DL!=="undefined"&&DL)?.72/.62:1)};
   window.__innDuck0=function(){
    if(document.getElementById("inncold"))return COLDD;   /* 콜드 오픈: 비트마다 정한 낮춤(정적으로 갈수록 작게) */
    if(!cur())return 1;
@@ -51501,6 +51522,63 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
     G.beats.inn_i9=1;try{saveProg()}catch(e){}window.__innCutting=true;
     window.__innPlay(window.EP1INN.I9,function(){window.__innCutting=false;try{goTab("final")}catch(e){}setTimeout(function(){op(c,spec)},120)});return true}catch(e){return false}};
  })();
+
+/* Chapter-one v2: cream paper, dark walnut and muted brass. Layout, story,
+   character sizes and all existing input handlers remain owned by the engine. */
+(function(){
+ var style=document.createElement('style');style.id='inn-polish-v1';
+ style.textContent=`
+ #innmain .kv:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,22,21,.52),transparent 34%,transparent 64%,rgba(18,15,12,.88))}
+ #innmain .tt{top:22px!important}#innmain .tt small{color:#dcc697!important;letter-spacing:.23em!important;font-size:11px!important}
+ #innmain .tt h1{font-size:clamp(30px,5vw,45px)!important;letter-spacing:.06em!important;color:#fff3d6!important;text-shadow:0 3px 0 #21180f!important}
+ #innmain .tt i{width:64px!important;background:#bca36b!important;margin-top:10px!important}
+ #innmain .chapter-tag{margin-top:9px;color:#e0cfaa;font-size:14px;letter-spacing:.04em;text-shadow:0 1px 3px #000}
+ #innmain .menu{bottom:20px!important;gap:8px!important;padding:8px;background:rgba(31,26,21,.88);border:1px solid #88744c;box-shadow:0 5px 20px #0005}
+ #innmain .menu button{height:44px!important;min-width:102px!important;justify-content:center;padding:0 14px!important;border:1px solid #8f7c57!important;color:#efe4ca!important;background:#3b332a!important;text-shadow:none!important}
+ #innmain .menu button[data-m=new]{background:#ead8aa!important;color:#35291d!important;border-color:#f9e7b5!important}
+ #innmain .menu button:before{display:none!important}#innmain .menu button.f{box-shadow:inset 0 0 0 2px #c3a56b!important}
+ #innmain .menu button[disabled]{opacity:.5!important}#innmain .menu button small{color:inherit!important}
+ #innmain .pv{right:14px!important;bottom:8px!important;color:#d3c4a1!important;font-size:10px!important}
+ #sndhint9{border:1px solid #ae9666!important;background:rgba(37,32,25,.94)!important;color:#f2e4c6!important;padding:10px 15px!important;font:14px/1.3 var(--display,sans-serif)!important;min-height:44px}
+ html body.w209.inn1 #w209rail .g>button,html body.w209.inn1 #w209more button{background:rgba(246,233,206,.96)!important;border-color:#a18b62!important;color:#3e3225!important;border-radius:4px!important;box-shadow:0 2px 0 #3b302b66!important}
+ html body.w209.inn1 #w209rail .g>button.on{background:#ead3a0!important;border-color:#795f37!important;box-shadow:inset 0 -3px #ad8a50!important}
+ html body.w209.inn1 .fstalk .tpanel .topic{background:rgba(245,233,208,.96)!important;color:#3e3228!important;border-color:#ae9871!important;border-radius:4px!important;box-shadow:0 2px 0 #30221940!important;min-height:44px!important}
+ html body.w209.inn1 .fstalk .tpanel .topic.done{background:rgba(214,207,188,.93)!important;color:#625b4a!important}
+ html body.w209.inn1 .fstalk .tpanel .topic:focus-visible,html body.w209.inn1 .fstalk .tpanel .topic.sel9{outline-color:#d4b46c!important}
+ html body.w209.inn1 .showev{background:#4a594a!important;border-color:#8ca085!important;color:#f6ecd5!important;border-radius:4px!important}
+ html body.w209.inn1 #innmove{background:#f0e4c8!important;border:2px solid #967d50!important;box-shadow:0 10px 40px #0006!important;color:#3c3024!important;border-radius:6px!important}
+ html body.w209.inn1 #innmove .hd{background:#4b4939!important;color:#f3e8cd!important;border-color:#8c784f!important}
+ html body.w209.inn1 #innmove .ls button{background:#faf1dc!important;border-color:#c3b18a!important;color:#47382a!important;min-height:44px!important;border-radius:3px!important}
+ html body.w209.inn1 .crec2{background:rgba(26,29,24,.97)!important}
+ html body.w209.inn1 .crec2 .cr-in{background:#f1e6ca!important;border-color:#a18a5d!important;box-shadow:0 0 0 1px #e2ce9c,0 8px 30px #0005!important}
+ html body.w209.inn1 .crec2 .cr-top>b{color:#493a26!important}
+ html body.w209.inn1 .crec2 .cr-x{color:#493a26!important;border-color:#9d8255!important;min-width:44px!important;min-height:44px!important}
+ html body.w209.inn1 .crec2 .crtab2 button{background:#514c3c!important;background-image:none!important;color:#eee1bf!important;border-color:#8d7952!important;border-radius:3px!important;min-height:40px!important}
+ html body.w209.inn1 .crec2 .crtab2 button.on,html body.w209.inn1 .crec2 .crtab2 button[aria-pressed=true]{background:#e8d4a8!important;background-image:none!important;color:#3b3023!important;border-color:#b6985f!important}
+ html body.w209.inn1 .crec2 .crtab2 button b,html body.w209.inn1 .crec2 .crtab2 button em{color:inherit!important}
+ html body.w209.inn1 .crec2 .crtab2 button::before,html body.w209.inn1 .crec2 .crtab2 button::after{content:none!important;display:none!important}
+ html body.w209.inn1 .crec2 .crtab2 button{border-image:none!important;border-width:1px!important;box-shadow:inset 0 -2px #29271f!important;text-shadow:none!important}
+ html body.w209.inn1 .crec2 .cr-det .cr-tx .minib{background:#4b5c4a!important;border-color:#7a8b6a!important;color:#fff2d5!important}
+ html body.w209.inn1 .crec2 [data-cr199=meet]{background:#7e3f39!important;border-color:#b67254!important;color:#fff2d5!important;border-radius:3px!important}
+ #innopt{color:#f1e4c8!important}#innopt .bg:after{background:rgba(28,29,23,.91)!important}
+ #innopt .hd{border-color:#82734f!important}#innopt .sep{background:#82734f!important}
+ #innopt .grp button,#innopt .x{background:#3b3d31!important;color:#f1e4c8!important;border-color:#9f8b5e!important}
+ #innopt .grp button[aria-checked=true]{background:#ead6a5!important;color:#392e23!important;border-color:#d4b778!important;box-shadow:inset 0 -3px #b3945b!important}
+ #innopt .sv{background:#ead6a5!important;color:#392e23!important;border-color:#d4b778!important}
+ #innopt input[type=range]{accent-color:#d4b778;background:linear-gradient(90deg,#c5a96c var(--p),#545549 var(--p))!important}
+ #innopt input[type=range]::-webkit-slider-thumb{background:#f0deb3!important;border-color:#957d4f!important}
+ html body.w209.inn1 button:focus-visible{outline:2px solid #e8c978!important;outline-offset:2px!important}
+ @media(max-width:500px){#innmain .kv{background-position:32% center!important}#innmain .tt{top:35px!important}#innmain .menu{bottom:28px!important;flex-direction:column!important;width:min(250px,80vw)!important;box-sizing:border-box}#innmain .menu button{width:100%!important;min-width:0!important;height:48px!important}#innmain .chapter-tag{font-size:14px}#sndhint9{top:150px!important;right:12px!important}}
+ @media(max-height:350px) and (min-width:501px){#innmain .tt{top:12px!important}#innmain .tt h1{font-size:30px!important}#innmain .chapter-tag{margin-top:5px;font-size:12px}#innmain .menu{bottom:12px!important}}
+ @media(max-width:500px){html body.w209.inn1 .crec2 .crtab2 button{min-width:0!important;flex:1 1 0!important;white-space:nowrap!important;font-size:12px!important;gap:3px!important}html body.w209.inn1 .crec2 .crtab2 button em{min-width:14px!important;padding:2px 3px!important}}
+ @media(prefers-reduced-motion:reduce){#innmain *,#innmove *,html body.w209.inn1 .crec2 *{animation:none!important;transition:none!important}}
+ `;document.head.appendChild(style);
+ function update(){var m=document.getElementById('innmain');if(m&&!m.querySelector('.chapter-tag')){var t=document.createElement('div');t.className='chapter-tag';t.textContent='1장 · 열세 번째 침대';m.querySelector('.tt').appendChild(t)}
+  if(m){var p=m.querySelector('.pv');if(p&&p.textContent!=='숲속 마을의 첫 번째 사건')p.textContent='숲속 마을의 첫 번째 사건';}
+  var h=document.getElementById('sndhint9');if(h&&m&&h.textContent!=='메인 음악 듣기'){h.textContent='메인 음악 듣기';h.setAttribute('aria-label','메인 음악 듣기');}}
+ document.addEventListener('keydown',function(e){var m=document.getElementById('innmain');if(!m||!['ArrowUp','ArrowDown'].includes(e.key)||document.getElementById('innopt'))return;var b=[].slice.call(m.querySelectorAll('.menu button:not([disabled])'));if(!b.length)return;e.preventDefault();var i=b.indexOf(document.activeElement);b[(Math.max(0,i)+(e.key==='ArrowDown'?1:b.length-1))%b.length].focus();});
+ var scheduled=false;new MutationObserver(function(){if(scheduled)return;scheduled=true;requestAnimationFrame(function(){scheduled=false;update()})}).observe(document.body,{childList:true,subtree:true});update();
+})();
 
 CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});
 function start(data){try{applyClean(load())}catch(e){}if(data&&data.S){try{applyClean(data.S)}catch(e){}G=null}applyPrefs();render()}
