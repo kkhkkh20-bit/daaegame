@@ -59,7 +59,7 @@ with sync_playwright() as playwright:
 
     clear();engine('G.beats={inn_pi:EP1INN.PRO.findIndex(s=>s.sid==="P3")};say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&l[0]==="innma"&&String(l[1]).startsWith("어서 와요"))],function(){})')
     expect('First inn welcome','inn_friend')
-    engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&String(l[1]).includes("아이 엄마를 찾고"))],function(){})')
+    engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&String(l[1]).includes("제 아내를 찾고"))],function(){})')
     expect('Mother question changes same scene','inn_serious')
     engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("우선 들어와요"))],function(){})')
     expect('Welcome returns gently','inn_friend')

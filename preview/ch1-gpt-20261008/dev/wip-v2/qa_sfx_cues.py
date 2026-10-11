@@ -99,7 +99,10 @@ with sync_playwright() as p:
         clear()
         page.evaluate('document.querySelector("body>.rt")?.remove();window.__inMeeting=false')
         page.wait_for_timeout(250)
-        run('G.found=Object.keys(EP1INN.EV);G.debate={pi:EP1INN.MEET.phases.findIndex(p=>p.type==="vote"),sus:{}};G.beats.rtVotes={nabi:"seryeon",karo:"seryeon",doto:"seryeon",buri:"seryeon",geokkuri:"seryeon",wanggu:"innma"};window.__rtOpen(CASES[G.ci]);')
+        # This is a current-version M5 fixture, after the native clinical
+        # confirmation. A versionless saved state correctly migrates to M0;
+        # it cannot be used to assert that the later nomination is visible.
+        run('G.found=Object.keys(EP1INN.EV);G.beats.inn_meeting_version=2;G.beats.inn_life_confirmed=1;G.debate={pi:EP1INN.MEET.phases.findIndex(p=>p.type==="vote"),sus:{}};G.beats.rtVotes={nabi:"seryeon",karo:"seryeon",doto:"seryeon",buri:"seryeon",geokkuri:"seryeon",wanggu:"innma"};window.__rtOpen(CASES[G.ci]);')
         page.wait_for_timeout(2500)
         if mode == 'reopened':
             page.evaluate('window.__m5OldNative=document.querySelector("body>.rt");window.__m5OldPanel=document.querySelector("#rtgvote");window.__T(\'document.querySelector("body>.rt").remove();window.__inMeeting=false;window.__rtOpen(CASES[G.ci]);\')')
@@ -116,10 +119,10 @@ with sync_playwright() as p:
             page.mouse.click(20, 20)
             page.wait_for_timeout(650)
         page.locator('#rtgvote [data-pick="seryeon"]').click()
-        page.wait_for_function('document.querySelector(".rt #rtnext .rt-bub p")?.textContent==="세련 씨를 지목합니다. 마지막 설명을 듣겠습니다."', timeout=6000)
+        page.wait_for_function('document.querySelector(".rt #rtnext .rt-bub p")?.textContent==="세련 씨를 지목합니다. 마지막 설명을 듣죠."', timeout=6000)
         data = state()
         data['wanggu'] = run('G.beats.rtVotes.wanggu')
-        check('M5 '+mode+' first nomination owns vote and cue', data['state']['who'] == 'wanggu' and data['state']['line'] == '세련 씨를 지목합니다. 마지막 설명을 듣겠습니다.' and data['wanggu'] == 'seryeon', data)
+        check('M5 '+mode+' first nomination owns vote and cue', data['state']['who'] == 'wanggu' and data['state']['line'] == '세련 씨를 지목합니다. 마지막 설명을 듣죠.' and data['wanggu'] == 'seryeon', data)
         page.locator('#rtgbar [data-g="next"]').click()
         page.wait_for_function('document.querySelector(".rt #rtnext .rt-bub p")?.textContent==="[지목] 세련 6표 · 마지막 설명을 듣고 결론"')
         data = state()
@@ -129,7 +132,10 @@ with sync_playwright() as p:
     run('G.debate=null;')
     clear()
     run('G.found=Object.keys(EP1INN.EV);G.asked=["C03","C07","C12","C13"];window.__rtOpen(CASES[G.ci]);')
-    page.wait_for_timeout(300)
+    # The native table title still owns the screen. Its protected interval
+    # must finish before testing a later confession cue; a blocked F3 false
+    # flag alone would be a vacuous pass.
+    page.wait_for_function('__innPresentationState().ready&&!document.querySelector(".banner,.cutin,.stampfx")', timeout=15000)
     run('if(DL){DL.done=null;endDlg()};')
     page.evaluate('window.__auditOriginalPh=window.__rtPh')
     for name, selector, confession, hits in [
@@ -161,7 +167,8 @@ with sync_playwright() as p:
     def carriage():
         # Production P2->P1 changes scene identity and resets the native stop latch.
         run('G.beats.inn_pro=0;G.beats.inn_pi=EP1INN.PRO.findIndex(p=>p.sid==="P2");G.beats.inn_bg="carriage";__innWant();G.beats.inn_pi=EP1INN.PRO.findIndex(p=>p.sid==="P1");__innWant();')
-        page.wait_for_function('__innRecordedSfx.stats().live.horse===1', timeout=8000)
+        page.wait_for_timeout(1200)
+        check('carriage has no horse sound', stats()['starts']['horse'] == 0 and stats()['live']['horse'] == 0, stats())
 
     carriage()
     before = stats()['starts']['horse']
@@ -175,6 +182,9 @@ with sync_playwright() as p:
     page.wait_for_function('__innRecordedSfx.stats().live.horse===0', timeout=4000)
     page.wait_for_timeout(400)
     check('carriage mute cancels loop', stats()['starts']['horse'] == before and stats()['live']['horse'] == 0, stats())
+    run('S.sound=true;SFX.carDepart();__innRecordedSfx.play("horse");')
+    page.wait_for_timeout(1200)
+    check('departure and legacy horse cue stay silent', stats()['starts']['horse'] == 0 and stats()['live']['horse'] == 0, stats())
     check('recorded decode and page errors', stats()['errors'] == 0 and not errors, {'recorded':stats(),'pageErrors':errors})
     print('PASS prepared production-cue regression; no full-playthrough or listening claim.', flush=True)
     browser.close()

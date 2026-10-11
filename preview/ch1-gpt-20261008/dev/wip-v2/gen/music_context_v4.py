@@ -144,6 +144,7 @@ def main():
     for row in rows:mapping[row['key']]={'bpm':row['bpm'],'vol':.8,'prog':row['chords'],'mel':[],'media':'audio/v4/'+row['file'],'loopSeconds':row['seconds']}
     aliases={'inn_cold':'inn_serious','inn_t_seryeon':'inn_serious','inn_t_nabi':'inn_friend','inn_t_karo':'inn_friend','inn_t_bami':'inn_comic','inn_t_doto':'inn_inv','inn_t_buri':'inn_friend','inn_t_neoul':'inn_serious','inn_t_innma':'inn_friend'}
     for alias,key in aliases.items():mapping[alias]=mapping[key].copy()
+    mapping['inn_family']={**mapping['inn_friend'],'vol':.7}
     path.write_text('/* Original piano-free v4 context cues; other v3 score retained. */\nwindow.__INN_MUSIC='+json.dumps(mapping,separators=(',',':'))+';\n')
     (OUT/'CREDITS.txt').write_text('Original daaegame chapter-one context score (2026-10-10).\nComposition, arrangement, mix and rendering: project original score.\nCello, strings, pizzicato, flute, clarinet, bassoon and harp: FluidR3_GM.\nCopyright 2000-2002, 2008 Frank Wen; 2008 Toby Smithe. MIT license.\nFull instrument license retained at ../v2/FLUIDR3-LICENSE.txt.\nNo piano instruments, external game music samples or transcribed melodies used.\nDesign reference: Capcom, The Adventures and Resolve of Music Creation (game function and immediately recognisable character themes).\nhttps://news.capcomusa.com/lets/browse/the-adventures-and-resolve-of-music-creation\nStructural reference: Danganronpa official OST distinguishes daily/search/debate contexts; no original track downloaded or inserted.\n')
 if __name__=='__main__':main()

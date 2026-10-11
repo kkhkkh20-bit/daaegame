@@ -1,8 +1,13 @@
 1장 v2 소스 — 별도 미리보기 배포 (2026-10-10)
+- 2026-10-11 첫 프레임/오프닝 대사/말발굽 제거: CODEX_CINEMATIC_ENTRY_20261011.txt.
+  native 진입 전에 CG를 소유하고 decode 완료 전 대사를 기다리며 장소 카드에도 컷을 유지한다.
+  까로 도착→아빠 귀환 시간 질문, 부녀는 밝은 장조 음악. 말발굽은 프리로드와 출발까지 모두 제거.
+  qa_cinematic_entry.py는 깨끗한 실제 새 게임/이어하기/관리자 진입의 첫 프레임 및 매체 지연/실패 복구를 검사한다.
+  현재 빌드 bb453a070109.
 - 2026-10-11 최신 아빠 시점: CODEX_FATHER_POV_20261011.txt.
   환영→아빠 답변, 부녀 대화로 여행 이유 전달, 밤에는 함께 확인하고 함께 귀환.
   새 게임도 마차부터 시작하며 다람 단독 밤 장면/범인 시점 콜드오픈은 재생하지 않는다.
-  qa_intro.py / qa_father_view.py / qa_audio_timing.py, 현재 빌드 3cf5ed7e37d1.
+  qa_intro.py / qa_father_view.py / qa_audio_timing.py, 당시 수정 빌드 3cf5ed7e37d1.
 - 2026-10-11 모바일 잔여 연출 정리: CODEX_VISUAL_CLEANUP_20261011.txt.
   밤 다람 전신/발 구도, 초상 로딩 보호, 조용한 장소/시간 카드와 음악 차단 타이밍.
   qa_visual_cleanup.py / qa_presentation_timing.py, 해당 수정 빌드 e826979e571b.
@@ -23,7 +28,7 @@
   신규 40표정은 현장 전신과 별도로 qa_dialogue_portraits.py에서 검사한다.
   실제 새 게임 타이밍: qa_presentation_timing.py --expect-stable --check-menu.
   비동기 소유권: qa_native_presentation.py / qa_cinematic_timing.py / qa_audio_timing.py.
-- 최신 음악/효과음/대사: CODEX_AUDIO_DIALOGUE_20261010.txt. 현재는 피아노 없는 현악 v3와 녹음 문·말발굽을 사용한다. 피아노 문서는 과거 기록이다.
+- 음악/효과음/대사의 이전 작업 기록: CODEX_AUDIO_DIALOGUE_20261010.txt. 현재는 피아노 없는 상황별 v3/v4 곡과 녹음 문을 사용한다. 말발굽은 위 최신 지시로 제거했고 피아노 문서는 과거 기록이다.
 - 공개 play.html은 이 폴더가 아니라 dev/ 바로 아래 소스(5ae250d 대본 + 43_council 원탁 복구)로 만든다.
 - 이 폴더: 오늘 오전 확정 구조(세련 인수 대리인·노름, 솜솜 침대 밑, 너울 수색) + 조사 확장(방마다 살펴보기, 인물별 질문, 증인에게 증거 보여 주기)
   + 회의 구조(결론 고르기 ask, 주민별 표 바뀜 votes, 휴회 adjourn, 힌트 단계화) + 음악 큐시트 + 사용자 '훅만'(Notion 1막 큰 그림의 훅) 반영 중.
