@@ -1,4 +1,4 @@
-# Shared case interpreter. Original v2 snapshot stays intact; 0.4 has an authored village opening.
+# Shared case interpreter. Captured v2 data stays intact; authored dialogue is overlaid at init.
 default source_mode = False
 default source_inventory = []
 default source_seen = []
@@ -36,9 +36,12 @@ init 10 python:
     import builtins as source_builtins
     SOURCE_PACKAGE = json.load(renpy.file("chapter-source.json"))
     SOURCE_EP = SOURCE_PACKAGE["episode"]
+    SOURCE_DIALOGUE = json.load(renpy.file("chapter-dialogue.json"))
+    SOURCE_EP.update(SOURCE_DIALOGUE["sections"])
     SOURCE_PATHS = json.load(renpy.file("assets/source-map.json"))
     SOURCE_ALIAS = {"det0":"dad","det1":"daram","innma":"granny","geokkuri":"bami","wanggu":"neoul"}
     SOURCE_CHARS = {k:getattr(store,v) for k,v in SOURCE_ALIAS.items()}
+    SOURCE_CHARS.update({v:getattr(store,v) for v in SOURCE_ALIAS.values()})
     SOURCE_CHARS["???"] = Character("???")
     SOURCE_CHARS.update({k:getattr(store,k) for k in ("seryeon","nabi","doto","buri","karo")})
     SOURCE_LOC = {x["id"]:x for x in SOURCE_EP["LOCS"]}
