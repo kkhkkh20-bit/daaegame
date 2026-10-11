@@ -52,7 +52,7 @@
   if(o.sid==='P13'){
    if(/^베개 밑[….\s]*여기 있군요/.test(t)&&o.camera==='stage')o.camera='seal';
    // The source's opening action ends the intact-seal shot permanently.
-   if(/^너울이 봉인띠를 자르고/.test(t))o.camera='stage';
+   if(/^봉인띠를 자르겠습니다/.test(t))o.camera='stage';
   }
  }
  function desired(){var s=authored();if(!s||blocked())return null;var o=ensureOwner(s);observeLine(o);return ART[o.camera]&&o.started?o.camera:null}

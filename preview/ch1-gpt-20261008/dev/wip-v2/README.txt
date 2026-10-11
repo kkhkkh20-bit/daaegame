@@ -1,7 +1,11 @@
 1장 v2 소스 — 별도 미리보기 배포 (2026-10-10)
+- 2026-10-11 최신 아빠 시점: CODEX_FATHER_POV_20261011.txt.
+  환영→아빠 답변, 부녀 대화로 여행 이유 전달, 밤에는 함께 확인하고 함께 귀환.
+  새 게임도 마차부터 시작하며 다람 단독 밤 장면/범인 시점 콜드오픈은 재생하지 않는다.
+  qa_intro.py / qa_father_view.py / qa_audio_timing.py, 현재 빌드 3cf5ed7e37d1.
 - 2026-10-11 모바일 잔여 연출 정리: CODEX_VISUAL_CLEANUP_20261011.txt.
   밤 다람 전신/발 구도, 초상 로딩 보호, 조용한 장소/시간 카드와 음악 차단 타이밍.
-  qa_visual_cleanup.py / qa_presentation_timing.py, 현재 빌드 e826979e571b.
+  qa_visual_cleanup.py / qa_presentation_timing.py, 해당 수정 빌드 e826979e571b.
 - 2026-10-11 관리자 테스트: CODEX_ADMIN_TEST_20261011.txt.
   우측 메뉴와 설정의 플레이테스트 항목 → 4개 분류/12개 장면 바로가기.
   독립 테스트 저장과 일반 플레이 복귀, 로딩 뒤 연출 시작.

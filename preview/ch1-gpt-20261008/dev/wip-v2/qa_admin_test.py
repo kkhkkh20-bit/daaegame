@@ -64,7 +64,7 @@ with sync_playwright() as p:
     before=json.loads(pre[normal+'daae-detective-v3'])['prog']['inn']
     cases=[('carriage','P1'),('welcome','P3'),('night','P10b'),('report','P11'),
            ('investigation',None),('discovery',None),('puzzle',None),('meeting',None),
-           ('final',None),('ending','E1'),('mother','E4'),('cold',None)]
+           ('final',None),('ending','E1'),('mother','E4'),('cold','P1')]
     if args.viewport=='portrait':cases=[('night','P10b'),('meeting',None),('investigation',None)]
     baseline=None;rows=[]
     for scene,sid in cases:
@@ -81,7 +81,9 @@ with sync_playwright() as p:
             assert not inner.evaluate('document.querySelector("#inncold,#dlgveil,#inn-under-scene,body>.rt")'),('Test scene started behind boot cover',scene)
         frame.locator('#bootld').wait_for(state='detached',timeout=20000)
         if sid:inner.wait_for_function('(sid)=>__innPresentationState().sid===sid',arg=sid,timeout=20000)
-        if scene=='cold':frame.locator('#inncold').wait_for(timeout=20000)
+        if scene=='cold':
+            assert not frame.locator('#inncold').count(),'Off-screen culprit opening returned'
+            frame.locator('#inn-story-cg.ready').wait_for(timeout=20000)
         elif scene=='discovery':frame.locator('#inn-under-scene').wait_for(timeout=20000)
         elif scene in ('meeting','final'):frame.locator('body>.rt').wait_for(timeout=20000)
         else:inner.wait_for_function('!!document.querySelector("#bigscene,#dlgveil")',timeout=20000)

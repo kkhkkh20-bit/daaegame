@@ -39,9 +39,9 @@
   // and camera there; a different captured game removes them before painting.
   if(!l||l===lastLine)return;lastLine=l;
   var t=Array.isArray(l)?String(l[7]!=null?l[7]:l[1]||''):String(l.t||'');
-  if(/다람이 방문을 조금 연다|다람이 살금살금 복도로 나온다/.test(t))cue('out');
-  if(/다람이 문에 손을 댄다/.test(t))cue('touch');
-  if(/다람이 뛰어 돌아가/.test(t))cue('return');
+  if(/^저 문 밑에 빛이 새네/.test(t))cue('out');
+  if(/^조용해졌어\. 불도 꺼졌고/.test(t))cue('touch');
+  if(/^안 놓아\. 같이 가자/.test(t))cue('return');
  }
  /* Place/time has its own quiet card. Keep the native Promise duration and
     __skip/__t0 input contract; letter impacts belong to chapter/debate titles. */

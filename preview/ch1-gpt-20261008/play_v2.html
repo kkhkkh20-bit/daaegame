@@ -47629,10 +47629,9 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
     L("nabi","깰 때는 할머니가 알아서 챙기세요.")]}],
   geokkuri:[
    {id:"C07",q:"밤에는 어디 있나",ev:1,rec:"해 질 녘에 일어나 새벽 5시 종에 자요. 밤엔 시계 맞은편 천장에 매달려요.",lines:[
-    L("det1","아빠, 어젯밤 그 눈이야…!"),L("geokkuri","어젯밤 꼬맹이네. 놀랐지? 미안."),L("geokkuri","난 아침엔 자야 하는데…"),
-    L("geokkuri","밤이예요. 여기서 겨울을 나요."),L("det0","다람아, 밤에 혼자 나왔어?"),
-    L("det0","혼자 가지 않기로 했지. 아빠를 깨워 줘."),L("det1","…소리가 나서. 다음엔 꼭 깨울게.","sad"),
-    L("det0","밤에는 어디서 쉬세요?"),
+    L("det1","아빠, 어젯밤 그 언니야."),L("geokkuri","문 앞에서 둘이 놀랐지? 미안."),L("geokkuri","난 아침엔 자야 하는데…"),
+    L("det0","어젯밤엔 소리가 나서 잠깐 나갔습니다."),L("geokkuri","밤이예요. 여기서 겨울을 나요."),
+    L("det0","밤에는 늘 그 자리에 계십니까?"),
     L("geokkuri","해 질 녘에 일어나요. 새벽 다섯 시 종에 자고."),L("geokkuri","밤엔 시계 맞은편 천장 나무에 매달려요."),
     L("geokkuri","등불 옆이 제일 따뜻하거든요."),L("det1","안 졸려요? 복도가 다 보이네."),
     L("geokkuri","본 건 말해 줄게요. 잠은 좀 늦춰도.")]},
@@ -47752,9 +47751,10 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   choices.forEach(function(c,i){Object.defineProperty(rows[i],"4",{enumerable:true,configurable:true,get:function(){return read()?c.seen:c.hint}});Object.defineProperty(rows[i],"5",{enumerable:true,configurable:true,get:function(){return read()?c.done:c.fresh}})});
  })();
  /* ---- 프롤로그 P1~P11 ---- */
- /* ---- 프롤로그 P1~P13 (2026-10-11 도입부 연결 대화 편집; 이 파일이 원본) ----
+ /* ---- 프롤로그 P1~P13 (2026-10-11 아빠 시점·부녀 대화 편집; 이 파일이 원본) ----
     gen/conv.py의 옛 입력 JSON은 없으므로 재생성하지 않는다.
-    I(속마음[,무대,첫진입만]) / L(화자,대사,"",표정) / N(회색 지문: 대체 그림이 없는 사실만) / D({who,sfx,ms,chime}) 글자 없는 연출 */
+    I(아빠가 직접 본 짧은 생각[,무대,첫진입만]) / FL(화자,대사,표정) / D({who,sfx,ms,chime}) 글자 없는 연출.
+    아빠 밖의 숨은 행동·다람 단독 시점은 재생하지 않는다. */
  function I(t,cue,entry){var x="("+t+")";if(cue)(window.__INNCUE=window.__INNCUE||{})[x]=cue;if(entry)(window.__INNENTRY=window.__INNENTRY||{})[x]=1;return ["narr",x]}
  function B(bg,who,s){s.bg=bg;s.who=who;return s}
  function D(o){return {dir:o}}
@@ -47762,6 +47762,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  window.__INNSID=SID;
  function FL(w,t,f){return f?[w,t,"","","","",f]:[w,t]}
  window.__INNFL=FL;
+ EP.OPENING_POV="father";
  EP.PRO=[
   /* P1 우편 마차 안 */
   SID("P1",B("carriage","det1",S("front","고갯길, 우편 마차 안","첫날 오후",[
@@ -47776,8 +47777,9 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("det1","…엄마는 왜 갑자기 사라졌을까.","sad"),
    FL("det0","아빠도 아직 몰라. 그래서 찾아보려는 거야.","sad"),
    FL("det1","아빠는 탐정이었잖아."),
-   I("엄마와 결혼하고 서점을 열면서, 탐정 일은 그만뒀다."),
-   FL("det0","탐정도 먼저 알아봐야지. 이 편지부터.","think"),
+   FL("det0","탐정은 그만뒀지. 엄마랑 서점 열면서."),
+   FL("det1","그럼 이번엔 내가 조수!","smile"),
+   FL("det0","좋아. 조수님, 이 도장 읽어 줄래?"),
    FL("det0","몇 해 전 편지야. 도장에 마을 이름이 있어."),
    FL("det1","골짜기… 마을. 엄마가 갔던 곳?"),
    FL("det0","응. 엄마가 여기 우체국에서 부친 거야."),
@@ -47803,15 +47805,14 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
   /* P3 여관 현관 안 */
   SID("P3",B("reception","innma",S("front","여관 현관","첫날 저녁",[D({sfx:"knock",ms:650}),D({sfx:"doorOpen",ms:550}),D({sfx:"door",ms:450}),
    D({"who": "innma", "chime": 1, "ms": 380}),
-   FL("det0","하룻밤 묵을 수 있을까요?"),
    FL("innma","어서 와요. 추웠지?","smile"),
+   FL("det0","하룻밤 묵을 수 있을까요?"),
    FL("det1","꼬리가 얼 것 같아요."),
    FL("innma","방은 있어요. 두 분이 함께 쓸 거죠?","smile"),
    FL("det0","네. 그리고 하나만 여쭤봐도 될까요?"),
    FL("det0","아이 엄마를 찾고 있습니다."),
    FL("det0","옛 편지를 여기서 부쳤더군요."),
-   N("아빠가 엄마 사진을 내민다."),
-   FL("det0","혹시 이 사람을 기억하십니까?"),
+   FL("det0","혹시 이 사진 속 사람을 기억하십니까?"),
    FL("innma","…사진 속 엄마를 닮았구나.","think"),
    FL("det1","엄마를 만나 보셨어요?"),
    FL("innma","찾느라 걱정이 많겠구나."),
@@ -47827,7 +47828,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("innma","겨울잠 손님들이 있어요. 살금살금."),
    FL("innma","두 분은 앞 계단 쪽, 끝에서 둘째 방."),
    FL("det1","하나, 둘, 셋… 열하나, 열둘."),
-   N("다람이 조금 열린 문 안을 기웃거린다."),
+   FL("det0","다람, 문 안에는 들어가지 마."),
    FL("det1","열셋. 할머니, 저 안에도 침대가 있어요."),
    FL("innma","거긴 지금은 안 쓰는 방이에요.","think"),
    FL("det1","저 침대는 안 세는 거예요?"),
@@ -47859,24 +47860,35 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    {fade:1}]))),
   /* P10b 닫힌 문 밑의 빛 */
   SID("P10b",B("corridor",null,S("hall","부녀의 방 → 2층 복도","그 밤, 열한 시 무렵",[
-   FL("narr","이불 끄는 소리에 다람이 눈을 뜬다. 아빠는 잠들어 있다."),
    D({"who": "det1", "chime": 0, "ms": 300}),
-   FL("det1","아빠… 무슨 소리 안 들려?","sad"),
-   FL("det1","…주무시네."),
-   FL("narr","다람이 방문을 조금 연다. 닫힌 문 밑에 빛."),
-   FL("det1","안 쓰는 방인데… 누가 있나?","nervous"),
-   FL("det1","혹시 저 손님은 엄마를 알까?","nervous"),
-   FL("det1","혼자 가지 말랬는데… 문 앞까지만 보자.","nervous"),
-   FL("det1","누가 있어요?","nervous"),
-   FL("narr","다람이 문에 손을 댄다. 소리도 빛도 멎는다."),
+   FL("det1","아빠, 저 소리… 들려?","nervous"),
+   FL("det0","응. 복도 쪽이네."),
+   FL("det1","아까 침대 있던 방 같아."),
+   FL("det0","안 쓴다던 방?"),
+   FL("det1","손님 있으면 엄마 사진 보여 주자."),
+   FL("det0","사진은 아침에 보여 드리자. 지금은 늦었어."),
+   FL("det1","그럼 저 소리는 뭐야?","nervous"),
+   FL("det0","문 앞까지만 같이 보자. 아빠 옆에 있어."),
+   D({"sfx": "doorOpen", "ms": 420}),
+   FL("det0","저 문 밑에 빛이 새네."),
+   D({"sfx": "knock", "ms": 450}),
+   FL("det0","안에 계십니까?"),
+   FL("det1","조용해졌어. 불도 꺼졌고.","nervous"),
+   FL("det0","대답이 없네. 돌아가자."),
    D({"who": "none", "ms": 500}),
-   FL("narr","등 뒤 천장에서, 거꾸로 된 두 눈이 뜬다."),
+   FL("det1","아빠… 위에 눈이…!","shock"),
+   FL("det0","저기… 천장에 매달려 있군요.","shock"),
    D({"who": "geokkuri", "chime": 0, "ms": 380}),
    FL("geokkuri","…가서 자, 꼬맹이."),
+   FL("det0","놀라게 해서 죄송합니다. 소리가 나길래요."),
    FL("geokkuri","저 방은 밤엔 안 열어. 원래 그래."),
-   FL("det1","…앗, 네!","nervous"),
+   FL("geokkuri","어른도요. 시끄러우면 다 깨."),
+   FL("det0","알겠습니다. 다람, 방으로 가자."),
+   FL("det1","…손 놓지 마.","nervous"),
+   FL("det0","안 놓아. 같이 가자."),
    D({"who": "none", "ms": 380}),
-   FL("narr","다람이 뛰어 돌아가 이불을 뒤집어쓴다."),
+   FL("det1","사진은 아침에 보여 줄 거지?","sad"),
+   FL("det0","응. 아침에 물어보자."),
    D({"ms": 900}),
    {fade:1}]))),
   /* P11 주머니가 사라졌다는 신고 */
@@ -47909,9 +47921,11 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("seryeon","찾을 수만 있다면요. 서둘러 주세요."),
    D({"who": "wanggu", "chime": 0, "ms": 260}),
    D({"sfx": "doorOpen", "ms": 420}),
-   I("너울이 침대 밑까지 살폈다. 주머니는 없다."),
+   FL("wanggu","침대 밑에도 없습니다."),
+   FL("det0","다른 방도 확인해 주시겠습니까?"),
+   FL("wanggu","손님들께 허락부터 받겠습니다."),
    D({"sfx": "doorOpen", "ms": 420}),
-   I("다른 손님방도 허락받고 살폈지만 나오지 않았다."),
+   FL("wanggu","여기도 없군요."),
 
    D({"who": "innma", "chime": 0, "ms": 380}),
    FL("innma","거긴 안 돼요. 안 쓰는 방이에요.","think"),
@@ -47932,7 +47946,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    D({"who": "seryeon", "chime": 0, "ms": 260}),
    FL("seryeon","맞습니다. 제 도장이에요."),
    FL("seryeon","봉인도 뜯기지 않았습니다."),
-   N("너울이 봉인띠를 자르고 은화를 센다."),
+   FL("wanggu","봉인띠를 자르겠습니다. 함께 세어 주십시오."),
    D({"who": "det1", "chime": 0, "ms": 260}),
    FL("det1","…아흔여덟, 아흔아홉, 백."),
    D({"who": "wanggu", "chime": 0, "ms": 260}),
@@ -47941,7 +47955,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("seryeon","백 냥이라뇨! 삼백 냥이었습니다!","shock"),
 
    D({"who": "innma", "chime": 0, "ms": 380}),
-   FL("narr","할머니가 이불을 들추고 빈 베개 구석을 짚는다."),
+   I("할머니 손이 빈 베개를 더듬는다."),
    D({"who": "innma", "chime": 0, "ms": 260}),
    FL("innma","어디… 어디 갔지.","think"),
 
@@ -50127,7 +50141,7 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
  var coldAudioReady=false;
  document.addEventListener("pointerdown",function(e){if(e.isTrusted)coldAudioReady=true},true);
  document.addEventListener("keydown",function(e){if(e.isTrusted&&(e.key===" "||e.key==="Enter"))coldAudioReady=true},true);
- function cold(done){window.__innAudioHold=true;window.__innColdMus="inn_cold";if(window.__AUD&&__AUD.sceneGate)__AUD.sceneGate(true);var L=(window.__innPageCold?window.__innPageCold(EP.COLD||[]):(EP.COLD||[])),i=-1,typing=null,full="",waitT=null,busy=false,ended=false;
+ function cold(done){if(window.EP1INN&&EP1INN.OPENING_POV==="father"){done&&done();return}window.__innAudioHold=true;window.__innColdMus="inn_cold";if(window.__AUD&&__AUD.sceneGate)__AUD.sceneGate(true);var L=(window.__innPageCold?window.__innPageCold(EP.COLD||[]):(EP.COLD||[])),i=-1,typing=null,full="",waitT=null,busy=false,ended=false;
   var typingVoices=new Set(),lastTick=-1;
   function stopTyping(){clearInterval(typing);typing=null;typingVoices.forEach(function(o){try{o.stop();o.disconnect()}catch(e){}});typingVoices.clear()}
   function tick(ch){
@@ -50913,7 +50927,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|당연하죠\. 그게 똑바론데요/, 'inn_comic'],
    [/어서 와요\. 추웠지|우선 들어와요|아빠처럼 탐정 할래|잘 자, 다람|수건은 네가 차지해요|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
    [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고(?:…|,)?\s*숨|^바구니랑 수건 좀 빌려|누가 죽었대요|낮게 수군|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
-   [/어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
+   [/밤에는 늘 그 자리에|어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
   ];
   function contextMusic(fallback,scope){
    if(M.ctxScope!==scope){M.ctxScope=scope;M.ctxKey=fallback;M.ctxLine=null}
@@ -50927,7 +50941,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
   var TENSE={on:false,k:0,gen:0,nul:0};
-  var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
+  var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^아빠… 위에 눈이…/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^안 놓아\. 같이 가자/;
   function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0;retireBus(TENSE.bus);TENSE.bus=null}
   function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!sameScope(TENSE.owner)||blocked()){tenseStop();return}
     if(AC&&AC.state==="running"&&S.sound){if(!TENSE.bus)TENSE.bus=scopedBus();var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,TENSE.bus,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),TENSE.bus,38);noise(.06,v*.25,0,160,"lowpass",TENSE.bus);TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
@@ -52207,7 +52221,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  var ep=window.EP1INN,panel=null,opener=null,busy=false;
  var RETURN='inn-admin-return-url',PREFIX='daae-preview-ch1-gpt-20261008-admin-test:';
  var entries=[
-  {id:'cold',group:'스토리',name:'오프닝',note:'자정의 기척부터',icon:'moon'},
+  {id:'cold',group:'스토리',name:'오프닝',note:'아빠와 다람의 여행부터',icon:'book'},
   {id:'carriage',group:'스토리',name:'마차 · 마을',note:'엄마의 편지를 따라오는 길',icon:'book',sid:'P1'},
   {id:'welcome',group:'스토리',name:'여관 첫 만남',note:'엄마 사진과 할머니의 반응',icon:'door',sid:'P3'},
   {id:'night',group:'스토리',name:'밤 복도',note:'문 밑 빛 · 밤이 등장',icon:'moon',sid:'P10b'},
@@ -52834,9 +52848,9 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   // and camera there; a different captured game removes them before painting.
   if(!l||l===lastLine)return;lastLine=l;
   var t=Array.isArray(l)?String(l[7]!=null?l[7]:l[1]||''):String(l.t||'');
-  if(/다람이 방문을 조금 연다|다람이 살금살금 복도로 나온다/.test(t))cue('out');
-  if(/다람이 문에 손을 댄다/.test(t))cue('touch');
-  if(/다람이 뛰어 돌아가/.test(t))cue('return');
+  if(/^저 문 밑에 빛이 새네/.test(t))cue('out');
+  if(/^조용해졌어\. 불도 꺼졌고/.test(t))cue('touch');
+  if(/^안 놓아\. 같이 가자/.test(t))cue('return');
  }
  /* Place/time has its own quiet card. Keep the native Promise duration and
     __skip/__t0 input contract; letter impacts belong to chapter/debate titles. */
@@ -52938,7 +52952,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   if(o.sid==='P13'){
    if(/^베개 밑[….\s]*여기 있군요/.test(t)&&o.camera==='stage')o.camera='seal';
    // The source's opening action ends the intact-seal shot permanently.
-   if(/^너울이 봉인띠를 자르고/.test(t))o.camera='stage';
+   if(/^봉인띠를 자르겠습니다/.test(t))o.camera='stage';
   }
  }
  function desired(){var s=authored();if(!s||blocked())return null;var o=ensureOwner(s);observeLine(o);return ART[o.camera]&&o.started?o.camera:null}

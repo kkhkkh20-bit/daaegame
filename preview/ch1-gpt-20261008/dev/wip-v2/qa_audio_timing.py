@@ -119,8 +119,12 @@ with sync_playwright() as pw:
     page.wait_for_timeout(400)
     assert page.evaluate('!__innTense()&&!__innAudioState().coldHeartbeat&&__innAudioState().scopedSources===0'), state()
 
-    # New G and cold DOM must never share a pending old heartbeat callback.
+    # Father's opening bypasses the former culprit camera for both entry paths.
     engine('S.screen="case";G=fresh(CASES.findIndex(c=>c.id==="inn"));G.beats={inn_pi:0,inn_bg:"carriage"};render();__innCold(function(){window.__coldTimingFinished=true})')
+    assert page.evaluate('window.__coldTimingFinished===true&&!document.querySelector("#inncold")&&!__innAudioState().coldHeartbeat'),state()
+    print('PASS father opening callback, no culprit camera or cold pulse',flush=True)
+    # Retained legacy controller cancellation is a separate prepared fixture.
+    engine('EP1INN.OPENING_POV="legacy";__innCold(function(){window.__legacyColdTimingFinished=true})')
     page.wait_for_function('__innAudioState().coldHeartbeat', timeout=4000)
     page.wait_for_timeout(400)
     assert page.evaluate('__innAmb().cur===null'), state()
@@ -130,6 +134,7 @@ with sync_playwright() as pw:
     page.wait_for_timeout(700)
     assert page.evaluate('!__innAudioState().coldHeartbeat'), 'Old cold callback restarted pulse'
     print('PASS cold skip cancels heartbeat generation',flush=True)
+    engine('EP1INN.OPENING_POV="father"')
     # This cold fixture callback does not open a game scene; remove its input
     # shield explicitly before exercising menu ownership cleanup below.
     engine('document.querySelector("#inncold")?.remove();window.__innColdTransition=false;__AUD.sceneGate(false)')
