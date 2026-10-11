@@ -4,6 +4,7 @@ import hashlib
 import json
 import shutil
 import subprocess
+from source_sounds import render as render_source_sounds
 from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent
@@ -20,6 +21,7 @@ FILES = {
     "council.png": "art/council/council-room-background-v1.png",
     "pouch.png": "art/ch1/cinematics/sealed-pouch-close.png",
     "somsom.png": "art/ch1/discovery/somsom-held.png",
+    "basket-world.png": "art/ch1/locations/C04_basket_world.png",
     "front.png": "art/ch1/bg/BG01_reception_panorama.png",
     "kitchen.png": "art/ch1/locations/BG03_kitchen_base.png",
     "hall.png": "art/ch1/bg/BG_corridor_2f_pixel_v1.png",
@@ -78,6 +80,38 @@ def main():
                 entry["world"] = {"file": f"assets/{atlas}.png", "crop": metadata["world"][original]["crop"]}
             cast[aliases.get(original, original)] = entry
     (TARGET / "cast.json").write_text(json.dumps(cast, ensure_ascii=False, indent=2))
+    source = json.loads((ROOT / 'game/chapter-source.json').read_text())
+    assert source['sha256'] == hashlib.sha256((REPO/source['source']).read_bytes()).hexdigest(), 'Chapter source changed; refresh the captured source data before building.'
+    paths = {v['src'] for v in source['episode']['BGS'].values() if v.get('src')}
+    paths.update(v['media'] for v in source['music'].values() if v.get('media'))
+    paths.update('art/ch1/cinematics/'+name for name in
+                 ('carriage-driver-close.png','village-arrival-wide.png'))
+    paths.add('audio/v3/sfx/wood-door-close.wav')
+    source_map={}
+    existing={relative:name for name,relative in FILES.items()}
+    for generated in TARGET.glob('source-*'):
+        generated.unlink()
+    for relative in sorted(paths):
+        if relative in existing:
+            source_map[relative]='assets/'+existing[relative]
+            continue
+        src=SOURCE/relative
+        if not src.is_file():
+            raise FileNotFoundError(src)
+        name='source-'+src.name
+        dest=TARGET/name
+        shutil.copyfile(src,dest)
+        digest=hashlib.sha256(src.read_bytes()).hexdigest()
+        assert digest==hashlib.sha256(dest.read_bytes()).hexdigest()
+        source_map[relative]='assets/'+name
+        manifest[name]={'source':relative,'sha256':digest}
+    (TARGET/'source-map.json').write_text(json.dumps(source_map,ensure_ascii=False,indent=2))
+    render_source_sounds(TARGET)
+    for dest in TARGET.glob('source-*.wav'):
+        if dest.name not in manifest:
+            manifest[dest.name]={'source':'dev/wip-v2/inn_audio.js',
+                'adaptation':'Offline procedural PCM reconstruction; same cue, bounded gain. Not a recording or byte-identical WebAudio output.',
+                'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()}
     # A quiet wooden text tick, adapted from our attributed door recording.
     # No live speech synthesis or replacement of the music originals.
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.12", "-t", "0.032", "-i",
