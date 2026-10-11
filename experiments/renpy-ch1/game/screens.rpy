@@ -1,265 +1,421 @@
 style default:
     font "assets/Galmuri11.ttf"
-    size 27
+    size 25
     color "#f3e7ce"
 style button:
-    background Solid("#30261fea")
-    hover_background Solid("#785437")
+    background Solid("#30261fed")
+    hover_background Solid("#65503d")
     insensitive_background Solid("#282421")
-    padding (20, 14)
+    padding (18,12)
 style button_text:
     color "#f3e7ce"
     hover_color "#ffdc91"
-    insensitive_color "#887f72"
-    size 25
+    insensitive_color "#91877a"
+    size 24
 style frame:
     background Solid("#201b18ef")
-    padding (28, 24)
+    padding (24,20)
 style say_dialogue:
     size 29
-    line_spacing 10
+    line_spacing 9
 style say_label:
-    size 27
+    size 25
     bold True
+style bar:
+    left_bar Solid("#b39060")
+    right_bar Solid("#4f4034")
+    thumb Solid("#f5e8cf",xsize=14,ysize=30)
+    thumb_shadow None
+style scrollbar:
+    base_bar Solid("#4f4034")
+    thumb Solid("#b39060",xsize=14,ysize=42)
 
 screen main_menu():
     tag menu
-    add "bg approach"
-    add Solid("#120e0a88")
+    add "bg inn"
+    add Solid("#120e0a66")
     frame:
-        xalign 0.08
-        yalign 0.48
-        xsize 620
+        xpos 90 ypos 185 xsize 640
         vbox:
-            spacing 22
-            text "다람탐정" size 62 color "#ffdc91"
+            spacing 20
+            text "다람탐정" size 58 color "#ffdc91"
             text "열세 번째 침대" size 34
-            text "Ren’Py 웹 플레이 테스트" size 23 color "#c6b699"
-            textbutton "처음부터" action Start() xsize 480
-            textbutton "이어하기" action ShowMenu("load") xsize 480
-            text "약 5분 · 조사 / 증거 / 회의\n기존 1장의 일부를 사용한 기술 시제품" size 21 color "#c6b699"
+            text "작은 1장 · Ren’Py" size 22 color "#c6b699"
+            textbutton "처음부터" action Start() xsize 470
+            textbutton "이어하기" action ShowMenu("load") xsize 470
+            text "마을 이동 · 조사 · 원탁 회의 · 대결\n기존 1장을 압축한 별도 시험판" size 21 color "#c6b699"
 
-screen say(who, what):
+screen say(who,what):
     window:
         id "window"
-        xalign 0.5
-        yalign 1.0
-        xsize 1200
-        ysize 175
+        xalign 0.5 yalign 1.0 xsize 1200 ysize 169
         background Solid("#211a16f2")
-        padding (35, 20)
-        vbox:
-            spacing 12
-            if who:
-                text who id "who" color "#ffcc86"
-            text what id "what" xsize 1110
-    text "▼" xalign 0.94 yalign 0.97 color "#d8b568" size 22
+        padding (30,19)
+        hbox:
+            spacing 22
+            if dialogue_speaker in CAST:
+                add Transform(dialogue_speaker + " neutral",size=(90,105))
+            vbox:
+                spacing 10
+                if who:
+                    text who id "who" color "#ffcc86"
+                text what id "what" xsize 970
+    text "▼" xpos 1190 ypos 682 size 21 color "#d8b568"
 
 screen choice(items):
     modal True
     frame:
-        xalign 0.5
-        yalign 0.5
-        xsize 900
+        xpos 165 ypos 200 xsize 950
         vbox:
-            spacing 15
+            spacing 17
             for item in items:
-                textbutton item.caption action item.action xfill True
+                textbutton item.caption action item.action xfill True ysize 72
 
 screen hud():
     zorder 20
     frame:
-        xpos 28
-        ypos 20
-        padding (18, 12)
+        xpos 24 ypos 18 padding (16,10)
         vbox:
             spacing 4
-            text place size 24 color "#f8d994"
-            text clock_text size 20 color "#c6b699"
+            text place size 23 color "#f8d994"
+            text clock_text size 18 color "#c6b699"
     hbox:
-        xpos 994
-        ypos 20
-        spacing 10
+        xpos 1012 ypos 20 spacing 15
         imagebutton:
-            idle Transform("assets/evidence.png", size=(56, 56))
-            hover Transform("assets/evidence.png", size=(56, 56), alpha=0.7)
+            idle Transform("assets/evidence.png",size=(52,52))
+            hover Transform("assets/evidence.png",size=(52,52),alpha=0.75)
             action Show("evidence_book")
-            tooltip "증거"
+            tooltip "수첩"
         imagebutton:
-            idle Transform("assets/save.png", size=(56, 56))
-            hover Transform("assets/save.png", size=(56, 56), alpha=0.7)
+            idle Transform("assets/save.png",size=(52,52))
+            hover Transform("assets/save.png",size=(52,52),alpha=0.75)
             action ShowMenu("save")
             tooltip "저장"
         imagebutton:
-            idle Transform("assets/menu.png", size=(56, 56))
-            hover Transform("assets/menu.png", size=(56, 56), alpha=0.7)
+            idle Transform("assets/menu.png",size=(52,52))
+            hover Transform("assets/menu.png",size=(52,52),alpha=0.75)
             action ShowMenu("pause_menu")
-            tooltip "메뉴"
-    $ tip = GetTooltip()
-    if tip:
-        text tip xalign 0.92 ypos 84 size 20
+            tooltip "설정"
+    if GetTooltip():
+        text GetTooltip() xalign 0.93 ypos 80 size 19
 
-screen investigate():
-    # This modal interaction only exists after the last introductory line.
+screen explore(location):
     modal True
     default input_ready = False
-    timer 0.35 action SetScreenVariable("input_ready", True)
-    add Transform("assets/pouch-world.png", size=(70, 75)) xpos 870 ypos 265
-    add Transform("assets/flour-world.png", size=(70, 58)) xpos 580 ypos 332
-    button:
-        xpos 680 ypos 215 xsize 310 ysize 115
-        background None
-        hover_background Solid("#e4c58422")
-        sensitive input_ready
-        action Return("pouch")
-        tooltip "베개 살펴보기"
-    button:
-        xpos 565 ypos 485 xsize 330 ysize 100
-        background None
-        hover_background Solid("#e4c58422")
-        sensitive input_ready
-        action Return("fur")
-        tooltip "침대 아래 살펴보기"
-    button:
-        xpos 560 ypos 330 xsize 145 ysize 100
-        background None
-        hover_background Solid("#e4c58422")
-        sensitive input_ready
-        action Return("flour")
-        tooltip "이불의 손자국"
+    timer 0.35 action SetScreenVariable("input_ready",True)
+    # No hotspot tint, labels, cursor change or clue-location tooltip.
+    if location == "room":
+        add Transform("assets/pouch-world.png",size=(60,64)) xpos 880 ypos 270
+        add Transform("assets/flour-world.png",size=(64,53)) xpos 590 ypos 337
+        if archive_open:
+            add Transform(Crop((832,565,404,164),"assets/chest-open.png"),size=(150,80)) xpos 659 ypos 425
+        else:
+            add Transform(Crop((880,550,365,150),"assets/chest.png"),size=(150,62)) xpos 659 ypos 443
+        if lamp_ready and not somsom_found:
+            add Transform(Crop((802,490,110,80),"assets/somsom.png"),size=(27,19),alpha=0.23) xpos 828 ypos 480
+        for key,rect in (("pouch",(680,215,310,115)),("flour",(563,331,150,97)),("under",(550,500,345,87)),("head",(620,170,325,62)),("chest",(655,406,158,93))):
+            button:
+                xpos rect[0] ypos rect[1] xsize rect[2] ysize rect[3]
+                background None hover_background None insensitive_background None padding (0,0)
+                sensitive input_ready
+                action Return(key)
+    else:
+        $ spec = LOCATIONS[location]
+        if spec[2]:
+            imagebutton:
+                idle Transform(spec[2] + " world",zoom=0.68)
+                hover Transform(spec[2] + " world",zoom=0.68)
+                xpos spec[3] ypos spec[4]
+                yanchor (0.0 if spec[2] == "bami" else 1.0)
+                sensitive input_ready
+                action Return("talk")
+        if location == "hall":
+            add Transform("assets/clock-base.png",size=(115,115)) xpos 410 ypos 170
+            add Transform("assets/clock-hands.png",size=(115,115)) xpos 410 ypos 170
+            button:
+                xpos 405 ypos 165 xsize 125 ysize 125
+                background None hover_background None insensitive_background None padding (0,0)
+                action Return("clock") sensitive input_ready
+        if location == "doto":
+            add Transform("assets/notebook.png",size=(128,83)) xpos 850 ypos 324
+            button:
+                xpos 835 ypos 305 xsize 150 ysize 108
+                background None hover_background None insensitive_background None padding (0,0)
+                action Return("notebook") sensitive input_ready
     frame:
-        xpos 28 ypos 592 xsize 690
+        xpos 25 ypos 604 xsize 760
+        text current_goal() size 22 color "#dacba9"
+    hbox:
+        xpos 852 ypos 609 spacing 12
+        imagebutton:
+            idle Transform("assets/move.png",size=(64,64))
+            action Return("map") sensitive input_ready
+            tooltip "이동"
+        if location != "room":
+            imagebutton:
+                idle Transform("assets/talk.png",size=(64,64))
+                action Return("talk") sensitive input_ready
+                tooltip "대화"
+        if stage == "arrival" and "granny_arrival" in inspected:
+            textbutton "방으로" action Return("rest") sensitive input_ready
+        elif stage == "investigation":
+            textbutton "원탁으로" action Return("meeting") sensitive input_ready
+        elif stage == "aftermath":
+            textbutton "마무리" action Return("finish") sensitive input_ready
+
+screen village_map():
+    modal True
+    add Transform("assets/map.png",size=(1280,720))
+    add Solid("#140f0a88")
+    frame:
+        xpos 25 ypos 110
         vbox:
             spacing 8
-            text "방을 살펴보자" color "#ffdc91"
-            text "베개 · 이불 · 침대 아래" size 23
-    textbutton "회의로":
-        xpos 1010 ypos 610 xsize 220
-        sensitive input_ready and "pouch" in inventory and "fur" in inventory
-        action Return("meeting")
-    $ tip = GetTooltip()
-    if tip:
-        frame:
-            xalign 0.5 ypos 520
-            text tip size 23
+            text "마을과 여관" size 32 color "#ffdc91"
+            text "[current_goal()]" size 21
+    for key in available_locations():
+        $ pos = MAP_POINTS[key]
+        button:
+            xpos pos[0] ypos pos[1] xsize 224 ysize 91
+            padding (10,12)
+            background Solid("#211b17f5")
+            action Return(key)
+            hbox:
+                spacing 8
+                add Transform("assets/move.png",size=(36,36))
+                vbox:
+                    spacing 6
+                    text LOCATIONS[key][0] size 22
+                    text ("현재 위치" if key == current_location else "다녀온 곳" if key in visited else "") size 17 color "#c6b699"
+    textbutton "돌아가기" xpos 45 ypos 625 action Return(current_location)
 
-screen evidence_book():
+screen chest_lock():
     modal True
-    zorder 60
-    add Solid("#100c09bb")
+    add Solid("#130f0be5")
     frame:
-        xpos 120 ypos 120 xsize 1040 ysize 500
+        xalign 0.5 ypos 145 xsize 910
         vbox:
-            spacing 20
-            text "증거 수첩" size 32 color "#ffdc91"
-            if not inventory:
-                text "아직 모은 증거가 없다." color "#c6b699"
-            for key in inventory:
-                hbox:
-                    spacing 22
-                    add EVIDENCE[key][2] at thumbnail
+            xfill True
+            spacing 18
+            text "오래된 숫자 자물쇠" size 34 color "#ffdc91"
+            text "머리판의 첫 손님 날짜는 무엇이었지?" size 23
+            hbox:
+                spacing 24 xsize 552 xalign 0.5
+                for i in range(4):
                     vbox:
                         spacing 10
-                        text EVIDENCE[key][0] color "#ffdc91"
-                        text EVIDENCE[key][1] size 22 xsize 735
-            textbutton "닫기" action Hide("evidence_book")
-
-screen testimony():
-    modal True
-    frame:
-        xpos 30 ypos 140 xsize 655
-        vbox:
-            spacing 14
-            text "세련의 발언" size 23 color "#d4b07e"
-            text "제 주머니하고는 아무 관계도 없어요." size 30 xsize 590
-            if stage == "comparison":
-                text "두 흔적을 비교할 다른 증거는?" size 23 color "#ffdc91"
+                        textbutton "▲" action [SetVariable("digit_code",digit_code[:i]+[(digit_code[i]+1)%10]+digit_code[i+1:]),SetVariable("code_error",False)] xsize 120
+                        text str(digit_code[i]) size 56 xalign 0.5
+                        textbutton "▼" action [SetVariable("digit_code",digit_code[:i]+[(digit_code[i]-1)%10]+digit_code[i+1:]),SetVariable("code_error",False)] xsize 120
+            if code_error:
+                text "찰칵. 아직 잠겨 있다." size 23 color "#ffbd76"
             else:
-                text "어떤 증거로 확인할까?" size 23 color "#ffdc91"
-            textbutton "되묻기" action Return("press")
+                text "월 두 자리, 날 두 자리." size 23 color "#c6b699"
+            hbox:
+                spacing 30
+                textbutton "열기" action (Return("opened") if digit_code == [1,1,0,2] else SetVariable("code_error",True))
+                textbutton "뒤로" action Return("cancel")
+
+screen evidence_book(present=False):
+    modal True
+    zorder 60
+    default detail = (inventory[0] if inventory else None)
+    default page_index = 0
+    add Solid("#100c09d9")
+    frame:
+        xpos 65 ypos 105 xsize 1150 ysize 535
+        fixed:
+            text ("증거 제시" if present else "증거 수첩") size 32 color "#ffdc91"
+            for i,key in enumerate(inventory[page_index*6:page_index*6+6]):
+                button:
+                    xpos (i%2)*230 ypos 65+(i//2)*110
+                    xsize 220 ysize 100 padding (8,5)
+                    action (Return(key) if present else SetScreenVariable("detail",key))
+                    vbox:
+                        spacing 5
+                        add Transform(EVIDENCE[key][2],size=(74,47),fit="contain") xalign 0.5
+                        text EVIDENCE[key][0] size 18 xalign 0.5 text_align 0.5 xsize 204
+            if detail:
+                add Transform(EVIDENCE[detail][2],size=(224,144),fit="contain") xpos 520 ypos 65
+                text EVIDENCE[detail][0] xpos 520 ypos 235 color "#ffdc91" size 25
+                text evidence_text(detail) xpos 520 ypos 290 size 23 xsize 535
+            else:
+                text "아직 모은 증거가 없다." xpos 520 ypos 80 size 24
+            textbutton "◀":
+                xpos 0 ypos 425 xsize 64
+                action SetScreenVariable("page_index",page_index-1)
+                sensitive page_index>0
+            text "[page_index+1] / [max(1,(len(inventory)+5)//6)]" xpos 85 ypos 440 size 23
+            textbutton "▶":
+                xpos 165 ypos 425 xsize 64
+                action SetScreenVariable("page_index",page_index+1)
+                sensitive (page_index+1)*6<len(inventory)
+            textbutton ("취소" if present else "닫기"):
+                xpos 280 ypos 425
+                action (Return("cancel") if present else Hide("evidence_book"))
+
+screen round_table():
+    zorder -1
+    for key,x,y in (("granny",170,405),("nabi",340,378),("buri",515,370),("doto",710,370),("seryeon",870,405),("neoul",1040,445),("karo",1160,460)):
+        add key + " world" at resident_world xpos x ypos y
+        # The full-body source is a distant resident, never reused as the close-up.
+    add Transform("bami world",zoom=0.47) xpos 1120 ypos 83
+    add "assets/table.png" at table_world
+
+screen council():
+    modal True
+    default input_ready = False
+    timer 0.3 action SetScreenVariable("input_ready",True)
+    add speaker + " neutral" at portrait_close
+    frame:
+        xpos 30 ypos 135 xsize 625 ysize 325
+        vbox:
+            spacing 17
+            text NAMES[speaker] size 27 color "#ffdc91"
+            text council_quote(speaker) size 28 xsize 565
+            if meeting_first:
+                text "한쪽 흔적만으로는 부족하다. 비교해 보자." size 21 color "#d8b568"
     hbox:
-        xpos 40 ypos 525 spacing 18
-        for key in inventory:
+        xpos 54 ypos 390 spacing 16
+        textbutton "되묻기" action Return(("press",speaker)) sensitive input_ready
+        textbutton "증거" action Return(("evidence",speaker)) sensitive input_ready
+    hbox:
+        xpos 25 ypos 540 spacing 8
+        for key in ("granny","nabi","buri","bami","doto","karo","neoul","seryeon"):
             button:
-                xsize 385 ysize 145
-                action Return(key)
+                xsize 145 ysize 115 padding (7,5)
+                background Solid("#765938f5" if key == speaker else "#211b17f5")
+                action Return(("speaker",key)) sensitive input_ready
                 vbox:
-                    spacing 12
-                    add EVIDENCE[key][2] at thumbnail xalign 0.5
-                    text EVIDENCE[key][0] size 22 xalign 0.5
+                    spacing 4
+                    add Transform(key + " neutral",size=(60,68)) xalign 0.5
+                    text NAMES[key] size 21 xalign 0.5
+    text "시각: [ '확인' if 'clock' in resolved_topics else '미확인' ]    주머니 접촉: [ '확인' if 'contact' in resolved_topics else '미확인' ]" xpos 30 ypos 677 size 21 color "#d5c29e"
+    textbutton "다시 추궁하기":
+        xpos 1000 ypos 665 xsize 250 text_size 23
+        action Return(("duel",None))
+        sensitive input_ready and "clock" in resolved_topics and "contact" in resolved_topics
+
+screen clock_compare():
+    modal True
+    add Solid("#160f0be8")
+    frame:
+        xpos 155 ypos 125 xsize 970 ysize 475
+        vbox:
+            spacing 20
+            text "밤이가 본 시계" size 33 color "#ffdc91"
+            hbox:
+                spacing 80
+                fixed:
+                    xsize 270 ysize 270
+                    add Transform("assets/clock-base.png",size=(270,270))
+                    add Transform("assets/clock-hands.png",size=(270,270),rotate=(180 if clock_rotated else 0),rotate_pad=False)
+                vbox:
+                    spacing 20 xsize 500
+                    text ("거꾸로 매달린 시선" if clock_rotated else "바닥에 선 우리의 시선") size 25
+                    text "밤이는 새벽 다섯 시에 잠든다.\n첫눈이 내릴 때 종은 열두 번 울렸다." size 23
+                    textbutton "시선을 뒤집기" action [ToggleVariable("clock_rotated"),SetVariable("clock_demonstrated",True)]
+                    textbutton "시각을 판단하기" action Return("choose") sensitive clock_demonstrated
+
+screen duel():
+    modal True
+    default input_ready = False
+    timer 0.3 action SetScreenVariable("input_ready",True)
+    add "seryeon distressed" at portrait_close
+    frame:
+        xpos 40 ypos 155 xsize 650
+        vbox:
+            spacing 22
+            text "세련의 반격" size 28 color "#ffbd76"
+            if showdown_issue == "place":
+                text "침대 밑 상자 뒤에 있던 쥐 때문에\n제 돈 이야기를 피하시는군요." size 29
+            elif showdown_issue == "movement":
+                text "방엔 갔습니다. 하지만 주머니를\n놓고 왔다고는 안 했어요." size 29
+            else:
+                text "봉하기 전엔 삼백 냥이었습니다.\n이백 냥은 할머니가 빼낸 거죠." size 29
+    hbox:
+        xpos 64 ypos 395 spacing 18
+        textbutton "되묻기" action Return("press") sensitive input_ready
+        textbutton "증거 제시" action Return("evidence") sensitive input_ready
 
 screen pause_menu():
     tag menu
     modal True
     zorder 50
     style_prefix "trial"
-    add Solid("#110d0aec")
+    add Solid("#110d0af5")
     frame:
-        xalign 0.5 yalign 0.5 xsize 650
+        xpos 270 ypos 90 xsize 740
         vbox:
-            spacing 18
-            text "잠깐 쉬어가기" size 36 color "#ffdc91"
+            spacing 13
+            text "잠깐 쉬어가기" size 34 color "#ffdc91"
             textbutton "돌아가기" action Return() xfill True
-            textbutton "저장" action ShowMenu("save") xfill True
-            textbutton "불러오기" action ShowMenu("load") xfill True
-            textbutton "음악 켜기 / 끄기" action Preference("music mute", "toggle") xfill True
+            hbox:
+                spacing 20
+                textbutton "저장" action ShowMenu("save") xsize 310
+                textbutton "불러오기" action ShowMenu("load") xsize 310
+            text "배경음" size 23
+            bar value Preference("music volume") xsize 640 ysize 30
+            textbutton ("배경음: 꺼짐" if _preferences.get_mute("music") else "배경음: 켜짐") action Preference("music mute","toggle") xfill True
+            text "타이핑 · 효과음" size 23
+            bar value Preference("sound volume") xsize 640 ysize 30
+            textbutton ("효과음: 꺼짐" if _preferences.get_mute("sfx") else "효과음: 켜짐") action Preference("sound mute","toggle") xfill True
             textbutton "처음 화면으로" action MainMenu(confirm=False) xfill True
 
 screen save():
     tag menu
     zorder 50
-    use file_slots("저장", True)
+    use file_slots("저장",True)
 
 screen load():
     tag menu
     zorder 50
-    use file_slots("불러오기", False)
+    use file_slots("불러오기",False)
 
-screen file_slots(title, saving):
+screen file_slots(title,saving):
     modal True
     style_prefix "trial"
-    add Solid("#110d0aec")
+    add Solid("#110d0af5")
     frame:
-        xalign 0.5 yalign 0.5 xsize 930
-        background Solid("#201b18f5")
+        xpos 170 ypos 110 xsize 940
         vbox:
             spacing 18
-            text title size 36 color "#ffdc91"
-            for slot in (1, 2, 3):
+            text title size 34 color "#ffdc91"
+            for slot in (1,2,3):
                 hbox:
                     spacing 20
                     add FileScreenshot(slot) xsize 192 ysize 108
                     button:
                         xsize 620 ysize 108
-                        action (FileSave(slot, confirm=False) if saving else FileLoad(slot, confirm=False))
+                        action (FileSave(slot,confirm=False) if saving else FileLoad(slot,confirm=False))
                         vbox:
                             spacing 8
                             text "슬롯 [slot]" color "#ffdc91"
-                            text FileTime(slot, format="%Y-%m-%d %H:%M", empty="비어 있음") size 23
+                            text FileTime(slot,format="%Y-%m-%d %H:%M",empty="비어 있음") size 22
             textbutton "돌아가기" action Return()
 
 screen trial_complete():
     modal True
     zorder 50
-    add Solid("#120e0ad9")
+    add Solid("#120e0aeb")
     frame:
-        xalign 0.5 yalign 0.5 xsize 930
+        xpos 140 ypos 180 xsize 1000
         vbox:
-            spacing 22
-            text "첫 모순을 찾았다" size 42 color "#ffdc91"
-            text "주머니와 솜솜의 접촉은 확인했다.\n누가 옮겼는지, 돈이 어디로 갔는지는 아직 남아 있다." size 28
-            text "이번 테스트는 여기까지입니다.\n증거를 제시하는 순서를 바꿔도 같은 추론으로 이어집니다." size 23 color "#c6b699"
+            spacing 23
+            text "열세 번째 침대" size 44 color "#ffdc91"
+            text "할머니의 누명은 벗겼다.\n하지만 그 침대에서 엄마가 누구를 기다렸는지는 남았다." size 28
+            text "작은 1장 끝" size 24 color "#c6b699"
             textbutton "다시 플레이" action Start()
             textbutton "처음 화면으로" action MainMenu(confirm=False)
 
 screen notify(message):
     zorder 100
     frame:
-        xalign 0.5 ypos 100
-        text message size 23
-    timer 2.5 action Hide("notify")
+        xalign 0.5 ypos 98
+        text message size 21
+    timer 2.2 action Hide("notify")
 
-screen confirm(message, yes_action, no_action):
+screen confirm(message,yes_action,no_action):
     modal True
     zorder 100
     add Solid("#000000bb")
@@ -276,3 +432,4 @@ screen confirm(message, yes_action, no_action):
 style trial_frame is frame
 style trial_button is button
 style trial_button_text is button_text
+style trial_bar is bar
