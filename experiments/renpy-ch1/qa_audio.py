@@ -1,4 +1,4 @@
-"""Verify actual WebAudio controls and review the six-location map with real UI input."""
+"""Verify actual WebAudio controls and the source seven-location map with real UI input."""
 import argparse
 import asyncio
 import json
@@ -6,7 +6,8 @@ import shutil
 from pathlib import Path
 
 from playwright.async_api import async_playwright
-from qa_web import AUDIO_PROBE, Trial
+from qa_web import AUDIO_PROBE
+from qa_source import SourceTrial
 
 
 async def main(args):
@@ -20,7 +21,7 @@ async def main(args):
         context = await browser.new_context(viewport={"width": 1280, "height": 720})
         await context.add_init_script(AUDIO_PROBE)
         page = await context.new_page()
-        trial = Trial(page, 1280, 720, output)
+        trial = SourceTrial(page, 1280, 720, output)
         await page.goto(args.url)
         await page.wait_for_function("typeof renpy_exec==='function'", timeout=60000)
         await trial.state()
@@ -42,31 +43,32 @@ async def main(args):
         await page.wait_for_timeout(700)
         assert (await trial.state())["music_mute"]
         signals = await page.evaluate("__probeAudio()")
-        assert signals and all(s["rms"] == 0 for s in signals)
+        await trial.shot("muted")
+        assert (await trial.state())["fx"] is None, "One-shot effect did not finish"
+        assert signals and all(s["rms"] < 1e-7 for s in signals)
         await trial.click(630, 400)
         await page.wait_for_timeout(900)
         assert not (await trial.state())["music_mute"]
         assert any(s["rms"] > 1e-5 for s in await page.evaluate("__probeAudio()"))
         await trial.click(450, 190)
         await trial.wait("menu", False)
-        await trial.advance_until("explore")
-        await trial.talk()
-        await trial.click(1090, 637)
-        await trial.advance_until("explore")
+        await trial.advance_until("roam")
         assert (await trial.state())["stage"] == "investigation"
-        await trial.click(882, 640)
+        await trial.click(842, 635)
         await trial.wait("map")
         await trial.shot("map")
         await trial.click(1072, 455)
-        await trial.wait("explore")
-        assert (await trial.state())["location"] == "room"
+        await trial.wait("roam")
+        assert (await trial.state())["location"] == "bed13"
+        await trial.interact(800,275)
         await trial.click(1038, 45)
         await trial.wait("evidence")
         await trial.shot("notebook")
         assert not trial.errors and not trial.failed and not trial.bad
         result = dict(volume_slider=True, mute_silences_output=True,
                       unmute_restores_output=True, active_typing_stops_in_menu=True,
-                      six_location_map_room_selection=True, errors=trial.errors,
+                      one_shot_effect_finishes=True,
+                      seven_location_map_room_selection=True, errors=trial.errors,
                       failed_requests=trial.failed, bad_responses=trial.bad)
         (output / "report.json").write_text(json.dumps(result, indent=2))
         print(json.dumps(result), flush=True)

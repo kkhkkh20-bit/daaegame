@@ -10,7 +10,7 @@ label change_scene(background, music=None):
     scene expression background with Dissolve(0.22)
     return
 
-label start:
+label condensed_start:
     $ inventory, inspected, visited, resolved_topics = [], [], [], []
     $ lamp_ready = somsom_found = archive_permission = archive_open = False
     $ case_resolved = mother_clue = test_complete = False
