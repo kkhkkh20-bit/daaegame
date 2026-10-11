@@ -257,13 +257,13 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  }catch(e){}}
  (function loop2(){tick();requestAnimationFrame(loop2)})();
 
- /* ===== 관찰 컷: 2층 복도 배치도(침대 세기 근거) ===== */
+ /* ===== 관찰 컷: 2층 침대 세기 메모(객실마다 침대 하나라는 뜻은 아님) ===== */
  function planSvg(){var r=[];var X=[60,106,152,198,244,290];
   function bed(x,y,n,cls){return '<g class="bed '+(cls||"")+'"><rect x="'+(x+8)+'" y="'+(y+8)+'" width="26" height="34" fill="#7A5534"/><rect x="'+(x+10)+'" y="'+(y+10)+'" width="22" height="8" fill="#EFE6D2"/><rect x="'+(x+10)+'" y="'+(y+19)+'" width="22" height="21" fill="#2F6672"/>'+(n?'<text class="bn" x="'+(x+21)+'" y="'+(y+34)+'" text-anchor="middle" style="transition-delay:'+(n*0.12).toFixed(2)+'s">'+n+'</text>':'')+'</g>'}
   r.push('<rect x="2" y="2" width="436" height="196" fill="#F6EEDA" stroke="#6B4A2B" stroke-width="4"/>');
-  r.push('<text class="pt" x="14" y="24">2층 복도</text>');
+  r.push('<text class="pt" x="14" y="24">2층 · 침대 세기</text>');
   r.push('<rect x="50" y="88" width="312" height="26" fill="#D9C49A"/>');
-  X.forEach(function(x,i){r.push('<rect x="'+x+'" y="36" width="42" height="50" fill="#E9DDBF" stroke="#6B4A2B" stroke-width="2"/>'+bed(x,36,i+1));r.push('<rect x="'+x+'" y="116" width="42" height="50" fill="#E9DDBF" stroke="#6B4A2B" stroke-width="2"/>'+bed(x,116,i+7))});
+  X.forEach(function(x,i){r.push(bed(x,36,i+1));r.push(bed(x,116,i+7))});
   r.push('<g><rect x="18" y="86" width="32" height="30" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2,3].map(function(k){return '<rect x="'+(22+k*7)+'" y="88" width="2" height="26" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="34" y="132" text-anchor="middle">앞 계단</text></g>');
   r.push('<g class="far"><rect x="336" y="88" width="26" height="76" fill="#D9C49A"/>'+
    '<g class="clk"><circle cx="376" cy="100" r="11" fill="#F2E6C8" stroke="#3B2A1E" stroke-width="3"/><rect x="375" y="92" width="2" height="9" fill="#3B2A1E"/><rect x="376" y="99" width="6" height="2" fill="#3B2A1E"/><text class="lb" x="392" y="80" text-anchor="middle">벽시계</text></g>'+
@@ -271,7 +271,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    '<g><rect x="366" y="140" width="66" height="54" fill="#E9DDBF" stroke="#6B4A2B" stroke-width="2"/><g class="b13">'+bed(380,146,0)+'<text class="bn n13" x="401" y="180" text-anchor="middle"></text></g>'+
    '<rect class="dopen" x="362" y="150" width="6" height="26" fill="#8A5E36"/><rect class="dshut" x="366" y="140" width="66" height="54" fill="#8A5E36" stroke="#6B4A2B" stroke-width="2"/><text class="lb" x="399" y="136" text-anchor="middle">안 쓰는 방</text></g>'+
    '<g><rect x="336" y="166" width="26" height="28" fill="#BFA77A" stroke="#6B4A2B" stroke-width="2"/>'+[0,1,2].map(function(k){return '<rect x="338" y="'+(170+k*8)+'" width="22" height="2" fill="#6B4A2B"/>'}).join("")+'<text class="lb" x="330" y="186" text-anchor="end">부엌 계단</text></g></g>');
-  return '<svg viewBox="0 0 440 200" shape-rendering="crispEdges" role="img" aria-label="2층 복도 배치도: 양쪽 방에 침대 열둘, 꺾인 끝 안 쓰는 방에 침대 하나 더">'+r.join("")+'</svg>'}
+  return '<svg viewBox="0 0 440 200" shape-rendering="crispEdges" role="img" aria-label="2층 침대 세기 메모: 손님용 침대 열둘, 꺾인 끝 안 쓰는 방에 침대 하나 더">'+r.join("")+'</svg>'}
  var CUT=[{re:/^하나, 둘, 셋… 열하나, 열둘\.$/,s:1},{re:/벽시계 앞에서 한 번 꺾인다/,s:2},{re:/^열셋\. 할머니/,s:3},{re:/^거긴 (창고|지금은 안 쓰는 방)/,s:3},{re:/^짐 풀고 내려와요/,s:4}];
  var CUT2=[];   /* 2026-10-10 v2: 찻주전자 장면 삭제. 침대 밑 발견 컷은 그림 도착 뒤(GPT 의뢰서 C) */   /* 2026-10-10: 조사 중 찻주전자 발견(대사가 문장 단위로 나뉘어 표시됨) */
  var cut2El=null;
