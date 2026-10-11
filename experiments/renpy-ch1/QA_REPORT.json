@@ -1,12 +1,16 @@
 {
   "engine": "RenPy 8.5.3.26051504",
+  "version": "0.2.0",
   "tested_at_utc": "2026-10-11",
   "browser": "Chromium, software WebGL; desktop mouse and emulated mobile touch",
+  "full_run_game_zip_sha256": "1ff2ae4e1a11744ddafd7750b7dcb6f7d1a8efb386d52230c51f290164105e06",
+  "release_game_zip_sha256": "d3cd227382dba9fae019a0cb2ceaf9add3c2df861bff88ef780dc6295fd8be3f",
+  "post_full_run_change": "Only village-map button padding, spacing and pin size to keep the room name on one line; final map/audio UI check recorded separately. Story, investigation, meeting, showdown and save logic unchanged.",
   "limitations": [
     "Not a physical iPhone/Safari test",
-    "Not a listening evaluation",
+    "Not a human listening evaluation",
     "No character voice files",
-    "Bounded prototype, not full chapter migration"
+    "Condensed chapter adaptation, not full original-script migration"
   ],
   "runs": [
     {
@@ -14,42 +18,110 @@
         1280,
         720
       ],
+      "touch": false,
       "reverse_evidence": false,
-      "startup_seconds_local": 3.49,
+      "startup_seconds_local": 3.99,
+      "checks": [
+        "music_output_and_typing",
+        "early_click_does_not_investigate",
+        "discovery_waits_for_reason_and_lamp",
+        "incomplete_council_blocked",
+        "duplicate_evidence_prevented",
+        "wrong_lock_code_stays_locked",
+        "reload_restores_investigation_and_lock",
+        "eight_residents_selectable",
+        "mid_comparison_save_restores",
+        "overclaim_does_not_solve_case",
+        "contact_evidence_both_orders",
+        "clock_viewpoint_reasoning",
+        "corrected_witness_updates_notebook",
+        "gambling_is_not_proof_of_amount",
+        "complete_case_before_confession"
+      ],
       "final": {
         "stage": "complete",
+        "location": "front",
         "inventory": [
+          "seal",
           "pouch",
+          "flour",
+          "kitchen",
+          "registry",
+          "record",
           "fur",
-          "flour"
+          "clock",
+          "bami",
+          "snow",
+          "karo"
         ],
         "inspected": [
-          "pouch",
-          "fur",
-          "flour"
+          "granny_arrival",
+          "nabi_arrival",
+          "night_bami",
+          "head_date"
         ],
-        "first": "pouch",
-        "proved": true,
-        "wrong": 1,
+        "visited": [
+          "front",
+          "kitchen",
+          "plaza",
+          "room",
+          "hall",
+          "doto"
+        ],
+        "lamp": true,
+        "found": true,
+        "permission": true,
+        "archive": true,
+        "speaker": "nabi",
+        "first": null,
+        "topic": null,
+        "resolved": [
+          "contact",
+          "clock",
+          "quilt"
+        ],
+        "showdown": "money",
+        "wrong": 2,
         "conclusion_attempts": 1,
         "complete": true,
-        "music": "assets/meeting.mp3",
+        "case_resolved": true,
+        "mother": true,
+        "music": null,
+        "music_position": null,
+        "typing": null,
+        "music_volume": 0.31622776601683794,
+        "music_mute": false,
+        "explore": false,
+        "map": false,
+        "council": false,
+        "duel": false,
+        "code": false,
+        "digits": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "code_error": false,
+        "clock_demo": false,
+        "rotated": true,
+        "clock_done": true,
+        "choice": false,
+        "evidence": false,
         "menu": false,
-        "evidence_open": false,
         "saving": false,
         "loading": false,
-        "investigation_open": false,
-        "testimony_open": false,
-        "choice_open": false,
-        "completed_open": true,
-        "investigation_ready": null,
+        "completion": true,
+        "input_ready": null,
         "saved_slots": [
           "1-1",
           "auto-1",
           "auto-2",
-          "auto-3"
-        ],
-        "music_position": 21.797
+          "auto-3",
+          "auto-4",
+          "auto-5",
+          "auto-6"
+        ]
       },
       "errors": [],
       "failed_requests": [],
@@ -60,52 +132,126 @@
         844,
         390
       ],
+      "touch": true,
       "reverse_evidence": true,
-      "startup_seconds_local": 3.48,
+      "startup_seconds_local": 4.01,
+      "checks": [
+        "music_output_and_typing",
+        "early_click_does_not_investigate",
+        "discovery_waits_for_reason_and_lamp",
+        "incomplete_council_blocked",
+        "wrong_lock_code_stays_locked",
+        "reload_restores_investigation_and_lock",
+        "discovery_without_fixed_primary_evidence_order",
+        "duplicate_evidence_prevented",
+        "eight_residents_selectable",
+        "mid_comparison_save_restores",
+        "overclaim_does_not_solve_case",
+        "contact_evidence_both_orders",
+        "clock_viewpoint_reasoning",
+        "corrected_witness_updates_notebook",
+        "gambling_is_not_proof_of_amount",
+        "complete_case_before_confession"
+      ],
       "final": {
         "stage": "complete",
+        "location": "front",
         "inventory": [
+          "seal",
+          "clock",
+          "bami",
+          "snow",
+          "kitchen",
+          "registry",
+          "record",
           "fur",
           "pouch",
-          "flour"
+          "flour",
+          "karo"
         ],
         "inspected": [
-          "fur",
-          "pouch",
-          "flour"
+          "granny_arrival",
+          "nabi_arrival",
+          "night_bami",
+          "head_date"
         ],
-        "first": "fur",
-        "proved": true,
-        "wrong": 1,
+        "visited": [
+          "front",
+          "kitchen",
+          "plaza",
+          "room",
+          "hall",
+          "doto"
+        ],
+        "lamp": true,
+        "found": true,
+        "permission": true,
+        "archive": true,
+        "speaker": "nabi",
+        "first": null,
+        "topic": null,
+        "resolved": [
+          "contact",
+          "clock",
+          "quilt"
+        ],
+        "showdown": "money",
+        "wrong": 2,
         "conclusion_attempts": 1,
         "complete": true,
-        "music": "assets/meeting.mp3",
+        "case_resolved": true,
+        "mother": true,
+        "music": null,
+        "music_position": null,
+        "typing": null,
+        "music_volume": 0.31622776601683794,
+        "music_mute": false,
+        "explore": false,
+        "map": false,
+        "council": false,
+        "duel": false,
+        "code": false,
+        "digits": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "code_error": false,
+        "clock_demo": false,
+        "rotated": true,
+        "clock_done": true,
+        "choice": false,
+        "evidence": false,
         "menu": false,
-        "evidence_open": false,
         "saving": false,
         "loading": false,
-        "investigation_open": false,
-        "testimony_open": false,
-        "choice_open": false,
-        "completed_open": true,
-        "investigation_ready": null,
+        "completion": true,
+        "input_ready": null,
         "saved_slots": [
           "1-1",
           "auto-1",
           "auto-2",
-          "auto-3"
-        ],
-        "music_position": 20.651
+          "auto-3",
+          "auto-4",
+          "auto-5",
+          "auto-6"
+        ]
       },
       "errors": [],
       "failed_requests": [],
       "bad_responses": []
     }
   ],
-  "preserved_files": {
-    "index.html": "7ad4edbd5fb77441f284efea2e362387e4cde990254a6e469850a422c881db21",
-    "preview/ch1-gpt-20261008/play.html": "282d91830133decc8fd703ed4ca974e76e64da69cd354cd49ed29c9ef233fbe5",
-    "preview/ch1-gpt-20261008/play_v2.html": "c3f9173cd118a72749ea4580da533289a65029ae5e235badc3e5f1f49b8d4e49",
-    "preview/ch1-gpt-20261008/v2.html": "f183c0bf238144c600bcebebd4638da679bba95d5dfc4f64369fe46d7682f41f"
+  "total_web_bytes": 90346963,
+  "release_ui_checks": {
+    "volume_slider": true,
+    "mute_silences_output": true,
+    "unmute_restores_output": true,
+    "active_typing_stops_in_menu": true,
+    "six_location_map_room_selection": true,
+    "errors": [],
+    "failed_requests": [],
+    "bad_responses": []
   }
 }
