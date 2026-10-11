@@ -19,7 +19,7 @@ screen source_explore():
         add Transform("assets/flour-world.png",size=(64,53)) xpos 590 ypos 337
         add Transform(Crop((880,550,365,150),"assets/chest.png"),size=(150,62)) xpos 659 ypos 443
         if not source_found:
-            add Transform(Crop((802,490,110,80),"assets/somsom.png"),size=(27,19),alpha=.23) xpos 828 ypos 480
+            add Transform(Crop((802,490,110,80),"assets/somsom-hidden-source.png"),size=(27,19),alpha=.23) xpos 828 ypos 480
         for rect,action in [((680,215,310,115),("spot","bag")),((563,331,150,97),("spot","quilt")),((550,500,345,87),("under",None)),((620,170,325,62),("head",None)),((655,406,158,93),("chest",None))]:
             button:
                 xpos rect[0] ypos rect[1] xsize rect[2] ysize rect[3]

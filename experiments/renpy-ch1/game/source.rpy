@@ -1,4 +1,4 @@
-# Executes the shipped v2 dialogue data. No rewritten dialogue is used here.
+# Shared case interpreter. Original v2 snapshot stays intact; 0.4 has an authored village opening.
 default source_mode = False
 default source_inventory = []
 default source_seen = []
@@ -93,7 +93,7 @@ init 10 python:
             mood=""
         elif person in CAST:
             store.source_stage_person=person
-        if person not in CAST or store.source_camera!="stage" or store.source_night or store.source_proof_show:
+        if person not in CAST or store.source_camera not in ("stage","courtyard") or store.source_night or store.source_proof_show:
             renpy.hide("visitor")
             return
         face=("distressed" if mood in ("sad","shock","nervous","worried","cower") else
@@ -110,7 +110,7 @@ init 10 python:
         return {"bed13":"bg room","dining":"bg council","kitchen":"bg kitchen"}.get(key,"bg front")
 
     def source_picture():
-        pictures={"carriage":"assets/carriage.png","driver":SOURCE_PATHS["art/ch1/cinematics/carriage-driver-close.png"],"approach":"assets/approach.png","village":SOURCE_PATHS["art/ch1/cinematics/village-arrival-wide.png"],"postoffice":"assets/post-office.png","innentrance":"assets/inn-door.png","seal":"assets/pouch.png"}
+        pictures={"carriage":"assets/carriage.png","driver":SOURCE_PATHS["art/ch1/cinematics/carriage-driver-close.png"],"approach":"assets/approach.png","village":SOURCE_PATHS["art/ch1/cinematics/village-arrival-wide.png"],"postoffice":"assets/post-office.png","innentrance":"assets/inn-door.png","courtyard":"assets/inn-door.png","seal":"assets/pouch.png"}
         if store.source_camera in pictures: return Transform(pictures[store.source_camera],size=(1280,720))
         if store.source_night in ("home","return"): return source_bg("room")
         return source_bg(store.source_background)
@@ -140,6 +140,7 @@ init 10 python:
           inventory=list(store.source_inventory),seen=list(store.source_seen),found=store.source_found,permission=store.source_permission,complete=store.source_complete,
           line=store.source_current_line,text=store.source_shown_text,scene=store.source_scene,camera=store.source_camera,night=store.source_night,effects=list(store.source_effect_log),lines=list(store.source_line_log),
           music=renpy.music.get_playing(),typing=renpy.music.get_playing(channel="typing"),pulse=renpy.music.get_playing(channel="pulse"),fx=renpy.music.get_playing(channel="scene_fx"),
+          village_map=opened("arrival_map"),village_place=opened("arrival_place"),village_location=store.arrival_location,met=list(store.arrival_met),village_seen=list(store.arrival_seen),post_closed=store.arrival_post_closed,stone=store.arrival_stone,
           roam=opened("source_explore"),map=opened("source_map"),questions=opened("source_questions"),evidence=opened("source_evidence"),debate=opened("source_debate"),choice=opened("source_choice"),inspect=opened("source_inspect"),code=opened("chest_lock"),complete_screen=opened("trial_complete"),saving=opened("save"),loading=opened("load"),exception=opened("_exception"))
 
     def source_pause_effects():
@@ -154,11 +155,14 @@ label start:
     $ source_inventory, source_seen, source_flags = [], [], []
     $ source_effect_log, source_line_log = [], []
     $ source_found = source_permission = source_complete = source_started_meeting = False
+    $ arrival_met, arrival_seen, arrival_greeted = [], [], []
+    $ arrival_post_closed = arrival_stone = False
+    $ arrival_location = None
     $ source_group, source_phase, source_statement, source_step = "meet",0,0,0
     $ stage = "opening"
     show screen hud
     show screen source_world
-    call source_scenes(SOURCE_EP["PRO"])
+    call arrival_prologue
     $ source_location, stage = "bed13", "investigation"
     jump source_roam
 
@@ -202,6 +206,10 @@ label source_direction(direction):
         $ source_stage_person = SOURCE_ALIAS.get(source_dir["who"],source_dir["who"])
     if source_dir.get("sfx"):
         $ source_fx(source_dir["sfx"])
+    if source_dir.get("stone"):
+        show screen arrival_stone_glow
+        $ renpy.pause(.8,hard=True)
+        hide screen arrival_stone_glow
     if source_dir.get("chime"):
         $ source_fx("found")
     if source_dir.get("ms"):
@@ -381,7 +389,10 @@ label source_talk:
     if _return == "back":
         jump source_roam
     $ source_question = _return
-    call source_lines(source_question["lines"],source_question["id"])
+    if source_person in arrival_met and source_person not in arrival_greeted and source_person in ARRIVAL["recognition"]:
+        call source_lines(ARRIVAL["recognition"][source_person],"V_RECOGNITION_"+source_person)
+        $ arrival_greeted.append(source_person)
+    call source_lines(arrival_question_lines(source_question),source_question["id"])
     if source_question.get("ev"):
         $ source_grant(source_question["id"])
     if source_question.get("sets"):

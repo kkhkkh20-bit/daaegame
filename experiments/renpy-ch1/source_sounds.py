@@ -11,6 +11,20 @@ from pathlib import Path
 
 RATE = 22050
 
+def render_typing(path):
+    """Audible soft, short taps with silence between them, never a sustained tone."""
+    rng = random.Random(20261011)
+    samples = []
+    for frequency in (680, 740, 700, 770):
+        for i in range(int(.072*RATE)):
+            t = i/RATE
+            env = min(1,t/.0015)*math.exp(-t/.006) if t<.030 else 0
+            value = env*(.16*math.sin(2*math.pi*frequency*t)+.045*(rng.random()*2-1))
+            samples.append(round(max(-.22,min(.22,value))*32767))
+    with wave.open(str(path),'wb') as file:
+        file.setnchannels(1);file.setsampwidth(2);file.setframerate(RATE)
+        file.writeframes(b''.join(struct.pack('<h',s) for s in samples))
+
 def render(destination):
     rng = random.Random(20261011)
     recipes = {

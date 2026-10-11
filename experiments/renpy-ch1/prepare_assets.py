@@ -1,10 +1,9 @@
-"""Copy existing approved assets without modifying image/audio originals."""
+"""Copy originals plus the two explicitly requested Ren'Py art revisions."""
 from pathlib import Path
 import hashlib
 import json
 import shutil
-import subprocess
-from source_sounds import render as render_source_sounds
+from source_sounds import render as render_source_sounds, render_typing
 from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parent
@@ -37,6 +36,7 @@ FILES = {
     "clock-hands.png": "art/ch1/closeup/wall-clock-exact-overlay-512.png",
     "seal.png": "art/ch1/closeup/I1-seal-strip-complete-512.png",
     "fur-stamp.png": "art/ch1/closeup/dormouse-flank-exact-overlay-512.png",
+    "somsom-hidden-source.png": "art/ch1/discovery/somsom-held.png",
     "contract.png": "art/ch1/closeup/I1-contract-front-complete-512.png",
     "family.png": "art/ch1/dialogue-v2/family.png",
     "inn.png": "art/ch1/dialogue-v2/inn.png",
@@ -60,9 +60,12 @@ FILES = {
 }
 for icon in ("evidence", "save", "menu", "back", "present", "investigate", "record", "move", "talk", "press", "sound-on", "sound-off", "lock", "notebook"):
     FILES[f"{icon}.png"] = f"art/icons/{icon}.png"
+for name in ("inn", "post-office", "plaza-fountain", "signpost", "bench"):
+    FILES[f"map-{name}.png"] = f"art/worldmap/{name}.png"
 
 def main():
     TARGET.mkdir(parents=True, exist_ok=True)
+    (TARGET / "fur-base.png").unlink(missing_ok=True) # Obsolete golden-fur test copy.
     manifest = {}
     for name, relative in FILES.items():
         src, dest = SOURCE / relative, TARGET / name
@@ -70,6 +73,12 @@ def main():
         digest = hashlib.sha256(src.read_bytes()).hexdigest()
         assert digest == hashlib.sha256(dest.read_bytes()).hexdigest()
         manifest[name] = {"source": relative, "sha256": digest}
+    for name, revision in {"pouch.png":"pouch-no-hand.png", "somsom.png":"somsom-gentle.png"}.items():
+        src = ROOT / "art" / revision
+        shutil.copyfile(src, TARGET / name)
+        manifest[name] = {"source":"experiments/renpy-ch1/art/"+revision,
+            "original":FILES[name], "approval":"User explicitly requested hand removal and a beautiful squirrel-paw discovery scene.",
+            "generation":"image_gen reference-image edit, 2026-10-11", "sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
     cast = {}
     aliases = {"det1": "daram", "det0": "dad", "innma": "granny", "geokkuri": "bami", "wanggu": "neoul"}
     for atlas in ("family", "inn", "friends", "scholars", "witnesses"):
@@ -88,7 +97,7 @@ def main():
                  ('carriage-driver-close.png','village-arrival-wide.png'))
     paths.add('audio/v3/sfx/wood-door-close.wav')
     source_map={}
-    existing={relative:name for name,relative in FILES.items()}
+    existing={relative:name for name,relative in FILES.items() if name!="somsom-hidden-source.png"}
     for generated in TARGET.glob('source-*'):
         generated.unlink()
     for relative in sorted(paths):
@@ -112,14 +121,10 @@ def main():
             manifest[dest.name]={'source':'dev/wip-v2/inn_audio.js',
                 'adaptation':'Offline procedural PCM reconstruction; same cue, bounded gain. Not a recording or byte-identical WebAudio output.',
                 'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()}
-    # A quiet wooden text tick, adapted from our attributed door recording.
-    # No live speech synthesis or replacement of the music originals.
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.12", "-t", "0.032", "-i",
-                    str(SOURCE / "audio/v3/sfx/wood-door-close.wav"), "-af",
-                    "highpass=f=700,lowpass=f=2600,afade=t=in:d=0.004,afade=t=out:st=0.016:d=0.016,volume=0.3,apad=whole_dur=0.095",
-                    "-t", "0.095", str(TARGET / "type.wav")], check=True)
-    manifest["type.wav"] = {"source": "audio/v3/sfx/wood-door-close.wav", "adaptation": "32 ms wooden excerpt; bandpass, fades, gain and 95 ms loop padding; CC BY 3.0 bennstir"}
-    # Font format conversion only; all PNGs and MP3s remain byte-for-byte copies.
+    render_typing(TARGET / "type.wav")
+    manifest["type.wav"] = {"source":"experiments/renpy-ch1/source_sounds.py",
+        "adaptation":"Original deterministic soft text tick; four gently varied 30 ms taps per loop, peak bounded to 0.22; no external samples."}
+    # Font format conversion; unchanged assets retain their original hashes.
     font = TTFont(SOURCE / "art/ui/galmuri11.woff2")
     font.flavor = None
     font.save(TARGET / "Galmuri11.ttf")
