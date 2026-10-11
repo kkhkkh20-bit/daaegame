@@ -55,7 +55,7 @@
    [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|당연하죠\. 그게 똑바론데요/, 'inn_comic'],
    [/어서 와요\. 추웠지|우선 들어와요|아빠처럼 탐정 할래|잘 자, 다람|수건은 네가 차지해요|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
    [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고(?:…|,)?\s*숨|^바구니랑 수건 좀 빌려|누가 죽었대요|낮게 수군|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
-   [/어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
+   [/밤에는 늘 그 자리에|어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
   ];
   function contextMusic(fallback,scope){
    if(M.ctxScope!==scope){M.ctxScope=scope;M.ctxKey=fallback;M.ctxLine=null}
@@ -69,7 +69,7 @@
   /* 솜솜 발견: 털을 알아본 순간 음악을 끊고 한 호흡 정적 → 낮은 두 박 심장음.
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
   var TENSE={on:false,k:0,gen:0,nul:0};
-  var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
+  var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^아빠… 위에 눈이…/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^안 놓아\. 같이 가자/;
   function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0;retireBus(TENSE.bus);TENSE.bus=null}
   function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!sameScope(TENSE.owner)||blocked()){tenseStop();return}
     if(AC&&AC.state==="running"&&S.sound){if(!TENSE.bus)TENSE.bus=scopedBus();var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,TENSE.bus,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),TENSE.bus,38);noise(.06,v*.25,0,160,"lowpass",TENSE.bus);TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}

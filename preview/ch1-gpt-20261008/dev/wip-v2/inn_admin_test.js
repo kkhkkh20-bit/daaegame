@@ -6,7 +6,7 @@
  var ep=window.EP1INN,panel=null,opener=null,busy=false;
  var RETURN='inn-admin-return-url',PREFIX='daae-preview-ch1-gpt-20261008-admin-test:';
  var entries=[
-  {id:'cold',group:'스토리',name:'오프닝',note:'자정의 기척부터',icon:'moon'},
+  {id:'cold',group:'스토리',name:'오프닝',note:'아빠와 다람의 여행부터',icon:'book'},
   {id:'carriage',group:'스토리',name:'마차 · 마을',note:'엄마의 편지를 따라오는 길',icon:'book',sid:'P1'},
   {id:'welcome',group:'스토리',name:'여관 첫 만남',note:'엄마 사진과 할머니의 반응',icon:'door',sid:'P3'},
   {id:'night',group:'스토리',name:'밤 복도',note:'문 밑 빛 · 밤이 등장',icon:'moon',sid:'P10b'},

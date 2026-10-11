@@ -131,7 +131,7 @@ def main():
                     seal_seen=True
                     if not screen_taken:
                         page.screenshot(path=str(output/f'P13-seal-{viewport["width"]}x{viewport["height"]}.png'));screen_taken=True
-                if s['text'].startswith('너울이 봉인띠를 자르고'):
+                if s['text'].startswith('봉인띠를 자르겠습니다'):
                     cut_seen=True
                     assert p['camera']=='stage' and p['cut'] is None,'Intact seal picture survives its opening action'
                 if cut_seen:assert p['cut'] is None,'Intact seal returns after it was opened'
