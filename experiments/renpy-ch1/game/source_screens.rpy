@@ -183,4 +183,3 @@ screen source_proof():
                     spacing 14 xsize 470
                     add Transform(SOURCE_ICONS[key],size=(450,310),fit="contain")
                     text SOURCE_EP["EV"][key]["name"] size 22 color "#ffdc91"
-
