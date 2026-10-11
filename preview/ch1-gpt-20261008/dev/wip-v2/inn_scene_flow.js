@@ -10,6 +10,10 @@
   return cache[src]=new Promise(function(resolve){var im=new Image();im.onerror=function(){delete cache[src];resolve(false)};im.onload=function(){Promise.resolve(im.decode?im.decode():null).then(function(){resolve(true)},function(){delete cache[src];resolve(false)})};im.src=src});
  }
  function reset(){serial++;flow=null;if(veil)veil.remove();veil=null;document.body.classList.remove('inn-scene-black')}
+ function darken(f){
+  if(veil)veil.remove();veil=document.createElement('div');veil.id='inn-scene-black';veil.setAttribute('aria-hidden','true');document.body.appendChild(veil);document.body.classList.add('inn-scene-black');
+  f.black=true;f.revealAt=null;f.audioAt=null;f.audioClock=null;f.bypass=null;f.enteredAt=performance.now();prepare(f);
+ }
  function audioTick(){try{__AUD.tick()}catch(e){}}
  function prepare(f){
   var b=window.__innBg&&window.__innBg();
@@ -39,10 +43,9 @@
  window.__innSceneFlowBegin=function(owner){
   reset();if(!owner||!owner.scene||!owner.scene.music)return;
   var f=flow={owner:owner,game:owner.game,sid:owner.sid,key:owner.key,music:owner.scene.music,black:true,token:++serial,enteredAt:performance.now()};
-  veil=document.createElement('div');veil.id='inn-scene-black';veil.setAttribute('aria-hidden','true');document.body.appendChild(veil);document.body.classList.add('inn-scene-black');
-  prepare(f);audioTick();requestAnimationFrame(function(){poll(f)});
+  darken(f);audioTick();requestAnimationFrame(function(){poll(f)});
  };
- window.__innSceneFlowDirection=function(d){if(flow&&alive(flow)&&Object.prototype.hasOwnProperty.call(d,'music')){flow.music=d.music;audioTick()}};
+ window.__innSceneFlowDirection=function(d){if(!flow||!alive(flow))return;if(Object.prototype.hasOwnProperty.call(d,'music'))flow.music=d.music;if(d.transition)darken(flow);audioTick()};
  window.__innAuthoredMusic=function(){return flow&&alive(flow)?{key:flow.music,black:flow.black,owner:flow.key}:null};
  window.__innSceneFlowState=function(){return flow&&alive(flow)?{sid:flow.sid,owner:flow.key,music:flow.music,black:flow.black,settled:!veil,revealAt:flow.revealAt,audioAt:flow.audioAt,audioClock:flow.audioClock,bypass:flow.bypass,assets:flow.assets,failed:flow.failed}:null};
  window.__innSceneFlowReset=reset;

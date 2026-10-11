@@ -31,8 +31,12 @@
    FL("det0","엄마가 여기서 부쳤어."),
    FL("det1","엄마를 기억하는 사람도 있겠다!","smile"),
    FL("det0","우체국부터 가 보자."),
+   D({camera:"approach",who:"none",music:"inn_travel",transition:true,ms:950}),
+   FL("det1","아빠, 창밖 봐. 마을이다!","smile"),
+   FL("det0","다 왔나 보다."),
+   FL("det1","집들이 산속에 꼭 붙어 있네."),
    D({"sfx": "carStop", "ms": 380}),
-   D({who:"karo",music:"inn_travel",chime:1,ms:380}),
+   D({camera:"driver",who:"karo",music:"inn_travel",transition:true,chime:1,ms:380}),
    FL("karo","골짜기 마을입니다. 짐 챙기세요."),
    FL("det0","돌아가는 마차는 언제 출발합니까?"),
    FL("karo","내일 정오요. 올해 마지막 마차입니다."),
@@ -42,16 +46,21 @@
   /* P2 마을 입구 광장 */
   SID("P2",B("plaza","det1",S("front","마을 입구, 광장","첫날 저녁",[
    D({"who": "det1", "chime": 1, "ms": 380}),
+   FL("det1","아빠, 손 놓지 마. 길이 울퉁불퉁해."),
+   FL("det0","천천히 가자."),
+   D({camera:"postoffice",who:"none",transition:true,sfx:"steps",ms:650}),
    FL("det1","아빠, 우체국 문 닫혔어."),
    FL("det0","아침에 다시 오자."),
    FL("det1","그럼 오늘은 어디서 자?"),
    FL("det0","여관부터 찾아보자."),
-   FL("det1","저기, 겨울잠 여관이다!"),
+   D({camera:"village",who:"none",transition:true,sfx:"steps",ms:650}),
+   FL("det1","저기, 언덕 위에 불 켜진 집!"),
+   D({camera:"innentrance",who:"none",transition:true,sfx:"steps",ms:900}),
+   FL("det1","겨울잠 여관이다. 안은 따뜻하겠지?"),
    FL("det0","들어가 보자."),
-   D({"who": "none", "ms": 300}),
-   D({"sfx": "steps", "ms": 420})]))),
+   D({who:"none",sfx:"knock",ms:650})]))),
   /* P3 여관 현관 안 */
-  SID("P3",B("reception","innma",S("front","여관 현관","첫날 저녁",[D({sfx:"knock",ms:650}),D({sfx:"doorOpen",ms:550}),D({sfx:"door",ms:450}),
+  SID("P3",B("reception","innma",S("front","겨울잠 여관 입구","첫날 저녁",[D({who:"none",sfx:"doorOpen",ms:550}),D({camera:"stage",who:"none",transition:true,sfx:"door",ms:450}),
    D({"who": "innma", "chime": 1, "ms": 380}),
    FL("innma","어서 와요. 추웠지?","smile"),
    FL("det0","하룻밤 묵을 수 있을까요?"),
@@ -224,3 +233,4 @@
  ];
 
  EP.PRO.forEach(function(s){s.music=({P1:"inn_family",P2:"inn_travel",P3:"inn_friend",P5:"inn_night",P10:"inn_serious",P10b:"inn_night",P11:"inn_search",P12:"inn_search",P13:"inn_search"})[s.sid]||"inn_inv"});
+ EP.PRO.forEach(function(s){if(s.sid==="P3")s.camera="innentrance"});

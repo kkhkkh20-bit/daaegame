@@ -3,6 +3,8 @@
 (function(){
  var style=document.createElement('style');style.id='inn-polish-v1';
  style.textContent=`
+ html,body{background-color:var(--inn-walnut)!important;background-image:none!important}
+ #innmain{background:var(--inn-walnut)!important}
  #innmain .kv:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,22,21,.52),transparent 34%,transparent 64%,rgba(18,15,12,.88))}
  #innmain .tt{top:22px!important}#innmain .tt small{color:#dcc697!important;letter-spacing:.23em!important;font-size:11px!important}
  #innmain .tt h1{font-size:clamp(30px,5vw,45px)!important;letter-spacing:.06em!important;color:#fff3d6!important;text-shadow:0 3px 0 #21180f!important}
@@ -35,9 +37,9 @@
  html body.w209.inn1 .crec2 .crtab2 button{border-image:none!important;border-width:1px!important;box-shadow:inset 0 -2px #29271f!important;text-shadow:none!important}
  html body.w209.inn1 .crec2 .cr-det .cr-tx .minib{background:#4b5c4a!important;border-color:#7a8b6a!important;color:#fff2d5!important}
  html body.w209.inn1 .crec2 [data-cr199=meet]{background:#7e3f39!important;border-color:#b67254!important;color:#fff2d5!important;border-radius:3px!important}
- #innopt{color:#f1e4c8!important}#innopt .bg:after{background:rgba(28,29,23,.91)!important}
+ #innopt{color:var(--inn-paper)!important}#innopt .bg:after{background:rgba(33,27,22,.94)!important}
  #innopt .hd{border-color:#82734f!important}#innopt .sep{background:#82734f!important}
- #innopt .grp button,#innopt .x{background:#3b3d31!important;color:#f1e4c8!important;border-color:#9f8b5e!important}
+ #innopt .grp button,#innopt .x{background:var(--inn-wood)!important;color:var(--inn-paper)!important;border-color:var(--inn-brass)!important}
  #innopt .grp button[aria-checked=true]{background:#ead6a5!important;color:#392e23!important;border-color:#d4b778!important;box-shadow:inset 0 -3px #b3945b!important}
  #innopt .sv{background:#ead6a5!important;color:#392e23!important;border-color:#d4b778!important}
  #innopt input[type=range]{accent-color:#d4b778;background:linear-gradient(90deg,#c5a96c var(--p),#545549 var(--p))!important}

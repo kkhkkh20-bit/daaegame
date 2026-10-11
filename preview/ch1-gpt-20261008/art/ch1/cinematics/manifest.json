@@ -2,7 +2,7 @@
   "created": "2026-10-10",
   "authorization": "User requested full illustrations at key story moments, stronger prologue/village staging and a closer carriage shot of Daram.",
   "method": "image_gen edits of inspected approved references; generated originals copied unchanged.",
-  "facts": "Only existing father/daughter, village arrival and unopened sealed pouch shown. No invented mother face, coins, culprit, injuries or new evidence.",
+  "facts": "Only existing father/daughter, village arrival and unopened sealed pouch shown. No invented mother face, coins, culprit, injuries or new evidence. New 2026-10-11 environments show only the arrival route, closed post office, and inn exterior already motivated by the opening. No invented clues or characters.",
   "assets": [
     {
       "file": "carriage-family-close.png",
@@ -42,6 +42,51 @@
       ],
       "sha256": "062c904c4daada88f0978d508ed82fc09e7f2610d8e1dfb7bddae333fc33558d",
       "refinement": "Mouth pinched shut under the intact red paper band, removing ambiguous open rim."
+    },
+    {
+      "file": "village-approach-road.png",
+      "created": "2026-10-11",
+      "authorization": "User requested an immersive journey toward the village and the actual closed post-office entrance, with matching loading/UI tone.",
+      "method": "image_gen: new inspected-reference camera angle; original PNG copied unchanged.",
+      "references": [
+        "village-arrival-wide.png"
+      ],
+      "role": "A father-visible carriage-window approach along the road before arrival.",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "9180aa5660a84ede4b4a6ea624f83202eec3bfb22a6c0b9b9e8c00dd35868f33"
+    },
+    {
+      "file": "post-office-closed-exterior.png",
+      "created": "2026-10-11",
+      "authorization": "User requested an immersive journey toward the village and the actual closed post-office entrance, with matching loading/UI tone.",
+      "method": "image_gen: new inspected-reference camera angle; original PNG copied unchanged.",
+      "references": [
+        "village-arrival-wide.png"
+      ],
+      "role": "The village post office, with closed door and shutters; the blank plaque receives live UI text.",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "8743c493b8397ceb015e3989524bc5662f68702658a1a34bfbb45b28514f5790"
+    },
+    {
+      "file": "inn-entrance-evening.png",
+      "created": "2026-10-11",
+      "authorization": "User requested an immersive journey toward the village and the actual closed post-office entrance, with matching loading/UI tone.",
+      "method": "image_gen: new inspected-reference camera angle; original PNG copied unchanged.",
+      "references": [
+        "village-arrival-wide.png"
+      ],
+      "role": "The same hilltop inn entrance, before the native interior scene.",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "0d7e9ceffa95a2b409da3b0a7250d10f33afd27091a7a2ad0406e7a5fe0af064"
     }
   ]
 }

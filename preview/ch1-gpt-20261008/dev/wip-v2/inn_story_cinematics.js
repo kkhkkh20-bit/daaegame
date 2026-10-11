@@ -7,7 +7,10 @@
  var ART={
   carriage:{src:'art/ch1/cinematics/carriage-family-close.png',alt:'마차 안에서 나란히 앉아 이야기하는 다람과 아빠'},
   driver:{src:'art/ch1/cinematics/carriage-driver-close.png',alt:'마차 앞자리에서 돌아보며 도착을 알리는 마부 까로'},
-  village:{src:'art/ch1/cinematics/village-arrival-wide.png',alt:'저녁빛의 골짜기 마을에 도착한 다람과 아빠'},
+  village:{src:'art/ch1/cinematics/village-arrival-wide.png',alt:'저녁빛의 골짜기 마을에 도착한 다람과 아빠',place:'골짜기 마을',time:'첫날 저녁'},
+  approach:{src:'art/ch1/cinematics/village-approach-road.png',alt:'마차 창밖으로 보이는 고갯길과 저녁 등불이 켜진 골짜기 마을',place:'골짜기 마을로 가는 길',time:'첫날 해 질 무렵'},
+  postoffice:{src:'art/ch1/cinematics/post-office-closed-exterior.png',alt:'닫힌 우체국 출입문과 마감 표찰, 셔터가 닫힌 창',place:'우체국 앞',time:'첫날 저녁'},
+  innentrance:{src:'art/ch1/cinematics/inn-entrance-evening.png',alt:'계단을 올라 도착한 겨울잠 여관의 등불 켜진 현관 문 앞',place:'겨울잠 여관 앞',time:'첫날 저녁'},
   seal:{src:'art/ch1/cinematics/sealed-pouch-close.png',alt:'베개 밑에서 발견한 주머니와 아직 뜯기지 않은 붉은 봉인띠'}
  };
  var pictures={};
@@ -21,7 +24,9 @@
    };img.src=ART[k].src;
   });pictures[k]=entry;return entry;
  }
- Object.keys(ART).forEach(prepared);
+ // Warm the next few shots after play begins. Full-resolution journey art
+ // must not compete with the main screen during its first loading screen.
+ function warmScene(s){var keys=s.sid==='P1'?['carriage','approach','driver','village']:s.sid==='P2'?['village','postoffice','innentrance']:s.sid==='P3'?['innentrance']:s.sid==='P13'?['seal']:[];keys.forEach(prepared)}
  function active(){try{return S.screen==='case'&&G&&CASES[G.ci].id==='inn'&&!document.getElementById('innmain')}catch(e){return false}}
  function authored(){try{
   if(!active()||!G.beats)return null;
@@ -41,13 +46,14 @@
   document.body.classList.remove('inn-story-cg-active');delete document.body.dataset.innStoryCut;
  }
  function cleanup(){if(window.__innSceneFlowReset)window.__innSceneFlowReset();removePicture();owner=null;lastGame=null;observedDialogue=null;document.body.classList.remove('inn-story-scene-owner','inn-story-picture-owned')}
- function initialCamera(s){return s.phase==='pro'&&s.sid==='P1'?'carriage':s.phase==='pro'&&s.sid==='P2'?'village':s.phase==='pro'&&s.sid==='P10b'?'night':'stage'}
+ function initialCamera(s){return s.scene&&s.scene.camera|| (s.phase==='pro'&&s.sid==='P1'?'carriage':s.phase==='pro'&&s.sid==='P2'?'village':s.phase==='pro'&&s.sid==='P10b'?'night':'stage')}
  function ensureOwner(s){
   var key=s.phase+':'+(s.sid||'scene:'+G.loc+':'+G.tab);
   if(lastGame!==G||!owner||owner.key!==key){
    var dl=typeof DL!=='undefined'&&DL||null,ignore=owner&&dl&&dl===observedDialogue?dl:null;
    removePicture();lastGame=G;owner={game:G,key:key,phase:s.phase,sid:s.sid,scene:s.scene,camera:initialCamera(s),started:s.phase==='investigation',memory:false,lastLine:null,ignoreDialogue:ignore};
    if(window.__innSceneFlowBegin)window.__innSceneFlowBegin(owner);
+   warmScene(s);
   }
   return owner;
  }
@@ -85,6 +91,10 @@
   function commit(){if(!valid())return;if(node&&node!==el)node.remove();node=el;shown=k;pending=null;el.classList.remove('loading','error');el.classList.add('ready');el.classList.toggle('memory',k==='carriage'&&o.memory);if(!el.isConnected)document.body.appendChild(el);document.body.classList.add('inn-story-cg-active');document.body.dataset.innStoryCut=k}
   function error(){if(!valid())return;if(node&&node!==el)node.remove();node=el;shown=null;pending=null;el.classList.add('loading','error');el.innerHTML='<button type="button" class="cinema-retry">장면을 불러오지 못했어요 · 다시 시도</button>';el.querySelector('button').onclick=function(e){e.preventDefault();e.stopImmediatePropagation();delete pictures[k];delete failed[k];removePicture();sync()};if(!el.isConnected)document.body.appendChild(el)}
   el.append(surround,picture);
+  if(ART[k].place&&window.__innPlaceCard){var place=document.createElement('div');place.className='cinema-place';place.appendChild(window.__innPlaceCard(ART[k].place,ART[k].time));el.appendChild(place)}
+  // Text is live, legible UI anchored to the actual empty wooden door plaque,
+  // using the same cover transform as the new background. No baked AI text.
+  if(k==='postoffice'||k==='innentrance'){var label=document.createElementNS('http://www.w3.org/2000/svg','svg');label.setAttribute('viewBox','0 0 1672 941');label.setAttribute('preserveAspectRatio','xMidYMid slice');label.setAttribute('class','cinema-world-label nodot');label.setAttribute('aria-label',k==='postoffice'?'출입문 표찰: 닫음':'간판: 겨울잠 여관');label.innerHTML=k==='postoffice'?'<text x="906" y="505" text-anchor="middle" fill="#352419" font-family="Galmuri11,monospace" font-size="26">닫음</text>':'<text x="1473" y="370" text-anchor="middle" fill="#eac184" font-family="Galmuri11,monospace" font-size="22">겨울잠 여관</text>';el.appendChild(label)}
   surround.src=ART[k].src;
   if(!node){node=el;el.classList.add('loading');document.body.appendChild(el)}
   if(entry.ready)commit();else entry.promise.then(function(ok){if(ok)commit();else error()});
@@ -120,8 +130,16 @@
   }check()});
  };
  window.__innPresentationDirection=function(d){
-  var s=authored();if(!s||blocked()||!d)return;var o=ensureOwner(s);o.started=true;if(window.__innSceneFlowDirection)window.__innSceneFlowDirection(d);
-  if(o.sid==='P1'&&d.who==='karo')o.camera='driver';
+  var s=authored();if(!s||blocked()||!d)return;var o=ensureOwner(s);o.started=true;
+  if(d.camera&&(ART[d.camera]||d.camera==='stage')){if(o.camera!==d.camera&&window.__innClearPlaceDialogue){
+   window.__innClearPlaceDialogue();
+   // Native endDlg() invokes the next direction inside its callback, then an
+   // outer freeze wrapper attaches the former dialogue afterward. Clear that
+   // tail in this task's microtask, before the first new-camera paint.
+   var nextCamera=d.camera;Promise.resolve().then(function(){if(owner===o&&G===o.game&&o.camera===nextCamera)window.__innClearPlaceDialogue()});
+  }o.camera=d.camera;}
+  else if(o.sid==='P1'&&d.who==='karo')o.camera='driver';
+  if(window.__innSceneFlowDirection)window.__innSceneFlowDirection(d);
   sync();
  };
  var css=document.createElement('style');css.id='inn-story-cinematics';css.textContent=
@@ -132,9 +150,11 @@
  '#inn-story-cg img{position:absolute;inset:0;width:100%;height:100%;max-width:none;image-rendering:pixelated;pointer-events:none!important}#inn-story-cg .cinema-picture{object-fit:cover;object-position:50% 38%;transition:filter .35s ease-out;opacity:1}#inn-story-cg.memory .cinema-picture{filter:brightness(.9) saturate(.85)}'+
  '#inn-story-cg .cinema-surround{display:none;object-fit:cover;filter:blur(20px) brightness(.24) saturate(.55);transform:scale(1.08)}'+
  '#inn-story-cg[data-cut="carriage"] .cinema-picture{object-position:50% 0%}#inn-story-cg[data-cut="driver"] .cinema-picture{object-position:50% 22%}#inn-story-cg[data-cut="village"] .cinema-picture{object-position:50% 44%}#inn-story-cg[data-cut="seal"] .cinema-picture{object-position:50% 44%}'+
+ '#inn-story-cg[data-cut="approach"] .cinema-picture,#inn-story-cg[data-cut="postoffice"] .cinema-picture,#inn-story-cg[data-cut="innentrance"] .cinema-picture{object-position:50% 50%}#inn-story-cg[data-cut="approach"] .cinema-picture{animation:inn-approach 14s ease-out both}@keyframes inn-approach{from{transform:scale(1.01)}to{transform:scale(1.06)}}'+
+ '#inn-story-cg .cinema-world-label{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}#inn-story-cg .cinema-place{position:absolute;top:74px;left:22px}#inn-story-cg .cinema-place .inn-place-card{display:flex;align-items:center;gap:9px;padding:8px 12px;background:var(--inn-paper);border:1px solid var(--inn-brass);border-left:3px solid var(--inn-muted);border-radius:4px;box-shadow:0 3px 10px #211b1633}#inn-story-cg .cinema-place b{display:block;font:400 14px/1.45 Galmuri11,monospace;color:var(--inn-ink)}#inn-story-cg .cinema-place small{display:flex;align-items:center;gap:4px;margin-top:3px;font:400 10px/1.4 Galmuri11,monospace;color:var(--inn-muted)}#inn-story-cg .cinema-place .location-mark{width:25px;height:30px;flex-basis:25px;padding-right:8px}#inn-story-cg .cinema-place .location-mark svg{width:18px;height:18px}body:has(.banner,.placecard) #inn-story-cg .cinema-place{visibility:hidden}'+
  'body.inn-story-picture-owned #app{visibility:hidden!important}body.inn-story-picture-owned #dlgveil{background:transparent!important}body.inn-story-picture-owned #dlgveil>.vnbg,body.inn-story-picture-owned #dlgveil>.vnshade,body.inn-story-picture-owned #dlgveil>#innstage,body.inn-story-picture-owned #dlgveil>#vnfig{visibility:hidden!important}'+
  'body.inn-story-cg-active #ovfz .vnbg,body.inn-story-cg-active #ovfz .vnshade,body.inn-story-cg-active #ovfz #innstage,body.inn-story-cg-active #ovfz #vnfig{visibility:hidden!important}'+
- '@media(max-aspect-ratio:3/4){#inn-story-cg .cinema-surround{display:block}#inn-story-cg .cinema-picture,#inn-story-cg[data-cut] .cinema-picture{object-fit:contain;object-position:50% 24%}}'+
+ '@media(max-aspect-ratio:3/4){#inn-story-cg .cinema-surround{display:block}#inn-story-cg .cinema-picture,#inn-story-cg[data-cut] .cinema-picture{object-fit:contain;object-position:50% 24%}#inn-story-cg .cinema-world-label{display:none}}'+
  '@media(prefers-reduced-motion:reduce){#inn-story-cg .cinema-picture{animation:none!important;transition:none!important}}';
  document.head.appendChild(css);
  var queued=false;new MutationObserver(function(){if(queued)return;queued=true;Promise.resolve().then(function(){queued=false;sync()})}).observe(document.body,{childList:true,subtree:true});
