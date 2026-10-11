@@ -46,8 +46,11 @@ with sync_playwright() as p:
         'Letter is years old': '몇 해 전 편지야',
         'Old letter identifies a past stop, not current whereabouts': '엄마가 여기 우체국에서 부친 거야',
         'Village witnesses motivate the journey': '엄마를 기억하는 사람도 있겠다',
-        'Closed post office leads to lodging': '오늘은 잘 곳부터 찾자',
-        'Mother search leads to this village': '옛 편지를 여기서 부쳤더군요',
+        'Father asks about the return journey': '돌아가는 마차는 언제 출발합니까',
+        'Next noon is the final departure': '내일 정오요. 올해 마지막 마차입니다',
+        'Snow explains the long transport gap': '눈이 쌓이면 고개를 못 넘어요',
+        'Closed post office leads to lodging': '여관부터 찾아보자',
+        'Mother search leads to this village': '몇 해 전에 여기서 편지를 부쳤더군요',
         'Grandmother cares despite withholding guest information': '찾느라 걱정이 많겠구나',
         'Child counts beds before noticing the extra one': '하나, 둘, 셋… 열하나, 열둘.',
         'Extra bed is outside the guest-bed count': '저 침대는 안 세는 거예요?',
@@ -76,7 +79,7 @@ with sync_playwright() as p:
     for fact, phrase in required_facts.items():
         assert any(phrase in t for t in seen), ('Required introduction fact missing', fact, phrase)
     # The grandmother comments on resemblance only after being shown the photo.
-    encounter = ('아이 엄마를 찾고 있습니다', '이 사진 속 사람을 기억하십니까',
+    encounter = ('제 아내를 찾고 있습니다', '이 사진 속 사람을 기억하십니까',
                  '사진 속 엄마를 닮았구나')
     positions = [next(i for i, t in enumerate(played) if phrase in t) for phrase in encounter]
     assert positions == sorted(positions), ('Photo encounter out of order', positions)
@@ -88,7 +91,8 @@ with sync_playwright() as p:
     # The player hears each motive before the consequential action.
     chains = [
         ('몇 해 전 편지야', '엄마가 여기 우체국에서 부친 거야', '엄마를 기억하는 사람도 있겠다'),
-        ('우체국 문이 닫혔네', '오늘은 잘 곳부터 찾자', '겨울잠 여관!'),
+        ('돌아가는 마차는 언제', '내일 정오요', '그다음은 언제', '봄이요. 눈이', '내일 오전엔 우체국'),
+        ('우체국 문이 닫혔네', '아침에 다시 와야겠다', '오늘은 어디서 자', '여관부터 찾아보자', '겨울잠 여관이다'),
         ('하나, 둘, 셋… 열하나, 열둘.', '열셋. 할머니', '손님 침대는 열둘이에요'),
         ('왜 이 방에 있었는지는 할머니께도', '관청에서 조사받으셔야', '전 탐정이었습니다'),
         ('할머니 가면, 엄마 얘긴', '엄마 얘기도 들어야지', '주머니부터 보자'),
@@ -100,6 +104,7 @@ with sync_playwright() as p:
         assert positions == sorted(positions), ('Motive/action out of order', chain, positions)
     assert any('크르르. 내 책을' in t for t in seen), 'Shared bedtime routine not played'
     assert any('책 말고 간식!' in t for t in seen), 'Child did not correct the familiar story'
+    assert not any('마부 까로예요' in t or '도착은 늘 제때죠' in t or '언덕 위래' in t for t in seen), 'Old arrival exposition remains'
     assert not errors,errors
     assert not bad,bad
     Path(args.output).write_text(json.dumps({'url':frame.url,'played':native,'errors':errors,'bad':bad},ensure_ascii=False))

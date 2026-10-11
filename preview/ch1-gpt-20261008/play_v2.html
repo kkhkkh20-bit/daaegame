@@ -37003,7 +37003,7 @@ window.__bg145={grade:grade,MODE:MODE,todOf:todOf,modeFor:modeFor,curMode:curMod
  function blocker(){var o=document.querySelector(".banner:not(.out),.cutin,.stampfx");if(o)return o;
   var ci=document.querySelector(".csx .csintro");if(ci){var cs=getComputedStyle(ci);if(cs.display!=="none"&&+cs.opacity>.05)return ci}return null}
  ["pointerdown","pointerup","click","touchstart","touchend","mousedown","mouseup"].forEach(function(t){
-  window.addEventListener(t,function(e){if(!e.isTrusted)return;var o=blocker();
+  window.addEventListener(t,function(e){if(!e.isTrusted)return;if(e.target&&e.target.closest&&e.target.closest("#inn-story-cg .cinema-retry"))return;var o=blocker();
    if(!o){if(window.__fxEat&&window.__fxEat(t,e)){e.stopPropagation();if(t!=="touchstart"&&t!=="pointerdown")e.preventDefault();else if(t==="touchstart"&&e.cancelable)e.preventDefault()}return}
    if(o.contains(e.target)&&o.classList.contains("csintro"))return;
    if(window.__fxTap)try{window.__fxTap(t,e,o)}catch(x){}
@@ -47787,19 +47787,21 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("det0","그래서 와 본 거야. 우체국부터 물어보자."),
    D({"sfx": "carStop", "ms": 380}),
    D({"who": "karo", "chime": 1, "ms": 380}),
-   FL("karo","마부 까로예요. 도착은 늘 제때죠."),
-   FL("karo","막차는 내일 정오. 눈 오면 길이 막혀요."),
-   FL("det1","그 다음 마차는요?"),
-   FL("karo","봄에 와요. 눈이 녹아야 다시 다니죠."),
+   FL("karo","골짜기 마을입니다. 짐 챙기세요."),
+   FL("det0","돌아가는 마차는 언제 출발합니까?"),
+   FL("karo","내일 정오요. 올해 마지막 마차입니다."),
+   FL("det0","그다음은 언제 다닙니까?"),
+   FL("karo","봄이요. 눈이 쌓이면 고개를 못 넘어요."),
    FL("det0","그럼 내일 오전엔 우체국에 가야겠군요.","think")]))),
   /* P2 마을 입구 광장 */
   SID("P2",B("plaza","det1",S("front","마을 입구, 광장","첫날 저녁",[
    D({"who": "det1", "chime": 1, "ms": 380}),
    FL("det0","우체국 문이 닫혔네."),
-   FL("det1","내일 아침에 다시 오자."),
-   FL("det0","그래. 오늘은 잘 곳부터 찾자."),
-   FL("det1","겨울잠 여관! 언덕 위래."),
-   FL("det0","잘 찾았네. 오늘은 거기서 묵자."),
+   FL("det0","아침에 다시 와야겠다."),
+   FL("det1","그럼 오늘은 어디서 자?"),
+   FL("det0","여관부터 찾아보자."),
+   FL("det1","저기, 겨울잠 여관이다!"),
+   FL("det0","잘 찾았네. 방이 있는지 물어보자."),
    D({"who": "none", "ms": 300}),
    D({"sfx": "steps", "ms": 420})]))),
   /* P3 여관 현관 안 */
@@ -47810,8 +47812,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    FL("det1","꼬리가 얼 것 같아요."),
    FL("innma","방은 있어요. 두 분이 함께 쓸 거죠?","smile"),
    FL("det0","네. 그리고 하나만 여쭤봐도 될까요?"),
-   FL("det0","아이 엄마를 찾고 있습니다."),
-   FL("det0","옛 편지를 여기서 부쳤더군요."),
+   FL("det0","제 아내를 찾고 있습니다."),
+   FL("det0","몇 해 전에 여기서 편지를 부쳤더군요."),
    FL("det0","혹시 이 사진 속 사람을 기억하십니까?"),
    FL("innma","…사진 속 엄마를 닮았구나.","think"),
    FL("det1","엄마를 만나 보셨어요?"),
@@ -48938,7 +48940,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    if(it.grant){if(G.found.indexOf(it.grant)<0)G.found.push(it.grant);if(!it.card)try{SFX.found()}catch(e){}try{saveProg()}catch(e){}if(it.card){gotCard(it.grant,step);return}step();return}
    if(it.loc){G.loc=LI[it.loc];G.beats.inn_bg=null;G.tab="scene";render();setTimeout(step,80);return}
    if(it.banner){try{banner(it.banner[0],it.banner[1]).then(step)}catch(e){step()}return}
-   if(it.dir){try{window.__innDir&&window.__innDir(it.dir)}catch(e){}setTimeout(step,it.dir.ms!=null?it.dir.ms:420);return}
+   if(it.dir){try{window.__innDir&&window.__innDir(it.dir)}catch(e){}setTimeout(function(){Promise.resolve(window.__innPresentationWait?window.__innPresentationWait():true).then(function(ready){if(ready)step()})},it.dir.ms!=null?it.dir.ms:420);return}
    if(it.beat){setb(it.beat);step();return}
    step()}
   step()}
@@ -48998,7 +49000,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    G.notice={title:EP.GOAL.title,text:EP.GOAL.text+" "+EP.TUT.spot+" "+EP.TUT.talk};saveProg();render();return}
   G.beats.inn_pi=i;var s=EP.PRO[i];G.beats.inn_psid=s.sid||null;G.beats.inn_bg=s.bg||null;G.loc=LI[s.loc];G.tab="scene";saveProg();render();
   var proGame=G;function proAlive(){return G===proGame&&S.screen==="case"&&cur()===c&&!bt("inn_pro")&&G.beats.inn_pi===i}
-  var go=function(){if(!proAlive())return;play(s.items,function(){if(!proAlive())return;if(s.after==="title"){(typeof banner==="function"?banner(EP.title,EP.chapter):Promise.resolve()).then(function(){if(proAlive())runPro(i+1)})}else runPro(i+1)})};
+  var go=function(){if(!proAlive())return;Promise.resolve(window.__innPresentationWait?window.__innPresentationWait():true).then(function(ready){if(ready&&proAlive())play(s.items,function(){if(!proAlive())return;if(s.after==="title"){(typeof banner==="function"?banner(EP.title,EP.chapter):Promise.resolve()).then(function(){if(proAlive())runPro(i+1)})}else runPro(i+1)})})};
   if(i===0&&window.__innColdTransition){go();hint("전날 오후 · 우편 마차")}else try{banner(s.title,s.sub).then(go)}catch(e){go()}}
  /* ---- 후일담 E1~E4 ---- */
  function runEnd(i){var c=cur();if(!c)return;if(i>=EP.END.length){setb("inn_end");G.loc=LI.hall;G.tab="scene";
@@ -49336,7 +49338,7 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
    else{G=fresh(ci);G.introDone=true;G.visited=[0];G.beats=G.beats||{};G.beats.m151new=1;G.beats["place204:post"]=1;G.beats.deal=1}
    if(EPK==="envelope"){G.loc=0;G.tab="scene";G.notice=null}S.screen="case";
    try{saveProg()}catch(e){}
-   render();if(EPK==="inn"&&window.__innStart)setTimeout(window.__innStart,300);
+   render();if(EPK==="inn"&&window.__innStart)window.__innStart();
   }catch(e){MISS.push("boot "+e.message);note("시험 시작 오류",String(e.message||e))}
  }
  window.__w209boot=boot;
@@ -50834,11 +50836,11 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    return (ls||[]).map(function(l){return l.slice()})}catch(e){return null}};
 
 /* Original piano-free v4 context cues; other v3 score retained. */
-window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/title-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_travel":{"bpm":76,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/travel-strings-v3.mp3","loopSeconds":50.526326530612245},"inn_inv":{"bpm":88,"vol":0.8,"prog":["Dm","Bb","Dm","Am","F","C","Gm","Am","Gm","C","F","Bb","Dm","Gm","Am","Dm"],"mel":[],"media":"audio/v4/investigation-context-v4.mp3","loopSeconds":43.636371882086166},"inn_serious":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_meet":{"bpm":88,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-strings-v3.mp3","loopSeconds":43.636371882086166,"preload":["audio/v3/meeting-press-strings-v3.mp3","audio/v3/climax-strings-v3.mp3"]},"inn_meet_press":{"bpm":104,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-press-strings-v3.mp3","loopSeconds":36.92308390022676},"inn_climax":{"bpm":96,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-strings-v3.mp3","loopSeconds":40.0,"preload":["audio/v3/climax-press-strings-v3.mp3","audio/v3/after-strings-v3.mp3"]},"inn_climax_press":{"bpm":112,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-press-strings-v3.mp3","loopSeconds":34.285714285714285},"inn_after":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/after-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_cold":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_seryeon":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_nabi":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_bami":{"bpm":100,"vol":0.8,"prog":["G","D","C","G","Em","C","Am","D","C","G","Am","D","Em","C","D","G"],"mel":[],"media":"audio/v4/comic-context-v4.mp3","loopSeconds":38.4},"inn_t_doto":{"bpm":88,"vol":0.8,"prog":["Dm","Bb","Dm","Am","F","C","Gm","Am","Gm","C","F","Bb","Dm","Gm","Am","Dm"],"mel":[],"media":"audio/v4/investigation-context-v4.mp3","loopSeconds":43.636371882086166},"inn_t_buri":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_neoul":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_innma":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_comic":{"bpm":100,"vol":0.8,"prog":["G","D","C","G","Em","C","Am","D","C","G","Am","D","Em","C","D","G"],"mel":[],"media":"audio/v4/comic-context-v4.mp3","loopSeconds":38.4},"inn_friend":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_karo":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989}};
+window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/title-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_travel":{"bpm":76,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/travel-strings-v3.mp3","loopSeconds":50.526326530612245},"inn_inv":{"bpm":88,"vol":0.8,"prog":["Dm","Bb","Dm","Am","F","C","Gm","Am","Gm","C","F","Bb","Dm","Gm","Am","Dm"],"mel":[],"media":"audio/v4/investigation-context-v4.mp3","loopSeconds":43.636371882086166},"inn_serious":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_meet":{"bpm":88,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-strings-v3.mp3","loopSeconds":43.636371882086166,"preload":["audio/v3/meeting-press-strings-v3.mp3","audio/v3/climax-strings-v3.mp3"]},"inn_meet_press":{"bpm":104,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/meeting-press-strings-v3.mp3","loopSeconds":36.92308390022676},"inn_climax":{"bpm":96,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-strings-v3.mp3","loopSeconds":40.0,"preload":["audio/v3/climax-press-strings-v3.mp3","audio/v3/after-strings-v3.mp3"]},"inn_climax_press":{"bpm":112,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/climax-press-strings-v3.mp3","loopSeconds":34.285714285714285},"inn_after":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"media":"audio/v3/after-strings-v3.mp3","loopSeconds":53.333333333333336},"inn_cold":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_seryeon":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_nabi":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_bami":{"bpm":100,"vol":0.8,"prog":["G","D","C","G","Em","C","Am","D","C","G","Am","D","Em","C","D","G"],"mel":[],"media":"audio/v4/comic-context-v4.mp3","loopSeconds":38.4},"inn_t_doto":{"bpm":88,"vol":0.8,"prog":["Dm","Bb","Dm","Am","F","C","Gm","Am","Gm","C","F","Bb","Dm","Gm","Am","Dm"],"mel":[],"media":"audio/v4/investigation-context-v4.mp3","loopSeconds":43.636371882086166},"inn_t_buri":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_neoul":{"bpm":56,"vol":0.8,"prog":["Dm","Dm","Gm","Gm","Bb","Bb","Dm","Dm","F","F","Gm","Gm","Am","Am","Dm","Dm"],"mel":[],"media":"audio/v4/serious-context-v4.mp3","loopSeconds":68.57142857142857},"inn_t_innma":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_comic":{"bpm":100,"vol":0.8,"prog":["G","D","C","G","Em","C","Am","D","C","G","Am","D","Em","C","D","G"],"mel":[],"media":"audio/v4/comic-context-v4.mp3","loopSeconds":38.4},"inn_friend":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_t_karo":{"bpm":76,"vol":0.8,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989},"inn_family":{"bpm":76,"vol":0.7,"prog":["F","Bb","C","F","Dm","Gm","C","F","Bb","F","Gm","C","Dm","Bb","C","C","F","Bb","C","F","Dm","Gm","C","F"],"mel":[],"media":"audio/v4/friend-context-v4.mp3","loopSeconds":75.78947845804989}};
 
-/* Recorded wood doors and carriage hooves. Sources and adaptations: audio/v3/sfx/SFX_CREDITS.txt. */
+/* Recorded wood doors. Horse audio is disabled by the user's request. */
 (function(){
- var files={horse:"horse-carriage-loop.wav",open:"wood-door-open.wav",close:"wood-door-close.wav"},cache={},context=null;
+ var files={open:"wood-door-open.wav",close:"wood-door-close.wav"},cache={},context=null;
  var stats={starts:{horse:0,open:0,close:0},live:{horse:0,open:0,close:0},errors:0};
  function chapter(){try{return S.screen==="case"&&G&&CASES[G.ci].id==="inn"}catch(e){return false}}
  function load(a,key){
@@ -50851,7 +50853,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   src.connect(out);stats.starts[key]++;stats.live[key]++;src.onended=function(){stats.live[key]--;try{src.disconnect()}catch(e){}};return src;
  }
  function play(key){
-  if(!chapter()||!S.sound||!AC||AC.state!=="running")return;
+  if(!files[key]||!chapter()||!S.sound||!AC||AC.state!=="running")return;
   var a=AC,game=G,at=performance.now();
   load(a,key).then(function(b){
    if(!chapter()||G!==game||AC!==a||!S.sound||a.state!=="running"||performance.now()-at>300)return;
@@ -50860,20 +50862,21 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   }).catch(function(){});
  }
  function attach(I,key){
+  if(!files[key])return;
   load(I.a,key).then(function(b){
    if(I.dead||I.ending||!S.sound||AC!==I.a||!chapter())return;
    var src=source(I.a,key,b,I.out,true);I.src.push(src);src.start();
   }).catch(function(){});
  }
  window.__innRecordedSfx={play:play,attach:attach,stats:function(){return JSON.parse(JSON.stringify(stats))}};
- // Decode ahead of the first door/carriage cue after the browser unlocks audio.
+ // Decode doors only; the archived horse recording is never fetched.
  setInterval(function(){if(AC&&AC.state==="running"&&S.sound&&(chapter()||document.getElementById("innmain")))Object.keys(files).forEach(function(k){load(AC,k).catch(function(){})})},800);
 })();
 
  /* ==== 1장 오디오 연출 (상황별 피아노 없는 목관·현악, 기존 회의 큐 유지) ====
     - 음악: 타이틀 -> 도입(inn_cold) -> 여행·여관 -> 사건 신고 -> 조사 -> 회의·압박 -> 최종 대결·압박 -> 후일담
       같은 곡 안에서는 장면·화자·장소가 바뀌어도 다시 시작하지 않는다(엔진: 같은 키면 그대로 둠). 낮춤은 덕킹으로만.
-    - 환경음: 마차(녹음 말발굽 2박 루프), 바깥바람. 장소에 머무는 동안 한 인스턴스만.
+    - 환경음: 말발굽은 사용하지 않는다. 필요한 후일담의 바깥바람만 한 인스턴스.
     - 타이핑음: 부드럽고 낮게, 최소 간격 75ms. 속마음·지문은 발화보다 낮게. 문장 완성·넘김 때 몰아서 나지 않음(예약 재생 없음). */
  (function(){
   if(!window.__AUD||!__AUD.SONGS)return;
@@ -50926,7 +50929,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   var CONTEXT=[
    [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|당연하죠\. 그게 똑바론데요/, 'inn_comic'],
    [/어서 와요\. 추웠지|우선 들어와요|아빠처럼 탐정 할래|잘 자, 다람|수건은 네가 차지해요|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
-   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고(?:…|,)?\s*숨|^바구니랑 수건 좀 빌려|누가 죽었대요|낮게 수군|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
+   [/엄마를 아는 걸까|아이 엄마를 찾고|제 아내를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고(?:…|,)?\s*숨|^바구니랑 수건 좀 빌려|누가 죽었대요|낮게 수군|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
    [/밤에는 늘 그 자리에|어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
   ];
   function contextMusic(fallback,scope){
@@ -50964,11 +50967,11 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    var b=beats(),now=Date.now();
    /* 2026-10-10 v2 음악 큐시트(dev/review/CH1_V2_DESIGN.txt 5장): 영화처럼 줄·장면 시점에 맞춰 끊고, 한 방 치고, 다시 들어온다 */
    if(!b.inn_pro){var sid=presentedSid();if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0}if(+String(sid).slice(1)<11)M.inv=false;
-    if(sid==="P1"&&now-M.sidT<2000)return null;
     if(sid==="P10"&&M.bell)return null;
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
     if(sid==="P13"){if(!M.hit&&/^베개 밑…/.test(lineText())){M.hit=now;try{SFX.cut9()}catch(e){}}if(M.hit&&now-M.hit<1500)return null}   /* 주머니 발견: 음악 끊고 한 방 → 1.5초 정적 */   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
-    if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
+    if(sid==='P1')return 'inn_family'; /* 부녀 대화는 밝은 장조 목관곡을 끝까지 유지한다. */
+    if(['P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
     if(sid==="P11"){if(/^제 주머니가 (?:없어요|없어졌)|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 범죄를 처음 알아채는 세련의 외침에서 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 수색·P13 안 쓰는 방: 사건곡(낮게) */
    if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return investigationMusic();   /* 동일 상황의 곡은 재시작하지 않는다. */
@@ -51096,21 +51099,20 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   function thud(a,out,t,vol){var o=a.createOscillator(),g=a.createGain();o.frequency.setValueAtTime(130,t);o.frequency.exponentialRampToValueAtTime(70,t+.08);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.1);o.connect(g);g.connect(out);o.start(t);o.stop(t+.12);burst(a,out,t,.06,vol*.6,"lowpass",380)}
   function build(a,key){var out=a.createGain();out.gain.setValueAtTime(.0001,a.currentTime);out.connect(SFXG);
    var I={key:key,out:out,src:[],lp:null,next:{},a:a};
-   if(key==="carriage"){I.peak=.65;window.__innRecordedSfx.attach(I,"horse")}   /* 녹음 루프 하나만: 합성 발굽·방울·덜컹은 겹치지 않는다. */
-   else if(key==="wind"){var wd=loopSrc(a,out,"bandpass",480,.8,.35);I.src.push(wd.s);
+   if(key==="wind"){var wd=loopSrc(a,out,"bandpass",480,.8,.35);I.src.push(wd.s);
     var l2=a.createOscillator(),g2=a.createGain();l2.frequency.value=.11;g2.gain.value=220;l2.connect(g2);g2.connect(wd.f.frequency);l2.start();I.src.push(l2);I.peak=.5}
    out.gain.exponentialRampToValueAtTime(I.peak,a.currentTime+.4);return I}
-  function sched(I){}   /* Recorded carriage source loops natively; no synthetic rescheduling. */
+  function sched(I){}   /* Wind loops natively; no hoof or synthetic carriage scheduler. */
   function stop(I,dur){if(!I||I.ending)return;var a=I.a,t=a.currentTime;dur=dur||.8;I.ending=t+dur*.8;AMB.old.push(I);
    try{I.out.gain.cancelScheduledValues(t);I.out.gain.setValueAtTime(Math.max(.0001,I.out.gain.value),t);I.out.gain.exponentialRampToValueAtTime(.0001,t+dur);if(I.lp){I.lp.frequency.setValueAtTime(I.lp.frequency.value,t);I.lp.frequency.exponentialRampToValueAtTime(180,t+dur)}}catch(e){}
    setTimeout(function(){I.dead=true;var k=AMB.old.indexOf(I);if(k>=0)AMB.old.splice(k,1);I.src.forEach(function(s){try{s.stop()}catch(e){}});try{I.out.disconnect()}catch(e){}},dur*1000+300)}
   var AMB={cur:null,dep:null,old:[]};
   function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||musicBlocked()||document.getElementById("inncold")||document.getElementById("innmain"))return null;var b=beats();if(M.failure)return "wind";
-   if(!b.inn_pro){var sd=presentedSid();if(sd==="P1"&&b.inn_bg==="carriage"&&!M.carStopped)return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
+   if(!b.inn_pro)return null;
    if(b.inn_final&&!b.inn_end){var ei=b.inn_ei|0;if(ei===0||ei===1)return "wind"}
    return null}
-  /* E2 마지막 마차: 출발해서 멀어지며 사라진다(약 7초) */
-  SFX.carDepart=function(){syncOwner();if(!cur()||blocked()||!S.sound||!AC)return;try{if(AMB.dep&&!AMB.dep.dead)return;var owner=scope(),I=build(AC,"carriage");AMB.dep=I;sched(I);setTimeout(function(){if(sameScope(owner)&&AMB.dep===I)stop(I,6.5)},500)}catch(e){}};
+  /* The departure remains a visual beat; no horse audio plays here either. */
+  SFX.carDepart=function(){};
   setInterval(function(){try{
    syncOwner();if(HB.on&&(!HB.el||!HB.el.isConnected||window.__innColdTransition||HB.game!==G))coldStop();
    if(!AC||AC.state!=="running"){return}
@@ -52898,9 +52900,9 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  window.__innOpeningDirection=function(){return {night:!!night,ready:!!(night&&nightReady),game:lastGame,cue:night&&night.dataset.cue,scene:lastScene&&lastScene.sid,reduced:reduced.matches}};
 })();
 
-/* Authored camera ownership. A picture belongs to a scene/camera beat, never
-   to the short native dialogue batches between @dir instructions. The public
-   presentation snapshot lets music wait for the same visual commitment. */
+/* Authored primary backdrops. Acquire the picture before native render(),
+   preload/decode it, and keep it through cards and dialogue batches. Legacy
+   world/seat art is never a loading fallback for an authored picture. */
 (function(){
  'use strict';
  var node=null,shown=null,pending=null,lastGame=null,owner=null,observedDialogue=null,serial=0,failed={},reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -52910,11 +52912,23 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   village:{src:'art/ch1/cinematics/village-arrival-wide.png',alt:'저녁빛의 골짜기 마을에 도착한 다람과 아빠'},
   seal:{src:'art/ch1/cinematics/sealed-pouch-close.png',alt:'베개 밑에서 발견한 주머니와 아직 뜯기지 않은 붉은 봉인띠'}
  };
+ var pictures={};
+ function prepared(k){
+  if(pictures[k])return pictures[k];
+  var img=new Image(),entry={img:img,ready:false};img.className='cinema-picture';img.alt='';
+  entry.promise=new Promise(function(resolve){
+   function error(){failed[k]=true;resolve(false)}
+   img.onerror=error;img.onload=function(){
+    Promise.resolve(img.decode?img.decode():undefined).then(function(){entry.ready=true;delete failed[k];resolve(true)},error);
+   };img.src=ART[k].src;
+  });pictures[k]=entry;return entry;
+ }
+ Object.keys(ART).forEach(prepared);
  function active(){try{return S.screen==='case'&&G&&CASES[G.ci].id==='inn'&&!document.getElementById('innmain')}catch(e){return false}}
  function authored(){try{
   if(!active()||!G.beats)return null;
   var b=G.beats,ep=window.EP1INN;
-  if(!b.inn_pro){var p=ep&&ep.PRO[b.inn_pi];return p&&{phase:'pro',sid:p.sid,scene:p}}
+  if(!b.inn_pro){var p=ep&&ep.PRO[b.inn_pi|0];return p&&{phase:'pro',sid:p.sid,scene:p}}
   if(b.inn_final&&!b.inn_end){var e=ep&&ep.END[b.inn_ei];return e&&{phase:'end',sid:e.sid||'E'+(b.inn_ei+1),scene:e}}
   return {phase:'investigation',sid:null,scene:null};
  }catch(e){return null}}
@@ -52928,7 +52942,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   document.querySelectorAll('#ovfz #inn-story-cg').forEach(function(n){n.remove()});
   document.body.classList.remove('inn-story-cg-active');delete document.body.dataset.innStoryCut;
  }
- function cleanup(){removePicture();owner=null;lastGame=null;observedDialogue=null;document.body.classList.remove('inn-story-scene-owner')}
+ function cleanup(){removePicture();owner=null;lastGame=null;observedDialogue=null;document.body.classList.remove('inn-story-scene-owner','inn-story-picture-owned')}
  function initialCamera(s){return s.phase==='pro'&&s.sid==='P1'?'carriage':s.phase==='pro'&&s.sid==='P2'?'village':s.phase==='pro'&&s.sid==='P10b'?'night':'stage'}
  function ensureOwner(s){
   var key=s.phase+':'+(s.sid||'scene:'+G.loc+':'+G.tab);
@@ -52938,7 +52952,8 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   }
   return owner;
  }
- function blocked(){return !!document.querySelector('#innmain,#inncold,.banner,.placecard')}
+ function blocked(){return !!document.querySelector('#innmain,#inncold')}
+ function cardBlocked(){return !!document.querySelector('.banner,.placecard')}
  function observeLine(o){
   if(o.ignoreDialogue&&typeof DL!=='undefined'&&DL===o.ignoreDialogue)return;
   var l=line();if(!l||l===o.lastLine)return;o.lastLine=l;o.started=true;
@@ -52955,25 +52970,25 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    if(/^봉인띠를 자르겠습니다/.test(t))o.camera='stage';
   }
  }
- function desired(){var s=authored();if(!s||blocked())return null;var o=ensureOwner(s);observeLine(o);return ART[o.camera]&&o.started?o.camera:null}
+ function desired(){var s=authored();if(!s||blocked())return null;var o=ensureOwner(s);observeLine(o);return ART[o.camera]?o.camera:null}
  function show(k,o){
   if(shown===k&&node&&node.isConnected){if(pending){serial++;pending=null}return}
   if(pending&&pending.cut===k&&pending.owner===o)return;
+  if(node&&node.dataset.cut===k&&node.dataset.owner===o.key&&node.classList.contains('error'))return;
   // Prepare the next shot off screen. The committed previous picture remains
   // visible until decoding succeeds; the native stage never flashes between.
   var token=++serial,game=o.game,key=o.key,request={cut:k,owner:o};pending=request;
   var el=document.createElement('div');el.id='inn-story-cg';el.dataset.cut=k;el.dataset.owner=key;
   el.setAttribute('role','img');el.setAttribute('aria-label',ART[k].alt);
   var surround=document.createElement('img');surround.className='cinema-surround';surround.alt='';surround.setAttribute('aria-hidden','true');
-  var picture=document.createElement('img');picture.className='cinema-picture';picture.alt='';
+  var entry=prepared(k),picture=entry.img;
   function valid(){var current=authored();return serial===token&&pending===request&&owner===o&&G===game&&current&&current.phase===o.phase&&current.sid===o.sid&&owner.key===key&&owner.camera===k&&!blocked()}
-  // Slow decodes from a previous camera or save can never hide the current
-  // original stage. Visibility and audio commit together after this check.
-  picture.onload=function(){if(valid()){if(node)node.remove();node=el;shown=k;pending=null;el.classList.add('ready');el.classList.toggle('memory',k==='carriage'&&o.memory);document.body.appendChild(el);document.body.classList.add('inn-story-cg-active');document.body.dataset.innStoryCut=k}};
-  picture.onerror=function(){failed[k]=true;if(valid())removePicture()};
+  function commit(){if(!valid())return;if(node&&node!==el)node.remove();node=el;shown=k;pending=null;el.classList.remove('loading','error');el.classList.add('ready');el.classList.toggle('memory',k==='carriage'&&o.memory);if(!el.isConnected)document.body.appendChild(el);document.body.classList.add('inn-story-cg-active');document.body.dataset.innStoryCut=k}
+  function error(){if(!valid())return;if(node&&node!==el)node.remove();node=el;shown=null;pending=null;el.classList.add('loading','error');el.innerHTML='<button type="button" class="cinema-retry">장면을 불러오지 못했어요 · 다시 시도</button>';el.querySelector('button').onclick=function(e){e.preventDefault();e.stopImmediatePropagation();delete pictures[k];delete failed[k];removePicture();sync()};if(!el.isConnected)document.body.appendChild(el)}
   el.append(surround,picture);
-  surround.src=ART[k].src;picture.src=ART[k].src;
-  if(picture.complete&&picture.naturalWidth)picture.onload();
+  surround.src=ART[k].src;
+  if(!node){node=el;el.classList.add('loading');document.body.appendChild(el)}
+  if(entry.ready)commit();else entry.promise.then(function(ok){if(ok)commit();else error()});
  }
  function sync(){try{
   document.querySelectorAll('#ovfz #inn-story-cg').forEach(function(n){n.remove()});
@@ -52981,23 +52996,37 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   var o=ensureOwner(s);observeLine(o);observedDialogue=typeof DL!=='undefined'&&DL||null;
   document.body.classList.toggle('inn-story-scene-owner',s.phase==='pro');
   if(blocked()){if(node||pending)removePicture();return}
-  var k=ART[o.camera]&&o.started?o.camera:null;
-  if(!k||!artReady(k)){if(node||pending)removePicture();return}
+  var k=ART[o.camera]?o.camera:null;
+  document.body.classList.toggle('inn-story-picture-owned',!!k);
+  if(!k){if(node||pending)removePicture();return}
   show(k,o);if(node)node.classList.toggle('memory',shown==='carriage'&&o.memory);
  }catch(e){cleanup()}}
+ // Native boot and runPro both use render(). Do this before it paints any
+ // default location, rather than repairing that frame in a later observer.
+ var nativeRender=render;render=function(){sync();var result=nativeRender.apply(this,arguments);sync();return result};
+ window.__innPresentationWait=function(){
+  sync();var captured=owner;
+  return new Promise(function(resolve){function check(){
+   var s=authored();if(!captured||owner!==captured||G!==captured.game||!s||s.sid!==captured.sid){resolve(false);return}
+   sync();if(!ART[captured.camera]||shown===captured.camera&&node&&node.classList.contains('ready')){resolve(true);return}
+   requestAnimationFrame(check);
+  }check()});
+ };
  window.__innPresentationDirection=function(d){
   var s=authored();if(!s||blocked()||!d)return;var o=ensureOwner(s);o.started=true;
   if(o.sid==='P1'&&d.who==='karo')o.camera='driver';
   sync();
  };
  var css=document.createElement('style');css.id='inn-story-cinematics';css.textContent=
- '#inn-story-cg{position:fixed;inset:0;z-index:59;pointer-events:none!important;overflow:hidden;background:#211c20;visibility:hidden}#inn-story-cg.ready{visibility:visible}'+
- '#inn-story-cg img{position:absolute;inset:0;width:100%;height:100%;max-width:none;image-rendering:pixelated;pointer-events:none!important}#inn-story-cg .cinema-picture{object-fit:cover;object-position:50% 38%;transition:filter .35s ease-out}#inn-story-cg.ready .cinema-picture{animation:inn-cinema-reveal .38s ease-out both}#inn-story-cg.memory .cinema-picture{filter:brightness(.9) saturate(.85)}'+
+ '#inn-story-cg{position:fixed;inset:0;z-index:59;pointer-events:none!important;overflow:hidden;background:#211c20;visibility:hidden}#inn-story-cg.ready,#inn-story-cg.loading{visibility:visible}#inn-story-cg.loading img{visibility:hidden}.cinema-retry{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:auto!important;min-height:44px;padding:12px 18px;border:1px solid #ac9166;background:#302b27;color:#f5e5c4;font:14px var(--display,sans-serif)}'+
+ // A failed picture's retry must sit above the full-screen place-card hit
+ // layer (z68); its first pointerdown must not skip that card underneath it.
+ '#inn-story-cg.error{z-index:69}'+
+ '#inn-story-cg img{position:absolute;inset:0;width:100%;height:100%;max-width:none;image-rendering:pixelated;pointer-events:none!important}#inn-story-cg .cinema-picture{object-fit:cover;object-position:50% 38%;transition:filter .35s ease-out;opacity:1}#inn-story-cg.memory .cinema-picture{filter:brightness(.9) saturate(.85)}'+
  '#inn-story-cg .cinema-surround{display:none;object-fit:cover;filter:blur(20px) brightness(.24) saturate(.55);transform:scale(1.08)}'+
  '#inn-story-cg[data-cut="carriage"] .cinema-picture{object-position:50% 0%}#inn-story-cg[data-cut="driver"] .cinema-picture{object-position:50% 22%}#inn-story-cg[data-cut="village"] .cinema-picture{object-position:50% 44%}#inn-story-cg[data-cut="seal"] .cinema-picture{object-position:50% 44%}'+
- 'body.inn-story-cg-active #dlgveil{background:transparent!important}body.inn-story-cg-active #dlgveil>.vnbg,body.inn-story-cg-active #dlgveil>.vnshade,body.inn-story-cg-active #dlgveil>#innstage,body.inn-story-cg-active #dlgveil>#vnfig{visibility:hidden!important}'+
+ 'body.inn-story-picture-owned #app{visibility:hidden!important}body.inn-story-picture-owned #dlgveil{background:transparent!important}body.inn-story-picture-owned #dlgveil>.vnbg,body.inn-story-picture-owned #dlgveil>.vnshade,body.inn-story-picture-owned #dlgveil>#innstage,body.inn-story-picture-owned #dlgveil>#vnfig{visibility:hidden!important}'+
  'body.inn-story-cg-active #ovfz .vnbg,body.inn-story-cg-active #ovfz .vnshade,body.inn-story-cg-active #ovfz #innstage,body.inn-story-cg-active #ovfz #vnfig{visibility:hidden!important}'+
- '@keyframes inn-cinema-reveal{from{opacity:.45}to{opacity:1}}'+
  '@media(max-aspect-ratio:3/4){#inn-story-cg .cinema-surround{display:block}#inn-story-cg .cinema-picture,#inn-story-cg[data-cut] .cinema-picture{object-fit:contain;object-position:50% 24%}}'+
  '@media(prefers-reduced-motion:reduce){#inn-story-cg .cinema-picture{animation:none!important;transition:none!important}}';
  document.head.appendChild(css);
@@ -53006,9 +53035,9 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  window.__innPresentationState=function(){
   sync();var cold=!!document.getElementById('inncold'),s=authored(),o=owner;
   if(!s||!o)return {game:active()?G:null,phase:cold?'cold':null,sid:null,owner:cold?'cold':null,camera:null,cut:null,loading:null,ready:false,transitioning:!!s,cold:cold,cue:''};
-  var visual=ART[o.camera]&&artReady(o.camera)?!!(shown===o.camera&&node&&node.classList.contains('ready')):true;
+  var visual=ART[o.camera]?!!(shown===o.camera&&node&&node.classList.contains('ready')):true;
   if(o.camera==='night'&&window.__innOpeningDirection){var night=window.__innOpeningDirection();visual=night.game===o.game&&night.scene===o.sid&&night.ready}
-  var staleDialogue=!!(o.ignoreDialogue&&typeof DL!=='undefined'&&DL===o.ignoreDialogue),transitioning=blocked()||!o.started||!visual||staleDialogue;
+  var staleDialogue=!!(o.ignoreDialogue&&typeof DL!=='undefined'&&DL===o.ignoreDialogue),transitioning=blocked()||cardBlocked()||!o.started||!visual||staleDialogue;
   return {game:o.game,phase:o.phase,sid:o.sid,owner:o.key,camera:o.camera,cut:shown,loading:pending&&pending.cut||null,ready:!transitioning,transitioning:transitioning,cold:cold,cue:staleDialogue?'':text(line())};
  };
  window.__innStoryCinematics=function(){var p=window.__innPresentationState();return {cut:shown,loading:p.loading,visible:!!(node&&node.classList.contains('ready')),tone:shown==='carriage'&&owner&&owner.memory?'memory':'normal',wanted:desired(),scene:p.phase==='pro'?p.sid:null,cue:p.cue,owner:p.owner,ready:p.ready,transitioning:p.transitioning,artReady:artReady(desired()),reduced:reduced.matches}};

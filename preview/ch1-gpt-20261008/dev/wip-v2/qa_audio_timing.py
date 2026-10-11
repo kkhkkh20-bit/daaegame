@@ -6,7 +6,6 @@ music cues. This is a timing regression check, not a subjective listening test.
 import argparse
 import json
 import shutil
-import time
 from playwright.sync_api import sync_playwright
 
 parser = argparse.ArgumentParser(description=__doc__)
@@ -58,39 +57,36 @@ with sync_playwright() as pw:
     def wait_music(key):
         page.wait_for_function('(key)=>__innAmb().music===key', arg=key, timeout=10000)
 
-    # A real location card blocks music and carriage before the delayed CG
-    # commits. Its prior picture cannot start the next scene's score.
+    # A real location card blocks music even though its decoded primary
+    # picture is already shown. No horse recording is requested or played.
     prepare('P1')
-    def delay_picture(route):
-        time.sleep(1.2)
-        route.continue_()
-    page.route('**/art/ch1/cinematics/carriage-family-close.png', delay_picture)
-    page.route('**/art/ch1/cinematics/carriage-driver-close.png', delay_picture)
-    engine('window.__timingDone=false;banner(EP1INN.PRO.find(s=>s.sid==="P1").title,EP1INN.PRO.find(s=>s.sid==="P1").sub).then(function(){__innPlay(EP1INN.PRO.find(s=>s.sid==="P1").items,function(){window.__timingDone=true})})')
+    # Do not return this Promise to Playwright: evaluate would await the card
+    # and skip the very interval whose music gate this assertion measures.
+    engine('window.__timingDone=false;banner(EP1INN.PRO.find(s=>s.sid==="P1").title,EP1INN.PRO.find(s=>s.sid==="P1").sub).then(function(){__innPlay(EP1INN.PRO.find(s=>s.sid==="P1").items,function(){window.__timingDone=true})});void 0')
     page.wait_for_timeout(400)
     assert page.evaluate('!__innPresentationState().ready'), state()
     assert page.evaluate('__innAmb().music===null&&__innAmb().cur===null'), state()
     page.wait_for_function('__innPresentationState().ready&&__innPresentationState().sid==="P1"', timeout=15000)
-    page.wait_for_function('__innAmb().cur==="carriage"', timeout=5000)
-    wait_music('inn_travel')
-    page.unroute('**/art/ch1/cinematics/carriage-family-close.png', delay_picture)
-    made=page.evaluate('__AUD.stats.inst')
+    assert page.evaluate('__innAmb().cur===null&&__innRecordedSfx.stats().starts.horse===0'), state()
+    wait_music('inn_family')
+    # inst counts live instances, including an old score still fading out.
+    # Count actual starts of this score so old-instance cleanup is not mistaken
+    # for a restart of the family's unchanged source.
+    family_starts=page.evaluate('__AUD.log.filter(s=>/ play inn_family$/.test(s)).length')
     # Native @dir gaps and split narration retain the same presentation owner.
     advance_until('__innAudioState().who==="karo"')
     page.wait_for_timeout(350)
     assert page.evaluate('__innAmb().cur===null'), state()
     assert page.evaluate('["stage","driver"].includes(__innPresentationState().camera)'), state()
     page.wait_for_function('__innPresentationState().ready',timeout=5000)
-    assert page.evaluate('__AUD.stats.inst')==made, ('P1 source restarted across direction',state())
-    page.unroute('**/art/ch1/cinematics/carriage-driver-close.png', delay_picture)
+    assert page.evaluate('__AUD.log.filter(s=>/ play inn_family$/.test(s)).length')==family_starts, ('P1 source restarted across direction',state())
     rows.append({'scene':'P1 native dialogue/driver','state':state()})
-    print('PASS P1 committed picture, native direction/driver, carriage stop, same score',flush=True)
+    print('PASS P1 primary picture, native direction/driver, no hooves, same cheerful family score',flush=True)
     advance_until('window.__timingDone===true')
 
-    # Same travel score remains paused behind the next real location card and
-    # only resumes with the committed village picture.
+    # Village travel score starts only after its next location card.
     prepare('P2')
-    engine('window.__timingDone=false;banner(EP1INN.PRO.find(s=>s.sid==="P2").title,EP1INN.PRO.find(s=>s.sid==="P2").sub).then(function(){__innPlay(EP1INN.PRO.find(s=>s.sid==="P2").items,function(){window.__timingDone=true})})')
+    engine('window.__timingDone=false;banner(EP1INN.PRO.find(s=>s.sid==="P2").title,EP1INN.PRO.find(s=>s.sid==="P2").sub).then(function(){__innPlay(EP1INN.PRO.find(s=>s.sid==="P2").items,function(){window.__timingDone=true})});void 0')
     page.wait_for_timeout(400)
     if page.evaluate('!__innPresentationState().ready'):
         assert page.evaluate('__innAmb().music===null'), state()
@@ -164,7 +160,7 @@ with sync_playwright() as pw:
     page.wait_for_timeout(200)
     engine('G.beats={inn_pro:1,inn_final:1,inn_ei:1};S.screen="case";render();__innDir({who:"det1",sfx:"carDepart"})')
     page.wait_for_timeout(200)
-    assert page.evaluate('__innAmb().dep'), state()
+    assert page.evaluate('!__innAmb().dep&&__innRecordedSfx.stats().starts.horse===0'), state()
     engine('S.screen="board";render()')
     page.wait_for_timeout(400)
     assert page.evaluate('!__innAmb().dep&&__innAudioState().scopedSources===0'), state()
@@ -172,8 +168,9 @@ with sync_playwright() as pw:
     frames=page.evaluate('__audioFrames')
     retained=[f for f in frames if f['retained'] and f['sid']=='P1']
     if page.evaluate('__innStoryArt.driver===true'):
-        assert retained, 'Delayed driver camera did not exercise atomic retention'
-        assert all(f['music']=='inn_travel' and f['line']=='' for f in retained), ('Retained camera lost its score or emitted its next cue',retained)
+        # Preloaded/decoded cameras can commit without a pending frame. Fault
+        # injection at document start is covered by qa_cinematic_entry.py.
+        assert all(f['music']=='inn_family' and f['line']=='' for f in retained), ('Retained camera lost its score or emitted its next cue',retained)
     # Give audio's 220-ms poll / 80-ms turn fade a 400-ms boundary allowance.
     blocked_start=None
     for frame in frames:

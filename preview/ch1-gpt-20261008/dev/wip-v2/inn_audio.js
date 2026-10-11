@@ -1,7 +1,7 @@
  /* ==== 1장 오디오 연출 (상황별 피아노 없는 목관·현악, 기존 회의 큐 유지) ====
     - 음악: 타이틀 -> 도입(inn_cold) -> 여행·여관 -> 사건 신고 -> 조사 -> 회의·압박 -> 최종 대결·압박 -> 후일담
       같은 곡 안에서는 장면·화자·장소가 바뀌어도 다시 시작하지 않는다(엔진: 같은 키면 그대로 둠). 낮춤은 덕킹으로만.
-    - 환경음: 마차(녹음 말발굽 2박 루프), 바깥바람. 장소에 머무는 동안 한 인스턴스만.
+    - 환경음: 말발굽은 사용하지 않는다. 필요한 후일담의 바깥바람만 한 인스턴스.
     - 타이핑음: 부드럽고 낮게, 최소 간격 75ms. 속마음·지문은 발화보다 낮게. 문장 완성·넘김 때 몰아서 나지 않음(예약 재생 없음). */
  (function(){
   if(!window.__AUD||!__AUD.SONGS)return;
@@ -54,7 +54,7 @@
   var CONTEXT=[
    [/괴물 목소리 한 번만|크르르|책 말고 간식|반 시는 내가 알려 줄게|당연하죠\. 그게 똑바론데요/, 'inn_comic'],
    [/어서 와요\. 추웠지|우선 들어와요|아빠처럼 탐정 할래|잘 자, 다람|수건은 네가 차지해요|여기가 집이네요|갈 데 없을 때/, 'inn_friend'],
-   [/엄마를 아는 걸까|아이 엄마를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고(?:…|,)?\s*숨|^바구니랑 수건 좀 빌려|누가 죽었대요|낮게 수군|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
+   [/엄마를 아는 걸까|아이 엄마를 찾고|제 아내를 찾고|엄마 사진을 내민다|^…엄마 글씨|거긴 지금은 안 쓰는 방|^차갑고(?:…|,)?\s*숨|^바구니랑 수건 좀 빌려|누가 죽었대요|낮게 수군|^그 애는… 괜찮습니까|혼자 가지 않기로 했지/, 'inn_serious'],
    [/밤에는 늘 그 자리에|어젯밤 복도에서 본 게|족제비 손님이 저쪽|갈 땐 뭘 들고|뭔진 몰라도 빨간 띠/, 'inn_inv']
   ];
   function contextMusic(fallback,scope){
@@ -92,11 +92,11 @@
    var b=beats(),now=Date.now();
    /* 2026-10-10 v2 음악 큐시트(dev/review/CH1_V2_DESIGN.txt 5장): 영화처럼 줄·장면 시점에 맞춰 끊고, 한 방 치고, 다시 들어온다 */
    if(!b.inn_pro){var sid=presentedSid();if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0}if(+String(sid).slice(1)<11)M.inv=false;
-    if(sid==="P1"&&now-M.sidT<2000)return null;
     if(sid==="P10"&&M.bell)return null;
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
     if(sid==="P13"){if(!M.hit&&/^베개 밑…/.test(lineText())){M.hit=now;try{SFX.cut9()}catch(e){}}if(M.hit&&now-M.hit<1500)return null}   /* 주머니 발견: 음악 끊고 한 방 → 1.5초 정적 */   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
-    if(['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
+    if(sid==='P1')return 'inn_family'; /* 부녀 대화는 밝은 장조 목관곡을 끝까지 유지한다. */
+    if(['P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
     if(sid==="P11"){if(/^제 주머니가 (?:없어요|없어졌)|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 범죄를 처음 알아채는 세련의 외침에서 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
     return "inn_serious"}                         /* P12 수색·P13 안 쓰는 방: 사건곡(낮게) */
    if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return investigationMusic();   /* 동일 상황의 곡은 재시작하지 않는다. */
@@ -224,21 +224,20 @@
   function thud(a,out,t,vol){var o=a.createOscillator(),g=a.createGain();o.frequency.setValueAtTime(130,t);o.frequency.exponentialRampToValueAtTime(70,t+.08);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.1);o.connect(g);g.connect(out);o.start(t);o.stop(t+.12);burst(a,out,t,.06,vol*.6,"lowpass",380)}
   function build(a,key){var out=a.createGain();out.gain.setValueAtTime(.0001,a.currentTime);out.connect(SFXG);
    var I={key:key,out:out,src:[],lp:null,next:{},a:a};
-   if(key==="carriage"){I.peak=.65;window.__innRecordedSfx.attach(I,"horse")}   /* 녹음 루프 하나만: 합성 발굽·방울·덜컹은 겹치지 않는다. */
-   else if(key==="wind"){var wd=loopSrc(a,out,"bandpass",480,.8,.35);I.src.push(wd.s);
+   if(key==="wind"){var wd=loopSrc(a,out,"bandpass",480,.8,.35);I.src.push(wd.s);
     var l2=a.createOscillator(),g2=a.createGain();l2.frequency.value=.11;g2.gain.value=220;l2.connect(g2);g2.connect(wd.f.frequency);l2.start();I.src.push(l2);I.peak=.5}
    out.gain.exponentialRampToValueAtTime(I.peak,a.currentTime+.4);return I}
-  function sched(I){}   /* Recorded carriage source loops natively; no synthetic rescheduling. */
+  function sched(I){}   /* Wind loops natively; no hoof or synthetic carriage scheduler. */
   function stop(I,dur){if(!I||I.ending)return;var a=I.a,t=a.currentTime;dur=dur||.8;I.ending=t+dur*.8;AMB.old.push(I);
    try{I.out.gain.cancelScheduledValues(t);I.out.gain.setValueAtTime(Math.max(.0001,I.out.gain.value),t);I.out.gain.exponentialRampToValueAtTime(.0001,t+dur);if(I.lp){I.lp.frequency.setValueAtTime(I.lp.frequency.value,t);I.lp.frequency.exponentialRampToValueAtTime(180,t+dur)}}catch(e){}
    setTimeout(function(){I.dead=true;var k=AMB.old.indexOf(I);if(k>=0)AMB.old.splice(k,1);I.src.forEach(function(s){try{s.stop()}catch(e){}});try{I.out.disconnect()}catch(e){}},dur*1000+300)}
   var AMB={cur:null,dep:null,old:[]};
   function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||musicBlocked()||document.getElementById("inncold")||document.getElementById("innmain"))return null;var b=beats();if(M.failure)return "wind";
-   if(!b.inn_pro){var sd=presentedSid();if(sd==="P1"&&b.inn_bg==="carriage"&&!M.carStopped)return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
+   if(!b.inn_pro)return null;
    if(b.inn_final&&!b.inn_end){var ei=b.inn_ei|0;if(ei===0||ei===1)return "wind"}
    return null}
-  /* E2 마지막 마차: 출발해서 멀어지며 사라진다(약 7초) */
-  SFX.carDepart=function(){syncOwner();if(!cur()||blocked()||!S.sound||!AC)return;try{if(AMB.dep&&!AMB.dep.dead)return;var owner=scope(),I=build(AC,"carriage");AMB.dep=I;sched(I);setTimeout(function(){if(sameScope(owner)&&AMB.dep===I)stop(I,6.5)},500)}catch(e){}};
+  /* The departure remains a visual beat; no horse audio plays here either. */
+  SFX.carDepart=function(){};
   setInterval(function(){try{
    syncOwner();if(HB.on&&(!HB.el||!HB.el.isConnected||window.__innColdTransition||HB.game!==G))coldStop();
    if(!AC||AC.state!=="running"){return}
