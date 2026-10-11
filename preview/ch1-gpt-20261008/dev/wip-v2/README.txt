@@ -1,4 +1,7 @@
 1장 v2 소스 — 별도 미리보기 배포 (2026-10-10)
+- 2026-10-11 자연스러운 조사 전 도입: CODEX_OPENING_NATURAL_20261011.txt.
+  pro_new.js의 연결 대화와 qa_intro.py의 실제 동기/행동 순서를 보완했다.
+  최신 빌드 caa05ea33851, 기존 컷/음악/추리 정보 경계는 유지.
 - 2026-10-11 10명 개성 개선: CODEX_CAST_IDENTITY_20261011.txt.
   art/ch1/dialogue-v2/ 원본 PNG 5장에 전신 10개/별도 상반신 40표정.
   assemble_cast.py는 PNG를 수정하지 않고 검증·manifest만 재생성한다.
