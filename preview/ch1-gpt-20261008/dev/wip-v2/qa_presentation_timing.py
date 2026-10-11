@@ -90,7 +90,10 @@ def check_art_trace(trace,manifest):
                 assert actor['src']==art['src'] and actor['crop']==art['crop'],actor
                 seen_world.add(actor['k'])
         for actor in row.get('nightActors',[]):
-            art=manifest['world']['det1'] if actor['surface']=='world' else manifest['characters']['det1']['distressed']
+            # Bedroom and corridor both show the child inside the world;
+            # close dialogue has its own stage surface, never a legless actor.
+            assert actor['surface'] in ('world','room'),actor
+            art=manifest['world']['det1']
             assert actor['src']==art['src'] and [float(v) for v in actor['crop'].split()]==art['crop'],actor
             seen_night.add(actor['surface'])
         speaker=row.get('speaker');expected=speaker and speaker.get('expected')
@@ -99,7 +102,7 @@ def check_art_trace(trace,manifest):
             # count settled, correct faces rather than assert transitional data.
             desired='|'.join(map(str,[(speaker['k'] or '').split('|')[0],expected['src'],expected['x'],expected['y'],expected['size']]))
             if speaker['crop']==desired and speaker['image']['src']==expected['src']:speakers+=1
-    assert seen_night=={'world','close'},('Night full-body/close-up source crops not exercised',seen_night)
+    assert seen_night=={'world','room'},('Bedroom/corridor full-body crops not exercised',seen_night)
     assert speakers>0,'No actual speaker face matched its new authored crop'
     return {'worldCharacters':sorted(seen_world),'nightSurfaces':sorted(seen_night),'matchedSpeakerFrames':speakers}
 

@@ -593,11 +593,13 @@
     var fk=DL.i+"|"+tx.length;
     if(fing){if(SPK.dataset.fk!==fk){SPK.dataset.fk=fk;SPKIMG.setAttribute("src",FV+"finger-base-speaker128.png");clearTimeout(SPK.__ft);SPK.__ft=setTimeout(function(){if(SPK.dataset.fk===fk)SPKIMG.setAttribute("src",FV+"finger-raised-speaker128.png")},200)}}
     else{if(SPK.dataset.fk){SPK.dataset.fk="";clearTimeout(SPK.__ft)}if(f){if(SPKIMG.getAttribute("src")!==f)SPKIMG.setAttribute("src",f)}else SPKIMG.removeAttribute("src")}
+    SPK.classList.toggle('loading',!!f&&(!SPKIMG.complete||!SPKIMG.naturalWidth||!!fc&&fc.src.indexOf('/dialogue-v2/')>=0&&!!window.__innDialogueArtReady&&!window.__innDialogueArtReady(fc.src)));
     /* 2026-10-10 작은 연출: 긴장·당황 표정(nervous/shock/worried) 줄에서는 초상 옆으로 땀방울이 조금씩 흐르고, 놀람(shock)·"?!" 줄은 한 번 움찔한다 */
     var fx=/^(nervous|panic|sweat|oops)$/.test(md)?"sweat":"",jolt=/^(shock|surprise)$/.test(md);
     if(SPK.dataset.fx!==fx){SPK.dataset.fx=fx;var sw=SPK.querySelector(".sw9");if(fx&&!sw){sw=document.createElement("i");sw.className="sw9";SPK.appendChild(sw)}else if(!fx&&sw)sw.remove()}
     var lk=DL.i+"|"+tx.length;if(jolt&&SPK.dataset.jk!==lk){SPK.dataset.jk=lk;SPK.classList.remove("jolt9");void SPK.offsetWidth;SPK.classList.add("jolt9")}
     if(!vt.classList.contains("v3"))vt.classList.add("v3")}catch(e){}}
+  SPKIMG.addEventListener('load',speaker);
   try{new MutationObserver(speaker).observe(document.getElementById("ov")||document.body,{childList:true,subtree:true})}catch(e){}
   setInterval(speaker,120);
 
