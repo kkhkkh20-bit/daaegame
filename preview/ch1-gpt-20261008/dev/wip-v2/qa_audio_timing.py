@@ -1,4 +1,4 @@
-"""Authored scene music follows its committed picture; stale loops lose ownership.
+"""Authored next-scene music leads its intentional blackout; stale loops lose ownership.
 
 Prepared scene fixtures use native dialogue/dir/card and WebAudio, not injected
 music cues. This is a timing regression check, not a subjective listening test.
@@ -29,7 +29,7 @@ with sync_playwright() as pw:
     page.evaluate('''window.__audioFrames=[];window.__audioLog=true;
       (function collect(){if(!window.__audioLog)return;
       const p=__innPresentationState(),a=__innAmb(),s=__innAudioState();
-      __audioFrames.push({at:performance.now(),sid:p.sid,owner:p.owner,ready:p.ready,retained:!!(p.loading&&p.cut),transitioning:p.transitioning,cold:p.cold,camera:p.camera,music:a.music,want:a.want,amb:a.cur,heartbeat:s.heartbeatActive,coldHeartbeat:s.coldHeartbeat,line:s.line});
+      __audioFrames.push({at:performance.now(),sid:p.sid,owner:p.owner,ready:p.ready,retained:!!(p.loading&&p.cut),transitioning:p.transitioning,cold:p.cold,camera:p.camera,music:a.music,want:a.want,amb:a.cur,flow:window.__innSceneFlowState(),heartbeat:s.heartbeatActive,coldHeartbeat:s.coldHeartbeat,line:s.line});
       if(__audioFrames.length>5000)__audioFrames.shift();requestAnimationFrame(collect)})();''')
     rows=[]
     def state(): return page.evaluate('({presentation:__innPresentationState().sid,audio:__innAudioState(),amb:__innAmb()})')
@@ -57,15 +57,16 @@ with sync_playwright() as pw:
     def wait_music(key):
         page.wait_for_function('(key)=>__innAmb().music===key', arg=key, timeout=10000)
 
-    # A real location card blocks music even though its decoded primary
-    # picture is already shown. No horse recording is requested or played.
+    # A real location card accompanies the next score, which starts in the
+    # intentional blackout. No horse recording is requested or played.
     prepare('P1')
     # Do not return this Promise to Playwright: evaluate would await the card
     # and skip the very interval whose music gate this assertion measures.
     engine('window.__timingDone=false;banner(EP1INN.PRO.find(s=>s.sid==="P1").title,EP1INN.PRO.find(s=>s.sid==="P1").sub).then(function(){__innPlay(EP1INN.PRO.find(s=>s.sid==="P1").items,function(){window.__timingDone=true})});void 0')
     page.wait_for_timeout(400)
     assert page.evaluate('!__innPresentationState().ready'), state()
-    assert page.evaluate('__innAmb().music===null&&__innAmb().cur===null'), state()
+    wait_music('inn_family')
+    assert page.evaluate('__innAmb().cur===null'), state()
     page.wait_for_function('__innPresentationState().ready&&__innPresentationState().sid==="P1"', timeout=15000)
     assert page.evaluate('__innAmb().cur===null&&__innRecordedSfx.stats().starts.horse===0'), state()
     wait_music('inn_family')
@@ -73,28 +74,31 @@ with sync_playwright() as pw:
     # Count actual starts of this score so old-instance cleanup is not mistaken
     # for a restart of the family's unchanged source.
     family_starts=page.evaluate('__AUD.log.filter(s=>/ play inn_family$/.test(s)).length')
-    # Native @dir gaps and split narration retain the same presentation owner.
+    # Mother discussion takes a sober cue before the driver camera; the
+    # subsequent driver cue changes to travel without restarting the family song.
+    advance_until('__innAudioState().line.includes("엄마 찾으면 셋이")')
+    wait_music('inn_serious')
     advance_until('__innAudioState().who==="karo"')
     page.wait_for_timeout(350)
     assert page.evaluate('__innAmb().cur===null'), state()
     assert page.evaluate('["stage","driver"].includes(__innPresentationState().camera)'), state()
     page.wait_for_function('__innPresentationState().ready',timeout=5000)
+    wait_music('inn_travel')
     assert page.evaluate('__AUD.log.filter(s=>/ play inn_family$/.test(s)).length')==family_starts, ('P1 source restarted across direction',state())
     rows.append({'scene':'P1 native dialogue/driver','state':state()})
-    print('PASS P1 primary picture, native direction/driver, no hooves, same cheerful family score',flush=True)
+    print('PASS P1 primary picture, native direction/driver, no hooves, authored family→mother→travel turns',flush=True)
     advance_until('window.__timingDone===true')
 
-    # Village travel score starts only after its next location card.
+    # Village travel score continues through its next location card.
     prepare('P2')
     engine('window.__timingDone=false;banner(EP1INN.PRO.find(s=>s.sid==="P2").title,EP1INN.PRO.find(s=>s.sid==="P2").sub).then(function(){__innPlay(EP1INN.PRO.find(s=>s.sid==="P2").items,function(){window.__timingDone=true})});void 0')
     page.wait_for_timeout(400)
-    if page.evaluate('!__innPresentationState().ready'):
-        assert page.evaluate('__innAmb().music===null'), state()
+    wait_music('inn_travel')
     page.wait_for_function('__innPresentationState().ready&&__innPresentationState().sid==="P2"&&__innPresentationState().camera==="village"', timeout=10000)
     wait_music('inn_travel')
     assert page.evaluate('__innAmb().cur===null'), state()
     rows.append({'scene':'P2 village after card','state':state()})
-    print('PASS P2 card→committed village music',flush=True)
+    print('PASS P2 music→committed village, card continuity',flush=True)
 
     # The real ten-o-clock direction silences P10. Changing to the authored
     # night corridor cancels the remaining scheduled bells and keeps it quiet.
@@ -103,13 +107,13 @@ with sync_playwright() as pw:
     page.wait_for_timeout(250)
     assert page.evaluate('__innAmb().music===null&&__innAudioState().scopedSources>0'), state()
     prepare('P10b'); play('P10b')
-    page.wait_for_timeout(300)
-    assert page.evaluate('__innAmb().music===null&&!__innAudioState().bell&&__innAudioState().scopedSources===0'), state()
+    wait_music('inn_night')
+    assert page.evaluate('!__innAudioState().bell&&__innAudioState().scopedSources===0'), state()
     advance_until('__innAudioState().heartbeatActive')
     page.wait_for_timeout(700)
     assert page.evaluate('__innTense()'), state()
     rows.append({'scene':'P10b authored night pulse','state':state()})
-    print('PASS P10 bells→P10b silence/pulse',flush=True)
+    print('PASS P10 bells→P10b tension→eyes silence/pulse',flush=True)
     stop()
     engine('S.screen="board";render()')
     page.wait_for_timeout(400)
@@ -166,20 +170,13 @@ with sync_playwright() as pw:
     assert page.evaluate('!__innAmb().dep&&__innAudioState().scopedSources===0'), state()
     page.evaluate('window.__audioLog=false')
     frames=page.evaluate('__audioFrames')
-    retained=[f for f in frames if f['retained'] and f['sid']=='P1']
-    if page.evaluate('__innStoryArt.driver===true'):
-        # Preloaded/decoded cameras can commit without a pending frame. Fault
-        # injection at document start is covered by qa_cinematic_entry.py.
-        assert all(f['music']=='inn_family' and f['line']=='' for f in retained), ('Retained camera lost its score or emitted its next cue',retained)
-    # Give audio's 220-ms poll / 80-ms turn fade a 400-ms boundary allowance.
-    blocked_start=None
+    # Dialogue cues still wait for presentation; authored music is allowed
+    # during its own scene's intentional entry, including the location card.
     for frame in frames:
-        if frame['owner'] and not frame['ready'] and not frame['cold'] and not frame['retained']:
-            if blocked_start is None: blocked_start=frame['at']
-            if frame['at']-blocked_start>400:
-                assert frame['music'] is None, ('Music before presentation commit',frame)
-                assert frame['amb'] is None, ('Ambience before presentation commit',frame)
-        else: blocked_start=None
+        if frame['flow'] and frame['flow']['black']:
+            assert frame['line']=='',('Dialogue before black reveal',frame)
+        if frame['owner'] and frame['transitioning'] and frame['flow']:
+            assert frame['amb'] is None,('Ambience during authored transition',frame)
     assert not errors, errors
     assert not bad, bad
     print('PASS picture/card/music owner, native @dir continuity, P1→P2, P10→P10b, bell/pulse/cold/departure cancellation; JS/HTTP errors 0', flush=True)

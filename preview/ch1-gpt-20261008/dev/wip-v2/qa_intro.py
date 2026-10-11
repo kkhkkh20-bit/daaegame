@@ -41,45 +41,45 @@ with sync_playwright() as p:
     assert st['done'],st
     # Assert the actual story facts rather than the former explanatory wording.
     required_facts = {
-        'Family bookstore explains detective retirement': '탐정은 그만뒀지. 엄마랑 서점 열면서.',
-        'Sudden disappearance remains unexplained': '엄마는 왜 갑자기 사라졌을까',
-        'Letter is years old': '몇 해 전 편지야',
-        'Old letter identifies a past stop, not current whereabouts': '엄마가 여기 우체국에서 부친 거야',
-        'Village witnesses motivate the journey': '엄마를 기억하는 사람도 있겠다',
-        'Father asks about the return journey': '돌아가는 마차는 언제 출발합니까',
-        'Next noon is the final departure': '내일 정오요. 올해 마지막 마차입니다',
-        'Snow explains the long transport gap': '눈이 쌓이면 고개를 못 넘어요',
-        'Closed post office leads to lodging': '여관부터 찾아보자',
-        'Mother search leads to this village': '몇 해 전에 여기서 편지를 부쳤더군요',
-        'Grandmother cares despite withholding guest information': '찾느라 걱정이 많겠구나',
-        'Child counts beds before noticing the extra one': '하나, 둘, 셋… 열하나, 열둘.',
-        'Extra bed is outside the guest-bed count': '저 침대는 안 세는 거예요?',
-        'Child wants to help find mother': '아빠처럼 탐정 할래. 나도 엄마 찾을래.',
-        'Father accepts child observations': '네가 본 건 수첩에 적어 줘',
-        'Child must not go ahead alone': '대신 혼자 먼저 가지 않기',
-        'Former detective disclosed to villagers': '전 탐정이었습니다',
-        'Inn owner is asked for circumstances, not declared guilty': '왜 이 방에 있었는지는 할머니께도 묻겠습니다',
-        'Village bell rings only at the hour': '마을 종이야. 정각에만 쳐. 반 시엔 안 치고.',
-        'Questioning is distinguished from guilt': '도둑이라고 정한 건 아닙니다',
-        'Noon deadline is the last transport': '위 마을로 가는 마차는 정오가 마지막입니다',
-        'Father also opposes blame without checking': '확인도 없이 누굴 도둑으로 몰 순 없고',
-        'Child identifies loss of mother information': '할머니 가면, 엄마 얘긴 누구한테 물어?',
-        'Mother information motivates intervention': '엄마 얘기도 들어야지',
-        'Search starts with limited physical clues': '주머니부터 보자',
-        'Child records observed behavior': '할머니가 이불 보던 것도 적을게',
-        'Child asks father about the sound': '아빠, 저 소리… 들려?',
-        'Father hears the same sound': '응. 복도 쪽이네.',
-        'Mother search is spoken before moving': '손님 있으면 엄마 사진 보여 주자.',
-        'Father goes with child, stopping at the door': '문 앞까지만 같이 보자. 아빠 옆에 있어.',
-        'No answer makes father decide to return': '대답이 없네. 돌아가자.',
-        'Father also sees the hanging resident': '저기… 천장에 매달려 있군요.',
-        'Father brings child back': '안 놓아. 같이 가자.',
-        'Mother question is postponed until morning': '응. 아침에 물어보자.',
+        'Bookstore explains retirement':'엄마랑 서점 열면서 그만뒀지.',
+        'Disappearance remains unexplained':'아직 몰라.',
+        'Old letter identifies a past stop':'몇 해 전 편지랬지?',
+        'Father confirms letter origin':'엄마가 여기서 부쳤어.',
+        'Village witnesses motivate visit':'엄마를 기억하는 사람도 있겠다',
+        'Father checks return journey':'돌아가는 마차는 언제',
+        'Noon final coach':'내일 정오요. 올해 마지막 마차입니다',
+        'Snow closes pass':'눈이 쌓이면 고개를 못 넘어요',
+        'Closed office motivates lodging':'아빠, 우체국 문 닫혔어.',
+        'Photo motivates question':'우리 엄마예요. 여기서 편지를 보냈대요.',
+        'Guest confidentiality':'손님 얘긴 함부로 못 해요',
+        'Child counts before extra bed':'하나, 둘, 셋… 열하나, 열둘.',
+        'Extra bed outside guest count':'저 침대는 안 세는 거예요?',
+        'Child independently records clue':'잊을까 봐 적었어.',
+        'Child wants to show photo tomorrow':'내일은 내가 사진 보여 줄래.',
+        'Father accompanies child':'같이 가자.',
+        'Night sound is shared':'아빠, 저 소리… 들려?',
+        'Father limits night movement':'문 앞까지만. 옆에 있어.',
+        'Child sees light before silence':'저 문 밑에 빛이 새네.',
+        'Child sees light extinguish':'조용해졌어. 불도 꺼졌고.',
+        'Child sees eyes':'아빠… 위에 눈이…!',
+        'Child asks for company when returning':'손 잡고.',
+        'Bell only rings on the hour':'아니. 마을 종은 정각에만.',
+        'Reporter states amount':'계약금 삼백 냥입니다.',
+        'Reporter states waking time':'여섯 시 반에 깼을 땐 이미 없었습니다.',
+        'Search needs permission':'다른 방도 허락받고 보겠습니다.',
+        'Questioning not guilt':'도둑이라고 정한 건 아닙니다',
+        'Father does not assume guilt':'누가 옮겼는지는 아직 모르죠.',
+        'Past detective explains intervention':'전 탐정이었습니다.',
+        'Father asks investigation permission':'저희도 살펴봐도 되겠습니까?',
+        'Deadline is last transport':'위 마을로 가는 마차는 정오가 마지막입니다',
+        'Child fears losing mother lead':'할머니 가면, 엄마 얘긴 누구한테 물어?',
+        'Child records observed action':'할머니가 이불 보던 것도 적을게',
+        'Search begins with physical clues':'주머니부터 보자',
     }
     for fact, phrase in required_facts.items():
         assert any(phrase in t for t in seen), ('Required introduction fact missing', fact, phrase)
     # The grandmother comments on resemblance only after being shown the photo.
-    encounter = ('제 아내를 찾고 있습니다', '이 사진 속 사람을 기억하십니까',
+    encounter = ('우리 엄마예요', '제 아내입니다',
                  '사진 속 엄마를 닮았구나')
     positions = [next(i for i, t in enumerate(played) if phrase in t) for phrase in encounter]
     assert positions == sorted(positions), ('Photo encounter out of order', positions)
@@ -90,20 +90,24 @@ with sync_playwright() as p:
     assert not any('잠들어 있다' in l['line'] or '주무시네' in l['line'] for l in native),'Father cannot witness the night while asleep'
     # The player hears each motive before the consequential action.
     chains = [
-        ('몇 해 전 편지야', '엄마가 여기 우체국에서 부친 거야', '엄마를 기억하는 사람도 있겠다'),
-        ('돌아가는 마차는 언제', '내일 정오요', '그다음은 언제', '봄이요. 눈이', '내일 오전엔 우체국'),
-        ('우체국 문이 닫혔네', '아침에 다시 와야겠다', '오늘은 어디서 자', '여관부터 찾아보자', '겨울잠 여관이다'),
+        ('몇 해 전 편지랬지', '엄마가 여기서 부쳤어', '엄마를 기억하는 사람도 있겠다'),
+        ('돌아가는 마차는 언제', '내일 정오요', '그다음은 언제', '봄이요. 눈이'),
+        ('우체국 문 닫혔어', '아침에 다시 오자', '오늘은 어디서 자', '여관부터 찾아보자', '겨울잠 여관이다'),
         ('하나, 둘, 셋… 열하나, 열둘.', '열셋. 할머니', '손님 침대는 열둘이에요'),
+        ('엄마 사진 보고 말이 없어졌어', '잊을까 봐 적었어', '내일은 내가 사진 보여 줄래'),
+        ('아빠, 저 소리', '사진은 아침에.', '문 앞까지만.', '저 문 밑에 빛',
+         '조용해졌어. 불도 꺼졌고.', '아빠… 위에 눈이', '가서 자, 꼬맹이', '손 잡고.'),
         ('왜 이 방에 있었는지는 할머니께도', '관청에서 조사받으셔야', '전 탐정이었습니다'),
-        ('할머니 가면, 엄마 얘긴', '엄마 얘기도 들어야지', '주머니부터 보자'),
-        ('아빠, 저 소리', '응. 복도 쪽이네.', '손님 있으면 엄마 사진', '문 앞까지만 같이', '저 문 밑에 빛',
-         '조용해졌어. 불도 꺼졌고.', '대답이 없네. 돌아가자.', '저기… 천장에', '안 놓아. 같이 가자.', '응. 아침에 물어보자.'),
+        ('할머니 가면, 엄마 얘긴', '그 전에 살펴보자', '주머니부터 보자'),
     ]
     for chain in chains:
         positions = [next(i for i,t in enumerate(played) if phrase in t) for phrase in chain]
         assert positions == sorted(positions), ('Motive/action out of order', chain, positions)
-    assert any('크르르. 내 책을' in t for t in seen), 'Shared bedtime routine not played'
-    assert any('책 말고 간식!' in t for t in seen), 'Child did not correct the familiar story'
+    assert not any('크르르' in t or '괴물 목소리' in t or '아빠처럼 탐정 할래' in t for t in seen), 'Disconnected role-play remains'
+    for sid in ('P10','P10b'):
+        child=sum(len(l['line']) for l in native if l['sid']==sid and l['who']=='det1')
+        father=sum(len(l['line']) for l in native if l['sid']==sid and l['who']=='det0')
+        assert child>father,(sid,child,father)
     assert not any('마부 까로예요' in t or '도착은 늘 제때죠' in t or '언덕 위래' in t for t in seen), 'Old arrival exposition remains'
     assert not errors,errors
     assert not bad,bad

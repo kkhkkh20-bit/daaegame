@@ -9,8 +9,8 @@
   function cur(){try{return S.screen==="case"&&!!G&&!!CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}
   function sidOf(pi){try{var E=window.EP1INN||EP;return (E.PRO[pi]&&E.PRO[pi].sid)||("P"+(pi+1))}catch(e){return "P"+(pi+1)}}   /* 2026-10-10: EP는 이 모듈 범위에 없어 장면 번호가 밀려(P6·P8 제외 뒤) 신고 장면에서도 여행곡이 나오던 문제 */
   function beats(){try{return (G&&G.beats)||{}}catch(e){return {}}}
-  /* The saved script cursor can move before its picture/card has committed.
-     Only the presentation owner's ready scene may play dialogue music/cues. */
+  /* Dialogue/SFX wait for the committed picture. Authored entry music has
+     its own intentional blackout lead and may start before the location card. */
   function presentation(){try{return window.__innPresentationState&&window.__innPresentationState()}catch(e){return null}}
   function blocked(){var p=presentation();return !!(p&&(!p.ready||p.transitioning||p.cold))}
   /* An atomic camera decode retains its already committed picture. Keep that
@@ -76,7 +76,9 @@
     else setTimeout(function(){tenseTick(gen)},300)}catch(e){tenseStop()}}
   window.__innTense=function(){return TENSE.on};
   setInterval(function(){try{syncOwner();if(blocked()){if(TENSE.on)tenseStop();return}if(!cur()||!liveLine()){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
-    var t=lineText(); /* 좁은 화면에서도 페이지 분할 전 원문으로 큐를 판별 */
+    var t=lineText(),night=window.__innOpeningDirection&&window.__innOpeningDirection();
+    if(presentedSid()==="P10b"&&night&&["eyes","bami"].indexOf(night.cue)<0){if(TENSE.on)tenseStop();return}
+    /* 좁은 화면에서도 페이지 분할 전 원문으로 큐를 판별 */
     if(TENSE.on&&TENSE.meeting&&CUE.mode!=="pulse")tenseStop();
     if(!TENSE.on&&(TENSE_ON.test(t)||CUE.mode==="pulse")){TENSE.on=true;TENSE.k=0;TENSE.owner=scope();TENSE.meeting=CUE.mode==="pulse";var gen=++TENSE.gen;
       var discovery=TENSE.discovery=TENSE.meeting||/상자 뒤|작은 애가/.test(t);if(!discovery)try{SFX.cut9&&SFX.cut9()}catch(e){}
@@ -86,19 +88,14 @@
    syncOwner();
    if(document.getElementById("innmain"))return "inn_title";
    if(!cur())return undefined;
+   var authored=window.__innAuthoredMusic&&window.__innAuthoredMusic();
+   if(authored){A.hush=null;A.exp=null;A.pursuit=null;return TENSE.on&&!authored.black?null:authored.key}
    if(musicBlocked())return null;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    if(TENSE.on||M.failure||(CUE.ph===(window.__rtPh&&window.__rtPh())&&(CUE.mode==="silence"||CUE.mode==="pulse"||(CUE.mode==="impact"&&Date.now()-CUE.at<800))))return null;                         /* 발견 순간: 음악 없음 */
    var b=beats(),now=Date.now();
    /* 2026-10-10 v2 음악 큐시트(dev/review/CH1_V2_DESIGN.txt 5장): 영화처럼 줄·장면 시점에 맞춰 끊고, 한 방 치고, 다시 들어온다 */
-   if(!b.inn_pro){var sid=presentedSid();if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0}if(+String(sid).slice(1)<11)M.inv=false;
-    if(sid==="P10"&&M.bell)return null;
-    if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
-    if(sid==="P13"){if(!M.hit&&/^베개 밑…/.test(lineText())){M.hit=now;try{SFX.cut9()}catch(e){}}if(M.hit&&now-M.hit<1500)return null}   /* 주머니 발견: 음악 끊고 한 방 → 1.5초 정적 */   /* 2026-10-10: 번호(pi<6) 대신 장면 이름으로(도입 재배치 뒤 P11이 5번) */
-    if(sid==='P1')return 'inn_family'; /* 부녀 대화는 밝은 장조 목관곡을 끝까지 유지한다. */
-    if(['P2','P3','P4','P5','P6','P7','P8','P9','P10'].indexOf(sid)>=0)return contextMusic(sid==='P3'||sid==='P10'?'inn_friend':'inn_travel','pro:'+sid);
-    if(sid==="P11"){if(/^제 주머니가 (?:없어요|없어졌)|^계약금이 든 주머니/.test(lineText()))M.inv=true;   /* 범죄를 처음 알아채는 세련의 외침에서 사건곡 */return M.inv?"inn_serious":null}   /* P11: 신고 확인 뒤 */
-    return "inn_serious"}                         /* P12 수색·P13 안 쓰는 방: 사건곡(낮게) */
+   if(!b.inn_pro)return null; /* Authored scene owner supplies its explicit score. */
    if(!b.inn_final){var rt=document.querySelector("body>.rt");if(!rt)return investigationMusic();   /* 동일 상황의 곡은 재시작하지 않는다. */
     var ph=null,E=window.EP1INN||{},fin=false;try{ph=window.__rtPh&&__rtPh();fin=!!(ph&&E.FINAL&&E.FINAL.phases&&E.FINAL.phases.indexOf(ph)>=0)}catch(e){}
     /* 정답 제시('그건 아니야!'/'이걸 봐!') 순간: 음악을 끊고 외침 → 이어서 추궁곡. 그 발언의 대화가 끝나고 1.5초 뒤(또는 단계가 바뀌면) 원래 곡으로 */
@@ -120,6 +117,7 @@
   window.__innDuck0=function(){
    if(document.getElementById("inncold"))return COLDD;   /* 콜드 오픈: 비트마다 정한 낮춤(정적으로 갈수록 작게) */
    if(!cur())return 1;
+   var authored=window.__innAuthoredMusic&&window.__innAuthoredMusic();if(authored)return authored.black?1:(/^end:/.test(authored.owner)&&authored.owner!=="end:E4"?.42:(typeof DL!=="undefined"&&DL?.55:.75));
    if(musicBlocked())return 0;
    var b=beats(),now=Date.now(),f=(typeof DL!=="undefined"&&DL)?.55:1,t=lineText();   /* 대화 중 배경음 .55: 글자·행동 효과음이 묻히지 않게 */
    if(!b.inn_pro){var pi=b.inn_pi|0;
