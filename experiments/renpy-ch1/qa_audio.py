@@ -1,4 +1,4 @@
-"""Verify actual WebAudio controls and the source seven-location map with real UI input."""
+"""Verify real typing output with BGM muted, audio controls, and revised evidence."""
 import argparse
 import asyncio
 import json
@@ -27,7 +27,7 @@ async def main(args):
         await trial.state()
         await trial.click(320, 425)
         # Open settings while the first line is still typing.
-        for _ in range(40):
+        for _ in range(90):
             if (await trial.state())["typing"]:
                 break
             await page.wait_for_timeout(50)
@@ -46,13 +46,32 @@ async def main(args):
         await trial.shot("muted")
         assert (await trial.state())["fx"] is None, "One-shot effect did not finish"
         assert signals and all(s["rms"] < 1e-7 for s in signals)
+        # Keep music muted while returning to dialogue; isolate the typing channel.
+        await trial.click(450,190)
+        await trial.wait("menu",False)
+        typing_signal = False
+        for _ in range(12):
+            await trial.click(830,665)
+            for sample in range(4):
+                state = await trial.state()
+                if state["typing"] and not state["fx"]:
+                    assert state["music_mute"]
+                    typing_signal |= any(s["rms"]>1e-5 for s in await page.evaluate("__probeAudio()"))
+                await page.wait_for_timeout(60)
+            if typing_signal:break
+        assert typing_signal, "Typing channel has no audible output with BGM muted"
+        await trial.click(1174,45)
+        await trial.wait("menu")
+        await page.wait_for_timeout(400)
+        assert (await trial.state())["typing"] is None
+        assert all(s["rms"]<1e-7 for s in await page.evaluate("__probeAudio()"))
         await trial.click(630, 400)
         await page.wait_for_timeout(900)
         assert not (await trial.state())["music_mute"]
         assert any(s["rms"] > 1e-5 for s in await page.evaluate("__probeAudio()"))
         await trial.click(450, 190)
         await trial.wait("menu", False)
-        await trial.advance_until("roam")
+        await trial.arrival_route(rich=False)
         assert (await trial.state())["stage"] == "investigation"
         await trial.click(842, 635)
         await trial.wait("map")
@@ -67,7 +86,7 @@ async def main(args):
         assert not trial.errors and not trial.failed and not trial.bad
         result = dict(volume_slider=True, mute_silences_output=True,
                       unmute_restores_output=True, active_typing_stops_in_menu=True,
-                      one_shot_effect_finishes=True,
+                      one_shot_effect_finishes=True, typing_outputs_with_bgm_muted=typing_signal,
                       seven_location_map_room_selection=True, errors=trial.errors,
                       failed_requests=trial.failed, bad_responses=trial.bad)
         (output / "report.json").write_text(json.dumps(result, indent=2))

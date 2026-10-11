@@ -1,7 +1,7 @@
 define config.name = "다람탐정 · 열세 번째 침대"
-define config.version = "0.3.0"
+define config.version = "0.4.0"
 # Literal early definition selects the persistent web save mount.
-define config.save_directory = "daaegame-renpy-source-ch1-20261011"
+define config.save_directory = "daaegame-renpy-village-ch1-04"
 
 default inventory = []
 default inspected = []
@@ -50,7 +50,7 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.3.0"
+    build.version = "0.4.0"
     build.classify("game/assets/*.txt", "all")
     build.classify("game/assets/*.json", "all")
     build.classify("**.py", None)
@@ -59,6 +59,7 @@ init python:
     build.classify("*_QA_REPORT.json", None)
     build.classify("QA_REPORT.json", None)
     build.classify("review/**", None)
+    build.classify("art/**", None)
     build.classify("**.log", None)
     build.classify("**/saves/**", None)
     build.classify("**/cache/**", None)
@@ -194,7 +195,7 @@ image bg post = Transform("assets/post-office.png",size=(1280,720))
 image bg inn = Transform("assets/inn-door.png",size=(1280,720))
 image cg pouch = Transform("assets/pouch.png",size=(1280,720))
 image cg somsom = Transform("assets/somsom.png",size=(1280,720))
-image clue fur = Composite((512,512), (0,0), Transform(Crop((775,480,180,150),"assets/somsom.png"),size=(512,512)), (0,0), "assets/fur-stamp.png")
+image clue fur = Composite((512,512), (0,0), Transform(Crop((835,445,130,130),"assets/somsom.png"),size=(512,512)), (0,0), "assets/fur-stamp.png")
 
 transform portrait_close:
     xalign 0.79

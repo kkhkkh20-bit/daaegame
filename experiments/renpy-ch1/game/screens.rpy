@@ -40,10 +40,10 @@ screen main_menu():
             spacing 20
             text "다람탐정" size 58 color "#ffdc91"
             text "열세 번째 침대" size 34
-            text "원본 1장 · Ren’Py 이식 비교판" size 22 color "#c6b699"
+            text "1장 · 마을 탐색 시험판" size 22 color "#c6b699"
             textbutton "처음부터" action Start() xsize 470
             textbutton "이어하기" action ShowMenu("load") xsize 470
-            text "기존 v2 대사 · 장면 순서 · 효과음 큐\n조사 · 원탁 회의 · 최종 대결" size 21 color "#c6b699"
+            text "부녀의 여행 · 주민과의 첫 만남\n조사 · 원탁 회의 · 최종 대결" size 21 color "#c6b699"
 
 screen say(who,what):
     window:
@@ -404,7 +404,7 @@ screen trial_complete():
             spacing 23
             text "열세 번째 침대" size 44 color "#ffdc91"
             text (SOURCE_EP["THE_END"]["notice"]["text"] if source_mode else "할머니의 누명은 벗겼다.\n하지만 그 침대에서 엄마가 누구를 기다렸는지는 남았다.") size 28
-            text ("원본 1장 이식 비교판 끝" if source_mode else "작은 1장 끝") size 24 color "#c6b699"
+            text ("1장 마을 탐색 시험판 끝" if source_mode else "작은 1장 끝") size 24 color "#c6b699"
             textbutton "다시 플레이" action Start()
             textbutton "처음 화면으로" action MainMenu(confirm=False)
 
