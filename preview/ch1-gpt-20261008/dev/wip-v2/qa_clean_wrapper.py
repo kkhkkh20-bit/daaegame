@@ -1,7 +1,7 @@
 """Production wrapper smoke via native input, without __T or evidence seeding."""
 import argparse, math, shutil, time
 from pathlib import Path
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, TimeoutError
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--url',default='http://127.0.0.1:8000/v2.html?v=06a314a52fdf')
 p.add_argument('--version',default='06a314a52fdf')
@@ -25,7 +25,13 @@ with sync_playwright() as pw:
         frame.locator('#innmain [data-m="new"]').click()
         deadline=time.monotonic()+80
         while not frame.locator('#inn-story-cg.ready').count() and time.monotonic()<deadline:
-            if frame.locator('#inncold').count():frame.locator('#inncold').click()
+            if frame.locator('#inncold').count():
+                try:frame.locator('#inncold').click(timeout=1000)
+                except TimeoutError:
+                    # The cold scene can finish between locating it and the
+                    # pointer action. Accept only its actual removal; a live
+                    # but blocked scene remains a failure.
+                    if frame.locator('#inncold').count():raise
             else:page.keyboard.press('Enter')
             page.wait_for_timeout(180)
         cg=frame.locator('#inn-story-cg.ready')

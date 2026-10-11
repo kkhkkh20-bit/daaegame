@@ -306,7 +306,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   C01show:{title:"돈주머니 (조사 때 본 것)",pages:[{art:'<img class="icl" src="art/ch1/closeup/I1-seal-strip-complete-512.png" alt="돈주머니의 봉인띠">',
     cap:"창고에서 본 돈주머니의 붉은 봉인띠. 현장 물건은 옮기지 않고 조사 기록으로 보여 드린다.",look:"증거"}]}};
  function lay(k,alt){return '<span class="ilay"><img class="ib0" src="art/ch1/closeup/'+k+'-base-512.png" alt="'+alt+'"><img class="ib1" src="art/ch1/closeup/'+k+'-exact-overlay-512.png" alt=""></span>'}
- function inspect(key,done){var D=INSPECT[key];if(!D){done&&done();return}var i=0;
+ function inspect(key,done){if(key==='motherlead'&&window.__innMotherLead){window.__innMotherLead(done);return}var D=INSPECT[key];if(!D){done&&done();return}var i=0;
   try{SFX.page()}catch(e){}var el=document.createElement("div");el.id="innins";el.setAttribute("role","dialog");el.setAttribute("aria-label",D.title+" 자세히 보기");
   function draw(){var p=D.pages[i],last=i>=D.pages.length-1;
    el.innerHTML='<div class="iin"><div class="ihd"><small>자세히 보기</small><b>'+D.title+'</b>'+(D.pages.length>1?'<span class="ipg">'+D.pages.map(function(x,k){return '<i class="'+(k===i?"on":"")+'">'+x.look+'</i>'}).join("")+'</span>':'')+'</div>'+

@@ -32,7 +32,7 @@ a=s.index(' EP.PRO=[\n');b=s.index(' /* ---- 장면 배경 ----',a)
 s=s[:a]+open(D+'pro_new.js',encoding='utf-8').read()+s[b:]
 rep(' EP.PRO[0].bg="carriage";EP.PRO[1].bg="plaza";EP.PRO[2].bg="reception";EP.PRO[3].bg="corridor";EP.PRO[5].bg="reception";EP.PRO[6].bg="room";EP.PRO[7].bg="corridor";',' /* 프롤로그 장면 배경은 EP.PRO의 B(배경, 상대, 장면)에서 지정 */')
 # 3) 대화 무대 모듈: 엔진 클로저 안(첫 실행 직전)에 넣는다
-modules=['inn_stage','inn_music_tracks','inn_recorded_sfx','inn_audio','inn_input','inn_ui9','inn_polish','inn_evidence','inn_simple_ui','inn_map_navigation','inn_scene_guidance','inn_room_puzzles','inn_posture_props','inn_character_motion','inn_opening_direction','inn_story_cinematics']
+modules=['inn_stage','inn_music_tracks','inn_recorded_sfx','inn_audio','inn_input','inn_ui9','inn_polish','inn_evidence','inn_simple_ui','inn_map_navigation','inn_scene_guidance','inn_room_puzzles','inn_posture_props','inn_character_motion','inn_opening_direction','inn_story_cinematics','inn_purchase_payoff','inn_mother_lead','inn_chapter2_teaser']
 cinematic_root=SOURCE.parent.parent / 'art/ch1/cinematics'
 story_art={key:(cinematic_root / name).is_file() for key,name in {'carriage':'carriage-family-close.png','village':'village-arrival-wide.png','seal':'sealed-pouch-close.png'}.items()}
 import json

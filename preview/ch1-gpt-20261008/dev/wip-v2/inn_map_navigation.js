@@ -10,6 +10,7 @@
  function close(d){var b=d&&d.querySelector('[data-x]');if(b)b.click()}
  function purpose(){
   var found=G.found||[];
+  if(G.innfinal&&!G.innfinal.done&&G.innfinal.pi===3&&found.indexOf('C14')<0)return '여관 밖 까로에게 세련 손님을 묻자. 이미 들었다면 숙박부를 보여주자.';
   if(found.indexOf('C04')>=0&&!(G.beats||{}).inn_life_confirmed&&!(G.beats||{}).inn_meet)return '모두 식당에 모여 작은 손님부터 살펴보자.';
   if(found.indexOf('C04')<0&&window.__innDiscoveryReady&&window.__innDiscoveryReady())return '밝아진 아침. 열세 번째 침대의 어두웠던 곳을 다시 살펴보자.';
   /* 찾은 정보만 연결한다. 기록 내용과 사건의 답은 안내에 넣지 않는다. */
