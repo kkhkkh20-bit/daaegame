@@ -31,8 +31,9 @@ with sync_playwright() as playwright:
             page.wait_for_timeout(200)
             actual=page.evaluate('__innWant()')
             if actual==key and (not line or line in page.evaluate('__innAudioState().line')):break
-            if not engine('!!DL'):break
-            page.keyboard.press('Enter')
+            # @dir may be awaiting its assets/hold before it creates DL.
+            # A temporarily empty dialogue is not the end of this fixture.
+            if engine('!!DL') or page.locator('.banner,.placecard').count():page.keyboard.press('Enter')
         assert actual==key,(label,actual,key,page.evaluate('__innAudioState()'))
         if line:assert line in page.evaluate('__innAudioState().line'),(label,line,page.evaluate('__innAudioState()'))
         page.wait_for_function('(key)=>__AUD.cur===key',arg=key,timeout=10000)
@@ -57,28 +58,28 @@ with sync_playwright() as playwright:
     clear();engine('G.tab="talk";G.who="geokkuri";say([EP1INN.TALK.geokkuri.find(t=>t.id==="C13").lines[1]],function(){})')
     expect('Bami useful witness account','inn_inv')
 
-    clear();engine('G.beats={inn_pi:EP1INN.PRO.findIndex(s=>s.sid==="P3")};say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&l[0]==="innma"&&String(l[1]).startsWith("어서 와요"))],function(){})')
+    # Prologue score turns are explicit direction data, never selected by
+    # whether a sentence happens to contain a mood-related word.
+    clear();engine('G.beats={inn_pi:EP1INN.PRO.findIndex(s=>s.sid==="P3")};render();say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&l[0]==="innma"&&String(l[1]).startsWith("어서 와요"))],function(){})')
     expect('First inn welcome','inn_friend')
-    engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&String(l[1]).includes("제 아내를 찾고"))],function(){})')
-    expect('Mother question changes same scene','inn_serious')
+    engine('if(DL){DL.done=null;endDlg()};__innPlay(EP1INN.PRO.find(s=>s.sid==="P3").items.slice(EP1INN.PRO.find(s=>s.sid==="P3").items.findIndex(l=>l.dir&&l.dir.music==="inn_serious"),EP1INN.PRO.find(s=>s.sid==="P3").items.findIndex(l=>l.dir&&l.dir.music==="inn_serious")+2),function(){})')
+    expect('Authored mother-photo turn','inn_serious','우리 엄마예요')
     engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P3").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("우선 들어와요"))],function(){})')
-    expect('Welcome returns gently','inn_friend')
-    clear();engine('G.beats={inn_pi:EP1INN.PRO.findIndex(s=>s.sid==="P10")};say([EP1INN.PRO.find(s=>s.sid==="P10").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("크르르"))],function(){})')
-    expect('Family monster voice','inn_comic')
-    engine('if(DL){DL.done=null;endDlg()};say([EP1INN.PRO.find(s=>s.sid==="P10").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("아빠처럼 탐정 할래"))],function(){})')
-    expect('Family promise','inn_friend')
+    expect('No automatic cheerful reset after personal question','inn_serious')
+    clear();engine('G.beats={inn_pi:EP1INN.PRO.findIndex(s=>s.sid==="P10")};render();say([EP1INN.PRO.find(s=>s.sid==="P10").items.find(l=>Array.isArray(l)&&String(l[1]).startsWith("내일은 내가"))],function(){})')
+    expect('Child plans next morning','inn_serious')
 
     clear();engine('say([EP1INN.LOCS.find(l=>l.id==="bed13").obs.find(o=>o.id==="o_under").say.find(l=>String(l[1]).startsWith("…상자 뒤"))],function(){})')
     page.wait_for_timeout(250)
     assert page.evaluate('__innTense()') and page.evaluate('__innWant()') is None,'Discovery loses its silence'
     page.wait_for_function('__AUD.cur===null',timeout=5000)
     clear();engine('G.beats={inn_pi:EP1INN.PRO.findIndex(s=>s.sid==="P10b")};')
-    assert page.evaluate('__innWant()') is None,'Night corridor starts a friendly/comic song'
+    expect('Authored night tension','inn_night')
     clear();expect('Return to investigation','inn_inv')
     mapping=page.evaluate('Object.fromEntries(["inn_inv","inn_serious","inn_comic","inn_friend"].map(k=>[k,__AUD.SONGS[k].media]))')
     assert len(set(mapping.values()))==4 and all(v.startswith('audio/v4/') for v in mapping.values()),mapping
     assert not errors,errors
     assert not bad,bad
-    print('PASS authored mood turns, live media sources, same-mood continuity, discovery/night silence; JS/HTTP errors 0',flush=True)
+    print('PASS authored mood turns, live media sources, same-mood continuity, discovery silence/authored night tension; JS/HTTP errors 0',flush=True)
     print(json.dumps({'scenes':rows,'files':mapping},ensure_ascii=False),flush=True)
     browser.close()

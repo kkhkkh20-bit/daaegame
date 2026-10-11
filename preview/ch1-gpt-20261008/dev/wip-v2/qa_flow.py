@@ -207,7 +207,7 @@ with sync_playwright() as p:
   audio=pg.evaluate('window.__audioSeen')
   if not args.from_final:assert audio.get('너울이 바구니를 식탁에 놓는다.',{}).get('want')=='inn_serious', 'Clinical opening lost its restrained music'
   for relationship_beat in (() if args.from_final else ('살해 의심은 거둡니다',))+('다니면서 물어볼게요',
-                            '엄마 편지는 여기서 왔잖아', '우체국에도 가봐야지',
+                            '우체국도 아직 못 갔잖아', '우체국에도 가자',
                             '엄마 찾으면 서점 다시 열자'):
    assert any(relationship_beat in t for t in audio),('Epilogue relationship missing',relationship_beat)
   print('Family epilogue: child testimony accepted, village allies and active mother search before bookstore return OK',flush=True)
@@ -217,11 +217,12 @@ with sync_playwright() as p:
   if not args.from_final:assert following and following['want'] in ('inn_meet','inn_meet_press','inn_climax'),('Comfort quiet leaked into the next testimony',following)
   for emotional_beat in (() if args.from_final else ('엄마가 그랬어요. 겨울잠 땐',))+('두 사람 몫도 끓여',
                          '솜솜을 베개 구석에', '오늘은 아빠한테 읽어줘',
-                         '다람이 먼저 한 입', '할머니가 머리판을 쓸어본다'):
+                         '다람이 먼저 한 입'):
    assert any(emotional_beat in t for t in audio),('Emotional payoff missing from played route',emotional_beat)
   for t,v in audio.items():
    if t.startswith(('할머니가 솜솜을 베개 구석에 눕힌다', '오늘은 아빠한테 읽어줘', '아껴 먹어', '고맙다. 같이 먹자', '(다람이 먼저 한 입')):
     assert v['want']=='inn_after' and 0<v['duck']<=.5 and not v['tense'],('Gentle epilogue cue missing',t,v)
+  assert not any('올해는 네 딸이 왔다' in t or '할머니가 머리판을 쓸어본다' in t for t in audio),'Ending left father POV'
   assert not any('빈 열세 번째 침대' in t for t in audio), 'Epilogue contradicts Somsom returning to the bed'
   print('Final segment emotional beats: winter home, sleeping guest and shared reading/snack with gentle strings OK' if args.from_final else 'Emotional beats: quiet comfort → next testimony restores music; winter home, sleeping guest and shared reading/snack all played with gentle strings OK',flush=True)
   assert audio.get('…네.',{}).get('confession'), audio.get('…네.')

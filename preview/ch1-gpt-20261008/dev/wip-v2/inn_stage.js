@@ -57,7 +57,16 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  function scene(){try{if(G.beats&&G.beats.inn_pro&&!(G.beats.inn_final&&!G.beats.inn_end)&&G.tab==="scene")return {key:visitKey(),s:null};if(G.beats&&G.beats.inn_pi!=null&&!G.beats.inn_pro)return {key:"P"+G.beats.inn_pi,s:EP.PRO[G.beats.inn_pi]};
   if(G.beats&&G.beats.inn_ei!=null&&G.beats.inn_final&&!G.beats.inn_end)return {key:"E"+G.beats.inn_ei,s:EP.END[G.beats.inn_ei]}}catch(e){}return null}
  var IDS=new WeakMap(),idn=0;function dlid(o){if(!IDS.has(o))IDS.set(o,++idn);return IDS.get(o)}
- var st={scene:"",dl:0,who:null,i:-1,m:null,size:""},layer=null,fig=null;
+ var st={scene:"",dl:0,who:null,i:-1,m:null,size:""},layer=null,fig=null,nightActor=null;
+ function nightControl(){var sc=scene();return nightActor&&nightActor.game===G&&S.screen==='case'&&sc&&sc.s&&sc.s.sid==='P10b'?nightActor:null}
+ window.__innNightActor=function(k){
+  if(k==null){if(nightActor){document.querySelectorAll('#ovfz #innstage .isf[data-k="geokkuri"]').forEach(function(n){n.remove()});if(st.who==='geokkuri'){st.who=null;st.m=null;if(fig&&fig.dataset.k==='geokkuri'){fig.remove();fig=null}}}nightActor=null;st.size='';return}
+  var sc=scene();if(!cur()||!sc||!sc.s||sc.s.sid!=='P10b')return;
+  nightActor={game:G,who:k==='geokkuri'?'geokkuri':null};st.scene=sc.key;st.who=nightActor.who;st.whoDl=-1;st.m=null;st.quiet=1;st.size='';
+  document.querySelectorAll('#ovfz #innstage .isf[data-k="geokkuri"]').forEach(function(n){n.remove()});
+  if(!st.who){if(fig){fig.remove();fig=null}document.querySelectorAll('#innstage .isf[data-k="geokkuri"]').forEach(function(n){n.remove()})}
+  else if(document.getElementById('dlgveil')&&ensure())draw(st.who,null);
+ };
  function ensure(){var v=document.getElementById("dlgveil");if(!v)return null;if(layer&&layer.parentNode===v)return layer;
   layer=document.createElement("div");layer.id="innstage";layer.setAttribute("aria-hidden","true");v.insertBefore(layer,document.getElementById("vnbox"));fig=null;st.size="";return layer}
  /* 등장 효과음 '띠링': 새 인물이 화면에 처음 나타날 때 1회. 표정 변화·같은 인물의 다음 대사에는 없음.
@@ -148,10 +157,12 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    fig.style.width=Math.round(F.w)+"px";fig.style.height=Math.round(F.h)+"px";fig.style.left=Math.round(F.left)+"px";fig.style.top=Math.round(F.top)+"px"}
   else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
  function step1(ln,id){var w=lw(ln),cg=cgList();
-  /* 상대가 아닌 사람(아빠·다람)이 말할 때 표정 지정이 없으면 상대의 직전 표정을 유지한다(줄마다 표정이 바뀌어 깜빡이지 않게) */
-  if(Array.isArray(ln)&&w!=="narr"&&w!=="@dir"){var f6=ln[6]||null;if(f6)st.m=f6;else if(w===st.who||!st.who)st.m=window.__innMood(ln)||null}
+  /* 표정은 현재 무대 인물 자신의 줄에서만 갱신한다. 부녀의 FL[6]은
+     발화자의 감정이므로 상대 주민의 얼굴에 전달하지 않는다. */
+  if(Array.isArray(ln)&&w!=="narr"&&w!=="@dir"&&w===st.who)st.m=window.__innMood(ln)||null;
+  if(nightControl()){st.who=nightControl().who;return}
   if(w==="narr"){var cue0=(window.__INNCUE||{})[ot(ln)];if(cue0){st.who=cue0==="none"?null:cue0;st.whoDl=id;st.m=null}return}
-  if(!st.who&&(w==="det1"||w==="det0")){st.who="det1";st.whoDl=id;st.quiet=1}
+  if(!st.who&&(w==="det1"||w==="det0")){st.who="det1";st.whoDl=id;st.quiet=1;st.m=w==="det1"?window.__innMood(ln)||null:null}
   return;
   if(w==="narr"){var cue=(window.__INNCUE||{})[ot(ln)];if(cue==="none"){st.who=null;st.whoDl=id}else if(cue&&cue!=="det0"&&cg.indexOf(cue)<0&&(src(cue)||cue==="seryeon"||typeof pf==="function")){st.who=cue;st.whoDl=id;st.m=null}return}
   if(typeof w!=="string"||w==="det0")return;
@@ -163,7 +174,8 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   if(cur()&&v&&typeof DL!=="undefined"&&DL&&DL.lines&&!document.getElementById("rtg")&&!document.querySelector(".fstalk")){
    on=true;if(!ensure())return;
    var sc=scene(),sk=sc?sc.key:"D"+dlid(DL),id=dlid(DL),size=innerWidth+"x"+innerHeight+"|"+Math.round((document.querySelector("#vnbox .vtxt")||v).getBoundingClientRect().top);
-   if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null;st.whoDl=0;st.shown=null}
+   if(sk!==st.scene){st.scene=sk;st.who=null;st.m=null;st.whoDl=0;st.shown=null;if(!sc||!sc.s||sc.s.sid!=='P10b')nightActor=null}
+   if(nightControl())st.who=nightControl().who;
    if(id!==st.dl){st.dl=id;st.i=-1}
    if(DL.i!==st.i||size!==st.size){for(var q=Math.max(0,st.i+1);q<=DL.i&&q<DL.lines.length;q++)step1(DL.lines[q],id);st.i=DL.i;st.size=size;
     var ln=DL.lines[DL.i]||[],w=lw(ln),t=String(lt(ln)||"");
@@ -320,9 +332,10 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   document.body.appendChild(el);try{SFX.page()}catch(x){}draw()}
  window.__innInspect=inspect;
  /* 연출 지시(글자 없음): 화면 상대 교체·퇴장, 효과음. 대사 사이 잠깐 멈춤 동안 실행된다 */
- function dirRun(d){try{if(!d)return;if(window.__innPresentationDirection)window.__innPresentationDirection(d);if(d.sfx)try{SFX[d.sfx]&&SFX[d.sfx]()}catch(e){}
+ function dirRun(d){try{if(!d)return;if(window.__innPresentationDirection)window.__innPresentationDirection(d);var nightWait=d.night&&window.__innNightDirection?window.__innNightDirection(d):null;if(d.sfx)try{SFX[d.sfx]&&SFX[d.sfx]()}catch(e){}
   if(Object.prototype.hasOwnProperty.call(d,"who")){var sc=scene();if(sc&&sc.key!==st.scene){st.scene=sc.key;st.shown=null}if(String(d.chime)==="0")st.quiet=1;st.who=d.who==="none"?null:d.who;st.whoDl=-1;st.m=null;
-   var v=document.getElementById("dlgveil");if(v&&ensure()){if(!st.who&&fig){var f=fig;fig=null;f.classList.remove("in");setTimeout(function(){f.remove()},260)}else draw(st.who,null)}}}catch(e){}}
+   if(nightControl())st.who=nightControl().who;
+   var v=document.getElementById("dlgveil");if(v&&ensure()){if(!st.who&&fig){var f=fig;fig=null;if(nightControl())f.remove();else{f.classList.remove("in");setTimeout(function(){f.remove()},260)}}else draw(st.who,null)}}return nightWait}catch(e){}}
  window.__innDir=dirRun;
  function parseDir(t){var o={};String(t||"").split(";").forEach(function(kv){var i=kv.indexOf(":");if(i>0){var k=kv.slice(0,i).trim(),v=kv.slice(i+1).trim();o[k]=k==="ms"?+v:v}});return o}
  /* 대사 묶음 안의 ["@inspect", 키] 줄에서 대사를 멈추고 근접 조사를 연 뒤 이어서 진행 */
@@ -347,7 +360,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
     (function next(){if(G!==splitGame||!cur()||S.screen!=='case')return;var now=G.beats||{};if(splitPhase==='pro'&&(now.inn_pro||now.inn_pi!==splitSid)||splitPhase==='end'&&(!now.inn_final||now.inn_end||now.inn_ei!==splitSid))return;if(k>=parts.length){done&&done();return}var p=parts[k++];
      if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
      if(p&&p.grant){var gid=p.grant;if(G.found.indexOf(gid)>=0){next();return}try{window.__innGrant&&window.__innGrant(gid)}catch(e){}var v2=document.getElementById("dlgveil");if(v2&&!(typeof DL!=="undefined"&&DL))v2.remove();if(window.__innCard)window.__innCard(gid,function(){next()});else{try{SFX.found()}catch(e){}next()}return}
-     if(p&&p.dir){dirRun(p.dir);setTimeout(next,p.dir.ms!=null?p.dir.ms:420);return}
+     if(p&&p.dir){Promise.resolve(dirRun(p.dir)).then(function(){setTimeout(next,p.dir.ms!=null?p.dir.ms:420)});return}
      if(!p.length){next();return}var more=k<parts.length;base.call(self,p,function(){next()},sk);try{if(DL)DL.__more=more}catch(e){}})();return}}catch(e){}
    return base.call(self,lines,done,sk)}
 

@@ -40,13 +40,14 @@
   document.querySelectorAll('#ovfz #inn-story-cg').forEach(function(n){n.remove()});
   document.body.classList.remove('inn-story-cg-active');delete document.body.dataset.innStoryCut;
  }
- function cleanup(){removePicture();owner=null;lastGame=null;observedDialogue=null;document.body.classList.remove('inn-story-scene-owner','inn-story-picture-owned')}
+ function cleanup(){if(window.__innSceneFlowReset)window.__innSceneFlowReset();removePicture();owner=null;lastGame=null;observedDialogue=null;document.body.classList.remove('inn-story-scene-owner','inn-story-picture-owned')}
  function initialCamera(s){return s.phase==='pro'&&s.sid==='P1'?'carriage':s.phase==='pro'&&s.sid==='P2'?'village':s.phase==='pro'&&s.sid==='P10b'?'night':'stage'}
  function ensureOwner(s){
   var key=s.phase+':'+(s.sid||'scene:'+G.loc+':'+G.tab);
   if(lastGame!==G||!owner||owner.key!==key){
    var dl=typeof DL!=='undefined'&&DL||null,ignore=owner&&dl&&dl===observedDialogue?dl:null;
    removePicture();lastGame=G;owner={game:G,key:key,phase:s.phase,sid:s.sid,scene:s.scene,camera:initialCamera(s),started:s.phase==='investigation',memory:false,lastLine:null,ignoreDialogue:ignore};
+   if(window.__innSceneFlowBegin)window.__innSceneFlowBegin(owner);
   }
   return owner;
  }
@@ -102,16 +103,24 @@
  // Native boot and runPro both use render(). Do this before it paints any
  // default location, rather than repairing that frame in a later observer.
  var nativeRender=render;render=function(){sync();var result=nativeRender.apply(this,arguments);sync();return result};
+ function visualReady(o){
+  if(!o)return false;
+  if(ART[o.camera])return !!(shown===o.camera&&node&&node.classList.contains('ready'));
+  if(o.camera==='night'){var n=window.__innOpeningDirection&&window.__innOpeningDirection();return !!(n&&n.game===o.game&&n.scene===o.sid&&n.ready)}
+  return true;
+ }
+ window.__innPresentationOwner=function(){return owner};
+ window.__innPresentationVisualReady=function(){return visualReady(owner)};
  window.__innPresentationWait=function(){
   sync();var captured=owner;
   return new Promise(function(resolve){function check(){
    var s=authored();if(!captured||owner!==captured||G!==captured.game||!s||s.sid!==captured.sid){resolve(false);return}
-   sync();if(!ART[captured.camera]||shown===captured.camera&&node&&node.classList.contains('ready')){resolve(true);return}
+   sync();var f=window.__innSceneFlowState&&window.__innSceneFlowState();if(visualReady(captured)&&(!f||f.settled)){resolve(true);return}
    requestAnimationFrame(check);
   }check()});
  };
  window.__innPresentationDirection=function(d){
-  var s=authored();if(!s||blocked()||!d)return;var o=ensureOwner(s);o.started=true;
+  var s=authored();if(!s||blocked()||!d)return;var o=ensureOwner(s);o.started=true;if(window.__innSceneFlowDirection)window.__innSceneFlowDirection(d);
   if(o.sid==='P1'&&d.who==='karo')o.camera='driver';
   sync();
  };
@@ -133,10 +142,9 @@
  window.__innPresentationState=function(){
   sync();var cold=!!document.getElementById('inncold'),s=authored(),o=owner;
   if(!s||!o)return {game:active()?G:null,phase:cold?'cold':null,sid:null,owner:cold?'cold':null,camera:null,cut:null,loading:null,ready:false,transitioning:!!s,cold:cold,cue:''};
-  var visual=ART[o.camera]?!!(shown===o.camera&&node&&node.classList.contains('ready')):true;
-  if(o.camera==='night'&&window.__innOpeningDirection){var night=window.__innOpeningDirection();visual=night.game===o.game&&night.scene===o.sid&&night.ready}
-  var staleDialogue=!!(o.ignoreDialogue&&typeof DL!=='undefined'&&DL===o.ignoreDialogue),transitioning=blocked()||cardBlocked()||!o.started||!visual||staleDialogue;
-  return {game:o.game,phase:o.phase,sid:o.sid,owner:o.key,camera:o.camera,cut:shown,loading:pending&&pending.cut||null,ready:!transitioning,transitioning:transitioning,cold:cold,cue:staleDialogue?'':text(line())};
+  var visual=visualReady(o),flowState=window.__innSceneFlowState&&window.__innSceneFlowState();
+  var staleDialogue=!!(o.ignoreDialogue&&typeof DL!=='undefined'&&DL===o.ignoreDialogue),transitioning=blocked()||cardBlocked()||!o.started||!visual||staleDialogue||!!(flowState&&!flowState.settled);
+  return {game:o.game,phase:o.phase,sid:o.sid,owner:o.key,camera:o.camera,cut:shown,loading:pending&&pending.cut||null,visualReady:visual,ready:!transitioning,transitioning:transitioning,cold:cold,cue:staleDialogue?'':text(line())};
  };
  window.__innStoryCinematics=function(){var p=window.__innPresentationState();return {cut:shown,loading:p.loading,visible:!!(node&&node.classList.contains('ready')),tone:shown==='carriage'&&owner&&owner.memory?'memory':'normal',wanted:desired(),scene:p.phase==='pro'?p.sid:null,cue:p.cue,owner:p.owner,ready:p.ready,transitioning:p.transitioning,artReady:artReady(desired()),reduced:reduced.matches}};
  window.__innStoryCinematicReset=cleanup;

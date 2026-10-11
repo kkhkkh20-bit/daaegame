@@ -51,7 +51,7 @@ rep('var p=P[i],sa=!!seatSrc(k,"");',
 # cue. Text-only caching left the council on the previous expression.
 rep('var key=(spk||"")+"|"+txt.textContent;', 'var key=(spk||"")+"|"+txt.textContent+"|"+moodOf(r);')
 # 3) 대화 무대 모듈: 엔진 클로저 안(첫 실행 직전)에 넣는다
-modules=['inn_stage','inn_music_tracks','inn_recorded_sfx','inn_audio','inn_input','inn_ui9','inn_polish','inn_evidence','inn_simple_ui','inn_map_navigation','inn_scene_guidance','inn_admin_test','inn_room_puzzles','inn_posture_props','inn_character_motion','inn_dialogue_portraits','inn_opening_direction','inn_story_cinematics','inn_purchase_payoff','inn_mother_lead','inn_chapter2_teaser']
+modules=['inn_stage','inn_music_tracks','inn_recorded_sfx','inn_audio','inn_input','inn_ui9','inn_polish','inn_evidence','inn_simple_ui','inn_map_navigation','inn_scene_guidance','inn_admin_test','inn_room_puzzles','inn_posture_props','inn_character_motion','inn_dialogue_portraits','inn_opening_direction','inn_story_cinematics','inn_scene_flow','inn_purchase_payoff','inn_mother_lead','inn_chapter2_teaser']
 cinematic_root=SOURCE.parent.parent / 'art/ch1/cinematics'
 story_art={key:(cinematic_root / name).is_file() for key,name in {'carriage':'carriage-family-close.png','driver':'carriage-driver-close.png','village':'village-arrival-wide.png','seal':'sealed-pouch-close.png'}.items()}
 import json
