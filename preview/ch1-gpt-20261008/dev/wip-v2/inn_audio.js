@@ -9,19 +9,44 @@
   function cur(){try{return S.screen==="case"&&!!G&&!!CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}
   function sidOf(pi){try{var E=window.EP1INN||EP;return (E.PRO[pi]&&E.PRO[pi].sid)||("P"+(pi+1))}catch(e){return "P"+(pi+1)}}   /* 2026-10-10: EP는 이 모듈 범위에 없어 장면 번호가 밀려(P6·P8 제외 뒤) 신고 장면에서도 여행곡이 나오던 문제 */
   function beats(){try{return (G&&G.beats)||{}}catch(e){return {}}}
+  /* The saved script cursor can move before its picture/card has committed.
+     Only the presentation owner's ready scene may play dialogue music/cues. */
+  function presentation(){try{return window.__innPresentationState&&window.__innPresentationState()}catch(e){return null}}
+  function blocked(){var p=presentation();return !!(p&&(!p.ready||p.transitioning||p.cold))}
+  /* An atomic camera decode retains its already committed picture. Keep that
+     scene's score, while liveLine still waits to emit the new camera's cues. */
+  function musicBlocked(){var p=presentation();if(p&&p.loading&&p.cut&&!p.cold&&p.game===OWNER.game&&p.owner===OWNER.key)return false;return !!(p&&(!p.ready||p.transitioning||p.cold))}
+  function presentedSid(){var p=presentation();return p&&p.phase==="pro"?p.sid:sidOf(beats().inn_pi|0)}
+  var OWNER={game:null,key:null,ph:null},SCOPED=[];
+  function scope(){var p=presentation(),b=beats(),key=p&&p.owner;
+   if(!cur()||document.getElementById("innmain"))return null;
+   if(!key)key=!b.inn_pro?"pro:"+sidOf(b.inn_pi|0):b.inn_final&&!b.inn_end?"end:"+(b.inn_ei|0):"investigation";
+   if(key==="investigation")key+=":"+G.loc;
+   return {game:G,key:key,ph:document.querySelector("body>.rt")&&window.__rtPh?window.__rtPh():null};
+  }
+  function sameScope(s){var n=scope();return !!(s&&n&&s.game===n.game&&s.key===n.key&&s.ph===n.ph)}
+  function scopedBus(){var a=AC||(S.sound&&ac());if(!a||!SFXG)return null;var g=a.createGain();g.connect(SFXG);SCOPED.push(g);return g}
+  function retireBus(g){if(!g)return;try{g.disconnect()}catch(e){}var i=SCOPED.indexOf(g);if(i>=0)SCOPED.splice(i,1)}
+  function clearScoped(){SCOPED.forEach(function(g){try{g.disconnect()}catch(e){}});SCOPED=[]}
+  function syncOwner(){var n=scope();if(OWNER.game===(n&&n.game)&&OWNER.key===(n&&n.key)&&OWNER.ph===(n&&n.ph))return;
+   OWNER=n||{game:null,key:null,ph:null};clearScoped();tenseStop();coldStop();
+   M.sid=null;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;M.obj=0;M.f4=0;M.fin=0;M.failure=false;M.carStopped=false;M.bell=false;M.inv=false;
+   RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};lastLn=null;
+   if(AMB){if(AMB.cur)stop(AMB.cur,.08);AMB.cur=null;if(AMB.dep)stop(AMB.dep,.08);AMB.dep=null;AMB.old.forEach(function(I){try{I.out.disconnect()}catch(e){}})}
+  }
   var RTLINE=null,CUE={mode:null,press:false,ph:null,at:0,line:null};
   function cueLine(l){var ph=window.__rtPh&&window.__rtPh();if(CUE.ph!==ph){CUE.press=false;CUE.ph=ph}if(CUE.line===l)return;CUE.line=l;CUE.mode=l&&l.audio||null;CUE.at=Date.now();if(CUE.mode==="press"||CUE.mode==="impact")CUE.press=true;if(CUE.mode==="calm")CUE.press=false;}
-  window.__innAudioLine=function(l){RTLINE=l||null;cueLine(RTLINE)};
-  function liveLine(){try{if(DL&&DL.lines)return DL.lines[DL.i];if(document.querySelector("body>.rt"))return RTLINE}catch(e){}return null}
+  window.__innAudioLine=function(l){syncOwner();RTLINE=l||null;cueLine(RTLINE)};
+  function liveLine(){try{if(blocked())return null;if(DL&&DL.lines)return DL.lines[DL.i];if(document.querySelector("body>.rt"))return RTLINE}catch(e){}return null}
   function lineText(){var l=liveLine();return l?String(Array.isArray(l)?(l[7]||l[1]||""):(l.t||"")):""}
   function lineWho(){var l=liveLine();return l?(Array.isArray(l)?l[0]:l.w):""}
   function lineKind(){if(lineWho()==="narr")return /^\(/.test(lineText())?"inner":"narr";return "say"}
 
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0,carStopped:false,bell:false,failure:false};
-  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
+  window.__innAudioReset=function(){OWNER={game:null,key:null,ph:null};syncOwner();M.obj=0;M.f4=0;M.fin=0;M.sid=null;M.failure=false;M.inv=false;M.carStopped=false;M.bell=false;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop();coldStop();clearScoped()};
   window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
-  window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine(),context:M.ctxKey}};
+  window.__innAudioState=function(){var p=presentation();return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,heartbeatActive:TENSE.on,coldHeartbeat:!!(HB&&HB.on),failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine(),context:M.ctxKey,owner:OWNER.key,presentation:p&&{sid:p.sid,phase:p.phase,camera:p.camera,ready:p.ready,transitioning:p.transitioning},scopedSources:SCOPED.length}};
   /* Complete media definitions: no synthesized piano or mismatched character themes. */
   Object.keys(window.__INN_MUSIC||{}).forEach(function(k){A.SONGS[k]=window.__INN_MUSIC[k]});
   /* Authored turns, not punctuation or a sad face, change the music. A cue
@@ -45,26 +70,28 @@
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
   var TENSE={on:false,k:0,gen:0,nul:0};
   var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
-  function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0}
-  function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!cur()){tenseStop();return}
-    if(AC&&AC.state==="running"&&S.sound){var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
+  function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0;retireBus(TENSE.bus);TENSE.bus=null}
+  function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!sameScope(TENSE.owner)||blocked()){tenseStop();return}
+    if(AC&&AC.state==="running"&&S.sound){if(!TENSE.bus)TENSE.bus=scopedBus();var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,TENSE.bus,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),TENSE.bus,38);noise(.06,v*.25,0,160,"lowpass",TENSE.bus);TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
     else setTimeout(function(){tenseTick(gen)},300)}catch(e){tenseStop()}}
   window.__innTense=function(){return TENSE.on};
-  setInterval(function(){try{if(!cur()||!liveLine()){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
+  setInterval(function(){try{syncOwner();if(blocked()){if(TENSE.on)tenseStop();return}if(!cur()||!liveLine()){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
     var t=lineText(); /* 좁은 화면에서도 페이지 분할 전 원문으로 큐를 판별 */
     if(TENSE.on&&TENSE.meeting&&CUE.mode!=="pulse")tenseStop();
-    if(!TENSE.on&&(TENSE_ON.test(t)||CUE.mode==="pulse")){TENSE.on=true;TENSE.k=0;TENSE.meeting=CUE.mode==="pulse";var gen=++TENSE.gen;
+    if(!TENSE.on&&(TENSE_ON.test(t)||CUE.mode==="pulse")){TENSE.on=true;TENSE.k=0;TENSE.owner=scope();TENSE.meeting=CUE.mode==="pulse";var gen=++TENSE.gen;
       var discovery=TENSE.discovery=TENSE.meeting||/상자 뒤|작은 애가/.test(t);if(!discovery)try{SFX.cut9&&SFX.cut9()}catch(e){}
       setTimeout(function(){tenseTick(gen)},discovery?1200:450);
     }else if(TENSE.on&&TENSE_OFF.test(t))tenseStop()}catch(e){}},60);
   window.__innWant=function(){
+   syncOwner();
    if(document.getElementById("innmain"))return "inn_title";
    if(!cur())return undefined;
+   if(musicBlocked())return null;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    if(TENSE.on||M.failure||(CUE.ph===(window.__rtPh&&window.__rtPh())&&(CUE.mode==="silence"||CUE.mode==="pulse"||(CUE.mode==="impact"&&Date.now()-CUE.at<800))))return null;                         /* 발견 순간: 음악 없음 */
    var b=beats(),now=Date.now();
    /* 2026-10-10 v2 음악 큐시트(dev/review/CH1_V2_DESIGN.txt 5장): 영화처럼 줄·장면 시점에 맞춰 끊고, 한 방 치고, 다시 들어온다 */
-   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0;M.carStopped=false;M.bell=false}if(+String(sid).slice(1)<11)M.inv=false;
+   if(!b.inn_pro){var sid=presentedSid();if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0}if(+String(sid).slice(1)<11)M.inv=false;
     if(sid==="P1"&&now-M.sidT<2000)return null;
     if(sid==="P10"&&M.bell)return null;
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
@@ -93,9 +120,10 @@
   window.__innDuck0=function(){
    if(document.getElementById("inncold"))return COLDD;   /* 콜드 오픈: 비트마다 정한 낮춤(정적으로 갈수록 작게) */
    if(!cur())return 1;
+   if(musicBlocked())return 0;
    var b=beats(),now=Date.now(),f=(typeof DL!=="undefined"&&DL)?.55:1,t=lineText();   /* 대화 중 배경음 .55: 글자·행동 효과음이 묻히지 않게 */
    if(!b.inn_pro){var pi=b.inn_pi|0;
-    var sd=sidOf(pi);if(sd!=="P10")M.p10=0;
+    var sd=presentedSid();if(sd!=="P10")M.p10=0;
     if(sd==="P5"){f=.8;if(/^열셋/.test(t))M.p5c=1;if(M.p5c)f=.38}   /* P5 복도: 같은 곡 낮게, "열셋."부터 더 낮게 */
     if(sd==="P10")f=.55;   /* 가족 대화는 낮게 유지하고 열 시 종에서 음악을 끊는다. */
     if(sd==="P12")f=.7;if(sd==="P13")f=.6;     /* 수색·발견: 사건곡 낮게 */
@@ -112,6 +140,7 @@
   /* ---- 타이핑음 ---- */
   var lastT=0;
   window.__innType=function(kind){try{
+   if(blocked())return;
    if(TENSE.on||CUE.mode==="pulse"||CUE.mode==="silence")return; /* 정적/박동 구간에는 글자 효과음도 쉰다 */
    if(!S.sound||!AC||AC.state!=="running")return;var now=AC.currentTime;if(now-lastT<.075)return;lastT=now;
    var v=kind==="inner"?.6:kind==="narr"?.7:1;   /* 작고 둥근 클릭, 발음 사이 75ms 여백 */
@@ -137,7 +166,7 @@
   SFX.pop9=function(){if(!S.sound)return;try{[880,1320,1760].forEach(function(f,i){tone(f,.12,"triangle",.06,i*.05)});noise(.035,.018,0,4000,"highpass")}catch(e){}};
   /* 결정적 대사: 배경음이 끊길 때 둔탁한 한 방 */
   SFX.cut9=function(){if(!S.sound)return;try{tone(70,.6,"sine",.55,0,null,40);noise(.35,.25,0,240,"lowpass");tone(2200,.05,"square",.05)}catch(e){}};
-  var lastLn=null;setInterval(function(){try{if(!cur())return;var ln=liveLine();if(!ln){lastLn=null;return}
+  var lastLn=null;setInterval(function(){try{syncOwner();if(!cur()||blocked())return;var ln=liveLine();if(!ln){lastLn=null;return}
     var t=lineText(),who=lineWho(),token=who+"|"+t;
     if(token===lastLn)return;lastLn=token;   /* 분할된 다음 쪽에서도 원문 기준으로 효과음은 한 번만 */
     var md=String(Array.isArray(ln)?(ln[2]||ln[6]||""):(ln.m||""));
@@ -151,27 +180,29 @@
   /* 회의·최종 대결 정답 외침: 엔진 외침 효과음에 맞춰 음악을 끊고 추궁곡으로 */
   (function(){var o=SFX.shout;SFX.shout=function(){try{if(cur()&&document.querySelector("body>.rt")){M.obj=Date.now();M.objDL=0;M.objPh=window.__rtPh&&__rtPh()}}catch(e){}return o&&o.apply(this,arguments)}})();
   wrap("doorOpen",function(){window.__innRecordedSfx.play("open")});
-  SFX.carStop=function(){M.carStopped=true;try{if(AMB.cur&&AMB.cur.key==="carriage"){stop(AMB.cur,.3);AMB.cur=null}}catch(e){}};
-  SFX.bell10=function(){M.bell=true;if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
-    tone(196,3,"sine",.16,w);tone(392,1.6,"sine",.05,w);tone(470,1.2,"sine",.025,w);noise(.05,.05,w,900,"lowpass")}}catch(e){}};
+  SFX.carStop=function(){syncOwner();M.carStopped=true;try{if(AMB.cur&&AMB.cur.key==="carriage"){stop(AMB.cur,.3);AMB.cur=null}}catch(e){}};
+  SFX.bell10=function(){syncOwner();if(!cur()||blocked())return;M.bell=true;if(!S.sound)return;try{var a=ac();if(!a)return;var bus=scopedBus();for(var i=0;i<10;i++){var w=i*.75;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
+    tone(196,3,"sine",.16,w,bus);tone(392,1.6,"sine",.05,w,bus);tone(470,1.2,"sine",.025,w,bus);noise(.05,.05,w,900,"lowpass",bus)}}catch(e){}};
   SFX.bell10_old=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
 
   /* ---- 콜드 오픈 연출(2026-10-10): 어둠·정적·행동 소리. 대사·그림·단서는 그대로, 카메라와 소리만 ---- */
   var COLDD=1;
-  function creak(){noise(.5,.09,0,320,"bandpass",null,190);tone(150,.45,"triangle",.05,0,null,118)}
-  function step(){[0,.42].forEach(function(w){noise(.07,.16,w,520,"lowpass");tone(95,.08,"sine",.14,w,null,62)})}
-  function breath(){noise(1.1,.05,0,900,"bandpass",null,520)}
-  function heart(){[0,.32,1.2,1.52].forEach(function(w,i){tone(58,.16,"sine",i%2?.22:.3,w,null,44)})}
+  function creak(bus){noise(.5,.09,0,320,"bandpass",bus,190);tone(150,.45,"triangle",.05,0,bus,118)}
+  function step(bus){[0,.42].forEach(function(w){noise(.07,.16,w,520,"lowpass",bus);tone(95,.08,"sine",.14,w,bus,62)})}
+  function breath(bus){noise(1.1,.05,0,900,"bandpass",bus,520)}
+  function heart(bus){[0,.32,1.2,1.52].forEach(function(w,i){tone(58,.16,"sine",i%2?.22:.3,w,bus,44)})}
   var COLDFX={creak:creak,step:step,breath:breath,heart:heart};
   /* 2026-10-10 "프롤로그는 아주 긴장되게, 심장 박동이 점점 커지며 빨라지게": 콜드 오픈 내내 심장 소리가 이어지고 비트가 지날수록 빠르고 크게(약 55→130bpm) */
-  var HB={k:0,n:1,next:0,on:false};
-  function hbTick(){try{if(!document.getElementById("inncold")){HB.on=false;return}if(!AC||AC.state!=="running"||!S.sound){setTimeout(hbTick,200);return}
+  var HB={k:0,n:1,next:0,on:false,gen:0,bus:null};
+  function coldStop(){if(!HB)return;HB.on=false;HB.gen++;retireBus(HB.bus);HB.bus=null}
+  function hbTick(gen){try{if(!HB.on||gen!==HB.gen)return;if(!HB.el||!HB.el.isConnected||document.getElementById("inncold")!==HB.el||G!==HB.game||document.getElementById("innmain")){coldStop();return}if(!AC||AC.state!=="running"||!S.sound){setTimeout(function(){hbTick(gen)},200);return}
+    if(!HB.bus)HB.bus=scopedBus();
     var p=Math.min(1,HB.k/Math.max(1,HB.n-1)),bpm=55+75*p*p,v=.14+.4*p,gap=60/bpm;
-    tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*.32,null,38);noise(.06,v*.25,0,160,"lowpass");
-    setTimeout(hbTick,gap*1000)}catch(e){setTimeout(hbTick,400)}}
-  window.__innColdFx=function(b){try{if(b.duck!=null)COLDD=b.duck;var L=(window.EP1INN&&window.EP1INN.COLD)||[];var i=L.indexOf(b);if(i>=0){HB.k=i;HB.n=L.length}
-    if(!HB.on){HB.on=true;setTimeout(hbTick,300)}
-    if(b.fxs&&b.fxs!=="heart"&&S.sound&&COLDFX[b.fxs])COLDFX[b.fxs]()}catch(e){}};
+    setTimeout(function(){hbTick(gen)},gap*1000)}catch(e){setTimeout(function(){hbTick(gen)},400)}}
+  window.__innColdFx=function(b){try{syncOwner();var el=document.getElementById("inncold");if(!el)return;if(HB.el!==el||HB.game!==G)coldStop();HB.el=el;HB.game=G;
+    if(b.duck!=null)COLDD=b.duck;var L=(window.EP1INN&&window.EP1INN.COLD)||[];var i=L.indexOf(b);if(i>=0){HB.k=i;HB.n=L.length}
+    if(!HB.on){HB.on=true;var gen=++HB.gen;setTimeout(function(){hbTick(gen)},300)}
+    if(b.fxs&&b.fxs!=="heart"&&S.sound&&COLDFX[b.fxs]){if(!HB.bus)HB.bus=scopedBus();COLDFX[b.fxs](HB.bus)}}catch(e){}};
   /* 비트별 연출: 침대 컷은 '침대 다리'가 아니라 이불 덮인 침대 쪽으로 다가가며 점점 어둡고 조용해진다 */
   try{var STAGE={"01":{fxs:"step",duck:1},"02":{push:3,duck:.9},
    "03":{z:1,fx:.72,fy:.6,push:5,fxs:"creak",duck:.6},"04":{z:1.45,fx:.74,fy:.6,push:6,fxs:"step",duck:.5},"05":{z:1.8,fx:.74,fy:.62,push:4,dim:.8,duck:.4},
@@ -202,13 +233,14 @@
    try{I.out.gain.cancelScheduledValues(t);I.out.gain.setValueAtTime(Math.max(.0001,I.out.gain.value),t);I.out.gain.exponentialRampToValueAtTime(.0001,t+dur);if(I.lp){I.lp.frequency.setValueAtTime(I.lp.frequency.value,t);I.lp.frequency.exponentialRampToValueAtTime(180,t+dur)}}catch(e){}
    setTimeout(function(){I.dead=true;var k=AMB.old.indexOf(I);if(k>=0)AMB.old.splice(k,1);I.src.forEach(function(s){try{s.stop()}catch(e){}});try{I.out.disconnect()}catch(e){}},dur*1000+300)}
   var AMB={cur:null,dep:null,old:[]};
-  function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||document.getElementById("inncold"))return null;var b=beats();if(M.failure)return "wind";
-   if(!b.inn_pro){var sd=sidOf(b.inn_pi|0);if(sd==="P1"&&b.inn_bg==="carriage"&&!M.carStopped)return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
+  function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||musicBlocked()||document.getElementById("inncold")||document.getElementById("innmain"))return null;var b=beats();if(M.failure)return "wind";
+   if(!b.inn_pro){var sd=presentedSid();if(sd==="P1"&&b.inn_bg==="carriage"&&!M.carStopped)return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
    if(b.inn_final&&!b.inn_end){var ei=b.inn_ei|0;if(ei===0||ei===1)return "wind"}
    return null}
   /* E2 마지막 마차: 출발해서 멀어지며 사라진다(약 7초) */
-  SFX.carDepart=function(){if(!S.sound||!AC)return;try{if(AMB.dep&&!AMB.dep.dead)return;var I=build(AC,"carriage");AMB.dep=I;sched(I);var iv=setInterval(function(){if(I.dead){clearInterval(iv);return}sched(I)},120);setTimeout(function(){stop(I,6.5)},500)}catch(e){}};
+  SFX.carDepart=function(){syncOwner();if(!cur()||blocked()||!S.sound||!AC)return;try{if(AMB.dep&&!AMB.dep.dead)return;var owner=scope(),I=build(AC,"carriage");AMB.dep=I;sched(I);setTimeout(function(){if(sameScope(owner)&&AMB.dep===I)stop(I,6.5)},500)}catch(e){}};
   setInterval(function(){try{
+   syncOwner();if(HB.on&&(!HB.el||!HB.el.isConnected||window.__innColdTransition||HB.game!==G))coldStop();
    if(!AC||AC.state!=="running"){return}
    var k=ambWant();
    if((AMB.cur&&AMB.cur.key)!==k){var was=AMB.cur;if(was)stop(was,was.key==="carriage"?.3:.8);AMB.cur=k?build(AC,k):null}   /* 마차 -> 광장: 멀어지며 5초에 걸쳐 사라짐 */

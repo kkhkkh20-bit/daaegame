@@ -1,0 +1,1753 @@
+{
+  "id": "ch1-dialogue-v1",
+  "created": "2026-10-11",
+  "authorization": "User explicitly requested new close dialogue images distinct from standing background character sprites, with timing/design audit by agents.",
+  "creation": "image_gen reference-guided creation and layout revision; original generated PNG bytes copied without pixel editing/cutting/resizing/background removal.",
+  "coordinate_space": "absolute atlas source pixels; crop=[x,y,w,h]; face=[x,y,squareSize]",
+  "state_order": [
+    "neutral",
+    "thinking",
+    "distressed",
+    "expressive"
+  ],
+  "grid": {
+    "columns": 4,
+    "rows": 2,
+    "cell_width": 384,
+    "cell_height": 512
+  },
+  "alpha_measurement": {
+    "foreground_threshold": 32,
+    "outer_cell_margin": 20,
+    "note": "Raw image_gen RGBA includes isolated alpha=1/255 specks in otherwise transparent gutters. Every 20px outer cell margin has maximum alpha<=1; no foreground(alpha>=32) enters margins. PNG was not postprocessed."
+  },
+  "atlases": {
+    "family": {
+      "src": "art/ch1/dialogue-v1/family.png",
+      "width": 1536,
+      "height": 1024,
+      "rows": [
+        "det1",
+        "det0"
+      ],
+      "sha256": "1571cc249164145621555fb333a49a6b842c55b182e0193c56610e5505b3c596",
+      "original_source": "/workspace/generated_images/exec-7f0af13c-c128-4ab7-b1e5-6fecfbb7a36d.png",
+      "identity_references": [
+        "art/ch1/daram-v4/daram-idle-t0-dialogue.png",
+        "art/ch1/source/dadol-profile-daram-matched-v2.png"
+      ],
+      "rgba_alpha_range": [
+        0,
+        254
+      ],
+      "cells": [
+        {
+          "character": "det1",
+          "state": "neutral",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            66,
+            145,
+            306,
+            446
+          ],
+          "visible_margin": [
+            66,
+            145,
+            78,
+            66
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 22
+        },
+        {
+          "character": "det1",
+          "state": "thinking",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            460,
+            143,
+            698,
+            446
+          ],
+          "visible_margin": [
+            76,
+            143,
+            70,
+            66
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 41
+        },
+        {
+          "character": "det1",
+          "state": "distressed",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            835,
+            145,
+            1070,
+            446
+          ],
+          "visible_margin": [
+            67,
+            145,
+            82,
+            66
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 65
+        },
+        {
+          "character": "det1",
+          "state": "expressive",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1224,
+            143,
+            1467,
+            446
+          ],
+          "visible_margin": [
+            72,
+            143,
+            69,
+            66
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 47
+        },
+        {
+          "character": "det0",
+          "state": "neutral",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            61,
+            615,
+            312,
+            903
+          ],
+          "visible_margin": [
+            61,
+            103,
+            72,
+            121
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 34
+        },
+        {
+          "character": "det0",
+          "state": "thinking",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            448,
+            615,
+            702,
+            903
+          ],
+          "visible_margin": [
+            64,
+            103,
+            66,
+            121
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 69
+        },
+        {
+          "character": "det0",
+          "state": "distressed",
+          "cell": [
+            768,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            830,
+            621,
+            1085,
+            903
+          ],
+          "visible_margin": [
+            62,
+            109,
+            67,
+            121
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 184
+        },
+        {
+          "character": "det0",
+          "state": "expressive",
+          "cell": [
+            1152,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1221,
+            615,
+            1476,
+            903
+          ],
+          "visible_margin": [
+            69,
+            103,
+            60,
+            121
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 148
+        }
+      ]
+    },
+    "inn": {
+      "src": "art/ch1/dialogue-v1/inn.png",
+      "width": 1536,
+      "height": 1024,
+      "rows": [
+        "innma",
+        "seryeon"
+      ],
+      "sha256": "6cb32d7127719114fe34d66b4abd36c512817805520e3fe7103a60e1a3fffe14",
+      "original_source": "/workspace/generated_images/exec-2a306655-b315-41a2-96d9-68276d2c8bf0.png",
+      "identity_references": [
+        "art/ch1/cast/innma-neutral-v5.png",
+        "art/ch1/cast/seryeon-seated-paperwork-v2-talk.png"
+      ],
+      "rgba_alpha_range": [
+        0,
+        254
+      ],
+      "cells": [
+        {
+          "character": "innma",
+          "state": "neutral",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            59,
+            143,
+            316,
+            474
+          ],
+          "visible_margin": [
+            59,
+            143,
+            68,
+            38
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 187
+        },
+        {
+          "character": "innma",
+          "state": "thinking",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            441,
+            143,
+            704,
+            474
+          ],
+          "visible_margin": [
+            57,
+            143,
+            64,
+            38
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 235
+        },
+        {
+          "character": "innma",
+          "state": "distressed",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            824,
+            142,
+            1084,
+            474
+          ],
+          "visible_margin": [
+            56,
+            142,
+            68,
+            38
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 30
+        },
+        {
+          "character": "innma",
+          "state": "expressive",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1207,
+            142,
+            1471,
+            474
+          ],
+          "visible_margin": [
+            55,
+            142,
+            65,
+            38
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 223
+        },
+        {
+          "character": "seryeon",
+          "state": "neutral",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            45,
+            593,
+            338,
+            959
+          ],
+          "visible_margin": [
+            45,
+            81,
+            46,
+            65
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 583
+        },
+        {
+          "character": "seryeon",
+          "state": "thinking",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            432,
+            592,
+            723,
+            959
+          ],
+          "visible_margin": [
+            48,
+            80,
+            45,
+            65
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 890
+        },
+        {
+          "character": "seryeon",
+          "state": "distressed",
+          "cell": [
+            768,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            812,
+            592,
+            1111,
+            959
+          ],
+          "visible_margin": [
+            44,
+            80,
+            41,
+            65
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 375
+        },
+        {
+          "character": "seryeon",
+          "state": "expressive",
+          "cell": [
+            1152,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1196,
+            592,
+            1492,
+            959
+          ],
+          "visible_margin": [
+            44,
+            80,
+            44,
+            65
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 583
+        }
+      ]
+    },
+    "friends": {
+      "src": "art/ch1/dialogue-v1/friends.png",
+      "width": 1536,
+      "height": 1024,
+      "rows": [
+        "nabi",
+        "geokkuri"
+      ],
+      "sha256": "5d036b7a4e51dfa1e7ddbe520309c9e661e56b9c6522e7e11acaaf9ae6ab085d",
+      "original_source": "/workspace/generated_images/exec-e15eb147-a959-4af8-b1c6-3305dc022277.png",
+      "identity_references": [
+        "art/ch1/cast/nabi-front.png",
+        "art/ch1/action-poses/bami/dialogue.png"
+      ],
+      "rgba_alpha_range": [
+        0,
+        254
+      ],
+      "cells": [
+        {
+          "character": "nabi",
+          "state": "neutral",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            69,
+            132,
+            317,
+            455
+          ],
+          "visible_margin": [
+            69,
+            132,
+            67,
+            57
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 29
+        },
+        {
+          "character": "nabi",
+          "state": "thinking",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            464,
+            126,
+            699,
+            455
+          ],
+          "visible_margin": [
+            80,
+            126,
+            69,
+            57
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 79
+        },
+        {
+          "character": "nabi",
+          "state": "distressed",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            831,
+            164,
+            1087,
+            455
+          ],
+          "visible_margin": [
+            63,
+            164,
+            65,
+            57
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 223
+        },
+        {
+          "character": "nabi",
+          "state": "expressive",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1209,
+            126,
+            1464,
+            455
+          ],
+          "visible_margin": [
+            57,
+            126,
+            72,
+            57
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 75
+        },
+        {
+          "character": "geokkuri",
+          "state": "neutral",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            64,
+            586,
+            335,
+            925
+          ],
+          "visible_margin": [
+            64,
+            74,
+            49,
+            99
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 8
+        },
+        {
+          "character": "geokkuri",
+          "state": "thinking",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            452,
+            586,
+            717,
+            931
+          ],
+          "visible_margin": [
+            68,
+            74,
+            51,
+            93
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 14
+        },
+        {
+          "character": "geokkuri",
+          "state": "distressed",
+          "cell": [
+            768,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            825,
+            586,
+            1093,
+            928
+          ],
+          "visible_margin": [
+            57,
+            74,
+            59,
+            96
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 186
+        },
+        {
+          "character": "geokkuri",
+          "state": "expressive",
+          "cell": [
+            1152,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1204,
+            586,
+            1472,
+            931
+          ],
+          "visible_margin": [
+            52,
+            74,
+            64,
+            93
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 102
+        }
+      ]
+    },
+    "scholars": {
+      "src": "art/ch1/dialogue-v1/scholars.png",
+      "width": 1536,
+      "height": 1024,
+      "rows": [
+        "doto",
+        "buri"
+      ],
+      "sha256": "30c9009575624696f06ef5dbf4c5188ae1cb05b8172588bc1398b72f61d049c6",
+      "original_source": "/workspace/generated_images/exec-202b5db3-8b9b-43f9-8592-9efa513001b0.png",
+      "identity_references": [
+        "art/ch1/source/doto-v4-selected.png",
+        "art/ch1/action-poses/buri/dialogue.png"
+      ],
+      "rgba_alpha_range": [
+        0,
+        254
+      ],
+      "cells": [
+        {
+          "character": "doto",
+          "state": "neutral",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            106,
+            145,
+            321,
+            463
+          ],
+          "visible_margin": [
+            106,
+            145,
+            63,
+            49
+          ],
+          "outer20px_alpha_max": 0,
+          "outer20px_nonzero_alpha1_count": 0
+        },
+        {
+          "character": "doto",
+          "state": "thinking",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            485,
+            143,
+            708,
+            465
+          ],
+          "visible_margin": [
+            101,
+            143,
+            60,
+            47
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 10
+        },
+        {
+          "character": "doto",
+          "state": "distressed",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            856,
+            143,
+            1072,
+            463
+          ],
+          "visible_margin": [
+            88,
+            143,
+            80,
+            49
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 13
+        },
+        {
+          "character": "doto",
+          "state": "expressive",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1237,
+            143,
+            1472,
+            464
+          ],
+          "visible_margin": [
+            85,
+            143,
+            64,
+            48
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 3
+        },
+        {
+          "character": "buri",
+          "state": "neutral",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            83,
+            586,
+            325,
+            884
+          ],
+          "visible_margin": [
+            83,
+            74,
+            59,
+            140
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 2
+        },
+        {
+          "character": "buri",
+          "state": "thinking",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            464,
+            590,
+            705,
+            884
+          ],
+          "visible_margin": [
+            80,
+            78,
+            63,
+            140
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 20
+        },
+        {
+          "character": "buri",
+          "state": "distressed",
+          "cell": [
+            768,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            837,
+            589,
+            1075,
+            884
+          ],
+          "visible_margin": [
+            69,
+            77,
+            77,
+            140
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 8
+        },
+        {
+          "character": "buri",
+          "state": "expressive",
+          "cell": [
+            1152,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1213,
+            590,
+            1485,
+            884
+          ],
+          "visible_margin": [
+            61,
+            78,
+            51,
+            140
+          ],
+          "outer20px_alpha_max": 0,
+          "outer20px_nonzero_alpha1_count": 0
+        }
+      ]
+    },
+    "witnesses": {
+      "src": "art/ch1/dialogue-v1/witnesses.png",
+      "width": 1536,
+      "height": 1024,
+      "rows": [
+        "karo",
+        "wanggu"
+      ],
+      "sha256": "5b3217c4643d0bc2788b91382ac4c7e83729d9be15f841e49bc528486d196e19",
+      "original_source": "/workspace/generated_images/exec-6ab81a3a-a1a9-4ceb-bf6b-61a84d235798.png",
+      "identity_references": [
+        "art/ch1/action-poses/karo/dialogue.png",
+        "art/ch1/neoul-v4/neoul-default.png"
+      ],
+      "rgba_alpha_range": [
+        0,
+        254
+      ],
+      "cells": [
+        {
+          "character": "karo",
+          "state": "neutral",
+          "cell": [
+            0,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            73,
+            163,
+            326,
+            480
+          ],
+          "visible_margin": [
+            73,
+            163,
+            58,
+            32
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 12
+        },
+        {
+          "character": "karo",
+          "state": "thinking",
+          "cell": [
+            384,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            467,
+            160,
+            712,
+            480
+          ],
+          "visible_margin": [
+            83,
+            160,
+            56,
+            32
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 48
+        },
+        {
+          "character": "karo",
+          "state": "distressed",
+          "cell": [
+            768,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            837,
+            169,
+            1078,
+            480
+          ],
+          "visible_margin": [
+            69,
+            169,
+            74,
+            32
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 16
+        },
+        {
+          "character": "karo",
+          "state": "expressive",
+          "cell": [
+            1152,
+            0,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1222,
+            162,
+            1490,
+            481
+          ],
+          "visible_margin": [
+            70,
+            162,
+            46,
+            31
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 9
+        },
+        {
+          "character": "wanggu",
+          "state": "neutral",
+          "cell": [
+            0,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            63,
+            558,
+            326,
+            889
+          ],
+          "visible_margin": [
+            63,
+            46,
+            58,
+            135
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 90
+        },
+        {
+          "character": "wanggu",
+          "state": "thinking",
+          "cell": [
+            384,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            451,
+            555,
+            712,
+            889
+          ],
+          "visible_margin": [
+            67,
+            43,
+            56,
+            135
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 293
+        },
+        {
+          "character": "wanggu",
+          "state": "distressed",
+          "cell": [
+            768,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            828,
+            560,
+            1088,
+            889
+          ],
+          "visible_margin": [
+            60,
+            48,
+            64,
+            135
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 112
+        },
+        {
+          "character": "wanggu",
+          "state": "expressive",
+          "cell": [
+            1152,
+            512,
+            384,
+            512
+          ],
+          "foreground_bbox": [
+            1210,
+            557,
+            1490,
+            889
+          ],
+          "visible_margin": [
+            58,
+            45,
+            46,
+            135
+          ],
+          "outer20px_alpha_max": 1,
+          "outer20px_nonzero_alpha1_count": 74
+        }
+      ]
+    }
+  },
+  "characters": {
+    "det1": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          52,
+          132,
+          282,
+          326
+        ],
+        "face": [
+          84,
+          138,
+          240
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          436,
+          132,
+          282,
+          326
+        ],
+        "face": [
+          468,
+          138,
+          240
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          820,
+          132,
+          282,
+          326
+        ],
+        "face": [
+          852,
+          138,
+          240
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1204,
+          132,
+          282,
+          326
+        ],
+        "face": [
+          1236,
+          138,
+          240
+        ]
+      }
+    },
+    "det0": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          51,
+          605,
+          283,
+          308
+        ],
+        "face": [
+          78,
+          610,
+          240
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          435,
+          605,
+          283,
+          308
+        ],
+        "face": [
+          462,
+          610,
+          240
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          819,
+          605,
+          283,
+          308
+        ],
+        "face": [
+          846,
+          610,
+          240
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1203,
+          605,
+          283,
+          308
+        ],
+        "face": [
+          1230,
+          610,
+          240
+        ]
+      }
+    },
+    "innma": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          45,
+          132,
+          285,
+          352
+        ],
+        "face": [
+          59,
+          139,
+          263
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          429,
+          132,
+          285,
+          352
+        ],
+        "face": [
+          443,
+          139,
+          263
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          813,
+          132,
+          285,
+          352
+        ],
+        "face": [
+          827,
+          139,
+          263
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1197,
+          132,
+          285,
+          352
+        ],
+        "face": [
+          1211,
+          139,
+          263
+        ]
+      }
+    },
+    "seryeon": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          34,
+          582,
+          319,
+          387
+        ],
+        "face": [
+          73,
+          586,
+          258
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          418,
+          582,
+          319,
+          387
+        ],
+        "face": [
+          457,
+          586,
+          258
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          802,
+          582,
+          319,
+          387
+        ],
+        "face": [
+          841,
+          586,
+          258
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/inn.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1186,
+          582,
+          319,
+          387
+        ],
+        "face": [
+          1225,
+          586,
+          258
+        ]
+      }
+    },
+    "nabi": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          47,
+          116,
+          282,
+          349
+        ],
+        "face": [
+          59,
+          120,
+          262
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          431,
+          116,
+          282,
+          349
+        ],
+        "face": [
+          443,
+          120,
+          262
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          815,
+          116,
+          282,
+          349
+        ],
+        "face": [
+          827,
+          120,
+          262
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1199,
+          116,
+          282,
+          349
+        ],
+        "face": [
+          1211,
+          120,
+          262
+        ]
+      }
+    },
+    "geokkuri": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          42,
+          576,
+          303,
+          365
+        ],
+        "face": [
+          59,
+          660,
+          280
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          426,
+          576,
+          303,
+          365
+        ],
+        "face": [
+          443,
+          660,
+          280
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          810,
+          576,
+          303,
+          365
+        ],
+        "face": [
+          827,
+          660,
+          280
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/friends.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1194,
+          576,
+          303,
+          365
+        ],
+        "face": [
+          1211,
+          660,
+          280
+        ]
+      }
+    },
+    "doto": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          75,
+          133,
+          259,
+          342
+        ],
+        "face": [
+          88,
+          138,
+          238
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          459,
+          133,
+          259,
+          342
+        ],
+        "face": [
+          472,
+          138,
+          238
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          843,
+          133,
+          259,
+          342
+        ],
+        "face": [
+          856,
+          138,
+          238
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1227,
+          133,
+          259,
+          342
+        ],
+        "face": [
+          1240,
+          138,
+          238
+        ]
+      }
+    },
+    "buri": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          51,
+          576,
+          292,
+          318
+        ],
+        "face": [
+          70,
+          580,
+          252
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          435,
+          576,
+          292,
+          318
+        ],
+        "face": [
+          454,
+          580,
+          252
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          819,
+          576,
+          292,
+          318
+        ],
+        "face": [
+          838,
+          580,
+          252
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1203,
+          576,
+          292,
+          318
+        ],
+        "face": [
+          1222,
+          580,
+          252
+        ]
+      }
+    },
+    "karo": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          59,
+          150,
+          289,
+          341
+        ],
+        "face": [
+          77,
+          156,
+          254
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          443,
+          150,
+          289,
+          341
+        ],
+        "face": [
+          461,
+          156,
+          254
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          827,
+          150,
+          289,
+          341
+        ],
+        "face": [
+          845,
+          156,
+          254
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1211,
+          150,
+          289,
+          341
+        ],
+        "face": [
+          1229,
+          156,
+          254
+        ]
+      }
+    },
+    "wanggu": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          48,
+          545,
+          300,
+          354
+        ],
+        "face": [
+          65,
+          550,
+          266
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          432,
+          545,
+          300,
+          354
+        ],
+        "face": [
+          449,
+          550,
+          266
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          816,
+          545,
+          300,
+          354
+        ],
+        "face": [
+          833,
+          550,
+          266
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v1/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1200,
+          545,
+          300,
+          354
+        ],
+        "face": [
+          1217,
+          550,
+          266
+        ]
+      }
+    }
+  }
+}

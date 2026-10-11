@@ -142,7 +142,8 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    if(s){var im=document.createElement("img");im.alt="";im.draggable=false;fig.appendChild(im)}else{fig.dataset.face="1";try{fig.innerHTML=typeof pf==="function"?pf(k,m):""}catch(e){}}
    layer.appendChild(fig);requestAnimationFrame(function(){fig&&fig.classList.add("in")})}
   fig.dataset.mood=String(m||"").split(/\s+/)[0];
-  if(s){var im2=fig.firstChild;if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
+  if(window.__innPaintDialogue&&window.__innPaintDialogue(fig,k,m,{surface:'stage'}))return;
+  if(s){var im2=fig.querySelector(':scope>img');if(!im2){fig.replaceChildren();im2=document.createElement('img');im2.alt='';im2.draggable=false;fig.appendChild(im2)}if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
    var F=frame(k,s,W,H);im2.style.width=F.w+"px";im2.style.height=F.h+"px";
    fig.style.width=Math.round(F.w)+"px";fig.style.height=Math.round(F.h)+"px";fig.style.left=Math.round(F.left)+"px";fig.style.top=Math.round(F.top)+"px"}
   else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
@@ -177,6 +178,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   /* 조사 화면(접수대·2층 복도)의 양옆 빈칸: 검은 띠 대신 같은 그림을 흐리고 어둡게 깔아 화면 전체를 장소로 채운다(조사 지점 위치는 그대로) */
   try{var stg=document.querySelector(".stage"),fill=null;if(cur()&&!full&&stg&&document.querySelector("#bigscene svg[data-bg]:not([data-inn-world])")){var bd=bgDef();if(bd&&bd.def&&bd.def.src)fill=bd.def.src}
    if(stg){if(fill){var u='url("'+fill+'")';if(stg.style.getPropertyValue("--innfill")!==u)stg.style.setProperty("--innfill",u);stg.classList.add("inn-fill")}else stg.classList.remove("inn-fill")}}catch(e){}}
+ window.__innRefreshDialogueStage=function(){st.size='';sync()};
  /* 마차 장면: 앉은 다람(192×256, 월드 좌상단 448,124)을 배경 그림 안에 넣고, 대화 중에는 배경+다람을 (318,124,422,195) 구역으로 함께 2배 고정 표시.
     다람만 키우지 않는다. 줌 애니메이션 없음. 걱정 표정은 감정이 바뀌는 줄에서 한 번만 교체 */
  var seat={on:false,scene:""};
@@ -317,7 +319,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   document.body.appendChild(el);try{SFX.page()}catch(x){}draw()}
  window.__innInspect=inspect;
  /* 연출 지시(글자 없음): 화면 상대 교체·퇴장, 효과음. 대사 사이 잠깐 멈춤 동안 실행된다 */
- function dirRun(d){try{if(!d)return;if(d.sfx)try{SFX[d.sfx]&&SFX[d.sfx]()}catch(e){}
+ function dirRun(d){try{if(!d)return;if(window.__innPresentationDirection)window.__innPresentationDirection(d);if(d.sfx)try{SFX[d.sfx]&&SFX[d.sfx]()}catch(e){}
   if(Object.prototype.hasOwnProperty.call(d,"who")){var sc=scene();if(sc&&sc.key!==st.scene){st.scene=sc.key;st.shown=null}if(String(d.chime)==="0")st.quiet=1;st.who=d.who==="none"?null:d.who;st.whoDl=-1;st.m=null;
    var v=document.getElementById("dlgveil");if(v&&ensure()){if(!st.who&&fig){var f=fig;fig=null;f.classList.remove("in");setTimeout(function(){f.remove()},260)}else draw(st.who,null)}}}catch(e){}}
  window.__innDir=dirRun;
@@ -340,7 +342,8 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  function untag(lines){try{if(!cur()||!Array.isArray(lines))return;lines.forEach(function(x){if(Array.isArray(x)&&typeof x[1]==="string"&&TAGRE.test(x[1]))x[1]=x[1].replace(TAGRE,"");else if(x&&typeof x.t==="string"&&TAGRE.test(x.t))x.t=x.t.replace(TAGRE,"")})}catch(e){}}
  function split(base,self,lines,done,sk){untag(lines);try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&(x[0]==="@inspect"||x[0]==="@dir"||x[0]==="@grant")})){
     var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else if(Array.isArray(x)&&x[0]==="@dir"){parts.push(curp);parts.push({dir:parseDir(x[1])});curp=[]}else if(Array.isArray(x)&&x[0]==="@grant"){parts.push(curp);parts.push({grant:x[1]});curp=[]}else curp.push(x)});parts.push(curp);
-    var splitGame=G,k=0;(function next(){if(G!==splitGame||!cur())return;if(k>=parts.length){done&&done();return}var p=parts[k++];
+    var splitGame=G,splitBeats=G.beats||{},splitPhase=!splitBeats.inn_pro?'pro':splitBeats.inn_final&&!splitBeats.inn_end?'end':null,splitSid=splitPhase==='pro'?splitBeats.inn_pi:splitBeats.inn_ei,k=0;
+    (function next(){if(G!==splitGame||!cur()||S.screen!=='case')return;var now=G.beats||{};if(splitPhase==='pro'&&(now.inn_pro||now.inn_pi!==splitSid)||splitPhase==='end'&&(!now.inn_final||now.inn_end||now.inn_ei!==splitSid))return;if(k>=parts.length){done&&done();return}var p=parts[k++];
      if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
      if(p&&p.grant){var gid=p.grant;if(G.found.indexOf(gid)>=0){next();return}try{window.__innGrant&&window.__innGrant(gid)}catch(e){}var v2=document.getElementById("dlgveil");if(v2&&!(typeof DL!=="undefined"&&DL))v2.remove();if(window.__innCard)window.__innCard(gid,function(){next()});else{try{SFX.found()}catch(e){}next()}return}
      if(p&&p.dir){dirRun(p.dir);setTimeout(next,p.dir.ms!=null?p.dir.ms:420);return}
@@ -589,7 +592,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   "html,body{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}",
   "html body.rtg #rtgtal{left:8px!important;top:66px!important;transform:none!important;white-space:normal!important;max-width:150px!important;text-align:left!important;line-height:1.35!important}"
  ].join("\n");document.head.appendChild(css);
- window.__innStage=function(){var r=fig&&fig.getBoundingClientRect();return {src:fig&&fig.firstChild&&fig.firstChild.getAttribute?String(fig.firstChild.getAttribute("src")||"").split("/").pop():"",scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};
+ window.__innStage=function(){var r=fig&&fig.getBoundingClientRect(),im=fig&&fig.querySelector('img,svg.dialogue-bust');return {src:im?String(im.getAttribute('src')||im.dataset.src||'').split('/').pop():'',scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};
 })();
 
  /* 2026-10-10 v2: 증인에게 증거 보여 주기 반응표(EP.SHOW). 보여 주면 생기는 상황(beat)은 새 질문을 연다 */
