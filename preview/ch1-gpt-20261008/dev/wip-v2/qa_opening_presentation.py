@@ -77,7 +77,7 @@ def main():
                         child=page.locator('#inn-night-walk .night-room-child image')
                         r=child.bounding_box()
                         assert r and r['x']<viewport['width'] and r['x']+r['width']>0 and r['y']<viewport['height'] and r['y']+r['height']>0,('Wake Daram lies outside viewport',r)
-                        assert 'daram-worried-dialogue.png' in child.get_attribute('href'),'Wake Daram uses wrong approved expression'
+                        assert child.get_attribute('href')==page.evaluate('__innDialogueManifest.world.det1.src'),'Wake Daram uses an old or upper-body drawing'
                         page.screenshot(path='/tmp/opening-'+name+'-wake-bedroom.png')
                         bedroom_seen=True
                     if cue in ('out','touch') and cue not in dim_seen:

@@ -213,6 +213,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  /* ===== 이동·전환 정리 ===== */
  /* 장소 이름 띠가 뜨기 전에 남은 대사창을 치운다(대사가 진행 중이 아닐 때만) */
  function clearDlg(){try{if(cur()&&!(typeof DL!=="undefined"&&DL)){var f=document.getElementById("ovfz");if(f)f.innerHTML="";window.__dlFreeze=false;var v=document.getElementById("dlgveil");if(v)v.remove();document.body.classList.remove("dl-on","inn-st2")}}catch(e){}}
+ window.__innClearPlaceDialogue=clearDlg;
  try{var _bn=banner;banner=function(){clearDlg();setTimeout(clearDlg,0);setTimeout(clearDlg,60);return _bn.apply(this,arguments)}}catch(e){MISS.push("stage banner")}
  /* 1장에서는 옛 사건의 말버릇(도토 초시계 등)을 끈다 */
  var Q0=window.QUIRK;

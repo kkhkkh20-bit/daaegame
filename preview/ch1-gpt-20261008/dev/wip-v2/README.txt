@@ -1,8 +1,11 @@
 1장 v2 소스 — 별도 미리보기 배포 (2026-10-10)
+- 2026-10-11 모바일 잔여 연출 정리: CODEX_VISUAL_CLEANUP_20261011.txt.
+  밤 다람 전신/발 구도, 초상 로딩 보호, 조용한 장소/시간 카드와 음악 차단 타이밍.
+  qa_visual_cleanup.py / qa_presentation_timing.py, 현재 빌드 e826979e571b.
 - 2026-10-11 관리자 테스트: CODEX_ADMIN_TEST_20261011.txt.
   우측 메뉴와 설정의 플레이테스트 항목 → 4개 분류/12개 장면 바로가기.
   독립 테스트 저장과 일반 플레이 복귀, 로딩 뒤 연출 시작.
-  inn_admin_test.js / qa_admin_test.py, 최신 빌드 097571eccd50.
+  inn_admin_test.js / qa_admin_test.py, 해당 기능 수정 빌드 097571eccd50.
 - 2026-10-11 자연스러운 조사 전 도입: CODEX_OPENING_NATURAL_20261011.txt.
   pro_new.js의 연결 대화와 qa_intro.py의 실제 동기/행동 순서를 보완했다.
   해당 도입 수정 빌드 caa05ea33851, 기존 컷/음악/추리 정보 경계는 유지.
