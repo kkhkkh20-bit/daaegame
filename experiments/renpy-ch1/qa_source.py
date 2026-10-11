@@ -11,6 +11,7 @@ ROOT=Path(__file__).resolve().parent
 EP=json.loads((ROOT/'game/chapter-source.json').read_text())['episode']
 ARRIVAL=json.loads((ROOT/'game/village-story.json').read_text())
 TIMELINE=json.loads((ROOT/'game/village-state.json').read_text())
+DIALOGUE=json.loads((ROOT/'game/chapter-dialogue.json').read_text())
 
 class SourceTrial(Trial):
  async def state(self):
@@ -134,6 +135,8 @@ async def run(browser,out,w,h,discovery_only=False):
  c=await browser.new_context(viewport={'width':w,'height':h},has_touch=w<1000,is_mobile=w<1000);await c.add_init_script(AUDIO_PROBE);pg=await c.new_page();t=SourceTrial(pg,w,h,out)
  await pg.goto('http://127.0.0.1:8093/preview/renpy-ch1-test/');await pg.wait_for_function("typeof renpy_exec==='function'",timeout=60000);await t.state();await t.shot('title');await t.click(320,425)
  checks=await t.arrival_route(rich=w>=1000);st=await t.state();await t.shot('investigation')
+ names=await pg.evaluate('renpy_exec("import renpy; result=all(renpy.store.SOURCE_CHARS.get(p) is getattr(renpy.store,p) for p in renpy.store.TIMELINE[\\\"voters\\\"]) ")')
+ assert names;checks.append('all_resident_support_dialogue_uses_named_character')
  await t.interact(225,430);assert 'bed13:side-box' in (await t.state())['checks'];await t.interact(450,230);assert 'bed13:window' in (await t.state())['checks'];await t.shot('checked-room');checks.append('ordinary_object_replies_and_persistent_checks')
  assert {'steps','doorOpen','door','bell10','slam'}<=set(st['effects']);assert not {'roll','carStop','carDepart'}&set(st['effects']);checks.append('opening_effects_without_horses_or_pulse_leak');print('OPENING',w,flush=True)
  await t.interact(850,515);assert not (await t.state())['found'];checks.append('original_late_discovery_gate')
@@ -156,6 +159,10 @@ async def run(browser,out,w,h,discovery_only=False):
  assert pulse_seen and pulse_heard and st['found'];assert st['pulse'] is None;checks.append('discovery_silence_heartbeat_and_crowd');print('FOUND',w,flush=True)
  assert st['minutes']>=1920 and any(p['id']=='innma' for p in st['residents'])
  await t.wait('roam');await t.click(1125,385);await t.wait('questions');state=await t.state();assert 'T_ma6' in state['available_topics'];await t.click(640,169+len(state['available_topics'])*63);await t.wait('roam');checks.append('discovery_unlocks_topic_and_relocates_grandmother')
+ await t.question('T_ma1');await t.question('T_ma6')
+ texts=[line['t'] for line in (await t.state())['lines']]
+ assert '그럼 솜솜 때문에 이불 편 거예요?' in texts and '이번엔 더 오래 볼래요. 숨 쉬는지.' in texts
+ checks.append('post_discovery_interview_acknowledges_known_guest_before_life_verdict')
  if discovery_only:
   await t.interact(740,190);await t.click(730,450);await t.advance_until('code');await t.click(260,550);assert (await t.state())['code_error']
   for x,count in [(424,1),(568,1),(712,0),(856,2)]:
@@ -221,7 +228,7 @@ async def run(browser,out,w,h,discovery_only=False):
    if len(value)>1 and isinstance(value[0],str) and isinstance(value[1],str):allowed.add((value[0],value[1]))
    else:
     for v in value:collect(v)
- collect(EP);collect(ARRIVAL);collect(TIMELINE)
+ collect(EP);collect(ARRIVAL);collect(TIMELINE);collect(DIALOGUE)
  for person,line in TIMELINE["hesitant_votes"].items():
   raw="geokkuri" if person=="bami" else "wanggu" if person=="neoul" else person
   allowed.add((raw,line))

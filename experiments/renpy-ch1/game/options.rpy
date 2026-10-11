@@ -1,7 +1,7 @@
 define config.name = "다람탐정 · 열세 번째 침대"
-define config.version = "0.5.0"
+define config.version = "0.6.0"
 # Literal early definition selects the persistent web save mount.
-define config.save_directory = "daaegame-renpy-village-ch1-05"
+define config.save_directory = "daaegame-renpy-village-ch1-06"
 
 default inventory = []
 default inspected = []
@@ -67,7 +67,7 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.5.0"
+    build.version = "0.6.0"
     build.classify("game/assets/*.txt", "all")
     build.classify("game/assets/*.json", "all")
     build.classify("**.py", None)
