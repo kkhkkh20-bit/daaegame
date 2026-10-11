@@ -25,6 +25,7 @@ default source_shown_text = ""
 default source_current_line = None
 default source_complete = False
 default source_proof_show = []
+default source_checks = {}
 
 define source_thought = Character(None,cb_who_id="dad")
 define source_character = source_thought
@@ -38,9 +39,10 @@ init 10 python:
     SOURCE_PATHS = json.load(renpy.file("assets/source-map.json"))
     SOURCE_ALIAS = {"det0":"dad","det1":"daram","innma":"granny","geokkuri":"bami","wanggu":"neoul"}
     SOURCE_CHARS = {k:getattr(store,v) for k,v in SOURCE_ALIAS.items()}
+    SOURCE_CHARS["???"] = Character("???")
     SOURCE_CHARS.update({k:getattr(store,k) for k in ("seryeon","nabi","doto","buri","karo")})
     SOURCE_LOC = {x["id"]:x for x in SOURCE_EP["LOCS"]}
-    SOURCE_MAP_POINTS = {"plaza":(160,390),"front":(425,310),"kitchen":(660,430),"hall":(700,175),"dotoroom":(950,210),"bed13":(960,410),"dining":(425,535)}
+    SOURCE_MAP_POINTS = {"plaza":(335,578),"front":(405,303),"kitchen":(590,460),"hall":(738,135),"dotoroom":(982,91),"bed13":(977,316),"dining":(152,380)}
     SOURCE_ICONS = {"C01":"assets/pouch.png","C02":"assets/flour-world.png","C03":"nabi neutral","C04":"assets/somsom.png","C05":"clue fur","C06":"source clock","C07":"bami neutral","C08":"assets/notebook.png","C09":"assets/notebook.png","C10":"assets/record.png","C11":"assets/notebook.png","C12":"seryeon neutral","C13":"bami neutral","C14":"karo neutral"}
     renpy.music.register_channel("scene_fx",mixer="sfx",loop=False)
     renpy.music.register_channel("pulse",mixer="sfx",loop=True)
@@ -57,6 +59,7 @@ init 10 python:
             store.source_inventory.append(key)
             source_fx("found")
             renpy.notify("수첩에 기록했다: "+SOURCE_EP["EV"][key]["name"])
+            village_progress()
 
     def source_fx(key):
         if key in ("roll","carStop","carDepart","letter","tick2"):
@@ -70,7 +73,7 @@ init 10 python:
 
     def source_score(key):
         spec=SOURCE_PACKAGE["music"].get(key)
-        path=SOURCE_PATHS.get(spec["media"]) if spec else None
+        path="assets/town-bright.mp3" if key=="village_bright" else SOURCE_PATHS.get(spec["media"]) if spec else None
         if path!=renpy.music.get_playing():
             if path: renpy.music.play(path,fadeout=.15,fadein=.2)
             else: renpy.music.stop(fadeout=.15)
@@ -87,7 +90,9 @@ init 10 python:
 
     def source_face(who,mood=""):
         person=SOURCE_ALIAS.get(who,who)
+        village_observe(person)
         store.dialogue_speaker=person if person in CAST else None
+        store.dialogue_expression=("distressed" if mood in ("sad","shock","nervous","worried","cower") else "thinking" if mood=="think" else "expressive" if mood in ("smile","oops") else "neutral")
         if who in ("det0","narr"):
             person=store.source_stage_person
             mood=""
@@ -99,9 +104,13 @@ init 10 python:
         face=("distressed" if mood in ("sad","shock","nervous","worried","cower") else
               "thinking" if mood=="think" else "expressive" if mood in ("smile","oops") else "neutral")
         if face not in CAST[person]: face="neutral"
-        renpy.show(person+" "+face,tag="visitor",at_list=[store.portrait_close])
+        renpy.show(person+" interview_"+face,tag="visitor",at_list=[store.portrait_close])
 
     def source_bg(key):
+        if key=="plaza":
+            return Transform("assets/outdoor-gate-morning.png",size=(1280,720))
+        if key.startswith("outdoor-"):
+            return Transform("assets/"+key+".png",size=(1280,720))
         if key in SOURCE_EP["BGS"] and SOURCE_EP["BGS"][key].get("src"):
             spec=SOURCE_EP["BGS"][key]
             image=SOURCE_PATHS[spec["src"]]
@@ -110,7 +119,7 @@ init 10 python:
         return {"bed13":"bg room","dining":"bg council","kitchen":"bg kitchen"}.get(key,"bg front")
 
     def source_picture():
-        pictures={"carriage":"assets/carriage.png","driver":SOURCE_PATHS["art/ch1/cinematics/carriage-driver-close.png"],"approach":"assets/approach.png","village":SOURCE_PATHS["art/ch1/cinematics/village-arrival-wide.png"],"postoffice":"assets/post-office.png","innentrance":"assets/inn-door.png","courtyard":"assets/inn-door.png","seal":"assets/pouch.png"}
+        pictures={"carriage":"assets/carriage.png","driver":SOURCE_PATHS["art/ch1/cinematics/carriage-driver-close.png"],"approach":"assets/approach.png","village":SOURCE_PATHS["art/ch1/cinematics/village-arrival-wide.png"],"postoffice":"assets/outdoor-post.png","innentrance":"assets/outdoor-inn.png","courtyard":"assets/outdoor-inn.png","seal":"assets/pouch.png"}
         if store.source_camera in pictures: return Transform(pictures[store.source_camera],size=(1280,720))
         if store.source_night in ("home","return"): return source_bg("room")
         return source_bg(store.source_background)
@@ -126,7 +135,8 @@ init 10 python:
     def source_questions(person):
         return [q for q in SOURCE_EP["TALK"].get(person,[])
                 if (not q.get("need") or q["need"] in store.source_inventory)
-                and (not q.get("after") or q["after"] in store.source_seen)]
+                and (not q.get("after") or q["after"] in store.source_seen)
+                and village_topic_available(q)]
 
     def source_card(key):
         ev=SOURCE_EP["EV"][key]
@@ -140,7 +150,8 @@ init 10 python:
           inventory=list(store.source_inventory),seen=list(store.source_seen),found=store.source_found,permission=store.source_permission,complete=store.source_complete,
           line=store.source_current_line,text=store.source_shown_text,scene=store.source_scene,camera=store.source_camera,night=store.source_night,effects=list(store.source_effect_log),lines=list(store.source_line_log),
           music=renpy.music.get_playing(),typing=renpy.music.get_playing(channel="typing"),pulse=renpy.music.get_playing(channel="pulse"),fx=renpy.music.get_playing(channel="scene_fx"),
-          village_map=opened("arrival_map"),village_place=opened("arrival_place"),village_location=store.arrival_location,met=list(store.arrival_met),village_seen=list(store.arrival_seen),post_closed=store.arrival_post_closed,stone=store.arrival_stone,
+          village_map=opened("arrival_map"),village_place=opened("arrival_place"),village_questions=opened("arrival_questions"),village_inn=opened("arrival_interior"),cold=store.arrival_cold,village_location=store.arrival_location,background=store.source_background,checks=dict(store.source_checks),met=list(store.arrival_met),village_seen=list(store.arrival_seen),post_closed=store.arrival_post_closed,stone=store.arrival_stone,
+          trust_events=list(store.village_trust_events),flags=list(store.source_flags),minutes=store.village_minutes,time_events=list(store.village_time_events),observations=list(store.village_observations),trust=dict(store.village_trust),residents=village_resident_points(store.source_location),available_topics=[q["id"] for q in source_questions(store.source_person)] if hasattr(store,"source_person") else [],support_hearing=store.village_hearing_active,support_person=store.village_hearing_person,
           roam=opened("source_explore"),map=opened("source_map"),questions=opened("source_questions"),evidence=opened("source_evidence"),debate=opened("source_debate"),choice=opened("source_choice"),inspect=opened("source_inspect"),code=opened("chest_lock"),complete_screen=opened("trial_complete"),saving=opened("save"),loading=opened("load"),exception=opened("_exception"))
 
     def source_pause_effects():
@@ -150,14 +161,41 @@ init 10 python:
             if blocked:renpy.music.stop(channel="typing")
     config.interact_callbacks.append(source_pause_effects)
 
+    def source_empty_click():
+        renpy.end_interaction(("ambient",renpy.get_mouse_pos()))
+
+    def source_ambient(point):
+        x,y=point
+        if store.source_location=="bed13":
+            zone=("side-box" if 110<x<355 and 280<y<560 else
+                  "window" if 400<x<570 and 95<y<290 else
+                  "door" if x>1040 else "floor")
+            return zone,ARRIVAL["observations"][zone]
+        return "surroundings",ARRIVAL["observations"][store.source_location]
+
+    def source_mark(action,value):
+        anchors={"bag":(900,285),"quilt":(620,365),"chest":(747,474),
+          "under":(854,516),"head":(740,190),"fur":(295,530),
+          "clock":(430,170),"book":(340,495),"diary":(340,495)}
+        key=store.source_location+":"+str(value if action=="spot" else action)
+        if key not in store.source_checks and (value in anchors or action in anchors):
+            store.source_checks[key]=anchors.get(value,anchors.get(action))
+
 label start:
     $ source_mode = True
     $ source_inventory, source_seen, source_flags = [], [], []
     $ source_effect_log, source_line_log = [], []
+    $ source_checks = {}
+    $ village_minutes,village_time_events,village_observations = 1050,[],[]
+    $ village_trust,village_trust_events = {p:-1 for p in TIMELINE["voters"]},[]
+    $ village_hearing_active,village_hearing_person = False,None
+    $ source_proof_show = []
+    hide screen source_proof
     $ source_found = source_permission = source_complete = source_started_meeting = False
     $ arrival_met, arrival_seen, arrival_greeted = [], [], []
     $ arrival_post_closed = arrival_stone = False
     $ arrival_location = None
+    $ arrival_checked_in = arrival_cold = False
     $ source_group, source_phase, source_statement, source_step = "meet",0,0,0
     $ stage = "opening"
     show screen hud
@@ -258,7 +296,7 @@ label source_lines(items, origin="", index=0):
                     call source_direction(source_mapping["cmd"])
             else:
                 $ source_current_line = origin+":"+str(index)
-                $ source_shown_text = source_mapping.get("t",source_t)
+                $ source_shown_text = village_vote_line(source_w,source_mapping.get("t",source_t),source_meta)
                 if stage=="opening" and source_scene=="P13" and source_t.startswith("베개 밑") and source_camera=="stage":
                     $ source_camera = "seal"
                     hide visitor
@@ -270,7 +308,7 @@ label source_lines(items, origin="", index=0):
                 if source_meta.get("grant"):
                     $ source_grant(source_meta["grant"])
                 if source_meta.get("votes"):
-                    $ source_votes.update(source_meta["votes"])
+                    $ village_apply_votes(source_meta["votes"])
                 if source_meta.get("beat"):
                     $ source_flags.append(source_meta["beat"])
                 if source_meta.get("show"):
@@ -321,12 +359,14 @@ label source_lines(items, origin="", index=0):
     return
 
 label source_roam:
+    $ village_progress()
     $ source_proof_show = []
     hide screen source_proof
     $ stage = "investigation"
     $ place,clock_text = SOURCE_LOC[source_location]["name"],"조사 중"
     $ source_background = SOURCE_EP["LOC_BG"].get(source_location,"bed13")
     $ source_camera,source_night = "stage",None
+    $ clock_text = village_clock()+" · 조사"
     hide visitor
     window hide
     scene black with Dissolve(.12)
@@ -336,12 +376,19 @@ label source_roam:
     scene expression source_picture() with Dissolve(.18)
     call screen source_explore
     $ source_action,source_value = _return
+    $ source_mark(source_action,source_value)
     if source_action == "map":
         call screen source_map
         $ source_location = _return
     elif source_action == "talk":
         $ source_person = source_value
         jump source_talk
+    elif source_action == "ambient":
+        $ source_ambient_key,source_ambient_lines = source_ambient(source_value)
+        $ source_check_key = source_location+":"+source_ambient_key
+        if source_check_key not in source_checks:
+            $ source_checks[source_check_key] = source_value
+        call source_lines(source_ambient_lines,"LOOK_"+source_ambient_key)
     elif source_action == "meeting":
         if all(k in source_inventory for k in SOURCE_EP["MEET"]["need"]):
             if not source_started_meeting:
@@ -385,6 +432,8 @@ label source_talk:
     $ source_actor = SOURCE_ALIAS.get(source_person,source_person)
     $ source_stage_person = source_actor
     $ source_score("inn_t_bami" if source_person=="geokkuri" else "inn_t_neoul" if source_person=="wanggu" else "inn_t_"+source_person)
+    hide visitor
+    window hide
     call screen source_questions(source_person)
     if _return == "back":
         jump source_roam
@@ -392,13 +441,17 @@ label source_talk:
     if source_person in arrival_met and source_person not in arrival_greeted and source_person in ARRIVAL["recognition"]:
         call source_lines(ARRIVAL["recognition"][source_person],"V_RECOGNITION_"+source_person)
         $ arrival_greeted.append(source_person)
-    call source_lines(arrival_question_lines(source_question),source_question["id"])
+    call source_lines(village_question_lines(source_question),source_question["id"])
+    $ village_relationship("interview_"+source_person,[SOURCE_ALIAS.get(source_person,source_person)],1)
     if source_question.get("ev"):
         $ source_grant(source_question["id"])
     if source_question.get("sets"):
         $ source_flags.append(source_question["sets"])
     if source_question["id"] not in source_seen:
         $ source_seen.append(source_question["id"])
+    if source_question["id"] == "T_se4":
+        call source_lines(TIMELINE["departures"]["seryeon"],"V_SERYEON_DEPARTURE")
+        jump source_roam
     jump source_talk
 
 label source_rounds:
@@ -415,7 +468,7 @@ label source_rounds:
     show screen round_table
     while source_phase < len(SOURCE_EP["MEET" if source_group=="meet" else "FINAL"]["phases"]):
         $ source_round = SOURCE_EP["MEET" if source_group=="meet" else "FINAL"]["phases"][source_phase]
-        $ clock_text = source_round.get("clock","")
+        $ clock_text = village_round_time()
         if source_round.get("intro"):
             call source_lines(source_round["intro"],source_group+str(source_phase)+"/intro")
         if source_round["type"] == "talk":
@@ -432,7 +485,9 @@ label source_rounds:
             while _return["key"] != "seryeon":
                 $ renpy.notify("지금까지 확인한 이동과 발견 위치를 다시 생각하자.")
                 call screen source_choice(source_round["q"],[dict(label=source_name(k),key=k) for k in SOURCE_EP["MEET"]["seats"]])
-            call source_lines(source_round["ok"],"vote")
+            call village_support_hearing
+            $ village_update_votes()
+            call source_lines(TIMELINE["vote_resolution"],"V_SUPPORT_VOTE")
         elif source_round["type"] == "debate":
             $ source_statement,source_step,source_pressed = 0,0,False
             call source_debate_loop
@@ -443,6 +498,7 @@ label source_rounds:
         jump source_rounds
     hide screen round_table
     $ source_pulse(False)
+    $ village_event("resolved")
     $ stage = "ending"
     call source_scenes(SOURCE_EP["END"])
     $ source_complete,test_complete = True,True
@@ -482,6 +538,7 @@ label source_debate_loop:
     elif source_step == len(source_steps) and source_evidence in source_claim.get("a",[]):
         $ source_fx("impact")
         $ source_score("inn_meet_press" if source_group=="meet" else "inn_climax_press")
+        $ village_proof_support()
         call source_lines(source_claim.get("ok",[]),source_group+str(source_phase)+"/ok")
         return
     elif source_evidence in source_claim.get("soft",{}):

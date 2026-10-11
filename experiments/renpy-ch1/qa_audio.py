@@ -26,7 +26,13 @@ async def main(args):
         await page.wait_for_function("typeof renpy_exec==='function'", timeout=60000)
         await trial.state()
         await trial.click(320, 425)
-        # Open settings while the first line is still typing.
+        # Skip the silent-typing cold hook; probe a normal carriage line.
+        await trial.advance_until("scene","V_CARRIAGE")
+        # Advance through short replies to a longer normally typed line.
+        for _ in range(12):
+            if (await trial.state())["typing"]:break
+            await trial.click(830,665)
+        # Open settings while a line is still typing.
         for _ in range(90):
             if (await trial.state())["typing"]:
                 break
@@ -76,10 +82,10 @@ async def main(args):
         await trial.click(842, 635)
         await trial.wait("map")
         await trial.shot("map")
-        await trial.click(1072, 455)
+        await trial.click(1089, 361)
         await trial.wait("roam")
         assert (await trial.state())["location"] == "bed13"
-        await trial.interact(800,275)
+        await trial.interact(900,280)
         await trial.click(1038, 45)
         await trial.wait("evidence")
         await trial.shot("notebook")

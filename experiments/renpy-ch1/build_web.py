@@ -45,7 +45,7 @@ def theme(destination):
     observer.observe(document.body,{childList:true});
     </script></body>""")
     index.write_text("\n".join(line.rstrip() for line in html.splitlines()) + "\n")
-    shutil.copyfile(ROOT / "game/assets/approach.png", destination / "loading-scene.png")
+    shutil.copyfile(ROOT / "game/assets/outdoor-gate.png", destination / "loading-scene.png")
     shutil.copyfile(REPO / "preview/ch1-gpt-20261008/art/ui/galmuri11.woff2", destination / "Galmuri11.woff2")
     shutil.copyfile(ROOT / "game/assets/font-license.txt", destination / "Galmuri-OFL.txt")
     (destination / "web-presplash.jpg").unlink(missing_ok=True)

@@ -30,9 +30,22 @@ style scrollbar:
     base_bar Solid("#4f4034")
     thumb Solid("#b39060",xsize=14,ysize=42)
 
+# One topic style shared by town residents and the investigation interviews.
+screen topic_banner(caption, topic_action, done=False):
+    button:
+        xsize 560 ysize 58 padding (3,3)
+        background Solid("#e5d5ae") hover_background Solid("#eec36b")
+        action topic_action
+        fixed:
+            add Solid("#315866" if done else "#276d88")
+            add Solid("#f5ecd4",xsize=22)
+            text (("{s}"+caption+"{/s}") if done else caption) size 23 xalign .5 yalign .5 color ("#bbcbd0" if done else "#fff4d9")
+            if done:
+                add TopicTick() xpos 514 yalign .5
+
 screen main_menu():
     tag menu
-    add "bg inn"
+    add Transform("assets/outdoor-gate.png",size=(1280,720))
     add Solid("#120e0a66")
     frame:
         xpos 90 ypos 185 xsize 640
@@ -54,12 +67,12 @@ screen say(who,what):
         hbox:
             spacing 22
             if dialogue_speaker in CAST:
-                add Transform(dialogue_speaker + " neutral",size=(90,105))
+                add Transform(dialogue_speaker + " avatar_"+dialogue_expression,size=(130,130),fit="contain")
             vbox:
                 spacing 10
                 if who:
                     text who id "who" color "#ffcc86"
-                text what id "what" xsize 970
+                text what id "what" xsize 920
     text "▼" xpos 1190 ypos 682 size 21 color "#d8b568"
 
 screen choice(items):
@@ -73,12 +86,13 @@ screen choice(items):
 
 screen hud():
     zorder 20
-    frame:
-        xpos 24 ypos 18 padding (16,10)
-        vbox:
-            spacing 4
-            text place size 23 color "#f8d994"
-            text clock_text size 18 color "#c6b699"
+    if not renpy.get_screen("source_map") and not renpy.get_screen("arrival_map"):
+        frame:
+            xpos 24 ypos 18 padding (16,10)
+            vbox:
+                spacing 4
+                text place size 23 color "#f8d994"
+                text clock_text size 18 color "#c6b699"
     hbox:
         xpos 1012 ypos 20 spacing 15
         imagebutton:

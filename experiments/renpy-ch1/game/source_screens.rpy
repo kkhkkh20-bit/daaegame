@@ -14,13 +14,22 @@ screen source_world():
 screen source_explore():
     default ready = False
     timer .35 action SetScreenVariable("ready",True)
+    # Background reaction lies below every evidence and resident hit target.
+    button:
+        xpos 0 ypos 95 xsize 1280 ysize 505
+        background None hover_background None insensitive_background None
+        sensitive ready action Function(source_empty_click)
     if source_location == "bed13":
         add Transform("assets/pouch-world.png",size=(60,64)) xpos 880 ypos 270
         add Transform("assets/flour-world.png",size=(64,53)) xpos 590 ypos 337
-        add Transform(Crop((880,550,365,150),"assets/chest.png"),size=(150,62)) xpos 659 ypos 443
+        if "C11" in source_inventory:
+            add Transform(Crop((835,573,389,150),"assets/chest-open.png"),size=(190,90),fit="contain") xpos 655 yanchor 1.0 ypos 521
+        else:
+            add Transform(Crop((97,351,1082,722),"assets/chest-complete.png"),size=(190,90),fit="contain") xpos 655 yanchor 1.0 ypos 521
+        text "첫…   11…2" xpos 701 ypos 185 size 14 color "#a58f7055"
         if not source_found:
-            add Transform(Crop((802,490,110,80),"assets/somsom-hidden-source.png"),size=(27,19),alpha=.23) xpos 828 ypos 480
-        for rect,action in [((680,215,310,115),("spot","bag")),((563,331,150,97),("spot","quilt")),((550,500,345,87),("under",None)),((620,170,325,62),("head",None)),((655,406,158,93),("chest",None))]:
+            add Transform(Crop((271,356,766,615),"assets/hidden-somsom.png"),size=(43,28),fit="contain",alpha=.23) xpos 822 ypos 480
+        for rect,action in [((850,245,95,90),("spot","bag")),((570,330,145,85),("spot","quilt")),((790,460,150,93),("under",None)),((620,170,325,62),("head",None)),((655,431,160,90),("chest",None))]:
             button:
                 xpos rect[0] ypos rect[1] xsize rect[2] ysize rect[3]
                 background None hover_background None insensitive_background None
@@ -31,13 +40,6 @@ screen source_explore():
                 idle Transform("assets/basket-world.png",size=(120,80),fit="contain")
                 action Return(("spot","fur")) sensitive ready
     else:
-        for i,person in enumerate(SOURCE_EP["PPL"].get(source_location,[])):
-            $ actor = SOURCE_ALIAS.get(person[0],person[0])
-            imagebutton:
-                xpos (690+i*220) ypos (80 if actor=="bami" else 245)
-                idle Transform(actor+" world",size=(190,290),fit="contain")
-                hover Transform(actor+" world",size=(190,290),fit="contain",alpha=.85)
-                action Return(("talk",person[0])) sensitive ready
         if source_location == "hall":
             imagebutton:
                 xpos 380 ypos 125
@@ -48,47 +50,55 @@ screen source_explore():
                 xpos 290 ypos 450
                 idle Transform("assets/notebook.png",size=(120,90),fit="contain")
                 action Return(("spot","diary" if source_location=="dotoroom" else "book")) sensitive ready
+    for person in village_resident_points(source_location):
+        $ actor = SOURCE_ALIAS.get(person["id"],person["id"])
+        button:
+            xpos person["x"] ypos person["y"] xsize 190 ysize 290 padding (0,0)
+            background None hover_background None
+            action Return(("talk",person["id"])) sensitive ready
+            add Transform(actor+" world",size=(190,290),fit="contain")
+    for key,point in source_checks.items():
+        if key.startswith(source_location+":"):
+            add TopicTick() xpos point[0] ypos point[1]
     hbox:
-        xpos 810 ypos 604 spacing 15
-        imagebutton:
-            idle Transform("assets/move.png",size=(64,64))
+        xpos 740 ypos 604 spacing 15
+        textbutton "이동하기":
+            xsize 190 ysize 64
             action Return(("map",None)) sensitive ready
         textbutton ("회의로" if not source_started_meeting else "회의 재개"):
+            xsize 180 ysize 64
             action Return(("meeting",None)) sensitive ready
 
 screen source_map():
     modal True
-    add Transform("assets/map.png",size=(1280,720))
-    add Solid("#140f0a88")
+    add Transform("assets/inn-map.png",size=(1280,720))
     frame:
         xpos 25 ypos 110
         vbox:
-            text "마을과 여관" size 32 color "#ffdc91"
-            text "장소를 고르세요" size 21
+            text "겨울잠 여관" size 32 color "#ffdc91"
+            text "돌아볼 곳을 골라요" size 21
     for key,pos in SOURCE_MAP_POINTS.items():
         button:
-            xpos pos[0] ypos pos[1] xsize 224 ysize 91 padding (10,12)
+            xpos pos[0] ypos pos[1] xsize 224 ysize 91 padding (6,7)
+            background Solid("#eee2c8f2") hover_background Solid("#ffecc1")
             action Return(key)
             hbox:
                 spacing 8
-                add Transform("assets/move.png",size=(36,36))
+                add Transform(source_bg(SOURCE_EP["LOC_BG"].get(key,key)),size=(62,62),fit="contain")
                 vbox:
-                    text SOURCE_LOC[key].get("short",SOURCE_LOC[key]["name"]) size 21
-                    text ("현재 위치" if key==source_location else "") size 17 color "#c6b699"
+                    text SOURCE_LOC[key].get("short",SOURCE_LOC[key]["name"]) size 21 color "#443025"
+                    text ("현재 위치" if key==source_location else "") size 17 color "#7a5941"
     textbutton "돌아가기" xpos 45 ypos 625 action Return(source_location)
 
 screen source_questions(person):
     modal True
-    add Transform(source_actor+" neutral",size=(340,390),fit="contain") xpos 825 ypos 155
-    frame:
-        xpos 55 ypos 120 xsize 690 ysize 490
-        vbox:
-            spacing 10
-            text source_name(person) size 32 color "#ffdc91"
-            for q in source_questions(person):
-                textbutton (q["q"]+(" · 기록함" if q["id"] in source_seen else "")):
-                    action Return(q) xsize 620 ysize 53
-            textbutton "돌아가기" action Return("back")
+    add source_actor+" interview_neutral" at portrait_close
+    add Solid("#0b172733")
+    vbox:
+        xpos 360 ypos 140 spacing 5
+        for q in source_questions(person):
+            use topic_banner(q["q"],Return(q),q["id"] in source_seen)
+        use topic_banner("대화 마치기",Return("back"))
 
 screen source_evidence(present=False):
     modal True
@@ -100,6 +110,8 @@ screen source_evidence(present=False):
         xpos 65 ypos 105 xsize 1150 ysize 535
         fixed:
             text ("증거 제시" if present else "증거 수첩") size 32 color "#ffdc91"
+            if not present:
+                textbutton "주민 수첩" xpos 840 ypos 0 action Show("village_timetable")
             for i,key in enumerate(source_inventory[page_index*6:page_index*6+6]):
                 button:
                     xpos (i%2)*230 ypos 65+(i//2)*110

@@ -1,7 +1,7 @@
 define config.name = "다람탐정 · 열세 번째 침대"
-define config.version = "0.4.0"
+define config.version = "0.5.0"
 # Literal early definition selects the persistent web save mount.
-define config.save_directory = "daaegame-renpy-village-ch1-04"
+define config.save_directory = "daaegame-renpy-village-ch1-05"
 
 default inventory = []
 default inspected = []
@@ -13,6 +13,7 @@ default clock_text = "해 질 무렵"
 default target = None
 default typing_allowed = True
 default dialogue_speaker = None
+default dialogue_expression = "neutral"
 default lamp_ready = False
 default somsom_found = False
 default archive_permission = False
@@ -34,6 +35,22 @@ default test_complete = False
 
 init python:
     import json
+    class TopicTick(renpy.Displayable):
+        def render(self,width,height,st,at):
+            rendered=renpy.Render(26,26)
+            rendered.canvas().lines("#b7d6b4",False,[(3,13),(10,20),(23,4)],4)
+            return rendered
+    class VillagePaths(renpy.Displayable):
+        def render(self,width,height,st,at):
+            rendered=renpy.Render(1280,720)
+            canvas=rendered.canvas()
+            for start,end in (("gate","fountain"),("fountain","lane"),("fountain","post"),("post","inn"),("lane","inn")):
+                x1,y1=ARRIVAL_PLACES[start][2]
+                x2,y2=ARRIVAL_PLACES[end][2]
+                points=[(x1,y1),(int((x1+x2)/2),int((y1+y2)/2)+18),(x2,y2)]
+                canvas.lines("#d4bc8b",False,points,13)
+                canvas.lines("#9b7d53",False,points,3)
+            return rendered
     gui.init(1280,720)
     config.has_voice = True
     config.default_music_volume = 0.75
@@ -50,7 +67,7 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.4.0"
+    build.version = "0.5.0"
     build.classify("game/assets/*.txt", "all")
     build.classify("game/assets/*.json", "all")
     build.classify("**.py", None)
@@ -60,6 +77,7 @@ init python:
     build.classify("QA_REPORT.json", None)
     build.classify("review/**", None)
     build.classify("art/**", None)
+    build.classify("audio/**", None)
     build.classify("**.log", None)
     build.classify("**/saves/**", None)
     build.classify("**/cache/**", None)
@@ -191,17 +209,17 @@ image bg kitchen = Transform("assets/kitchen.png",size=(1280,720))
 image bg hall = Transform("assets/hall.png",size=(1280,720))
 image bg doto = Transform("assets/doto-room.png",size=(1280,720))
 image bg council = Transform("assets/council.png",size=(1280,720))
-image bg post = Transform("assets/post-office.png",size=(1280,720))
-image bg inn = Transform("assets/inn-door.png",size=(1280,720))
+image bg post = Transform("assets/outdoor-post.png",size=(1280,720))
+image bg inn = Transform("assets/outdoor-inn.png",size=(1280,720))
 image cg pouch = Transform("assets/pouch.png",size=(1280,720))
 image cg somsom = Transform("assets/somsom.png",size=(1280,720))
 image clue fur = Composite((512,512), (0,0), Transform(Crop((835,445,130,130),"assets/somsom.png"),size=(512,512)), (0,0), "assets/fur-stamp.png")
 
 transform portrait_close:
-    xalign 0.79
+    xalign 0.5
     yanchor 1.0
     ypos 551
-    size (335,380)
+    size (340,440)
     fit "contain"
     alpha 0.0
     ease 0.15 alpha 1.0

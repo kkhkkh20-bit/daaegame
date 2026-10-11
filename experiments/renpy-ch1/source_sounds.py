@@ -59,3 +59,18 @@ def render(destination):
         with wave.open(str(destination/('source-'+name+'.wav')),'wb') as file:
             file.setnchannels(1);file.setsampwidth(2);file.setframerate(RATE)
             file.writeframes(b''.join(struct.pack('<h',round(max(-.8,min(.8,s))*32767)) for s in samples))
+    # The restored anonymous hook accelerates independently of dialogue speed.
+    # RenPy owns this channel, so save/menu/rollback do not leave web timers alive.
+    for index,bpm in enumerate((55,65,76,88,102,116,130)):
+        duration=60/bpm
+        samples=[]
+        for i in range(round(duration*RATE)):
+            t=i/RATE; value=0
+            for at,freq,gain in ((0,58,.18),(.13,52,.12)):
+                dt=t-at
+                if 0<=dt<.115:
+                    value+=gain*min(1,dt/.008)*math.exp(-dt/.032)*math.sin(2*math.pi*freq*dt)
+            samples.append(round(value*32767))
+        with wave.open(str(destination/('cold-heart-'+str(index)+'.wav')),'wb') as file:
+            file.setnchannels(1);file.setsampwidth(2);file.setframerate(RATE)
+            file.writeframes(b''.join(struct.pack('<h',s) for s in samples))
