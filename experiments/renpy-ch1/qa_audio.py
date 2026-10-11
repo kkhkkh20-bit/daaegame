@@ -8,6 +8,7 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 from qa_web import AUDIO_PROBE
 from qa_source import SourceTrial
+from qa_ui import check_volume_sliders
 
 
 async def main(args):
@@ -40,6 +41,7 @@ async def main(args):
         assert (await trial.state())["typing"]
         await trial.click(1174, 45)
         await trial.wait("menu")
+        await check_volume_sliders(trial)
         assert (await trial.state())["typing"] is None
         baseline = (await trial.state())["music_volume"]
         await trial.click(850, 350)
@@ -90,7 +92,7 @@ async def main(args):
         await trial.wait("evidence")
         await trial.shot("notebook")
         assert not trial.errors and not trial.failed and not trial.bad
-        result = dict(volume_slider=True, mute_silences_output=True,
+        result = dict(volume_slider=True, volume_tracks_and_handles_visible=True, mute_silences_output=True,
                       unmute_restores_output=True, active_typing_stops_in_menu=True,
                       one_shot_effect_finishes=True, typing_outputs_with_bgm_muted=typing_signal,
                       seven_location_map_room_selection=True, errors=trial.errors,

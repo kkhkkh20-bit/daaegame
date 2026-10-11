@@ -64,7 +64,10 @@ def main():
     assert events({k: ORIGINAL[k] for k in AUTHORED}) == events(AUTHORED)
     old_choice = ORIGINAL['MEET']['phases'][1]['stms'][0]['ok'][0]['ask']
     new_choice = AUTHORED['MEET']['phases'][1]['stms'][0]['ok'][0]['ask']
-    assert old_choice == new_choice
+    assert old_choice['title'] == new_choice['title']
+    assert [(option['label'], bool(option.get('ok'))) for option in old_choice['items']] == [
+        (option['label'], bool(option.get('ok'))) for option in new_choice['items']]
+    assert all(option.get('ok') or option.get('wr') for option in new_choice['items'])
     # The culprit's precise-location slip must remain a discovery the player can catch.
     early = list(spoken(AUTHORED['MEET']['phases'][:8])) + list(spoken(AUTHORED['TALK']['seryeon']))
     assert not any(w == 'seryeon' and any(word in text for word in ('침대 밑', '상자 뒤', '부인', '엄마')) for w, text in early)

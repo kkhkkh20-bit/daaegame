@@ -3,6 +3,7 @@ import argparse,asyncio,json,shutil
 from pathlib import Path
 from playwright.async_api import async_playwright
 from qa_source import SourceTrial
+from qa_ui import check_resident_scroll
 
 async def main(args):
  out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
@@ -15,6 +16,7 @@ async def main(args):
   assert not any(o['person']=='doto' for o in saved['observations'])
   await t.click(1038,45);await t.wait('evidence');await t.click(1005,145)
   assert await pg.evaluate('renpy_exec("import renpy; result=bool(renpy.exports.get_screen(\\\"village_timetable\\\"))")')
+  await check_resident_scroll(t)
   await t.shot('observed-notebook');await t.click(1020,588);await t.click(374,576);await t.wait('evidence',False)
   await t.save();await t.load();await t.wait('village_map');state=await t.state();assert state['minutes']==saved['minutes'] and state['trust']==saved['trust'] and state['observations']==saved['observations']
   await t.arrival_move('gate')

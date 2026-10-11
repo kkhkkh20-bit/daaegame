@@ -92,13 +92,15 @@ screen source_map():
 
 screen source_questions(person):
     modal True
-    add source_actor+" interview_neutral" at portrait_close
+    default ready = False
+    timer .25 action SetScreenVariable("ready",True)
     add Solid("#0b172733")
+    add source_actor+" interview_neutral" at portrait_question id "topic_actor"
     vbox:
         xpos 360 ypos 140 spacing 5
         for q in source_questions(person):
-            use topic_banner(q["q"],Return(q),q["id"] in source_seen)
-        use topic_banner("대화 마치기",Return("back"))
+            use topic_banner(q["q"]+(" · 새 이야기" if village_question_new(q) else ""),Return(q),village_question_done(q),enabled=ready)
+        use topic_banner("대화 마치기",Return("back"),enabled=ready)
 
 screen source_evidence(present=False):
     modal True
@@ -131,6 +133,32 @@ screen source_evidence(present=False):
                 textbutton "▶" action [SetScreenVariable("page_index",page_index+1),Function(source_fx,"page")] sensitive (page_index+1)*6<len(source_inventory)
                 textbutton ("취소" if present else "닫기") action (Return("cancel") if present else Hide("source_evidence"))
 
+init python:
+    class MotherHandwriting(renpy.Displayable):
+        """UI trace of the existing v2 '다' comparison, not a new illustration."""
+        def __init__(self, ink, **kwargs):
+            super(MotherHandwriting,self).__init__(**kwargs)
+            self.ink = ink
+
+        def render(self,width,height,st,at):
+            rendered = renpy.Render(220,145)
+            canvas = rendered.canvas()
+            for y in (32,65,98,131):
+                canvas.line("#b5a17b55",(0,y),(220,y),1)
+            def quadratic(start,control,end):
+                return [(round((1-t)**2*start[0]+2*(1-t)*t*control[0]+t*t*end[0]),
+                         round((1-t)**2*start[1]+2*(1-t)*t*control[1]+t*t*end[1]))
+                        for t in [i/20.0 for i in range(21)]]
+            # The same source SVG paths appear on both papers in play_v2.html.
+            strokes = [[(38,39),(55,38),(73,39),(85,38)],
+                       [(39,40),(38,91)]+quadratic((38,91),(38,99),(47,98))+[(86,97)],
+                       [(110,31),(109,93)]+quadratic((109,93),(108,116),(130,119))+
+                       quadratic((130,119),(156,124),(180,105)),
+                       [(110,60),(146,60)]]
+            for stroke in strokes:
+                canvas.lines(self.ink,False,stroke,4)
+            return rendered
+
 screen source_inspect(key):
     modal True
     $ evidence_key = key[:3]
@@ -138,11 +166,28 @@ screen source_inspect(key):
     add Solid("#130f0be8")
     frame:
         xpos 160 ypos 100 xsize 960 ysize 520
-        vbox:
-            spacing 15
-            text SOURCE_EP["EV"].get(evidence_key,{}).get("name","흔적 살펴보기") size 30 color "#ffdc91"
-            add Transform(picture,size=(890,330),fit="contain")
-            textbutton "계속" action [Function(source_fx,"page"),Return()]
+        if key == "motherlead":
+            fixed:
+                text "남겨진 한 줄 · 두 글씨" size 30 color "#ffdc91"
+                hbox:
+                    ypos 55 spacing 28
+                    for caption,ink,paper,kind in (("서점 책 이름표","#593923","#f7edce","book"),("장부의 한 줄","#987746","#e9d6ac","ledger")):
+                        frame:
+                            xsize 420 ysize 285 padding (18,16)
+                            background Solid(paper)
+                            vbox:
+                                spacing 13
+                                text caption size 23 color ink
+                                add MotherHandwriting(ink) xalign .5 id ("mother_"+kind)
+                                text "‘다’의 마지막 세로획이\n길게 이어져 꼬리를 만든다." size 19 color ink
+                text "책 이름표와 나란히 놓아 본다." ypos 355 size 21 color "#c6b699"
+                textbutton "계속" ypos 390 action [Function(source_fx,"page"),Return()]
+        else:
+            vbox:
+                spacing 15
+                text SOURCE_EP["EV"].get(evidence_key,{}).get("name","흔적 살펴보기") size 30 color "#ffdc91"
+                add Transform(picture,size=(890,330),fit="contain")
+                textbutton "계속" action [Function(source_fx,"page"),Return()]
 
 screen source_choice(title,options):
     modal True
@@ -156,9 +201,11 @@ screen source_choice(title,options):
                 textbutton option["label"] action Return(option) xfill True ysize 49
 
 screen source_debate(round):
+    default ready = False
+    timer .25 action SetScreenVariable("ready",True)
     $ claim = round["stms"][source_statement]
     $ actor = SOURCE_ALIAS.get(claim["w"],claim["w"])
-    add Transform(actor+" neutral",size=(325,365),fit="contain") xpos 825 ypos 165
+    add Transform(actor+" interview_neutral",size=(325,400),fit="contain") xpos 825 ypos 130 id "debate_actor"
     frame:
         xpos 25 ypos 110 xsize 725 ysize 415
         fixed:
@@ -167,13 +214,15 @@ screen source_debate(round):
                 button:
                     xpos 0 ypos 50+i*87 xsize 674 ysize 80 padding (12,9)
                     background Solid("#65503d" if i==source_statement else "#30261fed")
-                    action Return(("select",i))
+                    action Return(("select",i)) sensitive ready
                     text source_name(statement["w"])+"  "+source_text(statement["t"]) size 22 xmaximum 650
             hbox:
                 ypos 327 spacing 24
-                textbutton "되묻기" action Return(("press",None))
-                textbutton "증거" action Return(("evidence",None))
-                text ("비교 "+str(source_step)+" / "+str(len(claim.get("steps",[])))) size 19 yalign .5
+                textbutton "되묻기" action Return(("press",None)) sensitive ready
+                textbutton "증거" action Return(("evidence",None)) sensitive ready
+                if source_step and claim.get("steps"):
+                    $ compared = claim["steps"][min(source_step,len(claim["steps"]))-1]["ids"][0]
+                    text ("비교 중 · "+SOURCE_EP["EV"][compared]["name"]) size 19 yalign .5
     hbox:
         xpos 25 ypos 551 spacing 9
         for key in SOURCE_EP["MEET"]["seats"]:
@@ -193,5 +242,13 @@ screen source_proof():
             for key in source_proof_show[:2]:
                 vbox:
                     spacing 14 xsize 470
-                    add Transform(SOURCE_ICONS[key],size=(450,310),fit="contain")
+                    if key == "C06" and "C07" in source_proof_show:
+                        fixed:
+                            xsize 450 ysize 310
+                            add Transform(SOURCE_ICONS[key],size=(210,210),fit="contain") xpos 10 ypos 15 id "proof_clock_ours"
+                            add Transform(SOURCE_ICONS[key],size=(210,210),fit="contain",rotate=180) xpos 230 ypos 15 id "proof_clock_bami"
+                            text "우리의 시선" xpos 10 ypos 250 xsize 210 text_align .5 size 19 color "#c6b699"
+                            text "밤이의 시선" xpos 230 ypos 250 xsize 210 text_align .5 size 19 color "#ffdc91"
+                    else:
+                        add Transform(SOURCE_ICONS[key],size=(450,310),fit="contain")
                     text SOURCE_EP["EV"][key]["name"] size 22 color "#ffdc91"
