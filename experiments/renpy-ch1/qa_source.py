@@ -6,6 +6,7 @@ import shutil
 from pathlib import Path
 from playwright.async_api import async_playwright
 from qa_web import Trial, AUDIO_PROBE
+from qa_ui import check_topic_actor, check_roundtable_foreground, check_motherlead, check_clock_viewpoints
 
 ROOT=Path(__file__).resolve().parent
 EP=json.loads((ROOT/'game/chapter-source.json').read_text())['episode']
@@ -26,7 +27,12 @@ class SourceTrial(Trial):
     await self.page.wait_for_timeout(550);return st
    if self.errors:raise AssertionError(self.errors)
    if _ % 150 == 149:print('ADVANCE',self.width,key,st.get('line'),st.get('text'),flush=True)
-   if st['inspect']:await self.click(225,535)
+   if st.get('proof')==['C06','C07'] and not getattr(self,'clock_view_checked',False):
+    await check_clock_viewpoints(self);await self.shot('clock-viewpoints');self.clock_view_checked=True
+   if st['inspect']:
+    if st['scene']=='E4':
+     await check_motherlead(self);await self.shot('mother-handwriting');self.motherlead_checked=True
+    await self.click(225,535)
    else:await self.click(830,665)
   await self.shot('failure');raise AssertionError((key,value,{k:v for k,v in (await self.state()).items() if k not in ('lines','effects')}))
  async def move(self,key):
@@ -40,12 +46,16 @@ class SourceTrial(Trial):
   person=next(k for k,v in EP['TALK'].items() if any(q['id']==key for q in v))
   st=await self.state();point=next(p for p in st['residents'] if p['id']==person)
   await self.click(point['x']+95,point['y']+140);await self.wait('questions')
+  await check_topic_actor(self,'source_questions')
   st=await self.state();index=st['available_topics'].index(key)
+  was_new=key in st['new_topics']
   await self.click(640,169+index*63);await self.wait('questions',False)
   if key=='T_se4':
    await self.advance_until('roam');return
   await self.advance_until('questions')
-  st=await self.state();await self.click(640,169+len(st['available_topics'])*63);await self.wait('roam')
+  st=await self.state()
+  if was_new:assert key not in st['new_topics']
+  await self.click(640,169+len(st['available_topics'])*63);await self.wait('roam')
  async def arrival_move(self,key):
   await self.wait('village_map')
   pos={'gate':(155,435),'fountain':(430,295),'lane':(680,455),'post':(740,215),'inn':(990,330)}
@@ -58,6 +68,7 @@ class SourceTrial(Trial):
   if key!='post':await self.shot('outdoor-'+key)
  async def arrival_topic(self,key):
   await self.wait('village_questions')
+  await check_topic_actor(self,'arrival_questions')
   st=await self.state();person='granny' if st['village_inn'] else st['village_location']
   # The resident chooser overlays the inn screen only during an interview.
   if key in ('room','inn_town'):person='granny'
@@ -136,11 +147,13 @@ async def run(browser,out,w,h,discovery_only=False):
  await pg.goto('http://127.0.0.1:8093/preview/renpy-ch1-test/');await pg.wait_for_function("typeof renpy_exec==='function'",timeout=60000);await t.state();await t.shot('title');await t.click(320,425)
  checks=await t.arrival_route(rich=w>=1000);st=await t.state();await t.shot('investigation')
  names=await pg.evaluate('renpy_exec("import renpy; result=all(renpy.store.SOURCE_CHARS.get(p) is getattr(renpy.store,p) for p in renpy.store.TIMELINE[\\\"voters\\\"]) ")')
- assert names;checks.append('all_resident_support_dialogue_uses_named_character')
+ assert names is True;checks.append('all_resident_support_dialogue_uses_named_character')
  await t.interact(225,430);assert 'bed13:side-box' in (await t.state())['checks'];await t.interact(450,230);assert 'bed13:window' in (await t.state())['checks'];await t.shot('checked-room');checks.append('ordinary_object_replies_and_persistent_checks')
  assert {'steps','doorOpen','door','bell10','slam'}<=set(st['effects']);assert not {'roll','carStop','carDepart'}&set(st['effects']);checks.append('opening_effects_without_horses_or_pulse_leak');print('OPENING',w,flush=True)
  await t.interact(850,515);assert not (await t.state())['found'];checks.append('original_late_discovery_gate')
- await t.move('dining');await t.click(785,385);await t.wait('questions');st=await t.state();assert 'T_ma6' not in st['available_topics'];await t.click(640,169+len(st['available_topics'])*63);await t.wait('roam');await t.move('bed13');checks.append('somsom_topic_hidden_before_discovery')
+ await t.move('dining');await t.click(785,385);await t.wait('questions');st=await t.state();assert 'T_ma6' not in st['available_topics'];await t.click(640,169+len(st['available_topics'])*63);await t.wait('roam')
+ if w>=1000:await t.question('T_ma1')
+ await t.move('bed13');checks.append('somsom_topic_hidden_before_discovery')
  await t.interact(900,280);await t.interact(610,365);await t.move('kitchen');await t.question('C03');await t.move('front');await t.interact(340,495);await t.move('dining');await t.question('T_se2',True);assert 'T_se4' not in (await t.state())['available_topics'];checks.append('cross_character_accusation_requires_heard_fact');await t.question('C12',True);await t.move('bed13');assert {'bed13:side-box','bed13:window'}<=set((await t.state())['checks'])
  await t.click(850,515);await t.wait('roam',False)
  pulse_seen=False; pulse_heard=False
@@ -185,15 +198,57 @@ async def run(browser,out,w,h,discovery_only=False):
  await t.interact(740,190);await t.click(730,450);await t.advance_until('code');await t.click(260,550);assert (await t.state())['code_error']
  for x,count in [(424,1),(568,1),(712,0),(856,2)]:
   for _ in range(count):await t.click(x,294)
- await t.click(260,550);await t.wait('code',False);await t.advance_until('roam');assert 'C11' in (await t.state())['inventory'];await t.interact(295,530)
+ await t.click(260,550);await t.wait('code',False);await t.advance_until('roam');assert 'C11' in (await t.state())['inventory']
+ # Revisiting an empty discovery site must not introduce the crowd a second time.
+ before=await t.state();await t.interact(850,515);after=await t.state()
+ assert after['found'] and before['inventory']==after['inventory'] and before['trust']==after['trust']
+ assert len(after['lines'])-len(before['lines'])<=3 and after['pulse'] is None
+ checks.append('empty_discovery_site_does_not_replay_crowd_or_heartbeat')
+ before=await t.state();await t.click(740,475);await t.wait('roam',False)
+ for _ in range(50):
+  after=await t.state();assert not after['code'],'Opened chest asked for its code again'
+  if after['roam']:break
+  await t.click(225,535) if after['inspect'] else await t.click(830,665)
+ await t.wait('roam');assert (await t.state())['inventory']==before['inventory']
+ checks.append('opened_chest_reopens_ledger_without_lock_or_duplicate_evidence')
+ # One route leaves a clue for the meeting's intended return to investigation.
+ if w<1000:await t.interact(295,530)
  await t.save();saved=(await t.state())['inventory'];await pg.reload();await pg.wait_for_function("typeof renpy_exec==='function'",timeout=60000);await t.state();await t.click(320,500);await t.wait('loading');await t.click(760,245);await t.wait('roam');assert (await t.state())['inventory']==saved;checks.append('source_save_survives_refresh')
  await t.move('hall');await t.interact(430,170);await t.question('C07');await t.question('C13');await t.move('dotoroom');await t.interact(340,495);await t.move('plaza');await t.question('T_ka2');await t.move('dining');await t.question('T_se4');await t.move('front');assert any(p['id']=='seryeon' for p in (await t.state())['residents']);checks.append('heard_karo_fact_unlocks_question_and_changes_seryeon_location');await t.move('bed13');await t.click(964,635);await t.advance_until('debate');await t.shot('meeting');assert (await t.state())['phase']==1
+ await check_roundtable_foreground(t)
+ checks.append('topic_faces_visible_and_foreground_resident_not_duplicated')
  # A wrong record cannot solve the breathing question, and pressing is required.
  await t.evidence('C01');await t.wait('debate');assert (await t.state())['phase']==1
  await t.click(110,485);await t.advance_until('debate');assert (await t.state())['pressed'];await t.evidence('C04');await t.advance_until('choice');await t.shot('breathing-choice');await t.click(600,180);await t.advance_until('debate');assert (await t.state())['phase']==3;checks.append('life_check_requires_question_and_evidence')
+ card=await pg.evaluate('renpy_exec("import renpy; result=renpy.store.source_card(\\\"C04\\\")")')
+ assert 'inn_life_confirmed' in (await t.state())['flags'] and ('살아' in card or '생존' in card or '숨' in card)
+ checks.append('guest_evidence_card_updates_after_life_confirmation')
  await t.proof(3,1,['C02','C03']);await t.advance_until('debate');assert (await t.state())['phase']==7
- await t.click(350,307);await t.wait('debate');await t.evidence('C06');await t.advance_until('debate');await t.save();await t.evidence('C07');await t.advance_until('debate');await t.load();await t.wait('debate');assert (await t.state())['step']==1;checks.append('original_comparison_save_restores');await t.evidence('C07');await t.advance_until('debate');await t.evidence('C08');await t.advance_until('debate');assert (await t.state())['phase']==8
- await t.proof(8,2,['C04','C10']);await t.advance_until('choice');await t.shot('vote');await t.click(600,272)
+ if w>=1000:
+  await t.evidence('C13');await t.advance_until('debate');state=await t.state();assert state['statement']==0 and state['step']==0
+  await t.evidence('C06');await t.advance_until('debate');assert 'm3c06' in (await t.state())['proof_marks']
+  await t.evidence('C13');await t.advance_until('debate');state=await t.state();assert state['statement']==1 and state['step']==1
+  checks.append('alternate_deduction_requires_clock_then_enters_next_comparison')
+ else:
+  await t.click(350,307);await t.wait('debate');await t.evidence('C06');await t.advance_until('debate')
+ # Inspecting another claim and returning keeps an accepted comparison.
+ await t.click(350,394);await t.wait('debate');await t.click(350,307);await t.wait('debate');assert (await t.state())['step']==1
+ checks.append('switching_claims_keeps_comparison_progress')
+ await t.save();await t.evidence('C07');await t.advance_until('debate');await t.load();await t.wait('debate');assert (await t.state())['step']==1;checks.append('original_comparison_save_restores');await t.evidence('C07');await t.advance_until('debate');await t.evidence('C08');await t.advance_until('debate');assert (await t.state())['phase']==8
+ await t.proof(8,2,['C04','C10'])
+ if w>=1000:
+  await t.advance_until('roam');assert (await t.state())['phase']==9
+  await t.move('hall')
+  for key in ('C13','T_ba3'):
+   before=len((await t.state())['lines']);await t.question(key);lines=(await t.state())['lines'][before:]
+   assert any('자정' in p['t'] for p in lines) and not any('여섯 시 반쯤' in p['t'] for p in lines)
+  await t.move('front')
+  for key in ('T_se2','C12'):
+   before=len((await t.state())['lines']);await t.question(key);lines=(await t.state())['lines'][before:]
+   assert not any(p['t']=='네. 자정에도 자고 있었습니다.' for p in lines)
+  await t.move('bed13');await t.interact(295,530);await t.click(964,635)
+  checks.append('meeting_adjourns_and_corrected_testimony_survives_revisit')
+ await t.advance_until('choice');await t.shot('vote');await t.click(600,272)
  await t.advance_until('choice')
  support_before=(await t.state())['trust'];support_retries=0
  while (await t.state())['support_hearing']:
@@ -216,8 +271,15 @@ async def run(browser,out,w,h,discovery_only=False):
    await t.click(830,665)
   support_retries+=1
  await t.advance_until('debate');checks.append('four_residents_support_without_changing_case_truth');assert (await t.state())['group']=='final';await t.shot('final')
+ await check_roundtable_foreground(t)
  await t.proof(0,0,['C05','C01']);await t.advance_until('debate');await t.proof(1,0,['C13','C01']);await t.advance_until('debate');await t.proof(3,0,['C10','C12','C14']);await t.advance_until('complete_screen');await t.shot('complete');st=await t.state();assert st['complete'] and st['pulse'] is None;assert not t.errors and not t.failed and not t.bad
- checks.extend(['original_four_meeting_rounds','original_three_final_rounds_and_vote','source_after_story_to_end'])
+ assert st['minutes']==TIMELINE['events']['ending_E5']['at']
+ for person in ('dad','daram'):
+  observed=next(item for item in reversed(st['observations']) if item['person']==person)
+  assert observed['minute']==st['minutes'] and observed['place']=='2층 복도'
+ checks.append('night_after_story_and_resident_records_share_actual_time')
+ assert getattr(t,'clock_view_checked',False) and getattr(t,'motherlead_checked',False)
+ checks.extend(['original_four_meeting_rounds','original_three_final_rounds_and_vote','source_after_story_to_end','clock_comparison_shows_two_viewpoints','mother_handwriting_comparison_has_two_actual_papers'])
  # Every spoken line has either captured-source or authored-opening provenance.
  allowed=set()
  def collect(value):

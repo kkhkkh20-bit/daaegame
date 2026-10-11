@@ -1,13 +1,13 @@
 {
-  "version": "0.6.0",
+  "version": "0.6.1",
   "engine": "RenPy 8.5.3.26051504",
   "date": "2026-10-11",
   "method": "Real Chromium WASM, mouse and touch UI input. renpy_exec inspects state read-only; no scripted state changes.",
-  "game_zip_sha256": "5ab53def019822128e50328a4d59eff69f05412d9d0a3609409920877e733e8f",
+  "game_zip_sha256": "2c5240cc226a6a6485fa2d3286531cce47adcfb52bf45f07ba812b2edb2d4691",
   "original_source_sha256": "c3f9173cd118a72749ea4580da533289a65029ae5e235badc3e5f1f49b8d4e49",
   "full_chapter": {
-    "game_zip_sha256": "5ab53def019822128e50328a4d59eff69f05412d9d0a3609409920877e733e8f",
-    "scope": "Authored reactive dialogue: criminal hook, optional village routes, late discovery, knowledge-conditioned guest interviews, named resident persuasion, four meeting proofs, relationship-dependent support, three final proofs and aftermath.",
+    "game_zip_sha256": "2c5240cc226a6a6485fa2d3286531cce47adcfb52bf45f07ba812b2edb2d4691",
+    "scope": "Actual mouse and emulated-touch chapter completion. Desktop also verifies alternate clock comparison, statement switching, mid-comparison save/reload, missing-evidence adjournment, corrected-witness revisits and authored dramatic audio. Both verify updated topics, repeated investigation, living guest card, roundtable actor duplication, visual clock/handwriting comparison and synchronized after-story night timestamps.",
     "runs": [
       {
         "viewport": [
@@ -38,18 +38,33 @@
           "discovery_silence_heartbeat_and_crowd",
           "discovery_unlocks_topic_and_relocates_grandmother",
           "post_discovery_interview_acknowledges_known_guest_before_life_verdict",
+          "empty_discovery_site_does_not_replay_crowd_or_heartbeat",
+          "opened_chest_reopens_ledger_without_lock_or_duplicate_evidence",
           "source_save_survives_refresh",
           "heard_karo_fact_unlocks_question_and_changes_seryeon_location",
+          "topic_faces_visible_and_foreground_resident_not_duplicated",
           "life_check_requires_question_and_evidence",
+          "guest_evidence_card_updates_after_life_confirmation",
+          "alternate_deduction_requires_clock_then_enters_next_comparison",
+          "switching_claims_keeps_comparison_progress",
           "original_comparison_save_restores",
+          "meeting_adjourns_and_corrected_testimony_survives_revisit",
           "unrelated_proof_cannot_buy_support",
           "four_residents_support_without_changing_case_truth",
+          "night_after_story_and_resident_records_share_actual_time",
           "original_four_meeting_rounds",
           "original_three_final_rounds_and_vote",
           "source_after_story_to_end",
-          "all_executed_spoken_lines_have_original_or_authored_provenance"
+          "clock_comparison_shows_two_viewpoints",
+          "mother_handwriting_comparison_has_two_actual_papers",
+          "all_executed_spoken_lines_have_original_or_authored_provenance",
+          "meeting_and_final_music_follow_authored_cues",
+          "consecutive_heartbeat_cues_keep_continuous_playback",
+          "dramatic_silence_has_no_typing",
+          "after_story_music_and_heartbeat_do_not_leak",
+          "after_story_clock_advances_from_noon_to_night"
         ],
-        "spoken_lines": 686,
+        "spoken_lines": 725,
         "effects": [
           "bell10",
           "cut9",
@@ -87,13 +102,13 @@
             "C12",
             "C04",
             "C11",
-            "C05",
             "C06",
             "C07",
             "C13",
             "C08",
             "C14",
-            "C10"
+            "C10",
+            "C05"
           ],
           "inspected": [],
           "visited": [],
@@ -143,7 +158,9 @@
             "auto-1",
             "auto-2",
             "auto-3",
-            "auto-4"
+            "auto-4",
+            "auto-5",
+            "auto-6"
           ],
           "group": "final",
           "phase": 5,
@@ -151,22 +168,26 @@
           "step": 2,
           "pressed": false,
           "seen": [
+            "T_ma1",
             "C03",
             "T_se2",
             "C12",
-            "T_ma1",
             "T_ma6",
             "head",
             "C07",
             "C13",
             "T_ka2",
-            "T_se4"
+            "T_se4",
+            "T_ba3"
           ],
           "line": "E5:21",
           "text": "등잔이 꺼진다.",
           "scene": "E5",
           "camera": "stage",
           "night": null,
+          "proof": [
+            "C01"
+          ],
           "effects": [
             "page",
             "steps",
@@ -211,7 +232,6 @@
             "found",
             "found",
             "found",
-            "found",
             "page",
             "found",
             "found",
@@ -222,13 +242,12 @@
             "tap",
             "impact",
             "heartbeat",
-            "heartbeat",
-            "heartbeat",
             "pop9",
             "select",
             "impact",
             "page",
-            "select",
+            "page",
+            "page",
             "page",
             "select",
             "page",
@@ -238,18 +257,21 @@
             "page",
             "impact",
             "page",
+            "page",
+            "found",
+            "page",
+            "impact",
+            "page",
+            "page",
+            "select",
             "impact",
             "page",
             "select",
             "impact",
             "page",
-            "select",
-            "impact",
-            "page",
             "page",
             "select",
             "select",
-            "page",
             "page",
             "impact",
             "cut9",
@@ -1178,6 +1200,46 @@
               "t": "손 시리겠다. 이제 놓자."
             },
             {
+              "id": "T_ma1:0",
+              "w": "det1",
+              "t": "할머니. 그 침대는 누가 쓰는 거예요?"
+            },
+            {
+              "id": "T_ma1:1",
+              "w": "innma",
+              "t": "남는 침대야. 손님 많으면 쓰지."
+            },
+            {
+              "id": "T_ma1:2",
+              "w": "det1",
+              "t": "그럼 어젯밤에도 손님 많았어요?"
+            },
+            {
+              "id": "T_ma1:3",
+              "w": "innma",
+              "t": "그 방엔 없었어. 장부에도 안 적힌 침대고."
+            },
+            {
+              "id": "T_ma1:4",
+              "w": "det1",
+              "t": "안 쓴 것치고 이불이 깨끗하던데요."
+            },
+            {
+              "id": "T_ma1:5",
+              "w": "innma",
+              "t": "…침대를 꼭 다 세야 하니?"
+            },
+            {
+              "id": "T_ma1:6",
+              "w": "det0",
+              "t": "안 셌으면 좋겠습니까?"
+            },
+            {
+              "id": "T_ma1:7",
+              "w": "innma",
+              "t": "손님이 놓고 간 것까지 뒤지니까요."
+            },
+            {
               "id": "bag:1",
               "w": "det1",
               "t": "베개 밑에서 나온 주머니 맞지?"
@@ -1265,7 +1327,7 @@
             {
               "id": "C03:2",
               "w": "det0",
-              "t": "닮았다는 것만으로 온 건 아닙니다. 어젯밤 얘기를 듣고 싶어요."
+              "t": "그래서 바로 누구 거라고 정하진 않겠습니다. 어젯밤엔 뭘 하셨습니까?"
             },
             {
               "id": "C03:3",
@@ -1883,19 +1945,24 @@
               "t": "사진을 다시 보여 드리자. 서두르지 말고."
             },
             {
-              "id": "fur:1",
+              "id": "LOOK_UNDER_REPEAT:0",
               "w": "det1",
-              "t": "돋보기 빌렸어. 가까이 봐도 돼?"
+              "t": "아까 그 애가 있던 자리네."
             },
             {
-              "id": "fur:3",
-              "w": "det1",
-              "t": "글씨랑 별이… 거꾸로야."
+              "id": "LOOK_UNDER_REPEAT:1",
+              "w": "det0",
+              "t": "이제 비어 있어. 상자 뒤까지 봤어."
             },
             {
-              "id": "fur:4",
+              "id": "LOOK_CHEST_REPEAT:0",
               "w": "det1",
-              "t": "어디서 봤더라… 내 수첩 좀."
+              "t": "둘째 권은 할머니가 가져갔지?"
+            },
+            {
+              "id": "LOOK_CHEST_REPEAT:1",
+              "w": "det0",
+              "t": "응. 여기 남은 건 첫째 권이야."
             },
             {
               "id": "clock:0",
@@ -2155,7 +2222,7 @@
             {
               "id": "T_se4:3",
               "w": "seryeon",
-              "t": "…그러면 왜 물으셨습니까?"
+              "t": "길을 묻다가 잠깐 앉은 겁니다."
             },
             {
               "id": "T_se4:4",
@@ -2235,7 +2302,7 @@
             {
               "id": "meet0:1",
               "w": "nabi",
-              "t": "잠깐만요. 바구니 내려놓지 마세요."
+              "t": "잠깐만요. 거기 두면 안 돼요."
             },
             {
               "id": "meet0:2",
@@ -2340,7 +2407,7 @@
             {
               "id": "press:1",
               "w": "buri",
-              "t": "손에 올려봤죠. 그러니까… 잠깐."
+              "t": "바구니 안에서 만져봤죠. 그러니까… 잠깐."
             },
             {
               "id": "press:2",
@@ -2365,7 +2432,7 @@
             {
               "id": "meet1/ok:0",
               "w": "det1",
-              "t": "아빠. 손에서 바로 내려놓지 말걸 그랬나?"
+              "t": "아빠. 너무 금방 내려놓은 건가?"
             },
             {
               "id": "meet1/ok:1",
@@ -2843,19 +2910,19 @@
               "t": "시계 본 자리도 맞춰보자."
             },
             {
-              "id": "comparison:0",
-              "w": "det1",
-              "t": "숫자는 없네. 어디가 위인지 헷갈리겠다."
+              "id": "related:0",
+              "w": "seryeon",
+              "t": "시계가 어쨌다는 겁니까?"
             },
             {
-              "id": "comparison:1",
-              "w": "geokkuri",
-              "t": "맨날 보는 건데 안 헷갈려요."
-            },
-            {
-              "id": "comparison:2",
+              "id": "related:1",
               "w": "det0",
-              "t": "어느 쪽에서 보는지 같이 놓아보죠."
+              "t": "밤이 씨가 본 시각부터 묻겠습니다."
+            },
+            {
+              "id": "related:0",
+              "w": "det0",
+              "t": "밤이 씨께 다시 묻죠."
             },
             {
               "id": "comparison:0",
@@ -3040,7 +3107,7 @@
             {
               "id": "meet8/ok:12",
               "w": "seryeon",
-              "t": "저 애가 제 돈까지 가져간 건 아니잖습니까."
+              "t": "쥐를 옮겼다고 제가 도둑인 건 아니잖습니까."
             },
             {
               "id": "meet8/ok:13",
@@ -3101,6 +3168,136 @@
               "id": "meet8/ok:24",
               "w": "det1",
               "t": "응. 나도 그래서 바구니 달라고 했어."
+            },
+            {
+              "id": "adjourn:0",
+              "w": "wanggu",
+              "t": "지목하기 전에 더 볼 게 있습니까?"
+            },
+            {
+              "id": "adjourn:1",
+              "w": "det0",
+              "t": "털에 남은 자국을 확인하겠습니다."
+            },
+            {
+              "id": "adjourn:2",
+              "w": "seryeon",
+              "t": "제가 옮겼다고 했습니다. 또 뭘요?"
+            },
+            {
+              "id": "adjourn:3",
+              "w": "det0",
+              "t": "돈은 못 봤다고 하셨잖습니까."
+            },
+            {
+              "id": "C13:0",
+              "w": "det0",
+              "t": "목격 시각은 자정으로 고쳤죠?"
+            },
+            {
+              "id": "C13:1",
+              "w": "geokkuri",
+              "t": "네. 거꾸로 읽었어요. 종하고 첫눈 기록으로 맞췄고요."
+            },
+            {
+              "id": "C13:2",
+              "w": "det1",
+              "t": "들고 간 것도 달라져요?"
+            },
+            {
+              "id": "C13:3",
+              "w": "geokkuri",
+              "t": "아니. 족제비 손님이 빨간 띠 두른 주머니 들고 갔다가 빈손으로 온 건 그대로야."
+            },
+            {
+              "id": "C13:5",
+              "w": "geokkuri",
+              "t": "이 주머니. 등잔 아래서 분명히 봤어요."
+            },
+            {
+              "id": "T_ba3:0",
+              "w": "det1",
+              "t": "다음엔 또 거꾸로 읽으면 어떡해요?"
+            },
+            {
+              "id": "T_ba3:1",
+              "w": "geokkuri",
+              "t": "여긴 우리 집 시계랑 다르다고 기억해야지."
+            },
+            {
+              "id": "T_ba3:2",
+              "w": "det0",
+              "t": "어젯밤은 종과 기록으로 다시 맞췄고요."
+            },
+            {
+              "id": "T_ba3:3",
+              "w": "geokkuri",
+              "t": "네. 자정이었어요. 여섯 시 반이라는 말은 지워주세요."
+            },
+            {
+              "id": "T_se2:0",
+              "w": "det0",
+              "t": "자정에도 주무셨다는 말은 기록에서 지우겠습니다."
+            },
+            {
+              "id": "T_se2:1",
+              "w": "seryeon",
+              "t": "회의에서 한 말로 고치시면 되잖습니까."
+            },
+            {
+              "id": "T_se2:2",
+              "w": "det1",
+              "t": "아침 여섯 시 반은요?"
+            },
+            {
+              "id": "T_se2:3",
+              "w": "seryeon",
+              "t": "그건 제 회중시계로 봤습니다. 일곱 시에 알린 것도 그대로고요."
+            },
+            {
+              "id": "T_se2:4",
+              "w": "det0",
+              "t": "자정에 복도를 지난 일과 아침 신고는 따로 적겠습니다."
+            },
+            {
+              "id": "C12:0",
+              "w": "det0",
+              "t": "시각은 고쳤습니다. 주머니를 봉한 일은요?"
+            },
+            {
+              "id": "C12:1",
+              "w": "seryeon",
+              "t": "열한 시 종에 혼자 센 건 그대로입니다."
+            },
+            {
+              "id": "C12:2",
+              "w": "det1",
+              "t": "그때 옆에서 본 사람은 없고요."
+            },
+            {
+              "id": "C12:3",
+              "w": "seryeon",
+              "t": "없어요. 도장도 계속 품에 있었고."
+            },
+            {
+              "id": "C12:4",
+              "w": "det0",
+              "t": "회의에서 달라진 진술과 함께 남기겠습니다."
+            },
+            {
+              "id": "fur:1",
+              "w": "det1",
+              "t": "돋보기 빌렸어. 가까이 봐도 돼?"
+            },
+            {
+              "id": "fur:3",
+              "w": "det1",
+              "t": "글씨랑 별이… 거꾸로야."
+            },
+            {
+              "id": "fur:4",
+              "w": "det1",
+              "t": "어디서 봤더라… 내 수첩 좀."
             },
             {
               "id": "resume:0",
@@ -3250,7 +3447,7 @@
             {
               "id": "final0/ok:9",
               "w": "seryeon",
-              "t": "돈이 모자랐으니까요. 주머니를 봤다는 말은 못 했고."
+              "t": "그 방에서 봤다고 하면 제가 넣었다고 할 테니까요. 모자란 건 여기서 열고 알았고요."
             },
             {
               "id": "final0/ok:10",
@@ -3319,51 +3516,71 @@
             },
             {
               "id": "final1/ok:7",
+              "w": "nabi",
+              "t": "솜솜이 털에는 그 주머니 도장이 묻어 있었고요."
+            },
+            {
+              "id": "final1/ok:8",
+              "w": "det1",
+              "t": "주머니를 들고 그쪽으로 간 건 아저씨고… 솜솜이 숨긴 자리도 알았잖아요."
+            },
+            {
+              "id": "final1/ok:9",
+              "w": "seryeon",
+              "t": "아침에 봤다고 했잖아."
+            },
+            {
+              "id": "final1/ok:10",
+              "w": "karo",
+              "t": "처음엔 주머니도 못 봤다더니요. 들고 간 건 봤다는 사람이 있는데."
+            },
+            {
+              "id": "final1/ok:11",
               "w": "det0",
               "t": "할머니가 가져갔다는 건 언제 본 겁니까?"
             },
             {
-              "id": "final1/ok:8",
+              "id": "final1/ok:12",
               "w": "seryeon",
               "t": "본 건… 아니죠."
             },
             {
-              "id": "final1/ok:9",
+              "id": "final1/ok:13",
               "w": "nabi",
               "t": "그런데 왜 할머니라고 했어요?"
             },
             {
-              "id": "final1/ok:10",
+              "id": "final1/ok:14",
               "w": "seryeon",
               "t": "…제가 넣었습니다. 남의 돈도 아니에요. 제 돈을 숨겼다고요."
             },
             {
-              "id": "final1/ok:11",
+              "id": "final1/ok:15",
               "w": "wanggu",
               "t": "시간도 고치십시오."
             },
             {
-              "id": "final1/ok:12",
+              "id": "final1/ok:16",
               "w": "seryeon",
               "t": "자정에 베개 구석에 넣으려다 쥐를 봤어요. 굳어 있어서… 그때 치웠습니다."
             },
             {
-              "id": "final1/ok:13",
+              "id": "final1/ok:17",
               "w": "buri",
               "t": "죽은 줄 알아서 밑으로 옮긴 거군요."
             },
             {
-              "id": "final1/ok:14",
+              "id": "final1/ok:18",
               "w": "seryeon",
               "t": "네. 그건 말했잖습니까."
             },
             {
-              "id": "final1/ok:15",
+              "id": "final1/ok:19",
               "w": "wanggu",
               "t": "그러면 할머니가 가져갔다는 말은 거두십시오."
             },
             {
-              "id": "final1/ok:16",
+              "id": "final1/ok:20",
               "w": "narr",
               "t": "세련이 바구니에서 고개를 돌린다."
             },
@@ -3685,7 +3902,7 @@
             {
               "id": "E1:2",
               "w": "wanggu",
-              "t": "세련 씨는 가뒀습니다. 거짓 신고부터 처리할 겁니다."
+              "t": "세련 씨는 초소에 있습니다. 본인이 한 말과 기록부터 맞춰보고, 거짓 신고 건을 넘기겠습니다."
             },
             {
               "id": "E1:3",
@@ -4060,10 +4277,6 @@
               747,
               474
             ],
-            "bed13:fur": [
-              295,
-              530
-            ],
             "hall:clock": [
               430,
               170
@@ -4071,6 +4284,10 @@
             "dotoroom:diary": [
               340,
               495
+            ],
+            "bed13:fur": [
+              295,
+              530
             ]
           },
           "met": [
@@ -4097,9 +4314,9 @@
             "arrival_stone",
             "arrival_lane",
             "arrival_seryeon",
+            "interview_innma",
             "interview_nabi",
             "interview_seryeon",
-            "interview_innma",
             "interview_geokkuri",
             "interview_karo",
             "proof_1",
@@ -4119,7 +4336,69 @@
             "inn_case_cleared",
             "inn_child_heard"
           ],
-          "minutes": 2160,
+          "proof_marks": [
+            "m3c06"
+          ],
+          "proof_progress": {
+            "meet:1:0": {
+              "step": 0,
+              "pressed": true
+            },
+            "meet:3:0": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:3:1": {
+              "step": 1,
+              "pressed": false
+            },
+            "meet:7:0": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:7:1": {
+              "step": 2,
+              "pressed": false
+            },
+            "meet:7:2": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:8:0": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:8:2": {
+              "step": 1,
+              "pressed": false
+            },
+            "final:0:0": {
+              "step": 1,
+              "pressed": false
+            },
+            "final:1:0": {
+              "step": 1,
+              "pressed": false
+            },
+            "final:3:0": {
+              "step": 2,
+              "pressed": false
+            }
+          },
+          "question_revisions": {
+            "T_ma1": "variant:2",
+            "C03": "variant:1",
+            "T_se2": "variant:6",
+            "C12": "variant:7",
+            "T_ma6": "base",
+            "C07": "base",
+            "C13": "variant:4",
+            "T_ka2": "base",
+            "T_se4": "variant:3",
+            "T_ba3": "variant:5"
+          },
+          "new_topics": [],
+          "minutes": 2670,
           "time_events": [
             "arrival_room",
             "arrival_gate",
@@ -4148,7 +4427,12 @@
             "round_final2",
             "round_final3",
             "round_final4",
-            "resolved"
+            "resolved",
+            "ending_E1",
+            "ending_E2",
+            "ending_E3",
+            "ending_E4",
+            "ending_E5"
           ],
           "observations": [
             {
@@ -4919,6 +5203,46 @@
             {
               "person": "daram",
               "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "granny",
+              "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "daram",
+              "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "granny",
+              "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "daram",
+              "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "granny",
+              "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "dad",
+              "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "granny",
+              "minute": 1890,
+              "place": "여관 식당"
+            },
+            {
+              "person": "daram",
+              "minute": 1890,
               "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
             },
             {
@@ -5432,6 +5756,21 @@
               "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
             },
             {
+              "person": "dad",
+              "minute": 1920,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
+            },
+            {
+              "person": "daram",
+              "minute": 1920,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
+            },
+            {
+              "person": "dad",
+              "minute": 1920,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
+            },
+            {
               "person": "daram",
               "minute": 1920,
               "place": "2층 복도"
@@ -6242,12 +6581,7 @@
               "place": "여관 원탁"
             },
             {
-              "person": "daram",
-              "minute": 2040,
-              "place": "여관 원탁"
-            },
-            {
-              "person": "bami",
+              "person": "seryeon",
               "minute": 2040,
               "place": "여관 원탁"
             },
@@ -6460,6 +6794,116 @@
               "person": "daram",
               "minute": 2100,
               "place": "여관 원탁"
+            },
+            {
+              "person": "neoul",
+              "minute": 2120,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "dad",
+              "minute": 2120,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "seryeon",
+              "minute": 2120,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "dad",
+              "minute": 2120,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "dad",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "bami",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "daram",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "bami",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "daram",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "bami",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "dad",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "bami",
+              "minute": 2120,
+              "place": "2층 복도"
+            },
+            {
+              "person": "dad",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "seryeon",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "daram",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "seryeon",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "dad",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "seryeon",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "daram",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "seryeon",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "dad",
+              "minute": 2120,
+              "place": "접수대"
+            },
+            {
+              "person": "daram",
+              "minute": 2120,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
             },
             {
               "person": "dad",
@@ -6643,6 +7087,26 @@
             },
             {
               "person": "daram",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "karo",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "nabi",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "daram",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "seryeon",
               "minute": 2130,
               "place": "여관 원탁"
             },
@@ -7048,132 +7512,132 @@
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "daram",
-              "minute": 2160,
-              "place": "식당"
-            },
-            {
-              "person": "granny",
-              "minute": 2160,
-              "place": "식당"
-            },
-            {
-              "person": "dad",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
+              "place": "식당"
+            },
+            {
+              "person": "dad",
+              "minute": 2280,
+              "place": "식당"
+            },
+            {
+              "person": "granny",
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             }
           ],
@@ -7211,7 +7675,149 @@
         },
         "errors": [],
         "failed_requests": [],
-        "bad_responses": []
+        "bad_responses": [],
+        "dramatic_audio_cues": [
+          {
+            "line": "meet1/ok:2",
+            "group": "meet",
+            "cue": "pulse",
+            "music": null,
+            "pulse": "assets/source-silence.wav"
+          },
+          {
+            "line": "meet1/ok:4",
+            "group": "meet",
+            "cue": "pulse",
+            "music": null,
+            "pulse": "assets/source-heartbeat.wav"
+          },
+          {
+            "line": "meet1/ok:6",
+            "group": "meet",
+            "cue": "pulse",
+            "music": null,
+            "pulse": "assets/source-heartbeat.wav"
+          },
+          {
+            "line": "meet1/ok:7",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet1/ok:16",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet3/ok:22",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet4:10",
+            "group": "meet",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "meet4:16",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet7/ok:6",
+            "group": "meet",
+            "cue": "press",
+            "music": "assets/source-meeting-press-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet7/ok:11",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:5",
+            "group": "meet",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:7",
+            "group": "meet",
+            "cue": "press",
+            "music": "assets/source-meeting-press-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:9",
+            "group": "meet",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:21",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final1/ok:11",
+            "group": "final",
+            "cue": "press",
+            "music": "assets/pressure.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final1/ok:20",
+            "group": "final",
+            "cue": "calm",
+            "music": "assets/source-climax-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final3/ok:5",
+            "group": "final",
+            "cue": "impact",
+            "music": "assets/pressure.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final3/ok:17",
+            "group": "final",
+            "cue": "calm",
+            "music": "assets/source-climax-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final4:4",
+            "group": "final",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "final4:16",
+            "group": "final",
+            "cue": "calm",
+            "music": "assets/after.mp3",
+            "pulse": null
+          }
+        ]
       },
       {
         "viewport": [
@@ -7239,18 +7845,31 @@
           "discovery_silence_heartbeat_and_crowd",
           "discovery_unlocks_topic_and_relocates_grandmother",
           "post_discovery_interview_acknowledges_known_guest_before_life_verdict",
+          "empty_discovery_site_does_not_replay_crowd_or_heartbeat",
+          "opened_chest_reopens_ledger_without_lock_or_duplicate_evidence",
           "source_save_survives_refresh",
           "heard_karo_fact_unlocks_question_and_changes_seryeon_location",
+          "topic_faces_visible_and_foreground_resident_not_duplicated",
           "life_check_requires_question_and_evidence",
+          "guest_evidence_card_updates_after_life_confirmation",
+          "switching_claims_keeps_comparison_progress",
           "original_comparison_save_restores",
           "unrelated_proof_cannot_buy_support",
           "four_residents_support_without_changing_case_truth",
+          "night_after_story_and_resident_records_share_actual_time",
           "original_four_meeting_rounds",
           "original_three_final_rounds_and_vote",
           "source_after_story_to_end",
-          "all_executed_spoken_lines_have_original_or_authored_provenance"
+          "clock_comparison_shows_two_viewpoints",
+          "mother_handwriting_comparison_has_two_actual_papers",
+          "all_executed_spoken_lines_have_original_or_authored_provenance",
+          "meeting_and_final_music_follow_authored_cues",
+          "consecutive_heartbeat_cues_keep_continuous_playback",
+          "dramatic_silence_has_no_typing",
+          "after_story_music_and_heartbeat_do_not_leak",
+          "after_story_clock_advances_from_noon_to_night"
         ],
-        "spoken_lines": 634,
+        "spoken_lines": 642,
         "effects": [
           "bell10",
           "cut9",
@@ -7344,7 +7963,8 @@
             "auto-1",
             "auto-2",
             "auto-3",
-            "auto-4"
+            "auto-4",
+            "auto-5"
           ],
           "group": "final",
           "phase": 5,
@@ -7368,6 +7988,9 @@
           "scene": "E5",
           "camera": "stage",
           "night": null,
+          "proof": [
+            "C01"
+          ],
           "effects": [
             "page",
             "steps",
@@ -7409,6 +8032,7 @@
             "steps",
             "found",
             "page",
+            "page",
             "found",
             "found",
             "found",
@@ -7422,8 +8046,6 @@
             "found",
             "tap",
             "impact",
-            "heartbeat",
-            "heartbeat",
             "heartbeat",
             "pop9",
             "select",
@@ -8216,7 +8838,7 @@
             {
               "id": "C03:2",
               "w": "det0",
-              "t": "닮았다는 것만으로 온 건 아닙니다. 어젯밤 얘기를 듣고 싶어요."
+              "t": "그래서 바로 누구 거라고 정하진 않겠습니다. 어젯밤엔 뭘 하셨습니까?"
             },
             {
               "id": "C03:3",
@@ -8824,6 +9446,26 @@
               "t": "사진을 다시 보여 드리자. 서두르지 말고."
             },
             {
+              "id": "LOOK_UNDER_REPEAT:0",
+              "w": "det1",
+              "t": "아까 그 애가 있던 자리네."
+            },
+            {
+              "id": "LOOK_UNDER_REPEAT:1",
+              "w": "det0",
+              "t": "이제 비어 있어. 상자 뒤까지 봤어."
+            },
+            {
+              "id": "LOOK_CHEST_REPEAT:0",
+              "w": "det1",
+              "t": "둘째 권은 할머니가 가져갔지?"
+            },
+            {
+              "id": "LOOK_CHEST_REPEAT:1",
+              "w": "det0",
+              "t": "응. 여기 남은 건 첫째 권이야."
+            },
+            {
               "id": "fur:1",
               "w": "det1",
               "t": "돋보기 빌렸어. 가까이 봐도 돼?"
@@ -9086,7 +9728,7 @@
             {
               "id": "T_se4:3",
               "w": "seryeon",
-              "t": "…그러면 왜 물으셨습니까?"
+              "t": "길을 묻다가 잠깐 앉은 겁니다."
             },
             {
               "id": "T_se4:4",
@@ -9166,7 +9808,7 @@
             {
               "id": "meet0:1",
               "w": "nabi",
-              "t": "잠깐만요. 바구니 내려놓지 마세요."
+              "t": "잠깐만요. 거기 두면 안 돼요."
             },
             {
               "id": "meet0:2",
@@ -9271,7 +9913,7 @@
             {
               "id": "press:1",
               "w": "buri",
-              "t": "손에 올려봤죠. 그러니까… 잠깐."
+              "t": "바구니 안에서 만져봤죠. 그러니까… 잠깐."
             },
             {
               "id": "press:2",
@@ -9296,7 +9938,7 @@
             {
               "id": "meet1/ok:0",
               "w": "det1",
-              "t": "아빠. 손에서 바로 내려놓지 말걸 그랬나?"
+              "t": "아빠. 너무 금방 내려놓은 건가?"
             },
             {
               "id": "meet1/ok:1",
@@ -9781,7 +10423,7 @@
             {
               "id": "comparison:1",
               "w": "geokkuri",
-              "t": "맨날 보는 건데 안 헷갈려요."
+              "t": "제가 보는 쪽으로 읽으면 되잖아요."
             },
             {
               "id": "comparison:2",
@@ -9971,7 +10613,7 @@
             {
               "id": "meet8/ok:12",
               "w": "seryeon",
-              "t": "저 애가 제 돈까지 가져간 건 아니잖습니까."
+              "t": "쥐를 옮겼다고 제가 도둑인 건 아니잖습니까."
             },
             {
               "id": "meet8/ok:13",
@@ -10191,7 +10833,7 @@
             {
               "id": "final0/ok:9",
               "w": "seryeon",
-              "t": "돈이 모자랐으니까요. 주머니를 봤다는 말은 못 했고."
+              "t": "그 방에서 봤다고 하면 제가 넣었다고 할 테니까요. 모자란 건 여기서 열고 알았고요."
             },
             {
               "id": "final0/ok:10",
@@ -10260,51 +10902,71 @@
             },
             {
               "id": "final1/ok:7",
+              "w": "nabi",
+              "t": "솜솜이 털에는 그 주머니 도장이 묻어 있었고요."
+            },
+            {
+              "id": "final1/ok:8",
+              "w": "det1",
+              "t": "주머니를 들고 그쪽으로 간 건 아저씨고… 솜솜이 숨긴 자리도 알았잖아요."
+            },
+            {
+              "id": "final1/ok:9",
+              "w": "seryeon",
+              "t": "아침에 봤다고 했잖아."
+            },
+            {
+              "id": "final1/ok:10",
+              "w": "karo",
+              "t": "처음엔 주머니도 못 봤다더니요. 들고 간 건 봤다는 사람이 있는데."
+            },
+            {
+              "id": "final1/ok:11",
               "w": "det0",
               "t": "할머니가 가져갔다는 건 언제 본 겁니까?"
             },
             {
-              "id": "final1/ok:8",
+              "id": "final1/ok:12",
               "w": "seryeon",
               "t": "본 건… 아니죠."
             },
             {
-              "id": "final1/ok:9",
+              "id": "final1/ok:13",
               "w": "nabi",
               "t": "그런데 왜 할머니라고 했어요?"
             },
             {
-              "id": "final1/ok:10",
+              "id": "final1/ok:14",
               "w": "seryeon",
               "t": "…제가 넣었습니다. 남의 돈도 아니에요. 제 돈을 숨겼다고요."
             },
             {
-              "id": "final1/ok:11",
+              "id": "final1/ok:15",
               "w": "wanggu",
               "t": "시간도 고치십시오."
             },
             {
-              "id": "final1/ok:12",
+              "id": "final1/ok:16",
               "w": "seryeon",
               "t": "자정에 베개 구석에 넣으려다 쥐를 봤어요. 굳어 있어서… 그때 치웠습니다."
             },
             {
-              "id": "final1/ok:13",
+              "id": "final1/ok:17",
               "w": "buri",
               "t": "죽은 줄 알아서 밑으로 옮긴 거군요."
             },
             {
-              "id": "final1/ok:14",
+              "id": "final1/ok:18",
               "w": "seryeon",
               "t": "네. 그건 말했잖습니까."
             },
             {
-              "id": "final1/ok:15",
+              "id": "final1/ok:19",
               "w": "wanggu",
               "t": "그러면 할머니가 가져갔다는 말은 거두십시오."
             },
             {
-              "id": "final1/ok:16",
+              "id": "final1/ok:20",
               "w": "narr",
               "t": "세련이 바구니에서 고개를 돌린다."
             },
@@ -10626,7 +11288,7 @@
             {
               "id": "E1:2",
               "w": "wanggu",
-              "t": "세련 씨는 가뒀습니다. 거짓 신고부터 처리할 겁니다."
+              "t": "세련 씨는 초소에 있습니다. 본인이 한 말과 기록부터 맞춰보고, 거짓 신고 건을 넘기겠습니다."
             },
             {
               "id": "E1:3",
@@ -11045,7 +11707,69 @@
             "inn_case_cleared",
             "inn_child_heard"
           ],
-          "minutes": 2160,
+          "proof_marks": [],
+          "proof_progress": {
+            "meet:1:0": {
+              "step": 0,
+              "pressed": true
+            },
+            "meet:3:0": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:3:1": {
+              "step": 1,
+              "pressed": false
+            },
+            "meet:7:0": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:7:1": {
+              "step": 2,
+              "pressed": false
+            },
+            "meet:7:2": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:8:0": {
+              "step": 0,
+              "pressed": false
+            },
+            "meet:8:2": {
+              "step": 1,
+              "pressed": false
+            },
+            "final:0:0": {
+              "step": 1,
+              "pressed": false
+            },
+            "final:1:0": {
+              "step": 1,
+              "pressed": false
+            },
+            "final:3:0": {
+              "step": 2,
+              "pressed": false
+            }
+          },
+          "question_revisions": {
+            "C03": "variant:1",
+            "T_se2": "base",
+            "C12": "base",
+            "T_ma1": "variant:2",
+            "T_ma6": "base",
+            "C07": "base",
+            "C13": "base",
+            "T_ka2": "base",
+            "T_se4": "variant:3"
+          },
+          "new_topics": [
+            "T_se2",
+            "C12"
+          ],
+          "minutes": 2670,
           "time_events": [
             "arrival_room",
             "case_begin",
@@ -11069,7 +11793,12 @@
             "round_final2",
             "round_final3",
             "round_final4",
-            "resolved"
+            "resolved",
+            "ending_E1",
+            "ending_E2",
+            "ending_E3",
+            "ending_E4",
+            "ending_E5"
           ],
           "observations": [
             {
@@ -12098,6 +12827,26 @@
               "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
             },
             {
+              "person": "dad",
+              "minute": 1920,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
+            },
+            {
+              "person": "daram",
+              "minute": 1920,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
+            },
+            {
+              "person": "dad",
+              "minute": 1920,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
+            },
+            {
+              "person": "daram",
+              "minute": 1920,
+              "place": "복도 끝 안 쓰는 방 (열세 번째 침대)"
+            },
+            {
               "person": "daram",
               "minute": 1920,
               "place": "2층 복도"
@@ -13309,6 +14058,26 @@
             },
             {
               "person": "daram",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "karo",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "nabi",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "daram",
+              "minute": 2130,
+              "place": "여관 원탁"
+            },
+            {
+              "person": "seryeon",
               "minute": 2130,
               "place": "여관 원탁"
             },
@@ -13714,132 +14483,132 @@
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "daram",
-              "minute": 2160,
-              "place": "식당"
-            },
-            {
-              "person": "granny",
-              "minute": 2160,
-              "place": "식당"
-            },
-            {
-              "person": "dad",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
+              "place": "식당"
+            },
+            {
+              "person": "dad",
+              "minute": 2280,
+              "place": "식당"
+            },
+            {
+              "person": "granny",
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2280,
               "place": "식당"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2640,
               "place": "할머니 방 앞"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "granny",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "daram",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             },
             {
               "person": "dad",
-              "minute": 2160,
+              "minute": 2670,
               "place": "2층 복도"
             }
           ],
@@ -13877,12 +14646,154 @@
         },
         "errors": [],
         "failed_requests": [],
-        "bad_responses": []
+        "bad_responses": [],
+        "dramatic_audio_cues": [
+          {
+            "line": "meet1/ok:2",
+            "group": "meet",
+            "cue": "pulse",
+            "music": null,
+            "pulse": "assets/source-silence.wav"
+          },
+          {
+            "line": "meet1/ok:4",
+            "group": "meet",
+            "cue": "pulse",
+            "music": null,
+            "pulse": "assets/source-heartbeat.wav"
+          },
+          {
+            "line": "meet1/ok:6",
+            "group": "meet",
+            "cue": "pulse",
+            "music": null,
+            "pulse": "assets/source-heartbeat.wav"
+          },
+          {
+            "line": "meet1/ok:7",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet1/ok:16",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet3/ok:22",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet4:10",
+            "group": "meet",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "meet4:16",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet7/ok:6",
+            "group": "meet",
+            "cue": "press",
+            "music": "assets/source-meeting-press-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet7/ok:11",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:5",
+            "group": "meet",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:7",
+            "group": "meet",
+            "cue": "press",
+            "music": "assets/source-meeting-press-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:9",
+            "group": "meet",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "meet8/ok:21",
+            "group": "meet",
+            "cue": "calm",
+            "music": "assets/meeting.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final1/ok:11",
+            "group": "final",
+            "cue": "press",
+            "music": "assets/pressure.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final1/ok:20",
+            "group": "final",
+            "cue": "calm",
+            "music": "assets/source-climax-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final3/ok:5",
+            "group": "final",
+            "cue": "impact",
+            "music": "assets/pressure.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final3/ok:17",
+            "group": "final",
+            "cue": "calm",
+            "music": "assets/source-climax-strings-v3.mp3",
+            "pulse": null
+          },
+          {
+            "line": "final4:4",
+            "group": "final",
+            "cue": "silence",
+            "music": null,
+            "pulse": null
+          },
+          {
+            "line": "final4:16",
+            "group": "final",
+            "cue": "calm",
+            "music": "assets/after.mp3",
+            "pulse": null
+          }
+        ]
       }
     ]
   },
   "public_schedule_and_memory": {
-    "game_zip_sha256": "5ab53def019822128e50328a4d59eff69f05412d9d0a3609409920877e733e8f",
+    "game_zip_sha256": "2c5240cc226a6a6485fa2d3286531cce47adcfb52bf45f07ba812b2edb2d4691",
     "observed_notebook_opens_and_closes": true,
     "unmet_resident_not_revealed": true,
     "memory_time_trust_saved": true,
@@ -13897,29 +14808,13 @@
     "no_optional_encounters_required_extra_persuasion": 2,
     "same_case_truth_and_ending": true
   },
-  "portrait_review": {
-    "game_zip_sha256": "81a8468724606d5515e805631272aa5f19e7a4a608e8f210e06ad0c278150a8a",
-    "scope": "Previous 0.5.0 portrait inspection of unchanged images/layout, at the hash retained here. New 0.6.0 mouse/touch runs above cover dialogue and the case flow.",
-    "viewport": [
-      844,
-      390
-    ],
-    "touch": true,
-    "family_head_closeups": true,
-    "town_interview_head_closeups": true,
-    "same_background_before_and_during_interview": true,
-    "room_topic_marked_read": true,
-    "errors": [],
-    "failed_requests": [],
-    "bad_responses": []
-  },
   "limitations": [
     "Desktop Chromium and emulated touch, not physical iPhone/Safari.",
     "No character voice acting yet.",
     "Future episode relationship consequences are not implemented."
   ],
   "authored_dialogue_contract": {
-    "game_zip_sha256": "5ab53def019822128e50328a4d59eff69f05412d9d0a3609409920877e733e8f",
+    "game_zip_sha256": "2c5240cc226a6a6485fa2d3286531cce47adcfb52bf45f07ba812b2edb2d4691",
     "puzzle_gates_and_valid_alternative_proofs_preserved": true,
     "discovery_grants_and_story_events_preserved": true,
     "player_life_choice_preserved": true,
@@ -13931,7 +14826,7 @@
       },
       "FINAL": {
         "before": 73,
-        "after": 119
+        "after": 123
       },
       "TALK": {
         "before": 195,
@@ -13944,7 +14839,37 @@
     }
   },
   "review_images": [
-    "review/06-roundtable-pc.png",
-    "review/06-duel-touch.png"
-  ]
+    "review/061-roundtable-pc.png",
+    "review/061-duel-touch.png",
+    "review/061-resident-notebook.png",
+    "review/061-volume.png",
+    "review/061-clock-viewpoints.png",
+    "review/061-mother-handwriting.png"
+  ],
+  "deduction_and_knowledge_regressions": {
+    "alternate_clock_deduction_requires_prior_comparison": true,
+    "alternate_path_enters_correct_next_comparison": true,
+    "switching_claims_preserves_comparisons_and_pressing": true,
+    "comparison_progress_is_scoped_to_each_round": true,
+    "undiscovered_guest_and_unheard_accusation_hidden": true,
+    "corrected_testimony_stays_correct_on_revisit": true,
+    "confirmed_living_guest_evidence_updated": true,
+    "long_evening_exploration_stays_before_lodging_without_farming_trust": true,
+    "repeated_discoveries_have_no_grants_or_story_beats": true,
+    "newly_available_variants_marked_unread_until_heard": true,
+    "revised_questions_do_not_reset_relationship_rewards": true,
+    "resident_notebook_does_not_reveal_unheard_alibis": true,
+    "after_story_advances_to_night_without_revisit_rewind": true
+  },
+  "agent_review": {
+    "reviewers": 5,
+    "areas": [
+      "story and character knowledge",
+      "deduction and state memory",
+      "native UI and actor placement",
+      "audio cues and playback",
+      "player flow and repeated investigation"
+    ],
+    "scope": "RenPy experiment and preview only; original public HTML/v2 and approved art preserved."
+  }
 }

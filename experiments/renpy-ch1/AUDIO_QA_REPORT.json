@@ -1,5 +1,6 @@
 {
   "volume_slider": true,
+  "volume_tracks_and_handles_visible": true,
   "mute_silences_output": true,
   "unmute_restores_output": true,
   "active_typing_stops_in_menu": true,
@@ -9,7 +10,149 @@
   "errors": [],
   "failed_requests": [],
   "bad_responses": [],
-  "version": "0.6.0",
-  "game_zip_sha256": "5ab53def019822128e50328a4d59eff69f05412d9d0a3609409920877e733e8f",
-  "method": "Native browser audio signal, volume/mute and typing probes; no human listening or physical Safari device."
+  "version": "0.6.1",
+  "game_zip_sha256": "2c5240cc226a6a6485fa2d3286531cce47adcfb52bf45f07ba812b2edb2d4691",
+  "method": "Native browser audio signal, volume/mute and typing probes plus authored audio cue playback through the full desktop chapter; read-only observation, no human listening or physical Safari device.",
+  "dramatic_audio_cues": [
+    {
+      "line": "meet1/ok:2",
+      "group": "meet",
+      "cue": "pulse",
+      "music": null,
+      "pulse": "assets/source-silence.wav"
+    },
+    {
+      "line": "meet1/ok:4",
+      "group": "meet",
+      "cue": "pulse",
+      "music": null,
+      "pulse": "assets/source-heartbeat.wav"
+    },
+    {
+      "line": "meet1/ok:6",
+      "group": "meet",
+      "cue": "pulse",
+      "music": null,
+      "pulse": "assets/source-heartbeat.wav"
+    },
+    {
+      "line": "meet1/ok:7",
+      "group": "meet",
+      "cue": "calm",
+      "music": "assets/meeting.mp3",
+      "pulse": null
+    },
+    {
+      "line": "meet1/ok:16",
+      "group": "meet",
+      "cue": "calm",
+      "music": "assets/meeting.mp3",
+      "pulse": null
+    },
+    {
+      "line": "meet3/ok:22",
+      "group": "meet",
+      "cue": "calm",
+      "music": "assets/meeting.mp3",
+      "pulse": null
+    },
+    {
+      "line": "meet4:10",
+      "group": "meet",
+      "cue": "silence",
+      "music": null,
+      "pulse": null
+    },
+    {
+      "line": "meet4:16",
+      "group": "meet",
+      "cue": "calm",
+      "music": "assets/meeting.mp3",
+      "pulse": null
+    },
+    {
+      "line": "meet7/ok:6",
+      "group": "meet",
+      "cue": "press",
+      "music": "assets/source-meeting-press-strings-v3.mp3",
+      "pulse": null
+    },
+    {
+      "line": "meet7/ok:11",
+      "group": "meet",
+      "cue": "calm",
+      "music": "assets/meeting.mp3",
+      "pulse": null
+    },
+    {
+      "line": "meet8/ok:5",
+      "group": "meet",
+      "cue": "silence",
+      "music": null,
+      "pulse": null
+    },
+    {
+      "line": "meet8/ok:7",
+      "group": "meet",
+      "cue": "press",
+      "music": "assets/source-meeting-press-strings-v3.mp3",
+      "pulse": null
+    },
+    {
+      "line": "meet8/ok:9",
+      "group": "meet",
+      "cue": "silence",
+      "music": null,
+      "pulse": null
+    },
+    {
+      "line": "meet8/ok:21",
+      "group": "meet",
+      "cue": "calm",
+      "music": "assets/meeting.mp3",
+      "pulse": null
+    },
+    {
+      "line": "final1/ok:11",
+      "group": "final",
+      "cue": "press",
+      "music": "assets/pressure.mp3",
+      "pulse": null
+    },
+    {
+      "line": "final1/ok:20",
+      "group": "final",
+      "cue": "calm",
+      "music": "assets/source-climax-strings-v3.mp3",
+      "pulse": null
+    },
+    {
+      "line": "final3/ok:5",
+      "group": "final",
+      "cue": "impact",
+      "music": "assets/pressure.mp3",
+      "pulse": null
+    },
+    {
+      "line": "final3/ok:17",
+      "group": "final",
+      "cue": "calm",
+      "music": "assets/source-climax-strings-v3.mp3",
+      "pulse": null
+    },
+    {
+      "line": "final4:4",
+      "group": "final",
+      "cue": "silence",
+      "music": null,
+      "pulse": null
+    },
+    {
+      "line": "final4:16",
+      "group": "final",
+      "cue": "calm",
+      "music": "assets/after.mp3",
+      "pulse": null
+    }
+  ]
 }

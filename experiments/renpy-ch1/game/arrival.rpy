@@ -124,7 +124,7 @@ label arrival_roam:
     $ renpy.pause(.3,hard=True)
     scene expression Transform("assets/village-map.png",size=(1280,720)) with Dissolve(.18)
     call screen arrival_map
-    $ village_minutes += 5 if _return != arrival_location else 0
+    $ village_advance_evening(5 if _return != arrival_location else 0)
     $ arrival_location = _return
     if arrival_location == "post":
         call source_scenes([arrival_scene("post")])
@@ -232,13 +232,15 @@ screen arrival_cold_shade():
 
 screen arrival_questions():
     modal True
-    add arrival_actor+" interview_neutral" at portrait_close
+    default ready = False
+    timer .25 action SetScreenVariable("ready",True)
     add Solid("#0b172733")
+    add arrival_actor+" interview_neutral" at portrait_question id "topic_actor"
     vbox:
         xpos 360 ypos 140 spacing 5
         for q in ARRIVAL["questions"][arrival_question_person]:
-            use topic_banner(q["q"],Return(q["id"]),q["id"] in arrival_seen)
-        use topic_banner("대화 마치기",Return("back"))
+            use topic_banner(q["q"],Return(q["id"]),q["id"] in arrival_seen,enabled=ready)
+        use topic_banner("대화 마치기",Return("back"),enabled=ready)
 
 screen arrival_interior():
     modal True

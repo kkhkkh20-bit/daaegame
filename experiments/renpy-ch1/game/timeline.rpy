@@ -44,12 +44,17 @@ init 25 python:
         day,minute=divmod(store.village_minutes,1440)
         return ("첫날" if day==0 else "다음 날")+" %02d:%02d"%(minute//60,minute%60)
 
+    def village_advance_evening(minutes):
+        # Optional evening exploration does not silently skip the night's lodging.
+        store.village_minutes=min(TIMELINE["evening_limit"],
+            store.village_minutes+max(0,minutes))
+
     def village_event(key):
         if key in store.village_time_events:return
         store.village_time_events.append(key)
         event=TIMELINE["events"].get(key,{})
         if "at" in event:store.village_minutes=max(store.village_minutes,event["at"])
-        elif store.village_minutes<1440:store.village_minutes+=event.get("duration",5)
+        elif store.village_minutes<1440:village_advance_evening(event.get("duration",5))
 
     def village_round_time():
         values=TIMELINE["round_times"][store.source_group]
@@ -105,11 +110,31 @@ init 25 python:
             and all(k in store.source_flags for k in rules.get("flags",[]))
             and (not rules.get("found") or store.source_found))
 
-    def village_question_lines(question):
-        for variant in TIMELINE["dialogue_variants"]:
+    def village_question_variant(question):
+        for index,variant in enumerate(TIMELINE["dialogue_variants"]):
             if variant["question"]!=question["id"]:continue
             if not all(k in store.source_inventory for k in variant.get("evidence",[])):continue
             if not all(k in store.source_seen for k in variant.get("seen",[])):continue
+            if not all(k in store.source_flags for k in variant.get("flags",[])):continue
+            if variant.get("found") and not store.source_found:continue
+            return index,variant
+        return None
+
+    def village_question_revision(question):
+        match=village_question_variant(question)
+        return "variant:%d"%match[0] if match else "base"
+
+    def village_question_done(question):
+        return (question["id"] in store.source_seen and
+            store.source_question_revisions.get(question["id"],"base")==village_question_revision(question))
+
+    def village_question_new(question):
+        return question["id"] in store.source_seen and not village_question_done(question)
+
+    def village_question_lines(question):
+        match=village_question_variant(question)
+        if match:
+            variant=match[1]
             return variant["lines"]+arrival_question_lines(question)[variant.get("tail_from",0):]
         return arrival_question_lines(question)
 
@@ -122,19 +147,38 @@ screen village_timetable():
         fixed:
             text "주민 수첩 · "+village_clock() size 29 color "#ffdc91"
             text "직접 만난 시각과 장소를 기록한다. 숨겨진 행적은 아직 알 수 없다." ypos 43 size 18 color "#c6b699"
-            for i,(person,spec) in enumerate(TIMELINE["residents"].items()):
-                $ observation=village_last_seen(person)
-                hbox:
-                    ypos 78+i*36 spacing 18
-                    if observation:
-                        add Transform(person+" avatar_neutral",size=(32,32),fit="contain")
-                        text NAMES[person] size 21 xsize 95
-                        text ("%02d:%02d · "%((observation["minute"]%1440)//60,observation["minute"]%60))+observation["place"] size 18 xsize 340
-                        text spec["public_purpose"] size 17 color "#c6b699" xsize 520
-                    else:
-                        text "?" size 23 xsize 32
-                        text "아직 만나지 못했다" size 18 color "#91877a"
+            viewport:
+                id "resident_rows"
+                xpos 0 ypos 78 xsize 1102 ysize 365
+                mousewheel True draggable True
+                scrollbars "vertical" style_prefix "resident"
+                vbox:
+                    spacing 9 xfill True
+                    for person,spec in TIMELINE["residents"].items():
+                        $ observation=village_last_seen(person)
+                        frame:
+                            xfill True padding (8,10)
+                            background Solid("#30261f77")
+                            hbox:
+                                spacing 16
+                                if observation:
+                                    add Transform(person+" avatar_neutral",size=(34,34),fit="contain")
+                                    text NAMES[person] size 21 xsize 100
+                                    vbox:
+                                        spacing 5 xsize 380
+                                        text (("첫날" if observation["minute"]<1440 else "다음 날")+" %02d:%02d"%((observation["minute"]%1440)//60,observation["minute"]%60)) size 18 color "#f8d994"
+                                        text observation["place"] size 18 xsize 380
+                                    text spec["public_purpose"] size 17 color "#c6b699" xsize 460
+                                else:
+                                    text "?" size 23 xsize 34
+                                    text "아직 만나지 못했다" size 18 color "#91877a"
             textbutton "닫기" xpos 920 ypos 463 action Hide("village_timetable")
+
+style resident_vscrollbar is vscrollbar:
+    xsize 14
+    base_bar Solid("#4f4034")
+    thumb Solid("#b39060",xsize=14,ysize=42)
+    thumb_shadow None
 
 label village_support_hearing:
     $ village_hearing_active = True

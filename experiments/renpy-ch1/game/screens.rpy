@@ -26,16 +26,18 @@ style bar:
     right_bar Solid("#4f4034")
     thumb Solid("#f5e8cf",xsize=14,ysize=30)
     thumb_shadow None
+style slider is bar
 style scrollbar:
     base_bar Solid("#4f4034")
     thumb Solid("#b39060",xsize=14,ysize=42)
 
 # One topic style shared by town residents and the investigation interviews.
-screen topic_banner(caption, topic_action, done=False):
+screen topic_banner(caption, topic_action, done=False, enabled=True):
     button:
         xsize 560 ysize 58 padding (3,3)
         background Solid("#e5d5ae") hover_background Solid("#eec36b")
         action topic_action
+        sensitive enabled
         fixed:
             add Solid("#315866" if done else "#276d88")
             add Solid("#f5ecd4",xsize=22)
@@ -94,18 +96,24 @@ screen hud():
                 text place size 23 color "#f8d994"
                 text clock_text size 18 color "#c6b699"
     hbox:
-        xpos 1012 ypos 20 spacing 15
+        xpos 997 ypos 9 spacing 0
         imagebutton:
+            xsize 82 ysize 74 padding (15,11)
+            background None hover_background None
             idle Transform("assets/evidence.png",size=(52,52))
             hover Transform("assets/evidence.png",size=(52,52),alpha=0.75)
             action If(source_mode,Show("source_evidence"),Show("evidence_book"))
             tooltip "수첩"
         imagebutton:
+            xsize 82 ysize 74 padding (15,11)
+            background None hover_background None
             idle Transform("assets/save.png",size=(52,52))
             hover Transform("assets/save.png",size=(52,52),alpha=0.75)
             action ShowMenu("save")
             tooltip "저장"
         imagebutton:
+            xsize 82 ysize 74 padding (15,11)
+            background None hover_background None
             idle Transform("assets/menu.png",size=(52,52))
             hover Transform("assets/menu.png",size=(52,52),alpha=0.75)
             action ShowMenu("pause_menu")
@@ -270,10 +278,20 @@ screen evidence_book(present=False):
 
 screen round_table():
     zorder -1
+    # A resident who steps forward is absent from the distant row for this shot.
+    # Evidence overlays and a full-table view retain every resident.
+    $ foreground = None
+    if source_mode and renpy.get_screen("source_debate") and not renpy.get_screen("source_evidence") and not renpy.get_screen("source_proof"):
+        $ debate = SOURCE_EP["MEET" if source_group=="meet" else "FINAL"]["phases"][source_phase]
+        $ foreground = SOURCE_ALIAS.get(debate["stms"][source_statement]["w"],debate["stms"][source_statement]["w"])
+    elif source_mode and renpy.showing("visitor") and not renpy.get_screen("source_evidence") and not renpy.get_screen("source_proof"):
+        $ foreground = source_stage_person
     for key,x,y in (("granny",170,405),("nabi",340,378),("buri",515,370),("doto",710,370),("seryeon",870,405),("neoul",1040,445),("karo",1160,460)):
-        add key + " world" at resident_world xpos x ypos y
+        if key != foreground:
+            add key + " world" at resident_world xpos x ypos y id ("table_"+key)
         # The full-body source is a distant resident, never reused as the close-up.
-    add Transform("bami world",zoom=0.47) xpos 1120 ypos 83
+    if foreground != "bami":
+        add Transform("bami world",zoom=0.47) xpos 1120 ypos 83 id "table_bami"
     add "assets/table.png" at table_world
 
 screen council():
@@ -369,10 +387,10 @@ screen pause_menu():
                 textbutton "저장" action ShowMenu("save") xsize 310
                 textbutton "불러오기" action ShowMenu("load") xsize 310
             text "배경음" size 23
-            bar value Preference("music volume") xsize 640 ysize 30
+            bar value Preference("music volume") xsize 640 ysize 30 id "music_volume"
             textbutton ("배경음: 꺼짐" if _preferences.get_mute("music") else "배경음: 켜짐") action Preference("music mute","toggle") xfill True
             text "타이핑 · 효과음" size 23
-            bar value Preference("sound volume") xsize 640 ysize 30
+            bar value Preference("sound volume") xsize 640 ysize 30 id "fx_volume"
             textbutton ("효과음: 꺼짐" if _preferences.get_mute("sfx") else "효과음: 켜짐") action Preference("sound mute","toggle") xfill True
             textbutton "처음 화면으로" action MainMenu(confirm=False) xfill True
 
@@ -447,3 +465,4 @@ style trial_frame is frame
 style trial_button is button
 style trial_button_text is button_text
 style trial_bar is bar
+style trial_slider is slider

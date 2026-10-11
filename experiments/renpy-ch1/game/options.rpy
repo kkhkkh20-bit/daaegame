@@ -1,5 +1,5 @@
 define config.name = "다람탐정 · 열세 번째 침대"
-define config.version = "0.6.0"
+define config.version = "0.6.1"
 # Literal early definition selects the persistent web save mount.
 define config.save_directory = "daaegame-renpy-village-ch1-06"
 
@@ -67,7 +67,7 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.6.0"
+    build.version = "0.6.1"
     build.classify("game/assets/*.txt", "all")
     build.classify("game/assets/*.json", "all")
     build.classify("**.py", None)
@@ -220,6 +220,17 @@ transform portrait_close:
     yanchor 1.0
     ypos 551
     size (340,440)
+    fit "contain"
+    alpha 0.0
+    ease 0.15 alpha 1.0
+
+# Topic selection uses the same full-body interview art beside the choices.
+# Spoken dialogue keeps portrait_close at the centre of the scene.
+transform portrait_question:
+    xpos 950
+    yanchor 1.0
+    ypos 551
+    size (300,440)
     fit "contain"
     alpha 0.0
     ease 0.15 alpha 1.0

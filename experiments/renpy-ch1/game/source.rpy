@@ -26,6 +26,10 @@ default source_current_line = None
 default source_complete = False
 default source_proof_show = []
 default source_checks = {}
+default source_proof_marks = []
+default source_claim_progress = {}
+default source_question_revisions = {}
+default source_question_read_revision = "base"
 
 define source_thought = Character(None,cb_who_id="dad")
 define source_character = source_thought
@@ -85,11 +89,39 @@ init 10 python:
         store.typing_allowed=not enabled
         renpy.music.stop(channel="typing")
         if enabled:
+            if renpy.music.get_playing(channel="pulse"):
+                return # Consecutive suspense lines share one continuous heartbeat.
             store.source_effect_log.append("heartbeat")
             renpy.music.stop(fadeout=0)
             renpy.music.play("assets/source-silence.wav",channel="pulse",loop=False)
             renpy.music.queue("assets/source-heartbeat.wav",channel="pulse",loop=True,clear_queue=True)
         else: renpy.music.stop(channel="pulse",fadeout=0)
+
+    def source_claim_key(statement=None):
+        return "%s:%d:%d"%(store.source_group,store.source_phase,
+            store.source_statement if statement is None else statement)
+
+    def source_remember_claim():
+        store.source_claim_progress[source_claim_key()]=dict(
+            step=store.source_step,pressed=store.source_pressed)
+
+    def source_select_claim(statement,step=None,pressed=False):
+        source_remember_claim()
+        progress=store.source_claim_progress.get(source_claim_key(statement),{})
+        store.source_statement=statement
+        store.source_step=max(progress.get("step",0),step or 0)
+        store.source_pressed=bool(progress.get("pressed",False) or pressed)
+        source_remember_claim()
+
+    def source_soft_available(soft):
+        return ((not soft.get("req") or soft["req"] in store.source_proof_marks)
+            and ("untilStep" not in soft or store.source_step<soft["untilStep"]))
+
+    def source_apply_soft(soft):
+        if soft.get("mark") and soft["mark"] not in store.source_proof_marks:
+            store.source_proof_marks.append(soft["mark"])
+        if "to" in soft:
+            source_select_claim(soft["to"],soft.get("step"),soft.get("pressed",False))
 
     def source_face(who,mood=""):
         person=SOURCE_ALIAS.get(who,who)
@@ -143,6 +175,9 @@ init 10 python:
 
     def source_card(key):
         ev=SOURCE_EP["EV"][key]
+        update=TIMELINE.get("evidence_updates",{}).get(key)
+        if update and all(flag in store.source_flags for flag in update.get("flags",[])):
+            return update["card"]
         if key=="C13" and "inn_c13fix" in store.source_flags:
             return ev.get("card2",ev.get("desc2",ev["desc"]))
         return ev.get("card",ev["desc"])
@@ -151,10 +186,10 @@ init 10 python:
         opened=lambda s:bool(renpy.get_screen(s))
         return dict(stage=store.stage,location=store.source_location,group=store.source_group,phase=store.source_phase,statement=store.source_statement,step=store.source_step,pressed=store.source_pressed,
           inventory=list(store.source_inventory),seen=list(store.source_seen),found=store.source_found,permission=store.source_permission,complete=store.source_complete,
-          line=store.source_current_line,text=store.source_shown_text,scene=store.source_scene,camera=store.source_camera,night=store.source_night,effects=list(store.source_effect_log),lines=list(store.source_line_log),
+          line=store.source_current_line,text=store.source_shown_text,scene=store.source_scene,camera=store.source_camera,night=store.source_night,proof=list(store.source_proof_show),effects=list(store.source_effect_log),lines=list(store.source_line_log),
           music=renpy.music.get_playing(),typing=renpy.music.get_playing(channel="typing"),pulse=renpy.music.get_playing(channel="pulse"),fx=renpy.music.get_playing(channel="scene_fx"),
           village_map=opened("arrival_map"),village_place=opened("arrival_place"),village_questions=opened("arrival_questions"),village_inn=opened("arrival_interior"),cold=store.arrival_cold,village_location=store.arrival_location,background=store.source_background,checks=dict(store.source_checks),met=list(store.arrival_met),village_seen=list(store.arrival_seen),post_closed=store.arrival_post_closed,stone=store.arrival_stone,
-          trust_events=list(store.village_trust_events),flags=list(store.source_flags),minutes=store.village_minutes,time_events=list(store.village_time_events),observations=list(store.village_observations),trust=dict(store.village_trust),residents=village_resident_points(store.source_location),available_topics=[q["id"] for q in source_questions(store.source_person)] if hasattr(store,"source_person") else [],support_hearing=store.village_hearing_active,support_person=store.village_hearing_person,
+          trust_events=list(store.village_trust_events),flags=list(store.source_flags),proof_marks=list(store.source_proof_marks),proof_progress=dict(store.source_claim_progress),question_revisions=dict(store.source_question_revisions),new_topics=[q["id"] for q in source_questions(store.source_person) if village_question_new(q)] if hasattr(store,"source_person") else [],minutes=store.village_minutes,time_events=list(store.village_time_events),observations=list(store.village_observations),trust=dict(store.village_trust),residents=village_resident_points(store.source_location),available_topics=[q["id"] for q in source_questions(store.source_person)] if hasattr(store,"source_person") else [],support_hearing=store.village_hearing_active,support_person=store.village_hearing_person,
           roam=opened("source_explore"),map=opened("source_map"),questions=opened("source_questions"),evidence=opened("source_evidence"),debate=opened("source_debate"),choice=opened("source_choice"),inspect=opened("source_inspect"),code=opened("chest_lock"),complete_screen=opened("trial_complete"),saving=opened("save"),loading=opened("load"),exception=opened("_exception"))
 
     def source_pause_effects():
@@ -189,6 +224,8 @@ label start:
     $ source_inventory, source_seen, source_flags = [], [], []
     $ source_effect_log, source_line_log = [], []
     $ source_checks = {}
+    $ source_proof_marks,source_claim_progress = [],{}
+    $ source_question_revisions = {}
     $ village_minutes,village_time_events,village_observations = 1050,[],[]
     $ village_trust,village_trust_events = {p:-1 for p in TIMELINE["voters"]},[]
     $ village_hearing_active,village_hearing_person = False,None
@@ -211,6 +248,8 @@ label source_scenes(scenes, scene_index=0):
     while scene_index < len(scenes):
         $ source_sc = scenes[scene_index]
         $ source_scene, place, clock_text = source_sc.get("sid",""),source_sc["title"],source_sc["sub"]
+        if stage == "ending":
+            $ village_event("ending_"+source_scene)
         $ source_camera = source_sc.get("camera","carriage" if source_scene=="P1" else "village" if source_scene=="P2" else "stage")
         $ source_background = source_sc.get("bg") or source_sc["loc"]
         $ source_night = None
@@ -325,7 +364,7 @@ label source_lines(items, origin="", index=0):
                     $ typing_allowed = False
                 elif source_meta.get("audio") == "calm":
                     $ source_pulse(False)
-                    $ source_score("inn_meet")
+                    $ source_score("inn_after" if "inn_case_cleared" in source_flags else "inn_meet" if source_group=="meet" else "inn_climax")
                 elif source_meta.get("audio") in ("press","impact"):
                     $ source_pulse(False)
                     $ source_score("inn_meet_press" if source_group=="meet" else "inn_climax_press")
@@ -408,12 +447,15 @@ label source_roam:
         elif not source_found:
             $ renpy.notify("주머니·이불·숙박부와 나비·세련의 말을 확인하자.")
         else:
-            call source_lines(next(s["say"] for s in SOURCE_LOC["bed13"]["spots"] if s["id"]=="basket"),"basket")
+            call source_lines(TIMELINE["repeat_observations"]["under"],"LOOK_UNDER_REPEAT")
     elif source_action == "head":
         call source_lines(next(o["say"] for o in SOURCE_LOC["bed13"]["obs"] if o["id"]=="o_inn_head2"),"head")
         if "head" not in source_seen:
             $ source_seen.append("head")
     elif source_action == "chest":
+        if "C11" in source_inventory:
+            call source_lines(TIMELINE["repeat_observations"]["chest"],"LOOK_CHEST_REPEAT")
+            jump source_roam
         if not source_found:
             call source_lines(next(o["say"] for o in SOURCE_LOC["bed13"]["obs"] if o["id"]=="o_inn_box"),"locked-box")
             jump source_roam
@@ -441,6 +483,7 @@ label source_talk:
     if _return == "back":
         jump source_roam
     $ source_question = _return
+    $ source_question_read_revision = village_question_revision(source_question)
     if source_person in arrival_met and source_person not in arrival_greeted and source_person in ARRIVAL["recognition"]:
         call source_lines(ARRIVAL["recognition"][source_person],"V_RECOGNITION_"+source_person)
         $ arrival_greeted.append(source_person)
@@ -452,6 +495,7 @@ label source_talk:
         $ source_flags.append(source_question["sets"])
     if source_question["id"] not in source_seen:
         $ source_seen.append(source_question["id"])
+    $ source_question_revisions[source_question["id"]] = source_question_read_revision
     if source_question["id"] == "T_se4":
         call source_lines(TIMELINE["departures"]["seryeon"],"V_SERYEON_DEPARTURE")
         jump source_roam
@@ -519,11 +563,12 @@ label source_debate_loop:
     $ source_claim = source_round["stms"][source_statement]
     if source_action == "select":
         if source_statement != source_value:
-            $ source_statement,source_step,source_pressed = source_value,0,False
+            $ source_select_claim(source_value)
         jump source_debate_loop
     elif source_action == "press":
         call source_lines(source_claim.get("press",[]),"press")
         $ source_pressed = True
+        $ source_remember_claim()
         $ source_fx("tap")
         jump source_debate_loop
     call screen source_evidence(present=True)
@@ -537,6 +582,7 @@ label source_debate_loop:
     if source_step < len(source_steps) and source_evidence in source_steps[source_step]["ids"]:
         call source_lines(source_steps[source_step].get("lines",[]),"comparison")
         $ source_step += 1
+        $ source_remember_claim()
         $ source_fx("select")
     elif source_step == len(source_steps) and source_evidence in source_claim.get("a",[]):
         $ source_fx("impact")
@@ -544,11 +590,10 @@ label source_debate_loop:
         $ village_proof_support()
         call source_lines(source_claim.get("ok",[]),source_group+str(source_phase)+"/ok")
         return
-    elif source_evidence in source_claim.get("soft",{}):
+    elif source_evidence in source_claim.get("soft",{}) and source_soft_available(source_claim["soft"][source_evidence]):
         $ source_soft = source_claim["soft"][source_evidence]
         call source_lines(source_soft.get("lines",[]),"related")
-        if "to" in source_soft:
-            $ source_statement,source_step,source_pressed = source_soft["to"],0,source_soft.get("pressed",False)
+        $ source_apply_soft(source_soft)
     elif source_evidence in source_claim.get("wr",{}):
         call source_lines(source_claim["wr"][source_evidence],"wrong")
     else:
