@@ -1,4 +1,8 @@
 1장 v2 소스 — 별도 미리보기 배포 (2026-10-10)
+- 2026-10-11 컷·음악 순서/대화용 그림 분리: CODEX_PRESENTATION_TIMING_20261011.txt.
+  신규 40표정은 현장 전신과 별도로 qa_dialogue_portraits.py에서 검사한다.
+  실제 새 게임 타이밍: qa_presentation_timing.py --expect-stable --check-menu.
+  비동기 소유권: qa_native_presentation.py / qa_cinematic_timing.py / qa_audio_timing.py.
 - 최신 음악/효과음/대사: CODEX_AUDIO_DIALOGUE_20261010.txt. 현재는 피아노 없는 현악 v3와 녹음 문·말발굽을 사용한다. 피아노 문서는 과거 기록이다.
 - 공개 play.html은 이 폴더가 아니라 dev/ 바로 아래 소스(5ae250d 대본 + 43_council 원탁 복구)로 만든다.
 - 이 폴더: 오늘 오전 확정 구조(세련 인수 대리인·노름, 솜솜 침대 밑, 너울 수색) + 조사 확장(방마다 살펴보기, 인물별 질문, 증인에게 증거 보여 주기)

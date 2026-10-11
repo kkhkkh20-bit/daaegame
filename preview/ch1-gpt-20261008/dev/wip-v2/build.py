@@ -31,12 +31,23 @@ for f in sorted(os.listdir(D+'patches')) if os.path.isdir(D+'patches') else []:
 a=s.index(' EP.PRO=[\n');b=s.index(' /* ---- 장면 배경 ----',a)
 s=s[:a]+open(D+'pro_new.js',encoding='utf-8').read()+s[b:]
 rep(' EP.PRO[0].bg="carriage";EP.PRO[1].bg="plaza";EP.PRO[2].bg="reception";EP.PRO[3].bg="corridor";EP.PRO[5].bg="reception";EP.PRO[6].bg="room";EP.PRO[7].bg="corridor";',' /* 프롤로그 장면 배경은 EP.PRO의 B(배경, 상대, 장면)에서 지정 */')
+# Native question replies repaint synchronously. Keep a ready dialogue bust
+# instead of restoring an old full-body img until the next UI animation frame.
+rep('   if(!on(k)){tf.classList.remove("b202");return}\n   var m=', '   var m=')
+rep('''   var m=(DL&&DL.stageWho===k)?(DL.stageMood||""):(function(){try{return moodOf(CASES[G.ci],k)}catch(e){return ""}})();''',
+    '''   var m=(DL&&DL.stageWho===k)?(DL.stageMood||""):(DL&&tf.dataset.mood!=null?tf.dataset.mood:(function(){try{return moodOf(CASES[G.ci],k)}catch(e){return ""}})());''')
+rep('   var p=pose(k,m),cur=tf.querySelector("img.b202");',
+    '''   if(CASES[G.ci].id==="inn"&&window.__innPaintDialogue){var panel=document.querySelector(".fstalk .tpanel");if(window.__innPaintDialogue(tf,k,m,{surface:"talk",panel:panel&&panel.getBoundingClientRect()})){tf.classList.add("b202");return}}
+   if(!on(k)){tf.classList.remove("b202");return}
+   var p=pose(k,m),cur=tf.querySelector("img.b202");''')
 # 3) 대화 무대 모듈: 엔진 클로저 안(첫 실행 직전)에 넣는다
-modules=['inn_stage','inn_music_tracks','inn_recorded_sfx','inn_audio','inn_input','inn_ui9','inn_polish','inn_evidence','inn_simple_ui','inn_map_navigation','inn_scene_guidance','inn_room_puzzles','inn_posture_props','inn_character_motion','inn_opening_direction','inn_story_cinematics','inn_purchase_payoff','inn_mother_lead','inn_chapter2_teaser']
+modules=['inn_stage','inn_music_tracks','inn_recorded_sfx','inn_audio','inn_input','inn_ui9','inn_polish','inn_evidence','inn_simple_ui','inn_map_navigation','inn_scene_guidance','inn_room_puzzles','inn_posture_props','inn_character_motion','inn_dialogue_portraits','inn_opening_direction','inn_story_cinematics','inn_purchase_payoff','inn_mother_lead','inn_chapter2_teaser']
 cinematic_root=SOURCE.parent.parent / 'art/ch1/cinematics'
-story_art={key:(cinematic_root / name).is_file() for key,name in {'carriage':'carriage-family-close.png','village':'village-arrival-wide.png','seal':'sealed-pouch-close.png'}.items()}
+story_art={key:(cinematic_root / name).is_file() for key,name in {'carriage':'carriage-family-close.png','driver':'carriage-driver-close.png','village':'village-arrival-wide.png','seal':'sealed-pouch-close.png'}.items()}
 import json
-js='window.__innStoryArt='+json.dumps(story_art)+';\n'+'\n'.join((SOURCE / (name+'.js')).read_text(encoding='utf-8') for name in modules)
+dialogue_manifest=SOURCE.parent.parent / 'art/ch1/dialogue-v1/manifest.json'
+dialogue_art=json.loads(dialogue_manifest.read_text(encoding='utf-8')) if dialogue_manifest.is_file() else {'characters':{}}
+js='window.__innStoryArt='+json.dumps(story_art)+';\nwindow.__innDialogueManifest='+json.dumps(dialogue_art,ensure_ascii=False)+';\n'+'\n'.join((SOURCE / (name+'.js')).read_text(encoding='utf-8') for name in modules)
 hk='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'
 rep(hk,js+'\n'+hk)
 out=str(OUTPUT / 'play_v2.html')   # 2026-10-10: 작업 중 v2는 공개 파일에 쓰지 않는다(배포는 dev/ 소스로 따로)

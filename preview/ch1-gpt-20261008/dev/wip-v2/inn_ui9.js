@@ -103,10 +103,13 @@
   /* ---------- 세련 앉은 그림 · 질문 화면 상반신 구도 ---------- */
   var SER_SCENE="art/ch1/cast/seryeon-seated-paperwork-v2-scene192.png",SER_TALK="art/ch1/cast/seryeon-seated-paperwork-v2-talk.png";
   function seated(){try{document.querySelectorAll('#bigscene .npc[data-npc="seryeon"] .npcclip img').forEach(function(i){if(i.getAttribute("src")!==SER_SCENE)i.setAttribute("src",SER_SCENE)})}catch(e){}}
-  function talkFrame(){try{if(!window.__innFrame)return;var W=innerWidth,H=innerHeight;document.querySelectorAll(".fstalk .tstage .tfig img").forEach(function(i){var k=i.dataset.k;if(!k)return;
-    var want=(window.__innPose&&window.__innPose(k))||(k==="seryeon"?SER_TALK:null);if(want&&i.getAttribute("src")!==want)i.setAttribute("src",want);if(!want&&k==="doto"&&/^art\/body\/doto-/.test(i.getAttribute("src")||""))i.setAttribute("src",DOTO);
+  function talkFrame(){try{if(!window.__innFrame)return;var W=innerWidth,H=innerHeight;document.querySelectorAll(".fstalk .tstage .tfig").forEach(function(f){var i=f.querySelector('img'),k=f.dataset.k||(i&&i.dataset.k)||G.who;if(!k)return;
     var panel=document.querySelector(".fstalk .tpanel"),pr=panel&&panel.getBoundingClientRect();
-    var F=window.__innFrame(k,i.getAttribute("src"),{surface:"talk",panel:pr}),f=i.parentElement,key=[W,H,i.getAttribute("src"),Math.round(F.left),Math.round(F.top),Math.round(F.w)].join("|");if(i.dataset.fr9===key)return;i.dataset.fr9=key;
+    var mood=(typeof DL!=='undefined'&&DL&&DL.stageWho===k)?DL.stageMood||'':(typeof DL!=='undefined'&&DL&&f.dataset.mood!=null?f.dataset.mood:moodOf(CASES[G.ci],k)||'');
+    if(window.__innPaintDialogue&&window.__innPaintDialogue(f,k,mood,{surface:'talk',panel:pr}))return;
+    if(!i){var fallback=window.__innPose&&window.__innPose(k);if(!fallback)return;i=document.createElement('img');i.alt='';i.dataset.k=k;i.src=fallback;f.replaceChildren(i)}
+    var want=(window.__innPose&&window.__innPose(k))||(k==="seryeon"?SER_TALK:null);if(want&&i.getAttribute("src")!==want)i.setAttribute("src",want);if(!want&&k==="doto"&&/^art\/body\/doto-/.test(i.getAttribute("src")||""))i.setAttribute("src",DOTO);
+    var F=window.__innFrame(k,i.getAttribute("src"),{surface:"talk",panel:pr}),key=[W,H,i.getAttribute("src"),Math.round(F.left),Math.round(F.top),Math.round(F.w)].join("|");if(i.dataset.fr9===key)return;i.dataset.fr9=key;
     ["top:0","height:100vh","left:0","right:0","width:auto","transform:none"].forEach(function(d){var q=d.split(":");f.style.setProperty(q[0],q[1],"important")});
     [["position","absolute"],["left",F.left+"px"],["top",F.top+"px"],["width",F.w+"px"],["height",F.h+"px"],["transform","none"],["max-width","none"],["max-height","none"]].forEach(function(d){i.style.setProperty(d[0],d[1],"important")})})}catch(e){}}
 
@@ -122,6 +125,7 @@
    if(MV&&(dl()||G.tab==="move"))mvClose();if(OB&&(dl()||G.tab!=="scene"))obHide()}
   try{new MutationObserver(function(){if(!q)q=requestAnimationFrame(tick)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
   window.addEventListener("resize",function(){if(!q)q=requestAnimationFrame(tick)});setInterval(tick,400);
+  document.addEventListener('inn-dialogue-art-ready',function(){if(!q)q=requestAnimationFrame(tick)});
   /* 회전·주소창 변화: iOS는 회전 직후 innerWidth/innerHeight가 한동안 이전 값으로 남는다. 늦게 바뀐 크기로 다시 그리도록 resize를 몇 번 더 보낸다
      (지도·장면 배율·대화 그림이 회전 전 크기로 굳는 것 방지). 실제 크기가 바뀐 때만 보낸다 */
   var lastWH=innerWidth+"x"+innerHeight,fwd=false;function reflow(){var wh=innerWidth+"x"+innerHeight;if(wh===lastWH)return;lastWH=wh;fwd=true;try{dispatchEvent(new Event("resize"))}finally{fwd=false}}
@@ -528,8 +532,8 @@
     else if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(md)&&window.__innGrandmaSrc)f=window.__innGrandmaSrc(md);
     else if(k==="det0"){fing=false;f=DAD}   /* 2026-10-10 사용자 "아빠 프로필·대화 프사를 채택한 한 장으로 통일": 옛 v5 포즈·손가락 프레임(다른 얼굴) 연결 해제 */
     /* 기존 승인 전신에서 얼굴을 같은 정사각 창으로 잘라 보여준다. 원본 PNG와 비율은 그대로. */
-    var fc=window.__innFaceCrop&&window.__innFaceCrop(k,md);if(fc)f=k==="wanggu"?window.__innNeoulSrc(md):fc.src;
-    var crop=k==="innma"&&f.indexOf('/cast/innma-')>=0,ck=fc?k+'-source':crop?'grandma':'normal';
+    var fc=(window.__innDialogueFace&&window.__innDialogueFace(k,md))||(window.__innFaceCrop&&window.__innFaceCrop(k,md));if(fc)f=fc.src;
+    var crop=k==="innma"&&f.indexOf('/cast/innma-')>=0,ck=fc?[k,fc.src,fc.x,fc.y,fc.size].join('|'):crop?'grandma':'normal';
     if(SPKIMG.dataset.crop!==ck){SPKIMG.dataset.crop=ck;SPKIMG.style.cssText=fc?'position:absolute;width:'+(100*fc.w/fc.size)+'%;height:'+(100*fc.h/fc.size)+'%;max-width:none;max-height:none;left:'+(-100*fc.x/fc.size)+'%;top:'+(-100*fc.y/fc.size)+'%':crop?'position:absolute;width:115.87%;height:144.44%;max-width:none;max-height:none;left:-1.59%;top:0':' '}
     var mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"")}
     var fk=DL.i+"|"+tx.length;

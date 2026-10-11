@@ -101,14 +101,14 @@
   if(!active())return;worldStanding();dress();
   document.querySelectorAll('#innstage .isf,.fstalk .tfig').forEach(function(host){
    var im=host.querySelector('img'),k=host.dataset.k||(im&&im.dataset.k);if(!k)return;
-   var p=k==='geokkuri'?'hanging':standing[k]||k==='innma'?'standing':'native';
+   var p=host.querySelector('svg.dialogue-bust')?(k==='geokkuri'?'dialogue-hanging':'dialogue-bust'):k==='geokkuri'?'hanging':standing[k]||k==='innma'?'standing':'native';
    if(host.dataset.posture!==p)host.dataset.posture=p;
   });
  }
  window.__innPostureState=function(){
   var room=null;try{room=active()&&CASES[G.ci].locations[G.loc].id}catch(e){}
   return {room:room,roomProps:Object.assign({},props[room]||{}, {actualAssets:Array.from(document.querySelectorAll('#bigscene image.wp9,#bigscene .inn-set-dressing image')).map(function(i){return i.getAttribute('href')})}),setDressing:{ready:ATLAS.ready,src:ATLAS.ready?ATLAS.src:null,cells:ATLAS.ready?(DECOR[room]||[]).map(function(p){return p.cell}):[]},worldActors:Array.from(document.querySelectorAll('#bigscene image.wn9')).map(function(i){return {k:i.dataset.k,src:i.getAttribute('href'),posture:i.dataset.posture||'native',x:i.getAttribute('x'),y:i.getAttribute('y'),width:i.getAttribute('width'),height:i.getAttribute('height')}}),dialogue:'standing',meeting:'native-seated',
-   actors:Array.from(document.querySelectorAll('#innstage .isf,.fstalk .tfig')).map(function(h){var i=h.querySelector('img');return {k:h.dataset.k||(i&&i.dataset.k),posture:h.dataset.posture,src:i&&i.getAttribute('src')}})};
+   actors:Array.from(document.querySelectorAll('#innstage .isf,.fstalk .tfig')).map(function(h){var i=h.querySelector('img,svg.dialogue-bust');return {k:h.dataset.k||(i&&i.dataset.k),posture:h.dataset.posture,src:i&&(i.getAttribute('src')||i.dataset.src)}})};
  };
  // Warm the six existing images without altering world assets or source canvases.
  Object.values(standing).concat([ROOT+'cast/innma-neutral-v5.png']).forEach(function(s){var i=new Image();i.src=s});

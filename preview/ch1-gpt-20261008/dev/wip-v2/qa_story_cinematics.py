@@ -35,6 +35,7 @@ with sync_playwright() as playwright:
 
         def stop():
             engine('if(DL){DL.done=null;endDlg()}')
+            page.evaluate('__innStoryCinematicReset()')
             page.wait_for_timeout(150)
         def prepare(sid):
             stop()
@@ -46,6 +47,7 @@ with sync_playwright() as playwright:
         def line():return engine('DL&&String(DL.lines[DL.i][7]||DL.lines[DL.i][1])||""')
         def expect(cut):
             page.wait_for_function('(cut)=>__innStoryCinematics().cut===cut&&__innStoryCinematics().visible',arg=cut,timeout=10000)
+            page.wait_for_function('!!__T("DL")')
             image=page.locator('#inn-story-cg .cinema-picture')
             assert image.evaluate('(e)=>e.complete&&e.naturalWidth>0'),'CG did not decode'
             assert image.evaluate('(e)=>getComputedStyle(e).pointerEvents')=='none','Picture catches dialogue taps'
@@ -60,7 +62,7 @@ with sync_playwright() as playwright:
         # A build with no approved picture must not request its absent file.
         prepare('P1')
         art=page.evaluate('__innStoryArt')
-        page.evaluate('__innStoryArt={carriage:false,village:false,seal:false}')
+        page.evaluate('__innStoryArt={carriage:false,driver:false,village:false,seal:false}')
         first=len(requests)
         engine('say([EP1INN.PRO.find(s=>s.sid==="P1").items.find(l=>Array.isArray(l)&&l[0]==="det1")],function(){})')
         page.wait_for_timeout(250)
@@ -69,7 +71,7 @@ with sync_playwright() as playwright:
         stop();page.evaluate('(art)=>{window.__innStoryArt=art}',art)
 
         # P1 uses the existing play controller, all authored family lines and
-        # native directions. The driver and father's answer restore the stage.
+        # native directions. The driver and father's answer keep his own cut.
         prepare('P1')
         engine('window.__cinematicDone=0;__innPlay(EP1INN.PRO.find(s=>s.sid==="P1").items,function(){window.__cinematicDone++})')
         expect('carriage')
@@ -90,8 +92,11 @@ with sync_playwright() as playwright:
         assert memory_seen,'The mother-search cue was skipped'
         assert engine('DL&&DL.lines[DL.i][0]==="karo"'),'Driver cue unreachable'
         page.wait_for_timeout(100)
-        assert page.locator('#inn-story-cg').count()==0,'Family cut remained behind the driver'
-        assert page.locator('#innstage').evaluate('(e)=>getComputedStyle(e).visibility')=='visible','Actor did not return'
+        if page.evaluate('!!__innStoryArt.driver'):
+            expect('driver')
+        else:
+            assert page.locator('#inn-story-cg').count()==0,'Family cut remained behind the driver'
+            assert page.locator('#innstage').evaluate('(e)=>getComputedStyle(e).visibility')=='visible','Missing driver asset did not restore the stage'
         for _ in range(50):
             if page.evaluate('window.__cinematicDone===1'):break
             page.keyboard.press('Enter');page.wait_for_timeout(180)
@@ -121,7 +126,7 @@ with sync_playwright() as playwright:
         # dialogue must begin after that native reuse period, so #skip is
         # actually created by the controller rather than added by this test.
         page.wait_for_timeout(800)
-        engine('say([EP1INN.PRO.find(s=>s.sid==="P1").items.find(l=>Array.isArray(l)&&l[0]==="det1")],function(){},true)')
+        engine('say([EP1INN.PRO.find(s=>s.sid==="P1").items.find(l=>Array.isArray(l)&&l[0]==="det1")],function(){G.beats.inn_pro=1;render()},true)')
         expect('carriage')
         assert page.locator('#inn-story-cg .cinema-picture').evaluate('(e)=>getComputedStyle(e).animationName')=='none','Reduced-motion fade remains'
         page.locator('#skip').click();page.wait_for_timeout(150)
@@ -145,6 +150,6 @@ with sync_playwright() as playwright:
         assert page.locator('#inn-story-cg').count()==0,'Returning to main left a CG'
         assert not errors,errors
         assert not bad,bad
-        print('PASS',viewport,'authored 3 cuts, native tap/driver/skip, missing-art fallback, portrait/reduced motion, save-resume/main cleanup; JS/HTTP errors 0',flush=True)
+        print('PASS',viewport,'authored camera cuts, native tap/driver/skip, missing-art fallback, portrait/reduced motion, save-resume/main cleanup; JS/HTTP errors 0',flush=True)
         page.close()
     browser.close()

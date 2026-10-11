@@ -47097,8 +47097,9 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  window.__inset202=function(){return ""};
 
  function talkFig(){try{var tf=document.querySelector(".fstalk .tstage .tfig");if(!tf||typeof G==="undefined"||!G||!G.who)return;var k=G.who;
+   var m=(DL&&DL.stageWho===k)?(DL.stageMood||""):(DL&&tf.dataset.mood!=null?tf.dataset.mood:(function(){try{return moodOf(CASES[G.ci],k)}catch(e){return ""}})());
+   if(CASES[G.ci].id==="inn"&&window.__innPaintDialogue){var panel=document.querySelector(".fstalk .tpanel");if(window.__innPaintDialogue(tf,k,m,{surface:"talk",panel:panel&&panel.getBoundingClientRect()})){tf.classList.add("b202");return}}
    if(!on(k)){tf.classList.remove("b202");return}
-   var m=(DL&&DL.stageWho===k)?(DL.stageMood||""):(function(){try{return moodOf(CASES[G.ci],k)}catch(e){return ""}})();
    var p=pose(k,m),cur=tf.querySelector("img.b202");
    if(cur&&cur.dataset.k===k){if(cur.dataset.pose!==String(p)){cur.src=src(k,p);cur.dataset.pose=p}}
    else{tf.innerHTML=img(k,m)}
@@ -48867,8 +48868,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  try{var _r=render;render=function(){var r=_r.apply(this,arguments);try{prune()}catch(e){}return r}}catch(e){MISS.push("render")}
 
  /* ---- 순서 진행기: 대사 묶음 + {grant}{loc}{banner}{beat} ---- */
- function play(items,done){var i=0;
-  function step(){if(i>=items.length){done&&done();return}var it=items[i];
+ function play(items,done){var i=0,playGame=G,playBeats=G.beats||{},playPhase=!playBeats.inn_pro?"pro":playBeats.inn_final&&!playBeats.inn_end?"end":null,playSid=playPhase==="pro"?playBeats.inn_pi:playBeats.inn_ei;
+  function step(){if(G!==playGame||S.screen!=="case"||!cur())return;var b=G.beats||{};if(playPhase==="pro"&&(b.inn_pro||b.inn_pi!==playSid)||playPhase==="end"&&(!b.inn_final||b.inn_end||b.inn_ei!==playSid))return;if(i>=items.length){done&&done();return}var it=items[i];
    if(Array.isArray(it)){var batch=[];while(i<items.length&&Array.isArray(items[i])){batch.push(items[i].slice());i++}say(batch,function(){step()});return}
    i++;
    if(it.hint){hint(it.hint);step();return}
@@ -48935,7 +48936,8 @@ window.__aaOff=true; /* 행동 버튼은 화면 아래(엄지 자리)에 둔다 
  function runPro(i){var c=cur();if(!c)return;if(i>=EP.PRO.length){setb("inn_pro");G.beats.inn_bg=null;G.loc=LI.bed13;G.tab="scene";
    G.notice={title:EP.GOAL.title,text:EP.GOAL.text+" "+EP.TUT.spot+" "+EP.TUT.talk};saveProg();render();return}
   G.beats.inn_pi=i;var s=EP.PRO[i];G.beats.inn_psid=s.sid||null;G.beats.inn_bg=s.bg||null;G.loc=LI[s.loc];G.tab="scene";saveProg();render();
-  var go=function(){play(s.items,function(){if(s.after==="title"){(window.banner?banner(EP.title,EP.chapter):Promise.resolve()).then(function(){runPro(i+1)})}else runPro(i+1)})};
+  var proGame=G;function proAlive(){return G===proGame&&S.screen==="case"&&cur()===c&&!bt("inn_pro")&&G.beats.inn_pi===i}
+  var go=function(){if(!proAlive())return;play(s.items,function(){if(!proAlive())return;if(s.after==="title"){(typeof banner==="function"?banner(EP.title,EP.chapter):Promise.resolve()).then(function(){if(proAlive())runPro(i+1)})}else runPro(i+1)})};
   if(i===0&&window.__innColdTransition){go();hint("전날 오후 · 우편 마차")}else try{banner(s.title,s.sub).then(go)}catch(e){go()}}
  /* ---- 후일담 E1~E4 ---- */
  function runEnd(i){var c=cur();if(!c)return;if(i>=EP.END.length){setb("inn_end");G.loc=LI.hall;G.tab="scene";
@@ -50165,7 +50167,8 @@ window.__INN_WORLD_DATA={"dining": {"id": "BG02_dining", "locationId": "LOC_dini
 })();
 
 
-window.__innStoryArt={"carriage": true, "village": true, "seal": true};
+window.__innStoryArt={"carriage": true, "driver": true, "village": true, "seal": true};
+window.__innDialogueManifest={"id": "ch1-dialogue-v1", "created": "2026-10-11", "authorization": "User explicitly requested new close dialogue images distinct from standing background character sprites, with timing/design audit by agents.", "creation": "image_gen reference-guided creation and layout revision; original generated PNG bytes copied without pixel editing/cutting/resizing/background removal.", "coordinate_space": "absolute atlas source pixels; crop=[x,y,w,h]; face=[x,y,squareSize]", "state_order": ["neutral", "thinking", "distressed", "expressive"], "grid": {"columns": 4, "rows": 2, "cell_width": 384, "cell_height": 512}, "alpha_measurement": {"foreground_threshold": 32, "outer_cell_margin": 20, "note": "Raw image_gen RGBA includes isolated alpha=1/255 specks in otherwise transparent gutters. Every 20px outer cell margin has maximum alpha<=1; no foreground(alpha>=32) enters margins. PNG was not postprocessed."}, "atlases": {"family": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "rows": ["det1", "det0"], "sha256": "1571cc249164145621555fb333a49a6b842c55b182e0193c56610e5505b3c596", "original_source": "/workspace/generated_images/exec-7f0af13c-c128-4ab7-b1e5-6fecfbb7a36d.png", "identity_references": ["art/ch1/daram-v4/daram-idle-t0-dialogue.png", "art/ch1/source/dadol-profile-daram-matched-v2.png"], "rgba_alpha_range": [0, 254], "cells": [{"character": "det1", "state": "neutral", "cell": [0, 0, 384, 512], "foreground_bbox": [66, 145, 306, 446], "visible_margin": [66, 145, 78, 66], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 22}, {"character": "det1", "state": "thinking", "cell": [384, 0, 384, 512], "foreground_bbox": [460, 143, 698, 446], "visible_margin": [76, 143, 70, 66], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 41}, {"character": "det1", "state": "distressed", "cell": [768, 0, 384, 512], "foreground_bbox": [835, 145, 1070, 446], "visible_margin": [67, 145, 82, 66], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 65}, {"character": "det1", "state": "expressive", "cell": [1152, 0, 384, 512], "foreground_bbox": [1224, 143, 1467, 446], "visible_margin": [72, 143, 69, 66], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 47}, {"character": "det0", "state": "neutral", "cell": [0, 512, 384, 512], "foreground_bbox": [61, 615, 312, 903], "visible_margin": [61, 103, 72, 121], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 34}, {"character": "det0", "state": "thinking", "cell": [384, 512, 384, 512], "foreground_bbox": [448, 615, 702, 903], "visible_margin": [64, 103, 66, 121], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 69}, {"character": "det0", "state": "distressed", "cell": [768, 512, 384, 512], "foreground_bbox": [830, 621, 1085, 903], "visible_margin": [62, 109, 67, 121], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 184}, {"character": "det0", "state": "expressive", "cell": [1152, 512, 384, 512], "foreground_bbox": [1221, 615, 1476, 903], "visible_margin": [69, 103, 60, 121], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 148}]}, "inn": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "rows": ["innma", "seryeon"], "sha256": "6cb32d7127719114fe34d66b4abd36c512817805520e3fe7103a60e1a3fffe14", "original_source": "/workspace/generated_images/exec-2a306655-b315-41a2-96d9-68276d2c8bf0.png", "identity_references": ["art/ch1/cast/innma-neutral-v5.png", "art/ch1/cast/seryeon-seated-paperwork-v2-talk.png"], "rgba_alpha_range": [0, 254], "cells": [{"character": "innma", "state": "neutral", "cell": [0, 0, 384, 512], "foreground_bbox": [59, 143, 316, 474], "visible_margin": [59, 143, 68, 38], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 187}, {"character": "innma", "state": "thinking", "cell": [384, 0, 384, 512], "foreground_bbox": [441, 143, 704, 474], "visible_margin": [57, 143, 64, 38], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 235}, {"character": "innma", "state": "distressed", "cell": [768, 0, 384, 512], "foreground_bbox": [824, 142, 1084, 474], "visible_margin": [56, 142, 68, 38], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 30}, {"character": "innma", "state": "expressive", "cell": [1152, 0, 384, 512], "foreground_bbox": [1207, 142, 1471, 474], "visible_margin": [55, 142, 65, 38], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 223}, {"character": "seryeon", "state": "neutral", "cell": [0, 512, 384, 512], "foreground_bbox": [45, 593, 338, 959], "visible_margin": [45, 81, 46, 65], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 583}, {"character": "seryeon", "state": "thinking", "cell": [384, 512, 384, 512], "foreground_bbox": [432, 592, 723, 959], "visible_margin": [48, 80, 45, 65], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 890}, {"character": "seryeon", "state": "distressed", "cell": [768, 512, 384, 512], "foreground_bbox": [812, 592, 1111, 959], "visible_margin": [44, 80, 41, 65], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 375}, {"character": "seryeon", "state": "expressive", "cell": [1152, 512, 384, 512], "foreground_bbox": [1196, 592, 1492, 959], "visible_margin": [44, 80, 44, 65], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 583}]}, "friends": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "rows": ["nabi", "geokkuri"], "sha256": "5d036b7a4e51dfa1e7ddbe520309c9e661e56b9c6522e7e11acaaf9ae6ab085d", "original_source": "/workspace/generated_images/exec-e15eb147-a959-4af8-b1c6-3305dc022277.png", "identity_references": ["art/ch1/cast/nabi-front.png", "art/ch1/action-poses/bami/dialogue.png"], "rgba_alpha_range": [0, 254], "cells": [{"character": "nabi", "state": "neutral", "cell": [0, 0, 384, 512], "foreground_bbox": [69, 132, 317, 455], "visible_margin": [69, 132, 67, 57], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 29}, {"character": "nabi", "state": "thinking", "cell": [384, 0, 384, 512], "foreground_bbox": [464, 126, 699, 455], "visible_margin": [80, 126, 69, 57], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 79}, {"character": "nabi", "state": "distressed", "cell": [768, 0, 384, 512], "foreground_bbox": [831, 164, 1087, 455], "visible_margin": [63, 164, 65, 57], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 223}, {"character": "nabi", "state": "expressive", "cell": [1152, 0, 384, 512], "foreground_bbox": [1209, 126, 1464, 455], "visible_margin": [57, 126, 72, 57], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 75}, {"character": "geokkuri", "state": "neutral", "cell": [0, 512, 384, 512], "foreground_bbox": [64, 586, 335, 925], "visible_margin": [64, 74, 49, 99], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 8}, {"character": "geokkuri", "state": "thinking", "cell": [384, 512, 384, 512], "foreground_bbox": [452, 586, 717, 931], "visible_margin": [68, 74, 51, 93], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 14}, {"character": "geokkuri", "state": "distressed", "cell": [768, 512, 384, 512], "foreground_bbox": [825, 586, 1093, 928], "visible_margin": [57, 74, 59, 96], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 186}, {"character": "geokkuri", "state": "expressive", "cell": [1152, 512, 384, 512], "foreground_bbox": [1204, 586, 1472, 931], "visible_margin": [52, 74, 64, 93], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 102}]}, "scholars": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "rows": ["doto", "buri"], "sha256": "30c9009575624696f06ef5dbf4c5188ae1cb05b8172588bc1398b72f61d049c6", "original_source": "/workspace/generated_images/exec-202b5db3-8b9b-43f9-8592-9efa513001b0.png", "identity_references": ["art/ch1/source/doto-v4-selected.png", "art/ch1/action-poses/buri/dialogue.png"], "rgba_alpha_range": [0, 254], "cells": [{"character": "doto", "state": "neutral", "cell": [0, 0, 384, 512], "foreground_bbox": [106, 145, 321, 463], "visible_margin": [106, 145, 63, 49], "outer20px_alpha_max": 0, "outer20px_nonzero_alpha1_count": 0}, {"character": "doto", "state": "thinking", "cell": [384, 0, 384, 512], "foreground_bbox": [485, 143, 708, 465], "visible_margin": [101, 143, 60, 47], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 10}, {"character": "doto", "state": "distressed", "cell": [768, 0, 384, 512], "foreground_bbox": [856, 143, 1072, 463], "visible_margin": [88, 143, 80, 49], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 13}, {"character": "doto", "state": "expressive", "cell": [1152, 0, 384, 512], "foreground_bbox": [1237, 143, 1472, 464], "visible_margin": [85, 143, 64, 48], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 3}, {"character": "buri", "state": "neutral", "cell": [0, 512, 384, 512], "foreground_bbox": [83, 586, 325, 884], "visible_margin": [83, 74, 59, 140], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 2}, {"character": "buri", "state": "thinking", "cell": [384, 512, 384, 512], "foreground_bbox": [464, 590, 705, 884], "visible_margin": [80, 78, 63, 140], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 20}, {"character": "buri", "state": "distressed", "cell": [768, 512, 384, 512], "foreground_bbox": [837, 589, 1075, 884], "visible_margin": [69, 77, 77, 140], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 8}, {"character": "buri", "state": "expressive", "cell": [1152, 512, 384, 512], "foreground_bbox": [1213, 590, 1485, 884], "visible_margin": [61, 78, 51, 140], "outer20px_alpha_max": 0, "outer20px_nonzero_alpha1_count": 0}]}, "witnesses": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "rows": ["karo", "wanggu"], "sha256": "5b3217c4643d0bc2788b91382ac4c7e83729d9be15f841e49bc528486d196e19", "original_source": "/workspace/generated_images/exec-6ab81a3a-a1a9-4ceb-bf6b-61a84d235798.png", "identity_references": ["art/ch1/action-poses/karo/dialogue.png", "art/ch1/neoul-v4/neoul-default.png"], "rgba_alpha_range": [0, 254], "cells": [{"character": "karo", "state": "neutral", "cell": [0, 0, 384, 512], "foreground_bbox": [73, 163, 326, 480], "visible_margin": [73, 163, 58, 32], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 12}, {"character": "karo", "state": "thinking", "cell": [384, 0, 384, 512], "foreground_bbox": [467, 160, 712, 480], "visible_margin": [83, 160, 56, 32], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 48}, {"character": "karo", "state": "distressed", "cell": [768, 0, 384, 512], "foreground_bbox": [837, 169, 1078, 480], "visible_margin": [69, 169, 74, 32], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 16}, {"character": "karo", "state": "expressive", "cell": [1152, 0, 384, 512], "foreground_bbox": [1222, 162, 1490, 481], "visible_margin": [70, 162, 46, 31], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 9}, {"character": "wanggu", "state": "neutral", "cell": [0, 512, 384, 512], "foreground_bbox": [63, 558, 326, 889], "visible_margin": [63, 46, 58, 135], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 90}, {"character": "wanggu", "state": "thinking", "cell": [384, 512, 384, 512], "foreground_bbox": [451, 555, 712, 889], "visible_margin": [67, 43, 56, 135], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 293}, {"character": "wanggu", "state": "distressed", "cell": [768, 512, 384, 512], "foreground_bbox": [828, 560, 1088, 889], "visible_margin": [60, 48, 64, 135], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 112}, {"character": "wanggu", "state": "expressive", "cell": [1152, 512, 384, 512], "foreground_bbox": [1210, 557, 1490, 889], "visible_margin": [58, 45, 46, 135], "outer20px_alpha_max": 1, "outer20px_nonzero_alpha1_count": 74}]}}, "characters": {"det1": {"neutral": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [52, 132, 282, 326], "face": [84, 138, 240]}, "thinking": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [436, 132, 282, 326], "face": [468, 138, 240]}, "distressed": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [820, 132, 282, 326], "face": [852, 138, 240]}, "expressive": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [1204, 132, 282, 326], "face": [1236, 138, 240]}}, "det0": {"neutral": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [51, 605, 283, 308], "face": [78, 610, 240]}, "thinking": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [435, 605, 283, 308], "face": [462, 610, 240]}, "distressed": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [819, 605, 283, 308], "face": [846, 610, 240]}, "expressive": {"src": "art/ch1/dialogue-v1/family.png", "width": 1536, "height": 1024, "crop": [1203, 605, 283, 308], "face": [1230, 610, 240]}}, "innma": {"neutral": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [45, 132, 285, 352], "face": [59, 139, 263]}, "thinking": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [429, 132, 285, 352], "face": [443, 139, 263]}, "distressed": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [813, 132, 285, 352], "face": [827, 139, 263]}, "expressive": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [1197, 132, 285, 352], "face": [1211, 139, 263]}}, "seryeon": {"neutral": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [34, 582, 319, 387], "face": [73, 586, 258]}, "thinking": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [418, 582, 319, 387], "face": [457, 586, 258]}, "distressed": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [802, 582, 319, 387], "face": [841, 586, 258]}, "expressive": {"src": "art/ch1/dialogue-v1/inn.png", "width": 1536, "height": 1024, "crop": [1186, 582, 319, 387], "face": [1225, 586, 258]}}, "nabi": {"neutral": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [47, 116, 282, 349], "face": [59, 120, 262]}, "thinking": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [431, 116, 282, 349], "face": [443, 120, 262]}, "distressed": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [815, 116, 282, 349], "face": [827, 120, 262]}, "expressive": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [1199, 116, 282, 349], "face": [1211, 120, 262]}}, "geokkuri": {"neutral": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [42, 576, 303, 365], "face": [59, 660, 280]}, "thinking": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [426, 576, 303, 365], "face": [443, 660, 280]}, "distressed": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [810, 576, 303, 365], "face": [827, 660, 280]}, "expressive": {"src": "art/ch1/dialogue-v1/friends.png", "width": 1536, "height": 1024, "crop": [1194, 576, 303, 365], "face": [1211, 660, 280]}}, "doto": {"neutral": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [75, 133, 259, 342], "face": [88, 138, 238]}, "thinking": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [459, 133, 259, 342], "face": [472, 138, 238]}, "distressed": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [843, 133, 259, 342], "face": [856, 138, 238]}, "expressive": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [1227, 133, 259, 342], "face": [1240, 138, 238]}}, "buri": {"neutral": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [51, 576, 292, 318], "face": [70, 580, 252]}, "thinking": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [435, 576, 292, 318], "face": [454, 580, 252]}, "distressed": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [819, 576, 292, 318], "face": [838, 580, 252]}, "expressive": {"src": "art/ch1/dialogue-v1/scholars.png", "width": 1536, "height": 1024, "crop": [1203, 576, 292, 318], "face": [1222, 580, 252]}}, "karo": {"neutral": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [59, 150, 289, 341], "face": [77, 156, 254]}, "thinking": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [443, 150, 289, 341], "face": [461, 156, 254]}, "distressed": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [827, 150, 289, 341], "face": [845, 156, 254]}, "expressive": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [1211, 150, 289, 341], "face": [1229, 156, 254]}}, "wanggu": {"neutral": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [48, 545, 300, 354], "face": [65, 550, 266]}, "thinking": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [432, 545, 300, 354], "face": [449, 550, 266]}, "distressed": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [816, 545, 300, 354], "face": [833, 550, 266]}, "expressive": {"src": "art/ch1/dialogue-v1/witnesses.png", "width": 1536, "height": 1024, "crop": [1200, 545, 300, 354], "face": [1217, 550, 266]}}}};
 /* ===== 1장 대화 무대 정리 (inn_stage) =====
    기준(2026-10-09 확정): 원탁 회의 밖의 대화는 아빠·다람과 상대 한 명. 화면은 아빠 시점이라 아빠 얼굴은 띄우지 않는다.
    1) 대화 상대 고정: 한 대화(대사 묶음)의 상대를 처음에 정해 끝까지 그 인물만 세운다. 다람·아빠가 말해도 상대를 바꾸지 않는다.
@@ -50310,7 +50313,8 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
    if(s){var im=document.createElement("img");im.alt="";im.draggable=false;fig.appendChild(im)}else{fig.dataset.face="1";try{fig.innerHTML=typeof pf==="function"?pf(k,m):""}catch(e){}}
    layer.appendChild(fig);requestAnimationFrame(function(){fig&&fig.classList.add("in")})}
   fig.dataset.mood=String(m||"").split(/\s+/)[0];
-  if(s){var im2=fig.firstChild;if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
+  if(window.__innPaintDialogue&&window.__innPaintDialogue(fig,k,m,{surface:'stage'}))return;
+  if(s){var im2=fig.querySelector(':scope>img');if(!im2){fig.replaceChildren();im2=document.createElement('img');im2.alt='';im2.draggable=false;fig.appendChild(im2)}if(im2.getAttribute("src")!==s)im2.setAttribute("src",s);var b=BOX[s];if(!b)b=[192,192,20,170,10,6];
    var F=frame(k,s,W,H);im2.style.width=F.w+"px";im2.style.height=F.h+"px";
    fig.style.width=Math.round(F.w)+"px";fig.style.height=Math.round(F.h)+"px";fig.style.left=Math.round(F.left)+"px";fig.style.top=Math.round(F.top)+"px"}
   else{var fw=Math.round(H*.62);fig.style.width=fw+"px";fig.style.height=fw+"px";fig.style.left=Math.round(W/2-fw/2)+"px";fig.style.top=Math.round(H*.05)+"px"}}
@@ -50345,6 +50349,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   /* 조사 화면(접수대·2층 복도)의 양옆 빈칸: 검은 띠 대신 같은 그림을 흐리고 어둡게 깔아 화면 전체를 장소로 채운다(조사 지점 위치는 그대로) */
   try{var stg=document.querySelector(".stage"),fill=null;if(cur()&&!full&&stg&&document.querySelector("#bigscene svg[data-bg]:not([data-inn-world])")){var bd=bgDef();if(bd&&bd.def&&bd.def.src)fill=bd.def.src}
    if(stg){if(fill){var u='url("'+fill+'")';if(stg.style.getPropertyValue("--innfill")!==u)stg.style.setProperty("--innfill",u);stg.classList.add("inn-fill")}else stg.classList.remove("inn-fill")}}catch(e){}}
+ window.__innRefreshDialogueStage=function(){st.size='';sync()};
  /* 마차 장면: 앉은 다람(192×256, 월드 좌상단 448,124)을 배경 그림 안에 넣고, 대화 중에는 배경+다람을 (318,124,422,195) 구역으로 함께 2배 고정 표시.
     다람만 키우지 않는다. 줌 애니메이션 없음. 걱정 표정은 감정이 바뀌는 줄에서 한 번만 교체 */
  var seat={on:false,scene:""};
@@ -50485,7 +50490,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   document.body.appendChild(el);try{SFX.page()}catch(x){}draw()}
  window.__innInspect=inspect;
  /* 연출 지시(글자 없음): 화면 상대 교체·퇴장, 효과음. 대사 사이 잠깐 멈춤 동안 실행된다 */
- function dirRun(d){try{if(!d)return;if(d.sfx)try{SFX[d.sfx]&&SFX[d.sfx]()}catch(e){}
+ function dirRun(d){try{if(!d)return;if(window.__innPresentationDirection)window.__innPresentationDirection(d);if(d.sfx)try{SFX[d.sfx]&&SFX[d.sfx]()}catch(e){}
   if(Object.prototype.hasOwnProperty.call(d,"who")){var sc=scene();if(sc&&sc.key!==st.scene){st.scene=sc.key;st.shown=null}if(String(d.chime)==="0")st.quiet=1;st.who=d.who==="none"?null:d.who;st.whoDl=-1;st.m=null;
    var v=document.getElementById("dlgveil");if(v&&ensure()){if(!st.who&&fig){var f=fig;fig=null;f.classList.remove("in");setTimeout(function(){f.remove()},260)}else draw(st.who,null)}}}catch(e){}}
  window.__innDir=dirRun;
@@ -50508,7 +50513,8 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
  function untag(lines){try{if(!cur()||!Array.isArray(lines))return;lines.forEach(function(x){if(Array.isArray(x)&&typeof x[1]==="string"&&TAGRE.test(x[1]))x[1]=x[1].replace(TAGRE,"");else if(x&&typeof x.t==="string"&&TAGRE.test(x.t))x.t=x.t.replace(TAGRE,"")})}catch(e){}}
  function split(base,self,lines,done,sk){untag(lines);try{if(cur()&&Array.isArray(lines)&&lines.some(function(x){return Array.isArray(x)&&(x[0]==="@inspect"||x[0]==="@dir"||x[0]==="@grant")})){
     var parts=[],curp=[];lines.forEach(function(x){if(Array.isArray(x)&&x[0]==="@inspect"){parts.push(curp);parts.push(x[1]);curp=[]}else if(Array.isArray(x)&&x[0]==="@dir"){parts.push(curp);parts.push({dir:parseDir(x[1])});curp=[]}else if(Array.isArray(x)&&x[0]==="@grant"){parts.push(curp);parts.push({grant:x[1]});curp=[]}else curp.push(x)});parts.push(curp);
-    var splitGame=G,k=0;(function next(){if(G!==splitGame||!cur())return;if(k>=parts.length){done&&done();return}var p=parts[k++];
+    var splitGame=G,splitBeats=G.beats||{},splitPhase=!splitBeats.inn_pro?'pro':splitBeats.inn_final&&!splitBeats.inn_end?'end':null,splitSid=splitPhase==='pro'?splitBeats.inn_pi:splitBeats.inn_ei,k=0;
+    (function next(){if(G!==splitGame||!cur()||S.screen!=='case')return;var now=G.beats||{};if(splitPhase==='pro'&&(now.inn_pro||now.inn_pi!==splitSid)||splitPhase==='end'&&(!now.inn_final||now.inn_end||now.inn_ei!==splitSid))return;if(k>=parts.length){done&&done();return}var p=parts[k++];
      if(typeof p==="string"){var v=document.getElementById("dlgveil");if(v&&!(typeof DL!=="undefined"&&DL))v.remove();inspect(p,next);return}
      if(p&&p.grant){var gid=p.grant;if(G.found.indexOf(gid)>=0){next();return}try{window.__innGrant&&window.__innGrant(gid)}catch(e){}var v2=document.getElementById("dlgveil");if(v2&&!(typeof DL!=="undefined"&&DL))v2.remove();if(window.__innCard)window.__innCard(gid,function(){next()});else{try{SFX.found()}catch(e){}next()}return}
      if(p&&p.dir){dirRun(p.dir);setTimeout(next,p.dir.ms!=null?p.dir.ms:420);return}
@@ -50757,7 +50763,7 @@ if(k==="det1"){var dm=String(m||"").split(/\s+/)[0];
   "html,body{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}",
   "html body.rtg #rtgtal{left:8px!important;top:66px!important;transform:none!important;white-space:normal!important;max-width:150px!important;text-align:left!important;line-height:1.35!important}"
  ].join("\n");document.head.appendChild(css);
- window.__innStage=function(){var r=fig&&fig.getBoundingClientRect();return {src:fig&&fig.firstChild&&fig.firstChild.getAttribute?String(fig.firstChild.getAttribute("src")||"").split("/").pop():"",scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};
+ window.__innStage=function(){var r=fig&&fig.getBoundingClientRect(),im=fig&&fig.querySelector('img,svg.dialogue-bust');return {src:im?String(im.getAttribute('src')||im.dataset.src||'').split('/').pop():'',scene:st.scene,who:st.who,fig:fig?(fig.dataset.k+(fig.classList.contains("ls")?"(듣는중)":"")+"@"+Math.round(r.left)+","+Math.round(r.top)+" "+Math.round(r.width)+"x"+Math.round(r.height)):"-"}};
 })();
 
  /* 2026-10-10 v2: 증인에게 증거 보여 주기 반응표(EP.SHOW). 보여 주면 생기는 상황(beat)은 새 질문을 연다 */
@@ -50813,19 +50819,44 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   function cur(){try{return S.screen==="case"&&!!G&&!!CASES[G.ci]&&CASES[G.ci].id==="inn"}catch(e){return false}}
   function sidOf(pi){try{var E=window.EP1INN||EP;return (E.PRO[pi]&&E.PRO[pi].sid)||("P"+(pi+1))}catch(e){return "P"+(pi+1)}}   /* 2026-10-10: EP는 이 모듈 범위에 없어 장면 번호가 밀려(P6·P8 제외 뒤) 신고 장면에서도 여행곡이 나오던 문제 */
   function beats(){try{return (G&&G.beats)||{}}catch(e){return {}}}
+  /* The saved script cursor can move before its picture/card has committed.
+     Only the presentation owner's ready scene may play dialogue music/cues. */
+  function presentation(){try{return window.__innPresentationState&&window.__innPresentationState()}catch(e){return null}}
+  function blocked(){var p=presentation();return !!(p&&(!p.ready||p.transitioning||p.cold))}
+  /* An atomic camera decode retains its already committed picture. Keep that
+     scene's score, while liveLine still waits to emit the new camera's cues. */
+  function musicBlocked(){var p=presentation();if(p&&p.loading&&p.cut&&!p.cold&&p.game===OWNER.game&&p.owner===OWNER.key)return false;return !!(p&&(!p.ready||p.transitioning||p.cold))}
+  function presentedSid(){var p=presentation();return p&&p.phase==="pro"?p.sid:sidOf(beats().inn_pi|0)}
+  var OWNER={game:null,key:null,ph:null},SCOPED=[];
+  function scope(){var p=presentation(),b=beats(),key=p&&p.owner;
+   if(!cur()||document.getElementById("innmain"))return null;
+   if(!key)key=!b.inn_pro?"pro:"+sidOf(b.inn_pi|0):b.inn_final&&!b.inn_end?"end:"+(b.inn_ei|0):"investigation";
+   if(key==="investigation")key+=":"+G.loc;
+   return {game:G,key:key,ph:document.querySelector("body>.rt")&&window.__rtPh?window.__rtPh():null};
+  }
+  function sameScope(s){var n=scope();return !!(s&&n&&s.game===n.game&&s.key===n.key&&s.ph===n.ph)}
+  function scopedBus(){var a=AC||(S.sound&&ac());if(!a||!SFXG)return null;var g=a.createGain();g.connect(SFXG);SCOPED.push(g);return g}
+  function retireBus(g){if(!g)return;try{g.disconnect()}catch(e){}var i=SCOPED.indexOf(g);if(i>=0)SCOPED.splice(i,1)}
+  function clearScoped(){SCOPED.forEach(function(g){try{g.disconnect()}catch(e){}});SCOPED=[]}
+  function syncOwner(){var n=scope();if(OWNER.game===(n&&n.game)&&OWNER.key===(n&&n.key)&&OWNER.ph===(n&&n.ph))return;
+   OWNER=n||{game:null,key:null,ph:null};clearScoped();tenseStop();coldStop();
+   M.sid=null;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;M.obj=0;M.f4=0;M.fin=0;M.failure=false;M.carStopped=false;M.bell=false;M.inv=false;
+   RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};lastLn=null;
+   if(AMB){if(AMB.cur)stop(AMB.cur,.08);AMB.cur=null;if(AMB.dep)stop(AMB.dep,.08);AMB.dep=null;AMB.old.forEach(function(I){try{I.out.disconnect()}catch(e){}})}
+  }
   var RTLINE=null,CUE={mode:null,press:false,ph:null,at:0,line:null};
   function cueLine(l){var ph=window.__rtPh&&window.__rtPh();if(CUE.ph!==ph){CUE.press=false;CUE.ph=ph}if(CUE.line===l)return;CUE.line=l;CUE.mode=l&&l.audio||null;CUE.at=Date.now();if(CUE.mode==="press"||CUE.mode==="impact")CUE.press=true;if(CUE.mode==="calm")CUE.press=false;}
-  window.__innAudioLine=function(l){RTLINE=l||null;cueLine(RTLINE)};
-  function liveLine(){try{if(DL&&DL.lines)return DL.lines[DL.i];if(document.querySelector("body>.rt"))return RTLINE}catch(e){}return null}
+  window.__innAudioLine=function(l){syncOwner();RTLINE=l||null;cueLine(RTLINE)};
+  function liveLine(){try{if(blocked())return null;if(DL&&DL.lines)return DL.lines[DL.i];if(document.querySelector("body>.rt"))return RTLINE}catch(e){}return null}
   function lineText(){var l=liveLine();return l?String(Array.isArray(l)?(l[7]||l[1]||""):(l.t||"")):""}
   function lineWho(){var l=liveLine();return l?(Array.isArray(l)?l[0]:l.w):""}
   function lineKind(){if(lineWho()==="narr")return /^\(/.test(lineText())?"inner":"narr";return "say"}
 
   /* ---- 음악 선택 ---- */
   var M={inv:false,p10:0,fin:0,carStopped:false,bell:false,failure:false};
-  window.__innAudioReset=function(){M.obj=0;M.f4=0;M.fin=0;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop()};
+  window.__innAudioReset=function(){OWNER={game:null,key:null,ph:null};syncOwner();M.obj=0;M.f4=0;M.fin=0;M.sid=null;M.failure=false;M.inv=false;M.carStopped=false;M.bell=false;M.ctxScope=null;M.ctxKey=null;M.ctxLine=null;RTLINE=null;CUE={mode:null,press:false,ph:null,at:0,line:null};tenseStop();coldStop();clearScoped()};
   window.__innAudioFailure=function(on){M.failure=!!on;M.obj=0;M.f4=0;tenseStop()};
-  window.__innAudioState=function(){return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine(),context:M.ctxKey}};
+  window.__innAudioState=function(){var p=presentation();return {line:lineText(),who:lineWho(),cue:CUE.mode,pressure:CUE.press,heartbeat:TENSE.k,heartbeatActive:TENSE.on,coldHeartbeat:!!(HB&&HB.on),failure:M.failure,bell:M.bell,carStopped:M.carStopped,confession:!!M.f4,key:window.__innKeyLine&&window.__innKeyLine(),context:M.ctxKey,owner:OWNER.key,presentation:p&&{sid:p.sid,phase:p.phase,camera:p.camera,ready:p.ready,transitioning:p.transitioning},scopedSources:SCOPED.length}};
   /* Complete media definitions: no synthesized piano or mismatched character themes. */
   Object.keys(window.__INN_MUSIC||{}).forEach(function(k){A.SONGS[k]=window.__INN_MUSIC[k]});
   /* Authored turns, not punctuation or a sad face, change the music. A cue
@@ -50849,26 +50880,28 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
      몸/정지/차가움을 차례로 확인하며 긴장을 유지. 생존 확인은 회의에 남겨 둔다. */
   var TENSE={on:false,k:0,gen:0,nul:0};
   var TENSE_ON=/^…상자 뒤에 뭐가 있어|안에 작은 애가 있어|침대 밑에 작은 애가 있어|밑에 작은 애가|^등 뒤 천장에서, 거꾸로 된 두 눈/,TENSE_OFF=/^바구니랑 수건|^작은 몸을 바구니에 옮기고|^모르겠어\. 그러니까 알아봐야지|^다람이 뛰어 돌아가/;
-  function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0}
-  function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!cur()){tenseStop();return}
-    if(AC&&AC.state==="running"&&S.sound){var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),null,38);noise(.06,v*.25,0,160,"lowpass");TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
+  function tenseStop(){TENSE.on=false;TENSE.gen++;TENSE.nul=0;retireBus(TENSE.bus);TENSE.bus=null}
+  function tenseTick(gen){try{if(!TENSE.on||gen!==TENSE.gen)return;if(!sameScope(TENSE.owner)||blocked()){tenseStop();return}
+    if(AC&&AC.state==="running"&&S.sound){if(!TENSE.bus)TENSE.bus=scopedBus();var held=!!document.querySelector('#inn-under-scene[data-stage="held"]'),v=held?.21:TENSE.discovery?.28:.34,gap=held?1.16:TENSE.discovery?Math.max(.72,1.04-TENSE.k*.015):Math.max(.58,.86-TENSE.k*.02);tone(58,.16,"sine",v,0,TENSE.bus,40);tone(52,.14,"sine",v*.7,gap*(TENSE.discovery?.28:.32),TENSE.bus,38);noise(.06,v*.25,0,160,"lowpass",TENSE.bus);TENSE.k++;setTimeout(function(){tenseTick(gen)},gap*1000)}
     else setTimeout(function(){tenseTick(gen)},300)}catch(e){tenseStop()}}
   window.__innTense=function(){return TENSE.on};
-  setInterval(function(){try{if(!cur()||!liveLine()){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
+  setInterval(function(){try{syncOwner();if(blocked()){if(TENSE.on)tenseStop();return}if(!cur()||!liveLine()){if(TENSE.on){if(!TENSE.nul)TENSE.nul=Date.now();else if(Date.now()-TENSE.nul>2500)tenseStop()}return}TENSE.nul=0;
     var t=lineText(); /* 좁은 화면에서도 페이지 분할 전 원문으로 큐를 판별 */
     if(TENSE.on&&TENSE.meeting&&CUE.mode!=="pulse")tenseStop();
-    if(!TENSE.on&&(TENSE_ON.test(t)||CUE.mode==="pulse")){TENSE.on=true;TENSE.k=0;TENSE.meeting=CUE.mode==="pulse";var gen=++TENSE.gen;
+    if(!TENSE.on&&(TENSE_ON.test(t)||CUE.mode==="pulse")){TENSE.on=true;TENSE.k=0;TENSE.owner=scope();TENSE.meeting=CUE.mode==="pulse";var gen=++TENSE.gen;
       var discovery=TENSE.discovery=TENSE.meeting||/상자 뒤|작은 애가/.test(t);if(!discovery)try{SFX.cut9&&SFX.cut9()}catch(e){}
       setTimeout(function(){tenseTick(gen)},discovery?1200:450);
     }else if(TENSE.on&&TENSE_OFF.test(t))tenseStop()}catch(e){}},60);
   window.__innWant=function(){
+   syncOwner();
    if(document.getElementById("innmain"))return "inn_title";
    if(!cur())return undefined;
+   if(musicBlocked())return null;
    A.hush=null;A.exp=null;A.pursuit=null;          /* 옛 체계의 일시 정지·승리곡·추격곡이 끼어들어 곡을 다시 시작하지 않게 */
    if(TENSE.on||M.failure||(CUE.ph===(window.__rtPh&&window.__rtPh())&&(CUE.mode==="silence"||CUE.mode==="pulse"||(CUE.mode==="impact"&&Date.now()-CUE.at<800))))return null;                         /* 발견 순간: 음악 없음 */
    var b=beats(),now=Date.now();
    /* 2026-10-10 v2 음악 큐시트(dev/review/CH1_V2_DESIGN.txt 5장): 영화처럼 줄·장면 시점에 맞춰 끊고, 한 방 치고, 다시 들어온다 */
-   if(!b.inn_pro){var pi=b.inn_pi|0,sid=sidOf(pi);if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0;M.carStopped=false;M.bell=false}if(+String(sid).slice(1)<11)M.inv=false;
+   if(!b.inn_pro){var sid=presentedSid();if(M.sid!==sid){M.sid=sid;M.sidT=now;M.p5c=0;M.hit=0}if(+String(sid).slice(1)<11)M.inv=false;
     if(sid==="P1"&&now-M.sidT<2000)return null;
     if(sid==="P10"&&M.bell)return null;
     if(sid==="P10b")return null;   /* 밤 복도: 음악 없이 정적(두 눈이 뜰 때 심장 박동) */   /* 제목 카드 뒤 2초 정적 → 여행곡 */
@@ -50897,9 +50930,10 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   window.__innDuck0=function(){
    if(document.getElementById("inncold"))return COLDD;   /* 콜드 오픈: 비트마다 정한 낮춤(정적으로 갈수록 작게) */
    if(!cur())return 1;
+   if(musicBlocked())return 0;
    var b=beats(),now=Date.now(),f=(typeof DL!=="undefined"&&DL)?.55:1,t=lineText();   /* 대화 중 배경음 .55: 글자·행동 효과음이 묻히지 않게 */
    if(!b.inn_pro){var pi=b.inn_pi|0;
-    var sd=sidOf(pi);if(sd!=="P10")M.p10=0;
+    var sd=presentedSid();if(sd!=="P10")M.p10=0;
     if(sd==="P5"){f=.8;if(/^열셋/.test(t))M.p5c=1;if(M.p5c)f=.38}   /* P5 복도: 같은 곡 낮게, "열셋."부터 더 낮게 */
     if(sd==="P10")f=.55;   /* 가족 대화는 낮게 유지하고 열 시 종에서 음악을 끊는다. */
     if(sd==="P12")f=.7;if(sd==="P13")f=.6;     /* 수색·발견: 사건곡 낮게 */
@@ -50916,6 +50950,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   /* ---- 타이핑음 ---- */
   var lastT=0;
   window.__innType=function(kind){try{
+   if(blocked())return;
    if(TENSE.on||CUE.mode==="pulse"||CUE.mode==="silence")return; /* 정적/박동 구간에는 글자 효과음도 쉰다 */
    if(!S.sound||!AC||AC.state!=="running")return;var now=AC.currentTime;if(now-lastT<.075)return;lastT=now;
    var v=kind==="inner"?.6:kind==="narr"?.7:1;   /* 작고 둥근 클릭, 발음 사이 75ms 여백 */
@@ -50941,7 +50976,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   SFX.pop9=function(){if(!S.sound)return;try{[880,1320,1760].forEach(function(f,i){tone(f,.12,"triangle",.06,i*.05)});noise(.035,.018,0,4000,"highpass")}catch(e){}};
   /* 결정적 대사: 배경음이 끊길 때 둔탁한 한 방 */
   SFX.cut9=function(){if(!S.sound)return;try{tone(70,.6,"sine",.55,0,null,40);noise(.35,.25,0,240,"lowpass");tone(2200,.05,"square",.05)}catch(e){}};
-  var lastLn=null;setInterval(function(){try{if(!cur())return;var ln=liveLine();if(!ln){lastLn=null;return}
+  var lastLn=null;setInterval(function(){try{syncOwner();if(!cur()||blocked())return;var ln=liveLine();if(!ln){lastLn=null;return}
     var t=lineText(),who=lineWho(),token=who+"|"+t;
     if(token===lastLn)return;lastLn=token;   /* 분할된 다음 쪽에서도 원문 기준으로 효과음은 한 번만 */
     var md=String(Array.isArray(ln)?(ln[2]||ln[6]||""):(ln.m||""));
@@ -50955,27 +50990,29 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   /* 회의·최종 대결 정답 외침: 엔진 외침 효과음에 맞춰 음악을 끊고 추궁곡으로 */
   (function(){var o=SFX.shout;SFX.shout=function(){try{if(cur()&&document.querySelector("body>.rt")){M.obj=Date.now();M.objDL=0;M.objPh=window.__rtPh&&__rtPh()}}catch(e){}return o&&o.apply(this,arguments)}})();
   wrap("doorOpen",function(){window.__innRecordedSfx.play("open")});
-  SFX.carStop=function(){M.carStopped=true;try{if(AMB.cur&&AMB.cur.key==="carriage"){stop(AMB.cur,.3);AMB.cur=null}}catch(e){}};
-  SFX.bell10=function(){M.bell=true;if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
-    tone(196,3,"sine",.16,w);tone(392,1.6,"sine",.05,w);tone(470,1.2,"sine",.025,w);noise(.05,.05,w,900,"lowpass")}}catch(e){}};
+  SFX.carStop=function(){syncOwner();M.carStopped=true;try{if(AMB.cur&&AMB.cur.key==="carriage"){stop(AMB.cur,.3);AMB.cur=null}}catch(e){}};
+  SFX.bell10=function(){syncOwner();if(!cur()||blocked())return;M.bell=true;if(!S.sound)return;try{var a=ac();if(!a)return;var bus=scopedBus();for(var i=0;i<10;i++){var w=i*.75;   /* 멀리서 울리는 낮은 마을 종(높은 배음을 줄여 '삐-' 경보음처럼 들리지 않게) */
+    tone(196,3,"sine",.16,w,bus);tone(392,1.6,"sine",.05,w,bus);tone(470,1.2,"sine",.025,w,bus);noise(.05,.05,w,900,"lowpass",bus)}}catch(e){}};
   SFX.bell10_old=function(){if(!S.sound)return;try{var a=ac();if(!a)return;for(var i=0;i<10;i++){var w=i*.75;tone(330,2.2,"sine",.12,w);tone(330*2.76,1.1,"sine",.03,w);tone(330*5.4,.5,"sine",.01,w)}}catch(e){}};   /* P10 밤 10시 종: 멀리서 10회 */
 
   /* ---- 콜드 오픈 연출(2026-10-10): 어둠·정적·행동 소리. 대사·그림·단서는 그대로, 카메라와 소리만 ---- */
   var COLDD=1;
-  function creak(){noise(.5,.09,0,320,"bandpass",null,190);tone(150,.45,"triangle",.05,0,null,118)}
-  function step(){[0,.42].forEach(function(w){noise(.07,.16,w,520,"lowpass");tone(95,.08,"sine",.14,w,null,62)})}
-  function breath(){noise(1.1,.05,0,900,"bandpass",null,520)}
-  function heart(){[0,.32,1.2,1.52].forEach(function(w,i){tone(58,.16,"sine",i%2?.22:.3,w,null,44)})}
+  function creak(bus){noise(.5,.09,0,320,"bandpass",bus,190);tone(150,.45,"triangle",.05,0,bus,118)}
+  function step(bus){[0,.42].forEach(function(w){noise(.07,.16,w,520,"lowpass",bus);tone(95,.08,"sine",.14,w,bus,62)})}
+  function breath(bus){noise(1.1,.05,0,900,"bandpass",bus,520)}
+  function heart(bus){[0,.32,1.2,1.52].forEach(function(w,i){tone(58,.16,"sine",i%2?.22:.3,w,bus,44)})}
   var COLDFX={creak:creak,step:step,breath:breath,heart:heart};
   /* 2026-10-10 "프롤로그는 아주 긴장되게, 심장 박동이 점점 커지며 빨라지게": 콜드 오픈 내내 심장 소리가 이어지고 비트가 지날수록 빠르고 크게(약 55→130bpm) */
-  var HB={k:0,n:1,next:0,on:false};
-  function hbTick(){try{if(!document.getElementById("inncold")){HB.on=false;return}if(!AC||AC.state!=="running"||!S.sound){setTimeout(hbTick,200);return}
+  var HB={k:0,n:1,next:0,on:false,gen:0,bus:null};
+  function coldStop(){if(!HB)return;HB.on=false;HB.gen++;retireBus(HB.bus);HB.bus=null}
+  function hbTick(gen){try{if(!HB.on||gen!==HB.gen)return;if(!HB.el||!HB.el.isConnected||document.getElementById("inncold")!==HB.el||G!==HB.game||document.getElementById("innmain")){coldStop();return}if(!AC||AC.state!=="running"||!S.sound){setTimeout(function(){hbTick(gen)},200);return}
+    if(!HB.bus)HB.bus=scopedBus();
     var p=Math.min(1,HB.k/Math.max(1,HB.n-1)),bpm=55+75*p*p,v=.14+.4*p,gap=60/bpm;
-    tone(58,.16,"sine",v,0,null,40);tone(52,.14,"sine",v*.7,gap*.32,null,38);noise(.06,v*.25,0,160,"lowpass");
-    setTimeout(hbTick,gap*1000)}catch(e){setTimeout(hbTick,400)}}
-  window.__innColdFx=function(b){try{if(b.duck!=null)COLDD=b.duck;var L=(window.EP1INN&&window.EP1INN.COLD)||[];var i=L.indexOf(b);if(i>=0){HB.k=i;HB.n=L.length}
-    if(!HB.on){HB.on=true;setTimeout(hbTick,300)}
-    if(b.fxs&&b.fxs!=="heart"&&S.sound&&COLDFX[b.fxs])COLDFX[b.fxs]()}catch(e){}};
+    setTimeout(function(){hbTick(gen)},gap*1000)}catch(e){setTimeout(function(){hbTick(gen)},400)}}
+  window.__innColdFx=function(b){try{syncOwner();var el=document.getElementById("inncold");if(!el)return;if(HB.el!==el||HB.game!==G)coldStop();HB.el=el;HB.game=G;
+    if(b.duck!=null)COLDD=b.duck;var L=(window.EP1INN&&window.EP1INN.COLD)||[];var i=L.indexOf(b);if(i>=0){HB.k=i;HB.n=L.length}
+    if(!HB.on){HB.on=true;var gen=++HB.gen;setTimeout(function(){hbTick(gen)},300)}
+    if(b.fxs&&b.fxs!=="heart"&&S.sound&&COLDFX[b.fxs]){if(!HB.bus)HB.bus=scopedBus();COLDFX[b.fxs](HB.bus)}}catch(e){}};
   /* 비트별 연출: 침대 컷은 '침대 다리'가 아니라 이불 덮인 침대 쪽으로 다가가며 점점 어둡고 조용해진다 */
   try{var STAGE={"01":{fxs:"step",duck:1},"02":{push:3,duck:.9},
    "03":{z:1,fx:.72,fy:.6,push:5,fxs:"creak",duck:.6},"04":{z:1.45,fx:.74,fy:.6,push:6,fxs:"step",duck:.5},"05":{z:1.8,fx:.74,fy:.62,push:4,dim:.8,duck:.4},
@@ -51006,13 +51043,14 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    try{I.out.gain.cancelScheduledValues(t);I.out.gain.setValueAtTime(Math.max(.0001,I.out.gain.value),t);I.out.gain.exponentialRampToValueAtTime(.0001,t+dur);if(I.lp){I.lp.frequency.setValueAtTime(I.lp.frequency.value,t);I.lp.frequency.exponentialRampToValueAtTime(180,t+dur)}}catch(e){}
    setTimeout(function(){I.dead=true;var k=AMB.old.indexOf(I);if(k>=0)AMB.old.splice(k,1);I.src.forEach(function(s){try{s.stop()}catch(e){}});try{I.out.disconnect()}catch(e){}},dur*1000+300)}
   var AMB={cur:null,dep:null,old:[]};
-  function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||document.getElementById("inncold"))return null;var b=beats();if(M.failure)return "wind";
-   if(!b.inn_pro){var sd=sidOf(b.inn_pi|0);if(sd==="P1"&&b.inn_bg==="carriage"&&!M.carStopped)return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
+  function ambWant(){if(!cur()||!S.sound||window.__innAudioHold||musicBlocked()||document.getElementById("inncold")||document.getElementById("innmain"))return null;var b=beats();if(M.failure)return "wind";
+   if(!b.inn_pro){var sd=presentedSid();if(sd==="P1"&&b.inn_bg==="carriage"&&!M.carStopped)return "carriage";return null}   /* 2026-10-10 "광장 바람 소리 거슬린다": 뺌 */
    if(b.inn_final&&!b.inn_end){var ei=b.inn_ei|0;if(ei===0||ei===1)return "wind"}
    return null}
   /* E2 마지막 마차: 출발해서 멀어지며 사라진다(약 7초) */
-  SFX.carDepart=function(){if(!S.sound||!AC)return;try{if(AMB.dep&&!AMB.dep.dead)return;var I=build(AC,"carriage");AMB.dep=I;sched(I);var iv=setInterval(function(){if(I.dead){clearInterval(iv);return}sched(I)},120);setTimeout(function(){stop(I,6.5)},500)}catch(e){}};
+  SFX.carDepart=function(){syncOwner();if(!cur()||blocked()||!S.sound||!AC)return;try{if(AMB.dep&&!AMB.dep.dead)return;var owner=scope(),I=build(AC,"carriage");AMB.dep=I;sched(I);setTimeout(function(){if(sameScope(owner)&&AMB.dep===I)stop(I,6.5)},500)}catch(e){}};
   setInterval(function(){try{
+   syncOwner();if(HB.on&&(!HB.el||!HB.el.isConnected||window.__innColdTransition||HB.game!==G))coldStop();
    if(!AC||AC.state!=="running"){return}
    var k=ambWant();
    if((AMB.cur&&AMB.cur.key)!==k){var was=AMB.cur;if(was)stop(was,was.key==="carriage"?.3:.8);AMB.cur=k?build(AC,k):null}   /* 마차 -> 광장: 멀어지며 5초에 걸쳐 사라짐 */
@@ -51174,10 +51212,13 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   /* ---------- 세련 앉은 그림 · 질문 화면 상반신 구도 ---------- */
   var SER_SCENE="art/ch1/cast/seryeon-seated-paperwork-v2-scene192.png",SER_TALK="art/ch1/cast/seryeon-seated-paperwork-v2-talk.png";
   function seated(){try{document.querySelectorAll('#bigscene .npc[data-npc="seryeon"] .npcclip img').forEach(function(i){if(i.getAttribute("src")!==SER_SCENE)i.setAttribute("src",SER_SCENE)})}catch(e){}}
-  function talkFrame(){try{if(!window.__innFrame)return;var W=innerWidth,H=innerHeight;document.querySelectorAll(".fstalk .tstage .tfig img").forEach(function(i){var k=i.dataset.k;if(!k)return;
-    var want=(window.__innPose&&window.__innPose(k))||(k==="seryeon"?SER_TALK:null);if(want&&i.getAttribute("src")!==want)i.setAttribute("src",want);if(!want&&k==="doto"&&/^art\/body\/doto-/.test(i.getAttribute("src")||""))i.setAttribute("src",DOTO);
+  function talkFrame(){try{if(!window.__innFrame)return;var W=innerWidth,H=innerHeight;document.querySelectorAll(".fstalk .tstage .tfig").forEach(function(f){var i=f.querySelector('img'),k=f.dataset.k||(i&&i.dataset.k)||G.who;if(!k)return;
     var panel=document.querySelector(".fstalk .tpanel"),pr=panel&&panel.getBoundingClientRect();
-    var F=window.__innFrame(k,i.getAttribute("src"),{surface:"talk",panel:pr}),f=i.parentElement,key=[W,H,i.getAttribute("src"),Math.round(F.left),Math.round(F.top),Math.round(F.w)].join("|");if(i.dataset.fr9===key)return;i.dataset.fr9=key;
+    var mood=(typeof DL!=='undefined'&&DL&&DL.stageWho===k)?DL.stageMood||'':(typeof DL!=='undefined'&&DL&&f.dataset.mood!=null?f.dataset.mood:moodOf(CASES[G.ci],k)||'');
+    if(window.__innPaintDialogue&&window.__innPaintDialogue(f,k,mood,{surface:'talk',panel:pr}))return;
+    if(!i){var fallback=window.__innPose&&window.__innPose(k);if(!fallback)return;i=document.createElement('img');i.alt='';i.dataset.k=k;i.src=fallback;f.replaceChildren(i)}
+    var want=(window.__innPose&&window.__innPose(k))||(k==="seryeon"?SER_TALK:null);if(want&&i.getAttribute("src")!==want)i.setAttribute("src",want);if(!want&&k==="doto"&&/^art\/body\/doto-/.test(i.getAttribute("src")||""))i.setAttribute("src",DOTO);
+    var F=window.__innFrame(k,i.getAttribute("src"),{surface:"talk",panel:pr}),key=[W,H,i.getAttribute("src"),Math.round(F.left),Math.round(F.top),Math.round(F.w)].join("|");if(i.dataset.fr9===key)return;i.dataset.fr9=key;
     ["top:0","height:100vh","left:0","right:0","width:auto","transform:none"].forEach(function(d){var q=d.split(":");f.style.setProperty(q[0],q[1],"important")});
     [["position","absolute"],["left",F.left+"px"],["top",F.top+"px"],["width",F.w+"px"],["height",F.h+"px"],["transform","none"],["max-width","none"],["max-height","none"]].forEach(function(d){i.style.setProperty(d[0],d[1],"important")})})}catch(e){}}
 
@@ -51193,6 +51234,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    if(MV&&(dl()||G.tab==="move"))mvClose();if(OB&&(dl()||G.tab!=="scene"))obHide()}
   try{new MutationObserver(function(){if(!q)q=requestAnimationFrame(tick)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
   window.addEventListener("resize",function(){if(!q)q=requestAnimationFrame(tick)});setInterval(tick,400);
+  document.addEventListener('inn-dialogue-art-ready',function(){if(!q)q=requestAnimationFrame(tick)});
   /* 회전·주소창 변화: iOS는 회전 직후 innerWidth/innerHeight가 한동안 이전 값으로 남는다. 늦게 바뀐 크기로 다시 그리도록 resize를 몇 번 더 보낸다
      (지도·장면 배율·대화 그림이 회전 전 크기로 굳는 것 방지). 실제 크기가 바뀐 때만 보낸다 */
   var lastWH=innerWidth+"x"+innerHeight,fwd=false;function reflow(){var wh=innerWidth+"x"+innerHeight;if(wh===lastWH)return;lastWH=wh;fwd=true;try{dispatchEvent(new Event("resize"))}finally{fwd=false}}
@@ -51599,8 +51641,8 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
     else if(k==="innma"&&/^(think|sad|worried|nervous|shock|smile)$/.test(md)&&window.__innGrandmaSrc)f=window.__innGrandmaSrc(md);
     else if(k==="det0"){fing=false;f=DAD}   /* 2026-10-10 사용자 "아빠 프로필·대화 프사를 채택한 한 장으로 통일": 옛 v5 포즈·손가락 프레임(다른 얼굴) 연결 해제 */
     /* 기존 승인 전신에서 얼굴을 같은 정사각 창으로 잘라 보여준다. 원본 PNG와 비율은 그대로. */
-    var fc=window.__innFaceCrop&&window.__innFaceCrop(k,md);if(fc)f=k==="wanggu"?window.__innNeoulSrc(md):fc.src;
-    var crop=k==="innma"&&f.indexOf('/cast/innma-')>=0,ck=fc?k+'-source':crop?'grandma':'normal';
+    var fc=(window.__innDialogueFace&&window.__innDialogueFace(k,md))||(window.__innFaceCrop&&window.__innFaceCrop(k,md));if(fc)f=fc.src;
+    var crop=k==="innma"&&f.indexOf('/cast/innma-')>=0,ck=fc?[k,fc.src,fc.x,fc.y,fc.size].join('|'):crop?'grandma':'normal';
     if(SPKIMG.dataset.crop!==ck){SPKIMG.dataset.crop=ck;SPKIMG.style.cssText=fc?'position:absolute;width:'+(100*fc.w/fc.size)+'%;height:'+(100*fc.h/fc.size)+'%;max-width:none;max-height:none;left:'+(-100*fc.x/fc.size)+'%;top:'+(-100*fc.y/fc.size)+'%':crop?'position:absolute;width:115.87%;height:144.44%;max-width:none;max-height:none;left:-1.59%;top:0':' '}
     var mode=f?"img":"none";if(SPK.dataset.k!==k+"|"+mode){SPK.dataset.k=k+"|"+mode;SPK.className="spk9 "+mode+(k==="det0"?" dad":"")}
     var fk=DL.i+"|"+tx.length;
@@ -52285,14 +52327,14 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   if(!active())return;worldStanding();dress();
   document.querySelectorAll('#innstage .isf,.fstalk .tfig').forEach(function(host){
    var im=host.querySelector('img'),k=host.dataset.k||(im&&im.dataset.k);if(!k)return;
-   var p=k==='geokkuri'?'hanging':standing[k]||k==='innma'?'standing':'native';
+   var p=host.querySelector('svg.dialogue-bust')?(k==='geokkuri'?'dialogue-hanging':'dialogue-bust'):k==='geokkuri'?'hanging':standing[k]||k==='innma'?'standing':'native';
    if(host.dataset.posture!==p)host.dataset.posture=p;
   });
  }
  window.__innPostureState=function(){
   var room=null;try{room=active()&&CASES[G.ci].locations[G.loc].id}catch(e){}
   return {room:room,roomProps:Object.assign({},props[room]||{}, {actualAssets:Array.from(document.querySelectorAll('#bigscene image.wp9,#bigscene .inn-set-dressing image')).map(function(i){return i.getAttribute('href')})}),setDressing:{ready:ATLAS.ready,src:ATLAS.ready?ATLAS.src:null,cells:ATLAS.ready?(DECOR[room]||[]).map(function(p){return p.cell}):[]},worldActors:Array.from(document.querySelectorAll('#bigscene image.wn9')).map(function(i){return {k:i.dataset.k,src:i.getAttribute('href'),posture:i.dataset.posture||'native',x:i.getAttribute('x'),y:i.getAttribute('y'),width:i.getAttribute('width'),height:i.getAttribute('height')}}),dialogue:'standing',meeting:'native-seated',
-   actors:Array.from(document.querySelectorAll('#innstage .isf,.fstalk .tfig')).map(function(h){var i=h.querySelector('img');return {k:h.dataset.k||(i&&i.dataset.k),posture:h.dataset.posture,src:i&&i.getAttribute('src')}})};
+   actors:Array.from(document.querySelectorAll('#innstage .isf,.fstalk .tfig')).map(function(h){var i=h.querySelector('img,svg.dialogue-bust');return {k:h.dataset.k||(i&&i.dataset.k),posture:h.dataset.posture,src:i&&(i.getAttribute('src')||i.dataset.src)}})};
  };
  // Warm the six existing images without altering world assets or source canvases.
  Object.values(standing).concat([ROOT+'cast/innma-neutral-v5.png']).forEach(function(s){var i=new Image();i.src=s});
@@ -52370,8 +52412,8 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
   paused=!active||document.hidden||!!document.querySelector('#innmove,#innppl,.crec2,#innins,#e9pop,#ov .modal,#mveil .modal,#inn-settings');
   document.body.classList.toggle('cm-paused',paused||reduced.matches);actors=[];
   if(!active)return;
-  document.querySelectorAll('#innstage .isf>img,.fstalk .tstage .tfig>img,#vnbox .spk9>img,#bigscene image.wn9,#rtg .seat>img,#rtg .seat>svg>image,image.innseat').forEach(function(im){
-   var host=im.closest('.isf,.spk9,.seat'),k=(host&&host.dataset.k||im.dataset.k||'det1').split('|')[0];
+  document.querySelectorAll('#innstage .isf>img,#innstage .isf>svg.dialogue-bust,.fstalk .tstage .tfig>img,.fstalk .tstage .tfig>svg.dialogue-bust,#vnbox .spk9>img,#bigscene image.wn9,#rtg .seat>img,#rtg .seat>svg>image,image.innseat').forEach(function(im){
+   var host=im.closest('.isf,.tfig,.spk9,.seat'),k=(host&&host.dataset.k||im.dataset.k||'det1').split('|')[0];
    if(!GESTURE[k])return;
    var m=host&&host.dataset.mood!=null?host.dataset.mood:(sp===k?lm:'');
    var q=allStill||quiet(m),gesture=GESTURE[k],part=null;
@@ -52381,7 +52423,7 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
    /* Sleeping child and emotional silences do not inherit a celebratory idle. */
    tail(im,paused||reduced.matches||q||im.closest('.isf')&&!document.body.classList.contains('inn-st2'));
    var surface=im.closest('.isf')?'stage':im.closest('.tfig')?'talk':im.closest('.spk9')?'portrait':im.closest('.seat')?'council':im.classList.contains('wn9')?'world':'carriage';
-   actors.push({k:k,surface:surface,mood:m,gesture:gesture,part:part?part.dataset.part:null,quiet:q,src:im.getAttribute('src')||im.getAttribute('href'),layerCount:part?1:0});
+   actors.push({k:k,surface:surface,mood:m,gesture:gesture,part:part?part.dataset.part:null,quiet:q,src:im.getAttribute('src')||im.getAttribute('href')||im.dataset.src,layerCount:part?1:0});
   });
  }
  /* Wrap the existing synchronous cue hook; keep its vote/audio ownership. */
@@ -52429,25 +52471,86 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  setInterval(tick,160);reduced.addEventListener('change',tick);document.addEventListener('visibilitychange',tick);tick();
 })();
 
+/* Dialogue art is authored separately from room actors. The raw transparent
+   atlases stay immutable; runtime clips one bust/expression without resampling.
+   Father remains the first-person player: his bust supplies the speaker tile. */
+(function(){
+ var NS='http://www.w3.org/2000/svg',manifest=window.__innDialogueManifest||{},chars=manifest.characters||{},assets={},serial=0;
+ function node(tag,attrs){var n=document.createElementNS(NS,tag);Object.keys(attrs||{}).forEach(function(k){n.setAttribute(k,attrs[k])});return n}
+ function state(k,m){var s=String(m||'').split(/\s+/)[0];
+  if(k==='wanggu'&&window.__innNeoState){if(/^(think|memo)$/.test(s))return 'thinking';if(/^(sad|worried|nervous|shock|panic)$/.test(s))return 'distressed';var n=window.__innNeoState(m,'');return {default:'neutral',admonish:'thinking',sheepish:'distressed',angry:'expressive'}[n]||'neutral'}
+  if(/^(sad|worried|cower|nervous|panic|shock|surprise|oops|shy|caught|sheepish|sweat)$/.test(s))return 'distressed';
+  if(/^(angry|mad|confront|pout|held|held-anger)$/.test(s))return /^(seryeon|karo)$/.test(k)?'expressive':'thinking';
+  if(/^(think|memo|resolve|claim|admonish|focus)$/.test(s))return 'thinking';
+  if(/^(smile|laugh|joy|happy)$/.test(s))return /^(seryeon|karo|wanggu)$/.test(k)?'neutral':'expressive';
+  return 'neutral';
+ }
+ function art(k,m){var a=chars[k]&&chars[k][state(k,m)];return a&&assets[a.src]&&assets[a.src].ready?a:null}
+ window.__innDialogueArt=art;
+ window.__innDialogueFace=function(k,m){var a=chars[k]&&chars[k][state(k,m)];return a&&assets[a.src]&&!assets[a.src].failed?{src:a.src,w:a.width,h:a.height,x:a.face[0],y:a.face[1],size:a.face[2]}:null};
+ function frame(k,a,opt){var W=innerWidth,H=innerHeight,c=a.crop,portrait=H>W*1.15,x0=12,x1=W-12;
+  var topSafe=portrait?116:52,plate=document.querySelector('#vnbox .vtxt'),pr=plate&&plate.getBoundingClientRect();
+  var floor=pr&&pr.height>10?pr.top+35:H-65;
+  if(opt&&opt.surface==='talk'){floor=H-4;var panel=opt.panel;if(panel&&panel.width>0&&panel.left>W*.3)x1=panel.left-18}
+  var height=Math.min(Math.max(160,floor-topSafe),H*.87,430),scale=Math.min(height/c[3],(x1-x0)/c[2]);
+  var h=c[3]*scale,w=c[2]*scale;
+  // Inverted Bami starts at the top beam rather than the ground line.
+  var top=k==='geokkuri'?Math.max(0,topSafe-30):Math.max(topSafe,floor-h);
+  return {left:Math.round((x0+x1-w)/2),top:Math.round(top),width:Math.round(w),height:Math.round(h)};
+ }
+ window.__innPaintDialogue=function(host,k,m,opt){var a=art(k,m),planned=chars[k]&&chars[k][state(k,m)];if(!host||!planned)return false;
+  if(!a){var loading=assets[planned.src];if(!loading||loading.failed)return false;
+   // A cold Continue can open questions before decoding finishes. Reserve the
+   // close-up surface instead of flashing the room's full-body sprite first.
+   if(host.children.length)host.replaceChildren();host.dataset.k=k;host.dataset.mood=String(m||'').split(/\s+/)[0];host.dataset.dialogueLoading='1';return true;
+  }
+  delete host.dataset.dialogueLoading;
+  var c=a.crop,key=k+'|'+state(k,m)+'|'+a.src+'|'+c.join(','),svg=host.querySelector(':scope>svg.dialogue-bust');
+  if(!svg){Array.from(host.children).forEach(function(n){n.remove()});svg=node('svg',{class:'dialogue-bust','aria-hidden':'true',preserveAspectRatio:'xMidYMid meet'});
+   var id='dialogue-crop-'+(++serial),defs=node('defs'),clip=node('clipPath',{id:id,clipPathUnits:'userSpaceOnUse'}),rect=node('rect');clip.appendChild(rect);defs.appendChild(clip);svg.appendChild(defs);
+   var im=node('image',{'clip-path':'url(#'+id+')'});svg.appendChild(im);svg.__rect=rect;svg.__image=im;host.appendChild(svg);
+  }
+  if(svg.dataset.art!==key){svg.dataset.art=key;svg.dataset.k=k;svg.dataset.src=a.src;svg.dataset.expression=state(k,m);svg.setAttribute('viewBox',c.join(' '));
+   ['x','y','width','height'].forEach(function(n,i){svg.__rect.setAttribute(n,c[i])});svg.__image.setAttribute('href',a.src);svg.__image.setAttribute('width',a.width);svg.__image.setAttribute('height',a.height);
+  }
+  host.dataset.k=k;host.dataset.mood=String(m||'').split(/\s+/)[0];host.dataset.posture=k==='geokkuri'?'dialogue-hanging':'dialogue-bust';
+  var f=frame(k,a,opt),geo=[f.left,f.top,f.width,f.height].join('|');
+  if(host.dataset.dialogueFrame!==geo){host.dataset.dialogueFrame=geo;Object.keys({position:1,left:1,top:1,width:1,height:1,right:1,transform:1}).forEach(function(n){var v=n==='position'?'absolute':n==='right'?'auto':n==='transform'?'none':f[n]+'px';host.style.setProperty(n,v,'important')})}
+  return true;
+ };
+ Object.keys(chars).forEach(function(k){Object.values(chars[k]).forEach(function(a){if(assets[a.src])return;var entry=assets[a.src]={ready:false},im=entry.image=new Image();
+  function refresh(){requestAnimationFrame(function(){if(window.__innRefreshDialogueStage)window.__innRefreshDialogueStage();document.dispatchEvent(new Event('inn-dialogue-art-ready'))})}
+  im.onerror=function(){entry.failed=true;refresh()};im.onload=function(){Promise.resolve(im.decode?im.decode():null).catch(function(){}).then(function(){if(!im.naturalWidth)return;entry.ready=true;refresh()})};im.src=a.src;
+ })});
+ window.__innDialogueState=function(){return {characters:Object.keys(chars),assets:Object.keys(assets).map(function(s){return {src:s,ready:assets[s].ready,failed:!!assets[s].failed}}),actors:Array.from(document.querySelectorAll('svg.dialogue-bust')).map(function(n){return {k:n.dataset.k,expression:n.dataset.expression,src:n.dataset.src,surface:n.closest('.tfig')?'talk':'stage'}})}};
+ var css=document.createElement('style');css.id='inn-dialogue-portraits-css';css.textContent='html body.inn1 .dialogue-bust{display:block;position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;overflow:hidden;image-rendering:pixelated;pointer-events:none}.dialogue-bust image{image-rendering:pixelated}html body.inn1 .isf:has(>.dialogue-bust),html body.inn1 .tfig:has(>.dialogue-bust){overflow:visible}';document.head.appendChild(css);
+})();
+
 /* 승인된 다람 v4와 기존 복도 위에 얹는 밤 이동. 대본/진행/저장은 변경하지 않는다. */
 (function(){
  'use strict';
- var night=null,lastLine=null,lastScene=null,reduced=matchMedia('(prefers-reduced-motion: reduce)');
- function active(){try{return S.screen==='case'&&G&&CASES[G.ci].id==='inn'}catch(e){return false}}
+ var night=null,lastLine=null,lastScene=null,lastGame=null,nightReady=false,nightSerial=0,reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ function active(){try{return S.screen==='case'&&G&&CASES[G.ci].id==='inn'&&!document.getElementById('innmain')}catch(e){return false}}
  function scene(){try{return active()&&G.beats&&!G.beats.inn_pro&&window.EP1INN&&window.EP1INN.PRO[G.beats.inn_pi]}catch(e){return null}}
  function makeNight(){
   if(night&&night.isConnected)return night;
   night=document.createElement('div');night.id='inn-night-walk';night.setAttribute('aria-hidden','true');
   night.innerHTML='<svg viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="inn-door-glow" x2="0" y2="1"><stop stop-color="#ffd995" stop-opacity=".7"/><stop offset="1" stop-color="#ffd995" stop-opacity="0"/></linearGradient></defs><g class="night-light"><path d="M692 561H783L830 626H639Z" fill="url(#inn-door-glow)"/><path d="M692 560H783" stroke="#ffe5aa" stroke-width="5"/></g><g class="night-child"><image href="art/ch1/daram-v4/daram-worried-dialogue.png" x="0" y="0" width="165" height="145" preserveAspectRatio="xMidYMid meet"/></g><g class="night-bedroom"><image href="art/ch1/bg/P10-inn-bedroom-lights-out-background-only-1672x941.png" width="1672" height="941"/><g class="night-room-child"><image href="art/ch1/daram-v4/daram-worried-dialogue.png" width="290" height="236" preserveAspectRatio="xMidYMid meet"/></g></g></svg>';
+  var el=night,game=G,sc=lastScene,token=++nightSerial,loaded=0;
+  ['art/ch1/daram-v4/daram-worried-dialogue.png','art/ch1/bg/P10-inn-bedroom-lights-out-background-only-1672x941.png'].forEach(function(src){var im=new Image(),counted=false;im.onload=function(){if(counted||token!==nightSerial||night!==el||G!==game||lastScene!==sc||scene()!==sc||!active()||document.querySelector('#inncold,.banner,.placecard'))return;counted=true;if(++loaded===2){nightReady=true;el.classList.add('ready')}};im.src=src;if(im.complete&&im.naturalWidth)im.onload()});
   document.body.appendChild(night);document.body.classList.add('inn-night-direction');return night;
  }
  function cue(c){var e=makeNight();e.dataset.cue=c;if(c==='out')e.classList.add('out');if(c==='touch')e.classList.add('dark');if(c==='return')e.classList.add('return','dark');document.body.classList.toggle('inn-night-dark',c==='touch'||c==='return')}
- function cleanup(){if(night)night.remove();night=null;document.body.classList.remove('inn-night-direction','inn-night-dark');lastLine=null}
+ function cleanup(){nightSerial++;if(night)night.remove();night=null;nightReady=false;document.body.classList.remove('inn-night-direction','inn-night-dark');lastLine=null}
  function sync(){
-  var s=scene(),isNight=s&&s.sid==='P10b';
-  if(!isNight){if(night)cleanup();lastScene=null;return}
-  if(lastScene!==s){cleanup();lastScene=s;makeNight()}
-  var l=typeof DL!=='undefined'&&DL&&DL.lines&&DL.lines[DL.i];if(!l||l===lastLine)return;lastLine=l;
+  var s=scene(),isNight=s&&s.sid==='P10b'&&!document.querySelector('#inncold,.banner,.placecard');
+  if(!isNight){if(night)cleanup();lastScene=null;lastGame=null;return}
+  var l=typeof DL!=='undefined'&&DL&&DL.lines&&DL.lines[DL.i];
+  if(lastScene!==s||lastGame!==G){cleanup();lastScene=s;lastGame=G;if(!l)return;makeNight()}
+  if(!night){if(!l)return;makeNight()}
+  // Null DL is the native controller's short direction beat. Keep the walk
+  // and camera there; a different captured game removes them before painting.
+  if(!l||l===lastLine)return;lastLine=l;
   var t=Array.isArray(l)?String(l[7]!=null?l[7]:l[1]||''):String(l.t||'');
   if(/다람이 방문을 조금 연다|다람이 살금살금 복도로 나온다/.test(t))cue('out');
   if(/다람이 문에 손을 댄다/.test(t))cue('touch');
@@ -52479,97 +52582,133 @@ window.__INN_MUSIC={"inn_title":{"bpm":72,"vol":0.8,"prog":["Dm"],"mel":[],"medi
  '.banner.inn-place-panel .mid small,.arr10 .inn-place-card small{display:flex!important;align-items:center;gap:5px;margin-top:3px;font:400 12px/1.4 Galmuri11,monospace!important;color:#80694b!important;letter-spacing:0!important}.place-time-icon svg{display:block;width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}'+
  '.arr10:has(.inn-place-card){left:22px!important;top:74px!important;transform:none!important;gap:0!important;white-space:normal!important}.arr10:has(.inn-place-card) .mid::after{display:none!important}'+
  '@keyframes inn-panel-in{from{opacity:0;translate:-6px 0}to{opacity:1;translate:0 0}}'+
- '#inn-night-walk{position:fixed;inset:0;z-index:42;pointer-events:none!important;overflow:hidden}#inn-night-walk svg{width:100%;height:100%;display:block;image-rendering:pixelated}#inn-night-walk image{image-rendering:pixelated}.inn-night-direction #innstage .isf[data-k="det1"]{visibility:hidden!important}'+
+ '#inn-night-walk{position:fixed;inset:0;z-index:42;pointer-events:none!important;overflow:hidden;visibility:hidden}#inn-night-walk.ready{visibility:visible}#inn-night-walk svg{width:100%;height:100%;display:block;image-rendering:pixelated}#inn-night-walk image{image-rendering:pixelated}.inn-night-direction #innstage .isf[data-k="det1"]{visibility:hidden!important}'+
  '.inn-night-direction #bigscene>svg[data-bg]{filter:brightness(.58) saturate(.72);transition:filter .3s}.inn-night-direction.inn-night-dark #bigscene>svg[data-bg]{filter:brightness(.43) saturate(.6)}#inn-night-walk .night-room-child{transform:translate(1070px,415px)}#inn-night-walk .night-bedroom{opacity:1;transition:opacity .25s}#inn-night-walk.out .night-bedroom{opacity:0}#inn-night-walk.return .night-bedroom{opacity:1;transition-delay:.85s}#inn-night-walk .night-child{filter:brightness(.86)}'+
  '#inn-night-walk .night-light{opacity:0;transition:opacity .3s}#inn-night-walk.out .night-light{opacity:1}#inn-night-walk.dark .night-light{opacity:0}#inn-night-walk .night-child{opacity:0;transform:translate(1100px,595px)}'+
  '#inn-night-walk.out .night-child{opacity:1;animation:inn-night-out 1.8s steps(16,end) forwards}#inn-night-walk.return .night-child{animation:inn-night-return .85s steps(10,end) forwards}'+
  '@keyframes inn-night-out{0%{opacity:0;transform:translate(1100px,595px)}12%{opacity:1}100%{opacity:1;transform:translate(625px,425px)}}@keyframes inn-night-return{0%{opacity:1;transform:translate(625px,425px)}86%{opacity:1;transform:translate(1100px,595px)}100%{opacity:0;transform:translate(1135px,610px)}}'+
  '@media(max-aspect-ratio:3/4){#inn-night-walk .night-room-child{transform:translate(720px,415px)}.banner.inn-place-panel .bars,.arr10:has(.inn-place-card){left:16px!important;top:80px!important}.banner.inn-place-panel .mid.inn-place-card,.arr10 .inn-place-card{max-width:calc(100vw - 32px);min-width:180px}.banner.inn-place-panel .mid b,.arr10 .inn-place-card b{font-size:18px!important}}'+
  '@media(prefers-reduced-motion:reduce){.banner.inn-place-panel .mid,.arr10:has(.inn-place-card){animation:none!important}#inn-night-walk .night-light,#inn-night-walk .night-bedroom,.inn-night-direction #bigscene>svg[data-bg]{transition:none!important}#inn-night-walk.out .night-child{animation:none;opacity:1;transform:translate(625px,425px)}#inn-night-walk.return .night-child{animation:none;opacity:0}}';
- document.head.appendChild(css);setInterval(sync,100);
- window.__innOpeningDirection=function(){return {night:!!night,cue:night&&night.dataset.cue,scene:lastScene&&lastScene.sid,reduced:reduced.matches}};
+ document.head.appendChild(css);
+ var queued=false;new MutationObserver(function(){if(queued)return;queued=true;Promise.resolve().then(function(){queued=false;sync()})}).observe(document.body,{childList:true,subtree:true});
+ (function loop(){sync();requestAnimationFrame(loop)})();
+ window.__innOpeningDirection=function(){return {night:!!night,ready:!!(night&&nightReady),game:lastGame,cue:night&&night.dataset.cue,scene:lastScene&&lastScene.sid,reduced:reduced.matches}};
 })();
 
-/* Important opening pictures. This layer reads the authored scene/dialogue;
-   it never advances dialogue, changes clues, or schedules an input handler.
-   build.py supplies __innStoryArt from local file existence, so an absent
-   approved picture falls back to the existing stage without an HTTP request. */
+/* Authored camera ownership. A picture belongs to a scene/camera beat, never
+   to the short native dialogue batches between @dir instructions. The public
+   presentation snapshot lets music wait for the same visual commitment. */
 (function(){
  'use strict';
- var node=null,shown=null,lastGame=null,failed={},reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ var node=null,shown=null,pending=null,lastGame=null,owner=null,observedDialogue=null,serial=0,failed={},reduced=matchMedia('(prefers-reduced-motion: reduce)');
  var ART={
   carriage:{src:'art/ch1/cinematics/carriage-family-close.png',alt:'마차 안에서 나란히 앉아 이야기하는 다람과 아빠'},
+  driver:{src:'art/ch1/cinematics/carriage-driver-close.png',alt:'마차 앞자리에서 돌아보며 도착을 알리는 마부 까로'},
   village:{src:'art/ch1/cinematics/village-arrival-wide.png',alt:'저녁빛의 골짜기 마을에 도착한 다람과 아빠'},
   seal:{src:'art/ch1/cinematics/sealed-pouch-close.png',alt:'베개 밑에서 발견한 주머니와 아직 뜯기지 않은 붉은 봉인띠'}
  };
- function scene(){try{
-  if(S.screen!=='case'||!G||CASES[G.ci].id!=='inn'||!G.beats||G.beats.inn_pro||document.getElementById('innmain'))return null;
-  return window.EP1INN&&window.EP1INN.PRO[G.beats.inn_pi]||null;
+ function active(){try{return S.screen==='case'&&G&&CASES[G.ci].id==='inn'&&!document.getElementById('innmain')}catch(e){return false}}
+ function authored(){try{
+  if(!active()||!G.beats)return null;
+  var b=G.beats,ep=window.EP1INN;
+  if(!b.inn_pro){var p=ep&&ep.PRO[b.inn_pi];return p&&{phase:'pro',sid:p.sid,scene:p}}
+  if(b.inn_final&&!b.inn_end){var e=ep&&ep.END[b.inn_ei];return e&&{phase:'end',sid:e.sid||'E'+(b.inn_ei+1),scene:e}}
+  return {phase:'investigation',sid:null,scene:null};
  }catch(e){return null}}
+ function scene(){var s=authored();return s&&s.phase==='pro'?s.scene:null}
  function text(l){return l?String(Array.isArray(l)?(l[7]!=null?l[7]:l[1]||''):l.t||''):''}
  function who(l){return l&&(Array.isArray(l)?l[0]:l.w)||''}
- function desired(){
-  var s=scene(),v=document.querySelector('#ov > #dlgveil');
-  if(!s||!v||typeof DL==='undefined'||!DL||!DL.lines)return null;
-  var l=DL.lines[DL.i],t=text(l);if(!l)return null;
-  if(s.sid==='P1'&&G.beats.inn_bg==='carriage'){
-   // The driver's arrival changes the camera back to his actual stage. The
-   // father's reply in that same dialogue must not restore the family cut.
-   for(var i=0;i<=DL.i;i++)if(who(DL.lines[i])==='karo')return null;
-   if(who(l)==='det1'||who(l)==='det0'||who(l)==='narr')return 'carriage';
-  }
-  if(s.sid==='P2'&&G.beats.inn_bg==='plaza')return 'village';
-  // Show the intact seal before counting starts. No picture invents a coin
-  // count or suggests who put the pouch there.
-  if(s.sid==='P13'&&/베개 밑[….\s]*여기 있군요|세련 씨 주머니가 맞습니까|맞습니다\. 제 도장이에요|봉인도 뜯기지 않았습니다/.test(t))return 'seal';
-  return null;
- }
- function ready(k){return !!(k&&!failed[k]&&window.__innStoryArt&&window.__innStoryArt[k]===true)}
- function cleanup(){
-  if(node)node.remove();node=null;shown=null;
-  // The engine briefly clones a closing dialogue into #ovfz. Its cloned
-  // picture is presentation state, never a second live/stale CG layer.
+ function line(){return typeof DL!=='undefined'&&DL&&DL.lines&&DL.lines[DL.i]||null}
+ function artReady(k){return !!(k&&!failed[k]&&window.__innStoryArt&&window.__innStoryArt[k]===true)}
+ function removePicture(){
+  serial++;pending=null;if(node)node.remove();node=null;shown=null;
   document.querySelectorAll('#ovfz #inn-story-cg').forEach(function(n){n.remove()});
   document.body.classList.remove('inn-story-cg-active');delete document.body.dataset.innStoryCut;
  }
- function show(k,v){
-  if(shown!==k||!node){
-   cleanup();node=document.createElement('div');node.id='inn-story-cg';node.dataset.cut=k;
-   node.setAttribute('role','img');node.setAttribute('aria-label',ART[k].alt);
-   var surround=document.createElement('img');surround.className='cinema-surround';surround.alt='';surround.setAttribute('aria-hidden','true');surround.src=ART[k].src;
-   var picture=document.createElement('img');picture.className='cinema-picture';picture.alt='';picture.src=ART[k].src;
-   // A late failed/slow asset may never hide the working original stage.
-   picture.onload=function(){if(node&&node.contains(picture)&&shown===k){node.classList.add('ready');document.body.classList.add('inn-story-cg-active');document.body.dataset.innStoryCut=k}};
-   picture.onerror=function(){failed[k]=true;if(node&&node.contains(picture))cleanup()};
-   node.append(surround,picture);shown=k;
-   if(picture.complete&&picture.naturalWidth)picture.onload();
+ function cleanup(){removePicture();owner=null;lastGame=null;observedDialogue=null;document.body.classList.remove('inn-story-scene-owner')}
+ function initialCamera(s){return s.phase==='pro'&&s.sid==='P1'?'carriage':s.phase==='pro'&&s.sid==='P2'?'village':s.phase==='pro'&&s.sid==='P10b'?'night':'stage'}
+ function ensureOwner(s){
+  var key=s.phase+':'+(s.sid||'scene:'+G.loc+':'+G.tab);
+  if(lastGame!==G||!owner||owner.key!==key){
+   var dl=typeof DL!=='undefined'&&DL||null,ignore=owner&&dl&&dl===observedDialogue?dl:null;
+   removePicture();lastGame=G;owner={game:G,key:key,phase:s.phase,sid:s.sid,scene:s.scene,camera:initialCamera(s),started:s.phase==='investigation',memory:false,lastLine:null,ignoreDialogue:ignore};
   }
-  if(node.parentNode!==v)v.insertBefore(node,v.firstChild);
+  return owner;
+ }
+ function blocked(){return !!document.querySelector('#innmain,#inncold,.banner,.placecard')}
+ function observeLine(o){
+  if(o.ignoreDialogue&&typeof DL!=='undefined'&&DL===o.ignoreDialogue)return;
+  var l=line();if(!l||l===o.lastLine)return;o.lastLine=l;o.started=true;
+  var t=text(l),w=who(l);
+  if(o.sid==='P1'){
+   // The driver's entry is a one-way camera handoff for this scene. A father's
+   // reply, a split batch or a null DL cannot bring the family picture back.
+   if(w==='karo')o.camera='driver';
+   if(/엄마 찾으면|엄마가 갑자기 사라져|편지 도장|골짜기…|몇 해 전 편지/.test(t))o.memory=true;
+  }
+  if(o.sid==='P13'){
+   if(/^베개 밑[….\s]*여기 있군요/.test(t)&&o.camera==='stage')o.camera='seal';
+   // The source's opening action ends the intact-seal shot permanently.
+   if(/^너울이 봉인띠를 자르고/.test(t))o.camera='stage';
+  }
+ }
+ function desired(){var s=authored();if(!s||blocked())return null;var o=ensureOwner(s);observeLine(o);return ART[o.camera]&&o.started?o.camera:null}
+ function show(k,o){
+  if(shown===k&&node&&node.isConnected){if(pending){serial++;pending=null}return}
+  if(pending&&pending.cut===k&&pending.owner===o)return;
+  // Prepare the next shot off screen. The committed previous picture remains
+  // visible until decoding succeeds; the native stage never flashes between.
+  var token=++serial,game=o.game,key=o.key,request={cut:k,owner:o};pending=request;
+  var el=document.createElement('div');el.id='inn-story-cg';el.dataset.cut=k;el.dataset.owner=key;
+  el.setAttribute('role','img');el.setAttribute('aria-label',ART[k].alt);
+  var surround=document.createElement('img');surround.className='cinema-surround';surround.alt='';surround.setAttribute('aria-hidden','true');
+  var picture=document.createElement('img');picture.className='cinema-picture';picture.alt='';
+  function valid(){var current=authored();return serial===token&&pending===request&&owner===o&&G===game&&current&&current.phase===o.phase&&current.sid===o.sid&&owner.key===key&&owner.camera===k&&!blocked()}
+  // Slow decodes from a previous camera or save can never hide the current
+  // original stage. Visibility and audio commit together after this check.
+  picture.onload=function(){if(valid()){if(node)node.remove();node=el;shown=k;pending=null;el.classList.add('ready');el.classList.toggle('memory',k==='carriage'&&o.memory);document.body.appendChild(el);document.body.classList.add('inn-story-cg-active');document.body.dataset.innStoryCut=k}};
+  picture.onerror=function(){failed[k]=true;if(valid())removePicture()};
+  el.append(surround,picture);
+  surround.src=ART[k].src;picture.src=ART[k].src;
+  if(picture.complete&&picture.naturalWidth)picture.onload();
  }
  function sync(){try{
   document.querySelectorAll('#ovfz #inn-story-cg').forEach(function(n){n.remove()});
-  if(lastGame!==G){cleanup();lastGame=G}
-  var k=desired(),v=document.querySelector('#ov > #dlgveil');
-  if(!k||!ready(k)||!v){if(node)cleanup();return}
-  show(k,v);
-  var l=DL&&DL.lines[DL.i];
-  node.classList.toggle('memory',k==='carriage'&&/엄마 찾으면|엄마가 갑자기 사라져|편지 도장|골짜기…|몇 해 전 편지/.test(text(l)));
+  var s=authored();if(!s){if(owner||node)cleanup();return}
+  var o=ensureOwner(s);observeLine(o);observedDialogue=typeof DL!=='undefined'&&DL||null;
+  document.body.classList.toggle('inn-story-scene-owner',s.phase==='pro');
+  if(blocked()){if(node||pending)removePicture();return}
+  var k=ART[o.camera]&&o.started?o.camera:null;
+  if(!k||!artReady(k)){if(node||pending)removePicture();return}
+  show(k,o);if(node)node.classList.toggle('memory',shown==='carriage'&&o.memory);
  }catch(e){cleanup()}}
+ window.__innPresentationDirection=function(d){
+  var s=authored();if(!s||blocked()||!d)return;var o=ensureOwner(s);o.started=true;
+  if(o.sid==='P1'&&d.who==='karo')o.camera='driver';
+  sync();
+ };
  var css=document.createElement('style');css.id='inn-story-cinematics';css.textContent=
- '#inn-story-cg{position:fixed;inset:0;z-index:1;pointer-events:none!important;overflow:hidden;background:#211c20;visibility:hidden}#inn-story-cg.ready{visibility:visible}'+
+ '#inn-story-cg{position:fixed;inset:0;z-index:59;pointer-events:none!important;overflow:hidden;background:#211c20;visibility:hidden}#inn-story-cg.ready{visibility:visible}'+
  '#inn-story-cg img{position:absolute;inset:0;width:100%;height:100%;max-width:none;image-rendering:pixelated;pointer-events:none!important}#inn-story-cg .cinema-picture{object-fit:cover;object-position:50% 38%;transition:filter .35s ease-out}#inn-story-cg.ready .cinema-picture{animation:inn-cinema-reveal .38s ease-out both}#inn-story-cg.memory .cinema-picture{filter:brightness(.9) saturate(.85)}'+
  '#inn-story-cg .cinema-surround{display:none;object-fit:cover;filter:blur(20px) brightness(.24) saturate(.55);transform:scale(1.08)}'+
- '#inn-story-cg[data-cut="carriage"] .cinema-picture{object-position:50% 0%}#inn-story-cg[data-cut="village"] .cinema-picture{object-position:50% 44%}#inn-story-cg[data-cut="seal"] .cinema-picture{object-position:50% 44%}'+
- 'body.inn-story-cg-active #dlgveil>.vnbg,body.inn-story-cg-active #dlgveil>.vnshade,body.inn-story-cg-active #dlgveil>#innstage,body.inn-story-cg-active #dlgveil>#vnfig{visibility:hidden!important}'+
+ '#inn-story-cg[data-cut="carriage"] .cinema-picture{object-position:50% 0%}#inn-story-cg[data-cut="driver"] .cinema-picture{object-position:50% 22%}#inn-story-cg[data-cut="village"] .cinema-picture{object-position:50% 44%}#inn-story-cg[data-cut="seal"] .cinema-picture{object-position:50% 44%}'+
+ 'body.inn-story-cg-active #dlgveil{background:transparent!important}body.inn-story-cg-active #dlgveil>.vnbg,body.inn-story-cg-active #dlgveil>.vnshade,body.inn-story-cg-active #dlgveil>#innstage,body.inn-story-cg-active #dlgveil>#vnfig{visibility:hidden!important}'+
+ 'body.inn-story-cg-active #ovfz .vnbg,body.inn-story-cg-active #ovfz .vnshade,body.inn-story-cg-active #ovfz #innstage,body.inn-story-cg-active #ovfz #vnfig{visibility:hidden!important}'+
  '@keyframes inn-cinema-reveal{from{opacity:.45}to{opacity:1}}'+
  '@media(max-aspect-ratio:3/4){#inn-story-cg .cinema-surround{display:block}#inn-story-cg .cinema-picture,#inn-story-cg[data-cut] .cinema-picture{object-fit:contain;object-position:50% 24%}}'+
  '@media(prefers-reduced-motion:reduce){#inn-story-cg .cinema-picture{animation:none!important;transition:none!important}}';
  document.head.appendChild(css);
- // The native controller removes/replaces the veil on skips and save loads.
- // Remove its visual layer at that same DOM turn, before the next paint.
- var queued=false;new MutationObserver(function(){if(queued)return;queued=true;Promise.resolve().then(function(){queued=false;sync()})}).observe(document.getElementById('ov')||document.body,{childList:true,subtree:true});
+ var queued=false;new MutationObserver(function(){if(queued)return;queued=true;Promise.resolve().then(function(){queued=false;sync()})}).observe(document.body,{childList:true,subtree:true});
  (function loop(){sync();requestAnimationFrame(loop)})();
- window.__innStoryCinematics=function(){var s=scene();return {cut:shown,visible:!!(node&&node.classList.contains('ready')),tone:node&&node.classList.contains('memory')?'memory':'normal',wanted:desired(),scene:s&&s.sid,cue:typeof DL!=='undefined'&&DL&&text(DL.lines[DL.i])||'',artReady:ready(desired()),reduced:reduced.matches}};
+ window.__innPresentationState=function(){
+  sync();var cold=!!document.getElementById('inncold'),s=authored(),o=owner;
+  if(!s||!o)return {game:active()?G:null,phase:cold?'cold':null,sid:null,owner:cold?'cold':null,camera:null,cut:null,loading:null,ready:false,transitioning:!!s,cold:cold,cue:''};
+  var visual=ART[o.camera]&&artReady(o.camera)?!!(shown===o.camera&&node&&node.classList.contains('ready')):true;
+  if(o.camera==='night'&&window.__innOpeningDirection){var night=window.__innOpeningDirection();visual=night.game===o.game&&night.scene===o.sid&&night.ready}
+  var staleDialogue=!!(o.ignoreDialogue&&typeof DL!=='undefined'&&DL===o.ignoreDialogue),transitioning=blocked()||!o.started||!visual||staleDialogue;
+  return {game:o.game,phase:o.phase,sid:o.sid,owner:o.key,camera:o.camera,cut:shown,loading:pending&&pending.cut||null,ready:!transitioning,transitioning:transitioning,cold:cold,cue:staleDialogue?'':text(line())};
+ };
+ window.__innStoryCinematics=function(){var p=window.__innPresentationState();return {cut:shown,loading:p.loading,visible:!!(node&&node.classList.contains('ready')),tone:shown==='carriage'&&owner&&owner.memory?'memory':'normal',wanted:desired(),scene:p.phase==='pro'?p.sid:null,cue:p.cue,owner:p.owner,ready:p.ready,transitioning:p.transitioning,artReady:artReady(desired()),reduced:reduced.matches}};
  window.__innStoryCinematicReset=cleanup;
 })();
 

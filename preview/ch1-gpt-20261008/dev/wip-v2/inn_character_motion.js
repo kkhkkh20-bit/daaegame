@@ -65,8 +65,8 @@
   paused=!active||document.hidden||!!document.querySelector('#innmove,#innppl,.crec2,#innins,#e9pop,#ov .modal,#mveil .modal,#inn-settings');
   document.body.classList.toggle('cm-paused',paused||reduced.matches);actors=[];
   if(!active)return;
-  document.querySelectorAll('#innstage .isf>img,.fstalk .tstage .tfig>img,#vnbox .spk9>img,#bigscene image.wn9,#rtg .seat>img,#rtg .seat>svg>image,image.innseat').forEach(function(im){
-   var host=im.closest('.isf,.spk9,.seat'),k=(host&&host.dataset.k||im.dataset.k||'det1').split('|')[0];
+  document.querySelectorAll('#innstage .isf>img,#innstage .isf>svg.dialogue-bust,.fstalk .tstage .tfig>img,.fstalk .tstage .tfig>svg.dialogue-bust,#vnbox .spk9>img,#bigscene image.wn9,#rtg .seat>img,#rtg .seat>svg>image,image.innseat').forEach(function(im){
+   var host=im.closest('.isf,.tfig,.spk9,.seat'),k=(host&&host.dataset.k||im.dataset.k||'det1').split('|')[0];
    if(!GESTURE[k])return;
    var m=host&&host.dataset.mood!=null?host.dataset.mood:(sp===k?lm:'');
    var q=allStill||quiet(m),gesture=GESTURE[k],part=null;
@@ -76,7 +76,7 @@
    /* Sleeping child and emotional silences do not inherit a celebratory idle. */
    tail(im,paused||reduced.matches||q||im.closest('.isf')&&!document.body.classList.contains('inn-st2'));
    var surface=im.closest('.isf')?'stage':im.closest('.tfig')?'talk':im.closest('.spk9')?'portrait':im.closest('.seat')?'council':im.classList.contains('wn9')?'world':'carriage';
-   actors.push({k:k,surface:surface,mood:m,gesture:gesture,part:part?part.dataset.part:null,quiet:q,src:im.getAttribute('src')||im.getAttribute('href'),layerCount:part?1:0});
+   actors.push({k:k,surface:surface,mood:m,gesture:gesture,part:part?part.dataset.part:null,quiet:q,src:im.getAttribute('src')||im.getAttribute('href')||im.dataset.src,layerCount:part?1:0});
   });
  }
  /* Wrap the existing synchronous cue hook; keep its vote/audio ownership. */
