@@ -343,8 +343,9 @@
   document.addEventListener("pointerup",function(e){var b=fzT;fzT=null;if(!b||!inn())return;setTimeout(function(){try{if(document.contains(b))b.click()}catch(x){}},0)},true);
 
   /* (7) 조사 체크 표시: 살펴본 증거 지점은 ✓ 표시를 남기고(옛 아이콘은 숨김), 관찰한 물건도 작은 ✓를 이 방에 남긴다 */
-  var SEEN={};try{SEEN=JSON.parse(sessionStorage.getItem("inn9seen")||"{}")||{}}catch(e){SEEN={}}
-  function markSeen(lid,idx){(SEEN[lid]=SEEN[lid]||{})[idx]=1;try{sessionStorage.setItem("inn9seen",JSON.stringify(SEEN))}catch(e){}}
+  var SEENKEY=window.__QASLOT==="admin-test"?"inn9seen-admin-test":"inn9seen";
+  var SEEN={};try{SEEN=JSON.parse(sessionStorage.getItem(SEENKEY)||"{}")||{}}catch(e){SEEN={}}
+  function markSeen(lid,idx){(SEEN[lid]=SEEN[lid]||{})[idx]=1;try{sessionStorage.setItem(SEENKEY,JSON.stringify(SEEN))}catch(e){}}
   function drawMarks(){var L1=document.getElementById("innmk9");if(L1)L1.remove();return;/* 관찰 자리 표시는 쓰지 않는다(누른 곳과 다른 자리에 \"확인\" 상자가 생겨 혼란, 2026-10-10) */try{var sc=document.getElementById("bigscene"),L0=document.getElementById("innmk9");if(!sc||!inn()||G.tab!=="scene"||dl()||document.querySelector("#ov .modal,.crec2,#wmap")){if(L0)L0.innerHTML="";return}var l=loc(),list=l&&OBS[l.id],seen=l&&SEEN[l.id];var lay=document.getElementById("innmk9");
     if(!list||!seen){if(lay)lay.remove();return}if(!lay){lay=document.createElement("div");lay.id="innmk9";B.appendChild(lay)}
     var sv=sc.querySelector("svg[data-inn-world]")||sc.querySelector("svg[data-bg]")||sc.querySelector("svg"),m=sv&&sv.getScreenCTM&&sv.getScreenCTM(),br=sc.getBoundingClientRect();if(!m)return;var h="";
@@ -369,7 +370,7 @@
   document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("#w209rail [data-more]");if(!b||!inn())return;e.preventDefault();e.stopImmediatePropagation();
     var r=document.getElementById("w209rail");if(!r)return;var now=performance.now();if(now-(b.__t||0)<250)return;b.__t=now;r.classList.toggle("more");try{SFX.tap()}catch(x){}},true);
   /* QA 저장칸 표시(?qa=1 / ?slot=이름) */
-  try{if(window.__QASLOT){var qb=document.createElement("div");qb.id="qaslot9";qb.textContent="QA 저장칸 · "+window.__QASLOT;qb.style.cssText="position:fixed;left:6px;bottom:6px;z-index:3000;padding:2px 8px;border-radius:6px;background:rgba(162,59,42,.85);color:#fff;font:12px Galmuri11,monospace;pointer-events:none";(document.body||document.documentElement).appendChild(qb)}}catch(e){}
+  try{if(window.__QASLOT&&window.__QASLOT!=="admin-test"){var qb=document.createElement("div");qb.id="qaslot9";qb.textContent="QA 저장칸 · "+window.__QASLOT;qb.style.cssText="position:fixed;left:6px;bottom:6px;z-index:3000;padding:2px 8px;border-radius:6px;background:rgba(162,59,42,.85);color:#fff;font:12px Galmuri11,monospace;pointer-events:none";(document.body||document.documentElement).appendChild(qb)}}catch(e){}
   /* Money clues lead through testimony and the register before the return. */
   try{var _nsx=nextStep;nextStep=function(c){var r=_nsx.apply(this,arguments);try{if(!inn()||!G.beats||!G.beats.inn_pro||G.beats.inn_final||!r)return r;
     if(G.found.indexOf("C04")>=0&&!G.beats.inn_life_confirmed&&!G.beats.inn_meet)return {say:"모두 식당에 모여 작은 손님부터 살펴보자.",tab:"final"};
