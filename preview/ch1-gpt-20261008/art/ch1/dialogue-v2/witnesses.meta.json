@@ -1,0 +1,549 @@
+{
+  "id": "ch1-cast-identity-v2-witnesses",
+  "created": "2026-10-11",
+  "authorization": "User explicitly approved distinct character personality art and its application.",
+  "creation": "image_gen reference-guided generation and tool edits; final original PNG copied byte-for-byte. No pixel editing, cutting, resizing, alpha conversion or background removal.",
+  "original_source": "/workspace/generated_images/exec-36f8e74a-23e3-4eca-b6ce-a78a3e88e1ba.png",
+  "src": "art/ch1/dialogue-v2/witnesses.png",
+  "width": 1536,
+  "height": 1024,
+  "sha256": "c30bda2a8734f876d982c95f9c9f2675e4c61f75de9f0f0d8f475b9e9bd1798f",
+  "rgba_alpha_range": [
+    0,
+    254
+  ],
+  "alpha_zero_ratio": 0.55453,
+  "coordinate_space": "absolute source pixels; crop=[x,y,width,height]; face=[x,y,squareSize]; foreground_bbox/world_bbox=[x0,y0,x1exclusive,y1exclusive].",
+  "layout": {
+    "columns": 5,
+    "rows": 2,
+    "nominal_order": [
+      "world",
+      "neutral",
+      "thinking",
+      "distressed",
+      "expressive"
+    ],
+    "source_region_columns": [
+      0,
+      309,
+      620,
+      919,
+      1216,
+      1536
+    ],
+    "source_region_rows": [
+      0,
+      544,
+      1024
+    ],
+    "note": "Generated figures are arranged 5x2; fixed actual region boundaries are measured in empty gutters rather than assuming integer uniform-grid crop. Ten alpha>=128 foreground silhouettes are separate. Full crow feet remain intact through y511 and the bottom-row raccoon begins y571."
+  },
+  "identity_references": [
+    "art/ch1/dialogue-v1/witnesses.png",
+    "art/ch1/cast/karo-front.png",
+    "art/ch1/neoul-v4/neoul-default.png",
+    "art/ch1/neoul-v4/neoul-admonish.png"
+  ],
+  "generation_history": [
+    "/workspace/generated_images/exec-3c008ffb-bcaa-4668-9ec5-cb9a0fb0cd99.png",
+    "/workspace/generated_images/exec-309050b6-91fc-44a7-8d3e-b31f0d5e3304.png",
+    "/workspace/generated_images/exec-c94cbfdf-9d76-41fa-8ccb-f4afcff87d07.png",
+    "/workspace/generated_images/exec-36f8e74a-23e3-4eca-b6ce-a78a3e88e1ba.png"
+  ],
+  "identity_notes": {
+    "karo": "Mature slate crow with long angular sideways beak, tiny half-lidded skeptical eyes, rough teal crest and narrow crooked stance. Hatless red-brown mail jacket, ochre vest, cream collar, satchel strap/buckle. Tugging strap and short feather-wing route gesture; no human hand or thumb.",
+    "wanggu": "Broad adult real raccoon with wide dark bandit mask, small amber eyes, gray-white cheeks/muzzle and mature broad jaw. Brown hat, cream rolled shirt, brown vest/star badge, glasses hanging on chest, gray trousers and shorter dark-ringed tail. Furry paw on hip, chin/recordbook thought, neck-rub sheepishness and broad furry regulation emphasis. Not a squirrel father silhouette."
+  },
+  "alpha_note": "Raw image_gen output is RGBA alpha 0..254. Empty sampled gutters and corners have alpha=0; some source edge specks/antialias are retained without pixel processing. Crops use alpha>=32 bounds plus safe padding.",
+  "cells": [
+    {
+      "character": "karo",
+      "state": "world",
+      "region": [
+        0,
+        0,
+        309,
+        544
+      ],
+      "foreground_bbox": [
+        26,
+        102,
+        258,
+        512
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        26,
+        102,
+        51,
+        32
+      ]
+    },
+    {
+      "character": "karo",
+      "state": "neutral",
+      "region": [
+        309,
+        0,
+        311,
+        544
+      ],
+      "foreground_bbox": [
+        350,
+        151,
+        606,
+        499
+      ],
+      "outer20px_alpha_max": 253,
+      "visible_margin": [
+        41,
+        151,
+        14,
+        45
+      ]
+    },
+    {
+      "character": "karo",
+      "state": "thinking",
+      "region": [
+        620,
+        0,
+        299,
+        544
+      ],
+      "foreground_bbox": [
+        651,
+        157,
+        895,
+        492
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        31,
+        157,
+        24,
+        52
+      ]
+    },
+    {
+      "character": "karo",
+      "state": "distressed",
+      "region": [
+        919,
+        0,
+        297,
+        544
+      ],
+      "foreground_bbox": [
+        938,
+        154,
+        1189,
+        500
+      ],
+      "outer20px_alpha_max": 53,
+      "visible_margin": [
+        19,
+        154,
+        27,
+        44
+      ]
+    },
+    {
+      "character": "karo",
+      "state": "expressive",
+      "region": [
+        1216,
+        0,
+        320,
+        544
+      ],
+      "foreground_bbox": [
+        1230,
+        152,
+        1517,
+        492
+      ],
+      "outer20px_alpha_max": 254,
+      "visible_margin": [
+        14,
+        152,
+        19,
+        52
+      ]
+    },
+    {
+      "character": "wanggu",
+      "state": "world",
+      "region": [
+        0,
+        544,
+        309,
+        480
+      ],
+      "foreground_bbox": [
+        17,
+        570,
+        278,
+        934
+      ],
+      "outer20px_alpha_max": 252,
+      "visible_margin": [
+        17,
+        26,
+        31,
+        90
+      ]
+    },
+    {
+      "character": "wanggu",
+      "state": "neutral",
+      "region": [
+        309,
+        544,
+        311,
+        480
+      ],
+      "foreground_bbox": [
+        328,
+        592,
+        595,
+        918
+      ],
+      "outer20px_alpha_max": 74,
+      "visible_margin": [
+        19,
+        48,
+        25,
+        106
+      ]
+    },
+    {
+      "character": "wanggu",
+      "state": "thinking",
+      "region": [
+        620,
+        544,
+        299,
+        480
+      ],
+      "foreground_bbox": [
+        637,
+        597,
+        893,
+        918
+      ],
+      "outer20px_alpha_max": 250,
+      "visible_margin": [
+        17,
+        53,
+        26,
+        106
+      ]
+    },
+    {
+      "character": "wanggu",
+      "state": "distressed",
+      "region": [
+        919,
+        544,
+        297,
+        480
+      ],
+      "foreground_bbox": [
+        935,
+        601,
+        1202,
+        918
+      ],
+      "outer20px_alpha_max": 254,
+      "visible_margin": [
+        16,
+        57,
+        14,
+        106
+      ]
+    },
+    {
+      "character": "wanggu",
+      "state": "expressive",
+      "region": [
+        1216,
+        544,
+        320,
+        480
+      ],
+      "foreground_bbox": [
+        1230,
+        591,
+        1518,
+        918
+      ],
+      "outer20px_alpha_max": 253,
+      "visible_margin": [
+        14,
+        47,
+        18,
+        106
+      ]
+    }
+  ],
+  "characters": {
+    "karo": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          14,
+          90,
+          256,
+          434
+        ],
+        "face": [
+          78,
+          102,
+          180
+        ],
+        "feet": [
+          162,
+          512
+        ],
+        "world_bbox": [
+          26,
+          102,
+          258,
+          512
+        ]
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          338,
+          139,
+          280,
+          372
+        ],
+        "face": [
+          350,
+          150,
+          242
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          639,
+          145,
+          268,
+          359
+        ],
+        "face": [
+          650,
+          155,
+          246
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          926,
+          142,
+          275,
+          370
+        ],
+        "face": [
+          937,
+          154,
+          251
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1218,
+          140,
+          311,
+          364
+        ],
+        "face": [
+          1236,
+          151,
+          265
+        ]
+      }
+    },
+    "wanggu": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          5,
+          558,
+          285,
+          388
+        ],
+        "face": [
+          76,
+          568,
+          169
+        ],
+        "feet": [
+          162,
+          934
+        ],
+        "world_bbox": [
+          17,
+          570,
+          278,
+          934
+        ]
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          316,
+          580,
+          291,
+          350
+        ],
+        "face": [
+          346,
+          590,
+          240
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          625,
+          585,
+          280,
+          345
+        ],
+        "face": [
+          655,
+          593,
+          236
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          923,
+          589,
+          291,
+          341
+        ],
+        "face": [
+          946,
+          598,
+          242
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/witnesses.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1218,
+          579,
+          312,
+          351
+        ],
+        "face": [
+          1258,
+          589,
+          239
+        ]
+      }
+    }
+  },
+  "verification": {
+    "major_foreground_components_alpha128": 10,
+    "component_bboxes": [
+      [
+        27,
+        102,
+        258,
+        512
+      ],
+      [
+        350,
+        152,
+        605,
+        499
+      ],
+      [
+        651,
+        157,
+        894,
+        491
+      ],
+      [
+        939,
+        155,
+        1189,
+        500
+      ],
+      [
+        1230,
+        152,
+        1517,
+        491
+      ],
+      [
+        17,
+        571,
+        277,
+        934
+      ],
+      [
+        329,
+        592,
+        595,
+        917
+      ],
+      [
+        638,
+        597,
+        892,
+        917
+      ],
+      [
+        936,
+        602,
+        1202,
+        917
+      ],
+      [
+        1230,
+        591,
+        1518,
+        917
+      ]
+    ],
+    "copy_matches_original_sha256": true,
+    "size_and_mode": [
+      1536,
+      1024,
+      "RGBA"
+    ],
+    "postprocessing": "none"
+  }
+}

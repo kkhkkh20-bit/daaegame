@@ -1,0 +1,609 @@
+{
+  "id": "ch1-cast-identity-v2-inn",
+  "created": "2026-10-11",
+  "authorization": "User explicitly approved distinct character faces, adult/elderly proportions, signature poses and matching new scene fullbody plus separately authored dialogue busts. See CODEX_CAST_IDENTITY_20261011.txt.",
+  "creation": "image_gen only; reference-guided differentiated redesign followed by two image_gen layout revisions. Final generated PNG bytes copied unchanged; no image cutting, resizing, alpha removal or pixel editing.",
+  "src": "art/ch1/dialogue-v2/inn.png",
+  "width": 1774,
+  "height": 887,
+  "rows": [
+    "innma",
+    "seryeon"
+  ],
+  "state_order": [
+    "world",
+    "neutral",
+    "thinking",
+    "distressed",
+    "expressive"
+  ],
+  "grid": {
+    "columns": 5,
+    "rows": 2,
+    "x_boundaries": [
+      0,
+      355,
+      710,
+      1064,
+      1419,
+      1774
+    ],
+    "y_boundaries": [
+      0,
+      444,
+      887
+    ],
+    "note": "Actual generated 1774x887 canvas divided by rounded equal proportions; source size was not forced or resampled."
+  },
+  "coordinate_space": "absolute source pixels; crop=[x,y,w,h]; face=[x,y,squareSize]; foreground_bbox=[left,top,right,bottom]; foot=[sourceX,sourceY]",
+  "original_source": "/workspace/generated_images/exec-6aca0ba6-d0d2-4cea-901c-76ae18cbad3c.png",
+  "sha256": "c5932266ba100c2de080f7e5ade02e35ad2402192a95d563ec446cec68122f9d",
+  "identity_references": [
+    "art/ch1/cast/innma-neutral-v5.png",
+    "art/ch1/source/seryeon-seated-paperwork-front-v2.png"
+  ],
+  "alpha_measurement": {
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "foreground_threshold": 32,
+    "outer_margin": 20,
+    "outer_margin_max": 1,
+    "note": "Fully transparent gutters; raw RGB channels contain low-alpha edge colors including bright red pixels alpha<=8, retained without postprocessing. Use source alpha in game rendering."
+  },
+  "cells": [
+    {
+      "character": "innma",
+      "state": "world",
+      "cell": [
+        0,
+        0,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        110,
+        137,
+        244,
+        405
+      ],
+      "foreground_local_bbox": [
+        110,
+        137,
+        244,
+        405
+      ],
+      "visible_margin": [
+        110,
+        137,
+        111,
+        39
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "innma",
+      "state": "neutral",
+      "cell": [
+        355,
+        0,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        447,
+        175,
+        628,
+        397
+      ],
+      "foreground_local_bbox": [
+        92,
+        175,
+        273,
+        397
+      ],
+      "visible_margin": [
+        92,
+        175,
+        82,
+        47
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "innma",
+      "state": "thinking",
+      "cell": [
+        710,
+        0,
+        354,
+        444
+      ],
+      "foreground_bbox": [
+        787,
+        175,
+        982,
+        397
+      ],
+      "foreground_local_bbox": [
+        77,
+        175,
+        272,
+        397
+      ],
+      "visible_margin": [
+        77,
+        175,
+        82,
+        47
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "innma",
+      "state": "distressed",
+      "cell": [
+        1064,
+        0,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        1120,
+        180,
+        1316,
+        400
+      ],
+      "foreground_local_bbox": [
+        56,
+        180,
+        252,
+        400
+      ],
+      "visible_margin": [
+        56,
+        180,
+        103,
+        44
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "innma",
+      "state": "expressive",
+      "cell": [
+        1419,
+        0,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        1476,
+        177,
+        1676,
+        400
+      ],
+      "foreground_local_bbox": [
+        57,
+        177,
+        257,
+        400
+      ],
+      "visible_margin": [
+        57,
+        177,
+        98,
+        44
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "seryeon",
+      "state": "world",
+      "cell": [
+        0,
+        444,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        66,
+        511,
+        250,
+        822
+      ],
+      "foreground_local_bbox": [
+        66,
+        67,
+        250,
+        378
+      ],
+      "visible_margin": [
+        66,
+        67,
+        105,
+        65
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "seryeon",
+      "state": "neutral",
+      "cell": [
+        355,
+        444,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        447,
+        554,
+        653,
+        807
+      ],
+      "foreground_local_bbox": [
+        92,
+        110,
+        298,
+        363
+      ],
+      "visible_margin": [
+        92,
+        110,
+        57,
+        80
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "seryeon",
+      "state": "thinking",
+      "cell": [
+        710,
+        444,
+        354,
+        443
+      ],
+      "foreground_bbox": [
+        791,
+        559,
+        984,
+        802
+      ],
+      "foreground_local_bbox": [
+        81,
+        115,
+        274,
+        358
+      ],
+      "visible_margin": [
+        81,
+        115,
+        80,
+        85
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "seryeon",
+      "state": "distressed",
+      "cell": [
+        1064,
+        444,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        1128,
+        557,
+        1328,
+        807
+      ],
+      "foreground_local_bbox": [
+        64,
+        113,
+        264,
+        363
+      ],
+      "visible_margin": [
+        64,
+        113,
+        91,
+        80
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "seryeon",
+      "state": "expressive",
+      "cell": [
+        1419,
+        444,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        1471,
+        554,
+        1698,
+        807
+      ],
+      "foreground_local_bbox": [
+        52,
+        110,
+        279,
+        363
+      ],
+      "visible_margin": [
+        52,
+        110,
+        76,
+        80
+      ],
+      "outer20px_alpha_max": 1
+    }
+  ],
+  "characters": {
+    "innma": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          102,
+          129,
+          150,
+          284
+        ],
+        "face": [
+          111,
+          134,
+          136
+        ],
+        "foreground_bbox": [
+          110,
+          137,
+          244,
+          405
+        ],
+        "foot": [
+          177,
+          405
+        ],
+        "center_x": 177.0,
+        "orientation": "upright",
+        "composition": "fullbody"
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          399,
+          163,
+          241,
+          249
+        ],
+        "face": [
+          403,
+          167,
+          228
+        ],
+        "foreground_bbox": [
+          447,
+          175,
+          628,
+          397
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          754,
+          163,
+          241,
+          249
+        ],
+        "face": [
+          758,
+          167,
+          228
+        ],
+        "foreground_bbox": [
+          787,
+          175,
+          982,
+          397
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1108,
+          163,
+          241,
+          249
+        ],
+        "face": [
+          1112,
+          167,
+          228
+        ],
+        "foreground_bbox": [
+          1120,
+          180,
+          1316,
+          400
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1463,
+          163,
+          241,
+          249
+        ],
+        "face": [
+          1467,
+          167,
+          228
+        ],
+        "foreground_bbox": [
+          1476,
+          177,
+          1676,
+          400
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      }
+    },
+    "seryeon": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          58,
+          503,
+          200,
+          327
+        ],
+        "face": [
+          124,
+          507,
+          132
+        ],
+        "foreground_bbox": [
+          66,
+          511,
+          250,
+          822
+        ],
+        "foot": [
+          175,
+          822
+        ],
+        "center_x": 158.0,
+        "orientation": "upright",
+        "composition": "fullbody"
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          395,
+          542,
+          270,
+          277
+        ],
+        "face": [
+          435,
+          545,
+          218
+        ],
+        "foreground_bbox": [
+          447,
+          554,
+          653,
+          807
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          750,
+          542,
+          270,
+          277
+        ],
+        "face": [
+          790,
+          545,
+          218
+        ],
+        "foreground_bbox": [
+          791,
+          559,
+          984,
+          802
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1104,
+          542,
+          270,
+          277
+        ],
+        "face": [
+          1144,
+          545,
+          218
+        ],
+        "foreground_bbox": [
+          1128,
+          557,
+          1328,
+          807
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/inn.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1459,
+          542,
+          270,
+          277
+        ],
+        "face": [
+          1499,
+          545,
+          218
+        ],
+        "foreground_bbox": [
+          1471,
+          554,
+          1698,
+          807
+        ],
+        "orientation": "upright",
+        "composition": "dialogue-bust"
+      }
+    }
+  },
+  "independent_review": {
+    "innma": "Clearly older than previous big-eyed bust: narrow half-moon eyes, visible round spectacles/bridge, pale forehead wisps, sloping low shoulders, rounded hunched standing silhouette, floral apron and towel-folding signature. Distressed eyes are still stylized but stay narrow and hooded.",
+    "seryeon": "Adult fox identity now differs from squirrel children: pointed muzzle/triangular ears, narrow half-lidded eyes, lean long legs and angular coat shoulders, asymmetrical smirk. Distressed state visibly crumples papers in furry paws.",
+    "scope": "Separate field fullbody and dialogue bust drawings, same wardrobe and face per row. No human hands or nails. This pair differentiates age/silhouette; not a claim that every character in the game has been reviewed or unified."
+  }
+}

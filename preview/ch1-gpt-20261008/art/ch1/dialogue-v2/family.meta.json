@@ -1,0 +1,585 @@
+{
+  "id": "ch1-cast-family-v2",
+  "created": "2026-10-11",
+  "authorization": "User explicitly approved character personality redesign and application.",
+  "src": "art/ch1/dialogue-v2/family.png",
+  "width": 1536,
+  "height": 1024,
+  "sha256": "f04a1ab8ca4edff2a2d4accbd2a409cc5a661a4edf35c41f6dfca9dfd62196c5",
+  "source": "/workspace/generated_images/exec-8b8c54a1-c65f-46fa-8731-db1a59fef84c.png",
+  "processing": "Original image_gen PNG copied byte-for-byte. No pixel editing, cutting, scaling, palette conversion or background removal. Runtime crops only.",
+  "generation_history": [
+    "/workspace/generated_images/exec-8ebce2d2-ff6d-4397-9710-49b452b2009d.png",
+    "/workspace/generated_images/exec-186a497f-78af-4916-bdcc-07e23edbf9f8.png",
+    "/workspace/generated_images/exec-8b8c54a1-c65f-46fa-8731-db1a59fef84c.png"
+  ],
+  "identity_references": [
+    "art/ch1/dialogue-v1/family.png",
+    "art/ch1/source/dadol-profile-daram-matched-v2.png",
+    "art/ch1/daram-v4/daram-idle-t0-dialogue.png",
+    "art/ch1/cinematics/carriage-family-close.png"
+  ],
+  "design": {
+    "det1": "Small child squirrel, large curious eyes, red plaid cap, turquoise pendant, notebook/pencil; no adult proportions.",
+    "det0": "Adult squirrel, smaller calm eyes, thick brows, longer muzzle and torso, broad shoulders, no hat/glasses, navy jacket/red scarf/olive trousers matching carriage CG. Distressed state grips opposite jacket cuff."
+  },
+  "coordinate_space": "absolute source pixels; crop=[x,y,w,h]; face=[x,y,square]; feet=world lower anchor in source pixels",
+  "grid": {
+    "columns": 5,
+    "rows": 2,
+    "requested_equal_column_width": 307.2,
+    "safe_column_boundaries": [
+      0,
+      338,
+      644,
+      944,
+      1230,
+      1536
+    ],
+    "row_boundaries": [
+      0,
+      512,
+      1024
+    ],
+    "note": "Generated figures are slightly shifted from equal grid centers; actual fixed boundaries are placed in empty inter-figure gutters. Crop points do not assume equal columns."
+  },
+  "alpha": {
+    "range": [
+      0,
+      254
+    ],
+    "foreground_threshold": 32,
+    "note": "image_gen includes isolated alpha=1/255 specks in transparent gutters; no visible neighboring character overlap. Raw PNG retained."
+  },
+  "column_order": [
+    "world",
+    "neutral",
+    "thinking",
+    "distressed",
+    "expressive"
+  ],
+  "row_order": [
+    "det1",
+    "det0"
+  ],
+  "characters": {
+    "det1": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          397,
+          184,
+          220,
+          258
+        ],
+        "face": [
+          421,
+          189,
+          174
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          684,
+          184,
+          220,
+          258
+        ],
+        "face": [
+          708,
+          189,
+          174
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          981,
+          184,
+          220,
+          258
+        ],
+        "face": [
+          1005,
+          189,
+          174
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1269,
+          184,
+          220,
+          258
+        ],
+        "face": [
+          1293,
+          189,
+          174
+        ]
+      }
+    },
+    "det0": {
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          389,
+          624,
+          230,
+          266
+        ],
+        "face": [
+          420,
+          629,
+          176
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          681,
+          624,
+          230,
+          266
+        ],
+        "face": [
+          709,
+          629,
+          176
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          976,
+          624,
+          230,
+          266
+        ],
+        "face": [
+          1011,
+          629,
+          176
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/family.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1267,
+          624,
+          230,
+          266
+        ],
+        "face": [
+          1300,
+          629,
+          176
+        ]
+      }
+    }
+  },
+  "world": {
+    "det1": {
+      "src": "art/ch1/dialogue-v2/family.png",
+      "width": 1536,
+      "height": 1024,
+      "crop": [
+        62,
+        140,
+        225,
+        313
+      ],
+      "face": [
+        119,
+        151,
+        148
+      ],
+      "feet": [
+        186,
+        443
+      ],
+      "pose": "standing-full-body"
+    },
+    "det0": {
+      "src": "art/ch1/dialogue-v2/family.png",
+      "width": 1536,
+      "height": 1024,
+      "crop": [
+        58,
+        533,
+        232,
+        383
+      ],
+      "face": [
+        116,
+        545,
+        156
+      ],
+      "feet": [
+        184,
+        906
+      ],
+      "pose": "standing-full-body"
+    }
+  },
+  "cells": [
+    {
+      "character": "det1",
+      "state": "world",
+      "cell": [
+        0,
+        0,
+        338,
+        512
+      ],
+      "foreground_bbox": [
+        72,
+        150,
+        277,
+        443
+      ],
+      "crop": [
+        62,
+        140,
+        225,
+        313
+      ],
+      "face": [
+        119,
+        151,
+        148
+      ],
+      "foreground_margin": [
+        72,
+        150,
+        61,
+        69
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det1",
+      "state": "neutral",
+      "cell": [
+        338,
+        0,
+        306,
+        512
+      ],
+      "foreground_bbox": [
+        410,
+        194,
+        599,
+        432
+      ],
+      "crop": [
+        397,
+        184,
+        220,
+        258
+      ],
+      "face": [
+        421,
+        189,
+        174
+      ],
+      "foreground_margin": [
+        72,
+        194,
+        45,
+        80
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det1",
+      "state": "thinking",
+      "cell": [
+        644,
+        0,
+        300,
+        512
+      ],
+      "foreground_bbox": [
+        697,
+        198,
+        880,
+        433
+      ],
+      "crop": [
+        684,
+        184,
+        220,
+        258
+      ],
+      "face": [
+        708,
+        189,
+        174
+      ],
+      "foreground_margin": [
+        53,
+        198,
+        64,
+        79
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det1",
+      "state": "distressed",
+      "cell": [
+        944,
+        0,
+        286,
+        512
+      ],
+      "foreground_bbox": [
+        1000,
+        200,
+        1184,
+        433
+      ],
+      "crop": [
+        981,
+        184,
+        220,
+        258
+      ],
+      "face": [
+        1005,
+        189,
+        174
+      ],
+      "foreground_margin": [
+        56,
+        200,
+        46,
+        79
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det1",
+      "state": "expressive",
+      "cell": [
+        1230,
+        0,
+        306,
+        512
+      ],
+      "foreground_bbox": [
+        1289,
+        198,
+        1475,
+        431
+      ],
+      "crop": [
+        1269,
+        184,
+        220,
+        258
+      ],
+      "face": [
+        1293,
+        189,
+        174
+      ],
+      "foreground_margin": [
+        59,
+        198,
+        61,
+        81
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det0",
+      "state": "world",
+      "cell": [
+        0,
+        512,
+        338,
+        512
+      ],
+      "foreground_bbox": [
+        68,
+        543,
+        280,
+        906
+      ],
+      "crop": [
+        58,
+        533,
+        232,
+        383
+      ],
+      "face": [
+        116,
+        545,
+        156
+      ],
+      "foreground_margin": [
+        68,
+        31,
+        58,
+        118
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det0",
+      "state": "neutral",
+      "cell": [
+        338,
+        512,
+        306,
+        512
+      ],
+      "foreground_bbox": [
+        397,
+        633,
+        600,
+        874
+      ],
+      "crop": [
+        389,
+        624,
+        230,
+        266
+      ],
+      "face": [
+        420,
+        629,
+        176
+      ],
+      "foreground_margin": [
+        59,
+        121,
+        44,
+        150
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det0",
+      "state": "thinking",
+      "cell": [
+        644,
+        512,
+        300,
+        512
+      ],
+      "foreground_bbox": [
+        688,
+        639,
+        897,
+        880
+      ],
+      "crop": [
+        681,
+        624,
+        230,
+        266
+      ],
+      "face": [
+        709,
+        629,
+        176
+      ],
+      "foreground_margin": [
+        44,
+        127,
+        47,
+        144
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det0",
+      "state": "distressed",
+      "cell": [
+        944,
+        512,
+        286,
+        512
+      ],
+      "foreground_bbox": [
+        992,
+        643,
+        1186,
+        880
+      ],
+      "crop": [
+        976,
+        624,
+        230,
+        266
+      ],
+      "face": [
+        1011,
+        629,
+        176
+      ],
+      "foreground_margin": [
+        48,
+        131,
+        44,
+        144
+      ],
+      "outer20px_alpha_max": 1
+    },
+    {
+      "character": "det0",
+      "state": "expressive",
+      "cell": [
+        1230,
+        512,
+        306,
+        512
+      ],
+      "foreground_bbox": [
+        1275,
+        638,
+        1482,
+        880
+      ],
+      "crop": [
+        1267,
+        624,
+        230,
+        266
+      ],
+      "face": [
+        1300,
+        629,
+        176
+      ],
+      "foreground_margin": [
+        45,
+        126,
+        54,
+        144
+      ],
+      "outer20px_alpha_max": 1
+    }
+  ]
+}

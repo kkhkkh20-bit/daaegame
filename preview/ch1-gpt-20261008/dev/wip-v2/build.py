@@ -40,12 +40,22 @@ rep('   var p=pose(k,m),cur=tf.querySelector("img.b202");',
     '''   if(CASES[G.ci].id==="inn"&&window.__innPaintDialogue){var panel=document.querySelector(".fstalk .tpanel");if(window.__innPaintDialogue(tf,k,m,{surface:"talk",panel:panel&&panel.getBoundingClientRect()})){tf.classList.add("b202");return}}
    if(!on(k)){tf.classList.remove("b202");return}
    var p=pose(k,m),cur=tf.querySelector("img.b202");''')
+# Council characters remain at their authored seats, using a separate waist-up
+# drawing behind the native table. Lists and portraits share this new identity.
+rep('function figHtml(k,m){', '''function figHtml(k,m){if(G&&CASES[G.ci]&&CASES[G.ci].id==="inn"&&window.__innCouncilCast){var cast=window.__innCouncilCast(k,m);if(cast)return cast}''')
+# A legacy seated PNG used a taller, higher square seat. The new busts share
+# the native perspective layout; retaining that flag enlarged only three heads.
+rep('var p=P[i],sa=!!seatSrc(k,"");',
+    'var p=P[i],sa=!!seatSrc(k,"")&&!(G&&CASES[G.ci].id==="inn"&&window.__innDialogueManifest&&window.__innDialogueManifest.characters[k]);')
+# A repeated phrase with a different authored mood still needs the new acting
+# cue. Text-only caching left the council on the previous expression.
+rep('var key=(spk||"")+"|"+txt.textContent;', 'var key=(spk||"")+"|"+txt.textContent+"|"+moodOf(r);')
 # 3) 대화 무대 모듈: 엔진 클로저 안(첫 실행 직전)에 넣는다
 modules=['inn_stage','inn_music_tracks','inn_recorded_sfx','inn_audio','inn_input','inn_ui9','inn_polish','inn_evidence','inn_simple_ui','inn_map_navigation','inn_scene_guidance','inn_room_puzzles','inn_posture_props','inn_character_motion','inn_dialogue_portraits','inn_opening_direction','inn_story_cinematics','inn_purchase_payoff','inn_mother_lead','inn_chapter2_teaser']
 cinematic_root=SOURCE.parent.parent / 'art/ch1/cinematics'
 story_art={key:(cinematic_root / name).is_file() for key,name in {'carriage':'carriage-family-close.png','driver':'carriage-driver-close.png','village':'village-arrival-wide.png','seal':'sealed-pouch-close.png'}.items()}
 import json
-dialogue_manifest=SOURCE.parent.parent / 'art/ch1/dialogue-v1/manifest.json'
+dialogue_manifest=SOURCE.parent.parent / 'art/ch1/dialogue-v2/manifest.json'
 dialogue_art=json.loads(dialogue_manifest.read_text(encoding='utf-8')) if dialogue_manifest.is_file() else {'characters':{}}
 js='window.__innStoryArt='+json.dumps(story_art)+';\nwindow.__innDialogueManifest='+json.dumps(dialogue_art,ensure_ascii=False)+';\n'+'\n'.join((SOURCE / (name+'.js')).read_text(encoding='utf-8') for name in modules)
 hk='CASES.forEach(function(c){var cf=CONFESS[c.id];c.contra.forEach(function(x){if(cf&&x.unlock===cf)x.unlock=null})});\n'

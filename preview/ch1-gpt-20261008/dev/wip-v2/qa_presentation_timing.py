@@ -7,6 +7,7 @@ speeds start at the real main menu and use real pointer/keyboard input.
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 import shutil
 import time
@@ -32,7 +33,9 @@ LOGGER = r'''(()=>{
    audio,amb,cinematic,opening,cg:cg?{uid:identity(cg),cut:cg.dataset.cut,css:css(cg),image:image(cg.querySelector('.cinema-picture'))}:null,
    cgCount:document.querySelectorAll('#inn-story-cg').length,veil:identity(veil),dialog:!!veil,
    actorImages:Array.from(document.querySelectorAll('#innstage img,#innstage svg image,#vnfig img,.fstalk .tfig img,.fstalk .tfig svg image')).map(image),actorCss:css(q('#innstage')),
-   busts:safe(()=>withoutGame(window.__innDialogueState?.())),worldActors:Array.from(document.querySelectorAll('#bigscene image.wn9,#bigscene image.innseat')).map(e=>({k:e.dataset.k||'det1',...image(e)})),
+   busts:safe(()=>withoutGame(window.__innDialogueState?.())),worldActors:Array.from(document.querySelectorAll('#bigscene image.wn9,#bigscene image.innseat')).map(e=>({k:e.dataset.k||'det1',crop:e.__worldCrop||null,posture:e.dataset.posture||null,...image(e)})),
+   nightActors:Array.from(document.querySelectorAll('#inn-night-walk svg[data-surface]')).map(e=>({surface:e.dataset.surface,crop:e.getAttribute('viewBox'),src:e.querySelector('image')?.getAttribute('href')})),
+   speaker:q('#vnbox .spk9')?{k:q('#vnbox .spk9').dataset.k,mood:q('#vnbox .spk9').dataset.mood,crop:q('#vnbox .spk9 img')?.dataset.crop,image:image(q('#vnbox .spk9 img')),expected:safe(()=>window.__innDialogueFace?.((q('#vnbox .spk9').dataset.k||'').split('|')[0],q('#vnbox .spk9').dataset.mood))}:null,
    worldBg:q('#bigscene>svg[data-bg]')?.dataset.bg||null,dialogBg:image(q('#dlgveil>.vnbg img')),
    banner:q('.banner,.placecard')?q('.banner,.placecard').innerText:null,night:!!q('#inn-night-walk'),
    foundText:q('#w209rail .n')?.innerText||null,
@@ -63,6 +66,42 @@ def contiguous_intervals(frames, predicate):
         intervals.append({'start':start['t'],'end':end['t'],'ms':round(end['t']-start['t'],1),
                           'line':(start.get('audio') or {}).get('line'),'sid':start['sid']})
     return intervals
+
+
+def check_wrapper(page):
+    """Read the production wrapper transform; never alter its orientation."""
+    if not page.locator('#game').count():return None
+    matrix=page.locator('#game').evaluate('e=>{const m=new DOMMatrix(getComputedStyle(e).transform);return [m.a,m.b,m.c,m.d]}')
+    x,y=math.hypot(*matrix[:2]),math.hypot(*matrix[2:])
+    assert x>0 and abs(x-y)<1e-7,('Nonuniform production wrapper scale',matrix)
+    assert abs(matrix[0]*matrix[2]+matrix[1]*matrix[3])<1e-7,('Sheared production wrapper',matrix)
+    if page.viewport_size['height']>page.viewport_size['width']:
+        assert abs(matrix[0])<1e-7 and abs(matrix[3])<1e-7 and abs(matrix[1])>0 and abs(matrix[2])>0,('Portrait wrapper lost forced landscape rotation',matrix)
+    return matrix
+
+
+def check_art_trace(trace,manifest):
+    """World and close art may share a PNG, but must use distinct authored crops."""
+    seen_world=set();seen_night=set();speakers=0
+    for row in trace['frames']:
+        for actor in row['worldActors']:
+            art=manifest.get('world',{}).get(actor['k'])
+            if art and actor['crop']:
+                assert actor['src']==art['src'] and actor['crop']==art['crop'],actor
+                seen_world.add(actor['k'])
+        for actor in row.get('nightActors',[]):
+            art=manifest['world']['det1'] if actor['surface']=='world' else manifest['characters']['det1']['distressed']
+            assert actor['src']==art['src'] and [float(v) for v in actor['crop'].split()]==art['crop'],actor
+            seen_night.add(actor['surface'])
+        speaker=row.get('speaker');expected=speaker and speaker.get('expected')
+        if row['dialog'] and speaker and expected:
+            # The native observer can take one task before refreshing the DOM;
+            # count settled, correct faces rather than assert transitional data.
+            desired='|'.join(map(str,[(speaker['k'] or '').split('|')[0],expected['src'],expected['x'],expected['y'],expected['size']]))
+            if speaker['crop']==desired and speaker['image']['src']==expected['src']:speakers+=1
+    assert seen_night=={'world','close'},('Night full-body/close-up source crops not exercised',seen_night)
+    assert speakers>0,'No actual speaker face matched its new authored crop'
+    return {'worldCharacters':sorted(seen_world),'nightSurfaces':sorted(seen_night),'matchedSpeakerFrames':speakers}
 
 
 def summarize(trace):
@@ -105,6 +144,7 @@ def menu_resume(browser,args,viewport,output):
     page.on('response',lambda r:bad.append(r.url) if r.status>=400 and 'favicon' not in r.url else None)
     page.goto(args.url,wait_until='domcontentloaded');page.wait_for_timeout(16000)
     frame=page.locator('#game').element_handle().content_frame() if page.locator('#game').count() else page
+    matrix=check_wrapper(page)
     if args.version:
         assert 'build='+args.version in frame.url,frame.url
         assert frame.evaluate('typeof __T')=='undefined'
@@ -158,7 +198,7 @@ def menu_resume(browser,args,viewport,output):
     page.screenshot(path=str(output/f'menu-continue-{args.viewport}.png'))
     assert not errors,errors
     assert not bad,bad
-    report={'url':frame.url,'actualFresh':True,'actualContinue':True,'confirmation':confirmation,'before':before,'main':main,'resumed':resumed,'errors':errors,'bad':bad}
+    report={'url':frame.url,'wrapperMatrix':matrix,'actualFresh':True,'actualContinue':True,'confirmation':confirmation,'before':before,'main':main,'resumed':resumed,'errors':errors,'bad':bad}
     (output/f'menu-continue-{args.viewport}.json').write_text(json.dumps(report,ensure_ascii=False),encoding='utf-8')
     print('PASS actual fresh carriage → native main → actual Continue; stale CG/pulse/departure clear; JS/HTTP0',flush=True)
     context.close()
@@ -181,7 +221,12 @@ def native_talk(page,frame,args,output):
             if(document.elementFromPoint(x,y)?.closest('#bigscene')&&[[0,0],[-6,0],[6,0],[0,-6],[0,6]].every(([dx,dy])=>window.__innNpcHit(x+dx,y+dy)==='innma'))return {x,y};return null}''')
         if point:break
     assert point,'Grandma has no reachable opaque character pixels in the actual dining room'
-    world=frame.evaluate('__qaPresentationState().worldActors')
+    world=frame.evaluate('__innWorldActors?__innWorldActors():__qaPresentationState().worldActors')
+    manifest=frame.evaluate('window.__innDialogueManifest')
+    world_grandma=next(a for a in world if a['k']=='innma')
+    expected_world=manifest['world']['innma']
+    assert world_grandma['src']==expected_world['src'] and world_grandma['crop']==expected_world['crop'],world_grandma
+    assert world_grandma.get('maskReady'),world_grandma
     page.screenshot(path=str(output/f'world-dining-{args.viewport}.png'))
     if page.locator('#game').count():
         point=page.locator('#game').evaluate('''(e,p)=>{const m=new DOMMatrix(getComputedStyle(e).transform),r=e.getBoundingClientRect(),q=m.transformPoint(new DOMPoint(p.x,p.y)),corners=[[0,0],[e.clientWidth,0],[0,e.clientHeight],[e.clientWidth,e.clientHeight]].map(([x,y])=>m.transformPoint(new DOMPoint(x,y)));return {x:r.left+q.x-Math.min(...corners.map(c=>c.x)),y:r.top+q.y-Math.min(...corners.map(c=>c.y))}}''',point)
@@ -196,7 +241,7 @@ def native_talk(page,frame,args,output):
     assert any(a['k']=='innma' and a['surface']=='talk' for a in talk['actors']),talk
     assert frame.locator('.fstalk svg.dialogue-bust[data-k="innma"]').is_visible(),'Native question view has a hidden bust'
     dialogue_sources={a['src'] for a in talk['assets']}
-    assert all(a['src'] not in dialogue_sources for a in world),world
+    assert expected_world['crop']!=manifest['characters']['innma']['neutral']['crop'],'World and dialogue crops are identical'
     page.screenshot(path=str(output/f'talk-{args.viewport}.png'))
     topic=frame.locator('.fstalk .topic:not([disabled]):visible').first
     assert topic.count(),'Native Grandma talk has no reachable question'
@@ -221,12 +266,19 @@ def native_talk(page,frame,args,output):
     visible=frame.locator('#innstage svg.dialogue-bust[data-k="innma"]:visible,.fstalk svg.dialogue-bust[data-k="innma"]:visible')
     assert visible.count()==1,('Native reply does not have exactly one visible Grandma bust',dialogue,diagnostics)
     assert visible.first.get_attribute('data-src') in dialogue_sources,dialogue
+    expression=visible.first.get_attribute('data-expression')
+    expected_bust=manifest['characters']['innma'][expression]
+    assert visible.first.get_attribute('data-src')==expected_bust['src'],dialogue
+    assert [float(v) for v in visible.first.get_attribute('viewBox').split()]==expected_bust['crop'],dialogue
+    face=frame.evaluate('__qaPresentationState().speaker')
+    expected_face='|'.join(map(str,['innma',expected_bust['src'],*expected_bust['face']]))
+    assert face['k'].split('|')[0]=='innma' and face['crop']==expected_face and face['image']['src']==expected_bust['src'],face
     assert not frame.locator('#dlgveil #vnfig:visible').count(),'Legacy reply figure overlaps the bust'
     assert not frame.locator('#inn-story-cg').count(),'Opening CG overlaps the actual investigation question'
     page.screenshot(path=str(output/f'talk-question-{args.viewport}.png'))
-    report={'actualReachedInvestigation':True,'actualNativeNpc':True,'question':question,'reply':reply,'world':world,'talk':talk,'dialogue':dialogue}
+    report={'actualReachedInvestigation':True,'actualNativeNpc':True,'question':question,'reply':reply,'world':world,'talk':talk,'dialogue':dialogue,'replyFace':face,'authoredWorld':expected_world,'authoredBust':expected_bust}
     (output/f'talk-{args.viewport}.json').write_text(json.dumps(report,ensure_ascii=False),encoding='utf-8')
-    print('PASS actual investigation → opaque Grandma pointer → native question → actual Grandma reply with one visible dialogue bust; world art stays separate',flush=True)
+    print('PASS actual investigation → opaque Grandma pointer → native question → actual Grandma reply with one visible dialogue bust; full-body/bust/face authored source+crop match',flush=True)
 
 
 def saved_talk(browser,args,viewport,output):
@@ -237,6 +289,7 @@ def saved_talk(browser,args,viewport,output):
     page.on('response',lambda r:bad.append(r.url) if r.status>=400 and 'favicon' not in r.url else None)
     page.goto(args.url,wait_until='domcontentloaded');page.wait_for_timeout(16000)
     frame=page.locator('#game').element_handle().content_frame() if page.locator('#game').count() else page
+    check_wrapper(page)
     if args.version:
         assert 'build='+args.version in frame.url,frame.url
         assert frame.evaluate('typeof __T')=='undefined'
@@ -280,6 +333,7 @@ def main():
             page.on('response',lambda r:bad.append(r.url) if r.status>=400 and 'favicon' not in r.url else None)
             page.goto(args.url,wait_until='domcontentloaded');page.wait_for_timeout(16000)
             frame=page.locator('#game').element_handle().content_frame() if page.locator('#game').count() else page
+            matrix=check_wrapper(page)
             source_hash=hashlib.sha256(frame.content().encode()).hexdigest()[:12]
             if args.version:
                 assert 'build='+args.version in frame.url,(frame.url,args.version)
@@ -322,7 +376,9 @@ def main():
                 page.wait_for_timeout(180 if speed=='fast' else 800)
             frame.evaluate('__qaPresentationTrace.stopped=true')
             trace=frame.evaluate('__qaPresentationTrace');summary=summarize(trace)
-            report={'url':frame.url,'sourceHash':source_hash,'mode':speed,'viewport':viewport,'actualFresh':True,
+            manifest=frame.evaluate('window.__innDialogueManifest')
+            art_summary=check_art_trace(trace,manifest) if manifest.get('world') else None
+            report={'url':frame.url,'sourceHash':source_hash,'mode':speed,'viewport':viewport,'wrapperMatrix':matrix,'artSummary':art_summary,'actualFresh':True,
                     'finishedInvestigation':done,'inputs':inputs,'errors':errors,'bad':bad,'summary':summary,'trace':trace}
             (output/f'{speed}-{args.viewport}.json').write_text(json.dumps(report,ensure_ascii=False),encoding='utf-8')
             print('RESULT',json.dumps({k:v for k,v in report.items() if k!='trace'},ensure_ascii=False),flush=True)
