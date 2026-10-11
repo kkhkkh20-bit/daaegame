@@ -1,0 +1,467 @@
+{
+  "id": "ch1-cast-identity-v2-scholars",
+  "created": "2026-10-11",
+  "creation": "image_gen reference-guided generation; raw original PNG copied byte-for-byte without pixel editing, cutting, resizing or background removal.",
+  "original_source": "/workspace/generated_images/exec-aa1a8b15-c437-4067-b3cf-97f95d196a27.png",
+  "src": "art/ch1/dialogue-v2/scholars.png",
+  "width": 1536,
+  "height": 1024,
+  "sha256": "2180cd8a0fb7a59ee910bef7f029dd978e78499c1fe9d623a0432e9fd2f80e56",
+  "rgba_alpha_range": [
+    0,
+    254
+  ],
+  "coordinate_space": "absolute source pixels; crop=[x,y,width,height]; face=[x,y,squareSize]; foreground_bbox/world_bbox=[x0,y0,x1exclusive,y1exclusive].",
+  "layout": {
+    "columns": 5,
+    "rows": 2,
+    "nominal_order": [
+      "world",
+      "neutral",
+      "thinking",
+      "distressed",
+      "expressive"
+    ],
+    "source_region_columns": [
+      0,
+      308,
+      622,
+      931,
+      1237,
+      1536
+    ],
+    "source_region_rows": [
+      0,
+      596,
+      1024
+    ],
+    "note": "Use actual source crop, not integer uniform-grid extraction. Full body top row extends through y551; next row begins y639, separated by 88px transparent gap. Ten foreground silhouettes remain completely separate."
+  },
+  "identity_references": [
+    "art/ch1/source/doto-v4-selected.png",
+    "art/body/buri-0.png"
+  ],
+  "identity_notes": {
+    "doto": "Long narrow muzzle and slim shoulders, small focused half-lidded eyes above low round glasses, tall forelock, navy cardigan/check scarf; adjusts glasses, protects notebook, frowns when worried, pencil gesture. Full body keeps matching clothes and narrow proportions.",
+    "buri": "Broad cream face discs, short stout round owl body, small sleepy eyes and heavy brows, cream shirt/brown vest/burgundy bowtie; wing-supported chin, head tilt, pocketwatch in world. No repeated book pose or human hands."
+  },
+  "alpha_note": "Pixel alpha>=32 is treated as visible foreground. Raw source has alpha=1 specks in some transparent gutter positions; no pixel editing was performed. All explicitly recorded crop regions contain one complete silhouette without adjacent character fragments.",
+  "cells": [
+    {
+      "character": "doto",
+      "state": "world",
+      "region": [
+        0,
+        0,
+        308,
+        596
+      ],
+      "foreground_bbox": [
+        37,
+        199,
+        269,
+        551
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        37,
+        199,
+        39,
+        45
+      ]
+    },
+    {
+      "character": "doto",
+      "state": "neutral",
+      "region": [
+        308,
+        0,
+        314,
+        596
+      ],
+      "foreground_bbox": [
+        349,
+        156,
+        576,
+        519
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        41,
+        156,
+        46,
+        77
+      ]
+    },
+    {
+      "character": "doto",
+      "state": "thinking",
+      "region": [
+        622,
+        0,
+        309,
+        596
+      ],
+      "foreground_bbox": [
+        655,
+        154,
+        903,
+        523
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        33,
+        154,
+        28,
+        73
+      ]
+    },
+    {
+      "character": "doto",
+      "state": "distressed",
+      "region": [
+        931,
+        0,
+        306,
+        596
+      ],
+      "foreground_bbox": [
+        969,
+        171,
+        1195,
+        520
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        38,
+        171,
+        42,
+        76
+      ]
+    },
+    {
+      "character": "doto",
+      "state": "expressive",
+      "region": [
+        1237,
+        0,
+        299,
+        596
+      ],
+      "foreground_bbox": [
+        1276,
+        152,
+        1508,
+        521
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        39,
+        152,
+        28,
+        75
+      ]
+    },
+    {
+      "character": "buri",
+      "state": "world",
+      "region": [
+        0,
+        596,
+        308,
+        428
+      ],
+      "foreground_bbox": [
+        51,
+        650,
+        264,
+        953
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        51,
+        54,
+        44,
+        71
+      ]
+    },
+    {
+      "character": "buri",
+      "state": "neutral",
+      "region": [
+        308,
+        596,
+        314,
+        428
+      ],
+      "foreground_bbox": [
+        347,
+        652,
+        606,
+        952
+      ],
+      "outer20px_alpha_max": 253,
+      "visible_margin": [
+        39,
+        56,
+        16,
+        72
+      ]
+    },
+    {
+      "character": "buri",
+      "state": "thinking",
+      "region": [
+        622,
+        596,
+        309,
+        428
+      ],
+      "foreground_bbox": [
+        639,
+        654,
+        903,
+        950
+      ],
+      "outer20px_alpha_max": 250,
+      "visible_margin": [
+        17,
+        58,
+        28,
+        74
+      ]
+    },
+    {
+      "character": "buri",
+      "state": "distressed",
+      "region": [
+        931,
+        596,
+        306,
+        428
+      ],
+      "foreground_bbox": [
+        960,
+        666,
+        1214,
+        952
+      ],
+      "outer20px_alpha_max": 1,
+      "visible_margin": [
+        29,
+        70,
+        23,
+        72
+      ]
+    },
+    {
+      "character": "buri",
+      "state": "expressive",
+      "region": [
+        1237,
+        596,
+        299,
+        428
+      ],
+      "foreground_bbox": [
+        1267,
+        639,
+        1512,
+        951
+      ],
+      "outer20px_alpha_max": 2,
+      "visible_margin": [
+        30,
+        43,
+        24,
+        73
+      ]
+    }
+  ],
+  "characters": {
+    "doto": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          25,
+          187,
+          256,
+          376
+        ],
+        "face": [
+          122,
+          199,
+          154
+        ],
+        "feet": [
+          153,
+          551
+        ],
+        "world_bbox": [
+          37,
+          199,
+          269,
+          551
+        ]
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          337,
+          144,
+          251,
+          387
+        ],
+        "face": [
+          358,
+          146,
+          246
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          643,
+          142,
+          272,
+          393
+        ],
+        "face": [
+          655,
+          149,
+          246
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          957,
+          159,
+          250,
+          373
+        ],
+        "face": [
+          964,
+          164,
+          236
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1264,
+          140,
+          256,
+          393
+        ],
+        "face": [
+          1269,
+          147,
+          241
+        ]
+      }
+    },
+    "buri": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          39,
+          638,
+          237,
+          327
+        ],
+        "face": [
+          63,
+          645,
+          172
+        ],
+        "feet": [
+          157,
+          953
+        ],
+        "world_bbox": [
+          51,
+          650,
+          264,
+          953
+        ]
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          335,
+          640,
+          283,
+          324
+        ],
+        "face": [
+          354,
+          645,
+          245
+        ]
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          627,
+          642,
+          288,
+          320
+        ],
+        "face": [
+          639,
+          645,
+          249
+        ]
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          948,
+          654,
+          278,
+          310
+        ],
+        "face": [
+          957,
+          659,
+          251
+        ]
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/scholars.png",
+        "width": 1536,
+        "height": 1024,
+        "crop": [
+          1255,
+          627,
+          269,
+          336
+        ],
+        "face": [
+          1263,
+          632,
+          250
+        ]
+      }
+    }
+  }
+}

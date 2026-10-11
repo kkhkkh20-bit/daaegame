@@ -81,7 +81,7 @@
    if(so){var oo=null;try{oo=(loc().obs||[]).filter(function(x){return x.id===so.dataset.obs})[0]}catch(x){}if(oo&&oo.text){try{SFX.select()}catch(x){}obShow("("+String(oo.text).replace(/^\(|\)$/g,"")+")");return}}
    var nh=npcHit(d.sc,e.clientX,e.clientY);if(nh){setTimeout(function(){try{nh.click()}catch(x){}},0);return}
    /* 도토의 방: 도토 단추는 일지 지점과 겹쳐 꺼 두었다 — 도토 몸을 누르면 '아무것도 없다' 대신 안내 한 줄 */
-   try{var dimg=d.sc.querySelector('svg image.wn9[data-k="doto"]');if(dimg&&alphaAt(dimg,e.clientX,e.clientY,3)>60){try{SFX.select()}catch(x){}obShow("(도토 씨가 앉아 있다. 창가의 일지부터 보자.)");return}}catch(x){}
+   try{var dimg=d.sc.querySelector('svg image.wn9[data-k="doto"]');if(dimg&&alphaAt(dimg,e.clientX,e.clientY,3)>60){try{SFX.select()}catch(x){}obShow("(도토 씨가 일지를 지키고 있다. 창가부터 보자.)");return}}catch(x){}
    var near=null,nd=1e9;[].slice.call(d.sc.querySelectorAll(".hot:not(.done),.npc:not(.w9)")).forEach(function(h){var r=h.getBoundingClientRect();if(!r.width)return;var dx=Math.max(r.left-e.clientX,0,e.clientX-r.right),dy=Math.max(r.top-e.clientY,0,e.clientY-r.bottom),dd=Math.max(dx,dy);if(dd<=28&&dd<nd){nd=dd;near=h}});
    if(near){setTimeout(function(){try{near.click()}catch(x){}},0);return}
    /* 2026-10-10 "침대·자물쇠 상자를 다시 누르면 다른 네모 상자가 생긴다": 이미 챙긴 증거 자리(주머니·손자국·상자)를 다시 누르면 뒤의 침대 관찰로 새어 나가 엉뚱한 자리에 표시가 생기던 문제. 그 증거 이름만 짧게 알려 준다 */
@@ -467,9 +467,23 @@
   function maskOf(src){if(!src)return {};if(MASK[src])return MASK[src];var o={ready:false};MASK[src]=o;var im=new Image();
     im.onload=function(){try{var c=document.createElement("canvas");c.width=im.naturalWidth;c.height=im.naturalHeight;var x=c.getContext("2d");x.drawImage(im,0,0);var dd=x.getImageData(0,0,c.width,c.height).data,a=new Uint8Array(c.width*c.height);for(var i=0;i<a.length;i++)a[i]=dd[i*4+3];o.a=a;o.w=c.width;o.h=c.height;o.ready=true}catch(e){o.bad=true}};
     im.onerror=function(){o.bad=true};im.src=src;return o}
-  function alphaAt(im,x,y,R){var r=im.getBoundingClientRect();if(!r.width||x<r.left||x>r.right||y<r.top||y>r.bottom)return -1;var M=maskOf(im.getAttribute("href")),u=(x-r.left)/r.width,v=(y-r.top)/r.height;
-    if(!M.ready)return (Math.abs(u-.5)<.2&&v>.06&&v<.97)?255:0;var px=Math.floor(u*M.w),py=Math.floor(v*M.h),best=0;
-    for(var dy=-R;dy<=R;dy++)for(var dx=-R;dx<=R;dx++){var X=px+dx,Y=py+dy;if(X<0||Y<0||X>=M.w||Y>=M.h)continue;var a=M.a[Y*M.w+X];if(a>best)best=a}return best}
+  function worldViewport(im){return im.closest&&im.closest('svg.wn9-world')||im}
+  function worldRect(im){if(im.__worldBounds)return im.__worldBounds.slice();var el=worldViewport(im);return ['x','y','width','height'].map(function(k){return Number(el.getAttribute(k))})}
+  function alphaAt(im,x,y,R){var host=worldViewport(im),r=host.getBoundingClientRect();if(!r.width||x<r.left||x>r.right||y<r.top||y>r.bottom)return -1;
+    var M=maskOf(im.getAttribute("href")),crop=im.__worldCrop,u=(x-r.left)/r.width,v=(y-r.top)/r.height,px,py;
+    if(crop){
+     // The image contains ten cells. Its bounding box describes the entire
+     // atlas, so project through the cropped SVG viewport into source pixels.
+     var matrix=host.getScreenCTM();if(!matrix)return -1;var point=host.createSVGPoint();point.x=x;point.y=y;point=point.matrixTransform(matrix.inverse());
+     if(point.x<crop[0]||point.y<crop[1]||point.x>=crop[0]+crop[2]||point.y>=crop[1]+crop[3])return -1;
+     px=Math.floor(point.x);py=Math.floor(point.y);
+     if(!M.ready)return 0; // A decoded atlas/mask is committed together.
+    }else{
+     if(!M.ready)return (Math.abs(u-.5)<.2&&v>.06&&v<.97)?255:0;
+     px=Math.floor(u*M.w);py=Math.floor(v*M.h);
+    }
+    var best=0;R=R||0;
+    for(var dy=-R;dy<=R;dy++)for(var dx=-R;dx<=R;dx++){var X=px+dx,Y=py+dy;if(X<0||Y<0||X>=M.w||Y>=M.h||crop&&(X<crop[0]||Y<crop[1]||X>=crop[0]+crop[2]||Y>=crop[1]+crop[3]))continue;var a=M.a[Y*M.w+X];if(a>best)best=a}return best}
   window.__innMask=function(){var o={};Object.keys(MASK).forEach(function(k){o[k]=MASK[k].ready?"ok":MASK[k].bad?"bad":"wait"});return o};
   window.__innWarmNpcMask=function(src){if(src)maskOf(src)};
   function npcHit(sc,x,y){try{var sv=svgOf(sc);if(!sv)return null;
@@ -478,26 +492,65 @@
     var hit=null;[].slice.call(sv.querySelectorAll("image.wn9")).reverse().some(function(im){var bt=sc.querySelector('.npc.w9[data-npc="'+im.dataset.k+'"]');if(!bt||bt.dataset.nohit)return false;
       if(alphaAt(im,x,y,3)>60){hit=bt;return true}var tg=bt.querySelector("span");if(tg){var r=tg.getBoundingClientRect();if(r.width&&x>=r.left-4&&x<=r.right+4&&y>=r.top-4&&y<=r.bottom+4){hit=bt;return true}}return false});return hit}catch(e){return null}}
   window.__innNpcHit=function(x,y){var b=npcHit(document.getElementById("bigscene"),x,y);return b?b.dataset.npc:""};
+  // These are the visible bounds of the existing WN art, not new placements.
+  // Keep each floor/ceiling line while fitting the full-body crop uniformly.
+  var WORLD_VISIBLE={innma:[1881,579,276],seryeon:[854,635,341],nabi:[999.5,694,504],buri:[1505,694,397],
+   wanggu:[1210,615,397.2890625],karo:[1257,852,432],geokkuri:[312.5,34,409],doto:[924.5,675,500]};
+  var worldSerial=0,WORLD_ALPHA={};
+  function visibleWorldCrop(a,m){var key=a.src+'|'+a.crop.join(',');if(key in WORLD_ALPHA)return WORLD_ALPHA[key];var c=a.crop,x0=m.w,y0=m.h,x1=-1,y1=-1;
+   // Raw generation may retain alpha=1 gutter specks. They stay rendered;
+   // only the visible-anchor measurement uses the inspected foreground cutoff.
+   for(var y=Math.floor(c[1]);y<Math.ceil(c[1]+c[3]);y++)for(var x=Math.floor(c[0]);x<Math.ceil(c[0]+c[2]);x++)if(m.a[y*m.w+x]>=32){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}
+   return WORLD_ALPHA[key]=x1<0?null:[x0,y0,x1-x0+1,y1-y0+1];
+  }
+  function worldArt(k){var manifest=window.__innDialogueManifest,a=manifest&&manifest.world&&manifest.world[k];if(!a||!Array.isArray(a.crop)||a.crop.length!==4)return null;
+   var c=a.crop;if(!a.src||!isFinite(a.width)||!isFinite(a.height)||a.width<=0||a.height<=0||c.some(function(v){return !isFinite(v)})||c[0]<0||c[1]<0||c[2]<=0||c[3]<=0||c[0]+c[2]>a.width||c[1]+c[3]>a.height)return null;
+   var m=maskOf(a.src);
+   if(!window.__innDialogueArtReady||!window.__innDialogueArtReady(a.src)||!m.ready||m.w!==a.width||m.h!==a.height)return null;
+   return visibleWorldCrop(a,m)?a:null;
+  }
+  function paintWorldActor(sv,n){var im=sv.querySelector('image.wn9[data-k="'+n[0]+'"]'),a=worldArt(n[0]);if(!im||!a)return;
+   var key=a.src+'|'+a.crop.join(','),tile=im.closest('svg.wn9-world');if(tile&&tile.dataset.art===key)return;
+   var ns='http://www.w3.org/2000/svg',c=a.crop,visible=visibleWorldCrop(a,maskOf(a.src)),v=WORLD_VISIBLE[n[0]],height=v?v[2]:n[5],scale=height/visible[3],width=visible[2]*scale,center=v?v[0]:n[2]+n[4]/2,edge=v?v[1]:n[3]+n[5],hanging=n[0]==='geokkuri';
+   // Manifest crops may retain transparent padding. Anchor actual painted
+   // feet, not the blank viewport edge, and expose visible bounds to buttons.
+   var box=[center-(visible[0]+visible[2]/2-c[0])*scale,edge-((hanging?visible[1]:visible[1]+visible[3])-c[1])*scale,c[2]*scale,c[3]*scale];
+   var bounds=[center-width/2,hanging?edge:edge-height,width,height];
+   function node(tag,attrs){var e=document.createElementNS(ns,tag);Object.keys(attrs||{}).forEach(function(k){e.setAttribute(k,attrs[k])});return e}
+   var next=node('svg',{class:'wn9-world',viewBox:c.join(' '),preserveAspectRatio:'xMidYMid meet',overflow:'hidden','aria-hidden':'true'});
+   ['x','y','width','height'].forEach(function(k,i){next.setAttribute(k,box[i])});next.dataset.k=n[0];next.dataset.art=key;
+   var id='wn9-world-crop-'+(++worldSerial),defs=node('defs'),clip=node('clipPath',{id:id,clipPathUnits:'userSpaceOnUse'}),rect=node('rect');
+   ['x','y','width','height'].forEach(function(k,i){rect.setAttribute(k,c[i])});clip.appendChild(rect);defs.appendChild(clip);next.appendChild(defs);
+   var image=node('image',{class:'wn9',href:a.src,width:a.width,height:a.height,'clip-path':'url(#'+id+')',preserveAspectRatio:'none',style:'image-rendering:pixelated;pointer-events:none'});
+   image.dataset.k=n[0];image.dataset.worldCrop=c.join(',');image.dataset.worldSrc=a.src;image.dataset.posture=hanging?'hanging':'standing';image.__worldCrop=c.slice();image.__worldVisible=visible.slice();image.__worldBounds=bounds;next.appendChild(image);
+   next.style.pointerEvents='none';next.style.imageRendering='pixelated';
+   // The existing furniture stays after this node in painting order. Decode
+   // and alpha data must both be ready before replacing the visible fallback.
+   var old=tile||im;old.replaceWith(next);
+  }
+  window.__innWorldActors=function(){return Array.from(document.querySelectorAll('#bigscene image.wn9')).map(function(im){return {k:im.dataset.k,src:im.getAttribute('href'),crop:im.__worldCrop&&im.__worldCrop.slice(),bounds:worldRect(im),posture:im.dataset.posture||'native',maskReady:!!maskOf(im.getAttribute('href')).ready}})};
   var nativeFocusGame=null,nativeFocused={};
   function worldNpc(){try{var sc=document.getElementById("bigscene"),sv=svgOf(sc);if(!sv||!inn()||G.tab!=="scene"){return}var b=G.beats||{};if(!b.inn_pro||b.inn_final)return;var lid=(loc()||{}).id,L=WN[lid]||[];var key=lid+"|"+L.length;   /* 나비는 너울을 부르러 갔다가, 찻주전자 발견 뒤 부엌에 돌아와 있다(찻주전자를 본 사람은 부녀뿐) */
-    if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
+    if(sv.dataset.wn9!==key){[].slice.call(sv.querySelectorAll("svg.wn9-world,image.wn9,image.wo9,image.wp9")).forEach(function(e){e.remove()});
      (WPX[lid]||[]).forEach(function(p){img(sv,p[0],p[1],p[2],p[3],p[4],"wp9")});
      L.forEach(function(n){var e=img(sv,n[1],n[2],n[3],n[4],n[5],"wn9");e.dataset.k=n[0];maskOf(n[1])});
      (OCC[lid]||[]).forEach(function(o){img(sv,o[0],o[1],o[2],o[3],o[4],"wo9");maskOf(o[0])});sv.dataset.wn9=key}
+    L.forEach(function(n){paintWorldActor(sv,n)});
     // These native rooms insert their world actor after fsLayout. Focus only
     // after that insertion, once per game/room; later renders keep player pan.
     if(nativeFocusGame!==G){nativeFocusGame=G;nativeFocused={}}
     if(!sv.dataset.innWorld&&L.length&&!nativeFocused[lid]){
       var fx=document.getElementById('fsscroll'),actor=sv.querySelector('image.wn9');
-      if(fx&&actor){var ar=actor.getBoundingClientRect(),fr=fx.getBoundingClientRect();
-        fx.scrollLeft=Math.max(0,Math.min(fx.scrollWidth-fx.clientWidth,fx.scrollLeft+ar.left+ar.width/2-fr.left-fx.clientWidth/2));
+      if(fx&&actor){var ar=worldRect(actor),am=sv.getScreenCTM(),ap=sv.createSVGPoint(),fr=fx.getBoundingClientRect();ap.x=ar[0]+ar[2]/2;ap.y=ar[1]+ar[3]/2;ap=ap.matrixTransform(am);
+        fx.scrollLeft=Math.max(0,Math.min(fx.scrollWidth-fx.clientWidth,fx.scrollLeft+ap.x-fr.left-fx.clientWidth/2));
         FSX[G.ci+':'+G.loc]=fx.scrollLeft;nativeFocused[lid]=true;fsArrows();
       }
     }
     /* 인물 단추를 그림 자리로(누름 영역 = 그림 사각형, 최소 48px). 옛 전신 그림은 숨긴다 */
     var m=sv.getScreenCTM(),br=sc.getBoundingClientRect();if(!m)return;
     L.forEach(function(n){var bt=sc.querySelector('.npc[data-npc="'+n[0]+'"]');if(!bt)return;bt.classList.add("w9");
-     var p1=sv.createSVGPoint();p1.x=n[2];p1.y=n[3];var a=p1.matrixTransform(m);var p2=sv.createSVGPoint();p2.x=n[2]+n[4];p2.y=n[3]+n[5];var z=p2.matrixTransform(m);
+     var actor=sv.querySelector('image.wn9[data-k="'+n[0]+'"]'),r=actor?worldRect(actor):n.slice(2,6);
+     var p1=sv.createSVGPoint();p1.x=r[0];p1.y=r[1];var a=p1.matrixTransform(m);var p2=sv.createSVGPoint();p2.x=r[0]+r[2];p2.y=r[1]+r[3];var z=p2.matrixTransform(m);
      var w=Math.max(48,z.x-a.x),h=Math.max(48,z.y-a.y),l=a.x-br.left,t=a.y-br.top;
      [["left",l+"px"],["top",t+"px"],["width",w+"px"],["height",h+"px"],["transform","none"],["margin","0"]].forEach(function(d){bt.style.setProperty(d[0],d[1],"important")})});
     }catch(e){}}   /* 2026-10-10 v2 "도토 클릭해도 말 안 걸어짐": 도토에게도 질문이 생겨 단추를 켠다(일지 지점은 따로) */

@@ -1,5 +1,5 @@
-/* 1장 자세 구분. 배경 NPC의 작업 자세와 대화 배우의 서 있는 자세를 분리한다.
-   기존 승인 그림만 재사용한다. 회의 좌석/증거·소품 지급/핫스폿은 건드리지 않는다. */
+/* 1장 자세 구분. 현장 전신과 대화 상반신을 분리한다.
+   새 전신은 준비된 manifest를 UI가 소유한다. 회의 좌석/증거·소품은 유지한다. */
 (function(){
  'use strict';
  var ROOT='art/ch1/',standing={
@@ -49,6 +49,9 @@
   var sc=document.getElementById('bigscene');if(!sc)return;
   var room;try{room=CASES[G.ci].locations[G.loc].id}catch(e){}if(room!=='kitchen')return;
   sc.querySelectorAll('image.wn9').forEach(function(im){var spec=WORLD_STANDING[im.dataset.k];if(!spec)return;
+   // A clipped atlas has source-space coordinates. The legacy standalone
+   // correction must never overwrite its href, dimensions or source clip.
+   if(im.__worldCrop||im.closest('svg.wn9-world'))return;
    // Reuse the engine's alpha cache before any pointer reaches a new pose.
    if(window.__innWarmNpcMask)window.__innWarmNpcMask(spec.src);
    if(im.getAttribute('href')!==spec.src)im.setAttribute('href',spec.src);
@@ -94,7 +97,7 @@
    var im=document.createElementNS(NS,'image');im.setAttribute('clip-path','url(#'+id+')');im.setAttribute('href',ATLAS.src);im.setAttribute('width',ATLAS.width);im.setAttribute('height',ATLAS.height);im.style.imageRendering='pixelated';tile.appendChild(im);group.appendChild(tile);
   });
   // Behind live actors and foreground occluders; decoration never captures input.
-  var actor=sv.querySelector('image.wn9,image.wo9');if(actor)sv.insertBefore(group,actor);else sv.appendChild(group);
+  var actor=Array.from(sv.children).find(function(n){return n.matches('svg.wn9-world,image.wn9,image.wo9')});if(actor)sv.insertBefore(group,actor);else sv.appendChild(group);
  }
  window.__innSetDressingEnable=function(width,height){ATLAS.width=width;ATLAS.height=height;ATLAS.ready=!!(width&&height);dress()};
  function stamp(){
@@ -107,7 +110,7 @@
  }
  window.__innPostureState=function(){
   var room=null;try{room=active()&&CASES[G.ci].locations[G.loc].id}catch(e){}
-  return {room:room,roomProps:Object.assign({},props[room]||{}, {actualAssets:Array.from(document.querySelectorAll('#bigscene image.wp9,#bigscene .inn-set-dressing image')).map(function(i){return i.getAttribute('href')})}),setDressing:{ready:ATLAS.ready,src:ATLAS.ready?ATLAS.src:null,cells:ATLAS.ready?(DECOR[room]||[]).map(function(p){return p.cell}):[]},worldActors:Array.from(document.querySelectorAll('#bigscene image.wn9')).map(function(i){return {k:i.dataset.k,src:i.getAttribute('href'),posture:i.dataset.posture||'native',x:i.getAttribute('x'),y:i.getAttribute('y'),width:i.getAttribute('width'),height:i.getAttribute('height')}}),dialogue:'standing',meeting:'native-seated',
+  return {room:room,roomProps:Object.assign({},props[room]||{}, {actualAssets:Array.from(document.querySelectorAll('#bigscene image.wp9,#bigscene .inn-set-dressing image')).map(function(i){return i.getAttribute('href')})}),setDressing:{ready:ATLAS.ready,src:ATLAS.ready?ATLAS.src:null,cells:ATLAS.ready?(DECOR[room]||[]).map(function(p){return p.cell}):[]},worldActors:Array.from(document.querySelectorAll('#bigscene image.wn9')).map(function(i){var v=i.closest('svg.wn9-world')||i;return {k:i.dataset.k,src:i.getAttribute('href'),crop:i.__worldCrop&&i.__worldCrop.slice(),bounds:i.__worldBounds&&i.__worldBounds.slice(),posture:i.dataset.posture||'native',x:v.getAttribute('x'),y:v.getAttribute('y'),width:v.getAttribute('width'),height:v.getAttribute('height')}}),dialogue:'bust-or-standing-fallback',meeting:'native-seated',
    actors:Array.from(document.querySelectorAll('#innstage .isf,.fstalk .tfig')).map(function(h){var i=h.querySelector('img,svg.dialogue-bust');return {k:h.dataset.k||(i&&i.dataset.k),posture:h.dataset.posture,src:i&&(i.getAttribute('src')||i.dataset.src)}})};
  };
  // Warm the six existing images without altering world assets or source canvases.

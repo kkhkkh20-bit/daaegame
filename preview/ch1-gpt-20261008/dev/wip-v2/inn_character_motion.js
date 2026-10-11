@@ -1,4 +1,4 @@
-/* 1장 배우 연기: 승인 PNG를 그대로 쓰는 픽셀 이동/분리 레이어.
+/* 1장 배우 연기: manifest PNG를 그대로 쓰는 픽셀 이동/분리 레이어.
    입 모양은 움직이지 않는다. 대사·증거·클릭 영역은 기존 엔진이 소유한다. */
 (function(){
  'use strict';
@@ -51,6 +51,36 @@
   a.style.setProperty('--cm-step',(f.dir*im.naturalWidth/Math.max(1,parseFloat(im.style.width)))+'px');
   return a;
  }
+ function clearBustFeature(svg){
+  if(svg.__cmBustLayer){svg.__cmBustLayer.remove();svg.__cmBustLayer=null}
+  if(svg.__image)svg.__image.classList.remove('cm-bust-source');
+  delete svg.dataset.cmFeature;
+ }
+ function bustFeature(svg,k,m){
+  var a=window.__innDialogueArt&&window.__innDialogueArt(k,m),f=a&&a.feature,r=f&&f.rect,c=a&&a.crop;
+  if(!a||a.src!==svg.dataset.src||!svg.__image||!f||!Array.isArray(r)||r.length!==4||!Array.isArray(c)||r.some(function(n){return !isFinite(n)})||r[2]<=0||r[3]<=0||r[0]<c[0]||r[1]<c[1]||r[0]+r[2]>c[0]+c[2]||r[1]+r[3]>c[1]+c[3]||!/^(x|y)$/.test(f.axis||'')){
+   clearBustFeature(svg);return null;
+  }
+  var key=svg.dataset.art+'|'+JSON.stringify(f),layer=svg.__cmBustLayer;
+  if(layer&&layer.dataset.source!==key){clearBustFeature(svg);layer=null}
+  var matrix=svg.getScreenCTM(),scale=matrix&&Math.hypot(f.axis==='x'?matrix.a:matrix.c,f.axis==='x'?matrix.b:matrix.d)||1;
+  var step=Math.max(0,Math.min(1,Number(f.step)||1))/scale,overlap=Math.max(4,step*1.5);
+  if(!layer){
+   var id='cmb'+(++serial),clipSource=svg.__image.getAttribute('clip-path');
+   layer=node('g',{class:'cm-bust-layer','aria-hidden':'true','clip-path':clipSource});layer.dataset.source=key;layer.dataset.part=f.part||'feature-tip';
+   var defs=node('defs'),mask=node('mask',{id:id+'m',maskUnits:'userSpaceOnUse',x:c[0],y:c[1],width:c[2],height:c[3]});
+   mask.appendChild(node('rect',{x:c[0],y:c[1],width:c[2],height:c[3],fill:'white'}));
+   mask.appendChild(node('rect',{x:r[0],y:r[1],width:r[2],height:r[3],fill:'black'}));
+   var clip=node('clipPath',{id:id+'c',clipPathUnits:'userSpaceOnUse'});
+   clip.appendChild(node('rect',{x:Math.max(c[0],r[0]-overlap),y:Math.max(c[1],r[1]-overlap),width:Math.min(c[0]+c[2],r[0]+r[2]+overlap)-Math.max(c[0],r[0]-overlap),height:Math.min(c[1]+c[3],r[1]+r[3]+overlap)-Math.max(c[1],r[1]-overlap)}));
+   defs.appendChild(mask);defs.appendChild(clip);layer.appendChild(defs);
+   layer.appendChild(node('image',{href:a.src,width:a.width,height:a.height,mask:'url(#'+id+'m)'}));
+   var part=node('g',{class:'cm-part'});part.appendChild(node('image',{href:a.src,width:a.width,height:a.height,'clip-path':'url(#'+id+'c)'}));layer.appendChild(part);
+   svg.appendChild(layer);svg.__cmBustLayer=layer;svg.__image.classList.add('cm-bust-source');
+  }
+  layer.style.setProperty('--cm-x',f.axis==='x'?step+'px':'0px');layer.style.setProperty('--cm-y',f.axis==='y'?step+'px':'0px');
+  setData(svg,'cmFeature','1');return layer;
+ }
  function tail(im,q){
   if(!im||!/daram-idle-t\d-dialogue/.test(im.getAttribute('src')||''))return;
   if(q){im.__cmTail=0;im.__cmWait=0;if(!/-t0-dialogue/.test(im.getAttribute('src')))im.src=im.getAttribute('src').replace(/-t\d-dialogue/,'-t0-dialogue');return}
@@ -62,20 +92,21 @@
  }
  function tick(){
   var active=inn(),l=live(),sp=who(l),lm=mood(l),allStill=still();
-  paused=!active||document.hidden||!!document.querySelector('#innmove,#innppl,.crec2,#innins,#e9pop,#ov .modal,#mveil .modal,#inn-settings');
+  paused=!active||document.hidden||!!document.querySelector('#innmove,#innppl,.crec2,#innins,#e9pop,#ov .modal,#mveil .modal,#inn-settings,.banner,.placecard,#inncold,#innmain,#inn-story-cg');
   document.body.classList.toggle('cm-paused',paused||reduced.matches);actors=[];
   if(!active)return;
   document.querySelectorAll('#innstage .isf>img,#innstage .isf>svg.dialogue-bust,.fstalk .tstage .tfig>img,.fstalk .tstage .tfig>svg.dialogue-bust,#vnbox .spk9>img,#bigscene image.wn9,#rtg .seat>img,#rtg .seat>svg>image,image.innseat').forEach(function(im){
    var host=im.closest('.isf,.tfig,.spk9,.seat'),k=(host&&host.dataset.k||im.dataset.k||'det1').split('|')[0];
    if(!GESTURE[k])return;
    var m=host&&host.dataset.mood!=null?host.dataset.mood:(sp===k?lm:'');
-   var q=allStill||quiet(m),gesture=GESTURE[k],part=null;
-   setData(im,'cmK',k);setData(im,'cmMood',m);setData(im,'cmQuiet',q?'1':'0');setData(im,'cmGesture',gesture);
+   var q=allStill||quiet(m),gesture=GESTURE[k],part=null,target=im.classList.contains('wn9')?(im.closest('svg.wn9-world')||im):im;
+   var surface=im.closest('.isf')?'stage':im.closest('.tfig')?'talk':im.closest('.spk9')?'portrait':im.closest('.seat')?'council':im.classList.contains('wn9')?'world':'carriage';
+   setData(target,'cmK',k);setData(target,'cmMood',m);setData(target,'cmQuiet',q?'1':'0');setData(target,'cmGesture',gesture);setData(target,'cmSurface',surface);
    if(im.tagName.toLowerCase()==='img'&&im.closest('.isf,.tfig'))part=feature(im);
+   if(im.classList.contains('dialogue-bust'))part=bustFeature(im,k,m);
    if(part){setData(part,'cmK',k);setData(part,'cmMood',m);setData(part,'cmQuiet',q?'1':'0');setData(part,'cmGesture',gesture)}
    /* Sleeping child and emotional silences do not inherit a celebratory idle. */
    tail(im,paused||reduced.matches||q||im.closest('.isf')&&!document.body.classList.contains('inn-st2'));
-   var surface=im.closest('.isf')?'stage':im.closest('.tfig')?'talk':im.closest('.spk9')?'portrait':im.closest('.seat')?'council':im.classList.contains('wn9')?'world':'carriage';
    actors.push({k:k,surface:surface,mood:m,gesture:gesture,part:part?part.dataset.part:null,quiet:q,src:im.getAttribute('src')||im.getAttribute('href')||im.dataset.src,layerCount:part?1:0});
   });
  }
@@ -87,18 +118,28 @@
   /* Translations step between integer screen pixels; never rotate/stretch art. */
   '.cm-layer{position:absolute;max-width:none!important;max-height:none!important;pointer-events:none!important;overflow:visible;image-rendering:pixelated}',
   '.cm-layer image{image-rendering:pixelated}.cm-source{opacity:0!important;animation:none!important;translate:0 0!important}',
+  '.cm-bust-layer{pointer-events:none!important}.cm-bust-layer image{image-rendering:pixelated}.cm-bust-source{opacity:0!important}',
   'html body.inn1 #rtg .seat>svg.sf{height:65%;position:relative;top:25%;width:auto;image-rendering:pixelated}html body.inn1 #rtg .seat[data-k="geokkuri"]{bottom:auto!important;top:0!important;height:25%!important}html body.inn1 #rtg .seat[data-k="geokkuri"] img{transform:none!important}',
   'html body.w209.inn1 [data-cm-k]{image-rendering:pixelated!important;rotate:none!important;scale:none!important}',
   'html body.w209.inn1 #vnbox .spk9 img{animation:none}',
   'html body.w209.inn1 .fstalk .tfig>img[data-cm-k]{animation:none}',
   'html body.w209.inn1 [data-cm-k][data-cm-quiet="0"]{animation:cm-breath 6.4s steps(1,end) infinite}',
   'html body.w209.inn1 [data-cm-k="det1"],html body.w209.inn1 [data-cm-k="wanggu"],html body.w209.inn1 .cm-source{animation:none}',
+  'html body.w209.inn1 svg.dialogue-bust[data-cm-k="det1"][data-cm-quiet="0"]{animation:cm-eager 6.1s steps(1,end) infinite}',
+  'html body.w209.inn1 [data-cm-k="det0"][data-cm-quiet="0"]{animation-duration:8.4s}',
   'html body.w209.inn1 .cm-layer{animation:none!important}',
   'html body.w209.inn1 .cm-layer[data-cm-quiet="0"] .cm-part{animation:cm-tip 5.6s steps(1,end) infinite}',
   'html body.w209.inn1 [data-cm-k="innma"][data-cm-quiet="0"]{animation-duration:7.2s}',
   'html body.w209.inn1 [data-cm-k="seryeon"][data-cm-quiet="0"]{animation:cm-settle 7.8s steps(1,end) infinite}',
   'html body.w209.inn1 [data-cm-k="doto"][data-cm-quiet="0"]{animation:cm-memo 5.2s steps(1,end) infinite}',
   'html body.w209.inn1 [data-cm-k="buri"][data-cm-quiet="0"]{animation:cm-listen 6.8s steps(1,end) infinite}',
+  'html body.w209.inn1 svg.dialogue-bust[data-cm-k="nabi"][data-cm-quiet="0"]{animation:cm-listen 5.6s steps(1,end) infinite}',
+  'html body.w209.inn1 svg.dialogue-bust[data-cm-k="karo"][data-cm-quiet="0"]{animation:cm-breath 7.1s steps(1,end) infinite}',
+  'html body.w209.inn1 .cm-bust-layer[data-cm-quiet="0"] .cm-part{animation:cm-feature 6.2s steps(1,end) infinite}',
+  'html body.w209.inn1 .cm-bust-layer[data-cm-k="det1"] .cm-part{animation-duration:4.8s}',
+  'html body.w209.inn1 .cm-bust-layer[data-cm-k="nabi"] .cm-part{animation-duration:5.6s}',
+  'html body.w209.inn1 .cm-bust-layer[data-cm-k="karo"] .cm-part{animation-duration:7.1s}',
+  'html body.w209.inn1 svg.dialogue-bust[data-cm-feature="1"]{animation:none!important}',
   'html body.w209.inn1 .cm-layer[data-cm-k="nabi"] .cm-part{animation-duration:5.6s}',
   'html body.w209.inn1 .cm-layer[data-cm-k="geokkuri"] .cm-part{animation-duration:8s}',
   'html body.w209.inn1 .cm-layer[data-cm-k="karo"] .cm-part{animation-duration:6s}',
@@ -106,20 +147,34 @@
   'html body.w209.inn1 .cm-layer[data-cm-k="seryeon"] .cm-part{animation-duration:7.8s}',
   /* Subdued posture only; we do not invent an unapproved sad face. */
   'html body.w209.inn1 [data-cm-quiet="1"]{animation:none!important;translate:0 0}',
-  'html body.w209.inn1 [data-cm-mood="sad"],html body.w209.inn1 [data-cm-mood="worried"]{translate:0 2px}',
-  'html body.w209.inn1 .cm-layer[data-cm-quiet="1"] .cm-part{animation:none!important;transform:none!important}',
+  'html body.w209.inn1 [data-cm-mood="sad"],html body.w209.inn1 [data-cm-mood="worried"]{translate:0 1px}',
+  'html body.w209.inn1 .cm-layer[data-cm-quiet="1"] .cm-part,html body.w209.inn1 .cm-bust-layer[data-cm-quiet="1"] .cm-part{animation:none!important;transform:none!important}',
   'html body.w209.inn1 [data-cm-k="wanggu"][data-cm-mood="admonish"],html body.w209.inn1 [data-cm-k="wanggu"][data-cm-mood="claim"],html body.w209.inn1 [data-cm-k="wanggu"][data-cm-mood="resolve"]{animation:cm-emphasis .64s steps(1,end) 1}',
   /* Suspended Bami moves an ear tip, never pivots about feet on the floor. */
   'html body.w209.inn1 [data-cm-k="geokkuri"]{animation:none}',
+  'html body.w209.inn1 svg.dialogue-bust[data-cm-k="geokkuri"][data-cm-quiet="0"]{animation:cm-listen 8.2s steps(1,end) infinite}',
+  // The world floor/ceiling never bobs. Restrained lateral settling keeps its
+  // source-space click projection aligned with the live rendered viewport.
+  'html body.w209.inn1 [data-cm-surface="world"][data-cm-quiet="0"]{animation:cm-listen 8s steps(1,end) infinite}',
+  'html body.w209.inn1 [data-cm-surface="world"][data-cm-k="doto"]{animation-duration:9.4s}',
+  'html body.w209.inn1 [data-cm-surface="world"][data-cm-k="nabi"]{animation-duration:6.4s}',
+  'html body.w209.inn1 [data-cm-surface="world"][data-cm-k="karo"]{animation-duration:7.1s}',
+  'html body.w209.inn1 [data-cm-surface="world"][data-cm-k="wanggu"]{animation:none}',
+  'html body.w209.inn1 [data-cm-surface="world"][data-cm-quiet="1"]{translate:0 0}',
   '@keyframes cm-breath{0%,72%,100%{translate:0 0}78%,92%{translate:0 -1px}}',
   '@keyframes cm-settle{0%,78%,100%{translate:0 0}82%,89%{translate:0 1px}}',
   '@keyframes cm-memo{0%,67%,100%{translate:0 0}71%,76%{translate:0 1px}80%,85%{translate:0 0}89%,94%{translate:0 1px}}',
   '@keyframes cm-listen{0%,80%,100%{translate:0 0}84%,92%{translate:1px 0}}',
+  '@keyframes cm-eager{0%,67%,100%{translate:0 0}71%,76%{translate:1px 0}80%,85%{translate:0 0}89%,94%{translate:0 -1px}}',
   '@keyframes cm-emphasis{0%,70%,100%{translate:0 0}30%,60%{translate:0 1px}}',
   '@keyframes cm-tip{0%,74%,100%{transform:translateY(0)}78%,84%{transform:translateY(var(--cm-step))}88%,94%{transform:translateY(0)}}',
+  '@keyframes cm-feature{0%,74%,100%{transform:translate(0,0)}78%,84%{transform:translate(var(--cm-x),var(--cm-y))}88%,94%{transform:translate(0,0)}}',
   'body.cm-paused [data-cm-k],body.cm-paused .cm-part{animation:none!important;translate:0 0!important}body.cm-paused .cm-part{transform:none!important}',
   '@media(prefers-reduced-motion:reduce){html body.w209.inn1 [data-cm-k],html body.w209.inn1 .cm-part,html body.w209.inn1 .spk9,html body.w209.inn1 .spk9 .sw9{animation:none!important;translate:0 0!important}html body.w209.inn1 .cm-part{transform:none!important}}'
  ].join('\n');document.head.appendChild(style);
  /* One scheduler for every surface and the existing tail sequence. */
  setInterval(tick,160);reduced.addEventListener('change',tick);document.addEventListener('visibilitychange',tick);tick();
+ // New expression source clips are synchronous; rebuild any optional feature
+ // before painting an old tail/ear over the new expression. This adds no timer.
+ var queued=false;new MutationObserver(function(){if(queued)return;queued=true;Promise.resolve().then(function(){queued=false;tick()})}).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['data-art','data-expression','data-src']});
 })();

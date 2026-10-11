@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 CAST=['det1','innma','seryeon','nabi','geokkuri','doto','buri','karo','wanggu']
 def main():
  ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--url',default='http://127.0.0.1:8000/playT.html');ap.add_argument('--out',default='/tmp/dialogue-portraits');a=ap.parse_args();out=Path(a.out);out.mkdir(parents=True,exist_ok=True)
- root=Path(__file__).resolve().parents[2];manifest=json.loads((root/'art/ch1/dialogue-v1/manifest.json').read_text());chars=manifest['characters'];assert set(chars)==set(CAST+['det0'])
+ root=Path(__file__).resolve().parents[2];manifest=json.loads((root/'art/ch1/dialogue-v2/manifest.json').read_text());chars=manifest['characters'];assert set(chars)==set(CAST+['det0'])
  for k,states in chars.items():
   assert set(states)=={'neutral','thinking','distressed','expressive'},(k,states.keys())
   for state,v in states.items():
@@ -39,7 +39,7 @@ def main():
    sel='#innstage .isf>svg.dialogue-bust' if surface=='stage' else '.fstalk .tfig>svg.dialogue-bust'
    svg=page.locator(sel);assert svg.count()==1,(k,surface,'Not one close dialogue actor')
    r=svg.evaluate("""n=>({k:n.dataset.k,src:n.dataset.src,expression:n.dataset.expression,rect:n.getBoundingClientRect().toJSON(),render:getComputedStyle(n).imageRendering,overflow:getComputedStyle(n).overflow,view:n.getAttribute('viewBox'),panel:document.querySelector('.fstalk .tpanel')?.getBoundingClientRect().toJSON(),host:n.parentNode.dataset.posture})""")
-   assert r['k']==k and '/dialogue-v1/' in r['src'],r
+   assert r['k']==k and '/dialogue-v2/' in r['src'],r
    assert r['render']=='pixelated' and r['overflow']=='hidden',r
    rect=r['rect'];v=[float(x) for x in r['view'].split()];assert abs(rect['width']/rect['height']-v[2]/v[3])<.025,r
    assert rect['left']>=0 and rect['right']<=page.viewport_size['width']+1,r
@@ -59,7 +59,7 @@ def main():
   for k in CAST+['det0']:
    coords=set()
    for md in ['normal', 'think' if k!='wanggu' else 'admonish','worried' if k!='wanggu' else 'sheepish','angry' if k in ['wanggu','karo','seryeon'] else 'joy']:
-    stage(k,md);face=page.locator('#vnbox .spk9 img');assert '/dialogue-v1/' in face.get_attribute('src'),(k,md,'Speaker uses old face')
+    stage(k,md);face=page.locator('#vnbox .spk9 img');assert '/dialogue-v2/' in face.get_attribute('src'),(k,md,'Speaker uses old face')
     coords.add(face.get_attribute('style'));expected=page.evaluate('(v)=>__innDialogueArt(v.k,v.md).crop',{ 'k':k,'md':md})
     if k!='det0':assert [float(x) for x in page.locator('#innstage .dialogue-bust').get_attribute('viewBox').split()]==expected,(k,md)
    assert len(coords)==4,(k,'Speaker crop does not follow four expressions')
@@ -76,10 +76,12 @@ def main():
   child=[f for f in frames if f['who']=='det1'];assert child and all(f['expression']=='thinking' for f in child),child
   print('PASS authored question reply -> child keeps counterpart expression, no old full-body frame',flush=True)
   e('if(DL){DL.done=null;endDlg()};G.loc=CASES[G.ci].locations.findIndex(l=>l.id==="front");G.tab="scene";render();');page.wait_for_timeout(800)
-  world=page.locator('#bigscene image.wn9[data-k="wanggu"]');assert '/neoul-v4/' in world.get_attribute('href'),'World was replaced with close bust'
+  world=page.locator('#bigscene image.wn9[data-k="wanggu"]');body=manifest['world']['wanggu'];assert world.get_attribute('href')==body['src'],'Wrong world identity'
+  assert world.evaluate('n=>n.__worldCrop')==body['crop'],'World uses a dialogue bust cell'
   page.screenshot(path=str(out/'world-front.png'))
-  page.wait_for_function('__innMask()["art/ch1/neoul-v4/neoul-default.png"]==="ok"');rect=world.bounding_box();raw=Image.open(root/'art/ch1/neoul-v4/neoul-default.png');alpha=raw.getchannel('A');nw,nh=raw.size
-  points=[(rect['x']+x/nw*rect['width'],rect['y']+y/nh*rect['height']) for y in range(350,750,20) for x in range(400,650,20) if alpha.getpixel((x,y))>200]
+  page.wait_for_function('(src)=>__innMask()[src]==="ok"',arg=body['src']);raw=Image.open(root/body['src']);alpha=raw.getchannel('A');cx,cy,cw,ch=body['crop']
+  source_points=[(x,y) for y in range(cy+ch//4,cy+ch*3//4,5) for x in range(cx+cw//3,cx+cw*2//3,5) if alpha.getpixel((x,y))>200]
+  points=world.evaluate('''(im,points)=>{const sv=im.closest('svg.wn9-world'),m=sv.getScreenCTM();return points.map(([x,y])=>{let p=sv.createSVGPoint();p.x=x;p.y=y;p=p.matrixTransform(m);return [p.x,p.y]})}''',source_points)
   x,y=next((x,y) for x,y in points if 5<x<839 and 5<y<385);page.mouse.click(x,y);page.wait_for_timeout(800)
   assert e('G.tab==="talk"&&G.who==="wanggu"'),'Actual opaque pointer failed to open questions';inspect('wanggu','talk');page.screenshot(path=str(out/'talk-front.png'))
   print('PASS real opaque world pointer opens separate close dialogue atlas',flush=True)

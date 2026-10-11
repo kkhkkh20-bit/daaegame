@@ -1,0 +1,459 @@
+{
+  "id": "ch1-dialogue-v2-friends",
+  "created": "2026-10-11",
+  "creation": "image_gen reference-guided creation; original PNG bytes copied without pixel editing, resizing, splitting or background removal. Layout-safe final draft selected after two rejected spacing drafts.",
+  "coordinate_space": "absolute source pixels; cell/crop=[x,y,w,h]; foreground_bbox=[left,top,right,bottom]; face=[x,y,squareSize]; anchor=[x,y]",
+  "src": "art/ch1/dialogue-v2/friends.png",
+  "original_source": "/workspace/generated_images/exec-e4a1bc35-9006-4d05-8440-9eafbfd284c4.png",
+  "width": 1774,
+  "height": 887,
+  "sha256": "1129f0a8890292190c3e453f1051c2bf81799df3f2605e937e345ed951d04406",
+  "rows": [
+    "nabi",
+    "geokkuri"
+  ],
+  "state_order": [
+    "world",
+    "neutral",
+    "thinking",
+    "distressed",
+    "expressive"
+  ],
+  "grid": {
+    "columns": 5,
+    "rows": 2,
+    "column_edges": [
+      0,
+      354,
+      709,
+      1064,
+      1419,
+      1774
+    ],
+    "row_edges": [
+      0,
+      443,
+      887
+    ]
+  },
+  "rgba_alpha_range": [
+    0,
+    255
+  ],
+  "alpha_measurement": {
+    "foreground_threshold": 32,
+    "note": "Unprocessed generated RGBA has isolated alpha=1 specks in transparent gutters. No foreground(alpha>=32) reaches any cell boundary. All cells have >=19px foreground margin; the expressive bat wingtip is 19px from its left cell boundary. No alpha postprocessing was performed."
+  },
+  "cells": [
+    {
+      "character": "nabi",
+      "state": "world",
+      "cell": [
+        0,
+        0,
+        354,
+        443
+      ],
+      "foreground_bbox": [
+        106,
+        68,
+        318,
+        407
+      ],
+      "visible_margin": [
+        106,
+        68,
+        36,
+        36
+      ]
+    },
+    {
+      "character": "nabi",
+      "state": "neutral",
+      "cell": [
+        354,
+        0,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        461,
+        83,
+        662,
+        387
+      ],
+      "visible_margin": [
+        107,
+        83,
+        47,
+        56
+      ]
+    },
+    {
+      "character": "nabi",
+      "state": "thinking",
+      "cell": [
+        709,
+        0,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        777,
+        100,
+        1007,
+        387
+      ],
+      "visible_margin": [
+        68,
+        100,
+        57,
+        56
+      ]
+    },
+    {
+      "character": "nabi",
+      "state": "distressed",
+      "cell": [
+        1064,
+        0,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        1106,
+        134,
+        1341,
+        397
+      ],
+      "visible_margin": [
+        42,
+        134,
+        78,
+        46
+      ]
+    },
+    {
+      "character": "nabi",
+      "state": "expressive",
+      "cell": [
+        1419,
+        0,
+        355,
+        443
+      ],
+      "foreground_bbox": [
+        1458,
+        88,
+        1668,
+        417
+      ],
+      "visible_margin": [
+        39,
+        88,
+        106,
+        26
+      ]
+    },
+    {
+      "character": "geokkuri",
+      "state": "world",
+      "cell": [
+        0,
+        443,
+        354,
+        444
+      ],
+      "foreground_bbox": [
+        120,
+        511,
+        303,
+        808
+      ],
+      "visible_margin": [
+        120,
+        68,
+        51,
+        79
+      ]
+    },
+    {
+      "character": "geokkuri",
+      "state": "neutral",
+      "cell": [
+        354,
+        443,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        454,
+        513,
+        663,
+        812
+      ],
+      "visible_margin": [
+        100,
+        70,
+        46,
+        75
+      ]
+    },
+    {
+      "character": "geokkuri",
+      "state": "thinking",
+      "cell": [
+        709,
+        443,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        765,
+        511,
+        995,
+        828
+      ],
+      "visible_margin": [
+        56,
+        68,
+        69,
+        59
+      ]
+    },
+    {
+      "character": "geokkuri",
+      "state": "distressed",
+      "cell": [
+        1064,
+        443,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        1113,
+        509,
+        1340,
+        819
+      ],
+      "visible_margin": [
+        49,
+        66,
+        79,
+        68
+      ]
+    },
+    {
+      "character": "geokkuri",
+      "state": "expressive",
+      "cell": [
+        1419,
+        443,
+        355,
+        444
+      ],
+      "foreground_bbox": [
+        1438,
+        506,
+        1681,
+        822
+      ],
+      "visible_margin": [
+        19,
+        63,
+        93,
+        65
+      ]
+    }
+  ],
+  "characters": {
+    "nabi": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          102,
+          64,
+          220,
+          347
+        ],
+        "face": [
+          145,
+          65,
+          165
+        ],
+        "posture": "standing",
+        "anchor": [
+          246,
+          406
+        ],
+        "anchor_kind": "floor-feet"
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          457,
+          79,
+          209,
+          312
+        ],
+        "face": [
+          447,
+          79,
+          220
+        ],
+        "posture": "dialogue-upper-body"
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          773,
+          96,
+          238,
+          295
+        ],
+        "face": [
+          777,
+          92,
+          215
+        ],
+        "posture": "dialogue-upper-body"
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1102,
+          130,
+          243,
+          271
+        ],
+        "face": [
+          1100,
+          105,
+          248
+        ],
+        "posture": "dialogue-upper-body"
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1454,
+          84,
+          218,
+          337
+        ],
+        "face": [
+          1460,
+          79,
+          230
+        ],
+        "posture": "dialogue-upper-body"
+      }
+    },
+    "geokkuri": {
+      "world": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          116,
+          507,
+          191,
+          305
+        ],
+        "face": [
+          130,
+          654,
+          173
+        ],
+        "posture": "hanging-upside-down",
+        "anchor": [
+          218,
+          512
+        ],
+        "anchor_kind": "ceiling-feet"
+      },
+      "neutral": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          450,
+          509,
+          217,
+          307
+        ],
+        "face": [
+          454,
+          640,
+          208
+        ],
+        "posture": "hanging-upside-down"
+      },
+      "thinking": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          761,
+          507,
+          238,
+          325
+        ],
+        "face": [
+          771,
+          640,
+          222
+        ],
+        "posture": "hanging-upside-down"
+      },
+      "distressed": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1109,
+          505,
+          235,
+          318
+        ],
+        "face": [
+          1111,
+          641,
+          224
+        ],
+        "posture": "hanging-upside-down"
+      },
+      "expressive": {
+        "src": "art/ch1/dialogue-v2/friends.png",
+        "width": 1774,
+        "height": 887,
+        "crop": [
+          1434,
+          502,
+          251,
+          324
+        ],
+        "face": [
+          1460,
+          636,
+          240
+        ],
+        "posture": "hanging-upside-down"
+      }
+    }
+  },
+  "identity": {
+    "nabi": "White cat with narrow half-lidded blue eyes, long ears, blue sailor collar, gold bell and yellow flower; folds/offers towel and carries a basket; no book poses.",
+    "geokkuri": "Purple bat truly hanging upside down in all 5 cells: hooked feet above torso/head, enormous ears below; sleepy asymmetric eyes, red head cloth, wrapped wings and ear/wing reactions."
+  }
+}

@@ -1,4 +1,10 @@
 1장 v2 소스 — 별도 미리보기 배포 (2026-10-10)
+- 2026-10-11 10명 개성 개선: CODEX_CAST_IDENTITY_20261011.txt.
+  art/ch1/dialogue-v2/ 원본 PNG 5장에 전신 10개/별도 상반신 40표정.
+  assemble_cast.py는 PNG를 수정하지 않고 검증·manifest만 재생성한다.
+  qa_dialogue_portraits.py / qa_cast_world.py / qa_cast_council.py는
+  현장 입력·가까운 대화·회의와 같은 대사의 표정 변경을 검사한다.
+  qa_cast_motion_features.py는 꼬리/귀/머리깃의 1px 동작과 정지를 검사한다.
 - 2026-10-11 컷·음악 순서/대화용 그림 분리: CODEX_PRESENTATION_TIMING_20261011.txt.
   신규 40표정은 현장 전신과 별도로 qa_dialogue_portraits.py에서 검사한다.
   실제 새 게임 타이밍: qa_presentation_timing.py --expect-stable --check-menu.
