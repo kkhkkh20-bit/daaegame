@@ -1,4 +1,11 @@
-- 2026-10-11 최신 암전/음악/아빠 시점: CODEX_SCENE_FLOW_20261011.txt.
+- 2026-10-11 최신 로딩/마을 이동: CODEX_JOURNEY_THEME_20261011.txt.
+  wrapper 첫 로딩과 게임 loader는 공통 월넛/종이/황동+Galmuri 테마를 쓴다.
+  P1 마차→고갯길/마을 접근→까로, P2 마을→닫힌 우체국 문→언덕의 여관→입구,
+  P3 외부 문열기→명시 실내 전환→환영. 이전 고정 P2 전경/내부에서 노크 기록을 대체한다.
+  신규 요청 배경3장만 추가했다. 기존 승인 인물/마을 CG는 교체하지 않는다.
+  같은 owner camera 암전도 음악 선행/decode를 기다리고 옛 freeze 창을 첫 paint 전에 지운다.
+  qa_journey.py는 실제 입력·세로 wrapper·이미지 지연/503재시도·첫로딩 톤을 검사한다. 현재 빌드 c3f9173cd118.
+- 2026-10-11 암전/음악/아빠 시점: CODEX_SCENE_FLOW_20261011.txt.
   scene.music/D.music의 명시적 큐. 의도된 암전 중 다음 곡을 실제 .28초 먼저 재생한 뒤 장면을 연다.
   night 92 BPM/search 112 BPM 원곡, 다람 주도 대화, 밤이 home/out/touch/eyes/bami/return/home.
   이전 카드 동안 음악 차단·P1 끝까지 밝은 곡 기록보다 이 정책이 우선한다. 현재 빌드 b58283ec328b.

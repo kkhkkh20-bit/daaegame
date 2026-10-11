@@ -1,0 +1,54 @@
+2026-10-11 로딩부터 마을 여행까지: UI 톤과 공간 연속성
+
+사용자 지시
+- 로딩 UI부터 제각각인 톤을 통일한다.
+- 마을로 가는 장면이 있어야 한다. 우체국이 닫혔다는 말에는 우체국 입구를 보여 준다.
+- 기존 아빠 시점, 짧은 부녀 대화, 음악 선행, 공개/v2 구분과 직접 main 반영 정책을 유지한다.
+
+UI
+- boot_theme.css/html을 wrapper와 게임의 최초 #bootld가 공유한다.
+- 남색 첫 paint·노랑 진행 막대·sans 로딩 글꼴을 월넛/황동/종이색과 Galmuri, 편지/돋보기 문양으로 바꾼다.
+- iframe을 받기 전에도 같은 로딩 화면을 보여 준다. wrapper의 가로/세로 transform을 함께 사용한다.
+- iframe이 자체 loader를 그리면 같은 origin/source postMessage로 외부 loader가 넘겨준다.
+- 게임 준비/로딩 제거는 기존 native 계약을 유지한다. v2의 외부 Google Fonts 연결은 제거한다. 게임은 기존 embedded Galmuri, wrapper는 같은 저장소의 OFL Galmuri를 로컬로 쓴다.
+- main/설정 바탕도 월넛으로 맞췄다. 장소/time 카드는 기존 종이 카드 문양을 공유한다.
+- 여행 장소 배지는 기록 버튼 아래 top74에 두고 native 장소 카드 동안 숨긴다.
+
+실제 화면과 대본
+- P1: 부녀 마차 대화 → 엄마 편지/우체국 목적 → 창밖 고갯길과 다가오는 마을 → 정차 → 까로 → 귀환 시간 질문.
+- P2: 손잡고 걷는 마을 전경 → 닫힌 우체국 출입문/셔터와 '닫음' 표찰 → 언덕 위 불 켜진 집 → 계단을 올라 여관 문 앞.
+- P2의 노크는 외부 컷에서, P3의 문열기 역시 외부 컷에서 재생한다. P3의 명시 stage 방향과 암전에서 실내로 들어온 뒤 문닫기/할머니 환영으로 이어진다.
+- 이름을 읽기 전 wide 컷에서 여관 이름을 먼저 말하지 않는다. 언덕의 불 켜진 집을 본 뒤 입구 간판에서 이름을 읽는다.
+- 새 camera D만 추가하고 P1/P2/P3와 다른 scene ID·순서는 유지했다. 구저장/관리자 entry cursor를 밀지 않는다.
+- camera는 주석/대사 regex가 아니라 명시 direction으로 소유한다. 같은 scene owner의 암전도 decode와 실제 음악 .28초 선행을 기다린다. 같은 음악은 이어 재생한다.
+- native endDlg callback 뒤 옛 freeze 창을 다시 붙이는 wrapper가 있다. 동기 정리뿐 아니라 owner/game/camera 확인 microtask에서 첫 paint 전에 그 tail을 지운다. 새 live DL은 clear 함수의 기존 guard로 보호한다.
+- 신규 고해상도 배경은 main 첫 로딩과 경쟁하지 않고 P1/P2 진입부터 다음 몇 컷을 준비한다.
+
+아트
+- village-approach-road.png / post-office-closed-exterior.png / inn-entrance-evening.png.
+- 사용자가 요청한 새 이동/입구 장면이다. 이미 확인한 village-arrival-wide.png를 image_gen reference로 사용했다.
+- 생성된 원본 PNG를 수정 없이 복사했다. 기존 승인 마을 CG와 인물/배경은 교체하지 않았다.
+- 건축, 황혼·단풍색, 언덕 위 여관, 편지 간판의 우체국을 맞춘다. 인물/증거/엄마 얼굴/숨은 사건을 추가하지 않았다.
+- 문패/간판의 정확한 한국어는 그림과 동일 cover 좌표의 SVG text로 얹는다. manifest.json에 원본 해시/치수/승인 범위를 기록했다.
+- art/ui/galmuri11.woff2는 design/reference의 동일 파일이고 Galmuri-OFL.txt를 함께 배포한다.
+
+빌드/배포 범위
+- publish.py가 소스의 UI 테마를 읽어 wrapper에 반영한다. wrapper만 수동 수정하면 다음 빌드에서 사라지므로 그렇게 작업하지 않는다.
+- 최종 후보 c3f9173cd118, SHA256 c3f9173cd118a72749ea4580da533289a65029ae5e235badc3e5f1f49b8d4e49.
+- 공개 play.html SHA256 282d91830133decc8fd703ed4ca974e76e64da69cd354cd49ed29c9ef233fbe5 유지.
+
+QA
+- qa_journey.py: clean wrapper/payload 동결, 실제 새 게임 입력. 세로 wrapper 회전, 최초 두 loader의 색/폰트, main 로딩 중 새 CG 요청 없음, camera 순서, 표찰이 대사판 위에 보임을 검사한다.
+- post-office 이미지 요청은 실제 해당 camera 진입까지 보류한 뒤 1.8초 늦춘다. 그동안 화면 암전과 이전 대사 없음, 뒤에 정상 진행을 확인한다.
+- 별도 첫503/네이티브 재시도와 reduced-motion 경로를 확인한다. 테스트용 의도503을 정상 오류와 구분한다.
+- 에이전트는 실제 도입부 모든 RAF와 stable 스크린샷으로 장소 배지/기록 겹침, cut 전환 후 잔여 대사, 문 효과음과 외부/실내 위치를 확인한다.
+- 클라우드 Chromium 검증이며 실제 iPhone Safari/주관적 청취 검증으로 표현하지 않는다.
+
+최종 후보 검증 (c3f9173cd118)
+- qa_journey: 느린 이미지2,030 RAF/112 대기 프레임, 첫503/재시도1,868 RAF/18 대기 프레임 PASS. 9개 camera 순서, 이전 대사 없이 암전 대기, '닫음' 표찰의 대사판 위 가시성, 세로 wrapper의 실제 네이티브 입력, reduced motion, 최초 parent/child loader 단일 월넛/Galmuri PASS. 정상 JS/HTTP0, 의도503은 재시도 후 복구.
+- 에이전트 실제 새 게임 P1→P3: 1,977 RAF, 9 camera 순서, CG/가시 장소카드 중복0, partial fade/reveal에서 옛 대사 노출0. top74 배지와 기록 버튼 겹침 해소. 표찰 y199.4~214.4, 대사판 top297.
+- 문 효과음 첫 시작: open=P3 innentrance/black0, close=P3 stage/black1. P2 외부 노크→P3 문열기 동안 외부 컷 유지. JS/HTTP0.
+- 새 P2 owner 첫 완전 암전 아래 옛 대사 DOM은 1 RAF 있었으며 다음 RAF에 정리됐다. 실제 fade/reveal 노출은0이다. 가려진 DOM과 플레이어가 본 화면을 구분했다.
+- qa_scene_flow 실제 새 게임 P1→P13: 7,854 RAF/9 장면 PASS. 음악 선행 gate, 밤이 cue에만 등장/귀환 후 제거, native 조사 진입 모두 통과했다. 느린 음악272 RAF와 첫503 음악/재시도231 RAF도 통과.
+- 문법/Python QA compile, diff-check, 신규 아트 원본 해시, wrapper 폰트 동일성, 공개 play.html 해시 유지 확인.
+- 결과 /tmp/journey-c3f9173cd118/report.json, /tmp/opening-space-final-c3f9173cd118/visual-summary.json, /tmp/scene-flow-c3f9173cd118/report.json.
