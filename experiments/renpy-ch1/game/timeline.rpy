@@ -80,7 +80,8 @@ init 25 python:
         return next((x for x in reversed(store.village_observations) if x["person"]==person),None)
 
     def village_arrival_resident(location):
-        person=ARRIVAL_PEOPLE[location]
+        person=ARRIVAL_PEOPLE.get(location)
+        if not person:return None
         closing=TIMELINE["residents"][SOURCE_ALIAS.get(person,person)].get("evening_until",1440)
         return person if store.village_minutes<closing else None
 

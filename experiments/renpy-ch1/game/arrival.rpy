@@ -122,7 +122,7 @@ label arrival_roam:
     $ source_pulse(False)
     $ source_score("village_bright")
     $ renpy.pause(.3,hard=True)
-    scene expression Transform("assets/village-map.png",size=(1280,720)) with Dissolve(.18)
+    scene expression Transform("assets/village-overview.png",size=(1280,720)) with Dissolve(.18)
     call screen arrival_map
     $ village_advance_evening(5 if _return != arrival_location else 0)
     $ arrival_location = _return
@@ -131,10 +131,12 @@ label arrival_roam:
         $ arrival_post_closed = True
         if "post" not in arrival_seen:
             $ arrival_seen.append("post")
-        jump arrival_roam
+        jump arrival_place
     jump arrival_place
 
 label arrival_place:
+    if arrival_location not in village_places_seen:
+        $ village_places_seen.append(arrival_location)
     $ place, clock_text = ARRIVAL_PLACES[arrival_location][0], village_clock()
     $ source_camera,source_night,source_stage_person = "innentrance" if arrival_location=="inn" else "stage",None,None
     $ source_background = "outdoor-"+arrival_location
@@ -155,6 +157,9 @@ label arrival_place:
     if arrival_action == "stone":
         $ arrival_key = "stone"
         call arrival_topic
+        jump arrival_place
+    if isinstance(arrival_action,str) and arrival_action.startswith("local:"):
+        call village_contact(arrival_action.split(":",1)[1])
         jump arrival_place
     $ arrival_question_person = arrival_location
     call arrival_interview
@@ -278,44 +283,17 @@ screen arrival_snow():
     for i in range(15):
         text "·" size (14+i%3*4) color "#dce7ed" at arrival_snow(i*.53, i*90-40)
 
-screen arrival_map():
-    modal True
-    default ready = False
-    timer .35 action SetScreenVariable("ready",True)
-    add Transform("assets/village-map.png",size=(1280,720))
-    add VillagePaths()
-    frame:
-        xpos 28 ypos 95 background Solid("#eee2c8f2")
-        vbox:
-            spacing 8
-            text "작은 동물마을" size 30 color "#443025"
-            text "어디로 갈까?" size 19 color "#7a5941"
-    for key, spec in ARRIVAL_PLACES.items():
-        button:
-            xpos spec[2][0]-90 ypos spec[2][1]-100 xsize 205 ysize 185
-            background Solid("#eee2c8f2") hover_background Solid("#ffecc1")
-            padding (0,0) sensitive ready action Return(key)
-            fixed:
-                frame:
-                    xalign .5 xsize 192 ysize 114 padding (4,4)
-                    background Solid("#e5cc97")
-                    add Transform("assets/"+spec[1],size=(184,106))
-                frame:
-                    ypos 116 xalign .5 padding (8,6) background None
-                    vbox:
-                        text spec[0] size 22 xalign .5 color "#443025"
-                        if key=="post" and arrival_post_closed:
-                            text "내일 아침 9시" size 16 color "#7a5941" xalign .5
-                        elif key==arrival_location:
-                            text "현재 위치" size 16 color "#7a5941" xalign .5
-    frame:
-        xpos 32 ypos 633 padding (16,10) background Solid("#eee2c8f2")
-        text ("우체국은 내일 연다. 오늘은 쉴 곳을 찾자." if arrival_post_closed else "장소를 눌러 이동 · 주민을 눌러 대화") size 21 color "#7a5941"
-
 screen arrival_place():
     modal True
     default ready = False
     timer .35 action SetScreenVariable("ready",True)
+    for local in village_outdoor_people(arrival_location):
+        imagebutton:
+            xpos local["x"] ypos local["y"]
+            idle Transform(local["id"]+" world",size=(local["width"],local["height"]),fit="contain")
+            hover Transform(local["id"]+" world",size=(local["width"],local["height"]),fit="contain",alpha=.86)
+            sensitive ready action Return("local:"+local["id"])
+        text local["public_name"] xpos local["x"] ypos (local["y"]+local["height"]+3) size 17 color "#f3e7ce" outlines [(2,"#201b18",0,0)]
     $ resident = village_arrival_resident(arrival_location)
     if resident:
         $ person = SOURCE_ALIAS.get(resident,resident)
@@ -324,7 +302,7 @@ screen arrival_place():
             idle Transform(person+" world",size=(225,290),fit="contain")
             hover Transform(person+" world",size=(225,290),fit="contain",alpha=.85)
             sensitive ready action Return("talk")
-    else:
+    elif not village_outdoor_people(arrival_location):
         text "주민은 자리를 비웠다." xpos 685 ypos 555 size 21 color "#f3e7ce"
     if arrival_location == "fountain":
         button:
