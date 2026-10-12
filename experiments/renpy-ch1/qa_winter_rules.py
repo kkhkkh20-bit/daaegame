@@ -8,7 +8,7 @@ exec('def winter_new():'+textwrap.dedent(code),scope)
 f=lambda k:scope[k]
 s=f('winter_new')()
 # An executable complete route with all action budgets and deadlines enforced.
-route=[['karo','post','granny'],['appointment','receipt','bed'],['ritual','meter','witness'],['protect','surveillance','timing'],['hidden','mother','symptoms'],['repair','fuel','escape'],['ledger','order','death'],[],[],[],[],[],[]]
+route=[['karo','post','karo_sighting','doto_sighting','granny'],['appointment','receipt','bed'],['ritual','meter','witness'],['protect','surveillance','timing'],['hidden','mother','symptoms'],['repair','fuel','escape'],['ledger','order','death'],[],[],[],[],[],[]]
 for day,actions in enumerate(route,1):
  assert s['day']==day
  for key in actions:
@@ -67,7 +67,7 @@ for field,value in [('witness','dead'),('mother_day',12)]:
 for missing in ['repair','fuel','escape']:
  altered=copy.deepcopy(s);altered['evidence'].remove(missing);assert f('winter_ending')(altered)!='truth'
 # Data references, speaking actors, evidence and dependency keys exist.
-keys=set(scope['WINTER']['actions'])|set(scope['WINTER']['evidence'])|{'passage_known','mother','mother_secure'}
+keys=set(scope['WINTER']['actions'])|set(scope['WINTER']['evidence'])|{f for a in scope['WINTER']['actions'].values() for f in a['flags']}|{'passage_known','mother','mother_secure','doto_recanted'}
 for key,a in scope['WINTER']['actions'].items():
  assert a['place'] in scope['WINTER']['places']
  assert all(v in keys for v in a['need']),(key,a['need'])

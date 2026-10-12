@@ -23,6 +23,7 @@ init 46 python:
 
     def winter_where(s,person):
         if person not in WINTER_SCHEDULES:return None
+        if person=="guard" and (s["day"]-1)%7==1 and winter_period(s)==2:return "square"
         # Case consequences outrank the weekly routine, including next week.
         if person=="resident_nubi":
             if s["day"]<3 or s["witness"] in ("detained","dead"):return None
@@ -68,6 +69,8 @@ init 46 python:
 
     def winter_greeting_key(s,who):
         variant=""
+        if who=="doto" and winter_has(s,"doto_memory") and s["day"]>=2:
+            variant=":supported" if winter_has(s,"doto_supported") else ":recanted"
         if who=="resident_nubi" and s["witness"]=="safe":variant=":protected"
         elif s["day"]>=8:
             if who=="granny":variant=":week2:"+str(s["first_result"])
@@ -77,6 +80,10 @@ init 46 python:
         return "hello:"+who+variant
 
     def winter_greeting(s,who):
+        if who=="doto" and winter_has(s,"doto_memory") and s["day"]>=2:
+            if winter_has(s,"doto_supported"):
+                return [(who,"창고 분들은 잘 잤대요. 그리고 그날 본 분, 사진 속 분 맞아요. 이번엔 제 이름도 같이 적어요.")]
+            return [(who,"사진 속 분은 못 봤어요. 다른 사람과 헷갈렸나 봐요."),("daram","어제 기록판까지 보여 줬잖아요."),(who,"……지금은 사람들 있어요. 나중에 이야기해요.")]
         if who=="resident_nubi" and s["witness"]=="safe":
             return [(who,"오늘은 가족이랑 같이 왔어요. 이름을 숨기지 않아도 된다고 하셔서."),("dad","공개할 때까지 함께 있겠습니다.")]
         if s["day"]>=8:
@@ -91,6 +98,8 @@ init 46 python:
         return WINTER_WORLD["greetings"][who]
 
     def winter_morning(s):
+        if s["day"]==5 and s["witness"]=="available" and not winter_has(s,"witness"):
+            return [("resident_nubi","집 앞에 경비가 서 있어요. 왜 왔는지 물어도 기다리라고만 하고."),("dad","가족은 같이 있습니까?"),("resident_nubi","집에요. 저도 돌아가 봐야겠어요.")]
         if s["day"]==5 and s["witness"]!="available":
             return [("granny","누비 가족은 여기 있어요." if s["witness"]=="safe" else "누비가 안 보여요. 집 앞에는 경비가 있고."),("dad","오늘은 이송 기록을 확인하겠습니다.")]
         if s["day"]==8 and s["witness"]=="safe":
@@ -107,15 +116,21 @@ init 46 python:
 
     def winter_goal(s):
         if not winter_has(s,"inn_registered"):return "접수대의 할머니에게 말을 걸어 방을 구하자."
-        if winter_period(s)==3:return "오늘 큰 일정은 마쳤다. 더 묻고 살펴보거나 여관에서 밤을 보내자."
+        if winter_period(s)==3:return "저녁이 깊었다. 남은 이야기를 듣고 여관에서 쉬자."
         if s["witness"]=="detained" and s["day"]<=7:return "누비의 이송을 막을 근거를 찾아 마을 입구의 너울에게 가자."
         if s["day"]<=3 and s["day"]>=2:return "할머니의 혐의를 확인하자. 방의 침구와 우편실의 난방비 기록이 실마리다."
         if not winter_has(s,"registry"):return "할머니에게 숙박 명부를 부탁하자. 엄마가 머문 흔적이 남아 있을까."
-        if not winter_has(s,"sightings"):return "세련에게 엄마를 마지막으로 본 곳을 물어보자. 자리를 비웠다면 일정을 확인하자."
+        if not winter_has(s,"mother_lead") and not winter_has(s,"sightings"):return "엄마의 편지가 온 우편실에 가 보자. 마지막으로 본 사람이 있을까."
+        if not winter_has(s,"sightings"):return "엄마를 봤다는 까로와 도토. 두 사람에게 직접 들은 말을 맞춰 보자."
         if not winter_has(s,"route"):return "까로를 만나 눈에 막힌 길과 운송 기록을 물어보자."
         if winter_has(s,"map") and not winter_has(s,"mother"):return "옛 점검 통로를 살펴 두 목격 장소 사이의 길을 확인하자."
         if winter_has(s,"mother") and not winter_has(s,"mother_secure"):return "뒤따르는 경비가 있다. 까로에게 교대를 확인하고 엄마의 거처를 옮기자."
-        return "주민의 말과 현장 기록을 비교하자. 수리점·광장에도 다른 흔적이 남아 있다."
+        if winter_has(s,"mother") and not winter_has(s,"repair"):return "엄마와 함께 희생 없이 돌을 버틸 방법을 찾자. 밤의 증상과 출력 기록이 필요하다."
+        if winter_has(s,"repair") and not winter_has(s,"fuel"):return "난방을 줄이려면 주민들이 모여 지낼 곳과 땔감이 필요하다. 부리에게 의논하자."
+        if not winter_has(s,"escape"):return "엄마를 찾은 뒤 함께 나갈 길도 준비해야 한다. 까로에게 마차 밖의 길을 물어보자."
+        if s["witness"]=="available" and winter_has(s,"witness"):return "누비가 말할 수 있도록 가족이 지낼 곳부터 마련하자."
+        if not winter_has(s,"ledger") or not winter_has(s,"order"):return "누가 사라질 사람을 정했는지 알아야 한다. 주민의 기록과 운반 지시를 확인하자."
+        return "심의에서 기록을 함께 확인할 사람을 만나자. 다람의 달력에 남은 약속도 보자."
 
     def winter_empty_result():
         x,y=renpy.get_mouse_pos()
@@ -126,20 +141,95 @@ init 46 python:
         n.setdefault("checks",{})[s["location"]+":"+key]=list(point)
         return n
 
+    def winter_display_topics(s,kind,key,tab):
+        return [k for k in winter_target_options(s,kind,key)
+            if bool(WINTER["actions"][k]["cost"])==(tab=="activity")]
+
+    def winter_calendar_notes(s,day):
+        notes=[]
+        if day==1:notes.append(("겨울잠 여관", "엄마의 편지에 적힌 곳. 난로 옆에서 만나기로 했다."))
+        if day==3 and s["day"]>=2:notes.append(("할머니의 심의", "저녁. 여관 보증을 지킬 근거를 가져가야 한다."))
+        if day==6 and s["day"]>=6:notes.append(("이송 기록 공개 접수", "저녁. 원본을 여러 사람 앞에서 남길 기회."))
+        if day==14 and winter_has(s,"entry_corrected"):notes.append(("체류 보증 심의", "가족 보증이 끝나는 날. 함께 남거나 떠날 길을 준비해야 한다."))
+        if "repair" in s["records"] and s["records"]["repair"]["day"] < day <= s["records"]["repair"]["day"]+3:
+            notes.append(("엄마의 측정", "밤. 비상 운용을 위해 하루의 출력 변화를 비교한다."))
+        if (day-1)%7==1 and winter_has(s,"service_hint"):
+            notes.append(("우편실 감압 점검", "저녁. 광장 회수 작업 중에는 손잡이 걸쇠의 압력이 빠진다."))
+        if (day-1)%7==1 and winter_has(s,"cart_witnessed"):
+            notes.append(("광장의 수레", "저녁에 돌 뒤에서 멈추는 것을 봤다. 다음 화요일에도 오는지 확인하자."))
+        elif (day-1)%7==1 and winter_has(s,"cart_trace_seen") and winter_has(s,"service_hint"):
+            notes.append(("광장의 바퀴 자국", "점검패에는 화요일 저녁이 회수 작업이라고 적혀 있었다. 이 자국과 관련 있을까?"))
+        for who in WINTER_SCHEDULES:
+            if "routine:"+who not in s.get("seen",[]):continue
+            location=[winter_where(dict(s,day=day,period=p),who) for p in range(3)]
+            rows=[]
+            for period,key in enumerate(location):
+                if key:rows.append(("오전","오후","저녁")[period]+" · "+WINTER["places"][key]["name"])
+            if rows:notes.append((WINTER_NAMES[who]+"의 평소 일정", " / ".join(rows)))
+        return notes
+
+    def winter_hearing_opening(s,hearing):
+        if hearing=="granny":
+            return [("nabi","저 이불 내가 꿰맸다고 몇 번을 말해."),("seryeon","그 말씀도 듣겠습니다. 돈이 비는 문제와 함께요."),("granny","손님 이름을 내놓으면 없던 일로 해 줄 겁니까?"),("seryeon","그런 약속은 못 합니다."),("dad","이름을 넘기기 전에, 혐의 자체부터 확인합시다.")]
+        if hearing=="witness":
+            return [("seryeon","사본은 모두 반납해 주세요. 주민 이름이 적혀 있습니다."),("dad","돌려주면 이송된 사람이 어디로 갔는지 누가 확인합니까?"),("neoul","여기서 대조한 원본 번호는 남기겠습니다. 실제 목적지를 보죠.")]
+        return [("seryeon","체류 보증은 오늘까지입니다. 다음 절차로 넘어가겠습니다."),("dad","그 절차에서 사라진 사람들이 있습니다. 그 행방부터 답해 주십시오."),("neoul","문은 아직 열지 마세요. 이 자리에서 확인하겠습니다.")]
+
+    def winter_observation_lines(s,place,key):
+        repeats="observed:"+place+":"+key in s.get("seen",[])
+        if place=="room" and key=="bed":
+            if winter_has(s,"kitchen"):return [("daram","나비 아주머니 수선표랑 똑같아. 빨간 매듭도."),("dad","기록의 침구가 이 물건인지 확인됐어.")]
+            return [("daram","여기만 천이 달라. 누가 기웠나 봐."),("dad","끝을 조금만 들어 봐. 뜯지는 말고."),("daram","안쪽은 색이 바랬네. 겉만 새로 덮었나?")]
+        if place=="post" and key=="ledger":
+            if winter_has(s,"receipt"):return [("dad","유예 도장이 있는 원본. 집계표에는 이 표시가 빠져 있다."),("daram","우리가 본 날짜도 적어 두자.")]
+            return [("seryeon","그건 손님들 주소도 있어서요. 찾는 항목을 말씀해 주세요."),("dad","여관에 관한 기록부터 보겠습니다.")]
+        if place=="square" and key=="offerings":
+            if winter_has(s,"death"):return [("daram","저 끈 달린 열쇠…… 이송 명단에 적힌 물건이야."),("dad","사망 기록의 번호와도 같아."),("daram","돌아오라고 놓는 줄 알았는데."),("dad","여기에 놓은 사람은 어디까지 알고 있었을까.")]
+            if winter_has(s,"witness"):return [("daram","누비 씨가 말한 수레에도 이런 작은 보따리가 있었대."),("dad","묶인 번호를 적자. 같은 사람 물건인지는 확인해야 해.")]
+            return [("daram","장갑 한 짝이랑 열쇠도 있어. 누가 잃어버렸나?"),("doto","멀리 간 사람 몫이에요. 돌이 이름을 잊지 말라고요."),("daram","돌아오면 찾아가요?"),("doto","……그랬으면 좋겠네요.")]
+        if place=="square" and key=="pipe":
+            if winter_has(s,"research"):return [("dad","말을 유지하는 회로에서 열까지 끌어다 쓴 관이다."),("daram","엄마가 줄여야 한다던 게 이쪽이구나.")]
+            return [("daram","여기만 눈이 없어. 손 대면 따뜻해."),("dad","오래 잡지는 마. 뜨거워질 수도 있어.")]
+        if place=="gate" and key=="road" and winter_has(s,"order"):
+            return [("dad","지시서의 목적지는 이 고개가 아니었다."),("daram","사람들한텐 밖으로 간다고 했는데.")]
+        if place=="workshop" and key=="wheel":
+            if winter_has(s,"order"):return [("buri","원본은 네가 가져갔지? 남은 쪽지는 내가 보관할게. 없애라 해도 안 버려.")]
+            return [("daram","바퀴에 종이가 끼었어요."),("buri","수리표겠지. 잠깐, 기름 묻으니까 내가 뺄게.")]
+        if place=="room" and key=="window":
+            if winter_has(s,"surveillance"):return [("daram","또 저 사람이네. 우편실 앞에도 있었어."),("dad","창에서 조금 떨어져 있어. 우리 동선을 보고 있을 수 있어.")]
+            return [("daram","문 앞에 발자국이 왔다 갔다 했어. 들어온 건 없고."),("dad","배달 왔다 돌아갔을 수도 있어. 지금은 표시만 해 두자.")]
+        text=WINTER_WORLD["places"][place]["objects"][key]["text"]
+        return [(None,("다시 살폈다. " if repeats else "")+text)]
+
 label winter_talk:
+    $ winter_topic_tab="talk"
     if winter_target_id=="granny" and not winter_has(winter,"inn_registered"):
-        call winter_lines([("granny","어서 와요. 마차에서 온 두 분이죠?"),("dad","네. 방 하나 부탁드립니다."),("daram","장갑도 말려도 돼요?"),("granny","난로 옆에 걸어 둬요. 손부터 녹이고."),("dad","그리고… 이 사진 속 사람을 찾습니다."),("granny","……이분이 쓰던 방이 비어 있어요."),("daram","엄마가 여기서 잤어요?"),("granny","그랬어요. 지금은 없지만."),("dad","그 방으로 주십시오."),("granny","복도 끝이에요. 열세 번째 침대. 짐부터 두고 와요."),("seryeon","늦게 확인해서 죄송합니다. 두 분 체류는 제가 맡겠습니다."),("dad","아이를 또 따로 부르는 일은 없겠죠?"),("granny","숙박 보증은 내가 해요. 물을 일이 있으면 여기로 와요."),("seryeon","알겠습니다. 두 주 뒤 체류 심의까지는요."),("dad","할머니. 엄마가 남긴 연락처는 없었습니까?"),("granny","편지는 우편실의 세련 씨가 맡아요. 명부는 내가 찾아 놓을게요.")],"registration")
+        call winter_lines([("granny","어서 와요. 문부터 닫고. 손이 꽁꽁 얼었겠네."),("dad","방을 부탁드립니다. 보증 전달증을 받고 왔습니다."),("granny","두 분 다 왔네요. 장갑은 난로 옆에 걸어요."),("daram","여기서 기다리던 분은요? 이 사진……"),("granny","……그분 딸이구나."),("dad","아내가 여기서 만나자고 편지를 보냈습니다."),("granny","방은 비워 두었어요. 일주일 전 나간 뒤로는 못 봤고요."),("daram","짐도 가져갔어요?"),("granny","아니. 못 가져간 것이 있어요."),("dad","그 방을 볼 수 있을까요?"),("granny","복도 끝이에요. 열세 번째 침대. 다른 사람 앞에서는 그분 이름부터 꺼내지 마요."),("dad","이유는 듣고 싶습니다."),("granny","찾는 사람이 또 와요. 숙박 명부를 보여 달라고."),("dad","어디서 온 사람들입니까?"),("granny","초소요. 내가 아는 건 거기까지예요."),("daram","아빠. 우리 짐도 거기 놓자."),("dad","그래. 방을 보고, 편지 보낸 곳부터 찾아보자.")],"registration")
         $ winter=winter_flag(winter,"inn_registered")
+        call winter_lines([("daram","수첩 첫 장은 달력으로 쓸래. 엄마 만나면 날짜에 동그라미 치게."),("dad","약속도 적어 둬. 다시 찾을 수 있게.")],"calendar_intro")
     if winter_greeting_key(winter,winter_target_id) not in winter.get("seen",[]):
         call winter_lines(winter_greeting(winter,winter_target_id),"hello:"+winter_target_id)
         $ winter=winter_seen(winter,winter_greeting_key(winter,winter_target_id))
+    if winter_target_id=="doto" and winter_has(winter,"doto_memory") and winter["day"]>=2 and not winter_has(winter,"doto_supported"):
+        $ winter=winter_flag(winter,"doto_recanted")
     jump winter_questions
 
 label winter_object:
+    $ winter_topic_tab="talk"
     $ winter_object_spec=WINTER_WORLD["places"][winter["location"]]["objects"][winter_target_id]
     $ winter_rect=winter_object_spec["rect"]
     $ winter=winter_inspection_mark(winter,winter_target_id,(winter_rect[0]+winter_rect[2]//2,winter_rect[1]+winter_rect[3]//2))
-    call winter_lines([(None,winter_object_spec["text"])],"object:"+winter_target_id)
+    if winter["location"]=="square" and winter_target_id=="tracks":
+        call winter_timed_cart
+    elif winter["location"]=="post" and winter_target_id=="latch":
+        call winter_secret_latch
+        if winter["location"]=="passage":
+            jump winter_roam
+    else:
+        call winter_lines(winter_present_observation(winter,winter["location"],winter_target_id),"object:"+winter_target_id)
+    $ winter=winter_seen(winter,"observed:"+winter["location"]+":"+winter_target_id)
+    if any(WINTER["actions"][k]["cost"] for k in winter_target_options(winter,"object",winter_target_id)) and not any(not WINTER["actions"][k]["cost"] for k in winter_target_options(winter,"object",winter_target_id)):
+        $ winter_topic_tab="activity"
     if winter_target_id=="door" and winter["location"]=="passage" and winter_has(winter,"mother"):
         $ winter_target_kind="person"
         $ winter_target_id="mom"
@@ -153,7 +243,7 @@ label winter_questions:
     if winter_target_kind=="person":
         $ winter_speaker(winter_target_id)
         if winter_target_id in CAST:
-            $ renpy.show(winter_target_id+" interview_neutral",tag="winter_visitor",at_list=[portrait_question])
+            $ renpy.show(winter_target_id+" interview_neutral",tag="winter_visitor",at_list=[winter_portrait_question])
     call screen winter_topics(winter_target_kind,winter_target_id)
     $ winter_topic_choice=_return
     if winter_topic_choice=="back":

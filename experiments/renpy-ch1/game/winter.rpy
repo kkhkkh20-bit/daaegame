@@ -17,6 +17,23 @@ default persistent.winter_endings = []
 
 image winter_visitor = Null()
 
+# Conversation camera uses a foreground portrait. Full-body source art and
+# small exploration actors remain separate; the dialogue window masks the legs.
+transform winter_portrait_close:
+    xpos 640
+    xanchor 0.5
+    ypos 65
+    size (660,880)
+    fit "contain"
+
+transform winter_portrait_question:
+    xpos 640
+    xanchor 0.5
+    ypos 65
+    size (600,800)
+    fit "contain"
+
+
 define winter_guard = Character("경비 돌목",cb_who_id="guard")
 define winter_mom = Character("엄마",cb_who_id=None)
 define winter_mayor = Character("촌장",cb_who_id=None)
@@ -30,7 +47,8 @@ init 45 python:
     WINTER_MUSIC={"calm":"assets/travel.mp3","search":"assets/search.mp3","night":"assets/night.mp3","hearing":"assets/source-serious-context-v4.mp3","quiet":None}
 
     def winter_background(key):
-        if key=="winter":return Transform("assets/winter-gate.webp",size=(1280,720))
+        if key=="winter":return Transform("assets/winter-gate-clean.png",size=(1280,720))
+        if key=="winter_carriage":return Transform("assets/winter-carriage.png",size=(1280,720))
         if key.startswith("winter_"):
             index=("square","post","workshop","passage").index(key[7:])
             return Transform(Crop(((index%2)*768,(index//2)*512,768,512),"assets/winter-places.webp"),size=(1280,720))
@@ -51,13 +69,17 @@ init 45 python:
     def winter_speaker(who):
         store.winter_actor=who if who in CAST and who not in ("dad","daram") else None
         store.dialogue_expression="neutral"
+        if store.winter_presentation and store.winter_presentation["bg"]=="winter_carriage":
+            renpy.hide("winter_visitor")
+            return
         if store.winter_actor:
-            renpy.show(who+" interview_neutral",tag="winter_visitor",at_list=[portrait_close])
+            renpy.show(who+" interview_neutral",tag="winter_visitor",at_list=[winter_portrait_close])
         elif who in ("mom","mayor"):renpy.hide("winter_visitor")
 
     def winter_observe():
         return dict(state=winter_copy.deepcopy(store.winter),line=store.winter_line,
             actor=store.winter_actor,presentation=store.winter_presentation,
+            entry=bool(renpy.get_screen("winter_entry_hub")),calendar=bool(renpy.get_screen("winter_calendar")),topic_tab=store.winter_topic_tab,
             hub=bool(renpy.get_screen("winter_hub")),map=bool(renpy.get_screen("winter_map")),
             board=bool(renpy.get_screen("winter_board")),choice=bool(renpy.get_screen("choice")),
             confirm=bool(renpy.get_screen("winter_confirm")),evidence=bool(renpy.get_screen("winter_evidence")),
@@ -68,7 +90,7 @@ init 45 python:
             options=winter_options(store.winter) if store.winter else [],
             whereabouts={who:winter_where(store.winter,who) for who in WINTER_SCHEDULES} if store.winter else {},
             topics=bool(renpy.get_screen("winter_topics")),target_kind=store.winter_target_kind,target_id=store.winter_target_id,
-            topic_options=winter_target_options(store.winter,store.winter_target_kind,store.winter_target_id) if renpy.get_screen("winter_topics") else [],
+            topic_options=winter_display_topics(store.winter,store.winter_target_kind,store.winter_target_id,store.winter_topic_tab) if renpy.get_screen("winter_topics") else [],
             people=winter_people(store.winter) if store.winter else [],
             goal=winter_goal(store.winter) if store.winter else None,
             saving=bool(renpy.get_screen("save")),loading=bool(renpy.get_screen("load")),menu=bool(renpy.get_screen("pause_menu")),
@@ -117,23 +139,7 @@ label winter_start:
     hide screen source_world
     hide screen source_proof
     show screen winter_hud
-    call winter_scene("winter","눈에 막힌 마을 입구","quiet")
-    call winter_lines([("karo","마을 입구예요. 마차는 여기까지 들어가요."),("dad","다람아, 내려올 때 내 손 잡아."),("daram","잠깐. 목도리가 의자에 꼈어."),("dad","풀었어. 천천히."),(None,"눈에 발이 푹 잠겼다. 문 옆 초소에서 경비가 장부를 들고 나왔다."),("guard","두 분, 문 앞에서 잠깐만요. 체류 서류 확인하겠습니다."),("dad","이 편지를 받고 왔습니다."),("guard","성인 한 명으로 되어 있는데요. 아이 이름은?"),("dad","다람입니다. 제 딸이고요."),("guard","아이는 왼쪽 초소로 보내 주세요. 따로 확인합니다."),("daram","아빠는?"),("dad","같이 들어가겠습니다."),("guard","보호자는 여기 남으세요."),(None,"경비가 다람의 가방 끈을 잡았다."),("daram","그거 내 건데."),("dad","가방 내려놓으세요.")],"gate")
-    menu:
-        "다람을 내 뒤로 데려온다":
-            $ winter=winter_flag(winter,"protected_daram")
-            call winter_lines([("dad","아이에게서 떨어지세요."),("karo","짐은 내가 내릴게요. 애가 놀랐잖아요.")],"gate_protect")
-        "책임자를 불러 달라고 한다":
-            $ winter=winter_flag(winter,"asked_rule")
-            call winter_lines([("dad","분리하라는 규정과 책임자를 확인하겠습니다."),("guard","미등록 체류자 확인입니다. 안쪽에 연락하겠습니다.")],"gate_rule")
-        "까로에게 함께 왔다고 말해 달라고 한다":
-            $ winter=winter_flag(winter,"karo_guarantee")
-            call winter_lines([("dad","까로 씨. 같이 왔다고 확인해 주시겠습니까?"),("karo","내 운송 기록에 두 명입니다. 여기요.")],"gate_karo")
-    call winter_lines([("guard","둘 다 여관으로 보내랍니다."),("dad","누가 확인했습니까?"),("guard","체류 담당자가 기다립니다."),("daram","아빠. 나 이름 말하면 안 됐어?"),("dad","아니. 넌 잘못한 거 없어.")],"gate_release")
-    call winter_scene("front","여관 · 접수대","calm")
-    play sound "assets/door.wav" volume .35
-    call winter_lines([("karo","여기가 겨울잠 여관이에요. 접수대 할머니께 방을 부탁하세요."),("daram","문 닫으니까 살겠다."),("dad","그래. 오늘은 여기서 쉬자.")],"inn_arrive")
-    jump winter_day
+    jump winter_arrival
 
 label winter_day:
     if winter["day"]==14:
@@ -193,7 +199,7 @@ label winter_action_run:
     if not winter_can_act(winter,winter_action_id):
         return
     if winter_action["cost"]:
-        call screen winter_confirm(winter_action["time_reason"]+"\n"+winter_period_name(winter)+" → "+winter_time_target(winter))
+        call screen winter_confirm(winter_action["time_reason"]+"\n마치고 돌아오면 "+winter_time_target(winter).replace(" 일정 마침", "이 깊어집니다")+".")
         if not _return:
             return
     if winter_action_id=="hidden":
@@ -204,9 +210,18 @@ label winter_action_run:
             "둘 중 하나가 거짓말했을 것이다":
                 call winter_lines([("dad","가능하지만 아직 누구의 말이 틀렸는지는 몰라. 두 기록이 함께 성립할 길도 확인하자.")],"hypothesis")
                 return
+    if winter_action["cost"]:
+        call winter_lines(winter_action.get("arrival",[]),"depart:"+winter_action_id)
+        window hide
+        hide winter_visitor
+        scene black with Dissolve(.3)
+        $ renpy.pause(.45,hard=True)
+        scene expression winter_background(WINTER["places"][winter["location"]]["bg"]) with Dissolve(.3)
     call winter_lines(winter_action["lines"],winter_action_id)
     $ winter=winter_apply(winter,winter_action_id)
     $ clock_text=winter_clock(winter)
+    if winter_action["cost"]:
+        call winter_lines([(None,winter_action["aftermath"])],"return:"+winter_action_id)
     if winter_action_id=="mother":
         if winter_has(winter,"mother_secure"):
             call winter_lines([("mom","오는 길에 누가 따라오지는 않았어?"),("dad","교대를 확인하고 다른 길로 왔어. 오늘은 여기서 이야기하자.")],"mother_safe")
@@ -224,7 +239,7 @@ label winter_action_run:
     if winter_action_id=="death" and winter["witness"]=="dead":
         call winter_lines([("dad","누비의 번호도 있어. 추출은 이미 끝났어."),("daram","……집으로 돌아간 게 아니었네.")],"witness_death")
     if winter_action["give"]:
-        $ renpy.notify("수첩에 기록했습니다. 질문과 기록 확인은 시간을 보내지 않습니다.")
+        $ renpy.notify("다람이 수첩에 새 기록을 끼워 넣었다.")
     return
 
 label winter_night:
@@ -236,11 +251,11 @@ label winter_night:
         $ renpy.music.stop(fadeout=.2)
         play sound "assets/source-tap.wav" volume .28
         call winter_lines([(None,"문 아래에서 세 번, 긁는 소리가 났다."),(None,"……추워."),("daram","아빠, 누가 왔어."),("dad","여기 같이 있자."),("granny","알아요. 거기 있어요."),(None,"작은 배식구가 열렸다. 그릇이 바닥에 닿는 소리 뒤로 발소리가 멀어졌다.")],"night_visitor")
-        call winter_lines([("neoul","할머니. 장부와 열쇠를 확인하겠습니다."),("granny","손님들은 방에 있어요. 이름을 읽지는 말아요."),("daram","아빠. 아까 그 사람들이야.")],"night_search")
+        call winter_lines([("neoul","할머니. 장부와 열쇠를 확인하겠습니다."),("granny","손님들은 방에 있어요. 이름을 읽지는 말아요."),("daram","여기서도 이름을 확인해?")],"night_search")
     elif winter["day"]==2:
-        call winter_lines([("daram","내일 할머니 데려가면 우리도 나가야 해?"),("dad","그렇게 못 하게 기록을 가져갈 거야."),("daram","나도 이불 본 거 말할게.")],"night2")
+        call winter_lines([("daram","내일 할머니 데려가면 우리도 나가야 해?"),("dad","그렇게 못 하게 기록을 가져갈 거야."),("daram","나도 이불 본 거 말할게." if winter_has(winter,"bed") else "내일 나도 같이 알아볼래.")],"night2")
     elif winter["day"]==4:
-        call winter_lines([("daram","오늘 광장에서 그 아저씨가 자기 이름을 못 말했어."),("dad","밤이 되면 더 심해진다고 했지."),("daram","밖에 나가서 그렇게 된 게 아닐 수도 있겠다.")],"night4")
+        call winter_lines([("daram","아침에 도토 씨가 그랬잖아. 자기 이름이 생각 안 났다고."),("dad","밤에 그랬다고 했지."),("daram","오늘 밤에도 그러면 어떡해?")],"night4")
     elif winter["day"]==7:
         call winter_lines([(None,"난방관이 울리고 복도 불이 두 번 꺼졌다."),("daram","아빠, 문 잠갔지?"),("dad","응. 여기 있어.")],"night7")
     else:
@@ -254,11 +269,12 @@ label winter_hearing(hearing):
     $ winter_pressure=0
     $ winter_hearing_wins=[]
     call winter_scene("council",WINTER["claims"][hearing]["title"],"hearing")
-    call winter_lines([("neoul","확인한 자료를 두 개씩 함께 제시해 주세요. 어떤 말을 반박하는지도 남기겠습니다.")],"hearing_open")
-    while winter_claim_index<len(WINTER["claims"][hearing]["claims"]) and winter_pressure<3:
+    call winter_lines(winter_hearing_opening(winter,hearing),"hearing_open")
+    call winter_lines(winter_support_lines(winter),"hearing_support")
+    while winter_claim_index<len(WINTER["claims"][hearing]["claims"]) and winter_pressure<winter_hearing_limit(winter):
         $ winter_claim=WINTER["claims"][hearing]["claims"][winter_claim_index]
         $ winter_speaker(winter_claim["who"])
-        $ renpy.show(winter_claim["who"]+" interview_neutral",tag="winter_visitor",at_list=[portrait_question])
+        $ renpy.show(winter_claim["who"]+" interview_neutral",tag="winter_visitor",at_list=[winter_portrait_question])
         call screen winter_board(winter_claim)
         $ winter_choice=_return
         if winter_choice=="press":
@@ -274,7 +290,7 @@ label winter_hearing(hearing):
                     $ winter_claim_index+=1
                 else:
                     $ winter_pressure+=1
-                    call winter_lines([("neoul","관련은 있을 수 있지만, 이 두 자료로 지금의 주장을 뒤집지는 못합니다. 다른 설명이 남아 있습니다.")],"not_proved")
+                    call winter_lines([("neoul",winter_reason_feedback(winter,winter_claim,winter_selected))],"not_proved")
         else:
             $ winter_pressure+=1
             $ winter_claim_index+=1
@@ -286,7 +302,10 @@ label winter_hearing(hearing):
             call winter_lines([("neoul","즉시 이송은 보류합니다. 다만 여관 장부를 매일 확인하겠습니다."),("granny","방은 안 뺏겨요. 겁먹지 말아요.")],"granny_lost")
     if hearing=="witness":
         $ winter=dict(winter,second_result=("preserved" if "transfer" in winter_hearing_wins else "contested"))
-        call winter_lines([("neoul","접수 결과는 최종 심의에도 남깁니다. 이송은 열나흘째입니다.")],"second_result")
+        if winter["second_result"]=="preserved":
+            call winter_lines([("neoul","원본 번호와 오늘 발언을 남겼습니다. 공식 이송일 전의 내부 인계도 따로 확인하겠습니다.")],"second_result")
+        else:
+            call winter_lines([("neoul","운반 설명을 뒤집을 자료가 부족합니다. 이의는 남기지만 지시서 회수는 보류하지 못했습니다."),("dad","그럼 원본이 어디로 가는지부터 확인하겠습니다.")],"second_contested")
     hide winter_visitor
     $ winter_hearing_id=None
     return

@@ -32,7 +32,7 @@ for status in ('detained','dead'):
  z=dict(state,day=6,witness=status);assert not any(r[0]=='resident_nubi' for r in s['winter_people'](z))
 assert any(r[0]=='resident_tori' for r in s['winter_people'](dict(state,day=2,location='square')))
 assert not any(r[0]=='resident_tori' for r in s['winter_people'](dict(state,day=3,location='square')))
-route=[['karo','post','granny'],['appointment','receipt','bed'],['ritual','meter','witness'],['protect','surveillance','timing'],['hidden','mother','symptoms'],['repair','fuel','escape'],['ledger','order','death']]
+route=[['karo','post','karo_sighting','doto_sighting','granny'],['appointment','receipt','bed'],['ritual','meter','witness'],['protect','surveillance','timing'],['hidden','mother','symptoms'],['repair','fuel','escape'],['ledger','order','death']]
 for day,keys in enumerate(route,1):
  for key in keys:
   where=a[key]['place']
@@ -79,3 +79,36 @@ z=dict(s['winter_new'](),day=8,first_result='protected',seen=['hello:granny'])
 assert s['winter_greeting_key'](z,'granny') not in z['seen']
 assert s['winter_greeting_key'](z,'guard')=='hello:guard'
 assert s['winter_greeting'](z,'granny')!=s['winter_greeting'](dict(z,first_result='restricted'),'granny')
+
+# Recurring scenes depend on world time; no playthrough count or prior clue lock.
+exec(textwrap.dedent((R/'game/winter_events.rpy').read_text().split('init 47 python:\n',1)[1].split('\nlabel winter_timed_cart:')[0]),s)
+for day in range(1,15):
+ for period in range(4):
+  z=dict(s['winter_new'](),day=day,period=period)
+  expected=day in (2,9) and period==2
+  assert s['winter_service_open'](z)==expected
+  assert s['winter_cart_available'](z)==expected
+  assert s['winter_where'](z,'guard')=='square' if expected else True
+z=dict(s['winter_new'](),day=2,period=2)
+assert not s['winter_cart_traces'](z)
+consumed=s['winter_flag'](z,'cart_seen:2')
+assert not s['winter_cart_available'](consumed) and s['winter_cart_traces'](consumed)
+assert not s['winter_has'](consumed,'transfer_seal')
+assert s['winter_cart_available'](dict(consumed,day=9))
+assert not s['winter_cart_traces'](dict(z,day=1))
+assert not s['winter_cart_traces'](dict(z,period=1))
+assert s['winter_move'](s['winter_flag'](z,'passage_known'),'passage')['location']=='passage'
+assert s['winter_move'](z,'passage')['location']!='passage'
+assert not any('수레' in title for title,_ in s['winter_calendar_notes'](s['winter_flag'](z,'cart_trace_seen'),9))
+# Late inspection cannot conjure an absent resident into the room.
+z=dict(s['winter_new'](),day=2,period=1,location='square')
+assert all(who is None or who not in s['WINTER_SCHEDULES'] or s['winter_where'](z,who)=='square' for who,_ in s['winter_present_observation'](z,'square','offerings'))
+print('Timed witness/late traces, consumed events, first-run secret route and knowledge-safe calendar: passed')
+exec(textwrap.dedent((R/'game/winter_opening.rpy').read_text().split('init 47 python:\n',1)[1].split('\nlabel winter_arrival:')[0]),s)
+for status in ('detained','dead'):
+ z=dict(s['winter_new'](),witness=status,evidence=['permission'])
+ assert all(who!='resident_nubi' for who,_ in s['winter_support_lines'](z))
+ assert s['winter_hearing_limit'](z)==3
+z=dict(s['winter_new'](),day=5)
+assert all('제가 말한 거' not in text for _,text in s['winter_morning'](z))
+print('Absent witnesses cannot support hearings; unseen testimony is not assumed: passed')
