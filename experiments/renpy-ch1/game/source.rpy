@@ -222,7 +222,9 @@ init 10 python:
         if key not in store.source_checks and (value in anchors or action in anchors):
             store.source_checks[key]=anchors.get(value,anchors.get(action))
 
-label start:
+label legacy_start:
+    $ winter_mode = False
+    hide screen winter_hud
     $ source_mode = True
     $ source_inventory, source_seen, source_flags = [], [], []
     $ source_effect_log, source_line_log = [], []
