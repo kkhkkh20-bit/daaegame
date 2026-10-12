@@ -1,6 +1,6 @@
 {
-  "revision": "0.7.0",
-  "basis": "Current Notion act-one cast, read 2026-10-12. Species follow the proposed badger/mole art direction; future chapter mysteries and unnamed identities remain unresolved.",
+  "revision": "0.8.0",
+  "basis": "Original 35 concepts restored as optional draft residents/visitors. Existing approved names win conflicts; historical case secrets stay out of live dialogue.",
   "profiles": {
     "elder": {
       "name": "별지기 장로",
@@ -423,6 +423,1707 @@
           "…고맙습니다."
         ]
       ]
+    },
+    "resident_tori": {
+      "name": "토리",
+      "public_name": "접힌 귀의 토끼",
+      "public_purpose": "연습을 마친 방문객.",
+      "role": "연습을 마친 방문객",
+      "legacy_id": "tori",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_tori_0",
+          "title": "공연 연습 중이에요?",
+          "lines": [
+            [
+              "det1",
+              "아까부터 발끝으로 서 있네요."
+            ],
+            [
+              "resident_tori",
+              "연습이요. 바닥이 얼면 미끄러워서… 여긴 아직 괜찮네요."
+            ],
+            [
+              "det1",
+              "누가 보는 건 싫어요?"
+            ],
+            [
+              "resident_tori",
+              "조금요. 여니가 옆에 있으면 괜찮은데."
+            ]
+          ]
+        },
+        {
+          "id": "resident_tori_1",
+          "title": "따뜻한 물을 받았어요?",
+          "lines": [
+            [
+              "det1",
+              "컵에서 김 나요."
+            ],
+            [
+              "resident_tori",
+              "여관 할머니가 주셨어요. 밖에서는 돈 없으면 못 묵는다고 하셨는데."
+            ],
+            [
+              "det0",
+              "그런데 물은 주셨군요."
+            ],
+            [
+              "resident_tori",
+              "다른 분들이 가고 나니까 손 녹이고 가래요. 그 말은… 크게 안 하셨으면 좋겠어요."
+            ]
+          ],
+          "testimony": {
+            "id": "T_V_TORI",
+            "kind": "bed_context",
+            "claim": "토리는 할머니가 다른 이들이 떠난 뒤 뜨거운 물을 내주었다고 말했다.",
+            "verified": false,
+            "claim_type": "witness_statement"
+          }
+        }
+      ],
+      "departure": [
+        [
+          "resident_tori",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_bori": {
+      "name": "보리",
+      "public_name": "멜빵을 입은 곰",
+      "public_purpose": "장작 운반을 돕는 방문객.",
+      "role": "장작 운반을 돕는 방문객",
+      "legacy_id": "bori",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_bori_0",
+          "title": "장작 옮기는 중이에요?",
+          "lines": [
+            [
+              "det1",
+              "한 번에 그렇게 많이 들어요?"
+            ],
+            [
+              "resident_bori",
+              "덜 왔다 갔다 하려고. 무거운 건 괜찮은데 길 막는 게 더 미안해서."
+            ],
+            [
+              "det0",
+              "이쪽으로 지나가겠습니다."
+            ],
+            [
+              "resident_bori",
+              "잠깐만요. 내가 비켜 드릴게요."
+            ]
+          ]
+        },
+        {
+          "id": "resident_bori_1",
+          "title": "아직 남았어요?",
+          "lines": [
+            [
+              "det1",
+              "가져가면 또 나와요?"
+            ],
+            [
+              "resident_bori",
+              "응. 끝났다고 해 놔서 얼른 끝내야 해."
+            ],
+            [
+              "det1",
+              "아직 안 끝났는데요?"
+            ],
+            [
+              "resident_bori",
+              "그러니까… 먼저 말한 게 문제지."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_bori",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_yeoni": {
+      "name": "여니",
+      "public_name": "청록 리본의 여우",
+      "public_purpose": "친구를 기다리는 방문객.",
+      "role": "친구를 기다리는 방문객",
+      "legacy_id": "yeoni",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_yeoni_0",
+          "title": "누구 기다려요?",
+          "lines": [
+            [
+              "det1",
+              "저쪽만 자꾸 봐요."
+            ],
+            [
+              "resident_yeoni",
+              "토리. 연습 끝나면 여기서 만나기로 했거든."
+            ],
+            [
+              "det1",
+              "그 봉투도 토리 거예요?"
+            ],
+            [
+              "resident_yeoni",
+              "아직 아니야. 줄 때까지는 내 거지."
+            ]
+          ]
+        },
+        {
+          "id": "resident_yeoni_1",
+          "title": "길을 잘 알아요?",
+          "lines": [
+            [
+              "det0",
+              "여관으로 가는 길입니까?"
+            ],
+            [
+              "resident_yeoni",
+              "큰 창문에 불 켜진 집이요. 저도 그쪽으로 가요."
+            ],
+            [
+              "det1",
+              "같이 가면 되겠다."
+            ],
+            [
+              "resident_yeoni",
+              "토리 오면요. 약속해 놓고 먼저 갈 수는 없잖아."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_yeoni",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_kongi": {
+      "name": "콩이",
+      "public_name": "목도리를 한 강아지",
+      "public_purpose": "산책 중인 방문객.",
+      "role": "산책 중인 방문객",
+      "legacy_id": "kongi",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_kongi_0",
+          "title": "졸려 보여요",
+          "lines": [
+            [
+              "det1",
+              "눈이 자꾸 감겨요."
+            ],
+            [
+              "resident_kongi",
+              "조금 잤는데 더 졸리네. 긴 여행 했어?"
+            ],
+            [
+              "det1",
+              "마차에서 잤어요."
+            ],
+            [
+              "resident_kongi",
+              "그럼 일어나자마자 또 걷는 거네. 천천히 가자."
+            ]
+          ]
+        },
+        {
+          "id": "resident_kongi_1",
+          "title": "시간 알아요?",
+          "lines": [
+            [
+              "det0",
+              "얼마나 걸으면 여관입니까?"
+            ],
+            [
+              "resident_kongi",
+              "금방이요. 아, 금방이 얼마냐면…"
+            ],
+            [
+              "det1",
+              "그냥 집이 보이면 되죠."
+            ],
+            [
+              "resident_kongi",
+              "맞아. 시간은 잘 모르겠는데 냄새는 기억해. 빵 굽는 집 옆이야."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_kongi",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_kkwak": {
+      "name": "꽥순",
+      "public_name": "파란 스카프의 오리",
+      "public_purpose": "길을 구경하는 방문객.",
+      "role": "길을 구경하는 방문객",
+      "legacy_id": "kkwak",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_kkwak_0",
+          "title": "물가에 안 가요?",
+          "lines": [
+            [
+              "det1",
+              "분수 가까이서 보면 더 잘 보일 텐데."
+            ],
+            [
+              "resident_kkwak",
+              "여기서도 잘 보여. 신발 젖으면 오래 걸려."
+            ],
+            [
+              "det1",
+              "저도 젖는 건 싫어요."
+            ],
+            [
+              "resident_kkwak",
+              "그렇지? 굳이 가까이 갈 필요 없어."
+            ]
+          ]
+        },
+        {
+          "id": "resident_kkwak_1",
+          "title": "편지 보내요?",
+          "lines": [
+            [
+              "det1",
+              "그 종이는 편지예요?"
+            ],
+            [
+              "resident_kkwak",
+              "응. 쓰면 갈 줄 알았는데 보내는 것도 일이네."
+            ],
+            [
+              "det0",
+              "오늘 문은 닫았더군요."
+            ],
+            [
+              "resident_kkwak",
+              "그럼 내일 보내야겠다. 오늘 한 줄 더 쓸 수도 있고."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_kkwak",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_librarian": {
+      "name": "사서 선생님",
+      "public_name": "안경줄을 건 고양이",
+      "public_purpose": "책을 전하러 온 방문객.",
+      "role": "책을 전하러 온 방문객",
+      "legacy_id": "librarian",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_librarian_0",
+          "title": "책 배달 왔어요?",
+          "lines": [
+            [
+              "det1",
+              "그 책들 다 읽었어요?"
+            ],
+            [
+              "resident_librarian",
+              "다 읽은 건 아니야. 빌려 줄 책부터 살펴봐."
+            ],
+            [
+              "det1",
+              "재미없으면요?"
+            ],
+            [
+              "resident_librarian",
+              "다른 책을 고르면 되지. 끝까지 읽어야만 빌릴 수 있는 건 아니야."
+            ]
+          ]
+        },
+        {
+          "id": "resident_librarian_1",
+          "title": "종이에 적는 이유",
+          "lines": [
+            [
+              "det0",
+              "상자마다 이름이 붙었군요."
+            ],
+            [
+              "resident_librarian",
+              "돌려받을 때 찾기 쉽거든요. 기록이 없으면 누구 것인지 다시 물어야 해요."
+            ],
+            [
+              "det1",
+              "기록이 틀리면요?"
+            ],
+            [
+              "resident_librarian",
+              "먼저 사람에게 묻지. 종이가 대신 대답해 주진 않으니까."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_librarian",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_owlgp": {
+      "name": "부엉이 할아버지",
+      "public_name": "등불을 든 부엉이",
+      "public_purpose": "오래된 여행 코트의 방문객.",
+      "role": "오래된 여행 코트의 방문객",
+      "legacy_id": "owlgp",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_owlgp_0",
+          "title": "길을 찾으세요?",
+          "lines": [
+            [
+              "det1",
+              "지도를 가까이서 보네요."
+            ],
+            [
+              "resident_owlgp",
+              "글씨가 작아서. 길이 바뀐 줄 알았는데 내 눈이 바뀌었나 봐."
+            ],
+            [
+              "det0",
+              "입구는 이쪽입니다."
+            ],
+            [
+              "resident_owlgp",
+              "고맙소. 아는 길이라고 안 봤으면 또 지나칠 뻔했군."
+            ]
+          ]
+        },
+        {
+          "id": "resident_owlgp_1",
+          "title": "등불은 왜 가져왔어요?",
+          "lines": [
+            [
+              "det1",
+              "여기도 불이 켜져 있는데요."
+            ],
+            [
+              "resident_owlgp",
+              "집으로 돌아가는 길은 어둡거든."
+            ],
+            [
+              "det1",
+              "밤까지 있을 거예요?"
+            ],
+            [
+              "resident_owlgp",
+              "차 한 잔만 마시고 가려 했지. 오래 못 본 친구가 있어서."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_owlgp",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_teacher": {
+      "name": "곰 선생님",
+      "public_name": "출석부를 든 곰",
+      "public_purpose": "학생들을 기다리는 방문객.",
+      "role": "학생들을 기다리는 방문객",
+      "legacy_id": "teacher",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_teacher_0",
+          "title": "누굴 기다리세요?",
+          "lines": [
+            [
+              "det1",
+              "이름을 하나씩 세세요?"
+            ],
+            [
+              "resident_teacher",
+              "함께 온 아이들. 혼자 돌아가면 걱정하니까."
+            ],
+            [
+              "det1",
+              "아빠도 저 찾을 때 세요?"
+            ],
+            [
+              "det0",
+              "너 하나는 바로 찾지."
+            ]
+          ]
+        },
+        {
+          "id": "resident_teacher_1",
+          "title": "아이들이 시끄러워요?",
+          "lines": [
+            [
+              "det0",
+              "꽤 오래 기다리셨군요."
+            ],
+            [
+              "resident_teacher",
+              "기다릴 때는 조용해서 괜찮아요. 다 모이면 서로 한꺼번에 말하거든요."
+            ],
+            [
+              "det1",
+              "누구부터 들어요?"
+            ],
+            [
+              "resident_teacher",
+              "처음 손든 아이. 목소리 큰 아이부터 들으면 조용한 아이가 더 조용해져요."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_teacher",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_nero": {
+      "name": "네로",
+      "public_name": "닳은 단추의 스라소니",
+      "public_purpose": "일을 기다리는 방문객.",
+      "role": "일을 기다리는 방문객",
+      "legacy_id": "nero",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_nero_0",
+          "title": "마차를 기다려요?",
+          "lines": [
+            [
+              "det0",
+              "떠나는 길입니까?"
+            ],
+            [
+              "resident_nero",
+              "아직요. 누가 온다고 해서."
+            ],
+            [
+              "det1",
+              "그럼 여기 계속 있어요?"
+            ],
+            [
+              "resident_nero",
+              "오겠다고 했으니 기다려 봐야죠. 그쪽은 추운데 먼저 들어가요."
+            ]
+          ]
+        },
+        {
+          "id": "resident_nero_1",
+          "title": "단추가 낡았어요",
+          "lines": [
+            [
+              "det1",
+              "망토 단추만 색이 달라요."
+            ],
+            [
+              "resident_nero",
+              "먼저 있던 걸 옮겨 달았어요."
+            ],
+            [
+              "det1",
+              "새 걸 달면 되잖아요."
+            ],
+            [
+              "resident_nero",
+              "그럴 수도 있죠. 난 아직 이게 좋아요."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_nero",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_seol": {
+      "name": "설이",
+      "public_name": "달빛색 숄의 두루미",
+      "public_purpose": "종지기 일을 하는 방문객.",
+      "role": "종지기 일을 하는 방문객",
+      "legacy_id": "seol",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_seol_0",
+          "title": "소리를 듣고 있어요?",
+          "lines": [
+            [
+              "det1",
+              "왜 말을 멈췄어요?"
+            ],
+            [
+              "resident_seol",
+              "종이 들려서. 마지막 울림까지 듣고 있었어."
+            ],
+            [
+              "det1",
+              "저는 한 번만 들었는데."
+            ],
+            [
+              "resident_seol",
+              "집 사이로 돌아오면 두 번처럼 들릴 때도 있어."
+            ]
+          ]
+        },
+        {
+          "id": "resident_seol_1",
+          "title": "여기도 종을 쳐요?",
+          "lines": [
+            [
+              "det0",
+              "이곳의 종지기입니까?"
+            ],
+            [
+              "resident_seol",
+              "아뇨. 다른 마을에서 왔어요. 남의 종은 함부로 치지 않죠."
+            ],
+            [
+              "det1",
+              "그럼 구경만 하는 거예요?"
+            ],
+            [
+              "resident_seol",
+              "오늘은요. 가끔은 듣는 편이 좋네요."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_seol",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_ppul": {
+      "name": "뿔이",
+      "public_name": "예복을 입은 염소",
+      "public_purpose": "옆마을에서 온 방문객.",
+      "role": "옆마을에서 온 방문객",
+      "legacy_id": "ppul",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_ppul_0",
+          "title": "누구 만나러 오셨어요?",
+          "lines": [
+            [
+              "det1",
+              "옷이 엄청 반듯해요."
+            ],
+            [
+              "resident_ppul",
+              "사람을 만나러 왔으니 반듯하게 입어야지."
+            ],
+            [
+              "det0",
+              "우체국에 볼일이 있습니까?"
+            ],
+            [
+              "resident_ppul",
+              "답장을 받으러요. 이런 건 직접 오는 편이 빠르죠."
+            ]
+          ]
+        },
+        {
+          "id": "resident_ppul_1",
+          "title": "문 앞에서 기다리세요?",
+          "lines": [
+            [
+              "det1",
+              "답장은 받았어요?"
+            ],
+            [
+              "resident_ppul",
+              "아직. 직접 와도 기다려야 할 때가 있군."
+            ],
+            [
+              "det1",
+              "여관에서 기다리면 덜 춥겠어요."
+            ],
+            [
+              "resident_ppul",
+              "…그게 낫겠네. 먼저 권해 줘서 고맙다."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_ppul",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_tok": {
+      "name": "톡",
+      "public_name": "확대경을 건 두더지",
+      "public_purpose": "수리를 마친 방문객.",
+      "role": "수리를 마친 방문객",
+      "legacy_id": "tok",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_tok_0",
+          "title": "무엇을 고쳤어요?",
+          "lines": [
+            [
+              "det1",
+              "귀를 가까이 대고 있어요."
+            ],
+            [
+              "resident_tok",
+              "작은 시계. 눈보다 소리가 먼저 알려 줄 때가 있어."
+            ],
+            [
+              "det1",
+              "멈추면 아무 소리도 없겠네요."
+            ],
+            [
+              "resident_tok",
+              "응. 그땐 열어 보고 물어봐야지. 조용하다고 다 고장 난 것도 아니고."
+            ]
+          ]
+        },
+        {
+          "id": "resident_tok_1",
+          "title": "열쇠가 다 같은가요?",
+          "lines": [
+            [
+              "det1",
+              "아저씨 열쇠로 우체국도 열어요?"
+            ],
+            [
+              "resident_tok",
+              "아니. 이건 등을 손볼 때 쓰는 열쇠야."
+            ],
+            [
+              "det0",
+              "문 열쇠와는 다르군요."
+            ],
+            [
+              "resident_tok",
+              "응. 열쇠를 들었다는 말만으로 어느 문을 열었는진 몰라. 직접 맞춰 봐야 해."
+            ]
+          ],
+          "testimony": {
+            "id": "T_V_TOK",
+            "kind": "access_context",
+            "claim": "톡은 등 수리 열쇠와 문 열쇠가 다르며, 열쇠를 지닌 것만으로 어떤 문을 열었는지 알 수 없다고 말했다.",
+            "verified": false,
+            "claim_type": "professional_context"
+          }
+        }
+      ],
+      "departure": [
+        [
+          "resident_tok",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_sling": {
+      "name": "슬링",
+      "public_name": "우편 가방의 족제비",
+      "public_purpose": "배달 경로를 확인하는 방문객.",
+      "role": "배달 경로를 확인하는 방문객",
+      "legacy_id": "sling",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_sling_0",
+          "title": "배달하는 분이에요?",
+          "lines": [
+            [
+              "det1",
+              "편지는 다 어디로 가요?"
+            ],
+            [
+              "resident_sling",
+              "봉투에 적힌 곳으로. 잘못 적히면 돌아오기도 하고."
+            ],
+            [
+              "det1",
+              "아무것도 안 적히면요?"
+            ],
+            [
+              "resident_sling",
+              "보낸 사람에게 물어야죠. 길이 없으니까."
+            ]
+          ]
+        },
+        {
+          "id": "resident_sling_1",
+          "title": "이 마을은 자주 와요?",
+          "lines": [
+            [
+              "det0",
+              "길이 익숙해 보입니다."
+            ],
+            [
+              "resident_sling",
+              "한 번 와 봤습니다. 같은 길이어도 오늘은 다르네요."
+            ],
+            [
+              "det1",
+              "뭐가 달라요?"
+            ],
+            [
+              "resident_sling",
+              "처음에는 아무도 말을 안 걸었어요. 오늘은 둘이나 걸었죠."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_sling",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_momo": {
+      "name": "모모",
+      "public_name": "쿠키 바구니의 염소",
+      "public_purpose": "전시 자료를 찾는 방문객.",
+      "role": "전시 자료를 찾는 방문객",
+      "legacy_id": "momo",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_momo_0",
+          "title": "쿠키 파세요?",
+          "lines": [
+            [
+              "det1",
+              "맛있는 냄새가 나요."
+            ],
+            [
+              "resident_momo",
+              "나눠 먹으려고요. 그런데 오늘 가져온 건 견과가 들었어요."
+            ],
+            [
+              "det0",
+              "다람이는 괜찮습니다."
+            ],
+            [
+              "resident_momo",
+              "그럼 한 개. 먼저 물어봐야 마음 놓이거든요."
+            ]
+          ]
+        },
+        {
+          "id": "resident_momo_1",
+          "title": "박물관에서 왔어요?",
+          "lines": [
+            [
+              "det1",
+              "그건 오래된 그림이에요?"
+            ],
+            [
+              "resident_momo",
+              "오래된 집 사진. 여기서는 그냥 낡은 집인데, 밖에서 온 사람은 다르게 보죠."
+            ],
+            [
+              "det1",
+              "전 새집보다 좋아요."
+            ],
+            [
+              "resident_momo",
+              "그 말을 주인에게 전해 줄까 봐요. 허물까 고민하시거든요."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_momo",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_ttadak": {
+      "name": "따닥",
+      "public_name": "망치를 든 딱따구리",
+      "public_purpose": "목재를 살펴보는 방문객.",
+      "role": "목재를 살펴보는 방문객",
+      "legacy_id": "ttadak",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_ttadak_0",
+          "title": "벽을 왜 두드려요?",
+          "lines": [
+            [
+              "det1",
+              "안에 뭐 있어요?"
+            ],
+            [
+              "resident_ttadak",
+              "빈 곳인지 보려고. 같은 나무도 소리가 달라."
+            ],
+            [
+              "det1",
+              "빈 곳이면 열어요?"
+            ],
+            [
+              "resident_ttadak",
+              "주인에게 먼저 묻지. 궁금하다고 남의 벽을 뜯으면 안 되잖아."
+            ]
+          ]
+        },
+        {
+          "id": "resident_ttadak_1",
+          "title": "새로 고칠 거예요?",
+          "lines": [
+            [
+              "det0",
+              "오래된 집이 많군요."
+            ],
+            [
+              "resident_ttadak",
+              "겨울 오기 전에 새는 데부터 막아야죠."
+            ],
+            [
+              "det1",
+              "예쁘게 칠하는 건요?"
+            ],
+            [
+              "resident_ttadak",
+              "그건 다음. 예쁜 벽 앞에서 벌벌 떨면 속상하니까."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_ttadak",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_piko": {
+      "name": "피코",
+      "public_name": "청록 깃털의 공작",
+      "public_purpose": "구도를 찾는 방문객.",
+      "role": "구도를 찾는 방문객",
+      "legacy_id": "piko",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_piko_0",
+          "title": "그림 그려요?",
+          "lines": [
+            [
+              "det1",
+              "자꾸 뒤로 가면 안 보여요."
+            ],
+            [
+              "resident_piko",
+              "가까이선 무늬만 보이니까. 조금 물러서야 전체가 보여."
+            ],
+            [
+              "det1",
+              "그럼 우리도 같이 봐요."
+            ],
+            [
+              "resident_piko",
+              "이쪽. 네가 여기 서면 내가 보던 빛이 가려져."
+            ]
+          ]
+        },
+        {
+          "id": "resident_piko_1",
+          "title": "꼬리가 예뻐요",
+          "lines": [
+            [
+              "det1",
+              "누가 색칠한 것 같아요."
+            ],
+            [
+              "resident_piko",
+              "고맙네. 그런데 오늘은 꼬리 말고 그림을 보여 주고 싶었어."
+            ],
+            [
+              "det1",
+              "그림은 어디 있어요?"
+            ],
+            [
+              "resident_piko",
+              "아직 머릿속에. 그러니 꼬리부터 보였겠지."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_piko",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_mungchi": {
+      "name": "뭉치",
+      "public_name": "베레모의 판다",
+      "public_purpose": "어른을 기다리는 방문객.",
+      "role": "어른을 기다리는 방문객",
+      "legacy_id": "mungchi",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_mungchi_0",
+          "title": "같이 온 분은요?",
+          "lines": [
+            [
+              "det1",
+              "혼자 기다려요?"
+            ],
+            [
+              "resident_mungchi",
+              "혼자 있는 게 아니야. 저기 이야기 끝나면 가는 거야."
+            ],
+            [
+              "det1",
+              "오래 걸리네요."
+            ],
+            [
+              "resident_mungchi",
+              "그러니까. 뭐, 그렇다는 거야."
+            ]
+          ]
+        },
+        {
+          "id": "resident_mungchi_1",
+          "title": "상자를 들고 있어요",
+          "lines": [
+            [
+              "det0",
+              "옮기는 걸 도울까요?"
+            ],
+            [
+              "resident_mungchi",
+              "됐어요. 내려놓으면 더러워지니까 들고 있는 거예요."
+            ],
+            [
+              "det1",
+              "의자 위에 놓으면 되잖아요."
+            ],
+            [
+              "resident_mungchi",
+              "…그건 생각 못 했네. 엄마 오면 바로 들어야 해."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_mungchi",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_madam": {
+      "name": "백 부인",
+      "public_name": "흰 장갑의 판다",
+      "public_purpose": "수집품을 보러 온 방문객.",
+      "role": "수집품을 보러 온 방문객",
+      "legacy_id": "madam",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_madam_0",
+          "title": "집을 보고 계세요?",
+          "lines": [
+            [
+              "det1",
+              "계속 창문을 보네요."
+            ],
+            [
+              "resident_madam",
+              "유리 무늬가 좋구나. 오래된 것은 손이 많이 가지만."
+            ],
+            [
+              "det0",
+              "수리할 생각이십니까?"
+            ],
+            [
+              "resident_madam",
+              "주인에게 먼저 물어봐야지요. 갖고 싶다는 것과 가질 수 있다는 건 다르니까."
+            ]
+          ]
+        },
+        {
+          "id": "resident_madam_1",
+          "title": "그 장갑은 안 젖어요?",
+          "lines": [
+            [
+              "det1",
+              "눈 오면 흰 장갑도 젖어요?"
+            ],
+            [
+              "resident_madam",
+              "젖지. 그래서 안쪽은 다른 천으로 덧댔단다."
+            ],
+            [
+              "det1",
+              "안 예뻐도요?"
+            ],
+            [
+              "resident_madam",
+              "안 보이는 곳이 편해야 오래 쓸 수 있어."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_madam",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_siluk": {
+      "name": "실룩",
+      "public_name": "낡은 조끼의 족제비",
+      "public_purpose": "마차를 돌보는 방문객.",
+      "role": "마차를 돌보는 방문객",
+      "legacy_id": "siluk",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_siluk_0",
+          "title": "마차 닦고 계세요?",
+          "lines": [
+            [
+              "det1",
+              "이건 아까도 닦았잖아요."
+            ],
+            [
+              "resident_siluk",
+              "먼지는 다시 앉으니까."
+            ],
+            [
+              "det0",
+              "오늘 더 출발합니까?"
+            ],
+            [
+              "resident_siluk",
+              "주인이 부르면요. 안 불러도 준비는 해야지요."
+            ]
+          ]
+        },
+        {
+          "id": "resident_siluk_1",
+          "title": "쉬셔도 돼요?",
+          "lines": [
+            [
+              "det1",
+              "계속 서 있으면 다리 아프잖아요."
+            ],
+            [
+              "resident_siluk",
+              "앉으면 일어날 때 더 아파."
+            ],
+            [
+              "det1",
+              "그럼 천천히 일어나요."
+            ],
+            [
+              "resident_siluk",
+              "…그래 볼까. 아이한테도 배우는구나."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_siluk",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_musoe": {
+      "name": "무쇠 할아버지",
+      "public_name": "고글을 건 늙은 곰",
+      "public_purpose": "손녀를 찾는 주민.",
+      "role": "손녀를 찾는 주민",
+      "legacy_id": "musoe",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_musoe_0",
+          "title": "누구 찾으세요?",
+          "lines": [
+            [
+              "det1",
+              "저쪽 지붕을 봐요?"
+            ],
+            [
+              "resident_musoe",
+              "손녀. 내려오라 했는데 못 들은 척하네."
+            ],
+            [
+              "det1",
+              "제가 불러 줄까요?"
+            ],
+            [
+              "resident_musoe",
+              "괜찮다. 이름 크게 부르면 더 숨는다."
+            ]
+          ]
+        },
+        {
+          "id": "resident_musoe_1",
+          "title": "광산에서 일했어요?",
+          "lines": [
+            [
+              "det0",
+              "고글이 오래돼 보입니다."
+            ],
+            [
+              "resident_musoe",
+              "쓸 때까지는 쓰는 거지."
+            ],
+            [
+              "det1",
+              "앞이 보여요?"
+            ],
+            [
+              "resident_musoe",
+              "한쪽은 잘. 그래서 안 보이는 쪽은 두 번 본다."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_musoe",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_somi": {
+      "name": "솜이",
+      "public_name": "활공 망토의 날다람쥐",
+      "public_purpose": "심부름을 하는 주민.",
+      "role": "심부름을 하는 주민",
+      "legacy_id": "somi",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_somi_0",
+          "title": "어디서 내려왔어요?",
+          "lines": [
+            [
+              "det1",
+              "아까는 안 보였는데."
+            ],
+            [
+              "resident_somi",
+              "위에 있었어. 아래만 보면 안 보이지."
+            ],
+            [
+              "det1",
+              "저도 올라가 볼까?"
+            ],
+            [
+              "det0",
+              "오늘은 길부터 보자."
+            ]
+          ]
+        },
+        {
+          "id": "resident_somi_1",
+          "title": "할아버지가 기다려요",
+          "lines": [
+            [
+              "det1",
+              "무쇠 할아버지가 찾는 것 같던데."
+            ],
+            [
+              "resident_somi",
+              "알아. 심부름 끝내고 가야 해."
+            ],
+            [
+              "det1",
+              "뭐 가져가요?"
+            ],
+            [
+              "resident_somi",
+              "안경 닦는 천. 가져오라더니 내가 늦는 건 싫대."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_somi",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_seori": {
+      "name": "서리",
+      "public_name": "도장 가방의 염소",
+      "public_purpose": "등불 점검을 온 방문객.",
+      "role": "등불 점검을 온 방문객",
+      "legacy_id": "seori",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_seori_0",
+          "title": "불을 세세요?",
+          "lines": [
+            [
+              "det1",
+              "저 등에도 표시했어요?"
+            ],
+            [
+              "resident_seori",
+              "점검한 등에만 합니다."
+            ],
+            [
+              "det1",
+              "밝으면 괜찮은 거 아니에요?"
+            ],
+            [
+              "resident_seori",
+              "밝게 켜졌다가 금방 꺼질 수도 있죠. 조금 기다려 봐야 합니다."
+            ]
+          ]
+        },
+        {
+          "id": "resident_seori_1",
+          "title": "규정집이 두꺼워요",
+          "lines": [
+            [
+              "det0",
+              "점검 기준이 많군요."
+            ],
+            [
+              "resident_seori",
+              "장소마다 다르니까요."
+            ],
+            [
+              "det1",
+              "다 외워요?"
+            ],
+            [
+              "resident_seori",
+              "안 외웁니다. 그래서 들고 다니죠."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_seori",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_ubak": {
+      "name": "우박",
+      "public_name": "큰 코트의 두더지",
+      "public_purpose": "점검을 배우는 방문객.",
+      "role": "점검을 배우는 방문객",
+      "legacy_id": "ubak",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_ubak_0",
+          "title": "소매가 길어요",
+          "lines": [
+            [
+              "det1",
+              "접어도 손이 안 보여요."
+            ],
+            [
+              "resident_ubak",
+              "다시 풀렸어. 일을 시작하면 꼭 이래."
+            ],
+            [
+              "det1",
+              "고정하면 되잖아요."
+            ],
+            [
+              "resident_ubak",
+              "응. 돌아가면 꿰매려고. 오늘은 잊지 않아야지."
+            ]
+          ]
+        },
+        {
+          "id": "resident_ubak_1",
+          "title": "혼자 점검해요?",
+          "lines": [
+            [
+              "det0",
+              "표시는 당신이 합니까?"
+            ],
+            [
+              "resident_ubak",
+              "먼저 보고 말씀드려요. 서리 선생님이 다시 확인하고요."
+            ],
+            [
+              "det1",
+              "틀리면 혼나요?"
+            ],
+            [
+              "resident_ubak",
+              "안 봤는데 봤다고 하면. 모르겠다고 하면 다시 보여 주세요."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_ubak",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_nubi": {
+      "name": "누비 아주머니",
+      "public_name": "눈꽃 앞치마의 오리",
+      "public_purpose": "다른 여관에서 온 방문객.",
+      "role": "다른 여관에서 온 방문객",
+      "legacy_id": "nubi",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_nubi_0",
+          "title": "다른 여관에서 왔어요?",
+          "lines": [
+            [
+              "det1",
+              "여기서 일하세요?"
+            ],
+            [
+              "resident_nubi",
+              "아니야. 나는 멀리 있는 눈꽃 여관에서 왔어. 수선할 천을 빌리러."
+            ],
+            [
+              "det1",
+              "이 여관도 오래됐어요?"
+            ],
+            [
+              "resident_nubi",
+              "내 것보다 오래됐지. 오래된 집끼리는 서로 손이 가거든."
+            ]
+          ]
+        },
+        {
+          "id": "resident_nubi_1",
+          "title": "왜 이불을 빌리세요?",
+          "lines": [
+            [
+              "det0",
+              "손님이 많이 옵니까?"
+            ],
+            [
+              "resident_nubi",
+              "늘 많은 건 아니죠. 그래도 여분은 있어야 해요."
+            ],
+            [
+              "det1",
+              "아무도 안 오면요?"
+            ],
+            [
+              "resident_nubi",
+              "그대로 두는 거지. 침대 하나 남겨 둔다고 꼭 나쁜 손님 기다리는 건 아니잖아."
+            ]
+          ],
+          "testimony": {
+            "id": "T_V_NUBI",
+            "kind": "bed_context",
+            "claim": "누비는 여관에서 빈 침대를 남겨 두는 것이 손님을 대비하는 일일 수 있다고 말했다.",
+            "verified": false,
+            "claim_type": "professional_context"
+          }
+        }
+      ],
+      "departure": [
+        [
+          "resident_nubi",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_eunho": {
+      "name": "은호 사장",
+      "public_name": "금테 안경의 흰 여우",
+      "public_purpose": "거래를 기다리는 방문객.",
+      "role": "거래를 기다리는 방문객",
+      "legacy_id": "eunho",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_eunho_0",
+          "title": "뭘 사고파세요?",
+          "lines": [
+            [
+              "det1",
+              "상자가 작아요. 안에는 뭐예요?"
+            ],
+            [
+              "resident_eunho",
+              "보기엔 작아도 다루기는 까다로운 것들이오."
+            ],
+            [
+              "det0",
+              "보석상입니까?"
+            ],
+            [
+              "resident_eunho",
+              "맞소. 도시에서 왔소. 여기선 구경하는 중이고."
+            ]
+          ]
+        },
+        {
+          "id": "resident_eunho_1",
+          "title": "혼자 가져왔어요?",
+          "lines": [
+            [
+              "det1",
+              "저기 친구도 상자 들었어요."
+            ],
+            [
+              "resident_eunho",
+              "견습생이오. 함께 가져왔지."
+            ],
+            [
+              "det1",
+              "무거운 건 다 맡겼어요?"
+            ],
+            [
+              "resident_eunho",
+              "…가벼운 것부터 맡겼소. 돌아갈 땐 바꿔 들어야겠군."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_eunho",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_guseul": {
+      "name": "구슬",
+      "public_name": "천을 든 어린 너구리",
+      "public_purpose": "견습 일을 하는 방문객.",
+      "role": "견습 일을 하는 방문객",
+      "legacy_id": "guseul",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_guseul_0",
+          "title": "천으로 뭐 닦아요?",
+          "lines": [
+            [
+              "det1",
+              "자꾸 접는 데를 바꾸네요."
+            ],
+            [
+              "resident_guseul",
+              "더, 더러운 쪽으로 닦으면 다시 묻어서."
+            ],
+            [
+              "det1",
+              "깨끗해 보여도요?"
+            ],
+            [
+              "resident_guseul",
+              "빛에 대면 보여. 만지면 지문도 남고."
+            ]
+          ]
+        },
+        {
+          "id": "resident_guseul_1",
+          "title": "구경하고 싶어요?",
+          "lines": [
+            [
+              "det1",
+              "광장도 가 봤어요?"
+            ],
+            [
+              "resident_guseul",
+              "아직. 상자를 두고 갈 수 없어서."
+            ],
+            [
+              "det0",
+              "잠시 쉬겠다고 말해 보지."
+            ],
+            [
+              "resident_guseul",
+              "그, 그 말이 잘 안 나와요. 일 끝나면 가려고요."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_guseul",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_badook": {
+      "name": "바둑이",
+      "public_name": "호루라기의 점박이 개",
+      "public_purpose": "밤길을 살펴보는 방문객.",
+      "role": "밤길을 살펴보는 방문객",
+      "legacy_id": "badook",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_badook_0",
+          "title": "이제 일하러 가요?",
+          "lines": [
+            [
+              "det1",
+              "호루라기를 불어요?"
+            ],
+            [
+              "resident_badook",
+              "필요할 때만. 매번 불면 아무도 돌아보지 않거든."
+            ],
+            [
+              "det1",
+              "그럼 지금은요?"
+            ],
+            [
+              "resident_badook",
+              "그냥 길을 보는 중이야. 여기 길은 아직 낯설어서."
+            ]
+          ]
+        },
+        {
+          "id": "resident_badook_1",
+          "title": "어두우면 무서워요?",
+          "lines": [
+            [
+              "det1",
+              "전 아빠가 있으면 괜찮아요."
+            ],
+            [
+              "resident_badook",
+              "나도 같이 도는 사람이 있으면 좋아."
+            ],
+            [
+              "det0",
+              "혼자 일합니까?"
+            ],
+            [
+              "resident_badook",
+              "도시에선 둘이요. 오늘은 구경 왔는데 습관이 남네요."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_badook",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
+    },
+    "resident_lamplighter": {
+      "name": "등불지기 아저씨",
+      "public_name": "긴 장대의 토끼",
+      "public_purpose": "거리 일을 배우러 온 방문객.",
+      "role": "거리 일을 배우러 온 방문객",
+      "legacy_id": "lamplighter",
+      "concept_status": "lightweight_draft",
+      "topics": [
+        {
+          "id": "resident_lamplighter_0",
+          "title": "저 등도 켜 주세요?",
+          "lines": [
+            [
+              "det1",
+              "장대가 닿아요?"
+            ],
+            [
+              "resident_lamplighter",
+              "닿지만 오늘은 안 건드린다. 여기 일하는 사람이 따로 있거든."
+            ],
+            [
+              "det1",
+              "왜 가져왔어요?"
+            ],
+            [
+              "resident_lamplighter",
+              "손잡이 고치러. 빈손으로 올 순 없으니까."
+            ]
+          ]
+        },
+        {
+          "id": "resident_lamplighter_1",
+          "title": "불이 다 달라요",
+          "lines": [
+            [
+              "det1",
+              "이 등은 다른 색이에요."
+            ],
+            [
+              "resident_lamplighter",
+              "모양이 같다고 안에 든 것도 같지는 않지."
+            ],
+            [
+              "det0",
+              "직접 만든 겁니까?"
+            ],
+            [
+              "resident_lamplighter",
+              "난 켜는 사람이다. 만드는 사람에게 물어보면 더 잘 알 거야."
+            ]
+          ]
+        }
+      ],
+      "departure": [
+        [
+          "resident_lamplighter",
+          "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ]
     }
   },
   "routines": [
@@ -485,6 +2186,623 @@
       "y": 305,
       "width": 190,
       "height": 240
+    },
+    {
+      "id": "resident_tori",
+      "place": "gate",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_tori",
+      "place": "inn",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_bori",
+      "place": "gate",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_bori",
+      "place": "lane",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_yeoni",
+      "place": "fountain",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_yeoni",
+      "place": "inn",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_kongi",
+      "place": "lane",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_kongi",
+      "place": "fountain",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_kkwak",
+      "place": "fountain",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_kkwak",
+      "place": "post",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_librarian",
+      "place": "post",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_librarian",
+      "place": "inn",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_owlgp",
+      "place": "gate",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_owlgp",
+      "place": "fountain",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_teacher",
+      "place": "gate",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_teacher",
+      "place": "inn",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_nero",
+      "place": "lane",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_nero",
+      "place": "gate",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_seol",
+      "place": "fountain",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_seol",
+      "place": "gate",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_ppul",
+      "place": "post",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_ppul",
+      "place": "inn",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_tok",
+      "place": "post",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_tok",
+      "place": "lane",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_sling",
+      "place": "post",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_sling",
+      "place": "gate",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_momo",
+      "place": "fountain",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_momo",
+      "place": "inn",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_ttadak",
+      "place": "lane",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_ttadak",
+      "place": "inn",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_piko",
+      "place": "fountain",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_piko",
+      "place": "lane",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_mungchi",
+      "place": "inn",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_mungchi",
+      "place": "fountain",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_madam",
+      "place": "inn",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_madam",
+      "place": "fountain",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_siluk",
+      "place": "gate",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_siluk",
+      "place": "inn",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_musoe",
+      "place": "lane",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_musoe",
+      "place": "gate",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_somi",
+      "place": "lane",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_somi",
+      "place": "fountain",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_seori",
+      "place": "post",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_seori",
+      "place": "fountain",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_ubak",
+      "place": "post",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_ubak",
+      "place": "fountain",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_nubi",
+      "place": "inn",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_nubi",
+      "place": "gate",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_eunho",
+      "place": "post",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_eunho",
+      "place": "inn",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_guseul",
+      "place": "post",
+      "start": 1050,
+      "end": 1130,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_guseul",
+      "place": "inn",
+      "start": 1130,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_badook",
+      "place": "gate",
+      "start": 1050,
+      "end": 1150,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_badook",
+      "place": "lane",
+      "start": 1150,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_lamplighter",
+      "place": "fountain",
+      "start": 1050,
+      "end": 1110,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
+    },
+    {
+      "id": "resident_lamplighter",
+      "place": "lane",
+      "start": 1110,
+      "end": 1261,
+      "x": 170,
+      "y": 270,
+      "width": 190,
+      "height": 250,
+      "list_only": true
     }
-  ]
+  ],
+  "legacy_roster": "legacy-resident-roster.json"
 }

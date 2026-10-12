@@ -12,6 +12,99 @@ REPO = ROOT.parents[1]
 SOURCE = REPO / "preview/ch1-gpt-20261008"
 TARGET = ROOT / "game/assets"
 
+# The original 35-person cast contains seven identities already represented by
+# the approved chapter-one cast. Preserve those designs; only revive the others.
+LEGACY_EXISTING = {"nabi", "buri", "doto", "grandma", "karo", "bami", "wanggu"}
+LEGACY_NEW_PAIR = ("librarian", "teacher")
+
+def prepare_legacy_residents(cast, manifest):
+    """Register lightweight original animal-pixel drafts without rewriting PNGs."""
+    specifications = json.loads((REPO / "design/character-specs.json").read_text())
+    report = {"status": "lightweight-design-drafts", "original_count": 35,
+              "approved_existing_cast_preserved": sorted(LEGACY_EXISTING),
+              "pixel_policy": "Immutable source PNGs; runtime alpha-bound crops and nearest-neighbor rendering.",
+              "residents": []}
+    for original in specifications["characters"]:
+        old_id = original["id"]
+        if old_id in LEGACY_EXISTING or old_id in LEGACY_NEW_PAIR:
+            continue
+        person = "resident_" + old_id
+        entry = {}
+        details = {"id": person, "original_id": old_id, "name": original["name"],
+                   "animal": original["animal"], "design_stage": "restored-original-pixel-draft"}
+        for kind, source_relative in (("body", "art/body/" + old_id + "-0.png"),
+                                      ("face", "art/faces/" + old_id + "-neutral.png")):
+            source = REPO / source_relative
+            assert source.is_file(), source
+            name = person + "-" + kind + ".png"
+            destination = TARGET / name
+            shutil.copyfile(source, destination)
+            im = Image.open(source)
+            assert im.mode == "RGBA", source
+            alpha = im.getchannel("A")
+            # Original portraits contain shoulders. Their upper three quarters
+            # retain the full ears/hat/beak while keeping the dialogue face large.
+            inspection = alpha if kind == "body" else alpha.crop((0, 0, im.width, round(im.height * .75)))
+            bounds = inspection.point(lambda a: 255 if a > 20 else 0).getbbox()
+            assert bounds is not None, (person, kind)
+            geometry = {"file": "assets/" + name,
+                        "crop": [bounds[0], bounds[1], bounds[2] - bounds[0], bounds[3] - bounds[1]]}
+            details[kind] = {"source": source_relative, "size": list(im.size), **geometry}
+            for state in ("neutral", "thinking", "distressed", "expressive"):
+                if kind == "body":
+                    entry[state] = geometry
+                    entry["interview_" + state] = geometry
+                else:
+                    entry["avatar_" + state] = geometry
+            if kind == "body":
+                entry["world"] = geometry
+            digest = hashlib.sha256(source.read_bytes()).hexdigest()
+            assert digest == hashlib.sha256(destination.read_bytes()).hexdigest()
+            manifest[name] = {"source": source_relative, "sha256": digest,
+                "approval": "User requested lightweight drafts of the original 35 residents. Existing approved chapter-one cast is preserved.",
+                "adaptation": "Original animal pixel PNG copied byte-for-byte; runtime Crop only. One neutral pose reused for world/interview; expression names alias that pose, not newly generated expressions.",
+                "design_stage": "lightweight-original-draft"}
+        cast[person] = entry
+        report["residents"].append(details)
+    # These two original roster members had no full-body pixel originals.
+    # Keep the new, reference-guided pair immutable too: both paws and shoes
+    # are visible and separated by a wide transparent gap.
+    pair = ROOT / "art/resident-librarian-teacher.png"
+    shutil.copyfile(pair, TARGET / pair.name)
+    pair_im = Image.open(pair)
+    assert pair_im.mode == "RGBA", pair
+    pair_alpha = pair_im.getchannel("A")
+    assert pair_alpha.getpixel((0, 0)) == 0
+    for column, old_id in enumerate(LEGACY_NEW_PAIR):
+        left, right = round(pair_im.width * column / 2), round(pair_im.width * (column + 1) / 2)
+        bounds = pair_alpha.crop((left, 0, right, pair_im.height)).point(lambda a: 255 if a > 20 else 0).getbbox()
+        assert bounds and bounds[0] > 3 and bounds[1] > 3 and bounds[2] < right-left-3 and bounds[3] < pair_im.height-3
+        x, y, width, height = left + bounds[0], bounds[1], bounds[2] - bounds[0], bounds[3] - bounds[1]
+        body = {"file": "assets/" + pair.name, "crop": [x, y, width, height]}
+        head = pair_alpha.crop((x, y, x + width, y + round(height * .4))).point(lambda a: 255 if a > 20 else 0).getbbox()
+        assert head, old_id
+        face = {"file": "assets/" + pair.name,
+                "crop": [x + head[0], y + head[1], head[2] - head[0], head[3] - head[1]]}
+        entry = {"world": body}
+        for state in ("neutral", "thinking", "distressed", "expressive"):
+            entry[state] = body
+            entry["interview_" + state] = body
+            entry["avatar_" + state] = face
+        person = "resident_" + old_id
+        cast[person] = entry
+        original = next(c for c in specifications["characters"] if c["id"] == old_id)
+        report["residents"].append({"id": person, "original_id": old_id, "name": original["name"],
+            "animal": original["animal"], "design_stage": "new-reference-guided-pixel-draft",
+            "body": {"source": "experiments/renpy-ch1/art/" + pair.name, "size": list(pair_im.size), **body},
+            "face": {"source": "experiments/renpy-ch1/art/" + pair.name, "size": list(pair_im.size), **face}})
+    manifest[pair.name] = {"source": "experiments/renpy-ch1/art/" + pair.name,
+        "generation": "Reference-guided image_gen, 2026-10-12; two new full-body animal pixel design drafts.",
+        "approval": "User requested lightweight original-roster resident designs. Original approved chapter-one characters remain unchanged.",
+        "adaptation": "Immutable transparent pair; runtime body/head Crop only. One neutral pose per resident, shared by world/interview and expression aliases.",
+        "sha256": hashlib.sha256(pair.read_bytes()).hexdigest()}
+    assert len(report["residents"]) == 28
+    return report
+
 FILES = {
     "carriage.png": "art/ch1/cinematics/carriage-family-close.png",
     "approach.png": "art/ch1/cinematics/village-approach-road.png",
@@ -165,6 +258,8 @@ def main():
         "approval":"User requested more outdoor characters from future episodes; original approved cast is preserved.",
         "generation":"image_gen new recurring cast and reference-guided sprite layout, 2026-10-12; one interview expression and one separate activity pose per resident.",
         "sha256":hashlib.sha256(future.read_bytes()).hexdigest()}
+    resident_report = prepare_legacy_residents(cast, manifest)
+    (TARGET / "resident-art.json").write_text(json.dumps(resident_report, ensure_ascii=False, indent=2))
     (TARGET / "cast.json").write_text(json.dumps(cast, ensure_ascii=False, indent=2))
     source = json.loads((ROOT / 'game/chapter-source.json').read_text())
     assert source['sha256'] == hashlib.sha256((REPO/source['source']).read_bytes()).hexdigest(), 'Chapter source changed; refresh the captured source data before building.'
