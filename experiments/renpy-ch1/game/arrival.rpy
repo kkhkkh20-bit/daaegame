@@ -146,12 +146,22 @@ label arrival_place:
     if arrival_action == "nearby":
         call screen village_nearby_residents(arrival_location)
         if _return != "back":
-            call village_contact(_return)
+            $ selected_local = _return
+            $ selected_room = village_interior_room(selected_local,arrival_location)
+            if selected_room:
+                $ arrival_inn_room = selected_room
+                if "inn:"+arrival_inn_room not in village_interiors_seen:
+                    $ village_interiors_seen.append("inn:"+arrival_inn_room)
+                call scene_present(village_inn_spec())
+                call village_contact(selected_local)
+                jump arrival_inn
+            call village_contact(selected_local)
         jump arrival_place
     if arrival_action == "look":
         call source_lines(VILLAGE_PLACE_LOOK[arrival_location],"V_LOOK_"+arrival_location)
         jump arrival_place
     if arrival_action == "stay":
+        $ arrival_inn_room = "reception"
         jump arrival_inn
     if arrival_action == "stone":
         $ arrival_key = "stone"
@@ -165,20 +175,26 @@ label arrival_place:
     jump arrival_place
 
 label arrival_inn:
-    $ place,clock_text = "겨울잠 여관 · 접수대",village_clock()
-    $ source_camera,source_background,source_night,source_stage_person = "stage","front",None,None
-    window hide
-    hide visitor
-    scene black with Dissolve(.12)
-    $ source_pulse(False)
-    $ source_score("village_bright")
-    $ renpy.pause(.3,hard=True)
-    scene expression source_picture() with Dissolve(.18)
+    if arrival_inn_room not in VILLAGE_INTERIORS["inn"]["rooms"]:
+        $ arrival_inn_room = "reception"
+    if "inn:"+arrival_inn_room not in village_interiors_seen:
+        $ village_interiors_seen.append("inn:"+arrival_inn_room)
+    call scene_present(village_inn_spec())
     call screen arrival_interior
-    if _return == "outside":
+    $ inn_action = _return
+    if inn_action == "outside":
         jump arrival_place
-    if _return == "map":
+    if inn_action == "map":
         jump arrival_roam
+    if inn_action == "look":
+        call source_lines(VILLAGE_INTERIORS["inn"]["rooms"][arrival_inn_room]["look"],"V_INN_LOOK_"+arrival_inn_room)
+        jump arrival_inn
+    if inn_action.startswith("room:"):
+        $ arrival_inn_room = inn_action.split(":",1)[1]
+        jump arrival_inn
+    if inn_action.startswith("local:"):
+        call village_contact(inn_action.split(":",1)[1])
+        jump arrival_inn
     $ arrival_question_person = "granny"
     call arrival_interview
     if arrival_checked_in:
@@ -250,16 +266,38 @@ screen arrival_interior():
     modal True
     default ready = False
     timer .35 action SetScreenVariable("ready",True)
-    imagebutton:
-        xpos 560 ypos 200
-        idle Transform("granny world",size=(240,320),fit="contain")
-        hover Transform("granny world",size=(240,320),fit="contain",alpha=.85)
-        sensitive ready action Return("talk")
-    text "할머니를 눌러 대화" xpos 525 ypos 555 size 21 color "#f3e7ce"
-    hbox:
-        xpos 730 ypos 612 spacing 18
-        textbutton "밖으로" action Return("outside") sensitive ready
-        textbutton "이동하기" action Return("map") sensitive ready
+    if arrival_inn_room == "reception":
+        imagebutton:
+            id "inn_host_activity"
+            xpos 590 ypos 180
+            idle Transform("granny inn_activity",size=(190,330),fit="contain")
+            hover Transform("granny inn_activity",size=(190,330),fit="contain",alpha=.85)
+            sensitive ready action Return("talk")
+        # Exact foreground slice of the same background hides the legs behind the counter.
+        add Crop((380,375,540,160),Transform("assets/front.png",size=(1280,720))) xpos 380 ypos 375 id "inn_counter_foreground"
+        frame:
+            xpos 532 ypos 548 padding (12,8) background Solid("#172225de")
+            text "잔을 닦는 여관 주인 · 말 걸기" size 20 color "#f3e8cd"
+        button:
+            xpos 943 ypos 185 xsize 224 ysize 325
+            background None hover_background Solid("#f4d9a411")
+            sensitive ready action Return("room:lounge")
+        button:
+            xpos 70 ypos 192 xsize 135 ysize 328
+            background None hover_background Solid("#f4d9a411")
+            sensitive ready action Return("outside")
+    else:
+        for guest in village_inn_guests():
+            imagebutton:
+                id ("inn_guest_"+guest["id"])
+                xpos guest["x"] ypos guest["y"]
+                idle Transform(guest["id"]+" "+guest["pose"],size=(guest["width"],guest["height"]),fit="contain")
+                hover Transform(guest["id"]+" "+guest["pose"],size=(guest["width"],guest["height"]),fit="contain",alpha=.85)
+                sensitive ready action Return("local:"+guest["id"])
+            frame:
+                xpos (guest["x"]-30) ypos 545 padding (12,8) background Solid("#172225de")
+                text guest["caption"] size 18 color "#f3e8cd"
+    use inn_room_navigation(ready)
 
 transform arrival_snow(delay=0.0, start_x=100):
     xpos start_x ypos -10 alpha .0

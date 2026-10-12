@@ -1,0 +1,65 @@
+{
+  "inn": {
+    "entry": "reception",
+    "rooms": {
+      "reception": {
+        "name": "접수대",
+        "background": "front",
+        "caption": "잔을 닦는 여관 주인",
+        "look": [
+          [
+            "det1",
+            "컵이 전부 다르게 생겼어."
+          ],
+          [
+            "det0",
+            "오래 모으셨나 보다."
+          ],
+          [
+            "det1",
+            "난 저 작은 게 좋아."
+          ]
+        ]
+      },
+      "lounge": {
+        "name": "손님 홀",
+        "background": "inn-lounge",
+        "caption": "차를 마시며 쉬어 가는 자리",
+        "look": [
+          [
+            "det1",
+            "여기서는 신발 벗어도 될까?"
+          ],
+          [
+            "det0",
+            "의자에는 발을 올리지 말고."
+          ],
+          [
+            "det1",
+            "알아. 잠깐 발가락만 쉬게 해 주려고."
+          ]
+        ],
+        "people": [
+          {
+            "id": "resident_nubi",
+            "pose": "inn_activity",
+            "x": 825,
+            "y": 235,
+            "width": 235,
+            "height": 300,
+            "caption": "이불을 꿰매는 손님 · 말 걸기"
+          },
+          {
+            "id": "resident_momo",
+            "pose": "activity",
+            "x": 450,
+            "y": 310,
+            "width": 180,
+            "height": 225,
+            "caption": "쿠키를 나누는 손님 · 말 걸기"
+          }
+        ]
+      }
+    }
+  }
+}
