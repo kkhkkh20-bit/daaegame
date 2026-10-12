@@ -61,20 +61,28 @@ screen main_menu():
             text "부녀의 여행 · 주민과의 첫 만남\n조사 · 원탁 회의 · 최종 대결" size 21 color "#c6b699"
 
 screen say(who,what):
+    $ has_portrait = dialogue_speaker in CAST
     window:
         id "window"
-        xalign 0.5 yalign 1.0 xsize 1200 ysize 169
+        xpos 40 ypos 551 xsize 1200 ysize 169
         background Solid("#211a16f2")
-        padding (30,19)
-        hbox:
-            spacing 22
-            if dialogue_speaker in CAST:
-                add Transform(dialogue_speaker + " avatar_"+dialogue_expression,size=(130,130),fit="contain")
+        padding (0,0)
+        fixed:
+            add Solid("#b39060",xsize=1200,ysize=2)
             vbox:
+                xpos (240 if has_portrait else 32) ypos 18
                 spacing 10
                 if who:
                     text who id "who" color "#ffcc86"
-                text what id "what" xsize 920
+                text what id "what" xsize (910 if has_portrait else 1120)
+    if has_portrait:
+        frame:
+            id "dialogue_portrait_frame"
+            xpos 59 ypos 492 xsize 202 ysize 210
+            padding (3,3) background Solid("#b39060")
+            fixed:
+                add Solid("#30261f")
+                add Transform(dialogue_speaker + " avatar_"+dialogue_expression,size=(196,204),fit="contain") id "dialogue_portrait"
     text "▼" xpos 1190 ypos 682 size 21 color "#d8b568"
 
 screen choice(items):

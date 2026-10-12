@@ -1,0 +1,69 @@
+{
+  "game_zip_sha256": "d83c70e90ad489d5cfe45ab59c5f196fe1bd557436b465d16880aa06446d6744",
+  "routes": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "checks": [
+        "dialogue_faces",
+        "mid_line_save_load",
+        "carriage_camera_order",
+        "music_and_pulse_cleanup",
+        "no_default_crime_opening",
+        "location_movement",
+        "location_save_load",
+        "browser_refresh_load",
+        "no_browser_or_asset_errors"
+      ],
+      "injected_progress": false
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "checks": [
+        "dialogue_faces",
+        "mid_line_save_load",
+        "carriage_camera_order",
+        "music_and_pulse_cleanup",
+        "no_default_crime_opening",
+        "location_movement",
+        "location_save_load",
+        "browser_refresh_load",
+        "no_browser_or_asset_errors"
+      ],
+      "injected_progress": false
+    }
+  ],
+  "scope": "First scene, village movement, native PC/touch save/load. Not a full chapter replay.",
+  "logic_checks": {
+    "alternate_clock_deduction_requires_prior_comparison": true,
+    "alternate_path_enters_correct_next_comparison": true,
+    "switching_claims_preserves_comparisons_and_pressing": true,
+    "comparison_progress_is_scoped_to_each_round": true,
+    "undiscovered_guest_and_unheard_accusation_hidden": true,
+    "corrected_testimony_stays_correct_on_revisit": true,
+    "confirmed_living_guest_evidence_updated": true,
+    "long_evening_exploration_stays_before_lodging_without_farming_trust": true,
+    "repeated_discoveries_have_no_grants_or_story_beats": true,
+    "newly_available_variants_marked_unread_until_heard": true,
+    "revised_questions_do_not_reset_relationship_rewards": true,
+    "resident_notebook_does_not_reveal_unheard_alibis": true,
+    "after_story_advances_to_night_without_revisit_rewind": true
+  },
+  "council_checks": {
+    "empty_investigation_hearing_can_reach_adverse_result": true,
+    "adverse_retry_preserves_earned_material_proof": true,
+    "two_material_paths_work_in_either_order": true,
+    "unowned_cards_cannot_prove_claims": true,
+    "context_testimony_does_not_establish_innocence": true,
+    "private_exposure_and_public_permission_are_distinct_memories": true,
+    "repeated_context_does_not_farm_influence": true,
+    "all_issue_progress_and_relationship_memories_are_serializable": true,
+    "valid_proof_can_convince_without_friendship_threshold": true,
+    "repeated_support_proof_does_not_farm_trust": true
+  }
+}

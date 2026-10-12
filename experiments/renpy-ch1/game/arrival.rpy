@@ -58,7 +58,7 @@ init 20 python:
         return opening[variant] + question["lines"][5:]
 
 label arrival_prologue:
-    call arrival_cold_open
+    # The anonymous cold open remains available for review, not the default route.
     $ source_scene, place, clock_text = "V_TITLE", "프롤로그", "고갯길"
     window hide
     hide visitor
@@ -137,17 +137,8 @@ label arrival_roam:
 label arrival_place:
     if arrival_location not in village_places_seen:
         $ village_places_seen.append(arrival_location)
-    $ place, clock_text = ARRIVAL_PLACES[arrival_location][0], village_clock()
-    $ source_camera,source_night,source_stage_person = "innentrance" if arrival_location=="inn" else "stage",None,None
-    $ source_background = "outdoor-"+arrival_location
     $ stage = "village"
-    window hide
-    hide visitor
-    scene black with Dissolve(.12)
-    $ source_pulse(False)
-    $ source_score("village_bright")
-    $ renpy.pause(.3,hard=True)
-    scene expression source_picture() with Dissolve(.18)
+    call scene_present(dict(sid="V_PLACE_"+arrival_location,title=ARRIVAL_PLACES[arrival_location][0],sub=village_clock(),camera="innentrance" if arrival_location=="inn" else "stage",bg="outdoor-"+arrival_location,music="village_bright"))
     call screen arrival_place
     $ arrival_action = _return
     if arrival_action == "map":
