@@ -259,6 +259,19 @@ def main():
         "generation":"image_gen new recurring cast and reference-guided sprite layout, 2026-10-12; one interview expression and one separate activity pose per resident.",
         "sha256":hashlib.sha256(future.read_bytes()).hexdigest()}
     resident_report = prepare_legacy_residents(cast, manifest)
+    activity_source=ROOT/"art"/"village-activities.png"
+    shutil.copyfile(activity_source,TARGET/activity_source.name)
+    activity_image=Image.open(activity_source)
+    assert activity_image.mode=="RGBA" and activity_image.size==(1536,1024)
+    for index,person in enumerate(("resident_tori","resident_piko","resident_momo","resident_tok")):
+        x,y=(index%2)*768,(index//2)*512
+        region=activity_image.getchannel("A").crop((x,y,x+768,y+512))
+        bbox=region.point(lambda a:255 if a>20 else 0).getbbox()
+        assert bbox and bbox[0]>3 and bbox[1]>3 and bbox[2]<765 and bbox[3]<509,(person,bbox)
+        cast[person]["activity"]=dict(file="assets/"+activity_source.name,crop=[x+bbox[0],y+bbox[1],bbox[2]-bbox[0],bbox[3]-bbox[1]])
+    manifest[activity_source.name]={"source":"experiments/renpy-ch1/art/"+activity_source.name,
+        "generation":"image_gen, reference-guided activity poses, 2026-10-12",
+        "sha256":hashlib.sha256(activity_source.read_bytes()).hexdigest()}
     (TARGET / "resident-art.json").write_text(json.dumps(resident_report, ensure_ascii=False, indent=2))
     (TARGET / "cast.json").write_text(json.dumps(cast, ensure_ascii=False, indent=2))
     source = json.loads((ROOT / 'game/chapter-source.json').read_text())

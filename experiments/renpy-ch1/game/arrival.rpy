@@ -148,6 +148,9 @@ label arrival_place:
         if _return != "back":
             call village_contact(_return)
         jump arrival_place
+    if arrival_action == "look":
+        call source_lines(VILLAGE_PLACE_LOOK[arrival_location],"V_LOOK_"+arrival_location)
+        jump arrival_place
     if arrival_action == "stay":
         jump arrival_inn
     if arrival_action == "stone":
@@ -286,17 +289,23 @@ screen arrival_place():
     for local in village_outdoor_people(arrival_location):
         imagebutton:
             xpos local["x"] ypos local["y"]
-            idle Transform(local["id"]+" world",size=(local["width"],local["height"]),fit="contain")
-            hover Transform(local["id"]+" world",size=(local["width"],local["height"]),fit="contain",alpha=.86)
+            idle Transform(local["id"]+(" activity" if local.get("activity_pose") else " world"),size=(local["width"],local["height"]),fit="contain")
+            hover Transform(local["id"]+(" activity" if local.get("activity_pose") else " world"),size=(local["width"],local["height"]),fit="contain",alpha=.86)
             sensitive ready action Return("local:"+local["id"])
-        text local["public_name"] xpos local["x"] ypos (local["y"]+local["height"]+3) size 17 color "#f3e7ce" outlines [(2,"#201b18",0,0)]
+        frame:
+            xpos (local["x"]-12) ypos (local["y"]+local["height"]+3)
+            padding (9,5) background Solid("#172225da")
+            vbox:
+                spacing 3
+                text local["public_name"] size 17 color "#f3e7ce"
+                text local["activity"] size 14 color "#c6d0c9"
     $ resident = village_arrival_resident(arrival_location)
     if resident:
         $ person = SOURCE_ALIAS.get(resident,resident)
         imagebutton:
-            xpos 720 ypos (105 if person=="bami" else 245)
-            idle Transform(person+" world",size=(225,290),fit="contain")
-            hover Transform(person+" world",size=(225,290),fit="contain",alpha=.85)
+            xpos 740 ypos (105 if person=="bami" else 310)
+            idle Transform(person+" world",size=(170,225),fit="contain")
+            hover Transform(person+" world",size=(170,225),fit="contain",alpha=.85)
             sensitive ready action Return("talk")
     elif not village_outdoor_people(arrival_location):
         text "주민은 자리를 비웠다." xpos 685 ypos 555 size 21 color "#f3e7ce"
@@ -305,15 +314,23 @@ screen arrival_place():
             xpos 380 ypos 155 xsize 190 ysize 315
             background None hover_background None padding (0,0)
             sensitive ready action Return("stone")
+    add Solid("#172225f2",xsize=1280,ysize=118) ypos 602
+    add Solid("#bca579",xsize=1232,ysize=1) xpos 24 ypos 602
     if village_optional_people(arrival_location):
-        textbutton ("근처 주민 · %d명"%len(village_optional_people(arrival_location))):
+        textbutton ("주변 둘러보기 · %d"%len(village_optional_people(arrival_location))):
             xpos 40 ypos 612 xsize 280 ysize 64
+            background None hover_background Solid("#344743") text_size 23
             sensitive ready action Return("nearby")
+    textbutton "거리 살펴보기":
+        xpos 345 ypos 612 xsize 245 ysize 64
+        background None hover_background Solid("#344743") text_size 23
+        sensitive ready action Return("look")
     hbox:
         xpos 620 ypos 612 spacing 18
-        textbutton "이동하기" sensitive ready action Return("map") xsize 220 ysize 64
+        textbutton "지도 · 이동하기" sensitive ready action Return("map") xsize 250 ysize 64 background Solid("#dfd2af") text_color "#21302e" hover_background Solid("#f0e4c5") text_size 23
         if arrival_location == "inn":
-            textbutton "여관에 들어가기" sensitive ready action Return("stay")
+            textbutton "여관에 들어가기" sensitive ready action Return("stay") text_size 23
+    text "거리의 주민을 눌러 말 걸기" xpos 58 ypos 685 size 16 color "#aab8b0"
 
 screen arrival_stone_glow():
     zorder 10

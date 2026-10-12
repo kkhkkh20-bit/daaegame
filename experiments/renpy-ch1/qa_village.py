@@ -19,7 +19,7 @@ async def topic(t,person,key,opened=False):
   state=await t.state();resident=next(r for r in state['outdoor_people'] if r['id']==person)
   await t.shot('world-'+person)
   await t.click(resident['x']+resident['width']/2,resident['y']+resident['height']/2)
-  await t.wait('local_questions')
+  await t.advance_until('local_questions')
   await check_topic_actor(t,'village_contact_questions');await t.shot('questions-'+person)
  state=await t.state()
  available=[q for q in PEOPLE['profiles'][person]['topics'] if q.get('requires')!='stone' or state['stone']]
