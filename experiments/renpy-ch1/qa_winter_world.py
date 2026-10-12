@@ -20,7 +20,7 @@ for place,spec in w['places'].items():
 assert set(owned)==set(a) and len(owned)==len(set(owned)),'Every paid action has exactly one physical or NPC owner'
 state=s['winter_new']();before=copy.deepcopy(state)
 state=s['winter_inspection_mark'](state,'desk',(640,400))
-assert before==s['winter_new']() and state['ap']==before['ap']
+assert before==s['winter_new']() and state['period']==before['period']
 assert s['winter_inspection_mark'](state,'desk',(640,400))==state
 moved=s['winter_move'](state,'room');assert moved['checks']==state['checks']
 assert 'mother' not in s['winter_target_options'](dict(state,location='passage'),'object','door')
@@ -35,7 +35,10 @@ assert not any(r[0]=='resident_tori' for r in s['winter_people'](dict(state,day=
 route=[['karo','post','granny'],['appointment','receipt','bed'],['ritual','meter','witness'],['protect','surveillance','timing'],['hidden','mother','symptoms'],['repair','fuel','escape'],['ledger','order','death']]
 for day,keys in enumerate(route,1):
  for key in keys:
-  state=s['winter_move'](state,a[key]['place'])
+  where=a[key]['place']
+  if key in w['owners'] and w['owners'][key]!='mom':
+   where=s['winter_where'](state,w['owners'][key])
+  state=s['winter_move'](state,where)
   if key in w['owners']:
    who=w['owners'][key]
    assert who=='mom' or who in [p[0] for p in s['winter_people'](state)],(day,key,who)
@@ -46,3 +49,33 @@ for day,keys in enumerate(route,1):
   state=s['winter_apply'](state,key)
  state=s['winter_next_day'](state)
 print(json.dumps({'groups':10,'mapped_actions':len(owned),'physical_objects':sum(len(p['objects']) for p in w['places'].values()),'true_route_scene_reachable':True,'passed':True}))
+
+# No duplicate actors anywhere in the world, across all 42 calendar slots.
+for day in range(1,15):
+ for period in range(4):
+  for witness in ['available','safe','detained','dead']:
+   z=dict(s['winter_new'](),day=day,period=period,witness=witness)
+   encountered=[]
+   for place in s['WINTER']['places']:
+    actors=s['winter_people'](dict(z,location=place))
+    encountered += [row[0] for row in actors]
+    for who,x,y,width,height,pose in actors:assert y+height<=592
+   assert len(encountered)==len(set(encountered)),(day,period,encountered)
+   if witness in ['dead','detained']:assert 'resident_nubi' not in encountered
+# Repeating a weekday does not resurrect a missed one-time appointment.
+z=dict(s['winter_new'](),day=9,location='square')
+assert s['winter_where'](z,'resident_tori')=='square'
+assert 'appointment' not in s['winter_target_options'](z,'person','resident_tori')
+# A free topic follows its speaker; a physical activity stays at its site.
+z=dict(s['winter_new'](),day=4,period=1,location='post',evidence=['surveillance'])
+assert s['winter_where'](z,'karo')=='post'
+assert 'timing' in s['winter_target_options'](z,'person','karo')
+assert 'escape' not in s['winter_target_options'](dict(z,day=5),'person','karo')
+assert s['winter_morning'](dict(z,day=5,witness='detained'))[0][0]!='resident_nubi'
+print('14-day schedules, event overrides, moving topics and missing appointments: passed')
+
+# A changed second-week greeting is unread even if last week's was heard.
+z=dict(s['winter_new'](),day=8,first_result='protected',seen=['hello:granny'])
+assert s['winter_greeting_key'](z,'granny') not in z['seen']
+assert s['winter_greeting_key'](z,'guard')=='hello:guard'
+assert s['winter_greeting'](z,'granny')!=s['winter_greeting'](dict(z,first_result='restricted'),'granny')

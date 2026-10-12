@@ -1,4 +1,4 @@
-"""Real browser input through the ten-day scenario. State observations are read-only."""
+"""Real browser input through the fourteen-day scenario. State observations are read-only."""
 import asyncio,json,shutil,hashlib,argparse
 from pathlib import Path
 from playwright.async_api import async_playwright
@@ -33,7 +33,12 @@ class WinterTrial(Trial):
  async def close_topics(self):
   await self.click(300,565);await self.wait('hub')
  async def act(self,key):
-  await self.move(D['actions'][key]['place'])
+  destination=D['actions'][key]['place']
+  owner=W['owners'].get(key)
+  if owner and owner!='mom':
+   destination=(await self.state())['whereabouts'][owner]
+   assert destination,(key,'owner unavailable')
+  await self.move(destination)
   if key in W['owners']:await self.open_person(W['owners'][key])
   else:
    obj=next(v for v in W['places'][D['actions'][key]['place']]['objects'].values() if key in v['actions'])
@@ -52,12 +57,19 @@ class WinterTrial(Trial):
    else:
     await self.page.mouse.move(left+350*scale,top+430*scale);await self.page.mouse.wheel(0,800)
    await self.page.wait_for_timeout(500)
-   count=len(s['topic_options'])+(s['target_kind']=='person');offset=count*68-10-310
-  await self.click(300,253+i*68-offset);await self.wait('confirm');await self.click(365,360)
-  await self.advance('topics')
+   count=len(s['topic_options'])+(s['target_kind']=='person')+(s['target_kind']=='person' and s['target_id']!='mom');offset=count*68-10-310
+  await self.click(300,253+i*68-offset)
+  if D['actions'][key]['cost']:
+   await self.wait('confirm');await self.click(365,396)
+  for _ in range(200):
+   st=await self.state()
+   if st['topics'] or st['hub']:break
+   if st['choice']:await self.click(410,245)
+   else:await self.click(1050,685)
+  await self.page.wait_for_timeout(450)
   assert key in (await self.state())['state']['done'],(key,await self.state())
   if key in ('granny','bed','mother'):await self.shot('topic-'+key)
-  await self.close_topics()
+  if (await self.state())['topics']:await self.close_topics()
  async def rest(self):
   await self.click(820,660);await self.wait('confirm');await self.click(365,360)
  async def hearing(self,winning=True):
@@ -105,34 +117,55 @@ async def run(browser,width,height,full,out):
  # Object inspection and empty clicks persist independently of paid actions.
  await t.move('room');before_free=(await t.state())['state']
  await t.click(460,200);await t.advance();await t.click(390,570);await t.advance()
- inspected=(await t.state())['state'];assert inspected['ap']==before_free['ap'] and len(inspected['checks'])==2
+ inspected=(await t.state())['state'];assert inspected['period']==before_free['period'] and len(inspected['checks'])==2
  await t.shot('room-checks');await t.move('gate');await t.move('room');assert (await t.state())['state']['checks']==inspected['checks']
  await t.act('karo');await t.act('post');await t.act('granny')
  # Read again at zero AP; no evidence, facts or time may be duplicated.
  await t.open_person('granny');free_before=(await t.state())['state']
  await t.click(300,321);await t.advance('topics');assert (await t.state())['state']==free_before
  await t.close_topics()
+ await t.act('letter')
+ assert (await t.state())['state']['period']==0
+ await t.move('gate');await t.open_person('guard')
+ await t.click(300,321);await t.advance('topics')
+ assert 'routine:guard' in (await t.state())['state']['seen']
+ await t.close_topics()
+ await t.click(650,665);await t.wait('confirm');await t.click(365,396);await t.wait('hub')
+ assert (await t.state())['state']['period']==1
+ await t.click(458,660);await t.wait('map');await t.shot('known-routine-map');await t.click(190,330);await t.wait('hub')
  before=(await t.state())['state'];await t.save();await t.move('gate');await t.load()
  assert (await t.state())['state']==before,'save/load did not restore all state'
  await p.reload();await p.wait_for_function("typeof renpy_exec==='function'",timeout=60000);await t.state();await t.click(300,498);await t.wait('loading');await t.click(760,245);await t.wait('hub')
  assert (await t.state())['state']==before,'browser refresh persistence'
  if full:
-  route=[['appointment','receipt','bed'],['ritual','meter','witness'],['protect','surveillance','timing'],['hidden','mother','symptoms'],['repair','fuel','escape'],['ledger','order','death'],[],[]]
-  for day in range(1,10):
+  route=[['appointment','receipt','bed'],['ritual','meter','witness'],['protect','surveillance','timing'],['hidden','mother','symptoms'],['repair','fuel','escape'],['ledger','order','death'],[],[],[],[],[],[]]
+  for day in range(1,14):
    await t.rest()
-   if day in (3,6,9):await t.hearing()
+   if day in (3,6,13):await t.hearing()
    else:await t.advance()
    s=await t.state();print('DAY',day,'NEXT',s['state']['day'],s['state']['ending'],flush=True)
-   if day<9:
+   if day<13:
     assert s['state']['day']==day+1
     for action in route[day-1]:await t.act(action)
     if day in (1,4,6):await t.shot('day'+str(day+1))
+    if day==7:
+     await t.open_person('granny')
+     assert 'hello:granny:week2:protected' in (await t.state())['state']['seen']
+     await t.shot('week2-granny');await t.close_topics()
+    if day==8:
+     await t.move('square');await t.open_person('resident_tori')
+     assert 'hello:resident_tori:week2' in (await t.state())['state']['seen']
+     before_repeat=(await t.state())['state']
+     # Read an old appointment again: no new map, cost or duplicate memory.
+     await t.click(300,321);await t.advance('topics')
+     assert (await t.state())['state']==before_repeat
+     await t.shot('week2-tori');await t.close_topics()
   s=await t.state();assert s['ending'] and s['state']['ending']=='truth',s
   await t.shot('true-ending')
  else:
-  for day in range(1,10):
+  for day in range(1,14):
    await t.rest()
-   if day in (3,6,9):await t.hearing(False)
+   if day in (3,6,13):await t.hearing(False)
    else:await t.advance()
    s=await t.state();assert s['state']['day']==day+1
    if day==1:

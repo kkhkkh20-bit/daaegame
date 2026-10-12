@@ -14,7 +14,7 @@ screen winter_hud():
         xpos 24 ypos 18 padding (16,10) background Solid("#142526ef")
         vbox:
             text place size 23 color "#edcf94"
-            text clock_text size 18 color "#bac9c5"
+            text winter_clock(winter) size 18 color "#bac9c5"
     hbox:
         xpos 982 ypos 18 spacing 8
         textbutton "수첩" action Show("winter_evidence",False) style "winter_button" xsize 92
@@ -36,7 +36,7 @@ screen winter_hub():
             background None hover_background None insensitive_background None
             action Return(("object",object_key)) sensitive ready
     for actor,x,y,w,h,pose in winter_people(winter):
-        if not (winter["location"]=="post" and actor=="doto"):
+        if not (winter["location"]=="post" and actor!="seryeon") and not (winter["location"]=="inn" and actor!="granny"):
             add Transform(actor+" "+pose,size=(w,h),fit="contain") xpos x ypos y
         $ hit_height=(375-y if actor=="granny" and winter["location"]=="inn" else 410-y if actor=="seryeon" and winter["location"]=="post" else h)
         button:
@@ -45,11 +45,14 @@ screen winter_hub():
             action Return(("person",actor)) sensitive ready
     if winter["location"]=="inn":
         add Crop((380,375,540,160),Transform("assets/front.png",size=(1280,720))) xpos 380 ypos 375
+        for actor,x,y,w,h,pose in winter_people(winter):
+            if actor!="granny":
+                add Transform(actor+" "+pose,size=(w,h),fit="contain") xpos x ypos y
     if winter["location"]=="post":
         add Crop((0,410,1280,182),winter_background("winter_post")) xpos 0 ypos 410
         # Doto is a customer in front of the counter; Seryeon works behind it.
         for actor,x,y,w,h,pose in winter_people(winter):
-            if actor=="doto":
+            if actor!="seryeon":
                 add Transform(actor+" "+pose,size=(w,h),fit="contain") xpos x ypos y
     for key,point in winter.get("checks",{}).items():
         if key.startswith(winter["location"]+":"):
@@ -63,11 +66,12 @@ screen winter_hub():
     frame:
         xpos 24 ypos 592 xsize 1232 ysize 120 background Solid("#142526f5") padding (16,10)
         text winter_goal(winter) size 20 color "#edcf94" xpos 0 ypos 0
-        text ("행동 %d / 3  · 물건을 눌러 조사 · 주민을 눌러 대화"%winter["ap"]) size 16 color "#bac9c5" xpos 0 ypos 27
+        text (winter_period_name(winter)+" · 질문·관찰·이동은 시간 그대로") size 16 color "#bac9c5" xpos 0 ypos 27
     hbox:
         xpos 30 ypos 650 spacing 16
         textbutton "주변 살펴보기" style "winter_button" xsize 260 ysize 52 text_size 20 action Return("look") sensitive ready
-        textbutton "지도 · 이동하기" style "winter_button" xsize 280 ysize 52 text_size 20 action Return("map") sensitive ready
+        textbutton "지도 · 이동하기" style "winter_button" xsize 240 ysize 52 text_size 20 action Return("map") sensitive ready
+        textbutton "시간 보내기" style "winter_button" xsize 180 ysize 52 text_size 20 action Return("wait") sensitive ready and winter_period(winter)<3
         textbutton "여관으로 돌아가 밤 보내기" style "winter_button" xsize 430 ysize 52 text_size 20 action Return("rest") sensitive ready
 
 screen winter_topics(kind,target):
@@ -79,27 +83,45 @@ screen winter_topics(kind,target):
         vbox:
             spacing 12
             text (WINTER_NAMES[target] if kind=="person" else WINTER_WORLD["places"][winter["location"]]["objects"][target]["name"]) size 30 color "#edcf94"
-            text "인사·다시 확인은 무료 / 새로운 본조사는 행동 1회" size 17 color "#bac9c5"
+            text "새 질문도 무료 · ‘시간’ 표시가 있는 활동만 시간대 진행" size 17 color "#bac9c5"
             viewport:
                 id "winter_topic_scroll"
                 xsize 576 ysize 310 mousewheel True draggable True
                 vbox:
                     spacing 10
                     if kind=="person":
-                        use topic_banner("안부를 묻는다",Return("hello"),"hello:"+target in winter.get("seen",[]),enabled=ready)
+                        use topic_banner("안부를 묻는다",Return("hello"),winter_greeting_key(winter,target) in winter.get("seen",[]),enabled=ready)
                     for key in winter_target_options(winter,kind,target):
-                        use topic_banner(WINTER["actions"][key]["name"],Return(key),key in winter["done"],enabled=ready and (key in winter["done"] or winter["ap"]>0))
+                        use winter_topic_row(key,ready)
+                    if kind=="person" and target in WINTER_SCHEDULES:
+                        use topic_banner("평소 어디 계세요?",Return("routine"),"routine:"+target in winter.get("seen",[]),enabled=ready)
                     if not winter_target_options(winter,kind,target):
                         text "지금 더 물을 이야기는 없다.\n다른 단서를 알게 되면 다시 와 보자." size 23 xsize 540
             textbutton "대화 마치기" style "winter_button" xsize 560 ysize 55 action Return("back") sensitive ready
     text "읽은 질문은 줄이 그어집니다. 새로 알게 된 사실에 따라 질문이 열립니다." xpos 45 ypos 650 size 19
+
+screen winter_topic_row(key,ready):
+    $ completed=key in winter["done"]
+    $ caption=WINTER["actions"][key]["name"]
+    button:
+        xsize 560 ysize 58 padding (3,3)
+        background Solid("#bca579") hover_background Solid("#f0d391")
+        action Return(key) sensitive ready and (completed or winter_can_act(winter,key))
+        fixed:
+            add Solid("#293c39" if completed else "#385952")
+            add Solid("#dfd2af",xsize=10)
+            text ("{s}"+caption+"{/s}" if completed else caption) xpos 18 yalign .5 xsize 450 size 20 color ("#bbcbd0" if completed else "#fff4d9")
+            if completed:
+                add TopicTick() xpos 514 yalign .5
+            else:
+                text ("시간" if WINTER["actions"][key]["cost"] else "무료") xpos 492 yalign .5 size 17 color ("#ffdb93" if WINTER["actions"][key]["cost"] else "#bac9c5")
 
 screen winter_map():
     modal True
     add Transform("assets/winter-gate.webp",size=(1280,720))
     add Solid("#102329df")
     text "눈에 막힌 마을" xpos 54 ypos 125 size 36 color "#edcf94"
-    text "방문할 장소를 고르세요 · 이동은 무료" xpos 54 ypos 180 size 21
+    text (winter_clock(winter)+"\n알아둔 주민의 현재 일정 · 이동은 무료") xpos 54 ypos 180 size 21
     for key,x,y in (("gate",70,290),("square",420,270),("post",800,270),("inn",100,430),("workshop",450,430),("room",800,430),("passage",800,550)):
         if key!="passage" or winter_has(winter,"map"):
             button:
@@ -107,7 +129,7 @@ screen winter_map():
                 action Return(key)
                 vbox:
                     text WINTER["places"][key]["name"] size 25 color "#edcf94"
-                    text ("현재 위치" if key==winter["location"] else "이동하기") size 18
+                    text (("여기 · " if key==winter["location"] else "")+winter_known_at(winter,key)) size 15 xsize 270
     textbutton "돌아가기" xpos 60 ypos 630 action Return(winter["location"]) style "winter_button"
 
 screen winter_confirm(message):
@@ -190,7 +212,7 @@ screen winter_end():
     add Solid("#102527f5")
     $ titles={"truth":"함께 겨울을 넘는 사람들","family":"세 사람의 발자국","exposure":"멈춰 선 이송","flight":"비어 있는 자리","separated":"닫힌 문"}
     text titles[winter["ending"]] xpos 70 ypos 65 size 45 color "#edcf94"
-    text "겨울의 열흘 · 시나리오 개발판" xpos 70 ypos 126 size 22
+    text "겨울의 두 주 · 시나리오 개발판" xpos 70 ypos 126 size 22
     viewport:
         xpos 70 ypos 185 xsize 1120 ysize 360 mousewheel True draggable True
         vbox:
@@ -201,8 +223,8 @@ screen winter_end():
             if not winter_missing(winter):
                 text "가족과 증인을 지키고, 네 주장을 입증하고, 희생 없이 버틸 시간을 마련했다." size 24 xsize 1030
             text "다음 회차에도 기록은 직접 확보해야 합니다. 읽은 대사는 건너뛸 수 있습니다." size 22 xsize 1030
-            text "현재판: 10일과 결말까지 플레이 가능. 엄마 전용 인물 그림·음성은 후속 제작 대상입니다." size 19 color "#bac9c5" xsize 1030
+            text "현재판: 14일과 결말까지 플레이 가능. 엄마 전용 인물 그림·음성은 후속 제작 대상입니다." size 19 color "#bac9c5" xsize 1030
     hbox:
         xpos 70 ypos 600 spacing 30
-        textbutton "다른 열흘 시작하기" action Start("winter_start") style "winter_button"
+        textbutton "다른 두 주 시작하기" action Start("winter_start") style "winter_button"
         textbutton "처음 화면으로" action MainMenu(confirm=False) style "winter_button"

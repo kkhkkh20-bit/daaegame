@@ -11,10 +11,12 @@ async def run(b,width,height):
  await t.move('workshop');s=await t.state();assert s['people'][0][2]+s['people'][0][4]<=592;await t.shot('workshop-feet')
  await t.open_person('buri');await t.shot('workshop-questions');await t.close_topics()
  # Isolated scheduled-resident fixture; do not count this as reaching day five.
- await pg.evaluate('renpy_exec("import renpy; renpy.store.winter=dict(renpy.store.winter,day=5); result=True")')
+ await pg.evaluate('renpy_exec("import renpy; renpy.store.winter=dict(renpy.store.winter,day=5,period=1); result=True")')
  await t.move('post');s=await t.state();assert 'doto' in [r[0] for r in s['people']]
  assert all(row[2]+row[4]<=592 for row in s['people']);await t.shot('post-feet')
  await t.open_person('doto');await t.shot('post-questions');await t.close_topics()
+ await t.move('square');s=await t.state();assert 'bami' in [r[0] for r in s['people']];await t.shot('square-hanging-bami')
+ await t.open_person('bami');await t.shot('square-bami-questions');await t.close_topics()
  assert not t.errors and not t.bad and not t.failed
  await c.close();return {'viewport':[width,height],'layout_only':True,'injected_day_fixture':True,'feet_inside_play_area':True,'npc_clicks_open_questions':True,'errors':t.errors}
 async def main():
