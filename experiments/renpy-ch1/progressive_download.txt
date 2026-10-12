@@ -1,5 +1,6 @@
-# Keep this small trial's assets in the initial archive to measure a seamless
-# in-scene experience. Initial download size is measured separately by QA.
+# Archived autumn trial backgrounds load on demand; current winter assets stay local.
++ image game/assets/outdoor-*.png
++ image game/assets/village-overview.png
 - image game/**
 - music game/**
 - voice game/**

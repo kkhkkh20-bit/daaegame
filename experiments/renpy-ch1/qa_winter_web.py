@@ -5,11 +5,14 @@ from playwright.async_api import async_playwright
 from qa_web import Trial
 R=Path(__file__).resolve().parent
 D=json.loads((R/'game/winter-story.json').read_text())
+W=json.loads((R/'game/winter-world.json').read_text())
 class WinterTrial(Trial):
- async def state(self):return await self.page.evaluate('renpy_exec("import renpy; result=renpy.store.winter_observe()")')
+ async def state(self):return await asyncio.wait_for(self.page.evaluate('renpy_exec("import renpy; result=renpy.store.winter_observe()")'),30)
  async def advance(self,until='hub',limit=300):
   for _ in range(limit):
    s=await self.state()
+   if s.get('actor')=='guard' and s.get('portrait')=='guard' and not getattr(self,'guard_shot',False):
+    await self.shot('guard-dialogue');self.guard_shot=True
    if s.get(until):await self.page.wait_for_timeout(450);return s
    if s['choice']:
     await self.click(410,245)
@@ -20,15 +23,41 @@ class WinterTrial(Trial):
   if (await self.state())['state']['location']==loc:return
   await self.click(458,660);await self.wait('map');await self.click(*pos[loc]);await self.wait('hub')
   assert (await self.state())['state']['location']==loc
+ async def open_person(self,who):
+  s=await self.state()
+  if who=='mom':await self.click(620,265)
+  else:
+   row=next(r for r in s['people'] if r[0]==who);_,x,y,w,h,pose=row
+   await self.click(x+w/2,y+h*.4)
+  await self.advance('topics')
+ async def close_topics(self):
+  await self.click(300,565);await self.wait('hub')
  async def act(self,key):
-  await self.move(D['actions'][key]['place']);s=await self.state();i=s['options'].index(key)
-  # Scroll inside the action viewport only when a fifth row is needed.
+  await self.move(D['actions'][key]['place'])
+  if key in W['owners']:await self.open_person(W['owners'][key])
+  else:
+   obj=next(v for v in W['places'][D['actions'][key]['place']]['objects'].values() if key in v['actions'])
+   x,y,w,h=obj['rect'];await self.click(x+w/2,y+h/2);await self.advance('topics')
+  s=await self.state();i=s['topic_options'].index(key)+(s['target_kind']=='person')
+  # Four rows fit above the fold. Scroll with actual mouse wheel (desktop)
+  # or swipe (touch) for a later interview topic.
+  offset=0
   if i>=4:
-   await self.page.mouse.move(350,410);await self.page.mouse.wheel(0,220);await self.page.wait_for_timeout(300)
-   raise AssertionError(('unexpected long action menu',s['options']))
-  await self.click(300,254+i*68);await self.wait('confirm');await self.click(365,360)
-  await self.advance()
+   scale=min(self.width/1280,self.height/720);left=(self.width-1280*scale)/2;top=(self.height-720*scale)/2
+   if self.width<1000:
+    cdp=await self.page.context.new_cdp_session(self.page)
+    await cdp.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':left+350*scale,'y':top+490*scale}]})
+    for y in (460,420,380,340,300):await cdp.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':left+350*scale,'y':top+y*scale}]})
+    await cdp.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});await cdp.detach()
+   else:
+    await self.page.mouse.move(left+350*scale,top+430*scale);await self.page.mouse.wheel(0,800)
+   await self.page.wait_for_timeout(500)
+   count=len(s['topic_options'])+(s['target_kind']=='person');offset=count*68-10-310
+  await self.click(300,253+i*68-offset);await self.wait('confirm');await self.click(365,360)
+  await self.advance('topics')
   assert key in (await self.state())['state']['done'],(key,await self.state())
+  if key in ('granny','bed','mother'):await self.shot('topic-'+key)
+  await self.close_topics()
  async def rest(self):
   await self.click(820,660);await self.wait('confirm');await self.click(365,360)
  async def hearing(self,winning=True):
@@ -70,7 +99,19 @@ async def run(browser,width,height,full,out):
  await t.advance('choice');await t.shot('checkpoint')
  await t.click(420,245);await t.advance();await t.shot('inn')
  s=await t.state();assert s['state']['day']==1 and not s['pulse'];assert s['music']
+ # The reception dialogue is initiated by clicking Granny, never auto-played.
+ await t.open_person('granny');assert 'inn_registered' in (await t.state())['state']['facts']
+ await t.shot('questions');await t.close_topics()
+ # Object inspection and empty clicks persist independently of paid actions.
+ await t.move('room');before_free=(await t.state())['state']
+ await t.click(460,200);await t.advance();await t.click(390,570);await t.advance()
+ inspected=(await t.state())['state'];assert inspected['ap']==before_free['ap'] and len(inspected['checks'])==2
+ await t.shot('room-checks');await t.move('gate');await t.move('room');assert (await t.state())['state']['checks']==inspected['checks']
  await t.act('karo');await t.act('post');await t.act('granny')
+ # Read again at zero AP; no evidence, facts or time may be duplicated.
+ await t.open_person('granny');free_before=(await t.state())['state']
+ await t.click(300,321);await t.advance('topics');assert (await t.state())['state']==free_before
+ await t.close_topics()
  before=(await t.state())['state'];await t.save();await t.move('gate');await t.load()
  assert (await t.state())['state']==before,'save/load did not restore all state'
  await p.reload();await p.wait_for_function("typeof renpy_exec==='function'",timeout=60000);await t.state();await t.click(300,498);await t.wait('loading');await t.click(760,245);await t.wait('hub')
@@ -105,8 +146,9 @@ async def main():
  results=[]
  async with async_playwright() as p:
   b=await p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader'])
-  results.append(await run(b,1280,720,True,Path('/tmp/winter-qa/pc')))
-  if not args.desktop_only:results.append(await run(b,844,390,False,Path('/tmp/winter-qa/touch')))
+  tasks=[run(b,1280,720,True,Path('/tmp/winter-qa/pc'))]
+  if not args.desktop_only:tasks.append(run(b,844,390,False,Path('/tmp/winter-qa/touch')))
+  results=await asyncio.gather(*tasks)
   await b.close()
  report=dict(game_zip_sha256=hashlib.sha256((R.parents[1]/'preview/renpy-ch1-test/game.zip').read_bytes()).hexdigest(),routes=results)
  (R/'WINTER_QA_REPORT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps(report),flush=True)
