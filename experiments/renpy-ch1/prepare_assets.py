@@ -272,6 +272,23 @@ def main():
     manifest[activity_source.name]={"source":"experiments/renpy-ch1/art/"+activity_source.name,
         "generation":"image_gen, reference-guided activity poses, 2026-10-12",
         "sha256":hashlib.sha256(activity_source.read_bytes()).hexdigest()}
+    inn_source=ROOT/"art"/"inn-activities.png"
+    shutil.copyfile(inn_source,TARGET/inn_source.name)
+    inn_image=Image.open(inn_source)
+    assert inn_image.mode=="RGBA"
+    half=inn_image.width//2
+    for index,person in enumerate(("granny","resident_nubi")):
+        x=index*half
+        region=inn_image.getchannel("A").crop((x,0,x+half,inn_image.height))
+        bbox=region.point(lambda a:255 if a>20 else 0).getbbox()
+        assert bbox and bbox[0]>3 and bbox[1]>3 and bbox[2]<half-3 and bbox[3]<inn_image.height-3,(person,bbox)
+        cast[person]["inn_activity"]=dict(file="assets/"+inn_source.name,crop=[x+bbox[0],bbox[1],bbox[2]-bbox[0],bbox[3]-bbox[1]])
+    for name in ("inn-activities.png","inn-lounge.png"):
+        src=ROOT/"art"/name
+        shutil.copyfile(src,TARGET/name)
+        manifest[name]={"source":"experiments/renpy-ch1/art/"+name,
+            "generation":"image_gen reference-guided inn activity and adjoining dusk lounge, 2026-10-12",
+            "sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
     (TARGET / "resident-art.json").write_text(json.dumps(resident_report, ensure_ascii=False, indent=2))
     (TARGET / "cast.json").write_text(json.dumps(cast, ensure_ascii=False, indent=2))
     source = json.loads((ROOT / 'game/chapter-source.json').read_text())

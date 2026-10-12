@@ -39,7 +39,7 @@ init 30 python:
         if village_arrival_resident(location):
             occupied.append((740,105 if location=="lane" else 310,170,225))
         if location=="fountain":occupied.append((380,155,190,315))
-        active=[entry for entry in village_people_here(location) if entry["id"] in VILLAGE_ACTIVITY_ACTORS]
+        active=[entry for entry in village_people_here(location) if entry["id"] in VILLAGE_ACTIVITY_ACTORS and not village_interior_room(entry["id"],location)]
         active.sort(key=lambda e: CAST[e["id"]]["activity"]["crop"][2]/float(CAST[e["id"]]["activity"]["crop"][3]),reverse=True)
         for entry in active:
             entry=dict(entry)

@@ -142,6 +142,8 @@ init 10 python:
         renpy.show(person+" interview_"+face,tag="visitor",at_list=[store.portrait_close])
 
     def source_bg(key):
+        if key=="inn-lounge":
+            return Transform("assets/inn-lounge.png",size=(1280,720))
         if key=="plaza":
             return Transform("assets/outdoor-gate-morning.png",size=(1280,720))
         if key.startswith("outdoor-"):
@@ -188,7 +190,7 @@ init 10 python:
           inventory=list(store.source_inventory),seen=list(store.source_seen),found=store.source_found,permission=store.source_permission,complete=store.source_complete,
           line=store.source_current_line,text=store.source_shown_text,scene=store.source_scene,camera=store.source_camera,night=store.source_night,proof=list(store.source_proof_show),effects=list(store.source_effect_log),lines=list(store.source_line_log),
           music=renpy.music.get_playing(),typing=renpy.music.get_playing(channel="typing"),pulse=renpy.music.get_playing(channel="pulse"),fx=renpy.music.get_playing(channel="scene_fx"),
-          village_map=opened("arrival_map"),village_place=opened("arrival_place"),village_questions=opened("arrival_questions"),village_inn=opened("arrival_interior"),cold=store.arrival_cold,village_location=store.arrival_location,background=store.source_background,checks=dict(store.source_checks),met=list(store.arrival_met),village_seen=list(store.arrival_seen),post_closed=store.arrival_post_closed,stone=store.arrival_stone,
+          village_map=opened("arrival_map"),village_place=opened("arrival_place"),village_questions=opened("arrival_questions"),village_inn=opened("arrival_interior"),inn_room=store.arrival_inn_room,interior_seen=list(store.village_interiors_seen),cold=store.arrival_cold,village_location=store.arrival_location,background=store.source_background,checks=dict(store.source_checks),met=list(store.arrival_met),village_seen=list(store.arrival_seen),post_closed=store.arrival_post_closed,stone=store.arrival_stone,
           outdoor_people=village_outdoor_people(store.arrival_location),local_questions=opened("village_contact_questions"),nearby_picker=opened("village_nearby_residents"),greeted=list(store.village_people_greeted),nearby_people=village_optional_people(store.arrival_location),locals_memories=dict(store.village_people_memories),testimonies=dict(store.village_testimonies),locals_met=list(store.village_people_met),locals_seen=list(store.village_people_topics),locals_trust=dict(store.village_people_trust),locals_revisions=dict(store.village_people_revisions),village_places_seen=list(store.village_places_seen),
           trust_events=list(store.village_trust_events),flags=list(store.source_flags),proof_marks=list(store.source_proof_marks),proof_progress=dict(store.source_claim_progress),question_revisions=dict(store.source_question_revisions),new_topics=[q["id"] for q in source_questions(store.source_person) if village_question_new(q)] if hasattr(store,"source_person") else [],minutes=store.village_minutes,time_events=list(store.village_time_events),observations=list(store.village_observations),trust=dict(store.village_trust),residents=village_resident_points(store.source_location),available_topics=[q["id"] for q in source_questions(store.source_person)] if hasattr(store,"source_person") else [],support_hearing=store.village_hearing_active,support_person=store.village_hearing_person,council=opened("council_issue"),council_result=store.council_result,council_claim=store.council_claim_index,council_marks=list(store.council_marks),council_history=list(store.council_history),council_memories=dict(store.council_relationship_memories),confirmed_support=list(store.council_confirmed_support),
           roam=opened("source_explore"),map=opened("source_map"),questions=opened("source_questions"),evidence=opened("source_evidence"),debate=opened("source_debate"),choice=opened("source_choice"),inspect=opened("source_inspect"),code=opened("chest_lock"),complete_screen=opened("trial_complete"),saving=opened("save"),loading=opened("load"),exception=opened("_exception"))
@@ -230,7 +232,8 @@ label start:
     $ village_people_met,village_people_topics,village_people_greeted = [],[],[]
     $ village_people_revisions,village_people_trust = {},{}
     $ village_people_memories,village_testimonies = {},{}
-    $ village_places_seen = []
+    $ village_places_seen,village_interiors_seen = [],[]
+    $ arrival_inn_room = "reception"
     $ village_minutes,village_time_events,village_observations = 1050,[],[]
     $ village_trust,village_trust_events = {p:-1 for p in TIMELINE["voters"]},[]
     $ village_hearing_active,village_hearing_person = False,None

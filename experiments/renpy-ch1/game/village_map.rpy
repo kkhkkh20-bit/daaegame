@@ -75,6 +75,10 @@ screen arrival_map():
                 spacing 7
                 text spec[0] size 23 color ("#20332f" if current else "#f3e8cd")
                 text ("현재 위치" if current else "문 닫힘 · 내일 다시" if location=="post" and arrival_post_closed else "다녀간 곳" if village_map_visited(location) else "아직 가 보지 않은 곳") size 15 color ("#4c6559" if current else "#bfcac0")
+    if village_interiors_seen:
+        frame:
+            xpos 934 ypos 421 padding (10,6) background Solid("#172225de")
+            text "접수대 · 손님 홀" size 17 color "#d9c18c"
     $ focus=hover_place or arrival_location or "gate"
     frame:
         xpos 24 ypos 147 xsize 310 padding (18,15) background Solid("#172225e5")

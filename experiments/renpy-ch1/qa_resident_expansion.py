@@ -28,7 +28,14 @@ async def topic(t,person,index,permission):
  assert record['heard_place'] and record['heard_minute']<=before['minutes']
  assert person in st['locals_met'];await t.shot('questions-'+person);return st
 async def back(t):
- await t.click(640,295);await t.wait('village_place')
+ await t.click(640,295)
+ for _ in range(80):
+  state=await t.state()
+  if state['village_inn']:
+   await t.wait('village_inn');await t.click(815,640);break
+  if state['village_place']:break
+  await t.page.wait_for_timeout(100)
+ await t.wait('village_place')
 async def run(browser,out,w,h):
  loaded_sha=hashlib.sha256((ROOT.parents[1]/'preview/renpy-ch1-test/game.zip').read_bytes()).hexdigest()
  out.mkdir(parents=True,exist_ok=True);c=await browser.new_context(viewport={'width':w,'height':h},has_touch=w<1000,is_mobile=w<1000)
