@@ -173,6 +173,12 @@ def main():
         manifest[name] = {"source":"experiments/renpy-ch1/art/"+revision,
             "original":FILES[name], "approval":"User explicitly requested this RenPy image revision; original public art is preserved.",
             "generation":"image_gen reference-image edit, 2026-10-11", "sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
+    for name in ("winter-carriage.png", "winter-gate-clean.png"):
+        src = ROOT / "art" / name
+        shutil.copyfile(src, TARGET / name)
+        manifest[name] = {"source":"experiments/renpy-ch1/art/"+name,
+            "generation":"Reference-guided image_gen, 2026-10-12; winter continuity and simplified surface textures.",
+            "sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
     cast = {}
     head_height={"det1":.88,"det0":.88,"innma":.70,"seryeon":.65,
                  "nabi":.84,"geokkuri":1.0,"doto":.95,"buri":.74,"karo":.83,"wanggu":.77}

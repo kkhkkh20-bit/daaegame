@@ -66,7 +66,7 @@ screen say(who,what):
     window:
         id "window"
         xpos 40 ypos 551 xsize 1200 ysize 169
-        background Solid("#211a16f2")
+        background Solid("#10262de8" if winter_mode else "#211a16f2")
         padding (0,0)
         fixed:
             add Solid("#b39060",xsize=1200,ysize=2)

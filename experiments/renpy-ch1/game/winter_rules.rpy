@@ -4,7 +4,7 @@ init 40 python:
     WINTER = json.load(renpy.file("winter-story.json"))
 
     def winter_new():
-        return dict(version=3,day=1,period=0,location="inn",evidence=[],facts=[],done=[],
+        return dict(version=4,day=1,period=0,location="inn",evidence=[],facts=[],done=[],
             records={},log=[],witness="available",mother_day=None,marks=[],ending=None,
             first_result=None,second_result=None)
 
@@ -25,9 +25,11 @@ init 40 python:
         n=winter_copy.deepcopy(s)
         if n.get("version",1)<2 and "inn_registered" not in n["facts"]:
             n["facts"].append("inn_registered")
+        if n.get("version",1)<4 and "inn_registered" in n["facts"] and "entry_corrected" not in n["facts"]:
+            n["facts"].append("entry_corrected")
         n["period"]=winter_period(n)
         n.pop("ap",None)
-        n["version"]=3
+        n["version"]=4
         return n
 
     def winter_time_target(s):
@@ -77,6 +79,9 @@ init 40 python:
         if key=="mother":
             n["mother_day"]=n["day"]
             n["facts"].append("mother_secure" if winter_has(n,"timing") else "mother_traced")
+        if all(k in n["evidence"] for k in ("karo_memory","doto_memory")) and "sightings" not in n["evidence"]:
+            n["evidence"].append("sightings")
+            n["records"]["sightings"]=dict(day=n["day"],period=before,source="two_witnesses",place=n["location"])
         n["log"].append(dict(day=n["day"],period=before,action=key,cost=a["cost"]))
         return n
 
@@ -87,7 +92,7 @@ init 40 python:
 
     def winter_move(s,location):
         n=winter_copy.deepcopy(s)
-        if location in WINTER["places"] and (location!="passage" or winter_has(s,"map")):
+        if location in WINTER["places"] and (location!="passage" or winter_has(s,"map") or winter_has(s,"passage_known")):
             n["location"]=location
         return n
 
@@ -117,6 +122,8 @@ init 40 python:
         whole={"frame","destination","power","death"}.issubset(proven)
         family=winter_has(s,"mother") and winter_has(s,"mother_secure")
         prepared=all(winter_has(s,k) for k in ("repair","fuel","escape"))
+        if s.get("version",3)>=4:
+            prepared=prepared and s.get("records",{}).get("repair",{}).get("day",99)<=11
         if whole and family and prepared and s["witness"]=="safe" and winter_has(s,"permission") and s["mother_day"]<=11:
             return "truth"
         if family and winter_has(s,"escape"):return "family"
@@ -128,7 +135,7 @@ init 40 python:
         checks=[("엄마와 접촉",winter_has(s,"mother")),("엄마의 은신처 보호",winter_has(s,"mother_secure")),
             ("11일 안에 엄마와 합류",s["mother_day"] is not None and s["mother_day"]<=11),
             ("누비와 가족 보호·공개 증언 허락",s["witness"]=="safe" and winter_has(s,"permission")),
-            ("비상 운용과 공동 난방",winter_has(s,"repair") and winter_has(s,"fuel")),
+            ("밤별 측정을 마친 비상 운용과 공동 난방",winter_has(s,"repair") and winter_has(s,"fuel") and (s.get("version",3)<4 or s.get("records",{}).get("repair",{}).get("day",99)<=11)),
             ("보행 탈출로",winter_has(s,"escape")),
             ("최종 네 주장 입증",all(k in s["marks"] for k in ("frame","destination","power","death")))]
         return [name for name,ok in checks if not ok]
