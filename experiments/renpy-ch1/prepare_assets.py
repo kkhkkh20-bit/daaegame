@@ -65,7 +65,7 @@ def main():
     TARGET.mkdir(parents=True, exist_ok=True)
     (TARGET / "fur-base.png").unlink(missing_ok=True) # Obsolete golden-fur test copy.
     for obsolete in ("post-office.png","inn-door.png","map-inn.png","map-post-office.png",
-                     "map-plaza-fountain.png","map-signpost.png","map-bench.png"):
+                     "map-plaza-fountain.png","map-signpost.png","map-bench.png","village-map.png"):
         (TARGET/obsolete).unlink(missing_ok=True) # Source originals remain in the HTML art library.
     manifest = {}
     for name, relative in FILES.items():
@@ -119,7 +119,7 @@ def main():
             "approval":"User requested complete front-facing interview sprites for all ten characters.",
             "generation":"Reference-guided image_gen, 2026-10-11; immutable PNG, runtime crops only.","sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
     for name in ("village-stone.png","chest-complete.png","hidden-somsom.png","inn-map.png",
-                 "outdoor-gate.png","outdoor-gate-morning.png","outdoor-fountain.png","outdoor-lane.png","outdoor-post.png","outdoor-inn.png","village-map.png"):
+                 "outdoor-gate.png","outdoor-gate-morning.png","outdoor-fountain.png","outdoor-lane.png","outdoor-post.png","outdoor-inn.png","village-overview.png"):
         src=ROOT/"art"/name
         shutil.copyfile(src,TARGET/name)
         manifest[name]={"source":"experiments/renpy-ch1/art/"+name,"generation":"User-requested reference-guided image_gen, 2026-10-11","sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
@@ -127,6 +127,44 @@ def main():
         src=ROOT/"audio"/name
         shutil.copyfile(src,TARGET/name)
         manifest[name]={"source":"experiments/renpy-ch1/audio/"+name,"composition":"Original 116 BPM C major arrangement; licensed FluidR3 recorded instruments; compose_town.py","sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
+    # New recurring residents have a front interview and a separate work pose.
+    # Immutable generated sheet; only runtime Crop metadata is produced here.
+    future=ROOT/"art"/"future-villagers-v3.png"
+    shutil.copyfile(future,TARGET/future.name)
+    future_image=Image.open(future)
+    assert future_image.mode=="RGBA" and future_image.size==(1536,1024)
+    future_alpha=future_image.getchannel("A")
+    assert future_alpha.getpixel((0,0))<=3 and future_alpha.getpixel((1535,1023))<=3
+    solid=future_alpha.point(lambda a:255 if a>20 else 0)
+    gaps=[y for y in range(450,551) if solid.crop((0,y,1536,y+1)).getbbox() is None]
+    assert gaps,"Interview and activity rows must have a transparent separating gap"
+    row_edges=(0,gaps[len(gaps)//2],1024)
+    for column,person in enumerate(("elder","bodum","workshop")):
+        entry={}
+        bounds=[]
+        for row in range(2):
+            x,y=column*512,row_edges[row]
+            height=row_edges[row+1]-y
+            region=future_alpha.crop((x,y,x+512,y+height))
+            bbox=region.point(lambda a:255 if a>20 else 0).getbbox()
+            assert bbox and bbox[0]>3 and bbox[1]>3 and bbox[2]<509 and bbox[3]<height-3,(person,row,bbox)
+            bounds.append([x+bbox[0],y+bbox[1],bbox[2]-bbox[0],bbox[3]-bbox[1]])
+        normal=dict(file="assets/"+future.name,crop=bounds[0])
+        entry["world"]=dict(file="assets/"+future.name,crop=bounds[1])
+        x,y,w,h=bounds[0]
+        head_h=round(h*(.48 if person=="workshop" else .34))
+        head=future_alpha.crop((x,y,x+w,y+head_h)).point(lambda a:255 if a>20 else 0).getbbox()
+        assert head,(person,"head")
+        avatar=dict(file="assets/"+future.name,crop=[x+head[0],y+head[1],head[2]-head[0],head[3]-head[1]])
+        for state in ("neutral","thinking","distressed","expressive"):
+            entry[state]=normal
+            entry["interview_"+state]=normal
+            entry["avatar_"+state]=avatar
+        cast[person]=entry
+    manifest[future.name]={"source":"experiments/renpy-ch1/art/"+future.name,
+        "approval":"User requested more outdoor characters from future episodes; original approved cast is preserved.",
+        "generation":"image_gen new recurring cast and reference-guided sprite layout, 2026-10-12; one interview expression and one separate activity pose per resident.",
+        "sha256":hashlib.sha256(future.read_bytes()).hexdigest()}
     (TARGET / "cast.json").write_text(json.dumps(cast, ensure_ascii=False, indent=2))
     source = json.loads((ROOT / 'game/chapter-source.json').read_text())
     assert source['sha256'] == hashlib.sha256((REPO/source['source']).read_bytes()).hexdigest(), 'Chapter source changed; refresh the captured source data before building.'

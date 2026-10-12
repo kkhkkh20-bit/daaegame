@@ -11,7 +11,7 @@ async def _native(trial, source):
 
 
 async def check_topic_actor(trial, screenname):
-    assert screenname in ("arrival_questions", "source_questions")
+    assert screenname in ("arrival_questions", "source_questions", "village_contact_questions")
     result = await _native(trial, """
 actor = renpy.exports.get_widget(%r, 'topic_actor')
 screen = renpy.exports.get_screen(%r)
