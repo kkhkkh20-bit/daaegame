@@ -86,7 +86,7 @@ label winter_entry_reason:
         "명부를 쓴 사람이 범인이라고 단정한다":
             call winter_lines([("guard","누가 왜 틀렸는지는 아직 모릅니다. 저도 전달받은 명부예요."),("dad","그렇군요. 지금 바로 확인할 수 있는 내용부터 정정합시다.")],"entry_blame_wrong")
             jump winter_entry_loop
-    call winter_lines([("dad","미등록이 아닙니다. 원본의 동반 가족을 옮겨 적지 않은 겁니다."),("guard","……인원 두 명. 보증번호 유지. 정정 사유는 원본 대조."),("dad","가족은 보증인에게 함께 인계하는 규정도 적용해 주세요."),("guard","여관으로 함께 가십시오. 정정 사본도 드리겠습니다."),("karo","제가 짐까지 같이 옮길게요."),("guard","보증은 열나흘째 공동 심의까지입니다. 그 전에 갱신하지 못하면 다시 확인합니다."),("daram","이제 손 놔도 돼?"),("dad","문 나갈 때까진 잡고 있자.")],"entry_won")
+    call winter_lines([("dad","미등록이 아닙니다. 원본의 동반 가족을 옮겨 적지 않은 겁니다."),("guard","……인원 두 명. 보증번호 유지. 정정 사유는 원본 대조."),("dad","가족은 보증인에게 함께 인계하는 규정도 적용해 주세요."),("guard","여관으로 함께 가십시오. 정정 사본도 드리겠습니다."),("karo","제가 짐까지 같이 옮길게요."),("guard","해 지기 전에 여관으로 들어가세요. 밤에는 문을 열어 주지 않습니다."),("daram","이제 손 놔도 돼?"),("dad","문 나갈 때까진 잡고 있자.")],"entry_won")
     $ winter=winter_flag(winter,"entry_corrected")
     $ winter_entry=False
     call winter_scene("front","겨울잠 여관 · 접수대","calm")

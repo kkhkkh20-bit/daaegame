@@ -215,7 +215,7 @@ screen winter_end():
     add Solid("#102527f5")
     $ titles={"truth":"함께 겨울을 넘는 사람들","family":"세 사람의 발자국","exposure":"멈춰 선 이송","flight":"비어 있는 자리","separated":"닫힌 문"}
     text titles[winter["ending"]] xpos 70 ypos 65 size 45 color "#edcf94"
-    text "겨울의 두 주 · 첫 번째 이야기" xpos 70 ypos 126 size 22
+    text "눈에 갇힌 마을 · 첫 번째 이야기" xpos 70 ypos 126 size 22
     viewport:
         xpos 70 ypos 185 xsize 1120 ysize 360 mousewheel True draggable True
         vbox:
@@ -229,7 +229,7 @@ screen winter_end():
             text "누구의 말을 믿었는지, 누구 곁에 남았는지에 따라 마을의 마지막 밤이 달라집니다." size 19 color "#bac9c5" xsize 1030
     hbox:
         xpos 70 ypos 600 spacing 30
-        textbutton "다른 두 주 시작하기" action Start("winter_start") style "winter_button"
+        textbutton "처음부터 다시 시작하기" action Start("winter_start") style "winter_button"
         textbutton "처음 화면으로" action MainMenu(confirm=False) style "winter_button"
 
 
@@ -237,15 +237,18 @@ screen winter_calendar():
     modal True
     zorder 70
     default selected_day=winter["day"]
+    default calendar_week=(winter["day"]-1)//7
     add Solid("#0b191af7")
-    text "다람의 수첩 · 겨울의 두 주" xpos 45 ypos 28 size 34 color "#edcf94"
+    text "다람의 수첩 · 달력" xpos 45 ypos 28 size 34 color "#edcf94"
     text "들은 약속만 적어 뒀어. 날짜를 누르면 다시 볼 수 있어." xpos 45 ypos 77 size 21 color "#bdccc7"
+    textbutton "이전 주" xpos 850 ypos 75 xsize 175 ysize 46 style "winter_button" text_size 20 padding (12,8) sensitive calendar_week>0 action [SetScreenVariable("selected_day",(calendar_week-1)*7+1),SetScreenVariable("calendar_week",calendar_week-1)]
+    textbutton "다음 주" xpos 1045 ypos 75 xsize 175 ysize 46 style "winter_button" text_size 20 padding (12,8) action [SetScreenVariable("selected_day",(calendar_week+1)*7+1),SetScreenVariable("calendar_week",calendar_week+1)]
     for col,weekday in enumerate(("월","화","수","목","금","토","일")):
         text weekday xpos 69+col*111 ypos 132 size 23
-    for day in range(1,15):
+    for offset,day in enumerate(range(calendar_week*7+1,calendar_week*7+15)):
         $ notes=winter_calendar_notes(winter,day)
         button:
-            xpos 40+((day-1)%7)*111 ypos 172+((day-1)//7)*135 xsize 103 ysize 124
+            xpos 40+(offset%7)*111 ypos 172+(offset//7)*135 xsize 103 ysize 124
             padding (10,10) background Solid("#4e6e69" if day==selected_day else "#243c40") hover_background Solid("#496774")
             action SetScreenVariable("selected_day",day)
             vbox:

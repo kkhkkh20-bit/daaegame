@@ -19,7 +19,7 @@ init 40 python:
         return ("월","화","수","목","금","토","일")[(s["day"]-1)%7]
 
     def winter_clock(s):
-        return "%d일째 (%s) · %s · 심의까지 %d일"%(s["day"],winter_weekday(s),winter_period_name(s),14-s["day"])
+        return "%d일째 (%s) · %s"%(s["day"],winter_weekday(s),winter_period_name(s))
 
     def winter_upgrade(s):
         n=winter_copy.deepcopy(s)
@@ -133,7 +133,7 @@ init 40 python:
 
     def winter_missing(s):
         checks=[("엄마와 접촉",winter_has(s,"mother")),("엄마의 은신처 보호",winter_has(s,"mother_secure")),
-            ("11일 안에 엄마와 합류",s["mother_day"] is not None and s["mother_day"]<=11),
+            ("엄마와 함께 밤의 측정을 준비할 시간 확보",s["mother_day"] is not None and s["mother_day"]<=11),
             ("누비와 가족 보호·공개 증언 허락",s["witness"]=="safe" and winter_has(s,"permission")),
             ("밤별 측정을 마친 비상 운용과 공동 난방",winter_has(s,"repair") and winter_has(s,"fuel") and (s.get("version",3)<4 or s.get("records",{}).get("repair",{}).get("day",99)<=11)),
             ("보행 탈출로",winter_has(s,"escape")),

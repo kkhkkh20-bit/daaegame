@@ -5,6 +5,11 @@ from playwright.async_api import async_playwright
 from qa_winter_web import WinterTrial,D,W,R
 from qa_web import AUDIO_PROBE
 class RevisionTrial(WinterTrial):
+ async def state(self):
+  st=await super().state()
+  if not hasattr(self,'seen_lines'):self.seen_lines=set()
+  if st.get('line'):self.seen_lines.add(st['line'].split(':')[0])
+  return st
  async def advance(self,until='hub',limit=450):
   for _ in range(limit):
    s=await self.state()
@@ -104,7 +109,12 @@ async def run(browser,width,height,full):
  for _ in range(6):
   await t.click(750,690);typing |= bool((await t.state())['typing'])
  assert typing,'No typing sound during carriage dialogue'
- await t.click(900,113);await t.wait('calendar');await t.shot('calendar-first-day');await t.click(1140,650)
+ await t.click(900,113);await t.wait('calendar');await t.shot('calendar-first-day')
+ await t.click(1135,98);await t.click(1135,98)
+ calendar_week=await p.evaluate('(code)=>renpy_exec(code)', 'result=renpy.get_screen("winter_calendar").scope.get("calendar_week")')
+ assert calendar_week==2
+ assert (await t.state())['state']['day']==1
+ await t.shot('calendar-beyond-fourteen');await t.click(1140,650)
  await t.advance('entry');await t.shot('gate-investigation')
  for x in (177,459,741):
   await t.click(x,650);await t.advance('entry')
@@ -149,10 +159,12 @@ async def run(browser,width,height,full):
     st=await t.state();assert st['state']['location']=='passage' and 'passage_known' in st['state']['facts'] and 'map' not in st['state']['evidence']
     await t.shot('first-run-secret-passage')
  expected='truth' if full else 'separated';st=await t.state();assert st['ending'] and st['state']['ending']==expected,st
+ assert st['state']['period']==2 and 'stone_crisis' in t.seen_lines
+ if full:assert {'last_counter','prepared_answer'}<=t.seen_lines
  await t.shot(expected+'-ending')
  assert not t.errors and not t.bad and not t.failed,(t.errors,t.bad,t.failed)
  await c.close()
- return {'viewport':[width,height],'ending':expected,'entry_wrong_proof_rejected':True,'calendar_from_carriage':True,'two_witnesses_verified':True,'save_reload':True,'actual_audio_output':True,'typing_sound':typing,'first_run_timed_route':not full,'real_input_only':True,'errors':t.errors}
+ return {'viewport':[width,height],'ending':expected,'entry_wrong_proof_rejected':True,'calendar_from_carriage':True,'calendar_beyond_fourteen':True,'crisis_before_final':True,'final_evening_clock':True,'prepared_counterargument':full,'two_witnesses_verified':True,'save_reload':True,'actual_audio_output':True,'typing_sound':typing,'first_run_timed_route':not full,'real_input_only':True,'errors':t.errors}
 async def main():
  artifact=R.parents[1]/'preview/renpy-ch1-test/game.zip'
  tested_hash=hashlib.sha256(artifact.read_bytes()).hexdigest()

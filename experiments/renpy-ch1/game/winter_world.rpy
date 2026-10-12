@@ -150,7 +150,6 @@ init 46 python:
         if day==1:notes.append(("겨울잠 여관", "엄마의 편지에 적힌 곳. 난로 옆에서 만나기로 했다."))
         if day==3 and s["day"]>=2:notes.append(("할머니의 심의", "저녁. 여관 보증을 지킬 근거를 가져가야 한다."))
         if day==6 and s["day"]>=6:notes.append(("이송 기록 공개 접수", "저녁. 원본을 여러 사람 앞에서 남길 기회."))
-        if day==14 and winter_has(s,"entry_corrected"):notes.append(("체류 보증 심의", "가족 보증이 끝나는 날. 함께 남거나 떠날 길을 준비해야 한다."))
         if "repair" in s["records"] and s["records"]["repair"]["day"] < day <= s["records"]["repair"]["day"]+3:
             notes.append(("엄마의 측정", "밤. 비상 운용을 위해 하루의 출력 변화를 비교한다."))
         if (day-1)%7==1 and winter_has(s,"service_hint"):
@@ -173,7 +172,7 @@ init 46 python:
             return [("nabi","저 이불 내가 꿰맸다고 몇 번을 말해."),("seryeon","그 말씀도 듣겠습니다. 돈이 비는 문제와 함께요."),("granny","손님 이름을 내놓으면 없던 일로 해 줄 겁니까?"),("seryeon","그런 약속은 못 합니다."),("dad","이름을 넘기기 전에, 혐의 자체부터 확인합시다.")]
         if hearing=="witness":
             return [("seryeon","사본은 모두 반납해 주세요. 주민 이름이 적혀 있습니다."),("dad","돌려주면 이송된 사람이 어디로 갔는지 누가 확인합니까?"),("neoul","여기서 대조한 원본 번호는 남기겠습니다. 실제 목적지를 보죠.")]
-        return [("seryeon","체류 보증은 오늘까지입니다. 다음 절차로 넘어가겠습니다."),("dad","그 절차에서 사라진 사람들이 있습니다. 그 행방부터 답해 주십시오."),("neoul","문은 아직 열지 마세요. 이 자리에서 확인하겠습니다.")]
+        return [("seryeon","돌이 꺼져 가고 있습니다. 명부에 오른 분들은 경비를 따라가 주세요."),("granny","내 손님을 내주지는 않겠어요."),("seryeon","여관 하나의 일이 아닙니다. 마을 전체가 얼어붙게 생겼어요."),("dad","앞서 데려간 사람들은 어디 있습니까? 그 사람들도 마을을 위해 간다고 했겠지요."),("neoul","아직 문 열지 마세요. 어디로 데려가는지부터 확인하겠습니다.")]
 
     def winter_observation_lines(s,place,key):
         repeats="observed:"+place+":"+key in s.get("seen",[])

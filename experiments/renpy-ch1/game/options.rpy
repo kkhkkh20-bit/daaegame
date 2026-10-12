@@ -1,4 +1,4 @@
-define config.name = "다람탐정 · 겨울의 두 주"
+define config.name = "다람탐정 · 눈에 갇힌 마을"
 define config.version = "0.9.1"
 # Literal early definition selects the persistent web save mount.
 define config.save_directory = "daaegame-renpy-village-ch1-06"
