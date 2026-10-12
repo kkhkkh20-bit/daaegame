@@ -107,12 +107,12 @@ class SourceTrial(Trial):
   await self.advance_until('village_place');st=await self.state()
   assert st['village_location']=='gate' and not st['village_map'] and not st['met']
   assert st['music']=='assets/town-bright.mp3' and st['pulse'] is None and not st['cold']
-  assert any(p['id'].startswith('COLD_') and p['t']=='……죽었어?' for p in st['lines'])
+  assert not any(p['id'].startswith('COLD_') for p in st['lines'])
   await self.shot('gate-first-control');await self.arrival_action('map');await self.shot('village-map')
   st=await self.state();assert not st['inventory'] and not st['post_closed']
   carriage=[p['t'] for p in st['lines'] if p['id'].startswith('V_CARRIAGE')]
   assert carriage and not any('엄마' in p or '편지' in p or '탐정' in p for p in carriage)
-  checks=['criminal_cold_hook_restored_without_face','cold_heartbeat_stops_before_carriage','immediate_control_at_gate','friendly_carriage_without_mother_exposition','bright_new_town_theme','map_before_case_no_evidence']
+  checks=['default_opening_starts_with_carriage','no_cold_heartbeat_in_village','immediate_control_at_gate','friendly_carriage_without_mother_exposition','bright_new_town_theme','map_before_case_no_evidence']
   if rich:
    await self.arrival_move('inn');await self.arrival_action('stay');assert not (await self.state())['post_closed'];checks.append('click_grandmother_and_room_topic_before_checkin')
    for key in ('gate','fountain','lane','inn'):

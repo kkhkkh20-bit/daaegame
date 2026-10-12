@@ -31,7 +31,7 @@ default source_claim_progress = {}
 default source_question_revisions = {}
 default source_question_read_revision = "base"
 
-define source_thought = Character(None,cb_who_id="dad")
+define source_thought = Character(None,cb_who_id=None)
 define source_character = source_thought
 image source clock = Composite((512,512),(0,0),"assets/clock-base.png",(0,0),"assets/clock-hands.png")
 
@@ -253,38 +253,44 @@ label start:
 label source_scenes(scenes, scene_index=0):
     while scene_index < len(scenes):
         $ source_sc = scenes[scene_index]
-        $ source_scene, place, clock_text = source_sc.get("sid",""),source_sc["title"],source_sc["sub"]
-        if stage == "ending":
-            $ village_event("ending_"+source_scene)
-        $ source_camera = source_sc.get("camera","carriage" if source_scene=="P1" else "village" if source_scene=="P2" else "stage")
-        $ source_background = source_sc.get("bg") or source_sc["loc"]
-        $ source_night = None
-        $ source_stage_person = SOURCE_ALIAS.get(source_sc.get("who"),source_sc.get("who"))
-        hide visitor
-        window hide
-        scene black with Dissolve(.15)
-        $ source_pulse(False)
-        $ source_score(source_sc.get("music"))
-        $ renpy.pause(.3,hard=True)
-        scene expression source_picture() with Dissolve(.22)
+        if source_sc.get("sid") == "V_CARRIAGE":
+            call scene_present(source_sc)
+        else:
+            $ source_scene, place, clock_text = source_sc.get("sid",""),source_sc["title"],source_sc["sub"]
+            if stage == "ending":
+                $ village_event("ending_"+source_scene)
+            $ source_camera = source_sc.get("camera","carriage" if source_scene=="P1" else "village" if source_scene=="P2" else "stage")
+            $ source_background = source_sc.get("bg") or source_sc["loc"]
+            $ source_night = None
+            $ source_stage_person = SOURCE_ALIAS.get(source_sc.get("who"),source_sc.get("who"))
+            hide visitor
+            window hide
+            scene black with Dissolve(.15)
+            $ source_pulse(False)
+            $ source_score(source_sc.get("music"))
+            $ renpy.pause(.3,hard=True)
+            scene expression source_picture() with Dissolve(.22)
         call source_lines(source_sc["items"],source_scene)
         $ scene_index += 1
     return
 
 label source_direction(direction):
     $ source_dir = source_directions(direction)
-    if source_dir.get("night") in ("home","out","return"):
-        $ source_pulse(False)
-    if "music" in source_dir:
-        $ source_score(source_dir["music"])
-    if "camera" in source_dir or "night" in source_dir:
-        window hide
-        hide visitor
-        scene black with Dissolve(.12)
-        $ source_camera = source_dir.get("camera","stage")
-        $ source_night = source_dir.get("night")
-        $ renpy.pause(.3,hard=True)
-        scene expression source_picture() with Dissolve(.18)
+    if source_scene == "V_CARRIAGE" and ("camera" in source_dir or "night" in source_dir):
+        call scene_present(scene_direction_spec(source_dir))
+    else:
+        if source_dir.get("night") in ("home","out","return"):
+            $ source_pulse(False)
+        if "music" in source_dir:
+            $ source_score(source_dir["music"])
+        if "camera" in source_dir or "night" in source_dir:
+            window hide
+            hide visitor
+            scene black with Dissolve(.12)
+            $ source_camera = source_dir.get("camera","stage")
+            $ source_night = source_dir.get("night")
+            $ renpy.pause(.3,hard=True)
+            scene expression source_picture() with Dissolve(.18)
     if source_dir.get("who") == "none":
         $ source_stage_person = None
         hide visitor
