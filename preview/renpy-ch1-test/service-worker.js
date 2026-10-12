@@ -1,4 +1,4 @@
-var cacheName = '다람탐정-열세-번째-침대';
+var cacheName = '다람탐정-겨울의-열흘';
 
 /* Start the service worker and cache all of the app's content or use the existing one */
 self.addEventListener('install', function (e) {

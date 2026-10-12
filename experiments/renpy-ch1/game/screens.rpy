@@ -47,18 +47,19 @@ screen topic_banner(caption, topic_action, done=False, enabled=True):
 
 screen main_menu():
     tag menu
-    add Transform("assets/outdoor-gate.png",size=(1280,720))
+    add Transform("assets/winter-gate.webp",size=(1280,720))
     add Solid("#120e0a66")
     frame:
         xpos 90 ypos 185 xsize 640
         vbox:
             spacing 20
             text "다람탐정" size 58 color "#ffdc91"
-            text "열세 번째 침대" size 34
-            text "1장 · 마을 탐색 시험판" size 22 color "#c6b699"
+            text "겨울의 열흘" size 34
+            text "10일 생존 추리 · 시나리오 개발판" size 22 color "#c6b699"
             textbutton "처음부터" action Start() xsize 470
             textbutton "이어하기" action ShowMenu("load") xsize 470
-            text "부녀의 여행 · 주민과의 첫 만남\n조사 · 원탁 회의 · 최종 대결" size 21 color "#c6b699"
+            textbutton "이전 1장 시험판" action Start("legacy_start") xsize 470
+            text "엄마를 찾아 가족이 함께 탈출한다." size 20 color "#c6b699"
 
 screen say(who,what):
     $ has_portrait = dialogue_speaker in CAST

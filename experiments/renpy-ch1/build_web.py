@@ -14,7 +14,7 @@ def theme(destination):
     index = destination / "index.html"
     html = index.read_text()
     html = html.replace('lang="en-us"', 'lang="ko"')
-    html = html.replace('src="web-presplash.jpg"', 'src="loading-scene.png"')
+    html = html.replace('src="web-presplash.jpg"', 'src="loading-scene.webp"')
     html = html.replace('<meta name="theme-color" content="#000" />', '<meta name="theme-color" content="#211a16" />')
     css = """
     <style>
@@ -45,7 +45,7 @@ def theme(destination):
     observer.observe(document.body,{childList:true});
     </script></body>""")
     index.write_text("\n".join(line.rstrip() for line in html.splitlines()) + "\n")
-    shutil.copyfile(ROOT / "game/assets/outdoor-gate.png", destination / "loading-scene.png")
+    shutil.copyfile(ROOT / "game/assets/winter-gate.webp", destination / "loading-scene.webp")
     shutil.copyfile(REPO / "preview/ch1-gpt-20261008/art/ui/galmuri11.woff2", destination / "Galmuri11.woff2")
     shutil.copyfile(ROOT / "game/assets/font-license.txt", destination / "Galmuri-OFL.txt")
     (destination / "web-presplash.jpg").unlink(missing_ok=True)
@@ -59,7 +59,7 @@ def theme(destination):
     catalog_path = destination / "pwa_catalog.json"
     catalog = json.loads(catalog_path.read_text())
     catalog["files"] = [f for f in catalog["files"] if (destination / f).exists()]
-    catalog["files"] += ["loading-scene.png", "Galmuri11.woff2", "Galmuri-OFL.txt"]
+    catalog["files"] += ["loading-scene.webp", "Galmuri11.woff2", "Galmuri-OFL.txt"]
     catalog_path.write_text(json.dumps(catalog))
     report = {"engine": "Ren'Py 8.5.3", "files": {}}
     for file in sorted(destination.rglob("*")):

@@ -1,5 +1,5 @@
-define config.name = "다람탐정 · 열세 번째 침대"
-define config.version = "0.8.0"
+define config.name = "다람탐정 · 겨울의 열흘"
+define config.version = "0.9.0"
 # Literal early definition selects the persistent web save mount.
 define config.save_directory = "daaegame-renpy-village-ch1-06"
 
@@ -93,7 +93,7 @@ init python:
             renpy.music.stop(channel="typing")
 
     def stop_menu_typing():
-        if any(renpy.get_screen(s) for s in ("pause_menu", "save", "load", "evidence_book")):
+        if any(renpy.get_screen(s) for s in ("pause_menu", "save", "load", "evidence_book", "winter_evidence", "winter_confirm", "winter_hub", "winter_board")):
             renpy.music.stop(channel="typing")
     config.interact_callbacks.append(stop_menu_typing)
     config.character_callback = text_audio
