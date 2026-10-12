@@ -214,7 +214,16 @@ async def run(browser,out,w,h,discovery_only=False):
  # One route leaves a clue for the meeting's intended return to investigation.
  if w<1000:await t.interact(295,530)
  await t.save();saved=(await t.state())['inventory'];await pg.reload();await pg.wait_for_function("typeof renpy_exec==='function'",timeout=60000);await t.state();await t.click(320,500);await t.wait('loading');await t.click(760,245);await t.wait('roam');assert (await t.state())['inventory']==saved;checks.append('source_save_survives_refresh')
- await t.move('hall');await t.interact(430,170);await t.question('C07');await t.question('C13');await t.move('dotoroom');await t.interact(340,495);await t.move('plaza');await t.question('T_ka2');await t.move('dining');await t.question('T_se4');await t.move('front');assert any(p['id']=='seryeon' for p in (await t.state())['residents']);checks.append('heard_karo_fact_unlocks_question_and_changes_seryeon_location');await t.move('bed13');await t.click(964,635);await t.advance_until('debate');await t.shot('meeting');assert (await t.state())['phase']==1
+ await t.move('hall');await t.interact(430,170);await t.question('C07');await t.question('C13');await t.move('dotoroom');await t.interact(340,495);await t.move('plaza');await t.question('T_ka2');await t.move('dining');await t.question('T_se4');await t.move('front');assert any(p['id']=='seryeon' for p in (await t.state())['residents']);checks.append('heard_karo_fact_unlocks_question_and_changes_seryeon_location');await t.move('bed13');await t.click(964,635);await t.advance_until('council')
+ await t.shot('hostile-council')
+ for ev in ('C01','C12'):
+  await t.click(228,547);await t.wait('evidence')
+  st=await t.state();index=st['inventory'].index(ev)
+  for _ in range(index//6):await t.click(286,576)
+  await t.click(199+(index%6%2)*230,240+(index%6//2)*110)
+  await t.advance_until('council' if ev=='C01' else 'debate')
+ checks.append('hostile_inference_deferred_by_seal_and_unverified_count')
+ await t.shot('meeting');assert (await t.state())['phase']==1
  await check_roundtable_foreground(t)
  checks.append('topic_faces_visible_and_foreground_resident_not_duplicated')
  # A wrong record cannot solve the breathing question, and pressing is required.
@@ -291,6 +300,12 @@ async def run(browser,out,w,h,discovery_only=False):
    else:
     for v in value:collect(v)
  collect(EP);collect(ARRIVAL);collect(TIMELINE);collect(DIALOGUE)
+ collect(json.loads((ROOT/'game/council-issue.json').read_text()))
+ # Authored literal interactions belong to the new social prototype; they are
+ # read from its source, rather than duplicating dialogue in this test.
+ for match in __import__('re').finditer(r'call source_lines\((\[\[.*?\]\])', (ROOT/'game/council_issue.rpy').read_text()):
+  try:collect(__import__('ast').literal_eval(match.group(1)))
+  except (ValueError,SyntaxError):pass
  for person,line in TIMELINE["hesitant_votes"].items():
   raw="geokkuri" if person=="bami" else "wanggu" if person=="neoul" else person
   allowed.add((raw,line))

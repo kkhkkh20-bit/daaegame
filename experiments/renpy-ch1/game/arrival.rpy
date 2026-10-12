@@ -152,6 +152,11 @@ label arrival_place:
     $ arrival_action = _return
     if arrival_action == "map":
         jump arrival_roam
+    if arrival_action == "nearby":
+        call screen village_nearby_residents(arrival_location)
+        if _return != "back":
+            call village_contact(_return)
+        jump arrival_place
     if arrival_action == "stay":
         jump arrival_inn
     if arrival_action == "stone":
@@ -309,6 +314,10 @@ screen arrival_place():
             xpos 380 ypos 155 xsize 190 ysize 315
             background None hover_background None padding (0,0)
             sensitive ready action Return("stone")
+    if village_optional_people(arrival_location):
+        textbutton ("근처 주민 · %d명"%len(village_optional_people(arrival_location))):
+            xpos 40 ypos 612 xsize 280 ysize 64
+            sensitive ready action Return("nearby")
     hbox:
         xpos 620 ypos 612 spacing 18
         textbutton "이동하기" sensitive ready action Return("map") xsize 220 ysize 64

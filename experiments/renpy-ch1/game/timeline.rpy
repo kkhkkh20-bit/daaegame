@@ -35,7 +35,7 @@ init 25 python:
         return text
 
     def village_supporters():
-        return [p for p in TIMELINE["voters"] if store.village_trust.get(p,-1)>=2]
+        return [p for p in TIMELINE["voters"] if store.village_trust.get(p,-1)>=2 or p in getattr(store,"council_confirmed_support",[])]
 
     def village_update_votes():
         store.source_votes={("geokkuri" if p=="bami" else "wanggu" if p=="neoul" else p):("seryeon" if p in village_supporters() else "기권") for p in TIMELINE["voters"]}
@@ -185,18 +185,32 @@ label village_support_hearing:
     $ village_hearing_active = True
     $ village_update_votes()
     while len(village_supporters()) < 4:
-        call screen source_choice("아직 확신하지 못한 주민 · 누구의 걱정부터 들을까?",[dict(label=source_name(p),key=p) for p in TIMELINE["voters"] if p not in village_supporters()])
+        $ village_support_choices = [dict(label=source_name(p),key=p) for p in TIMELINE["voters"] if p not in village_supporters()]+[dict(label="다른 사람의 말을 듣는다",key="listen"),dict(label="다시 조사한다",key="return")]
+        call screen source_choice("아직 확신하지 못한 주민 · 누구의 걱정부터 들을까?",village_support_choices)
         $ village_hearing_person = _return["key"]
-        $ village_objection = TIMELINE["support"][village_hearing_person]
-        call source_lines([[village_hearing_person,village_objection["ask"]]],"V_SUPPORT_ASK")
-        call screen source_evidence(present=True)
-        if _return == "cancel":
-            pass
-        elif _return in village_objection["ids"]:
-            call source_lines([[village_hearing_person,village_objection["ok"]]],"V_SUPPORT_OK")
-            $ village_relationship("support_"+village_hearing_person,[village_hearing_person],2)
-            $ village_update_votes()
+        if village_hearing_person == "return":
+            $ village_hearing_active,village_hearing_person = False,None
+            return "investigate"
+        elif village_hearing_person == "listen":
+            $ council_support_listens += 1
+            if council_support_listens >= 2:
+                call source_lines([["wanggu","지목에 동의한 사람이 부족합니다. 지금은 결정을 미루겠습니다."],["seryeon","저도 떠나야 합니다. 아직 결정 못 하신 거죠?"],["det1","아빠, 누가 왜 망설이는지부터 다시 듣자."]],"V_SUPPORT_ADVERSE")
+                $ village_hearing_active,village_hearing_person = False,None
+                $ council_support_listens = 0
+                if "support_adverse" not in council_history:
+                    $ council_history.append("support_adverse")
+                return "investigate"
+            call source_lines([["wanggu","다른 의견은 없습니까? 단정하고 싶지 않은 분들도 말해 주십시오."]],"V_SUPPORT_LISTEN")
         else:
-            call source_lines([[village_hearing_person,village_objection["wrong"]]],"V_SUPPORT_RETRY")
+            $ village_objection = TIMELINE["support"][village_hearing_person]
+            call source_lines([[village_hearing_person,village_objection["ask"]]],"V_SUPPORT_ASK")
+            call screen source_evidence(present=True)
+            if _return == "cancel":
+                pass
+            elif council_confirm_support(village_hearing_person,_return):
+                call source_lines([[village_hearing_person,village_objection["ok"]]],"V_SUPPORT_OK")
+                $ village_update_votes()
+            else:
+                call source_lines([[village_hearing_person,village_objection["wrong"]]],"V_SUPPORT_RETRY")
     $ village_hearing_active,village_hearing_person = False,None
-    return
+    return "supported"
