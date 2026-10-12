@@ -54,8 +54,8 @@ screen main_menu():
         vbox:
             spacing 20
             text "다람탐정" size 58 color "#ffdc91"
-            text "겨울의 열흘" size 34
-            text "10일 생존 추리 · 시나리오 개발판" size 22 color "#c6b699"
+            text "겨울의 두 주" size 34
+            text "14일 생존 추리 · 시나리오 개발판" size 22 color "#c6b699"
             textbutton "처음부터" action Start() xsize 470
             textbutton "이어하기" action ShowMenu("load") xsize 470
             textbutton "이전 1장 시험판" action Start("legacy_start") xsize 470

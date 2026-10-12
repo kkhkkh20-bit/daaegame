@@ -4,9 +4,45 @@ init 40 python:
     WINTER = json.load(renpy.file("winter-story.json"))
 
     def winter_new():
-        return dict(version=2,day=1,ap=3,location="inn",evidence=[],facts=[],done=[],
+        return dict(version=3,day=1,period=0,location="inn",evidence=[],facts=[],done=[],
             records={},log=[],witness="available",mother_day=None,marks=[],ending=None,
             first_result=None,second_result=None)
+
+    def winter_period(s):
+        # ap is read only for saves written before the calendar migration.
+        return max(0,min(3,s.get("period",3-s.get("ap",3))))
+
+    def winter_period_name(s):
+        return ("오전","오후","저녁","저녁 일정 마침")[winter_period(s)]
+
+    def winter_weekday(s):
+        return ("월","화","수","목","금","토","일")[(s["day"]-1)%7]
+
+    def winter_clock(s):
+        return "%d일째 (%s) · %s · 심의까지 %d일"%(s["day"],winter_weekday(s),winter_period_name(s),14-s["day"])
+
+    def winter_upgrade(s):
+        n=winter_copy.deepcopy(s)
+        if n.get("version",1)<2 and "inn_registered" not in n["facts"]:
+            n["facts"].append("inn_registered")
+        n["period"]=winter_period(n)
+        n.pop("ap",None)
+        n["version"]=3
+        return n
+
+    def winter_time_target(s):
+        return ("오후","저녁","저녁 일정 마침","저녁 일정 마침")[winter_period(s)]
+
+    def winter_wait(s):
+        n=winter_copy.deepcopy(s)
+        if winter_period(n)<3:
+            before=winter_period(n)
+            n["period"]=before+1
+            n["log"].append(dict(day=n["day"],action="wait",cost=1,period=before))
+        return n
+
+    def winter_can_act(s,key):
+        return winter_visible(s,key) and (WINTER["actions"][key]["cost"]==0 or winter_period(s)<3)
 
     def winter_has(s,key):
         return key in s["evidence"] or key in s["facts"]
@@ -28,19 +64,20 @@ init 40 python:
         n=winter_copy.deepcopy(s)
         if not winter_visible(s,key): return n
         a=WINTER["actions"][key]
-        if n["ap"]<a["cost"]: return n
-        n["ap"]-=a["cost"]
+        if not winter_can_act(s,key): return n
+        before=winter_period(n)
+        n["period"]=before+a["cost"]
         n["done"].append(key)
         for e in a["give"]:
             if e not in n["evidence"]: n["evidence"].append(e)
-            n["records"][e]=dict(day=n["day"],source=key,place=a["place"])
+            n["records"][e]=dict(day=n["day"],period=before,source=key,place=n["location"])
         for f in a["flags"]:
             if f not in n["facts"]: n["facts"].append(f)
         if key in ("protect","rescue"): n["witness"]="safe"
         if key=="mother":
             n["mother_day"]=n["day"]
             n["facts"].append("mother_secure" if winter_has(n,"timing") else "mother_traced")
-        n["log"].append(dict(day=n["day"],action=key,cost=a["cost"]))
+        n["log"].append(dict(day=n["day"],period=before,action=key,cost=a["cost"]))
         return n
 
     def winter_flag(s,key):
@@ -56,9 +93,10 @@ init 40 python:
 
     def winter_next_day(s):
         n=winter_copy.deepcopy(s)
-        if n["day"]>=10:return n
+        if n["day"]>=14:return n
         n["day"]+=1
-        n["ap"]=3
+        n["period"]=0
+        n.pop("ap",None)
         n["location"]="inn"
         if n["day"]==6 and n["witness"]=="available":n["witness"]="detained"
         if n["day"]==8 and n["witness"]=="detained":n["witness"]="dead"
@@ -79,7 +117,7 @@ init 40 python:
         whole={"frame","destination","power","death"}.issubset(proven)
         family=winter_has(s,"mother") and winter_has(s,"mother_secure")
         prepared=all(winter_has(s,k) for k in ("repair","fuel","escape"))
-        if whole and family and prepared and s["witness"]=="safe" and winter_has(s,"permission") and s["mother_day"]<=7:
+        if whole and family and prepared and s["witness"]=="safe" and winter_has(s,"permission") and s["mother_day"]<=11:
             return "truth"
         if family and winter_has(s,"escape"):return "family"
         if {"frame","destination"}.issubset(proven):return "exposure"
@@ -88,7 +126,7 @@ init 40 python:
 
     def winter_missing(s):
         checks=[("엄마와 접촉",winter_has(s,"mother")),("엄마의 은신처 보호",winter_has(s,"mother_secure")),
-            ("7일 안에 엄마와 합류",s["mother_day"] is not None and s["mother_day"]<=7),
+            ("11일 안에 엄마와 합류",s["mother_day"] is not None and s["mother_day"]<=11),
             ("누비와 가족 보호·공개 증언 허락",s["witness"]=="safe" and winter_has(s,"permission")),
             ("비상 운용과 공동 난방",winter_has(s,"repair") and winter_has(s,"fuel")),
             ("보행 탈출로",winter_has(s,"escape")),

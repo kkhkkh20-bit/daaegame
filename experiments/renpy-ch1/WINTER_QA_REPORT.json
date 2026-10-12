@@ -1,4 +1,5 @@
 {
+  "game_zip_sha256": "e675c31a657441f4779d4cd28b035d2b4f984cff8ce630bd0466c717366317f9",
   "routes": [
     {
       "viewport": [
@@ -23,9 +24,8 @@
       "injected_progress": false
     }
   ],
-  "full_route_build_sha256": "40293eea2c5f8d536c4f424351567a000699303aeb5f732caeb819e45ca245af",
-  "final_build_sha256": "e76cb649ac651febb962f1d8902d76cac094b6878b075c400a593a72dc694919",
-  "final_change_after_full_routes": "World sprite layout only: Buri raised above footer; post Seryeon lowered behind full counter foreground, Doto moved to customer side and rendered in front. Final PC/touch layout and resident-click checks passed; story, evidence, calendar and endings unchanged.",
+  "full_flow_build_sha256": "f9b8597212d0a9f79f1e4568b5adf0eff662f06d733a537ac30b6c8161e65990",
+  "post_full_flow_change": "Only square Bami placement: hang from the existing warm pipe. Calendar, dialogue and evidence rules unchanged.",
   "final_layout_checks": [
     {
       "viewport": [
@@ -50,27 +50,20 @@
       "errors": []
     }
   ],
-  "topic_save_checks": {
+  "calendar_checks": {
+    "days": 14,
+    "scheduled_residents": 11,
+    "free_new_questions": true,
+    "old_ap_save_migration": true,
+    "weekly_event_exceptions": true,
+    "second_week_changed_greeting": true,
+    "one_time_appointment_not_repeated": true
+  },
+  "topic_save_check": {
     "registration_required_for_sleep": true,
     "guard_click_dialogue": true,
     "save_from_questions_restores_actor_place_state": true,
     "runtime_errors": [],
     "injected_progress": false
-  },
-  "rule_checks": {
-    "winter_rules": 20,
-    "scene_groups": 10,
-    "mapped_actions": 28,
-    "physical_objects": 23,
-    "passed": true
-  },
-  "legacy_entry": {
-    "menu_to_village_gate": "passed",
-    "errors": []
-  },
-  "limits": [
-    "Chromium desktop and touch emulation; physical Safari/iPhone not tested.",
-    "Layout fixture advances the day only to inspect Doto; not counted as gameplay.",
-    "Guard has one interview expression; compatibility expression keys alias it."
-  ]
+  }
 }
