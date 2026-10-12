@@ -1,5 +1,5 @@
 {
-  "revision": "0.8.0",
+  "revision": "0.8.1-life",
   "basis": "Original 35 concepts restored as optional draft residents/visitors. Existing approved names win conflicts; historical case secrets stay out of live dialogue.",
   "profiles": {
     "elder": {
@@ -132,6 +132,18 @@
         [
           "det1",
           "네. 저희도 갈게요."
+        ]
+      ],
+      "activity": "별이 뜰 자리를 올려다본다",
+      "personality": "말은 느리지만 약속한 시간은 엄격하다",
+      "greeting": [
+        [
+          "elder",
+          "등 아래로 한 걸음만 옮겨 주겠소. 그쪽에 첫 별이 뜨오."
+        ],
+        [
+          "det0",
+          "여기면 되겠습니까?"
         ]
       ]
     },
@@ -272,6 +284,18 @@
         [
           "det0",
           "잘 가십시오."
+        ]
+      ],
+      "activity": "덮개를 여며 바구니를 든다",
+      "personality": "무뚝뚝하고 남의 몫을 먼저 챙긴다",
+      "greeting": [
+        [
+          "bodum",
+          "그 끈 밟지 마시오. 바구니 덮개가 풀리니."
+        ],
+        [
+          "det0",
+          "아, 죄송합니다."
         ]
       ]
     },
@@ -422,6 +446,18 @@
           "workshop",
           "…고맙습니다."
         ]
+      ],
+      "activity": "등의 유리를 닦는다",
+      "personality": "까칠해 보여도 손으로 먼저 돕는다",
+      "greeting": [
+        [
+          "workshop",
+          "눈부시면 옆으로 서요. 불을 끄면 얼룩이 안 보여서."
+        ],
+        [
+          "det0",
+          "작업 중이셨군요."
+        ]
       ]
     },
     "resident_tori": {
@@ -489,6 +525,18 @@
           "resident_tori",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "발끝으로 작은 동작을 연습한다",
+      "personality": "남 앞에서는 수줍지만 연습은 양보하지 않는다",
+      "greeting": [
+        [
+          "resident_tori",
+          "앗, 보고 계셨어요? 한 번만 더 해 보고요."
+        ],
+        [
+          "det0",
+          "천천히 하세요."
+        ]
       ]
     },
     "resident_bori": {
@@ -548,6 +596,18 @@
         [
           "resident_bori",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "장작을 나누어 묶는다",
+      "personality": "거절을 못해서 일을 떠안고도 태연한 척한다",
+      "greeting": [
+        [
+          "resident_bori",
+          "이쪽으로 지나가세요. 제가 길을 다 차지했네요."
+        ],
+        [
+          "det0",
+          "이만큼을 혼자 옮기십니까?"
         ]
       ]
     },
@@ -609,6 +669,18 @@
           "resident_yeoni",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "친구가 올 길을 기웃거린다",
+      "personality": "친구 걱정을 잔소리로 표현한다",
+      "greeting": [
+        [
+          "resident_yeoni",
+          "토리 못 보셨어요? 연습한다더니 또 밥을 잊었나 봐요."
+        ],
+        [
+          "det0",
+          "어떤 친구입니까?"
+        ]
       ]
     },
     "resident_kongi": {
@@ -668,6 +740,18 @@
         [
           "resident_kongi",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "햇빛 남은 자리에 기대 졸고 있다",
+      "personality": "느긋하지만 남의 피곤함은 금방 알아본다",
+      "greeting": [
+        [
+          "resident_kongi",
+          "아, 안 잤어. 여기 바람이 덜 들어서 그래."
+        ],
+        [
+          "det0",
+          "잠깐 쉬어도 될까요?"
         ]
       ]
     },
@@ -729,6 +813,18 @@
           "resident_kkwak",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "분수에서 떨어져 편지를 접는다",
+      "personality": "꼼꼼하고 민망한 일은 먼저 핑계를 댄다",
+      "greeting": [
+        [
+          "resident_kkwak",
+          "여기 앉아도 안 젖어. 내가 먼저 확인했거든."
+        ],
+        [
+          "det0",
+          "고맙습니다."
+        ]
       ]
     },
     "resident_librarian": {
@@ -788,6 +884,18 @@
         [
           "resident_librarian",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "책 묶음의 이름표를 확인한다",
+      "personality": "책에는 엄격하고 아이의 질문에는 끈기가 있다",
+      "greeting": [
+        [
+          "resident_librarian",
+          "잠깐, 그 책은 끈이 풀렸어. 아래부터 받쳐 주겠니?"
+        ],
+        [
+          "det0",
+          "다람아, 내가 들게."
         ]
       ]
     },
@@ -849,6 +957,18 @@
           "resident_owlgp",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "등불 가까이 지도를 편다",
+      "personality": "자존심 때문에 도움을 쉽게 청하지 않는다",
+      "greeting": [
+        [
+          "resident_owlgp",
+          "길을 잃은 건 아니오. 이 지도 글씨가 너무 작군."
+        ],
+        [
+          "det0",
+          "같이 봐 드릴까요?"
+        ]
       ]
     },
     "resident_teacher": {
@@ -908,6 +1028,18 @@
         [
           "resident_teacher",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "명단과 지나가는 얼굴을 번갈아 본다",
+      "personality": "잔소리보다 기다림으로 아이들을 지킨다",
+      "greeting": [
+        [
+          "resident_teacher",
+          "혹시 작은 가방을 멘 아이들 못 보셨나요? 아직 둘이 안 왔네요."
+        ],
+        [
+          "det0",
+          "저희는 방금 도착했습니다."
         ]
       ]
     },
@@ -969,6 +1101,18 @@
           "resident_nero",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "골목에서 낡은 단추를 꿰맨다",
+      "personality": "필요한 말만 하며 오래된 물건을 버리지 못한다",
+      "greeting": [
+        [
+          "resident_nero",
+          "지나가세요. 길을 막으려던 건 아닙니다."
+        ],
+        [
+          "det0",
+          "잠깐 길을 여쭤도 될까요?"
+        ]
       ]
     },
     "resident_seol": {
@@ -1029,6 +1173,18 @@
           "resident_seol",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "종의 마지막 울림을 듣는다",
+      "personality": "소리에는 예민하고 대답은 한 박자 늦다",
+      "greeting": [
+        [
+          "resident_seol",
+          "……이제 말씀하세요. 마지막 소리가 남아 있었어요."
+        ],
+        [
+          "det0",
+          "종을 듣고 계셨군요."
+        ]
       ]
     },
     "resident_ppul": {
@@ -1088,6 +1244,18 @@
         [
           "resident_ppul",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "구겨진 소매를 다시 편다",
+      "personality": "체면을 지키느라 초조함을 숨긴다",
+      "greeting": [
+        [
+          "resident_ppul",
+          "줄이 있다면 뒤로 서겠소. 누가 먼저 왔는지 모르겠군."
+        ],
+        [
+          "det0",
+          "저도 처음 왔습니다."
         ]
       ]
     },
@@ -1156,6 +1324,18 @@
           "resident_tok",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "작은 시계를 분해해 살핀다",
+      "personality": "작은 차이를 못 넘기고 일에 몰두한다",
+      "greeting": [
+        [
+          "resident_tok",
+          "한 걸음만요. 떨어진 나사가 그 발밑에 있어요."
+        ],
+        [
+          "det0",
+          "움직이지 않겠습니다."
+        ]
       ]
     },
     "resident_sling": {
@@ -1215,6 +1395,18 @@
         [
           "resident_sling",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "봉투를 배달 순서대로 정리한다",
+      "personality": "빠릿하지만 확실하지 않은 길은 다시 묻는다",
+      "greeting": [
+        [
+          "resident_sling",
+          "우체국 찾으세요? 저도 문 앞까지는 갑니다."
+        ],
+        [
+          "det0",
+          "같은 방향이군요."
         ]
       ]
     },
@@ -1276,6 +1468,18 @@
           "resident_momo",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "쿠키 쟁반을 내민다",
+      "personality": "살갑게 말을 걸지만 허락부터 구한다",
+      "greeting": [
+        [
+          "resident_momo",
+          "견과 괜찮으세요? 아이에게 먼저 줘도 될까 해서요."
+        ],
+        [
+          "det0",
+          "다람아, 하나 받을래?"
+        ]
       ]
     },
     "resident_ttadak": {
@@ -1335,6 +1539,18 @@
         [
           "resident_ttadak",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "창틀을 두드려 썩은 곳을 찾는다",
+      "personality": "투박하고 잘못된 일을 그냥 못 지나친다",
+      "greeting": [
+        [
+          "resident_ttadak",
+          "그 벽에 기대지 마세요. 겉만 멀쩡해서."
+        ],
+        [
+          "det0",
+          "알려 주셔서 고맙습니다."
         ]
       ]
     },
@@ -1396,6 +1612,18 @@
           "resident_piko",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "작은 화판에 지붕을 그린다",
+      "personality": "멋을 좋아하지만 외모만 칭찬받으면 서운하다",
+      "greeting": [
+        [
+          "resident_piko",
+          "거기 잠깐만 그대로요. 그림자 모양이 좋네요."
+        ],
+        [
+          "det0",
+          "얼마나 있어야 합니까?"
+        ]
       ]
     },
     "resident_mungchi": {
@@ -1455,6 +1683,18 @@
         [
           "resident_mungchi",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "상자를 품에 꼭 안고 기다린다",
+      "personality": "어리게 취급받기 싫어 힘든 것도 숨긴다",
+      "greeting": [
+        [
+          "resident_mungchi",
+          "도와주실 필요 없어요. 아직 안 무거워요."
+        ],
+        [
+          "det0",
+          "그럼 옆에 있어도 될까?"
         ]
       ]
     },
@@ -1516,6 +1756,18 @@
           "resident_madam",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "창문의 오래된 무늬를 살핀다",
+      "personality": "점잖지만 마음에 든 물건에는 집요하다",
+      "greeting": [
+        [
+          "resident_madam",
+          "저 유리를 바꾸려는 건 아니겠지요? 멀쩡한 무늬인데."
+        ],
+        [
+          "det0",
+          "저희도 구경 중입니다."
+        ]
       ]
     },
     "resident_siluk": {
@@ -1575,6 +1827,18 @@
         [
           "resident_siluk",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "마차 손잡이의 먼지를 닦는다",
+      "personality": "말보다 일로 긴장을 풀며 쉬는 데 서툴다",
+      "greeting": [
+        [
+          "resident_siluk",
+          "손잡이는 닦았어요. 거기는 잡으셔도 됩니다."
+        ],
+        [
+          "det0",
+          "계속 손보고 계셨군요."
         ]
       ]
     },
@@ -1636,6 +1900,18 @@
           "resident_musoe",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "처마 위를 올려다본다",
+      "personality": "거친 말 뒤에 손녀 걱정이 먼저 있다",
+      "greeting": [
+        [
+          "resident_musoe",
+          "위에 있거든 좀 내려오라 해 주시오. 내 말은 못 들은 척하니."
+        ],
+        [
+          "det0",
+          "손녀분 말씀이세요?"
+        ]
       ]
     },
     "resident_somi": {
@@ -1695,6 +1971,18 @@
         [
           "resident_somi",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "처마 밑에서 심부름 꾸러미를 묶는다",
+      "personality": "겁이 없고 제 일을 끝내야 말을 듣는다",
+      "greeting": [
+        [
+          "resident_somi",
+          "할아버지가 보냈어요? 이것만 묶고 갈 건데."
+        ],
+        [
+          "det0",
+          "아니, 지나가던 길이야."
         ]
       ]
     },
@@ -1756,6 +2044,18 @@
           "resident_seori",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "등마다 점검 표시를 적는다",
+      "personality": "규칙을 믿고 함부로 예외를 주지 않는다",
+      "greeting": [
+        [
+          "resident_seori",
+          "아직 점검 전입니다. 그 등은 만지지 마세요."
+        ],
+        [
+          "det0",
+          "아이에게도 일러두겠습니다."
+        ]
       ]
     },
     "resident_ubak": {
@@ -1815,6 +2115,18 @@
         [
           "resident_ubak",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "소매를 접고 점검표를 든다",
+      "personality": "잘하고 싶어 서두르다 작은 실수를 한다",
+      "greeting": [
+        [
+          "resident_ubak",
+          "아, 그 표시는 아직이요. 선생님께 확인부터 받아야 해서."
+        ],
+        [
+          "det0",
+          "기다리겠습니다."
         ]
       ]
     },
@@ -1883,6 +2195,18 @@
           "resident_nubi",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "빌려온 천의 해진 끝을 꿰맨다",
+      "personality": "살림에는 야무지고 궁한 사람에게 약하다",
+      "greeting": [
+        [
+          "resident_nubi",
+          "여기 실 밟지 마세요. 오늘 유난히 잘 엉키네."
+        ],
+        [
+          "det0",
+          "한쪽으로 비켜서겠습니다."
+        ]
       ]
     },
     "resident_eunho": {
@@ -1942,6 +2266,18 @@
         [
           "resident_eunho",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "작은 상자의 잠금쇠를 확인한다",
+      "personality": "친절한 말투로 손해 볼 거리를 재빨리 피한다",
+      "greeting": [
+        [
+          "resident_eunho",
+          "구경은 좋지만 손은 대지 마시오. 아직 주인이 있는 물건이라."
+        ],
+        [
+          "det0",
+          "무엇을 가져오셨습니까?"
         ]
       ]
     },
@@ -2003,6 +2339,18 @@
           "resident_guseul",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "깨끗한 면을 찾아 닦는 천을 접는다",
+      "personality": "눈치를 보지만 궁금한 것은 쉽게 못 참는다",
+      "greeting": [
+        [
+          "resident_guseul",
+          "저, 저쪽으로 가시면 안 돼요. 상자를 열어 둬서."
+        ],
+        [
+          "det0",
+          "여기서 기다리면 될까?"
+        ]
       ]
     },
     "resident_badook": {
@@ -2063,6 +2411,18 @@
           "resident_badook",
           "먼저 가 볼게요. 다음에 또 봐요."
         ]
+      ],
+      "activity": "등 사이 어두운 길을 확인한다",
+      "personality": "씩씩한 척하지만 혼자 도는 밤길이 싫다",
+      "greeting": [
+        [
+          "resident_badook",
+          "해 지면 저 골목은 돌아가세요. 등 하나가 어두워요."
+        ],
+        [
+          "det0",
+          "다른 길이 있습니까?"
+        ]
       ]
     },
     "resident_lamplighter": {
@@ -2122,6 +2482,18 @@
         [
           "resident_lamplighter",
           "먼저 가 볼게요. 다음에 또 봐요."
+        ]
+      ],
+      "activity": "장대 길이와 등의 높이를 잰다",
+      "personality": "남의 일터를 존중하고 아는 척하지 않는다",
+      "greeting": [
+        [
+          "resident_lamplighter",
+          "비켜 주실래요? 올리려는 게 아니라 길이만 재는 중입니다."
+        ],
+        [
+          "det0",
+          "이 등이 꽤 높군요."
         ]
       ]
     }

@@ -35,12 +35,12 @@ style scrollbar:
 screen topic_banner(caption, topic_action, done=False, enabled=True):
     button:
         xsize 560 ysize 58 padding (3,3)
-        background Solid("#e5d5ae") hover_background Solid("#eec36b")
+        background Solid("#bca579") hover_background Solid("#f0d391")
         action topic_action
         sensitive enabled
         fixed:
-            add Solid("#315866" if done else "#276d88")
-            add Solid("#f5ecd4",xsize=22)
+            add Solid("#293c39" if done else "#385952")
+            add Solid("#dfd2af",xsize=10)
             text (("{s}"+caption+"{/s}") if done else caption) size 23 xalign .5 yalign .5 color ("#bbcbd0" if done else "#fff4d9")
             if done:
                 add TopicTick() xpos 514 yalign .5

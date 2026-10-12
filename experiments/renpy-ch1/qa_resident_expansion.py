@@ -17,7 +17,7 @@ async def nearby(t,person):
  await t.wait('village_place');before=await t.state();index=next(i for i,p in enumerate(before['optional']) if p['id']==person)
  await t.click(180,642);await t.wait('nearby');await t.shot('nearby-'+person)
  assert index<4,'Fixture should use an initially visible row'
- await t.click(620,248+80*index);await t.wait('local_questions');await check_topic_actor(t,'village_contact_questions')
+ await t.click(620,248+80*index);await t.advance_until('local_questions');await check_topic_actor(t,'village_contact_questions')
  assert (await t.state())['minutes']==before['minutes'],'Opening list must not advance time'
 async def topic(t,person,index,permission):
  before=await t.state();await t.click(640,169+63*index);await t.wait('local_questions',False)

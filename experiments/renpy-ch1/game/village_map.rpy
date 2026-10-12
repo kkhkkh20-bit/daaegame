@@ -21,6 +21,20 @@ init 35 python:
         return location in store.village_places_seen or location==store.arrival_location or location=="post" and store.arrival_post_closed or any(
             observation["place"]==ARRIVAL_PLACES[location][0] for observation in store.village_observations)
 
+init 35 python:
+    VILLAGE_PLACE_LOOK = {
+        "gate": [["det1","아빠, 우리가 지나가니까 말하다가 멈췄어."],["det0","처음 보는 얼굴이라 그런가 보다."],["det1","…나도 처음 보는데."]],
+        "fountain": [["det1","돌에는 손 안 대는데, 옆에서는 다들 놀고 있네."],["det0","여기서는 익숙한 모양이지."],["det1","얼마나 오래 있었을까?"]],
+        "post": [["det1","봉투 모서리가 접혔어. 주머니에 넣어서 그런가?"],["det0","내 가방에 넣을까?"],["det1","아니, 내가 조심해서 들게."]],
+        "lane": [["det1","여기 냄새 좋아. 나무 타는 냄새."],["det0","발밑 봐. 장작이 굴러 나왔다."],["det1","누가 걸리겠다. 옆으로 옮겨 놓을까?"]],
+        "inn": [["det1","창문에 김 서렸어. 안은 따뜻한가 봐."],["det0","발 시리니?"],["det1","조금. 아빠 손도 차갑네."]]}
+    VILLAGE_PLACE_MOOD = {
+        "gate": ("고개를 넘으면", "짐 푸는 사람들. 돌아오는 마차."),
+        "fountain": ("등불이 켜지는 광장", "그림을 그리고, 간식을 나누는 자리."),
+        "post": ("편지가 모이는 곳", "봉투를 정리하는 소리, 작은 수리대."),
+        "lane": ("처마 아래 골목", "장작 냄새가 남은 조용한 샛길."),
+        "inn": ("불 켜진 큰 창문", "하루 일을 마친 사람들이 모인다.")}
+
 screen arrival_map():
     modal True
     default ready=False
@@ -28,11 +42,11 @@ screen arrival_map():
     timer .35 action SetScreenVariable("ready",True)
     add Transform("assets/village-overview.png",size=(1280,720))
     frame:
-        xpos 26 ypos 94 padding (15,10) background Solid("#201b18e5")
+        xpos 24 ypos 22 xsize 420 padding (20,15) background Solid("#172225ee")
         vbox:
-            spacing 5
-            text "골짜기 마을" size 29 color "#ffdc91"
-            text village_clock() size 18 color "#eadcc0"
+            spacing 8
+            text "낯선 마을의 첫 저녁" size 28 color "#f3e8cd"
+            text (village_clock()+"  /  "+str(sum(village_map_visited(k) for k in ARRIVAL_PLACES))+"곳을 걸었다") size 17 color "#bfcac0"
     for location,spec in ARRIVAL_PLACES.items():
         $ region=VILLAGE_MAP_REGIONS[location]
         $ plaque=VILLAGE_MAP_PLAQUES[location]
@@ -44,33 +58,31 @@ screen arrival_map():
             hovered SetScreenVariable("hover_place",location)
             unhovered SetScreenVariable("hover_place",None)
             id ("map_building_"+location)
-        button:
-            xpos plaque[0] ypos plaque[1] xsize 202 ysize 60
-            padding (10,6)
-            background Solid("#f5e8cfed" if current else "#261d19ef")
-            hover_background Solid("#f5e8cffa")
-            sensitive ready action Return(location)
-            fixed:
-                text spec[0] size 22 color ("#473127" if current else "#f5e8cf") xalign .5
-                text ("현재 위치" if current else "문 닫힘" if location=="post" and arrival_post_closed else "다녀간 곳" if village_map_visited(location) else "") size 15 color ("#735540" if current else "#c6ad84") xalign .5 ypos 28
-            id ("map_label_"+location)
-        $ residents=village_map_people(location)
-        if residents:
-            hbox:
-                xpos plaque[0]+8 ypos plaque[1]-40 spacing 4
-                for resident in residents:
-                    frame:
-                        padding (3,3) background Solid("#201b18de")
-                        add Transform(resident["id"]+" avatar_neutral",size=(31,31),fit="contain")
-    if hover_place:
-        $ present=village_map_people(hover_place)
         frame:
-            xpos 320 ypos 22 xsize 590 padding (12,9) background Solid("#201b18e8")
-            text (ARRIVAL_PLACES[hover_place][0]+(" · "+" / ".join(p["public_name"] for p in present) if present else " · 지금은 조용하다")) size 19 color "#f3e7ce" xalign .5
-    textbutton "산길 · 해 진 뒤":
-        xpos 936 ypos 116 text_size 16 text_color "#c6ad84"
-        background Solid("#201b18cc") hover_background Solid("#47382ddd")
-        sensitive ready action Notify("길이 낯설다. 오늘은 마을 안에서 묵을 곳부터 찾자.")
+            xpos plaque[0] ypos (min(plaque[1],555)) padding (10,6)
+            background Solid("#172225de")
+            text (("● " if current else "")+spec[0]) size 20 color "#f3e8cd"
+    add Solid("#172225f5",xsize=1280,ysize=116) ypos 604
+    add Solid("#bca579",xsize=1232,ysize=1) xpos 24 ypos 604
+    for i,(location,spec) in enumerate(ARRIVAL_PLACES.items()):
+        $ current=location==arrival_location
+        button:
+            xpos (24+i*248) ypos 615 xsize 238 ysize 94 padding (14,10)
+            background Solid("#dfd2af" if current else "#263835") hover_background Solid("#475e55")
+            sensitive ready action Return(location)
+            id ("map_label_"+location)
+            vbox:
+                spacing 7
+                text spec[0] size 23 color ("#20332f" if current else "#f3e8cd")
+                text ("현재 위치" if current else "문 닫힘 · 내일 다시" if location=="post" and arrival_post_closed else "다녀간 곳" if village_map_visited(location) else "아직 가 보지 않은 곳") size 15 color ("#4c6559" if current else "#bfcac0")
+    $ focus=hover_place or arrival_location or "gate"
     frame:
-        xpos 30 ypos 682 padding (13,6) background Solid("#201b18e5")
-        text ("우체국은 내일 열린다 · 오늘은 여관에서 쉬자" if arrival_post_closed else "건물을 눌러 이동 · 작은 얼굴은 지금 그곳에 있는 주민") size 18 color "#eadcc0"
+        xpos 24 ypos 147 xsize 310 padding (18,15) background Solid("#172225e5")
+        vbox:
+            spacing 8
+            text VILLAGE_PLACE_MOOD[focus][0] size 22 color "#e4cc96"
+            text VILLAGE_PLACE_MOOD[focus][1] size 18 color "#d5dfd4" xsize 270
+    textbutton "거리로 돌아가기":
+        xpos 1030 ypos 94 xsize 225 text_size 20
+        background Solid("#172225ed") hover_background Solid("#475e55")
+        sensitive ready action Return(arrival_location or "gate")

@@ -6,8 +6,10 @@ default village_people_revisions = {}
 default village_people_trust = {}
 default village_places_seen = []
 default village_people_memories = {}
+default village_people_greeted = []
 
 init 30 python:
+    VILLAGE_ACTIVITY_ACTORS = ("resident_tori","resident_piko","resident_momo","resident_tok")
     VILLAGE_PEOPLE = json.load(renpy.file("village-residents.json"))
 
     def village_contact_name(person):
@@ -21,7 +23,7 @@ init 30 python:
                 continue
             spec=VILLAGE_PEOPLE["profiles"][route["id"]]
             entry=dict(route,public_name=village_contact_name(route["id"]),
-                met=route["id"] in store.village_people_met,role=spec["role"])
+                met=route["id"] in store.village_people_met,role=spec["role"],activity=spec["activity"])
             if route["id"] in CAST:
                 crop=CAST[route["id"]]["world"]["crop"]
                 entry["width"]=round(route["height"]*crop[2]/float(crop[3]))
@@ -30,8 +32,26 @@ init 30 python:
         return result
 
     def village_outdoor_people(location):
-        # Additional draft residents use a list, so the background never fills with tiny actors.
-        return [entry for entry in village_people_here(location) if not entry.get("list_only")]
+        result=[entry for entry in village_people_here(location) if not entry.get("list_only")]
+        # Keep activity props away from the stone, the main resident and scheduled actors.
+        slots=((100,355),(955,365),(570,355))
+        occupied=[(e["x"],e["y"],e["width"],e["height"]) for e in result]
+        if village_arrival_resident(location):
+            occupied.append((740,105 if location=="lane" else 310,170,225))
+        if location=="fountain":occupied.append((380,155,190,315))
+        active=[entry for entry in village_people_here(location) if entry["id"] in VILLAGE_ACTIVITY_ACTORS]
+        active.sort(key=lambda e: CAST[e["id"]]["activity"]["crop"][2]/float(CAST[e["id"]]["activity"]["crop"][3]),reverse=True)
+        for entry in active:
+            entry=dict(entry)
+            crop=CAST[entry["id"]]["activity"]["crop"]
+            width=round(180*crop[2]/float(crop[3]))
+            for x,y in slots:
+                if any(x<ox+ow+12 and x+width+12>ox and y<oy+oh and y+180>oy for ox,oy,ow,oh in occupied):continue
+                entry.update(x=x,y=y,height=180,width=width,activity_pose=True)
+                result.append(entry)
+                occupied.append((x,y,width,180))
+                break
+        return result
 
     def village_optional_people(location):
         return [entry for entry in village_people_here(location) if entry.get("list_only")]
@@ -72,6 +92,10 @@ init 30 python:
 
 label village_contact(person):
     $ village_contact_person = person
+    if person not in village_people_greeted:
+        $ source_camera,source_night,source_stage_person = "stage",None,person
+        call source_lines(VILLAGE_PEOPLE["profiles"][person]["greeting"],"V_GREETING_"+person)
+        $ village_people_greeted.append(person)
     $ source_camera,source_night,source_stage_person = "stage",None,person
     $ village_contact_memories = getattr(store,"council_relationship_memories",{}).get(person,[])
     if "private_statement_exposed" in village_contact_memories and "apologized_for_private_statement" not in village_contact_memories:
@@ -136,13 +160,13 @@ screen village_nearby_residents(location):
     modal True
     default ready=False
     timer .25 action SetScreenVariable("ready",True)
-    add Solid("#100c09dd")
+    add Solid("#101b1be8")
     frame:
         xpos 140 ypos 110 xsize 1000 ysize 550 padding (24,20)
-        background Solid("#261e19ef")
+        background Solid("#172225ef")
         fixed:
             text (ARRIVAL_PLACES[location][0]+" · 근처 사람들") size 30 color "#ffdc91"
-            text (village_clock()+" · 지금 이곳에서 만날 수 있다") ypos 43 size 18 color "#c6b699"
+            text (village_clock()+" · 하던 일을 살펴보고 말을 걸어 보자") ypos 43 size 18 color "#c6b699"
             viewport:
                 xpos 0 ypos 82 xsize 950 ysize 360
                 mousewheel True draggable True scrollbars "vertical" style_prefix "resident"
@@ -152,7 +176,7 @@ screen village_nearby_residents(location):
                         $ person=entry["id"]
                         button:
                             xsize 910 ysize 72 padding (12,8)
-                            background Solid("#49362ccf") hover_background Solid("#6b5040ef")
+                            background Solid("#293e38") hover_background Solid("#475e55")
                             sensitive ready action Return(person)
                             hbox:
                                 spacing 18
@@ -160,5 +184,5 @@ screen village_nearby_residents(location):
                                 vbox:
                                     spacing 5
                                     text entry["public_name"] size 23 color "#f3e7ce"
-                                    text (entry["role"] if entry["met"] else "말 걸어 보기") size 16 color "#c6b699"
+                                    text entry["activity"] size 16 color "#c6b699"
             textbutton "닫기" xpos 740 ypos 452 sensitive ready action Return("back") xsize 180 ysize 55
