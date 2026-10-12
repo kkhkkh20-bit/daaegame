@@ -303,7 +303,7 @@ label winter_hearing(hearing):
     if hearing=="witness":
         $ winter=dict(winter,second_result=("preserved" if "transfer" in winter_hearing_wins else "contested"))
         if winter["second_result"]=="preserved":
-            call winter_lines([("neoul","원본 번호와 오늘 발언을 남겼습니다. 공식 이송일 전의 내부 인계도 따로 확인하겠습니다.")],"second_result")
+            call winter_lines([("neoul","원본 번호와 오늘 발언을 남겼습니다. 외부 이송이라고 공고한 사람의 내부 인계도 따로 확인하겠습니다.")],"second_result")
         else:
             call winter_lines([("neoul","운반 설명을 뒤집을 자료가 부족합니다. 이의는 남기지만 지시서 회수는 보류하지 못했습니다."),("dad","그럼 원본이 어디로 가는지부터 확인하겠습니다.")],"second_contested")
     hide winter_visitor
@@ -311,9 +311,18 @@ label winter_hearing(hearing):
     return
 
 label winter_final:
+    call winter_scene("front","여관 · 식어 버린 난방관","search")
+    call winter_lines([(None,"새벽에 멎은 난방관은 아침이 되어도 울리지 않았다."),("granny","장작불까지 꺼진 건 아니에요. 다들 난로 가까이 앉아요."),("nabi","광장에도 사람들이 모였어. 촌장이 오늘 해 지기 전에 돌을 깨워야 한대."),("daram","그래서 사람을 데려가겠대요?"),("nabi","응. 돌에 돌려보내야 한다고. 명부를 들고 집마다 돌고 있어."),("dad","문을 잠가 주세요. 누구를 어디로 데려가는지, 사람들 앞에서 묻겠습니다."),(None,"낮 동안 주민들이 광장 회관으로 모였다. 경비들은 출입문 옆에서 명부를 펼쳤다.")],"stone_crisis")
+    $ winter=dict(winter,period=2)
     call winter_hearing("final")
     $ winter=dict(winter,ending=winter_ending(winter))
-    call winter_scene("front","열나흘째 밤","quiet")
+    if all(k in winter["marks"] for k in ("frame","destination","power","death")):
+        call winter_lines([("seryeon","그럼 저 시설을 멈추고, 오늘 밤은 어떻게 버팁니까?"),("granny","사람을 죽였다는 말에 대답부터 해야죠."),("seryeon","우리 아이들도 여기 있어요. 돌이 멎으면 그 아이들은 누가 지킵니까?")],"last_counter")
+        if winter_has(winter,"repair") and winter_has(winter,"fuel") and winter.get("records",{}).get("repair",{}).get("day",99)<=11:
+            call winter_lines([("buri","여관에 장작을 옮겨 뒀어. 집마다 난방을 돌리는 건 멈추고, 한곳에 모이면 돼."),("mom","말을 유지하는 회로는 따로 살릴 수 있어요. 밤마다 측정한 값도 여기 있습니다."),("dad","사람을 넘겨주지 않고 버틸 준비를 했습니다. 지금 문부터 막아 주세요.")],"prepared_answer")
+        else:
+            call winter_lines([("dad","오늘 밤 버틸 방법은 아직 다 마련하지 못했습니다. 그래도 저 사람들을 데려가게 둘 수는 없습니다."),("granny","내 난로라도 함께 쓸 거예요. 사람부터 놓아요.")],"unprepared_answer")
+    call winter_scene("front","여관 · 그날 밤","quiet")
     if winter["ending"]=="truth":
         call winter_lines([("neoul","호송하지 않겠습니다. 목적지도 혐의도 거짓이었습니다."),("resident_nubi","제가 본 것도 같아요. 가족은 안전한 곳에 있습니다. 이제 이름을 적어도 됩니다."),("buri","난방 회로는 줄일 수 있어. 대신 여관에 모여야 해."),("mom","언어 유지 회로부터 안정시킬게요. 완전한 수리는 아니에요. 시간을 버는 거예요."),("daram","아빠. 오늘은 다 같이 밥 먹는 거야?"),("dad","응. 자리를 더 만들자."),("mom","이 개조 표시, 다른 지역의 정비 기록에서도 봤어. 누가 같은 방법을 전한 걸까.")],"ending_truth")
     elif winter["ending"]=="family":
@@ -323,7 +332,7 @@ label winter_final:
     elif winter["ending"]=="flight":
         call winter_lines([("karo","둘이라도 지금 나가야 해요."),("daram","엄마는?"),("dad","밖에서 도움을 구하자. 편지 원본과 기록은 갖고 있어."),(None,"마차가 가지 못하는 길로 두 사람은 떠났다. 세 번째 자리는 비어 있었다.")],"ending_flight")
     else:
-        call winter_lines([("neoul","심의 결과, 분리 확인을 집행합니다."),("dad","아이는 내 옆에 두십시오."),("daram","아빠 손 안 놓을 거야."),(None,"닫히는 문 너머로 열쇠가 돌아갔다.")],"ending_separated")
+        call winter_lines([("neoul","시설에서 확인하겠답니다. 아이는 다른 경비에게……"),("dad","아이는 내 옆에 두십시오."),("daram","아빠 손 안 놓을 거야."),(None,"누군가 다람의 팔을 붙잡았다. 둘 사이로 문이 닫혔다.")],"ending_separated")
     $ persistent.winter_endings=list(set(persistent.winter_endings+[winter["ending"]]))
     $ renpy.save_persistent()
     call screen winter_end

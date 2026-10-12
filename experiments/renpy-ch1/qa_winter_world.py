@@ -112,3 +112,18 @@ for status in ('detained','dead'):
 z=dict(s['winter_new'](),day=5)
 assert all('제가 말한 거' not in text for _,text in s['winter_morning'](z))
 print('Absent witnesses cannot support hearings; unseen testimony is not assumed: passed')
+
+# A fresh arrival never learns the conclusion date, including through the calendar.
+z=s['winter_flag'](s['winter_new'](),'entry_corrected')
+assert s['winter_calendar_notes'](z,14)==[]
+assert s['winter_calendar_notes'](z,21)==[]
+assert '심의까지' not in s['winter_clock'](z)
+assert any('할머니' in title for title,_ in s['winter_calendar_notes'](dict(z,day=2),3))
+assert s['winter_calendar_notes'](dict(z,day=2),14)==[]
+# No dated-expiry explanation survives in runtime story, menus or clue descriptions.
+for name in ('winter-story.json','winter-world.json','winter.rpy','winter_rules.rpy','winter_world.rpy','winter_opening.rpy','winter_screens.rpy','screens.rpy','options.rpy'):
+ content=(R/'game'/name).read_text()
+ for phrase in ('심의까지','체류 보증 만료','열나흘째 공동 심의','겨울의 두 주','14일 생존 추리','최종 이송 심의'):
+  assert phrase not in content,(name,phrase)
+assert '꺼져 가는 돌' in s['WINTER']['claims']['final']['title']
+print('No arrival deadline or calendar ending spoiler; crisis motivates the final confrontation: passed')
