@@ -4,7 +4,7 @@ init 40 python:
     WINTER = json.load(renpy.file("winter-story.json"))
 
     def winter_new():
-        return dict(version=1,day=1,ap=3,location="inn",evidence=[],facts=[],done=[],
+        return dict(version=2,day=1,ap=3,location="inn",evidence=[],facts=[],done=[],
             records={},log=[],witness="available",mother_day=None,marks=[],ending=None,
             first_result=None,second_result=None)
 

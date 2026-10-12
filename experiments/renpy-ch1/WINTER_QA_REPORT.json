@@ -1,5 +1,4 @@
 {
-  "game_zip_sha256": "16a4cb0e0eef7eef7069d89b0f344b9eda774f729babeeef22de318dfcb3ac4f",
   "routes": [
     {
       "viewport": [
@@ -7,25 +6,10 @@
         720
       ],
       "full_route": true,
+      "strategy": "prepared",
       "ending": "truth",
       "errors": [],
-      "injected_progress": false,
-      "strategy": "prepared",
-      "checks": [
-        "checkpoint_choice",
-        "day_actions_and_knowledge",
-        "movement",
-        "save_load_entire_state",
-        "browser_reload_load",
-        "day_10_unconditional_hearing",
-        "ending",
-        "no_browser_or_asset_errors",
-        "mother_meeting",
-        "witness_protection",
-        "multi_page_evidence",
-        "unordered_two_evidence_presentation",
-        "all_four_final_claims"
-      ]
+      "injected_progress": false
     },
     {
       "viewport": [
@@ -33,101 +17,60 @@
         390
       ],
       "full_route": true,
+      "strategy": "insufficient",
       "ending": "separated",
       "errors": [],
-      "injected_progress": false,
-      "strategy": "insufficient",
-      "checks": [
-        "checkpoint_choice",
-        "day_actions_and_knowledge",
-        "movement",
-        "save_load_entire_state",
-        "browser_reload_load",
-        "day_10_unconditional_hearing",
-        "ending",
-        "no_browser_or_asset_errors"
-      ]
+      "injected_progress": false
     }
   ],
-  "rules": {
-    "checks": 20,
-    "route": [
-      [
-        "karo",
-        "post",
-        "granny"
+  "full_route_build_sha256": "40293eea2c5f8d536c4f424351567a000699303aeb5f732caeb819e45ca245af",
+  "final_build_sha256": "e76cb649ac651febb962f1d8902d76cac094b6878b075c400a593a72dc694919",
+  "final_change_after_full_routes": "World sprite layout only: Buri raised above footer; post Seryeon lowered behind full counter foreground, Doto moved to customer side and rendered in front. Final PC/touch layout and resident-click checks passed; story, evidence, calendar and endings unchanged.",
+  "final_layout_checks": [
+    {
+      "viewport": [
+        1280,
+        720
       ],
-      [
-        "appointment",
-        "receipt",
-        "bed"
+      "layout_only": true,
+      "injected_day_fixture": true,
+      "feet_inside_play_area": true,
+      "npc_clicks_open_questions": true,
+      "errors": []
+    },
+    {
+      "viewport": [
+        844,
+        390
       ],
-      [
-        "ritual",
-        "meter",
-        "witness"
-      ],
-      [
-        "protect",
-        "surveillance",
-        "timing"
-      ],
-      [
-        "hidden",
-        "mother",
-        "symptoms"
-      ],
-      [
-        "repair",
-        "fuel",
-        "escape"
-      ],
-      [
-        "ledger",
-        "order",
-        "death"
-      ],
-      [],
-      []
-    ],
-    "result": "passed",
-    "true_ending_day": 10
+      "layout_only": true,
+      "injected_day_fixture": true,
+      "feet_inside_play_area": true,
+      "npc_clicks_open_questions": true,
+      "errors": []
+    }
+  ],
+  "topic_save_checks": {
+    "registration_required_for_sleep": true,
+    "guard_click_dialogue": true,
+    "save_from_questions_restores_actor_place_state": true,
+    "runtime_errors": [],
+    "injected_progress": false
   },
-  "legacy_smoke": {
-    "legacy_menu_to_village": "passed",
+  "rule_checks": {
+    "winter_rules": 20,
+    "scene_groups": 10,
+    "mapped_actions": 28,
+    "physical_objects": 23,
+    "passed": true
+  },
+  "legacy_entry": {
+    "menu_to_village_gate": "passed",
     "errors": []
   },
-  "legacy_logic": {
-    "alternate_clock_deduction_requires_prior_comparison": true,
-    "alternate_path_enters_correct_next_comparison": true,
-    "switching_claims_preserves_comparisons_and_pressing": true,
-    "comparison_progress_is_scoped_to_each_round": true,
-    "undiscovered_guest_and_unheard_accusation_hidden": true,
-    "corrected_testimony_stays_correct_on_revisit": true,
-    "confirmed_living_guest_evidence_updated": true,
-    "long_evening_exploration_stays_before_lodging_without_farming_trust": true,
-    "repeated_discoveries_have_no_grants_or_story_beats": true,
-    "newly_available_variants_marked_unread_until_heard": true,
-    "revised_questions_do_not_reset_relationship_rewards": true,
-    "resident_notebook_does_not_reveal_unheard_alibis": true,
-    "after_story_advances_to_night_without_revisit_rewind": true
-  },
-  "legacy_council": {
-    "empty_investigation_hearing_can_reach_adverse_result": true,
-    "adverse_retry_preserves_earned_material_proof": true,
-    "two_material_paths_work_in_either_order": true,
-    "unowned_cards_cannot_prove_claims": true,
-    "context_testimony_does_not_establish_innocence": true,
-    "private_exposure_and_public_permission_are_distinct_memories": true,
-    "repeated_context_does_not_farm_influence": true,
-    "all_issue_progress_and_relationship_memories_are_serializable": true,
-    "valid_proof_can_convince_without_friendship_threshold": true,
-    "repeated_support_proof_does_not_farm_trust": true
-  },
-  "limitations": [
-    "Automated Chromium mouse/touch emulation; not real iPhone/Safari.",
-    "Story quality, music fit and commercial difficulty need human playtesting.",
-    "Family ending also observed during initial full route; only final artifact prepared/insufficient routes are recorded above.",
-    "Isolated evidence UI fixture used for diagnosis only; counted gameplay routes do not inject progress."
+  "limits": [
+    "Chromium desktop and touch emulation; physical Safari/iPhone not tested.",
+    "Layout fixture advances the day only to inspect Doto; not counted as gameplay.",
+    "Guard has one interview expression; compatibility expression keys alias it."
   ]
 }

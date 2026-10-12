@@ -93,7 +93,7 @@ init python:
             renpy.music.stop(channel="typing")
 
     def stop_menu_typing():
-        if any(renpy.get_screen(s) for s in ("pause_menu", "save", "load", "evidence_book", "winter_evidence", "winter_confirm", "winter_hub", "winter_board")):
+        if any(renpy.get_screen(s) for s in ("pause_menu", "save", "load", "evidence_book", "winter_evidence", "winter_confirm", "winter_hub", "winter_board", "winter_topics")):
             renpy.music.stop(channel="typing")
     config.interact_callbacks.append(stop_menu_typing)
     config.character_callback = text_audio

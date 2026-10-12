@@ -289,6 +289,27 @@ def main():
         manifest[name]={"source":"experiments/renpy-ch1/art/"+name,
             "generation":("image_gen winter checkpoint, 2026-10-12; WebP delivery encoding" if name=="winter-gate.webp" else "image_gen reference-guided inn activity and adjoining dusk lounge, 2026-10-12"),
             "sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
+    # New checkpoint guard: separate working body, front body and face geometry.
+    guard=ROOT/"art"/"winter-guard.webp"
+    guard_image=Image.open(guard)
+    half=guard_image.width//2
+    bounds=[]
+    for col in range(2):
+        bbox=guard_image.getchannel("A").crop((col*half,0,(col+1)*half,guard_image.height)).point(lambda a:255 if a>20 else 0).getbbox()
+        assert bbox and bbox[0]>3 and bbox[2]<half-3
+        bounds.append([col*half+bbox[0],bbox[1],bbox[2]-bbox[0],bbox[3]-bbox[1]])
+    front=dict(file="assets/winter-guard.webp",crop=bounds[1])
+    x,y,w,h=bounds[1]
+    head=dict(file="assets/winter-guard.webp",crop=[x+round(w*.13),y,round(w*.74),round(h*.36)])
+    cast["guard"]={"world":dict(file="assets/winter-guard.webp",crop=bounds[0])}
+    for state in ("neutral","thinking","distressed","expressive"):
+        cast["guard"][state]=front
+        cast["guard"]["interview_"+state]=front
+        cast["guard"]["avatar_"+state]=head
+    for name in ("winter-guard.webp","winter-places.webp"):
+        src=ROOT/"art"/name
+        shutil.copyfile(src,TARGET/name)
+        manifest[name]={"source":"experiments/renpy-ch1/art/"+name,"generation":"image_gen, 2026-10-12; immutable source PNG retained, WebP delivery, runtime Crop geometry only", "sha256":hashlib.sha256(src.read_bytes()).hexdigest()}
     (TARGET / "resident-art.json").write_text(json.dumps(resident_report, ensure_ascii=False, indent=2))
     (TARGET / "cast.json").write_text(json.dumps(cast, ensure_ascii=False, indent=2))
     source = json.loads((ROOT / 'game/chapter-source.json').read_text())
