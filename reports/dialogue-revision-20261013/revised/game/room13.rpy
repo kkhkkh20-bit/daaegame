@@ -39,6 +39,9 @@ label r13_lines(entries,identity):
             $ r13_expression,r13_directed_pose="thinking","thinking"
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
         $ r13_read_id=r13_before_line(identity,r13_index,r13_packet[1])
+        # Isolate this line from the previous loop increment when record UI
+        # changes are retained by an immediate save during the say interaction.
+        $ renpy.checkpoint()
         $ R13_CHARS.get(r13_packet[0],source_thought)(r13_packet[1])
         $ r13_remember_line(r13_read_id)
         $ r13_index+=1
@@ -107,6 +110,8 @@ label r13_entry_guard_menu:
     $ dialogue_speaker=None
     call screen r13_entry_topics
     $ r13_choice=_return
+    if r13_choice != ("entry","back"):
+        $ r13_speaker("guard","neutral")
 label r13_entry_dispatch:
     if r13_choice==("entry","explain"):
         call r13_lines([('dad', '저희 신청과 이 명부가 다른 거군요.'), ('guard', '예. 제가 받은 명부에는 한 분뿐입니다. 초소의 예약 원본과 대조해야 합니다.'), ('dad', '아이와 함께 확인하겠습니다. 동행 규정도 볼 수 있습니까?'), ('guard', '예. 원본은 선반에 있고 규정은 옆에 붙어 있습니다. 아이를 다른 곳으로 인계할 때는 보호자의 확인과 서명이 필요합니다.')],"entry:explain")
@@ -122,7 +127,15 @@ label r13_entry_dispatch:
         if r13_item:
             show screen r13_material_corner(r13_item)
         if r13_item in ("G1","G2","G3"):
-            call r13_lines([("guard","어느 부분이 잘못됐다는 겁니까?")],"entry:reason")
+            if r13_has("G1") and not r13_has("G2"):
+                call r13_lines([("guard","원본에는 두 분이 적혀 있군요. 옮겨 쓴 명부에서 아이가 빠졌습니다."),("dad","그럼 함께 들어갈 수 있겠습니까?"),("guard","등록은 바로잡겠습니다. 아이 인계 절차는 저 게시판의 규정도 함께 확인해 주십시오."),("dad","입구 게시판이군요. 확인하고 오겠습니다.")],"entry:partial:registration")
+                $ r13_flag("gate_registration_acknowledged")
+            elif r13_has("G2") and not r13_has("G1"):
+                call r13_lines([("guard","보호자 확인이 필요하다는 규정은 맞습니다. 이제 선반의 예약 원본에 동행 등록이 있는지 확인해야 합니다.")],"entry:partial:procedure")
+            elif not r13_has("G1"):
+                call r13_lines([("guard","제가 옮겨 쓴 명부입니다. 선반에 있는 예약 원본과 다른 부분이 있는지 같이 확인해 주시겠습니까?")],"entry:partial:copy")
+            else:
+                call r13_lines([("guard","원본과 보호 규정을 확인하셨군요. 어느 부분을 바로잡으면 됩니까?")],"entry:reason")
             hide screen r13_material_corner
             $ r13_speaker("guard","neutral")
             menu:
@@ -130,7 +143,10 @@ label r13_entry_dispatch:
                     call r13_lines([("guard","원본에는 두 분이군요. 옮겨 적다가 빠졌습니다. 정정하겠습니다."),("dad","사본도 주십시오. 제가 가지고 있겠습니다."),("daram","다람. 내 이름도 그렇게 적혀 있죠?")],"entry:corrected")
                     jump r13_entry_done
                 "같이 왔으니 믿어 주십시오":
-                    call r13_lines([("guard","같이 오신 건 봤습니다. 그런데 말만 듣고 명부를 고칠 수는 없습니다. 원본과 맞춰 봐야 합니다.")],"entry:insufficient")
+                    if r13_has("gate_registration_acknowledged"):
+                        call r13_lines([("guard","두 분의 등록은 확인했습니다. 아이 인계에 필요한 절차를 게시판에서 확인해 주십시오.")],"entry:insufficient:procedure")
+                    else:
+                        call r13_lines([("guard","같이 오신 건 봤습니다. 선반의 예약 원본과 제 명부를 먼저 맞춰 봐야 합니다.")],"entry:insufficient")
                 "다른 자료를 확인하겠습니다":
                     pass
         elif r13_item:
@@ -163,6 +179,8 @@ label r13_entry_karo_menu:
     hide r13_visitor
     call screen r13_entry_karo_topics
     $ r13_entry_karo_choice=_return
+    if r13_entry_karo_choice != "back":
+        $ r13_speaker("karo","neutral")
     if r13_entry_karo_choice=="road":
         call r13_lines([('dad', '아까 보신 축은 수리가 되겠습니까?'), ('karo', '고쳐야죠. 금 간 자리를 묶어 놓았는데, 이대로 손님을 태우지는 못해요.'), ('dad', '수리되면 돌아갈 수 있습니까?'), ('karo', '마차만 고쳐선 안 됩니다. 고개도 눈에 막혔어요. 길이 열리면 먼저 말씀드릴게요.')],"entry:karo:road")
         $ r13_flag("road_known")
@@ -323,15 +341,17 @@ label r13_talk:
         return
     $ r13_first_encounter = r13_target not in r13_met_people()
     $ r13_note_encounter(r13_target)
-    $ r13_encounter_key="met:"+r13_target+":"+str(room13["day"])
+    $ r13_encounter_key=r13_calendar_key(r13_target)
     if not r13_has(r13_encounter_key):
-        if r13_target=="bami" and r13_has("bami_pressured"):
+        # Keep the latest selected-person close-up while calendar greetings change.
+        $ r13_speaker(r13_target,"neutral")
+        if r13_target not in R13_OPENING_SCENES["first_meetings"] and r13_target=="bami" and r13_has("bami_pressured"):
             call r13_lines([(None, '밤이는 나를 보기 전에 복도를 살폈다. 나는 그 순서가 마음에 걸렸다.'), ('bami', '누가 제가 처마에 있었다고 했대요. 제 이름 말씀하셨어요?'), ('dad', '……다시 혼자 두지는 않을게.'), ('bami', '또 약속이네요.'), (None, '밤이가 문 쪽으로 몸을 돌렸다. 내 대답은 그 등 뒤에 남았다.'), ('bami', '탐정님 안 계실 때 숨는 건 저예요. 이번에는 말만 하지 마세요.')],"greeting:bami:pressured")
-        elif r13_target=="buri" and room13["victim_state"]=="dead":
+        elif r13_target not in R13_OPENING_SCENES["first_meetings"] and r13_target=="buri" and room13["victim_state"]=="dead":
             call r13_lines([("buri","수리하러 오신 거 아니죠. 할아버지 이름을 꺼내실 거면 먼저 말씀해 주세요.")],"greeting:buri:bereaved")
         elif r13_target in R13_OPENING_SCENES["first_meetings"]:
             $ r13_opening_lines = r13_conversation_opening(r13_target, r13_first_encounter)
-            call r13_lines(r13_opening_lines,"greeting:opening:"+r13_target+(":first" if r13_first_encounter else ":return")) from r13_dialogue_opening_return
+            call r13_lines(r13_opening_lines,"greeting:opening:"+r13_encounter_key+(":first" if r13_first_encounter else ":return")) from r13_dialogue_opening_return
         elif r13_target not in R13_CORE_PEOPLE:
             call r13_lines([(None,r13_activity_text(r13_target))],"greeting:activity:"+r13_target)
         else:
@@ -349,6 +369,7 @@ label r13_talk_menu:
 label r13_talk_dispatch:
     if r13_topic=="back":
         return
+    $ r13_speaker(r13_target,"neutral")
     if r13_topic=="present":
         call screen r13_book(r13_target,present=True)
         $ r13_item=_return
@@ -403,7 +424,7 @@ label r13_talk_dispatch:
         jump r13_talk_menu
     if ROOM13["topics"][r13_topic].get("special"):
         if r13_topic in room13["read_topics"]:
-            call r13_lines(ROOM13["topics"][r13_topic]["lines"],"topic:review:"+r13_topic)
+            call r13_lines(r13_conversation_topic_lines(r13_topic),"topic:review:"+r13_topic)
         else:
             call r13_topic_choice(r13_topic)
             if _return:

@@ -100,17 +100,22 @@ init 55 python:
     def r13_grant(keys,source):
         n=winter_copy.deepcopy(store.room13)
         added=[]
+        gained_keys=[]
         for key in keys:
             if key not in n["evidence"]:
                 n["evidence"].append(key)
                 n["records"][key]=dict(day=n["day"],period=n["period"],source=source,place=n["location"])
                 added.append(ROOM13["evidence"][key]["name"])
+                gained_keys.append(key)
                 if key not in persistent.room13_knowledge:
                     persistent.room13_knowledge=persistent.room13_knowledge+[key]
         store.room13=n
         if added:
             source_fx("found")
-            renpy.notify("수첩에 기록: "+" · ".join(added))
+            if "r13_evidence_acquired" in globals():
+                r13_evidence_acquired(gained_keys)
+            else:
+                renpy.notify("수첩에 기록: "+" · ".join(added))
 
     def r13_period():
         return ("오전","오후","저녁","늦은 저녁")[store.room13["period"]]
@@ -163,7 +168,11 @@ init 55 python:
         r13_grant(t["give"],R13_NAMES.get(t["npc"],t["npc"])+"와 대화")
         r13_flag(*t["flags"])
         n=winter_copy.deepcopy(store.room13)
-        if key not in n["read_topics"]:n["read_topics"].append(key)
+        was_read=key in n["read_topics"]
+        n.setdefault("dialogue_views", {})[key]=dict(context=r13_calendar_key(t["npc"]),mode="followup" if was_read else "first")
+        if not was_read:
+            n["read_topics"].append(key)
+            n.setdefault("dialogue_dates", {})[key]=dict(day=n["day"],period=n["period"])
         store.room13=n
 
     def r13_finish_action(key):
@@ -263,6 +272,10 @@ init 55 python:
         previous_pose=store.r13_current_pose
         store.dialogue_speaker=None
         store.dialogue_expression=expression if who in CAST and "avatar_"+expression in CAST[who] else "neutral"
+        # Dad is the viewpoint: his reply does not remove the person he is
+        # looking at, or substitute Dad's thinking pose for their expression.
+        if who=="dad" and store.r13_camera=="stage" and store.place!="마차 안" and store.r13_motion_person not in (None,"dad") and "r13_visitor" in renpy.get_showing_tags():
+            return
         store.r13_current_pose=r13_conversation_pose(who,pose or store.dialogue_expression)
         visible=who in CAST and who!="dad" and store.place!="마차 안" and store.r13_camera=="stage"
         if visible:

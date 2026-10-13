@@ -2,41 +2,78 @@ screen r13_hud():
     style_prefix "r13"
     zorder 20
     frame:
-        xpos 24 ypos 20 xsize 654 ysize 70 padding (18,12)
+        xpos 24 ypos 20 xsize 410 ysize 82 padding (16,10)
         background R13ActionPanel()
-        hbox:
-            spacing 22
-            text r13_clock() size 19 color "#d6b779" yalign .5
-            add Solid("#8a7958",xsize=2,ysize=36) yalign .5
-            text place size 22 color "#fff2cf" xsize 310 yalign .5
+        vbox:
+            spacing 5
+            text r13_clock() size r13_read_size(19,22) color "#c6b88e"
+            text place size r13_read_size(22,26) color "#fff2cf" xsize 378
+
+init 80:
+    style r13_toolbar_button is r13_action_button:
+        xsize 148
+        ysize 64
+        padding (12,8)
+        background Solid("#152e3880")
+        hover_background Solid("#29434ed9")
+        insensitive_background Solid("#152e3840")
+    style r13_toolbar_button_text is r13_action_button_text:
+        color "#edf0e5"
+        hover_color "#ffffff"
+        insensitive_color "#aebec299"
+        outlines [(1,"#14232a99",0,1)]
+        xalign .5
+        yalign .5
 
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
-    if mode in ("field","talk"):
-        button:
-            area (0,642,1280,78) padding (0,0)
-            background Solid("#102322e8") hover_background Solid("#102322e8")
-            action NullAction() keyboard_focus False
+    # Three independent controls leave the rest of the scene visible/clickable.
     hbox:
-        xpos 310 ypos 654 spacing 10
-        textbutton "조사":
-            style "r13_action_button" xsize 225 ysize 58
-            action (investigate_action or NullAction())
-            selected mode=="field" sensitive ready and (mode=="field" or investigate_action is not None)
-            tooltip ("대화를 마치고 현장을 살핍니다" if mode=="talk" else "대화가 끝나면 현장을 살필 수 있습니다")
+        xalign .5 ypos 648 spacing 10
+        if mode=="field":
+            frame:
+                xsize 148 ysize 64 padding (12,8)
+                background Solid("#24423988")
+                text "조사":
+                    size r13_read_size(22,26) color "#e2ebdf"
+                    outlines [(1,"#14232a99",0,1)]
+                    xalign .5 yalign .5
+        else:
+            textbutton "조사":
+                style "r13_toolbar_button"
+                text_size r13_read_size(22,26)
+                action (investigate_action or NullAction())
+                sensitive ready and investigate_action is not None
+                tooltip "대화를 마치고 현장을 살핍니다"
         textbutton "제시":
-            style "r13_action_button" xsize 225 ysize 58
+            style "r13_toolbar_button"
+            text_size r13_read_size(22,26)
             action (present_action or NullAction()) sensitive ready and present_action is not None
             tooltip ((R13_NAMES.get(person,"")+"에게 자료를 보여줍니다") if person else "인물을 눌러 대화를 시작하세요")
         textbutton "기록":
-            style "r13_action_button" xsize 225 ysize 58
+            style "r13_toolbar_button"
+            text_size r13_read_size(22,26)
             action Show("r13_records") sensitive ready
-        textbutton "옵션":
-            style "r13_action_button" xsize 225 ysize 58
-            action ShowMenu("pause_menu") sensitive ready
-    if mode=="field":
-        text "제시하려면 인물을 눌러\n대화를 시작하세요":
-            xpos 35 ypos 660 xsize 252 size 18 color "#ced9d4"
+    # Owned by the active modal screen, so options remain clickable in dialogue.
+    button:
+        id "r13_options_gear"
+        area (1190,20,64,64) padding (0,0)
+        background Solid("#152e3866") hover_background Solid("#29434ee0")
+        insensitive_background Solid("#152e3840")
+        action ShowMenu("pause_menu") sensitive ready
+        tooltip "옵션" alt "옵션"
+        fixed:
+            xsize 64 ysize 64
+            # Stepped eight-tooth pixel gear; no extra bitmap or font glyph.
+            add Solid("#e0e8dc",xsize=24,ysize=24) xpos 20 ypos 12
+            add Solid("#e0e8dc",xsize=8,ysize=36) xpos 28 ypos 6
+            add Solid("#e0e8dc",xsize=36,ysize=8) xpos 14 ypos 20
+            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 18 ypos 10
+            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 38 ypos 10
+            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 18 ypos 30
+            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 38 ypos 30
+            add Solid("#203942",xsize=10,ysize=10) xpos 27 ypos 19
+            text "옵션" size 14 color "#e6ece2" xalign .5 ypos 45
 
 screen r13_hub(entry=False):
     style_prefix "r13"
@@ -68,7 +105,7 @@ screen r13_hub(entry=False):
         use r13_waiting_window(ready)
     else:
         textbutton "지도 · 이동":
-            style "r13_action_button" xpos 1075 ypos 23 xsize 180 ysize 62
+            style "r13_action_button" xpos 970 ypos 23 xsize 180 ysize 62
             text_size 23 action Return(("menu","map")) sensitive ready
     use r13_toolbar(mode="field",ready=ready)
     $ hint=GetTooltip()
@@ -116,32 +153,43 @@ screen r13_resident_stage(entry=False,ready=False):
             tooltip (R13_NAMES[actor["person"]]+"에게 말 걸기")
 
 
-screen r13_question_list(person,pose,title,entries,ready):
+screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None):
     style_prefix "r13"
-    add r13_close_art(person,pose,760):
-        id ("r13_topics_"+person)
-        xpos 220 xanchor .5 ypos r13_close_y(person,760,126,pose)
-        at r13_actor_appear(r13_appearance_duration())
-    add Solid("#00000088")
+    # Shade the scenery first. The face remains at its authored brightness.
+    add Solid("#000000a0")
+    if person:
+        add r13_close_art(person,pose,760):
+            id ("r13_topics_"+person)
+            xpos actor_x xanchor .5 ypos r13_close_y(person,760,126,pose)
+            if animate:
+                at r13_actor_appear(r13_appearance_duration())
     text title:
-        xpos 420 ypos 150 xsize 760 text_align .5 size 29 color "#f6d18a"
+        xpos list_left ypos 146 xsize list_width text_align .5
+        size r13_read_size(27,32) color "#f6d18a"
     viewport:
-        area (420,210,760,402)
+        area (list_left,204,list_width,342 if return_action is not None else 416)
         mousewheel True draggable True scrollbars "vertical"
         vbox:
-            spacing 14
+            spacing 12
             for title,action,was_read in entries:
                 button:
-                    xsize 737 yminimum 76 padding (18,15)
+                    xsize list_width-23 yminimum r13_read_row_height() padding (18,15)
                     background None hover_background Solid("#ffffff18")
                     action action sensitive ready
                     text (("{s}"+title+"{/s}") if was_read else title):
-                        xsize 701 text_align .5 xalign .5 size 24
-                        color ("#898b88" if was_read else "#fff4df")
+                        xsize list_width-59 text_align .5 xalign .5
+                        size r13_read_size(24,30)
+                        color ("#a0a39b" if was_read else "#fff4df")
                         outlines [(1,"#101515",0,0)]
             if not entries:
                 text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
-                    xsize 720 text_align .5 size 24 color "#eee5d5"
+                    xsize list_width-40 text_align .5 size r13_read_size(24,30) color "#eee5d5"
+    if return_action is not None:
+        textbutton "돌아가기":
+            xpos list_left+list_width//2 xanchor .5 ypos 558 xsize 220 ysize 64
+            padding (18,12) background Solid("#102b2bb0") hover_background Solid("#42615ed0")
+            text_size r13_read_size(23,28) text_color "#fff4df" text_xalign .5
+            action return_action sensitive ready
 
 screen r13_entry_topics():
     style_prefix "r13"
@@ -150,7 +198,7 @@ screen r13_entry_topics():
     default ready=False
     timer .35 action SetScreenVariable("ready",True)
     $ questions=[("신청과 명부가 다른 이유가 뭡니까?",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본과 다시 대조해 주시겠습니까?",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
-    use r13_question_list("guard","interview_neutral","돌목에게 묻기",questions,ready)
+    use r13_question_list("guard","interview_neutral","돌목에게 묻기",questions,ready,return_action=Return(("entry","back")))
     use r13_toolbar(investigate_action=Return(("entry","back")),present_action=Return(("entry","argue")),person="guard",mode="talk",ready=ready)
 
 screen r13_entry_karo_topics():
@@ -160,7 +208,7 @@ screen r13_entry_karo_topics():
     default ready=False
     timer .35 action SetScreenVariable("ready",True)
     $ questions=[("마차는 괜찮습니까?",Return("road"),r13_has("question_read:entry:karo:road")),("함께 왔다고 말해 주시겠어요?",Return("witness"),r13_has("question_read:entry:karo:witness")),("짐을 잠시 맡아 주시겠습니까?",Return("bags"),r13_has("question_read:entry:karo:bags"))]
-    use r13_question_list("karo","interview_neutral","까로에게 묻기",questions,ready)
+    use r13_question_list("karo","interview_neutral","까로에게 묻기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person="karo",mode="talk",ready=ready)
 
 # Kept as a save-compatible screen name; people open their topics directly.
@@ -169,7 +217,8 @@ screen r13_interaction(person):
 
 screen r13_material_corner(key):
     zorder 85
-    on "show" action Function(source_fx,"found")
+    # The card's reveal owns one paper whoosh; prediction/redraw/replace stay silent.
+    on "show" action Function(source_fx,"page")
     use r13_evidence_card(key,"제시한 자료")
 
 # The resident stays on the left; opaque questions never cover the face.
@@ -180,8 +229,8 @@ screen r13_topics(person):
     default ready=False
     timer .35 action SetScreenVariable("ready",True)
     $ actor_pose=r13_conversation_pose(person)
-    $ questions=[(spec["title"],Return(key),key in room13["read_topics"]) for key,spec in r13_topics(person)]
-    use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready)
+    $ questions=[(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics(person)]
+    use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person=person,mode="talk",ready=ready)
 
 screen r13_confirm(message,yes="진행한다",no="돌아간다"):
@@ -233,6 +282,8 @@ screen r13_book(target=None,present=False,hearing=False):
     default archive=False
     default category="evidence"
     default page=0
+    default order="recent"
+    default favorite_only=False
     timer .35 action SetScreenVariable("ready",True)
     add Solid("#eee7d6")
     text ("자료 제시 · "+R13_NAMES.get(target,"재판") if present else "자료 기록") style "r13_title_text" xpos 32 ypos 29
@@ -251,19 +302,20 @@ screen r13_book(target=None,present=False,hearing=False):
             xpos 816 ypos 98 spacing 8
             textbutton "이번 여정" style "r13_paper_tab_button" xsize 206 ysize 48 background R13PaperPanel(not archive) sensitive ready action [SetScreenVariable("archive",False),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
             textbutton "이전 발견" style "r13_paper_tab_button" xsize 206 ysize 48 background R13PaperPanel(archive) sensitive ready action [SetScreenVariable("archive",True),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-    $ entries=r13_record_entries(category,archive,present)
+    $ entries=r13_record_entries(category,archive,present,order,favorite_only)
+    use r13_record_filters("r13_book",order,favorite_only,archive and not present)
     $ selected_record=r13_record_selected(entries,detail,page)
     use r13_material_detail(selected_record,archive and not present)
-    use r13_material_grid(entries,selected_record,page,"r13_book")
+    use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     if present:
         textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
-            style "r13_compact_button" xpos 872 ypos 648 xsize 376 ysize 48
+            style "r13_compact_button" xpos 872 ypos 644 xsize 376 ysize 64 text_size r13_read_size(22,27)
             action Return(selected_record)
             sensitive ready and selected_record in room13.get("evidence",[]) and not archive
     else:
         text ("%d개 · 이전 여정의 기록"%len(entries) if archive else "%d개 · 이번 여정에서 확보"%len(entries)) style "r13_secondary_text" xpos 880 ypos 661
     textbutton ("제시 취소" if present else "닫기"):
-        style "r13_compact_button" xpos 32 ypos 648 xsize 220 ysize 48
+        style "r13_compact_button" xpos 32 ypos 644 xsize 220 ysize 64 text_size r13_read_size(22,27)
         action (Return(False) if present else Hide("r13_book")) sensitive ready
     key "game_menu" action (Return(False) if present else Hide("r13_book"))
 
@@ -289,7 +341,15 @@ screen r13_calendar():
                 elif day<room13["day"]:
                     text "지난 날" size 18
     text "확인한 약속" xpos 60 ypos 420 size 26 color "#765426"
-    text ("내일 동틀 무렵 · 제단으로 호송한다는 통보를 받았다." if room13["day"]==13 and "day13_warning" in room13.get("events",[]) else "목요일 저녁 · 어르신과 만나기로 했다." if room13["day"]<=4 and r13_has("elder_appointment") else "일요일 · 다람이의 사건을 주민 앞에서 다룬다." if room13["day"]<=7 and r13_has("trial_notice") else "날짜가 정해진 새 약속은 아직 없다.") xpos 60 ypos 467 size 23 xsize 1110
+    viewport:
+        area (60,462,1140,176) mousewheel True draggable True scrollbars "vertical"
+        vbox:
+            spacing 18
+            for promise in r13_calendar_promises():
+                text promise size r13_read_size(23,29) color "#342a23" xsize 1100
+            if not r13_calendar_promises():
+                text "날짜가 정해진 새 약속은 아직 없다." size r13_read_size(23,29) color "#536158" xsize 1100
+
     textbutton "닫기" xpos 60 ypos 650 action Hide("r13_calendar")
     if week>0:
         textbutton "지난 주" xpos 700 ypos 650 action SetScreenVariable("week",week-1)

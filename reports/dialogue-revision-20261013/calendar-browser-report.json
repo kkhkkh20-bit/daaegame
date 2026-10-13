@@ -1,0 +1,355 @@
+{
+  "passed": true,
+  "version": "0.15.8-dev",
+  "events": [
+    {
+      "test": "natural new game and gate wait",
+      "state": {
+        "campaign_id": "room13_v1",
+        "version": 3,
+        "story_revision": "father-pov-fire-pooling-v3",
+        "day": 1,
+        "period": 2,
+        "location": "gate",
+        "kitchen_switch": false,
+        "passage_open": false,
+        "case_state": "pending",
+        "victim_state": "alive",
+        "daram_state": "with_dad",
+        "granny_state": "trusted",
+        "trial_result": "pending",
+        "evidence": [
+          "E01",
+          "E02"
+        ],
+        "records": {
+          "E01": {
+            "day": 1,
+            "period": 0,
+            "source": "여행 중 가지고 온 편지",
+            "place": "gate"
+          },
+          "E02": {
+            "day": 1,
+            "period": 2,
+            "source": "원본과 대조해 정정받은 등록",
+            "place": "gate"
+          }
+        },
+        "flags": [
+          "question_read:entry:wait",
+          "entry_corrected"
+        ],
+        "read_topics": [],
+        "done": [],
+        "checks": {},
+        "encounters": [
+          {
+            "person": "karo",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "guard",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          },
+          {
+            "person": "daram",
+            "day": 1,
+            "period": 1,
+            "place": "gate"
+          }
+        ],
+        "resident_knowledge": {},
+        "propositions": [],
+        "arguments": {},
+        "log": [
+          {
+            "day": 1,
+            "period": 2,
+            "event": "time_boundary"
+          }
+        ],
+        "trial_ended": false,
+        "mom_state": "hidden",
+        "ending": null,
+        "events": [],
+        "convoy_revision": 0,
+        "scout_revision": -1,
+        "observations": {},
+        "week2_started": false,
+        "finale_started": false,
+        "world_art_revisions": {
+          "inn": "fc2fda3b89027bf7db63dbdb88a3bc66e50a6f0ae8f48b88046e88c06fe32571",
+          "school": "5313e39a160c827fb3d9ba19afba6064f700548ee7a4b8060bfc3d273ca2a6a2",
+          "workshop": "37db976480a1ab6e8bb056d43c3f0e5bc350f891961b9567d60b6ba3e804eb80",
+          "square": "434f311c48dd9c1c0d41302e1d2a372cb171e195d54392793dca9d8cb4062a18"
+        },
+        "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.png",
+        "interaction_revision": 2,
+        "last_inspection": null,
+        "visual_revision": "pixel-b-front-v3",
+        "arrival_seen": [
+          [
+            1,
+            1,
+            "gate",
+            "pending"
+          ],
+          [
+            1,
+            2,
+            "gate",
+            "pending"
+          ]
+        ]
+      }
+    },
+    {
+      "test": "first read date and subsequent-question memory",
+      "initial": [
+        {
+          "speaker": null,
+          "text": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+        },
+        {
+          "speaker": null,
+          "text": "도토는 한 장을 읽고 다른 장에 적었다. 눈과 펜이 번갈아 움직였다."
+        },
+        {
+          "speaker": "daram",
+          "text": "새 장부 만드는 거예요?"
+        },
+        {
+          "speaker": "doto",
+          "text": "옮겨 적는 거예요. 원본은 돌려줘야 해서요."
+        },
+        {
+          "speaker": "dad",
+          "text": "그럼 두 장이 같은 내용이어야겠구나. 다르게 적히면?"
+        },
+        {
+          "speaker": "doto",
+          "text": "틀린 쪽을 줄 긋고 남겨요. 지우면 누가 바꿨는지 모르니까요."
+        },
+        {
+          "speaker": null,
+          "text": "도토가 펜 끝을 들었다. 나는 다음 말을 하기 전에 그가 끝낸 줄을 보았다."
+        }
+      ],
+      "followup": [
+        {
+          "speaker": null,
+          "text": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+        },
+        {
+          "speaker": "doto",
+          "text": "두 장 옮기는 건 말씀드렸죠. 오늘은 어디까지 했는지 표시도 넣었어요. 제가 헷갈리지 말라고요."
+        },
+        {
+          "speaker": "doto",
+          "text": "어디까지 했는지 이제 안 잊어요. 대신 표시해 둔 종이를 잃어버리면 큰일이에요."
+        }
+      ]
+    },
+    {
+      "test": "day2 to day3 actual resident greeting",
+      "day2": [
+        {
+          "speaker": null,
+          "text": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+        },
+        {
+          "speaker": "dad",
+          "text": "잠깐 이야기해도 될까?"
+        },
+        {
+          "speaker": "doto",
+          "text": "도토예요. 먼저 이 줄만 끝낼게요. 급한 말이면 펜 놓고 들을게요."
+        },
+        {
+          "speaker": "doto",
+          "text": "어디까지 했는지 이제 안 잊어요. 대신 표시해 둔 종이를 잃어버리면 큰일이에요."
+        }
+      ],
+      "day3": [
+        {
+          "speaker": null,
+          "text": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+        },
+        {
+          "speaker": "doto",
+          "text": "오늘은 표시 종이를 펜 밑에 놨어요. 잃어버리면 쓰다가 알게 하려고요."
+        },
+        {
+          "speaker": "doto",
+          "text": "두 장 옮기는 건 말씀드렸죠. 오늘은 어디까지 했는지 표시도 넣었어요. 제가 헷갈리지 말라고요."
+        }
+      ]
+    },
+    {
+      "test": "expired early question hidden and held child absent",
+      "greeting": [
+        {
+          "speaker": null,
+          "text": "도토는 쓰던 줄을 끝내고 빈칸을 남겼다."
+        },
+        {
+          "speaker": "doto",
+          "text": "같은 말을 다시 들었다고 두 사람이 본 일처럼 적을 뻔했어요. 처음 말한 분을 다시 봐야죠."
+        },
+        {
+          "speaker": "doto",
+          "text": "아직 아이가 돌아오지 않았죠. 끝난 줄과 끝나지 않은 줄을 같이 묶지는 않을게요."
+        }
+      ],
+      "topic": [
+        {
+          "speaker": null,
+          "text": "도토는 쓰던 줄을 끝내고 빈칸을 남겼다."
+        },
+        {
+          "speaker": "doto",
+          "text": "같은 말을 다시 들었다고 두 사람이 본 일처럼 적을 뻔했어요. 처음 말한 분을 다시 봐야죠."
+        },
+        {
+          "speaker": "doto",
+          "text": "아직 아이가 돌아오지 않았죠. 끝난 줄과 끝나지 않은 줄을 같이 묶지는 않을게요."
+        }
+      ]
+    },
+    {
+      "test": "same day actual custody branch refresh",
+      "held": [
+        {
+          "speaker": null,
+          "text": "도토는 고쳐 쓴 장과 고치기 전 장을 나란히 놓았다."
+        },
+        {
+          "speaker": "doto",
+          "text": "고친 줄 아래에 이유도 써야겠어요. 맞게 고쳤는데 왜 고쳤는지 잊어버렸네요."
+        },
+        {
+          "speaker": "doto",
+          "text": "아직 아이가 돌아오지 않았죠. 끝난 줄과 끝나지 않은 줄을 같이 묶지는 않을게요."
+        }
+      ],
+      "rescued": [
+        {
+          "speaker": null,
+          "text": "도토는 고쳐 쓴 장과 고치기 전 장을 나란히 놓았다."
+        },
+        {
+          "speaker": "doto",
+          "text": "고친 줄 아래에 이유도 써야겠어요. 맞게 고쳤는데 왜 고쳤는지 잊어버렸네요."
+        },
+        {
+          "speaker": "doto",
+          "text": "돌아오셨군요. 돌아온 사람 수부터 다시 맞출게요. 예전 명단만 보면 또 빠질 수 있으니까."
+        }
+      ]
+    },
+    {
+      "test": "native save load preserves calendar flags, date/view metadata and custody",
+      "identical": true
+    },
+    {
+      "test": "same day actual supplies preparation reaction",
+      "before": [
+        {
+          "speaker": null,
+          "text": "은호는 남은 물건과 빈 자루를 따로 셌다."
+        },
+        {
+          "speaker": "dad",
+          "text": "잠깐 말씀을 여쭙겠습니다."
+        },
+        {
+          "speaker": "resident_eunho",
+          "text": "은호라 하오. 거래가 아닌 일이라도 먼저 들어 보지. 무엇을 찾소?"
+        },
+        {
+          "speaker": "resident_eunho",
+          "text": "얼마를 쓰고 얼마를 남길지 먼저 정합시다. 다 쓰고 나서 나한테 다시 가져오라고 할 순 없소."
+        }
+      ],
+      "after": [
+        {
+          "speaker": null,
+          "text": "은호는 나간 물건의 수량과 빈 자루를 대조했다."
+        },
+        {
+          "speaker": "resident_eunho",
+          "text": "이미 내준 몫은 여기에 남겼소. 이제 안 내줬다고 말하지도, 더 내준 것처럼 말하지도 맙시다. 얼마를 쓰고 얼마를 남길지 먼저 정합시다. 다 쓰고 나서 나한테 다시 가져오라고 할 순 없소."
+        }
+      ]
+    },
+    {
+      "test": "actual historical testimony replay",
+      "lines": [
+        {
+          "speaker": null,
+          "text": "5일째 오후 들은 이야기를 수첩에서 다시 확인했다. 아래는 당시의 기록이다."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 아빠) 너는 문 앞에 있었고, 할머니는 주방으로 갔어. 그 뒤에도 계속 봤어?"
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 나비) 아니요. 안에서는 애가 기침하는데 그쪽까지 어떻게 봐요."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 아빠) 도토가 문을 부수던 때는?"
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 나비) 그때도 안 계셨어요. 나중에 지렛대를 가져오셨죠."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 기록) 나비는 젖은 손을 앞치마에 대지 않았다. 손끝에서 물이 떨어졌다."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 나비) 같이 있던 건 처음 비명 때까지예요. 이 말 하면 할머니는 제가 왜 그랬냐고 하실까요."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 아빠) 네가 거짓말한 건 아니야."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 나비) 알아요."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 기록) 나비가 손을 닦았다. 대답이 끝난 줄 알고 내가 수첩을 접었다."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 나비) 아는데도 싫을 수는 있잖아요."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 아빠) ……그렇지."
+        },
+        {
+          "speaker": null,
+          "text": "(당시 기록 · 나비) 그릇이나 이쪽으로 주세요. 그건 탐정님이 틀릴 일 없으니까."
+        }
+      ]
+    }
+  ],
+  "browser_errors": [],
+  "limits": [
+    "Natural opening/gate; date2/3/6/9 and custody state explicitly prepared for branch checks",
+    "No natural 14-day or every-ending playthrough",
+    "Resident action descriptions evolve; actor art and routine availability retained"
+  ],
+  "latest_ui_base": "be9eb82fb0891c2432effed342c08dc4546cf995"
+}
