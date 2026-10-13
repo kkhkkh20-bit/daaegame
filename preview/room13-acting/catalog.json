@@ -1,5 +1,5 @@
 {
-  "revision": "acting-review-v1",
+  "revision": "acting-front-review-v2",
   "coverage": {
     "people": 43,
     "main": 12,
@@ -9,6 +9,53 @@
     "missing": [],
     "complete": true
   },
+  "portrait_coverage": {
+    "people": 43,
+    "drawings": 172,
+    "avatars": 172,
+    "missing": [],
+    "dedicated_avatars": 43,
+    "dialogue_complete": true,
+    "complete": true,
+    "verification": "source-metadata-only"
+  },
+  "front_runtime": [
+    {
+      "title": "까로와 직접 대화",
+      "caption": "0.15.0 공개 후보 · 새 게임에서 까로를 선택하고 짐을 부탁했을 때의 실제 대사입니다. 중앙 대화 원화와 왼쪽의 별도 프사를 함께 표시합니다.",
+      "file": "screenshots/front-02b-karo-real-dialogue.png"
+    },
+    {
+      "title": "마차 안의 다람이",
+      "caption": "0.15.0 최종 공개 후보 · 새 게임 도입부의 실제 대사입니다. 새 가족 컷씬과 다람이의 독립 프사를 함께 확인할 수 있습니다.",
+      "file": "screenshots/front-speaker-daram.png"
+    },
+    {
+      "title": "아빠가 대답하는 장면",
+      "caption": "0.15.0 최종 공개 후보 · 새 게임 도입부에서 이어지는 아빠의 실제 대사입니다. 회색·크림색 가족 팔레트와 아빠의 전용 프사를 사용합니다.",
+      "file": "screenshots/front-speaker-dad.png"
+    },
+    {
+      "title": "까로의 질문 목록",
+      "caption": "0.15.0 공개 후보 · 새 게임에서 까로를 직접 선택해 연 실제 대화 주제입니다.",
+      "file": "screenshots/front-02-karo-direct.png"
+    },
+    {
+      "title": "부리의 질문 목록",
+      "caption": "0.15.0 공개 후보 · 지도에서 수리점으로 이동해 부리를 직접 선택한 실제 플레이 화면입니다.",
+      "file": "screenshots/front-08-buri-direct-topics.png"
+    },
+    {
+      "title": "원본 자료로 입장을 설명한다",
+      "caption": "0.15.0 공개 후보 · 안내소 원본과 규칙을 조사한 뒤 경비 돌목에게 자료를 제시하는 실제 선택 장면입니다.",
+      "file": "screenshots/front-03b-proof-reason-choice.png"
+    },
+    {
+      "title": "모바일에서 펼친 마을 지도",
+      "caption": "0.15.0 공개 후보 · 실제 플레이 중 연 이동 지도입니다.",
+      "file": "screenshots/front-11-mobile-map.png"
+    }
+  ],
   "people": [
     {
       "id": "daram",
@@ -70,120 +117,120 @@
       },
       "after": {
         "neutral": {
-          "file": "assets/room13-pixel-acting-daram.png",
+          "file": "assets/room13-pixel-world-daram-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            53,
-            38,
-            361,
-            482
+            45,
+            20,
+            385,
+            503
           ]
         },
         "thinking": {
-          "file": "assets/room13-pixel-acting-family-extra.png",
+          "file": "assets/room13-pixel-world-family-extra-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            76,
-            31,
-            436,
-            461
+            69,
+            20,
+            447,
+            475
           ]
         },
         "distressed": {
-          "file": "assets/room13-pixel-acting-family-extra.png",
+          "file": "assets/room13-pixel-world-family-extra-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            637,
-            52,
-            340,
-            441
+            630,
+            44,
+            357,
+            451
           ]
         },
         "expressive": {
-          "file": "assets/room13-pixel-acting-daram.png",
+          "file": "assets/room13-pixel-world-daram-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            36,
-            552,
+            30,
+            528,
             529,
-            434
+            465
           ]
         },
         "action_1": {
-          "file": "assets/room13-pixel-acting-daram.png",
+          "file": "assets/room13-pixel-world-daram-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            577,
-            569,
-            437,
-            407
+            608,
+            557,
+            461,
+            426
           ]
         },
         "action_2": {
-          "file": "assets/room13-pixel-acting-daram.png",
+          "file": "assets/room13-pixel-world-daram-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1069,
-            527,
-            426,
-            448
+            1076,
+            528,
+            442,
+            462
           ]
         },
         "inspect_floor": {
-          "file": "assets/room13-pixel-acting-daram.png",
+          "file": "assets/room13-pixel-world-daram-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            569,
-            131,
-            444,
-            377
+            547,
+            137,
+            478,
+            381
           ]
         },
         "panic": {
-          "file": "assets/room13-pixel-acting-daram.png",
+          "file": "assets/room13-pixel-world-daram-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1092,
-            52,
-            376,
-            463
+            1078,
+            20,
+            416,
+            503
           ]
         },
         "joy": {
-          "file": "assets/room13-pixel-acting-family-extra.png",
+          "file": "assets/room13-pixel-world-family-extra-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1109,
-            55,
-            380,
-            432
+            1101,
+            44,
+            395,
+            447
           ]
         }
       },
@@ -199,7 +246,135 @@
         "inspect_floor": "바닥 단서 살피기"
       },
       "authored": 9,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-daram.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            116,
+            6,
+            518,
+            508
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-daram.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            788,
+            6,
+            528,
+            508
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-daram.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            116,
+            518,
+            527,
+            500
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-daram.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            796,
+            516,
+            512,
+            495
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-family-profile-icons.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            0,
+            0,
+            724,
+            724
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-daram.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            925,
+            6,
+            391,
+            315
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-daram.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            235,
+            518,
+            408,
+            325
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-daram.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            925,
+            516,
+            383,
+            325
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-family-profile-icons.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "dad",
@@ -261,120 +436,120 @@
       },
       "after": {
         "neutral": {
-          "file": "assets/room13-pixel-acting-family-extra.png",
+          "file": "assets/room13-pixel-world-family-extra-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            142,
-            520,
-            353,
-            463
+            133,
+            511,
+            372,
+            478
           ]
         },
         "thinking": {
-          "file": "assets/room13-pixel-acting-dad.png",
+          "file": "assets/room13-pixel-world-dad-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            550,
-            67,
-            451,
-            438
+            551,
+            36,
+            463,
+            472
           ]
         },
         "distressed": {
-          "file": "assets/room13-pixel-acting-family-extra.png",
+          "file": "assets/room13-pixel-world-family-extra-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            614,
-            547,
-            384,
-            435
+            603,
+            539,
+            400,
+            447
           ]
         },
         "expressive": {
-          "file": "assets/room13-pixel-acting-family-extra.png",
+          "file": "assets/room13-pixel-world-family-extra-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1025,
-            556,
-            483,
-            426
+            1019,
+            543,
+            498,
+            444
           ]
         },
         "action_1": {
-          "file": "assets/room13-pixel-acting-dad.png",
+          "file": "assets/room13-pixel-world-dad-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            554,
-            574,
-            464,
-            396
+            552,
+            555,
+            476,
+            423
           ]
         },
         "action_2": {
-          "file": "assets/room13-pixel-acting-dad.png",
+          "file": "assets/room13-pixel-world-dad-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1075,
-            506,
-            438,
-            471
+            1071,
+            497,
+            447,
+            484
           ]
         },
         "listen_right": {
-          "file": "assets/room13-pixel-acting-dad.png",
+          "file": "assets/room13-pixel-world-dad-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            40,
-            31,
-            365,
-            470
+            39,
+            12,
+            371,
+            493
           ]
         },
         "breakdown": {
-          "file": "assets/room13-pixel-acting-dad.png",
+          "file": "assets/room13-pixel-world-dad-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1057,
-            145,
-            441,
-            343
+            1050,
+            114,
+            460,
+            382
           ]
         },
         "protect": {
-          "file": "assets/room13-pixel-acting-dad.png",
+          "file": "assets/room13-pixel-world-dad-gray.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            40,
-            530,
-            490,
-            449
+            38,
+            516,
+            489,
+            465
           ]
         }
       },
@@ -390,7 +565,135 @@
         "listen_right": "오른쪽을 보며 경계"
       },
       "authored": 9,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-dad.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            178,
+            23,
+            561,
+            481
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-dad.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            781,
+            26,
+            575,
+            478
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-dad.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            178,
+            512,
+            541,
+            489
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-dad.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            780,
+            518,
+            581,
+            483
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-family-profile-icons.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            740,
+            0,
+            692,
+            692
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-dad.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            930,
+            26,
+            320,
+            285
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-dad.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            330,
+            515,
+            310,
+            285
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-dad.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            925,
+            518,
+            330,
+            285
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-family-profile-icons.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          740,
+          0,
+          692,
+          692
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "granny",
@@ -539,7 +842,135 @@
         "action_2": "걸레로 닦기"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-granny.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            237,
+            8,
+            496,
+            487
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-granny.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            780,
+            8,
+            504,
+            487
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-granny.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            237,
+            512,
+            479,
+            488
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-granny.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            803,
+            512,
+            488,
+            487
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-granny.png",
+          "size": [
+            1254,
+            1254
+          ],
+          "rect": [
+            0,
+            0,
+            1254,
+            1205
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-granny.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            784,
+            12,
+            496,
+            312
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-granny.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            241,
+            512,
+            471,
+            293
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-granny.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            807,
+            512,
+            480,
+            296
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-granny.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "rect": [
+          0,
+          0,
+          1254,
+          1205
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "seryeon",
@@ -716,7 +1147,135 @@
         "chair_listen": "의자에서 돌아보기"
       },
       "authored": 8,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-seryeon.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            286,
+            16,
+            455,
+            496
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-seryeon.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            827,
+            16,
+            425,
+            496
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-seryeon.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            286,
+            517,
+            450,
+            488
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-seryeon.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            826,
+            517,
+            435,
+            489
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-a.png",
+          "size": [
+            2170,
+            725
+          ],
+          "rect": [
+            780,
+            0,
+            690,
+            690
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-seryeon.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            877,
+            20,
+            339,
+            280
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-seryeon.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            339,
+            521,
+            351,
+            272
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-seryeon.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            878,
+            521,
+            344,
+            272
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-a.png",
+        "size": [
+          2170,
+          725
+        ],
+        "rect": [
+          780,
+          0,
+          690,
+          690
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "nabi",
@@ -865,7 +1424,135 @@
         "action_2": "차 나르기"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-nabi.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            275,
+            13,
+            427,
+            499
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-nabi.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            848,
+            13,
+            399,
+            499
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-nabi.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            271,
+            512,
+            432,
+            505
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-nabi.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            829,
+            512,
+            437,
+            505
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-a.png",
+          "size": [
+            2170,
+            725
+          ],
+          "rect": [
+            1470,
+            0,
+            690,
+            690
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-nabi.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            864,
+            17,
+            363,
+            293
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-nabi.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            306,
+            527,
+            363,
+            278
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-nabi.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            864,
+            527,
+            363,
+            278
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-a.png",
+        "size": [
+          2170,
+          725
+        ],
+        "rect": [
+          1470,
+          0,
+          690,
+          690
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "bami",
@@ -1014,7 +1701,135 @@
         "action_2": "앉아서 기록"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-bami.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            224,
+            14,
+            481,
+            490
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-bami.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            841,
+            14,
+            472,
+            498
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-bami.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            224,
+            517,
+            477,
+            494
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-bami.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            839,
+            516,
+            476,
+            495
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-b.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            22,
+            0,
+            724,
+            724
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-bami.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            845,
+            18,
+            464,
+            308
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-bami.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            228,
+            521,
+            469,
+            305
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-bami.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            843,
+            520,
+            468,
+            305
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-b.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          22,
+          0,
+          724,
+          724
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "doto",
@@ -1163,7 +1978,135 @@
         "action_2": "바닥에 앉아 독서"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-doto.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            250,
+            13,
+            474,
+            491
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-doto.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            809,
+            13,
+            476,
+            491
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-doto.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            257,
+            516,
+            457,
+            490
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-doto.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            809,
+            516,
+            505,
+            490
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-b.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            770,
+            0,
+            678,
+            678
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-doto.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            864,
+            17,
+            379,
+            303
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-doto.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            302,
+            520,
+            375,
+            294
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-doto.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            864,
+            520,
+            379,
+            294
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-b.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          770,
+          0,
+          678,
+          678
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "buri",
@@ -1312,7 +2255,135 @@
         "action_2": "부품 검사"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-buri.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            260,
+            10,
+            470,
+            502
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-buri.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            817,
+            16,
+            454,
+            496
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-buri.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            252,
+            512,
+            482,
+            494
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-buri.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            804,
+            512,
+            499,
+            502
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-b.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            1450,
+            0,
+            720,
+            720
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-buri.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            872,
+            20,
+            338,
+            274
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-buri.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            330,
+            526,
+            334,
+            272
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-buri.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            872,
+            528,
+            342,
+            272
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-b.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          1450,
+          0,
+          720,
+          720
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "karo",
@@ -1461,7 +2532,135 @@
         "action_2": "상자에 앉아 차 마시기"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-karo.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            259,
+            9,
+            490,
+            503
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-karo.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            855,
+            9,
+            456,
+            503
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-karo.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            251,
+            521,
+            493,
+            492
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-karo.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            816,
+            521,
+            511,
+            498
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-c.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            0,
+            0,
+            724,
+            724
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-karo.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            894,
+            13,
+            359,
+            322
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-karo.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            303,
+            525,
+            362,
+            318
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-karo.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            884,
+            525,
+            369,
+            318
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-c.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          0,
+          0,
+          724,
+          724
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "neoul",
@@ -1610,7 +2809,135 @@
         "action_2": "간이 의자에서 휴식"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-neoul.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            254,
+            7,
+            493,
+            491
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-neoul.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            829,
+            6,
+            461,
+            492
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-neoul.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            260,
+            512,
+            478,
+            487
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-neoul.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            799,
+            512,
+            501,
+            487
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-c.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            735,
+            0,
+            710,
+            710
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-neoul.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            866,
+            10,
+            393,
+            305
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-neoul.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            296,
+            512,
+            405,
+            300
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-neoul.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            862,
+            512,
+            399,
+            300
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-c.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          735,
+          0,
+          710,
+          710
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "mom",
@@ -1672,81 +2999,81 @@
       },
       "after": {
         "neutral": {
-          "file": "assets/room13-pixel-acting-mom.png",
+          "file": "assets/room13-pixel-world-mom-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            84,
-            8,
-            414,
-            525
+            82,
+            4,
+            421,
+            509
           ]
         },
         "thinking": {
-          "file": "assets/room13-pixel-acting-mom.png",
+          "file": "assets/room13-pixel-world-mom-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
             560,
-            14,
-            389,
-            519
+            8,
+            400,
+            505
           ]
         },
         "distressed": {
-          "file": "assets/room13-pixel-acting-mom.png",
+          "file": "assets/room13-pixel-world-mom-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1160,
-            23,
-            331,
-            510
+            1132,
+            11,
+            371,
+            504
           ]
         },
         "expressive": {
-          "file": "assets/room13-pixel-acting-mom.png",
+          "file": "assets/room13-pixel-world-mom-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            35,
-            534,
-            531,
-            461
+            32,
+            537,
+            539,
+            454
           ]
         },
         "action_1": {
-          "file": "assets/room13-pixel-acting-mom.png",
+          "file": "assets/room13-pixel-world-mom-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            566,
-            534,
+            571,
+            539,
             435,
-            461
+            453
           ]
         },
         "action_2": {
-          "file": "assets/room13-pixel-acting-mom.png",
+          "file": "assets/room13-pixel-world-mom-gray-gutter.png",
           "size": [
             1536,
             1024
           ],
           "rect": [
-            1053,
-            571,
-            469,
-            431
+            1050,
+            559,
+            476,
+            444
           ]
         }
       },
@@ -1759,7 +3086,135 @@
         "action_2": "고대 서적 연구"
       },
       "authored": 6,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-mom.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            203,
+            43,
+            497,
+            472
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-mom.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            796,
+            55,
+            557,
+            460
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-mom.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            199,
+            529,
+            501,
+            478
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-mom.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            785,
+            535,
+            508,
+            472
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-family-profile-icons.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            1480,
+            0,
+            692,
+            692
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-mom.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            915,
+            55,
+            380,
+            290
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-mom.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            335,
+            530,
+            365,
+            275
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-mom.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            910,
+            535,
+            383,
+            275
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-family-profile-icons.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          1480,
+          0,
+          692,
+          692
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "guard",
@@ -1950,7 +3405,135 @@
         "listen_left": "왼쪽을 보며 경계"
       },
       "authored": 9,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-guard.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            234,
+            27,
+            520,
+            483
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-guard.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            812,
+            27,
+            492,
+            484
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-guard.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            261,
+            524,
+            479,
+            469
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-guard.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            784,
+            523,
+            528,
+            483
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-main-profile-c.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            1450,
+            0,
+            720,
+            720
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-guard.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            888,
+            31,
+            325,
+            238
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-guard.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            333,
+            528,
+            329,
+            226
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-guard.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            887,
+            527,
+            330,
+            226
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-main-profile-c.png",
+        "size": [
+          2172,
+          724
+        ],
+        "rect": [
+          1450,
+          0,
+          720,
+          720
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "neutral"
     },
     {
       "id": "elder",
@@ -2043,7 +3626,135 @@
         "activity": "망원경으로 별 관찰"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            33,
+            62,
+            322,
+            408
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            424,
+            62,
+            309,
+            408
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            803,
+            62,
+            315,
+            408
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1179,
+            62,
+            322,
+            408
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-0.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            26,
+            143,
+            379,
+            379
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            455,
+            62,
+            247,
+            245
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            835,
+            62,
+            252,
+            245
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1211,
+            62,
+            258,
+            245
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-0.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          26,
+          143,
+          379,
+          379
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "bodum",
@@ -2136,7 +3847,135 @@
         "activity": "바구니의 빵을 덮기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            25,
+            542,
+            340,
+            411
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            409,
+            542,
+            332,
+            411
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            796,
+            542,
+            326,
+            411
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1169,
+            542,
+            343,
+            411
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-0.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            392,
+            143,
+            372,
+            372
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            442,
+            542,
+            266,
+            247
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            829,
+            542,
+            261,
+            247
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-00.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1203,
+            542,
+            274,
+            247
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-0.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          392,
+          143,
+          372,
+          372
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "workshop",
@@ -2229,7 +4068,135 @@
         "activity": "등유리 닦기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            12,
+            48,
+            383,
+            426
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            405,
+            48,
+            354,
+            426
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            773,
+            50,
+            361,
+            424
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1137,
+            44,
+            389,
+            430
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-0.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            777,
+            158,
+            358,
+            358
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            440,
+            48,
+            283,
+            256
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            809,
+            50,
+            289,
+            254
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1176,
+            44,
+            311,
+            258
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-0.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          777,
+          158,
+          358,
+          358
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_tori",
@@ -2322,7 +4289,135 @@
         "activity": "천의 바늘땀 세기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            18,
+            482,
+            334,
+            529
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            414,
+            481,
+            322,
+            530
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            779,
+            481,
+            330,
+            530
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1167,
+            481,
+            337,
+            530
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-0.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1136,
+            119,
+            398,
+            398
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            446,
+            481,
+            258,
+            318
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            812,
+            481,
+            264,
+            318
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-01.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1201,
+            481,
+            270,
+            318
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-0.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1136,
+          119,
+          398,
+          398
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_bori",
@@ -2415,7 +4510,135 @@
         "activity": "장작 묶기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            40,
+            79,
+            332,
+            387
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            418,
+            74,
+            325,
+            384
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            792,
+            79,
+            329,
+            393
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1164,
+            73,
+            337,
+            388
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-0.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            29,
+            560,
+            372,
+            372
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            450,
+            74,
+            260,
+            230
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            825,
+            79,
+            263,
+            236
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1198,
+            73,
+            270,
+            233
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-0.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          29,
+          560,
+          372,
+          372
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_yeoni",
@@ -2508,7 +4731,135 @@
         "activity": "뒤집은 소매 살피기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            48,
+            515,
+            304,
+            445
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            436,
+            513,
+            282,
+            447
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            808,
+            518,
+            300,
+            442
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1185,
+            513,
+            308,
+            447
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-six.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            47,
+            30,
+            474,
+            474
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            464,
+            513,
+            226,
+            268
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            838,
+            518,
+            240,
+            265
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-02.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1216,
+            513,
+            246,
+            268
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-six.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          47,
+          30,
+          474,
+          474
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_kongi",
@@ -2601,7 +4952,135 @@
         "activity": "눌린 빵 꺼내기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            30,
+            52,
+            347,
+            427
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            413,
+            52,
+            340,
+            426
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            793,
+            66,
+            338,
+            412
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1172,
+            54,
+            342,
+            424
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-0.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            762,
+            556,
+            382,
+            382
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            447,
+            52,
+            272,
+            256
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            827,
+            66,
+            270,
+            247
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1206,
+            54,
+            274,
+            254
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-0.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          762,
+          556,
+          382,
+          382
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_kkwak",
@@ -2694,7 +5173,135 @@
         "activity": "물통의 얼음 깨기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            21,
+            502,
+            371,
+            498
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            413,
+            503,
+            343,
+            499
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            798,
+            517,
+            333,
+            482
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1165,
+            505,
+            359,
+            497
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-0.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1148,
+            564,
+            368,
+            368
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            447,
+            503,
+            274,
+            299
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            831,
+            517,
+            266,
+            289
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-03.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1201,
+            505,
+            287,
+            298
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-0.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1148,
+          564,
+          368,
+          368
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_librarian",
@@ -2787,7 +5394,135 @@
         "activity": "젖은 책에 마른 종이 끼우기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            47,
+            74,
+            293,
+            426
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            438,
+            74,
+            283,
+            426
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            815,
+            74,
+            290,
+            426
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1199,
+            73,
+            310,
+            427
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-1.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            8,
+            110,
+            375,
+            375
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            466,
+            74,
+            226,
+            256
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            844,
+            74,
+            232,
+            256
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1230,
+            73,
+            248,
+            256
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-1.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          8,
+          110,
+          375,
+          375
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_owlgp",
@@ -2880,7 +5615,135 @@
         "activity": "낡은 수첩 제본 묶기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            17,
+            543,
+            351,
+            409
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            405,
+            542,
+            344,
+            409
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            785,
+            544,
+            348,
+            408
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1169,
+            543,
+            350,
+            409
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-1.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            393,
+            118,
+            367,
+            367
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            439,
+            542,
+            275,
+            245
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            820,
+            544,
+            278,
+            245
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-04.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1204,
+            543,
+            280,
+            245
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-1.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          393,
+          118,
+          367,
+          367
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_teacher",
@@ -2973,7 +5836,135 @@
         "activity": "아이 외투의 젖은 끝 펴기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            7,
+            44,
+            381,
+            441
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            413,
+            38,
+            356,
+            447
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            786,
+            43,
+            353,
+            442
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1151,
+            43,
+            380,
+            442
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-1.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            779,
+            131,
+            357,
+            357
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            449,
+            38,
+            285,
+            268
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            821,
+            43,
+            282,
+            265
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1189,
+            43,
+            304,
+            265
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-1.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          779,
+          131,
+          357,
+          357
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_nero",
@@ -3066,7 +6057,135 @@
         "activity": "짐의 이름표 떼기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            7,
+            495,
+            377,
+            503
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            401,
+            496,
+            371,
+            501
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            787,
+            492,
+            358,
+            506
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1159,
+            496,
+            371,
+            502
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-1.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1145,
+            109,
+            391,
+            391
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            438,
+            496,
+            297,
+            301
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            823,
+            492,
+            286,
+            304
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-05.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1196,
+            496,
+            297,
+            301
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-1.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1145,
+          109,
+          391,
+          391
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_seol",
@@ -3159,7 +6278,135 @@
         "activity": "작은 종의 끈 매기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            22,
+            40,
+            343,
+            463
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            413,
+            39,
+            337,
+            463
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            797,
+            40,
+            330,
+            461
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1171,
+            40,
+            346,
+            462
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-six.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            544,
+            58,
+            446,
+            446
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            447,
+            39,
+            270,
+            278
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            830,
+            40,
+            264,
+            277
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1206,
+            40,
+            277,
+            277
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-six.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          544,
+          58,
+          446,
+          446
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_ppul",
@@ -3252,7 +6499,135 @@
         "activity": "배급표에 문진 놓기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            10,
+            521,
+            365,
+            464
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            397,
+            521,
+            358,
+            462
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            781,
+            521,
+            356,
+            462
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1157,
+            521,
+            372,
+            462
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-1.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            376,
+            563,
+            389,
+            389
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            433,
+            521,
+            286,
+            277
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            817,
+            521,
+            285,
+            277
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-06.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1194,
+            521,
+            298,
+            277
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-1.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          376,
+          563,
+          389,
+          389
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_tok",
@@ -3345,7 +6720,135 @@
         "activity": "집게로 작은 핀 살피기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            5,
+            27,
+            387,
+            461
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            420,
+            27,
+            336,
+            461
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            786,
+            38,
+            345,
+            448
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1143,
+            29,
+            392,
+            459
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-1.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            771,
+            574,
+            372,
+            372
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            454,
+            27,
+            269,
+            277
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            820,
+            38,
+            276,
+            269
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1182,
+            29,
+            314,
+            275
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-1.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          771,
+          574,
+          372,
+          372
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_sling",
@@ -3438,7 +6941,135 @@
         "activity": "배달 순서대로 봉투 나누기"
       },
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            13,
+            512,
+            370,
+            492
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            425,
+            511,
+            323,
+            493
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            782,
+            514,
+            354,
+            490
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1138,
+            514,
+            391,
+            490
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-1.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1152,
+            568,
+            378,
+            378
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            457,
+            511,
+            258,
+            296
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            817,
+            514,
+            283,
+            294
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-07.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1177,
+            514,
+            313,
+            294
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-1.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1152,
+          568,
+          378,
+          378
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "activity"
     },
     {
       "id": "resident_momo",
@@ -3528,7 +7159,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            29,
+            28,
+            325,
+            437
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            414,
+            28,
+            322,
+            437
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            800,
+            28,
+            321,
+            437
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1175,
+            28,
+            333,
+            437
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-2.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            22,
+            109,
+            384,
+            384
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            446,
+            28,
+            258,
+            262
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            832,
+            28,
+            257,
+            262
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1208,
+            28,
+            266,
+            262
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-2.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          22,
+          109,
+          384,
+          384
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_read"
     },
     {
       "id": "resident_ttadak",
@@ -3618,7 +7377,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            13,
+            482,
+            360,
+            506
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            403,
+            482,
+            347,
+            495
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            787,
+            482,
+            346,
+            487
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1147,
+            482,
+            377,
+            487
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-six.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1026,
+            29,
+            475,
+            475
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            438,
+            482,
+            278,
+            297
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            822,
+            482,
+            277,
+            292
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-08.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1185,
+            482,
+            302,
+            292
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-six.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1026,
+          29,
+          475,
+          475
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_repair"
     },
     {
       "id": "resident_piko",
@@ -3708,7 +7595,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            24,
+            13,
+            348,
+            493
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            428,
+            13,
+            313,
+            492
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            814,
+            13,
+            326,
+            492
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1202,
+            13,
+            328,
+            492
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-six.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            36,
+            509,
+            490,
+            490
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            459,
+            13,
+            250,
+            295
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            847,
+            13,
+            261,
+            295
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1235,
+            13,
+            262,
+            295
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-six.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          36,
+          509,
+          490,
+          490
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_paint"
     },
     {
       "id": "resident_mungchi",
@@ -3798,7 +7813,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            7,
+            528,
+            382,
+            462
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            415,
+            528,
+            352,
+            448
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            800,
+            528,
+            358,
+            448
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1178,
+            525,
+            358,
+            451
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-2.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1150,
+            109,
+            384,
+            384
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            450,
+            528,
+            282,
+            269
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            836,
+            528,
+            286,
+            269
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-09.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1214,
+            525,
+            286,
+            271
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-2.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1150,
+          109,
+          384,
+          384
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_carry"
     },
     {
       "id": "resident_madam",
@@ -3888,7 +8031,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            14,
+            49,
+            378,
+            447
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            406,
+            46,
+            359,
+            452
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            779,
+            58,
+            371,
+            438
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1159,
+            54,
+            366,
+            447
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-2.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            10,
+            554,
+            395,
+            395
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            442,
+            46,
+            287,
+            271
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            816,
+            58,
+            297,
+            263
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1196,
+            54,
+            293,
+            268
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-2.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          10,
+          554,
+          395,
+          395
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_inspect"
     },
     {
       "id": "resident_siluk",
@@ -3978,7 +8249,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            8,
+            510,
+            385,
+            471
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            421,
+            510,
+            334,
+            471
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            801,
+            510,
+            318,
+            471
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1153,
+            510,
+            382,
+            471
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-2.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            386,
+            550,
+            399,
+            399
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            454,
+            510,
+            267,
+            283
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            833,
+            510,
+            254,
+            283
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-10.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1191,
+            510,
+            306,
+            283
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-2.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          386,
+          550,
+          399,
+          399
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_clean"
     },
     {
       "id": "resident_musoe",
@@ -4068,7 +8467,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            8,
+            81,
+            396,
+            403
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            412,
+            76,
+            371,
+            404
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            793,
+            91,
+            354,
+            379
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1158,
+            83,
+            371,
+            394
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-2.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            768,
+            567,
+            382,
+            382
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            449,
+            76,
+            297,
+            242
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            828,
+            91,
+            283,
+            227
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1195,
+            83,
+            297,
+            236
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-2.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          768,
+          567,
+          382,
+          382
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_foldmap"
     },
     {
       "id": "resident_somi",
@@ -4158,11 +8685,139 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            4,
+            557,
+            372,
+            401
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            394,
+            555,
+            356,
+            403
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            768,
+            560,
+            376,
+            398
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1163,
+            560,
+            372,
+            398
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-2.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1137,
+            550,
+            399,
+            399
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            430,
+            555,
+            285,
+            242
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            806,
+            560,
+            301,
+            239
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-11.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1200,
+            560,
+            298,
+            239
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-2.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1137,
+          550,
+          399,
+          399
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_bootice"
     },
     {
       "id": "resident_seori",
-      "name": "서리",
+      "name": "서리 검사원",
       "kind": "support",
       "before": {
         "neutral": {
@@ -4248,7 +8903,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            15,
+            49,
+            355,
+            438
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            411,
+            49,
+            333,
+            443
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            788,
+            49,
+            342,
+            442
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1160,
+            49,
+            361,
+            439
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-3.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            9,
+            107,
+            386,
+            386
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            444,
+            49,
+            266,
+            266
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            822,
+            49,
+            274,
+            265
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1196,
+            49,
+            289,
+            263
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-3.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          9,
+          107,
+          386,
+          386
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_notes"
     },
     {
       "id": "resident_ubak",
@@ -4338,7 +9121,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            6,
+            541,
+            375,
+            439
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            409,
+            541,
+            340,
+            438
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            784,
+            541,
+            350,
+            438
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1155,
+            541,
+            375,
+            438
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-3.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            388,
+            109,
+            383,
+            383
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            443,
+            541,
+            272,
+            263
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            819,
+            541,
+            280,
+            263
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-12.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1193,
+            541,
+            300,
+            263
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-3.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          388,
+          109,
+          383,
+          383
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_measure"
     },
     {
       "id": "resident_nubi",
@@ -4428,7 +9339,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            29,
+            47,
+            346,
+            439
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            416,
+            47,
+            329,
+            439
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            792,
+            47,
+            330,
+            440
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1163,
+            44,
+            343,
+            443
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-3.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            760,
+            118,
+            375,
+            375
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            449,
+            47,
+            263,
+            263
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            825,
+            47,
+            264,
+            264
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1197,
+            44,
+            274,
+            266
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-3.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          760,
+          118,
+          375,
+          375
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_fold"
     },
     {
       "id": "resident_eunho",
@@ -4518,7 +9557,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            16,
+            518,
+            368,
+            461
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            418,
+            516,
+            334,
+            463
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            797,
+            518,
+            319,
+            461
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1151,
+            518,
+            369,
+            461
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-3.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1140,
+            106,
+            387,
+            387
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            451,
+            516,
+            267,
+            278
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            829,
+            518,
+            255,
+            277
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-13.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1188,
+            518,
+            295,
+            277
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-3.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1140,
+          106,
+          387,
+          387
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_prices"
     },
     {
       "id": "resident_guseul",
@@ -4608,7 +9775,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            35,
+            51,
+            334,
+            454
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            430,
+            44,
+            322,
+            456
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            818,
+            51,
+            314,
+            449
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1180,
+            49,
+            345,
+            456
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-3.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            18,
+            564,
+            364,
+            364
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            462,
+            44,
+            258,
+            274
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            849,
+            51,
+            251,
+            269
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1214,
+            49,
+            276,
+            274
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-3.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          18,
+          564,
+          364,
+          364
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_stamp"
     },
     {
       "id": "resident_badook",
@@ -4698,11 +9993,139 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            22,
+            523,
+            361,
+            467
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            419,
+            523,
+            339,
+            461
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            798,
+            525,
+            346,
+            459
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1169,
+            523,
+            361,
+            465
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-six.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            524,
+            522,
+            477,
+            477
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            453,
+            523,
+            271,
+            277
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            833,
+            525,
+            277,
+            275
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-14.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1205,
+            523,
+            289,
+            279
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-six.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          524,
+          522,
+          477,
+          477
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_bootlace"
     },
     {
       "id": "resident_lamplighter",
-      "name": "등불지기 아저씨",
+      "name": "초롱",
       "kind": "support",
       "before": {
         "neutral": {
@@ -4788,7 +10211,135 @@
       },
       "labels": {},
       "authored": 5,
-      "alias_count": 0
+      "alias_count": 0,
+      "dialogue": {
+        "neutral": {
+          "file": "assets/room13-pixel-dialogue-support-15.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            76,
+            16,
+            398,
+            454
+          ]
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-15.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            622,
+            16,
+            392,
+            454
+          ]
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-15.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            1154,
+            16,
+            409,
+            454
+          ]
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-15.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            1701,
+            16,
+            403,
+            454
+          ]
+        }
+      },
+      "front_avatars": {
+        "neutral": {
+          "file": "assets/room13-pixel-avatar-support-six.png",
+          "size": [
+            1536,
+            1024
+          ],
+          "rect": [
+            1016,
+            520,
+            492,
+            492
+          ],
+          "origin": "dedicated"
+        },
+        "thinking": {
+          "file": "assets/room13-pixel-dialogue-support-15.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            661,
+            16,
+            314,
+            272
+          ],
+          "origin": "dialogue_crop"
+        },
+        "distressed": {
+          "file": "assets/room13-pixel-dialogue-support-15.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            1195,
+            16,
+            327,
+            272
+          ],
+          "origin": "dialogue_crop"
+        },
+        "expressive": {
+          "file": "assets/room13-pixel-dialogue-support-15.png",
+          "size": [
+            2172,
+            724
+          ],
+          "rect": [
+            1741,
+            16,
+            322,
+            272
+          ],
+          "origin": "dialogue_crop"
+        }
+      },
+      "dedicated_avatar": {
+        "file": "assets/room13-pixel-avatar-support-six.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "rect": [
+          1016,
+          520,
+          492,
+          492
+        ],
+        "origin": "dedicated"
+      },
+      "portrait_status": "source_ready",
+      "world_pose": "living_inspectlamp"
     }
   ],
   "continuity": [
@@ -4809,7 +10360,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-carriage-morning.png",
+        "file": "assets/room13-pixel-carriage-family015-morning.png",
         "size": [
           1672,
           941
@@ -4839,7 +10390,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-key.png",
+        "file": "assets/room13-pixel-cinematic-key-family015.png",
         "size": [
           1672,
           941
@@ -4869,7 +10420,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-key.png",
+        "file": "assets/room13-pixel-cinematic-key-family015.png",
         "size": [
           1672,
           941
@@ -4899,7 +10450,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-key.png",
+        "file": "assets/room13-pixel-cinematic-key-family015.png",
         "size": [
           1672,
           941
@@ -4929,7 +10480,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-key.png",
+        "file": "assets/room13-pixel-cinematic-key-family015.png",
         "size": [
           1672,
           941
@@ -4959,7 +10510,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-endA.png",
+        "file": "assets/room13-pixel-cinematic-endA-family015.png",
         "size": [
           1672,
           941
@@ -5019,7 +10570,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-endA.png",
+        "file": "assets/room13-pixel-cinematic-endA-family015.png",
         "size": [
           1672,
           941
@@ -5079,7 +10630,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-endB.png",
+        "file": "assets/room13-pixel-cinematic-endB-family015.png",
         "size": [
           1672,
           941
@@ -5109,7 +10660,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-endB.png",
+        "file": "assets/room13-pixel-cinematic-endB-family015.png",
         "size": [
           1672,
           941
@@ -5139,7 +10690,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-endB.png",
+        "file": "assets/room13-pixel-cinematic-endB-family015.png",
         "size": [
           1672,
           941
@@ -5169,7 +10720,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-cinematic-endB.png",
+        "file": "assets/room13-pixel-cinematic-endB-family015.png",
         "size": [
           1672,
           941
@@ -5217,14 +10768,14 @@
   ],
   "sources": [
     {
-      "file": "assets/room13-pixel-acting-daram.png",
+      "file": "assets/room13-pixel-world-daram-gray-gutter.png",
       "size": [
         1536,
         1024
       ]
     },
     {
-      "file": "assets/room13-pixel-acting-family-extra.png",
+      "file": "assets/room13-pixel-world-family-extra-gray.png",
       "size": [
         1536,
         1024
@@ -5238,7 +10789,7 @@
       ]
     },
     {
-      "file": "assets/room13-pixel-acting-dad.png",
+      "file": "assets/room13-pixel-world-dad-gray.png",
       "size": [
         1536,
         1024
@@ -5259,7 +10810,7 @@
       ]
     },
     {
-      "file": "assets/room13-pixel-acting-mom.png",
+      "file": "assets/room13-pixel-world-mom-gray-gutter.png",
       "size": [
         1536,
         1024
@@ -5616,6 +11167,272 @@
       ]
     },
     {
+      "file": "assets/room13-pixel-dialogue-daram.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-family-profile-icons.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-dad.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-granny.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-main-profile-granny.png",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-mom.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-guard.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-main-profile-c.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-seryeon.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-main-profile-a.png",
+      "size": [
+        2170,
+        725
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-buri.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-main-profile-b.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-doto.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-karo.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-nabi.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-neoul.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-bami.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-00.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-avatar-support-0.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-01.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-02.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-avatar-support-six.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-03.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-04.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-avatar-support-1.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-05.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-06.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-07.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-08.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-avatar-support-2.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-09.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-10.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-11.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-12.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-avatar-support-3.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-13.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-14.png",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-dialogue-support-15.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
       "file": "assets/before-room13-pixel-carriage-morning.png",
       "size": [
         1672,
@@ -5623,7 +11440,7 @@
       ]
     },
     {
-      "file": "assets/room13-pixel-carriage-morning.png",
+      "file": "assets/room13-pixel-carriage-family015-morning.png",
       "size": [
         1672,
         941
@@ -5637,7 +11454,7 @@
       ]
     },
     {
-      "file": "assets/room13-pixel-cinematic-key.png",
+      "file": "assets/room13-pixel-cinematic-key-family015.png",
       "size": [
         1672,
         941
@@ -5645,6 +11462,13 @@
     },
     {
       "file": "assets/before-room13-pixel-cinematic-endA.png",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-cinematic-endA-family015.png",
       "size": [
         1672,
         941
@@ -5665,7 +11489,7 @@
       ]
     },
     {
-      "file": "assets/room13-pixel-cinematic-endB.png",
+      "file": "assets/room13-pixel-cinematic-endB-family015.png",
       "size": [
         1672,
         941
