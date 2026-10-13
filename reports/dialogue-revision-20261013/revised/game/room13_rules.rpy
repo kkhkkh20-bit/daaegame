@@ -238,7 +238,8 @@ init 55 python:
             art=Crop((0,20,width,native_height-20),art)
             native_height-=20
         scale=r13_close_scale(person,pose,height)
-        return r13_pixel_scale(art,width*scale,native_height*scale,R13_CLOSE_PIXEL_GRID)
+        result=r13_pixel_scale(art,width*scale,native_height*scale,R13_CLOSE_PIXEL_GRID)
+        return At(result,r13_actor_enter(r13_appearance_duration())) if entrance else result
 
     def r13_close_y(person,height=840,top=110,pose="interview_neutral"):
         head=r13_close_head(person,pose)
@@ -258,6 +259,7 @@ init 55 python:
         return "assets/record.png" if ROOM13["evidence"][key]["kind"] in ("기록","관찰기록") else "assets/evidence.png"
 
     def r13_speaker(who,expression="neutral",pose=None):
+        previous_pose=store.r13_current_pose
         store.dialogue_speaker=None
         store.dialogue_expression=expression if who in CAST and "avatar_"+expression in CAST[who] else "neutral"
         store.r13_current_pose=r13_conversation_pose(who,pose or store.dialogue_expression)
@@ -265,7 +267,9 @@ init 55 python:
         if visible:
             arriving=store.r13_motion_person!=who or "r13_visitor" not in renpy.get_showing_tags()
             actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) else "interview_"+store.dialogue_expression
-            renpy.show("r13_actor",what=r13_close_art(who,actor_pose,840,True,arriving),tag="r13_visitor",at_list=[r13_portrait_close(r13_close_y(who,pose=actor_pose))])
+            # A new sentence from the same actor must not restart entrance.
+            if arriving or previous_pose!=store.r13_current_pose:
+                renpy.show("r13_actor",what=r13_close_art(who,actor_pose,840,True,arriving),tag="r13_visitor",at_list=[r13_portrait_close(r13_close_y(who,pose=actor_pose))])
             store.r13_motion_person=who
         else:
             renpy.hide("r13_visitor")
@@ -332,7 +336,7 @@ init 55 python:
                 return [(person,"할아버지 상태부터 따지러 왔어요? 밖에서 무슨 말을 하는지부터 듣고 와요.")]
             knownkeys=[v.split(":")[0] for v in store.room13["resident_knowledge"].get(person,[])]
             if all(e in knownkeys for e in ("E06","E08")):
-                unlocked="buri_records";lines=[(person,"……이건 안 지웠네요. 할아버지가 아이 팔 잡은 거. 머리의 상처랑 같다고도 안 썼고. 그럼 그분이 하려던 일도 들어요. 듣기 좋은 쪽만 가져가지 말고.")]
+                unlocked="buri_records";lines=[(person,"……이건 안 지우셨네요. 할아버지가 아이 팔 잡은 거요. 머리의 상처랑 같다고도 안 쓰셨고. 그럼 그분이 하려던 일도 들어 주세요. 듣기 좋은 쪽만 가져가지 마시고요.")]
             else:return [(person,"아이 말과 실제 상처가 같은 이야기인지도 봐야죠. 한쪽만 듣고는 못 넘겨요.")]
         elif person=="nabi" and key=="E11":
             unlocked="nabi_gap";lines=[(person,"도토가 문을 부수던 때? 난 그 앞에 있었어. ……할머니도 그때까지 같이 봤냐고?")]
@@ -352,8 +356,8 @@ init 55 python:
             return [(person,R13_RESIDENTS[person]["unrelated"])]
         return [(person,"전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠." if repeated else {
             "buri":"수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.",
-            "nabi":"봤어. 봤다고 아는 건 아니야. 내가 고개 끄덕일 때까지 들고 있을 거야?",
-            "bami":"그건 못 봤어. 네가 원하는 대답은 알겠는데, 나는 못 봤다니까.",
+            "nabi":"봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?",
+            "bami":"그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.",
             "seryeon":"내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.",
             "karo":"후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.",
         }.get(person,"그 내용은 제가 확인해 드릴 수 없습니다."))]
