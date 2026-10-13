@@ -1,0 +1,17 @@
+{
+  "version": "0.15.4-dev",
+  "status": "checked_candidate_for_publication",
+  "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/?v=0154",
+  "all_resident_scenes": "ALL_RESIDENT_SCENES.md",
+  "game_archive_sha256": "357c97bb16013f0ff5a857b76fc78085b41f12a08d2f2ef5203c0de94fefc2d3",
+  "deployment_status": "Check the latest main-branch GitHub Pages action; local verification does not itself confirm publication",
+  "checks": [
+    "576 routing cases",
+    "Actual Chromium new game, gate wait, observe/decline/reapproach, child absence, native save/load",
+    "Final new-game gate display check stored separately"
+  ],
+  "limits": [
+    "No full 14-day or every-ending replay",
+    "Remote deployed CDN is not played from this execution environment"
+  ]
+}

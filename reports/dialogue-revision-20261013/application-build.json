@@ -1,10 +1,10 @@
 {
-  "base_commit": "d8aef5a6971089354916391616acb396287aff02",
+  "base_commit": "345623c869bbbf3cd332f3098a74910cb186974e",
   "changed": [
-    "room13-content.json",
     "room13.rpy",
-    "room13_rules.rpy",
-    "room13_week2.rpy",
+    "room13_screens.rpy",
+    "room13_life.rpy",
+    "assets/room13-pixel-carriage-family015-morning.png",
     "options.rpy",
     "room13_dialogue_openings_20261013.rpy",
     "room13-dialogue-openings.json"
@@ -12,45 +12,43 @@
   "removed_compiled": [
     "game/options.rpyc",
     "game/room13.rpyc",
-    "game/room13_rules.rpyc",
-    "game/room13_week2.rpyc"
+    "game/room13_dialogue_openings_20261013.rpyc",
+    "game/room13_life.rpyc",
+    "game/room13_screens.rpyc"
   ],
-  "unchanged_entries": 812,
+  "unchanged_entries": 857,
   "archive_method": "existing engine and assets retained; changed scripts compile in browser",
   "meta": {
     "multipart": true,
-    "archive_bytes": 270364638,
-    "archive_sha256": "42aaed46a33d2afa446ef8be41275cec5dfd87f30a1cb17246076111700de3af",
+    "archive_bytes": 301287243,
+    "archive_sha256": "f2e32d9f756ea5a3d1e481e5b316ba18357bf1c4bc1fd07fbae264b2ce64506b",
     "parts": [
       {
         "file": "game.part01",
         "bytes": 62914560,
-        "sha256": "b847bbc4a3db330dfb27f76bdcc9a828073d64ca698efc64480f42af2809e8b9"
+        "sha256": "9e822a57236860470dcc615bdb7c9e63285eb9e309550e20674a02f180597541"
       },
       {
         "file": "game.part02",
         "bytes": 62914560,
-        "sha256": "44b3602da964a6dda00939f26485809ff947935eb8df1f6f904662cc74ee2422"
+        "sha256": "ccf0ef2f4f9a3975d4cca95b6b550209075520333526e01897c4b7c1e5f456a0"
       },
       {
         "file": "game.part03",
         "bytes": 62914560,
-        "sha256": "3b1fe16a499c8485dc1124739fc721a1d1640fff9550493e2eba277e713544a4"
+        "sha256": "e4dcf2ae37e41a1f1a68b362e7050aec3c598ba2545c1ca2f019741cd535d76c"
       },
       {
         "file": "game.part04",
         "bytes": 62914560,
-        "sha256": "b008ec146b607187f363aee38ad6c7946ab924088c9679565893f7abcd58edc7"
+        "sha256": "42115a949ffae56c962371c03ec074d6010170d97a74561c5340149aee50207a"
       },
       {
         "file": "game.part05",
-        "bytes": 18706398,
-        "sha256": "cf001dc94937da45421ef64f0732afa53729a3b5fa46b265572c99cf6e79966a"
+        "bytes": 49629003,
+        "sha256": "17a90b9fc3ada175bea93f8e7889d446d5d665462fd9375d76c5099444d4b0a2"
       }
     ]
   },
-  "save_directory_preserved": true,
-  "version": "0.15.3-dev",
-  "versioned_loader_and_hashed_part_urls": true,
-  "engine_unchanged": true
+  "save_directory_preserved": true
 }

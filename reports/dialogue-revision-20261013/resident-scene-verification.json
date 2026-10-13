@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "resident_schedules": 35,
+  "extra_postal_receptionist": 1,
+  "distinct_encounter_scenes": 36,
+  "routing_cases": 576,
+  "source_content_unchanged": true,
+  "existing_evidence_costs_and_endings_unchanged": true,
+  "upgrade_from_latest_0154": true,
+  "installer_idempotent": true,
+  "unrelated_edit_rejected": true,
+  "limits": [
+    "Python routing and exact source preservation checks; engine checks recorded separately",
+    "Existing investigation topics retain their facts; this release rewrites encounter scenes, carriage and entry",
+    "No full 14-day or all-ending replay"
+  ]
+}

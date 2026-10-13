@@ -23,12 +23,14 @@ def prepare(project):
         if p['after'] in text:continue
         candidates=sorted(set(p.get('accepted_before',[])+[p.get('previous_after',p['before']),p['before']]),key=len,reverse=True)
         match=next((old for old in candidates if text.count(old)==1),None)
-        if match is None:raise ValueError('실행 대사 원문이 달라 적용 중단: '+p['file'])
+        if match is None:
+            if p.get('optional_if_absent') and not any(old in text for old in candidates):continue
+            raise ValueError('실행 대사 원문이 달라 적용 중단: '+p['file'])
         outputs[path]=text.replace(match,p['after'],1)
     # New scene files are isolated and guarded against unrelated local rewrites.
     for spec in json.loads((HERE/'new-files.json').read_text(encoding='utf-8')):
         path=game/spec['file']
-        if path.exists() and path.read_text(encoding='utf-8')!=spec['content']:
+        if path.exists() and path.read_text(encoding='utf-8') not in [spec['content']]+spec.get('accepted_before',[]):
             raise ValueError('새 대화 파일이 다른 내용으로 수정되어 적용 중단: '+spec['file'])
         outputs[path]=spec['content']
     # Keep generated content changes across rebuilds, after every existing pass.
