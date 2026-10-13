@@ -1,5 +1,5 @@
 {
-  "revision": "acting-front-review-v2",
+  "revision": "acting-front-review-v3",
   "coverage": {
     "people": 43,
     "main": 12,
@@ -20,6 +20,51 @@
     "verification": "source-metadata-only"
   },
   "front_runtime": [
+    {
+      "title": "입구 · 주민과 대기소",
+      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "file": "screenshots/0154-01-natural-entry-three-residents.png"
+    },
+    {
+      "title": "질문 · 읽은 대화 표시",
+      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "file": "screenshots/0154-06-question-struck-through.png"
+    },
+    {
+      "title": "초소 서류 · 확대 조사",
+      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "file": "screenshots/0154-07-original-copy-recorded.png"
+    },
+    {
+      "title": "증거 제시 · 좌측 아이콘",
+      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "file": "screenshots/0154-09-guard-evidence-card.png"
+    },
+    {
+      "title": "아빠 시점 · 속마음",
+      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "file": "screenshots/0154-08-dad-blue-thought-no-avatar.png"
+    },
+    {
+      "title": "대화 프로필 · 프레임 안 확대",
+      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "file": "screenshots/0154-05-karo-profile-in-frame.png"
+    },
+    {
+      "title": "모바일 · 확대 조사",
+      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "file": "screenshots/0154-12-mobile-recorded-document-popup.png"
+    },
+    {
+      "title": "여관 · 왼쪽 시야",
+      "caption": "0.15.4 최종 검수본 · 최대 인원 배치를 설정한 클릭 검수 화면",
+      "file": "screenshots/0154-inn-left.png"
+    },
+    {
+      "title": "여관 · 오른쪽 시야",
+      "caption": "0.15.4 최종 검수본 · 최대 인원 배치를 설정한 클릭 검수 화면",
+      "file": "screenshots/0154-inn-right.png"
+    },
     {
       "title": "까로와 직접 대화",
       "caption": "0.15.0 공개 후보 · 새 게임에서 까로를 선택하고 짐을 부탁했을 때의 실제 대사입니다. 중앙 대화 원화와 왼쪽의 별도 프사를 함께 표시합니다.",
@@ -10360,7 +10405,7 @@
         ]
       },
       "after": {
-        "file": "assets/room13-pixel-carriage-family015-morning.png",
+        "file": "assets/room13-pixel-carriage-letter0153-morning.png",
         "size": [
           1672,
           941
@@ -10764,6 +10809,248 @@
       "title": "모바일 가로 화면 · 대화 메뉴",
       "caption": "모바일 브라우저 크기로 실제 진행해 캡처했습니다. 인물의 얼굴과 하단의 대화·조사·제시·이동 버튼을 함께 확인할 수 있습니다.",
       "file": "screenshots/14-mobile-interaction.png"
+    }
+  ],
+  "exploration": [
+    {
+      "title": "책상 확대 조사",
+      "art": {
+        "file": "assets/room13-pixel-inspect-desk.png",
+        "size": [
+          1672,
+          941
+        ],
+        "rect": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    },
+    {
+      "title": "열린 필기함 서랍",
+      "art": {
+        "file": "assets/room13-pixel-inspect-drawer.png",
+        "size": [
+          1672,
+          941
+        ],
+        "rect": [
+          0,
+          0,
+          1672,
+          941
+        ]
+      }
+    },
+    {
+      "title": "조사 아이템",
+      "art": {
+        "file": "assets/room13-pixel-inspect-items.png",
+        "size": [
+          1295,
+          1214
+        ],
+        "rect": [
+          0,
+          0,
+          1295,
+          1214
+        ]
+      }
+    },
+    {
+      "title": "inn · 오전",
+      "art": {
+        "file": "assets/room13-pixel-panorama-inn-morning.png",
+        "size": [
+          2048,
+          768
+        ],
+        "rect": [
+          0,
+          0,
+          2048,
+          768
+        ]
+      }
+    },
+    {
+      "title": "inn · 오후",
+      "art": {
+        "file": "assets/room13-pixel-panorama-inn-afternoon.png",
+        "size": [
+          2048,
+          768
+        ],
+        "rect": [
+          0,
+          0,
+          2048,
+          768
+        ]
+      }
+    },
+    {
+      "title": "inn · 저녁",
+      "art": {
+        "file": "assets/room13-pixel-panorama-inn-evening.png",
+        "size": [
+          2048,
+          768
+        ],
+        "rect": [
+          0,
+          0,
+          2048,
+          768
+        ]
+      }
+    },
+    {
+      "title": "school · 오후",
+      "art": {
+        "file": "assets/room13-pixel-panorama-school-afternoon.png",
+        "size": [
+          1983,
+          793
+        ],
+        "rect": [
+          0,
+          0,
+          1983,
+          793
+        ]
+      }
+    },
+    {
+      "title": "school · 오전",
+      "art": {
+        "file": "assets/room13-pixel-panorama-school-morning.png",
+        "size": [
+          1984,
+          793
+        ],
+        "rect": [
+          0,
+          0,
+          1984,
+          793
+        ]
+      }
+    },
+    {
+      "title": "school · 저녁",
+      "art": {
+        "file": "assets/room13-pixel-panorama-school-evening.png",
+        "size": [
+          1983,
+          793
+        ],
+        "rect": [
+          0,
+          0,
+          1983,
+          793
+        ]
+      }
+    },
+    {
+      "title": "workshop · 오후",
+      "art": {
+        "file": "assets/room13-pixel-panorama-workshop-afternoon.png",
+        "size": [
+          1983,
+          793
+        ],
+        "rect": [
+          0,
+          0,
+          1983,
+          793
+        ]
+      }
+    },
+    {
+      "title": "workshop · 오전",
+      "art": {
+        "file": "assets/room13-pixel-panorama-workshop-morning.png",
+        "size": [
+          1983,
+          793
+        ],
+        "rect": [
+          0,
+          0,
+          1983,
+          793
+        ]
+      }
+    },
+    {
+      "title": "workshop · 저녁",
+      "art": {
+        "file": "assets/room13-pixel-panorama-workshop-evening.png",
+        "size": [
+          1983,
+          793
+        ],
+        "rect": [
+          0,
+          0,
+          1983,
+          793
+        ]
+      }
+    },
+    {
+      "title": "square · 오전",
+      "art": {
+        "file": "assets/room13-pixel-panorama-square-morning.png",
+        "size": [
+          2048,
+          768
+        ],
+        "rect": [
+          0,
+          0,
+          2048,
+          768
+        ]
+      }
+    },
+    {
+      "title": "square · 오후",
+      "art": {
+        "file": "assets/room13-pixel-panorama-square-afternoon.png",
+        "size": [
+          2048,
+          768
+        ],
+        "rect": [
+          0,
+          0,
+          2048,
+          768
+        ]
+      }
+    },
+    {
+      "title": "square · 저녁",
+      "art": {
+        "file": "assets/room13-pixel-panorama-square-evening.png",
+        "size": [
+          2048,
+          768
+        ],
+        "rect": [
+          0,
+          0,
+          2048,
+          768
+        ]
+      }
     }
   ],
   "sources": [
@@ -11440,7 +11727,7 @@
       ]
     },
     {
-      "file": "assets/room13-pixel-carriage-family015-morning.png",
+      "file": "assets/room13-pixel-carriage-letter0153-morning.png",
       "size": [
         1672,
         941
@@ -11493,6 +11780,111 @@
       "size": [
         1672,
         941
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-inspect-desk.png",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-inspect-drawer.png",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-inspect-items.png",
+      "size": [
+        1295,
+        1214
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-inn-morning.png",
+      "size": [
+        2048,
+        768
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-inn-afternoon.png",
+      "size": [
+        2048,
+        768
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-inn-evening.png",
+      "size": [
+        2048,
+        768
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-school-afternoon.png",
+      "size": [
+        1983,
+        793
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-school-morning.png",
+      "size": [
+        1984,
+        793
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-school-evening.png",
+      "size": [
+        1983,
+        793
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-workshop-afternoon.png",
+      "size": [
+        1983,
+        793
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-workshop-morning.png",
+      "size": [
+        1983,
+        793
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-workshop-evening.png",
+      "size": [
+        1983,
+        793
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-square-morning.png",
+      "size": [
+        2048,
+        768
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-square-afternoon.png",
+      "size": [
+        2048,
+        768
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-panorama-square-evening.png",
+      "size": [
+        2048,
+        768
       ]
     }
   ]
