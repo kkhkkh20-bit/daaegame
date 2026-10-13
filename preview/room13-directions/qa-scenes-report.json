@@ -1,0 +1,64 @@
+{
+  "desktop": [
+    1280,
+    720
+  ],
+  "mobile": [
+    844,
+    390
+  ],
+  "sceneAssets": [
+    {
+      "src": "assets/new-pixel.png",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "src": "assets/b-guard-dialogue.png",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "src": "assets/b-daram-dialogue.png",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "src": "assets/b-room13-cutscene.png",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "src": "assets/handpainted.png",
+      "width": 1672,
+      "height": 940
+    },
+    {
+      "src": "assets/c-guard-dialogue.png",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "src": "assets/c-daram-dialogue.png",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "src": "assets/c-room13-cutscene.png",
+      "width": 1672,
+      "height": 940
+    }
+  ],
+  "jsErrors": [],
+  "checks": [
+    "B/C x four scenes loaded and rendered",
+    "six dialogue and cutscene full-frame screenshots",
+    "B/C mobile Daram screenshots",
+    "UI toggle hides all game overlays",
+    "desktop style and scene tab clicks",
+    "mobile real touch style/scene/UI toggle",
+    "room13 scene has no investigation HUD/actions",
+    "mobile full frame remains inside viewport"
+  ],
+  "scope": "Standalone static visual concepts only; not actual game test or animation implementation."
+}
