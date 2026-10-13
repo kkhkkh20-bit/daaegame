@@ -9,7 +9,7 @@ def apply_content(data):
         for key in p['path'][:-1]:parent=parent[key]
         key=p['path'][-1]
         if parent[key]==p['after']:continue
-        if parent[key]!=p['before']:raise ValueError('대사 원문이 달라 적용 중단: '+'.'.join(p['path']))
+        if parent[key] not in (p['before'],p.get('previous_after',p['before'])):raise ValueError('대사 원문이 달라 적용 중단: '+'.'.join(p['path']))
         parent[key]=p['after']
     return revised
 
@@ -20,9 +20,11 @@ def prepare(project):
     patches=json.loads((HERE/'runtime-patch.json').read_text(encoding='utf-8'))
     for p in patches:
         path=game/p['file'];text=outputs.get(path,path.read_text(encoding='utf-8'))
-        if p['after'] in text and p['before'] not in text:continue
-        if text.count(p['before'])!=1:raise ValueError('실행 대사 원문이 달라 적용 중단: '+p['file'])
-        outputs[path]=text.replace(p['before'],p['after'],1)
+        if p['after'] in text:continue
+        candidates=[p.get('previous_after',p['before']),p['before']]
+        match=next((old for old in candidates if text.count(old)==1),None)
+        if match is None:raise ValueError('실행 대사 원문이 달라 적용 중단: '+p['file'])
+        outputs[path]=text.replace(match,p['after'],1)
     # Keep generated content changes across rebuilds, after every existing pass.
     generator=project/'dev/build_room13_content.py'
     hook='from room13_dialogue_revision import apply_content as r13_apply_dialogue_revision\nD = r13_apply_dialogue_revision(D)\n'

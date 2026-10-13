@@ -1,9 +1,9 @@
 {
   "passed": true,
   "base_commit": "bce4720df468f6e12dda5d7bb882bb47e640c808",
-  "content_fields_changed": 88,
+  "content_fields_changed": 118,
   "topics_revised": 85,
-  "runtime_state_equivalence_cases": 120,
+  "runtime_state_equivalence_cases": 528,
   "non_prose_content_identical": true,
   "generator_hook_compile_and_apply": true,
   "idempotent": true,
@@ -13,5 +13,7 @@
     "RenPy SDK unavailable: no engine lint or rebuilt browser playthrough",
     "Generator hook tested with latest runtime data; full regeneration on developer source still required",
     "New branches, costs, evidence and ending conditions not implemented or changed"
-  ]
+  ],
+  "v1_snapshot_upgrade_byte_identical": true,
+  "runtime_install_idempotent": true
 }

@@ -250,7 +250,7 @@ label r13_talk:
     $ r13_encounter_key="met:"+r13_target+":"+str(room13["day"])
     if not r13_has(r13_encounter_key):
         if r13_target=="bami" and r13_has("bami_pressured"):
-            call r13_lines([(None,"밤이는 먼저 복도를 살피고 나를 보았다."),("bami","누가 내가 처마에 있었다고 했대. 내 이름 말했어?"),("dad","……다시 혼자 두지는 않을게."),("bami","그러면 말로만 하지 마. 네가 없는 동안 숨는 건 나니까.")],"greeting:bami:pressured")
+            call r13_lines([(None,"밤이는 먼저 복도를 살피고 나를 보았다."),("bami","누가 내가 처마에 있었다고 했대. 내 이름 말했어?"),("dad","……다시 혼자 두지는 않을게."),("bami","또 약속이네."),(None,"밤이가 문 쪽으로 몸을 돌렸다."),("bami","네가 없는 동안 숨는 건 나야. 이번엔 말만 하지 마.")],"greeting:bami:pressured")
         elif r13_target=="buri" and room13["victim_state"]=="dead":
             call r13_lines([("buri","수리하러 온 거 아니죠. 할아버지 이름을 들먹일 거면 먼저 말해요.")],"greeting:buri:bereaved")
         elif r13_target not in R13_CORE_PEOPLE:
@@ -302,7 +302,7 @@ label r13_talk_dispatch:
                 jump r13_person_actions
         jump r13_talk_menu
     if r13_topic=="buri_consent":
-        call r13_lines([(None,"부리는 공구를 놓았지만 나를 보지는 않았다."),("buri","밖에서는 할아버지가 아이를 잡아먹으려 했대요."),("dad","그렇게 말한 적 없습니다."),("buri","누군가는 했어요. 다람이를 구하려고."),(None,"딸을 위해 왔다는 말을 꺼내려다 삼켰다. 부리에게는 그 말이 변명으로 들릴 터였다.")],"buri:consent:opening")
+        call r13_lines([(None,"부리는 공구를 놓았지만 나를 보지는 않았다."),("buri","밖에서는 할아버지가 아이를 잡아먹으려 했대요."),("dad","그렇게 말한 적 없습니다."),("buri","누군가는 했어요. 다람이를 구하려고."),("dad","저도 제 아이가 왜 다쳤는지 알아야 합니다."),("buri","그럼 물어요. 할아버지가 무슨 사람이었다고 먼저 정하지 말고.")],"buri:consent:opening")
         $ r13_speaker("buri","neutral")
         menu:
             "확인한 상처만 이야기하고, 병력 공개는 가족에게 묻는다":
@@ -313,10 +313,10 @@ label r13_talk_dispatch:
                     else:
                         call r13_lines([("buri","확인했다는 기록부터 가져와요. 그다음에 듣겠어요.")],"buri:consent:needs_record")
                         jump r13_talk_menu
-                call r13_lines([("dad","확인하지 않은 말은 쓰지 않겠습니다."),("buri","나한테만 하는 말이면 소용없어요. 사람들 앞에서도 해요."),("dad","제 아이를 구하려고 어르신 일을 지워 쓰지는 않겠습니다."),("buri","……기록을 확인하는 건 그다음입니다.")],"buri:consent:accepted")
+                call r13_lines([("dad","확인하지 않은 말은 쓰지 않겠습니다."),("buri","지금은요. 다른 사람들 앞에서는요?"),("dad","그때도. ……제가 다르게 말하면 바로잡겠습니다."),("buri","나한테만 하는 말이면 소용없어요."),(None,"부리가 작업대 한쪽을 비웠다."),("buri","기록을 확인하는 건 그다음입니다.")],"buri:consent:accepted")
                 $ r13_finish_topic(r13_topic)
             "어르신이 위험했다는 걸 공개해야 아이를 구할 수 있다":
-                call r13_lines([("buri","내 할아버지를 괴물로 만들면 당신 아이가 돌아오나요?"),(None,"부리가 공구를 집어 들었다. 작업대에는 손댈 자리가 남아 있었지만 내 쪽으로 비켜 주지는 않았다."),("buri","지금은 나가요.")],"buri:consent:refused")
+                call r13_lines([("buri","내 할아버지를 괴물로 만들면 당신 아이가 돌아오나요?"),("dad","아이를 구해야 합니다."),("buri","나도 알아요. 그 말 모르는 사람처럼 말하지 마요."),(None,"부리가 공구를 집어 들었다. 내 쪽으로는 비켜 주지 않았다."),("buri","지금은 나가요.")],"buri:consent:refused")
                 $ r13_flag("buri_refused")
                 return
             "지금은 자리를 비켜 준다":

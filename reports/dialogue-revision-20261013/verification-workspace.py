@@ -19,7 +19,7 @@ def functions(path):
  text=path.read_text();block=text.split('init 55 python:\n',1)[1];return ast.parse(textwrap.dedent(block))
 oldast=functions(base/'room13_rules.rpy');newast=functions(new/'room13_rules.rpy')
 def env(tree,state):
- store=types.SimpleNamespace(room13=copy.deepcopy(state));ns={'store':store,'winter_copy':copy,'R13_CORE_PEOPLE':['granny','buri','nabi','bami','karo'],'R13_RESIDENTS':{},'ROOM13':a}
+ store=types.SimpleNamespace(room13=copy.deepcopy(state));ns={'store':store,'winter_copy':copy,'R13_CORE_PEOPLE':['granny','buri','nabi','bami','karo'],'R13_RESIDENTS':(a if tree is oldast else b)['residents'],'ROOM13':(a if tree is oldast else b)}
  ns['r13_has']=lambda k:k in store.room13['flags'] or k in store.room13['evidence']
  def flag(*ks):
   for k in ks:
@@ -29,7 +29,7 @@ def env(tree,state):
  exec(compile(ast.Module(body=picked,type_ignores=[]),'<runtime-functions>','exec'),ns)
  return ns,store
 count=0
-for person,keys in [('granny',['E05','E09','E10','E13','E14','E35','E36','E18']),('buri',['E06','E08'])]:
+for person,keys in [('granny',['E05','E09','E10','E13','E14','E35','E36','E18']),('buri',['E06','E08','E01']),('bami',['E01']),('nabi',['E01']),('karo',['E01']),('seryeon',['E01'])]+[(person,['E01']) for person in a['residents'] if person not in ['granny','buri','nabi','bami','karo','doto']]:
  for key in keys:
   for repeated in [False,True]:
    for identity in [False,True]:
