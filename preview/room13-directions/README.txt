@@ -6,3 +6,7 @@ A: 기존 소재 재배치. B: 새 도트 방향. C: 손그림 방향.
 현재 질문/대사/핫스폿은 화면 구성 예시이며, 증거 획득·시간·저장 기능은 연결하지 않았습니다.
 이미지 출처 및 한계는 art-manifest.json, 브라우저 검증 범위는 qa-report.json에 기록했습니다.
 폰트 라이선스는 assets/*OFL.txt에 있습니다.
+
+追加 장면 비교: scenes.html
+B/C 각각 경비 확대 대화, 다람이 감정 대화, 13호실 귀환 컷신을 확인합니다. UI 숨기기로 원화를 비교할 수 있습니다.
+신규 이미지 원본/제작 상태 scenes-art-manifest.json, 화면/터치 검수 qa-scenes-report.json.
