@@ -14,6 +14,7 @@ label r13_scene(bg,title,mood="calm"):
     if r13_scene_key==r13_scene_identity(bg,title,mood):
         return
     scene black with Dissolve(.18)
+    call r13_arrival(bg,title,mood)
     $ r13_music={"calm":"assets/town-bright.mp3","travel":"assets/travel.mp3","search":"assets/search.mp3","night":"assets/night.mp3","hearing":"assets/source-serious-context-v4.mp3","quiet":None}[mood]
     if r13_music:
         if renpy.music.get_playing()!=r13_music:
@@ -28,6 +29,9 @@ label r13_scene(bg,title,mood="calm"):
 label r13_lines(entries,identity):
     $ r13_index=0
     while r13_index<len(entries):
+        if identity=="opening:carriage:family:v3" and r13_index==13:
+            $ r13_carriage_snack = False
+            scene expression r13_background("winter_carriage") with Dissolve(.18)
         $ r13_packet=entries[r13_index]
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
@@ -49,6 +53,7 @@ label room13_start:
     $ winter=winter_new()
     $ source_mode=False
     $ room13=r13_new()
+    $ r13_world_cameras={}
     $ r13_inspection_location=None
     $ r13_prepare_history()
     $ r13_scene_key=None
@@ -74,8 +79,11 @@ label room13_start:
     $ r13_grant(["E01"],"여행 중 가지고 온 편지")
     $ r13_edit(period=1)
     call r13_scene("winter","눈에 막힌 입구","calm")
-    call r13_lines([("karo","도착했어요. 발판이 얼었으니 천천히 내려요."),("daram","까로 아저씨, 이 가방도 내려 주세요."),("karo","내려 줄게. 짐은 내가 볼 테니 접수부터 하고 와요.")],"entry:karo:arrival")
-    call r13_lines([("guard","성함 확인했습니다. 어른은 이쪽으로 오세요."),("daram","나는?"),("guard","저 안에서 기다리면 돼."),("dad","제 딸입니다. 함께 들어가겠습니다."),("guard","여기엔 어른 한 분만 적혀 있습니다. 아이는 확인이 끝날 때까지 따로 기다려야 합니다."),(None,"작은 대기소 안에서 손잡이가 흔들렸다. 문은 열리지 않았다."),("daram","아빠. 나 여기 있을게."),("dad","같이 확인하죠.")],"entry:arrival")
+    $ r13_note_encounter("karo")
+    $ r13_note_encounter("guard")
+    $ r13_note_encounter("daram")
+    call r13_lines([('karo', '도착했어요. 발판이 얼었으니 천천히 내려요.'), ('daram', '까로 아저씨, 이 가방도 내려 주세요.'), (None, '까로가 가방을 내려놓고 바퀴 아래를 들여다봤다. 나는 다람이의 손을 잡고 발판에서 내려왔다.'), ('dad', '무슨 문제 있습니까?'), ('karo', '축에 금이 갔네요. 짐부터 내리고 살펴봐야겠습니다.'), ('dad', '도와드릴까요?'), ('karo', '접수부터 하고 오세요. 짐은 제가 볼게요. 저쪽 초소에서 방문 확인을 받으시면 됩니다.')],"entry:karo:arrival")
+    call r13_lines([('guard', '안녕하십니까. 무슨 일로 방문하셨습니까?'), ('dad', '아내를 찾으러 왔습니다. 여기 여관에서 편지를 보내 주셔서요. 방문 신청도 해 두었습니다.'), (None, '나는 편지와 신청서를 건넸다. 경비가 초소의 명부를 펼쳤다.'), ('guard', '다돌 님, 맞으십니까?'), ('dad', '네. 이 아이는 제 딸이고요.'), ('daram', '다람이예요.'), ('guard', '잠시만요. 제가 받은 명부에는 어른 한 분만 적혀 있네요.'), ('dad', '그런가요? 아이도 함께 신청했는데요.'), (None, '경비가 신청서와 명부를 나란히 놓았다.'), ('guard', '접수 내용을 대조해야겠습니다. 가족이 함께 들어가려면 동행 승인 내역을 확인해야 해서요.'), ('dad', '확인하는 동안 어디에 있으면 됩니까?'), ('guard', '대기소 앞에서 두 분 함께 기다려 주십시오.'), ('daram', '아빠, 오래 걸려?'), ('dad', '여쭤볼게. 얼마나 걸립니까?'), ('guard', '담당자가 돌아오는 건 저녁입니다. 기다리시면 제가 대조해 드리겠습니다.'), ('dad', '그 전에 확인할 방법은 없습니까?'), ('guard', '초소에 보관된 예약 원본을 먼저 확인하셔도 됩니다. 동행 아동 규정도 옆에 있습니다. 확인하신 뒤 말씀해 주세요.'), ('dad', '알겠습니다. 다람아, 아빠랑 여기서 확인하자.')],"entry:arrival")
 label r13_entry:
     hide r13_visitor
     $ dialogue_speaker=None
@@ -93,6 +101,7 @@ label r13_entry:
     jump r13_entry_dispatch
 
 label r13_entry_guard_menu:
+    $ r13_note_encounter("guard")
     window hide
     hide r13_visitor
     $ dialogue_speaker=None
@@ -100,7 +109,8 @@ label r13_entry_guard_menu:
     $ r13_choice=_return
 label r13_entry_dispatch:
     if r13_choice==("entry","explain"):
-        call r13_lines([("guard","제가 받은 명부에는 한 분뿐입니다. 아이 이름은 원본을 봐야 알겠군요."),("dad","그걸 확인할 동안 아이를 저 안에 혼자 두겠다는 겁니까?"),("guard","……초소에 원본과 인계 규정이 있습니다. 먼저 보시겠습니까?")],"entry:explain")
+        call r13_lines([('dad', '저희 신청과 이 명부가 다른 거군요.'), ('guard', '예. 제가 받은 명부에는 한 분뿐입니다. 초소의 예약 원본과 대조해야 합니다.'), ('dad', '아이와 함께 확인하겠습니다. 동행 규정도 볼 수 있습니까?'), ('guard', '예. 원본은 선반에 있고 규정은 옆에 붙어 있습니다. 아이를 다른 곳으로 인계할 때는 보호자의 확인과 서명이 필요합니다.')],"entry:explain")
+        $ r13_flag("question_read:entry:explain")
     elif r13_choice[0]=="object":
         call r13_object(r13_choice[1])
     elif r13_choice[0]=="empty":
@@ -109,8 +119,11 @@ label r13_entry_dispatch:
     elif r13_choice[1]=="argue":
         call screen r13_book("guard",present=True)
         $ r13_item=_return
+        if r13_item:
+            show screen r13_material_corner(r13_item)
         if r13_item in ("G1","G2","G3"):
             call r13_lines([("guard","어느 부분이 잘못됐다는 겁니까?")],"entry:reason")
+            hide screen r13_material_corner
             $ r13_speaker("guard","neutral")
             menu:
                 "원본에는 두 명이고, 아이 인계에는 보호자 확인이 필요합니다" if r13_has("G1") and r13_has("G2"):
@@ -122,9 +135,11 @@ label r13_entry_dispatch:
                     pass
         elif r13_item:
             call r13_lines([("guard","숙소에서 보낸 편지군요. 다만 이 편지만으로 접수 명부를 고칠 수는 없습니다. 원본을 봐야 합니다.")],"entry:letter")
+        hide screen r13_material_corner
     elif r13_choice[1]=="wait":
         call screen r13_confirm("대기소 앞에서 원본 담당자가 돌아오기를 기다린다. 저녁까지 시간이 흐른다.")
         if _return:
+            $ r13_flag("question_read:entry:wait")
             $ r13_tick()
             call r13_scene("winter","눈에 막힌 입구","calm")
             call r13_lines([("guard","대조했습니다. 아이 이름이 빠졌더군요. 두 분 함께 들어가세요."),("daram","아빠, 이제 손이 잘 안 펴져."),("dad","오래 기다리게 했네. 손 줘. 같이 가자.")],"entry:wait")
@@ -134,10 +149,14 @@ label r13_entry_dispatch:
     jump r13_entry
 
 label r13_entry_person(person):
+    if person in ("daram", "karo"):
+        $ r13_note_encounter(person)
     if person=="daram":
-        call r13_lines([("daram","아빠, 이거 안 열려."),("dad","들려. 아빠 여기 있어. 멀리 안 갈게."),("daram","응. 나 여기서 기다릴게.")],"entry:daram:waiting")
+        call r13_lines([('daram', '아빠, 엄마도 여기서 이름 썼을까?'), ('dad', '들어오실 때 확인하셨겠지.'), ('daram', '그럼 내 이름도 잘 써 달라고 해.'), ('dad', '응. 빠지지 않았는지 같이 보자.')],"entry:daram:waiting")
         return
     if person!="karo":
+        $ r13_target=person
+        call r13_talk
         return
 label r13_entry_karo_menu:
     window hide
@@ -145,19 +164,32 @@ label r13_entry_karo_menu:
     call screen r13_entry_karo_topics
     $ r13_entry_karo_choice=_return
     if r13_entry_karo_choice=="road":
-        call r13_lines([("karo","축에 금이 갔어요. 내려올 때 소리가 영 안 좋더라니."),("dad","수리하면 돌아갈 수 있습니까?"),("karo","마차만 고쳐선 안 돼요. 고개도 막혔거든요. 길이 열리면 먼저 말씀드릴게요.")],"entry:karo:road")
+        call r13_lines([('dad', '아까 보신 축은 수리가 되겠습니까?'), ('karo', '고쳐야죠. 금 간 자리를 묶어 놓았는데, 이대로 손님을 태우지는 못해요.'), ('dad', '수리되면 돌아갈 수 있습니까?'), ('karo', '마차만 고쳐선 안 됩니다. 고개도 눈에 막혔어요. 길이 열리면 먼저 말씀드릴게요.')],"entry:karo:road")
         $ r13_flag("road_known")
     elif r13_entry_karo_choice=="witness":
-        call r13_lines([("karo","제 마차에 두 분 다 탔습니다. 그건 제가 봤어요."),("guard","동행하신 건 압니다. 여기 적힌 인원과 맞지 않아서 그러는 겁니다."),("dad","아이를 저 안에 계속 둘 순 없습니다. 장부부터 봅시다."),("karo","짐은 여기 둘게요. 확인 끝나면 불러요.")],"entry:karo:witness")
+        call r13_lines([('dad', '까로 씨, 두 사람을 태워 오셨다는 말씀을 해 주실 수 있습니까? 명부에서 아이가 빠져서요.'), ('karo', '그럼요. 제 마차에 두 분 다 탔습니다. 짐도 제가 내려 드렸고요.'), ('guard', '동행하신 건 알겠습니다. 명부 정정은 예약 원본과 대조해야 합니다.'), ('dad', '알겠습니다. 그럼 원본부터 보겠습니다.'), ('karo', '저는 짐하고 같이 있을게요. 확인 끝나면 불러 주세요.')],"entry:karo:witness")
     elif r13_entry_karo_choice=="bags":
         call r13_lines([("karo","이 담요 밑에 둘게요. 눈에 젖으면 방에 가서도 한참 말려야 하니까.")],"entry:karo:bags")
+    elif r13_entry_karo_choice=="present":
+        call screen r13_book("karo",present=True)
+        $ r13_item=_return
+        if r13_item:
+            call screen r13_confirm("까로에게 「"+ROOM13["evidence"][r13_item]["name"]+"」을 보여줄까요? 원본은 기록에 남습니다.","보여준다","취소한다")
+            if _return:
+                $ r13_reaction=r13_present("karo",r13_item)
+                show screen r13_material_corner(r13_item)
+                call r13_lines(r13_reaction,"entry:karo:present:"+r13_item)
+                hide screen r13_material_corner
     elif r13_entry_karo_choice=="back":
         hide r13_visitor
         $ dialogue_speaker=None
         return
+    if r13_entry_karo_choice in ("road","witness","bags"):
+        $ r13_flag("question_read:entry:karo:"+r13_entry_karo_choice)
     jump r13_entry_karo_menu
 
 label r13_entry_done:
+    hide screen r13_material_corner
     $ r13_inspection_location=None
     $ r13_grant(["E02"],"원본과 대조해 정정받은 등록")
     $ r13_flag("entry_corrected")
@@ -165,8 +197,9 @@ label r13_entry_done:
     jump r13_roam
 
 label r13_carriage:
+    $ r13_carriage_snack = True
     call r13_scene("winter_carriage","마차 안","travel")
-    call r13_lines([(None, '차가 덜컹일 때마다 창틀이 작게 울렸다. 다람이가 내 소매를 잡아당겼다.'), ('daram', '아빠. 사건이야.'), ('dad', '벌써? 아직 마을에도 안 왔는데.'), ('daram', '왼손만 얼고 있어. 오른손은 괜찮고.'), (None, '나는 다람이의 손을 잡았다. 창문 쪽 손끝이 차가웠다.'), ('dad', '이쪽으로 바람이 들어오는구나.'), ('daram', '그건 내가 먼저 찾았어. 아빠는 눈 감고 있었잖아.'), ('dad', '눈 감고 생각하고 있었지.'), ('daram', '코로 생각했어? 소리가 나던데.'), (None, '나는 대답 대신 자리를 조금 비켰다. 다람이는 웃으며 내 옆으로 붙었다.'), ('dad', '범인은 창틀이고, 해결은 내가 할게.'), (None, '접은 천을 창틀 틈에 끼웠다. 흔들리던 천 끝이 가만해졌다.'), ('daram', '그러면 나는 뭘 해?'), ('dad', '바람이 멎었는지 확인해 줘.'), (None, '다람이가 손을 펴고 잠깐 기다렸다.'), ('daram', '응. 잡았어. 아빠가.'), ('dad', '네가 먼저 찾았잖아.'), (None, '다람이는 손을 내려 편지의 구겨진 모서리를 폈다. 이번에는 장난치는 얼굴이 아니었다.'), ('daram', '엄마가 있던 방에 가는 거지?'), ('dad', '응. 편지에 적힌 곳부터 가 보자.'), ('daram', '엄마도 거기 있으면 좋겠다.'), (None, '있을 거라고 말하고 싶었다. 대신 펴지지 않는 모서리를 같이 눌렀다.'), ('dad', '나도.'), ('daram', '찾을 때는 나도 같이야.'), ('dad', '그래. 나 혼자 먼저 가지 않을게.'), ('karo', '후후, 손님. 저 앞 불빛 보이시죠? 곧 도착합니다.'), ('daram', '까로 아저씨! 도착하면 밥 먹을 데도 있어요?'), ('karo', '여관에서 물어보시면 되죠. 저는 길 안내까지 맡겠습니다.'), ('daram', '아빠, 길은 아저씨가 알아.'), ('dad', '나는 뭐 맡을까?'), ('daram', '밥. 따뜻한 것 말고 이름 있는 밥.'), ('dad', '배고픈 탐정은 까다롭네.'), ('daram', '눈 감고 생각하는 탐정도 까다로워.'), (None, '멀리 보이던 불빛이 가까워졌다. 다람이가 옆자리에 놓인 장갑 한 짝을 내 손에 얹었다.'), ('dad', '네가 끼고 있어.'), ('daram', '아빠 손도 차가워졌잖아. 다음 사건은 그거야.')],"opening:carriage:duo:v2")
+    call r13_lines([('daram', '아빠, 아빠! 이 과자 봐. 엄청 커!'), ('dad', '그러게. 그게 봉지 안에 들어 있었어?'), ('daram', '응! 다른 건 다 쪼끄만데 얘만 이래.'), ('dad', '아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫빵에 먹어 줘야 돼!'), (None, '다람이가 입을 한껏 벌렸다. 나는 목도리 아래에 손을 받쳤다.'), ('dad', '천천히. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 손에 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 거.'), ('dad', '그래. 곧 만날 수 있을 거야.'), ('daram', '그럼 하나 더 있나 찾아봐야겠다.'), (None, '다람이는 봉지를 벌려 들여다봤다. 나는 무릎 위의 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있던 마을은 커?'), ('dad', '아빠도 처음 가 봐. 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 아직 멀었어요?'), ('karo', '저 굽이만 지나면 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 창문 쪽으로 붙었다.'), ('daram', '엄마가 있던 집도 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 거기부터 가자.'), ('dad', '응. 가서 엄마 소식부터 물어보자.'), ('daram', '내가 물어봐도 돼?'), ('dad', '그럼. 아빠랑 같이 여쭤보자.')],"opening:carriage:family:v3")
     $ persistent.room13_opening_seen=True
     return
 
@@ -218,9 +251,23 @@ label r13_field:
         $ r13_target=r13_choice[1]
         call r13_talk
         jump r13_roam
+    if r13_choice[0]=="travel":
+        $ r13_destination=r13_local_destination(r13_choice[1])
+        if r13_destination=="outside":
+            call screen r13_map(initial_region="village")
+            if _return and _return in r13_places() and _return!=room13["location"]:
+                $ r13_edit(location=_return)
+                jump r13_roam
+        elif r13_destination:
+            $ r13_edit(location=r13_destination)
+            jump r13_roam
+        jump r13_field
     if r13_choice[1] in ("doorway","room_inside"):
-        $ r13_edit(location="hall" if r13_choice[1]=="doorway" else "room13")
-        jump r13_roam
+        $ r13_destination="hall" if r13_choice[1]=="doorway" else "room13"
+        if r13_destination in r13_places():
+            $ r13_edit(location=r13_destination)
+            jump r13_roam
+        jump r13_field
     if r13_choice[1]=="people":
         call screen r13_nearby
         if _return:
@@ -229,16 +276,23 @@ label r13_field:
         jump r13_roam
     if r13_choice[1]=="map":
         call screen r13_map
-        if _return and _return!=room13["location"]:
+        if _return and _return in r13_places() and _return!=room13["location"]:
             $ r13_edit(location=_return)
             jump r13_roam
         jump r13_field
     jump r13_field
 
 label r13_object(key):
+    if room13["location"]=="gate" and key in ("booth","ledger","gate_documents"):
+        call r13_inspect_gate_documents(key)
+        return
+    if key in ("desk", "letters", "notebook", "cup") and r13_inspection_available():
+        call r13_inspect_desk
+        return
     $ r13_spec=ROOM13["objects"][room13["location"]][key]
     if not r13_object_visible(r13_spec):
         return
+    $ r13_was_observed=r13_has("observed:"+room13["location"]+":"+key)
     $ r13_rect=r13_spec["rect"]
     $ r13_mark(key,r13_rect[0]+r13_rect[2]//2,r13_rect[1]+r13_rect[3]//2)
     $ r13_flag("observed:"+room13["location"]+":"+key)
@@ -258,9 +312,15 @@ label r13_object(key):
         call r13_observe(r13_observation_entries,"object:"+room13["location"]+":"+key+(":"+r13_daylight() if r13_spec.get("time_text") else ""))
     $ r13_grant(r13_spec["give"],R13_PLACES[room13["location"]][0]+" 직접 조사")
     $ r13_flag(*r13_spec.get("flags",[]))
+    $ r13_revisit_lines=r13_discovery_observation_feedback(room13["location"],key,r13_was_observed)
+    if r13_revisit_lines:
+        call r13_observe(r13_revisit_lines,"object:revisit:"+room13["location"]+":"+key)
     return
 
 label r13_talk:
+    call r13_notice_before_talk(r13_target) from r13_notice_before_talk_return
+    if not _return:
+        return
     $ r13_first_encounter = r13_target not in r13_met_people()
     $ r13_note_encounter(r13_target)
     $ r13_encounter_key="met:"+r13_target+":"+str(room13["day"])
