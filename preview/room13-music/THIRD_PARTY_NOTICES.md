@@ -1,0 +1,77 @@
+Dark fairy-tale audio candidate for Daram Detective
+
+Music by Melissa Elliott (0xabad1dea), Glorytales.
+Source: https://github.com/0xabad1dea/glorytales
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+Composer requires name, a repository URL where possible, and CC BY 4.0 notice. No fixed attribution sentence is supplied by the composer. This credit contains the requested elements; no endorsement is implied.
+
+r13-dark-lullaby.ogg
+Sources: StartMenuScreen
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -9.9, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-14.10", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 0.0, "mix": "none", "village_tempo_multiplier": null, "ritual_pulse_tempo_multiplier": null, "drone_excerpt": null}
+
+r13-dark-village.ogg
+Sources: CatsEyeWaltz, OminousOverworldDrone
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -9.87, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-14.13", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 0.25, "mix": "village", "village_tempo_multiplier": 0.9, "ritual_pulse_tempo_multiplier": null, "drone_excerpt": null}
+
+r13-dark-investigation.ogg
+Sources: HistoricVillage
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -9.33, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-14.67", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 0.0, "mix": "none", "village_tempo_multiplier": null, "ritual_pulse_tempo_multiplier": null, "drone_excerpt": null}
+
+r13-dark-host.ogg
+Sources: MoodyAndSad
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -11.44, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-12.56", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 0.0, "mix": "none", "village_tempo_multiplier": null, "ritual_pulse_tempo_multiplier": null, "drone_excerpt": null}
+
+r13-dark-night.ogg
+Sources: OminousOverworldDrone
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -3.67, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-20.33", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 2.0, "mix": "night", "village_tempo_multiplier": null, "ritual_pulse_tempo_multiplier": null, "drone_excerpt": "25s onward, 60s night / 61.44s ritual"}
+
+r13-dark-ritual.ogg
+Sources: OminousOverworldDrone, RhythmOnly
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -4.44, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-19.56", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 1.0, "mix": "ritual", "village_tempo_multiplier": null, "ritual_pulse_tempo_multiplier": 0.5, "drone_excerpt": "25s onward, 60s night / 61.44s ritual"}
+
+r13-dark-family.ogg
+Sources: MagicalForest
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -11.15, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-12.85", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 1.5, "mix": "none", "village_tempo_multiplier": null, "ritual_pulse_tempo_multiplier": null, "drone_excerpt": null}
+
+r13-dark-hope.ogg
+Sources: TheSkyClears
+Changes: {"normalization": "-24 LUFS target, constant gain constrained by -2 dBTP ceiling", "gain_db": -9.72, "micro_fades_seconds": 0.008, "source_loudness_lufs": "-14.28", "encoding": "Vorbis quality 3, stereo 44100Hz", "circular_crossfade_seconds": 0.0, "mix": "none", "village_tempo_multiplier": null, "ritual_pulse_tempo_multiplier": null, "drone_excerpt": null}
+
+Original StartMenuScreen
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/002-StartMenuScreen-80BPM-loop.mp3
+SHA256 94bca53432f4f41392495644c5c18f5639ca7501545809a9b9d0f1af30c8c7f0
+
+Original HistoricVillage
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/005-HistoricVillage-99BPM-loop.mp3
+SHA256 7a8763365f925611c7ab3ed81a0478d91598721e649f3fb7517db85b16188458
+
+Original MoodyAndSad
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/010-MoodyAndSad-96BPM-loop.mp3
+SHA256 d11ed39436fd5eceada753e64f15c977feeaf96bdf6bfa325d9a88f6065a24f7
+
+Original OminousOverworldDrone
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/012-OminousOverworldDrone-0BPM-noloop.mp3
+SHA256 aa6f67e0c3e7eac75d284e2b6e34d341582f5e49b51dd9a3807b38d7c09e2e18
+
+Original RhythmOnly
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/003-RhythmOnly-126BPM-loop.mp3
+SHA256 9d843cb7ed556ebf4b68efb2c797ceebcaceff4a4bae8cc6bae6e375353041fb
+
+Original TheSkyClears
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/008-TheSkyClears-88BPM-loop.mp3
+SHA256 4b1fbaa4f1285102eda5a21492bab6906d3977fb437c14231130f43003e03687
+
+Original CatsEyeWaltz
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/014-CatsEyeWaltz-96BPM-loop.mp3
+SHA256 0eefa7b5f3c4115fce2c1bdefe40ba6a437f33f247cf6c70873faeba5fd1811b
+
+Original MagicalForest
+https://raw.githubusercontent.com/0xabad1dea/glorytales/b11b570de5b3072fc5f409a3e515a28e62ae56be/tracks/007-MagicalForest-85BPM-noloop.mp3
+SHA256 8e995f1270aaceb08905e059c538299a231a164926719bc0eebc31a20bd52d9b
+
+Original files are preserved. Edited audio is not a new composition or claimed as original music by Daram Detective. The AI did not audition the audio; decoding, loop waveform boundaries and runtime output are engineering checks only.
+
+
+Preview-only change: edited Ogg cues transcoded to MP3 128 kbps with FFmpeg; no additional musical edits.
