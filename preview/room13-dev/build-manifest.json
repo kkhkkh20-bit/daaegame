@@ -2,18 +2,23 @@
   "engine": "Ren'Py 8.5.3",
   "game_transport": {
     "multipart": true,
-    "archive_bytes": 110015002,
-    "archive_sha256": "062556be0626b8e5b1bb0c902b92b26b900cd84127a81d09c508529faa04023a",
+    "archive_bytes": 188739937,
+    "archive_sha256": "fdf42373f7bd9ba3d3b3b813086b488c665dafbb37b078784b57ad04ddaca4bf",
     "parts": [
       {
         "file": "game.part01",
         "bytes": 62914560,
-        "sha256": "5151ac84cedf9b343b19f4c226065e9ee108777dcaf91f232da64a410792486a"
+        "sha256": "b70ff7eec3f1125889d2a11f48b13cb01f600650caf16c27b68125c91eaf82a7"
       },
       {
         "file": "game.part02",
-        "bytes": 47100442,
-        "sha256": "14988823c398d93384edc2a7e2cb8094dd02c0a78ff946ac6253dd5fa011cb1c"
+        "bytes": 62914560,
+        "sha256": "1e8fc43ba787302784c179d0f96caa2b331788700ef75cc7273e2540bab84cca"
+      },
+      {
+        "file": "game.part03",
+        "bytes": 62910817,
+        "sha256": "fc496b19f9e121f111e3431ed16694cb15dad7b4e8b833cbc0f9544ab4e29c7a"
       }
     ]
   },
@@ -515,16 +520,20 @@
       "sha256": "c30bda2a8734f876d982c95f9c9f2675e4c61f75de9f0f0d8f475b9e9bd1798f"
     },
     "game-transport.json": {
-      "bytes": 458,
-      "sha256": "e9e5b517a92066ee2bb6162cc50be2fb6dc02512a415bf295a44f5be6054568e"
+      "bytes": 608,
+      "sha256": "56b583412a2e093d993c5c76c2cfacaa42a7873bacfc4856a7ebce72ad8e70d9"
     },
     "game.part01": {
       "bytes": 62914560,
-      "sha256": "5151ac84cedf9b343b19f4c226065e9ee108777dcaf91f232da64a410792486a"
+      "sha256": "b70ff7eec3f1125889d2a11f48b13cb01f600650caf16c27b68125c91eaf82a7"
     },
     "game.part02": {
-      "bytes": 47100442,
-      "sha256": "14988823c398d93384edc2a7e2cb8094dd02c0a78ff946ac6253dd5fa011cb1c"
+      "bytes": 62914560,
+      "sha256": "1e8fc43ba787302784c179d0f96caa2b331788700ef75cc7273e2540bab84cca"
+    },
+    "game.part03": {
+      "bytes": 62910817,
+      "sha256": "fc496b19f9e121f111e3431ed16694cb15dad7b4e8b833cbc0f9544ab4e29c7a"
     },
     "icons/icon-128x128-maskable.png": {
       "bytes": 11242,
@@ -603,12 +612,12 @@
       "sha256": "751f360c5911103c7665c115f18715a92a22c33dba0e288bd7cdf3ac61e7d83f"
     },
     "pwa_catalog.json": {
-      "bytes": 5148,
-      "sha256": "2d91dda7e500401e18f18c2d0ac44f512f9f7c210d111267d9e41a4fa9ed0a28"
+      "bytes": 5163,
+      "sha256": "9c65b2c672443b57978159057e6fe82bb0948826992f3c6991ff11dd7803f954"
     },
     "renpy-pre.js": {
-      "bytes": 31145,
-      "sha256": "bbe4e42e2b2e31ea57d0b2e8da98fc01c43d9371489a6edbee529a26c75c94aa"
+      "bytes": 31267,
+      "sha256": "403a9342128438fd88819220281e2b18c3cf44fe3c84c3da6121aa33d59b1a4d"
     },
     "renpy.data": {
       "bytes": 15057379,
@@ -627,5 +636,5 @@
       "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
     }
   },
-  "total_bytes": 249604112
+  "total_bytes": 328329334
 }
