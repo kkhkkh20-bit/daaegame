@@ -358,10 +358,38 @@ Module.preRun = Module.preRun || [ ];
         console.log(s);
     }
 
+
+    async function r13FetchGameZip() {
+        const parts = [{"file": "game.part01", "bytes": 62914560, "sha256": "5151ac84cedf9b343b19f4c226065e9ee108777dcaf91f232da64a410792486a"}, {"file": "game.part02", "bytes": 47100442, "sha256": "14988823c398d93384edc2a7e2cb8094dd02c0a78ff946ac6253dd5fa011cb1c"}];
+        let partIndex = 0;
+        let reader = null;
+        const body = new ReadableStream({
+            async pull(controller) {
+                try {
+                    while (true) {
+                        if (!reader) {
+                            if (partIndex >= parts.length) { controller.close(); return; }
+                            const item = parts[partIndex++];
+                            const response = await fetch(new URL(item.file, document.baseURI));
+                            if (!response.ok) throw new Error(item.file + ': HTTP ' + response.status);
+                            reader = response.body.getReader();
+                        }
+                        const packet = await reader.read();
+                        if (packet.done) { reader.releaseLock(); reader = null; continue; }
+                        controller.enqueue(packet.value);
+                        return;
+                    }
+                } catch (error) { controller.error(error); }
+            },
+            async cancel(reason) { if (reader) await reader.cancel(reason); }
+        });
+        return new Response(body, {status: 200, headers: {'Content-Length': '110015002'}});
+    }
+    
     async function loadGameZip() {
 
         try {
-            let response = await fetch(window.gameZipURL);
+            let response = await r13FetchGameZip();
 
             if (!response.ok) {
                 reportError("Could not load game.zip: " + response.status + " " + response.statusText);

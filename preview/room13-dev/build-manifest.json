@@ -1,5 +1,22 @@
 {
   "engine": "Ren'Py 8.5.3",
+  "game_transport": {
+    "multipart": true,
+    "archive_bytes": 110015002,
+    "archive_sha256": "062556be0626b8e5b1bb0c902b92b26b900cd84127a81d09c508529faa04023a",
+    "parts": [
+      {
+        "file": "game.part01",
+        "bytes": 62914560,
+        "sha256": "5151ac84cedf9b343b19f4c226065e9ee108777dcaf91f232da64a410792486a"
+      },
+      {
+        "file": "game.part02",
+        "bytes": 47100442,
+        "sha256": "14988823c398d93384edc2a7e2cb8094dd02c0a78ff946ac6253dd5fa011cb1c"
+      }
+    ]
+  },
   "files": {
     "Galmuri-OFL.txt": {
       "bytes": 4266,
@@ -9,13 +26,101 @@
       "bytes": 504736,
       "sha256": "f467d1b10e6b88dfa8399c9f93b38c7643e050abfe4fc15800ac0b000f5a57d6"
     },
+    "game/assets/approach.png": {
+      "bytes": 2571407,
+      "sha256": "9180aa5660a84ede4b4a6ea624f83202eec3bfb22a6c0b9b9e8c00dd35868f33"
+    },
+    "game/assets/basket-world.png": {
+      "bytes": 509792,
+      "sha256": "e68393acd7c124aebc5288652115b8d3382735a6890c84c4aea3f8dee00f828b"
+    },
+    "game/assets/carriage.png": {
+      "bytes": 1860201,
+      "sha256": "a0947935e50261d65a7dd53fc8c88305649e3f66c9b6dafcd11bb97b723cd131"
+    },
+    "game/assets/chest-complete.png": {
+      "bytes": 748096,
+      "sha256": "d84e2948814165017ba7977ffe39e652d03a05f0d962d558234ca10f1350eeb6"
+    },
+    "game/assets/chest-open.png": {
+      "bytes": 128348,
+      "sha256": "12731b59b4ea8736f8d5800b958301f6ade1f6d0e2992c623e4a9ef28ad76b60"
+    },
+    "game/assets/chest.png": {
+      "bytes": 101216,
+      "sha256": "151a3c36823aaeea88aab773dbcc6c4cad2ed42cda12c120adaa54dad111b411"
+    },
+    "game/assets/clock-base.png": {
+      "bytes": 282712,
+      "sha256": "1d111f075c04c2ec0957feab20b424a80cb204536bb9c7eb03e1bdd4fea4a34c"
+    },
+    "game/assets/clock-hands.png": {
+      "bytes": 2399,
+      "sha256": "a25410b2996a62c063e10c2d6379dae93297d8f63e37e14629dcce2dce55833e"
+    },
+    "game/assets/contract.png": {
+      "bytes": 226106,
+      "sha256": "a53dea2cea0f024dc788509e9b30f3621d3aca61a6c95a8917b3e364bd75eec1"
+    },
+    "game/assets/council.png": {
+      "bytes": 2343710,
+      "sha256": "526d06e0f5c57dd6ea6d7602930e3476ab32fef0880f16a4fd462a6cbc411e08"
+    },
+    "game/assets/doto-room.png": {
+      "bytes": 1794062,
+      "sha256": "dccdd1dd985e672cd506ac7c724f617590526581d7a7bc10ecf1467868e10a5c"
+    },
+    "game/assets/driver.png": {
+      "bytes": 1867861,
+      "sha256": "4a5478da4b31eb5d985797d5f851a3eb5d5c2d9f31eb3960d5b4b4755cefc455"
+    },
     "game/assets/family.png": {
       "bytes": 1790591,
       "sha256": "f04a1ab8ca4edff2a2d4accbd2a409cc5a661a4edf35c41f6dfca9dfd62196c5"
     },
+    "game/assets/flour-world.png": {
+      "bytes": 409162,
+      "sha256": "62e2db39736d9134a0a569d6f1eb20f43ba699cd5ab9d094b291cccb67a55d83"
+    },
+    "game/assets/friends.png": {
+      "bytes": 1127911,
+      "sha256": "1129f0a8890292190c3e453f1051c2bf81799df3f2605e937e345ed951d04406"
+    },
+    "game/assets/front.png": {
+      "bytes": 1432215,
+      "sha256": "0c8c194f9e60c6e488eff5afec90d2413bffc3b1bb16a77f1f79bae4ac731e18"
+    },
+    "game/assets/fur-stamp.png": {
+      "bytes": 5739,
+      "sha256": "69ab73c947bfd3dd30bfa7c8a04060e1e1079eec335c7f960740765b4ad5339f"
+    },
     "game/assets/future-villagers-v3.png": {
       "bytes": 2102151,
       "sha256": "f7d3d3e4449eec7b6258c9fde78f2cd933b751ab0e1b22bd09bc76f931d4b223"
+    },
+    "game/assets/hall.png": {
+      "bytes": 1631670,
+      "sha256": "8b467f35c27d71866da442414e593f4957f2c53d460a752d61144ffd9fc4a01c"
+    },
+    "game/assets/hidden-somsom.png": {
+      "bytes": 432927,
+      "sha256": "64379fdfca7c43e510976af3265638dc6a3251c6914398a476cf84c6c59e12f9"
+    },
+    "game/assets/inn-activities.png": {
+      "bytes": 1565524,
+      "sha256": "d71b8f065fc0307b2a1650deb8ee87dad24be87fc7eb15d35ec820a40f40fe6b"
+    },
+    "game/assets/inn-lounge.png": {
+      "bytes": 1499870,
+      "sha256": "508d102771908bc056787e132479ef138482d5ea9596cb292d3e795c81aa7b91"
+    },
+    "game/assets/inn-map.png": {
+      "bytes": 2517863,
+      "sha256": "a603bdf60599633b140d03d12023aa106b75e21f251a3b8e73f2d7e638963004"
+    },
+    "game/assets/inn.png": {
+      "bytes": 917146,
+      "sha256": "c5932266ba100c2de080f7e5ade02e35ad2402192a95d563ec446cec68122f9d"
     },
     "game/assets/interview-family.png": {
       "bytes": 2123540,
@@ -36,6 +141,14 @@
     "game/assets/interview-witnesses.png": {
       "bytes": 2338089,
       "sha256": "35899221fa161e64736875db18c17f070a57f5704838f71c2bca66b38def0158"
+    },
+    "game/assets/kitchen.png": {
+      "bytes": 1595503,
+      "sha256": "ec1b0a22de0d2cbfdb24ec4fcd6d684cfcc5d17263fd9a61ab4bcde86ee6d091"
+    },
+    "game/assets/map.png": {
+      "bytes": 378400,
+      "sha256": "840b3e775ae674a4e3ea0156bc971b72108301c7926c5f8cfa8fbb498ed0a343"
     },
     "game/assets/outdoor-fountain.png": {
       "bytes": 2811222,
@@ -61,6 +174,230 @@
       "bytes": 2669612,
       "sha256": "f23e26d9d6897f3aab06690a9e1f0009643feb9e4b8d36c8e905bd82a04f6b95"
     },
+    "game/assets/pouch-world.png": {
+      "bytes": 617456,
+      "sha256": "16b2f32d14f7b79cb2fa468eff46207b7d8aa71eb8904102d6852fa057c3ff5a"
+    },
+    "game/assets/pouch.png": {
+      "bytes": 1543706,
+      "sha256": "7fc8e9ef3f93e20cfb20f73ee54391c4e0e778acd00ce984152b9d3e948c9174"
+    },
+    "game/assets/resident-librarian-teacher.png": {
+      "bytes": 713507,
+      "sha256": "d738754bc1b9cfb7ddf8f416444de48fb43c6b49d543c865720c8a0b0cabf778"
+    },
+    "game/assets/resident_badook-body.png": {
+      "bytes": 11419,
+      "sha256": "2a84f5c4f2621cdbcc229359277ffd5b8dfff5893019835018d8f781a6b619b8"
+    },
+    "game/assets/resident_badook-face.png": {
+      "bytes": 11581,
+      "sha256": "def0896f268e27bd698747b47ba0ad7289d792c02495759671bb51f9402daab1"
+    },
+    "game/assets/resident_bori-body.png": {
+      "bytes": 12209,
+      "sha256": "807a0a44e8a2557acc305ee6bae82b15c3f6d6753788f5e2e5929bab05c192da"
+    },
+    "game/assets/resident_bori-face.png": {
+      "bytes": 10959,
+      "sha256": "b010df51ebeee88b51833608457e667d03a6d7abb5e1fd462e1b5badbce2f415"
+    },
+    "game/assets/resident_eunho-body.png": {
+      "bytes": 15904,
+      "sha256": "9216176977e60d5638956616d108da28532e4ade8474a3683360ab1083b1b67d"
+    },
+    "game/assets/resident_eunho-face.png": {
+      "bytes": 12384,
+      "sha256": "4ff0944daed0b94d62ec434534f13ca73ddb92956d8bb89e37d03ca071b4c800"
+    },
+    "game/assets/resident_guseul-body.png": {
+      "bytes": 12616,
+      "sha256": "6240cd6417a5133ad4f86f6ed11970c107224da326a7a941d445d89414712c8b"
+    },
+    "game/assets/resident_guseul-face.png": {
+      "bytes": 12042,
+      "sha256": "311d09641e9b16b46854d6033d01cc7b640ff99f9bbf092d87c5d4d5fcace445"
+    },
+    "game/assets/resident_kkwak-body.png": {
+      "bytes": 10766,
+      "sha256": "7934b8f9339d04af79097711d92a56e6a0dec4001eed7502e60bbf3c1c6e1153"
+    },
+    "game/assets/resident_kkwak-face.png": {
+      "bytes": 9326,
+      "sha256": "02020ad8a196e630951dd06aa1ca0ddf2245edff500d32532e9c0383bd8f3118"
+    },
+    "game/assets/resident_kongi-body.png": {
+      "bytes": 15253,
+      "sha256": "86c2b297cae9eb6a0d5a290bd4c9934e66a4b6f669a1cfd999d64c2b62b1a5af"
+    },
+    "game/assets/resident_kongi-face.png": {
+      "bytes": 11356,
+      "sha256": "54f60ae96c502a204527df348bbcfc9add1cb8522363ffb4d232ecc13851a363"
+    },
+    "game/assets/resident_lamplighter-body.png": {
+      "bytes": 11754,
+      "sha256": "b1c4ec5289c9e4a4388a36b3dd10fcecc27bdd90f790e7351664903d57be1d05"
+    },
+    "game/assets/resident_lamplighter-face.png": {
+      "bytes": 8302,
+      "sha256": "96124ff250afad9ac8219830883f09eae16223ee614bb458823372acbf60a9b8"
+    },
+    "game/assets/resident_madam-body.png": {
+      "bytes": 7134,
+      "sha256": "fb6120a937d7d99b6c39d76ad92c40cf59bd11f091216d0bce40fd0a373c9b7f"
+    },
+    "game/assets/resident_madam-face.png": {
+      "bytes": 9884,
+      "sha256": "acb08d88157dfa0143ac992c552623830ffb5cf7497f3d4c00ed10377915742f"
+    },
+    "game/assets/resident_momo-body.png": {
+      "bytes": 16588,
+      "sha256": "1a700f432ab808508be41a2b8db8fde8e1bd7cf0fb07d184dff5cbd2af1ce932"
+    },
+    "game/assets/resident_momo-face.png": {
+      "bytes": 15893,
+      "sha256": "ead7241c9548de3c19e11b7b7a180ae77ac2902bf3c1e8baf9d0d0c5934b7217"
+    },
+    "game/assets/resident_mungchi-body.png": {
+      "bytes": 9717,
+      "sha256": "1c3fb8ab328a38f4c2392f772135ff0fbe7ac81f4f77c2087cbe5533b2b9285b"
+    },
+    "game/assets/resident_mungchi-face.png": {
+      "bytes": 10691,
+      "sha256": "7c189b05354327f0d71807bd23b3f1c96cf900730eef56c99d7ce6ce49e8730b"
+    },
+    "game/assets/resident_musoe-body.png": {
+      "bytes": 13288,
+      "sha256": "2fd2ec15b37159895b3c279c549edc7173b562bcaa9a6aa97276d4a2844fb840"
+    },
+    "game/assets/resident_musoe-face.png": {
+      "bytes": 11362,
+      "sha256": "8deb11155fbc17a4d164a5af8f9029399fb239ea414bd7aaf2acb378e7be7b7a"
+    },
+    "game/assets/resident_nero-body.png": {
+      "bytes": 10477,
+      "sha256": "e9c49c885db734ffc961162bbd7726c5d90f5d97ebb1bf44a7f4bb81e4c0ee40"
+    },
+    "game/assets/resident_nero-face.png": {
+      "bytes": 12539,
+      "sha256": "7d4da00d68e924fd8e77dd5c6de229825e9ec0110c3004a6dc23d41064395df3"
+    },
+    "game/assets/resident_nubi-body.png": {
+      "bytes": 14520,
+      "sha256": "9124be0bca97ee443a5e2b3180b353e60d1e7c209b4aed6fca5996b3fdd7cecc"
+    },
+    "game/assets/resident_nubi-face.png": {
+      "bytes": 11721,
+      "sha256": "acbde3a73cf2a5b6c449d7d34af6a8e3c80b19c83da8b41ab138be6ecd1ced58"
+    },
+    "game/assets/resident_owlgp-body.png": {
+      "bytes": 17173,
+      "sha256": "2e5388be6d9fd1414e6229ffecc74f433091ca9aa326b320d0f50d4f0a63d9f7"
+    },
+    "game/assets/resident_owlgp-face.png": {
+      "bytes": 17156,
+      "sha256": "ed88ad25d6d028066a6e74a3b7477dc7ff48a71a66ae118f26a6f436d6c93ab4"
+    },
+    "game/assets/resident_piko-body.png": {
+      "bytes": 13026,
+      "sha256": "c7313655ff373c4776f8ce551f9aa99ccad3ccfa0fd791372eae5794c6758b60"
+    },
+    "game/assets/resident_piko-face.png": {
+      "bytes": 9644,
+      "sha256": "02bd4da4bf2df822ecfd37b353af8ca7f439a09910d1716ebd05d0593afc55cd"
+    },
+    "game/assets/resident_ppul-body.png": {
+      "bytes": 13977,
+      "sha256": "648f6953851fad0606142cf22d8bfa15bb661543047aaece7e50021022068ef0"
+    },
+    "game/assets/resident_ppul-face.png": {
+      "bytes": 15978,
+      "sha256": "f42523954ea31339bbcb0fd590c8fe3f4d4398acd71644921818277948356a7c"
+    },
+    "game/assets/resident_seol-body.png": {
+      "bytes": 10279,
+      "sha256": "94b870a4a7d0e13ecae394837a47e3c1038a8091dd0cc46932cf5cd2bb5ddd95"
+    },
+    "game/assets/resident_seol-face.png": {
+      "bytes": 11862,
+      "sha256": "c4218680aaf3a827308f4e9a20d54997fa9710d3f3f2719538a06770d4c8afa1"
+    },
+    "game/assets/resident_seori-body.png": {
+      "bytes": 11109,
+      "sha256": "f7130d6e07dcc729da05a04f4f044edb7fb057a6f29bc0da8cf91183b49f5cd0"
+    },
+    "game/assets/resident_seori-face.png": {
+      "bytes": 12787,
+      "sha256": "cd401fcae375ebd626e0baa3757a36750834d07cb54d125a08a29036e91bb174"
+    },
+    "game/assets/resident_siluk-body.png": {
+      "bytes": 12093,
+      "sha256": "13f0f1a94bcf0d27b0f99e00cbee51911ee4474af073e3dda13f85bbea75c99d"
+    },
+    "game/assets/resident_siluk-face.png": {
+      "bytes": 12808,
+      "sha256": "8a16db38521b48dec08b5dcb61233f923e523f5ddace57b0d159a7cfd65739f1"
+    },
+    "game/assets/resident_sling-body.png": {
+      "bytes": 13639,
+      "sha256": "98b19f01fbc232842d79b8bf9f4e1a0e6fb9a6306e41fa86cdea7dc390e45305"
+    },
+    "game/assets/resident_sling-face.png": {
+      "bytes": 12029,
+      "sha256": "e45de4918ce70989ae574d1dd9fc12154b922f90d32393e31881318a1fc51c23"
+    },
+    "game/assets/resident_somi-body.png": {
+      "bytes": 17921,
+      "sha256": "06df2fe90afaeb2609a0d8e8c0f2bfa68e383a788276823d1ddab0ac1a6d2294"
+    },
+    "game/assets/resident_somi-face.png": {
+      "bytes": 10000,
+      "sha256": "bd1faca09731407e8f7b94ba423beb53348cb7ebf184de44fd95b271ced9ea14"
+    },
+    "game/assets/resident_tok-body.png": {
+      "bytes": 14866,
+      "sha256": "50313c047f3af8041ef38518f0d7f159515d7882167057764d740be2c9244e5a"
+    },
+    "game/assets/resident_tok-face.png": {
+      "bytes": 11698,
+      "sha256": "4bb6070e4b203a45a26242525bdc861eff564db1eaa7ded57fd663ce9613be1f"
+    },
+    "game/assets/resident_tori-body.png": {
+      "bytes": 11458,
+      "sha256": "52d1ff611aec3df241a5d39f5715544e76e112c75faaaba4700eb5ed45fae818"
+    },
+    "game/assets/resident_tori-face.png": {
+      "bytes": 11312,
+      "sha256": "cdc1a9737a9367d89c8977d3f9cf01f935f786b573fbdbdcc54af65c11f54ff1"
+    },
+    "game/assets/resident_ttadak-body.png": {
+      "bytes": 10973,
+      "sha256": "f1009aaf5c18b058c39de9d0d821cfd6909c5d1a872759c665363b9b99c471e2"
+    },
+    "game/assets/resident_ttadak-face.png": {
+      "bytes": 10476,
+      "sha256": "c2c2a8e39c9c8afc665ba5a01587f49577a90cdae873d98707ae7a74c057ffa1"
+    },
+    "game/assets/resident_ubak-body.png": {
+      "bytes": 9716,
+      "sha256": "18a0e79309a418c6e8b3effd22c5c7e7a3e0bdbeebc1e6058ebe0144e0ed2589"
+    },
+    "game/assets/resident_ubak-face.png": {
+      "bytes": 13229,
+      "sha256": "da2be6d389c0358e750156b705291d3ad98054142603acacf862db10559875ca"
+    },
+    "game/assets/resident_yeoni-body.png": {
+      "bytes": 14054,
+      "sha256": "fe0f825d7b53f7defdda4db9b5fbb3f094b7635307596160f40160a12e3b79ba"
+    },
+    "game/assets/resident_yeoni-face.png": {
+      "bytes": 12055,
+      "sha256": "04249d7071116d83cc55b0878fe3e36c7c1108ce3c5cbf1e558a1700c70598cb"
+    },
+    "game/assets/room.png": {
+      "bytes": 1495938,
+      "sha256": "699dcf0db494b1ae507f249de65008a1537b214766ea450152f43e7431d4773b"
+    },
     "game/assets/room13-before-after.png": {
       "bytes": 1819750,
       "sha256": "3f9fef1f0353be2e6ea41758042c20936e76f2c1ef23a5457310690333067a23"
@@ -77,137 +414,37 @@
       "bytes": 2261015,
       "sha256": "c206199f21d637d07a0bd951ab16f933ce7d8d5373760728b7cf6999273f203b"
     },
-    "game/assets/room13-painted-altar-afternoon.png": {
-      "bytes": 2300710,
-      "sha256": "94f3b6f3073fad3d6883d7a4cfa795761e9a7388758a3714cb1e2982591edb25"
+    "game/assets/room13-mom-body-distressed.png": {
+      "bytes": 19291,
+      "sha256": "8d30c17adee7c6a4de6d1eef31d0caff9f8e316e9e41a1cd4bff11f90f54f7dd"
     },
-    "game/assets/room13-painted-altar-evening.png": {
-      "bytes": 2013049,
-      "sha256": "07f1fd6b32ffe439267b40c9147d41fda2a6acde792abd0f32501b8d70ee8019"
+    "game/assets/room13-mom-body-expressive.png": {
+      "bytes": 19291,
+      "sha256": "8d30c17adee7c6a4de6d1eef31d0caff9f8e316e9e41a1cd4bff11f90f54f7dd"
     },
-    "game/assets/room13-painted-altar-morning.png": {
-      "bytes": 2315828,
-      "sha256": "95ff52e3b503c368a0cac88e1840a75ce76c624ea1c936f2bb790b45fab568ab"
+    "game/assets/room13-mom-body-neutral.png": {
+      "bytes": 18818,
+      "sha256": "6aeb90068ae17914db15549d86a8aaf9461d5acd444514cf2dd23e95d80d4833"
     },
-    "game/assets/room13-painted-carriage-morning.png": {
-      "bytes": 1953244,
-      "sha256": "39411d099eaa71bdd5ce5baecb1a59d43fe3ef63e224cec6271c702556982fde"
+    "game/assets/room13-mom-body-thinking.png": {
+      "bytes": 19175,
+      "sha256": "da286af07830b391fa5d9f0aadb2c3bf1b3d3be3e2805dab1b0b57b1fa74600f"
     },
-    "game/assets/room13-painted-cinematic-endA.png": {
-      "bytes": 2296422,
-      "sha256": "a679dff49565c7d387775fb8b2d2ee3eb0de56efd89044e5909d9bf6fa69ed86"
+    "game/assets/room13-mom-face-distressed.png": {
+      "bytes": 12258,
+      "sha256": "11d4a9562744fa1178b5b00e5d4edb6138116d70c344e14f6354ce8c35c5cc87"
     },
-    "game/assets/room13-painted-cinematic-endB.png": {
-      "bytes": 2152305,
-      "sha256": "86a20e897add13601690e21fb749479991173afbbbcd687b10febd46d1927bb1"
+    "game/assets/room13-mom-face-expressive.png": {
+      "bytes": 12537,
+      "sha256": "28cbc3116f94bb08db16b4b2117c98780b1b4faf12db7c43998bb8b306e591e0"
     },
-    "game/assets/room13-painted-cinematic-key.png": {
-      "bytes": 2528534,
-      "sha256": "600b99b14818e10f1b5f66786d68927ac78e357fc1b0bc8de588706c17f4a2ef"
+    "game/assets/room13-mom-face-neutral.png": {
+      "bytes": 11144,
+      "sha256": "7d1d67a24686134f478a03664c497e3e0b2af80551cf867dd3631b39af5a0db7"
     },
-    "game/assets/room13-painted-gate-afternoon.png": {
-      "bytes": 2306699,
-      "sha256": "6c23555965344456a6248419f2c68ad114c6c54b2f603360eb41daf71eff24f7"
-    },
-    "game/assets/room13-painted-gate-evening.png": {
-      "bytes": 2060350,
-      "sha256": "96ee2c26952d8741fba01726810ac4579a3c2f9e54b2d9d69400180266ebaf08"
-    },
-    "game/assets/room13-painted-gate-morning.png": {
-      "bytes": 2222713,
-      "sha256": "df876929a6e758d7d3ece5d397fa76ebe691d96d32f4db255fd7f67a38c569e9"
-    },
-    "game/assets/room13-painted-hall-after-afternoon.png": {
-      "bytes": 1631862,
-      "sha256": "864703e5757a809ee4aa9c88821007cc0cf7ab41561dab14adf7a503e37ef9ea"
-    },
-    "game/assets/room13-painted-hall-after-evening.png": {
-      "bytes": 1607741,
-      "sha256": "dc3fdaf719302385559ed7fb4fd6328541b0a6c4867338c4eda7501fd7194789"
-    },
-    "game/assets/room13-painted-hall-after-morning.png": {
-      "bytes": 1712122,
-      "sha256": "3cc10cc97b31db4ddecac1e4f524a369707851efec30c5fc68d6ef18bf4d9b30"
-    },
-    "game/assets/room13-painted-hall-before-afternoon.png": {
-      "bytes": 1633479,
-      "sha256": "c45891fd3249d5e2eeec264d83edbdec89b9fe4df0657c2c0c98dee539b007ce"
-    },
-    "game/assets/room13-painted-hall-before-evening.png": {
-      "bytes": 1585223,
-      "sha256": "1762cb620608253e32c6b106bde47566a2519fbb3deb73ddf2cfc8bf0f45144e"
-    },
-    "game/assets/room13-painted-hall-before-morning.png": {
-      "bytes": 1664022,
-      "sha256": "3edd3822859d6ae25cb776d001fe00d72f132da001f6cb32ce32e5506897d381"
-    },
-    "game/assets/room13-painted-inn-afternoon.png": {
-      "bytes": 1986724,
-      "sha256": "9032c1126fd2b36d3b76699c753c515e65ef67d1e4e6af2e67aae732f086a781"
-    },
-    "game/assets/room13-painted-inn-evening.png": {
-      "bytes": 1845889,
-      "sha256": "ba22363e2ea3a53bd2ee5f03f6e1b12e9b36790d0bb5163310320ac5f80d5a92"
-    },
-    "game/assets/room13-painted-inn-morning.png": {
-      "bytes": 1974550,
-      "sha256": "fd9758472a9e77f9e66342a6bc53a60348265edf1429b32ce3d86b8c7ca09aca"
-    },
-    "game/assets/room13-painted-locations-afternoon.png": {
-      "bytes": 2198279,
-      "sha256": "9f1c30d6f5b50f2208339e56c8fc95ed91f7a84f7b3d769d29e46d365a4d7ec7"
-    },
-    "game/assets/room13-painted-locations-evening.png": {
-      "bytes": 1976468,
-      "sha256": "2d957896a74b24b02bf84a9e5f33522e6f1e7a27b7cee63d5a24c28a765be3a4"
-    },
-    "game/assets/room13-painted-locations-morning.png": {
-      "bytes": 2145010,
-      "sha256": "0df46200a03ad297a6892adb44a7ed1516e98954fa72c56d00671721669fda97"
-    },
-    "game/assets/room13-painted-overview-afternoon.png": {
-      "bytes": 2443033,
-      "sha256": "4dc742c12c690132f732e8ed8d3c69464611632d8fce80e48d5851418735c956"
-    },
-    "game/assets/room13-painted-overview-morning.png": {
-      "bytes": 2354606,
-      "sha256": "4ccd443d950b5e6e1930b20c39d7c41485703c9b73964d5ef99113ebba38dbef"
-    },
-    "game/assets/room13-painted-room-after-afternoon.png": {
-      "bytes": 1752793,
-      "sha256": "b48a9afd52aeebb227516b2a08994f525a75e028692f09a3795be1ac9bab71e0"
-    },
-    "game/assets/room13-painted-room-after-evening.png": {
-      "bytes": 1727416,
-      "sha256": "fd8dbd8d2b1d589631d35ace42bc0920e3902628f4e1fdbab0e7c08d9ad6c786"
-    },
-    "game/assets/room13-painted-room-after-morning.png": {
-      "bytes": 1820862,
-      "sha256": "1dd110ce8a815b61a40a92c56bbb54504a98f170311d3601e05eefd9a0d879b7"
-    },
-    "game/assets/room13-painted-room-before-afternoon.png": {
-      "bytes": 1919060,
-      "sha256": "4e099cd9b7870c731b59702e3f585931600d71c4d29569f7c93cf55e4f0f8b45"
-    },
-    "game/assets/room13-painted-room-before-evening.png": {
-      "bytes": 1782117,
-      "sha256": "51e78259434d77177010e4aab3c37bc9517894d7b6dd76279dccdd2374096899"
-    },
-    "game/assets/room13-painted-room-before-morning.png": {
-      "bytes": 1920034,
-      "sha256": "269318624b86a9fec5d99cefff15c5903e1b844324e6eb808c9e00ff14588c68"
-    },
-    "game/assets/room13-painted-village-afternoon.png": {
-      "bytes": 2498653,
-      "sha256": "2dcf082aa3365a1b70dbd13ab280666504473a39c85ea4fefe827ebab4eb55ab"
-    },
-    "game/assets/room13-painted-village-evening.png": {
-      "bytes": 2178847,
-      "sha256": "3e085698f801356c494424f06664947ecc9a84f8b5d5c811404afe0af5255a87"
-    },
-    "game/assets/room13-painted-village-morning.png": {
-      "bytes": 2402118,
-      "sha256": "44059370631915c762f6a2ed012b5f9c56c140218aa9e65fd295d915507d394a"
+    "game/assets/room13-mom-face-thinking.png": {
+      "bytes": 12965,
+      "sha256": "035902745f6b27aba2604481c1bc27c1081ba3ad1fa6dd7087408a22a0540724"
     },
     "game/assets/room13-village.png": {
       "bytes": 2232868,
@@ -217,17 +454,77 @@
       "bytes": 1957593,
       "sha256": "2180cd8a0fb7a59ee910bef7f029dd978e78499c1fe9d623a0432e9fd2f80e56"
     },
+    "game/assets/seal.png": {
+      "bytes": 147894,
+      "sha256": "c8115a2195ecfdef8ce5a9d5400392ca4a8b5ac29d3e6af26e5cbb327b763225"
+    },
+    "game/assets/somsom-hidden-source.png": {
+      "bytes": 1477774,
+      "sha256": "94aa325455252ace818ccaab8f0062bfc88061e7f862f09f8180199f287679d7"
+    },
+    "game/assets/somsom.png": {
+      "bytes": 1784078,
+      "sha256": "820a4d3eb2ab20cba92e7f6e1ad7ca27801eaad6e6c56ffe7ae4e7744333581c"
+    },
+    "game/assets/source-INTRO02_bed.png": {
+      "bytes": 1649324,
+      "sha256": "38a834f8f05d66232e7035d4e01042cd8148cc194511543fa72324716f47c709"
+    },
+    "game/assets/source-INTRO03_door.png": {
+      "bytes": 1619630,
+      "sha256": "5a76bee55828542f7cd96f06b906b6f80a3370301398130d6c5a519ba55b8c84"
+    },
+    "game/assets/source-INTRO04_carriage_empty.png": {
+      "bytes": 42329,
+      "sha256": "6b41e1d5c77cb79ad6dfb1a25d22a0a1e0d36d716c54c7685054074a5a4ce298"
+    },
+    "game/assets/source-P10-inn-bedroom-lights-out-background-only-1672x941.png": {
+      "bytes": 1510883,
+      "sha256": "51b14e5d75f989b7b4f5295231ab1e01370bb85d2267226d43b6a331ed406e5f"
+    },
+    "game/assets/source-village-arrival-wide.png": {
+      "bytes": 2598897,
+      "sha256": "52085b4afa9bcc256e0193713cb44ee928abc9cbd6bfbba3d323046d1b184194"
+    },
+    "game/assets/table.png": {
+      "bytes": 1658032,
+      "sha256": "a69e4d56023e6f4362946d68a49ad02604d54111d22d4bbeef5a3c268c0c9f88"
+    },
+    "game/assets/village-activities.png": {
+      "bytes": 1737039,
+      "sha256": "e61afbf68e54eb9bcdaec66ddbfaa2c179c8d398ffc8655210754e964f91341d"
+    },
     "game/assets/village-overview.png": {
       "bytes": 3277054,
       "sha256": "fb4dab45eacc6a57e05965b1c0c5989c4eddafdfc830dd876c880086be7e4bd6"
+    },
+    "game/assets/village-stone.png": {
+      "bytes": 985629,
+      "sha256": "8c2e8a9860c6f8af9e7e3e94df89abba3fa41c88a2d0c2aadc70fd02f94ff05b"
+    },
+    "game/assets/winter-carriage.png": {
+      "bytes": 1904713,
+      "sha256": "c17bba428d2f5fd2d0f1d8715b948a7edbfd3d5b5f455a862959832d057bdc3e"
+    },
+    "game/assets/winter-gate-clean.png": {
+      "bytes": 2390384,
+      "sha256": "f12cd8b64d28b0be6f7ec93bb9ddeb56f5c032b4661767238f67af1bdb02d134"
     },
     "game/assets/witnesses.png": {
       "bytes": 2063954,
       "sha256": "c30bda2a8734f876d982c95f9c9f2675e4c61f75de9f0f0d8f475b9e9bd1798f"
     },
-    "game.zip": {
-      "bytes": 101334720,
-      "sha256": "0ab71d2e07b2a8c42c5c6e1b12ebc358f42839ca4957caa038fac13d91fac341"
+    "game-transport.json": {
+      "bytes": 458,
+      "sha256": "e9e5b517a92066ee2bb6162cc50be2fb6dc02512a415bf295a44f5be6054568e"
+    },
+    "game.part01": {
+      "bytes": 62914560,
+      "sha256": "5151ac84cedf9b343b19f4c226065e9ee108777dcaf91f232da64a410792486a"
+    },
+    "game.part02": {
+      "bytes": 47100442,
+      "sha256": "14988823c398d93384edc2a7e2cb8094dd02c0a78ff946ac6253dd5fa011cb1c"
     },
     "icons/icon-128x128-maskable.png": {
       "bytes": 11242,
@@ -294,24 +591,24 @@
       "sha256": "23eba9c850a0991808c64883feb7edae53a84319da3ce9ef01c66e85e931e9b0"
     },
     "index.html": {
-      "bytes": 8020,
-      "sha256": "801c03a488a2658e627f237d796bdc09839daa17cbbf1ae807be23510f44fe18"
+      "bytes": 8046,
+      "sha256": "efca72f8577f8da3c96d25168094002aa1b2bfab1be602dfa56bc503dd46538a"
     },
     "loading-scene.png": {
-      "bytes": 2443033,
-      "sha256": "4dc742c12c690132f732e8ed8d3c69464611632d8fce80e48d5851418735c956"
+      "bytes": 1946111,
+      "sha256": "83363cfd9b6875b05271528928affecceb0acb95a5ef5a2b84cd0b6d772aa1e9"
     },
     "manifest.json": {
       "bytes": 1959,
       "sha256": "751f360c5911103c7665c115f18715a92a22c33dba0e288bd7cdf3ac61e7d83f"
     },
     "pwa_catalog.json": {
-      "bytes": 3097,
-      "sha256": "62f3021ef9bc10eb00c27513a59cc34714ec573c933c3f026254e77653f617f9"
+      "bytes": 5148,
+      "sha256": "2d91dda7e500401e18f18c2d0ac44f512f9f7c210d111267d9e41a4fa9ed0a28"
     },
     "renpy-pre.js": {
-      "bytes": 29640,
-      "sha256": "d5f949e625eca68d9fbcfaa1b3c3ffc3c44eb46d42550a0c416054162e5ff91c"
+      "bytes": 31145,
+      "sha256": "bbe4e42e2b2e31ea57d0b2e8da98fc01c43d9371489a6edbee529a26c75c94aa"
     },
     "renpy.data": {
       "bytes": 15057379,
@@ -330,5 +627,5 @@
       "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
     }
   },
-  "total_bytes": 257733939
+  "total_bytes": 249604112
 }
