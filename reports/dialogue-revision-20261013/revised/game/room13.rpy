@@ -246,6 +246,7 @@ label r13_object(key):
     return
 
 label r13_talk:
+    $ r13_first_encounter = r13_target not in r13_met_people()
     $ r13_note_encounter(r13_target)
     $ r13_encounter_key="met:"+r13_target+":"+str(room13["day"])
     if not r13_has(r13_encounter_key):
@@ -253,6 +254,9 @@ label r13_talk:
             call r13_lines([(None, '밤이는 나를 보기 전에 복도를 살폈다. 나는 그 순서가 마음에 걸렸다.'), ('bami', '누가 제가 처마에 있었다고 했대요. 제 이름 말씀하셨어요?'), ('dad', '……다시 혼자 두지는 않을게.'), ('bami', '또 약속이네요.'), (None, '밤이가 문 쪽으로 몸을 돌렸다. 내 대답은 그 등 뒤에 남았다.'), ('bami', '탐정님 안 계실 때 숨는 건 저예요. 이번에는 말만 하지 마세요.')],"greeting:bami:pressured")
         elif r13_target=="buri" and room13["victim_state"]=="dead":
             call r13_lines([("buri","수리하러 오신 거 아니죠. 할아버지 이름을 꺼내실 거면 먼저 말씀해 주세요.")],"greeting:buri:bereaved")
+        elif r13_target in R13_OPENING_SCENES["first_meetings"]:
+            $ r13_opening_lines = r13_conversation_opening(r13_target, r13_first_encounter)
+            call r13_lines(r13_opening_lines,"greeting:opening:"+r13_target+(":first" if r13_first_encounter else ":return"))
         elif r13_target not in R13_CORE_PEOPLE:
             call r13_lines([(None,r13_activity_text(r13_target))],"greeting:activity:"+r13_target)
         else:
@@ -330,7 +334,7 @@ label r13_talk_dispatch:
             if _return:
                 $ r13_finish_topic(r13_topic)
         jump r13_talk_menu
-    call r13_lines(ROOM13["topics"][r13_topic]["lines"],"topic:"+r13_topic)
+    call r13_lines(r13_conversation_topic_lines(r13_topic),"topic:"+r13_topic)
     $ r13_finish_topic(r13_topic)
     jump r13_talk_menu
 
