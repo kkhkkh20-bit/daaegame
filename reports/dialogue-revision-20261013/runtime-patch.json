@@ -247,13 +247,40 @@
   {
     "file": "room13.rpy",
     "before": "        elif r13_target not in R13_CORE_PEOPLE:\n            call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target)",
-    "after": "        elif r13_target in R13_OPENING_SCENES[\"first_meetings\"]:\n            $ r13_opening_lines = r13_conversation_opening(r13_target, r13_first_encounter)\n            call r13_lines(r13_opening_lines,\"greeting:opening:\"+r13_target+(\":first\" if r13_first_encounter else \":return\"))\n        elif r13_target not in R13_CORE_PEOPLE:\n            call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target)",
-    "reason": "첫 만남은 인사·하던 일·말을 걸 이유를 먼저 표현. 재방문과 후반 초면 구분. 기존 압박/상실 인사가 우선."
+    "after": "        elif r13_target in R13_OPENING_SCENES[\"first_meetings\"]:\n            $ r13_opening_lines = r13_conversation_opening(r13_target, r13_first_encounter)\n            call r13_lines(r13_opening_lines,\"greeting:opening:\"+r13_target+(\":first\" if r13_first_encounter else \":return\")) from r13_dialogue_opening_return\n        elif r13_target not in R13_CORE_PEOPLE:\n            call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target)",
+    "reason": "첫 만남은 인사·하던 일·말을 걸 이유를 먼저 표현. 재방문과 후반 초면 구분. 기존 압박/상실 인사가 우선.",
+    "accepted_before": [
+      "        elif r13_target in R13_OPENING_SCENES[\"first_meetings\"]:\n            $ r13_opening_lines = r13_conversation_opening(r13_target, r13_first_encounter)\n            call r13_lines(r13_opening_lines,\"greeting:opening:\"+r13_target+(\":first\" if r13_first_encounter else \":return\"))\n        elif r13_target not in R13_CORE_PEOPLE:\n            call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target)"
+    ]
   },
   {
     "file": "room13.rpy",
     "before": "call r13_lines(ROOM13[\"topics\"][r13_topic][\"lines\"],\"topic:\"+r13_topic)",
     "after": "call r13_lines(r13_conversation_topic_lines(r13_topic),\"topic:\"+r13_topic)",
     "reason": "다람 동행 중에는 생활 대화 35개의 첫 질문을 다람이 맡고 아빠가 후속 질문. 아이 부재 시 원래 아빠 대화 유지."
+  },
+  {
+    "file": "room13.rpy",
+    "before": "call r13_lines([(\"daram\",\"아빠. 이쪽으로 조금만 와 봐.\"),(\"dad\",\"왜?\"),(\"daram\",\"바람 들어와. 아빠 쪽은 안 추워?\"),(\"dad\",\"이런, 손이 차네. 조금만 비켜 봐.\"),(\"daram\",\"아까부터 자고 있었잖아.\"),(None,\"창틀 틈에 접은 천을 끼웠다. 다람이가 편지의 구겨진 모서리를 편다.\"),(\"dad\",\"내가 넣어 둘까?\"),(\"daram\",\"응. 이번엔 안 구겨지게.\"),(\"dad\",\"알았어.\"),(\"daram\",\"……도착하면 뭐부터 먹을까?\"),(\"dad\",\"따뜻한 것.\"),(\"daram\",\"뭐가 따뜻한 건데. 이름을 말해 줘.\"),(None,\"멀리 불빛이 보였다. 다람이가 옆자리에 놓인 장갑 한 짝을 챙겼다.\")],\"opening:carriage:v1\")",
+    "after": "call r13_lines([(None, '차가 덜컹일 때마다 창틀이 작게 울렸다. 다람이가 내 소매를 잡아당겼다.'), ('daram', '아빠. 사건이야.'), ('dad', '벌써? 아직 마을에도 안 왔는데.'), ('daram', '왼손만 얼고 있어. 오른손은 괜찮고.'), (None, '나는 다람이의 손을 잡았다. 창문 쪽 손끝이 차가웠다.'), ('dad', '이쪽으로 바람이 들어오는구나.'), ('daram', '그건 내가 먼저 찾았어. 아빠는 눈 감고 있었잖아.'), ('dad', '눈 감고 생각하고 있었지.'), ('daram', '코로 생각했어? 소리가 나던데.'), (None, '나는 대답 대신 자리를 조금 비켰다. 다람이는 웃으며 내 옆으로 붙었다.'), ('dad', '범인은 창틀이고, 해결은 내가 할게.'), (None, '접은 천을 창틀 틈에 끼웠다. 흔들리던 천 끝이 가만해졌다.'), ('daram', '그러면 나는 뭘 해?'), ('dad', '바람이 멎었는지 확인해 줘.'), (None, '다람이가 손을 펴고 잠깐 기다렸다.'), ('daram', '응. 잡았어. 아빠가.'), ('dad', '네가 먼저 찾았잖아.'), (None, '다람이는 손을 내려 편지의 구겨진 모서리를 폈다. 이번에는 장난치는 얼굴이 아니었다.'), ('daram', '엄마가 있던 방에 가는 거지?'), ('dad', '응. 편지에 적힌 곳부터 가 보자.'), ('daram', '엄마도 거기 있으면 좋겠다.'), (None, '있을 거라고 말하고 싶었다. 대신 펴지지 않는 모서리를 같이 눌렀다.'), ('dad', '나도.'), ('daram', '찾을 때는 나도 같이야.'), ('dad', '그래. 나 혼자 먼저 가지 않을게.'), ('karo', '후후, 손님. 저 앞 불빛 보이시죠? 곧 도착합니다.'), ('daram', '까로 아저씨! 도착하면 밥 먹을 데도 있어요?'), ('karo', '여관에서 물어보시면 되죠. 저는 길 안내까지 맡겠습니다.'), ('daram', '아빠, 길은 아저씨가 알아.'), ('dad', '나는 뭐 맡을까?'), ('daram', '밥. 따뜻한 것 말고 이름 있는 밥.'), ('dad', '배고픈 탐정은 까다롭네.'), ('daram', '눈 감고 생각하는 탐정도 까다로워.'), (None, '멀리 보이던 불빛이 가까워졌다. 다람이가 옆자리에 놓인 장갑 한 짝을 내 손에 얹었다.'), ('dad', '네가 끼고 있어.'), ('daram', '아빠 손도 차가워졌잖아. 다음 사건은 그거야.')],\"opening:carriage:duo:v2\")",
+    "reason": "마차 오프닝: 부녀가 함께 관찰하고 해결하며 엄마에 대한 기대를 나눔. 까로의 도착 안내와 입구의 짐 도움으로 관계 연결. 사건 사실·보상·시간 변화 없음."
+  },
+  {
+    "file": "options.rpy",
+    "before": "define config.version = \"0.15.2-dev\"",
+    "after": "define config.version = \"0.15.3-dev\"",
+    "reason": "최신 0.15.2 개발 변경 위에 대화 통합 0.15.3 버전 표시. 저장 디렉터리 유지.",
+    "accepted_before": [
+      "define config.version = \"0.15.1-dev\""
+    ]
+  },
+  {
+    "file": "options.rpy",
+    "before": "    build.version = \"0.15.2-dev\"",
+    "after": "    build.version = \"0.15.3-dev\"",
+    "accepted_before": [
+      "    build.version = \"0.15.1-dev\""
+    ],
+    "reason": "실행 버전과 SDK 빌드 버전 일치."
   }
 ]
