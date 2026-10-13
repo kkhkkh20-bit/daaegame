@@ -1,4 +1,4 @@
-var cacheName = 'daram-room13-0158-calendar';
+var cacheName = '다람탐정-눈에-갇힌-마을';
 
 /* Start the service worker and cache all of the app's content or use the existing one */
 self.addEventListener('install', function (e) {
