@@ -237,5 +237,23 @@
     "before": "\"할머니는 아직 경비실에 있어. 이 문은 내가 잠글게.\"",
     "after": "\"할머니는 아직 경비실에 계세요. 이 문은 제가 잠글게요.\"",
     "reason": "아빠와의 첫 후반 대화에도 존댓말 유지. 구금 상태 설명은 그대로."
+  },
+  {
+    "file": "room13.rpy",
+    "before": "label r13_talk:\n    $ r13_note_encounter(r13_target)",
+    "after": "label r13_talk:\n    $ r13_first_encounter = r13_target not in r13_met_people()\n    $ r13_note_encounter(r13_target)",
+    "reason": "대면 기록을 남기기 전에 초면인지 판단. 기존 encounters 재사용, 새 보상·시간·관계 수치 없음."
+  },
+  {
+    "file": "room13.rpy",
+    "before": "        elif r13_target not in R13_CORE_PEOPLE:\n            call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target)",
+    "after": "        elif r13_target in R13_OPENING_SCENES[\"first_meetings\"]:\n            $ r13_opening_lines = r13_conversation_opening(r13_target, r13_first_encounter)\n            call r13_lines(r13_opening_lines,\"greeting:opening:\"+r13_target+(\":first\" if r13_first_encounter else \":return\"))\n        elif r13_target not in R13_CORE_PEOPLE:\n            call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target)",
+    "reason": "첫 만남은 인사·하던 일·말을 걸 이유를 먼저 표현. 재방문과 후반 초면 구분. 기존 압박/상실 인사가 우선."
+  },
+  {
+    "file": "room13.rpy",
+    "before": "call r13_lines(ROOM13[\"topics\"][r13_topic][\"lines\"],\"topic:\"+r13_topic)",
+    "after": "call r13_lines(r13_conversation_topic_lines(r13_topic),\"topic:\"+r13_topic)",
+    "reason": "다람 동행 중에는 생활 대화 35개의 첫 질문을 다람이 맡고 아빠가 후속 질문. 아이 부재 시 원래 아빠 대화 유지."
   }
 ]
