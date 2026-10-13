@@ -1,9 +1,4 @@
-다람탐정 0.15.5-dev 전 주민 장면 개정
-주민 35명+별도 우편 접수 담당자 1명의 관찰·접근 선택·인사·재방문 장면을 작성했습니다.
-마차는 과자와 엄마를 찾는 여행, 입구는 방문 신청과 명부 누락을 확인하는 흐름입니다.
-기존 사건·단서·조사/재판 조건·시간 비용·세이브 디렉터리는 보존합니다.
-DEV_HANDOFF_ROOM13.txt와 reports/dialogue-revision-20261013/ALL_RESIDENT_SCENES.md를 먼저 읽어 주세요.
-대부분의 그림·음악·폰트·RenPy SDK는 제외합니다. 과자 도입에 필요한 기존 그림 1장은 포함합니다. 단독으로 즉시 재빌드 가능한 전체 백업은 아닙니다.
-게임: ../room13-dev/
-전체 대본: ../../reports/dialogue-revision-20261013/ALL_RESIDENT_SCENES.md
-검수 범위와 제한: ../../reports/dialogue-revision-20261013/resident-browser-report.json
+다람탐정 0.15.6 개발 소스 인계
+0.15.5 공개 대사를 보존하고 조사·시점·메뉴·생활 배치·가족 밤갈색 원화를 통합했습니다.
+최종 검수/배포상태: ROOM13_WORK_STATUS.json 및 qa-room13-0156/RELEASE_STATUS.json.
+소스·생성기·아트 메타데이터이며 대형 PNG/음악/SDK 전체 실행백업이 아닙니다. 원화는 공개 그림수첩에서 다운로드할 수 있습니다.

@@ -4,7 +4,7 @@
     "people": 43,
     "main": 12,
     "support": 31,
-    "authored": 238,
+    "authored": 241,
     "aliases": 0,
     "missing": [],
     "complete": true
@@ -21,83 +21,183 @@
   },
   "front_runtime": [
     {
+      "title": "주민을 누르면 · 바로 대화 상대를 바라보기",
+      "caption": "0.15.6 게시 후보(4fc4ea4c) · 자연 첫 진행. 광장에서 피코를 직접 눌렀을 때의 첫 화면입니다. 큰 상대 캐릭터가 먼저 나타나고 말을 걸지 선택합니다.",
+      "file": "screenshots/0156-viewpoint-03-click-immediately-large-Piko-PC.png"
+    },
+    {
+      "title": "모바일 · 피코에게 말 걸기",
+      "caption": "0.15.6 게시 후보(4fc4ea4c) · 자연 첫 진행. 844×390 화면에서 피코를 실제로 눌러 연 선택지입니다. 돌아가기와 상단 옵션을 사용할 수 있습니다.",
+      "file": "screenshots/0156-viewpoint-04-click-immediately-large-Piko-mobile.png"
+    },
+    {
+      "title": "첫 질문부터 · 아빠 시점 유지",
+      "caption": "0.15.6 게시 후보(4fc4ea4c) · 자연 첫 진행. 피코에게 그림을 구경해도 되는지 묻는 첫 아빠 대사입니다. 상대를 그대로 바라보며 질문합니다.",
+      "file": "screenshots/0156-viewpoint-05a-first-Piko-Dad-target-mobile.png"
+    },
+    {
+      "title": "아빠 시점 · 상대를 보며 답하기",
+      "caption": "0.15.6 UI 통합 후보(8f7d1216) · 자연 플레이. 까로에게 마차가 다니는 길을 물은 뒤 아빠가 답하는 실제 장면. 작은 프사 없이 상대와 중앙 이름표를 유지합니다.",
+      "file": "screenshots/0156-viewpoint-04-dad-target-PC.png"
+    },
+    {
+      "title": "모바일 · 같은 시점으로 이어지는 대화",
+      "caption": "0.15.6 UI 통합 후보(8f7d1216) · 자연 플레이. 실제 까로 대화를 844×390 모바일 화면에서 확인했습니다. 위쪽 옵션과 아래 세 메뉴를 함께 볼 수 있습니다.",
+      "file": "screenshots/0156-viewpoint-05-dad-target-mobile.png"
+    },
+    {
+      "title": "질문 목록 · 현장으로 돌아가기",
+      "caption": "0.15.6 UI 통합 후보(8f7d1216) · 자연 플레이. 새 게임에서 까로를 직접 선택해 연 질문 목록입니다. 돌아가기와 자료 제시를 선택할 수 있습니다.",
+      "file": "screenshots/0156-viewpoint-03-explicit-topic-return.png"
+    },
+    {
+      "title": "입구 · 작은 메뉴와 창 안의 다람이",
+      "caption": "0.15.6 UI 통합 후보(8f7d1216) · 자연 플레이. 새 게임 도착 장면을 지나 실제 입구에 들어온 화면입니다. 넓은 하단 가림막을 없애고 메뉴를 세 칸으로 줄였습니다.",
+      "file": "screenshots/0156-viewpoint-01-entry-three-cells-gear.png"
+    },
+    {
+      "title": "여관 · 접수대 앞에서 일하는 할머니",
+      "caption": "0.15.6 배치 검수 후보 · 새 원화와 인물·시간·시야를 직접 설정한 엔진 검수 화면입니다. 자연 플레이 캡처와 구분합니다.",
+      "file": "screenshots/0156-staging-inn-p1-x640.png"
+    },
+    {
+      "title": "광장 · 게시판을 읽는 도토",
+      "caption": "0.15.6 배치 검수 후보 · 새 원화와 인물·시간·시야를 직접 설정한 엔진 검수 화면입니다. 자연 플레이 캡처와 구분합니다.",
+      "file": "screenshots/0156-staging-square-p0-x0.png"
+    },
+    {
+      "title": "광장 · 벤치에 앉은 토리",
+      "caption": "0.15.6 배치 검수 후보 · 새 원화와 인물·시간·시야를 직접 설정한 엔진 검수 화면입니다. 자연 플레이 캡처와 구분합니다.",
+      "file": "screenshots/0156-staging-square-p0-x640.png"
+    },
+    {
+      "title": "초소 서류 · 항목과 값 비교",
+      "caption": "0.15.5 문서 표기 수정 후보 · PC에서 원본과 사본의 항목을 직접 선택한 화면",
+      "file": "screenshots/0155-final-say-records-accepted-01-PC-separated-label-value.png"
+    },
+    {
+      "title": "모바일 · 인원 칸 직접 선택",
+      "caption": "0.15.5 문서 표기 수정 후보 · 모바일에서 인원 칸을 실제로 누른 화면",
+      "file": "screenshots/0155-final-say-records-accepted-02-mobile-count-selected.png"
+    },
+    {
+      "title": "기록 · 관심 자료 모아 보기",
+      "caption": "0.15.5 기록 검수 후보 · 새 게임에서 얻은 자료에 관심 표시를 붙이고 필터를 켠 화면",
+      "file": "screenshots/0155-review-natural-07-favorites-filter-read-mark.png"
+    },
+    {
+      "title": "모바일 · 증거 수첩",
+      "caption": "0.15.5 기록 검수 후보 · 입구 추리를 마친 뒤 실제로 모은 증거와 큰 글씨 설정",
+      "file": "screenshots/0155-review-natural-10-mobile-large-records.png"
+    },
+    {
+      "title": "모바일 · 자료의 내용과 입수 경로",
+      "caption": "0.15.5 기록 검수 후보 · 수첩에서 예약 원본을 직접 선택한 화면",
+      "file": "screenshots/0155-review-natural-11-mobile-large-record-detail.png"
+    },
+    {
+      "title": "서랍 조사 · 접이식 돋보기 획득",
+      "caption": "0.15.5 도구 연계 검수 후보 · 책상과 서랍을 실제로 조사해 돋보기를 얻은 화면",
+      "file": "screenshots/0155-tool-discovery-final-01-natural-magnifier-reward.png"
+    },
+    {
+      "title": "붉은 바느질 · 다람이에게 새 질문",
+      "caption": "0.15.5 도구 연계 검수 후보 · 침대의 단서를 돋보기로 살펴보고 관찰 메모를 남긴 화면",
+      "file": "screenshots/0155-tool-discovery-final-02-seam-memo.png"
+    },
+    {
+      "title": "다람이에게 확인한 관찰 메모",
+      "caption": "0.15.5 도구 연계 검수 후보 · 새 질문을 실제로 물어본 뒤 읽음 표시가 남은 화면",
+      "file": "screenshots/0155-tool-discovery-final-02b-child-read.png"
+    },
+    {
+      "title": "수리점 · 도면을 얻은 뒤",
+      "caption": "0.15.5 도구 연계 검수 후보 · 원래의 도면 조사 활동을 수행해 자료를 얻은 화면. 하단 메뉴 개편 전",
+      "file": "screenshots/0155-tool-discovery-final-07-existing-map-earned-E04.png"
+    },
+    {
+      "title": "모바일 · 돋보기 관찰 기록",
+      "caption": "0.15.5 도구 연계 검수 후보 · 실제 플레이에서 남긴 두 관찰 메모를 모바일 수첩에서 연 화면",
+      "file": "screenshots/0155-tool-discovery-final-08-mobile-observation-notes.png"
+    },
+    {
       "title": "입구 · 주민과 대기소",
-      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "caption": "이전 0.15.4 통합 후보 · 실제 입력으로 실행한 화면. 현재 대화 배치와 다릅니다.",
       "file": "screenshots/0154-01-natural-entry-three-residents.png"
     },
     {
       "title": "질문 · 읽은 대화 표시",
-      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "caption": "이전 0.15.4 통합 후보 · 실제 입력으로 실행한 화면. 현재 대화 배치와 다릅니다.",
       "file": "screenshots/0154-06-question-struck-through.png"
     },
     {
       "title": "초소 서류 · 확대 조사",
-      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "caption": "이전 0.15.4 통합 후보 · 실제 입력으로 실행한 화면. 현재 대화 배치와 다릅니다.",
       "file": "screenshots/0154-07-original-copy-recorded.png"
     },
     {
       "title": "증거 제시 · 좌측 아이콘",
-      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "caption": "이전 0.15.4 통합 후보 · 실제 입력으로 실행한 화면. 현재 대화 배치와 다릅니다.",
       "file": "screenshots/0154-09-guard-evidence-card.png"
     },
     {
       "title": "아빠 시점 · 속마음",
-      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "caption": "이전 0.15.4 통합 후보 · 실제 입력으로 실행한 화면. 현재 대화 배치와 다릅니다.",
       "file": "screenshots/0154-08-dad-blue-thought-no-avatar.png"
     },
     {
       "title": "대화 프로필 · 프레임 안 확대",
-      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "caption": "이전 0.15.4 통합 후보 · 실제 입력으로 실행한 화면. 현재 대화 배치와 다릅니다.",
       "file": "screenshots/0154-05-karo-profile-in-frame.png"
     },
     {
       "title": "모바일 · 확대 조사",
-      "caption": "0.15.4 통합 후보 · 실제 입력으로 실행한 화면",
+      "caption": "이전 0.15.4 통합 후보 · 실제 입력으로 실행한 화면. 현재 대화 배치와 다릅니다.",
       "file": "screenshots/0154-12-mobile-recorded-document-popup.png"
     },
     {
       "title": "여관 · 왼쪽 시야",
-      "caption": "0.15.4 최종 검수본 · 최대 인원 배치를 설정한 클릭 검수 화면",
+      "caption": "이전 0.15.4 검수본 · 최대 인원 배치를 설정한 클릭 검수 화면",
       "file": "screenshots/0154-inn-left.png"
     },
     {
       "title": "여관 · 오른쪽 시야",
-      "caption": "0.15.4 최종 검수본 · 최대 인원 배치를 설정한 클릭 검수 화면",
+      "caption": "이전 0.15.4 검수본 · 최대 인원 배치를 설정한 클릭 검수 화면",
       "file": "screenshots/0154-inn-right.png"
     },
     {
       "title": "까로와 직접 대화",
-      "caption": "0.15.0 공개 후보 · 새 게임에서 까로를 선택하고 짐을 부탁했을 때의 실제 대사입니다. 중앙 대화 원화와 왼쪽의 별도 프사를 함께 표시합니다.",
+      "caption": "이전 대화 배치 기록 · 0.15.0 공개 후보 · 새 게임에서 까로를 선택하고 짐을 부탁했을 때의 실제 대사입니다. 중앙 대화 원화와 왼쪽의 별도 프사를 함께 표시합니다.",
       "file": "screenshots/front-02b-karo-real-dialogue.png"
     },
     {
       "title": "마차 안의 다람이",
-      "caption": "0.15.0 최종 공개 후보 · 새 게임 도입부의 실제 대사입니다. 새 가족 컷씬과 다람이의 독립 프사를 함께 확인할 수 있습니다.",
+      "caption": "이전 대화 배치 기록 · 0.15.0 최종 공개 후보 · 새 게임 도입부의 실제 대사입니다. 새 가족 컷씬과 다람이의 독립 프사를 함께 확인할 수 있습니다.",
       "file": "screenshots/front-speaker-daram.png"
     },
     {
       "title": "아빠가 대답하는 장면",
-      "caption": "0.15.0 최종 공개 후보 · 새 게임 도입부에서 이어지는 아빠의 실제 대사입니다. 회색·크림색 가족 팔레트와 아빠의 전용 프사를 사용합니다.",
+      "caption": "이전 대화 배치 기록 · 0.15.0 최종 공개 후보 · 새 게임 도입부에서 이어지는 아빠의 실제 대사입니다. 회색·크림색 가족 팔레트와 아빠의 전용 프사를 사용합니다.",
       "file": "screenshots/front-speaker-dad.png"
     },
     {
       "title": "까로의 질문 목록",
-      "caption": "0.15.0 공개 후보 · 새 게임에서 까로를 직접 선택해 연 실제 대화 주제입니다.",
+      "caption": "이전 대화 배치 기록 · 0.15.0 공개 후보 · 새 게임에서 까로를 직접 선택해 연 실제 대화 주제입니다.",
       "file": "screenshots/front-02-karo-direct.png"
     },
     {
       "title": "부리의 질문 목록",
-      "caption": "0.15.0 공개 후보 · 지도에서 수리점으로 이동해 부리를 직접 선택한 실제 플레이 화면입니다.",
+      "caption": "이전 대화 배치 기록 · 0.15.0 공개 후보 · 지도에서 수리점으로 이동해 부리를 직접 선택한 실제 플레이 화면입니다.",
       "file": "screenshots/front-08-buri-direct-topics.png"
     },
     {
       "title": "원본 자료로 입장을 설명한다",
-      "caption": "0.15.0 공개 후보 · 안내소 원본과 규칙을 조사한 뒤 경비 돌목에게 자료를 제시하는 실제 선택 장면입니다.",
+      "caption": "이전 대화 배치 기록 · 0.15.0 공개 후보 · 안내소 원본과 규칙을 조사한 뒤 경비 돌목에게 자료를 제시하는 실제 선택 장면입니다.",
       "file": "screenshots/front-03b-proof-reason-choice.png"
     },
     {
       "title": "모바일에서 펼친 마을 지도",
-      "caption": "0.15.0 공개 후보 · 실제 플레이 중 연 이동 지도입니다.",
+      "caption": "이전 대화 배치 기록 · 0.15.0 공개 후보 · 실제 플레이 중 연 이동 지도입니다.",
       "file": "screenshots/front-11-mobile-map.png"
     }
   ],
@@ -876,6 +976,19 @@
             435,
             463
           ]
+        },
+        "world_counter_wipe": {
+          "file": "assets/room13-pixel-world-context0156.png",
+          "size": [
+            2171,
+            724
+          ],
+          "rect": [
+            1551,
+            78,
+            558,
+            632
+          ]
         }
       },
       "labels": {
@@ -884,9 +997,10 @@
         "distressed": "불안",
         "expressive": "단호한 지시",
         "action_1": "숙박 장부 쓰기",
-        "action_2": "걸레로 닦기"
+        "action_2": "걸레로 닦기",
+        "world_counter_wipe": "접수대 바깥 앞판을 닦는다"
       },
-      "authored": 6,
+      "authored": 7,
       "alias_count": 0,
       "dialogue": {
         "neutral": {
@@ -2012,6 +2126,19 @@
             443,
             388
           ]
+        },
+        "world_bulletin_back": {
+          "file": "assets/room13-pixel-world-context0156.png",
+          "size": [
+            2171,
+            724
+          ],
+          "rect": [
+            87,
+            40,
+            562,
+            660
+          ]
         }
       },
       "labels": {
@@ -2020,9 +2147,10 @@
         "distressed": "곤란",
         "expressive": "근거 설명",
         "action_1": "장부 쓰기",
-        "action_2": "바닥에 앉아 독서"
+        "action_2": "바닥에 앉아 독서",
+        "world_bulletin_back": "게시판을 읽는다"
       },
-      "authored": 6,
+      "authored": 7,
       "alias_count": 0,
       "dialogue": {
         "neutral": {
@@ -4327,13 +4455,27 @@
             281,
             363
           ]
+        },
+        "world_bench_left": {
+          "file": "assets/room13-pixel-world-context0156.png",
+          "size": [
+            2171,
+            724
+          ],
+          "rect": [
+            830,
+            17,
+            462,
+            693
+          ]
         }
       },
       "labels": {
         "name": "토리",
-        "activity": "천의 바늘땀 세기"
+        "activity": "천의 바늘땀 세기",
+        "world_bench_left": "벤치에서 천의 바느질을 살핀다"
       },
-      "authored": 5,
+      "authored": 6,
       "alias_count": 0,
       "dialogue": {
         "neutral": {
@@ -11053,6 +11195,339 @@
       }
     }
   ],
+  "evidence_icons": [
+    {
+      "id": "E01",
+      "title": "초대 봉투",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          0,
+          0,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "G1",
+      "title": "예약 원본",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          362,
+          0,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "G3",
+      "title": "사본 명부",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          724,
+          0,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "G2",
+      "title": "보호 규정",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          1086,
+          0,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E02",
+      "title": "정정본",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          0,
+          362,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E04",
+      "title": "건물 도면",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          362,
+          362,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E05",
+      "title": "서비스 통로",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          724,
+          362,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E08",
+      "title": "진료 기록",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          1086,
+          362,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E13",
+      "title": "핀 수리 쪽지",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          0,
+          724,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E14",
+      "title": "촛대 금속핀",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          362,
+          724,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E16",
+      "title": "가족 분리 요청",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          724,
+          724,
+          362,
+          362
+        ]
+      }
+    },
+    {
+      "id": "E18",
+      "title": "미전달 봉투",
+      "art": {
+        "file": "assets/room13-pixel-evidence0155.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "rect": [
+          1086,
+          724,
+          362,
+          362
+        ]
+      }
+    }
+  ],
+  "evidence_atlas": {
+    "file": "assets/room13-pixel-evidence0155.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "rect": [
+      0,
+      0,
+      1448,
+      1086
+    ]
+  },
+  "family_palette": {
+    "revision": "family-chestnut-0156",
+    "colors": {
+      "base": "#704329",
+      "highlight": "#96613c",
+      "shadow": "#482a20"
+    },
+    "assets": [
+      {
+        "file": "assets/room13-pixel-dialogue-daram.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "deca474794e305fe5c6d3461092c6733aa4f893b6c6ede6dde91273b529f3411"
+      },
+      {
+        "file": "assets/room13-pixel-dialogue-dad.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "e428cbb50abb42c9ee62878bfa8215e8a1c4bc27302f986ed146b593503f6f1e"
+      },
+      {
+        "file": "assets/room13-pixel-dialogue-mom.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "24ec605841fa1961abc593a29f4b95655117ea79906e63adb6051c1cd566c740"
+      },
+      {
+        "file": "assets/room13-pixel-family-profile-icons.png",
+        "size": [
+          2172,
+          724
+        ],
+        "sha256": "0a2b1c1b355f653e6b6cd8f22a4eb9feab1469d67e3d3c5615e265af569c59f1"
+      },
+      {
+        "file": "assets/room13-pixel-world-daram-gray-gutter.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "699fb6be6362beea3d3fd73a428d0cb970ff29b3f3268d2d0b9efb4bc190f393"
+      },
+      {
+        "file": "assets/room13-pixel-world-dad-gray.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "a4fd21b7320f430f3394c003f99d0b713d297c0393f7ae50bc252d9c0adc3aed"
+      },
+      {
+        "file": "assets/room13-pixel-world-mom-gray-gutter.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "c3eff8b15873d0a9f51d4c142b237cbbcf95f72b9f92e294c7ffd2e4a995e676"
+      },
+      {
+        "file": "assets/room13-pixel-world-family-extra-gray.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "839c855f6bf9367e1a73a34d7fac67b26fa8569808ba65c9dddf2a29d8505356"
+      },
+      {
+        "file": "assets/room13-pixel-carriage-letter0153-morning.png",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "14cdd63697a88e34a63370d035354910401459d574f93bab4da6fd2c3b01e9e1"
+      },
+      {
+        "file": "assets/room13-pixel-carriage-family015-morning.png",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "e02311819fd8a8e9e4f9dc98146ed0b94541ca221ebd52553ccb96a96564cc73"
+      },
+      {
+        "file": "assets/room13-pixel-cinematic-key-family015.png",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "f7a16998a86700733acece5f806797245deee6aacffe5ad0d4070e839fd10e10"
+      },
+      {
+        "file": "assets/room13-pixel-cinematic-endA-family015.png",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "0735d59a0de947e37c90afca6d2b30b46b624c10e97cc88f6e0714598fb951cb"
+      },
+      {
+        "file": "assets/room13-pixel-cinematic-endB-family015.png",
+        "size": [
+          1672,
+          941
+        ],
+        "sha256": "314073d48db914553b41ed25fd320b84b6df704c0690953bcfb889f4122069ef"
+      }
+    ]
+  },
   "sources": [
     {
       "file": "assets/room13-pixel-world-daram-gray-gutter.png",
@@ -11087,6 +11562,13 @@
       "size": [
         1536,
         1024
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-world-context0156.png",
+      "size": [
+        2171,
+        724
       ]
     },
     {
@@ -11885,6 +12367,20 @@
       "size": [
         2048,
         768
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-evidence0155.png",
+      "size": [
+        1448,
+        1086
+      ]
+    },
+    {
+      "file": "assets/room13-pixel-carriage-family015-morning.png",
+      "size": [
+        1672,
+        941
       ]
     }
   ]
