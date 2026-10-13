@@ -370,7 +370,9 @@ Module.preRun = Module.preRun || [ ];
                         if (!reader) {
                             if (partIndex >= parts.length) { controller.close(); return; }
                             const item = parts[partIndex++];
-                            const response = await fetch(new URL(item.file, document.baseURI));
+                            const url = new URL(item.file, document.baseURI);
+                            url.searchParams.set("v", item.sha256);
+                            const response = await fetch(url);
                             if (!response.ok) throw new Error(item.file + ': HTTP ' + response.status);
                             reader = response.body.getReader();
                         }

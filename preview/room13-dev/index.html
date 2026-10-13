@@ -242,11 +242,11 @@
       // Register the service worker.
       if (navigator.serviceWorker) {
           if (!navigator.serviceWorker.controller) {
-              navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'all' });
+              navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none' });
           }
       }
   </script>
-  <script src="renpy-pre.js"></script>
+  <script src="renpy-pre.js?v=0153-dialogue"></script>
   <script async type="text/javascript" src="renpy.js"></script>
 <script>
     const brand=document.getElementById('loading-brand');
