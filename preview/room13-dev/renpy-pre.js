@@ -360,7 +360,7 @@ Module.preRun = Module.preRun || [ ];
 
 
     async function r13FetchGameZip() {
-        const parts = [{"file": "game.part01", "bytes": 62914560, "sha256": "5151ac84cedf9b343b19f4c226065e9ee108777dcaf91f232da64a410792486a"}, {"file": "game.part02", "bytes": 47100442, "sha256": "14988823c398d93384edc2a7e2cb8094dd02c0a78ff946ac6253dd5fa011cb1c"}];
+        const parts = [{"file": "game.part01", "bytes": 62914560, "sha256": "b70ff7eec3f1125889d2a11f48b13cb01f600650caf16c27b68125c91eaf82a7"}, {"file": "game.part02", "bytes": 62914560, "sha256": "1e8fc43ba787302784c179d0f96caa2b331788700ef75cc7273e2540bab84cca"}, {"file": "game.part03", "bytes": 62910817, "sha256": "fc496b19f9e121f111e3431ed16694cb15dad7b4e8b833cbc0f9544ab4e29c7a"}];
         let partIndex = 0;
         let reader = null;
         const body = new ReadableStream({
@@ -383,7 +383,7 @@ Module.preRun = Module.preRun || [ ];
             },
             async cancel(reason) { if (reader) await reader.cancel(reason); }
         });
-        return new Response(body, {status: 200, headers: {'Content-Length': '110015002'}});
+        return new Response(body, {status: 200, headers: {'Content-Length': '188739937'}});
     }
     
     async function loadGameZip() {
