@@ -250,9 +250,9 @@ label r13_talk:
     $ r13_encounter_key="met:"+r13_target+":"+str(room13["day"])
     if not r13_has(r13_encounter_key):
         if r13_target=="bami" and r13_has("bami_pressured"):
-            call r13_lines([(None,"밤이는 먼저 복도를 살피고 나를 보았다."),("bami","누가 내가 처마에 있었다고 했대. 내 이름 말했어?"),("dad","……다시 혼자 두지는 않을게."),("bami","또 약속이네."),(None,"밤이가 문 쪽으로 몸을 돌렸다."),("bami","네가 없는 동안 숨는 건 나야. 이번엔 말만 하지 마.")],"greeting:bami:pressured")
+            call r13_lines([(None, '밤이는 나를 보기 전에 복도를 살폈다. 나는 그 순서가 마음에 걸렸다.'), ('bami', '누가 제가 처마에 있었다고 했대요. 제 이름 말씀하셨어요?'), ('dad', '……다시 혼자 두지는 않을게.'), ('bami', '또 약속이네요.'), (None, '밤이가 문 쪽으로 몸을 돌렸다. 내 대답은 그 등 뒤에 남았다.'), ('bami', '탐정님 안 계실 때 숨는 건 저예요. 이번에는 말만 하지 마세요.')],"greeting:bami:pressured")
         elif r13_target=="buri" and room13["victim_state"]=="dead":
-            call r13_lines([("buri","수리하러 온 거 아니죠. 할아버지 이름을 들먹일 거면 먼저 말해요.")],"greeting:buri:bereaved")
+            call r13_lines([("buri","수리하러 오신 거 아니죠. 할아버지 이름을 꺼내실 거면 먼저 말씀해 주세요.")],"greeting:buri:bereaved")
         elif r13_target not in R13_CORE_PEOPLE:
             call r13_lines([(None,r13_activity_text(r13_target))],"greeting:activity:"+r13_target)
         else:
@@ -302,21 +302,21 @@ label r13_talk_dispatch:
                 jump r13_person_actions
         jump r13_talk_menu
     if r13_topic=="buri_consent":
-        call r13_lines([(None,"부리는 공구를 놓았지만 나를 보지는 않았다."),("buri","밖에서는 할아버지가 아이를 잡아먹으려 했대요."),("dad","그렇게 말한 적 없습니다."),("buri","누군가는 했어요. 다람이를 구하려고."),("dad","저도 제 아이가 왜 다쳤는지 알아야 합니다."),("buri","그럼 물어요. 할아버지가 무슨 사람이었다고 먼저 정하지 말고.")],"buri:consent:opening")
+        call r13_lines([(None, '부리는 공구를 놓았지만 나를 보지는 않았다.'), ('buri', '밖에서는 할아버지가 아이를 잡아먹으려 했대요.'), ('dad', '그렇게 말한 적 없습니다.'), ('buri', '누군가는 했어요. 다람이를 구하려고요.'), (None, '내가 딸 이야기를 꺼내려 하자 부리가 먼저 고개를 들었다.'), ('dad', '저도 제 아이가 왜 다쳤는지 알아야 합니다.'), ('buri', '그럼 물어보세요. 할아버지가 무슨 사람이었다고 먼저 정하지 마시고요.')],"buri:consent:opening")
         $ r13_speaker("buri","neutral")
         menu:
             "확인한 상처만 이야기하고, 병력 공개는 가족에게 묻는다":
                 if r13_has("buri_refused"):
                     if r13_has("E08"):
-                        call r13_lines([("dad","제가 한 말도 바로잡겠습니다. 실제 기록에는 팔을 잡은 흔적과 머리의 부상을 따로 적었습니다. 어르신이 무엇을 하려 했는지는 아직 모릅니다."),("buri","그 정정도 같이 남겨요. 나한테만 하는 말이면 소용없어요.")],"buri:consent:repair")
+                        call r13_lines([("dad","제가 한 말도 바로잡겠습니다. 실제 기록에는 팔을 잡은 흔적과 머리의 부상을 따로 적었습니다. 어르신이 무엇을 하려 했는지는 아직 모릅니다."),("buri","그 정정도 같이 남겨 주세요. 저한테만 하시는 말씀이면 소용없어요.")],"buri:consent:repair")
                         $ r13_edit(flags=[f for f in room13["flags"] if f!="buri_refused"])
                     else:
-                        call r13_lines([("buri","확인했다는 기록부터 가져와요. 그다음에 듣겠어요.")],"buri:consent:needs_record")
+                        call r13_lines([("buri","확인하셨다는 기록부터 가져와 주세요. 그다음에 들을게요.")],"buri:consent:needs_record")
                         jump r13_talk_menu
-                call r13_lines([("dad","확인하지 않은 말은 쓰지 않겠습니다."),("buri","지금은요. 다른 사람들 앞에서는요?"),("dad","그때도. ……제가 다르게 말하면 바로잡겠습니다."),("buri","나한테만 하는 말이면 소용없어요."),(None,"부리가 작업대 한쪽을 비웠다."),("buri","기록을 확인하는 건 그다음입니다.")],"buri:consent:accepted")
+                call r13_lines([('dad', '확인하지 않은 말은 쓰지 않겠습니다.'), ('buri', '지금은요. 다른 사람들 앞에서는요?'), ('dad', '그때도. 제가 다르게 말하면 바로잡겠습니다.'), (None, '부리는 대답하지 않았다. 나는 그 침묵을 허락으로 받아들일 뻔했다.'), ('buri', '저한테만 하시는 말씀이면 소용없어요.'), (None, '부리가 작업대 한쪽을 비웠다. 사람 하나 앉을 만큼이었다.'), ('buri', '기록을 확인하는 건 그다음이에요.')],"buri:consent:accepted")
                 $ r13_finish_topic(r13_topic)
             "어르신이 위험했다는 걸 공개해야 아이를 구할 수 있다":
-                call r13_lines([("buri","내 할아버지를 괴물로 만들면 당신 아이가 돌아오나요?"),("dad","아이를 구해야 합니다."),("buri","나도 알아요. 그 말 모르는 사람처럼 말하지 마요."),(None,"부리가 공구를 집어 들었다. 내 쪽으로는 비켜 주지 않았다."),("buri","지금은 나가요.")],"buri:consent:refused")
+                call r13_lines([('buri', '제 할아버지를 괴물로 만들면 탐정님 아이가 돌아오나요?'), ('dad', '아이를 구해야 합니다.'), ('buri', '저도 알아요. 그 말 모르는 사람처럼 말씀하지 마세요.'), (None, '부리가 공구를 집어 들었다. 작업대에는 빈자리가 있었지만, 내 쪽으로는 비켜 주지 않았다.'), ('buri', '지금은 나가 주세요.')],"buri:consent:refused")
                 $ r13_flag("buri_refused")
                 return
             "지금은 자리를 비켜 준다":
@@ -336,7 +336,7 @@ label r13_talk_dispatch:
 
 label r13_first_night:
     call r13_scene("council","여관 식당","calm")
-    call r13_lines([("nabi","뜨거워. 그릇 밑으로 잡아."),("daram","아빠 건 제가 가져갈게요."),("nabi","두 번 오면 되잖아. 한 번에 다 들지 말고.")],"night1:meal")
+    call r13_lines([("nabi","탐정님, 뜨거워요. 그릇 밑으로 잡으세요."),("daram","아빠 건 제가 가져갈게요."),("nabi","두 번 오면 되잖아. 한 번에 다 들지 말고.")],"night1:meal")
     $ source_fx("knock")
     call r13_lines([(None,"현관을 두드리는 같은 박자의 소리가 이어졌다. 손님 한 명이 말없이 커튼을 쳤다."),("daram","누가 왔어요."),("granny","경비가 보고 있어."),("daram","문을 못 여는 것 같은데."),("nabi","……식기 전에 먹어.")],"night1:knocking")
     menu:
@@ -383,7 +383,7 @@ label r13_case_choice:
     $ r13_grant(["E07","E08","E14"],"구조 직후의 흉기 봉인과 초기 진료 기록")
     $ r13_flag("family_room_unusable")
     $ r13_edit(daram_state="held",period=3,location="inn")
-    call r13_lines([("nabi","짐은 옆방으로 옮겨둘게. 오늘부터는 거기서 자렴."),(None,"13호 열쇠를 내려놓았다. 다람이가 가져오겠다고 했던 가방만 손에 남았다.")],"case:displaced:v3")
+    call r13_lines([("nabi","짐은 옆방으로 옮겨둘게요. 오늘부터는 거기서 쉬세요."),(None,"13호 열쇠를 내려놓았다. 다람이가 가져오겠다고 했던 가방만 손에 남았다.")],"case:displaced:v3")
     jump r13_roam
 
 label r13_prevented:
@@ -404,7 +404,7 @@ label r13_trial:
     call r13_scene("council","일요일 · 여관 공동 식당","hearing")
     if room13["case_state"]=="prevented":
         jump r13_prevention_hearing
-    call r13_lines([("seryeon","부엉이 어르신이 발견된 방은 안에서 잠겨 있었습니다. 안에는 다람 양이 있었습니다."),("buri","이름으로 말해요. 피해자라고만 하지 말고."),("resident_seori","오늘 확인할 것은 아이가 그 죽음에 책임이 있는지입니다. 소문을 본 일처럼 말하지 마십시오."),("resident_ppul","아이가 위험하다면 다른 아이들부터 지켜야 합니다."),("dad","위험하다는 판단도 확인한 사실로 해주십시오.")],"trial:opening")
+    call r13_lines([("seryeon","부엉이 어르신이 발견된 방은 안에서 잠겨 있었습니다. 안에는 다람 양이 있었습니다."),("buri","이름으로 말씀해 주세요. 피해자라고만 하지 마시고요."),("resident_seori","오늘 확인할 것은 아이가 그 죽음에 책임이 있는지입니다. 소문을 본 일처럼 말하지 마십시오."),("resident_ppul","아이가 위험하다면 다른 아이들부터 지켜야 합니다."),("dad","위험하다는 판단도 확인한 사실로 해주십시오.")],"trial:opening")
 label r13_trial_choose:
     menu:
         "어느 주장을 다룰까?"
@@ -496,10 +496,10 @@ label r13_link_reason(claim):
         menu:
             "나비의 참인 목격과 통로 이동 시간을 연결하면?"
             "첫 비명 때 식당에 있었지만 나중 공격 시간은 비어 있다":
-                call r13_lines([("nabi","내가 본 건 처음 비명 때였어. 그 뒤 주방 안까지 본 건 아니야."),("granny","그러니까 내가 잠깐 안 보였다는 게 전부잖아요."),("resident_seori","살해 가능 시각 전체의 알리바이로 삼을 수는 없습니다. 실제 접촉 여부를 이어서 보겠습니다.")],"trial:C3:done")
+                call r13_lines([("nabi","제가 본 건 처음 비명 때였어요. 그 뒤 주방 안까지 본 건 아니에요."),("granny","그러니까 내가 잠깐 안 보였다는 게 전부잖아요."),("resident_seori","살해 가능 시각 전체의 알리바이로 삼을 수는 없습니다. 실제 접촉 여부를 이어서 보겠습니다.")],"trial:C3:done")
                 return True
             "나비가 할머니 편이므로 전부 거짓말이다":
-                call r13_lines([("nabi","내가 같이 있던 것까지 없던 일로 만들지 마.")],"trial:C3:wrong")
+                call r13_lines([("nabi","제가 같이 있던 것까지 없던 일로 만들지는 마세요.")],"trial:C3:wrong")
     else:
         menu:
             "핀 조각과 수습 기록으로 어떤 해명을 막을까?"

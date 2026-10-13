@@ -9,7 +9,7 @@ def apply_content(data):
         for key in p['path'][:-1]:parent=parent[key]
         key=p['path'][-1]
         if parent[key]==p['after']:continue
-        if parent[key] not in (p['before'],p.get('previous_after',p['before'])):raise ValueError('대사 원문이 달라 적용 중단: '+'.'.join(p['path']))
+        if parent[key] not in [p['before'],p.get('previous_after',p['before'])]+p.get('accepted_before',[]):raise ValueError('대사 원문이 달라 적용 중단: '+'.'.join(p['path']))
         parent[key]=p['after']
     return revised
 
@@ -21,7 +21,7 @@ def prepare(project):
     for p in patches:
         path=game/p['file'];text=outputs.get(path,path.read_text(encoding='utf-8'))
         if p['after'] in text:continue
-        candidates=[p.get('previous_after',p['before']),p['before']]
+        candidates=sorted(set(p.get('accepted_before',[])+[p.get('previous_after',p['before']),p['before']]),key=len,reverse=True)
         match=next((old for old in candidates if text.count(old)==1),None)
         if match is None:raise ValueError('실행 대사 원문이 달라 적용 중단: '+p['file'])
         outputs[path]=text.replace(match,p['after'],1)
