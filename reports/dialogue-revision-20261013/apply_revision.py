@@ -20,6 +20,7 @@ def prepare(project):
     patches=json.loads((HERE/'runtime-patch.json').read_text(encoding='utf-8'))
     for p in patches:
         path=game/p['file'];text=outputs.get(path,path.read_text(encoding='utf-8'))
+        if any(after in text for after in p.get('superseded_by', [])):continue
         if p['after'] in text:continue
         candidates=sorted(set(p.get('accepted_before',[])+[p.get('previous_after',p['before']),p['before']]),key=len,reverse=True)
         match=next((old for old in candidates if text.count(old)==1),None)

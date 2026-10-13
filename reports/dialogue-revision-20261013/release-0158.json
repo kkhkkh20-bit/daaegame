@@ -1,0 +1,54 @@
+{
+  "version": "0.15.8-dev",
+  "status": "Candidate test and package manifest; this manifest alone does not certify a completed public deployment",
+  "base_commit": "be9eb82fb0891c2432effed342c08dc4546cf995",
+  "game_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/?v=0158",
+  "script_url": "https://github.com/kkhkkh20-bit/daaegame/blob/main/reports/dialogue-revision-20261013/CALENDAR_RESIDENT_SCENES.md",
+  "scope": "36 residents: calendar stages, actual case and custody outcomes, previous-question callbacks, same-day readiness reactions and historical testimony",
+  "transport": {
+    "multipart": true,
+    "archive_bytes": 302426716,
+    "archive_sha256": "19b87259427bdd0917bbafb40d2e416111bb95a2656beffa31e38c391c00155f",
+    "parts": [
+      {
+        "file": "game.part01",
+        "bytes": 62914560,
+        "sha256": "72874c62a1584962514a8648852ca5af02b0374a8905015a637c903be9f558ea"
+      },
+      {
+        "file": "game.part02",
+        "bytes": 62914560,
+        "sha256": "0389b1c387576c62e61e8c00139e5394d2893bcbc2fb332bf09de4ce25765cdd"
+      },
+      {
+        "file": "game.part03",
+        "bytes": 62914560,
+        "sha256": "b82ca5fb0ee269cf251e0b030095eee1d41a54b58c5e5bfe37d170d25f0bdedb"
+      },
+      {
+        "file": "game.part04",
+        "bytes": 62914560,
+        "sha256": "5cf3e292b017675e4265358cab898b53283541947890d3f2561f363b0d0ead43"
+      },
+      {
+        "file": "game.part05",
+        "bytes": 50768476,
+        "sha256": "43c0b8f84472c4ae43aa77634a39dbc89016b61ab87c9367c2291d9a12e1f6f8"
+      }
+    ]
+  },
+  "verification": "calendar-verification.json",
+  "browser_verification": "calendar-browser-report.json",
+  "preserved": [
+    "Confirmed story and clue facts",
+    "Evidence grants, flags, costs and topic availability",
+    "Resident portraits, routine locations and the latest UI",
+    "Save directory and existing call-return sites",
+    "Concurrent 0.15.7 record isolation, calendar promises, observation guidance, UI and art"
+  ],
+  "limits": [
+    "No natural full 14-day or every-ending playthrough",
+    "Existing artwork is retained; written action descriptions change"
+  ],
+  "candidate_tests_passed": true
+}

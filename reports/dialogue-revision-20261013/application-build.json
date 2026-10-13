@@ -1,10 +1,11 @@
 {
-  "base_commit": "345623c869bbbf3cd332f3098a74910cb186974e",
+  "base_commit": "be9eb82fb0891c2432effed342c08dc4546cf995",
   "changed": [
     "room13.rpy",
     "room13_screens.rpy",
     "room13_life.rpy",
-    "assets/room13-pixel-carriage-family015-morning.png",
+    "room13_acting.rpy",
+    "room13_rules.rpy",
     "options.rpy",
     "room13_dialogue_openings_20261013.rpy",
     "room13-dialogue-openings.json"
@@ -12,41 +13,43 @@
   "removed_compiled": [
     "game/options.rpyc",
     "game/room13.rpyc",
+    "game/room13_acting.rpyc",
     "game/room13_dialogue_openings_20261013.rpyc",
     "game/room13_life.rpyc",
+    "game/room13_rules.rpyc",
     "game/room13_screens.rpyc"
   ],
-  "unchanged_entries": 857,
+  "unchanged_entries": 861,
   "archive_method": "existing engine and assets retained; changed scripts compile in browser",
   "meta": {
     "multipart": true,
-    "archive_bytes": 301287243,
-    "archive_sha256": "f2e32d9f756ea5a3d1e481e5b316ba18357bf1c4bc1fd07fbae264b2ce64506b",
+    "archive_bytes": 302426716,
+    "archive_sha256": "19b87259427bdd0917bbafb40d2e416111bb95a2656beffa31e38c391c00155f",
     "parts": [
       {
         "file": "game.part01",
         "bytes": 62914560,
-        "sha256": "9e822a57236860470dcc615bdb7c9e63285eb9e309550e20674a02f180597541"
+        "sha256": "72874c62a1584962514a8648852ca5af02b0374a8905015a637c903be9f558ea"
       },
       {
         "file": "game.part02",
         "bytes": 62914560,
-        "sha256": "ccf0ef2f4f9a3975d4cca95b6b550209075520333526e01897c4b7c1e5f456a0"
+        "sha256": "0389b1c387576c62e61e8c00139e5394d2893bcbc2fb332bf09de4ce25765cdd"
       },
       {
         "file": "game.part03",
         "bytes": 62914560,
-        "sha256": "e4dcf2ae37e41a1f1a68b362e7050aec3c598ba2545c1ca2f019741cd535d76c"
+        "sha256": "b82ca5fb0ee269cf251e0b030095eee1d41a54b58c5e5bfe37d170d25f0bdedb"
       },
       {
         "file": "game.part04",
         "bytes": 62914560,
-        "sha256": "42115a949ffae56c962371c03ec074d6010170d97a74561c5340149aee50207a"
+        "sha256": "5cf3e292b017675e4265358cab898b53283541947890d3f2561f363b0d0ead43"
       },
       {
         "file": "game.part05",
-        "bytes": 49629003,
-        "sha256": "17a90b9fc3ada175bea93f8e7889d446d5d665462fd9375d76c5099444d4b0a2"
+        "bytes": 50768476,
+        "sha256": "43c0b8f84472c4ae43aa77634a39dbc89016b61ab87c9367c2291d9a12e1f6f8"
       }
     ]
   },

@@ -123,6 +123,37 @@ init 57 python:
                 return Crop(tuple(rect),"assets/"+name)
         return None
 
+    # Optional neighbours follow named errands and home/work time, rather than
+    # gathering in the square every day. Story-critical locations and emergency
+    # overrides below remain authoritative. "home" is an existing private-home
+    # rest period, not an invisible resident still counted in the field.
+    R13_WEEKLY_ROUTINES = {
+        "resident_tori": [
+            ("square","inn","home"),("square","inn","home"),("home","inn","home"),
+            ("workshop","inn","home"),("square","home","home"),("square","inn","home"),("home","square","inn")],
+        "resident_yeoni": [
+            ("home","workshop","home"),("square","inn","home"),("home","inn","home"),
+            ("workshop","store","home"),("home","workshop","home"),("store","inn","home"),("home","school","home")],
+        "resident_kongi": [
+            ("store","post","home"),("store","post","home"),("square","post","home"),
+            ("store","post","home"),("store","post","home"),("square","post","home"),("store","post","home")],
+        "resident_seol": [
+            ("tower","home","home"),("tower","tower","home"),("tower","home","home"),
+            ("tower","home","home"),("tower","tower","home"),("tower","home","home"),("tower","home","home")],
+        "resident_ppul": [
+            ("post","post","home"),("square","post","home"),("post","post","home"),
+            ("post","post","home"),("square","post","home"),("post","post","home"),("square","post","home")],
+        "resident_sling": [
+            ("post","post","post"),("post","square","post"),("post","post","post"),
+            ("post","square","post"),("post","post","post"),("post","square","post"),("post","post","post")],
+        "resident_piko": [
+            ("home","square","home"),("home","square","home"),("home","square","home"),
+            ("home","square","home"),("home","square","home"),("square","square","home"),("home","square","home")],
+        "resident_somi": [
+            ("home","home","home"),("home","square","home"),("home","home","home"),
+            ("home","square","home"),("home","home","home"),("home","square","home"),("home","square","home")],
+    }
+
     def r13_resident_where(person):
         if person not in R13_RESIDENTS:return None
         s=store.room13
@@ -130,10 +161,11 @@ init 57 python:
         if person=="resident_badook" and s["day"]>=8 and r13_has("patient_transport"):return "school"
         if s["day"]>=11 and r13_has("shelter_ready") and person in ("resident_tori","resident_yeoni","resident_kongi","resident_somi","resident_musoe"):
             return "school"
-        where=R13_RESIDENTS[person]["weekly_locations"][(s["day"]-1)%7][min(s["period"],2)]
+        where=R13_WEEKLY_ROUTINES.get(person,R13_RESIDENTS[person]["weekly_locations"])[(s["day"]-1)%7][min(s["period"],2)]
         return {"home":None,"library":"post","lowroad":"gate","tower":"square"}.get(where,where)
 
     def r13_activity_text(person):
+        if person in R13_CALENDAR:return r13_calendar_activity(person)
         if person in R13_RESIDENTS:return R13_RESIDENTS[person]["activity"]
         return ""
 
