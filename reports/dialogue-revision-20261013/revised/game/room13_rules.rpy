@@ -239,6 +239,7 @@ init 55 python:
             native_height-=20
         scale=r13_close_scale(person,pose,height)
         result=r13_pixel_scale(art,width*scale,native_height*scale,R13_CLOSE_PIXEL_GRID)
+        result=r13_idle_art(result,person,pose,spec or r13_acting_spec(person,pose),int(round(width*scale)),int(round(native_height*scale)),contact="dialogue_bust",speaking=speaking)
         return At(result,r13_actor_enter(r13_appearance_duration())) if entrance else result
 
     def r13_close_y(person,height=840,top=110,pose="interview_neutral"):

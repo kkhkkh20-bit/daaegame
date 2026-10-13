@@ -1,0 +1,53 @@
+{
+  "base_commit": "d8aef5a6971089354916391616acb396287aff02",
+  "changed": [
+    "room13-content.json",
+    "room13.rpy",
+    "room13_rules.rpy",
+    "room13_week2.rpy",
+    "options.rpy",
+    "room13_dialogue_openings_20261013.rpy",
+    "room13-dialogue-openings.json"
+  ],
+  "removed_compiled": [
+    "game/options.rpyc",
+    "game/room13.rpyc",
+    "game/room13_rules.rpyc",
+    "game/room13_week2.rpyc"
+  ],
+  "unchanged_entries": 812,
+  "archive_method": "existing engine and assets retained; changed scripts compile in browser",
+  "meta": {
+    "multipart": true,
+    "archive_bytes": 270364638,
+    "archive_sha256": "42aaed46a33d2afa446ef8be41275cec5dfd87f30a1cb17246076111700de3af",
+    "parts": [
+      {
+        "file": "game.part01",
+        "bytes": 62914560,
+        "sha256": "b847bbc4a3db330dfb27f76bdcc9a828073d64ca698efc64480f42af2809e8b9"
+      },
+      {
+        "file": "game.part02",
+        "bytes": 62914560,
+        "sha256": "44b3602da964a6dda00939f26485809ff947935eb8df1f6f904662cc74ee2422"
+      },
+      {
+        "file": "game.part03",
+        "bytes": 62914560,
+        "sha256": "3b1fe16a499c8485dc1124739fc721a1d1640fff9550493e2eba277e713544a4"
+      },
+      {
+        "file": "game.part04",
+        "bytes": 62914560,
+        "sha256": "b008ec146b607187f363aee38ad6c7946ab924088c9679565893f7abcd58edc7"
+      },
+      {
+        "file": "game.part05",
+        "bytes": 18706398,
+        "sha256": "cf001dc94937da45421ef64f0732afa53729a3b5fa46b265572c99cf6e79966a"
+      }
+    ]
+  },
+  "save_directory_preserved": true
+}
