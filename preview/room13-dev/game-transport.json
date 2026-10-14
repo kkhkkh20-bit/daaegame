@@ -1,12 +1,12 @@
 {
  "multipart": true,
- "archive_bytes": 7824328,
- "archive_sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129",
+ "archive_bytes": 7950339,
+ "archive_sha256": "bf5efd2e1360a49213bf5b261c80020fb8bc235c3d1b0bfb50fbafaa283a1e7a",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 7824328,
-   "sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129"
+   "bytes": 7950339,
+   "sha256": "bf5efd2e1360a49213bf5b261c80020fb8bc235c3d1b0bfb50fbafaa283a1e7a"
   }
  ],
  "preload": [
@@ -876,9 +876,19 @@
    "sha256": "97f5a30fba41d17a571c30b84da544ade444de091c4530f59471fc79eec5a9bb"
   },
   {
+   "file": "game/assets/sfx-heartbeat.wav",
+   "bytes": 122538,
+   "sha256": "cfa2f9c844d2004b8fa43730d2910e122f9d0edfa978c1e2cb2756d8969f9a07"
+  },
+  {
    "file": "game/assets/sfx-knock.wav",
    "bytes": 65972,
    "sha256": "4f698506f45b552776dcc270ee96308cde896f96025c8bd360e1c6ff2525486a"
+  },
+  {
+   "file": "game/assets/sfx-mystery.wav",
+   "bytes": 474348,
+   "sha256": "2daf8fadf9f330346b07d74845641e5c653f6cd301e2cd5774c3d679a8bb8a40"
   },
   {
    "file": "game/assets/sfx-page.wav",
@@ -886,9 +896,19 @@
    "sha256": "67c9bd7121eaddb2af4d1931a01200e10a5c2936b7406bdf24c8df54fcbc7ccd"
   },
   {
+   "file": "game/assets/sfx-pencil.wav",
+   "bytes": 105918,
+   "sha256": "456f9bb9fc7b9f5351f3543b21f77b931420729021b7b8ad4c30ea8b79d1d158"
+  },
+  {
    "file": "game/assets/sfx-right.wav",
    "bytes": 82082,
    "sha256": "4f7e1f0a7037c5db068dbf92a60ff1e70b011d3e3dea78b135da35a0490589d9"
+  },
+  {
+   "file": "game/assets/sfx-save.wav",
+   "bytes": 98898,
+   "sha256": "65eb954e03a9401f188a59fa7b6050de974e73e5f5c6bac6da1b84dc6ea44531"
   },
   {
    "file": "game/assets/sfx-walk-snow.wav",

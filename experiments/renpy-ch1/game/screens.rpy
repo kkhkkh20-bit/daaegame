@@ -601,7 +601,7 @@ init python:
     def r13_slot_action(page,number,saving):
         slot="%s-%s"%(page,number)
         if saving:
-            save=FileSave(number,confirm=False,page=str(page))
+            save=[FileSave(number,confirm=False,page=str(page)),Function(source_fx,"save")]
             return Confirm("이 칸에는 이미 저장이 있다. 덮어쓸까?",save) if renpy.can_load(slot) else save
         # Compatibility review (r13_load_action) decides how a save opens;
         # in a running game a compatible load also asks before losing progress.

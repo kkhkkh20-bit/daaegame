@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 7824328,
-  "archive_sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129",
+  "archive_bytes": 7950339,
+  "archive_sha256": "bf5efd2e1360a49213bf5b261c80020fb8bc235c3d1b0bfb50fbafaa283a1e7a",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 7824328,
-    "sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129"
+    "bytes": 7950339,
+    "sha256": "bf5efd2e1360a49213bf5b261c80020fb8bc235c3d1b0bfb50fbafaa283a1e7a"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 32331,
-   "sha256": "5fcc83e147959848a110d4f3fecb72e56611b939a820999dcad6e99c241e831f"
+   "bytes": 32932,
+   "sha256": "71bd506faeec09dcf14ff087163c1607b56709ee7305d0b5a97cec7735695c87"
   },
   "game.part01": {
-   "bytes": 7824328,
-   "sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129"
+   "bytes": 7950339,
+   "sha256": "bf5efd2e1360a49213bf5b261c80020fb8bc235c3d1b0bfb50fbafaa283a1e7a"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -70,7 +70,7 @@
   },
   "game/assets/bgm-altar.mp3": {
    "bytes": 6499682,
-   "sha256": "ee04c2572ba8296845d825f26270bacd6ac63ad11b1c4e1a426b46045f1635e8"
+   "sha256": "32d5a6f27f29065db83084fd15c6e29c3c12429eca0a334afa6c7c2ba2b24a6e"
   },
   "game/assets/bgm-council.mp3": {
    "bytes": 1545194,
@@ -78,7 +78,7 @@
   },
   "game/assets/bgm-dark.mp3": {
    "bytes": 6980335,
-   "sha256": "221b3c49a0a9c92e97e0c91aae6e80e8f6029b333d3425818352776cdb18d5dd"
+   "sha256": "02f3b83bef2d2bef0ea2dc30b998bfefb0afdee66f6919ec36fe2605c02ae52b"
   },
   "game/assets/bgm-ending.mp3": {
    "bytes": 4228910,
@@ -1256,17 +1256,33 @@
    "bytes": 80654,
    "sha256": "97f5a30fba41d17a571c30b84da544ade444de091c4530f59471fc79eec5a9bb"
   },
+  "game/assets/sfx-heartbeat.wav": {
+   "bytes": 122538,
+   "sha256": "cfa2f9c844d2004b8fa43730d2910e122f9d0edfa978c1e2cb2756d8969f9a07"
+  },
   "game/assets/sfx-knock.wav": {
    "bytes": 65972,
    "sha256": "4f698506f45b552776dcc270ee96308cde896f96025c8bd360e1c6ff2525486a"
+  },
+  "game/assets/sfx-mystery.wav": {
+   "bytes": 474348,
+   "sha256": "2daf8fadf9f330346b07d74845641e5c653f6cd301e2cd5774c3d679a8bb8a40"
   },
   "game/assets/sfx-page.wav": {
    "bytes": 81698,
    "sha256": "67c9bd7121eaddb2af4d1931a01200e10a5c2936b7406bdf24c8df54fcbc7ccd"
   },
+  "game/assets/sfx-pencil.wav": {
+   "bytes": 105918,
+   "sha256": "456f9bb9fc7b9f5351f3543b21f77b931420729021b7b8ad4c30ea8b79d1d158"
+  },
   "game/assets/sfx-right.wav": {
    "bytes": 82082,
    "sha256": "4f7e1f0a7037c5db068dbf92a60ff1e70b011d3e3dea78b135da35a0490589d9"
+  },
+  "game/assets/sfx-save.wav": {
+   "bytes": 98898,
+   "sha256": "65eb954e03a9401f188a59fa7b6050de974e73e5f5c6bac6da1b84dc6ea44531"
   },
   "game/assets/sfx-walk-snow.wav": {
    "bytes": 154428,
@@ -1446,7 +1462,7 @@
   },
   "index.html": {
    "bytes": 9845,
-   "sha256": "d0254f851646a81c30fcf702c69e48772cb59af0dbd316dd851548c97a0d65fa"
+   "sha256": "1ec2f5d1bb0814c04449130cf8a09ef21456fc4b8d8b8f3c4a452d4f07d4098c"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -1481,5 +1497,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 271708458
+ "total_bytes": 272636772
 }

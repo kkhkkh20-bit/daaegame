@@ -32,7 +32,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 97 | `systems/room13_intro_clues.rpy:48` | _r13_poc_present |
 | 8 | 100 | `systems/room13_poc_route.rpy:66` | _r13_daram_home_present |
 | 9 | 101 | `systems/room13_daram_home.rpy:142` | _r13_sound_present |
-| 10 | 150 | `systems/room13_sound.rpy:117` |  |
+| 10 | 150 | `systems/room13_sound.rpy:161` |  |
 
 ## `r13_conversation_topic_lines` (6층)
 
@@ -157,12 +157,26 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 98 | `systems/room13_debate.rpy:404` | _r13_poc_campaign_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:126` |  |
 
+## `r13_click_feedback` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 69 | `room13_feedback.rpy:8` | _r13_sound_click_feedback |
+| 2 | 150 | `systems/room13_sound.rpy:194` |  |
+
 ## `r13_debate_judge` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:348` | _r13_sound_debate_judge |
-| 2 | 150 | `systems/room13_sound.rpy:123` |  |
+| 2 | 150 | `systems/room13_sound.rpy:167` |  |
+
+## `r13_evidence_acquired` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
+| 2 | 150 | `systems/room13_sound.rpy:180` |  |
 
 ## `r13_has` (2층)
 
@@ -177,6 +191,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 98 | `systems/room13_learning.rpy:78` | _r13_poc_job_context |
 | 2 | 100 | `systems/room13_poc_route.rpy:129` |  |
+
+## `r13_life_apply_purchase` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 92 | `systems/room13_livelihood_flow.rpy:3` | _r13_sound_apply_purchase |
+| 2 | 150 | `systems/room13_sound.rpy:200` |  |
 
 ## `r13_local_connections` (2층)
 

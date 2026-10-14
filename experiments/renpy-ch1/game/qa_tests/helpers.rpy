@@ -237,5 +237,6 @@ label r13_qa_sound:
         _qa_sound["click"]=style.button.activate_sound
         _qa_sound["judge"]=r13_debate_judge("C1",r13_debate_statements("C1")[0]["id"],"E05")[0]
         _qa_sound["judge_fx"]=renpy.music.get_playing(channel="scene_fx")
+        _qa_sound["moves"]={a+">"+b:r13_sound_move(a,b) for a,b in (("hall","room"),("room","hall"),("front","hall"),("front","winter_square"),("winter_square","winter_post"),("hall","winter_passage"),("winter_passage","room"),("winter_carriage","winter"))}
         open(renpy.config.basedir+"/qa_result.txt","w").write(repr(_qa_sound))
     return
