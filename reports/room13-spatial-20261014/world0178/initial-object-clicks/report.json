@@ -1,0 +1,18 @@
+{
+  "kind": "Explicit location/daylight layout fixtures, physical pan and object center clicks; no natural campaign claim",
+  "archive_sha256": "0da77bba6c299ea6fa160b37829f3d3943fde14b0ae28cc6fad696e02386b1fe",
+  "checks": [
+    "clinic: every original object key physically clicked; no time cost",
+    "clinic: morning/afternoon/evening and both camera edges, pan preserves state",
+    "store: every original object key physically clicked; no time cost",
+    "store: morning/afternoon/evening and both camera edges, pan preserves state",
+    "greenhouse: every original object key physically clicked; no time cost",
+    "greenhouse: morning/afternoon/evening and both camera edges, pan preserves state",
+    "facility: every original object key physically clicked; no time cost",
+    "facility: morning/afternoon/evening and both camera edges, pan preserves state",
+    "altar: every original object key physically clicked; no time cost",
+    "altar: morning/afternoon/evening and both camera edges, pan preserves state"
+  ],
+  "status": "failed",
+  "error": "Error('Page.evaluate: ValueError: min() iterable argument is empty\\n    at cmd_callback (http://127.0.0.1:8094/room13-dev/renpy-pre.js?v=0da77bba6c29:463:27)\\n    at eval (eval at _emscripten_run_script (http://127.0.0.1:8094/room13-dev/renpy.js:1:327801), <anonymous>:1:1)\\n    at _emscripten_run_script (http://127.0.0.1:8094/room13-dev/renpy.js:1:327801)\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[28300]:0xd2fe8b\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[21432]:0x7f635a\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[30276]:0xe865ef\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[905]:0x4f117\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[784]:0x40aa7\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[9788]:0x66805a\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[15022]:0x7da30a')"
+}
