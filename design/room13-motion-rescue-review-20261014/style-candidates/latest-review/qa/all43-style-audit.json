@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "dateUTC": "2026-10-14",
+  "characterCount": 43,
+  "baseline": "/workspace/shared/daram_assets_20261014/reference_inventory/originals/room13-pixel-dialogue-daram.png",
+  "baselineSHA256": "deca474794e305fe5c6d3461092c6733aa4f893b6c6ede6dde91273b529f3411",
+  "styleSpec": [
+    "Deliberately stepped square clusters in silhouette and interior features",
+    "Bold nearly-black contour around one logical pixel in the reference",
+    "Broad flat cel shades, typically 2–3 principal tones per material, with small intentional accents",
+    "Match apparent cluster/outline density at equal displayed scale, not output PNG dimensions",
+    "Preserve each original face markers, species, costume, props, pose and appendage count/side"
+  ],
+  "methodology": {
+    "all43": "Normalized idle-A sampling of all 43 selected motion characters. Every character inspected at 360px alpha-visible body height, with NEAREST source-only and final 3px display versions. This normalizes style comparison; it is not the game’s per-character head-based staging scale.",
+    "corrected4": "All eight frames per corrected atlas visually reviewed plus alpha/crop/anchor checks. Built-in imagegen redraws, no production pixel filtering or hand-painted pixels.",
+    "runtimeRule": "Verified with gallery worker: latest0162 room13_acting.rpy world 2px, interview 3px.",
+    "limits": "The 3px runtime step can hide source smoothness; source-only comparison exposes remaining differences. This pass does not certify every animation frame of all unmodified atlases."
+  },
+  "counts": {
+    "highest_next_redraw": 1,
+    "generated_unapproved_review_only": 11,
+    "lower_priority_at_3px_display": 17,
+    "secondary_style_cleanup": 13,
+    "separate_revision_completed": 1
+  },
+  "highestNextBatch": [
+    "daram",
+    "dad",
+    "seryeon",
+    "resident_tori",
+    "resident_nero",
+    "resident_madam",
+    "resident_seori",
+    "resident_siluk"
+  ],
+  "selectedChanges": {
+    "mom": "atlas-style-v3",
+    "granny": "atlas-style-v3",
+    "resident_yeoni": "atlas-style-v3-retry",
+    "resident_librarian": "atlas-style-v3-retry"
+  },
+  "staticMotionRecommendation": "Compare the enlarged head-to-body ratio against preserved static and prior motion before approving. Redraw enlarges it further, especially Yeoni/Librarian. Do not silently replace preserved static originals.",
+  "globalConclusion": "11 characters now have generated style candidates. None is production-approved. Head/body/silhouette deviations remain; Yeoni/Librarian optional and Nero crop caveat unresolved. Work stopped at user request for upload consolidation.",
+  "characters": [
+    {
+      "id": "daram",
+      "name": "다람",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "highest_next_redraw",
+      "finding": "Generated motion has smooth round hat brim, cheeks and spiral tail with fine continuous contours. Original Codex Daram uses deliberate larger stepped clusters. Keep the original dialogue sheet as authority; selected motion is not the style baseline."
+    },
+    {
+      "id": "dad",
+      "name": "아빠",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Continuous curved face/coat contours; narrow buttons, scarf ribs and shoe lines survive as finer detail than the original Daram style.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/dad/atlas-style-v3-retry.png",
+      "finalDeviationNotes": "Focused retry returns head/body ratio close to established static. Body, shoes and tail remain broader; exact static silhouette match is not certified. Four states/eight frames retained."
+    },
+    {
+      "id": "mom",
+      "name": "엄마",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Source redrawn into coarser stepped outlines and broader flat shading. Identity/costume/species/tail side retained. Eight frames visually and geometrically checked.",
+      "selectedAtlas": "/workspace/shared/daram_motion_assets/mom/atlas-style-v3.png",
+      "metadata": "/workspace/shared/daram_motion_assets/mom/atlas-style-v3-metadata.json",
+      "sha256": "39828cb83ea879b3533c58f789f2a4a101420e2cfd990cf9d92934b01dfe03ab",
+      "productionReady": false,
+      "staticMotionConsistency": "Same face markers/species/costume, but enlarged head-to-body ratio versus both static and earlier motion, especially Yeoni/Librarian. Some difference was inherited and some enlarged by redraw.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/mom/atlas-style-v3.png",
+      "finalDeviationNotes": "Coarse pixel outline/shading improved. Head/body ratio and overall build are broader than established static. Original markers/costume/tail side retained. Review only."
+    },
+    {
+      "id": "buri",
+      "name": "부리",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Among the closest current unmodified sources: broad face/wing clusters and bold silhouette. Small watch/feet detail remains finer than baseline.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "granny",
+      "name": "할머니",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Source redrawn into coarser stepped outlines and broader flat shading. Identity/costume/species/tail side retained. Eight frames visually and geometrically checked.",
+      "selectedAtlas": "/workspace/shared/daram_motion_assets/granny/atlas-style-v3.png",
+      "metadata": "/workspace/shared/daram_motion_assets/granny/atlas-style-v3-metadata.json",
+      "sha256": "d1291df305dc41874787c26e82e9f283442bfb18cccf1d567b5abc2db70812a6",
+      "productionReady": false,
+      "staticMotionConsistency": "Same face markers/species/costume, but enlarged head-to-body ratio versus both static and earlier motion, especially Yeoni/Librarian. Some difference was inherited and some enlarged by redraw.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/granny/atlas-style-v3.png",
+      "finalDeviationNotes": "Coarse stepped style improved. Head/ear mass and body silhouette are broader than established static; short stature must not be treated as exactly approved. Review only."
+    },
+    {
+      "id": "seryeon",
+      "name": "세련",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Thin curved red-hair tufts, fine coat folds and narrow facial details; the visual density remains illustration-like rather than broad pixel clusters.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/seryeon/atlas-style-v3-retry.png",
+      "finalDeviationNotes": "Focused retry substantially restores established head/body balance and long legs. Shoes/body remain a little broader; strict original-style equivalence not certified."
+    },
+    {
+      "id": "nabi",
+      "name": "나비",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Uniform outline is reasonable, but dress pleats, eye detail and tail interior remain fine and rounded."
+    },
+    {
+      "id": "doto",
+      "name": "도토",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Bold outline and large flat costume areas read coherently at 3px display; tail contains more fine tonal shading.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "karo",
+      "name": "까로",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Feather tips, talon detail and trouser folds retain thin illustration linework."
+    },
+    {
+      "id": "neoul",
+      "name": "너울",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Bold silhouette is useful; tail interior bands and clothing creases still have rounded, fine edges."
+    },
+    {
+      "id": "guard",
+      "name": "돌목",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Soft facial/fur detail and coat shading are finer than coarse original Daram clusters."
+    },
+    {
+      "id": "bami",
+      "name": "밤이",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "separate_revision_completed",
+      "finding": "Separate worker completed child-v2 atlas and child-v3 static; original Daram style reference used.",
+      "selectedAtlas": "/workspace/shared/daram_motion_assets/bami/child-v2/atlas-child-v2.png"
+    },
+    {
+      "id": "elder",
+      "name": "별지기 장로",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Robe cords, tassels and gold embroidery have more fine continuous detail than the coarse target."
+    },
+    {
+      "id": "bodum",
+      "name": "보둠",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Rounded ears/face and fine trouser/coat folds should be simplified into larger stepped blocks."
+    },
+    {
+      "id": "workshop",
+      "name": "공방 주인",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Sleeve wrinkles and key cluster are fine; outline reads reasonably bold at display size."
+    },
+    {
+      "id": "resident_tori",
+      "name": "토리",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Fine ear contours, jacket folds and trouser seams; smaller linework density is visible even after equal body-height normalization. Slender rabbit anatomy itself is not the issue.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_tori/atlas-style-v3-retry.png",
+      "finalDeviationNotes": "Focused retry preserves long-legged rabbit proportions better, with small face and tall ear. Shoes are broader and fine source details remain. Review only."
+    },
+    {
+      "id": "resident_bori",
+      "name": "보리",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Overalls stitching and many narrow fabric folds are more detailed than the baseline."
+    },
+    {
+      "id": "resident_yeoni",
+      "name": "여니",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Coarse pixel style improved, but head-to-body ratio still too large against established static. Keep previous default; candidate optional only.",
+      "selectedAtlas": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v3-retry-metadata.json",
+      "sha256": "60274dbb3bb0150b67ce320abb63af5c524fcc528064efbcda3ea3245a76fdd7",
+      "productionReady": false,
+      "staticMotionConsistency": "Same face markers/species/costume, but enlarged head-to-body ratio versus both static and earlier motion, especially Yeoni/Librarian. Some difference was inherited and some enlarged by redraw.",
+      "defaultSelected": false,
+      "proportionAttempt": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v4-proportions.png",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v4-proportions.png",
+      "finalDeviationNotes": "Proportion attempt reduces v3 giant-head drift but remains larger-headed than established static. Keep original default; this is OPTIONAL only. Long skirt/body identity retained."
+    },
+    {
+      "id": "resident_kongi",
+      "name": "콩이",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Fine scarf ribs, boot laces and fur highlights could be simplified; larger silhouette is coherent."
+    },
+    {
+      "id": "resident_kkwak",
+      "name": "꽥순",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Simple silhouette and broad flat yellow/blue blocks remain readable; scarf ribs and pocket lines still finer.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_librarian",
+      "name": "사서 선생님",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Coarse pixel style improved, but head-to-body ratio still too large against established static. Keep previous default; candidate optional only.",
+      "selectedAtlas": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v3-retry-metadata.json",
+      "sha256": "543fdbf3b02c831919e2d5f2e9ddd97e0a33a63f5363a77846bc85e59ef094d5",
+      "productionReady": false,
+      "staticMotionConsistency": "Same face markers/species/costume, but enlarged head-to-body ratio versus both static and earlier motion, especially Yeoni/Librarian. Some difference was inherited and some enlarged by redraw.",
+      "defaultSelected": false,
+      "proportionAttempt": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v4-proportions.png",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v4-proportions.png",
+      "finalDeviationNotes": "Proportion attempt improves v3 head size but still does not exactly match established static. Keep original default; OPTIONAL only. Original glasses/green eyes/book/keys and single left tail retained."
+    },
+    {
+      "id": "resident_owlgp",
+      "name": "부엉이 할아버지",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Dense plaid cape pattern and narrow costume details create finer texture frequency."
+    },
+    {
+      "id": "resident_teacher",
+      "name": "곰 선생님",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Waistcoat ribbing, spectacles and trouser seams are finely drawn despite a clear silhouette."
+    },
+    {
+      "id": "resident_nero",
+      "name": "네로",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Fine pointed fur strands, cape creases and narrow gold details; head/cape pixels read much finer than the corrected coarse-cluster examples.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_nero/atlas-style-v3-retry.png",
+      "finalDeviationNotes": "Head ratio improved, but silhouette/tail/shoes remain broader. Important geometry issue: surprise A (index 4) has 9 alpha>=128 pixels touching its custom crop edge; do NOT use this crop as production-ready."
+    },
+    {
+      "id": "resident_seol",
+      "name": "설이",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Broad robe/wing color blocks read clearly; long legs and slender neck are species anatomy, not a pixel-quality defect.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_ppul",
+      "name": "뿔이 촌장",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Horn segmentation, robe trim and jewelry are dense; coat/face edge clusters could be coarser."
+    },
+    {
+      "id": "resident_tok",
+      "name": "톡",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Large coat/apron areas and firm contour display coherently; tools and seams retain fine linework.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_sling",
+      "name": "슬링",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Flat uniform blocks and clear face remain cohesive in 3px display; bag/boot seams could be coarser.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_momo",
+      "name": "모모",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Large red dress and face areas read clearly; ornamental hem detail is finer than original Daram.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_ttadak",
+      "name": "따닥",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Broad feather and vest color blocks are readable; belt/feather tips have some fine detail.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_piko",
+      "name": "피코",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "High-contrast large plumage shapes and costume blocks read clearly; feather eyes/legs have finer edges.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_mungchi",
+      "name": "뭉치",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Strong black/cream/burgundy masses and thick outer contour read coherently; lapel/fold details still smooth.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_madam",
+      "name": "백 부인",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Tiny neck ruffles, gathered sleeve detail, many narrow shaded skirt pleats and smooth curved outline. Detail density is substantially higher than baseline.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_madam/atlas-style-v3-retry.png",
+      "finalDeviationNotes": "Head ratio improved; dress/shoulders remain wider than static, skirt shading still contains fine curved folds. Exact pixel-style/proportion match not certified."
+    },
+    {
+      "id": "resident_siluk",
+      "name": "실룩",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Fine cap seams, shirt folds and trouser/shoe detail; continuous tapered tail and rounded contours need larger deliberate clusters.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_siluk/atlas-style-v3-retry.png",
+      "finalDeviationNotes": "Head ratio improved and long legs retained; body/shoes/tail remain broader. Thinking B retains a lateral gaze. Review only."
+    },
+    {
+      "id": "resident_musoe",
+      "name": "무쇠 할아버지",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "secondary_style_cleanup",
+      "finding": "Fine coat and trouser shading/creases and rounded facial linework remain."
+    },
+    {
+      "id": "resident_somi",
+      "name": "솜이",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Clear large cape/fur/skirt blocks; hair and tail interior are somewhat fine/rounded.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_seori",
+      "name": "서리 검사원",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "generated_unapproved_review_only",
+      "finding": "Thin coat lapels and trouser/fabric seam lines, smooth hat and horn contours; weak large-block simplification.",
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_seori/atlas-style-v3-retry.png",
+      "finalDeviationNotes": "Head ratio improved and long legs retained; coat/body/shoes remain broader than static. Review only."
+    },
+    {
+      "id": "resident_ubak",
+      "name": "우박",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Strong simple coat/hat silhouette reads consistently at 3px; finer seams and shaded panels remain.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_nubi",
+      "name": "누비 아주머니",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Large blue/cream/yellow areas make the display coherent; apron/blouse folds and curved bill are still smoother.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_eunho",
+      "name": "은호 사장",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Broad dark coat and white tail give clean display read; hair tips and fine vest buttons could be simplified.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_guseul",
+      "name": "구슬",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Clear dark-mask/cream-face/apron blocks read coherently; detailed sleeves, trousers and rag are finer.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_badook",
+      "name": "바둑이",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "High-contrast uniform and large dog-face spots read well; lamp, belt and coat trim are fine.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    },
+    {
+      "id": "resident_lamplighter",
+      "name": "초롱",
+      "reviewedDisplay": "idle A, alpha-visible body height 360px, NEAREST, final 3px block display; also source-only NEAREST at same visible height",
+      "category": "lower_priority_at_3px_display",
+      "finding": "Simple large scarf/coat/ear masses read coherently; coat lines and lantern remain smooth/fine.",
+      "note": "This is not a declaration of exact original-style compliance or game-ready motion."
+    }
+  ],
+  "finalHandoffManifest": "/workspace/shared/daram_motion_assets/style_upload_handoff_v1/final-style-upload-manifest.json"
+}

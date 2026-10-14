@@ -1,0 +1,260 @@
+{
+  "id": "resident_siluk",
+  "atlasFile": "atlas-style-v3-retry.png",
+  "atlasPath": "/workspace/shared/daram_motion_assets/resident_siluk/atlas-style-v3-retry.png",
+  "tool": "built-in image_gen",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min": 0,
+    "max": 254,
+    "fullyTransparentFraction": 0.6066404978434244,
+    "canvasEdgeAlphaMax": 1
+  },
+  "layout": "4 columns x 2 rows with verified custom source rectangles",
+  "detectedRowBounds": [
+    0,
+    489,
+    1024
+  ],
+  "detectedColumnBounds": [
+    [
+      0,
+      419,
+      805,
+      1201,
+      1536
+    ],
+    [
+      0,
+      418,
+      779,
+      1204,
+      1536
+    ]
+  ],
+  "frameOrder": [
+    "idle_a",
+    "idle_b",
+    "think_a",
+    "think_b",
+    "surprise_a",
+    "surprise_b",
+    "startle_a",
+    "startle_b"
+  ],
+  "frames": [
+    {
+      "name": "idle_a",
+      "sourceRect": {
+        "x": 84,
+        "y": 9,
+        "width": 302,
+        "height": 479
+      },
+      "anchorPx": {
+        "x": 119.0,
+        "y": 469
+      },
+      "visibleBBox": [
+        94,
+        19,
+        376,
+        478
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 0
+    },
+    {
+      "name": "idle_b",
+      "sourceRect": {
+        "x": 452,
+        "y": 10,
+        "width": 308,
+        "height": 477
+      },
+      "anchorPx": {
+        "x": 122.0,
+        "y": 467
+      },
+      "visibleBBox": [
+        462,
+        20,
+        750,
+        477
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 1
+    },
+    {
+      "name": "think_a",
+      "sourceRect": {
+        "x": 862,
+        "y": 9,
+        "width": 306,
+        "height": 479
+      },
+      "anchorPx": {
+        "x": 120.0,
+        "y": 469
+      },
+      "visibleBBox": [
+        872,
+        19,
+        1158,
+        478
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 2
+    },
+    {
+      "name": "think_b",
+      "sourceRect": {
+        "x": 1234,
+        "y": 9,
+        "width": 301,
+        "height": 479
+      },
+      "anchorPx": {
+        "x": 119.5,
+        "y": 469
+      },
+      "visibleBBox": [
+        1244,
+        19,
+        1525,
+        478
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 3
+    },
+    {
+      "name": "surprise_a",
+      "sourceRect": {
+        "x": 75,
+        "y": 492,
+        "width": 313,
+        "height": 492
+      },
+      "anchorPx": {
+        "x": 125.0,
+        "y": 482
+      },
+      "visibleBBox": [
+        85,
+        502,
+        378,
+        974
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 1,
+      "column": 0
+    },
+    {
+      "name": "surprise_b",
+      "sourceRect": {
+        "x": 448,
+        "y": 491,
+        "width": 309,
+        "height": 493
+      },
+      "anchorPx": {
+        "x": 124.0,
+        "y": 483
+      },
+      "visibleBBox": [
+        458,
+        501,
+        747,
+        974
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 1,
+      "column": 1
+    },
+    {
+      "name": "startle_a",
+      "sourceRect": {
+        "x": 801,
+        "y": 491,
+        "width": 377,
+        "height": 493
+      },
+      "anchorPx": {
+        "x": 185.5,
+        "y": 483
+      },
+      "visibleBBox": [
+        811,
+        501,
+        1168,
+        974
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 1,
+      "column": 2
+    },
+    {
+      "name": "startle_b",
+      "sourceRect": {
+        "x": 1231,
+        "y": 492,
+        "width": 305,
+        "height": 493
+      },
+      "anchorPx": {
+        "x": 123.5,
+        "y": 483
+      },
+      "visibleBBox": [
+        1241,
+        502,
+        1526,
+        975
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 1,
+      "column": 3
+    }
+  ],
+  "pixelsAlphaGe128OutsideSourceRects": 0,
+  "qaStatus": "unapproved_upload_review_only",
+  "productionReady": false,
+  "sourcePNGUneditedAfterGeneration": true,
+  "sha256": "8844fce815c8d1ff9f8105fe21e3f16bafe9c982b0224ac244b623b3f3d2568b",
+  "registrationNotes": "Use one common scale per state and register sourceRects by anchorPx. Do not fit each frame independently. Foot anchors are measured from lowest 12 percent of visible pixels. Motion still has generative drawing variation.",
+  "pairVisibleHeightRatios": [
+    0.9956,
+    1.0,
+    1.0021,
+    1.0
+  ],
+  "defaultChangeAuthorizedByThisHandoff": false,
+  "finalDeviationNotes": "Head ratio improved and long legs retained; body/shoes/tail remain broader. Thinking B retains a lateral gaze. Review only.",
+  "visualQA": {
+    "eightFramesReviewed": true,
+    "identityCostumeSpecies": "recognizable original markers and costume preserved; no exact pixel identity guarantee",
+    "pixelStyle": "more stepped outlines/flatter shading than pre-edit source, varying strength across characters",
+    "proportions": "Head ratio improved and long legs retained; body/shoes/tail remain broader. Thinking B retains a lateral gaze. Review only.",
+    "cropEdgeAlpha128Pixels": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "opaquePixelsOutsideSourceRects": 0,
+    "appendageCountSide": "no duplicated tail observed; reference side retained",
+    "motion": "not production-certified; drawing/registration variation remains"
+  }
+}

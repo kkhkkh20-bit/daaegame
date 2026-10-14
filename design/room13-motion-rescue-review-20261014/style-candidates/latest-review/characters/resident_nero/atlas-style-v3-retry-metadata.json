@@ -1,0 +1,260 @@
+{
+  "id": "resident_nero",
+  "atlasFile": "atlas-style-v3-retry.png",
+  "atlasPath": "/workspace/shared/daram_motion_assets/resident_nero/atlas-style-v3-retry.png",
+  "tool": "built-in image_gen",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min": 0,
+    "max": 255,
+    "fullyTransparentFraction": 0.4847207808064467,
+    "canvasEdgeAlphaMax": 1
+  },
+  "layout": "4 columns x 2 rows with verified custom source rectangles",
+  "detectedRowBounds": [
+    0,
+    517,
+    1086
+  ],
+  "detectedColumnBounds": [
+    [
+      0,
+      369,
+      718,
+      1073,
+      1448
+    ],
+    [
+      0,
+      373,
+      721,
+      1075,
+      1448
+    ]
+  ],
+  "frameOrder": [
+    "idle_a",
+    "idle_b",
+    "think_a",
+    "think_b",
+    "surprise_a",
+    "surprise_b",
+    "startle_a",
+    "startle_b"
+  ],
+  "frames": [
+    {
+      "name": "idle_a",
+      "sourceRect": {
+        "x": 27,
+        "y": 7,
+        "width": 342,
+        "height": 506
+      },
+      "anchorPx": {
+        "x": 197.5,
+        "y": 496
+      },
+      "visibleBBox": [
+        37,
+        17,
+        365,
+        503
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 0
+    },
+    {
+      "name": "idle_b",
+      "sourceRect": {
+        "x": 369,
+        "y": 7,
+        "width": 344,
+        "height": 506
+      },
+      "anchorPx": {
+        "x": 190.5,
+        "y": 496
+      },
+      "visibleBBox": [
+        374,
+        17,
+        703,
+        503
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 1
+    },
+    {
+      "name": "think_a",
+      "sourceRect": {
+        "x": 723,
+        "y": 7,
+        "width": 350,
+        "height": 506
+      },
+      "anchorPx": {
+        "x": 199.0,
+        "y": 496
+      },
+      "visibleBBox": [
+        733,
+        17,
+        1065,
+        503
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 2
+    },
+    {
+      "name": "think_b",
+      "sourceRect": {
+        "x": 1073,
+        "y": 7,
+        "width": 347,
+        "height": 506
+      },
+      "anchorPx": {
+        "x": 196.5,
+        "y": 496
+      },
+      "visibleBBox": [
+        1082,
+        17,
+        1410,
+        503
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 0,
+      "column": 3
+    },
+    {
+      "name": "surprise_a",
+      "sourceRect": {
+        "x": 25,
+        "y": 522,
+        "width": 348,
+        "height": 515
+      },
+      "anchorPx": {
+        "x": 206.0,
+        "y": 505
+      },
+      "visibleBBox": [
+        35,
+        532,
+        373,
+        1027
+      ],
+      "edgeAlpha128Pixels": 9,
+      "row": 1,
+      "column": 0
+    },
+    {
+      "name": "surprise_b",
+      "sourceRect": {
+        "x": 373,
+        "y": 522,
+        "width": 348,
+        "height": 515
+      },
+      "anchorPx": {
+        "x": 192.5,
+        "y": 505
+      },
+      "visibleBBox": [
+        374,
+        532,
+        716,
+        1027
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 1,
+      "column": 1
+    },
+    {
+      "name": "startle_a",
+      "sourceRect": {
+        "x": 721,
+        "y": 522,
+        "width": 354,
+        "height": 515
+      },
+      "anchorPx": {
+        "x": 201.0,
+        "y": 505
+      },
+      "visibleBBox": [
+        727,
+        532,
+        1072,
+        1027
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 1,
+      "column": 2
+    },
+    {
+      "name": "startle_b",
+      "sourceRect": {
+        "x": 1075,
+        "y": 522,
+        "width": 358,
+        "height": 515
+      },
+      "anchorPx": {
+        "x": 203.0,
+        "y": 505
+      },
+      "visibleBBox": [
+        1079,
+        532,
+        1423,
+        1027
+      ],
+      "edgeAlpha128Pixels": 0,
+      "row": 1,
+      "column": 3
+    }
+  ],
+  "pixelsAlphaGe128OutsideSourceRects": 0,
+  "qaStatus": "unapproved_upload_review_only",
+  "productionReady": false,
+  "sourcePNGUneditedAfterGeneration": true,
+  "sha256": "0f7d6ef9f88ad6253572b63eaed0495a430e8376c23417a29e15e364a0cfec67",
+  "registrationNotes": "Use one common scale per state and register sourceRects by anchorPx. Do not fit each frame independently. Foot anchors are measured from lowest 12 percent of visible pixels. Motion still has generative drawing variation.",
+  "pairVisibleHeightRatios": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "defaultChangeAuthorizedByThisHandoff": false,
+  "finalDeviationNotes": "Head ratio improved, but silhouette/tail/shoes remain broader. Important geometry issue: surprise A (index 4) has 9 alpha>=128 pixels touching its custom crop edge; do NOT use this crop as production-ready.",
+  "visualQA": {
+    "eightFramesReviewed": true,
+    "identityCostumeSpecies": "recognizable original markers and costume preserved; no exact pixel identity guarantee",
+    "pixelStyle": "more stepped outlines/flatter shading than pre-edit source, varying strength across characters",
+    "proportions": "Head ratio improved, but silhouette/tail/shoes remain broader. Important geometry issue: surprise A (index 4) has 9 alpha>=128 pixels touching its custom crop edge; do NOT use this crop as production-ready.",
+    "cropEdgeAlpha128Pixels": [
+      0,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      0
+    ],
+    "opaquePixelsOutsideSourceRects": 0,
+    "appendageCountSide": "no duplicated tail observed; reference side retained",
+    "motion": "not production-certified; drawing/registration variation remains"
+  }
+}

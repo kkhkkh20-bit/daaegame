@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "createdUTC": "2026-10-14T01:40:00Z",
+  "taskStatus": "Stopped new generation and revisions per latest user request; finalized existing files for root upload only.",
+  "newGenerationStopped": true,
+  "activeGenerations": 0,
+  "defaultReplacementsByThisHandoff": false,
+  "gameRepositoryOrRuntimeChanged": false,
+  "baselineOriginalDaram": "/workspace/shared/daram_assets_20261014/reference_inventory/originals/room13-pixel-dialogue-daram.png",
+  "baselineSHA256": "deca474794e305fe5c6d3461092c6733aa4f893b6c6ede6dde91273b529f3411",
+  "deliverableCounts": {
+    "charactersWithGeneratedStyleVariants": 11,
+    "generatedAtlasPNGs": 22,
+    "preferredReviewAtlases": 11,
+    "reviewFrames": 88,
+    "productionApprovedAtlases": 0
+  },
+  "canDoNow": [
+    "Upload all completed PNG/metadata/QA files as review deliverables",
+    "Review preserved before/after comparisons",
+    "Use supplied sourceRect/anchor metadata to inspect candidate frames, respecting crop caveats"
+  ],
+  "notCompleted": [
+    "Global 43-character source-style uniformity",
+    "Exact established proportions for every candidate",
+    "Production animation validation",
+    "User approval or application of these variants"
+  ],
+  "highestUnapprovedCaveats": [
+    "Yeoni and Librarian remain optional due to larger head/body ratio",
+    "Nero surprise A crop edge contains 9 opaque pixels; not production-ready",
+    "The seven later retries were not selected as gallery defaults",
+    "All candidates retain some generative proportion or drawing variation"
+  ],
+  "all43Audit": "/workspace/shared/daram_motion_assets/style_qa/all43-style-audit.json",
+  "all43AuditScope": "All 43 idle A images inspected at normalized 360px visible-body height with source-only NEAREST and 3px game-display comparison; all eight frames reviewed for the 11 generated candidates. Not a certification of every frame of the other 32 characters.",
+  "separateWorkExcluded": {
+    "daram": "Separate cute redesign preview; no new Daram asset in this batch",
+    "bami": "Separate child-design worker; do not duplicate its upload bundle"
+  },
+  "characters": [
+    {
+      "id": "mom",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/mom/atlas-style-v3.png",
+      "metadata": "/workspace/shared/daram_motion_assets/mom/atlas-style-v3-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Coarse pixel outline/shading improved. Head/body ratio and overall build are broader than established static. Original markers/costume/tail side retained. Review only.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/mom-static-motion-compare.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/mom-atlas-style-v3.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/mom/atlas-style-v3.png",
+          "relativePath": "mom/atlas-style-v3.png",
+          "bytes": 1660639,
+          "sha256": "39828cb83ea879b3533c58f789f2a4a101420e2cfd990cf9d92934b01dfe03ab",
+          "preferredForReview": true
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/mom/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "granny",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/granny/atlas-style-v3.png",
+      "metadata": "/workspace/shared/daram_motion_assets/granny/atlas-style-v3-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Coarse stepped style improved. Head/ear mass and body silhouette are broader than established static; short stature must not be treated as exactly approved. Review only.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/granny-static-motion-compare.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/granny-atlas-style-v3.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/granny/atlas-style-v3.png",
+          "relativePath": "granny/atlas-style-v3.png",
+          "bytes": 1413440,
+          "sha256": "d1291df305dc41874787c26e82e9f283442bfb18cccf1d567b5abc2db70812a6",
+          "preferredForReview": true
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/granny/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "resident_yeoni",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v4-proportions.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v4-proportions-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Proportion attempt reduces v3 giant-head drift but remains larger-headed than established static. Keep original default; this is OPTIONAL only. Long skirt/body identity retained.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/resident_yeoni-static-motion-compare.jpg",
+      "comparisonScope": "For Yeoni/Librarian this comparison displays v3-retry, not the later optional v4 proportion attempt.",
+      "galleryDefaultAtSnapshot": "assets/motion/resident_yeoni-atlas-v1.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v3-retry.png",
+          "relativePath": "resident_yeoni/atlas-style-v3-retry.png",
+          "bytes": 1445397,
+          "sha256": "60274dbb3bb0150b67ce320abb63af5c524fcc528064efbcda3ea3245a76fdd7",
+          "preferredForReview": false
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v3.png",
+          "relativePath": "resident_yeoni/atlas-style-v3.png",
+          "bytes": 1476922,
+          "sha256": "e4eb9432f0d426e0bed343f628d9d57ccff7b213a6c54e3d9960e43da397c32e",
+          "preferredForReview": false
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_yeoni/atlas-style-v4-proportions.png",
+          "relativePath": "resident_yeoni/atlas-style-v4-proportions.png",
+          "bytes": 1391493,
+          "sha256": "8333f212610b3a21b6993a5d832f431a949756e07b8229b74856b98c8a3a4f40",
+          "preferredForReview": true
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/resident_yeoni/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/resident_yeoni/prompt-style-v3.txt",
+        "/workspace/shared/daram_motion_assets/resident_yeoni/prompt-style-v4-proportions.txt"
+      ]
+    },
+    {
+      "id": "resident_librarian",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v4-proportions.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v4-proportions-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Proportion attempt improves v3 head size but still does not exactly match established static. Keep original default; OPTIONAL only. Original glasses/green eyes/book/keys and single left tail retained.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/resident_librarian-static-motion-compare.jpg",
+      "comparisonScope": "For Yeoni/Librarian this comparison displays v3-retry, not the later optional v4 proportion attempt.",
+      "galleryDefaultAtSnapshot": "assets/motion/resident_librarian-atlas-v1.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v3-retry.png",
+          "relativePath": "resident_librarian/atlas-style-v3-retry.png",
+          "bytes": 1411792,
+          "sha256": "543fdbf3b02c831919e2d5f2e9ddd97e0a33a63f5363a77846bc85e59ef094d5",
+          "preferredForReview": false
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v3.png",
+          "relativePath": "resident_librarian/atlas-style-v3.png",
+          "bytes": 1405497,
+          "sha256": "229e9912fafec33afc0a69931137f0fc951a2f4ff825120c0bba71831b40e601",
+          "preferredForReview": false
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_librarian/atlas-style-v4-proportions.png",
+          "relativePath": "resident_librarian/atlas-style-v4-proportions.png",
+          "bytes": 1294888,
+          "sha256": "97fb2e43aa759e33b211bafaa4409b2a7798843dee00b18ca59e406b46b61f96",
+          "preferredForReview": true
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/resident_librarian/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/resident_librarian/prompt-style-v3.txt",
+        "/workspace/shared/daram_motion_assets/resident_librarian/prompt-style-v4-proportions.txt"
+      ]
+    },
+    {
+      "id": "dad",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/dad/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/dad/atlas-style-v3-retry-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Focused retry returns head/body ratio close to established static. Body, shoes and tail remain broader; exact static silhouette match is not certified. Four states/eight frames retained.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/dad-next7-comparison.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/dad-atlas-v2.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/dad/atlas-style-v3-retry.png",
+          "relativePath": "dad/atlas-style-v3-retry.png",
+          "bytes": 1966695,
+          "sha256": "c1056c6a47ebbb7c36be09957c42a1ce38ec581fb6b0ab00c24f8a60fb18ec7f",
+          "preferredForReview": true
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/dad/atlas-style-v3.png",
+          "relativePath": "dad/atlas-style-v3.png",
+          "bytes": 2025953,
+          "sha256": "a7558236c6e21d6d5b26945f08d547d2ebf6ecb8c9b9ee8bd3af9552997b6840",
+          "preferredForReview": false
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/dad/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/dad/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "seryeon",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/seryeon/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/seryeon/atlas-style-v3-retry-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Focused retry substantially restores established head/body balance and long legs. Shoes/body remain a little broader; strict original-style equivalence not certified.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/seryeon-next7-comparison.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/seryeon-atlas-v2.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/seryeon/atlas-style-v3-retry.png",
+          "relativePath": "seryeon/atlas-style-v3-retry.png",
+          "bytes": 1954898,
+          "sha256": "11ebf150de88a416238ec9142cac8da6b22f2401e012a0d940ca77acc4acbcb9",
+          "preferredForReview": true
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/seryeon/atlas-style-v3.png",
+          "relativePath": "seryeon/atlas-style-v3.png",
+          "bytes": 2018731,
+          "sha256": "d7774dd2de79bc7d48523cd8044b63ea34eea17fa3540dbd20f7cf2396bad778",
+          "preferredForReview": false
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/seryeon/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/seryeon/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "resident_tori",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_tori/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_tori/atlas-style-v3-retry-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Focused retry preserves long-legged rabbit proportions better, with small face and tall ear. Shoes are broader and fine source details remain. Review only.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/resident_tori-next7-comparison.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/resident_tori-atlas-v1.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_tori/atlas-style-v3-retry.png",
+          "relativePath": "resident_tori/atlas-style-v3-retry.png",
+          "bytes": 1239066,
+          "sha256": "12af64ad6ab1e2e005623999e6bd593abf6e2d2e3375e6fd5c0da46294d48d3f",
+          "preferredForReview": true
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_tori/atlas-style-v3.png",
+          "relativePath": "resident_tori/atlas-style-v3.png",
+          "bytes": 1465812,
+          "sha256": "295664f6d3474d4c743b8b75b59c5642db49b3c92127a80cb13e9cb436fa1474",
+          "preferredForReview": false
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/resident_tori/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/resident_tori/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "resident_nero",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_nero/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_nero/atlas-style-v3-retry-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": false
+      },
+      "deviations": "Head ratio improved, but silhouette/tail/shoes remain broader. Important geometry issue: surprise A (index 4) has 9 alpha>=128 pixels touching its custom crop edge; do NOT use this crop as production-ready.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/resident_nero-next7-comparison.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/resident_nero-atlas-v1.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_nero/atlas-style-v3-retry.png",
+          "relativePath": "resident_nero/atlas-style-v3-retry.png",
+          "bytes": 1497893,
+          "sha256": "0f7d6ef9f88ad6253572b63eaed0495a430e8376c23417a29e15e364a0cfec67",
+          "preferredForReview": true
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_nero/atlas-style-v3.png",
+          "relativePath": "resident_nero/atlas-style-v3.png",
+          "bytes": 1631804,
+          "sha256": "85d3a276e510d8c79b76aeb64a7e4f547a672fb0e256eef54ef8719c78bd22ae",
+          "preferredForReview": false
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/resident_nero/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/resident_nero/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "resident_madam",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_madam/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_madam/atlas-style-v3-retry-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Head ratio improved; dress/shoulders remain wider than static, skirt shading still contains fine curved folds. Exact pixel-style/proportion match not certified.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/resident_madam-next7-comparison.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/resident_madam-atlas-v1.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_madam/atlas-style-v3-retry.png",
+          "relativePath": "resident_madam/atlas-style-v3-retry.png",
+          "bytes": 1280384,
+          "sha256": "db273ad63772604e6ef67796b69f1e3870d9c4c8f469aa6b6e1eb010d35aec1d",
+          "preferredForReview": true
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_madam/atlas-style-v3.png",
+          "relativePath": "resident_madam/atlas-style-v3.png",
+          "bytes": 1428944,
+          "sha256": "46aa3e255596fa422ad55c0cc05bfe3803fcd180aa8ba98d9579f9591a9a3ab7",
+          "preferredForReview": false
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/resident_madam/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/resident_madam/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "resident_seori",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_seori/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_seori/atlas-style-v3-retry-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Head ratio improved and long legs retained; coat/body/shoes remain broader than static. Review only.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/resident_seori-next7-comparison.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/resident_seori-atlas-v1.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_seori/atlas-style-v3-retry.png",
+          "relativePath": "resident_seori/atlas-style-v3-retry.png",
+          "bytes": 1810312,
+          "sha256": "d964b09bd655f3e1c526ea279fb2a20c6dbdfa2806d6a34312fec61be76bed8e",
+          "preferredForReview": true
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_seori/atlas-style-v3.png",
+          "relativePath": "resident_seori/atlas-style-v3.png",
+          "bytes": 1865009,
+          "sha256": "d03ba4ea258dd5e78027506bf97f72a4f027af8c4fed2bbee004fa7760762936",
+          "preferredForReview": false
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/resident_seori/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/resident_seori/prompt-style-v3.txt"
+      ]
+    },
+    {
+      "id": "resident_siluk",
+      "status": "uploadable_unapproved_review_only",
+      "productionReady": false,
+      "preferredReviewAtlas": "/workspace/shared/daram_motion_assets/resident_siluk/atlas-style-v3-retry.png",
+      "metadata": "/workspace/shared/daram_motion_assets/resident_siluk/atlas-style-v3-retry-metadata.json",
+      "frames": 8,
+      "geometry": {
+        "opaqueOutsideRects": 0,
+        "edgePixelCountsByFrame": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passAtAlpha128": true
+      },
+      "deviations": "Head ratio improved and long legs retained; body/shoes/tail remain broader. Thinking B retains a lateral gaze. Review only.",
+      "comparison": "/workspace/shared/daram_motion_assets/style_qa/resident_siluk-next7-comparison.jpg",
+      "comparisonScope": "Established static vs previous motion vs review candidate at equal body height.",
+      "galleryDefaultAtSnapshot": "assets/motion/resident_siluk-atlas-v1.png",
+      "generatedFiles": [
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_siluk/atlas-style-v3-retry.png",
+          "relativePath": "resident_siluk/atlas-style-v3-retry.png",
+          "bytes": 1808568,
+          "sha256": "8844fce815c8d1ff9f8105fe21e3f16bafe9c982b0224ac244b623b3f3d2568b",
+          "preferredForReview": true
+        },
+        {
+          "path": "/workspace/shared/daram_motion_assets/resident_siluk/atlas-style-v3.png",
+          "relativePath": "resident_siluk/atlas-style-v3.png",
+          "bytes": 1851401,
+          "sha256": "3c3d92ae528ba1d065a68ddcdfefcd863506d159ca8febde2103fa69c39f7014",
+          "preferredForReview": false
+        }
+      ],
+      "promptFiles": [
+        "/workspace/shared/daram_motion_assets/resident_siluk/prompt-style-v3-retry.txt",
+        "/workspace/shared/daram_motion_assets/resident_siluk/prompt-style-v3.txt"
+      ]
+    }
+  ]
+}
