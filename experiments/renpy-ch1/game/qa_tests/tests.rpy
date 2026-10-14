@@ -1125,3 +1125,31 @@ testcase b3_pages:
     click pos (1150,90) until screen "r13_topics" timeout 60
     assert eval (r13_has("know_stone_history") and "W3" in room13["evidence"])
     $ r13_qa_town_dump()
+
+testcase carry_good:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("bori_cleared","scale_public","kids_fed","tok_cleared","musoe_recovering","know_stone_failing"))
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (all(r13_has(f) for f in ("transport_terms","supply_terms","shelter_agreed","operators_terms","clinic_observation","w1_links_done")) and not r13_has("measurement_plan"))
+    $ r13_qa_town_dump()
+
+testcase carry_refuse:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("bori_punished","eunho_blackmailed","rumor:briber","rumor:strongarm","badook_ally"),(),30)
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("bori_refuses") and r13_has("eunho_refuses") and r13_has("teacher_doubts"))
+    $ r13_edit(location="gate")
+    run Call("r13_qa_talk","karo")
+    click pos (1150,90) until "마차 썰매를 빌린다" timeout 30
+    click "마차 썰매를 빌린다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 30
+    click "열 냥에 빌린다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 30
+    assert eval (r13_has("transport_terms") and r13_cash_now()==20)
+    $ r13_qa_town_dump()
