@@ -3,6 +3,7 @@ default r13_carriage_skip = False
 # Full campaign entry and first-week scenes; continuation is in room13_week2.rpy.
 label r13_scene(bg,title,mood="calm"):
     $ r13_cg_active = False
+    $ r13_last_partner = None
     window hide
     hide r13_visitor
     hide winter_visitor
@@ -38,6 +39,8 @@ label r13_lines(entries,identity):
         if r13_thought_active:
             $ r13_expression,r13_directed_pose="thinking","thinking"
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
+        if r13_packet[0] not in (None,"dad") and not r13_thought_active:
+            $ r13_last_partner=r13_packet[0]
         $ r13_read_id=r13_before_line(identity,r13_index,r13_packet[1])
         # Isolate this line from the previous loop increment when record UI
         # changes are retained by an immediate save during the say interaction.

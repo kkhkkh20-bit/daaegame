@@ -1042,3 +1042,79 @@ testcase evening_eve:
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("ev_eve_done") and r13_has("eve:nabi") and r13_has("eve:tok"))
     $ r13_qa_town_dump()
+
+testcase b3_ration_chain:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="square",life_poc=True,case_state="occurred",daram_state="held"),("scale_rigged","know_ration_scale","ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "b3_ration.png"
+    click "도토에게 배급 장부를 보자고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "배급소 저울을 다시 재자고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("bori_cleared") and r13_has("rumor:fair") and r13_has("ration_fixed"))
+    run Call("r13_qa_goto",5,0,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("heard:rumor:fair"))
+    $ r13_flag("rumor:briber")
+    assert eval (r13_shop_price(room13,"snack")==2)
+    $ r13_qa_town_dump()
+
+testcase b3_scale_half:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="store",life_poc=True),("scale_rigged","rumor:briber","ep1_done","ev_b_done","ep4_seen","ev_a_done"))
+    pause 1.0
+    assert eval (r13_shop_price(room13,"snack")==3)
+    run Call("r13_qa_talk","resident_eunho")
+    click pos (1150,90) until "저울이 기울어 있다고 말한다" timeout 30
+    click "저울이 기울어 있다고 말한다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "입막음 값으로 반값을 요구한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    assert eval (r13_has("shop_half") and r13_shop_price(room13,"hat")==3 and r13_shop_price(room13,"snack")==1)
+    $ r13_qa_town_dump()
+
+testcase b3_firewood:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=2,location="school",life_poc=True,case_state="occurred",daram_state="held"),("ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ev_visit:5","ev_e_done"))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "b3_wood.png"
+    click "왜 그러는지 묻는다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "학교 일을 대신 하겠다고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("W8" in room13["evidence"] and r13_has("bori_ally") and room13["period"]==2)
+    $ r13_qa_town_dump()
+
+testcase b3_pages:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="post",life_poc=True),("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "b3_pages.png"
+    click "베껴 둘 시간을 달라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("pages_sold") and not r13_has("know_stone_history"))
+    run Call("r13_qa_goto",5,0,"post")
+    pause 1.0
+    run Call("r13_qa_talk","resident_librarian")
+    click pos (1150,90) until "베껴 둔 돌 기록을 보여 달라고 한다" timeout 30
+    click "베껴 둔 돌 기록을 보여 달라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 60
+    assert eval (r13_has("know_stone_history") and "W3" in room13["evidence"])
+    $ r13_qa_town_dump()

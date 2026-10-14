@@ -152,6 +152,7 @@ label r13_town_events:
     $ r13_town_daily()
     call r13_episode_events
     call r13_evening_events
+    call r13_b3_events
     call r13_town_events2
     if _return=="day":
         return "day"

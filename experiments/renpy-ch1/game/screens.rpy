@@ -140,8 +140,11 @@ screen choice(items):
     modal True
     default choice_ready = not winter_mode
     timer .35 action SetScreenVariable("choice_ready", True)
-    default choice_actor = r13_motion_person if room13_mode and "r13_visitor" in renpy.get_showing_tags() else None
-    default choice_pose = r13_current_pose if room13_mode else "neutral"
+    # Talking with someone: the person stands on the left and the choices sit on
+    # the right, like the question screen (owner, 0.18.6).
+    default choice_visitor = room13_mode and "r13_visitor" in renpy.get_showing_tags()
+    default choice_actor = (r13_motion_person if choice_visitor else (r13_last_partner if room13_mode and r13_last_partner in CAST else None))
+    default choice_pose = (r13_current_pose if choice_visitor else "interview_neutral") if room13_mode else "neutral"
     if room13_mode:
         on "show" action Function(r13_choice_layout,choice_actor,choice_pose,True)
         on "hide" action Function(r13_choice_layout,choice_actor,choice_pose,False)
