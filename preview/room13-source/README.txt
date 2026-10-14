@@ -1,3 +1,6 @@
+월드맵 v5 배포 준비 보강 (미배포)
+기존 0.17.25 공개 패키지 실제 저장 호환, full-runtime E19/폐온실·최종 제단 검증 통과. PR 브랜치에 공개 package/manifest/loader까지 준비. 256 추출 fixture는 전체 게임 검증 아님, 세로는 작은 letterbox. docs/RELEASE_PREPARATION_KO.md 참조. 부모 승인 전 main 병합·배포 금지.
+
 월드맵 v5 PR 후보 (미배포, 기준 0.17.25-dev)
 22개 원본 다각형 투명 레이어와 8개 기존 목적지, 개별 강조와 마우스/키보드/터치. 여관 새 그림 미적용. docs/RELEASE_WORLDMAP_V5.md 및 WORLDMAP_V5_MAPPING.md 참조. main 병합·실배포는 별도 승인 전 금지.
 

@@ -1,0 +1,114 @@
+{
+  "kind": "Full RenPy runtime; actual old-build UI save and same-origin IndexedDB reload, no candidate save/state injection before restore",
+  "baseline_archive": "bba431fcbbace463df278ff22826d984cb01ff065c9c041415e5273b6637e6fb",
+  "candidate_archive": "74b11fc409234f54332dd805963f7907f7a2e8c7c55ff383128ea8a8cd8c207a",
+  "checks": [
+    "Actual 0.17.25 public-package save files persist byte-for-byte through same-origin IndexedDB; candidate Load restores exact full room dict, then new-map travel works without time change",
+    "Day8 full runtime: E19 absent hides greenhouse; real r13_grant adds E19, map shows it, actual selection/confirmation travels to greenhouse at unchanged time",
+    "Real r13_finale label establishes day14/current altar/finale_started; explicitly opened map overlay displays current altar. It remains outside ordinary travel destinations; no new shrine route invented"
+  ],
+  "baseline_version": "0.17.25-dev",
+  "old_save_files": {
+    "1-1-LT1.save": "0a5337632c133180e29ee9bddcf87595fa87fc465d0400cafe435c5ef752532e"
+  },
+  "candidate_version": "0.17.25-dev",
+  "save_files_after_candidate_boot": {
+    "1-1-LT1.save": "0a5337632c133180e29ee9bddcf87595fa87fc465d0400cafe435c5ef752532e"
+  },
+  "runtime_place_functions": {
+    "r13_places": {
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "line": 19
+    },
+    "_r13_firstday_places": {
+      "file": "game/room13_route_knowledge.rpy",
+      "line": 28
+    },
+    "_r13_route_places": {
+      "file": "game/room13_rules.rpy",
+      "line": 200
+    }
+  },
+  "day8_before_E19": {
+    "selected": "facility",
+    "region": "mountain",
+    "allowed": [
+      "gate",
+      "square",
+      "post",
+      "inn",
+      "workshop",
+      "dining",
+      "kitchen",
+      "hall",
+      "room13",
+      "clinic",
+      "school",
+      "store",
+      "facility"
+    ],
+    "mountain": [
+      "facility"
+    ],
+    "day": 8,
+    "location": "facility",
+    "finale_started": false
+  },
+  "day8_after_E19": {
+    "selected": "facility",
+    "region": "mountain",
+    "allowed": [
+      "gate",
+      "square",
+      "post",
+      "inn",
+      "workshop",
+      "dining",
+      "kitchen",
+      "hall",
+      "room13",
+      "clinic",
+      "school",
+      "store",
+      "facility",
+      "greenhouse"
+    ],
+    "mountain": [
+      "facility",
+      "greenhouse"
+    ],
+    "day": 8,
+    "location": "facility",
+    "finale_started": false
+  },
+  "day14_real_finale_map": {
+    "selected": "altar",
+    "region": "mountain",
+    "allowed": [
+      "gate",
+      "square",
+      "post",
+      "inn",
+      "workshop",
+      "dining",
+      "kitchen",
+      "hall",
+      "room13",
+      "clinic",
+      "school",
+      "store",
+      "facility",
+      "greenhouse"
+    ],
+    "mountain": [
+      "facility",
+      "greenhouse",
+      "altar"
+    ],
+    "day": 14,
+    "location": "altar",
+    "finale_started": true
+  },
+  "status": "passed",
+  "errors": []
+}

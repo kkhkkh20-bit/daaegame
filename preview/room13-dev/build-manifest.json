@@ -2,28 +2,33 @@
   "engine": "Ren'Py 8.5.3",
   "game_transport": {
     "multipart": true,
-    "archive_bytes": 249677967,
-    "archive_sha256": "bba431fcbbace463df278ff22826d984cb01ff065c9c041415e5273b6637e6fb",
+    "archive_bytes": 252331225,
+    "archive_sha256": "74b11fc409234f54332dd805963f7907f7a2e8c7c55ff383128ea8a8cd8c207a",
     "parts": [
       {
         "file": "game.part01",
         "bytes": 62914560,
-        "sha256": "7bb692b4ae477d3e38e90579b7bd26046e82ed6c953e69aae098d7fe9a067e6a"
+        "sha256": "ce624427fc618904bbcd07c5bca6604aeffb9b71e116d48a063afccbfd5f2bca"
       },
       {
         "file": "game.part02",
         "bytes": 62914560,
-        "sha256": "6e981431eae0981a295015ad27d5766e4938e5b1c03fd907153998c05170d04d"
+        "sha256": "d5ebaeb84bdf5740fd2a4dfed18e4d109f8e023098b7c9ae9baa994f9557ac67"
       },
       {
         "file": "game.part03",
         "bytes": 62914560,
-        "sha256": "52246d23dbe2fe6c38c036e0c28ca594fb3ac1107bca8546c875d3f4a96283cb"
+        "sha256": "65f93a80374811417afa0a2e38bce195ed59ebfa71e2364d6b7334917ae71107"
       },
       {
         "file": "game.part04",
-        "bytes": 60934287,
-        "sha256": "8b11a531d4556b417bfe3bfb87077e0814e5771ece6e33907bb26c7521a47a7f"
+        "bytes": 62914560,
+        "sha256": "f18809b9b1f043d362f65dd7795dbc573a17f0fda2160ad2aa51889962dda9a6"
+      },
+      {
+        "file": "game.part05",
+        "bytes": 672985,
+        "sha256": "bd7e824877997a1fa4b87c5c8762ce16fab25053863d0af3a41bd6fe867d1fb2"
       }
     ]
   },
@@ -45,24 +50,28 @@
       "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
     },
     "game-transport.json": {
-      "bytes": 758,
-      "sha256": "2b2131882f3ddbd9b2dca53462654c68bad74e79b8fa4db0d0c0670421c7fb03"
+      "bytes": 906,
+      "sha256": "15440c1215914a5cc0ce4f0cfc4d5ec8206be2cde606cebf2f226db9f8b21f7f"
     },
     "game.part01": {
       "bytes": 62914560,
-      "sha256": "7bb692b4ae477d3e38e90579b7bd26046e82ed6c953e69aae098d7fe9a067e6a"
+      "sha256": "ce624427fc618904bbcd07c5bca6604aeffb9b71e116d48a063afccbfd5f2bca"
     },
     "game.part02": {
       "bytes": 62914560,
-      "sha256": "6e981431eae0981a295015ad27d5766e4938e5b1c03fd907153998c05170d04d"
+      "sha256": "d5ebaeb84bdf5740fd2a4dfed18e4d109f8e023098b7c9ae9baa994f9557ac67"
     },
     "game.part03": {
       "bytes": 62914560,
-      "sha256": "52246d23dbe2fe6c38c036e0c28ca594fb3ac1107bca8546c875d3f4a96283cb"
+      "sha256": "65f93a80374811417afa0a2e38bce195ed59ebfa71e2364d6b7334917ae71107"
     },
     "game.part04": {
-      "bytes": 60934287,
-      "sha256": "8b11a531d4556b417bfe3bfb87077e0814e5771ece6e33907bb26c7521a47a7f"
+      "bytes": 62914560,
+      "sha256": "f18809b9b1f043d362f65dd7795dbc573a17f0fda2160ad2aa51889962dda9a6"
+    },
+    "game.part05": {
+      "bytes": 672985,
+      "sha256": "bd7e824877997a1fa4b87c5c8762ce16fab25053863d0af3a41bd6fe867d1fb2"
     },
     "game/assets/approach.png": {
       "bytes": 2571407,
@@ -618,7 +627,7 @@
     },
     "index.html": {
       "bytes": 9845,
-      "sha256": "f402e197ddbb31122593d5a75a99f070ab9b14abe3e850df814af93b6a4bb1c2"
+      "sha256": "172dfe51e7ab273e39c2b1e21686594d88294b9df17dc5b019e3d5747249eefd"
     },
     "loading-scene.png": {
       "bytes": 1946111,
@@ -634,11 +643,11 @@
     },
     "pwa_catalog.json": {
       "bytes": 5259,
-      "sha256": "433dba2ee3055e799dfa70389ac2d29e7ee6719c80ac9adb5a0d4c022c3de6a4"
+      "sha256": "f044b242c2cf2228fe529cd775ab15672703d3cc7e752053319430920e5e0edd"
     },
     "renpy-pre.js": {
-      "bytes": 31502,
-      "sha256": "87d96b43e4f5100b68a278982bdbea4cab85a76feeb26981253f3211d851458e"
+      "bytes": 31622,
+      "sha256": "047d60ecb796a4a62cee06d96b1cb02a531afd088cd67d7a601517160594ba91"
     },
     "renpy.data": {
       "bytes": 15057379,
@@ -657,5 +666,5 @@
       "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
     }
   },
-  "total_bytes": 391626647
+  "total_bytes": 394280173
 }

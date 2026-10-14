@@ -1,0 +1,17 @@
+{
+  "archive": "74b11fc409234f54332dd805963f7907f7a2e8c7c55ff383128ea8a8cd8c207a",
+  "kind": "Actual Chromium inputs with explicitly injected lodging/secret states, not natural full campaign",
+  "checks": [
+    "All 8 actual polygon targets select their exact node without any run-state/time change",
+    "Transparent inn bounding-box corner rejects pointer input (polygon mask, not rectangle)",
+    "Mouse hover and arrow-key focus independently highlight a building; Enter selects without travel",
+    "Escape cancellation preserves exact state; confirmed travel and reentry reflect actual current location at zero time cost",
+    "Real save UI, travel, load UI restore exact room state and map current location",
+    "Existing inn overview and kitchen→reception→hall→13 access still work",
+    "Stale secret current-location save reveals no passage node/name/tooltip/alt; discovered-open and incident guestroom conditions retained",
+    "844×390 touchscreen polygon travel and large-list travel; 390×844 portrait list and cancellation",
+    "Double-click confirmation reaches one destination without time change"
+  ],
+  "status": "passed",
+  "errors": []
+}

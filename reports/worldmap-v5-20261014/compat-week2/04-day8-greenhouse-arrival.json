@@ -1,0 +1,197 @@
+{
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "campaign_id": "room13_v1",
+    "version": 3,
+    "story_revision": "father-pov-fire-pooling-v3",
+    "day": 8,
+    "period": 0,
+    "location": "greenhouse",
+    "kitchen_switch": false,
+    "passage_open": false,
+    "secret_route_unlocked": false,
+    "case_state": "pending",
+    "victim_state": "alive",
+    "daram_state": "with_dad",
+    "granny_state": "trusted",
+    "trial_result": "pending",
+    "evidence": [
+      "E01",
+      "E03",
+      "E19"
+    ],
+    "records": {
+      "E01": {
+        "day": 1,
+        "period": 0,
+        "source": "여행 중 가지고 온 편지",
+        "place": "gate"
+      },
+      "E03": {
+        "day": 2,
+        "period": 0,
+        "source": "호환 검증 fixture",
+        "place": "inn"
+      },
+      "E19": {
+        "day": 8,
+        "period": 0,
+        "source": "초롱의 답장 — 긍정 분기 검증 fixture",
+        "place": "facility"
+      }
+    },
+    "flags": [
+      "entry_corrected",
+      "lodging"
+    ],
+    "read_topics": [],
+    "done": [],
+    "checks": {},
+    "encounters": [
+      {
+        "person": "karo",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "guard",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "daram",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      }
+    ],
+    "resident_knowledge": {},
+    "propositions": [],
+    "arguments": {},
+    "log": [],
+    "trial_ended": true,
+    "life_poc": true,
+    "learning_archive": [],
+    "mom_state": "hidden",
+    "ending": null,
+    "events": [],
+    "convoy_revision": 0,
+    "scout_revision": -1,
+    "observations": {},
+    "week2_started": true,
+    "finale_started": false,
+    "world_art_revisions": {
+      "inn": "3d901b332c77fbc4e41b1787ed27acb423a7aeeeeea5a00aacc92ae7af2008a6",
+      "school": "bb8921277b9723a5141ab4e27909ed6143285e1a47f6ffc9b8d3f0112482339a",
+      "workshop": "126535025fe67e4cb154df01423a17703e7acab85bdcc0054db519051687aef6",
+      "square": "e96d79dea57247880a902bfdba112fdae7e63b77213c5e8f08cecf16cdd1ec75",
+      "gate": "1f1ea55f6089e23291c56e64ddc9a4aca333bcf21d6d6968a64bcc83b0a5cf35",
+      "clinic": "3f40df1612c0ab33648592fb27b5fb2080a98e062c4079c023d50a9213592fb6",
+      "store": "5752ef2f6a0f713182584d2924beb6b98d92872fff5d0da44247943879b5014a",
+      "greenhouse": "ca7bbee7242a52ba81a11a38866d06f988810a4e0ba16a0c5cde5e4231d00c0a",
+      "facility": "e2e03e40b2f0cd58cdb11b90e838ea37445860b03c4c6a8f3ab0b099f825f7a8",
+      "altar": "c12d8a6d6d5cbee725f9624b57256514fa3b58e5b980c3797442657600775136"
+    },
+    "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+    "interaction_revision": 2,
+    "last_inspection": null,
+    "visual_revision": "pixel-b-front-v3"
+  },
+  "say": "",
+  "buttons": [
+    {
+      "text": "     ",
+      "value": "",
+      "rect": [
+        0,
+        0,
+        1280,
+        720
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        1002,
+        370,
+        139,
+        98
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        122,
+        198,
+        86,
+        116
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        801,
+        208,
+        342,
+        193
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        0,
+        194,
+        116,
+        119
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        1079,
+        483,
+        112,
+        122
+      ]
+    },
+    {
+      "text": "      지도 · 이동",
+      "value": "('menu', 'map')",
+      "rect": [
+        970,
+        23,
+        180,
+        62
+      ]
+    },
+    {
+      "text": "      기록",
+      "value": "",
+      "rect": [
+        712,
+        670,
+        128,
+        44
+      ]
+    },
+    {
+      "text": "              옵션",
+      "value": "",
+      "rect": [
+        1190,
+        20,
+        64,
+        64
+      ]
+    }
+  ]
+}
