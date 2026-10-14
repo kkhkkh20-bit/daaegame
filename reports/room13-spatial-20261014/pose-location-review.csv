@@ -1,0 +1,97 @@
+person,name,location,current_pose_ids,current_facing,current_activity,stage_override,review_needed,dialogue_front_available
+bami,밤이,hall,"action_1,action_2","front,left",따뜻한 처마 가까이 몸을 움츠린다.,,target alignment; period/phase action match,front
+bami,밤이,inn,"action_1,action_2","front,left",따뜻한 처마 가까이 몸을 움츠린다.,,target alignment; period/phase action match,front
+buri,부리,workshop,"action_1,action_2",right,작은 부품을 천 위에 순서대로 놓는다.,,target alignment; period/phase action match,front
+doto,도토,hall,"action_1,action_2","left,right",여러 장부의 모서리를 맞춘다.,,target alignment; period/phase action match,front
+doto,도토,post,neutral,left,여러 장부의 모서리를 맞춘다.,stage forces neutral,neutral fallback / target alignment,front
+doto,도토,square,world_bulletin_back,back-right,여러 장부의 모서리를 맞춘다.,,target alignment; period/phase action match,front
+granny,토끼 할머니,inn,world_counter_wipe,front-right-threequarter,접수대에서 방 열쇠와 장부를 맞춘다.,,target alignment; period/phase action match,front
+guard,guard,gate,action_1,right,,,target alignment; period/phase action match,front
+karo,까로,gate,"action_1,action_2",left,마차 축의 갈라진 부분을 감싼다.,,target alignment; period/phase action match,front
+karo,까로,inn,neutral,left,마차 축의 갈라진 부분을 감싼다.,,neutral fallback / target alignment,front
+karo,까로,post,neutral,left,마차 축의 갈라진 부분을 감싼다.,stage forces neutral,neutral fallback / target alignment,front
+karo,까로,store,neutral,left,마차 축의 갈라진 부분을 감싼다.,,neutral fallback / target alignment,front
+karo,까로,workshop,neutral,left,마차 축의 갈라진 부분을 감싼다.,,neutral fallback / target alignment,front
+mom,mom,greenhouse,"action_1,action_2",right,,,target alignment; period/phase action match,front
+nabi,나비,dining,"action_1,action_2","left,rear",그릇 바닥을 닦아 포개 놓는다.,stage forces action_2 for nabi; neutral for visitors,neutral fallback / target alignment,front
+nabi,나비,inn,action_1,rear,그릇 바닥을 닦아 포개 놓는다.,,target alignment; period/phase action match,front
+nabi,나비,school,action_2,left,그릇 바닥을 닦아 포개 놓는다.,,target alignment; period/phase action match,front
+neoul,왕구,facility,"action_1,action_2","left,rear",통행하는 사람들과 길가 짐을 번갈아 살핀다.,,target alignment; period/phase action match,front
+neoul,왕구,gate,action_1,rear,통행하는 사람들과 길가 짐을 번갈아 살핀다.,,target alignment; period/phase action match,front
+neoul,왕구,school,neutral,left,통행하는 사람들과 길가 짐을 번갈아 살핀다.,,neutral fallback / target alignment,front
+neoul,왕구,square,neutral,left,통행하는 사람들과 길가 짐을 번갈아 살핀다.,,neutral fallback / target alignment,front
+resident_badook,바둑이,gate,living_bootlace,right-profile,순찰화의 끈을 조여 맨다.,,target alignment; period/phase action match,front
+resident_badook,바둑이,school,neutral,right-threequarter,순찰화의 끈을 조여 맨다.,,neutral fallback / target alignment,front
+resident_badook,바둑이,square,living_bootlace,right-profile,순찰화의 끈을 조여 맨다.,,target alignment; period/phase action match,front
+resident_bori,보리,gate,activity,right,장작을 묶고 끈을 다시 조이고 있다.,,target alignment; period/phase action match,front
+resident_bori,보리,school,activity,right,장작을 묶고 끈을 다시 조이고 있다.,,target alignment; period/phase action match,front
+resident_bori,보리,square,activity,right,장작을 묶고 끈을 다시 조이고 있다.,,target alignment; period/phase action match,front
+resident_bori,보리,store,activity,right,장작을 묶고 끈을 다시 조이고 있다.,,target alignment; period/phase action match,front
+resident_bori,보리,workshop,activity,right,장작을 묶고 끈을 다시 조이고 있다.,,target alignment; period/phase action match,front
+resident_eunho,은호 사장,inn,living_prices,right-profile,물자 목록 옆에 값을 다시 적는다.,,target alignment; period/phase action match,front
+resident_eunho,은호 사장,post,neutral,right-threequarter,물자 목록 옆에 값을 다시 적는다.,stage forces neutral,neutral fallback / target alignment,front
+resident_eunho,은호 사장,store,living_prices,right-profile,물자 목록 옆에 값을 다시 적는다.,,target alignment; period/phase action match,front
+resident_guseul,구슬,inn,living_stamp,right-profile,계약서에 눌린 도장을 닦아 낸다.,,target alignment; period/phase action match,front
+resident_guseul,구슬,post,living_stamp,right-profile,계약서에 눌린 도장을 닦아 낸다.,stage forces neutral,neutral fallback / target alignment,front
+resident_guseul,구슬,store,living_stamp,right-profile,계약서에 눌린 도장을 닦아 낸다.,,target alignment; period/phase action match,front
+resident_kkwak,꽥순,gate,activity,right,빈 물통 안의 얼음을 두드린다.,,target alignment; period/phase action match,front
+resident_kkwak,꽥순,store,activity,right,빈 물통 안의 얼음을 두드린다.,,target alignment; period/phase action match,front
+resident_kongi,콩이,post,activity,right,배달 바구니에서 눌린 빵을 꺼낸다.,stage forces neutral,neutral fallback / target alignment,front
+resident_kongi,콩이,school,activity,right,배달 바구니에서 눌린 빵을 꺼낸다.,,target alignment; period/phase action match,front
+resident_kongi,콩이,square,activity,right,배달 바구니에서 눌린 빵을 꺼낸다.,,target alignment; period/phase action match,front
+resident_kongi,콩이,store,activity,right,배달 바구니에서 눌린 빵을 꺼낸다.,,target alignment; period/phase action match,front
+resident_lamplighter,등불지기 아저씨,gate,living_inspectlamp,right-profile,등 아래 점검함을 닫고 매듭을 확인한다.,,target alignment; period/phase action match,front
+resident_lamplighter,등불지기 아저씨,greenhouse,living_inspectlamp,right-profile,등 아래 점검함을 닫고 매듭을 확인한다.,,target alignment; period/phase action match,front
+resident_lamplighter,등불지기 아저씨,post,living_inspectlamp,right-profile,등 아래 점검함을 닫고 매듭을 확인한다.,stage forces neutral,neutral fallback / target alignment,front
+resident_lamplighter,등불지기 아저씨,square,living_inspectlamp,right-profile,등 아래 점검함을 닫고 매듭을 확인한다.,,target alignment; period/phase action match,front
+resident_lamplighter,등불지기 아저씨,workshop,living_inspectlamp,right-profile,등 아래 점검함을 닫고 매듭을 확인한다.,,target alignment; period/phase action match,front
+resident_librarian,사서 선생님,post,activity,right,젖은 책 사이에 마른 종이를 끼운다.,stage forces neutral,neutral fallback / target alignment,front
+resident_madam,백 부인,inn,living_inspect,right-profile,보관함을 봉해 둔 자리를 손으로 확인한다.,,target alignment; period/phase action match,front
+resident_madam,백 부인,store,living_inspect,right-profile,보관함을 봉해 둔 자리를 손으로 확인한다.,,target alignment; period/phase action match,front
+resident_momo,모모 관장,post,living_read,right-profile,낡은 등잔 바닥에 붙은 번호를 읽는다.,stage forces neutral,neutral fallback / target alignment,front
+resident_mungchi,뭉치,store,living_carry,right-profile,작은 상자와 큰 상자를 따로 쌓는다.,,target alignment; period/phase action match,front
+resident_musoe,무쇠 할아버지,school,neutral,right-threequarter,낡은 지도를 접어 안주머니 깊이 넣는다.,,neutral fallback / target alignment,front
+resident_musoe,무쇠 할아버지,workshop,living_foldmap,right-profile,낡은 지도를 접어 안주머니 깊이 넣는다.,,target alignment; period/phase action match,front
+resident_nero,네로,gate,activity,right,짐에 붙은 낡은 이름표를 떼어 주머니에 넣는다.,,target alignment; period/phase action match,front
+resident_nero,네로,store,activity,right,짐에 붙은 낡은 이름표를 떼어 주머니에 넣는다.,,target alignment; period/phase action match,front
+resident_nubi,누비 아주머니,inn,living_fold,right-profile,마른 빨래를 사람별로 나눠 묶는다.,,target alignment; period/phase action match,front
+resident_nubi,누비 아주머니,store,living_fold,right-profile,마른 빨래를 사람별로 나눠 묶는다.,,target alignment; period/phase action match,front
+resident_nubi,누비 아주머니,workshop,living_fold,right-profile,마른 빨래를 사람별로 나눠 묶는다.,,target alignment; period/phase action match,front
+resident_owlgp,부엉이 할아버지,inn,activity,right,낡은 수첩의 풀린 제본을 묶는다.,,target alignment; period/phase action match,front
+resident_owlgp,부엉이 할아버지,post,activity,right,낡은 수첩의 풀린 제본을 묶는다.,stage forces neutral,neutral fallback / target alignment,front
+resident_owlgp,부엉이 할아버지,square,activity,right,낡은 수첩의 풀린 제본을 묶는다.,,target alignment; period/phase action match,front
+resident_piko,피코,clinic,neutral,right-threequarter,완성하지 못한 초상에 천을 덮는다.,,neutral fallback / target alignment,front
+resident_piko,피코,square,living_paint,right-profile,완성하지 못한 초상에 천을 덮는다.,,target alignment; period/phase action match,front
+resident_ppul,뿔이 촌장,post,activity,right,식량 나눔표 위에 작은 돌을 눌러 둔다.,stage forces neutral,neutral fallback / target alignment,front
+resident_ppul,뿔이 촌장,square,activity,right,식량 나눔표 위에 작은 돌을 눌러 둔다.,,target alignment; period/phase action match,front
+resident_seol,설이,square,activity,right,작은 종의 끈을 풀었다 다시 매단다.,,target alignment; period/phase action match,front
+resident_seori,서리 검사원,clinic,living_notes,right-profile,메모 옆에 확인한 사람 이름을 적는다.,,target alignment; period/phase action match,front
+resident_seori,서리 검사원,inn,living_notes,right-profile,메모 옆에 확인한 사람 이름을 적는다.,,target alignment; period/phase action match,front
+resident_seori,서리 검사원,post,living_notes,right-profile,메모 옆에 확인한 사람 이름을 적는다.,stage forces neutral,neutral fallback / target alignment,front
+resident_siluk,실룩,gate,living_clean,right-profile,짐수레 바퀴의 끼인 눈을 털어 낸다.,,target alignment; period/phase action match,front
+resident_siluk,실룩,store,living_clean,right-profile,짐수레 바퀴의 끼인 눈을 털어 낸다.,,target alignment; period/phase action match,front
+resident_sling,슬링,post,activity,right,봉투를 배달할 순서대로 나눈다.,stage forces neutral,neutral fallback / target alignment,front
+resident_sling,슬링,square,activity,right,봉투를 배달할 순서대로 나눈다.,,target alignment; period/phase action match,front
+resident_somi,솜이,school,living_bootice,right-profile,구두 밑창에 낀 얼음을 긁는다.,,target alignment; period/phase action match,front
+resident_somi,솜이,square,living_bootice,right-profile,구두 밑창에 낀 얼음을 긁는다.,,target alignment; period/phase action match,front
+resident_teacher,곰 선생님,school,activity,right,아이들 외투의 젖은 끝을 펴 놓는다.,,target alignment; period/phase action match,front
+resident_tok,톡,clinic,activity,right,작은 핀을 집게로 물고 살핀다.,,target alignment; period/phase action match,front
+resident_tok,톡,inn,activity,right,작은 핀을 집게로 물고 살핀다.,,target alignment; period/phase action match,front
+resident_tok,톡,post,activity,right,작은 핀을 집게로 물고 살핀다.,stage forces neutral,neutral fallback / target alignment,front
+resident_tok,톡,square,activity,right,작은 핀을 집게로 물고 살핀다.,,target alignment; period/phase action match,front
+resident_tok,톡,workshop,activity,right,작은 핀을 집게로 물고 살핀다.,,target alignment; period/phase action match,front
+resident_tori,토리,inn,activity,right,접힌 천의 바늘땀을 세고 있다.,,target alignment; period/phase action match,front
+resident_tori,토리,school,activity,right,접힌 천의 바늘땀을 세고 있다.,,target alignment; period/phase action match,front
+resident_tori,토리,square,world_bench_left,left-threequarter,접힌 천의 바늘땀을 세고 있다.,,target alignment; period/phase action match,front
+resident_tori,토리,workshop,activity,right,접힌 천의 바늘땀을 세고 있다.,,target alignment; period/phase action match,front
+resident_ttadak,따닥,inn,living_repair,right-profile,벽의 벌어진 이음에 나무 조각을 대 본다.,,target alignment; period/phase action match,front
+resident_ttadak,따닥,workshop,living_repair,right-profile,벽의 벌어진 이음에 나무 조각을 대 본다.,,target alignment; period/phase action match,front
+resident_ubak,우박,clinic,living_measure,right-profile,계측기 바늘과 종이 눈금을 맞춘다.,,target alignment; period/phase action match,front
+resident_ubak,우박,inn,neutral,left,계측기 바늘과 종이 눈금을 맞춘다.,,neutral fallback / target alignment,front
+resident_ubak,우박,workshop,living_measure,right-profile,계측기 바늘과 종이 눈금을 맞춘다.,,target alignment; period/phase action match,front
+resident_yeoni,여니,inn,activity,right,헤진 소매 안쪽을 뒤집어 살핀다.,,target alignment; period/phase action match,front
+resident_yeoni,여니,school,activity,right,헤진 소매 안쪽을 뒤집어 살핀다.,,target alignment; period/phase action match,front
+resident_yeoni,여니,square,activity,right,헤진 소매 안쪽을 뒤집어 살핀다.,,target alignment; period/phase action match,front
+resident_yeoni,여니,store,activity,right,헤진 소매 안쪽을 뒤집어 살핀다.,,target alignment; period/phase action match,front
+resident_yeoni,여니,workshop,activity,right,헤진 소매 안쪽을 뒤집어 살핀다.,,target alignment; period/phase action match,front
+seryeon,seryeon,post,"action_1,chair_read","rear_left,right",,,target alignment; period/phase action match,front

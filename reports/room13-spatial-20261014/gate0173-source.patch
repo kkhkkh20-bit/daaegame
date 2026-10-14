@@ -1,0 +1,537 @@
+--- a/experiments/renpy-ch1/dev/test_room13_review0155.py
++++ b/experiments/renpy-ch1/dev/test_room13_review0155.py
+@@ -32,7 +32,7 @@
+ def grant(keys,source):
+  for key in keys:
+   if key not in store.room13['evidence']:store.room13['evidence'].append(key)
+-env.update(R13_OBJECT_NAMES={},r13_flag=flag,r13_grant=grant,r13_mark=lambda *a:None)
++env.update(R13_WORLD_LAYOUTS={},R13_OBJECT_NAMES={},r13_flag=flag,r13_grant=grant,r13_mark=lambda *a:None)
+ s=(root/'game/room13_gate_inspection.rpy').read_text().split('init 63 python:\n')[1].split('\ninit 67 python:')[0]
+ exec(compile(textwrap.dedent(s),'gate','exec'),env)
+ env['r13_gate_record_document']('G1');env['r13_gate_record_document']('G3')
+--- a/experiments/renpy-ch1/game/room13_gate_inspection.rpy
++++ b/experiments/renpy-ch1/game/room13_gate_inspection.rpy
+@@ -6,7 +6,7 @@
+         "G3": dict(object="ledger", tab="옮겨 쓴 이름 목록", heading="옮겨 쓴 이름 목록 · 함께 온 사람 수", text="방문자: 다돌. 총 인원: 1명."),
+     }
+     ROOM13["objects"]["gate"]["gate_documents"] = dict(
+-        rect=[1034,342,159,111], text="초소 선반에 예약 원본과 옮겨 쓴 이름 목록이 함께 놓여 있다.",
++        rect=list(R13_WORLD_LAYOUTS.get("gate",{}).get("documents",[1034,342,159,111])), text="초소 선반에 예약 원본과 옮겨 쓴 이름 목록이 함께 놓여 있다.",
+         need=[], give=[], flags=[], inspection_bundle="gate_documents")
+     for r13_gate_legacy_key in ("booth", "ledger"):
+         ROOM13["objects"]["gate"][r13_gate_legacy_key]["inspection_child"] = "gate_documents"
+@@ -17,8 +17,12 @@
+     def r13_gate_document_art():
+         # Enlarge the shelf from the actual adopted gate background. Text is
+         # rendered separately; no invented replacement document art is used.
+-        return Transform(Crop((1026,328,182,140), r13_background("winter")),
+-            size=(468,360), nearest=True)
++        layout=R13_WORLD_LAYOUTS.get("gate",{})
++        if layout:
++            # World coordinates stay independent of the player camera offset.
++            crop=tuple(layout["documents_crop"])
++            return Transform(Crop(crop,r13_world_background("gate")),xysize=(468,int(round(468.0*crop[3]/crop[2]))),nearest=True)
++        return Transform(Crop((1026,328,182,140),r13_background("winter")),size=(468,360),nearest=True)
+ 
+     def r13_gate_record_document(key):
+         if store.room13["location"] != "gate" or key not in R13_GATE_DOCUMENTS:
+--- a/experiments/renpy-ch1/game/room13_interaction.rpy
++++ b/experiments/renpy-ch1/game/room13_interaction.rpy
+@@ -185,12 +185,12 @@
+     timer .25 action SetScreenVariable("ready",True)
+     add Solid("#0c202780")
+     frame:
+-        area (650,280,560,360) padding (18,16) background R13ActionPanel()
++        area (650,248,560,412) padding (18,16) background R13ActionPanel()
+         vbox:
+             spacing 16
+             text r13_object_name(key) size 29 color "#f6d18a"
+             viewport:
+-                xsize 524 ysize 232 mousewheel True draggable True scrollbars "vertical"
++                xsize 524 ysize 200 mousewheel True draggable True scrollbars "vertical"
+                 vbox:
+                     spacing 12
+                     if r13_tool_available(key):
+--- a/experiments/renpy-ch1/game/options.rpy
++++ b/experiments/renpy-ch1/game/options.rpy
+@@ -1,5 +1,5 @@
+ define config.name = "다람탐정 · 눈에 갇힌 마을"
+-define config.version = "0.17.2-dev"
++define config.version = "0.17.3-dev"
+ # Literal early definition selects the persistent web save mount.
+ define config.save_directory = "daaegame-renpy-village-ch1-06"
+ 
+@@ -69,7 +69,7 @@
+     config.exit_transition = Dissolve(0.12)
+     config.after_load_transition = Fade(0.12,0.12,0.2)
+     build.name = "daram_renpy_small_ch1"
+-    build.version = "0.17.2-dev"
++    build.version = "0.17.3-dev"
+     build.classify("game/assets/room13-painted-*.png", None)
+     build.classify("game/assets/room13-painted-layouts.json", None)
+     build.classify("game/assets/*.txt", "all")
+--- a/experiments/renpy-ch1/game/room13_screens.rpy
++++ b/experiments/renpy-ch1/game/room13_screens.rpy
+@@ -110,7 +110,7 @@
+     timer .35 action SetScreenVariable("ready",True)
+     default world_adjustment=r13_world_adjustment(room13["location"])
+ 
+-    if r13_world_width()>1280 and not entry:
++    if r13_world_width()>1280:
+         viewport:
+             id "r13_world_viewport"
+             area (0,0,1280,720)
+--- a/experiments/renpy-ch1/game/assets/room13-world-layout.json
++++ b/experiments/renpy-ch1/game/assets/room13-world-layout.json
+@@ -828,5 +828,219 @@
+       "doto",
+       "resident_tori"
+     ]
++  },
++  "gate": {
++    "revision": 1,
++    "width": 1920,
++    "height": 720,
++    "initial_x": 320,
++    "files": {
++      "morning": "assets/room13-pixel-ready-gate0173-morning.png",
++      "afternoon": "assets/room13-pixel-ready-gate0173-afternoon.png",
++      "evening": "assets/room13-pixel-ready-gate0173-evening.png"
++    },
++    "objects": {
++      "booth": [
++        1420,
++        398,
++        110,
++        52
++      ],
++      "ledger": [
++        1380,
++        440,
++        126,
++        30
++      ],
++      "rules": [
++        666,
++        313,
++        75,
++        114
++      ],
++      "road": [
++        216,
++        469,
++        413,
++        127
++      ],
++      "bundles": [
++        370,
++        396,
++        178,
++        75
++      ],
++      "shovel": [
++        760,
++        414,
++        82,
++        177
++      ],
++      "crates": [
++        1288,
++        534,
++        206,
++        100
++      ],
++      "woodpile": [
++        1560,
++        437,
++        125,
++        111
++      ]
++    },
++    "documents": [
++      1341,
++      383,
++      201,
++      98
++    ],
++    "documents_crop": [
++      1320,
++      369,
++      240,
++      128
++    ],
++    "floors": [
++      [
++        600,
++        620,
++        240
++      ],
++      [
++        1050,
++        610,
++        230
++      ],
++      [
++        1250,
++        650,
++        250
++      ]
++    ],
++    "positions": {
++      "karo": [
++        640,
++        655,
++        230
++      ],
++      "guard": [
++        1270,
++        602,
++        255
++      ],
++      "neoul": [
++        1070,
++        610,
++        260
++      ]
++    },
++    "slots": [
++      [
++        920,
++        620,
++        230,
++        "floor"
++      ],
++      [
++        1110,
++        651,
++        245,
++        "floor"
++      ],
++      [
++        780,
++        652,
++        230,
++        "floor"
++      ],
++      [
++        1780,
++        635,
++        230,
++        "floor"
++      ],
++      [
++        1030,
++        570,
++        200,
++        "floor"
++      ],
++      [
++        1250,
++        690,
++        245,
++        "floor"
++      ],
++      [
++        390,
++        690,
++        240,
++        "floor"
++      ],
++      [
++        720,
++        700,
++        230,
++        "floor"
++      ]
++    ],
++    "critical": [
++      [
++        1341,
++        383,
++        201,
++        98
++      ],
++      [
++        666,
++        313,
++        75,
++        114
++      ],
++      [
++        760,
++        414,
++        82,
++        177
++      ],
++      [
++        370,
++        396,
++        178,
++        75
++      ],
++      [
++        216,
++        469,
++        413,
++        127
++      ],
++      [
++        1288,
++        534,
++        206,
++        100
++      ],
++      [
++        1560,
++        437,
++        125,
++        111
++      ]
++    ],
++    "pinned": [
++      "karo",
++      "guard"
++    ],
++    "provenance": {
++      "source_commit": "ac8760b38a5d75f2a0ef26f914e7ecb4faf7503f",
++      "source_size": [
++        2048,
++        768
++      ],
++      "scale": "uniform 15/16; no stretch",
++      "review": "Each rectangle measured against the selected panorama, not multiplied from old hitboxes"
++    }
+   }
+-}+}
+--- a/experiments/renpy-ch1/dev/package_web_webp.py
++++ b/experiments/renpy-ch1/dev/package_web_webp.py
+@@ -69,6 +69,7 @@
+     ap = argparse.ArgumentParser()
+     ap.add_argument("--release", type=Path, required=True)
+     ap.add_argument("--sdk", type=Path, required=True)
++    ap.add_argument("--asset-root", type=Path, help="Repository root containing explicitly selected design assets")
+     ap.add_argument("--work", type=Path, default=Path("/tmp/room13-webp-package"))
+     a = ap.parse_args()
+     release, work = a.release.resolve(), a.work.resolve()
+@@ -91,6 +92,22 @@
+                 continue
+             if not dest.exists() or dest.read_bytes() != path.read_bytes():
+                 dest.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(path, dest); overlaid += 1
++    # Copy only explicitly selected artwork; never sweep in the candidate branch.
++    overlay_manifest = ROOT / "dev" / "selected_asset_overlay.json"
++    if overlay_manifest.exists():
++        for asset in json.loads(overlay_manifest.read_text())["files"]:
++            relative = Path(asset["file"])
++            assert relative.parts[0] == "assets" and ".." not in relative.parts and relative.suffix in (".png", ".webp")
++            source = ROOT / "game" / relative
++            if not source.exists():
++                origin_path = Path(asset["source"])
++                assert not origin_path.is_absolute() and ".." not in origin_path.parts
++                source = (a.asset_root.resolve() if a.asset_root else release.parents[1]) / origin_path
++            assert sha(source) == asset["sha256"], "selected asset source hash changed: " + str(relative)
++            target = game / relative
++            target.parent.mkdir(parents=True, exist_ok=True)
++            shutil.copy2(source, target)
++            overlaid += 1
+     for path in list(game.rglob("*.rpyc")):
+         if not path.with_suffix(".rpy").exists():
+             path.unlink()
+--- a/experiments/renpy-ch1/dev/selected_asset_overlay.json
++++ b/experiments/renpy-ch1/dev/selected_asset_overlay.json
+@@ -0,0 +1,21 @@
++{
++  "source_commit": "ac8760b38a5d75f2a0ef26f914e7ecb4faf7503f",
++  "scope": "User-authorized gate panorama integration; matching source pixels; QA required before publishing",
++  "files": [
++    {
++      "file": "assets/room13-pixel-ready-gate0173-morning.png",
++      "sha256": "9031a638cdb644f48610d7af7097b36503b63b1810796c12de877ef9e5f2ee2e",
++      "source": "design/room13-ready-assets-20261014/backgrounds/gate/morning.png"
++    },
++    {
++      "file": "assets/room13-pixel-ready-gate0173-afternoon.png",
++      "sha256": "2679224e8697224476a1f0cd8e2531ce92ddb45f639c1d91abadd18340594423",
++      "source": "design/room13-ready-assets-20261014/backgrounds/gate/afternoon.png"
++    },
++    {
++      "file": "assets/room13-pixel-ready-gate0173-evening.png",
++      "sha256": "0df261b7143b013bd9c3eae970c61a82f35cf5d0dc63ce1807dc8e702dffddd7",
++      "source": "design/room13-ready-assets-20261014/backgrounds/gate/evening.png"
++    }
++  ]
++}--- a/experiments/renpy-ch1/dev/test_gate_panorama0173.py
++++ b/experiments/renpy-ch1/dev/test_gate_panorama0173.py
+@@ -0,0 +1,25 @@
++"""Selected gate art and geometry preserve underlying investigation facts."""
++import hashlib,json,unittest,os
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1]
++class GatePanorama(unittest.TestCase):
++ def test_selected_native_art_hashes_and_uniform_aspect(self):
++  from PIL import Image
++  manifest=json.loads((ROOT/'dev/selected_asset_overlay.json').read_text());layout=json.loads((ROOT/'game/assets/room13-world-layout.json').read_text())['gate']
++  self.assertEqual(set(layout['files']),{'morning','afternoon','evening'})
++  for row in manifest['files']:
++   if 'gate0173' not in row['file']:continue
++   p=ROOT/'game'/row['file']
++   if not p.exists():p=Path(os.environ.get('ROOM13_ASSET_ROOT',str(ROOT.parents[1])))/row['source']
++   self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),row['sha256'])
++   with Image.open(p) as image:w,h=image.size
++   self.assertEqual((w,h),(2048,768));self.assertEqual(w*layout['height'],h*layout['width'])
++ def test_rectangles_inside_world_and_every_old_object_retained(self):
++  layout=json.loads((ROOT/'game/assets/room13-world-layout.json').read_text())['gate'];content=json.loads((ROOT/'game/room13-content.json').read_text())
++  self.assertEqual(set(layout['objects']),set(content['objects']['gate']))
++  for x,y,w,h in list(layout['objects'].values())+[layout['documents'],layout['documents_crop']]:
++   self.assertGreater(w,0);self.assertGreater(h,0);self.assertGreaterEqual(x,0);self.assertGreaterEqual(y,0);self.assertLessEqual(x+w,layout['width']);self.assertLessEqual(y+h,layout['height'])
++ def test_document_and_notice_targets_keep_authoritative_keys(self):
++  src=(ROOT/'game/room13_gate_inspection.rpy').read_text();self.assertIn('layout["documents_crop"]',src);self.assertIn('r13_world_background("gate")',src)
++  actions=(ROOT/'game/room13_interaction.rpy').read_text();self.assertIn('("gate","rules"):("interview",)',actions)
++if __name__=='__main__':unittest.main()
+--- a/experiments/renpy-ch1/dev/qa_gate0173.py
++++ b/experiments/renpy-ch1/dev/qa_gate0173.py
+@@ -0,0 +1,68 @@
++"""Natural gate interactions plus explicit daylight/crowd layout fixtures."""
++import asyncio,json,shutil,urllib.request
++from pathlib import Path
++from playwright.async_api import async_playwright
++from pixel_qa_ui0156 import UIQA
++from pixel_qa_flow0150 import FLOW_PROBE
++OUT=Path('/workspace/room13-review/gate0173');OUT.mkdir(exist_ok=True)
++URL='http://127.0.0.1:8094/room13-dev/'
++class Q(UIQA):
++ async def state(self):
++  probe=FLOW_PROBE.replace('names=[',"names=['r13_gate_document_inspection','r13_gate_document_read','r13_records',")
++  s=await self.py('ns={};exec('+ascii(probe)+',ns);result=ns["result"]');assert '_exception' not in s['screens'],s;return s
++ async def object(self,key):
++  rect=await self.py('import renpy;s=renpy.store;result=s.ROOM13["objects"][s.room13["location"]]['+repr(key)+']["rect"]')
++  offset=(await self.camera())['offset'];x,y,w,h=rect;assert 0<=x+w/2-offset<=1280,(key,rect,offset);await self.input(x+w/2-offset,y+h/2)
++ async def pan(self,start,end):
++  # Real drag on open snow, not a direct camera-state write.
++  await self.p.mouse.move(start,650);await self.p.mouse.down();await self.p.mouse.move(end,650,steps=18);await self.p.mouse.up();await asyncio.sleep(.5)
++async def main():
++ report={'archive_sha256':json.load(urllib.request.urlopen(URL+'game-transport.json'))['archive_sha256'],'checks':[]}
++ async with async_playwright() as p:
++  b=await p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader']);c=await b.new_context(viewport={'width':1280,'height':720},has_touch=True);pg=await c.new_page();q=Q(pg,OUT)
++  try:
++   await pg.goto(URL);await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.advance();await q.wait('r13_hub')
++   assert await q.py('import renpy;result=renpy.store.r13_world_width()')==1920;await q.shot('01-gate-natural-afternoon');before=await q.room();cam=await q.camera()
++   await q.pan(1100,350);assert (await q.camera())['offset']>cam['offset'];await q.shot('02-right-pan');assert await q.room()==before
++   await q.object('gate_documents');await q.wait('r13_gate_document_inspection');await q.shot('03-documents-popup')
++   for title in ['예약 원본','옮겨 쓴 이름 목록']:
++    await q.press(title);await q.wait('r13_gate_document_read');await q.press('확인');await q.wait('r13_gate_document_inspection')
++   await q.press('현장으로 돌아가기');await q.wait('r13_hub');assert {'G1','G3'}<=set((await q.room())['evidence']);await q.shot('04-documents-check-world-position')
++   await q.pan(250,1100);assert (await q.camera())['offset']==0;await q.shot('05-left-pan')
++   for key in ['road','bundles','rules','shovel']:
++    await q.object(key);await q.advance()
++    if 'r13_object_context' in (await q.state())['screens']:await q.press('그만 살펴본다')
++    await q.wait('r13_hub')
++   assert 'G2' in (await q.room())['evidence'];await q.shot('06-known-object-checks');await q.value(('person','karo'));await q.advance();await q.wait('r13_topics');await q.shot('07-karo-player-facing');await q.press('돌아가기');await q.wait('r13_hub')
++   saved_cam=await q.camera();await q.save(1);saved=await q.room();await q.load(1);assert await q.room()==saved and await q.camera()==saved_cam
++   # Simulate old narrow-scene geometry metadata, without changing story facts.
++   migration_before=await q.room()
++   await q.py('import renpy,copy;s=renpy.store;n=copy.deepcopy(s.room13);n["world_art_revisions"].pop("gate",None);n["checks"]["gate:rules"]=[391,339];s.room13=n;s.r13_upgrade();renpy.exports.restart_interaction();result=True')
++   migrated=await q.room();assert migrated['checks']['gate:rules']==[703,370]
++   assert all(migrated[k]==migration_before[k] for k in ['day','period','evidence','flags','propositions'])
++   report['checks'].append('Explicit old-world-revision fixture relocates saved rules checkmark without changing clock/evidence/flags/propositions')
++   report['checks'].append('Natural afternoon: 1920 world, physical drag both directions no time/state change, docs G1/G3 and rules G2 reachable, road/bundles/shovel clicks, Karo dialogue, save/load camera/state preserved')
++   # Explicit time fixtures for authored lighting/placement review; not a day-by-day playthrough.
++   for period,label in [(0,'morning'),(2,'evening')]:
++    await q.py('import renpy;s=renpy.store;s.r13_edit(period='+str(period)+');renpy.exports.restart_interaction();result=True');await q.shot('08-'+label+'-left');await q.pan(1100,350);await q.shot('09-'+label+'-right')
++    await q.object('woodpile');await q.advance()
++    if 'r13_object_context' in (await q.state())['screens']:await q.press('그만 살펴본다')
++    await q.wait('r13_hub');await q.pan(250,1100)
++   await q.py('import renpy;s=renpy.store;s.r13_edit(day=5,period=1,case_state="occurred",daram_state="held",victim_state="dead");renpy.exports.restart_interaction();result=True')
++   await q.object('rules');await q.advance();await q.wait('r13_object_context');assert any("interview" in b['value'] for b in (await q.state())['buttons']);await q.shot('09b-day5-interview-on-notice');cancel=next(b for b in (await q.state())['buttons'] if '그만 살펴본다' in b['text']);assert cancel['rect'][3]>=44 and cancel['rect'][1]+cancel['rect'][3]<=660,cancel;await q.press('그만 살펴본다');await q.advance();await q.wait('r13_hub');report['checks'].append('Explicit day-5 occurred fixture: interview activity still reachable on the rules notice; cancelled without executing/time cost')
++   await pg.set_viewport_size({'width':844,'height':390});q.touch=True;await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.exports.restart_interaction();result=True');await q.shot('10-mobile-large-left')
++   mobile_before=await q.room();mobile_offset=(await q.camera())['offset'];cdp=await c.new_cdp_session(pg)
++   await cdp.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':650,'y':340}]})
++   for x in range(625,199,-25):
++    await cdp.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':x,'y':340}]});await asyncio.sleep(.025)
++   await cdp.send('Input.dispatchTouchEvent',{'type':'touchEnd','touchPoints':[]});await asyncio.sleep(.6)
++   assert (await q.camera())['offset']>mobile_offset;assert await q.room()==mobile_before;await q.shot('11-mobile-touch-pan-right');report['checks'].append('Real emulated touch swipe pans the gate viewport without changing story/time')
++   report['checks'].append('Explicit morning/evening fixtures: inspect both world edges and woodpile reachability; mobile landscape large text capture')
++   report['status']='passed-pending-visual-review'
++  except Exception as e:
++   report.update(status='failed',error=repr(e));await pg.screenshot(path=str(OUT/'failure.png'))
++   try:(OUT/'failure-state.json').write_text(json.dumps(await q.state(),ensure_ascii=False,indent=2))
++   except:pass
++  (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True);await b.close()
++  if report['status']=='failed':raise SystemExit(1)
++asyncio.run(main())
+--- a/experiments/renpy-ch1/dev/qa_portrait0172.py
++++ b/experiments/renpy-ch1/dev/qa_portrait0172.py
+@@ -0,0 +1,37 @@
++"""Natural portrait/narrow UI regression. Preferences only; no story injection."""
++import asyncio,json,shutil
++from pathlib import Path
++from playwright.async_api import async_playwright
++from pixel_qa_ui0156 import UIQA
++OUT=Path('/workspace/room13-review/portrait0172');OUT.mkdir(exist_ok=True)
++URL='http://127.0.0.1:8094/room13-dev/'
++async def main():
++ report={'base':'bc0359b16935feb77712b791ca5335ab06f61480','conditions':['Chromium touch emulation','390x844 portrait','320x568 narrow portrait','568x320 narrow landscape','large text enabled','fresh browser; natural day 1; no story injection'],'checks':[]}
++ async with async_playwright() as p:
++  b=await p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader']);c=await b.new_context(viewport={'width':390,'height':844},has_touch=True);pg=await c.new_page();q=UIQA(pg,OUT);q.touch=True
++  try:
++   await pg.goto(URL);await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await q.shot('01-title-portrait')
++   await q.py('import renpy;s=renpy.store;s.preferences.text_cps=0;s.persistent.room13_large_text=True;result=True');await q.press('처음부터');await q.wait('say');await q.shot('02-dialogue-portrait');await q.advance();await q.wait('r13_hub')
++   await q.value(('person','karo'));await q.advance();await q.wait('r13_topics');await q.shot('03-topic-unread-portrait');key='life:karo:work'
++   await q.value(key);await q.advance();await q.wait('r13_topics');await q.shot('04-topic-read-portrait')
++   for i,size in enumerate([{'width':320,'height':568},{'width':568,'height':320},{'width':390,'height':844}]):
++    await pg.set_viewport_size(size);await asyncio.sleep(.5);before=await q.room();await q.value(key);await q.advance();await q.wait('r13_topics');after=await q.room()
++    assert all(before[k]==after[k] for k in ['day','period','evidence','flags','propositions'])
++    assert await q.py('import renpy;s=renpy.store;result=s.r13_calendar_topic_seen("life:karo:work",s.ROOM13["topics"]["life:karo:work"])')
++    assert any('✓' in b['text'] for b in (await q.state())['buttons'])
++    await q.shot('05-repeat-%d-%dx%d'%(i,size['width'],size['height']))
++   await q.press('보여주기');await q.wait('r13_book');await q.press('초대 편지');await q.shot('06-evidence-portrait');await q.press('그만두기');await q.wait('r13_topics');assert any('✓' in b['text'] for b in (await q.state())['buttons']);await q.press('돌아가기');await q.advance();await q.wait('r13_hub')
++   report['checks'].append('Read question remains checked/clickable across three repeated selections and evidence cancel; no clock/evidence/flag/proposition change')
++   await q.travel('여관 접수대');assert (await q.room())['location']=='inn';await q.press('지도 · 이동');await q.wait('r13_map');assert await q.py('import renpy;result=renpy.exports.get_screen("r13_map").scope["region"]')=='inn';await q.shot('07-inn-before-checkin-portrait');await q.press('현장으로 돌아가기');await q.wait('r13_hub')
++   await q.press('할머니');await q.advance();await q.wait('r13_hub');await q.press('지도 · 이동');await q.wait('r13_map');await q.press('2층 복도');before=await q.room();await q.shot('08-inn-select-hall-portrait');assert (await q.room())['location']=='inn';await q.press('이곳으로 이동');await q.advance();await q.wait('r13_hub');assert (await q.room())['location']=='hall'
++   await q.press('지도 · 이동');await q.wait('r13_map');await q.press('13호실');await pg.set_viewport_size({'width':320,'height':568});await q.shot('09-room-selection-narrow');await q.press('이곳으로 이동');await q.advance();await q.wait('r13_hub');assert (await q.room())['location']=='room13'
++   await q.press('기록');await q.wait('r13_records');await q.shot('10-records-narrow');await pg.set_viewport_size({'width':568,'height':320});await q.shot('11-records-narrow-landscape');await q.press('닫기');await q.wait('r13_hub')
++   report['checks'].append('After actual inn entry map opens interior; selecting hallway does not move until explicit Move; actual hallway and room navigation work in portrait/narrow touch view')
++   report['status']='passed-pending-visual-review'
++  except Exception as e:
++   report.update(status='failed',error=repr(e));await pg.screenshot(path=str(OUT/'failure.png'))
++   try:(OUT/'failure-state.json').write_text(json.dumps(await q.state(),ensure_ascii=False,indent=2))
++   except:pass
++  (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True);await b.close()
++  if report['status']=='failed':raise SystemExit(1)
++asyncio.run(main())
+--- a/experiments/renpy-ch1/docs/RELEASE_0173.md
++++ b/experiments/renpy-ch1/docs/RELEASE_0173.md
+@@ -0,0 +1,34 @@
++# 0.17.3-dev · 입구 가로 배경 1개 장소 묶음
++
++기준 main: bc0359b16935feb77712b791ca5335ab06f61480 (0.17.2-dev). 사용자가 남은 원탁/가로 배경의 순차 적용을 승인한 뒤 진행한 첫 배경 묶음이다. 자료 브랜치 전체 병합은 하지 않았다.
++
++## 변경
++
++- ac8760b38a5d75f2a0ef26f914e7ecb4faf7503f의 gate 오전·오후·저녁 3장만 선별. 원본 PNG 해시 보존, 무손실 WebP 픽셀 일치 검사.
++- 2048×768 원본을 동일 비율 1920×720 월드로 표시한다. 1280×720 카메라를 좌우 드래그한다. 기존 16:9 그림을 가로로 늘인 것이 아니다.
++- 규칙 게시판·마차·담요·삽·채소 상자·장작·초소 서류를 새 이미지에 직접 맞췄다. 기존 좌표에 일괄 배율을 곱하지 않았다.
++- 첫 검증에서 까로가 담요 클릭을 가리는 실제 결함을 확인해 발 위치/표시 크기를 조정했다. 까로 대화 자세와 주민 일상 동작은 기존 자산을 유지한다. 새 축 점검 자세가 완료됐다고 주장하지 않는다.
++- 좁은 그림의 저장 체크마크는 기존 월드 리비전 이주 기능으로 새 조사 위치에 맞춘다. 증거·일정·판결은 바꾸지 않는다.
++- 구 진입 화면에서도 넓은 월드 viewport를 사용할 수 있게 했다. 초소 서류 확대용 crop은 카메라 오프셋과 분리된 월드 좌표를 사용한다.
++- 조사 메뉴의 취소 버튼 하단이 잘리는 기존 문제를 화면에서 발견했다. 패널/스크롤 영역 높이만 조정해 버튼 전체를 보이게 했다.
++
++## 검증 근거
++
++`gate0173/`에 실제 화면과 결과를, `gate0173-tests.json`에 자동 검사 결과를 기록한다. 자연 진행과 주입 fixture는 결과에서 구분한다.
++
++- 새 시작→입구, 실제 마우스 드래그 양쪽 끝, 시간/상태 보존, 실제 좌표 클릭으로 G1/G3/G2 확인, 마차·담요·삽, 까로 대화, 저장/불러오기·카메라 보존.
++- 오전/저녁은 명시적인 시간 fixture로 조명·배치·장작 클릭 검증. 5일차 사건/구금 상태 fixture에서 규칙 게시판의 면회 버튼 접근과 취소 확인. 자연 5일 완주가 아니다.
++- 좁은 저장 레이아웃 리비전 fixture의 체크마크 이동, 증거·시간·플래그·입증 상태 보존.
++- 모바일 Chromium 844×390 가로+큰 글씨 화면. 실제 휴대폰 미검증.
++- 기존 이미지·음원 309개 바이트 동일, 새 이미지 3개만 추가. room13-content.json 원문 동일.
++- SDK 8.5.3 compile/lint. 기존 웹 progressive 자산의 로컬 부재 경고는 별도 lint 파일에 남는다.
++
++## 소스·빌드 관계
++
++정본 소스는 `preview/room13-source/ROOM13_SOURCE_HANDOFF.zip`. 새 대형 PNG는 ZIP에 중복 삽입하지 않고 저장소 `design/room13-ready-assets-20261014/backgrounds/gate/`에 둔다. `dev/selected_asset_overlay.json`에 원본 경로/해시를 고정했다. 빌더는 소스의 game/assets에 없으면 release가 속한 저장소에서 읽고, 별도 위치는 `--asset-root <저장소 루트>`로 지정한다. 단위 검사를 외부 추출 폴더에서 실행할 때는 `ROOM13_ASSET_ROOT=<저장소 루트>`를 지정한다. 기존 대형 자산은 원래 공개 game.partNN에서 그대로 재사용한다.
++
++## 보류와 추가 아트
++
++회수 후 room-after 세 장은 흔적 연속성 보류를 유지한다. 나머지 장소는 별도 위치 대조/클릭 검증 후 순차 적용한다. 새 방향 에셋 ZIP과 E01/E07/E06 시안은 Library 경로를 받았지만 다운로드 호스트 CONNECT 403 때문에 아직 픽셀 검수하지 못했다. 적용하지 않았다. `POSE_REQUEST_KO.md`의 기존 ID/제안 ID 구분을 따른다.
++
++원탁의 실제 전신 착석에는 뿔이·부리·나비·보리·토리·콩이의 의자 자세, 도토의 의자 자세, 세련·너울의 방향 맞춘 자세가 필요하다. 현재 각 인물의 중립/바닥 앉기/휴대용 의자를 원탁 의자 자산으로 임의 확정하지 않는다. 표시층은 기존 프로필을 이용한 참석자 자리 배치부터 진행한다.
