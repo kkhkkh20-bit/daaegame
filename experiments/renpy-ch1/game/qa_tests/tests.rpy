@@ -1414,3 +1414,14 @@ testcase w1c_wall_and_seal:
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("fake_testimony"))
+
+testcase karo_work_offer:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=2,location="room13",life_poc=True),())
+    pause 1.0
+    $ r13_edit(flags=[f for f in room13["flags"] if f!="livelihood_open"])
+    run Call("r13_qa_goto",2,0,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("livelihood_open") and room13["period"]==0)

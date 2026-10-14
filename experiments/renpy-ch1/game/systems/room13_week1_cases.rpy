@@ -62,6 +62,13 @@ init 110 python:
 
 label r13_w1c_events:
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
+    # Time moves only by work or sleep (0.18.5): before 일자리 opens there was nothing
+    # but sleep. From day 2 까로 comes to find Dad and offers the work himself (owner, 0.18.12).
+    if _d>=2 and r13_has("lodging") and not r13_has("livelihood_open"):
+        call r13_ev_here("calm")
+        call r13_lines([(None,"까로가 눈을 털며 다가왔다. 마차 이야기를 하러 온 얼굴이었다.")]+list(ROOM13["topics"]["life:karo"]["lines"]),"w1c:karo:work")
+        $ r13_finish_topic("life:karo")
+        call r13_lines([("dad","(일을 하면 하루가 간다. 일하지 않는 시간에는 마을을 돌아볼 수 있다.)",{"thought":True})],"w1c:karo:time")
     if 2<=_d<=3 and _p<=1 and _loc=="square" and not r13_has("ev_g_done"):
         call r13_w1c_portrait
     if 2<=_d<=4 and _p<=1 and _loc=="post" and not r13_has("ev_l_done"):
