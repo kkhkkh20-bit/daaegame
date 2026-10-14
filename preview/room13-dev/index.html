@@ -198,15 +198,33 @@
     @media(orientation:portrait){#portrait-note{display:block;position:fixed;bottom:15px;left:5%;width:90%;box-sizing:border-box;padding:12px;text-align:center;color:#f3e7ce;background:#30261fe8;border:1px solid #806446;border-radius:8px;font-size:14px;pointer-events:none;z-index:90}}
     </style>
 
+<style id="r13-title-loader">@font-face{font-family:Room13Title;src:url('Room13Title.woff2') format('woff2');font-display:swap}
+:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.0734)}
+html,body{background:#07141b}
+#presplash{object-fit:contain;filter:none;image-rendering:auto}
+#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.15);font-family:Room13Title,serif;color:#f7f1e5;text-shadow:0 2px 4px #07141b}
+#loading-brand .chapter{color:#d7ba80;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);margin:0 0 14px}
+#loading-brand h1{font-family:Room13Title,serif;color:#f7f1e5;font-size:clamp(34px,calc(var(--title-w)*.08125),104px);line-height:1.15;margin:0 0 26px;font-weight:400}
+#loading-brand .subtitle{font-size:clamp(14px,calc(var(--title-w)*.0203125),26px);margin:0;color:#d9dfd7}
+#loading-brand .loading-hint{margin-top:38px;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#d7ba80}
+#statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.11);width:calc(var(--title-w)*.34);max-width:440px;min-width:0;padding:12px 0;background:transparent;border:0;border-radius:0}
+#statusTextDiv{max-height:12vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#bac8c7}
+#statusProgress{accent-color:#d7ba80;height:5px;border:0}
+#ContextMenu a{background:#132b30;border-color:#6b6751;color:#eee8dc}
+/* The web utility menu must not intercept the in-game settings gear on phones. */
+#ContextContainer{pointer-events:none;right:3px;top:3px}
+#ContextButton{pointer-events:auto;display:block;width:16px;height:16px;padding:0;font-size:13px;line-height:16px}
+#ContextMenu,#ContextMenu a,#ContextMenu input{pointer-events:auto}
+</style>
 </head>
 
 <body>
   <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
   <div id="overlayDiv"></div>
 
-  <img id="presplash" src="loading-scene.png">
+  <img id="presplash" src="loading-scene.webp">
 
-  <div id="loading-brand"><h1>다람탐정</h1><p>마을로 들어가는 중…<br>처음 접속할 때 실행 파일을 내려받습니다.</p></div>
+  <div id="loading-brand"><p class="chapter">첫 번째 이야기</p><h1>다람탐정</h1><p class="subtitle">눈 아래의 열세 번째 방</p><p class="loading-hint">마을의 문을 여는 중…</p></div>
     <div id="portrait-note">휴대폰을 가로로 돌리면 글씨와 조사 지점이 더 잘 보입니다.</div>
     <div id="ContextContainer">
     <a id="ContextButton">&#8801;</a><br />
@@ -246,7 +264,7 @@
           }
       }
   </script>
-  <script src="renpy-pre.js?v=9019c065da87"></script>
+  <script src="renpy-pre.js?v=813e4bc7516c"></script>
   <script async type="text/javascript" src="renpy.js"></script>
 <script>
     const brand=document.getElementById('loading-brand');

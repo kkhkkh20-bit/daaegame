@@ -2,28 +2,28 @@
   "engine": "Ren'Py 8.5.3",
   "game_transport": {
     "multipart": true,
-    "archive_bytes": 247670284,
-    "archive_sha256": "9019c065da878b5533f7a292669cedae0ff61db26a00d453c9be29165d7968b0",
+    "archive_bytes": 249413993,
+    "archive_sha256": "813e4bc7516c6016c05336b199f8a63d66f84972bad661937d6db5fd79cdb1e5",
     "parts": [
       {
         "file": "game.part01",
         "bytes": 62914560,
-        "sha256": "e9fece064a321def16bef006726ae100b1bad23a82514d3ffb7a11ddcb2d2ee2"
+        "sha256": "a517dd03cc63d43a95268f25d615e1709a9a6170985ba999379c7214419692f8"
       },
       {
         "file": "game.part02",
         "bytes": 62914560,
-        "sha256": "c9ef6b128e82872994c5982d4c3ec658dfa03fa09a04030fc825176614bc21cd"
+        "sha256": "a67b7c314f80962a4c23a399dd2b94f84350a731ec79f2128ea1d5a97de7e1f0"
       },
       {
         "file": "game.part03",
         "bytes": 62914560,
-        "sha256": "be088b399975ecefd19ce6dc66b1182de89653626bd91b1b1a979cb8a7c12100"
+        "sha256": "f8c2dc56e2b53f140c6c65932953c16dcb357c145ac648347959322be26c214d"
       },
       {
         "file": "game.part04",
-        "bytes": 58926604,
-        "sha256": "fb4d21970309bb4ced5148469c12a6a8ade331a22a9ca699c38e8f361377513a"
+        "bytes": 60670313,
+        "sha256": "9da345766469496b3b8af665f40b70ed209c02ee4f778e1e1ed71637ab2259fc"
       }
     ]
   },
@@ -36,25 +36,33 @@
       "bytes": 504736,
       "sha256": "f467d1b10e6b88dfa8399c9f93b38c7643e050abfe4fc15800ac0b000f5a57d6"
     },
+    "Room13Title-OFL.txt": {
+      "bytes": 4497,
+      "sha256": "8eb1c1019fe7fe6d0b6e7d7bbbba1d9cbdd969d8c5f26455708f6cfb8a77284c"
+    },
+    "Room13Title.woff2": {
+      "bytes": 609184,
+      "sha256": "a48d4f041729d39e27e117e27045f4e2f9508b085d4b2e04dad03ed6e3c0b504"
+    },
     "game-transport.json": {
       "bytes": 758,
-      "sha256": "148a409b99344385b184b1c7fe6c70976479b49e0bdd7380b740ea75d1a2bd8f"
+      "sha256": "151757c7f9cee1d3b3c59643e2307341a0d0eaddf7a2a69659020df1b2904343"
     },
     "game.part01": {
       "bytes": 62914560,
-      "sha256": "e9fece064a321def16bef006726ae100b1bad23a82514d3ffb7a11ddcb2d2ee2"
+      "sha256": "a517dd03cc63d43a95268f25d615e1709a9a6170985ba999379c7214419692f8"
     },
     "game.part02": {
       "bytes": 62914560,
-      "sha256": "c9ef6b128e82872994c5982d4c3ec658dfa03fa09a04030fc825176614bc21cd"
+      "sha256": "a67b7c314f80962a4c23a399dd2b94f84350a731ec79f2128ea1d5a97de7e1f0"
     },
     "game.part03": {
       "bytes": 62914560,
-      "sha256": "be088b399975ecefd19ce6dc66b1182de89653626bd91b1b1a979cb8a7c12100"
+      "sha256": "f8c2dc56e2b53f140c6c65932953c16dcb357c145ac648347959322be26c214d"
     },
     "game.part04": {
-      "bytes": 58926604,
-      "sha256": "fb4d21970309bb4ced5148469c12a6a8ade331a22a9ca699c38e8f361377513a"
+      "bytes": 60670313,
+      "sha256": "9da345766469496b3b8af665f40b70ed209c02ee4f778e1e1ed71637ab2259fc"
     },
     "game/assets/approach.png": {
       "bytes": 2571407,
@@ -609,24 +617,28 @@
       "sha256": "23eba9c850a0991808c64883feb7edae53a84319da3ce9ef01c66e85e931e9b0"
     },
     "index.html": {
-      "bytes": 8061,
-      "sha256": "27c90183028767b04a48df543469be706237199eb7ab4a9d4b4d7c8900560226"
+      "bytes": 9942,
+      "sha256": "8c435954198a2b51e9903595bd28426ae758ea70b94814f743b5840ff6a7eaa5"
     },
     "loading-scene.png": {
       "bytes": 1946111,
       "sha256": "83363cfd9b6875b05271528928affecceb0acb95a5ef5a2b84cd0b6d772aa1e9"
+    },
+    "loading-scene.webp": {
+      "bytes": 1743114,
+      "sha256": "f8585f5969b0cd1795ed4b82f30c5dd0b24fd5a4a947466de3b4083270502ec6"
     },
     "manifest.json": {
       "bytes": 1959,
       "sha256": "751f360c5911103c7665c115f18715a92a22c33dba0e288bd7cdf3ac61e7d83f"
     },
     "pwa_catalog.json": {
-      "bytes": 5193,
-      "sha256": "33d79c265285fd1825de2d7073a3a95037ae8816ac6983d8df3b618c496ddf03"
+      "bytes": 5259,
+      "sha256": "3086c67e8775304321c479745f194529de70733209ae36809b4406bfc94c7be0"
     },
     "renpy-pre.js": {
       "bytes": 31502,
-      "sha256": "dc092768a9eb664ed30954012962e12fb6f432fb06487f1d1f1dec49ddc8b348"
+      "sha256": "affbb6cc4919dcd657d35422ec8e4c0c069b64f66b155d31bc4306e678fe8da2"
     },
     "renpy.data": {
       "bytes": 15057379,
@@ -645,5 +657,5 @@
       "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
     }
   },
-  "total_bytes": 387260111
+  "total_bytes": 391362562
 }

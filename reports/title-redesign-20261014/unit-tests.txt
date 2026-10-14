@@ -1,0 +1,119 @@
+........................................................................................
+----------------------------------------------------------------------
+Ran 88 tests in 0.107s
+
+OK
+{
+  "passed": true,
+  "checks": [
+    "8 claims, statements, conclusions and evidence ids are consistent",
+    "accepted evidence is a subset of the original support sets",
+    "break / soft (other statement, consent) / wrong",
+    "press reveals hidden statement; true statements are not required",
+    "conclusion unlocks after all required statements; propositions untouched",
+    "no trust meter; missing evidence makes a claim unarguable; give-up closes per session",
+    "C3 opens after C2, C4 after C3",
+    "F3 manpower depends on real preparation flags",
+    "F4 s2 skipped after C4",
+    "seat stances derived from progress; sessions separated",
+    "conclusion positions vary per claim",
+    "selection skips true statements after a break",
+    "goal line shows meeting countdown and evidence/preparation readiness"
+  ]
+}
+{
+  "passed": true,
+  "checks": [
+    "all diagram candidate pairs",
+    "reasonable wrong hypothesis rejected",
+    "read-only notes no unseen clue disclosure",
+    "tool ownership check",
+    "once-only old activity reward/time",
+    "owned evidence required; base presentation always invoked",
+    "presentation changes response without opening passage",
+    "first/repeat admission and late-case preserved",
+    "old completed save no re-payment",
+    "trial cancel returns same claim"
+  ]
+}
+{
+  "pass": true,
+  "checks": [
+    "unique pickups including repeated clicks",
+    "pencil and ruler reject wrong sequence without consumption",
+    "wrong item/target keeps inventory",
+    "placed paper never respawns or duplicates",
+    "save-roundtrip mid-puzzle preserves completion and one reward",
+    "reusable magnifier returns real render targets in both views",
+    "repeat completion cannot farm anything",
+    "portable state follows family; active crime scene rejects new kit"
+  ],
+  "final_items": [
+    "pencil",
+    "ruler",
+    "magnifier"
+  ]
+}
+{
+  "pass": true,
+  "evidence": 34,
+  "testimony": 6,
+  "page_size": 12,
+  "checks": [
+    "explicit categories",
+    "acquired only and no duplicates",
+    "archive never submitted",
+    "34 entries pagination",
+    "old save factual people recovery without mutations",
+    "real history and thought distinction",
+    "limitation copy removed only from UI"
+  ]
+}
+{
+  "passed": true,
+  "checks": [
+    "same-period chronological/recent order",
+    "current evidence only in presentation",
+    "favorite and seen change UI state only",
+    "unknown record rejected",
+    "legacy missing UI fields safe",
+    "8/12 pagination",
+    "separate documents do not imply comparison",
+    "explicit comparison grants once without time cost"
+  ],
+  "retain_callbacks": 3
+}
+{
+  "passed": true,
+  "checks": [
+    "same-period chronological/recent order",
+    "current evidence only in presentation",
+    "favorite and seen change UI state only",
+    "unknown record rejected",
+    "legacy missing UI fields safe",
+    "8/12 pagination",
+    "separate documents do not imply comparison",
+    "explicit comparison grants once without time cost"
+  ],
+  "retain_callbacks": 3
+}
+PASS: archive filter and read isolation; all known appointments; past/unknown appointments absent; current record read tracking
+PASS: automatic read action never exits its parent interaction
+PASS: fresh / legacy route gates; new runs never inherit the route from earlier runs
+{"status": "passed", "conditions": 168, "optional_people": ["resident_kongi", "resident_piko", "resident_ppul", "resident_seol", "resident_sling", "resident_somi", "resident_tori", "resident_yeoni"], "changed_schedule_entries": 179, "all_35_content_residents_reachable": 35, "first_day_square": [{"period": 0, "before": ["doto", "resident_kongi", "resident_owlgp", "resident_piko", "resident_ppul", "resident_seol", "resident_tori"], "after": ["doto", "resident_owlgp", "resident_seol", "resident_tori"]}, {"period": 1, "before": ["doto", "resident_lamplighter", "resident_piko", "resident_seol", "resident_sling", "resident_somi", "resident_tori", "resident_yeoni"], "after": ["doto", "resident_lamplighter", "resident_piko"]}, {"period": 2, "before": ["doto", "resident_badook", "resident_bori"], "after": ["doto", "resident_badook", "resident_bori"]}], "maxima": {"school": 12, "inn": 6, "gate": 6, "workshop": 8, "post": 7, "dining": 3, "store": 8, "square": 6, "clinic": 2, "hall": 2, "facility": 2, "greenhouse": 1}, "checks": ["Non-optional story-critical locations unchanged for all states", "Piko clinic and shelter/patient overrides preserved", "Dead/detained residents absent", "Period3 remains evening, home is not field presence", "No schedule query mutates any story state"]}
+{
+  "pass": true,
+  "checks": [
+    "No tool, no direct object observation, wrong location or missing E03 cannot record",
+    "Before-E04 diagram observation adds only one optional note; no evidence/time/flags/passages",
+    "JSON save/load and repeated use retain one note with original timestamp",
+    "Only the actually recorded observation exposes its own question",
+    "Comparison hint follows existing map day/time availability; cost/grant remain only on map",
+    "Presentation retains original pipeline and requires owned record plus completed optional question",
+    "Daram follow-up remains unavailable while child is held",
+    "Legacy save view is read-only; notes associate with E04 without falsely granting it",
+    "Commit occurs after screen Return; first-save signal true once and repeat false",
+    "Seam popup directly reaches child conversation only when companion is present and note exists"
+  ]
+}
+PASS: testimony requires conversation; owned-only comparison; presentation; absent employer
