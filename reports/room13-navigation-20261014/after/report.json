@@ -1,0 +1,12 @@
+{
+  "archive_sha256": "1291178d95cb42c6409ac5a76ee4bb97136b5c4443336fccfc770593d862d5f3",
+  "kind": "Explicit day-two/day-eight fixture; real navigation, cancellation, save/load, and touch clicks",
+  "checks": [
+    "Browsing town/building/interior and selecting/cancelling destinations does not alter any room state; cost shown before travel",
+    "Real adjacent travel inn→hall→room→hall→inn and save→dining→load retain day/period, clues and exact saved state",
+    "844×390 touch, large text: list selection/confirmed travel, map/list preference, cancel and real save/load passed",
+    "Day-eight unknown greenhouse/altar remain absent; north-path breadcrumb correct; no resident schedule lookup added"
+  ],
+  "status": "passed",
+  "visual_review": "Reviewed desktop map, HUD and mobile landscape list including last room; portrait remains letterboxed and small."
+}

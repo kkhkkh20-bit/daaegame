@@ -1,0 +1,132 @@
+[
+  {
+    "file": "test_dialogue_rhythm.py",
+    "returncode": 0,
+    "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.004s\n\nOK\n"
+  },
+  {
+    "file": "test_firstday_questions0171.py",
+    "returncode": 0,
+    "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n"
+  },
+  {
+    "file": "test_gate_panorama0173.py",
+    "returncode": 0,
+    "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.032s\n\nOK\n"
+  },
+  {
+    "file": "test_local_navigation.py",
+    "returncode": 0,
+    "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.009s\n\nOK\n"
+  },
+  {
+    "file": "test_observation_thoughts.py",
+    "returncode": 0,
+    "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.005s\n\nOK\n"
+  },
+  {
+    "file": "test_room13_debate.py",
+    "returncode": 0,
+    "output": "{\n  \"passed\": true,\n  \"checks\": [\n    \"8 claims, statements, conclusions and evidence ids are consistent\",\n    \"accepted evidence is a subset of the original support sets\",\n    \"break / soft (other statement, consent) / wrong\",\n    \"press reveals hidden statement; true statements are not required\",\n    \"conclusion unlocks after all required statements; propositions untouched\",\n    \"no trust meter; missing evidence makes a claim unarguable; give-up closes per session\",\n    \"C3 opens after C2, C4 after C3\",\n    \"F3 manpower depends on real preparation flags\",\n    \"F4 s2 skipped after C4\",\n    \"seat stances derived from progress; sessions separated\",\n    \"conclusion positions vary per claim\",\n    \"selection skips true statements after a break\",\n    \"goal line shows meeting countdown and evidence/preparation readiness\"\n  ]\n}\n"
+  },
+  {
+    "file": "test_room13_dialogue_motion.py",
+    "returncode": 0,
+    "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "file": "test_room13_first_mystery.py",
+    "returncode": 0,
+    "output": "{\n  \"passed\": true,\n  \"checks\": [\n    \"all diagram candidate pairs\",\n    \"reasonable wrong hypothesis rejected\",\n    \"read-only notes no unseen clue disclosure\",\n    \"tool ownership check\",\n    \"once-only old activity reward/time\",\n    \"owned evidence required; base presentation always invoked\",\n    \"presentation changes response without opening passage\",\n    \"first/repeat admission and late-case preserved\",\n    \"old completed save no re-payment\",\n    \"trial cancel returns same claim\"\n  ]\n}\n"
+  },
+  {
+    "file": "test_room13_inspection.py",
+    "returncode": 0,
+    "output": "{\n  \"pass\": true,\n  \"checks\": [\n    \"unique pickups including repeated clicks\",\n    \"pencil and ruler reject wrong sequence without consumption\",\n    \"wrong item/target keeps inventory\",\n    \"placed paper never respawns or duplicates\",\n    \"save-roundtrip mid-puzzle preserves completion and one reward\",\n    \"reusable magnifier returns real render targets in both views\",\n    \"repeat completion cannot farm anything\",\n    \"portable state follows family; active crime scene rejects new kit\"\n  ],\n  \"final_items\": [\n    \"pencil\",\n    \"ruler\",\n    \"magnifier\"\n  ]\n}\n"
+  },
+  {
+    "file": "test_room13_intro_clues.py",
+    "returncode": 0,
+    "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.009s\n\nOK\n"
+  },
+  {
+    "file": "test_room13_learning.py",
+    "returncode": 0,
+    "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.024s\n\nOK\n"
+  },
+  {
+    "file": "test_room13_livelihood.py",
+    "returncode": 0,
+    "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n"
+  },
+  {
+    "file": "test_room13_pov.py",
+    "returncode": 0,
+    "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "file": "test_room13_question_layout.py",
+    "returncode": 0,
+    "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+  },
+  {
+    "file": "test_room13_records.py",
+    "returncode": 0,
+    "output": "{\n  \"pass\": true,\n  \"evidence\": 34,\n  \"testimony\": 6,\n  \"page_size\": 12,\n  \"checks\": [\n    \"explicit categories\",\n    \"acquired only and no duplicates\",\n    \"archive never submitted\",\n    \"34 entries pagination\",\n    \"old save factual people recovery without mutations\",\n    \"real history and thought distinction\",\n    \"limitation copy removed only from UI\"\n  ]\n}\n"
+  },
+  {
+    "file": "test_room13_review0155.py",
+    "returncode": 0,
+    "output": "{\n  \"passed\": true,\n  \"checks\": [\n    \"same-period chronological/recent order\",\n    \"current evidence only in presentation\",\n    \"favorite and seen change UI state only\",\n    \"unknown record rejected\",\n    \"legacy missing UI fields safe\",\n    \"8/12 pagination\",\n    \"separate documents do not imply comparison\",\n    \"explicit comparison grants once without time cost\"\n  ],\n  \"retain_callbacks\": 3\n}\n"
+  },
+  {
+    "file": "test_room13_review0157.py",
+    "returncode": 0,
+    "output": "{\n  \"passed\": true,\n  \"checks\": [\n    \"same-period chronological/recent order\",\n    \"current evidence only in presentation\",\n    \"favorite and seen change UI state only\",\n    \"unknown record rejected\",\n    \"legacy missing UI fields safe\",\n    \"8/12 pagination\",\n    \"separate documents do not imply comparison\",\n    \"explicit comparison grants once without time cost\"\n  ],\n  \"retain_callbacks\": 3\n}\nPASS: archive filter and read isolation; all known appointments; past/unknown appointments absent; current record read tracking\nPASS: automatic read action never exits its parent interaction\n"
+  },
+  {
+    "file": "test_room13_route_knowledge.py",
+    "returncode": 0,
+    "output": "PASS: fresh / legacy / replay route gates; mother clue retained; new-run snapshot\n"
+  },
+  {
+    "file": "test_room13_routines0156.py",
+    "returncode": 0,
+    "output": "{\"status\": \"passed\", \"conditions\": 168, \"optional_people\": [\"resident_kongi\", \"resident_piko\", \"resident_ppul\", \"resident_seol\", \"resident_sling\", \"resident_somi\", \"resident_tori\", \"resident_yeoni\"], \"changed_schedule_entries\": 179, \"all_35_content_residents_reachable\": 35, \"first_day_square\": [{\"period\": 0, \"before\": [\"doto\", \"resident_kongi\", \"resident_owlgp\", \"resident_piko\", \"resident_ppul\", \"resident_seol\", \"resident_tori\"], \"after\": [\"doto\", \"resident_owlgp\", \"resident_seol\", \"resident_tori\"]}, {\"period\": 1, \"before\": [\"doto\", \"resident_lamplighter\", \"resident_piko\", \"resident_seol\", \"resident_sling\", \"resident_somi\", \"resident_tori\", \"resident_yeoni\"], \"after\": [\"doto\", \"resident_lamplighter\", \"resident_piko\"]}, {\"period\": 2, \"before\": [\"doto\", \"resident_badook\", \"resident_bori\"], \"after\": [\"doto\", \"resident_badook\", \"resident_bori\"]}], \"maxima\": {\"workshop\": 8, \"clinic\": 2, \"school\": 12, \"post\": 7, \"gate\": 6, \"store\": 8, \"inn\": 6, \"square\": 6, \"dining\": 3, \"hall\": 2, \"facility\": 2, \"greenhouse\": 1}, \"checks\": [\"Non-optional story-critical locations unchanged for all states\", \"Piko clinic and shelter/patient overrides preserved\", \"Dead/detained residents absent\", \"Period3 remains evening, home is not field presence\", \"No schedule query mutates any story state\"]}\n"
+  },
+  {
+    "file": "test_room13_tool_discovery.py",
+    "returncode": 0,
+    "output": "{\n  \"pass\": true,\n  \"checks\": [\n    \"No tool, no direct object observation, wrong location or missing E03 cannot record\",\n    \"Before-E04 diagram observation adds only one optional note; no evidence/time/flags/passages\",\n    \"JSON save/load and repeated use retain one note with original timestamp\",\n    \"Only the actually recorded observation exposes its own question\",\n    \"Comparison hint follows existing map day/time availability; cost/grant remain only on map\",\n    \"Presentation retains original pipeline and requires owned record plus completed optional question\",\n    \"Daram follow-up remains unavailable while child is held\",\n    \"Legacy save view is read-only; notes associate with E04 without falsely granting it\",\n    \"Commit occurs after screen Return; first-save signal true once and repeat false\",\n    \"Seam popup directly reaches child conversation only when companion is present and note exists\"\n  ]\n}\n"
+  },
+  {
+    "file": "test_room13_work_clues.py",
+    "returncode": 0,
+    "output": "PASS: testimony requires conversation; owned-only comparison; presentation; absent employer\n"
+  },
+  {
+    "file": "test_save_ui0171.py",
+    "returncode": 0,
+    "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.006s\n\nOK\n"
+  },
+  {
+    "file": "test_ui_flow0171.py",
+    "returncode": 0,
+    "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.011s\n\nOK\n"
+  },
+  {
+    "file": "test_world_camera.py",
+    "returncode": 0,
+    "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.005s\n\nOK\n"
+  },
+  {
+    "file": "test_world_selection0177.py",
+    "returncode": 0,
+    "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.038s\n\nOK\n"
+  },
+  {
+    "file": "qa_room13_rules.py",
+    "returncode": 0,
+    "output": "test_afternoon_measurement_allows_same_evening_recheck (__main__.Rules.test_afternoon_measurement_allows_same_evening_recheck) ... ok\ntest_all_claim_paths_use_actual_submitted_evidence (__main__.Rules.test_all_claim_paths_use_actual_submitted_evidence) ... ok\ntest_all_rescue_routes_require_current_scout (__main__.Rules.test_all_rescue_routes_require_current_scout) ... ok\ntest_all_seven_endings_and_fresh_run_history (__main__.Rules.test_all_seven_endings_and_fresh_run_history) ... ok\ntest_anonymous_then_named_witness_is_distinct_disclosure (__main__.Rules.test_anonymous_then_named_witness_is_distinct_disclosure) ... ok\ntest_anonymous_witness_cannot_complete_c2 (__main__.Rules.test_anonymous_witness_cannot_complete_c2) ... ok\ntest_buri_requires_both_sources_and_consent (__main__.Rules.test_buri_requires_both_sources_and_consent) ... ok\ntest_detained_granny_stays_absent_after_day_transition (__main__.Rules.test_detained_granny_stays_absent_after_day_transition) ... ok\ntest_different_convoy_revision_can_be_disclosed_again (__main__.Rules.test_different_convoy_revision_can_be_disclosed_again) ... ok\ntest_evidence_and_unlock_references_exist (__main__.Rules.test_evidence_and_unlock_references_exist) ... ok\ntest_f3_requires_real_preparations (__main__.Rules.test_f3_requires_real_preparations) ... ok\ntest_leaked_contact_reopens_safety_work_not_reunion (__main__.Rules.test_leaked_contact_reopens_safety_work_not_reunion) ... ok\ntest_legacy_convoy_disclosure_does_not_repeat_consequence (__main__.Rules.test_legacy_convoy_disclosure_does_not_repeat_consequence) ... ok\ntest_past_knowledge_is_not_presentable (__main__.Rules.test_past_knowledge_is_not_presentable) ... ok\ntest_present_preserves_original_and_deduplicates (__main__.Rules.test_present_preserves_original_and_deduplicates) ... ok\ntest_prevention_can_reach_true_ending_without_murder_proof (__main__.Rules.test_prevention_can_reach_true_ending_without_murder_proof) ... ok\ntest_protection_blocks_pressure_for_wait_and_sleep (__main__.Rules.test_protection_blocks_pressure_for_wait_and_sleep) ... ok\ntest_read_skip_stops_on_new_or_changed_line (__main__.Rules.test_read_skip_stops_on_new_or_changed_line) ... ok\ntest_repeat_activity_does_not_add_time_or_reward (__main__.Rules.test_repeat_activity_does_not_add_time_or_reward) ... ok\ntest_sleep_applies_leak_consequence_once (__main__.Rules.test_sleep_applies_leak_consequence_once) ... ok\ntest_survival_branch_outcomes (__main__.Rules.test_survival_branch_outcomes) ... ok\ntest_topic_unlock_does_not_grant_testimony (__main__.Rules.test_topic_unlock_does_not_grant_testimony) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 0.323s\n\nOK\n"
+  }
+]
