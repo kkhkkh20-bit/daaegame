@@ -1,0 +1,2004 @@
+--- a/experiments/renpy-ch1/game/room13_navigation.rpy
++++ b/experiments/renpy-ch1/game/room13_navigation.rpy
+@@ -48 +48,8 @@
+-            if key in allowed]
++            if key in allowed and r13_map_discovered(key)]
++
++    def r13_map_discovered(key):
++        # Do not expose secret names through stale/legacy current-location saves.
++        if key=="passage":return bool(store.room13.get("passage_open") and r13_secret_route_available())
++        if key=="greenhouse":return bool(store.room13["day"]>=8 and r13_has("E19"))
++        if key=="altar":return bool(store.room13.get("finale_started"))
++        return True
+@@ -55 +62 @@
+-        return next((key for key in keys if key in r13_places()),keys[0] if keys else current)
++        return next((key for key in keys if key in r13_places()),keys[0] if keys else None)
+@@ -58,0 +66 @@
++        if not r13_map_discovered(location):return "마을"
+@@ -117,0 +126 @@
++    default map_hover=None
+@@ -118,0 +128,4 @@
++    # Revalidate restored selection before labels, previews or travel controls render.
++    $ region = "village" if region=="mountain" and room13["day"]<8 else region
++    $ selected = r13_map_selection(region,selected)
++    key "game_menu" action Return(False)
+@@ -149,0 +163,2 @@
++    elif region=="village":
++        use r13_worldmap_v5(selected,ready,map_hover)
+@@ -167,19 +182,22 @@
+-    frame:
+-        area (916,150,334,490) padding (22,18) background Solid("#163442e8")
+-        fixed:
+-            xsize 290 ysize 454
+-            text R13_PLACES[selected][0] ypos 0 size 27 color "#f6ddb0" xsize 286
+-            add Transform(r13_background(R13_PLACES[selected][1]),size=(286,161),nearest=True) ypos 70
+-            if region=="village" and selected=="inn":
+-                textbutton "여관 내부 보기 ›":
+-                    style "r13_action_button" ypos 243 xsize 286 ysize 64 text_size 24
+-                    action [SetScreenVariable("region","inn"),SetScreenVariable("selected","inn")] sensitive ready
+-            if selected==room13["location"]:
+-                text "● 지금 머무는 곳" ypos 325 size 24 color "#f3ca73"
+-            elif selected in r13_places():
+-                text "이동 비용 · 시간 소모 없음" ypos 325 size 21 color "#e2dcc5" xsize 286
+-                textbutton "이곳으로 이동":
+-                    style "r13_action_button" ypos 382 xsize 286 ysize 72 text_size 25
+-                    action Return(selected) sensitive ready
+-            else:
+-                text "지금은 이동할 수 없습니다." ypos 325 size 22 color "#dbcda9" xsize 286
++    if selected is not None:
++        frame:
++            area (916,150,334,490) padding (22,18) background Solid("#163442e8")
++            fixed:
++                xsize 290 ysize 454
++                text R13_PLACES[selected][0] ypos 0 size 27 color "#f6ddb0" xsize 286
++                add Transform(r13_background(R13_PLACES[selected][1]),size=(286,161),nearest=True) ypos 70
++                if region=="village" and selected=="inn":
++                    textbutton "여관 내부 보기 ›":
++                        style "r13_action_button" ypos 243 xsize 286 ysize 64 text_size 24
++                        action [SetScreenVariable("region","inn"),SetScreenVariable("selected","inn")] sensitive ready
++                if selected==room13["location"]:
++                    text "● 지금 머무는 곳" ypos 325 size 24 color "#f3ca73"
++                elif selected in r13_places():
++                    text "이동 비용 · 시간 소모 없음" ypos 325 size 21 color "#e2dcc5" xsize 286
++                    textbutton "이곳으로 이동":
++                        style "r13_action_button" ypos 382 xsize 286 ysize 72 text_size 25
++                        action Return(selected) sensitive ready
++                else:
++                    text "지금은 이동할 수 없습니다." ypos 325 size 22 color "#dbcda9" xsize 286
++    else:
++        text "아직 확인한 장소가 없습니다." xpos 932 ypos 180 size 22 color "#fff0cb"
+--- a/experiments/renpy-ch1/dev/package_web_webp.py
++++ b/experiments/renpy-ch1/dev/package_web_webp.py
+@@ -91 +91 @@
+-            if not dest.exists() and path.suffix != ".rpy":
++            if not dest.exists() and path.suffix != ".rpy" and path.name != "room13-worldmap-v5.json":
+--- a/experiments/renpy-ch1/dev/selected_asset_overlay.json
++++ b/experiments/renpy-ch1/dev/selected_asset_overlay.json
+@@ -129,0 +130,5 @@
++    },
++    {
++      "file": "assets/room13-worldmap-v5.png",
++      "source": "design/maps/20261014/worldmap-winter-shrine-old-quarry-v5.png",
++      "sha256": "86ef28a4971e244aadca28833414a800f22a03c0f0a82081dea7c4fc5210f4fd"
+--- a/experiments/renpy-ch1/game/room13_worldmap_v5.rpy
++++ b/experiments/renpy-ch1/game/room13_worldmap_v5.rpy
+@@ -0,0 +1,78 @@
++# Source artwork is never repainted: independent transparent displayables use
++# polygon alpha masks over the original PNG. SVG counterparts live in design/maps.
++init 61 python:
++    R13_WORLD_V5 = json.load(renpy.file("room13-worldmap-v5.json"))
++    R13_WORLD_V5_ART = "assets/room13-worldmap-v5.png"
++    R13_WORLD_V5_SCALE = 860.0 / 1672
++    R13_MAP_NODES["village"] = {key: tuple(int(round(p * R13_WORLD_V5_SCALE)) for p in spec["point"])
++        for key, spec in R13_WORLD_V5["layers"].items() if spec["node"]}
++
++    def r13_v5_rect(key):
++        x, y, w, h = R13_WORLD_V5["layers"][key]["bounds"]
++        x0, y0, x1, y1 = [int(round(v * R13_WORLD_V5_SCALE)) for v in (x, y, x+w, y+h)]
++        return (x0, y0, x1-x0, y1-y0)
++
++    class R13V5Mask(renpy.Displayable):
++        def __init__(self, key, outline=False, **kwargs):
++            super(R13V5Mask, self).__init__(**kwargs)
++            self.key, self.outline = key, outline
++        def render(self, width, height, st, at):
++            spec = R13_WORLD_V5["layers"][self.key]
++            x, y, w, h = spec["bounds"]
++            rv = renpy.Render(w, h)
++            points = [(px-x, py-y) for px, py in spec["polygon"]]
++            rv.canvas().polygon("#ffd57b" if self.outline else "#fff", points, 7 if self.outline else 0)
++            return rv
++
++    def r13_v5_layer(key, highlighted=False):
++        spec = R13_WORLD_V5["layers"][key]
++        art = AlphaMask(Crop(tuple(spec["bounds"]), R13_WORLD_V5_ART), R13V5Mask(key))
++        if highlighted:
++            art = Transform(art, matrixcolor=BrightnessMatrix(.18))
++        return Transform(art, size=r13_v5_rect(key)[2:], nearest=True)
++
++    def r13_v5_outline(key):
++        return Transform(R13V5Mask(key, True), size=r13_v5_rect(key)[2:], nearest=True)
++
++    def r13_v5_label(key):
++        return tuple(int(round(p * R13_WORLD_V5_SCALE)) for p in R13_WORLD_V5["layers"][key]["label"])
++
++screen r13_worldmap_v5(selected, ready, map_hover):
++    add Transform(R13_WORLD_V5_ART, size=(860,484), nearest=True) xpos 30 ypos 150
++    # All structures have their own alpha layer, including unlabelled scenery.
++    # Scenery never becomes a focus target, tooltip, or invented visit node.
++    for layer_key, spec in R13_WORLD_V5["layers"].items():
++        $ lx, ly, lw, lh = r13_v5_rect(layer_key)
++        add r13_v5_layer(layer_key) xpos (30+lx) ypos (150+ly)
++    for key, point in r13_map_nodes("village"):
++        $ lx, ly, lw, lh = r13_v5_rect(key)
++        imagebutton:
++            id ("v5_building_"+key)
++            xpos (30+lx) ypos (150+ly)
++            idle r13_v5_layer(key, key==selected or key==map_hover)
++            hover r13_v5_layer(key, True)
++            insensitive r13_v5_layer(key)
++            focus_mask True
++            action SetScreenVariable("selected",key)
++            hovered SetScreenVariable("map_hover",key)
++            unhovered SetScreenVariable("map_hover",None)
++            sensitive ready
++            alt R13_MAP_LABELS[key]
++        if key==selected or key==map_hover:
++            add r13_v5_outline(key) xpos (30+lx) ypos (150+ly)
++    # Text remains UI text; no painted-in names and no labels for locked nodes.
++    for key, point in r13_map_nodes("village"):
++        $ tx, ty = r13_v5_label(key)
++        textbutton (("● " if key==room13["location"] else "") + R13_MAP_LABELS[key]):
++            id ("v5_label_"+key)
++            area (30+tx-57,150+ty-18,114,36)
++            padding (3,3)
++            text_size 20 text_xalign .5 text_yalign .5
++            text_color "#fff3d5" text_hover_color "#ffffff"
++            background Solid("#325b50f5" if key==selected else "#152e30e8")
++            hover_background Solid("#51665af5")
++            action SetScreenVariable("selected",key)
++            hovered SetScreenVariable("map_hover",key)
++            unhovered SetScreenVariable("map_hover",None)
++            sensitive ready
++            alt R13_MAP_LABELS[key]
+--- a/experiments/renpy-ch1/game/room13-worldmap-v5.json
++++ b/experiments/renpy-ch1/game/room13-worldmap-v5.json
+@@ -0,0 +1,1716 @@
++{
++  "source": "20261014/worldmap-winter-shrine-old-quarry-v5.png",
++  "sha256": "86ef28a4971e244aadca28833414a800f22a03c0f0a82081dea7c4fc5210f4fd",
++  "size": [
++    1672,
++    941
++  ],
++  "display_size": [
++    860,
++    484
++  ],
++  "layers": {
++    "farm": {
++      "polygon": [
++        [
++          216,
++          169
++        ],
++        [
++          244,
++          130
++        ],
++        [
++          303,
++          121
++        ],
++        [
++          306,
++          105
++        ],
++        [
++          325,
++          106
++        ],
++        [
++          326,
++          121
++        ],
++        [
++          351,
++          120
++        ],
++        [
++          383,
++          172
++        ],
++        [
++          375,
++          178
++        ],
++        [
++          375,
++          216
++        ],
++        [
++          345,
++          228
++        ],
++        [
++          290,
++          232
++        ],
++        [
++          218,
++          215
++        ]
++      ],
++      "bounds": [
++        216,
++        105,
++        167,
++        127
++      ],
++      "node": null
++    },
++    "farm_shed": {
++      "polygon": [
++        [
++          356,
++          242
++        ],
++        [
++          376,
++          213
++        ],
++        [
++          418,
++          207
++        ],
++        [
++          448,
++          239
++        ],
++        [
++          440,
++          245
++        ],
++        [
++          440,
++          267
++        ],
++        [
++          401,
++          277
++        ],
++        [
++          362,
++          259
++        ]
++      ],
++      "bounds": [
++        356,
++        207,
++        92,
++        70
++      ],
++      "node": null
++    },
++    "road_shed": {
++      "polygon": [
++        [
++          278,
++          324
++        ],
++        [
++          295,
++          302
++        ],
++        [
++          325,
++          296
++        ],
++        [
++          345,
++          320
++        ],
++        [
++          339,
++          325
++        ],
++        [
++          339,
++          345
++        ],
++        [
++          307,
++          354
++        ],
++        [
++          282,
++          344
++        ]
++      ],
++      "bounds": [
++        278,
++        296,
++        67,
++        58
++      ],
++      "node": null
++    },
++    "upper_home": {
++      "polygon": [
++        [
++          516,
++          237
++        ],
++        [
++          540,
++          202
++        ],
++        [
++          576,
++          200
++        ],
++        [
++          578,
++          188
++        ],
++        [
++          591,
++          188
++        ],
++        [
++          593,
++          202
++        ],
++        [
++          605,
++          201
++        ],
++        [
++          632,
++          239
++        ],
++        [
++          624,
++          244
++        ],
++        [
++          624,
++          274
++        ],
++        [
++          581,
++          284
++        ],
++        [
++          523,
++          271
++        ]
++      ],
++      "bounds": [
++        516,
++        188,
++        116,
++        96
++      ],
++      "node": null
++    },
++    "north_home": {
++      "polygon": [
++        [
++          853,
++          286
++        ],
++        [
++          878,
++          255
++        ],
++        [
++          895,
++          252
++        ],
++        [
++          896,
++          239
++        ],
++        [
++          909,
++          239
++        ],
++        [
++          910,
++          251
++        ],
++        [
++          952,
++          246
++        ],
++        [
++          978,
++          280
++        ],
++        [
++          970,
++          287
++        ],
++        [
++          969,
++          318
++        ],
++        [
++          929,
++          333
++        ],
++        [
++          875,
++          327
++        ],
++        [
++          873,
++          338
++        ],
++        [
++          831,
++          342
++        ],
++        [
++          812,
++          328
++        ],
++        [
++          812,
++          310
++        ],
++        [
++          829,
++          288
++        ],
++        [
++          852,
++          285
++        ]
++      ],
++      "bounds": [
++        812,
++        239,
++        166,
++        103
++      ],
++      "node": null
++    },
++    "center_home": {
++      "polygon": [
++        [
++          639,
++          350
++        ],
++        [
++          664,
++          315
++        ],
++        [
++          719,
++          312
++        ],
++        [
++          720,
++          300
++        ],
++        [
++          732,
++          302
++        ],
++        [
++          733,
++          312
++        ],
++        [
++          739,
++          310
++        ],
++        [
++          756,
++          346
++        ],
++        [
++          750,
++          350
++        ],
++        [
++          750,
++          385
++        ],
++        [
++          710,
++          399
++        ],
++        [
++          657,
++          390
++        ],
++        [
++          648,
++          379
++        ]
++      ],
++      "bounds": [
++        639,
++        300,
++        117,
++        99
++      ],
++      "node": null
++    },
++    "long_home": {
++      "polygon": [
++        [
++          430,
++          421
++        ],
++        [
++          455,
++          389
++        ],
++        [
++          474,
++          381
++        ],
++        [
++          489,
++          382
++        ],
++        [
++          494,
++          375
++        ],
++        [
++          548,
++          371
++        ],
++        [
++          552,
++          354
++        ],
++        [
++          566,
++          352
++        ],
++        [
++          570,
++          367
++        ],
++        [
++          627,
++          358
++        ],
++        [
++          653,
++          376
++        ],
++        [
++          676,
++          411
++        ],
++        [
++          669,
++          421
++        ],
++        [
++          670,
++          443
++        ],
++        [
++          617,
++          458
++        ],
++        [
++          557,
++          461
++        ],
++        [
++          532,
++          466
++        ],
++        [
++          456,
++          453
++        ],
++        [
++          441,
++          441
++        ]
++      ],
++      "bounds": [
++        430,
++        352,
++        246,
++        114
++      ],
++      "node": null
++    },
++    "center_blue_home": {
++      "polygon": [
++        [
++          738,
++          402
++        ],
++        [
++          777,
++          361
++        ],
++        [
++          778,
++          346
++        ],
++        [
++          791,
++          347
++        ],
++        [
++          794,
++          360
++        ],
++        [
++          830,
++          357
++        ],
++        [
++          850,
++          383
++        ],
++        [
++          870,
++          398
++        ],
++        [
++          864,
++          408
++        ],
++        [
++          866,
++          444
++        ],
++        [
++          830,
++          459
++        ],
++        [
++          780,
++          456
++        ],
++        [
++          754,
++          440
++        ]
++      ],
++      "bounds": [
++        738,
++        346,
++        132,
++        113
++      ],
++      "node": null
++    },
++    "back_blue_home": {
++      "polygon": [
++        [
++          874,
++          373
++        ],
++        [
++          897,
++          337
++        ],
++        [
++          901,
++          325
++        ],
++        [
++          914,
++          326
++        ],
++        [
++          915,
++          339
++        ],
++        [
++          961,
++          337
++        ],
++        [
++          994,
++          374
++        ],
++        [
++          986,
++          382
++        ],
++        [
++          986,
++          414
++        ],
++        [
++          947,
++          431
++        ],
++        [
++          891,
++          415
++        ],
++        [
++          884,
++          384
++        ]
++      ],
++      "bounds": [
++        874,
++        325,
++        120,
++        106
++      ],
++      "node": null
++    },
++    "shrine": {
++      "polygon": [
++        [
++          1080,
++          295
++        ],
++        [
++          1119,
++          258
++        ],
++        [
++          1147,
++          250
++        ],
++        [
++          1198,
++          294
++        ],
++        [
++          1191,
++          303
++        ],
++        [
++          1191,
++          337
++        ],
++        [
++          1174,
++          345
++        ],
++        [
++          1170,
++          355
++        ],
++        [
++          1131,
++          350
++        ],
++        [
++          1100,
++          336
++        ],
++        [
++          1086,
++          330
++        ]
++      ],
++      "bounds": [
++        1080,
++        250,
++        118,
++        105
++      ],
++      "node": null
++    },
++    "right_home": {
++      "polygon": [
++        [
++          1280,
++          367
++        ],
++        [
++          1306,
++          333
++        ],
++        [
++          1308,
++          311
++        ],
++        [
++          1323,
++          311
++        ],
++        [
++          1324,
++          331
++        ],
++        [
++          1350,
++          325
++        ],
++        [
++          1350,
++          310
++        ],
++        [
++          1364,
++          311
++        ],
++        [
++          1365,
++          325
++        ],
++        [
++          1385,
++          323
++        ],
++        [
++          1417,
++          361
++        ],
++        [
++          1410,
++          371
++        ],
++        [
++          1408,
++          402
++        ],
++        [
++          1376,
++          419
++        ],
++        [
++          1326,
++          414
++        ],
++        [
++          1291,
++          396
++        ]
++      ],
++      "bounds": [
++        1280,
++        310,
++        137,
++        109
++      ],
++      "node": null
++    },
++    "store": {
++      "polygon": [
++        [
++          1403,
++          460
++        ],
++        [
++          1433,
++          425
++        ],
++        [
++          1450,
++          419
++        ],
++        [
++          1454,
++          429
++        ],
++        [
++          1487,
++          423
++        ],
++        [
++          1485,
++          397
++        ],
++        [
++          1501,
++          392
++        ],
++        [
++          1507,
++          397
++        ],
++        [
++          1507,
++          422
++        ],
++        [
++          1542,
++          408
++        ],
++        [
++          1565,
++          433
++        ],
++        [
++          1586,
++          459
++        ],
++        [
++          1580,
++          470
++        ],
++        [
++          1580,
++          507
++        ],
++        [
++          1543,
++          519
++        ],
++        [
++          1466,
++          521
++        ],
++        [
++          1424,
++          504
++        ],
++        [
++          1415,
++          487
++        ]
++      ],
++      "bounds": [
++        1403,
++        392,
++        183,
++        129
++      ],
++      "node": "store",
++      "label": [
++        1512,
++        378
++      ],
++      "point": [
++        1502,
++        468
++      ]
++    },
++    "inn": {
++      "polygon": [
++        [
++          895,
++          508
++        ],
++        [
++          914,
++          502
++        ],
++        [
++          917,
++          470
++        ],
++        [
++          904,
++          469
++        ],
++        [
++          899,
++          455
++        ],
++        [
++          923,
++          450
++        ],
++        [
++          948,
++          422
++        ],
++        [
++          958,
++          412
++        ],
++        [
++          968,
++          397
++        ],
++        [
++          1018,
++          405
++        ],
++        [
++          1025,
++          384
++        ],
++        [
++          1045,
++          382
++        ],
++        [
++          1048,
++          409
++        ],
++        [
++          1127,
++          397
++        ],
++        [
++          1156,
++          421
++        ],
++        [
++          1165,
++          451
++        ],
++        [
++          1184,
++          467
++        ],
++        [
++          1176,
++          479
++        ],
++        [
++          1175,
++          510
++        ],
++        [
++          1208,
++          509
++        ],
++        [
++          1238,
++          523
++        ],
++        [
++          1232,
++          537
++        ],
++        [
++          1233,
++          566
++        ],
++        [
++          1182,
++          579
++        ],
++        [
++          1139,
++          576
++        ],
++        [
++          1098,
++          587
++        ],
++        [
++          1048,
++          577
++        ],
++        [
++          1015,
++          568
++        ],
++        [
++          970,
++          564
++        ],
++        [
++          925,
++          551
++        ],
++        [
++          898,
++          537
++        ]
++      ],
++      "bounds": [
++        895,
++        382,
++        343,
++        205
++      ],
++      "node": "inn",
++      "label": [
++        1082,
++        362
++      ],
++      "point": [
++        1047,
++        498
++      ]
++    },
++    "blue_cottage": {
++      "polygon": [
++        [
++          1226,
++          513
++        ],
++        [
++          1250,
++          482
++        ],
++        [
++          1303,
++          484
++        ],
++        [
++          1305,
++          473
++        ],
++        [
++          1319,
++          474
++        ],
++        [
++          1320,
++          485
++        ],
++        [
++          1336,
++          478
++        ],
++        [
++          1361,
++          511
++        ],
++        [
++          1357,
++          522
++        ],
++        [
++          1356,
++          548
++        ],
++        [
++          1337,
++          561
++        ],
++        [
++          1288,
++          558
++        ],
++        [
++          1244,
++          547
++        ]
++      ],
++      "bounds": [
++        1226,
++        473,
++        135,
++        88
++      ],
++      "node": null
++    },
++    "school": {
++      "polygon": [
++        [
++          603,
++          497
++        ],
++        [
++          639,
++          451
++        ],
++        [
++          672,
++          443
++        ],
++        [
++          673,
++          424
++        ],
++        [
++          688,
++          423
++        ],
++        [
++          693,
++          445
++        ],
++        [
++          753,
++          430
++        ],
++        [
++          775,
++          436
++        ],
++        [
++          799,
++          466
++        ],
++        [
++          816,
++          487
++        ],
++        [
++          810,
++          498
++        ],
++        [
++          810,
++          507
++        ],
++        [
++          839,
++          509
++        ],
++        [
++          845,
++          520
++        ],
++        [
++          841,
++          543
++        ],
++        [
++          791,
++          554
++        ],
++        [
++          746,
++          559
++        ],
++        [
++          694,
++          552
++        ],
++        [
++          639,
++          551
++        ],
++        [
++          612,
++          535
++        ]
++      ],
++      "bounds": [
++        603,
++        423,
++        242,
++        136
++      ],
++      "node": "school",
++      "label": [
++        691,
++        405
++      ],
++      "point": [
++        711,
++        491
++      ]
++    },
++    "clinic": {
++      "polygon": [
++        [
++          386,
++          528
++        ],
++        [
++          415,
++          493
++        ],
++        [
++          462,
++          486
++        ],
++        [
++          486,
++          480
++        ],
++        [
++          488,
++          463
++        ],
++        [
++          496,
++          457
++        ],
++        [
++          508,
++          460
++        ],
++        [
++          511,
++          466
++        ],
++        [
++          510,
++          486
++        ],
++        [
++          514,
++          480
++        ],
++        [
++          540,
++          522
++        ],
++        [
++          533,
++          531
++        ],
++        [
++          534,
++          548
++        ],
++        [
++          557,
++          555
++        ],
++        [
++          571,
++          565
++        ],
++        [
++          563,
++          579
++        ],
++        [
++          565,
++          590
++        ],
++        [
++          520,
++          602
++        ],
++        [
++          492,
++          595
++        ],
++        [
++          441,
++          587
++        ],
++        [
++          395,
++          570
++        ]
++      ],
++      "bounds": [
++        386,
++        457,
++        185,
++        145
++      ],
++      "node": "clinic",
++      "label": [
++        469,
++        459
++      ],
++      "point": [
++        469,
++        546
++      ]
++    },
++    "workshop": {
++      "polygon": [
++        [
++          164,
++          578
++        ],
++        [
++          205,
++          566
++        ],
++        [
++          240,
++          533
++        ],
++        [
++          248,
++          524
++        ],
++        [
++          291,
++          512
++        ],
++        [
++          339,
++          505
++        ],
++        [
++          359,
++          529
++        ],
++        [
++          387,
++          560
++        ],
++        [
++          378,
++          569
++        ],
++        [
++          377,
++          608
++        ],
++        [
++          362,
++          626
++        ],
++        [
++          343,
++          632
++        ],
++        [
++          315,
++          649
++        ],
++        [
++          249,
++          640
++        ],
++        [
++          221,
++          634
++        ],
++        [
++          208,
++          620
++        ],
++        [
++          177,
++          611
++        ],
++        [
++          170,
++          600
++        ]
++      ],
++      "bounds": [
++        164,
++        505,
++        223,
++        144
++      ],
++      "node": "workshop",
++      "label": [
++        241,
++        482
++      ],
++      "point": [
++        291,
++        585
++      ]
++    },
++    "post": {
++      "polygon": [
++        [
++          617,
++          617
++        ],
++        [
++          643,
++          580
++        ],
++        [
++          703,
++          567
++        ],
++        [
++          710,
++          558
++        ],
++        [
++          710,
++          545
++        ],
++        [
++          727,
++          544
++        ],
++        [
++          731,
++          567
++        ],
++        [
++          752,
++          593
++        ],
++        [
++          765,
++          617
++        ],
++        [
++          758,
++          624
++        ],
++        [
++          757,
++          635
++        ],
++        [
++          802,
++          620
++        ],
++        [
++          824,
++          633
++        ],
++        [
++          846,
++          656
++        ],
++        [
++          839,
++          663
++        ],
++        [
++          838,
++          682
++        ],
++        [
++          801,
++          697
++        ],
++        [
++          766,
++          691
++        ],
++        [
++          748,
++          677
++        ],
++        [
++          704,
++          683
++        ],
++        [
++          658,
++          670
++        ],
++        [
++          633,
++          654
++        ]
++      ],
++      "bounds": [
++        617,
++        544,
++        229,
++        153
++      ],
++      "node": "post",
++      "label": [
++        692,
++        715
++      ],
++      "point": [
++        704,
++        625
++      ]
++    },
++    "square": {
++      "polygon": [
++        [
++          834,
++          573
++        ],
++        [
++          858,
++          561
++        ],
++        [
++          866,
++          556
++        ],
++        [
++          868,
++          534
++        ],
++        [
++          877,
++          535
++        ],
++        [
++          879,
++          556
++        ],
++        [
++          902,
++          564
++        ],
++        [
++          910,
++          578
++        ],
++        [
++          908,
++          596
++        ],
++        [
++          887,
++          607
++        ],
++        [
++          855,
++          606
++        ],
++        [
++          837,
++          596
++        ]
++      ],
++      "bounds": [
++        834,
++        534,
++        76,
++        73
++      ],
++      "node": "square",
++      "label": [
++        878,
++        639
++      ],
++      "point": [
++        872,
++        583
++      ]
++    },
++    "gate": {
++      "polygon": [
++        [
++          792,
++          701
++        ],
++        [
++          806,
++          693
++        ],
++        [
++          818,
++          700
++        ],
++        [
++          818,
++          713
++        ],
++        [
++          880,
++          736
++        ],
++        [
++          881,
++          724
++        ],
++        [
++          894,
++          725
++        ],
++        [
++          897,
++          740
++        ],
++        [
++          952,
++          761
++        ],
++        [
++          953,
++          748
++        ],
++        [
++          966,
++          751
++        ],
++        [
++          967,
++          766
++        ],
++        [
++          1110,
++          821
++        ],
++        [
++          1110,
++          807
++        ],
++        [
++          1124,
++          808
++        ],
++        [
++          1129,
++          821
++        ],
++        [
++          1126,
++          837
++        ],
++        [
++          1156,
++          852
++        ],
++        [
++          1135,
++          867
++        ],
++        [
++          1028,
++          844
++        ],
++        [
++          1017,
++          860
++        ],
++        [
++          1004,
++          855
++        ],
++        [
++          1002,
++          836
++        ],
++        [
++          955,
++          814
++        ],
++        [
++          943,
++          822
++        ],
++        [
++          928,
++          817
++        ],
++        [
++          916,
++          800
++        ],
++        [
++          863,
++          777
++        ],
++        [
++          855,
++          785
++        ],
++        [
++          842,
++          781
++        ],
++        [
++          834,
++          765
++        ],
++        [
++          807,
++          755
++        ],
++        [
++          794,
++          758
++        ]
++      ],
++      "bounds": [
++        792,
++        693,
++        364,
++        174
++      ],
++      "node": "gate",
++      "label": [
++        1058,
++        882
++      ],
++      "point": [
++        974,
++        790
++      ]
++    },
++    "quarry_shed": {
++      "polygon": [
++        [
++          1371,
++          129
++        ],
++        [
++          1386,
++          116
++        ],
++        [
++          1414,
++          115
++        ],
++        [
++          1443,
++          129
++        ],
++        [
++          1437,
++          137
++        ],
++        [
++          1436,
++          150
++        ],
++        [
++          1397,
++          159
++        ],
++        [
++          1379,
++          150
++        ]
++      ],
++      "bounds": [
++        1371,
++        115,
++        72,
++        44
++      ],
++      "node": null
++    },
++    "quarry_home": {
++      "polygon": [
++        [
++          1367,
++          186
++        ],
++        [
++          1385,
++          158
++        ],
++        [
++          1419,
++          150
++        ],
++        [
++          1445,
++          160
++        ],
++        [
++          1465,
++          184
++        ],
++        [
++          1458,
++          192
++        ],
++        [
++          1458,
++          210
++        ],
++        [
++          1434,
++          221
++        ],
++        [
++          1385,
++          215
++        ],
++        [
++          1378,
++          205
++        ]
++      ],
++      "bounds": [
++        1367,
++        150,
++        98,
++        71
++      ],
++      "node": null
++    }
++  }
++}
+--- a/experiments/renpy-ch1/dev/test_worldmap_v5.py
++++ b/experiments/renpy-ch1/dev/test_worldmap_v5.py
+@@ -0,0 +1,50 @@
++"""Source-level map invariants; actual input is covered by qa_worldmap_v5.py."""
++import ast, textwrap, json, types, copy, hashlib
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1]/'game'
++ns={'store':types.SimpleNamespace(room13={})}
++def extract(file,names):
++ text=(ROOT/file).read_text();start=text.index(' python:\n')+len(' python:\n');lines=[]
++ for line in text[start:].splitlines():
++  if line and not line.startswith((' ','#')):break
++  lines.append(line)
++ tree=ast.parse(textwrap.dedent('\n'.join(lines)))
++ chosen=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in names or isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id in names for t in n.targets)]
++ exec(compile(ast.Module(body=chosen,type_ignores=[]),file,'exec'),ns)
++extract('room13_rules.rpy',{'r13_places'})
++ns['r13_has']=lambda f:f in ns['store'].room13['flags'] or f in ns['store'].room13['evidence']
++ns['_r13_route_places']=ns['r13_places'];extract('room13_route_knowledge.rpy',{'r13_places','r13_secret_route_available'})
++extract('room13_navigation.rpy',{'R13_MAP_NODES','R13_LOCAL_CONNECTIONS','r13_map_nodes','r13_map_discovered','r13_map_selection','r13_local_connections','r13_local_destination'})
++checks=[]
++for day in (1,4,8,14):
++ for lodging in (False,True):
++  for discovered in (False,True):
++   for opened in (False,True):
++    for case in ('pending','occurred'):
++     for current in ('gate','passage','greenhouse','altar'):
++      state=dict(day=day,location=current,flags=['lodging'] if lodging else [],evidence=[],case_state=case,passage_open=opened,secret_route_unlocked=discovered)
++      ns['store'].room13=state;before=copy.deepcopy(state)
++      allowed=set(ns['r13_places']());assert ('guestroom'in allowed)==(lodging and case=='occurred')
++      for region in ns['R13_MAP_NODES']:
++       visible={k for k,p in ns['r13_map_nodes'](region)}
++       assert ('passage'in visible)==(region=='inn' and discovered and opened)
++       assert 'greenhouse'not in visible and 'altar'not in visible
++       for stale in ('passage','greenhouse','altar','invalid',None):
++        selected=ns['r13_map_selection'](region,stale);assert selected in visible or selected is None
++      assert before==state
++      checks.append([day,lodging,discovered,opened,case,current])
++data=json.loads((ROOT/'room13-worldmap-v5.json').read_text());dest={k for k,v in data['layers'].items() if v['node']}
++assert dest==set(ns['R13_MAP_NODES']['village'])
++assert not any(x in dest for x in ('shrine','quarry_home','quarry_shed'))
++assert hashlib.sha256((ROOT/'assets/room13-worldmap-v5.png').read_bytes()).hexdigest()==data['sha256']=='86ef28a4971e244aadca28833414a800f22a03c0f0a82081dea7c4fc5210f4fd'
++for k,s in data['layers'].items():
++ assert len(s['polygon'])>4
++ assert all(0<=x<1672 and 0<=y<941 for x,y in s['polygon'])
++labels=[]
++for k in dest:
++ x,y=data['layers'][k]['label'];x=round(x*860/1672);y=round(y*860/1672);labels.append((k,x-57,y-18,x+57,y+18))
++for i,(k,a,b,c,d) in enumerate(labels):
++ assert 0<=a<c<=860 and 0<=b<d<=484
++ for j,e,f,g,h in labels[i+1:]:assert c<=e or g<=a or d<=f or h<=b,(k,j,'overlapping label boxes')
++report=dict(status='passed',eligibility_states=len(checks),transparent_polygon_layers=len(data['layers']),travel_nodes=len(dest),label_overlap=False,source_pixels='unchanged original PNG; runtime AlphaMask and SVG clipPath',checks=['Hidden secret current-location saves excluded','Stale selection falls back to visible target or None','Lodging and case-state locks unchanged','Every label inside map and pairwise nonoverlapping','Shrine/quarry/scenery have no destination node'])
++Path('v5-contract-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False))
+--- a/experiments/renpy-ch1/dev/qa_worldmap_v5.py
++++ b/experiments/renpy-ch1/dev/qa_worldmap_v5.py
+@@ -0,0 +1,66 @@
++"""Candidate acceptance: real mouse/keyboard/touch input; explicit eligibility fixtures."""
++import asyncio,json,shutil,sys,urllib.request,argparse
++from pathlib import Path
++sys.path.insert(0,str(Path(__file__).resolve().parent))
++from pixel_qa_ui0156 import UIQA
++from playwright.async_api import async_playwright
++args=argparse.ArgumentParser();args.add_argument('--url',required=True);args.add_argument('--out',default='qa-worldmap-v5');args=args.parse_args()
++OUT=Path(args.out);OUT.mkdir(parents=True,exist_ok=True)
++URL=args.url
++DATA=json.loads((Path(__file__).resolve().parents[1]/'game/room13-worldmap-v5.json').read_text())
++async def main():
++ report={'archive':json.load(urllib.request.urlopen(URL+'game-transport.json'))['archive_sha256'],'kind':'Actual Chromium inputs with explicitly injected lodging/secret states, not natural full campaign','checks':[]}
++ async with async_playwright() as p:
++  b=await p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader']);c=await b.new_context(viewport={'width':1280,'height':720},has_touch=True,service_workers='block');pg=await c.new_page();q=UIQA(pg,OUT);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)))
++  async def scope():return await q.py('import renpy;s=renpy.display.screen.get_screen("r13_map").scope;result={k:s[k] for k in ("region","selected","map_hover")}')
++  async def fixture(**changes):
++   await q.py('import renpy;s=renpy.store;s.r13_edit(**'+repr(changes)+');renpy.exports.restart_interaction();result=True')
++  async def world():
++   await q.press('지도 · 이동');await q.wait('r13_map')
++   if (await scope())['region']!='village':await q.press('마을 보기')
++  try:
++   await pg.goto(URL);await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await q.py('import renpy;s=renpy.store;s.preferences.text_cps=0;s.persistent.room13_map_list=False;result=True');await q.press('처음부터');await q.advance();await q.wait('r13_hub')
++   # Unregistered: private destinations cannot be clicked or named by map widgets.
++   await q.py('import renpy;s=renpy.store;s.r13_flag("entry_corrected");w=renpy.exports.get_widget("r13_hub","r13_options_gear");w.action=s.Jump("r13_field");w.clicked=w.action;result=True');await q.input(1220,50);await q.wait('r13_hub')
++   await world();st=await q.state();assert not any(any(n in x['text'] for n in ('진료실','학교','공동 창고')) for x in st['buttons']);await q.shot('01-unregistered');await q.press('현장으로 돌아가기');await q.wait('r13_hub')
++   await fixture(day=2,period=0,location='inn',flags=['entry_corrected','lodging'])
++   await q.py('import renpy;s=renpy.store;s.r13_upgrade();w=renpy.exports.get_widget("r13_hub","r13_options_gear");w.action=s.Jump("r13_field");w.clicked=w.action;result=True');await q.input(1220,50);await q.wait('r13_hub')
++   before=await q.room();await world();await q.shot('02-world-all-eight')
++   for key,spec in DATA['layers'].items():
++    if not spec['node']:continue
++    x,y=spec['point'];await q.input(30+round(x*860/1672),150+round(y*860/1672));assert (await scope())['selected']==key,(key,await scope());assert await q.room()==before
++   report['checks'].append('All 8 actual polygon targets select their exact node without any run-state/time change')
++   await q.input(30+round(1047*860/1672),150+round(498*860/1672));await q.shot('03-inn-selected')
++   # Inn bbox corner is outside its silhouette: must not select inn from rectangle.
++   await q.press('우체국');keep=(await scope())['selected'];x,y,w,h=DATA['layers']['inn']['bounds'];await q.input(30+round(x*860/1672)+1,150+round(y*860/1672)+1);assert (await scope())['selected']==keep
++   report['checks'].append('Transparent inn bounding-box corner rejects pointer input (polygon mask, not rectangle)')
++   x,y=DATA['layers']['inn']['point'];await pg.mouse.move(30+x*860/1672,150+y*860/1672);await asyncio.sleep(.4);assert (await scope())['map_hover']=='inn';await q.shot('04-hover-individual-building');assert await q.room()==before
++   # Direction-key focus must activate the same per-building highlight before Enter selects.
++   await pg.keyboard.press('ArrowLeft');await asyncio.sleep(.5);f=await scope();assert f['map_hover'] is not None,f;await q.shot('05-keyboard-focus');await pg.keyboard.press('Enter');await asyncio.sleep(.4);assert (await scope())['selected']==f['map_hover'];assert await q.room()==before
++   report['checks'].append('Mouse hover and arrow-key focus independently highlight a building; Enter selects without travel')
++   await pg.keyboard.press('Escape');await q.wait('r13_hub');assert await q.room()==before
++   await world();await q.press('수리점');await q.press('이곳으로 이동');await q.wait('r13_hub');after=await q.room();assert after['location']=='workshop';assert (after['day'],after['period'])==(before['day'],before['period'])
++   await world();assert (await scope())['selected']=='workshop';await q.press('현장으로 돌아가기');await q.wait('r13_hub')
++   report['checks'].append('Escape cancellation preserves exact state; confirmed travel and reentry reflect actual current location at zero time cost')
++   await q.save(1);saved=await q.room();await world();await q.press('진료실');await q.press('이곳으로 이동');await q.wait('r13_hub');await q.load(1);assert await q.room()==saved;await q.shot('06-save-restored');await world();assert (await scope())['selected']=='workshop';await q.press('현장으로 돌아가기');await q.wait('r13_hub')
++   report['checks'].append('Real save UI, travel, load UI restore exact room state and map current location')
++   await world();await q.press('여관 접수대');await q.press('여관 내부 보기');await q.shot('07-existing-inn-map');await q.press('주방');await q.press('이곳으로 이동');await q.wait('r13_hub');assert (await q.room())['location']=='kitchen';await q.press('접수대');await q.wait('r13_hub');await q.press('2층 복도');await q.wait('r13_hub');await q.shot('08-existing-hall');await q.press('13호실');await q.wait('r13_hub');assert (await q.room())['location']=='room13'
++   report['checks'].append('Existing inn overview and kitchen→reception→hall→13 access still work')
++   # Day/case eligibility as explicit fixtures; labels, tooltips and accessible alt names inspected together.
++   await world();await fixture(location='passage',passage_open=True,secret_route_unlocked=False)
++   await q.press('여관 안');secrets=await q.py('import renpy;s=renpy.store;result={"nodes":s.r13_map_nodes("inn"),"selected":renpy.display.screen.get_screen("r13_map").scope["selected"],"path":s.r13_location_path(),"alts":[str(getattr(f.widget,"alt",None)) for f in renpy.display.focus.focus_list],"tooltips":[str(getattr(f.widget,"tooltip",None)) for f in renpy.display.focus.focus_list]}');assert 'passage'not in [k for k,v in secrets['nodes']] and secrets['selected']!='passage' and '통로'not in str(secrets['alts'])+str(secrets['tooltips'])+secrets['path'];await q.shot('09-secret-stale-location-hidden')
++   await fixture(location='inn',passage_open=True,secret_route_unlocked=True,case_state='occurred');keys=await q.py('import renpy;result=[k for k,v in renpy.store.r13_map_nodes("inn")]');assert 'passage'in keys and 'guestroom'in keys
++   await fixture(passage_open=False,case_state='pending');keys=await q.py('import renpy;result=[k for k,v in renpy.store.r13_map_nodes("inn")]');assert 'passage'not in keys and 'guestroom'not in keys
++   await q.press('현장으로 돌아가기');await q.wait('r13_hub');report['checks'].append('Stale secret current-location save reveals no passage node/name/tooltip/alt; discovered-open and incident guestroom conditions retained')
++   await pg.set_viewport_size({'width':844,'height':390});q.touch=True;await world();await q.shot('10-mobile-landscape');x,y=DATA['layers']['store']['point'];await q.input(30+round(x*860/1672),150+round(y*860/1672));assert (await scope())['selected']=='store';await q.press('이곳으로 이동');await q.wait('r13_hub');assert (await q.room())['location']=='store'
++   await world();await q.press('큰 목록 보기');await q.shot('11-mobile-large-list');await q.press('여관 접수대');await q.press('이곳으로 이동');await q.wait('r13_hub')
++   await pg.set_viewport_size({'width':390,'height':844});await world();await q.shot('12-mobile-portrait-list');await q.press('현장으로 돌아가기');await q.wait('r13_hub');report['checks'].append('844×390 touchscreen polygon travel and large-list travel; 390×844 portrait list and cancellation')
++   await pg.set_viewport_size({'width':1280,'height':720});q.touch=False;await world();await q.press('지도로 보기');await q.press('학교');st=await q.state();button=next(x for x in st['buttons'] if '이곳으로 이동'in x['text']);x,y,w,h=button['rect'];before=await q.room();await pg.mouse.dblclick(x+w/2,y+h/2,delay=30);await q.wait('r13_hub');after=await q.room();assert after['location']=='school';assert before['day']==after['day'] and before['period']==after['period'];await q.shot('13-double-click-arrival');report['checks'].append('Double-click confirmation reaches one destination without time change')
++   assert not errors,errors;report['status']='passed'
++  except Exception as e:
++   report.update(status='failed',error=repr(e));await pg.screenshot(path=str(OUT/'failure.png'))
++   try:(OUT/'failure-state.json').write_text(json.dumps(await q.state(),ensure_ascii=False,indent=2))
++   except:pass
++  report['errors']=errors;(OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True);await b.close()
++  if report['status']!='passed':raise SystemExit(1)
++asyncio.run(main())

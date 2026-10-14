@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "eligibility_states": 256,
+  "transparent_polygon_layers": 22,
+  "travel_nodes": 8,
+  "label_overlap": false,
+  "source_pixels": "unchanged original PNG; runtime AlphaMask and SVG clipPath",
+  "checks": [
+    "Hidden secret current-location saves excluded",
+    "Stale selection falls back to visible target or None",
+    "Lodging and case-state locks unchanged",
+    "Every label inside map and pairwise nonoverlapping",
+    "Shrine/quarry/scenery have no destination node"
+  ]
+}
