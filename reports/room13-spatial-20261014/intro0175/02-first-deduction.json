@@ -1,0 +1,327 @@
+{
+  "screens": [
+    "r13_record_compare"
+  ],
+  "room": {
+    "campaign_id": "room13_v1",
+    "version": 3,
+    "story_revision": "father-pov-fire-pooling-v3",
+    "day": 1,
+    "period": 1,
+    "location": "room13",
+    "kitchen_switch": false,
+    "passage_open": false,
+    "secret_route_unlocked": false,
+    "case_state": "pending",
+    "victim_state": "alive",
+    "daram_state": "with_dad",
+    "granny_state": "trusted",
+    "trial_result": "pending",
+    "evidence": [
+      "E01",
+      "G1",
+      "G3",
+      "E02",
+      "M01",
+      "E03"
+    ],
+    "records": {
+      "E01": {
+        "day": 1,
+        "period": 0,
+        "source": "여행 중 가지고 온 편지",
+        "place": "gate"
+      },
+      "G1": {
+        "day": 1,
+        "period": 1,
+        "source": "초소 선반의 서류를 확대해 직접 확인",
+        "place": "gate"
+      },
+      "G3": {
+        "day": 1,
+        "period": 1,
+        "source": "초소 선반의 서류를 확대해 직접 확인",
+        "place": "gate"
+      },
+      "E02": {
+        "day": 1,
+        "period": 1,
+        "source": "원본과 맞춰 보고 바로잡은 입장 기록",
+        "place": "gate"
+      },
+      "M01": {
+        "day": 1,
+        "period": 1,
+        "source": "13호실 책상 위의 메모를 읽음",
+        "place": "room13"
+      },
+      "E03": {
+        "day": 1,
+        "period": 1,
+        "source": "여관 2층 · 13호실 직접 조사",
+        "place": "room13"
+      }
+    },
+    "flags": [
+      "question_read:entry:daram:look",
+      "observed:gate:gate_documents",
+      "observed:gate:booth",
+      "observed:gate:ledger",
+      "gate_documents_compared",
+      "question_read:entry:daram:compare",
+      "entry_corrected",
+      "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+      "calendar:granny:1:1:arrival:10b5e62b61554787",
+      "lodging",
+      "observed:room13:bed",
+      "calendar:daram:1:1:arrival:10b5e62b61554787",
+      "mother_expected_family"
+    ],
+    "read_topics": [
+      "register"
+    ],
+    "done": [],
+    "checks": {
+      "gate:booth": [
+        1475,
+        424
+      ],
+      "gate:ledger": [
+        1443,
+        455
+      ],
+      "gate:gate_documents": [
+        1441,
+        432
+      ],
+      "room13:bed": [
+        873,
+        386
+      ]
+    },
+    "encounters": [
+      {
+        "person": "karo",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "guard",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "daram",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "granny",
+        "day": 1,
+        "period": 1,
+        "place": "inn"
+      },
+      {
+        "person": "daram",
+        "day": 1,
+        "period": 1,
+        "place": "room13"
+      }
+    ],
+    "resident_knowledge": {},
+    "propositions": [],
+    "arguments": {},
+    "log": [],
+    "trial_ended": false,
+    "life_poc": true,
+    "mom_state": "hidden",
+    "ending": null,
+    "events": [],
+    "convoy_revision": 0,
+    "scout_revision": -1,
+    "observations": {},
+    "week2_started": false,
+    "finale_started": false,
+    "world_art_revisions": {
+      "inn": "3d901b332c77fbc4e41b1787ed27acb423a7aeeeeea5a00aacc92ae7af2008a6",
+      "school": "bb8921277b9723a5141ab4e27909ed6143285e1a47f6ffc9b8d3f0112482339a",
+      "workshop": "126535025fe67e4cb154df01423a17703e7acab85bdcc0054db519051687aef6",
+      "square": "e96d79dea57247880a902bfdba112fdae7e63b77213c5e8f08cecf16cdd1ec75",
+      "gate": "1f1ea55f6089e23291c56e64ddc9a4aca333bcf21d6d6968a64bcc83b0a5cf35"
+    },
+    "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+    "interaction_revision": 2,
+    "last_inspection": {
+      "place": "room13",
+      "key": "bed",
+      "x": 873,
+      "y": 386
+    },
+    "visual_revision": "pixel-b-front-v3",
+    "record_ui": {
+      "seen": [
+        "G3",
+        "G1"
+      ]
+    },
+    "dialogue_views": {
+      "register": {
+        "context": "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "mode": "first"
+      }
+    },
+    "dialogue_dates": {
+      "register": {
+        "day": 1,
+        "period": 1
+      }
+    }
+  },
+  "say": "",
+  "buttons": [
+    {
+      "text": "할머니가 아내의 소식이 끊겼다며 가족에게 보낸 편지다. 이 편지를 받고 다람이와 마을에 왔다.",
+      "value": "",
+      "rect": [
+        62,
+        168,
+        539,
+        125
+      ]
+    },
+    {
+      "text": "                       ",
+      "value": "",
+      "rect": [
+        601,
+        168,
+        7,
+        125
+      ]
+    },
+    {
+      "text": "다람이 이름 옆에 도토리가 그려진 메모. ‘아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐.’라고 적혀 있다.",
+      "value": "",
+      "rect": [
+        672,
+        168,
+        539,
+        125
+      ]
+    },
+    {
+      "text": "                       ",
+      "value": "",
+      "rect": [
+        1211,
+        168,
+        7,
+        125
+      ]
+    },
+    {
+      "text": "      초대 편지       예약 원본       옮겨 쓴 목록       고친 입장기록       엄마의 메모       바느질 흔적",
+      "value": "",
+      "rect": [
+        40,
+        326,
+        1193,
+        174
+      ]
+    },
+    {
+      "text": "      초대 편지",
+      "value": "",
+      "rect": [
+        40,
+        326,
+        382,
+        66
+      ]
+    },
+    {
+      "text": "      예약 원본",
+      "value": "",
+      "rect": [
+        432,
+        326,
+        382,
+        66
+      ]
+    },
+    {
+      "text": "      옮겨 쓴 목록",
+      "value": "",
+      "rect": [
+        824,
+        326,
+        382,
+        66
+      ]
+    },
+    {
+      "text": "      고친 입장기록",
+      "value": "",
+      "rect": [
+        40,
+        402,
+        382,
+        66
+      ]
+    },
+    {
+      "text": "      엄마의 메모",
+      "value": "",
+      "rect": [
+        432,
+        402,
+        382,
+        66
+      ]
+    },
+    {
+      "text": "      바느질 흔적",
+      "value": "",
+      "rect": [
+        824,
+        402,
+        382,
+        66
+      ]
+    },
+    {
+      "text": "                       ",
+      "value": "",
+      "rect": [
+        1233,
+        326,
+        7,
+        174
+      ]
+    },
+    {
+      "text": "      기록으로 돌아가기",
+      "value": "None",
+      "rect": [
+        40,
+        636,
+        290,
+        58
+      ]
+    },
+    {
+      "text": "      비교하기",
+      "value": "",
+      "rect": [
+        978,
+        636,
+        260,
+        58
+      ]
+    }
+  ]
+}
