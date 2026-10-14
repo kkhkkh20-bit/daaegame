@@ -2,6 +2,7 @@
 
 - 상태: 기획 초안. 수치는 시작값이다.
   - 구현됨: 묶음 1(B·C·N·M, 0.18.2-dev, `game/systems/room13_town_events.rpy`, `docs/releases/RELEASE_0182.md`)
+  - 구현됨: 큰 사건 4개(밤이·나비·돌·톡, 재판 관문)와 묶음 2(A 사기·Q 싼 방·구급 상자·자물쇠 따개). 0.18.3-dev, `room13_episodes.rpy`·`room13_town_events2.rpy`, `docs/releases/RELEASE_0183.md`. R 바둑이는 사건 1의 순찰·뇌물로 들어갔다.
   - 나머지 사건은 아직 구현하지 않았다.
 - 같이 볼 문서
   - `EVENT_WEB_DESIGN.md`: 원칙, 비싼 상품, 사건 A~F 상세

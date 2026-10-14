@@ -78,6 +78,17 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
   - 필요하면 git 기록에서 볼 수 있다.
 - `story-room13/`은 집필 참고 자료다. 실행 기준은 `game/`의 데이터다.
 
+### 마을 사건과 재판 관문 (0.18.2·0.18.3)
+- 사건 코드 파일은 셋이다. 기존 흐름에 붙는 곳은 두 군데다.
+  - 파일: `room13_town_events.rpy`(묶음 1), `room13_episodes.rpy`(큰 사건 4개), `room13_town_events2.rpy`(묶음 2)
+  - 도착 사건: `r13_roam`에서 `r13_town_events`를 호출한다.
+  - 선택지가 있는 대화 주제: `R13_TOPIC_LABELS`에 등록한다.
+- 재판 관문은 `room13_episodes.rpy`에 있다.
+  - `R13_WITNESS_GATES`: E10은 밤이, E12·E15는 나비, E13은 톡이 증언해야 쓸 수 있다.
+  - C4 결론은 `fair_hearing`이 있어야 집행된다.
+  - 재판 테스트를 새로 만들면 `r13_qa_setup`이 이 관문들을 기본으로 켠다. 끄려면 `"-gates"`를 넘긴다.
+- 사건 목록과 상태는 `docs/EVENT_CATALOG.md`에 있다.
+
 ### 하지 말 것
 - 지난 공개본(game.part*)에서 파일을 꺼내 소스로 쓰지 않는다. 원본은 항상 `game/`이다.
 - 예전 QA 결과 폴더(`qa-room13-0150` 등)나 버전별 QA 스크립트를 다시 만들지 않는다.

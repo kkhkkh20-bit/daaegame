@@ -34,7 +34,10 @@ label r13_qa_setup(day,ev,flags=()):
     hide screen hud
     $ room13.update(day=day,period=0,case_state="occurred",victim_state="dead",location="inn",life_poc=True)
     $ room13["evidence"]=list(ev)
-    $ room13["flags"]=list(set(room13["flags"])|{"lodging","entry_corrected","livelihood_open"}|set(flags))
+    # Older trial tests assume the episode gates are open (systems/room13_episodes.rpy);
+    # "-gates" in flags removes them.
+    $ _qa_gates=set() if "-gates" in flags else {"witness:nabi","witness:tok","fair_hearing"}
+    $ room13["flags"]=list(set(room13["flags"])|{"lodging","entry_corrected","livelihood_open"}|_qa_gates|(set(flags)-{"-gates"}))
     return
 
 label r13_qa_trial(ev,flags=()):
@@ -185,10 +188,10 @@ init 999 python:
     def r13_qa_town_dump():
         import json
         s=store.room13;w=r13_wallet(s)
-        keep=("ev_","somi_","musoe_","madam_","mungchi_","know_","kongi_","roof_path","room_searched","warning_exposed","goods_recovered","yeoni_","eunho_holds","rumor:")
+        keep=("ev_","somi_","musoe_","madam_","mungchi_","know_","kongi_","roof_path","room_searched","warning_exposed","goods_recovered","yeoni_","eunho_holds","rumor:","bami_","patrol_","badook_","kids_","nabi_","witness:","fair_hearing","ppul_","tok_","seori_","ubak_","clue_","ep","siluk_","nubi_","lodging_cheap","quarantined","medkit")
         out=dict(day=s["day"],period=s["period"],location=s["location"],cash=w["cash"],items=w["items"],
             flags=sorted(f for f in s["flags"] if f.startswith(keep)),
-            evidence=[e for e in s["evidence"] if e.startswith("H")],town=s.get("town",{}))
+            evidence=[e for e in s["evidence"] if e[0] in "HW"],town=s.get("town",{}))
         open(renpy.config.basedir+"/qa_result.txt","w").write(json.dumps(out,ensure_ascii=False))
 
 label r13_qa_talk(person):
@@ -196,4 +199,10 @@ label r13_qa_talk(person):
     $ r13_note_encounter(person)
     $ r13_target=person
     call r13_talk
+    jump r13_roam
+
+# Move within the same run (keeps state) and arrive through r13_roam.
+label r13_qa_goto(day,period,location,flags=()):
+    $ r13_edit(day=day,period=period,location=location)
+    $ r13_flag(*flags) if flags else None
     jump r13_roam

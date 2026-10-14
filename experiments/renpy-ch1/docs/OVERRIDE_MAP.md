@@ -85,14 +85,15 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 98 | `systems/room13_learning.rpy:121` | _r13_poc_notes |
 | 5 | 100 | `systems/room13_poc_route.rpy:138` |  |
 
-## `r13_where` (4층)
+## `r13_where` (5층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:210` | _r13_before_gate_where |
 | 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
 | 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
-| 4 | 93 | `systems/room13_livelihood_flow.rpy:89` |  |
+| 4 | 93 | `systems/room13_livelihood_flow.rpy:89` | _r13_episode_where |
+| 5 | 103 | `systems/room13_episodes.rpy:55` |  |
 
 ## `r13_available` (3층)
 
@@ -152,7 +153,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:393` | _r13_poc_campaign_goal |
+| 1 | 98 | `systems/room13_debate.rpy:404` | _r13_poc_campaign_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:126` |  |
 
 ## `r13_has` (2층)

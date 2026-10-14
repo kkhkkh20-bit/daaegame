@@ -86,8 +86,9 @@ init 98 python:
                     hint="이 말은 사실이다. 따질 것은 '첫 비명 다음'이다.",
                     wrong=("nabi","제가 같이 있던 것까지 없던 일로 만들지는 마세요.")),
                 dict(id="s2",who="granny",text="그 뒤로도 나는 【계속 사람들 곁에】 있었어요.",
-                    accept=["E12","E11"],
-                    hint="공구를 가지러 주방에 간 뒤로는 아무도 할머니를 보지 못했다.",
+                    accept=["E12"],
+                    soft={"E11":("resident_seori","복도에서는 앞문만 지켜봤습니다. 그 사이 할머니가 어디 있었는지는 이걸로 알 수 없습니다.")},
+                    hint="공구를 가지러 주방에 간 뒤로는 아무도 할머니를 보지 못했다. 그걸 직접 말할 수 있는 사람은 나비다.",
                     broken=[("nabi","공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요."),
                         ("granny","잠깐 안 보였다는 게 전부잖아요.")],
                     wrong=("granny","그게 내가 혼자 있었다는 증거예요?")),
@@ -113,6 +114,14 @@ init 98 python:
         "C4":dict(title="들어갔다 해도 도우려 했을 뿐이다",
             chair="resident_seori",
             statements=[
+                dict(id="s0",who="granny",text="그런 핀은 마을에 흔해요. 【내 것이라는 증거】가 있어요?",
+                    accept=["E13"],
+                    soft={"E14":("resident_seori","촛대에 핀이 끼어 있었던 건 확인했습니다. 그 핀이 누구 것인지가 남았습니다.")},
+                    hint="그 핀의 덧댄 이음은 톡이 그날 처음 만든 하나뿐인 것이다. 만든 사람이 직접 말해야 한다.",
+                    broken=[("resident_tok","이 이음은 내가 목요일에 덧댄 거예요. 맞는 부품이 없어서. 이렇게 생긴 핀은 마을에 이것 하나예요."),
+                        ("resident_tok","그날 달고 간 사람은 할머니고요. 누가 그걸로 뭘 했는지는 나도 몰라요."),
+                        ("granny","……….")],
+                    wrong=("granny","그게 내 핀이라는 증거예요?")),
                 dict(id="s1",who="granny",text="그 핀은 【오후에 그분을 도울 때】 떨어졌을 수도 있잖아요.",
                     accept=["E15"],
                     soft={"E13":("resident_seori","그날 새 핀으로 바꿨다는 건 알겠습니다. 언제까지 할머니 옷에 있었는지가 궁금합니다.")},
@@ -343,7 +352,9 @@ init 98 python:
             return "soft",[(R13_DEBATE[claim]["chair"],"그 말은 이미 반박됐습니다. 남은 말을 보세요.")]
         consent=st.get("need_consent",{}).get(key)
         if consent and not r13_has(consent):
-            return "soft",[(R13_DEBATE[claim]["chair"],"본 사람이 이름을 밝히지 않은 기록만으로는 확인이 어렵습니다. 다른 물건이 필요합니다.")]
+            # Witness gates (systems/room13_episodes.rpy) carry their own refusal lines.
+            lines=st.get("consent_lines",{}).get(key)
+            return "soft",list(lines) if lines else [(R13_DEBATE[claim]["chair"],"본 사람이 이름을 밝히지 않은 기록만으로는 확인이 어렵습니다. 다른 물건이 필요합니다.")]
         if key in st.get("accept",[]):
             return "break",list(st.get("broken",[]))
         if key in st.get("soft",{}):
@@ -483,6 +494,12 @@ label r13_debate_loop:
     elif r13_debate_action[0]=="conclude":
         call r13_debate_conclude(r13_claim)
         if _return:
+            # Episode 3: without the chief's promise the culprit verdict is not enforced.
+            if r13_claim=="C4" and not r13_has("fair_hearing"):
+                call r13_lines(R13_C4_UNENFORCED,"debate:c4:unenforced")
+                $ r13_flag("c4_unenforced")
+                $ r13_debate_close(r13_claim,"unenforced")
+                return True
             $ r13_prove(r13_claim)
             return True
     jump r13_debate_loop
@@ -491,7 +508,7 @@ label r13_debate_unanswerable(claim):
     # 필수 자료가 없으면 선택지 없이 넘어간다. 상대의 말이 반박되지 않은 채 남는다.
     $ r13_debate_gap=next(st for st in r13_debate_statements(claim) if not r13_debate_answerable(claim,st))
     call r13_lines([(r13_debate_gap["who"],r13_debate_gap["text"].replace("【","").replace("】","")),
-        ("dad","(이 말을 뒤집을 자료가 내게 없다.)",{"thought":True}),
+        ("dad","(이 말을 뒤집을 자료가 내게 없다.)",{"thought":True})]+r13_debate_gap_lines(claim,r13_debate_gap)+[
         (None,"아무도 그 말을 막지 못했다.")],"debate:unanswerable:"+claim)
     $ r13_debate_close(claim,"no_evidence")
     return

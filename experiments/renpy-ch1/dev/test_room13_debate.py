@@ -67,10 +67,12 @@ checks.append('conclusion unlocks after all required statements; propositions un
 assert 'r13_debate_lose_trust' not in env and 'R13_DEBATE_TRUST_MAX' not in env
 env['r13_debate_miss']('C2');env['r13_debate_miss']('C2')
 assert env['r13_debate_state']()['misses']['C2']>=2
-# C4 needs E15, E14/E35 and E36: holding only E15 means the claim cannot be argued at all.
+# C4 needs E13 (whose pin, 0.18.3), E15, E14/E35 and E36: holding only E15 means the claim cannot be argued at all.
 store.room13['evidence']=['E15']
 assert not env['r13_debate_arguable']('C4') and not env['r13_debate_open']('C4')
 store.room13['evidence']=['E15','E35','E36']
+assert not env['r13_debate_arguable']('C4')
+store.room13['evidence']=['E13','E15','E35','E36']
 assert env['r13_debate_arguable']('C4')
 # Giving up closes the claim for this session only.
 store.room13['finale_started']=False

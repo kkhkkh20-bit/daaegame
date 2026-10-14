@@ -117,7 +117,7 @@ testcase trial_full:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E14', 'E15', 'E36'),())
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),())
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -206,6 +206,12 @@ testcase trial_full:
     pause 0.6
     click "자료로 반박"
     pause 0.8
+    click "QA E13"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
     click "QA E15"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
@@ -229,6 +235,197 @@ testcase trial_full:
     click pos (640,600) until eval room13.get("trial_result")=="culprit_proven" and room13.get("granny_state")=="detained" timeout 120
     pause 0.5
     screenshot "f_verdict.png"
+    $ r13_qa_dump()
+
+testcase trial_gate_unenforced:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates","witness:nabi","witness:tok"))
+    pause 1.0
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "아이만 그럴 수 있었다는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "되묻기"
+    pause 0.5
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E05"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "다른 길이 있으니"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "죽음의 원인이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E06"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E07"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E09"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "할머니가 어르신을 죽였다"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    screenshot "f_after_wrong.png"
+    click "결론을 말한다"
+    pause 1.0
+    click "누군가가 냈다"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "그때 식당에 있었다는 말"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    run Return(("select","s2"))
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E12"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E05"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "주방에서 그 방까지"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "도우러 들어갔을 뿐이라는 변명"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E13"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E15"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E14"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E36"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "구하다 주운 게 아니라"
+    pause 0.6
+    click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
+    pause 0.5
+    screenshot "gu_verdict.png"
+    $ r13_flag("qa_marker")
+    $ r13_qa_dump()
+
+testcase trial_gate_no_witness:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates",))
+    pause 1.0
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "아이만 그럴 수 있었다는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "되묻기"
+    pause 0.5
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E05"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "다른 길이 있으니"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "죽음의 원인이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E06"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E07"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E09"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "할머니가 어르신을 죽였다"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    screenshot "f_after_wrong.png"
+    click "결론을 말한다"
+    pause 1.0
+    click "누군가가 냈다"
+    pause 0.6
+    click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
+    pause 0.5
+    screenshot "gn_verdict.png"
     $ r13_qa_dump()
 
 testcase finale_win:
@@ -460,7 +657,7 @@ testcase town_b_ambush_musoe:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=1,location="workshop",life_poc=True),("somi_route_seen",))
+    run Call("r13_qa_roam",dict(day=3,period=1,location="workshop",life_poc=True),("somi_route_seen","ep4_seen","ep1_done"))
     click pos (640,600) until screen "choice" timeout 40
     click "골목 입구에서 기다린다"
     click pos (640,600) until screen "choice" timeout 40
@@ -565,3 +762,194 @@ testcase town_m_kongi:
     pause 0.5
     $ r13_qa_town_dump()
 
+
+# ---- Episodes (systems/room13_episodes.rpy) ----
+
+testcase ep1_bami_safe:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=2,location="inn",life_poc=True))
+    click pos (1150,90) until screen "choice" timeout 40
+    click "검사가 무엇인지 묻는다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "못 봤다고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_goto",3,1,"hall")
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "e1_eaves.png"
+    click "바둑이를 설득해 순찰에서 처마를 빼 달라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_goto",4,0,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_qa_town_dump()
+
+testcase ep1_bami_taken:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=2,location="inn",life_poc=True))
+    click pos (1150,90) until screen "choice" timeout 40
+    click "못 봤다고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_goto",3,1,"hall")
+    click pos (1150,90) until screen "choice" timeout 40
+    click "지금은 할 수 있는 게 없다고 말한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_goto",4,0,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_qa_town_dump()
+
+testcase ep2_nabi:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=2,location="kitchen",life_poc=True))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "e2_kitchen.png"
+    click "짐을 같이 날라 준다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_edit(day=3,period=1,location="dining")
+    run Call("r13_qa_talk","nabi")
+    click pos (1150,90) until "아이들 끼니를 다른 데서 구하자고 한다" timeout 30
+    click "아이들 끼니를 다른 데서 구하자고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "학교 곰 선생님에게 부탁해 보자고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    click "돌아가기"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_talk","resident_teacher")
+    click pos (1150,90) until "표 없는 아이들을 학교 급식에 넣어 달라고 한다" timeout 30
+    click "표 없는 아이들을 학교 급식에 넣어 달라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    click "돌아가기"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_edit(day=4,period=0,location="dining")
+    run Call("r13_qa_talk","nabi")
+    click pos (1150,90) until "이제 본 대로 말해 줄 수 있는지 묻는다" timeout 30
+    click "이제 본 대로 말해 줄 수 있는지 묻는다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    $ r13_qa_town_dump()
+
+testcase ep3_stone:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=2,location="square",life_poc=True,case_state="occurred"),("know_stone_history","ep1_done","ev_b_done","ev_c_done"))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "e3_bell.png"
+    click "우박에게 지금 돌의 출력을 재 보라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_edit(day=6,period=1,location="post")
+    run Call("r13_qa_talk","resident_ppul")
+    click pos (1150,90) until "재판을 증거대로 열어 달라고 요구한다" timeout 30
+    click "재판을 증거대로 열어 달라고 요구한다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "돌의 옛 기록과 지금의 출력을 함께 보여 준다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    $ r13_qa_town_dump()
+
+testcase ep4_tok:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done"))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "e4_accused.png"
+    click "광장 등을 직접 살펴본다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "톡의 편을 든다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_talk","resident_ubak")
+    click pos (1150,90) until "광장 등 뚜껑의 나사 자국을 묻는다" timeout 30
+    click "광장 등 뚜껑의 나사 자국을 묻는다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "서리 검사원에게 가서 함께 해명하게 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    click "돌아가기"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_edit(day=4)
+    run Call("r13_qa_talk","resident_tok")
+    click pos (1150,90) until "재판에서 핀 이야기를 직접 해 달라고 한다" timeout 30
+    click "재판에서 핀 이야기를 직접 해 달라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    $ r13_qa_town_dump()
+
+# ---- Town events bundle 2 (systems/room13_town_events2.rpy) ----
+
+testcase town_a_extort:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("ep1_done",),(),2)
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "ta_offer.png"
+    click "물건을 받아 오면 그때 주겠다고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "백 부인 빚 때문이냐고 정면으로 묻는다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "입막음 값으로 여덟 냥을 받는다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_qa_town_dump()
+
+testcase town_q_certificate:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="inn",life_poc=True))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "tq_offer.png"
+    click "서리 검사원의 건강 확인서를 받아 두고 옮긴다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_goto",3,1,"post",("ep1_done",))
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    $ r13_qa_town_dump()
+
+testcase town_q_quarantine:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="inn",life_poc=True))
+    click pos (1150,90) until screen "choice" timeout 40
+    click "그 방으로 옮긴다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    $ r13_qa_town_dump()
+
+testcase medkit_musoe:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done","ep4_seen","tok_cleared"),("medkit",))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_talk","resident_musoe")
+    click pos (1150,90) until "도시제 약상자를 건넨다" timeout 30
+    click "도시제 약상자를 건넨다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    $ r13_qa_town_dump()

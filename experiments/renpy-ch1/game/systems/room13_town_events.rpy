@@ -150,6 +150,10 @@ init 102 python:
 
 label r13_town_events:
     $ r13_town_daily()
+    call r13_episode_events
+    call r13_town_events2
+    if _return=="day":
+        return "day"
     if room13["day"]==3 and room13["period"] in (1,2) and not r13_has("ev_b_done"):
         if room13["location"]=="workshop" and room13["period"]==1 and r13_has("somi_route_seen"):
             call r13_ev_b_ambush
@@ -423,7 +427,7 @@ label r13_ev_kongi_errand:
         $ r13_cash(-2,"콩이에게 심부름 값")
     $ r13_town_set(kongi_watch=dict(place=r13_kongi_pick,day=room13["day"]))
     $ r13_flag("kongi_watching")
-    call r13_lines([("resident_kongi","알았어요. 내일 아침에 광장으로 오세요. 본 것만 말할게요. 안 본 건 안 본 거예요.")],"ev:m:hired")
+    call r13_lines([("resident_kongi","알았어요. 내일 다시 찾아오세요. 본 것만 말할게요. 안 본 건 안 본 거예요.")],"ev:m:hired")
     $ r13_forget_topic("kongi_errand")
     return None
 
