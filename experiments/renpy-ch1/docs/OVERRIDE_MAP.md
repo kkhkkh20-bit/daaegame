@@ -171,6 +171,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 98 | `systems/room13_debate.rpy:348` | _r13_sound_debate_judge |
 | 2 | 150 | `systems/room13_sound.rpy:167` |  |
 
+## `r13_ending_notes` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 56 | `room13_week2_rules.rpy:270` | _r13_w2e_notes |
+| 2 | 109 | `systems/room13_week2_events.rpy:42` |  |
+
 ## `r13_evidence_acquired` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |

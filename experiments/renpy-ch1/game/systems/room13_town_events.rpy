@@ -154,6 +154,7 @@ label r13_town_events:
     call r13_evening_events
     call r13_b3_events
     call r13_carryover_events
+    call r13_w2e_events
     call r13_town_events2
     if _return=="day":
         return "day"

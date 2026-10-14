@@ -1153,3 +1153,56 @@ testcase carry_refuse:
     click pos (1150,90) until screen "r13_topics" timeout 30
     assert eval (r13_has("transport_terms") and r13_cash_now()==20)
     $ r13_qa_town_dump()
+
+testcase w2e_bell:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=9,period=0,location="square",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","village_alerted"))
+    click pos (1150,90) until screen "choice" timeout 60
+    screenshot "w2e_bell.png"
+    click "설이에게 종을 치라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("w2_bell_rung") and r13_has("operators_terms") and r13_has("transport_terms") and room13["period"]==0)
+
+testcase w2e_numbers:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True,evidence=["W4"]),("w1_links_done",))
+    click pos (1150,90) until screen "choice" timeout 60
+    click "가짜 숫자에 동의한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("numbers_forged") and not r13_available(ROOM13["activities"]["w2_measure1"]))
+    $ r13_edit(location="clinic")
+    run Call("r13_qa_talk","resident_seori")
+    click pos (1150,90) until "촌장의 숫자를 지난주 기록과 맞춘다" timeout 30
+    click "촌장의 숫자를 지난주 기록과 맞춘다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("forgery_exposed") and not r13_has("numbers_forged"))
+
+testcase w2e_tools:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","w2e_p_done"))
+    click pos (1150,90) until screen "choice" timeout 60
+    click "모른 척한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("tools_sold") and r13_has("tools_missing") and "부리의 할아버지 도구는 도시로 팔려 갔다." in r13_ending_notes())
+
+testcase w2e_share:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=10,period=0,location="store",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","supplies_ready","kids_fed"))
+    click pos (1150,90) until screen "choice" timeout 60
+    screenshot "w2e_share.png"
+    click "남은 몫을 경매에 붙인다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("share_auction") and r13_has("rumor:profiteer") and r13_cash_now()==10)

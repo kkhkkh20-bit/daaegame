@@ -5,6 +5,7 @@
   - 구현됨: 큰 사건 4개(밤이·나비·돌·톡, 재판 관문)와 묶음 2(A 사기·Q 싼 방·구급 상자·자물쇠 따개). 0.18.3-dev, `room13_episodes.rpy`·`room13_town_events2.rpy`, `docs/releases/RELEASE_0183.md`. R 바둑이는 사건 1의 순찰·뇌물로 들어갔다.
   - 구현됨: 저녁 미션(등불 돌기·보호실 밤 면회·재판 전날 밤), 0.18.5-dev, `room13_evening.rpy`. 시간은 일과 잠으로만 흐른다.
   - 구현됨: 묶음 3(D 저울·E 배급표·O 학교 장작·U 기록 팔기, 소문 효과), 0.18.6-dev, `room13_bundle3.rpy`.
+  - 구현됨: 1주차→2주차 이어 주기(0.18.9, `room13_carryover.rpy`), 2주차 K·P·V·W(0.18.10, `room13_week2_events.rpy`).
   - 나머지 사건은 아직 구현하지 않았다.
 - 같이 볼 문서
   - `EVENT_WEB_DESIGN.md`: 원칙, 비싼 상품, 사건 A~F 상세
