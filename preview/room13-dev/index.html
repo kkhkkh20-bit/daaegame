@@ -198,18 +198,17 @@
     @media(orientation:portrait){#portrait-note{display:block;position:fixed;bottom:15px;left:5%;width:90%;box-sizing:border-box;padding:12px;text-align:center;color:#f3e7ce;background:#30261fe8;border:1px solid #806446;border-radius:8px;font-size:14px;pointer-events:none;z-index:90}}
     </style>
 
-<style id="r13-title-loader">@font-face{font-family:Room13Title;src:url('Room13Title.woff2') format('woff2');font-display:swap}
-:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.0734)}
+<style id="r13-title-loader">:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.0734)}
 html,body{background:#07141b}
 #presplash{object-fit:contain;filter:none;image-rendering:auto}
-#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.15);font-family:Room13Title,serif;color:#f7f1e5;text-shadow:0 2px 4px #07141b}
-#loading-brand .chapter{color:#d7ba80;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);margin:0 0 14px}
-#loading-brand h1{font-family:Room13Title,serif;color:#f7f1e5;font-size:clamp(34px,calc(var(--title-w)*.08125),104px);line-height:1.15;margin:0 0 26px;font-weight:400}
-#loading-brand .subtitle{font-size:clamp(14px,calc(var(--title-w)*.0203125),26px);margin:0;color:#d9dfd7}
-#loading-brand .loading-hint{margin-top:38px;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#d7ba80}
+#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.15);font-family:Galmuri,monospace;color:#fff4df;text-shadow:0 2px 4px #07141b}
+#loading-brand .chapter{color:#ced9d4;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);margin:0 0 14px}
+#loading-brand h1{font-family:Galmuri,monospace;color:#fff4df;font-size:clamp(34px,calc(var(--title-w)*.0859375),110px);line-height:1.15;margin:0 0 26px;font-weight:400}
+#loading-brand .subtitle{font-size:clamp(12px,calc(var(--title-w)*.0171875),22px);margin:0;color:#fff4df}
+#loading-brand .loading-hint{margin-top:38px;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#ebcd8a}
 #statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.11);width:calc(var(--title-w)*.34);max-width:440px;min-width:0;padding:12px 0;background:transparent;border:0;border-radius:0}
-#statusTextDiv{max-height:12vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#bac8c7}
-#statusProgress{accent-color:#d7ba80;height:5px;border:0}
+#statusTextDiv{max-height:12vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#ced9d4}
+#statusProgress{accent-color:#ebcd8a;height:5px;border:0}
 #ContextMenu a{background:#132b30;border-color:#6b6751;color:#eee8dc}
 /* The web utility menu must not intercept the in-game settings gear on phones. */
 #ContextContainer{pointer-events:none;right:3px;top:3px}
@@ -264,7 +263,7 @@ html,body{background:#07141b}
           }
       }
   </script>
-  <script src="renpy-pre.js?v=9cbc51ea4850"></script>
+  <script src="renpy-pre.js?v=7f5d701ea941"></script>
   <script async type="text/javascript" src="renpy.js"></script>
 <script>
     const brand=document.getElementById('loading-brand');
