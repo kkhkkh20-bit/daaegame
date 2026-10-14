@@ -22,7 +22,7 @@ init 79 python:
             return int(renpy.render(notice,width-55,720,0,0).get_size()[1])+20
         total=spacing*max(0,len(entries)-1)
         for label,action,was_read in entries:
-            caption=("{font=assets/Room13Sans.ttf}✓{/font}  "+label) if was_read else label
+            caption=r13_question_caption(label,was_read,False)
             text=Text(caption,size=r13_read_size(22,28),font=r13_ui_font(),xsize=width-99)
             height=renpy.render(text,width-99,720,0,0).get_size()[1]
             total+=max(42,height+12)

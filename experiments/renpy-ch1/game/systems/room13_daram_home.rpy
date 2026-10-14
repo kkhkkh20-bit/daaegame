@@ -137,3 +137,17 @@ init 101 python:
         if pair=={"M01","J05"}:return "(메모에는 초롱의 이름이 있다. 까로는 초롱이 봉투를 보관하는 모습을 봤다. 그 봉투가 엄마 것인지는 확인되지 않았다.)"
         if pair=={"E01","M01"}:return "(편지는 할머니가 보냈고, 방의 메모는 엄마가 가족에게 남겼다. 두 글이 같은 이유로 쓰인 것인지는 알 수 없다.)"
         return result
+
+    _r13_daram_home_present=r13_present
+    def r13_present(person,key,identity=False):
+        response=_r13_daram_home_present(person,key,identity)
+        state=store.room13 or {}
+        if person!="daram" or not r13_home_with_daram() or key not in state.get("evidence",[]):return response
+        if key=="E03" and "seam" in state.get("tool_discoveries",{}) and "tool:seam" in state.get("read_topics",[]):return response
+        if any(spec.get("npc")==person and key in spec.get("items",[]) for spec in ROOM13.get("presentations",[])):return response
+        if key in ("J04","J05"):topic="home:daram:packet"
+        elif key in ("E01","E18") and {"E01","E18"}<=set(state.get("evidence",[])):topic="home:daram:letters"
+        elif key in ("M01","E03"):topic="home:daram:mother"
+        else:topic=None
+        if topic and r13_daram_home_allowed(topic):return [("dad","이것도 같이 보자.")]+r13_daram_home_lines(topic)[1:]
+        return [("dad","이것도 같이 읽어 볼래?"),("daram","응. 모르는 말이 나오면 물어봐도 돼?"),("dad","그럼. 아빠도 모르는 건 같이 적어 두자.")]

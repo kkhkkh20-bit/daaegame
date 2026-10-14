@@ -19,7 +19,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 10 | 100 | `systems/room13_poc_route.rpy:60` | _r13_daram_home_topics |
 | 11 | 101 | `systems/room13_daram_home.rpy:95` |  |
 
-## `r13_present` (8층)
+## `r13_present` (9층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -30,7 +30,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 5 | 94 | `systems/room13_first_day_flow.rpy:45` | _r13_work_present |
 | 6 | 96 | `systems/room13_work_clues.rpy:25` | _r13_intro_present |
 | 7 | 97 | `systems/room13_intro_clues.rpy:48` | _r13_poc_present |
-| 8 | 100 | `systems/room13_poc_route.rpy:66` |  |
+| 8 | 100 | `systems/room13_poc_route.rpy:66` | _r13_daram_home_present |
+| 9 | 101 | `systems/room13_daram_home.rpy:142` |  |
 
 ## `r13_conversation_topic_lines` (6층)
 

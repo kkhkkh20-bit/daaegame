@@ -179,7 +179,7 @@ screen r13_material_detail(detail,archive=False):
             timer .7 action Function(r13_record_mark_seen,detail)
         $ ev=ROOM13["evidence"][detail]
         add Transform(r13_record_icon(detail),xysize=(160,148),fit="contain",nearest=True) xpos 56 ypos 237
-        text ev["name"] style "r13_key_text" xpos 252 ypos 229 xsize 692 size r13_read_size(24,29)
+        text ev["name"] style "r13_key_text" xpos 252 ypos 229 xsize 692 size r13_record_heading_size(ev["name"])
         if not archive:
             textbutton ("★ 관심 해제" if r13_record_favorite(detail) else "☆ 관심 표시"):
                 style "r13_paper_tab_button" xpos 972 ypos 224 xsize 250 ysize 42 text_size r13_read_size(22,26)
@@ -188,10 +188,10 @@ screen r13_material_detail(detail,archive=False):
             area (252,283,970,116) mousewheel True draggable True scrollbars "vertical"
             vbox:
                 spacing 8
+                text ("확인한 내용: "+ev["establishes"]) size r13_read_size(23,29) color "#342a23" xsize 926
                 text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_record_origin(detail)) style "r13_secondary_text" size r13_read_size(18,24) xsize 926
                 if not archive:
                     text r13_learning_record_status(detail) style "r13_secondary_text" size r13_read_size(18,24) color "#3d6351" xsize 926
-                text ("확인한 내용: "+ev["establishes"]) size r13_read_size(23,29) color "#342a23" xsize 926
                 if not archive and detail in room13.get("records",{}):
                     text ("얻은 곳: "+room13["records"][detail]["source"]) style "r13_secondary_text" size r13_read_size(18,24) xsize 926
     else:

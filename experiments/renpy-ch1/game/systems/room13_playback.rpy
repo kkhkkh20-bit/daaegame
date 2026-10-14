@@ -37,8 +37,10 @@ screen r13_backlog():
     key "K_h" action Hide("r13_backlog")
 
 screen r13_playback_footer():
+    $ footer_width=r13_footer_width(3)
+    add Solid("#14272be8") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 40
     frame:
-        area (940,676,340,40) padding (8,0) background Solid("#14272be8")
+        area (1280-footer_width,664,footer_width,56) padding (8,0) background None
         hbox:
             spacing 8
             textbutton "백로그" style "r13_footer_button" action Show("r13_backlog")

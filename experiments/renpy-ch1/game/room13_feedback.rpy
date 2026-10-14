@@ -3,7 +3,7 @@ init 69 python:
     def r13_evidence_acquired(keys):
         if keys:
             renpy.hide_screen("r13_evidence_found")
-            renpy.show_screen("r13_evidence_found", keys=list(keys))
+            renpy.show_screen("r13_evidence_found", keys=list(keys),conversation=r13_feedback_in_conversation())
 
     def r13_click_feedback(key):
         spec=ROOM13["objects"].get(store.room13["location"],{}).get(key)
@@ -36,23 +36,24 @@ screen r13_click_glint(point):
     add R13ClickGlint() xpos point[0] ypos point[1] xanchor .5 yanchor .5 at r13_click_pulse
     timer .65 action Hide("r13_click_glint")
 
-screen r13_evidence_card(key,caption):
+screen r13_evidence_card(key,caption,conversation=False):
     style_prefix "r13"
     frame:
-        # Below the goal line, so a new record never hides the current goal.
-        xpos 24 ypos 232 xsize 226 padding R13_UI_PADDING["compact"]
+        xpos 24 ypos (24 if conversation else 232) xsize 424 ysize 120 padding R13_UI_PADDING["compact"]
         background R13ActionPanel()
         at r13_evidence_reveal
-        vbox:
-            spacing 8
-            text caption size 19 color "#ebcd8a" xalign .5
-            add Transform(r13_record_icon(key),size=(200,130),fit="contain",nearest=True) xalign .5
-            text ROOM13["evidence"][key]["name"] size 20 color "#fff4df" xsize 200 text_align .5
+        hbox:
+            spacing 12
+            add Transform(r13_record_icon(key),size=(84,84),fit="contain",nearest=True) yalign .5
+            vbox:
+                xsize 304 yalign .5 spacing 6
+                text caption size 19 color "#ebcd8a"
+                text ROOM13["evidence"][key]["name"] size 20 color "#fff4df" xsize 304
 
-screen r13_evidence_found(keys):
+screen r13_evidence_found(keys,conversation=False):
     zorder 85
     default item_index=0
-    use r13_evidence_card(keys[item_index],"새로 들은 말 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 증거 기록")
+    use r13_evidence_card(keys[item_index],"새 증언 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 자료 기록",conversation=conversation)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:

@@ -39,16 +39,20 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
     if mode=="talk":
         # Question screens: the large "돌아가기" button returns; only the tools
         # used while choosing a question stay here.
+        $ footer_width=r13_footer_width(2 if present_action is not None else 1)
+        add Solid("#14272be8") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 40
         frame:
-            area (1000,676,280,40) padding (8,0) background Solid("#14272be8")
+            area (1280-footer_width,664,footer_width,56) padding (8,0) background None
             hbox:
                 spacing 8
                 if present_action is not None:
                     textbutton "보여주기" style "r13_footer_button" action present_action sensitive ready
                 textbutton "기록" style "r13_footer_button" action Show("r13_records") sensitive ready
     elif mode!="field":
+        $ footer_width=r13_footer_width(4+(1 if investigate_action is not None else 0)+(1 if present_action is not None else 0))
+        add Solid("#14272be8") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 40
         frame:
-            area (640,676,640,40) padding (8,0) background Solid("#14272be8")
+            area (1280-footer_width,664,footer_width,56) padding (8,0) background None
             hbox:
                 spacing 8
                 if investigate_action is not None:
@@ -68,10 +72,10 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
             outlines [(1,"#14232a",0,1)]
         # Three independent controls leave the rest of the scene visible/clickable.
         hbox:
-            xalign .5 ypos 670 spacing 8
+            xalign .5 ypos 650 spacing 8
             if mode=="field":
                 frame:
-                    xsize 128 ysize 44 padding (10,6)
+                    xsize 128 ysize 44 yoffset 20 padding (10,6)
                     background Solid("#244239ed")
                     text "조사":
                         size r13_read_size(20,24) color "#e2ebdf"
@@ -251,7 +255,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                         xsize list_width-23 yminimum r13_read_row_height() padding (18,15)
                         background None hover_background Solid("#ffffff18")
                         action action sensitive ready
-                        text (("{font=assets/Room13Sans.ttf}✓{/font}  "+r13_question_summary(title)) if was_read else r13_question_summary(title)):
+                        text r13_question_caption(title,was_read):
                             xsize list_width-59 text_align .5 xalign .5
                             size r13_read_size(24,30) font r13_ui_font()
                             color ("#a0a39b" if was_read else "#fff4df")
@@ -285,7 +289,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                         xsize compact_width-23 yminimum 42 padding (60,6,16,6)
                         background R13ReferenceChoice(False) hover_background R13ReferenceChoice(True)
                         action action sensitive ready
-                        text (("{font=assets/Room13Sans.ttf}✓{/font}  "+title) if was_read else title):
+                        text r13_question_caption(title,was_read,False):
                             xsize compact_width-99 text_align .5 xalign .5
                             size r13_read_size(22,28) font r13_ui_font()
                             color ("#d3e3e7" if was_read else "#ffffff")
@@ -329,7 +333,7 @@ screen r13_material_corner(key):
     zorder 85
     # The card's reveal owns one paper whoosh; prediction/redraw/replace stay silent.
     on "show" action Function(source_fx,"page")
-    use r13_evidence_card(key,"보여 준 자료")
+    use r13_evidence_card(key,"보여 준 자료",conversation=True)
 
 # The resident stays on the left; opaque questions never cover the face.
 screen r13_topics(person):
