@@ -27,8 +27,8 @@
 |---|---|---|---|
 | 밤이 (`bami`) | 미명시 | 여성 | 검토한 현행 자료에 명시적 성별 표현을 확인하지 못함 / 원안: Teenage BAT GIRL with large pointed bat ears, subtle dark-purple animal muzzle and curious pale-violet eyes, folded bat wings behind shoulders, dusty-lavender scarf, dark plum asymmetrical hooded cape over a charcoal tunic, little silver moon pin. Cynical independent, cool but not sexualized. |
 | 부리 (`buri`) | 남성 | 남성 | room13-content.json: residents/resident_owlgp/protects «과거 오판의 정정과 손자» + 부리가 할아버지로 부르는 대사/가족관계 |
-| 아빠 (`dad`) | 남성 | 남성 | room13-content.json: E01 establishes «아빠와 딸» |
-| 다람 (`daram`) | 여성 | 여성 | room13-content.json: E01 establishes «아빠와 딸» |
+| 아빠 (`dad`) | 남성 | 남성 | room13-content.json: E02 establishes «아빠와 딸» |
+| 다람 (`daram`) | 여성 | 여성 | room13-content.json: E02 establishes «아빠와 딸» |
 | 도토 (`doto`) | 미명시 | 남성 | 검토한 현행 자료에 명시적 성별 표현을 확인하지 못함 / 원안: Young chestnut squirrel boy, striped squirrel forehead and huge curled fluffy tail visible behind one shoulder, small round glasses, precise navy-and-ochre checked vest, ivory shirt, sleeve garters, mechanical stopwatch in one paw and a tiny closed notebook. A meticulous library regular. Visually distinct from the detective heroine. |
 | 토끼 할머니 (`granny`) | 여성 | 여성 | room13-content.json 및 room13.rpy의 «할머니» 호칭 |
 | 돌목 (`guard`) | 미명시 | 미명시 | 검토한 현행 자료에 명시적 성별 표현을 확인하지 못함 |
