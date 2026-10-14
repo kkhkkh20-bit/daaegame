@@ -1,0 +1,138 @@
+{
+  "basis_main": "d4342aea902d657d729df06cfcf5ba93ce54f562",
+  "status": "REVIEW_ONLY_NO_AUTO_APPLY",
+  "physical_position_confirmed": false,
+  "canvas": [
+    1600,
+    1200
+  ],
+  "units": "diagram pixels, not building dimensions",
+  "nodes": [
+    {
+      "diagram_id": "hall",
+      "rect_xywh": [
+        40,
+        170,
+        330,
+        125
+      ],
+      "label": "2층 복도",
+      "classification": "public",
+      "note": "정문 감시 · E11"
+    },
+    {
+      "diagram_id": "room13",
+      "rect_xywh": [
+        450,
+        170,
+        460,
+        125
+      ],
+      "label": "13호 객실",
+      "classification": "public",
+      "note": "창/침대/흔적 위치 보존"
+    },
+    {
+      "diagram_id": "passage",
+      "rect_xywh": [
+        1080,
+        170,
+        450,
+        125
+      ],
+      "label": "책장 뒤 서비스 통로",
+      "classification": "confirmed",
+      "note": "안쪽 손잡이 → 객실"
+    },
+    {
+      "diagram_id": "inn",
+      "rect_xywh": [
+        40,
+        425,
+        300,
+        125
+      ],
+      "label": "접수대·공용계단",
+      "classification": "public",
+      "note": "공구를 들고 복귀하는 후보"
+    },
+    {
+      "diagram_id": "kitchen",
+      "rect_xywh": [
+        450,
+        425,
+        460,
+        125
+      ],
+      "label": "주방",
+      "classification": "public",
+      "note": "선반 아래 유지식 레버"
+    },
+    {
+      "diagram_id": "laundry",
+      "rect_xywh": [
+        1080,
+        425,
+        450,
+        125
+      ],
+      "label": "세탁실",
+      "classification": "confirmed",
+      "note": "문 너머 존재 / 독립 장소 미구현"
+    }
+  ],
+  "existing_connection_pairs": [
+    [
+      "hall",
+      "room13"
+    ],
+    [
+      "room13",
+      "passage"
+    ]
+  ],
+  "textual_connection_pairs": [
+    [
+      "kitchen",
+      "laundry"
+    ],
+    [
+      "laundry",
+      "passage"
+    ]
+  ],
+  "secret_stair": {
+    "physical_position": null,
+    "direction": null,
+    "tread_count": null,
+    "floor_height": null,
+    "diagram_connector": [
+      [
+        1390,
+        425
+      ],
+      [
+        1390,
+        295
+      ]
+    ],
+    "warning": "This connector is NOT a proposed stair shaft or floor-plan coordinate."
+  },
+  "proposed_return": [
+    "room13",
+    "passage",
+    "laundry",
+    "kitchen"
+  ],
+  "return_status": "plausible reconstruction, not directly witnessed canon",
+  "production_layers": [
+    "public rooms",
+    "current location",
+    "owned old-plan annotations",
+    "verified mechanism",
+    "verified connection",
+    "witness notes",
+    "developer-only reconstruction"
+  ],
+  "new_evidence_ids": []
+}

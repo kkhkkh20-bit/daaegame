@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200"><rect width="100%" height="100%" fill="#101f29"/><style>text{font-family:sans-serif;fill:#f6edd8}.s{font-size:21px}.t{font-size:28px;font-weight:bold}</style><text x="40" y="50" class="t">개발자용 평면·단면 설계 시트 · NO_AUTO_APPLY</text><text x="40" y="86" class="s">사용자 지정 연결 검토 / 축척·방향 미확정 / 비밀계단의 건물 좌표 없음</text>
+<text x="40" y="135" class="s">평면 연결: 실선은 확인된 출입 관계, 보라 점선은 사용자 경로를 검토하는 연결이다.</text>
+<g id="hall"><rect x="40" y="170" width="330" height="125" fill="#20343e" stroke="#80c5bd" stroke-width="3"/><text x="58" y="210" class="t">2층 복도</text><text x="58" y="248" class="s">정문 감시 · E11</text></g>
+<g id="room13"><rect x="450" y="170" width="460" height="125" fill="#20343e" stroke="#80c5bd" stroke-width="3"/><text x="468" y="210" class="t">13호 객실</text><text x="468" y="248" class="s">창/침대/흔적 위치 보존</text></g>
+<g id="passage"><rect x="1080" y="170" width="450" height="125" fill="#20343e" stroke="#dabb70" stroke-width="3"/><text x="1098" y="210" class="t">책장 뒤 서비스 통로</text><text x="1098" y="248" class="s">안쪽 손잡이 → 객실</text></g>
+<g id="inn"><rect x="40" y="425" width="300" height="125" fill="#20343e" stroke="#80c5bd" stroke-width="3"/><text x="58" y="465" class="t">접수대·공용계단</text><text x="58" y="503" class="s">공구를 들고 복귀하는 후보</text></g>
+<g id="kitchen"><rect x="450" y="425" width="460" height="125" fill="#20343e" stroke="#80c5bd" stroke-width="3"/><text x="468" y="465" class="t">주방</text><text x="468" y="503" class="s">선반 아래 유지식 레버</text></g>
+<g id="laundry"><rect x="1080" y="425" width="450" height="125" fill="#20343e" stroke="#dabb70" stroke-width="3" stroke-dasharray="9 7"/><text x="1098" y="465" class="t">세탁실</text><text x="1098" y="503" class="s">문 너머 존재 / 독립 장소 미구현</text></g>
+<polyline points="370,230 450,230" fill="none" stroke="#80c5bd" stroke-width="4"/>
+<polyline points="910,230 1080,230" fill="none" stroke="#dabb70" stroke-width="4"/>
+<text x="917" y="214" class="s">책 / ←손잡이</text>
+<polyline points="910,485 1080,485" fill="none" stroke="#ba9de0" stroke-width="4" stroke-dasharray="10 9"/>
+<polyline points="1390,425 1390,295" fill="none" stroke="#ba9de0" stroke-width="4" stroke-dasharray="10 9"/>
+<text x="1080" y="353" class="s">계단 위치·방향·단수 미정</text>
+<text x="1080" y="385" class="s">이 연결선 자체를 계단으로 그리지 말 것</text>
+<text x="450" y="605" class="s">식당 → 주방: 첫 비명 목격 이후 관찰 공백. 주방 뒤 나무문은 시야 차단.</text>
+<text x="40" y="665" class="s">단면 접속 제약: 아래는 실제 계단 배치가 아니라, 두 층의 연결을 검토하는 도식이다.</text>
+<g id="section_room"><rect x="60" y="725" width="540" height="110" fill="#20343e" stroke="#80c5bd" stroke-width="3"/><text x="78" y="765" class="t">2층 · 13호실</text><text x="78" y="803" class="s">책장 판 / 객실 측 붉은 책</text></g>
+<g id="section_upper"><rect x="950" y="725" width="580" height="110" fill="#20343e" stroke="#dabb70" stroke-width="3"/><text x="968" y="765" class="t">2층 · 통로 쪽</text><text x="968" y="803" class="s">안쪽 수동손잡이는 레버와 독립</text></g>
+<g id="section_kitchen"><rect x="60" y="970" width="540" height="110" fill="#20343e" stroke="#80c5bd" stroke-width="3"/><text x="78" y="1010" class="t">1층 · 주방</text><text x="78" y="1048" class="s">ON 준비 → 귀환 후 OFF는 제안</text></g>
+<g id="section_laundry"><rect x="950" y="970" width="580" height="110" fill="#20343e" stroke="#dabb70" stroke-width="3" stroke-dasharray="9 7"/><text x="968" y="1010" class="t">1층 · 세탁실</text><text x="968" y="1048" class="s">상승 기록 약45초 / 귀환 시간 미확정</text></g>
+<polyline points="600,780 950,780" fill="none" stroke="#dabb70" stroke-width="4"/>
+<polyline points="600,1025 950,1025" fill="none" stroke="#ba9de0" stroke-width="4" stroke-dasharray="10 9"/>
+<polyline points="1240,970 1240,835" fill="none" stroke="#ba9de0" stroke-width="4" stroke-dasharray="10 9"/>
+<text x="970" y="885" class="s">층간 연결만 확인</text>
+<text x="970" y="918" class="s">계단 공간·착지점은 미확정</text>
+<text x="55" y="1133" class="s">붉은 금속 줄 ≠ 사람의 경로. 레버 준비는 객실→통로 귀환 조건과 함께 설명해야 한다.</text>
+<text x="55" y="1168" class="s">귀환·OFF·공구 수령의 정확한 시점과 공간 좌표는 아트/대본 승인 전까지 확정 금지.</text>
+</svg>

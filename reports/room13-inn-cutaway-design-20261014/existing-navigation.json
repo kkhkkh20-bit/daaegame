@@ -1,0 +1,159 @@
+{
+  "R13_MAP_NODES": {
+    "village": {
+      "gate": [
+        132,
+        354
+      ],
+      "square": [
+        336,
+        250
+      ],
+      "inn": [
+        715,
+        299
+      ],
+      "post": [
+        466,
+        172
+      ],
+      "workshop": [
+        585,
+        425
+      ],
+      "clinic": [
+        407,
+        370
+      ],
+      "school": [
+        95,
+        143
+      ],
+      "store": [
+        553,
+        292
+      ]
+    },
+    "inn": {
+      "inn": [
+        435,
+        420
+      ],
+      "dining": [
+        434,
+        307
+      ],
+      "kitchen": [
+        170,
+        307
+      ],
+      "hall": [
+        340,
+        120
+      ],
+      "room13": [
+        685,
+        120
+      ],
+      "passage": [
+        685,
+        40
+      ],
+      "guestroom": [
+        245,
+        65
+      ]
+    },
+    "mountain": {
+      "facility": [
+        110,
+        135
+      ],
+      "greenhouse": [
+        382,
+        108
+      ],
+      "altar": [
+        644,
+        100
+      ]
+    }
+  },
+  "R13_LOCAL_CONNECTIONS": {
+    "inn": [
+      [
+        "dining",
+        "식당"
+      ],
+      [
+        "kitchen",
+        "주방"
+      ],
+      [
+        "hall",
+        "2층 복도"
+      ],
+      [
+        "outside",
+        "여관 밖으로"
+      ]
+    ],
+    "dining": [
+      [
+        "inn",
+        "접수대"
+      ],
+      [
+        "kitchen",
+        "주방"
+      ]
+    ],
+    "kitchen": [
+      [
+        "dining",
+        "식당"
+      ],
+      [
+        "inn",
+        "접수대"
+      ]
+    ],
+    "hall": [
+      [
+        "inn",
+        "1층 접수대"
+      ],
+      [
+        "room13",
+        "13호실"
+      ],
+      [
+        "guestroom",
+        "임시 객실"
+      ]
+    ],
+    "room13": [
+      [
+        "hall",
+        "복도로"
+      ],
+      [
+        "passage",
+        "숨은 통로"
+      ]
+    ],
+    "guestroom": [
+      [
+        "hall",
+        "복도로"
+      ]
+    ],
+    "passage": [
+      [
+        "room13",
+        "13호실로"
+      ]
+    ]
+  },
+  "note": "Existing engine navigation/pin data. r13_places and first-day overrides restrict availability. Pin positions are map UI coordinates, not building geometry."
+}

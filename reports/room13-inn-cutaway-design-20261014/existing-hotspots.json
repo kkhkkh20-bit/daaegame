@@ -1,0 +1,231 @@
+{
+  "basis_main": "d4342aea902d657d729df06cfcf5ba93ce54f562",
+  "coordinate_space": "Scene-local logical pixels; origin top-left; NOT floor-plan metres or building coordinates",
+  "hotspots": [
+    {
+      "location": "kitchen",
+      "object_key": "shelf",
+      "logical_rect_xywh": [
+        281,
+        406,
+        252,
+        117
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "찬장 선반 아래 손이 닿는 홈이 있다. 덮개 한쪽만 닳았다."
+    },
+    {
+      "location": "kitchen",
+      "object_key": "rear",
+      "logical_rect_xywh": [
+        13,
+        94,
+        238,
+        517
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "창이 없는 나무문 너머는 세탁실이다. 식당에서는 이 안쪽이 보이지 않는다."
+    },
+    {
+      "location": "passage",
+      "object_key": "steps",
+      "logical_rect_xywh": [
+        442,
+        211,
+        319,
+        288
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "좁은 계단은 아래층 세탁실로 이어진다. 수건 바구니를 비켜야 발을 놓을 수 있다."
+    },
+    {
+      "location": "passage",
+      "object_key": "handle",
+      "logical_rect_xywh": [
+        960,
+        154,
+        157,
+        224
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "안쪽 손잡이를 당기면 걸쇠가 직접 물러난다. 주방에서 잠가도 이쪽에서는 나갈 수 있다."
+    },
+    {
+      "location": "room13",
+      "object_key": "books",
+      "logical_rect_xywh": [
+        1195,
+        267,
+        50,
+        72
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "책장 오른쪽 아래 칸의 붉은 책. 다른 책들과 달리 책장이 벌어지지 않는다."
+    },
+    {
+      "location": "room13",
+      "object_key": "window",
+      "logical_rect_xywh": [
+        197,
+        25,
+        193,
+        248
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "창밖으로 다른 집의 지붕이 내려다보인다. 여기는 2층이다. 안쪽 걸쇠와 고정 철망 사이로는 몸이 빠져나갈 수 없다."
+    },
+    {
+      "location": "room13",
+      "object_key": "bed",
+      "logical_rect_xywh": [
+        605,
+        311,
+        537,
+        151
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "이불 안쪽의 붉은 매듭은 엄마가 집에서 쓰던 바느질과 같다. 지금 엄마가 이 방에 있다는 뜻은 아니다."
+    },
+    {
+      "location": "room13",
+      "object_key": "under",
+      "logical_rect_xywh": [
+        600,
+        480,
+        437,
+        60
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "침대 밑에는 작은 아이가 웅크릴 공간이 있다. 벽 아래 고정 철망까지 낮게 이어진다."
+    },
+    {
+      "location": "room13",
+      "object_key": "floor",
+      "logical_rect_xywh": [
+        590,
+        523,
+        208,
+        82
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "침대 앞의 나무 바닥이다. 책상에서 떨어진 물건이라면 이쪽으로 굴러올 수도 있겠다."
+    },
+    {
+      "location": "hall",
+      "object_key": "door",
+      "logical_rect_xywh": [
+        705,
+        134,
+        208,
+        305
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "복도는 이 문에서 끝난다. 13호의 출입문에는 유리가 없다. 복도에서 보아 오른쪽이 경첩이고, 안쪽 빗장은 왼쪽 문틀의 받이에 걸린다."
+    },
+    {
+      "location": "hall",
+      "object_key": "rail",
+      "logical_rect_xywh": [
+        9,
+        217,
+        410,
+        239
+      ],
+      "canvas": [
+        1280,
+        720
+      ],
+      "status": "existing source hotspot; no building metric implied",
+      "source": "game/room13-content.json",
+      "label": "계단 난간에서 복도 끝의 13호 문까지 볼 수 있다. 문 안쪽의 침대나 책장은 보이지 않는다."
+    }
+  ],
+  "inn_atlas": {
+    "size": [
+      1672,
+      941
+    ],
+    "rects": [
+      [
+        0,
+        0,
+        836,
+        470
+      ],
+      [
+        836,
+        0,
+        836,
+        470
+      ],
+      [
+        0,
+        470,
+        836,
+        471
+      ],
+      [
+        836,
+        470,
+        836,
+        471
+      ]
+    ],
+    "evidence": {}
+  },
+  "room_source_size": [
+    1672,
+    941
+  ],
+  "projection": "Native atlas point=(crop_x+x*crop_w/1280,crop_y+y*crop_h/720); rectangle widths/heights scale identically."
+}
