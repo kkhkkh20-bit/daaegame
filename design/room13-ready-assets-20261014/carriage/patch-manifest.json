@@ -1,0 +1,98 @@
+{
+  "status": "static_verified_runtime_blocked",
+  "base_commit": "a53d8c2b9894a9ff907df9aaa81d934ee8dcc5c1",
+  "base_archive_sha256": "3317ab76d066865e18ba5e566537e7dc9252bea09bce9d460eb8fadefd5b7aa0",
+  "archive_sha256": "a33b649510c067b8c2f00279a059322478da75cc0af6c7c9fc2b2411d335e4cd",
+  "archive_bytes": 305545360,
+  "asset": {
+    "member": "game/assets/room13-pixel-carriage-letter0153-morning.png",
+    "bytes": 1810610,
+    "sha256": "9ce6389a6b1d6575dac7922d690669b9b9b1843df854ab15db3c4044d3a63f9e",
+    "previous_sha256": "14cdd63697a88e34a63370d035354910401459d574f93bab4da6fd2c3b01e9e1",
+    "width": 1672,
+    "height": 941
+  },
+  "changed_archive_members": [
+    "game/assets/provenance.json",
+    "game/assets/room13-pixel-carriage-letter0153-morning.png"
+  ],
+  "unchanged_archive_members": 902,
+  "original_local_record_bytes_preserved": 303760442,
+  "archive_strategy": "Original local records preserved byte-for-byte; two replacement local records appended and their unique central-directory records retargeted. No duplicate member names. Old asset/provenance payloads remain unreferenced.",
+  "changed_release_files": [
+    {
+      "path": "preview/room13-dev/build-manifest.json",
+      "bytes": 24649,
+      "sha256": "7b8fa409bc3c2a5d927f6548cc1a2098ec746809b80af358eef5f46e856a0fce",
+      "previous_bytes": 24649,
+      "previous_sha256": "42e83f2925b25c1225ba32f2c4ba7dc9d6372c5bc2a2f95e1140560af98689d5"
+    },
+    {
+      "path": "preview/room13-dev/game-transport.json",
+      "bytes": 908,
+      "sha256": "3d0463dacf32ea58d4133390011bf43a2c5e9fa6ca112aee8474fa1b209eb135",
+      "previous_bytes": 908,
+      "previous_sha256": "b0cc96cc5609c658937a1b3457e32f280ce6544d3ba3bfae86e852428e83c228"
+    },
+    {
+      "path": "preview/room13-dev/game.part05",
+      "bytes": 53887120,
+      "sha256": "1231cff7ec4e474ea573bbc4fea7596e69cb3a737f15db2f1b25eef9783e79b6",
+      "previous_bytes": 52173096,
+      "previous_sha256": "be4a96051278851449cfac6bbc8256a9fac046900530a313ec00cd6046700708"
+    },
+    {
+      "path": "preview/room13-dev/index.html",
+      "bytes": 8065,
+      "sha256": "073e4e759d818f769bac158edab80a25e9306f8838a79e6ab8fb01a1d81cca8e",
+      "previous_bytes": 8061,
+      "previous_sha256": "4d354c9a72a1153e6eff5488efbedb52dbd5a2a820501736de412f291d364616"
+    },
+    {
+      "path": "preview/room13-dev/renpy-pre.js",
+      "bytes": 31624,
+      "sha256": "187e8360ce113c65fba8bbbdf82516ea9fe706222496ad3f2af52e63535ea830",
+      "previous_bytes": 31624,
+      "previous_sha256": "c542f4d72177832f905a5a337e42d6d54f49ad4935d8627a9c2fcd18ebf694f9"
+    }
+  ],
+  "unchanged_transport_parts": [
+    "game.part01",
+    "game.part02",
+    "game.part03",
+    "game.part04"
+  ],
+  "checks": [
+    "original transport part sizes and SHA256 checked",
+    "ZIP CRC test passes",
+    "904 unique member names unchanged",
+    "902 unrelated member contents byte-identical",
+    "original local records and compressed payloads byte-identical",
+    "PNG bytes copied without postprocessing",
+    "PNG dimensions and mode unchanged",
+    "loader part hashes, Content-Length, and cache-busting query updated",
+    "all 155 build-manifest file hashes and total updated",
+    "Source patch dry-run passes against latest extracted source",
+    "Source patch application and idempotent reapplication pass in isolated test tree",
+    "Source provenance changes only target asset hash",
+    "Independent unzip -t validates all member compressed data"
+  ],
+  "limitations": [
+    "RenPy SDK is not installed; no source rebuild or standalone lint performed",
+    "Browser runtime test did not start: installed Chromium failed with socket() failed: Operation not permitted, including one permitted escalation retry",
+    "No remote push or deployment performed"
+  ],
+  "source_asset_files": [
+    {
+      "path": "experiments/renpy-ch1/art/pixel-b/room13-pixel-carriage-letter0153-morning.png",
+      "bytes": 1810610,
+      "sha256": "9ce6389a6b1d6575dac7922d690669b9b9b1843df854ab15db3c4044d3a63f9e"
+    },
+    {
+      "path": "experiments/renpy-ch1/game/assets/room13-pixel-carriage-letter0153-morning.png",
+      "bytes": 1810610,
+      "sha256": "9ce6389a6b1d6575dac7922d690669b9b9b1843df854ab15db3c4044d3a63f9e"
+    }
+  ],
+  "source_handoff_note": "The extracted source RELEASE_STATUS lists an older candidate archive hash (8d156031...), while the checked current preview transport and actual runtime source identify archive 3317ab76... and version 0.16.0-dev. The runtime patch uses the actual current preview archive, not that older candidate."
+}
