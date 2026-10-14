@@ -54,14 +54,14 @@ label r13_evening_auto:
         return None
     $ r13_flag("evening_brief:%d"%room13["day"])
     call r13_ev_here("night")
-    call r13_lines([(None,"하루 일이 끝났다. 저녁에는 일이 없다. 오늘 밤에만 할 수 있는 일이 있다. 시간은 자기 전까지 흐르지 않는다.")],"evening:brief")
+    call r13_lines([(None,"하루 일이 끝났다. 저녁에는 일이 없지만, 오늘 밤에만 할 수 있는 일이 있다. 자기 전까지는 시간이 흐르지 않는다.")],"evening:brief")
     call r13_evening_board
     return _return
 
 label r13_evening_board:
     $ _ev_items=[(title+" · "+R13_EVENING_PLACE.get(place,place),place) for key,place,title,hint in r13_evening_missions()]
     if not _ev_items:
-        call r13_lines([(None,"오늘 저녁에 따로 할 일은 남지 않았다. 사람들을 만나거나 13호에서 쉬자.")],"evening:none")
+        call r13_lines([(None,"오늘 저녁에는 따로 남은 일이 없다. 사람들을 만나거나 13호에서 쉬자.")],"evening:none")
         return None
     call r13_lines([(None,"  ".join("· "+hint for key,place,title,hint in r13_evening_missions()))],"evening:hints:%d"%room13["day"])
     $ _ev_pick=renpy.display_menu(_ev_items+[("혼자 마을을 둘러본다",None)])
@@ -92,20 +92,20 @@ label r13_ev_lamp_round:
         $ _ep_loop=False
         menu:
             "식은 등을 함께 센다" if "W6" not in room13["evidence"]:
-                call r13_lines([("resident_lamplighter","열둘 중에 넷이요. 한 달 전보다 반나절 일찍 꺼져요. 이번 겨울만 조각을 두 번 갈았어요."),
+                call r13_lines([("resident_lamplighter","식은 등은 열둘 중에 넷이요. 한 달 전보다 반나절 일찍 꺼져요. 이번 겨울에만 조각을 두 번 갈았어요."),
                     ("dad","등이 식는 겁니까, 돌이 식는 겁니까?"),
-                    ("resident_lamplighter","……그걸 재 본 사람은 우박뿐이에요. 저는 장대만 들어요.")],"ev:lamp:count")
+                    ("resident_lamplighter","……돌이 식는지 재 본 사람은 우박뿐이에요. 저는 장대만 들고 다니고요.")],"ev:lamp:count")
                 $ r13_grant(["W6"],"초롱과 센 광장 등")
                 $ r13_flag("know_stone_failing","lamplighter_trust")
                 $ _ep_loop=True
             "꺼진 등을 직접 켜 본다" if "W5" not in room13["evidence"]:
-                call r13_lines([(None,"초롱이 손톱만 한 조각을 집게로 건넸다. 장갑 너머로도 사람 손처럼 따뜻했다."),
+                call r13_lines([(None,"초롱이 손톱만 한 조각을 집게로 건넸다. 장갑을 꼈는데도 사람 손처럼 따뜻했다."),
                     (None,"조각을 등에 끼우자 차가운 유리가 천천히 데워졌다."),
-                    ("resident_lamplighter","돌에서 떼어 낸 거예요. 이게 없으면 등은 그냥 유리병이에요.")],"ev:lamp:light")
+                    ("resident_lamplighter","이 조각은 돌에서 떼어 낸 거예요. 이게 없으면 등은 그냥 유리병이에요.")],"ev:lamp:light")
                 $ r13_grant(["W5"],"초롱과 켠 광장 등")
                 $ _ep_loop=True
             "다람이와 등에 이름을 붙인다" if room13.get("daram_state") in ("with_dad","rescued") and not r13_has("daram_lamp_named"):
-                call r13_lines([("daram","이 등은 '도토리'! 제일 작은데 제일 밝아."),
+                call r13_lines([("daram","이 등은 ‘도토리’! 제일 작은데 제일 밝아."),
                     ("resident_lamplighter","……그 등은 원래 이름이 없었어요. 이제 생겼네요."),
                     ("dad","(오랜만에 다람이가 웃었다.)",{"thought":True})],"ev:lamp:name")
                 $ r13_flag("daram_lamp_named","lamplighter_trust")
@@ -124,7 +124,7 @@ label r13_ev_lamp_round:
 label r13_ev_night_visit:
     $ r13_flag("ev_visit:%d"%room13["day"])
     call r13_ev_here("night")
-    call r13_lines([(None,"입구 옆 보호실 창에 작은 등 하나가 켜져 있었다. 창살 너머에서 다람이가 담요도 없이 웅크리고 있었다."),
+    call r13_lines([(None,"입구 옆 보호실 창에 작은 등 하나가 켜져 있었다. 창살 너머에서 다람이가 웅크리고 있었다. 담요도 없었다."),
         ("daram","아빠!"),
         ("resident_badook" if r13_has("badook_doubt") or r13_has("badook_ally") else "neoul","면회는 잠깐이오. 물건은 내가 먼저 보오.")],"ev:visit:open")
     if "W7" not in room13["evidence"]:
@@ -135,14 +135,14 @@ label r13_ev_night_visit:
         menu:
             "구운 밤을 넣어 준다" if r13_has("own:snack"):
                 $ r13_use_item("snack")
-                call r13_lines([("daram","따뜻해……. 아빠, 이거 반은 아빠 거야."),
-                    ("dad","다 먹어. 내일 또 올게.")],"ev:visit:snack")
+                call r13_lines([("daram","따뜻해……. 아빠, 구운 밤 반은 아빠 거야."),
+                    ("dad","다 먹어. 아빠 내일 또 올게.")],"ev:visit:snack")
                 $ r13_flag("daram_fed")
             "담요를 넣어 달라고 부탁한다" if not r13_has("visit_blanket_asked"):
                 $ r13_flag("visit_blanket_asked")
                 if r13_has("badook_doubt") or r13_has("badook_ally"):
-                    call r13_lines([("resident_badook","……규칙에 없다고 금지된 것도 아니지. 내 담요요. 아침엔 돌려받소."),
-                        ("daram","바둑이 아저씨 냄새 나.")],"ev:visit:blanket")
+                    call r13_lines([("resident_badook","……규칙에 없다고 다 금지된 건 아니지. 내 담요요. 아침에는 돌려받겠소."),
+                        ("daram","담요에서 바둑이 아저씨 냄새 나.")],"ev:visit:blanket")
                     $ r13_flag("daram_warm","badook_ally")
                 else:
                     call r13_lines([("neoul","보호실은 여관이 아니오."),
@@ -151,16 +151,16 @@ label r13_ev_night_visit:
                 call r13_lines([("dad","옛날에 도토리 하나가 겨울 숲에서 길을 잃었는데……"),
                     ("daram","……그 도토리, 결국 집에 가?"),
                     ("dad","응. 아빠 도토리가 찾으러 갔거든."),
-                    (None,"다람이는 이야기 끝까지 창살을 잡고 있다가 잠들었다.")],"ev:visit:story")
+                    (None,"다람이는 이야기가 끝날 때까지 창살을 잡고 있다가 잠들었다.")],"ev:visit:story")
                 $ r13_flag("daram_story")
             "내일 재판이 어떻게 되는지 알려 준다" if room13["day"]==6:
-                call r13_lines([("dad","내일 사람들 앞에서 그날 밤을 다시 맞춰 볼 거야. 넌 본 것만 말하면 돼."),
-                    ("daram","모르는 건?"),
+                call r13_lines([("dad","내일 마을 사람들 앞에서 그날 밤 일을 하나씩 다시 짚어 볼 거야. 넌 네가 본 것만 말하면 돼."),
+                    ("daram","모르는 건 어떻게 해?"),
                     ("dad","모른다고 하면 돼. 그게 제일 정직한 거야.")],"ev:visit:trial")
                 $ r13_flag("daram_prepared")
             "창 걸쇠를 몰래 살핀다":
-                call r13_lines([(None,"걸쇠에 손을 대자 등 뒤에서 장대 끝이 땅을 쳤다."),
-                    ("neoul","무엇을 하는 거요. 오늘 면회는 끝이오. 재판 전까지 밤 면회는 없소."),
+                call r13_lines([(None,"창 걸쇠에 손을 대자 등 뒤에서 장대 끝이 땅을 쳤다."),
+                    ("neoul","지금 뭘 하는 거요. 오늘 면회는 끝이오. 재판 전까지 밤 면회는 없소."),
                     ("daram","아빠……!")],"ev:visit:caught")
                 $ r13_flag("visit_banned","neoul_annoyed","rumor:troublemaker")
                 $ _visit_turns=0
@@ -173,7 +173,7 @@ label r13_ev_eve_trial:
     $ r13_flag("ev_eve_done")
     call r13_ev_here("night")
     call r13_lines([(None,"식당에는 내일 재판에 나올 사람들이 흩어져 앉아 있었다. 누구도 크게 말하지 않았다."),
-        ("dad","(내일 누가 무엇을 말해 줄지, 오늘 밤 확인해 두자.)",{"thought":True})],"ev:eve:open")
+        ("dad","(내일 재판에서 누가 무엇을 말해 줄지, 오늘 밤 확인해 두자.)",{"thought":True})],"ev:eve:open")
     $ _eve_left=3
     while _eve_left>0:
         $ _eve_left-=1
@@ -181,40 +181,40 @@ label r13_ev_eve_trial:
             "나비 옆에 앉는다" if not r13_has("eve:nabi"):
                 $ r13_flag("eve:nabi")
                 if r13_has("witness:nabi"):
-                    call r13_lines([("nabi","내일 본 대로 말할게요. 아이들 밥은 이제 걱정 안 해도 되니까요.")],"ev:eve:nabi:yes")
+                    call r13_lines([("nabi","내일 재판에서 본 대로 말할게요. 아이들 밥은 이제 걱정 안 해도 되니까요.")],"ev:eve:nabi:yes")
                 elif r13_has("kids_fed"):
                     call r13_lines([("nabi","아이들은 이제 괜찮아요. ……그래도 할머니 앞에서 말하는 건 무서워요."),
                         ("dad","(나비에게 직접 부탁해야 한다. 오늘 밤 말을 걸어 보자.)",{"thought":True})],"ev:eve:nabi:ask")
                 else:
-                    call r13_lines([("nabi","……내일은 할머니랑 계속 같이 있었다고만 할 거예요. 아이들 밥이 걸려 있어요."),
-                        ("dad","(나비의 입을 막고 있는 건 할머니가 아니라 끼니다.)",{"thought":True})],"ev:eve:nabi:no")
+                    call r13_lines([("nabi","……내일은 할머니랑 계속 같이 있었다고만 할 거예요. 아이들 밥이 할머니한테 걸려 있거든요."),
+                        ("dad","(나비의 입을 막고 있는 건 할머니가 아니라 아이들 끼니다.)",{"thought":True})],"ev:eve:nabi:no")
             "톡을 찾는다" if not r13_has("eve:tok"):
                 $ r13_flag("eve:tok")
                 if r13_has("witness:tok"):
-                    call r13_lines([("resident_tok","핀은 내가 고친 거요. 누구 건지 내가 말하겠소.")],"ev:eve:tok:yes")
+                    call r13_lines([("resident_tok","핀은 내가 고친 거요. 그 핀이 누구 것인지도 재판에서 내가 말하겠소.")],"ev:eve:tok:yes")
                 elif r13_has("tok_detained"):
                     call r13_lines([(None,"톡의 자리는 비어 있었다. 아직 수리점 문에 판자가 덧대져 있다고 했다."),
-                        ("dad","(톡이 갇혀 있으면 핀 이야기를 할 사람이 없다.)",{"thought":True})],"ev:eve:tok:held")
+                        ("dad","(톡이 갇혀 있으면 재판에서 핀 이야기를 해 줄 사람이 없다.)",{"thought":True})],"ev:eve:tok:held")
                 else:
                     call r13_lines([("resident_tok","재판? 나는 일만 하오. 내 일이 아니면 끼지 않소."),
                         ("dad","(톡이 왜 나서야 하는지 아직 말하지 못했다.)",{"thought":True})],"ev:eve:tok:no")
             "밤이를 찾는다" if not r13_has("eve:bami"):
                 $ r13_flag("eve:bami")
                 if r13_has("bami_taken") and not r13_has("bami_returned"):
-                    call r13_lines([(None,"처마 밑은 비어 있었다. 검사 뒤로 밤이를 본 사람은 없었다."),
-                        ("dad","(밤이가 본 것은 이제 아무도 말해 줄 수 없다.)",{"thought":True})],"ev:eve:bami:gone")
+                    call r13_lines([(None,"처마 밑은 비어 있었다. 검사를 받으러 끌려간 뒤로 밤이를 본 사람은 없었다."),
+                        ("dad","(밤이가 그날 본 것은 이제 아무도 말해 줄 수 없다.)",{"thought":True})],"ev:eve:bami:gone")
                 elif r13_has("bami_consent"):
-                    call r13_lines([("bami","내가 본 거, 내일 말할게. 아저씨가 옆에 있어 줘.")],"ev:eve:bami:yes")
+                    call r13_lines([("bami","내가 그날 본 거, 내일 재판에서 말할게. 대신 아저씨가 옆에 있어 줘.")],"ev:eve:bami:yes")
                 else:
-                    call r13_lines([("bami","……사람 많은 데는 싫어. 내가 말하면 나도 데려갈 거잖아."),
-                        ("dad","(밤이가 안전하다고 믿을 곳부터 마련해야 한다.)",{"thought":True})],"ev:eve:bami:no")
+                    call r13_lines([("bami","……사람 많은 데는 싫어. 내가 나서서 말하면 경비들이 나도 데려갈 거잖아."),
+                        ("dad","(밤이가 안전하다고 믿을 만한 곳부터 마련해야 한다.)",{"thought":True})],"ev:eve:bami:no")
             "뿔이 촌장과 마주 앉는다" if not r13_has("eve:ppul"):
                 $ r13_flag("eve:ppul")
                 if r13_has("fair_hearing"):
-                    call r13_lines([("resident_ppul","약속은 지키오. 증거대로, 판결대로.")],"ev:eve:ppul:yes")
+                    call r13_lines([("resident_ppul","약속은 지키오. 재판은 증거대로, 집행은 판결대로.")],"ev:eve:ppul:yes")
                 else:
                     call r13_lines([("resident_ppul","내일은 마을 법대로 하오. 누가 옳든, 겨울을 넘길 방법이 먼저요."),
-                        ("dad","(이겨도 촌장이 판결을 따르지 않을 수 있다.)",{"thought":True})],"ev:eve:ppul:no")
+                        ("dad","(재판에서 이겨도 촌장이 판결을 따르지 않을 수 있다.)",{"thought":True})],"ev:eve:ppul:no")
             "그만 일어선다":
                 $ _eve_left=0
     call r13_lines([("dad","(남은 건 오늘 밤뿐이다. 자기 전에 할 수 있는 일을 하자.)",{"thought":True})],"ev:eve:end")

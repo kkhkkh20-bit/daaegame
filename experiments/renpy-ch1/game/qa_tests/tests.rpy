@@ -812,7 +812,7 @@ testcase ep2_nabi:
     run Call("r13_qa_roam",dict(day=2,period=2,location="kitchen",life_poc=True))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "e2_kitchen.png"
-    click "짐을 같이 날라 준다"
+    click "음식 짐을 같이 날라 준다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ r13_edit(day=3,period=1,location="dining")
@@ -905,7 +905,7 @@ testcase town_a_extort:
     run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("ep1_done",),(),2)
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "ta_offer.png"
-    click "물건을 받아 오면 그때 주겠다고 한다"
+    click "짐을 받아 오면 돈을 주겠다고 한다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
     click "백 부인 빚 때문이냐고 정면으로 묻는다"
@@ -1096,10 +1096,10 @@ testcase b3_firewood:
     run Call("r13_qa_roam",dict(day=5,period=2,location="school",life_poc=True,case_state="occurred",daram_state="held"),("ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ev_visit:5","ev_e_done"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "b3_wood.png"
-    click "왜 그러는지 묻는다"
+    click "왜 장작을 가져가는지 묻는다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "학교 일을 대신 하겠다고 한다"
+    click "대피소 장작을 대신 나르겠다고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval ("W8" in room13["evidence"] and r13_has("bori_ally") and room13["period"]==2)
@@ -1112,7 +1112,7 @@ testcase b3_pages:
     run Call("r13_qa_roam",dict(day=4,period=0,location="post",life_poc=True),("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "b3_pages.png"
-    click "베껴 둘 시간을 달라고 한다"
+    click "장부를 베낄 시간을 달라고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("pages_sold") and not r13_has("know_stone_history"))
@@ -1148,7 +1148,7 @@ testcase carry_refuse:
     click "마차 썰매를 빌린다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 30
-    click "열 냥에 빌린다"
+    click "썰매를 열 냥에 빌린다"
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 30
     assert eval (r13_has("transport_terms") and r13_cash_now()==20)

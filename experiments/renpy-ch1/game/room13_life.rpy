@@ -186,19 +186,19 @@ init 57 python:
 
 label r13_topic_choice(key):
     if key=="w2_erased":
-        call r13_lines([("resident_seori","그 줄은 제가 지웠습니다. 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠."),("dad","잠깐 나아진 사실까지 없어진 건 아니잖습니까."),("resident_seori","압니다. 그렇지만 원본을 내놓으면 제 검사도 전부 다시 따질 겁니다.")],"negotiation:erased:start")
+        call r13_lines([("resident_seori","회복 기록의 그 줄은 제가 지웠습니다. 환자가 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠."),("dad","잠깐이라도 나아진 사실까지 없어진 건 아니잖습니까."),("resident_seori","압니다. 하지만 원본을 내놓으면 사람들이 제가 한 검사도 전부 다시 따지려 들 겁니다.")],"negotiation:erased:start")
         $ r13_speaker("resident_seori","neutral")
         menu:
             "기록을 고치는 일에 어디까지 책임을 지겠습니까?"
             "서명은 두고, 사실과 지시를 나눠 주세요":
-                call r13_lines([("resident_seori","제 책임을 없애 주겠다는 말은 아니군요."),("dad","없던 일로 만들겠다고 하면 이 기록도 믿을 수 없어집니다."),("resident_seori","……가족에게는 제가 먼저 말하겠습니다. 고치기 전에 베껴 둔 기록에는 할머니 확인도 남아 있습니다.")],"negotiation:erased:accepted")
+                call r13_lines([("resident_seori","결국 제 책임을 없애 주겠다는 말은 아니군요."),("dad","책임까지 없던 일로 만들어 버리면 이 기록도 믿을 수 없게 됩니다."),("resident_seori","……가족에게는 제가 먼저 말하겠습니다. 고치기 전에 베껴 둔 기록에는 할머니가 확인한 흔적도 남아 있습니다.")],"negotiation:erased:accepted")
                 $ r13_flag("seori_responsibility_accepted")
                 return True
             "서명 부분만 잘라 내면 서로 편할 겁니다":
-                call r13_lines([("resident_seori","누가 적었는지도 모르는 베낀 종이를 내밀자는 겁니까?"),("dad","당신을 보호하려는 뜻입니다."),("resident_seori","그건 기록을 다시 지우는 일이에요. 다른 방법을 생각해 주십시오.")],"negotiation:erased:cut")
+                call r13_lines([("resident_seori","누가 적었는지도 모르는 베낀 종이를 내밀자는 겁니까?"),("dad","검사원님을 보호하려는 뜻입니다."),("resident_seori","서명을 잘라 내는 건 기록을 또 한 번 지우는 일입니다. 다른 방법을 찾아 주십시오.")],"negotiation:erased:cut")
                 return False
             "지금 서명하지 않으면 한패로 알리겠습니다":
-                call r13_lines([("resident_seori","제가 잘못한 부분은 남기겠습니다. 협박받고 한 말로 만들어 놓고, 그 말을 믿어 달라고 하실 겁니까?"),(None,"검사원이 서류를 접었다. 소리를 높여서 받을 수 있는 서명은 아니었다.")],"negotiation:erased:threat")
+                call r13_lines([("resident_seori","제 잘못은 기록에 남기겠습니다. 하지만 협박에 못 이겨 한 말로 만들어 놓고, 그 말을 믿어 달라고 하실 겁니까?"),(None,"검사원이 말없이 서류를 접었다. 언성을 높인다고 받아 낼 수 있는 서명이 아니었다.")],"negotiation:erased:threat")
                 $ r13_flag("seori_threatened")
                 return False
             "원본을 더 확인한 뒤 이야기하겠습니다":
@@ -209,13 +209,13 @@ label r13_topic_choice(key):
         menu:
             "창고를 열 조건을 어떻게 정할까?"
             "모두 같은 기준으로 수량과 받는 집을 적는다":
-                call r13_lines([("resident_eunho","다른 집보다 더 빼놓으라는 뜻은 아니군요."),("dad","적어도 당신 집만 굶길 약속은 아닙니다. 갚을 몫도 공동 기록에 남기죠."),("resident_eunho","서리가 수량을 확인하면 내놓겠습니다. 빈 자루도 세어야 해요.")],"negotiation:supplies:agreement")
+                call r13_lines([("resident_eunho","저희 창고 물건을 다른 집보다 더 빼놓으라는 뜻은 아니군요."),("dad","적어도 당신 집만 굶기자는 약속은 아닙니다. 갚을 몫도 공동 기록에 남기겠습니다."),("resident_eunho","서리가 창고 수량을 확인하면 물건을 내놓겠습니다. 빈 자루도 함께 세어야 해요.")],"negotiation:supplies:agreement")
                 return True
             "위기 뒤 매입가로 전부 갚겠다고 약속한다":
-                call r13_lines([("resident_eunho","어느 돈으로요? 봄이 오면 가실 분이잖아요."),("dad","기록을 남기겠습니다."),("resident_eunho","빚진 사람 이름만 적힌 종이는 이미 많습니다. 오늘 누구 몫이 남는지부터 합시다.")],"negotiation:supplies:unfunded")
+                call r13_lines([("resident_eunho","어느 돈으로요? 봄이 오면 이 마을을 떠나실 분이잖아요."),("dad","갚을 몫은 기록으로 남기겠습니다."),("resident_eunho","빚진 사람 이름만 적힌 종이는 이미 많습니다. 오늘 누구 몫이 남는지부터 따져 봅시다.")],"negotiation:supplies:unfunded")
                 return False
             "먼저 내놓으면 주민이 편이 된다고 설득한다":
-                call r13_lines([("resident_eunho","오늘은 편을 들어도 내일 물건 떨어지면 또 제 문을 두드리겠죠. 저한테 필요한 건 박수보다 약속의 범위입니다.")],"negotiation:supplies:popularity")
+                call r13_lines([("resident_eunho","오늘은 제 편을 들어도, 내일 물건이 떨어지면 또 제 집 문을 두드리겠죠. 저한테 필요한 건 박수가 아니라 어디까지 약속하느냐입니다.")],"negotiation:supplies:popularity")
                 return False
             "창고의 실제 수량부터 살펴보고 다시 온다":
                 return False

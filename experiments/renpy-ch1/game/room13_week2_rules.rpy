@@ -197,7 +197,7 @@ init 56 python:
                 if r13_has("mom_reunited"):
                     r13_flag("pursuit_active")
                     return [(person,"이곳에서 만나셨군요. 그다음에 어디로 갔는지도 확인해야겠습니다."),
-                        (None,"이미 만난 가족이 사라지는 것은 아니다. 하지만 돌아갈 길을 뒤따르는 시선이 생겼다.")]
+                        (None,"이미 만난 가족이 다시 사라지는 것은 아니다. 하지만 돌아갈 길을 뒤쫓는 눈길이 생겼다.")]
                 n=winter_copy.deepcopy(s)
                 n["mom_state"]="relocated"
                 n["flags"]=[f for f in n["flags"] if f!="contact_safe"]
@@ -205,7 +205,7 @@ init 56 python:
                 store.room13=n
                 r13_flag("pursuit_active","contact_compromised")
                 return [(person,"이곳에서 연락을 받았군요. 방문 사실은 확인하겠습니다."),
-                    (None,"건넨 것은 현재 연락 장소가 적힌 자료였다. 그곳에 나만 갈 수 있는 것은 아니다.")]
+                    (None,"건넨 것은 현재 연락 장소가 적힌 자료였다. 이제 그곳에 갈 수 있는 사람이 나만은 아니다.")]
             if key=="E30":
                 r13_flag("research_disclosed")
                 return [(person,"본인이 작성한 연구군요. 다른 사람이 다시 확인한 결과도 있습니까?")]
@@ -215,7 +215,7 @@ init 56 python:
                 store.room13=n
                 r13_flag("convoy_changed")
                 return [(person,"그 시간에 데려간다고 했군요. 불편한 점이 없는지 내가 물어볼게요."),
-                    (None,"할머니는 끌고 가는 시간을 다시 확인했다. 지금 지키는 순서가 그대로인지 살펴야 한다.")]
+                    (None,"할머니는 끌고 가는 시간을 다시 확인했다. 경비 순서가 지금도 그대로인지 살펴야 한다.")]
         for spec in ROOM13.get("presentations",[]):
             if person!=spec["npc"] or key not in spec["items"]:continue
             known={v.split(":")[0] for v in s["resident_knowledge"].get(person,[])}

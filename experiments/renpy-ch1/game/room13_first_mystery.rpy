@@ -77,15 +77,15 @@ init 76 python:
     ROOM13["activities"]["map"]["special"]="first_plan_comparison"
     ROOM13["activities"]["map"]["title"]="보수 도면을 읽고 기록한다"
     ROOM13["topics"]["mystery:door"]=dict(npc="granny",title="13호실에 다른 문도 있습니까?",day=[1,4],need=["lodging"],give=[],flags=["inn_front_door_claim"],lines=[
-        ("dad","13호실에 다른 문도 있습니까?"),("granny","복도 쪽 문밖에 없어요. 책장은 무거우니 아이가 기대지 않게 해 주세요.")])
+        ("dad","13호실에 복도 쪽 말고 다른 문도 있습니까?"),("granny","13호실 문은 복도 쪽 문밖에 없어요. 책장은 무거우니 아이가 기대지 않게 해 주세요.")])
     ROOM13["objects"]["room13"]["bed"]["text"]="이불 안쪽을 붉은 실로 기웠다. 매듭을 두 번 감은 모양까지, 집에서 아내가 하던 바느질과 같다."
     ROOM13["evidence"]["E03"]["establishes"]="13호 이불 안쪽에 집에서 보던 엄마의 바느질과 같은 매듭이 남아 있다"
     _r13_mystery_topic_lines=r13_conversation_topic_lines
     def r13_conversation_topic_lines(key):
         lines=_r13_mystery_topic_lines(key)
         if key=="mystery:door" and r13_has("inn_claim_retracted"):
-            return [("dad","책장 뒤 문은 세탁물을 나르던 길이라고 하셨지요?"),
-                ("granny","그래요. 손님이 쓰는 문은 아니라고 말씀드렸잖아요.")]
+            return [("dad","책장 뒤 문은 예전에 세탁물을 나르던 길이라고 하셨지요?"),
+                ("granny","그래요. 손님이 쓰는 문은 아니라고 아까 말씀드렸잖아요.")]
         return lines
 
     _r13_mystery_finish_action=r13_finish_action
@@ -101,25 +101,25 @@ init 76 python:
         response=_r13_mystery_present(person,key,identity)
         if not owns or store.room13.get("day",1)>4:return response
         if person=="buri" and key=="E04" and bool({"first_plan_read","first_plan_compared"}&old_flags):
-            if "plan_reviewed_with_buri" in old_flags:return [("buri","표시한 두 끝을 보세요. 한쪽을 풀어도 다른 쪽 문은 직접 밀어야 해요.")]
+            if "plan_reviewed_with_buri" in old_flags:return [("buri","도면에 표시해 둔 두 끝을 보세요. 한쪽 걸쇠를 풀어도 반대쪽 문은 직접 밀어야 열려요.")]
             r13_flag("plan_reviewed_with_buri")
             return [("dad","도면에 붉게 덧그린 선은 무엇입니까?"),
-                ("buri","배관은 회색이에요. 붉은 건 금속 줄이고요.",{"expression":"neutral"}),
-                ("dad","왜 두 층 사이에 금속 줄이 필요합니까?"),
-                ("buri","멀리 있는 걸쇠를 당길 때 쓰죠. 실제 장치가 남아 있는지는 직접 봐야 해요.")]
+                ("buri","회색 선은 배관이에요. 붉은 선은 금속 줄이고요.",{"expression":"neutral"}),
+                ("dad","두 층 사이에 금속 줄이 왜 필요합니까?"),
+                ("buri","멀리 있는 걸쇠를 당길 때 쓰죠. 실제 장치가 아직 남아 있는지는 직접 봐야 해요.")]
         if person=="granny" and key=="E04" and "inn_front_door_claim" in old_flags:
-            return [("granny","옛 도면까지 구하셨네.",{"expression":"thinking"}),
-                ("dad","책장 뒤에 공간이 있습니다. 문은 하나뿐이라고 하셨지요."),
-                ("granny","낡은 집은 고친 데가 많아요. 종이하고 지금하고 같겠어요?",{"expression":"neutral"})]
+            return [("granny","어머, 옛 도면까지 구해 오셨네.",{"expression":"thinking"}),
+                ("dad","도면을 보면 책장 뒤에 공간이 있습니다. 그런데 문은 하나뿐이라고 하셨지요?"),
+                ("granny","낡은 집은 손본 데가 많아요. 종이에 그린 거랑 지금 집이 같겠어요?",{"expression":"neutral"})]
         if person=="granny" and key in ("E37","E05") and "inn_front_door_claim" in old_flags:
-            if "inn_claim_retracted" in old_flags:return [("granny","세탁물을 나르던 문이에요. 아까 말씀드린 대로예요.")]
+            if "inn_claim_retracted" in old_flags:return [("granny","그건 세탁물을 나르던 문이에요. 아까 말씀드린 대로예요.")]
             r13_flag("inn_claim_retracted")
-            return [("dad","주방 레버를 올리고 책장 손잡이를 움직였습니다. 뒤에 문이 열리더군요."),
-                ("granny","……그걸 여셨어요?",{"expression":"distressed"}),
-                ("dad","복도 쪽 문밖에 없다고 하셨는데요."),
-                ("granny","손님이 쓰는 문 말이에요. 예전에는 세탁물을 그리로 날랐지요.",{"expression":"neutral"}),
-                ("dad","아내도 그 길을 썼습니까?"),("granny","그건 못 봤어요."),
-                ("dad","그럼 직접 확인하겠습니다.")]
+            return [("dad","주방 레버를 올리고 책장 손잡이를 움직였습니다. 그랬더니 뒤쪽 문이 열리더군요."),
+                ("granny","……그 문을 여셨어요?",{"expression":"distressed"}),
+                ("dad","13호실 문은 복도 쪽 문밖에 없다고 하셨는데요."),
+                ("granny","손님이 쓰는 문 말이에요. 예전에는 세탁물을 그 문으로 날랐지요.",{"expression":"neutral"}),
+                ("dad","제 아내도 그 길을 썼습니까?"),("granny","부인이 그 길을 쓰는 건 못 봤어요."),
+                ("dad","그럼 제가 직접 확인하겠습니다.")]
         return response
 
 screen r13_plan_comparison():
