@@ -1,0 +1,209 @@
+{
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "campaign_id": "room13_v1",
+    "version": 3,
+    "story_revision": "father-pov-fire-pooling-v3",
+    "day": 1,
+    "period": 1,
+    "location": "hall",
+    "kitchen_switch": false,
+    "passage_open": false,
+    "secret_route_unlocked": false,
+    "case_state": "pending",
+    "victim_state": "alive",
+    "daram_state": "with_dad",
+    "granny_state": "trusted",
+    "trial_result": "pending",
+    "evidence": [
+      "E01",
+      "E02"
+    ],
+    "records": {
+      "E01": {
+        "day": 1,
+        "period": 0,
+        "source": "여행 중 가지고 온 편지",
+        "place": "gate"
+      },
+      "E02": {
+        "day": 1,
+        "period": 1,
+        "source": "입구에서 확인받은, 함께 들어왔다는 기록",
+        "place": "gate"
+      }
+    },
+    "flags": [
+      "entry_corrected",
+      "lodging"
+    ],
+    "read_topics": [],
+    "done": [],
+    "checks": {},
+    "encounters": [
+      {
+        "person": "karo",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "guard",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "daram",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "granny",
+        "day": 1,
+        "period": 1,
+        "place": "inn"
+      }
+    ],
+    "resident_knowledge": {},
+    "propositions": [],
+    "arguments": {},
+    "log": [],
+    "trial_ended": false,
+    "life_poc": true,
+    "mom_state": "hidden",
+    "ending": null,
+    "events": [],
+    "convoy_revision": 0,
+    "scout_revision": -1,
+    "observations": {},
+    "week2_started": false,
+    "finale_started": false,
+    "world_art_revisions": {
+      "inn": "8a378721aad02e9d43ecf8f8cf049c76ff39f060c847c5ef1b8a753a07c85301",
+      "school": "bb8921277b9723a5141ab4e27909ed6143285e1a47f6ffc9b8d3f0112482339a",
+      "workshop": "126535025fe67e4cb154df01423a17703e7acab85bdcc0054db519051687aef6",
+      "square": "e96d79dea57247880a902bfdba112fdae7e63b77213c5e8f08cecf16cdd1ec75"
+    },
+    "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+    "interaction_revision": 2,
+    "last_inspection": null,
+    "visual_revision": "pixel-b-front-v3"
+  },
+  "say": "",
+  "buttons": [
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        9,
+        217,
+        410,
+        239
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        705,
+        134,
+        208,
+        305
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        203,
+        468,
+        218,
+        72
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        603,
+        383,
+        106,
+        86
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        928,
+        329,
+        81,
+        158
+      ]
+    },
+    {
+      "text": "",
+      "value": "",
+      "rect": [
+        641,
+        147,
+        59,
+        85
+      ]
+    },
+    {
+      "text": "      1층 접수대 ›",
+      "value": "('travel', 'inn')",
+      "rect": [
+        1018,
+        105,
+        129,
+        43
+      ]
+    },
+    {
+      "text": "      13호실 ›",
+      "value": "('travel', 'room13')",
+      "rect": [
+        1153,
+        105,
+        97,
+        43
+      ]
+    },
+    {
+      "text": "      지도 · 이동",
+      "value": "('menu', 'map')",
+      "rect": [
+        970,
+        23,
+        180,
+        62
+      ]
+    },
+    {
+      "text": "      기록",
+      "value": "",
+      "rect": [
+        712,
+        670,
+        128,
+        44
+      ]
+    },
+    {
+      "text": "              옵션",
+      "value": "",
+      "rect": [
+        1190,
+        20,
+        64,
+        64
+      ]
+    }
+  ]
+}
