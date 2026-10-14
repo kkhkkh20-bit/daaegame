@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "17bcd7e6a0c8e4114406d8ac6e7265e905447148a7570af2d5716b2869c0a9a8",
+  "checks": [
+    "Real auto button advances dialogue; backlog pauses auto and preserves current line",
+    "Day 1 stays at gate; manual square/inn travel; click granny to check in; manual hallway/room travel; other destinations locked"
+  ],
+  "status": "failed",
+  "error": "Error(\"Page.evaluate: AttributeError: module 'renpy' has no attribute 'restart_interaction'\\n    at cmd_callback (http://127.0.0.1:8094/room13-dev/renpy-pre.js?v=17bcd7e6a0c8:463:27)\\n    at eval (eval at _emscripten_run_script (http://127.0.0.1:8094/room13-dev/renpy.js:1:327801), <anonymous>:1:1)\\n    at _emscripten_run_script (http://127.0.0.1:8094/room13-dev/renpy.js:1:327801)\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[28300]:0xd2fe8b\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[21432]:0x7f635a\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[30276]:0xe865ef\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[905]:0x4f117\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[784]:0x40aa7\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[9788]:0x66805a\\n    at http://127.0.0.1:8094/room13-dev/renpy.wasm:wasm-function[15022]:0x7da30a\")"
+}
