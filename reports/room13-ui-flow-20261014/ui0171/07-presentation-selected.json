@@ -1,0 +1,253 @@
+{
+  "screens": [
+    "r13_book"
+  ],
+  "room": {
+    "campaign_id": "room13_v1",
+    "version": 3,
+    "story_revision": "father-pov-fire-pooling-v3",
+    "day": 1,
+    "period": 1,
+    "location": "gate",
+    "kitchen_switch": false,
+    "passage_open": false,
+    "secret_route_unlocked": false,
+    "case_state": "pending",
+    "victim_state": "alive",
+    "daram_state": "with_dad",
+    "granny_state": "trusted",
+    "trial_result": "pending",
+    "evidence": [
+      "E01",
+      "E02"
+    ],
+    "records": {
+      "E01": {
+        "day": 1,
+        "period": 0,
+        "source": "여행 중 가지고 온 편지",
+        "place": "gate"
+      },
+      "E02": {
+        "day": 1,
+        "period": 1,
+        "source": "입구에서 확인받은, 함께 들어왔다는 기록",
+        "place": "gate"
+      }
+    },
+    "flags": [
+      "entry_corrected",
+      "calendar:karo:1:1:arrival:10b5e62b61554787"
+    ],
+    "read_topics": [
+      "life:karo:work"
+    ],
+    "done": [],
+    "checks": {},
+    "encounters": [
+      {
+        "person": "karo",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "guard",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "daram",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      }
+    ],
+    "resident_knowledge": {},
+    "propositions": [],
+    "arguments": {},
+    "log": [],
+    "trial_ended": false,
+    "life_poc": true,
+    "mom_state": "hidden",
+    "ending": null,
+    "events": [],
+    "convoy_revision": 0,
+    "scout_revision": -1,
+    "observations": {},
+    "week2_started": false,
+    "finale_started": false,
+    "world_art_revisions": {
+      "inn": "8a378721aad02e9d43ecf8f8cf049c76ff39f060c847c5ef1b8a753a07c85301",
+      "school": "bb8921277b9723a5141ab4e27909ed6143285e1a47f6ffc9b8d3f0112482339a",
+      "workshop": "126535025fe67e4cb154df01423a17703e7acab85bdcc0054db519051687aef6",
+      "square": "e96d79dea57247880a902bfdba112fdae7e63b77213c5e8f08cecf16cdd1ec75"
+    },
+    "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+    "interaction_revision": 2,
+    "last_inspection": null,
+    "visual_revision": "pixel-b-front-v3",
+    "dialogue_views": {
+      "life:karo:work": {
+        "context": "calendar:karo:1:1:arrival:10b5e62b61554787",
+        "mode": "followup"
+      }
+    },
+    "dialogue_dates": {
+      "life:karo:work": {
+        "day": 1,
+        "period": 1
+      }
+    },
+    "record_ui": {
+      "seen": [
+        "E02",
+        "E01"
+      ]
+    }
+  },
+  "say": "",
+  "buttons": [
+    {
+      "text": "      증거",
+      "value": "",
+      "rect": [
+        92.80000305175781,
+        124.19999694824219,
+        151.1999969482422,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      들은 말",
+      "value": "",
+      "rect": [
+        253,
+        124.19999694824219,
+        151.20001220703125,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      최근 획득순",
+      "value": "",
+      "rect": [
+        92.80000305175781,
+        176.39999389648438,
+        217.7999725341797,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      관심 자료만",
+      "value": "",
+      "rect": [
+        321.3999938964844,
+        176.39999389648438,
+        241.19998168945312,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      관찰 메모",
+      "value": "",
+      "rect": [
+        573.3999633789062,
+        176.39999389648438,
+        189,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      추리 메모",
+      "value": "",
+      "rect": [
+        773.199951171875,
+        176.39999389648438,
+        189,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      기록 비교",
+      "value": "",
+      "rect": [
+        972.9999389648438,
+        176.39999389648438,
+        189.00006103515625,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      ☆ 관심 표시",
+      "value": "",
+      "rect": [
+        938.7999877929688,
+        237.59999084472656,
+        225.00006103515625,
+        37.80000305175781
+      ]
+    },
+    {
+      "text": "1일 · 오전 · 눈에 막힌 입구 확인한 내용: 가족이 마을에 온 이유 얻은 곳: 여행 중 가지고 온 편지",
+      "value": "",
+      "rect": [
+        290.79998779296875,
+        290.70001220703125,
+        866.7000122070312,
+        104.39999389648438
+      ]
+    },
+    {
+      "text": "                       ",
+      "value": "",
+      "rect": [
+        1157.5,
+        290.70001220703125,
+        6.300048828125,
+        104.39999389648438
+      ]
+    },
+    {
+      "text": "       고친 입장기록",
+      "value": "",
+      "rect": [
+        92.80000305175781,
+        419.3999938964844,
+        170.99998474121094,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "       초대 편지",
+      "value": "",
+      "rect": [
+        274.5999755859375,
+        419.3999938964844,
+        171,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "      까로에게 보여주기",
+      "value": "E01",
+      "rect": [
+        848.7999877929688,
+        615.5999755859375,
+        338.39996337890625,
+        57.5999755859375
+      ]
+    },
+    {
+      "text": "      그만두기",
+      "value": "False",
+      "rect": [
+        92.80000305175781,
+        615.5999755859375,
+        197.99998474121094,
+        57.5999755859375
+      ]
+    }
+  ]
+}
