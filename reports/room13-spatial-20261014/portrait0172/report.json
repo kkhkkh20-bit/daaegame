@@ -1,0 +1,22 @@
+{
+  "base": "bc0359b16935feb77712b791ca5335ab06f61480",
+  "conditions": [
+    "Chromium touch emulation",
+    "390x844 portrait",
+    "320x568 narrow portrait",
+    "568x320 narrow landscape",
+    "large text enabled",
+    "fresh browser; natural day 1; no story injection"
+  ],
+  "checks": [
+    "Read question remains checked/clickable across three repeated selections and evidence cancel; no clock/evidence/flag/proposition change",
+    "After actual inn entry map opens interior; selecting hallway does not move until explicit Move; actual hallway and room navigation work in portrait/narrow touch view"
+  ],
+  "status": "passed-with-portrait-readability-limitation",
+  "visual_review": {
+    "clipping": "None observed in captured dialogue, two-line topic, presentation, interior map and record screens",
+    "portrait_readability": "Whole 1280x720 game scales to width: 0.3047 at 390px and 0.25 at 320px. Text and touch targets remain small despite large-text preference; existing rotate-to-landscape note is visible. This is a layout limitation, not an art defect.",
+    "physical_device": "not tested",
+    "additional_art_required": false
+  }
+}
