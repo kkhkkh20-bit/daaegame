@@ -1,0 +1,518 @@
+{
+  "screens": [
+    "r13_records",
+    "r13_hub"
+  ],
+  "room": {
+    "campaign_id": "room13_v1",
+    "version": 3,
+    "story_revision": "father-pov-fire-pooling-v3",
+    "day": 2,
+    "period": 0,
+    "location": "post",
+    "kitchen_switch": false,
+    "passage_open": false,
+    "secret_route_unlocked": false,
+    "case_state": "pending",
+    "victim_state": "alive",
+    "daram_state": "with_dad",
+    "granny_state": "trusted",
+    "trial_result": "pending",
+    "evidence": [
+      "E01",
+      "G1",
+      "G3",
+      "E02",
+      "M01",
+      "E03",
+      "J02",
+      "J03"
+    ],
+    "records": {
+      "E01": {
+        "day": 1,
+        "period": 0,
+        "source": "여행 중 가지고 온 편지",
+        "place": "gate"
+      },
+      "G1": {
+        "day": 1,
+        "period": 1,
+        "source": "초소 선반의 서류를 확대해 직접 확인",
+        "place": "gate"
+      },
+      "G3": {
+        "day": 1,
+        "period": 1,
+        "source": "초소 선반의 서류를 확대해 직접 확인",
+        "place": "gate"
+      },
+      "E02": {
+        "day": 1,
+        "period": 1,
+        "source": "원본과 맞춰 보고 바로잡은 입장 기록",
+        "place": "gate"
+      },
+      "M01": {
+        "day": 1,
+        "period": 1,
+        "source": "13호실 책상 위의 메모를 읽음",
+        "place": "room13"
+      },
+      "E03": {
+        "day": 1,
+        "period": 1,
+        "source": "여관 2층 · 13호실 직접 조사",
+        "place": "room13"
+      },
+      "J02": {
+        "day": 2,
+        "period": 0,
+        "source": "초롱와 대화",
+        "place": "workshop"
+      },
+      "J03": {
+        "day": 2,
+        "period": 0,
+        "source": "세련와 대화",
+        "place": "post"
+      }
+    },
+    "flags": [
+      "question_read:entry:daram:look",
+      "observed:gate:gate_documents",
+      "observed:gate:booth",
+      "observed:gate:ledger",
+      "gate_documents_compared",
+      "question_read:entry:daram:compare",
+      "entry_corrected",
+      "noticed:calendar:granny:1:1:arrival:10b5e62b61554787",
+      "calendar:granny:1:1:arrival:10b5e62b61554787",
+      "lodging",
+      "observed:room13:bed",
+      "calendar:daram:1:1:arrival:10b5e62b61554787",
+      "mother_expected_family",
+      "mother_lamplighter_lead",
+      "night1_seen",
+      "calendar:karo:2:0:settling:10b5e62b61554787",
+      "livelihood_open",
+      "noticed:calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+      "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+      "intro:memo_shown",
+      "noticed:calendar:seryeon:2:0:settling:10b5e62b61554787",
+      "calendar:seryeon:2:0:settling:10b5e62b61554787",
+      "intro:post_letter",
+      "intro:post_memo",
+      "mother_first_lead_checked"
+    ],
+    "read_topics": [
+      "register",
+      "life:karo",
+      "intro:lamplighter_mother",
+      "intro:post_visit"
+    ],
+    "done": [],
+    "checks": {
+      "gate:booth": [
+        1475,
+        424
+      ],
+      "gate:ledger": [
+        1443,
+        455
+      ],
+      "gate:gate_documents": [
+        1441,
+        432
+      ],
+      "room13:bed": [
+        873,
+        386
+      ]
+    },
+    "encounters": [
+      {
+        "person": "karo",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "guard",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "daram",
+        "day": 1,
+        "period": 1,
+        "place": "gate"
+      },
+      {
+        "person": "granny",
+        "day": 1,
+        "period": 1,
+        "place": "inn"
+      },
+      {
+        "person": "daram",
+        "day": 1,
+        "period": 1,
+        "place": "room13"
+      },
+      {
+        "person": "karo",
+        "day": 2,
+        "period": 0,
+        "place": "gate"
+      },
+      {
+        "person": "resident_lamplighter",
+        "day": 2,
+        "period": 0,
+        "place": "workshop"
+      },
+      {
+        "person": "seryeon",
+        "day": 2,
+        "period": 0,
+        "place": "post"
+      }
+    ],
+    "resident_knowledge": {},
+    "propositions": [],
+    "arguments": {},
+    "log": [
+      {
+        "day": 2,
+        "period": 0,
+        "event": "time_boundary"
+      }
+    ],
+    "trial_ended": false,
+    "life_poc": true,
+    "mom_state": "hidden",
+    "ending": null,
+    "events": [],
+    "convoy_revision": 0,
+    "scout_revision": -1,
+    "observations": {},
+    "week2_started": false,
+    "finale_started": false,
+    "world_art_revisions": {
+      "inn": "3d901b332c77fbc4e41b1787ed27acb423a7aeeeeea5a00aacc92ae7af2008a6",
+      "school": "bb8921277b9723a5141ab4e27909ed6143285e1a47f6ffc9b8d3f0112482339a",
+      "workshop": "126535025fe67e4cb154df01423a17703e7acab85bdcc0054db519051687aef6",
+      "square": "e96d79dea57247880a902bfdba112fdae7e63b77213c5e8f08cecf16cdd1ec75",
+      "gate": "1f1ea55f6089e23291c56e64ddc9a4aca333bcf21d6d6968a64bcc83b0a5cf35"
+    },
+    "carriage_art_file": "assets/room13-pixel-carriage-letter0153-morning.webp",
+    "interaction_revision": 2,
+    "last_inspection": {
+      "place": "room13",
+      "key": "bed",
+      "x": 873,
+      "y": 386
+    },
+    "visual_revision": "pixel-b-front-v3",
+    "record_ui": {
+      "seen": [
+        "G3",
+        "G1",
+        "E03",
+        "M01",
+        "J02",
+        "E01"
+      ]
+    },
+    "dialogue_views": {
+      "register": {
+        "context": "calendar:granny:1:1:arrival:10b5e62b61554787",
+        "mode": "first"
+      },
+      "life:karo": {
+        "context": "calendar:karo:2:0:settling:10b5e62b61554787",
+        "mode": "first"
+      },
+      "intro:lamplighter_mother": {
+        "context": "calendar:resident_lamplighter:2:0:settling:10b5e62b61554787",
+        "mode": "first"
+      },
+      "intro:post_visit": {
+        "context": "calendar:seryeon:2:0:settling:10b5e62b61554787",
+        "mode": "first"
+      }
+    },
+    "dialogue_dates": {
+      "register": {
+        "day": 1,
+        "period": 1
+      },
+      "life:karo": {
+        "day": 2,
+        "period": 0
+      },
+      "intro:lamplighter_mother": {
+        "day": 2,
+        "period": 0
+      },
+      "intro:post_visit": {
+        "day": 2,
+        "period": 0
+      }
+    },
+    "livelihood": {
+      "version": 1,
+      "cash": 0,
+      "debt": 0,
+      "settled": [
+        1
+      ],
+      "jobs": [],
+      "relations": [],
+      "items": [],
+      "ledger": [
+        {
+          "day": 1,
+          "text": "첫날 숙식 무료",
+          "amount": 0
+        }
+      ],
+      "combined_paid": false
+    }
+  },
+  "say": "",
+  "buttons": [
+    {
+      "text": "      달력",
+      "value": "",
+      "rect": [
+        805.5999755859375,
+        57.599998474121094,
+        176.4000244140625,
+        46.79999542236328
+      ]
+    },
+    {
+      "text": "      아이템",
+      "value": "",
+      "rect": [
+        992.7999877929688,
+        57.599998474121094,
+        176.39996337890625,
+        46.79999542236328
+      ]
+    },
+    {
+      "text": "      증거",
+      "value": "",
+      "rect": [
+        92.80000305175781,
+        124.19999694824219,
+        151.1999969482422,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      들은 말",
+      "value": "",
+      "rect": [
+        253,
+        124.19999694824219,
+        151.20001220703125,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      인물",
+      "value": "",
+      "rect": [
+        413.20001220703125,
+        124.19999694824219,
+        151.20001220703125,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      대화",
+      "value": "",
+      "rect": [
+        573.3999633789062,
+        124.19999694824219,
+        151.20001220703125,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      이번 여정",
+      "value": "",
+      "rect": [
+        798.3999633789062,
+        124.19999694824219,
+        185.39996337890625,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      이전 발견",
+      "value": "",
+      "rect": [
+        990.9999389648438,
+        124.19999694824219,
+        185.39996337890625,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      최근 획득순",
+      "value": "",
+      "rect": [
+        92.80000305175781,
+        176.39999389648438,
+        217.7999725341797,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      관심 자료만",
+      "value": "",
+      "rect": [
+        321.3999938964844,
+        176.39999389648438,
+        241.19998168945312,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      관찰 메모",
+      "value": "",
+      "rect": [
+        573.3999633789062,
+        176.39999389648438,
+        189,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      추리 메모",
+      "value": "",
+      "rect": [
+        773.199951171875,
+        176.39999389648438,
+        189,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      기록 비교",
+      "value": "",
+      "rect": [
+        972.9999389648438,
+        176.39999389648438,
+        189.00006103515625,
+        43.19999694824219
+      ]
+    },
+    {
+      "text": "      ☆ 관심 표시",
+      "value": "",
+      "rect": [
+        938.7999877929688,
+        237.59999084472656,
+        225.00006103515625,
+        37.80000305175781
+      ]
+    },
+    {
+      "text": "1일 · 오후 · 여관 2층 · 13호실 확인한 내용: 13호실 이불 안쪽의 붉은 매듭은 집에서 보던 엄마의 바느질과 닮았다. 다람이도 익숙한 모양이라고 했다. 얻은 곳: 여관 2층 · 13호실 직접 조사",
+      "value": "",
+      "rect": [
+        290.79998779296875,
+        290.70001220703125,
+        866.7000122070312,
+        104.39999389648438
+      ]
+    },
+    {
+      "text": "                       ",
+      "value": "",
+      "rect": [
+        1157.5,
+        290.70001220703125,
+        6.300048828125,
+        104.39999389648438
+      ]
+    },
+    {
+      "text": "       바느질 흔적",
+      "value": "",
+      "rect": [
+        92.80000305175781,
+        419.3999938964844,
+        170.99998474121094,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "       엄마의 메모",
+      "value": "",
+      "rect": [
+        274.5999755859375,
+        419.3999938964844,
+        171,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "       ● 고친 입장기록",
+      "value": "",
+      "rect": [
+        456.3999938964844,
+        419.3999938964844,
+        171.00003051757812,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "       옮겨 쓴 목록",
+      "value": "",
+      "rect": [
+        638.2000122070312,
+        419.3999938964844,
+        171,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "       예약 원본",
+      "value": "",
+      "rect": [
+        820,
+        419.3999938964844,
+        171,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "       초대 편지",
+      "value": "",
+      "rect": [
+        1001.7999877929688,
+        419.3999938964844,
+        171.00006103515625,
+        88.19998168945312
+      ]
+    },
+    {
+      "text": "      닫기",
+      "value": "",
+      "rect": [
+        92.80000305175781,
+        615.5999755859375,
+        197.99998474121094,
+        57.5999755859375
+      ]
+    }
+  ]
+}

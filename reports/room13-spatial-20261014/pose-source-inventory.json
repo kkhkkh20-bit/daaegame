@@ -1,0 +1,5734 @@
+{
+  "base": "bc0359b16935feb77712b791ca5335ab06f61480",
+  "scope": "Existing weekly schedules plus explicit existing story route overrides; not new schedules; calendar phase text is source evidence, not automatic new pose approval",
+  "locations": [
+    {
+      "person": "bami",
+      "name": "밤이",
+      "location": "hall",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "front,left",
+      "current_activity": "따뜻한 처마 가까이 몸을 움츠린다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "bami",
+      "name": "밤이",
+      "location": "inn",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "front,left",
+      "current_activity": "따뜻한 처마 가까이 몸을 움츠린다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "buri",
+      "name": "부리",
+      "location": "workshop",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "right",
+      "current_activity": "작은 부품을 천 위에 순서대로 놓는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "doto",
+      "name": "도토",
+      "location": "hall",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "left,right",
+      "current_activity": "여러 장부의 모서리를 맞춘다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "doto",
+      "name": "도토",
+      "location": "post",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "여러 장부의 모서리를 맞춘다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "doto",
+      "name": "도토",
+      "location": "square",
+      "current_pose_ids": "world_bulletin_back",
+      "current_facing": "back-right",
+      "current_activity": "여러 장부의 모서리를 맞춘다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "granny",
+      "name": "토끼 할머니",
+      "location": "inn",
+      "current_pose_ids": "world_counter_wipe",
+      "current_facing": "front-right-threequarter",
+      "current_activity": "접수대에서 방 열쇠와 장부를 맞춘다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "guard",
+      "name": "guard",
+      "location": "gate",
+      "current_pose_ids": "action_1",
+      "current_facing": "right",
+      "current_activity": "",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "karo",
+      "name": "까로",
+      "location": "gate",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "left",
+      "current_activity": "마차 축의 갈라진 부분을 감싼다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "karo",
+      "name": "까로",
+      "location": "inn",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "마차 축의 갈라진 부분을 감싼다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "karo",
+      "name": "까로",
+      "location": "post",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "마차 축의 갈라진 부분을 감싼다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "karo",
+      "name": "까로",
+      "location": "store",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "마차 축의 갈라진 부분을 감싼다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "karo",
+      "name": "까로",
+      "location": "workshop",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "마차 축의 갈라진 부분을 감싼다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "mom",
+      "name": "mom",
+      "location": "greenhouse",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "right",
+      "current_activity": "",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "nabi",
+      "name": "나비",
+      "location": "dining",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "left,rear",
+      "current_activity": "그릇 바닥을 닦아 포개 놓는다.",
+      "stage_override": "stage forces action_2 for nabi; neutral for visitors",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "nabi",
+      "name": "나비",
+      "location": "inn",
+      "current_pose_ids": "action_1",
+      "current_facing": "rear",
+      "current_activity": "그릇 바닥을 닦아 포개 놓는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "nabi",
+      "name": "나비",
+      "location": "school",
+      "current_pose_ids": "action_2",
+      "current_facing": "left",
+      "current_activity": "그릇 바닥을 닦아 포개 놓는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "neoul",
+      "name": "왕구",
+      "location": "facility",
+      "current_pose_ids": "action_1,action_2",
+      "current_facing": "left,rear",
+      "current_activity": "통행하는 사람들과 길가 짐을 번갈아 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "neoul",
+      "name": "왕구",
+      "location": "gate",
+      "current_pose_ids": "action_1",
+      "current_facing": "rear",
+      "current_activity": "통행하는 사람들과 길가 짐을 번갈아 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "neoul",
+      "name": "왕구",
+      "location": "school",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "통행하는 사람들과 길가 짐을 번갈아 살핀다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "neoul",
+      "name": "왕구",
+      "location": "square",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "통행하는 사람들과 길가 짐을 번갈아 살핀다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_badook",
+      "name": "바둑이",
+      "location": "gate",
+      "current_pose_ids": "living_bootlace",
+      "current_facing": "right-profile",
+      "current_activity": "순찰화의 끈을 조여 맨다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_badook",
+      "name": "바둑이",
+      "location": "school",
+      "current_pose_ids": "neutral",
+      "current_facing": "right-threequarter",
+      "current_activity": "순찰화의 끈을 조여 맨다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_badook",
+      "name": "바둑이",
+      "location": "square",
+      "current_pose_ids": "living_bootlace",
+      "current_facing": "right-profile",
+      "current_activity": "순찰화의 끈을 조여 맨다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_bori",
+      "name": "보리",
+      "location": "gate",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "장작을 묶고 끈을 다시 조이고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_bori",
+      "name": "보리",
+      "location": "school",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "장작을 묶고 끈을 다시 조이고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_bori",
+      "name": "보리",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "장작을 묶고 끈을 다시 조이고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_bori",
+      "name": "보리",
+      "location": "store",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "장작을 묶고 끈을 다시 조이고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_bori",
+      "name": "보리",
+      "location": "workshop",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "장작을 묶고 끈을 다시 조이고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_eunho",
+      "name": "은호 사장",
+      "location": "inn",
+      "current_pose_ids": "living_prices",
+      "current_facing": "right-profile",
+      "current_activity": "물자 목록 옆에 값을 다시 적는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_eunho",
+      "name": "은호 사장",
+      "location": "post",
+      "current_pose_ids": "neutral",
+      "current_facing": "right-threequarter",
+      "current_activity": "물자 목록 옆에 값을 다시 적는다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_eunho",
+      "name": "은호 사장",
+      "location": "store",
+      "current_pose_ids": "living_prices",
+      "current_facing": "right-profile",
+      "current_activity": "물자 목록 옆에 값을 다시 적는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_guseul",
+      "name": "구슬",
+      "location": "inn",
+      "current_pose_ids": "living_stamp",
+      "current_facing": "right-profile",
+      "current_activity": "계약서에 눌린 도장을 닦아 낸다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_guseul",
+      "name": "구슬",
+      "location": "post",
+      "current_pose_ids": "living_stamp",
+      "current_facing": "right-profile",
+      "current_activity": "계약서에 눌린 도장을 닦아 낸다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_guseul",
+      "name": "구슬",
+      "location": "store",
+      "current_pose_ids": "living_stamp",
+      "current_facing": "right-profile",
+      "current_activity": "계약서에 눌린 도장을 닦아 낸다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_kkwak",
+      "name": "꽥순",
+      "location": "gate",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "빈 물통 안의 얼음을 두드린다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_kkwak",
+      "name": "꽥순",
+      "location": "store",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "빈 물통 안의 얼음을 두드린다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_kongi",
+      "name": "콩이",
+      "location": "post",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "배달 바구니에서 눌린 빵을 꺼낸다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_kongi",
+      "name": "콩이",
+      "location": "school",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "배달 바구니에서 눌린 빵을 꺼낸다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_kongi",
+      "name": "콩이",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "배달 바구니에서 눌린 빵을 꺼낸다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_kongi",
+      "name": "콩이",
+      "location": "store",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "배달 바구니에서 눌린 빵을 꺼낸다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_lamplighter",
+      "name": "등불지기 아저씨",
+      "location": "gate",
+      "current_pose_ids": "living_inspectlamp",
+      "current_facing": "right-profile",
+      "current_activity": "등 아래 점검함을 닫고 매듭을 확인한다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_lamplighter",
+      "name": "등불지기 아저씨",
+      "location": "greenhouse",
+      "current_pose_ids": "living_inspectlamp",
+      "current_facing": "right-profile",
+      "current_activity": "등 아래 점검함을 닫고 매듭을 확인한다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_lamplighter",
+      "name": "등불지기 아저씨",
+      "location": "post",
+      "current_pose_ids": "living_inspectlamp",
+      "current_facing": "right-profile",
+      "current_activity": "등 아래 점검함을 닫고 매듭을 확인한다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_lamplighter",
+      "name": "등불지기 아저씨",
+      "location": "square",
+      "current_pose_ids": "living_inspectlamp",
+      "current_facing": "right-profile",
+      "current_activity": "등 아래 점검함을 닫고 매듭을 확인한다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_lamplighter",
+      "name": "등불지기 아저씨",
+      "location": "workshop",
+      "current_pose_ids": "living_inspectlamp",
+      "current_facing": "right-profile",
+      "current_activity": "등 아래 점검함을 닫고 매듭을 확인한다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_librarian",
+      "name": "사서 선생님",
+      "location": "post",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "젖은 책 사이에 마른 종이를 끼운다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_madam",
+      "name": "백 부인",
+      "location": "inn",
+      "current_pose_ids": "living_inspect",
+      "current_facing": "right-profile",
+      "current_activity": "보관함을 봉해 둔 자리를 손으로 확인한다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_madam",
+      "name": "백 부인",
+      "location": "store",
+      "current_pose_ids": "living_inspect",
+      "current_facing": "right-profile",
+      "current_activity": "보관함을 봉해 둔 자리를 손으로 확인한다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_momo",
+      "name": "모모 관장",
+      "location": "post",
+      "current_pose_ids": "living_read",
+      "current_facing": "right-profile",
+      "current_activity": "낡은 등잔 바닥에 붙은 번호를 읽는다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_mungchi",
+      "name": "뭉치",
+      "location": "store",
+      "current_pose_ids": "living_carry",
+      "current_facing": "right-profile",
+      "current_activity": "작은 상자와 큰 상자를 따로 쌓는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_musoe",
+      "name": "무쇠 할아버지",
+      "location": "school",
+      "current_pose_ids": "neutral",
+      "current_facing": "right-threequarter",
+      "current_activity": "낡은 지도를 접어 안주머니 깊이 넣는다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_musoe",
+      "name": "무쇠 할아버지",
+      "location": "workshop",
+      "current_pose_ids": "living_foldmap",
+      "current_facing": "right-profile",
+      "current_activity": "낡은 지도를 접어 안주머니 깊이 넣는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_nero",
+      "name": "네로",
+      "location": "gate",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "짐에 붙은 낡은 이름표를 떼어 주머니에 넣는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_nero",
+      "name": "네로",
+      "location": "store",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "짐에 붙은 낡은 이름표를 떼어 주머니에 넣는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_nubi",
+      "name": "누비 아주머니",
+      "location": "inn",
+      "current_pose_ids": "living_fold",
+      "current_facing": "right-profile",
+      "current_activity": "마른 빨래를 사람별로 나눠 묶는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_nubi",
+      "name": "누비 아주머니",
+      "location": "store",
+      "current_pose_ids": "living_fold",
+      "current_facing": "right-profile",
+      "current_activity": "마른 빨래를 사람별로 나눠 묶는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_nubi",
+      "name": "누비 아주머니",
+      "location": "workshop",
+      "current_pose_ids": "living_fold",
+      "current_facing": "right-profile",
+      "current_activity": "마른 빨래를 사람별로 나눠 묶는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_owlgp",
+      "name": "부엉이 할아버지",
+      "location": "inn",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "낡은 수첩의 풀린 제본을 묶는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_owlgp",
+      "name": "부엉이 할아버지",
+      "location": "post",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "낡은 수첩의 풀린 제본을 묶는다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_owlgp",
+      "name": "부엉이 할아버지",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "낡은 수첩의 풀린 제본을 묶는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_piko",
+      "name": "피코",
+      "location": "clinic",
+      "current_pose_ids": "neutral",
+      "current_facing": "right-threequarter",
+      "current_activity": "완성하지 못한 초상에 천을 덮는다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_piko",
+      "name": "피코",
+      "location": "square",
+      "current_pose_ids": "living_paint",
+      "current_facing": "right-profile",
+      "current_activity": "완성하지 못한 초상에 천을 덮는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_ppul",
+      "name": "뿔이 촌장",
+      "location": "post",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "식량 나눔표 위에 작은 돌을 눌러 둔다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_ppul",
+      "name": "뿔이 촌장",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "식량 나눔표 위에 작은 돌을 눌러 둔다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_seol",
+      "name": "설이",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "작은 종의 끈을 풀었다 다시 매단다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_seori",
+      "name": "서리 검사원",
+      "location": "clinic",
+      "current_pose_ids": "living_notes",
+      "current_facing": "right-profile",
+      "current_activity": "메모 옆에 확인한 사람 이름을 적는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_seori",
+      "name": "서리 검사원",
+      "location": "inn",
+      "current_pose_ids": "living_notes",
+      "current_facing": "right-profile",
+      "current_activity": "메모 옆에 확인한 사람 이름을 적는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_seori",
+      "name": "서리 검사원",
+      "location": "post",
+      "current_pose_ids": "living_notes",
+      "current_facing": "right-profile",
+      "current_activity": "메모 옆에 확인한 사람 이름을 적는다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_siluk",
+      "name": "실룩",
+      "location": "gate",
+      "current_pose_ids": "living_clean",
+      "current_facing": "right-profile",
+      "current_activity": "짐수레 바퀴의 끼인 눈을 털어 낸다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_siluk",
+      "name": "실룩",
+      "location": "store",
+      "current_pose_ids": "living_clean",
+      "current_facing": "right-profile",
+      "current_activity": "짐수레 바퀴의 끼인 눈을 털어 낸다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_sling",
+      "name": "슬링",
+      "location": "post",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "봉투를 배달할 순서대로 나눈다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_sling",
+      "name": "슬링",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "봉투를 배달할 순서대로 나눈다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_somi",
+      "name": "솜이",
+      "location": "school",
+      "current_pose_ids": "living_bootice",
+      "current_facing": "right-profile",
+      "current_activity": "구두 밑창에 낀 얼음을 긁는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_somi",
+      "name": "솜이",
+      "location": "square",
+      "current_pose_ids": "living_bootice",
+      "current_facing": "right-profile",
+      "current_activity": "구두 밑창에 낀 얼음을 긁는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_teacher",
+      "name": "곰 선생님",
+      "location": "school",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "아이들 외투의 젖은 끝을 펴 놓는다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tok",
+      "name": "톡",
+      "location": "clinic",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "작은 핀을 집게로 물고 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tok",
+      "name": "톡",
+      "location": "inn",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "작은 핀을 집게로 물고 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tok",
+      "name": "톡",
+      "location": "post",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "작은 핀을 집게로 물고 살핀다.",
+      "stage_override": "stage forces neutral",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tok",
+      "name": "톡",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "작은 핀을 집게로 물고 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tok",
+      "name": "톡",
+      "location": "workshop",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "작은 핀을 집게로 물고 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tori",
+      "name": "토리",
+      "location": "inn",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "접힌 천의 바늘땀을 세고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tori",
+      "name": "토리",
+      "location": "school",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "접힌 천의 바늘땀을 세고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tori",
+      "name": "토리",
+      "location": "square",
+      "current_pose_ids": "world_bench_left",
+      "current_facing": "left-threequarter",
+      "current_activity": "접힌 천의 바늘땀을 세고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_tori",
+      "name": "토리",
+      "location": "workshop",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "접힌 천의 바늘땀을 세고 있다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_ttadak",
+      "name": "따닥",
+      "location": "inn",
+      "current_pose_ids": "living_repair",
+      "current_facing": "right-profile",
+      "current_activity": "벽의 벌어진 이음에 나무 조각을 대 본다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_ttadak",
+      "name": "따닥",
+      "location": "workshop",
+      "current_pose_ids": "living_repair",
+      "current_facing": "right-profile",
+      "current_activity": "벽의 벌어진 이음에 나무 조각을 대 본다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_ubak",
+      "name": "우박",
+      "location": "clinic",
+      "current_pose_ids": "living_measure",
+      "current_facing": "right-profile",
+      "current_activity": "계측기 바늘과 종이 눈금을 맞춘다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_ubak",
+      "name": "우박",
+      "location": "inn",
+      "current_pose_ids": "neutral",
+      "current_facing": "left",
+      "current_activity": "계측기 바늘과 종이 눈금을 맞춘다.",
+      "stage_override": "",
+      "review_needed": "neutral fallback / target alignment",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_ubak",
+      "name": "우박",
+      "location": "workshop",
+      "current_pose_ids": "living_measure",
+      "current_facing": "right-profile",
+      "current_activity": "계측기 바늘과 종이 눈금을 맞춘다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_yeoni",
+      "name": "여니",
+      "location": "inn",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "헤진 소매 안쪽을 뒤집어 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_yeoni",
+      "name": "여니",
+      "location": "school",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "헤진 소매 안쪽을 뒤집어 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_yeoni",
+      "name": "여니",
+      "location": "square",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "헤진 소매 안쪽을 뒤집어 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_yeoni",
+      "name": "여니",
+      "location": "store",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "헤진 소매 안쪽을 뒤집어 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "resident_yeoni",
+      "name": "여니",
+      "location": "workshop",
+      "current_pose_ids": "activity",
+      "current_facing": "right",
+      "current_activity": "헤진 소매 안쪽을 뒤집어 살핀다.",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    },
+    {
+      "person": "seryeon",
+      "name": "seryeon",
+      "location": "post",
+      "current_pose_ids": "action_1,chair_read",
+      "current_facing": "rear_left,right",
+      "current_activity": "",
+      "stage_override": "",
+      "review_needed": "target alignment; period/phase action match",
+      "dialogue_front_available": "front"
+    }
+  ],
+  "existing_world_poses": {
+    "daram": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          192,
+          502
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          137,
+          0,
+          248,
+          229
+        ]
+      },
+      "thinking": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          224,
+          474
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          44,
+          0,
+          232,
+          225
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          178,
+          450
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          229,
+          205
+        ]
+      },
+      "expressive": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          264,
+          464
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          206,
+          0,
+          245,
+          251
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "floor_sit",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          230,
+          425
+        ],
+        "hand": null,
+        "seat": [
+          291,
+          380
+        ],
+        "head": [
+          141,
+          0,
+          261,
+          254
+        ]
+      },
+      "action_2": {
+        "facing": "right",
+        "contact": "kneeling",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          221,
+          461
+        ],
+        "hand": [
+          358,
+          239
+        ],
+        "seat": null,
+        "head": [
+          146,
+          0,
+          263,
+          210
+        ]
+      },
+      "inspect_floor": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          239,
+          380
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          213,
+          24,
+          265,
+          232
+        ]
+      },
+      "panic": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          208,
+          502
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          66,
+          0,
+          342,
+          266
+        ]
+      },
+      "joy": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          198,
+          446
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          232,
+          212
+        ]
+      }
+    },
+    "dad": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          185,
+          477
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          197,
+          182
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          231,
+          471
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          241,
+          0,
+          194,
+          195
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          200,
+          446
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          16,
+          0,
+          206,
+          213
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          248,
+          443
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          127,
+          0,
+          210,
+          188
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "portable_stool",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          238,
+          422
+        ],
+        "hand": [
+          381,
+          148
+        ],
+        "seat": [
+          256,
+          301
+        ],
+        "head": [
+          224,
+          0,
+          175,
+          192
+        ]
+      },
+      "action_2": {
+        "facing": "right",
+        "contact": "carrying",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          224,
+          483
+        ],
+        "hand": [
+          375,
+          204
+        ],
+        "seat": null,
+        "head": [
+          209,
+          0,
+          208,
+          191
+        ]
+      },
+      "listen_right": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          185,
+          492
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          128,
+          0,
+          203,
+          186
+        ]
+      },
+      "breakdown": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          229,
+          381
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          149,
+          0,
+          311,
+          235
+        ]
+      },
+      "protect": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          244,
+          464
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          168,
+          0,
+          208,
+          201
+        ]
+      }
+    },
+    "granny": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          141,
+          480
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          254,
+          254
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          176,
+          465
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          9,
+          0,
+          339,
+          256
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          173,
+          486
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          302,
+          257
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          216,
+          463
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          91,
+          0,
+          341,
+          250
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "held_ledger",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          207,
+          441
+        ],
+        "hand": [
+          310,
+          209
+        ],
+        "seat": null,
+        "head": [
+          49,
+          0,
+          264,
+          247
+        ]
+      },
+      "action_2": {
+        "facing": "right",
+        "contact": "surface",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          217,
+          462
+        ],
+        "hand": [
+          382,
+          174
+        ],
+        "seat": null,
+        "head": [
+          56,
+          0,
+          304,
+          262
+        ]
+      },
+      "world_counter_wipe": {
+        "facing": "front-right-threequarter",
+        "contact": "counter_front",
+        "action_ko": null,
+        "activity_label": "접수대 바깥 앞판을 닦는다",
+        "foot": [
+          224,
+          621
+        ],
+        "hand": [
+          481,
+          479
+        ],
+        "seat": null,
+        "head": [
+          20,
+          4,
+          460,
+          351
+        ]
+      }
+    },
+    "mom": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          210,
+          508
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          60,
+          0,
+          218,
+          205
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          199,
+          504
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          95,
+          0,
+          295,
+          208
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          185,
+          503
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          22,
+          0,
+          284,
+          222
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          269,
+          453
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          117,
+          0,
+          218,
+          221
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "kneeling",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          217,
+          452
+        ],
+        "hand": [
+          395,
+          179
+        ],
+        "seat": null,
+        "head": [
+          199,
+          0,
+          169,
+          198
+        ]
+      },
+      "action_2": {
+        "facing": "right",
+        "contact": "floor_sit",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          237,
+          443
+        ],
+        "hand": null,
+        "seat": [
+          327,
+          361
+        ],
+        "head": [
+          169,
+          0,
+          218,
+          218
+        ]
+      }
+    },
+    "guard": {
+      "neutral": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          227,
+          796
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          94,
+          0,
+          279,
+          250
+        ]
+      },
+      "thinking": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          235,
+          793
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          48,
+          0,
+          286,
+          214
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          217,
+          767
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          98,
+          0,
+          269,
+          246
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          275,
+          464
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          118,
+          0,
+          219,
+          211
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "held_ledger",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          225,
+          478
+        ],
+        "hand": [
+          390,
+          202
+        ],
+        "seat": null,
+        "head": [
+          147,
+          0,
+          205,
+          204
+        ]
+      },
+      "action_2": {
+        "facing": "front",
+        "contact": "squatting",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          189,
+          435
+        ],
+        "hand": [
+          325,
+          182
+        ],
+        "seat": null,
+        "head": [
+          123,
+          0,
+          230,
+          203
+        ]
+      },
+      "check_records_low": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          230,
+          415
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          111,
+          0,
+          276,
+          215
+        ]
+      },
+      "panic": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          157,
+          495
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          56,
+          0,
+          229,
+          178
+        ]
+      },
+      "listen_left": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          172,
+          494
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          215,
+          181
+        ]
+      }
+    },
+    "seryeon": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          139,
+          493
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          69,
+          0,
+          207,
+          201
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          148,
+          496
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          34,
+          0,
+          237,
+          200
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          157,
+          489
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          87,
+          0,
+          228,
+          222
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          240,
+          462
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          152,
+          0,
+          243,
+          221
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "clipboard",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          192,
+          460
+        ],
+        "hand": [
+          321,
+          181
+        ],
+        "seat": null,
+        "head": [
+          179,
+          0,
+          182,
+          201
+        ]
+      },
+      "action_2": {
+        "facing": "right",
+        "contact": "portable_stool",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          215,
+          451
+        ],
+        "hand": null,
+        "seat": [
+          189,
+          320
+        ],
+        "head": [
+          103,
+          0,
+          243,
+          202
+        ]
+      },
+      "chair_read": {
+        "facing": "rear_left",
+        "contact": "background_chair",
+        "action_ko": "창가 의자에 앉아 편지를 읽는다.",
+        "activity_label": null,
+        "foot": [
+          187,
+          830
+        ],
+        "hand": [
+          216,
+          354
+        ],
+        "seat": [
+          380,
+          581
+        ],
+        "head": [
+          170,
+          0,
+          370,
+          292
+        ]
+      },
+      "chair_listen": {
+        "facing": "rear_left",
+        "contact": "background_chair",
+        "action_ko": "의자에서 고개를 돌려 상대를 바라본다.",
+        "activity_label": null,
+        "foot": [
+          170,
+          833
+        ],
+        "hand": [
+          190,
+          370
+        ],
+        "seat": [
+          388,
+          584
+        ],
+        "head": [
+          181,
+          0,
+          360,
+          290
+        ]
+      }
+    },
+    "buri": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          161,
+          495
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          68,
+          0,
+          232,
+          214
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          163,
+          488
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          38,
+          0,
+          282,
+          224
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          168,
+          436
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          62,
+          0,
+          275,
+          231
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          257,
+          460
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          190,
+          0,
+          264,
+          227
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "tool",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          251,
+          443
+        ],
+        "hand": [
+          443,
+          241
+        ],
+        "seat": null,
+        "head": [
+          191,
+          0,
+          224,
+          218
+        ]
+      },
+      "action_2": {
+        "facing": "right",
+        "contact": "kneeling",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          211,
+          441
+        ],
+        "hand": [
+          375,
+          171
+        ],
+        "seat": null,
+        "head": [
+          86,
+          0,
+          238,
+          209
+        ]
+      }
+    },
+    "doto": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          198,
+          476
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          216,
+          200
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          208,
+          484
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          252,
+          211
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          206,
+          453
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          266,
+          210
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          275,
+          445
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          128,
+          0,
+          238,
+          207
+        ]
+      },
+      "action_1": {
+        "facing": "right",
+        "contact": "held_ledger",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          191,
+          447
+        ],
+        "hand": [
+          217,
+          209
+        ],
+        "seat": null,
+        "head": [
+          10,
+          0,
+          219,
+          216
+        ]
+      },
+      "action_2": {
+        "facing": "left",
+        "contact": "floor_sit",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          221,
+          387
+        ],
+        "hand": null,
+        "seat": [
+          169,
+          306
+        ],
+        "head": [
+          54,
+          0,
+          247,
+          212
+        ]
+      },
+      "world_bulletin_back": {
+        "facing": "back-right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": "게시판을 읽는다",
+        "foot": [
+          345,
+          652
+        ],
+        "hand": [
+          535,
+          261
+        ],
+        "seat": null,
+        "head": [
+          212,
+          4,
+          285,
+          260
+        ]
+      }
+    },
+    "karo": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          193,
+          504
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          243,
+          244
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          163,
+          516
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          233,
+          234
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          224,
+          490
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          250,
+          236
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          280,
+          454
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          94,
+          0,
+          244,
+          242
+        ]
+      },
+      "action_1": {
+        "facing": "left",
+        "contact": "sorting",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          226,
+          409
+        ],
+        "hand": [
+          91,
+          231
+        ],
+        "seat": null,
+        "head": [
+          40,
+          0,
+          220,
+          221
+        ]
+      },
+      "action_2": {
+        "facing": "left",
+        "contact": "portable_crate",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          217,
+          438
+        ],
+        "hand": [
+          64,
+          250
+        ],
+        "seat": [
+          242,
+          302
+        ],
+        "head": [
+          20,
+          0,
+          246,
+          229
+        ]
+      }
+    },
+    "nabi": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          169,
+          504
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          190,
+          201
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          169,
+          514
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          236,
+          207
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          171,
+          470
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          276,
+          213
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          244,
+          453
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          84,
+          0,
+          225,
+          225
+        ]
+      },
+      "action_1": {
+        "facing": "rear",
+        "contact": "portable_bucket",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          252,
+          445
+        ],
+        "hand": [
+          363,
+          193
+        ],
+        "seat": null,
+        "head": [
+          150,
+          0,
+          230,
+          201
+        ]
+      },
+      "action_2": {
+        "facing": "left",
+        "contact": "carrying_tray",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          208,
+          453
+        ],
+        "hand": [
+          109,
+          257
+        ],
+        "seat": null,
+        "head": [
+          50,
+          0,
+          201,
+          202
+        ]
+      }
+    },
+    "neoul": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          208,
+          476
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          254,
+          205
+        ]
+      },
+      "thinking": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          207,
+          464
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          51,
+          0,
+          291,
+          210
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          197,
+          481
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          37,
+          0,
+          267,
+          206
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          285,
+          467
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          149,
+          0,
+          255,
+          217
+        ]
+      },
+      "action_1": {
+        "facing": "rear",
+        "contact": "held_notebook",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          201,
+          469
+        ],
+        "hand": [
+          274,
+          194
+        ],
+        "seat": null,
+        "head": [
+          67,
+          0,
+          230,
+          197
+        ]
+      },
+      "action_2": {
+        "facing": "left",
+        "contact": "portable_stool",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          237,
+          452
+        ],
+        "hand": null,
+        "seat": [
+          283,
+          299
+        ],
+        "head": [
+          22,
+          0,
+          258,
+          209
+        ]
+      }
+    },
+    "bami": {
+      "neutral": {
+        "facing": "front",
+        "contact": "hanging",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          150,
+          1
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          254,
+          307,
+          218
+        ]
+      },
+      "thinking": {
+        "facing": "left",
+        "contact": "hanging",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          136,
+          1
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          52,
+          213,
+          238,
+          261
+        ]
+      },
+      "distressed": {
+        "facing": "front",
+        "contact": "crouching",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          195,
+          310
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          389,
+          271
+        ]
+      },
+      "expressive": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          312,
+          440
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          182,
+          0,
+          272,
+          252
+        ]
+      },
+      "action_1": {
+        "facing": "front",
+        "contact": "hanging",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          171,
+          1
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          6,
+          213,
+          380,
+          235
+        ]
+      },
+      "action_2": {
+        "facing": "left",
+        "contact": "floor_sit",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          170,
+          406
+        ],
+        "hand": null,
+        "seat": [
+          180,
+          357
+        ],
+        "head": [
+          28,
+          0,
+          278,
+          234
+        ]
+      }
+    },
+    "elder": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          140,
+          483
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          62,
+          0,
+          218,
+          209
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          231,
+          449
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          43,
+          0,
+          419,
+          195
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          209,
+          433
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          71,
+          0,
+          347,
+          227
+        ]
+      },
+      "expressive": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          229,
+          476
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          78,
+          0,
+          381,
+          240
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          167,
+          487
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          35,
+          0,
+          300,
+          295
+        ]
+      }
+    },
+    "bodum": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          186,
+          474
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          14,
+          0,
+          358,
+          206
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          186,
+          448
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          40,
+          0,
+          332,
+          194
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          170,
+          445
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          339,
+          233
+        ]
+      },
+      "expressive": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          256,
+          444
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          5,
+          0,
+          507,
+          224
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          221,
+          400
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          26,
+          0,
+          358,
+          242
+        ]
+      }
+    },
+    "workshop": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          184,
+          465
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          368,
+          202
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          167,
+          443
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          12,
+          0,
+          313,
+          192
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          206,
+          422
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          83,
+          0,
+          316,
+          222
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          226,
+          448
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          410,
+          226
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "seat",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          204,
+          414
+        ],
+        "hand": null,
+        "seat": [
+          180,
+          293
+        ],
+        "head": [
+          1,
+          0,
+          408,
+          251
+        ]
+      }
+    },
+    "resident_tori": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          107,
+          439
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          46,
+          0,
+          169,
+          190
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          106,
+          439
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          43,
+          0,
+          170,
+          190
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          110,
+          362
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          14,
+          0,
+          206,
+          190
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          176,
+          366
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          297,
+          185
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "seat",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          140,
+          359
+        ],
+        "hand": null,
+        "seat": [
+          124,
+          254
+        ],
+        "head": [
+          22,
+          0,
+          257,
+          218
+        ]
+      },
+      "world_bench_left": {
+        "facing": "left-threequarter",
+        "contact": "background_bench",
+        "action_ko": null,
+        "activity_label": "벤치에서 천의 바느질을 살핀다",
+        "foot": [
+          190,
+          682
+        ],
+        "hand": null,
+        "seat": [
+          316,
+          501
+        ],
+        "head": [
+          136,
+          4,
+          317,
+          314
+        ]
+      }
+    },
+    "resident_bori": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          182,
+          477
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          42,
+          0,
+          302,
+          207
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          197,
+          458
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          393,
+          199
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          247,
+          422
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          29,
+          0,
+          465,
+          222
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          245,
+          411
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          434,
+          208
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          217,
+          386
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          2,
+          0,
+          390,
+          234
+        ]
+      }
+    },
+    "resident_yeoni": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          206,
+          483
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          36,
+          0,
+          251,
+          209
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          183,
+          476
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          61,
+          0,
+          184,
+          206
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          201,
+          424
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          4,
+          0,
+          398,
+          223
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          238,
+          462
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          14,
+          0,
+          444,
+          233
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "seat",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          225,
+          394
+        ],
+        "hand": null,
+        "seat": [
+          198,
+          279
+        ],
+        "head": [
+          8,
+          0,
+          443,
+          239
+        ]
+      }
+    },
+    "resident_kongi": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          163,
+          471
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          57,
+          0,
+          261,
+          204
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          153,
+          428
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          54,
+          0,
+          252,
+          186
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          189,
+          381
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          56,
+          0,
+          322,
+          200
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          197,
+          429
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          394,
+          216
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          203,
+          373
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          13,
+          0,
+          369,
+          226
+        ]
+      }
+    },
+    "resident_kkwak": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          133,
+          479
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          43,
+          0,
+          197,
+          208
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          135,
+          468
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          54,
+          0,
+          196,
+          203
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          185,
+          449
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          39,
+          0,
+          332,
+          236
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          235,
+          429
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          470,
+          216
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          209,
+          359
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          6,
+          0,
+          387,
+          218
+        ]
+      }
+    },
+    "resident_librarian": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          144,
+          493
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          91,
+          0,
+          191,
+          214
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          201,
+          486
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          108,
+          0,
+          294,
+          211
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          213,
+          476
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          16,
+          0,
+          410,
+          250
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          185,
+          488
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          2,
+          0,
+          280,
+          246
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "seat",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          216,
+          462
+        ],
+        "hand": null,
+        "seat": [
+          190,
+          326
+        ],
+        "head": [
+          11,
+          0,
+          421,
+          280
+        ]
+      }
+    },
+    "resident_owlgp": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          173,
+          454
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          10,
+          0,
+          287,
+          197
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          193,
+          446
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          23,
+          0,
+          362,
+          194
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          218,
+          407
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          37,
+          0,
+          399,
+          214
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          194,
+          466
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          388,
+          235
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "seat",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          207,
+          406
+        ],
+        "hand": null,
+        "seat": [
+          183,
+          287
+        ],
+        "head": [
+          1,
+          0,
+          397,
+          246
+        ]
+      }
+    },
+    "resident_teacher": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          156,
+          499
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          13,
+          0,
+          268,
+          216
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          158,
+          496
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          315,
+          215
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          227,
+          462
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          454,
+          242
+        ]
+      },
+      "expressive": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          226,
+          470
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          452,
+          237
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          225,
+          436
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          29,
+          0,
+          411,
+          264
+        ]
+      }
+    },
+    "resident_nero": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          176,
+          495
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          115,
+          0,
+          211,
+          214
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          194,
+          501
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          138,
+          0,
+          196,
+          217
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          234,
+          421
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          17,
+          0,
+          451,
+          221
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          248,
+          478
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          403,
+          241
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          224,
+          459
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          93,
+          0,
+          284,
+          278
+        ]
+      }
+    },
+    "resident_seol": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          143,
+          503
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          67,
+          0,
+          220,
+          218
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          148,
+          503
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          97,
+          0,
+          200,
+          218
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          192,
+          494
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          33,
+          0,
+          351,
+          259
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          224,
+          473
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          448,
+          238
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          218,
+          440
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          9,
+          0,
+          427,
+          266
+        ]
+      }
+    },
+    "resident_ppul": {
+      "neutral": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          166,
+          485
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          52,
+          0,
+          273,
+          210
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          145,
+          485
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          28,
+          0,
+          263,
+          210
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          175,
+          471
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          40,
+          0,
+          310,
+          247
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          212,
+          454
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          424,
+          229
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          251,
+          442
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          5,
+          0,
+          498,
+          268
+        ]
+      }
+    },
+    "resident_tok": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          172,
+          470
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          343,
+          204
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          167,
+          448
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          39,
+          0,
+          295,
+          194
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          184,
+          459
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          32,
+          0,
+          325,
+          241
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          212,
+          461
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          362,
+          232
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "seat",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          199,
+          420
+        ],
+        "hand": null,
+        "seat": [
+          175,
+          297
+        ],
+        "head": [
+          13,
+          0,
+          349,
+          254
+        ]
+      }
+    },
+    "resident_sling": {
+      "neutral": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          177,
+          496
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          54,
+          0,
+          257,
+          215
+        ]
+      },
+      "thinking": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          182,
+          496
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          87,
+          0,
+          278,
+          215
+        ]
+      },
+      "distressed": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          189,
+          457
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          102,
+          0,
+          266,
+          240
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          220,
+          464
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          1,
+          0,
+          433,
+          234
+        ]
+      },
+      "activity": {
+        "facing": "right",
+        "contact": "standing",
+        "action_ko": null,
+        "activity_label": null,
+        "foot": [
+          248,
+          392
+        ],
+        "hand": null,
+        "seat": null,
+        "head": [
+          11,
+          0,
+          456,
+          238
+        ]
+      }
+    },
+    "resident_momo": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          285,
+          244
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          267,
+          243
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          296,
+          231
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          68,
+          0,
+          326,
+          199
+        ]
+      },
+      "living_read": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "책을 펼치고 돋보기로 내용을 살핀다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          322,
+          221
+        ]
+      }
+    },
+    "resident_ttadak": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          16,
+          0,
+          308,
+          211
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          91,
+          0,
+          304,
+          198
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          316,
+          217
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          27,
+          0,
+          399,
+          187
+        ]
+      },
+      "living_repair": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "나무 조각을 대고 보수할 곳을 살핀다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          100,
+          0,
+          317,
+          190
+        ]
+      }
+    },
+    "resident_piko": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          50,
+          0,
+          261,
+          212
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          73,
+          0,
+          302,
+          211
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          78,
+          0,
+          259,
+          198
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          52,
+          0,
+          328,
+          199
+        ]
+      },
+      "living_paint": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "작은 판에 붓을 대고 그림을 그린다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          177,
+          0,
+          277,
+          186
+        ]
+      }
+    },
+    "resident_mungchi": {
+      "neutral": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          3,
+          0,
+          274,
+          212
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          95,
+          0,
+          284,
+          212
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          27,
+          0,
+          312,
+          219
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          42,
+          0,
+          355,
+          211
+        ]
+      },
+      "living_carry": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "상자 두 개를 안고 조심히 옮긴다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          307,
+          218
+        ]
+      }
+    },
+    "resident_madam": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          20,
+          0,
+          306,
+          212
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          30,
+          0,
+          323,
+          221
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          60,
+          0,
+          318,
+          216
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          415,
+          213
+        ]
+      },
+      "living_inspect": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "보관함의 봉인을 손으로 확인한다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          49,
+          0,
+          327,
+          219
+        ]
+      }
+    },
+    "resident_siluk": {
+      "neutral": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          321,
+          224
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          120,
+          0,
+          307,
+          202
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          60,
+          0,
+          294,
+          234
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          58,
+          0,
+          350,
+          218
+        ]
+      },
+      "living_clean": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "수레바퀴에 낀 눈을 천으로 털어 낸다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          111,
+          0,
+          351,
+          197
+        ]
+      }
+    },
+    "resident_musoe": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          14,
+          0,
+          337,
+          220
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          33,
+          0,
+          336,
+          211
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          313,
+          210
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          72,
+          0,
+          398,
+          213
+        ]
+      },
+      "living_foldmap": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "낡은 지도를 접어 정리한다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          66,
+          0,
+          284,
+          209
+        ]
+      }
+    },
+    "resident_somi": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          57,
+          0,
+          302,
+          227
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          105,
+          0,
+          314,
+          227
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          45,
+          0,
+          300,
+          229
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          59,
+          0,
+          400,
+          220
+        ]
+      },
+      "living_bootice": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "구두 밑창에 낀 얼음을 긁는다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          90,
+          0,
+          338,
+          208
+        ]
+      }
+    },
+    "resident_seori": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          279,
+          197
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          303,
+          199
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          313,
+          218
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          39,
+          0,
+          312,
+          199
+        ]
+      },
+      "living_notes": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "메모 옆에 확인한 사람 이름을 적는다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          328,
+          196
+        ]
+      }
+    },
+    "resident_ubak": {
+      "neutral": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          288,
+          222
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          83,
+          0,
+          356,
+          237
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          17,
+          0,
+          405,
+          235
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          397,
+          238
+        ]
+      },
+      "living_measure": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          40,
+          0,
+          401,
+          216
+        ]
+      }
+    },
+    "resident_nubi": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          43,
+          0,
+          267,
+          230
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          76,
+          0,
+          326,
+          217
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          300,
+          223
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          4,
+          0,
+          339,
+          226
+        ]
+      },
+      "living_fold": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "마른 빨래를 사람별로 나눠 묶는다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          70,
+          0,
+          341,
+          207
+        ]
+      }
+    },
+    "resident_eunho": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          66,
+          0,
+          282,
+          223
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          57,
+          0,
+          339,
+          226
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          109,
+          0,
+          281,
+          212
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          152,
+          0,
+          385,
+          225
+        ]
+      },
+      "living_prices": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "물자 목록 옆에 값을 다시 적는다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          87,
+          0,
+          349,
+          226
+        ]
+      }
+    },
+    "resident_guseul": {
+      "neutral": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          40,
+          0,
+          324,
+          237
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          103,
+          0,
+          344,
+          224
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          19,
+          0,
+          364,
+          234
+        ]
+      },
+      "expressive": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          99,
+          0,
+          373,
+          233
+        ]
+      },
+      "living_stamp": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "계약서에 눌린 도장을 닦아 낸다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          101,
+          0,
+          338,
+          232
+        ]
+      }
+    },
+    "resident_badook": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          66,
+          0,
+          324,
+          230
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          66,
+          0,
+          302,
+          223
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          13,
+          0,
+          386,
+          230
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          415,
+          230
+        ]
+      },
+      "living_bootlace": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "순찰화의 끈을 조여 맨다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          110,
+          0,
+          367,
+          211
+        ]
+      }
+    },
+    "resident_lamplighter": {
+      "neutral": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          319,
+          245
+        ]
+      },
+      "thinking": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          369,
+          241
+        ]
+      },
+      "distressed": {
+        "facing": "right-threequarter",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          336,
+          240
+        ]
+      },
+      "expressive": {
+        "facing": "left",
+        "contact": null,
+        "action_ko": null,
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          0,
+          0,
+          487,
+          246
+        ]
+      },
+      "living_inspectlamp": {
+        "facing": "right-profile",
+        "contact": "self-contained",
+        "action_ko": "등의 점검함을 닫고 걸쇠를 확인한다.",
+        "activity_label": null,
+        "foot": null,
+        "hand": null,
+        "seat": null,
+        "head": [
+          22,
+          0,
+          295,
+          256
+        ]
+      }
+    }
+  },
+  "calendar_actions": {
+    "resident_tori": {
+      "settling": "토리는 어제 꿰맨 천을 펼쳐 바늘땀을 다시 세었다.",
+      "before_case": "토리는 납품할 천을 접었다가 모서리를 다시 폈다.",
+      "occurred": "토리는 천 위의 바늘을 먼저 치우고 나를 봤다.",
+      "prevented": "토리는 바늘을 꽂아 두고 출입구 쪽을 한 번 봤다.",
+      "after_trial": "토리는 새 천과 기운 천을 따로 접었다.",
+      "crisis": "토리는 천을 길게 펴고 해진 자리에 손을 댔다."
+    },
+    "resident_bori": {
+      "settling": "보리는 장작 묶음의 끈을 한 번 더 당겼다.",
+      "before_case": "보리는 가져갈 장작을 문 가까이에 모았다.",
+      "occurred": "보리는 내려놓은 장작을 다시 세었다.",
+      "prevented": "보리는 끈을 묶다가 길 쪽으로 몸을 돌렸다.",
+      "after_trial": "보리는 장작 부스러기를 모아 큰 토막 사이에 넣었다.",
+      "crisis": "보리는 장작을 나눠 놓고 빈자리를 한참 봤다."
+    },
+    "resident_yeoni": {
+      "settling": "여니는 풀어낸 실을 길이별로 나눴다.",
+      "before_case": "여니는 벌어진 소매를 접어 바늘을 꽂았다.",
+      "occurred": "여니는 옷을 들고 있다가 내 손을 보고 내려놓았다.",
+      "prevented": "여니는 소매 끝에 남은 바늘을 빼냈다.",
+      "after_trial": "여니는 기운 소매를 뒤집어 마무리했다.",
+      "crisis": "여니는 작은 천 조각까지 모아 접었다."
+    },
+    "nabi": {
+      "settling": "나비는 그릇을 닦고 아직 안 쓴 것 옆에 놓았다.",
+      "before_case": "나비는 저녁에 쓸 그릇을 하나씩 꺼냈다.",
+      "occurred": "나비는 그릇을 닦다가 손을 멈췄다.",
+      "prevented": "나비는 식기를 포개다가 하나를 다시 꺼냈다.",
+      "after_trial": "나비는 덮어 둔 그릇과 빈 그릇을 나눴다.",
+      "crisis": "나비는 빈 그릇의 바닥까지 닦았다."
+    },
+    "buri": {
+      "settling": "부리는 닳은 부품을 새 부품 옆에 놓았다.",
+      "before_case": "부리는 작업대 가장자리에서 부품을 안쪽으로 옮겼다.",
+      "occurred": "부리는 공구를 집었다가 같은 자리에 놓았다.",
+      "prevented": "부리는 공구가 놓인 자리를 한 칸 비웠다.",
+      "after_trial": "부리는 오래된 공구의 손잡이를 천으로 닦았다.",
+      "crisis": "부리는 손에 묻은 기름을 닦고 공구를 다시 쥐었다."
+    },
+    "resident_kongi": {
+      "settling": "콩이는 눌린 빵을 따로 놓고 바구니를 고쳐 들었다.",
+      "before_case": "콩이는 바구니의 빈 쪽을 자기 몸에 붙였다.",
+      "occurred": "콩이는 바구니를 들고 출발하려다가 멈췄다.",
+      "prevented": "콩이는 빵 위의 천을 다시 덮었다.",
+      "after_trial": "콩이는 돌려받은 바구니 안을 털었다.",
+      "crisis": "콩이는 빵 꾸러미를 작은 것부터 모았다."
+    },
+    "doto": {
+      "settling": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다.",
+      "before_case": "도토는 펜을 놓고 두 장의 종이 끝을 맞췄다.",
+      "occurred": "도토는 쓰던 줄을 끝내고 빈칸을 남겼다.",
+      "prevented": "도토는 수정한 줄 아래에 펜을 멈췄다.",
+      "after_trial": "도토는 고쳐 쓴 장과 고치기 전 장을 나란히 놓았다.",
+      "crisis": "도토는 숫자 아래에 작은 글씨를 더 적었다."
+    },
+    "resident_kkwak": {
+      "settling": "꽥순은 물통 손잡이의 천을 갈아 감았다.",
+      "before_case": "꽥순은 통 안쪽의 얼음을 두드리고 발끝을 문질렀다.",
+      "occurred": "꽥순은 물통을 내려놓고 신발 밑을 봤다.",
+      "prevented": "꽥순은 통 두 개를 가까이 모았다.",
+      "after_trial": "꽥순은 마른 천을 손잡이에 둘렀다.",
+      "crisis": "꽥순은 빈 통을 기울여 남은 얼음을 털었다."
+    },
+    "granny": {
+      "settling": "할머니는 반납된 열쇠를 장부 위에 놓았다.",
+      "before_case": "할머니는 열쇠를 한 줄로 모으고 장부를 덮었다.",
+      "occurred": "할머니는 장부의 모서리를 손끝으로 눌렀다.",
+      "prevented": "할머니는 열쇠를 옮기다가 손을 거두었다.",
+      "after_trial": "할머니는 덮인 장부 앞에서 손을 모았다.",
+      "crisis": "할머니는 접수대의 빈자리를 손으로 쓸었다."
+    },
+    "resident_librarian": {
+      "settling": "사서는 젖은 책 사이의 종이를 새것으로 갈았다.",
+      "before_case": "사서는 펼친 책 밑에 받침을 넣었다.",
+      "occurred": "사서는 책장에 끼워 둔 표시를 움직이지 않았다.",
+      "prevented": "사서는 오래된 장과 새 종이를 따로 포갰다.",
+      "after_trial": "사서는 수정 기록을 책 바깥에 붙였다.",
+      "crisis": "사서는 책들을 바닥에서 올려놓았다."
+    },
+    "resident_owlgp": {
+      "settling": "부엉이 할아버지는 풀린 수첩을 다시 묶었다.",
+      "before_case": "부엉이 할아버지는 수첩을 닫고 등을 올려다봤다.",
+      "occurred": "부엉이 할아버지의 수첩이 덮여 있었다.",
+      "prevented": "부엉이 할아버지는 수첩을 무릎 위에 놓고 손을 폈다.",
+      "after_trial": "부엉이 할아버지는 수첩의 접힌 귀퉁이를 폈다.",
+      "crisis": "부엉이 할아버지는 수첩을 가까이 들었다."
+    },
+    "resident_teacher": {
+      "settling": "선생님은 아이들 외투 끝을 펴 놓았다.",
+      "before_case": "선생님은 흔들리는 의자를 따로 뺐다.",
+      "occurred": "선생님은 작은 외투를 접다가 손을 멈췄다.",
+      "prevented": "선생님은 의자를 둘씩 가까이 놓았다.",
+      "after_trial": "선생님은 빈자리에 외투를 올렸다가 다시 치웠다.",
+      "crisis": "선생님은 책상 사이의 길을 재어 봤다."
+    },
+    "karo": {
+      "settling": "까로는 마차 축의 감긴 부분을 다시 살폈다.",
+      "before_case": "까로는 공구를 모아 바퀴 옆에 놓았다.",
+      "occurred": "까로는 닦던 손을 천에 한 번 더 문질렀다.",
+      "prevented": "까로는 마차 옆에서 우리 쪽으로 몸을 돌렸다.",
+      "after_trial": "까로는 마차에 놓인 짐을 다시 묶었다.",
+      "crisis": "까로는 공구와 가져갈 짐을 따로 모았다."
+    },
+    "resident_nero": {
+      "settling": "네로는 이름표의 젖은 쪽을 안으로 접었다.",
+      "before_case": "네로는 길 쪽을 보고 종이를 옷 안에 넣었다.",
+      "occurred": "네로는 내 뒤를 보고 나서 말을 들었다.",
+      "prevented": "네로는 접은 종이를 그대로 주머니에 넣었다.",
+      "after_trial": "네로는 이름표를 손에 쥐었다가 다시 접었다.",
+      "crisis": "네로는 짐을 몸에 붙이고 통행하는 쪽을 살폈다."
+    },
+    "resident_seol": {
+      "settling": "설이는 종줄의 매듭을 다시 만졌다.",
+      "before_case": "설이는 줄에서 손을 떼고 길 쪽을 봤다.",
+      "occurred": "설이는 줄을 잡았다 놓았다.",
+      "prevented": "설이는 종줄을 당기지 않고 옆으로 비켰다.",
+      "after_trial": "설이는 줄 끝의 풀린 실을 묶었다.",
+      "crisis": "설이는 줄을 손 닿는 곳에 내려놓았다."
+    },
+    "resident_ppul": {
+      "settling": "촌장은 식량 나눔표 위에 누름돌을 다시 올렸다.",
+      "before_case": "촌장은 쌓인 종이를 한 장씩 나눴다.",
+      "occurred": "촌장은 식량 나눔표를 접고 내 쪽을 봤다.",
+      "prevented": "촌장은 종이 위의 숫자를 손가락으로 짚었다.",
+      "after_trial": "촌장은 수정된 명단을 이전 명단 옆에 놓았다.",
+      "crisis": "촌장은 남은 몫을 세다가 손을 멈췄다."
+    },
+    "resident_tok": {
+      "settling": "톡은 핀을 그릇에 놓고 집게 끝을 닦았다.",
+      "before_case": "톡은 작은 금속 조각을 천 안쪽에 모았다.",
+      "occurred": "톡은 집게를 내려놓고 부품 그릇을 밀었다.",
+      "prevented": "톡은 바닥을 살피고 발을 고쳐 놓았다.",
+      "after_trial": "톡은 새 부품과 닳은 부품을 다시 나눴다.",
+      "crisis": "톡은 작은 부품의 끝을 집게로 바로잡았다."
+    },
+    "bami": {
+      "settling": "밤이는 몸을 움츠리고 발소리가 멎기를 기다렸다.",
+      "before_case": "밤이는 앉은 자리에서 길 쪽을 살폈다.",
+      "occurred": "밤이는 내 뒤의 복도를 먼저 봤다.",
+      "prevented": "밤이는 어깨를 조금 폈다가 다시 자리를 살폈다.",
+      "after_trial": "밤이는 문 쪽을 보고 목소리를 낮췄다.",
+      "crisis": "밤이는 앉을 자리를 고르지 않고 먼저 출입구를 봤다."
+    },
+    "resident_sling": {
+      "settling": "슬링은 배달할 봉투와 돌아온 봉투를 나눴다.",
+      "before_case": "슬링은 마지막 묶음의 끈을 조였다.",
+      "occurred": "슬링은 봉투의 받는 사람 칸을 다시 확인했다.",
+      "prevented": "슬링은 봉투를 묶음 안쪽에 넣었다.",
+      "after_trial": "슬링은 돌아온 편지를 따로 묶었다.",
+      "crisis": "슬링은 이동하는 사람들과 봉투를 번갈아 봤다."
+    },
+    "resident_momo": {
+      "settling": "모모는 전시품 밑의 번호를 다시 읽었다.",
+      "before_case": "모모는 천을 덮을 물건을 하나씩 골랐다.",
+      "occurred": "모모는 전시품에 손을 대지 않고 먼지만 닦았다.",
+      "prevented": "모모는 설명표를 물건 옆에 다시 붙였다.",
+      "after_trial": "모모는 오래된 설명 옆에 새 종이를 놓았다.",
+      "crisis": "모모는 전시품을 바닥에서 올리고 자리를 비웠다."
+    },
+    "resident_ttadak": {
+      "settling": "따닥은 어제 댄 나무 조각을 다시 눌렀다.",
+      "before_case": "따닥은 벽에서 망치를 떼고 벌어진 틈을 봤다.",
+      "occurred": "따닥은 망치를 내려놓고 벽에 손을 댔다.",
+      "prevented": "따닥은 나무 조각을 벽의 틈에 대 봤다.",
+      "after_trial": "따닥은 새 판과 오래된 벽 사이를 짚었다.",
+      "crisis": "따닥은 망치를 내려놓고 판자를 받쳤다."
+    },
+    "resident_piko": {
+      "settling": "피코는 덮었던 그림을 조금 열어 봤다.",
+      "before_case": "피코는 그림 위의 천 끝을 폈다.",
+      "occurred": "피코는 그림을 덮고 손에 묻은 것을 닦았다.",
+      "prevented": "피코는 그림의 모서리에 손을 얹었다.",
+      "after_trial": "피코는 새 종이를 펼치고 한동안 손을 움직이지 않았다.",
+      "crisis": "피코는 손을 닦고 자리를 옮길 준비를 했다."
+    },
+    "resident_mungchi": {
+      "settling": "뭉치는 돌려놓을 상자를 다른 쪽에 쌓았다.",
+      "before_case": "뭉치는 큰 상자 앞을 비워 놓았다.",
+      "occurred": "뭉치는 상자에 손을 댄 채 내 말을 들었다.",
+      "prevented": "뭉치는 작은 상자를 몸 쪽으로 옮겼다.",
+      "after_trial": "뭉치는 되돌려 놓을 물건을 따로 모았다.",
+      "crisis": "뭉치는 상자를 들었다가 내려놓았다."
+    },
+    "resident_madam": {
+      "settling": "백 부인은 보관함을 봉해 둔 자리를 다시 만졌다.",
+      "before_case": "백 부인은 문 가까이에 있는 상자를 안쪽으로 옮겼다.",
+      "occurred": "백 부인은 보관함에서 손을 떼고 나를 봤다.",
+      "prevented": "백 부인은 접힌 목록을 펴서 앞에 놓았다.",
+      "after_trial": "백 부인은 이미 나간 물건과 남은 물건을 나눠 적었다.",
+      "crisis": "백 부인은 남은 목록을 가리고 사람들을 봤다."
+    },
+    "resident_siluk": {
+      "settling": "실룩은 수레 바퀴에 끼인 눈을 털었다.",
+      "before_case": "실룩은 짐을 싣기 전에 빈 수레를 밀어 봤다.",
+      "occurred": "실룩은 수레 손잡이를 잡고 잠깐 움직이지 않았다.",
+      "prevented": "실룩은 수레 옆에 설 자리를 비웠다.",
+      "after_trial": "실룩은 돌아온 수레 바퀴를 다시 살폈다.",
+      "crisis": "실룩은 실을 짐과 먼저 내릴 짐을 나눴다."
+    },
+    "neoul": {
+      "settling": "길을 지키던 사람이 짐이 놓인 쪽을 비켜 세웠다.",
+      "before_case": "길을 지키던 사람이 남은 통행을 살폈다.",
+      "occurred": "길을 지키던 사람이 이름 목록을 내려놓았다.",
+      "prevented": "길을 지키던 사람이 부녀가 설 자리를 비웠다.",
+      "after_trial": "길을 지키던 사람이 고친 이름 목록을 앞에 놓았다.",
+      "crisis": "길을 지키던 사람이 지나갈 공간을 재어 봤다."
+    },
+    "resident_musoe": {
+      "settling": "무쇠 할아버지는 접은 지도의 모서리를 폈다.",
+      "before_case": "무쇠 할아버지는 지도를 넣고 발밑을 봤다.",
+      "occurred": "무쇠 할아버지는 지도에서 손을 떼고 귀를 기울였다.",
+      "prevented": "무쇠 할아버지는 한쪽 자리를 비워 두었다.",
+      "after_trial": "무쇠 할아버지는 지도를 접다가 다시 폈다.",
+      "crisis": "무쇠 할아버지는 지도보다 사람들 발을 먼저 봤다."
+    },
+    "resident_somi": {
+      "settling": "솜이는 구두 밑창을 문지르고 반대쪽 발을 들었다.",
+      "before_case": "솜이는 발끝을 모으고 길을 봤다.",
+      "occurred": "솜이는 신발을 내려다보다가 내 얼굴을 봤다.",
+      "prevented": "솜이는 구두 끝을 털고 한 걸음 물러섰다.",
+      "after_trial": "솜이는 닳은 밑창을 손가락으로 눌렀다.",
+      "crisis": "솜이는 길보다 신발을 먼저 내려다봤다."
+    },
+    "resident_seori": {
+      "settling": "서리는 전날 메모 옆에 오늘 확인한 줄을 적었다.",
+      "before_case": "서리는 서류의 빈칸을 남겨 두었다.",
+      "occurred": "서리는 사람들이 한 말과 직접 확인한 기록을 따로 놓았다.",
+      "prevented": "서리는 사건 기록과 예방 기록을 떨어뜨려 놓았다.",
+      "after_trial": "서리는 고치기 전 문서를 옆에 놓았다.",
+      "crisis": "서리는 종이의 숫자보다 조건을 먼저 읽었다."
+    },
+    "resident_ubak": {
+      "settling": "우박은 전날 숫자 옆에 오늘 조건을 적었다.",
+      "before_case": "우박은 계측기 바늘이 멈추기를 기다렸다.",
+      "occurred": "우박은 쓰던 숫자를 가리지 않고 종이를 내렸다.",
+      "prevented": "우박은 바늘과 종이를 번갈아 봤다.",
+      "after_trial": "우박은 고친 숫자 아래에 작은 글씨를 더했다.",
+      "crisis": "우박은 바늘에서 눈을 떼지 않았다."
+    },
+    "resident_nubi": {
+      "settling": "누비는 마른 빨랫감을 집별로 묶었다.",
+      "before_case": "누비는 아직 젖은 천을 묶지 않고 따로 폈다.",
+      "occurred": "누비는 묶던 끈을 놓고 내 손을 봤다.",
+      "prevented": "누비는 빨랫감을 두 묶음으로 나눴다.",
+      "after_trial": "누비는 돌아온 빨랫감의 표를 다시 봤다.",
+      "crisis": "누비는 천을 바닥에서 올려놓고 묶음을 좁혔다."
+    },
+    "resident_eunho": {
+      "settling": "은호는 물자 목록 옆의 값을 다시 적었다.",
+      "before_case": "은호는 목록을 접기 전에 남은 물건을 봤다.",
+      "occurred": "은호는 상품에서 손을 떼었다.",
+      "prevented": "은호는 목록을 앞으로 밀었다.",
+      "after_trial": "은호는 나간 물건의 줄을 남겨 두었다.",
+      "crisis": "은호는 남은 물건과 빈 자루를 따로 셌다."
+    },
+    "resident_guseul": {
+      "settling": "구슬은 묶음 번호를 맞춘 뒤 물건을 닦았다.",
+      "before_case": "구슬은 닦은 도장을 천으로 감쌌다.",
+      "occurred": "구슬은 계약서를 가리지 않고 손만 거두었다.",
+      "prevented": "구슬은 물건에 달린 표를 바로잡았다.",
+      "after_trial": "구슬은 서명과 묶음 번호를 나란히 봤다.",
+      "crisis": "구슬은 나갈 물건과 남길 물건을 떨어뜨려 놓았다."
+    },
+    "resident_badook": {
+      "settling": "바둑이는 순찰화 끈을 조이고 길을 봤다.",
+      "before_case": "바둑이는 호루라기를 손 안에 넣었다.",
+      "occurred": "바둑이는 지나가는 사람을 확인한 뒤 내 말을 들었다.",
+      "prevented": "바둑이는 우리가 설 쪽을 비켜 주었다.",
+      "after_trial": "바둑이는 돌아온 사람 수를 확인했다.",
+      "crisis": "바둑이는 통행하는 쪽과 기다리는 쪽을 나눴다."
+    },
+    "resident_lamplighter": {
+      "settling": "초롱은 점검함을 열고 전날 매듭을 봤다.",
+      "before_case": "초롱은 등을 올려다보다 점검함 쪽으로 고개를 내렸다.",
+      "occurred": "초롱은 점검함에서 손을 떼고 내 쪽을 봤다.",
+      "prevented": "초롱은 등 아래에서 한 걸음 비켰다.",
+      "after_trial": "초롱은 점검한 줄과 다시 볼 줄을 나눴다.",
+      "crisis": "초롱은 흔들리는 빛을 한참 보고 있었다."
+    },
+    "seryeon": {
+      "settling": "우편 담당자는 돌아온 봉투의 이름을 다시 확인했다.",
+      "before_case": "우편 담당자는 마지막 접수 줄을 남겨 두었다.",
+      "occurred": "우편 담당자는 봉투를 내려놓고 내 말을 들었다.",
+      "prevented": "우편 담당자는 받는 사람 칸에 손을 댔다.",
+      "after_trial": "우편 담당자는 전달한 것과 찾는 중인 것을 나눴다.",
+      "crisis": "우편 담당자는 묶음을 작은 것부터 모았다."
+    }
+  },
+  "ready_action_conditions": {
+    "resident_teacher": [
+      "shelter_ready",
+      "선생님은 비워 둔 길을 따라 의자를 다시 놓았다.",
+      "책상은 옮겼어요. 이제 사람들이 누워도 나갈 길이 남는지 보려고요."
+    ],
+    "resident_tori": [
+      "shelter_ready",
+      "토리는 자리를 비운 쪽에서 천을 다시 접었다.",
+      "누울 자리는 비웠다면서요. 그럼 천도 그 자리에 맞춰 봐야죠. 그냥 많기만 해서는 안 맞아요."
+    ],
+    "resident_yeoni": [
+      "shelter_ready",
+      "여니는 접어 둔 천의 안쪽을 만졌다.",
+      "자리를 비웠으면 덮을 것도 봐야죠. 바늘이 남아 있지 않은지 제가 한 번 더 볼게요."
+    ],
+    "resident_nubi": [
+      "shelter_ready",
+      "누비는 젖은 묶음을 누울 자리에서 떨어뜨렸다.",
+      "자리는 비웠어요. 젖은 묶음을 거기 다시 놓으면 사람부터 눕힐 수가 없죠."
+    ],
+    "resident_eunho": [
+      "supplies_ready",
+      "은호는 나간 물건의 수량과 빈 자루를 대조했다.",
+      "이미 내준 몫은 여기에 남겼소. 이제 안 내줬다고 말하지도, 더 내준 것처럼 말하지도 맙시다."
+    ],
+    "resident_bori": [
+      "supplies_ready",
+      "보리는 남길 장작과 함께 쓸 장작을 따로 묶었다.",
+      "함께 쓸 몫은 정했어요. 우리 집 것도 남겼고요. 둘을 같이 적어 주셔서 내놓을 수 있었어요."
+    ],
+    "resident_madam": [
+      "supplies_ready",
+      "백 부인은 나간 몫과 남은 몫을 따로 읽었다.",
+      "공동으로 마련한 몫이 있다고 제 창고까지 전부 공동 물건이 된 건 아니에요. 구별해서 세요."
+    ],
+    "buri": [
+      "operators_ready",
+      "부리는 공구를 내려놓을 자리를 비워 두었다.",
+      "교대할 사람을 정했다면서요. 그럼 제가 놓을 때 어디까지 했는지도 넘겨야죠. 사람만 바뀌면 또 처음부터예요."
+    ],
+    "resident_tok": [
+      "operators_ready",
+      "톡은 다음 사람이 볼 부품을 따로 놓았다.",
+      "교대가 있으면 이쪽도 같이 넘길게요. 사람이 둘이어도 다른 부품을 보고 있으면 소용없으니까."
+    ],
+    "resident_ubak": [
+      "operators_ready",
+      "우박은 다음 사람이 읽을 조건을 숫자 옆에 적었다.",
+      "교대할 분이 보셔도 알게 적고 있어요. 제가 옆에서 계속 설명할 수는 없으니까요."
+    ],
+    "resident_badook": [
+      "patient_transport",
+      "바둑이는 옮길 사람과 도착할 쪽을 번갈아 확인했다.",
+      "수송은 마련했습니다. 이제 도착한 수까지 맞춰야 합니다. 출발했다고 전부 옮긴 것은 아닙니다."
+    ],
+    "resident_siluk": [
+      "patient_transport",
+      "실룩은 실을 쪽과 먼저 내릴 쪽을 나눠 봤다.",
+      "옮길 준비는 됐어요. ……한 번에 끝난다고는 안 했고요. 먼저 내릴 쪽부터 확인할게요."
+    ],
+    "resident_piko": [
+      "patient_transport",
+      "피코는 기다리는 자리에서 손을 닦고 비켰다.",
+      "옮길 준비가 됐다고 들었어요. 그럼 저는 기다릴 자리를 막지 않을게요. 그림은 나중에도 그릴 수 있으니까."
+    ]
+  }
+}
