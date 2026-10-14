@@ -16,7 +16,7 @@ init 70 python:
         if preferences.get_mute("sfx") or preferences.get_volume("sfx") <= 0:
             renpy.notify("효과음이 꺼져 있어요. 음량과 켜짐 상태를 확인해 주세요.")
             return
-        renpy.music.play("assets/source-tap.wav", channel="sound", loop=False)
+        renpy.music.play("assets/sfx-click.wav", channel="sound", loop=False)
 
     def r13_reset_options():
         preferences.set_volume("music", config.default_music_volume)

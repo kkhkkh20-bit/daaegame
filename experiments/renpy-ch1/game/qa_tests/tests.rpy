@@ -953,3 +953,10 @@ testcase medkit_musoe:
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 40
     $ r13_qa_town_dump()
+
+testcase sound_places:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_sound")
+    pause 120.0

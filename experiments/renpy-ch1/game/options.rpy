@@ -53,7 +53,7 @@ init python:
             return rendered
     gui.init(1280,720)
     config.has_voice = True
-    config.main_menu_music = "assets/source-title-strings-v3.mp3"
+    config.main_menu_music = "assets/bgm-title.mp3"
     config.main_menu_music_fadein = 1.2
     config.default_music_volume = 0.75
     config.default_sfx_volume = 0.7
