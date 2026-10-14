@@ -1,0 +1,1613 @@
+{
+  "resident_tori": {
+    "id": "tori",
+    "name": "토리",
+    "work": "광장 수선과 여관 납품",
+    "protects": "혼자서도 일을 맡길 수 있다는 신뢰",
+    "weekly_locations": [
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "inn",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "square",
+        "home",
+        "home"
+      ],
+      [
+        "square",
+        "inn",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "inn"
+      ]
+    ],
+    "runtime_id": "resident_tori",
+    "activity": "접힌 천의 바늘땀을 세고 있다.",
+    "unrelated": "어, 그건 저는…… 몰라요. 모른다고만 해도 되죠?"
+  },
+  "resident_bori": {
+    "id": "bori",
+    "name": "보리",
+    "work": "장작 운반과 가족 돌봄",
+    "protects": "자기 집의 난방",
+    "weekly_locations": [
+      [
+        "gate",
+        "workshop",
+        "square"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "workshop",
+        "home"
+      ],
+      [
+        "store",
+        "workshop",
+        "square"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "store",
+        "school",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_bori",
+    "activity": "장작을 묶고 끈을 다시 조이고 있다.",
+    "unrelated": "이건 제가 들어드릴 짐은 아닌데요. 제가 아는 일부터 물어봐 주세요."
+  },
+  "resident_yeoni": {
+    "id": "yeoni",
+    "name": "여니",
+    "work": "의복 수선과 물자 교환",
+    "protects": "토리의 안전과 자기 작업실",
+    "weekly_locations": [
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "inn",
+        "home"
+      ],
+      [
+        "home",
+        "school",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_yeoni",
+    "activity": "헤진 소매 안쪽을 뒤집어 살핀다.",
+    "unrelated": "쉿, 그 얘기는 저한테 처음 하신 거예요. 제가 안다고 적지는 마세요."
+  },
+  "nabi": {
+    "id": "nabi",
+    "name": "나비",
+    "work": "여관 식사와 임시 운영",
+    "protects": "자신을 거둔 할머니와 아이들의 식사",
+    "weekly_locations": [
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ]
+    ],
+    "runtime_id": "nabi",
+    "activity": "그릇 바닥을 닦아 포개 놓는다.",
+    "unrelated": "봤어. 그런데 그때 나는 거기 없었어."
+  },
+  "buri": {
+    "id": "buri",
+    "name": "부리",
+    "work": "수리점과 조부의 도구 관리",
+    "protects": "죽은 조부의 명예",
+    "weekly_locations": [
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ],
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ],
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ],
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ],
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ],
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ],
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ]
+    ],
+    "runtime_id": "buri",
+    "activity": "작은 부품을 천 위에 순서대로 놓는다.",
+    "unrelated": "그 물건을 고친 사람부터 찾으세요. 내 도장이 있습니까?"
+  },
+  "resident_kongi": {
+    "id": "kongi",
+    "name": "콩이",
+    "work": "가게 심부름과 동네 길 안내",
+    "protects": "자기 관찰을 비웃지 않는 관계",
+    "weekly_locations": [
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_kongi",
+    "activity": "배달 바구니에서 눌린 빵을 꺼낸다.",
+    "unrelated": "킁. 아무리 봐도 제가 아는 건 없어요. 코로 다 알아내는 줄 아셨죠?"
+  },
+  "doto": {
+    "id": "doto",
+    "name": "도토",
+    "work": "장부 정리와 광장 배급 보조",
+    "protects": "기록의 정확성과 일자리",
+    "weekly_locations": [
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ]
+    ],
+    "runtime_id": "doto",
+    "activity": "여러 장부의 모서리를 맞춘다.",
+    "unrelated": "정확히 말하면, 봤다는 것과 확인했다는 건 달라요. 이건 그냥 봤어요."
+  },
+  "resident_kkwak": {
+    "id": "kkwak",
+    "name": "꽥순",
+    "work": "빨래 물 나르기와 하천 길 확인",
+    "protects": "멀리 있는 가족에게 돌아갈 길",
+    "weekly_locations": [
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ],
+      [
+        "store",
+        "lowroad",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_kkwak",
+    "activity": "빈 물통 안의 얼음을 두드린다.",
+    "unrelated": "꽥? 그건 모르겠는데요. 큰 소리로 답하면 아는 것처럼 들리려나."
+  },
+  "granny": {
+    "id": "grandma",
+    "name": "토끼 할머니",
+    "work": "여관 접수와 옛 돌 운용 자문",
+    "protects": "자신의 질서와 과거 희생의 정당화",
+    "weekly_locations": [
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ],
+      [
+        "inn",
+        "inn",
+        "inn"
+      ]
+    ],
+    "runtime_id": "granny",
+    "activity": "접수대에서 방 열쇠와 장부를 맞춘다.",
+    "unrelated": "남의 물건은 주인에게 확인하는 게 좋겠어요."
+  },
+  "resident_librarian": {
+    "id": "librarian",
+    "name": "사서 선생님",
+    "work": "도서관 기록 보존",
+    "protects": "과거 자료의 독립성",
+    "weekly_locations": [
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_librarian",
+    "activity": "젖은 책 사이에 마른 종이를 끼운다.",
+    "unrelated": "모르는 일을 조용히 말한다고 아는 일이 되지는 않네요. 다른 분께도 물어보세요."
+  },
+  "resident_owlgp": {
+    "id": "owlgp",
+    "name": "부엉이 할아버지",
+    "work": "은퇴 탐정과 등 점검",
+    "protects": "과거 오판의 정정과 손자",
+    "weekly_locations": [
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ],
+      [
+        "square",
+        "library",
+        "inn"
+      ]
+    ],
+    "runtime_id": "resident_owlgp",
+    "activity": "낡은 수첩의 풀린 제본을 묶는다.",
+    "unrelated": "허허. 늙었다고 지난 일을 다 알지는 않소. 이건 모릅니다.",
+    "private_knowledge": "엄마 연락과 최근 야생화 전조; 생존 시 직접 증언"
+  },
+  "resident_teacher": {
+    "id": "teacher",
+    "name": "곰 선생님",
+    "work": "학교와 비상 대피소",
+    "protects": "학생들의 안전",
+    "weekly_locations": [
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ],
+      [
+        "school",
+        "school",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_teacher",
+    "activity": "아이들 외투의 젖은 끝을 펴 놓는다.",
+    "unrelated": "제가 뭐든 적기는 하지만, 모르는 것까지 적지는 않아요. 이건 빈칸이겠네요."
+  },
+  "karo": {
+    "id": "karo",
+    "name": "까로",
+    "work": "마차 수리와 반송품 운반",
+    "protects": "일의 신뢰와 생계",
+    "weekly_locations": [
+      [
+        "gate",
+        "post",
+        "inn"
+      ],
+      [
+        "gate",
+        "post",
+        "gate"
+      ],
+      [
+        "gate",
+        "workshop",
+        "inn"
+      ],
+      [
+        "gate",
+        "post",
+        "gate"
+      ],
+      [
+        "gate",
+        "post",
+        "inn"
+      ],
+      [
+        "gate",
+        "store",
+        "inn"
+      ],
+      [
+        "inn",
+        "gate",
+        "inn"
+      ]
+    ],
+    "runtime_id": "karo",
+    "activity": "마차 축의 갈라진 부분을 감싼다.",
+    "unrelated": "제 마차에서 나온 물건은 아닌 것 같아요. 확실한 것만 말씀드릴게요."
+  },
+  "resident_nero": {
+    "id": "nero",
+    "name": "네로",
+    "work": "외곽 노동과 비공식 통행",
+    "protects": "등록되지 않은 사람들의 안전",
+    "weekly_locations": [
+      [
+        "lowroad",
+        "store",
+        "home"
+      ],
+      [
+        "lowroad",
+        "store",
+        "home"
+      ],
+      [
+        "lowroad",
+        "store",
+        "home"
+      ],
+      [
+        "lowroad",
+        "store",
+        "home"
+      ],
+      [
+        "lowroad",
+        "store",
+        "home"
+      ],
+      [
+        "lowroad",
+        "store",
+        "home"
+      ],
+      [
+        "lowroad",
+        "store",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_nero",
+    "activity": "짐에 붙은 낡은 이름표를 떼어 주머니에 넣는다.",
+    "unrelated": "그걸 왜 제게 묻습니까? ……몰라서 묻는 거군요. 저도 모릅니다."
+  },
+  "resident_seol": {
+    "id": "seol",
+    "name": "설이",
+    "work": "종탑과 야간 안내",
+    "protects": "종이 경고로 기능한다는 신뢰",
+    "weekly_locations": [
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ],
+      [
+        "tower",
+        "tower",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_seol",
+    "activity": "작은 종의 끈을 풀었다 다시 매단다.",
+    "unrelated": "……한 번 더 볼게요. 아니, 더 봐도 제가 아는 일은 없네요."
+  },
+  "resident_ppul": {
+    "id": "ppul",
+    "name": "뿔이 촌장",
+    "work": "촌장·배급·경비 지휘",
+    "protects": "마을 생존과 통치 권한",
+    "weekly_locations": [
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ],
+      [
+        "square",
+        "post",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_ppul",
+    "activity": "식량 나눔표 위에 작은 돌을 눌러 둔다.",
+    "unrelated": "제가 결정할 일입니까? 사실을 물으시는 거라면, 이건 모릅니다."
+  },
+  "resident_tok": {
+    "id": "tok",
+    "name": "톡",
+    "work": "시계·등·작은 금속 수리",
+    "protects": "수리 결과의 신뢰",
+    "weekly_locations": [
+      [
+        "workshop",
+        "workshop",
+        "square"
+      ],
+      [
+        "workshop",
+        "workshop",
+        "home"
+      ],
+      [
+        "workshop",
+        "post",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "clinic",
+        "home"
+      ],
+      [
+        "post",
+        "workshop",
+        "home"
+      ],
+      [
+        "square",
+        "workshop",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_tok",
+    "activity": "작은 핀을 집게로 물고 살핀다.",
+    "unrelated": "딸깍…… 잠깐, 이건 제 손을 거친 물건인지도 모르겠네요. 답부터 하기는 어렵겠어요."
+  },
+  "bami": {
+    "id": "bami",
+    "name": "밤이",
+    "work": "처마 거처와 밤길 관찰",
+    "protects": "강제 검사를 피할 안전한 잠자리",
+    "weekly_locations": [
+      [
+        "inn",
+        "home",
+        "inn"
+      ],
+      [
+        "inn",
+        "home",
+        "inn"
+      ],
+      [
+        "inn",
+        "home",
+        "inn"
+      ],
+      [
+        "inn",
+        "home",
+        "inn"
+      ],
+      [
+        "inn",
+        "home",
+        "inn"
+      ],
+      [
+        "inn",
+        "home",
+        "inn"
+      ],
+      [
+        "inn",
+        "home",
+        "inn"
+      ]
+    ],
+    "runtime_id": "bami",
+    "activity": "따뜻한 처마 가까이 몸을 움츠린다.",
+    "unrelated": "그건 안 보여. 나한테 자꾸 먼 데 걸 물으면 몰라."
+  },
+  "resident_sling": {
+    "id": "sling",
+    "name": "슬링",
+    "work": "우편 접수와 마을 안 배달",
+    "protects": "배달 책임과 직장",
+    "weekly_locations": [
+      [
+        "post",
+        "square",
+        "post"
+      ],
+      [
+        "post",
+        "square",
+        "post"
+      ],
+      [
+        "post",
+        "square",
+        "post"
+      ],
+      [
+        "post",
+        "square",
+        "post"
+      ],
+      [
+        "post",
+        "square",
+        "post"
+      ],
+      [
+        "post",
+        "square",
+        "post"
+      ],
+      [
+        "post",
+        "square",
+        "post"
+      ]
+    ],
+    "runtime_id": "resident_sling",
+    "activity": "봉투를 배달할 순서대로 나눈다.",
+    "unrelated": "제가 도와드릴까요? ……아, 이건 아닙니다. 너무 먼저 말했네요."
+  },
+  "resident_momo": {
+    "id": "momo",
+    "name": "모모 관장",
+    "work": "박물관 보관과 옛 생활 자료",
+    "protects": "수집품을 잃지 않는 것",
+    "weekly_locations": [
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ],
+      [
+        "library",
+        "library",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_momo",
+    "activity": "낡은 등잔 바닥에 붙은 번호를 읽는다.",
+    "unrelated": "어머, 보여 주셔서 고마워요. 그런데 제가 아는 일은 아니네요. 고맙다는 말밖에는 못 하겠어요."
+  },
+  "resident_ttadak": {
+    "id": "ttadak",
+    "name": "따닥",
+    "work": "건물 보수와 목재 점검",
+    "protects": "불법 증축 책임을 피하는 것",
+    "weekly_locations": [
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ],
+      [
+        "workshop",
+        "inn",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_ttadak",
+    "activity": "벽의 벌어진 이음에 나무 조각을 대 본다.",
+    "unrelated": "속이 텅 비었네. 제 머릿속이요. 이걸 보고 떠오르는 게 없어서."
+  },
+  "resident_piko": {
+    "id": "piko",
+    "name": "피코",
+    "work": "그림과 가족 초상 작업",
+    "protects": "자기 이름과 직업",
+    "weekly_locations": [
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ],
+      [
+        "square",
+        "square",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_piko",
+    "activity": "완성하지 못한 초상에 천을 덮는다.",
+    "unrelated": "피코가 아는 일이면 좋겠지만…… 모르는 데 끄덕이는 건 더 보기 싫겠죠."
+  },
+  "resident_mungchi": {
+    "id": "mungchi",
+    "name": "뭉치",
+    "work": "수집상 집 심부름",
+    "protects": "백 부인의 인정과 친구 관계",
+    "weekly_locations": [
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ],
+      [
+        "home",
+        "store",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_mungchi",
+    "activity": "작은 상자와 큰 상자를 따로 쌓는다.",
+    "unrelated": "저한테 왜 보여 주세요? 제가 그랬다는 거예요? ……아, 물어보신 거였어요? 몰라요."
+  },
+  "resident_madam": {
+    "id": "madam",
+    "name": "백 부인",
+    "work": "비축품과 사유 창고 관리",
+    "protects": "재산과 가족 안전",
+    "weekly_locations": [
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ],
+      [
+        "home",
+        "store",
+        "inn"
+      ]
+    ],
+    "runtime_id": "resident_madam",
+    "activity": "보관함을 봉해 둔 자리를 손으로 확인한다.",
+    "unrelated": "제가 봤다고 다른 데 가서 제 이름부터 쓰지는 마세요. 아는 건 없으니까."
+  },
+  "resident_siluk": {
+    "id": "siluk",
+    "name": "실룩",
+    "work": "짐 운반과 마구간",
+    "protects": "고용과 과거 빚",
+    "weekly_locations": [
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ],
+      [
+        "gate",
+        "store",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_siluk",
+    "activity": "짐수레 바퀴의 끼인 눈을 털어 낸다.",
+    "unrelated": "이걸 제가 옮겼는지도 모르겠네요. 아무거나 실어 나른 것 같아 보여도, 모르는 건 모릅니다."
+  },
+  "neoul": {
+    "id": "wanggu",
+    "name": "왕구",
+    "work": "광장 질서와 행사 준비",
+    "protects": "주민들에게 유능해 보이는 것",
+    "weekly_locations": [
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ],
+      [
+        "square",
+        "school",
+        "home"
+      ]
+    ],
+    "runtime_id": "neoul",
+    "activity": "통행하는 사람들과 길가 짐을 번갈아 살핀다.",
+    "unrelated": "명령을 물으시는 겁니까, 제가 본 일을 물으시는 겁니까? ……어느 쪽이든 이건 확인 못 했습니다."
+  },
+  "resident_musoe": {
+    "id": "musoe",
+    "name": "무쇠 할아버지",
+    "work": "폐광 통로와 손녀 돌봄",
+    "protects": "솜이의 생존",
+    "weekly_locations": [
+      [
+        "workshop",
+        "home",
+        "home"
+      ],
+      [
+        "workshop",
+        "home",
+        "home"
+      ],
+      [
+        "workshop",
+        "home",
+        "home"
+      ],
+      [
+        "workshop",
+        "home",
+        "home"
+      ],
+      [
+        "workshop",
+        "home",
+        "home"
+      ],
+      [
+        "workshop",
+        "home",
+        "home"
+      ],
+      [
+        "workshop",
+        "home",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_musoe",
+    "activity": "낡은 지도를 접어 안주머니 깊이 넣는다.",
+    "unrelated": "가까이 주시오. ……잘 안 보여서가 아니오. 봐도 모르겠다는 말이오."
+  },
+  "resident_somi": {
+    "id": "somi",
+    "name": "솜이",
+    "work": "지붕 길 심부름",
+    "protects": "자기 판단을 존중받는 것",
+    "weekly_locations": [
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ],
+      [
+        "home",
+        "square",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_somi",
+    "activity": "구두 밑창에 낀 얼음을 긁는다.",
+    "unrelated": "저도 보여 주세요! ……음. 본다고 다 아는 건 아니네요. 이건 몰라요."
+  },
+  "resident_seori": {
+    "id": "seori",
+    "name": "서리 검사원",
+    "work": "외부 관리국 검사와 사실 확인",
+    "protects": "기록의 정합성과 직무",
+    "weekly_locations": [
+      [
+        "post",
+        "clinic",
+        "inn"
+      ],
+      [
+        "post",
+        "clinic",
+        "inn"
+      ],
+      [
+        "post",
+        "clinic",
+        "inn"
+      ],
+      [
+        "post",
+        "clinic",
+        "inn"
+      ],
+      [
+        "post",
+        "clinic",
+        "inn"
+      ],
+      [
+        "post",
+        "clinic",
+        "inn"
+      ],
+      [
+        "post",
+        "clinic",
+        "inn"
+      ]
+    ],
+    "runtime_id": "resident_seori",
+    "activity": "메모 옆에 확인한 사람 이름을 적는다.",
+    "unrelated": "답할 근거가 없습니다. 딱딱하게 들리겠지만, 다른 말로 둘러대도 답은 같습니다."
+  },
+  "resident_ubak": {
+    "id": "ubak",
+    "name": "우박",
+    "work": "검사원 보조와 계측",
+    "protects": "스승의 인정과 기술 신뢰",
+    "weekly_locations": [
+      [
+        "workshop",
+        "clinic",
+        "inn"
+      ],
+      [
+        "workshop",
+        "clinic",
+        "inn"
+      ],
+      [
+        "workshop",
+        "clinic",
+        "inn"
+      ],
+      [
+        "workshop",
+        "clinic",
+        "inn"
+      ],
+      [
+        "workshop",
+        "clinic",
+        "inn"
+      ],
+      [
+        "workshop",
+        "clinic",
+        "inn"
+      ],
+      [
+        "workshop",
+        "clinic",
+        "inn"
+      ]
+    ],
+    "runtime_id": "resident_ubak",
+    "activity": "계측기 바늘과 종이 눈금을 맞춘다.",
+    "unrelated": "선생님은 아실지도…… 아, 제가 대신 대답하면 안 되죠. 저는 모르겠어요."
+  },
+  "resident_nubi": {
+    "id": "nubi",
+    "name": "누비 아주머니",
+    "work": "세탁 협업과 임시 숙박 연결",
+    "protects": "가족의 난방과 보복 회피",
+    "weekly_locations": [
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ],
+      [
+        "inn",
+        "workshop",
+        "store"
+      ]
+    ],
+    "runtime_id": "resident_nubi",
+    "activity": "마른 빨래를 사람별로 나눠 묶는다.",
+    "unrelated": "여기서 펼쳐도 되는 건가요? 제가 아는 내용은 없어요. 이름만 괜히 남기진 말아 주세요."
+  },
+  "resident_eunho": {
+    "id": "eunho",
+    "name": "은호 사장",
+    "work": "도시 물품·보석 거래",
+    "protects": "투자 회수와 도시 평판",
+    "weekly_locations": [
+      [
+        "post",
+        "store",
+        "inn"
+      ],
+      [
+        "post",
+        "store",
+        "inn"
+      ],
+      [
+        "post",
+        "store",
+        "inn"
+      ],
+      [
+        "post",
+        "store",
+        "inn"
+      ],
+      [
+        "post",
+        "store",
+        "inn"
+      ],
+      [
+        "post",
+        "store",
+        "inn"
+      ],
+      [
+        "post",
+        "store",
+        "inn"
+      ]
+    ],
+    "runtime_id": "resident_eunho",
+    "activity": "물자 목록 옆에 값을 다시 적는다.",
+    "unrelated": "제 보증이 필요한 물건입니까? 제가 봤다는 말은 값이 없어요. 아는 게 없으니."
+  },
+  "resident_guseul": {
+    "id": "guseul",
+    "name": "구슬",
+    "work": "거래품 정리와 견습",
+    "protects": "은호에게 해고되지 않는 것",
+    "weekly_locations": [
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ],
+      [
+        "store",
+        "post",
+        "inn"
+      ]
+    ],
+    "runtime_id": "resident_guseul",
+    "activity": "계약서에 눌린 도장을 닦아 낸다.",
+    "unrelated": "사장님께 여쭤…… 아니, 제가 본 걸 물으신 거죠. 그건 못 봤어요."
+  },
+  "resident_badook": {
+    "id": "badook",
+    "name": "바둑이",
+    "work": "야간 순찰과 대피 경호",
+    "protects": "동료와 맡은 주민의 안전",
+    "weekly_locations": [
+      [
+        "gate",
+        "home",
+        "square"
+      ],
+      [
+        "gate",
+        "home",
+        "square"
+      ],
+      [
+        "gate",
+        "home",
+        "square"
+      ],
+      [
+        "gate",
+        "home",
+        "square"
+      ],
+      [
+        "gate",
+        "home",
+        "square"
+      ],
+      [
+        "gate",
+        "home",
+        "square"
+      ],
+      [
+        "gate",
+        "home",
+        "square"
+      ]
+    ],
+    "runtime_id": "resident_badook",
+    "activity": "순찰화의 끈을 조여 맨다.",
+    "unrelated": "삐익! 못 봤습니다. 크게 말한다고 달라지진 않지만, 못 봤습니다."
+  },
+  "resident_lamplighter": {
+    "id": "lamplighter",
+    "name": "등불지기 아저씨",
+    "work": "등불 점검과 비밀 식량 전달",
+    "protects": "엄마를 돕는 약속과 자기 어머니에 대한 감정",
+    "weekly_locations": [
+      [
+        "square",
+        "gate",
+        "workshop"
+      ],
+      [
+        "square",
+        "greenhouse",
+        "workshop"
+      ],
+      [
+        "square",
+        "gate",
+        "greenhouse"
+      ],
+      [
+        "square",
+        "library",
+        "workshop"
+      ],
+      [
+        "square",
+        "gate",
+        "greenhouse"
+      ],
+      [
+        "square",
+        "workshop",
+        "home"
+      ],
+      [
+        "square",
+        "gate",
+        "home"
+      ]
+    ],
+    "runtime_id": "resident_lamplighter",
+    "activity": "등 아래 점검함을 닫고 매듭을 확인한다.",
+    "unrelated": "제가 아는 불빛하고는 이어지지 않네요. 모르면서 길을 가리켜 드릴 수는 없습니다."
+  }
+}
