@@ -54,9 +54,10 @@
 
 ## 검증
 
-- `dev/check.sh`: 단위 101개 통과, lint 문제 없음. `override_map.py --write`로 지도 갱신.
-- `dev/run_renpy_tests.sh` 표준 묶음 26개 + `override_chain` + `sound_places` 통과(`SDL_AUDIODRIVER=dummy`).
+- main의 0.18.4-dev(선택지 화면·대사 건너뛰기)와 병합한 뒤 다시 검사했다. 충돌은 `qa_tests/helpers.rpy`, `qa_tests/tests.rpy` 두 곳이며 양쪽을 모두 살렸다.
+- `dev/check.sh`: 단위 테스트 통과, lint 문제 없음. `override_map.py --write`로 지도 갱신.
+- `dev/run_renpy_tests.sh` 표준 묶음 27개(skip_modes 포함) + `override_chain` + `sound_places` 통과(`SDL_AUDIODRIVER=dummy`).
   - `sound_places`: 장소 18곳 × 분위기 4가지의 실제 재생 곡·환경음 확인, 효과음·곡 파일 모두 불러올 수 있음, 회의 판정 뒤 히트→판정 소리 순서.
-- 브라우저(웹판, archive_sha256 `463e6747…`): `qa_sound.py`, `qa_carriage.py` 통과. `qa_navigation.py`, `qa_save_slots.py`는 음악 출처 화면을 넣기 전 빌드에서 통과.
+- 브라우저(웹판, archive_sha256 `c4e0238c…`): `qa_sound.py`, `qa_carriage.py`, `qa_navigation.py`, `qa_save_slots.py` 통과.
   - `qa_sound.py`: 타이틀 곡 설정, 마차=Snowfall, 입구=First Snow+바람, 실제 버튼으로 여관 이동(복도=Midvinter, 13호실=Measured Paces, 접수대=Midvinter+난로), 음원 요청 200, 콘솔 오디오 오류 없음, 음악 출처 화면 열고 닫기.
 - 사람이 직접 들어 보는 확인은 하지 않았다. 곡 반복 이음새는 곡 전체 반복이다.

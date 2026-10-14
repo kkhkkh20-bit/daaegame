@@ -9,8 +9,8 @@ init 105 python:
         s["learning_archive"]=[]
         return s
 
-    # Read-dialogue fast-forward was removed (owner's decision); old saves that
-    # had it switched on load with it off.
+    # Skip modes are one-shot footer buttons (0.18.4); a loaded save starts with them off.
     def r13_disable_fast_read():
         store.r13_fast_read=False
+        store.r13_fast_all=False
     config.after_load_callbacks.append(r13_disable_fast_read)

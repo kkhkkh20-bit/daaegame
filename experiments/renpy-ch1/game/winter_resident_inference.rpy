@@ -239,7 +239,7 @@ label winter_buri_approach:
             call winter_lines([("dad","아내가 알아보던 일을 찾는 겁니다. 부리 씨가 데려갔다고 말하려는 게 아닙니다."),("buri","……그날 질문은 내 수리표에 적어 뒀어.")],"buri_cooperates")
             $ winter=winter_resident_stance(winter,"buri","limited_cooperation")
             return True
-        "어머니 실종에 가담했다고 사람들 앞에서 말하겠다고 한다":
+        "실종 가담을 사람들 앞에 알리겠다고 한다":
             call winter_lines([("buri","그걸 뒷받침할 게 있어? 질문 하나 받아 줬다고 내 식구들까지 몰아넣으려는 거야?")],"buri_last_warning")
             menu:
                 "부리는 문 쪽으로 몸을 돌렸다."
@@ -269,7 +269,7 @@ label winter_information_echo:
     call winter_lines([("neoul","내일 우편실에 가신다고요. 무슨 일로요?"),("dad","그 얘기는 어디서 들으셨습니까?"),("neoul","광장에서 길을 물으셨다면서요. 토리가 아까 알려 줬습니다."),(None,"갈 곳을 말한 건 광장에서 한 번뿐이었다."),("daram","우리가 부탁한 건 아닌데."),("neoul","눈길에서 헤매실까 봐요. 우편실 담당자에게도 전해 둘까요?")],"information_echo")
     menu:
         "너울이 대답을 기다린다."
-        "길만 물었다고 하고, 방문 이야기는 더 전하지 말아 달라고 한다":
+        "길만 물었다며 방문은 비밀로 해 달라 한다":
             call winter_lines([("dad","길을 알아본 겁니다. 다른 분께는 전하지 말아 주세요."),("neoul","알겠습니다. 이미 들은 것까진 거둘 수 없겠네요.")],"echo_boundary")
         "아내가 보낸 편지를 확인하려 한다고 말한다":
             $ winter=winter_flag(winter,"mother_search_told_neoul")

@@ -7,7 +7,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:157` | r13_tool_base_topics |
+| 1 | 55 | `room13_rules.rpy:158` | r13_tool_base_topics |
 | 2 | 73 | `room13_tool_discovery.rpy:75` | _r13_home_topics |
 | 3 | 79 | `room13_home.rpy:18` | _r13_life_topics |
 | 4 | 92 | `systems/room13_livelihood_flow.rpy:35` | _r13_life_snack_topics |
@@ -19,11 +19,11 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 10 | 100 | `systems/room13_poc_route.rpy:60` | _r13_daram_home_topics |
 | 11 | 101 | `systems/room13_daram_home.rpy:95` |  |
 
-## `r13_present` (9층)
+## `r13_present` (10층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:329` | r13_discovery_base_present |
+| 1 | 55 | `room13_rules.rpy:337` | r13_discovery_base_present |
 | 2 | 61 | `room13_discovery.rpy:38` | r13_tool_base_present |
 | 3 | 73 | `room13_tool_discovery.rpy:81` | _r13_mystery_present |
 | 4 | 76 | `room13_first_mystery.rpy:98` | _r13_life_present |
@@ -31,7 +31,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 96 | `systems/room13_work_clues.rpy:25` | _r13_intro_present |
 | 7 | 97 | `systems/room13_intro_clues.rpy:48` | _r13_poc_present |
 | 8 | 100 | `systems/room13_poc_route.rpy:66` | _r13_daram_home_present |
-| 9 | 101 | `systems/room13_daram_home.rpy:142` |  |
+| 9 | 101 | `systems/room13_daram_home.rpy:142` | _r13_sound_present |
+| 10 | 150 | `systems/room13_sound.rpy:117` |  |
 
 ## `r13_conversation_topic_lines` (6층)
 
@@ -69,7 +70,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:166` | _r13_life_finish_topic |
+| 1 | 55 | `room13_rules.rpy:167` | _r13_life_finish_topic |
 | 2 | 93 | `systems/room13_livelihood_flow.rpy:100` | _r13_shop_finish_topic |
 | 3 | 94 | `systems/room13_shop.rpy:61` | _r13_items_finish_topic |
 | 4 | 96 | `systems/room13_items.rpy:123` | _r13_daram_home_finish |
@@ -89,7 +90,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:210` | _r13_before_gate_where |
+| 1 | 55 | `room13_rules.rpy:211` | _r13_before_gate_where |
 | 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
 | 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
 | 4 | 93 | `systems/room13_livelihood_flow.rpy:89` | _r13_episode_where |
@@ -99,7 +100,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:147` | r13_conversation_base_available |
+| 1 | 55 | `room13_rules.rpy:148` | r13_conversation_base_available |
 | 2 | 70 | `room13_conversations.rpy:185` | _r13_route_available |
 | 3 | 90 | `room13_route_knowledge.rpy:16` |  |
 
@@ -107,7 +108,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:178` | _r13_mystery_finish_action |
+| 1 | 55 | `room13_rules.rpy:179` | _r13_mystery_finish_action |
 | 2 | 76 | `room13_first_mystery.rpy:92` | _r13_items_finish_action |
 | 3 | 96 | `systems/room13_items.rpy:140` |  |
 
@@ -123,7 +124,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:66` | _r13_life_new |
+| 1 | 55 | `room13_rules.rpy:67` | _r13_life_new |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:4` | _r13_fresh_new |
 | 3 | 105 | `systems/room13_no_carryover.rpy:6` |  |
 
@@ -131,7 +132,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:200` | _r13_route_places |
+| 1 | 55 | `room13_rules.rpy:201` | _r13_route_places |
 | 2 | 90 | `room13_route_knowledge.rpy:28` | _r13_firstday_places |
 | 3 | 94 | `systems/room13_first_day_flow.rpy:19` |  |
 
@@ -156,11 +157,18 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 98 | `systems/room13_debate.rpy:404` | _r13_poc_campaign_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:126` |  |
 
+## `r13_debate_judge` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 98 | `systems/room13_debate.rpy:348` | _r13_sound_debate_judge |
+| 2 | 150 | `systems/room13_sound.rpy:123` |  |
+
 ## `r13_has` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:97` | _r13_items_has |
+| 1 | 55 | `room13_rules.rpy:98` | _r13_items_has |
 | 2 | 96 | `systems/room13_items.rpy:95` |  |
 
 ## `r13_learning_job_context` (2층)
@@ -181,7 +189,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:141` | _r13_life_next_day |
+| 1 | 55 | `room13_rules.rpy:142` | _r13_life_next_day |
 | 2 | 92 | `systems/room13_livelihood_flow.rpy:11` |  |
 
 ## `r13_object_name` (2층)

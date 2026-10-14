@@ -13,6 +13,7 @@ default r13_packet = None
 default r13_index = 0
 default r13_camera = "stage"
 default r13_fast_read = False
+default r13_fast_all = False
 default r13_scene_key = None
 default persistent.room13_read = []
 default persistent.room13_knowledge = []
@@ -302,7 +303,14 @@ init 55 python:
 
     def r13_before_line(identity,index,text):
         key=r13_read_key(identity,index,text)
-        if key not in persistent.room13_read:
+        # 건너뛰기(read only) stops at the first unread line; 빠르게 also runs
+        # through unread lines. Both stop at the next choice (r13_stop_skip_at_choices).
+        if store.r13_fast_all:
+            renpy.config.skipping="slow"
+        elif key not in persistent.room13_read:
+            if store.r13_fast_read:
+                store.r13_fast_read=False
+                renpy.notify("처음 보는 대사에서 멈췄어요.")
             renpy.config.skipping=None
         elif store.r13_fast_read:
             renpy.config.skipping="slow"
@@ -421,4 +429,6 @@ init 55 python:
         if store.room13_mode and any(renpy.get_screen(s) for s in ("r13_hub","r13_interaction","r13_topics","r13_book","r13_confirm","r13_map","r13_calendar","r13_debate","r13_debate_board","r13_activities","r13_handoff","r13_crisis","r13_crisis_proof","r13_rescue_notes","r13_ending_screen","r13_nearby","r13_resident_notes")):
             renpy.music.stop(channel="typing")
             renpy.config.skipping=None
+            store.r13_fast_read=False
+            store.r13_fast_all=False
     config.interact_callbacks.append(r13_stop_typing)

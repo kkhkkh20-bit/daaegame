@@ -64,7 +64,7 @@ label r13_livelihood:
             $ r13_job_choice="finish"
         "[r13_job_question]":
             $ r13_job_choice="ask"
-        "같은 길의 두 배달을 묶어 맡는다 · [r13_combined_pay]냥" if r13_job_key=="delivery" and "same_lane" in r13_wallet(room13)["relations"] and not r13_wallet(room13)["combined_paid"]:
+        "두 배달을 묶어 맡는다 · [r13_combined_pay]냥" if r13_job_key=="delivery" and "same_lane" in r13_wallet(room13)["relations"] and not r13_wallet(room13)["combined_paid"]:
             $ r13_job_choice="combine"
     $ r13_life_state,r13_life_result=r13_complete_job(room13,r13_job_key,r13_job_choice)
     if not r13_life_result:

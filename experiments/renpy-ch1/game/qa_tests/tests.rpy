@@ -15,7 +15,7 @@ testcase trial_missing:
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "아이만 그럴 수 있었다는 주장"
+    click "아이뿐이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -121,7 +121,7 @@ testcase trial_full:
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "아이만 그럴 수 있었다는 주장"
+    click "아이뿐이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -245,7 +245,7 @@ testcase trial_gate_unenforced:
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "아이만 그럴 수 있었다는 주장"
+    click "아이뿐이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -370,7 +370,7 @@ testcase trial_gate_no_witness:
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "아이만 그럴 수 있었다는 주장"
+    click "아이뿐이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -706,7 +706,7 @@ testcase town_c_mungchi:
     pause 3.0
     run Call("r13_qa_roam",dict(day=3,period=2,location="inn",life_poc=True),("ev_b_done",))
     click pos (640,600) until screen "choice" timeout 40
-    click "받아들이는 척하고 13호로 돌아와 숨어 기다린다"
+    click "받는 척하고 13호에 숨어 기다린다"
     click pos (640,600) until screen "r13_hub" timeout 60
     $ r13_qa_town_dump()
 
@@ -780,7 +780,7 @@ testcase ep1_bami_safe:
     run Call("r13_qa_goto",3,1,"hall")
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "e1_eaves.png"
-    click "바둑이를 설득해 순찰에서 처마를 빼 달라고 한다"
+    click "바둑이에게 처마 순찰을 빼 달라고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_goto",4,0,"inn")
@@ -859,7 +859,7 @@ testcase ep3_stone:
     click "재판을 증거대로 열어 달라고 요구한다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "돌의 옛 기록과 지금의 출력을 함께 보여 준다"
+    click "돌의 옛 기록과 지금 출력을 보여 준다"
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 40
     $ r13_qa_town_dump()
@@ -923,7 +923,7 @@ testcase town_q_certificate:
     run Call("r13_qa_roam",dict(day=2,period=1,location="inn",life_poc=True))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "tq_offer.png"
-    click "서리 검사원의 건강 확인서를 받아 두고 옮긴다"
+    click "건강 확인서를 받아 두고 옮긴다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_goto",3,1,"post",("ep1_done",))
@@ -960,3 +960,36 @@ testcase sound_places:
     pause 3.0
     run Call("r13_qa_sound")
     pause 120.0
+
+testcase skip_modes:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done"))
+    pause until screen "say" timeout 30
+    pause 1.0
+    screenshot "skip_footer.png"
+    click "숨기기"
+    pause 0.5
+    assert eval (_windows_hidden)
+    screenshot "hidden.png"
+    click pos (640,300)
+    pause 0.5
+    assert eval (not _windows_hidden)
+    click "빠르게"
+    pause until screen "choice" timeout 20
+    pause 1.0
+    screenshot "choice_context.png"
+    assert eval (not r13_fast_all and not r13_fast_read)
+    keysym "K_4"
+    pause 1.0
+    click "건너뛰기"
+    pause 0.5
+    click pos (1150,90) until screen "choice" timeout 40
+    assert eval (not r13_fast_read)
+    assert eval ("W5" in room13["evidence"])
+    click "톡의 편을 든다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ open("qa_result.txt","w").write("skip to choice, number key 4 picked sliver question")
+

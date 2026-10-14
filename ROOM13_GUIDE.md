@@ -89,6 +89,10 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
   - 재판 테스트를 새로 만들면 `r13_qa_setup`이 이 관문들을 기본으로 켠다. 끄려면 `"-gates"`를 넘긴다.
 - 사건 목록과 상태는 `docs/EVENT_CATALOG.md`에 있다.
 
+### 선택지 문구 (0.18.4)
+- `menu` 선택지는 무엇을 할지만 24자 이하로 쓴다. 자세한 말은 고른 뒤 대사로 넣는다. `dev/test_choice_length.py`가 검사한다.
+- 선택지 화면은 940px 한 줄이다. 번호와 1~9 키가 붙고, 바로 앞 대사가 위에 남는다.
+
 ### 하지 말 것
 - 지난 공개본(game.part*)에서 파일을 꺼내 소스로 쓰지 않는다. 원본은 항상 `game/`이다.
 - 예전 QA 결과 폴더(`qa-room13-0150` 등)나 버전별 QA 스크립트를 다시 만들지 않는다.

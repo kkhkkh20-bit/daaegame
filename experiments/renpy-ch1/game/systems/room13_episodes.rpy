@@ -192,7 +192,7 @@ label r13_ep1_eaves:
                 ("resident_seori","'야생화 증상 없음.' 왕구가 이걸 무시하면, 그건 내가 기록합니다.")],"ep1:seori")
             $ r13_tick()
             $ r13_flag("bami_certified","bami_safe","bami_at_eaves","seori_met_bami")
-        "바둑이를 설득해 순찰에서 처마를 빼 달라고 한다" if r13_has("badook_doubt"):
+        "바둑이에게 처마 순찰을 빼 달라고 한다" if r13_has("badook_doubt"):
             call r13_lines([("resident_badook","……저도 돌아온 사람을 못 봤다고 말씀드렸죠."),
                 ("resident_badook","처마는 제 구역이에요. 거긴 아무것도 없었다고 적을게요. 대신 왕구 앞에선 모르는 척해 주세요.")],"ep1:badook")
             $ r13_flag("badook_ally","bami_safe","bami_at_eaves")
@@ -280,12 +280,12 @@ label r13_ep2_food:
                 ("nabi","……열두 냥이면 탐정님 사흘 품삯이잖아요.")],"ep2:food:buy")
             $ r13_cash(-12,"아이들 일주일 치 식량")
             $ r13_flag("kids_fed","kids_bought")
-        "백 부인 창고 장부를 들고 촌장에게 배급을 요구한다" if "H1" in room13["evidence"]:
+        "창고 장부로 촌장에게 배급을 요구한다" if "H1" in room13["evidence"]:
             call r13_lines([("resident_ppul","……백 부인 창고에 이게 다 있었다고?"),
                 ("resident_ppul","표 없는 아이들 몫으로 내놓으라 하겠소. 이 장부는 내가 맡아 두지."),
                 ("nabi","촌장님이 직접요?")],"ep2:food:hoard")
             $ r13_flag("kids_fed","kids_registered","madam_hostile")
-        "무쇠 할아버지의 폐광 비상식량을 나눠 달라고 한다" if r13_has("musoe_ally"):
+        "무쇠 할아버지에게 폐광 식량을 청한다" if r13_has("musoe_ally"):
             call r13_lines([("resident_musoe","굴 안에 말린 콩 자루가 있소. 솜이 몫만 남기고 가져가시오."),
                 ("resident_musoe","빚 갚는 셈이오. 아이들 배곯는 건 나도 못 보오.")],"ep2:food:mine")
             $ r13_flag("kids_fed","kids_mine")
@@ -351,7 +351,7 @@ label r13_ep3_hearing:
                 ("dad","그러니 이번엔 증거로 판단해 주십시오. 누군가를 또 보내기 전에."),
                 ("resident_ppul","……알겠소. 증거대로 하겠소. 판결도 내가 집행하겠소.")],"ep3:hearing:names")
             $ r13_flag("fair_hearing","ppul_ally")
-        "돌의 옛 기록과 지금의 출력을 함께 보여 준다" if r13_has("know_stone_history") and r13_has("know_stone_failing"):
+        "돌의 옛 기록과 지금 출력을 보여 준다" if r13_has("know_stone_history") and r13_has("know_stone_failing"):
             call r13_lines([("dad","삼백 년 동안 이름은 없었습니다. 이름은 네 해 전부터고, 돌은 지금도 식고 있습니다."),
                 ("dad","희생이 오래된 법이라는 말은 기록과 맞지 않습니다."),
                 ("resident_ppul","……사서 선생이 그 장부를 꺼냈소? 우박이 숫자를 줬고?"),

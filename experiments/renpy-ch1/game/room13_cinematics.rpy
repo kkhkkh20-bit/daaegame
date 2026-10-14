@@ -55,7 +55,7 @@ label r13_cinematic(key, leave=False):
         $ renpy.config.skipping = None
         call screen r13_cinematic_view(key)
         $ persistent.room13_cinematics_seen = persistent.room13_cinematics_seen + [key]
-    elif not (renpy.is_skipping() or r13_fast_read):
+    elif not (renpy.is_skipping() or r13_fast_read or r13_fast_all):
         call screen r13_cinematic_view(key)
     if leave:
         scene expression r13_cinematic_art(key) with Dissolve(.3)

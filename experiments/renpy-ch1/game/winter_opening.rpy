@@ -109,7 +109,7 @@ label winter_entry_reason:
         "아이를 새 손님으로 다시 적어 달라고 한다":
             call winter_lines([("guard","그럼 새로 온 손님부터 확인해야 합니다."),("daram","근데 내 이름 이미 있잖아."),("dad","잠깐만요. 처음 적힌 이름을 다시 보겠습니다.")],"entry_new_wrong")
             jump winter_entry_loop
-        "처음부터 함께 온 두 사람이다. 빠진 이름을 돌려놓는다":
+        "함께 온 두 사람이다. 이름을 돌려놓는다":
             pass
         "경비가 일부러 이름을 지웠다고 몰아붙인다":
             call winter_lines([("guard","내가 쓴 책이 아닙니다. 누가 지웠다고요?"),("dad","그건 아직 모릅니다. 확인할 수 있는 것부터 보죠.")],"entry_blame_wrong")
