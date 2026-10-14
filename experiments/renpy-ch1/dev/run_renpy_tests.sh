@@ -6,7 +6,7 @@
 cd "$(dirname "$0")/.." || exit 1
 SDK=${RENPY_SDK:?set RENPY_SDK to the Ren\'Py 8.5.3 SDK folder}
 LOG=${ROOM13_QA_OUT:-/tmp/room13-qa}/renpy; mkdir -p "$LOG"
-TESTS=("$@"); [ ${#TESTS[@]} -eq 0 ] && TESTS=(newgame carriage_skip fresh_run items_chain trial_missing trial_win trial_full finale_win finale_missing)
+TESTS=("$@"); [ ${#TESTS[@]} -eq 0 ] && TESTS=(newgame carriage_skip fresh_run items_chain shop_flow trial_missing trial_win trial_full finale_win finale_missing town_b_first_run town_b_ambush_musoe town_c_locked town_c_wedge town_n_yeoni town_m_kongi)
 fail=0
 for tc in "${TESTS[@]}"; do
   ps -eo pid,comm | awk '$2=="renpy"{print $1}' | xargs -r kill -9 2>/dev/null

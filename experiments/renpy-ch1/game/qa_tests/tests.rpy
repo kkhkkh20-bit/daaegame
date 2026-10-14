@@ -442,3 +442,126 @@ testcase carriage_view:
 testcase override_chain:
     pause 1.0
     $ r13_qa_override_chains(R13_QA_CHAIN_NAMES)
+
+# ---- Town events bundle 1 (systems/room13_town_events.rpy) ----
+
+testcase town_b_first_run:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=1,location="store",life_poc=True))
+    click pos (640,600) until screen "choice" timeout 40
+    screenshot "tb1_choice.png"
+    click "지붕을 따라 쫓아간다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    $ r13_qa_town_dump()
+
+testcase town_b_ambush_musoe:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=1,location="workshop",life_poc=True),("somi_route_seen",))
+    click pos (640,600) until screen "choice" timeout 40
+    click "골목 입구에서 기다린다"
+    click pos (640,600) until screen "choice" timeout 40
+    screenshot "tb2_caught.png"
+    click "무쇠 할아버지에게 직접 가져다준다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    $ r13_qa_town_dump()
+
+testcase town_b_alley_sell:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=1,location="store",life_poc=True))
+    click pos (640,600) until screen "choice" timeout 40
+    click "수리점 쪽 골목으로 돌아가 앞질러 간다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "꾸러미를 빼앗아 은호 사장에게 판다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    $ r13_qa_town_dump()
+
+testcase town_c_locked:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=2,location="inn",life_poc=True,evidence=["E18"]),("ev_b_done",))
+    click pos (640,600) until screen "choice" timeout 40
+    screenshot "tc1_offer.png"
+    click "받아들인다"
+    click pos (640,600) until screen "r13_hub" timeout 60
+    screenshot "tc1_after.png"
+    $ r13_qa_town_dump()
+
+testcase town_c_wedge:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=2,location="inn",life_poc=True),("ev_b_done",),("wedge",))
+    click pos (640,600) until screen "choice" timeout 40
+    click "쐐기를 챙겨 들고 받아들인다"
+    click pos (640,600) until screen "r13_hub" timeout 60
+    $ r13_qa_town_dump()
+
+testcase town_c_mungchi:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=2,location="inn",life_poc=True),("ev_b_done",))
+    click pos (640,600) until screen "choice" timeout 40
+    click "받아들이는 척하고 13호로 돌아와 숨어 기다린다"
+    click pos (640,600) until screen "r13_hub" timeout 60
+    $ r13_qa_town_dump()
+
+testcase town_n_yeoni:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=1,location="square",life_poc=True),("ev_b_done","ev_c_done","room_searched"),(),5)
+    click pos (640,600) until screen "r13_hub" timeout 40
+    run Call("r13_qa_talk","resident_yeoni")
+    click pos (1150,90) until "교환대의 낯익은 물건을 묻는다" timeout 30
+    click "교환대의 낯익은 물건을 묻는다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "3냥에 되산다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    click "돌아가기"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_talk","resident_mungchi")
+    click pos (1150,90) until "13호에서 가져간 물건을 따진다" timeout 30
+    click "13호에서 가져간 물건을 따진다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    pause 0.5
+    $ r13_qa_town_dump()
+
+testcase town_m_kongi:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),(),(),4)
+    click pos (640,600) until screen "r13_hub" timeout 40
+    run Call("r13_qa_talk","resident_kongi")
+    click pos (1150,90) until "하루 동안 한 곳을 지켜봐 달라고 한다" timeout 30
+    click "하루 동안 한 곳을 지켜봐 달라고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "수리점 뒤 골목"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    click "돌아가기"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ room13["day"]=3
+    $ r13_town_daily()
+    run Call("r13_qa_talk","resident_kongi")
+    click pos (1150,90) until "어제 지켜본 것을 듣는다" timeout 30
+    click "어제 지켜본 것을 듣는다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    pause 0.5
+    $ r13_qa_town_dump()
+

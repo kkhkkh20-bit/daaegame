@@ -1,6 +1,8 @@
 # 주민 사건 목록 — 포가튼 시티식 얽힘 (초안 v1)
 
-- 상태: 기획 초안. 구현 전이며 수치는 시작값이다.
+- 상태: 기획 초안. 수치는 시작값이다.
+  - 구현됨: 묶음 1(B·C·N·M, 0.18.2-dev, `game/systems/room13_town_events.rpy`, `docs/releases/RELEASE_0182.md`)
+  - 나머지 사건은 아직 구현하지 않았다.
 - 같이 볼 문서
   - `EVENT_WEB_DESIGN.md`: 원칙, 비싼 상품, 사건 A~F 상세
   - `POC_REVIEW_WEEK1.md`: 1주차 재판 검토

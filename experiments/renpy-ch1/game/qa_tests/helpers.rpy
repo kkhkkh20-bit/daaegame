@@ -159,3 +159,41 @@ init 999 python:
                 fn=inner
             out[name]=seen
         open(renpy.config.basedir+"/qa_result.txt","w").write(json.dumps(out))
+
+# Town events: set up a state and enter it through r13_roam (so arrival events run).
+label r13_qa_roam(state,flags=(),items=(),cash=0):
+    $ room13_mode=True
+    $ winter_mode=True
+    $ winter=winter_new()
+    $ source_mode=False
+    $ room13=r13_new()
+    $ r13_world_cameras={}
+    $ r13_inspection_location=None
+    $ r13_prepare_history()
+    $ r13_scene_key=None
+    $ r13_upgrade()
+    $ typing_allowed=True
+    hide screen winter_hud
+    hide screen hud
+    show screen r13_hud
+    $ room13.update(state)
+    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+list(flags)))
+    $ room13["livelihood"]=dict(cash=cash,debt=0,items=list(items))
+    jump r13_roam
+
+init 999 python:
+    def r13_qa_town_dump():
+        import json
+        s=store.room13;w=r13_wallet(s)
+        keep=("ev_","somi_","musoe_","madam_","mungchi_","know_","kongi_","roof_path","room_searched","warning_exposed","goods_recovered","yeoni_","eunho_holds","rumor:")
+        out=dict(day=s["day"],period=s["period"],location=s["location"],cash=w["cash"],items=w["items"],
+            flags=sorted(f for f in s["flags"] if f.startswith(keep)),
+            evidence=[e for e in s["evidence"] if e.startswith("H")],town=s.get("town",{}))
+        open(renpy.config.basedir+"/qa_result.txt","w").write(json.dumps(out,ensure_ascii=False))
+
+label r13_qa_talk(person):
+    # Already met: skip the first-approach choice.
+    $ r13_note_encounter(person)
+    $ r13_target=person
+    call r13_talk
+    jump r13_roam

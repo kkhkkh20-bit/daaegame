@@ -227,6 +227,10 @@ label r13_roam:
         call r13_mother_intervention
     if room13["day"]>=8:
         call r13_week2_events
+    # Town events (systems/room13_town_events.rpy); a night locked away ends the day.
+    call r13_town_events
+    if _return=="day":
+        jump r13_day
     if room13["day"]==4 and room13["period"]>=2 and room13["case_state"]=="pending":
         jump r13_case_choice
     $ place=R13_PLACES[room13["location"]][0]
@@ -366,6 +370,11 @@ label r13_talk_dispatch:
     if r13_topic=="back":
         return
     $ r13_speaker(r13_target,"neutral")
+    if r13_topic in R13_TOPIC_LABELS:
+        call expression R13_TOPIC_LABELS[r13_topic]
+        if _return=="roam":
+            return
+        jump r13_talk_menu
     if r13_topic=="shop:eunho":
         call r13_lines([("resident_eunho","필요한 게 있으면 골라 보세요. 값은 정해진 대로 받습니다.")],"shop:eunho:open")
         call screen r13_shop
