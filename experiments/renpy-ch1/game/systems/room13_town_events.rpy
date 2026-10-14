@@ -225,7 +225,7 @@ label r13_ev_b_caught:
         (None,"꾸러미 끈에는 백 부인 창고의 도장이 찍혀 있었다. 안에는 마른 해열 약초가 가득했다."),
         ("resident_somi","약 없다고 했잖아요. 다들 없다고. 근데 저 창고엔 있었어요. 산더미로요.")],"ev:b:caught")
     menu:
-        "꾸러미를 백 부인에게 돌려준다 (현상금 10냥)":
+        "백 부인에게 돌려준다 (현상금 10냥)":
             call r13_lines([("resident_madam","아이고, 찾았네. 약속은 약속이지. 열 냥."),
                 ("resident_madam","그 애는 왕구에게 넘기세요. 버릇을 들여야 해요."),
                 (None,"솜이는 끌려가면서 한 번도 뒤를 돌아보지 않았다.")],"ev:b:return_madam")
@@ -295,7 +295,7 @@ label r13_ev_c_offer:
         "받아들인다":
             call r13_ev_c_locked(False)
             return "day"
-        "다람이에게 방을 지켜 달라고 하고 받아들인다" if room13.get("daram_state") in ("with_dad","rescued") and r13_has("lodging"):
+        "다람이에게 방을 맡기고 받아들인다" if room13.get("daram_state") in ("with_dad","rescued") and r13_has("lodging"):
             call r13_lines([("dad","아빠 일하러 다녀올게. 누가 와도 문 열지 말고, 오면 이름만 물어봐."),
                 ("daram","응. 내가 지킬게.")],"ev:c:daram_guard")
             call r13_ev_c_locked(True)
@@ -306,10 +306,10 @@ label r13_ev_c_offer:
         "서리 검사원에게 미리 말해 두고 받아들인다":
             call r13_ev_c_seori
             return None
-        "받아들이는 척하고 13호로 돌아와 숨어 기다린다":
+        "받는 척하고 13호에 숨어 기다린다":
             call r13_ev_c_mungchi
             return None
-        "일은 거절하고, 밤에 지붕 길로 창고에 들어간다" if r13_has("roof_path"):
+        "거절하고, 밤에 지붕 길로 창고에 간다" if r13_has("roof_path"):
             call r13_ev_c_roof
             return None
     return None

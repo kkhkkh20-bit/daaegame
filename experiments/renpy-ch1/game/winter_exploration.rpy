@@ -88,7 +88,7 @@ label winter_exploration_decision:
     elif winter_action_id=="ration_compare":
         menu:
             "세 문서로 확인할 수 있는 것은?"
-            "배정 여섯과 인수 둘 사이에 전용 넷이 빠졌다":
+            "배정 여섯, 인수 둘. 전용 넷이 빠졌다":
                 call winter_lines([("daram","번호 41, 42는 여관, 그 뒤 넷은 보관소야. 여섯을 받았다가 숨긴 게 아니네."),("nabi","우리 인수증도 같이 남겨 줘. 내가 서명한 건 거기까지니까.")],"ration_deduction")
             "중앙 보관소가 넉 자루를 받도록 지시했다":
                 call winter_lines([("dad","여관 도착 전의 변경입니다. 원본 세 장을 함께 봐야 합니다."),("nabi","그러니 여관에서 사라진 돈이나 먹을 것처럼 쓰면 안 되지.")],"ration_deduction")
@@ -101,7 +101,7 @@ label winter_exploration_decision:
             "나비의 동의를 받고 세 기록을 함께 공개한다":
                 $ winter=winter_flag(winter,"ration_public")
                 call winter_lines([("nabi","내 서명이 있는 인수증은 써도 돼. 밥 먹던 손님 이름은 가려 줘."),("dad","예. 배급 경로만 대조하겠습니다."),(None,"배급표 담당자에게 원본 번호와 인수증을 함께 전달했다. 정정 접수 도장을 받았다."),("nabi","회의에서 또 네 탓이라고 하면, 나도 이 기록을 들고 말할게.")],"ration_published")
-            "사본을 보관하고 우선 공급의 이유부터 더 찾는다":
+            "사본을 두고 우선 공급의 이유를 찾는다":
                 $ winter=winter_flag(winter,"ration_private")
                 call winter_lines([("dad","원본은 보관하고 왜 보관소가 우선인지 더 보겠습니다."),("nabi","알겠어. 마음 바뀌면 말해. 내 인수증을 공개하는 건 괜찮아.")],"ration_withheld")
     elif winter_action_id=="mother_reply_reason":

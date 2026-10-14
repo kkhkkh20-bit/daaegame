@@ -138,7 +138,7 @@ label r13_ev_a_siluk:
                 call r13_lines([("resident_siluk","……어떻게 알았어요?"),
                     ("resident_siluk","빚이 원금보다 이자가 더 많아요. 갚아도 갚아도 남아요.")],"ev:a:confront")
                 menu:
-                    "빚을 대신 갚아 주는 대신 마차를 맡긴다 (8냥)" if r13_cash_now()>=8:
+                    "빚을 갚아 주고 마차를 맡긴다 (8냥)" if r13_cash_now()>=8:
                         $ r13_cash(-8,"실룩의 빚을 대신 갚음")
                         call r13_lines([("resident_siluk","진짜요? ……그럼 마차는 이제 탐정님 거예요. 부르시면 언제든요.")],"ev:a:pay_debt")
                         $ r13_flag("siluk_ally","siluk_cart")
@@ -198,7 +198,7 @@ label r13_ev_q_nubi:
                         call r13_lines([("neoul","격리는 마을을 위한 거요. 누비가 무슨 말을 했든."),
                             (None,"그날 저녁 누비네 장작더미가 반으로 줄었다는 말을 들었다.")],"ev:q:confront_neoul")
                         $ r13_flag("nubi_punished","neoul_annoyed")
-            "서리 검사원의 건강 확인서를 받아 두고 옮긴다":
+            "건강 확인서를 받아 두고 옮긴다":
                 $ r13_tick()
                 call r13_lines([("resident_seori","열 없음, 기침 없음. 외지 사람이라는 건 병이 아닙니다."),
                     (None,"그날 밤 별채 문 앞에서 왕구가 확인서를 읽고 혀를 찼다."),

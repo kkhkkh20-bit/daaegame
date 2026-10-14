@@ -49,7 +49,8 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                     textbutton "보여주기" style "r13_footer_button" action present_action sensitive ready
                 textbutton "기록" style "r13_footer_button" action Show("r13_records") sensitive ready
     elif mode!="field":
-        $ footer_width=r13_footer_width(4+(1 if investigate_action is not None else 0)+(1 if present_action is not None else 0))
+        $ line_tools=(3 if mode=="line" else 0)
+        $ footer_width=r13_footer_width(4+line_tools+(1 if investigate_action is not None else 0)+(1 if present_action is not None else 0))
         add Solid("#14272be8") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 40
         frame:
             area (1280-footer_width,664,footer_width,56) padding (8,0) background None
@@ -65,6 +66,21 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                     style "r13_footer_button"
                     action Preference("auto-forward","toggle")
                     sensitive ready and mode=="line" and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
+                if mode=="line":
+                    $ line_active=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
+                    # Player requests (0.18.4): skip read lines / everything to the next
+                    # choice, and hide the dialogue window to see the picture.
+                    textbutton "건너뛰기":
+                        style "r13_footer_button" selected r13_fast_read
+                        text_selected_color "#f6d18a" selected_background Solid("#2c524c")
+                        action Function(r13_toggle_read_skip) sensitive line_active
+                        tooltip "읽은 대사를 다음 선택지까지 넘깁니다"
+                    textbutton "빠르게":
+                        style "r13_footer_button" selected r13_fast_all
+                        text_selected_color "#f6d18a" selected_background Solid("#2c524c")
+                        action Function(r13_toggle_fast_all) sensitive line_active
+                        tooltip "처음 보는 대사도 다음 선택지까지 넘깁니다"
+                    textbutton "숨기기" style "r13_footer_button" action HideInterface() sensitive line_active
                 textbutton "옵션" style "r13_footer_button" action ShowMenu("pause_menu") sensitive ready
     else:
         text "조사·대화·이동 · 시간 소모 없음":
@@ -271,33 +287,58 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 action return_action sensitive ready
     else:
         add Solid("#00000048")
-        $ compact_width=min(list_width,470)
+        $ compact_width=min(list_width,940)
+        $ choice_size=r13_read_size(23,28)
         $ list_left=(1280-compact_width)//2
-        $ question_height=r13_reference_list_height(entries,compact_width,24,430)
-        $ question_top=max(100,int((680-question_height)//2))
-        text title:
-            xpos list_left ypos 50 xsize compact_width text_align .5
-            size r13_read_size(27,32) color "#f6d18a"
+        # Choices (owner, 0.18.4): the line just spoken stays above the options,
+        # each option carries a number (keys 1-9). Captions are kept short (about
+        # 20 characters) so a 940px row holds them on one line.
+        $ context=r13_choice_context() if title=="선택" else None
+        $ list_floor=(190 if context else 100)
+        $ question_height=r13_reference_list_height(entries,compact_width,14,(470 if context else 430 if return_action is not None else 520),56,choice_size)
+        $ question_top=max(list_floor,int((690-question_height+list_floor-100)//2) if return_action is None else min(int((680-question_height)//2),534-question_height))
+        if context:
+            frame:
+                xalign .5 ypos 34 xsize compact_width padding (22,14,22,16)
+                background Solid("#0f1f24e6")
+                vbox:
+                    spacing 6
+                    if context[0]:
+                        text context[0] size r13_read_size(20,24) color "#f6d18a" font r13_ui_font()
+                    text context[1]:
+                        size r13_read_size(22,27) color "#fff4df" font r13_ui_font() line_spacing 4
+                        xsize compact_width-44
+            text ("어떻게 할까?" if renpy.variant("touch") else "어떻게 할까? · 숫자 키로도 고를 수 있다"):
+                xalign .5 ypos list_floor-34 size r13_read_size(17,20) color "#e8d9b0"
+                outlines [(1,"#101515",0,0)]
+        else:
+            text title:
+                xalign .5 ypos 50 xsize compact_width text_align .5
+                size r13_read_size(27,32) color "#f6d18a"
         viewport:
             area (list_left,question_top,compact_width,question_height)
             mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
             vbox:
-                spacing 24
-                for title,action,was_read in entries:
+                spacing 14
+                for index,(title,action,was_read) in enumerate(entries):
                     button:
-                        # Left padding clears the white diagonal drawn by R13ReferenceChoice.
-                        xsize compact_width-23 yminimum 42 padding (60,6,16,6)
-                        background R13ReferenceChoice(False) hover_background R13ReferenceChoice(True)
+                        # Left padding clears the gold number tab drawn by R13ReferenceChoice.
+                        xsize compact_width-23 yminimum 56 padding (72,8,20,8)
+                        background R13ReferenceChoice(False,index+1 if index<9 else None) hover_background R13ReferenceChoice(True,index+1 if index<9 else None)
                         action action sensitive ready
                         text r13_question_caption(title,was_read,False):
-                            xsize compact_width-99 text_align .5 xalign .5
-                            size r13_read_size(22,28) font r13_ui_font()
+                            xsize compact_width-115 text_align .5 xalign .5 yalign .5
+                            size choice_size font r13_ui_font()
                             color ("#d3e3e7" if was_read else "#ffffff")
                 if not entries:
                     frame:
                         xsize compact_width-23 padding (16,10) background Solid("#102b2bd8")
                         text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
                             xsize compact_width-55 text_align .5 xalign .5 size r13_read_size(22,28) color "#eee5d5"
+        if ready:
+            for index,(title,action,was_read) in enumerate(entries[:9]):
+                key ("K_%d"%(index+1)) action action
+                key ("K_KP%d"%(index+1)) action action
         if return_action is not None:
             textbutton "돌아가기":
                 xpos list_left+compact_width//2 xanchor .5 ypos 544 xsize 150 ysize 44

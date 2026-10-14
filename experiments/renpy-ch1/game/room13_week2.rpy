@@ -71,7 +71,7 @@ label r13_special_activity(key):
         call r13_lines(ROOM13["activities"][key]["lines"],"activity:"+key)
         menu:
             "어느 구간을 함께 남길까?"
-            "보내는 돌과 받는 돌에 남은 힘, 얼마나 많이 쓰는지, 얼마나 버티는지를 함께 적는다":
+            "남은 힘·쓰는 양·버티는 시간을 함께 적는다":
                 call r13_lines([("resident_seori","모은 힘보다 쓴 힘이 적은 동안만 버팁니다. 손실과 멈춘 시점도 적겠습니다."),("mom","장치를 늘리면 새 힘이 생기는 게 아니에요. 공급할 곳을 줄이고 장작과 식량을 마련할 시간을 얻는 거예요.")],"observation:complete:v3")
                 return True
             "잘 나온 숫자 하나만 기록한다":
@@ -218,7 +218,7 @@ label r13_final_hub:
 label r13_final_rescue:
     menu:
         "아이에게 먼저 닿아야 한다."
-        "너울에게 지금 명령의 앞뒤 안 맞는 점을 보여 준다" if "order" in r13_rescue_routes():
+        "너울에게 명령의 모순을 보여 준다" if "order" in r13_rescue_routes():
             call r13_rescue("order",at_altar=True)
             return _return
         "누비와 미리 짠 넘겨받기로 아이를 빼낸다" if "laundry" in r13_rescue_routes():
@@ -227,7 +227,7 @@ label r13_final_rescue:
         "부리와 확인한 점검문으로 연결을 막는다" if "maintenance" in r13_rescue_routes():
             call r13_rescue("maintenance",at_altar=True)
             return _return
-        "나르는 사람들과 엄마에게 사람 쪽 관을 끊어 달라고 한다" if r13_has("operators_ready") and r13_has("patient_transport"):
+        "나르는 사람들과 엄마에게 관을 끊게 한다" if r13_has("operators_ready") and r13_has("patient_transport"):
             call r13_lines([("mom","난방을 끊는 게 아니야. 사람에게 가는 이 관만 잡아 줘."),("buri","보리, 이쪽을 받쳐요!"),(None,"엄마와 장치를 다루는 사람들이 관을 떼어 내는 동안 보리가 아이를 수레에서 내렸다."),("daram","놓지 마."),("dad","잡고 있어.")],"finale:emergency_rescue")
             $ r13_edit(daram_state="rescued")
             return True
@@ -259,34 +259,34 @@ label r13_final_reason(claim):
     if claim=="F1":
         menu:
             "회복 관찰과 삭제 전 기록이 뜻하는 것은?"
-            "모두 낫는다는 뜻은 아니다. 누구도 돌아오지 못한다는 판단은 틀렸다":
+            "모두 낫진 않지만, 못 돌아온다는 건 틀렸다":
                 call r13_lines([("resident_seori","일시적으로라도 나아졌다는 사실을 지워서는 안 됐습니다."),(None,"보리가 환자를 누르던 손을 풀고 담요를 덮었다. 아직 장치의 연결은 멈추지 않았다.")],"final:F1:proved")
                 return True
-            "나중에 다시 나빠졌으니 처음 나아진 기록도 판단에서 뺀다":
+            "다시 나빠졌으니 나아진 기록도 뺀다":
                 call r13_lines([("resident_seori","다시 나빠진 것도 적어야 합니다. 하지만 그 전의 반응을 없애면 회복한 적이 없다는 결론을 만들게 됩니다.")],"final:F1:wrong")
     elif claim=="F2":
         menu:
             "옛 기록과 두 번 지켜본 결과를 어떻게 이을까?"
-            "희생으로 다시 오른 힘은 점점 짧게 갔다. 남은 힘을 모으면 몇 곳부터 지킬 수 있다":
+            "희생 효과는 점점 짧았다. 힘을 모아 지킨다":
                 call r13_lines([("buri","힘을 뽑아낼수록 버틴 기간이 줄었어요. 어르신이 남긴 장치 일지에도 그렇게 적혔습니다."),("resident_seori","힘을 다르게 쓸 때도 남은 힘이 옮겨 가는 걸 확인했습니다. 새로 힘을 채우는 건 아니지만, 사람을 잇지 않고 버틸 방법은 있습니다."),("resident_ppul","그것도 결국 다 쓰잖소!"),("mom","맞아요. 그래서 필요한 곳에 모이고 그동안 장작과 식량을 마련해야 해요. 다음 사람을 바칠 날짜를 기다리는 대신요."),(None,"작업자가 손을 멈췄다. 환자 쪽 관이 내려왔다. 대피소를 맡은 사람들이 실제로 버틸 시간을 따지기 시작했다.")],"final:F2:proved:v3")
                 return True
-            "희생 직후 힘이 올랐으니, 새 사고가 생기기 전까지는 성공한 방법이었다":
+            "희생 직후 힘이 올랐으니 성공한 방법이다":
                 call r13_lines([("mom","그 뒤에 떨어진 걸 새 사고라고 나누려면 근거가 필요해. 옛 기록도 같은 순서잖아."),("resident_seori","한 번의 상승과 계속 버틸 수 있다는 주장은 다릅니다. 다음 관측까지 함께 보겠습니다.")],"final:F2:wrong")
     elif claim=="F3":
         menu:
             "오늘 밤을 버틸 방법은?"
-            "마련해 둔 학교로 모여 식량을 나누고, 손으로 장치를 돌리는 일과 나르는 일을 번갈아 맡는다":
+            "학교에 모여 식량을 나누고 일을 교대한다":
                 call r13_lines([("nabi","학교에 솥 옮겼어요. 들어오실 분부터 들어오세요."),("resident_bori","집집마다 나누면 모자라요. 모여 있어야 해요."),("buri","이쪽은 내가 잡을게요. 다음 교대도 정했어요.")],"final:F3:proved")
                 return True
-            "집마다 같은 양을 나누고 각자 난방을 유지하도록 한다":
+            "집마다 똑같이 나누고 각자 난방한다":
                 call r13_lines([("resident_bori","집집마다 불을 살리면 장작이 모자라요. 빈 방까지 덥힐 몫은 없다고요."),("nabi","나누는 양만 같다고 오늘 밤을 버티는 조건까지 같은 건 아니에요.")],"final:F3:wrong")
     else:
         menu:
             "편지와 경고, 분리 지시를 연결하면?"
-            "엄마를 따라잡으려고 가족을 불렀고, 아이를 떨어뜨려 통제하려 했다":
+            "가족을 불러 아이를 떼어 통제하려 했다":
                 call r13_lines([("dad","엄마가 돌아오기를 거절한 뒤 이 편지를 보냈습니다. 가족을 분리하는 지시도 먼저 준비했고요."),("granny","그 여자가 돌아왔으면 아이는 다치지 않아도 됐어."),("mom","당신을 만나러 돌아갈 수는 없었어요. 가족에게 돌아갈 방법을 찾고 있었지."),("dad","답하지 않으셔도 기록은 남습니다."),("neoul","이제부터 지시는 받지 않겠습니다. 자료부터 챙기죠.")],"final:F4:proved")
                 return True
-            "아이를 떼어 놓으려던 글은 사건을 안 뒤에 아이를 지키려고 쓴 것이었다":
+            "분리 지시는 아이를 지키려던 것이었다":
                 call r13_lines([("resident_seori","보낸 원본의 날짜는 사건 전입니다. 지키려 했다는 설명과 그 지시를 내린 때를 함께 맞춰 봐야 합니다.")],"final:F4:wrong")
     return False
 

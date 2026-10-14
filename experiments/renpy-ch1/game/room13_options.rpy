@@ -32,6 +32,7 @@ init 70 python:
         persistent.room13_motion = True
         persistent.room13_typing_sound = True
         store.r13_fast_read = False
+        store.r13_fast_all = False
         renpy.stop_skipping()
         renpy.save_persistent()
         renpy.restart_interaction()

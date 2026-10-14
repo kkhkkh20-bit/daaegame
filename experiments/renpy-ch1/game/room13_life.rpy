@@ -190,14 +190,14 @@ label r13_topic_choice(key):
         $ r13_speaker("resident_seori","neutral")
         menu:
             "기록을 고치는 일에 어디까지 책임을 지겠습니까?"
-            "당신 서명은 지우지 않겠습니다. 관찰한 사실과 지시받은 수정을 구분해 주세요":
+            "서명은 두고, 사실과 지시를 나눠 주세요":
                 call r13_lines([("resident_seori","제 책임을 없애 주겠다는 말은 아니군요."),("dad","없던 일로 만들겠다고 하면 이 기록도 믿을 수 없어집니다."),("resident_seori","……가족에게는 제가 먼저 말하겠습니다. 고치기 전에 베껴 둔 기록에는 할머니 확인도 남아 있습니다.")],"negotiation:erased:accepted")
                 $ r13_flag("seori_responsibility_accepted")
                 return True
-            "서명 부분을 잘라 내면 당신도 우리도 곤란하지 않을 겁니다":
+            "서명 부분만 잘라 내면 서로 편할 겁니다":
                 call r13_lines([("resident_seori","누가 적었는지도 모르는 베낀 종이를 내밀자는 겁니까?"),("dad","당신을 보호하려는 뜻입니다."),("resident_seori","그건 기록을 다시 지우는 일이에요. 다른 방법을 생각해 주십시오.")],"negotiation:erased:cut")
                 return False
-            "지금 여기에 서명하지 않으면 한패로 알리겠습니다":
+            "지금 서명하지 않으면 한패로 알리겠습니다":
                 call r13_lines([("resident_seori","제가 잘못한 부분은 남기겠습니다. 협박받고 한 말로 만들어 놓고, 그 말을 믿어 달라고 하실 겁니까?"),(None,"검사원이 서류를 접었다. 소리를 높여서 받을 수 있는 서명은 아니었다.")],"negotiation:erased:threat")
                 $ r13_flag("seori_threatened")
                 return False
@@ -208,13 +208,13 @@ label r13_topic_choice(key):
         $ r13_speaker("resident_eunho","neutral")
         menu:
             "창고를 열 조건을 어떻게 정할까?"
-            "꺼낸 수량과 받을 집을 함께 적고, 사장님 가족 몫도 같은 기준으로 남긴다":
+            "모두 같은 기준으로 수량과 받는 집을 적는다":
                 call r13_lines([("resident_eunho","다른 집보다 더 빼놓으라는 뜻은 아니군요."),("dad","적어도 당신 집만 굶길 약속은 아닙니다. 갚을 몫도 공동 기록에 남기죠."),("resident_eunho","서리가 수량을 확인하면 내놓겠습니다. 빈 자루도 세어야 해요.")],"negotiation:supplies:agreement")
                 return True
-            "위기가 끝나면 사장님의 매입 가격으로 전부 갚겠다고 약속한다":
+            "위기 뒤 매입가로 전부 갚겠다고 약속한다":
                 call r13_lines([("resident_eunho","어느 돈으로요? 봄이 오면 가실 분이잖아요."),("dad","기록을 남기겠습니다."),("resident_eunho","빚진 사람 이름만 적힌 종이는 이미 많습니다. 오늘 누구 몫이 남는지부터 합시다.")],"negotiation:supplies:unfunded")
                 return False
-            "먼저 내놓으면 주민들도 사장님 편에 설 거라고 설득한다":
+            "먼저 내놓으면 주민이 편이 된다고 설득한다":
                 call r13_lines([("resident_eunho","오늘은 편을 들어도 내일 물건 떨어지면 또 제 문을 두드리겠죠. 저한테 필요한 건 박수보다 약속의 범위입니다.")],"negotiation:supplies:popularity")
                 return False
             "창고의 실제 수량부터 살펴보고 다시 온다":
