@@ -477,6 +477,10 @@ label r13_first_night:
     return
 
 label r13_case_choice:
+    # Week-1 case L (systems/room13_week1_cases.rpy): a planted letter empties the inn that night.
+    if r13_has("fake_letter_planted") and not r13_has("fake_letter_night"):
+        call r13_w1c_fake_night
+        jump r13_roam
     call r13_scene("hall","목요일 저녁 · 여관 2층 복도","night")
     call r13_lines([("karo","되돌아온 짐이 마을 바깥 초소에 도착했어요. 확인하러 가실 거죠?"),("daram","할아버지 물건은 내가 받아둘게. 방에서 같이 기다릴게."),(None,"계단 아래에서 할머니가 고개를 끄덕였다. 아이는 자기가 봐 주겠다는 얼굴이었다."),("dad","(짐을 받으러 갈까, 아이 곁에 남을까.)",{"thought":True})],"case:appointment:v4")
     menu:

@@ -1206,3 +1206,211 @@ testcase w2e_share:
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 60
     assert eval (r13_has("share_auction") and r13_has("rumor:profiteer") and r13_cash_now()==10)
+
+testcase trial_fake_testimony:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates","witness:nabi","witness:tok","fair_hearing","fake_testimony"))
+    pause 1.0
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "아이뿐이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "되묻기"
+    pause 0.5
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E05"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "다른 길이 있으니"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "죽음의 원인이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E06"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E07"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E09"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "할머니가 어르신을 죽였다"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    screenshot "f_after_wrong.png"
+    click "결론을 말한다"
+    pause 1.0
+    click "누군가가 냈다"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "그때 식당에 있었다는 말"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    run Return(("select","s2"))
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E12"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E05"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "주방에서 그 방까지"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "도우러 들어갔을 뿐이라는 변명"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E13"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E15"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E14"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E36"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "구하다 주운 게 아니라"
+    pause 0.6
+    click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
+    pause 0.5
+    screenshot "gu_verdict.png"
+    assert eval (r13_has("fake_testimony_exposed") and r13_has("c4_unenforced"))
+    $ r13_flag("qa_marker")
+    $ r13_qa_dump()
+
+testcase trial_c1_h7:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_trial",('E01', 'H7', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates","witness:nabi","witness:tok","ttadak_witness"))
+    pause 1.0
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "아이뿐이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "되묻기"
+    pause 0.5
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA H7"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "다른 길이 있으니"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    assert eval ("C1" in room13["propositions"])
+
+testcase w1c_mother_line:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ep1_patrol_seen","ev_a_done"),(),12)
+    click pos (1150,90) until screen "choice" timeout 40
+    click "엄마 초상을 그려 달라고 한다 (5냥)"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    run Call("r13_qa_goto",2,0,"post")
+    click pos (1150,90) until screen "choice" timeout 40
+    click "슬링을 달랜다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "가짜 편지를 흘리게 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("mom_portrait") and r13_has("fake_letter_planted") and "H9" in room13["evidence"])
+    run Call("r13_qa_goto",4,2,"hall",("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "w1c_night.png"
+    click "할머니를 따라간다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (room13["case_state"]=="prevented" and r13_has("prevention_witness") and "E17" in room13["evidence"])
+
+testcase w1c_wall_and_seal:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=1,location="inn",life_poc=True),("+w1c","ep1_done","ev_b_done","ev_c_done","ep4_seen","ev_a_done"))
+    click pos (1150,90) until screen "choice" timeout 40
+    click "비밀을 지켜 주겠다고 한다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("H7" in room13["evidence"] and r13_has("ttadak_witness"))
+    run Call("r13_qa_goto",5,0,"hall",("case_occurred_marker",))
+    pause 1.0
+    $ r13_edit(case_state="occurred",daram_state="held")
+    run Call("r13_qa_goto",5,0,"hall")
+    click pos (1150,90) until screen "choice" timeout 40
+    click "몰래 뒤를 밟는다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("W9" in room13["evidence"] and "H8" in room13["evidence"] and r13_has("family_items_lost"))
+    $ r13_cash(20,"qa")
+    run Call("r13_qa_goto",6,0,"gate")
+    click pos (1150,90) until screen "choice" timeout 40
+    click "열 냥에 산다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("fake_testimony"))

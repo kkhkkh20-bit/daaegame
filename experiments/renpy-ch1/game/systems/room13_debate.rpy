@@ -356,7 +356,8 @@ init 98 python:
             lines=st.get("consent_lines",{}).get(key)
             return "soft",list(lines) if lines else [(R13_DEBATE[claim]["chair"],"본 사람이 이름을 밝히지 않은 기록만으로는 확인이 어렵습니다. 다른 물건이 필요합니다.")]
         if key in st.get("accept",[]):
-            return "break",list(st.get("broken",[]))
+            # broken_by: a different rebuttal when another record breaks the same statement.
+            return "break",list(st.get("broken_by",{}).get(key,st.get("broken",[])))
         if key in st.get("soft",{}):
             return "soft",[st["soft"][key]]
         # 이 논점의 다른 발언을 깨는 자료라면 깎지 않고 방향만 알려 준다.
@@ -495,6 +496,12 @@ label r13_debate_loop:
         call r13_debate_conclude(r13_claim)
         if _return:
             # Episode 3: without the chief's promise the culprit verdict is not enforced.
+            # Week-1 case T: a bought false witness ruins the hearing even with the promise.
+            if r13_claim=="C4" and r13_has("fake_testimony"):
+                call r13_lines(R13_FAKE_TESTIMONY_LINES,"debate:c4:fake_testimony")
+                $ r13_flag("c4_unenforced","fake_testimony_exposed")
+                $ r13_debate_close(r13_claim,"unenforced")
+                return True
             if r13_claim=="C4" and not r13_has("fair_hearing"):
                 call r13_lines(R13_C4_UNENFORCED,"debate:c4:unenforced")
                 $ r13_flag("c4_unenforced")

@@ -180,8 +180,9 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     hide screen hud
     show screen r13_hud
     $ room13.update(state)
-    # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed.
-    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+[f for f in flags if f!="+brief"]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])))
+    # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed;
+    # the week-1 cases G·L·I·S·T (systems/room13_week1_cases.rpy) unless "+w1c" is passed.
+    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+[f for f in flags if f not in ("+brief","+w1c")]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])+([] if "+w1c" in flags else ["ev_g_done","ev_l_done","ev_i_done","ev_s_done","ev_t_done"])))
     $ room13["livelihood"]=dict(cash=cash,debt=0,items=list(items))
     jump r13_roam
 

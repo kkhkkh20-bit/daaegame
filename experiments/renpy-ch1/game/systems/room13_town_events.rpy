@@ -153,6 +153,7 @@ label r13_town_events:
     call r13_episode_events
     call r13_evening_events
     call r13_b3_events
+    call r13_w1c_events
     call r13_carryover_events
     call r13_w2e_events
     call r13_town_events2
