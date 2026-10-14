@@ -1,4 +1,4 @@
-"""Web build: title music, per-place music and ambience, remote-click button sound (0.18.5)."""
+"""Web build: title music, per-place music and ambience, remote-click button sound (0.18.6)."""
 import asyncio,json,os,urllib.request
 from pathlib import Path
 from playwright.async_api import async_playwright

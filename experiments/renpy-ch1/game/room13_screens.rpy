@@ -174,6 +174,11 @@ screen r13_hub(entry=False):
         textbutton "자기":
             style "r13_action_button" area (1010,584,220,56)
             action Return(("sleep","bed"))
+    if not entry and r13_evening_missions():
+        textbutton "저녁 할 일":
+            style "r13_action_button" area (728,30,230,56) text_size 21
+            action Return(("menu","evening")) sensitive ready
+            tooltip "오늘 저녁에만 할 수 있는 일"
     if not entry and r13_has("livelihood_open"):
         textbutton ("일거리 · 상점  %d냥"%r13_wallet(room13)["cash"]):
             style "r13_action_button" area (448,30,270,56) text_size 21

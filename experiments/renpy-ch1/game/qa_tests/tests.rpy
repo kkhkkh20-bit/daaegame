@@ -993,3 +993,59 @@ testcase skip_modes:
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ open("qa_result.txt","w").write("skip to choice, number key 4 picked sliver question")
 
+
+testcase evening_board:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=2,location="room13",life_poc=True),("+brief","ep1_patrol_seen","ep2_seen"))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "ev_board.png"
+    assert eval (all(a["cost"]==0 for a in ROOM13["activities"].values()) and not R13_CONTEXT_WAIT)
+    click "초롱과 등불 돌기 · 광장"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "ev_lamp.png"
+    click "식은 등을 함께 센다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "순회를 마치고 돌아간다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("W6" in room13["evidence"] and r13_has("know_stone_failing") and room13["period"]==2 and room13["location"]=="square")
+    $ r13_qa_town_dump()
+
+testcase evening_visit:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=2,location="gate",life_poc=True,case_state="occurred",daram_state="held"),("badook_ally","ep1_done","ev_b_done","ev_c_done","ep3_bell_seen"),("snack",))
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "ev_visit.png"
+    click "담요를 넣어 달라고 부탁한다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "구운 밤을 넣어 준다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("daram_warm") and r13_has("daram_fed") and "W7" in room13["evidence"] and room13["period"]==2)
+    $ r13_qa_town_dump()
+
+testcase evening_eve:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=6,period=2,location="dining",life_poc=True,case_state="occurred",daram_state="held"),("witness:nabi","tok_detained","ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ep4_seen"))
+    click pos (1150,90) until screen "choice" timeout 40
+    click "나비 옆에 앉는다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    click "톡을 찾는다"
+    pause 1.0
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "ev_eve.png"
+    click "그만 일어선다"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("ev_eve_done") and r13_has("eve:nabi") and r13_has("eve:tok"))
+    $ r13_qa_town_dump()

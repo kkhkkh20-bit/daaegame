@@ -180,7 +180,8 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     hide screen hud
     show screen r13_hud
     $ room13.update(state)
-    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+list(flags)))
+    # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed.
+    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+[f for f in flags if f!="+brief"]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])))
     $ room13["livelihood"]=dict(cash=cash,debt=0,items=list(items))
     jump r13_roam
 
@@ -207,7 +208,7 @@ label r13_qa_goto(day,period,location,flags=()):
     $ r13_flag(*flags) if flags else None
     jump r13_roam
 
-# Sound check (0.18.5): visit every place in each mood and record what plays.
+# Sound check (0.18.6): visit every place in each mood and record what plays.
 label r13_qa_sound:
     call r13_qa_setup(3,("E01","E05"))
     $ _qa_sound={"title":config.main_menu_music,"places":{},"fx":{}}

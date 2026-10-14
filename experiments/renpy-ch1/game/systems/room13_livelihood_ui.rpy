@@ -24,7 +24,7 @@ screen r13_work_board(start_tab="work"):
                         text (job["title"]+" · "+R13_NAMES.get(job["npc"],job["npc"])+" · %d냥"%job["pay"]) size 25 color "#fff2cf"
                         text (r13_learning_job_context(key)+" · "+r13_work_status(key)) size r13_read_size(20,23) color "#d4dfd8"
                         text (r13_learning_time_text(1)+" · "+r13_learning_settlement_text(additional=job["pay"],compact=True)) size r13_read_size(18,21) color "#eee5d5"
-        text ("오늘 일할 시간은 끝났다. 저녁에는 사람들을 만나거나 기록을 살펴보자." if room13["period"]>=2 else "조사·대화는 시간 소모 없음 · 돈이 모자라면 외상으로 남겨도 잘 수 있다.") xpos 48 ypos 598 size 21 color "#efd4a1"
+        text ("오늘 일할 시간은 끝났다. 저녁에는 일 없이 '저녁 할 일'을 할 수 있다." if room13["period"]>=2 else "시간은 일하거나 잘 때만 흐른다 · 돈이 모자라면 외상으로 남겨도 잘 수 있다.") xpos 48 ypos 598 size 21 color "#efd4a1"
     elif tab=="shop":
         text "물건은 공동 물품 창고의 은호 사장에게서 산다. 여기서도 같은 물건을 볼 수 있다." xpos 48 ypos 174 size 22 color "#d4dfd8"
         textbutton "은호 사장의 물건 보기" style "r13_action_button" xpos 48 ypos 226 xsize 420 ysize 66 action Show("r13_shop",close=Hide("r13_shop"))

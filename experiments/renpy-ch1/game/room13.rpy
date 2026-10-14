@@ -132,10 +132,9 @@ label r13_entry_dispatch:
             call r13_lines([("guard","숙소에서 보낸 편지군요. 다만 이 편지만으로 들어온 사람 목록을 고칠 수는 없습니다. 원본을 봐야 합니다.")],"entry:letter")
         hide screen r13_material_corner
     elif r13_choice[1]=="wait":
-        call screen r13_confirm("대기소 앞에서 원본 담당자가 돌아오기를 기다린다. 저녁까지 시간이 흐른다.")
+        call screen r13_confirm("대기소 앞에서 원본 담당자가 돌아오기를 기다린다.")
         if _return:
             $ r13_flag("question_read:entry:wait")
-            $ r13_tick()
             call r13_scene("winter","눈에 막힌 입구","calm")
             call r13_lines([("guard","원본은 두 분인데 제가 한 분으로 옮겨 적었습니다. 바로잡았으니 함께 들어가세요."),("daram","아빠, 이제 손이 잘 안 펴져."),("dad","오래 기다리게 했네. 손 줘. 같이 가자.")],"entry:wait")
             jump r13_entry_done
@@ -227,6 +226,11 @@ label r13_roam:
         call r13_mother_intervention
     if room13["day"]>=8:
         call r13_week2_events
+    # Evening missions (systems/room13_evening.rpy): once per evening, pick where to go.
+    call r13_evening_auto
+    if _return and _return!=room13["location"]:
+        $ r13_edit(location=_return)
+        jump r13_roam
     # Town events (systems/room13_town_events.rpy); a night locked away ends the day.
     call r13_town_events
     if _return=="day":
@@ -288,6 +292,11 @@ label r13_field:
         if _return:
             $ r13_target=_return
             call r13_talk
+        jump r13_roam
+    if r13_choice[1]=="evening":
+        call r13_evening_board
+        if _return and _return!=room13["location"]:
+            $ r13_edit(location=_return)
         jump r13_roam
     if r13_choice[1]=="map":
         call screen r13_map

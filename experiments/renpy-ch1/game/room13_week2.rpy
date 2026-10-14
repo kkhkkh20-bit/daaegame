@@ -76,10 +76,8 @@ label r13_special_activity(key):
                 return True
             "잘 나온 숫자 하나만 기록한다":
                 call r13_lines([("resident_seori","그것만 떼어 놓으면 반대 주장에도 쓸 수 있습니다. 전후 기록을 함께 보십시오.")],"observation:incomplete")
-                $ r13_tick()
                 return False
             "판단을 미루고 돌아간다":
-                $ r13_tick()
                 return False
     if key.startswith("w2_rescue_"):
         call r13_rescue(key.replace("w2_rescue_",""))
