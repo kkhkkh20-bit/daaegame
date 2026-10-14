@@ -1,4 +1,4 @@
-"""Web build: title music, per-place music and ambience, remote-click button sound (0.18.6)."""
+"""Web build: title music, per-place music and ambience, remote-click button sound (0.18.6, 0.18.7)."""
 import asyncio,json,os,urllib.request
 from pathlib import Path
 from playwright.async_api import async_playwright
@@ -49,15 +49,24 @@ async def main():
    await q.shot('s1-gate')
    # Inn at day 2 (same fixture as qa_navigation), then walk the inn with the real buttons.
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=2,period=0,location="inn");s.r13_flag("entry_corrected","lodging");s.r13_upgrade();w=renpy.exports.get_widget("r13_hub","r13_options_gear");w.action=s.Jump("r13_field");w.clicked=w.action;result=True');await q.input(1220,50);await q.wait('r13_hub')
+   # The fixture jumped from day 1 to day 2 without a scene, so the first move would ring the new-day bell.
+   await q.py('import renpy;renpy.store.r13_sound_last=("front",2);result=True')
    walk=[]
-   for label,loc,want_m,want_a in (('2층 복도','hall','assets/bgm-inn.mp3',None),('13호실','room13','assets/bgm-night.mp3',None),('복도로','hall','assets/bgm-inn.mp3',None),('1층 접수대','inn','assets/bgm-inn.mp3','assets/amb-fire.mp3')):
+   for label,loc,want_m,want_a,want_fx in (('2층 복도','hall','assets/bgm-inn.mp3','assets/amb-clock.mp3','steps'),('13호실','room13','assets/bgm-inn2.mp3','assets/amb-wind.mp3','doorOpen'),('복도로','hall','assets/bgm-inn.mp3','assets/amb-clock.mp3','door'),('1층 접수대','inn','assets/bgm-inn.mp3','assets/amb-fire.mp3','steps')):
+    await q.py('import renpy;renpy.store.source_effect_log[:]=[];result=True')
     await q.press(label);await q.wait('r13_hub');assert (await q.room())['location']==loc
-    await asyncio.sleep(1.2);m,a=await playing(),await playing('ambience');walk.append((loc,m,a))
-    assert m==want_m and a==want_a,(label,m,a)
+    await asyncio.sleep(1.2);m,a=await playing(),await playing('ambience');fx=await q.py('import renpy;result=list(renpy.store.source_effect_log)');walk.append((loc,m,a,fx))
+    assert m==want_m and a==want_a and want_fx in fx,(label,m,a,fx)
    await q.shot('s2-inn-front')
+   await q.py('import renpy;renpy.store.source_effect_log[:]=[];result=True')
+   await q.press('기록');await q.wait('r13_records');await asyncio.sleep(.5)
+   await q.press('닫기');await q.wait('r13_hub');await asyncio.sleep(.5)
+   fx=await q.py('import renpy;result=list(renpy.store.source_effect_log)')
+   assert 'note_open' in fx and 'note_close' in fx,fx
+   report['checks'].append('Notebook open/close sounds play')
    report['walk']=walk
-   report['checks'].append('Inn walk with real buttons: hall=Midvinter, room13=Measured Paces, reception=Midvinter + fire ambience')
-   for name in ('bgm-title.mp3','bgm-travel.mp3','bgm-snow.mp3','bgm-inn.mp3','bgm-night.mp3','amb-wind.mp3','amb-fire.mp3','sfx-click.wav'):
+   report['checks'].append('Inn walk with real buttons: hall=Midvinter+clock, room13=Water Lily+wind (same as guest room), reception=Midvinter+fire; footsteps and 13-room door sounds play')
+   for name in ('bgm-title.mp3','bgm-travel.mp3','bgm-snow.mp3','bgm-inn.mp3','bgm-inn2.mp3','amb-wind.mp3','amb-clock.mp3','amb-fire.mp3','sfx-click.wav'):
     st=report['requests'].get(name)
     assert st in (200,206,304) or name=='sfx-click.wav',(name,st)
    bad=[e for e in errors if any(k in e.lower() for k in ('audio','decode','mp3','wav'))]

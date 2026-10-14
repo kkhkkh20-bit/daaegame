@@ -437,6 +437,7 @@ screen r13_book(target=None,present=False,hearing=False):
     style_prefix "r13"
     modal True
     zorder 50
+    on "show" action Function(source_fx,"note_open")
     default detail=None
     default ready=False
     default archive=False

@@ -1,4 +1,4 @@
-Room13 배경음·효과음 (0.18.6, 2026-10-14)
+Room13 배경음·효과음 (0.18.6, 2026-10-14 / 0.18.7 추가)
 
 ==================== 배경음 — CC BY 4.0 (출처 표기 필수) ====================
 
@@ -13,6 +13,7 @@ Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
 
 변경: 앞뒤 무음 제거, 곡 전체에 같은 음량 조정(-24 LUFS 목표), MP3 128k로 변환. 곡 내용은 바꾸지 않음.
+0.18.7: bgm-dark(The Long Dark)·bgm-altar(Shadows and Dust)는 조용한 부분을 천천히 끌어올리는 음량 평탄화(dynaudnorm) 뒤 -21/-20 LUFS로 맞춤.
 작곡가가 이 게임을 보증한다는 뜻은 없음. Scott Buckley 곡은 Content ID 등 지문 서비스에 등록하지 않는다.
 
 파일 → 곡
@@ -49,3 +50,10 @@ sfx-slam.wav         OpenGameArt "100 CC0 Metal and Wood SFX" (rubberduck, CC0)
 amb-wind.mp3         OpenGameArt "Wind" (ignasd, CC0)
 amb-fire.mp3         OpenGameArt "Fireplace Sound Loop" (pagdev, CC0)
 amb-clock.mp3        OpenGameArt "Ticking Clock" (bart, CC0)
+sfx-note-open.wav, sfx-note-close.wav, sfx-creak.wav, sfx-latch.wav   Kenney RPG Audio (CC0)
+sfx-error.wav        Kenney Interface Sounds error_004 (CC0)
+sfx-comic.wav        Kenney Music Jingles PIZZI00 (CC0)
+sfx-pencil.wav       OpenGameArt "Pencil Sounds" (antumdeluge, CC0)
+sfx-save.wav         OpenGameArt "Chimey UI Sounds" (mousebyte, CC0)
+sfx-mystery.wav      OpenGameArt "Mystery Sting" (railkill, CC0)
+sfx-heartbeat.wav    OpenGameArt "Heartbeat Sounds" (bart, CC0)
