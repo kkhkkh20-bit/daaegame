@@ -360,7 +360,7 @@ Module.preRun = Module.preRun || [ ];
 
 
     async function r13FetchGameZip() {
-        const parts = [{"file": "game.part01", "bytes": 62914560, "sha256": "751bacc61b5182356de3429640c8767191f5426ab3b12092568569dd01e2307e"}, {"file": "game.part02", "bytes": 62914560, "sha256": "27b59d954485582eb684b3b5626799a4d4a6250c6f47dda8cb1f211f7c795ebd"}, {"file": "game.part03", "bytes": 62914560, "sha256": "44aee6743c2e1e6bc63b6dc16798b17505a4f1cb0a8e861a05c0621037afcfdf"}, {"file": "game.part04", "bytes": 31993545, "sha256": "39506a7389c9e359a4a7902488fbbfcbbcb3712cfe6f1d3872b9b03a035f35db"}];
+        const parts = [{"file": "game.part01", "bytes": 62914560, "sha256": "34d51fcf38266d465b96c28cc1645a896dd45ef9f7fe11b01d032b346bd9bee4"}, {"file": "game.part02", "bytes": 62914560, "sha256": "1e50182caaae09ab4802589979fd005e23d1a93d4572f5425a0d57839b17817c"}, {"file": "game.part03", "bytes": 62914560, "sha256": "02a15d0ab4bd9c564cf6aa895aaf3d89bb378cc9728886d629bf60ad3f0a218b"}, {"file": "game.part04", "bytes": 32050120, "sha256": "c3c5290530480a92f77129915ee441757d68250e7370744617be27577202f114"}];
         let partIndex = 0;
         let reader = null;
         const body = new ReadableStream({
@@ -385,7 +385,7 @@ Module.preRun = Module.preRun || [ ];
             },
             async cancel(reason) { if (reader) await reader.cancel(reason); }
         });
-        return new Response(body, {status: 200, headers: {'Content-Length': '220737225'}});
+        return new Response(body, {status: 200, headers: {'Content-Length': '220793800'}});
     }
     
     async function loadGameZip() {
