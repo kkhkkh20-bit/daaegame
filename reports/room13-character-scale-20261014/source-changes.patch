@@ -1,0 +1,197 @@
+--- a/game/room13_rules.rpy
++++ b/game/room13_rules.rpy
+@@ -254,7 +254,7 @@
+     def r13_close_y(person,height=840,top=110,pose="interview_neutral"):
+         full_spec=r13_close_spec(person,pose) or {}
+         if full_spec.get("full_body"):
+-            return int(48-full_spec["head"][1]*r13_close_scale(person,pose,height))
++            return int(top+20-full_spec["head"][1]*r13_close_scale(person,pose,height))
+         head=r13_close_head(person,pose)
+         if head:
+             scale=r13_close_scale(person,pose,height)
+--- a/game/room13_acting.rpy
++++ b/game/room13_acting.rpy
+@@ -278,6 +278,21 @@
+             "hall":"doto","square":"doto"}.get(store.room13["location"])
+         return ([host]+[p for p in people if p!=host]) if host in people else people
+ 
++    def r13_world_display_height(person,pose,height,layout):
++        # Per-location perspective is independent of dialogue framing. Preserve
++        # the established relative standing heights and the authored pose's
++        # head/body ratio, instead of stretching a crouch to standing height.
++        if not layout.get("standing_height_reference"):
++            return height
++        reference=layout["standing_height_reference"]
++        stature=layout.get("standing_heights",{}).get(person,reference)/float(reference)
++        pw,ph=r13_actor_geometry(person,pose)
++        nw,nh=r13_actor_geometry(person,"neutral")
++        head=r13_acting_head(person,pose)
++        neutral_head=r13_acting_head(person,"neutral")
++        pose_ratio=(ph/float(head[3]))/(nh/float(neutral_head[3])) if head and neutral_head else ph/float(nh)
++        return height*stature*pose_ratio
++
+     def r13_stage_people(entry=False):
+         location=store.room13["location"]
+         period=min(store.room13["period"],2)
+@@ -330,7 +345,7 @@
+             if person=="granny" and location=="inn" and pose=="action_2":work=(1080,506,300)
+             if layout:work=layout.get("work",{}).get(person)
+             occlusion=[]
+-            scale=float(display_height)/height
++            scale=r13_world_display_height(person,pose,display_height,layout)/height
+             foot=spec.get("foot",spec.get("anchor",{}).get("foot",[width/2.0,height]))
+             x=int(cx-foot[0]*scale);y=int(feet-foot[1]*scale)
+             if contact=="hanging" or (person=="bami" and not spec):
+@@ -377,7 +392,7 @@
+                     if cp=="action_2":sh=int(sh*.80)
+                 cs=r13_acting_spec(person,cp) or {}
+                 cw,ch=r13_actor_geometry(person,cp)
+-                sc=float(sh)/ch
++                sc=r13_world_display_height(person,cp,sh,layout)/ch
+                 cf=cs.get("foot",cs.get("anchor",{}).get("foot",[cw/2.0,ch]))
+                 xx=int(sx-cf[0]*sc);yy=int(sy-cf[1]*sc)
+                 ww=int(cw*sc);hh=int(ch*sc)
+--- a/game/assets/room13-world-layout.json
++++ b/game/assets/room13-world-layout.json
+@@ -1165,7 +1165,7 @@
+     "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+   },
+   "store": {
+-    "revision": 2,
++    "revision": 3,
+     "width": 1920,
+     "height": 720,
+     "initial_x": 320,
+@@ -1200,72 +1200,72 @@
+       [
+         1106,
+         652,
+-        253
++        328
+       ],
+       [
+         1341,
+         689,
+-        262
++        354
+       ],
+       [
+         216,
+         666,
+-        253
++        338
+       ]
+     ],
+     "slots": [
+       [
+         1116,
+         647,
+-        253,
++        324,
+         "floor"
+       ],
+       [
+         1350,
+         689,
+-        262,
++        354,
+         "floor"
+       ],
+       [
+         216,
+         666,
+-        248,
++        338,
+         "floor"
+       ],
+       [
+         1725,
+         684,
+-        248,
++        351,
+         "floor"
+       ],
+       [
+         975,
+         544,
+-        202,
++        250,
+         "floor"
+       ],
+       [
+         984,
+         703,
+-        253,
++        364,
+         "floor"
+       ],
+       [
+         1519,
+         699,
+-        262,
++        362,
+         "floor"
+       ],
+       [
+         609,
+         708,
+-        206,
++        368,
+         "floor"
+       ],
+       [
+         881,
+         708,
+-        206,
++        368,
+         "floor"
+       ]
+     ],
+@@ -1273,7 +1273,7 @@
+       "resident_eunho": [
+         1116,
+         647,
+-        253
++        324
+       ]
+     },
+     "critical": [
+@@ -1307,7 +1307,14 @@
+       "afternoon": "assets/room13-pixel-ready-store0177-afternoon.png",
+       "evening": "assets/room13-pixel-ready-store0177-evening.png"
+     },
+-    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
++    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
++    "standing_height_reference": 271,
++    "standing_heights": {
++      "resident_mungchi": 245,
++      "resident_madam": 271,
++      "resident_eunho": 269,
++      "resident_siluk": 260
++    }
+   },
+   "greenhouse": {
+     "revision": 1,
+@@ -1678,4 +1685,4 @@
+     },
+     "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+   }
+-}+}
+--- a/game/options.rpy
++++ b/game/options.rpy
+@@ -1,5 +1,5 @@
+ define config.name = "다람탐정 · 눈에 갇힌 마을"
+-define config.version = "0.17.14-dev"
++define config.version = "0.17.15-dev"
+ # Literal early definition selects the persistent web save mount.
+ define config.save_directory = "daaegame-renpy-village-ch1-06"
+ 
+@@ -69,7 +69,7 @@
+     config.exit_transition = Dissolve(0.12)
+     config.after_load_transition = Fade(0.12,0.12,0.2)
+     build.name = "daram_renpy_small_ch1"
+-    build.version = "0.17.14-dev"
++    build.version = "0.17.15-dev"
+     build.classify("game/assets/room13-painted-*.png", None)
+     build.classify("game/assets/room13-painted-layouts.json", None)
+     build.classify("game/assets/*.txt", "all")
