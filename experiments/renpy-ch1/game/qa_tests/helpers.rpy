@@ -241,3 +241,10 @@ label r13_qa_sound:
         _qa_sound["moves"]={a+">"+b:r13_sound_move(a,b) for a,b in (("hall","room"),("room","hall"),("front","hall"),("front","winter_square"),("winter_square","winter_post"),("hall","winter_passage"),("winter_passage","room"),("winter_carriage","winter"))}
         open(renpy.config.basedir+"/qa_result.txt","w").write(repr(_qa_sound))
     return
+
+label r13_qa_linebreak:
+    call r13_scene("hall","QA 줄바꿈","calm")
+    call r13_lines([("resident_seori","부엉이 어르신이 발견된 방은 안에서 잠겨 있었습니다. 안에는 다람 양이 있었습니다."),
+        (None,"팔의 상처만으로는 목숨을 앗아 간 머리 상처를 설명할 수 없습니다. 떨어져 나간 촛대 윗부분이 다시 쓰였습니다. 그 사이 아이가 어디 있었는지, 누가 다른 길로 드나들었는지 함께 봐야 합니다.")],"qa:linebreak")
+    $ open(renpy.config.basedir+"/qa_result.txt","w").write("linebreak done")
+    return

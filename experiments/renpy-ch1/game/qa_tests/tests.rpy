@@ -1425,3 +1425,18 @@ testcase karo_work_offer:
     run Call("r13_qa_goto",2,0,"inn")
     click pos (1150,90) until screen "r13_hub" timeout 60
     assert eval (r13_has("livelihood_open") and room13["period"]==0)
+
+testcase linebreak_pages:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ preferences.text_cps=0
+    run Call("r13_qa_linebreak")
+    pause 1.5
+    screenshot "lb_two_sentences.png"
+    click pos (1150,90)
+    pause 1.5
+    screenshot "lb_page1.png"
+    click pos (1150,90)
+    pause 1.5
+    screenshot "lb_page2.png"

@@ -45,7 +45,12 @@ label r13_lines(entries,identity):
         # Isolate this line from the previous loop increment when record UI
         # changes are retained by an immediate save during the say interaction.
         $ renpy.checkpoint()
-        $ R13_CHARS.get(r13_packet[0],source_thought)(r13_packet[1])
+        # Four or more lines on screen: show two lines per click (systems/room13_linebreak.rpy).
+        $ r13_pages=r13_dialogue_pages(r13_packet[1])
+        $ r13_page_i=0
+        while r13_page_i<len(r13_pages):
+            $ R13_CHARS.get(r13_packet[0],source_thought)(r13_pages[r13_page_i])
+            $ r13_page_i+=1
         if not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
             $ r13_remember_line(r13_read_id)
         $ r13_index+=1
