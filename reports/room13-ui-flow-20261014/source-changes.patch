@@ -1,0 +1,1023 @@
+--- a/experiments/renpy-ch1/dev/test_room13_dialogue_motion.py
++++ b/experiments/renpy-ch1/dev/test_room13_dialogue_motion.py
+@@ -1,4 +1,4 @@
+-"""Ensure field rendering and masks bypass all idle wrappers while closeups retain them."""
++"""Ensure field rendering and masks bypass all idle wrappers and dialogue closeups remain still after their ATL entrance."""
+ import ast
+ from pathlib import Path
+ from types import SimpleNamespace
+@@ -20,10 +20,10 @@
+     art=object();self.assertIs(self.make(art,'karo','activity',{},200,300,contact=contact),art)
+     self.assertIs(self.make(art,'karo','activity',{},200,300,contact=contact),art)
+   self.assertFalse(self.calls)
+- def test_say_keeps_dialogue_idle(self):
+-  self.assertEqual(self.make(object(),'karo','neutral',{},400,500,contact='dialogue_bust',speaking=True)[0],'idle')
+- def test_questions_keep_dialogue_idle_between_spoken_lines(self):
+-  self.assertEqual(self.make(object(),'karo','neutral',{},400,500,contact='dialogue_bust',speaking=False)[0],'idle')
++ def test_dialogue_and_questions_remain_still(self):
++  for speaking in (True,False):
++   art=object();self.assertIs(self.make(art,'karo','neutral',{},400,500,contact='dialogue_bust',speaking=speaking),art)
++  self.assertFalse(self.calls)
+  def test_field_spec_with_front_crop_does_not_enable_motion(self):
+   art=object();self.assertIs(self.make(art,'karo','neutral',{'contact':'dialogue_bust'},200,300,contact='standing'),art)
+ if __name__=='__main__':unittest.main()
+--- a/experiments/renpy-ch1/game/room13_rules.rpy
++++ b/experiments/renpy-ch1/game/room13_rules.rpy
+@@ -286,7 +286,7 @@
+             actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) else "interview_"+store.dialogue_expression
+             # A new sentence from the same actor must not restart entrance.
+             if arriving or previous_pose!=store.r13_current_pose:
+-                renpy.show("r13_actor",what=r13_close_art(who,actor_pose,840,True,arriving),tag="r13_visitor",at_list=[r13_portrait_close(r13_close_y(who,pose=actor_pose))])
++                renpy.show("r13_actor",what=r13_close_art(who,actor_pose,840,True,arriving or previous_pose!=store.r13_current_pose),tag="r13_visitor",at_list=[r13_portrait_close(r13_close_y(who,pose=actor_pose))])
+             store.r13_motion_person=who
+         else:
+             renpy.hide("r13_visitor")
+--- a/experiments/renpy-ch1/game/systems/room13_reference_ui.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_reference_ui.rpy
+@@ -7,7 +7,7 @@
+         def render(self,width,height,st,at):
+             w=max(1,int(width));h=max(42,int(height))
+             r=renpy.Render(w,h);c=r.canvas()
+-            c.rect("#3786a5",(0,0,w,h))
++            c.rect("#236078",(0,0,w,h))
+             c.polygon("#eef1e7",((0,0),(28,0),(58,h),(0,h)))
+             c.rect("#eed17a" if self.hover else "#dce6dc",(0,0,w,h),3 if self.hover else 1)
+             return r
+@@ -18,7 +18,7 @@
+             return int(renpy.render(notice,width-55,720,0,0).get_size()[1])+20
+         total=24*max(0,len(entries)-1)
+         for label,action,was_read in entries:
+-            caption=("✓  {s}"+label+"{/s}") if was_read else label
++            caption=("{font=assets/Room13Sans.ttf}✓{/font}  "+label) if was_read else label
+             text=Text(caption,size=r13_read_size(22,28),font=r13_ui_font(),xsize=width-99)
+             height=renpy.render(text,width-99,720,0,0).get_size()[1]
+             total+=max(42,height+12)
+@@ -27,14 +27,14 @@
+ 
+ init 80:
+     style r13_footer_button is button:
+-        xsize 92
+-        ysize 32
++        xsize 96
++        ysize 40
+         padding (8,4)
+         background None
+         hover_background Solid("#b8d6df")
+     style r13_footer_button_text is text:
+         font "assets/Room13Sans.ttf"
+-        size 17
++        size 20
+         color "#285265"
+         hover_color "#123b50"
+         xalign .5
+--- a/experiments/renpy-ch1/game/room13_notebook.rpy
++++ b/experiments/renpy-ch1/game/room13_notebook.rpy
+@@ -238,7 +238,7 @@
+     add Solid("#0c172a99")
+     fixed:
+         xsize 1280 ysize 720
+-        at Transform(zoom=.84,xalign=.5,yalign=.5)
++        at Transform(zoom=(.96 if persistent.room13_large_text else .90),xalign=.5,yalign=.5)
+         add Solid("#eee7d6")
+         text "기록" style "r13_title_text" xpos 32 ypos 29
+         text "찾은 것과 들은 말" style "r13_secondary_text" xpos 152 ypos 37 size r13_read_size(20,25)
+--- a/experiments/renpy-ch1/game/systems/room13_playback.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_playback.rpy
+@@ -38,7 +38,7 @@
+ 
+ screen r13_playback_footer():
+     frame:
+-        area (940,680,340,32) padding (8,0) background Solid("#edf1e9")
++        area (940,676,340,40) padding (8,0) background Solid("#edf1e9")
+         hbox:
+             spacing 8
+             textbutton "백로그" style "r13_footer_button" action Show("r13_backlog")
+--- a/experiments/renpy-ch1/game/room13_title_art.rpy
++++ b/experiments/renpy-ch1/game/room13_title_art.rpy
+@@ -55,9 +55,11 @@
+         padding (22,12)
+         background Solid("#e5cea7")
+         hover_background Solid("#f7e3bb")
++        insensitive_background Solid("#243a3d")
+     style r13_title_primary_text is r13_title_button_text:
+         color "#183536"
+         hover_color "#142728"
++        insensitive_color "#a9bfbe"
+         size 29
+         outlines []
+     style r13_title_aux is r13_title_button:
+--- a/experiments/renpy-ch1/game/options.rpy
++++ b/experiments/renpy-ch1/game/options.rpy
+@@ -1,5 +1,5 @@
+ define config.name = "다람탐정 · 눈에 갇힌 마을"
+-define config.version = "0.17.1-dev"
++define config.version = "0.17.2-dev"
+ # Literal early definition selects the persistent web save mount.
+ define config.save_directory = "daaegame-renpy-village-ch1-06"
+ 
+@@ -69,7 +69,7 @@
+     config.exit_transition = Dissolve(0.12)
+     config.after_load_transition = Fade(0.12,0.12,0.2)
+     build.name = "daram_renpy_small_ch1"
+-    build.version = "0.17.1-dev"
++    build.version = "0.17.2-dev"
+     build.classify("game/assets/room13-painted-*.png", None)
+     build.classify("game/assets/room13-painted-layouts.json", None)
+     build.classify("game/assets/*.txt", "all")
+--- a/experiments/renpy-ch1/game/room13_screens.rpy
++++ b/experiments/renpy-ch1/game/room13_screens.rpy
+@@ -2,12 +2,12 @@
+     style_prefix "r13"
+     zorder 20
+     if place == "마차 안":
+-        textbutton "건너뛰기 ›":
++        textbutton ("읽은 대사만 ●" if r13_fast_read else "읽은 대사만 ›"):
+             style "r13_action_button"
+             xpos 988 ypos 24 xsize 184 ysize 54
+             text_size r13_read_size(20,24)
+-            action [SetVariable("r13_carriage_skip", True), Function(renpy.end_interaction, True)]
+-            tooltip "마차 이야기를 건너뛰고 마을 입구에 도착합니다"
++            action Function(r13_toggle_read_skip)
++            tooltip "이미 읽은 대사만 넘기고, 새 대사와 선택지에서 멈춥니다"
+     if not any(renpy.get_screen(k) for k in ("say","r13_topics","choice","r13_entry_topics","r13_entry_karo_topics")):
+         frame:
+             xpos 24 ypos 20 xsize 410 ysize 82 padding (16,10)
+@@ -19,16 +19,16 @@
+ 
+ init 80:
+     style r13_toolbar_button is r13_action_button:
+-        xsize 104
++        xsize 128
+         ysize 44
+         padding (10,6)
+-        background Solid("#152e3880")
++        background Solid("#102b35ed")
+         hover_background Solid("#29434ed9")
+-        insensitive_background Solid("#152e3840")
++        insensitive_background Solid("#1c303bea")
+     style r13_toolbar_button_text is r13_action_button_text:
+         color "#edf0e5"
+         hover_color "#ffffff"
+-        insensitive_color "#aebec299"
++        insensitive_color "#91a6ae"
+         outlines [(1,"#14232a99",0,1)]
+         xalign .5
+         yalign .5
+@@ -37,7 +37,7 @@
+     style_prefix "r13"
+     if mode!="field":
+         frame:
+-            area (640,680,640,32) padding (8,0) background Solid("#edf1e9")
++            area (640,676,640,40) padding (8,0) background Solid("#edf1e9")
+             hbox:
+                 spacing 8
+                 if investigate_action is not None:
+@@ -57,8 +57,8 @@
+             xalign .5 ypos 670 spacing 8
+             if mode=="field":
+                 frame:
+-                    xsize 104 ysize 44 padding (10,6)
+-                    background Solid("#24423988")
++                    xsize 128 ysize 44 padding (10,6)
++                    background Solid("#244239ed")
+                     text "조사":
+                         size r13_read_size(20,24) color "#e2ebdf"
+                         outlines [(1,"#14232a99",0,1)]
+@@ -87,7 +87,7 @@
+         id "r13_options_gear"
+         area (1190,20,64,64) padding (0,0)
+         background Solid("#152e3866") hover_background Solid("#29434ee0")
+-        insensitive_background Solid("#152e3840")
++        insensitive_background Solid("#1c303bea")
+         action ShowMenu("pause_menu") sensitive ready
+         tooltip "옵션" alt "옵션"
+         fixed:
+@@ -226,7 +226,7 @@
+                     xsize compact_width-23 yminimum 42 padding (60,6,16,6)
+                     background R13ReferenceChoice(False) hover_background R13ReferenceChoice(True)
+                     action action sensitive ready
+-                    text (("✓  {s}"+title+"{/s}") if was_read else title):
++                    text (("{font=assets/Room13Sans.ttf}✓{/font}  "+title) if was_read else title):
+                         xsize compact_width-99 text_align .5 xalign .5
+                         size r13_read_size(22,28) font r13_ui_font()
+                         color ("#d3e3e7" if was_read else "#ffffff")
+@@ -339,7 +339,7 @@
+     add Solid("#0c172a99")
+     fixed:
+         xsize 1280 ysize 720
+-        at Transform(zoom=.84,xalign=.5,yalign=.5)
++        at Transform(zoom=(.96 if persistent.room13_large_text else .90),xalign=.5,yalign=.5)
+         add Solid("#eee7d6")
+         text ("자료 보여 주기 · "+R13_NAMES.get(target,"재판") if present else "자료 기록") style "r13_title_text" xpos 32 ypos 29
+         if target:
+@@ -351,7 +351,7 @@
+                     style "r13_paper_tab_button" xsize 168 ysize 48 background R13PaperPanel(category==key)
+                     sensitive ready
+                     action [SetScreenVariable("category",key),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
+-        text ("조사로 확인한 물건과 문서" if category=="evidence" else "인물에게 직접 들은 말") style "r13_secondary_text" xpos 400 ypos 112
++        text ("자료를 눌러 선택한 뒤 보여주세요" if present else "조사로 확인한 물건과 문서" if category=="evidence" else "인물에게 직접 들은 말") style "r13_secondary_text" xpos 400 ypos 112
+         if not present:
+             hbox:
+                 xpos 816 ypos 98 spacing 8
+@@ -366,7 +366,7 @@
+             textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
+                 style "r13_compact_button" xpos 872 ypos 644 xsize 376 ysize 64 text_size r13_read_size(22,27)
+                 action Return(selected_record)
+-                sensitive ready and selected_record in room13.get("evidence",[]) and not archive
++                sensitive ready and detail==selected_record and selected_record in room13.get("evidence",[]) and not archive
+         else:
+             text ("%d개 · 이전 여정의 기록"%len(entries) if archive else "%d개 · 이번 여정에서 모음"%len(entries)) style "r13_secondary_text" xpos 880 ypos 661
+         textbutton ("그만두기" if present else "닫기"):
+--- a/experiments/renpy-ch1/game/room13_dialogue_rhythm.rpy
++++ b/experiments/renpy-ch1/game/room13_dialogue_rhythm.rpy
+@@ -55,7 +55,7 @@
+         # comparing it with the original say string. Only the layout token
+         # stream receives punctuation timing, after that contract is preserved.
+         def tokenize(self,text):
+-            display_text=[r13_rhythmic_text(part) if isinstance(part,str) else part for part in text]
++            display_text=[r13_rhythmic_text(r13_semantic_text(part)) if isinstance(part,str) else part for part in text]
+             return super(R13DialogueText,self).tokenize(display_text)
+ 
+         def __init__(self,*args,**kwargs):
+--- a/experiments/renpy-ch1/game/room13_motion.rpy
++++ b/experiments/renpy-ch1/game/room13_motion.rpy
+@@ -209,7 +209,7 @@
+         # Dialogue/topic portraits explicitly pass dialogue_bust even between lines.
+         if not speaking and contact!="dialogue_bust":
+             return renpy.displayable(art)
+-        return R13AuthoredIdle(art,person,pose,spec,width,height,contact,speaking)
++        return renpy.displayable(art)
+ 
+     class R13CharacterMotion:
+         def __init__(self,person,pose,speaking=False,entrance=False):
+@@ -226,22 +226,11 @@
+                 trans.rotate=0.0
+                 trans.alpha=1.0
+                 return 0.20
+-            period,breath,shift,tilt=self.profile
+-            t=max(0.0,at)
+-            angle=t*2.0*r13_motion_math.pi/period+self.phase
+-            # Gentle rigid movement; no squash, stretch, body mesh or fake blink.
+-            trans.yoffset=int(round(-breath*r13_motion_math.sin(angle)))
+-            trans.xoffset=int(round(shift*r13_motion_math.sin(angle*0.61+self.phase)))
++            trans.xoffset=0
++            trans.yoffset=0
+             trans.rotate=0
+-            if "distressed" in self.pose:
+-                # Quiet held tension, never a perpetual panic shake.
+-                trans.xoffset=0
+-                trans.rotate=0
+-            # A single small acknowledgement on arrival, not on every syllable.
+-            if self.speaking and self.entrance and st<0.55:
+-                trans.yoffset+=int(round(r13_motion_math.sin(st/0.55*r13_motion_math.pi)))
+             trans.alpha=1.0
+-            return 1.0/8.0
++            return None
+ 
+     R13_PIXEL_MOTION=json.load(renpy.file("assets/room13-pixel-motion.json"))
+ 
+@@ -261,7 +250,7 @@
+             enabled=persistent.room13_motion and not renpy.is_skipping()
+             # The attachment stays behind the separately authored body. One
+             # native-pixel step avoids blurred rotation or a painted tail layer.
+-            trans.xoffset=int(round(r13_motion_math.sin(at*2.0*r13_motion_math.pi/5.8))) if enabled and not self.tense else 0
++            trans.xoffset=0
+             trans.yoffset=0
+             return .125 if enabled else .2
+ 
+@@ -294,7 +283,7 @@
+             function=R13CharacterMotion(person,pose,speaking,entrance))
+ 
+ screen r13_motion_settings():
+-    textbutton ("대화 인물 움직임: 켜짐" if persistent.room13_motion else "대화 인물 움직임: 정지"):
++    textbutton ("인물 전환 효과: 켜짐" if persistent.room13_motion else "인물 전환 효과: 정지"):
+         action ToggleField(persistent,"room13_motion")
+         xfill True
+ 
+@@ -315,5 +304,6 @@
+         alpha 0.0
+         linear duration alpha 1.0
+     on replace:
+-        alpha 0.0
+-        linear duration alpha 1.0
++        # No authored motion frames: swap the expression once and hold it.
++        alpha 1.0
++        yoffset 0
+--- a/experiments/renpy-ch1/game/screens.rpy
++++ b/experiments/renpy-ch1/game/screens.rpy
+@@ -58,7 +58,8 @@
+ screen main_menu():
+     tag menu
+     style_prefix "r13"
+-    $ title_has_save = renpy.newest_slot(r"[^_]") is not None
++    $ title_continue = r13_continue_slot()
++    $ title_has_save = bool(r13_save_slots())
+     add Transform("assets/room13-pixel-overview-evening.png",size=(1280,720),nearest=True)
+     add R13TitleVeil()
+     add R13RoomTag() xpos 88 ypos 78
+@@ -66,15 +67,19 @@
+     text "다람탐정" xpos 174 ypos 92 font "assets/Room13Title.ttf" size 66 color "#fff0d3" outlines [(2,"#10212b9c",0,2)]
+     text "눈 아래의 열세 번째 방" xpos 96 ypos 190 font "assets/Room13Title.ttf" size 25 color "#e4cc9d"
+     add Solid("#c3a06b",xsize=72,ysize=2) xpos 98 ypos 242
++    add Solid("#10272bd9",xsize=392,ysize=344) xpos 64 ypos 278
+     vbox:
+-        xpos 88 ypos 306 spacing 12
+-        textbutton ("이어하기  ›" if title_has_save else "처음부터  ›"):
++        xpos 88 ypos 300 spacing 10
++        textbutton "이어하기  ›":
+             style "r13_title_primary"
+-            action (Continue(confirm=False) if title_has_save else Start())
+-        if title_has_save:
+-            textbutton "처음부터" style "r13_title_button" action Start() xsize 324 ysize 58
++            sensitive title_continue is not None
++            action (r13_load_action(title_continue) if title_continue else NullAction())
++        textbutton "처음부터":
++            style ("r13_title_button" if title_continue else "r13_title_primary")
++            action Start() xsize 324 ysize 58
+         textbutton "불러오기" style "r13_title_button" action ShowMenu("load") sensitive title_has_save xsize 324 ysize 58
+         textbutton "설정" style "r13_title_button" action ShowMenu("pause_menu") xsize 324 ysize 58
++    text ("저장된 여정을 이어갑니다" if title_continue else "이전 저장은 불러오기에서 확인하세요" if title_has_save else "새 여정은 처음부터 시작하세요") xpos 88 ypos 593 size 18 color "#ced9d4" xsize 344
+     text "개발판 · [config.version]" xpos 106 ypos 665 size 16 color "#b8c4c4"
+     hbox:
+         xpos 956 ypos 652 spacing 20
+@@ -85,21 +90,22 @@
+     if room13_mode:
+         key "K_h" action Show("r13_backlog")
+     $ has_portrait = not room13_mode and dialogue_speaker in CAST
++    $ r13_profile = r13_dialogue_profile(who) if room13_mode else None
+     window:
+         id "window"
+-        xalign .5 ypos (454 if room13_mode and persistent.room13_large_text else 506 if room13_mode else 551) xsize (1280 if room13_mode else 1200) ysize (226 if room13_mode and persistent.room13_large_text else 174 if room13_mode else 169)
++        xalign .5 ypos (454 if room13_mode and persistent.room13_large_text else 506 if room13_mode else 551) xsize (1088 if room13_mode else 1200) ysize (226 if room13_mode and persistent.room13_large_text else 174 if room13_mode else 169)
+         background (Solid("#142237d4") if room13_mode else Solid("#10262de8" if winter_mode else "#211a16f2"))
+         padding (0,0)
+         fixed:
+             if not room13_mode:
+                 add Solid("#b39060",xsize=1200,ysize=2)
+             vbox:
+-                xpos (220 if room13_mode else 240 if has_portrait else 32) ypos 18
++                xpos (144 if room13_mode else 240 if has_portrait else 32) ypos 18
+                 spacing 10
+                 if who and not room13_mode:
+                     text who id "who" color "#ebcd8a" font (r13_ui_font() if room13_mode else "assets/Galmuri11.ttf")
+                 if room13_mode:
+-                    r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(26,32) line_spacing 5 xsize 930 text_align .0 font r13_ui_font() color ("#9dc9ff" if r13_thought_active else "#fff5df")
++                    r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(26,32) line_spacing 7 xsize 912 text_align .0 font r13_ui_font() color ("#9dc9ff" if r13_thought_active else "#fff5df")
+                 else:
+                     text what id "what" xsize (910 if has_portrait else 1120) font "assets/Galmuri11.ttf" color "#fff5df"
+     if who and room13_mode:
+@@ -107,6 +113,12 @@
+             xpos 108 xanchor 0.0 ypos (424 if persistent.room13_large_text else 476) padding R13_UI_PADDING["name"]
+             background Solid("#287b98")
+             text who id "who" color "#ffedc7" font r13_ui_font() size r13_read_size(21,26)
++    if room13_mode and r13_profile:
++        frame:
++            id "r13_dialogue_profile"
++            area (112,478 if persistent.room13_large_text else 530,108,120)
++            padding (3,3) background Solid("#ebcd8a")
++            add Transform(r13_art(r13_profile,"avatar_"+dialogue_expression),xysize=(102,114),fit="contain",nearest=True)
+     if has_portrait:
+         frame:
+             id "dialogue_portrait_frame"
+@@ -115,7 +127,7 @@
+             fixed:
+                 add Solid("#30261f")
+                 add Transform(dialogue_speaker + " avatar_"+dialogue_expression,size=(196,204),fit="contain") id "dialogue_portrait"
+-    text "▸" xpos (1190 if room13_mode else 1190) ypos (610 if room13_mode else 682) size 30 color "#e8c75c"
++    text "▸" xpos (1142 if room13_mode else 1190) ypos (610 if room13_mode else 682) size 30 color "#e8c75c"
+     if room13_mode:
+         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+         if place != "마차 안" and not r13_cg_active:
+@@ -523,7 +535,7 @@
+                 text title size 34 color ("#765426" if room13_mode or main_menu else "#ffdc91")
+                 if not saving:
+                     textbutton "최근 자동저장":
+-                        action FileLoad(1,page="auto",confirm=False)
++                        action r13_load_action("auto-1")
+                         sensitive FileLoadable(1,page="auto")
+                         text_size 21
+             for slot in (1,2,3):
+@@ -532,12 +544,18 @@
+                     add FileScreenshot(slot) xsize 192 ysize 108
+                     button:
+                         xsize 620 ysize 108
+-                        action (FileSave(slot,confirm=False) if saving else FileLoad(slot,confirm=False))
++                        action (FileSave(slot,confirm=False) if saving else r13_load_action(r13_slot_name(slot)))
+                         vbox:
+                             spacing 8
+                             text "슬롯 [slot]" color ("#765426" if room13_mode or main_menu else "#ffdc91")
+-                            text FileTime(slot,format="%Y-%m-%d %H:%M",empty="비어 있음") size 22
+-            textbutton "돌아가기" action Return()
++                            text FileTime(slot,format="%Y-%m-%d %H:%M",empty="비어 있음") size 20
++                            text r13_save_caption(renpy.slot_json(r13_slot_name(slot))) size 18 xsize 584
++            hbox:
++                spacing 18
++                textbutton "돌아가기" action Return()
++                if not saving:
++                    textbutton "이전 저장 정리" action Show("r13_save_cleanup",scope="old") text_size 20
++                    textbutton "모든 진행 저장 정리" action Show("r13_save_cleanup",scope="all") text_size 20
+ 
+ screen trial_complete():
+     modal True
+--- a/experiments/renpy-ch1/game/room13_navigation.rpy
++++ b/experiments/renpy-ch1/game/room13_navigation.rpy
+@@ -43,14 +43,14 @@
+     def r13_map_nodes(region):
+         allowed=set(r13_places())|{store.room13["location"]}
+         return [(key,point) for key,point in R13_MAP_NODES[region].items()
+-            if key not in ("passage","greenhouse","altar","guestroom") or key in allowed]
++            if key in allowed]
+ 
+     def r13_map_selection(region,selected):
+         keys=[key for key,point in r13_map_nodes(region)]
+         if selected in keys:return selected
+         current=store.room13["location"]
+         if current in keys:return current
+-        return next((key for key in keys if key in r13_places()),keys[0])
++        return next((key for key in keys if key in r13_places()),keys[0] if keys else current)
+ 
+     class R13VillageMap(renpy.Displayable):
+         def __init__(self,region,**kwargs):
+@@ -109,7 +109,7 @@
+     add r13_background(R13_PLACES[room13["location"]][1])
+     add Solid("#10232ae8")
+     text ("여관 안내도" if region=="inn" else "마을 지도") xpos 32 ypos 24 size 34 color "#f5e7c9"
+-    text "현재 위치 · [R13_PLACES[room13['location']][0]]" xpos 265 ypos 34 size 22 color "#d9c99e"
++    text ("현재 위치 · "+("마을 › 여관 › " if room13["location"] in R13_INN_LOCATIONS else "마을 › ")+R13_MAP_LABELS.get(room13["location"],R13_PLACES[room13["location"]][0])) xpos 265 ypos 34 size 22 color "#d9c99e"
+     hbox:
+         xpos 30 ypos 81 spacing 12
+         if region=="inn" and room13["location"] in R13_INN_LOCATIONS:
+@@ -150,6 +150,10 @@
+             spacing 20
+             text R13_PLACES[selected][0] size 27 color "#f6ddb0" xsize 286
+             add Transform(r13_background(R13_PLACES[selected][1]),size=(286,161),nearest=True)
++            if region=="village" and selected=="inn":
++                textbutton "여관 내부 보기":
++                    style "r13_action_button" xsize 286 ysize 44 text_size 22
++                    action [SetScreenVariable("region","inn"),SetScreenVariable("selected","inn")] sensitive ready
+             if selected==room13["location"]:
+                 text "지금 머무는 곳이다." size 22 color "#dbcda9"
+             elif selected in r13_places():
+--- a/experiments/renpy-ch1/game/systems/room13_first_day_flow.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_first_day_flow.rpy
+@@ -25,8 +25,7 @@
+         if store.room13.get("life_poc") and store.room13.get("day")==1:
+             if store.room13.get("location")=="gate":return [("square","광장으로"),("inn","여관으로")]
+             if store.room13.get("location")=="square":return [("inn","여관으로"),("gate","마을 입구로")]
+-        return [(key,title) for key,title in _r13_firstday_connections()
+-            if not (key=="outside" and store.room13.get("life_poc") and store.room13.get("day")==1)]
++        return _r13_firstday_connections()
+     _r13_firstday_bed=r13_bed_available
+     def r13_bed_available(key):
+         if store.room13.get("life_poc") and store.room13.get("day")==1:
+@@ -93,4 +92,7 @@
+     _r13_firstday_topics=r13_topics
+     def r13_topics(person):
+         return [(key,spec) for key,spec in _r13_firstday_topics(person)
+-            if not (store.room13.get("life_poc") and (key=="karo_road" or (store.room13.get("day")==1 and key not in ("register","granny_letter","home:records"))))]
++            # The old return-carriage question is replaced by life:karo on day 2.
++            # Do not blanket-hide eligible resident questions on the first day.
++            # Base availability still enforces every clue/day/case condition.
++            if not (store.room13.get("life_poc") and key=="karo_road")]
+--- a/experiments/renpy-ch1/game/systems/room13_debate.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_debate.rpy
+@@ -528,7 +528,7 @@
+             for who,stance in r13_debate_seats(session):
+                 frame:
+                     padding (8,3) background Solid(("#7d3b2c","#4e5552","#2f6b55")[stance])
+-                    text R13_NAMES.get(who,who) size r13_read_size(17,20) color "#f3eee2"
++                    text (("▶ " if who==sel["who"] else "")+R13_NAMES.get(who,who)) size r13_read_size(17,20) color ("#ffe4a1" if who==sel["who"] else "#f3eee2") bold (who==sel["who"])
+         text ("%s %d · %s %d · %s %d"%(names[0],tally[0],names[1],tally[1],names[2],tally[2])) xalign 1.0 yalign .5 size r13_read_size(17,20) color "#d4dfd8"
+     # 발언 카드
+     viewport:
+@@ -561,7 +561,11 @@
+         vbox:
+             spacing 14
+             text ("반박한 말 %d / %d"%(done,total)) size r13_read_size(20,24) color "#9fcbd9"
+-            text (R13_NAMES.get(sel["who"],sel["who"])+"의 말") size r13_read_size(22,26) color "#f6d18a"
++            hbox:
++                spacing 12
++                if sel["who"] in CAST:
++                    add Transform(r13_art(sel["who"],"avatar_neutral"),xysize=(68,76),fit="contain",nearest=True)
++                text (R13_NAMES.get(sel["who"],sel["who"])+"의 말") size r13_read_size(22,26) color "#f6d18a" xsize 240 yalign .5
+             if r13_debate_is_pressed(claim,selected) or claim in (room13.get("debate") or {}).get("misses",{}) and (room13.get("debate") or {})["misses"][claim]>=2:
+                 text ("("+sel["hint"]+")") size r13_read_size(20,24) color "#a8cdec" xsize 324
+             else:
+--- a/experiments/renpy-ch1/game/room13_ui_flow.rpy
++++ b/experiments/renpy-ch1/game/room13_ui_flow.rpy
+@@ -0,0 +1,67 @@
++# Display-only helpers. No persistent discovery, story, evidence, or clock writes.
++init 99 python:
++    import re as r13_ui_re
++
++    R13_SEMANTIC_DARK = {"person":"#ebcd8a", "place":"#a9ded4", "evidence":"#ffb3a3"}
++
++    def r13_dialogue_profile(who):
++        packet=getattr(store,"r13_packet",None)
++        person=packet[0] if packet else None
++        # Use the actual named speaker, not an inferred identity or a new crop.
++        return person if who and person in CAST and R13_NAMES.get(person)==who else None
++
++    def r13_known_terms():
++        state=store.room13 or {}
++        terms={}
++        people=r13_met_people()
++        packet=getattr(store,"r13_packet",None)
++        if packet and packet[0] in R13_NAMES:people=people+[packet[0]]
++        for person in people:
++            name=R13_NAMES.get(person,"")
++            if name:terms[name]="person"
++        places={state.get("location")}
++        places.update(e.get("place") for e in state.get("encounters",[]) if isinstance(e,dict))
++        places.update(r.get("place") for r in state.get("records",{}).values())
++        for place_id in places:
++            name=R13_PLACES.get(place_id,("",))[0]
++            if len(name)>=2:terms[name]="place"
++        for key in state.get("evidence",[]):
++            if key in ROOM13["evidence"]:
++                for name in (ROOM13["evidence"][key]["name"],R13_RECORD_SHORT.get(key,"")):
++                    if len(name)>=2:terms[name]="evidence"
++        return terms
++
++    def r13_semantic_text(text):
++        if not isinstance(text,str) or not getattr(store,"room13_mode",False) or getattr(store,"r13_thought_active",False):return text
++        terms=r13_known_terms()
++        if not terms:return text
++        # Longest complete names first. Korean particles are allowed only when
++        # followed by a word boundary; e.g. 톡 never highlights 톡톡/톡방.
++        boundary=r"(?=$|[^가-힣A-Za-z0-9_]|(?:은|는|이|가|을|를|의|에|에서|에게|께|와|과|도|만|으로|로|부터|까지)(?=$|[^가-힣A-Za-z0-9_]))"
++        pattern=r13_ui_re.compile(r"(?<![가-힣A-Za-z0-9_])("+"|".join(r13_ui_re.escape(x) for x in sorted(terms,key=len,reverse=True))+")"+boundary)
++        result=[]
++        protected=[]
++        for part in r13_ui_re.split(r"(\{[^{}]*\}|\[[^\[\]]*\])",text):
++            if part.startswith("{"):
++                tag=part[1:-1].split("=",1)[0]
++                if tag in ("color","b","a"):protected.append(tag)
++                elif tag.startswith("/") and tag[1:] in protected:protected.remove(tag[1:])
++                result.append(part)
++            elif part.startswith("[") or protected:
++                result.append(part)
++            else:
++                result.append(pattern.sub(lambda m:"{color="+R13_SEMANTIC_DARK[terms[m.group(0)]]+"}{b}"+m.group(0)+"{/b}{/color}",part))
++        return "".join(result)
++
++    def r13_toggle_read_skip():
++        store.r13_fast_read=not store.r13_fast_read
++        renpy.stop_skipping()
++        if store.r13_fast_read and getattr(store,"r13_read_id",None) in persistent.room13_read:
++            renpy.config.skipping="slow"
++        renpy.restart_interaction()
++
++    def r13_stop_skip_at_choices():
++        if not getattr(store,"room13_mode",False):return
++        if any(renpy.get_screen(name) for name in ("choice","r13_topics","r13_entry_topics","r13_entry_karo_topics","r13_resident_approach","r13_book","r13_debate_board","r13_confirm")):
++            renpy.stop_skipping()
++    config.interact_callbacks.append(r13_stop_skip_at_choices)
+--- a/experiments/renpy-ch1/game/room13_save_ui.rpy
++++ b/experiments/renpy-ch1/game/room13_save_ui.rpy
+@@ -0,0 +1,100 @@
++# Saves are inspected through JSON metadata; never unpickle an unknown save just
++# to decide whether the title's Continue button should open it.
++init 100 python:
++    R13_SAVE_CONTRACT=1
++    R13_SAVE_SLOTS=r"^(?:[0-9]+|auto|quick)-[0-9]+$"
++
++    def r13_save_metadata(data):
++        state=getattr(store,"room13",None) or {}
++        if getattr(store,"room13_mode",False):
++            data["r13_contract"]=R13_SAVE_CONTRACT
++            data["r13_campaign"]=state.get("campaign_id")
++            data["r13_story"]=state.get("story_revision")
++            data["r13_visual"]=state.get("visual_revision")
++            data["r13_day"]=state.get("day")
++    config.save_json_callbacks.append(r13_save_metadata)
++
++    def r13_save_status(data):
++        if not data:return "empty"
++        if data.get("r13_contract") is None:return "unknown"
++        if (data.get("r13_contract")!=R13_SAVE_CONTRACT or data.get("r13_campaign")!="room13_v1"
++            or data.get("r13_story")!=ROOM13["story_revision"] or data.get("r13_visual")!="pixel-b-front-v3"):
++            return "incompatible"
++        return "compatible"
++
++    def r13_save_slots():
++        return renpy.list_saved_games(regexp=R13_SAVE_SLOTS,fast=True)
++
++    def r13_continue_slot():
++        candidates=[((renpy.slot_json(slot) or {}).get("_ctime",0),slot) for slot in r13_save_slots()
++            if r13_save_status(renpy.slot_json(slot))=="compatible"]
++        return max(candidates)[1] if candidates else None
++
++    def r13_save_caption(data):
++        if not data:return "비어 있음"
++        status=r13_save_status(data)
++        return "%s · %s"%(data.get("_version") or "버전 미상",
++            {"compatible":"현재 버전에서 이어갈 수 있음","unknown":"호환 확인 전 · 새 게임 권장","incompatible":"현재 버전과 호환되지 않음"}[status])
++
++    def r13_slot_name(slot,page=None):
++        return (page or persistent._file_page or "1")+"-"+str(slot)
++
++    def r13_load_action(slot):
++        status=r13_save_status(renpy.slot_json(slot))
++        if status=="compatible":return FileLoad(slot,slot=True,confirm=False)
++        if status=="empty":return NullAction()
++        return Show("r13_save_review",slot=slot,status=status)
++
++    def r13_cleanup_slots(scope):
++        return tuple(slot for slot in r13_save_slots() if scope=="all" or r13_save_status(renpy.slot_json(slot))!="compatible")
++
++    def r13_delete_confirmed_saves(slots,fingerprints):
++        # Only the exact snapshot displayed by the confirmation is removed.
++        # Persistent preferences, read history and discoveries are never erased.
++        allowed=set(r13_save_slots())
++        for slot in slots:
++            if slot in allowed and (renpy.slot_json(slot) or {}).get("_ctime")==fingerprints.get(slot):renpy.unlink_save(slot)
++        renpy.restart_interaction()
++
++screen r13_save_review(slot,status):
++    modal True
++    zorder 120
++    add Solid("#07151ddf")
++    frame:
++        xalign .5 yalign .5 xsize 920 padding (32,28)
++        background R13ActionPanel()
++        vbox:
++            spacing 20
++            text "이전 저장 확인" size 30 color "#ebcd8a"
++            text r13_save_caption(renpy.slot_json(slot)) size 24 color "#fff4df" xsize 856
++            text ("이 저장은 진행 규칙이나 화면 버전이 다릅니다. 새 게임으로 시작해 주세요." if status=="incompatible" else "이 저장에는 호환 정보가 없습니다. 이전 화면이 나타날 수 있어 이어하기에서 제외했습니다. 현재 화면으로 시작하려면 처음부터 시작해 주세요.") size 25 color "#fff4df" xsize 856
++            text "저장은 삭제하지 않았습니다." size 22 color "#ced9d4"
++            hbox:
++                spacing 16
++                textbutton "돌아가기" style "r13_action_button" action Hide("r13_save_review")
++                if status=="unknown":
++                    textbutton "확인하고 구 저장 열기" style "r13_action_button" action [Hide("r13_save_review"),FileLoad(slot,slot=True,confirm=False)]
++    key "game_menu" action Hide("r13_save_review")
++
++screen r13_save_cleanup(scope="old"):
++    modal True
++    zorder 120
++    default slots=r13_cleanup_slots(scope)
++    default fingerprints={slot:(renpy.slot_json(slot) or {}).get("_ctime") for slot in slots}
++    $ manual=sum(not slot.startswith(("auto-","quick-")) for slot in slots)
++    $ autos=sum(slot.startswith("auto-") for slot in slots)
++    $ quick=sum(slot.startswith("quick-") for slot in slots)
++    add Solid("#07151ddf")
++    frame:
++        xalign .5 yalign .5 xsize 920 padding (32,28)
++        background R13ActionPanel()
++        vbox:
++            spacing 20
++            text ("모든 진행 저장 정리" if scope=="all" else "이전·미확인 저장 정리") size 30 color "#ebcd8a"
++            text ("삭제 대상: 수동 %d개 · 자동 %d개 · 빠른 저장 %d개"%(manual,autos,quick)) size 25 color "#fff4df"
++            text "선택한 진행 저장은 되돌릴 수 없습니다. 소리·큰 글씨 설정, 읽은 대사, 이전 여정의 발견과 결말 기록은 유지합니다." size 25 color "#fff4df" xsize 856
++            hbox:
++                spacing 20
++                textbutton "취소" style "r13_action_button" action Hide("r13_save_cleanup")
++                textbutton "위 진행 저장 삭제" style "r13_action_button" sensitive bool(slots) action [Function(r13_delete_confirmed_saves,slots,fingerprints),Hide("r13_save_cleanup")]
++    key "game_menu" action Hide("r13_save_cleanup")
+--- a/experiments/renpy-ch1/dev/test_ui_flow0171.py
++++ b/experiments/renpy-ch1/dev/test_ui_flow0171.py
+@@ -0,0 +1,39 @@
++"""Display-only knowledge markup must never expose unowned evidence or identities."""
++import re,textwrap,types,unittest
++from pathlib import Path
++class UIFlowTests(unittest.TestCase):
++ def setUp(self):
++  self.state=dict(location='inn',evidence=['E01'],records={},encounters=[])
++  self.store=types.SimpleNamespace(room13=self.state,room13_mode=True,r13_thought_active=False,r13_packet=('karo',''),r13_fast_read=False,r13_read_id='new')
++  self.persistent=types.SimpleNamespace(room13_read=['read'])
++  renpy=types.SimpleNamespace(stop_skipping=lambda:None,restart_interaction=lambda:None,config=types.SimpleNamespace(skipping=None))
++  self.env=dict(store=self.store,CAST={'karo':{}},R13_NAMES={'karo':'까로','bami':'밤이'},R13_PLACES={'inn':('여관',),'secret':('숨은 통로',)},ROOM13={'evidence':{'E01':{'name':'초대 편지'},'E99':{'name':'비밀 문서'}}},R13_RECORD_SHORT={'E01':'초대 편지'},r13_met_people=lambda:[],persistent=self.persistent,renpy=renpy)
++  source=(Path(__file__).resolve().parents[1]/'game/room13_ui_flow.rpy').read_text().split('init 99 python:\n')[1].split('    config.interact_callbacks')[0]
++  exec(textwrap.dedent(source),self.env)
++ def test_current_knowledge_only_and_particles(self):
++  text='까로에게 초대 편지를 보여주자. 여관에서 밤이와 비밀 문서를 찾자.'
++  out=self.env['r13_semantic_text'](text)
++  self.assertEqual(out.count('{b}'),3)
++  self.assertIn('밤이와 비밀 문서',out)
++  self.assertEqual(re.sub(r'\{[^}]*\}','',out),text)
++ def test_no_partial_names_or_nested_tags(self):
++  text='까로네 여관방 {color=#fff}까로{/color} [까로] 초대 편지함'
++  self.assertEqual(self.env['r13_semantic_text'](text),text)
++ def test_single_syllable_person_has_word_boundary(self):
++  self.env['R13_NAMES']['karo']='톡'
++  out=self.env['r13_semantic_text']('톡에게 말해. 톡톡 톡방')
++  self.assertEqual(out.count('{b}'),1)
++  self.assertIn('톡톡 톡방',out)
++ def test_existing_markup_is_idempotent(self):
++  fn=self.env['r13_semantic_text'];self.assertEqual(fn(fn('까로와 여관')),fn('까로와 여관'))
++ def test_thought_blue_is_preserved(self):
++  self.store.r13_thought_active=True;self.assertEqual(self.env['r13_semantic_text']('까로와 여관'),'까로와 여관')
++ def test_skip_only_read_key(self):
++  self.env['r13_toggle_read_skip']();self.assertIsNone(self.env['renpy'].config.skipping)
++  self.store.r13_read_id='read';self.store.r13_fast_read=False;self.env['r13_toggle_read_skip']();self.assertEqual(self.env['renpy'].config.skipping,'slow')
++ def test_palette_contrast(self):
++  def lum(h):
++   rgb=[int(h[i:i+2],16)/255 for i in (1,3,5)]
++   return sum(w*(x/12.92 if x<=.04045 else ((x+.055)/1.055)**2.4) for w,x in zip((.2126,.7152,.0722),rgb))
++  for color in self.env['R13_SEMANTIC_DARK'].values():self.assertGreater((lum(color)+.05)/(lum('#142237')+.05),7)
++if __name__=='__main__':unittest.main()
+--- a/experiments/renpy-ch1/dev/test_save_ui0171.py
++++ b/experiments/renpy-ch1/dev/test_save_ui0171.py
+@@ -0,0 +1,29 @@
++import re,textwrap,types,unittest
++from pathlib import Path
++class SaveUITests(unittest.TestCase):
++ def setUp(self):
++  self.files={};self.deleted=[]
++  self.persistent=types.SimpleNamespace(_file_page='1',room13_read=['kept'],room13_knowledge=['E01'],room13_endings=['A'],room13_large_text=True)
++  self.env=dict(store=types.SimpleNamespace(room13_mode=True,room13={'campaign_id':'room13_v1','story_revision':'current','visual_revision':'pixel-b-front-v3','day':1}),ROOM13={'story_revision':'current'},persistent=self.persistent,config=types.SimpleNamespace(save_json_callbacks=[]))
++  self.env['renpy']=types.SimpleNamespace(list_saved_games=lambda regexp,fast:[s for s in self.files if re.match(regexp,s)],slot_json=lambda s:self.files.get(s),unlink_save=self.deleted.append,restart_interaction=lambda:None)
++  source=(Path(__file__).resolve().parents[1]/'game/room13_save_ui.rpy').read_text().split('init 100 python:\n')[1].split('\nscreen ')[0];exec(textwrap.dedent(source),self.env)
++ def metadata(self,ctime=10):
++  m={'_version':'0.17.1-dev','_ctime':ctime};self.env['r13_save_metadata'](m);return m
++ def test_continue_selects_only_compatible_contract(self):
++  self.files={'1-1':self.metadata(10),'auto-1':{'_version':'0.15.8-dev','_ctime':999},'2-2':self.metadata(20),'_reload-1':self.metadata(9999)}
++  self.assertEqual(self.env['r13_continue_slot'](),'2-2')
++ def test_unknown_and_incompatible_are_distinct(self):
++  self.assertEqual(self.env['r13_save_status']({'_version':'0.17.0-dev'}),'unknown')
++  m=self.metadata();m['r13_story']='previous';self.assertEqual(self.env['r13_save_status'](m),'incompatible')
++  self.files={'1-1':m};self.assertIsNone(self.env['r13_continue_slot']())
++ def test_no_saves_is_safe(self):self.assertIsNone(self.env['r13_continue_slot']())
++ def test_cleanup_excludes_persistent_and_internal_slots(self):
++  self.files={'1-1':self.metadata(),'auto-1':{'_version':'0.15'},'quick-1':{'_version':'0.16'},'_reload-1':{'_version':'0.14'},'persistent':{}}
++  before=vars(self.persistent).copy();old=self.env['r13_cleanup_slots']('old');self.assertEqual(set(old),{'auto-1','quick-1'})
++  self.env['r13_delete_confirmed_saves'](old,{slot:self.files[slot].get('_ctime') for slot in old});self.assertEqual(set(self.deleted),set(old));self.assertEqual(vars(self.persistent),before)
++  self.assertNotIn('_reload-1',self.env['r13_cleanup_slots']('all'))
++ def test_changed_slot_is_not_deleted(self):
++  self.files={'1-1':self.metadata(20)};self.env['r13_delete_confirmed_saves'](('1-1',),{'1-1':10});self.assertEqual(self.deleted,[])
++ def test_metadata_does_not_change_progress(self):
++  before=self.env['store'].room13.copy();self.metadata();self.assertEqual(self.env['store'].room13,before)
++if __name__=='__main__':unittest.main()
+--- a/experiments/renpy-ch1/dev/test_firstday_questions0171.py
++++ b/experiments/renpy-ch1/dev/test_firstday_questions0171.py
+@@ -0,0 +1,14 @@
++import textwrap,types,unittest
++from pathlib import Path
++class FirstdayQuestions(unittest.TestCase):
++ def test_only_replaced_road_question_is_filtered(self):
++  source=(Path(__file__).resolve().parents[1]/'game/systems/room13_first_day_flow.rpy').read_text().split('    _r13_firstday_topics=r13_topics',1)[1]
++  rows=[(k,{'npc':'karo'}) for k in ('life:karo:work','unlocked:followup','karo_road')]
++  for state in ({'day':1,'life_poc':True,'read_topics':[]},{'day':1,'life_poc':True,'read_topics':['life:karo:work']},{'day':2,'life_poc':True,'read_topics':['life:karo:work']}):
++   ns={'store':types.SimpleNamespace(room13=state),'_r13_firstday_topics':lambda person:rows}
++   exec(textwrap.dedent(source),ns)
++   self.assertEqual([k for k,t in ns['r13_topics']('karo')],['life:karo:work','unlocked:followup'])
++ def test_old_non_poc_saves_keep_original_questions(self):
++  source=(Path(__file__).resolve().parents[1]/'game/systems/room13_first_day_flow.rpy').read_text().split('    _r13_firstday_topics=r13_topics',1)[1]
++  ns={'store':types.SimpleNamespace(room13={'day':1}),'_r13_firstday_topics':lambda person:[('karo_road',{})]};exec(textwrap.dedent(source),ns);self.assertEqual(ns['r13_topics']('karo'),[('karo_road',{})])
++if __name__=='__main__':unittest.main()
+--- a/experiments/renpy-ch1/dev/qa_ui_flow_current.py
++++ b/experiments/renpy-ch1/dev/qa_ui_flow_current.py
+@@ -0,0 +1,60 @@
++"""Natural playback/investigation path on the exact release archive."""
++import asyncio,json,shutil,urllib.request
++from pathlib import Path
++from playwright.async_api import async_playwright
++from pixel_qa_ui0156 import UIQA
++from pixel_qa_flow0150 import FLOW_PROBE
++OUT=Path('/workspace/room13-review/after');OUT.mkdir(exist_ok=True)
++URL='http://127.0.0.1:8094/room13-dev/'
++class ReleaseQA(UIQA):
++ async def state(self):
++  probe=FLOW_PROBE.replace('names=[',"names=['r13_records','r13_book','r13_backlog','r13_work_board',")
++  st=await self.py('ns={};exec('+ascii(probe)+',ns);result=ns["result"]')
++  assert '_exception' not in st['screens'],st
++  return st
++async def main():
++ report={'archive_sha256':json.load(urllib.request.urlopen(URL+'game-transport.json'))['archive_sha256'],'checks':[]}
++ async with async_playwright() as p:
++  b=await p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader'])
++  context=await b.new_context(viewport={'width':1280,'height':720},has_touch=True,service_workers='allow')
++  pg=await context.new_page();q=ReleaseQA(pg,OUT)
++  try:
++   await pg.goto(URL);await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu')
++   await q.py('import renpy;s=renpy.store;s.preferences.text_cps=0;s.preferences.afm_time=5;s.preferences.afm_enable=False;s.preferences.afm_after_click=True;result=True')
++   await q.press('처음부터');await q.wait('say');await q.shot('01-carriage-playback')
++   before=await q.line();await q.press('자동');await asyncio.sleep(3.5);after=await q.line()
++   assert after['index']>before['index'],(before['index'],after['index'])
++   await q.press('백로그');await q.wait('r13_backlog');held=await q.line();await q.shot('02-backlog')
++   assert not await q.py('import renpy;result=renpy.store.r13_auto_can_advance()')
++   await asyncio.sleep(3.5);assert (await q.line())['index']==held['index']
++   await q.press('대화로 돌아가기');await q.wait('say')
++   if await q.py('import renpy;result=renpy.store.preferences.afm_enable'):await q.press('자동')
++   report['checks'].append('Real auto button advances dialogue; backlog pauses auto and preserves current line')
++   await q.advance();await q.wait('r13_hub');assert (await q.room())['location']=='gate'
++   assert await q.py('import renpy;result=renpy.store.r13_places()')==['gate','square','inn']
++   await q.travel('광장');assert (await q.room())['location']=='square'
++   await q.travel('여관 접수대');assert (await q.room())['location']=='inn'
++   assert 'lodging' not in (await q.room())['flags']
++   await q.press('할머니');await q.advance();await q.wait('r13_hub');assert (await q.room())['location']=='inn'
++   assert 'lodging' in (await q.room())['flags']
++   await q.travel('2층 복도');await q.travel('13호실');assert (await q.room())['location']=='room13'
++   report['checks'].append('Day 1 stays at gate; manual square/inn travel; click granny to check in; manual hallway/room travel; other destinations locked')
++   await q.input(195,400);await q.advance()
++   if 'r13_object_context' in (await q.state())['screens']:await q.press('그만 살펴본다')
++   await q.wait('r13_hub');await q.press('기록');await q.wait('r13_records');await q.shot('03-evidence-desktop');await q.press('닫기')
++   await pg.set_viewport_size({'width':844,'height':390});q.touch=True
++   await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.exports.restart_interaction();result=True')
++   await q.press('기록');await q.wait('r13_records');await q.shot('04-evidence-mobile-large');await q.press('닫기')
++   await pg.set_viewport_size({'width':1280,'height':720});q.touch=False
++   await q.save(1);saved=await q.room();await q.load(1);assert await q.room()==saved
++   await q.press('옵션');await q.wait('pause_menu');await q.press('처음 화면');await q.wait('main_menu')
++   await pg.reload();await q.wait('main_menu');await q.press('이어하기');await q.wait('r13_hub');assert await q.room()==saved
++   report['checks'].append('Service workers enabled: fresh boot, real save/load, reload and Continue')
++   report['status']='passed'
++  except Exception as e:
++   report.update(status='failed',error=repr(e));await pg.screenshot(path=str(OUT/'failure.png'))
++   try:(OUT/'failure-state.json').write_text(json.dumps(await q.state(),ensure_ascii=False,indent=2))
++   except:pass
++  (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True);await b.close()
++  if report['status']=='failed':raise SystemExit(1)
++asyncio.run(main())
+--- a/experiments/renpy-ch1/dev/qa_ui0171.py
++++ b/experiments/renpy-ch1/dev/qa_ui0171.py
+@@ -0,0 +1,99 @@
++"""Fresh browser natural interactions, then explicitly injected meeting/save fixtures."""
++import asyncio,json,shutil,sys
++from pathlib import Path
++from playwright.async_api import async_playwright
++from pixel_qa_ui0156 import UIQA
++from pixel_qa_flow0150 import FLOW_PROBE
++OUT=Path('/workspace/room13-review/ui0171');OUT.mkdir(exist_ok=True)
++URL='http://127.0.0.1:8094/room13-dev/'
++class Q(UIQA):
++ async def state(self):
++  probe=FLOW_PROBE.replace('names=[',"names=['r13_records','r13_backlog','r13_debate_board','r13_save_cleanup','r13_save_review',")
++  s=await self.py('ns={};exec('+ascii(probe)+',ns);result=ns["result"]');assert '_exception' not in s['screens'],s;return s
++ async def advance(self):
++  for _ in range(220):
++   s=await self.state()
++   if 'r13_arrival_card' in s['screens']:await self.input(800,400);continue
++   if 'r13_cinematic_view' in s['screens']:await self.press('계속');continue
++   if any(k in s['screens'] for k in ('r13_debate_board','choice','r13_hub','r13_book','r13_confirm','r13_topics','r13_entry_topics','r13_entry_karo_topics','r13_object_context','r13_map')):return s
++   if 'say' in s['screens']:await self.input(810,610)
++   else:await asyncio.sleep(.15)
++  raise AssertionError(s)
++async def main():
++ report={'checks':[],'fixture_note':'Meeting and legacy-save cases below are injected; natural route is separate.'}
++ async with async_playwright() as p:
++  b=await p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader'])
++  c=await b.new_context(viewport={'width':1280,'height':720},has_touch=True,service_workers='block');pg=await c.new_page();q=Q(pg,OUT)
++  try:
++   await pg.goto(URL);await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu')
++   assert await q.py('import renpy;result=renpy.store.r13_continue_slot()') is None
++   await q.shot('01-title-no-save');await q.press('설정');await q.wait('pause_menu');await q.shot('02-options');await q.press('돌아가기');await q.wait('main_menu')
++   await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.wait('say')
++   first=await q.line();await q.press('읽은 대사만');await asyncio.sleep(1);assert (await q.line())['index']==first['index']
++   await q.press('읽은 대사만');await q.shot('03-dialogue-profile');await q.advance();await q.wait('r13_hub');await q.shot('04-investigation')
++   await q.value(('person','karo'));await q.advance();await q.wait('r13_topics');await q.shot('05-resident-topics')
++   keys=await q.py('import renpy;result=[k for k,t in renpy.store.r13_topics("karo")]');assert 'life:karo:work' in keys,keys
++   await q.value('life:karo:work');await q.advance();await q.wait('r13_topics')
++   assert await q.py('import renpy;s=renpy.store;result=s.r13_calendar_topic_seen("life:karo:work",s.ROOM13["topics"]["life:karo:work"])')
++   await q.shot('05b-read-question-retained');repeated=await q.room();await q.value('life:karo:work');await q.advance();await q.wait('r13_topics')
++   for field in ('day','period','evidence','flags','propositions'):assert (await q.room())[field]==repeated[field]
++   before=await q.room();report['checks'].append('Natural first-day Karo work question survives the guided-flow filter and remains checked/clickable after reading; replay spends no time or evidence')
++   await q.press('보여주기');await q.wait('r13_book');await q.shot('06-presentation-unselected')
++   # Click the disabled submit hit area; it must remain in the book.
++   await q.input(1000,634);await q.wait('r13_book')
++   await q.press('초대 편지');await q.shot('07-presentation-selected')
++   await q.press('그만두기');await q.wait('r13_topics');after=await q.room()
++   assert {k:v for k,v in before.items() if k!='record_ui'}=={k:v for k,v in after.items() if k!='record_ui'}
++   await q.press('보여주기');await q.wait('r13_book');await q.press('초대 편지');await q.press('까로에게 보여주기');await q.advance()
++   if 'r13_confirm' in (await q.state())['screens']:await q.press('보여준다');await q.advance()
++   await q.wait('r13_topics');await q.press('돌아가기');await q.advance();await q.wait('r13_hub')
++   report['checks'].append('Natural: no-save title, options, unread skip stops, profile dialogue, investigation, resident topic, explicit selection, disabled submit, cancel, actual presentation')
++   await q.save(1);saved=await q.room();await q.load(1);assert await q.room()==saved
++   meta=await q.py('import renpy;result=renpy.loadsave.slot_json("1-1")');report['save_metadata']=meta;assert meta['r13_contract']==1
++   await q.press('옵션');await q.wait('pause_menu');await q.press('처음 화면');await q.wait('main_menu');await q.shot('08-title-compatible-save');await q.press('이어하기');await q.wait('r13_hub');assert await q.room()==saved
++   report['checks'].append('Natural: save/load/Continue retains exact state; save metadata identifies campaign/story/visual contract')
++   # Explicit render fixture: actual say screen and production text tokenizer.
++   await q.py("""import renpy
++s=renpy.store
++s.r13_packet=("karo", "")
++line="까로에게 초대 편지를 보여주자. " + s.R13_PLACES[s.room13["location"]][0] + "에서 살펴보자."
++def show_line(renpy=renpy,line=line):
++ renpy.exports.invoke_in_new_context(renpy.exports.say,"까로",line)
++w=renpy.exports.get_widget("r13_hub","r13_options_gear")
++w.action=s.Function(show_line)
++w.clicked=w.action
++result={"line":line,"markup":s.r13_semantic_text(line)}""")
++   await q.input(1220,50);await q.wait('say');await q.shot('08b-semantic-render-fixture');await q.input(800,610);await q.wait('r13_hub')
++   report['checks'].append('Explicit display fixture: production say screen renders known person/place/owned evidence with gold/teal/coral bold markup')
++   # Inject owned evidence and a real call action solely in this fresh test browser.
++   await q.py('import renpy;s=renpy.store;s.r13_edit(day=7,period=1,case_state="occurred",location="dining");s.r13_grant(["E06","E07","E09"],"QA fixture");renpy.exports.hide_screen("r13_evidence_found");result=True')
++   await q.py("""import renpy
++s=renpy.store
++def enter(renpy=renpy):
++ renpy.exports.call_in_new_context("r13_debate_run","C2")
++w=renpy.exports.get_widget("r13_hub","r13_options_gear")
++w.action=s.Function(enter)
++w.clicked=w.action
++result=True""")
++   await q.input(1220,50);await q.wait('r13_debate_board');await q.shot('09-meeting-speaker')
++   await q.press('자료로 반박');await q.wait('r13_book');await q.press('그만두기');await q.wait('r13_debate_board')
++   assert await q.py('import renpy;result=renpy.store.r13_debate_selected')=='s1'
++   await pg.set_viewport_size({'width':844,'height':390});q.touch=True
++   await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.exports.restart_interaction();result=True');await q.shot('10-meeting-mobile-large')
++   await pg.set_viewport_size({'width':1280,'height':720});q.touch=False
++   for st,key,tab in [('s1','E06','들은 말'),('s2','E07','증거'),('s3','E09','증거')]:
++    await q.value(('select',st));await q.wait('r13_debate_board');await q.press('자료로 반박');await q.wait('r13_book')
++    category=await q.py('import renpy;result=renpy.store.r13_record_category('+repr(key)+')');await q.press('들은 말' if category=='testimony' else '증거')
++    await q.press(await q.py('import renpy;result=renpy.store.R13_RECORD_SHORT.get('+repr(key)+',renpy.store.ROOM13["evidence"]['+repr(key)+']["name"])'))
++    await q.press('이 주장에 근거로');await q.advance();await q.wait('r13_debate_board')
++   assert await q.py('import renpy;result=renpy.store.r13_debate_ready("C2")')
++   await q.press('결론을 말한다');await q.wait('choice');await q.press('아이는 팔을');await q.advance()
++   assert 'C2' in (await q.room())['propositions'];report['checks'].append('Injected meeting: C2 actual UI cancel returns same statement, three evidence rebuttals and correct conclusion still prove C2; large-text mobile speaker view')
++   report['status']='passed'
++  except Exception as e:
++   report.update(status='failed',error=repr(e));await pg.screenshot(path=str(OUT/'failure.png'))
++   try:(OUT/'failure-state.json').write_text(json.dumps(await q.state(),ensure_ascii=False,indent=2))
++   except:pass
++  (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True);await b.close()
++  if report['status']=='failed':raise SystemExit(1)
++asyncio.run(main())
+--- a/experiments/renpy-ch1/dev/qa_save0171.py
++++ b/experiments/renpy-ch1/dev/qa_save0171.py
+@@ -0,0 +1,38 @@
++"""Save review/deletion UI tested on generated slots in a disposable browser only."""
++import asyncio,json,shutil
++from pathlib import Path
++from playwright.async_api import async_playwright
++from pixel_qa_ui0156 import UIQA
++from pixel_qa_flow0150 import FLOW_PROBE
++OUT=Path('/workspace/room13-review/save0171');OUT.mkdir(exist_ok=True)
++class Q(UIQA):
++ async def state(self):
++  probe=FLOW_PROBE.replace('names=[',"names=['r13_save_cleanup','r13_save_review',")
++  s=await self.py('ns={};exec('+ascii(probe)+',ns);result=ns["result"]');assert '_exception' not in s['screens'],s;return s
++async def main():
++ report={'kind':'Synthetic save metadata fixtures in a fresh disposable browser; no user browser data accessed','checks':[]}
++ async with async_playwright() as p:
++  b=await p.chromium.launch(executable_path=shutil.which('chromium'),args=['--no-sandbox','--enable-unsafe-swiftshader']);c=await b.new_context(viewport={'width':1280,'height':720},has_touch=True,service_workers='block');pg=await c.new_page();q=Q(pg,OUT)
++  try:
++   await pg.goto('http://127.0.0.1:8094/room13-dev/');await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.advance();await q.wait('r13_hub')
++   await q.save(1)
++   await q.py('import renpy;s=renpy.store;callbacks=list(s.config.save_json_callbacks);s.config.save_json_callbacks=[];renpy.exports.save("2-1");renpy.exports.save("auto-1");renpy.exports.save("quick-1");s.config.save_json_callbacks=callbacks;result=True')
++   kept=await q.py('import renpy;s=renpy.store;result={"read":list(s.persistent.room13_read),"knowledge":list(s.persistent.room13_knowledge),"endings":list(s.persistent.room13_endings),"large":s.persistent.room13_large_text}')
++   assert await q.py('import renpy;result=renpy.store.r13_continue_slot()')=='1-1'
++   await q.press('옵션');await q.wait('pause_menu');await q.press('불러오기');await q.wait('load');await q.shot('01-versioned-load')
++   await q.press('최근 자동저장');await q.wait('r13_save_review');await q.shot('02-old-save-warning');await q.press('돌아가기');await q.wait('load')
++   await q.press('이전 저장 정리');await q.wait('r13_save_cleanup');await q.shot('03-exact-delete-scope')
++   before=await q.py('import renpy;result=renpy.store.r13_save_slots()');await q.press('취소');assert before==await q.py('import renpy;result=renpy.store.r13_save_slots()')
++   await q.press('이전 저장 정리');await q.wait('r13_save_cleanup');await q.press('위 진행 저장 삭제');await q.wait('load')
++   after=await q.py('import renpy;result=renpy.store.r13_save_slots()');assert '1-1' in after and all(s not in after for s in ('2-1','auto-1','quick-1')),after
++   assert kept==await q.py('import renpy;s=renpy.store;result={"read":list(s.persistent.room13_read),"knowledge":list(s.persistent.room13_knowledge),"endings":list(s.persistent.room13_endings),"large":s.persistent.room13_large_text}')
++   report['checks'].append('Unknown manual/auto/quick saves excluded from Continue; old load warning; cancellation deletes nothing; explicit old-save deletion preserves compatible slot and all persistent records/settings')
++   await pg.set_viewport_size({'width':844,'height':390});q.touch=True;await q.press('모든 진행 저장 정리');await q.wait('r13_save_cleanup');await q.shot('04-mobile-cleanup');await q.press('취소');assert '1-1' in await q.py('import renpy;result=renpy.store.r13_save_slots()')
++   report['status']='passed'
++  except Exception as e:
++   report.update(status='failed',error=repr(e));await pg.screenshot(path=str(OUT/'failure.png'))
++   try:(OUT/'failure-state.json').write_text(json.dumps(await q.state(),ensure_ascii=False,indent=2))
++   except:pass
++  (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True);await b.close()
++  if report['status']=='failed':raise SystemExit(1)
++asyncio.run(main())
+--- a/experiments/renpy-ch1/docs/RELEASE_0172.md
++++ b/experiments/renpy-ch1/docs/RELEASE_0172.md
+@@ -0,0 +1,45 @@
++# 다람탐정 UI 0.17.2-dev 검토
++
++실행 URL: https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/
++루트 Pages는 구 HTML 프로토타입이다. 최초 조사 기준은 `8ac0342e50e5c77026a28e3ddae76e9d49c5dc25`, 최종 통합 기준은 Claude의 `dc15ed23b2901c412c87f3594dafa90f86980c4c`이다. 해당 main의 소스 ZIP을 기준으로 텍스트를 3-way 통합했으며 Claude의 회의 실패·증거·날짜 수정은 유지했다. 자료 브랜치 전체를 병합하지 않았다.
++
++## 적용
++
++- 실제 화자의 기존 프로필을 대사 왼쪽에 배치, 본문 폭·행간과 큰 글씨 기록창 개선.
++- 대사 안의 알려진 인물은 금색 `#ebcd8a`, 알려진 장소는 청록색 `#a9ded4`, 소지 증거는 산호색 `#ffb3a3`와 굵기. 가장 긴 명칭부터 단어 경계·한국어 조사를 확인하며 기존 색/굵기/링크·변수 태그와 독백 색을 보존한다. 미발견 증거와 미접촉 인물은 강조하지 않는다. 표시만 변환하며 기록 원문과 스토리 상태를 쓰지 않는다.
++- 1일차 안내 필터가 주민의 일반 질문까지 가리던 문제 수정. 질문의 본래 날짜·증거 조건은 유지한다. 읽은 질문은 체크 후 다시 클릭할 수 있다.
++- 증거창은 소유한 자료를 직접 선택한 뒤 제시. 취소·복귀와 선택 전 비활성 상태를 구분한다.
++- 읽은 대사만 건너뛰기, 선택·제시·회의에서 정지. 기존 자동 진행·백로그·타이핑 음원 채널과 문장부호 CPS 시스템을 재사용한다.
++- 상시 인물 흔들림·꼬리 변형 제거. 정지 그림과 표정 교체를 사용하고 교체 시 불투명도가 다시 0으로 떨어지지 않는다. 새 동작 프레임은 만들지 않았다.
++- 지도는 현재 이동 가능한 장소만 표시하고 마을→여관 내부 보기·위치 경로를 보강. 이동·시간 규칙은 기존 그대로다. 하단 버튼 대비·크기를 개선했다.
++- 회의 발언자의 기존 프로필·선택 표시 추가. 회의 함수·라벨 전체는 최신 main과 동일하다. C2/C4 입증을 여론 표결로 바꾸지 않았다.
++- 메인 이어하기/처음부터/불러오기/설정 정리. 호환 저장만 자동 이어하기; 정보 없는 구 저장은 수동 경고 후 열기, 명백히 다른 캠페인/스토리/그림 계약은 차단한다. 저장 정보에 계약 버전·캠페인·스토리·그림 버전 추가.
++- 구 저장 또는 진행 저장 정리는 범위/개수 확인과 취소를 제공하며 사용자가 확인해야 실행한다. 설정·읽은 대사·도감·엔딩 등 persistent는 보존한다. 확인 이후 새로 갱신된 슬롯은 삭제하지 않는다. 사용자 실제 저장은 접근하지 않았다.
++
++기존 `ROOM13_UI_RULES.md`의 아바타 금지/보통 굵기보다 이번 사용자의 왼쪽 프로필·색상+굵기 지시를 우선했다. 기본 Ren’Py screen, text tags, ATL, 저장 메타데이터·확인창을 사용하며 새 외부 라이브러리는 추가하지 않았다.
++
++## 검증 구분
++
++동일 배포 파일을 로컬 HTTP 서버에서 Chromium/실제 Ren’Py WebAssembly로 실행했다. 자연 진행과 상태 주입 검증을 구분한다.
++
++- 자연 진행: 마차 대화, 오토 실제 진행, 백로그에서 일시정지, 미독 스킵 정지, 입구 주민 질문/다시 읽기, 자료 선택·취소·제시, 광장·여관·복도·객실 이동, 조사·메모 수집, 수동 저장/불러오기, 페이지 재접속·이어하기.
++- 모바일은 실제 기기 대신 Chromium 터치/작은 viewport+큰 글씨로 기록·회의 화면 검증.
++- 회의는 격리 브라우저에 7일차와 이미 소지한 E06/E07/E09를 주입한 뒤 실제 화면에서 취소·3개 반박·결론으로 C2 입증. 전체 14일 자연 완주가 아니다.
++- 구 저장 정리는 격리 브라우저의 테스트 저장만 사용. 취소, 구 저장만 삭제, 호환 저장 유지, persistent 유지 검증.
++- 사건 발생/예방 분기는 기존 규칙 자동 검사로 검증했다. 두 분기 전체를 브라우저로 완주한 것은 아니다.
++- SDK 8.5.3 compile/lint 수행. 웹에서 별도로 내려받는 기존 progressive PNG 자산을 lint stage에서 찾지 못하는 기존 경고는 남는다. 구문 오류는 없다.
++- 미디어 309개(이미지·음원) 바이트 동일, 게임 JSON 34개 동일, 회의 함수/라벨 동일. `preservation0172.json` 참조.
++- 색상은 어두운 대사창 기준 대비 7:1 이상 자동 검사. 알려진 항목만·부분 문자열 방지·한 글자 이름·태그 중복 방지 검사.
++
++공개 github.io를 실행 환경에서 직접 열기는 네트워크 CONNECT 403으로 차단되었다. 로컬 실제 플레이와 GitHub Pages 빌드 API 확인은 별개로 기록하며, 공개 URL 실제 플레이 완료라고 주장하지 않는다.
++
++## 보류·미완료
++
++- 전원 착석 원탁 공간 화면은 아직 구현하지 않았다. 이번 묶음은 기존 회의 화면의 발언자 강조까지다.
++- 가로 배경 42장: `dot/room13-ready-assets-20261014` / `ac8760b38a5d75f2a0ef26f914e7ecb4faf7503f` 인계 문서는 모두 제작 후보·게임 적용 전이라고 명시한다. 2048×768 입구 후보는 확인했지만, 장소별 조사 물건·발 위치·출입구·카메라를 새로 검증하기 전 적용하지 않는다. 일괄 가로 늘이기나 좌표 배율 적용을 하지 않았다. 현재 입구 가로 확장은 미적용이다.
++- `dot/room13-story-audio-review-20261014`의 bccbb02 및 0170 부록, motion/rescue 지침 검토. 회수 후 객실 3장·일부 구조 CG·동작 초안·NO_AUTO_APPLY는 적용하지 않았다. 구조 순서, 숨은 다람/꼬리, 침대 불, 할머니 공구 시간·증거 위치를 바꾸지 않았다.
++- 신규 음원/동작/배경을 청취·승인했다고 주장하지 않는다. Pixabay 공식 라이선스 확인만 했으며 무료=CC0로 취급하지 않았다. 외부 다운로드·원본 재배포·Kenney UI 도입 없음.
++- 사용자 제공 Library 스크린샷은 메타데이터만 읽었고 이미지 다운로드 호스트 403으로 픽셀 열람은 미완료. 여기에 포함된 전후 이미지는 직접 실행한 게임 화면이다.
++- 이전 배경 회귀 제보는 사용자가 구 Continue 저장 때문이라고 철회했다. 롤백하지 않았고 기존 0.16.2→0.17.0 이미지 293개 동일 검사도 별도로 보존했다.
++
++소스는 `preview/room13-source/ROOM13_SOURCE_HANDOFF.zip`이 정본이다. `source-changes.patch`는 최신 main 대비 검토용 diff이며 ZIP과 동기화했다. 로컬 QA 경로를 쓰는 개발 스크립트는 필요 시 URL/출력 경로를 조정해야 한다.
