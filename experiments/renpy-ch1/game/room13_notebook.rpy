@@ -227,6 +227,8 @@ screen r13_records():
     style_prefix "r13"
     modal True
     zorder 50
+    on "show" action Function(source_fx,"note_open")
+    on "hide" action Function(source_fx,"note_close")
     default tab="evidence"
     default detail=None
     default person=None

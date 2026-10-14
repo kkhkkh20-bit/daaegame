@@ -180,7 +180,9 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     hide screen hud
     show screen r13_hud
     $ room13.update(state)
-    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+list(flags)))
+    # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed;
+    # the week-1 cases G·L·I·S·T (systems/room13_week1_cases.rpy) unless "+w1c" is passed.
+    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+[f for f in flags if f not in ("+brief","+w1c")]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])+([] if "+w1c" in flags else ["ev_g_done","ev_l_done","ev_i_done","ev_s_done","ev_t_done"])))
     $ room13["livelihood"]=dict(cash=cash,debt=0,items=list(items))
     jump r13_roam
 
@@ -207,6 +209,38 @@ label r13_qa_goto(day,period,location,flags=()):
     $ r13_flag(*flags) if flags else None
     jump r13_roam
 
+# Sound check (0.18.6): visit every place in each mood and record what plays.
+label r13_qa_sound:
+    call r13_qa_setup(3,("E01","E05"))
+    $ _qa_sound={"title":config.main_menu_music,"places":{},"fx":{}}
+    $ _qa_bgs=sorted(R13_PLACE_SOUND)
+    $ _qa_i=0
+    while _qa_i<len(_qa_bgs):
+        $ _qa_bg=_qa_bgs[_qa_i]
+        $ _qa_row=[]
+        $ _qa_m=0
+        while _qa_m<4:
+            $ _qa_mood=("calm","search","night","quiet")[_qa_m]
+            $ r13_scene_key=None
+            call r13_scene(_qa_bg,"QA "+_qa_bg,_qa_mood)
+            $ _qa_row.append((_qa_mood,renpy.music.get_playing(),renpy.music.get_playing(channel="ambience")))
+            $ _qa_m+=1
+        $ _qa_sound["places"][_qa_bg]=_qa_row
+        $ _qa_i+=1
+    $ r13_scene_key=None
+    call r13_scene("hall","여관 2층 · 연기가 새는 문","quiet")
+    $ _qa_sound["smoke_door"]=(renpy.music.get_playing(),renpy.music.get_playing(channel="ambience"))
+    python:
+        for k in R13_FX:
+            _qa_sound["fx"][k]=renpy.loadable(r13_fx_path(k))
+        _qa_sound["bgm_loadable"]=all(renpy.loadable(p) for p in R13_BGM.values())
+        _qa_sound["amb_loadable"]=all(renpy.loadable(p) for p in R13_AMBIENCE.values())
+        _qa_sound["click"]=style.button.activate_sound
+        _qa_sound["judge"]=r13_debate_judge("C1",r13_debate_statements("C1")[0]["id"],"E05")[0]
+        _qa_sound["judge_fx"]=renpy.music.get_playing(channel="scene_fx")
+        _qa_sound["moves"]={a+">"+b:r13_sound_move(a,b) for a,b in (("hall","room"),("room","hall"),("front","hall"),("front","winter_square"),("winter_square","winter_post"),("hall","winter_passage"),("winter_passage","room"),("winter_carriage","winter"))}
+        open(renpy.config.basedir+"/qa_result.txt","w").write(repr(_qa_sound))
+    return
 
 # 0.18.5 full-body dialogue check: every character x expression in the real
 # dialogue layout (normal and large text) and the topic list layout.

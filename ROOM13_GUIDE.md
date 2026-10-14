@@ -88,6 +88,23 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
   - C4 결론은 `fair_hearing`이 있어야 집행된다.
   - 재판 테스트를 새로 만들면 `r13_qa_setup`이 이 관문들을 기본으로 켠다. 끄려면 `"-gates"`를 넘긴다.
 - 사건 목록과 상태는 `docs/EVENT_CATALOG.md`에 있다.
+- 검사 순서(소유자 요청): 작업 중에는 고친 곳의 테스트만 돌리고, 전체 회귀(`dev/run_renpy_tests.sh` 인자 없이)는 묶음을 마친 뒤 배포 전에 한 번 돌린다.
+
+### 시간 규칙과 저녁 미션 (0.18.5)
+- 시간은 일(오전·오후)과 13호에서 자는 것으로만 흐른다. 새 장면에 `r13_tick()`을 넣지 않는다. 활동 비용은 `systems/room13_evening.rpy`가 0으로 맞춘다.
+- 저녁(period 2)에 2·3·5·6일의 저녁 미션이 열린다. 새 저녁 사건은 `R13_EVENING_MISSIONS`에 등록하고, 도착 장면은 `r13_evening_events`에 넣는다.
+- 테스트의 `r13_qa_roam`은 저녁 안내를 건너뛴다. 안내를 보려면 flags에 `"+brief"`를 넣는다.
+
+### 대사 다듬기 (외부 도구로 고친 뒤 반영)
+- 내보내기: `python3 dev/dialogue_tool.py export` → 저장소 루트 `dialogue_work/export/`에 장면별 CSV(150줄 안팎)와 `지침.md`. 이 폴더는 git에 넣지 않는다.
+- 반영: `python3 dev/dialogue_tool.py import 파일.csv|폴더|zip` → 시험 반영 보고서(`dialogue_work/반영_보고서.md`)만 쓴다. 확인 뒤 `--apply`.
+- 위치와 원문이 지금 소스와 같아야 한다. 아래에 걸리는 줄은 반영하지 않고 이유를 보고서에 적는다.
+  - 괄호 조각이 달라진 줄
+  - 인물 이름 횟수가 달라진 줄
+  - 줄바꿈, 문자열을 닫는 따옴표가 들어간 줄
+  - 길이 제한(선택지 24자)을 넘는 줄
+- 테스트가 글자로 확인하는 대사는 내보내지 않는다. 테스트가 클릭하는 선택지는 tests.rpy도 함께 바뀐다.
+- 반영 뒤에는 보통 변경과 같이 check → 화면 테스트 → 빌드 → 브라우저 확인을 거친다.
 
 ### 선택지 문구 (0.18.4)
 - `menu` 선택지는 무엇을 할지만 24자 이하로 쓴다. 자세한 말은 고른 뒤 대사로 넣는다. `dev/test_choice_length.py`가 검사한다.

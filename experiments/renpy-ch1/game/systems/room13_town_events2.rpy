@@ -59,8 +59,8 @@ init 104 python:
             ("resident_siluk","눈이 크게 오면, 아픈 사람부터 실어 나르죠. 그건 약속할게요.")]),
         "siluk_cold":_ev2_topic("resident_siluk","말을 걸어 본다",(3,14),need=["siluk_hostile"],lines=[
             ("resident_siluk","입막음 값은 잘 쓰셨어요? 저는 이제 두 사람한테 빚진 셈이네요.")]),
-        "nubi_after":_ev2_topic("resident_nubi","왕구의 부탁을 다시 묻는다",(3,14),need=["nubi_ally"],lines=[
-            ("resident_nubi","왕구가 외지 사람을 데려오면 장작을 준다고 했어요. 우리 집 난로가 꺼지면 애들이 못 버텨요."),
+        "nubi_after":_ev2_topic("resident_nubi","너울의 부탁을 다시 묻는다",(3,14),need=["nubi_ally"],lines=[
+            ("resident_nubi","너울이 외지 사람을 데려오면 장작을 준다고 했어요. 우리 집 난로가 꺼지면 애들이 못 버텨요."),
             ("resident_nubi","이젠 안 할게요. 대신 그 사람 앞에서 제 이름은 꺼내지 말아 줘요.")]),
     })
     # Medkit topics run as labels so the single kit is used up.
@@ -129,7 +129,6 @@ label r13_ev_a_siluk:
                 $ _ep_loop=True
             "돈을 주고 몰래 뒤를 밟는다" if r13_cash_now()>=5:
                 $ r13_cash(-5,"실룩에게 선금")
-                $ r13_tick()
                 call r13_lines([(None,"실룩은 초소 쪽이 아니라 백 부인 집 뒷골목으로 갔다. 뭉치가 문을 열고 동전을 받아 갔다."),
                     ("resident_mungchi","이번 주 이자요. 부인이 다음 주엔 원금도 받는대요."),
                     ("dad","(내 돈은 백 부인 금고로 갔다. 실룩은 심부름꾼일 뿐이다.)",{"thought":True})],"ev:a:follow")
@@ -183,7 +182,7 @@ label r13_ev_q_nubi:
             "왜 그렇게 싼지 묻는다":
                 call r13_lines([("resident_nubi","싸게 해야 사람이 오죠."),
                     ("dad","여관 절반 값에 밥까지요?"),
-                    ("resident_nubi","……왕구가 외지 사람을 데려오면 장작을 줘요. 열병 검사한다고 하루 가둬 두는 것뿐이에요."),
+                    ("resident_nubi","……너울이 외지 사람을 데려오면 장작을 줘요. 열병 검사한다고 하루 가둬 두는 것뿐이에요."),
                     ("resident_nubi","우리 집 난로가 꺼지면 애들이 못 버텨요. 미안해요.")],"ev:q:ask")
                 $ r13_flag("know_neoul_quarantine")
                 menu:
@@ -194,16 +193,15 @@ label r13_ev_q_nubi:
                         call r13_lines([("resident_seori","검사권도 없는 경비가 주민을 시켜 사람을 가둔다고요? 기록하겠습니다."),
                             ("resident_nubi","……이제 장작은 끝이네요.")],"ev:q:report")
                         $ r13_flag("neoul_exposed","nubi_hostile")
-                    "왕구에게 가서 따진다":
+                    "너울에게 가서 따진다":
                         call r13_lines([("neoul","격리는 마을을 위한 거요. 누비가 무슨 말을 했든."),
                             (None,"그날 저녁 누비네 장작더미가 반으로 줄었다는 말을 들었다.")],"ev:q:confront_neoul")
                         $ r13_flag("nubi_punished","neoul_annoyed")
             "건강 확인서를 받아 두고 옮긴다":
-                $ r13_tick()
                 call r13_lines([("resident_seori","열 없음, 기침 없음. 외지 사람이라는 건 병이 아닙니다."),
-                    (None,"그날 밤 별채 문 앞에서 왕구가 확인서를 읽고 혀를 찼다."),
+                    (None,"그날 밤 별채 문 앞에서 너울이 확인서를 읽고 혀를 찼다."),
                     ("neoul","……검사원 도장이군. 됐소."),
-                    ("resident_nubi","왕구가 시킨 거였어요. 미안해요. 방은 여섯 냥 그대로 쓰세요.")],"ev:q:certificate")
+                    ("resident_nubi","너울이 시킨 거였어요. 미안해요. 방은 여섯 냥 그대로 쓰세요.")],"ev:q:certificate")
                 $ r13_flag("lodging_cheap","nubi_ally","know_neoul_quarantine","seori_met")
     return None
 

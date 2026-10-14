@@ -172,8 +172,8 @@ screen r13_hub(entry=False):
     if not entry and r13_inn_guide_available():
         textbutton "안내도":
             id "r13_inn_guide_button"
-            style "r13_action_button" xpos 846 ypos 23 xsize 112 ysize 62
-            text_size 23 action Show("r13_inn_guide") sensitive ready
+            style "r13_action_button" xpos 1150 xanchor 1.0 ypos 96 xsize 112 ysize 54
+            text_size 22 action Show("r13_inn_guide") sensitive ready
             alt "여관 안내도 열기"
     if entry:
         use r13_waiting_window(ready)
@@ -185,6 +185,11 @@ screen r13_hub(entry=False):
         textbutton "자기":
             style "r13_action_button" area (1010,584,220,56)
             action Return(("sleep","bed"))
+    if not entry and r13_evening_missions():
+        textbutton "저녁 할 일":
+            style "r13_action_button" area (728,30,230,56) text_size 21
+            action Return(("menu","evening")) sensitive ready
+            tooltip "오늘 저녁에만 할 수 있는 일"
     if not entry and r13_has("livelihood_open"):
         textbutton ("일거리 · 상점  %d냥"%r13_wallet(room13)["cash"]):
             style "r13_action_button" area (448,30,270,56) text_size 21
@@ -261,8 +266,15 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         text r13_person_caption(person):
             xalign .5 ypos 24 xsize 940 text_align .5
             size r13_read_size(23,28) color "#f6d18a"
-        text "질문·자료 보여주기 · 시간 소모 없음":
-            xalign .5 ypos 63 size r13_read_size(17,21) color "#e5ece6"
+        if title=="선택":
+            $ context=r13_choice_context()
+            if context:
+                text context[1]:
+                    xpos list_left ypos 66 xsize list_width text_align .5
+                    size r13_read_size(20,24) color "#e5ece6" line_spacing 3
+        else:
+            text "질문·자료 보여주기 · 시간 소모 없음":
+                xalign .5 ypos 63 size r13_read_size(17,21) color "#e5ece6"
         add r13_close_art(person,pose,760):
             id ("r13_topics_"+person)
             xpos actor_x xanchor .5 ypos r13_close_y(person,760,126,pose)
@@ -277,12 +289,12 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
             mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
             vbox:
                 spacing 12
-                for title,action,was_read in entries:
+                for index,(title,action,was_read) in enumerate(entries):
                     button:
                         xsize list_width-23 yminimum r13_read_row_height() padding (18,15)
                         background None hover_background Solid("#ffffff18")
                         action action sensitive ready
-                        text r13_question_caption(title,was_read):
+                        text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read)):
                             xsize list_width-59 text_align .5 xalign .5
                             size r13_read_size(24,30) font r13_ui_font()
                             color ("#a0a39b" if was_read else "#fff4df")
@@ -290,6 +302,10 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 if not entries:
                     text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
                         xsize list_width-40 text_align .5 size r13_read_size(24,30) color "#eee5d5"
+        if ready:
+            for index,(title,action,was_read) in enumerate(entries[:9]):
+                key ("K_%d"%(index+1)) action action
+                key ("K_KP%d"%(index+1)) action action
         if return_action is not None:
             textbutton "돌아가기":
                 xpos list_left+list_width//2 xanchor .5 ypos 558 xsize 220 ysize 64
@@ -443,6 +459,7 @@ screen r13_book(target=None,present=False,hearing=False):
     style_prefix "r13"
     modal True
     zorder 50
+    on "show" action Function(source_fx,"note_open")
     default detail=None
     default ready=False
     default archive=False

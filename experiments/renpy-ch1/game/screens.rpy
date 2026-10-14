@@ -140,8 +140,11 @@ screen choice(items):
     modal True
     default choice_ready = not winter_mode
     timer .35 action SetScreenVariable("choice_ready", True)
-    default choice_actor = r13_motion_person if room13_mode and "r13_visitor" in renpy.get_showing_tags() else None
-    default choice_pose = r13_current_pose if room13_mode else "neutral"
+    # Talking with someone: the person stands on the left and the choices sit on
+    # the right, like the question screen (owner, 0.18.6).
+    default choice_visitor = room13_mode and "r13_visitor" in renpy.get_showing_tags()
+    default choice_actor = (r13_motion_person if choice_visitor else (r13_last_partner if room13_mode and r13_last_partner in CAST else None))
+    default choice_pose = (r13_current_pose if choice_visitor else "interview_neutral") if room13_mode else "neutral"
     if room13_mode:
         on "show" action Function(r13_choice_layout,choice_actor,choice_pose,True)
         on "hide" action Function(r13_choice_layout,choice_actor,choice_pose,False)
@@ -525,6 +528,9 @@ screen pause_menu():
                             text "문이 열리는 소리 등 효과음은 유지합니다." size r13_read_size(17,20) color R13_UI_COLORS["menu_secondary"] yalign .5
                         use r13_opt_row("소리 확인"):
                             textbutton "효과음 듣기" xsize 200 action Function(r13_test_option_sound) text_size r13_read_size(20,24)
+                        use r13_opt_row("음악 출처"):
+                            textbutton "보기" xsize 150 action Show("r13_music_credits") text_size r13_read_size(20,24)
+                            text "배경음은 CC BY 4.0, 효과음은 CC0입니다." size r13_read_size(17,20) color R13_UI_COLORS["menu_secondary"] yalign .5
                         text "음량 0 또는 꺼짐이면 소리가 나지 않습니다." size r13_read_size(18,21) color R13_UI_COLORS["menu_secondary"]
                     elif tab=="screen":
                         use r13_opt_row("글자 크기"):
@@ -595,7 +601,7 @@ init python:
     def r13_slot_action(page,number,saving):
         slot="%s-%s"%(page,number)
         if saving:
-            save=FileSave(number,confirm=False,page=str(page))
+            save=[FileSave(number,confirm=False,page=str(page)),Function(source_fx,"save")]
             return Confirm("이 칸에는 이미 저장이 있다. 덮어쓸까?",save) if renpy.can_load(slot) else save
         # Compatibility review (r13_load_action) decides how a save opens;
         # in a running game a compatible load also asks before losing progress.

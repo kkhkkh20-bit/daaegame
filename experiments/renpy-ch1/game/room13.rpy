@@ -3,6 +3,7 @@ default r13_carriage_skip = False
 # Full campaign entry and first-week scenes; continuation is in room13_week2.rpy.
 label r13_scene(bg,title,mood="calm"):
     $ r13_cg_active = False
+    $ r13_last_partner = None
     window hide
     hide r13_visitor
     hide winter_visitor
@@ -18,7 +19,7 @@ label r13_scene(bg,title,mood="calm"):
         return
     scene black with Dissolve(.18)
     call r13_arrival(bg,title,mood)
-    $ r13_music={"calm":"assets/town-bright.mp3","travel":"assets/travel.mp3","search":"assets/search.mp3","night":"assets/night.mp3","hearing":"assets/source-serious-context-v4.mp3","quiet":None}[mood]
+    $ r13_music=r13_sound_scene_music(bg,title,mood)
     if r13_music:
         if renpy.music.get_playing()!=r13_music:
             $ renpy.music.play(r13_music,fadeout=.2,fadein=.2)
@@ -38,6 +39,8 @@ label r13_lines(entries,identity):
         if r13_thought_active:
             $ r13_expression,r13_directed_pose="thinking","thinking"
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
+        if r13_packet[0] not in (None,"dad") and not r13_thought_active:
+            $ r13_last_partner=r13_packet[0]
         $ r13_read_id=r13_before_line(identity,r13_index,r13_packet[1])
         # Isolate this line from the previous loop increment when record UI
         # changes are retained by an immediate save during the say interaction.
@@ -132,10 +135,9 @@ label r13_entry_dispatch:
             call r13_lines([("guard","숙소에서 보낸 편지군요. 다만 이 편지만으로 들어온 사람 목록을 고칠 수는 없습니다. 원본을 봐야 합니다.")],"entry:letter")
         hide screen r13_material_corner
     elif r13_choice[1]=="wait":
-        call screen r13_confirm("대기소 앞에서 원본 담당자가 돌아오기를 기다린다. 저녁까지 시간이 흐른다.")
+        call screen r13_confirm("대기소 앞에서 원본 담당자가 돌아오기를 기다린다.")
         if _return:
             $ r13_flag("question_read:entry:wait")
-            $ r13_tick()
             call r13_scene("winter","눈에 막힌 입구","calm")
             call r13_lines([("guard","원본은 두 분인데 제가 한 분으로 옮겨 적었습니다. 바로잡았으니 함께 들어가세요."),("daram","아빠, 이제 손이 잘 안 펴져."),("dad","오래 기다리게 했네. 손 줘. 같이 가자.")],"entry:wait")
             jump r13_entry_done
@@ -227,6 +229,11 @@ label r13_roam:
         call r13_mother_intervention
     if room13["day"]>=8:
         call r13_week2_events
+    # Evening missions (systems/room13_evening.rpy): once per evening, pick where to go.
+    call r13_evening_auto
+    if _return and _return!=room13["location"]:
+        $ r13_edit(location=_return)
+        jump r13_roam
     # Town events (systems/room13_town_events.rpy); a night locked away ends the day.
     call r13_town_events
     if _return=="day":
@@ -288,6 +295,11 @@ label r13_field:
         if _return:
             $ r13_target=_return
             call r13_talk
+        jump r13_roam
+    if r13_choice[1]=="evening":
+        call r13_evening_board
+        if _return and _return!=room13["location"]:
+            $ r13_edit(location=_return)
         jump r13_roam
     if r13_choice[1]=="map":
         call screen r13_map
@@ -465,6 +477,10 @@ label r13_first_night:
     return
 
 label r13_case_choice:
+    # Week-1 case L (systems/room13_week1_cases.rpy): a planted letter empties the inn that night.
+    if r13_has("fake_letter_planted") and not r13_has("fake_letter_night"):
+        call r13_w1c_fake_night
+        jump r13_roam
     call r13_scene("hall","목요일 저녁 · 여관 2층 복도","night")
     call r13_lines([("karo","되돌아온 짐이 마을 바깥 초소에 도착했어요. 확인하러 가실 거죠?"),("daram","할아버지 물건은 내가 받아둘게. 방에서 같이 기다릴게."),(None,"계단 아래에서 할머니가 고개를 끄덕였다. 아이는 자기가 봐 주겠다는 얼굴이었다."),("dad","(짐을 받으러 갈까, 아이 곁에 남을까.)",{"thought":True})],"case:appointment:v4")
     menu:

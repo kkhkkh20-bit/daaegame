@@ -151,6 +151,11 @@ init 102 python:
 label r13_town_events:
     $ r13_town_daily()
     call r13_episode_events
+    call r13_evening_events
+    call r13_b3_events
+    call r13_w1c_events
+    call r13_carryover_events
+    call r13_w2e_events
     call r13_town_events2
     if _return=="day":
         return "day"
@@ -189,14 +194,12 @@ label r13_ev_b_store:
     $ r13_flag("ev_b_seen")
     menu:
         "지붕을 따라 쫓아간다":
-            $ r13_tick()
             call r13_lines([(None,"처마를 따라 몇 집을 지나자 발자국이 눈 덮인 굴뚝 사이에서 끊겼다."),
                 ("dad","(지붕 위에서는 저 아이가 나보다 빠르다.)",{"thought":True})],"ev:b:roof_lost")
             $ r13_flag("ev_b_done","ev_b_lost","musoe_herbs")
         "수리점 쪽 골목으로 돌아가 앞질러 간다":
-            $ r13_tick()
             call r13_ev_b_caught
-        "왕구에게 알린다":
+        "너울에게 알린다":
             call r13_lines([("neoul","도둑이요? 경비를 풀겠습니다. 이런 때일수록 본보기가 있어야지요."),
                 (None,"다음 날 아침, 솜이가 광장 기둥 옆에 서 있었다는 이야기를 들었다. 약초는 백 부인에게 돌아갔다.")],"ev:b:guard")
             $ r13_flag("ev_b_done","somi_punished","musoe_worse","guard_caught_somi")
@@ -211,7 +214,6 @@ label r13_ev_b_ambush:
         ("dad","(솜이는 이 길로 돌아온다.)",{"thought":True})],"ev:b:ambush:arrive")
     menu:
         "골목 입구에서 기다린다":
-            $ r13_tick()
             call r13_lines([(None,"해가 기울 무렵, 지붕에서 작은 몸이 툭 떨어졌다. 솜이가 꾸러미를 품에 안고 골목으로 뛰어들었다.")],"ev:b:ambush:wait")
             call r13_ev_b_caught
         "오늘은 그냥 지나간다":
@@ -227,7 +229,7 @@ label r13_ev_b_caught:
     menu:
         "백 부인에게 돌려준다 (현상금 10냥)":
             call r13_lines([("resident_madam","아이고, 찾았네. 약속은 약속이지. 열 냥."),
-                ("resident_madam","그 애는 왕구에게 넘기세요. 버릇을 들여야 해요."),
+                ("resident_madam","그 애는 너울에게 넘기세요. 버릇을 들여야 해요."),
                 (None,"솜이는 끌려가면서 한 번도 뒤를 돌아보지 않았다.")],"ev:b:return_madam")
             $ r13_cash(10,"백 부인의 현상금")
             $ r13_flag("ev_b_done","madam_trust","somi_punished","musoe_worse","somi_hostile")
@@ -241,7 +243,6 @@ label r13_ev_b_caught:
                 (None,"은호 사장은 끈의 도장을 보고 입꼬리를 올렸다."),
                 ("resident_eunho","백 부인 거네요. 값은 쳐 드리죠. 열여덟 냥. 대신 이건 우리 둘만 아는 걸로 해요."),
                 ("dad","(이제 이 사람이 내 약점을 하나 쥐었다.)",{"thought":True})],"ev:b:sell_eunho")
-            $ r13_tick()
             $ r13_cash(18,"은호에게 약초를 넘김")
             $ r13_flag("ev_b_done","eunho_holds_secret","musoe_worse","somi_hostile","rumor:sold_stolen")
         "무쇠 할아버지에게 직접 가져다준다":
@@ -257,7 +258,6 @@ label r13_ev_b_caught:
                 ("resident_seori","창고 도장, 해열 약초 서른두 묶음. 마을에 약이 없다고 보고된 날짜와 같은 날입니다."),
                 ("resident_seori","아이는 처벌 대신 진술로 남기겠습니다. 약 일부는 여기서 그 할아버지께 쓰지요."),
                 ("resident_somi","……정말요?")],"ev:b:seori_record")
-            $ r13_tick()
             $ r13_grant(["H2"],"서리 검사원이 센 창고 약초")
             $ r13_flag("ev_b_done","madam_hostile","somi_protected","musoe_herbs","somi_trust")
         "일부만 백 부인에게 돌려준다":
@@ -396,7 +396,7 @@ label r13_ev_yeoni_goods:
         "누가 팔았는지만 확인하고 따지지 않는다":
             call r13_lines([("resident_yeoni","뭉치예요. 백 부인 집 심부름하는. 저한테 들었다고는 하지 마세요.")],"ev:n:who")
             $ r13_flag("ev_n_done","know_mungchi_thief")
-        "왕구에게 장물이라고 알린다":
+        "너울에게 장물이라고 알린다":
             call r13_lines([("neoul","장물이요? 교환대는 오늘로 닫습니다."),
                 ("resident_yeoni","……외지 분은 겨울이 끝나면 가잖아요. 저는 여기서 이걸로 먹고살아요."),
                 (None,"짐은 돌아왔다. 여니는 그 뒤로 내 쪽을 보지 않았다.")],"ev:n:report")

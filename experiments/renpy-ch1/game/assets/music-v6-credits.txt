@@ -1,0 +1,59 @@
+Room13 배경음·효과음 (0.18.6, 2026-10-14 / 0.18.7 추가)
+
+==================== 배경음 — CC BY 4.0 (출처 표기 필수) ====================
+
+"Sleep (Piano Only)", "The Long Way Home", "Home Was You", "Childhood", "Midvinter",
+"Snowfall", "First Snow", "Sanctuary", "The Long Dark", "Shadows and Dust"
+by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au
+
+"Heartwarming", "Water Lily", "Investigations", "Comfortable Mystery 4",
+"Measured Paces", "Iron Horse"
+Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+변경: 앞뒤 무음 제거, 곡 전체에 같은 음량 조정(-24 LUFS 목표), MP3 128k로 변환. 곡 내용은 바꾸지 않음.
+0.18.7: bgm-dark(The Long Dark)·bgm-altar(Shadows and Dust)는 조용한 부분을 천천히 끌어올리는 음량 평탄화(dynaudnorm) 뒤 -21/-20 LUFS로 맞춤.
+작곡가가 이 게임을 보증한다는 뜻은 없음. Scott Buckley 곡은 Content ID 등 지문 서비스에 등록하지 않는다.
+
+파일 → 곡
+bgm-title.mp3     Sleep (Piano Only) — Scott Buckley    https://www.scottbuckley.com.au/library/sleep/
+bgm-family.mp3    The Long Way Home — Scott Buckley     https://www.scottbuckley.com.au/library/the-long-way-home/
+bgm-ending.mp3    Home Was You — Scott Buckley          https://www.scottbuckley.com.au/library/home-was-you/
+bgm-village.mp3   Childhood — Scott Buckley             https://www.scottbuckley.com.au/library/childhood/
+bgm-village2.mp3  Heartwarming — Kevin MacLeod          https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100207
+bgm-inn.mp3       Midvinter — Scott Buckley             https://www.scottbuckley.com.au/library/midvinter/
+bgm-inn2.mp3      Water Lily — Kevin MacLeod            https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400035
+bgm-travel.mp3    Snowfall — Scott Buckley              https://www.scottbuckley.com.au/library/snowfall/
+bgm-snow.mp3      First Snow — Scott Buckley            https://www.scottbuckley.com.au/library/first-snow/
+bgm-search.mp3    Investigations — Kevin MacLeod        https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100646
+bgm-think.mp3     Comfortable Mystery 4 — Kevin MacLeod https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100535
+bgm-night.mp3     Measured Paces — Kevin MacLeod        https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100164
+bgm-council.mp3   Iron Horse — Kevin MacLeod            https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100735
+bgm-pressure.mp3  Sanctuary — Scott Buckley             https://www.scottbuckley.com.au/library/sanctuary/
+bgm-dark.mp3      The Long Dark — Scott Buckley         https://www.scottbuckley.com.au/library/the-long-dark/
+bgm-altar.mp3     Shadows and Dust — Scott Buckley      https://www.scottbuckley.com.au/library/shadows-and-dust/
+
+==================== 효과음 — CC0 (표기 의무 없음) ====================
+
+sfx-click.wav        OpenGameArt "Middle Mouse Click" (1j01, CC0) — 둔하게 다듬어 리모컨 버튼 소리로 사용
+sfx-present.wav      Kenney Music Jingles HIT00 (CC0)
+sfx-right.wav        Kenney Music Jingles STEEL00 (CC0)
+sfx-wrong.wav        Kenney Interface Sounds bong_001 (CC0)
+sfx-evidence-get.wav OpenGameArt "Kalimba (two notes)" (railkill, CC0)
+sfx-clue.wav         OpenGameArt "Bell Dings/Chimes" (pwl, CC0)
+sfx-page.wav         OpenGameArt "Book Flip Sounds" (voltiment555, CC0)
+sfx-door-open.wav, sfx-door-close.wav   Kenney RPG Audio (CC0)
+sfx-knock.wav, sfx-walk-snow.wav, sfx-walk-wood.wav, sfx-bell.wav   Kenney Impact Sounds (CC0)
+sfx-unlock.wav       OpenGameArt "Door Lock Sounds" (cough-e, CC0)
+sfx-slam.wav         OpenGameArt "100 CC0 Metal and Wood SFX" (rubberduck, CC0)
+amb-wind.mp3         OpenGameArt "Wind" (ignasd, CC0)
+amb-fire.mp3         OpenGameArt "Fireplace Sound Loop" (pagdev, CC0)
+amb-clock.mp3        OpenGameArt "Ticking Clock" (bart, CC0)
+sfx-note-open.wav, sfx-note-close.wav, sfx-creak.wav, sfx-latch.wav   Kenney RPG Audio (CC0)
+sfx-error.wav        Kenney Interface Sounds error_004 (CC0)
+sfx-comic.wav        Kenney Music Jingles PIZZI00 (CC0)
+sfx-pencil.wav       OpenGameArt "Pencil Sounds" (antumdeluge, CC0)
+sfx-save.wav         OpenGameArt "Chimey UI Sounds" (mousebyte, CC0)
+sfx-mystery.wav      OpenGameArt "Mystery Sting" (railkill, CC0)
+sfx-heartbeat.wav    OpenGameArt "Heartbeat Sounds" (bart, CC0)

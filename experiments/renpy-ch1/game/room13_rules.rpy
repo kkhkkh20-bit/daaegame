@@ -4,6 +4,8 @@ default r13_inspection_location = None
 default room13_mode = False
 default room13 = None
 default r13_target = None
+# Last resident who spoke in this scene: choices then face that person (0.18.6).
+default r13_last_partner = None
 default r13_choice = None
 default r13_item = None
 default r13_topic = None
