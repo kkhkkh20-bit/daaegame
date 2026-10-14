@@ -207,3 +207,88 @@ label r13_qa_goto(day,period,location,flags=()):
     $ r13_flag(*flags) if flags else None
     jump r13_roam
 
+
+# 0.18.5 full-body dialogue check: every character x expression in the real
+# dialogue layout (normal and large text) and the topic list layout.
+default r13_qa_fb_done = False
+init 999 python:
+    def r13_qa_fullbody_capture(modes=("normal","large","topic"),people=None,emotions=None):
+        import os, json as qa_json
+        out=os.path.join(os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa"),"fullbody")
+        if not os.path.isdir(out):os.makedirs(out)
+        preferences.text_cps=0
+        report=[]
+        people=people or [p for p in sorted(R13_FULLBODY["people"]) if p!="dad"]
+        emotions=emotions or list(R13_FULLBODY_EMOTIONS)
+        for mode in modes:
+            persistent.room13_large_text=(mode=="large")
+            for person in people:
+                for emotion in (emotions if mode!="topic" else ["neutral"]):
+                    if mode=="topic":
+                        renpy.hide("r13_visitor")
+                        renpy.show_screen("r13_question_list",person,"neutral","선택",[],False,animate=False)
+                        renpy.pause(0.35,hard=True)
+                    else:
+                        r13_speaker(person,R13_FULLBODY_TO_LEGACY[emotion],emotion)
+                        renpy.say(R13_CHARS.get(person),"표정 확인 %s — 대사창과 얼굴이 겹치는지 보는 두 줄짜리 시험 문장입니다. 끝까지 읽히는지도 확인합니다."%emotion,interact=False)
+                        renpy.pause(0.45,hard=True)
+                    name="%s_%s_%s.png"%(mode,person,emotion)
+                    renpy.screenshot(os.path.join(out,name))
+                    bounds=renpy.get_image_bounds("r13_visitor") if mode!="topic" else None
+                    report.append(dict(mode=mode,person=person,emotion=emotion,file=name,bounds=bounds,
+                        y=r13_close_y(person,760 if mode=="topic" else 840,126 if mode=="topic" else 110,emotion),
+                        scale=r13_fullbody_scale(person,760 if mode=="topic" else 840),
+                        spec=(r13_fullbody_spec(person,emotion) or {}).get("file")))
+                    if mode=="topic":renpy.hide_screen("r13_question_list")
+        persistent.room13_large_text=False
+        open(os.path.join(out,"report.json"),"w").write(qa_json.dumps(report,ensure_ascii=False,indent=0))
+        store.r13_qa_fb_done=True
+
+label r13_qa_fullbody(modes=("normal","large","topic"),people=None,emotions=None):
+    call r13_qa_setup(5,["E01"])
+    call r13_scene(R13_PLACES["inn"][1],R13_PLACES["inn"][0],"quiet")
+    $ r13_qa_fullbody_capture(modes,people,emotions)
+    $ open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(done=r13_qa_fb_done)))
+    return
+
+# 0.18.5: authored per-line emotions reach the real dialogue loop.
+default r13_qa_le_log = []
+init 999 python:
+    R13_QA_LINE_CASES = [('trial:C2:wrong', 'buri', '할아버지도 착한 사람이었어요. 그런 말로 끝내지 말아요.', None, 'angry'), ('entry:daram:waiting', 'daram', '아빠, 이거 안 열려.', None, 'flustered'), ('case:unpreserved:v3', 'buri', '할아버지! 비켜요!', None, 'surprise'), ('topic:buri_records', 'buri', '전날 저녁엔 많이 심했어요. 나를 알아보지 못할 때도 있었고.', None, 'anxious'), ('qa:legacy', 'karo', '기존 expressive 키는 기쁨 표정으로 이어집니다.', 'expressive', 'joy'), ('qa:direct', 'karo', '새 표정 키를 대사에 직접 적을 수 있습니다.', 'surprise', 'surprise'), ('trial:C2:wrong', 'buri', '대사가 바뀌면 지정이 적용되지 않습니다.', 'distressed', 'anxious')]
+    def r13_qa_le_record():
+        who=store.r13_motion_person
+        spec=r13_fullbody_spec(who,store.r13_current_pose) if who else None
+        store.r13_qa_le_log.append(dict(who=who,pose=store.r13_current_pose,expression=store.dialogue_expression,file=(spec or {}).get("file"),showing="r13_visitor" in renpy.get_showing_tags()))
+
+label r13_qa_line_emotions:
+    call r13_qa_setup(5,["E01"])
+    call r13_scene(R13_PLACES["inn"][1],R13_PLACES["inn"][0],"quiet")
+    $ preferences.text_cps=0
+    $ r13_qa_le_i=0
+    while r13_qa_le_i<len(R13_QA_LINE_CASES):
+        $ _c=R13_QA_LINE_CASES[r13_qa_le_i]
+        call r13_lines([(_c[1],_c[2],_c[3])] if _c[3] else [(_c[1],_c[2])],_c[0])
+        $ r13_qa_le_i+=1
+    $ open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(log=r13_qa_le_log,expected=[c[4] for c in R13_QA_LINE_CASES])))
+    return
+
+# 0.18.5 inn lobby/hall v4 chips and the supplementary guide.
+default r13_qa_inn_log = []
+init 999 python:
+    def r13_qa_inn_note(tag):
+        st=store.room13
+        chips=[(k,l,a) for k,l,r,a in r13_inn_v4_chips(st["location"],True)+r13_inn_v4_chips(st["location"],False)]
+        m=renpy.get_screen("r13_map")
+        guide=[(i["key"],i["text"],i["target"]) for i in r13_inn_guide_labels()] if renpy.get_screen("r13_inn_guide") else None
+        store.r13_qa_inn_log.append(dict(tag=tag,location=st["location"],day=st["day"],period=st["period"],chips=chips,
+            row=[k for k,t in r13_local_connections() if k not in r13_inn_v4_handled(st["location"])],
+            guide=guide,map=bool(m),
+            places=r13_places(),flags=sorted(st["flags"])))
+    def r13_qa_inn_dump():
+        open(renpy.config.basedir+"/qa_result.txt","w").write(repr(store.r13_qa_inn_log))
+
+label r13_qa_inn_v4(case="pending"):
+    call r13_qa_setup(2,["E01"])
+    $ room13.update(case_state=case,victim_state="alive" if case=="pending" else "dead",location="inn",period=0)
+    $ preferences.text_cps=0
+    jump r13_roam

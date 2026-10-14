@@ -986,3 +986,145 @@ testcase skip_modes:
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ open("qa_result.txt","w").write("skip to choice, number key 4 picked sliver question")
 
+
+testcase fullbody_dialogue:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody")
+    click pos (1276,300) until eval r13_qa_fb_done timeout 1500
+    pause 1.0
+
+testcase fullbody_tuned:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody",("normal","large"),["bami","doto"],["neutral","surprise"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    pause 1.0
+
+testcase fullbody_line_emotions:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_line_emotions")
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_0.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_1.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_2.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_3.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_4.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_5.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_6.png"
+    click pos (640,600)
+    pause 1.5
+
+testcase inn_v4_travel:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_inn_v4")
+    click pos (640,600) until screen "r13_hub" timeout 60
+    pause 1.0
+    $ r13_qa_inn_note("lobby")
+    screenshot "inn_lobby.png"
+    click "‹ 식당"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("after-dining-chip")
+    click "접수대 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    click "주방 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("after-kitchen-chip")
+    click "접수대 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    click "안내도"
+    pause 1.0
+    $ r13_qa_inn_note("guide-open-lobby")
+    screenshot "inn_guide_lobby.png"
+    keysym "K_ESCAPE"
+    pause 1.0
+    $ r13_qa_inn_note("guide-escape")
+    click "2층으로 ↑"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("hall")
+    screenshot "inn_hall.png"
+    click "안내도"
+    pause 1.0
+    $ r13_qa_inn_note("guide-open-hall")
+    screenshot "inn_guide_hall.png"
+    click "닫기"
+    pause 1.0
+    $ r13_qa_inn_note("guide-closed")
+    click "13호실"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("room13")
+    click "복도로 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    click "↓ 1층 로비"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("back-lobby")
+    click "바깥으로"
+    pause 1.5
+    $ r13_qa_inn_note("outside-map")
+    screenshot "inn_outside_map.png"
+    click "현장으로 돌아가기"
+    pause 1.0
+    click "안내도"
+    pause 1.0
+    click "식당"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("guide-travel-dining")
+    $ r13_qa_inn_dump()
+
+testcase inn_v4_guestroom:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_inn_v4","occurred")
+    click pos (640,600) until screen "r13_hub" timeout 60
+    pause 1.0
+    click "2층으로 ↑"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("hall-occurred")
+    screenshot "inn_hall_occurred.png"
+    click "안내도"
+    pause 1.0
+    $ r13_qa_inn_note("guide-occurred")
+    screenshot "inn_guide_occurred.png"
+    click "닫기"
+    pause 1.0
+    click "임시 객실 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("guestroom")
+    $ r13_qa_inn_dump()

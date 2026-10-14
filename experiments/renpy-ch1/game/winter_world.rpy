@@ -286,6 +286,7 @@ label after_load:
         $ r13_upgrade()
         if room13.get("revision_restart_required"):
             jump r13_revision_resume
+        $ r13_fullbody_refresh_after_load()
     if winter_mode and winter:
         $ winter=winter_upgrade(winter)
         $ clock_text=winter_clock(winter)
