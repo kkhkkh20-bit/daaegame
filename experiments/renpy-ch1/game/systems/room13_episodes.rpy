@@ -130,7 +130,7 @@ label r13_episode_events:
 label r13_ep1_patrol:
     $ r13_flag("ep1_patrol_seen")
     call r13_ev_here("night")
-    call r13_lines([(None,"여관 문이 열리고 찬바람과 함께 경비 두 사람이 들어왔다. 왕구와 바둑이였다."),
+    call r13_lines([(None,"여관 문이 열리고 찬바람과 함께 경비 두 사람이 들어왔다. 너울과 바둑이였다."),
         ("neoul","이 근처 처마 밑에 사는 박쥐를 본 적 있소? 등록이 없는 아이요."),
         ("neoul","밤마다 돌아다닌다는 신고가 들어왔소. 검사를 받아야 하오.")],"ep1:patrol")
     $ _ep_loop=True
@@ -150,18 +150,18 @@ label r13_ep1_patrol:
                     ("neoul","북쪽 보호소에서 지켜보오. 마을을 위해서요."),
                     ("dad","돌아온 사람은 있습니까?"),
                     ("neoul","……그건 보호소 소관이오."),
-                    (None,"왕구가 문 쪽으로 돌아서자 바둑이가 낮게 말했다."),
+                    (None,"너울이 문 쪽으로 돌아서자 바둑이가 낮게 말했다."),
                     ("resident_badook","저는 돌아온 사람을 본 적이 없어요. 아직 한 번도요.")],"ep1:patrol:ask")
-                $ r13_grant(["W1"],"왕구·바둑이와 나눈 말")
+                $ r13_grant(["W1"],"너울·바둑이와 나눈 말")
                 $ r13_flag("badook_doubt")
                 $ _ep_loop=True
             "내가 그 아이의 보증을 서겠다고 한다":
                 call r13_lines([("neoul","외지 사람 보증은 소용없소. 검사원 확인서라도 가져오면 모를까."),
-                    ("dad","(서리 검사원의 확인서. 그거라면 왕구도 무시하지 못한다.)",{"thought":True})],"ep1:patrol:vouch")
+                    ("dad","(서리 검사원의 확인서. 그거라면 너울도 무시하지 못한다.)",{"thought":True})],"ep1:patrol:vouch")
                 $ r13_flag("patrol_suspicious","need_certificate")
             "바둑이에게 슬쩍 두 냥을 쥐여 준다" if r13_cash_now()>=2:
                 call r13_lines([("resident_badook","……이러지 마세요."),
-                    (None,"바둑이가 동전을 내 손에 도로 쥐여 주었다. 왕구가 그걸 봤다."),
+                    (None,"바둑이가 동전을 내 손에 도로 쥐여 주었다. 너울이 그걸 봤다."),
                     ("neoul","뇌물이라. 내일 밤엔 이 집부터 보겠소.")],"ep1:patrol:bribe")
                 $ r13_flag("patrol_suspicious","rumor:briber")
     return
@@ -181,7 +181,7 @@ label r13_ep1_eaves:
             $ r13_flag("bami_hidden_away","bami_safe","know_unregistered")
         "피코에게 등록증을 그려 달라고 한다 (5냥)" if r13_cash_now()>=5:
             call r13_lines([("resident_piko","등록증? ……그림은 그림이죠. 도장 모양까지 그려 드릴게요."),
-                ("resident_piko","왕구는 글자를 잘 안 봐요. 도장만 보죠. 대신 서리 검사원한테는 보이지 마세요."),
+                ("resident_piko","너울은 글자를 잘 안 봐요. 도장만 보죠. 대신 서리 검사원한테는 보이지 마세요."),
                 ("bami","이게 있으면 처마에 있어도 돼요?"),
                 ("dad","응. 네 자리에 있어.")],"ep1:piko")
             $ r13_cash(-5,"피코의 그림 등록증")
@@ -189,12 +189,11 @@ label r13_ep1_eaves:
         "서리 검사원에게 관찰 확인서를 받는다":
             call r13_lines([("resident_seori","박쥐가 밤에 깨어 있는 게 증상이라고요? 그럼 마을 박쥐는 다 증상이겠군요."),
                 (None,"서리 검사원은 밤이의 눈과 말을 몇 가지 확인하고 확인서에 서명했다."),
-                ("resident_seori","'야생화 증상 없음.' 왕구가 이걸 무시하면, 그건 내가 기록합니다.")],"ep1:seori")
-            $ r13_tick()
+                ("resident_seori","'야생화 증상 없음.' 너울이 이걸 무시하면, 그건 내가 기록합니다.")],"ep1:seori")
             $ r13_flag("bami_certified","bami_safe","bami_at_eaves","seori_met_bami")
         "바둑이에게 처마 순찰을 빼 달라고 한다" if r13_has("badook_doubt"):
             call r13_lines([("resident_badook","……저도 돌아온 사람을 못 봤다고 말씀드렸죠."),
-                ("resident_badook","처마는 제 구역이에요. 거긴 아무것도 없었다고 적을게요. 대신 왕구 앞에선 모르는 척해 주세요.")],"ep1:badook")
+                ("resident_badook","처마는 제 구역이에요. 거긴 아무것도 없었다고 적을게요. 대신 너울 앞에선 모르는 척해 주세요.")],"ep1:badook")
             $ r13_flag("badook_ally","bami_safe","bami_at_eaves")
         "13호 창 안쪽에서 지내게 한다":
             call r13_lines([("bami","방 안은 싫어요. 들어가면 나갈 데가 없잖아요."),
@@ -212,8 +211,7 @@ label r13_ep1_eaves_retry:
                 ("resident_nero","여기 있는 사람들은 다 표가 없어요. 검사도 없고요. 대신 밖에 나가면 안 돼요.")],"ep1:nero")
             $ r13_flag("bami_hidden_away","bami_safe","know_unregistered")
         "서리 검사원에게 관찰 확인서를 받는다":
-            call r13_lines([("resident_seori","'야생화 증상 없음.' 왕구가 이걸 무시하면, 그건 내가 기록합니다.")],"ep1:seori")
-            $ r13_tick()
+            call r13_lines([("resident_seori","'야생화 증상 없음.' 너울이 이걸 무시하면, 그건 내가 기록합니다.")],"ep1:seori")
             $ r13_flag("bami_certified","bami_safe","bami_at_eaves","seori_met_bami")
         "그냥 처마에 있게 둔다":
             pass
@@ -223,7 +221,7 @@ label r13_ep1_morning:
     $ r13_flag("ep1_done")
     if r13_has("bami_safe"):
         if r13_has("bami_at_eaves") and r13_has("patrol_suspicious"):
-            call r13_lines([(None,"새벽에 처마 쪽에서 왕구의 목소리가 들렸다. 잠시 뒤, 발소리는 그냥 지나갔다.")],"ep1:morning:passed")
+            call r13_lines([(None,"새벽에 처마 쪽에서 너울의 목소리가 들렸다. 잠시 뒤, 발소리는 그냥 지나갔다.")],"ep1:morning:passed")
         return
     # The patrol came whether or not Dad was there to answer it.
     if r13_has("bami_reported") or r13_has("patrol_suspicious") or not r13_has("ep1_patrol_seen"):
@@ -309,7 +307,7 @@ label r13_ep3_bell:
     $ r13_flag("ep3_bell_seen")
     call r13_ev_here("night")
     call r13_lines([(None,"광장의 등이 한꺼번에 깜빡였다. 돌 표면을 타고 흐르던 빛이 숨을 고르듯 가늘어졌다."),
-        (None,"종탑 아래에서 설이가 줄을 붙잡고 서 있었다. 왕구가 그 손목을 잡고 있었다."),
+        (None,"종탑 아래에서 설이가 줄을 붙잡고 서 있었다. 너울이 그 손목을 잡고 있었다."),
         ("neoul","치지 마시오. 지금 종을 치면 다들 뛰쳐나와 난리가 나오."),
         ("resident_seol","종은 이럴 때 치라고 있는 거예요!")],"ep3:bell")
     menu:
@@ -335,7 +333,7 @@ label r13_ep3_bell:
             $ r13_grant(["W5"],"등불지기와 끈 광장 등")
             $ r13_flag("lamps_saved","lamplighter_trust")
         "내가 직접 종을 친다":
-            call r13_lines([(None,"줄을 당기자 무거운 소리가 울렸다. 왕구가 내 팔을 붙잡았다."),
+            call r13_lines([(None,"줄을 당기자 무거운 소리가 울렸다. 너울이 내 팔을 붙잡았다."),
                 ("neoul","외지 사람이 마을 종을? 오늘 밤은 초소에서 보내시오."),
                 (None,"초소의 차가운 의자에서 밤을 보냈다. 그래도 사람들은 학교로 피했다.")],"ep3:self_ring")
             $ r13_flag("village_alerted","rumor:troublemaker","neoul_annoyed")
@@ -381,7 +379,7 @@ label r13_ep3_hearing:
 label r13_ep4_accused:
     $ r13_flag("ep4_seen")
     call r13_ev_here("search")
-    call r13_lines([(None,"수리점 앞에 사람들이 모여 있었다. 왕구가 톡의 작업대를 손바닥으로 내리쳤다."),
+    call r13_lines([(None,"수리점 앞에 사람들이 모여 있었다. 너울이 톡의 작업대를 손바닥으로 내리쳤다."),
         ("neoul","광장 등의 돌 조각이 없어졌소. 그 등을 만지는 사람은 당신뿐이오."),
         ("resident_tok","나는 안 가져갔어요! 그 조각이 없으면 등이 식는 걸 누구보다 잘 아는 게 나라고요."),
         ("neoul","모레까지 조각이 안 나오면 당신을 가두겠소.")],"ep4:accused")
@@ -393,16 +391,15 @@ label r13_ep4_accused:
                 call r13_lines([("dad","증거도 없이 사람을 가두는 겁니까?"),
                     ("neoul","그럼 증거를 가져오시오. 모레까지.")],"ep4:defend")
                 $ r13_flag("ep4_open")
-            "왕구의 말이 맞을 수도 있다고 한다":
+            "너울의 말이 맞을 수도 있다고 한다":
                 call r13_lines([("neoul","보시오, 외지 사람도 그렇다잖소."),
-                    (None,"왕구가 톡의 손목을 묶었다. 수리점 문에 판자가 덧대졌다."),
+                    (None,"너울이 톡의 손목을 묶었다. 수리점 문에 판자가 덧대졌다."),
                     ("resident_tok","……당신도 똑같군요.")],"ep4:side_neoul")
                 $ r13_flag("tok_detained","tok_hostile")
             "광장 등을 직접 살펴본다" if not r13_has("clue_lamp_marks"):
                 call r13_lines([(None,"광장 등 뚜껑의 나사에 가는 줄 자국이 있었다. 공구가 아니라 계측기 집게가 문 자국이었다."),
                     (None,"등 안쪽은 차가웠다. 조각이 있던 자리에 종이 눈금 조각이 끼어 있었다."),
                     ("dad","(톡의 공구 자국이 아니다. 누군가 무언가를 재려고 열었다.)",{"thought":True})],"ep4:lamp")
-                $ r13_tick()
                 $ r13_flag("clue_lamp_marks","ep4_open")
                 $ _ep_loop=True
             "톡에게 등의 돌 조각이 무엇인지 묻는다" if "W5" not in room13["evidence"]:
@@ -419,7 +416,7 @@ label r13_ep4_ubak:
         ("resident_ubak","……제가 했어요. 스승님이 돌 조각 하나를 몰래 재 오라고 했어요. 촌장님 숫자가 이상하다고요."),
         ("resident_ubak","톡 아저씨가 잡혀갈 줄은 몰랐어요. 조각은 진료실 상자에 있어요.")],"ep4:ubak:confess")
     menu:
-        "왕구에게 우박을 넘긴다":
+        "너울에게 우박을 넘긴다":
             call r13_lines([("neoul","검사원 조수가? ……됐소. 톡은 풀어 주겠소. 조수는 내가 데려가오."),
                 ("resident_seori","제 지시였습니다. 이 아이를 데려가려면 저를 데려가십시오."),
                 ("neoul","외부 관리국 사람은 내 소관이 아니오. 됐소.")],"ep4:ubak:hand_over")
@@ -429,15 +426,13 @@ label r13_ep4_ubak:
                 ("resident_seori","조각은 돌려드리지요. 대신 측정 결과는 기록에 남깁니다."),
                 ("resident_ubak","톡 아저씨, 죄송해요."),
                 ("resident_tok","……숫자는 맞았어? 돌이 식고 있다는 거.")],"ep4:ubak:seori")
-            $ r13_tick()
             $ r13_grant(["W4"],"서리 검사원의 측정 기록")
             $ r13_flag("tok_cleared","seori_trust","ubak_ally","know_stone_failing","examination_agreed")
         "조각만 몰래 제자리에 돌려놓는다":
             call r13_lines([(None,"진료실 상자에서 조각을 꺼내 밤사이 광장 등에 다시 끼웠다. 등이 천천히 데워졌다."),
                 ("neoul","……조각이 돌아왔다고? 누가 장난을 쳤군. 톡은 증거가 없으니 풀어 주겠소.")],"ep4:ubak:return")
-            $ r13_tick()
             $ r13_flag("tok_cleared","ubak_owes")
-        "우박의 이름은 빼고 사실만 왕구에게 알린다":
+        "우박의 이름은 빼고 사실만 너울에게 알린다":
             call r13_lines([("dad","등 나사의 자국은 공구가 아니라 계측기 집게입니다. 톡의 작업 자국과 다릅니다. 조각은 측정 후 돌아올 겁니다."),
                 ("neoul","누가 쟀다는 거요? ……이름을 안 대겠다고? 좋소, 조각만 돌아오면 톡은 풀어 주겠소.")],"ep4:ubak:anon")
             $ r13_flag("tok_cleared","ubak_ally")
@@ -447,6 +442,6 @@ label r13_ep4_ubak:
 
 label r13_ep4_deadline:
     call r13_lines([(None,"수리점 문에 판자가 덧대져 있었다. 조각을 찾지 못한 채 기한이 지났다."),
-        ("dad","(톡이 갇혔다. 왕구는 끝내 다른 사람을 찾지 않았다.)",{"thought":True})],"ep4:deadline")
+        ("dad","(톡이 갇혔다. 너울은 끝내 다른 사람을 찾지 않았다.)",{"thought":True})],"ep4:deadline")
     $ r13_flag("tok_detained")
     return

@@ -27,8 +27,8 @@ checks.append('wrong item/target keeps inventory')
 step('drawer','tag','paper');assert state['paper_placed'] and 'paper' not in state['inventory']
 step('desk','paper');assert 'paper' not in state['inventory']
 checks.append('placed paper never respawns or duplicates')
-state=json.loads(json.dumps(state));step('drawer','tag','pencil');assert state['rubbing']
-step('drawer','divider','ruler');assert state['compartment_open']
+state=json.loads(json.dumps(state));step('drawer','tag','pencil');assert state['rubbing'] and 'pencil' not in state['inventory']
+step('drawer','divider','ruler');assert state['compartment_open'] and 'ruler' not in state['inventory']
 step('drawer','compartment');assert 'magnifier' in state['inventory']
 step('drawer','compartment');assert state['inventory'].count('magnifier')==1
 checks.append('save-roundtrip mid-puzzle preserves completion and one reward')

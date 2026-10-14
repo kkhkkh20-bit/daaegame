@@ -2,9 +2,10 @@
 # relationship rewards: the family's travelling writing case moves with them.
 init 66 python:
     R13_INSPECTION_ITEMS = {
-        "pencil": ("짧은 연필", "넓게 눕혀 문지르면 종이 아래의 눌린 무늬를 옮길 수 있다."),
-        "paper": ("얇은 종이", "우리 짐에서 꺼낸 빈 종이. 표면의 눌린 무늬를 떠 볼 만하다."),
-        "ruler": ("납작한 자", "끝이 얇고 둥글다. 틈의 걸림쇠를 누를 때 쓸 수 있다."),
+        # Owner asked what these are for (0.18.5): each line names its use.
+        "pencil": ("짧은 연필", "종이 위에 눕혀 문지르면 아래에 눌린 무늬가 옮겨진다. 얇은 종이를 먼저 깐 뒤 쓴다."),
+        "paper": ("얇은 종이", "눌린 무늬 위에 까는 종이. 서랍 속 낡은 운반표 위에 놓아 보자."),
+        "ruler": ("납작한 자", "끝이 얇다. 서랍 칸막이의 걸림쇠를 누를 수 있다. 여는 방법을 알아낸 뒤 쓴다."),
         "magnifier": ("접이식 돋보기", "책상 물건을 확대한다. 현장의 이불 바느질·수리점 도면도 조사 메뉴에서 살필 수 있다."),
     }
     # Coordinates are in the game's 1280x720 canvas, independent of source size.
@@ -53,7 +54,11 @@ init 66 python:
             s["taken"].append(key)
             if key not in s["inventory"]: s["inventory"].append(key)
             out["selected"]=None
-            return say("아이템 획득: %s. 아래에서 선택한 뒤 사용할 물건을 누르자."%R13_INSPECTION_ITEMS[key][0])
+            if key=="magnifier":
+                return say("아이템 획득: 접이식 돋보기. 책상 물건을 크게 보거나, 현장 조사 메뉴에서 쓸 수 있다.")
+            if all(k in s["taken"] for k in ("pencil","paper","ruler")):
+                return say("아이템 획득: %s. 세 도구를 모두 챙겼다. 서랍을 열고 잠긴 도구칸을 열어 보자."%R13_INSPECTION_ITEMS[key][0])
+            return say("아이템 획득: %s. %s"%R13_INSPECTION_ITEMS[key])
         if view not in ("desk","drawer") or target not in R13_INSPECTION_LAYOUT[view]["targets"]:
             return say("손이 닿는 물건부터 살펴보자.")
         seen=view+":"+target
@@ -73,11 +78,13 @@ init 66 python:
                 if not s["paper_placed"]: return say("운반표에 바로 칠하면 글씨를 덮어 버린다. 얇은 종이를 먼저 대자.")
                 if s["rubbing"]: return say("탁본은 이미 완성됐다. 아래쪽 홈을 누른 채 오른쪽으로 미는 그림이다.")
                 s["rubbing"]=True;out["selected"]=None
+                if "pencil" in s["inventory"]: s["inventory"].remove("pencil")
                 return say("연필을 눕혀 문질렀다. 칸막이 아래쪽 홈을 누른 채 오른쪽으로 미는 그림이 나타났다.")
             if view=="drawer" and target in ("divider","compartment") and selected=="ruler":
                 if s["compartment_open"]: return say("도구칸은 이미 열려 있다. 더 벌릴 필요는 없다.")
                 if not s["rubbing"]: return say("아무 틈이나 벌리면 얇은 나무가 갈라지겠다. 운반표에 남은 여는 방법을 먼저 읽어 보자.")
                 s["compartment_open"]=True;out["selected"]=None
+                if "ruler" in s["inventory"]: s["inventory"].remove("ruler")
                 return say("자로 아래쪽 걸림쇠를 누르고 판을 오른쪽으로 밀었다. 안쪽 도구칸에 접이식 돋보기가 있다.")
             return say("여기에는 이 도구를 쓸 일이 없겠다. 물건은 그대로 두었다.")
         if view=="desk" and target in ("pencil","paper","ruler"): return take(target)
@@ -167,12 +174,12 @@ screen r13_desk_inspection():
     default view="desk"
     default selected=None
     default lens=None
-    default message="우리 짐에서 꺼낸 여행 필기함이다. 물건을 살피거나 챙긴 뒤, 아이템을 다른 물건에 써 보자."
+    default message=("우리 여행 필기함이다. 서랍 속 작은 도구칸이 잠겨 있다. 책상 위 종이·연필·자를 챙겨 여는 방법을 찾자." if not r13_inspection_state()["compartment_open"] else "우리 여행 필기함이다. 돋보기를 고르고 물건을 누르면 크게 볼 수 있다.")
     add r13_inspection_art(view)
     for target,rect in R13_INSPECTION_LAYOUT[view]["targets"].items():
         if not (view=="desk" and target in ("pencil","paper","ruler") and target in r13_inspection_state()["taken"]):
             button:
-                area tuple(rect) padding (0,0) background None hover_background Solid("#f5d48b22")
+                area tuple(rect) padding (0,0) background None hover_background None
                 action (Return("mother_note") if view=="desk" and target=="letters" and room13.get("life_poc") and room13["location"]=="room13" else Function(r13_inspection_click,view,target,selected))
                 sensitive (lens is None)
                 tooltip ("접힌 메모와 편지" if target=="letters" and room13.get("life_poc") and room13["location"]=="room13" else R13_INSPECTION_NAMES[target])
@@ -238,7 +245,7 @@ screen r13_item_bag():
         vbox:
             spacing 20
             text "아이템" size 32 color "#f6d18a"
-            text "도구는 책상에서 사용한다. 돋보기는 현장 물건의 조사 메뉴에서도 쓸 수 있다." size 23 color "#fff2cf"
+            text "종이·연필·자는 객실 책상 서랍의 잠긴 도구칸을 여는 데 쓴다. 열면 돋보기가 나온다. 돋보기는 현장 물건의 조사 메뉴에서도 쓸 수 있다." size 23 color "#fff2cf" xsize 950
             for key in r13_inspection_state()["inventory"]:
                 hbox:
                     spacing 18
