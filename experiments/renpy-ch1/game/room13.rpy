@@ -19,7 +19,7 @@ label r13_scene(bg,title,mood="calm"):
         return
     scene black with Dissolve(.18)
     call r13_arrival(bg,title,mood)
-    $ r13_music={"calm":"assets/town-bright.mp3","travel":"assets/travel.mp3","search":"assets/search.mp3","night":"assets/night.mp3","hearing":"assets/source-serious-context-v4.mp3","quiet":None}[mood]
+    $ r13_music=r13_sound_scene_music(bg,title,mood)
     if r13_music:
         if renpy.music.get_playing()!=r13_music:
             $ renpy.music.play(r13_music,fadeout=.2,fadein=.2)

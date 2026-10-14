@@ -528,6 +528,9 @@ screen pause_menu():
                             text "문이 열리는 소리 등 효과음은 유지합니다." size r13_read_size(17,20) color R13_UI_COLORS["menu_secondary"] yalign .5
                         use r13_opt_row("소리 확인"):
                             textbutton "효과음 듣기" xsize 200 action Function(r13_test_option_sound) text_size r13_read_size(20,24)
+                        use r13_opt_row("음악 출처"):
+                            textbutton "보기" xsize 150 action Show("r13_music_credits") text_size r13_read_size(20,24)
+                            text "배경음은 CC BY 4.0, 효과음은 CC0입니다." size r13_read_size(17,20) color R13_UI_COLORS["menu_secondary"] yalign .5
                         text "음량 0 또는 꺼짐이면 소리가 나지 않습니다." size r13_read_size(18,21) color R13_UI_COLORS["menu_secondary"]
                     elif tab=="screen":
                         use r13_opt_row("글자 크기"):

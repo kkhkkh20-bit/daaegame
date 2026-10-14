@@ -1,41 +1,63 @@
-# 0.18.6-dev · 2026-10-14 — 사건 묶음 3: 저울 → 배급표 → 학교 장작, 기록 팔기, 소문의 효과
+# 0.18.6-dev · 2026-10-14 — 장소별 배경음, 리모컨 버튼 효과음 (소유자 지시)
 
-코드는 `game/systems/room13_bundle3.rpy`다. `r13_town_events`에서 도착 장면으로 연결했다. 소유자 결정이 필요하다고 사건 목록 6절에 적힌 L(편지 역이용)·T(거짓 증언)는 넣지 않았다.
+소유자 요청: 메인 배경음은 몽환적인 피아노로, 장소마다 맞는 배경음을 넣는다. 무료 음원을 최대한 쓴다. 옵션·증거 제출 같은 UI 버튼에는 TV 리모컨 버튼을 누르는 '딸깍' 소리를 넣는다(띡 소리 없이 딸깍만).
 
-## 사건
+## 파일
 
-| 사건 | 언제·어디 | 선택지 | 이어지는 것 |
-|---|---|---|---|
-| D 은호의 저울 | 저울 조작을 찾은 뒤 은호와 대화 | 조용히 바로잡게 함(1냥 할인) / 광장에 알림(좋은 소문, 은호 적대) / 입막음 반값(나만 반값) / 배급소 저울까지 캐기(H6, 구슬에게 들은 뒤) | 구슬에게 "나사를 누가 조였는지" 물으면 배급소 저울도 같은 날 조였다는 걸 안다 |
-| E 배급표 다툼 | 5~6일 낮, 광장 | 도토 장부 보기 / 배급소 저울 다시 재기(D 필요) / 백 부인 비축 장부(H1) / 6냥 대신 내기 / 보리 편 들기 / 지켜보기 | 저울이나 장부로 보리의 누명을 벗기면 좋은 소문 |
-| O 학교 장작 | 5~6일 저녁 미션, 학교 | 사정 묻기(W8) / 곰 선생님 부르기 / 학교 일 대신 하기 / 6냥 / 모른 척 | E에서 보리를 돕지 못했을 때만 열린다 |
-| U 사서의 기록 장 | 4~6일 낮, 우체국 | 먼저 보여 달라고 함 / 6냥으로 장부 지키기 / 베낄 시간 부탁(다음 날 사본) / 모른 척 | 돌의 옛 기록(W3)은 사건 3에서 촌장을 설득하는 "기록" 길의 조건이다. 놓치면 은호에게 12냥에 되사야 한다 |
+- `game/systems/room13_sound.rpy` (init -5, 150) 새 파일
+  - `R13_PLACE_SOUND`: 장소(배경 이름)별 평온·조사·밤 배경음과 환경음.
+  - `R13_SCENE_SOUND`: 이야기 장면 13곳 따로 지정(초소 보호실 만남, 끌고 가는 수레, 연기가 새는 문 등).
+  - `r13_sound_scene_music(bg,title,mood)`: `label r13_scene`이 부른다. 배경음 경로를 돌려주고 환경음을 맞춘다.
+  - 분위기 규칙: `travel`=이동 곡, `hearing`=회의 곡(환경음 끔), `quiet`=무음(장소 환경음은 유지).
+  - `ambience` 채널(효과음 음량을 따름) 추가. 메인 메뉴로 가면 멈춘다.
+  - `source_fx` 층 추가: 기존 효과음 키(tap, page, found, impact, knock, door 등)를 새 파일로 바꾼다. 매칭이 없는 키는 예전 파일을 쓴다.
+  - `r13_present` 10층(init 150): 증거를 보여 주면 오케스트라 히트.
+  - `r13_debate_judge` 2층(init 150): 회의에서 증거를 내밀면 히트 뒤에 반박 성공=맞음, 틀림=틀림 소리. 그 밖(이미 반박됨·동의 없음 등)은 히트만.
+  - `style button`의 `activate_sound` = 리모컨 버튼 '딸깍'. 버튼 스타일을 물려받는 모든 버튼에 적용된다.
+  - `r13_music_credits` 화면: 옵션 → 소리 → 음악 출처 → 보기. CC BY 4.0 표기.
+- `game/room13.rpy`: `r13_scene`의 분위기별 곡 사전을 `r13_sound_scene_music` 호출로 바꿨다(한 줄).
+- `game/options.rpy`: 타이틀 곡 `assets/bgm-title.mp3`. 버전 0.18.6-dev.
+- `game/room13_options.rpy`: '효과음 듣기'가 새 딸깍 소리를 낸다.
+- `game/screens.rpy`: 옵션 소리 탭에 '음악 출처' 줄.
+- `game/assets/`: `bgm-*.mp3` 16곡, `amb-*.mp3` 3개, `sfx-*.wav` 15개, `music-v6-credits.txt`.
+  - 예전 곡(town-bright.mp3 등)은 예전 장(source·winter)이 아직 쓰므로 남겼다.
+- `game/qa_tests/`: `sound_places` 화면 테스트, `r13_qa_sound` 도우미.
+- `dev/qa_sound.py`: 웹판 브라우저 소리 검사.
 
-## 소문의 효과
+## 장소별 배경음
 
-- 나쁜 소문이 하나라도 있으면 은호 물건값이 1냥 오른다.
-  - 나쁜 소문: 뇌물, 말썽꾼, 장물 판매, 억지로 빼앗기, 입막음 돈
-  - 좋은 소문(저울 공개, 보리 누명 벗김)이 있으면 오르지 않는다.
-- 반값 입막음을 받았으면 소문과 관계없이 반값이다.
-- 소문은 퍼진 뒤 광장·여관·식당에 도착할 때 한 번 귓속말 장면으로 들린다.
+| 장소 | 평온 | 조사(사건 뒤) | 밤 | 환경음 |
+|---|---|---|---|---|
+| 눈에 막힌 입구 | First Snow | First Snow | Measured Paces | 바람 |
+| 광장 · 우체국 | Childhood | Investigations | Measured Paces | 바람 |
+| 수리점 | Heartwarming | Investigations | Comfortable Mystery 4 | 시계 |
+| 공동 물품 창고 | Heartwarming | Investigations | Measured Paces | |
+| 여관 접수대 · 식당 · 주방 | Midvinter | Comfortable Mystery 4 | Water Lily | 난로 |
+| 여관 2층 복도 | Midvinter | Investigations | Measured Paces | |
+| 임시 객실 | Water Lily | Comfortable Mystery 4 | Water Lily | |
+| 13호실 | Measured Paces | Measured Paces | Measured Paces | |
+| 서비스 통로 · 폐온실 · 보호시설 | The Long Dark | | | |
+| 임시 진료실 | Comfortable Mystery 4 | | | |
+| 마을 학교 | Water Lily | | | |
+| 숲속 제단 | Shadows and Dust | | | |
+| 마차 안 · 이동 | Snowfall | | | |
+| 타이틀 | Sleep (Piano Only) | | | |
+| 원탁 회의 · 청문 | Iron Horse | | | |
+| 가족 장면 / 엔딩 | The Long Way Home / Home Was You | | | |
+| 압박(끌고 가는 수레) | Sanctuary | | | |
 
-## 선택지 화면 (소유자 지시)
+## 라이선스
 
-- 누군가와 이야기하는 중의 선택지는 질문 화면과 같은 구성으로 바꿨다. 대상은 그 장면에서 마지막으로 말한 주민이다.
-  - 왼쪽: 그 인물
-  - 위: 이름과 바로 앞 대사
-  - 오른쪽: 번호 붙은 선택지
-- 장면이 바뀌면(`r13_scene`) 대화 상대 기억을 지운다.
-- 상대가 없는 선택지(혼자 하는 판단, 저녁 안내)는 0.18.4의 가운데 목록 그대로다.
-- 질문 화면도 1~9 키로 고를 수 있다.
+- 배경음: Scott Buckley 10곡, Kevin MacLeod 6곡. CC BY 4.0. 게임 안 '음악 출처' 화면과 `assets/music-v6-credits.txt`에 표기.
+- 효과음: Kenney, OpenGameArt의 CC0 소리. 딸깍은 OpenGameArt "Middle Mouse Click"(1j01, CC0)을 둔하게 다듬은 것.
+- 배경음은 원본에서 앞뒤 무음을 자르고 -24 LUFS로 일정하게 맞췄다(곡 내용 변경 없음).
 
 ## 검증
 
-- 단위 테스트, Ren'Py lint 통과.
-- Ren'Py 화면 테스트 표준 묶음 34개 통과. 새 테스트는 다음과 같다.
-  - b3_ration_chain
-  - b3_scale_half
-  - b3_firewood
-  - b3_pages
-- 브라우저: qa_town_events, qa_carriage, qa_navigation, qa_save_slots.
-- 작업 방식: 소유자 요청으로 전체 회귀는 묶음이 끝난 뒤 배포 전에 한 번만 돌린다.
+- main의 0.18.4-dev(선택지·대사 건너뛰기)와 0.18.5-dev(시간 규칙·저녁 미션·대사집 도구)를 병합한 뒤 다시 검사했다.
+- `dev/check.sh`: 단위 테스트 통과, lint 문제 없음. `override_map.py --write`로 지도 갱신.
+- `dev/run_renpy_tests.sh` 표준 묶음 30개(skip_modes, evening_* 포함) + `override_chain` + `sound_places` 통과(`SDL_AUDIODRIVER=dummy`).
+  - `sound_places`: 장소 18곳 × 분위기 4가지의 실제 재생 곡·환경음 확인, 효과음·곡 파일 모두 불러올 수 있음, 회의 판정 뒤 히트→판정 소리 순서.
+- 브라우저(웹판, archive_sha256 `d4b102d8…`): `qa_sound.py`, `qa_carriage.py`, `qa_navigation.py`, `qa_save_slots.py` 통과.
+  - `qa_sound.py`: 타이틀 곡 설정, 마차=Snowfall, 입구=First Snow+바람, 실제 버튼으로 여관 이동(복도=Midvinter, 13호실=Measured Paces, 접수대=Midvinter+난로), 음원 요청 200, 콘솔 오디오 오류 없음, 음악 출처 화면 열고 닫기.
+- 사람이 직접 들어 보는 확인은 하지 않았다. 곡 반복 이음새는 곡 전체 반복이다.

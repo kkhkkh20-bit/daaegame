@@ -1,12 +1,12 @@
 {
  "multipart": true,
- "archive_bytes": 7656123,
- "archive_sha256": "e7f7f07d27964b04234d5df89cf7f34d7b244584b8ed685561ad3c380f547b52",
+ "archive_bytes": 7824328,
+ "archive_sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 7656123,
-   "sha256": "e7f7f07d27964b04234d5df89cf7f34d7b244584b8ed685561ad3c380f547b52"
+   "bytes": 7824328,
+   "sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129"
   }
  ],
  "preload": [
@@ -19,6 +19,11 @@
    "file": "game/assets/Room13Sans.ttf",
    "bytes": 216572,
    "sha256": "3d78103f88408e1dfec40da20078f9cffadf07397815959b71908468d9b8e5c5"
+  },
+  {
+   "file": "game/assets/bgm-title.mp3",
+   "bytes": 2887261,
+   "sha256": "1f0e9975bd24f91ee0549038822d9c94a1b4c8521849a253266beefa1cf444ef"
   },
   {
    "file": "game/assets/room13-pixel-acting-badook.webp",
@@ -856,14 +861,49 @@
    "sha256": "d88220e0b37029e9833b44b6efadd166b6d909cff531699e5e44d58d30e86ef9"
   },
   {
+   "file": "game/assets/sfx-bell.wav",
+   "bytes": 118166,
+   "sha256": "bc9bb232f95c7f686b351b74d48311d4a61232a8a3ba28fe979745391012f6be"
+  },
+  {
+   "file": "game/assets/sfx-clue.wav",
+   "bytes": 86540,
+   "sha256": "8406e5afb67743bc170726ecde773f5c2adeebfb8f91249056934a5999890c3c"
+  },
+  {
+   "file": "game/assets/sfx-door-open.wav",
+   "bytes": 80654,
+   "sha256": "97f5a30fba41d17a571c30b84da544ade444de091c4530f59471fc79eec5a9bb"
+  },
+  {
+   "file": "game/assets/sfx-knock.wav",
+   "bytes": 65972,
+   "sha256": "4f698506f45b552776dcc270ee96308cde896f96025c8bd360e1c6ff2525486a"
+  },
+  {
+   "file": "game/assets/sfx-page.wav",
+   "bytes": 81698,
+   "sha256": "67c9bd7121eaddb2af4d1931a01200e10a5c2936b7406bdf24c8df54fcbc7ccd"
+  },
+  {
+   "file": "game/assets/sfx-right.wav",
+   "bytes": 82082,
+   "sha256": "4f7e1f0a7037c5db068dbf92a60ff1e70b011d3e3dea78b135da35a0490589d9"
+  },
+  {
+   "file": "game/assets/sfx-walk-snow.wav",
+   "bytes": 154428,
+   "sha256": "a81fdbc6c184b007452361a638471a0daef5199d2d764519b9533638d24d2783"
+  },
+  {
+   "file": "game/assets/sfx-walk-wood.wav",
+   "bytes": 154428,
+   "sha256": "97ebcca13d413b1f910a1ac7697e55a3fdcd57e9b79d6ac3f1f34110bf9e026c"
+  },
+  {
    "file": "game/assets/source-bell10.wav",
    "bytes": 431782,
    "sha256": "0b51dbc0c903b83f4b001cec4b724e3216657bbdbfab1c5e074307c82b5d918f"
-  },
-  {
-   "file": "game/assets/source-title-strings-v3.mp3",
-   "bytes": 1281539,
-   "sha256": "03018882f6a365d79e1ce5e233637db7d939a8b75ffb766d18654c6510a1e882"
   },
   {
    "file": "game/assets/winter-gate.webp",
@@ -883,6 +923,24 @@
  ],
  "prefetch": [
   "game/assets/after.mp3",
+  "game/assets/amb-clock.mp3",
+  "game/assets/amb-fire.mp3",
+  "game/assets/amb-wind.mp3",
+  "game/assets/bgm-altar.mp3",
+  "game/assets/bgm-council.mp3",
+  "game/assets/bgm-dark.mp3",
+  "game/assets/bgm-ending.mp3",
+  "game/assets/bgm-family.mp3",
+  "game/assets/bgm-inn.mp3",
+  "game/assets/bgm-inn2.mp3",
+  "game/assets/bgm-night.mp3",
+  "game/assets/bgm-pressure.mp3",
+  "game/assets/bgm-search.mp3",
+  "game/assets/bgm-snow.mp3",
+  "game/assets/bgm-think.mp3",
+  "game/assets/bgm-travel.mp3",
+  "game/assets/bgm-village.mp3",
+  "game/assets/bgm-village2.mp3",
   "game/assets/comic.mp3",
   "game/assets/meeting.mp3",
   "game/assets/night.mp3",
@@ -892,6 +950,7 @@
   "game/assets/source-investigation-context-v4.mp3",
   "game/assets/source-meeting-press-strings-v3.mp3",
   "game/assets/source-serious-context-v4.mp3",
+  "game/assets/source-title-strings-v3.mp3",
   "game/assets/source-travel-strings-v3.mp3",
   "game/assets/town-bright.mp3",
   "game/assets/travel.mp3"

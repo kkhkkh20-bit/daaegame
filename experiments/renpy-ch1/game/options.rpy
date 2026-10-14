@@ -1,5 +1,5 @@
 define config.name = "다람탐정 · 눈에 갇힌 마을"
-define config.version = "0.18.6-dev"
+define config.version = "0.18.7-dev"
 # Literal early definition selects the persistent web save mount.
 define config.save_directory = "daaegame-renpy-village-ch1-06"
 
@@ -53,7 +53,7 @@ init python:
             return rendered
     gui.init(1280,720)
     config.has_voice = True
-    config.main_menu_music = "assets/source-title-strings-v3.mp3"
+    config.main_menu_music = "assets/bgm-title.mp3"
     config.main_menu_music_fadein = 1.2
     config.default_music_volume = 0.75
     config.default_sfx_volume = 0.7
@@ -69,7 +69,7 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.18.6-dev"
+    build.version = "0.18.7-dev"
     build.classify("game/assets/room13-painted-*.png", None)
     build.classify("game/assets/room13-painted-layouts.json", None)
     build.classify("game/assets/*.txt", "all")

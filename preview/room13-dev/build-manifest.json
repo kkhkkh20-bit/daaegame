@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 7656123,
-  "archive_sha256": "e7f7f07d27964b04234d5df89cf7f34d7b244584b8ed685561ad3c380f547b52",
+  "archive_bytes": 7824328,
+  "archive_sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 7656123,
-    "sha256": "e7f7f07d27964b04234d5df89cf7f34d7b244584b8ed685561ad3c380f547b52"
+    "bytes": 7824328,
+    "sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 30539,
-   "sha256": "c6ef7eff6690e2431cf5d53a17147aa69cbc908b88d6a8730c5504acad9f99eb"
+   "bytes": 32331,
+   "sha256": "5fcc83e147959848a110d4f3fecb72e56611b939a820999dcad6e99c241e831f"
   },
   "game.part01": {
-   "bytes": 7656123,
-   "sha256": "e7f7f07d27964b04234d5df89cf7f34d7b244584b8ed685561ad3c380f547b52"
+   "bytes": 7824328,
+   "sha256": "65e7042d1339f98a1ddec1ff7eda12788c736717863a57f2a606515aa7bd4129"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -48,6 +48,18 @@
    "bytes": 1281539,
    "sha256": "7326fa27210d5799ec300898e96d899c595a4b3042b2d99ef7865626e5b58393"
   },
+  "game/assets/amb-clock.mp3": {
+   "bytes": 64573,
+   "sha256": "d7774b1118da5ff7f0aca92ef9f7982b13060c887ef812ac95b2cde417824ff0"
+  },
+  "game/assets/amb-fire.mp3": {
+   "bytes": 234683,
+   "sha256": "ccdfa2c468a21e48b8b95feb0165b32e95f9d83ef8aee2bbc8df35f468bf2ea3"
+  },
+  "game/assets/amb-wind.mp3": {
+   "bytes": 53706,
+   "sha256": "509bda7c964d410936fffaefe4a729921fcf2aab5c991b3479f4c3463bb6b7cf"
+  },
   "game/assets/approach.png": {
    "bytes": 2571407,
    "sha256": "9180aa5660a84ede4b4a6ea624f83202eec3bfb22a6c0b9b9e8c00dd35868f33"
@@ -55,6 +67,70 @@
   "game/assets/basket-world.png": {
    "bytes": 509792,
    "sha256": "e68393acd7c124aebc5288652115b8d3382735a6890c84c4aea3f8dee00f828b"
+  },
+  "game/assets/bgm-altar.mp3": {
+   "bytes": 6499682,
+   "sha256": "ee04c2572ba8296845d825f26270bacd6ac63ad11b1c4e1a426b46045f1635e8"
+  },
+  "game/assets/bgm-council.mp3": {
+   "bytes": 1545194,
+   "sha256": "8f615dc44d5263b68505b0fb71e67edeca456f22815692903d809c6ea8407dbd"
+  },
+  "game/assets/bgm-dark.mp3": {
+   "bytes": 6980335,
+   "sha256": "221b3c49a0a9c92e97e0c91aae6e80e8f6029b333d3425818352776cdb18d5dd"
+  },
+  "game/assets/bgm-ending.mp3": {
+   "bytes": 4228910,
+   "sha256": "2cb1a8f92cc1e1cbb4b9103a7be78b7ff39adc0e0df22abb121b8d18ee2430e1"
+  },
+  "game/assets/bgm-family.mp3": {
+   "bytes": 2748916,
+   "sha256": "9f76edfb01f06602309eb1d51b2865cc96c7d3d7f8a1572cead4279feb2cdad4"
+  },
+  "game/assets/bgm-inn.mp3": {
+   "bytes": 4339669,
+   "sha256": "25ca8a64977ba9e29306b273c3bc1ee90c917e9fa45b3a94dee0a9da471f844c"
+  },
+  "game/assets/bgm-inn2.mp3": {
+   "bytes": 2001605,
+   "sha256": "5f37fe780425e1c54eb363553b7ce64daa43a7f5fb7ef91925144614facac840"
+  },
+  "game/assets/bgm-night.mp3": {
+   "bytes": 1059525,
+   "sha256": "8644b72d52ff98df08db4a47775718849c4674c31342b43da684f708ffd93114"
+  },
+  "game/assets/bgm-pressure.mp3": {
+   "bytes": 3897468,
+   "sha256": "03ca6c061e85731f6df15da84337cb15b18c190a210ad6dc924b75761bd4f060"
+  },
+  "game/assets/bgm-search.mp3": {
+   "bytes": 1481246,
+   "sha256": "57daec8efc95164362c29d65bb54001ee3494be81bc1475bf8d3b95aabc00728"
+  },
+  "game/assets/bgm-snow.mp3": {
+   "bytes": 3385050,
+   "sha256": "a94f5aecd61fb192e78ce56224c5309e1be8f8f9b77b48340d55188c8708b197"
+  },
+  "game/assets/bgm-think.mp3": {
+   "bytes": 1171120,
+   "sha256": "6525abfd69045ff5e3a578dd6f295f2568601ffb7c31439e6776b23c002856c9"
+  },
+  "game/assets/bgm-title.mp3": {
+   "bytes": 2887261,
+   "sha256": "1f0e9975bd24f91ee0549038822d9c94a1b4c8521849a253266beefa1cf444ef"
+  },
+  "game/assets/bgm-travel.mp3": {
+   "bytes": 3893288,
+   "sha256": "3718affb14e42729bb96b37d48eaea8aa723cc076f16fb81c92c622a1a1846e2"
+  },
+  "game/assets/bgm-village.mp3": {
+   "bytes": 2144965,
+   "sha256": "fb971211b62ae193f89723d9772024d3be5393f8e93199881f28f183c359bfc7"
+  },
+  "game/assets/bgm-village2.mp3": {
+   "bytes": 1108008,
+   "sha256": "589440f33ba9c6e89186994bcdf2d139ee648fb55d120e8ae60cb998fdf0febc"
   },
   "game/assets/carriage.png": {
    "bytes": 1860201,
@@ -1168,6 +1244,38 @@
    "bytes": 824514,
    "sha256": "47ea9e003c6b29c833e0bd4c5761dcb7c3a91d38ef673552376052874217b7ee"
   },
+  "game/assets/sfx-bell.wav": {
+   "bytes": 118166,
+   "sha256": "bc9bb232f95c7f686b351b74d48311d4a61232a8a3ba28fe979745391012f6be"
+  },
+  "game/assets/sfx-clue.wav": {
+   "bytes": 86540,
+   "sha256": "8406e5afb67743bc170726ecde773f5c2adeebfb8f91249056934a5999890c3c"
+  },
+  "game/assets/sfx-door-open.wav": {
+   "bytes": 80654,
+   "sha256": "97f5a30fba41d17a571c30b84da544ade444de091c4530f59471fc79eec5a9bb"
+  },
+  "game/assets/sfx-knock.wav": {
+   "bytes": 65972,
+   "sha256": "4f698506f45b552776dcc270ee96308cde896f96025c8bd360e1c6ff2525486a"
+  },
+  "game/assets/sfx-page.wav": {
+   "bytes": 81698,
+   "sha256": "67c9bd7121eaddb2af4d1931a01200e10a5c2936b7406bdf24c8df54fcbc7ccd"
+  },
+  "game/assets/sfx-right.wav": {
+   "bytes": 82082,
+   "sha256": "4f7e1f0a7037c5db068dbf92a60ff1e70b011d3e3dea78b135da35a0490589d9"
+  },
+  "game/assets/sfx-walk-snow.wav": {
+   "bytes": 154428,
+   "sha256": "a81fdbc6c184b007452361a638471a0daef5199d2d764519b9533638d24d2783"
+  },
+  "game/assets/sfx-walk-wood.wav": {
+   "bytes": 154428,
+   "sha256": "97ebcca13d413b1f910a1ac7697e55a3fdcd57e9b79d6ac3f1f34110bf9e026c"
+  },
   "game/assets/somsom-hidden-source.png": {
    "bytes": 1477774,
    "sha256": "94aa325455252ace818ccaab8f0062bfc88061e7f862f09f8180199f287679d7"
@@ -1338,7 +1446,7 @@
   },
   "index.html": {
    "bytes": 9845,
-   "sha256": "de8faad53a8830a197b2edbb3f715feb61f816cc86fae02d4ebd12dc4c5c1ac8"
+   "sha256": "d0254f851646a81c30fcf702c69e48772cb59af0dbd316dd851548c97a0d65fa"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -1373,5 +1481,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 220989289
+ "total_bytes": 271708458
 }

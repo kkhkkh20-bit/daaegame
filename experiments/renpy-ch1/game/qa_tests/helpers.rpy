@@ -208,3 +208,34 @@ label r13_qa_goto(day,period,location,flags=()):
     $ r13_flag(*flags) if flags else None
     jump r13_roam
 
+# Sound check (0.18.6): visit every place in each mood and record what plays.
+label r13_qa_sound:
+    call r13_qa_setup(3,("E01","E05"))
+    $ _qa_sound={"title":config.main_menu_music,"places":{},"fx":{}}
+    $ _qa_bgs=sorted(R13_PLACE_SOUND)
+    $ _qa_i=0
+    while _qa_i<len(_qa_bgs):
+        $ _qa_bg=_qa_bgs[_qa_i]
+        $ _qa_row=[]
+        $ _qa_m=0
+        while _qa_m<4:
+            $ _qa_mood=("calm","search","night","quiet")[_qa_m]
+            $ r13_scene_key=None
+            call r13_scene(_qa_bg,"QA "+_qa_bg,_qa_mood)
+            $ _qa_row.append((_qa_mood,renpy.music.get_playing(),renpy.music.get_playing(channel="ambience")))
+            $ _qa_m+=1
+        $ _qa_sound["places"][_qa_bg]=_qa_row
+        $ _qa_i+=1
+    $ r13_scene_key=None
+    call r13_scene("hall","여관 2층 · 연기가 새는 문","quiet")
+    $ _qa_sound["smoke_door"]=(renpy.music.get_playing(),renpy.music.get_playing(channel="ambience"))
+    python:
+        for k in R13_FX:
+            _qa_sound["fx"][k]=renpy.loadable(r13_fx_path(k))
+        _qa_sound["bgm_loadable"]=all(renpy.loadable(p) for p in R13_BGM.values())
+        _qa_sound["amb_loadable"]=all(renpy.loadable(p) for p in R13_AMBIENCE.values())
+        _qa_sound["click"]=style.button.activate_sound
+        _qa_sound["judge"]=r13_debate_judge("C1",r13_debate_statements("C1")[0]["id"],"E05")[0]
+        _qa_sound["judge_fx"]=renpy.music.get_playing(channel="scene_fx")
+        open(renpy.config.basedir+"/qa_result.txt","w").write(repr(_qa_sound))
+    return
