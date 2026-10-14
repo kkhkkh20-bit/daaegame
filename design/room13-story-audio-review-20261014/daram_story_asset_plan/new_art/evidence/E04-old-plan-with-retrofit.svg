@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" shape-rendering="crispEdges">
+  <title>Old inn plan with later retrofit annotations — schematic review proposal</title>
+  <desc>Two separate level diagrams, not a measured architectural plan. Grey marks are the old laundry and service stair relationship. Red annotations link the kitchen lever to the room bookcase lower latch. No route dimensions or user identity are established.</desc>
+  <rect width="1600" height="900" fill="#5c392b"/>
+  <path fill="#6b4331" d="M0 48H800V68H0ZM960 0H1600V32H960ZM0 828H1600V860H0ZM32 120H60V764H32ZM1536 100H1572V800H1536Z"/>
+  <path fill="#332922" d="M88 80H1520V824H1488V852H88Z"/>
+  <path fill="#c0a27d" d="M68 60H1508V792H1472V832H92V816H68Z"/>
+  <path fill="#e4d0a9" d="M84 76H1488V788H1456V812H104V796H84Z"/>
+  <path fill="#eadbbb" d="M108 96H1456V776H120V760H108Z"/>
+  <path fill="#ddc9a6" d="M784 96H796V776H784ZM108 432H1456V444H108ZM120 756H320V776H120ZM1368 96H1456V116H1368Z"/>
+  <path fill="#f0e2c5" d="M800 96H808V776H800ZM108 448H1456V456H108Z"/>
+  <!-- Old plan, left level: kitchen, laundry, service stairs. All dark-grey lines are original. -->
+  <g fill="none" stroke="#67645b" stroke-width="8" stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M156 208H740V596H156ZM156 292H256M320 292H376M456 292H596M596 208V232M596 288V596M156 556H256M336 556H376V292M456 292V420M456 480V596"/>
+    <path d="M376 208V240M376 276V292"/>
+    <path d="M636 252H716V356H636Z M636 268H716 M636 284H716 M636 300H716 M636 316H716 M636 332H716"/>
+    <!-- Laundry tub and folded linen icon, no words. -->
+    <path d="M204 416H320V488H204Z M216 396H308V416 M224 380H300V396 M228 488V504 M300 488V504"/>
+    <path d="M216 440H308"/>
+    <!-- Kitchen counter and stove/pot icon. -->
+    <path d="M492 364H560V496H492Z M492 436H560 M508 380H544V412H508Z M500 380H552 M512 368H540 M520 356H532"/>
+    <path d="M520 468H536V484H520Z"/>
+  </g>
+  <!-- Door openings and old circulation remain grey; the two levels are not a single shared scale. -->
+  <g fill="none" stroke="#898274" stroke-width="4">
+    <path d="M256 556V504H308V556M256 292V240H308V292M376 240H412V276H376M456 420H504V468H456M596 232H636V276H596"/>
+  </g>
+  <!-- Right level: window on left outer wall, bed and bookcase at right; front door at corridor end. -->
+  <g fill="none" stroke="#67645b" stroke-width="8" stroke-linecap="square">
+    <path d="M868 208H1436V596H1388M868 208V288M868 360V524H988M1060 524H1316V208M1340 208V596M988 524V628H868M1060 524V672H868"/>
+    <path d="M868 288H852V360H868 M860 292V356"/>
+    <!-- Bed, oriented within the right half of the room. -->
+    <path d="M1136 264H1268V440H1136Z M1136 300H1268 M1148 276H1192V292H1148Z M1212 276H1256V292H1212Z"/>
+    <!-- Bookshelf on right room wall, lower access/lock shown separately below. -->
+    <path d="M1276 456H1308V508H1276Z M1284 456V480 M1296 456V480 M1276 484H1308"/>
+    <!-- Stair and narrow old service void on the far side of the bookcase wall. -->
+    <path d="M1356 252H1420V364H1356Z M1356 268H1420 M1356 284H1420 M1356 300H1420 M1356 316H1420 M1356 332H1420 M1356 348H1420"/>
+  </g>
+  <g fill="none" stroke="#898274" stroke-width="4">
+    <path d="M988 524V476H1036V524 M1316 456H1340 M1316 508H1340"/>
+  </g>
+  <!-- Fresh repair paper is intentionally a single unlabelled patch. -->
+  <path fill="#bea986" d="M472 512H572V564H472Z"/>
+  <path fill="#f5ecd3" d="M464 504H564V556H464Z"/>
+  <path fill="#daceb2" d="M548 504H564V520H548Z"/>
+  <!-- Later red notation denotes a retrofit connection, not a scale cable/path layout. -->
+  <g fill="none" stroke="#a1493c" stroke-width="8" stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M520 516V536H540 M520 536H500"/>
+    <path d="M520 536V692H768 M800 692H1048 M1080 692H1392V492H1316"/>
+    <path d="M1288 492H1324 M1288 492V508H1316V476H1324"/>
+  </g>
+  <!-- Breaks distinguish a cross-level annotation from traversable architecture. -->
+  <path fill="#a1493c" d="M764 680H772V688H780V696H788V704H780V696H772V688H764ZM1044 680H1052V688H1060V696H1068V704H1060V696H1052V688H1044Z"/>
+</svg>

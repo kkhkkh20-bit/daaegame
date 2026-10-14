@@ -1,0 +1,772 @@
+{
+  "version": "1.0",
+  "runtime_owner": "Claude",
+  "runtime_modified": false,
+  "events": [
+    {
+      "event_id": "choice_confirm",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_select_001",
+          "file": "selected/game_wav/kenney_select_001_v1.wav",
+          "notes_ko": "파일명이 select인 40ms 후보. 타이핑과 충분히 구별되는지는 청음 필요."
+        },
+        {
+          "id": "kenney_click1",
+          "file": "selected/game_wav/kenney_click1_v1.wav",
+          "notes_ko": "UI Audio의 click1. 91ms 후보와 130ms 합성안을 비교."
+        }
+      ],
+      "original_contract": {
+        "event_id": "choice_confirm",
+        "asset_ids": [
+          "choice_confirm"
+        ],
+        "files": [
+          "audio/wav/choice_confirm_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "ui_sfx",
+        "channel_gain": 0.85,
+        "file_peak_dbfs": -17.0,
+        "duration_ms": 130.0,
+        "priority": 20,
+        "cooldown_ms": 90,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "유효한 선택을 확정했을 때; 의미 있는 사건음이 뒤따르면 생략",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "choice_cancel",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_back_001",
+          "file": "selected/game_wav/kenney_back_001_v1.wav",
+          "notes_ko": "back 분류. 화면이 실제로 닫힐 때만 재생하는 후보."
+        }
+      ],
+      "original_contract": {
+        "event_id": "choice_cancel",
+        "asset_ids": [
+          "choice_cancel"
+        ],
+        "files": [
+          "audio/wav/choice_cancel_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "ui_sfx",
+        "channel_gain": 0.8,
+        "file_peak_dbfs": -19.0,
+        "duration_ms": 120.0,
+        "priority": 20,
+        "cooldown_ms": 120,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "취소/뒤로가기를 확정했을 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "evidence_acquire",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_confirmation_001",
+          "file": "selected/game_wav/kenney_confirmation_001_v1.wav",
+          "notes_ko": "confirmation 분류를 증거 획득 카드에 시험. 추론 정답 신호와 혼동되면 채택하지 않음."
+        }
+      ],
+      "original_contract": {
+        "event_id": "evidence_acquire",
+        "asset_ids": [
+          "evidence_acquire"
+        ],
+        "files": [
+          "audio/wav/evidence_acquire_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.7,
+        "file_peak_dbfs": -12.0,
+        "duration_ms": 580.0,
+        "priority": 75,
+        "cooldown_ms": 450,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "새 증거/증언 상태를 커밋한 뒤 첫 획득 카드가 나타날 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 0.4,
+        "typing_suppress_ms": 180,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "evidence_present",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_pluck_001",
+          "file": "selected/game_wav/kenney_pluck_001_v1.wav",
+          "notes_ko": "pluck 분류의 짧은 단발 후보. 자료를 보여 주는 행위이며 정답을 뜻하지 않음."
+        }
+      ],
+      "original_contract": {
+        "event_id": "evidence_present",
+        "asset_ids": [
+          "evidence_present"
+        ],
+        "files": [
+          "audio/wav/evidence_present_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.9,
+        "file_peak_dbfs": -16.0,
+        "duration_ms": 300.0,
+        "priority": 70,
+        "cooldown_ms": 350,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "제시 확정 뒤 자료 카드 첫 표시 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 180,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "mechanism_lever_on",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_switch_001",
+          "file": "selected/game_wav/kenney_switch_001_v1.wav",
+          "notes_ko": "switch 분류. 물리적 레버와 어울리는지는 아래 실제 기계음과 비교 필요."
+        },
+        {
+          "id": "bmaczero_mechanical1",
+          "file": "selected/game_wav/bmaczero_mechanical1_v1.wav",
+          "notes_ko": "기계음 mechanical1. 917ms여서 기존 합성 340ms보다 길며 화면 시점 검증 필요."
+        }
+      ],
+      "original_contract": {
+        "event_id": "mechanism_lever_on",
+        "asset_ids": [
+          "mechanism_lever_on"
+        ],
+        "files": [
+          "audio/wav/mechanism_lever_on_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.85,
+        "file_peak_dbfs": -16.0,
+        "duration_ms": 340.0,
+        "priority": 60,
+        "cooldown_ms": 300,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "주방 레버가 내려감에서 올라감으로 실제 전환될 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "footstep_wood",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_footstep_wood_000",
+          "file": "selected/game_wav/kenney_footstep_wood_000_v1.wav",
+          "notes_ko": "footstep_wood 분류. 실제 이동 연출에만 제한적으로 사용; 글자·클릭마다 반복하지 않음."
+        },
+        {
+          "id": "kenney_footstep_wood_001",
+          "file": "selected/game_wav/kenney_footstep_wood_001_v1.wav",
+          "notes_ko": "A/B를 번갈아 쓰는 후보. 기존 합성팩에는 발걸음이 없어 직접 비교 대상 없음."
+        }
+      ],
+      "original_contract": {},
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "book_latch_locked",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_wood_light_000",
+          "file": "selected/game_wav/kenney_wood_light_000_v1.wav",
+          "notes_ko": "impactWood_light 분류. 걸쇠 동작 전체가 아닌 나무 접촉층 후보; 오답음으로 쓰지 않음."
+        },
+        {
+          "id": "coughe_locked_jiggle",
+          "file": "selected/game_wav/coughe_locked_jiggle_v1.wav",
+          "notes_ko": "제작자가 명명한 LockedDoorHandleJiggle. 잠김 반응용이며 실패 벌점음이 아님."
+        }
+      ],
+      "original_contract": {
+        "event_id": "book_latch_locked",
+        "asset_ids": [
+          "book_latch_locked"
+        ],
+        "files": [
+          "audio/wav/book_latch_locked_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.75,
+        "file_peak_dbfs": -19.0,
+        "duration_ms": 190.0,
+        "priority": 50,
+        "cooldown_ms": 350,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "사용자가 손잡이를 당겼으나 걸쇠가 버틸 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "door_forced_open",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_wood_heavy_000",
+          "file": "selected/game_wav/kenney_wood_heavy_000_v1.wav",
+          "notes_ko": "impactWood_heavy 분류. 이것만으로 파손을 표현했다고 판단하지 않음. 구조 순간의 단발 충격층 후보."
+        }
+      ],
+      "original_contract": {
+        "event_id": "door_forced_open",
+        "asset_ids": [
+          "door_forced_open"
+        ],
+        "files": [
+          "audio/wav/door_forced_open_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.75,
+        "file_peak_dbfs": -15.0,
+        "duration_ms": 660.0,
+        "priority": 90,
+        "cooldown_ms": 2000,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "구조 장면에서 문틀 고정부가 뜯어지는 시각적 순간",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 180,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "book_latch_unlock",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "kenney_plank_medium_000",
+          "file": "selected/game_wav/kenney_plank_medium_000_v1.wav",
+          "notes_ko": "impactPlank_medium 분류. 잠금 해제와 별도의 판 이동층 후보."
+        },
+        {
+          "id": "coughe_unlock_door",
+          "file": "selected/game_wav/coughe_unlock_door_v1.wav",
+          "notes_ko": "UnlockDoor 파일. 책장 전체 이동이 아닌 걸쇠 해제 후보."
+        }
+      ],
+      "original_contract": {
+        "event_id": "book_latch_unlock",
+        "asset_ids": [
+          "book_latch_unlock"
+        ],
+        "files": [
+          "audio/wav/book_latch_unlock_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.85,
+        "file_peak_dbfs": -16.0,
+        "duration_ms": 480.0,
+        "priority": 65,
+        "cooldown_ms": 500,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "책장 잠금 해제와 판 이동을 실제로 확인하는 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "notebook_open",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "luckius_paper_1",
+          "file": "selected/game_wav/luckius_paper_1_v1.wav",
+          "notes_ko": "제작자가 지도 열기/닫기용으로 만든 종이 묶음. 이 파일의 정확한 동작은 청음 후 결정."
+        }
+      ],
+      "original_contract": {
+        "event_id": "notebook_open",
+        "asset_ids": [
+          "notebook_open"
+        ],
+        "files": [
+          "audio/wav/notebook_open_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "ui_sfx",
+        "channel_gain": 0.8,
+        "file_peak_dbfs": -19.0,
+        "duration_ms": 230.0,
+        "priority": 20,
+        "cooldown_ms": 250,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "수첩이 닫힘에서 열림으로 바뀔 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "notebook_page",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "luckius_paper_2",
+          "file": "selected/game_wav/luckius_paper_2_v1.wav",
+          "notes_ko": "같은 종이 묶음의 다른 후보. 빠른 페이지 이동과 맞지 않으면 원래 합성 150ms안을 유지."
+        }
+      ],
+      "original_contract": {
+        "event_id": "notebook_page",
+        "asset_ids": [
+          "notebook_page"
+        ],
+        "files": [
+          "audio/wav/notebook_page_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "ui_sfx",
+        "channel_gain": 0.75,
+        "file_peak_dbfs": -21.0,
+        "duration_ms": 150.0,
+        "priority": 15,
+        "cooldown_ms": 140,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "다른 수첩 페이지로 실제 변경될 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "passage_exit_release",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "bmaczero_lightclunk1",
+          "file": "selected/game_wav/bmaczero_lightclunk1_v1.wav",
+          "notes_ko": "기계 충돌/라쳇 묶음의 lightclunk1. 짧은 수동 해제 반응에 시험."
+        }
+      ],
+      "original_contract": {
+        "event_id": "passage_exit_release",
+        "asset_ids": [
+          "passage_exit_release"
+        ],
+        "files": [
+          "audio/wav/passage_exit_release_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.85,
+        "file_peak_dbfs": -17.0,
+        "duration_ms": 300.0,
+        "priority": 60,
+        "cooldown_ms": 400,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "통로 안쪽 수동 손잡이를 실제로 조작할 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "mechanism_lever_off",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "bmaczero_mechanical2",
+          "file": "selected/game_wav/bmaczero_mechanical2_v1.wav",
+          "notes_ko": "기계음 mechanical2. 올림과 내림을 구분하는 후보이며 실제 조작음 의미는 청음 확인."
+        },
+        {
+          "id": "coughe_door_lock",
+          "file": "selected/game_wav/coughe_door_lock_v1.wav",
+          "notes_ko": "DoorLock 파일. 레버를 내려 걸쇠가 돌아오는 마지막 접촉층 후보."
+        }
+      ],
+      "original_contract": {
+        "event_id": "mechanism_lever_off",
+        "asset_ids": [
+          "mechanism_lever_off"
+        ],
+        "files": [
+          "audio/wav/mechanism_lever_off_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.85,
+        "file_peak_dbfs": -17.0,
+        "duration_ms": 380.0,
+        "priority": 60,
+        "cooldown_ms": 350,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "주방 레버가 올라감에서 내려감으로 실제 전환될 때",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "door_open",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [
+        {
+          "id": "coughe_door_open",
+          "file": "selected/game_wav/coughe_door_open_v1.wav",
+          "notes_ko": "DoorOpen 파일. 일반 문 전용 추가 후보; 강제 파손과 같은 파일로 처리하지 않음."
+        }
+      ],
+      "original_contract": {},
+      "recommended_decision_ko": "무료 후보와 기존 합성안을 직접 청음한 뒤 하나를 선택. 물리음 레이어 조합은 필요할 때만 별도 렌더.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "typed_blip",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [],
+      "original_contract": {
+        "event_id": "typed_blip",
+        "asset_ids": [
+          "typed_blip_a",
+          "typed_blip_b",
+          "typed_blip_c"
+        ],
+        "files": [
+          "audio/wav/typed_blip_a_v1.wav",
+          "audio/wav/typed_blip_b_v1.wav",
+          "audio/wav/typed_blip_c_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "typing",
+        "channel_gain": 1.0,
+        "file_peak_dbfs": -17.5,
+        "duration_ms": 38.005,
+        "priority": 10,
+        "cooldown_ms": 70,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "새 읽기 글자 표시 시점; 공백·구두점·스킵 제외",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 0.5,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "원래 합성 후보 유지. 외부 무료 파일로 억지 교체하지 않음.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "suspense_rise",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [],
+      "original_contract": {
+        "event_id": "suspense_rise",
+        "asset_ids": [
+          "suspense_rise"
+        ],
+        "files": [
+          "audio/wav/suspense_rise_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "transition_sfx",
+        "channel_gain": 0.65,
+        "file_peak_dbfs": -18.0,
+        "duration_ms": 1400.0,
+        "priority": 45,
+        "cooldown_ms": 2000,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "명시적인 긴장 장면 경계 한 번",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "원래 합성 후보 유지. 외부 무료 파일로 억지 교체하지 않음.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "suspense_release",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [],
+      "original_contract": {
+        "event_id": "suspense_release",
+        "asset_ids": [
+          "suspense_release"
+        ],
+        "files": [
+          "audio/wav/suspense_release_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "transition_sfx",
+        "channel_gain": 0.65,
+        "file_peak_dbfs": -19.0,
+        "duration_ms": 780.0,
+        "priority": 45,
+        "cooldown_ms": 1200,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "명시적인 긴장 해제 장면 경계 한 번",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 1.0,
+        "typing_suppress_ms": 0,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "원래 합성 후보 유지. 외부 무료 파일로 억지 교체하지 않음.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "deduction_success",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [],
+      "original_contract": {
+        "event_id": "deduction_success",
+        "asset_ids": [
+          "deduction_success"
+        ],
+        "files": [
+          "audio/wav/deduction_success_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.7,
+        "file_peak_dbfs": -12.0,
+        "duration_ms": 820.0,
+        "priority": 85,
+        "cooldown_ms": 1000,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "실제 추론 성공 상태와 그 결과 공개가 일치하는 순간",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 0.4,
+        "typing_suppress_ms": 180,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "원래 합성 후보 유지. 외부 무료 파일로 억지 교체하지 않음.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    },
+    {
+      "event_id": "contradiction",
+      "status": "proposal_requires_listening_and_Claude_integration",
+      "free_candidates": [],
+      "original_contract": {
+        "event_id": "contradiction",
+        "asset_ids": [
+          "contradiction"
+        ],
+        "files": [
+          "audio/wav/contradiction_v1.wav"
+        ],
+        "codec_preference": "PCM_S16_WAV_for_short_cues",
+        "channel": "scene_fx",
+        "channel_gain": 0.72,
+        "file_peak_dbfs": -14.0,
+        "duration_ms": 520.0,
+        "priority": 85,
+        "cooldown_ms": 1000,
+        "loop": false,
+        "max_instances": 1,
+        "trigger_ko": "두 기록의 모순이 검증되고 사용자에게 공개되는 순간; 오답음 아님",
+        "start_offset_ms": 0,
+        "latency_target_ms": 80,
+        "dedupe_key": "(interaction_commit_id,event_id,semantic_target_id)",
+        "skip_policy": "suppress",
+        "load_policy": "stop_and_do_not_replay",
+        "redraw_policy": "silent",
+        "prediction_policy": "silent",
+        "bgm_duck_factor": 0.4,
+        "typing_suppress_ms": 180,
+        "status": "candidate_requires_listening_and_runtime_integration"
+      },
+      "recommended_decision_ko": "원래 합성 후보 유지. 외부 무료 파일로 억지 교체하지 않음.",
+      "loop": false,
+      "reuse_warning_ko": "같은 입력의 확인음·제시음·성공음을 겹치지 않음. hover·redraw·load 복원은 재생하지 않음."
+    }
+  ]
+}

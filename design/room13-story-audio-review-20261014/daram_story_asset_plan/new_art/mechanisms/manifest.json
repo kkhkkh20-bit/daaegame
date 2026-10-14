@@ -1,0 +1,787 @@
+{
+  "title": "13호 비밀통로 장치 및 회수 후 객실 상태",
+  "asset_count": 10,
+  "produced_asset_count": 10,
+  "game_applied": false,
+  "all_assets_are_generated_originals": true,
+  "production_path": "/workspace/shared/daram_story_asset_plan/production/mechanisms",
+  "delivery_mirror": "/workspace/shared/daram_story_asset_plan/new_art/mechanisms/",
+  "canonical_source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+  "creator_decisions_required": [
+    "책장 확대의 새로운 하부판/붉은 책 배치 및 낮은 통과 구조 승인",
+    "wide 바구니를 유지한 채 확대 overlay로 갈지, 원화 기하를 승인 후 개정할지 선택",
+    "현행 secret_route_unlocked=bool(persistent.room13_endings)와 첫회차 물리조작 허용 결정문 충돌 해결"
+  ],
+  "assets": [
+    {
+      "id": "kitchen-lever-off",
+      "file": "kitchen-lever-off.png",
+      "actual_size": {
+        "width": 1672,
+        "height": 941
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "870ed72bf1d6399d72f1965c4d5389709da0685e8eb1619e8c26ef22694709ef",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-3b481636-361f-4956-a1ed-b90f5388d878.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "주방 wide에 노출되지 않던 선반 아래 장치의 신규 상세 설계. 고정 걸림턱과 레버의 기계 결합은 시각 시안이며 공학 검증 아님."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/kitchen/afternoon.png"
+      ],
+      "before_after_pair": [
+        "kitchen-lever-off",
+        "kitchen-lever-on"
+      ],
+      "scene_conditions": {
+        "location": "kitchen",
+        "kitchen_switch": false,
+        "mechanism_cover": "slid left, exposed",
+        "time": "afternoon-detail"
+      },
+      "visual_review": {
+        "status": "제작 완료/장치 상세 검토용",
+        "summary": "같은 구도·덮개 위치. OFF는 아래 레버와 느슨한 금속 줄, ON은 위 레버와 팽팽한 줄. 전선이나 손 없음.",
+        "geometry": "고정 물건의 큰 윤곽은 같은 위치로 보임. 표면 질감/명암은 일부 재생성되어 픽셀 일치 아님."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "sliding_cover",
+          "rect": [
+            407,
+            228,
+            352,
+            370
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "lever",
+          "rect": [
+            804,
+            347,
+            135,
+            244
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "metal_cable",
+          "rect": [
+            887,
+            363,
+            326,
+            155
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "retaining_notch",
+          "rect": [
+            909,
+            241,
+            96,
+            133
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ]
+    },
+    {
+      "id": "kitchen-lever-on",
+      "file": "kitchen-lever-on.png",
+      "actual_size": {
+        "width": 1672,
+        "height": 941
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "de49eac80f22da532eac8cb58c9c1112345ba338a9b854f3be18b3596174b70b",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-ca2b21c3-ecd5-4f65-9112-b872aa8efa3a.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "주방 wide에 노출되지 않던 선반 아래 장치의 신규 상세 설계. 고정 걸림턱과 레버의 기계 결합은 시각 시안이며 공학 검증 아님."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/kitchen/afternoon.png",
+        "/workspace/shared/daram_story_asset_plan/production/mechanisms/kitchen-lever-off.png"
+      ],
+      "before_after_pair": [
+        "kitchen-lever-off",
+        "kitchen-lever-on"
+      ],
+      "scene_conditions": {
+        "location": "kitchen",
+        "kitchen_switch": true,
+        "mechanism_cover": "slid left, exposed",
+        "time": "afternoon-detail"
+      },
+      "visual_review": {
+        "status": "제작 완료/장치 상세 검토용",
+        "summary": "같은 구도·덮개 위치. OFF는 아래 레버와 느슨한 금속 줄, ON은 위 레버와 팽팽한 줄. 전선이나 손 없음.",
+        "geometry": "고정 물건의 큰 윤곽은 같은 위치로 보임. 표면 질감/명암은 일부 재생성되어 픽셀 일치 아님."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "sliding_cover",
+          "rect": [
+            407,
+            228,
+            352,
+            370
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "lever",
+          "rect": [
+            804,
+            244,
+            135,
+            207
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "metal_cable",
+          "rect": [
+            887,
+            373,
+            326,
+            56
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "retaining_notch",
+          "rect": [
+            909,
+            241,
+            96,
+            133
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ]
+    },
+    {
+      "id": "book-latch-locked",
+      "file": "book-latch-locked.png",
+      "actual_size": {
+        "width": 1672,
+        "height": 941
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "9dd94d54c2e61e9632129cd28b002ca6e4e380a2affee05d27cee3731e5b87ce",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-734e56f1-3b69-43d9-9024-ad129ae79143.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "원래 책장 하부의 책/바구니 배치와 신규 패널 상세 사이에 연속성 승인이 필요함.",
+        "입구는 낮은 기어들기 형태. 성인 캐릭터가 실제 통과하는 크기·동선은 미검증.",
+        "열림 이미지는 조작 중 관찰용. 손을 떼면 판이 닫히고 해제 상태만 유지된다는 대본 규칙을 영구 개방으로 바꾸지 말 것.",
+        "레버 ON/OFF가 안쪽 수동 해제의 작동 여부를 제한하지 않아야 함."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/afternoon.png"
+      ],
+      "before_after_pair": [
+        "book-latch-locked",
+        "book-latch-open"
+      ],
+      "scene_conditions": {
+        "location": "room13-detail",
+        "kitchen_switch": false,
+        "book_handle": "flush upright",
+        "panel": "closed",
+        "time": "afternoon-detail"
+      },
+      "visual_review": {
+        "status": "공간 재구성 제안/승인 필요",
+        "summary": "붉은 책 조작부와 닫힌 하부판이 바구니에 가리지 않아 클릭할 수 있음.",
+        "geometry": "기존 wide의 단순 확대가 아님. 하단 별도 판넬·세워진 오른쪽 붉은 책 추가, 바구니가 우측 전경으로 보이는 재구성. 원래 방 배치에 그대로 적용하지 말 것."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "red_book_handle",
+          "rect": [
+            1176,
+            185,
+            87,
+            244
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "lower_panel",
+          "rect": [
+            626,
+            452,
+            628,
+            227
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ]
+    },
+    {
+      "id": "book-latch-open",
+      "file": "book-latch-open.png",
+      "actual_size": {
+        "width": 1671,
+        "height": 941
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "3c8cf28c1bd21df686e0166de56c62d3593ee52324a2152f6021bebafa523869",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-511427d1-9db6-4275-95f6-b34e3f9a62b0.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "원래 책장 하부의 책/바구니 배치와 신규 패널 상세 사이에 연속성 승인이 필요함.",
+        "입구는 낮은 기어들기 형태. 성인 캐릭터가 실제 통과하는 크기·동선은 미검증.",
+        "열림 이미지는 조작 중 관찰용. 손을 떼면 판이 닫히고 해제 상태만 유지된다는 대본 규칙을 영구 개방으로 바꾸지 말 것.",
+        "레버 ON/OFF가 안쪽 수동 해제의 작동 여부를 제한하지 않아야 함.",
+        "최종 안쪽 손잡이 교정본 실제 폭1671px, 닫힘1672px와 1px차이. 원화를 강제 리사이즈하지 않음."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/afternoon.png",
+        "/workspace/shared/daram_story_asset_plan/production/mechanisms/book-latch-locked.png",
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/passage/afternoon.png"
+      ],
+      "before_after_pair": [
+        "book-latch-locked",
+        "book-latch-open"
+      ],
+      "scene_conditions": {
+        "location": "room13-detail",
+        "kitchen_switch": true,
+        "book_handle": "tilted left",
+        "panel": "pushed inward, open for inspection",
+        "time": "afternoon-detail"
+      },
+      "visual_review": {
+        "status": "공간 재구성 제안/승인 필요",
+        "summary": "같은 상세구도에서 붉은 책이 기울고 하부판이 물러나며 어두운 계단과 안쪽 목재 레버가 보임.",
+        "geometry": "기존 wide의 단순 확대가 아님. 하단 별도 판넬·세워진 오른쪽 붉은 책 추가, 바구니가 우측 전경으로 보이는 재구성. 원래 방 배치에 그대로 적용하지 말 것."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "red_book_handle",
+          "rect": [
+            1134,
+            185,
+            131,
+            244
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "passage_entrance",
+          "rect": [
+            626,
+            452,
+            628,
+            227
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "inside_manual_release",
+          "rect": [
+            1130,
+            503,
+            74,
+            82
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ]
+    },
+    {
+      "id": "room13-passage-open-morning",
+      "file": "room13-passage-open-morning.png",
+      "actual_size": {
+        "width": 2048,
+        "height": 768
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "8f1c3baa3ef13dfd3bab62a05fe15c3088771acf77f26971fab381971707da04",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-2c75d1fa-5d88-4640-a9e1-076ffd3a5f01.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "바구니가 하단 개구부를 가림. 통과 가능한 출입구/계단 전체를 보여주는 완성품으로 승인할 수 없음.",
+        "원래 하단 책들이 개방 틈으로 바뀜. 붉은 조작부의 상세 위치는 확대 시안과 1:1 일치하지 않음.",
+        "3시간대의 틈 내부 돌/붉은 책 각도는 완전히 동일한 정적 배경이 아님. 같은 상태쌍 완전일치 주장 금지.",
+        "사건 전/예방 상태 전용. 사건 후에 이 파일로 교체하면 탄흔과 회수 전 증거를 지우므로 사용 금지.",
+        "권장: 기존 wide를 그대로 두고 승인받은 확대 장치 화면을 overlay로 사용."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/morning.png"
+      ],
+      "before_after_pair": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/morning.png",
+        "room13-passage-open-morning"
+      ],
+      "scene_conditions": {
+        "location": "room13",
+        "time": "morning",
+        "incident_state": "before_or_prevented",
+        "passage_visual": "open, partial occluded concept",
+        "evidence_removed": false
+      },
+      "visual_review": {
+        "status": "개방 상태 시안/통과 기하 미검증",
+        "summary": "같은 방의 책장 하단에 어두운 개방 틈과 붉은 조작부. 바구니 유지, 책장 확대하지 않음.",
+        "geometry": "창/책상/의자/침대/책장/매트의 큰 위치는 기존 원본과 육안 대조. 전체 픽셀이 동일하다는 의미가 아니며 명암/텍스처의 미세 재생성 있음."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "bookshelf_interaction",
+          "rect": [
+            1580,
+            288,
+            178,
+            273
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "visible_opening_detail",
+          "rect": [
+            1602,
+            375,
+            144,
+            75
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ],
+      "qa_pixel_comparison": {
+        "region_excluded_xyxy": [
+          1580,
+          370,
+          1790,
+          577
+        ],
+        "outside_region_mean_absolute_channel_difference_0_255": 3.096,
+        "outside_region_exactly_equal_pixel_percent": 1.239,
+        "interpretation": "차이는 생성 재표본화/명암/텍스처 등을 포함한다. 통과기하 또는 구조 동일성 증명 수치가 아니다."
+      }
+    },
+    {
+      "id": "room13-passage-open-afternoon",
+      "file": "room13-passage-open-afternoon.png",
+      "actual_size": {
+        "width": 2048,
+        "height": 768
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "773cf239ece20c612d768fdac684e5e2bc1751f0aba37e7164ac2e4d35f341ef",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-7341eb66-d5f6-43ea-8b5f-281b873790db.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "바구니가 하단 개구부를 가림. 통과 가능한 출입구/계단 전체를 보여주는 완성품으로 승인할 수 없음.",
+        "원래 하단 책들이 개방 틈으로 바뀜. 붉은 조작부의 상세 위치는 확대 시안과 1:1 일치하지 않음.",
+        "3시간대의 틈 내부 돌/붉은 책 각도는 완전히 동일한 정적 배경이 아님. 같은 상태쌍 완전일치 주장 금지.",
+        "사건 전/예방 상태 전용. 사건 후에 이 파일로 교체하면 탄흔과 회수 전 증거를 지우므로 사용 금지.",
+        "권장: 기존 wide를 그대로 두고 승인받은 확대 장치 화면을 overlay로 사용."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/afternoon.png"
+      ],
+      "before_after_pair": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/afternoon.png",
+        "room13-passage-open-afternoon"
+      ],
+      "scene_conditions": {
+        "location": "room13",
+        "time": "afternoon",
+        "incident_state": "before_or_prevented",
+        "passage_visual": "open, partial occluded concept",
+        "evidence_removed": false
+      },
+      "visual_review": {
+        "status": "개방 상태 시안/통과 기하 미검증",
+        "summary": "같은 방의 책장 하단에 어두운 개방 틈과 붉은 조작부. 바구니 유지, 책장 확대하지 않음.",
+        "geometry": "창/책상/의자/침대/책장/매트의 큰 위치는 기존 원본과 육안 대조. 전체 픽셀이 동일하다는 의미가 아니며 명암/텍스처의 미세 재생성 있음."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "bookshelf_interaction",
+          "rect": [
+            1580,
+            288,
+            178,
+            273
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "visible_opening_detail",
+          "rect": [
+            1602,
+            375,
+            144,
+            75
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ],
+      "qa_pixel_comparison": {
+        "region_excluded_xyxy": [
+          1580,
+          370,
+          1790,
+          577
+        ],
+        "outside_region_mean_absolute_channel_difference_0_255": 2.879,
+        "outside_region_exactly_equal_pixel_percent": 0.925,
+        "interpretation": "차이는 생성 재표본화/명암/텍스처 등을 포함한다. 통과기하 또는 구조 동일성 증명 수치가 아니다."
+      }
+    },
+    {
+      "id": "room13-passage-open-evening",
+      "file": "room13-passage-open-evening.png",
+      "actual_size": {
+        "width": 2048,
+        "height": 768
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "ae1f319497f3b913e35d0eae5a4ebcd1e43fbd17f40bbe79844c8bdfe64ea3a4",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-8d34fa35-a710-4d46-b76d-d65109f50834.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "바구니가 하단 개구부를 가림. 통과 가능한 출입구/계단 전체를 보여주는 완성품으로 승인할 수 없음.",
+        "원래 하단 책들이 개방 틈으로 바뀜. 붉은 조작부의 상세 위치는 확대 시안과 1:1 일치하지 않음.",
+        "3시간대의 틈 내부 돌/붉은 책 각도는 완전히 동일한 정적 배경이 아님. 같은 상태쌍 완전일치 주장 금지.",
+        "사건 전/예방 상태 전용. 사건 후에 이 파일로 교체하면 탄흔과 회수 전 증거를 지우므로 사용 금지.",
+        "권장: 기존 wide를 그대로 두고 승인받은 확대 장치 화면을 overlay로 사용."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/evening.png"
+      ],
+      "before_after_pair": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/evening.png",
+        "room13-passage-open-evening"
+      ],
+      "scene_conditions": {
+        "location": "room13",
+        "time": "evening",
+        "incident_state": "before_or_prevented",
+        "passage_visual": "open, partial occluded concept",
+        "evidence_removed": false
+      },
+      "visual_review": {
+        "status": "개방 상태 시안/통과 기하 미검증",
+        "summary": "같은 방의 책장 하단에 어두운 개방 틈과 붉은 조작부. 바구니 유지, 책장 확대하지 않음.",
+        "geometry": "창/책상/의자/침대/책장/매트의 큰 위치는 기존 원본과 육안 대조. 전체 픽셀이 동일하다는 의미가 아니며 명암/텍스처의 미세 재생성 있음."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "bookshelf_interaction",
+          "rect": [
+            1580,
+            288,
+            178,
+            273
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        },
+        {
+          "target": "visible_opening_detail",
+          "rect": [
+            1602,
+            375,
+            144,
+            75
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ],
+      "qa_pixel_comparison": {
+        "region_excluded_xyxy": [
+          1580,
+          370,
+          1790,
+          577
+        ],
+        "outside_region_mean_absolute_channel_difference_0_255": 2.386,
+        "outside_region_exactly_equal_pixel_percent": 1.485,
+        "interpretation": "차이는 생성 재표본화/명암/텍스처 등을 포함한다. 통과기하 또는 구조 동일성 증명 수치가 아니다."
+      }
+    },
+    {
+      "id": "room13-after-evidence-removed-morning",
+      "file": "room13-after-evidence-removed-morning.png",
+      "actual_size": {
+        "width": 2048,
+        "height": 768
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "b606cd9f86a6c55a817c0a90e731a7f051b7a3c73b34a453ddc4a2484a570fc2",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-50d13ab4-41c1-49d8-a2b1-6b034ee49d95.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "evidence_removed는 제안 키이며 현행 코드에 존재한다고 주장하지 않음. 실제 촛대 회수·봉인 이벤트 뒤 권위 있는 상태값에만 연결.",
+        "E07/E14 단순 보유만으로 회수 이전 장면에 소급 적용하면 안 됨.",
+        "촛대 두 조각 주변 바닥·왁스 작은 면적이 재생성됨. 오직 금속 물체의 픽셀만 제거되었다고 검증하지 않음.",
+        "사건후+통로개방 조합은 별도 미제작. 이 그림은 책장이 닫힌 회수 후 재조사용.",
+        "아침/오후: 왁스 배열 변화 및 작은 갈색 자국 소실. 저녁: 왁스 자국 대부분 소실, 양초 왼쪽 갈색 자국 남음. 두 금속 조각 외 소품 픽셀의 완전 보존 실패; QA_KO.md 비교판 참조."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/morning.png"
+      ],
+      "before_after_pair": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/morning.png",
+        "room13-after-evidence-removed-morning"
+      ],
+      "scene_conditions": {
+        "location": "room13",
+        "time": "morning",
+        "incident_state": "after",
+        "passage_visual": "closed",
+        "evidence_removed": true
+      },
+      "visual_review": {
+        "status": "회수 후 상태 육안 확인 / 국소 바닥 상세 검토 필요",
+        "summary": "바닥 촛대 금속 두 조각 제거. 흰 양초 토막·국소 탄흔·온전한 침대·매트 유지. 시간대 조명 유지.",
+        "geometry": "창/책상/의자/침대/책장/매트의 큰 위치는 기존 원본과 육안 대조. 전체 픽셀이 동일하다는 의미가 아니며 명암/텍스처의 미세 재생성 있음."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "remaining_scorch_observation",
+          "rect": [
+            1022,
+            552,
+            161,
+            81
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ],
+      "qa_pixel_comparison": {
+        "region_excluded_xyxy": [
+          986,
+          541,
+          1187,
+          635
+        ],
+        "outside_region_mean_absolute_channel_difference_0_255": 2.776,
+        "outside_region_exactly_equal_pixel_percent": 1.28,
+        "interpretation": "차이는 생성 재표본화/명암/텍스처 등을 포함한다. 통과기하 또는 구조 동일성 증명 수치가 아니다."
+      }
+    },
+    {
+      "id": "room13-after-evidence-removed-afternoon",
+      "file": "room13-after-evidence-removed-afternoon.png",
+      "actual_size": {
+        "width": 2048,
+        "height": 768
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "1f5701c3d6e5d732e7e528ca5d39dc298e22e55deaf15ef3a75ffd153e755686",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-a06537c9-8e45-41f3-a838-4f55e44b7e94.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "evidence_removed는 제안 키이며 현행 코드에 존재한다고 주장하지 않음. 실제 촛대 회수·봉인 이벤트 뒤 권위 있는 상태값에만 연결.",
+        "E07/E14 단순 보유만으로 회수 이전 장면에 소급 적용하면 안 됨.",
+        "촛대 두 조각 주변 바닥·왁스 작은 면적이 재생성됨. 오직 금속 물체의 픽셀만 제거되었다고 검증하지 않음.",
+        "사건후+통로개방 조합은 별도 미제작. 이 그림은 책장이 닫힌 회수 후 재조사용.",
+        "아침/오후: 왁스 배열 변화 및 작은 갈색 자국 소실. 저녁: 왁스 자국 대부분 소실, 양초 왼쪽 갈색 자국 남음. 두 금속 조각 외 소품 픽셀의 완전 보존 실패; QA_KO.md 비교판 참조."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/afternoon.png"
+      ],
+      "before_after_pair": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/afternoon.png",
+        "room13-after-evidence-removed-afternoon"
+      ],
+      "scene_conditions": {
+        "location": "room13",
+        "time": "afternoon",
+        "incident_state": "after",
+        "passage_visual": "closed",
+        "evidence_removed": true
+      },
+      "visual_review": {
+        "status": "회수 후 상태 육안 확인 / 국소 바닥 상세 검토 필요",
+        "summary": "바닥 촛대 금속 두 조각 제거. 흰 양초 토막·국소 탄흔·온전한 침대·매트 유지. 시간대 조명 유지.",
+        "geometry": "창/책상/의자/침대/책장/매트의 큰 위치는 기존 원본과 육안 대조. 전체 픽셀이 동일하다는 의미가 아니며 명암/텍스처의 미세 재생성 있음."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "remaining_scorch_observation",
+          "rect": [
+            1022,
+            552,
+            161,
+            81
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ],
+      "qa_pixel_comparison": {
+        "region_excluded_xyxy": [
+          986,
+          541,
+          1187,
+          635
+        ],
+        "outside_region_mean_absolute_channel_difference_0_255": 2.613,
+        "outside_region_exactly_equal_pixel_percent": 0.97,
+        "interpretation": "차이는 생성 재표본화/명암/텍스처 등을 포함한다. 통과기하 또는 구조 동일성 증명 수치가 아니다."
+      }
+    },
+    {
+      "id": "room13-after-evidence-removed-evening",
+      "file": "room13-after-evidence-removed-evening.png",
+      "actual_size": {
+        "width": 2048,
+        "height": 768
+      },
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "eea7731274fb66d39fca69d32533938a6c0951161d6a5d674b41f39f3f70833c",
+      "produced": true,
+      "game_applied": false,
+      "generation_tool": "built-in image_gen__imagegen",
+      "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-a4cafbac-5bb4-4c36-a306-f78c031fb382.png",
+      "source_commit": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+      "limitations": [
+        "image_gen 원본 바이트 보존. 원본 제작 이미지의 리사이즈·수동 합성·색상 보정 없음.",
+        "육안 검토 완료; 픽셀 동일성·런타임 핫스팟·캐릭터 통과·실기 플레이는 검증하지 않음.",
+        "인물·범행 재현·추가 정문·UI·텍스트·마법 표현 없음.",
+        "evidence_removed는 제안 키이며 현행 코드에 존재한다고 주장하지 않음. 실제 촛대 회수·봉인 이벤트 뒤 권위 있는 상태값에만 연결.",
+        "E07/E14 단순 보유만으로 회수 이전 장면에 소급 적용하면 안 됨.",
+        "촛대 두 조각 주변 바닥·왁스 작은 면적이 재생성됨. 오직 금속 물체의 픽셀만 제거되었다고 검증하지 않음.",
+        "사건후+통로개방 조합은 별도 미제작. 이 그림은 책장이 닫힌 회수 후 재조사용.",
+        "아침/오후: 왁스 배열 변화 및 작은 갈색 자국 소실. 저녁: 왁스 자국 대부분 소실, 양초 왼쪽 갈색 자국 남음. 두 금속 조각 외 소품 픽셀의 완전 보존 실패; QA_KO.md 비교판 참조."
+      ],
+      "source_refs": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/evening.png"
+      ],
+      "before_after_pair": [
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/evening.png",
+        "room13-after-evidence-removed-evening"
+      ],
+      "scene_conditions": {
+        "location": "room13",
+        "time": "evening",
+        "incident_state": "after",
+        "passage_visual": "closed",
+        "evidence_removed": true
+      },
+      "visual_review": {
+        "status": "회수 후 상태 육안 확인 / 국소 바닥 상세 검토 필요",
+        "summary": "바닥 촛대 금속 두 조각 제거. 흰 양초 토막·국소 탄흔·온전한 침대·매트 유지. 시간대 조명 유지.",
+        "geometry": "창/책상/의자/침대/책장/매트의 큰 위치는 기존 원본과 육안 대조. 전체 픽셀이 동일하다는 의미가 아니며 명암/텍스처의 미세 재생성 있음."
+      },
+      "suggested_hotspots": [
+        {
+          "target": "remaining_scorch_observation",
+          "rect": [
+            1022,
+            552,
+            161,
+            81
+          ],
+          "coordinate_system": "actual PNG pixels, x/y/width/height",
+          "verification": "이미지 육안 제안, 런타임 클릭 검증 전"
+        }
+      ],
+      "qa_pixel_comparison": {
+        "region_excluded_xyxy": [
+          986,
+          541,
+          1187,
+          635
+        ],
+        "outside_region_mean_absolute_channel_difference_0_255": 2.135,
+        "outside_region_exactly_equal_pixel_percent": 1.197,
+        "interpretation": "차이는 생성 재표본화/명암/텍스처 등을 포함한다. 통과기하 또는 구조 동일성 증명 수치가 아니다."
+      }
+    }
+  ]
+}

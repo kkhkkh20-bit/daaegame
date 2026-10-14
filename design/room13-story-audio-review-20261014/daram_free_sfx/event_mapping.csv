@@ -1,0 +1,21 @@
+﻿event_id_proposal,asset_id,source_author,candidate_wav,duration_ms,true_peak_dbfs,comparison_synth,listening_status,note_ko
+choice_confirm,kenney_select_001,Kenney,selected/game_wav/kenney_select_001_v1.wav,40.385,-16.999,choice_confirm,not_performed,파일명이 select인 40ms 후보. 타이핑과 충분히 구별되는지는 청음 필요.
+choice_confirm,kenney_click1,Kenney,selected/game_wav/kenney_click1_v1.wav,90.93,-17.0,choice_confirm,not_performed,UI Audio의 click1. 91ms 후보와 130ms 합성안을 비교.
+choice_cancel,kenney_back_001,Kenney,selected/game_wav/kenney_back_001_v1.wav,60.975,-19.0,choice_cancel,not_performed,back 분류. 화면이 실제로 닫힐 때만 재생하는 후보.
+evidence_acquire,kenney_confirmation_001,Kenney,selected/game_wav/kenney_confirmation_001_v1.wav,289.841,-12.001,evidence_acquire,not_performed,confirmation 분류를 증거 획득 카드에 시험. 추론 정답 신호와 혼동되면 채택하지 않음.
+evidence_present,kenney_pluck_001,Kenney,selected/game_wav/kenney_pluck_001_v1.wav,99.524,-16.0,evidence_present,not_performed,pluck 분류의 짧은 단발 후보. 자료를 보여 주는 행위이며 정답을 뜻하지 않음.
+mechanism_lever_on,kenney_switch_001,Kenney,selected/game_wav/kenney_switch_001_v1.wav,614.762,-16.0,mechanism_lever_on,not_performed,switch 분류. 물리적 레버와 어울리는지는 아래 실제 기계음과 비교 필요.
+footstep_wood,kenney_footstep_wood_000,Kenney,selected/game_wav/kenney_footstep_wood_000_v1.wav,271.383,-19.999,,not_performed,footstep_wood 분류. 실제 이동 연출에만 제한적으로 사용; 글자·클릭마다 반복하지 않음.
+footstep_wood,kenney_footstep_wood_001,Kenney,selected/game_wav/kenney_footstep_wood_001_v1.wav,248.662,-19.999,,not_performed,A/B를 번갈아 쓰는 후보. 기존 합성팩에는 발걸음이 없어 직접 비교 대상 없음.
+book_latch_locked,kenney_wood_light_000,Kenney,selected/game_wav/kenney_wood_light_000_v1.wav,262.698,-19.001,book_latch_locked,not_performed,impactWood_light 분류. 걸쇠 동작 전체가 아닌 나무 접촉층 후보; 오답음으로 쓰지 않음.
+door_forced_open,kenney_wood_heavy_000,Kenney,selected/game_wav/kenney_wood_heavy_000_v1.wav,310.136,-15.001,door_forced_open,not_performed,impactWood_heavy 분류. 이것만으로 파손을 표현했다고 판단하지 않음. 구조 순간의 단발 충격층 후보.
+book_latch_unlock,kenney_plank_medium_000,Kenney,selected/game_wav/kenney_plank_medium_000_v1.wav,779.002,-17.001,book_latch_unlock,not_performed,impactPlank_medium 분류. 잠금 해제와 별도의 판 이동층 후보.
+notebook_open,luckius_paper_1,Luckius,selected/game_wav/luckius_paper_1_v1.wav,487.619,-18.999,notebook_open,not_performed,제작자가 지도 열기/닫기용으로 만든 종이 묶음. 이 파일의 정확한 동작은 청음 후 결정.
+notebook_page,luckius_paper_2,Luckius,selected/game_wav/luckius_paper_2_v1.wav,545.669,-21.0,notebook_page,not_performed,같은 종이 묶음의 다른 후보. 빠른 페이지 이동과 맞지 않으면 원래 합성 150ms안을 유지.
+passage_exit_release,bmaczero_lightclunk1,Brian MacIntosh (BMacZero),selected/game_wav/bmaczero_lightclunk1_v1.wav,371.519,-17.0,passage_exit_release,not_performed,기계 충돌/라쳇 묶음의 lightclunk1. 짧은 수동 해제 반응에 시험.
+mechanism_lever_on,bmaczero_mechanical1,Brian MacIntosh (BMacZero),selected/game_wav/bmaczero_mechanical1_v1.wav,917.188,-16.001,mechanism_lever_on,not_performed,기계음 mechanical1. 917ms여서 기존 합성 340ms보다 길며 화면 시점 검증 필요.
+mechanism_lever_off,bmaczero_mechanical2,Brian MacIntosh (BMacZero),selected/game_wav/bmaczero_mechanical2_v1.wav,603.719,-17.0,mechanism_lever_off,not_performed,기계음 mechanical2. 올림과 내림을 구분하는 후보이며 실제 조작음 의미는 청음 확인.
+mechanism_lever_off,coughe_door_lock,Cough-E,selected/game_wav/coughe_door_lock_v1.wav,285.986,-18.0,mechanism_lever_off,not_performed,DoorLock 파일. 레버를 내려 걸쇠가 돌아오는 마지막 접촉층 후보.
+door_open,coughe_door_open,Cough-E,selected/game_wav/coughe_door_open_v1.wav,614.014,-18.001,,not_performed,DoorOpen 파일. 일반 문 전용 추가 후보; 강제 파손과 같은 파일로 처리하지 않음.
+book_latch_locked,coughe_locked_jiggle,Cough-E,selected/game_wav/coughe_locked_jiggle_v1.wav,934.014,-19.0,book_latch_locked,not_performed,제작자가 명명한 LockedDoorHandleJiggle. 잠김 반응용이며 실패 벌점음이 아님.
+book_latch_unlock,coughe_unlock_door,Cough-E,selected/game_wav/coughe_unlock_door_v1.wav,568.005,-16.0,book_latch_unlock,not_performed,UnlockDoor 파일. 책장 전체 이동이 아닌 걸쇠 해제 후보.

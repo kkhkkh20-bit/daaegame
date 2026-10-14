@@ -1,0 +1,9 @@
+﻿id,priority,item,decision,runtime,impact,action
+C01,높음,첫 회차 통로 차단,CURRENT_STORY_DECISIONS 4: 도면 소지/회차 수로 해제 허가하지 않음,room13_rules.rpy68 + room13_route_knowledge.rpy3~29: 엔딩기록 없으면 장치·도면·통로 숨김,첫 회차 장치 그림이 있어도 보이지 않음,Claude가 최신 사용자 의도 확인 후 규칙 일치. dot 변경 없음
+C02,높음,증거 설계 확정도,CURRENT/REVISION_03: 핀 접촉·사인 조합 후보/미확정,"E07/E08/E14/E35, case_compare는 이미 구체화",그림은 구현안의 시각화이며 최종 사실 승인과 다름,런타임 물증설계 최종 검토. 촛대/핀만으로 단독 유죄 선언 금지
+C03,높음,회수한 흉기가 바닥에 남음,room13.rpy493 흉기 회수/봉인,r13_background는 case_state occurred만 보고 동일 room-after,사건후 재방문에 회수전 촛대가 반복,M06 세 시간대를 실제 회수상태에 연결. evidence_removed는 제안키
+C04,높음,새 배경 종횡비/클릭영역,확장BG2048×768,기존 1280×720 고정 또는 각기 다른 world-camera,단순 교체하면 가로 찌그러짐/핫스폿·인물 어긋남,높이720 기준1920폭 world-view 제안. 실제 화면/카메라/인물 좌표 재측정
+C05,중간,구 SCENES의 다람이 체험,최신 결정 아빠시점/범행 미공개,SCENES.txt S13에는 구 다람이 체험 잔존. 현행 r13_case_choice는 아빠귀환,문서만 보고 새 범행CG 만들 위험,신규제작은 현행 label+최신 결정 우선. 구 narrative/PDF/엑셀 정본 금지
+C06,중간,사건전 열린 책장과 사건후 흔적,"M05는 before 바탕, M06는 after 바탕",room BG만 변경하면 상태별 증거 소실 가능,사건후 M05 사용시 탄흔/회수상태 소급 삭제,사건후 열림은 M04 확대UI 우선. 상태조합별 통째 교체 지양
+C07,중간,옆방의13호 단서 복제,사건후 부녀 짐은 guestroom으로 이동,guestroom은 room-before 그림 재사용,13호 전용 책장/바느질/통로가 옆방에도 있는 듯 보임,객실표식·핫스폿 제한과 짐만 이동. 비밀통로를 옆방에 복제 금지
+C08,중간,바닥보존과 재봉인 구분,보존 실패 분기에 원래 발자국 겹침,case_compare로E33은 얻을 수 있지만 floor_preserved는 별도,E33만으로P03 또는E09 허용하면 훼손 증거 복원 오류,P03/E09는 실제 floor_preserved 필수. P04는 관찰만

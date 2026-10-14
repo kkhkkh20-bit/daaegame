@@ -1,0 +1,635 @@
+{
+  "schema": "daram_evidence_art_manifest_v1",
+  "created_date_utc": "2026-10-14",
+  "status": "five review proposals complete; not applied; author approval pending",
+  "source_revision": "5e6c2c53ae067b7fc2eb9d10075320587a342f0e",
+  "count_png": 5,
+  "canonical_dir": "/workspace/shared/daram_story_asset_plan/new_art/evidence",
+  "production_dir": "/workspace/shared/daram_story_asset_plan/production/evidence",
+  "assets": [
+    {
+      "id": "E07_DETAIL",
+      "file": "E07-candlestick-two-parts.png",
+      "canonical_file": "/workspace/shared/daram_story_asset_plan/new_art/evidence/E07-candlestick-two-parts.png",
+      "production_file": "/workspace/shared/daram_story_asset_plan/production/evidence/E07-candlestick-two-parts.png",
+      "evidence_id": [
+        "E07",
+        "E14"
+      ],
+      "actual_size": [
+        1672,
+        941
+      ],
+      "sha256": "060c7c3b07582d0e090eb7d2d742cd616439a841b1199cd59291994daa7e5f8a",
+      "produced": true,
+      "production_mode": "built-in image_gen; direct output copied without raster modification",
+      "source_refs": [
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#evidence.E07",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#evidence.E14",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13.rpy:483-494",
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/afternoon.png",
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/afternoon.png"
+      ],
+      "source_revision": "main 5e6c2c53ae067b7fc2eb9d10075320587a342f0e / 0.16.2-dev",
+      "visual_review": {
+        "status": "review_proposal_with_caveats",
+        "inspected_full_image": true,
+        "notes": [
+          "정확히 두 조각, 제3의 완성형 없음.",
+          "윗부분의 파단면과 고리 내부 은색 조각을 확인. E14 접촉 수정과 같은 좁은 고리 상태로 재생성.",
+          "천의 과도한 미세 질감 초안은 제외하고 큰 색면/계단형 윤곽 수정본을 채택."
+        ]
+      },
+      "state_conditions": {
+        "display": "case_state=occurred; E07 recovered/sealed after rescue",
+        "grant_by_image": false
+      },
+      "game_applied": false,
+      "suggested_hotspots": [
+        {
+          "name": "받침 포함 아랫부분",
+          "rect": [
+            306,
+            222,
+            508,
+            418
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "대응 파단면",
+          "rect": [
+            734,
+            390,
+            192,
+            162
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "분리된 윗부분",
+          "rect": [
+            868,
+            374,
+            567,
+            258
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "찌그러진 고리와 끼인 핀 확대",
+          "rect": [
+            978,
+            416,
+            87,
+            142
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "증거용 천 포장 가장자리",
+          "rect": [
+            86,
+            752,
+            1500,
+            93
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        }
+      ],
+      "limitations": [
+        "이 묶음은 최신 런타임 설계의 시각화 검토안이며 사용자가 최종 확정한 과학적 입증이 아님.",
+        "그림 열람만으로 증거·플래그를 자동 획득하지 않음. 원래 획득·보존·대조 조건 유지.",
+        "실제 렌파이 화면 축소, 클릭 영역, 텍스트 오버레이와 플레이 테스트는 미실시.",
+        "게임 소스, 대사, GitHub에 적용하지 않음.",
+        "원본 방 배경의 작은 촛대에서 확대 형태를 추론한 새 그림. 정확한 파단 기하/제작 공차/재질과 힘은 승인·검증되지 않음.",
+        "고리의 세부 조형은 최신 런타임에 맞춘 제안이며 기존 배경 픽셀에 모두 정의되어 있지 않았음.",
+        "시각적으로 도트풍이나 단일 정수배 논리 픽셀격자와 제한 팔레트를 수치 검증한 픽셀 스프라이트는 아님."
+      ],
+      "original_generated_file": "/workspace/scratch/6fde33eec4d5/generated_images/exec-a1943768-7893-40a0-877b-96d600d880b1.png",
+      "prompt_files": [
+        "prompts/E07prompt.txt",
+        "prompts/E07refineprompt.txt",
+        "prompts/E07contactprompt.txt"
+      ]
+    },
+    {
+      "id": "E14_DETAIL",
+      "file": "E14-pin-in-crushed-ring.png",
+      "canonical_file": "/workspace/shared/daram_story_asset_plan/new_art/evidence/E14-pin-in-crushed-ring.png",
+      "production_file": "/workspace/shared/daram_story_asset_plan/production/evidence/E14-pin-in-crushed-ring.png",
+      "evidence_id": [
+        "E14",
+        "E35",
+        "E13"
+      ],
+      "actual_size": [
+        1672,
+        941
+      ],
+      "sha256": "b422fb8082cc96da057b13992a61352ce5cc52bd177a069e6181744755f4d327",
+      "produced": true,
+      "production_mode": "built-in image_gen; direct output copied without raster modification",
+      "source_refs": [
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#evidence.E14",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#evidence.E35",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#activities.case_compare",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#evidence.E13",
+        "E07-candlestick-two-parts.png"
+      ],
+      "source_revision": "main 5e6c2c53ae067b7fc2eb9d10075320587a342f0e / 0.16.2-dev",
+      "visual_review": {
+        "status": "review_proposal_with_caveats",
+        "inspected_full_image": true,
+        "notes": [
+          "E07과 같은 황동 윗부분, 컵/짧은 줄기/파단면 구조를 유지.",
+          "느슨하게 걸린 초기 핀 시안을 제외하고 황동 양면이 은색 조각을 좁게 물고 있는 상태로 수정.",
+          "손·피해자·범인·독립된 단독 핀·새 식별표식 없음."
+        ]
+      },
+      "state_conditions": {
+        "display": "E14 recovery detail; diagnostic interpretation belongs to case_compare",
+        "case_compare": {
+          "place": "clinic",
+          "day": [
+            5,
+            13
+          ],
+          "need": [
+            "E07",
+            "E08",
+            "examination_agreed"
+          ],
+          "case": "occurred",
+          "cost": 1,
+          "give": [
+            "E35",
+            "E33"
+          ]
+        },
+        "grant_by_image": false
+      },
+      "game_applied": false,
+      "suggested_hotspots": [
+        {
+          "name": "윗부분 안쪽 파단면",
+          "rect": [
+            201,
+            254,
+            159,
+            325
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "찌그러진 황동 고리",
+          "rect": [
+            516,
+            288,
+            210,
+            299
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "고리 안에 눌린 은색 핀",
+          "rect": [
+            594,
+            368,
+            83,
+            150
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        }
+      ],
+      "limitations": [
+        "이 묶음은 최신 런타임 설계의 시각화 검토안이며 사용자가 최종 확정한 과학적 입증이 아님.",
+        "그림 열람만으로 증거·플래그를 자동 획득하지 않음. 원래 획득·보존·대조 조건 유지.",
+        "실제 렌파이 화면 축소, 클릭 영역, 텍스트 오버레이와 플레이 테스트는 미실시.",
+        "게임 소스, 대사, GitHub에 적용하지 않음.",
+        "미세한 접촉과 같은 방향 변형은 시각화 제안으로만 사용. 핀의 주인·접촉 시각·살해 순서는 이 그림으로 확정하지 않음.",
+        "E13 남은 부품 대조는 기존 활동/텍스트로 연결. 임의의 부품 식별 마크를 만들지 않음.",
+        "실제 물리 재현/법의학적 타당성은 별도 승인 필요."
+      ],
+      "original_generated_file": "/workspace/scratch/6fde33eec4d5/generated_images/exec-7a4a93dd-b011-49c3-8da0-09eacb2da696.png",
+      "prompt_files": [
+        "prompts/E14prompt.txt",
+        "prompts/E14refineprompt.txt"
+      ]
+    },
+    {
+      "id": "E09_PRESERVED",
+      "file": "E09-floor-preserved.png",
+      "canonical_file": "/workspace/shared/daram_story_asset_plan/new_art/evidence/E09-floor-preserved.png",
+      "production_file": "/workspace/shared/daram_story_asset_plan/production/evidence/E09-floor-preserved.png",
+      "evidence_id": [
+        "E09",
+        "E33",
+        "E07"
+      ],
+      "actual_size": [
+        1672,
+        941
+      ],
+      "sha256": "73a77725d54ac8d88ba6e5ed8fb11213803838d4661d3dca914626940ce7cd25",
+      "produced": true,
+      "production_mode": "built-in image_gen; direct output copied without raster modification",
+      "source_refs": [
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#evidence.E09",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#activities.wax",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13.rpy:483-493",
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-after/afternoon.png"
+      ],
+      "source_revision": "main 5e6c2c53ae067b7fc2eb9d10075320587a342f0e / 0.16.2-dev",
+      "visual_review": {
+        "status": "review_proposal_with_caveats",
+        "inspected_full_image": true,
+        "notes": [
+          "보존된 촛농 위 익명 압흔과 그 위 소량의 절제된 붉은 자국을 확인.",
+          "더 타이트한 바닥 전용 프레임으로 원본과 충돌하던 책장 소품을 화면 밖으로 제외. 작은 온전한 침대/책장 받침 일부와 깔개 국소 탄흔을 남김. 물·구조 발 겹침 없음.",
+          "종족 특징·발가락·발톱·트레드·치수 표식 없음."
+        ]
+      },
+      "state_conditions": {
+        "display": "case_state=occurred; floor_preserved; original record/detail review",
+        "wax": {
+          "place": "room13",
+          "day": [
+            5,
+            13
+          ],
+          "need": [
+            "E33",
+            "E07",
+            "observed:room13:floor",
+            "floor_preserved"
+          ],
+          "case": "occurred",
+          "cost": 1,
+          "give": [
+            "E09"
+          ]
+        },
+        "grant_by_image": false
+      },
+      "game_applied": false,
+      "suggested_hotspots": [
+        {
+          "name": "책장 방향 바닥의 촛농",
+          "rect": [
+            1090,
+            90,
+            375,
+            248
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "촛농을 밟은 불완전한 압흔",
+          "rect": [
+            884,
+            209,
+            402,
+            240
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "압흔 위 소량 출혈",
+          "rect": [
+            1023,
+            330,
+            98,
+            53
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "방으로 이어지는 불완전한 흔적",
+          "rect": [
+            169,
+            483,
+            698,
+            377
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "작은 깔개 국소 탄흔",
+          "rect": [
+            1335,
+            606,
+            132,
+            112
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        }
+      ],
+      "limitations": [
+        "이 묶음은 최신 런타임 설계의 시각화 검토안이며 사용자가 최종 확정한 과학적 입증이 아님.",
+        "그림 열람만으로 증거·플래그를 자동 획득하지 않음. 원래 획득·보존·대조 조건 유지.",
+        "실제 렌파이 화면 축소, 클릭 영역, 텍스트 오버레이와 플레이 테스트는 미실시.",
+        "게임 소스, 대사, GitHub에 적용하지 않음.",
+        "원본 방과 소품이 불일치하던 넓은 초안을 격리하고, 승인 방/기존 물증을 함께 참조해 더 타이트한 바닥 확대를 재생성. 책장 내부 상자/책/바구니는 모두 프레임 밖이며 새 위치를 주장하지 않음. 원본 픽셀 단순 크롭은 아니므로 엔진 확대 전환 QA는 별도.",
+        "압흔의 방향/층위는 원래 활동 대사 및 최초 기록과 함께 해석. 그림만으로 신원·정확 신발/발 크기·시각을 확정하지 않음.",
+        "촉농층·출혈층의 물리적 성립은 런타임 서술 시각화이며 최종 과학 검증 아님."
+      ],
+      "original_generated_file": "/workspace/scratch/6fde33eec4d5/generated_images/exec-312ce609-e1bc-4d79-9984-936656070beb.png",
+      "prompt_files": [
+        "prompts/E09prompt.txt",
+        "prompts/E09scorchprompt.txt",
+        "prompts/E09tightprompt.txt"
+      ]
+    },
+    {
+      "id": "E09_DISTURBED",
+      "file": "E09-floor-disturbed.png",
+      "canonical_file": "/workspace/shared/daram_story_asset_plan/new_art/evidence/E09-floor-disturbed.png",
+      "production_file": "/workspace/shared/daram_story_asset_plan/production/evidence/E09-floor-disturbed.png",
+      "evidence_id": [
+        "E09"
+      ],
+      "actual_size": [
+        1672,
+        941
+      ],
+      "sha256": "f904138fba872f72bb3b91612c69f8230c26c118cdc6a4490f391365a2cfc715",
+      "produced": true,
+      "production_mode": "built-in image_gen; direct output copied without raster modification",
+      "source_refs": [
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13.rpy:490-493",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#activities.wax",
+        "E09-floor-preserved.png"
+      ],
+      "source_revision": "main 5e6c2c53ae067b7fc2eb9d10075320587a342f0e / 0.16.2-dev",
+      "visual_review": {
+        "status": "review_proposal_with_caveats",
+        "inspected_full_image": true,
+        "notes": [
+          "수정된 타이트 보존본과 같은 카메라·바닥·크롭된 나무 받침 일부·깔개·국소 탄흔 유지. 책장 소품을 다시 넣지 않음.",
+          "여러 방향 구조 압흔과 일부 물흔적/촛농 흐트러짐을 추가해 원래 순서가 읽기 어려움.",
+          "새 살해 자국이나 새 출혈 웅덩이를 추가하지 않음."
+        ]
+      },
+      "state_conditions": {
+        "display": "case_state=occurred; not floor_preserved; rescue-contaminated scene only",
+        "E09_sequence_grant_allowed": false,
+        "grant_by_image": false
+      },
+      "game_applied": false,
+      "suggested_hotspots": [
+        {
+          "name": "여러 구조 발과 물흔적이 겹친 영역",
+          "rect": [
+            404,
+            52,
+            1250,
+            831
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "선후 해석이 어려워진 원래 촛농 영역",
+          "rect": [
+            499,
+            102,
+            980,
+            583
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        }
+      ],
+      "limitations": [
+        "이 묶음은 최신 런타임 설계의 시각화 검토안이며 사용자가 최종 확정한 과학적 입증이 아님.",
+        "그림 열람만으로 증거·플래그를 자동 획득하지 않음. 원래 획득·보존·대조 조건 유지.",
+        "실제 렌파이 화면 축소, 클릭 영역, 텍스트 오버레이와 플레이 테스트는 미실시.",
+        "게임 소스, 대사, GitHub에 적용하지 않음.",
+        "이 화면에서 보존 상태의 E09 순서 증거를 자동 획득하거나 대체 획득하게 하면 안 됨.",
+        "후처리 단순 색변환이 아닌 image_gen 편집본. 원본과 바이트 단위 고정 배경은 아니므로 완전 일치 게임 전환을 원하면 별도 전환 QA 필요.",
+        "주요 소품 위치와 카메라는 육안 일치 확인; 엔진 전환/플래그 구현은 미검증."
+      ],
+      "original_generated_file": "/workspace/scratch/6fde33eec4d5/generated_images/exec-f41ee797-07f9-4cae-8266-ab011991dda9.png",
+      "prompt_files": [
+        "prompts/E09disturbedprompt.txt",
+        "prompts/E09tightdisturbedprompt.txt"
+      ]
+    },
+    {
+      "id": "E04_PLAN",
+      "file": "E04-old-plan-with-retrofit.png",
+      "canonical_file": "/workspace/shared/daram_story_asset_plan/new_art/evidence/E04-old-plan-with-retrofit.png",
+      "production_file": "/workspace/shared/daram_story_asset_plan/production/evidence/E04-old-plan-with-retrofit.png",
+      "evidence_id": [
+        "E04",
+        "E05",
+        "E37"
+      ],
+      "actual_size": [
+        1600,
+        900
+      ],
+      "sha256": "5c60525f46c38b68f87974d0836c75b39a7ba7a43cb02685a9e28b259513ae01",
+      "produced": true,
+      "production_mode": "code-native SVG diagram rendered to PNG with Inkscape; no raster evidence editing",
+      "source_refs": [
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#activities.map",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#evidence.E04",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#objects.passage.steps",
+        "/workspace/shared/daram_story_asset_plan/source/latest0162/experiments/renpy-ch1/game/room13-content.json#objects.passage.handle",
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/room-before/afternoon.png",
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/kitchen/afternoon.png",
+        "/workspace/scratch/6fde33eec4d5/delivery/daram-backgrounds-42-review/passage/afternoon.png",
+        "/workspace/shared/daram_story_asset_plan/reference/room13-pixel-evidence0155.png"
+      ],
+      "source_revision": "main 5e6c2c53ae067b7fc2eb9d10075320587a342f0e / 0.16.2-dev",
+      "visual_review": {
+        "status": "review_proposal_with_caveats",
+        "inspected_full_image": true,
+        "notes": [
+          "원래 구조/세탁실/계단은 먹회색, 최근 주방-책장 하단 개조 관계는 붉은 주석선으로 명확 분리.",
+          "흰 새 종이 패치 한 곳, 방 왼쪽 외벽창/오른쪽 침대/오른쪽 책장, 복도 끝 방 정문을 분리.",
+          "문장은 그림에 굽지 않음. 층/장소명은 UI 오버레이용 좌표 제공.",
+          "선/위상 정확성을 위해 코드 네이티브 SVG 작성 후 Inkscape로 1600×900 PNG 렌더. 축정렬 4/8픽셀 블록 선, 제한 색상."
+        ]
+      },
+      "state_conditions": {
+        "map": {
+          "place": "workshop",
+          "day": [
+            1,
+            13
+          ],
+          "need": [
+            "observed:workshop:plans"
+          ],
+          "give": [
+            "E04"
+          ],
+          "cost": 1
+        },
+        "plan_reading_opens_door": false,
+        "grant_by_image": false
+      },
+      "game_applied": false,
+      "suggested_hotspots": [
+        {
+          "name": "1층 세탁실 개념 영역",
+          "rect": [
+            156,
+            292,
+            220,
+            264
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "1층 주방 개념 영역",
+          "rect": [
+            456,
+            292,
+            140,
+            304
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "옛 계단 통로",
+          "rect": [
+            628,
+            244,
+            96,
+            120
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "새 종이의 주방 레버 주석",
+          "rect": [
+            464,
+            504,
+            100,
+            52
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "2층13호 개념 영역",
+          "rect": [
+            868,
+            208,
+            448,
+            316
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "방 안 왼쪽 외벽창",
+          "rect": [
+            844,
+            280,
+            36,
+            88
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "방 오른쪽 침대",
+          "rect": [
+            1128,
+            256,
+            148,
+            192
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "책장 하단 잠금 주석",
+          "rect": [
+            1272,
+            452,
+            64,
+            68
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "통로 빈 폭",
+          "rect": [
+            1316,
+            208,
+            120,
+            388
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "복도 끝의 방 정문",
+          "rect": [
+            980,
+            468,
+            92,
+            64
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        },
+        {
+          "name": "최근 붉은 연결선",
+          "rect": [
+            488,
+            484,
+            924,
+            224
+          ],
+          "coordinates": "actual_png_pixels_xywh",
+          "runtime_verified": false
+        }
+      ],
+      "limitations": [
+        "이 묶음은 최신 런타임 설계의 시각화 검토안이며 사용자가 최종 확정한 과학적 입증이 아님.",
+        "그림 열람만으로 증거·플래그를 자동 획득하지 않음. 원래 획득·보존·대조 조건 유지.",
+        "실제 렌파이 화면 축소, 클릭 영역, 텍스트 오버레이와 플레이 테스트는 미실시.",
+        "게임 소스, 대사, GitHub에 적용하지 않음.",
+        "실행용 고정축척 건축도/확정 치수/정확 배선 또는 물리 전달장치 경로가 아님. 층별 구조 관계의 검토용 개념도임.",
+        "1층과 2층 도해는 같은 축척·실제 위치 정합을 주장하지 않음. 붉은 끊김선은 개조 관계 주석이며 걸어 다니는 통로나 실제 케이블 경로가 아님.",
+        "방 배치와 서비스 통로의 관계만 소스 근거. 도형의 폭·간격·문 개폐 궤적은 시각화 배치 제안.",
+        "이미지를 읽었다고 문이 열리는 초자연 조건 추가 금지.",
+        "E04는 생성형 래스터 대신 코드 네이티브 기술도식 예외 사용. 다른 네 PNG처럼 장면 삽화가 아닌 문서 도식 스타일."
+      ],
+      "original_generated_file": null,
+      "prompt_files": []
+    }
+  ],
+  "diagram_source": "E04-old-plan-with-retrofit.svg",
+  "global_notes": [
+    "이 묶음은 최신 런타임 설계의 시각화 검토안이며 사용자가 최종 확정한 과학적 입증이 아님.",
+    "그림 열람만으로 증거·플래그를 자동 획득하지 않음. 원래 획득·보존·대조 조건 유지.",
+    "실제 렌파이 화면 축소, 클릭 영역, 텍스트 오버레이와 플레이 테스트는 미실시.",
+    "게임 소스, 대사, GitHub에 적용하지 않음."
+  ],
+  "rejected_or_superseded": "raw/ contains early textured, loose-contact, and quarantined wide E09 furniture-continuity variants; do not integrate."
+}

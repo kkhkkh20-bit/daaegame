@@ -1,0 +1,461 @@
+{
+  "passed": true,
+  "assets_checked": 20,
+  "checks": [
+    "decode success",
+    "PCM16 mono 44100Hz",
+    "sample peak",
+    "4x estimated true peak",
+    "clipped sample count",
+    "duration",
+    "SHA256 exact-source-copy check"
+  ],
+  "limitations": [
+    "No listening",
+    "No game/runtime test",
+    "Peak alignment does not mean perceptual loudness matching",
+    "Preexisting distortion cannot be repaired by attenuation"
+  ],
+  "assets": [
+    {
+      "asset_id": "kenney_select_001",
+      "original": {
+        "duration_ms": 40.385,
+        "sample_peak_dbfs": 1.885,
+        "true_peak_4x_dbfs": 1.916,
+        "rms_dbfs": -14.317,
+        "samples_at_or_over_full_scale": 8,
+        "dc_mean": 0.000144873,
+        "samples": 1781
+      },
+      "prepared": {
+        "duration_ms": 40.385,
+        "sample_peak_dbfs": -17.005,
+        "true_peak_4x_dbfs": -16.999,
+        "rms_dbfs": -33.788,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -6.3794e-05,
+        "samples": 1781
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_click1",
+      "original": {
+        "duration_ms": 90.93,
+        "sample_peak_dbfs": 0.01,
+        "true_peak_4x_dbfs": 0.248,
+        "rms_dbfs": -21.501,
+        "samples_at_or_over_full_scale": 1,
+        "dc_mean": -6.8618e-05,
+        "samples": 4010
+      },
+      "prepared": {
+        "duration_ms": 90.93,
+        "sample_peak_dbfs": -17.237,
+        "true_peak_4x_dbfs": -17.0,
+        "rms_dbfs": -38.75,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -9.056e-06,
+        "samples": 4010
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_back_001",
+      "original": {
+        "duration_ms": 60.975,
+        "sample_peak_dbfs": -0.956,
+        "true_peak_4x_dbfs": -0.947,
+        "rms_dbfs": -21.248,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 3.3474e-05,
+        "samples": 2689
+      },
+      "prepared": {
+        "duration_ms": 60.975,
+        "sample_peak_dbfs": -19.009,
+        "true_peak_4x_dbfs": -19.0,
+        "rms_dbfs": -40.764,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -0.000345976,
+        "samples": 2689
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_confirmation_001",
+      "original": {
+        "duration_ms": 289.841,
+        "sample_peak_dbfs": -0.93,
+        "true_peak_4x_dbfs": -0.924,
+        "rms_dbfs": -11.313,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -6.63e-06,
+        "samples": 12782
+      },
+      "prepared": {
+        "duration_ms": 289.841,
+        "sample_peak_dbfs": -12.006,
+        "true_peak_4x_dbfs": -12.001,
+        "rms_dbfs": -22.392,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -0.000424305,
+        "samples": 12782
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_pluck_001",
+      "original": {
+        "duration_ms": 99.524,
+        "sample_peak_dbfs": 3.436,
+        "true_peak_4x_dbfs": 3.442,
+        "rms_dbfs": -17.422,
+        "samples_at_or_over_full_scale": 4,
+        "dc_mean": 4.1622e-05,
+        "samples": 4389
+      },
+      "prepared": {
+        "duration_ms": 99.524,
+        "sample_peak_dbfs": -16.006,
+        "true_peak_4x_dbfs": -16.0,
+        "rms_dbfs": -36.758,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -5.1273e-05,
+        "samples": 4389
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_switch_001",
+      "original": {
+        "duration_ms": 614.762,
+        "sample_peak_dbfs": 2.059,
+        "true_peak_4x_dbfs": 2.064,
+        "rms_dbfs": -24.314,
+        "samples_at_or_over_full_scale": 8,
+        "dc_mean": 2.338e-06,
+        "samples": 27111
+      },
+      "prepared": {
+        "duration_ms": 614.762,
+        "sample_peak_dbfs": -16.006,
+        "true_peak_4x_dbfs": -16.0,
+        "rms_dbfs": -42.821,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -5.27e-07,
+        "samples": 27111
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_footstep_wood_000",
+      "original": {
+        "duration_ms": 271.383,
+        "sample_peak_dbfs": 2.086,
+        "true_peak_4x_dbfs": 2.091,
+        "rms_dbfs": -18.146,
+        "samples_at_or_over_full_scale": 77,
+        "dc_mean": 4.468e-05,
+        "samples": 11968
+      },
+      "prepared": {
+        "duration_ms": 271.383,
+        "sample_peak_dbfs": -20.005,
+        "true_peak_4x_dbfs": -19.999,
+        "rms_dbfs": -40.706,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -0.000110993,
+        "samples": 11968
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_footstep_wood_001",
+      "original": {
+        "duration_ms": 248.662,
+        "sample_peak_dbfs": 2.013,
+        "true_peak_4x_dbfs": 2.018,
+        "rms_dbfs": -17.016,
+        "samples_at_or_over_full_scale": 78,
+        "dc_mean": -0.000200696,
+        "samples": 10966
+      },
+      "prepared": {
+        "duration_ms": 248.662,
+        "sample_peak_dbfs": -20.005,
+        "true_peak_4x_dbfs": -19.999,
+        "rms_dbfs": -39.464,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -0.000154572,
+        "samples": 10966
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_wood_light_000",
+      "original": {
+        "duration_ms": 262.698,
+        "sample_peak_dbfs": 1.892,
+        "true_peak_4x_dbfs": 1.902,
+        "rms_dbfs": -19.253,
+        "samples_at_or_over_full_scale": 33,
+        "dc_mean": 2.6144e-05,
+        "samples": 11585
+      },
+      "prepared": {
+        "duration_ms": 262.698,
+        "sample_peak_dbfs": -19.006,
+        "true_peak_4x_dbfs": -19.001,
+        "rms_dbfs": -40.317,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -0.000264445,
+        "samples": 11585
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_wood_heavy_000",
+      "original": {
+        "duration_ms": 310.136,
+        "sample_peak_dbfs": 2.07,
+        "true_peak_4x_dbfs": 2.075,
+        "rms_dbfs": -16.59,
+        "samples_at_or_over_full_scale": 111,
+        "dc_mean": 0.000189798,
+        "samples": 13677
+      },
+      "prepared": {
+        "duration_ms": 310.136,
+        "sample_peak_dbfs": -15.006,
+        "true_peak_4x_dbfs": -15.001,
+        "rms_dbfs": -34.001,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -0.000199334,
+        "samples": 13677
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "kenney_plank_medium_000",
+      "original": {
+        "duration_ms": 779.002,
+        "sample_peak_dbfs": 1.793,
+        "true_peak_4x_dbfs": 1.801,
+        "rms_dbfs": -20.868,
+        "samples_at_or_over_full_scale": 35,
+        "dc_mean": 4.6094e-05,
+        "samples": 34354
+      },
+      "prepared": {
+        "duration_ms": 779.002,
+        "sample_peak_dbfs": -17.009,
+        "true_peak_4x_dbfs": -17.001,
+        "rms_dbfs": -39.946,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -6.5139e-05,
+        "samples": 34354
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "luckius_paper_1",
+      "original": {
+        "duration_ms": 487.619,
+        "sample_peak_dbfs": -6.259,
+        "true_peak_4x_dbfs": -6.247,
+        "rms_dbfs": -29.25,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 0.011080624,
+        "samples": 21504
+      },
+      "prepared": {
+        "duration_ms": 487.619,
+        "sample_peak_dbfs": -19.011,
+        "true_peak_4x_dbfs": -18.999,
+        "rms_dbfs": -42.006,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 0.002542093,
+        "samples": 21504
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "luckius_paper_2",
+      "original": {
+        "duration_ms": 545.669,
+        "sample_peak_dbfs": -9.326,
+        "true_peak_4x_dbfs": -9.292,
+        "rms_dbfs": -30.091,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 0.010943655,
+        "samples": 24064
+      },
+      "prepared": {
+        "duration_ms": 545.669,
+        "sample_peak_dbfs": -21.034,
+        "true_peak_4x_dbfs": -21.0,
+        "rms_dbfs": -41.802,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 0.002830952,
+        "samples": 24064
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "bmaczero_lightclunk1",
+      "original": {
+        "duration_ms": 371.519,
+        "sample_peak_dbfs": -5.039,
+        "true_peak_4x_dbfs": -4.765,
+        "rms_dbfs": -28.99,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 2.803e-06,
+        "samples": 16384
+      },
+      "prepared": {
+        "duration_ms": 371.519,
+        "sample_peak_dbfs": -17.274,
+        "true_peak_4x_dbfs": -17.0,
+        "rms_dbfs": -41.226,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 3.41e-07,
+        "samples": 16384
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "bmaczero_mechanical1",
+      "original": {
+        "duration_ms": 917.188,
+        "sample_peak_dbfs": 0.0,
+        "true_peak_4x_dbfs": 0.238,
+        "rms_dbfs": -22.869,
+        "samples_at_or_over_full_scale": 1,
+        "dc_mean": 0.000241114,
+        "samples": 40448
+      },
+      "prepared": {
+        "duration_ms": 917.188,
+        "sample_peak_dbfs": -16.238,
+        "true_peak_4x_dbfs": -16.001,
+        "rms_dbfs": -39.107,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 3.7281e-05,
+        "samples": 40448
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "bmaczero_mechanical2",
+      "original": {
+        "duration_ms": 603.719,
+        "sample_peak_dbfs": -9.395,
+        "true_peak_4x_dbfs": -9.129,
+        "rms_dbfs": -31.075,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 8.5134e-05,
+        "samples": 26624
+      },
+      "prepared": {
+        "duration_ms": 603.719,
+        "sample_peak_dbfs": -17.266,
+        "true_peak_4x_dbfs": -17.0,
+        "rms_dbfs": -38.947,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 3.4533e-05,
+        "samples": 26624
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "coughe_door_lock",
+      "original": {
+        "duration_ms": 285.986,
+        "sample_peak_dbfs": -12.454,
+        "true_peak_4x_dbfs": -12.299,
+        "rms_dbfs": -35.879,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -3.978e-06,
+        "samples": 12612
+      },
+      "prepared": {
+        "duration_ms": 285.986,
+        "sample_peak_dbfs": -18.156,
+        "true_peak_4x_dbfs": -18.0,
+        "rms_dbfs": -41.581,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -1.728e-06,
+        "samples": 12612
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "coughe_door_open",
+      "original": {
+        "duration_ms": 614.014,
+        "sample_peak_dbfs": -8.348,
+        "true_peak_4x_dbfs": -8.172,
+        "rms_dbfs": -32.99,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -2.51e-07,
+        "samples": 27078
+      },
+      "prepared": {
+        "duration_ms": 614.014,
+        "sample_peak_dbfs": -18.177,
+        "true_peak_4x_dbfs": -18.001,
+        "rms_dbfs": -42.819,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -3.93e-07,
+        "samples": 27078
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "coughe_locked_jiggle",
+      "original": {
+        "duration_ms": 934.014,
+        "sample_peak_dbfs": -13.582,
+        "true_peak_4x_dbfs": -13.566,
+        "rms_dbfs": -32.163,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -2.7427e-05,
+        "samples": 41190
+      },
+      "prepared": {
+        "duration_ms": 934.014,
+        "sample_peak_dbfs": -19.016,
+        "true_peak_4x_dbfs": -19.0,
+        "rms_dbfs": -37.597,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": -1.4711e-05,
+        "samples": 41190
+      },
+      "result": "pass"
+    },
+    {
+      "asset_id": "coughe_unlock_door",
+      "original": {
+        "duration_ms": 568.005,
+        "sample_peak_dbfs": 0.46,
+        "true_peak_4x_dbfs": 0.466,
+        "rms_dbfs": -24.148,
+        "samples_at_or_over_full_scale": 3,
+        "dc_mean": 1.077e-06,
+        "samples": 25049
+      },
+      "prepared": {
+        "duration_ms": 568.005,
+        "sample_peak_dbfs": -16.006,
+        "true_peak_4x_dbfs": -16.0,
+        "rms_dbfs": -40.614,
+        "samples_at_or_over_full_scale": 0,
+        "dc_mean": 1.91e-07,
+        "samples": 25049
+      },
+      "result": "pass"
+    }
+  ]
+}

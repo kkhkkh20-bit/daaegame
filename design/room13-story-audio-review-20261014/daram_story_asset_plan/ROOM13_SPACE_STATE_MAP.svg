@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1160" viewBox="0 0 1800 1160">
+<defs><style>text{font-family:'Noto Sans CJK KR','Malgun Gothic',sans-serif;fill:#26313a} .title{font-size:38px;font-weight:700}.sub{font-size:21px;fill:#6a675f}.h{font-size:27px;font-weight:700}.label{font-size:23px}.small{font-size:19px}.note{font-size:18px;fill:#685c4b}.room{fill:#fffaf1;stroke:#726352;stroke-width:5}.prop{fill:#e6d6bd;stroke:#89755a;stroke-width:3}.route{fill:none;stroke:#ae4739;stroke-width:7;stroke-dasharray:15 10;marker-end:url(#arrow)}.step{fill:#574535}.white{fill:white;font-size:24px;font-weight:700}</style><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="none" stroke="#ae4739" stroke-width="2"/></marker></defs>
+<rect width="1800" height="1160" fill="#f0ece3"/>
+<text class="title" x="60" y="70">13호 비밀통로와 사건 전후 상태</text>
+<text class="sub" x="60" y="109">작가·디자이너용 연결도 · 실제 축척 아님 · 플레이어에게 전체 진실을 미리 공개하지 않음</text>
+<text class="small" x="60" y="147">기준 main 5e6c2c5 / 0.16.2-dev. 대사·시스템 적용과 물증안 최종 승인은 별도.</text>
+
+<rect x="50" y="187" width="1690" height="630" rx="16" fill="#fff"/>
+<text class="h" x="85" y="235">공간 연결</text>
+<rect class="room" x="95" y="285" width="390" height="290" rx="8"/>
+<text class="h" x="125" y="327">1층 주방</text>
+<rect class="prop" x="130" y="373" width="275" height="80" rx="5"/>
+<text class="label" x="152" y="422">선반 아래 유지식 레버</text>
+<rect x="130" y="480" width="275" height="55" rx="6" fill="#e7ebe2"/>
+<text class="small" x="152" y="515">ON에 걸어두면 손을 떼도 유지</text>
+<path d="M485 435H565" stroke="#726352" stroke-width="12"/>
+<rect class="room" x="565" y="285" width="335" height="290" rx="8"/>
+<text class="h" x="601" y="327">세탁실·서비스 계단</text>
+<path d="M620 501H664V472H706V443H748V414H790V385H836" fill="none" stroke="#8b795f" stroke-width="9"/>
+<text class="small" x="600" y="547">식당에서는 이 안쪽이 보이지 않음</text>
+
+<rect class="room" x="1060" y="285" width="610" height="410" rx="8"/>
+<text class="h" x="1090" y="329">2층 13호 객실</text>
+<rect x="1080" y="366" width="100" height="145" fill="#bfdce6" stroke="#4e7383" stroke-width="5"/>
+<path d="M1130 368V510M1082 437H1178" stroke="#4e7383" stroke-width="5"/>
+<text class="small" x="1080" y="546">왼 외벽창</text>
+<rect class="prop" x="1222" y="488" width="162" height="111" rx="5"/>
+<text class="label" x="1268" y="551">책상</text>
+<rect x="1390" y="381" width="172" height="162" rx="8" fill="#90aacb" stroke="#6b5d4d" stroke-width="5"/>
+<rect x="1405" y="390" width="140" height="42" rx="9" fill="#f7edd9"/>
+<text class="label" x="1427" y="577">오른 침대</text>
+<text class="small" x="1395" y="608">아래 숨을 공간 / 불타지 않음</text>
+<rect class="prop" x="1592" y="370" width="60" height="227"/>
+<path d="M1595 425H1650M1595 479H1650M1595 536H1650" stroke="#89755a" stroke-width="4"/>
+<rect x="1601" y="546" width="16" height="34" fill="#aa4838"/>
+<text class="small" x="1455" y="659">우측 책장 하단 붉은 책·판넬</text>
+<path d="M900 435H975V263H1704V560H1652" class="route"/>
+<text class="note" x="1067" y="779">옛 통로 + 나중에 붙인 잠금장치. 하부 입구의 통과 크기는 추가 구조 검토 필요.</text>
+<path d="M1348 695V730" stroke="#726352" stroke-width="12"/>
+<text class="small" x="1176" y="738">정문은 객실 카메라 뒤, 복도 끝에 위치</text>
+
+<circle class="step" cx="112" cy="652" r="22"/><text class="white" x="105" y="660">1</text>
+<text class="label" x="145" y="660">주방 레버 ON</text>
+<circle class="step" cx="365" cy="652" r="22"/><text class="white" x="358" y="660">2</text>
+<text class="label" x="398" y="660">붉은 책 아래를 누르고 옆으로 조작</text>
+<circle class="step" cx="112" cy="712" r="22"/><text class="white" x="105" y="720">3</text>
+<text class="label" x="145" y="720">하부 판넬을 안쪽으로 밀어 통과</text>
+<text class="note" x="112" y="770">안쪽 수동 손잡이는 외부 OFF에도 탈출 가능. 임의 타이머 없음.</text>
+
+<rect x="50" y="849" width="1690" height="245" rx="16" fill="#fff"/>
+<text class="h" x="85" y="894">화면 상태를 섞지 않기</text>
+<g class="small">
+<text x="90" y="945">사건 전 / 예방</text><text x="390" y="945">발견·구조 직후</text><text x="750" y="945">흉기 회수·봉인 뒤</text><text x="1140" y="945">바닥 보존 또는 훼손</text>
+<text x="90" y="982">기존 room-before</text><text x="390" y="982">기존 room-after + rescue</text><text x="750" y="982">M06: 촛대 없는 사건후 배경</text><text x="1140" y="982">P03: 보존 / P04: 겹친 흔적</text>
+<text x="90" y="1020">시신·탄흔 없음</text><text x="390" y="1020">침대 온전 / 작은 매트 탄흔</text><text x="750" y="1020">이미 회수한 흉기를 다시 그리지 않음</text><text x="1140" y="1020">미보존에서 E09 자동 지급 금지</text>
+</g>
+<text class="note" x="90" y="1068">할머니 진입·공격은 작가용 진실. 플레이어는 아빠의 귀환부터 관찰하고 조사로 구간을 확인한다.</text>
+<text class="sub" x="60" y="1136">제작/검수/게임 적용 별도 기록 · 열린 책장 확대는 구조 제안이며 기존 전체 배경의 정확한 crop이 아님</text>
+</svg>
