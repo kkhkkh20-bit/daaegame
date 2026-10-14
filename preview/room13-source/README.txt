@@ -1,3 +1,6 @@
-다람탐정 0.17.2-dev 개발 소스
+다람탐정 0.17.3-dev 개발 소스
 중앙 대화 UI, 백로그/오토플레이, 이동/증거 UI, 생활 추리 PoC.
-RELEASE_0172.md(UI·저장 안전성, reports/room13-ui-flow-20261014 검증), RELEASE_0171.md(회의 실패 규칙·면회 차단 버그), RELEASE_0170.md(공개 회의 새 엔진·쉬운 말), DESIGN_MEETING_0170.md, RELEASE_0162.md·RELEASE_0161.md(리뷰 반영·웹 패키지 축소)와 RELEASE_0160.md, qa-room13-0160/RELEASE_STATUS.json 참조. SDK와 기존 대형 자산은 별도.
+RELEASE_0173.md(화면 겹침·대화 말투·저장 칸), RELEASE_0172.md(UI·저장 안전성, reports/room13-ui-flow-20261014 검증), RELEASE_0171.md(회의 실패 규칙·면회 차단 버그), RELEASE_0170.md(공개 회의 새 엔진·쉬운 말), DESIGN_MEETING_0170.md, RELEASE_0162.md·RELEASE_0161.md(리뷰 반영·웹 패키지 축소)와 RELEASE_0160.md, qa-room13-0160/RELEASE_STATUS.json 참조. SDK와 기존 대형 자산은 별도.
+최신 개발 0.17.3-dev (2026-10-14)
+0.17.2-dev(UI 흐름·호환 저장)를 3-way로 합친 판. 화면 겹침: '일거리·상점' 버튼 위쪽 가운데, 여관 밤이를 보이는 들보로, 넓은 화면 밖 인물은 가장자리 "‹ 이름" 표, 인물 앞 물건은 얼굴 밖에서 계속 클릭, ✓ 표시는 이름표 아래, 주제 목록 7개까지.
+대화: 인사만 반복하던 주제·바뀌던 제목·말투(아이 반말, 보리 존댓말)·미리 아는 대사 2곳·2주차 초롱 모순 수정. 저장 18칸(3쪽×6), 게임 안 날짜·장소 표시, 덮어쓰기 확인(0.17.2 호환 검사 유지). RELEASE_0173.md 참조.
