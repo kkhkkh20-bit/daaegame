@@ -1,0 +1,886 @@
+{
+  "schema": 1,
+  "scope": "12 main characters; 4 authored body expressions each; world/interview/avatar aliases; no new activity poses",
+  "method": "Image generation redrawing referenced originals. PNG bytes copied unchanged. Alpha inspected with PIL/numpy; all edits are metadata only.",
+  "sources": {
+    "family": {
+      "generated_source": "/workspace/generated_images/exec-aeca0c18-fc33-4dd9-bbe7-ef0ffa64125d.png",
+      "file": "/workspace/daaegame/experiments/renpy-ch1/art/room13-pixel-cast-family.png",
+      "sha256": "46a188dd400b150bd45efe38378dd87f6435ce40156a1e6d178610c76cb74ba4",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 730569,
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "inn": {
+      "generated_source": "/workspace/generated_images/exec-2e9550bf-7735-4815-b1e4-ec1013bd01a0.png",
+      "file": "/workspace/daaegame/experiments/renpy-ch1/art/room13-pixel-cast-inn.png",
+      "sha256": "3a562db27ea809f0565b9c391dcd514c8564d5037c7819828759b2e553658f40",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 749105,
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "friends": {
+      "generated_source": "/workspace/generated_images/exec-11ffe915-9fdf-4bcf-87df-13c6c4c6649a.png",
+      "file": "/workspace/daaegame/experiments/renpy-ch1/art/room13-pixel-cast-friends.png",
+      "sha256": "54b1a0f0889db05f64f43df4343abbcaac28a0e26cad8a4a9aaa8450c09e7588",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 731776,
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "scholars": {
+      "generated_source": "/workspace/generated_images/exec-3e233de1-f6f9-4729-b542-4f2eca88d9c2.png",
+      "file": "/workspace/daaegame/experiments/renpy-ch1/art/room13-pixel-cast-scholars.png",
+      "sha256": "4f19e734362865b5d989c1917446fecd99bad1c045a76fcde94bf052a491e2aa",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 637019,
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "witnesses": {
+      "generated_source": "/workspace/generated_images/exec-79d88574-58ab-4706-a811-5eb86dc019e8.png",
+      "file": "/workspace/daaegame/experiments/renpy-ch1/art/room13-pixel-cast-witnesses.png",
+      "sha256": "e54fc0d49db4341565b698585882261566bf74ecd870dc6c0faf16d42ba03537",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 689235,
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    "mother-guard": {
+      "generated_source": "/workspace/generated_images/exec-d475adab-5610-404b-b66e-1b9548ebd8ed.png",
+      "file": "/workspace/daaegame/experiments/renpy-ch1/art/room13-pixel-cast-mother-guard.png",
+      "sha256": "bcc7a4ddac0a748bc5d14ab09a1394e674d0e596d6fc66528b7838b9d1ef7d76",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha_zero_pixels": 560739,
+      "alpha_range": [
+        0,
+        254
+      ]
+    }
+  },
+  "characters": {
+    "daram": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          37,
+          51,
+          301,
+          447
+        ],
+        "thinking": [
+          425,
+          51,
+          283,
+          448
+        ],
+        "distressed": [
+          807,
+          57,
+          263,
+          444
+        ],
+        "expressive": [
+          1187,
+          56,
+          322,
+          446
+        ]
+      },
+      "avatar_bounds": [
+        [
+          115,
+          45,
+          224,
+          224
+        ],
+        [
+          489,
+          45,
+          223,
+          224
+        ],
+        [
+          874,
+          51,
+          214,
+          230
+        ],
+        [
+          1243,
+          50,
+          226,
+          234
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "dad": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          10,
+          500,
+          345,
+          492
+        ],
+        "thinking": [
+          414,
+          503,
+          321,
+          489
+        ],
+        "distressed": [
+          792,
+          507,
+          310,
+          485
+        ],
+        "expressive": [
+          1174,
+          505,
+          362,
+          488
+        ]
+      },
+      "avatar_bounds": [
+        [
+          129,
+          498,
+          198,
+          187
+        ],
+        [
+          509,
+          501,
+          205,
+          190
+        ],
+        [
+          881,
+          505,
+          213,
+          190
+        ],
+        [
+          1264,
+          503,
+          212,
+          190
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "granny": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          71,
+          19,
+          271,
+          463
+        ],
+        "thinking": [
+          451,
+          18,
+          274,
+          467
+        ],
+        "distressed": [
+          823,
+          20,
+          280,
+          465
+        ],
+        "expressive": [
+          1195,
+          22,
+          328,
+          463
+        ]
+      },
+      "avatar_bounds": [
+        [
+          69,
+          17,
+          275,
+          240
+        ],
+        [
+          450,
+          16,
+          278,
+          241
+        ],
+        [
+          821,
+          18,
+          284,
+          241
+        ],
+        [
+          1193,
+          20,
+          286,
+          241
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "seryeon": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          33,
+          487,
+          300,
+          519
+        ],
+        "thinking": [
+          413,
+          488,
+          305,
+          519
+        ],
+        "distressed": [
+          793,
+          488,
+          292,
+          519
+        ],
+        "expressive": [
+          1173,
+          488,
+          326,
+          517
+        ]
+      },
+      "avatar_bounds": [
+        [
+          112,
+          485,
+          206,
+          208
+        ],
+        [
+          492,
+          486,
+          213,
+          207
+        ],
+        [
+          868,
+          486,
+          218,
+          207
+        ],
+        [
+          1247,
+          486,
+          219,
+          213
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "nabi": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          49,
+          27,
+          303,
+          550
+        ],
+        "thinking": [
+          430,
+          23,
+          282,
+          555
+        ],
+        "distressed": [
+          780,
+          68,
+          303,
+          510
+        ],
+        "expressive": [
+          1167,
+          23,
+          352,
+          554
+        ]
+      },
+      "avatar_bounds": [
+        [
+          120,
+          20,
+          235,
+          230
+        ],
+        [
+          468,
+          19,
+          249,
+          237
+        ],
+        [
+          820,
+          64,
+          269,
+          186
+        ],
+        [
+          1216,
+          19,
+          254,
+          237
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "bami": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          60,
+          586,
+          330,
+          391
+        ],
+        "thinking": [
+          438,
+          586,
+          316,
+          395
+        ],
+        "distressed": [
+          799,
+          586,
+          320,
+          398
+        ],
+        "expressive": [
+          1176,
+          586,
+          332,
+          383
+        ]
+      },
+      "avatar_bounds": [
+        [
+          70,
+          765,
+          316,
+          213
+        ],
+        [
+          440,
+          765,
+          316,
+          219
+        ],
+        [
+          810,
+          765,
+          312,
+          220
+        ],
+        [
+          1180,
+          765,
+          320,
+          209
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "doto": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          18,
+          46,
+          325,
+          481
+        ],
+        "thinking": [
+          395,
+          46,
+          335,
+          480
+        ],
+        "distressed": [
+          777,
+          46,
+          313,
+          482
+        ],
+        "expressive": [
+          1159,
+          46,
+          356,
+          481
+        ]
+      },
+      "avatar_bounds": [
+        [
+          94,
+          42,
+          248,
+          245
+        ],
+        [
+          470,
+          42,
+          251,
+          245
+        ],
+        [
+          845,
+          42,
+          251,
+          245
+        ],
+        [
+          1236,
+          42,
+          267,
+          245
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "buri": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          18,
+          542,
+          345,
+          443
+        ],
+        "thinking": [
+          439,
+          542,
+          301,
+          441
+        ],
+        "distressed": [
+          805,
+          548,
+          307,
+          432
+        ],
+        "expressive": [
+          1174,
+          546,
+          357,
+          436
+        ]
+      },
+      "avatar_bounds": [
+        [
+          66,
+          538,
+          264,
+          226
+        ],
+        [
+          467,
+          538,
+          263,
+          225
+        ],
+        [
+          830,
+          544,
+          282,
+          225
+        ],
+        [
+          1200,
+          542,
+          280,
+          225
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "karo": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          49,
+          19,
+          303,
+          518
+        ],
+        "thinking": [
+          434,
+          19,
+          288,
+          517
+        ],
+        "distressed": [
+          792,
+          44,
+          301,
+          493
+        ],
+        "expressive": [
+          1163,
+          23,
+          369,
+          515
+        ]
+      },
+      "avatar_bounds": [
+        [
+          116,
+          15,
+          222,
+          253
+        ],
+        [
+          495,
+          15,
+          219,
+          252
+        ],
+        [
+          856,
+          40,
+          227,
+          245
+        ],
+        [
+          1238,
+          19,
+          227,
+          253
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "neoul": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          11,
+          542,
+          355,
+          455
+        ],
+        "thinking": [
+          399,
+          541,
+          347,
+          459
+        ],
+        "distressed": [
+          765,
+          551,
+          352,
+          449
+        ],
+        "expressive": [
+          1145,
+          543,
+          388,
+          457
+        ]
+      },
+      "avatar_bounds": [
+        [
+          84,
+          538,
+          270,
+          189
+        ],
+        [
+          472,
+          537,
+          258,
+          193
+        ],
+        [
+          849,
+          547,
+          267,
+          200
+        ],
+        [
+          1219,
+          539,
+          265,
+          196
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "mom": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          10,
+          14,
+          364,
+          487
+        ],
+        "thinking": [
+          396,
+          14,
+          358,
+          489
+        ],
+        "distressed": [
+          769,
+          17,
+          352,
+          486
+        ],
+        "expressive": [
+          1151,
+          14,
+          385,
+          489
+        ]
+      },
+      "avatar_bounds": [
+        [
+          140,
+          10,
+          194,
+          219
+        ],
+        [
+          514,
+          10,
+          194,
+          219
+        ],
+        [
+          895,
+          13,
+          195,
+          220
+        ],
+        [
+          1274,
+          10,
+          196,
+          219
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    },
+    "guard": {
+      "poses": [
+        "neutral",
+        "thinking",
+        "distressed",
+        "expressive"
+      ],
+      "body_bounds": {
+        "neutral": [
+          13,
+          509,
+          349,
+          492
+        ],
+        "thinking": [
+          396,
+          506,
+          347,
+          497
+        ],
+        "distressed": [
+          758,
+          518,
+          367,
+          485
+        ],
+        "expressive": [
+          1156,
+          515,
+          374,
+          488
+        ]
+      },
+      "avatar_bounds": [
+        [
+          97,
+          505,
+          229,
+          201
+        ],
+        [
+          484,
+          502,
+          230,
+          205
+        ],
+        [
+          866,
+          514,
+          236,
+          205
+        ],
+        [
+          1255,
+          511,
+          232,
+          205
+        ]
+      ],
+      "aliases_preserved": [
+        "activity",
+        "inn_activity",
+        "world"
+      ]
+    }
+  },
+  "limitations": [
+    "Per-character activity/inn_activity remain neutral aliases, not newly authored work poses.",
+    "These generated pixel-style atlases use nearest-neighbor runtime sampling but are not quantized to an exact global pixel grid.",
+    "Some adults retain stylized large heads; separate adult identity redesign was not fully achieved.",
+    "Alpha has soft fringe and max254 from image generator; backgrounds RGB remain under transparent pixels. Alpha-aware renderer required."
+  ],
+  "motion": {
+    "file": "/workspace/daaegame/experiments/renpy-ch1/art/pixel-b/room13-pixel-daram-motion.webp",
+    "generated_source": "/workspace/generated_images/exec-ee1b96c6-989a-43e3-b4d0-f32fb177fea0.png",
+    "sha256": "fda89bc2167551145f665a846592b599a6b0b7f478866ef5c9c2405e86dfa36e",
+    "metadata": "/workspace/daaegame/experiments/renpy-ch1/art/pixel-b/motion.json",
+    "validation": "Four separately authored tailless bodies and four detached tails verified visually; alpha inspected. Composite alignment requires runtime screenshot review."
+  }
+}

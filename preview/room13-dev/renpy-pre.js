@@ -359,69 +359,85 @@ Module.preRun = Module.preRun || [ ];
     }
 
 
-    async function r13FetchGameZip() {
-        const parts = [{"file": "game.part01", "bytes": 62914560, "sha256": "7bb692b4ae477d3e38e90579b7bd26046e82ed6c953e69aae098d7fe9a067e6a"}, {"file": "game.part02", "bytes": 62914560, "sha256": "6e981431eae0981a295015ad27d5766e4938e5b1c03fd907153998c05170d04d"}, {"file": "game.part03", "bytes": 62914560, "sha256": "52246d23dbe2fe6c38c036e0c28ca594fb3ac1107bca8546c875d3f4a96283cb"}, {"file": "game.part04", "bytes": 60934287, "sha256": "8b11a531d4556b417bfe3bfb87077e0814e5771ece6e33907bb26c7521a47a7f"}];
-        let partIndex = 0;
-        let reader = null;
-        const body = new ReadableStream({
-            async pull(controller) {
-                try {
-                    while (true) {
-                        if (!reader) {
-                            if (partIndex >= parts.length) { controller.close(); return; }
-                            const item = parts[partIndex++];
-                            const url = new URL(item.file, document.baseURI);
-                            url.searchParams.set("v", item.sha256);
-                            const response = await fetch(url);
-                            if (!response.ok) throw new Error(item.file + ': HTTP ' + response.status);
-                            reader = response.body.getReader();
-                        }
-                        const packet = await reader.read();
-                        if (packet.done) { reader.releaseLock(); reader = null; continue; }
-                        controller.enqueue(packet.value);
-                        return;
-                    }
-                } catch (error) { controller.error(error); }
-            },
-            async cancel(reason) { if (reader) await reader.cancel(reason); }
-        });
-        return new Response(body, {status: 200, headers: {'Content-Length': '249677967'}});
+    // r13-loader-begin (dev/build_web.py)
+    // Core zip (runtime + scripts) is unpacked by Ren'Py; preloaded art is
+    // written straight into /game so nothing large is unpacked or duplicated.
+    let r13Prefetch = [];
+
+    function r13Url(file, sha) {
+        const url = new URL(file, document.baseURI);
+        if (sha) url.searchParams.set("v", sha.slice(0, 12));
+        return url;
     }
-    
+
+    async function r13Fetch(url, tick) {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(url + ": HTTP " + response.status);
+        const reader = response.body.getReader();
+        const chunks = [];
+        let size = 0;
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            chunks.push(value);
+            size += value.length;
+            tick(value.length);
+        }
+        const out = new Uint8Array(size);
+        let at = 0;
+        for (const chunk of chunks) { out.set(chunk, at); at += chunk.length; }
+        return out;
+    }
+
+    function r13MakeDirs(path) {
+        let dir = "";
+        for (const name of path.split("/").slice(1, -1)) {
+            dir += "/" + name;
+            try { FS.mkdir(dir); } catch (e) { /* exists */ }
+        }
+    }
+
     async function loadGameZip() {
-
         try {
-            let response = await r13FetchGameZip();
+            const response = await fetch(r13Url("game-transport.json"), { cache: "no-cache" });
+            if (!response.ok) throw new Error("game-transport.json: HTTP " + response.status);
+            const transport = await response.json();
+            const preload = transport.preload || [];
+            gameZipSize = transport.archive_bytes + preload.reduce((n, f) => n + f.bytes, 0);
+            const tick = (n) => { gameZipDownloaded += n; updateDownloadProgress(); };
 
-            if (!response.ok) {
-                reportError("Could not load game.zip: " + response.status + " " + response.statusText);
-            }
+            const core = (async () => {
+                const parts = [];
+                for (const part of transport.parts) parts.push(await r13Fetch(r13Url(part.file, part.sha256), tick));
+                const f = FS.open("/game.zip", "w");
+                for (const data of parts) FS.write(f, data, 0, data.length);
+                FS.close(f);
+            })();
 
-            gameZipSize = parseInt(response.headers.get('Content-Length'), 10);
-            if(Number.isNaN(gameZipSize)) gameZipSize = 0;
-
-            let reader = await response.body.getReader();
-
-            let f = FS.open('/game.zip', 'w');
-
-            while (true) {
-
-                let { done, value } = await reader.read();
-
-                if (done) {
-                    break;
+            let next = 0;
+            async function worker() {
+                while (next < preload.length) {
+                    const item = preload[next++];
+                    const data = await r13Fetch(r13Url(item.file, item.sha256), tick);
+                    const path = "/" + item.file;
+                    r13MakeDirs(path);
+                    FS.writeFile(path, data, { canOwn: true });
                 }
-
-                FS.write(f, value, 0, value.length);
-                gameZipDownloaded += value.length;
-
-                updateDownloadProgress();
             }
-
-            FS.close(f);
-
+            const workers = [];
+            for (let i = 0; i < 6; i++) workers.push(worker());
+            await Promise.all([core].concat(workers));
+            r13Prefetch = transport.prefetch || [];
         } catch (e) {
             reportError("Could not download game.zip", e);
+        }
+    }
+
+    // Warm the browser cache for progressive files (music) once the game runs,
+    // so Ren'Py's own download finds them immediately.
+    async function r13PrefetchLater() {
+        for (const file of r13Prefetch) {
+            try { await (await fetch(r13Url(file), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
         }
     }
 
@@ -430,11 +446,13 @@ Module.preRun = Module.preRun || [ ];
 
         loadGameZip().then(() => {
             Module.removeRunDependency('loadGameZip');
+            setTimeout(r13PrefetchLater, 8000);
         });
 
     }
 
     Module['preRun'].push(runLoadGameZip);
+    // r13-loader-end
 
     /***************************************************************************
      *

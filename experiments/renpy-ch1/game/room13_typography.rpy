@@ -1,0 +1,52 @@
+# Role tokens. Galmuri11 ships one real weight (Regular); never synthesize
+# Thin/Medium/Black or italic for small Korean pixel text.
+init 57 python:
+    R13_UI_PADDING = {
+        "button": (18,12), "compact": (12,8), "panel": (24,20),
+        "row": (18,12), "name": (16,8),
+    }
+    R13_UI_COLORS = {
+        "menu_text": "#fff4df", "menu_accent": "#ebcd8a",
+        "menu_secondary": "#ced9d4", "menu_disabled": "#849592",
+        "paper_text": "#303d38", "paper_secondary": "#536158",
+        "dark_text": "#fff4df", "dark_secondary": "#ced9d4",
+        "person": "#ebcd8a", "place": "#b8dbd2", "thought": "#9dc9ff",
+        "evidence": "#765426", "testimony": "#365f79",
+    }
+
+init 70:
+    style r13_text:
+        bold False
+        italic False
+    style r13_button:
+        padding R13_UI_PADDING["button"]
+    style r13_button_text:
+        bold False
+        italic False
+    style r13_frame:
+        padding R13_UI_PADDING["panel"]
+    style r13_action_button:
+        padding R13_UI_PADDING["button"]
+    style r13_panel is r13_frame:
+        padding R13_UI_PADDING["panel"]
+    style r13_row_button is r13_button:
+        padding R13_UI_PADDING["row"]
+    style r13_row_button_text is r13_button_text
+    style r13_compact_button is r13_action_button:
+        padding R13_UI_PADDING["compact"]
+    style r13_compact_button_text is r13_action_button_text:
+        size 20
+    style r13_title_text is r13_text:
+        size 30
+        color "#765426"
+    style r13_secondary_text is r13_text:
+        size 20
+        color R13_UI_COLORS["paper_secondary"]
+    style r13_secondary_dark_text is r13_secondary_text:
+        color R13_UI_COLORS["dark_secondary"]
+    style r13_key_text is r13_text:
+        size 24
+        color R13_UI_COLORS["evidence"]
+    style r13_say_label:
+        bold False
+        italic False

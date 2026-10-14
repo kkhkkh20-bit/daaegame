@@ -1,0 +1,47 @@
+# Small drawn controls; no borrowed reference artwork or additional bitmap assets.
+init 79 python:
+    class R13ReferenceChoice(renpy.Displayable):
+        def __init__(self,hover=False,**kwargs):
+            super(R13ReferenceChoice,self).__init__(**kwargs)
+            self.hover=hover
+        def render(self,width,height,st,at):
+            w=max(1,int(width));h=max(42,int(height))
+            r=renpy.Render(w,h);c=r.canvas()
+            c.rect("#1d3a37",(0,0,w,h))
+            c.polygon("#c9a75f",((0,0),(28,0),(58,h),(0,h)))
+            c.rect("#eed17a" if self.hover else "#dce6dc",(0,0,w,h),3 if self.hover else 1)
+            return r
+
+    # Summaries live in room13_question_summaries.rpy (init 78).
+    def r13_question_summary(title):
+        return globals().get("R13_QUESTION_SUMMARIES",{}).get(title,title)
+
+    def r13_reference_list_height(entries,width,spacing=24,cap=540):
+        if not entries:
+            notice=Text("지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.",size=r13_read_size(22,28),xsize=width-55)
+            return int(renpy.render(notice,width-55,720,0,0).get_size()[1])+20
+        total=spacing*max(0,len(entries)-1)
+        for label,action,was_read in entries:
+            caption=("{font=assets/Room13Sans.ttf}✓{/font}  "+label) if was_read else label
+            text=Text(caption,size=r13_read_size(22,28),font=r13_ui_font(),xsize=width-99)
+            height=renpy.render(text,width-99,720,0,0).get_size()[1]
+            total+=max(42,height+12)
+        # Render sizes can be floats; a float ypos would be read as a screen fraction.
+        # Up to about seven one-line topics fit without a half-cut last row.
+        return int(min(cap,total))
+
+init 80:
+    style r13_footer_button is button:
+        xsize 96
+        ysize 40
+        padding (8,4)
+        background None
+        hover_background Solid("#2c524c")
+    style r13_footer_button_text is text:
+        font "assets/Galmuri11.ttf"
+        size 20
+        color "#e9e2cf"
+        hover_color "#ffe39a"
+        insensitive_color "#6d7b77"
+        xalign .5
+        yalign .5

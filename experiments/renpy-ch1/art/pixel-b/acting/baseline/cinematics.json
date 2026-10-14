@@ -1,0 +1,191 @@
+{
+  "revision": "pixel-b-cinematics-v1",
+  "items": [
+    {
+      "id": "return",
+      "file": "assets/room13-pixel-cinematic-key.webp",
+      "title": "문 아래의 연기",
+      "spoiler": true,
+      "rect": [
+        2,
+        2,
+        832,
+        466
+      ],
+      "kind": "scene"
+    },
+    {
+      "id": "rescue",
+      "file": "assets/room13-pixel-cinematic-key.webp",
+      "title": "아빠가 잡아 줄게",
+      "spoiler": true,
+      "rect": [
+        838,
+        2,
+        832,
+        466
+      ],
+      "kind": "scene"
+    },
+    {
+      "id": "reunion",
+      "file": "assets/room13-pixel-cinematic-key.webp",
+      "title": "손을 뻗은 사람",
+      "spoiler": true,
+      "rect": [
+        2,
+        472,
+        832,
+        467
+      ],
+      "kind": "scene"
+    },
+    {
+      "id": "mountain",
+      "file": "assets/room13-pixel-cinematic-key.webp",
+      "title": "사람 쪽 연결을 멈춰",
+      "spoiler": true,
+      "rect": [
+        838,
+        472,
+        832,
+        467
+      ],
+      "kind": "scene"
+    },
+    {
+      "id": "E0",
+      "file": "assets/room13-pixel-cinematic-endA.webp",
+      "title": "닫힌 문",
+      "spoiler": true,
+      "rect": [
+        2,
+        2,
+        832,
+        466
+      ],
+      "kind": "ending"
+    },
+    {
+      "id": "E1",
+      "file": "assets/room13-pixel-cinematic-endA.webp",
+      "title": "남겨진 이름",
+      "spoiler": true,
+      "rect": [
+        838,
+        2,
+        832,
+        466
+      ],
+      "kind": "ending"
+    },
+    {
+      "id": "E2",
+      "file": "assets/room13-pixel-cinematic-endA.webp",
+      "title": "세 사람의 겨울",
+      "spoiler": true,
+      "rect": [
+        2,
+        472,
+        832,
+        467
+      ],
+      "kind": "ending"
+    },
+    {
+      "id": "E3",
+      "file": "assets/room13-pixel-cinematic-endA.webp",
+      "title": "불은 돌아왔다",
+      "spoiler": true,
+      "rect": [
+        838,
+        472,
+        832,
+        467
+      ],
+      "kind": "ending"
+    },
+    {
+      "id": "E4",
+      "file": "assets/room13-pixel-cinematic-endB.webp",
+      "title": "이름을 되찾은 마을",
+      "spoiler": true,
+      "rect": [
+        2,
+        2,
+        832,
+        466
+      ],
+      "kind": "ending"
+    },
+    {
+      "id": "E5",
+      "file": "assets/room13-pixel-cinematic-endB.webp",
+      "title": "우리 몫의 봄",
+      "spoiler": true,
+      "rect": [
+        838,
+        2,
+        832,
+        466
+      ],
+      "kind": "ending"
+    },
+    {
+      "id": "E6",
+      "file": "assets/room13-pixel-cinematic-endB.webp",
+      "title": "열세 번째 창",
+      "spoiler": true,
+      "rect": [
+        2,
+        472,
+        832,
+        467
+      ],
+      "kind": "ending"
+    },
+    {
+      "id": "proof",
+      "file": "assets/room13-pixel-cinematic-endB.webp",
+      "title": "남겨 둔 기록",
+      "spoiler": true,
+      "rect": [
+        838,
+        472,
+        832,
+        467
+      ],
+      "kind": "scene"
+    }
+  ],
+  "sources": [
+    {
+      "source": "/workspace/generated_images/exec-8d4e3c38-e38d-4cf6-9138-1202b01f845a.png",
+      "file": "room13-pixel-cinematic-key.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "74b6401236200de523dc63ef56ceedfa9bc4d43d826539076b5052c10a9edcaf"
+    },
+    {
+      "source": "/workspace/generated_images/exec-11c4a1bc-46ee-4f61-a4fc-9cbe368d7ba0.png",
+      "file": "room13-pixel-cinematic-endA.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "3ed8334d5eca69c475806ce04e5a8e44f42b7fc56be8146482649db8a7d1f799"
+    },
+    {
+      "source": "/workspace/generated_images/exec-97182823-f6e2-44dc-97c5-ee2928711423.png",
+      "file": "room13-pixel-cinematic-endB.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "64bf1a27b21f91f4810ca5ed4f4bdb2c999538b6979df6a41161241e39c59265"
+    }
+  ],
+  "note": "Imagegen originals copied unchanged. Three 1672x941 2x2 pixel-art atlases, safe runtime panel crops preserve original rect geometry. Return shows closed door before rescue, no killer or omniscient murder. Ending art avoids variable-state named granny/elder. All seven endings plus five story scenes."
+}

@@ -1,5 +1,5 @@
 define config.name = "다람탐정 · 눈에 갇힌 마을"
-define config.version = "0.9.1"
+define config.version = "0.18.0-dev"
 # Literal early definition selects the persistent web save mount.
 define config.save_directory = "daaegame-renpy-village-ch1-06"
 
@@ -53,6 +53,8 @@ init python:
             return rendered
     gui.init(1280,720)
     config.has_voice = True
+    config.main_menu_music = "assets/source-title-strings-v3.mp3"
+    config.main_menu_music_fadein = 1.2
     config.default_music_volume = 0.75
     config.default_sfx_volume = 0.7
     config.default_text_cps = 34
@@ -67,14 +69,23 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.9.1"
+    build.version = "0.18.0-dev"
+    build.classify("game/assets/room13-painted-*.png", None)
+    build.classify("game/assets/room13-painted-layouts.json", None)
     build.classify("game/assets/*.txt", "all")
     build.classify("game/assets/*.json", "all")
+    # Superseded single-scene drafts; the final inn atlas supplies these rooms.
+    build.classify("game/assets/room13-hall.png", None)
+    build.classify("game/assets/room13-passage.png", None)
     build.classify("**.py", None)
     build.classify("**/__pycache__/**", None)
     build.classify("**/*.pyc", None)
+    build.classify("story-room13/**", None)
+    build.classify("dev/**", None)
+    build.classify("*_WORK_STATUS.json", None)
     build.classify("*_QA_REPORT.json", None)
     build.classify("QA_REPORT.json", None)
+    build.classify("qa*/**", None)
     build.classify("review/**", None)
     build.classify("art/**", None)
     build.classify("audio/**", None)
@@ -85,12 +96,23 @@ init python:
     renpy.music.register_channel("typing", mixer="sfx", loop=True, stop_on_mute=True)
 
     def text_audio(event, interact=True, who_id=None, **kwargs):
+        if getattr(store,"room13_mode",False):
+            if event == "begin":
+                store.dialogue_speaker = who_id
+            # Room13 uses actual revealed glyphs; never loop a sound by duration.
+            renpy.music.stop(channel="typing")
+            return
         if event == "begin":
             store.dialogue_speaker = who_id
-        if event == "show_done" and interact and store.typing_allowed and not renpy.is_skipping():
+        if event == "show_done" and interact and store.typing_allowed and persistent.room13_typing_sound and not renpy.is_skipping():
             renpy.music.play("assets/type.wav", channel="typing", loop=True)
         elif event in ("slow_done", "end"):
             renpy.music.stop(channel="typing")
+
+    def r13_title_music():
+        # Explicit gesture also unlocks audio in browsers that block autoplay.
+        _preferences.set_mute("music", False)
+        renpy.music.play(config.main_menu_music, if_changed=True, fadein=.4)
 
     def stop_menu_typing():
         if any(renpy.get_screen(s) for s in ("pause_menu", "save", "load", "evidence_book", "winter_evidence", "winter_confirm", "winter_hub", "winter_board", "winter_topics")):
@@ -102,7 +124,7 @@ init python:
     NAMES = {"dad":"아빠", "daram":"다람", "granny":"할머니", "seryeon":"세련", "nabi":"나비", "bami":"밤이", "doto":"도토", "buri":"부리", "karo":"까로", "neoul":"너울"}
     for person, states in CAST.items():
         for state_name, spec in states.items():
-            renpy.image(person + " " + state_name, Crop(tuple(spec["crop"]), spec["file"]))
+            renpy.image(person + " " + state_name, Transform(Crop(tuple(spec["crop"]), spec["file"]),nearest=spec.get("nearest",True)))
 
     LOCATIONS = {
         "front":("여관 접수대", "bg front", "granny",625,563),

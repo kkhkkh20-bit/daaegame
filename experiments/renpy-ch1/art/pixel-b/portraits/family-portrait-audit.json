@@ -1,0 +1,60 @@
+{
+  "daram": {
+    "dialogue_sha256": "46bbd6db72db744bef53e1e81fbea79a1bfac77a92ee4df4a9b59c65ebabb9b6",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "crop_component_overlap": [],
+    "true_transparency": true,
+    "front_eyecontact_reviewed": true,
+    "teeth_visible": false,
+    "gestures": "restrained waist-up smallhands nearbody"
+  },
+  "dad": {
+    "dialogue_sha256": "41c31e6cc90a6c5eece5bbd8641c60318387a11f259ea9a5912b821be6b5a803",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "crop_component_overlap": [],
+    "true_transparency": true,
+    "front_eyecontact_reviewed": true,
+    "teeth_visible": false,
+    "gestures": "restrained waist-up smallhands nearbody"
+  },
+  "mom": {
+    "dialogue_sha256": "8d6507a97e35dfe8e2d5c6cdadf8e059015d3e970c203bef95ef2500df24b333",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "crop_component_overlap": [],
+    "true_transparency": true,
+    "front_eyecontact_reviewed": true,
+    "teeth_visible": false,
+    "gestures": "restrained waist-up smallhands nearbody"
+  },
+  "dedicated_profile_original": {
+    "sha256": "06ea08731e23c20ae9cb253351df3337d9f5c9bc158fad6401b3896344a3dc65",
+    "dimensions": [
+      2172,
+      724
+    ],
+    "edge_alpha_gt64": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "mom_rightmost_opaque_x": 2165,
+    "right_padding_pixels": 6,
+    "note": "New separately generated face+shoulder originals, not crops from body/dialogue. Dad/mom frame crops exclude adjacent shoulder fragments; full ears/head kept."
+  },
+  "final_manifest_specs_checked": 36,
+  "bounds_issues": [],
+  "browser_review": "qa-room13-0150/family-portraits/family-review.png",
+  "head_review": "qa-room13-0150/family-portraits/family-head-review.png",
+  "mom_profile_ears": "Both ears complete at 220px; right source edge has 6 transparent pixels",
+  "scope": "12 newly drawn frontal waist-up emotion portraits; 3 separately generated neutral profile drawings. Optional emotional avatars are dialogue-head crops."
+}

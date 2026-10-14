@@ -1,0 +1,997 @@
+{
+  "status": "lightweight-design-drafts",
+  "original_count": 35,
+  "approved_existing_cast_preserved": [
+    "bami",
+    "buri",
+    "doto",
+    "grandma",
+    "karo",
+    "nabi",
+    "wanggu"
+  ],
+  "pixel_policy": "Immutable source PNGs; runtime alpha-bound crops and nearest-neighbor rendering.",
+  "residents": [
+    {
+      "id": "resident_tori",
+      "original_id": "tori",
+      "name": "토리",
+      "animal": "rabbit",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/tori-0.png",
+        "size": [
+          130,
+          182
+        ],
+        "file": "assets/resident_tori-body.png",
+        "crop": [
+          1,
+          2,
+          105,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/tori-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_tori-face.png",
+        "crop": [
+          4,
+          16,
+          182,
+          128
+        ]
+      }
+    },
+    {
+      "id": "resident_bori",
+      "original_id": "bori",
+      "name": "보리",
+      "animal": "bear",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/bori-0.png",
+        "size": [
+          110,
+          182
+        ],
+        "file": "assets/resident_bori-body.png",
+        "crop": [
+          1,
+          2,
+          101,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/bori-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_bori-face.png",
+        "crop": [
+          15,
+          6,
+          162,
+          138
+        ]
+      }
+    },
+    {
+      "id": "resident_yeoni",
+      "original_id": "yeoni",
+      "name": "여니",
+      "animal": "fox",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/yeoni-0.png",
+        "size": [
+          204,
+          182
+        ],
+        "file": "assets/resident_yeoni-body.png",
+        "crop": [
+          1,
+          2,
+          135,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/yeoni-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_yeoni-face.png",
+        "crop": [
+          25,
+          7,
+          138,
+          137
+        ]
+      }
+    },
+    {
+      "id": "resident_kongi",
+      "original_id": "kongi",
+      "name": "콩이",
+      "animal": "dog",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/kongi-0.png",
+        "size": [
+          178,
+          182
+        ],
+        "file": "assets/resident_kongi-body.png",
+        "crop": [
+          1,
+          2,
+          135,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/kongi-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_kongi-face.png",
+        "crop": [
+          8,
+          15,
+          176,
+          129
+        ]
+      }
+    },
+    {
+      "id": "resident_kkwak",
+      "original_id": "kkwak",
+      "name": "꽥순",
+      "animal": "duck",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/kkwak-0.png",
+        "size": [
+          132,
+          182
+        ],
+        "file": "assets/resident_kkwak-body.png",
+        "crop": [
+          1,
+          2,
+          111,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/kkwak-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_kkwak-face.png",
+        "crop": [
+          21,
+          14,
+          149,
+          130
+        ]
+      }
+    },
+    {
+      "id": "resident_owlgp",
+      "original_id": "owlgp",
+      "name": "부엉이 할아버지",
+      "animal": "owl",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/owlgp-0.png",
+        "size": [
+          144,
+          182
+        ],
+        "file": "assets/resident_owlgp-body.png",
+        "crop": [
+          1,
+          2,
+          125,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/owlgp-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_owlgp-face.png",
+        "crop": [
+          25,
+          7,
+          142,
+          137
+        ]
+      }
+    },
+    {
+      "id": "resident_nero",
+      "original_id": "nero",
+      "name": "네로",
+      "animal": "lynx",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/nero-0.png",
+        "size": [
+          120,
+          182
+        ],
+        "file": "assets/resident_nero-body.png",
+        "crop": [
+          2,
+          2,
+          108,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/nero-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_nero-face.png",
+        "crop": [
+          28,
+          6,
+          137,
+          138
+        ]
+      }
+    },
+    {
+      "id": "resident_seol",
+      "original_id": "seol",
+      "name": "설이",
+      "animal": "crane",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/seol-0.png",
+        "size": [
+          116,
+          182
+        ],
+        "file": "assets/resident_seol-body.png",
+        "crop": [
+          9,
+          2,
+          106,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/seol-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_seol-face.png",
+        "crop": [
+          36,
+          9,
+          120,
+          135
+        ]
+      }
+    },
+    {
+      "id": "resident_ppul",
+      "original_id": "ppul",
+      "name": "뿔이 촌장",
+      "animal": "goat",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/ppul-0.png",
+        "size": [
+          128,
+          182
+        ],
+        "file": "assets/resident_ppul-body.png",
+        "crop": [
+          2,
+          2,
+          110,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/ppul-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_ppul-face.png",
+        "crop": [
+          13,
+          13,
+          166,
+          131
+        ]
+      }
+    },
+    {
+      "id": "resident_tok",
+      "original_id": "tok",
+      "name": "톡",
+      "animal": "mole",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/tok-0.png",
+        "size": [
+          116,
+          183
+        ],
+        "file": "assets/resident_tok-body.png",
+        "crop": [
+          2,
+          3,
+          108,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/tok-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_tok-face.png",
+        "crop": [
+          18,
+          7,
+          156,
+          137
+        ]
+      }
+    },
+    {
+      "id": "resident_sling",
+      "original_id": "sling",
+      "name": "슬링",
+      "animal": "weasel",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/sling-0.png",
+        "size": [
+          214,
+          182
+        ],
+        "file": "assets/resident_sling-body.png",
+        "crop": [
+          2,
+          2,
+          150,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/sling-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_sling-face.png",
+        "crop": [
+          22,
+          11,
+          148,
+          133
+        ]
+      }
+    },
+    {
+      "id": "resident_momo",
+      "original_id": "momo",
+      "name": "모모 관장",
+      "animal": "goat",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/momo-0.png",
+        "size": [
+          154,
+          182
+        ],
+        "file": "assets/resident_momo-body.png",
+        "crop": [
+          30,
+          2,
+          122,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/momo-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_momo-face.png",
+        "crop": [
+          6,
+          9,
+          180,
+          135
+        ]
+      }
+    },
+    {
+      "id": "resident_ttadak",
+      "original_id": "ttadak",
+      "name": "따닥",
+      "animal": "woodpecker",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/ttadak-0.png",
+        "size": [
+          104,
+          182
+        ],
+        "file": "assets/resident_ttadak-body.png",
+        "crop": [
+          1,
+          2,
+          98,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/ttadak-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_ttadak-face.png",
+        "crop": [
+          34,
+          5,
+          114,
+          139
+        ]
+      }
+    },
+    {
+      "id": "resident_piko",
+      "original_id": "piko",
+      "name": "피코",
+      "animal": "peacock",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/piko-0.png",
+        "size": [
+          184,
+          182
+        ],
+        "file": "assets/resident_piko-body.png",
+        "crop": [
+          1,
+          2,
+          160,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/piko-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_piko-face.png",
+        "crop": [
+          40,
+          4,
+          111,
+          140
+        ]
+      }
+    },
+    {
+      "id": "resident_mungchi",
+      "original_id": "mungchi",
+      "name": "뭉치",
+      "animal": "panda",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/mungchi-0.png",
+        "size": [
+          90,
+          182
+        ],
+        "file": "assets/resident_mungchi-body.png",
+        "crop": [
+          2,
+          3,
+          84,
+          179
+        ]
+      },
+      "face": {
+        "source": "art/faces/mungchi-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_mungchi-face.png",
+        "crop": [
+          19,
+          11,
+          154,
+          133
+        ]
+      }
+    },
+    {
+      "id": "resident_madam",
+      "original_id": "madam",
+      "name": "백 부인",
+      "animal": "panda",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/madam-0.png",
+        "size": [
+          98,
+          182
+        ],
+        "file": "assets/resident_madam-body.png",
+        "crop": [
+          9,
+          2,
+          87,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/madam-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_madam-face.png",
+        "crop": [
+          17,
+          14,
+          158,
+          130
+        ]
+      }
+    },
+    {
+      "id": "resident_siluk",
+      "original_id": "siluk",
+      "name": "실룩",
+      "animal": "weasel",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/siluk-0.png",
+        "size": [
+          198,
+          182
+        ],
+        "file": "assets/resident_siluk-body.png",
+        "crop": [
+          1,
+          2,
+          140,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/siluk-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_siluk-face.png",
+        "crop": [
+          18,
+          7,
+          156,
+          137
+        ]
+      }
+    },
+    {
+      "id": "resident_musoe",
+      "original_id": "musoe",
+      "name": "무쇠 할아버지",
+      "animal": "bear",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/musoe-0.png",
+        "size": [
+          142,
+          182
+        ],
+        "file": "assets/resident_musoe-body.png",
+        "crop": [
+          2,
+          3,
+          124,
+          179
+        ]
+      },
+      "face": {
+        "source": "art/faces/musoe-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_musoe-face.png",
+        "crop": [
+          28,
+          26,
+          136,
+          118
+        ]
+      }
+    },
+    {
+      "id": "resident_somi",
+      "original_id": "somi",
+      "name": "솜이",
+      "animal": "flyingsq",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/somi-0.png",
+        "size": [
+          214,
+          182
+        ],
+        "file": "assets/resident_somi-body.png",
+        "crop": [
+          2,
+          2,
+          160,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/somi-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_somi-face.png",
+        "crop": [
+          30,
+          11,
+          132,
+          133
+        ]
+      }
+    },
+    {
+      "id": "resident_seori",
+      "original_id": "seori",
+      "name": "서리 검사원",
+      "animal": "goat",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/seori-0.png",
+        "size": [
+          104,
+          182
+        ],
+        "file": "assets/resident_seori-body.png",
+        "crop": [
+          1,
+          2,
+          91,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/seori-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_seori-face.png",
+        "crop": [
+          7,
+          14,
+          179,
+          130
+        ]
+      }
+    },
+    {
+      "id": "resident_ubak",
+      "original_id": "ubak",
+      "name": "우박",
+      "animal": "mole",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/ubak-0.png",
+        "size": [
+          102,
+          182
+        ],
+        "file": "assets/resident_ubak-body.png",
+        "crop": [
+          7,
+          2,
+          94,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/ubak-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_ubak-face.png",
+        "crop": [
+          24,
+          18,
+          144,
+          126
+        ]
+      }
+    },
+    {
+      "id": "resident_nubi",
+      "original_id": "nubi",
+      "name": "누비 아주머니",
+      "animal": "duck",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/nubi-0.png",
+        "size": [
+          154,
+          182
+        ],
+        "file": "assets/resident_nubi-body.png",
+        "crop": [
+          1,
+          6,
+          130,
+          175
+        ]
+      },
+      "face": {
+        "source": "art/faces/nubi-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_nubi-face.png",
+        "crop": [
+          22,
+          24,
+          131,
+          120
+        ]
+      }
+    },
+    {
+      "id": "resident_eunho",
+      "original_id": "eunho",
+      "name": "은호 사장",
+      "animal": "fox",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/eunho-0.png",
+        "size": [
+          192,
+          182
+        ],
+        "file": "assets/resident_eunho-body.png",
+        "crop": [
+          2,
+          2,
+          147,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/eunho-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_eunho-face.png",
+        "crop": [
+          12,
+          12,
+          168,
+          132
+        ]
+      }
+    },
+    {
+      "id": "resident_guseul",
+      "original_id": "guseul",
+      "name": "구슬",
+      "animal": "raccoon",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/guseul-0.png",
+        "size": [
+          182,
+          182
+        ],
+        "file": "assets/resident_guseul-body.png",
+        "crop": [
+          2,
+          6,
+          133,
+          176
+        ]
+      },
+      "face": {
+        "source": "art/faces/guseul-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_guseul-face.png",
+        "crop": [
+          17,
+          30,
+          157,
+          114
+        ]
+      }
+    },
+    {
+      "id": "resident_badook",
+      "original_id": "badook",
+      "name": "바둑이",
+      "animal": "dog",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/badook-0.png",
+        "size": [
+          158,
+          182
+        ],
+        "file": "assets/resident_badook-body.png",
+        "crop": [
+          1,
+          2,
+          116,
+          180
+        ]
+      },
+      "face": {
+        "source": "art/faces/badook-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_badook-face.png",
+        "crop": [
+          17,
+          17,
+          158,
+          127
+        ]
+      }
+    },
+    {
+      "id": "resident_lamplighter",
+      "original_id": "lamplighter",
+      "name": "등불지기 아저씨",
+      "animal": "rabbit",
+      "design_stage": "restored-original-pixel-draft",
+      "body": {
+        "source": "art/body/lamplighter-0.png",
+        "size": [
+          154,
+          182
+        ],
+        "file": "assets/resident_lamplighter-body.png",
+        "crop": [
+          13,
+          8,
+          139,
+          174
+        ]
+      },
+      "face": {
+        "source": "art/faces/lamplighter-neutral.png",
+        "size": [
+          192,
+          192
+        ],
+        "file": "assets/resident_lamplighter-face.png",
+        "crop": [
+          39,
+          48,
+          114,
+          96
+        ]
+      }
+    },
+    {
+      "id": "resident_librarian",
+      "original_id": "librarian",
+      "name": "사서 선생님",
+      "animal": "cat",
+      "design_stage": "new-reference-guided-pixel-draft",
+      "body": {
+        "source": "experiments/renpy-ch1/art/resident-librarian-teacher.png",
+        "size": [
+          1774,
+          887
+        ],
+        "file": "assets/resident-librarian-teacher.png",
+        "crop": [
+          268,
+          74,
+          415,
+          783
+        ]
+      },
+      "face": {
+        "source": "experiments/renpy-ch1/art/resident-librarian-teacher.png",
+        "size": [
+          1774,
+          887
+        ],
+        "file": "assets/resident-librarian-teacher.png",
+        "crop": [
+          335,
+          74,
+          341,
+          313
+        ]
+      }
+    },
+    {
+      "id": "resident_teacher",
+      "original_id": "teacher",
+      "name": "곰 선생님",
+      "animal": "bear",
+      "design_stage": "new-reference-guided-pixel-draft",
+      "body": {
+        "source": "experiments/renpy-ch1/art/resident-librarian-teacher.png",
+        "size": [
+          1774,
+          887
+        ],
+        "file": "assets/resident-librarian-teacher.png",
+        "crop": [
+          1040,
+          92,
+          452,
+          766
+        ]
+      },
+      "face": {
+        "source": "experiments/renpy-ch1/art/resident-librarian-teacher.png",
+        "size": [
+          1774,
+          887
+        ],
+        "file": "assets/resident-librarian-teacher.png",
+        "crop": [
+          1094,
+          92,
+          343,
+          306
+        ]
+      }
+    }
+  ],
+  "current_room13_art": "43 identities in approved B pixel direction; expression coverage is recorded in the source manifests."
+}

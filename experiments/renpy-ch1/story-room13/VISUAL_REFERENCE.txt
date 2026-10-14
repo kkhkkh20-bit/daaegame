@@ -1,0 +1,70 @@
+다람탐정 0.11.0 — 배경과 조사 화면 기준
+
+참고: 사용자가 제공한 역전재판 화면 캡처와 질문창·조사창 이미지.
+참고 URL: https://blog.naver.com/om_ozzi/224074007964
+해당 블로그 본문은 접근되지 않아 읽지 못했다. 적용 판단은 제공된 이미지에 근거했다.
+
+배경
+소품 개수보다 물체의 구분과 공간의 가독성이 우선이다. 큰 색면, 분명한 윤곽선,
+단순한 명암을 사용한다. 눈·목재·벽의 무작위 잔무늬와 과한 반짝임을 줄인다.
+13호실은 2층의 실내 객실이며 정문은 실내 복도와 연결된다.
+창문·침대·책장·문·바닥 흔적은 사건 전후 같은 위치에 둔다.
+사건 후 화재는 바닥의 작은 탄 자국이다. 침대가 불타는 그림으로 바꾸지 않는다.
+여관 접수대, 주방, 복도, 숨은 계단, 식당을 구분한다.
+
+화면
+대화 인물은 중앙에 크게 놓고 질문은 긴 반투명 가로 목록으로 표시한다.
+읽은 질문은 다시 읽을 수 있게 유지한다. 선택 강조는 금색 테두리다.
+주민 메뉴는 대화하기 / 조사하기 / 제시하기 / 이동하기로 나눈다.
+제시 자료는 확인 뒤 공개되며, 반응 대화 중 왼쪽 위에 표시한다.
+조사할 모든 위치를 처음부터 노출하지 않는다. 클릭한 위치와 이미 본 물건을 구분한다.
+
+제작 상태
+새 배경은 생성 이미지 시안이며 원본 레퍼런스의 복제 자산이 아니다.
+원본 인물 포즈와 마차 CG는 유지했다. 모든 인물의 그림체 교체까지 완료한 버전은 아니다.
+컴파일과 패키징만 수행하며, 실제 조작·모바일 화면·저장/불러오기는 사용자 지시로 미검사다.
+
+
+2026-10-13 추가 방향 — 0.12 미게시 작업
+- 사용자는 매끈한 3D풍과 자글자글한 생성 무늬 모두를 거절했다.
+- 최신 레퍼런스는 지브리 애니메이션 캡처다. 넓게 정리한 표면, 개성 있는 손그림 형태,
+  자연스러운 색과 빛, 생활 소품이 중요하다. 단순히 질감 필터를 더하지 않는다.
+- 정면 진열 구도를 피하고 두 벽과 바닥이 보이는 대각선 구도를 쓴다.
+- 소품의 수와 표면 무늬 밀도는 별개다. 물건은 많고 각 물체의 표면은 조용하게 둔다.
+- 13호는 2층 복도 맨 끝. 유리 없는 출입문. 복도에서 보아 오른쪽 경첩,
+  왼쪽 빗장 받이, 구조 후 왼쪽 받이 파손. 문짝은 방 안으로 밀려 열린다.
+- 방 내부 그림은 출입문 앞 모서리에서 안을 바라본다. 출입문은 카메라 뒤에 있다.
+  화면의 창문은 바깥벽 창문이며 복도나 출입문과 혼동되지 않아야 한다.
+- 방 안에서는 복도 보기로 출입문을 조사한다. 보이지 않는 문에 임의 클릭 영역을 두지 않는다.
+- 제단은 북쪽 산길의 숲속. 광장과 별도 장소이며, 짐수레용 완만한 작업길이 필요하다.
+- 오전/오후/저녁은 각 장소의 창밖, 그림자, 등 점등으로 구분한다. 밤은 은은한 등과
+  창문 불빛이 있는 아름다운 생활 공간이며 일괄 검은 필터로 처리하지 않는다.
+- room13-afternoon-clean-study.png는 표면 정리 방향을 보여 주는 한 장의 시안이다.
+  전체 시간대 이미지나 최종 채택 아트로 취급하지 않는다.
+- 현재 게시된 웹은 0.11이다. 0.12 시간대·추가 조사 코드는 미컴파일 작업 중이며
+  배경 선택과 좌표 확정, 패키징 전에는 공개 경로에 덮어쓰지 않는다.
+
+추가 피드백: 표면을 정리한 시안도 미국 카툰처럼 매끈하다는 평가.
+굵고 균일한 윤곽선 대신 약한 구조선과 색 경계, 넓은 수채화 채색과 차분한 자연색이 필요하다.
+사용자 답변에 따라 단일 13호실 시안을 재제작 중이다.
+
+Art direction clarification from user: straight, geometrically perfect shapes are unnecessary. Slightly crooked silhouettes can be stylish; prioritize a human-drawn watercolor/gouache feeling. Keep broad quiet painted surfaces and irregular contours; avoid stipple, repeated holes and uniformly small brush facets. Preserve clue-bearing spatial relationships even with expressive furniture shapes.
+room13-loose-edit-study.png: editing the prior composition retained too much even surface detail.
+room13-broad-wash-study.png: fresh composition exploring larger quiet color masses and asymmetric furniture. Concept only, not a replacement for runtime backgrounds. It still needs structural reconciliation (window/bed/book mechanism) and hotspot placement before adoption. User has not yet reviewed this new study. No gameplay tests run.
+
+User art preference: a personal, lovingly handmade drawing may be somewhat amateur or crooked. Prioritize care and individual character over technical polish. The user has not provided their own drawing, so do not claim to reproduce their personal style.
+room13-personal-handdrawn-study.png: new light pencil/watercolor concept. Quieter color fields and thinner irregular contours; still more polished and textured than the intended deliberately simple personal drawing. Not approved for runtime use; requires clue geometry and hotspot reconciliation before adoption. Runtime assets remain unchanged.
+
+마을 전경 시안 — 사용자 레퍼런스 반영
+크림색 회벽, 어긋난 목조 골조, 붉은 기와, 녹색 창틀을 공통 건축 언어로 사용한다. 눈은 넓은 면으로, 나무는 덩어리로, 밤의 창빛은 부드러운 색 번짐으로 표현한다. 생활 소품의 수와 표면의 잔무늬를 구별한다. 소포·수레바퀴·장작·바구니는 실루엣으로 읽히게 하고 벽·눈·하늘에 반복되는 잡티나 작은 구멍을 넣지 않는다.
+전경 배치: 왼쪽 여관과 마차, 중앙 우물·장터·게시판, 오른쪽 우편실·공방, 뒤쪽 언덕 진료소·온실·학교·창고, 오른쪽 산길 끝의 제단. 제단은 광장과 분리한다. 여관 2층은 막힌 건물 내부 복도이며 바깥 회랑으로 만들지 않는다. 13호실은 2층 복도 끝이라는 기존 구조를 유지한다. 전체 마을의 확정 축척도나 객실 평면도는 아니다.
+사용자는 마을 방향을 긍정하면서도 다시 자글자글해지지 않을 것을 강조했다. village-winter-evening-layout-study.png는 배치 시안, village-winter-night-handdrawn-study.png는 단순화한 밤 시안이다. 밤 시안의 건물 위치는 대체로 같지만 픽셀 단위로 맞춰진 시간대 교체 자산은 아니다. 조사 화면·인물 일정·핫스폿에 아직 연결하지 않았다. 그림에 고정으로 등장한 주민과 가동 중인 온실·제단 조명은 실제 사건 상태와 일치시켜야 하므로 실행용 배경 도입 전 별도 처리한다. 새 오로라는 분위기 실험이며 세계관의 확정 현상이 아니다. 게임 플레이 검사는 실행하지 않았다.
+
+LATEST DIRECTION CORRECTION: The user explicitly rejects internal small marks on wood, stone and other surfaces, not the number of props. Retain full lived-in compositions. No dents, pinholes, grain scratches, repeated mottled paint marks. Broad material fills, selective large shadows and hand-shaped silhouettes provide the drawing character. Do not interpret this as a request to remove props or empty the village.
+village-film-scene-quiet-surfaces-study.png: new original animation-scene concept with foreground table, village lane and winter lighting. This image is a tone study, not a canonical map or runtime asset (static villagers and an incidental distant tower). Prior tone acceptance was qualified by rejection of remaining fine texture; bulk art integration and publication remain paused. No gameplay tests or new build performed.
+
+2026-10-13 채택 및 전체 적용
+사용자가 마지막 영화 장면 톤을 승인하고 전체 배경/인물 적용, 실제 테스트를 요청했다. 뒤이어 이미지 갤러리, 다중 에이전트 개선, 인물 무빙, 주요/엔딩 컷신과 UI 보완까지 승인했다. 위의 ‘시안/보류/테스트 미실시’ 문단들은 이전 시점의 이력이다.
+31장 원본으로 오전/오후/저녁과 사건전후를 구성하고, 43명 원화의 얼굴/몸 크롭을 검수했다. 13호 문은 오른쪽 경첩·왼쪽 빗장 받이·실내 복도 끝으로 유지한다. 작은 바닥 화재만 표현하며 침대는 타지 않는다. 컷신은 아빠의 관찰범위만 보여 주고 범행 자체는 숨긴다. 원본 PNG 픽셀은 수정하지 않고 런타임 Crop/Transform으로 표시한다.
+
+0.12 최종 검수·게시 완료: 실제 1~14일 패배 경로/저장·재접속/모바일/재시작/첫날 비밀 통로 통과. 독립 상태 검사22개, 엔진 분기 fixture15개 통과. GitHub Pages commit90cb64a, 게임과 이미지 갤러리 배포 성공. 모든 엔딩을 각각 처음부터 완주한 검수는 아님.

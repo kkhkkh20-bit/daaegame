@@ -33,6 +33,9 @@ screen winter_hub():
         action Function(winter_empty_result) sensitive ready
     if winter["location"]=="square":
         add Transform("assets/pouch-world.png",size=(62,65),fit="contain") xpos 530 ypos 350
+    if winter["location"]=="room" and not winter_has(winter,"mother_note"):
+        # The envelope edge is the visible part of the under-bed hotspot.
+        add Solid("#c6baa0") xpos 815 ypos 490 xsize 46 ysize 9
     for object_key,object_spec in WINTER_WORLD["places"][winter["location"]]["objects"].items():
         $ rect=object_spec["rect"]
         button:
@@ -68,9 +71,7 @@ screen winter_hub():
                 background Solid("#142526df") text_size 18 text_color "#eee4c9"
                 action Return(("person",actor)) sensitive ready
     frame:
-        xpos 24 ypos 592 xsize 1232 ysize 120 background Solid("#142526f5") padding (16,10)
-        text winter_goal(winter) size 20 color "#edcf94" xpos 0 ypos 0
-        text ("다람의 수첩 · 궁금한 곳을 살피고, 주민의 말을 들어 보자.") size 16 color "#bac9c5" xpos 0 ypos 27
+        xpos 24 ypos 634 xsize 1232 ysize 78 background Solid("#142526f5") padding (16,10)
     hbox:
         xpos 30 ypos 650 spacing 16
         textbutton "주변 살펴보기" style "winter_button" xsize 260 ysize 52 text_size 20 action Return("look") sensitive ready
@@ -81,30 +82,35 @@ screen winter_hub():
 screen winter_topics(kind,target):
     modal True
     default ready=False
+    default question_page=0
     timer .4 action SetScreenVariable("ready",True)
+    $ rows=winter_topic_entries(winter,kind,target,winter_topic_tab)
+    $ current_page=min(question_page,max(0,(len(rows)-1)//4))
     frame:
-        xpos 830 ypos 195 xsize 425 ysize 505 background Solid("#142526ed") padding (16,14)
-        vbox:
-            spacing 10
-            text (WINTER_NAMES[target] if kind=="person" else WINTER_WORLD["places"][winter["location"]]["objects"][target]["name"]) size 28 color "#edcf94"
+        xpos 830 ypos 175 xsize 425 ysize 525 background Solid("#142526ef") padding (16,14)
+        fixed:
+            text (WINTER_NAMES[target] if kind=="person" else WINTER_WORLD["places"][winter["location"]]["objects"][target]["name"]) size 27 color "#edcf94" xsize 390
             hbox:
-                spacing 8
-                textbutton "물어보기" style "winter_button" xsize 188 ysize 43 text_size 20 padding (8,5) selected winter_topic_tab=="talk" action SetVariable("winter_topic_tab","talk")
-                textbutton "함께할 일" style "winter_button" xsize 188 ysize 43 text_size 20 padding (8,5) selected winter_topic_tab=="activity" action SetVariable("winter_topic_tab","activity")
-            viewport:
-                id "winter_topic_scroll"
-                xsize 393 ysize 322 mousewheel True draggable True
-                vbox:
-                    spacing 9
-                    if kind=="person" and winter_topic_tab=="talk":
-                        use winter_small_topic("안부를 묻는다",Return("hello"),winter_greeting_key(winter,target) in winter.get("seen",[]),ready)
-                    for key in winter_display_topics(winter,kind,target,winter_topic_tab):
-                        use winter_topic_row(key,ready)
-                    if kind=="person" and target in WINTER_SCHEDULES and winter_topic_tab=="talk":
-                        use winter_small_topic("평소 어디 계세요?",Return("routine"),"routine:"+target in winter.get("seen",[]),ready)
-                    if not winter_display_topics(winter,kind,target,winter_topic_tab):
-                        text ("지금은 함께할 일이 없다." if winter_topic_tab=="activity" else "더 알아본 뒤 다시 이야기하자.") size 20 xsize 370
-            textbutton ("돌아가기" if kind=="object" else "대화 마치기") style "winter_button" xsize 390 ysize 48 text_size 21 action Return("back") sensitive ready
+                ypos 48 spacing 8
+                textbutton ("물어보기" if kind=="person" else "살펴보기") style "winter_button" xsize 188 ysize 43 text_size 20 padding (8,5) selected winter_topic_tab=="talk" action [SetVariable("winter_topic_tab","talk"),SetScreenVariable("question_page",0)]
+                textbutton ("함께할 일" if kind=="person" else "해 볼 일") style "winter_button" xsize 188 ysize 43 text_size 20 padding (8,5) selected winter_topic_tab=="activity" action [SetVariable("winter_topic_tab","activity"),SetScreenVariable("question_page",0)]
+            vbox:
+                ypos 107 spacing 8
+                for key,caption,completed in rows[current_page*4:current_page*4+4]:
+                    use winter_small_topic(caption,Return(key),completed,ready and (key not in WINTER["actions"] or completed or winter_can_act(winter,key)))
+                if not rows:
+                    text ("지금은 함께할 일이 없다." if winter_topic_tab=="activity" else "다른 곳에서 알아본 뒤 다시 이야기하자.") size 21 xsize 370
+            if len(rows)>4:
+                hbox:
+                    ypos 383 spacing 12
+                    textbutton "앞 질문" style "winter_button" xsize 122 ysize 38 text_size 18 padding (10,6) action SetScreenVariable("question_page",current_page-1) sensitive ready and current_page>0
+                    text ("%d / %d"%(current_page+1,(len(rows)+3)//4)) size 19 yalign .5 xsize 105 text_align .5
+                    textbutton "다른 질문" style "winter_button" xsize 134 ysize 38 text_size 18 padding (10,6) action SetScreenVariable("question_page",current_page+1) sensitive ready and (current_page+1)*4<len(rows)
+            if kind=="person":
+                textbutton "제시하기" xpos 0 ypos 441 style "winter_button" xsize 188 ysize 48 text_size 21 action Return("present") sensitive ready
+                textbutton "돌아가기" xpos 203 ypos 441 style "winter_button" xsize 188 ysize 48 text_size 21 action Return("back") sensitive ready
+            else:
+                textbutton "돌아가기" xpos 0 ypos 441 style "winter_button" xsize 390 ysize 48 text_size 21 action Return("back") sensitive ready
 
 screen winter_small_topic(caption,act,completed,ready):
     button:
@@ -123,7 +129,7 @@ screen winter_map():
     add winter_background("winter")
     add Solid("#102329df")
     text "눈에 막힌 마을" xpos 54 ypos 125 size 36 color "#edcf94"
-    text (winter_clock(winter)+"\n알아둔 주민의 현재 일정") xpos 54 ypos 180 size 21
+    text (winter_clock(winter)+"\n직접 만나고 알아본 곳") xpos 54 ypos 180 size 21
     for key,x,y in (("gate",70,290),("square",420,270),("post",800,270),("inn",100,430),("workshop",450,430),("room",800,430),("passage",800,550)):
         if key!="passage" or winter_has(winter,"map") or winter_has(winter,"passage_known"):
             button:
@@ -150,42 +156,83 @@ screen winter_confirm(message):
                 textbutton "진행한다" style "winter_button" xsize 310 action Return(True) sensitive ready
                 textbutton "다시 생각한다" style "winter_button" xsize 380 action Return(False) sensitive ready
 
-screen winter_evidence(present=False):
+screen winter_evidence(present=False,target=None):
     modal True
     zorder 65
     default page_index=0
     default selection=[]
     default opened=None
+    default named=True
+    default questions=False
+    default ready=False
+    timer .4 action SetScreenVariable("ready",True)
+    key "K_ESCAPE" action (Return(False) if present else Hide("winter_evidence"))
     add Solid("#0b191af8")
-    text ("기록을 대조한다" if present else "다람의 수첩") xpos 54 ypos 35 size 35 color "#edcf94"
-    text "현재 회차에서 직접 얻은 기록만 사용할 수 있습니다." xpos 54 ypos 86 size 19 color "#bac9c5"
+    text ("보여 줄 자료를 고른다" if target else ("두 단서를 함께 보여 준다" if present else "다람의 증거 수첩")) xpos 54 ypos 35 size 35 color "#edcf94"
+    text "발견한 물건, 남겨 둔 기록, 직접 들은 말." xpos 54 ypos 86 size 19 color "#bac9c5"
+    if target:
+        add Transform(target+" avatar_neutral" if target in CAST else "assets/notebook.png",size=(68,76),fit="contain") xpos 797 ypos 28
+        text (WINTER_NAMES[target]+"에게 보여 줄 자료") xpos 878 ypos 36 size 24 color "#ffe0a1"
+        text "확정하기 전에는 상대에게 보이지 않는다." xpos 878 ypos 78 size 16 color "#bac9c5"
+    elif not present:
+        textbutton ("증거 펼치기" if questions else "다람과 생각 정리") xpos 900 ypos 45 xsize 310 ysize 50 text_size 21 style "winter_button" action SetScreenVariable("questions",not questions) sensitive ready
     for index,key in enumerate(winter["evidence"][page_index*8:page_index*8+8]):
         button:
-            xpos 44+(index%2)*360 ypos 135+(index//2)*106 xsize 345 ysize 96
-            style "winter_button"
-            background Solid("#55756a" if key in selection else "#243b3d")
-            action ([SetScreenVariable("opened",key),SetScreenVariable("selection",[e for e in selection if e!=key] if key in selection else (selection+[key] if len(selection)<2 else selection))] if present else SetScreenVariable("opened",key))
-            vbox:
-                text (("선택 · " if key in selection else "")+WINTER["evidence"][key]["name"]) size 22 xsize 305
-                text (str(winter["records"][key]["day"])+"일째 · "+WINTER["places"][winter["records"][key]["place"]]["name"]) size 16 color "#bac9c5"
+            xpos 44+(index%2)*360 ypos 135+(index//2)*106 xsize 345 ysize 96 padding (8,7)
+            background Solid("#55756a" if key in selection else "#243b3d") hover_background Solid("#3b5657")
+            sensitive ready
+            action ([SetScreenVariable("questions",False),SetScreenVariable("opened",key),SetScreenVariable("selection",[e for e in selection if e!=key] if key in selection else (selection+[key] if len(selection)<2 else selection))] if present else [SetScreenVariable("questions",False),SetScreenVariable("opened",key)])
+            fixed:
+                frame:
+                    xpos 0 ypos 0 xsize 85 ysize 80 padding (3,3) background Solid("#142629")
+                    add Transform(winter_evidence_picture(key),size=(79,74),fit="contain") xalign .5 yalign .5
+                text WINTER["evidence"][key]["name"] xpos 96 ypos 4 size 21 xsize 225
+                text ("선택한 자료" if key in selection else winter_evidence_kind(key)) xpos 96 ypos 57 size 16 color "#bed6cb"
     frame:
-        xpos 800 ypos 140 xsize 420 ysize 410 background Solid("#243b3d")
+        xpos 800 ypos 135 xsize 420 ysize 440 padding (18,15) background Solid("#243b3d")
         vbox:
-            spacing 22
-            if opened:
-                text WINTER["evidence"][opened]["name"] size 26 color "#edcf94" xsize 370
-                text WINTER["evidence"][opened]["text"] size 24 xsize 370
+            spacing 12
+            if questions:
+                text "아직 풀리지 않은 이야기" size 25 color "#edcf94"
+                viewport:
+                    xsize 380 ysize 355 mousewheel True draggable True
+                    vbox:
+                        spacing 16
+                        for heading,thought in winter_open_questions(winter):
+                            text heading size 23 color "#edcf94" xsize 365
+                            text thought size 21 xsize 365
+            elif opened:
+                add Transform(winter_evidence_picture(opened),size=(370,120),fit="contain") xalign .5
+                text WINTER["evidence"][opened]["name"] size 25 color "#edcf94" xsize 375
+                text (str(winter["records"][opened]["day"])+"일째 · "+WINTER["places"][winter["records"][opened]["place"]]["name"]) size 17 color "#bac9c5"
+                viewport:
+                    xsize 380 ysize 205 mousewheel True draggable True
+                    vbox:
+                        spacing 10
+                        if opened in WINTER_TESTIMONY_SPEAKERS:
+                            text ("말한 사람 · "+WINTER_NAMES[WINTER_TESTIMONY_SPEAKERS[opened]]) size 18 color "#bac9c5"
+                        text WINTER["evidence"][opened]["text"] size 22 xsize 365
+                        if opened in WINTER_SENSITIVE:
+                            text ("공개에 주의 · "+WINTER_SENSITIVE[opened]) size 18 color "#f0ba85" xsize 365
             else:
-                text "기록을 눌러 내용을 확인하세요." size 24 xsize 360
+                text "그림을 눌러 기록을 펼쳐 보자." size 25 xsize 360
                 if present:
-                    text "서로 뒷받침하는 자료 두 개를 고른 뒤 제시하세요. 선택 순서는 상관없습니다." size 22 xsize 360
+                    text ("하나 또는 두 개를 골라 공개할 내용을 확인하자. 원본은 수첩에 남는다." if target else "함께 보면 설명이 달라지는 단서 두 개를 골라 보자. 순서는 상관없다.") size 22 xsize 360
+    if target and any(key in WINTER_TESTIMONY_SPEAKERS for key in selection):
+        hbox:
+            xpos 45 ypos 564 spacing 12
+            textbutton "발언자 이름도 밝힌다" style "winter_button" text_size 18 padding (10,6) selected named action SetScreenVariable("named",True) sensitive ready
+            textbutton "이름은 가리고 말만 전한다" style "winter_button" text_size 18 padding (10,6) selected not named action SetScreenVariable("named",False) sensitive ready
     hbox:
         xpos 45 ypos 606 spacing 20
         textbutton "이전" action SetScreenVariable("page_index",page_index-1) sensitive page_index>0 style "winter_button"
-        text "[page_index+1]" yalign .5
+        text ("%d / %d"%(page_index+1,max(1,(len(winter["evidence"])+7)//8))) yalign .5 size 22
         textbutton "다음" action SetScreenVariable("page_index",page_index+1) sensitive (page_index+1)*8<len(winter["evidence"]) style "winter_button"
-        if present:
-            textbutton "두 자료를 제시" action [SetVariable("winter_selected",selection),Return(True)] sensitive len(selection)==2 style "winter_button"
+        if target:
+            textbutton "공개할 내용 확인" action Return(dict(target=target,selection=list(selection),named=named)) sensitive ready and 0<len(selection)<=2 style "winter_button" text_size 21
+            textbutton "취소" action Return(False) style "winter_button" sensitive ready
+        elif present:
+            textbutton "함께 보여 주기" action [SetVariable("winter_selected",selection),Return(True)] sensitive ready and len(selection)==2 style "winter_button"
             textbutton "취소" action Return(False) style "winter_button"
         else:
             textbutton "달력 펼치기" action [Hide("winter_evidence"),Show("winter_calendar")] style "winter_button"
@@ -274,6 +321,6 @@ screen winter_calendar():
                         text detail size 20 xsize 340
                     if not winter_calendar_notes(winter,selected_day):
                         text "아직 적어 둔 약속이 없다." size 22 xsize 340
-    text "주민에게 일정을 물으면 달력에도 남습니다." xpos 45 ypos 468 size 21 color "#bac9c5"
+    text "직접 만난 곳과 들은 말만 적는다. 다음에도 있을지는 찾아봐야 한다." xpos 45 ypos 468 size 21 color "#bac9c5"
     textbutton "수첩 기록" xpos 45 ypos 625 action [Hide("winter_calendar"),Show("winter_evidence",False)] style "winter_button"
     textbutton "덮기" xpos 1050 ypos 625 action Hide("winter_calendar") style "winter_button" xsize 180

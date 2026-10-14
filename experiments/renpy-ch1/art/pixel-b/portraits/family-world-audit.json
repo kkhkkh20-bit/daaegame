@@ -1,0 +1,46 @@
+{
+  "assets": {
+    "room13-pixel-world-daram-gray-gutter.webp": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "bea243a6a229b108fe1b120a01e6072c8fbbc90be7b259639b303e458389f6b1",
+      "components": 6,
+      "alpha_edge_pixels": 0
+    },
+    "room13-pixel-world-dad-gray.webp": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "4707fea719384d783c6ab120ecc07b9314b378a9406ac8d6fe6152b9d379f1a2",
+      "components": 6,
+      "alpha_edge_pixels": 0
+    },
+    "room13-pixel-world-mom-gray-gutter.webp": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "3742f4f27f3f7c4690e72501f24c6936325530fe64fd39b7edb030cae0457840",
+      "components": 6,
+      "alpha_edge_pixels": 0
+    },
+    "room13-pixel-world-family-extra-gray.webp": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "bec3faef46052a17271ef34c389513cd3f64c3a1f87d2f2cc6e2d0b981838637",
+      "components": 6,
+      "alpha_edge_pixels": 0
+    }
+  },
+  "issues": [],
+  "pose_count": 24,
+  "note": "Original PNG bytes preserved; geometry mostly retained, crop and anchors normalized to revised alpha bounds. Dad faces redrawn to remove teeth. Mom row spacing repaired.",
+  "visual_review": "qa-room13-0150/family-portraits/family-world-review.png",
+  "teeth_review": "All24poses visually checked, no protruding white front teeth. Dad readingpaper face redrawn after failed small-mouth edits.",
+  "world_contact_review": "Existing action meanings and seated props preserved; contact anchor ratios carried to newly measured crop bounds. Runtime staging still needs actual-game verification."
+}

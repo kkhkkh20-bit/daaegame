@@ -1,0 +1,325 @@
+{
+  "source_art_immutable": true,
+  "generation": "image_gen edits of original atlas, new adjacent room area; temporal variants edited from canonical afternoon",
+  "runtime_geometry": "1800x720; full 1983x793 source crop. School morning source1984 wide, extra last column excluded at runtime. No source PNG editing/resizing.",
+  "scenes": {
+    "school": {
+      "canonical": "afternoon",
+      "native_landmark_rectangles": {
+        "chalkboard": [
+          177,
+          217,
+          278,
+          178
+        ],
+        "desks": [
+          162,
+          428,
+          653,
+          202
+        ],
+        "stove": [
+          948,
+          450,
+          188,
+          196
+        ],
+        "blankets": [
+          0,
+          530,
+          274,
+          175
+        ],
+        "lessons": [
+          292,
+          443,
+          106,
+          42
+        ],
+        "firewood": [
+          1063,
+          505,
+          92,
+          145
+        ],
+        "coat_hooks": [
+          1309,
+          289,
+          182,
+          143
+        ],
+        "benches": [
+          1330,
+          478,
+          440,
+          136
+        ],
+        "side_reading_table": [
+          1774,
+          428,
+          203,
+          168
+        ]
+      },
+      "world_landmark_rectangles": {
+        "chalkboard": [
+          161,
+          197,
+          252,
+          162
+        ],
+        "desks": [
+          147,
+          389,
+          593,
+          183
+        ],
+        "stove": [
+          861,
+          409,
+          171,
+          178
+        ],
+        "blankets": [
+          0,
+          481,
+          249,
+          159
+        ],
+        "lessons": [
+          265,
+          402,
+          96,
+          38
+        ],
+        "firewood": [
+          965,
+          459,
+          84,
+          132
+        ],
+        "coat_hooks": [
+          1188,
+          262,
+          165,
+          130
+        ],
+        "benches": [
+          1208,
+          434,
+          399,
+          123
+        ],
+        "side_reading_table": [
+          1611,
+          389,
+          184,
+          153
+        ]
+      },
+      "identity_preserved": true,
+      "new_area": "right cloakroom/reading/shelter area",
+      "files": [
+        {
+          "time": "afternoon",
+          "filename": "room13-pixel-panorama-school-afternoon.webp",
+          "source": "/workspace/generated_images/exec-20210e06-9715-4d23-a8af-6c66b6c7debd.png",
+          "native_size": [
+            1983,
+            793
+          ],
+          "sha256": "aee78eb5fe1a02ab08bbf22e2c1e1880b093d822a14d81e8edf9cc899554b9bb",
+          "identical_to_generated_original": true
+        },
+        {
+          "time": "morning",
+          "filename": "room13-pixel-panorama-school-morning.webp",
+          "source": "/workspace/generated_images/exec-bf8d6b5b-5a28-4db3-9bfc-c35375a98fe2.png",
+          "native_size": [
+            1984,
+            793
+          ],
+          "sha256": "1a516632e4a3e7ae3920fb99323155d113d1f32b54ce45c24450526bbedc1511",
+          "identical_to_generated_original": true
+        },
+        {
+          "time": "evening",
+          "filename": "room13-pixel-panorama-school-evening.webp",
+          "source": "/workspace/generated_images/exec-570ed3f1-d6f7-477d-a80a-e60dcd843732.png",
+          "native_size": [
+            1983,
+            793
+          ],
+          "sha256": "3937c2f9b69eea48fd1e6fba6e17cf61d7bd3373c7d05b976e89b76115bfcd4b",
+          "identical_to_generated_original": true
+        }
+      ],
+      "visual_review": "All6images inspected: furniture/prop positions stable across day, no baked characters, clear new space and readable evening. Landmark rectangles are artist approximations; runtime staging/hotspots owned by cast team."
+    },
+    "workshop": {
+      "canonical": "afternoon",
+      "native_landmark_rectangles": {
+        "plans": [
+          766,
+          122,
+          236,
+          226
+        ],
+        "wood": [
+          0,
+          377,
+          183,
+          231
+        ],
+        "axle": [
+          590,
+          399,
+          382,
+          104
+        ],
+        "bolts": [
+          515,
+          488,
+          180,
+          48
+        ],
+        "rag": [
+          865,
+          522,
+          171,
+          126
+        ],
+        "wheel": [
+          926,
+          276,
+          232,
+          253
+        ],
+        "tools": [
+          0,
+          64,
+          261,
+          321
+        ],
+        "storage_rack": [
+          1239,
+          140,
+          513,
+          278
+        ],
+        "side_workbench": [
+          1555,
+          382,
+          347,
+          215
+        ],
+        "main_workbench": [
+          361,
+          485,
+          803,
+          257
+        ]
+      },
+      "world_landmark_rectangles": {
+        "plans": [
+          695,
+          111,
+          214,
+          205
+        ],
+        "wood": [
+          0,
+          342,
+          166,
+          210
+        ],
+        "axle": [
+          536,
+          362,
+          347,
+          94
+        ],
+        "bolts": [
+          468,
+          443,
+          163,
+          44
+        ],
+        "rag": [
+          785,
+          474,
+          155,
+          114
+        ],
+        "wheel": [
+          841,
+          251,
+          211,
+          230
+        ],
+        "tools": [
+          0,
+          58,
+          237,
+          291
+        ],
+        "storage_rack": [
+          1125,
+          127,
+          466,
+          252
+        ],
+        "side_workbench": [
+          1412,
+          347,
+          315,
+          195
+        ],
+        "main_workbench": [
+          328,
+          440,
+          729,
+          233
+        ]
+      },
+      "identity_preserved": true,
+      "new_area": "right spare parts and timber storage with auxiliary repair workbench",
+      "files": [
+        {
+          "time": "afternoon",
+          "filename": "room13-pixel-panorama-workshop-afternoon.webp",
+          "source": "/workspace/generated_images/exec-f70281ed-d70d-4ccd-a96d-bd91527115ea.png",
+          "native_size": [
+            1983,
+            793
+          ],
+          "sha256": "9fedfa938970cc663da3e49935fcf98a6a70d52cd946fe93244fc8f5aa8452f5",
+          "identical_to_generated_original": true
+        },
+        {
+          "time": "morning",
+          "filename": "room13-pixel-panorama-workshop-morning.webp",
+          "source": "/workspace/generated_images/exec-5bd661ae-48f1-46cc-b39a-fb45507503da.png",
+          "native_size": [
+            1983,
+            793
+          ],
+          "sha256": "fc69210ae64f263cc50a25479de57ff6a6b9276cb861546fa31be0b4ee4683de",
+          "identical_to_generated_original": true
+        },
+        {
+          "time": "evening",
+          "filename": "room13-pixel-panorama-workshop-evening.webp",
+          "source": "/workspace/generated_images/exec-21270f7b-f6c2-4095-907f-4cc99e10a835.png",
+          "native_size": [
+            1983,
+            793
+          ],
+          "sha256": "8dddf9c27ef3bdd04f15120116d981bb3caad4b1243993477b53ab67924f0296",
+          "identical_to_generated_original": true
+        }
+      ],
+      "visual_review": "All6images inspected: furniture/prop positions stable across day, no baked characters, clear new space and readable evening. Landmark rectangles are artist approximations; runtime staging/hotspots owned by cast team."
+    }
+  }
+}

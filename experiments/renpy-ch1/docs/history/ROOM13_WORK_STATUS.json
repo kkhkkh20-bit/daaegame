@@ -1,0 +1,382 @@
+{
+  "campaign": "room13_v1",
+  "date": "2026-10-14",
+  "timezone": "Asia/Seoul",
+  "version": "0.17.22-dev",
+  "status": "verified_ready_for_publication",
+  "entry_label": "room13_start",
+  "scope": [
+    "day1 carriage and evidence-based gate entry",
+    "free exploration and separate major activities",
+    "NPC disclosure confirmation and topic unlocks",
+    "day4 murder or preventable survival",
+    "day7 argument assembly and verdict branches",
+    "day8-13 mother contact, reunion, rescue and disaster preparation",
+    "day14 altar confrontation with four evidence arguments",
+    "seven ending scenes and replay with separate knowledge history",
+    "35 original residents with baseline routines and individual public conversations",
+    "observed encounters and disclosures in resident notebook",
+    "six dedicated crisis location backgrounds and room13 before/after art",
+    "original expression routing, read-only fast forward and same-scene transition reuse",
+    "explicit negotiations for erased records and supplies",
+    "father viewpoint discovery; floor fire and weapon/pin comparison",
+    "kitchen lever plus room book latch; physical access evidence",
+    "day5 mother intervention; residual energy pooling limits",
+    "31 authored background PNGs with morning/afternoon/evening lighting and incident variants",
+    "12 cinematic panels including 7 ending illustrations",
+    "separate browser art gallery with spoiler controls and original downloads",
+    "B pixel direction across all active backgrounds, cast, cinematics and dark opaque UI",
+    "Pixel Galmuri text, waist-up conversations and separate object inspection mode",
+    "43 redesigned cast identities with 238 authored body poses and furniture-aware staging",
+    "Two-row evidence/testimony records and actual dialogue history",
+    "Explicit close-up record acquisition and reusable investigation item puzzle",
+    "Four horizontally explorable panorama locations with saved camera position",
+    "Four-action toolbar, contextual presentation and first-visit arrival cards",
+    "Explicit matching-field document comparison and partial registration feedback",
+    "Recent/favorite evidence and 12 individual material icons",
+    "Magnifier observation notes with Daram/Buri followup questions",
+    "Portrait-free father-viewpoint conversation and centered speaker label",
+    "Upper-right options gear, three small translucent bottom controls, direct drag/swipe exploration",
+    "Static world poses with optional resident home/work routines; context-specific bench/noticeboard/counter poses",
+    "Thirteen chestnut-brown family originals consistently used in dialogue, profiles, field and cinematics"
+  ],
+  "branch_continuity": [
+    "victim survives if incident prevented",
+    "detained grandmother remains detained",
+    "daughter custody changes second-week actions and dialogue",
+    "three prepared rescue routes and final emergency intervention",
+    "contact leaks and convoy disclosures require renewed preparation",
+    "knowledge history cannot substitute for current-run evidence"
+  ],
+  "future": [
+    "extended individual side stories beyond baseline resident conversations",
+    "new voice recordings",
+    "wider device/performance and route balancing feedback",
+    "Korean phrase-aware line breaks to avoid isolated trailing syllables"
+  ],
+  "old_saves": "Current-run save/load verified. Visual migration preserves run data and speaker in a targeted fixture; legacy displayable names retained. Earlier incompatible story-revision saves still require restart.",
+  "release": "First inn mystery: compare plans, present observations, verify physical door, confront claim",
+  "checks": {
+    "rules": "40 rule/thought/rhythm/navigation/camera tests plus inspection, record, dialogue and staging checks; see release report",
+    "dialogue": "172 front dialogue renders and43 independent profile renders manually reviewed",
+    "natural_play": "Proof and wait entry, targeted evidence, save/load, map/lodging, first-night bed sleep; Chromium desktop/mobile landscape emulation",
+    "fixtures": "7 map states96 pins;3808 schedule conditions37 residents; guestroom/case-day sleep boundaries and old-visual choice restore",
+    "cinematics": "12 CG panels and carriage actual runtime smoke; final endB4 panels rechecked after hand-color correction",
+    "gallery": "15 new original inspection/panorama cards; 43 identities and independent profiles; desktop/mobile gallery smoke passed",
+    "deployment": "0.15.9 Pages run 38389490545 succeeded; exact archive locally tested",
+    "entrance": "PASS: actual frame alpha, steady repeated speaker/profile, unchanged background/HUD, motion-off immediate",
+    "dialogue_rhythm": "PASS: native Text timing, original/read-key preservation, punctuation/numeric fixtures, natural first-click full line and next-click advance, cps0/skip",
+    "interaction_0152": "See qa-room13-0152 for actual candidate browser clicks, conversation menus, observation voice, population and motion reports.",
+    "investigation_0154": "See qa-room13-0154/RELEASE_STATUS.json and final candidate browser reports",
+    "release_0156": "qa-room13-0156/RELEASE_STATUS.json records exact archive and scoped natural/fixture evidence",
+    "limitations": [
+      "Not a complete 14-day natural playthrough or all-ending natural completion.",
+      "Mobile checks use Chromium viewport/touch emulation, not a physical phone.",
+      "Staging fixtures explicitly set location/time/camera; distinguish them from natural route tests.",
+      "Earlier PageUp keyboard rollback probe was inconclusive; no rollback acceptance claim.",
+      "No human auditory quality judgement is claimed for the existing 0.18-second page sound.",
+      "Workshop close-up retains the existing wheel drawing; a later art pass could make the exterior-plan association more explicit."
+    ],
+    "release_0157": "qa-room13-0157/RELEASE_STATUS.json",
+    "release_0158": "qa-room13-0158/RELEASE_STATUS.json",
+    "release_0159": "qa-room13-0159/RELEASE_STATUS.json",
+    "release_0160": "qa-room13-0160/RELEASE_STATUS.json",
+    "intro_clues": "qa-room13-intro-clues/report.json"
+  },
+  "content_counts": {
+    "topics": 156,
+    "major_activities": 32,
+    "clickable_objects": 100,
+    "evidence_definitions": 40,
+    "trial_claims": 8,
+    "endings": 7,
+    "topic_speakers": 37,
+    "residents": 35,
+    "background_pngs": 31,
+    "background_views": 22,
+    "character_identities": 43,
+    "cinematic_panels": 12,
+    "background_views_tested": 58
+  },
+  "asset_limits": [
+    "All43 have four front dialogue drawings and independent neutral profile originals. Nonneutral corner profiles may crop matching new front expressions.",
+    "Living poses are separate; not all residents have continuous frame animation.",
+    "Physical iPhone/Safari and every full natural campaign route have not been tested."
+  ],
+  "preview": "/workspace/daaegame/preview/room13-dev/index.html",
+  "build_bytes": 249431216,
+  "not_published": true,
+  "previous_downloads": {
+    "data": "https://drive.google.com/file/d/1L_GJS1xhi4UyO8we6ob1YFNcW-o8BUpH/view?usp=drivesdk",
+    "engine": "https://drive.google.com/file/d/1_T92HiWGVYNcpG_-azJsVLkr_O2sFpnd/view?usp=drivesdk",
+    "usage": "Extract both ZIPs to the same folder; see 실행안내.txt. PC local web launch needs Python 3. No public deployment."
+  },
+  "downloads": {
+    "pixel_originals": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-pixel-art/downloads/daram-pixel-art.zip",
+    "bytes": 78892003,
+    "scope": "46 original PNGs, metadata, Galmuri font and license; includes ending spoilers"
+  },
+  "build_game_sha256": "9cbc51ea4850ace2d71449295bd771e9e58c241cb12d1d51c6bc4c31f7ca66b1",
+  "publication": {
+    "game": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "archive_sha256": "9cbc51ea4850ace2d71449295bd771e9e58c241cb12d1d51c6bc4c31f7ca66b1",
+    "workflow_conclusion": "pending"
+  },
+  "draft_revision": {
+    "version": "0.14.0-dev",
+    "status": "completed_and_published",
+    "approval": "User requests furniture-aware living activities, distinctive consistent pixel cast, and full-body emotional acting. Earlier authorization covers agent collaboration and tested web publication.",
+    "scope": [
+      "43 cast identities reviewed at common pixel quality",
+      "4 actual body emotions per resident, separate living poses",
+      "rounded squirrel family identity distinguished from Doto",
+      "location/furniture-aware placement and exact-line dialogue acting",
+      "matching family cutscene art and separate comparison gallery"
+    ],
+    "published_version": "0.14.0-dev"
+  },
+  "first_appearance_fix": {
+    "cause": "Progressive character atlas loading displayed enlarged low-resolution placeholders.",
+    "change": "Bundle all 11 cast sheets and separate Daram motion sheet before gameplay. Keep legacy cast streamed for size.",
+    "checks": [
+      "SDK lint passed",
+      "All 43 characters resolve to originals included in game.zip",
+      "New build rejects unbundled cast; prior broken package rejected",
+      "Independent cold browser: service workers blocked and external cast image requests aborted; Guard, Daram, Karo bodies and avatars visually verified",
+      "No runtime cast or motion image requests; no browser/HTTP errors in fixed cold test"
+    ],
+    "limitation": "Reported completely invisible actors not reproduced exactly; do not claim this distinct symptom independently resolved.",
+    "game_zip_mib": 93.51615715026855,
+    "baseline_failure": "With separate character downloads aborted, old build raises OSError loading cast-family.png on the first Daram line; fixed build has no character fetches and reaches Karo.",
+    "publish_commit": "d1ab4ccecf0f30e35d048c43235d97d446306d97",
+    "deployment": "GitHub Pages run 38321471603 build and deploy success"
+  },
+  "ui_revision": {
+    "version": "0.12.2-dev",
+    "changes": [
+      "Serif title and 13 room tag over evening village; title music",
+      "Opaque high contrast action dock and brass SVG icons",
+      "Questions beside resident; smaller stage bodies; no duplicate stage portrait",
+      "Read-fast moved to settings; main menu aware settings",
+      "Present cancellation returns to origin without state changes",
+      "Resident badges and notifications avoid clipping and faces",
+      "Gate wait updates evening scene before dialogue"
+    ],
+    "not_changed": "Character artwork is still disputed; adult concept is not adopted; pixel originals preserved.",
+    "verification": [
+      "qa-room13-0122/ui-final/report.json",
+      "qa-room13-0122/title-audio/report.json",
+      "qa-room13-0122/title-audio-strict/report.json",
+      "qa-room13-0122/ui-gallery.json",
+      "qa-room13-0122/ui-daylight/report.json"
+    ],
+    "limits": [
+      "Only Chromium desktop and mobile landscape emulation tested; not mobile Safari",
+      "Character/background stylistic consistency remains unresolved",
+      "External reference image sources partly inaccessible; explicit notes in REFERENCES.txt"
+    ],
+    "design_page": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-ui/"
+  },
+  "game_transport": {
+    "multipart": true,
+    "archive_bytes": 188739937,
+    "archive_sha256": "fdf42373f7bd9ba3d3b3b813086b488c665dafbb37b078784b57ad04ddaca4bf",
+    "parts": [
+      {
+        "file": "game.part01",
+        "bytes": 62914560,
+        "sha256": "b70ff7eec3f1125889d2a11f48b13cb01f600650caf16c27b68125c91eaf82a7"
+      },
+      {
+        "file": "game.part02",
+        "bytes": 62914560,
+        "sha256": "1e8fc43ba787302784c179d0f96caa2b331788700ef75cc7273e2540bab84cca"
+      },
+      {
+        "file": "game.part03",
+        "bytes": 62910817,
+        "sha256": "fc496b19f9e121f111e3431ed16694cb15dad7b4e8b833cbc0f9544ab4e29c7a"
+      }
+    ]
+  },
+  "previous_publication": {
+    "repository": "https://github.com/kkhkkh20-bit/daaegame",
+    "commit": "f1776756a63e5b6ca4181eaf5ef5d6f3e03282d1",
+    "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "art_gallery_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-art/",
+    "pages_status": "built_and_deployed",
+    "scope": "Compiled preview and separate UI design review page; source working files retained.",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38324697114",
+    "workflow_conclusion": "success"
+  },
+  "previous_downloads_012": {
+    "data": "https://drive.google.com/file/d/15n6afc1L2RDlisSS04fe5Xc9dSh8CMWx/view?usp=drivesdk",
+    "engine": "https://drive.google.com/file/d/1kdJ8WAQHa51ZWxXGLh-g5vJb5M-r-Cd4/view?usp=drivesdk",
+    "backgrounds": "https://drive.google.com/file/d/1-qWQ2ayDp1dMlEVVwtBOKLiXO2hv0Z2j/view?usp=drivesdk",
+    "verification": "Uploaded file metadata and byte sizes read back; sharing permissions unchanged.",
+    "usage": "Extract data and engine ZIPs to the same folder; follow 실행안내.txt with Python 3 on PC."
+  },
+  "pixel_revision": {
+    "direction": "B pixel, with common runtime pixel density",
+    "characters": 43,
+    "body_drawings": 238,
+    "main_emotions": "At least four unique full-body emotions plus two living activities each",
+    "support_emotions": "Four unique full-body emotions plus one living activity each",
+    "cinematic_panels": 12,
+    "new_family_tail": "No old orange tail composite; tail is drawn into each new body pose",
+    "qa_directory": "qa-room13-0140"
+  },
+  "previous_publication_0130": {
+    "repository": "https://github.com/kkhkkh20-bit/daaegame",
+    "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "art_gallery_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-pixel-art/",
+    "pages_status": "built_and_deployed",
+    "scope": "Compiled game and pixel art gallery; working source retained in shared workspace.",
+    "commit": "46f47929f2ce582b2b208bfb2249a5a254ab52b8",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38333825315",
+    "workflow_conclusion": "success",
+    "verification": "Identical final candidate tested locally; GitHub transport metadata matched; Pages build and deploy succeeded. Direct Pages-domain access blocked by environment proxy."
+  },
+  "previous_checks_0130": {
+    "rules": "22 PASS authored state regression",
+    "lint": "RenPy 8.5.3 no errors in final build",
+    "natural_play": "Fresh entry proof, entry wait, desktop/mobile conversation and evidence cancellation",
+    "save_load": "Actual save, wait, and load restores complete current run state",
+    "render_fixtures": "58 background views, 43 characters, 12 CGs rendered; injected states, not complete natural routes",
+    "ending_fixtures": "11 PASS: acquittal/prevention to day8, seven endings, real restart with preserved meta-history",
+    "inspection": "Crowded clinic and store: actual resident action, notes/ledger clicks, mobile finish and map reset; location fixtures",
+    "final_portrait": "Final cold boot and four Bami expressions with actual dialogue, question and interaction screens; no seam or face overlap",
+    "gallery": "Desktop and mobile touch, 46 original image requests, ZIP CRC and download length, no overflow",
+    "network": "No JS/HTTP errors or external active pixel PNG requests in tested builds",
+    "limits": "Chromium desktop and mobile landscape emulation; not every 14-day route or real mobile Safari device"
+  },
+  "acting_revision": {
+    "characters": 43,
+    "unique_body_drawings": 238,
+    "main_people": 12,
+    "support_people": 31,
+    "main_drawings": 83,
+    "support_drawings": 155,
+    "line_cues": 1270,
+    "unique_person_text_pose": 639,
+    "scene_ids": 393,
+    "art_directory": "art/pixel-b/acting",
+    "qa_directory": "qa-room13-0140",
+    "world_pixel_grid": 2,
+    "close_pixel_grid": 3,
+    "notes": [
+      "Original PNG bytes preserved; runtime low-resolution raster and nearest scaling harmonize density.",
+      "Authored whole-body pose changes; not continuous skeletal or frame-by-frame animation for all residents.",
+      "New family sprites do not use old orange body/tail layers.",
+      "Independent runtime and visual review required beyond source hash/crop audits.",
+      "Screen occupancy follows available furniture/floor space; other residents remain accessible through people menu."
+    ],
+    "limitations": [
+      "Only Chromium desktop and mobile landscape emulation checked, not physical iPhone/Safari.",
+      "Injected schedule/ending/render fixtures are distinct from natural campaign play.",
+      "GitHub Pages domain blocked from this environment: identical local build tested and Actions deployment verified."
+    ]
+  },
+  "previous_pixel_revision_0130": {
+    "approved": "User selected B and explicitly requested all scenes converted",
+    "original_pngs": 46,
+    "background_files": 31,
+    "cast_identities": 43,
+    "main_expressions": "12 people x 4 expressions",
+    "support_expressions": "31 people x 1 neutral expression with existing aliases",
+    "cinematic_panels": 12,
+    "independent_tail": "Daram only",
+    "art_manifest_directory": "art/pixel-b",
+    "qa_directory": "qa-room13-0130",
+    "notes": [
+      "No raster postprocessing; generated originals copied unchanged; runtime crops and nearest display",
+      "All active art bundled before game startup; transport bytes split for GitHub 100MiB file limit",
+      "Inspection hides resident drawing and hitboxes without changing run time/state",
+      "Rooms preserve end-of-corridor 13 door, right hinges, left keeper damage, small floor burn and intact bed"
+    ]
+  },
+  "current_work": {
+    "version": "0.17.22-dev",
+    "status": "verified_ready_for_publication",
+    "qa_directory": "qa-room13-daram-home",
+    "published": false
+  },
+  "previous_publication_0140": {
+    "repository": "https://github.com/kkhkkh20-bit/daaegame",
+    "commit": "2af640da1b4b8e729a2d94f1d3edc63f9a863d7f",
+    "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "art_gallery_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-acting/",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38341010548",
+    "workflow_conclusion": "success",
+    "scope": "Compiled game and galleries published; development source remains in shared workspace and text backup."
+  },
+  "previous_publication_0150": {
+    "repository": "https://github.com/kkhkkh20-bit/daaegame",
+    "commit": "bce4720df468f6e12dda5d7bb882bb47e640c808",
+    "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "art_gallery_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-acting/",
+    "source_handoff_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-source/ROOM13_SOURCE_HANDOFF.zip",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38347658869",
+    "workflow_conclusion": "success",
+    "scope": "Compiled game, gallery and text source handoff; full original assets remain in workspace. Handoff ZIP records predeployment verified state."
+  },
+  "previous_publication_0151": {
+    "repository": "https://github.com/kkhkkh20-bit/daaegame",
+    "commit": "63bf0afed4d6a08a56f2ac8cd1fe88dc1c614053",
+    "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "art_gallery_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-acting/",
+    "source_handoff_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-source/ROOM13_SOURCE_HANDOFF.zip",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38351024735",
+    "workflow_conclusion": "success",
+    "scope": "Compiled game, gallery and text source handoff; full original assets remain in workspace. Handoff ZIP records predeployment verified state."
+  },
+  "previous_publication_0152": {
+    "repository": "https://github.com/kkhkkh20-bit/daaegame",
+    "commit": "d8aef5a6971089354916391616acb396287aff02",
+    "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "art_gallery_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-acting/",
+    "source_handoff_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-source/ROOM13_SOURCE_HANDOFF.zip",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38355409342",
+    "workflow_conclusion": "success",
+    "scope": "Compiled game, gallery and text source handoff; full original assets remain in workspace. Handoff ZIP records predeployment verified state."
+  },
+  "merged_publication_0153": {
+    "commit": "b55ba61",
+    "archive_sha256": "42aaed46a33d2afa446ef8be41275cec5dfd87f30a1cb17246076111700de3af",
+    "scope": "Guarded upstream dialogue, first-meetings, companion speech and loader cache fixes retained"
+  },
+  "previous_publication_0154": {
+    "repository": "https://github.com/kkhkkh20-bit/daaegame",
+    "commit": "345623c869bbbf3cd332f3098a74910cb186974e",
+    "preview_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "art_gallery_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-acting/",
+    "source_handoff_url": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-source/ROOM13_SOURCE_HANDOFF.zip",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38368592225",
+    "workflow_conclusion": "success",
+    "scope": "Compiled game, gallery and text source handoff; full original assets remain in workspace. Handoff ZIP records predeployment verified state."
+  },
+  "merged_publication_0155": {
+    "commit": "3e90a4d",
+    "archive_sha256": "f2e32d9f756ea5a3d1e481e5b316ba18357bf1c4bc1fd07fbae264b2ce64506b",
+    "scope": "36 authored resident approaches/openings, family snack/letter introduction, together-at-gate dialogue"
+  },
+  "previous_publication_0156": {
+    "game": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "gallery": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-acting/",
+    "archive_sha256": "4fc4ea4c53d013318ea5dffc5a9b216d0f1053d128b60c7a7af34b2c4f21b3da",
+    "workflow_conclusion": "success",
+    "commit": "bbf91dc32ec7d60227aed671ce7f7d7f903134b1",
+    "workflow_run": "https://github.com/kkhkkh20-bit/daaegame/actions/runs/38382249796"
+  },
+  "previous_publication_0157": {
+    "game": "https://kkhkkh20-bit.github.io/daaegame/preview/room13-dev/",
+    "archive_sha256": "9276035b43d83b06bf0df0b314bd0bc97b2bd6843bb9df646bc8dae43742570c",
+    "workflow_conclusion": "success",
+    "commit": "be9eb82fb0891c2432effed342c08dc4546cf995",
+    "workflow_run": 38384485419
+  },
+  "previous_publication_0158": {
+    "commit": "e2b64ea50b29b10f016b2a14e0ece0f0df2a6852",
+    "archive_sha256": "19b87259427bdd0917bbafb40d2e416111bb95a2656beffa31e38c391c00155f"
+  }
+}

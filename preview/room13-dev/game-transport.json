@@ -1,27 +1,899 @@
 {
-  "multipart": true,
-  "archive_bytes": 249677967,
-  "archive_sha256": "bba431fcbbace463df278ff22826d984cb01ff065c9c041415e5273b6637e6fb",
-  "parts": [
-    {
-      "file": "game.part01",
-      "bytes": 62914560,
-      "sha256": "7bb692b4ae477d3e38e90579b7bd26046e82ed6c953e69aae098d7fe9a067e6a"
-    },
-    {
-      "file": "game.part02",
-      "bytes": 62914560,
-      "sha256": "6e981431eae0981a295015ad27d5766e4938e5b1c03fd907153998c05170d04d"
-    },
-    {
-      "file": "game.part03",
-      "bytes": 62914560,
-      "sha256": "52246d23dbe2fe6c38c036e0c28ca594fb3ac1107bca8546c875d3f4a96283cb"
-    },
-    {
-      "file": "game.part04",
-      "bytes": 60934287,
-      "sha256": "8b11a531d4556b417bfe3bfb87077e0814e5771ece6e33907bb26c7521a47a7f"
-    }
-  ]
+ "multipart": true,
+ "archive_bytes": 7543490,
+ "archive_sha256": "f7bffbcef243befd0c6339ffa852bef0b1737e907a0a3d237a5e524132d25c0d",
+ "parts": [
+  {
+   "file": "game.part01",
+   "bytes": 7543490,
+   "sha256": "f7bffbcef243befd0c6339ffa852bef0b1737e907a0a3d237a5e524132d25c0d"
+  }
+ ],
+ "preload": [
+  {
+   "file": "game/assets/Galmuri11.ttf",
+   "bytes": 1964416,
+   "sha256": "9b4e414d11b0f4c16e4d30caaaa45ac53f8605068bebbc0635612ed04c56c80a"
+  },
+  {
+   "file": "game/assets/Room13Sans.ttf",
+   "bytes": 216572,
+   "sha256": "3d78103f88408e1dfec40da20078f9cffadf07397815959b71908468d9b8e5c5"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-badook.webp",
+   "bytes": 281794,
+   "sha256": "576eeba5c416550555694fb75297eabeaf8e0cc626e522c3b2ddf929d55226b6"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-bami.webp",
+   "bytes": 301044,
+   "sha256": "413981758f01a718d6b5128de36cbecae114e47b37225053a428ce283e7484b5"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-bodum.webp",
+   "bytes": 270728,
+   "sha256": "121c2a37ffe3cc57479c2fb3c4ac99fd4d5c640e7989d1bb71eb9cda5b16f0af"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-buri.webp",
+   "bytes": 342130,
+   "sha256": "e01cd165027d88ccfd26b019f6fde6a2e0a3ab22fddfa56ab1043684a7cb573d"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-dad.webp",
+   "bytes": 291612,
+   "sha256": "87bef2227f03582a8a679f3b1c2b3c985f469a18a2f57995daaed16495067ae1"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-daram.webp",
+   "bytes": 328144,
+   "sha256": "70939cc65638b449fc447bb775834a50cc61e2728a2f060be050d4a9f74a2ed9"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-doto.webp",
+   "bytes": 334882,
+   "sha256": "15501f229f3bec22cb4c3eb2e7720280083946f54bfd95cc9bb1ae3497e368b4"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-elder.webp",
+   "bytes": 271092,
+   "sha256": "de7c75b360adc2e29bc3594c19f1a8dcc462943677691bfbbd46b2c976fb6a7f"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-eunho.webp",
+   "bytes": 260246,
+   "sha256": "e3561e8080fc6a0d5d348e08c7d09bc0c1ebef05cdaf3066b0a18b21e245450b"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-family-extra.webp",
+   "bytes": 304292,
+   "sha256": "56fb6da0e41015e99d82fae339a1af27c352a02b54a96c072596edd9395a68a3"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-granny.webp",
+   "bytes": 326428,
+   "sha256": "be629b0a5aab8da56492b276c0476ed663a969193963b812e2b9d031ea126d5c"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-guard-extra.webp",
+   "bytes": 253194,
+   "sha256": "f34c0d19a11fb3be4b316091292855230ae6813c18a2e73d3190a3bcdd90d2c9"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-guard.webp",
+   "bytes": 339952,
+   "sha256": "a7934889fea5c3ebcda20a01d3d1ad469b1f432357cd043e2cd25509e65ff0d2"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-guseul.webp",
+   "bytes": 241952,
+   "sha256": "c67ceab99ba73eeac15485d5a09b0207270a8a202a53541ae5779ff393f4f631"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-karo.webp",
+   "bytes": 334278,
+   "sha256": "3183786f4151728689ab6a8b2aa0afa0bcdf39852bf7b5a4a38fbc5c425a4b61"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-lamplighter.webp",
+   "bytes": 259460,
+   "sha256": "e50bdea301fc6fd47687150124f41853d3d0fc597f11ae32ff86709fd2b947ef"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-madam.webp",
+   "bytes": 223112,
+   "sha256": "1615a8a3e135747c65b09b3f462956d47b9c92f749fa16d49fd4e5e194522398"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-mom.webp",
+   "bytes": 403720,
+   "sha256": "abe161e9082813726372489afc0cca040557ca05b472f576dfa9a0ce2cde6d5e"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-momo.webp",
+   "bytes": 224960,
+   "sha256": "fe921d95df3b8480108e885b97773ea4e14384aa02ee906a6145c5c7ca77e076"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-mungchi.webp",
+   "bytes": 212648,
+   "sha256": "e854163968cd04e1d31835c64fc5b561679af888b2f8ecfec87d16104b3be396"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-musoe.webp",
+   "bytes": 224508,
+   "sha256": "fcf5363568ec98a718da85ab45f24891780d13b91e3e552c60ebec54e807308a"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-nabi.webp",
+   "bytes": 350240,
+   "sha256": "450d5c7c952a0d8563f876571491648c3d60d002d84be1e6189d7370d37bf446"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-neoul.webp",
+   "bytes": 362986,
+   "sha256": "39deedc5c05f0be4d94aeefc47624aef8f6dab3285baa3e834fdfebcc7e15f69"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-nubi.webp",
+   "bytes": 273908,
+   "sha256": "c25f4065a74c8936bfcd70ce7e6666233fb0411478d38c03a5a525aa9f443493"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-piko.webp",
+   "bytes": 271036,
+   "sha256": "5a9b9c77822329aeb80152a5cbe1d8b84095ada579ee9c37ec003b395347ff78"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_bori.webp",
+   "bytes": 241936,
+   "sha256": "94a6618cce6bfc974b6d50a04be6dc6d635329402999633300774fa19a94b8e6"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_kkwak.webp",
+   "bytes": 279406,
+   "sha256": "063f562e248f70616d8d40e9541bf5259cc4d35ad14d1ea20e32497acdc38ff0"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_kongi.webp",
+   "bytes": 268014,
+   "sha256": "5ddde1c6da28b3973760b62bee484e39652ebe802ad592a5f80211ec7291f7f0"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_librarian.webp",
+   "bytes": 259100,
+   "sha256": "8091d723e1a47b2528ba7cf16fd8890623f9208fa82442a157be3c8fd0ad3db6"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_nero.webp",
+   "bytes": 231834,
+   "sha256": "432a03f461129d06a31c31a81fd408039b195604daa250e1e059c7821c56d8c8"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_owlgp.webp",
+   "bytes": 312494,
+   "sha256": "79ab7c73d4b1aac46bbd9a527cb88d2e9526cd5e94093f2f77d717f623367965"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_ppul.webp",
+   "bytes": 270394,
+   "sha256": "01f85c6bf6f8fd8ce61e1bd42ecc9e61cf70d6c413c077c463ff3bf4e32a40c0"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_seol.webp",
+   "bytes": 321654,
+   "sha256": "525a6f2e19f0398a6e4955bf6364e3afa2650e7bb501994c185a0261a173b2fb"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_sling.webp",
+   "bytes": 290458,
+   "sha256": "3c344149c901c4ee29f658e403b6f9661d2708bdcd93d7f3e2a256b8b16c13c0"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_teacher.webp",
+   "bytes": 245996,
+   "sha256": "981d7f891c13adc7f76badeae72df9a538b7405c04d468d171b249f3c366d177"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_tok.webp",
+   "bytes": 255392,
+   "sha256": "ff1a8309aaa76fd03350a4c28114a08554d91672bee229fa6e4efce7610a1837"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_tori.webp",
+   "bytes": 195468,
+   "sha256": "66e0ac5bdaaea09502e6d13058d3886e2fa10339a872f5a93f109eeeccb93e3b"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-resident_yeoni.webp",
+   "bytes": 291222,
+   "sha256": "206d2ccbf777aca5cce59476e39edd32c88c7fc7b4d30817002cefa045cd5a7d"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-seori.webp",
+   "bytes": 223574,
+   "sha256": "3c1e10cebeb7ff3f1a0dfd8c6a9821b58ddf10f98d43dc892ec89f8a333f0c72"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-seryeon-chair.webp",
+   "bytes": 243324,
+   "sha256": "43040b0ab5fa5136956c55452ed0180a0de558b3fd62b50a7ec6ac8c99a0e9e7"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-seryeon.webp",
+   "bytes": 332108,
+   "sha256": "61087cedaef7f073454c68957fef745f8782faf6c3f13211e2f79bf88bb0307e"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-siluk.webp",
+   "bytes": 233320,
+   "sha256": "ddabc4f0f5829765c48e7b586b4fc7df53bb097da7e7ae7757164e889d671250"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-somi.webp",
+   "bytes": 266318,
+   "sha256": "fcdc96f7546458d016708905e5649c3730236cb6fdc36118e10c12ec1222a312"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-ttadak.webp",
+   "bytes": 288704,
+   "sha256": "2fe4dc67296f32f9c818d0b5f7b8bebe169d8a10dab7ef617abf0dc26e45eb55"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-ubak.webp",
+   "bytes": 249704,
+   "sha256": "ed094e6436663e3e0ff653a5a1037f6f4595dca2acb6f9b5455a1f74782b2118"
+  },
+  {
+   "file": "game/assets/room13-pixel-acting-workshop.webp",
+   "bytes": 280950,
+   "sha256": "3a304344cf4af95bcffd8fe412977a29566efd76346edc372042af999189f658"
+  },
+  {
+   "file": "game/assets/room13-pixel-altar-afternoon.webp",
+   "bytes": 323248,
+   "sha256": "6b7ac6cba2703de2b56939dadf9eae6fe53ebadfaa023c3be111234796282ffb"
+  },
+  {
+   "file": "game/assets/room13-pixel-altar-evening.webp",
+   "bytes": 301736,
+   "sha256": "3f75a2a6dac973c484d447a8cd95401ec837f4d92a905265b609491acff1722c"
+  },
+  {
+   "file": "game/assets/room13-pixel-altar-morning.webp",
+   "bytes": 310550,
+   "sha256": "8858a0a2987b9ea3da721122d3a05799a5dc006a5476fe3afc70e8bcbaab6322"
+  },
+  {
+   "file": "game/assets/room13-pixel-avatar-support-0.webp",
+   "bytes": 303534,
+   "sha256": "ce63735bf89a2c3903bb36e3bdeaab337af7b69b2e5fcad6d5bd6034cbd21af0"
+  },
+  {
+   "file": "game/assets/room13-pixel-avatar-support-1.webp",
+   "bytes": 324246,
+   "sha256": "437baeb667f7b6d3e24365ddbcd8ed9a0bf765ed3ce48f4002dbea796f5bb54b"
+  },
+  {
+   "file": "game/assets/room13-pixel-avatar-support-2.webp",
+   "bytes": 312750,
+   "sha256": "dbcbde0d452887313300e984352cf3f57f4dd398f5dadf1859dd9dedad17a693"
+  },
+  {
+   "file": "game/assets/room13-pixel-avatar-support-3.webp",
+   "bytes": 272250,
+   "sha256": "c23813c9d5f625a5a8b7e63f9a722d8d71f017cd661d091b853550dc8a647fb4"
+  },
+  {
+   "file": "game/assets/room13-pixel-avatar-support-six.webp",
+   "bytes": 276678,
+   "sha256": "64ec93f35c266cc04bf8e478dbc55aceb027a6b10050cb3a0cdd40f8c8644162"
+  },
+  {
+   "file": "game/assets/room13-pixel-carriage-empty-winter.webp",
+   "bytes": 155586,
+   "sha256": "c209bad206a6c24a7b4b5d53336ba30a4b9ea4eccf164533952ad72a8bbc75dc"
+  },
+  {
+   "file": "game/assets/room13-pixel-carriage-family015-morning.webp",
+   "bytes": 307564,
+   "sha256": "5a6464dd4fec863a89e1856217033907ed0e3b8f46e16767ddbea963c66e8dab"
+  },
+  {
+   "file": "game/assets/room13-pixel-carriage-letter0153-morning.webp",
+   "bytes": 309526,
+   "sha256": "3dd923ad97adbc84bfcdf713bcad8f57a203b409e257afb3710d5ac9dfb7a238"
+  },
+  {
+   "file": "game/assets/room13-pixel-carriage-morning.webp",
+   "bytes": 300362,
+   "sha256": "d6702aabf5470ebfa83d536571a1d661340be30459e0a66472e5bd94605a3cd0"
+  },
+  {
+   "file": "game/assets/room13-pixel-cinematic-endA-family015.webp",
+   "bytes": 389498,
+   "sha256": "fc6ccdc8683516a8cfad4b243ebb3a5998bc46aa2346bcfbd9832b27cd5b464d"
+  },
+  {
+   "file": "game/assets/room13-pixel-cinematic-endA.webp",
+   "bytes": 427020,
+   "sha256": "99f6d25a15931bcb96c6b40cd757f3763ab1c16da55fcf05721d8dce6414ed42"
+  },
+  {
+   "file": "game/assets/room13-pixel-cinematic-endB-family015.webp",
+   "bytes": 407152,
+   "sha256": "80bbc4085a89d7b51fdee7d7ca382bca0b66ae451e54cd8c030b09344a17b242"
+  },
+  {
+   "file": "game/assets/room13-pixel-cinematic-endB.webp",
+   "bytes": 437520,
+   "sha256": "244c8fe82496025886676398b106e897371e61a5d07be232202d7447bb874c1c"
+  },
+  {
+   "file": "game/assets/room13-pixel-cinematic-key-family015.webp",
+   "bytes": 388026,
+   "sha256": "b21dbc6a778a5f5ceaa09559520463d8b9baa3c8fa637768afb1662b1aac7072"
+  },
+  {
+   "file": "game/assets/room13-pixel-cinematic-key.webp",
+   "bytes": 440136,
+   "sha256": "18d36c82cc398427869b355b38376994df29589b6e124bf1358c8a5d4cce6e0c"
+  },
+  {
+   "file": "game/assets/room13-pixel-daram-motion.webp",
+   "bytes": 314924,
+   "sha256": "49d8c09e08097a86426846bd809cddcd3c38059365447d4d5c0a90e60807f5a7"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-bami.webp",
+   "bytes": 217756,
+   "sha256": "501cd9b91ca4c87a3c500fae1436c88a37573efb0f9fe9fb59a1fed8826b475c"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-buri.webp",
+   "bytes": 226490,
+   "sha256": "d2f9727b92e428767114cc91cf7ad379258517fdb8c2d47f98a37c13979bcee4"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-dad.webp",
+   "bytes": 336898,
+   "sha256": "b32b1392f61e614b8c3669b0e8eeea74089eb1528c9f5367b92d7079f898f483"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-daram.webp",
+   "bytes": 331566,
+   "sha256": "4129f95c46839e4322e8b80eee199f5bc95e1ab89a98d4a7206db9958ef05693"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-doto.webp",
+   "bytes": 207636,
+   "sha256": "c0294fdcb435cf2a04d452bac16a707828fa2df9c0aa748fdce944e15aadbe2b"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-granny.webp",
+   "bytes": 235236,
+   "sha256": "5b53f5ca074ca639da7a96ffc5a420d40764d08831876b70e2e9ba6f34b7f8d6"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-guard.webp",
+   "bytes": 198096,
+   "sha256": "c6667d8707a0e819d2c7d0ac040c8820280837fb802fd3db71af03b48c00b164"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-karo.webp",
+   "bytes": 222574,
+   "sha256": "3e916b209c8ce001224ed8906301a96d24c552bc689b3e9d88df19a6bc51455c"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-mom.webp",
+   "bytes": 433688,
+   "sha256": "70f4507bf69a89d8ef918bd661660b8b5963d35a5ba1919c5807de459f0e2474"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-nabi.webp",
+   "bytes": 252050,
+   "sha256": "a9856f42ed42a0b68e8199208b1cbf0a51545aa85e054979e93a742b589eb1cb"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-neoul.webp",
+   "bytes": 239782,
+   "sha256": "b5ffac660f2c81e87f285789171a7e3ba353df859e5041cc24df22af5fbafbee"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-seryeon.webp",
+   "bytes": 223982,
+   "sha256": "6d3f982e37e739d9bf63e8b86d4151f2fe267ea519b2b950c9f98c3a2a06e12d"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-00.webp",
+   "bytes": 344888,
+   "sha256": "de3cd3dfa164b854f890a6e6d52ae5b8747af4c1e1f1f54c1372f440fc75d286"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-01.webp",
+   "bytes": 391100,
+   "sha256": "3e4b2c23d88f8e5e8745b53ad3425e2b638c3530c3198050a51fe137eac8dbc8"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-02.webp",
+   "bytes": 365254,
+   "sha256": "7b9cdd440a017e0f750e4285b9570d366ea2cb6c24a9eab1445f6a47cbba2d75"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-03.webp",
+   "bytes": 366898,
+   "sha256": "70e231ce87a8f3491e685d1d6ed24d3d8894304fe4faadad2f3eb95783cf6317"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-04.webp",
+   "bytes": 359710,
+   "sha256": "6b18698e90d14c7f299a777ebfaa3fd2fcf6263eba136d9a1d2f60661f48c463"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-05.webp",
+   "bytes": 384276,
+   "sha256": "985bc096bb26d9e9249d7ad580bfea59a33f668d4fb5b8f256e482da7a7fda39"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-06.webp",
+   "bytes": 430844,
+   "sha256": "7ec18518e53f8b91395616f001ae40a1f808da2afa39c0bfbb65dc33d0155b58"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-07.webp",
+   "bytes": 429492,
+   "sha256": "771ca4374dcade25aa997852e06fa8a38a7553cb3f7447dbaaa8bdcdc3ece894"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-08.webp",
+   "bytes": 367884,
+   "sha256": "ff1a3d25bc161ff1a0ddac5a65a2b1fc366772c5b48ef8e5ec1e2904f07cd130"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-09.webp",
+   "bytes": 341956,
+   "sha256": "e5e802a8140e2a179b7bca7095dfb23f94a0cf74bb82acc98c3814fa4a476594"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-10.webp",
+   "bytes": 362082,
+   "sha256": "f48002809b289e7d2dd562f6cb417b55403ffe9f7ae4656c741ddfb113ca70f6"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-11.webp",
+   "bytes": 356306,
+   "sha256": "5a7b507f4734db200b74cd5b9a7980dcec41dded8e4547faad7e3c680e78a6de"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-12.webp",
+   "bytes": 360778,
+   "sha256": "40b1dcc0126d2b0f646b5e9bcade5fa8e37d0b1a2d247028e2909d2403cf57b0"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-13.webp",
+   "bytes": 365588,
+   "sha256": "a871feb3e6346365799bc041939f5d5a8801bbf7e86ef32a84be1b370fe8ea16"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-14.webp",
+   "bytes": 412598,
+   "sha256": "f9583467974158eda55971f37e458846d4f3f1dcccd939c333e7dc7e245889bf"
+  },
+  {
+   "file": "game/assets/room13-pixel-dialogue-support-15.webp",
+   "bytes": 206134,
+   "sha256": "e3eac370f91cb71a3bafbb3096fd0ea474f1e679a952c4d33b67131834326e3b"
+  },
+  {
+   "file": "game/assets/room13-pixel-evidence0155.webp",
+   "bytes": 292704,
+   "sha256": "a7e9d76661cb2b415294ed9e00b7bf0e1902cda7d9907c4b084b2150b7cbbc1d"
+  },
+  {
+   "file": "game/assets/room13-pixel-family-profile-icons.webp",
+   "bytes": 266204,
+   "sha256": "30bdc58fbe07b8a3253907a3a21382c2d76e978b6312945125a456ac8a3ab207"
+  },
+  {
+   "file": "game/assets/room13-pixel-gate-afternoon.webp",
+   "bytes": 349598,
+   "sha256": "2fb7d7fc0ee44c9390125167bc00063a07039a44cae8da612eda39b11c57f794"
+  },
+  {
+   "file": "game/assets/room13-pixel-gate-evening.webp",
+   "bytes": 319454,
+   "sha256": "8e8aca43c9a2fa894272570139082b34196b8b53b36a9eff72179ec0086f6201"
+  },
+  {
+   "file": "game/assets/room13-pixel-gate-morning.webp",
+   "bytes": 355950,
+   "sha256": "0edc16266d091655e7fd3c74f76c87a5e95029c019862d742b525712b7b9ab57"
+  },
+  {
+   "file": "game/assets/room13-pixel-hall-after-afternoon.webp",
+   "bytes": 189846,
+   "sha256": "0b6b17c0b2ec8e9991d10c11ec923ed0e106795eb9c9ef3f27632843e3e1a1ee"
+  },
+  {
+   "file": "game/assets/room13-pixel-hall-after-evening.webp",
+   "bytes": 155528,
+   "sha256": "80d037a9f44590f237aaa31bd817e10ae0d8034bbc075b0d9e15b5096dde7bce"
+  },
+  {
+   "file": "game/assets/room13-pixel-hall-after-morning.webp",
+   "bytes": 199610,
+   "sha256": "a8ecea20661ac776a4a2cae84601b86a5ac3950ac1c8dfdf84a28fefbf143542"
+  },
+  {
+   "file": "game/assets/room13-pixel-hall-before-afternoon.webp",
+   "bytes": 190218,
+   "sha256": "9d0ebddafbd39771252f418593da598046738e34540287e9ed2a7d79ccd39a8c"
+  },
+  {
+   "file": "game/assets/room13-pixel-hall-before-evening.webp",
+   "bytes": 163490,
+   "sha256": "85f5524cbfbbb308e630b8da2f618de259435cfa1273c887036ca1ce4feaa52e"
+  },
+  {
+   "file": "game/assets/room13-pixel-hall-before-morning.webp",
+   "bytes": 203432,
+   "sha256": "a05b660f95dbff393dc2cd5fe333be5eb455c595f354a22e458353e13f6565ac"
+  },
+  {
+   "file": "game/assets/room13-pixel-inn-afternoon.webp",
+   "bytes": 338190,
+   "sha256": "361e3c28ce0d4ec79a9db512dc7a526a0def0fe8478a96552b9e303793c4f5b1"
+  },
+  {
+   "file": "game/assets/room13-pixel-inn-evening.webp",
+   "bytes": 326750,
+   "sha256": "4297f757787f50cc3493c22e88ff06da68d321014d1cab1445dbe276eb1b9f95"
+  },
+  {
+   "file": "game/assets/room13-pixel-inn-morning.webp",
+   "bytes": 319452,
+   "sha256": "a22de71c6785e5c1ecf1a6c90583ad5d07e1f4077bbbb7a2e1e0d7c7e8bd4ec2"
+  },
+  {
+   "file": "game/assets/room13-pixel-inspect-desk.webp",
+   "bytes": 114796,
+   "sha256": "82c4600778ba23227317d2193338eac4d30b4828f4c191dc5681d662ce7ab3c4"
+  },
+  {
+   "file": "game/assets/room13-pixel-inspect-drawer.webp",
+   "bytes": 153306,
+   "sha256": "71ad3b6f2626c44ba7ba255c42a084a453a3cf7348706ba7d282fd478c6fd15e"
+  },
+  {
+   "file": "game/assets/room13-pixel-inspect-items.webp",
+   "bytes": 144172,
+   "sha256": "04eee23e4316a6450edd380f400f88e7bf5eac9b40ee66edc091bd7b841f2286"
+  },
+  {
+   "file": "game/assets/room13-pixel-karo-fullbody.webp",
+   "bytes": 203998,
+   "sha256": "d9277cbf95562779b6de22b6c7b62513f7fa9cc87616b0f9f746119ad89ee967"
+  },
+  {
+   "file": "game/assets/room13-pixel-locations-afternoon.webp",
+   "bytes": 477748,
+   "sha256": "0926ff2a15c1a44b45a95b7e700eaddde8f017c86c321af3d6059fc73e8ac21a"
+  },
+  {
+   "file": "game/assets/room13-pixel-locations-evening.webp",
+   "bytes": 405940,
+   "sha256": "d8d103fdfe1831e3f87798cf6b3f8ae186bbd96322936988b96bb745b8e1606f"
+  },
+  {
+   "file": "game/assets/room13-pixel-locations-morning.webp",
+   "bytes": 464020,
+   "sha256": "aae0a15abce10a0d7424094a80239f27f1d02e06e0454e5bbeef2f6b1ecfe76f"
+  },
+  {
+   "file": "game/assets/room13-pixel-main-profile-a.webp",
+   "bytes": 262282,
+   "sha256": "8296ed72b8745898fbeb6bf4365b5c860ac76c269b30e691480740eda455d210"
+  },
+  {
+   "file": "game/assets/room13-pixel-main-profile-b.webp",
+   "bytes": 245414,
+   "sha256": "6f29c6772b731c8a105f8a81e62929b7dd7ea0e1ef48981072092b042868856b"
+  },
+  {
+   "file": "game/assets/room13-pixel-main-profile-c.webp",
+   "bytes": 259436,
+   "sha256": "787377fc6b253a4d40125a923222fc55b1e6a4e1e8cf0c53bfe156810f684d57"
+  },
+  {
+   "file": "game/assets/room13-pixel-main-profile-granny.webp",
+   "bytes": 135652,
+   "sha256": "170209e664e9f1aab9f1d7e4c9afa31a54c97189ae2e79e98f3de8e633f80fcb"
+  },
+  {
+   "file": "game/assets/room13-pixel-navigation-village.webp",
+   "bytes": 790268,
+   "sha256": "f4ee570ea2ba3cd52e62763cf5d05042fd84bcda663329b1f5d5604e40b7bca0"
+  },
+  {
+   "file": "game/assets/room13-pixel-overview-afternoon.webp",
+   "bytes": 373914,
+   "sha256": "dfe3089784e4e9f08fd6c50ea74822e8a895bea7d144b4a357159acfee99d36a"
+  },
+  {
+   "file": "game/assets/room13-pixel-overview-evening.webp",
+   "bytes": 361102,
+   "sha256": "7d76c62054a35081dec97617621c4a3ea2725a00e920bafe3a2aad2c61a2a28f"
+  },
+  {
+   "file": "game/assets/room13-pixel-overview-morning.webp",
+   "bytes": 401124,
+   "sha256": "45cac7546f25f05ad480e12f833901c9221bc9dd3116aee29210d99b97281516"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-inn-afternoon.webp",
+   "bytes": 354088,
+   "sha256": "623ff673416068d5f3d7fa6bb09d1b95a20c0329521feed3c3b282077bd61d63"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-inn-evening.webp",
+   "bytes": 320442,
+   "sha256": "05a757d4720e1e53ae7c6456d4b66ad3ae59849ba59af502ab789096bbef4911"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-inn-morning.webp",
+   "bytes": 351554,
+   "sha256": "4199544afbab4821ae4dc601f37fdba43f7b6183d48498c6fb814840fc2c3e9b"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-school-afternoon.webp",
+   "bytes": 423310,
+   "sha256": "2f9c4a82d872861742131ad947f2f376e5f07e1bb7858a99fadb1636e8a7411c"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-school-evening.webp",
+   "bytes": 390840,
+   "sha256": "beb36ba9bd7df1b740e9c144fb3216cf6e1141c49de6b4be2df25551596bfb93"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-school-morning.webp",
+   "bytes": 416934,
+   "sha256": "611a39c4ba39955f320564000b9fb591e509eda4b41714e18ec8d353f1e9fb95"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-square-afternoon.webp",
+   "bytes": 498346,
+   "sha256": "05759994912515302910e7ac44ba4ac9bb6e2ea57002c8196c54592605c6d8d8"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-square-evening.webp",
+   "bytes": 426744,
+   "sha256": "460b858e50cfbcdfc2856137bf33c3a5be428961433523452fd61e93c5ba1a5a"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-square-morning.webp",
+   "bytes": 491686,
+   "sha256": "212f0dd839b6f937619f4acaeda1094446b5a0d060cc1be14a692b2838a04f30"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-workshop-afternoon.webp",
+   "bytes": 376754,
+   "sha256": "e870b8a432404e249f69207726a0228e5764ae2abfad976854dc3acbe744a37d"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-workshop-evening.webp",
+   "bytes": 351534,
+   "sha256": "3cd1108d5bf1d697f85ef34f28cb03d4262bf69bc48c308faf7595beeb1a77b9"
+  },
+  {
+   "file": "game/assets/room13-pixel-panorama-workshop-morning.webp",
+   "bytes": 370668,
+   "sha256": "919bbebe56118922d7409c3befbdc8c9e1c79eb01f8978345531b252ea9c6f15"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-altar0177-afternoon.webp",
+   "bytes": 404690,
+   "sha256": "fc552f9c4bb437ac71c5dd4ca62eb110a5652080a4348dcbc2314de9478a1cb5"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-altar0177-evening.webp",
+   "bytes": 354456,
+   "sha256": "45dcc50ccdc0552dc77740c540ecca1696bf97b4576f6dd1371ce6c8a7f2e881"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-altar0177-morning.webp",
+   "bytes": 401904,
+   "sha256": "87558f6cec24d9bfb88bc5f50b7f59757789a3ada914f3564fe8c02a7722e2de"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-clinic0177-afternoon.webp",
+   "bytes": 280342,
+   "sha256": "cf1ad68c0249897d117729ef7c3637e27267853f06f593ec40c139cb2233fb3c"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-clinic0177-evening.webp",
+   "bytes": 233734,
+   "sha256": "5a15094ca89fd5066a70114378661f3502ad6238cc751a88ff5a96a87e1e882e"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-clinic0177-morning.webp",
+   "bytes": 288242,
+   "sha256": "a9c4a631f10bc1fdeacf5b497837804fe216d5d2851daa42b5aac1b699cb41df"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-facility0177-afternoon.webp",
+   "bytes": 206040,
+   "sha256": "3a77163c46d415f68a1eaad79c4fc52826a8571b733140c80604021efc8c5433"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-facility0177-evening.webp",
+   "bytes": 163266,
+   "sha256": "3ff89dc849bfd2d71de26a4339bdd705a20fff9e5b2b2e49d5377e3344288a90"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-facility0177-morning.webp",
+   "bytes": 200008,
+   "sha256": "2554661cc47896a091c775d65794193f91ad812db82a2196ef7ae057f17a32d8"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-gate0173-afternoon.webp",
+   "bytes": 443182,
+   "sha256": "bff50fcc532f59acd9b4544ffb68c857e4c5c43d370480341a68e9ae92d118c9"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-gate0173-evening.webp",
+   "bytes": 386560,
+   "sha256": "3dd1c0e83a9f026abb04658e1fe02dfde7cd492866eed0c3dadfeb0a321da6c9"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-gate0173-morning.webp",
+   "bytes": 441494,
+   "sha256": "c482a5ea43c5111377ac9f3cc3705e640537d4f85261e96127b5d028504be9f3"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-greenhouse0177-afternoon.webp",
+   "bytes": 395442,
+   "sha256": "c3654951359bfe3c397e1f6563ea829945f6316e0e84f47f0e54947c5f8ccd31"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-greenhouse0177-evening.webp",
+   "bytes": 322178,
+   "sha256": "ca3afe9e7abb187874db18f0ffd0ff5d884086fc13773b0242bac62085d20a1f"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-greenhouse0177-morning.webp",
+   "bytes": 397012,
+   "sha256": "2a2ba4b3b5f369cdd48fb533acc790e058dce59beeeb117e784bca2dfda062a5"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-store0177-afternoon.webp",
+   "bytes": 314932,
+   "sha256": "72d0cc0c8bbf1221140563b4b4591e57cc2a05ea801445acca24014245b5c8f9"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-store0177-evening.webp",
+   "bytes": 280932,
+   "sha256": "31572759afc85d0dbd9c98b23854974e55a4c419402a0514c4340d893a19260d"
+  },
+  {
+   "file": "game/assets/room13-pixel-ready-store0177-morning.webp",
+   "bytes": 314332,
+   "sha256": "3adf8ade714298f157ce1fd8bd9a200735f4ee9385ee2c98ad9933357e6c6d8e"
+  },
+  {
+   "file": "game/assets/room13-pixel-room-after-afternoon.webp",
+   "bytes": 229442,
+   "sha256": "a80a2304e0975dfe409e4205bc79ed75433a03c8a6a5bf12355ae28d44d3ce1f"
+  },
+  {
+   "file": "game/assets/room13-pixel-room-after-evening.webp",
+   "bytes": 194584,
+   "sha256": "a5177f89d0f0d803ba8f83a7de2ae00a67b2b51f2942f3bc8b8ff74fa7d6e96e"
+  },
+  {
+   "file": "game/assets/room13-pixel-room-after-morning.webp",
+   "bytes": 251826,
+   "sha256": "b1c574d07477dc1f4a8e471cd59c2391f274d166cf65a210a28adbc71e8377d9"
+  },
+  {
+   "file": "game/assets/room13-pixel-room-before-afternoon.webp",
+   "bytes": 223464,
+   "sha256": "e6ebdb11bda851d1c8a3f07f4b8fd509a79f7082a8f2bd384bd5bf1677985726"
+  },
+  {
+   "file": "game/assets/room13-pixel-room-before-evening.webp",
+   "bytes": 198030,
+   "sha256": "590ab7f82727141bb63fada166335ae7c7d0ae7664b0e114422780bdd7293788"
+  },
+  {
+   "file": "game/assets/room13-pixel-room-before-morning.webp",
+   "bytes": 244264,
+   "sha256": "e78871778e7f78309433212bbdc74a6c5d30f44d23aca0a4d6460590ccfb595b"
+  },
+  {
+   "file": "game/assets/room13-pixel-village-afternoon.webp",
+   "bytes": 440412,
+   "sha256": "9dc40dbd34086efb0c8cf0c283939d8f9caa681ae1fd1b9a48756e02fcd225fb"
+  },
+  {
+   "file": "game/assets/room13-pixel-village-evening.webp",
+   "bytes": 412476,
+   "sha256": "fa767533fa9e39e20b422f8234ffaba09064bef1fff350aff8b7480db8c47dc7"
+  },
+  {
+   "file": "game/assets/room13-pixel-village-morning.webp",
+   "bytes": 451562,
+   "sha256": "4730598e995a7bb75fd8cefe5a93e8b4add61c6e23a7edbb598e255c0a1a9237"
+  },
+  {
+   "file": "game/assets/room13-pixel-world-context0156.webp",
+   "bytes": 227910,
+   "sha256": "7c1e89bbadbc8c0be024dd6a504ffb879bbf505ef813613ea2daa5f3e6ae5d49"
+  },
+  {
+   "file": "game/assets/room13-pixel-world-dad-gray.webp",
+   "bytes": 398084,
+   "sha256": "0bf7a82ac910cb3a74930d5f5f0e0474f01a9a570b9723a288358cfed34a6004"
+  },
+  {
+   "file": "game/assets/room13-pixel-world-daram-gray-gutter.webp",
+   "bytes": 478692,
+   "sha256": "7ed92445ebe1b70e90ef79fb1ad6853a3abdd9a46570da1ebb6cd184e20438c6"
+  },
+  {
+   "file": "game/assets/room13-pixel-world-family-extra-gray.webp",
+   "bytes": 461556,
+   "sha256": "f4ac1fc77aed3b1cbd818ebb6193d2ad81a1eb9a20519157144ea02c9031ef12"
+  },
+  {
+   "file": "game/assets/room13-pixel-world-mom-gray-gutter.webp",
+   "bytes": 497356,
+   "sha256": "08b0e893dca1e788cb2c36f769cfbeb6b7706dcafc62b99e76fd8ad6eca5f4d5"
+  },
+  {
+   "file": "game/assets/room13-title-winter020.webp",
+   "bytes": 456230,
+   "sha256": "d88220e0b37029e9833b44b6efadd166b6d909cff531699e5e44d58d30e86ef9"
+  },
+  {
+   "file": "game/assets/source-bell10.wav",
+   "bytes": 431782,
+   "sha256": "0b51dbc0c903b83f4b001cec4b724e3216657bbdbfab1c5e074307c82b5d918f"
+  },
+  {
+   "file": "game/assets/source-title-strings-v3.mp3",
+   "bytes": 1281539,
+   "sha256": "03018882f6a365d79e1ce5e233637db7d939a8b75ffb766d18654c6510a1e882"
+  },
+  {
+   "file": "game/assets/winter-gate.webp",
+   "bytes": 428690,
+   "sha256": "32b2d5d84150221454286bfe79cda4842f35e14fe87e89cc402ce192506866d4"
+  },
+  {
+   "file": "game/assets/winter-guard.webp",
+   "bytes": 223946,
+   "sha256": "36c9bd81b60cc3823379df24857d96aff4cdaa5ba0945aea5a6195b3d22805fd"
+  },
+  {
+   "file": "game/assets/winter-places.webp",
+   "bytes": 647574,
+   "sha256": "009cae11205d41dbab613fb98d0b335167a908b1fc55763e7d88215880af7175"
+  }
+ ],
+ "prefetch": [
+  "game/assets/after.mp3",
+  "game/assets/comic.mp3",
+  "game/assets/meeting.mp3",
+  "game/assets/night.mp3",
+  "game/assets/pressure.mp3",
+  "game/assets/search.mp3",
+  "game/assets/source-climax-strings-v3.mp3",
+  "game/assets/source-investigation-context-v4.mp3",
+  "game/assets/source-meeting-press-strings-v3.mp3",
+  "game/assets/source-serious-context-v4.mp3",
+  "game/assets/source-travel-strings-v3.mp3",
+  "game/assets/town-bright.mp3",
+  "game/assets/travel.mp3"
+ ]
 }

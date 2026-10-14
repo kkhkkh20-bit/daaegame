@@ -52,8 +52,15 @@ init 40 python:
     def winter_visible(s,key):
         a=WINTER["actions"][key]
         if key in s["done"]: return False
+        if a.get("only_place") and s["location"]!=a["only_place"]:return False
         if not a["start"]<=s["day"]<=a["end"]: return False
         if not all(winter_has(s,k) for k in a["need"]): return False
+        if not all("observed:"+k in s.get("seen",[]) for k in a.get("observed",[])): return False
+        if key=="map" and s["day"]<5 and not winter_has(s,"old_route_hint"):return False
+        if key in ("mother_send_reply","mother_window_reply") and winter_has(s,"mother_contact_compromised"):return False
+        if key=="mother_window_reply":
+            sent=next((row for row in s["log"] if row["action"]=="mother_send_reply"),None)
+            if not sent or s["day"]<=sent["day"]:return False
         if key in ("witness","protect") and s["witness"]!="available": return False
         if key=="rescue" and s["witness"]!="detained": return False
         if key=="relocate" and winter_has(s,"mother_secure"): return False

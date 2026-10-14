@@ -1,0 +1,72 @@
+{
+  "items": [
+    {
+      "location": "inn",
+      "period": "morning",
+      "file": "room13-pixel-panorama-inn-morning.webp",
+      "source": "/workspace/generated_images/exec-2ead3f08-eb9f-4e6f-8f45-559beef5c57f.png",
+      "size": [
+        2048,
+        768
+      ],
+      "sha256": "22df90e37258e140f572a9cc0a46660e1f90e7d481286325bdf41d36b6d2651f"
+    },
+    {
+      "location": "inn",
+      "period": "afternoon",
+      "file": "room13-pixel-panorama-inn-afternoon.webp",
+      "source": "/workspace/generated_images/exec-9f591b6d-b159-491d-9a8c-2b713ec79059.png",
+      "size": [
+        2048,
+        768
+      ],
+      "sha256": "6b39f261c499bad0f3b97462391c63c7c02c7082260efd2d4fc32144c8249a5d"
+    },
+    {
+      "location": "inn",
+      "period": "evening",
+      "file": "room13-pixel-panorama-inn-evening.webp",
+      "source": "/workspace/generated_images/exec-f88e9bb6-03dc-4896-8131-a06e76a3a4f2.png",
+      "size": [
+        2048,
+        768
+      ],
+      "sha256": "2bcda0208961c3f02ae16bab45ae2f9d41e5b9eb6e6cfc1a0901deef9a1a9a7e"
+    },
+    {
+      "location": "square",
+      "period": "morning",
+      "file": "room13-pixel-panorama-square-morning.webp",
+      "source": "/workspace/generated_images/exec-93dd9346-2a8d-4cc1-8094-b273152553fc.png",
+      "size": [
+        2048,
+        768
+      ],
+      "sha256": "4dda9381e00f7f2700d510c817f1708927673b30781dfe30b7e454bfae0eabf3"
+    },
+    {
+      "location": "square",
+      "period": "afternoon",
+      "file": "room13-pixel-panorama-square-afternoon.webp",
+      "source": "/workspace/generated_images/exec-767c2fa7-2610-42c8-9ac6-2d73669c243d.png",
+      "size": [
+        2048,
+        768
+      ],
+      "sha256": "1e58ba82d41bc1ee4b84cd6727492564c51cdec5651983d30b337183cfee7403"
+    },
+    {
+      "location": "square",
+      "period": "evening",
+      "file": "room13-pixel-panorama-square-evening.webp",
+      "source": "/workspace/generated_images/exec-775dda39-35af-4206-ac78-1e24367d8691.png",
+      "size": [
+        2048,
+        768
+      ],
+      "sha256": "c97356603cc764a1bef75af0d6afab668efd360305b8b4fb8dbeb6d1b6cc31ac"
+    }
+  ],
+  "coordinate_rule": "Uniform scaling from 2048x768 source into 1920x720 world: x/y * 0.9375. No pixel rewriting. Old hotspots must be remapped to newly illustrated objects, not offset mechanically.",
+  "review": "Both locations retain required investigation props; morning/evening variants preserve geometry; no people are painted in."
+}
