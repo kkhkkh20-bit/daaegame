@@ -1,0 +1,265 @@
+{
+  "basis_main": "505cf8842e37628f27787bdd53024428b15b633a",
+  "scope": "document only; hold and meaningful staff-call candidates, exact operation unapproved; existing prevention branch only",
+  "source_hashes": {
+    "game/room13.rpy": "f9c9c519bdd8716388ae4bc21b7f481630587db58c6b0f7306bae37075263ca1",
+    "game/room13_revision.rpy": "a0a57984c6bed21c9a0f349e19ef48b680e740a7fa2ef4ec256ce148679581bd",
+    "game/room13_route_knowledge.rpy": "e88b673ee63df47bb94d7c922c1f6bacff8f62571f2a1a18f199ec3d47a186b8",
+    "game/room13_rules.rpy": "56ebde8ba481d04c4da691ea3687b3df84921c03b18a43e59cc2fbe888af06a3",
+    "game/room13_week2_rules.rpy": "d60777fab257e96f7aae762cc135927baaad409b7088b436b3fda708320de557",
+    "game/systems/room13_first_day_flow.rpy": "17640d55ffd748637cd2f6cf2eea34fe1c226500b1481940561adf55c317cb21"
+  },
+  "existing_activities": {
+    "warning": {
+      "place": "square",
+      "title": "점검함에서 편지를 받아 온다",
+      "lines": [
+        [
+          null,
+          "봉투 안쪽에는 가족끼리 쓰던 매듭이 묶여 있었다."
+        ],
+        [
+          null,
+          "「편지를 보내라고 부탁한 적 없어. 여관에 내가 어디로 가는지 말하지 마. 등불을 고치는 사람을 통해 답해 줘. 혼자 누구를 만나러 가지 말고.」"
+        ],
+        [
+          "dad",
+          "아내 글씨다. 지금 전달된 이유부터 확인해야겠어."
+        ]
+      ],
+      "day": [
+        3,
+        13
+      ],
+      "need": [
+        "warning_location"
+      ],
+      "flags": [],
+      "give": [
+        "E18"
+      ],
+      "cost": 1
+    },
+    "passage_measure": {
+      "place": "passage",
+      "title": "통로의 길이와 출입구를 직접 확인한다",
+      "lines": [
+        [
+          null,
+          "세탁실에서 13호까지 오가며 계단과 걸쇠를 확인했다. 걸어 올라오는 데 약 45초. 주방 이후는 식당에서 보이지 않는다."
+        ],
+        [
+          "dad",
+          "정문을 지킨 사람이 거짓말한 것은 아니군."
+        ]
+      ],
+      "day": [
+        1,
+        13
+      ],
+      "need": [
+        "passage_known"
+      ],
+      "flags": [],
+      "give": [
+        "E05"
+      ],
+      "cost": 1
+    },
+    "w2_spring_proof": {
+      "place": "post",
+      "title": "미리 가족을 떼어 놓으라고 보낸 지시의 원본을 확인한다",
+      "lines": [
+        [
+          "seryeon",
+          "사건이 일어나기 전에 보낸 요청입니다. 그 사실은 장부로 확인할 수 있습니다."
+        ],
+        [
+          null,
+          "할머니가 처음 써 보낸 글과 보낸 날짜를 맞춰 보았다. 아이를 떼어 놓으려던 계획과 실제로 벌어진 일을 나눠서 남겼다."
+        ]
+      ],
+      "day": [
+        8,
+        13
+      ],
+      "need": [
+        "E02"
+      ],
+      "flags": [],
+      "give": [
+        "E16"
+      ],
+      "cost": 1
+    },
+    "w2_plan_proof": {
+      "place": "post",
+      "title": "살아 있는 어르신과 함께, 꾀어내라는 지시를 사람들 앞에서 맞춰 본다",
+      "lines": [
+        [
+          "resident_owlgp",
+          "아이에게 문제가 있었다는 말은 내가 한 적 없소. 이 요청이 먼저 왔소."
+        ],
+        [
+          "resident_seori",
+          "원본의 날짜와 누가 보냈는지 확인했습니다. 아이를 혼자 떼어 놓아 어머니를 불러내려 한 계획은 따로 판단하겠습니다."
+        ]
+      ],
+      "day": [
+        8,
+        13
+      ],
+      "need": [
+        "E16",
+        "E18",
+        "E17",
+        "prevention_witness"
+      ],
+      "flags": [
+        "premeditation_prevented_proven",
+        "witness_protected"
+      ],
+      "give": [],
+      "cost": 1,
+      "case": "prevented"
+    }
+  },
+  "existing_topics": {
+    "lamplighter_warning": {
+      "npc": "resident_lamplighter",
+      "title": "새로 열린 이야기 · 전달되지 않은 봉투",
+      "lines": [
+        [
+          "resident_lamplighter",
+          "그 매듭, 안쪽으로 한 번 더 돌려 묶죠. 가족이 맞군요."
+        ],
+        [
+          "dad",
+          "아내를 만났습니까?"
+        ],
+        [
+          "resident_lamplighter",
+          "편지를 맡았어요. 전달할 사람을 못 찾았다고 해 뒀습니다. 누가 읽을지 몰라서."
+        ],
+        [
+          "dad",
+          "왜 여관에는 맡기지 않았습니까?"
+        ],
+        [
+          "resident_lamplighter",
+          "그래서는 안 되는 편지니까요. 등 밑 점검함을 여세요. 다른 데서 읽고요."
+        ]
+      ],
+      "day": [
+        3,
+        13
+      ],
+      "need": [
+        "topic:lamplighter_warning"
+      ],
+      "flags": [
+        "warning_location"
+      ],
+      "give": []
+    },
+    "w2_contact": {
+      "npc": "resident_lamplighter",
+      "title": "연락을 맡길 수 있습니까",
+      "lines": [
+        [
+          "resident_lamplighter",
+          "어머니와 친해서 숨기는 게 아닙니다. 내가 말하면 그분이 죽어요."
+        ],
+        [
+          "dad",
+          "당신이 말하지 않으면 내가 찾을 방법도 없습니다."
+        ],
+        [
+          "resident_lamplighter",
+          "그리고 누가 뒤를 따라오면요?"
+        ],
+        [
+          "dad",
+          "내가 왔다고만 전해 주세요. 기다리라는 말은 하지 말고."
+        ],
+        [
+          "resident_lamplighter",
+          "왜요?"
+        ],
+        [
+          "dad",
+          "아내도 움직이고 있을 테니까요."
+        ],
+        [
+          "resident_lamplighter",
+          "전에 보낸 경고도 등 점검함에 남아 있어요. 가져가서 새 답장과 함께 읽어 보세요."
+        ]
+      ],
+      "day": [
+        8,
+        13
+      ],
+      "need": [
+        "topic:w2_contact"
+      ],
+      "flags": [
+        "reply_agreed",
+        "warning_location"
+      ],
+      "give": []
+    },
+    "w2_prevented_plan": {
+      "npc": "resident_owlgp",
+      "title": "새로 열린 이야기 · 그날 따로 받으라는 쪽지",
+      "lines": [
+        [
+          "resident_owlgp",
+          "사람들 없는 방에서 아이를 기다리라고 했소. 병이 심해지는 걸 알면서도."
+        ],
+        [
+          "dad",
+          "입구에서 이미 함께 들어온 걸로 적혔는데, 따로 가둘 준비까지 했군요."
+        ],
+        [
+          "resident_owlgp",
+          "내가 베껴 간직한 것이오. 부인에게 받은 말과 사라진 이들을 조사한 내용도 있소."
+        ],
+        [
+          "dad",
+          "이 쪽지와 함께 맞춰 봐도 되겠습니까?"
+        ],
+        [
+          "resident_owlgp",
+          "원본은 내가 가지고 있겠소. 사람들 앞에서 같이 봅시다."
+        ]
+      ],
+      "day": [
+        8,
+        13
+      ],
+      "need": [
+        "topic:w2_prevented_plan"
+      ],
+      "flags": [
+        "prevention_witness"
+      ],
+      "give": [
+        "E17"
+      ],
+      "case": "prevented"
+    }
+  },
+  "existing_disclosure": [
+    {
+      "npc": "resident_owlgp",
+      "items": [
+        "E16",
+        "E18"
+      ],
+      "all_shown": true,
+      "topic": "w2_prevented_plan",
+      "reply": "아이를 따로 맡기라는 쪽지가 내게도 왔소. 내 원본과 보낸 편지 장부를 함께 맞춰 봅시다."
+    }
+  ],
+  "existing_disclosure_source_key": "presentations"
+}
