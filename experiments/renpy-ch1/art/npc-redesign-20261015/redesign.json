@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "basis": "Owner instruction 2026-10-15: apply exactly these four designs to existing NPCs. IDs, names, story relations, dialogue, clues, evidence, unlocks, schedules and time costs are unchanged; only the art changes. Species for librarian and nubi chosen by the owner (AskUserQuestion, 2026-10-15). Second batch (owner, 2026-10-15 14:32 KST): white owl -> resident_seol (drawn as a woman, owner confirmed), hyena -> resident_siluk and tiger -> resident_nero (owner chose the swap), bear -> resident_bori. The brown owl is NOT applied: resident_owlgp waits for an elderly version.",
+  "scale_from_source": 0.5,
+  "alpha_visible": 32,
+  "margin": 4,
+  "designs": [
+    {
+      "design_id": "candidate_fox_town",
+      "npc": "resident_yeoni",
+      "name_ko": "여니",
+      "source": "source/foxtown.png",
+      "sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+      "species_before": "fox",
+      "species_after": "fox",
+      "reason": "Same species and gender (orange fox woman). Work 의복 수선과 물자 교환: the satchel and scarf suit exchange errands and knitting. 은호 사장 (white fox, male) does not match.",
+      "head": [
+        470,
+        12,
+        440,
+        350
+      ],
+      "avatar": [
+        480,
+        12,
+        420,
+        420
+      ]
+    },
+    {
+      "design_id": "candidate_goat_shrine",
+      "npc": "resident_momo",
+      "name_ko": "모모 관장",
+      "source": "source/shrine_goat_records_pixel_v2.png",
+      "sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747",
+      "species_before": "goat",
+      "species_after": "goat",
+      "reason": "Same species and gender (goat woman). Work 박물관 보관과 옛 생활 자료: the record book fits. The shrine role in the handoff is not used; the shrine stays scenery.",
+      "head": [
+        300,
+        29,
+        420,
+        410
+      ],
+      "avatar": [
+        330,
+        70,
+        380,
+        380
+      ]
+    },
+    {
+      "design_id": "candidate_snow_tea",
+      "npc": "resident_librarian",
+      "name_ko": "사서 선생님",
+      "source": "source/snow_leopard_tea_hostess.png",
+      "sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+      "species_before": "cat",
+      "species_after": "snow leopard",
+      "reason": "Owner's choice. Adult woman with silver-grey fur like the previous design. The tea cup is a prop only; no tea house or square tea service is added.",
+      "head": [
+        290,
+        63,
+        360,
+        315
+      ],
+      "avatar": [
+        290,
+        50,
+        360,
+        360
+      ]
+    },
+    {
+      "design_id": "candidate_sheep_linen",
+      "npc": "resident_nubi",
+      "name_ko": "누비 아주머니",
+      "source": "source/sheep_helper_calm_standing_pixel_v2.png",
+      "sha256": "cc52d33c36d70a1fa6364cf429990713c7a1851e037db706806503acd6a8e58f",
+      "species_before": "duck",
+      "species_after": "sheep",
+      "reason": "Owner's choice. Work 세탁 협업과 임시 숙박 연결 is the closest to the linen role; the apron fits. Her duties are not changed.",
+      "head": [
+        310,
+        146,
+        370,
+        265
+      ],
+      "avatar": [
+        320,
+        140,
+        340,
+        340
+      ]
+    },
+    {
+      "design_id": "five_town_owl_white_v2",
+      "npc": "resident_seol",
+      "name_ko": "설이",
+      "source": "source/owl_white_winter_pixel_v2.png",
+      "sha256": "8f3504cd7b177551f606e9bfa48df49cd3b5a0453a6eb9682384dc4d72ff1dbb",
+      "species_before": "crane",
+      "species_after": "owl",
+      "reason": "Bird to bird; the white and midnight-blue palette matches the previous design; bell tower and night guidance suit an owl. Owner confirmed the female look. The book is a prop only.",
+      "head": [
+        330,
+        25,
+        350,
+        290
+      ],
+      "avatar": [
+        330,
+        30,
+        340,
+        340
+      ]
+    },
+    {
+      "design_id": "five_town_hyena_v2",
+      "npc": "resident_siluk",
+      "name_ko": "실룩",
+      "source": "source/hyena_town_v2.png",
+      "sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+      "species_before": "weasel",
+      "species_after": "hyena",
+      "reason": "Owner's choice (swap). Adult man (실룩 아저씨) who hauls goods; the patched work clothes and the crooked smile fit.",
+      "head": [
+        390,
+        65,
+        370,
+        275
+      ],
+      "avatar": [
+        410,
+        50,
+        340,
+        340
+      ]
+    },
+    {
+      "design_id": "five_town_tiger_worker",
+      "npc": "resident_nero",
+      "name_ko": "네로",
+      "source": "source/tiger-worker.png",
+      "sha256": "94e6964539f8166760aa39bc5fcf4b1cc671056041012c697fe1b8cbca753482",
+      "species_before": "lynx",
+      "species_after": "tiger",
+      "reason": "Owner's choice (swap). Feline to feline; outskirts labourer; cap, vest and work gloves fit the work.",
+      "head": [
+        370,
+        60,
+        360,
+        345
+      ],
+      "avatar": [
+        380,
+        60,
+        340,
+        340
+      ]
+    },
+    {
+      "design_id": "five_town_bear",
+      "npc": "resident_bori",
+      "name_ko": "보리",
+      "source": "source/bear-resident.png",
+      "sha256": "5fa75cdb24b92e0572b5b6ad0de583aed7995abff7e5c3322929d6d9958d8b84",
+      "species_before": "bear",
+      "species_after": "bear",
+      "reason": "Same species; firewood hauling and caring for his family; adult speech in the current dialogue.",
+      "head": [
+        400,
+        40,
+        400,
+        300
+      ],
+      "avatar": [
+        420,
+        40,
+        360,
+        360
+      ]
+    }
+  ]
+}

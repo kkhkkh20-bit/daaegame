@@ -35,7 +35,7 @@ init 111:
         xsize 104
         ysize 56
         padding (8,0)
-        hover_background R13CompactTouchSurface("#2c524c")
+        hover_background R13StoneTouchSurface(focused=True)
     style r13_footer_button_text:
         font r13_ui_font()
         size 22
@@ -43,8 +43,8 @@ init 111:
     style r13_toolbar_button:
         ysize 64
         padding (10,0)
-        background R13CompactTouchSurface("#102b35ed")
-        hover_background R13CompactTouchSurface("#29434ed9")
-        insensitive_background R13CompactTouchSurface("#1c303bea")
+        background R13StoneTouchSurface()
+        hover_background R13StoneTouchSurface(focused=True)
+        insensitive_background R13StoneTouchSurface(disabled=True)
     style r13_toolbar_button_text:
         yalign .75

@@ -240,7 +240,7 @@ screen r13_records():
     fixed:
         xsize 1280 ysize 720
         at Transform(zoom=(.96 if persistent.room13_large_text else .90),xalign=.5,yalign=.5)
-        add Solid("#eee7d6")
+        add r13_frame("aged-paper")
         text "기록" style "r13_title_text" xpos 32 ypos 29
         text "찾은 것과 들은 말" style "r13_secondary_text" xpos 152 ypos 37 size r13_read_size(20,25)
         hbox:
@@ -303,9 +303,9 @@ screen r13_records():
                                 vbox:
                                     xsize 208 spacing 6
                                     text row["who"] style "r13_key_text"
-                                    text row["kind"] style "r13_secondary_text" color ("#46708a" if row["kind"]=="독백" else "#536158")
+                                    text row["kind"] style "r13_secondary_text" color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("metadata","paper"))
                                     text row["stamp"] style "r13_secondary_text" size 17 xsize 208
-                                text row["what"] size r13_read_size(23,29) color ("#315d75" if row["kind"]=="독백" else "#342a23") xsize 900
+                                text row["what"] size r13_read_size(23,29) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize 900
                     if not history_rows:
                         text "이 저장에 남아 있는 대화가 없습니다. 앞으로 지나가는 대화가 이곳에 기록됩니다." style "r13_secondary_text" xsize 1100
         textbutton "닫기" style "r13_compact_button" xpos 32 ypos 644 xsize 220 ysize 64 text_size r13_read_size(22,27) action Hide("r13_records")

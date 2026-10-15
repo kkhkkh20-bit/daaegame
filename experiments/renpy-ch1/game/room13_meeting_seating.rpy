@@ -33,7 +33,7 @@ screen r13_meeting_seating(claim,session,speaker,ready):
     fixed:
         xsize 824 ysize 240
         add R13MeetingTable()
-        text ("▸ "+R13_NAMES.get(speaker,speaker)+"의 발언") xalign .5 ypos 103 size r13_read_size(21,24) color "#ffe3a0" bold True
+        text ("▸ "+R13_NAMES.get(speaker,speaker)+"의 발언") xalign .5 ypos 103 size r13_read_size(21,24) color "#ffe3a0"
         text "자리 색은 참석자 반응 · 결정은 확인한 근거로" xalign .5 ypos 130 size r13_read_size(14,16) color "#d4dfd8"
         $ seats=r13_debate_seats(session)
         for index,(who,stance) in enumerate(seats):

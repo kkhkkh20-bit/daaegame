@@ -1,4 +1,4 @@
-"""0.18.23 dot effects: data file, frames and the two hook lines stay consistent."""
+"""0.18.28 dot effects: data file, frames and the two hook lines stay consistent."""
 import json
 import unittest
 from pathlib import Path
