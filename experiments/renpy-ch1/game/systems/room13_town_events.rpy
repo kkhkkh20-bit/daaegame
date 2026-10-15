@@ -282,9 +282,9 @@ label r13_ev_c_offer:
     $ r13_speaker("resident_madam","neutral")
     if r13_has("madam_trust"):
         call r13_lines([("resident_madam","낮에 도와준 일은 고마웠어요. 믿을 만한 일손이 필요해서 그러는데요."),
-            ("resident_madam","오늘 밤 창고 재고 좀 세어 줘요. 일한 값으로 열다섯 냥 드리지.")],"ev:c:offer:trust")
+            ("resident_madam","오늘 밤 창고 재고 좀 세어 줘요. 늦게 끝나도 일한 값으로 열다섯 냥 드리지.")],"ev:c:offer:trust:v2")
     else:
-        call r13_lines([("resident_madam","탐정 양반, 요즘 한가해 보이네요. 오늘 밤 창고 재고 좀 세어 줘요. 열다섯 냥."),
+        call r13_lines([("resident_madam","탐정 양반, 요즘 한가해 보이네요. 오늘 밤 창고 재고 좀 세어 줘요. 늦게 끝나도 품삯은 열다섯 냥 드릴게요."),
             ("dad","(보통 일당의 두 배다. 밤일이라 해도 이상할 만큼 후하다.)",{"thought":True})],"ev:c:offer")
     $ r13_flag("ev_c_done")
     menu:

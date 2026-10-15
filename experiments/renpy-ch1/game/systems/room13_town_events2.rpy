@@ -161,7 +161,9 @@ label r13_ev_q_nubi:
     call r13_ev_here("calm")
     call r13_lines([(None,"누비 아주머니가 빨래 바구니를 내려놓고 내 소매를 잡았다."),
         ("resident_nubi","여관비가 하루 열 냥이죠? 우리 집 별채는 하루 여섯 냥이에요. 따뜻하고, 밥도 줘요."),
-        ("dad","(사흘만 묵어도 열두 냥이 남는다. 솔깃하다.)",{"thought":True})],"ev:q:offer")
+        ("dad","(사흘만 묵어도 열두 냥이 남는다. 솔깃하다.)",{"thought":True}),
+        ("resident_nubi","별채 열쇠는 제가 갖고 있을게요. 밤에 문단속은 제가 해 드려요."),
+        (None,"누비 아주머니는 말하면서 자꾸 초소 쪽을 돌아보았다.")],"ev:q:offer:v2")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False

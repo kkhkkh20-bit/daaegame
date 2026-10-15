@@ -309,7 +309,8 @@ label r13_ep3_bell:
     call r13_lines([(None,"광장의 등이 한꺼번에 깜빡였다. 돌 표면을 타고 흐르던 빛이 숨을 고르듯 가늘어졌다."),
         (None,"종탑 아래에서 설이가 종 줄을 붙잡고 서 있었다. 너울이 그 손목을 잡고 있었다."),
         ("neoul","치지 마시오. 지금 종을 치면 다들 뛰쳐나와 난리가 날 거요."),
-        ("resident_seol","종은 이럴 때 치라고 있는 거예요!")],"ep3:bell")
+        ("resident_seol","종은 이럴 때 치라고 있는 거예요!"),
+        ("neoul","외지 사람이 종을 마음대로 치면 초소에서 경위를 설명해야 하오. 밤새 걸릴 거요.")],"ep3:bell:v2")
     menu:
         "설이에게 종을 치라고 한다":
             call r13_lines([(None,"종소리가 마을을 갈랐다. 사람들이 문을 열고 나왔다. 그리고 아이들을 학교 쪽으로 데려갔다."),
@@ -332,11 +333,12 @@ label r13_ep3_bell:
                 ("neoul","……이번 한 번만이오.")],"ep3:lamps")
             $ r13_grant(["W5"],"등불지기와 끈 광장 등")
             $ r13_flag("lamps_saved","lamplighter_trust")
-        "내가 직접 종을 친다":
+        "내가 직접 종을 친다 · 늦은 저녁까지":
             call r13_lines([(None,"줄을 당기자 묵직한 종소리가 울렸다. 너울이 내 팔을 붙잡았다."),
                 ("neoul","외지 사람이 감히 마을 종을 치다니. 오늘 밤은 초소에서 보내시오."),
                 (None,"그날 밤은 초소의 차가운 의자에서 보냈다. 그래도 종소리를 들은 사람들은 학교로 피했다.")],"ep3:self_ring")
             $ r13_flag("village_alerted","rumor:troublemaker","neoul_annoyed")
+            $ r13_edit(period=3,location="gate")
     return
 
 label r13_ep3_hearing:

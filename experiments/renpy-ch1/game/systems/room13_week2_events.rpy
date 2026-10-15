@@ -62,7 +62,8 @@ label r13_w2e_bell:
     call r13_ev_here("search")
     call r13_lines([(None,"광장 종탑 아래에서 설이가 종 줄을 붙잡고 서 있었다. 너울이 그 앞을 막았다."),
         ("neoul","종을 치면 사람들이 한꺼번에 몰려나오오. 그러면 길에서 넘어지고, 다툼이 나오."),
-        ("resident_seol","그럼 불 꺼진 집 사람들은 어떻게 알아요? 오늘 밤에 또 두 집이 꺼져요!")],"w2e:bell:open")
+        ("resident_seol","그럼 불 꺼진 집 사람들은 어떻게 알아요? 오늘 밤에 또 두 집이 꺼져요!"),
+        ("neoul","종을 마음대로 치면 초소에서 경위를 설명해야 하오.")],"w2e:bell:open:v2")
     menu:
         "설이에게 종을 치라고 한다" if r13_has("village_alerted") or r13_has("lamplighter_trust"):
             call r13_lines([("resident_seol","지난번에도 아저씨가 그러라고 했죠. 그럼 칠게요."),
@@ -73,7 +74,7 @@ label r13_w2e_bell:
             call r13_lines([("resident_ppul","내가 치겠소. 촌장이 친 종이면 다툼은 덜 나겠지."),
                 (None,"촌장이 친 종소리에 사람들이 줄을 맞춰 학교 쪽으로 걸었다.")],"w2e:bell:ppul")
             $ r13_flag("w2_bell_rung","villagers_gathered","ppul_ally")
-        "내가 직접 종을 친다":
+        "내가 직접 종을 친다 · 늦은 저녁까지":
             call r13_lines([(None,"종 줄을 당기자 무거운 종소리가 울렸다. 곧바로 너울이 내 팔을 붙잡았다."),
                 ("neoul","또 당신이오? 소란을 피운 값으로 오늘은 초소에서 지내시오."),
                 (None,"초소 창 너머로 사람들이 학교로 걸어가는 게 보였다. 나는 날이 저물 때까지 초소에서 나가지 못했다.")],"w2e:bell:self")
