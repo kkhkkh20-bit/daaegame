@@ -185,8 +185,7 @@ init 57 python:
     class R13Blink(renpy.Displayable):
         """대화 전신 그림 위에 눈꺼풀 조각을 잠깐 얹는다.
 
-        깜빡이는 때는 보여진 시간(st)으로만 정한다. 처음 1.6초는 깜빡이지 않아
-        등장 직후 화면과 테스트 캡처가 원본과 같다.
+        깜빡이는 때는 보여진 시간(st)으로만 정한다. 등장 0.7초 동안은 깜빡이지 않는다.
         """
         def __init__(self, base, person, emotion, spec, **kwargs):
             super(R13Blink, self).__init__(**kwargs)
@@ -205,10 +204,14 @@ init 57 python:
         def gap(self, n):
             # n번째 깜빡임 앞의 쉬는 시간(사람·표정마다 다르지만 늘 같은 순서).
             value = ((self.seed * 1103515245 + n * 12345) >> 4) % 1000 / 1000.0
+            if n == 0:
+                # 첫 깜빡임은 빨리(0.7초 대기 뒤 0.6~1.6초): 짧은 대사에서도 한 번은 보인다.
+                return .6 + 1.0 * value
             return self.interval[0] + (self.interval[1] - self.interval[0]) * value
 
         def phase(self, st):
-            start = 1.6
+            # 표정이 자주 바뀌어도 보이도록 등장 0.7초 뒤부터 깜빡일 수 있다(0.18.41).
+            start = 0.7
             n = 0
             while True:
                 start += self.gap(n)
@@ -282,8 +285,9 @@ init 57 python:
 
     class R13FxOnce(renpy.Displayable):
         """시트를 한 번만 재생하고 사라진다(증거 반짝임)."""
-        def __init__(self, sheet, frames, fps, size, **kwargs):
+        def __init__(self, sheet, frames, fps, size, delay=0.0, **kwargs):
             super(R13FxOnce, self).__init__(**kwargs)
+            self.delay = float(delay)
             w, h = size
             self.size = (int(w), int(h))
             self.frames = [Crop((i * w, 0, w, h), sheet) for i in range(int(frames))]
@@ -294,17 +298,20 @@ init 57 python:
 
         def render(self, width, height, st, at):
             out = renpy.Render(*self.size)
-            index = int(st * self.fps)
+            if st < self.delay:
+                renpy.redraw(self, self.delay - st)
+                return out
+            index = int((st - self.delay) * self.fps)
             if r13_fx_active() and index < len(self.frames):
                 out.blit(renpy.render(self.frames[index], self.size[0], self.size[1], st, at), (0, 0))
                 renpy.redraw(self, 1.0 / self.fps)
             return out
 
-    def r13_evidence_sparkle():
+    def r13_evidence_sparkle(delay=0.0):
         spec = R13_DOT_FX.get("evidence_sparkle")
         if not spec:
             return Null()
-        return R13FxOnce(spec["sheet"], spec["frames"], spec["fps"], spec["size"])
+        return R13FxOnce(spec["sheet"], spec["frames"], spec["fps"], spec["size"], delay=delay)
 
     class R13FxImpact(renpy.Displayable):
         """제시·반박 순간의 도트 집중선 3프레임(4px 칸, 화면 가장자리에서 안쪽으로)."""
@@ -412,7 +419,7 @@ init 57 python:
     # 0.18.37: 대화가 많은 인물로 넓혔다. 몸집이 큰 인물(부엉이 할아버지, 경비)은 움직임이 과해 보여 넣지 않았다.
     R13_REACT_PEOPLE = ("daram", "buri", "nabi", "bami", "mom", "karo", "granny", "doto", "neoul", "seryeon", "resident_seori")
     # 감정: 앞 표정을 유지하는 시간(초)
-    R13_REACT_LEAD = {"surprise": .10, "angry": .07, "joy": 0.0, "anxious": 0.0, "flustered": 0.0}
+    R13_REACT_LEAD = {"surprise": .10, "angry": .07, "joy": 0.0, "anxious": 0.0, "flustered": 0.0, "thinking": 0.0}
     R13_REACT_LAST = {}          # person -> (emotion, art). 저장하지 않는 화면 기억.
 
     class R13Anticipate(renpy.Displayable):
@@ -436,6 +443,9 @@ init 57 python:
         if who not in R13_REACT_PEOPLE or not r13_fx_active():
             return None
         emotion = r13_fullbody_emotion(actor_pose) if r13_fullbody_spec(who, actor_pose) else None
+        # 생각하는 표정은 그림이 neutral과 같아 따로 고개를 갸웃한다(0.18.41).
+        if r13_fullbody_key(actor_pose) == "thinking" and not arriving:
+            return "thinking"
         last = R13_REACT_LAST.get(who)
         if emotion not in R13_REACT_LEAD:
             return None
@@ -460,7 +470,8 @@ init 57 python:
             lead = 0.0
         # 0.18.39 (owner): the synthesized 8-bit reaction sounds were removed; motion only.
         motion = {"surprise": r13_react_surprise, "joy": r13_react_joy, "angry": r13_react_angry,
-                  "anxious": r13_react_anxious, "flustered": r13_react_flustered}[kind]
+                  "anxious": r13_react_anxious, "flustered": r13_react_flustered,
+                  "thinking": r13_react_thinking}[kind]
         return what, list(at_list) + [motion(lead)]
 
 # 3px 배수. 앞 표정(lead) 동안 움찔/웅크림 → 새 표정과 함께 움직임 → 제자리.
@@ -521,6 +532,18 @@ transform r13_react_anxious(lead=0.0):
     yoffset 3
     pause .08
     yoffset 0
+
+# 생각: 한쪽으로 3px씩 기울어 잠시 머문 뒤 제자리(멈춘 채 대화).
+transform r13_react_thinking(lead=0.0):
+    xoffset 0 yoffset 0
+    pause .05
+    xoffset 3
+    pause .08
+    xoffset 6 yoffset 3
+    pause .9
+    xoffset 3
+    pause .08
+    xoffset 0 yoffset 0
 
 transform r13_react_flustered(lead=0.0):
     xoffset 0

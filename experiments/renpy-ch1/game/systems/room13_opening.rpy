@@ -1,17 +1,22 @@
-# 오프닝 컷씬 (0.18.39). 새 게임에서 마차 대화 앞에 한 번 나온다(약 14초).
+# 오프닝 컷씬 (0.18.39, 0.18.41 다시 디자인). 새 게임에서 마차 대화 앞에 한 번 나온다(약 17초).
 #
-#   1) 검은 화면에 눈, 아빠의 짧은 독백 두 줄
-#   2) 마을 입구 오후 풍경을 옆으로 훑고, 제목 로고
-#   3) 빈 마차 안(아빠 시점): 덜컹거림, 창밖으로 눈이 스쳐 지나감 → 기존 마차 대화의 "덜컹."으로 이어짐
+#   1) 편지: 어둠 속에 초대 편지가 툭 떨어져 반짝이고, 아빠의 독백 두 줄
+#   2) 지도: 위아래 검은 띠가 들어오고, 마을 지도를 위에서 아래로 내려다보며 마을 밖에서 입구까지
+#      도트 점선이 이어진 뒤 '마을 입구' 핀이 꽂힌다
+#   3) 제목: 마을 입구 오후 풍경을 옆으로 훑고, 제목 로고
+#   4) 빈 마차 안(아빠 시점): 덜컹거림, 창밖으로 눈이 스쳐 지나감, 띠가 걷히며 기존 마차 대화의 "덜컹."으로 이어짐
 #
 # 화면 연출만 한다. 시간·증거·관계·일정·대사는 바꾸지 않는다. 아빠는 그리지 않는다.
 # 클릭하면 다음 컷으로, '건너뛰기'는 컷씬만 건너뛰고 마차 대화로 간다.
 # 설정의 '움직임'이 꺼져 있으면 카메라 이동·흔들림·눈 없이 같은 컷을 정지 화면으로 보여 준다.
 # 화면 테스트(renpy test)와 건너뛰기 중에는 나오지 않는다(기존 테스트가 마차 대화부터 시작한다).
-# 그림은 기존 원화만 쓴다: 입구 파노라마(오후), 빈 마차 안, 제목 로고. 창 영역은 room13-dot-fx.json.
+# 그림은 기존 원화만 쓴다: 편지 아이콘(E01), 마을 지도 v5, 입구 파노라마(오후), 빈 마차 안, 제목 로고.
+# 창 영역은 room13-dot-fx.json. 지도는 원본 1:1 픽셀로 움직인다(확대·축소 없음).
 
 init 58 python:
-    R13_OPENING_SHOTS = (4.2, 5.6, 4.2)
+    R13_OPENING_SHOTS = (4.2, 5.0, 4.4, 3.6)
+    # 지도 v5 원본(1672x941) 좌표: 마을 밖 오른쪽 아래에서 다리 옆 입구까지.
+    R13_OPENING_ROUTE = ((1676, 852), (1540, 842), (1400, 832), (1260, 820), (1120, 806), (974, 790))
     R13_OPENING_LINES = ("여관에서 온 편지 한 통.", "아내가 머물던 산마을로 간다.")
 
     def r13_opening_wanted():
@@ -69,6 +74,39 @@ init 58 python:
     def r13_opening_carriage():
         return Transform("assets/room13-pixel-carriage-empty-winter.webp", size=(1280, 720), nearest=True)
 
+    class R13FxRoute(renpy.Displayable):
+        """점선 경로가 t0초부터 dur초 동안 한 점씩 이어진다(4px 금색 점, 12px 간격, 어두운 테두리)."""
+        def __init__(self, points, t0, dur, size, **kwargs):
+            super(R13FxRoute, self).__init__(**kwargs)
+            self.size = size
+            self.t0, self.dur = float(t0), float(dur)
+            dots = []
+            for (x0, y0), (x1, y1) in zip(points, points[1:]):
+                length = ((x1 - x0) ** 2 + (y1 - y0) ** 2) ** .5
+                n = max(1, int(length // 12))
+                for i in range(n):
+                    u = i / float(n)
+                    dots.append((int(x0 + (x1 - x0) * u) // 4 * 4, int(y0 + (y1 - y0) * u) // 4 * 4))
+            self.dots = dots
+
+        def render(self, width, height, st, at):
+            out = renpy.Render(*self.size)
+            moving = bool(persistent.room13_motion)
+            shown = len(self.dots) if not moving else int(len(self.dots) * min(1.0, max(0.0, (st - self.t0) / self.dur)))
+            canvas = out.canvas() if shown else None
+            for x, y in self.dots[:shown]:
+                canvas.rect((34, 22, 14, 230), (x - 4, y - 4, 12, 12))
+                canvas.rect((255, 214, 96, 255), (x, y, 4, 4))
+            if moving and shown < len(self.dots):
+                renpy.redraw(self, .03)
+            return out
+
+    def r13_opening_letter():
+        return Transform(r13_record_icon("E01"), size=(224, 224), fit="contain", nearest=True)
+
+    def r13_opening_map():
+        return "assets/room13-worldmap-v5.webp"
+
     def r13_opening_bump():
         if not renpy.is_skipping():
             renpy.sound.play("assets/sfx-creak.wav", channel="sound")
@@ -115,6 +153,75 @@ transform r13_op_rattle:
 transform r13_op_still:
     yoffset 0
 
+# 편지: 위에서 떨어져 3px 단위로 통통.
+transform r13_op_letter_drop:
+    subpixel False
+    alpha 0.0 yoffset -48
+    pause .2
+    alpha 1.0
+    yoffset -36
+    pause .05
+    yoffset -24
+    pause .05
+    yoffset -12
+    pause .05
+    yoffset 0
+    pause .07
+    yoffset -9
+    pause .07
+    yoffset 0
+    pause .06
+    yoffset -3
+    pause .06
+    yoffset 0
+
+transform r13_op_letter_still:
+    alpha 1.0 yoffset 0
+
+transform r13_op_delay(t=1.0):
+    alpha 0.0
+    pause t
+    alpha 1.0
+
+# 지도: 산 쪽에서 마을 입구 쪽으로 내려다본다(원본 1:1 픽셀, 정수 이동).
+transform r13_op_map_tilt:
+    subpixel False
+    xpos -300 ypos 0
+    pause .2
+    ease 3.0 xpos -334 ypos -221
+
+transform r13_op_map_still:
+    xpos -334 ypos -221
+
+# 입구 핀: 점선이 다 이어진 뒤 위에서 꽂힌다.
+transform r13_op_pin(t=3.4):
+    subpixel False
+    alpha 0.0 yoffset -24
+    pause t
+    alpha 1.0
+    yoffset -12
+    pause .05
+    yoffset 0
+    pause .06
+    yoffset -6
+    pause .06
+    yoffset 0
+
+# 위아래 검은 띠.
+transform r13_op_bar_top:
+    on show:
+        ypos -60
+        easeout .4 ypos 0
+    on hide:
+        easein .35 ypos -60
+
+transform r13_op_bar_bottom:
+    on show:
+        ypos 720
+        easeout .4 ypos 660
+    on hide:
+        easein .35 ypos 720
+
 transform r13_op_logo:
     alpha 0.0 yoffset 6
     pause 1.4
@@ -134,10 +241,14 @@ screen r13_opening_cut():
     add Solid("#05070b")
 
     showif shot == 0:
-        fixed at r13_op_fade(.8, .5):
+        fixed at r13_op_fade(.6, .45):
             add r13_opening_snow()
+            text ROOM13["evidence"]["E01"]["name"]:
+                font r13_ui_font() size 20 color "#c9a560" xalign .5 ypos 112 at r13_op_delay(.9)
+            add r13_opening_letter() xalign .5 ypos 150 at (r13_op_letter_drop if moving else r13_op_letter_still)
+            add Transform(r13_evidence_sparkle(.75), zoom=2.0, nearest=True) xpos 512 ypos 134
             vbox:
-                xalign .5 yalign .46 spacing 22
+                xalign .5 ypos 430 spacing 20
                 text R13_OPENING_LINES[0]:
                     font r13_ui_font() size 30 color "#e9e2d0" xalign .5 slow_cps 14
                 if line2:
@@ -146,33 +257,52 @@ screen r13_opening_cut():
                 else:
                     null height 36
     showif shot == 1:
-        fixed at r13_op_fade(.7, .6):
+        fixed at r13_op_fade(.6, .5):
+            fixed at (r13_op_map_tilt if moving else r13_op_map_still):
+                xysize (1672, 941)
+                add r13_opening_map()
+                add R13FxRoute(R13_OPENING_ROUTE, 1.2, 2.0, (1672, 941))
+                add Transform(R13FxPin(), zoom=2.0, nearest=True) xpos (R13_OPENING_ROUTE[-1][0]-24) ypos (R13_OPENING_ROUTE[-1][1]-72) at r13_op_pin(3.3 if moving else 0.0)
+                frame:
+                    xpos (R13_OPENING_ROUTE[-1][0]+30) ypos (R13_OPENING_ROUTE[-1][1]-66)
+                    padding (12,6) background Solid("#152e30e8")
+                    at r13_op_delay(3.5 if moving else 0.0)
+                    text R13_MAP_LABELS["gate"] font r13_ui_font() size 26 color "#fff3d5"
+            add r13_opening_snow()
+    showif shot == 2:
+        fixed at r13_op_fade(.6, .6):
             add r13_opening_gate() at (r13_op_pan if moving else r13_op_pan_still)
             add r13_opening_snow()
-            # 로고 뒤 어둠: 4px 줄마다 옅어지는 계단식 그림자(도트 느낌, 경계선 없음).
+            # 로고 뒤 어둠: 16px 줄마다 옅어지는 계단식 그림자(도트 느낌, 경계선 없음).
             for i in range(16):
                 add Solid("#05070b%02x" % int(200*(1.0-i/16.0))) ypos (i*16) ysize 16
-            add Transform("assets/room13-title-logo.webp", size=(400,160), nearest=True) xalign .5 ypos 34 at r13_op_logo
+            add Transform("assets/room13-title-logo.webp", size=(400,160), nearest=True) xalign .5 ypos 64 at r13_op_logo
             text "눈에 갇힌 마을":
-                font r13_ui_font() size 24 color "#f4ead2" xalign .5 ypos 196 at r13_op_sub
+                font r13_ui_font() size 24 color "#f4ead2" xalign .5 ypos 226 at r13_op_sub
                 outlines [(2, "#1a1410", 0, 0)]
-    showif shot == 2:
+    showif shot == 3:
         fixed at r13_op_fade(.5, .25):
             fixed at (r13_op_rattle if moving else r13_op_still):
                 add r13_opening_carriage()
                 add r13_opening_window_snow()
+    # 영화처럼 위아래 검은 띠(지도·제목 컷). 마차 컷에서 걷히며 대화로 이어진다.
+    showif shot in (1, 2):
+        add Solid("#05070b") xsize 1280 ysize 60 at r13_op_bar_top
+        add Solid("#05070b") xsize 1280 ysize 60 at r13_op_bar_bottom
 
     if shot == 0:
         timer 1.9 action SetScreenVariable("line2", True)
         timer R13_OPENING_SHOTS[0] action SetScreenVariable("shot", 1)
     elif shot == 1:
         timer R13_OPENING_SHOTS[1] action SetScreenVariable("shot", 2)
+    elif shot == 2:
+        timer R13_OPENING_SHOTS[2] action SetScreenVariable("shot", 3)
     else:
-        timer (R13_OPENING_SHOTS[2] - .5) action Function(r13_opening_bump)
-        timer R13_OPENING_SHOTS[2] action Return(True)
+        timer (R13_OPENING_SHOTS[3] - .5) action Function(r13_opening_bump)
+        timer R13_OPENING_SHOTS[3] action Return(True)
 
     # 클릭(또는 확인 키)은 다음 컷으로. 마지막 컷에서는 마차 대화로.
-    key "dismiss" action (SetScreenVariable("shot", shot + 1) if shot < 2 else Return(True))
+    key "dismiss" action (SetScreenVariable("shot", shot + 1) if shot < 3 else Return(True))
     textbutton "건너뛰기 ›":
         style "r13_action_button"
         xpos 988 ypos 24 xsize 184 ysize 54

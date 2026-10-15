@@ -62,10 +62,12 @@ screen main_menu():
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
     add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=True)
-    add R13TitleSnow()
-    add Transform("assets/room13-title-logo.webp",size=(440,178),nearest=True) xalign .5 ypos 132
+    # Dot snow and lamp flicker; first-launch logo drop (systems/room13_title_fx.rpy, 0.18.41).
+    add r13_title_fx()
+    add Transform("assets/room13-title-logo.webp",size=(440,178),nearest=True) xalign .5 ypos 132 at r13_title_logo_in
     vbox:
         xalign .5 ypos 348 spacing 8
+        at r13_title_menu_in
         textbutton "이어하기":
             style "r13_title_button" selected title_focus=="continue"
             sensitive title_continue is not None default_focus title_continue is not None
