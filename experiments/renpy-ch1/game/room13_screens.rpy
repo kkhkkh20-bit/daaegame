@@ -53,8 +53,8 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
             use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=112)
         if present_action is not None:
             fixed:
-                xpos 260 ypos 628 xsize 220 ysize 64
-                use r13_antique_button("보여주기","present",present_action,enabled=ready,width=220)
+                xpos (R13_EVIDENCE_CARD_CENTER[0]-86) ypos R13_EVIDENCE_CARD_CENTER[1] xsize 172 ysize 64
+                use r13_antique_button("보여주기","present",present_action,enabled=ready,width=172)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
@@ -77,12 +77,12 @@ screen r13_options_control(ready=True):
         area (1190,20,64,64) padding (0,0)
         background R13InkPanel(alpha="b8") hover_background R13InkPanel(focused=True)
         insensitive_background R13InkPanel(disabled=True)
-        action ShowMenu("pause_menu") sensitive ready
-        tooltip "옵션" alt "옵션"
+        action Show("r13_more_tools") sensitive ready
+        tooltip "메뉴" alt "메뉴"
         fixed:
             xsize 64 ysize 64
             add R13AntiqueIcon("settings",size=34) xpos 15 ypos 6
-            text "옵션" size 14 color "#e6ece2" xalign .5 ypos 45
+            text "메뉴" size 14 color "#e6ece2" xalign .5 ypos 45
 
 screen r13_hub(entry=False):
     style_prefix "r13"
@@ -111,8 +111,9 @@ screen r13_hub(entry=False):
             xpos 1250 xanchor 1.0 ypos 158 spacing 8
             for destination,title in r13_local_connections():
               if destination not in r13_inn_v4_handled(room13["location"]):
-                textbutton (title+" ›"):
+                textbutton ("› "+title):
                     style "r13_action_button" padding (16,10) ysize 64
+                    background R13PaperFrame() hover_background R13PaperPanel(focused=True) text_color "#65503b" text_hover_color "#493b30"
                     text_size 21 action Return(("travel",destination)) sensitive ready
     if not entry:
         use r13_inn_v4_screen_chips(ready)
@@ -190,7 +191,7 @@ screen r13_world_contents(entry=False,ready=False):
             add leader xpos leader.left ypos leader.top
         textbutton R13_NAMES[nameplate["person"]]:
             area nameplate["rect"]
-            padding (12,7) background R13ActionPanel() text_size 18 text_color "#fff2cf"
+            padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
             action Return(("person",nameplate["person"])) sensitive ready
 
 screen r13_resident_stage(entry=False,ready=False):
@@ -225,15 +226,9 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 text context[1]:
                     xpos list_left ypos 66 xsize list_width text_align .5
                     size r13_read_size(20,24) color "#e5ece6" line_spacing 3
-        # 0.18.39 (owner): the list sits where the dialogue window is. Its bottom is the window's
-        # bottom edge (632) and it grows upward, so the face stays visible and choices and lines
-        # are read at the same height.
-        $ list_bottom=632
-        # One line per question (owner, 0.18.39): text height plus a small margin, not two lines.
-        $ row_h=(58 if persistent.room13_large_text else 48)
-        # Measured (0.18.41), so a caption that wraps to two lines still fits without scrolling.
-        $ list_h=r13_reference_list_height(entries,list_width-23,12,452,row_h,r13_read_size(24,30))+4
-        $ list_top=max(204 if title!="선택" else 150,list_bottom-list_h)
+        # Questions sit around the centre, clear of dialogue advancement and bottom tools.
+        $ row_h=(64 if persistent.room13_large_text else 56)
+        $ list_top,list_bottom=r13_question_bounds(entries,list_width)
         if caption:
             text caption:
                 xpos list_left ypos list_top-44 xsize list_width text_align .5
@@ -251,8 +246,8 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                     button:
                         xsize list_width-23 yminimum row_h padding (18,9)
                         background R13InkPanel() hover_background R13InkPanel(focused=True)
-                        action action sensitive ready
-                        text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read)):
+                        action r13_safe_question_action(action) sensitive ready
+                        text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
                             xsize list_width-59 text_align .5 xalign .5
                             size r13_read_size(24,30) font r13_ui_font()
                             color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
@@ -262,8 +257,8 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                         xsize list_width-40 text_align .5 size r13_read_size(24,30) color "#eee5d5"
         if ready:
             for index,(title,action,was_read) in enumerate(entries[:9]):
-                key ("K_%d"%(index+1)) action action
-                key ("K_KP%d"%(index+1)) action action
+                key ("K_%d"%(index+1)) action r13_safe_question_action(action)
+                key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
         if return_action is not None:
             # 0.18.42 (owner): not centred under the list, where it read as another choice.
             # Bottom-left corner, on the same row as the tools at the bottom right.
@@ -317,7 +312,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                         # Left padding clears the gold number tab drawn by R13ReferenceChoice.
                         xsize compact_width-23 yminimum 56 padding (72,8,20,8)
                         background R13ReferenceChoice(False,index+1 if index<9 else None) hover_background R13ReferenceChoice(True,index+1 if index<9 else None)
-                        action action sensitive ready
+                        action r13_safe_question_action(action) sensitive ready
                         text r13_question_caption(title,was_read,False):
                             xsize compact_width-115 text_align .5 xalign .5 yalign .5
                             size choice_size font r13_ui_font()
@@ -329,8 +324,8 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                             xsize compact_width-55 text_align .5 xalign .5 size r13_read_size(22,28) color "#eee5d5"
         if ready:
             for index,(title,action,was_read) in enumerate(entries[:9]):
-                key ("K_%d"%(index+1)) action action
-                key ("K_KP%d"%(index+1)) action action
+                key ("K_%d"%(index+1)) action r13_safe_question_action(action)
+                key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
         if return_action is not None:
             textbutton "돌아가기":
                 xpos 0 ypos 676 xsize 150 ysize 44

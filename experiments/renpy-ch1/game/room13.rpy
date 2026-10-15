@@ -486,7 +486,7 @@ label r13_talk_dispatch:
                 $ r13_finish_topic(r13_topic)
         jump r13_talk_menu
     if r13_topic in room13["read_topics"]:
-        # 0.18.46: a read topic opens its kept record (date and key lines first), not a replay.
+        # A read question immediately replays the original conversation.
         call r13_topic_review(r13_topic)
         $ r13_finish_topic(r13_topic)
         jump r13_talk_menu

@@ -14,9 +14,9 @@ init 79 python:
     def r13_footer_width(count):
         return 16+count*104+max(0,count-1)*8
 
-    def r13_question_caption(title,was_read,summarize=True):
+    def r13_question_caption(title,was_read,summarize=True,mark_unread=False):
         label=r13_question_summary(title) if summarize else title
-        return ("{font=assets/Room13Sans.ttf}✓{/font}  {s}"+label+"{/s}") if was_read else label
+        return ("{font=assets/Room13Sans.ttf}✓{/font}  {s}"+label+"{/s}") if was_read else (("{font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  " if mark_unread else "")+label)
 
     def r13_record_heading_size(name):
         size=r13_read_size(24,29)

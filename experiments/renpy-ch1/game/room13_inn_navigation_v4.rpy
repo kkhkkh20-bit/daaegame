@@ -13,7 +13,7 @@ init 63 python:
     R13_INN_V4 = json.load(renpy.file("assets/room13-inn-navigation-v4.json")) if renpy.loadable("assets/room13-inn-navigation-v4.json") else {}
     R13_INN_GUIDE = json.load(renpy.file("assets/room13-inn-guide.json")) if renpy.loadable("assets/room13-inn-guide.json") else {}
     R13_INN_GUIDE_SIZE = (960, 640)
-    R13_INN_V4_CHIP_HEIGHT = 50
+    R13_INN_V4_CHIP_HEIGHT = 58
     # Bottom-centre belongs to the toolbar; a centred edge chip sits above it.
     R13_INN_V4_ABOVE_FOOTER = 588
 
@@ -45,7 +45,7 @@ init 63 python:
             x0, y0, x1, y1 = chip["bounds"]
             cx, cy = (x0+x1)/2.0*sx, (y0+y1)/2.0*sy
             label = chip["label"] if key in links else chip["label"]+" · 잠김"
-            w = max(int((x1-x0)*sx)+16, 26*len(label)//2+44)
+            w = max(int((x1-x0)*sx)+16, 26*len(label)//2+68)
             h = R13_INN_V4_CHIP_HEIGHT
             if on_picture:
                 x, y = int(cx-w/2), int(cy-h/2)
@@ -64,8 +64,8 @@ init 63 python:
         return {chip["to"] for chip in R13_INN_V4.get(location, {}).get("chips", [])}
 
     def r13_inn_v4_chip_background(w, h, hover=False, locked=False):
-        fill = "#3a2c22f2" if locked else "#5a4433f2" if hover else "#2c221bdb"
-        border = "#8a7a62d6" if locked else "#f2cf8a" if hover else "#c2a370d6"
+        fill = "#cdbd9e" if locked else "#f4e3bf" if hover else "#ead4a9"
+        border = "#a38e6e" if locked else "#8e6635" if hover else "#92764e"
         return Fixed(
             Transform(Solid("#00000038"), xpos=0, ypos=3, xysize=(w, h)),
             Transform(Solid(border), xysize=(w, h)),
@@ -163,7 +163,7 @@ screen r13_inn_v4_world_chips(ready=False):
             insensitive_background r13_inn_v4_chip_background(w, h, locked=True)
             action Return(("travel", key)) sensitive (ready and active)
             alt label
-            text label size 23 color "#f6e8cc" hover_color "#ffffff" insensitive_color "#c9bda8" xalign .5 ypos (h//2) yanchor .5
+            text ("› "+label) size 23 color "#65503b" hover_color "#493b30" insensitive_color "#82745e" xalign .5 ypos (h//2) yanchor .5
 
 screen r13_inn_v4_screen_chips(ready=False):
     for key, label, (x, y, w, h), active in r13_inn_v4_chips(room13["location"], world=False):
@@ -175,7 +175,7 @@ screen r13_inn_v4_screen_chips(ready=False):
             insensitive_background r13_inn_v4_chip_background(w, h, locked=True)
             action Return(("travel", key)) sensitive (ready and active)
             alt label
-            text label size 23 color "#f6e8cc" hover_color "#ffffff" insensitive_color "#c9bda8" xalign .5 ypos (h//2) yanchor .5
+            text ("› "+label) size 23 color "#65503b" hover_color "#493b30" insensitive_color "#82745e" xalign .5 ypos (h//2) yanchor .5
 
 # Supplementary guest wayfinding drawing: not a scene, not a floor plan.
 screen r13_inn_guide():

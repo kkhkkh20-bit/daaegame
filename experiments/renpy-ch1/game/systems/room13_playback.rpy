@@ -36,46 +36,70 @@ screen r13_backlog():
     key "game_menu" action Hide("r13_backlog")
     key "K_h" action Hide("r13_backlog")
 
+screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False):
+    button:
+        xsize 112 ysize 56 padding (2,0)
+        background (R13StripCell(True) if chosen else None)
+        hover_background R13StripCell(True)
+        action command sensitive enabled alt caption
+        fixed:
+            xsize 108 ysize 56
+            hbox:
+                xalign .5 yalign .5 spacing 4
+                add R13AntiqueIcon(icon,size=22) yalign .5 alpha (1.0 if enabled else .4)
+                text caption size 20 font r13_ui_font() color ("#efe2c2" if enabled else "#a59a86") yalign .5
+            if not last:
+                add Solid("#756b5980") xpos 107 ypos 13 xsize 1 ysize 30
+
 screen r13_playback_footer(show_record=False,ready=True):
-    $ footer_width=(560 if show_record else r13_footer_width(4))
+    $ footer_width=560 if show_record else 448
     $ skip_ready=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
-    add R13InkPanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
-    frame:
-        area (1280-footer_width,664,footer_width,56) padding (0 if show_record else 8,0) background None
+    fixed:
+        xpos (1280-footer_width) ypos 664 xsize footer_width ysize 56
+        add R13InkPanel() xsize footer_width ysize 56
         hbox:
-            spacing 8
-            use r13_antique_button("백로그","backlog",Show("r13_backlog"),enabled=ready,compact=True)
-            use r13_antique_button(("자동 ●" if _preferences.afm_enable else "자동"),"auto",Preference("auto-forward","toggle"),enabled=ready,compact=True,chosen=_preferences.afm_enable)
-            use r13_antique_button("건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready,compact=True)
+            spacing 0
+            use r13_strip_button("백로그","backlog",Show("r13_backlog"),enabled=ready)
+            use r13_strip_button("자동","auto",Preference("auto-forward","toggle"),enabled=ready,chosen=_preferences.afm_enable)
+            use r13_strip_button("건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready)
             if show_record:
-                use r13_antique_button("더보기","settings",Show("r13_more_tools"),enabled=ready,compact=True)
+                use r13_strip_button("더보기","settings",Show("r13_more_tools"),enabled=ready)
+                use r13_strip_button("기록","record",Show("r13_records"),enabled=ready,last=True)
             else:
-                use r13_antique_button("옵션","settings",ShowMenu("pause_menu"),enabled=ready,compact=True)
-            if show_record:
-                use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=112)
+                use r13_strip_button("설정","settings",ShowMenu("pause_menu"),enabled=ready,last=True)
 
 screen r13_more_tools():
     modal True
     zorder 105
     $ line_active=renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     frame:
-        area (962,356,294,304) padding (12,12) background R13InkPanel()
+        area (932,204 if line_active else 366,324,456 if line_active else 294) padding (12,12) background R13InkPanel()
         vbox:
             spacing 6
-            textbutton "읽은 대사 넘기기":
-                style "r13_action_button" xsize 270 ysize 48 text_size 20
-                selected r13_fast_read sensitive line_active
-                action [Hide("r13_more_tools"),Function(r13_toggle_read_skip)]
-            textbutton "모든 대사 빠르게":
-                style "r13_action_button" xsize 270 ysize 48 text_size 20
-                selected r13_fast_all sensitive line_active
-                action [Hide("r13_more_tools"),Function(r13_toggle_fast_all)]
-            textbutton "대화창 숨기기":
-                style "r13_action_button" xsize 270 ysize 48 text_size 20 sensitive line_active
-                action [Hide("r13_more_tools"),HideInterface()]
-            textbutton "옵션":
-                style "r13_action_button" xsize 270 ysize 48 text_size 20
+            if line_active:
+                textbutton "읽은 대사 넘기기":
+                    style "r13_action_button" xsize 300 ysize 48 text_size 20
+                    selected r13_fast_read sensitive line_active
+                    action [Hide("r13_more_tools"),Function(r13_toggle_read_skip)]
+                textbutton "모든 대사 빠르게":
+                    style "r13_action_button" xsize 300 ysize 48 text_size 20
+                    selected r13_fast_all sensitive line_active
+                    action [Hide("r13_more_tools"),Function(r13_toggle_fast_all)]
+                textbutton "대화창 숨기기":
+                    style "r13_action_button" xsize 300 ysize 48 text_size 20 sensitive line_active
+                    action [Hide("r13_more_tools"),HideInterface()]
+            textbutton "진행 저장":
+                style "r13_action_button" xsize 300 ysize 48 text_size 20
+                action [Hide("r13_more_tools"),ShowMenu("save")]
+            textbutton "진행 불러오기":
+                style "r13_action_button" xsize 300 ysize 48 text_size 20
+                action [Hide("r13_more_tools"),ShowMenu("load")]
+            textbutton "설정":
+                style "r13_action_button" xsize 300 ysize 48 text_size 20
                 action [Hide("r13_more_tools"),ShowMenu("pause_menu")]
+            textbutton "메인화면":
+                style "r13_action_button" xsize 300 ysize 48 text_size 20
+                action [Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))]
             textbutton "닫기":
-                style "r13_action_button" xsize 270 ysize 48 text_size 20 action Hide("r13_more_tools")
+                style "r13_action_button" xsize 300 ysize 48 text_size 20 action Hide("r13_more_tools")
     key "game_menu" action Hide("r13_more_tools")

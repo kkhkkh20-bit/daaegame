@@ -20,7 +20,7 @@ init 60 python:
 screen r13_goal_fold(goal,ready=False):
     $ notes=r13_first_mystery_notes()
     $ thought = "편지는 이곳에서 왔다. 그런데 아내는 어디에 있을까." if goal.startswith("편지를 보낸 여관") else goal
-    $ panel_height=min(430,256+len(notes)*52)
+    $ panel_height=280
     $ signature=tuple([thought]+[n["title"] for n in notes])
     if not renpy.get_screen("r13_evidence_found"):
         fixed:
@@ -47,10 +47,7 @@ screen r13_goal_fold(goal,ready=False):
                         vbox:
                             spacing 16
                             text thought size r13_read_size(22,24) color "#496579" xsize 542
-                            for i,note in enumerate(notes):
-                                button:
-                                    xsize 542 padding (10,8)
-                                    background None hover_background Solid("#b28d4925")
-                                    action [SetVariable("r13_goal_open",False),Show("r13_learning_notes",focus=i)] sensitive ready
-                                    text note["title"] size r13_read_size(20,22) color "#65503b" xsize 516
-                    text "자세한 내용은 기록 · 조사 메모에서" ypos (panel_height-74) size 18 color "#796a52"
+                    textbutton ("조사 메모 열기 · 의문 %d개"%len(notes)):
+                        ypos (panel_height-86) xsize 390 ysize 56
+                        text_size 20 text_color "#765426" background None hover_background Solid("#b28d4925")
+                        action [SetVariable("r13_goal_open",False),Show("r13_learning_notes")] sensitive ready
