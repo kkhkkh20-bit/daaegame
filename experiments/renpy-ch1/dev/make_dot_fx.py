@@ -470,6 +470,17 @@ def carriage_window_mask():
     return save(img, "room13-fx-carriage-window-mask.webp"), [int(xs.min()), int(ys.min()), int(xs.max() - xs.min() + 1), int(ys.max() - ys.min() + 1)]
 
 
+# ------------------------------------------------------------------ 0.18.41 메인 타이틀
+# 타이틀 그림(1280x720 화면 기준)의 등불·창. 검수한 자리만.
+TITLE_LIGHTS = [(418, 372, 70), (418, 622, 80), (992, 449, 70), (1187, 433, 70),
+                (1089, 205, 90), (1100, 480, 110), (697, 283, 50)]
+
+
+def title_glow():
+    return glow_plate((1280, 720), [(x, y, r, r, 1.6) for x, y, r in TITLE_LIGHTS], (255, 186, 90), 4,
+                      "room13-fx-title-glow.webp")
+
+
 def main():
     meta = {"version": 1, "cell": CELL, "generator": "dev/make_dot_fx.py"}
     fire = {}
@@ -514,6 +525,7 @@ def main():
     # 0.18.39 (owner): synthesized reaction sounds removed (reaction_sounds() kept, unused).
     meta["cinematics"] = cine_plates()
     mask, box = carriage_window_mask()
+    meta["title"] = {"glow": title_glow(), "alpha": [0.10, 0.30]}
     meta["opening"] = {"carriage_window": {"mask": mask, "box": box}}
     meta["blink"] = {"timeline": [["half", .05], ["closed", .09], ["half", .05]],
                      "interval": [2.6, 5.2], "people": blink}

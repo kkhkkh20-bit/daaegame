@@ -124,15 +124,18 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
 - 벽난로 불꽃·저녁 불빛, 실외 저녁 눈·가로등, 다람이 눈 깜빡임, 광장 굴뚝 연기, 증거 반짝임, 제시·반박 집중선, 지도 현재 위치 핀, 시간대 전환 디더. 화면 연출 신호는 `r13_fx_cue`. 코드는 `systems/room13_dot_fx.rpy`, 좌표·프레임은 `game/assets/room13-dot-fx.json`.
 - 표정이 바뀔 때 몸 반응과 반응음(놀람 움찔→튀어오름 등). 인물은 `R13_REACT_PEOPLE`. 연결은 `r13_speaker` 안 한 곳.
 - 눈 깜빡임 인물은 `make_dot_fx.py`의 `BLINK_MORE`·`BLINK_SKIP`. 새로 만들면 표정마다 눈을 사람이 확인한다.
-- 현장 주민은 숨쉰다(0.18.37, 소유자 결정으로 '현장 정지' 규칙을 바꿈). 클릭 영역은 쉬는 자세. 끄기: `R13_FIELD_IDLE`.
+- 조사 화면 인물은 움직이지 않는다(0.18.41 소유자). 대화 화면은 깜빡임 + 감정이 바뀔 때 한 번의 반응 동작만. 현장 숨쉬기 코드는 `R13_FIELD_IDLE`로 꺼 두었다.
 - 프레임은 `python3 dev/make_dot_fx.py`로 다시 만든다. 손으로 고친 프레임을 넣지 않는다(다시 돌리면 덮인다).
 - 원본 그림은 바꾸지 않고 위에 얹는다. 설정의 '움직임'이 꺼져 있거나 건너뛰기 중이면 원본만 보인다.
 - 배경을 바꾸면(같은 파일 이름) `make_dot_fx.py`를 다시 돌리고 `dev/run_renpy_tests.sh dot_fx` 캡처를 확인한다.
 
 ### 오프닝 컷씬 (0.18.39)
-- 새 게임에서 마차 대화 앞에 약 14초. 코드는 `systems/room13_opening.rpy`, 연결은 `room13_start`의 `call r13_opening_cut`.
+- 새 게임에서 마차 대화 앞에 약 17초(편지 → 지도 경로 → 제목 → 마차). 코드는 `systems/room13_opening.rpy`, 연결은 `room13_start`의 `call r13_opening_cut`.
 - 화면 테스트 중에는 나오지 않는다. 확인은 `dev/run_renpy_tests.sh opening_cut`.
 - 컷씬도 아빠는 그리지 않고, 아빠가 아는 사실만 글로 쓴다.
+
+### 메인 타이틀 연출 (0.18.41)
+- 첫 등장 로고 낙하·메뉴 등장(게임을 켠 뒤 한 번), 도트 눈, 불빛 일렁임. 코드는 `systems/room13_title_fx.rpy`, 연결은 `main_menu`의 세 줄.
 
 ### 선택지 문구 (0.18.4)
 - 인물과 대화하는 선택지는 아빠가 할 말로 쓴다(“…”). 판단을 대신하는 말(협박한다, 달랜다, 편을 든다)은 쓰지 않는다. 확정된 돈·시간만 짧게 붙인다(12냥, · 늦은 저녁까지).

@@ -50,6 +50,9 @@ init 58 python:
 
     class R13TravelSheet(renpy.Displayable):
         """Open travel folio: outer cover, paper leaves, spine and index margin."""
+        def __init__(self,spine=True,**kwargs):
+            super(R13TravelSheet,self).__init__(**kwargs)
+            self.spine=spine
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
             # Slim walnut cover supports the parchment; the writing face stays clean.
@@ -66,10 +69,11 @@ init 58 python:
             # A turned lower corner, outside all text and controls.
             c.polygon('#c4a273',[(w-44,h-25),(w-22,h-47),(w-22,h-25)])
             c.polygon('#fae9c6',[(w-44,h-25),(w-44,h-47),(w-22,h-47)])
-            c.rect('#c4a67c',(226,18,10,h-48))
-            c.line('#9b7b53',(230,21),(230,h-32),1)
-            c.line('#fff0ce',(237,21),(237,h-32),2)
-            c.line('#b99b75',(252,h-94),(w-38,h-94),1)
+            if self.spine:
+                c.rect('#c4a67c',(226,18,10,h-48))
+                c.line('#9b7b53',(230,21),(230,h-32),1)
+                c.line('#fff0ce',(237,21),(237,h-32),2)
+                c.line('#b99b75',(252,h-94),(w-38,h-94),1)
             return r
 
     class R13TouchSurface(renpy.Displayable):
