@@ -53,9 +53,9 @@ init 140 python:
         return R13StonePaperPanel() if kind=="aged-paper" else R13StonePanel()
 
     def r13_dialogue_frame():
-        # Only the infill follows the opacity option; the slate rim stays solid.
+        # Standard and dark settings are solid; only explicit light mode is translucent.
         alpha=persistent.room13_window_alpha or "d4"
-        return R13StonePanel(alpha=("dc" if alpha=="99" else "ff" if alpha in ("f0","f5","fa","ff") else "f5"))
+        return R13StonePanel(alpha="dc" if alpha=="99" else "ff",dark=alpha in ("f0","f5","fa","ff"))
 
 init 141:
     # Galmuri11 has no bold file: never synthesize it in labels.

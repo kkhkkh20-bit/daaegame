@@ -1,30 +1,39 @@
 # Quiet paper, ink and brass. Material planes deliberately have no grain/noise.
 init 58 python:
     class R13StonePanel(renpy.Displayable):
-        """Flat charcoal infill with a stepped, layered slate rim; no grain."""
-        def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,**kwargs):
+        """Opaque, chamfered casing with broad lit and shaded bevel planes."""
+        def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,dark=False,**kwargs):
             super(R13StonePanel,self).__init__(**kwargs)
             self.focused=focused
             self.disabled=disabled
             self.alpha=alpha
             self.corner=corner
+            self.dark=dark
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
             r=renpy.Render(w,h);c=r.canvas()
-            cut=self.corner or (22 if w>1000 and h>300 else 14 if h>100 else 7)
-            def ring(n):
-                d=max(2,cut-n//2)
-                return [(n+d,n),(w-n-d-1,n),(w-n-1,n+d),
-                        (w-n-1,h-n-d-1),(w-n-d-1,h-n-1),
-                        (n+d,h-n-1),(n,h-n-d-1),(n,n+d)]
-            fill=('#444641' if self.disabled else '#66685e' if self.focused else '#555751')+self.alpha
-            c.polygon(fill,ring(5))
-            c.lines('#252724',True,ring(1),3)
-            c.lines('#b6b7a6' if self.focused else '#7d8075',True,ring(3),3)
-            c.lines('#353832',True,ring(6),2)
-            c.line('#ded6ad' if self.focused else '#aaa99a',(cut+3,3),(w-cut-4,3),2)
-            c.line('#565c58',(3,cut+3),(3,h-cut-4),2)
-            c.line('#1f2424',(cut+5,h-3),(w-cut-5,h-3),2)
+            cut=min(self.corner or (24 if h>300 else 16 if h>90 else 10),max(2,min(w,h)//3))
+            bevel=min(8,max(3,min(w,h)//6))
+            def contour(inset):
+                d=max(2,cut-inset//2)
+                return [(inset+d,inset),(w-inset-d-1,inset),
+                        (w-inset-1,inset+d),(w-inset-1,h-inset-d-1),
+                        (w-inset-d-1,h-inset-1),(inset+d,h-inset-1),
+                        (inset,h-inset-d-1),(inset,inset+d)]
+            outer=contour(2);inner=contour(bevel+2)
+            # Draw broad solid facets, not concentric hairline borders.
+            c.polygon('#202122',contour(0))
+            lights=['#a9aaa5','#8c8e8a','#666966','#343637',
+                    '#292c2d','#424544','#757975','#a0a39d']
+            for i in range(8):
+                j=(i+1)%8
+                c.polygon(lights[i],[outer[i],outer[j],inner[j],inner[i]])
+            fill=('#414345' if self.disabled else '#414548' if self.dark else '#626564' if self.focused else '#505354')
+            c.polygon(fill+self.alpha,inner)
+            c.lines('#303333',True,inner,2)
+            if self.focused:
+                # Restrained ivory accent is a focus state, never an extra gold frame.
+                c.line('#e4d5a1',inner[0],inner[1],2)
             return r
 
     class R13StonePaperPanel(renpy.Displayable):
