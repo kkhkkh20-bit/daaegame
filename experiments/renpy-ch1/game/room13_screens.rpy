@@ -55,8 +55,8 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
             hbox:
                 spacing 8
                 if present_action is not None:
-                    textbutton "보여주기" style "r13_footer_button" action present_action sensitive ready
-                textbutton "기록" style "r13_footer_button" action Show("r13_records") sensitive ready
+                    use r13_antique_button("보여주기","present",present_action,enabled=ready,compact=True)
+                use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True)
     elif mode!="field":
         $ line_tools=(3 if mode=="line" else 0)
         $ footer_width=r13_footer_width(4+line_tools+(1 if investigate_action is not None else 0)+(1 if present_action is not None else 0))
@@ -68,13 +68,10 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                 if investigate_action is not None:
                     textbutton "돌아가기" style "r13_footer_button" action investigate_action sensitive ready
                 if present_action is not None:
-                    textbutton "보여주기" style "r13_footer_button" action present_action sensitive ready
-                textbutton "기록" style "r13_footer_button" action Show("r13_records") sensitive ready
-                textbutton "백로그" style "r13_footer_button" action Show("r13_backlog") sensitive ready
-                textbutton ("자동 ●" if _preferences.afm_enable else "자동"):
-                    style "r13_footer_button"
-                    action Preference("auto-forward","toggle")
-                    sensitive ready and mode=="line" and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
+                    use r13_antique_button("보여주기","present",present_action,enabled=ready,compact=True)
+                use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True)
+                use r13_antique_button("백로그","backlog",Show("r13_backlog"),enabled=ready,compact=True)
+                use r13_antique_button(("자동 ●" if _preferences.afm_enable else "자동"),"auto",Preference("auto-forward","toggle"),enabled=ready and mode=="line" and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None,compact=True,chosen=_preferences.afm_enable)
                 if mode=="line":
                     $ line_active=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
                     # Player requests (0.18.4): skip read lines / everything to the next
@@ -90,7 +87,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                         action Function(r13_toggle_fast_all) sensitive line_active
                         tooltip "처음 보는 대사도 다음 선택지까지 넘깁니다"
                     textbutton "숨기기" style "r13_footer_button" action HideInterface() sensitive line_active
-                textbutton "옵션" style "r13_footer_button" action ShowMenu("pause_menu") sensitive ready
+                use r13_antique_button("옵션","settings",ShowMenu("pause_menu"),enabled=ready,compact=True)
     else:
         text "조사·대화·이동 · 시간 소모 없음":
             xalign .5 ypos 646 size r13_read_size(16,19) color "#f2f3e6"
@@ -98,30 +95,15 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
         # Three independent controls leave the rest of the scene visible/clickable.
         hbox:
             xalign .5 ypos 650 spacing 8
-            if mode=="field":
-                frame:
-                    xsize 128 ysize 44 yoffset 20 padding (10,6)
-                    background R13InkPanel(focused=True)
-                    text "조사":
-                        size r13_read_size(20,24) color "#e2ebdf"
-                        outlines []
-                        xalign .5 yalign .5
-            else:
-                textbutton "조사":
-                    style "r13_toolbar_button"
-                    text_size r13_read_size(20,24)
-                    action (investigate_action or NullAction())
-                    sensitive ready and investigate_action is not None
-                    tooltip "대화를 마치고 현장을 살핍니다"
-            textbutton "보여주기":
-                style "r13_toolbar_button"
-                text_size r13_read_size(20,24)
-                action (present_action or NullAction()) sensitive ready and present_action is not None
-                tooltip ((R13_NAMES.get(person,"")+"에게 자료를 보여줍니다") if person else "인물을 눌러 대화를 시작하세요")
-            textbutton "기록":
-                style "r13_toolbar_button"
-                text_size r13_read_size(20,24)
-                action Show("r13_records") sensitive ready
+            frame:
+                xsize (144 if persistent.room13_large_text else 136) ysize 64 padding (5,0)
+                background R13TouchSurface(focused=True)
+                hbox:
+                    xalign .5 yalign .75 spacing 6
+                    add R13AntiqueIcon("investigate",size=26) yalign .5
+                    text "조사" size r13_read_size(20,24) color "#efe2c2" font r13_ui_font() yalign .5
+            use r13_antique_button("보여주기","present",present_action or NullAction(),enabled=ready and present_action is not None)
+            use r13_antique_button("기록","record",Show("r13_records"),enabled=ready)
         use r13_options_control(ready)
 
 screen r13_options_control(ready=True):
@@ -135,15 +117,7 @@ screen r13_options_control(ready=True):
         tooltip "옵션" alt "옵션"
         fixed:
             xsize 64 ysize 64
-            # Stepped eight-tooth pixel gear; no extra bitmap or font glyph.
-            add Solid("#e0e8dc",xsize=24,ysize=24) xpos 20 ypos 12
-            add Solid("#e0e8dc",xsize=8,ysize=36) xpos 28 ypos 6
-            add Solid("#e0e8dc",xsize=36,ysize=8) xpos 14 ypos 20
-            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 18 ypos 10
-            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 38 ypos 10
-            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 18 ypos 30
-            add Solid("#e0e8dc",xsize=8,ysize=8) xpos 38 ypos 30
-            add Solid("#3a3e3d",xsize=10,ysize=10) xpos 27 ypos 19
+            add R13AntiqueIcon("settings",size=34) xpos 15 ypos 6
             text "옵션" size 14 color "#e6ece2" xalign .5 ypos 45
 
 screen r13_hub(entry=False):
@@ -187,9 +161,9 @@ screen r13_hub(entry=False):
     if entry:
         use r13_waiting_window(ready)
     else:
-        textbutton "지도 · 이동":
-            style "r13_action_button" xpos 1070 ypos 102 xsize 180 ysize 44
-            text_size 23 action Return(("menu","map")) sensitive ready
+        fixed:
+            xpos 1070 ypos 82 xsize 180 ysize 64
+            use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=180)
     if not entry and r13_bed_available("bed"):
         textbutton "자기":
             style "r13_action_button" area (1010,584,220,56)

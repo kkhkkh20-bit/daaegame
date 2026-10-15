@@ -43,7 +43,6 @@ screen r13_playback_footer():
         area (1280-footer_width,664,footer_width,56) padding (8,0) background None
         hbox:
             spacing 8
-            textbutton "백로그" style "r13_footer_button" action Show("r13_backlog")
-            textbutton ("자동 ●" if _preferences.afm_enable else "자동"):
-                style "r13_footer_button" action Preference("auto-forward","toggle")
-            textbutton "옵션" style "r13_footer_button" action ShowMenu("pause_menu")
+            use r13_antique_button("백로그","backlog",Show("r13_backlog"),compact=True)
+            use r13_antique_button(("자동 ●" if _preferences.afm_enable else "자동"),"auto",Preference("auto-forward","toggle"),compact=True,chosen=_preferences.afm_enable)
+            use r13_antique_button("옵션","settings",ShowMenu("pause_menu"),compact=True)
