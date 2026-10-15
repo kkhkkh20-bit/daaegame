@@ -2791,3 +2791,54 @@ testcase depth_dump:
     run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
     pause 1.0
     $ r13_qa_depth_dump()
+
+testcase perspective_views:
+    # 0.18.57 (owner): people deeper in the picture are smaller.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "persp_inn.png"
+    run Call("r13_qa_roam",dict(day=3,period=1,location="post",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "persp_post.png"
+    python:
+        r13_qa_note("post persp: %r"%([(a["person"],a.get("slot"),a["y"],a["height"]) for a in r13_stage_people()],))
+    run Call("r13_qa_roam",dict(day=2,period=1,location="square",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "persp_square.png"
+    run Call("r13_qa_roam",dict(day=3,period=0,location="store",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "persp_store.png"
+    run Call("r13_qa_roam",dict(day=2,period=0,location="gate",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "persp_gate.png"
+    run Call("r13_qa_roam",dict(day=3,period=0,location="workshop",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "persp_workshop.png"
+
+testcase dialogue_expand:
+    # 0.18.58 (owner): longer, ordered conversations with 【key words】 in gold.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    pause 1.0
+    python:
+        _hit=[];_miss=[]
+        for _name in R13_DIALOGUE_EXPAND:
+            _key=_name.split("#")[0]
+            try:_rows=r13_conversation_topic_lines(_key)
+            except Exception as _e:_rows=[("ERR",str(_e))]
+            (_hit if r13_expand_norm(_rows)==r13_expand_norm(R13_DIALOGUE_EXPAND[_name]["new"]) else _miss).append(_name)
+        r13_qa_note("expand hit %d: %r"%(len(_hit),_hit))
+        r13_qa_note("expand not in this state %d: %r"%(len(_miss),_miss))
+    assert eval (len(r13_conversation_topic_lines("granny_letter"))>=10)
+    run Call("r13_qa_talk","granny")
+    click pos (1150,90) until "가족을 불렀는지" timeout 30
+    click "가족을 불렀는지"
+    pause 1.0
+    click pos (640,600) until eval ("13호실】" in str(getattr(store,"r13_packet",("",""))[1])) timeout 30
+    pause 1.5
+    screenshot "granny_gold_word.png"
