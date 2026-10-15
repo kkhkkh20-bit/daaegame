@@ -119,6 +119,57 @@
    ]
   }
  },
+ "smoke": {
+  "sources": {
+   "square": [
+    [
+     1475,
+     64
+    ],
+    [
+     696,
+     188
+    ],
+    [
+     1562,
+     99
+    ]
+   ]
+  },
+  "puffs": {
+   "4-0": "assets/room13-fx-smoke-4-0.webp",
+   "4-1": "assets/room13-fx-smoke-4-1.webp",
+   "4-2": "assets/room13-fx-smoke-4-2.webp",
+   "8-0": "assets/room13-fx-smoke-8-0.webp",
+   "8-1": "assets/room13-fx-smoke-8-1.webp",
+   "8-2": "assets/room13-fx-smoke-8-2.webp",
+   "12-0": "assets/room13-fx-smoke-12-0.webp",
+   "12-1": "assets/room13-fx-smoke-12-1.webp",
+   "12-2": "assets/room13-fx-smoke-12-2.webp"
+  },
+  "periods": [
+   "morning",
+   "afternoon",
+   "evening"
+  ],
+  "every": 0.9,
+  "life": 4.5,
+  "rise": 72,
+  "drift": 18
+ },
+ "evidence_sparkle": {
+  "sheet": "assets/room13-fx-evidence-sparkle.webp",
+  "frames": 6,
+  "fps": 12,
+  "size": [
+   128,
+   128
+  ]
+ },
+ "dither": {
+  "file": "assets/room13-fx-dither.png",
+  "time": 0.5
+ },
  "blink": {
   "timeline": [
    [

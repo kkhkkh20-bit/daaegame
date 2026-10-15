@@ -1,8 +1,10 @@
-# 도트 연출 (0.18.29). 화면 연출만 하고 시간·증거·관계·일정은 바꾸지 않는다.
+# 도트 연출 (0.18.29, 0.18.31). 화면 연출만 하고 시간·증거·관계·일정은 바꾸지 않는다.
 #
 # - 여관 로비 벽난로 불꽃(아침·오후·저녁), 저녁 방 불빛 일렁임
 # - 실외 저녁(광장·입구·제단 길) 눈 내림, 광장 저녁 가로등 빛
 # - 다람이 대화 전신 눈 깜빡임(joy는 원래 눈을 감고 있어 제외)
+# - (0.18.31) 광장 굴뚝 연기, 증거 획득 반짝임·튀어오름, 제시·반박 순간 흔들림과 집중선,
+#   마을 지도 현재 위치 표식, 날·시간대가 바뀐 장면의 디더 전환
 #
 # 원본 배경·인물 그림은 바꾸지 않고 그 위에 프레임을 얹는다. 프레임과 좌표는
 # assets/room13-dot-fx.json (dev/make_dot_fx.py가 만든다), 좌표는 원본 그림 픽셀 기준.
@@ -112,6 +114,9 @@ init 57 python:
             return True
         if period in fx.get("lamp_glow", {}).get(location, {}).get("periods", []):
             return True
+        smoke = fx.get("smoke", {})
+        if location in smoke.get("sources", {}) and period in smoke.get("periods", []):
+            return True
         snow = fx.get("snow", {})
         return location in snow.get("locations", []) and period in snow.get("periods", [])
 
@@ -146,6 +151,9 @@ init 57 python:
             # 두세 번에 한 번 짧게 흔들리는 가로등(1.0=평소).
             levels = [1, 1, 1, 1, 1, 1, .55, 1, .8, 1, 1, 1, 1, 1, 1, 1, 1, 1, .6, 1, 1, 1, 1, 1]
             layers.append(R13FxPulse(lamp["file"], levels, 1 / .12, lamp["alpha"], size))
+        smoke = fx.get("smoke", {})
+        if location in smoke.get("sources", {}) and period in smoke.get("periods", []):
+            layers.append(R13FxSmoke(smoke, smoke["sources"][location], size))
         snow = fx.get("snow", {})
         if location in snow.get("locations", []) and period in snow.get("periods", []):
             layers.append(R13FxSnow(snow, size))
@@ -220,3 +228,161 @@ init 57 python:
         if not spec:
             return file
         return R13Blink(file, person, emotion, spec)
+
+    # ---------------------------------------------------------------- 0.18.31
+    class R13FxSmoke(R13FxClock):
+        """굴뚝 연기. 덩어리는 시간으로만 정해지고(상태 없음) 4px 칸에 맞춘다."""
+        def __init__(self, spec, sources, size, **kwargs):
+            super(R13FxSmoke, self).__init__(size, **kwargs)
+            self.sources = [tuple(p) for p in sources]
+            self.puffs = dict((k, renpy.displayable(v)) for k, v in spec["puffs"].items())
+            self.every = float(spec["every"])
+            self.life = float(spec["life"])
+            self.rise = float(spec["rise"])
+            self.drift = float(spec["drift"])
+
+        def visit(self):
+            return list(self.puffs.values())
+
+        def draw(self, out, st):
+            per = int(self.life / self.every) + 1
+            for i, (x0, y0) in enumerate(self.sources):
+                offset = i * .37
+                newest = int((st + offset) / self.every)
+                for n in range(newest, newest - per, -1):
+                    age = st + offset - n * self.every
+                    if age < 0 or age >= self.life:
+                        continue
+                    u = age / self.life
+                    size = 4 if u < .27 else 8 if u < .62 else 12
+                    level = 2 if u < .5 else 1 if u < .8 else 0
+                    sway = 3 * r13_fx_math.sin(age * 1.7 + n)
+                    x = x0 + self.drift * u + sway - size / 2.0
+                    y = y0 - self.rise * u - size
+                    piece = self.puffs["%d-%d" % (size, level)]
+                    out.blit(renpy.render(piece, size, size, st, 0), (int(x) // 4 * 4, int(y) // 4 * 4))
+            return 1.0 / 12.0
+
+    class R13FxOnce(renpy.Displayable):
+        """시트를 한 번만 재생하고 사라진다(증거 반짝임)."""
+        def __init__(self, sheet, frames, fps, size, **kwargs):
+            super(R13FxOnce, self).__init__(**kwargs)
+            w, h = size
+            self.size = (int(w), int(h))
+            self.frames = [Crop((i * w, 0, w, h), sheet) for i in range(int(frames))]
+            self.fps = float(fps)
+
+        def visit(self):
+            return self.frames
+
+        def render(self, width, height, st, at):
+            out = renpy.Render(*self.size)
+            index = int(st * self.fps)
+            if r13_fx_active() and index < len(self.frames):
+                out.blit(renpy.render(self.frames[index], self.size[0], self.size[1], st, at), (0, 0))
+                renpy.redraw(self, 1.0 / self.fps)
+            return out
+
+    def r13_evidence_sparkle():
+        spec = R13_DOT_FX.get("evidence_sparkle")
+        if not spec:
+            return Null()
+        return R13FxOnce(spec["sheet"], spec["frames"], spec["fps"], spec["size"])
+
+    class R13FxImpact(renpy.Displayable):
+        """제시·반박 순간의 도트 집중선 3프레임(4px 칸, 화면 가장자리에서 안쪽으로)."""
+        def __init__(self, **kwargs):
+            super(R13FxImpact, self).__init__(**kwargs)
+            state = 29
+            self.rays = []
+            for i in range(44):
+                state = (state * 16807) % 2147483647
+                jitter = state / 2147483647.0
+                angle = (i + jitter * .6) / 44.0 * 6.283
+                state = (state * 16807) % 2147483647
+                self.rays.append((angle, .55 + .35 * state / 2147483647.0))
+
+        def render(self, width, height, st, at):
+            out = renpy.Render(1280, 720)
+            frame = int(st / .06)
+            if not r13_fx_active() or frame > 2:
+                return out
+            canvas = out.canvas()
+            reach = (.30, .22, .14)[frame]
+            for angle, length in self.rays:
+                dx, dy = r13_fx_math.cos(angle), r13_fx_math.sin(angle)
+                # 화면 가장자리까지의 거리(가운데 기준)
+                edge = min(abs(640 / dx) if dx else 1e9, abs(360 / dy) if dy else 1e9)
+                start = edge * (1 - reach * length)
+                d = edge
+                while d > start:
+                    x = int(640 + dx * d) // 4 * 4
+                    y = int(360 + dy * d) // 4 * 4
+                    canvas.rect((255, 250, 232, 235), (x, y, 4, 4))
+                    d -= 8
+            renpy.redraw(self, .06 - (st % .06) + .001)
+            return out
+
+    def r13_fx_cue(kind):
+        """소리와 같은 순간에 부르는 화면 연출. 연출만 하고 상태는 바꾸지 않는다."""
+        if not r13_fx_active():
+            return
+        if kind in ("present", "break"):
+            renpy.show_screen("r13_fx_impact")
+            renpy.show_layer_at([r13_fx_shake], layer="master")
+
+    def r13_evidence_hop(trans, st, at):
+        # r13_evidence_reveal이 자리 잡은 뒤(.18초) 4px 한 번 튀어오른다.
+        t = st - .18
+        if r13_fx_active() and 0 <= t < .08:
+            trans.yoffset = -4
+            return .08 - t + .001
+        trans.yoffset = 0
+        return None
+
+    # 마을 지도 현재 위치 표식: 4px 도트 핀이 반초마다 한 칸 오르내린다.
+    class R13FxPin(renpy.Displayable):
+        SHAPE = ("..##..", ".####.", "######", ".####.", "..##..", "..##..")
+
+        def render(self, width, height, st, at):
+            out = renpy.Render(24, 32)
+            canvas = out.canvas()
+            lift = 4 if (r13_fx_active() and int(st * 2) % 2) else 0
+            for y, row in enumerate(self.SHAPE):
+                for x, ch in enumerate(row):
+                    if ch == "#":
+                        color = (255, 214, 96, 255) if y in (1, 2, 3) and x in (1, 2, 3, 4) else (40, 24, 18, 255)
+                        if y in (1, 2, 3) and x in (2, 3) and y == 2:
+                            color = (255, 248, 214, 255)
+                        canvas.rect(color, (x * 4, 4 - lift + y * 4, 4, 4))
+            if r13_fx_active():
+                renpy.redraw(self, .5 - (st % .5) + .001)
+            return out
+
+    # 날·시간대가 바뀐 뒤 처음 들어서는 장면: 4x4 디더로 번진다.
+    def r13_scene_transition():
+        state = store.room13 or {}
+        clock = (state.get("day"), state.get("period"))
+        last = store.r13_fx_scene_clock
+        store.r13_fx_scene_clock = clock
+        spec = R13_DOT_FX.get("dither")
+        if spec and last is not None and last != clock and clock[0] is not None and r13_fx_active():
+            return ImageDissolve(spec["file"], float(spec["time"]), ramplen=4)
+        return Dissolve(.25)
+
+default r13_fx_scene_clock = None
+
+transform r13_fx_shake:
+    xoffset 0
+    xoffset 2
+    pause .04
+    xoffset -2
+    pause .04
+    xoffset 2
+    pause .04
+    xoffset 0
+
+screen r13_fx_impact():
+    zorder 140
+    add R13FxImpact()
+    timer .25 action Hide("r13_fx_impact")

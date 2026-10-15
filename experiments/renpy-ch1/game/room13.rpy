@@ -26,7 +26,8 @@ label r13_scene(bg,title,mood="calm"):
     else:
         stop music fadeout .2
     $ renpy.pause(.25)
-    scene expression r13_background(bg) with Dissolve(.25)
+    # A new day or time slot fades in through a 4x4 dither (systems/room13_dot_fx.rpy).
+    scene expression r13_background(bg) with r13_scene_transition()
     $ r13_scene_key=r13_scene_identity(bg,title,mood)
     return
 

@@ -178,14 +178,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:8` | _r13_sound_click_feedback |
-| 2 | 150 | `systems/room13_sound.rpy:194` |  |
+| 2 | 150 | `systems/room13_sound.rpy:197` |  |
 
 ## `r13_debate_judge` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:348` | _r13_sound_debate_judge |
-| 2 | 150 | `systems/room13_sound.rpy:167` |  |
+| 2 | 150 | `systems/room13_sound.rpy:168` |  |
 
 ## `r13_ending_notes` (2층)
 
@@ -199,7 +199,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
-| 2 | 150 | `systems/room13_sound.rpy:180` |  |
+| 2 | 150 | `systems/room13_sound.rpy:183` |  |
 
 ## `r13_grant` (2층)
 
@@ -227,7 +227,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 92 | `systems/room13_livelihood_flow.rpy:3` | _r13_sound_apply_purchase |
-| 2 | 150 | `systems/room13_sound.rpy:200` |  |
+| 2 | 150 | `systems/room13_sound.rpy:203` |  |
 
 ## `r13_life_tool_name` (2층)
 

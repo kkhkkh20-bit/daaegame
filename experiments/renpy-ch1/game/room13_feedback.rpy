@@ -30,6 +30,8 @@ transform r13_click_pulse:
 transform r13_evidence_reveal:
     alpha 0.0 xoffset -14
     easeout .18 alpha 1.0 xoffset 0
+    # One 4px hop after it lands (0.18.31 dot effects; still when motion is off).
+    function r13_evidence_hop
 
 screen r13_click_glint(point):
     zorder 90
@@ -54,6 +56,8 @@ screen r13_evidence_found(keys,conversation=False):
     zorder 85
     default item_index=0
     use r13_evidence_card(keys[item_index],"새 증언 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 자료 기록",conversation=conversation)
+    # Sparkle around the icon (systems/room13_dot_fx.rpy); one run per card.
+    add r13_evidence_sparkle() xpos 14 ypos ((24 if conversation else 232)-4)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:

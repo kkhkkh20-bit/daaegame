@@ -47,6 +47,11 @@ screen r13_worldmap_v5(selected, ready, map_hover):
             alt R13_MAP_LABELS[key]
         if key==selected or key==map_hover:
             add r13_v5_outline(key) xpos (30+lx) ypos (150+ly)
+    # Current place: a bobbing 4px pin above its label (systems/room13_dot_fx.rpy).
+    for key, point in r13_map_nodes("village"):
+        if key==room13["location"]:
+            $ px, py = r13_v5_label(key)
+            add R13FxPin() xpos (30+px-12) ypos (150+py-18-32)
     # Text remains UI text; no painted-in names and no labels for locked nodes.
     for key, point in r13_map_nodes("village"):
         $ tx, ty = r13_v5_label(key)

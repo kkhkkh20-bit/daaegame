@@ -13,6 +13,7 @@
 - 눈송이 2종(4px, 8px 십자).
 - 다람이 대화 전신 눈 깜빡임: 표정마다 반쯤 감음·감음 2장(눈 주변만 잘라 둔 조각).
   joy는 원래 눈을 감고 있어 만들지 않는다.
+- (0.18.31) 굴뚝 연기 조각, 증거 획득 반짝임 6프레임, 시간 전환용 4x4 디더 판.
 
 좌표는 모두 원본 그림 픽셀 기준이다. 연결은 game/systems/room13_dot_fx.rpy.
 """
@@ -240,6 +241,72 @@ def blink_pieces(person, emotion):
     return {"rect": rect, **files}
 
 
+# ------------------------------------------------------------------ 0.18.31
+SMOKE_SOURCES = {
+    # 광장 집 굴뚝 꼭대기(원본 2048x768 좌표). 입구는 연기가 이미 그려져 있어 넣지 않는다.
+    "square": [[1475, 64], [696, 188], [1562, 99]],
+}
+
+
+def smoke_puffs():
+    """연기 덩어리 3크기 x 3진하기. 둥근 도트 덩어리(4px 칸)."""
+    files = {}
+    shapes = {
+        4: ["#"],
+        8: [".##.", "####", "####", ".##."],
+        12: ["..##..", ".####.", "######", "######", ".####.", "..##.."],
+    }
+    for px, rows in shapes.items():
+        cell = px // len(rows) if px > 4 else 4
+        for level, alpha in enumerate((110, 170, 220)):
+            n = len(rows)
+            img = Image.new("RGBA", (n * cell, n * cell), (0, 0, 0, 0))
+            for y, row in enumerate(rows):
+                for x, ch in enumerate(row):
+                    if ch == "#":
+                        for yy in range(y * cell, (y + 1) * cell):
+                            for xx in range(x * cell, (x + 1) * cell):
+                                img.putpixel((xx, yy), (214, 219, 230, alpha))
+            files["%d-%d" % (px, level)] = save(img, "room13-fx-smoke-%d-%d.webp" % (px, level))
+    return files
+
+
+def sparkle_sheet():
+    """증거 카드 아이콘 둘레 4각 별 반짝임 6프레임(128x128)."""
+    stars = [(20, 30, 0), (100, 22, 1), (110, 92, 2), (28, 104, 1), (64, 8, 3), (8, 66, 2)]
+    frames = 6
+    sheet = Image.new("RGBA", (128 * frames, 128), (0, 0, 0, 0))
+    gold, white = (255, 226, 140, 255), (255, 252, 236, 255)
+    for f in range(frames):
+        for sx, sy, delay in stars:
+            k = f - delay
+            if k < 0 or k > 2:
+                continue
+            arm = (1, 2, 1)[k]                       # 별 팔 길이(칸)
+            ox = f * 128
+            def cell(cx, cy, color):
+                for yy in range(cy, cy + 4):
+                    for xx in range(cx, cx + 4):
+                        if 0 <= xx - ox < 128 and 0 <= yy < 128:
+                            sheet.putpixel((xx, yy), color)
+            cx, cy = ox + sx // 4 * 4, sy // 4 * 4
+            cell(cx, cy, white)
+            for a in range(1, arm + 1):
+                for dx, dy in ((4 * a, 0), (-4 * a, 0), (0, 4 * a), (0, -4 * a)):
+                    cell(cx + dx, cy + dy, gold)
+    return save(sheet, "room13-fx-evidence-sparkle.webp")
+
+
+def dither_plate():
+    """시간 전환 ImageDissolve용 4x4 Bayer 판(4px 칸, 1280x720)."""
+    bayer = np.array([[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]])
+    tile = ((bayer + .5) / 16 * 255).astype("uint8").repeat(4, 0).repeat(4, 1)
+    plate = np.tile(tile, (720 // 16, 1280 // 16))
+    img = Image.fromarray(plate, "L")
+    img.save(os.path.join(ASSETS, "room13-fx-dither.png"), optimize=True)
+    return "assets/room13-fx-dither.png"
+
+
 def main():
     meta = {"version": 1, "cell": CELL, "generator": "dev/make_dot_fx.py"}
     fire = {}
@@ -263,6 +330,11 @@ def main():
         piece = blink_pieces("daram", emotion)
         if piece:
             blink.setdefault("daram", {})[emotion] = piece
+    meta["smoke"] = {"sources": SMOKE_SOURCES, "puffs": smoke_puffs(),
+                     "periods": ["morning", "afternoon", "evening"],
+                     "every": .9, "life": 4.5, "rise": 72, "drift": 18}
+    meta["evidence_sparkle"] = {"sheet": sparkle_sheet(), "frames": 6, "fps": 12, "size": [128, 128]}
+    meta["dither"] = {"file": dither_plate(), "time": .5}
     meta["blink"] = {"timeline": [["half", .05], ["closed", .09], ["half", .05]],
                      "interval": [2.6, 5.2], "people": blink}
     with open(META_FILE, "w", encoding="utf-8") as f:

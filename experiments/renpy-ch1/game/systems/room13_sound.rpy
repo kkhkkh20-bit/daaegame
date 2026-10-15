@@ -160,6 +160,7 @@ init 150 python:
     _r13_sound_present = r13_present
     def r13_present(person, key, identity=False):
         source_fx("present")
+        r13_fx_cue("present")      # 집중선·2px 흔들림 (systems/room13_dot_fx.rpy)
         return _r13_sound_present(person, key, identity)
 
     # 회의에서 증거를 내밀 때: 히트 뒤에 판정 소리(반박 성공=맞음, 틀림=틀림, 그 밖=히트만)
@@ -171,6 +172,8 @@ init 150 python:
             queue = [r13_fx_path("present")] + ([r13_fx_path(follow)] if follow else [])
             store.source_effect_log.append("present:" + result[0])
             renpy.music.play(queue, channel="scene_fx", loop=False)
+            if result[0] == "break":
+                r13_fx_cue("break")    # 반박 성공: 집중선·2px 흔들림
         return result
 
 

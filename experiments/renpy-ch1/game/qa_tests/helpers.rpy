@@ -482,6 +482,22 @@ init 999 python:
             renpy.screenshot(os.path.join(out,name));shots.append(name)
             persistent.room13_motion=True
             report["scenes"]["%s_%s"%(location,period)]=shots
+        # 0.18.31: impact lines, evidence sparkle (and its card), dither transition plate.
+        renpy.scene()
+        renpy.show("r13_qa_fx_bg",what=r13_world_background("square","morning"))
+        renpy.pause(1.2,hard=True)
+        renpy.screenshot(os.path.join(out,"square_morning_smoke.png"))
+        r13_fx_cue("present")
+        renpy.pause(0.03,hard=True)
+        renpy.screenshot(os.path.join(out,"impact.png"))
+        renpy.pause(0.4,hard=True)
+        renpy.hide_screen("r13_fx_impact")
+        renpy.show_screen("r13_evidence_found",keys=["E01"],conversation=False)
+        renpy.pause(0.22,hard=True)
+        renpy.screenshot(os.path.join(out,"evidence_sparkle.png"))
+        renpy.pause(0.5,hard=True)
+        renpy.hide_screen("r13_evidence_found")
+        report["dither"]=renpy.loadable(R13_DOT_FX["dither"]["file"])
         renpy.scene()
         renpy.show("r13_qa_fx_bg",what=r13_world_background("inn","evening"))
         preferences.text_cps=0

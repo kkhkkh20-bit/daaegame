@@ -120,8 +120,8 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
 - 새 일반 사건은 바로 시작하지 말고 `R13_EVENT_OFFERS`(`systems/room13_event_offers.rpy`)에 등록해 표시로 띄운다. 지나쳤을 때의 결과 깃발과 전해 들은 말을 같이 적는다.
 - 정본은 `story-room13/CURRENT_STORY_DECISIONS.txt`와 `story-room13/CASE13_CANON_SYNC.md`다. 사건 연쇄를 건드리기 전에 읽는다.
 
-### 도트 연출 (0.18.29)
-- 벽난로 불꽃·저녁 불빛, 실외 저녁 눈·가로등, 다람이 눈 깜빡임. 코드는 `systems/room13_dot_fx.rpy`, 좌표·프레임은 `game/assets/room13-dot-fx.json`.
+### 도트 연출 (0.18.29, 0.18.31)
+- 벽난로 불꽃·저녁 불빛, 실외 저녁 눈·가로등, 다람이 눈 깜빡임, 광장 굴뚝 연기, 증거 반짝임, 제시·반박 집중선, 지도 현재 위치 핀, 시간대 전환 디더. 화면 연출 신호는 `r13_fx_cue`. 코드는 `systems/room13_dot_fx.rpy`, 좌표·프레임은 `game/assets/room13-dot-fx.json`.
 - 프레임은 `python3 dev/make_dot_fx.py`로 다시 만든다. 손으로 고친 프레임을 넣지 않는다(다시 돌리면 덮인다).
 - 원본 그림은 바꾸지 않고 위에 얹는다. 설정의 '움직임'이 꺼져 있거나 건너뛰기 중이면 원본만 보인다.
 - 배경을 바꾸면(같은 파일 이름) `make_dot_fx.py`를 다시 돌리고 `dev/run_renpy_tests.sh dot_fx` 캡처를 확인한다.

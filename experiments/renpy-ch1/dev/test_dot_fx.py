@@ -51,6 +51,18 @@ class DotFxTest(unittest.TestCase):
             self.assertEqual(size(spec["half"]), (w, h))
             self.assertEqual(size(spec["closed"]), (w, h))
 
+    def test_smoke_sparkle_and_dither(self):
+        smoke = META["smoke"]
+        self.assertEqual(set(smoke["sources"]), {"square"})
+        for key, path in smoke["puffs"].items():
+            px = int(key.split("-")[0])
+            self.assertEqual(size(path), (px, px))
+        spark = META["evidence_sparkle"]
+        self.assertEqual(size(spark["sheet"]), (128 * spark["frames"], 128))
+        self.assertEqual(size(META["dither"]["file"]), (1280, 720))
+        room = (GAME / "room13.rpy").read_text(encoding="utf-8")
+        self.assertIn("with r13_scene_transition()", room)
+
     def test_hooks_are_single_lines_not_override_layers(self):
         camera = (GAME / "room13_world_camera.rpy").read_text(encoding="utf-8")
         fullbody = (GAME / "room13_fullbody_dialogue.rpy").read_text(encoding="utf-8")
