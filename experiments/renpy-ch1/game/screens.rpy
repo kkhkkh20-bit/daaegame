@@ -66,11 +66,12 @@ screen main_menu():
     add Transform("assets/room13-title-logo.webp",size=(440,178),nearest=True) xalign .5 ypos 132
     vbox:
         xalign .5 ypos 348 spacing 8
-        textbutton "이어하기":
-            style "r13_title_button" selected title_focus=="continue"
-            sensitive title_continue is not None default_focus title_continue is not None
-            hovered SetScreenVariable("title_focus","continue")
-            action (r13_load_action(title_continue) if title_continue else NullAction())
+        if title_continue is not None:
+            textbutton "이어하기":
+                style "r13_title_button" selected title_focus=="continue"
+                sensitive title_continue is not None default_focus title_continue is not None
+                hovered SetScreenVariable("title_focus","continue")
+                action (r13_load_action(title_continue) if title_continue else NullAction())
         textbutton "처음부터":
             style "r13_title_button" selected title_focus=="new"
             default_focus title_continue is None hovered SetScreenVariable("title_focus","new") action Start()
@@ -80,9 +81,10 @@ screen main_menu():
         textbutton "설정":
             style "r13_title_button" selected title_focus=="settings"
             hovered SetScreenVariable("title_focus","settings") action ShowMenu("pause_menu")
-        textbutton "음악 출처":
-            style "r13_title_button" selected title_focus=="credits"
-            hovered SetScreenVariable("title_focus","credits") action Show("r13_music_credits")
+    textbutton "음악 출처":
+        xalign .5 ypos 642 padding (10,5) background None
+        text_font r13_ui_font() text_size 17 text_color "#ddd0b6" text_hover_color "#fff0ce"
+        action Show("r13_music_credits")
     text r13_title_save_line(title_continue) xalign .5 ypos 620 font r13_ui_font() size 16 color "#e1dfcb"
     text config.version xpos 1192 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
 

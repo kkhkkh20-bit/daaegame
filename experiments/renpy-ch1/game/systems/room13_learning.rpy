@@ -124,74 +124,74 @@ init 98 python:
 screen r13_learning_notes(focus=None):
     modal True
     zorder 97
+    use r13_records(initial_tab="notes",note_focus=focus,close_action=Hide("r13_learning_notes"))
+
+screen r13_learning_notes_content(focus=None):
     default tab="questions"
     default expanded=None
     # Cards are folded to one line; the one picked from the field opens first (0.18.22).
     default opened=set([focus if focus is not None else 0])
-    add Solid("#102725fa")
-    text "조사 메모" style "r13_title_text" xpos 48 ypos 30 color "#efd4a1"
+    text "조사 메모" xpos 284 ypos 72 size 26 color "#765426"
     hbox:
-        xpos 48 ypos 94 spacing 14
+        xpos 284 ypos 120 spacing 14
         for key,title in (("questions","지금 궁금한 것"),("observations","자세히 본 것"),("world","알게 된 세계")):
             if key!="world" or r13_learning_terms():
                 textbutton title:
-                    style "r13_action_button" xsize 280 ysize 48 text_size r13_read_size(22,27)
-                    selected tab==key action [SetScreenVariable("tab",key),SetScreenVariable("expanded",None)]
+                    style "r13_action_button" xsize 284 ysize 44 text_size r13_read_size(20,24)
+                    selected tab==key action [Function(r13_record_select,_scope,"tab",key),Function(r13_record_select,_scope,"expanded",None)]
     viewport:
-        area (48,168,1184,444) mousewheel True draggable True scrollbars "vertical"
+        area (284,180,924,394) mousewheel True draggable True scrollbars "vertical"
         vbox:
             spacing 10
             if tab=="questions":
                 for i,note in enumerate(r13_first_mystery_notes()):
                     $ is_open=i in opened
                     frame:
-                        xsize 1144 padding R13_UI_PADDING["panel"] background R13ActionPanel()
+                        xsize 890 padding R13_UI_PADDING["panel"] background R13PaperPanel()
                         vbox:
                             spacing 12
                             button:
-                                xsize 1088 padding (0,0) background None hover_background Solid("#ffffff10")
-                                action SetScreenVariable("opened",(opened-set([i])) if is_open else (opened|set([i])))
+                                xsize 850 padding (0,0) background None hover_background Solid("#ffffff10")
+                                action Function(r13_record_select,_scope,"opened",(opened-set([i])) if is_open else (opened|set([i])))
                                 alt (note["title"]+(" 접기" if is_open else " 펼치기"))
                                 hbox:
                                     spacing 14
-                                    add R13FoldArrow(is_open,"#efd4a1") yalign .5
+                                    add R13FoldArrow(is_open,"#765426") yalign .5
                                     vbox:
                                         spacing 4
-                                        text note["title"] style "r13_key_text" size r13_read_size(26,31) color "#efd4a1" xsize 1040
+                                        text note["title"] style "r13_key_text" size r13_read_size(23,27) color "#765426" xsize 802
                                         if not is_open:
-                                            text ("모르는 것 · "+note["question"]) size r13_read_size(20,24) color "#a8cdec99" xsize 1040
+                                            text ("모르는 것 · "+note["question"]) size r13_read_size(20,24) color "#76634f" xsize 802
                             if is_open:
-                                text ("확인한 것 · "+note["fact"]) size r13_read_size(23,28) color "#fff2cf" xsize 1088
-                                text ("모르는 것 · "+note["question"]) size r13_read_size(23,28) color "#a8cdec" xsize 1088
+                                text ("확인한 것 · "+note["fact"]) size r13_read_size(21,25) color "#493b30" xsize 850
+                                text ("모르는 것 · "+note["question"]) size r13_read_size(21,25) color "#285779" xsize 850
                                 if note.get("result"):
-                                    text ("그 결과 · "+note["result"]) size r13_read_size(23,28) color "#efd4a1" xsize 1088
+                                    text ("그 결과 · "+note["result"]) size r13_read_size(21,25) color "#765426" xsize 850
                                 $ owned_keys=[k for k in note["keys"] if k in room13.get("evidence",[])]
                                 if owned_keys:
-                                    text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size r13_read_size(20,25) color "#d4dfd8" xsize 1088
+                                    text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size r13_read_size(20,25) color "#65503b" xsize 850
                                 textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
                                     style "r13_action_button" xsize 300 ysize 48 text_size r13_read_size(21,26)
-                                    action SetScreenVariable("expanded",None if expanded==i else i)
+                                    action Function(r13_record_select,_scope,"expanded",None if expanded==i else i)
                                 if expanded==i:
-                                    text note["hint"] size r13_read_size(22,27) color "#d4dfd8" xsize 1088
+                                    text note["hint"] size r13_read_size(20,24) color "#65503b" xsize 850
             elif tab=="observations":
                 for note in r13_tool_notes():
                     frame:
-                        xsize 1144 padding R13_UI_PADDING["panel"] background R13ActionPanel()
+                        xsize 890 padding R13_UI_PADDING["panel"] background R13PaperPanel()
                         vbox:
                             spacing 12
-                            text note["title"] style "r13_key_text" size r13_read_size(26,31) color "#efd4a1"
-                            text note["summary"] size r13_read_size(23,28) color "#fff2cf" xsize 1088
-                            text ("질문 완료 · "+R13_NAMES[note["person"]] if note["topic"] in room13.get("read_topics",[]) else note["followup"]) size r13_read_size(21,26) color "#d4dfd8" xsize 1088
+                            text note["title"] style "r13_key_text" size r13_read_size(23,27) color "#765426"
+                            text note["summary"] size r13_read_size(21,25) color "#493b30" xsize 850
+                            text ("질문 완료 · "+R13_NAMES[note["person"]] if note["topic"] in room13.get("read_topics",[]) else note["followup"]) size r13_read_size(21,26) color "#65503b" xsize 850
                 if not r13_tool_notes():
-                    text "돋보기로 자세히 살핀 내용이 여기에 모입니다." size r13_read_size(23,28) color "#d4dfd8"
+                    text "돋보기로 자세히 살핀 내용이 여기에 모입니다." size r13_read_size(21,25) color "#65503b"
             else:
                 for note in r13_learning_terms():
                     frame:
-                        xsize 1144 padding R13_UI_PADDING["panel"] background R13ActionPanel()
+                        xsize 890 padding R13_UI_PADDING["panel"] background R13PaperPanel()
                         vbox:
                             spacing 12
-                            text note["title"] style "r13_key_text" size r13_read_size(26,31) color "#efd4a1"
-                            text note["text"] size r13_read_size(23,28) color "#fff2cf" xsize 1088
-    text "기록을 읽고 정리해도 시간은 흐르지 않습니다." xpos 48 ypos 658 size r13_read_size(19,23) color "#d4dfd8"
-    textbutton "닫기" style "r13_action_button" area (970,642,260,62) text_size r13_read_size(23,28) action Hide("r13_learning_notes")
-    key "game_menu" action Hide("r13_learning_notes")
+                            text note["title"] style "r13_key_text" size r13_read_size(23,27) color "#765426"
+                            text note["text"] size r13_read_size(21,25) color "#493b30" xsize 850
+    text "메모를 읽고 정리해도 시간은 흐르지 않습니다." xpos 284 ypos 608 size 17 color "#796044"

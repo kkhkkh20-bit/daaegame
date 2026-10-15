@@ -19,48 +19,53 @@ init 78 python:
             return "(도면의 연결선과 실제로 움직인 장치가 맞는다. 종이에만 남은 길이 아니었다.)"
         return "(지금 적힌 내용만으로 두 기록이 어떻게 이어지는지는 아직 모르겠다.)"
 
-    def r13_compare_selected(selected):
-        renpy.set_screen_variable("feedback",r13_compare_result(selected),screen="r13_record_compare")
+    def r13_compare_selected(selected,scope=None):
+        result=r13_compare_result(selected)
+        if scope is not None:scope["feedback"]=result
+        else:renpy.set_screen_variable("feedback",result,screen="r13_record_compare")
         renpy.restart_interaction()
 
 screen r13_record_compare(called=False):
-    style_prefix "r13"
     modal True
     zorder 80
+    use r13_records(initial_tab="compare",close_action=(Return() if called else Hide("r13_record_compare")))
+
+screen r13_compare_content():
     default selected=()
     default feedback=""
     $ materials=[key for key in room13["evidence"] if key in ROOM13["evidence"]]
-    add Solid("#eee7d6")
-    text "기록 비교" xpos 40 ypos 28 size 32 color "#765426"
-    text "함께 살펴볼 기록을 두 개 골라 주세요." xpos 254 ypos 36 size 23 color "#526158"
+    text "기록 비교" xpos 284 ypos 76 size 26 color "#765426"
+    text "함께 살펴볼 기록 두 개를 고르세요." xpos 440 ypos 82 size 19 color "#65503b"
     for column in range(2):
         frame:
-            area (40+column*610,100,590,205) padding (22,18)
-            background R13PaperPanel(False)
+            area (284+column*464,128,450,206) padding (16,14)
+            background R13PaperFrame()
             vbox:
-                spacing 18
+                spacing 10
                 if len(selected)>column:
                     $ key=selected[column]
-                    text ROOM13["evidence"][key]["name"] size r13_read_size(27,30) color "#765426"
+                    hbox:
+                        spacing 8
+                        add R13AntiqueIcon("evidence",size=24) yalign .5
+                        text ROOM13["evidence"][key]["name"] size r13_read_size(21,25) color "#765426" xsize 382
                     viewport:
-                        xsize 546 ysize 125 mousewheel True draggable True scrollbars "vertical"
-                        text ROOM13["evidence"][key]["establishes"] xsize 518 size r13_read_size(24,28) color "#342a23" line_spacing 6
+                        xsize 414 ysize 130 mousewheel True draggable True scrollbars "vertical"
+                        text ROOM13["evidence"][key]["establishes"] xsize 388 size r13_read_size(20,24) color "#493b30" line_spacing 5
                 else:
-                    text "기록 선택" size 27 color "#69746a"
+                    text "기록 선택" size 23 color "#796044"
     viewport:
-        area (40,326,1200,174) mousewheel True draggable True scrollbars "vertical"
+        area (284,350,916,122) mousewheel True draggable True scrollbars "vertical"
         vpgrid:
-            cols 3 spacing 10
+            cols 3 spacing 8
             for key in materials:
                 textbutton R13_RECORD_SHORT.get(key,ROOM13["evidence"][key]["name"]):
-                    style "r13_paper_tab_button" xsize 382 ysize 66
+                    style "r13_paper_tab_button" xsize 292 ysize 52 text_size r13_read_size(18,21)
                     selected key in selected
-                    action [SetScreenVariable("selected",r13_compare_pair(selected,key)),SetScreenVariable("feedback","")]
-    text feedback xpos 54 ypos 527 xsize 1158 size r13_read_size(24,28) color "#285779" line_spacing 6
-    textbutton "기록으로 돌아가기":
-        style "r13_action_button" area (40,636,290,58) action (Return() if called else Hide("r13_record_compare"))
+                    action [Function(r13_record_select,_scope,"selected",r13_compare_pair(selected,key)),Function(r13_record_select,_scope,"feedback","")]
+    viewport:
+        area (284,486,914,96) mousewheel True draggable True scrollbars "vertical"
+        text feedback xsize 886 size r13_read_size(20,24) color "#285779" line_spacing 5
     textbutton "비교하기":
-        style "r13_action_button" area (978,636,260,58)
-        action Function(r13_compare_selected,selected)
+        style "r13_compact_button" area (954,596,244,44) text_size 21
+        action Function(r13_compare_selected,selected,_scope)
         sensitive len(selected)==2
-    key "game_menu" action (Return() if called else Hide("r13_record_compare"))

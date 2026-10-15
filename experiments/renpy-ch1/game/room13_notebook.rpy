@@ -28,7 +28,8 @@ init 68 python:
         visible=entries[r13_record_page(entries,page)*r13_record_page_size():][:r13_record_page_size()]
         return detail if detail in visible else (visible[0] if visible else None)
     def r13_record_select(owner,variable,value,mark_seen=True):
-        renpy.set_screen_variable(variable,value,screen=owner)
+        if not isinstance(owner,str):owner[variable]=value
+        else:renpy.set_screen_variable(variable,value,screen=owner)
         if mark_seen and variable=="detail" and value in (store.room13 or {}).get("evidence",[]):
             r13_record_update_ui("seen",value,True)
         renpy.restart_interaction()
@@ -146,8 +147,8 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
                         text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
     vbox:
         xpos 66 ypos 382 spacing 8
-        textbutton "조사 메모" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 action Show("r13_learning_notes")
-        textbutton "기록 비교" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 sensitive not archive action Show("r13_record_compare")
+        textbutton "조사 메모" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="notes" action (Function(r13_record_select,owner,"tab","notes") if not isinstance(owner,str) else Show("r13_learning_notes"))
+        textbutton "기록 비교" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 sensitive not archive selected current=="compare" action (Function(r13_record_select,owner,"tab","compare") if not isinstance(owner,str) else Show("r13_record_compare"))
         textbutton "달력" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 action Show("r13_calendar")
         textbutton "아이템" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 action Show("r13_item_bag")
 
@@ -235,13 +236,13 @@ screen r13_person_record_detail(person):
     else:
         text "직접 만난 사람부터 기록합니다." xpos 844 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
-screen r13_records():
+screen r13_records(initial_tab="evidence",note_focus=None,close_action=None):
     style_prefix "r13"
     modal True
     zorder 50
     on "show" action Function(source_fx,"note_open")
     on "hide" action Function(source_fx,"note_close")
-    default tab="evidence"
+    default tab=initial_tab
     default detail=None
     default person=None
     default page=0
@@ -249,7 +250,7 @@ screen r13_records():
     default order="recent"
     default favorite_only=False
     use r13_reference_record_shell("기록")
-    use r13_reference_record_categories("r13_records",tab,archive=archive)
+    use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab in ("evidence","testimony"):
         if r13_learning_archive_keys():
             textbutton ("이번 여정" if not archive else "지난 플레이"):
@@ -257,8 +258,8 @@ screen r13_records():
                 action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
         $ entries=r13_record_entries(tab,archive,order=order,favorite_only=favorite_only)
         $ selected_record=r13_record_selected(entries,detail,page)
-        use r13_record_filters("r13_records",order,favorite_only,archive)
-        use r13_material_grid(entries,selected_record,page,"r13_records",archive)
+        use r13_record_filters(_scope,order,favorite_only,archive)
+        use r13_material_grid(entries,selected_record,page,_scope,archive)
         use r13_material_detail(selected_record,archive)
     elif tab=="people":
         $ people=r13_met_people()
@@ -270,7 +271,7 @@ screen r13_records():
         for index,who in enumerate(visible):
             button:
                 area (292+(index%3)*164,146+(index//3)*104,158,98) padding (6,5) background R13PaperPanel(selected_person==who)
-                action Function(r13_record_select,"r13_records","person",who)
+                action Function(r13_record_select,_scope,"person",who)
                 vbox:
                     xalign .5 spacing 3
                     add Transform(r13_art(who,"avatar_neutral"),xysize=(58,58),fit="contain",nearest=True) xalign .5
@@ -281,6 +282,10 @@ screen r13_records():
             textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page>0 action SetScreenVariable("page",actual_page-1)
             text ("%d / %d"%(actual_page+1,r13_record_pages(people))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
             textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
+    elif tab=="notes":
+        use r13_learning_notes_content(note_focus)
+    elif tab=="compare":
+        use r13_compare_content()
     else:
         text "실제로 지나간 대화" xpos 292 ypos 88 size 23 color "#65503b"
         viewport:
@@ -294,8 +299,8 @@ screen r13_records():
                             spacing 6
                             text (row["who"]+" · "+row["stamp"]) size 17 color "#625738" xsize 864
                             text row["what"] size r13_read_size(21,26) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize 864
-    textbutton "닫기" style "r13_compact_button" xpos 66 ypos 594 xsize 176 ysize 44 text_size 20 action Hide("r13_records")
-    key "game_menu" action Hide("r13_records")
+    textbutton "닫기" style "r13_compact_button" xpos 66 ypos 594 xsize 176 ysize 44 text_size 20 action (close_action or Hide("r13_records"))
+    key "game_menu" action (close_action or Hide("r13_records"))
 
 screen r13_resident_notes():
     style_prefix "r13"
