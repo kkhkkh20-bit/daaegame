@@ -34,7 +34,7 @@ init 94 python:
         return _r13_firstday_bed(key)
 
     def r13_bed_blocked_reason(key):
-        # Day 1: sleep waits until the room is read, but the bed still says so (owner, 0.18.21).
+        # Day 1: sleep waits until the room is read, but the bed still says so (owner, 0.18.22).
         s=store.room13 or {}
         if key!="bed" or not r13_has("lodging") or r13_bed_available(key):return None
         if not (s.get("life_poc") and s.get("day")==1 and s.get("location")=="room13"):return None

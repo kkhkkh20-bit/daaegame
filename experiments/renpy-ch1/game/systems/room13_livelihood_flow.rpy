@@ -90,7 +90,7 @@ label r13_livelihood:
 # Two parcels, one address (owner's knowledge-run plan D-1, 0.18.16). No "earn double" choice:
 # the labels can be read, the load tried, and an owned item (or 까로's cord, once he offered it)
 # used on the boxes. Pay, the once-only bonus and time stay as in r13_complete_job.
-# r13_delivery_inspect now lives in systems/room13_life_closeups.rpy (drawn close-up, 0.18.21).
+# r13_delivery_inspect now lives in systems/room13_life_closeups.rpy (drawn close-up, 0.18.22).
 
 init 93 python:
     _r13_life_where=r13_where

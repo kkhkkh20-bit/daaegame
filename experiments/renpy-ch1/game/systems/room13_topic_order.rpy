@@ -1,4 +1,4 @@
-# Question numbers never move (owner, 0.18.21). Many layers insert topics at the front or
+# Question numbers never move (owner, 0.18.22). Many layers insert topics at the front or
 # middle of r13_topics; the list is shown in the order each topic first appeared to Dad,
 # so a new question is added at the bottom and the ones already seen keep their number.
 init 130 python:

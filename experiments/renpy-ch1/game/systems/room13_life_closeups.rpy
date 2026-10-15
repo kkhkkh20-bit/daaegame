@@ -1,4 +1,4 @@
-# Life close-ups with visible results (owner's map-assets brief, 0.18.21).
+# Life close-ups with visible results (owner's map-assets brief, 0.18.22).
 #   One shared screen: look at a thing, pick a tool, use it on a thing. The background swaps
 #   to the "after" picture only when the existing model says the action happened.
 #   A delivery: the two-parcel scene of r13_delivery_inspect, drawn. Pay/bonus/time unchanged.

@@ -1,0 +1,86 @@
+{
+ "width": 1536,
+ "height": 1024,
+ "labels": [
+  {
+   "text": "여관 안내도",
+   "x": 250,
+   "y": 80,
+   "fontSize": 38,
+   "locationId": "title"
+  },
+  {
+   "text": "2층",
+   "x": 113,
+   "y": 280,
+   "fontSize": 34,
+   "locationId": "floor"
+  },
+  {
+   "text": "1층",
+   "x": 113,
+   "y": 660,
+   "fontSize": 34,
+   "locationId": "floor"
+  },
+  {
+   "text": "임시 객실",
+   "x": 730,
+   "y": 145,
+   "fontSize": 30,
+   "locationId": "guestroom"
+  },
+  {
+   "text": "13호실",
+   "x": 1233,
+   "y": 281,
+   "fontSize": 30,
+   "locationId": "room13"
+  },
+  {
+   "text": "복도",
+   "x": 747,
+   "y": 282,
+   "fontSize": 29,
+   "locationId": "hall"
+  },
+  {
+   "text": "식당",
+   "x": 558,
+   "y": 548,
+   "fontSize": 34,
+   "locationId": "dining"
+  },
+  {
+   "text": "주방",
+   "x": 970,
+   "y": 548,
+   "fontSize": 34,
+   "locationId": "kitchen"
+  },
+  {
+   "text": "로비",
+   "x": 790,
+   "y": 777,
+   "fontSize": 34,
+   "locationId": "inn"
+  },
+  {
+   "text": "카운터",
+   "x": 1218,
+   "y": 752,
+   "fontSize": 22,
+   "locationId": "reception"
+  },
+  {
+   "text": "입구",
+   "x": 766,
+   "y": 978,
+   "fontSize": 23,
+   "locationId": "entrance"
+  }
+ ],
+ "base": "assets/room13-inn-guide-v4.webp",
+ "source": "inn-guide-v4-integration.zip (inn-guide-v4-base.png + guide-labels.json), applied 2026-10-15 at the owner's final instruction",
+ "note": "Supplementary wayfinding drawing, not a floor plan. Labels are runtime UI text; guestroom only once it exists in the game, room13 lock from r13_places(), no secret passage."
+}

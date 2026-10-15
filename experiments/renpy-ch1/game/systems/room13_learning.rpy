@@ -126,7 +126,7 @@ screen r13_learning_notes(focus=None):
     zorder 97
     default tab="questions"
     default expanded=None
-    # Cards are folded to one line; the one picked from the field opens first (0.18.21).
+    # Cards are folded to one line; the one picked from the field opens first (0.18.22).
     default opened=set([focus if focus is not None else 0])
     add Solid("#102725fa")
     text "조사 메모" style "r13_title_text" xpos 48 ypos 30 color "#efd4a1"

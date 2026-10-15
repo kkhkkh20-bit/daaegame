@@ -12,8 +12,8 @@ for tc in "${TESTS[@]}"; do
   ps -eo pid,comm | awk '$2=="renpy"{print $1}' | xargs -r kill -9 2>/dev/null
   rm -rf game/saves tests qa_result.txt qa_items.json ~/.renpy/daaegame-renpy-village-ch1-06/sync/*.save
   log=$LOG/$tc.txt; rm -f "$log"
-  timeout 400 xvfb-run -a -s "-screen 0 1280x720x24" "$SDK/renpy.sh" . test "$tc" > "$log" 2>&1 &
-  for i in $(seq 1 400); do grep -q "Status:" "$log" 2>/dev/null && break; sleep 1; done
+  timeout ${ROOM13_TEST_TIMEOUT:-400} xvfb-run -a -s "-screen 0 1280x720x24" "$SDK/renpy.sh" . test "$tc" > "$log" 2>&1 &
+  for i in $(seq 1 ${ROOM13_TEST_TIMEOUT:-400}); do grep -q "Status:" "$log" 2>/dev/null && break; sleep 1; done
   sleep 1; ps -eo pid,comm | awk '$2=="renpy"{print $1}' | xargs -r kill -9 2>/dev/null
   status=$(grep -o 'Status: [A-Z]*' "$log" | tail -1)
   echo "== $tc $status $(grep -o 'Time: [0-9.]* s' "$log" | tail -1)"

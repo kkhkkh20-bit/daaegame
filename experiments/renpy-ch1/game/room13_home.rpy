@@ -15,6 +15,6 @@ init 79 python:
     R13_STAGE_POSITIONS[("daram","guestroom")]=(835,674,262)
     ROOM13["topics"]["home:records"]=dict(npc="daram",title="오늘 찾은 걸 같이 볼까?",day=[1,14],need=["lodging"],give=[],flags=[],lines=[("daram","응. 나도 내가 본 걸 말해 줄게.")])
     _r13_home_topics=r13_topics
-    # 0.18.21 (owner): the "look at today's finds together" topic is retired; the 기록 button does this.
+    # 0.18.22 (owner): the "look at today's finds together" topic is retired; the 기록 button does this.
     def r13_topics(person):
         return [(key,spec) for key,spec in _r13_home_topics(person) if key!="home:records"]

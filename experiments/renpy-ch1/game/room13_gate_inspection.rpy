@@ -5,7 +5,7 @@ init 63 python:
         "G1": dict(object="booth", tab="예약 원본", heading="예약 원본 · 함께 온 사람 수", text="예약한 사람: 다돌과 한 명 더. 모두 2명."),
         "G3": dict(object="ledger", tab="옮겨 쓴 이름 목록", heading="옮겨 쓴 이름 목록 · 함께 온 사람 수", text="방문자: 다돌. 총 인원: 1명."),
     }
-    # 0.18.21 (owner): no document popup. The guard hands over his own list (G3) in conversation;
+    # 0.18.22 (owner): no document popup. The guard hands over his own list (G3) in conversation;
     # clicking the shelf finds the original (G1) in a short scene, like the posted rules.
     ROOM13["objects"]["gate"]["gate_documents"] = dict(
         rect=list(R13_WORLD_LAYOUTS.get("gate",{}).get("documents",[1034,342,159,111])), text="초소 선반에 예약 서류 묶음이 도착 날짜별로 꽂혀 있다.",

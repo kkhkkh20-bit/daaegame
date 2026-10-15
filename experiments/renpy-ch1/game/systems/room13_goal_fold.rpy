@@ -1,4 +1,4 @@
-# The field's one-line question folds open into every open question (owner, 0.18.21).
+# The field's one-line question folds open into every open question (owner, 0.18.22).
 #   ▼ beside the faint line lists the 조사 메모 titles; picking one opens 조사 메모 at that card.
 default r13_goal_open=False
 

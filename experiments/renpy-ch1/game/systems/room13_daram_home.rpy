@@ -20,7 +20,7 @@ init 101 python:
             return "neutral",(873,651,235),"침대 곁에서 쉬는 중"
         return (
             ("action_1",(875,477,210),"침대에서 책 읽는 중"),
-            # 0.18.21 (owner): sat on the suitcase behind the chair and looked cut off; now on the rug.
+            # 0.18.22 (owner): sat on the suitcase behind the chair and looked cut off; now on the rug.
             ("action_2",(900,645,210),"깔개에 앉아 그림 그리는 중"),
             ("inspect_floor",(875,625,195),"침대 곁을 둘러보는 중"),
         )[period]

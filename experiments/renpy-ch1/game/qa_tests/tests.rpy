@@ -1701,7 +1701,7 @@ testcase grant_after_reaction:
     assert eval (room13["evidence"].count("J08")==1)
 
 testcase gate_documents:
-    # 0.18.21: no document popup. The shelf scene gives the original; the guard hands over his list.
+    # 0.18.22: no document popup. The shelf scene gives the original; the guard hands over his list.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -1721,7 +1721,7 @@ testcase gate_documents:
     assert eval ("G3" in room13["evidence"])
 
 testcase bed_hint_day1:
-    # 0.18.21: on day 1 the bed says why sleep waits instead of saying nothing.
+    # 0.18.22: on day 1 the bed says why sleep waits instead of saying nothing.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -1737,7 +1737,7 @@ testcase bed_hint_day1:
     assert eval (r13_bed_available("bed") and r13_bed_blocked_reason("bed") is None)
 
 testcase goal_fold:
-    # 0.18.21: the field question folds open; a picked question opens its 조사 메모 card.
+    # 0.18.22: the field question folds open; a picked question opens its 조사 메모 card.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -1756,7 +1756,7 @@ testcase goal_fold:
     run Hide("r13_learning_notes")
 
 testcase drawer_visual:
-    # 0.18.21: rubbing picture, pressed groove and opened panel are drawn, not ASCII.
+    # 0.18.22: rubbing picture, pressed groove and opened panel are drawn, not ASCII.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -1776,7 +1776,7 @@ testcase drawer_visual:
     screenshot "drawer_open.png"
 
 testcase inn_workers:
-    # 0.18.21 (owner): 토리 actually sews and 따닥 actually repairs at the inn.
+    # 0.18.22 (owner): 토리 actually sews and 따닥 actually repairs at the inn.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -1787,7 +1787,7 @@ testcase inn_workers:
     screenshot "inn_workers.png"
 
 testcase life_door:
-    # 0.18.21 map assets B: leave for the inn's cloth, cloth under the front door, stays fixed.
+    # 0.18.22 map assets B: leave for the inn's cloth, cloth under the front door, stays fixed.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -1807,7 +1807,7 @@ testcase life_door:
     assert eval (r13_has("inn_draft_sealed"))
 
 testcase life_meal:
-    # 0.18.21 map assets C: the set kept aside is served once, then the existing finish/ask.
+    # 0.18.22 map assets C: the set kept aside is served once, then the existing finish/ask.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -1822,3 +1822,145 @@ testcase life_meal:
     click "맡은 일만 마친다"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice=="finish" and r13_has("life_meal_served"))
+
+testcase fullbody_dialogue:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody")
+    click pos (1276,300) until eval r13_qa_fb_done timeout 1500
+    pause 1.0
+
+testcase fullbody_tuned:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody",("normal","large"),["bami","doto"],["neutral","surprise"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    pause 1.0
+
+testcase fullbody_line_emotions:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_line_emotions")
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_0.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_1.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_2.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_3.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_4.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_5.png"
+    click pos (640,600)
+    pause 1.2
+    $ r13_qa_le_record()
+    screenshot "le_6.png"
+    click pos (640,600)
+    pause 1.5
+
+testcase inn_v4_travel:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_inn_v4")
+    click pos (640,600) until screen "r13_hub" timeout 60
+    pause 1.0
+    $ r13_qa_inn_note("lobby")
+    screenshot "inn_lobby.png"
+    click "‹ 식당"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("after-dining-chip")
+    click "접수대 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    click "주방 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("after-kitchen-chip")
+    click "접수대 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    click "안내도"
+    pause 1.0
+    $ r13_qa_inn_note("guide-open-lobby")
+    screenshot "inn_guide_lobby.png"
+    keysym "K_ESCAPE"
+    pause 1.0
+    $ r13_qa_inn_note("guide-escape")
+    click "2층으로 ↑"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("hall")
+    screenshot "inn_hall.png"
+    click "안내도"
+    pause 1.0
+    $ r13_qa_inn_note("guide-open-hall")
+    screenshot "inn_guide_hall.png"
+    click "닫기"
+    pause 1.0
+    $ r13_qa_inn_note("guide-closed")
+    click "13호실"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("room13")
+    click "복도로 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    click "↓ 1층 로비"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("back-lobby")
+    click "바깥으로"
+    pause 1.5
+    $ r13_qa_inn_note("outside-map")
+    screenshot "inn_outside_map.png"
+    click "현장으로 돌아가기"
+    pause 1.0
+    click "안내도"
+    pause 1.0
+    click "식당"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("guide-travel-dining")
+    $ r13_qa_inn_dump()
+
+testcase inn_v4_guestroom:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_inn_v4","occurred")
+    click pos (640,600) until screen "r13_hub" timeout 60
+    pause 1.0
+    click "2층으로 ↑"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("hall-occurred")
+    screenshot "inn_hall_occurred.png"
+    click "안내도"
+    pause 1.0
+    $ r13_qa_inn_note("guide-occurred")
+    screenshot "inn_guide_occurred.png"
+    click "닫기"
+    pause 1.0
+    click "임시 객실 ›"
+    pause 1.5
+    click pos (640,600) until screen "r13_hub" timeout 30
+    $ r13_qa_inn_note("guestroom")
+    $ r13_qa_inn_dump()

@@ -1,4 +1,4 @@
-# Entry-only staging. 0.18.21 (owner): Daram no longer peeks out of the booth window, where
+# Entry-only staging. 0.18.22 (owner): Daram no longer peeks out of the booth window, where
 # she was cut off; she stands in the yard as an ordinary actor (positions/poses in
 # room13-world-layout.json). The old booth-window art below is kept for reference only.
 init 62 python:
@@ -37,7 +37,7 @@ init 62 python:
         return AlphaMask(portrait, R13WaitingWindowOcclusion(), invert=True)
 
 screen r13_waiting_window(ready=False):
-    # Retired in 0.18.21: Daram is drawn in the yard by r13_stage_people.
+    # Retired in 0.18.22: Daram is drawn in the yard by r13_stage_people.
     if False:
         $ waiting_art = r13_waiting_window_art()
         add waiting_art:
