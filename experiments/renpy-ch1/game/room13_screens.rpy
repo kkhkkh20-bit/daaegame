@@ -247,8 +247,9 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         # The person stands large
         # on the left, the scene is dimmed, and plain-text options name what
         # Dad will ask; the question itself is then spoken in dialogue.
-        add r13_close_art(person,pose,760):
-            xpos 640 xanchor .5 ypos r13_close_y(person,760,110,pose)
+        # 0.18.39 (owner): same size and place as in dialogue, so the person does not jump.
+        add r13_close_art(person,pose,840):
+            xpos r13_close_x(person,pose) xanchor .5 ypos r13_close_y(person,840,110,pose)
         add Solid("#000000a0")
         text r13_person_caption(person):
             xalign .5 ypos 24 xsize 940 text_align .5
@@ -262,18 +263,26 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         else:
             text "질문·자료 보여주기 · 시간 소모 없음":
                 xalign .5 ypos 63 size r13_read_size(17,21) color "#e5ece6"
+        # 0.18.39 (owner): the list sits where the dialogue window is. Its bottom is the window's
+        # bottom edge (632) and it grows upward, so the face stays visible and choices and lines
+        # are read at the same height.
+        $ list_bottom=560 if return_action is not None else 632
+        # One line per question (owner, 0.18.39): text height plus a small margin, not two lines.
+        $ row_h=(58 if persistent.room13_large_text else 48)
+        $ list_h=max(1,len(entries))*(row_h+12)
+        $ list_top=max(204 if title!="선택" else 150,list_bottom-list_h)
         if title!="선택":
             text title:
-                xpos list_left ypos 146 xsize list_width text_align .5
+                xpos list_left ypos list_top-56 xsize list_width text_align .5
                 size r13_read_size(27,32) color "#f6d18a"
         viewport:
-            area (list_left,204,list_width,342 if return_action is not None else 416)
+            area (list_left,list_top,list_width,list_bottom-list_top)
             mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
             vbox:
                 spacing 12
                 for index,(title,action,was_read) in enumerate(entries):
                     button:
-                        xsize list_width-23 yminimum r13_read_row_height() padding (18,15)
+                        xsize list_width-23 yminimum row_h padding (18,9)
                         background R13InkPanel() hover_background R13InkPanel(focused=True)
                         action action sensitive ready
                         text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read)):
@@ -290,7 +299,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 key ("K_KP%d"%(index+1)) action action
         if return_action is not None:
             textbutton "돌아가기":
-                xpos list_left+list_width//2 xanchor .5 ypos 558 xsize 220 ysize 64
+                xpos list_left+list_width//2 xanchor .5 ypos 572 xsize 220 ysize 60
                 padding (18,12) background R13InkPanel() hover_background R13InkPanel(focused=True)
                 text_size r13_read_size(23,28) text_color "#fff4df" text_xalign .5
                 action return_action sensitive ready

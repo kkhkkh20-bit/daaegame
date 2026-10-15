@@ -301,7 +301,7 @@ init 55 python:
                 # An expression change can come with a short body reaction (systems/room13_dot_fx.rpy).
                 react=r13_react_kind(who,arriving,actor_pose)
                 what=r13_close_art(who,actor_pose,840,True,(arriving or previous_pose!=store.r13_current_pose) and not pop and not react)
-                at_list=[r13_portrait_close(r13_close_y(who,pose=actor_pose))]+([r13_carriage_pop] if pop else [])
+                at_list=[r13_portrait_close(r13_close_y(who,pose=actor_pose),r13_close_x(who,actor_pose))]+([r13_carriage_pop] if pop else [])
                 what,at_list=r13_react(react,who,actor_pose,what,at_list)
                 renpy.show("r13_actor",what=what,tag="r13_visitor",at_list=at_list)
             store.r13_motion_person=who

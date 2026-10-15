@@ -22,7 +22,8 @@ EMOTIONS = ("neutral", "joy", "flustered", "angry", "anxious", "surprise")
 def load_module():
     source = (GAME / "room13_fullbody_dialogue.rpy").read_text(encoding="utf-8")
     body = source[source.index("init 58 python:") + len("init 58 python:"):]
-    loaded = {"assets/room13-fullbody-dialogue.json": DATA, "assets/room13-fullbody-line-emotions.json": LINES}
+    loaded = {"assets/room13-fullbody-dialogue.json": DATA, "assets/room13-fullbody-line-emotions.json": LINES,
+              "assets/room13-fullbody-centre.json": json.loads((GAME / "assets/room13-fullbody-centre.json").read_text(encoding="utf-8"))}
     env = {"json": SimpleNamespace(load=lambda f: f),
            "renpy": SimpleNamespace(loadable=lambda name: name in loaded or (GAME / name).exists(),
                                     file=lambda name: loaded[name])}

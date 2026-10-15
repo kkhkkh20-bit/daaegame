@@ -85,6 +85,15 @@ init 58 python:
             R13_FULLBODY_ART_CACHE[key]=result
         return At(result,r13_actor_enter(r13_appearance_duration())) if entrance else result
 
+    R13_FULLBODY_CENTRE = json.load(renpy.file("assets/room13-fullbody-centre.json")) if renpy.loadable("assets/room13-fullbody-centre.json") else {}
+
+    def r13_close_x(person,pose="interview_neutral",height=840):
+        """Screen x for the close-up's centre: the head and torso, not the crop box, sit at 640
+        (dev/fullbody_centre.py). Same value in dialogue and on the question screen."""
+        spec=r13_fullbody_spec(person,pose)
+        if not spec:return 640
+        return int(round(640-R13_FULLBODY_CENTRE.get(person,0)*r13_fullbody_scale(person,height)))
+
     def r13_fullbody_close_y(person,height,top,pose):
         spec=r13_fullbody_spec(person,pose)
         if not spec:return None

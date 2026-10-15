@@ -2294,3 +2294,19 @@ testcase dot_fx:
     click pos (1276,300) until eval r13_qa_fx_done timeout 300
     pause 1.0
 
+
+testcase karo_center:
+    # 0.18.39 (owner): two-line dialogue window, Karo centred, same place in dialogue and questions.
+    pause 2.0
+    $ persistent.room13_large_text=True
+    click "처음부터"
+    pause 3.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    run Jump("r13_entry_karo_menu")
+    pause 1.5
+    screenshot "karo_topics.png"
+    click "마차가 괜찮은지"
+    pause 1.5
+    screenshot "karo_line.png"
+    $ persistent.room13_large_text=False

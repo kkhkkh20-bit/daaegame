@@ -169,8 +169,8 @@ init 62:
         size 23
         xalign 0.5
 
-transform r13_portrait_close(top=110):
-    xpos 640
+transform r13_portrait_close(top=110,x=640):
+    xpos x
     xanchor 0.5
     ypos top
     nearest True

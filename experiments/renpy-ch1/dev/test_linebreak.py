@@ -19,10 +19,11 @@ class LineBreak(unittest.TestCase):
  def test_four_lines_paged_two_by_two(self):
   pages=env['r13_dialogue_pages']('첫 문장입니다. 둘째 문장입니다. 셋째 문장입니다. 넷째 문장입니다.')
   self.assertEqual(pages,['첫 문장입니다.\n둘째 문장입니다.','셋째 문장입니다.\n넷째 문장입니다.'])
-  self.assertEqual(env['r13_dialogue_pages']('하나. 둘. 셋.'),['하나.\n둘.\n셋.'])
+  # 0.18.39: the window is two lines tall; a third line goes to the next click.
+  self.assertEqual(env['r13_dialogue_pages']('하나. 둘. 셋.'),['하나.\n둘.','셋.'])
   long=env['r13_dialogue_pages']('팔의 상처만으로는 목숨을 앗아 간 머리 상처를 설명할 수 없습니다. 떨어져 나간 촛대 윗부분이 다시 쓰였습니다. 그 사이 아이가 어디 있었는지, 누가 다른 길로 드나들었는지 함께 봐야 합니다.')
-  self.assertEqual(len(long),2)
-  self.assertTrue(long[1].startswith('떨어져') and long[1].endswith('합니다.'))
+  self.assertTrue(all(p.count('\n')<=1 for p in long))
+  self.assertTrue(long[0].endswith('없습니다.') and long[-1].endswith('합니다.'))
  def test_tags_kept_whole(self):
   out=f('{color=#fff}{b}서리 검사원{/b}{/color}이 장부를 덮고 창밖을 보았다. 바람이 세졌다.')
   self.assertIn('{color=#fff}{b}서리 검사원{/b}{/color}',out)

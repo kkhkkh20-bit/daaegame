@@ -86,6 +86,13 @@ screen main_menu():
     text r13_title_save_line(title_continue) xalign .5 ypos 620 font r13_ui_font() size 16 color "#e1dfcb"
     text config.version xpos 1192 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
 
+# Top of the two-line dialogue window (bottom edge 632): 23px text + padding, or 29px large text.
+define R13_SAY_TOP_NORMAL = 532
+define R13_SAY_TOP_LARGE = 516
+init python:
+    def _r13_say_top():
+        return R13_SAY_TOP_LARGE if persistent.room13_large_text else R13_SAY_TOP_NORMAL
+
 screen say(who,what):
     if not room13_mode:
         if room13_mode:
@@ -134,10 +141,11 @@ screen say(who,what):
             key "K_h" action Show("r13_backlog")
         window:
             id "window"
+            # 0.18.39 (owner): two lines tall in both text sizes; the bottom edge stays at 632.
             xpos (240 if room13_mode else 40)
-            ypos (420 if room13_mode and persistent.room13_large_text else 508 if room13_mode else 551)
+            ypos (_r13_say_top() if room13_mode else 551)
             xsize (800 if room13_mode else 1200)
-            ysize (212 if room13_mode and persistent.room13_large_text else 124 if room13_mode else 169)
+            ysize (632-_r13_say_top() if room13_mode else 169)
             background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,16)
             if room13_mode:
                 r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 756 font r13_ui_font() color r13_say_color()
@@ -145,7 +153,7 @@ screen say(who,what):
                 text what id "what" xsize 1120 font "assets/Galmuri11.ttf" color "#fff5df"
         if who:
             frame:
-                xpos 254 ypos (398 if room13_mode and persistent.room13_large_text else 486 if room13_mode else 522)
+                xpos 254 ypos (_r13_say_top()-22 if room13_mode else 522)
                 padding (14,5) background R13InkPanel(alpha="ff")
                 text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
         text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab"
