@@ -129,11 +129,22 @@
 - 잠긴 방은 어두운 빗금으로 덮인다.
 - 이동 조건은 바꾸지 않았다. 장면의 이동 버튼(`r13_local_connections`)과 같다.
 
+## 11. 첫날 13호 진행과 테스트 도구
+
+- **책상 위 접힌 종이.** 엄마의 메모(M01)는 그동안 책상을 눌러 필기함을 열고, 그 안의 '접힌 메모와 편지'를 다시 눌러야만 나왔다.
+  - 이제 방 화면의 책상 위 종이(찻잔 왼쪽)를 바로 누르면 읽힌다.
+  - 메모를 읽으면 종이 표시는 사라진다.
+  - 첫날 13호의 목표 줄은 "책상 위에 접힌 종이가 있다" → "침대도 살펴보자" → "침대를 눌러 잠자리에 들자" 순서로 바뀐다.
+- **관리자 도구** (`systems/room13_admin.rpy`)
+  - `?admin=1` 또는 Shift+A로 켠다.
+  - 다음 진행 조건, 클릭 영역 보기, 시작 지점·날짜·장소 이동, 돈·물건·자료 지급을 할 수 있다.
+  - 사용법: `docs/TEST_PLAY_GUIDE.md`.
+
 ## 검사
 
 - `dev/check.sh`: 단위 테스트와 lint 통과.
 - Ren'Py 화면 테스트: 아래 "회귀 결과"에 적는다.
-  - 새로 넣은 테스트: gate_documents, bed_hint_day1, goal_fold, drawer_visual, inn_workers, life_door, life_meal, gm_package, gm_lamp, gm_scale, gm_floor, gm_stone. 바뀐 화면으로 다시 돌린 테스트: inn_v4_travel, inn_v4_guestroom.
+  - 새로 넣은 테스트: gate_documents, bed_hint_day1, goal_fold, drawer_visual, inn_workers, life_door, life_meal, gm_package, gm_lamp, gm_scale, gm_floor, gm_stone. 바뀐 화면으로 다시 돌린 테스트: inn_v4_travel, inn_v4_guestroom. 추가: day1_note_spot, admin_tool.
   - 바뀐 화면에 맞춘 테스트: delivery_cord.
 - 개별 브라우저 검사와 14일 전체 플레이는 소유자 지시에 따라 이번에 반복하지 않았다.
 - 재미는 검증하지 않았다.
