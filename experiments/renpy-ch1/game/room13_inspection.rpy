@@ -3,9 +3,10 @@
 init 66 python:
     R13_INSPECTION_ITEMS = {
         # Owner asked what these are for (0.18.5): each line names its use.
-        "pencil": ("짧은 연필", "종이 위에 눕혀 문지르면 아래에 눌린 무늬가 옮겨진다. 얇은 종이를 먼저 깐 뒤 쓴다."),
-        "paper": ("얇은 종이", "눌린 무늬 위에 까는 종이. 서랍 속 낡은 운반표 위에 놓아 보자."),
-        "ruler": ("납작한 자", "끝이 얇다. 서랍 칸막이의 걸림쇠를 누를 수 있다. 여는 방법을 알아낸 뒤 쓴다."),
+        # 0.18.20: what each tool is and does in general; no target, order or reward.
+        "pencil": ("짧은 연필", "종이 위에 눕혀 문지르면 아래에 눌린 무늬가 옮겨진다."),
+        "paper": ("얇은 종이", "얇아서 아래의 무늬가 비친다. 무늬 위에 깔고 문지를 수 있다."),
+        "ruler": ("납작한 자", "끝이 얇고 단단하다. 좁은 틈이나 홈을 누를 수 있다."),
         "magnifier": ("접이식 돋보기", "책상 물건을 확대한다. 현장의 이불 바느질·수리점 도면도 조사 메뉴에서 살필 수 있다."),
     }
     # Coordinates are in the game's 1280x720 canvas, independent of source size.
@@ -35,7 +36,7 @@ init 66 python:
         return store.room13.get("location")==("guestroom" if displaced else "room13")
 
     def r13_inspection_state():
-        result=dict(version=1,inventory=[],taken=[],seen=[],paper_placed=False,rubbing=False,compartment_open=False)
+        result=dict(version=1,inventory=[],taken=[],seen=[],paper_placed=False,rubbing=False,compartment_open=False,groove_held=False)
         if store.room13: result.update(winter_copy.deepcopy(store.room13.get("inspection_items",{})))
         return result
 
@@ -45,6 +46,8 @@ init 66 python:
     def r13_inspection_transition(state,view,target,selected=None):
         """Pure reducer: all durable writes return through r13_edit, supporting rollback."""
         s=winter_copy.deepcopy(state)
+        # The groove stays pressed only until the next click (press, then push the panel).
+        held=bool(s.get("groove_held"));s["groove_held"]=False
         out=dict(view=view,selected=selected,lens=None,message="")
         def say(message):
             out["message"]=message
@@ -57,7 +60,7 @@ init 66 python:
             if key=="magnifier":
                 return say("아이템 획득: 접이식 돋보기. 책상 물건을 크게 보거나, 현장 조사 메뉴에서 쓸 수 있다.")
             if all(k in s["taken"] for k in ("pencil","paper","ruler")):
-                return say("아이템 획득: %s. 세 도구를 모두 챙겼다. 서랍을 열고 잠긴 도구칸을 열어 보자."%R13_INSPECTION_ITEMS[key][0])
+                return say("아이템 획득: %s. 세 도구를 모두 챙겼다."%R13_INSPECTION_ITEMS[key][0])
             return say("아이템 획득: %s. %s"%R13_INSPECTION_ITEMS[key])
         if view not in ("desk","drawer") or target not in R13_INSPECTION_LAYOUT[view]["targets"]:
             return say("손이 닿는 물건부터 살펴보자.")
@@ -66,6 +69,9 @@ init 66 python:
         if selected and selected not in s["inventory"]:
             out["selected"]=None
             return say("그 물건은 지금 아이템에 없다.")
+        if view=="drawer" and target=="compartment" and held and not s["compartment_open"]:
+            s["compartment_open"]=True;out["selected"]=None
+            return say("홈을 누른 채 판을 오른쪽으로 밀었다. 판이 옆으로 밀리며 도구칸이 열렸다. 안에 접이식 돋보기가 있다.")
         if selected=="magnifier":
             out["lens"]=(view,target)
             return say("돋보기를 가까이 댔다. 작은 무늬를 크게 살펴본다.")
@@ -76,16 +82,18 @@ init 66 python:
                 return say("얇은 종이를 운반표 위에 펼쳤다. 눌린 무늬를 옮겨 낼 도구가 필요하다.")
             if view=="drawer" and target=="tag" and selected=="pencil":
                 if not s["paper_placed"]: return say("운반표에 바로 칠하면 글씨를 덮어 버린다. 얇은 종이를 먼저 대자.")
-                if s["rubbing"]: return say("탁본은 이미 완성됐다. 아래쪽 홈을 누른 채 오른쪽으로 미는 그림이다.")
+                if s["rubbing"]: return say("탁본은 이미 완성됐다.")
                 s["rubbing"]=True;out["selected"]=None
-                if "pencil" in s["inventory"]: s["inventory"].remove("pencil")
                 return say("연필을 눕혀 문질렀다. 칸막이 아래쪽 홈을 누른 채 오른쪽으로 미는 그림이 나타났다.")
-            if view=="drawer" and target in ("divider","compartment") and selected=="ruler":
-                if s["compartment_open"]: return say("도구칸은 이미 열려 있다. 더 벌릴 필요는 없다.")
-                if not s["rubbing"]: return say("아무 틈이나 벌리면 얇은 나무가 갈라지겠다. 운반표에 남은 여는 방법을 먼저 읽어 보자.")
-                s["compartment_open"]=True;out["selected"]=None
-                if "ruler" in s["inventory"]: s["inventory"].remove("ruler")
-                return say("자로 아래쪽 걸림쇠를 누르고 판을 오른쪽으로 밀었다. 안쪽 도구칸에 접이식 돋보기가 있다.")
+            # 0.18.20: opening depends on the motion, not on having made the rubbing.
+            # Press the bottom groove with the ruler, then push the panel to the right.
+            if view=="drawer" and target=="divider" and selected=="ruler":
+                if s["compartment_open"]: return say("이미 열려 있다.")
+                s["groove_held"]=True
+                return say("자 끝으로 아래쪽 홈을 눌렀다. 안쪽에서 걸림쇠가 조금 내려갔다.")
+            if view=="drawer" and target=="compartment" and selected=="ruler" and not held:
+                if s["compartment_open"]: return say("이미 열려 있다.")
+                return say("판 틈에 자를 넣어 봤다. 판은 걸린 채 움직이지 않는다.")
             return say("여기에는 이 도구를 쓸 일이 없겠다. 물건은 그대로 두었다.")
         if view=="desk" and target in ("pencil","paper","ruler"): return take(target)
         if view=="desk" and target=="drawer":
@@ -98,8 +106,8 @@ init 66 python:
             return say("오른쪽 작은 도구칸이 닫혀 있다. 손잡이 대신 아래쪽에 얕은 홈이 있다.")
         if view=="drawer" and target=="tag":
             if s["rubbing"]: return say("탁본에 나타난 그림: 아래쪽 홈을 누르고, 누른 채 오른쪽으로 민다.")
-            if s["paper_placed"]: return say("운반표 위에 얇은 종이를 놓았다. 눌린 무늬를 문질러 옮겨 보자.")
-            return say("필기함을 여는 방법이 눌러 새겨진 낡은 운반표다. 색은 지워졌지만 손끝에 얕은 무늬가 걸린다.")
+            if s["paper_placed"]: return say("운반표 위에 얇은 종이가 놓여 있다.")
+            return say("색이 지워진 낡은 운반표다. 손끝에 얕게 눌린 무늬가 걸린다.")
         texts={
             "letters":"집에서 챙겨 온 편지다. 방에 온 뒤 새로 도착한 편지는 없다.",
             "cup":"물을 마신 자국이 남았다. 종이에 쏟지 않도록 손잡이를 돌려 두었다.",
@@ -174,7 +182,7 @@ screen r13_desk_inspection():
     default view="desk"
     default selected=None
     default lens=None
-    default message=("우리 여행 필기함이다. 서랍 속 작은 도구칸이 잠겨 있다. 책상 위 종이·연필·자를 챙겨 여는 방법을 찾자." if not r13_inspection_state()["compartment_open"] else "우리 여행 필기함이다. 돋보기를 고르고 물건을 누르면 크게 볼 수 있다.")
+    default message=("우리 여행 필기함이다. 서랍 속 작은 도구칸이 잠겨 있다." if not r13_inspection_state()["compartment_open"] else "우리 여행 필기함이다. 돋보기를 고르고 물건을 누르면 크게 볼 수 있다.")
     add r13_inspection_art(view)
     for target,rect in R13_INSPECTION_LAYOUT[view]["targets"].items():
         if not (view=="desk" and target in ("pencil","paper","ruler") and target in r13_inspection_state()["taken"]):

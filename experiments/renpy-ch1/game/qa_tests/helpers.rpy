@@ -275,3 +275,9 @@ label r13_qa_delivery:
     call r13_delivery_inspect
     $ store.r13_qa_dv_choice=r13_job_choice
     jump r13_roam
+
+init 999 python:
+    def r13_qa_present_deferred(person,key):
+        store.r13_defer_grants=True
+        store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))
+        store.r13_defer_grants=False

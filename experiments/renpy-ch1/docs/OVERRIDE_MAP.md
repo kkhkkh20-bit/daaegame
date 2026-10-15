@@ -48,7 +48,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 57 | `room13_life.rpy:182` | _r13_before_inspection_visible |
-| 2 | 66 | `room13_inspection.rpy:162` | r13_before_gate_bundle_visible |
+| 2 | 66 | `room13_inspection.rpy:170` | r13_before_gate_bundle_visible |
 | 3 | 67 | `room13_gate_inspection.rpy:63` | _r13_route_object_visible |
 | 4 | 90 | `room13_route_knowledge.rpy:22` | _r13_firstday_visible |
 | 5 | 94 | `systems/room13_first_day_flow.rpy:15` | _r13_items_visible |
@@ -198,6 +198,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:180` |  |
 
+## `r13_grant` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:103` | _r13_grant_now |
+| 2 | 125 | `systems/room13_grant_timing.rpy:10` |  |
+
 ## `r13_has` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -238,7 +245,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 61 | `room13_interaction.rpy:84` | _r13_before_inspection_name |
-| 2 | 66 | `room13_inspection.rpy:166` |  |
+| 2 | 66 | `room13_inspection.rpy:174` |  |
 
 ## `r13_record_entries` (2층)
 

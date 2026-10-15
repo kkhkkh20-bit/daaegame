@@ -1684,3 +1684,18 @@ testcase event_offer:
     run Function(r13_edit,period=1)
     run Function(r13_offers_tick)
     assert eval (r13_has("ev_l_done") and r13_has("warning_exposed") and room13["offer_news"])
+
+testcase grant_after_reaction:
+    # 0.18.20: a record earned by showing something is granted after the reaction is read, once.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="post",life_poc=True,evidence=["P01"]),())
+    pause 1.0
+    run Function(r13_qa_present_deferred,"resident_sling","P01")
+    assert eval ("J08" not in room13["evidence"] and room13["pending_grants"] and r13_has("portrait_known"))
+    run Function(r13_flush_grants)
+    assert eval ("J08" in room13["evidence"] and not room13["pending_grants"])
+    run Function(r13_qa_present_deferred,"resident_sling","P01")
+    run Function(r13_flush_grants)
+    assert eval (room13["evidence"].count("J08")==1)

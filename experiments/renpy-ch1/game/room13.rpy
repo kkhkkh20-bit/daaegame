@@ -181,10 +181,13 @@ label r13_entry_karo_menu:
         if r13_item:
             call screen r13_confirm("까로에게 「"+ROOM13["evidence"][r13_item]["name"]+"」을 보여줄까요? 원본은 기록에 남습니다.","보여준다","취소한다")
             if _return:
+                $ r13_defer_grants=True
                 $ r13_reaction=r13_present("karo",r13_item)
+                $ r13_defer_grants=False
                 show screen r13_material_corner(r13_item)
                 call r13_lines(r13_reaction,"entry:karo:present:"+r13_item)
                 hide screen r13_material_corner
+                $ r13_flush_grants()
     elif r13_entry_karo_choice=="back":
         hide r13_visitor
         $ dialogue_speaker=None
@@ -429,10 +432,13 @@ label r13_talk_dispatch:
                 call r13_lines([(None,ROOM13["sensitive"][r13_item])],"sensitive:"+r13_item)
             call screen r13_confirm(R13_NAMES[r13_target]+"에게 「"+ROOM13["evidence"][r13_item]["name"]+"」의 "+("발언자 이름과 관찰 내용" if r13_item=="E10" and r13_disclose_name else "이름을 뺀 관찰 내용" if r13_item=="E10" else "내용")+"을 보여줄까요? 원본은 수첩에 남습니다.","보여준다","취소한다")
             if _return:
+                $ r13_defer_grants=True
                 $ r13_reaction=r13_present(r13_target,r13_item,r13_disclose_name)
+                $ r13_defer_grants=False
                 show screen r13_material_corner(r13_item)
                 call r13_lines(r13_reaction,"present:"+r13_target+":"+r13_item+":"+str(r13_disclose_name))
                 hide screen r13_material_corner
+                $ r13_flush_grants()
             elif r13_present_origin=="actions":
                 jump r13_person_actions
         jump r13_talk_menu
