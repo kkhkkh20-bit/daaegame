@@ -2294,3 +2294,23 @@ testcase dot_fx:
     click pos (1276,300) until eval r13_qa_fx_done timeout 300
     pause 1.0
 
+
+testcase opening_cut:
+    # 0.18.39 opening cutscene: runs on a new game outside tests; forced here.
+    pause 2.0
+    $ r13_opening_force = True
+    click "처음부터"
+    pause 1.2
+    screenshot "op_0_text.png"
+    pause 2.0
+    screenshot "op_1_text2.png"
+    pause 2.6
+    screenshot "op_2_gate.png"
+    pause 2.6
+    screenshot "op_3_title.png"
+    pause 3.2
+    screenshot "op_4_carriage.png"
+    pause 3.0
+    screenshot "op_5_after.png"
+    assert eval (place == "마차 안" and persistent.room13_opening_cut_seen)
+    $ r13_opening_force = False
