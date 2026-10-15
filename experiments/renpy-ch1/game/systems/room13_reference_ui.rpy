@@ -45,6 +45,13 @@ init 79 python:
         # Up to about seven one-line topics fit without a half-cut last row.
         return int(min(cap,total))
 
+    def r13_question_bounds(entries,width=760):
+        row=64 if persistent.room13_large_text else 56
+        # 0.18.50 (owner): a long list rises over the face rather than showing a scroll bar.
+        height=r13_reference_list_height(entries,width-23,12,500,row,r13_read_size(24,30))+4
+        top=max(96,350-height//2)
+        return top,min(610,top+height)
+
 init 80:
     style r13_footer_button is button:
         xsize 96

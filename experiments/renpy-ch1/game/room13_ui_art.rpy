@@ -1,7 +1,7 @@
 # Travel folio, warm paper and ink. Clean colour planes without grain/noise.
 init 58 python:
     class R13InkPanel(renpy.Displayable):
-        """Quiet slate edges, ink face, and amber light only along the lower edge."""
+        """Warm brown cover edges, ink face, and amber light only along the lower edge."""
         def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,dark=False,**kwargs):
             super(R13InkPanel,self).__init__(**kwargs)
             self.focused=focused;self.disabled=disabled
@@ -14,15 +14,15 @@ init 58 python:
                 d=max(1,cut-n)
                 return [(n+d,n),(w-n-d-1,n),(w-n-1,n+d),(w-n-1,h-n-d-1),
                         (w-n-d-1,h-n-1),(n+d,h-n-1),(n,h-n-d-1),(n,n+d)]
-            fill=('#45413c' if self.disabled else '#292729' if self.dark else '#49433e' if self.focused else '#3c3733')
+            fill=('#453d34' if self.disabled else '#2c2420' if self.dark else '#4a3b30' if self.focused else '#352c27')
             c.polygon(fill+self.alpha,edge(3))
             # Border bands leave the inner face clear for the explicit light option.
             for outer,inner,color in ((edge(0),edge(1),'#332b28'),
-                    (edge(1),edge(3),'#77736a')):
+                    (edge(1),edge(3),'#8b745a')):
                 for i in range(8):
                     j=(i+1)%8
                     c.polygon(color,[outer[i],outer[j],inner[j],inner[i]])
-            c.line('#a39b87',(cut+2,2),(w-cut-3,2),1)
+            c.line('#b19872',(cut+2,2),(w-cut-3,2),1)
             c.line('#251f1e',(cut+2,h-2),(w-cut-3,h-2),1)
             if self.focused and not self.disabled:
                 # Discrete pixel bands: amber rises only from the bottom, no top/side glow.
@@ -186,3 +186,16 @@ init 62:
         right_bar Solid("#3c3431")
         thumb Solid("#fff0ce",xsize=14)
         thumb_offset 0
+
+init 58 python:
+    class R13StripCell(renpy.Displayable):
+        def __init__(self,active=False,**kwargs):
+            super(R13StripCell,self).__init__(**kwargs)
+            self.active=active
+        def render(self,width,height,st,at):
+            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h)
+            if self.active:
+                c=r.canvas();c.rect("#60503b",(5,5,max(1,w-10),max(1,h-10)))
+                c.rect("#b58c48",(6,h-7,max(1,w-12),2))
+                c.rect("#e6bd69",(6,h-5,max(1,w-12),2))
+            return r

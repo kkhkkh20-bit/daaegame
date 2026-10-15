@@ -123,13 +123,14 @@ init 61 python:
         for actor in sorted(actors,key=lambda a:(faces[a["person"]][1],faces[a["person"]][0])):
             person=actor["person"];face=faces[person]
             cx,top=r13_actor_nameplate(actor)
-            width=sum(9 if ch==" " else 18 for ch in R13_NAMES[person])+24
-            preferred=(int(cx-width/2),top,width,34)
+            top=max(101,top-14)
+            width=max(88,sum(9 if ch==" " else 18 for ch in R13_NAMES[person])+32)
+            preferred=(int(cx-width/2),top,width,48)
             candidates=[]
-            for dy in (0,-38,-76,38):
+            for dy in (0,-52,-104,52):
                 for dx in (0,-32,32,-64,64):
-                    candidates.append((max(8,min(r13_world_width()-8-width,preferred[0]+dx)),max(101,min(676,top+dy)),width,34))
-            candidates.append((max(8,min(r13_world_width()-8-width,preferred[0])),min(676,face[1]+face[3]+6),width,34))
+                    candidates.append((max(8,min(r13_world_width()-8-width,preferred[0]+dx)),max(101,min(676,top+dy)),width,48))
+            candidates.append((max(8,min(r13_world_width()-8-width,preferred[0])),min(676,face[1]+face[3]+6),width,48))
             def score(rect):
                 blocked=sum(overlap(rect,f) for f in faces.values())
                 blocked+=sum(overlap(rect,p["rect"]) for p in placed)
@@ -146,7 +147,7 @@ init 61 python:
                     leader=((rect[0]+rect[2]/2,rect[1]),(face[0]+face[2]/2,face[1]+face[3]+2))
                 else:
                     left=rect[0]+rect[2]/2<face[0]+face[2]/2
-                    leader=((rect[0]+rect[2] if left else rect[0],rect[1]+17),(face[0]-2 if left else face[0]+face[2]+2,face[1]+face[3]/2))
+                    leader=((rect[0]+rect[2] if left else rect[0],rect[1]+24),(face[0]-2 if left else face[0]+face[2]+2,face[1]+face[3]/2))
             placed.append(dict(person=person,rect=tuple(int(v) for v in rect),leader=leader))
         return placed
 

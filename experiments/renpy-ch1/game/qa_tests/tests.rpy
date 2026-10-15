@@ -2487,7 +2487,7 @@ testcase motion_reel:
     click pos (1276,300) until eval r13_qa_reel_done timeout 120
 
 testcase topic_record:
-    # 0.18.46: the first reading is kept verbatim; a review opens short and can expand to it.
+    # 0.18.50: a read question directly replays the kept conversation, without an extra menu.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -2501,11 +2501,10 @@ testcase topic_record:
     assert eval ([t for w,t in r13_topic_key_lines("karo_road")]==["당시 대답 하나입니다.","당시 대답 둘, 조금 더 깁니다."])
     assert eval (r13_topic_when("karo_road")=="2일째 오전")
     run Jump("r13_qa_topic_review")
-    click pos (640,600) until screen "choice" timeout 40
-    pause 0.6
-    screenshot "record_menu.png"
-    click "그만 본다"
+    click pos (640,640) until screen "r13_hub" timeout 40
+    assert eval (r13_topic_record("karo_road")==[["dad","당시 질문",False],["karo","당시 대답 하나입니다.",False],["karo","당시 대답 둘, 조금 더 깁니다.",False]])
     pause 0.5
+    screenshot "record_direct_return.png"
 
 testcase conversation_skip:
     # 0.18.46: 건너뛰기 ends the current conversation; what follows it still runs.
