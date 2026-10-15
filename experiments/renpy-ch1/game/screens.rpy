@@ -111,7 +111,7 @@ screen say(who,what):
         if who and room13_mode:
             frame:
                 xpos 160 xanchor 0.0 ypos (428 if persistent.room13_large_text else 474) padding R13_UI_PADDING["name"]
-                background R13StonePanel()
+                background R13InkPanel()
                 text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size r13_read_size(20,24)
         # No speaker profile beside the dialogue (owner's decision); the person is on stage.
         if has_portrait:
@@ -146,7 +146,7 @@ screen say(who,what):
         if who:
             frame:
                 xpos 254 ypos (398 if room13_mode and persistent.room13_large_text else 486 if room13_mode else 522)
-                padding (14,5) background R13StonePanel(alpha="ff")
+                padding (14,5) background R13InkPanel(alpha="ff")
                 text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
         text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab"
         if room13_mode:

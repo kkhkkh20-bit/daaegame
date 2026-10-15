@@ -6,8 +6,8 @@
 #     The old automatic name/place/evidence regex and its fake {b} are retired.
 #   - Galmuri11 has one real weight: no {b}, bold or italic anywhere in room13 text.
 #   - Dark windows and light paper use different colours for the same role.
-#   - Frames (ui-concept 08): dialogue window, small HUD, and the big record window each use their
-#     own 9-slice frame; buttons keep their existing panel so the gilt is not repeated everywhere.
+#   - Warm paper for records and compact HUD labels; opaque ink-brown for speech/actions.
+#     Shared code-drawn materials live in room13_ui_art.rpy; semantic roles stay independent.
 # The typing click already counts rendered glyphs (R13DialogueText), never tag characters.
 init 140 python:
     import json as _r13_tj, re as _r13_tre
@@ -50,12 +50,12 @@ init 140 python:
 
     def r13_frame(kind):
         """Shared material; semantic colour roles remain independent of the rim."""
-        return R13StonePaperPanel() if kind=="aged-paper" else R13StonePanel()
+        return R13PaperFrame() if kind=="aged-paper" else R13InkPanel()
 
     def r13_dialogue_frame():
         # Standard and dark settings are solid; only explicit light mode is translucent.
         alpha=persistent.room13_window_alpha or "d4"
-        return R13StonePanel(alpha="dc" if alpha=="99" else "ff",dark=alpha in ("f0","f5","fa","ff"))
+        return R13InkPanel(alpha="dc" if alpha=="99" else "ff",dark=alpha in ("f0","f5","fa","ff"))
 
 init 141:
     # Galmuri11 has no bold file: never synthesize it in labels.

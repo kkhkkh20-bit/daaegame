@@ -117,19 +117,19 @@ init 71:
     style r13_paper_tab_button is r13_compact_button:
         background R13PaperPanel(False)
         hover_background R13PaperPanel(True)
-        selected_background R13PaperPanel(True)
+        selected_background R13InkPanel(focused=True)
     style r13_paper_tab_button_text is r13_compact_button_text:
         color "#303d38"
-        hover_color "#63461e"
-        selected_color "#765426"
+        hover_color "#724b39"
+        selected_color "#fff0ce"
         insensitive_color "#72786a"
 
 
 screen r13_reference_record_shell(title):
-    add Solid("#0c172a99")
-    add R13StonePanel(alpha="ff") xpos 36 ypos 36 xsize 1208 ysize 640
-    add R13StonePaperPanel(corner=30) xpos 50 ypos 50 xsize 208 ysize 610
-    text title xpos 76 ypos 72 size 24 color "#39432c" font r13_ui_font()
+    add Solid("#211b1899")
+    add R13TravelSheet() xpos 36 ypos 36 xsize 1208 ysize 640
+    add Solid("#d6bd96") xpos 54 ypos 54 xsize 200 ysize 596
+    text title xpos 76 ypos 72 size 24 color "#493b30" font r13_ui_font()
 
 screen r13_reference_record_categories(owner,current,present=False,archive=False):
     vbox:
@@ -164,7 +164,7 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
     $ columns=3 if persistent.room13_large_text else 4
     $ cell=166 if persistent.room13_large_text else 124
     $ visible=entries[actual_page*page_size:][:page_size]
-    add R13StonePaperPanel() xpos 278 ypos 132 xsize 520 ysize 440
+    add R13PaperFrame() xpos 278 ypos 132 xsize 520 ysize 440
     for index in range(page_size):
         $ key=visible[index] if index<len(visible) else None
         button:
@@ -177,17 +177,17 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
                     xalign .5 yalign .5 spacing 6
                     add Transform(r13_record_icon(key),xysize=(60,60),fit="contain",nearest=True) xalign .5
                     text (("★ " if not archive and r13_record_favorite(key) else "● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,ROOM13["evidence"][key]["name"][:8])):
-                        size r13_read_size(16,21) color "#39432c" xsize cell-20 text_align .5
+                        size r13_read_size(16,21) color "#493b30" xsize cell-20 text_align .5
     hbox:
         xpos 302 ypos 596 spacing 12
         textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page>0 action Function(r13_record_select,owner,"page",actual_page-1)
-        text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) size 19 color "#e6e2d0" yalign .5 xsize 124 text_align .5
+        text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
         textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(entries) action Function(r13_record_select,owner,"page",actual_page+1)
     if not entries:
         text "이 분류에 기록된 자료가 없습니다." xpos 300 ypos 540 size 18 color "#625738" xsize 470 text_align .5
 
 screen r13_material_detail(detail,archive=False):
-    add R13StonePaperPanel() xpos 820 ypos 58 xsize 406 ysize 512
+    add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
     if detail:
         if not archive and r13_record_unread(detail):
             timer .7 action Function(r13_record_mark_seen,detail)
@@ -198,7 +198,7 @@ screen r13_material_detail(detail,archive=False):
             area (844,266,358,226) mousewheel True draggable True scrollbars "vertical"
             vbox:
                 spacing 12
-                text ev["establishes"] size r13_read_size(21,26) color "#39432c" xsize 332
+                text ev["establishes"] size r13_read_size(21,26) color "#493b30" xsize 332
                 text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_record_origin(detail)) size 17 color "#625738" xsize 332
                 if not archive:
                     text r13_learning_record_status(detail) size 17 color "#555943" xsize 332
@@ -211,7 +211,7 @@ screen r13_material_detail(detail,archive=False):
         text "자료를 선택하세요." xpos 846 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
 screen r13_person_record_detail(person):
-    add R13StonePaperPanel() xpos 820 ypos 58 xsize 406 ysize 512
+    add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
     if person:
         add Transform(r13_art(person,"avatar_neutral"),xysize=(132,128),fit="contain",nearest=True) xpos 954 ypos 78
         text r13_person_caption(person) xpos 840 ypos 218 xsize 366 text_align .5 size r13_read_size(23,28) color "#6c512a"
@@ -221,9 +221,9 @@ screen r13_person_record_detail(person):
                 spacing 12
                 for meeting in room13.get("encounters",[]):
                     if isinstance(meeting,dict) and meeting.get("person")==person:
-                        text ("%d일 · %s · %s"%(meeting["day"],("오전","오후","저녁","늦은 저녁")[meeting["period"]],R13_PLACES.get(meeting["place"],(meeting["place"],))[0])) size 18 color "#39432c" xsize 332
+                        text ("%d일 · %s · %s"%(meeting["day"],("오전","오후","저녁","늦은 저녁")[meeting["period"]],R13_PLACES.get(meeting["place"],(meeting["place"],))[0])) size 18 color "#493b30" xsize 332
                 for title in r13_note_topics(person):
-                    text ("들은 이야기 · "+title) size 18 color "#39432c" xsize 332
+                    text ("들은 이야기 · "+title) size 18 color "#493b30" xsize 332
                 for entry in room13.get("resident_knowledge",{}).get(person,[]):
                     $ record_id=entry.split(":")[0]
                     if record_id in ROOM13["evidence"]:
@@ -261,8 +261,8 @@ screen r13_records():
         $ selected_person=r13_record_selected(people,person,page)
         $ actual_page=r13_record_page(people,page)
         $ visible=people[actual_page*r13_record_page_size():][:r13_record_page_size()]
-        text "직접 만난 사람들" xpos 292 ypos 88 size 23 color "#e6e2d0"
-        add R13StonePaperPanel() xpos 278 ypos 132 xsize 520 ysize 440
+        text "직접 만난 사람들" xpos 292 ypos 88 size 23 color "#65503b"
+        add R13PaperFrame() xpos 278 ypos 132 xsize 520 ysize 440
         for index,who in enumerate(visible):
             button:
                 area (292+(index%3)*164,146+(index//3)*104,158,98) padding (6,5) background R13PaperPanel(selected_person==who)
@@ -270,15 +270,15 @@ screen r13_records():
                 vbox:
                     xalign .5 spacing 3
                     add Transform(r13_art(who,"avatar_neutral"),xysize=(58,58),fit="contain",nearest=True) xalign .5
-                    text R13_NAMES[who] size 18 color "#39432c" xalign .5
+                    text R13_NAMES[who] size 18 color "#493b30" xalign .5
         use r13_person_record_detail(selected_person)
         hbox:
             xpos 302 ypos 596 spacing 12
             textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page>0 action SetScreenVariable("page",actual_page-1)
-            text ("%d / %d"%(actual_page+1,r13_record_pages(people))) size 19 color "#e6e2d0" yalign .5 xsize 124 text_align .5
+            text ("%d / %d"%(actual_page+1,r13_record_pages(people))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
             textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
     else:
-        text "실제로 지나간 대화" xpos 292 ypos 88 size 23 color "#e6e2d0"
+        text "실제로 지나간 대화" xpos 292 ypos 88 size 23 color "#65503b"
         viewport:
             area (280,134,930,472) mousewheel True draggable True scrollbars "vertical"
             vbox:
