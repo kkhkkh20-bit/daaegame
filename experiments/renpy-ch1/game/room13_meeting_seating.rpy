@@ -63,7 +63,8 @@ init 99 python:
         return ids[(ids.index(current)+1)%len(ids)] if current in ids else ids[0] if ids else current
 
     def r13_meeting_plate(session,close=False):
-        plate=Transform("assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar"),xysize=(1280,720),nearest=True)
+        path="assets/room13-pixel-meeting-interview063.webp" if close and session=="trial" else "assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar")
+        plate=Transform(path,xysize=(1280,720),nearest=True)
         return Crop((160,0,1280,720),Transform(plate,zoom=1.25,nearest=True)) if close else plate
 
     class R13MeetingForeground(renpy.Displayable):
@@ -101,11 +102,11 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
         if close:
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=getattr(store,"dialogue_expression","neutral")
-            $ portrait=r13_fullbody_close_art(focus,pose,1200)
+            $ portrait=r13_fullbody_close_art(focus,pose,840)
             if portrait is not None:
-                add portrait xcenter r13_close_x(focus,pose,1200) ypos r13_fullbody_close_y(focus,1200,96,pose)
+                add portrait xcenter r13_close_x(focus,pose,840) ypos r13_fullbody_close_y(focus,840,96,pose)
             else:
-                add Transform(r13_meeting_actor(focus,focus,640),ysize=1200,fit="contain",nearest=True) xcenter 640 ypos 108
+                add Transform(r13_meeting_actor(focus,focus,640),ysize=840,fit="contain",nearest=True) xcenter 640 ypos 108
         else:
             for index,(who,stance) in enumerate(seats):
                 $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
