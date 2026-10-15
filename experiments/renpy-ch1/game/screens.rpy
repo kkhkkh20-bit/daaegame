@@ -62,76 +62,99 @@ screen main_menu():
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
     add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=True)
-    add R13TitleVeil()
     add R13TitleSnow()
-    add Transform("assets/room13-title-logo.webp",size=(352,142),nearest=True) xpos 76 ypos 148
-    textbutton "이어하기":
-        xpos 80 ypos 310 style "r13_title_button"
-        selected title_focus == "continue"
-        sensitive title_continue is not None
-        default_focus title_continue is not None
-        hovered SetScreenVariable("title_focus","continue")
-        action (r13_load_action(title_continue) if title_continue else NullAction())
-    text r13_title_save_line(title_continue) xpos 128 ypos 375 font r13_ui_font() size 16 color "#c2c9b5" xsize 240
-    textbutton "처음부터":
-        xpos 80 ypos 420 style "r13_title_button"
-        selected title_focus == "new"
-        default_focus title_continue is None
-        hovered SetScreenVariable("title_focus","new")
-        action Start()
-    textbutton "설정":
-        xpos 80 ypos 484 style "r13_title_button"
-        selected title_focus == "settings"
-        hovered SetScreenVariable("title_focus","settings")
-        action ShowMenu("pause_menu")
-    textbutton "불러오기":
-        xpos 88 ypos 646 style "r13_title_aux"
-        sensitive title_has_save
-        action ShowMenu("load")
+    add Transform("assets/room13-title-logo.webp",size=(440,178),nearest=True) xalign .5 ypos 132
+    vbox:
+        xalign .5 ypos 348 spacing 8
+        textbutton "이어하기":
+            style "r13_title_button" selected title_focus=="continue"
+            sensitive title_continue is not None default_focus title_continue is not None
+            hovered SetScreenVariable("title_focus","continue")
+            action (r13_load_action(title_continue) if title_continue else NullAction())
+        textbutton "처음부터":
+            style "r13_title_button" selected title_focus=="new"
+            default_focus title_continue is None hovered SetScreenVariable("title_focus","new") action Start()
+        textbutton "불러오기":
+            style "r13_title_button" selected title_focus=="load" sensitive title_has_save
+            hovered SetScreenVariable("title_focus","load") action ShowMenu("load")
+        textbutton "설정":
+            style "r13_title_button" selected title_focus=="settings"
+            hovered SetScreenVariable("title_focus","settings") action ShowMenu("pause_menu")
+        textbutton "음악 출처":
+            style "r13_title_button" selected title_focus=="credits"
+            hovered SetScreenVariable("title_focus","credits") action Show("r13_music_credits")
+    text r13_title_save_line(title_continue) xalign .5 ypos 620 font r13_ui_font() size 16 color "#e1dfcb"
     text config.version xpos 1192 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
 
 screen say(who,what):
-    if room13_mode:
-        key "K_h" action Show("r13_backlog")
-    $ has_portrait = not room13_mode and dialogue_speaker in CAST
-    window:
-        id "window"
-        xalign .5 ypos (454 if room13_mode and persistent.room13_large_text else 498 if room13_mode else 551) xsize (1008 if room13_mode else 1200) ysize (226 if room13_mode and persistent.room13_large_text else 166 if room13_mode else 169)
-        background (r13_dialogue_frame() if room13_mode else Solid("#10262de8" if winter_mode else "#211a16f2"))
-        padding (0,0)
-        fixed:
-            if not room13_mode:
-                add Solid("#b39060",xsize=1200,ysize=2)
-            vbox:
-                xpos (32 if room13_mode else 240 if has_portrait else 32) ypos 18
-                spacing 10
-                if who and not room13_mode:
-                    text who id "who" color "#ebcd8a" font (r13_ui_font() if room13_mode else "assets/Galmuri11.ttf")
-                if room13_mode:
-                    r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(26,32) line_spacing 7 xsize 930 text_align .0 font r13_ui_font() color r13_say_color()
-                else:
-                    text what id "what" xsize (910 if has_portrait else 1120) font "assets/Galmuri11.ttf" color "#fff5df"
-    if who and room13_mode:
-        frame:
-            xpos 160 xanchor 0.0 ypos (428 if persistent.room13_large_text else 474) padding R13_UI_PADDING["name"]
-            background R13StonePanel()
-            text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size r13_read_size(20,24)
-    # No speaker profile beside the dialogue (owner's decision); the person is on stage.
-    if has_portrait:
-        frame:
-            id "dialogue_portrait_frame"
-            xpos 59 ypos 492 xsize 202 ysize 210
-            padding (3,3) background Solid("#b39060")
+    if not room13_mode:
+        if room13_mode:
+            key "K_h" action Show("r13_backlog")
+        $ has_portrait = not room13_mode and dialogue_speaker in CAST
+        window:
+            id "window"
+            xalign .5 ypos (454 if room13_mode and persistent.room13_large_text else 498 if room13_mode else 551) xsize (1008 if room13_mode else 1200) ysize (226 if room13_mode and persistent.room13_large_text else 166 if room13_mode else 169)
+            background (r13_dialogue_frame() if room13_mode else Solid("#10262de8" if winter_mode else "#211a16f2"))
+            padding (0,0)
             fixed:
-                add Solid("#30261f")
-                add Transform(dialogue_speaker + " avatar_"+dialogue_expression,size=(196,204),fit="contain") id "dialogue_portrait"
-    text "▸" xpos (1092 if room13_mode else 1190) ypos (610 if room13_mode else 682) size 30 color "#e8c75c"
-    if room13_mode:
-        timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
-        if place != "마차 안" and not r13_cg_active:
-            use r13_toolbar(mode="line")
-        else:
-            use r13_playback_footer()
+                if not room13_mode:
+                    add Solid("#b39060",xsize=1200,ysize=2)
+                vbox:
+                    xpos (32 if room13_mode else 240 if has_portrait else 32) ypos 18
+                    spacing 10
+                    if who and not room13_mode:
+                        text who id "who" color "#ebcd8a" font (r13_ui_font() if room13_mode else "assets/Galmuri11.ttf")
+                    if room13_mode:
+                        r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(26,32) line_spacing 7 xsize 930 text_align .0 font r13_ui_font() color r13_say_color()
+                    else:
+                        text what id "what" xsize (910 if has_portrait else 1120) font "assets/Galmuri11.ttf" color "#fff5df"
+        if who and room13_mode:
+            frame:
+                xpos 160 xanchor 0.0 ypos (428 if persistent.room13_large_text else 474) padding R13_UI_PADDING["name"]
+                background R13StonePanel()
+                text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size r13_read_size(20,24)
+        # No speaker profile beside the dialogue (owner's decision); the person is on stage.
+        if has_portrait:
+            frame:
+                id "dialogue_portrait_frame"
+                xpos 59 ypos 492 xsize 202 ysize 210
+                padding (3,3) background Solid("#b39060")
+                fixed:
+                    add Solid("#30261f")
+                    add Transform(dialogue_speaker + " avatar_"+dialogue_expression,size=(196,204),fit="contain") id "dialogue_portrait"
+        text "▸" xpos (1092 if room13_mode else 1190) ypos (610 if room13_mode else 682) size 30 color "#e8c75c"
+        if room13_mode:
+            timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+            if place != "마차 안" and not r13_cg_active:
+                use r13_toolbar(mode="line")
+            else:
+                use r13_playback_footer()
+    else:
+        if room13_mode:
+            key "K_h" action Show("r13_backlog")
+        window:
+            id "window"
+            xpos (176 if room13_mode else 40)
+            ypos (420 if room13_mode and persistent.room13_large_text else 508 if room13_mode else 551)
+            xsize (928 if room13_mode else 1200)
+            ysize (212 if room13_mode and persistent.room13_large_text else 124 if room13_mode else 169)
+            background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,16)
+            if room13_mode:
+                r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 884 font r13_ui_font() color r13_say_color()
+            else:
+                text what id "what" xsize 1120 font "assets/Galmuri11.ttf" color "#fff5df"
+        if who:
+            frame:
+                xpos 190 ypos (398 if room13_mode and persistent.room13_large_text else 486 if room13_mode else 522)
+                padding (14,5) background R13StonePanel(alpha="ff")
+                text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
+        text "▸" xpos 1066 ypos 600 size 24 color "#d9d4ab"
+        if room13_mode:
+            timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+            if place != "마차 안" and not r13_cg_active:
+                use r13_toolbar(mode="line")
+            else:
+                use r13_playback_footer()
 
 style legacy_choice_frame is frame
 style legacy_choice_vbox is vbox

@@ -9,22 +9,23 @@ screen r13_hud():
             text_size r13_read_size(20,24)
             action [SetVariable("r13_carriage_skip", True), Function(renpy.end_interaction, True)]
             tooltip "마차 이야기를 건너뛰고 마을 입구에 도착합니다"
-    if not any(renpy.get_screen(k) for k in ("say","r13_topics","choice","r13_entry_topics","r13_entry_karo_topics")):
+    if not r13_cg_active and place!="마차 안":
         frame:
-            xpos 24 ypos 20 xsize 388 ysize 88 padding (14,12)
-            background R13StonePanel()
+            xpos 940 ypos 20 xsize 238 ysize 68 padding (10,8) background R13StonePanel(alpha="ff")
             hbox:
-                spacing 14
-                fixed:
-                    xsize 54 ysize 64
-                    add Solid("#292f2d",xsize=54,ysize=64)
-                    add Solid("#939b8c",xsize=40,ysize=2) xpos 7 ypos 3
-                    text ("%02d"%room13.get("day",1)) xalign .5 ypos 9 size 28 color "#f1e9cf"
-                    text "일째" xalign .5 ypos 43 size 13 color "#c9ccba"
+                spacing 10
                 vbox:
-                    spacing 7
-                    text " · ".join(r13_clock().split(" · ")[1:]) size r13_read_size(18,21) color "#d2d4bf"
-                    text (r13_location_path().replace("마을 › ","",1) if place != "마차 안" else place) size r13_read_size(20,23) color "#f3ecd5" xsize 292
+                    xsize 42 spacing 2
+                    text ("%02d"%room13.get("day",1)) size 25 color "#f1e9cf" xalign .5
+                    text "일째" size 12 color "#c9ccba" xalign .5
+                vbox:
+                    xsize 112 spacing 7
+                    text r13_clock().split(" · ")[1] size 17 color "#f1e9cf"
+                    text r13_clock().split(" · ")[-1] size 17 color "#d2d4bf"
+                add R13TimeDial() yalign .5
+        frame:
+            xpos 24 ypos 20 padding (14,8) background R13StonePanel(alpha="d4")
+            text (r13_location_path().replace("마을 › ","",1) if place != "마차 안" else place) size r13_read_size(18,22) color "#f3ecd5"
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -169,7 +170,7 @@ screen r13_hub(entry=False):
         use r13_world_contents(entry,ready)
     if not entry:
         hbox:
-            xpos 1250 xanchor 1.0 ypos 105 spacing 8
+            xpos 1250 xanchor 1.0 ypos 158 spacing 8
             for destination,title in r13_local_connections():
               if destination not in r13_inn_v4_handled(room13["location"]):
                 textbutton (title+" ›"):
@@ -180,14 +181,14 @@ screen r13_hub(entry=False):
     if not entry and r13_inn_guide_available():
         textbutton "안내도":
             id "r13_inn_guide_button"
-            style "r13_action_button" xpos 1150 xanchor 1.0 ypos 96 xsize 112 ysize 54
+            style "r13_action_button" xpos 1058 xanchor 1.0 ypos 102 xsize 112 ysize 54
             text_size 22 action Show("r13_inn_guide") sensitive ready
             alt "여관 안내도 열기"
     if entry:
         use r13_waiting_window(ready)
     else:
         textbutton "지도 · 이동":
-            style "r13_action_button" xpos 970 ypos 23 xsize 180 ysize 62
+            style "r13_action_button" xpos 1070 ypos 102 xsize 180 ysize 44
             text_size 23 action Return(("menu","map")) sensitive ready
     if not entry and r13_bed_available("bed"):
         textbutton "자기":
@@ -195,7 +196,7 @@ screen r13_hub(entry=False):
             action Return(("sleep","bed"))
     if not entry and r13_evening_missions():
         textbutton "저녁 할 일":
-            style "r13_action_button" area (728,30,230,56) text_size 21
+            style "r13_action_button" area (730,30,194,56) text_size 21
             action Return(("menu","evening")) sensitive ready
             tooltip "오늘 저녁에만 할 수 있는 일"
     if not entry and r13_has("livelihood_open"):
@@ -266,9 +267,14 @@ screen r13_resident_stage(entry=False,ready=False):
 screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None):
     style_prefix "r13"
     if person:
-        # Face to face (0.15 layout, owner's reference): the person stands large
+        $ list_width=min(900,max(760,list_width))
+        $ list_left=(1280-list_width)//2
+        # Face to face: retain the existing actor, centred behind the choices.
+        # The person stands large
         # on the left, the scene is dimmed, and plain-text options name what
         # Dad will ask; the question itself is then spoken in dialogue.
+        add r13_close_art(person,pose,760):
+            xpos 640 xanchor .5 ypos r13_close_y(person,760,110,pose)
         add Solid("#000000a0")
         text r13_person_caption(person):
             xalign .5 ypos 24 xsize 940 text_align .5
@@ -282,11 +288,6 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         else:
             text "질문·자료 보여주기 · 시간 소모 없음":
                 xalign .5 ypos 63 size r13_read_size(17,21) color "#e5ece6"
-        add r13_close_art(person,pose,760):
-            id ("r13_topics_"+person)
-            xpos actor_x xanchor .5 ypos r13_close_y(person,760,126,pose)
-            if animate:
-                at r13_actor_appear(r13_appearance_duration())
         if title!="선택":
             text title:
                 xpos list_left ypos 146 xsize list_width text_align .5
@@ -475,43 +476,26 @@ screen r13_book(target=None,present=False,hearing=False):
     default order="recent"
     default favorite_only=False
     timer .35 action SetScreenVariable("ready",True)
-    add Solid("#0c172a99")
-    fixed:
-        xsize 1280 ysize 720
-        at Transform(zoom=(.96 if persistent.room13_large_text else .90),xalign=.5,yalign=.5)
-        add Solid("#eee7d6")
-        text ("자료 보여 주기 · "+R13_NAMES.get(target,"재판") if present else "자료 기록") style "r13_title_text" xpos 32 ypos 29
-        if target:
-            add Transform(r13_art(target,"avatar_neutral"),xysize=(64,66),fit="contain",nearest=True) xpos 1180 ypos 14
-        hbox:
-            xpos 32 ypos 98 spacing 10
-            for key,title in (("evidence","찾은 것"),("testimony","들은 말")):
-                textbutton title:
-                    style "r13_paper_tab_button" xsize 168 ysize 48 background R13PaperPanel(category==key)
-                    sensitive ready
-                    action [SetScreenVariable("category",key),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-        text ("자료를 눌러 선택한 뒤 보여주세요" if present else "조사로 확인한 물건과 문서" if category=="evidence" else "인물에게 직접 들은 말") style "r13_secondary_text" xpos 400 ypos 112
-        if not present and r13_learning_archive_keys():
-            hbox:
-                xpos 816 ypos 98 spacing 8
-                textbutton "이번 여정" style "r13_paper_tab_button" xsize 206 ysize 48 background R13PaperPanel(not archive) sensitive ready action [SetScreenVariable("archive",False),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-                textbutton "지난 플레이" style "r13_paper_tab_button" xsize 206 ysize 48 background R13PaperPanel(archive) sensitive ready action [SetScreenVariable("archive",True),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-        $ entries=r13_record_entries(category,archive,present,order,favorite_only)
-        use r13_record_filters("r13_book",order,favorite_only,archive and not present)
-        $ selected_record=r13_record_selected(entries,detail,page)
-        use r13_material_detail(selected_record,archive and not present)
-        use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
-        if present:
-            textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
-                style "r13_compact_button" xpos 872 ypos 644 xsize 376 ysize 64 text_size r13_read_size(22,27)
-                action Return(selected_record)
-                sensitive ready and detail==selected_record and selected_record in room13.get("evidence",[]) and not archive
-        else:
-            text ("%d개 · 이전 여정의 기록"%len(entries) if archive else "%d개 · 이번 여정에서 모음"%len(entries)) style "r13_secondary_text" xpos 880 ypos 661
-        textbutton ("그만두기" if present else "닫기"):
-            style "r13_compact_button" xpos 32 ypos 644 xsize 220 ysize 64 text_size r13_read_size(22,27)
-            action (Return(False) if present else Hide("r13_book")) sensitive ready
-        key "game_menu" action (Return(False) if present else Hide("r13_book"))
+    use r13_reference_record_shell("제시" if present else "자료 기록")
+    use r13_reference_record_categories("r13_book",category,True,archive and not present)
+    if not present and r13_learning_archive_keys():
+        textbutton ("이번 여정" if not archive else "지난 플레이"):
+            style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
+            action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
+    $ entries=r13_record_entries(category,archive,present,order,favorite_only)
+    $ selected_record=r13_record_selected(entries,detail,page)
+    use r13_record_filters("r13_book",order,favorite_only,archive and not present)
+    use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
+    use r13_material_detail(selected_record,archive and not present)
+    if present:
+        textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
+            style "r13_compact_button" xpos 824 ypos 592 xsize 398 ysize 48 text_size r13_read_size(20,24)
+            action Return(selected_record)
+            sensitive ready and detail==selected_record and selected_record in room13.get("evidence",[]) and not archive
+    textbutton ("그만두기" if present else "닫기"):
+        style "r13_compact_button" xpos 66 ypos 594 xsize 176 ysize 44 text_size 20
+        action (Return(False) if present else Hide("r13_book")) sensitive ready
+    key "game_menu" action (Return(False) if present else Hide("r13_book"))
 
 screen r13_calendar():
     style_prefix "r13"

@@ -55,7 +55,7 @@ init 140 python:
     def r13_dialogue_frame():
         # Only the infill follows the opacity option; the slate rim stays solid.
         alpha=persistent.room13_window_alpha or "d4"
-        return R13StonePanel(alpha=("dc" if alpha=="99" else "f5" if alpha in ("f0","f5","fa","ff") else "e0"))
+        return R13StonePanel(alpha=("dc" if alpha=="99" else "ff" if alpha in ("f0","f5","fa","ff") else "f5"))
 
 init 141:
     # Galmuri11 has no bold file: never synthesize it in labels.
