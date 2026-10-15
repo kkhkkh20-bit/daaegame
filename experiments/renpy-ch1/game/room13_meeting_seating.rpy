@@ -36,10 +36,10 @@ init 99 python:
         step=(b-a)%len(people)
         store.r13_meeting_pan_direction=1 if step<=len(people)/2 else -1
         store.r13_meeting_focus=who;store.r13_meeting_shot_revision+=1
-        store.r13_meeting_pan_started=renpy.get_game_runtime()
+        store.r13_meeting_pan_started=renpy.display.core.get_time()
 
     def r13_meeting_pan_tick(trans,st,at):
-        elapsed=renpy.get_game_runtime()-getattr(store,"r13_meeting_pan_started",0.0)
+        elapsed=renpy.display.core.get_time()-getattr(store,"r13_meeting_pan_started",0.0)
         moving=getattr(persistent,"room13_motion",True) and not renpy.is_skipping() and 0<=elapsed<.24
         trans.xoffset=int(getattr(store,"r13_meeting_pan_direction",1)*64*(1-elapsed/.24)**2) if moving else 0
         return .016 if moving else None
@@ -101,11 +101,11 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
         if close:
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=getattr(store,"dialogue_expression","neutral")
-            $ portrait=r13_fullbody_close_art(focus,pose,840)
+            $ portrait=r13_fullbody_close_art(focus,pose,1200)
             if portrait is not None:
-                add portrait xcenter r13_close_x(focus,pose,840) ypos r13_fullbody_close_y(focus,840,96,pose)
+                add portrait xcenter r13_close_x(focus,pose,1200) ypos r13_fullbody_close_y(focus,1200,96,pose)
             else:
-                add Transform(r13_meeting_actor(focus,focus,640),ysize=840,fit="contain",nearest=True) xcenter 640 ypos 108
+                add Transform(r13_meeting_actor(focus,focus,640),ysize=1200,fit="contain",nearest=True) xcenter 640 ypos 108
         else:
             for index,(who,stance) in enumerate(seats):
                 $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
