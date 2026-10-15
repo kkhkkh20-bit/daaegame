@@ -28,7 +28,7 @@ init 61 python:
             if any(action == "map" for action, unused in r13_actions()):
                 return [(None, "도면을 보는 것만으로는 비교 기록이 남지 않는다. 도면의 조사 메뉴에서 외벽과 비교할 수 있다.")]
         if location == "inn" and key == "register" and r13_has("lodging"):
-            return [(None, "장부의 내용은 주인에게 확인해야 한다. 할머니에게 받은 초대 편지는 수첩에 남아 있다.")]
+            return [(None, "장부의 내용은 주인에게 확인해야 한다. 아내의 초대 편지는 수첩에 남아 있다.")]
         return []
 
     # Keep the original disclosure bookkeeping, caution flags and later-week
@@ -45,12 +45,12 @@ init 61 python:
             return response
         if person == "granny" and key == "E01":
             if repeated:
-                return [(person, "그 편지는 제가 보냈어요. 물어볼 일이 더 있으세요?")]
+                return [(person, "그 편지는 부인 부탁으로 제가 부쳤어요. 물어볼 일이 더 있으세요?")]
             if r13_has("lodging"):
                 return [(person, "가족에게 돌려줘야 할 물건이 남았잖아요."),
                     ("dad", "아내가 정말 직접 연락해 달라고 부탁했는지도 듣고 싶습니다."),
-                    (None, "대화 목록의 ‘편지를 보내신 이유’에서 더 물어볼 수 있다.")]
-            return [(person, "편지는 받으셨죠. 같은 방으로 드릴게요."),
+                    (None, "대화 목록의 ‘아내가 저희를 부른다고 하던가요?’에서 더 물어볼 수 있다.")]
+            return [(person, "부인 편지는 받으셨죠. 같은 방으로 드릴게요."),
                 (None, "대화 목록에서 방을 부탁할 수 있다.")]
         if person == "buri" and key == "E04":
             if repeated:

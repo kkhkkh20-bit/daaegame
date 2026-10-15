@@ -940,8 +940,8 @@ testcase ep2_nabi:
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_talk","resident_teacher")
-    click pos (1150,90) until "표 없는 아이들을 학교 급식에 넣어 달라고 한다" timeout 30
-    click "표 없는 아이들을 학교 급식에 넣어 달라고 한다"
+    click pos (1150,90) until "표 없는 아이들 급식을 부탁한다" timeout 30
+    click "표 없는 아이들 급식을 부탁한다"
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 40
     click "돌아가기"

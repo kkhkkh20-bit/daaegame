@@ -1,11 +1,11 @@
 # First-run investigation: reading -> owned-record comparison -> presentation
 # -> an explicit follow-up conversation. General movement never spends time.
 init 97 python:
-    ROOM13["evidence"]["E01"].update(establishes="할머니가 아내의 소식이 끊겼다며 가족에게 보낸 편지다. 이 편지를 받고 다람이와 마을에 왔다.",does_not_establish="")
+    ROOM13["evidence"]["E01"].update(name="아내의 초대 편지",establishes="아내 이름으로 여관에서 온 편지. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 이 편지를 받고 아내를 만나러 왔다.",does_not_establish="")
     ROOM13["evidence"]["E03"].update(establishes="13호실 이불 안쪽의 붉은 매듭은 집에서 보던 엄마의 바느질과 닮았다. 다람이도 익숙한 모양이라고 했다.",does_not_establish="")
     ROOM13["evidence"]["M01"]["establishes"]="다람이 이름 옆에 도토리가 그려진 메모. ‘아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐.’라고 적혀 있다."
     ROOM13["evidence"]["J02"]=dict(id="J02",name="초롱이 마지막으로 본 엄마",kind="증언",
-        establishes="초롱은 엄마와 여관 앞에서 이야기했다고 했다. 가족을 기다린다는 말을 들었고, 헤어진 뒤 엄마가 우체국 쪽 길로 가는 것을 봤다. 우체국 안에 들어갔는지는 보지 못했다.",
+        establishes="초롱은 엄마와 여관 앞에서 이야기했다고 했다. 가족이 올지도 모른다는 말을 들었고, 헤어진 뒤 엄마가 우체국 쪽 길로 가는 것을 봤다. 우체국 안에 들어갔는지는 보지 못했다.",
         does_not_establish="",scenes=[],current_run_only=True,retained_on_show=True)
     ROOM13["evidence_sources"]["J02"]="resident_lamplighter"
     R13_RECORD_SHORT["J02"]="초롱의 목격담"
@@ -19,12 +19,12 @@ init 97 python:
         ("dad","아내를 마지막으로 어디에서 보셨습니까?"),
         ("resident_lamplighter","여관 앞에서요. 등을 손질하다가 잠깐 이야기를 나눴어요."),
         ("dad","아내와 무슨 이야기를 하셨습니까?"),
-        ("resident_lamplighter","가족이 온다고 했어요. 아이에게 도토리 모양을 그려 준다는 이야기도요."),
+        ("resident_lamplighter","가족이 올지도 모른다고 걱정했어요. 아이한테는 도토리 모양을 그려 준다는 이야기도 했고요."),
         ("dad","이야기를 나눈 뒤에 아내는 어디로 갔습니까?"),
         ("resident_lamplighter","우체국 쪽 길로 갔어요. 안으로 들어가는 것까지 보지는 못했고요."),
         ("dad","우선 우체국 쪽에서 아내가 들른 흔적을 찾아보겠습니다.")])
     ROOM13["topics"]["intro:post_visit"]=dict(npc="seryeon",title="아내가 여기서 무엇을 찾았습니까?",day=[2,3],need=["J02","intro:post_letter","intro:post_memo"],give=["J03"],flags=["mother_first_lead_checked"],lines=[
-        ("seryeon","여관에서 보낸 편지와 가족에게 남긴 메모군요. 말씀하신 분이 누구인지 알겠어요."),
+        ("seryeon","여관에서 부친 편지와 가족에게 남긴 메모군요. 말씀하신 분이 누구인지 알겠어요."),
         ("dad","아내가 이 우체국에서 무엇을 찾았습니까?"),
         ("seryeon","반송되는 물건이 도착했는지 물었어요. 그때는 그 물건이 아직 오지 않았고요."),
         ("dad","아내가 그 뒤에 어디로 갔는지도 보셨습니까?"),
@@ -36,10 +36,10 @@ init 97 python:
         owned=set((store.room13 or {}).get("evidence",[]))
         if store.room13.get("life_poc") and len(selected)==2 and set(selected)<=owned:
             if set(selected)=={"E01","M01"}:
-                r13_flag("mother_expected_family")
-                return "(할머니가 보낸 편지를 받고 우리는 이 마을에 왔다. 엄마의 메모도 다람이와 내가 도착할 것을 전제로 쓰여 있다. 엄마도 우리가 올 것을 알고 있었던 것 같다. 그런데 왜 기다리던 방에는 없을까?)"
+                r13_flag("mother_expected_family","letter_no_acorn")
+                return "(메모에는 다람이 이름 옆에 도토리가 있다. 엄마는 다람이에게 쓸 때 늘 도토리를 그린다. 그런데 편지에는 다람이 이름이 나오는데도 도토리가 없다. 글씨도 메모보다 반듯하다. 이 편지는 정말 엄마가 쓴 걸까?)"
             if set(selected)=={"M01","J02"}:
-                return "(메모는 등불을 돌보는 사람에게 물어보라고 했다. 초롱은 아내를 만났고 가족을 기다린다는 말을 들었다. 마지막으로 본 방향은 우체국 쪽이지만, 정말 우체국 안에 들어갔을까?)"
+                return "(메모는 등불을 돌보는 사람에게 물어보라고 했다. 초롱은 아내를 만났고 가족이 올지도 모른다는 말을 들었다. 마지막으로 본 방향은 우체국 쪽이지만, 정말 우체국 안에 들어갔을까?)"
             if set(selected)=={"J02","J03"}:
                 return "(초롱이 본 방향과 세련이 확인한 방문이 이어진다. 아내는 우체국에 들러 반송품을 물었다. 그 뒤 어디로 갔는지는 둘 다 보지 못했다. 우체국을 나온 엄마를 본 사람이 있을까?)"
         return _r13_intro_compare(selected)
@@ -57,9 +57,9 @@ init 97 python:
                     (person,"도토리 그림 이야기를 하던 분이군요. 여관 앞에서 만났어요. 무엇이 궁금하십니까?")]
             if key=="M01" and person=="daram":
                 return [("daram","엄마가 나한테 쓰는 도토리 표시야. 아빠랑 내가 올 것도 적어 놨네."),
-                    ("dad","할머니 편지와 같이 읽어 보자. 엄마가 누구에게 소식을 맡겼는지도 알아봐야겠어.")]
+                    ("dad","엄마 편지와 같이 읽어 보자. 엄마가 누구에게 소식을 맡겼는지도 알아봐야겠어.")]
             if key=="E01" and person=="granny":
-                return [(person,"제가 보낸 편지예요. 아내분이 물건을 두고 돌아오지 않아서 가족께 소식을 전해야겠다고 생각했어요."),
+                return [(person,"부인이 가족을 부르고 싶다고 해서 제가 대신 부쳐 드렸어요."),
                     ("dad","13호실에 남긴 것을 살펴보고 다시 여쭤보겠습니다.")]
             if key=="J02" and person=="seryeon":
                 return [("dad","아내가 우체국 쪽으로 갔다고 초롱에게 들었습니다. 여기 들렀습니까?"),
@@ -69,7 +69,7 @@ init 97 python:
                 r13_flag("intro:post_letter" if key=="E01" else "intro:post_memo")
                 if r13_has("intro:post_letter") and r13_has("intro:post_memo"):
                     return [(person,"편지와 메모를 함께 보니 말씀하신 분이 누구인지 알겠어요. 방문하셨을 때 무슨 일이 있었는지 물어보세요.")]
-                return [(person,"여관에서 온 편지군요. 가족에게 남긴 글도 있으면 함께 보여 주세요." if key=="E01" else "가족에게 남긴 메모군요. 여관에서 받으신 편지도 함께 보여 주시겠어요?")]
+                return [(person,"여관에서 부친 편지군요. 가족에게 남긴 글도 있으면 함께 보여 주세요." if key=="E01" else "가족에게 남긴 메모군요. 여관에서 받으신 편지도 함께 보여 주시겠어요?")]
         return _r13_intro_present(person,key,identity)
 
     def r13_intro_direction_lines():
@@ -96,11 +96,11 @@ init 97 python:
         if s["day"]==1:
             if not r13_has("entry_corrected"):return "둘이 예약했는데, 왜 이름이 하나만 적혔을까?"
             if not r13_has("lodging"):
-                return "편지를 보낸 여관 할머니는 엄마 소식을 알고 있을까?"
+                return "엄마가 기다린다던 여관. 엄마는 13호실에 있을까?"
             if not r13_has("M01") or not r13_has("E03"):
                 return "엄마가 머물던 13호실에는 무엇이 남아 있을까?"
             if not r13_has("mother_lamplighter_lead"):return "메모에 적힌 ‘등불을 돌보는 분’은 누구일까?"
-            if r13_has("mother_expected_family"):return "엄마는 우리가 올 걸 알고 있었다. 그런데 왜 기다리지 않았을까?"
+            if r13_has("letter_no_acorn"):return "편지에는 도토리가 없다. 정말 엄마가 쓴 편지일까?"
             return "엄마는 왜 13호실을 비우고 돌아오지 않았을까?"
         if not r13_has("livelihood_open"):return "까로 아저씨의 마차는 언제 고쳐질까?"
         if r13_has("J03"):return "우체국을 나온 엄마는 누구를 만났을까?"
