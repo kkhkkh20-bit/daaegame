@@ -60,31 +60,35 @@ screen main_menu():
     style_prefix "r13"
     $ title_continue = r13_continue_slot()
     $ title_has_save = bool(r13_save_slots())
-    add Transform("assets/room13-title-winter020.webp",size=(1280,720))
-    add R13TitleSnow()
+    default title_focus = ("continue" if r13_continue_slot() else "new")
+    add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=True)
     add R13TitleVeil()
-    text "첫 번째 이야기" xpos 94 ypos 108 font r13_ui_font() size 22 color R13_UI_COLORS["menu_secondary"]
-    text "다람탐정" xpos 84 ypos 150 font r13_ui_font() size 110 color R13_UI_COLORS["menu_text"] outlines []
-    add Solid(R13_UI_COLORS["menu_accent"],xsize=72,ysize=2) xpos 96 ypos 284
-    text "눈 아래의 열세 번째 방" xpos 94 ypos 309 font r13_ui_font() size 22 color R13_UI_COLORS["menu_text"]
-    vbox:
-        xpos 76 ypos 384 spacing 6
-        textbutton "이어하기":
-            style ("r13_title_primary" if title_continue else "r13_title_button")
-            sensitive title_continue is not None
-            default_focus title_continue is not None
-            action (r13_load_action(title_continue) if title_continue else NullAction())
-        textbutton "처음부터":
-            style ("r13_title_button" if title_continue else "r13_title_primary")
-            default_focus title_continue is None
-            action Start()
-        textbutton "불러오기" style "r13_title_button" action ShowMenu("load") sensitive title_has_save
-        textbutton "설정" style "r13_title_button" action ShowMenu("pause_menu")
-    text ("저장된 여정을 이어갑니다" if title_continue else "이전 저장은 불러오기에서 확인하세요" if title_has_save else "눈에 갇힌 마을에서, 사라진 가족의 흔적을 따라.") xpos 110 ypos 650 font r13_ui_font() size 18 color R13_UI_COLORS["menu_secondary"] xsize 490
-    hbox:
-        xpos 922 ypos 644 spacing 20
-        textbutton "음악 듣기" style "r13_title_aux" action Function(r13_title_music)
-        textbutton "그림 수첩" style "r13_title_aux" action OpenURL("https://kkhkkh20-bit.github.io/daaegame/preview/room13-acting/")
+    add R13TitleSnow()
+    add Transform("assets/room13-title-logo.webp",size=(352,142),nearest=True) xpos 76 ypos 148
+    textbutton "이어하기":
+        xpos 80 ypos 310 style "r13_title_button"
+        selected title_focus == "continue"
+        sensitive title_continue is not None
+        default_focus title_continue is not None
+        hovered SetScreenVariable("title_focus","continue")
+        action (r13_load_action(title_continue) if title_continue else NullAction())
+    text r13_title_save_line(title_continue) xpos 128 ypos 375 font r13_ui_font() size 16 color "#c2c9b5" xsize 240
+    textbutton "처음부터":
+        xpos 80 ypos 420 style "r13_title_button"
+        selected title_focus == "new"
+        default_focus title_continue is None
+        hovered SetScreenVariable("title_focus","new")
+        action Start()
+    textbutton "설정":
+        xpos 80 ypos 484 style "r13_title_button"
+        selected title_focus == "settings"
+        hovered SetScreenVariable("title_focus","settings")
+        action ShowMenu("pause_menu")
+    textbutton "불러오기":
+        xpos 88 ypos 646 style "r13_title_aux"
+        sensitive title_has_save
+        action ShowMenu("load")
+    text config.version xpos 1192 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
 
 screen say(who,what):
     if room13_mode:
