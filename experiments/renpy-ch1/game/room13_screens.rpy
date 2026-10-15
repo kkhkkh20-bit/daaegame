@@ -426,7 +426,6 @@ screen r13_book(target=None,present=False,hearing=False):
     default category="evidence"
     default page=0
     default order="recent"
-    default favorite_only=False
     timer .35 action SetScreenVariable("ready",True)
     use r13_reference_record_shell("보여주기" if present else "자료 기록")
     use r13_reference_record_categories("r13_book",category,True,archive and not present)
@@ -434,10 +433,10 @@ screen r13_book(target=None,present=False,hearing=False):
         textbutton ("이번 여정" if not archive else "지난 플레이"):
             style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
             action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-    $ entries=r13_record_entries(category,archive,present,order,favorite_only)
+    $ entries=r13_record_entries(category,archive,present,order)
     $ entries=r13_present_entries(entries,target) if present else entries
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
-    use r13_record_filters("r13_book",order,favorite_only,archive and not present)
+    use r13_record_filters("r13_book",order,archive and not present)
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     use r13_material_detail(selected_record,archive and not present)
     if present and not selected_record:

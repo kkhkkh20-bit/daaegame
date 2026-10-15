@@ -6,7 +6,7 @@ e=n['env'];s=n['store'];p=n['persistent']
 s.room13=dict(day=2,flags=['elder_appointment','trial_notice'],events=[],evidence=['E01'],record_ui={'favorites':[]})
 p.room13_knowledge=['E01','E02']
 assert e['r13_record_entries'](archive=True,favorite_only=True)==['E01','E02']
-assert e['r13_record_entries'](favorite_only=True)==[]
+assert e['r13_record_entries'](favorite_only=True)==['E01']
 calls=[];e['renpy'].set_screen_variable=lambda *args,**kw:calls.append((args,kw))
 before=copy.deepcopy(s.room13)
 e['r13_record_select']('r13_records','detail','E01',False)
