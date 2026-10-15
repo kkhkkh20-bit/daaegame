@@ -189,7 +189,13 @@ screen r13_world_contents(entry=False,ready=False):
         textbutton R13_NAMES[nameplate["person"]]:
             area nameplate["rect"]
             padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
-            action Return(("person",nameplate["person"])) sensitive ready
+            action r13_person_action(nameplate["person"],entry) sensitive ready
+        if not entry and r13_offer_for_person(nameplate["person"]):
+            # 0.18.53: something is happening with this person; press them to see it.
+            frame:
+                xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
+                background Solid("#d9a441")
+                text "!" size 28 color "#2a1d10" xalign .5 yalign .5
 
 screen r13_resident_stage(entry=False,ready=False):
     for actor in r13_stage_people(entry):
@@ -200,8 +206,8 @@ screen r13_resident_stage(entry=False,ready=False):
         button:
             area tuple(actor["rect"]) background None hover_background None insensitive_background None padding (0,0)
             focus_mask r13_actor_hit_mask(actor)
-            action Return(("person",actor["person"])) sensitive ready
-            tooltip (r13_person_caption(actor["person"])+" · 말 걸기")
+            action r13_person_action(actor["person"],entry) sensitive ready
+            tooltip (R13_EVENT_OFFERS[r13_offer_for_person(actor["person"])][0] if not entry and r13_offer_for_person(actor["person"]) else r13_person_caption(actor["person"])+" · 말 걸기")
 
 
 screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None,caption=""):

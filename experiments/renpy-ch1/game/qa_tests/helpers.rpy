@@ -621,3 +621,24 @@ label r13_qa_talk_menu:
     $ r13_target=r13_qa_person
     $ r13_note_encounter(r13_qa_person)
     jump r13_talk_menu
+
+init 999 python:
+    def r13_qa_note(text):
+        import os
+        out=os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa");os.makedirs(out,exist_ok=True)
+        with open(os.path.join(out,"notes.txt"),"a") as f:f.write(text+"\n")
+
+    def r13_qa_crowd_dump():
+        # 0.18.53: who stands where, per day and time slot, with the present flag state.
+        import os,json
+        saved=winter_copy.deepcopy(store.room13);rows=[]
+        for day in range(1,15):
+            for period in range(3):
+                for loc in sorted(R13_PLACES):
+                    n=winter_copy.deepcopy(saved);n.update(day=day,period=period,location=loc);store.room13=n
+                    try:people=list(r13_people())
+                    except Exception as e:people=["ERR:"+str(e)]
+                    rows.append(dict(day=day,period=period,location=loc,people=people))
+        store.room13=saved
+        out=os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa");os.makedirs(out,exist_ok=True)
+        json.dump(rows,open(os.path.join(out,"crowd.json"),"w"),ensure_ascii=False,indent=0)
