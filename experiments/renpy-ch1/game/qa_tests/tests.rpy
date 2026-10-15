@@ -1775,7 +1775,8 @@ testcase event_offer:
     run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+offers","ev_l_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval ("r13_w1c_portrait" in room13["offers"] and not r13_has("ev_g_done"))
-    click "피코가 판자에"
+    # 0.18.53: the event is pressed on the person when they stand here.
+    click "피코"
     click pos (1150,90) until screen "choice" timeout 40
     click "모른 척한다"
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -2599,3 +2600,23 @@ testcase long_topic_list:
     pause 1.5
     screenshot "granny_topics.png"
     $ persistent.room13_large_text=False
+
+testcase offer_on_person:
+    # 0.18.53 (owner): press 슬링, not a text marker, to see the steamed envelope.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True),("+w1c","+offers","ev_g_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    assert eval ("r13_w1c_letters" in room13["offers"] and r13_offer_for_person("resident_sling")=="r13_w1c_letters")
+    screenshot "sling_offer.png"
+    python:
+        _sl=[a for a in r13_stage_people() if a["person"]=="resident_sling"]
+        r13_qa_note("sling staged: %r"%([(a["pose"],a["x"],a["y"],a["width"],a["height"]) for a in _sl],))
+        r13_qa_note("post people: %r"%([(a["person"],a["pose"],a["x"],a["y"]) for a in r13_stage_people()],))
+    assert eval (any(a["person"]=="resident_sling" and a["pose"]=="thinking" for a in r13_stage_people()))
+    click "슬링"
+    click pos (1150,90) until screen "choice" timeout 40
+    assert eval (r13_has("ev_l_done"))
+    $ r13_qa_crowd_dump()
