@@ -129,12 +129,12 @@ def saveload_case():
                 f'    $ r13_qa_wide_log("dining_after_load_{name}")',
                 f'    assert eval (r13_daylight()=="{name}" and r13_world_width()==2160 and ROOM13["objects"]["dining"]["table"]["rect"]=={table})',
                 f'    screenshot "dining_after_load_{name}.png"']
-    # Dining evening is held: the old scene and its rects, then back to the wide afternoon.
+    # Dining evening (third floor spot), then back to the afternoon picture.
     out += goto("dining", 7, 2, 0)
-    out += ['    $ r13_qa_wide_log("dining_evening_held")',
-            '    assert eval (r13_world_width()==1280 and ROOM13["objects"]["dining"]["table"]["rect"]==[420,493,855,129])']
+    out += ['    $ r13_qa_wide_log("dining_evening")',
+            f'    assert eval (r13_world_width()==2160 and r13_world_file("dining","evening").endswith("dining-evening.webp") and ROOM13["objects"]["dining"]["table"]["rect"]=={table})']
     out += goto("dining", 7, 1, 440)
-    out += [f'    assert eval (r13_world_width()==2160 and ROOM13["objects"]["dining"]["table"]["rect"]=={table})']
+    out += [f'    assert eval (r13_world_width()==2160 and r13_world_file("dining",r13_daylight()).endswith("dining-afternoon.webp"))']
     # 13호/hall: the picture follows the case state, also across save/load.
     bed = LAYOUT["room13"]["objects"]["bed"]
     out += goto("room13", 3, 1, 440, 'room13.update(case_state="pending",victim_state="alive",daram_state="with_dad")', QUIET)
@@ -151,10 +151,13 @@ def saveload_case():
             '    screenshot "room13_before_after_load.png"',
             # guestroom keeps the old picture and rects.
             '    assert eval (ROOM13["objects"]["guestroom"]["bed"]["rect"]==[605,311,537,151] and "guestroom" not in R13_WORLD_LAYOUTS)']
-    # The post (wide art held) stays the old scene in every period.
-    out += goto("post", 3, 0, 0)
-    out += ['    $ r13_qa_wide_log("post_morning_old")',
-            '    assert eval (r13_world_width()==1280 and "post" not in R13_WORLD_LAYOUTS)']
+    # Post: wide in the morning, the old scene in the afternoon.
+    out += goto("post", 3, 0, 440)
+    out += ['    $ r13_qa_wide_log("post_morning")',
+            '    assert eval (r13_world_width()==2160)']
+    out += goto("post", 3, 1, 0)
+    out += ['    $ r13_qa_wide_log("post_afternoon_old")',
+            '    assert eval (r13_world_width()==1280)']
     out += goto("kitchen", 3, 0, 440)
     out += ['    $ room13["case_state"]="occurred"']
     out += goto("kitchen", 3, 0, 440)

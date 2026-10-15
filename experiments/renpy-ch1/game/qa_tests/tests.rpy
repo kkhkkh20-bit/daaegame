@@ -8153,13 +8153,13 @@ testcase wide_saveload:
     run Call("r13_qa_goto",7,2,"dining")
     click pos (640,600) until screen "r13_hub" timeout 40
     pause 1.0
-    $ r13_qa_wide_log("dining_evening_held")
-    assert eval (r13_world_width()==1280 and ROOM13["objects"]["dining"]["table"]["rect"]==[420,493,855,129])
+    $ r13_qa_wide_log("dining_evening")
+    assert eval (r13_world_width()==2160 and r13_world_file("dining","evening").endswith("dining-evening.webp") and ROOM13["objects"]["dining"]["table"]["rect"]==[946, 480, 1190, 130])
     $ r13_world_cameras={"dining":440}
     run Call("r13_qa_goto",7,1,"dining")
     click pos (640,600) until screen "r13_hub" timeout 40
     pause 1.0
-    assert eval (r13_world_width()==2160 and ROOM13["objects"]["dining"]["table"]["rect"]==[946, 480, 1190, 130])
+    assert eval (r13_world_width()==2160 and r13_world_file("dining",r13_daylight()).endswith("dining-afternoon.webp"))
     $ room13.update(case_state="pending",victim_state="alive",daram_state="with_dad")
     $ r13_world_cameras={"room13":440}
     run Call("r13_qa_goto",3,1,"room13",("ep1_patrol_seen","ep1_eaves_seen"))
@@ -8183,12 +8183,18 @@ testcase wide_saveload:
     assert eval (room13["case_state"]=="pending" and r13_world_file("room13",r13_daylight()).endswith("room13-before-afternoon.webp") and ROOM13["objects"]["room13"]["bed"]["rect"]==[809, 337, 675, 180])
     screenshot "room13_before_after_load.png"
     assert eval (ROOM13["objects"]["guestroom"]["bed"]["rect"]==[605,311,537,151] and "guestroom" not in R13_WORLD_LAYOUTS)
-    $ r13_world_cameras={"post":0}
+    $ r13_world_cameras={"post":440}
     run Call("r13_qa_goto",3,0,"post")
     click pos (640,600) until screen "r13_hub" timeout 40
     pause 1.0
-    $ r13_qa_wide_log("post_morning_old")
-    assert eval (r13_world_width()==1280 and "post" not in R13_WORLD_LAYOUTS)
+    $ r13_qa_wide_log("post_morning")
+    assert eval (r13_world_width()==2160)
+    $ r13_world_cameras={"post":0}
+    run Call("r13_qa_goto",3,1,"post")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_wide_log("post_afternoon_old")
+    assert eval (r13_world_width()==1280)
     $ r13_world_cameras={"kitchen":440}
     run Call("r13_qa_goto",3,0,"kitchen")
     click pos (640,600) until screen "r13_hub" timeout 40
