@@ -8,7 +8,7 @@ init 99 python:
         # Use the actual named speaker, not an inferred identity or a new crop.
         return person if who and person in CAST and R13_NAMES.get(person)==who else None
 
-    # The automatic name/place/evidence colouring (and its {b}) was retired in 0.18.23;
+    # The automatic name/place/evidence colouring (and its {b}) was retired in 0.18.24;
     # r13_semantic_text now lives in systems/room13_typography_roles.rpy.
 
     # Footer skip modes (owner, 0.18.4, from player comments). One-shot: they

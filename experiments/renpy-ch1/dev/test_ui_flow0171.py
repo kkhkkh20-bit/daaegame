@@ -1,4 +1,4 @@
-"""Footer skip modes (the automatic name markup was retired in 0.18.23: dev/test_typography_roles.py)."""
+"""Footer skip modes (the automatic name markup was retired in 0.18.24: dev/test_typography_roles.py)."""
 import re,textwrap,types,unittest
 from pathlib import Path
 class UIFlowTests(unittest.TestCase):

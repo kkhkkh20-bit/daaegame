@@ -1,4 +1,4 @@
-# Name / speech / thought / item typography (owner's typography handoff, 0.18.23).
+# Name / speech / thought / item typography (owner's typography handoff, 0.18.24).
 #   Spec: assets/room13-typography-tokens.json (TYPOGRAPHY_HANDOFF.md).
 #   - Roles, not people, pick colours: speech cream, Dad's thought blue with its parentheses
 #     exactly once, narration grey. One speaker-label colour for everyone.

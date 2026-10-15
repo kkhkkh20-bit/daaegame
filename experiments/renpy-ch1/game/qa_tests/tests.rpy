@@ -2132,7 +2132,7 @@ testcase compare_j09:
     assert eval ("좁혔다" in r13_compare_result(("J09","E12")))
 
 testcase typography_roles:
-    # 0.18.23: narration grey, thought blue with one pair of parentheses, item span in entity colour.
+    # 0.18.24: narration grey, thought blue with one pair of parentheses, item span in entity colour.
     pause 2.0
     click "처음부터"
     pause 3.0

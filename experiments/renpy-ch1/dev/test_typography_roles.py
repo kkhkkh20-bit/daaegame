@@ -1,4 +1,4 @@
-"""0.18.23 typography handoff: roles, thought parentheses once, authored item spans only, no bold."""
+"""0.18.24 typography handoff: roles, thought parentheses once, authored item spans only, no bold."""
 import json,re,textwrap,types,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
