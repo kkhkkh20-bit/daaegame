@@ -19,7 +19,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 10 | 113 | `systems/room13_present_flow.rpy:43` | _r13_mem_present |
 | 11 | 114 | `systems/room13_memory.rpy:85` | _r13_ledger_present |
 | 12 | 115 | `systems/room13_ledger.rpy:38` | _r13_tm_present |
-| 13 | 116 | `systems/room13_testimony.rpy:41` | _r13_ob_present |
+| 13 | 116 | `systems/room13_testimony.rpy:48` | _r13_ob_present |
 | 14 | 118 | `systems/room13_owl_buri.rpy:41` | _r13_uk_present |
 | 15 | 123 | `systems/room13_use_knowledge.rpy:58` | _r13_sound_present |
 | 16 | 150 | `systems/room13_sound.rpy:161` |  |
@@ -69,6 +69,17 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 101 | `systems/room13_daram_home.rpy:104` | _r13_mem_topic_lines |
 | 7 | 114 | `systems/room13_memory.rpy:74` |  |
 
+## `r13_compare_result` (6층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 78 | `room13_record_compare.rpy:8` | _r13_work_compare |
+| 2 | 96 | `systems/room13_work_clues.rpy:18` | _r13_intro_compare |
+| 3 | 97 | `systems/room13_intro_clues.rpy:35` | _r13_poc_compare |
+| 4 | 100 | `systems/room13_poc_route.rpy:90` | _r13_daram_home_compare |
+| 5 | 101 | `systems/room13_daram_home.rpy:132` | _r13_tm_compare |
+| 6 | 116 | `systems/room13_testimony.rpy:42` |  |
+
 ## `r13_first_mystery_notes` (6층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -79,16 +90,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 98 | `systems/room13_learning.rpy:116` | _r13_poc_notes |
 | 5 | 100 | `systems/room13_poc_route.rpy:138` | _r13_tn_notes |
 | 6 | 121 | `systems/room13_trial_notes.rpy:38` |  |
-
-## `r13_compare_result` (5층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 78 | `room13_record_compare.rpy:8` | _r13_work_compare |
-| 2 | 96 | `systems/room13_work_clues.rpy:18` | _r13_intro_compare |
-| 3 | 97 | `systems/room13_intro_clues.rpy:35` | _r13_poc_compare |
-| 4 | 100 | `systems/room13_poc_route.rpy:90` | _r13_daram_home_compare |
-| 5 | 101 | `systems/room13_daram_home.rpy:132` |  |
 
 ## `r13_finish_topic` (5층)
 

@@ -200,7 +200,7 @@ label r13_ev_eve_trial:
                         ("dad","(톡에게 이 재판은 아직 남의 일이다.)",{"thought":True})],"ev:eve:tok:no")
             "밤이를 찾는다" if not r13_has("eve:bami"):
                 $ r13_flag("eve:bami")
-                if r13_has("bami_taken") and not r13_has("bami_returned"):
+                if r13_has("bami_taken"):
                     call r13_lines([(None,"처마 밑은 비어 있었다. 검사를 받으러 끌려간 뒤로 밤이를 본 사람은 없었다."),
                         ("dad","(밤이가 그날 본 것은 이제 아무도 말해 줄 수 없다.)",{"thought":True})],"ev:eve:bami:gone")
                 elif r13_has("bami_consent"):

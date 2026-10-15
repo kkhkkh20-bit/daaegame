@@ -2121,3 +2121,12 @@ testcase scenario_dump:
     click "처음부터"
     pause 3.0
     run Function(r13_qa_scenario_dump)
+
+testcase compare_j09:
+    # 0.18.22 audit: J09 (나비의 처음 말) is now read against E12 in the record comparison.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="inn",life_poc=True,case_state="occurred",evidence=["J09","E12"]),("lodging","entry_corrected"))
+    pause 1.0
+    assert eval ("좁혔다" in r13_compare_result(("J09","E12")))
