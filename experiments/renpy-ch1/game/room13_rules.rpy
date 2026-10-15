@@ -243,6 +243,8 @@ init 55 python:
         return r13_motion_art(image_name,person,pose,speaking,entrance)
 
     def r13_close_art(person,pose="interview_neutral",height=840,speaking=False,entrance=False):
+        full=r13_fullbody_close_art(person,pose,height,speaking,entrance)
+        if full is not None:return full
         spec=r13_close_spec(person,pose)
         art=Crop(tuple(spec["crop"]),spec["file"]) if spec else r13_art(person,pose,speaking,entrance)
         width,native_height=r13_close_geometry(person,pose)
@@ -255,6 +257,8 @@ init 55 python:
         return At(result,r13_actor_enter(r13_appearance_duration())) if entrance else result
 
     def r13_close_y(person,height=840,top=110,pose="interview_neutral"):
+        full_y=r13_fullbody_close_y(person,height,top,pose)
+        if full_y is not None:return full_y
         full_spec=r13_close_spec(person,pose) or {}
         if full_spec.get("full_body"):
             return int(top+20-full_spec["head"][1]*r13_close_scale(person,pose,height))
@@ -290,7 +294,7 @@ init 55 python:
         visible=who in CAST and who!="dad" and (not carriage or who=="daram") and store.r13_camera=="stage"
         if visible:
             arriving=store.r13_motion_person!=who or "r13_visitor" not in renpy.get_showing_tags()
-            actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) else "interview_"+store.dialogue_expression
+            actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) or store.r13_current_pose in R13_FULLBODY_NEW else "interview_"+store.dialogue_expression
             # A new sentence from the same actor must not restart entrance.
             if arriving or previous_pose!=store.r13_current_pose:
                 pop=carriage and arriving

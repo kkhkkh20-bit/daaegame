@@ -11,7 +11,8 @@ init 59 python:
         key=pose[10:] if pose.startswith("interview_") else pose
         poses=R13_PORTRAITS.get(person,{})
         if key in poses:return key
-        if key in ("joy",):return "expressive"
+        if key in ("joy","surprise"):return "expressive"
+        if key in ("flustered","angry","anxious"):return "distressed"
         if key in ("panic","breakdown"):return "distressed"
         if "read" in key or key=="thinking":return "thinking"
         return key if key in ("neutral","distressed","expressive") else "neutral"
@@ -101,6 +102,12 @@ init 59 python:
         # A missing authored pose is an explicit neutral fallback, never an
         # activity label attached to an unrelated standing sprite.
         if person in R13_ACTING and pose not in R13_ACTING[person]:pose=expression if expression in R13_ACTING[person] else "neutral"
+        # Full-body dialogue expression (room13_fullbody_dialogue.rpy): the
+        # pose carries the new key; expression keeps an older key for avatars.
+        emotion=r13_fullbody_line_emotion(identity,index,person,text,expression,pose)
+        if emotion:
+            pose=emotion
+            expression=R13_FULLBODY_TO_LEGACY.get(expression,expression) if expression in R13_FULLBODY_NEW else expression
         return expression,pose
 
     class R13FurnitureMask(renpy.Displayable):

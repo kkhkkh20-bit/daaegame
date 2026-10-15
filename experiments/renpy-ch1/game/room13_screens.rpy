@@ -154,6 +154,8 @@ screen r13_hub(entry=False):
                 xsize r13_world_width() ysize 720
                 add r13_world_background()
                 use r13_world_contents(entry,ready)
+                if not entry:
+                    use r13_inn_v4_world_chips(ready)
         use r13_world_camera_controls(world_adjustment)
     else:
         use r13_world_contents(entry,ready)
@@ -161,9 +163,18 @@ screen r13_hub(entry=False):
         hbox:
             xpos 1250 xanchor 1.0 ypos 105 spacing 8
             for destination,title in r13_local_connections():
+              if destination not in r13_inn_v4_handled(room13["location"]):
                 textbutton (title+" ›"):
                     style "r13_action_button" padding (16,10) ysize 64
                     text_size 21 action Return(("travel",destination)) sensitive ready
+    if not entry:
+        use r13_inn_v4_screen_chips(ready)
+    if not entry and r13_inn_guide_available():
+        textbutton "안내도":
+            id "r13_inn_guide_button"
+            style "r13_action_button" xpos 1150 xanchor 1.0 ypos 96 xsize 112 ysize 54
+            text_size 22 action Show("r13_inn_guide") sensitive ready
+            alt "여관 안내도 열기"
     if entry:
         use r13_waiting_window(ready)
     else:
