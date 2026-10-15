@@ -483,7 +483,7 @@ label r13_first_night:
 
 label r13_case_choice:
     # Week-1 case L (systems/room13_week1_cases.rpy): a planted letter empties the inn that night.
-    if r13_has("fake_letter_planted") and not r13_has("fake_letter_night"):
+    if r13_has("fake_letter_planted") and not r13_has("fake_letter_night") and not r13_has("granny_knows_found_out"):
         call r13_w1c_fake_night
         jump r13_roam
     call r13_scene("hall","목요일 저녁 · 여관 2층 복도","night")

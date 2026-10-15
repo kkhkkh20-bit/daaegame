@@ -1643,3 +1643,24 @@ testcase reinspect_and_credit:
     run Function(r13_edit,day=9)
     run Function(r13_flag,"eunho_refuses")
     assert eval ("w2_eunho_credit" in [k for k,s in r13_topics("resident_eunho")])
+
+testcase use_knowledge:
+    # 0.18.19: play dumb, test testimony by a favour, keep the envelope sealed.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="inn",life_poc=True,evidence=["H9"]),("know_granny_reads","warning_location"))
+    pause 1.0
+    assert eval ("granny_letter_ask" in [k for k,s in r13_topics("granny")] and "granny_letter_confront" in [k for k,s in r13_topics("granny")])
+    run Function(r13_finish_topic,"granny_letter_confront")
+    assert eval (r13_has("granny_knows_found_out") and "granny_letter_ask" not in [k for k,s in r13_topics("granny")])
+    run Function(r13_edit,location="square")
+    assert eval ("warning_keep" in [k for k,a in r13_actions()] and "warning" in [k for k,a in r13_actions()])
+    run Function(r13_finish_action,"warning_keep")
+    assert eval (r13_has("warning_sealed_held") and "warning" not in [k for k,a in r13_actions()])
+    run Function(r13_finish_topic,"warning_open_with")
+    assert eval ("E18" in room13["evidence"] and "J18" in room13["evidence"])
+    run Function(r13_edit,day=5,case_state="occurred")
+    run Function(r13_finish_topic,"doto_view_claim")
+    run Function(r13_finish_topic,"doto_view_test")
+    assert eval ("J17" in room13["evidence"])

@@ -70,7 +70,7 @@ label r13_w1c_events:
         call r13_w1c_letters
     if 2<=_d<=4 and _p==1 and _loc=="inn" and not r13_has("ev_i_done"):
         call r13_w1c_extension
-    if _d==4 and _p>=2 and room13["case_state"]=="pending" and r13_has("fake_letter_planted") and not r13_has("fake_letter_night"):
+    if _d==4 and _p>=2 and room13["case_state"]=="pending" and r13_has("fake_letter_planted") and not r13_has("fake_letter_night") and not r13_has("granny_knows_found_out"):
         call r13_w1c_fake_night
     if 5<=_d<=6 and _loc=="hall" and room13["case_state"]=="occurred" and not r13_has("ev_s_done"):
         call r13_w1c_seal
@@ -167,6 +167,10 @@ label r13_w1c_letters_after(ask_stop=True):
     return
 
 label r13_w1c_fake_letter:
+    # Once Granny knows Dad found out (systems/room13_use_knowledge.rpy), a planted letter does not fool her.
+    if r13_has("granny_knows_found_out"):
+        call r13_lines([("resident_sling","할머니가 요즘은 제가 가져가는 편지를 잘 안 믿으세요. 누가 알아챘다고 하시면서요.")],"w1c:letters:fake:fail")
+        return
     call r13_lines([("dad","할머니께 이 쪽지를 베껴 드리세요. ‘목요일 밤, 북쪽 초소에서 기다린다.’ 서명은 비워 두고요."),
         ("resident_sling","……할머니가 이 가짜 쪽지를 믿으면요?"),
         ("dad","그럼 목요일 밤에 할머니가 어디로 가는지 보게 되겠죠.")],"w1c:letters:fake")
