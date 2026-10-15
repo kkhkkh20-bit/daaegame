@@ -61,8 +61,17 @@ class WideLayouts(unittest.TestCase):
                     cx, feet, height = slot[:3]
                     self.assertTrue(0 < cx < width and 0 < feet <= 720 and 0 < height < feet, slot)
 
+    def test_perspective_lines_follow_the_wide_slots(self):
+        # 0.18.59: every wide layout carries its own feet->height line, fitted to its slots.
+        for location in ("kitchen", "dining", "passage", "post", "hall", "room13"):
+            spec = LAYOUT[location]
+            a, b = spec["perspective"]
+            for slot in spec.get("slots", []):
+                with self.subTest(location=location, slot=slot):
+                    self.assertLess(abs(a * slot[1] + b - slot[2]), 0.12 * slot[2])
+
     def test_scope(self):
-        # 0.18.58: post wide in the morning only; guestroom stays the old room.
+        # 0.18.59: post wide in the morning only; guestroom stays the old room.
         self.assertEqual(LAYOUT["post"]["periods"], ["morning"])
         self.assertNotIn("guestroom", LAYOUT)
         # The post slot in front of the scarf was replaced (it hid the scarf).

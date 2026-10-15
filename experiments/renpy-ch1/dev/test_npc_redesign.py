@@ -35,7 +35,7 @@ def files(entry):
 class NpcRedesign(unittest.TestCase):
     def test_one_design_per_existing_npc(self):
         npcs = [d["npc"] for d in REG["designs"]]
-        # 0.18.59 (owner, 07:39 PDT): only the two elders join the first eight; nobody else.
+        # 0.18.60 (owner, 07:39 PDT): only the two elders join the first eight; nobody else.
         self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian", "resident_nubi",
                                                "resident_seol", "resident_siluk", "resident_nero", "resident_bori",
                                                "resident_owlgp", "granny"}))

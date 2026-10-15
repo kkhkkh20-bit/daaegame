@@ -1,4 +1,4 @@
-# Browser check (0.18.58/0.18.59): the wide maps and the two elders in the real web build.
+# Browser check (0.18.59/0.18.60): the wide maps and the two elders in the real web build.
 # For each scene: the right picture (state x daylight) is shown at the right width, every
 # visible object is pressed at a point Ren'Py's own focus lookup gives to that object,
 # and the click really selects it. Screenshots go to $ROOM13_QA_OUT/wide-maps.

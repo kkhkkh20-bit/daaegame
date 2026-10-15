@@ -622,7 +622,7 @@ label r13_qa_talk_menu:
     $ r13_note_encounter(r13_qa_person)
     jump r13_talk_menu
 
-# 0.18.58 wide maps: click log, hit maps and capacity checks.
+# 0.18.59 wide maps: click log, hit maps and capacity checks.
 init 999 python:
     R13_QA_WIDE_LOG = []
     def r13_qa_wide_write():

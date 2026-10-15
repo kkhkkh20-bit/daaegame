@@ -31,7 +31,7 @@ init 63 python:
             return []
         links = dict(r13_local_connections())
         sx, sy = r13_inn_v4_scale(location)
-        # 0.18.58: a wide hall scrolls like the lobby. Its drawn chips take the wide
+        # 0.18.59: a wide hall scrolls like the lobby. Its drawn chips take the wide
         # picture's own centres (world layout "chips"); edge chips stay screen UI.
         wide = location != "inn" and r13_world_width(location) > 1280
         centres = r13_layout(location).get("chips", {}) if wide else {}
