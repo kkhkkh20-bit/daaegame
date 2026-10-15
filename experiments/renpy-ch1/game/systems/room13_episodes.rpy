@@ -115,10 +115,10 @@ label r13_episode_events:
         call r13_ep2_kitchen
     # 3 돌
     if _d in (5,6) and _p==2 and _loc=="square" and not r13_has("ep3_bell_seen"):
-        call r13_ep3_bell
+        $ r13_offer("r13_ep3_bell")
     # 4 톡
     if _d==3 and _p<=1 and _loc=="workshop" and not r13_has("ep4_seen"):
-        call r13_ep4_accused
+        $ r13_offer("r13_ep4_accused")
     if _d>=5 and r13_has("ep4_seen") and not r13_has("tok_cleared") and not r13_has("tok_detained"):
         call r13_ep4_deadline
     return

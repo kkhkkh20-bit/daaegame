@@ -47,11 +47,11 @@ label r13_w2e_events:
         return None
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
     if 9<=_d<=11 and _p<=2 and _loc=="square" and not r13_has("w2e_k_done"):
-        call r13_w2e_bell
+        $ r13_offer("r13_w2e_bell")
     if 9<=_d<=12 and _p<=1 and _loc=="workshop" and not r13_has("w2e_p_done"):
-        call r13_w2e_numbers
+        $ r13_offer("r13_w2e_numbers")
     elif 9<=_d<=12 and _p<=1 and _loc=="workshop" and not r13_has("w2e_w_done"):
-        call r13_w2e_tools
+        $ r13_offer("r13_w2e_tools")
     if 10<=_d<=12 and _loc=="store" and not r13_has("w2e_v_done") and (r13_has("supplies_ready") or r13_has("supply_terms")):
         call r13_w2e_share
     return None

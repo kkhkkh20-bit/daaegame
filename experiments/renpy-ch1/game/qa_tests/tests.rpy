@@ -1664,3 +1664,23 @@ testcase use_knowledge:
     run Function(r13_finish_topic,"doto_view_claim")
     run Function(r13_finish_topic,"doto_view_test")
     assert eval ("J17" in room13["evidence"])
+
+testcase event_offer:
+    # 0.18.19: an ordinary event shows as a marker; clicking enters, passing by applies its look-away outcome.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+offers","ev_l_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("r13_w1c_portrait" in room13["offers"] and not r13_has("ev_g_done"))
+    click "피코가 판자에"
+    click pos (1150,90) until screen "choice" timeout 40
+    click "모른 척한다"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("ev_g_done") and "r13_w1c_portrait" not in room13.get("offers",{}))
+    run Function(r13_edit,location="post",period=0)
+    run Function(r13_flag,"ev_g_done")
+    run Function(r13_offer,"r13_w1c_letters")
+    run Function(r13_edit,period=1)
+    run Function(r13_offers_tick)
+    assert eval (r13_has("ev_l_done") and r13_has("warning_exposed") and room13["offer_news"])

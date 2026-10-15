@@ -262,6 +262,11 @@ label r13_field:
         elif _return=="case":
             jump r13_case_choice
         jump r13_roam
+    if r13_choice[0]=="offer":
+        call r13_take_offer(r13_choice[1])
+        if _return=="day":
+            jump r13_day
+        jump r13_roam
     if r13_choice[0]=="object":
         call r13_object(r13_choice[1])
         call r13_object_options(r13_choice[1])

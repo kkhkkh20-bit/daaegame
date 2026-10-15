@@ -192,6 +192,8 @@ screen r13_hub(entry=False):
         frame:
             xpos 24 ypos 178 padding (12,8) background Solid("#102725b0")
             text r13_campaign_goal() size r13_read_size(20,24) color "#eee5d5"
+    if not entry:
+        use r13_event_offers(ready)
     use r13_toolbar(mode="field",ready=ready)
     $ hint=GetTooltip()
     if hint:

@@ -150,6 +150,7 @@ init 102 python:
 
 label r13_town_events:
     $ r13_town_daily()
+    call r13_offer_news
     call r13_episode_events
     call r13_evening_events
     call r13_b3_events
@@ -163,7 +164,7 @@ label r13_town_events:
         if room13["location"]=="workshop" and room13["period"]==1 and r13_has("somi_route_seen"):
             call r13_ev_b_ambush
         elif room13["location"]=="store":
-            call r13_ev_b_store
+            $ r13_offer("r13_ev_b_store")
     if room13["day"]>=4 and not r13_has("ev_b_done"):
         call r13_ev_b_missed
     if (room13["day"]==3 and room13["period"]==2 and room13["location"]=="inn"

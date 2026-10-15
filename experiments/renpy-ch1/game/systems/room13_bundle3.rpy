@@ -70,9 +70,9 @@ label r13_b3_events:
     if _loc in ("square","inn","dining"):
         call r13_b3_whispers
     if _d in (5,6) and _p<=1 and _loc=="square" and room13["case_state"]=="occurred" and not r13_has("ev_e_done"):
-        call r13_b3_ration
+        $ r13_offer("r13_b3_ration")
     if 4<=_d<=6 and _p<=1 and _loc=="post" and not r13_has("ev_u_done") and not r13_has("know_stone_history"):
-        call r13_b3_pages
+        $ r13_offer("r13_b3_pages")
     if _d in (5,6) and _p==2 and _loc=="school" and not r13_has("ev_o_done") and not r13_has("bori_cleared") and not r13_has("bori_ally"):
         call r13_b3_firewood
     return None
