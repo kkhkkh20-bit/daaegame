@@ -424,3 +424,53 @@ init 999 python:
             gimmicks=dict(R13_GIMMICK_LABELS),
             places=list(R13_PLACES))
         open(renpy.config.basedir+"/scenario_dump.json","w").write(json.dumps(out,ensure_ascii=False,indent=1))
+
+# 0.18.23: dot effects (systems/room13_dot_fx.rpy) captured in the real engine.
+default r13_qa_fx_done = False
+init 999 python:
+    def r13_qa_fx_capture():
+        import os, json as qa_json
+        out=os.path.join(os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa"),"dot_fx")
+        if not os.path.isdir(out):os.makedirs(out)
+        report=dict(scenes={},blink={})
+        for location,period in (("inn","evening"),("inn","morning"),("square","evening"),("gate","evening"),("altar","evening"),("square","morning")):
+            renpy.scene()
+            renpy.show("r13_qa_fx_bg",what=r13_world_background(location,period))
+            shots=[]
+            for i in range(3):
+                renpy.pause(0.37,hard=True)
+                name="%s_%s_%d.png"%(location,period,i)
+                renpy.screenshot(os.path.join(out,name));shots.append(name)
+            persistent.room13_motion=False
+            renpy.pause(0.4,hard=True)
+            name="%s_%s_off.png"%(location,period)
+            renpy.screenshot(os.path.join(out,name));shots.append(name)
+            persistent.room13_motion=True
+            report["scenes"]["%s_%s"%(location,period)]=shots
+        renpy.scene()
+        renpy.show("r13_qa_fx_bg",what=r13_world_background("inn","evening"))
+        preferences.text_cps=0
+        for emotion in ("neutral","angry","joy"):
+            spec=R13_DOT_FX["blink"]["people"]["daram"].get(emotion)
+            r13_speaker("daram",R13_FULLBODY_TO_LEGACY[emotion],emotion)
+            renpy.say(R13_CHARS.get("daram"),"눈 깜빡임 확인 문장입니다.",interact=False)
+            shots=[]
+            if spec:
+                probe=R13Blink(spec["half"],"daram",emotion,spec)
+                start=1.6+probe.gap(0)
+                renpy.pause(start+0.09,hard=True)       # 감은 눈(반쯤 50ms 뒤 90ms)
+                renpy.screenshot(os.path.join(out,"blink_%s_closed.png"%emotion));shots.append("closed")
+                renpy.pause(0.6,hard=True)
+            else:
+                renpy.pause(1.0,hard=True)
+            renpy.screenshot(os.path.join(out,"blink_%s_open.png"%emotion));shots.append("open")
+            report["blink"][emotion]=dict(spec=bool(spec),shots=shots)
+            renpy.hide("r13_visitor")
+        open(os.path.join(out,"report.json"),"w").write(qa_json.dumps(report,ensure_ascii=False,indent=0))
+        store.r13_qa_fx_done=True
+
+label r13_qa_dot_fx:
+    call r13_qa_setup(5,["E01"])
+    $ r13_qa_fx_capture()
+    $ open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(done=r13_qa_fx_done)))
+    return

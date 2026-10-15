@@ -2130,3 +2130,12 @@ testcase compare_j09:
     run Call("r13_qa_roam",dict(day=5,period=0,location="inn",life_poc=True,case_state="occurred",evidence=["J09","E12"]),("lodging","entry_corrected"))
     pause 1.0
     assert eval ("좁혔다" in r13_compare_result(("J09","E12")))
+
+testcase dot_fx:
+    # 0.18.23 dot effects: fire, glow, snow, lamp and Daram's blink, plus motion-off stills.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_dot_fx")
+    click pos (1276,300) until eval r13_qa_fx_done timeout 300
+    pause 1.0

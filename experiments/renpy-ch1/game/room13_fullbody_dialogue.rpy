@@ -8,7 +8,8 @@
 # - The older dialogue busts (room13-portraits.json), profile avatars and world
 #   sprites stay as they are; the busts remain the fallback when a character
 #   or file is missing, and the gate waiting window still uses Daram's bust.
-# - No mouth or idle animation is added (r13_idle_art stays static).
+# - No mouth or idle animation is added (r13_idle_art stays static). Daram's
+#   eyes blink (0.18.23, room13_dot_fx.rpy) when the motion option is on.
 init 58 python:
     R13_FULLBODY_DIALOGUE = True
     R13_FULLBODY = json.load(renpy.file("assets/room13-fullbody-dialogue.json")) if renpy.loadable("assets/room13-fullbody-dialogue.json") else {"people":{}}
@@ -74,7 +75,8 @@ init 58 python:
         key=(person,spec["emotion"],int(height))
         result=R13_FULLBODY_ART_CACHE.get(key)
         if result is None:
-            art=Crop(tuple(spec["crop"]),spec["file"])
+            # Eye blink pieces (room13_dot_fx.rpy) sit on the uncropped picture.
+            art=Crop(tuple(spec["crop"]),r13_blink_art(person,spec["emotion"],spec["file"]))
             scale=r13_fullbody_scale(person,height)
             width=spec["crop"][2]*scale;native_height=spec["crop"][3]*scale
             result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)

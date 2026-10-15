@@ -1,0 +1,196 @@
+{
+ "version": 1,
+ "cell": 4,
+ "generator": "dev/make_dot_fx.py",
+ "inn_fire": {
+  "rect": [
+   72,
+   252,
+   128,
+   156
+  ],
+  "frames": 12,
+  "fps": 9,
+  "periods": {
+   "morning": {
+    "sheet": "assets/room13-fx-inn-fire-morning.webp",
+    "light": [
+     0.5,
+     0.05,
+     0.05,
+     0.0,
+     0.17,
+     0.36,
+     0.18,
+     0.31,
+     0.48,
+     1.0,
+     0.89,
+     0.83
+    ]
+   },
+   "afternoon": {
+    "sheet": "assets/room13-fx-inn-fire-afternoon.webp",
+    "light": [
+     0.59,
+     0.29,
+     0.24,
+     0.0,
+     0.42,
+     0.63,
+     0.33,
+     0.45,
+     0.41,
+     1.0,
+     0.8,
+     0.85
+    ]
+   },
+   "evening": {
+    "sheet": "assets/room13-fx-inn-fire-evening.webp",
+    "light": [
+     0.61,
+     0.13,
+     0.31,
+     0.0,
+     0.36,
+     0.29,
+     0.41,
+     0.56,
+     0.64,
+     1.0,
+     0.87,
+     0.83
+    ]
+   }
+  }
+ },
+ "inn_glow": {
+  "file": "assets/room13-fx-inn-glow.webp",
+  "periods": [
+   "evening"
+  ],
+  "alpha": [
+   0.0,
+   0.1
+  ]
+ },
+ "snow": {
+  "small": "assets/room13-fx-snow-small.webp",
+  "big": "assets/room13-fx-snow-big.webp",
+  "periods": [
+   "evening"
+  ],
+  "locations": [
+   "square",
+   "gate",
+   "altar"
+  ],
+  "layers": [
+   {
+    "count": 140,
+    "size": 4,
+    "vy": [
+     26,
+     40
+    ],
+    "sway": 10
+   },
+   {
+    "count": 28,
+    "size": 8,
+    "vy": [
+     56,
+     80
+    ],
+    "sway": 18
+   }
+  ]
+ },
+ "lamp_glow": {
+  "square": {
+   "file": "assets/room13-fx-square-lampglow.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.18,
+    0.42
+   ]
+  }
+ },
+ "blink": {
+  "timeline": [
+   [
+    "half",
+    0.05
+   ],
+   [
+    "closed",
+    0.09
+   ],
+   [
+    "half",
+    0.05
+   ]
+  ],
+  "interval": [
+   2.6,
+   5.2
+  ],
+  "people": {
+   "daram": {
+    "neutral": {
+     "rect": [
+      214,
+      149,
+      157,
+      78
+     ],
+     "half": "assets/room13-fx-blink-daram-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-daram-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      211,
+      156,
+      162,
+      70
+     ],
+     "half": "assets/room13-fx-blink-daram-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-daram-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      214,
+      154,
+      157,
+      73
+     ],
+     "half": "assets/room13-fx-blink-daram-angry-half.webp",
+     "closed": "assets/room13-fx-blink-daram-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      214,
+      157,
+      156,
+      71
+     ],
+     "half": "assets/room13-fx-blink-daram-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-daram-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      214,
+      147,
+      157,
+      81
+     ],
+     "half": "assets/room13-fx-blink-daram-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-daram-surprise-closed.webp"
+    }
+   }
+  }
+ }
+}
