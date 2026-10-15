@@ -481,6 +481,64 @@ def title_glow():
                       "room13-fx-title-glow.webp")
 
 
+# ------------------------------------------------------------------ 0.18.47 그림책 톤
+def _smooth_noise(w, h, cell, seed):
+    rng = np.random.default_rng(seed)
+    small = rng.random((h // cell + 2, w // cell + 2))
+    img = Image.fromarray((small * 255).astype("uint8"), "L").resize((w + 2 * cell, h + 2 * cell), Image.BICUBIC)
+    return np.array(img).astype(float)[cell:cell + h, cell:cell + w] / 255.0
+
+
+def bleed_mask():
+    """종이에 물감이 번지듯 바뀌는 전환(ImageDissolve) 판. 흰 곳부터 바뀐다: 가운데에서 바깥으로, 가장자리는 얼룩지게."""
+    w, h = 1280, 720
+    yy, xx = np.mgrid[0:h, 0:w]
+    r = np.sqrt(((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2) / 1.42
+    n = .55 * _smooth_noise(w, h, 160, 3) + .3 * _smooth_noise(w, h, 48, 4) + .15 * _smooth_noise(w, h, 12, 5)
+    v = 1.0 - (r * .62 + n * .38)
+    v = (v - v.min()) / (v.max() - v.min())
+    Image.fromarray((v * 255).astype("uint8"), "L").save(os.path.join(ASSETS, "room13-fx-bleed.png"), optimize=True)
+    return "assets/room13-fx-bleed.png"
+
+
+def storybook_frame():
+    """그림책 장면 테두리: 가장자리가 따뜻한 어둠으로 얼룩지게 스며드는 비네트(가운데는 투명)."""
+    w, h = 1280, 720
+    yy, xx = np.mgrid[0:h, 0:w]
+    dx = np.minimum(xx, w - 1 - xx) / 130.0
+    dy = np.minimum(yy, h - 1 - yy) / 100.0
+    d = np.minimum(dx, dy)
+    n = _smooth_noise(w, h, 40, 9) * .55 + _smooth_noise(w, h, 10, 10) * .45
+    a = np.clip(1.0 - d + (n - .5) * .55, 0, 1) ** 1.6
+    rgba = np.zeros((h, w, 4), "uint8")
+    rgba[..., 0], rgba[..., 1], rgba[..., 2] = 26, 18, 12
+    rgba[..., 3] = (a * 235).astype("uint8")
+    return save(Image.fromarray(rgba, "RGBA"), "room13-fx-storybook-frame.webp")
+
+
+def soft_glow(size, color, name, power=1.8):
+    w, h = size
+    yy, xx = np.mgrid[0:h, 0:w]
+    r = np.sqrt(((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2)
+    a = np.clip(1 - r, 0, 1) ** power
+    rgba = np.zeros((h, w, 4), "uint8")
+    rgba[..., 0], rgba[..., 1], rgba[..., 2] = color
+    rgba[..., 3] = (a * 255).astype("uint8")
+    return save(Image.fromarray(rgba, "RGBA"), name)
+
+
+def edge_vignette():
+    """제시·반박 순간: 화면 가장자리가 따뜻하게 어두워졌다 걷힌다."""
+    w, h = 1280, 720
+    yy, xx = np.mgrid[0:h, 0:w]
+    r = np.sqrt(((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2) / 1.42
+    a = np.clip((r - .35) / .65, 0, 1) ** 1.5
+    rgba = np.zeros((h, w, 4), "uint8")
+    rgba[..., 0], rgba[..., 1], rgba[..., 2] = 30, 18, 10
+    rgba[..., 3] = (a * 255).astype("uint8")
+    return save(Image.fromarray(rgba, "RGBA"), "room13-fx-edge-vignette.webp")
+
+
 def main():
     meta = {"version": 1, "cell": CELL, "generator": "dev/make_dot_fx.py"}
     fire = {}
@@ -525,6 +583,9 @@ def main():
     # 0.18.39 (owner): synthesized reaction sounds removed (reaction_sounds() kept, unused).
     meta["cinematics"] = cine_plates()
     mask, box = carriage_window_mask()
+    meta["storybook"] = {"bleed": bleed_mask(), "frame": storybook_frame(),
+                         "card_glow": soft_glow((360, 360), (255, 214, 140), "room13-fx-card-glow.webp"),
+                         "vignette": edge_vignette()}
     meta["title"] = {"glow": title_glow(), "alpha": [0.10, 0.30]}
     meta["opening"] = {"carriage_window": {"mask": mask, "box": box}}
     meta["blink"] = {"timeline": [["half", .05], ["closed", .09], ["half", .05]],

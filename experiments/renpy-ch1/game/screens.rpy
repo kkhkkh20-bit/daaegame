@@ -156,11 +156,17 @@ screen say(who,what):
             else:
                 text what id "what" xsize 1120 font "assets/Galmuri11.ttf" color "#fff5df"
         if who:
+            $ r13_name_track(who)
             frame:
                 xpos 254 ypos (_r13_say_top()-22 if room13_mode else 522)
                 padding (14,5) background R13InkPanel(alpha="ff")
+                at r13_name_fade
                 text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
-        text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab"
+        # Next-line mark breathes slowly like a firefly (0.18.47 storybook tone).
+        if r13_fx_active():
+            text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab" at r13_next_glow
+        else:
+            text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab"
         if room13_mode:
             timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
             if place != "마차 안" and not r13_cg_active:
