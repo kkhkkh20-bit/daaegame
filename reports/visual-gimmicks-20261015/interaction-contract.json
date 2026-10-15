@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "coordinateSystem": "normalized image-space x,y,width,height; 1672x941",
+  "scope": "prototype events only; preserve existing game progression and reward conditions",
+  "scale": {
+    "existingHook": "use_weight_scale",
+    "images": [
+      "scale-base",
+      "scale-loaded",
+      "scale-pivot"
+    ],
+    "regions": {
+      "test": [
+        0.105,
+        0.68,
+        0.1,
+        0.2
+      ],
+      "pan": [
+        0.22,
+        0.49,
+        0.2,
+        0.22
+      ],
+      "reference": [
+        0.625,
+        0.55,
+        0.2,
+        0.2
+      ],
+      "pivot": [
+        0.43,
+        0.17,
+        0.14,
+        0.24
+      ],
+      "screw": [
+        0.43,
+        0.37,
+        0.16,
+        0.24
+      ]
+    },
+    "events": [
+      "pick_standard_weight",
+      "place_standard_weight",
+      "remove_standard_weight",
+      "inspect_pivot",
+      "read_surface"
+    ],
+    "rewardBoundary": "No proof from tilt alone. Requires production evidence criteria; reference mass is not independently verified."
+  },
+  "lamp": {
+    "existingHook": "use_lantern_rear",
+    "images": [
+      "lamp-floor"
+    ],
+    "regions": {
+      "threshold": [
+        0.27,
+        0.6,
+        0.14,
+        0.11
+      ],
+      "wall": [
+        0.45,
+        0.55,
+        0.28,
+        0.1
+      ],
+      "step": [
+        0.75,
+        0.39,
+        0.1,
+        0.17
+      ]
+    },
+    "events": [
+      "raise_lantern",
+      "move_light",
+      "inspect_lit_region",
+      "lower_lantern"
+    ],
+    "rewardBoundary": "Use existing unlock conditions; three observations are not mandatory collectible keys."
+  },
+  "package": {
+    "existingHook": "use_knife_burlap",
+    "images": [
+      "package-closed",
+      "package-seam",
+      "package-revealed"
+    ],
+    "regions": {
+      "mouth": [
+        0.37,
+        0.1,
+        0.29,
+        0.25
+      ],
+      "seam": [
+        0.32,
+        0.65,
+        0.43,
+        0.2
+      ],
+      "insert": [
+        0.36,
+        0.64,
+        0.37,
+        0.13
+      ],
+      "food": [
+        0.34,
+        0.58,
+        0.38,
+        0.22
+      ]
+    },
+    "events": [
+      "feel_seam",
+      "cut_seam_with_knife",
+      "open_insert_with_hand",
+      "read_contents"
+    ],
+    "rewardBoundary": "Only read_contents may request existing result, never image reveal alone. Existing conditions and duplicate protection still apply."
+  }
+}

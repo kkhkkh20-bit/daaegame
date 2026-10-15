@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "scope": "Independent visual demo; preserve production state and story gates",
+  "coordinates": "normalized image-space x,y,width,height, native 1672x941",
+  "floor": {
+    "hook": "use_knife_under",
+    "existingEvidence": "M02",
+    "conditions": "Existing own:knife, lodging, day window, not M02; latest story rules override demo access",
+    "images": [
+      "floor-closed",
+      "floor-open",
+      "note-open"
+    ],
+    "regions": {
+      "board": [
+        0.29,
+        0.45,
+        0.43,
+        0.29
+      ],
+      "foldedNote": [
+        0.44,
+        0.53,
+        0.13,
+        0.14
+      ]
+    },
+    "transitions": [
+      "inspect_board -> observation only",
+      "knife_on_board -> open board, no evidence",
+      "unfold_note -> existing M02 reading and award path",
+      "repeat_read -> no duplicate award"
+    ]
+  },
+  "stone": {
+    "hook": "use_rubbing_stone",
+    "existingEvidence": "R01",
+    "conditions": "Existing own:rubbing, day window, not R01",
+    "images": [
+      "stone-base",
+      "stone-paper",
+      "stone-rubbed"
+    ],
+    "regions": {
+      "paper": [
+        0.3,
+        0.18,
+        0.4,
+        0.56
+      ]
+    },
+    "transitions": [
+      "inspect_scrapes -> observation only",
+      "apply_paper -> paper state",
+      "rub_or_keyboard_sweep -> reveal local mask",
+      "inspect_sufficient_rubbing -> existing R01 reading and award path"
+    ],
+    "demoThreshold": "At least 10 unique cells in 6x4 paper grid, spanning 3 rows; no full fill required",
+    "interpretation": "Abstract art is a visual placeholder, not a decipherable language or named victim list"
+  }
+}
