@@ -1510,7 +1510,7 @@ testcase ledger_order:
     run Call("r13_qa_roam",dict(day=4,period=0,location="store",evidence=["H1"]),("ev_b_done","ev_c_done"))
     pause 1.0
     run Function(r13_qa_present,"resident_madam","H1")
-    assert eval ("오래된 장부" in r13_qa_last_present and not r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard"]))
+    assert eval ("지난 장부" in r13_qa_last_present and not r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard"]))
     run Function(r13_edit,period=1)
     assert eval (r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard_moved"]) and not r13_object_visible(ROOM13["objects"]["store"]["sacks"]))
     run Function(r13_qa_present,"resident_seori","H1")
@@ -1578,3 +1578,24 @@ testcase night_talk:
     assert eval ("night:ledger_madam" in [k for k,s in r13_topics("daram")])
     run Function(r13_edit,location="square")
     assert eval ("night:locked" not in [k for k,s in r13_topics("daram")])
+
+testcase owl_and_buri:
+    # 0.18.17: living-elder scenes, 부리's stages, 백 부인 ledger approach, 톡 follow-up.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="hall",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_owl_omen_done"))
+    click pos (640,600) until screen "choice" timeout 40
+    click "수리가 끝나면 다시 오겠습니다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_has("owl_threshold_respected"))
+    run Function(r13_edit,day=3)
+    assert eval ("owl_old_case" in [k for k,s in r13_topics("resident_owlgp")])
+    run Function(r13_edit,day=6,case_state="occurred",victim_state="dead",evidence=["E35","H1"])
+    assert eval ("buri_assert" in [k for k,s in r13_topics("buri")])
+    run Function(r13_qa_present,"buri","E35")
+    assert eval (r13_has("buri_revised") and "아직 무슨 말을" in r13_qa_last_present and "buri_assert" not in [k for k,s in r13_topics("buri")])
+    run Function(r13_qa_present,"resident_madam","H1")
+    assert eval ("지난 장부" in r13_qa_last_present and "ledger_madam:approach" in [k for k,s in r13_topics("resident_madam")])
+    run Function(r13_flag,"tok_hostile","tok_cleared")
+    assert eval ("tok_after_doubt" in [k for k,s in r13_topics("resident_tok")])

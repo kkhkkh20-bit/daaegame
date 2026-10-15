@@ -3,7 +3,7 @@
 Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. 아래 표는 그 순서대로이며, 마지막 줄이 게임이 실제로 부르는 바깥 층이다.
 각 층은 바로 위 층을 `captured_as` 이름으로 붙잡아 부른다. 새 기능을 넣을 때 이 순서를 확인하고, 같은 우선순위에 층을 추가하지 않는다.
 
-## `r13_present` (14층)
+## `r13_present` (15층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -19,8 +19,9 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 10 | 113 | `systems/room13_present_flow.rpy:43` | _r13_mem_present |
 | 11 | 114 | `systems/room13_memory.rpy:85` | _r13_ledger_present |
 | 12 | 115 | `systems/room13_ledger.rpy:38` | _r13_tm_present |
-| 13 | 116 | `systems/room13_testimony.rpy:41` | _r13_sound_present |
-| 14 | 150 | `systems/room13_sound.rpy:161` |  |
+| 13 | 116 | `systems/room13_testimony.rpy:41` | _r13_ob_present |
+| 14 | 118 | `systems/room13_owl_buri.rpy:41` | _r13_sound_present |
+| 15 | 150 | `systems/room13_sound.rpy:161` |  |
 
 ## `r13_topics` (13층)
 

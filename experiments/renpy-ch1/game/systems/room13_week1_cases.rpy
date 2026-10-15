@@ -55,6 +55,7 @@ init 110 python:
             n=winter_copy.deepcopy(store.room13);n["reply_due"]=max(r13_abs_time()+1,(n["reply_due"]//4)*4);store.room13=n
 
 label r13_w1c_events:
+    call r13_owl_events
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
     # Time moves only by work or sleep (0.18.5): before 일자리 opens there was nothing
     # but sleep. From day 2 까로 comes to find Dad and offers the work himself (owner, 0.18.12).
