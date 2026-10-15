@@ -136,6 +136,7 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
 
 ### 그림책 톤 (0.18.47, 소유자: 동화처럼)
 - 튀는 효과(별 반짝임, 집중선, 흔들림, 통통 튐, 위아래로 움직이는 표식)는 쓰지 않는다. 은은하게 스며드는 효과를 쓴다.
+- 불빛이 있는 장면은 조명 장치(`R13FxLightRig`, 0.18.54)로 빛과 그림자가 함께 일렁인다. 새 장면은 `make_dot_fx.py`의 `light_rigs()`에 빛 위치를 적는다. 움직임 점검은 `motion_audit` 화면 테스트를 녹화해서 본다.
 - 화면 전환은 종이 번짐(`r13_bleed`), 증거는 따뜻한 빛, 제시·반박은 가장자리 비네트. 코드는 `systems/room13_storybook.rpy`.
 
 ### 메인 타이틀 연출 (0.18.41)

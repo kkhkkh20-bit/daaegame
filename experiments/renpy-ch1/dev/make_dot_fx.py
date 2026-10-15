@@ -539,6 +539,96 @@ def edge_vignette():
     return save(Image.fromarray(rgba, "RGBA"), "room13-fx-edge-vignette.webp")
 
 
+# ------------------------------------------------------------------ 0.18.53 빛과 그림자(조명 장치)
+# 불빛이 흔들리면 빛만 밝아지는 게 아니라 방 전체의 명암이 같이 숨쉰다.
+#  - shade: 빛에서 먼 곳일수록 진한 어둠 판. 불빛이 약해질 때 짙어져 빛 웅덩이가 줄어든다.
+#  - glow: 빛마다 따뜻한 빛 판(따로 흔들린다).
+#  - sway: 벽난로처럼 강한 불 근처의 그림자 판. 불꽃이 커지면 그림자가 짙어지고 바깥으로 늘어난다.
+LIGHT_KINDS = {"fire": (255, 168, 80), "lamp": (255, 200, 120), "candle": (255, 214, 140)}
+
+
+def _falloff(w, h, lights, scale):
+    yy, xx = np.mgrid[0:h:scale, 0:w:scale].astype(float)
+    L = np.zeros(yy.shape)
+    for x, y, r, st, kind in lights:
+        d = np.sqrt((xx - x) ** 2 + (yy - y) ** 2) / r
+        u = np.clip(1 - d, 0, 1)
+        L = np.maximum(L, st * u * u * (3 - 2 * u))
+    return L
+
+
+def light_rig(key, art, lights, shade, sway=None, size=None):
+    if size is None:
+        size = Image.open(os.path.join(ROOT, "game", art)).size
+    w, h = size
+    L = _falloff(w, h, lights, 4)
+    a = np.clip(1 - L, 0, 1) ** 1.2
+    img = np.zeros(a.shape + (4,), "uint8")
+    img[..., 0], img[..., 1], img[..., 2] = 18, 14, 34
+    img[..., 3] = (a * 255).astype("uint8")
+    shade_file = save(Image.fromarray(img, "RGBA").resize((w, h), Image.BILINEAR), "room13-fx-shade-%s.webp" % key)
+    glows = []
+    for i, (x, y, r, st, kind) in enumerate(lights):
+        R = int(r)
+        yy, xx = np.mgrid[0:2 * R:2, 0:2 * R:2].astype(float)
+        d = np.sqrt((xx - R) ** 2 + (yy - R) ** 2) / R
+        g = np.clip(1 - d, 0, 1) ** 2
+        im = np.zeros(g.shape + (4,), "uint8")
+        im[..., 0], im[..., 1], im[..., 2] = LIGHT_KINDS[kind]
+        im[..., 3] = (g * 255).astype("uint8")
+        f = save(Image.fromarray(im, "RGBA").resize((2 * R, 2 * R), Image.BILINEAR), "room13-fx-glow-%s-%d.webp" % (key, i))
+        glows.append({"file": f, "pos": [int(x - R), int(y - R)], "strength": st, "kind": kind})
+    spec = {"size": [w, h], "shade": shade_file, "shade_alpha": shade, "glows": glows,
+            "lead": max(range(len(lights)), key=lambda i: lights[i][3])}
+    if sway:
+        sx, sy, sr, salpha = sway
+        src = np.array(Image.open(os.path.join(ROOT, "game", art)).convert("RGB").resize((w, h))).astype(float)
+        lum = src.mean(2)
+        # 바닥에 드리운 넓은 그림자만(외곽선·작은 무늬는 뺀다): 작은 흐림과 큰 흐림의 차이에서
+        # 넓게 이어진 어두운 덩어리만 남기고, 불보다 아래(바닥)만 쓴다.
+        small = ndimage.gaussian_filter(lum, 3)
+        big = ndimage.gaussian_filter(lum, 36)
+        dark = np.clip((big - small) / (big + 1) * 2.5, 0, 1)
+        blob = ndimage.binary_opening(dark > .18, structure=np.ones((11, 11)))
+        dark = ndimage.gaussian_filter(dark * blob, 2)
+        yy, xx = np.mgrid[0:h, 0:w]
+        d = np.sqrt((xx - sx) ** 2 + (yy - sy) ** 2) / sr
+        dark *= np.clip(1.2 - d, 0, 1) * (yy > sy + 60)
+        im = np.zeros((h, w, 4), "uint8")
+        im[..., 0], im[..., 1], im[..., 2] = 10, 6, 16
+        im[..., 3] = (np.clip(dark, 0, 1) * 220).astype("uint8")
+        spec["sway"] = {"file": save(Image.fromarray(im, "RGBA"), "room13-fx-sway-%s.webp" % key),
+                        "center": [sx, sy], "alpha": salpha}
+    return spec
+
+
+def light_rigs():
+    rigs = {}
+    inn_lights = [(150, 365, 820, 1.0, "fire"), (353, 292, 280, .55, "lamp"), (411, 197, 240, .5, "lamp"),
+                  (1428, 204, 260, .5, "lamp"), (1561, 309, 260, .55, "lamp"),
+                  (156, 84, 110, .45, "candle"), (190, 108, 110, .45, "candle")]
+    rigs["inn:evening"] = light_rig("inn-evening", "assets/room13-pixel-panorama-inn-evening.webp", inn_lights, .42,
+                                    sway=(150, 365, 760, .7))
+    for period in ("morning", "afternoon"):
+        rigs["inn:" + period] = light_rig("inn-" + period, "assets/room13-pixel-panorama-inn-%s.webp" % period,
+                                          [(150, 365, 620, .8, "fire")], .12, sway=(150, 365, 600, .4))
+    layout = json.load(open(os.path.join(ASSETS, "room13-world-layout.json"), encoding="utf-8"))
+    for loc, lamps in LAMPS.items():
+        art = layout[loc]["files"]["evening"]
+        rigs[loc + ":evening"] = light_rig(loc + "-evening", art, [(x, y, r * 1.7, .8, "lamp") for x, y, r in lamps], .26)
+    rigs["square:evening"] = light_rig("square-evening", layout["square"]["files"]["evening"],
+                                       [(1137, 362, 220, .6, "lamp")], .08)
+    items = {it["id"]: it for it in json.load(open(os.path.join(ASSETS, "room13-cinematics.json"), encoding="utf-8"))["items"]}
+    for key, lamps in CINE_LAMPS.items():
+        if key in items:
+            w, h = items[key]["rect"][2:]
+            kind = "candle" if key == "E3" else "lamp"
+            rigs["cine:" + key] = light_rig("cine-" + key.lower(), None, [(x, y, r * 1.8, .8, kind) for x, y, r in lamps],
+                                            .26, size=(w, h))
+    rigs["title"] = light_rig("title", None, [(x, y, r * 1.6, .7, "lamp") for x, y, r in TITLE_LIGHTS], .10, size=(1280, 720))
+    return rigs
+
+
 def main():
     meta = {"version": 1, "cell": CELL, "generator": "dev/make_dot_fx.py"}
     fire = {}
@@ -586,6 +676,7 @@ def main():
     meta["storybook"] = {"bleed": bleed_mask(), "frame": storybook_frame(),
                          "card_glow": soft_glow((360, 360), (255, 214, 140), "room13-fx-card-glow.webp"),
                          "vignette": edge_vignette()}
+    meta["lights"] = light_rigs()
     meta["title"] = {"glow": title_glow(), "alpha": [0.10, 0.30]}
     meta["opening"] = {"carriage_window": {"mask": mask, "box": box}}
     meta["blink"] = {"timeline": [["half", .05], ["closed", .09], ["half", .05]],
