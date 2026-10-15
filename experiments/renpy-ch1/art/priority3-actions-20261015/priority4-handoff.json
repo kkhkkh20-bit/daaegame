@@ -1,0 +1,77 @@
+{
+  "new_png_count": 3,
+  "reused_existing": {
+    "id": "resident_sling",
+    "file": "../new-actions/sling-event-steam/sling-event-steam.png",
+    "key": "event_steam",
+    "world_foot_candidate": [
+      1060,
+      620
+    ],
+    "world_canvas": [
+      2160,
+      720
+    ],
+    "old_1280_positions": "superseded_do_not_use"
+  },
+  "items": [
+    {
+      "id": "granny",
+      "name": "토끼 할머니",
+      "action": "열쇠 / 장부 맞추기",
+      "file": "granny/granny-key-ledger-v3.png",
+      "map": "inn",
+      "notes": [
+        "승인 새 디자인 유지 / 접수대 앞",
+        "1~14일 모든 시간, 붙잡히지 않았을 때",
+        "1920 로비 후보 발 1470,624 / 높이280"
+      ],
+      "sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "status": "generated_review_candidate_not_runtime_applied"
+    },
+    {
+      "id": "resident_owlgp",
+      "name": "부엉이 할아버지",
+      "action": "수첩 제본 묶기",
+      "file": "owlgp/owlgp-notebook-binding-v2.png",
+      "map": "square / inn / diner / school",
+      "notes": [
+        "승인 단순화 디자인 / 앉아서 끈 묶기",
+        "1주차 광장-여관-식당 / 2주차 학교",
+        "광장 후보 발475,617 / 높이234",
+        "앉은 자리 seat 앵커 별도 기록"
+      ],
+      "sha256": "d5c35cdbe005836f14caf450e5e72ccf5200e7ff6dca2cf99e7a98bb7dde7dc8",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "status": "generated_review_candidate_not_runtime_applied"
+    },
+    {
+      "id": "karo",
+      "name": "까로",
+      "action": "마차축 천 감기",
+      "file": "karo/karo-axlewrap-v2.png",
+      "map": "gate",
+      "notes": [
+        "원래 디자인과 덩치 보존 / 바퀴 제외",
+        "1~14일 오전·오후 / 저녁 기존 동작 유지",
+        "1920 입구 후보 발575,612 / 높이185",
+        "손·천 고리를 실제 마차축에 맞출 것"
+      ],
+      "sha256": "4de994f5c66c053293de74f13e6713859ac823cd26f1330d49054bb034062d08",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "status": "generated_review_candidate_not_runtime_applied"
+    }
+  ],
+  "existing9": "Preserved separately; optional enhancements remain candidates, not removed or duplicate production.",
+  "coordinate_policy": "head/foot/seat/hand in per-asset metadata are crop-relative source pixels, estimated, not runtime verified."
+}

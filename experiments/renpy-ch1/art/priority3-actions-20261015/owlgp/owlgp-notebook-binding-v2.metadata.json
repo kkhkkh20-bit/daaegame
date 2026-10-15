@@ -1,0 +1,120 @@
+{
+  "asset_id": "resident_owlgp_notebook_binding",
+  "file": "owlgp-notebook-binding-v2.png",
+  "status": "Selected final; generated and visually reviewed, not runtime-validated",
+  "reference": "/workspace/shared/main-character-actions/town-remodel-rollout/owl-simple/owlgp-simple.png",
+  "generation": {
+    "mode": "built-in image_gen identity-preserve edit, then one background-only edit",
+    "generated_source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-aa3a81bd-830f-48f6-a6fd-54387133ef63.png",
+    "postprocessing": "None on sprite. Byte-for-byte copy; original generated alpha preserved. White and gray composites are QA-only.",
+    "edit_source": "/workspace/shared/character-catalog40/priority3-actions/owlgp/owlgp-notebook-binding.png"
+  },
+  "canvas": {
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA"
+  },
+  "alpha": {
+    "threshold_for_crop": "> 8",
+    "range": [
+      0,
+      254
+    ],
+    "transparent_pixel_count": 722003,
+    "opaque_255_pixel_count": 0,
+    "nonzero_pixel_count": 850861
+  },
+  "crop": {
+    "source_bbox_xyxy_exclusive": [
+      42,
+      18,
+      961,
+      1505
+    ],
+    "source_origin_xy": [
+      42,
+      18
+    ],
+    "size_wh": [
+      919,
+      1487
+    ],
+    "image_was_physically_cropped": false
+  },
+  "anchors_crop_relative_px": {
+    "head": [
+      268,
+      2,
+      590,
+      561
+    ],
+    "foot": [
+      682,
+      1485
+    ],
+    "seat": [
+      443,
+      1080
+    ],
+    "hand": [
+      580,
+      820
+    ],
+    "hand_viewer_left": [
+      489,
+      784
+    ],
+    "hand_viewer_right": [
+      648,
+      790
+    ]
+  },
+  "anchor_definitions": {
+    "head": "Estimated head bounding rectangle including ear tufts and beard: [x,y,w,h].",
+    "foot": "Estimated common shoe-ground placement anchor near the lower sole baseline; not the stool anchor.",
+    "seat": "Estimated seated pelvis/contact point over the stool, partly occluded.",
+    "hand": "Central binding-knot interaction point; extra hand points identify the two cord-gripping hands."
+  },
+  "notebook_crop_relative_bbox_xywh": [
+    453,
+    802,
+    296,
+    158
+  ],
+  "coordinate_origin": "All anchors are pixels relative to crop top-left [42,18] of the original canvas, not original-canvas coordinates and not normalized values.",
+  "estimate_caveat": "All head, foot, seat, hand and notebook coordinates are visual estimates; require final visual confirmation after engine scaling and compositing. Alpha crop is measured. World placements are inherited candidate values only, not runtime-tested.",
+  "world_candidates_notvalidated": [
+    {
+      "map": "square",
+      "world_size": [
+        1920,
+        720
+      ],
+      "foot": [
+        475,
+        617
+      ],
+      "display_height": 234
+    },
+    {
+      "map": "square",
+      "world_size": [
+        1920,
+        720
+      ],
+      "foot": [
+        710,
+        580
+      ],
+      "display_height": 220
+    }
+  ],
+  "qa": {
+    "white_composite": "owlgp-notebook-binding-v2-qa-white.png",
+    "gray_composite": "owlgp-notebook-binding-v2-qa-gray.png",
+    "review": "Both white and gray alpha composites are clean with no visible background halo. Full head/ear tufts, feet and striped tail are in frame. Both hands grip loose binding cord over small worn notebook. Gaze points down toward hands; simple stool and approved clothing retained. No cane, scene, ground, or extra characters. Fine pixel edges are generated, not post-cleaned. Requested extra 5% margin was not substantially added; top margin is 18px and bottom margin is 31px, but nothing is clipped.",
+    "raw_png_viewer_caveat": "A raw image preview may display hidden RGB around an alpha-zero region. Transparency was judged with white and gray alpha composites and sampled alpha values, not the raw preview."
+  },
+  "integration": "Not uploaded, not delivered to Claude, and no game or app code changed.",
+  "sha256": "d5c35cdbe005836f14caf450e5e72ccf5200e7ff6dca2cf99e7a98bb7dde7dc8"
+}
