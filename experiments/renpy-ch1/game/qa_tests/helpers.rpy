@@ -579,3 +579,7 @@ label r13_qa_dot_fx:
     $ open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(done=r13_qa_fx_done)))
     return
 
+
+label r13_qa_granny_ask:
+    call r13_granny_letter_ask
+    jump r13_roam

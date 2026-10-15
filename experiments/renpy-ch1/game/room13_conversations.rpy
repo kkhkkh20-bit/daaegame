@@ -106,7 +106,8 @@ init 70 python:
             ROOM13["topics"][r13_key]=r13_old_topic
 
     # First-week small talk grounded in the public work/activity descriptions.
-    # No hidden biography, new case facts, evidence, flags or time advancement.
+    # No new case facts, evidence or time advancement (0.18.41: a few set "heard_*" flags that
+    # change another resident's answer; see "crossed accounts" below).
     # The few callbacks require a topic actually read in this save, not a
     # persistent memory or a merely unlocked evidence topic.
     R13_EARLY_CONVERSATIONS = [
@@ -135,9 +136,9 @@ init 70 python:
             ("dad","뒤에서 밀기 전에 먼저 물어보는 편이 낫겠군요."),
             ("resident_siluk","그렇죠. 제가 멈춘 데는 다 이유가 있으니까.")],None),
         ("tori_stitches","resident_tori","바느질을 마치면 무엇부터 확인합니까?",[
-            ("resident_tori","접히는 부분을 봐요. 펼쳐 놨을 땐 멀쩡해도, 접으면 실이 당겨질 수 있거든요."),
-            ("dad","실제로 쓰는 모양대로 접어서 다시 보시는군요."),
-            ("resident_tori","네. 받는 분이 직접 한 번 써 보고 알려 주시면 더 좋고요.")],None),
+            ("resident_tori","접히는 데요. 펼쳐 놓으면 멀쩡해도 접으면 실이 당기거든요."),
+            ("resident_tori","아, 할머니 목도리도 오늘 끝내야 하는데. 브로치 핀이 헐거워서 톡 씨한테 맡기셨대요."),
+            ("resident_tori","목요일까지 해 준다고 했다는데……. 톡 씨 가게엔 요즘 맞는 부품이 없다던데요.")],None),
         ("tori_count","resident_tori","받은 천의 수량도 적어 두신다고요?",[
             ("resident_tori","받은 것하고 돌려드린 것, 둘 다 세어 둬요. 나중에 모자란다고 하면 헷갈리니까."),
             ("dad","제가 물건을 맡길 때도 같이 세겠습니다."),
@@ -147,9 +148,9 @@ init 70 python:
             ("dad","뜯어진 곳만 보여 드리면 되는 줄 알았습니다."),
             ("resident_yeoni","입을 때 계속 당기는 곳이면 꿰매 놓기만 해도 금방 또 터지거든요.")],None),
         ("kongi_basket","resident_kongi","바구니는 어디를 잡아 주면 되니?",[
-            ("resident_kongi","빵 밑을 받쳐 주세요. 위에서 누르면 빵이 더 납작해져요."),
-            ("dad","알았어. 빵 들기 전에 먼저 말할게."),
-            ("resident_kongi","네. 말없이 갑자기 가져가면 제가 떨어뜨린 줄 알잖아요.")],None),
+            ("resident_kongi","빵 밑을 받쳐 주세요. 위를 누르면 납작해져요."),
+            ("resident_kongi","근데 여관 주방은 밤에도 불이 켜져 있어요. 어젯밤에 배달 끝나고 지나가는데 뒷문이 반짝했어요."),
+            ("resident_kongi","할머니가 밤에 반죽 보시나 봐요. 우리 엄마도 그러거든요.")],None),
         ("ttadak_wood","resident_ttadak","보수할 나무는 어떻게 고르십니까?",[
             ("resident_ttadak","판이 들어갈 자리를 먼저 봐요. 남는 판부터 고르면 결국 또 깎아야 하니까."),
             ("dad","빈틈이 작아도 메우려면 손이 많이 가는군요."),
@@ -159,27 +160,57 @@ init 70 python:
             ("dad","보이는 벽만 재서 대충 짐작하지는 않겠습니다."),
             ("resident_ttadak","그럼 괜히 벽을 뜯었다가 다시 막을 일은 줄겠네요.")],"life:resident_ttadak:work"),
         ("tok_parts","resident_tok","작은 부품은 어떻게 구분해 두십니까?",[
-            ("resident_tok","물건은 꺼낸 순서대로 놓아요. 비슷하다고 한데 모으면 다시 찾느라 더 걸려요."),
-            ("dad","치워 드린답시고 함부로 건드리면 안 되겠군요."),
-            ("resident_tok","치울 게 있으면 말만 해 주세요. 비울 자리는 제가 알려 드릴게요.")],None),
+            ("resident_tok","꺼낸 순서대로 놔요. 비슷하다고 한데 모으면 찾느라 더 걸려요."),
+            ("dad","요즘 맡으신 수리는 많습니까?"),
+            ("resident_tok","없어요. 다들 새 걸 사지, 고쳐 달라고는 안 와요."),
+            (None,"작업대 한쪽에 천으로 덮은 작은 상자가 있었다. 톡은 그걸 팔꿈치로 슬쩍 밀어 놓았다.")],None),
         ("lamplighter_check","resident_lamplighter","점검을 마치면 바로 자리를 옮기십니까?",[
-            ("resident_lamplighter","등을 조금 더 지켜보고 가요. 손을 댔을 때만 괜찮은 건 고친 게 아니니까."),
-            ("dad","불이 켜지는 순간만 확인해서는 안 되겠군요."),
-            ("resident_lamplighter","네. 멀리서 봐도 불빛 밝기가 고른지까지 보고요.")],None),
+            ("resident_lamplighter","네. 해 지고 한 바퀴만 돌아요. 그다음엔 집에 가서 자요."),
+            ("resident_lamplighter","왜요? 꺼진 등이라도 봤어요?")],None),
         ("piko_cloth","resident_piko","그림에는 왜 천을 덮어 두십니까?",[
             ("resident_piko","천을 덮어 두면 먼지도 막고, 아직 보여 드릴 준비가 안 된 그림도 가리고요."),
             ("dad","허락 없이 그림에 덮인 천을 걷지는 않겠습니다."),
             ("resident_piko","고마워요. 그림이 완성됐는지는 그리는 사람에게 먼저 물어봐 주세요.")],None),
         ("seol_rope","resident_seol","종을 울리기 전에 끈을 다시 매십니까?",[
-            ("resident_seol","매듭이 손에 걸리는 데가 없는지 봐요. 급할 때 잡아당겼는데 풀리면 곤란하니까."),
-            ("dad","종이 안 울릴 때도 살필 일이 있군요."),
-            ("resident_seol","종소리를 낼 때만 제 일이 시작되는 건 아니에요.")],None),
+            ("resident_seol","매요. 새벽 종 치러 올라가면 손이 얼어서 끈부터 봐야 해요."),
+            ("resident_seol","그 시간에 깨어 있는 건 저랑 초롱 씨뿐이에요. 초롱 씨는 새벽에도 북쪽 길 끝 등 하나만 보고 가요."),
+            ("resident_seol","다른 등은 그냥 지나치고요. 매일 그래요.")],None),
     ]
     for r13_suffix,r13_person,r13_title,r13_replies,r13_read_after in R13_EARLY_CONVERSATIONS:
         r13_key="smalltalk:"+r13_suffix
         ROOM13["topics"][r13_key]=dict(npc=r13_person,title=r13_title,
             lines=[("dad",r13_title)]+list(r13_replies),day=[1,4],need=[],
             flags=[],give=[],cost=0,read_after=[r13_read_after] if r13_read_after else [])
+
+    # 0.18.41 (owner review): crossed accounts. Two residents tell the same thing differently,
+    # and the second answer changes once Dad has heard the first. Plain words, no lesson lines.
+    # Each pair ends in a secret: two have nothing to do with the death (Nabi feeds homeless
+    # children; Tok has no proper part for the brooch pin), one points at the lamplighter's errand.
+    ROOM13["topics"]["smalltalk:kongi_basket"]["flags"]=["heard_kitchen_light"]
+    ROOM13["topics"]["smalltalk:seol_rope"]["flags"]=["heard_dawn_round"]
+    ROOM13["topics"]["smalltalk:tori_stitches"]["flags"]=["heard_pin_job"]
+    for r13_key,r13_person,r13_title,r13_need,r13_lines,r13_flags in (
+        ("cross:nabi_door","nabi","밤에 주방에는 누가 들어가?",[],[
+            ("nabi","아무도요. 밤에는 제가 뒷문을 잠그고 열쇠도 제가 갖고 있어요."),
+            ("nabi","왜요? 뭐가 없어졌어요?")],["asked_nabi_door"]),
+        ("cross:nabi_light","nabi","콩이가 밤에 주방 불을 봤다던데.",["heard_kitchen_light"],[
+            ("nabi","……콩이가요? 잘못 봤겠죠. 창에 달빛이 비쳤나 봐요.",{"expression":"flustered"}),
+            (None,"나비는 앞치마 주머니에 손을 넣었다. 열쇠가 짤랑거렸다."),
+            ("nabi","할머니한테는 그런 말 하지 마세요. 괜히 걱정하세요.")],["nabi_light_asked"]),
+        ("cross:lamp_dawn","resident_lamplighter","새벽에도 북쪽 길 등을 보신다고요?",["heard_dawn_round"],[
+            ("resident_lamplighter","……설 씨가 그래요? 그 등이 잘 꺼져서 그래요.",{"expression":"flustered"}),
+            (None,"초롱은 대답하면서 장대를 다른 쪽 어깨로 옮겼다."),
+            ("resident_lamplighter","등 이야기는 순회할 때 해요. 길 한가운데서 말고요.")],["lamplighter_dawn_asked"]),
+        ("cross:tok_pin_job","resident_tok","할머니 브로치 핀은 목요일까지라면서요?",["heard_pin_job"],[
+            ("resident_tok","……토리가 그래요?",{"expression":"flustered"}),
+            ("resident_tok","맞는 부품이 없어서 그래요. 남의 장신구 망쳤다고 소문내진 마요."),
+            ("resident_tok","목요일까진 어떻게든 맞춰요. 내 식으로라도.")],["tok_pin_job_known"]),
+    ):
+        ROOM13["topics"][r13_key]=dict(npc=r13_person,title=r13_title,
+            lines=[("dad",r13_title)]+list(r13_lines),day=[1,3],need=list(r13_need),
+            flags=list(r13_flags),give=[],cost=0)
+    # Nabi denies first; after Kongi's word the question changes and the first one closes.
+    ROOM13["topics"]["cross:nabi_door"]["not_flags"]=["heard_kitchen_light"]
 
     r13_conversation_base_available=r13_available
     def r13_available(spec):

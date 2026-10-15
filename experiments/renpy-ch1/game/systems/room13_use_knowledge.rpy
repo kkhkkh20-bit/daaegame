@@ -70,7 +70,10 @@ label r13_granny_letter_ask:
                 (None,"할머니는 대답을 듣고 접수대 아래 서랍을 한 번 열었다 닫았다.")],"granny:dumb:play")
             $ r13_grant(["H16"],"할머니와 엄마 소식을 이야기하다 봄")
         "“편지 이야기는 다음에 하겠습니다.”":
+            # 0.18.41 (owner): postponing is not giving up. Nothing is marked done, so the topic
+            # stays open and the same conversation can be had later (H16 is not lost).
             call r13_lines([("granny","그래요. 바쁘시겠지.")],"granny:dumb:later")
+            return
     $ r13_flag("granny_dumb_done")
     $ r13_finish_topic("granny_letter_ask")
     return

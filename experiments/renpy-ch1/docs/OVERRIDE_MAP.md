@@ -125,7 +125,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:150` | r13_conversation_base_available |
-| 2 | 70 | `room13_conversations.rpy:185` | _r13_route_available |
+| 2 | 70 | `room13_conversations.rpy:216` | _r13_route_available |
 | 3 | 90 | `room13_route_knowledge.rpy:16` |  |
 
 ## `r13_finish_action` (3층)
@@ -170,7 +170,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:462` | _r13_poc_campaign_goal |
+| 1 | 98 | `systems/room13_debate.rpy:489` | _r13_poc_campaign_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:126` |  |
 
 ## `r13_click_feedback` (2층)
@@ -184,7 +184,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:380` | _r13_sound_debate_judge |
+| 1 | 98 | `systems/room13_debate.rpy:407` | _r13_sound_debate_judge |
 | 2 | 150 | `systems/room13_sound.rpy:168` |  |
 
 ## `r13_ending_notes` (2층)

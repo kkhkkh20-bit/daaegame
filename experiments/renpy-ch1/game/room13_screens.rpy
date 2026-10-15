@@ -238,7 +238,7 @@ screen r13_resident_stage(entry=False,ready=False):
             tooltip (r13_person_caption(actor["person"])+" · 말 걸기")
 
 
-screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None):
+screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None,caption=""):
     style_prefix "r13"
     if person:
         $ list_width=min(900,max(760,list_width))
@@ -269,8 +269,13 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         $ list_bottom=560 if return_action is not None else 632
         # One line per question (owner, 0.18.39): text height plus a small margin, not two lines.
         $ row_h=(58 if persistent.room13_large_text else 48)
-        $ list_h=max(1,len(entries))*(row_h+12)
+        # Measured (0.18.41), so a caption that wraps to two lines still fits without scrolling.
+        $ list_h=r13_reference_list_height(entries,list_width-23,12,452,row_h,r13_read_size(24,30))+4
         $ list_top=max(204 if title!="선택" else 150,list_bottom-list_h)
+        if caption:
+            text caption:
+                xpos list_left ypos list_top-44 xsize list_width text_align .5
+                size r13_read_size(22,27) color "#f6d18a" outlines [(1,"#101515",0,0)]
         if title!="선택":
             text title:
                 xpos list_left ypos list_top-56 xsize list_width text_align .5
@@ -326,13 +331,18 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                     text context[1]:
                         size r13_read_size(22,27) color "#fff4df" font r13_ui_font() line_spacing 4
                         xsize compact_width-44
-            text ("어떻게 할까?" if renpy.variant("touch") else "어떻게 할까? · 숫자 키로도 고를 수 있다"):
-                xalign .5 ypos list_floor-34 size r13_read_size(17,20) color "#e8d9b0"
-                outlines [(1,"#101515",0,0)]
+            if not caption:
+                text ("어떻게 할까?" if renpy.variant("touch") else "어떻게 할까? · 숫자 키로도 고를 수 있다"):
+                    xalign .5 ypos list_floor-34 size r13_read_size(17,20) color "#e8d9b0"
+                    outlines [(1,"#101515",0,0)]
         else:
             text title:
                 xalign .5 ypos 50 xsize compact_width text_align .5
                 size r13_read_size(27,32) color "#f6d18a"
+        if caption:
+            text caption:
+                xalign .5 ypos question_top-40 xsize compact_width text_align .5
+                size r13_read_size(22,27) color "#f6d18a" outlines [(1,"#101515",0,0)]
         viewport:
             area (list_left,question_top,compact_width,question_height)
             mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"

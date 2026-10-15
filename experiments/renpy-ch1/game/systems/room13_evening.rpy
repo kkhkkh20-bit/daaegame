@@ -26,6 +26,9 @@ init 106 python:
             lambda:not r13_has("ep2_seen")),
         ("lamp_round",(2,3),"square","초롱과 등불 돌기","등불지기 초롱이 저녁 순회를 돈다.",
             lambda:not r13_has("ev_lamp_done")),
+        # 0.18.41: she said "tomorrow at this hour too"; the next evening she is there again.
+        ("lamp_again",(3,3),"square","초롱의 두 번째 순회","초롱이 오늘도 같은 시간에 광장을 돈다.",
+            lambda:r13_has("ev_lamp_day:2") and not r13_has("ev_lamp_again")),
         ("ev_c",(3,3),"inn","백 부인의 밤일","백 부인이 저녁에 일손을 구한다고 한다.",
             lambda:not r13_has("ev_c_done") and not r13_has("madam_hostile")),
         ("ev_b",(3,3),"store","창고 앞 소동","공동 창고 쪽이 소란스럽다.",
@@ -74,6 +77,8 @@ label r13_evening_events:
     $ _d,_loc=room13["day"],room13["location"]
     if _d in (2,3) and _loc=="square" and not r13_has("ev_lamp_done"):
         call r13_ev_lamp_round
+    elif _d==3 and _loc=="square" and r13_has("ev_lamp_day:2") and not r13_has("ev_lamp_again"):
+        call r13_ev_lamp_again
     if _d in (5,6) and _loc=="gate" and room13.get("daram_state")=="held" and not r13_has("ev_visit:%d"%_d) and not r13_has("visit_banned"):
         call r13_ev_night_visit
     if _d==6 and _loc=="dining" and not r13_has("ev_eve_done"):
@@ -82,7 +87,7 @@ label r13_evening_events:
 
 # ---- 초롱과 등불 돌기 (2~3일 저녁, 광장) ----
 label r13_ev_lamp_round:
-    $ r13_flag("ev_lamp_done")
+    $ r13_flag("ev_lamp_done","ev_lamp_day:%d"%room13["day"])
     call r13_ev_here("night")
     call r13_lines([(None,"광장 가장자리에서 초롱이 긴 장대로 등 뚜껑을 하나씩 열고 있었다."),
         ("resident_lamplighter","저녁 순회예요. 따라오셔도 돼요. 대신 등 바로 아래에는 서지 마세요."),
@@ -116,8 +121,37 @@ label r13_ev_lamp_round:
                     ("resident_lamplighter","……다시 켤게요.")],"ev:lamp:off")
                 $ r13_flag("neoul_annoyed")
                 $ _ep_loop=True
+            # Only after Seol's word and asking her about it (room13_conversations.rpy, crossed accounts).
+            "북쪽 길 끝 등도 같이 보자고 한다" if r13_has("lamplighter_dawn_asked") and not r13_has("know_lamp_sign"):
+                call r13_lines([("resident_lamplighter","그 등은 제가 혼자 봐요."),
+                    (None,"초롱은 장대를 내리고 한참 말이 없었다."),
+                    ("resident_lamplighter","……미안해요. 거기는 약속한 사람이 있어요. 그 사람 허락 없이는 못 보여 드려요.",{"expression":"anxious"})],"ev:lamp:north")
+                $ r13_flag("know_lamp_sign")
+                $ _ep_loop=True
             "순회를 마치고 돌아간다":
-                call r13_lines([("resident_lamplighter","내일도 이 시간에 돌아요. 등은 밤마다 조금씩 달라요.")],"ev:lamp:end")
+                if room13["day"]<3:
+                    call r13_lines([("resident_lamplighter","내일도 이 시간에 돌아요. 등은 밤마다 조금씩 달라요.")],"ev:lamp:end")
+                else:
+                    call r13_lines([("resident_lamplighter","오늘은 여기까지요. 조심히 들어가요.")],"ev:lamp:end_last")
+    return
+
+# ---- 초롱의 두 번째 순회 (2일째에 함께 돈 뒤 3일째 저녁) ----
+# What she says depends on what Dad did with her the night before.
+label r13_ev_lamp_again:
+    $ r13_flag("ev_lamp_again")
+    call r13_ev_here("night")
+    call r13_lines([(None,"초롱이 어제와 같은 자리에서 장대를 들고 있었다.")],"ev:lamp2:open")
+    if r13_has("daram_lamp_named"):
+        call r13_lines([("resident_lamplighter","‘도토리’ 등은 오늘도 제일 밝아요. 다람이한테 전해 줘요."),
+            ("daram","거봐, 내가 이름 잘 지었지!")] if room13.get("daram_state") in ("with_dad","rescued") else
+            [("resident_lamplighter","‘도토리’ 등은 오늘도 제일 밝아요. 다람이한테 전해 줘요.")],"ev:lamp2:named")
+    if r13_has("neoul_annoyed"):
+        call r13_lines([("resident_lamplighter","어제 등 끈 일로 오늘 아침에 너울 씨한테 불려 갔어요."),
+            ("resident_lamplighter","괜찮아요. 그래도 오늘은 등 얘기만 해요.")],"ev:lamp2:scolded")
+    if "W6" in room13["evidence"]:
+        call r13_lines([("resident_lamplighter","어제는 일찍 꺼지는 등이 넷이었죠. 오늘은 다섯이에요.")],"ev:lamp2:count")
+        $ r13_flag("know_stone_failing")
+    call r13_lines([("resident_lamplighter","내일부터는 순회를 혼자 돌게요. 따라오시는 걸 보는 눈이 있어서요.")],"ev:lamp2:end")
     return
 
 # ---- 보호실 밤 면회 (5~6일 저녁, 입구) ----
