@@ -1699,3 +1699,29 @@ testcase grant_after_reaction:
     run Function(r13_qa_present_deferred,"resident_sling","P01")
     run Function(r13_flush_grants)
     assert eval (room13["evidence"].count("J08")==1)
+
+testcase gate_documents:
+    # 0.18.21: the list comes from the guard in conversation; the original is found among dated bundles.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("G1" not in room13["evidence"] and "G3" not in room13["evidence"])
+    run Call("r13_inspect_gate_documents")
+    pause 1.0
+    click "토요일 도착 예정"
+    pause 1.0
+    click "확인"
+    click pos (640,600) until screen "r13_gate_document_inspection" timeout 20
+    assert eval ("G1" not in room13["evidence"])
+    click "월요일 도착 예정"
+    pause 1.0
+    click "확인"
+    pause 1.0
+    assert eval ("G1" in room13["evidence"] and "G3" not in room13["evidence"])
+    click "현장으로 돌아가기"
+    pause 1.0
+    run SetVariable("r13_choice",("entry","explain"))
+    run Jump("r13_entry_dispatch")
+    click pos (640,600) until screen "r13_entry_topics" timeout 40
+    assert eval ("G3" in room13["evidence"])

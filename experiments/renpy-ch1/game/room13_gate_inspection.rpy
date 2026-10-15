@@ -5,8 +5,16 @@ init 63 python:
         "G1": dict(object="booth", tab="예약 원본", heading="예약 원본 · 함께 온 사람 수", text="예약한 사람: 다돌과 한 명 더. 모두 2명."),
         "G3": dict(object="ledger", tab="옮겨 쓴 이름 목록", heading="옮겨 쓴 이름 목록 · 함께 온 사람 수", text="방문자: 다돌. 총 인원: 1명."),
     }
+    # 0.18.21 (owner): the two papers are earned separately. The guard hands over his own list (G3)
+    # in conversation; the original (G1) is one of several reservation bundles on the shelf,
+    # filed by arrival day. Picking another bundle only shows someone else's reservation.
+    R13_GATE_BUNDLES = (
+        ("sat", "토요일 도착 예정", None, "예약한 사람    솔 외 두 명\n\n모두    3명\n\n가는 곳    광장 뒤 세 번째 집"),
+        ("mon", "월요일 도착 예정", "G1", "예약한 사람    다돌 외 한 명\n\n모두    2명\n\n가는 곳    마을 여관"),
+        ("wed", "수요일 도착 예정", None, "예약한 사람    광산 인부 무리\n\n모두    4명\n\n가는 곳    마을 입구 숙소"),
+    )
     ROOM13["objects"]["gate"]["gate_documents"] = dict(
-        rect=list(R13_WORLD_LAYOUTS.get("gate",{}).get("documents",[1034,342,159,111])), text="초소 선반에 예약 원본과 옮겨 쓴 이름 목록이 함께 놓여 있다.",
+        rect=list(R13_WORLD_LAYOUTS.get("gate",{}).get("documents",[1034,342,159,111])), text="초소 선반에 예약 서류 묶음이 도착 날짜별로 꽂혀 있다.",
         need=[], give=[], flags=[], inspection_bundle="gate_documents")
     for r13_gate_legacy_key in ("booth", "ledger"):
         ROOM13["objects"]["gate"][r13_gate_legacy_key]["inspection_child"] = "gate_documents"
@@ -69,12 +77,16 @@ label r13_inspect_gate_documents(start_key=None):
     $ r13_flag("observed:gate:gate_documents")
     while True:
         call screen r13_gate_document_inspection()
-        if _return not in ("G1","G3"):
+        if _return not in [b[0] for b in R13_GATE_BUNDLES]:
             return
         $ r13_gate_selected=_return
         call screen r13_gate_document_read(r13_gate_selected)
         if _return:
-            $ r13_gate_record_document(r13_gate_selected)
+            $ r13_gate_key=dict((b[0],b[2]) for b in R13_GATE_BUNDLES)[r13_gate_selected]
+            if r13_gate_key:
+                $ r13_gate_record_document(r13_gate_key)
+            else:
+                call r13_lines([("dad","(우리 예약이 아니다. 묶음을 제자리에 꽂아 두었다.)",{"thought":True})],"gate:bundle:other")
     return
 
 screen r13_gate_document_inspection(initial="G1"):
@@ -88,11 +100,11 @@ screen r13_gate_document_inspection(initial="G1"):
         vbox:
             spacing 22
             text "초소 선반" size 30 color "#fff2cf"
-            text "묶어 둔 서류 두 권이 놓여 있다." size 23 color "#d0d7cc"
-            for key in ("G1","G3"):
-                textbutton R13_GATE_DOCUMENTS[key]["tab"] + (" · 읽음" if key in room13["evidence"] else ""):
+            text "예약 서류 묶음이 도착 날짜별로 꽂혀 있다." size 23 color "#d0d7cc"
+            for bid,label,gkey,body in R13_GATE_BUNDLES:
+                textbutton label + (" · 읽음" if gkey and gkey in room13["evidence"] else ""):
                     style "r13_action_button" xsize 900 ysize 90
-                    action Return(key)
+                    action Return(bid)
             textbutton "현장으로 돌아가기" style "r13_action_button" xsize 270 ysize 60 action Return(False)
     key "game_menu" action Return(False)
 
@@ -108,11 +120,12 @@ screen r13_gate_document_read(key):
         background R13PaperPanel(False)
         vbox:
             spacing 28
-            text R13_GATE_DOCUMENTS[key]["tab"] size 34 color "#765426"
-            text "여관 방문 예약" size 23 color "#60695c"
+            $ bundle=dict((b[0],b) for b in R13_GATE_BUNDLES)[key]
+            text bundle[1] size 34 color "#765426"
+            text "마을 방문 예약" size 23 color "#60695c"
             add Solid("#b5a27c",xsize=600,ysize=1)
-            text ("예약한 사람    다돌 외 한 명\n\n모두    2명\n\n가는 곳    마을 여관" if key=="G1" else "방문자    다돌\n\n총 인원    1명\n\n목적지    마을 여관") size r13_read_size(28,32) color "#342a23" line_spacing 8
-            text ("받아 둔 원본" if key=="G1" else "초소에 두는 것 · 옮겨 적은 이름 목록") size 21 color "#60695c"
+            text bundle[3] size r13_read_size(28,32) color "#342a23" line_spacing 8
+            text "받아 둔 원본" size 21 color "#60695c"
     textbutton "확인":
         style "r13_action_button" area (774,570,170,58)
         action Return(True) sensitive ready

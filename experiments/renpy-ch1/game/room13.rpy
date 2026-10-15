@@ -116,8 +116,10 @@ label r13_entry_guard_menu:
         $ r13_speaker("guard","neutral")
 label r13_entry_dispatch:
     if r13_choice==("entry","explain"):
-        call r13_lines([('dad', '저희가 낸 신청서와 이 명단이 서로 다른 거군요.'), ('guard', '예. 제가 받은 명단에는 한 분뿐입니다. 초소에 보관된 예약 서류 원본과 대조해 봐야 합니다.'), ('dad', '제 이름이 적힌 예약 서류를 볼 수 있습니까?'), ('guard', '예. 선반 위에 예약 원본과 초소 명단을 함께 놓아 두었습니다.')],"entry:explain")
+        call r13_lines([('dad', '저희가 낸 신청서와 그 명단이 서로 다른 거군요.'), ('guard', '예. 제가 받은 명단에는 한 분뿐입니다.'), ('dad', '그 명단을 직접 볼 수 있겠습니까?'), ('guard', '여기 있습니다. 예약 서류를 보고 초소에서 옮겨 적은 겁니다.'), (None, '돌목이 내민 명단에는 ‘방문자 다돌, 총 인원 1명’이라고 적혀 있었다.'), ('guard', '원본은 저 선반에 도착 날짜별로 꽂아 두었습니다. 대조해 보시려면 찾아보세요.')],"entry:explain:v2")
         $ r13_flag("question_read:entry:explain")
+        # The list is earned by asking for it; granted after the lines (0.18.21).
+        $ r13_grant(["G3"],"돌목이 직접 보여 준 초소 명단")
     elif r13_choice[0]=="object":
         call r13_object(r13_choice[1])
     elif r13_choice[0]=="empty":
