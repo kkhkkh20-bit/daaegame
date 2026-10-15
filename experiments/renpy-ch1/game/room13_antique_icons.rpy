@@ -86,7 +86,7 @@ screen r13_antique_button(caption,icon,command,enabled=True,compact=False,chosen
         selected_background R13TouchSurface(focused=True)
         insensitive_background R13TouchSurface(disabled=True)
         action command sensitive enabled selected chosen
-        alt caption tooltip caption
+        alt caption tooltip (None if caption=="생각" else caption)
         hbox:
             xalign .5 yalign .75 spacing (4 if compact else 6)
             add R13AntiqueIcon(icon,size=22 if compact else 30) yalign .5 alpha (1.0 if enabled else .35)

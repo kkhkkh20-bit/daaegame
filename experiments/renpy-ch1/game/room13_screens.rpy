@@ -64,7 +64,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
             hbox:
                 spacing 6
                 add R13AntiqueIcon("investigate",size=24) yalign .5
-                text "조사 중" size 20 color "#efe2c2" font r13_ui_font() yalign .5
+                text "조사 중" size 20 color "#efe2c2" outlines [(1,"#302b25",0,0)] font r13_ui_font() yalign .5
         frame:
             area (1168,664,112,56) padding (0,0) background None
             use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=112)

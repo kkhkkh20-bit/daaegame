@@ -58,10 +58,12 @@ screen r13_evidence_card(key,caption,conversation=False):
 screen r13_evidence_found(keys,conversation=False):
     zorder 85
     default item_index=0
-    # Warm light spreads behind the card, then fades (0.18.47 storybook tone; no star sparkle).
-    if r13_fx_active():
-        add R13_STORYBOOK.get("card_glow", Null()) xpos (R13_EVIDENCE_CARD_POS[0]+R13_EVIDENCE_CARD_SIZE//2) ypos (R13_EVIDENCE_CARD_POS[1]+8+R13_EVIDENCE_ICON_SIZE//2+20) anchor (.5,.5) at r13_card_glow
-    use r13_evidence_card(keys[item_index],"새 증언 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 자료 기록",conversation=conversation)
+    # Modal panes own their whole surface; notification lifetime still advances.
+    if not any(renpy.get_screen(name) for name in ("r13_map","r13_records","r13_learning_notes","r13_record_compare","r13_calendar","r13_item_bag","r13_work_board")):
+        # Warm light spreads behind the card, then fades (0.18.47 storybook tone; no star sparkle).
+        if r13_fx_active():
+            add R13_STORYBOOK.get("card_glow", Null()) xpos (R13_EVIDENCE_CARD_POS[0]+R13_EVIDENCE_CARD_SIZE//2) ypos (R13_EVIDENCE_CARD_POS[1]+8+R13_EVIDENCE_ICON_SIZE//2+20) anchor (.5,.5) at r13_card_glow
+        use r13_evidence_card(keys[item_index],"새 증언 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 자료 기록",conversation=conversation)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:

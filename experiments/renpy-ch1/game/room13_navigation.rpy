@@ -173,10 +173,7 @@ screen r13_map(initial_region=None):
                                                 text R13_MAP_LABELS[key] size 26 color ("#fff0cb" if key==selected else "#493b30") hover_color "#fff0cb"
                                                 text ("● 현재 위치" if key==room13["location"] else "선택됨" if key==selected else "장소 살펴보기") size 20 color ("#edc878" if key==selected else "#796044") hover_color "#edc878"
     else:
-        if region=="inn":
-            add R13VillageMap(region) xpos 30 ypos 150
-        else:
-            add Transform("assets/room13-pixel-navigation-village.webp",size=(860,490),nearest=True) xpos 30 ypos 150
+        add Transform("assets/room13-pixel-navigation-village.webp",size=(860,490),nearest=True) xpos 30 ypos 150
         for key,(px,py) in r13_map_nodes(region):
             button:
                 area (30+px-82,150+py-30,164,64)
