@@ -1709,5 +1709,314 @@
       "evening": "assets/room13-pixel-ready-altar0177-evening.webp"
     },
     "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+  },
+  "kitchen": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "note": "0.18.53 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-kitchen-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-kitchen-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-kitchen-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "shelf": [
+        743,
+        363,
+        68,
+        36
+      ],
+      "stove": [
+        1589,
+        179,
+        495,
+        427
+      ],
+      "rear": [
+        204,
+        61,
+        300,
+        559
+      ],
+      "vegetables": [
+        780,
+        463,
+        446,
+        142
+      ],
+      "flour": [
+        1290,
+        429,
+        153,
+        146
+      ],
+      "dishes": [
+        656,
+        132,
+        234,
+        134
+      ],
+      "herbs": [
+        929,
+        0,
+        225,
+        188
+      ],
+      "ladles": [
+        1044,
+        183,
+        150,
+        160
+      ]
+    },
+    "floors": [
+      [
+        176,
+        684,
+        255
+      ],
+      [
+        475,
+        672,
+        250
+      ]
+    ],
+    "slots": [
+      [
+        176,
+        684,
+        255,
+        "waiting"
+      ],
+      [
+        475,
+        672,
+        250,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 2
+  },
+  "dining": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning",
+      "afternoon"
+    ],
+    "note": "0.18.53 wide map, morning and afternoon. Evening is held on the old 1280 scene: up to three residents (nabi, owl grandfather, Tok; days 1-7 while he is alive) and only two reviewed floor spots. Evening art is kept in art/wide-maps-20261015/source-daylight and game/assets/room13-pixel-wide-dining-evening.webp is not shipped. Uniform 2172x724 -> 2160x720.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-dining-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-dining-afternoon.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "table": [
+        946,
+        480,
+        1190,
+        130
+      ],
+      "mittens": [
+        1517,
+        0,
+        103,
+        186
+      ],
+      "blankets": [
+        731,
+        437,
+        156,
+        247
+      ],
+      "breadboard": [
+        1303,
+        483,
+        290,
+        98
+      ],
+      "pot": [
+        1215,
+        410,
+        200,
+        124
+      ]
+    },
+    "floors": [
+      [
+        325,
+        655,
+        260
+      ],
+      [
+        540,
+        680,
+        260
+      ]
+    ],
+    "slots": [
+      [
+        325,
+        655,
+        260,
+        "waiting"
+      ],
+      [
+        540,
+        680,
+        260,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 2
+  },
+  "passage": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "note": "0.18.53 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720. passage evening was 2171 wide: normalized to 2172 by repeating the last column (art/wide-maps-20261015/normalized).",
+    "files": {
+      "morning": "assets/room13-pixel-wide-passage-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-passage-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-passage-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "steps": [
+        696,
+        279,
+        410,
+        265
+      ],
+      "handle": [
+        1534,
+        135,
+        217,
+        247
+      ],
+      "linen": [
+        0,
+        0,
+        360,
+        360
+      ],
+      "mop": [
+        356,
+        149,
+        198,
+        530
+      ],
+      "baskets": [
+        0,
+        409,
+        396,
+        310
+      ]
+    },
+    "floors": [
+      [
+        703,
+        672,
+        240
+      ],
+      [
+        1248,
+        660,
+        230
+      ],
+      [
+        1802,
+        687,
+        245
+      ]
+    ],
+    "slots": [
+      [
+        703,
+        672,
+        240,
+        "waiting"
+      ],
+      [
+        1248,
+        660,
+        230,
+        "waiting"
+      ],
+      [
+        1802,
+        687,
+        245,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3
   }
 }

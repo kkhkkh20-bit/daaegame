@@ -1,0 +1,812 @@
+{
+  "schema": "room13-wide-map-art-handoff-v1",
+  "status": "visually_authored_candidate_not_runtime_QA",
+  "runtime_size": [
+    2160,
+    720
+  ],
+  "viewport": [
+    1280,
+    720
+  ],
+  "camera_limits": [
+    0,
+    880
+  ],
+  "camera_step": 480,
+  "initial_x": 440,
+  "content_source_sha": "6276f7096f8055a00f061d595cee7062e8a8bc0f",
+  "locations": {
+    "post": {
+      "objects": {
+        "notice": [
+          1602,
+          252,
+          87,
+          116
+        ],
+        "parcels": [
+          1690,
+          328,
+          420,
+          166
+        ],
+        "cup": [
+          2031,
+          469,
+          123,
+          122
+        ],
+        "scarf": [
+          645,
+          396,
+          112,
+          203
+        ],
+        "twine": [
+          1135,
+          282,
+          310,
+          184
+        ]
+      },
+      "old_objects": {
+        "notice": [
+          982,
+          239,
+          66,
+          134
+        ],
+        "parcels": [
+          1052,
+          374,
+          221,
+          86
+        ],
+        "cup": [
+          1156,
+          477,
+          121,
+          138
+        ],
+        "scarf": [
+          206,
+          405,
+          134,
+          259
+        ],
+        "twine": [
+          576,
+          293,
+          232,
+          185
+        ]
+      },
+      "floors": [
+        [
+          242,
+          677,
+          258
+        ],
+        [
+          970,
+          640,
+          240
+        ]
+      ],
+      "slots": [
+        [
+          242,
+          677,
+          258,
+          "waiting"
+        ],
+        [
+          970,
+          640,
+          240,
+          "waiting"
+        ]
+      ],
+      "occlusion": [],
+      "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement. Only two verified unobstructed front-floor slots supplied; additional simultaneous residents require custom staging/occlusion QA, do not fallback to old coordinates.",
+      "crop": [
+        0,
+        0,
+        2160,
+        720
+      ]
+    },
+    "kitchen": {
+      "objects": {
+        "shelf": [
+          743,
+          363,
+          68,
+          36
+        ],
+        "stove": [
+          1589,
+          179,
+          495,
+          427
+        ],
+        "rear": [
+          204,
+          61,
+          300,
+          559
+        ],
+        "vegetables": [
+          780,
+          463,
+          446,
+          142
+        ],
+        "flour": [
+          1290,
+          429,
+          153,
+          146
+        ],
+        "dishes": [
+          656,
+          132,
+          234,
+          134
+        ],
+        "herbs": [
+          929,
+          0,
+          225,
+          188
+        ],
+        "ladles": [
+          1044,
+          183,
+          150,
+          160
+        ]
+      },
+      "old_objects": {
+        "shelf": [
+          281,
+          406,
+          252,
+          117
+        ],
+        "stove": [
+          941,
+          229,
+          335,
+          312
+        ],
+        "rear": [
+          13,
+          94,
+          238,
+          517
+        ],
+        "vegetables": [
+          458,
+          522,
+          300,
+          97
+        ],
+        "flour": [
+          887,
+          431,
+          142,
+          89
+        ],
+        "dishes": [
+          332,
+          170,
+          213,
+          142
+        ],
+        "herbs": [
+          572,
+          3,
+          268,
+          175
+        ],
+        "ladles": [
+          712,
+          217,
+          149,
+          154
+        ]
+      },
+      "floors": [
+        [
+          176,
+          684,
+          255
+        ],
+        [
+          475,
+          672,
+          250
+        ]
+      ],
+      "slots": [
+        [
+          176,
+          684,
+          255,
+          "waiting"
+        ],
+        [
+          475,
+          672,
+          250,
+          "waiting"
+        ]
+      ],
+      "occlusion": [],
+      "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement. Only two verified unobstructed front-floor slots supplied; additional simultaneous residents require custom staging/occlusion QA, do not fallback to old coordinates.",
+      "crop": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "dining": {
+      "objects": {
+        "table": [
+          946,
+          480,
+          1190,
+          130
+        ],
+        "mittens": [
+          1517,
+          0,
+          103,
+          186
+        ],
+        "blankets": [
+          731,
+          437,
+          156,
+          247
+        ],
+        "breadboard": [
+          1303,
+          483,
+          290,
+          98
+        ],
+        "pot": [
+          1215,
+          410,
+          200,
+          124
+        ]
+      },
+      "old_objects": {
+        "table": [
+          420,
+          493,
+          855,
+          129
+        ],
+        "mittens": [
+          1061,
+          38,
+          118,
+          139
+        ],
+        "blankets": [
+          69,
+          456,
+          153,
+          167
+        ],
+        "breadboard": [
+          814,
+          476,
+          187,
+          105
+        ],
+        "pot": [
+          689,
+          406,
+          191,
+          121
+        ]
+      },
+      "floors": [
+        [
+          325,
+          655,
+          260
+        ],
+        [
+          540,
+          680,
+          260
+        ]
+      ],
+      "slots": [
+        [
+          325,
+          655,
+          260,
+          "waiting"
+        ],
+        [
+          540,
+          680,
+          260,
+          "waiting"
+        ]
+      ],
+      "occlusion": [],
+      "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement. Only two verified unobstructed front-floor slots supplied; additional simultaneous residents require custom staging/occlusion QA, do not fallback to old coordinates.",
+      "crop": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "passage": {
+      "objects": {
+        "steps": [
+          696,
+          279,
+          410,
+          265
+        ],
+        "handle": [
+          1534,
+          135,
+          217,
+          247
+        ],
+        "linen": [
+          0,
+          0,
+          360,
+          360
+        ],
+        "mop": [
+          356,
+          149,
+          198,
+          530
+        ],
+        "baskets": [
+          0,
+          409,
+          396,
+          310
+        ]
+      },
+      "old_objects": {
+        "steps": [
+          442,
+          211,
+          319,
+          288
+        ],
+        "handle": [
+          960,
+          154,
+          157,
+          224
+        ],
+        "linen": [
+          6,
+          20,
+          270,
+          301
+        ],
+        "mop": [
+          374,
+          180,
+          109,
+          432
+        ],
+        "baskets": [
+          78,
+          411,
+          265,
+          214
+        ]
+      },
+      "floors": [
+        [
+          703,
+          672,
+          240
+        ],
+        [
+          1248,
+          660,
+          230
+        ],
+        [
+          1802,
+          687,
+          245
+        ]
+      ],
+      "slots": [
+        [
+          703,
+          672,
+          240,
+          "waiting"
+        ],
+        [
+          1248,
+          660,
+          230,
+          "waiting"
+        ],
+        [
+          1802,
+          687,
+          245,
+          "waiting"
+        ]
+      ],
+      "occlusion": [],
+      "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement.",
+      "crop": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "hall": {
+      "objects": {
+        "rail": [
+          0,
+          215,
+          860,
+          473
+        ],
+        "door": [
+          993,
+          183,
+          225,
+          281
+        ],
+        "towels": [
+          546,
+          472,
+          187,
+          67
+        ],
+        "boots": [
+          875,
+          409,
+          110,
+          80
+        ],
+        "bucket": [
+          1254,
+          346,
+          103,
+          151
+        ],
+        "lamp": [
+          931,
+          197,
+          53,
+          88
+        ]
+      },
+      "old_objects": {
+        "rail": [
+          9,
+          217,
+          410,
+          239
+        ],
+        "door": [
+          705,
+          134,
+          208,
+          305
+        ],
+        "towels": [
+          203,
+          468,
+          218,
+          72
+        ],
+        "boots": [
+          603,
+          383,
+          106,
+          86
+        ],
+        "bucket": [
+          928,
+          329,
+          81,
+          158
+        ],
+        "lamp": [
+          641,
+          147,
+          59,
+          85
+        ]
+      },
+      "floors": [
+        [
+          1017,
+          669,
+          255
+        ],
+        [
+          1471,
+          616,
+          238
+        ],
+        [
+          1880,
+          677,
+          260
+        ]
+      ],
+      "slots": [
+        [
+          1017,
+          669,
+          255,
+          "waiting"
+        ],
+        [
+          1471,
+          616,
+          238,
+          "waiting"
+        ],
+        [
+          1880,
+          677,
+          260,
+          "waiting"
+        ]
+      ],
+      "occlusion": [],
+      "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement.",
+      "crop": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "state_requirement": "before/after x 3 daylight images, same geometry; select current case_state before world background"
+    },
+    "room13": {
+      "objects": {
+        "bed": [
+          809,
+          337,
+          675,
+          180
+        ],
+        "window": [
+          272,
+          12,
+          293,
+          303
+        ],
+        "boxes": [
+          19,
+          563,
+          490,
+          157
+        ],
+        "under": [
+          842,
+          498,
+          438,
+          57
+        ],
+        "floor": [
+          863,
+          552,
+          215,
+          64
+        ],
+        "books": [
+          1700,
+          375,
+          35,
+          67
+        ],
+        "cup": [
+          321,
+          364,
+          80,
+          66
+        ],
+        "letters": [
+          174,
+          395,
+          124,
+          25
+        ],
+        "notebook": [
+          147,
+          426,
+          210,
+          40
+        ],
+        "coat": [
+          593,
+          351,
+          150,
+          255
+        ],
+        "sewing": [
+          1541,
+          419,
+          150,
+          126
+        ],
+        "socks": [
+          461,
+          285,
+          122,
+          105
+        ],
+        "bedside_books": [
+          883,
+          294,
+          86,
+          33
+        ],
+        "bread": [
+          401,
+          393,
+          95,
+          40
+        ]
+      },
+      "old_objects": {
+        "bed": [
+          605,
+          311,
+          537,
+          151
+        ],
+        "window": [
+          197,
+          25,
+          193,
+          248
+        ],
+        "boxes": [
+          9,
+          567,
+          382,
+          60
+        ],
+        "under": [
+          600,
+          480,
+          437,
+          60
+        ],
+        "floor": [
+          590,
+          523,
+          208,
+          82
+        ],
+        "books": [
+          1195,
+          267,
+          50,
+          72
+        ],
+        "cup": [
+          244,
+          358,
+          64,
+          60
+        ],
+        "letters": [
+          155,
+          389,
+          79,
+          22
+        ],
+        "notebook": [
+          135,
+          416,
+          148,
+          30
+        ],
+        "coat": [
+          437,
+          336,
+          137,
+          239
+        ],
+        "sewing": [
+          1186,
+          409,
+          88,
+          131
+        ],
+        "socks": [
+          336,
+          279,
+          91,
+          78
+        ],
+        "bedside_books": [
+          626,
+          274,
+          83,
+          32
+        ],
+        "bread": [
+          311,
+          382,
+          80,
+          36
+        ]
+      },
+      "floors": [
+        [
+          924,
+          675,
+          230
+        ],
+        [
+          1806,
+          645,
+          225
+        ],
+        [
+          1990,
+          691,
+          240
+        ]
+      ],
+      "slots": [
+        [
+          924,
+          675,
+          230,
+          "waiting"
+        ],
+        [
+          1806,
+          645,
+          225,
+          "waiting"
+        ],
+        [
+          1990,
+          691,
+          240,
+          "waiting"
+        ]
+      ],
+      "occlusion": [],
+      "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement. Do not reuse floor slot on evidence area; no character should cover lower-right red book. Fixed grille is shadowed behind bed, not an opening.",
+      "crop": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "state_requirement": "before/after x 3 daylight; after floor evidence candlestick/wax/soot replaces before table candle; preserve E03/E07/E09 crop semantics"
+    }
+  }
+}

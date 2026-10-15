@@ -1,0 +1,128 @@
+{
+  "status": "held (0.18.55 wide-map check)",
+  "reason": "Six residents on day 3/4/6 mornings fill all six candidate slots; slot 4 [675,635,205] stands directly in front of the scarf on the chair: in the runtime hit map 148 of 192 scarf sample points press resident_ppul (only 44 the scarf). Other objects and residents passed. Old post kept for all periods.",
+  "layout": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning"
+    ],
+    "note": "0.18.53 wide post, morning only. Afternoon/evening art was withheld (3-12px drift): those periods keep the 1280 backdrop, its rects and staging. Source art/wide-maps-20261015/source/post-morning.png 2160x728, explicit crop [0,0,2160,720] (no scaling). Six public-floor slots in front of the counter (x 0..1140), supplied 07:26 PT.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-post-morning.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2160,
+        720
+      ]
+    },
+    "objects": {
+      "notice": [
+        1602,
+        252,
+        87,
+        116
+      ],
+      "parcels": [
+        1690,
+        328,
+        420,
+        166
+      ],
+      "cup": [
+        2031,
+        469,
+        123,
+        122
+      ],
+      "scarf": [
+        645,
+        396,
+        112,
+        203
+      ],
+      "twine": [
+        1135,
+        282,
+        310,
+        184
+      ]
+    },
+    "floors": [
+      [
+        90,
+        675,
+        220
+      ],
+      [
+        285,
+        635,
+        205
+      ],
+      [
+        480,
+        685,
+        230
+      ],
+      [
+        675,
+        635,
+        205
+      ],
+      [
+        870,
+        690,
+        230
+      ],
+      [
+        1060,
+        620,
+        205
+      ]
+    ],
+    "slots": [
+      [
+        90,
+        675,
+        220,
+        "waiting"
+      ],
+      [
+        285,
+        635,
+        205,
+        "waiting"
+      ],
+      [
+        480,
+        685,
+        230,
+        "waiting"
+      ],
+      [
+        675,
+        635,
+        205,
+        "waiting"
+      ],
+      [
+        870,
+        690,
+        230,
+        "waiting"
+      ],
+      [
+        1060,
+        620,
+        205,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 6
+  }
+}

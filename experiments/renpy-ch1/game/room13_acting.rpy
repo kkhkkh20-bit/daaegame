@@ -303,7 +303,7 @@ init 59 python:
     def r13_stage_people(entry=False):
         location=store.room13["location"]
         period=min(store.room13["period"],2)
-        layout=getattr(store,"R13_WORLD_LAYOUTS",{}).get(location,{})
+        layout=r13_layout(location)
         world_width=int(layout.get("width",1280))
         world_height=int(layout.get("height",720))
         # Permission changes the available conversation, not who is standing
@@ -335,8 +335,9 @@ init 59 python:
                 cx,feet,display_height=R13_STAGE_POSITIONS.get((person,location),(cx,feet,display_height))
             if not layout and location=="inn" and person!="granny" and spec.get("contact")!="hanging":cx,feet,display_height=235,640,260
             if not layout and location=="workshop" and person!="buri":cx,feet,display_height=200,637,265
-            if location=="post" and person!="seryeon":cx,feet,display_height=830,675,375
-            if person=="seryeon" and location=="post" and pose=="action_2":cx,feet,display_height=670,515,247
+            # Old 1280 backdrop positions; a wide layout supplies its own floors.
+            if not layout and location=="post" and person!="seryeon":cx,feet,display_height=830,675,375
+            if not layout and person=="seryeon" and location=="post" and pose=="action_2":cx,feet,display_height=670,515,247
             if person=="guard" and location=="gate":cx,feet,display_height=905,602,255
             cx,feet,display_height=layout.get("positions",{}).get(person,(cx,feet,display_height))
             contact=spec.get("contact","standing")
@@ -369,14 +370,14 @@ init 59 python:
                 if layout:occlusion=layout.get("occlusion",[])
                 elif location in R13_STAGE_COUNTERS:occlusion=R13_STAGE_COUNTERS[location]
                 elif location=="gate":occlusion=[(949,451),(1230,451),(1230,720),(949,720)]
-            if location=="post" and person!="seryeon":occlusion=R13_STAGE_COUNTERS["post"]
-            if location=="dining":occlusion=R13_STAGE_COUNTERS["dining"]
+            if not layout and location=="post" and person!="seryeon":occlusion=R13_STAGE_COUNTERS["post"]
+            if not layout and location=="dining":occlusion=R13_STAGE_COUNTERS["dining"]
             if person=="resident_tori" and location=="square" and contact=="background_bench":
                 seat=spec["seat"]
                 scale=260.0/height
                 x=int(1840-seat[0]*scale);y=int(568-seat[1]*scale)
                 occlusion=[]
-            if person=="seryeon" and location=="post" and contact=="background_chair":
+            if not layout and person=="seryeon" and location=="post" and contact=="background_chair":
                 seat=spec["seat"]
                 scale=108.0/(foot[1]-seat[1])
                 x=int(175-seat[0]*scale);y=int(562-seat[1]*scale)

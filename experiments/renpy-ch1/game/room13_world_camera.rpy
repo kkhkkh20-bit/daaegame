@@ -4,16 +4,26 @@ default r13_world_cameras = {}
 init 58 python:
     R13_WORLD_LAYOUTS=json.load(renpy.file("assets/room13-world-layout.json")) if renpy.loadable("assets/room13-world-layout.json") else {}
 
+    # 0.18.53: a layout with "periods" (wide art delivered for some daylight
+    # periods only) is used only then. Other periods keep the 1280 backdrop,
+    # its object rects and its staging, exactly as before.
+    def r13_layout(location=None,daylight=None):
+        location=location or (store.room13 or {}).get("location")
+        spec=R13_WORLD_LAYOUTS.get(location)
+        if not spec:return {}
+        if spec.get("periods") and (daylight or r13_daylight()) not in spec["periods"]:return {}
+        return spec
+
     def r13_world_width(location=None):
         location=location or (store.room13 or {}).get("location")
-        return int(R13_WORLD_LAYOUTS.get(location,{}).get("width",1280))
+        return int(r13_layout(location).get("width",1280))
 
     def r13_world_height(location=None):
         return 720
 
     def r13_world_offset(location=None):
         location=location or (store.room13 or {}).get("location")
-        initial=R13_WORLD_LAYOUTS.get(location,{}).get("initial_x",0)
+        initial=r13_layout(location).get("initial_x",0)
         value=getattr(store,"r13_world_cameras",{}).get(location,initial)
         return int(max(0,min(r13_world_width(location)-1280,round(value/2.0)*2)))
 
@@ -21,7 +31,7 @@ init 58 python:
         return r13_hashlib.sha256(json.dumps(R13_WORLD_LAYOUTS[location],sort_keys=True).encode("utf-8")).hexdigest()
 
     def r13_world_scene_location(key):
-        return next((location for location in R13_WORLD_LAYOUTS if R13_PLACES.get(location,(None,None))[1]==key),None)
+        return next((location for location in R13_WORLD_LAYOUTS if R13_PLACES.get(location,(None,None))[1]==key and r13_layout(location)),None)
 
     def r13_world_background(location=None,daylight=None):
         location=location or store.room13["location"]
@@ -81,11 +91,41 @@ init 58 python:
 
 init 62 python:
     # Rectangles move with the authored wider scene; object facts do not change.
+    # Period-limited layouts keep both sets and swap them in place before each
+    # interaction (r13_sync_world_rects): copies made from an object (kitchen
+    # rear_after) share its rect list and follow it.
+    R13_PERIOD_RECTS={}
     for r13_world_location,r13_world_layout in R13_WORLD_LAYOUTS.items():
         for r13_world_key,r13_world_rect in r13_world_layout.get("objects",{}).items():
             if r13_world_key not in ROOM13["objects"].get(r13_world_location,{}):
                 raise ValueError("Unknown panorama object: "+r13_world_location+":"+r13_world_key)
+            if r13_world_layout.get("periods"):
+                base=ROOM13["objects"][r13_world_location][r13_world_key]["rect"]
+                R13_PERIOD_RECTS.setdefault(r13_world_location,{})[r13_world_key]=(list(base),list(r13_world_rect))
+                continue
             ROOM13["objects"][r13_world_location][r13_world_key]["rect"]=list(r13_world_rect)
+
+    def r13_sync_world_rects():
+        if not getattr(store,"room13",None):return
+        for location,rects in R13_PERIOD_RECTS.items():
+            wide=bool(r13_layout(location))
+            objects=ROOM13["objects"].get(location,{})
+            for key,(base,authored) in rects.items():
+                rect=objects[key]["rect"]
+                target=authored if wide else base
+                if rect!=target:rect[:]=target
+
+    def r13_check_point(key,point):
+        """Inspection tick position. On a period-limited layout the stored point may
+        come from the other period's picture: use the object's current rect."""
+        location,_,object_key=key.partition(":")
+        if location in R13_PERIOD_RECTS and object_key in ROOM13["objects"].get(location,{}):
+            x,y,w,h=ROOM13["objects"][location][object_key]["rect"]
+            return (int(x+w/2),int(y+h/2))
+        return point
+
+    config.interact_callbacks.append(r13_sync_world_rects)
+    config.after_load_callbacks.append(r13_sync_world_rects)
 
 screen r13_world_camera_controls(adjustment):
     # Exploration is moved by the shared world viewport's mouse drag or touch

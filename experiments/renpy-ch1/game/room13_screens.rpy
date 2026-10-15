@@ -181,6 +181,7 @@ screen r13_world_contents(entry=False,ready=False):
     use r13_resident_stage(entry,ready)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():
+        $ point=r13_check_point(key,point)
         if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and not r13_point_on_face(point,entry):
             add TopicTick() xpos point[0]-13 ypos point[1]-13
     $ bundle_point=r13_gate_bundle_check_point()

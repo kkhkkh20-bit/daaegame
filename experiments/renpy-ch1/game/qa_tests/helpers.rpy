@@ -621,3 +621,118 @@ label r13_qa_talk_menu:
     $ r13_target=r13_qa_person
     $ r13_note_encounter(r13_qa_person)
     jump r13_talk_menu
+
+# 0.18.53 wide maps: click log, hit maps and capacity checks.
+init 999 python:
+    R13_QA_WIDE_LOG = []
+    def r13_qa_wide_write():
+        import json as qa_json
+        open(renpy.config.basedir+"/qa_result.txt","w").write(qa_json.dumps(R13_QA_WIDE_LOG,ensure_ascii=False))
+    def r13_qa_wide_log(tag,expect=None):
+        choice=getattr(store,"r13_choice",None)
+        actors=[dict(person=a["person"],pose=a["pose"],feet=a["y"]+a["height"],x=a["x"],w=a["width"],h=a["height"],slot=list(a["slot"]) if a.get("slot") else None) for a in r13_stage_people(False)]
+        row=dict(tag=tag,expect=expect,choice=list(choice) if isinstance(choice,tuple) else choice,location=store.room13["location"],
+            day=store.room13["day"],period=store.room13["period"],daylight=r13_daylight(),width=r13_world_width(),camera=r13_world_offset(),
+            background=(r13_layout().get("files") or {}).get(r13_daylight()),actors=actors,
+            rects={k:list(v["rect"]) for k,v in ROOM13["objects"].get(store.room13["location"],{}).items()})
+        R13_QA_WIDE_LOG.append(row)
+        r13_qa_wide_write()
+    def r13_qa_wide_reset_choice():
+        store.r13_choice=None
+    def r13_qa_hit(x,y):
+        """What a click at screen (x,y) presses: the Return value of the topmost focusable."""
+        f=renpy.display.render.focus_at_point(x,y)
+        if f is None:return None
+        actions=getattr(f.widget,"action",None)
+        for a in (actions if isinstance(actions,list) else [actions]):
+            if a.__class__.__name__=="Return":
+                v=a.value
+                return list(v) if isinstance(v,tuple) else v
+            if a.__class__.__name__ in ("Show","ShowMenu"):return ["show",getattr(a,"screen","?")]
+        return ["other",type(f.widget).__name__]
+    R13_QA_PICK={}
+    def r13_qa_hitmap(tag):
+        """Sample every visible object rect and every actor on a 1280x720 viewport
+        (screen = world - camera) through Ren'Py's own focus lookup."""
+        location=store.room13["location"];camera=r13_world_offset()
+        objects={};R13_QA_PICK.clear()
+        for key,spec in ROOM13["objects"].get(location,{}).items():
+            if not r13_object_visible(spec):continue
+            x,y,w,h=spec["rect"]
+            counts={};best=None
+            for i in range(16):
+                for j in range(12):
+                    wx=x+w*(i+.5)/16.0;wy=y+h*(j+.5)/12.0;sx=int(wx-camera);sy=int(wy)
+                    if not (0<=sx<1280 and 0<=sy<720):continue
+                    hit=r13_qa_hit(sx,sy)
+                    label="self" if hit==["object",key] else (hit[0]+":"+str(hit[1])) if isinstance(hit,list) else str(hit)
+                    counts[label]=counts.get(label,0)+1
+                    if label=="self":
+                        d=(i-7.5)**2+(j-5.5)**2
+                        if best is None or d<best[0]:best=(d,sx,sy)
+            visible=sum(counts.values())
+            objects[key]=dict(rect=[x,y,w,h],visible=visible,hits=counts.get("self",0),other={k:v for k,v in counts.items() if k!="self"},
+                pick=[best[1],best[2]] if best else None)
+            if best:R13_QA_PICK[key]=(best[1],best[2])
+        actors=[]
+        for a in r13_stage_people(False):
+            x,y,w,h=a["rect"];counts={}
+            for i in range(10):
+                for j in range(14):
+                    sx=int(x+w*(i+.5)/10.0-camera);sy=int(y+h*(j+.5)/14.0)
+                    if not (0<=sx<1280 and 0<=sy<720):continue
+                    hit=r13_qa_hit(sx,sy)
+                    if hit==["person",a["person"]]:counts["self"]=counts.get("self",0)+1
+            face=r13_actor_face(a,0)
+            head=r13_acting_head(a["person"],a["pose"])
+            nw,nh=r13_actor_geometry(a["person"],a["pose"])
+            fx=int(face[0]+face[2]/2-camera);fy=int(face[1]+face[3]/2)
+            actors.append(dict(person=a["person"],pose=a["pose"],rect=list(a["rect"]),feet=a["y"]+a["height"],slot=list(a["slot"]) if a.get("slot") else None,
+                head_px=round(a["height"]*head[3]/float(nh),1) if head else None,display_h=a["height"],native_h=nh,
+                person_hits=counts.get("self",0),face_hit=r13_qa_hit(fx,fy) if 0<=fx<1280 else "offscreen"))
+        R13_QA_WIDE_LOG.append(dict(tag=tag,kind="hitmap",location=location,day=store.room13["day"],period=store.room13["period"],
+            daylight=r13_daylight(),width=r13_world_width(),camera=camera,background=(r13_layout().get("files") or {}).get(r13_daylight()),
+            objects=objects,actors=actors,travel=[list(c) for c in r13_local_connections()]))
+        r13_qa_wide_write()
+    def r13_qa_pick(key):
+        return R13_QA_PICK.get(key,(640,40))
+    def r13_qa_wide_capacity(locations=("post","kitchen","dining","passage","inn")):
+        """Residents at each wide location for every day/period and the states that
+        move people (case, victim, granny, shelter, protection, detention)."""
+        import itertools
+        saved=store.room13
+        rows=[]
+        flag_sets=[(),("shelter_ready",),("bami_protected","nubi_protected"),("tok_detained",),("mom_reunited","patient_transport","shelter_ready")]
+        for day in range(1,15):
+            for period in range(4):
+                for case,victim,granny,flags in itertools.product(("pending","occurred"),("alive","dead"),("free","detained"),flag_sets):
+                    n=winter_copy.deepcopy(saved)
+                    n.update(day=day,period=period,case_state=case,victim_state=victim,granny_state=granny)
+                    n["flags"]=list(set(n.get("flags",[]))|set(flags))
+                    for location in locations:
+                        n["location"]=location;store.room13=n
+                        layout=r13_layout(location)
+                        people=r13_people()
+                        # Pinned people (authored positions, ceiling hooks) do not take a slot;
+                        # in the dining room everyone stands on the floor list directly.
+                        if location=="dining":need=len(people);cap=len(layout.get("floors",[]))
+                        else:
+                            need=len([p for p in people if p not in layout.get("pinned",[]) and p not in layout.get("hooks",{})])
+                            cap=len(layout.get("slots",[]))
+                        rows.append(dict(day=day,period=period,case=case,victim=victim,granny=granny,flags=list(flags),location=location,
+                            wide=bool(layout),slots=cap if layout else None,need=need,people=people))
+        store.room13=saved
+        over=[r for r in rows if r["wide"] and r["need"]>r["slots"]]
+        peak={}
+        for r in rows:
+            k="%s/%d"%(r["location"],min(r["period"],2))
+            peak[k]=max(peak.get(k,0),len(r["people"]))
+        groups={}
+        for r in over:
+            k="%s/%d %s"%(r["location"],min(r["period"],2),",".join(r["people"]))
+            g=groups.setdefault(k,dict(slots=r["slots"],count=0,days=set(),states=set()))
+            g["count"]+=1;g["days"].add(r["day"]);g["states"].add("%s/%s/%s/%s"%(r["case"],r["victim"],r["granny"],"+".join(r["flags"])))
+        groups={k:dict(slots=g["slots"],count=g["count"],days=sorted(g["days"]),states=sorted(g["states"])[:6]) for k,g in groups.items()}
+        R13_QA_WIDE_LOG.append(dict(tag="capacity",kind="capacity",rows=len(rows),over_groups=groups,over_count=len(over),peak=peak))
+        r13_qa_wide_write()
+        return not over

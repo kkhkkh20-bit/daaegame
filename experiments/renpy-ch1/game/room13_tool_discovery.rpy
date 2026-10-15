@@ -60,7 +60,7 @@ init 73 python:
             if art:return Transform(art,xysize=(690,400),fit="contain",nearest=True)
         location=store.room13["location"]
         rect=tuple(ROOM13["objects"][location][key]["rect"])
-        background=r13_world_background(location) if location in R13_WORLD_LAYOUTS else r13_background(R13_PLACES[location][1])
+        background=r13_world_background(location) if r13_layout(location) else r13_background(R13_PLACES[location][1])
         return Transform(Crop(rect,background),xysize=(690,400),fit="contain",nearest=True)
 
     ROOM13["topics"]["tool:seam"]=dict(npc="daram",title="이 바느질이 엄마 것과 닮았다고 했지?",day=[1,13],need=["E03"],give=[],flags=[],lines=[
