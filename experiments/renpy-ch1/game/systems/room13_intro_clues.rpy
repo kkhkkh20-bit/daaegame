@@ -133,8 +133,6 @@ screen r13_entry_daram_topics():
     default ready=False
     timer .25 action SetScreenVariable("ready",True)
     $ questions=[("우리 이름이 적힌 종이를 같이 볼까?",Return("look"),r13_has("question_read:entry:daram:look")),("아빠랑 같이 들어가고 싶은 거지?",Return("together"),r13_has("question_read:entry:daram:together"))]
-    if r13_has("G1") and r13_has("G3"):
-        $ questions.insert(1,("두 기록을 같이 읽어 볼까?",Return("compare"),r13_has("question_read:entry:daram:compare")))
     use r13_question_list("daram","neutral","다람이와 이야기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),person="daram",mode="talk",ready=ready)
 
@@ -152,7 +150,7 @@ label r13_entry_daram_menu:
             call r13_lines([("daram","선반에 종이 묶음이 여러 개 있어. 날짜가 적혀 있네."),("daram","우리 오늘 왔잖아. 오늘이 무슨 요일이지?")],"entry:daram:look:v2")
     elif r13_entry_daram_choice=="compare":
         call r13_lines([("daram","아빠 이름은 예약 종이랑 명단에 다 있는데, 내 이름도 둘 다 있을까?"),("dad","예약 종이와 명단을 나란히 놓고 대조해 보자.")],"entry:daram:compare")
-        call screen r13_record_compare(called=True)
+        call screen r13_records(close_action=Return())
     elif r13_entry_daram_choice=="together":
         call r13_lines([("daram","엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼."),("dad","걱정 마. 같이 들어갈 거야. 우리 둘이 함께 예약했다는 기록을 보여 드리자.")],"entry:daram:together")
     $ r13_flag("question_read:entry:daram:"+r13_entry_daram_choice)

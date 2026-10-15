@@ -68,6 +68,7 @@ init 68 python:
 
     R13_RECORD_ICON_SHEET=json.load(renpy.file("assets/room13-evidence-icons.json")) if renpy.loadable("assets/room13-evidence-icons.json") else {}
     def r13_record_icon(key):
+        if isinstance(key,str) and key.startswith(("bag:","tool:")):return r13_catalog_object_icon(key)
         # Testimony portraits come only from authored evidence_sources.
         who=ROOM13["evidence_sources"].get(key) if r13_record_category(key)=="testimony" else None
         if who:return r13_art(who,"avatar_neutral")
@@ -146,22 +147,21 @@ screen r13_reference_record_shell(title):
 screen r13_reference_record_categories(owner,current,present=False,archive=False):
     vbox:
         xpos 66 ypos 128 spacing 10
-        for key,title in (("evidence","증거"),("testimony","증언"),("people","인물"),("dialogue","대화")):
-            if not present or key in ("evidence","testimony"):
+        for key,title in (("all","자료"),("people","인물"),("dialogue","대화")):
+            if not present or key=="all":
                 button:
-                    style "r13_paper_tab_button" xsize 176 ysize 44
+                    style "r13_paper_tab_button" xsize 176 ysize 56
                     selected current==key alt title
                     action [Function(r13_record_select,owner,"category" if owner=="r13_book" else "tab",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
                     hbox:
                         xalign .5 yalign .5 spacing 10
-                        add R13AntiqueIcon(key,size=24) yalign .5
+                        add R13AntiqueIcon("record" if key=="all" else key,size=24) yalign .5
                         text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
-    vbox:
-        xpos 66 ypos 382 spacing 8
-        textbutton "조사 메모" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="notes" action (Function(r13_record_select,owner,"tab","notes") if not isinstance(owner,str) else Show("r13_learning_notes"))
-        textbutton "기록 비교" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 sensitive not archive selected current=="compare" action (Function(r13_record_select,owner,"tab","compare") if not isinstance(owner,str) else Show("r13_record_compare"))
-        textbutton "달력" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="calendar" action (Function(r13_record_select,owner,"tab","calendar") if not isinstance(owner,str) else Show("r13_calendar"))
-        textbutton "아이템" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="items" action (Function(r13_record_select,owner,"tab","items") if not isinstance(owner,str) else Show("r13_item_bag"))
+    if not present:
+        vbox:
+            xpos 66 ypos 382 spacing 12
+            textbutton "조사 메모" style "r13_paper_tab_button" xsize 176 ysize 48 text_size 18 selected current=="notes" action (Function(r13_record_select,owner,"tab","notes") if not isinstance(owner,str) else Show("r13_learning_notes"))
+            textbutton "달력" style "r13_paper_tab_button" xsize 176 ysize 48 text_size 18 selected current=="calendar" action (Function(r13_record_select,owner,"tab","calendar") if not isinstance(owner,str) else Show("r13_calendar"))
 
 screen r13_record_filters(owner,order,archive=False):
     hbox:
@@ -188,7 +188,7 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
                 vbox:
                     xalign .5 yalign .5 spacing 6
                     add Transform(r13_record_icon(key),xysize=(60,60),fit="contain",nearest=True) xalign .5
-                    text (("● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,ROOM13["evidence"][key]["name"][:8])):
+                    text (("● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,r13_catalog_title(key)[:8])):
                         size r13_read_size(16,21) color "#493b30" xsize cell-20 text_align .5
     hbox:
         xpos 302 ypos 596 spacing 12
@@ -196,14 +196,14 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
         text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
         textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(entries) action Function(r13_record_select,owner,"page",actual_page+1)
     if not entries:
-        text "이 분류에 기록된 자료가 없습니다." xpos 300 ypos 540 size 18 color "#625738" xsize 470 text_align .5
+        text "아직 모은 자료가 없습니다." xpos 300 ypos 540 size 18 color "#625738" xsize 470 text_align .5
 
 screen r13_material_detail(detail,archive=False):
     add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
     if detail:
         if not archive and r13_record_unread(detail):
             timer .7 action Function(r13_record_mark_seen,detail)
-        $ ev=ROOM13["evidence"][detail]
+        $ ev=r13_catalog_record(detail)
         add Transform(r13_record_icon(detail),xysize=(132,128),fit="contain",nearest=True) xpos 954 ypos 78
         text ev["name"] xpos 842 ypos 218 xsize 362 text_align .5 size r13_read_size(23,28) color "#6c512a"
         viewport:
@@ -211,8 +211,8 @@ screen r13_material_detail(detail,archive=False):
             vbox:
                 spacing 12
                 text ev["establishes"] size r13_read_size(21,26) color "#493b30" xsize 332
-                text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_record_origin(detail)) size 17 color "#625738" xsize 332
-                if not archive:
+                text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_catalog_origin(detail)) size 17 color "#625738" xsize 332
+                if not archive and detail in ROOM13["evidence"]:
                     text r13_learning_record_status(detail) size 17 color "#555943" xsize 332
                 if not archive and detail in room13.get("records",{}):
                     text ("얻은 곳: "+room13["records"][detail]["source"]) size 17 color "#625738" xsize 332
@@ -240,13 +240,14 @@ screen r13_person_record_detail(person):
     else:
         text "직접 만난 사람부터 기록합니다." xpos 844 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
-screen r13_records(initial_tab="evidence",note_focus=None,close_action=None,target=None,present_action=None):
+screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=None,present_action=None):
     style_prefix "r13"
     modal True
     zorder 50
     on "show" action Function(source_fx,"note_open")
     on "hide" action Function(source_fx,"note_close")
     default tab=initial_tab
+    $ tab="all" if tab in ("evidence","testimony","items","compare") else tab
     default detail=None
     default person=None
     default page=0
@@ -254,14 +255,14 @@ screen r13_records(initial_tab="evidence",note_focus=None,close_action=None,targ
     default order="recent"
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
-    if tab in ("evidence","testimony"):
+    if tab=="all":
         if r13_learning_archive_keys():
             textbutton ("이번 여정" if not archive else "지난 플레이"):
                 style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
                 action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-        $ entries=r13_record_entries(tab,archive,order=order)
+        $ entries=r13_catalog_entries(archive)
         $ selected_record=r13_record_selected(entries,detail,page)
-        use r13_record_filters(_scope,order,archive)
+        text ("모은 자료 %d개"%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
         use r13_material_grid(entries,selected_record,page,_scope,archive)
         use r13_material_detail(selected_record,archive)
     elif tab=="people":

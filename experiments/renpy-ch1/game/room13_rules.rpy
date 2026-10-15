@@ -445,7 +445,7 @@ init 55 python:
     def r13_stop_typing():
         if store.room13_mode and renpy.get_screen("choice"):
             renpy.config.skipping=None
-        if store.room13_mode and any(renpy.get_screen(s) for s in ("r13_hub","r13_interaction","r13_topics","r13_book","r13_confirm","r13_map","r13_calendar","r13_debate","r13_debate_board","r13_activities","r13_handoff","r13_crisis","r13_crisis_proof","r13_rescue_notes","r13_ending_screen","r13_nearby","r13_resident_notes")):
+        if store.room13_mode and any(renpy.get_screen(s) for s in ("r13_hub","r13_interaction","r13_topics","r13_book","r13_confirm","r13_map","r13_calendar","r13_debate","r13_debate_board","r13_meeting_agenda","r13_activities","r13_handoff","r13_crisis","r13_crisis_proof","r13_rescue_notes","r13_ending_screen","r13_nearby","r13_resident_notes")):
             renpy.music.stop(channel="typing")
             renpy.config.skipping=None
             store.r13_fast_read=False
