@@ -48,7 +48,7 @@ async def main():
    report['checks'].append('Gate (day 1, calm) plays bgm-snow (First Snow) with wind ambience')
    await q.shot('s1-gate')
    # Inn at day 2 (same fixture as qa_navigation), then walk the inn with the real buttons.
-   await q.py('import renpy;s=renpy.store;s.r13_edit(day=2,period=0,location="inn");s.r13_flag("entry_corrected","lodging");s.r13_upgrade();w=renpy.exports.get_widget("r13_hub","r13_options_gear");w.action=s.Jump("r13_field");w.clicked=w.action;result=True');await q.input(1220,50);await q.wait('r13_hub')
+   await q.py('import renpy;s=renpy.store;s.r13_edit(day=2,period=0,location="inn");s.r13_flag("entry_corrected","lodging","livelihood_open");s.r13_upgrade();w=renpy.exports.get_widget("r13_hub","r13_options_gear");w.action=s.Jump("r13_field");w.clicked=w.action;result=True');await q.input(1220,50);await q.wait('r13_hub')
    # The fixture jumped from day 1 to day 2 without a scene, so the first move would ring the new-day bell.
    await q.py('import renpy;renpy.store.r13_sound_last=("front",2);result=True')
    walk=[]

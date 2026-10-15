@@ -46,7 +46,7 @@ checks.append('Only the actually recorded observation exposes its own question')
 store.room13=copy.deepcopy(base);before_actions=[k for k,v in env['r13_actions']()]
 store.room13=n;after_actions=[k for k,v in env['r13_actions']()];assert before_actions==after_actions and 'map'in after_actions
 assert content['activities']['map'].get('cost',1)==1 and content['activities']['map']['give']==['E04']
-assert any('밖에서 창 사이' in text for who,text in env['r13_conversation_topic_lines']('tool:plans'))
+assert any('밖에서 창과 창 사이' in text for who,text in env['r13_conversation_topic_lines']('tool:plans'))
 for day,period in [(content['activities']['map']['day'][0]-1,0),(2,3),(content['activities']['map']['day'][1]+1,0)]:
  store.room13=copy.deepcopy(n);store.room13.update(day=day,period=period)
  assert not any('밖에서 창 사이'in text for who,text in env['r13_conversation_topic_lines']('tool:plans'))

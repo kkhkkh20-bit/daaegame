@@ -5,18 +5,18 @@ init 63 python:
     # Spoken bridges make the child's response audible and motivated. She never
     # answers an unspoken thought, and absent/held children never join in.
     R13_OBSERVATION_CHAT = {
-        ("gate","shovel"):[("dad","발밑이 미끄럽네. 천천히 가자."),("daram","응. 아빠도 내 손 놓지 마.")],
-        ("square","stall"):[("dad","채소가 얼지 않게 잘 덮어 뒀네."),("daram","우리 가방도 이렇게 덮어 둘까?")],
-        ("square","cart"):[("dad","손수레 앞은 좁네. 돌아서 가자."),("daram","아빠, 나도 그렇게 생각해. 이쪽으로 가자.")],
-        ("inn","knitting"):[("dad","장갑 한 짝이 아직 덜 됐네."),("daram","다 뜨면 손이 엄청 따뜻하겠다.")],
-        ("inn","door"):[("dad","신발에 묻은 눈부터 털고 가자."),("daram","잠깐. 밑창에도 잔뜩 붙었어.")],
-        ("room13","boxes"):[("dad","엄마 가방 놓을 자리도 비워 둘까?"),("daram","응. 이쪽은 엄마 자리로 하자.")],
+        ("gate","shovel"):[("dad","발밑이 미끄럽네. 천천히 걸어가자."),("daram","응. 아빠도 내 손 꼭 잡고 놓지 마.")],
+        ("square","stall"):[("dad","채소가 얼지 않게 천으로 잘 덮어 뒀네."),("daram","우리 가방도 이렇게 덮어 둘까?")],
+        ("square","cart"):[("dad","손수레 앞은 길이 좁네. 돌아서 가자."),("daram","아빠, 나도 그렇게 생각해. 이쪽으로 가자.")],
+        ("inn","knitting"):[("dad","장갑 한 짝은 아직 덜 떴네."),("daram","장갑 다 뜨면 손이 엄청 따뜻하겠다.")],
+        ("inn","door"):[("dad","들어가기 전에 신발에 묻은 눈부터 털자."),("daram","잠깐. 밑창에도 눈이 잔뜩 붙었어.")],
+        ("room13","boxes"):[("dad","엄마 가방 놓을 자리도 미리 비워 둘까?"),("daram","응. 이쪽은 엄마 자리로 비워 두자.")],
         ("room13","coat"):[("dad","장갑은 여기 넣어 뒀었지."),("daram","아빠, 그거 내 장갑인데.")],
-        ("room13","bread"):[("dad","수프에 적시면 이 빵도 먹을 만하겠는데."),("daram","나도 그렇게 생각해! 그냥은 너무 딱딱해.")],
-        ("guestroom","boxes"):[("dad","짐은 안쪽으로 놓자. 발에 걸리겠다."),("daram","내 가방은 내가 옮길게.")],
-        ("workshop","rag"):[("dad","손에 기름 묻으면 이 천으로 닦나 봐."),("daram","옷에 닦으면 안 되겠지?")],
+        ("room13","bread"):[("dad","딱딱한 빵도 수프에 적시면 먹을 만하겠는데."),("daram","나도 그렇게 생각해! 빵만 그냥 먹기엔 너무 딱딱해.")],
+        ("guestroom","boxes"):[("dad","짐은 안쪽으로 놓자. 문 앞에 두면 발에 걸리겠다."),("daram","내 가방은 내가 직접 옮길게.")],
+        ("workshop","rag"):[("dad","손에 기름이 묻으면 이 천으로 닦나 봐."),("daram","기름 묻은 손을 옷에 닦으면 안 되겠지?")],
         ("dining","table"):[("dad","난로 가까운 자리가 덜 춥겠네."),("daram","그럼 아빠는 내 옆에 앉아.")],
-        ("school","desks"):[("dad","책상을 조금 옮기면 누울 자리는 나오겠다."),("daram","응. 의자도 내가 옮겨 줄게.")],
+        ("school","desks"):[("dad","책상을 조금 옮기면 둘이 누울 자리는 나오겠다."),("daram","응. 의자는 내가 옮겨 줄게.")],
     }
 
     def r13_child_is_along():

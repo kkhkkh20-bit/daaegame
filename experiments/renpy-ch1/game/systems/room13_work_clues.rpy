@@ -11,14 +11,14 @@ init 96 python:
         does_not_establish="",scenes=[],current_run_only=True,retained_on_show=True)
     ROOM13["evidence_sources"]["J01"]="nabi"
     ROOM13["topics"]["life:nabi"]["give"]=["J01"]
-    ROOM13["topics"]["life:nabi"]["lines"][-1]=("nabi","그때도 왔어요. 그분에게 직접 물어봐요. 아내분과 어떤 이야기를 나눴는지는 못 들었으니까요.")
+    ROOM13["topics"]["life:nabi"]["lines"][-1]=("nabi","네, 아내분이 머물 때도 왔어요. 무슨 이야기를 나눴는지는 못 들었으니까, 그분에게 직접 물어봐요.")
     R13_RECORD_SHORT.update(M01="엄마의 메모",J01="등불지기 이야기")
 
     _r13_work_compare=r13_compare_result
     def r13_compare_result(selected):
         owned=set((store.room13 or {}).get("evidence",[]))
         if set(selected)=={"M01","J01"} and len(selected)==2 and set(selected)<=owned:
-            return "(메모의 ‘등불을 돌보는 분’은 초롱인 것 같다. 아내가 머물 때 여관에도 왔다고 한다. 메모를 직접 보여 주고 확인해 보자.)"
+            return "(메모의 ‘등불을 돌보는 분’은 초롱인 것 같다. 아내가 머물 때 여관에도 왔다고 한다. 하지만 초롱이 아내와 무슨 이야기를 했는지는 아직 모른다.)"
         return _r13_work_compare(selected)
 
     _r13_work_present=r13_present

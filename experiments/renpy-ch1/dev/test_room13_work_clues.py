@@ -16,7 +16,7 @@ s,r=ns['r13_complete_job'](store.room13,'kitchen','ask')
 assert 'J01' not in s['evidence']
 assert ns['r13_compare_result'](['M01','J01'])=='unrelated'
 store.room13['evidence']=['M01','J01'];before=copy.deepcopy(store.room13)
-assert '직접 보여' in ns['r13_compare_result'](['M01','J01'])
+_c=ns['r13_compare_result'](['M01','J01']);assert '무슨 이야기를 했는지' in _c and '보여 주고' not in _c
 assert store.room13==before
 assert ns['r13_present']('resident_lamplighter','J01')!='base'
 assert ns['r13_present']('buri','J01')=='base'

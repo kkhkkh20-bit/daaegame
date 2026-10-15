@@ -4,7 +4,7 @@ init 91 python:
         "kitchen": dict(title="여관 식사 준비", npc="nabi", place="dining", pay=6,
             detail="식기를 닦고 손님별로 식사를 나눈다.", choice="따로 놓인 그릇에 관해 묻는다"),
         "delivery": dict(title="마을 소포 배달", npc="karo", place="gate", pay=7,
-            detail="까로와 짐표를 확인하고 소포를 배달한다.", choice="두 짐표의 주소를 나란히 살핀다"),
+            detail="까로와 짐표를 확인하고 소포를 배달한다.", choice="받는 집에 관해 까로에게 묻는다"),
         "repair": dict(title="수리점 부품 정리", npc="buri", place="workshop", pay=8,
             detail="부품을 크기별로 나누고 수량을 확인한다.", choice="장부와 맞지 않는 수량을 알린다"),
     }
@@ -16,7 +16,7 @@ init 91 python:
     R13_SHOP = {
         "snack": dict(title="구운 밤",price=2,day=(2,14),detail="13호실에서 다람이와 나눠 먹는다."),
         "postcard": dict(title="그림엽서",price=3,day=(2,14),detail="다람이와 엄마에게 보낼 엽서를 쓴다."),
-        "cord": dict(title="질긴 묶음끈",price=3,day=(2,14),detail="같은 길 소포 두 건을 묶어 배달한다."),
+        "cord": dict(title="질긴 묶음끈",price=3,day=(2,14),detail="짐이나 물건을 단단히 묶을 수 있는 질긴 끈이다."),
         "hat": dict(title="다람이의 털모자",price=6,day=(2,14),detail="추운 밤에 다람이에게 씌워 준다."),
         "lamp_oil": dict(title="등잔 기름",price=4,day=(3,13),detail="등불을 돌보는 초롱에게 건넬 수 있다."),
         "herbs": dict(title="해열 약초 묶음",price=8,day=(4,7),case=True,detail="진료실의 서리 검사원에게 건넬 수 있다."),

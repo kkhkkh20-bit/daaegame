@@ -13,7 +13,7 @@ init 79 python:
 
     R13_STAGE_POSITIONS[("daram","room13")]=(835,674,262)
     R13_STAGE_POSITIONS[("daram","guestroom")]=(835,674,262)
-    ROOM13["topics"]["home:records"]=dict(npc="daram",title="오늘 찾은 걸 같이 볼까?",day=[1,14],need=["lodging"],give=[],flags=[],lines=[("daram","응. 내가 본 것도 말해 줄게.")])
+    ROOM13["topics"]["home:records"]=dict(npc="daram",title="오늘 찾은 걸 같이 볼까?",day=[1,14],need=["lodging"],give=[],flags=[],lines=[("daram","응. 나도 내가 본 걸 말해 줄게.")])
     _r13_home_topics=r13_topics
     def r13_topics(person):
         return [(key,spec) for key,spec in _r13_home_topics(person) if key!="home:records" or r13_home_with_daram()]

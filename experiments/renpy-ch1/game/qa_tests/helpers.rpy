@@ -182,7 +182,7 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     $ room13.update(state)
     # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed;
     # the week-1 cases G·L·I·S·T (systems/room13_week1_cases.rpy) unless "+w1c" is passed.
-    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+[f for f in flags if f not in ("+brief","+w1c")]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])+([] if "+w1c" in flags else ["ev_g_done","ev_l_done","ev_i_done","ev_s_done","ev_t_done"])))
+    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+([] if "+offers" in flags else ["qa_auto_offer"])+[f for f in flags if f not in ("+brief","+w1c","+offers")]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])+([] if "+w1c" in flags else ["ev_g_done","ev_l_done","ev_i_done","ev_s_done","ev_t_done","ev_owl_threshold_done","ev_owl_omen_done"])))
     $ room13["livelihood"]=dict(cash=cash,debt=0,items=list(items))
     jump r13_roam
 
@@ -242,6 +242,45 @@ label r13_qa_sound:
         open(renpy.config.basedir+"/qa_result.txt","w").write(repr(_qa_sound))
     return
 
+label r13_qa_linebreak:
+    call r13_scene("hall","QA 줄바꿈","calm")
+    call r13_lines([("resident_seori","부엉이 어르신이 발견된 방은 안에서 잠겨 있었습니다. 안에는 다람 양이 있었습니다."),
+        (None,"팔의 상처만으로는 목숨을 앗아 간 머리 상처를 설명할 수 없습니다. 떨어져 나간 촛대 윗부분이 다시 쓰였습니다. 그 사이 아이가 어디 있었는지, 누가 다른 길로 드나들었는지 함께 봐야 합니다.")],"qa:linebreak")
+    $ open(renpy.config.basedir+"/qa_result.txt","w").write("linebreak done")
+    return
+
+init 999 python:
+    def r13_goal_is_question():
+        # Field guidance in the first days names an open question, never "show X to Y".
+        g=r13_intro_goal()
+        return g.rstrip().endswith("?") or "?" in g
+
+    r13_qa_last_present=""
+    def r13_qa_present(person,key):
+        store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))
+
+label r13_qa_grudge(key):
+    $ r13_topic="grudge_fix:"+key
+    call r13_grudge_fix
+    jump r13_roam
+
+init 999 python:
+    def r13_qa_price(*flags):
+        st=winter_copy.deepcopy(store.room13);st["flags"]=list(flags)
+        return r13_shop_price(st,sorted(R13_SHOP)[0])
+
+label r13_qa_delivery:
+    $ r13_job_key="delivery"
+    $ r13_job_question=R13_JOBS["delivery"]["choice"]
+    call r13_delivery_inspect
+    $ store.r13_qa_dv_choice=r13_job_choice
+    jump r13_roam
+
+init 999 python:
+    def r13_qa_present_deferred(person,key):
+        store.r13_defer_grants=True
+        store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))
+        store.r13_defer_grants=False
 # 0.18.5 full-body dialogue check: every character x expression in the real
 # dialogue layout (normal and large text) and the topic list layout.
 default r13_qa_fb_done = False

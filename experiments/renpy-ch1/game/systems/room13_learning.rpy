@@ -78,12 +78,7 @@ init 98 python:
     def r13_learning_job_context(key,state=None):
         s=(store.room13 or {}) if state is None else state
         flags=set(s.get("flags",[]));read=set(s.get("read_topics",[]))
-        if key=="kitchen" and "life:nabi_helped" in flags and "life:nabi" not in read:
-            return "남은 질문: 나비에게 따로 챙긴 식사를 물어볼 수 있다."
-        if key=="repair" and "life:buri_honest" in flags and "life:buri" not in read:
-            return "남은 질문: 부리에게 장부를 옮겨 쓰는 때를 물어볼 수 있다."
-        if key=="delivery" and "same_lane" in r13_wallet(s)["relations"] and not r13_wallet(s)["combined_paid"]:
-            return "알아낸 방법: 두 건 묶음 배달 · 10냥 · 끈은 까로에게 빌릴 수 있다."
+        # The board says only what the job is (owner, 0.18.16): no remaining-question or trick hints.
         return R13_JOB_CONTEXT.get(key,"")
 
     def r13_learning_record_status(key):
@@ -153,6 +148,8 @@ screen r13_learning_notes():
                             text note["title"] style "r13_key_text" size r13_read_size(26,31) color "#efd4a1" xsize 1088
                             text ("확인한 것 · "+note["fact"]) size r13_read_size(23,28) color "#fff2cf" xsize 1088
                             text ("모르는 것 · "+note["question"]) size r13_read_size(23,28) color "#a8cdec" xsize 1088
+                            if note.get("result"):
+                                text ("그 결과 · "+note["result"]) size r13_read_size(23,28) color "#efd4a1" xsize 1088
                             $ owned_keys=[k for k in note["keys"] if k in room13.get("evidence",[])]
                             if owned_keys:
                                 text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size r13_read_size(20,25) color "#d4dfd8" xsize 1088

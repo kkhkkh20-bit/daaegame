@@ -686,7 +686,18 @@ testcase town_c_locked:
     click pos (640,600) until screen "choice" timeout 40
     screenshot "tc1_offer.png"
     click "받아들인다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문을 살펴본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "안으로 들어간다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문을 밀어 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "안쪽 선반을 살핀다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문을 두드리며 기다린다"
     click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval (r13_has("observed:store_door") and "H1" not in room13["evidence"] and room13["day"]==4)
     screenshot "tc1_after.png"
     $ r13_qa_town_dump()
 
@@ -696,8 +707,20 @@ testcase town_c_wedge:
     pause 3.0
     run Call("r13_qa_roam",dict(day=3,period=2,location="inn",life_poc=True),("ev_b_done",),("wedge",))
     click pos (640,600) until screen "choice" timeout 40
-    click "쐐기를 챙겨 들고 받아들인다"
+    click "받아들인다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "가진 물건을 문에 써 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "나무 쐐기"
+    click pos (640,600) until screen "choice" timeout 40
+    click "안으로 들어간다"
+    click pos (640,600) until screen "choice" timeout 40
+    assert eval ("H1" not in room13["evidence"])
+    click "안쪽 선반을 살핀다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문틈으로 빗장을 들어 올려 나간다"
     click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval ("H1" in room13["evidence"] and r13_has("room_searched") and room13["day"]==3)
     $ r13_qa_town_dump()
 
 testcase town_c_mungchi:
@@ -812,7 +835,7 @@ testcase ep2_nabi:
     run Call("r13_qa_roam",dict(day=2,period=2,location="kitchen",life_poc=True))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "e2_kitchen.png"
-    click "짐을 같이 날라 준다"
+    click "음식 짐을 같이 날라 준다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ r13_edit(day=3,period=1,location="dining")
@@ -874,7 +897,7 @@ testcase ep4_tok:
     click "광장 등을 직접 살펴본다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "톡의 편을 든다"
+    click "증거도 없이 가둘 겁니까"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_talk","resident_ubak")
@@ -905,10 +928,10 @@ testcase town_a_extort:
     run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("ep1_done",),(),2)
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "ta_offer.png"
-    click "물건을 받아 오면 그때 주겠다고 한다"
+    click "짐을 받아 오면 돈을 주겠다고 한다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "백 부인 빚 때문이냐고 정면으로 묻는다"
+    click "백 부인 빚 때문입니까"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
     click "입막음 값으로 여덟 냥을 받는다"
@@ -988,7 +1011,7 @@ testcase skip_modes:
     click pos (1150,90) until screen "choice" timeout 40
     assert eval (not r13_fast_read)
     assert eval ("W5" in room13["evidence"])
-    click "톡의 편을 든다"
+    click "증거도 없이 가둘 겁니까"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ open("qa_result.txt","w").write("skip to choice, number key 4 picked sliver question")
@@ -1083,7 +1106,7 @@ testcase b3_scale_half:
     click "저울이 기울어 있다고 말한다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "입막음 값으로 반값을 요구한다"
+    click "제 물건만 반값에 주시죠"
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 40
     assert eval (r13_has("shop_half") and r13_shop_price(room13,"hat")==3 and r13_shop_price(room13,"snack")==1)
@@ -1096,10 +1119,10 @@ testcase b3_firewood:
     run Call("r13_qa_roam",dict(day=5,period=2,location="school",life_poc=True,case_state="occurred",daram_state="held"),("ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ev_visit:5","ev_e_done"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "b3_wood.png"
-    click "왜 그러는지 묻는다"
+    click "왜 장작을 가져가는지 묻는다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "학교 일을 대신 하겠다고 한다"
+    click "대피소 장작을 대신 나르겠다고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval ("W8" in room13["evidence"] and r13_has("bori_ally") and room13["period"]==2)
@@ -1112,7 +1135,7 @@ testcase b3_pages:
     run Call("r13_qa_roam",dict(day=4,period=0,location="post",life_poc=True),("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "b3_pages.png"
-    click "베껴 둘 시간을 달라고 한다"
+    click "장부를 베낄 시간을 달라고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("pages_sold") and not r13_has("know_stone_history"))
@@ -1148,7 +1171,7 @@ testcase carry_refuse:
     click "마차 썰매를 빌린다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 30
-    click "열 냥에 빌린다"
+    click "썰매를 열 냥에 빌린다"
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 30
     assert eval (r13_has("transport_terms") and r13_cash_now()==20)
@@ -1190,7 +1213,7 @@ testcase w2e_tools:
     pause 3.0
     run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","w2e_p_done"))
     click pos (1150,90) until screen "choice" timeout 60
-    click "모른 척한다"
+    click "제가 결정할 일은"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 60
     assert eval (r13_has("tools_sold") and r13_has("tools_missing") and "부리의 할아버지 도구는 도시로 팔려 갔다." in r13_ending_notes())
@@ -1373,10 +1396,10 @@ testcase w1c_mother_line:
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_goto",2,0,"post")
     click pos (1150,90) until screen "choice" timeout 40
-    click "슬링을 달랜다"
+    click "오늘 품삯은 제가 내겠습니다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "가짜 편지를 흘리게 한다"
+    click "할머니께 쪽지 하나만"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("mom_portrait") and r13_has("fake_letter_planted") and "H9" in room13["evidence"])
@@ -1414,6 +1437,268 @@ testcase w1c_wall_and_seal:
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("fake_testimony"))
+
+testcase karo_work_offer:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=2,location="room13",life_poc=True),())
+    pause 1.0
+    $ r13_edit(flags=[f for f in room13["flags"] if f!="livelihood_open"])
+    run Call("r13_qa_goto",2,0,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 60
+    assert eval (r13_has("livelihood_open") and room13["period"]==0)
+
+testcase linebreak_pages:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ preferences.text_cps=0
+    run Call("r13_qa_linebreak")
+    pause 1.5
+    screenshot "lb_two_sentences.png"
+    click pos (1150,90)
+    pause 1.5
+    screenshot "lb_page1.png"
+    click pos (1150,90)
+    pause 1.5
+    screenshot "lb_page2.png"
+
+testcase present_portrait:
+    # 0.18.13: the portrait is a record shown from the notebook; a name-only question stays vague.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ep1_patrol_seen","ev_a_done"),(),12)
+    click pos (1150,90) until screen "choice" timeout 40
+    click "엄마 초상을 그려 달라고 한다 (5냥)"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("P01" in room13["evidence"] and not [k for k,s in r13_topics("resident_sling")+r13_topics("resident_lamplighter") if k.startswith("portrait_")])
+    assert eval ("ask_mom:sling" in [k for k,s in r13_topics("resident_sling")])
+    run Function(r13_qa_present,"resident_sling","P01")
+    assert eval ("초롱 아저씨" in r13_qa_last_present and "J08" in room13["evidence"] and "ask_mom:sling" not in [k for k,s in r13_topics("resident_sling")])
+    run Function(r13_qa_present,"resident_lamplighter","P01")
+    assert eval ("확인할 필요" in r13_qa_last_present and "J07" in room13["evidence"] and r13_has("portrait_lamp_seen"))
+    assert eval (r13_goal_is_question())
+    # Reply sent on day 8 afternoon: normally day 9 afternoon (abs 33); with the face known, day 9 morning (abs 32).
+    run Function(r13_edit,day=8,period=1)
+    run Function(r13_w2_action_done,"w2_reply")
+    assert eval (room13["reply_due"]==32)
+
+testcase memory_grudge:
+    # 0.18.14: a harmed resident stays cold despite good rumors; repair is tied to the incident.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="room13"),("yeoni_hostile","rumor:fair","heard:rumor:fair"),(),5)
+    pause 1.0
+    assert eval ("grudge_cold:yeoni" in [k for k,s in r13_topics("resident_yeoni")] and "grudge_fix:yeoni" in [k for k,s in r13_topics("resident_yeoni")])
+    assert eval (r13_conversation_topic_lines("grudge_cold:yeoni")[0][1].startswith("광장에서 좋은 말이 돈다는 건 알아요. 그래도"))
+    assert eval (r13_qa_price("rumor:briber")==r13_qa_price()+1 and r13_qa_price("rumor:briber","rumor:fair")==r13_qa_price())
+    assert eval (r13_qa_price("eunho_hostile","rumor:fair")==r13_qa_price()+1 and r13_qa_price("eunho_hostile","eunho_reconciled")==r13_qa_price())
+    assert eval (r13_bad_rumors()==[])
+    run Call("r13_qa_grudge","yeoni")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("yeoni_reconciled") and r13_cash_now()==2 and not [k for k,s in r13_topics("resident_yeoni") if k.startswith("grudge_")])
+
+testcase ledger_order:
+    # 0.18.15 B-2: showing the ledger to 백 부인 first lets her move the goods at the next time change.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="store",evidence=["H1"]),("ev_b_done","ev_c_done"))
+    pause 1.0
+    run Function(r13_qa_present,"resident_madam","H1")
+    assert eval ("지난 장부" in r13_qa_last_present and not r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard"]))
+    run Function(r13_edit,period=1)
+    assert eval (r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard_moved"]) and not r13_object_visible(ROOM13["objects"]["store"]["sacks"]))
+    run Function(r13_qa_present,"resident_seori","H1")
+    assert eval ("H11" in room13["evidence"] and "H10" not in room13["evidence"] and "H1" in room13["evidence"] and not r13_has("madam_exposed"))
+    run Function(r13_qa_present,"resident_eunho","H1")
+    assert eval (r13_has("eunho_deal_offered") and "ledger_deal" in [k for k,s in r13_topics("resident_eunho")])
+
+testcase testimony_scope:
+    # 0.18.15 C: first statements stay; records narrow them; rumors keep their source.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="room13",life_poc=True),())
+    pause 1.0
+    assert eval ("rumor_mom:yeoni" in [k for k,s in r13_topics("resident_yeoni")] and "rumor_mom:karo" not in [k for k,s in r13_topics("karo")])
+    run Function(r13_finish_topic,"rumor_mom:yeoni")
+    assert eval ("J11" in room13["evidence"] and "rumor_mom:karo" in [k for k,s in r13_topics("karo")])
+    run Function(r13_finish_topic,"rumor_mom:karo")
+    assert eval ("J13" in room13["evidence"] and "엄마는 보지 못했다" in ROOM13["evidence"]["J13"]["establishes"])
+    run Function(r13_edit,day=5,case_state="occurred",victim_state="dead",evidence=["E11","E05"])
+    run Function(r13_finish_topic,"nabi_alibi")
+    assert eval ("J09" in room13["evidence"] and "E15" in room13["evidence"] and "nabi_gap" not in [k for k,s in r13_topics("nabi")])
+    run Function(r13_qa_present,"nabi","E11")
+    assert eval ("nabi_gap" in [k for k,s in r13_topics("nabi")])
+    run Function(r13_finish_topic,"nabi_gap")
+    assert eval ("E12" in room13["evidence"] and "J09" in room13["evidence"])
+    run Function(r13_qa_present,"doto","E05")
+    assert eval ("J10" in room13["evidence"] and "복도 쪽 문" in r13_qa_last_present)
+
+testcase delivery_cord:
+    # 0.18.16 D-1: no double-pay choice; reading labels and tying the boxes with a cord leads to the bonus.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="gate"),(),("cord","snack"))
+    pause 1.0
+    run Call("r13_qa_delivery")
+    click pos (640,600) until screen "choice" timeout 40
+    click "작은 상자의 짐표를 읽는다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "짐을 수레에 올려 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "가진 물건을 짐에 써 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "구운 밤"
+    click pos (640,600) until screen "choice" timeout 40
+    click "가진 물건을 짐에 써 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "질긴 묶음끈"
+    click pos (640,600) until screen "choice" timeout 40
+    click "짐을 나르러 간다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice=="combine" and "same_lane" in r13_wallet(room13)["relations"])
+    assert eval (r13_complete_job(room13,"delivery","combine")[1]["pay"]==14)
+
+testcase night_talk:
+    # 0.18.16 E: 다람이 reacts only to what happened; the topic opens with Dad's telling.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=2,location="room13"),("store_locked_night",))
+    pause 1.0
+    assert eval (r13_home_with_daram() and "night:locked" in [k for k,s in r13_topics("daram")] and "night:ledger_madam" not in [k for k,s in r13_topics("daram")])
+    run Function(r13_town_set,madam_alerted_at=0)
+    assert eval ("night:ledger_madam" in [k for k,s in r13_topics("daram")])
+    run Function(r13_edit,location="square")
+    assert eval ("night:locked" not in [k for k,s in r13_topics("daram")])
+
+testcase owl_and_buri:
+    # 0.18.17: living-elder scenes, 부리's stages, 백 부인 ledger approach, 톡 follow-up.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="hall",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_owl_omen_done"))
+    click pos (640,600) until screen "choice" timeout 40
+    click "수리가 끝나면 다시 오겠습니다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_has("owl_threshold_respected"))
+    run Function(r13_edit,day=3)
+    assert eval ("owl_old_case" in [k for k,s in r13_topics("resident_owlgp")])
+    run Function(r13_edit,day=6,case_state="occurred",victim_state="dead",evidence=["E35","H1"])
+    assert eval ("buri_assert" in [k for k,s in r13_topics("buri")])
+    run Function(r13_qa_present,"buri","E35")
+    assert eval (r13_has("buri_revised") and "아직 무슨 말을" in r13_qa_last_present and "buri_assert" not in [k for k,s in r13_topics("buri")])
+    run Function(r13_qa_present,"resident_madam","H1")
+    assert eval ("지난 장부" in r13_qa_last_present and "ledger_madam:approach" in [k for k,s in r13_topics("resident_madam")])
+    run Function(r13_flag,"tok_hostile","tok_cleared")
+    assert eval ("tok_after_doubt" in [k for k,s in r13_topics("resident_tok")])
+
+testcase inn_change:
+    # 0.18.18 A: a raised lever before the case makes Granny call off the plan; wax trace after the case.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="kitchen",kitchen_switch=True),("passage_known","ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    pause 1.0
+    assert eval (r13_plan_noticed() and r13_object_visible(ROOM13["objects"]["kitchen"]["rear"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after"]))
+    run Function(r13_flag,"observed:kitchen:rear")
+    run Function(r13_edit,case_state="occurred")
+    assert eval (r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after_known"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after"]))
+    run Function(r13_edit,case_state="pending",day=4,period=2,location="hall")
+    run Call("r13_case_choice")
+    click pos (640,600) until screen "choice" timeout 40
+    click "까로와 되돌아온 짐을 확인하러 간다"
+    click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval (room13["case_state"]=="prevented" and room13["victim_state"]=="protected" and "H13" in room13["evidence"] and "E34" in room13["evidence"] and r13_has("plan_noticed"))
+
+testcase trial_notes:
+    # 0.18.19: three lines per claim after the trial; no record names.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",case_state="occurred",propositions=["C1","C2"]),())
+    pause 1.0
+    run Function(r13_record_trial_notes)
+    assert eval (len(room13["trial_notes"])==4 and room13["trial_notes"][2]["result"]=="할머니의 이동에 관한 주장은 남았다." and not any(k in n["fact"]+n["question"]+n["result"] for n in room13["trial_notes"] for k in ROOM13["evidence"]))
+    assert eval (any(n.get("result")=="잠긴 방에 아이만 있었다는 주장은 무너졌다." for n in r13_first_mystery_notes()))
+
+testcase reinspect_and_credit:
+    # 0.18.19: candlestick parts from the first run; 은호's hidden ledger is credit, not the murder.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="clinic",case_state="occurred",victim_state="dead",daram_state="held",evidence=["E07"],read_topics=["tok_repair"]),())
+    pause 1.0
+    assert eval ("seal_look" in [k for k,s in r13_topics("resident_seori")])
+    run Function(r13_flag,"saw_eunho_hide")
+    run Function(r13_finish_topic,"eunho_hidden_ledger")
+    assert eval ("J16" in room13["evidence"] and "13호 사건" in ROOM13["evidence"]["J16"]["does_not_establish"])
+    run Function(r13_edit,day=9)
+    run Function(r13_flag,"eunho_refuses")
+    assert eval ("w2_eunho_credit" in [k for k,s in r13_topics("resident_eunho")])
+
+testcase use_knowledge:
+    # 0.18.19: play dumb, test testimony by a favour, keep the envelope sealed.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="inn",life_poc=True,evidence=["H9"]),("know_granny_reads","warning_location"))
+    pause 1.0
+    assert eval ("granny_letter_ask" in [k for k,s in r13_topics("granny")] and "granny_letter_confront" in [k for k,s in r13_topics("granny")])
+    run Function(r13_finish_topic,"granny_letter_confront")
+    assert eval (r13_has("granny_knows_found_out") and "granny_letter_ask" not in [k for k,s in r13_topics("granny")])
+    run Function(r13_edit,location="square")
+    assert eval ("warning_keep" in [k for k,a in r13_actions()] and "warning" in [k for k,a in r13_actions()])
+    run Function(r13_finish_action,"warning_keep")
+    assert eval (r13_has("warning_sealed_held") and "warning" not in [k for k,a in r13_actions()])
+    run Function(r13_finish_topic,"warning_open_with")
+    assert eval ("E18" in room13["evidence"] and "J18" in room13["evidence"])
+    run Function(r13_edit,day=5,case_state="occurred")
+    run Function(r13_finish_topic,"doto_view_claim")
+    run Function(r13_finish_topic,"doto_view_test")
+    assert eval ("J17" in room13["evidence"])
+
+testcase event_offer:
+    # 0.18.19: an ordinary event shows as a marker; clicking enters, passing by applies its look-away outcome.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+offers","ev_l_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("r13_w1c_portrait" in room13["offers"] and not r13_has("ev_g_done"))
+    click "피코가 판자에"
+    click pos (1150,90) until screen "choice" timeout 40
+    click "모른 척한다"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("ev_g_done") and "r13_w1c_portrait" not in room13.get("offers",{}))
+    run Function(r13_edit,location="post",period=0)
+    run Function(r13_flag,"ev_g_done")
+    run Function(r13_offer,"r13_w1c_letters")
+    run Function(r13_edit,period=1)
+    run Function(r13_offers_tick)
+    assert eval (r13_has("ev_l_done") and r13_has("warning_exposed") and room13["offer_news"])
+
+testcase grant_after_reaction:
+    # 0.18.20: a record earned by showing something is granted after the reaction is read, once.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="post",life_poc=True,evidence=["P01"]),())
+    pause 1.0
+    run Function(r13_qa_present_deferred,"resident_sling","P01")
+    assert eval ("J08" not in room13["evidence"] and room13["pending_grants"] and r13_has("portrait_known"))
+    run Function(r13_flush_grants)
+    assert eval ("J08" in room13["evidence"] and not room13["pending_grants"])
+    run Function(r13_qa_present_deferred,"resident_sling","P01")
+    run Function(r13_flush_grants)
+    assert eval (room13["evidence"].count("J08")==1)
 testcase fullbody_dialogue:
     pause 2.0
     click "처음부터"

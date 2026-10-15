@@ -14,20 +14,20 @@ async def main():
    await pg.goto(URL);await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu')
    await q.py('import renpy;s=renpy.store;s.preferences.text_cps=0;result=True');await q.press('처음부터');await q.advance();await q.wait('r13_hub')
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=3,period=0,location="workshop",life_poc=True);s.r13_flag("entry_corrected","lodging","livelihood_open",*["evening_brief:%d"%d for d in range(1,14)]);s.r13_upgrade();'+ENTER)
-   await q.input(1220,50);await q.advance();await q.wait('choice');await q.shot('00-tok-accused')
-   await q.press('톡에게 등의 돌 조각이 무엇인지 묻는다');await q.advance();await q.wait('choice')
-   await q.press('톡의 편을 든다');await q.advance();await q.wait('r13_hub')
+   await q.input(1220,50);await q.advance();await q.wait('r13_hub');await q.shot('00-offer-marker');await q.press('수리점 앞에 사람들이');await q.advance();await q.wait('choice');await q.shot('00-tok-accused')
+   await q.press('등 안의 돌 조각은');await q.advance();await q.wait('choice')
+   await q.press('“증거도 없이 가둘 겁니까?”');await q.advance();await q.wait('r13_hub')
    room=await q.room();assert 'W5' in room['evidence'] and 'ep4_open' in room['flags'] and 'tok_detained' not in room['flags'],room
    report['checks'].append('Episode 4: Tok accused at workshop → ask about sliver (W5) → defend Tok')
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=3,period=1,location="store",life_poc=True);s.r13_flag("entry_corrected","lodging","livelihood_open",*["evening_brief:%d"%d for d in range(1,14)]);s.r13_upgrade();'+ENTER)
-   await q.input(1220,50);await q.advance();await q.wait('choice');await q.shot('01-store-theft')
+   await q.input(1220,50);await q.advance();await q.wait('r13_hub');await q.press('백 부인이 누군가를');await q.advance();await q.wait('choice');await q.shot('01-store-theft')
    await q.press('수리점 쪽 골목으로 돌아가 앞질러 간다');await q.advance();await q.wait('choice');await q.shot('02-caught')
    await q.press('무쇠 할아버지에게 직접 가져다준다');await q.advance();await q.wait('r13_hub')
    room=await q.room();assert 'H5' in room['evidence'] and 'musoe_recovering' in room['flags'],room
    report['checks'].append('Day 3 store theft → alley chase → herbs to Musoe: mine map H5, recovery flag')
    await q.py('import renpy;s=renpy.store;s.r13_edit(period=2,location="inn");'+ENTER)
    await q.input(1220,50);await q.advance();await q.wait('choice');await q.shot('03-madam-offer')
-   await q.press('받아들인다');await q.advance();await q.wait('r13_hub');await q.shot('04-after-lock')
+   await q.press('받아들인다');await q.advance();await q.press('안으로 들어간다');await q.advance();await q.press('문을 두드리며 기다린다');await q.advance();await q.wait('r13_hub');await q.shot('04-after-lock')
    room=await q.room();assert (room['day'],room['period'])==(4,1) and 'room_searched' in room['flags'],room
    report['checks'].append('Day 3 evening job accepted → locked overnight: day 4 afternoon, room searched')
    report['status']='passed'

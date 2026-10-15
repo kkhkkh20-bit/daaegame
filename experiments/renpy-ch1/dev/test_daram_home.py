@@ -37,7 +37,7 @@ class HomeTest(unittest.TestCase):
   self.ns['_r13_daram_home_compare']=original
   result=self.ns['r13_compare_result'](['E01','E18']);self.assertIn('poc:letter_conflict',self.state['flags']);self.assertNotIn('보여',result);self.assertNotIn('물어보',result)
  def test_mother_discussion_changes_after_actual_reunion(self):
-  self.state.update(day=10,mom_state='reunited',evidence=['M01']);text=' '.join(line for who,line in self.ns['r13_conversation_topic_lines']('home:daram:mother'));self.assertIn('이제 얼굴을 봤으니까',text);self.assertNotIn('엄마만 없는',text)
+  self.state.update(day=10,mom_state='reunited',evidence=['M01']);text=' '.join(line for who,line in self.ns['r13_conversation_topic_lines']('home:daram:mother'));self.assertIn('이제 엄마 얼굴을 봤으니까',text);self.assertNotIn('엄마만 없는',text)
  def test_present_keeps_original_side_effects_and_authored_tool_reply(self):
   self.state['evidence']=['E01','E18','E03']
   calls=[]

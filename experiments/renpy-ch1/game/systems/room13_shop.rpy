@@ -5,39 +5,39 @@ init 94 python:
     # key: (npc, topic title, extra condition, lines, give, flags)
     R13_ITEM_TOPICS = {
         "hat": ("daram","털모자를 씌워 준다",lambda:r13_home_with_daram(),[
-            ("dad","이리 와. 오늘 산 거야."),
-            ("daram","모자다! 귀가 안 시려."),
-            ("dad","밤에는 바람이 세니까 꼭 쓰고 다녀."),
-            ("daram","엄마 만나면 보여 줄래. 아빠가 사 줬다고.")],[],["daram_hat"]),
+            ("dad","이리 와. 오늘 너 주려고 산 털모자야."),
+            ("daram","털모자다! 이제 귀 안 시려."),
+            ("dad","밤에는 바람이 세니까 이 모자 꼭 쓰고 다녀."),
+            ("daram","엄마 만나면 이 모자 보여 줄래. 아빠가 사 줬다고 할 거야.")],[],["daram_hat"]),
         "postcard": ("daram","엄마에게 엽서를 쓴다",lambda:r13_home_with_daram(),[
-            ("dad","엄마한테 보낼 엽서야. 받을 곳은 아직 모르지만, 써 두자."),
-            ("daram","나는 그림 그릴래. 여관이랑 눈사람이랑."),
-            ("dad","(어디로 부쳐야 할지 모르는 엽서다. 그래도 이 아이가 그린 그림만큼은 꼭 전하고 싶다.)",{"thought":True}),
-            ("daram","다 그렸다. 엄마가 보면 웃을 거야.")],[],["postcard_written"]),
+            ("dad","엄마한테 보낼 엽서야. 어디로 보낼지는 아직 모르지만, 미리 써 두자."),
+            ("daram","나는 엽서에 그림 그릴래. 여관이랑 눈사람이랑."),
+            ("dad","(어디로 부쳐야 할지 모르는 엽서다. 그래도 이 아이의 그림만큼은 꼭 전하고 싶다.)",{"thought":True}),
+            ("daram","다 그렸다. 엄마가 이 그림 보면 웃을 거야.")],[],["postcard_written"]),
         "lamp_oil": ("resident_lamplighter","등잔 기름을 건넨다",lambda:not r13_has("topic:lamplighter_warning"),[
-            ("dad","등잔 기름입니다. 밤마다 등을 돌보시느라 모자라실 것 같아서요."),
+            ("dad","등잔 기름입니다. 밤마다 등을 돌보시니 기름이 모자라실 것 같아서요."),
             ("resident_lamplighter","……고맙습니다. 요즘은 기름도 아껴 써야 해서요."),
-            ("resident_lamplighter","부인도 전에 이렇게 기름을 챙겨 주셨어요. 그때 맡기신 봉투가 하나 있었는데……."),
-            ("dad","봉투요?"),
-            ("resident_lamplighter","다음에 말씀드릴게요. 지금은 등을 마저 돌봐야 해서.")],[],["topic:lamplighter_warning","lamplighter_trust"]),
+            ("resident_lamplighter","부인도 전에 이렇게 기름을 챙겨 주셨어요. 그때 저한테 맡기신 봉투가 하나 있었는데……."),
+            ("dad","아내가 맡긴 봉투요?"),
+            ("resident_lamplighter","봉투 이야기는 다음에 말씀드릴게요. 지금은 등을 마저 돌봐야 해서요.")],[],["topic:lamplighter_warning","lamplighter_trust"]),
         "herbs": ("resident_seori","해열 약초를 건넨다",lambda:"E20" not in store.room13.get("evidence",[]),[
-            ("dad","해열 약초입니다. 환자들에게 쓰실 수 있을까 해서요."),
-            ("resident_seori","마침 떨어져 가던 참이었습니다. 받겠습니다."),
-            ("resident_seori","약초를 달이는 동안 환자 곁에 있어 보시겠습니까? 열이 내리면서 어떻게 달라지는지 직접 보시는 게 낫겠군요."),
+            ("dad","해열 약초입니다. 열이 나는 환자들에게 쓰실 수 있을까 해서요."),
+            ("resident_seori","마침 약초가 떨어져 가던 참이었습니다. 고맙게 받겠습니다."),
+            ("resident_seori","약초를 달이는 동안 환자 곁에 있어 보시겠습니까? 열이 내리면서 환자가 어떻게 달라지는지 직접 보시는 게 낫겠군요."),
             (None,"서리와 함께 환자 곁을 지켰다. 열이 내리자 환자는 흐린 눈으로 가족의 이름을 불렀다.")],["E20"],["clinic_observation"]),
         "file": ("resident_tok","정밀 줄칼을 건넨다",lambda:"E13" not in store.room13.get("evidence",[]),[
             ("dad","정밀 줄칼입니다. 작은 핀을 손보실 때 쓰시라고요."),
-            ("resident_tok","이런 걸 어떻게……. 마침 날이 무뎌져서 곤란했어요."),
-            ("resident_tok","그러고 보니 할머니 브로치 핀도 이걸로 다듬었더라면 좋았을 텐데. 새로 갈아 끼운 핀의 쪽지가 아직 있어요. 보시겠어요?")],["E13"],[]),
+            ("resident_tok","이런 귀한 걸 어떻게……. 마침 쓰던 줄칼 날이 무뎌져서 애먹던 참이에요."),
+            ("resident_tok","그러고 보니 할머니 브로치 핀도 이 줄칼로 다듬었더라면 좋았을 텐데. 새로 갈아 끼운 핀의 수리 쪽지가 아직 있어요. 보시겠어요?")],["E13"],[]),
         "blanket": ("bami","두꺼운 담요를 건넨다",lambda:"E10" not in store.room13.get("evidence",[]),[
-            ("dad","두꺼운 담요야. 처마 밑은 밤에 많이 춥잖아."),
-            ("bami","……나한테 주는 거야? 아무것도 안 물어보고?"),
-            ("dad","응. 그냥 따뜻하게 지냈으면 해서."),
-            ("bami","그럼…… 나중에 그날 본 걸 조금 얘기해 줄게. 아무한테도 내 이름은 말하지 마.")],[],["topic:bami_saw"]),
+            ("dad","두꺼운 담요야. 네가 지내는 처마 밑은 밤에 많이 춥잖아."),
+            ("bami","……이거 나한테 주는 거야? 아무것도 안 물어보고?"),
+            ("dad","응. 그냥 네가 따뜻하게 지냈으면 해서."),
+            ("bami","그럼…… 나중에 그날 밤에 본 거 조금 얘기해 줄게. 대신 아무한테도 내 이름은 말하지 마.")],[],["topic:bami_saw"]),
         "firewood": ("resident_nubi","장작 묶음을 건넨다",lambda:True,[
-            ("dad","장작 묶음입니다. 아이들 있는 방부터 데우시라고요."),
-            ("resident_nubi","세상에, 이 귀한 걸……. 고마워요. 빨래 말릴 불도 없던 참이에요."),
-            ("resident_nubi","도움이 필요하면 말해요. 빨랫감 들고 드나드는 길은 내가 잘 알아요.")],[],["topic:w2_laundry","nubi_trust"]),
+            ("dad","장작 묶음입니다. 아이들 있는 방부터 데우세요."),
+            ("resident_nubi","세상에, 이 귀한 걸……. 고마워요. 빨래 말릴 불도 없던 참이었어요."),
+            ("resident_nubi","도움이 필요하면 말해요. 빨랫감 들고 여기저기 드나드는 길은 내가 훤히 알아요.")],[],["topic:w2_laundry","nubi_trust"]),
     }
     for _key,(_npc,_title,_cond,_lines,_give,_flags) in R13_ITEM_TOPICS.items():
         ROOM13["topics"]["item:"+_key]=dict(npc=_npc,title=_title,day=[2,14],need=[],give=list(_give),flags=list(_flags),lines=list(_lines))

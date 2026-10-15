@@ -65,8 +65,8 @@ init 73 python:
 
     ROOM13["topics"]["tool:seam"]=dict(npc="daram",title="이 바느질이 엄마 것과 닮았다고 했지?",day=[1,13],need=["E03"],give=[],flags=[],lines=[
         ("dad","붉은 매듭이 잘 보이네. 엄마 바느질하고 닮았다고 했지?"),
-        ("daram","응. 그래서 엄마 생각났어."),
-        ("dad","네가 닮았다고 한 부분도 같이 적어 둘게."),
+        ("daram","응. 그래서 엄마 생각이 났어."),
+        ("dad","네가 엄마 바느질하고 닮았다고 한 부분도 같이 적어 둘게."),
         ("daram","아빠, 실은 잡아당기지 마.")])
     ROOM13["topics"]["tool:plans"]=dict(npc="buri",title="도면에서 겹친 선은 어떻게 비교하면 됩니까?",day=[1,13],need=[],give=[],flags=[],lines=[
         ("dad","돋보기로 보니 옛 선 위로 다른 선이 겹쳐 있더군요."),
@@ -88,8 +88,8 @@ init 73 python:
             return [("daram","돋보기로 같이 봤던 거네. 내가 엄마 생각났다고 한 것도 적었어?"),
                 ("dad","응. 네가 한 말 그대로 적었어.")]
         if person=="buri" and key=="E04" and "plans" in notes and "tool:plans" in read and store.room13["day"]<=7:
-            return [("buri","돋보기로 봤던 선도 표시했군요. 외벽과 비교한 길이는 여기고요."),
-                ("dad","네. 옛 선과 덧그린 선을 섞지 않고 적었습니다.")]
+            return [("buri","돋보기로 봤던 선도 표시했군요. 외벽과 비교한 길이는 여기 적혀 있고요."),
+                ("dad","네. 옛 선과 덧그린 선을 섞지 않고 따로 적었습니다.")]
         return response
 
 screen r13_tool_closeup(key):
@@ -184,9 +184,9 @@ init 77 python:
         lines=r13_tool_base_topic_lines(key)
         if key!="tool:plans":return lines
         if "E04" in store.room13["evidence"]:
-            return lines+[("buri","빌려드린 옛 도면에 할머니가 보수하면서 선을 덧그린 거예요."),
+            return lines+[("buri","이건 빌려드린 옛 도면에, 할머니가 집을 보수하면서 선을 덧그린 거예요."),
                 ("dad","외벽과 비교해 적은 길이 옆에, 어느 선을 봤는지도 표시해 두겠습니다.")]
         if store.room13["period"]<3 and any(name=="map" for name,unused in r13_actions()):
-            return lines+[("buri","밖에서 창 사이 길이도 재 보세요. 여기 도면이랑 맞춰 보면 돼요."),
-                ("dad","도면을 다시 펼쳐서 외벽과 비교해 보겠습니다.")]
+            return lines+[("buri","밖에서 창과 창 사이 길이도 재 보세요. 그 길이를 이 도면이랑 대조해 보면 돼요."),
+                ("dad","그럼 도면을 다시 펼쳐서 외벽과 비교해 보겠습니다.")]
         return lines

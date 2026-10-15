@@ -29,13 +29,13 @@ async def main():
             await q.press('안내도'); await asyncio.sleep(1); await q.press('닫기'); await asyncio.sleep(1); assert not await q.py(GUIDE)
             focus = await q.py("import renpy;f=renpy.display.focus.get_focused();result=str(getattr(f,'id',None)) if f else None")
             report['guide_focus_after_close'] = focus
-            await q.press('2층으로'); await q.wait('r13_hub'); r = await q.room(); assert r['location'] == 'hall' and (r['day'], r['period']) == (before['day'], before['period'])
+            await q.press('2층으로'); await q.advance(); await q.wait('r13_hub'); r = await q.room(); assert r['location'] == 'hall' and (r['day'], r['period']) == (before['day'], before['period'])
             await q.shot('04-hall'); report['checks'].append('Lobby chip to hall: zero time cost')
             await pg.set_viewport_size({'width': 844, 'height': 390}); q.touch = True; await asyncio.sleep(1.2)
             await q.shot('05-hall-844x390'); await q.press('안내도'); await asyncio.sleep(1); await q.shot('06-guide-844x390')
             await q.press('닫기'); await asyncio.sleep(1)
-            await q.press('1층 로비'); await q.wait('r13_hub'); assert (await q.room())['location'] == 'inn'; await q.shot('07-lobby-844x390')
-            await q.press('주방'); await q.wait('r13_hub'); assert (await q.room())['location'] == 'kitchen'
+            await q.press('1층 로비'); await q.advance(); await q.wait('r13_hub'); assert (await q.room())['location'] == 'inn'; await q.shot('07-lobby-844x390')
+            await q.press('주방'); await q.advance(); await q.wait('r13_hub'); assert (await q.room())['location'] == 'kitchen'
             report['checks'].append('844x390 touch: guide open/close, hall->lobby->kitchen chips')
             assert not errors, errors
             report['status'] = 'passed-pending-visual-review'

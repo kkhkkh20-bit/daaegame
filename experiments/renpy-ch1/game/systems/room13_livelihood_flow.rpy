@@ -14,22 +14,22 @@ init 92 python:
         _r13_life_next_day()
 
     ROOM13["topics"]["life:karo"]=dict(npc="karo",title="마차는 언제 다시 출발합니까?",day=[2,14],need=["lodging"],give=[],flags=["livelihood_open"],lines=[
-        ("dad","마차는 언제 다시 출발합니까?"),
-        ("karo","축은 고쳐야 하고, 고개를 지나는 정기 마차도 겨울 동안 쉬어요. 제가 모는 마차로는 당장 돌아갈 수 없습니다."),
-        ("dad","하루 이틀 머물 생각이었는데……. 다른 길 사정도 아십니까?"),
-        ("karo","그건 지금 직접 확인해 봐야 해요. 제가 다니던 고개 길과는 다르니까요."),
-        ("karo","여기 머무는 동안 일손을 보태실래요? 짐 나르는 일은 한나절에 일곱 냥이에요. 여관하고 수리점도 사람이 필요하대요."),
-        ("dad","아내 소식도 계속 알아봐야 합니다."),
-        ("karo","배달하며 사람들을 만나 보세요. 대신 누구 집에 가는 짐인지부터 같이 확인하고요.")])
+        ("dad","그럼 마차는 언제 다시 출발합니까?"),
+        ("karo","바퀴 축도 고쳐야 하고, 고개를 넘는 정기 마차도 겨울에는 쉬어요. 그래서 제 마차로는 당장 돌아가실 수 없습니다."),
+        ("dad","하루 이틀만 머물 생각이었는데……. 고개 말고 다른 길 사정도 아십니까?"),
+        ("karo","다른 길은 직접 알아보셔야 해요. 제가 다니던 고개 길과는 사정이 다르거든요."),
+        ("karo","여기 계시는 동안 일손을 보태 보실래요? 짐 나르는 일은 한나절에 일곱 냥이에요. 여관이랑 수리점에서도 일할 사람을 구한대요."),
+        ("dad","일도 좋지만, 아내 소식도 계속 알아봐야 합니다."),
+        ("karo","그럼 배달을 다니면서 마을 사람들을 만나 보세요. 대신 누구네 짐인지는 꼭 짐표와 같이 확인하고요.")])
     ROOM13["topics"]["life:nabi"]=dict(npc="nabi",title="초롱 씨 그릇은 늘 따로 챙기니?",day=[2,14],need=["life:nabi_helped"],give=[],flags=[],lines=[
-        ("dad","아까 따로 둔 그릇, 초롱 씨 몫이라고 했지?"),
-        ("nabi","네. 밖에서 등불을 돌보느라 식사 때를 잘 놓쳐요."),
-        ("dad","아내가 여기 머물 때도 그분이 왔었니?"),
-        ("nabi","오긴 했죠. 두 분이 무슨 얘길 했는지는 초롱한테 직접 물어봐요.")])
+        ("dad","아까 따로 둔 그릇 말이야, 초롱 씨 몫이라고 했지?"),
+        ("nabi","네. 밖에서 등불을 돌보느라 끼니때를 자주 놓치거든요."),
+        ("dad","아내가 여기 머물 때도 등불 돌보는 분이 왔었니?"),
+        ("nabi","네, 오긴 했죠. 부인이랑 무슨 얘기를 했는지는 초롱한테 직접 물어봐요.")])
     ROOM13["topics"]["life:buri"]=dict(npc="buri",title="장부의 숫자는 언제 옮겨 적습니까?",day=[2,14],need=["life:buri_honest"],give=[],flags=[],lines=[
-        ("buri","아까 모자란 부품, 알려줘서 고마워요. 새로 센 수를 적어 뒀어요."),
-        ("dad","장부에 적힌 수가 실제 물건과 다를 때도 있군요."),
-        ("buri","일 끝나고 옮겨 적으니까요. 종이에 쓰였다고 항상 맞는 건 아니에요.")])
+        ("buri","아까 모자란 부품 알려 줘서 고마워요. 다시 세어 본 수를 장부에 적어 뒀어요."),
+        ("dad","장부에 적힌 수와 실제 물건 수가 다를 때도 있군요."),
+        ("buri","일이 다 끝난 뒤에 장부에 옮겨 적으니까요. 그래서 적혀 있다고 늘 맞는 건 아니에요.")])
 
     _r13_life_topics=r13_topics
     def r13_topics(person):
@@ -52,20 +52,21 @@ label r13_livelihood:
     $ r13_edit(location=r13_job_spec["place"])
     call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")
     if r13_job_key=="delivery":
-        call r13_lines([("karo","이 두 짐은 이름과 목적지부터 확인하고 옮깁시다."),("dad","하나는 광장, 다른 하나는 그 뒤의 집이군요.")],"life:delivery:start")
+        call r13_lines([("karo","이 두 짐은 받는 사람 이름과 목적지부터 확인하고 옮깁시다.")],"life:delivery:start:v2")
     elif r13_job_key=="kitchen":
-        call r13_lines([("nabi","닦은 그릇은 여기. 이 한 벌은 따로 놓아 줘요."),("dad","응. 이쪽은 식당으로 내가면 되니?")],"life:kitchen:start")
+        call r13_lines([("nabi","닦은 그릇은 여기에 두고요. 이 한 벌은 따로 놓아 줘요."),("dad","응. 나머지 그릇은 식당으로 내가면 되니?")],"life:kitchen:start")
     else:
-        call r13_lines([("buri","같은 크기끼리 나눠 주세요. 다 세면 장부에 표시하고요."),("dad","장부보다 한 개 적군요.")],"life:repair:start")
+        call r13_lines([("buri","부품은 같은 크기끼리 나눠 주세요. 다 세고 나면 장부에 표시하고요."),("dad","세어 보니 장부에 적힌 것보다 한 개 적군요.")],"life:repair:start")
     $ r13_job_question=r13_job_spec["choice"]
     $ r13_combined_pay=R13_JOBS["delivery"]["pay"]*2
-    menu:
-        "주어진 일을 마친다":
-            $ r13_job_choice="finish"
-        "[r13_job_question]":
-            $ r13_job_choice="ask"
-        "두 배달을 묶어 맡는다 · [r13_combined_pay]냥" if r13_job_key=="delivery" and "same_lane" in r13_wallet(room13)["relations"] and not r13_wallet(room13)["combined_paid"]:
-            $ r13_job_choice="combine"
+    if r13_job_key=="delivery":
+        call r13_delivery_inspect
+    else:
+        menu:
+            "맡은 일만 마친다":
+                $ r13_job_choice="finish"
+            "[r13_job_question]":
+                $ r13_job_choice="ask"
     $ r13_life_state,r13_life_result=r13_complete_job(room13,r13_job_key,r13_job_choice)
     if not r13_life_result:
         return
@@ -73,15 +74,55 @@ label r13_livelihood:
     $ r13_time_consequences(room13)
     if r13_life_result["observed"]:
         if r13_job_key=="delivery":
-            call r13_lines([("dad","두 집이 같은 길에 있네요. 다음에는 묶어서 가져가도 되겠습니까?"),("karo","짐표를 잘 보셨네요. 다음번엔 두 건을 맡기죠. 끈이 없으면 제 것을 쓰세요.")],"life:delivery:route")
+            call r13_lines([("dad","받는 집은 잘 아십니까?"),("karo","광장 뒤는 제가 매일 다니는 길이에요. 짐 끈은 수레에 걸어 뒀으니 필요하면 쓰세요.")],"life:delivery:route:v2")
         elif r13_job_key=="kitchen":
-            call r13_lines([("dad","이 그릇은 누구 몫이니?"),("nabi","초롱이요. 돌아오면 드려야 해요. 식사 나간 뒤에 이야기해요.")],"life:kitchen:notice")
+            call r13_lines([("dad","따로 놓은 이 그릇은 누구 몫이니?"),("nabi","초롱 몫이요. 돌아오면 드려야 해요. 다른 이야기는 손님 식사를 내간 다음에 해요.")],"life:kitchen:notice")
         else:
-            call r13_lines([("dad","하나가 모자랍니다. 아직 장부에는 표시하지 않았어요."),("buri","잘했어요. 적힌 수에 억지로 맞추지 마세요. 제가 어디 썼는지 찾아볼게요.")],"life:repair:honest")
+            call r13_lines([("dad","부품 하나가 모자랍니다. 그래서 장부에는 아직 표시하지 않았어요."),("buri","잘했어요. 장부에 적힌 수에 억지로 맞추지 마세요. 모자란 하나는 제가 어디 썼는지 찾아볼게요.")],"life:repair:honest")
         $ r13_flag(*["life:"+mark for mark in r13_wallet(room13)["relations"]])
     elif r13_life_result["combined"]:
-        call r13_lines([("karo","한 길에서 두 건을 마쳤네요. 약속대로 두 건 값입니다.")],"life:delivery:combined")
+        call r13_lines([("karo","한 번 나간 길에 두 건을 다 마쳤네요. 약속대로 두 건 값입니다.")],"life:delivery:combined")
     $ renpy.notify("일당 %d냥 · 현재 %d냥"%(r13_life_result["pay"],r13_wallet(room13)["cash"]))
+    return
+
+# Two parcels, one address (owner's knowledge-run plan D-1, 0.18.16). No "earn double" choice:
+# the labels can be read, the load tried, and an owned item (or 까로's cord, once he offered it)
+# used on the boxes. Pay, the once-only bonus and time stay as in r13_complete_job.
+label r13_delivery_inspect:
+    $ _dv_tied=False
+    $ _dv_loop=True
+    while _dv_loop:
+        menu:
+            "큰 상자의 짐표를 읽는다":
+                call r13_lines([(None,"받는 곳: 광장 뒤 세 번째 집, 솔 씨 댁. 큰 나무 상자.")],"life:delivery:label_big")
+            "작은 상자의 짐표를 읽는다":
+                call r13_lines([(None,"받는 곳: 광장 뒤 세 번째 집, 솔 씨 댁. 작은 상자. 바닥이 매끈하다.")],"life:delivery:label_small")
+            "짐을 수레에 올려 본다" if not _dv_tied:
+                call r13_lines([(None,"큰 상자 위에 작은 상자를 얹었다. 수레가 기울 때마다 작은 상자가 미끄러졌다."),
+                    ("karo","따로 싣고 다녀와야겠어요. 위에 올리면 작은 게 자꾸 떨어져요.")],"life:delivery:load")
+            "가진 물건을 짐에 써 본다" if not _dv_tied and (r13_wallet(room13)["items"] or "karo_trusted" in r13_wallet(room13)["relations"]):
+                $ _dv_opts=[(R13_SHOP.get(i,{}).get("title",i),i) for i in r13_wallet(room13)["items"]]
+                if "karo_trusted" in r13_wallet(room13)["relations"] and "cord" not in r13_wallet(room13)["items"]:
+                    $ _dv_opts.append(("수레에 걸린 까로의 짐 끈","cord"))
+                $ _dv_item=renpy.display_menu(_dv_opts+[("그만둔다",None)])
+                if _dv_item=="cord":
+                    call r13_lines([(None,"두 상자를 함께 묶었다."),("karo","이렇게 실으면 한 번에 되겠네요.")],"life:delivery:tied")
+                    $ _dv_tied=True
+                elif _dv_item:
+                    call r13_lines([(None,"상자를 고정할 수 없다.")],"life:delivery:nouse")
+            "[r13_job_question]":
+                $ r13_job_choice="ask"
+                $ _dv_loop=False
+            "짐을 나르러 간다":
+                $ r13_job_choice="finish"
+                if _dv_tied and not r13_wallet(room13)["combined_paid"]:
+                    # Tying the two boxes is what shows they go to the same house in one trip.
+                    python:
+                        _w=r13_wallet(room13);_w["relations"]=list(dict.fromkeys(_w["relations"]+["same_lane"]))
+                        if "cord" not in _w["items"]:_w["relations"]=list(dict.fromkeys(_w["relations"]+["karo_trusted"]))
+                        r13_edit(livelihood=_w)
+                    $ r13_job_choice="combine"
+                $ _dv_loop=False
     return
 
 init 93 python:
@@ -91,7 +132,7 @@ init 93 python:
             return "gate"
         return _r13_life_where(person)
 
-    ROOM13["topics"]["life:snack"]=dict(npc="daram",title="구운 밤, 같이 먹을까?",day=[2,14],need=[],give=[],flags=[],lines=[("daram","반씩 나누자. 엄마 몫도 남겨 둘까?"),("dad","오늘은 따뜻할 때 먹자. 만나면 같이 사러 가고."),("daram","응. 그때는 내가 골라 줄래.")])
+    ROOM13["topics"]["life:snack"]=dict(npc="daram",title="구운 밤, 같이 먹을까?",day=[2,14],need=[],give=[],flags=[],lines=[("daram","이거 반씩 나눠 먹자. 엄마 몫도 남겨 둘까?"),("dad","오늘은 따뜻할 때 다 먹자. 다시 만나면 그때 셋이 같이 사러 가고."),("daram","응. 그때는 내가 골라 줄 거야.")])
     _r13_life_snack_topics=r13_topics
     def r13_topics(person):
         return [(key,spec) for key,spec in _r13_life_snack_topics(person)

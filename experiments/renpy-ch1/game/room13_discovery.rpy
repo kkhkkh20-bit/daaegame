@@ -24,7 +24,7 @@ init 61 python:
             return [(None, "「" + names + "」는 이미 수첩에 적혀 있다. 수첩에서 다시 읽거나 상대에게 보여 줄 수 있다.")]
         if location == "workshop" and key == "plans":
             if r13_has("E04"):
-                return [(None, "도면을 비교한 기록은 수첩에 있다. 부리에게 보여 주고 확인할 수 있다.")]
+                return [(None, "도면을 비교한 기록은 수첩에 적혀 있다. 부리에게 보여 주고 확인받을 수 있다.")]
             if any(action == "map" for action, unused in r13_actions()):
                 return [(None, "도면을 보는 것만으로는 비교 기록이 남지 않는다. 도면의 조사 메뉴에서 외벽과 비교할 수 있다.")]
         if location == "inn" and key == "register" and r13_has("lodging"):
@@ -48,7 +48,7 @@ init 61 python:
                 return [(person, "그 편지는 제가 보냈어요. 물어볼 일이 더 있으세요?")]
             if r13_has("lodging"):
                 return [(person, "가족에게 돌려줘야 할 물건이 남았잖아요."),
-                    ("dad", "아내가 직접 연락해 달라고 했는지도 듣고 싶습니다."),
+                    ("dad", "아내가 정말 직접 연락해 달라고 부탁했는지도 듣고 싶습니다."),
                     (None, "대화 목록의 ‘편지를 보내신 이유’에서 더 물어볼 수 있다.")]
             return [(person, "편지는 받으셨죠. 같은 방으로 드릴게요."),
                 (None, "대화 목록에서 방을 부탁할 수 있다.")]
@@ -56,7 +56,7 @@ init 61 python:
             if repeated:
                 return [(person, "종이에 남은 선과 지금 열리는 길은 따로 확인해야 해요. 그 점은 달라지지 않았어요.")]
             return [(person, "집 구조는 옛 도면이고, 붉은 선은 할머니가 고치면서 덧그린 거예요."),
-                ("dad", "이 기록만으로 지금도 열리는지까지 알 수는 없겠군요."),
+                ("dad", "이 기록만으로는 그 문이 지금도 열리는지까지 알 수 없겠군요."),
                 (person, "네. 도면대로 지금도 열리는지는 직접 봐야죠.")]
         return response
 
