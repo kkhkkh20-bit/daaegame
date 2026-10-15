@@ -32,16 +32,8 @@ init 60 python:
             w=max(1,int(width));h=max(1,int(height))
             out=renpy.Render(w,h);c=out.canvas()
             if self.focused:
-                # Two-pixel stepped brass rim; translucent fill only.
-                p=[(8,0),(w-8,0),(w-8,4),(w-1,4),(w-1,h-5),
-                   (w-8,h-5),(w-8,h-1),(8,h-1),(8,h-5),(0,h-5),(0,4),(8,4)]
-                c.polygon('#102825df',p)
-                c.lines('#9e8658',True,p,2)
-                c.line('#c5ac78',(12,2),(w-14,2),1)
-                c.line('#6e5e40',(12,h-3),(w-14,h-3),1)
-                c.rect('#d4b77e',(4,6,3,3))
-                c.rect('#d4b77e',(w-8,h-10,3,3))
-                c.polygon('#e5c58a',[(20,h//2),(26,h//2-6),(32,h//2),(26,h//2+6)])
+                out.blit(renpy.render(R13StonePanel(focused=True),w,h,st,at),(0,0))
+                c.polygon('#e5ddbf',[(20,h//2),(26,h//2-6),(32,h//2),(26,h//2+6)])
             return out
 
     def r13_title_save_line(slot):

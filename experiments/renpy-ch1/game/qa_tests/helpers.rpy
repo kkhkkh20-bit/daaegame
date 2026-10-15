@@ -424,3 +424,8 @@ init 999 python:
             gimmicks=dict(R13_GIMMICK_LABELS),
             places=list(R13_PLACES))
         open(renpy.config.basedir+"/scenario_dump.json","w").write(json.dumps(out,ensure_ascii=False,indent=1))
+
+label r13_qa_type_lines:
+    # 0.18.24 typography: narration, Dad's thought (no parentheses in source), speech with an item.
+    call r13_lines([(None,"책상 아래에 접힌 종이가 끼어 있다."),("dad","원본과 옮겨 쓴 명부가 다르다. 어디서 빠진 거지?",{"thought":True}),("dad","「예약 원본」에는 다람이 이름도 적혀 있습니다.")],"qa:typography")
+    jump r13_roam

@@ -2130,3 +2130,27 @@ testcase compare_j09:
     run Call("r13_qa_roam",dict(day=5,period=0,location="inn",life_poc=True,case_state="occurred",evidence=["J09","E12"]),("lodging","entry_corrected"))
     pause 1.0
     assert eval ("좁혔다" in r13_compare_result(("J09","E12")))
+
+testcase typography_roles:
+    # 0.18.24: narration grey, thought blue with one pair of parentheses, item span in entity colour.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True,evidence=["E01","G1"]),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    run Jump("r13_qa_type_lines")
+    pause 2.0
+    screenshot "type_narration.png"
+    click pos (640,600)
+    pause 2.0
+    screenshot "type_thought.png"
+    click pos (640,600)
+    pause 2.0
+    screenshot "type_speech.png"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    run Show("r13_records")
+    pause 1.5
+    screenshot "type_records.png"
+    run Show("r13_backlog")
+    pause 1.0
+    screenshot "type_backlog.png"

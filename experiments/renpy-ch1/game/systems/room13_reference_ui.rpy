@@ -7,15 +7,14 @@ init 79 python:
             self.number=number
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(42,int(height))
-            r=renpy.Render(w,h);c=r.canvas()
-            c.rect("#1d3a37" if not self.hover else "#28504b",(0,0,w,h))
-            # Gold tab on the left carries the option number (keys 1-9).
-            c.polygon("#eed17a" if self.hover else "#c9a75f",((0,0),(44,0),(60,h//2),(44,h),(0,h)))
-            c.rect("#eed17a" if self.hover else "#dce6dc",(0,0,w,h),3 if self.hover else 1)
+            r=renpy.Render(w,h)
+            r.blit(renpy.render(R13StonePanel(focused=self.hover),w,h,st,at),(0,0))
+            c=r.canvas()
+            c.rect("#626b60" if self.hover else "#2b3230",(10,10,44,h-20))
             if self.number is not None:
-                t=renpy.render(Text(str(self.number),size=r13_read_size(24,28),font=r13_ui_font(),color="#1d3a37",bold=True),60,h,st,at)
+                t=renpy.render(Text(str(self.number),size=r13_read_size(24,28),font=r13_ui_font(),color="#eee7ce",bold=False),60,h,st,at)
                 tw,th=t.get_size()
-                r.blit(t,(int(25-tw/2),int((h-th)/2)))
+                r.blit(t,(int(32-tw/2),int((h-th)/2)))
             return r
 
     # Summaries live in room13_question_summaries.rpy (init 78).

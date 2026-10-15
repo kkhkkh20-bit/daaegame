@@ -11,12 +11,20 @@ screen r13_hud():
             tooltip "마차 이야기를 건너뛰고 마을 입구에 도착합니다"
     if not any(renpy.get_screen(k) for k in ("say","r13_topics","choice","r13_entry_topics","r13_entry_karo_topics")):
         frame:
-            xpos 24 ypos 20 xsize 410 ysize 82 padding (16,10)
-            background R13ActionPanel()
-            vbox:
-                spacing 5
-                text r13_clock() size r13_read_size(19,22) color "#c6b88e"
-                text ("현재 · "+r13_location_path().replace("마을 › ","",1) if place != "마차 안" else place) size r13_read_size(20,24) color "#fff2cf" xsize 378
+            xpos 24 ypos 20 xsize 388 ysize 88 padding (14,12)
+            background R13StonePanel()
+            hbox:
+                spacing 14
+                fixed:
+                    xsize 54 ysize 64
+                    add Solid("#292f2d",xsize=54,ysize=64)
+                    add Solid("#939b8c",xsize=40,ysize=2) xpos 7 ypos 3
+                    text ("%02d"%room13.get("day",1)) xalign .5 ypos 9 size 28 color "#f1e9cf"
+                    text "일째" xalign .5 ypos 43 size 13 color "#c9ccba"
+                vbox:
+                    spacing 7
+                    text " · ".join(r13_clock().split(" · ")[1:]) size r13_read_size(18,21) color "#d2d4bf"
+                    text (r13_location_path().replace("마을 › ","",1) if place != "마차 안" else place) size r13_read_size(20,23) color "#f3ecd5" xsize 292
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -25,7 +33,7 @@ init 80:
         padding (10,6)
         background Solid("#102b35ed")
         hover_background Solid("#29434ed9")
-        insensitive_background Solid("#1c303bea")
+        insensitive_background R13StonePanel(disabled=True)
     style r13_toolbar_button_text is r13_action_button_text:
         color "#edf0e5"
         hover_color "#ffffff"
@@ -40,7 +48,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
         # Question screens: the large "돌아가기" button returns; only the tools
         # used while choosing a question stay here.
         $ footer_width=r13_footer_width(2 if present_action is not None else 1)
-        add Solid("#14272be8") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 40
+        add R13StonePanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
         frame:
             area (1280-footer_width,664,footer_width,56) padding (8,0) background None
             hbox:
@@ -51,7 +59,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
     elif mode!="field":
         $ line_tools=(3 if mode=="line" else 0)
         $ footer_width=r13_footer_width(4+line_tools+(1 if investigate_action is not None else 0)+(1 if present_action is not None else 0))
-        add Solid("#14272be8") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 40
+        add R13StonePanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
         frame:
             area (1280-footer_width,664,footer_width,56) padding (8,0) background None
             hbox:
@@ -72,12 +80,12 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                     # choice, and hide the dialogue window to see the picture.
                     textbutton "건너뛰기":
                         style "r13_footer_button" selected r13_fast_read
-                        text_selected_color "#f6d18a" selected_background Solid("#2c524c")
+                        text_selected_color "#f6d18a" selected_background R13StonePanel(focused=True)
                         action Function(r13_toggle_read_skip) sensitive line_active
                         tooltip "읽은 대사를 다음 선택지까지 넘깁니다"
                     textbutton "빠르게":
                         style "r13_footer_button" selected r13_fast_all
-                        text_selected_color "#f6d18a" selected_background Solid("#2c524c")
+                        text_selected_color "#f6d18a" selected_background R13StonePanel(focused=True)
                         action Function(r13_toggle_fast_all) sensitive line_active
                         tooltip "처음 보는 대사도 다음 선택지까지 넘깁니다"
                     textbutton "숨기기" style "r13_footer_button" action HideInterface() sensitive line_active
@@ -92,7 +100,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
             if mode=="field":
                 frame:
                     xsize 128 ysize 44 yoffset 20 padding (10,6)
-                    background Solid("#244239ed")
+                    background R13StonePanel(focused=True)
                     text "조사":
                         size r13_read_size(20,24) color "#e2ebdf"
                         outlines [(1,"#14232a99",0,1)]
@@ -120,8 +128,8 @@ screen r13_options_control(ready=True):
     button:
         id "r13_options_gear"
         area (1190,20,64,64) padding (0,0)
-        background Solid("#152e3866") hover_background Solid("#29434ee0")
-        insensitive_background Solid("#1c303bea")
+        background R13StonePanel(alpha="b8") hover_background R13StonePanel(focused=True)
+        insensitive_background R13StonePanel(disabled=True)
         action ShowMenu("pause_menu") sensitive ready
         tooltip "옵션" alt "옵션"
         fixed:
@@ -134,7 +142,7 @@ screen r13_options_control(ready=True):
             add Solid("#e0e8dc",xsize=8,ysize=8) xpos 38 ypos 10
             add Solid("#e0e8dc",xsize=8,ysize=8) xpos 18 ypos 30
             add Solid("#e0e8dc",xsize=8,ysize=8) xpos 38 ypos 30
-            add Solid("#203942",xsize=10,ysize=10) xpos 27 ypos 19
+            add Solid("#3a3e3d",xsize=10,ysize=10) xpos 27 ypos 19
             text "옵션" size 14 color "#e6ece2" xalign .5 ypos 45
 
 screen r13_hub(entry=False):
@@ -291,12 +299,12 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 for index,(title,action,was_read) in enumerate(entries):
                     button:
                         xsize list_width-23 yminimum r13_read_row_height() padding (18,15)
-                        background None hover_background Solid("#ffffff18")
+                        background R13StonePanel() hover_background R13StonePanel(focused=True)
                         action action sensitive ready
                         text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read)):
                             xsize list_width-59 text_align .5 xalign .5
                             size r13_read_size(24,30) font r13_ui_font()
-                            color ("#a0a39b" if was_read else "#fff4df")
+                            color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
                             outlines [(1,"#101515",0,0)]
                 if not entries:
                     text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
@@ -308,7 +316,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if return_action is not None:
             textbutton "돌아가기":
                 xpos list_left+list_width//2 xanchor .5 ypos 558 xsize 220 ysize 64
-                padding (18,12) background Solid("#102b2bb0") hover_background Solid("#42615ed0")
+                padding (18,12) background R13StonePanel() hover_background R13StonePanel(focused=True)
                 text_size r13_read_size(23,28) text_color "#fff4df" text_xalign .5
                 action return_action sensitive ready
     else:
@@ -326,7 +334,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if context:
             frame:
                 xalign .5 ypos 34 xsize compact_width padding (22,14,22,16)
-                background Solid("#0f1f24e6")
+                background R13StonePanel()
                 vbox:
                     spacing 6
                     if context[0]:
@@ -358,7 +366,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                             color ("#d3e3e7" if was_read else "#ffffff")
                 if not entries:
                     frame:
-                        xsize compact_width-23 padding (16,10) background Solid("#102b2bd8")
+                        xsize compact_width-23 padding (16,10) background R13StonePanel()
                         text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
                             xsize compact_width-55 text_align .5 xalign .5 size r13_read_size(22,28) color "#eee5d5"
         if ready:
@@ -368,7 +376,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if return_action is not None:
             textbutton "돌아가기":
                 xpos list_left+compact_width//2 xanchor .5 ypos 544 xsize 150 ysize 44
-                padding (12,6) background Solid("#102b2bb0") hover_background Solid("#42615ed0")
+                padding (12,6) background R13StonePanel() hover_background R13StonePanel(focused=True)
                 text_size r13_read_size(20,25) text_color "#fff4df" text_xalign .5
                 action return_action sensitive ready
 

@@ -30,7 +30,7 @@ screen r13_backlog():
                         text (row["who"]+" · "+row["stamp"]):
                             size 20 color "#9fcbd9" xsize 1020
                         text row["what"]:
-                            size r13_read_size(25,31) color ("#9dc9ff" if row["kind"]=="독백" else "#f3eee2") xsize 1020
+                            size r13_read_size(25,31) color (r13_role_color("thought") if row["kind"]=="독백" else r13_role_color("narration") if row["kind"]=="서술" else r13_role_color("speech")) xsize 1020
     textbutton "대화로 돌아가기":
         style "r13_action_button" area (935,646,255,48) text_size 22 action Hide("r13_backlog")
     key "game_menu" action Hide("r13_backlog")
@@ -38,7 +38,7 @@ screen r13_backlog():
 
 screen r13_playback_footer():
     $ footer_width=r13_footer_width(3)
-    add Solid("#14272be8") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 40
+    add R13StonePanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
     frame:
         area (1280-footer_width,664,footer_width,56) padding (8,0) background None
         hbox:

@@ -1,0 +1,162 @@
+{
+  "specification_only": true,
+  "logical_canvas": [
+    1280,
+    720
+  ],
+  "font": {
+    "family": "Galmuri11",
+    "current_weight": 400,
+    "synthetic_weight": false,
+    "italic_requires_user_request": true
+  },
+  "roles": {
+    "speech": {
+      "dark": "#F4E7C4",
+      "paper": "#39432C",
+      "current_weight": 400,
+      "preferred_weight": 400
+    },
+    "quote": {
+      "dark": "#F4E7C4",
+      "paper": "#39432C",
+      "current_weight": 400,
+      "preferred_weight": 400
+    },
+    "strong": {
+      "dark": "#F4E7C4",
+      "paper": "#39432C",
+      "current_weight": 400,
+      "preferred_weight": 700
+    },
+    "thought": {
+      "dark": "#9DC9FF",
+      "paper": "#31576F",
+      "current_weight": 400,
+      "preferred_weight": 400
+    },
+    "narration": {
+      "dark": "#D1D6C8",
+      "paper": "#555943",
+      "current_weight": 400,
+      "preferred_weight": 400
+    },
+    "entity": {
+      "dark": "#E5C58A",
+      "paper": "#6C512A",
+      "current_weight": 400,
+      "preferred_weight": 500
+    },
+    "emphasis": {
+      "dark": "#E5C58A",
+      "paper": "#6C512A",
+      "current_weight": 400,
+      "preferred_weight": 500
+    },
+    "metadata": {
+      "dark": "#C2C9B5",
+      "paper": "#625738",
+      "current_weight": 400,
+      "preferred_weight": 400
+    },
+    "subdued": {
+      "dark": "#C2C9B5",
+      "paper": "#625738",
+      "current_weight": 400,
+      "preferred_weight": 400
+    },
+    "error": {
+      "dark": "#E4A096",
+      "paper": "#8A3F38",
+      "current_weight": 400,
+      "preferred_weight": 400
+    },
+    "insufficient": {
+      "dark": "#E4A096",
+      "paper": "#8A3F38",
+      "current_weight": 400,
+      "preferred_weight": 400
+    }
+  },
+  "speaker_color": "#F6DFAC",
+  "metrics": {
+    "dialogue": {
+      "size": 24,
+      "padding_trbl": [
+        20,
+        32,
+        20,
+        32
+      ]
+    },
+    "speaker": {
+      "size": 18,
+      "padding_trbl": [
+        6,
+        16,
+        6,
+        16
+      ]
+    },
+    "observation": {
+      "size": 20,
+      "padding_trbl": [
+        12,
+        16,
+        12,
+        16
+      ]
+    },
+    "record_body": {
+      "size": 18,
+      "padding_trbl": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "metadata": {
+      "size": 14,
+      "padding_trbl": [
+        8,
+        0,
+        0,
+        0
+      ]
+    },
+    "question": {
+      "size": 20,
+      "padding_trbl": [
+        10,
+        20,
+        10,
+        20
+      ]
+    },
+    "button": {
+      "size": 18,
+      "padding_trbl": [
+        8,
+        12,
+        8,
+        12
+      ]
+    }
+  },
+  "record_heading_size": 22,
+  "rules": {
+    "thought_parentheses": "exactly_once",
+    "thought_color_overrides_inline_entity": true,
+    "item_reference": "「名称」",
+    "testimony_quote": "“引用”",
+    "automatic_entity_regex": false,
+    "emphasis_fragments_per_dialogue_guidance": [
+      0,
+      2
+    ],
+    "emphasis_is_answer_hint": false,
+    "typewriter_counts_visible_characters_only": true,
+    "preserve_semantics_in_backlog": true
+  }
+}
