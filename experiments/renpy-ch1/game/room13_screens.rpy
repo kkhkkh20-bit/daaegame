@@ -196,6 +196,7 @@ screen r13_hub(entry=False):
             action Return(("livelihood",None)) sensitive ready
     if not entry:
         use r13_event_offers(ready)
+    use r13_admin_key()
     if not entry and room13.get("life_poc") and room13["day"]<=2:
         use r13_goal_fold(r13_intro_goal(),ready)
     elif not entry and room13.get("life_poc") and r13_campaign_goal():
@@ -231,6 +232,7 @@ screen r13_world_contents(entry=False,ready=False):
     $ bundle_point=r13_gate_bundle_check_point()
     if bundle_point:
         add TopicTick() xpos bundle_point[0]-13 ypos bundle_point[1]-13
+    use r13_admin_hitboxes()
     for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
         if nameplate["leader"]:
             $ leader=R13NameLeader(nameplate["leader"])

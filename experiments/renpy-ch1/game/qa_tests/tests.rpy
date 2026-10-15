@@ -2075,3 +2075,42 @@ testcase gm_stone:
     click "드러난 자국을 살펴본다"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice is True)
+
+testcase day1_note_spot:
+    # 0.18.22 (owner): on day 1 the folded paper on the desk is pressed directly; then sleep opens.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,evidence=["E03"]),("lodging","entry_corrected"))
+    pause 2.0
+    assert eval (r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]) and "책상 위" in r13_intro_goal())
+    screenshot "day1_note_spot.png"
+    click pos (195,398)
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval ("M01" in room13["evidence"] and r13_bed_available("bed") and not r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]))
+    pause 1.0
+    screenshot "day1_after_note.png"
+
+testcase admin_tool:
+    # 0.18.22 owner's test tool: next-step list, hit areas, presets.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True),("lodging","entry_corrected"))
+    pause 2.0
+    $ persistent.room13_admin=True
+    $ r13_admin_hitboxes=True
+    run Function(renpy.restart_interaction)
+    pause 1.0
+    screenshot "admin_hitboxes.png"
+    click "관리자"
+    pause 1.0
+    assert screen "r13_admin"
+    assert eval (any("M01" in l and l.startswith("필요 ·") for l in r13_admin_next()))
+    screenshot "admin_next.png"
+    click "이동·시점"
+    click "2일 아침 · 여관"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (room13["day"]==2 and room13["location"]=="inn" and "M01" in room13["evidence"])
+    $ persistent.room13_admin=False
+    $ r13_admin_hitboxes=False
