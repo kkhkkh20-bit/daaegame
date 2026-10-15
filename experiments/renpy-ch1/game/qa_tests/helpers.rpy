@@ -612,3 +612,7 @@ label r13_qa_reel:
 label r13_qa_topic_review:
     call r13_topic_review("karo_road")
     jump r13_roam
+
+label r13_qa_inspect_desk:
+    call r13_inspect_desk
+    jump r13_roam

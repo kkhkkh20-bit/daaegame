@@ -29,9 +29,8 @@ transform r13_click_pulse:
 
 transform r13_evidence_reveal:
     alpha 0.0 xoffset -14
-    easeout .18 alpha 1.0 xoffset 0
-    # One 4px hop after it lands (0.18.31 dot effects; still when motion is off).
-    function r13_evidence_hop
+    # 0.18.47 storybook tone: a slower, softer arrival and no hop.
+    easeout .35 alpha 1.0 xoffset 0
 
 screen r13_click_glint(point):
     zorder 90
@@ -58,11 +57,14 @@ screen r13_evidence_card(key,caption="",conversation=False):
             text ROOM13["evidence"][key]["name"] size 20 color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
 
 screen r13_evidence_found(keys,conversation=False):
-    zorder 85
+    # 0.18.48: above the desk close-up (90) and the item bag (95), which reopen right after a
+    # find and used to cover the card. It has no buttons, so it never blocks input.
+    zorder 98
     default item_index=0
+    # Warm light spreads behind the card, then fades (0.18.47 storybook tone; no star sparkle).
+    if r13_fx_active():
+        add R13_STORYBOOK.get("card_glow", Null()) xpos R13_EVIDENCE_CARD_CENTER[0] ypos (R13_EVIDENCE_CARD_CENTER[1]+8+R13_EVIDENCE_ICON_SIZE//2+20) anchor (.5,.5) at r13_card_glow
     use r13_evidence_card(keys[item_index],"새 증언 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 자료 기록",conversation=conversation)
-    # Sparkle around the icon (systems/room13_dot_fx.rpy); one run per card.
-    add r13_evidence_sparkle() xpos R13_EVIDENCE_CARD_CENTER[0] ypos (R13_EVIDENCE_CARD_CENTER[1]+8+R13_EVIDENCE_ICON_SIZE//2) anchor (.5,.5)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:

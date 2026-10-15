@@ -2522,3 +2522,22 @@ testcase conversation_skip:
     click "건너뛰기"
     pause 1.5
     assert screen "r13_entry_karo_topics"
+
+testcase memo_from_desk:
+    # 0.18.48: reading Mom's memo from the desk close-up shows its card over the close-up, and the
+    # envelope is gone from the desk afterwards.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,evidence=["E03"]),("lodging","entry_corrected"))
+    pause 1.0
+    run Jump("r13_qa_inspect_desk")
+    pause 1.0
+    assert eval (not r13_memo_taken())
+    click pos (450,170)
+    click pos (640,600) until screen "r13_desk_inspection" timeout 40
+    pause 0.4
+    assert eval ("M01" in room13["evidence"] and r13_memo_taken() and renpy.get_screen("r13_evidence_found") is not None)
+    screenshot "memo_card_over_desk.png"
+    pause 2.6
+    screenshot "desk_without_memo.png"
