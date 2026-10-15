@@ -31,7 +31,8 @@ class WideLayouts(unittest.TestCase):
                 with self.subTest(location=location, daylight=daylight, state=state):
                     file = GAME / path
                     self.assertTrue(file.exists(), path)
-                    size = Image.open(file).size
+                    with Image.open(file) as im:
+                        size = im.size
                     crop = spec.get("crops", {}).get(daylight, [0, 0, size[0], size[1]])
                     x, y, w, h = crop
                     self.assertTrue(x >= 0 and y >= 0 and x + w <= size[0] and y + h <= size[1], (crop, size))
