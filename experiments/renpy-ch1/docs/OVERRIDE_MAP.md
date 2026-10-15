@@ -7,7 +7,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:357` | r13_discovery_base_present |
+| 1 | 55 | `room13_rules.rpy:364` | r13_discovery_base_present |
 | 2 | 61 | `room13_discovery.rpy:38` | r13_tool_base_present |
 | 3 | 73 | `room13_tool_discovery.rpy:81` | _r13_mystery_present |
 | 4 | 76 | `room13_first_mystery.rpy:98` | _r13_life_present |
@@ -180,7 +180,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:501` | _r13_poc_campaign_goal |
+| 1 | 98 | `systems/room13_debate.rpy:503` | _r13_poc_campaign_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:126` |  |
 
 ## `r13_click_feedback` (2층)

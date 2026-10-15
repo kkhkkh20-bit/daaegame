@@ -2,47 +2,48 @@
 screen r13_crisis():
     style_prefix "r13"
     modal True
+    zorder 35
     default ready=False
+    default preparations_open=False
     timer .35 action SetScreenVariable("ready",True)
-    add Solid("#172a2aa6")
+    use r13_meeting_stage("F1")
     frame:
-        # Tall enough for four claims with their "locked" notes.
-        area (40,118,770,487) padding (24,18) background R13PaperPanel()
+        area (24,18,900,66) padding (16,8) background R13PaperFrame()
         vbox:
-            spacing 10
-            text "연결을 멈춰야 한다" size 33 color "#765426"
-            text "지금 사람들이 따르는 말" size 21 color "#717367"
-            for key in ("F1","F2","F3","F4"):
-                $ proved=key in room13["propositions"]
-                $ open_claim=r13_debate_open(key)
-                button:
-                    xsize 720 yminimum 65 padding (14,12)
-                    background R13PaperPanel(proved)
-                    hover_background R13PaperPanel()
-                    action Return(key) sensitive (ready and open_claim)
-                    vbox:
-                        text ("{s}"+R13_CLAIMS[key]["assertion"]+"{/s}" if proved else R13_CLAIMS[key]["assertion"]) size 24 xsize 680
-                        if not proved and not open_claim:
-                            text (("일부만 반박하고 정리했다" if r13_debate_state()["closed"].get(r13_debate_session(key)+":"+key)=="partial" else "반론을 그만뒀다") if r13_debate_closed(key) else "반론할 자료가 없다") size 19 color "#8c7060"
-    frame:
-        area (840,118,400,487) padding (23,20) background R13PaperPanel()
-        vbox:
-            spacing 16
-            text "함께 움직일 준비" size 27 color "#765426"
-            for name,prepared in r13_crisis_preparations():
-                text (name+" · "+("모아 둠" if prepared else "마련하지 못함")) size 21 color ("#3d7058" if prepared else "#8c7060")
-            null height 5
-            text "수첩에서 확인한 자료만 보여 줄 수 있다." size 21 xsize 342
-            if room13["case_state"]=="occurred" and any(r13_debate_open(c) for c in r13_case_available()):
-                textbutton "13호 사건에서 남은 문제" action Return("case") sensitive ready text_size 21
-            if r13_has("E29"):
-                textbutton "가족과 빠져나갈 길" action Return("escape") sensitive ready text_size 21
-    frame:
-        area (40,620,1200,80) padding (20,10) background R13PaperPanel()
-        hbox:
-            spacing 40
-            textbutton "수첩을 다시 본다" action Show("r13_book") sensitive ready text_size 24
-            textbutton "모은 근거와 해 둔 준비로 움직인다" action Return("finish") sensitive ready text_size 24
+            text "제단 앞 회의 · 14일째" size 17 color "#795d40"
+            text "연결을 멈춰야 한다" size r13_read_size(23,27) color "#493b30"
+    $ preparations=r13_crisis_preparations()
+    textbutton ("대피 준비 · %d / %d"%(sum(ok for name,ok in preparations),len(preparations))):
+        style "r13_action_button" xpos 942 ypos 18 xsize 314 ysize 64 text_size 21
+        action ToggleScreenVariable("preparations_open") sensitive ready
+    for index,key in enumerate(("F1","F2","F3","F4")):
+        $ proved=key in room13["propositions"]
+        $ open_claim=r13_debate_open(key)
+        button:
+            area (48+(index%2)*598,482+(index//2)*82,586,72) padding (14,9)
+            background R13PaperPanel(proved) hover_background R13PaperPanel(True)
+            action Return(key) sensitive ready and open_claim
+            fixed:
+                xsize 554 ysize 54
+                text ("{s}"+R13_CLAIMS[key]["assertion"]+"{/s}" if proved else R13_CLAIMS[key]["assertion"]) size r13_read_size(21,25) color ("#82745d" if not open_claim else "#493b30") xsize (432 if not open_claim else 554) yalign .5
+                if not open_claim:
+                    text ("입증함" if proved else "이번 회의 정리됨" if r13_debate_closed(key) else "반론 자료 부족") xpos 446 xsize 108 size r13_read_size(16,18) color "#795d40" yalign .5
+    hbox:
+        xpos 48 ypos 650 spacing 16
+        textbutton "수첩을 다시 본다" style "r13_action_button" xsize 312 ysize 60 text_size 23 action Show("r13_book") sensitive ready
+        textbutton "모은 근거와 해 둔 준비로 움직인다" style "r13_action_button" xsize 620 ysize 60 text_size 23 action Return("finish") sensitive ready
+    if preparations_open:
+        frame:
+            area (838,94,418,370) padding (20,16) background R13PaperFrame()
+            vbox:
+                spacing 12
+                text "함께 움직일 준비" size 24 color "#493b30"
+                for name,prepared in preparations:
+                    text (name+" · "+("모아 둠" if prepared else "마련하지 못함")) size 20 color ("#3d7058" if prepared else "#795d40")
+                if room13["case_state"]=="occurred" and any(r13_debate_open(c) for c in r13_case_available()):
+                    textbutton "13호 사건에서 남은 문제" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("case") sensitive ready
+                if r13_has("E29"):
+                    textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("escape") sensitive ready
 
 screen r13_crisis_proof(claim):
     style_prefix "r13"

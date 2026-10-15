@@ -33,6 +33,8 @@ testcase trial_missing:
     click "결론을 말한다"
     pause 1.0
     click "아이만 들어갔다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
     pause 0.5
@@ -64,7 +66,7 @@ testcase trial_giveup:
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     screenshot "g_board.png"
-    click "반론을 그만둔다"
+    click "회의 중단"
     pause 1.0
     click "반론을 그만둔다"
     pause 0.5
@@ -100,6 +102,8 @@ testcase trial_partial:
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     assert eval (not r13_debate_is_broken("C2","s2"))
+    click "발언 기록"
+    pause 0.4
     click "다시 휘두를 사람이"
     pause 0.6
     click "보여주기"
@@ -110,7 +114,7 @@ testcase trial_partial:
     pause 0.6
     assert eval (r13_debate_stuck("C2") and r13_debate_progress("C2")==(2,3))
     screenshot "p_stuck.png"
-    click "여기까지 정리한다"
+    click "회의 중단"
     pause 1.0
     click "여기까지 정리한다"
     pause 0.5
@@ -154,6 +158,8 @@ testcase trial_win:
     click "결론을 말한다"
     pause 1.0
     click "누군가가 냈다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
     pause 0.5
@@ -185,6 +191,8 @@ testcase trial_full:
     click "결론을 말한다"
     pause 1.0
     click "아이만 들어갔다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -217,6 +225,8 @@ testcase trial_full:
     click "결론을 말한다"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -224,6 +234,8 @@ testcase trial_full:
     click "결론을 말한다"
     pause 1.0
     click "누군가가 냈다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -248,6 +260,8 @@ testcase trial_full:
     click "결론을 말한다"
     pause 1.0
     click "주방에 간 뒤로는"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -286,6 +300,8 @@ testcase trial_full:
     click "결론을 말한다"
     pause 1.0
     click "핀이 내려친 쪽 고리에"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result")=="culprit_proven" and room13.get("granny_state")=="detained" timeout 120
     pause 0.5
@@ -317,6 +333,8 @@ testcase trial_gate_unenforced:
     click "결론을 말한다"
     pause 1.0
     click "아이만 들어갔다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -349,6 +367,8 @@ testcase trial_gate_unenforced:
     click "결론을 말한다"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -356,6 +376,8 @@ testcase trial_gate_unenforced:
     click "결론을 말한다"
     pause 1.0
     click "누군가가 냈다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -380,6 +402,8 @@ testcase trial_gate_unenforced:
     click "결론을 말한다"
     pause 1.0
     click "주방에 간 뒤로는"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -418,6 +442,8 @@ testcase trial_gate_unenforced:
     click "결론을 말한다"
     pause 1.0
     click "핀이 내려친 쪽 고리에"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
     pause 0.5
@@ -450,6 +476,8 @@ testcase trial_gate_no_witness:
     click "결론을 말한다"
     pause 1.0
     click "아이만 들어갔다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -482,6 +510,8 @@ testcase trial_gate_no_witness:
     click "결론을 말한다"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -489,6 +519,8 @@ testcase trial_gate_no_witness:
     click "결론을 말한다"
     pause 1.0
     click "누군가가 냈다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     # 0.18.35: without Nabi the alibi point still opens (the passage breaks one statement),
     # but her statement stays unbreakable. Closing it partially leaves C3 unproven.
@@ -498,6 +530,8 @@ testcase trial_gate_no_witness:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
+    click "발언 기록"
+    pause 0.4
     click "한참 걸려요"
     pause 0.6
     click "보여주기"
@@ -507,7 +541,7 @@ testcase trial_gate_no_witness:
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     assert eval (r13_debate_stuck("C3"))
-    click "여기까지 정리한다"
+    click "회의 중단"
     pause 1.0
     click "여기까지 정리한다"
     pause 0.5
@@ -544,6 +578,8 @@ testcase finale_win:
     click "결론을 말한다"
     pause 1.0
     click "아무도 못 돌아온다는"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -570,6 +606,8 @@ testcase finale_win:
     click "결론을 말한다"
     pause 1.0
     click "반짝 효과는 짧고"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -597,6 +635,8 @@ testcase finale_win:
     click "결론을 말한다"
     pause 1.0
     click "학교에 모여 식량을"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -619,6 +659,8 @@ testcase finale_win:
     click "결론을 말한다"
     pause 1.0
     click "엄마를 붙잡으려"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -1349,6 +1391,8 @@ testcase trial_fake_testimony:
     click "결론을 말한다"
     pause 1.0
     click "아이만 들어갔다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -1381,6 +1425,8 @@ testcase trial_fake_testimony:
     click "결론을 말한다"
     pause 1.0
     click "통로를 아는 할머니가 죽였다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -1388,6 +1434,8 @@ testcase trial_fake_testimony:
     click "결론을 말한다"
     pause 1.0
     click "누군가가 냈다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -1412,6 +1460,8 @@ testcase trial_fake_testimony:
     click "결론을 말한다"
     pause 1.0
     click "주방에 간 뒤로는"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -1450,6 +1500,8 @@ testcase trial_fake_testimony:
     click "결론을 말한다"
     pause 1.0
     click "핀이 내려친 쪽 고리에"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
     pause 0.5
@@ -1483,6 +1535,8 @@ testcase trial_c1_h7:
     click "결론을 말한다"
     pause 1.0
     click "아이만 들어갔다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     assert eval ("C1" in room13["propositions"])
@@ -2394,6 +2448,8 @@ testcase trial_counter:
     click "결론을 말한다"
     pause 1.0
     click "아이만 들어갔다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
     pause 0.6
     click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
@@ -2401,6 +2457,8 @@ testcase trial_counter:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
+    click "발언 기록"
+    pause 0.4
     click "다시 휘두를 사람이"
     pause 0.6
     click "보여주기"

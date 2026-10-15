@@ -287,6 +287,13 @@ init 55 python:
         return "assets/record.png" if ROOM13["evidence"][key]["kind"] in ("기록","관찰기록") else "assets/evidence.png"
 
     def r13_speaker(who,expression="neutral",pose=None):
+        if getattr(store,"r13_meeting_active",False):
+            # Keep all participants in place; the say screen owns the bubble.
+            r13_meeting_focus_change(store.r13_meeting_claim,who)
+            store.dialogue_speaker=who if who in CAST else None
+            store.dialogue_expression=expression if who in CAST and expression in CAST[who] else "neutral"
+            renpy.hide("r13_visitor")
+            return
         previous_pose=store.r13_current_pose
         store.dialogue_speaker=None
         store.dialogue_expression=expression if who in CAST and "avatar_"+expression in CAST[who] else "neutral"
@@ -446,7 +453,7 @@ init 55 python:
     def r13_stop_typing():
         if store.room13_mode and renpy.get_screen("choice"):
             renpy.config.skipping=None
-        if store.room13_mode and any(renpy.get_screen(s) for s in ("r13_hub","r13_interaction","r13_topics","r13_book","r13_confirm","r13_map","r13_calendar","r13_debate","r13_debate_board","r13_meeting_agenda","r13_activities","r13_handoff","r13_crisis","r13_crisis_proof","r13_rescue_notes","r13_ending_screen","r13_nearby","r13_resident_notes")):
+        if store.room13_mode and any(renpy.get_screen(s) for s in ("r13_hub","r13_interaction","r13_topics","r13_book","r13_confirm","r13_map","r13_calendar","r13_debate","r13_debate_board","r13_meeting_agenda","r13_meeting_ballot","r13_activities","r13_handoff","r13_crisis","r13_crisis_proof","r13_rescue_notes","r13_ending_screen","r13_nearby","r13_resident_notes")):
             renpy.music.stop(channel="typing")
             renpy.config.skipping=None
             store.r13_fast_read=False

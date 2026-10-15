@@ -27,10 +27,11 @@ init 140 python:
 
     def r13_say_color():
         """What colour the current line uses: thought, narration or speech."""
-        if getattr(store,"r13_thought_active",False):return r13_role_color("thought")
+        surface="paper" if getattr(store,"r13_meeting_active",False) else "dark"
+        if getattr(store,"r13_thought_active",False):return r13_role_color("thought",surface)
         packet=getattr(store,"r13_packet",None)
-        if packet and packet[0] is None:return r13_role_color("narration")
-        return r13_role_color("speech")
+        if packet and packet[0] is None:return r13_role_color("narration",surface)
+        return r13_role_color("speech",surface)
 
     _R13_ITEM_SPAN=_r13_tre.compile(r"「[^「」{}\[\]]{1,16}」")  # names only; long quoted letters stay body text
 
@@ -44,7 +45,7 @@ init 140 python:
             if s and not s.endswith(")"):text=text+")"
             return text
         if "「" not in text:return text
-        color=r13_role_color("entity")
+        color=r13_role_color("entity","paper" if getattr(store,"r13_meeting_active",False) else "dark")
         parts=_r13_tre.split(r"(\{[^{}]*\}|\[[^\[\]]*\])",text)
         return "".join(p if p.startswith(("{","[")) else _R13_ITEM_SPAN.sub(lambda m:"{color="+color+"}"+m.group(0)+"{/color}",p) for p in parts)
 
