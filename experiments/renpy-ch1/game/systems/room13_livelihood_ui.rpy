@@ -1,4 +1,4 @@
-screen r13_work_board(start_tab="work"):
+screen r13_work_board(start_tab="work",tabs=("work","shop","relations","ledger"),close=Return(False)):
     modal True
     zorder 90
     default tab=start_tab
@@ -10,7 +10,8 @@ screen r13_work_board(start_tab="work"):
     hbox:
         xpos 48 ypos 95 spacing 16
         for key,title in (("work","일거리"),("shop","상점"),("relations","함께한 일"),("ledger","생활 장부")):
-            textbutton title style "r13_action_button" xsize 225 ysize 55 selected tab==key action SetScreenVariable("tab",key)
+            if key in tabs:
+                textbutton title style "r13_action_button" xsize 225 ysize 55 selected tab==key action SetScreenVariable("tab",key)
     if tab=="work":
         text ("오전·오후 한 번씩 · "+r13_learning_time_text(1)) xpos 48 ypos 174 size 22 color "#65503b"
         vbox:
@@ -53,5 +54,5 @@ screen r13_work_board(start_tab="work"):
         textbutton "가진 돈으로 외상 갚기":
             style "r13_action_button" area (48,578,390,58)
             sensitive wallet["cash"]>0 and wallet["debt"]>0 action Function(r13_life_repay)
-    textbutton "돌아가기" style "r13_action_button" area (950,646,280,58) action Return(False)
-    key "game_menu" action Return(False)
+    textbutton "돌아가기" style "r13_action_button" area (950,646,280,58) action close
+    key "game_menu" action close

@@ -20,7 +20,8 @@ init 101 python:
             return "neutral",(873,651,235),"침대 곁에서 쉬는 중"
         return (
             # 0.18.50 (owner): seat on the mattress, not on the bed frame in front of it.
-            ("action_1",(930,440,210),"침대에서 책 읽는 중"),
+            # 0.18.56 (owner): higher, on top of the blanket rather than sunk into its front edge.
+            ("action_1",(950,398,210),"침대에서 책 읽는 중"),
             # 0.18.22 (owner): sat on the suitcase behind the chair and looked cut off; now on the rug.
             ("action_2",(900,645,210),"깔개에 앉아 그림 그리는 중"),
             ("inspect_floor",(875,625,195),"침대 곁을 둘러보는 중"),
@@ -37,7 +38,7 @@ init 101 python:
             pose,(cx,anchor_y,height),activity=r13_daram_home_activity()
             # The temporary room has different furniture; keep its floor seat.
             if store.room13["location"]=="guestroom":cx,anchor_y,height=835,650,210
-            # 0.18.57 wide 13호: the same activities on the wide picture's own bed/rug.
+            # 0.18.58 wide 13호: the same activities on the wide picture's own bed/rug.
             # Child-sized standing height; seated/crouched poses keep the standing head size.
             elif r13_layout("room13") and store.room13["location"]=="room13":cx,anchor_y,height=r13_layout("room13")["home_positions"][pose]
             spec=r13_acting_spec("daram",pose) or {};width,native_height=r13_actor_geometry("daram",pose)
@@ -88,7 +89,7 @@ init 101 python:
             if has("J04"):lines += [("daram","나비는 엄마가 봉투를 건네는 걸 봤대. 그런데 봉투 안에 든 건 못 봤대.")]
             if has("J05"):lines += [("daram","까로 아저씨가 본 봉투도 그 봉투와 같은 건지는 모르겠어.")]
             return lines+[("dad","응. 우리가 들은 이야기도 딱 거기까지야."),("daram","봉투 겉모습이 비슷해도 안에는 다른 편지가 들었을 수 있잖아.")]
-        if key=="home:daram:letters":return [("dad","두 편지를 읽고 어떤 생각이 들었어?"),("daram","할머니는 편지로 우리를 불렀는데, 엄마는 우리를 불러 달라고 부탁한 적이 없대."),("dad","응, 맞아."),("daram","왜 그렇게 다른지는 두 편지 어디에도 안 쓰여 있어."),("dad","그 이유는 아직 모르지.")]
+        if key=="home:daram:letters":return [("dad","두 편지를 읽고 어떤 생각이 들었어?"),("daram","엄마는 오라는 편지를 쓴 적이 없대. 그럼 우리가 받은 편지는 누가 쓴 거야?"),("dad","응. 그게 이상해."),("daram","엄마가 쓴 오지 말라는 편지는 왜 우리한테 안 왔을까?"),("dad","그 이유는 아직 모르지.")]
         if key=="home:daram:case":return [("dad","그날 일을 다시 이야기해도 괜찮겠니?"),("daram","내가 때린 건 맞아. 그 사실은 안 바뀌잖아."),("dad","응. 네가 한 일하고 그 뒤에 생긴 일을 나눠서 듣고 싶어."),("daram","침대 밑에 숨고 나서는 이불밖에 안 보였어. 그 뒤에 일어난 일은 모르겠어."),("dad","모르는 건 억지로 떠올리지 않아도 돼.")]
         if key=="home:daram:verdict" and s.get("case_state")!="occurred":return [("dad","재판이 끝나고 나니 어때?"),("daram","사람들이 우리 얘기를 그렇게 오래 할 줄은 몰랐어."),("dad","네 이야기를 네 입으로 할 수 있어서 다행이야."),("daram","응. 오늘은 방에서 조금 쉬고 싶어.")]
         if key=="home:daram:verdict":return [("dad","재판이 끝나고 나니 어때?"),("daram","사람들이 여기 와도 된다고 했는데…… 아직도 문 두드리는 소리가 나면 깜짝 놀라."),("dad","한 번에 바로 괜찮아질 필요는 없어."),("daram","그래도 오늘은 책을 조금 읽었어.")]
@@ -127,7 +128,7 @@ init 101 python:
     def r13_intro_goal():
         if r13_home_with_daram() and store.room13.get("case_state")=="pending":
             evidence=set(store.room13.get("evidence",[]))
-            if {"E01","E18"}<=evidence:return "엄마의 글과 초대 편지는 왜 다를까?"
+            if {"E01","E18"}<=evidence:return "엄마 이름으로 온 편지는 누가 썼을까?"
             if "M01" in evidence:return "엄마가 남긴 메모는 있는데, 지금 어디 있는지는 모른다."
             return "엄마가 머물렀던 방."
         return _r13_daram_room_intro_goal()
@@ -137,10 +138,10 @@ init 101 python:
         result=_r13_daram_home_compare(selected)
         if not r13_home_with_daram() or len(selected)!=2 or len(set(selected))!=2 or not set(selected)<=set(store.room13.get("evidence",[])):return result
         pair=set(selected)
-        if pair=={"E01","E18"}:return "(할머니는 가족에게 초대 편지를 보냈다. 엄마는 부탁한 적이 없다고 썼다. 두 글에는 서로 다른 말이 남아 있다.)"
+        if pair=={"E01","E18"}:return "(우리를 부른 편지에는 엄마 이름이 있다. 그런데 엄마는 오라는 편지를 쓴 적이 없다고 썼다.)"
         if pair=={"M01","J04"}:return "(메모에 적힌 초롱의 이름이 나비의 이야기에도 나온다. 나비는 봉투를 건네는 장면을 봤지만, 그 안의 글은 읽지 못했다.)"
         if pair=={"M01","J05"}:return "(메모에는 초롱의 이름이 있다. 까로는 초롱이 봉투를 보관하는 모습을 봤다. 그 봉투가 엄마 것인지는 확인되지 않았다.)"
-        if pair=={"E01","M01"}:return "(편지는 할머니가 보냈고, 방의 메모는 엄마가 가족에게 남겼다. 두 글이 같은 이유로 쓰인 것인지는 알 수 없다.)"
+        if pair=={"E01","M01"}:return "(메모에는 엄마가 늘 그리던 도토리가 있는데, 편지에는 없다. 두 글을 같은 사람이 썼는지는 알 수 없다.)"
         return result
 
     _r13_daram_home_present=r13_present

@@ -622,7 +622,7 @@ label r13_qa_talk_menu:
     $ r13_note_encounter(r13_qa_person)
     jump r13_talk_menu
 
-# 0.18.57 wide maps: click log, hit maps and capacity checks.
+# 0.18.58 wide maps: click log, hit maps and capacity checks.
 init 999 python:
     R13_QA_WIDE_LOG = []
     def r13_qa_wide_write():
@@ -786,3 +786,61 @@ label r13_qa_audit:
         renpy.pause(1.4,hard=True)
         store.r13_qa_audit_done=True
     return
+
+init 999 python:
+    def r13_qa_overlap_dump():
+        # 0.18.56: inspection targets covered by people, and targets crowding each other.
+        import os,json
+        saved=winter_copy.deepcopy(store.room13);rows=[]
+        def inter(a,b):
+            w=min(a[0]+a[2],b[0]+b[2])-max(a[0],b[0]);h=min(a[1]+a[3],b[1]+b[3])-max(a[1],b[1])
+            return max(0,w)*max(0,h)
+        for day in (2,3,5,9):
+            for period in range(3):
+                for loc in sorted(ROOM13["objects"]):
+                    if loc not in R13_PLACES:continue
+                    n=winter_copy.deepcopy(saved);n.update(day=day,period=period,location=loc);store.room13=n
+                    R13_STAGE_CACHE.clear()
+                    try:actors=r13_stage_people()
+                    except Exception as e:rows.append(dict(loc=loc,err=str(e)));continue
+                    objs=[(k,tuple(spec["rect"])) for k,spec in ROOM13["objects"][loc].items() if r13_object_visible(spec)]
+                    for k,r in objs:
+                        area=float(r[2]*r[3]) or 1
+                        for a in actors:
+                            face=r13_actor_face_target(a) or tuple(a["rect"])
+                            fb=inter(r,tuple(a["rect"]))/area;ff=inter(r,face)/area
+                            if fb>.3 or ff>.05:rows.append(dict(day=day,period=period,loc=loc,obj=k,name=r13_object_name(k),rect=r,person=a["person"],body=round(fb,2),face=round(ff,2)))
+                    for i,(k,r) in enumerate(objs):
+                        for k2,r2 in objs[i+1:]:
+                            o=inter(r,r2)/float(min(r[2]*r[3],r2[2]*r2[3]) or 1)
+                            if o>.25:rows.append(dict(day=day,period=period,loc=loc,obj=k,other=k2,overlap=round(o,2)))
+        store.room13=saved;R13_STAGE_CACHE.clear()
+        out=os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa");os.makedirs(out,exist_ok=True)
+        json.dump(rows,open(os.path.join(out,"overlap.json"),"w"),ensure_ascii=False,indent=0)
+
+init 999 python:
+    def r13_qa_depth_dump():
+        # 0.18.56: feet depth vs drawn height of every staged actor.
+        import os,json
+        saved=winter_copy.deepcopy(store.room13);rows=[]
+        for day in (2,3,5,9):
+            for period in range(3):
+                for loc in sorted(R13_PLACES):
+                    n=winter_copy.deepcopy(saved);n.update(day=day,period=period,location=loc);store.room13=n
+                    R13_STAGE_CACHE.clear()
+                    try:actors=r13_stage_people()
+                    except Exception as e:continue
+                    for a in actors:
+                        spec=r13_acting_spec(a["person"],a["pose"]) or {}
+                        pw,ph=r13_actor_geometry(a["person"],a["pose"])
+                        foot=spec.get("foot",[pw/2.0,ph]);sc=float(a["height"])/ph
+                        rows.append(dict(loc=loc,day=day,period=period,person=a["person"],pose=a["pose"],contact=a["contact"],
+                            feet=round(a["y"]+foot[1]*sc),h=a["height"],std=round(r13_qa_standing_equiv(a,loc))))
+        store.room13=saved;R13_STAGE_CACHE.clear()
+        out=os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa");os.makedirs(out,exist_ok=True)
+        json.dump(rows,open(os.path.join(out,"depth.json"),"w"),ensure_ascii=False)
+
+    def r13_qa_standing_equiv(a,loc):
+        layout=getattr(store,"R13_WORLD_LAYOUTS",{}).get(loc,{})
+        probe=r13_world_display_height(a["person"],a["pose"],1000.0,dict(layout,standing_height_reference=layout.get("standing_height_reference",1000)))
+        return a["height"]*1000.0/probe if probe else a["height"]

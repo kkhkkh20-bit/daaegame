@@ -3,7 +3,7 @@
 init 70 python:
     R13_CONVERSATION_TITLES = {
         "register":"저희가 묵을 방이 있습니까?",
-        "granny_letter":"제게 편지를 보내신 이유를 여쭤도 될까요?",
+        "granny_letter":"아내가 저희를 부른다고 하던가요?",
         "granny_rules":"밤에는 안쪽 문도 잠그십니까?",
         "karo_road":"돌아가는 마차는 언제 탈 수 있습니까?",
         "karo_parcel":"제 앞으로 되돌아온 물건이 있다고요?",

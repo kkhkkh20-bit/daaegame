@@ -4,7 +4,7 @@ default r13_world_cameras = {}
 init 58 python:
     R13_WORLD_LAYOUTS=json.load(renpy.file("assets/room13-world-layout.json")) if renpy.loadable("assets/room13-world-layout.json") else {}
 
-    # 0.18.57: a layout with "periods" (wide art delivered for some daylight
+    # 0.18.58: a layout with "periods" (wide art delivered for some daylight
     # periods only) is used only then. Other periods keep the 1280 backdrop,
     # its object rects and its staging, exactly as before.
     def r13_layout(location=None,daylight=None):
@@ -50,7 +50,7 @@ init 58 python:
         location=location or store.room13["location"]
         spec=R13_WORLD_LAYOUTS[location]
         period=daylight or r13_daylight()
-        # 0.18.57: hall/13호 choose before/after first, then the daylight picture.
+        # 0.18.58: hall/13호 choose before/after first, then the daylight picture.
         path=r13_world_file(location,period)
         crop=spec.get("crops",{}).get(period)
         source=Crop(tuple(crop),path) if crop else path

@@ -14,7 +14,7 @@ class IntroCluesTest(unittest.TestCase):
  def test_comparison_requires_both_owned_records(self):
   f=self.ns['r13_compare_result'];s=self.store.room13
   self.assertEqual(f(['E01','M01']),'base');self.assertEqual(s['flags'],[])
-  s['evidence']=['E01','M01'];self.assertIn('알고 있었던',f(['M01','E01']));self.assertIn('mother_expected_family',s['flags'])
+  s['evidence']=['E01','M01'];self.assertIn('도토리',f(['M01','E01']));self.assertIn('mother_expected_family',s['flags']);self.assertIn('letter_no_acorn',s['flags'])
   before=copy.deepcopy(s);f(['E01','M01']);self.assertEqual(s,before)
  def test_testimony_requires_followup_read(self):
   f=self.ns['r13_present'];s=self.store.room13

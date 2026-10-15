@@ -43,6 +43,12 @@ label r13_livelihood:
     if not isinstance(_return,(tuple,list)) or len(_return)!=2:
         return
     $ r13_job_key,r13_job_choice=_return
+    jump r13_livelihood_start
+
+# 0.18.56 (owner): work is asked for in person (systems/room13_direct_work.rpy).
+label r13_livelihood_run(job):
+    $ r13_job_key,r13_job_choice=job,"finish"
+label r13_livelihood_start:
     if not r13_work_available(r13_job_key):
         return
     $ r13_job_spec=R13_JOBS[r13_job_key]

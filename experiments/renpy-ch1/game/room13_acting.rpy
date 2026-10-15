@@ -453,6 +453,10 @@ init 59 python:
             if not pinned:
                 candidates=[primary] if not layout and len(people)<=3 and location!="inn" else []
                 slots=layout.get("slots") or R13_CROWD_SLOTS.get(location,[(a,b,c,"floor") for a,b,c in floors])
+                # 0.18.56 (owner): when 세련 sits in the left background chair, nobody stands on
+                # the left floor in front of her.
+                if location=="post" and any(a["person"]=="seryeon" and a["contact"]=="background_chair" for a in staged):
+                    slots=[slot for slot in slots if not (slot[3]=="floor" and slot[0]<400)]
                 occupied={a.get("slot") for a in staged if a.get("slot")} if layout or location in ("store","inn") else set()
                 candidates += [make_candidate(slot) for slot in slots if tuple(slot) not in occupied]
                 # Dense shelter days have more occupants than ordinary days.
@@ -533,7 +537,7 @@ init 59 python:
         for index,(key,spec) in enumerate(visible):
             ox,oy,ow,oh=spec["rect"]
             covered=[a for a in actors if a["rect"][0]<ox+ow and ox<a["rect"][0]+a["rect"][2] and a["rect"][1]<oy+oh and oy<a["rect"][1]+a["rect"][3]]
-            # 0.18.57: a large object raised above a resident must not cover a smaller
+            # 0.18.58: a large object raised above a resident must not cover a smaller
             # object drawn after it (hall rail over the towels); keep their own holes too.
             later=[tuple(other["rect"]) for _,other in visible[index+1:]]
             if covered:result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[r13_actor_face(a) for a in actors]+later)))

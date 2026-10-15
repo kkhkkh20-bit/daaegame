@@ -109,7 +109,7 @@ init 66 python:
             if s["paper_placed"]: return say("운반표 위에 얇은 종이가 놓여 있다.")
             return say("색이 지워진 낡은 운반표다. 손끝에 얕게 눌린 무늬가 걸린다.")
         texts={
-            "letters":"집에서 챙겨 온 편지다. 방에 온 뒤 새로 도착한 편지는 없다.",
+            "letters":"집에서 챙겨 온, 아내 이름으로 온 편지다. 방에 온 뒤 새로 도착한 편지는 없다.",
             "cup":"물을 마신 자국이 남았다. 종이에 쏟지 않도록 손잡이를 돌려 두었다.",
             "candle":"필기할 때 쓰는 촛불이다. 종이와는 거리를 두자.",
             "buttons":"우리 외투에 달 여분 단추다. 서로 크기가 조금씩 다르다.",
@@ -246,7 +246,8 @@ init 66 python:
     # retain later draw order, and the portable kit is never placed at a crime scene.
     for _r13_desk_place in ("room13","guestroom"):
         _r13_existing=ROOM13["objects"].get(_r13_desk_place,{})
-        _r13_desk_spec=dict(rect=[0,350,430,170],text="우리 여행 필기함을 펼칠 책상이다.",
+        # 0.18.56 (owner): the desk target is its front edge, below the cup, bread, notebook and papers.
+        _r13_desk_spec=dict(rect=[0,448,430,72],text="우리 여행 필기함을 펼칠 책상이다.",
             need=["lodging"],give=[],flags=[],live_family_desk=True)
         ROOM13["objects"][_r13_desk_place]=dict([("desk",_r13_desk_spec)]+[(k,v) for k,v in _r13_existing.items() if k!="desk"])
     _r13_before_inspection_visible=r13_object_visible

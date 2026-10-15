@@ -25,7 +25,7 @@ init 76 python:
 
     def r13_first_mystery_notes():
         s=store.room13 or {};f=set(s.get("flags",[]));e=set(s.get("evidence",[]));rows=[]
-        rows.append(dict(title="아내는 이곳에서 어디로 갔을까?",fact="여관에서 보낸 편지를 따라왔다."+(" 13호 이불에는 집에서 보던 바느질이 남아 있다." if "E03" in e else ""),question="누가 마지막으로 만났을까?",hint="편지를 보낸 할머니에게 먼저 묻고, 머물렀던 방을 직접 살펴보자.",keys=[k for k in ("E01","E03") if k in e]))
+        rows.append(dict(title="아내는 이곳에서 어디로 갔을까?",fact="아내의 편지를 따라왔다."+(" 13호 이불에는 집에서 보던 바느질이 남아 있다." if "E03" in e else ""),question="누가 마지막으로 만났을까?",hint="여관 할머니에게 먼저 묻고, 머물렀던 방을 직접 살펴보자.",keys=[k for k in ("E01","E03") if k in e]))
         if r13_secret_route_available() and ("inn_front_door_claim" in f or "observed:room13:books" in f or "E04" in e or "E37" in e):
             fact="할머니는 방에 복도 쪽 문밖에 없다고 했다." if "inn_front_door_claim" in f else "책장 아래에 책처럼 생긴 손잡이가 있다." if "observed:room13:books" in f else "보수 도면에는 주방과 13호를 잇는 선이 있다."
             question="책장은 왜 움직이지 않을까?";hint="방의 책장과 수리점의 보수 도면을 비교해 볼 만하다."

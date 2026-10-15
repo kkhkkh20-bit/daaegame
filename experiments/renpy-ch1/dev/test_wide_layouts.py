@@ -62,7 +62,7 @@ class WideLayouts(unittest.TestCase):
                     self.assertTrue(0 < cx < width and 0 < feet <= 720 and 0 < height < feet, slot)
 
     def test_scope(self):
-        # 0.18.57: post wide in the morning only; guestroom stays the old room.
+        # 0.18.58: post wide in the morning only; guestroom stays the old room.
         self.assertEqual(LAYOUT["post"]["periods"], ["morning"])
         self.assertNotIn("guestroom", LAYOUT)
         # The post slot in front of the scarf was replaced (it hid the scarf).

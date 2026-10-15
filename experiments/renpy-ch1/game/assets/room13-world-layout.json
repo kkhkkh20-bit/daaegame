@@ -11,10 +11,10 @@
     },
     "objects": {
       "desk": [
-        1294,
-        334,
-        548,
-        343
+        1600,
+        440,
+        240,
+        230
       ],
       "door": [
         980,
@@ -110,7 +110,7 @@
     ],
     "positions": {
       "granny": [
-        1470,
+        1420,
         624,
         280
       ],
@@ -170,7 +170,7 @@
         170
       ]
     ],
-    "notes": "Coordinates visually read from native 2048x768, uniformly displayed at 1920x720; Physical staging reviewed in actual RenPy source-injected left/right fixtures; production viewport interaction QA remains. Revision3: grandmother wipes the OUTER counter face from public floor, full body without counter occlusion. 0.18.58: the redesigned grandmother has no counter-wiping pose (she stands), so she stands at [1470,624] on the public floor in front of the counter, clear of the ledger (register) her old spot covered.",
+    "notes": "Coordinates visually read from native 2048x768, uniformly displayed at 1920x720; Physical staging reviewed in actual RenPy source-injected left/right fixtures; production viewport interaction QA remains. Revision3: grandmother wipes the OUTER counter face from public floor, full body without counter occlusion. 0.18.59: the redesigned grandmother has no counter-wiping pose (she stands); she keeps the owner's 0.18.58 spot [1420,624] on the public floor, clear of the ledger (register).",
     "crops": {
       "morning": [
         0,
@@ -1718,7 +1718,7 @@
       "afternoon",
       "evening"
     ],
-    "note": "0.18.57 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720.",
+    "note": "0.18.58 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720.",
     "files": {
       "morning": "assets/room13-pixel-wide-kitchen-morning.webp",
       "afternoon": "assets/room13-pixel-wide-kitchen-afternoon.webp",
@@ -1832,7 +1832,7 @@
       "afternoon",
       "evening"
     ],
-    "note": "0.18.57 wide map, all three daylight periods. Evening holds up to three residents (nabi, owl grandfather, Tok; days 1-7 while he is alive): a third floor spot [135,690,265] in front of the log pile was added in this release (the art gave two) and checked with hit maps; the investigation objects stay clickable. Uniform 2172x724 -> 2160x720.",
+    "note": "0.18.58 wide map, all three daylight periods. Evening holds up to three residents (nabi, owl grandfather, Tok; days 1-7 while he is alive): a third floor spot [135,690,265] in front of the log pile was added in this release (the art gave two) and checked with hit maps; the investigation objects stay clickable. Uniform 2172x724 -> 2160x720.",
     "files": {
       "morning": "assets/room13-pixel-wide-dining-morning.webp",
       "afternoon": "assets/room13-pixel-wide-dining-afternoon.webp",
@@ -1953,7 +1953,7 @@
       "afternoon",
       "evening"
     ],
-    "note": "0.18.57 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720. passage evening was 2171 wide: normalized to 2172 by repeating the last column (art/wide-maps-20261015/normalized).",
+    "note": "0.18.58 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720. passage evening was 2171 wide: normalized to 2172 by repeating the last column (art/wide-maps-20261015/normalized).",
     "files": {
       "morning": "assets/room13-pixel-wide-passage-morning.webp",
       "afternoon": "assets/room13-pixel-wide-passage-afternoon.webp",
@@ -2055,7 +2055,7 @@
   "hall": {
     "width": 2160,
     "initial_x": 440,
-    "note": "0.18.57 wide hall: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks.",
+    "note": "0.18.58 wide hall: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks.",
     "state_files": {
       "before": {
         "morning": "assets/room13-pixel-wide-hall-before-morning.webp",
@@ -2223,7 +2223,7 @@
   "room13": {
     "width": 2160,
     "initial_x": 440,
-    "note": "0.18.57 wide room13: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks.",
+    "note": "0.18.58 wide room13: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks. Desk target is the table's front edge below the cup, bread, notebook and papers (owner rule 0.18.57); Daram reads sitting on top of the blanket.",
     "state_files": {
       "before": {
         "morning": "assets/room13-pixel-wide-room13-before-morning.webp",
@@ -2414,9 +2414,9 @@
     "late_objects": {
       "desk": [
         0,
-        380,
-        640,
-        180
+        468,
+        620,
+        47
       ],
       "mother_note": [
         160,
@@ -2432,8 +2432,8 @@
         185
       ],
       "action_1": [
-        1000,
-        470,
+        1010,
+        445,
         125
       ],
       "action_2": [
@@ -2480,7 +2480,7 @@
     "periods": [
       "morning"
     ],
-    "note": "0.18.57 wide post, morning only. Afternoon/evening art was withheld (3-12px drift): those periods keep the 1280 backdrop, rects and staging. Source art/wide-maps-20261015/source/post-morning.png 2160x728, explicit crop [0,0,2160,720] (no scaling). Six public-floor slots in front of the counter: the owner's five candidates plus [585,712,240] in place of [675,635,205], which hid the scarf on six-resident mornings.",
+    "note": "0.18.58 wide post, morning only. Afternoon/evening art was withheld (3-12px drift): those periods keep the 1280 backdrop, rects and staging. Source art/wide-maps-20261015/source/post-morning.png 2160x728, explicit crop [0,0,2160,720] (no scaling). Six public-floor slots in front of the counter: the owner's five candidates plus [585,712,240] in place of [675,635,205], which hid the scarf on six-resident mornings.",
     "files": {
       "morning": "assets/room13-pixel-wide-post-morning.webp"
     },

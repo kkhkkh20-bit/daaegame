@@ -33,7 +33,7 @@ class HomeTest(unittest.TestCase):
  def test_wide_room13_uses_its_own_home_positions(self):
   # 0.18.55: the wide 13호 places each activity on its own bed/rug; guestroom keeps the old spot.
   original=dict(person='daram',pose='neutral',x=0,y=0);self.ns['_r13_daram_home_stage']=lambda e=False:[original]
-  spots={'action_1':[1000,470,125],'action_2':[1300,655,185],'inspect_floor':[1530,650,138],'neutral':[1420,662,185]}
+  spots={'action_1':[1010,445,125],'action_2':[1300,655,185],'inspect_floor':[1530,650,138],'neutral':[1420,662,185]}
   self.ns['r13_layout']=lambda location=None:{'home_positions':spots} if location=='room13' else {}
   for period,pose in [(0,'action_1'),(1,'action_2'),(2,'inspect_floor')]:
    self.state['period']=period;actor=self.ns['r13_stage_people']()[0];cx,feet,height=spots[pose]

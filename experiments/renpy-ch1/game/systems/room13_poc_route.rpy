@@ -19,7 +19,7 @@ init 100 python:
     # Picking up an already located envelope is ordinary investigation, not a
     # half-day research activity. Reading still precedes the original E18 grant.
     ROOM13["activities"]["warning"]["cost"]=0
-    ROOM13["evidence"]["E18"]["establishes"]="첫 주에 가족에게 남긴 엄마의 글. ‘편지를 보내라고 부탁한 적 없어. 여관에 내가 어디로 가는지 말하지 마. 등불을 고치는 사람을 통해 답해 줘. 혼자 누구를 만나러 가지 말고.’라고 적혀 있다."
+    ROOM13["evidence"]["E18"]["establishes"]="첫 주에 가족에게 남긴 엄마의 글. ‘너희한테 오라는 편지를 쓴 적 없어. 여관에 내가 어디로 가는지 말하지 마. 등불을 고치는 사람을 통해 답해 줘. 혼자 누구를 만나러 가지 말고.’라고 적혀 있다."
     for key in ("intro:lamplighter_mother","intro:post_visit"):
         ROOM13["topics"][key]["day"]=[2,4]
     ROOM13["topics"]["intro:direction"]["day"]=[1,4]
@@ -30,7 +30,7 @@ init 100 python:
         "J05":dict(name="까로가 본 초롱의 보관함",who="karo",short="초롱의 보관함",
             text="까로는 초롱이 광장 등불 아래 점검함에 봉투를 넣고 잠그는 것을 본 적이 있다고 했다. 엄마의 봉투인지, 누구에게 보낼 것인지는 모른다."),
         "J06":dict(name="할머니가 설명한 초대 이유",who="granny",short="할머니의 초대 이유",
-            text="할머니는 엄마의 부탁으로 편지를 보낸 것은 아니라고 말했다. 남은 물건과 끊긴 소식 때문에 가족에게 알렸다는 것이 할머니의 설명이다. 엄마가 여관을 피하라고 경고한 이유까지 확인된 것은 아니다."),
+            text="할머니는 그 편지를 자기가 받아 적어 부쳤다고 인정했다. 엄마가 불러 달라고 했다는 말은 할머니의 주장일 뿐이다. 엄마가 여관을 피하라고 경고한 이유까지 확인된 것은 아니다."),
     }
     for key,note in R13_POC_WITNESSES.items():
         ROOM13["evidence"][key]=dict(id=key,name=note["name"],kind="증언",establishes=note["text"],does_not_establish="",scenes=[],current_run_only=True,retained_on_show=True)
@@ -49,12 +49,12 @@ init 100 python:
         ("dad","그 봉투가 아내에게서 받은 것인지도 아십니까?"),
         ("karo","누구 봉투인지는 몰라요. 그래도 허락 없이 함을 열어 보지는 마세요."),
         ("dad","점검함을 찾기 전에, 아내의 메모와 들은 이야기를 가지고 초롱 씨에게 먼저 물어보겠습니다.")])
-    ROOM13["topics"]["poc:granny_letter"]=dict(npc="granny",title="아내는 부탁한 적 없다는데, 왜 저희를 부르셨습니까?",day=[3,4],need=["poc:letter_conflict","warning_exposed"],give=["J06"],flags=["poc:granny_explained"],lines=[
-        ("dad","보내 주신 초대 편지와 아내의 글을 함께 읽었습니다. 그런데 아내는 편지를 보내라고 부탁한 적이 없다고 썼더군요."),
-        ("granny","부인이 부탁해서 보낸 건 아니에요. 부인 물건은 여관에 남았는데 소식은 끊겼으니, 가족께 알려야겠다 싶었죠."),
+    ROOM13["topics"]["poc:granny_letter"]=dict(npc="granny",title="아내는 쓴 적 없다는데, 그 편지는 누가 썼습니까?",day=[3,4],need=["poc:letter_conflict","warning_exposed"],give=["J06"],flags=["poc:granny_explained"],lines=[
+        ("dad","아내 이름으로 온 편지와 아내가 직접 쓴 글을 함께 읽었습니다. 아내는 오라는 편지를 쓴 적이 없다고 썼더군요."),
+        ("granny","부인이 가족을 보고 싶다고 했어요. 그 말을 제가 받아 적어 부쳤을 뿐이에요."),
         ("dad","그럼 아내는 왜 여관에는 자기 행선지를 말하지 말라고 했을까요?"),
         ("granny","부인을 기다리는 저도 그 이유를 알고 싶네요. 부인이 돌아와서 직접 말해 주면 좋겠어요."),
-        ("dad","편지를 보낸 이유는 할머니 말씀대로 적어 두겠습니다. 아내가 행선지를 말하지 말라고 경고한 이유는 더 알아봐야겠군요.")])
+        ("dad","편지를 할머니가 썼다는 것은 적어 두겠습니다. 아내가 행선지를 말하지 말라고 경고한 이유는 더 알아봐야겠군요.")])
 
     _r13_poc_topics=r13_topics
     def r13_topics(person):
@@ -93,7 +93,7 @@ init 100 python:
             pair=set(selected)
             if pair=={"E01","E18"}:
                 r13_flag("poc:letter_conflict")
-                return "(할머니의 편지를 받고 우리는 이곳에 왔다. 그런데 엄마는 ‘편지를 보내라고 부탁한 적 없어’라고 썼다. 할머니가 왜 가족을 불렀는지와, 엄마가 왜 여관을 피하라고 했는지는 서로 다른 질문이다. 엄마가 여관을 피하라고 한 글을, 여관 사람에게 보여 줘도 될까?)"
+                return "(우리는 엄마 이름으로 온 편지를 받고 왔다. 그런데 엄마는 ‘오라는 편지를 쓴 적 없어’라고 썼다. 우리가 받은 편지는 누가 썼을까? 그리고 엄마는 왜 여관을 피하라고 했을까? 엄마가 여관을 피하라고 한 글을, 여관 사람에게 보여 줘도 될까?)"
             if pair=={"M01","J04"}:
                 return "(엄마의 메모는 초롱에게 물어보라고 했다. 나비는 엄마가 그에게 봉투를 건네는 것을 봤다. 봉투 안의 글은 나비도 모른다.)"
             if pair=={"M01","J05"}:
@@ -106,11 +106,11 @@ init 100 python:
         s=store.room13 or {}
         if not r13_poc_active():return None
         has=lambda k:k in s.get("flags",[]) or k in s.get("evidence",[])
-        if has("poc:granny_explained"):return "할머니는 소식이 끊겨 불렀다고 했다. 그럼 엄마는 무엇을 경고한 걸까?"
+        if has("poc:granny_explained"):return "할머니는 엄마 말을 받아 적었을 뿐이라고 했다. 그럼 엄마는 무엇을 경고한 걸까?"
         if has("poc:letter_conflict"):
             if has("warning_exposed"):return "엄마가 부탁하지 않았다면, 할머니는 왜 우리를 불렀을까?"
             return "엄마가 부탁하지 않았다면, 할머니는 왜 우리를 불렀을까?"
-        if has("E18"):return "‘편지를 보내라고 부탁한 적 없어’ — 그럼 우리가 받은 편지는?"
+        if has("E18"):return "‘오라는 편지를 쓴 적 없어’ — 그럼 우리가 받은 편지는?"
         if has("warning_location"):return "초롱이 말한 점검함에는 무엇이 들어 있을까?"
         if has("J04") or has("J05"):return "엄마가 초롱에게 맡긴 봉투에는 무엇이 적혀 있을까?"
         if has("poc:note_shown:nabi") and r13_poc_helped("nabi"):return "나비는 여관에서 엄마와 초롱을 함께 본 적이 있을까?"
@@ -140,7 +140,7 @@ init 100 python:
         if not r13_poc_active():return rows
         s=store.room13;has=lambda k:k in s.get("flags",[]) or k in s.get("evidence",[])
         if has("E18"):
-            rows[0]=dict(title="왜 초대 편지와 엄마의 경고가 다를까?",fact="엄마는 편지를 보내라고 부탁한 적 없으며, 여관에 행선지를 알리지 말라고 썼다.",question="할머니는 누구의 부탁으로 가족을 불렀을까? 엄마는 왜 여관을 피할까?",hint="두 글을 나란히 놓으면 무엇이 서로 다른가? 편지를 보낸 사람은 그 이유를 어떻게 설명할까? 아직 범인이라고 단정할 수는 없다.",keys=["E01","E18"])
+            rows[0]=dict(title="왜 초대 편지와 엄마의 경고가 다를까?",fact="엄마는 오라는 편지를 쓴 적 없으며, 여관에 행선지를 알리지 말라고 썼다.",question="엄마 이름으로 온 편지는 누가 썼을까? 엄마는 왜 여관을 피할까?",hint="두 글을 나란히 놓으면 무엇이 서로 다른가? 편지를 부친 사람은 그 이유를 어떻게 설명할까? 아직 범인이라고 단정할 수는 없다.",keys=["E01","E18"])
         elif has("J04") or has("J05"):
             rows[0]=dict(title="초롱에게 맡긴 글은 가족에게 남긴 것일까?",fact="함께 일한 주민에게 봉투 또는 보관함에 관한 말을 들었다. 내용과 받는 사람은 아직 모른다.",question="초롱이 엄마에게서 직접 맡은 글이 있을까?",hint="들은 말은 봉투가 있었다는 것뿐이다. 봉투를 맡은 사람은 무엇을 알고 있을까? 남의 보관함을 함부로 열면 신뢰를 잃는다.",keys=[k for k in ("M01","J04","J05") if has(k)])
         elif has("J03"):
@@ -154,9 +154,9 @@ label r13_poc_night_review:
     if r13_has(r13_poc_night_key):
         return
     if r13_has("poc:letter_conflict"):
-        call r13_lines([("daram","엄마는 편지를 부탁한 적 없다고 했는데, 할머니는 우리한테 편지를 보냈네."),("dad","응. 엄마 글과 초대 편지를 나란히 놓으니 말이 서로 달라."),("daram","그럼 둘 중 누가 틀린 거야?"),("dad","아직 몰라. 둘 다 사실일 수도 있어. 할머니는 왜 편지를 보냈고, 엄마는 왜 부탁한 적 없다고 썼을까?")],"poc:night:letters")
+        call r13_lines([("daram","엄마는 오라는 편지를 쓴 적 없대. 그럼 우리가 받은 건 누가 쓴 거야?"),("dad","응. 두 편지를 나란히 놓으니 말이 서로 달라."),("daram","엄마는 우리가 오는 게 싫었던 거야?",{"expression":"anxious"}),("dad","아니. 엄마 글에는 우리 걱정만 적혀 있었어. 누가 엄마 이름으로 우리를 불렀는지 알아내야 해.")],"poc:night:letters")
     elif r13_has("E18"):
-        call r13_lines([("daram","엄마 글에는 편지 보내라고 한 적 없다고 적혀 있어."),("dad","그럼 우리가 받은 초대 편지는 누가, 왜 보낸 걸까?")],"poc:night:uncompared")
+        call r13_lines([("daram","엄마 글에는 오라는 편지를 쓴 적 없다고 적혀 있어."),("dad","그럼 엄마 이름으로 온 초대 편지는 누가, 왜 쓴 걸까?")],"poc:night:uncompared")
     elif r13_has("J04") or r13_has("J05"):
         call r13_lines([("daram","어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라."),("dad","응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.")],"poc:night:packet")
     elif r13_has("J02") and not r13_has("J03"):
