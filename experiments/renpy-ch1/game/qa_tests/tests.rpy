@@ -2249,7 +2249,12 @@ testcase day1_note_spot:
     pause 2.0
     assert eval (r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]) and "책상 위" in r13_intro_goal())
     screenshot "day1_note_spot.png"
-    click pos (195,398)
+    # 0.18.55 wide 13호: the desk is at the left edge of the room (camera 0).
+    $ r13_world_cameras={"room13":0}
+    run Call("r13_qa_goto",1,1,"room13")
+    pause 2.0
+    $ r13_qa_hitmap("day1_note")
+    click pos r13_qa_pick("mother_note")
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval ("M01" in room13["evidence"] and r13_bed_available("bed") and not r13_object_visible(ROOM13["objects"]["room13"]["mother_note"]))
     pause 1.0
