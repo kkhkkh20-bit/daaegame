@@ -1,0 +1,98 @@
+{
+ "note": "inn-navigation-v4-integration.zip (approved 2026-10-14). Bounds are in the source background pixels; the game converts them with the same transform as the background (lobby 2048x768 -> 1920x720 world panorama, hall 1672x941 -> 1280x720). 'edge' chips are screen-edge UI, not doors drawn in the picture.",
+ "inn": {
+  "source": [
+   2048,
+   768
+  ],
+  "background": "assets/room13-pixel-panorama-inn-<daylight>.webp",
+  "chips": [
+   {
+    "to": "dining",
+    "label": "‹ 식당",
+    "kind": "edge",
+    "bounds": [
+     53,
+     696,
+     157,
+     750
+    ]
+   },
+   {
+    "to": "kitchen",
+    "label": "주방 ›",
+    "kind": "edge",
+    "bounds": [
+     1891,
+     696,
+     1995,
+     750
+    ]
+   },
+   {
+    "to": "hall",
+    "label": "2층으로 ↑",
+    "kind": "edge",
+    "bounds": [
+     944,
+     696,
+     1104,
+     750
+    ]
+   },
+   {
+    "to": "outside",
+    "label": "바깥으로",
+    "kind": "drawn",
+    "bounds": [
+     1039,
+     403,
+     1177,
+     457
+    ]
+   }
+  ]
+ },
+ "hall": {
+  "source": [
+   1672,
+   941
+  ],
+  "background": "assets/room13-pixel-hall-<before|after>-<daylight>.webp",
+  "chips": [
+   {
+    "to": "room13",
+    "label": "13호실",
+    "kind": "drawn",
+    "bounds": [
+     998,
+     499,
+     1116,
+     553
+    ]
+   },
+   {
+    "to": "inn",
+    "label": "↓ 1층 로비",
+    "kind": "drawn",
+    "bounds": [
+     60,
+     520,
+     226,
+     574
+    ]
+   },
+   {
+    "to": "guestroom",
+    "label": "임시 객실 ›",
+    "kind": "edge",
+    "bounds": [
+     1444,
+     869,
+     1602,
+     923
+    ]
+   }
+  ]
+ }
+}
