@@ -98,7 +98,24 @@ init python:
         return R13_SAY_TOP_LARGE if persistent.room13_large_text else R13_SAY_TOP_NORMAL
 
 screen say(who,what):
-    if not room13_mode:
+    if room13_mode and r13_meeting_active and r13_meeting_claim in R13_DEBATE:
+        use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
+        use r13_meeting_chrome(r13_meeting_claim)
+        window:
+            id "window"
+            area (80,500,1120,132) background R13PaperFrame() padding (22,36,22,14)
+            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color r13_say_color()
+        if who:
+            text who id "who" xpos 104 ypos 510 size r13_read_size(18,22) color "#795d40"
+        text "▸" xpos 1160 ypos 600 size 24 color "#795d40"
+        timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
+        if r13_meeting_can_interrupt():
+            textbutton "보여주기":
+                style "r13_action_button" xpos 988 ypos 420 xsize 212 ysize 64 text_size 22
+                action Function(renpy.call_in_new_context,"r13_meeting_interrupt",r13_meeting_claim,r13_meeting_live_target())
+        use r13_playback_footer()
+        key "K_h" action Show("r13_backlog")
+    elif not room13_mode:
         if room13_mode:
             key "K_h" action Show("r13_backlog")
         $ has_portrait = not room13_mode and dialogue_speaker in CAST
@@ -190,7 +207,9 @@ screen choice(items):
     default choice_visitor = room13_mode and "r13_visitor" in renpy.get_showing_tags()
     default choice_actor = (r13_motion_person if choice_visitor else (r13_last_partner if room13_mode and r13_last_partner in CAST else None))
     default choice_pose = (r13_current_pose if choice_visitor else "interview_neutral") if room13_mode else "neutral"
-    if room13_mode:
+    if room13_mode and r13_meeting_active:
+        use r13_meeting_choices(items,choice_ready)
+    elif room13_mode:
         on "show" action Function(r13_choice_layout,choice_actor,choice_pose,True)
         on "hide" action Function(r13_choice_layout,choice_actor,choice_pose,False)
         # A menu caption (no action) is the question being asked: shown as a heading, never as

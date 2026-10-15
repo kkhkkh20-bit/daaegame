@@ -1,4 +1,4 @@
-"""Generate the wide-map Ren'Py testcases (0.18.53) into game/qa_tests/tests.rpy.
+"""Generate the wide-map Ren'Py testcases (0.18.57) into game/qa_tests/tests.rpy.
 
     python3 dev/gen_wide_tests.py          # rewrite the generated block
 
@@ -27,7 +27,7 @@ DAYS = {
     "dining": {0: 2, 1: 2, 2: 7},
     "passage": {0: 2, 1: 2, 2: 7},
     "post": {0: 3, 1: 3, 2: 7},
-    # 0.18.53 inn lobby repair art (layout unchanged); evening with Bami protected = 7 people.
+    # 0.18.57 inn lobby repair art (layout unchanged); evening with Bami protected = 7 people.
     "inn": {0: 3, 1: 3, 2: 7},
 }
 EXTRA_FLAGS = {("inn", 2): '("bami_protected",)'}
@@ -65,7 +65,7 @@ def location_case(loc):
     spec = LAYOUT[loc]
     periods = spec.get("periods", ["morning", "afternoon", "evening"])
     out = [f"testcase wide_{loc}:",
-           f"    # 0.18.55 wide map {loc}: hit map, screenshot and real clicks per state, period and camera.",
+           f"    # 0.18.57 wide map {loc}: hit map, screenshot and real clicks per state, period and camera.",
            "    pause 2.0", '    click "처음부터"', "    pause 3.0",
            f'    run Call("r13_qa_roam",dict(day=2,period=0,location="{loc}",life_poc=True,secret_route_unlocked=True),{FLAGS})',
            '    click pos (640,600) until screen "r13_hub" timeout 40', "    pause 0.6"]
@@ -106,7 +106,7 @@ def location_case(loc):
 
 def saveload_case():
     out = ["testcase wide_saveload:",
-           "    # 0.18.53: each period's picture and rects survive save/load and period changes;",
+           "    # 0.18.57: each period's picture and rects survive save/load and period changes;",
            "    # post keeps the old scene outside the morning.",
            "    pause 2.0", '    click "처음부터"', "    pause 3.0",
            f'    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True,secret_route_unlocked=True),{FLAGS})',
@@ -170,7 +170,7 @@ def saveload_case():
 
 def capacity_case():
     return ["testcase wide_capacity:",
-            "    # 0.18.53: residents never outnumber a wide layout's reviewed slots (days 1-14,",
+            "    # 0.18.57: residents never outnumber a wide layout's reviewed slots (days 1-14,",
             "    # every period, case/victim/granny states and the flags that move people).",
             "    pause 2.0", '    click "처음부터"', "    pause 3.0",
             f'    run Call("r13_qa_roam",dict(day=2,period=0,location="kitchen",life_poc=True,secret_route_unlocked=True),{FLAGS})',
@@ -188,7 +188,7 @@ def main():
         head, rest = text.split(BEGIN, 1)
         tail = rest.split(END, 1)[1]
     else:
-        # First run: replace the hand-written 0.18.53 cases at the end of the file.
+        # First run: replace the hand-written 0.18.57 cases at the end of the file.
         head = text.split("testcase wide_kitchen:", 1)[0]
         tail = "\n"
     TESTS.write_text(head + "\n".join(block) + tail)

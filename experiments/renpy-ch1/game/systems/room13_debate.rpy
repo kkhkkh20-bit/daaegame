@@ -409,6 +409,8 @@ init 98 python:
         st=r13_debate_statement(claim,sid)
         if r13_debate_is_broken(claim,sid):
             return "soft",[(R13_DEBATE[claim]["chair"],"그 말은 이미 반박됐습니다. 남은 말을 보세요.")]
+        if st.get("ready_flags"):
+            return "soft",list(st.get("press_missing",[(R13_DEBATE[claim]["chair"],"자료와 함께 실제로 준비된 사람과 길도 확인해야 합니다." )]))
         consent=st.get("need_consent",{}).get(key)
         if consent and not r13_has(consent):
             # Witness gates (systems/room13_episodes.rpy) carry their own refusal lines.
@@ -559,15 +561,29 @@ init 98 python:
         return opts[shift:]+opts[:shift]
 
 label r13_debate_run(claim):
+    $ r13_meeting_claim=claim
+    $ r13_meeting_active=True
+    $ r13_meeting_focus_change(claim,r13_debate_statements(claim)[0]["who"])
+    call r13_debate_session_run(claim)
+    $ r13_meeting_result=_return
+    $ r13_meeting_active=False
+    hide r13_visitor
+    return r13_meeting_result
+
+label r13_debate_session_run(claim):
     $ r13_claim=claim
     if not r13_debate_engageable(claim):
         call r13_debate_unanswerable(claim)
         return False
     $ r13_debate_selected=r13_debate_next_target(claim,r13_debate_statements(claim)[0]["id"])
 label r13_debate_loop:
+    $ r13_meeting_claim=r13_claim
+    $ r13_meeting_active=True
     window hide
     hide r13_visitor
     call screen r13_debate_board(r13_claim,r13_debate_selected)
+    $ r13_meeting_claim=r13_claim
+    $ r13_meeting_active=True
     $ r13_debate_action=_return
     if r13_debate_action[0]=="select":
         $ r13_debate_selected=r13_debate_action[1]
@@ -597,22 +613,7 @@ label r13_debate_loop:
         call screen r13_book("resident_seori",present=True,hearing=True)
         $ r13_item=_return
         if r13_item:
-            $ r13_debate_result,r13_debate_rows=r13_debate_judge(r13_claim,r13_debate_action[1],r13_item)
-            show screen r13_material_corner(r13_item)
-            call r13_lines(r13_debate_rows,"debate:"+r13_debate_result+":"+r13_claim+":"+r13_debate_action[1]+":"+r13_item)
-            hide screen r13_material_corner
-            if r13_debate_result=="break" and r13_debate_counter(r13_claim,r13_debate_action[1]):
-                # The rebuttal stands only once Dad answers the counter it provoked.
-                call r13_debate_answer_counter(r13_claim,r13_debate_action[1])
-                if not _return:
-                    $ r13_debate_result="countered"
-                    $ r13_debate_miss(r13_claim)
-            if r13_debate_result=="break":
-                $ r13_debate_mark("broken",r13_claim,r13_debate_action[1])
-                $ r13_submit(r13_claim,r13_item)
-                $ r13_debate_selected=r13_debate_next_target(r13_claim,r13_debate_selected)
-            elif r13_debate_result=="wrong":
-                $ r13_debate_miss(r13_claim)
+            call r13_debate_present_record(r13_claim,r13_debate_action[1],r13_item)
     elif r13_debate_action[0]=="conclude":
         call r13_debate_conclude(r13_claim)
         if _return:
@@ -622,13 +623,16 @@ label r13_debate_loop:
                 call r13_lines(R13_FAKE_TESTIMONY_LINES,"debate:c4:fake_testimony")
                 $ r13_flag("c4_unenforced","fake_testimony_exposed")
                 $ r13_debate_close(r13_claim,"unenforced")
+                call r13_meeting_public_vote(r13_claim,r13_debate_pick)
                 return True
             if r13_claim=="C4" and not r13_has("fair_hearing"):
                 call r13_lines(R13_C4_UNENFORCED,"debate:c4:unenforced")
                 $ r13_flag("c4_unenforced")
                 $ r13_debate_close(r13_claim,"unenforced")
+                call r13_meeting_public_vote(r13_claim,r13_debate_pick)
                 return True
             $ r13_prove(r13_claim)
+            call r13_meeting_public_vote(r13_claim,r13_debate_pick)
             return True
     jump r13_debate_loop
 
@@ -661,91 +665,92 @@ label r13_debate_conclude(claim):
         return True
     call r13_lines([r13_debate_spec[r13_debate_pick]],"debate:conclusion_wrong:"+claim+":"+r13_debate_pick)
     $ r13_debate_miss(claim)
+    call r13_meeting_public_vote(claim,r13_debate_pick)
     return False
+
+screen r13_meeting_agenda(claims):
+    style_prefix "r13"
+    modal True
+    zorder 35
+    default ready=False
+    timer .3 action SetScreenVariable("ready",True)
+    use r13_meeting_stage(claims[0] if claims else "C1")
+    frame:
+        area (24,18,900,66) padding (16,8) background R13PaperFrame()
+        vbox:
+            text "식당 회의 · 7일째" size 17 color "#795d40"
+            text "어느 주장을 다룰까?" size r13_read_size(23,27) color "#493b30"
+    $ captions={"C1":"정문이 잠겼으니 아이뿐이라는 주장","C2":"다람이의 방어가 죽음의 원인이라는 주장","C3":"할머니는 그때 식당에 있었다는 말","C4":"할머니가 도우러 들어갔을 뿐이라는 변명"}
+    frame:
+        area (80,490,1120,210) padding (18,14) background R13PaperFrame()
+        viewport:
+            mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
+            vbox:
+                spacing 12
+                for claim in claims:
+                    textbutton captions.get(claim,R13_DEBATE[claim]["title"]):
+                        style "r13_action_button" xsize 1056 ysize 72 text_size r13_read_size(23,27)
+                        action Return(claim) sensitive ready
 
 screen r13_debate_board(claim,selected):
     style_prefix "r13"
     modal True
     zorder 35
     default ready=False
+    default statements_open=False
     timer .3 action SetScreenVariable("ready",True)
-    $ session=r13_debate_session(claim)
+    $ sel=r13_debate_statement(claim,selected)
     $ done,total=r13_debate_progress(claim)
     $ visible=[st for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
-    $ sel=r13_debate_statement(claim,selected)
-    add Solid("#0d1a1fd8")
-    # 머리줄: 장소 · 주장 · 신뢰
+    use r13_meeting_stage(claim,sel["who"],False,ready,selected)
+    use r13_meeting_chrome(claim)
+    textbutton "발언 기록":
+        style "r13_action_button" xpos 942 ypos 18 xsize 144 ysize 64 text_size 20
+        action ToggleScreenVariable("statements_open") sensitive ready
+    textbutton "회의 중단":
+        style "r13_action_button" xpos 1096 ypos 18 xsize 160 ysize 64 text_size 20
+        action Return(("leave",)) sensitive ready
     frame:
-        area (40,22,1200,86) padding (22,10) background Solid("#14272bf0")
+        area (80,500,1120,132) padding (22,12) background R13PaperFrame()
         vbox:
-            spacing 4
-            text ("식당 회의 · 7일째" if session=="trial" else "제단 앞 회의 · 14일째") size r13_read_size(19,22) color "#9fcbd9"
-            text ("상대의 주장 · "+R13_DEBATE[claim]["title"]) size r13_read_size(28,32) color "#f6d18a"
-    # Existing proof progress drives these seats; no new vote or verdict path.
-    $ tally=r13_debate_tally(session)
-    $ names=R13_DEBATE_STANCE[session]
-    fixed:
-        xpos 40 ypos 116 xsize 824 ysize 240
-        use r13_meeting_seating(claim,session,sel["who"],ready)
-    # 발언 카드
-    viewport:
-        area (40,370,820,254) mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
-        yadjustment r13_meeting_adjustment(claim)
-        vbox:
-            spacing 12
-            for st in visible:
-                $ broken=r13_debate_is_broken(claim,st["id"])
-                button:
-                    xsize 796 padding (18,12)
-                    background Solid("#f1e7d0" if st["id"]==selected else "#d9cdb2" if not broken else "#a9a493")
-                    hover_background Solid("#f6edd9")
-                    action Return(("select",st["id"])) sensitive ready
-                    vbox:
-                        spacing 6
-                        hbox:
-                            spacing 12
-                            text R13_NAMES.get(st["who"],st["who"]) size r13_read_size(19,22) color "#6b4a22"
-                            if broken:
-                                text "반박함" size r13_read_size(19,22) color "#2f6b55"
-                            elif st.get("truth") and r13_debate_is_pressed(claim,st["id"]):
-                                text "사실인 말" size r13_read_size(19,22) color "#5d6a66"
-                            elif r13_debate_is_pressed(claim,st["id"]):
-                                text "되물음" size r13_read_size(19,22) color "#5d6a66"
-                        text (r13_debate_markup(st["text"]) if not broken else "{s}"+st["text"].replace("【","").replace("】","")+"{/s}"):
-                            size r13_read_size(23,27) color "#2c2a24" xsize 756
-    # Right panel keeps actions fixed while long hints can scroll.
-    frame:
-        area (876,116,364,508) padding (20,18) background Solid("#14272bf0")
-        fixed:
-            xsize 324 ysize 472
-            vbox:
-                spacing 4
-                for index in range(3):
-                    text (names[index]+" · "+str(tally[index])) size r13_read_size(17,20) color "#d4dfd8"
-                text ("반박한 말 %d / %d"%(done,total)) size r13_read_size(20,24) color "#9fcbd9"
-                hbox:
-                    spacing 12
-                    if sel["who"] in CAST:
-                        add Transform(r13_art(sel["who"],"avatar_neutral"),xysize=(68,76),fit="contain",nearest=True)
-                    text (R13_NAMES.get(sel["who"],sel["who"])+"의 말") size r13_read_size(22,26) color "#f6d18a" xsize 240 yalign .5
+            spacing 7
+            text (R13_NAMES[sel["who"]]+" · "+str(visible.index(sel)+1)+" / "+str(len(visible))) size r13_read_size(18,22) color "#795d40"
             viewport:
-                ypos 184 xsize 324 ysize 142 mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
-                if r13_debate_is_pressed(claim,selected) or claim in (room13.get("debate") or {}).get("misses",{}) and (room13.get("debate") or {})["misses"][claim]>=2:
-                    text ("("+sel["hint"]+")") size r13_read_size(20,24) color "#a8cdec" xsize 308
-                else:
-                    text "되물으면 더 들을 수 있다." size r13_read_size(20,24) color "#7d8f8c" xsize 308
-            textbutton "되묻기" style "r13_action_button" ypos 340 xsize 324 ysize 56 text_size r13_read_size(22,26):
-                action Return(("press",selected)) sensitive ready and not r13_debate_is_broken(claim,selected)
-            textbutton "자료로 반박" style "r13_action_button" ypos 404 xsize 324 ysize 56 text_size r13_read_size(22,26):
-                action Return(("present",selected)) sensitive ready and not r13_debate_is_broken(claim,selected) and not sel.get("ready_flags")
+                xsize 1076 ysize 72 mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
+                text (r13_debate_markup(sel["text"]) if not r13_debate_is_broken(claim,selected) else "{s}"+sel["text"].replace("【","").replace("】","")+"{/s}") size r13_read_size(23,29) color "#493b30" xsize 1056
     hbox:
-        xpos 40 ypos 640 spacing 16
-        textbutton "결론을 말한다" style "r13_action_button" xsize 320 ysize 60 text_size r13_read_size(23,27):
+        xpos 80 ypos 646 spacing 12
+        textbutton "되묻기" style "r13_action_button" xsize 188 ysize 64 text_size 24:
+            action Return(("press",selected)) sensitive ready and not r13_debate_is_broken(claim,selected)
+        textbutton "보여주기" style "r13_action_button" xsize 188 ysize 64 text_size 24:
+            action Return(("present",selected)) sensitive ready and not r13_debate_is_broken(claim,selected)
+        textbutton "다음 발언" style "r13_action_button" xsize 188 ysize 64 text_size 24:
+            action Return(("select",r13_meeting_next_statement(claim,selected))) sensitive ready and len(visible)>1
+        textbutton "결론을 말한다" style "r13_action_button" xsize 248 ysize 64 text_size 24:
             action Return(("conclude",)) sensitive ready and r13_debate_ready(claim)
-        textbutton ("여기까지 정리한다" if done else "반론을 그만둔다") style "r13_action_button" xsize 260 ysize 60 text_size r13_read_size(21,25):
-            action Return(("leave",)) sensitive ready
-    if r13_debate_stuck(claim):
-        text "남은 말을 뒤집을 자료가 지금은 없다. 반박한 말까지만 기록에 남길 수 있다." xpos 640 ypos 646 xsize 600 size r13_read_size(18,21) color "#f0c98a"
-    elif not r13_debate_ready(claim):
-        text "강조된 말을 모두 반박하면 결론을 말할 수 있다. 틀려도 다시 낼 수 있다. 그만두면 이 회의에서는 다시 다룰 수 없다." xpos 640 ypos 646 xsize 600 size r13_read_size(18,21) color "#b7ccd0"
-    key "game_menu" action Return(("leave",))
+    frame:
+        area (960,646,240,64) padding (12,9) background R13PaperPanel()
+        text ("반박한 말  %d / %d"%(done,total)) size r13_read_size(20,24) color "#493b30" yalign .5
+    if statements_open:
+        frame:
+            area (736,94,520,394) padding (16,14) background R13PaperFrame()
+            vbox:
+                spacing 10
+                hbox:
+                    spacing 90
+                    text "발언 기록" size 23 color "#493b30"
+                    textbutton "닫기" style "r13_compact_button" xsize 112 ysize 44 action SetScreenVariable("statements_open",False)
+                viewport:
+                    xsize 484 ysize 300 mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
+                    vbox:
+                        spacing 8
+                        for st in visible:
+                            button:
+                                style "r13_paper_tab_button" xsize 462 padding (12,12)
+                                selected st["id"]==selected
+                                action Return(("select",st["id"])) sensitive ready
+                                vbox:
+                                    spacing 5
+                                    text (R13_NAMES[st["who"]]+(" · 반박함" if r13_debate_is_broken(claim,st["id"]) else "")) size 18 color ("#efd191" if st["id"]==selected else "#795d40")
+                                    text st["text"].replace("【","").replace("】","") size r13_read_size(20,24) color ("#fff0ce" if st["id"]==selected else "#493b30") xsize 430
+    key "game_menu" action (SetScreenVariable("statements_open",False) if statements_open else Return(("leave",)))

@@ -37,7 +37,7 @@ init 101 python:
             pose,(cx,anchor_y,height),activity=r13_daram_home_activity()
             # The temporary room has different furniture; keep its floor seat.
             if store.room13["location"]=="guestroom":cx,anchor_y,height=835,650,210
-            # 0.18.55 wide 13호: the same activities on the wide picture's own bed/rug.
+            # 0.18.57 wide 13호: the same activities on the wide picture's own bed/rug.
             # Child-sized standing height; seated/crouched poses keep the standing head size.
             elif r13_layout("room13") and store.room13["location"]=="room13":cx,anchor_y,height=r13_layout("room13")["home_positions"][pose]
             spec=r13_acting_spec("daram",pose) or {};width,native_height=r13_actor_geometry("daram",pose)
