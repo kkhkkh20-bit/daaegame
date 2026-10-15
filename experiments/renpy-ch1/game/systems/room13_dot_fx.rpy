@@ -440,7 +440,9 @@ init 57 python:
             return renpy.render(self.after, width, height, st, at)
 
     def r13_react_kind(who, arriving, actor_pose):
-        if who not in R13_REACT_PEOPLE or not r13_fx_active():
+        if not r13_fx_active():
+            return None
+        if who not in R13_REACT_PEOPLE:
             return None
         emotion = r13_fullbody_emotion(actor_pose) if r13_fullbody_spec(who, actor_pose) else None
         # 생각하는 표정은 그림이 neutral과 같아 따로 고개를 갸웃한다(0.18.41).
@@ -461,18 +463,34 @@ init 57 python:
         before = R13_REACT_LAST.get(who)
         # 앞 그림은 페이드 없이 기억한다(다시 보일 때 투명에서 시작하지 않게).
         R13_REACT_LAST[who] = ((spec or {}).get("emotion"), r13_close_art(who, actor_pose, 840, True, False) if spec else what)
-        if not kind:
+        if not r13_fx_active():
             return what, at_list
-        lead = R13_REACT_LEAD.get(kind, 0.0)
+        lead = R13_REACT_LEAD.get(kind, 0.0) if kind else 0.0
         if lead and before is not None:
             what = R13Anticipate(before[1], what, lead)
         else:
             lead = 0.0
         # 0.18.39 (owner): the synthesized 8-bit reaction sounds were removed; motion only.
+        size = r13_body_size(who, actor_pose)
+        if size:
+            # 0.18.43 (owner): 1:1 대화는 부드럽게(매 프레임) 움직인다. 발밑 가운데를 축으로
+            # 늘이고 눌러(스쿼시·스트레치) "확" 하는 느낌을 내고, 그 뒤엔 숨쉬기만 한다.
+            body = R13_BODY_MOTION.get(kind) if kind else None
+            moving = At(what, body(lead) if body else r13_body_idle)
+            return Fixed(moving, xysize=size), at_list
+        if not kind:
+            return what, at_list
         motion = {"surprise": r13_react_surprise, "joy": r13_react_joy, "angry": r13_react_angry,
                   "anxious": r13_react_anxious, "flustered": r13_react_flustered,
                   "thinking": r13_react_thinking}[kind]
         return what, list(at_list) + [motion(lead)]
+
+    def r13_body_size(who, pose):
+        spec = r13_fullbody_spec(who, pose)
+        if not spec:
+            return None
+        scale = r13_fullbody_scale(who, 840)
+        return (int(round(spec["crop"][2] * scale)), int(round(spec["crop"][3] * scale)))
 
 # 3px 배수. 앞 표정(lead) 동안 움찔/웅크림 → 새 표정과 함께 움직임 → 제자리.
 transform r13_react_surprise(lead=.10):
@@ -584,3 +602,128 @@ init 57 python:
         cached = Fixed(art, *layers, xysize=size)
         R13_CINE_FX_CACHE[cache_key] = cached
         return cached
+
+
+# ---------------------------------------------------------------- 0.18.43 1:1 대화 몸동작
+# 원본 표정 그림 한 장을 허리 높이(그림 위에서 62%) 가운데를 축으로 늘이고 누르고 띄워 동작을 만든다(매 프레임, 부드러운 가감속).
+# 동작이 끝나면 숨쉬기(1.7초마다 1% 늘었다 줄기)만 남는다. 조사(배경) 화면 인물은 여전히 움직이지 않는다.
+init 57 python:
+    def r13_body_motion_table():
+        return {"surprise": r13_body_surprise, "joy": r13_body_joy, "angry": r13_body_angry,
+                "anxious": r13_body_anxious, "flustered": r13_body_flustered, "thinking": r13_body_thinking}
+
+init 58 python:
+    R13_BODY_MOTION = r13_body_motion_table()
+
+transform r13_body_base:
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+
+transform r13_body_idle:
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+    xzoom 1 yzoom 1 xoffset 0 yoffset 0
+    block:
+        ease 1.7 yzoom 1.007 xzoom .997
+        ease 1.7 yzoom 1 xzoom 1
+        repeat
+
+# 놀람: (앞 얼굴로) 움츠림 → 새 얼굴로 확 솟구침 → 공중에서 잠깐 → 착지하며 눌림 → 제자리
+transform r13_body_surprise(lead=.10):
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+    xzoom 1 yzoom 1 xoffset 0 yoffset 0
+    easein max(lead, .07) xzoom 1.033 yzoom 0.956 yoffset 4
+    easeout .09 xzoom 0.9615 yzoom 1.05 yoffset -42
+    easein .12 xzoom 0.9835 yzoom 1.016 yoffset -48
+    easein .10 xzoom 1.033 yzoom 0.9615 yoffset 0
+    easeout .16 xzoom 0.9945 yzoom 1.006
+    ease .12 xzoom 1 yzoom 1
+    block:
+        ease 1.7 yzoom 1.007 xzoom .997
+        ease 1.7 yzoom 1 xzoom 1
+        repeat
+
+# 기쁨: 웅크렸다 통통 두 번
+transform r13_body_joy(lead=0.0):
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+    xzoom 1 yzoom 1 xoffset 0 yoffset 0
+    easein .07 xzoom 1.028 yzoom 0.967
+    easeout .10 xzoom 0.978 yzoom 1.033 yoffset -30
+    easein .10 xzoom 1 yzoom 1 yoffset 0
+    easein .05 xzoom 1.022 yzoom 0.9725
+    easeout .09 xzoom 0.9835 yzoom 1.022 yoffset -18
+    easein .09 xzoom 1 yzoom 1 yoffset 0
+    easein .05 xzoom 1.011 yzoom 0.989
+    ease .10 xzoom 1 yzoom 1
+    block:
+        ease 1.7 yzoom 1.007 xzoom .997
+        ease 1.7 yzoom 1 xzoom 1
+        repeat
+
+# 화남: (앞 얼굴로) 움찔 → 새 얼굴로 앞으로 들썩이며 부르르
+transform r13_body_angry(lead=.07):
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+    xzoom 1 yzoom 1 xoffset 0 yoffset 0
+    easein max(lead, .05) xzoom 1.022 yzoom 0.9725 yoffset 4
+    easeout .07 xzoom 0.9835 yzoom 1.028 yoffset -10
+    linear .035 xoffset 10
+    linear .035 xoffset -10
+    linear .035 xoffset 8
+    linear .035 xoffset -7
+    linear .035 xoffset 5
+    linear .035 xoffset -3
+    ease .14 xoffset 0 yoffset 0 xzoom 1 yzoom 1
+    block:
+        ease 1.7 yzoom 1.007 xzoom .997
+        ease 1.7 yzoom 1 xzoom 1
+        repeat
+
+# 불안: 몸을 움츠려 잔떨림 → 천천히 펴짐
+transform r13_body_anxious(lead=0.0):
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+    xzoom 1 yzoom 1 xoffset 0 yoffset 0
+    ease .18 xzoom 1.016 yzoom 0.967 yoffset 8
+    linear .04 xoffset 3
+    linear .04 xoffset -3
+    linear .04 xoffset 3
+    linear .04 xoffset -3
+    linear .04 xoffset 2
+    linear .04 xoffset 0
+    pause .25
+    ease .6 xzoom 1 yzoom 1 yoffset 0
+    block:
+        ease 1.4 yzoom 1.006 xzoom .998
+        ease 1.4 yzoom 1 xzoom 1
+        repeat
+
+# 당황: 좌우로 허둥지둥
+transform r13_body_flustered(lead=0.0):
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+    xzoom 1 yzoom 1 xoffset 0 yoffset 0
+    ease .11 xoffset -14 yzoom 0.989
+    ease .13 xoffset 14 yzoom 1.011
+    ease .12 xoffset -8 yzoom 0.9945
+    ease .12 xoffset 4 yzoom 1
+    ease .14 xoffset 0
+    block:
+        ease 1.7 yzoom 1.007 xzoom .997
+        ease 1.7 yzoom 1 xzoom 1
+        repeat
+
+# 생각: 한쪽으로 천천히 기울어 머문 뒤 제자리
+transform r13_body_thinking(lead=0.0):
+    subpixel True
+    xanchor .5 yanchor .62 xpos .5 ypos .62
+    xzoom 1 yzoom 1 xoffset 0 yoffset 0
+    ease .3 xoffset 12 yoffset 4 yzoom 0.9918
+    pause .9
+    ease .4 xoffset 0 yoffset 0 yzoom 1
+    block:
+        ease 1.7 yzoom 1.007 xzoom .997
+        ease 1.7 yzoom 1 xzoom 1
+        repeat
