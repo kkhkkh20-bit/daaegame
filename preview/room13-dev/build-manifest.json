@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 11680824,
-  "archive_sha256": "f9beeea105314d141d0a06b04a2ae1fc64e30785a9e8d120097e9c34806db0fe",
+  "archive_bytes": 11325327,
+  "archive_sha256": "97334722d5f3bfbf2ffc6297da36a428652b7962deb6eb410083ab428a6d0443",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 11680824,
-    "sha256": "f9beeea105314d141d0a06b04a2ae1fc64e30785a9e8d120097e9c34806db0fe"
+    "bytes": 11325327,
+    "sha256": "97334722d5f3bfbf2ffc6297da36a428652b7962deb6eb410083ab428a6d0443"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 69498,
-   "sha256": "f99321752f64a14255a8f5fb190c61b61d7b5b5f20f0d8472cea8fd59e2ca5e7"
+   "bytes": 62093,
+   "sha256": "413fdbb561dcf176a34d4d805abd0d7d2aff5dfdfa8363e21960a52b91d3f4a9"
   },
   "game.part01": {
-   "bytes": 11680824,
-   "sha256": "f9beeea105314d141d0a06b04a2ae1fc64e30785a9e8d120097e9c34806db0fe"
+   "bytes": 11325327,
+   "sha256": "97334722d5f3bfbf2ffc6297da36a428652b7962deb6eb410083ab428a6d0443"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -960,9 +960,29 @@
    "bytes": 73720,
    "sha256": "b980888cb5ce081b716a97c13d782d95c21213735b039c6a03686e9b076c2787"
   },
+  "game/assets/room13-fullbody-resident_librarian-angry.webp": {
+   "bytes": 63826,
+   "sha256": "d37323aa29536147fa085e1080a869391eb1b111993bba93c42a240f8713753b"
+  },
   "game/assets/room13-fullbody-resident_librarian-anxious.webp": {
    "bytes": 75860,
    "sha256": "6fd86f2fbccf0c2021ac1dde4dfc14acdccf1af4972e2187ac2d39529b810f0c"
+  },
+  "game/assets/room13-fullbody-resident_librarian-flustered.webp": {
+   "bytes": 62394,
+   "sha256": "efc06462d6a0cb7d44f649f8e4509e637081dc2b7117296b8df129072e5f0030"
+  },
+  "game/assets/room13-fullbody-resident_librarian-joy.webp": {
+   "bytes": 63394,
+   "sha256": "232178a310770974931b5e783b88189aba4427245f119c99bacdebd2d5c5235d"
+  },
+  "game/assets/room13-fullbody-resident_librarian-neutral.webp": {
+   "bytes": 62584,
+   "sha256": "b8c8219f2fe9fccf19c15e3e47fd081621ad338afa9ece61ddf005db3d4ed72e"
+  },
+  "game/assets/room13-fullbody-resident_librarian-surprise.webp": {
+   "bytes": 64196,
+   "sha256": "992f96fd6c6bb7f743e283aab02c760dc07c028e86fe1803c95435284dd71116"
   },
   "game/assets/room13-fullbody-resident_momo-angry.webp": {
    "bytes": 65916,
@@ -1171,6 +1191,30 @@
   "game/assets/room13-fullbody-resident_seol-surprise.webp": {
    "bytes": 68808,
    "sha256": "5af690e0a1cf7aaeb5a94478ce0725a65b2a42d2332af0ab819ba0770141ab58"
+  },
+  "game/assets/room13-fullbody-resident_siluk-angry.webp": {
+   "bytes": 60830,
+   "sha256": "6dbcac2c2719cef606d25ee7e23f4758885f7badf2ededdd8821a25a4c0c4990"
+  },
+  "game/assets/room13-fullbody-resident_siluk-anxious.webp": {
+   "bytes": 61206,
+   "sha256": "33ba3aa169b3314997d6ac6b6ea599f082b1f88aa4cdd93b743a26f884345446"
+  },
+  "game/assets/room13-fullbody-resident_siluk-flustered.webp": {
+   "bytes": 60774,
+   "sha256": "923ccef07a2bce776a22bea40c62ee789f03d8e92e062bb0c5f9cd8aa55d47e0"
+  },
+  "game/assets/room13-fullbody-resident_siluk-joy.webp": {
+   "bytes": 59238,
+   "sha256": "33e200b2efa6db8dee7401ab0873c1c6db11f7c736c12af73d6ab76540dabf53"
+  },
+  "game/assets/room13-fullbody-resident_siluk-neutral.webp": {
+   "bytes": 59338,
+   "sha256": "d5df895e89c20d0b528499491e35d50e4bbe887cf16c21269cd38ac03c1cc95d"
+  },
+  "game/assets/room13-fullbody-resident_siluk-surprise.webp": {
+   "bytes": 60516,
+   "sha256": "654d55cbfb5a6051137075c69b24c7897c7e7b93a685c569262eb678a379f399"
   },
   "game/assets/room13-fullbody-resident_sling-angry.webp": {
    "bytes": 77218,
@@ -2128,6 +2172,22 @@
    "bytes": 497356,
    "sha256": "08b0e893dca1e788cb2c36f769cfbeb6b7706dcafc62b99e76fd8ad6eca5f4d5"
   },
+  "game/assets/room13-redesign-resident_librarian.webp": {
+   "bytes": 75998,
+   "sha256": "3f37f514fb7107b513fb7fbe62c6baa83b0765cc69f14855eec2ff1682de44cf"
+  },
+  "game/assets/room13-redesign-resident_nero.webp": {
+   "bytes": 82686,
+   "sha256": "20d6e7562b94a14818f89976c6cb8567d17c43417a6f78110358474be86c9f79"
+  },
+  "game/assets/room13-redesign-resident_seol.webp": {
+   "bytes": 71130,
+   "sha256": "93e6c6cbfecc52610a46a8888eae9af9e728bb4a218a20d70a3a19858317f805"
+  },
+  "game/assets/room13-redesign-resident_yeoni.webp": {
+   "bytes": 72094,
+   "sha256": "a1f6054d272c14d38622dfcb0ca5ed755670ec00cd0d3d45f2abff936585a6df"
+  },
   "game/assets/room13-title-logo.webp": {
    "bytes": 565362,
    "sha256": "4745cb4eba48e715aabeb727a5f08e153b053c0810f1e8316d7224fb22bc1bb7"
@@ -2382,7 +2442,7 @@
   },
   "index.html": {
    "bytes": 9928,
-   "sha256": "fed63d65d6d1ae68dcd69034b82313c8e1a513261860f92ee982c4b04d33d02a"
+   "sha256": "101283c842dc2c160102431a658b07f52cbc82aa2004e6c59ef14aa86cca119b"
   },
   "loading-logo.webp": {
    "bytes": 565362,
@@ -2421,5 +2481,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 316823958
+ "total_bytes": 317441260
 }
