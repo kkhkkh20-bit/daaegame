@@ -2,8 +2,10 @@
 # 주장 하나 = 상대의 발언 2~3개. 발언의 【강조된 말】을 맞는 자료로 깨고,
 # 모두 깨면 결론을 말한다. 틀린 자료·틀린 결론에는 벌이 없다(기회는 많다).
 # 실패는 두 가지뿐이다(스토리보드: 증거가 모자라면 다람이는 끌려간다).
-#  - 필수 자료를 모으지 못한 논점은 선택지 없이 넘어가고 반론하지 못한 것으로 남는다.
+#  - 깰 수 있는 발언이 하나도 없는 논점은 선택지 없이 넘어가고 반론하지 못한 것으로 남는다.
 #  - 자료를 찾지 못하고 '반론을 그만둔다'를 고르면 그 회의에서 다시 다룰 수 없다.
+# 0.18.35: 일부 발언만 깰 자료가 있어도 회의에 들어간다. 깬 발언은 남고(자리 기울기·기록),
+#  남은 발언 때문에 결론은 못 낸다. '여기까지 정리한다'로 닫으면 partial로 남는다.
 # 결과는 기존 r13_prove/propositions로만 남기므로 판결·엔딩 규칙은 그대로다.
 init 98 python:
     R13_DEBATE={
@@ -24,7 +26,7 @@ init 98 python:
                     soft={"E04":("resident_seori","도면에 그린 선만으로는 그 통로가 지금도 열리는지 알 수 없습니다. 직접 열어 보고 확인한 것이 있습니까?")},
                     hint="도면만으로는 부족하다. 내가 직접 열어 본 길이 있다.",
                     broken=[("dad","주방 레버를 올리고 13호 책장 아래 책을 당기면, 책장 뒤 문이 열립니다. 제가 직접 열어 봤습니다."),
-                        ("seryeon","……그 문이 세탁실로 이어진다고요?")],
+                        ("seryeon","……그 문이 세탁실로 이어진다고요?",{"expression":"surprise"})],
                     wrong=("seryeon","그 자료가 13호에 다른 길이 있다는 증거입니까?")),
             ],
             conclusion=dict(prompt="다른 길이 있다는 걸 어떻게 정리할까?",
@@ -49,19 +51,32 @@ init 98 python:
                     hint="다람이가 친 곳은 머리가 아니었다. 다람이를 만났을 때 들은 말과 처음 상처를 본 기록이 있다.",
                     broken=[("dad","다람이가 친 건 자기 팔을 붙잡은 손입니다. 처음 상처를 살핀 기록에도 팔의 상처와 머리의 상처가 따로 적혀 있습니다."),
                         ("resident_ppul","팔이든 머리든, 아이가 친 건 사실 아닙니까?")],
+                    # 0.18.35: one record, one claim. E06 is the child's own account; E08 only shows two wounds.
+                    broken_by={
+                        "E06":[("dad","다람이는 할아버지가 붙잡은 자기 팔을 빼려고 촛대로 그 손을 쳤다고 했습니다. 머리를 쳤다고 한 적은 없습니다."),
+                            ("resident_ppul","아이 말만 믿으라는 겁니까? 그래도 아이가 친 건 사실 아닙니까?",{"expression":"flustered"})],
+                        "E08":[("dad","처음 상처를 살핀 기록입니다. 어르신 팔의 상처와 머리의 상처가 따로 적혀 있습니다. 머리를 한 번 내리쳤다면 팔의 상처는 어디서 생겼습니까?"),
+                            ("resident_ppul","……팔이든 머리든, 아이가 친 건 사실 아닙니까?",{"expression":"flustered"})]},
                     wrong=("resident_ppul","그 자료로 아이가 머리를 치지 않았다고 할 수 있습니까?")),
                 dict(id="s2",who="resident_ppul",text="촛대는 【한 번 휘둘렸을 뿐】입니다. 그 한 번에 돌아가셨어요.",
-                    accept=["E07","E35"],
-                    hint="촛대는 바닥에 떨어져 두 동강이 났다. 머리 상처는 부러진 윗부분의 날과 맞는다.",
-                    broken=[("dad","촛대는 바닥에 떨어져 둘로 갈라졌습니다. 머리의 상처는 갈라진 윗부분의 날카로운 안쪽 모양과 맞습니다."),
-                        ("dad","그러니까 촛대가 부러진 다음에, 누군가 그 윗부분 조각을 다시 들었다는 뜻입니다.")],
+                    accept=["E35"],
+                    # 0.18.35: the broken candlestick alone cannot order the blows (E07 says so).
+                    soft={"E07":("resident_seori","촛대가 둘로 갈라진 건 보입니다. 하지만 조각만 봐서는 언제 갈라졌는지, 머리 상처를 그 조각이 냈는지 알 수 없습니다. 상처와 맞춰 본 기록이 있습니까?")},
+                    hint="촛대가 두 동강 난 것만으로는 모자란다. 깨진 면과 머리 상처를 실제로 맞춰 본 기록이 있어야 한다.",
+                    broken=[("dad","검사원님과 깨진 면을 상처에 맞춰 본 기록입니다. 머리의 상처는 갈라진 윗부분의 안쪽 날과 모양이 맞습니다."),
+                        ("dad","그 안쪽 날은 촛대가 붙어 있을 때는 드러나지 않습니다. 촛대가 부러진 다음에, 누군가 그 윗부분 조각을 다시 들었다는 뜻입니다.")],
                     wrong=("resident_ppul","상처 모양만으로 촛대가 두 번 쓰였다는 걸 어떻게 압니까?")),
                 dict(id="s3",who="resident_ppul",text="그 방에는 【아이 혼자】 있었습니다. 다시 휘두를 사람이 누가 있습니까?",
                     accept=["E10","E09"],
                     need_consent={"E10":"bami_consent"},
                     hint="촛대가 부러진 뒤 다람이는 침대 밑에 숨어 있었다. 통로 쪽에서 다가온 발자국도 있었다.",
                     broken=[("dad","촛대가 갈라진 직후 아이는 침대 밑으로 숨었고, 구하러 들어갈 때까지 나오지 않았습니다. 그사이 통로 쪽에서 다가온 발자국이 남아 있습니다."),
-                        ("buri","……그럼 할아버지를 친 사람이 따로 있다는 거예요?")],
+                        ("buri","……그럼 할아버지를 친 사람이 따로 있다는 거예요?",{"expression":"surprise"})],
+                    broken_by={
+                        "E10":[("dad","밤이가 본 것입니다. 촛대가 바닥에서 갈라진 직후 아이는 침대 밑으로 숨었고, 구하러 들어갈 때까지 나오지 않았습니다."),
+                            ("buri","……그럼 침대 밑에 있던 애가 어떻게 할아버지를 다시 쳐요?",{"expression":"surprise"})],
+                        "E09":[("dad","촛대가 떨어진 뒤에 통로 쪽에서 다가온 발자국이 있습니다. 그 위로 피가 번졌습니다. 촛대가 떨어진 다음에 그 자리로 온 사람이 있었다는 뜻입니다."),
+                            ("buri","……그럼 할아버지를 친 사람이 따로 있다는 거예요?",{"expression":"surprise"})]},
                     wrong=("resident_ppul","그 자료가 방 안에 다른 사람이 있었다는 증거입니까?")),
             ],
             conclusion=dict(prompt="촛대와 상처의 순서로 무엇을 말할까?",
@@ -71,10 +86,10 @@ init 98 python:
                     ("weak","아이는 겁에 질려 있었으니 무슨 일을 했든 책임이 없다."),
                 ],
                 correct=[("resident_seori","아이가 한 일과 어르신을 죽게 한 일을 같은 일로 적을 수는 없습니다."),
-                    ("daram","그럼…… 내가 할아버지를 때린 건 어떻게 돼?"),
+                    ("daram","그럼…… 내가 할아버지를 때린 건 어떻게 돼?",{"expression":"anxious"}),
                     ("dad","네가 때린 건 붙잡은 손을 놓게 하려고 한 일이야. 할아버지를 죽게 한 일과는 달라.")],
                 over=("resident_seori","확인된 건 누군가 촛대를 다시 들었다는 것까지입니다. 그 사람이 누구인지는 아직 아무도 밝히지 못했습니다."),
-                weak=("buri","할아버지도 그때 겁에 질려 있었어요. 그런 말로만 끝내지 마세요.")),
+                weak=("buri","할아버지도 그때 겁에 질려 있었어요. 그런 말로만 끝내지 마세요.",{"expression":"angry"})),
             sway=["buri","resident_bori","nabi"]),
 
         "C3":dict(title="할머니는 그때 식당에 있었다",
@@ -84,19 +99,19 @@ init 98 python:
                     truth=True,
                     press=[("granny","그때 나비가 내 바로 옆에 있었어요. 직접 물어봐요."),("nabi","네. 첫 비명이 났을 때는 할머니랑 같이 있었어요.")],
                     hint="이 말은 사실이다. 따질 것은 '첫 비명 다음'이다.",
-                    wrong=("nabi","제가 할머니랑 같이 있던 것까지 없던 일로 만들지는 마세요.")),
+                    wrong=("nabi","제가 할머니랑 같이 있던 것까지 없던 일로 만들지는 마세요.",{"expression":"angry"})),
                 dict(id="s2",who="granny",text="그 뒤로도 나는 【계속 사람들 곁에】 있었어요.",
                     accept=["E12"],
                     soft={"E11":("resident_seori","복도 사람들이 지켜본 건 13호 앞문뿐입니다. 그사이 할머니가 어디 있었는지는 그 말만으로 알 수 없습니다.")},
                     hint="공구를 가지러 주방에 간 뒤로는 아무도 할머니를 보지 못했다. 그걸 직접 말할 수 있는 사람은 나비다.",
-                    broken=[("nabi","할머니가 공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요."),
-                        ("granny","내가 잠깐 안 보였다는 게 전부잖아요.")],
+                    broken=[("nabi","할머니가 공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요.",{"expression":"anxious"}),
+                        ("granny","내가 잠깐 안 보였다는 게 전부잖아요.",{"expression":"flustered"})],
                     wrong=("granny","그 자료가 내가 혼자 있었다는 증거예요?")),
                 dict(id="s3",who="granny",text="주방에서 그 방까지는 【한참 걸려요】. 그 잠깐에 다녀올 수는 없어요.",
                     accept=["E05","E37"],
                     hint="주방과 13호 책장은 통로로 바로 이어져 있다.",
                     broken=[("dad","주방에서 레버를 올리면 13호 책장 뒤로 곧장 이어집니다. 복도로 돌아갈 필요가 없습니다."),
-                        ("granny","……그 통로는 세탁물을 나르던 길이에요.")],
+                        ("granny","……그 통로는 세탁물을 나르던 길이에요.",{"expression":"flustered"})],
                     wrong=("granny","그 자료가 주방에서 13호까지 가깝다는 증거예요?")),
             ],
             conclusion=dict(prompt="할머니의 그날 움직임을 어떻게 정리할까?",
@@ -108,7 +123,7 @@ init 98 python:
                 correct=[("resident_seori","첫 비명 때 식당에 있었다는 건 사실입니다. 하지만 그것이 그 뒤의 시간까지 설명해 주지는 않습니다."),
                     ("resident_seori","할머니가 13호에 실제로 들어갔는지는 이어서 보겠습니다.")],
                 over=("resident_seori","13호에 갈 수 있었다는 것과 실제로 갔다는 것은 다릅니다. 실제로 갔다는 증거는 아직 보여 주지 않으셨습니다."),
-                weak=("nabi","저는 본 것만 말했어요. 누구 편을 든 게 아니에요.")),
+                weak=("nabi","저는 본 것만 말했어요. 누구 편을 든 게 아니에요.",{"expression":"angry"})),
             sway=["nabi","resident_kongi"]),
 
         "C4":dict(title="들어갔다 해도 도우려 했을 뿐이다",
@@ -120,27 +135,29 @@ init 98 python:
                     hint="그 핀의 덧댄 이음은 톡이 그날 처음 만든 하나뿐인 것이다. 만든 사람이 직접 말해야 한다.",
                     broken=[("resident_tok","이 핀 이음은 내가 목요일에 덧댄 거예요. 맞는 부품이 없어서요. 그래서 이렇게 생긴 핀은 마을에 이것 하나뿐이에요."),
                         ("resident_tok","그날 그 핀을 달고 간 사람은 할머니고요. 누가 그 핀으로 뭘 했는지는 나도 몰라요."),
-                        ("granny","……….")],
+                        ("granny","……….",{"expression":"anxious"})],
                     wrong=("granny","그 자료가 내 핀이라는 증거예요?")),
                 dict(id="s1",who="granny",text="그 핀은 【오후에 그분을 도울 때】 떨어졌을 수도 있잖아요.",
                     accept=["E15"],
                     soft={"E13":("resident_seori","그날 새 핀으로 바꿨다는 건 알겠습니다. 그 핀이 언제까지 할머니 옷에 달려 있었는지가 궁금합니다.")},
                     hint="첫 비명 직후, 나비가 그 핀을 할머니 목도리에 직접 여며 주었다.",
                     broken=[("nabi","첫 비명 바로 뒤에 제가 할머니 핀을 여며 드렸어요. 그때는 핀이 목도리에 달려 있었어요."),
-                        ("granny","……그래서 어쨌다는 거예요?")],
+                        ("granny","……그래서 어쨌다는 거예요?",{"expression":"angry"})],
                     wrong=("granny","그 자료가, 핀이 오후에 떨어진 게 아니라는 증거예요?")),
                 dict(id="s2",who="granny",text="구하려고 들어갔다가 【촛대를 주웠을 뿐】이에요.",
-                    accept=["E14","E35"],
-                    soft={"E33":("resident_seori","아이를 구한 직후에 누가 촛대를 거뒀는지는 확인됩니다. 문제는 그 전에 무슨 일이 있었느냐입니다.")},
-                    hint="핀은 촛대 장식 고리 안에, 내려친 방향으로 눌려 끼어 있었다.",
-                    broken=[("dad","핀은 촛대 장식 고리 안에 끼어 있었습니다. 고리는 내려친 방향으로 찌그러졌고, 핀도 같이 휘었습니다."),
-                        ("dad","핀은 촛대를 주워 들다가 끼인 게 아닙니다. 내려친 순간에 고리에 박혀 들어간 겁니다.")],
+                    accept=["E35"],
+                    soft={"E33":("resident_seori","아이를 구한 직후에 누가 촛대를 거뒀는지는 확인됩니다. 문제는 그 전에 무슨 일이 있었느냐입니다."),
+                        # 0.18.35: E14 itself says when the ring was crushed must be matched separately.
+                        "E14":("granny","핀이 고리에 끼어 있었다고요? 주워 들다가 끼었을 수도 있잖아요. 그 고리가 언제 찌그러졌는지는 아세요?",{"expression":"angry"})},
+                    hint="핀이 끼어 있었다는 것만으로는 모자란다. 고리가 어느 쪽으로 눌렸는지 맞춰 본 기록이 있어야 한다.",
+                    broken=[("dad","촛대를 상처와 맞춰 볼 때 함께 적은 기록입니다. 장식 고리는 내려친 방향으로 찌그러졌고, 안에 문 핀도 같은 쪽으로 휘었습니다."),
+                        ("dad","톡 씨 말대로 그 틈은 나중에 핀만 밀어 넣을 수 있는 틈이 아닙니다. 주워 들다가 끼인 게 아니라, 내려친 순간에 고리에 박혀 들어간 겁니다.")],
                     wrong=("granny","핀 하나로 내가 촛대를 휘둘렀다는 거예요?")),
                 dict(id="s3",who="granny",text="그분이 그렇게 위험한 줄은 【몰랐어요】.",
                     accept=["E36"],
                     hint="전날 저녁, 할머니가 직접 쓴 진료 요청이 있다.",
                     broken=[("resident_seori","전날 저녁 할머니가 직접 적어 보낸 쪽지입니다. 발작이 심하다는 내용이었고, 저는 ‘혼자 두지 마라’고 답했습니다."),
-                        ("granny","……….")],
+                        ("granny","……….",{"expression":"anxious"})],
                     wrong=("granny","그 자료가 내가 위험을 알고 있었다는 증거예요?")),
             ],
             conclusion=dict(prompt="핀과 촛대로 무엇을 말할까?",
@@ -162,13 +179,13 @@ init 98 python:
                     accept=["E20"],
                     hint="처음 증상이 나타난 뒤 나아진 사람이 있었다.",
                     broken=[("dad","증상이 시작된 뒤에도 다시 이름을 말하고 가족을 알아본 사람이 있습니다. 그 관찰을 적어 둔 기록이 있습니다."),
-                        ("resident_ppul","그건 한 사람이 잠깐 좋아졌을 뿐이겠죠.")],
+                        ("resident_ppul","그건 한 사람이 잠깐 좋아졌을 뿐이겠죠.",{"expression":"flustered"})],
                     wrong=("resident_ppul","그 자료가 저 환자들이 돌아올 수 있다는 증거입니까?")),
                 dict(id="s2",who="resident_ppul",text="나아졌다는 기록은 【처음부터 없었습니다】.",
                     accept=["E31"],
                     hint="누군가 지우기 전에 베껴 둔 기록이 남아 있다.",
                     broken=[("dad","지우기 전에 베껴 둔 기록입니다. 나아진 사람을 ‘되돌릴 수 없음’으로 고쳐 적은 건 할머니입니다."),
-                        ("resident_ppul","……누가 그 기록을 지웠다는 겁니까?")],
+                        ("resident_ppul","……누가 그 기록을 지웠다는 겁니까?",{"expression":"surprise"})],
                     wrong=("resident_ppul","그 기록이 원래 있었다는 걸 어떻게 압니까?")),
             ],
             conclusion=dict(prompt="회복 기록이 뜻하는 것은?",
@@ -179,7 +196,7 @@ init 98 python:
                 ],
                 correct=[("resident_seori","잠깐이라도 나아졌던 일을 지워서는 안 됐습니다."),
                     (None,"보리가 환자를 누르던 손을 풀었다. 그리고 담요를 덮어 주었다. 장치는 아직 멈추지 않았다.")],
-                over=("nabi","환자를 풀어 줬다가 다치면요? 돌아올 수 있다는 것과 지금 괜찮다는 건 달라요."),
+                over=("nabi","환자를 풀어 줬다가 다치면요? 돌아올 수 있다는 것과 지금 괜찮다는 건 달라요.",{"expression":"anxious"}),
                 weak=("resident_seori","다시 나빠진 것도 적어야 합니다. 하지만 그 전의 회복을 지우면 ‘돌아온 적 없다’는 거짓말이 됩니다.")),
             sway=["resident_bori","nabi"]),
 
@@ -197,7 +214,12 @@ init 98 python:
                     accept=["E21","E22"],
                     hint="희생할 때마다 버틴 날이 줄었다. 오래된 운전 기록에도 그렇게 적혀 있다.",
                     broken=[("buri","희생이 있을 때마다 버틴 날수가 줄었어요. 어르신이 남긴 운전 기록에도 그렇게 적혀 있어요."),
-                        ("resident_ppul","그래도 지금은 희생 말고 방법이 없잖소!")],
+                        ("resident_ppul","그래도 지금은 희생 말고 방법이 없잖소!",{"expression":"angry"})],
+                    broken_by={
+                        "E21":[("buri","할아버지가 남긴 운전 기록이에요. 사람한테서 힘을 뽑으면 잠깐 올랐다가 다시 떨어졌어요. 그게 되풀이될수록 남은 힘이 줄었고요."),
+                            ("resident_ppul","그래도 지금은 희생 말고 방법이 없잖소!",{"expression":"angry"})],
+                        "E22":[("mom","시설의 원래 기록이에요. ‘희생’은 사람이 죽는다는 뜻이고, 힘은 잠깐만 오른다고 적혀 있어요. 잠깐 오르는 걸 계속 버틴다고 할 수는 없어요."),
+                            ("resident_ppul","잠깐이라도 오르면 그만큼은 버티는 거잖소!",{"expression":"angry"})]},
                     wrong=("resident_ppul","그 자료가 다음엔 희생이 통하지 않는다는 증거입니까?")),
                 dict(id="s3",who="resident_ppul",text="사람을 바치는 것 말고는 【다른 방법이 없습니다】.",
                     accept=["E23","E24"],
@@ -205,6 +227,11 @@ init 98 python:
                     hint="남은 힘을 한곳으로 옮겨 본 기록이 두 번 있다.",
                     broken=[("mom","여러 돌에 남은 힘을 한곳으로 모았어요. 작은 집에서 한 번, 저녁에 더 큰 곳에서 한 번 해 봤고요."),
                         ("resident_seori","새로 채우는 방법은 아니지만, 사람을 잇지 않고도 버틸 방법은 있습니다.")],
+                    broken_by={
+                        "E23":[("mom","여러 돌에 남은 힘을 한 돌로 옮겨 봤어요. 내준 돌은 줄고 받은 돌은 고르게 빛났어요. 힘을 조금 쓸 때 한 번 본 거지만, 사람을 잇지 않고 옮길 수는 있었어요."),
+                            ("resident_seori","새로 채우는 방법은 아니군요. 그래도 사람을 잇지 않는 길이 하나는 있습니다.")],
+                        "E24":[("mom","힘을 많이 쓰는 저녁에 다시 재 봤어요. 남은 힘을 모으면 얼마나 버티는지, 얼마나 새어 나가는지까지 적었어요."),
+                            ("resident_seori","새로 채우는 방법은 아니지만, 사람을 잇지 않고도 버틸 방법은 있습니다.")]},
                     wrong=("resident_ppul","그 자료가 희생 말고 다른 방법이 있다는 증거입니까?")),
             ],
             conclusion=dict(prompt="두 번 지켜본 결과로 무엇을 말할까?",
@@ -213,7 +240,7 @@ init 98 python:
                     ("over","남은 힘을 모으면 장치를 영원히 다시 채울 수 있다."),
                     ("weak","희생 직후엔 불이 올랐으니, 아직은 쓸 만한 방법이다."),
                 ],
-                correct=[("resident_ppul","돌에 남은 힘도 결국 다 쓰잖소!"),
+                correct=[("resident_ppul","돌에 남은 힘도 결국 다 쓰잖소!",{"expression":"angry"}),
                     ("mom","맞아요. 그래서 필요한 곳에 모여 지내면서, 그동안 장작과 식량을 마련해야 해요. 다음 사람을 바칠 날만 기다리는 대신에요."),
                     (None,"작업자가 손을 멈췄다. 환자 쪽 관이 내려왔다. 대피소를 맡은 사람들이 얼마나 버틸 수 있을지 시간을 세기 시작했다.")],
                 over=("mom","아니에요. 힘을 모아도 언젠가는 다 써요. 그러니 그동안 다른 준비를 해야 해요."),
@@ -249,7 +276,7 @@ init 98 python:
                 correct=[("nabi","학교로 솥을 옮겼어요. 들어오실 분부터 들어오세요."),
                     ("resident_bori","장작을 집집마다 나누면 모자라요. 그러니 한곳에 모여 있어야 해요."),
                     ("buri","장치 이쪽은 내가 잡을게요.")],
-                over=("resident_ppul","장치를 바로 멈추면 대피소로 옮기기도 전에 얼어 죽습니다."),
+                over=("resident_ppul","장치를 바로 멈추면 대피소로 옮기기도 전에 얼어 죽습니다.",{"expression":"anxious"}),
                 weak=("resident_bori","집집마다 불을 살리면 장작이 모자라요. 빈 방까지 데울 몫은 없다고요.")),
             sway=["resident_bori","nabi"]),
 
@@ -258,17 +285,22 @@ init 98 python:
             statements=[
                 dict(id="s1",who="granny",text="나는 그 사람들한테 【아내를 찾게 해 줬어요】.",
                     accept=["E18","E17"],
-                    soft={"E01":("granny","그래요, 내가 보낸 편지예요. 그게 어때서요?")},
+                    soft={"E01":("granny","그래요, 내가 보낸 편지예요. 그게 어때서요?",{"expression":"angry"})},
                     hint="아내는 첫 주에 이미 가족에게 경고를 보냈다. 이미 도망친 뒤였다.",
                     broken=[("dad","아내는 첫 주에 이미 저희에게 오지 말라고 경고했습니다. 그 경고가 전해지지 않았을 뿐입니다. 당신에게서 도망친 뒤의 일이었습니다."),
                         ("mom","여관으로 돌아갈 수는 없었어요. 그동안 가족에게 돌아갈 방법을 찾고 있었거든요.")],
+                    broken_by={
+                        "E18":[("dad","전해지지 못한 봉투입니다. 아내는 첫 주에 이미 저희에게 오지 말라고 경고했습니다. 누가 찾게 해 주기 전부터, 아내는 스스로 저희에게 연락하고 있었습니다."),
+                            ("mom","여관으로 돌아갈 수는 없었어요. 그동안 가족에게 돌아갈 방법을 찾고 있었거든요.")],
+                        "E17":[("dad","부엉이 어르신이 베껴 둔 기록입니다. 어르신은 아내를 만났고, 사라진 사람들을 따로 조사하고 있었습니다. 아내를 찾게 해 준 건 할머니가 아닙니다."),
+                            ("mom","그분이 제 이야기를 들어 주셨어요. 여관으로는 돌아갈 수 없었고요.")]},
                     wrong=("granny","그 자료가 내가 거짓말했다는 증거예요?")),
                 dict(id="s2",who="granny",text="아이를 떼어 놓자고 한 건 【사건이 난 뒤의 보호】였어요.",
                     accept=["E16"],
                     skip_if="C4",
                     hint="가족을 떼어 놓자는 요청은 사건 전에 이미 쓰여 있었다.",
                     broken=[("resident_seori","이 요청을 보낸 날짜는 사건 전입니다. 아이를 보호하려 했다는 말과, 요청을 쓴 날이 맞지 않습니다."),
-                        ("granny","그 여자가 돌아왔으면 아이는 다치지 않아도 됐어.")],
+                        ("granny","그 여자가 돌아왔으면 아이는 다치지 않아도 됐어.",{"expression":"angry"})],
                     wrong=("granny","그 자료가 사건 전에 썼다는 증거예요?")),
             ],
             conclusion=dict(prompt="편지와 경고, 떼어 놓자는 요청을 이으면?",
@@ -281,7 +313,7 @@ init 98 python:
                     ("dad","대답하지 않으셔도 오늘 기록은 남습니다."),
                     ("neoul","이후 지시는 받지 않겠습니다. 먼저 증거 자료부터 챙기죠.")],
                 over=("resident_ppul","희생을 정한 건 마을 회의였습니다. 그 책임까지 한 사람에게 미룰 수는 없어요."),
-                weak=("granny","편지 보낸 게 무슨 죄예요?")),
+                weak=("granny","편지 보낸 게 무슨 죄예요?",{"expression":"angry"})),
             sway=["resident_ppul","neoul"]),
     }
 
@@ -384,7 +416,32 @@ init 98 python:
         return any(key in store.room13.get("evidence",[]) and (key not in consent or r13_has(consent[key])) for key in st.get("accept",[]))
 
     def r13_debate_arguable(claim):
+        """Every statement can be broken with what the player holds (a full rebuttal is possible)."""
         return all(r13_debate_answerable(claim,st) for st in r13_debate_statements(claim))
+
+    def r13_debate_engageable(claim):
+        """At least one required statement can still be broken, or all already are (0.18.35)."""
+        if r13_debate_ready(claim):return True
+        return any(r13_debate_answerable(claim,st) for st in r13_debate_statements(claim)
+            if not st.get("truth") and not r13_debate_is_broken(claim,st["id"]))
+
+    def r13_debate_stuck(claim):
+        """Not ready, and nothing left the player can break: only closing remains."""
+        return not r13_debate_ready(claim) and not r13_debate_engageable(claim)
+
+    def r13_debate_emphasis(st):
+        text=st["text"]
+        return text.split("【",1)[1].split("】",1)[0] if "【" in text else text
+
+    def r13_debate_partial_lines(claim):
+        """Closing with some statements broken: what stands and what is left (no record names)."""
+        sts=[st for st in r13_debate_statements(claim) if not st.get("truth") and not r13_debate_skipped(claim,st)]
+        done=[st for st in sts if r13_debate_is_broken(claim,st["id"])]
+        left=[st for st in sts if not r13_debate_is_broken(claim,st["id"])]
+        rows=[("dad","(‘%s’ 부분은 뒤집었다. 하지만 ‘%s’ 부분은 뒤집지 못했다.)"%(r13_debate_emphasis(done[-1]),r13_debate_emphasis(left[0])),{"thought":True})]
+        rows+=r13_debate_gap_lines(claim,left[0])
+        rows.append((R13_DEBATE[claim]["chair"],"반박된 말은 기록에서 고치겠습니다. 남은 말은 오늘 그대로 둡니다."))
+        return rows
 
     def r13_debate_closed(claim):
         return bool(r13_debate_state()["closed"].get(r13_debate_session(claim)+":"+claim))
@@ -420,7 +477,7 @@ init 98 python:
 
     def r13_debate_open(claim):
         """Still worth offering as a choice: not proven, not closed, and the evidence exists."""
-        return claim not in store.room13.get("propositions",[]) and not r13_debate_closed(claim) and r13_debate_arguable(claim)
+        return claim not in store.room13.get("propositions",[]) and not r13_debate_closed(claim) and r13_debate_engageable(claim)
 
     def r13_debate_seats(session):
         """Each seat's stance 0..2: half the statements broken moves one step, the proof another."""
@@ -452,7 +509,7 @@ init 98 python:
 
 label r13_debate_run(claim):
     $ r13_claim=claim
-    if not r13_debate_arguable(claim):
+    if not r13_debate_engageable(claim):
         call r13_debate_unanswerable(claim)
         return False
     $ r13_debate_selected=r13_debate_next_target(claim,r13_debate_statements(claim)[0]["id"])
@@ -464,8 +521,15 @@ label r13_debate_loop:
     if r13_debate_action[0]=="select":
         $ r13_debate_selected=r13_debate_action[1]
     elif r13_debate_action[0]=="leave":
-        call screen r13_confirm("반론을 그만두면 이 회의에서는 이 주장을 다시 다룰 수 없다. 상대의 말이 그대로 남는다.","반론을 그만둔다","더 찾아본다")
+        if r13_debate_progress(r13_claim)[0]:
+            call screen r13_confirm("여기까지 정리하면 이 회의에서는 이 주장을 다시 다룰 수 없다. 반박한 말은 기록에 남고, 남은 말은 그대로 남는다.","여기까지 정리한다","더 찾아본다")
+        else:
+            call screen r13_confirm("반론을 그만두면 이 회의에서는 이 주장을 다시 다룰 수 없다. 상대의 말이 그대로 남는다.","반론을 그만둔다","더 찾아본다")
         if _return:
+            if r13_debate_progress(r13_claim)[0]:
+                $ r13_debate_close(r13_claim,"partial")
+                call r13_lines(r13_debate_partial_lines(r13_claim),"debate:partial:"+r13_claim)
+                return False
             $ r13_debate_close(r13_claim,"gave_up")
             call r13_lines([("dad","(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)",{"thought":True})],"debate:gave_up:"+r13_claim)
             return False
@@ -610,8 +674,10 @@ screen r13_debate_board(claim,selected):
         xpos 40 ypos 640 spacing 16
         textbutton "결론을 말한다" style "r13_action_button" xsize 320 ysize 60 text_size r13_read_size(23,27):
             action Return(("conclude",)) sensitive ready and r13_debate_ready(claim)
-        textbutton "반론을 그만둔다" style "r13_action_button" xsize 260 ysize 60 text_size r13_read_size(21,25):
+        textbutton ("여기까지 정리한다" if done else "반론을 그만둔다") style "r13_action_button" xsize 260 ysize 60 text_size r13_read_size(21,25):
             action Return(("leave",)) sensitive ready
-    if not r13_debate_ready(claim):
+    if r13_debate_stuck(claim):
+        text "남은 말을 뒤집을 자료가 지금은 없다. 반박한 말까지만 기록에 남길 수 있다." xpos 640 ypos 646 xsize 600 size r13_read_size(18,21) color "#f0c98a"
+    elif not r13_debate_ready(claim):
         text "강조된 말을 모두 반박하면 결론을 말할 수 있다. 틀려도 다시 낼 수 있다. 그만두면 이 회의에서는 다시 다룰 수 없다." xpos 640 ypos 646 xsize 600 size r13_read_size(18,21) color "#b7ccd0"
     key "game_menu" action Return(("leave",))

@@ -73,7 +73,9 @@ testcase trial_giveup:
     screenshot "g_verdict.png"
     $ r13_qa_dump()
 
-testcase trial_win:
+testcase trial_partial:
+    # 0.18.35: without the wound comparison (E35) the candlestick point still opens. Two statements
+    # break, the broken candlestick alone is answered (not accepted), and closing keeps what was broken.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -97,6 +99,51 @@ testcase trial_win:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
+    assert eval (not r13_debate_is_broken("C2","s2"))
+    click "다시 휘두를 사람이"
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E09"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    assert eval (r13_debate_stuck("C2") and r13_debate_progress("C2")==(2,3))
+    screenshot "p_stuck.png"
+    click "여기까지 정리한다"
+    pause 1.0
+    click "여기까지 정리한다"
+    pause 0.5
+    click pos (640,600) until eval "trial_notes" in room13 timeout 120
+    pause 0.5
+    assert eval (room13["trial_result"]=="detained" and room13["debate"]["closed"].get("trial:C2")=="partial")
+    assert eval ("반박했다" in room13["trial_notes"][1]["fact"] and "한 번 휘둘렸을 뿐" in room13["trial_notes"][1]["question"])
+    $ r13_qa_dump()
+
+testcase trial_win:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_trial",('E01', 'E06', 'E07', 'E09', 'E35'),())
+    pause 1.0
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "죽음의 원인이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E06"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E35"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
     click "자료로 반박"
     pause 0.8
     click "QA E09"
@@ -117,7 +164,7 @@ testcase trial_full:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),())
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),())
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -153,7 +200,7 @@ testcase trial_full:
     pause 0.6
     click "자료로 반박"
     pause 0.8
-    click "QA E07"
+    click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -218,7 +265,7 @@ testcase trial_full:
     pause 0.6
     click "자료로 반박"
     pause 0.8
-    click "QA E14"
+    click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -241,7 +288,7 @@ testcase trial_gate_unenforced:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates","witness:nabi","witness:tok"))
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok"))
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -277,7 +324,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "자료로 반박"
     pause 0.8
-    click "QA E07"
+    click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -342,7 +389,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "자료로 반박"
     pause 0.8
-    click "QA E14"
+    click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -366,7 +413,7 @@ testcase trial_gate_no_witness:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates",))
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates",))
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -402,7 +449,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click "자료로 반박"
     pause 0.8
-    click "QA E07"
+    click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -423,8 +470,30 @@ testcase trial_gate_no_witness:
     pause 1.0
     click "누군가가 냈다"
     pause 0.6
-    click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
+    # 0.18.35: without Nabi the alibi point still opens (the passage breaks one statement),
+    # but her statement stays unbreakable. Closing it partially leaves C3 unproven.
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "식당에 있었다는 말"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "한참 걸려요"
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E05"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    assert eval (r13_debate_stuck("C3"))
+    click "여기까지 정리한다"
+    pause 1.0
+    click "여기까지 정리한다"
     pause 0.5
+    click pos (640,600) until eval "trial_notes" in room13 timeout 120
+    pause 0.5
+    assert eval ("C3" not in room13["propositions"] and room13["debate"]["closed"].get("trial:C3")=="partial")
     screenshot "gn_verdict.png"
     $ r13_qa_dump()
 
@@ -1234,7 +1303,7 @@ testcase trial_fake_testimony:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates","witness:nabi","witness:tok","fair_hearing","fake_testimony"))
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok","fair_hearing","fake_testimony"))
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -1270,7 +1339,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click "자료로 반박"
     pause 0.8
-    click "QA E07"
+    click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -1335,7 +1404,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click "자료로 반박"
     pause 0.8
-    click "QA E14"
+    click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -1360,7 +1429,7 @@ testcase trial_c1_h7:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_trial",('E01', 'H7', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E36'),("-gates","witness:nabi","witness:tok","ttadak_witness"))
+    run Call("r13_qa_trial",('E01', 'H7', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok","ttadak_witness"))
     pause 1.0
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6

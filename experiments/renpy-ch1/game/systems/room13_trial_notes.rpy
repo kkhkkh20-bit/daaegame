@@ -29,6 +29,14 @@ init 121 python:
             for claim in ("C1","C2","C3","C4"):
                 t=R13_TRIAL_NOTE_TEXT[claim]
                 fact,gap,result=t["ok"] if claim in props else t["no"]
+                # 0.18.35: a claim closed with some statements broken keeps what was broken.
+                if claim not in props and claim in R13_DEBATE:
+                    sts=[st for st in r13_debate_statements(claim) if not st.get("truth") and not r13_debate_skipped(claim,st)]
+                    done=[st for st in sts if r13_debate_is_broken(claim,st["id"])]
+                    left=[st for st in sts if not r13_debate_is_broken(claim,st["id"])]
+                    if done and left:
+                        fact="‘%s’ 부분은 반박했다."%r13_debate_emphasis(done[-1])
+                        gap="‘%s’ 부분은 뒤집지 못했다."%r13_debate_emphasis(left[0])
                 if claim=="C4" and claim in props and r13_has("c4_unenforced"):
                     result="판결은 났지만 촌장이 집행하지 않았다."
                 rows.append(dict(title="재판 · "+t["title"],fact=fact,question=gap,result=result))

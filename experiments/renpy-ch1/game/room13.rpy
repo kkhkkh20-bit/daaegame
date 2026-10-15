@@ -566,7 +566,7 @@ label r13_trial:
 label r13_trial_choose:
     # 반론할 자료가 없는 논점은 선택지 없이 지나가고, 남은 논점이 없으면 바로 판결이다.
     $ r13_trial_pending=[c for c in r13_case_available() if c not in room13["propositions"] and not r13_debate_closed(c)]
-    $ r13_trial_gap=next((c for c in r13_trial_pending if not r13_debate_arguable(c)),None)
+    $ r13_trial_gap=next((c for c in r13_trial_pending if not r13_debate_engageable(c)),None)
     if r13_trial_gap:
         call r13_argument(r13_trial_gap) from r13_trial_gap_return
         jump r13_trial_choose

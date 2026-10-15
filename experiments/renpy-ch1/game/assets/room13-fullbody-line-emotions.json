@@ -10,32 +10,10 @@
   "joy": "joy"
  },
  "lines": {
-  "entry:arrival": {
-   "6": {
-    "person": "daram",
-    "text": "아빠. 나 여기 있을게.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
   "entry:wait": {
    "1": {
     "person": "daram",
-    "text": "아빠, 이제 손이 잘 안 펴져.",
-    "emotion": "anxious",
-    "legacy": "distressed"
-   }
-  },
-  "entry:daram:waiting": {
-   "0": {
-    "person": "daram",
-    "text": "아빠, 이거 안 열려.",
-    "emotion": "flustered",
-    "legacy": "distressed"
-   },
-   "2": {
-    "person": "daram",
-    "text": "응. 나 여기서 기다릴게.",
+    "text": "아빠, 추워서 손이 잘 안 펴져.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -43,7 +21,7 @@
   "night1:knocking": {
    "4": {
     "person": "nabi",
-    "text": "……식기 전에 먹어.",
+    "text": "……밥 식기 전에 얼른 먹어.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -51,7 +29,7 @@
   "night1:stay": {
    "0": {
     "person": "daram",
-    "text": "우리도 길 잃으면 저기로 가?",
+    "text": "아빠, 우리도 길 잃어버리면 저 아저씨처럼 저기로 끌려가?",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -59,7 +37,7 @@
   "case:father:return:v3": {
    "5": {
     "person": "daram",
-    "text": "아빠…… 나 여기.",
+    "text": "아빠…… 나 여기 있어.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -67,13 +45,13 @@
   "case:discovery:v3": {
    "3": {
     "person": "daram",
-    "text": "내가 때렸어.",
+    "text": "내가 할아버지를 때렸어.",
     "emotion": "anxious",
     "legacy": "distressed"
    },
    "5": {
     "person": "daram",
-    "text": "아빠, 내가 때렸다고.",
+    "text": "아빠, 내가 때렸다니까.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -87,7 +65,7 @@
    },
    "1": {
     "person": "neoul",
-    "text": "발밑에 물건이 있습니다.",
+    "text": "조심하십시오. 발밑에 떨어진 물건이 있습니다.",
     "emotion": "surprise",
     "legacy": "distressed"
    }
@@ -95,7 +73,7 @@
   "case:sealing:v3": {
    "2": {
     "person": "daram",
-    "text": "내가 놓으라고 했어. 그런데 안 놔서…….",
+    "text": "내가 놓으라고 했어. 그런데 할아버지가 안 놔줘서…….",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -103,7 +81,7 @@
   "case:displaced:v3": {
    "0": {
     "person": "nabi",
-    "text": "짐은 옆방으로 옮겨둘게. 오늘부터는 거기서 자렴.",
+    "text": "짐은 옆방으로 옮겨 둘게요. 오늘부터는 옆방에서 묵으세요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -111,7 +89,7 @@
   "case:prevented:watch": {
    "1": {
     "person": "resident_owlgp",
-    "text": "그럼 여기서 기다리지 맙시다. 아래로 내려가요.",
+    "text": "그럼 이 방에서 기다리지 맙시다. 아래층으로 내려가요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -119,7 +97,7 @@
   "case:prevented:accompany": {
    "4": {
     "person": "resident_owlgp",
-    "text": "아래에서 이야기합시다. 이 방은 답답해.",
+    "text": "아래층에서 이야기합시다. 이 방은 너무 답답해.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -127,7 +105,7 @@
   "trial:C2:done": {
    "3": {
     "person": "daram",
-    "text": "그럼…… 내가 때린 건?",
+    "text": "그럼…… 내가 때린 건 어떻게 돼?",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -135,7 +113,7 @@
   "trial:C2:wrong": {
    "0": {
     "person": "buri",
-    "text": "할아버지도 착한 사람이었어요. 그런 말로 끝내지 말아요.",
+    "text": "할아버지도 착한 사람이었어요. 그런 말로 대충 끝내지 마세요.",
     "emotion": "angry",
     "legacy": "distressed"
    }
@@ -143,7 +121,7 @@
   "trial:C3:wrong": {
    "0": {
     "person": "nabi",
-    "text": "내가 같이 있던 것까지 없던 일로 만들지 마.",
+    "text": "제가 할머니와 같이 있었던 시간까지 없던 일로 만들지는 마세요.",
     "emotion": "angry",
     "legacy": "expressive"
    }
@@ -159,7 +137,7 @@
   "buri:consent:refused": {
    "0": {
     "person": "buri",
-    "text": "내 할아버지를 괴물로 만들면 당신 아이가 돌아오나요? 지금은 나가요.",
+    "text": "우리 할아버지를 괴물로 만들면 탐정님 아이가 무사히 돌아오나요?",
     "emotion": "angry",
     "legacy": "expressive"
    }
@@ -167,7 +145,7 @@
   "reunion:after_intervention:v3": {
    "1": {
     "person": "mom",
-    "text": "뒤따라온 사람 때문에 자리를 한 번 옮겼어. 여기 신호는 초롱하고 새로 정했고.",
+    "text": "뒤따라온 사람 때문에 숨을 자리를 한 번 옮겼어. 여기 신호는 초롱하고 새로 정했고.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -175,13 +153,13 @@
   "reunion:held:question": {
    "0": {
     "person": "mom",
-    "text": "다람이는?",
+    "text": "다람이는 어디 있어?",
     "emotion": "anxious",
     "legacy": "distressed"
    },
    "2": {
     "person": "mom",
-    "text": "면회는 했어? 직접 봤어?",
+    "text": "만나 봤어? 직접 봤어?",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -203,7 +181,7 @@
   "reunion:injured": {
    "0": {
     "person": "daram",
-    "text": "이제 안 아파.",
+    "text": "이제 하나도 안 아파.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -211,7 +189,7 @@
   "finale:arrival": {
    "1": {
     "person": "resident_ppul",
-    "text": "지금 연결해야 합니다. 대피소 쪽도 버티지 못해요!",
+    "text": "지금 연결해야 합니다. 이러다 대피소 쪽도 버티지 못해요!",
     "emotion": "flustered",
     "legacy": "expressive"
    }
@@ -225,7 +203,7 @@
    },
    "1": {
     "person": "mom",
-    "text": "말부터 하느라 아이를 저기에 두지는 말자.",
+    "text": "말만 하다가 아이를 저기 그대로 두지는 말자.",
     "emotion": "anxious",
     "legacy": "expressive"
    }
@@ -233,7 +211,7 @@
   "finale:escape_blocked": {
    "0": {
     "person": "karo",
-    "text": "뒤를 밟는 사람을 떼지 못했어요. 이대로 나가는 건 약속한 안전한 길이 아닙니다.",
+    "text": "뒤를 밟는 사람을 떼어 내지 못했어요. 이대로 나가면 약속한 안전한 길이 아니게 돼요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -247,7 +225,7 @@
    },
    "3": {
     "person": "daram",
-    "text": "놓지 마.",
+    "text": "아빠, 놓지 마.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -263,7 +241,7 @@
   "ending:E2": {
    "0": {
     "person": "daram",
-    "text": "뒤에 불 꺼졌어.",
+    "text": "뒤에 마을 불이 꺼졌어.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -271,7 +249,7 @@
   "ending:E4": {
    "0": {
     "person": "nabi",
-    "text": "이쪽 방은 닫아야 해. 한 곳으로 모이자.",
+    "text": "이쪽 방은 닫아야 해요. 다들 한 곳으로 모여요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -279,7 +257,7 @@
   "ending:elder_dead": {
    "1": {
     "person": "buri",
-    "text": "그날 기록은 돌려받을게요. 같이 보관할 사본은 남겨 두고요.",
+    "text": "그날 기록은 돌려받을게요. 함께 보관할 사본은 남겨 두고요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -287,7 +265,7 @@
   "ending:family": {
    "3": {
     "person": "daram",
-    "text": "조금이면 같이 해도 되지?",
+    "text": "조금이면 나도 같이 해도 되지?",
     "emotion": "joy",
     "legacy": "neutral"
    }
@@ -295,7 +273,7 @@
   "negotiation:erased:start": {
    "0": {
     "person": "resident_seori",
-    "text": "그 줄은 제가 지웠습니다. 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
+    "text": "회복 기록의 그 줄은 제가 지웠습니다. 환자가 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -303,7 +281,7 @@
   "negotiation:erased:accepted": {
    "2": {
     "person": "resident_seori",
-    "text": "……가족에게는 제가 먼저 말하겠습니다. 정정 전 사본에는 할머니 확인도 남아 있습니다.",
+    "text": "……가족에게는 제가 먼저 말하겠습니다. 고치기 전에 베껴 둔 기록에는 할머니가 확인한 흔적도 남아 있습니다.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -311,7 +289,7 @@
   "negotiation:erased:threat": {
    "0": {
     "person": "resident_seori",
-    "text": "제가 잘못한 부분은 남기겠습니다. 협박받고 한 말로 만들어 놓고 증언을 믿어 달라고 하실 겁니까?",
+    "text": "제 잘못은 기록에 남기겠습니다. 하지만 협박에 못 이겨 한 말로 만들어 놓고, 그 말을 믿어 달라고 하실 겁니까?",
     "emotion": "angry",
     "legacy": "expressive"
    }
@@ -325,7 +303,7 @@
    },
    "2": {
     "person": "buri",
-    "text": "누군가는 했어요. 다람이를 구하려고.",
+    "text": "누군가는 그렇게 소문을 냈어요. 다람이를 살인 혐의에서 빼내려고요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -339,23 +317,23 @@
    },
    "2": {
     "person": "buri",
-    "text": "누군가는 했어요. 다람이를 구하려고.",
+    "text": "누군가는 그렇게 소문을 냈어요. 다람이를 살인 혐의에서 빼내려고요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
   },
   "topic:buri_records": {
-   "0": {
+   "1": {
     "person": "buri",
-    "text": "전날 저녁엔 많이 심했어요. 나를 알아보지 못할 때도 있었고.",
+    "text": "사건 전날 저녁엔 할아버지 증세가 많이 심했어요. 손주인 저조차 못 알아보실 때도 있었고요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
   },
   "topic:review:buri_records": {
-   "0": {
+   "1": {
     "person": "buri",
-    "text": "전날 저녁엔 많이 심했어요. 나를 알아보지 못할 때도 있었고.",
+    "text": "사건 전날 저녁엔 할아버지 증세가 많이 심했어요. 손주인 저조차 못 알아보실 때도 있었고요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -363,7 +341,7 @@
   "topic:w2_contact": {
    "0": {
     "person": "resident_lamplighter",
-    "text": "어머니와 친해서 숨기는 게 아닙니다. 내가 말하면 그분이 죽어요.",
+    "text": "아이 어머니와 친해서 숨기는 게 아닙니다. 어디 있는지 내가 말하면 부인이 죽어요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -371,7 +349,7 @@
   "topic:review:w2_contact": {
    "0": {
     "person": "resident_lamplighter",
-    "text": "어머니와 친해서 숨기는 게 아닙니다. 내가 말하면 그분이 죽어요.",
+    "text": "아이 어머니와 친해서 숨기는 게 아닙니다. 어디 있는지 내가 말하면 부인이 죽어요.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -379,13 +357,13 @@
   "topic:w2_erased": {
    "0": {
     "person": "resident_seori",
-    "text": "이 줄은 내가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
+    "text": "기록의 이 줄은 제가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
     "emotion": "anxious",
     "legacy": "distressed"
    },
    "4": {
     "person": "resident_seori",
-    "text": "할머니요. 정정 전 사본에 그분 확인도 남아 있습니다.",
+    "text": "할머니입니다. 기록을 고치기 전에 베껴 둔 사본에 할머니의 확인 표시도 남아 있습니다.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -393,13 +371,13 @@
   "topic:review:w2_erased": {
    "0": {
     "person": "resident_seori",
-    "text": "이 줄은 내가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
+    "text": "기록의 이 줄은 제가 지웠습니다. 다음 검사 때 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠.",
     "emotion": "anxious",
     "legacy": "distressed"
    },
    "4": {
     "person": "resident_seori",
-    "text": "할머니요. 정정 전 사본에 그분 확인도 남아 있습니다.",
+    "text": "할머니입니다. 기록을 고치기 전에 베껴 둔 사본에 할머니의 확인 표시도 남아 있습니다.",
     "emotion": "anxious",
     "legacy": "distressed"
    }
@@ -418,6 +396,14 @@
     "text": "길 아는 것하고 입 다무는 건 달라요. 이 종이는 다른 사람 앞에 펼치지 마세요.",
     "emotion": "angry",
     "legacy": "expressive"
+   }
+  },
+  "entry:arrival": {
+   "12": {
+    "person": "daram",
+    "text": "아빠, 확인하는 거 오래 걸려?",
+    "emotion": "anxious",
+    "legacy": "distressed"
    }
   }
  }

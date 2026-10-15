@@ -38,6 +38,12 @@ REMOTE_MUSIC = "assets/*.mp3"
 REMOTE_IMAGE = "assets/*.png"
 # Click-to-open close-up backgrounds (0.18.22): fetched when a close-up first opens.
 REMOTE_CLOSEUP = ("assets/room13-pixel-life-*.webp", "assets/r13-gimmick-*.webp")
+# Not needed before the game starts (0.18.35): late-story cinematics and the day-14 altar.
+# Fetched when first drawn and warmed in the background once the game runs (transport "prefetch").
+# Dialogue expressions stay in the first load: Ren'Py's web loader unlinks a downloaded remote
+# file after about a minute, so art drawn in every conversation would show its placeholder again.
+REMOTE_LATER = ("assets/room13-pixel-cinematic-*.webp", "assets/room13-pixel-altar-*.webp",
+                "assets/room13-pixel-ready-altar*.webp")
 # Art replaced by an NPC redesign (dev/apply_npc_redesign.py): kept so old saves
 # that still hold the old picture can draw it, but never part of the first load.
 REDESIGN_BACKUP = ROOT / "art/npc-redesign-20261015/original-entries.json"
@@ -165,6 +171,15 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
 """ + LOADER_END
 
 
+def prefetch_order(rel):
+    """Background warm-up order once the game runs; 9 = never warmed (legacy/close-up art)."""
+    if rel.endswith(".mp3"):
+        return 0
+    if any(fnmatch.fnmatch(rel, p) for p in REMOTE_LATER):
+        return 1
+    return 9
+
+
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
@@ -247,7 +262,7 @@ def main():
             continue
         if fnmatch.fnmatch(rel, REMOTE_MUSIC) and rel != menu_music:
             remote.append(rel); remote_lines += [rel, "music -"]
-        elif (fnmatch.fnmatch(rel, REMOTE_IMAGE) and path.name not in ICONS) or any(fnmatch.fnmatch(rel, p) for p in REMOTE_CLOSEUP) or rel in superseded:
+        elif (fnmatch.fnmatch(rel, REMOTE_IMAGE) and path.name not in ICONS) or any(fnmatch.fnmatch(rel, p) for p in REMOTE_CLOSEUP + REMOTE_LATER) or rel in superseded:
             data = path.read_bytes()
             (w, h), thumb = placeholder(data)
             ph = stage / "_placeholders" / rel
@@ -298,7 +313,7 @@ def main():
         if old.is_file() and old not in shipped:
             removed.append(old.relative_to(release).as_posix()); old.unlink()
     transport = {"multipart": True, "archive_bytes": size, "archive_sha256": digest, "parts": parts,
-                 "preload": preload_entries, "prefetch": ["game/" + r for r in remote if r.endswith(".mp3")]}
+                 "preload": preload_entries, "prefetch": ["game/" + r for r in sorted(remote, key=prefetch_order) if prefetch_order(r) < 9]}
     (release / "game-transport.json").write_text(json.dumps(transport, indent=1))
 
     install_loader(release / "renpy-pre.js")

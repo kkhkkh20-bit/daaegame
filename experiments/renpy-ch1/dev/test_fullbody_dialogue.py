@@ -57,10 +57,16 @@ class FullbodyData(unittest.TestCase):
             self.assertTrue((GAME / spec["file"]).exists(), spec["file"])
 
     def test_line_emotions_match_actual_dialogue_text(self):
+        # 0.18.35: compare with the dialogue itself (dev/line_cues.py), not with the
+        # older cue file, which had drifted together with these cues.
+        import sys
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import line_cues
+        rows = line_cues.scene_rows()
         for identity, cues in LINES["lines"].items():
             for index, cue in cues.items():
-                actual = DIRECTION[identity][index]
-                self.assertEqual((cue["person"], cue["text"]), (actual["person"], actual["text"]), (identity, index))
+                actual = rows[identity][int(index)]
+                self.assertEqual((cue["person"], cue["text"]), tuple(actual[:2]), (identity, index))
                 self.assertIn(cue["emotion"], EMOTIONS)
                 self.assertNotEqual(cue["person"], "dad")  # Dad is never drawn
         used = {cue["emotion"] for cues in LINES["lines"].values() for cue in cues.values()}

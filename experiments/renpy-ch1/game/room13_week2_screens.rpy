@@ -23,7 +23,7 @@ screen r13_crisis():
                     vbox:
                         text ("{s}"+R13_CLAIMS[key]["assertion"]+"{/s}" if proved else R13_CLAIMS[key]["assertion"]) size 24 xsize 680
                         if not proved and not open_claim:
-                            text ("반론을 그만뒀다" if r13_debate_closed(key) else "반론할 자료가 없다") size 19 color "#8c7060"
+                            text (("일부만 반박하고 정리했다" if r13_debate_state()["closed"].get(r13_debate_session(key)+":"+key)=="partial" else "반론을 그만뒀다") if r13_debate_closed(key) else "반론할 자료가 없다") size 19 color "#8c7060"
     frame:
         area (840,118,400,487) padding (23,20) background R13PaperPanel()
         vbox:

@@ -41,14 +41,24 @@ for cid,spec in D.items():
 checks.append('accepted evidence is a subset of the original support sets')
 
 # Judging on C2.
-store.room13['evidence']=['E06','E07','E10','E01']
+store.room13['evidence']=['E06','E07','E10','E01','E35']
 j=env['r13_debate_judge']
 assert j('C2','s1','E06')[0]=='break'
-assert j('C2','s1','E07')[0]=='soft'          # breaks another visible statement: no penalty
+assert j('C2','s1','E35')[0]=='soft'          # breaks another visible statement: no penalty
+# 0.18.35: a record never says more than it shows. The broken candlestick / the pin alone
+# do not order the blows; only the wound comparison (E35) breaks those statements.
+assert j('C2','s2','E07')[0]=='soft' and j('C2','s2','E35')[0]=='break'
+assert j('C4','s2','E14')[0]=='soft' and j('C4','s2','E35')[0]=='break'
+# Each accepted record of a multi-record statement has its own rebuttal lines.
+for cid,spec in D.items():
+    for st in spec['statements']:
+        if len(st.get('accept',[]))>1 and not set(st['accept'])<= {'E05','E37'}:
+            assert set(st.get('broken_by',{}))>=set(st['accept']),(cid,st['id'])
+assert j('C2','s1','E08')[1]!=j('C2','s1','E06')[1]
 assert j('C2','s1','E01')[0]=='wrong'
 assert j('C2','s3','E10')[0]=='soft'          # E10 needs bami's consent
 store.room13['flags'].append('bami_consent');assert j('C2','s3','E10')[0]=='break'
-checks.append('break / soft (other statement, consent) / wrong')
+checks.append('break / soft (other statement, consent) / wrong; one record, one claim')
 
 # Hidden statements appear only after pressing the revealing one; truths are not required.
 assert not env['r13_debate_visible']('C1',env['r13_debate_statement']('C1','s2'))
@@ -67,13 +77,28 @@ checks.append('conclusion unlocks after all required statements; propositions un
 assert 'r13_debate_lose_trust' not in env and 'R13_DEBATE_TRUST_MAX' not in env
 env['r13_debate_miss']('C2');env['r13_debate_miss']('C2')
 assert env['r13_debate_state']()['misses']['C2']>=2
-# C4 needs E13 (whose pin, 0.18.3), E15, E14/E35 and E36: holding only E15 means the claim cannot be argued at all.
+# C4 needs E13 (whose pin, 0.18.3), E15, E35 and E36 for a full rebuttal. Since 0.18.35 holding only
+# E15 still opens it (one statement breakable); holding nothing breakable does not.
 store.room13['evidence']=['E15']
-assert not env['r13_debate_arguable']('C4') and not env['r13_debate_open']('C4')
-store.room13['evidence']=['E15','E35','E36']
-assert not env['r13_debate_arguable']('C4')
+assert not env['r13_debate_arguable']('C4') and env['r13_debate_open']('C4')
+store.room13['evidence']=['E14']
+assert not env['r13_debate_engageable']('C4') and not env['r13_debate_open']('C4')
+store.room13['evidence']=['E13','E14','E15','E36']
+assert not env['r13_debate_arguable']('C4')   # the pin without the wound comparison
 store.room13['evidence']=['E13','E15','E35','E36']
 assert env['r13_debate_arguable']('C4')
+# 0.18.35 partial: holding E06 and E09 but not E35 still opens C2; it cannot be concluded.
+env['r13_debate_gap_lines']=lambda claim,st:[]
+store.room13.update(evidence=['E06','E07','E09'],flags=[],propositions=[]);store.room13['debate']={}
+assert not env['r13_debate_arguable']('C2') and env['r13_debate_engageable']('C2') and env['r13_debate_open']('C2')
+assert not env['r13_debate_stuck']('C2')
+env['r13_debate_mark']('broken','C2','s1');env['r13_debate_mark']('broken','C2','s3')
+assert env['r13_debate_stuck']('C2') and not env['r13_debate_ready']('C2')
+rows=env['r13_debate_partial_lines']('C2')
+assert '아이 혼자' in rows[0][1] and '한 번 휘둘렸을 뿐' in rows[0][1]
+store.room13.update(evidence=['E07']);store.room13['debate']={}
+assert not env['r13_debate_engageable']('C2')   # nothing breakable: skipped as before
+checks.append('partial rebuttal: engageable with some evidence, stuck when nothing breakable is left')
 # Giving up closes the claim for this session only.
 store.room13['finale_started']=False
 env['r13_debate_close']('C3','gave_up')
@@ -124,8 +149,8 @@ env['r13_first_mystery_notes']=lambda:[dict(question='누가 마지막으로 만
 env['r13_crisis_preparations']=lambda:[('a',True),('b',False),('c',True),('d',False)]
 store.room13.update(day=5,finale_started=False,trial_ended=False,case_state='occurred',evidence=['E06','E07'],flags=[],propositions=[])
 store.room13['debate']={}
-assert env['r13_debate_evidence_ready']('C2')==(2,3)
-assert env['r13_campaign_goal']()=='식당 회의까지 2일 · 촛대 논점에 쓸 자료 2/3'
+assert env['r13_debate_evidence_ready']('C2')==(1,3)
+assert env['r13_campaign_goal']()=='식당 회의까지 2일 · 촛대 논점에 쓸 자료 1/3'
 store.room13.update(case_state='pending',day=3);assert env['r13_campaign_goal']()=='의문 · 누가 마지막으로 만났을까?'
 store.room13.update(trial_ended=True,day=9);assert env['r13_campaign_goal']()=='제단까지 5일 · 함께 버틸 준비 2/4'
 checks.append('goal line shows meeting countdown and evidence/preparation readiness')
