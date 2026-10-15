@@ -1,0 +1,189 @@
+{
+  "kind": "map-referenced full-frame investigation assets; not runtime integration",
+  "date": "2026-10-15",
+  "logical_canvas": [
+    1280,
+    720
+  ],
+  "export": "Existing dev/import_art.py encode: WebP quality95, no resize or creative editing",
+  "files": {
+    "delivery_before": {
+      "file": "room13-pixel-life-delivery-before.webp",
+      "native_size": [
+        1672,
+        941
+      ],
+      "bytes": 458258,
+      "sha256": "a9434ce730868ca84cd785919bcef69bbf62b46e312c1a21883c53e0ff22c8dc"
+    },
+    "delivery_after": {
+      "file": "room13-pixel-life-delivery-after.webp",
+      "native_size": [
+        1672,
+        941
+      ],
+      "bytes": 446242,
+      "sha256": "0f4166404fda90fe941e5a35b413096159c721fca333765afe50fe4a2ce0e550"
+    },
+    "door_before": {
+      "file": "room13-pixel-life-door-before.webp",
+      "native_size": [
+        1672,
+        941
+      ],
+      "bytes": 219082,
+      "sha256": "997375c6858ef0f0274ba8472982c213cdb745b6f0388ca32c109dc10c60916c"
+    },
+    "door_after": {
+      "file": "room13-pixel-life-door-after.webp",
+      "native_size": [
+        1672,
+        941
+      ],
+      "bytes": 217604,
+      "sha256": "8925a217d7e094d1f4820aad1dadd6e4a26ece24cab0b0de47eda82a5d19895c"
+    },
+    "meal_before": {
+      "file": "room13-pixel-life-meal-before.webp",
+      "native_size": [
+        1672,
+        941
+      ],
+      "bytes": 319118,
+      "sha256": "19010ba9262e9b8f42c77e315192accc9a66ab3f410233aedd6c960938da64cc"
+    },
+    "meal_after": {
+      "file": "room13-pixel-life-meal-after.webp",
+      "native_size": [
+        1672,
+        941
+      ],
+      "bytes": 300562,
+      "sha256": "f8c0db6165209f149263823974265e753544ac348f0824747e3de7311a9dae04"
+    }
+  },
+  "scenes": {
+    "delivery": {
+      "location": "gate",
+      "reference": "assets/room13-pixel-ready-gate0173-morning.webp",
+      "states": {
+        "before": "delivery_before",
+        "secured": "delivery_after"
+      },
+      "hitboxes_normalized_before": {
+        "large_tag": [
+          0.407,
+          0.475,
+          0.055,
+          0.13
+        ],
+        "small_tag": [
+          0.642,
+          0.56,
+          0.045,
+          0.13
+        ],
+        "large_box": [
+          0.225,
+          0.295,
+          0.425,
+          0.48
+        ],
+        "small_box": [
+          0.585,
+          0.46,
+          0.195,
+          0.3
+        ],
+        "rope": [
+          0.73,
+          0.68,
+          0.18,
+          0.23
+        ]
+      },
+      "on_complete": "Use existing delivery tie/combined-pay model, not image filename as a payment trigger"
+    },
+    "door": {
+      "location": "inn",
+      "reference": "assets/room13-pixel-panorama-inn-morning.webp",
+      "entry_point": "Existing front entry door, not kitchen storage door",
+      "states": {
+        "before": "door_before",
+        "sealed": "door_after"
+      },
+      "hitboxes_normalized_before": {
+        "draft_gap": [
+          0.19,
+          0.6,
+          0.48,
+          0.07
+        ],
+        "cloth": [
+          0.69,
+          0.655,
+          0.3,
+          0.25
+        ],
+        "door": [
+          0.19,
+          0.01,
+          0.48,
+          0.61
+        ]
+      },
+      "on_complete": "New optional inn draft repair state; no evidence, fee or testimony reward by default"
+    },
+    "meal": {
+      "location": "dining",
+      "reference": "assets/room13-pixel-inn-morning.webp bottom-right atlas tile",
+      "states": {
+        "incomplete": "meal_before",
+        "served": "meal_after"
+      },
+      "hitboxes_normalized_before": {
+        "soup_pot": [
+          0.12,
+          0.245,
+          0.29,
+          0.235
+        ],
+        "ladle": [
+          0.19,
+          0.23,
+          0.23,
+          0.11
+        ],
+        "bread_source": [
+          0.64,
+          0.29,
+          0.24,
+          0.16
+        ],
+        "fourth_bowl": [
+          0.715,
+          0.47,
+          0.16,
+          0.15
+        ],
+        "fourth_plate": [
+          0.71,
+          0.625,
+          0.17,
+          0.14
+        ]
+      },
+      "counts": {
+        "before": {
+          "bread_on_plates": 3,
+          "bread_on_tray": 2
+        },
+        "after": {
+          "bread_on_plates": 4,
+          "bread_on_tray": 1
+        }
+      },
+      "on_complete": "Use existing kitchen-job completion once; preserve separate-meal facts"
+    }
+  }
+}
