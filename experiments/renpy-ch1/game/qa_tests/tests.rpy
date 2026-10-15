@@ -897,7 +897,7 @@ testcase ep4_tok:
     click "광장 등을 직접 살펴본다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "톡의 편을 든다"
+    click "증거도 없이 가둘 겁니까"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_talk","resident_ubak")
@@ -931,7 +931,7 @@ testcase town_a_extort:
     click "짐을 받아 오면 돈을 주겠다고 한다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "백 부인 빚 때문이냐고 정면으로 묻는다"
+    click "백 부인 빚 때문입니까"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
     click "입막음 값으로 여덟 냥을 받는다"
@@ -1011,7 +1011,7 @@ testcase skip_modes:
     click pos (1150,90) until screen "choice" timeout 40
     assert eval (not r13_fast_read)
     assert eval ("W5" in room13["evidence"])
-    click "톡의 편을 든다"
+    click "증거도 없이 가둘 겁니까"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ open("qa_result.txt","w").write("skip to choice, number key 4 picked sliver question")
@@ -1106,7 +1106,7 @@ testcase b3_scale_half:
     click "저울이 기울어 있다고 말한다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "입막음 값으로 반값을 요구한다"
+    click "제 물건만 반값에 주시죠"
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 40
     assert eval (r13_has("shop_half") and r13_shop_price(room13,"hat")==3 and r13_shop_price(room13,"snack")==1)
@@ -1213,7 +1213,7 @@ testcase w2e_tools:
     pause 3.0
     run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","w2e_p_done"))
     click pos (1150,90) until screen "choice" timeout 60
-    click "모른 척한다"
+    click "제가 결정할 일은"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 60
     assert eval (r13_has("tools_sold") and r13_has("tools_missing") and "부리의 할아버지 도구는 도시로 팔려 갔다." in r13_ending_notes())
@@ -1396,10 +1396,10 @@ testcase w1c_mother_line:
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_goto",2,0,"post")
     click pos (1150,90) until screen "choice" timeout 40
-    click "슬링을 달랜다"
+    click "오늘 품삯은 제가 내겠습니다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "가짜 편지를 흘리게 한다"
+    click "할머니께 쪽지 하나만"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("mom_portrait") and r13_has("fake_letter_planted") and "H9" in room13["evidence"])

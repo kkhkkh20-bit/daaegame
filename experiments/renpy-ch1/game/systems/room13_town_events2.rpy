@@ -133,7 +133,7 @@ label r13_ev_a_siluk:
                     ("resident_mungchi","이번 주 이자는 받았어요. 부인이 다음 주엔 원금도 받겠대요."),
                     ("dad","(내가 준 돈은 결국 백 부인 금고로 갔다. 실룩은 심부름꾼일 뿐이다.)",{"thought":True})],"ev:a:follow")
                 $ r13_flag("siluk_scammed","know_siluk_debt","know_madam_hoard")
-            "백 부인 빚 때문이냐고 정면으로 묻는다" if r13_has("know_siluk_debt") or r13_has("know_madam_hoard"):
+            "“백 부인 빚 때문입니까?”" if r13_has("know_siluk_debt") or r13_has("know_madam_hoard"):
                 call r13_lines([("resident_siluk","……제 빚 얘기를 어떻게 알았어요?"),
                     ("resident_siluk","이제는 이자가 원금보다 더 많아요. 갚아도 갚아도 빚이 남아요.")],"ev:a:confront")
                 menu:

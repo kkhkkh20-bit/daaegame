@@ -97,19 +97,19 @@ label r13_b3_scale:
     while _ep_loop:
         $ _ep_loop=False
         menu:
-            "저울을 조용히 바로잡게 한다":
+            "“조용히 저울만 바로잡으시죠.”":
                 call r13_lines(_scale_lines[1:],"b3:scale:quiet")
                 $ r13_flag("shop_discount","scale_settled")
-            "저울 일을 광장에 알리겠다고 한다":
+            "“사람들도 이 일은 알아야 합니다.”":
                 call r13_lines([("resident_eunho","광장에 알리면 이 마을에서 제 장사는 끝납니다. 그래도 하시겠습니까?"),
                     ("dad","그래도 사람들은 자기가 그동안 얼마나 덜 받았는지는 알아야 합니다."),
                     (None,"그날 오후, 광장 게시판에 쪽지가 붙었다. 은호가 저울 바늘을 바로잡았다는 쪽지였다. 사람들이 줄을 서서 다시 무게를 달아 갔다.")],"b3:scale:public")
                 $ r13_flag("scale_public","scale_settled","eunho_hostile","rumor:fair")
-            "입막음 값으로 반값을 요구한다":
+            "“제 물건만 반값에 주시죠.”":
                 call r13_lines([("resident_eunho","……당신 물건만 반값입니다. 대신 저울 일은 다른 사람한테 한 마디도 하지 않는 겁니다."),
                     ("dad","(이러면 나만 값을 덜 내고, 다른 사람들은 계속 물건을 덜 받는다.)",{"thought":True})],"b3:scale:half")
                 $ r13_flag("shop_half","scale_settled","eunho_blackmailed")
-            "배급소 저울도 조였는지 묻는다" if r13_has("know_ration_scale") and "H6" not in room13["evidence"]:
+            "“배급소 저울도 조이셨습니까?”" if r13_has("know_ration_scale") and "H6" not in room13["evidence"]:
                 call r13_lines([("resident_eunho","……배급소 저울 일은 구슬이 말했군요."),
                     ("resident_eunho","백 부인의 부탁이었습니다. 배급이 가벼우면 부인 창고 물건이 팔리고, 그 물건을 나르는 일은 내가 맡거든요."),
                     ("resident_eunho","하지만 배급소 저울은 이제 내가 손댈 수 없습니다. 저울 열쇠를 너울이 갖고 있으니까요.")],"b3:scale:ration")
@@ -152,7 +152,7 @@ label r13_b3_ration:
                 call r13_lines([("neoul","외지 사람이 왜 남의 집 몫을 대신 내오? ……뭐, 돈은 받겠소. 보리는 가도 좋소."),
                     ("resident_bori","이 돈은 꼭 갚을게요. 장작으로든 뭐로든요.")],"b3:ration:pay")
                 $ r13_flag("bori_ally","bori_paid")
-            "보리 편을 들어 준다" if not r13_has("bori_defended"):
+            "“보리가 가져갔다는 증거가 있습니까?”" if not r13_has("bori_defended"):
                 call r13_lines([("dad","보리가 모자란 몫을 가져갔다는 증거는 없지 않습니까."),
                     ("neoul","그럼 누가 가져갔는지 증거를 대 보시오. 말만으로는 안 되오.")],"b3:ration:defend")
                 $ r13_flag("bori_defended","bori_trust")

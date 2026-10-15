@@ -355,20 +355,20 @@ label r13_ep3_hearing:
                 ("resident_ppul","……사서 선생이 그 오래된 장부를 꺼냈소? 출력 숫자는 우박이 줬고?"),
                 ("resident_ppul","좋소. 이번 재판은 말이 아니라 기록으로 하겠소. 판결대로 집행하겠소.")],"ep3:hearing:records")
             $ r13_flag("fair_hearing")
-        "어젯밤 종을 울린 공을 촌장에게 돌린다" if r13_has("village_alerted"):
+        "“아이들을 구한 건 촌장님 덕입니다.”" if r13_has("village_alerted"):
             call r13_lines([("dad","어젯밤 아이들이 학교로 피한 건 촌장님이 종을 허락하셨기 때문이라고 말하겠습니다."),
                 ("resident_ppul","……사람들이 그렇게 믿는다면 나쁠 건 없지."),
                 ("resident_ppul","좋소. 재판은 증거대로 하겠소. 대신 당신도 내 체면을 지켜 주시오.")],"ep3:hearing:credit")
             $ r13_flag("fair_hearing","ppul_ally")
-        "백 부인 창고 장부로 압박한다" if "H1" in room13["evidence"]:
+        "“이 장부를 광장에 붙일 수도 있습니다.”" if "H1" in room13["evidence"]:
             call r13_lines([("dad","배급에서 빠진 물자가 백 부인 창고에 있습니다. 이 장부를 광장에 붙이면 촌장님 배급표도 같이 흔들립니다."),
                 ("resident_ppul","……지금 나를 협박하는 거요?"),
                 ("resident_ppul","좋소. 재판은 증거대로 하겠소. 하지만 이 일은 잊지 않겠소.")],"ep3:hearing:threat")
             $ r13_flag("fair_hearing","ppul_hostile")
-        "조건 없이 그냥 부탁한다":
+        "“증거대로 재판해 주십시오.”":
             call r13_lines([("resident_ppul","부탁으로 법을 바꾸진 않소. 재판은 마을 방식대로 하오.")],"ep3:hearing:plead")
             $ r13_flag("ppul_refused")
-        "다음에 다시 오겠다고 한다":
+        "“다음에 다시 오겠습니다.”":
             pass
     return None
 
@@ -387,11 +387,11 @@ label r13_ep4_accused:
     while _ep_loop:
         $ _ep_loop=False
         menu:
-            "톡의 편을 든다":
+            "“증거도 없이 가둘 겁니까?”":
                 call r13_lines([("dad","증거도 없이 사람을 가두겠다는 겁니까?"),
                     ("neoul","그럼 모레까지 증거를 가져오시오.")],"ep4:defend")
                 $ r13_flag("ep4_open")
-            "너울의 말이 맞을 수도 있다고 한다":
+            "“너울 씨 말이 맞을 수도 있겠군요.”":
                 call r13_lines([("neoul","보시오, 외지 사람도 내 말이 맞을 수 있다잖소."),
                     (None,"너울이 톡의 손목을 묶었다. 수리점 문에 판자가 덧대졌다."),
                     ("resident_tok","……당신도 저 사람들이랑 똑같군요.")],"ep4:side_neoul")
@@ -402,7 +402,7 @@ label r13_ep4_accused:
                     ("dad","(톡의 공구 자국이 아니다. 누군가 무언가를 재려고 등 뚜껑을 열었다.)",{"thought":True})],"ep4:lamp")
                 $ r13_flag("clue_lamp_marks","ep4_open")
                 $ _ep_loop=True
-            "톡에게 등의 돌 조각이 무엇인지 묻는다" if "W5" not in room13["evidence"]:
+            "“등 안의 돌 조각은 뭡니까?”" if "W5" not in room13["evidence"]:
                 call r13_lines([("resident_tok","등은 돌에서 떼어 낸 조각으로 빛나요. 손톱만 한 조각인데, 꺼내 들면 사람 손처럼 따뜻해요."),
                     ("resident_tok","조각이 왜 따뜻한지는 나도 몰라요. 요즘은 조각이 예전보다 빨리 식어요. 그게 무서워요.")],"ep4:sliver")
                 $ r13_grant(["W5"],"톡에게 들은 등의 돌 조각")

@@ -133,21 +133,27 @@ label r13_w2e_tools:
     call r13_ev_here("calm")
     call r13_lines([(None,"부리가 할아버지 공구함을 작업대에 올려놓았다. 그리고 한참 내려다보았다. 은호 사장은 자루를 들고 기다렸다."),
         ("resident_eunho","도시 수집가들이 옛 공구를 좋아합니다. 이 함이면 식구들이 열흘은 먹지요."),
-        ("buri","……할아버지 손때가 묻은 공구예요. 그래도 배는 고파요.")],"w2e:tools:open")
+        ("buri","은호 사장이 이걸 사겠대요."),
+        ("dad","수리할 때 쓰던 공구 아니었습니까?"),
+        ("buri","맞아요. 그런데 집에 먹을 게 없어요.")],"w2e:tools:open:v2")
+    # 0.18.17: choices are what Dad says; the reaction carries the meaning.
     menu:
-        "도구를 대신 산다 (12냥)" if r13_cash_now()>=12:
+        "“제가 값을 내겠습니다.” 12냥" if r13_cash_now()>=12:
             $ r13_cash(-12,"부리의 공구함")
-            call r13_lines([("buri","제가 산 걸로 치고 돈은 나중에 갚을게요. 장치 교대할 때 이 공구를 쓸게요.")],"w2e:tools:buy")
-            $ r13_flag("tools_kept","buri_trust")
-        "공구를 맡기고 빌려 쓰자고 한다" if r13_has("supply_terms") or r13_has("supplies_ready"):
-            call r13_lines([("dad","대피소 장부에 부리 가족 몫을 올리겠습니다. 공구는 장치 교대에 쓰고요."),
-                ("buri","공구를 팔지 않아도 먹고살 수 있으면…… 그렇게 해요.")],"w2e:tools:share")
-            $ r13_flag("tools_kept")
-        "팔지 말라고만 한다":
-            call r13_lines([("buri","팔지 말라는 말로는 배가 안 불러요."),
-                (None,"결국 공구함은 은호의 자루 옆에 놓였다.")],"w2e:tools:talk")
+            call r13_lines([("dad","이 돈은 제가 내겠습니다."),
+                ("buri","빌린 걸로 적어 주세요. 그냥 받은 걸로는 못 하겠어요."),
+                ("buri","장치 교대할 때 이 공구를 쓸게요.")],"w2e:tools:buy:v2")
+            $ r13_flag("tools_kept","buri_tools_paid")
+        "“가족 몫을 공동 장부에 올리죠.”" if r13_has("supply_terms") or r13_has("supplies_ready"):
+            call r13_lines([("dad","가족이 받을 몫을 장부에 넣겠습니다. 공구는 남겨 둡시다."),
+                ("buri","정말 받을 수 있으면, 팔 필요는 없어요.")],"w2e:tools:share:v2")
+            $ r13_flag("tools_kept","buri_family_share")
+        "“할아버지가 쓰시던 물건이잖아요.”":
+            call r13_lines([("buri","저도 알아요."),
+                ("buri","그래서 어제도 못 팔았어요. 오늘은 뭘 먹죠?"),
+                (None,"결국 공구함은 은호의 자루 옆에 놓였다.")],"w2e:tools:talk:v2")
             $ r13_flag("tools_sold")
-        "모른 척한다":
+        "“제가 결정할 일은 아니겠지요.”":
             $ r13_flag("tools_sold")
     if r13_has("tools_sold"):
         if r13_has("tok_cleared"):

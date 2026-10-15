@@ -16,7 +16,7 @@ async def main():
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=3,period=0,location="workshop",life_poc=True);s.r13_flag("entry_corrected","lodging","livelihood_open",*["evening_brief:%d"%d for d in range(1,14)]);s.r13_upgrade();'+ENTER)
    await q.input(1220,50);await q.advance();await q.wait('choice');await q.shot('00-tok-accused')
    await q.press('톡에게 등의 돌 조각이 무엇인지 묻는다');await q.advance();await q.wait('choice')
-   await q.press('톡의 편을 든다');await q.advance();await q.wait('r13_hub')
+   await q.press('“증거도 없이 가둘 겁니까?”');await q.advance();await q.wait('r13_hub')
    room=await q.room();assert 'W5' in room['evidence'] and 'ep4_open' in room['flags'] and 'tok_detained' not in room['flags'],room
    report['checks'].append('Episode 4: Tok accused at workshop → ask about sliver (W5) → defend Tok')
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=3,period=1,location="store",life_poc=True);s.r13_flag("entry_corrected","lodging","livelihood_open",*["evening_brief:%d"%d for d in range(1,14)]);s.r13_upgrade();'+ENTER)
