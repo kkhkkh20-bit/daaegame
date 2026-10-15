@@ -534,6 +534,42 @@ init 999 python:
             report["react"][emotion]=shots
             renpy.hide("r13_visitor")
             store.r13_motion_person=None
+        # 0.18.37: indoor lamps, inn window snow, cinematic effects, other people's reactions and blinks.
+        for location in ("school","workshop","clinic","store","inn"):
+            renpy.scene()
+            renpy.show("r13_qa_fx_bg",what=r13_world_background(location,"evening"))
+            for i in range(2):
+                renpy.pause(0.37,hard=True)
+                renpy.screenshot(os.path.join(out,"lamp_%s_%d.png"%(location,i)))
+        for key in ("mountain","E3","proof"):
+            renpy.scene()
+            renpy.show("r13_qa_fx_bg",what=r13_cinematic_art(key))
+            for i in range(2):
+                renpy.pause(0.5,hard=True)
+                renpy.screenshot(os.path.join(out,"cine_%s_%d.png"%(key,i)))
+        renpy.scene()
+        renpy.show("r13_qa_fx_bg",what=r13_world_background("inn","evening"))
+        report["react_more"]={}
+        store.place="여관 접수대"   # setup leaves the carriage, where only Daram is drawn
+        for person in ("buri","nabi","bami","mom","karo"):
+            r13_speaker(person,"neutral","neutral")
+            renpy.say(R13_CHARS.get(person),"반응 확인 문장입니다.",interact=False)
+            renpy.pause(0.5,hard=True)
+            r13_speaker(person,"expressive","surprise")
+            renpy.say(R13_CHARS.get(person),"반응 확인 문장입니다.",interact=False)
+            renpy.pause(0.16,hard=True)
+            renpy.screenshot(os.path.join(out,"react2_%s_jump.png"%person))
+            spec=R13_DOT_FX["blink"]["people"].get(person,{}).get("surprise")
+            if spec:
+                r13_speaker(person,"neutral","neutral")
+                renpy.say(R13_CHARS.get(person),"반응 확인 문장입니다.",interact=False)
+                spec=R13_DOT_FX["blink"]["people"][person]["neutral"]
+                probe=R13Blink(spec["half"],person,"neutral",spec)
+                renpy.pause(1.6+probe.gap(0)+0.09,hard=True)
+                renpy.screenshot(os.path.join(out,"blink2_%s_closed.png"%person))
+            report["react_more"][person]=bool(spec)
+            renpy.hide("r13_visitor")
+            store.r13_motion_person=None
         open(os.path.join(out,"report.json"),"w").write(qa_json.dumps(report,ensure_ascii=False,indent=0))
         store.r13_qa_fx_done=True
 
@@ -542,3 +578,4 @@ label r13_qa_dot_fx:
     $ r13_qa_fx_capture()
     $ open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(done=r13_qa_fx_done)))
     return
+

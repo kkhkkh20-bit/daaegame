@@ -1,5 +1,5 @@
-# Small dialogue-only performance. Field artwork and its clickable silhouette
-# stay still; a two-pixel portrait idle never substitutes for an authored pose.
+# Small performance. Field residents breathe (0.18.37, owner); their clickable
+# silhouette stays at rest. Dialogue close-ups stay still apart from reactions.
 default persistent.room13_motion = True
 default r13_motion_person = None
 image r13_visitor = Null()
@@ -152,8 +152,9 @@ init 58 python:
         return tuple(tuple(run) for run in runs)
 
     class R13AuthoredIdle(renpy.Displayable):
-        def __init__(self,art,person,pose,spec,width,height,contact=None,speaking=False,**kwargs):
+        def __init__(self,art,person,pose,spec,width,height,contact=None,speaking=False,field=False,**kwargs):
             super(R13AuthoredIdle,self).__init__(**kwargs)
+            self.field=field
             self.child=renpy.displayable(art)
             # Render the final-size pixel grid once before slicing it. Slicing
             # an unflattened scaled atlas can change texture sampling at the
@@ -173,9 +174,9 @@ init 58 python:
         def render(self,width,height,st,at):
             # Return the identical render, rather than a zero-offset resample.
             # OFF screenshots therefore remain byte/pixel stable.
-            if self.kind!="dialogue":
-                # Compatibility for field displayables retained by older saves.
-                # No redraw, raster warp, or mask-only movement in exploration.
+            if self.kind=="dialogue" and not self.field:
+                # Dialogue close-ups stay still; their reactions are whole-figure moves
+                # (systems/room13_dot_fx.rpy). Older saves may hold a dialogue idle.
                 return renpy.render(self.child,self.width,self.height,st,at)
             if not persistent.room13_motion or renpy.is_skipping():
                 # A retained say portrait also notices ON after the settings
@@ -204,11 +205,15 @@ init 58 python:
             renpy.redraw(self,max(.005,.125-(clock-frame)))
             return result
 
-    def r13_idle_art(art,person,pose,spec,width,height,contact=None,speaking=False):
-        # Both visible world art and its alpha hit mask use this exact path.
+    # 0.18.37 (owner): field residents breathe. The feet/seat/hand rows below the
+    # contact line never move (r13_idle_geometry), so furniture contact holds.
+    # Hit masks pass still=True: picking uses the resting silhouette (max 2px off).
+    R13_FIELD_IDLE = True
+
+    def r13_idle_art(art,person,pose,spec,width,height,contact=None,speaking=False,still=False):
         # Dialogue/topic portraits explicitly pass dialogue_bust even between lines.
-        if not speaking and contact!="dialogue_bust":
-            return renpy.displayable(art)
+        if not speaking and contact!="dialogue_bust" and R13_FIELD_IDLE and not still:
+            return R13AuthoredIdle(art,person,pose,spec,width,height,contact=contact,field=True)
         return renpy.displayable(art)
 
     class R13CharacterMotion:

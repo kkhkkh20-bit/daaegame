@@ -125,13 +125,18 @@ def flakes():
 
 # ------------------------------------------------------------------ 눈 깜빡임
 EYE_SEARCH = (140, 100, 440, 290)
+# 0.18.37: 대화가 많은 인물. 자동으로 만든 뒤 사람이 본 결과 어색한 조합은 BLINK_SKIP에 적는다.
+# 0.18.37 검수: karo(눈썹·깃털 오검출), granny·doto(안경), seryeon(머리카락이 눈을 가림), neoul·서리(눈가 무늬)는
+# 자동 결과가 어색해 뺐다. joy는 모두 원래 눈을 감은 웃는 눈이라 뺐다.
+BLINK_MORE = ("buri", "mom", "nabi", "bami")
+BLINK_SKIP = {(p, "joy") for p in BLINK_MORE} | {("mom", "flustered")}
 LID = (26, 18, 24)
 
 
-def blink_pieces(person, emotion):
+def blink_pieces(person, emotion, search=None, general=False):
     name = "room13-fullbody-%s-%s.webp" % (person, emotion)
     spr = np.array(Image.open(os.path.join(ASSETS, name)).convert("RGBA")).astype(int)
-    x0, y0, x1, y1 = EYE_SEARCH
+    x0, y0, x1, y1 = search or EYE_SEARCH
     reg = spr[y0:y1, x0:x1]
     lum = reg[..., :3].sum(2)
     opaque = reg[..., 3] > 200
@@ -147,7 +152,31 @@ def blink_pieces(person, emotion):
         # 눈동자: 덩어리가 꽉 차 있고 크기가 25~90px. 머리 윤곽선(가늘고 긴 덩어리)은 빠진다.
         if s > 600 and 25 <= h <= 90 and 20 <= w <= 90 and s / float(h * w) > .35:
             eyes.append(i + 1)
-    eyes = sorted(eyes, key=lambda i: -sizes[i - 1])[:2]
+    if general:
+        # 다른 인물: 크기 기준을 넓히고, 높이가 비슷하고 좌우로 떨어진 두 덩어리를 한 쌍으로 고른다.
+        eyes = []
+        for i, sz in enumerate(sizes):
+            ys, xs = boxes[i]
+            h, w = ys.stop - ys.start, xs.stop - xs.start
+            if 120 <= sz <= 4000 and 10 <= h <= 90 and 8 <= w <= 90 and sz / float(h * w) > .35:
+                eyes.append(i + 1)
+        best = None
+        for a in eyes:
+            for b in eyes:
+                if a >= b:
+                    continue
+                ya = (boxes[a - 1][0].start + boxes[a - 1][0].stop) / 2.0
+                yb = (boxes[b - 1][0].start + boxes[b - 1][0].stop) / 2.0
+                xa = (boxes[a - 1][1].start + boxes[a - 1][1].stop) / 2.0
+                xb = (boxes[b - 1][1].start + boxes[b - 1][1].stop) / 2.0
+                ratio = min(sizes[a - 1], sizes[b - 1]) / max(sizes[a - 1], sizes[b - 1])
+                if abs(ya - yb) <= 22 and 34 <= abs(xa - xb) <= 200 and ratio > .45:
+                    score = sizes[a - 1] + sizes[b - 1] - abs(ya - yb) * 20
+                    if best is None or score > best[0]:
+                        best = (score, [a, b])
+        eyes = best[1] if best else []
+    else:
+        eyes = sorted(eyes, key=lambda i: -sizes[i - 1])[:2]
     if len(eyes) != 2:
         return None
     union = np.zeros(dark.shape, bool)
@@ -157,7 +186,15 @@ def blink_pieces(person, emotion):
         ys, xs = ndimage.find_objects(m.astype(int))[0]
         box = np.zeros_like(m)
         box[max(0, ys.start - 8):ys.stop + 6, max(0, xs.start - 22):xs.stop + 22] = True
-        eye = ndimage.binary_closing(m | (white & box), iterations=2)
+        seed = m | (white & box)
+        if general:
+            # 색 있는 홍채(주황·파랑 등): 눈동자 둘레 6px 안에서 위쪽 털색과 크게 다른 픽셀.
+            fur_band = reg[max(0, ys.start - 14):max(1, ys.start - 4), xs.start:xs.stop, :3].reshape(-1, 3)
+            fur_c = np.median(fur_band, axis=0) if len(fur_band) else np.array([128, 128, 128])
+            near_m = ndimage.binary_dilation(m, iterations=6) & box & opaque
+            far = np.abs(reg[..., :3] - fur_c).sum(2) > 150
+            seed = seed | (near_m & far & (lum < 600))
+        eye = ndimage.binary_closing(seed, iterations=2)
         eye = ndimage.binary_fill_holes(eye)
         lab2, _ = ndimage.label(eye)
         eye = lab2 == lab2[m][0]
@@ -169,7 +206,7 @@ def blink_pieces(person, emotion):
             lab3, _ = ndimage.label(eye)
             sizes3 = ndimage.sum(eye, lab3, range(1, lab3.max() + 1))
             eye = lab3 == (int(np.argmax(sizes3)) + 1)
-        big = ndimage.binary_dilation(eye, iterations=4)   # 눈 테두리 안티에일리어싱까지
+        big = ndimage.binary_dilation(eye, iterations=7 if general else 4)   # 눈 테두리 안티에일리어싱까지
         masks.append((eye, big))
         union |= big
     # 눈을 덮는 털색은 눈 밖에서 가장 가까운 픽셀에서 가져온다. 속눈썹·눈썹 같은 검은 선은
@@ -209,11 +246,16 @@ def blink_pieces(person, emotion):
                 u = (x - cx) / (hw + 1e-9)
                 lid[x] = int(top + (bottom - top) * frac + depth * max(0.0, 1 - u * u)) // 4 * 4
             # 눈 밖으로 번진 테두리 안에 있는 검은 선(눈썹·속눈썹 끝)은 원본 그대로 둔다.
-            keep = big & ~eye & (lum < 110)
+            # 검은 선만(채도 낮음). 남색 홍채 끝 같은 색 픽셀은 덮는다.
+            spread = reg[..., :3].max(2) - reg[..., :3].min(2)
+            keep = big & ~eye & (lum < 110) & (spread < 45)
             klab, kn = ndimage.label(keep)
             if kn:
                 ksz = ndimage.sum(keep, klab, range(1, kn + 1))
-                keep = np.isin(klab, [i + 1 for i, v in enumerate(ksz) if v >= 25])
+                eye_top = np.nonzero(eye.any(1))[0].min()
+                cy = ndimage.center_of_mass(keep, klab, range(1, kn + 1))
+                # 굵고 눈 위로 떨어진 선(눈썹)만 남긴다. 눈 윗테두리 조각은 덮는다.
+                keep = np.isin(klab, [i + 1 for i, v in enumerate(ksz) if v >= 25 and (not general or cy[i][0] < eye_top - 2)])
             ys, xs = np.nonzero(big & ~keep)
             for y, x in zip(ys, xs):
                 edge = lid.get(x, lid[left - 1] if x < left else lid[right + 1])
@@ -307,6 +349,106 @@ def dither_plate():
     return "assets/room13-fx-dither.png"
 
 
+# ------------------------------------------------------------------ 0.18.37
+# 실내 저녁 등불(원본 좌표). 검수한 등만 적는다.
+LAMPS = {
+    "school": [[1563, 199, 260]], "workshop": [[245, 137, 220], [1222, 268, 220]],
+    "clinic": [[1015, 385, 240]], "store": [[1032, 100, 300]],
+    "greenhouse": [[516, 311, 220]], "facility": [[730, 222, 240]],
+}
+INN_WINDOW = (648, 156, 456, 212)       # 여관 로비 창·문 유리 영역(x, y, w, h)
+
+
+def lamp_plates():
+    out = {}
+    for loc, lamps in LAMPS.items():
+        size = (2048, 768)
+        rel = "assets/room13-pixel-ready-%s0177-evening.webp" % loc
+        if os.path.exists(os.path.join(ROOT, "game", rel)):
+            size = Image.open(os.path.join(ROOT, "game", rel)).size
+        else:
+            layout = json.load(open(os.path.join(ASSETS, "room13-world-layout.json"), encoding="utf-8"))
+            size = Image.open(os.path.join(ROOT, "game", layout[loc]["files"]["evening"])).size
+        centers = [(x, y, r, r, 1.6) for x, y, r in lamps]
+        out[loc] = {"file": glow_plate(size, centers, (255, 186, 90), 4, "room13-fx-lamp-%s.webp" % loc),
+                    "periods": ["evening"], "alpha": [0.10, 0.28]}
+    return out
+
+
+def window_mask():
+    x, y, w, h = INN_WINDOW
+    a = load_rgb("room13-pixel-panorama-inn-evening.webp")[y:y + h, x:x + w]
+    pane = (a[..., 2] > a[..., 0] + 25) & (a[..., 2] > 70) & (a.sum(2) < 380)
+    pane = ndimage.binary_opening(pane, iterations=1)
+    img = Image.fromarray((pane * 255).astype("uint8"), "L").convert("RGBA")
+    img.putalpha(Image.fromarray((pane * 255).astype("uint8"), "L"))
+    return save(img, "room13-fx-inn-window-mask.webp")
+
+
+def reaction_sounds():
+    """짧은 8비트 반응음(소리 크기 작게). 22050Hz 16bit mono."""
+    import wave
+    rate = 22050
+    def tone(segs, vol=.22):
+        out = []
+        for f0, f1, dur in segs:
+            n = int(rate * dur)
+            for i in range(n):
+                f = f0 + (f1 - f0) * i / max(1, n)
+                ph = (sum_ph[0] + f / rate) % 1.0
+                sum_ph[0] = ph
+                env = min(1.0, i / 60.0) * min(1.0, (n - i) / 120.0)
+                out.append((1 if ph < .5 else -1) * vol * env)
+        return out
+    sounds = {
+        "surprise": [(420, 420, .03), (520, 1240, .09)],
+        "joy": [(660, 660, .05), (0, 0, .025), (990, 990, .06)],
+        "angry": [(150, 120, .05), (0, 0, .02), (150, 120, .05), (0, 0, .02), (140, 110, .06)],
+        "anxious": [(520, 470, .05), (0, 0, .03), (500, 440, .06)],
+        "flustered": [(700, 560, .05), (560, 700, .05), (700, 560, .05)],
+    }
+    files = {}
+    for name, segs in sounds.items():
+        sum_ph = [0.0]
+        data = []
+        for f0, f1, dur in segs:
+            if f0 == 0:
+                data += [0.0] * int(rate * dur)
+            else:
+                data += tone([(f0, f1, dur)])
+        pcm = (np.array(data) * 32767).astype("<i2").tobytes()
+        path = os.path.join(ASSETS, "sfx-react-%s.wav" % name)
+        w = wave.open(path, "wb")
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(pcm); w.close()
+        files[name] = "assets/sfx-react-%s.wav" % name
+    return files
+
+
+# 장면 그림(시네마틱) 연출: 등불 일렁임과 바깥 장면 눈. 좌표는 그 장면의 잘라낸 그림(832x466) 기준.
+CINE_LAMPS = {
+    "return": [[110, 80, 90]], "rescue": [[468, 110, 90]], "reunion": [[786, 180, 90]],
+    "mountain": [[790, 244, 90]], "E0": [[724, 144, 80]], "E2": [[606, 224, 90]],
+    "E3": [[162, 218, 60], [324, 292, 60], [658, 48, 70]], "E4": [[316, 318, 80]],
+    "E5": [[786, 302, 80], [456, 58, 70]], "proof": [[92, 132, 150]],
+}
+CINE_SNOW = ("mountain", "E0", "E2")
+
+
+def cine_plates():
+    items = {it["id"]: it for it in json.load(open(os.path.join(ASSETS, "room13-cinematics.json"), encoding="utf-8"))["items"]}
+    out = {}
+    for key, lamps in CINE_LAMPS.items():
+        if key not in items:
+            continue
+        w, h = items[key]["rect"][2:]
+        out[key] = {"lamp": glow_plate((w, h), [(x, y, r, r, 1.6) for x, y, r in lamps], (255, 190, 96), 2,
+                                       "room13-fx-cine-%s.webp" % key.lower()),
+                    "alpha": [0.12, 0.32], "snow": key in CINE_SNOW}
+    for key in CINE_SNOW:
+        out.setdefault(key, {"snow": True})
+    return out
+
+
 def main():
     meta = {"version": 1, "cell": CELL, "generator": "dev/make_dot_fx.py"}
     fire = {}
@@ -330,11 +472,26 @@ def main():
         piece = blink_pieces("daram", emotion)
         if piece:
             blink.setdefault("daram", {})[emotion] = piece
+    fullbody = json.load(open(os.path.join(ASSETS, "room13-fullbody-dialogue.json"), encoding="utf-8"))["people"]
+    for person in BLINK_MORE:
+        fx_, fy_, fw_, fh_ = fullbody[person]["figure"]
+        search = (fx_, fy_, fx_ + fw_, fy_ + int(fh_ * .45))
+        for emotion in ("neutral", "joy", "flustered", "angry", "anxious", "surprise"):
+            if (person, emotion) in BLINK_SKIP:
+                continue
+            piece = blink_pieces(person, emotion, search, general=True)
+            if piece:
+                blink.setdefault(person, {})[emotion] = piece
     meta["smoke"] = {"sources": SMOKE_SOURCES, "puffs": smoke_puffs(),
                      "periods": ["morning", "afternoon", "evening"],
                      "every": .9, "life": 4.5, "rise": 72, "drift": 18}
     meta["evidence_sparkle"] = {"sheet": sparkle_sheet(), "frames": 6, "fps": 12, "size": [128, 128]}
     meta["dither"] = {"file": dither_plate(), "time": .5}
+    meta["lamps"] = lamp_plates()
+    meta["inn_window"] = {"rect": list(INN_WINDOW), "mask": window_mask(), "periods": ["evening"],
+                          "layers": [{"count": 34, "size": 4, "vy": [22, 34], "sway": 6}]}
+    meta["react_sounds"] = reaction_sounds()
+    meta["cinematics"] = cine_plates()
     meta["blink"] = {"timeline": [["half", .05], ["closed", .09], ["half", .05]],
                      "interval": [2.6, 5.2], "people": blink}
     with open(META_FILE, "w", encoding="utf-8") as f:

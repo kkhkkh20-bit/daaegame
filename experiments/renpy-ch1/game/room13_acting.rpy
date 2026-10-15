@@ -479,12 +479,12 @@ init 59 python:
         R13_STAGE_CACHE[cache_key]=result
         return result
 
-    def r13_staged_art(actor):
+    def r13_staged_art(actor,still=False):
         art=r13_pixel_scale(r13_art(actor["person"],actor["pose"]),actor["width"],actor["height"],R13_WORLD_PIXEL_GRID)
-        return r13_idle_art(art,actor["person"],actor["pose"],r13_acting_spec(actor["person"],actor["pose"]),actor["width"],actor["height"],contact=actor["contact"])
+        return r13_idle_art(art,actor["person"],actor["pose"],r13_acting_spec(actor["person"],actor["pose"]),actor["width"],actor["height"],contact=actor["contact"],still=still)
 
-    def r13_staged_visible_art(actor):
-        art=r13_staged_art(actor)
+    def r13_staged_visible_art(actor,still=False):
+        art=r13_staged_art(actor,still)
         if actor["occlusion"]:
             mask=R13FurnitureMask(actor["occlusion"],size=(actor["width"],actor["height"]),origin=(actor["x"],actor["y"]))
             art=AlphaMask(art,mask,invert=True)
@@ -494,7 +494,7 @@ init 59 python:
         # Drawing and picking share the same sprite transform, alpha and
         # furniture mask. No broad rectangular target covers transparent gaps.
         x,y,w,h=actor["rect"]
-        return Crop((x-actor["x"],y-actor["y"],w,h),r13_staged_visible_art(actor))
+        return Crop((x-actor["x"],y-actor["y"],w,h),r13_staged_visible_art(actor,still=True))
 
     def r13_actor_face(actor,margin=10):
         cs=r13_acting_spec(actor["person"],actor["pose"]) or {}

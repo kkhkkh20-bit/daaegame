@@ -2224,3 +2224,4 @@ testcase dot_fx:
     run Call("r13_qa_dot_fx")
     click pos (1276,300) until eval r13_qa_fx_done timeout 300
     pause 1.0
+

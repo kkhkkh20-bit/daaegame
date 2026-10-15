@@ -108,6 +108,9 @@ init 57 python:
                 out.blit(renders[layer], (int(x) // cell * cell, int(y) // cell * cell))
             return 1.0 / 15.0
 
+    # 등불 밝기 순서(4단계로 끊긴다): 대부분 평소, 가끔 한두 단계 어두워진다.
+    R13_LAMP_LEVELS = [1, 1, .67, 1, .67, .33, .67, 1, 1, 1, .67, 1, .33, .67, 1, 1, 1, .67]
+
     def r13_dot_fx_wanted(location, period):
         fx = R13_DOT_FX
         if location == "inn" and period in fx.get("inn_fire", {}).get("periods", {}):
@@ -116,6 +119,10 @@ init 57 python:
             return True
         smoke = fx.get("smoke", {})
         if location in smoke.get("sources", {}) and period in smoke.get("periods", []):
+            return True
+        if period in fx.get("lamps", {}).get(location, {}).get("periods", []):
+            return True
+        if location == "inn" and period in fx.get("inn_window", {}).get("periods", []):
             return True
         snow = fx.get("snow", {})
         return location in snow.get("locations", []) and period in snow.get("periods", [])
@@ -154,6 +161,16 @@ init 57 python:
         smoke = fx.get("smoke", {})
         if location in smoke.get("sources", {}) and period in smoke.get("periods", []):
             layers.append(R13FxSmoke(smoke, smoke["sources"][location], size))
+        lamp = fx.get("lamps", {}).get(location)
+        if lamp and period in lamp.get("periods", []):
+            # 실내 등불: 느리게 일렁이다 가끔 한 번 깜빡(1.0=평소).
+            levels = R13_LAMP_LEVELS
+            layers.append(R13FxPulse(lamp["file"], levels, 1 / .14, lamp["alpha"], size))
+        window = fx.get("inn_window", {})
+        if location == "inn" and period in window.get("periods", []):
+            wx, wy, ww, wh = window["rect"]
+            spec = dict(fx.get("snow", {}), layers=window["layers"])
+            layers.append(Transform(AlphaMask(R13FxSnow(spec, (ww, wh), seed=7), window["mask"]), xpos=wx, ypos=wy))
         snow = fx.get("snow", {})
         if location in snow.get("locations", []) and period in snow.get("periods", []):
             layers.append(R13FxSnow(snow, size))
@@ -392,7 +409,8 @@ screen r13_fx_impact():
 # 움직임은 대화 그림 도트 크기(3px)의 배수로만 움직여 픽셀이 뭉개지지 않는다.
 # 놀람·화남은 '먼저 반응하고 표정이 바뀐다': 앞 표정 그대로 잠깐 움찔한 뒤 새 표정으로 바뀐다.
 init 57 python:
-    R13_REACT_PEOPLE = ("daram",)
+    # 0.18.37: 대화가 많은 인물로 넓혔다. 몸집이 큰 인물(부엉이 할아버지, 경비)은 움직임이 과해 보여 넣지 않았다.
+    R13_REACT_PEOPLE = ("daram", "buri", "nabi", "bami", "mom", "karo", "granny", "doto", "neoul", "seryeon", "resident_seori")
     # 감정: 앞 표정을 유지하는 시간(초)
     R13_REACT_LEAD = {"surprise": .10, "angry": .07, "joy": 0.0, "anxious": 0.0, "flustered": 0.0}
     R13_REACT_LAST = {}          # person -> (emotion, art). 저장하지 않는 화면 기억.
@@ -440,6 +458,9 @@ init 57 python:
             what = R13Anticipate(before[1], what, lead)
         else:
             lead = 0.0
+        sound = R13_DOT_FX.get("react_sounds", {}).get(kind)
+        if sound and not renpy.is_skipping():
+            renpy.sound.play(sound, channel="sound")
         motion = {"surprise": r13_react_surprise, "joy": r13_react_joy, "angry": r13_react_angry,
                   "anxious": r13_react_anxious, "flustered": r13_react_flustered}[kind]
         return what, list(at_list) + [motion(lead)]
@@ -514,3 +535,31 @@ transform r13_react_flustered(lead=0.0):
     xoffset 3
     pause .06
     xoffset 0
+
+
+# ---------------------------------------------------------------- 0.18.37 장면 그림
+init 57 python:
+    R13_CINE_FX_CACHE = {}
+
+    def r13_cinematic_fx(key, art, size):
+        """장면 그림 위 등불 일렁임과 바깥 눈(움직임 설정을 따른다)."""
+        spec = R13_DOT_FX.get("cinematics", {}).get(key)
+        if not spec:
+            return art
+        cache_key = (key, tuple(size))
+        cached = R13_CINE_FX_CACHE.get(cache_key)
+        if cached is not None:
+            return cached
+        layers = []
+        if spec.get("lamp"):
+            levels = R13_LAMP_LEVELS
+            layers.append(R13FxPulse(spec["lamp"], levels, 1 / .14, spec["alpha"], size))
+        if spec.get("snow"):
+            snow = dict(R13_DOT_FX.get("snow", {}))
+            # 832x466 그림 기준: 눈 수와 속도를 화면 비율만큼 줄인다.
+            snow["layers"] = [{"count": 70, "size": 4, "vy": [16, 26], "sway": 6},
+                              {"count": 14, "size": 8, "vy": [34, 50], "sway": 10}]
+            layers.append(R13FxSnow(snow, size, seed=11))
+        cached = Fixed(art, *layers, xysize=size)
+        R13_CINE_FX_CACHE[cache_key] = cached
+        return cached

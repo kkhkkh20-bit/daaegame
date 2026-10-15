@@ -10,8 +10,10 @@ init 55 python:
 
     def r13_cinematic_art(key):
         item = R13_CINEMATICS[key]
-        return Transform(Crop(tuple(item["rect"]), item["file"]),
-            xysize=(1280,720), nearest=True)
+        art = Crop(tuple(item["rect"]), item["file"])
+        # Lamp flicker and outdoor snow (systems/room13_dot_fx.rpy, 0.18.37).
+        art = r13_cinematic_fx(key, art, tuple(item["rect"][2:]))
+        return Transform(art, xysize=(1280,720), nearest=True)
 
 # Keep the named transform resolvable for existing saves. New scenes show
 # their native pixel composition without a fractional camera zoom.
