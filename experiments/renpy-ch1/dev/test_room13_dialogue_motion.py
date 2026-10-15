@@ -1,4 +1,5 @@
-"""Field residents breathe (0.18.37, owner) but their hit masks and dialogue close-ups stay still."""
+"""Field residents stand still (0.18.46, owner removed the 0.18.37 breathing). With the switch on,
+the old idle still keeps hit masks and dialogue close-ups still."""
 import ast
 from pathlib import Path
 from types import SimpleNamespace
@@ -28,6 +29,8 @@ class MotionScope(unittest.TestCase):
   for speaking in (True,False):
    art=object();self.assertIs(self.make(art,'karo','neutral',{},400,500,contact='dialogue_bust',speaking=speaking),art)
   self.assertFalse(self.calls)
+ def test_field_idle_is_off_by_default(self):
+  self.assertIn('R13_FIELD_IDLE = False',SOURCE)
  def test_switch_turns_field_idle_off(self):
   self.env['R13_FIELD_IDLE']=False
   art=object();self.assertIs(self.make(art,'karo','neutral',{},200,300,contact='standing'),art)

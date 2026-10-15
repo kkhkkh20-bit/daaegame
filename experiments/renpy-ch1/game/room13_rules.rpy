@@ -167,6 +167,11 @@ init 55 python:
             and k not in store.room13["done"] and r13_available(a) and r13_w2_actions_allowed(k)]
 
     def r13_finish_topic(key):
+        # store.r13_topic_shown: the rows actually displayed on first reading (set at the call
+        # site in room13.rpy). Kept verbatim (0.18.46) so a later review shows that record,
+        # never lines rebuilt from today's state. Upper override layers keep the one-arg form.
+        shown=getattr(store,"r13_topic_shown",None)
+        store.r13_topic_shown=None
         t=ROOM13["topics"][key]
         r13_grant(t["give"],R13_NAMES.get(t["npc"],t["npc"])+"와 대화")
         r13_flag(*t["flags"])
@@ -176,6 +181,9 @@ init 55 python:
         if not was_read:
             n["read_topics"].append(key)
             n.setdefault("dialogue_dates", {})[key]=dict(day=n["day"],period=n["period"])
+            if shown:
+                n.setdefault("topic_transcripts", {})[key]=[
+                    [row[0],row[1],bool(len(row)>2 and isinstance(row[2],dict) and row[2].get("thought"))] for row in shown]
         store.room13=n
 
     def r13_finish_action(key):

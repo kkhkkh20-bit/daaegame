@@ -38,30 +38,31 @@ screen r13_click_glint(point):
     add R13ClickGlint() xpos point[0] ypos point[1] xanchor .5 yanchor .5 at r13_click_pulse
     timer .65 action Hide("r13_click_glint")
 
-# 0.18.33 (owner): the card sits at the top right, under the date plate, in every context.
-# 0.18.41 (owner): tight around the icon; the name wraps under it and the card grows to fit.
-define R13_EVIDENCE_CARD_SIZE = 172
-define R13_EVIDENCE_CARD_POS = (1256-R13_EVIDENCE_CARD_SIZE, 92)
-define R13_EVIDENCE_ICON_SIZE = 96
+# 0.18.33 (owner): top right, clear of the person and the questions.
+# 0.18.46 (owner): only the icon and the record's name, the frame hugging them, a little larger
+# and moved in from the edge toward the person, as if held out to them. No caption.
+define R13_EVIDENCE_CARD_CENTER = (1010, 112)
+define R13_EVIDENCE_ICON_SIZE = 104
+define R13_EVIDENCE_NAME_WIDTH = 190
+define R13_EVIDENCE_CARD_PAD = 10
 
-screen r13_evidence_card(key,caption,conversation=False):
+screen r13_evidence_card(key,caption="",conversation=False):
     style_prefix "r13"
     frame:
-        xpos R13_EVIDENCE_CARD_POS[0] ypos R13_EVIDENCE_CARD_POS[1] xsize R13_EVIDENCE_CARD_SIZE padding (8,8)
+        xanchor .5 xpos R13_EVIDENCE_CARD_CENTER[0] ypos R13_EVIDENCE_CARD_CENTER[1] padding (R13_EVIDENCE_CARD_PAD,8,R13_EVIDENCE_CARD_PAD,8)
         background R13ActionPanel()
         at r13_evidence_reveal
         vbox:
-            xfill True spacing 2
+            spacing 3
             add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
-            text caption size 15 color "#ebcd8a" xalign .5
-            text ROOM13["evidence"][key]["name"] size 16 color "#fff4df" xalign .5 text_align .5 xmaximum (R13_EVIDENCE_CARD_SIZE-16)
+            text ROOM13["evidence"][key]["name"] size 20 color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
 
 screen r13_evidence_found(keys,conversation=False):
     zorder 85
     default item_index=0
     use r13_evidence_card(keys[item_index],"새 증언 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 자료 기록",conversation=conversation)
     # Sparkle around the icon (systems/room13_dot_fx.rpy); one run per card.
-    add r13_evidence_sparkle() xpos (R13_EVIDENCE_CARD_POS[0]+R13_EVIDENCE_CARD_SIZE//2) ypos (R13_EVIDENCE_CARD_POS[1]+8+R13_EVIDENCE_ICON_SIZE//2) anchor (.5,.5)
+    add r13_evidence_sparkle() xpos R13_EVIDENCE_CARD_CENTER[0] ypos (R13_EVIDENCE_CARD_CENTER[1]+8+R13_EVIDENCE_ICON_SIZE//2) anchor (.5,.5)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:

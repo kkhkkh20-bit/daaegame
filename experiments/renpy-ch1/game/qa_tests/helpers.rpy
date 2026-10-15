@@ -608,3 +608,7 @@ label r13_qa_reel:
             renpy.pause(dur,hard=True)
         store.r13_qa_reel_done=True
     return
+
+label r13_qa_topic_review:
+    call r13_topic_review("karo_road")
+    jump r13_roam

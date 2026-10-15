@@ -1,4 +1,7 @@
 default r13_carriage_skip = False
+# 0.18.46 (owner): "건너뛰기" ends the current conversation block at once. Grants, flags and
+# progress after the block still run; only the remaining lines are not shown.
+default r13_conv_skip = False
 
 # Full campaign entry and first-week scenes; continuation is in room13_week2.rpy.
 label r13_scene(bg,title,mood="calm"):
@@ -33,7 +36,8 @@ label r13_scene(bg,title,mood="calm"):
 
 label r13_lines(entries,identity):
     $ r13_index=0
-    while r13_index<len(entries) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
+    $ r13_conv_skip=False
+    while r13_index<len(entries) and not r13_conv_skip and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
         $ r13_packet=entries[r13_index]
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
@@ -49,7 +53,7 @@ label r13_lines(entries,identity):
         # Four or more lines on screen: show two lines per click (systems/room13_linebreak.rpy).
         $ r13_pages=r13_dialogue_pages(r13_packet[1])
         $ r13_page_i=0
-        while r13_page_i<len(r13_pages):
+        while r13_page_i<len(r13_pages) and not r13_conv_skip:
             $ R13_CHARS.get(r13_packet[0],source_thought)(r13_pages[r13_page_i])
             $ r13_page_i+=1
         if not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
@@ -58,6 +62,7 @@ label r13_lines(entries,identity):
     hide r13_visitor
     $ dialogue_speaker=None
     $ r13_thought_active=False
+    $ r13_conv_skip=False
     return
 
 label room13_start:
@@ -474,13 +479,20 @@ label r13_talk_dispatch:
         jump r13_talk_menu
     if ROOM13["topics"][r13_topic].get("special"):
         if r13_topic in room13["read_topics"]:
-            call r13_lines(r13_conversation_topic_lines(r13_topic),"topic:review:"+r13_topic)
+            call r13_topic_review(r13_topic)
         else:
             call r13_topic_choice(r13_topic)
             if _return:
                 $ r13_finish_topic(r13_topic)
         jump r13_talk_menu
-    call r13_lines(r13_conversation_topic_lines(r13_topic),"topic:"+r13_topic)
+    if r13_topic in room13["read_topics"]:
+        # 0.18.46: a read topic opens its kept record (date and key lines first), not a replay.
+        call r13_topic_review(r13_topic)
+        $ r13_finish_topic(r13_topic)
+        jump r13_talk_menu
+    $ r13_topic_rows=r13_conversation_topic_lines(r13_topic)
+    call r13_lines(r13_topic_rows,"topic:"+r13_topic)
+    $ r13_topic_shown=r13_topic_rows
     $ r13_finish_topic(r13_topic)
     jump r13_talk_menu
 
