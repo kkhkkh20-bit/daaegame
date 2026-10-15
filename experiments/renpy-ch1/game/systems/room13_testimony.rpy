@@ -37,6 +37,13 @@ init 116 python:
             ("karo","아뇨. 짐만 봤어요. 부인이 어디 계셨는지는 몰라요.")],need=("lodging","J11")),
     })
 
+    # 0.18.22 audit: the first statement (J09) is read against the narrowed one (E12) in 기록 → 비교하기.
+    _r13_tm_compare=r13_compare_result
+    def r13_compare_result(selected):
+        if set(selected)=={"J09","E12"} and {"J09","E12"}<=set((store.room13 or {}).get("evidence",[])):
+            return "(나비는 처음에는 첫 비명 뒤에도 할머니가 함께 있었다고 했다. 도토의 기록을 본 뒤에는 첫 비명까지로 좁혔다. 그 뒤 할머니가 어디 있었는지는 나비도 모른다.)"
+        return _r13_tm_compare(selected)
+
     _r13_tm_present=r13_present
     def r13_present(person,key,identity=False):
         if person=="doto" and key in ("E05","E37","E04") and r13_has(key) and not r13_has("J10"):

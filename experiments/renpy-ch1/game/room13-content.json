@@ -7736,15 +7736,14 @@
       "scene": "S44",
       "when": {
         "all": [
-          "safe_route",
-          "daram_with_dad",
-          "choose_leave_early"
+          "choose_family_escape"
         ],
         "not": [
           "mom_reunited"
         ]
       },
-      "knowledge": "닿지 못한 연락의 때와, 편지에 찍힌 우체국 날짜 도장"
+      "knowledge": "닿지 못한 연락의 때와, 편지에 찍힌 우체국 날짜 도장",
+      "decided_by": "room13_week2.rpy w2_escape (가족과 떠난다)"
     },
     {
       "id": "E1",
@@ -7752,11 +7751,11 @@
       "scene": "S45",
       "when": {
         "all": [
-          "daram_held",
-          "last_intervention_lost"
+          "daram_state:lost"
         ]
       },
-      "knowledge": "마지막으로 끌려간 길과, 끼어들 수 있었던 곳"
+      "knowledge": "마지막으로 끌려간 길과, 끼어들 수 있었던 곳",
+      "decided_by": "room13_week2_rules.rpy r13_resolve_ending"
     },
     {
       "id": "E2",
@@ -7764,27 +7763,27 @@
       "scene": "S46",
       "when": {
         "all": [
-          "family_reunited",
-          "safe_route",
-          "pursuit_managed",
-          "choose_family_escape"
+          "choose_family_escape",
+          "mom_reunited"
+        ],
+        "not": [
+          "pursuit_active_unmanaged"
         ]
       },
-      "knowledge": "마을에 남은 희생 구조"
+      "knowledge": "마을에 남은 희생 구조",
+      "decided_by": "room13_week2.rpy w2_escape (가족과 떠난다)"
     },
     {
       "id": "E3",
       "title": "불은 돌아왔다",
       "scene": "S47",
       "when": {
-        "all": [
-          "finale_resolved"
-        ],
         "not": [
-          "extraction_stopped"
+          "proposition:F2"
         ]
       },
-      "knowledge": "힘이 잠깐 오른 뒤 다시 고장 나는 때"
+      "knowledge": "힘이 잠깐 오른 뒤 다시 고장 나는 때",
+      "decided_by": "room13_week2_rules.rpy r13_resolve_ending"
     },
     {
       "id": "E4",
@@ -7792,14 +7791,19 @@
       "scene": "S48",
       "when": {
         "all": [
-          "extraction_stopped",
-          "abuse_exposed"
+          "proposition:F2"
         ],
-        "not": [
-          "survival_ready"
+        "any_missing": [
+          "shelter_ready",
+          "supplies_ready",
+          "operators_ready",
+          "patient_transport",
+          "proposition:F1",
+          "proposition:F3"
         ]
       },
-      "knowledge": "부족했던 피할 곳·식량·땔감"
+      "knowledge": "부족했던 피할 곳·식량·땔감",
+      "decided_by": "room13_week2_rules.rpy r13_resolve_ending"
     },
     {
       "id": "E5",
@@ -7807,12 +7811,20 @@
       "scene": "S42",
       "when": {
         "all": [
-          "family_reunited",
-          "extraction_stopped",
-          "survival_ready"
+          "proposition:F1",
+          "proposition:F2",
+          "proposition:F3",
+          "shelter_ready",
+          "supplies_ready",
+          "operators_ready",
+          "patient_transport"
+        ],
+        "not": [
+          "true_ending_ready"
         ]
       },
-      "knowledge": "마을이 함께 살아남은 실제 방법"
+      "knowledge": "마을이 함께 살아남은 실제 방법",
+      "decided_by": "room13_week2_rules.rpy r13_resolve_ending"
     },
     {
       "id": "E6",
@@ -7820,20 +7832,28 @@
       "scene": "S49",
       "when": {
         "all": [
-          "family_reunited",
-          "extraction_stopped",
-          "survival_ready",
-          "granny_control_exposed",
+          "proposition:F1",
+          "proposition:F2",
+          "proposition:F3",
+          "shelter_ready",
+          "supplies_ready",
+          "operators_ready",
+          "patient_transport",
+          "proposition:F4",
           "mother_original_safe",
-          "witness_protected",
-          "two_observations_complete"
+          "two_observations_ordered"
         ],
         "any": [
-          "granny_culprit_proven",
+          "bami_protected",
+          "witness_protected"
+        ],
+        "any_2": [
+          "proposition:C4",
           "premeditation_prevented_proven"
         ]
       },
-      "knowledge": "오래된 장치의 본래 쓰임과, 마을 밖으로 나간 고친 장치의 도면"
+      "knowledge": "오래된 장치의 본래 쓰임과, 마을 밖으로 나간 고친 장치의 도면",
+      "decided_by": "room13_week2_rules.rpy r13_resolve_ending"
     }
   ],
   "sensitive": {
@@ -9598,5 +9618,6 @@
         386
       ]
     ]
-  }
+  },
+  "endings_note": "0.18.22: 'when' mirrors the code that decides endings (descriptive; the game does not read it). proposition:X = X in room13['propositions']."
 }

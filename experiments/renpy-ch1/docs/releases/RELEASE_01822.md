@@ -99,7 +99,7 @@
   - 두 가지를 모두 본 뒤에만 "본 것을 적는다"가 나온다. 기울기만으로는 끝나지 않는다.
   - 기존 문장의 '바늘'은 그림과 맞지 않았다. 활동 대사와 은호에게 말하는 대사를 '접시가 기울었다'와 '나사 둘레 긁힘'으로 바꿨다.
   - 결과 대사에는 "가게 추의 실제 무게와 누가 돌렸는지는 모른다"는 한계를 적었다.
-- **남은 불일치.** 포장 내용물 그림의 고기는 생고기처럼 보인다. 본문은 '말린 고기'다. 본문은 그대로 두었다.
+- **그림과 본문 맞춤.** 포장 내용물 그림의 고기가 생고기처럼 보여서, 본문을 '얼려 둔 고기 덩어리'로 바꿨다(§12).
 
 ## 9. 손으로 확인하는 조사 2종 (소유자 제공 `visual-gimmicks-02.zip`)
 
@@ -140,11 +140,25 @@
   - 다음 진행 조건, 클릭 영역 보기, 시작 지점·날짜·장소 이동, 돈·물건·자료 지급을 할 수 있다.
   - 사용법: `docs/TEST_PLAY_GUIDE.md`.
 
+## 12. 시나리오 점검 정리
+
+- 점검 결과 페이지: 증거, 대사, 회의, 결말 연결을 실제 게임 데이터로 확인했다. 결과는 아래와 같이 반영했다.
+- **J09 '나비의 처음 말'**
+  - 쓰이는 곳이 없었다.
+  - 이제 기록 화면의 비교하기에서 E12(좁힌 말)와 맞대어 읽을 수 있다. 처음 말과 좁힌 말의 차이를 보여 준다.
+  - 이로써 쓰이지 않는 증거는 0개다.
+- **결말 데이터.** `room13-content.json`의 결말 `when`을 실제 판정 코드(`r13_resolve_ending`, 떠나기 선택) 기준으로 다시 썼다.
+  - 각 결말에 `decided_by`를 붙였다.
+  - 게임은 이 값을 읽지 않으므로 동작은 같다.
+- **포장 자루 본문.** "말린 고기" → "얼려 둔 고기 덩어리"로 바꿨다. 그림과 맞춘 것이다.
+- **밤이 귀환 조건.** 켜는 곳이 없던 `bami_returned` 확인 두 곳을 지웠다. 밤이가 끌려가면 돌아오지 않는 동작은 그대로다.
+- 점검용 화면 테스트 `scenario_dump`를 추가했다. 기본 목록에는 넣지 않았다.
+
 ## 검사
 
 - `dev/check.sh`: 단위 테스트와 lint 통과.
 - Ren'Py 화면 테스트: 아래 "회귀 결과"에 적는다.
-  - 새로 넣은 테스트: gate_documents, bed_hint_day1, goal_fold, drawer_visual, inn_workers, life_door, life_meal, gm_package, gm_lamp, gm_scale, gm_floor, gm_stone. 바뀐 화면으로 다시 돌린 테스트: inn_v4_travel, inn_v4_guestroom. 추가: day1_note_spot, admin_tool.
+  - 새로 넣은 테스트: gate_documents, bed_hint_day1, goal_fold, drawer_visual, inn_workers, life_door, life_meal, gm_package, gm_lamp, gm_scale, gm_floor, gm_stone. 바뀐 화면으로 다시 돌린 테스트: inn_v4_travel, inn_v4_guestroom. 추가: day1_note_spot, admin_tool, compare_j09.
   - 바뀐 화면에 맞춘 테스트: delivery_cord.
 - 개별 브라우저 검사와 14일 전체 플레이는 소유자 지시에 따라 이번에 반복하지 않았다.
 - 재미는 검증하지 않았다.

@@ -39,7 +39,7 @@ init 96 python:
             ["own:knife","lodging"],give=["M02"],not_flags=["M02"])),
         "use_knife_burlap": ("store","burlap",_r13_item_act("store","작업칼로 포장천 자루 바닥을 갈라 본다",[
             (None,"포장천 자루는 위쪽만 헐렁했다. 아래쪽은 이상하게 단단했다. 칼로 바닥 실밥을 끊자 숨겨진 이중 바닥이 드러났다."),
-            (None,"그 안에 말린 고기와 곡식 자루가 차곡차곡 숨겨져 있었다. 모두 창고 장부에 ‘바닥남’으로 적힌 물건들이었다."),
+            (None,"그 안에 얼려 둔 고기 덩어리와 곡식 자루가 차곡차곡 숨겨져 있었다. 모두 창고 장부에 ‘바닥남’으로 적힌 물건들이었다."),
             ("dad","(은호 사장이 이걸 모를 리 없다. 겨울 끝까지 버틸 몫을 몰래 따로 빼 둔 것이다.)",{"thought":True})],
             ["own:knife"],flags=["hidden_stock"],day=(5,13),not_flags=["hidden_stock"])),
         "use_rubbing_stone": ("square","stone",_r13_item_act("square","탁본 종이를 대고 숯으로 문지른다",[

@@ -53,7 +53,7 @@ init 103 python:
 
     _r13_episode_where=r13_where
     def r13_where(person):
-        if person=="bami" and r13_has("bami_taken") and not r13_has("bami_returned"):return None
+        if person=="bami" and r13_has("bami_taken"):return None
         if person=="resident_tok" and r13_has("tok_detained") and not r13_has("tok_cleared"):return None
         return _r13_episode_where(person)
 
