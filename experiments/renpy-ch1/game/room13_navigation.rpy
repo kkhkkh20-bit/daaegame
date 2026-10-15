@@ -138,31 +138,40 @@ screen r13_map(initial_region=None):
     hbox:
         xpos 30 ypos 78 spacing 12
         for key,title in R13_MAP_REGIONS:
-            textbutton ("‹ 마을 보기" if key=="village" and region!="village" else title):
-                style "r13_action_button" xsize 190 ysize 58 text_size 23
-                action [SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected))] selected region==key
-                sensitive ready and (key!="mountain" or room13["day"]>=8)
-    textbutton ("지도로 보기" if persistent.room13_map_list else "큰 목록 보기"):
-        style "r13_action_button" xpos 1010 ypos 78 xsize 240 ysize 58 text_size 24
-        action ToggleField(persistent,"room13_map_list") sensitive ready
-    if persistent.room13_map_list:
-        viewport:
-            area (30,150,860,490)
-            draggable True mousewheel True scrollbars "vertical"
-            vbox:
-                spacing 12
-                for key,point in r13_map_nodes(region):
-                    button:
-                        xsize 830 ysize 136 padding (24,18)
-                        background R13InkPanel(focused=(key==selected))
-                        hover_background R13InkPanel(focused=True)
-                        action SetScreenVariable("selected",key) sensitive ready
-                        vbox:
-                            spacing 12
-                            text R13_MAP_LABELS[key] size 36 color "#fff0cb"
-                            text ("● 현재 위치" if key==room13["location"] else "선택됨 · 오른쪽에서 이동 확정" if key==selected else "눌러서 장소 확인") size 25 color ("#f3ca73" if key==room13["location"] else "#d7e0d7")
-    elif region=="village":
+            if key!="mountain" or r13_map_nodes("mountain"):
+                textbutton title:
+                    style "r13_action_button" xsize 190 ysize 58 text_size 23
+                    action [SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected))] selected region==key
+                    sensitive ready
+    if region=="village":
         use r13_worldmap_v5(selected,ready,map_hover)
+    elif region=="inn":
+        $ known=set(key for key,point in r13_map_nodes("inn"))
+        $ floors=[("1층",("inn","dining","kitchen")),("2층",("hall","room13","guestroom")),("안쪽",("passage",))]
+        viewport:
+            area (30,150,860,490) mousewheel True draggable True scrollbars "vertical"
+            vbox:
+                spacing 20
+                for floor,keys in floors:
+                    if any(key in known for key in keys):
+                        vbox:
+                            spacing 10
+                            text floor size 24 color "#765426"
+                            hbox:
+                                spacing 16
+                                for key in keys:
+                                    if key in known:
+                                        button:
+                                            xsize 264 ysize 144 padding (16,14)
+                                            background R13PaperFrame()
+                                            hover_background R13InkPanel(focused=True)
+                                            selected_background R13InkPanel(focused=True)
+                                            selected key==selected
+                                            action SetScreenVariable("selected",key) sensitive ready
+                                            vbox:
+                                                spacing 12
+                                                text R13_MAP_LABELS[key] size 26 color ("#fff0cb" if key==selected else "#493b30") hover_color "#fff0cb"
+                                                text ("● 현재 위치" if key==room13["location"] else "선택됨" if key==selected else "장소 살펴보기") size 20 color ("#edc878" if key==selected else "#796044") hover_color "#edc878"
     else:
         if region=="inn":
             add R13VillageMap(region) xpos 30 ypos 150
@@ -187,12 +196,8 @@ screen r13_map(initial_region=None):
                 xsize 290 ysize 392
                 text R13_PLACES[selected][0] ypos 0 size 27 color "#765426" xsize 286
                 add Transform(r13_background(R13_PLACES[selected][1]),size=(286,161),nearest=True) ypos 56
-                if region=="village" and selected=="inn":
-                    textbutton "여관 내부 보기 ›":
-                        style "r13_action_button" ypos 230 xsize 286 ysize 48 text_size 24
-                        action [SetScreenVariable("region","inn"),SetScreenVariable("selected","inn")] sensitive ready
                 if selected==room13["location"]:
-                    text "● 지금 머무는 곳" ypos 290 size 24 color "#89532e"
+                    text "● 현재 위치" ypos 290 size 24 color "#89532e"
                 elif selected in r13_places():
                     text "이동 비용 · 시간 소모 없음" ypos 290 size 21 color "#65503b" xsize 286
                     textbutton "이곳으로 이동":
@@ -202,6 +207,6 @@ screen r13_map(initial_region=None):
                     text "지금은 이동할 수 없습니다." ypos 290 size 22 color "#796044" xsize 286
     else:
         text "아직 확인한 장소가 없습니다." xpos 932 ypos 180 size 22 color "#65503b"
-    text "장소 선택 → 이동 확정 · 지도 열람은 시간 소모 없음" xpos 30 ypos 673 size 20 color "#65503b"
+    text "장소를 고른 뒤 이동 · 시간 소모 없음" xpos 30 ypos 673 size 20 color "#65503b"
     textbutton "현장으로 돌아가기":
         action Return(False) style "r13_action_button" xpos 950 ypos 650 xsize 300 ysize 60 text_size 24

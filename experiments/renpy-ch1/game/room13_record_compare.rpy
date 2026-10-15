@@ -30,7 +30,7 @@ screen r13_record_compare(called=False):
     zorder 80
     use r13_records(initial_tab="compare",close_action=(Return() if called else Hide("r13_record_compare")))
 
-screen r13_compare_content():
+screen r13_compare_content(target=None,present_action=None):
     default selected=()
     default feedback=""
     $ materials=[key for key in room13["evidence"] if key in ROOM13["evidence"]]
@@ -69,3 +69,9 @@ screen r13_compare_content():
         style "r13_compact_button" area (954,596,244,44) text_size 21
         action Function(r13_compare_selected,selected,_scope)
         sensitive len(selected)==2
+
+    if target is not None and present_action is not None:
+        textbutton (R13_NAMES.get(target,"상대")+"에게 보여주기"):
+            style "r13_compact_button" area (284,596,406,44) text_size r13_read_size(20,24)
+            sensitive bool(selected)
+            action [Function(r13_prepare_present,target,selected),Hide("r13_records"),present_action]

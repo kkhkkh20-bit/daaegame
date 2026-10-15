@@ -37,20 +37,20 @@ screen r13_backlog():
     key "K_h" action Hide("r13_backlog")
 
 screen r13_playback_footer(show_record=False,ready=True):
-    $ footer_width=r13_footer_width(4 if show_record else 3)
+    $ footer_width=(448 if show_record else r13_footer_width(3))
     add R13InkPanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
     frame:
-        area (1280-footer_width,664,footer_width,56) padding (8,0) background None
+        area (1280-footer_width,664,footer_width,56) padding (0 if show_record else 8,0) background None
         hbox:
             spacing 8
-            if show_record:
-                use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True)
             use r13_antique_button("백로그","backlog",Show("r13_backlog"),enabled=ready,compact=True)
             use r13_antique_button(("자동 ●" if _preferences.afm_enable else "자동"),"auto",Preference("auto-forward","toggle"),enabled=ready,compact=True,chosen=_preferences.afm_enable)
             if show_record:
                 use r13_antique_button("더보기","settings",Show("r13_more_tools"),enabled=ready,compact=True)
             else:
                 use r13_antique_button("옵션","settings",ShowMenu("pause_menu"),enabled=ready,compact=True)
+            if show_record:
+                use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=112)
 
 screen r13_more_tools():
     modal True

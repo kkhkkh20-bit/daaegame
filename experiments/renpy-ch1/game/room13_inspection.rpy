@@ -326,26 +326,28 @@ screen r13_desk_inspection():
 screen r13_item_bag():
     modal True
     zorder 95
-    add Solid("#0b1b24ed")
-    frame:
-        area (135,95,1010,540) padding (28,24) background R13ActionPanel()
+    use r13_records(initial_tab="items",close_action=Hide("r13_item_bag"))
+
+screen r13_item_bag_content():
+    text "아이템" xpos 284 ypos 72 size 26 color "#765426"
+    viewport:
+        area (284,132,918,434) mousewheel True draggable True scrollbars "vertical"
         vbox:
-            spacing 20
-            text "아이템" size 32 color "#f6d18a"
-            text "종이·연필·자는 객실 책상 서랍의 잠긴 도구칸을 여는 데 쓴다. 열면 돋보기가 나온다. 돋보기는 현장 물건의 조사 메뉴에서도 쓸 수 있다." size 23 color "#fff2cf" xsize 950
+            spacing 16
             for key in r13_inspection_state()["inventory"]:
-                hbox:
-                    spacing 18
-                    add r13_inspection_icon(key,75,62)
-                    vbox:
-                        text R13_INSPECTION_ITEMS[key][0] size 24 color "#fff2cf"
-                        text R13_INSPECTION_ITEMS[key][1] size 20 color "#c5d0cb" xsize 805
+                frame:
+                    xsize 886 padding (18,16) background R13PaperPanel()
+                    hbox:
+                        spacing 18
+                        add r13_inspection_icon(key,62,56)
+                        vbox:
+                            spacing 8
+                            text R13_INSPECTION_ITEMS[key][0] size r13_read_size(23,27) color "#765426"
+                            text R13_INSPECTION_ITEMS[key][1] size r13_read_size(20,24) color "#493b30" xsize 750
             if not r13_inspection_state()["inventory"]:
-                text "아직 챙긴 도구가 없다. 객실 책상의 여행 필기함을 살펴보자." size 23 color "#c5d0cb"
+                text "아직 챙긴 도구가 없다." size 22 color "#796044"
     if r13_tool_notes():
-        textbutton "돋보기 관찰 메모" style "r13_action_button" xpos 135 ypos 650 xsize 420 ysize 55 action Show("r13_tool_notebook")
-    textbutton "닫기" style "r13_action_button" xpos 880 ypos 650 xsize 260 ysize 55 action Hide("r13_item_bag")
-    key "game_menu" action Hide("r13_item_bag")
+        textbutton "돋보기 관찰 메모" style "r13_compact_button" area (284,596,330,44) text_size 20 action Show("r13_tool_notebook")
 
 label r13_inspect_desk:
     if not r13_inspection_available():

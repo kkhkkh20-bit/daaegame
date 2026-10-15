@@ -48,33 +48,26 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
     if mode=="talk":
         # Question screens: "돌아가기" sits at the bottom left (0.18.42); only the tools
         # used while choosing a question stay here.
-        $ footer_width=r13_footer_width(2 if present_action is not None else 1)
-        add R13InkPanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
         frame:
-            area (1280-footer_width,664,footer_width,56) padding (8,0) background None
-            hbox:
-                spacing 8
-                if present_action is not None:
-                    use r13_antique_button("보여주기","present",present_action,enabled=ready,compact=True)
-                use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True)
+            area (1168,664,112,56) padding (0,0) background None
+            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=112)
+        if present_action is not None:
+            fixed:
+                xpos 260 ypos 628 xsize 220 ysize 64
+                use r13_antique_button("보여주기","present",present_action,enabled=ready,width=220)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
-        text "조사·대화·이동 · 시간 소모 없음":
-            xalign .5 ypos 646 size r13_read_size(16,19) color "#f2f3e6"
-            outlines [(1,"#14232a",0,1)]
-        # Three independent controls leave the rest of the scene visible/clickable.
-        hbox:
-            xalign .5 ypos 650 spacing 8
-            frame:
-                xsize (144 if persistent.room13_large_text else 136) ysize 64 padding (5,0)
-                background R13TouchSurface(focused=True)
-                hbox:
-                    xalign .5 yalign .75 spacing 6
-                    add R13AntiqueIcon("investigate",size=30) yalign .5
-                    text "조사" size r13_read_size(20,24) color "#efe2c2" font r13_ui_font() yalign .5
-            use r13_antique_button("보여주기","present",present_action or NullAction(),enabled=ready and present_action is not None)
-            use r13_antique_button("기록","record",Show("r13_records"),enabled=ready)
+        # The investigation badge is a state, not a dead action button.
+        frame:
+            xpos 24 ypos 676 xsize 156 ysize 40 padding (8,4) background None
+            hbox:
+                spacing 6
+                add R13AntiqueIcon("investigate",size=24) yalign .5
+                text "조사 중" size 20 color "#efe2c2" font r13_ui_font() yalign .5
+        frame:
+            area (1168,664,112,56) padding (0,0) background None
+            use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=112)
         use r13_options_control(ready)
 
 screen r13_options_control(ready=True):
@@ -159,8 +152,12 @@ screen r13_hub(entry=False):
     $ hint=GetTooltip()
     if hint:
         frame:
-            xpos 24 ypos 580 padding (14,9) background R13ActionPanel()
-            text hint size 20 color "#fff2cf"
+            xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background R13ActionPanel()
+            hbox:
+                spacing 6
+                if hint in [r13_object_name(k) for k,spec in ROOM13["objects"].get(room13["location"],{}).items() if r13_object_visible(spec)]:
+                    add R13AntiqueIcon("investigate",size=22) yalign .5
+                text hint size 20 color "#fff2cf" yalign .5
 
 screen r13_world_contents(entry=False,ready=False):
     style_prefix "r13"
@@ -436,17 +433,20 @@ screen r13_book(target=None,present=False,hearing=False):
     default order="recent"
     default favorite_only=False
     timer .35 action SetScreenVariable("ready",True)
-    use r13_reference_record_shell("제시" if present else "자료 기록")
+    use r13_reference_record_shell("보여주기" if present else "자료 기록")
     use r13_reference_record_categories("r13_book",category,True,archive and not present)
     if not present and r13_learning_archive_keys():
         textbutton ("이번 여정" if not archive else "지난 플레이"):
             style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
             action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
     $ entries=r13_record_entries(category,archive,present,order,favorite_only)
-    $ selected_record=r13_record_selected(entries,detail,page)
+    $ entries=r13_present_entries(entries,target) if present else entries
+    $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
     use r13_record_filters("r13_book",order,favorite_only,archive and not present)
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     use r13_material_detail(selected_record,archive and not present)
+    if present and not selected_record:
+        text "보여줄 자료를 직접 고르세요." xpos 842 ypos 320 xsize 362 text_align .5 size 18 color "#796044"
     if present:
         textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
             style "r13_compact_button" xpos 824 ypos 592 xsize 398 ysize 48 text_size r13_read_size(20,24)
@@ -458,40 +458,40 @@ screen r13_book(target=None,present=False,hearing=False):
     key "game_menu" action (Return(False) if present else Hide("r13_book"))
 
 screen r13_calendar():
-    style_prefix "r13"
     modal True
     zorder 55
-    default week=(room13["day"]-1)//7
-    add Solid("#243732b0")
-    add R13PaperPanel() xpos 30 ypos 20 xsize 1220 ysize 685
-    text "여행 수첩 · 달력" xpos 60 ypos 35 size 35 color "#765426"
+    use r13_records(initial_tab="calendar",close_action=Hide("r13_calendar"))
+
+screen r13_calendar_content():
+    default week=min(1,(room13["day"]-1)//7)
+    text "달력" xpos 284 ypos 72 size 26 color "#765426"
+    text ("%d주째"%(week+1)) xpos 1070 ypos 76 size 22 color "#796044"
     for i,dayname in enumerate(("월","화","수","목","금","토","일")):
-        text dayname xpos 80+i*170 ypos 106 size 24
+        text dayname xpos 302+i*128 ypos 128 size 22 color "#493b30"
     for day in range(week*7+1,week*7+8):
         frame:
-            area (55+((day-1)%7)*170,155,155,150)
-            background R13PaperPanel(day==room13["day"]) padding (14,14)
+            area (284+((day-1)%7)*128,170,120,128)
+            background R13PaperPanel(day==room13["day"]) padding (10,12)
             vbox:
-                spacing 17
-                text (str(day)+"일") size 25
+                spacing 14
+                text (str(day)+"일") size r13_read_size(23,27) color "#493b30"
                 if day==room13["day"]:
-                    text "오늘" size 20 color "#765426"
+                    text "오늘" size 18 color "#765426"
                 elif day<room13["day"]:
-                    text "지난 날" size 18
-    text "확인한 약속" xpos 60 ypos 420 size 26 color "#765426"
+                    text "지난 날" size 16 color "#796044"
+    text "확인한 약속" xpos 284 ypos 334 size 23 color "#765426"
     viewport:
-        area (60,462,1140,176) mousewheel True draggable True scrollbars "vertical"
+        area (284,378,918,194) mousewheel True draggable True scrollbars "vertical"
         vbox:
-            spacing 18
+            spacing 14
             for promise in r13_calendar_promises():
-                text promise size r13_read_size(23,29) color "#342a23" xsize 1100
+                text promise size r13_read_size(21,25) color "#493b30" xsize 886
             if not r13_calendar_promises():
-                text "날짜가 정해진 새 약속은 아직 없다." size r13_read_size(23,29) color "#536158" xsize 1100
-
-    textbutton "닫기" xpos 60 ypos 650 action Hide("r13_calendar")
-    if week>0:
-        textbutton "지난 주" xpos 700 ypos 650 action SetScreenVariable("week",week-1)
-    textbutton "다음 주" xpos 970 ypos 650 action SetScreenVariable("week",week+1)
+                text "날짜가 정해진 새 약속은 아직 없다." size 21 color "#796044"
+    hbox:
+        xpos 864 ypos 596 spacing 12
+        textbutton "지난 주" style "r13_compact_button" xsize 158 ysize 44 text_size 19 sensitive week>0 action Function(r13_record_select,_scope,"week",week-1)
+        textbutton "다음 주" style "r13_compact_button" xsize 158 ysize 44 text_size 19 sensitive week<1 action Function(r13_record_select,_scope,"week",week+1)
 
 screen r13_debate(claim):
     style_prefix "r13"

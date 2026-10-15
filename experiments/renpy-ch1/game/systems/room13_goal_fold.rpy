@@ -17,42 +17,42 @@ init 60 python:
                 c.rect(self.color,((n-w)//2,y,w,step*2))
             return r
 
+# Field thoughts are player-opened; discovering a question never opens the panel.
+default r13_thoughts_seen = ()
+
 screen r13_goal_fold(goal,ready=False):
     $ notes=r13_first_mystery_notes()
-    vbox:
-        xpos 24 ypos 178 spacing 4
-        hbox:
-            spacing 0
+    $ thought = "편지는 이곳에서 왔다. 그런데 아내는 어디에 있을까." if goal.startswith("편지를 보낸 여관") else goal
+    $ signature=tuple([thought]+[n["title"] for n in notes])
+    if not renpy.get_screen("r13_evidence_found"):
+        fixed:
+            xpos 1048 ypos 664 xsize 112 ysize 56
+            use r13_antique_button("생각","notes",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",signature)],enabled=ready,compact=True,width=112,chosen=r13_goal_open)
+            if signature!=r13_thoughts_seen:
+                add Solid("#d7ad61") xpos 94 ypos 17 xsize 6 ysize 6
+        if r13_goal_open:
             button:
-                padding (12,8) ysize r13_read_size(41,47) background Solid("#102725b0") hover_background Solid("#1d3b38e0")
-                action Show("r13_learning_notes") sensitive ready
-                tooltip "조사 메모 열기"
-                text goal size r13_read_size(20,24) color "#eee5d5" yalign .5
-            if notes:
-                button:
-                    padding (12,8) ysize r13_read_size(41,47) background Solid("#102725b0") hover_background Solid("#1d3b38e0")
-                    action ToggleVariable("r13_goal_open") sensitive ready
-                    tooltip ("궁금한 것 접기" if r13_goal_open else "궁금한 것 %d개 펼치기"%len(notes))
-                    alt ("궁금한 것 접기" if r13_goal_open else "궁금한 것 펼치기")
-                    hbox:
-                        spacing 6 yalign .5
-                        add R13FoldArrow(r13_goal_open) yalign .5
-                        text str(len(notes)) size r13_read_size(17,20) color "#eee5d5b0" yalign .5
-        if r13_goal_open and notes:
+                area (0,0,1280,650) background None
+                action SetVariable("r13_goal_open",False)
+                alt "생각 접기"
             frame:
-                padding (8,8) background Solid("#0c1f1ee8") xmaximum 640
+                area (624,214,624,430) padding (24,20) background R13PaperFrame()
                 vbox:
-                    spacing 2
-                    for i,note in enumerate(notes[:6]):
-                        button:
-                            xsize 620 padding (10,7) background None hover_background Solid("#ffffff1c")
-                            action [SetVariable("r13_goal_open",False),Show("r13_learning_notes",focus=i)] sensitive ready
-                            tooltip "조사 메모에서 보기"
-                            hbox:
-                                spacing 10
-                                text "·" size r13_read_size(19,23) color "#efd4a1"
-                                text note["title"] size r13_read_size(19,23) color "#eee5d5" xsize 580
-                    if len(notes)>6:
-                        textbutton ("나머지 %d개는 조사 메모에서"%(len(notes)-6)):
-                            padding (10,6) text_size r13_read_size(17,20) text_color "#d4dfd8"
-                            action [SetVariable("r13_goal_open",False),Show("r13_learning_notes")] sensitive ready
+                    spacing 16
+                    hbox:
+                        text "아빠의 생각" size 26 color "#493b30" xsize 460
+                        textbutton "접기":
+                            text_size 20 text_color "#765426"
+                            action SetVariable("r13_goal_open",False)
+                    text thought size r13_read_size(22,24) color "#496579" xsize 566
+                    viewport:
+                        xsize 566 ysize 230 mousewheel True draggable True scrollbars "vertical"
+                        vbox:
+                            spacing 8
+                            for i,note in enumerate(notes):
+                                button:
+                                    xsize 542 padding (10,8)
+                                    background None hover_background Solid("#b28d4925")
+                                    action [SetVariable("r13_goal_open",False),Show("r13_learning_notes",focus=i)] sensitive ready
+                                    text note["title"] size r13_read_size(20,22) color "#65503b" xsize 516
+                    text "자세한 내용은 기록 · 조사 메모에서" size 18 color "#796a52"

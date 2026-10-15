@@ -57,12 +57,12 @@ screen r13_worldmap_v5(selected, ready, map_hover):
         $ tx, ty = r13_v5_label(key)
         textbutton (("● " if key==room13["location"] else "") + R13_MAP_LABELS[key]):
             id ("v5_label_"+key)
-            area (30+tx-57,150+ty-18,114,36)
+            area (30+max(0,min(712,tx-74)),150+ty-20,148,40)
             padding (3,3)
             text_size 20 text_xalign .5 text_yalign .5
             text_color "#fff3d5" text_hover_color "#ffffff"
-            background Solid("#325b50f5" if key==selected else "#152e30e8")
-            hover_background Solid("#51665af5")
+            background R13InkPanel(focused=(key==selected))
+            hover_background R13InkPanel(focused=True)
             action SetScreenVariable("selected",key)
             hovered SetScreenVariable("map_hover",key)
             unhovered SetScreenVariable("map_hover",None)

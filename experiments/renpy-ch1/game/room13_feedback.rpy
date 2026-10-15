@@ -38,10 +38,10 @@ screen r13_click_glint(point):
     add R13ClickGlint() xpos point[0] ypos point[1] xanchor .5 yanchor .5 at r13_click_pulse
     timer .65 action Hide("r13_click_glint")
 
-# 0.18.33 (owner): the card sits at the top right, under the date plate, in every context.
+# 0.18.47: use the top-left notification area so travel and destination controls stay clear.
 # 0.18.41 (owner): tight around the icon; the name wraps under it and the card grows to fit.
 define R13_EVIDENCE_CARD_SIZE = 172
-define R13_EVIDENCE_CARD_POS = (1256-R13_EVIDENCE_CARD_SIZE, 92)
+define R13_EVIDENCE_CARD_POS = (24, 92)
 define R13_EVIDENCE_ICON_SIZE = 96
 
 screen r13_evidence_card(key,caption,conversation=False):

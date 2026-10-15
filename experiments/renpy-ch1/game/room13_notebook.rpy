@@ -1,3 +1,5 @@
+default r13_present_priority = None
+
 # Record categories are explicit: a testimony is not inferred from its title.
 init 68 python:
     R13_RECORD_CATEGORIES={"물증":"evidence","기록":"evidence","관찰기록":"evidence","증언":"testimony"}
@@ -33,6 +35,15 @@ init 68 python:
         if mark_seen and variable=="detail" and value in (store.room13 or {}).get("evidence",[]):
             r13_record_update_ui("seen",value,True)
         renpy.restart_interaction()
+    def r13_prepare_present(target,keys):
+        owned=(store.room13 or {}).get("evidence",[])
+        store.r13_present_priority=(target,tuple(k for k in keys if k in owned))
+    def r13_present_entries(entries,target):
+        pending=getattr(store,"r13_present_priority",None)
+        keys=pending[1] if pending and pending[0]==target else ()
+        return [k for k in keys if k in entries]+[k for k in entries if k not in keys]
+    def r13_present_selection(entries,detail,page):
+        return detail if detail in entries[r13_record_page(entries,page)*r13_record_page_size():][:r13_record_page_size()] else None
     def r13_record_favorite(key):return key in (store.room13 or {}).get("record_ui",{}).get("favorites",[])
     def r13_record_unread(key):
         return key in (store.room13 or {}).get("evidence",[]) and key not in (store.room13 or {}).get("record_ui",{}).get("seen",[])
@@ -149,8 +160,8 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
         xpos 66 ypos 382 spacing 8
         textbutton "조사 메모" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="notes" action (Function(r13_record_select,owner,"tab","notes") if not isinstance(owner,str) else Show("r13_learning_notes"))
         textbutton "기록 비교" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 sensitive not archive selected current=="compare" action (Function(r13_record_select,owner,"tab","compare") if not isinstance(owner,str) else Show("r13_record_compare"))
-        textbutton "달력" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 action Show("r13_calendar")
-        textbutton "아이템" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 action Show("r13_item_bag")
+        textbutton "달력" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="calendar" action (Function(r13_record_select,owner,"tab","calendar") if not isinstance(owner,str) else Show("r13_calendar"))
+        textbutton "아이템" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="items" action (Function(r13_record_select,owner,"tab","items") if not isinstance(owner,str) else Show("r13_item_bag"))
 
 screen r13_record_filters(owner,order,favorite_only,archive=False):
     hbox:
@@ -236,7 +247,7 @@ screen r13_person_record_detail(person):
     else:
         text "직접 만난 사람부터 기록합니다." xpos 844 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
-screen r13_records(initial_tab="evidence",note_focus=None,close_action=None):
+screen r13_records(initial_tab="evidence",note_focus=None,close_action=None,target=None,present_action=None):
     style_prefix "r13"
     modal True
     zorder 50
@@ -284,8 +295,12 @@ screen r13_records(initial_tab="evidence",note_focus=None,close_action=None):
             textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
     elif tab=="notes":
         use r13_learning_notes_content(note_focus)
+    elif tab=="calendar":
+        use r13_calendar_content()
+    elif tab=="items":
+        use r13_item_bag_content()
     elif tab=="compare":
-        use r13_compare_content()
+        use r13_compare_content(target,present_action)
     else:
         text "실제로 지나간 대화" xpos 292 ypos 88 size 23 color "#65503b"
         viewport:
