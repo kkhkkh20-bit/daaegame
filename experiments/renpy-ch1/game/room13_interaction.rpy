@@ -184,35 +184,47 @@ screen r13_object_context(key):
     default ready=False
     timer .25 action SetScreenVariable("ready",True)
     add Solid("#0c202780")
+    # The panel is as tall as its choices (0.18.21, owner: no empty box under one button).
+    $ option_count=int(bool(r13_tool_available(key)))+len(r13_object_actions(key))+int(bool(r13_context_wait(key) and room13["period"]<3))+int(bool(r13_bed_available(key) or r13_bed_blocked_reason(key)))
     frame:
-        area (650,248,560,412) padding (18,16) background R13ActionPanel()
+        xpos 650 ypos 248 xsize 560 padding (18,16) background R13ActionPanel()
         vbox:
-            spacing 16
+            spacing 14
             text r13_object_name(key) size 29 color "#f6d18a"
-            viewport:
-                xsize 524 ysize 200 mousewheel True draggable True scrollbars "vertical"
-                vbox:
-                    spacing 12
-                    if r13_tool_available(key):
-                        textbutton "돋보기로 자세히 살펴보기":
-                            style "r13_action_button" xsize 498 yminimum 58 text_size 22
-                            action Return(("tool",key)) sensitive ready
-                    for action,spec in r13_object_actions(key):
-                        textbutton (spec["title"]+"\n"+r13_learning_time_text(spec.get("cost",1),ending=action=="w2_escape")):
-                            style "r13_action_button" xsize 498 yminimum 58 text_size 22
-                            action Return(("activity",action)) sensitive ready and (room13["period"]<3 or not spec.get("cost",1))
-                    if r13_context_wait(key) and room13["period"]<3:
-                        textbutton (r13_context_wait(key)+"\n"+r13_learning_time_text(1)):
-                            style "r13_action_button" xsize 498 yminimum 58 text_size 22
-                            action Return(("wait",key)) sensitive ready
-                    if r13_bed_available(key):
-                        textbutton "침대에서 잠자기\n오늘 일정을 마치고 다음 날 아침으로":
-                            style "r13_action_button" xsize 498 yminimum 58 text_size 22
-                            action Return(("sleep",key)) sensitive ready
+            if option_count>3:
+                viewport:
+                    xsize 524 ysize 270 mousewheel True draggable True scrollbars "vertical"
+                    use r13_object_context_options(key,ready)
+            else:
+                use r13_object_context_options(key,ready)
             textbutton "그만 살펴본다" style "r13_action_button" action Return(False) sensitive ready xsize 498 ysize 44
 
+screen r13_object_context_options(key,ready):
+    vbox:
+        spacing 12
+        if r13_tool_available(key):
+            textbutton "돋보기로 자세히 살펴보기":
+                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                action Return(("tool",key)) sensitive ready
+        for action,spec in r13_object_actions(key):
+            textbutton (spec["title"]+"\n"+r13_learning_time_text(spec.get("cost",1),ending=action=="w2_escape")):
+                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                action Return(("activity",action)) sensitive ready and (room13["period"]<3 or not spec.get("cost",1))
+        if r13_context_wait(key) and room13["period"]<3:
+            textbutton (r13_context_wait(key)+"\n"+r13_learning_time_text(1)):
+                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                action Return(("wait",key)) sensitive ready
+        if r13_bed_available(key):
+            textbutton "침대에서 잠자기\n오늘 일정을 마치고 다음 날 아침으로":
+                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                action Return(("sleep",key)) sensitive ready
+        elif r13_bed_blocked_reason(key):
+            textbutton ("침대에서 잠자기\n"+r13_bed_blocked_reason(key)):
+                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                action NullAction() sensitive False
+
 label r13_object_options(key):
-    if not (r13_tool_available(key) or r13_object_actions(key) or (r13_context_wait(key) and room13["period"]<3) or r13_bed_available(key)):
+    if not (r13_tool_available(key) or r13_object_actions(key) or (r13_context_wait(key) and room13["period"]<3) or r13_bed_available(key) or r13_bed_blocked_reason(key)):
         return None
     call screen r13_object_context(key)
     $ r13_context_choice=_return

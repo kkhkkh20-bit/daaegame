@@ -1548,19 +1548,19 @@ testcase delivery_cord:
     run Call("r13_qa_roam",dict(day=2,period=0,location="gate"),(),("cord","snack"))
     pause 1.0
     run Call("r13_qa_delivery")
-    click pos (640,600) until screen "choice" timeout 40
-    click "작은 상자의 짐표를 읽는다"
-    click pos (640,600) until screen "choice" timeout 40
-    click "짐을 수레에 올려 본다"
-    click pos (640,600) until screen "choice" timeout 40
-    click "가진 물건을 짐에 써 본다"
-    click pos (640,600) until screen "choice" timeout 40
+    pause 1.0
+    assert screen "r13_life_closeup"
+    click pos (850,487)
+    pause .5
+    click pos (873,439)
+    pause .5
     click "구운 밤"
-    click pos (640,600) until screen "choice" timeout 40
-    click "가진 물건을 짐에 써 본다"
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (873,439)
+    pause .5
     click "질긴 묶음끈"
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (873,439)
+    pause 1.0
+    screenshot "delivery_tied.png"
     click "짐을 나르러 간다"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice=="combine" and "same_lane" in r13_wallet(room13)["relations"])
@@ -1701,27 +1701,124 @@ testcase grant_after_reaction:
     assert eval (room13["evidence"].count("J08")==1)
 
 testcase gate_documents:
-    # 0.18.21: the list comes from the guard in conversation; the original is found among dated bundles.
+    # 0.18.21: no document popup. The shelf scene gives the original; the guard hands over his list.
     pause 2.0
     click "처음부터"
     pause 3.0
     click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    screenshot "gate_hub.png"
     assert eval ("G1" not in room13["evidence"] and "G3" not in room13["evidence"])
-    run Call("r13_inspect_gate_documents")
-    pause 1.0
-    click "토요일 도착 예정"
-    pause 1.0
-    click "확인"
-    click pos (640,600) until screen "r13_gate_document_inspection" timeout 20
-    assert eval ("G1" not in room13["evidence"])
-    click "월요일 도착 예정"
-    pause 1.0
-    click "확인"
-    pause 1.0
+    run Jump("r13_qa_gate_shelf")
+    click pos (640,600) until screen "r13_hub" timeout 40
     assert eval ("G1" in room13["evidence"] and "G3" not in room13["evidence"])
-    click "현장으로 돌아가기"
+    run Jump("r13_entry_guard_menu")
     pause 1.0
-    run SetVariable("r13_choice",("entry","explain"))
-    run Jump("r13_entry_dispatch")
+    assert screen "r13_entry_topics"
+    screenshot "gate_topics.png"
+    click "이름 목록이 다른 이유"
     click pos (640,600) until screen "r13_entry_topics" timeout 40
     assert eval ("G3" in room13["evidence"])
+
+testcase bed_hint_day1:
+    # 0.18.21: on day 1 the bed says why sleep waits instead of saying nothing.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,evidence=["E03"]),("lodging",))
+    pause 2.0
+    screenshot "room13_daram_afternoon.png"
+    assert eval (not r13_bed_available("bed") and "책상" in r13_bed_blocked_reason("bed"))
+    run Call("r13_object_options","bed")
+    pause 1.0
+    assert screen "r13_object_context"
+    screenshot "bed_hint_day1.png"
+    $ room13["evidence"].append("M01")
+    assert eval (r13_bed_available("bed") and r13_bed_blocked_reason("bed") is None)
+
+testcase goal_fold:
+    # 0.18.21: the field question folds open; a picked question opens its 조사 메모 card.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=1,location="room13",life_poc=True,evidence=["E01","E03","E04","M01","J04"]),("lodging","livelihood_open","observed:room13:books","ep1_eaves_seen","ep1_done"))
+    pause 2.0
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    screenshot "goal_fold_closed.png"
+    run SetVariable("r13_goal_open",True)
+    pause 1.0
+    screenshot "goal_fold_open.png"
+    run [SetVariable("r13_goal_open",False),Show("r13_learning_notes",focus=0)]
+    pause 1.0
+    assert screen "r13_learning_notes"
+    screenshot "goal_fold_notes.png"
+    run Hide("r13_learning_notes")
+
+testcase drawer_visual:
+    # 0.18.21: rubbing picture, pressed groove and opened panel are drawn, not ASCII.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="room13",life_poc=True,evidence=["M01","E03"]),("lodging",))
+    pause 2.0
+    run Call("r13_inspect_desk")
+    pause 1.0
+    click pos (962,368)
+    pause 1.0
+    $ room13["inspection_items"]=dict(version=1,inventory=["pencil","ruler"],taken=["pencil","paper","ruler"],seen=[],paper_placed=True,rubbing=True,compartment_open=False,groove_held=True)
+    run Function(renpy.restart_interaction)
+    pause 1.0
+    screenshot "drawer_rubbing_held.png"
+    $ room13["inspection_items"]=dict(version=1,inventory=["pencil","ruler"],taken=["pencil","paper","ruler"],seen=[],paper_placed=True,rubbing=True,compartment_open=True,groove_held=False)
+    run Function(renpy.restart_interaction)
+    pause 1.0
+    screenshot "drawer_open.png"
+
+testcase inn_workers:
+    # 0.18.21 (owner): 토리 actually sews and 따닥 actually repairs at the inn.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="inn",life_poc=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ print("QA_INN", [(a["person"],a["pose"],a["x"],a["y"]) for a in r13_stage_people(False)])
+    screenshot "inn_workers.png"
+
+testcase life_door:
+    # 0.18.21 map assets B: leave for the inn's cloth, cloth under the front door, stays fixed.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("lodging","entry_corrected","livelihood_open"))
+    pause 1.0
+    assert eval (r13_life_door_available())
+    run Jump("r13_qa_life_door")
+    pause 1.0
+    screenshot "life_door_before.png"
+    click pos (1075,562)
+    click pos (640,600) until screen "r13_life_closeup" timeout 40
+    click "여관의 낡은 천"
+    click pos (550,457)
+    click pos (640,600) until screen "r13_life_closeup" timeout 40
+    pause 1.0
+    screenshot "life_door_after.png"
+    assert eval (r13_has("inn_draft_sealed"))
+
+testcase life_meal:
+    # 0.18.21 map assets C: the set kept aside is served once, then the existing finish/ask.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True),("lodging","entry_corrected","livelihood_open"))
+    pause 1.0
+    run Jump("r13_qa_life_meal")
+    pause 1.0
+    screenshot "life_meal_before.png"
+    click pos (1018,392)
+    pause 1.0
+    screenshot "life_meal_after.png"
+    click "맡은 일만 마친다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice=="finish" and r13_has("life_meal_served"))

@@ -174,7 +174,7 @@ label r13_entry_karo_menu:
         call r13_lines([('dad', '아까 보신 마차 바퀴 축은 수리가 되겠습니까?'), ('karo', '고쳐야죠. 금 간 곳을 우선 묶어 두긴 했는데, 이대로 손님을 태울 수는 없어요.'), ('dad', '수리가 끝나면 바로 돌아갈 수 있습니까?'), ('karo', '마차만 고친다고 갈 수 있는 게 아닙니다. 고갯길도 폭설로 막혔거든요. 길이 열리면 가장 먼저 알려 드릴게요.')],"entry:karo:road")
         $ r13_flag("road_known")
     elif r13_entry_karo_choice=="witness":
-        call r13_lines([('dad', '까로 씨, 저희 두 사람을 태워 오셨다고 증언해 주실 수 있습니까? 명단에서 아이 이름이 빠져서요.'), ('karo', '그럼요. 제 마차에 두 분 다 타셨습니다. 짐도 제가 직접 내려 드렸고요.'), ('guard', '함께 타고 오신 건 알겠습니다. 하지만 명단을 고치려면 예약 서류 원본과 대조해 봐야 합니다.'), ('dad', '알겠습니다. 그럼 원본 서류부터 찾아보겠습니다.'), ('karo', '저는 여기서 짐을 지키고 있을게요. 확인이 끝나면 불러 주세요.')],"entry:karo:witness")
+        call r13_lines([('dad', '까로 씨, 저희 두 사람을 태워 오셨다고 증언해 주실 수 있습니까? 명단에서 아이 이름이 빠져서요.'), ('karo', '그럼요. 제 마차에 두 분 다 타셨습니다. 짐도 제가 직접 내려 드렸고요.'), ('guard', '함께 타고 오신 건 알겠습니다. 하지만 명단을 고치려면 예약 서류 원본과 대조해 봐야 합니다.'), ('dad', '알겠습니다. 그럼 원본 서류부터 찾아보겠습니다.'), ('karo', '아, 손님 예약 서류는 아까 제가 초소에 넘겼어요. 선반 월요일 묶음에 끼워 두더라고요.'), ('karo', '저는 여기서 짐을 지키고 있을게요. 확인이 끝나면 불러 주세요.')],"entry:karo:witness:v2")
     elif r13_entry_karo_choice=="bags":
         call r13_lines([("karo","가방은 이 담요 밑에 넣어 둘게요. 눈에 젖으면 방에 가서도 한참 말려야 하니까요.")],"entry:karo:bags")
     elif r13_entry_karo_choice=="present":
@@ -325,6 +325,9 @@ label r13_field:
     jump r13_field
 
 label r13_object(key):
+    if key=="door" and r13_life_door_available():
+        call r13_life_door
+        return
     if key=="mother_note" and room13.get("life_poc"):
         call r13_mother_note
         return
@@ -391,6 +394,7 @@ label r13_talk_menu:
     $ r13_present_origin="topics"
     window hide
     hide r13_visitor
+    $ r13_remember_topic_order(r13_target)
     call screen r13_topics(r13_target)
     $ r13_topic=_return
 label r13_talk_dispatch:

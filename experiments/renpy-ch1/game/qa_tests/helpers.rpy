@@ -281,3 +281,22 @@ init 999 python:
         store.r13_defer_grants=True
         store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))
         store.r13_defer_grants=False
+
+label r13_qa_gate_shelf:
+    # Same path as clicking the shelf at the gate (0.18.21).
+    call r13_object("gate_documents")
+    jump r13_entry
+
+label r13_qa_life(name):
+    # Runs one life close-up from the field and returns there (0.18.21).
+    $ r13_job_question=R13_JOBS["kitchen"]["choice"]
+    $ r13_job_choice=None
+    call expression name
+    $ store.r13_qa_dv_choice=r13_job_choice
+    jump r13_roam
+
+label r13_qa_life_door:
+    call r13_qa_life("r13_life_door")
+
+label r13_qa_life_meal:
+    call r13_qa_life("r13_life_meal")

@@ -113,6 +113,16 @@
         1600,
         624,
         280
+      ],
+      "resident_tori": [
+        820,
+        690,
+        250
+      ],
+      "resident_ttadak": [
+        1150,
+        472,
+        205
       ]
     },
     "work": {},
@@ -183,8 +193,14 @@
     },
     "reviewed": true,
     "pinned": [
-      "granny"
-    ]
+      "granny",
+      "resident_tori",
+      "resident_ttadak"
+    ],
+    "poses": {
+      "resident_tori": "activity",
+      "resident_ttadak": "living_repair"
+    }
   },
   "school": {
     "revision": 2,
@@ -933,6 +949,11 @@
         1070,
         610,
         260
+      ],
+      "daram": [
+        880,
+        668,
+        205
       ]
     },
     "slots": [
@@ -1031,7 +1052,8 @@
     ],
     "pinned": [
       "karo",
-      "guard"
+      "guard",
+      "daram"
     ],
     "provenance": {
       "source_commit": "ac8760b38a5d75f2a0ef26f914e7ecb4faf7503f",
@@ -1041,6 +1063,9 @@
       ],
       "scale": "uniform 15/16; no stretch",
       "review": "Each rectangle measured against the selected panorama, not multiplied from old hitboxes"
+    },
+    "poses": {
+      "daram": "neutral"
     }
   },
   "clinic": {

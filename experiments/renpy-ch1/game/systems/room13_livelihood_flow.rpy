@@ -61,6 +61,8 @@ label r13_livelihood:
     $ r13_combined_pay=R13_JOBS["delivery"]["pay"]*2
     if r13_job_key=="delivery":
         call r13_delivery_inspect
+    elif r13_job_key=="kitchen" and not r13_has("life_meal_served"):
+        call r13_life_meal
     else:
         menu:
             "맡은 일만 마친다":
@@ -88,42 +90,7 @@ label r13_livelihood:
 # Two parcels, one address (owner's knowledge-run plan D-1, 0.18.16). No "earn double" choice:
 # the labels can be read, the load tried, and an owned item (or 까로's cord, once he offered it)
 # used on the boxes. Pay, the once-only bonus and time stay as in r13_complete_job.
-label r13_delivery_inspect:
-    $ _dv_tied=False
-    $ _dv_loop=True
-    while _dv_loop:
-        menu:
-            "큰 상자의 짐표를 읽는다":
-                call r13_lines([(None,"받는 곳: 광장 뒤 세 번째 집, 솔 씨 댁. 큰 나무 상자.")],"life:delivery:label_big")
-            "작은 상자의 짐표를 읽는다":
-                call r13_lines([(None,"받는 곳: 광장 뒤 세 번째 집, 솔 씨 댁. 작은 상자. 바닥이 매끈하다.")],"life:delivery:label_small")
-            "짐을 수레에 올려 본다" if not _dv_tied:
-                call r13_lines([(None,"큰 상자 위에 작은 상자를 얹었다. 수레가 기울 때마다 작은 상자가 미끄러졌다."),
-                    ("karo","따로 싣고 다녀와야겠어요. 위에 올리면 작은 게 자꾸 떨어져요.")],"life:delivery:load")
-            "가진 물건을 짐에 써 본다" if not _dv_tied and (r13_wallet(room13)["items"] or "karo_trusted" in r13_wallet(room13)["relations"]):
-                $ _dv_opts=[(R13_SHOP.get(i,{}).get("title",i),i) for i in r13_wallet(room13)["items"]]
-                if "karo_trusted" in r13_wallet(room13)["relations"] and "cord" not in r13_wallet(room13)["items"]:
-                    $ _dv_opts.append(("수레에 걸린 까로의 짐 끈","cord"))
-                $ _dv_item=renpy.display_menu(_dv_opts+[("그만둔다",None)])
-                if _dv_item=="cord":
-                    call r13_lines([(None,"두 상자를 함께 묶었다."),("karo","이렇게 실으면 한 번에 되겠네요.")],"life:delivery:tied")
-                    $ _dv_tied=True
-                elif _dv_item:
-                    call r13_lines([(None,"상자를 고정할 수 없다.")],"life:delivery:nouse")
-            "[r13_job_question]":
-                $ r13_job_choice="ask"
-                $ _dv_loop=False
-            "짐을 나르러 간다":
-                $ r13_job_choice="finish"
-                if _dv_tied and not r13_wallet(room13)["combined_paid"]:
-                    # Tying the two boxes is what shows they go to the same house in one trip.
-                    python:
-                        _w=r13_wallet(room13);_w["relations"]=list(dict.fromkeys(_w["relations"]+["same_lane"]))
-                        if "cord" not in _w["items"]:_w["relations"]=list(dict.fromkeys(_w["relations"]+["karo_trusted"]))
-                        r13_edit(livelihood=_w)
-                    $ r13_job_choice="combine"
-                $ _dv_loop=False
-    return
+# r13_delivery_inspect now lives in systems/room13_life_closeups.rpy (drawn close-up, 0.18.21).
 
 init 93 python:
     _r13_life_where=r13_where

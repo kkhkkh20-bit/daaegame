@@ -143,17 +143,92 @@ init 66 python:
                     x,y,w,h=spec["targets"][key]
                     layers.extend([(x,y),r13_inspection_icon(key,w,h)])
         else:
+            bg=layers[1]
+            if state["compartment_open"]:
+                # The panel slides right under the frame: a dark cavity, a strip of the real panel art.
+                x,y,w,h=spec["targets"]["compartment"]
+                strip=int(w*.22)
+                layers.extend([(x,y),R13DrawerCavity(w-strip,h),
+                    (x+w-strip,y),Transform(bg,crop=(x,y,strip,h))])
+                if "magnifier" not in state["taken"]:
+                    layers.extend([(x+18,y+int(h*.28)),r13_inspection_icon("magnifier",w-strip-36,int(h*.42))])
+            elif state.get("groove_held"):
+                # The ruler's tip sits in the notch; the panel edge glows where it should be pushed.
+                x,y,w,h=spec["targets"]["compartment"]
+                gx,gy,gw,gh=spec["targets"]["divider"]
+                layers.extend([(x,y),R13HoverCorners(w,h,"#ffe08acc",6),
+                    (gx+gw//2-40,gy-58),r13_inspection_icon("ruler",80,80)])
             if state["paper_placed"]:
                 x,y,w,h=spec["targets"]["tag"]
-                layers.extend([(x,y),Solid("#eee0b9",xsize=w,ysize=h)])
-                if state["rubbing"]:
-                    layers.extend([(x+16,y+25),Text("┌──┐\n  ↓  →",size=32,color="#4d473d")])
-            if state["compartment_open"]:
-                x,y,w,h=spec["targets"]["compartment"]
-                layers.extend([(x,y),Solid("#a27443",xsize=w,ysize=h),(x+9,y+9),Solid("#30271e",xsize=w-18,ysize=h-18)])
-                if "magnifier" not in state["taken"]:
-                    layers.extend([(x+14,y+38),r13_inspection_icon("magnifier",w-28,h-65)])
+                layers.extend([(x+10,y+8),R13RubbingSheet(w-20,h-16,state["rubbing"])])
         return Composite((1280,720),*layers)
+
+    class R13RubbingSheet(renpy.Displayable):
+        """Thin paper over the tag. Rubbed: graphite hatch with the pressed picture left pale —
+        the right panel with its bottom notch, ① press down at the notch, ② push right."""
+        def __init__(self,width,height,rubbed=False,**kwargs):
+            super(R13RubbingSheet,self).__init__(**kwargs)
+            self.w=int(width);self.h=int(height);self.rubbed=rubbed
+        def render(self,width,height,st,at):
+            w,h=self.w,self.h;r=renpy.Render(w,h);c=r.canvas()
+            c.rect("#00000040",(6,6,w-6,h-6))
+            c.rect("#f3ead2dd",(0,0,w-6,h-6))
+            c.rect("#cbbd9a",(0,0,w-6,h-6),2)
+            if not self.rubbed:return r
+            pw,ph=w-6,h-6
+            # Graphite: dense diagonal strokes on the paper only.
+            # Graphite strokes: short uneven bands, like a pencil laid flat.
+            c.rect("#8a857a",(0,0,pw,ph))
+            for row,y in enumerate(range(0,ph,3)):
+                off=(row*37)%23
+                for x in range(-off,pw,46):
+                    c.rect("#5d5951",(max(0,x),y,min(pw,x+34)-max(0,x),2))
+            c.rect("#cbbd9a",(0,0,pw,ph),2)
+            # Pale (unrubbed) lines: what was pressed into the tag.
+            pale="#f3ead2"
+            bx,by,bw,bh=int(pw*.56),int(ph*.12),int(pw*.26),int(ph*.76)
+            c.rect("#4a4640",(bx-3,by-3,bw+6,bh+6))
+            c.rect(pale,(bx,by,bw,bh),3)
+            nx=bx+bw//2;ny=by+bh
+            c.circle(pale,(nx,ny),9,3)
+            # ① down arrow onto the notch
+            ax=bx-int(pw*.16)
+            c.line(pale,(ax,by+10),(ax,ny-6),4)
+            c.polygon(pale,[(ax-9,ny-14),(ax+9,ny-14),(ax,ny-2)])
+            c.line(pale,(ax,ny-4),(nx-12,ny-4),3)
+            # ② right arrow beside the panel
+            ry=by+bh//2;rx=bx+bw+8
+            c.line(pale,(rx,ry),(min(pw-14,rx+int(pw*.12)),ry),4)
+            tip=min(pw-4,rx+int(pw*.12)+10)
+            c.polygon(pale,[(tip-12,ry-9),(tip-12,ry+9),(tip,ry)])
+            for text,(tx,ty) in (("1",(ax-28,by+4)),("2",(rx+4,ry-34))):
+                t=renpy.render(Text(text,size=22,color=pale,outlines=[(2,"#4a4640",0,0)]),w,h,st,at)
+                r.blit(t,(tx,ty))
+            return r
+
+    class R13DrawerCavity(renpy.Displayable):
+        def __init__(self,width,height,**kwargs):
+            super(R13DrawerCavity,self).__init__(**kwargs)
+            self.w=int(width);self.h=int(height)
+        def render(self,width,height,st,at):
+            w,h=self.w,self.h;r=renpy.Render(w,h);c=r.canvas()
+            c.rect("#2a1d14",(0,0,w,h))
+            c.rect("#1a120c",(0,0,w,14));c.rect("#1a120c",(0,0,12,h))
+            c.rect("#6b4a30",(0,0,w,h),3)
+            return r
+
+    class R13HoverCorners(renpy.Displayable):
+        """Pixel corner brackets: marks what can be touched without boxing the art."""
+        def __init__(self,width=None,height=None,color="#f6d18acc",thick=4,**kwargs):
+            super(R13HoverCorners,self).__init__(**kwargs)
+            self.fw=width;self.fh=height;self.color=color;self.t=thick
+        def render(self,width,height,st,at):
+            w=int(self.fw or width);h=int(self.fh or height);t=self.t;L=max(12,min(w,h)//5)
+            r=renpy.Render(w,h);c=r.canvas()
+            for x,y,dx,dy in ((0,0,1,1),(w,0,-1,1),(0,h,1,-1),(w,h,-1,-1)):
+                c.rect(self.color,(min(x,x+dx*L),min(y,y+dy*t),L,t))
+                c.rect(self.color,(min(x,x+dx*t),min(y,y+dy*L),t,L))
+            return r
 
     def r13_inspection_lens(view,target):
         x,y,w,h=R13_INSPECTION_LAYOUT[view]["targets"][target]
@@ -187,7 +262,7 @@ screen r13_desk_inspection():
     for target,rect in R13_INSPECTION_LAYOUT[view]["targets"].items():
         if not (view=="desk" and target in ("pencil","paper","ruler") and target in r13_inspection_state()["taken"]):
             button:
-                area tuple(rect) padding (0,0) background None hover_background None
+                area tuple(rect) padding (0,0) background None hover_background R13HoverCorners()
                 action (Return("mother_note") if view=="desk" and target=="letters" and room13.get("life_poc") and room13["location"]=="room13" else Function(r13_inspection_click,view,target,selected))
                 sensitive (lens is None)
                 tooltip ("접힌 메모와 편지" if target=="letters" and room13.get("life_poc") and room13["location"]=="room13" else R13_INSPECTION_NAMES[target])
@@ -218,11 +293,15 @@ screen r13_desk_inspection():
             spacing 12
             text "아이템" size 21 color "#d9bc80" yalign .5 xsize 100
             for key in r13_inspection_state()["inventory"]:
-                textbutton R13_INSPECTION_ITEMS[key][0]:
-                    style "r13_action_button" text_size 21 xsize 222 ysize 52
+                button:
+                    style "r13_action_button" xsize 222 ysize 52 padding (8,2)
                     background (Solid("#675635") if selected==key else R13ActionPanel())
                     action [SetScreenVariable("selected",None if selected==key else key),SetScreenVariable("message",("선택을 해제했다." if selected==key else R13_INSPECTION_ITEMS[key][1]+" 사용할 대상을 누르자."))]
                     sensitive (lens is None)
+                    hbox:
+                        spacing 8 yalign .5
+                        add r13_inspection_icon(key,44,44) yalign .5
+                        text R13_INSPECTION_ITEMS[key][0] size 21 color "#fff2cf" yalign .5
             if not r13_inspection_state()["inventory"]:
                 text "챙긴 물건이 여기에 놓입니다." size 21 color "#c1c9c2" yalign .5
     if lens:
