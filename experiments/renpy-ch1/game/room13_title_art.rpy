@@ -32,8 +32,6 @@ init 60 python:
             w=max(1,int(width));h=max(1,int(height))
             out=renpy.Render(w,h);c=out.canvas()
             out.blit(renpy.render(R13InkPanel(focused=self.focused,alpha="ff"),w,h,st,at),(0,0))
-            if self.focused:
-                c.polygon('#e5ddbf',[(20,h//2),(26,h//2-6),(32,h//2),(26,h//2+6)])
             return out
 
     def r13_title_save_line(slot):

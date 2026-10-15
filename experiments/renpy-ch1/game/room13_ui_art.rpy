@@ -1,7 +1,7 @@
 # Travel folio, warm paper and ink. Clean colour planes without grain/noise.
 init 58 python:
     class R13InkPanel(renpy.Displayable):
-        """Flat ink-brown plate, small stepped corners and a narrow lit edge."""
+        """Quiet slate edges, ink face, and amber light only along the lower edge."""
         def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,dark=False,**kwargs):
             super(R13InkPanel,self).__init__(**kwargs)
             self.focused=focused;self.disabled=disabled
@@ -14,18 +14,21 @@ init 58 python:
                 d=max(1,cut-n)
                 return [(n+d,n),(w-n-d-1,n),(w-n-1,n+d),(w-n-1,h-n-d-1),
                         (w-n-d-1,h-n-1),(n+d,h-n-1),(n,h-n-d-1),(n,n+d)]
-            fill=('#493f38' if self.disabled else '#292729' if self.dark else '#665047' if self.focused else '#3c3431')
+            fill=('#45413c' if self.disabled else '#292729' if self.dark else '#49433e' if self.focused else '#3c3733')
             c.polygon(fill+self.alpha,edge(3))
             # Border bands leave the inner face clear for the explicit light option.
             for outer,inner,color in ((edge(0),edge(1),'#332b28'),
-                    (edge(1),edge(3),'#9b8265' if self.focused else '#786959')):
+                    (edge(1),edge(3),'#77736a')):
                 for i in range(8):
                     j=(i+1)%8
                     c.polygon(color,[outer[i],outer[j],inner[j],inner[i]])
-            c.line('#d3bb90' if self.focused else '#a38d70',(cut+2,2),(w-cut-3,2),1)
+            c.line('#a39b87',(cut+2,2),(w-cut-3,2),1)
             c.line('#251f1e',(cut+2,h-2),(w-cut-3,h-2),1)
-            if self.focused:
-                c.rect('#b9765e',(3,cut,3,max(1,h-cut*2)))
+            if self.focused and not self.disabled:
+                # Discrete pixel bands: amber rises only from the bottom, no top/side glow.
+                c.rect('#60503b',(cut+3,h-9,max(1,w-2*cut-6),3))
+                c.rect('#9a7842',(cut+2,h-6,max(1,w-2*cut-4),2))
+                c.line('#e6bd69',(cut+2,h-3),(w-cut-3,h-3),2)
             return r
 
     class R13PaperFrame(renpy.Displayable):
@@ -35,28 +38,38 @@ init 58 python:
             self.corner=corner
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
-            c.rect('#8f7054',(0,2,w,max(1,h-2)))
-            c.rect('#f0dfbc',(1,0,max(1,w-2),max(1,h-3)))
-            c.rect('#d9c29b',(4,4,max(1,w-8),max(1,h-9)))
-            c.line('#fff0cf',(4,4),(w-5,4),2)
-            c.line('#b79a73',(5,h-6),(w-5,h-6),1)
+            # Edge patina is broad, bounded shading, never speckled texture.
+            c.rect('#806249',(0,2,w,max(1,h-2)))
+            c.rect('#bea077',(1,0,max(1,w-2),max(1,h-3)))
+            c.rect('#d9be91',(3,2,max(1,w-6),max(1,h-6)))
+            c.rect('#e5cea5',(6,5,max(1,w-12),max(1,h-13)))
+            c.rect('#f0dfbd',(10,9,max(1,w-20),max(1,h-22)))
+            c.line('#fff0cf',(6,4),(w-7,4),1)
+            c.line('#a48861',(5,h-5),(w-6,h-5),1)
             return r
 
     class R13TravelSheet(renpy.Displayable):
         """Open travel folio: outer cover, paper leaves, spine and index margin."""
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
-            c.rect('#2b211d88',(4,6,w-4,h-6))
-            c.rect('#604637',(0,0,w-4,h-5))
-            c.rect('#bca17b',(3,2,w-10,h-10))
-            c.rect('#eddbb8',(6,4,w-16,h-15))
-            c.line('#fff0d0',(8,5),(w-12,5),2)
-            # A few deliberate edge steps, not repeated grain or distressed noise.
-            c.rect('#d5bd97',(6,h-14,w-16,3))
-            c.rect('#c4a67c',(226,13,10,h-38))
-            c.line('#a88a64',(230,15),(230,h-26),1)
-            c.line('#fff0ce',(237,15),(237,h-26),2)
-            c.line('#b99b75',(252,h-94),(w-30,h-94),1)
+            # Slim walnut cover supports the parchment; the writing face stays clean.
+            c.rect('#241c1888',(4,6,w-4,h-6))
+            c.rect('#3c2d24',(0,0,w-4,h-5))
+            c.rect('#77523a',(3,2,w-10,h-10))
+            c.line('#a17b50',(9,3),(w-16,3),1)
+            c.line('#4c3527',(12,h-8),(w-18,h-8),2)
+            c.rect('#ad895e',(8,7,w-22,h-23))
+            c.rect('#d2b584',(11,9,w-28,h-28))
+            c.rect('#e7cea3',(15,12,w-36,h-35))
+            c.rect('#f0dfbd',(21,17,w-48,h-47))
+            c.line('#fff0d0',(18,13),(w-28,13),2)
+            # A turned lower corner, outside all text and controls.
+            c.polygon('#c4a273',[(w-44,h-25),(w-22,h-47),(w-22,h-25)])
+            c.polygon('#fae9c6',[(w-44,h-25),(w-44,h-47),(w-22,h-47)])
+            c.rect('#c4a67c',(226,18,10,h-48))
+            c.line('#9b7b53',(230,21),(230,h-32),1)
+            c.line('#fff0ce',(237,21),(237,h-32),2)
+            c.line('#b99b75',(252,h-94),(w-38,h-94),1)
             return r
 
     class R13TouchSurface(renpy.Displayable):

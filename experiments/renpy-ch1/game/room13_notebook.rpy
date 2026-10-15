@@ -136,10 +136,14 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
         xpos 66 ypos 128 spacing 10
         for key,title in (("evidence","증거"),("testimony","증언"),("people","인물"),("dialogue","대화")):
             if not present or key in ("evidence","testimony"):
-                textbutton ("증거" if key=="evidence" else title):
-                    style "r13_paper_tab_button" xsize 176 ysize 44 text_size r13_read_size(20,24)
-                    selected current==key
+                button:
+                    style "r13_paper_tab_button" xsize 176 ysize 44
+                    selected current==key alt title
                     action [Function(r13_record_select,owner,"category" if owner=="r13_book" else "tab",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
+                    hbox:
+                        xalign .5 yalign .5 spacing 10
+                        add R13AntiqueIcon(key,size=24) yalign .5
+                        text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
     vbox:
         xpos 66 ypos 382 spacing 8
         textbutton "조사 메모" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 action Show("r13_learning_notes")

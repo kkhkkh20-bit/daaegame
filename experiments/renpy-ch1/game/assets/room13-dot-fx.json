@@ -170,6 +170,180 @@
   "file": "assets/room13-fx-dither.png",
   "time": 0.5
  },
+ "lamps": {
+  "school": {
+   "file": "assets/room13-fx-lamp-school.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "workshop": {
+   "file": "assets/room13-fx-lamp-workshop.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "clinic": {
+   "file": "assets/room13-fx-lamp-clinic.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "store": {
+   "file": "assets/room13-fx-lamp-store.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "greenhouse": {
+   "file": "assets/room13-fx-lamp-greenhouse.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "facility": {
+   "file": "assets/room13-fx-lamp-facility.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  }
+ },
+ "inn_window": {
+  "rect": [
+   648,
+   156,
+   456,
+   212
+  ],
+  "mask": "assets/room13-fx-inn-window-mask.webp",
+  "periods": [
+   "evening"
+  ],
+  "layers": [
+   {
+    "count": 34,
+    "size": 4,
+    "vy": [
+     22,
+     34
+    ],
+    "sway": 6
+   }
+  ]
+ },
+ "react_sounds": {
+  "surprise": "assets/sfx-react-surprise.wav",
+  "joy": "assets/sfx-react-joy.wav",
+  "angry": "assets/sfx-react-angry.wav",
+  "anxious": "assets/sfx-react-anxious.wav",
+  "flustered": "assets/sfx-react-flustered.wav"
+ },
+ "cinematics": {
+  "return": {
+   "lamp": "assets/room13-fx-cine-return.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "rescue": {
+   "lamp": "assets/room13-fx-cine-rescue.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "reunion": {
+   "lamp": "assets/room13-fx-cine-reunion.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "mountain": {
+   "lamp": "assets/room13-fx-cine-mountain.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": true
+  },
+  "E0": {
+   "lamp": "assets/room13-fx-cine-e0.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": true
+  },
+  "E2": {
+   "lamp": "assets/room13-fx-cine-e2.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": true
+  },
+  "E3": {
+   "lamp": "assets/room13-fx-cine-e3.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "E4": {
+   "lamp": "assets/room13-fx-cine-e4.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "E5": {
+   "lamp": "assets/room13-fx-cine-e5.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "proof": {
+   "lamp": "assets/room13-fx-cine-proof.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  }
+ },
  "blink": {
   "timeline": [
    [
@@ -240,6 +414,204 @@
      ],
      "half": "assets/room13-fx-blink-daram-surprise-half.webp",
      "closed": "assets/room13-fx-blink-daram-surprise-closed.webp"
+    }
+   },
+   "buri": {
+    "neutral": {
+     "rect": [
+      248,
+      119,
+      165,
+      66
+     ],
+     "half": "assets/room13-fx-blink-buri-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-buri-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      247,
+      123,
+      166,
+      61
+     ],
+     "half": "assets/room13-fx-blink-buri-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-buri-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      249,
+      119,
+      164,
+      65
+     ],
+     "half": "assets/room13-fx-blink-buri-angry-half.webp",
+     "closed": "assets/room13-fx-blink-buri-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      247,
+      123,
+      168,
+      64
+     ],
+     "half": "assets/room13-fx-blink-buri-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-buri-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      246,
+      113,
+      169,
+      77
+     ],
+     "half": "assets/room13-fx-blink-buri-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-buri-surprise-closed.webp"
+    }
+   },
+   "mom": {
+    "neutral": {
+     "rect": [
+      223,
+      120,
+      167,
+      66
+     ],
+     "half": "assets/room13-fx-blink-mom-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-mom-neutral-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      223,
+      123,
+      167,
+      65
+     ],
+     "half": "assets/room13-fx-blink-mom-angry-half.webp",
+     "closed": "assets/room13-fx-blink-mom-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      223,
+      121,
+      167,
+      66
+     ],
+     "half": "assets/room13-fx-blink-mom-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-mom-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      222,
+      110,
+      168,
+      77
+     ],
+     "half": "assets/room13-fx-blink-mom-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-mom-surprise-closed.webp"
+    }
+   },
+   "nabi": {
+    "neutral": {
+     "rect": [
+      149,
+      123,
+      172,
+      65
+     ],
+     "half": "assets/room13-fx-blink-nabi-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      148,
+      126,
+      172,
+      62
+     ],
+     "half": "assets/room13-fx-blink-nabi-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      148,
+      126,
+      174,
+      63
+     ],
+     "half": "assets/room13-fx-blink-nabi-angry-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      149,
+      123,
+      172,
+      65
+     ],
+     "half": "assets/room13-fx-blink-nabi-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      148,
+      113,
+      174,
+      75
+     ],
+     "half": "assets/room13-fx-blink-nabi-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-surprise-closed.webp"
+    }
+   },
+   "bami": {
+    "neutral": {
+     "rect": [
+      170,
+      186,
+      169,
+      77
+     ],
+     "half": "assets/room13-fx-blink-bami-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-bami-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      171,
+      189,
+      165,
+      71
+     ],
+     "half": "assets/room13-fx-blink-bami-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-bami-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      170,
+      190,
+      168,
+      71
+     ],
+     "half": "assets/room13-fx-blink-bami-angry-half.webp",
+     "closed": "assets/room13-fx-blink-bami-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      170,
+      187,
+      169,
+      76
+     ],
+     "half": "assets/room13-fx-blink-bami-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-bami-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      170,
+      176,
+      168,
+      90
+     ],
+     "half": "assets/room13-fx-blink-bami-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-bami-surprise-closed.webp"
     }
    }
   }
