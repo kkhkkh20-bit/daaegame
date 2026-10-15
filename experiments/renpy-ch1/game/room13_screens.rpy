@@ -169,13 +169,15 @@ screen r13_world_contents(entry=False,ready=False):
                 background None hover_background None insensitive_background None padding (0,0)
                 action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
                 tooltip r13_object_name(key)
-    use r13_resident_stage(entry,ready)
+    # 0.18.50 (owner): where a person and an object overlap, the person is pressed. Objects drawn
+    # in front of a resident stay pressable around the resident's silhouette.
     for key,rect,mask in r13_objects_over_actors(entry):
         button:
             area rect focus_mask mask
             background None hover_background None insensitive_background None padding (0,0)
             action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
             tooltip r13_object_name(key)
+    use r13_resident_stage(entry,ready)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():
         if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and not r13_point_on_face(point,entry):
@@ -233,14 +235,15 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         $ row_h=(58 if persistent.room13_large_text else 48)
         # Measured (0.18.41), so a caption that wraps to two lines still fits without scrolling.
         $ list_h=r13_reference_list_height(entries,list_width-23,12,452,row_h,r13_read_size(24,30))+4
-        $ list_top=max(204 if title!="선택" else 150,list_bottom-list_h)
+        # 0.18.50 (owner): a long list grows up over the face instead of scrolling.
+        $ list_top=max(104 if title!="선택" else 120,list_bottom-list_h)
         if caption:
             text caption:
                 xpos list_left ypos list_top-44 xsize list_width text_align .5
                 size r13_read_size(22,27) color "#f6d18a" outlines [(1,"#101515",0,0)]
         if title!="선택":
             text title:
-                xpos list_left ypos list_top-56 xsize list_width text_align .5
+                xpos list_left ypos max(60,list_top-50) xsize list_width text_align .5
                 size r13_read_size(27,32) color "#f6d18a"
         viewport:
             area (list_left,list_top,list_width,list_bottom-list_top)

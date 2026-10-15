@@ -147,7 +147,7 @@ label r13_w1c_letters:
             call r13_w1c_letters_after(False)
         "“이분 얼굴을 알고 있지요?”" if "P01" in room13["evidence"] and r13_has("portrait_known"):
             call r13_lines([("dad","이 초상, 전에 보여 드렸지요. 이분은 제 아내입니다."),
-                ("resident_sling","그분 가족이었군요. 그러면 이 편지는 그렇게 다루면 안 되겠네요."),
+                ("resident_sling","그분 가족이었군요. 그러면 이 편지를 함부로 다루면 안 되겠네요."),
                 ("resident_sling","여관 할머니가 시켰어요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오라고요.")],"w1c:letters:portrait")
             $ r13_flag("letters_safe","sling_ally")
             call r13_w1c_letters_after(False)

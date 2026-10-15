@@ -58,7 +58,7 @@ label r13_carryover_events:
         _refuse=[]
         if (r13_has("bori_hostile") or r13_has("bori_punished")) and not (r13_has("bori_ally") or r13_has("bori_cleared")):
             _refuse.append(("bori_refuses",[("resident_bori","수레를 끌어 달라고요? 배급대 앞에서 다들 구경만 했죠. 그러니 이번엔 저도 우리 집부터 챙길래요.")]))
-        if r13_has("eunho_blackmailed") and not r13_has("supply_terms"):
+        if r13_has("eunho_blackmailed") and not r13_has("supply_terms") and not any("supply_terms" in fl for fl,l in _carry):
             _refuse.append(("eunho_refuses",[("resident_eunho","저울 일에 반값 받고 입 다문 분이 이제 와서 나눠 달라고요? 장부에 적을 이름만 하나 더 늘 뿐이오.")]))
         if len(r13_bad_rumors())>=2 and not any(f=="shelter_agreed" for fl,l in _carry for f in fl):
             _refuse.append(("teacher_doubts",[("resident_teacher","좋은 이야기도, 나쁜 이야기도 들었어요. 어느 쪽이 맞는지는 제가 직접 본 적이 없어요."),("resident_teacher","아이들이 있는 교실이니, 아저씨를 아는 분이 보증해 주시면 좋겠어요.")] if r13_has("rumor:fair") else [("resident_teacher","그 소문들, 저도 들었어요. 그래서 아이들이 있는 교실에 누구를 들일지는 조심해야 해요.")]))

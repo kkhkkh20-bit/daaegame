@@ -106,7 +106,7 @@ init 102 python:
             r13_flag("room_searched")
             if had_warning:r13_flag("warning_exposed")
 
-    ROOM13["topics"]["kongi_errand"]=dict(npc="resident_kongi",title="하루 동안 한 곳을 지켜봐 달라고 한다",day=[1,6],need=[],give=[],flags=[],not_flags=["kongi_watching"],lines=[])
+    ROOM13["topics"]["kongi_errand"]=dict(npc="resident_kongi",title="하루 동안 한 곳을 지켜봐 달라고 한다",day=[1,5],need=[],give=[],flags=[],not_flags=["kongi_watching"],lines=[])
     ROOM13["topics"]["kongi_report"]=dict(npc="resident_kongi",title="어제 지켜본 것을 듣는다",day=[2,7],need=["kongi_report_ready"],give=[],flags=[],lines=[])
     ROOM13["topics"]["somi_worry"]=dict(npc="resident_somi",title="무슨 걱정이 있는지 묻는다",day=[2,3],need=[],give=[],flags=["know_musoe_sick","somi_route_seen"],lines=[
         (None,"솜이는 구두 밑창에 붙은 얼음을 긁다가 손을 멈췄다."),
@@ -348,7 +348,7 @@ label r13_ev_c_locked(room_safe):
     while _c_loop:
         menu:
             "문을 밀어 본다":
-                call r13_lines([(None,"문은 조금 움직이지만 열리지 않는다. 바깥에서 무언가 걸려 있다.")],"ev:c:locked:push")
+                call r13_lines([(None,"문은 조금 움직이지만 열리지 않는다. 바깥에 무언가 걸려 있다.")],"ev:c:locked:push")
             "안쪽 선반을 살핀다":
                 call r13_lines([(None,"등잔 불이 점점 작아졌다. 선반 위 종이 묶음의 글씨는 이 불빛으로는 읽히지 않는다.")],"ev:c:locked:dark")
             "문을 두드리며 기다린다":

@@ -49,8 +49,8 @@ init 97 python:
         s=store.room13
         if s.get("life_poc") and key in s.get("evidence",[]) and s.get("case_state")=="pending":
             if key=="M01" and person=="resident_lamplighter" and 2<=s["day"]<=4:
-                if s["day"]==3:
-                    # The existing day-three envelope route must still unlock.
+                if s["day"]>=3:
+                    # The existing day-three envelope route must still unlock (days 3–4, 0.18.50).
                     _r13_intro_present(person,key,identity)
                 r13_flag("intro:memo_shown")
                 return [("dad","아내가 이 메모에 등불을 돌보는 분께 물어보라고 적었습니다."),
@@ -81,7 +81,7 @@ init 97 python:
         if r13_has("mother_lamplighter_lead"):
             return [("daram","등불 돌보는 분이 초롱 아저씨래. 그 아저씨도 엄마를 알까?"),("dad","엄마 이름만 대면 모를 수도 있어. 엄마가 우리한테 뭐라고 남겼는지 다시 떠올려 보자.")]
         if r13_has("M01"):
-            return [("daram","엄마 메모에 나온 ‘등불을 돌보는 분’은 누구일까?"),("dad","이 마을 사람들은 알겠지. 그런데 누구한테 물어볼까?")]
+            return [("daram","엄마 메모에 나온 ‘등불을 돌보는 분’은 누구일까?"),("dad","이 마을 사람들은 누군지 알겠지. 그런데 누구한테 물어볼까?")]
         if not r13_has("E03"):
             return [("daram","이불 안쪽 바느질이 엄마 것하고 닮았어. 책상에도 접힌 종이가 있어."),("dad","이불 바느질이랑 접힌 종이, 둘 다 직접 살펴보자.")]
         return [("daram","책상 위의 접힌 종이도 읽어 보자. 엄마가 남긴 걸지도 몰라.")]

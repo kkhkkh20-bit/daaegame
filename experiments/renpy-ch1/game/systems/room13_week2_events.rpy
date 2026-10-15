@@ -79,7 +79,7 @@ label r13_w2e_bell:
                 ("neoul","또 당신이오? 소란을 피운 값으로 오늘은 초소에서 지내시오."),
                 (None,"초소 창 너머로 사람들이 학교로 걸어가는 게 보였다. 나는 날이 저물 때까지 초소에서 나가지 못했다.")],"w2e:bell:self")
             $ r13_flag("w2_bell_rung","villagers_gathered","rumor:troublemaker")
-            $ r13_edit(period=3)
+            $ r13_edit(period=3,location="gate")
         "너울 말대로 기다리자고 한다":
             call r13_lines([("resident_seol","……알겠어요. 아저씨까지 기다리자고 하면 어쩔 수 없죠."),
                 (None,"그날 밤 불이 꺼진 두 집 사람들은 아침이 되어서야 학교에 왔다.")],"w2e:bell:wait")
@@ -141,13 +141,13 @@ label r13_w2e_tools:
     menu:
         "“제가 값을 내겠습니다.” 12냥" if r13_cash_now()>=12:
             $ r13_cash(-12,"부리의 공구함")
-            call r13_lines([("dad","이 돈은 제가 내겠습니다."),
+            call r13_lines([("dad","공구 값은 제가 내겠습니다."),
                 ("buri","빌린 걸로 적어 주세요. 그냥 받은 걸로는 못 하겠어요."),
                 ("buri","장치 교대할 때 이 공구를 쓸게요.")],"w2e:tools:buy:v2")
             $ r13_flag("tools_kept","buri_tools_paid")
         "“가족 몫을 공동 장부에 올리죠.”" if r13_has("supply_terms") or r13_has("supplies_ready"):
             call r13_lines([("dad","가족이 받을 몫을 장부에 넣겠습니다. 공구는 남겨 둡시다."),
-                ("buri","정말 받을 수 있으면, 팔 필요는 없어요.")],"w2e:tools:share:v2")
+                ("buri","가족 몫을 정말 받을 수 있으면, 공구를 팔 필요는 없어요.")],"w2e:tools:share:v2")
             $ r13_flag("tools_kept","buri_family_share")
         "“할아버지가 쓰시던 물건이잖아요.”":
             call r13_lines([("buri","저도 알아요."),

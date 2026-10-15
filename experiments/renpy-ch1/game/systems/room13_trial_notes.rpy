@@ -37,7 +37,9 @@ init 121 python:
                     if done and left:
                         fact="‘%s’ 부분은 반박했다."%r13_debate_emphasis(done[-1])
                         gap="‘%s’ 부분은 뒤집지 못했다."%r13_debate_emphasis(left[0])
-                if claim=="C4" and claim in props and r13_has("c4_unenforced"):
+                # 0.18.50: an unenforced C4 is never in props; it was argued in full all the same.
+                if claim=="C4" and r13_has("c4_unenforced"):
+                    fact,gap,_ok=t["ok"]
                     result="판결은 났지만 촌장이 집행하지 않았다."
                 rows.append(dict(title="재판 · "+t["title"],fact=fact,question=gap,result=result))
         n=winter_copy.deepcopy(s);n["trial_notes"]=rows;store.room13=n

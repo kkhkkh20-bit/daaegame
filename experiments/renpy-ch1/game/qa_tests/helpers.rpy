@@ -616,3 +616,8 @@ label r13_qa_topic_review:
 label r13_qa_inspect_desk:
     call r13_inspect_desk
     jump r13_roam
+
+label r13_qa_talk_menu:
+    $ r13_target=r13_qa_person
+    $ r13_note_encounter(r13_qa_person)
+    jump r13_talk_menu

@@ -58,7 +58,7 @@ init 94 python:
                 return [("dad","여기 적힌 ‘등불을 돌보는 분’이 누구입니까?"),(person,"초롱을 말하는 것 같네요. 마을 등불을 돌보는 분이에요."),("dad","등불을 돌보는 분께 아내를 만났는지 직접 물어보겠습니다.")]
             if person=="resident_lamplighter":
                 if store.room13["day"]<3:
-                    return [(person,"그분이 남긴 글씨군요. 맡아 둔 것을 찾아볼게요. 내일 다시 와 주시겠어요?")]
+                    return [(person,"그분이 남긴 글씨군요. 맡아 둔 것을 찾아볼게요. "+("모레" if store.room13["day"]==1 else "내일")+" 다시 와 주시겠어요?")]
                 r13_flag("topic:lamplighter_warning")
                 return [(person,"가족에게 전해 달라고 맡긴 봉투가 있어요. 여기서 길게 이야기하진 맙시다.")]
         return _r13_life_present(person,key,identity)
@@ -71,7 +71,7 @@ label r13_first_day_arrival:
     return
 
 label r13_first_day_checkin:
-    call r13_lines([("dad","보내 주신 편지를 받고 왔습니다. 아내는 여기 있습니까?"),("granny","아직 돌아오지 않았어요. 방에 두고 간 물건도 그대로고요."),("dad","편지를 보내실 때도 아내가 없었습니까?"),("granny","네. 소식이 없어서 가족께 알려야겠다고 생각했어요. 기다리게 해서 미안해요."),("daram","엄마가 있던 방을 봐도 돼요?"),("granny","13호실이에요. 오늘 식사와 방값은 받지 않을게요. 내일부터 두 분 숙식은 하루 열 냥이고요."),("dad","우선 13호실부터 살펴보겠습니다.")],"life:arrival:inn")
+    call r13_lines([("dad","보내 주신 편지를 받고 왔습니다. 아내는 여기 있습니까?"),("granny","아직 돌아오지 않았어요. 방에 두고 간 물건도 그대로고요."),("daram","……엄마 여기 없어요?",{"expression":"anxious"}),(None,"다람이가 내 소매를 꼭 쥐었다. 마차에서 내내 들고 있던 과자 봉지가 구겨졌다."),("dad","편지를 보내실 때도 아내가 없었습니까?"),("granny","네. 소식이 없어서 가족께 알려야겠다고 생각했어요. 기다리게 해서 미안해요."),("daram","엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요."),("granny","13호실이에요. 오늘 식사와 방값은 받지 않을게요. 내일부터 두 분 숙식은 하루 열 냥이고요."),("dad","우선 13호실부터 살펴보겠습니다.")],"life:arrival:inn")
     $ r13_flag("lodging")
     $ r13_note_encounter("granny")
     return

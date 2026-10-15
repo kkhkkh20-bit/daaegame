@@ -27,7 +27,7 @@ init 118 python:
         # 부리 after the case: Dad's word without a record.
         "buri_assert":_r13_ob_topic("buri","“다람이가 그랬을 리 없습니다.”",(5,7),not_flags=["buri_revised"],flags=["buri_heard_assert"],
             state={"case_state":["occurred"],"victim_state":["dead"]},lines=[
-            ("buri","할아버지를 때렸다면서요."),
+            ("buri","아이가 할아버지를 때렸다면서요."),
             ("dad","다람이가 그랬을 리 없습니다."),
             ("buri","아버지니까 그렇게 말할 수 있겠죠.")]),
         # 백 부인: the approach after her first answer (systems/room13_ledger.rpy sets the flag).
@@ -81,7 +81,7 @@ label r13_owl_threshold:
                 call r13_lines([("resident_owlgp","고맙소. ……내일 시간이 나면 내 쪽에서 이야기하리다.")],"owl:threshold:respect")
                 $ r13_flag("owl_threshold_respected")
             "“문턱이 어떻게 됐습니까?”" if not r13_has("owl_threshold_asked"):
-                call r13_lines([("resident_owlgp","들떴소. 아이가 걸려 넘어지기 전에 고쳐 두려는 거요.")],"owl:threshold:ask")
+                call r13_lines([("resident_owlgp","문턱이 들떴소. 아이가 걸려 넘어지기 전에 고쳐 두려는 거요.")],"owl:threshold:ask")
                 $ r13_flag("owl_threshold_asked")
                 $ _ow_loop=True
             "“제 방 앞을 왜 막으십니까?”":

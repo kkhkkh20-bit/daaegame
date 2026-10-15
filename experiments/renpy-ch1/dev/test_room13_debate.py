@@ -108,6 +108,15 @@ assert '아이 혼자' in rows[0][1] and '한 번 휘둘렸을 뿐' in rows[0][1
 store.room13.update(evidence=['E07']);store.room13['debate']={}
 assert not env['r13_debate_engageable']('C2')   # nothing breakable: skipped as before
 checks.append('partial rebuttal: engageable with some evidence, stuck when nothing breakable is left')
+# 0.18.50: closing never crashes — everything broken but no conclusion, or only a skipped statement.
+store.room13['debate']={};store.room13.update(propositions=[])
+env['r13_debate_mark']('broken','C1','s2')
+assert env['r13_debate_partial_lines']('C1')[0][1].startswith('(말은 모두 뒤집었다')
+store.room13['debate']={};store.room13.update(propositions=['C2','C3','C4'])
+assert env['r13_debate_dad_broken']('F4')==0 and env['r13_debate_progress']('F4')[0]==1
+assert env['r13_debate_partial_lines']('F4')[0][1].startswith('(맞는 자료를 찾지 못했다')
+store.room13.update(propositions=[]);store.room13['debate']={}
+checks.append('partial close is safe when all or none of the statements were broken')
 # The passage counter in C2 only exists once C1 is proven.
 store.room13.update(propositions=[])
 assert env['r13_debate_counter']('C2','s3') is None and env['r13_debate_counter']('C4','s1') is not None

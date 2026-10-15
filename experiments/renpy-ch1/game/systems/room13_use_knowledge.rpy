@@ -30,11 +30,11 @@ init 123 python:
             ("dad","슬링에게 손님 편지를 열어 보게 하셨지요."),
             ("granny","……누가 그런 말을 하던가요."),
             ("granny","손님이 걱정돼서 그런 거예요. 무슨 소식이 오는지는 알아야 할 것 아니에요.")]),
-        "doto_view_claim":dict(npc="doto",title="“그날 복도는 어디까지 보였습니까?”",day=[5,13],need=[],give=[],flags=["doto_view_claim"],lines=[
-            ("dad","그날 복도는 어디까지 보였습니까?"),
+        "doto_view_claim":dict(npc="doto",title="“그날 복도는 어디까지 보였니?”",day=[5,13],need=[],give=[],flags=["doto_view_claim"],lines=[
+            ("dad","그날 복도는 어디까지 보였니?"),
             ("doto","복도 끝까지 다 보였습니다. 누가 지나갔으면 제가 봤을 거예요.")],case="occurred"),
-        "doto_view_test":dict(npc="doto",title="“그 자리에 다시 서서 봐 주시겠습니까?”",day=[5,13],need=["doto_view_claim"],give=["J17"],flags=[],lines=[
-            ("dad","그날 서 계셨던 자리에 다시 서서, 계단 쪽을 봐 주시겠습니까?"),
+        "doto_view_test":dict(npc="doto",title="“그 자리에 다시 서서 봐 줄래?”",day=[5,13],need=["doto_view_claim"],give=["J17"],flags=[],lines=[
+            ("dad","그날 서 있던 자리에 다시 서서, 계단 쪽을 봐 줄래?"),
             (None,"도토가 13호 문 앞에 섰다. 고개를 몇 번 기울였다."),
             ("doto","……계단 첫 칸부터는 모퉁이에 가려서 안 보이네요."),
             ("doto","문 앞은 확실히 봤습니다. 그건 변하지 않아요.")],case="occurred"),
@@ -62,7 +62,7 @@ init 123 python:
         return _r13_uk_present(person,key,identity)
 
 label r13_granny_letter_ask:
-    call r13_lines([("granny","엄마에게서 소식은 없었나요?")],"granny:dumb:ask")
+    call r13_lines([("granny","아이 엄마한테서 소식은 없었나요?")],"granny:dumb:ask")
     menu:
         "“아직 기다리고 있습니다.”":
             call r13_lines([("dad","아직 기다리고 있습니다."),

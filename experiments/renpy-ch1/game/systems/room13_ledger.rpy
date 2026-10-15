@@ -50,7 +50,7 @@ init 115 python:
             r13_flag("madam_exposed")
             return [("resident_seori","장부와 현물을 바로 맞춰 보지요."),
                 (None,"서리 검사원과 창고로 갔다. 검사원은 장부를 한 줄씩 짚으며 자루와 상자를 세었다."),
-                ("resident_seori","적힌 수가 그대로 있습니다. 이 대조는 제 이름으로 기록하겠습니다.")]
+                ("resident_seori","장부에 적힌 수가 그대로 다 있습니다. 이 대조는 제 이름으로 기록하겠습니다.")]
         if person=="resident_madam" and r13_town().get("madam_alerted_at") is None and not r13_has("ledger_counted"):
             _r13_ledger_present(person,key,identity)
             r13_town_set(madam_alerted_at=r13_abs_time())

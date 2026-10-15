@@ -152,7 +152,7 @@ label r13_gm_scale:
                 $ r13_gm_save("scale",view="base");_st=r13_gm_state("scale")
                 $ _msg="조정부에서 눈을 떼었다. 접시는 아까 그대로다."
             elif _return[1]=="note":
-                call r13_lines([(None,"같은 모양의 표준 추를 왼쪽 접시에 올렸을 때 가게 추 쪽으로 기울었다. 가운데 조정 나사 둘레에는 새로 긁힌 자국이 있었다."),
+                call r13_lines([(None,"같은 모양의 표준 추를 왼쪽 접시에 올렸다. 저울은 가게 추 쪽으로 기울었다. 가운데 조정 나사 둘레에는 새로 긁힌 자국이 있었다."),
                     ("dad","(가게 추가 정말 무거운지, 누가 나사를 돌렸는지는 아직 모른다. 다만 이 저울로 잰 무게는 그대로 믿기 어렵다.)",{"thought":True})],"activity:use_weight_scale:v2")
                 return True
             else:

@@ -167,3 +167,44 @@ screen r13_admin():
     textbutton "닫기" style "r13_action_button" area (1040,650,200,54) text_size 22 action Hide("r13_admin")
     textbutton "관리자 끄기" style "r13_action_button" area (40,650,200,54) text_size 20 action [Function(r13_admin_toggle),Hide("r13_admin")]
     key "game_menu" action Hide("r13_admin")
+
+# PIN entry from the settings screen (0.18.50, owner). Big buttons so it works on a phone.
+define R13_ADMIN_PIN = "4861"
+
+screen r13_admin_pin():
+    modal True
+    zorder 120
+    default typed=""
+    default wrong=False
+    add Solid("#000000c8")
+    frame:
+        xalign .5 yalign .5 xsize 420 padding (24,20) background R13InkPanel()
+        vbox:
+            spacing 12 xalign .5
+            text "관리자 핀 번호" size 26 color "#f6d18a" xalign .5
+            text (("●"*len(typed)+"○"*(4-len(typed))) if len(typed)<=4 else "●●●●") size 34 color "#fff4df" xalign .5
+            if wrong:
+                text "번호가 맞지 않아요" size 19 color "#ff9a7a" xalign .5
+            grid 3 4:
+                spacing 8 xalign .5
+                for k in ("1","2","3","4","5","6","7","8","9","지우기","0","확인"):
+                    textbutton k:
+                        xsize 110 ysize 64 text_size (28 if len(k)==1 else 20) text_xalign .5
+                        action (SetScreenVariable("typed",typed[:-1]) if k=="지우기"
+                            else Function(r13_admin_pin_check,typed) if k=="확인"
+                            else [SetScreenVariable("typed",(typed+k)[:4]),SetScreenVariable("wrong",False)])
+            textbutton "닫기" xalign .5 xsize 200 ysize 52 text_size 21 action Hide("r13_admin_pin")
+    key "game_menu" action Hide("r13_admin_pin")
+
+init 132 python:
+    def r13_admin_pin_check(typed):
+        screen=renpy.get_screen("r13_admin_pin")
+        if typed==R13_ADMIN_PIN:
+            persistent.room13_admin=True
+            renpy.hide_screen("r13_admin_pin")
+            renpy.notify("관리자 도구가 켜졌어요. 마을 화면 위쪽 ‘관리자’ 버튼을 누르세요.")
+        else:
+            if screen:
+                screen.scope["typed"]=""
+                screen.scope["wrong"]=True
+        renpy.restart_interaction()

@@ -7,7 +7,7 @@ init 114 python:
     # person, grudge flag, cold lines, (repair title, cost in 냥, repair lines), extra flags on repair
     R13_GRUDGES={
         "piko":dict(person="resident_piko",flag="piko_hostile",
-            cold=[("resident_piko","모모 관장님께 일러 주신 분이죠. 그날 저녁은 굶었어요.")],
+            cold=[("resident_piko","모모 관장님께 일러 주신 분이죠. 그 바람에 그날 저녁은 굶었어요.")],
             fix=("받은 사례금을 나눠 준다",3,[("dad","그 사례금은 내가 혼자 가질 돈이 아니었다. 밥값으로 받아 줘."),
                 ("resident_piko","……가짜를 그린 건 제 잘못이에요. 그래도 밥값은 받을게요. 이걸로 끝내요.")])),
         "sling":dict(person="resident_sling",flag="sling_hostile",
@@ -20,11 +20,11 @@ init 114 python:
             fix=("신고 사례금을 돌려준다",5,[("dad","그 사례금을 받을 일이 아니었습니다. 돌려드리겠습니다."),
                 ("resident_ttadak","……돈으로 봉한 벽이 다시 열리지는 않소. 그래도 당신이 그 돈을 쥐고 있지 않다는 건 알겠소.")])),
         "yeoni":dict(person="resident_yeoni",flag="yeoni_hostile",
-            cold=[("resident_yeoni","교환대 물건 가져가신 분이죠. 저는 그날 하루 장사를 공쳤어요.")],
+            cold=[("resident_yeoni","교환대 물건 가져가신 분이죠. 그 바람에 저는 그날 하루 장사를 공쳤어요.")],
             fix=("목도리와 장갑 값을 치른다",3,[("dad","물건은 우리 것이었지만, 당신이 값을 치르고 받아 온 건 맞습니다. 그 값은 내겠습니다."),
                 ("resident_yeoni","……이제 셈은 끝났네요. 다음엔 먼저 물어봐 주세요.")])),
         "nabi":dict(person="nabi",flag="nabi_hostile",
-            cold=[("nabi","뒷문 일, 할머니한테 말씀하셨잖아요. 그 주에 아이들은 못 먹었어요.")],
+            cold=[("nabi","뒷문 일, 할머니한테 말씀하셨잖아요. 그 바람에 그 주 아이들은 밥을 못 먹었어요.")],
             fix=("빠진 품삯만큼 아이들 밥값을 낸다",4,[("dad","그때 아이들이 못 먹은 만큼은 내가 내겠다."),
                 ("nabi","……돈으로 될 일이 아니었어요. 그래도 이번 주 아이들은 먹겠네요.")])),
         "ppul":dict(person="resident_ppul",flag="ppul_hostile",
@@ -33,7 +33,7 @@ init 114 python:
                 ("resident_ppul","사과는 받겠소. 장부를 광장에 붙이지 않는다면, 나도 그날 일은 더 꺼내지 않겠소.")])),
         "nubi":dict(person="resident_nubi",flag="nubi_hostile",
             cold=[("resident_nubi","검사원께 말씀하신 뒤로 장작이 끊겼어요. 애들이 밤에 떨어요.")],
-            fix=("끊긴 장작 값을 대신 낸다",4,[("dad","장작이 끊긴 건 내가 알린 탓도 있습니다. 이번 주 장작 값은 제가 내겠습니다."),
+            fix=("끊긴 장작 값을 대신 낸다",4,[("dad","장작이 끊긴 건 제가 알린 탓도 있습니다. 이번 주 장작 값은 제가 내겠습니다."),
                 ("resident_nubi","……고마워요. 그래도 너울 일은 저도 어쩔 수 없었다는 것만 알아 주세요.")])),
         "siluk":dict(person="resident_siluk",flag="siluk_hostile",
             cold=[],
@@ -86,7 +86,7 @@ init 114 python:
         if person=="resident_eunho" and key=="H1" and r13_has("H1") and r13_grudge_open("eunho"):
             _r13_mem_present(person,key,identity)
             r13_flag("eunho_reconciled")
-            return [("resident_eunho","……백 부인 글씨군요. 제 혼자 꾸민 일이 아니라는 건 알고 계셨군요."),
+            return [("resident_eunho","……백 부인 글씨군요. 저 혼자 꾸민 일이 아니라는 건 알고 계셨군요."),
                 ("resident_eunho","그렇다고 제가 한 일이 없어지진 않지요. 그래도 이제부터 당신한테는 남들과 같은 값만 받겠습니다.")]
         return _r13_mem_present(person,key,identity)
 

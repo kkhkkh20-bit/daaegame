@@ -125,7 +125,7 @@ label r13_ev_lamp_round:
             "북쪽 길 끝 등도 같이 보자고 한다" if r13_has("lamplighter_dawn_asked") and not r13_has("know_lamp_sign"):
                 call r13_lines([("resident_lamplighter","그 등은 제가 혼자 봐요."),
                     (None,"초롱은 장대를 내리고 한참 말이 없었다."),
-                    ("resident_lamplighter","……미안해요. 거기는 약속한 사람이 있어요. 그 사람 허락 없이는 못 보여 드려요.",{"expression":"anxious"})],"ev:lamp:north")
+                    ("resident_lamplighter","……미안해요. 그 등은 따로 약속한 사람이 있어요. 그 사람 허락 없이는 못 보여 드려요.",{"expression":"anxious"})],"ev:lamp:north")
                 $ r13_flag("know_lamp_sign")
                 $ _ep_loop=True
             "순회를 마치고 돌아간다":
@@ -146,7 +146,7 @@ label r13_ev_lamp_again:
             ("daram","거봐, 내가 이름 잘 지었지!")] if room13.get("daram_state") in ("with_dad","rescued") else
             [("resident_lamplighter","‘도토리’ 등은 오늘도 제일 밝아요. 다람이한테 전해 줘요.")],"ev:lamp2:named")
     if r13_has("neoul_annoyed"):
-        call r13_lines([("resident_lamplighter","어제 등 끈 일로 오늘 아침에 너울 씨한테 불려 갔어요."),
+        call r13_lines([("resident_lamplighter","어제 등을 끈 일로 오늘 아침에 너울 씨한테 불려 갔어요."),
             ("resident_lamplighter","괜찮아요. 그래도 오늘은 등 얘기만 해요.")],"ev:lamp2:scolded")
     if "W6" in room13["evidence"]:
         call r13_lines([("resident_lamplighter","어제는 일찍 꺼지는 등이 넷이었죠. 오늘은 다섯이에요.")],"ev:lamp2:count")
@@ -226,7 +226,7 @@ label r13_ev_eve_trial:
                 $ r13_flag("eve:tok")
                 if r13_has("witness:tok"):
                     call r13_lines([("resident_tok","핀은 내가 고친 거요. 그 핀이 누구 것인지도 재판에서 내가 말하겠소.")],"ev:eve:tok:yes")
-                elif r13_has("tok_detained"):
+                elif r13_has("tok_detained") and not r13_has("tok_cleared"):
                     call r13_lines([(None,"톡의 자리는 비어 있었다. 아직 수리점 문에 판자가 덧대져 있다고 했다."),
                         ("dad","(톡이 갇혀 있으면 재판에서 핀 이야기를 해 줄 사람이 없다.)",{"thought":True})],"ev:eve:tok:held")
                 else:

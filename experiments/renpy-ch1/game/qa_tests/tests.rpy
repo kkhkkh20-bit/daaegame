@@ -32,7 +32,7 @@ testcase trial_missing:
     screenshot "m_board.png"
     click "결론을 말한다"
     pause 1.0
-    click "다른 길이 있으니"
+    click "아이만 들어갔다"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
     pause 0.5
@@ -184,7 +184,7 @@ testcase trial_full:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "다른 길이 있으니"
+    click "아이만 들어갔다"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -210,13 +210,13 @@ testcase trial_full:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "주방에서 레버를 올려야"
+    click "주방 레버로만"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "할머니가 어르신을 죽였다"
+    click "통로를 아는 할머니가 죽였다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -247,7 +247,7 @@ testcase trial_full:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "주방에서 그 방까지"
+    click "주방에 간 뒤로는"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -267,7 +267,7 @@ testcase trial_full:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "핀을 여민 곳은 식당"
+    click "식당을 나설 때도"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -285,7 +285,7 @@ testcase trial_full:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "구하다 주운 게 아니라"
+    click "핀이 내려친 쪽 고리에"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result")=="culprit_proven" and room13.get("granny_state")=="detained" timeout 120
     pause 0.5
@@ -316,7 +316,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "다른 길이 있으니"
+    click "아이만 들어갔다"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -342,13 +342,13 @@ testcase trial_gate_unenforced:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "주방에서 레버를 올려야"
+    click "주방 레버로만"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "할머니가 어르신을 죽였다"
+    click "통로를 아는 할머니가 죽였다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -379,7 +379,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "주방에서 그 방까지"
+    click "주방에 간 뒤로는"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -399,7 +399,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "핀을 여민 곳은 식당"
+    click "식당을 나설 때도"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -417,7 +417,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "구하다 주운 게 아니라"
+    click "핀이 내려친 쪽 고리에"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
     pause 0.5
@@ -449,7 +449,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "다른 길이 있으니"
+    click "아이만 들어갔다"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -475,13 +475,13 @@ testcase trial_gate_no_witness:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "주방에서 레버를 올려야"
+    click "주방 레버로만"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "할머니가 어르신을 죽였다"
+    click "통로를 아는 할머니가 죽였다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -543,7 +543,7 @@ testcase finale_win:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "아무도 돌아올 수 없다"
+    click "아무도 못 돌아온다는"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -569,7 +569,7 @@ testcase finale_win:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "갈수록 짧아졌다"
+    click "반짝 효과는 짧고"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -596,7 +596,7 @@ testcase finale_win:
     screenshot "fi_f3_ready.png"
     click "결론을 말한다"
     pause 1.0
-    click "손으로 교대하며"
+    click "학교에 모여 식량을"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -618,7 +618,7 @@ testcase finale_win:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "엄마를 다시 붙잡으려고"
+    click "엄마를 붙잡으려"
     pause 0.6
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
@@ -1348,7 +1348,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "다른 길이 있으니"
+    click "아이만 들어갔다"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -1374,13 +1374,13 @@ testcase trial_fake_testimony:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "주방에서 레버를 올려야"
+    click "주방 레버로만"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "할머니가 어르신을 죽였다"
+    click "통로를 아는 할머니가 죽였다"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -1411,7 +1411,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "주방에서 그 방까지"
+    click "주방에 간 뒤로는"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -1431,7 +1431,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "핀을 여민 곳은 식당"
+    click "식당을 나설 때도"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -1449,7 +1449,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "구하다 주운 게 아니라"
+    click "핀이 내려친 쪽 고리에"
     pause 0.6
     click pos (640,600) until eval room13.get("trial_result") in ("detained","cleared","culprit_proven") timeout 120
     pause 0.5
@@ -1482,7 +1482,7 @@ testcase trial_c1_h7:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "다른 길이 있으니"
+    click "아이만 들어갔다"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     assert eval ("C1" in room13["propositions"])
@@ -2392,7 +2392,7 @@ testcase trial_counter:
     pause 0.6
     click "결론을 말한다"
     pause 1.0
-    click "다른 길이 있으니"
+    click "아이만 들어갔다"
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
@@ -2409,7 +2409,7 @@ testcase trial_counter:
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
     screenshot "counter_menu.png"
-    click "겁이 많아서"
+    click "겁 많은 아이는"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -2420,7 +2420,7 @@ testcase trial_counter:
     pause 0.6
     click pos (640,600) until screen "choice" timeout 40
     pause 0.6
-    click "주방에서 레버를 올려야"
+    click "주방 레버로만"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -2541,3 +2541,60 @@ testcase memo_from_desk:
     screenshot "memo_card_over_desk.png"
     pause 2.6
     screenshot "desk_without_memo.png"
+
+testcase tok_lamp_late:
+    # 0.18.50: after any first choice at Tok's accusation, the lamp can still be checked on the square,
+    # which opens Ubak's confession (and so Tok's release and testimony).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square"),("ep4_seen","ep4_open","entry_corrected","lodging"))
+    pause 1.0
+    assert eval ("ep4_lamp_look" in [k for k,a in r13_actions()])
+    run Function(r13_finish_action,"ep4_lamp_look")
+    assert eval (r13_has("clue_lamp_marks") and "ubak_lamp" in [k for k,t in r13_topics("resident_ubak")] or r13_has("clue_lamp_marks") and r13_where("resident_ubak") is None)
+
+testcase admin_pin:
+    # 0.18.50: settings → 관리자 도구 → PIN 4861 turns the tool on; a wrong PIN does not.
+    pause 2.0
+    $ persistent.room13_admin=False
+    run Show("r13_admin_pin")
+    pause 0.5
+    click "1"
+    click "2"
+    click "3"
+    click "4"
+    click "확인"
+    pause 0.3
+    assert eval (not persistent.room13_admin)
+    click "4"
+    click "8"
+    click "6"
+    click "1"
+    screenshot "pin_typed.png"
+    click "확인"
+    pause 0.3
+    assert eval (persistent.room13_admin and not renpy.get_screen("r13_admin_pin"))
+    $ persistent.room13_admin=False
+
+testcase daram_bed:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="room13",daram_state="with_dad",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "daram_on_bed.png"
+
+testcase long_topic_list:
+    # 0.18.50: many topics grow the list upward instead of scrolling.
+    pause 2.0
+    $ persistent.room13_large_text=True
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    pause 1.0
+    $ r13_qa_person="granny"
+    run Jump("r13_qa_talk_menu")
+    pause 1.5
+    screenshot "granny_topics.png"
+    $ persistent.room13_large_text=False

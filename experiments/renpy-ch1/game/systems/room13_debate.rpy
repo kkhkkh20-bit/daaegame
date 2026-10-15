@@ -31,9 +31,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="다른 길이 있다는 걸 어떻게 정리할까?",
                 options=[
-                    ("correct","복도에서 본 건 앞문뿐이다. 다른 길이 있으니 '아이만 들어갈 수 있었다'는 말은 틀렸다."),
-                    ("over","책장 뒤 길이 있으니, 그 길을 아는 할머니가 범인이다."),
-                    ("weak","통로 안에 엄마 물건이 있었으니, 그날 엄마가 그 길로 왔을지도 모른다."),
+                    ("correct","'아이만 들어갔다'는 말은 틀렸다"),
+                    ("over","길을 아는 할머니가 범인이다"),
+                    ("weak","엄마가 그 길로 왔을지도 모른다"),
                 ],
                 correct=[("resident_seori","13호에는 정문 말고도 들어갈 길이 있었습니다. ‘아이만 들어갈 수 있었다’는 말은 고치십시오."),
                     ("seryeon","그 통로 안에 그 아이 엄마의 물건이 있었다면서요."),
@@ -77,9 +77,9 @@ init 98 python:
                         lines=[("resident_ppul","잠깐만요. 아까 13호에 다른 길이 있다고 하셨지요."),
                             ("resident_ppul","그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?",{"expression":"angry"})],
                         prompt="통로가 있다는 내 말이 다람이에게 돌아왔다. 어떻게 답할까?",
-                        options=[("correct","그 통로는 주방에서 레버를 올려야 열린다. 방 안의 아이 혼자서는 열 수 없다."),
-                            ("over","그 통로를 쓴 사람은 할머니뿐이다."),
-                            ("weak","아이는 겁이 많아서 그런 길로 못 간다.")],
+                        options=[("correct","통로는 주방 레버로만 열린다"),
+                            ("over","그 통로는 할머니만 썼다"),
+                            ("weak","겁 많은 아이는 그 길로 못 간다")],
                         correct=[("dad","책장 뒤 문은 주방에서 레버를 올려야 열립니다. 아까 이 자리에서 확인한 대로입니다."),
                             ("dad","방 안에 갇힌 아이 혼자서는 열 수 없습니다. 그 문이 열렸다면, 그때 주방에 누군가 있었다는 뜻입니다."),
                             ("resident_ppul","……주방에 누군가요.",{"expression":"flustered"})],
@@ -94,9 +94,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="촛대와 상처의 순서로 무엇을 말할까?",
                 options=[
-                    ("correct","아이는 팔을 쳤다. 머리의 상처는 촛대가 부러진 뒤, 침대 밑에 숨은 아이가 아닌 누군가가 냈다."),
-                    ("over","그러니 통로를 아는 할머니가 어르신을 죽였다."),
-                    ("weak","아이는 겁에 질려 있었으니 무슨 일을 했든 책임이 없다."),
+                    ("correct","머리 상처는 다른 누군가가 냈다"),
+                    ("over","통로를 아는 할머니가 죽였다"),
+                    ("weak","겁먹은 아이에게는 책임이 없다"),
                 ],
                 correct=[("resident_seori","아이가 한 일과 어르신을 죽게 한 일을 같은 일로 적을 수는 없습니다."),
                     ("daram","그럼…… 내가 할아버지를 때린 건 어떻게 돼?",{"expression":"anxious"}),
@@ -129,9 +129,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="할머니의 그날 움직임을 어떻게 정리할까?",
                 options=[
-                    ("correct","첫 비명 때 식당에 있었던 건 맞다. 하지만 주방에 간 뒤로는 아무도 못 봤고, 주방에서 그 방까지 바로 가는 길이 있다."),
-                    ("over","그 시간에 할머니가 13호실에 가서 어르신을 죽였다."),
-                    ("weak","나비는 할머니 편이니 그 말은 믿을 수 없다."),
+                    ("correct","주방에 간 뒤로는 아무도 못 봤다"),
+                    ("over","그때 할머니가 13호실에서 죽였다"),
+                    ("weak","나비는 할머니 편이라 못 믿는다"),
                 ],
                 correct=[("resident_seori","첫 비명 때 식당에 있었다는 건 사실입니다. 하지만 그것이 그 뒤의 시간까지 설명해 주지는 않습니다."),
                     ("resident_seori","할머니가 13호에 실제로 들어갔는지는 이어서 보겠습니다.")],
@@ -160,9 +160,9 @@ init 98 python:
                             ("granny","그럼 그 핀을 마지막으로 만진 건 나비네요. 나비가 떨어뜨렸을 수도 있잖아요?",{"expression":"angry"}),
                             ("nabi","네……?",{"expression":"surprise"})],
                         prompt="나비의 증언이 나비에게 돌아왔다. 어떻게 답할까?",
-                        options=[("correct","나비가 핀을 여민 곳은 식당이다. 그 뒤 핀은 할머니 목도리에 달린 채 식당을 나갔다."),
-                            ("over","나비는 할머니가 시켜서 말을 바꾸고 있다."),
-                            ("weak","그런 핀은 흔하니 누구 것인지 모른다.")],
+                        options=[("correct","핀은 식당을 나설 때도 달려 있었다"),
+                            ("over","나비가 할머니 지시로 말을 바꿨다"),
+                            ("weak","흔한 핀이라 누구 것인지 모른다")],
                         correct=[("dad","나비가 핀을 여며 드린 건 첫 비명 때, 식당에서였습니다."),
                             ("dad","그 뒤 공구를 가지러 식당을 나간 건 할머니입니다. 핀도 목도리에 달린 채 함께 나갔습니다."),
                             ("granny","……….",{"expression":"anxious"})],
@@ -177,7 +177,7 @@ init 98 python:
                         # 0.18.35: E14 itself says when the ring was crushed must be matched separately.
                         "E14":("granny","핀이 고리에 끼어 있었다고요? 주워 들다가 끼었을 수도 있잖아요. 그 고리가 언제 찌그러졌는지는 아세요?",{"expression":"angry"})},
                     hint="핀이 끼어 있었다는 것만으로는 모자란다. 고리가 어느 쪽으로 눌렸는지 맞춰 본 기록이 있어야 한다.",
-                    broken=[("dad","촛대를 상처와 맞춰 볼 때 함께 적은 기록입니다. 장식 고리는 내려친 방향으로 찌그러졌고, 안에 문 핀도 같은 쪽으로 휘었습니다."),
+                    broken=[("dad","촛대를 상처와 맞춰 볼 때 함께 적은 기록입니다. 장식 고리는 내려친 방향으로 찌그러졌고, 고리 안에 낀 핀도 같은 쪽으로 휘었습니다."),
                         ("dad","톡 씨 말대로 그 틈은 나중에 핀만 밀어 넣을 수 있는 틈이 아닙니다. 주워 들다가 끼인 게 아니라, 내려친 순간에 고리에 박혀 들어간 겁니다.")],
                     wrong=("granny","핀 하나로 내가 촛대를 휘둘렀다는 거예요?")),
                 dict(id="s3",who="granny",text="그분이 그렇게 위험한 줄은 【몰랐어요】.",
@@ -189,9 +189,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="핀과 촛대로 무엇을 말할까?",
                 options=[
-                    ("correct","첫 비명 뒤에도 핀은 할머니 옷에 있었다. 그 핀이 내려친 방향으로 눌린 고리에 끼었다. 구하다 주운 게 아니라 내려친 것이다."),
-                    ("over","할머니는 처음부터 우리 가족을 노리고 이 모든 걸 꾸몄다."),
-                    ("weak","할머니가 그 방에 들어간 적이 있다는 것까지만 말할 수 있다."),
+                    ("correct","핀이 내려친 쪽 고리에 끼어 있었다"),
+                    ("over","할머니가 처음부터 우리를 노렸다"),
+                    ("weak","방에 들어간 적이 있다는 것까지다"),
                 ],
                 correct=[("resident_seori","위험을 알면서 둘만 남겼고, 촛대에 할머니의 핀이 내려친 방향으로 끼어 있습니다. 구하려다 생긴 흔적이라는 말은 받아들일 수 없습니다."),
                     ("resident_seori","대답하지 않으셔도, 제출된 자료로 판단하겠습니다.")],
@@ -217,9 +217,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="회복 기록이 뜻하는 것은?",
                 options=[
-                    ("correct","모두 낫는다는 뜻은 아니다. 하지만 '아무도 돌아올 수 없다'는 판단은 틀렸다."),
-                    ("over","모두 나을 수 있으니, 지금 당장 전부 풀어 줘야 한다."),
-                    ("weak","나중에 다시 나빠졌으니 나아졌던 기록은 빼고 생각하자."),
+                    ("correct","아무도 못 돌아온다는 판단은 틀렸다"),
+                    ("over","모두 나으니 당장 전부 풀어 준다"),
+                    ("weak","다시 나빠졌으니 나은 기록은 뺀다"),
                 ],
                 correct=[("resident_seori","잠깐이라도 나아졌던 일을 지워서는 안 됐습니다."),
                     (None,"보리가 환자를 누르던 손을 풀었다. 그리고 담요를 덮어 주었다. 장치는 아직 멈추지 않았다.")],
@@ -263,9 +263,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="두 번 지켜본 결과로 무엇을 말할까?",
                 options=[
-                    ("correct","희생 뒤 반짝 올라간 힘은 갈수록 짧아졌다. 남은 힘을 모으면 사람을 잇지 않고 필요한 곳부터 버틸 수 있다."),
-                    ("over","남은 힘을 모으면 장치를 영원히 다시 채울 수 있다."),
-                    ("weak","희생 직후엔 불이 올랐으니, 아직은 쓸 만한 방법이다."),
+                    ("correct","반짝 효과는 짧고, 모으면 버틴다"),
+                    ("over","힘을 모으면 장치를 영원히 채운다"),
+                    ("weak","희생 직후 불이 올랐으니 쓸 만하다"),
                 ],
                 correct=[("resident_ppul","돌에 남은 힘도 결국 다 쓰잖소!",{"expression":"angry"}),
                     ("mom","맞아요. 그래서 필요한 곳에 모여 지내면서, 그동안 장작과 식량을 마련해야 해요. 다음 사람을 바칠 날만 기다리는 대신에요."),
@@ -296,9 +296,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="오늘 밤을 버틸 방법은?",
                 options=[
-                    ("correct","학교로 모여 실제 식량을 나누고, 장치는 손으로 교대하며 돌린다."),
-                    ("over","장치를 바로 멈추고 각자 집에서 버틴다."),
-                    ("weak","집마다 같은 양을 나누고 각자 불을 지킨다."),
+                    ("correct","학교에 모여 식량을 나누고 교대한다"),
+                    ("over","장치를 멈추고 각자 집에서 버틴다"),
+                    ("weak","집마다 똑같이 나누고 불을 지킨다"),
                 ],
                 correct=[("nabi","학교로 솥을 옮겼어요. 들어오실 분부터 들어오세요."),
                     ("resident_bori","장작을 집집마다 나누면 모자라요. 그러니 한곳에 모여 있어야 해요."),
@@ -317,7 +317,7 @@ init 98 python:
                     broken=[("dad","아내는 첫 주에 이미 저희에게 오지 말라고 경고했습니다. 그 경고가 전해지지 않았을 뿐입니다. 당신에게서 도망친 뒤의 일이었습니다."),
                         ("mom","여관으로 돌아갈 수는 없었어요. 그동안 가족에게 돌아갈 방법을 찾고 있었거든요.")],
                     broken_by={
-                        "E18":[("dad","전해지지 못한 봉투입니다. 아내는 첫 주에 이미 저희에게 오지 말라고 경고했습니다. 누가 찾게 해 주기 전부터, 아내는 스스로 저희에게 연락하고 있었습니다."),
+                        "E18":[("dad","전해지지 못한 봉투입니다. 아내는 첫 주에 이미 저희에게 오지 말라고 경고했습니다. 누가 나서서 아내를 찾아 주기 전부터, 아내는 스스로 저희에게 연락하고 있었습니다."),
                             ("mom","여관으로 돌아갈 수는 없었어요. 그동안 가족에게 돌아갈 방법을 찾고 있었거든요.")],
                         "E17":[("dad","부엉이 어르신이 베껴 둔 기록입니다. 어르신은 아내를 만났고, 사라진 사람들을 따로 조사하고 있었습니다. 아내를 찾게 해 준 건 할머니가 아닙니다."),
                             ("mom","그분이 제 이야기를 들어 주셨어요. 여관으로는 돌아갈 수 없었고요.")]},
@@ -332,9 +332,9 @@ init 98 python:
             ],
             conclusion=dict(prompt="편지와 경고, 떼어 놓자는 요청을 이으면?",
                 options=[
-                    ("correct","엄마를 다시 붙잡으려고 가족을 불렀고, 아이를 떼어 놓아 엄마를 움직이려 했다."),
-                    ("over","할머니 혼자 마을의 모든 희생을 꾸몄다."),
-                    ("weak","할머니가 편지를 보낸 건 사실이다."),
+                    ("correct","엄마를 붙잡으려 아이를 떼어 놓았다"),
+                    ("over","할머니 혼자 모든 희생을 꾸몄다"),
+                    ("weak","할머니가 편지를 보낸 건 사실이다"),
                 ],
                 correct=[("dad","아내가 돌아오기를 거절하자 이 편지를 보내셨습니다. 가족을 떼어 놓는 요청도 미리 써 두셨고요."),
                     ("dad","대답하지 않으셔도 오늘 기록은 남습니다."),
@@ -456,6 +456,11 @@ init 98 python:
         """Not ready, and nothing left the player can break: only closing remains."""
         return not r13_debate_ready(claim) and not r13_debate_engageable(claim)
 
+    def r13_debate_dad_broken(claim):
+        """Statements Dad actually broke (a skipped one does not count)."""
+        return sum(1 for st in r13_debate_statements(claim)
+            if not st.get("truth") and not r13_debate_skipped(claim,st) and r13_debate_is_broken(claim,st["id"]))
+
     def r13_debate_emphasis(st):
         text=st["text"]
         return text.split("【",1)[1].split("】",1)[0] if "【" in text else text
@@ -465,9 +470,16 @@ init 98 python:
         sts=[st for st in r13_debate_statements(claim) if not st.get("truth") and not r13_debate_skipped(claim,st)]
         done=[st for st in sts if r13_debate_is_broken(claim,st["id"])]
         left=[st for st in sts if not r13_debate_is_broken(claim,st["id"])]
+        chair=R13_DEBATE[claim]["chair"]
+        # 0.18.50: everything broken but no conclusion said (or nothing actually broken by Dad).
+        if not left:
+            return [("dad","(말은 모두 뒤집었다. 하지만 결론은 말하지 않았다.)",{"thought":True}),
+                (chair,"결론을 듣지 못했으니 오늘은 여기까지 하겠습니다.")]
+        if not done:
+            return [("dad","(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)",{"thought":True})]
         rows=[("dad","(‘%s’ 부분은 뒤집었다. 하지만 ‘%s’ 부분은 뒤집지 못했다.)"%(r13_debate_emphasis(done[-1]),r13_debate_emphasis(left[0])),{"thought":True})]
         rows+=r13_debate_gap_lines(claim,left[0])
-        rows.append((R13_DEBATE[claim]["chair"],"반박된 말은 기록에서 고치겠습니다. 남은 말은 오늘 그대로 둡니다."))
+        rows.append((chair,"반박된 말은 기록에서 고치겠습니다. 남은 말은 오늘 그대로 둡니다."))
         return rows
 
     def r13_debate_closed(claim):
@@ -560,12 +572,12 @@ label r13_debate_loop:
     if r13_debate_action[0]=="select":
         $ r13_debate_selected=r13_debate_action[1]
     elif r13_debate_action[0]=="leave":
-        if r13_debate_progress(r13_claim)[0]:
+        if r13_debate_dad_broken(r13_claim):
             call screen r13_confirm("여기까지 정리하면 이 회의에서는 이 주장을 다시 다룰 수 없다. 반박한 말은 기록에 남고, 남은 말은 그대로 남는다.","여기까지 정리한다","더 찾아본다")
         else:
             call screen r13_confirm("반론을 그만두면 이 회의에서는 이 주장을 다시 다룰 수 없다. 상대의 말이 그대로 남는다.","반론을 그만둔다","더 찾아본다")
         if _return:
-            if r13_debate_progress(r13_claim)[0]:
+            if r13_debate_dad_broken(r13_claim):
                 $ r13_debate_close(r13_claim,"partial")
                 call r13_lines(r13_debate_partial_lines(r13_claim),"debate:partial:"+r13_claim)
                 return False

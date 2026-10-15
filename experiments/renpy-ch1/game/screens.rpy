@@ -611,6 +611,13 @@ screen pause_menu():
                         use r13_opt_row("저장 정리"):
                             textbutton "이전 저장 정리" xsize 220 action Show("r13_save_cleanup",scope="old") text_size r13_read_size(20,24)
                             textbutton "모든 진행 저장 정리" xsize 260 action Show("r13_save_cleanup",scope="all") text_size r13_read_size(20,24)
+                        # 0.18.50 (owner): test tool behind a PIN (systems/room13_admin.rpy).
+                        use r13_opt_row("관리자 도구"):
+                            if persistent.room13_admin:
+                                text "켜짐 · 마을 화면 위쪽 ‘관리자’" size r13_read_size(18,21) color R13_UI_COLORS["menu_secondary"] yalign .5
+                                textbutton "끄기" xsize 120 action Function(r13_admin_toggle) text_size r13_read_size(20,24)
+                            else:
+                                textbutton "핀 번호로 켜기" xsize 220 action Show("r13_admin_pin") text_size r13_read_size(20,24)
             hbox:
                 spacing 14
                 textbutton "옵션 초기화" xsize 180 action Confirm("소리·화면·읽기 설정을 기본값으로 돌릴까요? 진행 저장과 발견·결말 기록은 유지됩니다.",Function(r13_reset_options)) text_size r13_read_size(20,24)

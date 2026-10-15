@@ -136,9 +136,9 @@ init 70 python:
             ("dad","뒤에서 밀기 전에 먼저 물어보는 편이 낫겠군요."),
             ("resident_siluk","그렇죠. 제가 멈춘 데는 다 이유가 있으니까.")],None),
         ("tori_stitches","resident_tori","바느질을 마치면 무엇부터 확인합니까?",[
-            ("resident_tori","접히는 데요. 펼쳐 놓으면 멀쩡해도 접으면 실이 당기거든요."),
+            ("resident_tori","접히는 부분부터 봐요. 펼쳐 놓으면 멀쩡해도 접으면 실이 당기거든요."),
             ("resident_tori","아, 할머니 목도리도 오늘 끝내야 하는데. 브로치 핀이 헐거워서 톡 씨한테 맡기셨대요."),
-            ("resident_tori","목요일까지 해 준다고 했다는데……. 톡 씨 가게엔 요즘 맞는 부품이 없다던데요.")],None),
+            ("resident_tori","목요일까지 핀을 고쳐 준다고 했다는데……. 톡 씨 가게엔 요즘 맞는 부품이 없다던데요.")],None),
         ("tori_count","resident_tori","받은 천의 수량도 적어 두신다고요?",[
             ("resident_tori","받은 것하고 돌려드린 것, 둘 다 세어 둬요. 나중에 모자란다고 하면 헷갈리니까."),
             ("dad","제가 물건을 맡길 때도 같이 세겠습니다."),
@@ -163,7 +163,7 @@ init 70 python:
             ("resident_tok","꺼낸 순서대로 놔요. 비슷하다고 한데 모으면 찾느라 더 걸려요."),
             ("dad","요즘 맡으신 수리는 많습니까?"),
             ("resident_tok","없어요. 다들 새 걸 사지, 고쳐 달라고는 안 와요."),
-            (None,"작업대 한쪽에 천으로 덮은 작은 상자가 있었다. 톡은 그걸 팔꿈치로 슬쩍 밀어 놓았다.")],None),
+            (None,"작업대 한쪽에 천으로 덮은 작은 상자가 있었다. 톡은 그 상자를 팔꿈치로 슬쩍 밀어 놓았다.")],None),
         ("lamplighter_check","resident_lamplighter","점검을 마치면 바로 자리를 옮기십니까?",[
             ("resident_lamplighter","네. 해 지고 한 바퀴만 돌아요. 그다음엔 집에 가서 자요."),
             ("resident_lamplighter","왜요? 꺼진 등이라도 봤어요?")],None),
@@ -172,7 +172,7 @@ init 70 python:
             ("dad","허락 없이 그림에 덮인 천을 걷지는 않겠습니다."),
             ("resident_piko","고마워요. 그림이 완성됐는지는 그리는 사람에게 먼저 물어봐 주세요.")],None),
         ("seol_rope","resident_seol","종을 울리기 전에 끈을 다시 매십니까?",[
-            ("resident_seol","매요. 새벽 종 치러 올라가면 손이 얼어서 끈부터 봐야 해요."),
+            ("resident_seol","네, 다시 매요. 새벽 종을 치러 올라가면 손이 얼어서 끈부터 봐야 해요."),
             ("resident_seol","그 시간에 깨어 있는 건 저랑 초롱 씨뿐이에요. 초롱 씨는 새벽에도 북쪽 길 끝 등 하나만 보고 가요."),
             ("resident_seol","다른 등은 그냥 지나치고요. 매일 그래요.")],None),
     ]
@@ -191,20 +191,20 @@ init 70 python:
     ROOM13["topics"]["smalltalk:tori_stitches"]["flags"]=["heard_pin_job"]
     for r13_key,r13_person,r13_title,r13_need,r13_lines,r13_flags in (
         ("cross:nabi_door","nabi","밤에 주방에는 누가 들어가?",[],[
-            ("nabi","아무도요. 밤에는 제가 뒷문을 잠그고 열쇠도 제가 갖고 있어요."),
+            ("nabi","아무도 안 들어가요. 밤에는 제가 뒷문을 잠그고 열쇠도 제가 갖고 있어요."),
             ("nabi","왜요? 뭐가 없어졌어요?")],["asked_nabi_door"]),
         ("cross:nabi_light","nabi","콩이가 밤에 주방 불을 봤다던데.",["heard_kitchen_light"],[
             ("nabi","……콩이가요? 잘못 봤겠죠. 창에 달빛이 비쳤나 봐요.",{"expression":"flustered"}),
             (None,"나비는 앞치마 주머니에 손을 넣었다. 열쇠가 짤랑거렸다."),
-            ("nabi","할머니한테는 그런 말 하지 마세요. 괜히 걱정하세요.")],["nabi_light_asked"]),
+            ("nabi","할머니한테는 그런 말 하지 마세요. 괜히 걱정하실 거예요.")],["nabi_light_asked"]),
         ("cross:lamp_dawn","resident_lamplighter","새벽에도 북쪽 길 등을 보신다고요?",["heard_dawn_round"],[
             ("resident_lamplighter","……설 씨가 그래요? 그 등이 잘 꺼져서 그래요.",{"expression":"flustered"}),
             (None,"초롱은 대답하면서 장대를 다른 쪽 어깨로 옮겼다."),
             ("resident_lamplighter","등 이야기는 순회할 때 해요. 길 한가운데서 말고요.")],["lamplighter_dawn_asked"]),
         ("cross:tok_pin_job","resident_tok","할머니 브로치 핀은 목요일까지라면서요?",["heard_pin_job"],[
             ("resident_tok","……토리가 그래요?",{"expression":"flustered"}),
-            ("resident_tok","맞는 부품이 없어서 그래요. 남의 장신구 망쳤다고 소문내진 마요."),
-            ("resident_tok","목요일까진 어떻게든 맞춰요. 내 식으로라도.")],["tok_pin_job_known"]),
+            ("resident_tok","핀이 늦는 건 맞는 부품이 없어서예요. 남의 장신구 망쳤다고 소문내진 마요."),
+            ("resident_tok","목요일까진 어떻게든 고쳐 놔요. 내 방식대로라도요.")],["tok_pin_job_known"]),
     ):
         ROOM13["topics"][r13_key]=dict(npc=r13_person,title=r13_title,
             lines=[("dad",r13_title)]+list(r13_lines),day=[1,3],need=list(r13_need),

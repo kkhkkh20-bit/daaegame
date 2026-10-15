@@ -158,7 +158,7 @@ label r13_poc_night_review:
     elif r13_has("E18"):
         call r13_lines([("daram","엄마 글에는 편지 보내라고 한 적 없다고 적혀 있어."),("dad","그럼 우리가 받은 초대 편지는 누가, 왜 보낸 걸까?")],"poc:night:uncompared")
     elif r13_has("J04") or r13_has("J05"):
-        call r13_lines([("daram","어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라."),("dad","응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 맡은 사람만 알겠지.")],"poc:night:packet")
+        call r13_lines([("daram","어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라."),("dad","응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.")],"poc:night:packet")
     elif r13_has("J02") and not r13_has("J03"):
         call r13_lines([("daram","우체국에도 엄마가 갔었는지 아직 못 물어봤지?"),("dad","응. 우체국 창구는 오전에 열어. 그런데 손님 이야기를 우리한테 해 줄까?")],"poc:night:post")
     else:

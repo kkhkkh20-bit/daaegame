@@ -87,7 +87,7 @@ init 103 python:
             ("resident_librarian","여기를 보세요. 네 해 전부터 겨울마다 한 줄씩 늘어요. 전부 사람 이름이에요."),
             ("dad","네 해 전에는 이름이 없었습니까?"),
             ("resident_librarian","없었어요. 그러니 ‘옛날부터 그래 왔다’는 말은 거짓말이에요. 저는 그 말이 제일 무서워요.")]),
-        "ppul_hearing":_ep_topic("resident_ppul","재판을 증거대로 열어 달라고 요구한다",(4,6),not_flags=["fair_hearing","ppul_refused"]),
+        "ppul_hearing":_ep_topic("resident_ppul","재판을 증거대로 열어 달라고 요구한다",(4,6),not_flags=["fair_hearing"]),
         # 4 톡
         "ubak_lamp":_ep_topic("resident_ubak","광장 등 뚜껑의 나사 자국을 묻는다",(3,6),need=["clue_lamp_marks"],not_flags=["tok_cleared"]),
         "tok_testify":_ep_topic("resident_tok","재판에서 핀 이야기를 직접 해 달라고 한다",(4,7),need=["tok_cleared"],flags=["witness:tok"],lines=[
@@ -95,6 +95,14 @@ init 103 python:
             ("resident_tok","내가 만든 이음은 내가 알아요. 재판에서도 똑같이 말할게요. 누가 그걸로 뭘 했는지는 모른다는 것까지요.")]),
     })
     R13_TOPIC_LABELS.update({"nabi_food":"r13_ep2_food","ppul_hearing":"r13_ep3_hearing","ubak_lamp":"r13_ep4_ubak"})
+    # 0.18.50: the lamp clue was only a choice inside Tok's accusation scene; any other first choice
+    # (or walking past it) locked Tok's release and his testimony. It is also a square action now.
+    ROOM13["activities"]["ep4_lamp_look"]=dict(place="square",title="광장 등 뚜껑을 직접 살펴본다",day=[3,6],
+        need=["ep4_seen"],not_flags=["clue_lamp_marks","tok_cleared"],flags=["clue_lamp_marks","ep4_open"],give=[],cost=0,lines=[
+        (None,"광장 등 뚜껑 나사에 가느다란 줄 자국이 나 있었다. 공구가 아니라 계측기 집게가 물었던 자국이었다."),
+        (None,"등 안쪽은 차가웠다. 조각이 있던 자리에 종이 눈금 조각이 끼어 있었다."),
+        ("dad","(톡의 공구 자국이 아니다. 누군가 무언가를 재려고 등 뚜껑을 열었다.)",{"thought":True})])
+    R13_CONTEXT_ACTIVITIES[("square","lamp")]=tuple(R13_CONTEXT_ACTIVITIES.get(("square","lamp"),()))+("ep4_lamp_look",)
 
     def r13_ep_first(flag):
         """True once: marks a scene as seen."""
@@ -138,7 +146,7 @@ label r13_ep1_patrol:
         $ _ep_loop=False
         menu:
             "처마 쪽에 있다고 알려 준다":
-                call r13_lines([("neoul","협조 고맙소. 그 아이는 내일 새벽에 데려가겠소."),
+                call r13_lines([("neoul","협조 고맙소. 그 아이는 곧 데려가겠소."),
                     (None,"바둑이는 처마 쪽을 올려다볼 뿐, 아무 말도 하지 않았다.")],"ep1:patrol:tell")
                 $ r13_flag("bami_reported")
             "못 봤다고 한다":

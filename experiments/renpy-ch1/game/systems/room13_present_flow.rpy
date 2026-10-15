@@ -53,7 +53,7 @@ init 113 python:
                 r13_flag("portrait_lamp_seen","lamplighter_trust")
                 r13_grant(["J07"],"초롱에게 엄마 초상을 보여 줌")
                 return [("resident_lamplighter","……잘 그렸네요. 이 얼굴이면 제가 아는 분이 맞아요."),
-                    ("resident_lamplighter","지금 어디 계신지는 저도 몰라요. 그래도 나중에 편지를 전할 일이 생기면, 이제 사람을 다시 확인할 필요는 없겠어요.")]
+                    ("resident_lamplighter","지금 어디 계신지는 저도 몰라요. 그래도 나중에 편지를 전할 일이 생기면, 이제 그분이 맞는지 따로 확인할 필요는 없겠어요.")]
             if person=="daram":
                 return [("daram","엄마다! 웃을 때 코 찡그리는 것까지 똑같아."),("dad","그래. 엄마를 본 사람이 이 얼굴은 알아볼지도 몰라.")]
             if person in ("granny","nabi"):
