@@ -460,7 +460,7 @@ init 999 python:
             file=spec["file"] if spec else None,crop=spec["crop"] if spec else None,foot=spec.get("foot") if spec else None)
         open(path,"w").write(qa_json.dumps(log,ensure_ascii=False))
 
-# 0.18.28: dot effects (systems/room13_dot_fx.rpy) captured in the real engine.
+# 0.18.29: dot effects (systems/room13_dot_fx.rpy) captured in the real engine.
 default r13_qa_fx_done = False
 init 999 python:
     def r13_qa_fx_capture():

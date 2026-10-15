@@ -2217,7 +2217,7 @@ testcase typography_roles:
     screenshot "type_backlog.png"
 
 testcase dot_fx:
-    # 0.18.28 dot effects: fire, glow, snow, lamp and Daram's blink, plus motion-off stills.
+    # 0.18.29 dot effects: fire, glow, snow, lamp and Daram's blink, plus motion-off stills.
     pause 2.0
     click "처음부터"
     pause 3.0

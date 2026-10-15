@@ -9,7 +9,7 @@
 #   sprites stay as they are; the busts remain the fallback when a character
 #   or file is missing, and the gate waiting window still uses Daram's bust.
 # - No mouth or idle animation is added (r13_idle_art stays static). Daram's
-#   eyes blink (0.18.28, room13_dot_fx.rpy) when the motion option is on.
+#   eyes blink (0.18.29, room13_dot_fx.rpy) when the motion option is on.
 init 58 python:
     R13_FULLBODY_DIALOGUE = True
     R13_FULLBODY = json.load(renpy.file("assets/room13-fullbody-dialogue.json")) if renpy.loadable("assets/room13-fullbody-dialogue.json") else {"people":{}}

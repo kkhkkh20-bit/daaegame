@@ -2,36 +2,41 @@
 init 58 python:
     class R13StonePanel(renpy.Displayable):
         """Flat charcoal infill with a stepped, layered slate rim; no grain."""
-        def __init__(self,focused=False,disabled=False,alpha="eb",**kwargs):
+        def __init__(self,focused=False,disabled=False,alpha="ff",corner=None,**kwargs):
             super(R13StonePanel,self).__init__(**kwargs)
             self.focused=focused
             self.disabled=disabled
             self.alpha=alpha
+            self.corner=corner
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
             r=renpy.Render(w,h);c=r.canvas()
-            cut=10 if h>=70 else 6
+            cut=self.corner or (22 if w>1000 and h>300 else 14 if h>100 else 7)
             def ring(n):
                 d=max(2,cut-n//2)
                 return [(n+d,n),(w-n-d-1,n),(w-n-1,n+d),
                         (w-n-1,h-n-d-1),(w-n-d-1,h-n-1),
                         (n+d,h-n-1),(n,h-n-d-1),(n,n+d)]
-            fill=('#343838' if self.disabled else '#4e5350' if self.focused else '#3a3e3d')+self.alpha
+            fill=('#444641' if self.disabled else '#66685e' if self.focused else '#555751')+self.alpha
             c.polygon(fill,ring(5))
-            c.lines('#1c2021',True,ring(1),3)
-            c.lines('#b2b4a4' if self.focused else '#737975',True,ring(3),3)
-            c.lines('#282d2d',True,ring(6),2)
-            c.line('#d1c99e' if self.focused else '#969b91',(cut+3,3),(w-cut-4,3),2)
+            c.lines('#252724',True,ring(1),3)
+            c.lines('#b6b7a6' if self.focused else '#7d8075',True,ring(3),3)
+            c.lines('#353832',True,ring(6),2)
+            c.line('#ded6ad' if self.focused else '#aaa99a',(cut+3,3),(w-cut-4,3),2)
             c.line('#565c58',(3,cut+3),(3,h-cut-4),2)
             c.line('#1f2424',(cut+5,h-3),(w-cut-5,h-3),2)
             return r
 
     class R13StonePaperPanel(renpy.Displayable):
+        def __init__(self,corner=16,**kwargs):
+            super(R13StonePaperPanel,self).__init__(**kwargs)
+            self.corner=corner
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
             r=renpy.Render(w,h)
-            r.blit(renpy.render(R13StonePanel(alpha="ff"),w,h,st,at),(0,0))
-            r.canvas().rect('#f1eadb',(10,10,max(1,w-20),max(1,h-20)))
+            r.blit(renpy.render(R13StonePanel(alpha="ff",corner=self.corner),w,h,st,at),(0,0))
+            d=max(2,self.corner-10)
+            r.canvas().polygon('#e7e4d5',[(10+d,10),(w-10-d,10),(w-10,10+d),(w-10,h-10-d),(w-10-d,h-10),(10+d,h-10),(10,h-10-d),(10,10+d)])
             return r
 
     class R13StoneTouchSurface(renpy.Displayable):
