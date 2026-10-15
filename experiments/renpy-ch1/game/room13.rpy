@@ -136,6 +136,9 @@ label r13_entry_dispatch:
     elif r13_choice[1]=="argue":
         call screen r13_book("guard",present=True)
         $ r13_item=_return
+        if r13_catalog_object(r13_item):
+            call r13_show_catalog_object("guard",r13_item)
+            jump r13_entry_guard_menu
         if r13_item:
             show screen r13_material_corner(r13_item)
         if r13_item in ("G1","G3"):
@@ -188,16 +191,16 @@ label r13_entry_karo_menu:
     elif r13_entry_karo_choice=="present":
         call screen r13_book("karo",present=True)
         $ r13_item=_return
-        if r13_item:
-            call screen r13_confirm("까로에게 「"+ROOM13["evidence"][r13_item]["name"]+"」을 보여줄까요? 원본은 기록에 남습니다.","보여준다","취소한다")
-            if _return:
-                $ r13_defer_grants=True
-                $ r13_reaction=r13_present("karo",r13_item)
-                $ r13_defer_grants=False
-                show screen r13_material_corner(r13_item)
-                call r13_lines(r13_reaction,"entry:karo:present:"+r13_item)
-                hide screen r13_material_corner
-                $ r13_flush_grants()
+        if r13_catalog_object(r13_item):
+            call r13_show_catalog_object("karo",r13_item)
+        elif r13_item:
+            $ r13_defer_grants=True
+            $ r13_reaction=r13_present("karo",r13_item)
+            $ r13_defer_grants=False
+            show screen r13_material_corner(r13_item)
+            call r13_lines(r13_reaction,"entry:karo:present:"+r13_item)
+            hide screen r13_material_corner
+            $ r13_flush_grants()
     elif r13_entry_karo_choice=="back":
         hide r13_visitor
         $ dialogue_speaker=None
@@ -420,7 +423,7 @@ label r13_talk_dispatch:
         jump r13_talk_menu
     if r13_topic=="home:records":
         call r13_lines([("dad","오늘 우리가 알아낸 단서들을 같이 정리해 볼까?"),("daram","응. 내가 본 것도 아빠한테 다 말해 줄게.")],"home:records")
-        call screen r13_record_compare(called=True)
+        call screen r13_records(close_action=Return())
         jump r13_talk_menu
     if r13_topic=="present":
         call screen r13_book(r13_target,present=True)
@@ -428,6 +431,9 @@ label r13_talk_dispatch:
         if not r13_item:
             if r13_present_origin=="actions":
                 jump r13_person_actions
+            jump r13_talk_menu
+        if r13_catalog_object(r13_item):
+            call r13_show_catalog_object(r13_target,r13_item)
             jump r13_talk_menu
         if r13_item:
             $ r13_disclose_name=False
@@ -444,17 +450,13 @@ label r13_talk_dispatch:
                         jump r13_talk_menu
             if r13_item in ROOM13.get("sensitive",{}):
                 call r13_lines([(None,ROOM13["sensitive"][r13_item])],"sensitive:"+r13_item)
-            call screen r13_confirm(R13_NAMES[r13_target]+"에게 「"+ROOM13["evidence"][r13_item]["name"]+"」의 "+("발언자 이름과 관찰 내용" if r13_item=="E10" and r13_disclose_name else "이름을 뺀 관찰 내용" if r13_item=="E10" else "내용")+"을 보여줄까요? 원본은 수첩에 남습니다.","보여준다","취소한다")
-            if _return:
-                $ r13_defer_grants=True
-                $ r13_reaction=r13_present(r13_target,r13_item,r13_disclose_name)
-                $ r13_defer_grants=False
-                show screen r13_material_corner(r13_item)
-                call r13_lines(r13_reaction,"present:"+r13_target+":"+r13_item+":"+str(r13_disclose_name))
-                hide screen r13_material_corner
-                $ r13_flush_grants()
-            elif r13_present_origin=="actions":
-                jump r13_person_actions
+            $ r13_defer_grants=True
+            $ r13_reaction=r13_present(r13_target,r13_item,r13_disclose_name)
+            $ r13_defer_grants=False
+            show screen r13_material_corner(r13_item)
+            call r13_lines(r13_reaction,"present:"+r13_target+":"+r13_item+":"+str(r13_disclose_name))
+            hide screen r13_material_corner
+            $ r13_flush_grants()
         jump r13_talk_menu
     if r13_topic=="buri_consent":
         call r13_lines([(None, '부리는 손에 든 공구를 내려놓았지만 내 쪽을 쳐다보지는 않았다.'), ('buri', '밖에서는 다들 할아버지가 아이를 잡아먹으려 했다고 수군거려요.'), ('dad', '저는 그렇게 말한 적이 없습니다.'), ('buri', '누군가는 그렇게 말했어요. 다람이를 살인 혐의에서 구하려고요.'), (None, '내가 딸아이 이야기를 꺼내려 하자 부리가 먼저 고개를 들어 나를 보았다.'), ('dad', '저도 제 아이가 그 방에서 왜 다쳤는지 진실을 알아야 합니다.'), ('buri', '그럼 저한테 직접 물어보세요. 할아버지가 어떤 사람이었는지 미리 정해 놓고 묻지는 마시고요.')],"buri:consent:opening")
@@ -586,16 +588,12 @@ label r13_trial_choose:
         jump r13_trial_choose
     if not r13_trial_pending:
         jump r13_verdict
-    menu:
-        "어느 주장을 다룰까?"
-        "정문이 잠겼으니 아이뿐이라는 주장" if "C1" in r13_trial_pending:
-            call r13_argument("C1")
-        "다람이의 방어가 죽음의 원인이라는 주장" if "C2" in r13_trial_pending:
-            call r13_argument("C2")
-        "할머니는 그때 식당에 있었다는 말" if "C3" in r13_trial_pending:
-            call r13_argument("C3")
-        "할머니가 도우러 들어갔을 뿐이라는 변명" if "C4" in r13_trial_pending:
-            call r13_argument("C4")
+    window hide
+    hide r13_visitor
+    call screen r13_meeting_agenda(r13_trial_pending)
+    $ r13_choice=_return
+    if r13_choice in r13_trial_pending:
+        call r13_argument(r13_choice)
     jump r13_trial_choose
 
 label r13_argument(claim):

@@ -10,8 +10,9 @@ init 61 python:
     def r13_title_fx():
         spec = R13_DOT_FX.get("title", {})
         layers = []
-        if spec.get("glow"):
-            layers.append(R13FxPulse(spec["glow"], R13_LAMP_LEVELS, 1 / .16, spec["alpha"], (1280, 720)))
+        rig = r13_light_rig("title", (1280, 720))
+        if rig:
+            layers.append(rig)
         snow = dict(R13_DOT_FX.get("snow", {}))
         if snow:
             snow["layers"] = [{"count": 70, "size": 4, "vy": [18, 28], "sway": 8},

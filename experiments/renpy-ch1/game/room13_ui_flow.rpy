@@ -40,6 +40,6 @@ init 99 python:
 
     def r13_stop_skip_at_choices():
         if not getattr(store,"room13_mode",False):return
-        if any(renpy.get_screen(name) for name in ("choice","r13_topics","r13_entry_topics","r13_entry_karo_topics","r13_resident_approach","r13_book","r13_debate_board","r13_confirm")):
+        if any(renpy.get_screen(name) for name in ("choice","r13_topics","r13_entry_topics","r13_entry_karo_topics","r13_resident_approach","r13_book","r13_debate_board","r13_meeting_agenda","r13_confirm")):
             r13_end_skip_modes()
     config.interact_callbacks.append(r13_stop_skip_at_choices)

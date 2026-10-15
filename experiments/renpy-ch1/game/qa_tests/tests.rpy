@@ -13,7 +13,7 @@ testcase trial_missing:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E05'),())
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
@@ -23,7 +23,7 @@ testcase trial_missing:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -45,19 +45,19 @@ testcase trial_giveup:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E06', 'E07', 'E09'),())
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E01"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E01"
     pause 0.6
@@ -81,19 +81,19 @@ testcase trial_partial:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E06', 'E07', 'E09'),())
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E07"
     pause 0.6
@@ -102,7 +102,7 @@ testcase trial_partial:
     assert eval (not r13_debate_is_broken("C2","s2"))
     click "다시 휘두를 사람이"
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -126,25 +126,25 @@ testcase trial_win:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E06', 'E07', 'E09', 'E35'),())
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -166,7 +166,7 @@ testcase trial_full:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),())
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
@@ -176,7 +176,7 @@ testcase trial_full:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -186,25 +186,25 @@ testcase trial_full:
     pause 1.0
     click "아이만 들어갔다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -225,7 +225,7 @@ testcase trial_full:
     pause 1.0
     click "누군가가 냈다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "그때 식당에 있었다는 말"
     pause 0.6
@@ -233,13 +233,13 @@ testcase trial_full:
     pause 0.6
     run Return(("select","s2"))
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E12"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -249,19 +249,19 @@ testcase trial_full:
     pause 1.0
     click "주방에 간 뒤로는"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "도우러 들어갔을 뿐이라는 변명"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E13"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E15"
     pause 0.6
@@ -271,13 +271,13 @@ testcase trial_full:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E36"
     pause 0.6
@@ -298,7 +298,7 @@ testcase trial_gate_unenforced:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok"))
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
@@ -308,7 +308,7 @@ testcase trial_gate_unenforced:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -318,25 +318,25 @@ testcase trial_gate_unenforced:
     pause 1.0
     click "아이만 들어갔다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -357,7 +357,7 @@ testcase trial_gate_unenforced:
     pause 1.0
     click "누군가가 냈다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "그때 식당에 있었다는 말"
     pause 0.6
@@ -365,13 +365,13 @@ testcase trial_gate_unenforced:
     pause 0.6
     run Return(("select","s2"))
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E12"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -381,19 +381,19 @@ testcase trial_gate_unenforced:
     pause 1.0
     click "주방에 간 뒤로는"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "도우러 들어갔을 뿐이라는 변명"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E13"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E15"
     pause 0.6
@@ -403,13 +403,13 @@ testcase trial_gate_unenforced:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E36"
     pause 0.6
@@ -431,7 +431,7 @@ testcase trial_gate_no_witness:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates",))
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
@@ -441,7 +441,7 @@ testcase trial_gate_no_witness:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -451,25 +451,25 @@ testcase trial_gate_no_witness:
     pause 1.0
     click "아이만 들어갔다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -492,7 +492,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     # 0.18.35: without Nabi the alibi point still opens (the passage breaks one statement),
     # but her statement stays unbreakable. Closing it partially leaves C3 unproven.
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "식당에 있었다는 말"
     pause 0.6
@@ -500,7 +500,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click "한참 걸려요"
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -529,13 +529,13 @@ testcase finale_win:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E20"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E31"
     pause 0.6
@@ -551,7 +551,7 @@ testcase finale_win:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E23"
     pause 0.6
@@ -561,7 +561,7 @@ testcase finale_win:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E21"
     pause 0.6
@@ -577,13 +577,13 @@ testcase finale_win:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E25"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E26"
     pause 0.6
@@ -604,13 +604,13 @@ testcase finale_win:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E18"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E16"
     pause 0.6
@@ -1330,7 +1330,7 @@ testcase trial_fake_testimony:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok","fair_hearing","fake_testimony"))
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
@@ -1340,7 +1340,7 @@ testcase trial_fake_testimony:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -1350,25 +1350,25 @@ testcase trial_fake_testimony:
     pause 1.0
     click "아이만 들어갔다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -1389,7 +1389,7 @@ testcase trial_fake_testimony:
     pause 1.0
     click "누군가가 냈다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "그때 식당에 있었다는 말"
     pause 0.6
@@ -1397,13 +1397,13 @@ testcase trial_fake_testimony:
     pause 0.6
     run Return(("select","s2"))
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E12"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -1413,19 +1413,19 @@ testcase trial_fake_testimony:
     pause 1.0
     click "주방에 간 뒤로는"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "도우러 들어갔을 뿐이라는 변명"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E13"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E15"
     pause 0.6
@@ -1435,13 +1435,13 @@ testcase trial_fake_testimony:
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E36"
     pause 0.6
@@ -1464,7 +1464,7 @@ testcase trial_c1_h7:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'H7', 'E06', 'E07', 'E09', 'E12', 'E13', 'E14', 'E15', 'E35', 'E36'),("-gates","witness:nabi","witness:tok","ttadak_witness"))
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
@@ -1474,7 +1474,7 @@ testcase trial_c1_h7:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA H7"
     pause 0.6
@@ -2375,7 +2375,7 @@ testcase trial_counter:
     pause 3.0
     run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E35'),())
     pause 1.0
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
@@ -2385,7 +2385,7 @@ testcase trial_counter:
     pause 0.5
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
@@ -2395,7 +2395,7 @@ testcase trial_counter:
     pause 1.0
     click "아이만 들어갔다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
@@ -2403,7 +2403,7 @@ testcase trial_counter:
     pause 0.6
     click "다시 휘두를 사람이"
     pause 0.6
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -2415,7 +2415,7 @@ testcase trial_counter:
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     assert eval (not r13_debate_is_broken("C2","s3"))
-    click "자료로 반박"
+    click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
@@ -2620,3 +2620,11 @@ testcase offer_on_person:
     click pos (1150,90) until screen "choice" timeout 40
     assert eval (r13_has("ev_l_done"))
     $ r13_qa_crowd_dump()
+
+testcase motion_audit:
+    # Screen-recorded motion audit (not in the default set).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_audit")
+    click pos (1276,300) until eval r13_qa_audit_done timeout 180

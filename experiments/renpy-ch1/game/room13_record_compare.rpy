@@ -28,7 +28,7 @@ init 78 python:
 screen r13_record_compare(called=False):
     modal True
     zorder 80
-    use r13_records(initial_tab="compare",close_action=(Return() if called else Hide("r13_record_compare")))
+    use r13_records(initial_tab="all",close_action=(Return() if called else Hide("r13_record_compare")))
 
 screen r13_compare_content(target=None,present_action=None):
     default selected=()

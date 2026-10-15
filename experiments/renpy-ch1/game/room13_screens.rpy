@@ -101,8 +101,6 @@ screen r13_hub(entry=False):
                 xsize r13_world_width() ysize 720
                 add r13_world_background()
                 use r13_world_contents(entry,ready)
-                if not entry:
-                    use r13_inn_v4_world_chips(ready)
         use r13_world_camera_controls(world_adjustment)
     else:
         use r13_world_contents(entry,ready)
@@ -110,13 +108,10 @@ screen r13_hub(entry=False):
         hbox:
             xpos 1250 xanchor 1.0 ypos 158 spacing 8
             for destination,title in r13_local_connections():
-              if destination not in r13_inn_v4_handled(room13["location"]):
                 textbutton ("› "+title):
                     style "r13_action_button" padding (16,10) ysize 64
                     background R13PaperFrame() hover_background R13PaperPanel(focused=True) text_color "#65503b" text_hover_color "#493b30"
                     text_size 21 action Return(("travel",destination)) sensitive ready
-    if not entry:
-        use r13_inn_v4_screen_chips(ready)
     if not entry and r13_inn_guide_available():
         textbutton "안내도":
             id "r13_inn_guide_button"
@@ -431,7 +426,8 @@ screen r13_book(target=None,present=False,hearing=False):
     default detail=None
     default ready=False
     default archive=False
-    default category="evidence"
+    default category="all"
+    $ category="all"
     default page=0
     default order="recent"
     timer .35 action SetScreenVariable("ready",True)
@@ -441,10 +437,10 @@ screen r13_book(target=None,present=False,hearing=False):
         textbutton ("이번 여정" if not archive else "지난 플레이"):
             style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
             action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-    $ entries=r13_record_entries(category,archive,present,order)
+    $ entries=r13_catalog_entries(archive and not present,hearing)
     $ entries=r13_present_entries(entries,target) if present else entries
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
-    use r13_record_filters("r13_book",order,archive and not present)
+    text ("보여줄 자료 %d개"%len(entries) if present else "모은 자료 %d개"%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     use r13_material_detail(selected_record,archive and not present)
     if present and not selected_record:
@@ -453,7 +449,7 @@ screen r13_book(target=None,present=False,hearing=False):
         textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
             style "r13_compact_button" xpos 824 ypos 592 xsize 398 ysize 48 text_size r13_read_size(20,24)
             action Return(selected_record)
-            sensitive ready and detail==selected_record and selected_record in room13.get("evidence",[]) and not archive
+            sensitive ready and detail==selected_record and r13_catalog_can_present(selected_record,hearing) and not archive
     textbutton ("그만두기" if present else "닫기"):
         style "r13_compact_button" xpos 66 ypos 594 xsize 176 ysize 44 text_size 20
         action (Return(False) if present else Hide("r13_book")) sensitive ready

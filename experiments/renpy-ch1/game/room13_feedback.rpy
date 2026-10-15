@@ -55,7 +55,7 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False):
         vbox:
             spacing 3
             add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
-            text ROOM13["evidence"][key]["name"] size 20 color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
+            text r13_catalog_title(key) size 20 color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
 
 screen r13_evidence_found(keys,conversation=False):
     # 0.18.48: above the desk close-up (90) and the item bag (95), which reopen right after a

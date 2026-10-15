@@ -334,7 +334,7 @@ screen r13_desk_inspection():
 screen r13_item_bag():
     modal True
     zorder 95
-    use r13_records(initial_tab="items",close_action=Hide("r13_item_bag"))
+    use r13_records(initial_tab="all",close_action=Hide("r13_item_bag"))
 
 screen r13_item_bag_content():
     text "아이템" xpos 284 ypos 72 size 26 color "#765426"
