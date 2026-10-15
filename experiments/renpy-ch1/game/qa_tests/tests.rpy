@@ -2472,3 +2472,12 @@ testcase title_fx:
     pause 0.5
     screenshot "t4.png"
     assert eval (R13_TITLE_STATE["intro_done"])
+
+
+testcase motion_reel:
+    # 0.18.43 review reel: record the screen while this runs (not in the default set).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_reel")
+    click pos (1276,300) until eval r13_qa_reel_done timeout 120

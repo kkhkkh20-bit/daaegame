@@ -528,7 +528,7 @@ init 999 python:
             renpy.say(R13_CHARS.get("daram"),"반응 확인 문장입니다.",interact=False)
             shots=[]
             last=0.0
-            for t in (0.04,0.12,0.20,0.32,0.70):
+            for t in (0.04,0.10,0.16,0.22,0.30,0.40,0.70):
                 renpy.pause(t-last,hard=True);last=t
                 name="react_%s_%03d.png"%(emotion,int(t*1000))
                 renpy.screenshot(os.path.join(out,name));shots.append(name)
@@ -584,3 +584,27 @@ label r13_qa_dot_fx:
 label r13_qa_granny_ask:
     call r13_granny_letter_ask
     jump r13_roam
+
+
+# 0.18.43: a short reel of Daram's 1:1 reactions for review (screen recording; not in the default set).
+default r13_qa_reel_done = False
+label r13_qa_reel:
+    call r13_qa_setup(5,["E01"])
+    $ place="여관 접수대"
+    $ preferences.text_cps=0
+    hide screen r13_hud
+    scene expression r13_world_background("inn","evening")
+    python:
+        reel=[("neutral","neutral","(기본) 눈만 깜빡여요.",2.6),("expressive","surprise","(놀람) 움찔했다가 확!",2.4),
+              ("neutral","neutral","(기본)",1.6),("expressive","joy","(기쁨) 통통 두 번!",2.2),
+              ("neutral","neutral","(기본)",1.6),("distressed","angry","(화남) 움찔, 그리고 부르르.",2.2),
+              ("neutral","neutral","(기본)",1.6),("distressed","anxious","(불안) 움츠렸다가 천천히.",2.6),
+              ("neutral","neutral","(기본)",1.6),("distressed","flustered","(당황) 좌우로 허둥지둥.",2.2),
+              ("neutral","neutral","(기본)",1.6),("thinking","thinking","(생각) 기울여서 잠깐.",2.8)]
+        renpy.pause(1.0,hard=True)
+        for legacy,pose,line,dur in reel:
+            r13_speaker("daram",legacy,pose)
+            renpy.say(R13_CHARS.get("daram"),line,interact=False)
+            renpy.pause(dur,hard=True)
+        store.r13_qa_reel_done=True
+    return
