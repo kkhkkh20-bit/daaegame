@@ -5,7 +5,8 @@
 # 정산은 2주차 첫 이동에서 한 번만 한다(`w1_links_done`). 모두 이번 회차 깃발이다.
 init 108 python:
     def r13_bad_rumors():
-        return [r for r in R13_BAD_RUMORS if r13_has(r)] if not r13_has("rumor:fair") else []
+        # A good rumor no longer erases bad ones (0.18.14); listeners hold judgment instead.
+        return [r for r in R13_BAD_RUMORS if r13_has(r)]
 
     # (조건, 얻는 깃발, 대사) — 위에서부터 차례로 확인한다.
     R13_CARRY_GOOD=[
@@ -60,7 +61,7 @@ label r13_carryover_events:
         if r13_has("eunho_blackmailed") and not r13_has("supply_terms"):
             _refuse.append(("eunho_refuses",[("resident_eunho","저울 일에 반값 받고 입 다문 분이 이제 와서 나눠 달라고요? 장부에 적을 이름만 하나 더 늘 뿐이오.")]))
         if len(r13_bad_rumors())>=2 and not any(f=="shelter_agreed" for fl,l in _carry for f in fl):
-            _refuse.append(("teacher_doubts",[("resident_teacher","그 소문들, 저도 들었어요. 그래서 아이들이 있는 교실에 누구를 들일지는 조심해야 해요.")]))
+            _refuse.append(("teacher_doubts",[("resident_teacher","좋은 이야기도, 나쁜 이야기도 들었어요. 어느 쪽이 맞는지는 제가 직접 본 적이 없어요."),("resident_teacher","아이들이 있는 교실이니, 아저씨를 아는 분이 보증해 주시면 좋겠어요.")] if r13_has("rumor:fair") else [("resident_teacher","그 소문들, 저도 들었어요. 그래서 아이들이 있는 교실에 누구를 들일지는 조심해야 해요.")]))
     if not _carry and not _refuse:
         return None
     call r13_ev_here("calm")

@@ -1462,3 +1462,19 @@ testcase present_portrait:
     run Function(r13_edit,day=8,period=1)
     run Function(r13_w2_action_done,"w2_reply")
     assert eval (room13["reply_due"]==32)
+
+testcase memory_grudge:
+    # 0.18.14: a harmed resident stays cold despite good rumors; repair is tied to the incident.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="room13"),("yeoni_hostile","rumor:fair","heard:rumor:fair"),(),5)
+    pause 1.0
+    assert eval ("grudge_cold:yeoni" in [k for k,s in r13_topics("resident_yeoni")] and "grudge_fix:yeoni" in [k for k,s in r13_topics("resident_yeoni")])
+    assert eval (r13_conversation_topic_lines("grudge_cold:yeoni")[0][1].startswith("광장에서 좋은 말이 돈다는 건 알아요. 그래도"))
+    assert eval (r13_qa_price("rumor:briber")==r13_qa_price()+1 and r13_qa_price("rumor:briber","rumor:fair")==r13_qa_price())
+    assert eval (r13_qa_price("eunho_hostile","rumor:fair")==r13_qa_price()+1 and r13_qa_price("eunho_hostile","eunho_reconciled")==r13_qa_price())
+    assert eval (r13_bad_rumors()==[])
+    run Call("r13_qa_grudge","yeoni")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (r13_has("yeoni_reconciled") and r13_cash_now()==2 and not [k for k,s in r13_topics("resident_yeoni") if k.startswith("grudge_")])

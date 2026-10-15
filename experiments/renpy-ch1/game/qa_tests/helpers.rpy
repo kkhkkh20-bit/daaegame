@@ -258,3 +258,13 @@ init 999 python:
     r13_qa_last_present=""
     def r13_qa_present(person,key):
         store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))
+
+label r13_qa_grudge(key):
+    $ r13_topic="grudge_fix:"+key
+    call r13_grudge_fix
+    jump r13_roam
+
+init 999 python:
+    def r13_qa_price(*flags):
+        st=winter_copy.deepcopy(store.room13);st["flags"]=list(flags)
+        return r13_shop_price(st,sorted(R13_SHOP)[0])

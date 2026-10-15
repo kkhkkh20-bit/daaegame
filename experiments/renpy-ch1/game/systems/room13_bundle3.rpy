@@ -3,7 +3,8 @@
 #   E 배급표  — 5~6일 낮 광장. 너울이 보리를 배급 도둑으로 몬다. 배급 저울(D)·비축 장부(H1)로 누명을 벗길 수 있다.
 #   O 학교 장작 — 5~6일 저녁 미션. 누명을 벗지 못한 보리가 대피소 장작을 가져간다.
 #   U 기록 팔기 — 4~6일 낮 우체국. 사서가 끼니를 위해 돌의 옛 기록(W3)을 은호에게 판다. 놓치면 W3 길이 닫힌다.
-# 소문의 효과: 나쁜 소문이 하나라도 있으면 은호 물건값이 1냥 오른다. 좋은 소문(rumor:fair)이 있으면 오르지 않는다.
+# 소문의 효과: 나쁜 소문이 하나라도 있으면 은호 물건값이 1냥 오른다. 좋은 소문(rumor:fair)이 있으면 은호는 판단을 미뤄 오르지 않는다.
+# 다만 저울 일로 직접 손해를 본 은호(eunho_hostile)는 사실을 바로잡기 전까지 1냥을 더 받는다(0.18.14, systems/room13_memory.rpy).
 #   소문은 처음 퍼진 뒤 광장·여관·식당에 도착할 때 한 번 귓속말로 들린다.
 # 모든 기록과 깃발은 이번 회차 것이다.
 init 107 python:
@@ -42,7 +43,7 @@ init 107 python:
         "rumor:sold_stolen":"훔친 약초를 은호 사장한테 팔아넘긴 게 그 외지 사람이래.",
         "rumor:strongarm":"여니 물건을 억지로 빼앗아 갔대. 장물이라면서.",
         "rumor:extortion":"실룩한테서 입막음 돈을 뜯었대.",
-        "rumor:fair":"그 외지 사람이 저울을 바로잡고 보리 누명도 벗겼대.",
+        "rumor:fair":"그 외지 사람이 사람들 몫이 공정하게 돌아가도록 나섰대.",
     }
 
     _r13_b3_shop_price=r13_shop_price
@@ -51,7 +52,11 @@ init 107 python:
         if "shop_half" in flags:
             return max(1,(R13_SHOP[key]["price"]+1)//2)
         price=_r13_b3_shop_price(state,key)
-        if any(r in flags for r in R13_BAD_RUMORS) and "rumor:fair" not in flags:
+        # 은호 remembers being exposed until the facts are set straight (systems/room13_memory.rpy).
+        # Otherwise he only heard rumors: bad ones raise the price; a good one makes him hold off.
+        if "eunho_hostile" in flags and "eunho_reconciled" not in flags:
+            price+=1
+        elif any(r in flags for r in R13_BAD_RUMORS) and "rumor:fair" not in flags:
             price+=1
         return price
 
@@ -81,7 +86,7 @@ label r13_b3_whispers:
         $ _r=_rumors.pop(0)
         $ r13_flag("heard:"+_r)
         call r13_lines([(None,"지나가는 사람들이 낮게 수군댔다. ‘"+R13_RUMOR_WHISPERS[_r]+"’"),
-            ("dad",("(좋은 말도 빨리 돈다. 은호 사장도 나한테는 값을 올리지 못하겠지.)" if _r=="rumor:fair" else "(소문이 붙었다. 은호 사장 같은 사람은 이런 말에 값을 올린다.)"),{"thought":True})],"b3:whisper:"+_r)
+            ("dad",("(좋은 말도 빨리 돈다. 듣기만 한 사람은 판단을 미루겠지. 직접 겪은 사람 마음까지 바뀌지는 않는다.)" if _r=="rumor:fair" else "(소문이 붙었다. 은호 사장 같은 사람은 이런 말에 값을 올린다.)"),{"thought":True})],"b3:whisper:"+_r)
     return
 
 # ---- D. 은호의 저울 ----
