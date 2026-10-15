@@ -129,6 +129,11 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
 - 원본 그림은 바꾸지 않고 위에 얹는다. 설정의 '움직임'이 꺼져 있거나 건너뛰기 중이면 원본만 보인다.
 - 배경을 바꾸면(같은 파일 이름) `make_dot_fx.py`를 다시 돌리고 `dev/run_renpy_tests.sh dot_fx` 캡처를 확인한다.
 
+### 오프닝 컷씬 (0.18.39)
+- 새 게임에서 마차 대화 앞에 약 14초. 코드는 `systems/room13_opening.rpy`, 연결은 `room13_start`의 `call r13_opening_cut`.
+- 화면 테스트 중에는 나오지 않는다. 확인은 `dev/run_renpy_tests.sh opening_cut`.
+- 컷씬도 아빠는 그리지 않고, 아빠가 아는 사실만 글로 쓴다.
+
 ### 선택지 문구 (0.18.4)
 - 인물과 대화하는 선택지는 아빠가 할 말로 쓴다(“…”). 판단을 대신하는 말(협박한다, 달랜다, 편을 든다)은 쓰지 않는다. 확정된 돈·시간만 짧게 붙인다(12냥, · 늦은 저녁까지).
 - `menu` 선택지는 무엇을 할지만 24자 이하로 쓴다. 자세한 말은 고른 뒤 대사로 넣는다. `dev/test_choice_length.py`가 검사한다.

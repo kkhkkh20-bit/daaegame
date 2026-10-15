@@ -449,6 +449,27 @@ def cine_plates():
     return out
 
 
+# ------------------------------------------------------------------ 0.18.39 오프닝 컷씬
+def carriage_window_mask():
+    """빈 마차 안 그림(1386x780)을 1280x720으로 줄인 화면 기준, 창밖(밝은 하늘·눈·마을) 영역."""
+    im = Image.open(os.path.join(ASSETS, "room13-pixel-carriage-empty-winter.webp")).convert("RGB").resize((1280, 720), Image.NEAREST)
+    a = np.array(im).astype(int)
+    sky = (a[..., 2] > 150) & (a[..., 2] > a[..., 0] + 20)
+    lab, n = ndimage.label(sky)
+    sizes = ndimage.sum(sky, lab, range(1, n + 1))
+    keep = lab == (int(np.argmax(sizes)) + 1)
+    ys, xs = np.nonzero(keep)
+    box = np.zeros_like(keep)
+    box[ys.min():ys.max() + 1, xs.min():xs.max() + 1] = True
+    # 창틀(갈색 나무)만 빼고 창 안쪽 전체: 하늘에서 시작해 창틀 안쪽 사각형을 채운다.
+    frame = (a[..., 0] > a[..., 2] + 40) & (a.sum(2) < 420)
+    window = box & ~frame
+    window = ndimage.binary_opening(window, iterations=2)
+    img = Image.new("RGBA", (1280, 720), (255, 255, 255, 0))
+    img.putalpha(Image.fromarray((window * 255).astype("uint8"), "L"))
+    return save(img, "room13-fx-carriage-window-mask.webp"), [int(xs.min()), int(ys.min()), int(xs.max() - xs.min() + 1), int(ys.max() - ys.min() + 1)]
+
+
 def main():
     meta = {"version": 1, "cell": CELL, "generator": "dev/make_dot_fx.py"}
     fire = {}
@@ -492,6 +513,8 @@ def main():
                           "layers": [{"count": 34, "size": 4, "vy": [22, 34], "sway": 6}]}
     # 0.18.39 (owner): synthesized reaction sounds removed (reaction_sounds() kept, unused).
     meta["cinematics"] = cine_plates()
+    mask, box = carriage_window_mask()
+    meta["opening"] = {"carriage_window": {"mask": mask, "box": box}}
     meta["blink"] = {"timeline": [["half", .05], ["closed", .09], ["half", .05]],
                      "interval": [2.6, 5.2], "people": blink}
     with open(META_FILE, "w", encoding="utf-8") as f:

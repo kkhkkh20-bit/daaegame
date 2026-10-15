@@ -81,6 +81,8 @@ label room13_start:
     hide screen r13_book
     hide screen r13_calendar
     show screen r13_hud
+    # Opening cutscene before the carriage talk (systems/room13_opening.rpy).
+    call r13_opening_cut
     call r13_carriage
     $ r13_grant(["E01"],"여행 중 가지고 온 편지")
     $ r13_edit(period=1)
