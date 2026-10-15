@@ -406,3 +406,21 @@ label r13_qa_gm_floor:
 
 label r13_qa_gm_stone:
     call r13_qa_gm("r13_gm_stone")
+
+init 999 python:
+    def r13_qa_scenario_dump():
+        """Static scenario data as the running game sees it (0.18.22 audit)."""
+        import json
+        def lst(v):return list(v) if isinstance(v,(list,tuple,set)) else ([] if v is None else [v])
+        out=dict(evidence={k:dict(name=v.get("name"),kind=v.get("kind"),est=v.get("establishes",""),notest=v.get("does_not_establish","")) for k,v in ROOM13["evidence"].items()},
+            sources=dict(ROOM13.get("evidence_sources",{})),
+            topics={k:dict(npc=v.get("npc"),title=v.get("title"),day=lst(v.get("day")),need=lst(v.get("need")),not_flags=lst(v.get("not_flags")),give=lst(v.get("give")),flags=lst(v.get("flags")),lines=len(v.get("lines",[]) or []),label=R13_TOPIC_LABELS.get(k),case=v.get("case"),state=v.get("state")) for k,v in ROOM13["topics"].items()},
+            objects={loc:{k:dict(need=lst(v.get("need")),give=lst(v.get("give")),flags=lst(v.get("flags")),text=v.get("text","")) for k,v in objs.items()} for loc,objs in ROOM13["objects"].items()},
+            activities={k:dict(place=v.get("place"),title=v.get("title"),day=lst(v.get("day")),need=lst(v.get("need")),not_flags=lst(v.get("not_flags")),give=lst(v.get("give")),flags=lst(v.get("flags")),cost=v.get("cost",1),special=bool(v.get("special")),case=v.get("case")) for k,v in ROOM13["activities"].items()},
+            presentations=[dict(npc=p.get("npc"),items=lst(p.get("items")),topic=p.get("topic")) for p in ROOM13.get("presentations",[])],
+            debate={c:dict(title=d.get("title"),accept=[lst(s.get("accept")) for s in d.get("statements",[])],soft=[list((s.get("soft") or {}).keys()) for s in d.get("statements",[])]) for c,d in R13_DEBATE.items()},
+            offers=list(R13_EVENT_OFFERS),
+            names=sorted(R13_NAMES),
+            gimmicks=dict(R13_GIMMICK_LABELS),
+            places=list(R13_PLACES))
+        open(renpy.config.basedir+"/scenario_dump.json","w").write(json.dumps(out,ensure_ascii=False,indent=1))

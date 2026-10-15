@@ -2114,3 +2114,10 @@ testcase admin_tool:
     assert eval (room13["day"]==2 and room13["location"]=="inn" and "M01" in room13["evidence"])
     $ persistent.room13_admin=False
     $ r13_admin_hitboxes=False
+
+testcase scenario_dump:
+    # Audit helper (not in the default list): writes scenario_dump.json next to the game.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Function(r13_qa_scenario_dump)
