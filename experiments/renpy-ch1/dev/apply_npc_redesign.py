@@ -93,7 +93,10 @@ def geometry(design, registry):
     crop = [int(x0), int(y0), int(x1 - x0), int(y1 - y0)]
     figure = [int(xs.min()), int(ys.min()), int(xs.max() + 1 - xs.min()), int(ys.max() + 1 - ys.min())]
     bottom = int(ys.max())
-    feet = np.where(alpha[max(0, bottom - 8):bottom + 1].any(0))[0]
+    # Both feet: the lowest 4% of the figure (a stance with one boot lower
+    # than the other would otherwise anchor on that single boot).
+    window = max(8, int(0.04 * figure[3]))
+    feet = np.where(alpha[max(0, bottom - window):bottom + 1].any(0))[0]
     foot = [int((feet.min() + feet.max() + 1) // 2) - crop[0], bottom + 1 - crop[1]]
     hx, hy, hw, hh = scaled_box(design["head"], scale, img.size)
     head = [hx - crop[0], hy - crop[1], hw, hh]

@@ -410,7 +410,7 @@ label r13_qa_gm_stone:
 # 2026-10-15 NPC redesigns (dev/apply_npc_redesign.py): find a real slot where
 # each redesigned NPC is scheduled, stand there and record the staging.
 init 999 python:
-    R13_QA_REDESIGNED = ("resident_yeoni","resident_momo","resident_librarian","resident_nubi")
+    R13_QA_REDESIGNED = ("resident_yeoni","resident_momo","resident_librarian","resident_nubi","resident_seol","resident_siluk","resident_nero","resident_bori")
     def r13_qa_redesign_slot(person):
         saved=winter_copy.deepcopy(store.room13)
         try:

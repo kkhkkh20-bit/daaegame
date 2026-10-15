@@ -33,9 +33,13 @@ def files(entry):
 
 
 class NpcRedesign(unittest.TestCase):
-    def test_exactly_four_designs_on_existing_npcs(self):
+    def test_one_design_per_existing_npc(self):
         npcs = [d["npc"] for d in REG["designs"]]
-        self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian", "resident_nubi"}))
+        self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian", "resident_nubi",
+                                               "resident_seol", "resident_siluk", "resident_nero", "resident_bori"}))
+        self.assertEqual(len({d["sha256"] for d in REG["designs"]}), len(npcs))  # no picture used twice
+        # The brown owl waits for an elderly version: 부엉이 할아버지 keeps his art.
+        self.assertNotIn("redesign", json.dumps(CAST["resident_owlgp"]))
         for d in REG["designs"]:
             src = (ART / d["source"]).read_bytes()
             self.assertEqual(hashlib.sha256(src).hexdigest(), d["sha256"], d["source"])

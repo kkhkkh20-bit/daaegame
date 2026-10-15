@@ -2103,6 +2103,31 @@ testcase redesign_world:
     pause 1.0
     $ r13_qa_redesign_record("resident_nubi")
     screenshot "redesign_world_nubi.png"
+    $ r13_world_cameras={}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_seol"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_seol")
+    screenshot "redesign_world_seol.png"
+    # 실룩 stands at the right end of the gate panorama (clamped to the edge).
+    $ r13_world_cameras={"gate":9999}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_siluk"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_siluk")
+    screenshot "redesign_world_siluk.png"
+    $ r13_world_cameras={}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_nero"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_nero")
+    screenshot "redesign_world_nero.png"
+    $ r13_world_cameras={}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_bori"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_bori")
+    screenshot "redesign_world_bori.png"
 
 testcase redesign_dialogue:
     pause 2.0
