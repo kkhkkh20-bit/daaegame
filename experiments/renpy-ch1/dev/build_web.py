@@ -38,6 +38,29 @@ REMOTE_MUSIC = "assets/*.mp3"
 REMOTE_IMAGE = "assets/*.png"
 # Click-to-open close-up backgrounds (0.18.22): fetched when a close-up first opens.
 REMOTE_CLOSEUP = ("assets/room13-pixel-life-*.webp", "assets/r13-gimmick-*.webp")
+# Art replaced by an NPC redesign (dev/apply_npc_redesign.py): kept so old saves
+# that still hold the old picture can draw it, but never part of the first load.
+REDESIGN_BACKUP = ROOT / "art/npc-redesign-20261015/original-entries.json"
+
+
+def superseded_art():
+    """Files only the backed-up original entries used (empty if no redesign)."""
+    if not REDESIGN_BACKUP.exists():
+        return set()
+    files = set()
+
+    def walk(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                files.add(v) if k == "file" else walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+    walk(json.loads(REDESIGN_BACKUP.read_text(encoding="utf-8")))
+    live = "".join(p.read_text(encoding="utf-8") for p in (ROOT / "game/assets").glob("*.json")
+                   if p.name not in ("provenance.json", "room13-pixel-coverage.json"))
+    live += "".join(p.read_text(encoding="utf-8") for p in (ROOT / "game").rglob("*.rpy"))
+    return {f for f in files if f.split("/")[-1] not in live}
 # Small UI icons that must never show a placeholder.
 ICONS = {"evidence.png", "save.png", "menu.png", "back.png", "present.png", "investigate.png",
          "record.png", "move.png", "talk.png", "press.png", "sound-on.png", "sound-off.png",
@@ -217,13 +240,14 @@ def main():
     menu_music = MAIN_MENU_MUSIC.search((game / "options.rpy").read_text())
     menu_music = menu_music.group(1) if menu_music else None
     preload, remote, remote_lines = [], [], []
+    superseded = superseded_art()
     for path in sorted((game / "assets").rglob("*")):
         rel = path.relative_to(game).as_posix()
         if not path.is_file() or path.suffix.lower() not in MEDIA:
             continue
         if fnmatch.fnmatch(rel, REMOTE_MUSIC) and rel != menu_music:
             remote.append(rel); remote_lines += [rel, "music -"]
-        elif (fnmatch.fnmatch(rel, REMOTE_IMAGE) and path.name not in ICONS) or any(fnmatch.fnmatch(rel, p) for p in REMOTE_CLOSEUP):
+        elif (fnmatch.fnmatch(rel, REMOTE_IMAGE) and path.name not in ICONS) or any(fnmatch.fnmatch(rel, p) for p in REMOTE_CLOSEUP) or rel in superseded:
             data = path.read_bytes()
             (w, h), thumb = placeholder(data)
             ph = stage / "_placeholders" / rel

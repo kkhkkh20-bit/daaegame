@@ -165,6 +165,9 @@ init 999 python:
 
 # Town events: set up a state and enter it through r13_roam (so arrival events run).
 label r13_qa_roam(state,flags=(),items=(),cash=0):
+    # The owner's admin tool is a persistent toggle; tests always start without it.
+    $ persistent.room13_admin=False
+    $ r13_admin_hitboxes=False
     $ room13_mode=True
     $ winter_mode=True
     $ winter=winter_new()
@@ -429,3 +432,30 @@ label r13_qa_type_lines:
     # 0.18.24 typography: narration, Dad's thought (no parentheses in source), speech with an item.
     call r13_lines([(None,"책상 아래에 접힌 종이가 끼어 있다."),("dad","원본과 옮겨 쓴 명부가 다르다. 어디서 빠진 거지?",{"thought":True}),("dad","「예약 원본」에는 다람이 이름도 적혀 있습니다.")],"qa:typography")
     jump r13_roam
+
+# 2026-10-15 NPC redesigns (dev/apply_npc_redesign.py): find a real slot where
+# each redesigned NPC is scheduled, stand there and record the staging.
+init 999 python:
+    R13_QA_REDESIGNED = ("resident_yeoni","resident_momo","resident_librarian","resident_nubi","resident_seol","resident_siluk","resident_nero","resident_bori")
+    def r13_qa_redesign_slot(person):
+        saved=winter_copy.deepcopy(store.room13)
+        try:
+            for day in range(2,8):
+                for period in (0,1):
+                    store.room13.update(day=day,period=period)
+                    where=r13_where(person)
+                    if where in R13_MAP_NODES["village"]:
+                        return (day,period,where)
+        finally:
+            store.room13=saved
+        raise Exception("no slot for "+person)
+    def r13_qa_redesign_record(person):
+        import os, json as qa_json
+        actors=[a for a in r13_stage_people(False) if a["person"]==person]
+        path=renpy.config.basedir+"/qa_result.txt"
+        log=qa_json.loads(open(path).read()) if os.path.exists(path) and open(path).read().startswith("{") else {}
+        spec=r13_acting_spec(person,actors[0]["pose"]) if actors else None
+        log[person]=dict(location=store.room13["location"],day=store.room13["day"],period=store.room13["period"],
+            present=person in r13_people(),actor={k:actors[0][k] for k in ("pose","x","y","width","height","contact")} if actors else None,
+            file=spec["file"] if spec else None,crop=spec["crop"] if spec else None,foot=spec.get("foot") if spec else None)
+        open(path,"w").write(qa_json.dumps(log,ensure_ascii=False))
