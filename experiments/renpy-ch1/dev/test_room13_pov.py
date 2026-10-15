@@ -29,7 +29,10 @@ class ViewpointSpeaker(unittest.TestCase):
             'r13_close_art':lambda *args:args,
             'r13_close_y':lambda *args,**kwargs:126,
             'r13_portrait_close':lambda y:y,
-            'r13_carriage_pop':'pop'}
+            'r13_carriage_pop':'pop',
+            # 0.18.32 expression reactions (systems/room13_dot_fx.rpy): none in this contract.
+            'r13_react_kind':lambda *args:None,
+            'r13_react':lambda kind,who,pose,what,at_list:(what,at_list)}
         exec(CODE, env)
         self.speak = env['r13_speaker']
     def test_father_reply_retains_target_pose_without_reentry(self):
