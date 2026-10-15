@@ -2534,6 +2534,8 @@ testcase memo_from_desk:
     pause 1.0
     assert eval (not r13_memo_taken())
     click pos (450,170)
+    pause 1.2
+    screenshot "memo_reading_on_desk.png"
     click pos (640,600) until screen "r13_desk_inspection" timeout 40
     pause 0.4
     assert eval ("M01" in room13["evidence"] and r13_memo_taken() and renpy.get_screen("r13_evidence_found") is not None)

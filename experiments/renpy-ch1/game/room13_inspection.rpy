@@ -366,4 +366,7 @@ label r13_inspect_desk:
         call screen r13_desk_inspection
         if _return!="mother_note":
             return
+        # 0.18.50 (owner): read the memo over the desk close-up, not back in the room.
+        $ renpy.show("r13_desk_bg",what=r13_inspection_art("desk"))
         call r13_mother_note
+        $ renpy.hide("r13_desk_bg")

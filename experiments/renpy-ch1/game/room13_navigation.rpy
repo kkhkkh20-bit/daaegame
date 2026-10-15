@@ -135,10 +135,12 @@ screen r13_map(initial_region=None):
     add R13TravelSheet(spine=False) xpos 12 ypos 8 xsize 1256 ysize 704
     text ("여관 안내도" if region=="inn" else "북쪽 산길" if region=="mountain" else "마을 지도") xpos 30 ypos 22 size 32 color "#493b30"
     text ("현재 위치 · "+r13_location_path()) xpos 280 ypos 30 size 23 color "#765426"
+    # 0.18.50 (owner): no 마을/여관 안 tabs; the map opens on the area you are in. Only once the
+    # northern path is open does a 마을/북쪽 산길 switch appear.
     hbox:
         xpos 30 ypos 78 spacing 12
         for key,title in R13_MAP_REGIONS:
-            if key!="mountain" or r13_map_nodes("mountain"):
+            if key!="inn" and r13_map_nodes("mountain"):
                 textbutton title:
                     style "r13_action_button" xsize 190 ysize 58 text_size 23
                     action [SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected))] selected region==key
@@ -196,7 +198,6 @@ screen r13_map(initial_region=None):
                 if selected==room13["location"]:
                     text "● 현재 위치" ypos 290 size 24 color "#89532e"
                 elif selected in r13_places():
-                    text "이동 비용 · 시간 소모 없음" ypos 290 size 21 color "#65503b" xsize 286
                     textbutton "이곳으로 이동":
                         style "r13_action_button" ypos 332 xsize 286 ysize 56 text_size 25
                         action Return(selected) sensitive ready
@@ -204,6 +205,5 @@ screen r13_map(initial_region=None):
                     text "지금은 이동할 수 없습니다." ypos 290 size 22 color "#796044" xsize 286
     else:
         text "아직 확인한 장소가 없습니다." xpos 932 ypos 180 size 22 color "#65503b"
-    text "장소를 고른 뒤 이동 · 시간 소모 없음" xpos 30 ypos 673 size 20 color "#65503b"
     textbutton "현장으로 돌아가기":
         action Return(False) style "r13_action_button" xpos 950 ypos 650 xsize 300 ysize 60 text_size 24

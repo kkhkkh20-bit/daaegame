@@ -192,8 +192,11 @@ class FlowQA(QA):
    await self.value(('person','guard'));await self.wait('r13_entry_topics');await self.press('원본 대조');await self.wait('r13_confirm');await self.press('진행한다');await self.advance();await self.wait('r13_hub');assert (await self.state())['room']['period']==2
   assert 'entry_corrected'in (await self.state())['room']['flags'];await self.shot('04-entry-complete');self.events.append('Natural '+route+' entry; visible Karo direct click; guard/direct object interactions')
  async def travel(self,label,region=None):
+  # 0.18.50: the map has no 마을/여관 안 tabs; inn rooms are reached from inside the inn.
+  if region=='여관 안' and (await self.state())['room']['location'] not in ('inn','dining','kitchen','hall','room13','guestroom','passage'):
+   await self.travel('여관 접수대')
   await self.press('지도 · 이동');await self.wait('r13_map')
-  if region:await self.press(region)
+  if region and region!='여관 안' and region!='마을':await self.press(region)
   await self.press(label);await self.press('이곳으로 이동');await self.advance();await self.wait('r13_hub')
  async def natural_exploration(self):
   before=(await self.state())['room'];await self.press('지도 · 이동');await self.wait('r13_map');await self.shot('05-spatial-map');await self.press('진료실');assert not any('이곳으로 이동'in b['text'] for b in (await self.state())['buttons']);await self.press('현장으로 돌아가기');await self.wait('r13_hub');assert (await self.state())['room']==before
