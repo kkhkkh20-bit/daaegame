@@ -157,7 +157,7 @@
 ## 검사
 
 - `dev/check.sh`: 단위 테스트와 lint 통과.
-- Ren'Py 화면 테스트: 아래 "회귀 결과"에 적는다.
+- Ren'Py 화면 테스트: 기본 목록 73개 전체 통과 (§12 정리 뒤 실행).
   - 새로 넣은 테스트: gate_documents, bed_hint_day1, goal_fold, drawer_visual, inn_workers, life_door, life_meal, gm_package, gm_lamp, gm_scale, gm_floor, gm_stone. 바뀐 화면으로 다시 돌린 테스트: inn_v4_travel, inn_v4_guestroom. 추가: day1_note_spot, admin_tool, compare_j09.
   - 바뀐 화면에 맞춘 테스트: delivery_cord.
 - 개별 브라우저 검사와 14일 전체 플레이는 소유자 지시에 따라 이번에 반복하지 않았다.
