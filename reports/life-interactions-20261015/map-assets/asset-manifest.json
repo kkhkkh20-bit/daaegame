@@ -5,7 +5,7 @@
     1280,
     720
   ],
-  "export": "Existing dev/import_art.py encode: WebP quality95, no resize or creative editing",
+  "export": "Existing dev/import_art.py encode(lossless=True): no lossy compression, resize or pixel-filter postprocessing",
   "files": {
     "delivery_before": {
       "file": "room13-pixel-life-delivery-before.webp",
@@ -13,8 +13,8 @@
         1672,
         941
       ],
-      "bytes": 458258,
-      "sha256": "a9434ce730868ca84cd785919bcef69bbf62b46e312c1a21883c53e0ff22c8dc"
+      "bytes": 1538634,
+      "sha256": "9daaeafdddcd2b0c6bc9602b68eb0c70459ea0bcf47b2f5c91b018e1b8ab720a"
     },
     "delivery_after": {
       "file": "room13-pixel-life-delivery-after.webp",
@@ -22,8 +22,8 @@
         1672,
         941
       ],
-      "bytes": 446242,
-      "sha256": "0f4166404fda90fe941e5a35b413096159c721fca333765afe50fe4a2ce0e550"
+      "bytes": 1390678,
+      "sha256": "cd8db75ac4f84dae5bf2f0673284a50cf5d14f0dfc1a7441354ec3323a3f5456"
     },
     "door_before": {
       "file": "room13-pixel-life-door-before.webp",
@@ -31,8 +31,8 @@
         1672,
         941
       ],
-      "bytes": 219082,
-      "sha256": "997375c6858ef0f0274ba8472982c213cdb745b6f0388ca32c109dc10c60916c"
+      "bytes": 985102,
+      "sha256": "8bc1dd42ae77c64cfa9e65ea672b1616ae7c07a523e597fc2164919bc1f88990"
     },
     "door_after": {
       "file": "room13-pixel-life-door-after.webp",
@@ -40,8 +40,8 @@
         1672,
         941
       ],
-      "bytes": 217604,
-      "sha256": "8925a217d7e094d1f4820aad1dadd6e4a26ece24cab0b0de47eda82a5d19895c"
+      "bytes": 1014236,
+      "sha256": "ec5ae12bea9cd3bafb44f7c36da6ded30b92f357eba641370d22db0efc72afee"
     },
     "meal_before": {
       "file": "room13-pixel-life-meal-before.webp",
@@ -49,8 +49,8 @@
         1672,
         941
       ],
-      "bytes": 319118,
-      "sha256": "19010ba9262e9b8f42c77e315192accc9a66ab3f410233aedd6c960938da64cc"
+      "bytes": 1344368,
+      "sha256": "e516809f54f217f69c34b28c01c1d0c7450104f7498f585a7aa42b64847510f3"
     },
     "meal_after": {
       "file": "room13-pixel-life-meal-after.webp",
@@ -58,8 +58,8 @@
         1672,
         941
       ],
-      "bytes": 300562,
-      "sha256": "f8c0db6165209f149263823974265e753544ac348f0824747e3de7311a9dae04"
+      "bytes": 1436432,
+      "sha256": "e4ade15ca3a004f2a78a38c89370fed32657e8c88ee4831547cec0e12464a5fe"
     }
   },
   "scenes": {
@@ -185,5 +185,6 @@
       },
       "on_complete": "Use existing kitchen-job completion once; preserve separate-meal facts"
     }
-  }
+  },
+  "revision": "clean-pixel-v2"
 }
