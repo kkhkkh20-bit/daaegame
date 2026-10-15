@@ -361,7 +361,10 @@ label r13_object(key):
     $ r13_rect=r13_spec["rect"]
     $ r13_mark(key,r13_rect[0]+r13_rect[2]//2,r13_rect[1]+r13_rect[3]//2)
     $ r13_flag("observed:"+room13["location"]+":"+key)
-    if r13_spec.get("special"):
+    if r13_spec.get("call_label"):
+        # 0.18.61: a place object that runs its own scene (systems/room13_new_places.rpy).
+        call expression r13_spec["call_label"]
+    elif r13_spec.get("special"):
         call r13_object_mechanism(r13_spec["special"])
     elif room13["case_state"]=="occurred" and room13["location"]=="hall" and key=="door":
         call r13_observe([(None,"복도 맨 끝에 있는 13호실 문. 복도에서 바라봤을 때 왼쪽 문틀의 잠금쇠 고정부가 뜯겨 나가 있다. 오른쪽 경첩은 멀쩡하고, 문짝은 방 안쪽으로 밀려 열려 있었다."),("dad","방문에는 유리창이 없어. 창문은 맞은편 바깥쪽 벽에만 나 있지.")],"object:case:door:v4")

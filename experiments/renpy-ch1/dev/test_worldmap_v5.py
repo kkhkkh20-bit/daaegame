@@ -44,9 +44,10 @@ class WorldmapV5(unittest.TestCase):
     def test_destinations_are_the_existing_eight_village_places(self):
         ns = namespace()
         dest = {k for k, v in DATA["layers"].items() if v["node"]}
-        self.assertEqual(dest, set(ns["R13_MAP_NODES"]["village"]))
-        self.assertEqual(len(dest), 8)
-        self.assertEqual(len(DATA["layers"]), 22)
+        # 0.18.61: 장터·강가·숲속 joined the eight places (systems/room13_new_places.rpy).
+        self.assertEqual(dest, set(ns["R13_MAP_NODES"]["village"]) | {"market", "river", "forest"})
+        self.assertEqual(len(dest), 11)
+        self.assertEqual(len(DATA["layers"]), 25)
         # Shrine, old quarry and scenery houses are drawn but are not places.
         for scenery in ("shrine", "quarry_home", "quarry_shed"):
             self.assertIsNone(DATA["layers"][scenery]["node"])

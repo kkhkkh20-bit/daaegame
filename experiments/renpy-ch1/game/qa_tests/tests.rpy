@@ -8472,3 +8472,77 @@ testcase dialogue_expand:
     click pos (640,600) until eval ("13호실】" in str(getattr(store,"r13_packet",("",""))[1])) timeout 30
     pause 1.5
     screenshot "granny_gold_word.png"
+
+testcase new_places_tour:
+    # 0.18.61 (owner): 장터·강가·숲속 as village places, with people and inspection spots.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
+    pause 3.0
+    screenshot "place_market.png"
+    python:
+        r13_qa_note("market: %r"%([(a["person"],a["x"],a["y"],a["height"]) for a in r13_stage_people()],))
+    run Call("r13_qa_roam",dict(day=3,period=0,location="river",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "place_river.png"
+    run Call("r13_qa_roam",dict(day=3,period=2,location="forest",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "place_forest_evening.png"
+    $ r13_qa_crowd_dump()
+    run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
+    pause 1.0
+    click pos (640,600) until "지도 · 이동" timeout 30
+    click "지도 · 이동"
+    pause 1.5
+    screenshot "place_map.png"
+
+testcase job_fishing:
+    # 0.18.61: 꽥순 gives the ice-fishing work at the river.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ r13_qa_found=r13_qa_find_slot("resident_kkwak","river")
+    assert eval (r13_qa_found is not None)
+    run Call("r13_qa_roam",r13_qa_found,("entry_corrected","lodging"))
+    pause 1.0
+    run Call("r13_qa_talk","resident_kkwak")
+    click pos (1150,90) until "얼음낚시" timeout 30
+    click "얼음낚시"
+    click pos (1150,90) until screen "r13_confirm" timeout 30
+    click "시작하기"
+    click pos (1150,90) until screen "choice" timeout 40
+    click "강 건너 길에 관해 묻는다"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("kkwak_ice" in r13_wallet(room13)["relations"] and any(j["key"]=="fishing" for j in r13_wallet(room13)["jobs"]))
+
+testcase market_stall_shop:
+    # 0.18.61: goods are bought at the market stall.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"),(),12)
+    pause 1.0
+    run Call("r13_object","mk_stall")
+    click pos (640,600) until screen "r13_shop" timeout 30
+    screenshot "market_shop.png"
+
+testcase ancient_granny:
+    # 0.18.61: week 2, the cracked wall in the back passage leads to granny's secret place.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=9,period=1,location="passage",life_poc=True,passage_open=True,week2_started=True,case_state="occurred",granny_state="trusted",daram_state="with_dad"),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "passage_crack.png"
+    assert eval (r13_object_visible(ROOM13["objects"]["passage"]["crack"]))
+    run Call("r13_object","crack")
+    click pos (640,600) until screen "choice" timeout 30
+    click "계단을 내려가 본다"
+    click pos (640,600) until eval ("옛 글자" in str(getattr(store,"r13_packet",("",""))[1])) timeout 60
+    pause 1.5
+    screenshot "ancient_granny.png"
+    click pos (640,600) until screen "r13_hub" timeout 90
+    pause 1.0
+    screenshot "ancient_field.png"
+    assert eval (room13["location"]=="ancient" and r13_has("ancient_found") and r13_has("ancient_granny_met") and "ancient" in r13_places())

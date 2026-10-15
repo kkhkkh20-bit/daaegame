@@ -8,6 +8,8 @@ init 91 python:
         "repair": dict(title="수리점 부품 정리", npc="buri", place="workshop", pay=8,
             detail="부품을 크기별로 나누고 수량을 확인한다.", choice="장부와 맞지 않는 수량을 알린다"),
     }
+    # What asking during each job teaches (relations shown in 생활 장부 › 함께한 일).
+    R13_JOB_MARKS={"kitchen":["nabi_helped"],"delivery":["same_lane","karo_trusted"],"repair":["buri_honest"]}
     # Working both day slots leaves 3-5 spare coins after the 10-coin lodging,
     # so buying something always costs investigation time somewhere.
     R13_DEBT_LIMIT = 20
@@ -61,7 +63,7 @@ init 91 python:
         pay=job["pay"]*(2 if combined else 1)
         if combined:wallet["combined_paid"]=True
         if choice=="ask":
-            marks={"kitchen":["nabi_helped"],"delivery":["same_lane","karo_trusted"],"repair":["buri_honest"]}[key]
+            marks=R13_JOB_MARKS.get(key,[])
             wallet["relations"]=list(dict.fromkeys(wallet["relations"]+marks))
         wallet["cash"]+=pay
         wallet["jobs"].append(dict(day=n["day"],period=n["period"],key=key,choice=choice,pay=pay))

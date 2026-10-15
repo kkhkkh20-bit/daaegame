@@ -2635,5 +2635,349 @@
       0.402,
       -47.8
     ]
+  },
+  "market": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). The picture is lit with lanterns; one picture for all periods.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-market-day.webp",
+      "afternoon": "assets/room13-pixel-wide-market-day.webp",
+      "evening": "assets/room13-pixel-wide-market-day.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "floors": [
+      [
+        760,
+        700,
+        250
+      ],
+      [
+        1000,
+        690,
+        246
+      ],
+      [
+        1200,
+        655,
+        230
+      ],
+      [
+        1640,
+        680,
+        240
+      ],
+      [
+        1900,
+        700,
+        250
+      ]
+    ],
+    "slots": [
+      [
+        760,
+        700,
+        250,
+        "waiting"
+      ],
+      [
+        1000,
+        690,
+        246,
+        "waiting"
+      ],
+      [
+        1200,
+        655,
+        230,
+        "waiting"
+      ],
+      [
+        1640,
+        680,
+        240,
+        "waiting"
+      ],
+      [
+        1900,
+        700,
+        250,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 5,
+    "standing_height_reference": 100,
+    "perspective": [
+      0.45,
+      -60
+    ]
+  },
+  "river": {
+    "width": 2160,
+    "initial_x": 200,
+    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). Evening is a darkened copy of the day picture (dev note, no evening art yet). People stand on the near bank, never on the water.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-river-day.webp",
+      "afternoon": "assets/room13-pixel-wide-river-day.webp",
+      "evening": "assets/room13-pixel-wide-river-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "floors": [
+      [
+        300,
+        700,
+        260
+      ],
+      [
+        620,
+        708,
+        265
+      ],
+      [
+        930,
+        702,
+        262
+      ],
+      [
+        1240,
+        712,
+        267
+      ]
+    ],
+    "slots": [
+      [
+        300,
+        700,
+        260,
+        "waiting"
+      ],
+      [
+        620,
+        708,
+        265,
+        "waiting"
+      ],
+      [
+        930,
+        702,
+        262,
+        "waiting"
+      ],
+      [
+        1240,
+        712,
+        267,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 4,
+    "standing_height_reference": 100,
+    "perspective": [
+      0.6,
+      -160
+    ]
+  },
+  "forest": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). Evening is a darkened copy of the day picture.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-forest-day.webp",
+      "afternoon": "assets/room13-pixel-wide-forest-day.webp",
+      "evening": "assets/room13-pixel-wide-forest-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "floors": [
+      [
+        820,
+        692,
+        256
+      ],
+      [
+        1100,
+        702,
+        261
+      ],
+      [
+        1400,
+        686,
+        253
+      ],
+      [
+        1760,
+        702,
+        261
+      ]
+    ],
+    "slots": [
+      [
+        820,
+        692,
+        256,
+        "waiting"
+      ],
+      [
+        1100,
+        702,
+        261,
+        "waiting"
+      ],
+      [
+        1400,
+        686,
+        253,
+        "waiting"
+      ],
+      [
+        1760,
+        702,
+        261,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 4,
+    "standing_height_reference": 100,
+    "perspective": [
+      0.5,
+      -90
+    ]
+  },
+  "ancient": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). Underground: one picture for all periods.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-ancient-day.webp",
+      "afternoon": "assets/room13-pixel-wide-ancient-day.webp",
+      "evening": "assets/room13-pixel-wide-ancient-day.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "floors": [
+      [
+        760,
+        702,
+        256
+      ],
+      [
+        1060,
+        690,
+        250
+      ],
+      [
+        1360,
+        698,
+        254
+      ]
+    ],
+    "slots": [
+      [
+        760,
+        702,
+        256,
+        "waiting"
+      ],
+      [
+        1060,
+        690,
+        250,
+        "waiting"
+      ],
+      [
+        1360,
+        698,
+        254,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "standing_height_reference": 100,
+    "perspective": [
+      0.55,
+      -130
+    ]
   }
 }
