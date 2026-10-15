@@ -47,14 +47,14 @@ label r13_object_mechanism(kind):
                 "일단 방에 남는다":
                     pass
             return
-        call r13_observe([(None,"책장 오른쪽 아래에 붉은 책이 있다. 책등을 잡아당겼지만 속장이 넘어가지 않는다.")],"puzzle:book:look")
+        call r13_observe([(None,"책장 오른쪽 아래의 붉은 책. 다른 책보다 깊이 박혀 있다. 당겨도 빠지지 않는다.")],"puzzle:book:look:v2")
         menu:
             "책의 아래쪽을 누르고 옆으로 젖힌다":
                 if room13["kitchen_switch"]:
                     $ source_fx("door")
                     $ r13_edit(passage_open=True)
                     $ r13_flag("passage_known")
-                    call r13_observe([(None,"책장 아래쪽 판이 벽 안으로 밀렸다. 어둠 속으로 내려가는 계단이 보인다. 안쪽에도 손잡이가 있다. 그 손잡이를 당기면 주방 쪽 걸쇠와 상관없이 문을 밀어 열 수 있다."),("dad","안에서 나오는 쪽에서는 갇히지 않게 만들어 뒀군."),(None,"손을 떼자 판이 다시 닫혔다. 하지만 걸쇠는 풀린 그대로라 다시 밀 수 있다.")],"puzzle:book:unlocked")
+                    call r13_observe([(None,"책등이 움직이자 벽 안쪽에서 금속 소리가 났다. 책장 아래쪽 판이 벽 안으로 밀렸다. 어둠 속으로 내려가는 계단이 보인다. 안쪽에도 손잡이가 있다. 그 손잡이를 당기면 주방 쪽 걸쇠와 상관없이 문을 밀어 열 수 있다."),("dad","안에서 나오는 쪽에서는 갇히지 않게 만들어 뒀군."),(None,"손을 떼자 판이 다시 닫혔다. 하지만 걸쇠는 풀린 그대로라 다시 밀 수 있다.")],"puzzle:book:unlocked")
                     $ r13_grant(["E37"],"주방 레버와 2층 책장 손잡이의 실제 작동")
                     menu:
                         "통로로 들어간다":
@@ -62,7 +62,7 @@ label r13_object_mechanism(kind):
                         "지금은 방에 남는다":
                             pass
                 else:
-                    call r13_observe([(None,"책 모양 손잡이만 조금 움직였다. 아직 뒤쪽 걸쇠가 단단히 걸려 있다." )],"puzzle:book:locked")
+                    call r13_observe([(None,"책이 조금 흔들린다. 그 이상은 움직이지 않는다.")],"puzzle:book:locked:v2")
             "다른 곳을 살핀다":
                 pass
         return

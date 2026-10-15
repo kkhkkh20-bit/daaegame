@@ -1599,3 +1599,21 @@ testcase owl_and_buri:
     assert eval ("지난 장부" in r13_qa_last_present and "ledger_madam:approach" in [k for k,s in r13_topics("resident_madam")])
     run Function(r13_flag,"tok_hostile","tok_cleared")
     assert eval ("tok_after_doubt" in [k for k,s in r13_topics("resident_tok")])
+
+testcase inn_change:
+    # 0.18.18 A: a raised lever before the case makes Granny call off the plan; wax trace after the case.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="kitchen",kitchen_switch=True),("passage_known","ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    pause 1.0
+    assert eval (r13_plan_noticed() and r13_object_visible(ROOM13["objects"]["kitchen"]["rear"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after"]))
+    run Function(r13_flag,"observed:kitchen:rear")
+    run Function(r13_edit,case_state="occurred")
+    assert eval (r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after_known"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after"]))
+    run Function(r13_edit,case_state="pending",day=4,period=2,location="hall")
+    run Call("r13_case_choice")
+    click pos (640,600) until screen "choice" timeout 40
+    click "까로와 되돌아온 짐을 확인하러 간다"
+    click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval (room13["case_state"]=="prevented" and room13["victim_state"]=="protected" and "H13" in room13["evidence"] and "E34" in room13["evidence"] and r13_has("plan_noticed"))

@@ -487,7 +487,7 @@ label r13_case_choice:
         call r13_w1c_fake_night
         jump r13_roam
     call r13_scene("hall","목요일 저녁 · 여관 2층 복도","night")
-    call r13_lines([("karo","되돌아온 짐이 마을 바깥 초소에 도착했어요. 지금 확인하러 가실 거죠?"),("daram","할아버지 물건은 내가 대신 받아 둘게. 방에서 할머니랑 같이 기다리고 있을게."),(None,"계단 아래에서 할머니가 고개를 끄덕였다. 아이는 자기가 봐 주겠다는 표정이었다."),("dad","(되돌아온 짐을 받으러 초소에 갈까, 아니면 아이 곁에 남을까.)",{"thought":True})],"case:appointment:v4")
+    call r13_lines([("karo","되돌아온 짐이 마을 바깥 초소에 도착했어요. 지금 확인하러 가실 거죠?"),("daram","할아버지 물건은 내가 대신 받아 둘게. 방에서 할머니랑 같이 기다리고 있을게."),(None,"계단 아래에서 할머니가 고개를 끄덕였다. 아이는 자기가 봐 주겠다는 표정이었다."),("granny","엄마 물건은 할아버지가 직접 보여 주실 거야. 할아버지 오시면 둘이 먼저 보고 있으렴. 할머니는 식당을 봐야 해서."),("dad","(되돌아온 짐을 받으러 초소에 갈까, 아니면 아이 곁에 남을까.)",{"thought":True})],"case:appointment:v4")
     menu:
         "되돌아온 짐은 미루고 방에서 함께 기다린다":
             $ r13_flag("father_accompanied")
@@ -500,6 +500,9 @@ label r13_case_choice:
     call r13_scene("winter","바깥 초소 · 되돌아온 짐","night")
     call r13_lines([("karo","봉투에 찍힌 날짜 좀 보세요. 부인이 이 마을에 오기 전에 보낸 물건 같네요."),(None,"봉투에 찍힌 오래된 우체국 날짜 도장은 젖어 있었다. 봉투 안에는 우리가 보냈던 장갑과 맡김표가 들어 있었다."),("dad","이 짐을 받으러 오라고 전한 사람은 누굽니까?"),("karo","여관에서 전해 줬어요. 저는 최근에 온 연락인 줄 알았는데…….")],"case:father:parcel:v3")
     $ r13_grant(["E34"],"까로와 바깥 초소에서 되돌아온 짐을 직접 확인")
+    # Owner decision 2026-10-15: a changed lever or wedged panel makes Granny call off the plan.
+    if r13_plan_noticed():
+        jump r13_case_noticed
     call r13_scene("hall","여관 2층 · 연기가 새는 문","quiet")
     call r13_cinematic("return")
     $ source_fx("knock")
