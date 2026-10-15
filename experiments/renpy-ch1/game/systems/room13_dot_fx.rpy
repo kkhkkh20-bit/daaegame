@@ -458,9 +458,7 @@ init 57 python:
             what = R13Anticipate(before[1], what, lead)
         else:
             lead = 0.0
-        sound = R13_DOT_FX.get("react_sounds", {}).get(kind)
-        if sound and not renpy.is_skipping():
-            renpy.sound.play(sound, channel="sound")
+        # 0.18.39 (owner): the synthesized 8-bit reaction sounds were removed; motion only.
         motion = {"surprise": r13_react_surprise, "joy": r13_react_joy, "angry": r13_react_angry,
                   "anxious": r13_react_anxious, "flustered": r13_react_flustered}[kind]
         return what, list(at_list) + [motion(lead)]

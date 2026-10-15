@@ -490,7 +490,7 @@ def main():
     meta["lamps"] = lamp_plates()
     meta["inn_window"] = {"rect": list(INN_WINDOW), "mask": window_mask(), "periods": ["evening"],
                           "layers": [{"count": 34, "size": 4, "vy": [22, 34], "sway": 6}]}
-    meta["react_sounds"] = reaction_sounds()
+    # 0.18.39 (owner): synthesized reaction sounds removed (reaction_sounds() kept, unused).
     meta["cinematics"] = cine_plates()
     meta["blink"] = {"timeline": [["half", .05], ["closed", .09], ["half", .05]],
                      "interval": [2.6, 5.2], "people": blink}
