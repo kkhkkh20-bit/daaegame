@@ -62,14 +62,15 @@ init 99 python:
         ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st) and (person is None or st["who"]==person)]
         return ids[(ids.index(current)+1)%len(ids)] if current in ids else ids[0] if ids else current
 
-    def r13_meeting_plate(session):
-        return Transform("assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar"),xysize=(1280,720),nearest=True)
+    def r13_meeting_plate(session,close=False):
+        plate=Transform("assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar"),xysize=(1280,720),nearest=True)
+        return Crop((160,0,1280,720),Transform(plate,zoom=1.25,nearest=True)) if close else plate
 
     class R13MeetingForeground(renpy.Displayable):
-        def __init__(self,session,**kwargs):super(R13MeetingForeground,self).__init__(**kwargs);self.session=session
+        def __init__(self,session,close=False,**kwargs):super(R13MeetingForeground,self).__init__(**kwargs);self.session=session;self.close=close
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720);c=out.canvas()
-            edge=[(x,r13_meeting_edge(x,self.session)) for x in range(0,1281,32)]
+            edge=[(x,int(r13_meeting_edge((x+160)/1.25,self.session)*1.25) if self.close else r13_meeting_edge(x,self.session)) for x in range(0,1281,32)]
             c.polygon("#ffffff",edge+[(1280,720),(0,720)])
             return out
 
@@ -90,17 +91,21 @@ transform r13_meeting_pan(revision=0,direction=1):
 screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,ballot=False):
     $ session=r13_debate_session(claim)
     $ seats=r13_meeting_cast(claim,session)
-    add r13_meeting_plate(session)
+    add r13_meeting_plate(session,close)
     fixed:
         id "meeting_camera"
         xsize 1280 ysize 720
         if close:
             at r13_meeting_pan(r13_meeting_shot_revision,r13_meeting_pan_direction)
-        add r13_meeting_plate(session)
+        add r13_meeting_plate(session,close)
         if close:
-            $ left,right=r13_meeting_neighbors(claim,focus)
-            for who,cx,height,top in ((left,40,350,170),(right,1240,350,170),(focus,640,430,112)):
-                add Transform(r13_meeting_actor(who,focus,cx),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
+            # Reuse front-facing interview expressions and their stable torso centre.
+            $ pose=getattr(store,"dialogue_expression","neutral")
+            $ portrait=r13_fullbody_close_art(focus,pose,840)
+            if portrait is not None:
+                add portrait xcenter r13_close_x(focus,pose,840) ypos r13_fullbody_close_y(focus,840,96,pose)
+            else:
+                add Transform(r13_meeting_actor(focus,focus,640),ysize=840,fit="contain",nearest=True) xcenter 640 ypos 108
         else:
             for index,(who,stance) in enumerate(seats):
                 $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
@@ -115,7 +120,7 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
                     frame:
                         xsize 112 ysize 24 padding (3,2) background R13InkPanel(focused=who==focus)
                         text R13_NAMES[who] size r13_read_size(14,16) color ("#efd191" if who==focus else "#efe0c3") xalign .5 yalign .5
-        add AlphaMask(r13_meeting_plate(session),R13MeetingForeground(session))
+        add AlphaMask(r13_meeting_plate(session,close),R13MeetingForeground(session,close))
         if ballot:
             for index,(who,stance) in enumerate(seats):
                 if stance is not None:
