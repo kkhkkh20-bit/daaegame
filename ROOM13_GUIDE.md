@@ -124,7 +124,7 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
 - 벽난로 불꽃·저녁 불빛, 실외 저녁 눈·가로등, 다람이 눈 깜빡임, 광장 굴뚝 연기, 증거 반짝임, 제시·반박 집중선, 지도 현재 위치 핀, 시간대 전환 디더. 화면 연출 신호는 `r13_fx_cue`. 코드는 `systems/room13_dot_fx.rpy`, 좌표·프레임은 `game/assets/room13-dot-fx.json`.
 - 표정이 바뀔 때 몸 반응과 반응음(놀람 움찔→튀어오름 등). 인물은 `R13_REACT_PEOPLE`. 연결은 `r13_speaker` 안 한 곳.
 - 눈 깜빡임 인물은 `make_dot_fx.py`의 `BLINK_MORE`·`BLINK_SKIP`. 새로 만들면 표정마다 눈을 사람이 확인한다.
-- 조사(배경 위 현장) 화면 인물은 움직이지 않는다(`R13_FIELD_IDLE = False`). 1:1 대화 그림은 부드럽게 움직인다(0.18.43): 숨쉬기·깜빡임, 감정이 바뀌면 스쿼시·스트레치 동작(`r13_body_*`). 검수 녹화용 화면 테스트 `motion_reel`.
+- 조사(배경 위 현장) 화면 인물은 움직이지 않는다(`R13_FIELD_IDLE = False`). 1:1 대화 그림은 평소엔 멈춰 있고 눈만 깜빡인다. 감정이 바뀌면 부드러운 스쿼시·스트레치 동작 한 번(`r13_body_*`, 0.18.43). 숨쉬기는 없다(0.18.44 소유자). 검수 녹화용 화면 테스트 `motion_reel`.
 - 프레임은 `python3 dev/make_dot_fx.py`로 다시 만든다. 손으로 고친 프레임을 넣지 않는다(다시 돌리면 덮인다).
 - 원본 그림은 바꾸지 않고 위에 얹는다. 설정의 '움직임'이 꺼져 있거나 건너뛰기 중이면 원본만 보인다.
 - 배경을 바꾸면(같은 파일 이름) `make_dot_fx.py`를 다시 돌리고 `dev/run_renpy_tests.sh dot_fx` 캡처를 확인한다.

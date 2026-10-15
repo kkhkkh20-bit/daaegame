@@ -475,9 +475,11 @@ init 57 python:
         if size:
             # 0.18.43 (owner): 1:1 대화는 부드럽게(매 프레임) 움직인다. 발밑 가운데를 축으로
             # 늘이고 눌러(스쿼시·스트레치) "확" 하는 느낌을 내고, 그 뒤엔 숨쉬기만 한다.
+            # 0.18.44 (owner): no breathing; only the emotion motion, then still.
             body = R13_BODY_MOTION.get(kind) if kind else None
-            moving = At(what, body(lead) if body else r13_body_idle)
-            return Fixed(moving, xysize=size), at_list
+            if not body:
+                return what, at_list
+            return Fixed(At(what, body(lead)), xysize=size), at_list
         if not kind:
             return what, at_list
         motion = {"surprise": r13_react_surprise, "joy": r13_react_joy, "angry": r13_react_angry,
@@ -606,7 +608,7 @@ init 57 python:
 
 # ---------------------------------------------------------------- 0.18.43 1:1 대화 몸동작
 # 원본 표정 그림 한 장을 허리 높이(그림 위에서 62%) 가운데를 축으로 늘이고 누르고 띄워 동작을 만든다(매 프레임, 부드러운 가감속).
-# 동작이 끝나면 숨쉬기(1.7초마다 1% 늘었다 줄기)만 남는다. 조사(배경) 화면 인물은 여전히 움직이지 않는다.
+# 동작이 끝나면 멈춘다(0.18.44 소유자: 숨쉬기 꿀렁임 제거). 조사(배경) 화면 인물은 여전히 움직이지 않는다.
 init 57 python:
     def r13_body_motion_table():
         return {"surprise": r13_body_surprise, "joy": r13_body_joy, "angry": r13_body_angry,
@@ -623,10 +625,6 @@ transform r13_body_idle:
     subpixel True
     xanchor .5 yanchor .62 xpos .5 ypos .62
     xzoom 1 yzoom 1 xoffset 0 yoffset 0
-    block:
-        ease 1.7 yzoom 1.007 xzoom .997
-        ease 1.7 yzoom 1 xzoom 1
-        repeat
 
 # 놀람: (앞 얼굴로) 움츠림 → 새 얼굴로 확 솟구침 → 공중에서 잠깐 → 착지하며 눌림 → 제자리
 transform r13_body_surprise(lead=.10):
@@ -639,10 +637,6 @@ transform r13_body_surprise(lead=.10):
     easein .10 xzoom 1.033 yzoom 0.9615 yoffset 0
     easeout .16 xzoom 0.9945 yzoom 1.006
     ease .12 xzoom 1 yzoom 1
-    block:
-        ease 1.7 yzoom 1.007 xzoom .997
-        ease 1.7 yzoom 1 xzoom 1
-        repeat
 
 # 기쁨: 웅크렸다 통통 두 번
 transform r13_body_joy(lead=0.0):
@@ -657,10 +651,6 @@ transform r13_body_joy(lead=0.0):
     easein .09 xzoom 1 yzoom 1 yoffset 0
     easein .05 xzoom 1.011 yzoom 0.989
     ease .10 xzoom 1 yzoom 1
-    block:
-        ease 1.7 yzoom 1.007 xzoom .997
-        ease 1.7 yzoom 1 xzoom 1
-        repeat
 
 # 화남: (앞 얼굴로) 움찔 → 새 얼굴로 앞으로 들썩이며 부르르
 transform r13_body_angry(lead=.07):
@@ -676,10 +666,6 @@ transform r13_body_angry(lead=.07):
     linear .035 xoffset 5
     linear .035 xoffset -3
     ease .14 xoffset 0 yoffset 0 xzoom 1 yzoom 1
-    block:
-        ease 1.7 yzoom 1.007 xzoom .997
-        ease 1.7 yzoom 1 xzoom 1
-        repeat
 
 # 불안: 몸을 움츠려 잔떨림 → 천천히 펴짐
 transform r13_body_anxious(lead=0.0):
@@ -695,10 +681,6 @@ transform r13_body_anxious(lead=0.0):
     linear .04 xoffset 0
     pause .25
     ease .6 xzoom 1 yzoom 1 yoffset 0
-    block:
-        ease 1.4 yzoom 1.006 xzoom .998
-        ease 1.4 yzoom 1 xzoom 1
-        repeat
 
 # 당황: 좌우로 허둥지둥
 transform r13_body_flustered(lead=0.0):
@@ -710,10 +692,6 @@ transform r13_body_flustered(lead=0.0):
     ease .12 xoffset -8 yzoom 0.9945
     ease .12 xoffset 4 yzoom 1
     ease .14 xoffset 0
-    block:
-        ease 1.7 yzoom 1.007 xzoom .997
-        ease 1.7 yzoom 1 xzoom 1
-        repeat
 
 # 생각: 한쪽으로 천천히 기울어 머문 뒤 제자리
 transform r13_body_thinking(lead=0.0):
@@ -723,7 +701,3 @@ transform r13_body_thinking(lead=0.0):
     ease .3 xoffset 12 yoffset 4 yzoom 0.9918
     pause .9
     ease .4 xoffset 0 yoffset 0 yzoom 1
-    block:
-        ease 1.7 yzoom 1.007 xzoom .997
-        ease 1.7 yzoom 1 xzoom 1
-        repeat
