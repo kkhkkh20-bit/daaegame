@@ -9349,7 +9349,8 @@ testcase offer_on_person:
         _sl=[a for a in r13_stage_people() if a["person"]=="resident_sling"]
         r13_qa_note("sling staged: %r"%([(a["pose"],a["x"],a["y"],a["width"],a["height"]) for a in _sl],))
         r13_qa_note("post people: %r"%([(a["person"],a["pose"],a["x"],a["y"]) for a in r13_stage_people()],))
-    assert eval (any(a["person"]=="resident_sling" and a["pose"]=="thinking" for a in r13_stage_people()))
+    # 0.18.63: the offer pose is the drawn steaming action (map action), "thinking" only as fallback.
+    assert eval (any(a["person"]=="resident_sling" and a["pose"]=="event_steam" for a in r13_stage_people()))
     click "슬링"
     click pos (1150,90) until screen "choice" timeout 40
     assert eval (r13_has("ev_l_done"))
