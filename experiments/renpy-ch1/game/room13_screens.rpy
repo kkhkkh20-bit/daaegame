@@ -12,7 +12,7 @@ screen r13_hud():
     if not any(renpy.get_screen(k) for k in ("say","r13_topics","choice","r13_entry_topics","r13_entry_karo_topics")):
         frame:
             xpos 24 ypos 20 xsize 410 ysize 82 padding (16,10)
-            background R13ActionPanel()
+            background r13_frame("hud")
             vbox:
                 spacing 5
                 text r13_clock() size r13_read_size(19,22) color "#c6b88e"
@@ -296,7 +296,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                         text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read)):
                             xsize list_width-59 text_align .5 xalign .5
                             size r13_read_size(24,30) font r13_ui_font()
-                            color ("#a0a39b" if was_read else "#fff4df")
+                            color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
                             outlines [(1,"#101515",0,0)]
                 if not entries:
                     text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":

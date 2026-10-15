@@ -13,7 +13,7 @@ init 79 python:
             c.polygon("#eed17a" if self.hover else "#c9a75f",((0,0),(44,0),(60,h//2),(44,h),(0,h)))
             c.rect("#eed17a" if self.hover else "#dce6dc",(0,0,w,h),3 if self.hover else 1)
             if self.number is not None:
-                t=renpy.render(Text(str(self.number),size=r13_read_size(24,28),font=r13_ui_font(),color="#1d3a37",bold=True),60,h,st,at)
+                t=renpy.render(Text(str(self.number),size=r13_read_size(24,28),font=r13_ui_font(),color="#1d3a37"),60,h,st,at)
                 tw,th=t.get_size()
                 r.blit(t,(int(25-tw/2),int((h-th)/2)))
             return r

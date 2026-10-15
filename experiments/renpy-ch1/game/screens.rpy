@@ -93,7 +93,7 @@ screen say(who,what):
     window:
         id "window"
         xalign .5 ypos (454 if room13_mode and persistent.room13_large_text else 506 if room13_mode else 551) xsize (1280 if room13_mode else 1200) ysize (226 if room13_mode and persistent.room13_large_text else 174 if room13_mode else 169)
-        background (Solid("#14272b"+(persistent.room13_window_alpha or "d4")) if room13_mode else Solid("#10262de8" if winter_mode else "#211a16f2"))
+        background (r13_dialogue_frame() if room13_mode else Solid("#10262de8" if winter_mode else "#211a16f2"))
         padding (0,0)
         fixed:
             if not room13_mode:
@@ -104,14 +104,14 @@ screen say(who,what):
                 if who and not room13_mode:
                     text who id "who" color "#ebcd8a" font (r13_ui_font() if room13_mode else "assets/Galmuri11.ttf")
                 if room13_mode:
-                    r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(26,32) line_spacing 7 xsize 930 text_align .0 font r13_ui_font() color ("#9dc9ff" if r13_thought_active else "#fff5df")
+                    r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(26,32) line_spacing 7 xsize 930 text_align .0 font r13_ui_font() color r13_say_color()
                 else:
                     text what id "what" xsize (910 if has_portrait else 1120) font "assets/Galmuri11.ttf" color "#fff5df"
     if who and room13_mode:
         frame:
             xpos 108 xanchor 0.0 ypos (424 if persistent.room13_large_text else 476) padding R13_UI_PADDING["name"]
-            background R13ActionPanel()
-            text who id "who" color "#ffe39a" font r13_ui_font() size r13_read_size(21,26)
+            background r13_frame("hud")
+            text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size r13_read_size(20,24)
     # No speaker profile beside the dialogue (owner's decision); the person is on stage.
     if has_portrait:
         frame:
@@ -547,7 +547,7 @@ screen pause_menu():
                         frame:
                             xsize 990 ysize 90 padding (18,12) background Solid("#b9ae93")
                             frame:
-                                xfill True yfill True padding (16,8) background Solid("#14272b" + persistent.room13_window_alpha)
+                                xfill True yfill True padding (16,8) background r13_dialogue_frame()
                                 text "기록과 증언을 천천히 비교해 보자." size r13_read_size(24,30) color R13_UI_COLORS["menu_text"] yalign .5
                     else:
                         use r13_opt_row("대사가 나오는 속도"):

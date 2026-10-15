@@ -30,7 +30,7 @@ screen r13_backlog():
                         text (row["who"]+" · "+row["stamp"]):
                             size 20 color "#9fcbd9" xsize 1020
                         text row["what"]:
-                            size r13_read_size(25,31) color ("#9dc9ff" if row["kind"]=="독백" else "#f3eee2") xsize 1020
+                            size r13_read_size(25,31) color (r13_role_color("thought") if row["kind"]=="독백" else r13_role_color("narration") if row["kind"]=="서술" else r13_role_color("speech")) xsize 1020
     textbutton "대화로 돌아가기":
         style "r13_action_button" area (935,646,255,48) text_size 22 action Hide("r13_backlog")
     key "game_menu" action Hide("r13_backlog")
