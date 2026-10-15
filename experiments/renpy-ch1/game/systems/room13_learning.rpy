@@ -78,12 +78,7 @@ init 98 python:
     def r13_learning_job_context(key,state=None):
         s=(store.room13 or {}) if state is None else state
         flags=set(s.get("flags",[]));read=set(s.get("read_topics",[]))
-        if key=="kitchen" and "life:nabi_helped" in flags and "life:nabi" not in read:
-            return "남은 질문: 나비에게 따로 챙긴 식사를 물어볼 수 있다."
-        if key=="repair" and "life:buri_honest" in flags and "life:buri" not in read:
-            return "남은 질문: 부리에게 장부를 옮겨 쓰는 때를 물어볼 수 있다."
-        if key=="delivery" and "same_lane" in r13_wallet(s)["relations"] and not r13_wallet(s)["combined_paid"]:
-            return "알아낸 방법: 두 건 묶음 배달 · 10냥 · 끈은 까로에게 빌릴 수 있다."
+        # The board says only what the job is (owner, 0.18.16): no remaining-question or trick hints.
         return R13_JOB_CONTEXT.get(key,"")
 
     def r13_learning_record_status(key):

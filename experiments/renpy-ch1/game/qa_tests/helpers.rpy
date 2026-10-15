@@ -268,3 +268,10 @@ init 999 python:
     def r13_qa_price(*flags):
         st=winter_copy.deepcopy(store.room13);st["flags"]=list(flags)
         return r13_shop_price(st,sorted(R13_SHOP)[0])
+
+label r13_qa_delivery:
+    $ r13_job_key="delivery"
+    $ r13_job_question=R13_JOBS["delivery"]["choice"]
+    call r13_delivery_inspect
+    $ store.r13_qa_dv_choice=r13_job_choice
+    jump r13_roam

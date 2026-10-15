@@ -1539,3 +1539,29 @@ testcase testimony_scope:
     assert eval ("E12" in room13["evidence"] and "J09" in room13["evidence"])
     run Function(r13_qa_present,"doto","E05")
     assert eval ("J10" in room13["evidence"] and "복도 쪽 문" in r13_qa_last_present)
+
+testcase delivery_cord:
+    # 0.18.16 D-1: no double-pay choice; reading labels and tying the boxes with a cord leads to the bonus.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="gate"),(),("cord","snack"))
+    pause 1.0
+    run Call("r13_qa_delivery")
+    click pos (640,600) until screen "choice" timeout 40
+    click "작은 상자의 짐표를 읽는다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "짐을 수레에 올려 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "가진 물건을 짐에 써 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "구운 밤"
+    click pos (640,600) until screen "choice" timeout 40
+    click "가진 물건을 짐에 써 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "질긴 묶음끈"
+    click pos (640,600) until screen "choice" timeout 40
+    click "짐을 나르러 간다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice=="combine" and "same_lane" in r13_wallet(room13)["relations"])
+    assert eval (r13_complete_job(room13,"delivery","combine")[1]["pay"]==14)
