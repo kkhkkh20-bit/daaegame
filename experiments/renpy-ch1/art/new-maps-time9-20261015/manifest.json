@@ -1,0 +1,148 @@
+{
+  "slots": [
+    {
+      "location": "river",
+      "time": "morning",
+      "file": "river-morning.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "dfae03ba9b54a25bf49fb509895f81c256255ee7a9b2e618d0b98fe307ea89b8",
+      "source": "approved_v3_reused",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_7063d13074588191b28b95999266d77a"
+    },
+    {
+      "location": "river",
+      "time": "afternoon",
+      "file": "river-afternoon.png",
+      "width": 2171,
+      "height": 724,
+      "sha256": "25b2d2e99353942a0ea186369176f631447aad2a2c60b2901d31dad040261c6e",
+      "source": "imagegen_lighting_edit",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_646cb434179481918e4d4f76f10c86a6"
+    },
+    {
+      "location": "river",
+      "time": "evening",
+      "file": "river-evening.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "77743748a623a9f9c9eab7181bd093aa5e62cdb06080cc488be7c815d8748c98",
+      "source": "imagegen_lighting_edit",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_cc0e3056e8408191bc5fd995d6521b54"
+    },
+    {
+      "location": "forest",
+      "time": "morning",
+      "file": "forest-morning.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "61c168e7735ed6c527841a99a73851e8d6e068fe98cb629216b09a1d98348c53",
+      "source": "approved_v3_reused",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_657f23ec1a008191b9420fc778004620"
+    },
+    {
+      "location": "forest",
+      "time": "afternoon",
+      "file": "forest-afternoon.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "a09d76b820c63ca45905fc21225d58fa8c2fe8c667d9d05fa7c54937bc168e50",
+      "source": "imagegen_lighting_edit",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_b78ee70f65f881919c293b355b1f1da8"
+    },
+    {
+      "location": "forest",
+      "time": "evening",
+      "file": "forest-evening.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "668a0ee21bd15047392faeb853b8ac7d5c9f387d4faa8254b509a09e73420023",
+      "source": "imagegen_lighting_edit",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_501a4fbeaebc8191847c98c741996938"
+    },
+    {
+      "location": "market",
+      "time": "morning",
+      "file": "market-morning.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "c50aa165f41c0d3667bd9073d74a3beb4d30dd22fffc9bc4ba2a857c910f3f5e",
+      "source": "approved_v3_reused",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_93c6c64185b08191a9003369ce2336f8"
+    },
+    {
+      "location": "market",
+      "time": "afternoon",
+      "file": "market-afternoon.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "7976248acea465d8bdce87939aaf77dbf1afdddcba930e72c217517b8fbe3682",
+      "source": "imagegen_lighting_edit",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_ab960c7b44588191b533eb773afdb93a"
+    },
+    {
+      "location": "market",
+      "time": "evening",
+      "file": "market-evening.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "bf9a7c6b16743259d5e6b8650861cd8723840e969b286b4106ef960890d76ec8",
+      "source": "imagegen_lighting_edit",
+      "runtime_canvas": [
+        2160,
+        720
+      ],
+      "status": "generated_not_applied",
+      "library_file_id": "libfile_692498b3c9608191a353b27c19948aaa"
+    }
+  ],
+  "warnings": [
+    "Runtime placement and clickable hotspots require checking; generative edits are not pixel-perfect guarantees.",
+    "River-afternoon width is 2171 not 2172. Normalize through runtime fit, do not crop.",
+    "Approved original large river and pathless forest override older requested dock/clearing layouts. No missing dock/hut props added.",
+    "Forest foreground roots/log overlap potential actor foot positions; validate occlusion.",
+    "River shoreline is narrow; do not place residents over open water.",
+    "Market central distant tower preserved from approved original; no new church added.",
+    "Ancient underground facility time-independent; shrine and altar excluded."
+  ]
+}

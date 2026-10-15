@@ -120,9 +120,9 @@
         250
       ],
       "resident_ttadak": [
-        1150,
+        1043,
         472,
-        205
+        196
       ]
     },
     "work": {},
@@ -199,8 +199,23 @@
     ],
     "poses": {
       "resident_tori": "activity",
-      "resident_ttadak": "living_repair"
-    }
+      "resident_ttadak": "living_doorframe"
+    },
+    "props": [
+      {
+        "file": "assets/room13-prop-inn-doorframe-repair.webp",
+        "rect": [
+          994,
+          126,
+          226,
+          340
+        ],
+        "when": {
+          "person": "resident_ttadak"
+        },
+        "note": "0.18.63 (01822 §2): plank on the door's right post, nail box and shavings at its foot; shown only while 따닥 is in the lobby. His left palm meets the plank's left edge (x 1110)."
+      }
+    ]
   },
   "school": {
     "revision": 2,
@@ -665,7 +680,13 @@
         793
       ]
     },
-    "reviewed": true
+    "reviewed": true,
+    "offer_spots": {
+      "r13_w2e_tools": [
+        300,
+        660
+      ]
+    }
   },
   "square": {
     "revision": 3,
@@ -843,7 +864,14 @@
     "pinned": [
       "doto",
       "resident_tori"
-    ]
+    ],
+    "seats": {
+      "resident_yeoni:living_mend": [
+        1765,
+        566,
+        244
+      ]
+    }
   },
   "gate": {
     "revision": 1,
@@ -1066,6 +1094,12 @@
     },
     "poses": {
       "daram": "neutral"
+    },
+    "pose_positions": {
+      "karo:living_axlewrap": [
+        560,
+        615
+      ]
     }
   },
   "clinic": {
@@ -2634,6 +2668,338 @@
     "perspective": [
       0.402,
       -47.8
+    ],
+    "slot_actions": {
+      "resident_momo": "living_lampnumber"
+    }
+  },
+  "river": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Big river, narrow snow bank: floor spots only on the bank (lower left), never on the water. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015) ; river afternoon 2171 wide normalized to 2172 by repeating the last column.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-river-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-river-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-river-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "river_reeds": [
+        10,
+        410,
+        160,
+        250
+      ],
+      "river_rocks": [
+        162,
+        529,
+        195,
+        80
+      ],
+      "river_ice": [
+        1437,
+        632,
+        330,
+        70
+      ],
+      "river_water": [
+        700,
+        300,
+        700,
+        200
+      ],
+      "river_cliffs": [
+        1717,
+        151,
+        227,
+        119
+      ]
+    },
+    "floors": [
+      [
+        260,
+        705,
+        250
+      ],
+      [
+        520,
+        712,
+        255
+      ],
+      [
+        640,
+        710,
+        256
+      ]
+    ],
+    "slots": [
+      [
+        260,
+        705,
+        250,
+        "floor"
+      ],
+      [
+        520,
+        712,
+        255,
+        "floor"
+      ],
+      [
+        640,
+        710,
+        256,
+        "floor"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "perspective": [
+      0.808,
+      -319.0
+    ]
+  },
+  "forest": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Pathless forest: floor spots on open snow in front of the roots and logs. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015).",
+    "files": {
+      "morning": "assets/room13-pixel-wide-forest-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-forest-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-forest-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "forest_roots": [
+        108,
+        454,
+        650,
+        194
+      ],
+      "forest_trunk": [
+        194,
+        0,
+        281,
+        454
+      ],
+      "forest_rock": [
+        1134,
+        605,
+        140,
+        65
+      ],
+      "forest_branches": [
+        1274,
+        0,
+        346,
+        324
+      ]
+    },
+    "floors": [
+      [
+        1000,
+        700,
+        250
+      ],
+      [
+        1450,
+        706,
+        255
+      ],
+      [
+        1900,
+        712,
+        258
+      ]
+    ],
+    "slots": [
+      [
+        1000,
+        700,
+        250,
+        "floor"
+      ],
+      [
+        1450,
+        706,
+        255,
+        "floor"
+      ],
+      [
+        1900,
+        712,
+        258,
+        "floor"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "perspective": [
+      0.667,
+      -216.3
+    ]
+  },
+  "market": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Market street: floor spots on the cobbles in front of the stalls. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015).",
+    "files": {
+      "morning": "assets/room13-pixel-wide-market-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-market-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-market-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "market_produce": [
+        594,
+        389,
+        335,
+        86
+      ],
+      "market_oven": [
+        432,
+        324,
+        108,
+        108
+      ],
+      "market_firewood": [
+        335,
+        443,
+        173,
+        151
+      ],
+      "market_cheese": [
+        1210,
+        346,
+        356,
+        162
+      ],
+      "market_cloth": [
+        1728,
+        400,
+        216,
+        108
+      ],
+      "market_pots": [
+        2030,
+        367,
+        119,
+        140
+      ]
+    },
+    "floors": [
+      [
+        900,
+        640,
+        225
+      ],
+      [
+        1150,
+        605,
+        205
+      ],
+      [
+        1420,
+        655,
+        230
+      ],
+      [
+        1650,
+        700,
+        250
+      ]
+    ],
+    "slots": [
+      [
+        900,
+        640,
+        225,
+        "floor"
+      ],
+      [
+        1150,
+        605,
+        205,
+        "floor"
+      ],
+      [
+        1420,
+        655,
+        230,
+        "floor"
+      ],
+      [
+        1650,
+        700,
+        250,
+        "floor"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 4,
+    "perspective": [
+      0.468,
+      -76.5
     ]
   }
 }

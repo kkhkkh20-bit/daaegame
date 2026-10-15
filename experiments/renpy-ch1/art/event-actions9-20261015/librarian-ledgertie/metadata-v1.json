@@ -1,0 +1,73 @@
+{
+  "character_id": "resident_librarian",
+  "action_id_proposed": "event_ledgertie",
+  "status": "optional_scene_enhancement_not_runtime_patch",
+  "file": "room13-pixel-acting-resident_librarian-ledgertie.png",
+  "generation_mode": "built-in image_gen; original followed by framing edit",
+  "source_request": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md",
+  "source_references": [
+    "/workspace/shared/character-catalog40/runtime-assets/resident_librarian.webp",
+    "/workspace/shared/character-catalog40/runtime-actions/room13-redesign-resident_librarian.webp"
+  ],
+  "scene": {
+    "event": "사서 장부",
+    "location": "post",
+    "day_min": 4,
+    "day_max": 6,
+    "period_max": 1,
+    "requires_know_stone_history": false,
+    "condition_note": "No know_stone_history; integration gates supplied by parent, not independently verified here."
+  },
+  "canvas": {
+    "width": 1312,
+    "height": 1199,
+    "mode": "RGBA"
+  },
+  "estimated_anchors": {
+    "coordinate_space": "original canvas; all visual estimates, not runtime-tested",
+    "crop_xywh": [
+      243,
+      220,
+      868,
+      856
+    ],
+    "foot": [
+      751,
+      996
+    ],
+    "head": [
+      555,
+      377
+    ],
+    "facing": "left",
+    "pose_ground_note": "Kneeling character base approximately y996; foreground ledger bottoms approximately y1055. Foot anchor represents lower-body ground contact, not a standing sole."
+  },
+  "qa": {
+    "identity": "Snow leopard and current burgundy dress, taupe cape, brooch, cream apron, boots and spotted tail preserved.",
+    "action": "Both hands pull cord on three closed ledgers; looks down-left towards work.",
+    "composition": "Single isolated full character plus ledgers and cord; no writing, label, other person, furniture, or background.",
+    "alpha_bbox_gt8": [
+      263,
+      239,
+      1091,
+      1056
+    ],
+    "visible_margins_gt8": {
+      "left": 263,
+      "top": 239,
+      "right": 221,
+      "bottom": 143
+    },
+    "alpha_note": "Original generated alpha preserved. Very low-alpha residual pixels (alpha <=8) exist beyond visible silhouette. White and gray composites inspected; no visible background or clipping.",
+    "files": [
+      "qa-white.png",
+      "qa-gray.png"
+    ],
+    "runtime_tested": false
+  },
+  "notes": [
+    "No game files edited.",
+    "No upload or Claude delivery performed.",
+    "Single kneeling visible boot is natural occlusion under dress, not cropped canvas."
+  ]
+}

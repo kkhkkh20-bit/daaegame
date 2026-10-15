@@ -6,7 +6,9 @@ init 60 python:
     R13_MAP_NODES = {
         "village": {"gate":(132,354), "square":(336,250), "inn":(715,299),
             "post":(466,172), "workshop":(585,425), "clinic":(407,370),
-            "school":(95,143), "store":(553,292)},
+            "school":(95,143), "store":(553,292),
+            # 0.18.63 new places; init 61 replaces these with the v5 map points.
+            "river":(267, 375), "forest":(82, 406), "market":(561, 319)},
         "inn": {"inn":(435,420), "dining":(434,307), "kitchen":(170,307),
             "hall":(340,120), "room13":(685,120), "passage":(685,40), "guestroom":(245,65)},
         "mountain": {"facility":(110,135), "greenhouse":(382,108), "altar":(644,100)},

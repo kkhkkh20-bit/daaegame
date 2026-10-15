@@ -1,0 +1,111 @@
+{
+  "asset_id": "granny_key_ledger_v3",
+  "file": "granny-key-ledger-v3.png",
+  "status": "large-pixel-cluster correction generated and alpha-composite reviewed; not integrated or runtime tested",
+  "character": "approved redesigned elderly rabbit granny",
+  "action": "standing, comparing a room key with an open small ledger; gaze down toward work",
+  "source_reference": "/workspace/shared/main-character-actions/elders-reference-redesign-v2/granny.png",
+  "generation": {
+    "method": "built-in image_gen style-only edit",
+    "selected_source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-c43fd065-a1b1-47f7-8c7f-bd144af4418f.png",
+    "edit_target": "/workspace/shared/character-catalog40/priority3-actions/granny/granny-key-ledger.png",
+    "pixel_style_reference": "/workspace/shared/character-catalog40/priority3-actions/owlgp/owlgp-notebook-binding-v2.png",
+    "correction_iterations": 1,
+    "previous_version_preserved": true,
+    "png_unmodified": true,
+    "sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280"
+  },
+  "image": {
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "alpha_min_max": [
+      0,
+      254
+    ],
+    "transparent_pixel_count": 870832
+  },
+  "crop": {
+    "method": "bounding box of generated alpha > 8; metadata only, file is not physically cropped",
+    "origin_in_original_px": [
+      144,
+      41
+    ],
+    "bbox_in_original_px_left_top_right_bottom_exclusive": [
+      144,
+      41,
+      866,
+      1525
+    ],
+    "size_px": [
+      722,
+      1484
+    ]
+  },
+  "anchors": {
+    "coordinate_system": "CROP-relative pixels; origin is original canvas [144,41]. Head is [x,y,width,height]; foot and hands are [x,y].",
+    "caveat": "All landmarks are manually estimated from the generated image, not runtime-confirmed.",
+    "head": [
+      93,
+      0,
+      529,
+      463
+    ],
+    "foot": [
+      411,
+      1480
+    ],
+    "hand_key": [
+      663,
+      429
+    ],
+    "hand_ledger": [
+      428,
+      654
+    ]
+  },
+  "proposed_placement": {
+    "scene": "1920x720 lobby, in front of reception desk",
+    "world_foot_px": [
+      1470,
+      624
+    ],
+    "display_height_px": 280,
+    "height_basis": "alpha > 8 crop height 1484 px",
+    "uniform_scale": 0.18867924528301888,
+    "derived_crop_top_left_world_px": [
+      1392.45,
+      344.75
+    ],
+    "derived_display_width_px": 136.23,
+    "map_ledger_keep_clear_xywh": [
+      1556,
+      355,
+      127,
+      46
+    ],
+    "map_keys_keep_clear_xywh": [
+      1670,
+      136,
+      150,
+      170
+    ],
+    "caveat": "Candidate values from source brief only. Calculated sprite x bounds approximately 1392..1529 avoid the cited map prop rectangles, but no live scene integration or mask/occlusion QA was performed."
+  },
+  "qa": {
+    "contact_sheet": "qa-granny-key-ledger-v3.jpg",
+    "backgrounds": [
+      "white",
+      "medium gray"
+    ],
+    "findings": [
+      "Visibly larger rectilinear pixel clusters throughout outline, eyes, nose, mouth, glasses, clothing and props.",
+      "Approved recognizable mature rabbit face, downward working gaze, drooping ears and full-length body retained.",
+      "Key and open ledger remain readable and naturally held.",
+      "Actual alpha-composited previews have no opaque background, counter, environment, floor or cast shadow.",
+      "No clipped body parts; alpha > 8 margins left144 top41 right158 bottom11 px. Bottom margin is tighter than prior version but both boots are complete."
+    ],
+    "raster_edits": "None. Generated v3 PNG copied byte-for-byte; prior version preserved. Python used only for alpha/metadata inspection and separate QA composites."
+  },
+  "delivery_scope": "Asset preparation only. No uploads, no Claude messages, no code changes."
+}

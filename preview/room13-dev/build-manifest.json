@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 13079803,
-  "archive_sha256": "f01baffbf2177f15f46b2de0dadf707fcd2ac8ad7ebd17e67e1192905134363c",
+  "archive_bytes": 13351203,
+  "archive_sha256": "603d2daa6908032d344899db4cae6153558aa8b14164813bd1617eddf82e28b8",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 13079803,
-    "sha256": "f01baffbf2177f15f46b2de0dadf707fcd2ac8ad7ebd17e67e1192905134363c"
+    "bytes": 13351203,
+    "sha256": "603d2daa6908032d344899db4cae6153558aa8b14164813bd1617eddf82e28b8"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 63814,
-   "sha256": "8916313a3e3463088409627e6d272172f63873280a3a08937e3a68182d2839de"
+   "bytes": 68037,
+   "sha256": "f5a64e957b70ed448d68cf9727cd1fd3a00986a85f4998ac55f4c9a3719dfdbf"
   },
   "game.part01": {
-   "bytes": 13079803,
-   "sha256": "f01baffbf2177f15f46b2de0dadf707fcd2ac8ad7ebd17e67e1192905134363c"
+   "bytes": 13351203,
+   "sha256": "603d2daa6908032d344899db4cae6153558aa8b14164813bd1617eddf82e28b8"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -563,6 +563,46 @@
   "game/assets/room.png": {
    "bytes": 1495938,
    "sha256": "699dcf0db494b1ae507f249de65008a1537b214766ea450152f43e7431d4773b"
+  },
+  "game/assets/room13-action-buri-event_toolbox.webp": {
+   "bytes": 67224,
+   "sha256": "30c384f25fc9d777f325a5e3bbcef5552fabe657b1fe806ad3b0aec530c984b2"
+  },
+  "game/assets/room13-action-granny-living_keyledger.webp": {
+   "bytes": 69748,
+   "sha256": "ef9e7e4c7237e904a3204db0b59b9e9a653c0b2015d15da8da6a1ec15d22eaba"
+  },
+  "game/assets/room13-action-karo-living_axlewrap.webp": {
+   "bytes": 95916,
+   "sha256": "0a8b655584fc2a450c483a86001846b7656a50b8a22f4da54b08edbf8724b7b8"
+  },
+  "game/assets/room13-action-resident_librarian-event_ledgertie.webp": {
+   "bytes": 65568,
+   "sha256": "dbdf6c63af08a2e2fa2492e8c231c64ab5c1446475202e2197a206edd18b356e"
+  },
+  "game/assets/room13-action-resident_momo-living_lampnumber.webp": {
+   "bytes": 71706,
+   "sha256": "994aeb84f7938d13775ade9b09272442a98fe33582fb94d9393541c16281c77c"
+  },
+  "game/assets/room13-action-resident_owlgp-living_notebook.webp": {
+   "bytes": 88834,
+   "sha256": "e6564f35cae3111ab2accf11beec74a2a720e51e117d7140d70086bc21e76078"
+  },
+  "game/assets/room13-action-resident_piko-event_paintwipe.webp": {
+   "bytes": 72792,
+   "sha256": "4666d605cd5e120fd01c4878ae23573e83a641c8f35d069f8fa131a4eba76760"
+  },
+  "game/assets/room13-action-resident_seol-living_bellrope.webp": {
+   "bytes": 84148,
+   "sha256": "8c662bfdb0c342e1033c54b7e852f5e82409d1d09ad79aac222f839321657f5b"
+  },
+  "game/assets/room13-action-resident_ttadak-living_doorframe.webp": {
+   "bytes": 65974,
+   "sha256": "0dde651f44e90d6d59c61296281dcc025edcc5b8e60f3fd244c4320c04e371ba"
+  },
+  "game/assets/room13-action-resident_yeoni-living_mend.webp": {
+   "bytes": 74818,
+   "sha256": "a98336fcf15ca069e9a99dd34d9de0fed827cd34d4e0057a791f6e13490295b5"
   },
   "game/assets/room13-before-after.png": {
    "bytes": 1819750,
@@ -1948,6 +1988,10 @@
    "bytes": 114796,
    "sha256": "82c4600778ba23227317d2193338eac4d30b4828f4c191dc5681d662ce7ab3c4"
   },
+  "game/assets/room13-pixel-inspect-drawer-open.webp": {
+   "bytes": 1005622,
+   "sha256": "cd589c8ff44eb2a46499df453bb5a3e9fbc49ecdf143c37e7a060a6cc3cb8ade"
+  },
   "game/assets/room13-pixel-inspect-drawer.webp": {
    "bytes": 153306,
    "sha256": "71ad3b6f2626c44ba7ba255c42a084a453a3cf7348706ba7d282fd478c6fd15e"
@@ -1955,6 +1999,14 @@
   "game/assets/room13-pixel-inspect-items.webp": {
    "bytes": 144172,
    "sha256": "04eee23e4316a6450edd380f400f88e7bf5eac9b40ee66edc091bd7b841f2286"
+  },
+  "game/assets/room13-pixel-inspect-rubbing-done.webp": {
+   "bytes": 162028,
+   "sha256": "abcdada6c40ad2b3313e25c8415d45823e333c79c8111fc9ab3582115da31b5b"
+  },
+  "game/assets/room13-pixel-inspect-rubbing-paper.webp": {
+   "bytes": 85282,
+   "sha256": "e8451b9257aa25d0fdc649337bd338dd9a088e4fc34de0989004691fe7e758f2"
   },
   "game/assets/room13-pixel-karo-fullbody.webp": {
    "bytes": 203998,
@@ -2208,6 +2260,18 @@
    "bytes": 337054,
    "sha256": "db83824de88e743cd43f462075dedf93aa0e67beddfa9a5da590e043b9c29991"
   },
+  "game/assets/room13-pixel-wide-forest-afternoon.webp": {
+   "bytes": 347992,
+   "sha256": "dbd2385e55e2069e9ca6bca991f127f4b2a4082d32269ce22c8a15781d54c62c"
+  },
+  "game/assets/room13-pixel-wide-forest-evening.webp": {
+   "bytes": 253558,
+   "sha256": "dc3507a0883997dc7120cbb485193eb95dd541c6252f1a1e02322c2a9542aa1f"
+  },
+  "game/assets/room13-pixel-wide-forest-morning.webp": {
+   "bytes": 303242,
+   "sha256": "ffae3617438a3f11a2f1607eba06272b4af78f68c90f4cb22d4cfe4bfd4b4307"
+  },
   "game/assets/room13-pixel-wide-hall-after-afternoon.webp": {
    "bytes": 257116,
    "sha256": "f2b3b5ba5bec5465631e6deba77041276cdb0064070e74666a712a38c96bf08b"
@@ -2244,6 +2308,18 @@
    "bytes": 286024,
    "sha256": "3cdefa1498e0720437789add52a12da82ae52eae0f773f74a5898b7503b117d2"
   },
+  "game/assets/room13-pixel-wide-market-afternoon.webp": {
+   "bytes": 428450,
+   "sha256": "b0b8e5ef62faacb28cc91ca59a6922ef4397ebf1d9b0e79b53944fb93f73bb21"
+  },
+  "game/assets/room13-pixel-wide-market-evening.webp": {
+   "bytes": 395602,
+   "sha256": "c2f3c3bfa18f7f78875cb8e48208df47e2ea04a797c89b86a55661edb2bbe97e"
+  },
+  "game/assets/room13-pixel-wide-market-morning.webp": {
+   "bytes": 414184,
+   "sha256": "54025e8f474dd817025184d03c13afcc830fed61f230197497c21f96bbc3267d"
+  },
   "game/assets/room13-pixel-wide-passage-afternoon.webp": {
    "bytes": 186892,
    "sha256": "4c03131bfb6c5d1ccb637502ba0fc749bde9c79ac969249f3ba6d8b099a72779"
@@ -2259,6 +2335,18 @@
   "game/assets/room13-pixel-wide-post-morning.webp": {
    "bytes": 277228,
    "sha256": "1094a34f4a2f5063890f65ef253066ae1009c7a7befec617f9dfd4acaa269251"
+  },
+  "game/assets/room13-pixel-wide-river-afternoon.webp": {
+   "bytes": 231838,
+   "sha256": "30081616d70b21e4113b747e87a7e38f1812b67fffc9bbcab86d4c52f3d27dee"
+  },
+  "game/assets/room13-pixel-wide-river-evening.webp": {
+   "bytes": 175482,
+   "sha256": "2bf6b50d2ba01663f472d6344eb402599f05d82b7164d91d8e8d64bbb7dfdc1d"
+  },
+  "game/assets/room13-pixel-wide-river-morning.webp": {
+   "bytes": 217770,
+   "sha256": "9ab02a6badb7403b4b0ce643ba591cd6946a0c47674ff721332ff4cc44d78c07"
   },
   "game/assets/room13-pixel-wide-room13-after-afternoon.webp": {
    "bytes": 279850,
@@ -2340,6 +2428,10 @@
    "bytes": 2232868,
    "sha256": "583841ac7018c664f6eca65014c808ec92086860cb54852728a77de319ea6a17"
   },
+  "game/assets/room13-worldmap-v5-forest.webp": {
+   "bytes": 79150,
+   "sha256": "88fe86247de3d6f5dab86d1c7ee9c65194c3b79a4e019cf783f95de042a3469c"
+  },
   "game/assets/room13-worldmap-v5-gate.webp": {
    "bytes": 85602,
    "sha256": "2012f9b141bd91dc6d1946c1fb22abf7d5ee76c6b71a68576353f962be864b02"
@@ -2347,6 +2439,10 @@
   "game/assets/room13-worldmap-v5-inn.webp": {
    "bytes": 105814,
    "sha256": "6b536648aabed592094bf68db07ac10d31c799e785c0af96e2d1a6df3cebc910"
+  },
+  "game/assets/room13-worldmap-v5-river.webp": {
+   "bytes": 81240,
+   "sha256": "ea2831c4f9352defcceac261694cba362eb26b31018d7cfbc269c8034cce6a8e"
   },
   "game/assets/room13-worldmap-v5.webp": {
    "bytes": 547682,
@@ -2582,7 +2678,7 @@
   },
   "index.html": {
    "bytes": 9979,
-   "sha256": "36086b17e89f2e49fe60b0b583be662f6c6afccea63cfaa424b46b65b0701c9d"
+   "sha256": "ef2602c77b7b60a8545fa4436912b919a2d776ff72a5eb1e0a1e26513dfe3ed9"
   },
   "loading-logo.webp": {
    "bytes": 565362,
@@ -2621,5 +2717,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 327327922
+ "total_bytes": 332541713
 }

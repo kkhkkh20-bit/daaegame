@@ -1,0 +1,39 @@
+{
+  "status": "Two requested independent map prop layers complete; not imported or runtime-tested.",
+  "references_inspected": [
+    "/workspace/shared/map-wide-expansion/room13-pixel-village-morning.webp",
+    "/workspace/shared/map-wide-expansion/integration-ready/post-morning.png",
+    "/workspace/shared/inn-grounding/inn-morning.webp",
+    "/workspace/shared/character-catalog40/new-actions/sling-event-steam/sling-event-steam.png",
+    "/workspace/shared/character-catalog40/new-actions/ttadak-doorframe/room13-pixel-acting-ttadak-doorframe.png"
+  ],
+  "assets": [
+    {
+      "file": "room13-pixel-post-stove-kettle.png",
+      "kind": "post_stove_kettle_steam",
+      "source_request": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md",
+      "canvas_px": [
+        1254,
+        1254
+      ],
+      "sha256": "3182326d18505d950152e6fa01fb383e50103c7f5bda671214656c2057f0992c"
+    },
+    {
+      "file": "room13-pixel-inn-doorframe-repair.png",
+      "kind": "inn_doorframe_repair",
+      "source_request": "/workspace/shared/current-cast-audit/requests/ART_REQUEST_01822.md",
+      "canvas_px": [
+        1024,
+        1536
+      ],
+      "sha256": "7450ef5311c1d4ff4fa8de20d91b806320b601f41e85b0e88779467315fb6a08"
+    }
+  ],
+  "prompts": "generation-prompts.json",
+  "delivery": "Only the two exact-name PNGs are production art. QA JPGs and metadata JSONs accompany them.",
+  "classification": {
+    "required_character_actions": 0,
+    "required_independent_map_prop_layers": 2,
+    "optional_layers": 0
+  }
+}
