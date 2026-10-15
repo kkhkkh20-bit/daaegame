@@ -22,7 +22,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 13 | 116 | `systems/room13_testimony.rpy:41` | _r13_sound_present |
 | 14 | 150 | `systems/room13_sound.rpy:161` |  |
 
-## `r13_topics` (12층)
+## `r13_topics` (13층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -37,7 +37,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 9 | 97 | `systems/room13_intro_clues.rpy:112` | _r13_poc_topics |
 | 10 | 100 | `systems/room13_poc_route.rpy:60` | _r13_daram_home_topics |
 | 11 | 101 | `systems/room13_daram_home.rpy:95` | _r13_pf_topics |
-| 12 | 113 | `systems/room13_present_flow.rpy:38` |  |
+| 12 | 113 | `systems/room13_present_flow.rpy:38` | _r13_night_topics |
+| 13 | 117 | `systems/room13_night_talk.rpy:33` |  |
 
 ## `r13_conversation_topic_lines` (7층)
 

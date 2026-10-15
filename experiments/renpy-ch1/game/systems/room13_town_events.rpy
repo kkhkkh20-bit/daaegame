@@ -354,6 +354,7 @@ label r13_ev_c_locked(room_safe):
                 $ _c_loop=False
     call r13_lines([(None,"대답은 없었다. 등잔 기름이 다 탈 때까지 문을 두드렸다. 밤은 길기만 했다.")],"ev:c:locked:night")
     $ r13_lock_overnight(room_safe)
+    $ r13_flag("store_locked_night")
     call r13_lines([("resident_mungchi","어, 벌써 아침이네요. 부인 말로는 문이 저절로 잠겼대요."),
         ("resident_madam","재고 세는 일을 다 못 끝냈으니 절반만 드릴게요. 일곱 냥.")],"ev:c:released")
     if room_safe:

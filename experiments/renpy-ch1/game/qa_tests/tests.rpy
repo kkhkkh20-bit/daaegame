@@ -1565,3 +1565,16 @@ testcase delivery_cord:
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice=="combine" and "same_lane" in r13_wallet(room13)["relations"])
     assert eval (r13_complete_job(room13,"delivery","combine")[1]["pay"]==14)
+
+testcase night_talk:
+    # 0.18.16 E: 다람이 reacts only to what happened; the topic opens with Dad's telling.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=2,location="room13"),("store_locked_night",))
+    pause 1.0
+    assert eval (r13_home_with_daram() and "night:locked" in [k for k,s in r13_topics("daram")] and "night:ledger_madam" not in [k for k,s in r13_topics("daram")])
+    run Function(r13_town_set,madam_alerted_at=0)
+    assert eval ("night:ledger_madam" in [k for k,s in r13_topics("daram")])
+    run Function(r13_edit,location="square")
+    assert eval ("night:locked" not in [k for k,s in r13_topics("daram")])
