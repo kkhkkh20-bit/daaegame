@@ -1,7 +1,17 @@
-# Entry-only staging: Daram waits inside the actual right-hand gate booth.
-# Original character/background files stay untouched. The same composited alpha
-# controls both the visible character and her pointer/touch target.
+# Entry-only staging. 0.18.22 (owner): Daram no longer peeks out of the booth window, where
+# she was cut off; she stands in the yard as an ordinary actor (positions/poses in
+# room13-world-layout.json). The old booth-window art below is kept for reference only.
 init 62 python:
+    def r13_daram_waiting_at_gate():
+        s=store.room13 or {}
+        return s.get("location")=="gate" and not r13_has("entry_corrected")
+
+    _r13_entry_visible_people=r13_visible_people
+    def r13_visible_people():
+        people=_r13_entry_visible_people()
+        if r13_daram_waiting_at_gate() and "daram" not in people:people=people+["daram"]
+        return people
+
     R13_WAITING_WINDOW_RECT = (1023, 330, 90, 115)
     R13_WAITING_WINDOW_FRONT = ((1098,357,57,50), (1048,408,133,33), (990,445,250,80))
 
@@ -27,7 +37,8 @@ init 62 python:
         return AlphaMask(portrait, R13WaitingWindowOcclusion(), invert=True)
 
 screen r13_waiting_window(ready=False):
-    if room13 and room13.get("location") == "gate" and not r13_has("entry_corrected"):
+    # Retired in 0.18.22: Daram is drawn in the yard by r13_stage_people.
+    if False:
         $ waiting_art = r13_waiting_window_art()
         add waiting_art:
             id "r13_daram_waiting_window_art"

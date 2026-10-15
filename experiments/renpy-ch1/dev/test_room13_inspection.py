@@ -4,7 +4,7 @@ from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 source=(root/'game/room13_inspection.rpy').read_text()
 block=source.split('init 66 python:\n',1)[1].split('\nscreen ',1)[0]
-env={'winter_copy':copy,'json':json,'renpy':types.SimpleNamespace(loadable=lambda p:False),'store':types.SimpleNamespace(room13=None),'ROOM13':{'objects':{}},'r13_object_visible':lambda spec:True,'r13_object_name':lambda key:key}
+env={'winter_copy':copy,'json':json,'renpy':types.SimpleNamespace(loadable=lambda p:False,Displayable=object),'store':types.SimpleNamespace(room13=None),'ROOM13':{'objects':{}},'r13_object_visible':lambda spec:True,'r13_object_name':lambda key:key}
 exec(compile(textwrap.dedent(block),'inspection-init','exec'),env)
 transition=env['r13_inspection_transition'];state=env['r13_inspection_state']()
 checks=[]

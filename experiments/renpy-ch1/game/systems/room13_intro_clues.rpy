@@ -149,7 +149,7 @@ label r13_entry_daram_menu:
         if r13_has("G1"):
             call r13_lines([("dad","예약 종이에 ‘다돌 외 한 사람’이라고 적혀 있네."),("daram","다돌은 아빠 이름이잖아. 그럼 나머지 한 사람은 나지?"),("dad","응. 초소에서 옮겨 적은 명단도 같이 확인해 보자.")],"entry:daram:original")
         else:
-            call r13_lines([("daram","경비 아저씨가 저 선반에 예약 종이가 있다고 했지?"),("dad","응. 예약 종이들이 한 묶음으로 놓여 있어. 우리 이름부터 먼저 찾아보자.")],"entry:daram:look")
+            call r13_lines([("daram","선반에 종이 묶음이 여러 개 있어. 날짜가 적혀 있네."),("daram","우리 오늘 왔잖아. 오늘이 무슨 요일이지?")],"entry:daram:look:v2")
     elif r13_entry_daram_choice=="compare":
         call r13_lines([("daram","아빠 이름은 예약 종이랑 명단에 다 있는데, 내 이름도 둘 다 있을까?"),("dad","예약 종이와 명단을 나란히 놓고 대조해 보자.")],"entry:daram:compare")
         call screen r13_record_compare(called=True)

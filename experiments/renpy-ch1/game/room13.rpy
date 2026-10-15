@@ -116,8 +116,10 @@ label r13_entry_guard_menu:
         $ r13_speaker("guard","neutral")
 label r13_entry_dispatch:
     if r13_choice==("entry","explain"):
-        call r13_lines([('dad', '저희가 낸 신청서와 이 명단이 서로 다른 거군요.'), ('guard', '예. 제가 받은 명단에는 한 분뿐입니다. 초소에 보관된 예약 서류 원본과 대조해 봐야 합니다.'), ('dad', '제 이름이 적힌 예약 서류를 볼 수 있습니까?'), ('guard', '예. 선반 위에 예약 원본과 초소 명단을 함께 놓아 두었습니다.')],"entry:explain")
+        call r13_lines([('dad', '저희가 낸 신청서와 그 명단이 서로 다른 거군요.'), ('guard', '예. 제가 받은 명단에는 한 분뿐입니다.'), ('dad', '그 명단을 직접 볼 수 있겠습니까?'), ('guard', '여기 있습니다. 예약 서류를 보고 초소에서 옮겨 적은 겁니다.'), (None, '돌목이 내민 명단에는 ‘방문자 다돌, 총 인원 1명’이라고 적혀 있었다.'), ('guard', '원본은 저 선반에 도착 날짜별로 꽂아 두었습니다. 대조해 보시려면 찾아보세요.')],"entry:explain:v2")
         $ r13_flag("question_read:entry:explain")
+        # The list is earned by asking for it; granted after the lines (0.18.22).
+        $ r13_grant(["G3"],"돌목이 직접 보여 준 초소 명단")
     elif r13_choice[0]=="object":
         call r13_object(r13_choice[1])
     elif r13_choice[0]=="empty":
@@ -172,7 +174,7 @@ label r13_entry_karo_menu:
         call r13_lines([('dad', '아까 보신 마차 바퀴 축은 수리가 되겠습니까?'), ('karo', '고쳐야죠. 금 간 곳을 우선 묶어 두긴 했는데, 이대로 손님을 태울 수는 없어요.'), ('dad', '수리가 끝나면 바로 돌아갈 수 있습니까?'), ('karo', '마차만 고친다고 갈 수 있는 게 아닙니다. 고갯길도 폭설로 막혔거든요. 길이 열리면 가장 먼저 알려 드릴게요.')],"entry:karo:road")
         $ r13_flag("road_known")
     elif r13_entry_karo_choice=="witness":
-        call r13_lines([('dad', '까로 씨, 저희 두 사람을 태워 오셨다고 증언해 주실 수 있습니까? 명단에서 아이 이름이 빠져서요.'), ('karo', '그럼요. 제 마차에 두 분 다 타셨습니다. 짐도 제가 직접 내려 드렸고요.'), ('guard', '함께 타고 오신 건 알겠습니다. 하지만 명단을 고치려면 예약 서류 원본과 대조해 봐야 합니다.'), ('dad', '알겠습니다. 그럼 원본 서류부터 찾아보겠습니다.'), ('karo', '저는 여기서 짐을 지키고 있을게요. 확인이 끝나면 불러 주세요.')],"entry:karo:witness")
+        call r13_lines([('dad', '까로 씨, 저희 두 사람을 태워 오셨다고 증언해 주실 수 있습니까? 명단에서 아이 이름이 빠져서요.'), ('karo', '그럼요. 제 마차에 두 분 다 타셨습니다. 짐도 제가 직접 내려 드렸고요.'), ('guard', '함께 타고 오신 건 알겠습니다. 하지만 명단을 고치려면 예약 서류 원본과 대조해 봐야 합니다.'), ('dad', '알겠습니다. 그럼 원본 서류부터 찾아보겠습니다.'), ('karo', '아, 손님 예약 서류는 아까 제가 초소에 넘겼어요. 선반 월요일 묶음에 끼워 두더라고요.'), ('karo', '저는 여기서 짐을 지키고 있을게요. 확인이 끝나면 불러 주세요.')],"entry:karo:witness:v2")
     elif r13_entry_karo_choice=="bags":
         call r13_lines([("karo","가방은 이 담요 밑에 넣어 둘게요. 눈에 젖으면 방에 가서도 한참 말려야 하니까요.")],"entry:karo:bags")
     elif r13_entry_karo_choice=="present":
@@ -323,6 +325,9 @@ label r13_field:
     jump r13_field
 
 label r13_object(key):
+    if key=="door" and r13_life_door_available():
+        call r13_life_door
+        return
     if key=="mother_note" and room13.get("life_poc"):
         call r13_mother_note
         return
@@ -389,6 +394,7 @@ label r13_talk_menu:
     $ r13_present_origin="topics"
     window hide
     hide r13_visitor
+    $ r13_remember_topic_order(r13_target)
     call screen r13_topics(r13_target)
     $ r13_topic=_return
 label r13_talk_dispatch:

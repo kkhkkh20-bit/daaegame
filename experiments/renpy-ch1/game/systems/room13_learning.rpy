@@ -121,11 +121,13 @@ init 98 python:
             rows=[dict(title="둘이 예약했는데 왜 한 명으로 적혔을까?",fact="경비가 받은 이름 목록에는 아빠 한 명만 적혀 있다고 했다.",question="예약할 때 낸 원본도 한 명으로 되어 있을까?",hint="선반의 서류를 읽고, 다람이와 함께 원본과 옮긴 목록을 비교해 보자.",keys=[k for k in ("G1","G3") if k in owned])]
         return rows
 
-screen r13_learning_notes():
+screen r13_learning_notes(focus=None):
     modal True
     zorder 97
     default tab="questions"
     default expanded=None
+    # Cards are folded to one line; the one picked from the field opens first (0.18.22).
+    default opened=set([focus if focus is not None else 0])
     add Solid("#102725fa")
     text "조사 메모" style "r13_title_text" xpos 48 ypos 30 color "#efd4a1"
     hbox:
@@ -138,26 +140,39 @@ screen r13_learning_notes():
     viewport:
         area (48,168,1184,444) mousewheel True draggable True scrollbars "vertical"
         vbox:
-            spacing 16
+            spacing 10
             if tab=="questions":
                 for i,note in enumerate(r13_first_mystery_notes()):
+                    $ is_open=i in opened
                     frame:
                         xsize 1144 padding R13_UI_PADDING["panel"] background R13ActionPanel()
                         vbox:
                             spacing 12
-                            text note["title"] style "r13_key_text" size r13_read_size(26,31) color "#efd4a1" xsize 1088
-                            text ("확인한 것 · "+note["fact"]) size r13_read_size(23,28) color "#fff2cf" xsize 1088
-                            text ("모르는 것 · "+note["question"]) size r13_read_size(23,28) color "#a8cdec" xsize 1088
-                            if note.get("result"):
-                                text ("그 결과 · "+note["result"]) size r13_read_size(23,28) color "#efd4a1" xsize 1088
-                            $ owned_keys=[k for k in note["keys"] if k in room13.get("evidence",[])]
-                            if owned_keys:
-                                text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size r13_read_size(20,25) color "#d4dfd8" xsize 1088
-                            textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
-                                style "r13_action_button" xsize 300 ysize 48 text_size r13_read_size(21,26)
-                                action SetScreenVariable("expanded",None if expanded==i else i)
-                            if expanded==i:
-                                text note["hint"] size r13_read_size(22,27) color "#d4dfd8" xsize 1088
+                            button:
+                                xsize 1088 padding (0,0) background None hover_background Solid("#ffffff10")
+                                action SetScreenVariable("opened",(opened-set([i])) if is_open else (opened|set([i])))
+                                alt (note["title"]+(" 접기" if is_open else " 펼치기"))
+                                hbox:
+                                    spacing 14
+                                    add R13FoldArrow(is_open,"#efd4a1") yalign .5
+                                    vbox:
+                                        spacing 4
+                                        text note["title"] style "r13_key_text" size r13_read_size(26,31) color "#efd4a1" xsize 1040
+                                        if not is_open:
+                                            text ("모르는 것 · "+note["question"]) size r13_read_size(20,24) color "#a8cdec99" xsize 1040
+                            if is_open:
+                                text ("확인한 것 · "+note["fact"]) size r13_read_size(23,28) color "#fff2cf" xsize 1088
+                                text ("모르는 것 · "+note["question"]) size r13_read_size(23,28) color "#a8cdec" xsize 1088
+                                if note.get("result"):
+                                    text ("그 결과 · "+note["result"]) size r13_read_size(23,28) color "#efd4a1" xsize 1088
+                                $ owned_keys=[k for k in note["keys"] if k in room13.get("evidence",[])]
+                                if owned_keys:
+                                    text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size r13_read_size(20,25) color "#d4dfd8" xsize 1088
+                                textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
+                                    style "r13_action_button" xsize 300 ysize 48 text_size r13_read_size(21,26)
+                                    action SetScreenVariable("expanded",None if expanded==i else i)
+                                if expanded==i:
+                                    text note["hint"] size r13_read_size(22,27) color "#d4dfd8" xsize 1088
             elif tab=="observations":
                 for note in r13_tool_notes():
                     frame:

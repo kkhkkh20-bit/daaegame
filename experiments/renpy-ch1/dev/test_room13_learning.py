@@ -20,7 +20,7 @@ class LearningTest(unittest.TestCase):
         def entries(category="evidence",archive=False,present=False,order="acquired",favorite_only=False):
             return list(self.persistent.room13_knowledge if archive and not present else self.store.room13['evidence'])
         self.ns['r13_record_entries']=entries
-        source=(ROOT/'game/systems/room13_learning.rpy').read_text().split('init 98 python:\n')[1].split('\nscreen r13_learning_notes():')[0]
+        source=(ROOT/'game/systems/room13_learning.rpy').read_text().split('init 98 python:\n')[1].split('\nscreen r13_learning_notes(')[0]
         exec(textwrap.dedent(source),self.ns)
 
     def test_first_run_current_records_do_not_create_previous_play(self):

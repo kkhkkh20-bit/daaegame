@@ -1548,19 +1548,19 @@ testcase delivery_cord:
     run Call("r13_qa_roam",dict(day=2,period=0,location="gate"),(),("cord","snack"))
     pause 1.0
     run Call("r13_qa_delivery")
-    click pos (640,600) until screen "choice" timeout 40
-    click "작은 상자의 짐표를 읽는다"
-    click pos (640,600) until screen "choice" timeout 40
-    click "짐을 수레에 올려 본다"
-    click pos (640,600) until screen "choice" timeout 40
-    click "가진 물건을 짐에 써 본다"
-    click pos (640,600) until screen "choice" timeout 40
+    pause 1.0
+    assert screen "r13_life_closeup"
+    click pos (850,487)
+    pause .5
+    click pos (873,439)
+    pause .5
     click "구운 밤"
-    click pos (640,600) until screen "choice" timeout 40
-    click "가진 물건을 짐에 써 본다"
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (873,439)
+    pause .5
     click "질긴 묶음끈"
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (873,439)
+    pause 1.0
+    screenshot "delivery_tied.png"
     click "짐을 나르러 간다"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice=="combine" and "same_lane" in r13_wallet(room13)["relations"])
@@ -1699,6 +1699,130 @@ testcase grant_after_reaction:
     run Function(r13_qa_present_deferred,"resident_sling","P01")
     run Function(r13_flush_grants)
     assert eval (room13["evidence"].count("J08")==1)
+
+testcase gate_documents:
+    # 0.18.22: no document popup. The shelf scene gives the original; the guard hands over his list.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    screenshot "gate_hub.png"
+    assert eval ("G1" not in room13["evidence"] and "G3" not in room13["evidence"])
+    run Jump("r13_qa_gate_shelf")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval ("G1" in room13["evidence"] and "G3" not in room13["evidence"])
+    run Jump("r13_entry_guard_menu")
+    pause 1.0
+    assert screen "r13_entry_topics"
+    screenshot "gate_topics.png"
+    click "이름 목록이 다른 이유"
+    click pos (640,600) until screen "r13_entry_topics" timeout 40
+    assert eval ("G3" in room13["evidence"])
+
+testcase bed_hint_day1:
+    # 0.18.22: on day 1 the bed says why sleep waits instead of saying nothing.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,evidence=["E03"]),("lodging",))
+    pause 2.0
+    screenshot "room13_daram_afternoon.png"
+    assert eval (not r13_bed_available("bed") and "책상" in r13_bed_blocked_reason("bed"))
+    run Call("r13_object_options","bed")
+    pause 1.0
+    assert screen "r13_object_context"
+    screenshot "bed_hint_day1.png"
+    $ room13["evidence"].append("M01")
+    assert eval (r13_bed_available("bed") and r13_bed_blocked_reason("bed") is None)
+
+testcase goal_fold:
+    # 0.18.22: the field question folds open; a picked question opens its 조사 메모 card.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=1,location="room13",life_poc=True,evidence=["E01","E03","E04","M01","J04"]),("lodging","livelihood_open","observed:room13:books","ep1_eaves_seen","ep1_done"))
+    pause 2.0
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    screenshot "goal_fold_closed.png"
+    run SetVariable("r13_goal_open",True)
+    pause 1.0
+    screenshot "goal_fold_open.png"
+    run [SetVariable("r13_goal_open",False),Show("r13_learning_notes",focus=0)]
+    pause 1.0
+    assert screen "r13_learning_notes"
+    screenshot "goal_fold_notes.png"
+    run Hide("r13_learning_notes")
+
+testcase drawer_visual:
+    # 0.18.22: rubbing picture, pressed groove and opened panel are drawn, not ASCII.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="room13",life_poc=True,evidence=["M01","E03"]),("lodging",))
+    pause 2.0
+    run Call("r13_inspect_desk")
+    pause 1.0
+    click pos (962,368)
+    pause 1.0
+    $ room13["inspection_items"]=dict(version=1,inventory=["pencil","ruler"],taken=["pencil","paper","ruler"],seen=[],paper_placed=True,rubbing=True,compartment_open=False,groove_held=True)
+    run Function(renpy.restart_interaction)
+    pause 1.0
+    screenshot "drawer_rubbing_held.png"
+    $ room13["inspection_items"]=dict(version=1,inventory=["pencil","ruler"],taken=["pencil","paper","ruler"],seen=[],paper_placed=True,rubbing=True,compartment_open=True,groove_held=False)
+    run Function(renpy.restart_interaction)
+    pause 1.0
+    screenshot "drawer_open.png"
+
+testcase inn_workers:
+    # 0.18.22 (owner): 토리 actually sews and 따닥 actually repairs at the inn.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="inn",life_poc=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ print("QA_INN", [(a["person"],a["pose"],a["x"],a["y"]) for a in r13_stage_people(False)])
+    screenshot "inn_workers.png"
+
+testcase life_door:
+    # 0.18.22 map assets B: leave for the inn's cloth, cloth under the front door, stays fixed.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("lodging","entry_corrected","livelihood_open"))
+    pause 1.0
+    assert eval (r13_life_door_available())
+    run Jump("r13_qa_life_door")
+    pause 1.0
+    screenshot "life_door_before.png"
+    click pos (1075,562)
+    click pos (640,600) until screen "r13_life_closeup" timeout 40
+    click "여관의 낡은 천"
+    click pos (550,457)
+    click pos (640,600) until screen "r13_life_closeup" timeout 40
+    pause 1.0
+    screenshot "life_door_after.png"
+    assert eval (r13_has("inn_draft_sealed"))
+
+testcase life_meal:
+    # 0.18.22 map assets C: the set kept aside is served once, then the existing finish/ask.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True),("lodging","entry_corrected","livelihood_open"))
+    pause 1.0
+    run Jump("r13_qa_life_meal")
+    pause 1.0
+    screenshot "life_meal_before.png"
+    click pos (1018,392)
+    pause 1.0
+    screenshot "life_meal_after.png"
+    click "맡은 일만 마친다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice=="finish" and r13_has("life_meal_served"))
+
 testcase fullbody_dialogue:
     pause 2.0
     click "처음부터"
@@ -1840,3 +1964,114 @@ testcase inn_v4_guestroom:
     click pos (640,600) until screen "r13_hub" timeout 30
     $ r13_qa_inn_note("guestroom")
     $ r13_qa_inn_dump()
+
+testcase gm_package:
+    # 0.18.22 visual gimmicks: feel → knife on the seam → lift the board → read the contents.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="store",life_poc=True),("lodging","entry_corrected"),("knife",))
+    pause 1.0
+    run Jump("r13_qa_gm_package")
+    pause 1.0
+    click pos (685,540)
+    pause .5
+    assert eval (r13_gm_state("package").get("felt") and r13_gm_state("package").get("stage","closed")=="closed")
+    click "부리의 작업칼"
+    click pos (685,540)
+    pause .5
+    click pos (698,508)
+    pause 1.0
+    screenshot "gm_package_revealed.png"
+    click pos (678,497)
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)
+
+testcase gm_lamp:
+    # 0.18.22 visual gimmicks: dark until the lamp is raised; the threshold read unlocks the note.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="kitchen",life_poc=True),("lodging","entry_corrected"),("lantern",))
+    pause 1.0
+    run Jump("r13_qa_gm_lamp")
+    pause 1.0
+    click pos (435,472)
+    pause .5
+    assert eval (not r13_gm_state("lamp").get("seen"))
+    click "초롱의 손등불"
+    click pos (435,472)
+    pause 1.0
+    screenshot "gm_lamp_lit.png"
+    click "본 것을 적는다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)
+
+testcase gm_scale:
+    # 0.18.22 visual gimmicks: the tilt alone does not finish; the screw must be looked at too.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="store",life_poc=True),("lodging","entry_corrected"),("weight",))
+    pause 1.0
+    run Jump("r13_qa_gm_scale")
+    pause 1.0
+    click "표준 저울추"
+    click pos (410,432)
+    pause 1.0
+    screenshot "gm_scale_loaded.png"
+    assert eval (r13_gm_state("scale").get("tilt_seen") and not r13_gm_state("scale").get("screw_seen"))
+    click pos (640,209)
+    pause .5
+    click pos (653,353)
+    pause 1.0
+    screenshot "gm_scale_pivot.png"
+    click "본 것을 적는다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)
+
+testcase gm_floor:
+    # 0.18.22 visual gimmicks 02: hand → knife lifts the board (no M02) → unfolding reads M02.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="room13",life_poc=True),("lodging","entry_corrected"),("knife",))
+    pause 1.0
+    run Jump("r13_qa_gm_floor")
+    pause 1.0
+    click pos (640,420)
+    click "부리의 작업칼"
+    click pos (640,420)
+    pause 1.0
+    assert eval (r13_gm_state("floor").get("stage")=="open" and "M02" not in room13["evidence"])
+    screenshot "gm_floor_open.png"
+    click pos (646,432)
+    pause 1.0
+    screenshot "gm_floor_note.png"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)
+
+testcase gm_stone:
+    # 0.18.22 visual gimmicks 02: paper on the stone, rub three rows (drag or sweep), then read.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("lodging","entry_corrected"),("rubbing",))
+    pause 1.0
+    run Jump("r13_qa_gm_stone")
+    pause 1.0
+    click "탁본 종이와 숯"
+    click pos (640,330)
+    pause 1.0
+    assert eval (r13_gm_state("stone").get("paper") and not r13_rub_enough())
+    click "한 줄 문지르기"
+    pause .5
+    click "한 줄 문지르기"
+    pause 1.0
+    screenshot "gm_stone_half.png"
+    click "한 줄 문지르기"
+    pause 1.0
+    assert eval (r13_rub_enough())
+    click "드러난 자국을 살펴본다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)

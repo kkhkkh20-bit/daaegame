@@ -33,6 +33,15 @@ init 94 python:
             return key=="bed" and store.room13.get("location")=="room13" and r13_has("M01") and r13_has("E03")
         return _r13_firstday_bed(key)
 
+    def r13_bed_blocked_reason(key):
+        # Day 1: sleep waits until the room is read, but the bed still says so (owner, 0.18.22).
+        s=store.room13 or {}
+        if key!="bed" or not r13_has("lodging") or r13_bed_available(key):return None
+        if not (s.get("life_poc") and s.get("day")==1 and s.get("location")=="room13"):return None
+        if not r13_has("M01"):return "아직은 아니다. 책상 위를 먼저 살펴보자"
+        if not r13_has("E03"):return "아직은 아니다. 이불부터 살펴보자"
+        return None
+
     _r13_firstday_notes=r13_first_mystery_notes
     def r13_first_mystery_notes():
         rows=_r13_firstday_notes()

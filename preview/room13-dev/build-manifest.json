@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 11545646,
-  "archive_sha256": "295b388fef76376baa83a30b8a37f28f933db702cad19082c0e77e68165dc4bb",
+  "archive_bytes": 11667476,
+  "archive_sha256": "bf77980c6e02a018ce3ac80b829f4c7ae1454718b4f87551bde3375d02db3384",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 11545646,
-    "sha256": "295b388fef76376baa83a30b8a37f28f933db702cad19082c0e77e68165dc4bb"
+    "bytes": 11667476,
+    "sha256": "bf77980c6e02a018ce3ac80b829f4c7ae1454718b4f87551bde3375d02db3384"
    }
   ]
  },
@@ -30,11 +30,11 @@
   },
   "game-transport.json": {
    "bytes": 69340,
-   "sha256": "f20402febdad2650e980ce78ed33c999729d1ec9f0e79a62ad320e1fb6413ac4"
+   "sha256": "d8a8ec9d0b072f6c17a5028852809d4afaf5fe6d751f82a443dce9bd4cd6d77e"
   },
   "game.part01": {
-   "bytes": 11545646,
-   "sha256": "295b388fef76376baa83a30b8a37f28f933db702cad19082c0e77e68165dc4bb"
+   "bytes": 11667476,
+   "sha256": "bf77980c6e02a018ce3ac80b829f4c7ae1454718b4f87551bde3375d02db3384"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -295,6 +295,58 @@
   "game/assets/pressure.mp3": {
    "bytes": 824508,
    "sha256": "94c947675b15d9bf7978f2a9a7e0dedddd8956e556eaad2d3993220b73d95bcf"
+  },
+  "game/assets/r13-gimmick-floor-closed.webp": {
+   "bytes": 962594,
+   "sha256": "cb1c1679d8ad82e609e39ccbc3efb3a749dac39ca9c892674347406a0e408415"
+  },
+  "game/assets/r13-gimmick-floor-open.webp": {
+   "bytes": 1047850,
+   "sha256": "3c3bc53502063f5b4c6a8a25634fec367a4eaad03d102d0938269b81783f512a"
+  },
+  "game/assets/r13-gimmick-lamp-floor.webp": {
+   "bytes": 1180378,
+   "sha256": "075cdf76f79cd4059d66c4807046358963ff70d69f944d4270b74dfeb3f611f6"
+  },
+  "game/assets/r13-gimmick-note-open.webp": {
+   "bytes": 1033318,
+   "sha256": "af1a83ec1f08a9ed24e98257e830463377a39c9b7efcb5207194353db1937dbf"
+  },
+  "game/assets/r13-gimmick-package-closed.webp": {
+   "bytes": 1036230,
+   "sha256": "7af803c07d4bd1d3c488c17b43822b626ed5ecbe16c375a89464283d0a45f114"
+  },
+  "game/assets/r13-gimmick-package-revealed.webp": {
+   "bytes": 1231850,
+   "sha256": "d28493d20f08b1c9095fd3dc5097fc4631d7a359747830669f28e85fbce26dd8"
+  },
+  "game/assets/r13-gimmick-package-seam.webp": {
+   "bytes": 1113550,
+   "sha256": "c9aa92403ac4e05ab9b20df0b930277ddabd2613bbcc617b7a234ec62754773e"
+  },
+  "game/assets/r13-gimmick-scale-base.webp": {
+   "bytes": 1085692,
+   "sha256": "43d5c893cc2eb7fcbb0b51e30322f3d25d9eddedf29c49b8af334429c6309d9a"
+  },
+  "game/assets/r13-gimmick-scale-loaded.webp": {
+   "bytes": 1120632,
+   "sha256": "6fbd516df62ce2e1ad44e78c31bb5bc0fe11bd31e700c5fb9d0a4d5b6e475f2a"
+  },
+  "game/assets/r13-gimmick-scale-pivot.webp": {
+   "bytes": 887636,
+   "sha256": "38fb811c2c64f5d8c3ec3b24d5e0bf47e731b710b3894154953531d3a626005d"
+  },
+  "game/assets/r13-gimmick-stone-base.webp": {
+   "bytes": 1426452,
+   "sha256": "74069639cc362dc7d84bcc2c070f62059574441066406982246f9784ac7e6d20"
+  },
+  "game/assets/r13-gimmick-stone-paper.webp": {
+   "bytes": 1375772,
+   "sha256": "bd48f37e86ccf322765558443aabcc352d946994a6e59ab7a134f49faeaf1218"
+  },
+  "game/assets/r13-gimmick-stone-rubbed.webp": {
+   "bytes": 1524074,
+   "sha256": "e84f31ea58fb5d1f59b465e00e25f25e0f7d6284d5221229a6a4f20b7645f1be"
   },
   "game/assets/resident-librarian-teacher.png": {
    "bytes": 713507,
@@ -1832,6 +1884,30 @@
    "bytes": 203998,
    "sha256": "d9277cbf95562779b6de22b6c7b62513f7fa9cc87616b0f9f746119ad89ee967"
   },
+  "game/assets/room13-pixel-life-delivery-after.webp": {
+   "bytes": 1390678,
+   "sha256": "cd8db75ac4f84dae5bf2f0673284a50cf5d14f0dfc1a7441354ec3323a3f5456"
+  },
+  "game/assets/room13-pixel-life-delivery-before.webp": {
+   "bytes": 1538634,
+   "sha256": "9daaeafdddcd2b0c6bc9602b68eb0c70459ea0bcf47b2f5c91b018e1b8ab720a"
+  },
+  "game/assets/room13-pixel-life-door-after.webp": {
+   "bytes": 1014236,
+   "sha256": "ec5ae12bea9cd3bafb44f7c36da6ded30b92f357eba641370d22db0efc72afee"
+  },
+  "game/assets/room13-pixel-life-door-before.webp": {
+   "bytes": 985102,
+   "sha256": "8bc1dd42ae77c64cfa9e65ea672b1616ae7c07a523e597fc2164919bc1f88990"
+  },
+  "game/assets/room13-pixel-life-meal-after.webp": {
+   "bytes": 1436432,
+   "sha256": "e4ade15ca3a004f2a78a38c89370fed32657e8c88ee4831547cec0e12464a5fe"
+  },
+  "game/assets/room13-pixel-life-meal-before.webp": {
+   "bytes": 1344368,
+   "sha256": "e516809f54f217f69c34b28c01c1d0c7450104f7498f585a7aa42b64847510f3"
+  },
   "game/assets/room13-pixel-locations-afternoon.webp": {
    "bytes": 477748,
    "sha256": "0926ff2a15c1a44b45a95b7e700eaddde8f017c86c321af3d6059fc73e8ac21a"
@@ -2302,7 +2378,7 @@
   },
   "index.html": {
    "bytes": 9845,
-   "sha256": "bd504741185aea792a0210ac11062111c180bcff233671e26bfcc29c7507a91b"
+   "sha256": "72f20fd9ce43cc9f40bed34cdc07c069ad345f0e2e76dad76196630c4241efd6"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -2337,5 +2413,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 293074749
+ "total_bytes": 315932057
 }

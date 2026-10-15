@@ -281,6 +281,26 @@ init 999 python:
         store.r13_defer_grants=True
         store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))
         store.r13_defer_grants=False
+
+label r13_qa_gate_shelf:
+    # Same path as clicking the shelf at the gate (0.18.22).
+    call r13_object("gate_documents")
+    jump r13_entry
+
+label r13_qa_life(name):
+    # Runs one life close-up from the field and returns there (0.18.22).
+    $ r13_job_question=R13_JOBS["kitchen"]["choice"]
+    $ r13_job_choice=None
+    call expression name
+    $ store.r13_qa_dv_choice=r13_job_choice
+    jump r13_roam
+
+label r13_qa_life_door:
+    call r13_qa_life("r13_life_door")
+
+label r13_qa_life_meal:
+    call r13_qa_life("r13_life_meal")
+
 # 0.18.5 full-body dialogue check: every character x expression in the real
 # dialogue layout (normal and large text) and the topic list layout.
 default r13_qa_fb_done = False
@@ -365,3 +385,24 @@ label r13_qa_inn_v4(case="pending"):
     $ room13.update(case_state=case,victim_state="alive" if case=="pending" else "dead",location="inn",period=0)
     $ preferences.text_cps=0
     jump r13_roam
+
+label r13_qa_gm(name):
+    # Runs one hand-check close-up (0.18.22) and records whether it finished.
+    call expression name
+    $ store.r13_qa_dv_choice=_return
+    jump r13_roam
+
+label r13_qa_gm_package:
+    call r13_qa_gm("r13_gm_package")
+
+label r13_qa_gm_lamp:
+    call r13_qa_gm("r13_gm_lamp")
+
+label r13_qa_gm_scale:
+    call r13_qa_gm("r13_gm_scale")
+
+label r13_qa_gm_floor:
+    call r13_qa_gm("r13_gm_floor")
+
+label r13_qa_gm_stone:
+    call r13_qa_gm("r13_gm_stone")
