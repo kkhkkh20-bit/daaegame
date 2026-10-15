@@ -39,6 +39,16 @@ class TypographyRoles(unittest.TestCase):
         self.assertEqual(c(),roles['speech']['dark'])
         self.store.r13_packet=(None,'x');self.assertEqual(c(),roles['narration']['dark'])
         self.store.r13_thought_active=True;self.assertEqual(c(),roles['thought']['dark'])
+    def test_meeting_bubble_uses_paper_roles(self):
+        self.store.r13_meeting_active=True
+        color=self.env['r13_say_color'];roles=TOK['roles']
+        self.assertEqual(color(),roles['speech']['paper'])
+        self.store.r13_thought_active=True
+        self.assertEqual(color(),roles['thought']['paper'])
+        self.store.r13_thought_active=False
+        self.assertIn(roles['entity']['paper'],self.fn('「예약 원본」'))
+        self.store.r13_meeting_active=False
+        self.assertEqual(color(),roles['speech']['dark'])
     def test_role_contrast_on_both_surfaces(self):
         for role,v in TOK['roles'].items():
             self.assertGreaterEqual(contrast(v['dark'],'#193a35'),4.5,role)

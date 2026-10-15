@@ -240,6 +240,9 @@ label r13_final_rescue:
             return False
 
 label r13_crisis_argument(claim):
+    $ r13_meeting_claim=claim
+    $ r13_meeting_active=True
+    $ r13_meeting_focus_change(claim,r13_debate_statements(claim)[0]["who"])
     $ r13_claim=claim
     if claim=="F1":
         call r13_lines([("resident_ppul","저분들은 가족도 알아보지 못합니다. 회복할 수 없는 분들로 판단됐어요."),("dad","그 판단부터 다시 확인해야 합니다.")],"final:F1:start")
@@ -253,6 +256,7 @@ label r13_crisis_argument(claim):
         call r13_lines([("dad","우리를 부른 편지부터 확인하겠습니다."),("granny","내가 아내를 찾게 해 줬잖아요."),("dad","아내는 이미 당신에게서 도망친 뒤였습니다.")],"final:F4:start")
 label r13_crisis_argument_menu:
     call r13_debate_run(r13_claim) from r13_crisis_debate_return
+    $ r13_meeting_active=False
     return _return
 
 # 0.16.2 이전 저장의 복귀 지점을 위해 남겨 둔다. 새 흐름은 쓰지 않는다.

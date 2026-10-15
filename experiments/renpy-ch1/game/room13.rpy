@@ -578,7 +578,12 @@ label r13_trial:
     call r13_scene("council","일요일 · 여관 공동 식당","hearing")
     if room13["case_state"]=="prevented":
         jump r13_prevention_hearing
+    $ r13_meeting_claim="C1"
+    $ r13_meeting_intro=True
+    $ r13_meeting_active=True
     call r13_lines([("seryeon","부엉이 어르신이 발견된 13호는 안에서 잠겨 있었습니다. 그 안에는 다람 양이 있었습니다."),("buri","이름으로 불러 주세요. 그냥 ‘죽은 사람’이라고 하지 마시고요."),("resident_seori","오늘 확인할 것은 아이가 그 죽음에 책임이 있는지입니다. 소문을 본 일처럼 말하지 마십시오."),("resident_ppul","아이가 위험하다면 마을의 다른 아이들부터 지켜야 합니다."),("dad","아이가 위험하다는 판단도 확인된 사실에 근거해 주십시오.")],"trial:opening")
+    $ r13_meeting_active=False
+    $ r13_meeting_intro=False
 label r13_trial_choose:
     # 반론할 자료가 없는 논점은 선택지 없이 지나가고, 남은 논점이 없으면 바로 판결이다.
     $ r13_trial_pending=[c for c in r13_case_available() if c not in room13["propositions"] and not r13_debate_closed(c)]
@@ -597,6 +602,9 @@ label r13_trial_choose:
     jump r13_trial_choose
 
 label r13_argument(claim):
+    $ r13_meeting_claim=claim
+    $ r13_meeting_active=True
+    $ r13_meeting_focus_change(claim,r13_debate_statements(claim)[0]["who"])
     $ r13_claim=claim
     if claim=="C1":
         call r13_lines([("seryeon","복도에 있던 사람들은 아무도 그 방에 들어가지 않았다고 합니다."),("dad","복도에 있던 분들이 지켜본 문이 어느 문인지 확인하고 싶습니다.")],"trial:C1:start")
