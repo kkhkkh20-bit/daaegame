@@ -43,9 +43,13 @@ init 58 python:
                 box(ink,2,6,22,24);box(paper,4,8,18,20)
                 for y in (12,16,20):line('#94754f',(7,y),(18,y))
                 box(leather,5,25,15,2)
-                if k in ('dialogue','testimony'):
+                if k=='dialogue':
                     box(gold,16,7,12,9);poly(gold,[(18,15),(18,20),(23,15)])
                     box(light,18,9,7,2)
+                elif k=='testimony':
+                    poly(ink,[(16,26),(20,11),(28,3),(30,5),(26,16),(20,20)])
+                    poly(light,[(20,18),(22,10),(28,5),(26,14)])
+                    line(gold,(18,25),(26,9),1)
             elif k=='auto':
                 box(ink,5,2,23,4);box(gold,7,3,19,2);box(ink,5,27,23,4);box(gold,7,28,19,2)
                 poly(ink,[(8,6),(25,6),(24,11),(19,16),(24,22),(25,27),(8,27),(9,22),(14,16),(9,11)])
@@ -80,8 +84,8 @@ screen r13_antique_button(caption,icon,command,enabled=True,compact=False,chosen
         alt caption tooltip caption
         hbox:
             xalign .5 yalign .75 spacing (4 if compact else 6)
-            add R13AntiqueIcon(icon,size=20 if compact else 26) yalign .5 alpha (1.0 if enabled else .35)
+            add R13AntiqueIcon(icon,size=22 if compact else 30) yalign .5 alpha (1.0 if enabled else .35)
             text caption:
-                font r13_ui_font() size (r13_read_size(18,20) if compact else r13_read_size(20,24))
+                font r13_ui_font() size (r13_read_size(20,22) if compact else r13_read_size(20,24))
                 color ("#efe2c2" if enabled else "#a59a86") hover_color "#fff0ce"
                 yalign .5

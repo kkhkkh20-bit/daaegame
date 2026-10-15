@@ -58,36 +58,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                     use r13_antique_button("보여주기","present",present_action,enabled=ready,compact=True)
                 use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True)
     elif mode!="field":
-        $ line_tools=(3 if mode=="line" else 0)
-        $ footer_width=r13_footer_width(4+line_tools+(1 if investigate_action is not None else 0)+(1 if present_action is not None else 0))
-        add R13InkPanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
-        frame:
-            area (1280-footer_width,664,footer_width,56) padding (8,0) background None
-            hbox:
-                spacing 8
-                if investigate_action is not None:
-                    textbutton "돌아가기" style "r13_footer_button" action investigate_action sensitive ready
-                if present_action is not None:
-                    use r13_antique_button("보여주기","present",present_action,enabled=ready,compact=True)
-                use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True)
-                use r13_antique_button("백로그","backlog",Show("r13_backlog"),enabled=ready,compact=True)
-                use r13_antique_button(("자동 ●" if _preferences.afm_enable else "자동"),"auto",Preference("auto-forward","toggle"),enabled=ready and mode=="line" and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None,compact=True,chosen=_preferences.afm_enable)
-                if mode=="line":
-                    $ line_active=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
-                    # Player requests (0.18.4): skip read lines / everything to the next
-                    # choice, and hide the dialogue window to see the picture.
-                    textbutton "건너뛰기":
-                        style "r13_footer_button" selected r13_fast_read
-                        text_selected_color "#f6d18a" selected_background R13InkPanel(focused=True)
-                        action Function(r13_toggle_read_skip) sensitive line_active
-                        tooltip "읽은 대사를 다음 선택지까지 넘깁니다"
-                    textbutton "빠르게":
-                        style "r13_footer_button" selected r13_fast_all
-                        text_selected_color "#f6d18a" selected_background R13InkPanel(focused=True)
-                        action Function(r13_toggle_fast_all) sensitive line_active
-                        tooltip "처음 보는 대사도 다음 선택지까지 넘깁니다"
-                    textbutton "숨기기" style "r13_footer_button" action HideInterface() sensitive line_active
-                use r13_antique_button("옵션","settings",ShowMenu("pause_menu"),enabled=ready,compact=True)
+        use r13_playback_footer(show_record=True,ready=ready)
     else:
         text "조사·대화·이동 · 시간 소모 없음":
             xalign .5 ypos 646 size r13_read_size(16,19) color "#f2f3e6"
@@ -100,7 +71,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                 background R13TouchSurface(focused=True)
                 hbox:
                     xalign .5 yalign .75 spacing 6
-                    add R13AntiqueIcon("investigate",size=26) yalign .5
+                    add R13AntiqueIcon("investigate",size=30) yalign .5
                     text "조사" size r13_read_size(20,24) color "#efe2c2" font r13_ui_font() yalign .5
             use r13_antique_button("보여주기","present",present_action or NullAction(),enabled=ready and present_action is not None)
             use r13_antique_button("기록","record",Show("r13_records"),enabled=ready)
@@ -248,21 +219,15 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         # on the left, the scene is dimmed, and plain-text options name what
         # Dad will ask; the question itself is then spoken in dialogue.
         # 0.18.39 (owner): same size and place as in dialogue, so the person does not jump.
+        add Solid("#00000080")
         add r13_close_art(person,pose,840):
             xpos r13_close_x(person,pose) xanchor .5 ypos r13_close_y(person,840,110,pose)
-        add Solid("#000000a0")
-        text r13_person_caption(person):
-            xalign .5 ypos 24 xsize 940 text_align .5
-            size r13_read_size(23,28) color "#f6d18a"
         if title=="선택":
             $ context=r13_choice_context()
             if context:
                 text context[1]:
                     xpos list_left ypos 66 xsize list_width text_align .5
                     size r13_read_size(20,24) color "#e5ece6" line_spacing 3
-        else:
-            text "질문·자료 보여주기 · 시간 소모 없음":
-                xalign .5 ypos 63 size r13_read_size(17,21) color "#e5ece6"
         # 0.18.39 (owner): the list sits where the dialogue window is. Its bottom is the window's
         # bottom edge (632) and it grows upward, so the face stays visible and choices and lines
         # are read at the same height.
