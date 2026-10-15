@@ -385,3 +385,18 @@ label r13_qa_inn_v4(case="pending"):
     $ room13.update(case_state=case,victim_state="alive" if case=="pending" else "dead",location="inn",period=0)
     $ preferences.text_cps=0
     jump r13_roam
+
+label r13_qa_gm(name):
+    # Runs one hand-check close-up (0.18.22) and records whether it finished.
+    call expression name
+    $ store.r13_qa_dv_choice=_return
+    jump r13_roam
+
+label r13_qa_gm_package:
+    call r13_qa_gm("r13_gm_package")
+
+label r13_qa_gm_lamp:
+    call r13_qa_gm("r13_gm_lamp")
+
+label r13_qa_gm_scale:
+    call r13_qa_gm("r13_gm_scale")

@@ -1964,3 +1964,68 @@ testcase inn_v4_guestroom:
     click pos (640,600) until screen "r13_hub" timeout 30
     $ r13_qa_inn_note("guestroom")
     $ r13_qa_inn_dump()
+
+testcase gm_package:
+    # 0.18.22 visual gimmicks: feel → knife on the seam → lift the board → read the contents.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="store",life_poc=True),("lodging","entry_corrected"),("knife",))
+    pause 1.0
+    run Jump("r13_qa_gm_package")
+    pause 1.0
+    click pos (685,540)
+    pause .5
+    assert eval (r13_gm_state("package").get("felt") and r13_gm_state("package").get("stage","closed")=="closed")
+    click "부리의 작업칼"
+    click pos (685,540)
+    pause .5
+    click pos (698,508)
+    pause 1.0
+    screenshot "gm_package_revealed.png"
+    click pos (678,497)
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)
+
+testcase gm_lamp:
+    # 0.18.22 visual gimmicks: dark until the lamp is raised; the threshold read unlocks the note.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="kitchen",life_poc=True),("lodging","entry_corrected"),("lantern",))
+    pause 1.0
+    run Jump("r13_qa_gm_lamp")
+    pause 1.0
+    click pos (435,472)
+    pause .5
+    assert eval (not r13_gm_state("lamp").get("seen"))
+    click "초롱의 손등불"
+    click pos (435,472)
+    pause 1.0
+    screenshot "gm_lamp_lit.png"
+    click "본 것을 적는다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)
+
+testcase gm_scale:
+    # 0.18.22 visual gimmicks: the tilt alone does not finish; the screw must be looked at too.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="store",life_poc=True),("lodging","entry_corrected"),("weight",))
+    pause 1.0
+    run Jump("r13_qa_gm_scale")
+    pause 1.0
+    click "표준 저울추"
+    click pos (410,432)
+    pause 1.0
+    screenshot "gm_scale_loaded.png"
+    assert eval (r13_gm_state("scale").get("tilt_seen") and not r13_gm_state("scale").get("screw_seen"))
+    click pos (640,209)
+    pause .5
+    click pos (653,353)
+    pause 1.0
+    screenshot "gm_scale_pivot.png"
+    click "본 것을 적는다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)

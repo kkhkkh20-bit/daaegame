@@ -226,6 +226,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 92 | `systems/room13_livelihood_flow.rpy:3` | _r13_sound_apply_purchase |
 | 2 | 150 | `systems/room13_sound.rpy:200` |  |
 
+## `r13_life_tool_name` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 126 | `systems/room13_life_closeups.rpy:23` | _r13_gm_tool_name |
+| 2 | 127 | `systems/room13_gimmicks.rpy:45` |  |
+
 ## `r13_local_connections` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |

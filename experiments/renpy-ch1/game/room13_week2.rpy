@@ -58,6 +58,9 @@ label r13_week2_events:
     return
 
 label r13_special_activity(key):
+    if key in R13_GIMMICK_LABELS:
+        call expression R13_GIMMICK_LABELS[key]
+        return _return
     if key=="map":
         call r13_compare_first_plan
         return _return

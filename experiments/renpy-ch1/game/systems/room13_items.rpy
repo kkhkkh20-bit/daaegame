@@ -81,7 +81,7 @@ init 96 python:
         ("dad","겨울 끝이 오기 전에 굶은 사람들이 먼저 쓰러집니다."),
         ("resident_eunho","알겠습니다. 대피소가 정해지면 숨겨 둔 몫을 내놓지요. 대신 가져가는 사람은 이름을 적는다는 조건으로요.")])
     ROOM13["topics"]["eunho_scale"]=dict(npc="resident_eunho",title="저울이 기울어 있다고 말한다",day=[2,14],need=["scale_rigged"],give=[],flags=["shop_discount"],lines=[
-        ("dad","가게 저울에 표준 추를 올려 보니 바늘이 한 칸 더 기울더군요."),
+        ("dad","가게 저울에 같은 모양의 표준 추를 올려 보니 접시가 기울더군요. 조정 나사 둘레도 새로 긁혀 있었습니다."),
         ("resident_eunho","……다른 가게도 다들 그렇게 하는 줄 알았어요. 저울 바늘은 오늘 바로잡지요."),
         ("resident_eunho","그동안 물건을 덜 드린 만큼, 앞으로는 한 냥씩 깎아 드리겠습니다.")])
     ROOM13["topics"]["ppul_names"]=dict(npc="resident_ppul",title="돌에 긁힌 이름들을 보여 준다",day=[2,14],need=["R01"],give=[],flags=["ppul_names_seen"],lines=[

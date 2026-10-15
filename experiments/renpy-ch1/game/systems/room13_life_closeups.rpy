@@ -32,7 +32,7 @@ init 126 python:
         # The leave comes from Granny at her counter; without her the door is just looked at.
         return s.get("location")=="inn" and s.get("day",1)>=2 and s.get("period",0)<3 and "granny" in r13_people()
 
-screen r13_life_closeup(scene,after=False,tools=(),actions=(),message=""):
+screen r13_life_closeup(scene,after=False,tools=(),actions=(),message="",overlay=None):
     modal True
     zorder 40
     style_prefix "r13"
@@ -41,6 +41,8 @@ screen r13_life_closeup(scene,after=False,tools=(),actions=(),message=""):
     timer .25 action SetScreenVariable("ready",True)
     $ spec=R13_LIFE_SCENES[scene]
     add Transform(spec["after"] if after else spec["before"],xysize=(1280,720),nearest=True)
+    if overlay:
+        add overlay
     for key,(norm,name) in spec["targets"].items():
         button:
             area r13_life_rect(norm) padding (0,0) background None hover_background R13HoverCorners()
