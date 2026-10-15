@@ -7,7 +7,7 @@ class MeetingFlow(unittest.TestCase):
   self.store=types.SimpleNamespace(room13=dict(propositions=[],flags=[],evidence=[],finale_started=False))
   def edit(**kw):
    s=copy.deepcopy(self.store.room13);s.update(kw);self.store.room13=s
-  self.env=dict(store=self.store,winter_copy=copy,r13_edit=edit,r13_has=lambda f:f in self.store.room13['flags'])
+  self.env=dict(config=types.SimpleNamespace(after_load_callbacks=[]),store=self.store,winter_copy=copy,r13_edit=edit,r13_has=lambda f:f in self.store.room13['flags'])
   for file,marker in [('systems/room13_debate.rpy','init 98 python:\n'),('systems/room13_meeting_flow.rpy','init 100 python:\n')]:
    src=(ROOT/'game'/file).read_text().split(marker,1)[1].split('\nlabel ',1)[0]
    exec(textwrap.dedent(src),self.env)
@@ -54,6 +54,17 @@ class MeetingFlow(unittest.TestCase):
   result,rows=self.env['r13_debate_judge']('F3','s3','E21')
   self.assertEqual(result,'soft');self.assertEqual(self.store.room13['flags'],[])
   self.assertFalse(self.env['r13_debate_is_broken']('F3','s3'))
+ def test_loading_in_live_picker_restores_outer_cursor_and_preserves_proof(self):
+  calls=[];self.env['renpy']=types.SimpleNamespace(hide_screen=lambda name:calls.append(name),hide=lambda name:calls.append(name))
+  self.store.r13_meeting_pending_resume={'r13_index':2,'r13_page_i':1,'r13_read_id':'outer','r13_packet':('seryeon','원래 문장'),'r13_meeting_focus':'seryeon'}
+  self.store.r13_index=99;self.store.r13_page_i=0;self.store.r13_read_id='child';self.store.r13_meeting_interrupting=True
+  self.store.room13['propositions']=['C1']
+  self.env['r13_meeting_resume_after_load']()
+  self.assertEqual((self.store.r13_index,self.store.r13_page_i,self.store.r13_read_id),(2,1,'outer'))
+  self.assertEqual(self.store.room13['propositions'],['C1'])
+  self.assertIsNone(self.store.r13_meeting_pending_resume);self.assertFalse(self.store.r13_meeting_interrupting)
+  self.assertIn('r13_book',calls)
+  self.env['r13_meeting_resume_after_load']();self.assertEqual(self.store.r13_index,2)
  def test_camera_moves_only_for_a_new_real_speaker(self):
   env=self.env;clock=[10.0]
   env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,get_game_runtime=lambda:clock[0],is_skipping=lambda:False))

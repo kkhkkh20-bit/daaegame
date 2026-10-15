@@ -1,6 +1,23 @@
 # Live presentation and public opinions reuse the canonical debate judge.
+default r13_meeting_pending_resume = None
+
 init 100 python:
-    R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose")
+    R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started")
+
+    def r13_meeting_resume_after_load():
+        # Ren'Py saves the outer interaction while a nested UI context is open.
+        # Restore that interaction's cursor rather than a child reply's globals.
+        resume=getattr(store,"r13_meeting_pending_resume",None)
+        if not isinstance(resume,dict):return
+        for name in R13_MEETING_RESUME_FIELDS:
+            if name in resume:setattr(store,name,resume[name])
+        store.r13_meeting_pending_resume=None
+        store.r13_meeting_interrupting=False
+        renpy.hide_screen("r13_book")
+        renpy.hide_screen("r13_material_corner")
+        renpy.hide("r13_visitor")
+
+    config.after_load_callbacks.append(r13_meeting_resume_after_load)
 
     def r13_meeting_live_target():
         claim=getattr(store,"r13_meeting_claim",None)
@@ -45,6 +62,7 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
         return False
     $ was_interrupting=r13_meeting_interrupting
     $ r13_meeting_interrupting=True
+    $ r13_meeting_focus_change(claim,r13_debate_statement(claim,sid)["who"])
     $ presentation_result,presentation_rows=r13_debate_judge(claim,sid,key)
     show screen r13_material_corner(key)
     call r13_lines(presentation_rows,"debate:"+presentation_result+":"+claim+":"+sid+":"+key)
@@ -69,6 +87,7 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
 
 label r13_meeting_interrupt(claim,sid,resume=None):
     $ resume={name:getattr(store,name,None) for name in R13_MEETING_RESUME_FIELDS}
+    $ r13_meeting_pending_resume=resume
     $ r13_meeting_interrupting=True
     call screen r13_book("resident_seori",present=True,hearing=True)
     if _return:
@@ -76,6 +95,7 @@ label r13_meeting_interrupt(claim,sid,resume=None):
     python:
         for name,value in resume.items():setattr(store,name,value)
         store.r13_meeting_interrupting=False
+        store.r13_meeting_pending_resume=None
     return
 
 label r13_meeting_public_vote(claim,choice):

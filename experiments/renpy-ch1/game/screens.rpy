@@ -112,7 +112,7 @@ screen say(who,what):
         if r13_meeting_can_interrupt():
             textbutton "보여주기":
                 style "r13_action_button" xpos 988 ypos 420 xsize 212 ysize 64 text_size 22
-                action Call("r13_meeting_interrupt",r13_meeting_claim,r13_meeting_live_target())
+                action Function(renpy.call_in_new_context,"r13_meeting_interrupt",r13_meeting_claim,r13_meeting_live_target())
         use r13_playback_footer()
         key "K_h" action Show("r13_backlog")
     elif not room13_mode:

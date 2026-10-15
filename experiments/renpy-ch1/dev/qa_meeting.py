@@ -10,6 +10,9 @@ URL=os.environ.get('ROOM13_URL','http://127.0.0.1:8773/preview/room13-dev/')
 async def native_jump(q,label):
  code='\n'.join(['import renpy','def _qa_meeting_jump(**kwargs):',' import renpy',' s=renpy.store',' renpy.ui.textbutton("검토 계속",clicked=s.Jump('+repr(label)+'),xpos=500,ypos=300,xsize=280,ysize=80)',"renpy.exports.define_screen('qa_meeting_jump',_qa_meeting_jump,modal='True',zorder='200')","renpy.exports.show_screen('qa_meeting_jump')","renpy.exports.restart_interaction()","result=True"])
  await q.py(code);await q.press('검토 계속');await q.py('import renpy;renpy.exports.hide_screen("qa_meeting_jump");renpy.exports.restart_interaction();result=True')
+async def native_load(q,slot):
+ code='\n'.join(['import renpy','def _qa_meeting_load(**kwargs):',' import renpy',' s=renpy.store',' renpy.ui.textbutton("검토 불러오기",clicked=s.Function(renpy.exports.load,'+repr(slot)+'),xpos=500,ypos=300,xsize=280,ysize=80)',"renpy.exports.define_screen('qa_meeting_load',_qa_meeting_load,modal='True',zorder='200')","renpy.exports.show_screen('qa_meeting_load')","renpy.exports.restart_interaction()","result=True"])
+ await q.py(code);await q.press('검토 불러오기')
 async def main():
  async with async_playwright() as p:
   browser=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader'])
@@ -45,13 +48,22 @@ async def main():
     print('PASS final build opening, roundtable, blocked-claim reasons',flush=True);return
    await q.press('되묻기');await q.wait('say');await q.shot('04-focused-speaker-neighbors')
    # Canceling live presentation must retain the outer dialogue cursor and all proof state.
-   before=await q.py('import renpy;s=renpy.store;result={"proofs":list(s.room13["propositions"]),"debate":s.r13_debate_state(),"id":s.r13_read_id}')
+   before=await q.py('import renpy;s=renpy.store;result={"proofs":list(s.room13["propositions"]),"debate":s.r13_debate_state(),"id":s.r13_read_id,"index":s.r13_index,"page":s.r13_page_i,"focus":s.r13_meeting_focus}')
+   before_say=(await q.state())['say']
    await q.press('보여주기');await q.wait('r13_book');await q.press('그만두기')
-   after=await q.py('import renpy;s=renpy.store;result={"proofs":list(s.room13["propositions"]),"debate":s.r13_debate_state()}')
-   assert before['proofs']==after['proofs'] and before['debate']==after['debate']
+   after=await q.py('import renpy;s=renpy.store;result={"proofs":list(s.room13["propositions"]),"debate":s.r13_debate_state(),"id":s.r13_read_id,"index":s.r13_index,"page":s.r13_page_i,"focus":s.r13_meeting_focus}')
+   assert before==after,(before,after)
+   assert (await q.state())['say']==before_say
+   # A save made with the nested picker open must load at the original utterance.
+   await q.press('보여주기');await q.wait('r13_book');await q.py('import renpy;renpy.exports.save("qa-meeting-live");result=True')
+   await native_load(q,'qa-meeting-live');await q.wait('say')
+   assert (await q.state())['say']==before_say
+   assert await q.py('import renpy;s=renpy.store;result=not s.r13_meeting_interrupting and s.r13_meeting_pending_resume is None and renpy.exports.get_screen("r13_book") is None')
    await until(say='복도 쪽 문이죠');assert await q.py('import renpy;result=renpy.store.r13_meeting_live_target()=="s2"')
    await q.press('보여주기');await select_record('E05');await q.wait('say');await q.shot('05-live-evidence-and-speaker');await until('r13_debate_board')
    assert await q.py('import renpy;s=renpy.store;result=s.r13_debate_is_broken("C1","s2") and s.r13_debate_is_pressed("C1","s1") and not s.r13_meeting_interrupting')
+   if os.environ.get('ROOM13_MEETING_RESUME_ONLY'):
+    print('PASS exact live cancel, nested save/load, live proof and outer dialogue resumption',flush=True);return
    await q.press('발언 기록');await q.shot('06-statement-history');await q.press('닫기')
    await page.set_viewport_size({'width':844,'height':390});await q.shot('07-mobile-meeting');await page.set_viewport_size({'width':1280,'height':720})
    await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.exports.restart_interaction();result=True');await q.shot('08-large-text');await q.py('import renpy;renpy.store.persistent.room13_large_text=False;renpy.exports.restart_interaction();result=True')
