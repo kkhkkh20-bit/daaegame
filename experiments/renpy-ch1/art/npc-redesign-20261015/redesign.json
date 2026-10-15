@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "basis": "Owner instruction 2026-10-15: apply exactly these four designs to existing NPCs. IDs, names, story relations, dialogue, clues, evidence, unlocks, schedules and time costs are unchanged; only the art changes. Species for librarian and nubi chosen by the owner (AskUserQuestion, 2026-10-15).",
+  "scale_from_source": 0.5,
+  "alpha_visible": 32,
+  "margin": 4,
+  "designs": [
+    {
+      "design_id": "candidate_fox_town",
+      "npc": "resident_yeoni",
+      "name_ko": "여니",
+      "source": "source/foxtown.png",
+      "sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+      "species_before": "fox",
+      "species_after": "fox",
+      "reason": "Same species and gender (orange fox woman). Work 의복 수선과 물자 교환: the satchel and scarf suit exchange errands and knitting. 은호 사장 (white fox, male) does not match.",
+      "head": [470, 12, 440, 350],
+      "avatar": [480, 12, 420, 420]
+    },
+    {
+      "design_id": "candidate_goat_shrine",
+      "npc": "resident_momo",
+      "name_ko": "모모 관장",
+      "source": "source/shrine_goat_records_pixel_v2.png",
+      "sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747",
+      "species_before": "goat",
+      "species_after": "goat",
+      "reason": "Same species and gender (goat woman). Work 박물관 보관과 옛 생활 자료: the record book fits. The shrine role in the handoff is not used; the shrine stays scenery.",
+      "head": [300, 29, 420, 410],
+      "avatar": [330, 70, 380, 380]
+    },
+    {
+      "design_id": "candidate_snow_tea",
+      "npc": "resident_librarian",
+      "name_ko": "사서 선생님",
+      "source": "source/snow_leopard_tea_hostess.png",
+      "sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+      "species_before": "cat",
+      "species_after": "snow leopard",
+      "reason": "Owner's choice. Adult woman with silver-grey fur like the previous design. The tea cup is a prop only; no tea house or square tea service is added.",
+      "head": [290, 63, 360, 315],
+      "avatar": [290, 50, 360, 360]
+    },
+    {
+      "design_id": "candidate_sheep_linen",
+      "npc": "resident_nubi",
+      "name_ko": "누비 아주머니",
+      "source": "source/sheep_helper_calm_standing_pixel_v2.png",
+      "sha256": "cc52d33c36d70a1fa6364cf429990713c7a1851e037db706806503acd6a8e58f",
+      "species_before": "duck",
+      "species_after": "sheep",
+      "reason": "Owner's choice. Work 세탁 협업과 임시 숙박 연결 is the closest to the linen role; the apron fits. Her duties are not changed.",
+      "head": [310, 146, 370, 265],
+      "avatar": [320, 140, 340, 340]
+    }
+  ]
+}
