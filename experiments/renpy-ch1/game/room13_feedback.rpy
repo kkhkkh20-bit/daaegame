@@ -38,26 +38,31 @@ screen r13_click_glint(point):
     add R13ClickGlint() xpos point[0] ypos point[1] xanchor .5 yanchor .5 at r13_click_pulse
     timer .65 action Hide("r13_click_glint")
 
+# 0.18.33 (owner): the card used to sit at the left, over the person being spoken to and the
+# question list. It now sits at the top right, under the date plate, in every context, and is
+# near-square: the record's icon on top, its name below (the longest name wraps to 3 lines).
+define R13_EVIDENCE_CARD_SIZE = 236
+define R13_EVIDENCE_CARD_POS = (1256-R13_EVIDENCE_CARD_SIZE, 92)
+define R13_EVIDENCE_ICON_SIZE = 112
+
 screen r13_evidence_card(key,caption,conversation=False):
     style_prefix "r13"
     frame:
-        xpos 24 ypos (24 if conversation else 232) xsize 424 ysize 120 padding R13_UI_PADDING["compact"]
+        xpos R13_EVIDENCE_CARD_POS[0] ypos R13_EVIDENCE_CARD_POS[1] xsize R13_EVIDENCE_CARD_SIZE ysize R13_EVIDENCE_CARD_SIZE padding R13_UI_PADDING["compact"]
         background R13ActionPanel()
         at r13_evidence_reveal
-        hbox:
-            spacing 12
-            add Transform(r13_record_icon(key),size=(84,84),fit="contain",nearest=True) yalign .5
-            vbox:
-                xsize 304 yalign .5 spacing 6
-                text caption size 19 color "#ebcd8a"
-                text ROOM13["evidence"][key]["name"] size 20 color "#fff4df" xsize 304
+        vbox:
+            xfill True spacing 4
+            add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
+            text caption size 17 color "#ebcd8a" xalign .5
+            text ROOM13["evidence"][key]["name"] size 18 color "#fff4df" xalign .5 text_align .5 xmaximum (R13_EVIDENCE_CARD_SIZE-24)
 
 screen r13_evidence_found(keys,conversation=False):
     zorder 85
     default item_index=0
     use r13_evidence_card(keys[item_index],"새 증언 기록" if ROOM13["evidence"][keys[item_index]]["kind"]=="증언" else "새 자료 기록",conversation=conversation)
     # Sparkle around the icon (systems/room13_dot_fx.rpy); one run per card.
-    add r13_evidence_sparkle() xpos 14 ypos ((24 if conversation else 232)-4)
+    add r13_evidence_sparkle() xpos (R13_EVIDENCE_CARD_POS[0]+R13_EVIDENCE_CARD_SIZE//2) ypos (R13_EVIDENCE_CARD_POS[1]+8+R13_EVIDENCE_ICON_SIZE//2) anchor (.5,.5)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:
