@@ -517,6 +517,23 @@ init 999 python:
             renpy.screenshot(os.path.join(out,"blink_%s_open.png"%emotion));shots.append("open")
             report["blink"][emotion]=dict(spec=bool(spec),shots=shots)
             renpy.hide("r13_visitor")
+        # 0.18.33: Daram's body reacts when her expression changes (neutral -> each emotion).
+        report["react"]={}
+        for emotion in ("surprise","joy","angry","anxious","flustered"):
+            r13_speaker("daram","neutral","neutral")
+            renpy.say(R13_CHARS.get("daram"),"반응 확인 문장입니다.",interact=False)
+            renpy.pause(0.5,hard=True)
+            r13_speaker("daram",R13_FULLBODY_TO_LEGACY[emotion],emotion)
+            renpy.say(R13_CHARS.get("daram"),"반응 확인 문장입니다.",interact=False)
+            shots=[]
+            last=0.0
+            for t in (0.04,0.12,0.20,0.32,0.70):
+                renpy.pause(t-last,hard=True);last=t
+                name="react_%s_%03d.png"%(emotion,int(t*1000))
+                renpy.screenshot(os.path.join(out,name));shots.append(name)
+            report["react"][emotion]=shots
+            renpy.hide("r13_visitor")
+            store.r13_motion_person=None
         open(os.path.join(out,"report.json"),"w").write(qa_json.dumps(report,ensure_ascii=False,indent=0))
         store.r13_qa_fx_done=True
 

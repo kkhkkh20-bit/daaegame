@@ -386,3 +386,131 @@ screen r13_fx_impact():
     zorder 140
     add R13FxImpact()
     timer .25 action Hide("r13_fx_impact")
+
+# ---------------------------------------------------------------- 0.18.33
+# 대화 중 표정이 바뀌는 순간의 몸 반응(다람이). 움찔·깡총·부르르·움츠림·갸웃.
+# 움직임은 대화 그림 도트 크기(3px)의 배수로만 움직여 픽셀이 뭉개지지 않는다.
+# 놀람·화남은 '먼저 반응하고 표정이 바뀐다': 앞 표정 그대로 잠깐 움찔한 뒤 새 표정으로 바뀐다.
+init 57 python:
+    R13_REACT_PEOPLE = ("daram",)
+    # 감정: 앞 표정을 유지하는 시간(초)
+    R13_REACT_LEAD = {"surprise": .10, "angry": .07, "joy": 0.0, "anxious": 0.0, "flustered": 0.0}
+    R13_REACT_LAST = {}          # person -> (emotion, art). 저장하지 않는 화면 기억.
+
+    class R13Anticipate(renpy.Displayable):
+        """처음 lead초는 앞 그림, 그 뒤 새 그림."""
+        def __init__(self, before, after, lead, **kwargs):
+            super(R13Anticipate, self).__init__(**kwargs)
+            self.before = renpy.displayable(before)
+            self.after = renpy.displayable(after)
+            self.lead = float(lead)
+
+        def visit(self):
+            return [self.before, self.after]
+
+        def render(self, width, height, st, at):
+            if st < self.lead:
+                renpy.redraw(self, self.lead - st)
+                return renpy.render(self.before, width, height, st, at)
+            return renpy.render(self.after, width, height, st, at)
+
+    def r13_react_kind(who, arriving, actor_pose):
+        if who not in R13_REACT_PEOPLE or not r13_fx_active():
+            return None
+        emotion = r13_fullbody_emotion(actor_pose) if r13_fullbody_spec(who, actor_pose) else None
+        last = R13_REACT_LAST.get(who)
+        if emotion not in R13_REACT_LEAD:
+            return None
+        if arriving:
+            # 등장하자마자 놀라거나 기뻐하는 경우만 반응한다(앞 표정이 없으니 기다리지 않는다).
+            return emotion if emotion in ("surprise", "joy") else None
+        if last and last[0] == emotion:
+            return None
+        return emotion
+
+    def r13_react(kind, who, actor_pose, what, at_list):
+        spec = r13_fullbody_spec(who, actor_pose)
+        before = R13_REACT_LAST.get(who)
+        # 앞 그림은 페이드 없이 기억한다(다시 보일 때 투명에서 시작하지 않게).
+        R13_REACT_LAST[who] = ((spec or {}).get("emotion"), r13_close_art(who, actor_pose, 840, True, False) if spec else what)
+        if not kind:
+            return what, at_list
+        lead = R13_REACT_LEAD.get(kind, 0.0)
+        if lead and before is not None:
+            what = R13Anticipate(before[1], what, lead)
+        else:
+            lead = 0.0
+        motion = {"surprise": r13_react_surprise, "joy": r13_react_joy, "angry": r13_react_angry,
+                  "anxious": r13_react_anxious, "flustered": r13_react_flustered}[kind]
+        return what, list(at_list) + [motion(lead)]
+
+# 3px 배수. 앞 표정(lead) 동안 움찔/웅크림 → 새 표정과 함께 움직임 → 제자리.
+transform r13_react_surprise(lead=.10):
+    yoffset 0 xoffset 0
+    yoffset 9
+    pause max(lead, .06)
+    yoffset -30
+    pause .08
+    yoffset -21
+    pause .05
+    yoffset -12
+    pause .05
+    yoffset -3
+    pause .05
+    yoffset 0
+
+transform r13_react_joy(lead=0.0):
+    yoffset 0
+    yoffset -18
+    pause .07
+    yoffset 0
+    pause .06
+    yoffset -12
+    pause .06
+    yoffset 0
+
+transform r13_react_angry(lead=.07):
+    xoffset 0 yoffset 0
+    yoffset 3
+    pause max(lead, .05)
+    xoffset 9
+    pause .04
+    xoffset -9
+    pause .04
+    xoffset 6
+    pause .04
+    xoffset -3
+    pause .04
+    xoffset 0 yoffset 0
+
+transform r13_react_anxious(lead=0.0):
+    yoffset 0 xoffset 0
+    yoffset 6
+    pause .08
+    yoffset 12
+    pause .10
+    xoffset 3
+    pause .05
+    xoffset -3
+    pause .05
+    xoffset 3
+    pause .05
+    xoffset 0
+    pause .20
+    yoffset 6
+    pause .08
+    yoffset 3
+    pause .08
+    yoffset 0
+
+transform r13_react_flustered(lead=0.0):
+    xoffset 0
+    xoffset -9
+    pause .07
+    xoffset 9
+    pause .07
+    xoffset -6
+    pause .07
+    xoffset 3
+    pause .06
+    xoffset 0
