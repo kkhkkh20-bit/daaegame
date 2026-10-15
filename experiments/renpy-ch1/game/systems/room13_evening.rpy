@@ -184,7 +184,7 @@ label r13_ev_eve_trial:
                     call r13_lines([("nabi","내일 재판에서 본 대로 말할게요. 아이들 밥은 이제 걱정 안 해도 되니까요.")],"ev:eve:nabi:yes")
                 elif r13_has("kids_fed"):
                     call r13_lines([("nabi","아이들은 이제 괜찮아요. ……그래도 할머니 앞에서 말하는 건 무서워요."),
-                        ("dad","(나비에게 직접 부탁해야 한다. 오늘 밤 말을 걸어 보자.)",{"thought":True})],"ev:eve:nabi:ask")
+                        ("dad","(나비가 무서워하는 것은 할머니일까, 아이들 끼니일까.)",{"thought":True})],"ev:eve:nabi:ask")
                 else:
                     call r13_lines([("nabi","……내일은 할머니랑 계속 같이 있었다고만 할 거예요. 아이들 밥이 할머니한테 걸려 있거든요."),
                         ("dad","(나비의 입을 막고 있는 건 할머니가 아니라 아이들 끼니다.)",{"thought":True})],"ev:eve:nabi:no")
@@ -197,7 +197,7 @@ label r13_ev_eve_trial:
                         ("dad","(톡이 갇혀 있으면 재판에서 핀 이야기를 해 줄 사람이 없다.)",{"thought":True})],"ev:eve:tok:held")
                 else:
                     call r13_lines([("resident_tok","재판? 나는 일만 하오. 내 일이 아니면 끼지 않소."),
-                        ("dad","(톡이 왜 나서야 하는지 아직 말하지 못했다.)",{"thought":True})],"ev:eve:tok:no")
+                        ("dad","(톡에게 이 재판은 아직 남의 일이다.)",{"thought":True})],"ev:eve:tok:no")
             "밤이를 찾는다" if not r13_has("eve:bami"):
                 $ r13_flag("eve:bami")
                 if r13_has("bami_taken") and not r13_has("bami_returned"):
@@ -207,7 +207,7 @@ label r13_ev_eve_trial:
                     call r13_lines([("bami","내가 그날 본 거, 내일 재판에서 말할게. 대신 아저씨가 옆에 있어 줘.")],"ev:eve:bami:yes")
                 else:
                     call r13_lines([("bami","……사람 많은 데는 싫어. 내가 나서서 말하면 경비들이 나도 데려갈 거잖아."),
-                        ("dad","(밤이가 안전하다고 믿을 만한 곳부터 마련해야 한다.)",{"thought":True})],"ev:eve:bami:no")
+                        ("dad","(밤이는 말하기 싫은 게 아니다. 끌려갈까 봐 무서운 것이다.)",{"thought":True})],"ev:eve:bami:no")
             "뿔이 촌장과 마주 앉는다" if not r13_has("eve:ppul"):
                 $ r13_flag("eve:ppul")
                 if r13_has("fair_hearing"):

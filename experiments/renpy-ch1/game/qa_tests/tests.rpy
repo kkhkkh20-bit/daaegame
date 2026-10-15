@@ -1517,3 +1517,25 @@ testcase ledger_order:
     assert eval ("H11" in room13["evidence"] and "H10" not in room13["evidence"] and "H1" in room13["evidence"] and not r13_has("madam_exposed"))
     run Function(r13_qa_present,"resident_eunho","H1")
     assert eval (r13_has("eunho_deal_offered") and "ledger_deal" in [k for k,s in r13_topics("resident_eunho")])
+
+testcase testimony_scope:
+    # 0.18.15 C: first statements stay; records narrow them; rumors keep their source.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="room13",life_poc=True),())
+    pause 1.0
+    assert eval ("rumor_mom:yeoni" in [k for k,s in r13_topics("resident_yeoni")] and "rumor_mom:karo" not in [k for k,s in r13_topics("karo")])
+    run Function(r13_finish_topic,"rumor_mom:yeoni")
+    assert eval ("J11" in room13["evidence"] and "rumor_mom:karo" in [k for k,s in r13_topics("karo")])
+    run Function(r13_finish_topic,"rumor_mom:karo")
+    assert eval ("J13" in room13["evidence"] and "엄마는 보지 못했다" in ROOM13["evidence"]["J13"]["establishes"])
+    run Function(r13_edit,day=5,case_state="occurred",victim_state="dead",evidence=["E11","E05"])
+    run Function(r13_finish_topic,"nabi_alibi")
+    assert eval ("J09" in room13["evidence"] and "E15" in room13["evidence"] and "nabi_gap" not in [k for k,s in r13_topics("nabi")])
+    run Function(r13_qa_present,"nabi","E11")
+    assert eval ("nabi_gap" in [k for k,s in r13_topics("nabi")])
+    run Function(r13_finish_topic,"nabi_gap")
+    assert eval ("E12" in room13["evidence"] and "J09" in room13["evidence"])
+    run Function(r13_qa_present,"doto","E05")
+    assert eval ("J10" in room13["evidence"] and "복도 쪽 문" in r13_qa_last_present)
