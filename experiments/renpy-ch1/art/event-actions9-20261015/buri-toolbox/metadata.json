@@ -1,0 +1,43 @@
+{
+  "canonical_id": "buri",
+  "pose_key_proposal": "event_toolbox",
+  "status": "optional_event_candidate_not_applied",
+  "source_request": "ART_REQUEST_01853.md:45",
+  "source_dialogue": "assets/room13-fullbody-buri-neutral.webp",
+  "source_commit": "1f92e72faa7f7441a04264862013d8e9366c793a",
+  "canvas": [
+    1324,
+    1188
+  ],
+  "visible_bbox_alpha_gt8": [
+    180,
+    42,
+    1147,
+    1140
+  ],
+  "alpha_range": [
+    0,
+    255
+  ],
+  "outside_core_expanded25_max_alpha": 1,
+  "head_estimate_xywh": [
+    450,
+    140,
+    540,
+    370
+  ],
+  "foot_estimate_xy": [
+    824,
+    1113
+  ],
+  "hand_toolbox_contact_estimate_xy": [
+    470,
+    808
+  ],
+  "coordinate_space": "source pixels, visual estimates only",
+  "props": "closed toolbox included; no text/evidence markings",
+  "generation": "built-in imagegen edit; untouched generated PNG",
+  "sha256": "0076f7c26c1f25ce492ddb9d293bae4ce0544dee8577b50aaae687aa6989ee8e",
+  "condition": "workshop day9-12 period<=1 week2_started after measurement-tampering episode handled",
+  "note": "Review candidate; not proof of final runtime placement."
+}

@@ -1,0 +1,160 @@
+{
+  "file": "room13-pixel-post-stove-kettle.png",
+  "kind": "post_stove_kettle_steam",
+  "source_request": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md",
+  "source_section": "1. 슬링: 봉투를 김에 쐬는 포즈",
+  "related_character": "../sling-event-steam/sling-event-steam.png",
+  "generation_source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-d4c02742-0eba-461e-b992-e17ef0acfc96.png",
+  "content": [
+    "Single slate iron kettle",
+    "Two pale gray-white semitransparent steam strands from right-facing spout"
+  ],
+  "excluded": [
+    "stove",
+    "character",
+    "envelope",
+    "background",
+    "text",
+    "UI"
+  ],
+  "legacy_request_region": {
+    "canvas": [
+      1280,
+      720
+    ],
+    "bounds_xyxy": [
+      480,
+      260,
+      620,
+      420
+    ],
+    "meaning": "Approximate post-office stove-top region from request; placement region, not required PNG dimensions."
+  },
+  "source_pixel_anchors_estimated": {
+    "kettle_bottom_contact": [
+      580,
+      1164
+    ],
+    "kettle_bottom_contact_span_x": [
+      470,
+      692
+    ],
+    "spout_mouth": [
+      989,
+      785
+    ],
+    "steam_tip_envelope_contact": [
+      935,
+      155
+    ],
+    "steam_upper_band_xyxy": [
+      900,
+      145,
+      1059,
+      400
+    ],
+    "kettle_body_and_handle_bbox": [
+      286,
+      499,
+      1031,
+      1166
+    ]
+  },
+  "related_character_source_anchors": {
+    "envelope_lower_open_edge": [
+      321,
+      786
+    ],
+    "feet_center": [
+      539,
+      1294
+    ],
+    "character_canvas": [
+      1024,
+      1536
+    ]
+  },
+  "alignment_guidance": "Place the kettle bottom on the actual existing stove surface. Align the separate Sling envelope lower open edge with upper steam, allowing the pale steam to pass behind the envelope. The spout points right, toward Sling standing to the right. Source anchors must be transformed by each asset scale and translation; do not equate source-pixel coordinates to runtime coordinates. Keep kettle and steam together as requested single overlay; the steam alpha is intentionally semitransparent. No stove was duplicated.",
+  "suggested_runtime_crop_xywh": [
+    272,
+    128,
+    804,
+    1054
+  ],
+  "status": "generated_and_QA_checked_not_integrated",
+  "generation_mode": "built-in image_gen, one new generation per prop",
+  "canvas_px": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "sha256": "3182326d18505d950152e6fa01fb383e50103c7f5bda671214656c2057f0992c",
+  "alpha_QA": {
+    "extrema": [
+      0,
+      255
+    ],
+    "threshold_bboxes_xyxy": {
+      "0": [
+        21,
+        21,
+        1190,
+        1254
+      ],
+      "8": [
+        286,
+        144,
+        1059,
+        1166
+      ],
+      "32": [
+        286,
+        145,
+        1059,
+        1166
+      ],
+      "128": [
+        287,
+        229,
+        1059,
+        1165
+      ],
+      "240": [
+        288,
+        409,
+        1058,
+        1164
+      ]
+    },
+    "zero_alpha_pixels": 1234098,
+    "partial_alpha_pixels": 336703,
+    "opaque_pixels": 1715,
+    "steam_sample_roi_xyxy": [
+      850,
+      80,
+      1100,
+      780
+    ],
+    "steam_sample_partial_alpha_pixels": 59689,
+    "steam_sample_opaque_pixels": 42
+  },
+  "QA_files": [
+    "room13-pixel-post-stove-kettle-qa-white.jpg",
+    "room13-pixel-post-stove-kettle-qa-gray.jpg"
+  ],
+  "QA_result": "Full visible contents inspected on white and gray; no characters, text or baked scene. Original alpha preserved without thresholding, flood fill, recoloring, crop, resize or cleanup. QA composites are separate inspection files, not game assets.",
+  "caveats": [
+    "Source canvases are larger than scene placement regions. Use crop plus nearest-neighbor scale at integration; the PNG itself is not a full-map-sized positional overlay.",
+    "Very low-alpha residual pixels extend outside visible silhouettes. Preserved exactly as generated; no code cleanup performed.",
+    "Pixel-art appearance is coarse and low-detail, but a mathematically uniform source pixel grid is not guaranteed.",
+    "Anchors are visual source-pixel estimates, not runtime-certified. Current expanded maps may differ from the legacy source request.",
+    "No code, game files, runtime manifests, or Claude files changed."
+  ],
+  "request_classification": {
+    "priority": "required_requested_layer",
+    "source_basis": "ART_REQUEST_01853 section 1 (필수)",
+    "delivery_type": "independent_transparent_map_prop_layer",
+    "separate_from_character": true,
+    "optional": false
+  }
+}

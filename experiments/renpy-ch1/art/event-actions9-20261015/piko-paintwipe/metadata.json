@@ -1,0 +1,56 @@
+{
+  "asset": "piko-paintwipe.png",
+  "character": "resident_piko",
+  "status": "optional_scene_enhancement_candidate",
+  "generation_mode": "built-in image_gen identity-preserving edit",
+  "runtime_integrated": false,
+  "sources": [
+    "/workspace/shared/character-catalog40/runtime-assets/resident_piko.webp",
+    "/workspace/shared/character-catalog40/runtime-actions/room13-pixel-acting-piko.webp"
+  ],
+  "request_source": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md lines 37-47",
+  "request": "Crouch before a small wooden paint panel, rub paint with a cloth, look at work rather than viewer. Preserve current peacock identity and outfit. Slightly rounder balanced storybook proportions, low-detail pixel rendering including face. No brush, text, numbers, scene background or invented evidence.",
+  "suggested_event": {
+    "location": "square",
+    "days": [
+      2,
+      3
+    ],
+    "period_max": 1
+  },
+  "canvas": {
+    "width": 1024,
+    "height": 1536,
+    "format": "PNG",
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 254,
+    "alpha_gt16_bbox_exclusive": [
+      12,
+      219,
+      1014,
+      1353
+    ]
+  },
+  "estimated_anchors": {
+    "ground_contact_px": [
+      620,
+      1347
+    ],
+    "normalized_full_canvas": [
+      0.6055,
+      0.877
+    ],
+    "prop_contact_px": [
+      830,
+      865
+    ],
+    "caveat": "Visual estimates only. Ground contact excludes crest and tail; verify game placement at target scale."
+  },
+  "qa": {
+    "white_composite": "qa-white.jpg",
+    "gray_composite": "qa-gray.jpg",
+    "visual_checks": "Correct peacock species, maroon coat, cream suit and trousers, gold scarf, blue crest and green eye-spotted tail. Crouching action, folded cloth in contact with panel, downward gaze. Entire silhouette present. Transparency verified; generated alpha retained unmodified. No background is baked into the visible white composite."
+  },
+  "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-57e37223-04c9-4ee9-979d-98ec62fc031e.png"
+}
