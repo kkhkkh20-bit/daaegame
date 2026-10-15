@@ -1,0 +1,7 @@
+# Hall and room13 state-complete art candidate
+12 images = 2 locations x before/after x morning/afternoon/evening. All2172x724→2160x720 uniform. View1280x720,camera0..880,initial440. Preserve all plot conditions.
+Hall:13door closed before, open inward right hinges after; left jamb latch damage. Interior not shown. Room: table candle before, broken brass+candle+whitewax+blacksoot floor after. Single lower-right red book, fixed barred window, red blanket knot, shadowed underbed rear grille.
+Existing source snapshots: room-after SHA243218b96b8fbea2c0a3bba7a0890051964868fa; hall-after SHA959ffbfc486a5a9d3d7a506c63577db2fce6a6b4.
+coordinates.json contains authored bounding candidates, safe frontfloor slots, evidence native crop candidates. Actual code QA must verify E03/E07/E09 inspect zoom and avoid old image-bound crop metadata. Do not modify story/conditions or create child crawl-through passage based on obsolete text; current under text is only dark space to fixed grille.
+Background dispatcher currently checks world scene before case_state-specific old backgrounds; adding hall/room13 naively to world layout can erase state changes. Integrator MUST preserve explicit state-specific file selection (including wrappers) and test both states in all3 daylights.
+No code changed by art worker. No live deployment QA claimed. Case-important clues pass visual review, but in-engine final check remains.

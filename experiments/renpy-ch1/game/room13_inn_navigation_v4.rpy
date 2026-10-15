@@ -31,7 +31,11 @@ init 63 python:
             return []
         links = dict(r13_local_connections())
         sx, sy = r13_inn_v4_scale(location)
-        panorama = location == "inn"
+        # 0.18.55: a wide hall scrolls like the lobby. Its drawn chips take the wide
+        # picture's own centres (world layout "chips"); edge chips stay screen UI.
+        wide = location != "inn" and r13_world_width(location) > 1280
+        centres = r13_layout(location).get("chips", {}) if wide else {}
+        panorama = location == "inn" or wide
         result = []
         for chip in spec["chips"]:
             key = chip["to"]
@@ -48,9 +52,11 @@ init 63 python:
             w = max(int((x1-x0)*sx)+16, 26*len(label)//2+68)
             h = R13_INN_V4_CHIP_HEIGHT
             if on_picture:
+                if wide:
+                    cx, cy = centres[key]
                 x, y = int(cx-w/2), int(cy-h/2)
             else:
-                width = 1920.0 if panorama else 1280.0
+                width = 1920.0 if location == "inn" else 1280.0
                 if abs(cx-width/2) < width*.15:
                     x, y = 640-w//2, R13_INN_V4_ABOVE_FOOTER
                 elif cx < width/2:

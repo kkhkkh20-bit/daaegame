@@ -15,7 +15,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 96 | `systems/room13_work_clues.rpy:25` | _r13_intro_present |
 | 7 | 97 | `systems/room13_intro_clues.rpy:48` | _r13_poc_present |
 | 8 | 100 | `systems/room13_poc_route.rpy:66` | _r13_daram_home_present |
-| 9 | 101 | `systems/room13_daram_home.rpy:144` | _r13_pf_present |
+| 9 | 101 | `systems/room13_daram_home.rpy:147` | _r13_pf_present |
 | 10 | 113 | `systems/room13_present_flow.rpy:43` | _r13_mem_present |
 | 11 | 114 | `systems/room13_memory.rpy:85` | _r13_ledger_present |
 | 12 | 115 | `systems/room13_ledger.rpy:38` | _r13_tm_present |
@@ -38,7 +38,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 8 | 96 | `systems/room13_items.rpy:112` | _r13_intro_topics |
 | 9 | 97 | `systems/room13_intro_clues.rpy:112` | _r13_poc_topics |
 | 10 | 100 | `systems/room13_poc_route.rpy:60` | _r13_daram_home_topics |
-| 11 | 101 | `systems/room13_daram_home.rpy:97` | _r13_pf_topics |
+| 11 | 101 | `systems/room13_daram_home.rpy:100` | _r13_pf_topics |
 | 12 | 113 | `systems/room13_present_flow.rpy:38` | _r13_night_topics |
 | 13 | 117 | `systems/room13_night_talk.rpy:33` | _r13_uk_topics |
 | 14 | 123 | `systems/room13_use_knowledge.rpy:53` |  |
@@ -47,7 +47,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 57 | `room13_life.rpy:182` | _r13_before_inspection_visible |
+| 1 | 57 | `room13_life.rpy:188` | _r13_before_inspection_visible |
 | 2 | 66 | `room13_inspection.rpy:253` | r13_before_gate_bundle_visible |
 | 3 | 67 | `room13_gate_inspection.rpy:65` | _r13_route_object_visible |
 | 4 | 90 | `room13_route_knowledge.rpy:22` | _r13_firstday_visible |
@@ -66,7 +66,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 3 | 77 | `room13_tool_discovery.rpy:183` | _r13_firstday_topic_lines |
 | 4 | 95 | `systems/room13_first_day_flow.rpy:101` | _r13_intro_topic_lines |
 | 5 | 97 | `systems/room13_intro_clues.rpy:90` | _r13_daram_home_topic_lines |
-| 6 | 101 | `systems/room13_daram_home.rpy:105` | _r13_mem_topic_lines |
+| 6 | 101 | `systems/room13_daram_home.rpy:108` | _r13_mem_topic_lines |
 | 7 | 114 | `systems/room13_memory.rpy:74` |  |
 
 ## `r13_compare_result` (6층)
@@ -77,7 +77,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 96 | `systems/room13_work_clues.rpy:18` | _r13_intro_compare |
 | 3 | 97 | `systems/room13_intro_clues.rpy:35` | _r13_poc_compare |
 | 4 | 100 | `systems/room13_poc_route.rpy:90` | _r13_daram_home_compare |
-| 5 | 101 | `systems/room13_daram_home.rpy:133` | _r13_tm_compare |
+| 5 | 101 | `systems/room13_daram_home.rpy:136` | _r13_tm_compare |
 | 6 | 116 | `systems/room13_testimony.rpy:42` |  |
 
 ## `r13_first_mystery_notes` (6층)
@@ -99,7 +99,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 93 | `systems/room13_livelihood_flow.rpy:108` | _r13_shop_finish_topic |
 | 3 | 94 | `systems/room13_shop.rpy:61` | _r13_items_finish_topic |
 | 4 | 96 | `systems/room13_items.rpy:123` | _r13_daram_home_finish |
-| 5 | 101 | `systems/room13_daram_home.rpy:116` |  |
+| 5 | 101 | `systems/room13_daram_home.rpy:119` |  |
 
 ## `r13_where` (5층)
 
@@ -117,7 +117,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 97 | `systems/room13_intro_clues.rpy:94` | _r13_poc_intro_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:124` | _r13_daram_room_intro_goal |
-| 3 | 101 | `systems/room13_daram_home.rpy:124` | _r13_note_spot_goal |
+| 3 | 101 | `systems/room13_daram_home.rpy:127` | _r13_note_spot_goal |
 | 4 | 129 | `systems/room13_mother_note_spot.rpy:18` |  |
 
 ## `r13_available` (3층)
@@ -172,7 +172,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 75 | `room13_dialogue_openings_20261013.rpy:265` | _r13_daram_home_seen |
-| 2 | 101 | `systems/room13_daram_home.rpy:112` |  |
+| 2 | 101 | `systems/room13_daram_home.rpy:115` |  |
 
 ## `r13_campaign_goal` (2층)
 
@@ -311,6 +311,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:81` | _r13_offer_edge_label |
+| 1 | 58 | `room13_world_camera.rpy:95` | _r13_offer_edge_label |
 | 2 | 124 | `systems/room13_event_offers.rpy:78` |  |
 

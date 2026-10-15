@@ -61,13 +61,16 @@ class WideLayouts(unittest.TestCase):
                     cx, feet, height = slot[:3]
                     self.assertTrue(0 < cx < width and 0 < feet <= 720 and 0 < height < feet, slot)
 
-    def test_held_scenes_stay_out(self):
-        # 0.18.55: the post's wide morning art is held (scarf hidden on six-resident days).
-        self.assertNotIn("post", LAYOUT)
-        self.assertNotIn("evening", LAYOUT["dining"].get("periods", DAYLIGHT))
-        # Out of scope for the map branch.
+    def test_scope(self):
+        # 0.18.55: post wide in the morning only; guestroom stays the old room.
+        self.assertEqual(LAYOUT["post"]["periods"], ["morning"])
         self.assertNotIn("guestroom", LAYOUT)
-
+        # The post slot in front of the scarf was replaced (it hid the scarf).
+        self.assertNotIn([675, 635, 205], [s[:3] for s in LAYOUT["post"]["slots"]])
+        # 13호/hall: every state x daylight picture exists (no fallback to morning).
+        for location in ("hall", "room13"):
+            for state in ("before", "after"):
+                self.assertEqual(sorted(LAYOUT[location]["state_files"][state]), sorted(DAYLIGHT))
 
 if __name__ == "__main__":
     unittest.main()

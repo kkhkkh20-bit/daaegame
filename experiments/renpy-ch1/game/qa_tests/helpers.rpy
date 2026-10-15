@@ -633,7 +633,7 @@ init 999 python:
         actors=[dict(person=a["person"],pose=a["pose"],feet=a["y"]+a["height"],x=a["x"],w=a["width"],h=a["height"],slot=list(a["slot"]) if a.get("slot") else None) for a in r13_stage_people(False)]
         row=dict(tag=tag,expect=expect,choice=list(choice) if isinstance(choice,tuple) else choice,location=store.room13["location"],
             day=store.room13["day"],period=store.room13["period"],daylight=r13_daylight(),width=r13_world_width(),camera=r13_world_offset(),
-            background=(r13_layout().get("files") or {}).get(r13_daylight()),actors=actors,
+            background=r13_world_file(store.room13["location"],r13_daylight()) if r13_layout() else None,actors=actors,
             rects={k:list(v["rect"]) for k,v in ROOM13["objects"].get(store.room13["location"],{}).items()})
         R13_QA_WIDE_LOG.append(row)
         r13_qa_wide_write()
@@ -691,12 +691,12 @@ init 999 python:
                 head_px=round(a["height"]*head[3]/float(nh),1) if head else None,display_h=a["height"],native_h=nh,
                 person_hits=counts.get("self",0),face_hit=r13_qa_hit(fx,fy) if 0<=fx<1280 else "offscreen"))
         R13_QA_WIDE_LOG.append(dict(tag=tag,kind="hitmap",location=location,day=store.room13["day"],period=store.room13["period"],
-            daylight=r13_daylight(),width=r13_world_width(),camera=camera,background=(r13_layout().get("files") or {}).get(r13_daylight()),
+            daylight=r13_daylight(),width=r13_world_width(),camera=camera,background=r13_world_file(store.room13["location"],r13_daylight()) if r13_layout() else None,
             objects=objects,actors=actors,travel=[list(c) for c in r13_local_connections()]))
         r13_qa_wide_write()
     def r13_qa_pick(key):
         return R13_QA_PICK.get(key,(640,40))
-    def r13_qa_wide_capacity(locations=("post","kitchen","dining","passage","inn")):
+    def r13_qa_wide_capacity(locations=("post","kitchen","dining","passage","inn","hall","room13")):
         """Residents at each wide location for every day/period and the states that
         move people (case, victim, granny, shelter, protection, detention)."""
         import itertools

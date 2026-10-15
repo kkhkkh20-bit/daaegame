@@ -1,0 +1,123 @@
+{
+  "status": "art_visually_reviewed_runtime_QA_required",
+  "native_size": [
+    2172,
+    724
+  ],
+  "runtime_size": [
+    2160,
+    720
+  ],
+  "crop": [
+    0,
+    0,
+    2172,
+    724
+  ],
+  "files": [
+    {
+      "file": "hall-after-afternoon.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "af450420d459f8fd5b572008847378392687b2357b7b2ed3382b9f7c7bfb6ba2"
+    },
+    {
+      "file": "hall-after-evening.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "5977c31e704c6d336676a28b78b195857e470aeb2f8e3b10b5bbdb25e17c985a"
+    },
+    {
+      "file": "hall-after-morning.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "2fc2dad822d2a84bd63f67abe0087513463418d5648677c932531c3d6434b056"
+    },
+    {
+      "file": "hall-before-afternoon.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "c644d99d5acce01245ebcbad514584f4edcc7b9c96a98763f897f1763bd54fc6"
+    },
+    {
+      "file": "hall-before-evening.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "c59c75cb544871609ca9186ccc5ab4f5275fc615ecf9d19fd41f1264eab67a18"
+    },
+    {
+      "file": "hall-before-morning.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "b09e8a2adbf3f049b5a5f14ebe370810aecd792a5cea4bfa8e241d4185b16f62"
+    },
+    {
+      "file": "room13-after-afternoon.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "8ea582b51db72cd2b2403800f990a33d4b443ce3fe6067c622fc75a00774e02a"
+    },
+    {
+      "file": "room13-after-evening.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "48c99b446b8e9f79e84f9022e4fb34064b46f6442818f41b7c1a783878fc26c6"
+    },
+    {
+      "file": "room13-after-morning.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "a07d6c43488c603e5d2bcea829ef04f1d1b6eedcbda5098f6040993c012d91d7"
+    },
+    {
+      "file": "room13-before-afternoon.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "3381160497cffa2960a737116d6dbd4e034bb608f5add069c4e86ab717584408"
+    },
+    {
+      "file": "room13-before-evening.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "45c3ff4d8516dfa06bad1f70ac0e715392597919ba3888ab475315cfdbe8d030"
+    },
+    {
+      "file": "room13-before-morning.png",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "2bbede298e33c3e016a203da7cf6c91cb3b095b9af2cefe5a141a82d0052c244"
+    }
+  ],
+  "state_selection": "case_state==occurred means after, otherwise before; retain existing authoritative logic and overrides",
+  "excluded": "guestroom and all other locations",
+  "caveats": [
+    "No runtime tests performed. Visual objects retained but generated images not pixel-identical.",
+    "hall before-afternoon lower right window has opaque frost; other variants fir trees. Cosmetic seasonal difference, no clue or route change.",
+    "Object rects are conservative visual candidates covering state drift, not tested hitboxes.",
+    "Never fall back to morning for missing state: all12 supplied."
+  ]
+}

@@ -118,6 +118,12 @@ init 57 python:
     def r13_evidence_art(key):
         # Authored rectangles refer to the actual adopted artwork, never an old sheet.
         # Evidence illustrations stay fixed when the clock changes.
+        # 0.18.55: a wide scene names its own crop (picture + native rect), so the
+        # close-up matches the room the player actually searched.
+        for location,layout in getattr(store,"R13_WORLD_LAYOUTS",{}).items():
+            crop=layout.get("evidence",{}).get(key)
+            if crop:
+                return Crop(tuple(crop["rect"]),crop["file"])
         for name,spec in R13_PIXEL_LAYOUTS.items():
             rect=spec.get("evidence",{}).get(key)
             if rect:

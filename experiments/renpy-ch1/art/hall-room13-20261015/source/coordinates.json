@@ -1,0 +1,375 @@
+{
+  "hall": {
+    "objects": {
+      "rail": [
+        0,
+        215,
+        860,
+        473
+      ],
+      "door": [
+        975,
+        180,
+        245,
+        290
+      ],
+      "towels": [
+        530,
+        466,
+        200,
+        76
+      ],
+      "boots": [
+        861,
+        401,
+        126,
+        88
+      ],
+      "bucket": [
+        1236,
+        335,
+        125,
+        164
+      ],
+      "lamp": [
+        916,
+        192,
+        72,
+        95
+      ]
+    },
+    "old_objects": {
+      "rail": [
+        9,
+        217,
+        410,
+        239
+      ],
+      "door": [
+        705,
+        134,
+        208,
+        305
+      ],
+      "towels": [
+        203,
+        468,
+        218,
+        72
+      ],
+      "boots": [
+        603,
+        383,
+        106,
+        86
+      ],
+      "bucket": [
+        928,
+        329,
+        81,
+        158
+      ],
+      "lamp": [
+        641,
+        147,
+        59,
+        85
+      ]
+    },
+    "floors": [
+      [
+        1017,
+        669,
+        255
+      ],
+      [
+        1471,
+        616,
+        238
+      ],
+      [
+        1880,
+        677,
+        260
+      ]
+    ],
+    "slots": [
+      [
+        1017,
+        669,
+        255,
+        "waiting"
+      ],
+      [
+        1471,
+        616,
+        238,
+        "waiting"
+      ],
+      [
+        1880,
+        677,
+        260,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement.",
+    "crop": [
+      0,
+      0,
+      2172,
+      724
+    ],
+    "state_requirement": "before/after x 3 daylight images, same geometry; select current case_state before world background"
+  },
+  "room13": {
+    "objects": {
+      "bed": [
+        809,
+        337,
+        675,
+        180
+      ],
+      "window": [
+        272,
+        12,
+        293,
+        303
+      ],
+      "boxes": [
+        19,
+        563,
+        490,
+        157
+      ],
+      "under": [
+        842,
+        498,
+        438,
+        57
+      ],
+      "floor": [
+        863,
+        552,
+        215,
+        64
+      ],
+      "books": [
+        1700,
+        375,
+        35,
+        67
+      ],
+      "cup": [
+        321,
+        364,
+        80,
+        66
+      ],
+      "letters": [
+        174,
+        395,
+        124,
+        25
+      ],
+      "notebook": [
+        147,
+        426,
+        210,
+        40
+      ],
+      "coat": [
+        593,
+        351,
+        150,
+        255
+      ],
+      "sewing": [
+        1541,
+        419,
+        150,
+        126
+      ],
+      "socks": [
+        461,
+        285,
+        122,
+        105
+      ],
+      "bedside_books": [
+        883,
+        294,
+        86,
+        33
+      ],
+      "bread": [
+        401,
+        393,
+        95,
+        40
+      ]
+    },
+    "old_objects": {
+      "bed": [
+        605,
+        311,
+        537,
+        151
+      ],
+      "window": [
+        197,
+        25,
+        193,
+        248
+      ],
+      "boxes": [
+        9,
+        567,
+        382,
+        60
+      ],
+      "under": [
+        600,
+        480,
+        437,
+        60
+      ],
+      "floor": [
+        590,
+        523,
+        208,
+        82
+      ],
+      "books": [
+        1195,
+        267,
+        50,
+        72
+      ],
+      "cup": [
+        244,
+        358,
+        64,
+        60
+      ],
+      "letters": [
+        155,
+        389,
+        79,
+        22
+      ],
+      "notebook": [
+        135,
+        416,
+        148,
+        30
+      ],
+      "coat": [
+        437,
+        336,
+        137,
+        239
+      ],
+      "sewing": [
+        1186,
+        409,
+        88,
+        131
+      ],
+      "socks": [
+        336,
+        279,
+        91,
+        78
+      ],
+      "bedside_books": [
+        626,
+        274,
+        83,
+        32
+      ],
+      "bread": [
+        311,
+        382,
+        80,
+        36
+      ]
+    },
+    "floors": [
+      [
+        924,
+        675,
+        230
+      ],
+      [
+        1806,
+        645,
+        225
+      ],
+      [
+        1990,
+        691,
+        240
+      ]
+    ],
+    "slots": [
+      [
+        924,
+        675,
+        230,
+        "waiting"
+      ],
+      [
+        1806,
+        645,
+        225,
+        "waiting"
+      ],
+      [
+        1990,
+        691,
+        240,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "notes": "Authored visual bounding boxes on runtime2160x720; click/actor fixture QA still required. Floor slots avoid furniture; use front-floor positions, not unverified behind-object placement. Do not reuse floor slot on evidence area; no character should cover lower-right red book. Fixed grille is shadowed behind bed, not an opening.",
+    "crop": [
+      0,
+      0,
+      2172,
+      724
+    ],
+    "state_requirement": "before/after x 3 daylight; after floor evidence candlestick/wax/soot replaces before table candle; preserve E03/E07/E09 crop semantics",
+    "evidence_native_crops_candidate": {
+      "E03": {
+        "file": "room13-before-afternoon.png",
+        "rect": [
+          1260,
+          405,
+          85,
+          95
+        ]
+      },
+      "E07": {
+        "file": "room13-after-afternoon.png",
+        "rect": [
+          810,
+          525,
+          220,
+          95
+        ]
+      },
+      "E09": {
+        "file": "room13-after-afternoon.png",
+        "rect": [
+          935,
+          548,
+          80,
+          52
+        ]
+      }
+    }
+  }
+}

@@ -33,11 +33,25 @@ init 58 python:
     def r13_world_scene_location(key):
         return next((location for location in R13_WORLD_LAYOUTS if R13_PLACES.get(location,(None,None))[1]==key and r13_layout(location)),None)
 
+    def r13_world_state(location=None):
+        """Scene state for layouts drawn per case state (hall, 13호): the same rule as
+        the old backgrounds, after = the case has occurred."""
+        spec=R13_WORLD_LAYOUTS.get(location or (store.room13 or {}).get("location"),{})
+        if "state_files" not in spec:return None
+        return "after" if (store.room13 or {}).get("case_state")=="occurred" else "before"
+
+    def r13_world_file(location,period):
+        spec=R13_WORLD_LAYOUTS[location]
+        state=r13_world_state(location)
+        files=spec["state_files"][state] if state else spec["files"]
+        return files[period]
+
     def r13_world_background(location=None,daylight=None):
         location=location or store.room13["location"]
         spec=R13_WORLD_LAYOUTS[location]
         period=daylight or r13_daylight()
-        path=spec["files"][period]
+        # 0.18.55: hall/13호 choose before/after first, then the daylight picture.
+        path=r13_world_file(location,period)
         crop=spec.get("crops",{}).get(period)
         source=Crop(tuple(crop),path) if crop else path
         # Dot effects (room13_dot_fx.rpy) sit in the picture's own pixels, before scaling.
@@ -126,6 +140,20 @@ init 62 python:
 
     config.interact_callbacks.append(r13_sync_world_rects)
     config.after_load_callbacks.append(r13_sync_world_rects)
+
+init 130 python:
+    # Objects registered after init 62 (13호 desk at init 66, the mother's note at
+    # init 129) take their wide-scene rect here. guestroom copied its rects at
+    # init 61 and keeps the old picture.
+    for r13_world_location,r13_world_layout in R13_WORLD_LAYOUTS.items():
+        for r13_world_key,r13_world_rect in r13_world_layout.get("late_objects",{}).items():
+            if r13_world_key not in ROOM13["objects"].get(r13_world_location,{}):
+                raise ValueError("Unknown late panorama object: "+r13_world_location+":"+r13_world_key)
+            if r13_world_layout.get("periods"):
+                base=ROOM13["objects"][r13_world_location][r13_world_key]["rect"]
+                R13_PERIOD_RECTS.setdefault(r13_world_location,{})[r13_world_key]=(list(base),list(r13_world_rect))
+                continue
+            ROOM13["objects"][r13_world_location][r13_world_key]["rect"]=list(r13_world_rect)
 
 screen r13_world_camera_controls(adjustment):
     # Exploration is moved by the shared world viewport's mouse drag or touch

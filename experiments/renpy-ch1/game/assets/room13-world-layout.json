@@ -1718,7 +1718,7 @@
       "afternoon",
       "evening"
     ],
-    "note": "0.18.53 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720.",
+    "note": "0.18.55 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720.",
     "files": {
       "morning": "assets/room13-pixel-wide-kitchen-morning.webp",
       "afternoon": "assets/room13-pixel-wide-kitchen-afternoon.webp",
@@ -1829,12 +1829,14 @@
     "initial_x": 440,
     "periods": [
       "morning",
-      "afternoon"
+      "afternoon",
+      "evening"
     ],
-    "note": "0.18.53 wide map, morning and afternoon. Evening is held on the old 1280 scene: up to three residents (nabi, owl grandfather, Tok; days 1-7 while he is alive) and only two reviewed floor spots. Evening art is kept in art/wide-maps-20261015/source-daylight and game/assets/room13-pixel-wide-dining-evening.webp is not shipped. Uniform 2172x724 -> 2160x720.",
+    "note": "0.18.55 wide map, all three daylight periods. Evening holds up to three residents (nabi, owl grandfather, Tok; days 1-7 while he is alive): a third floor spot [135,690,265] in front of the log pile was added in this release (the art gave two) and checked with hit maps; the investigation objects stay clickable. Uniform 2172x724 -> 2160x720.",
     "files": {
       "morning": "assets/room13-pixel-wide-dining-morning.webp",
-      "afternoon": "assets/room13-pixel-wide-dining-afternoon.webp"
+      "afternoon": "assets/room13-pixel-wide-dining-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-dining-evening.webp"
     },
     "crops": {
       "morning": [
@@ -1844,6 +1846,12 @@
         724
       ],
       "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
         0,
         0,
         2172,
@@ -1892,6 +1900,11 @@
         540,
         680,
         260
+      ],
+      [
+        135,
+        690,
+        265
       ]
     ],
     "slots": [
@@ -1906,11 +1919,31 @@
         680,
         260,
         "waiting"
+      ],
+      [
+        135,
+        690,
+        265,
+        "waiting"
       ]
     ],
     "occlusion": [],
     "ignore_legacy_positions": true,
-    "capacity": 2
+    "capacity": 2,
+    "critical": [
+      [
+        731,
+        437,
+        156,
+        247
+      ],
+      [
+        1517,
+        0,
+        103,
+        186
+      ]
+    ]
   },
   "passage": {
     "width": 2160,
@@ -1920,7 +1953,7 @@
       "afternoon",
       "evening"
     ],
-    "note": "0.18.53 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720. passage evening was 2171 wide: normalized to 2172 by repeating the last column (art/wide-maps-20261015/normalized).",
+    "note": "0.18.55 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720. passage evening was 2171 wide: normalized to 2172 by repeating the last column (art/wide-maps-20261015/normalized).",
     "files": {
       "morning": "assets/room13-pixel-wide-passage-morning.webp",
       "afternoon": "assets/room13-pixel-wide-passage-afternoon.webp",
@@ -2018,5 +2051,565 @@
     "occlusion": [],
     "ignore_legacy_positions": true,
     "capacity": 3
+  },
+  "hall": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.55 wide hall: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks.",
+    "state_files": {
+      "before": {
+        "morning": "assets/room13-pixel-wide-hall-before-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-hall-before-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-hall-before-evening.webp"
+      },
+      "after": {
+        "morning": "assets/room13-pixel-wide-hall-after-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-hall-after-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-hall-after-evening.webp"
+      }
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "rail": [
+        0,
+        215,
+        860,
+        473
+      ],
+      "door": [
+        975,
+        180,
+        245,
+        290
+      ],
+      "towels": [
+        530,
+        466,
+        200,
+        76
+      ],
+      "boots": [
+        861,
+        401,
+        126,
+        88
+      ],
+      "bucket": [
+        1236,
+        335,
+        125,
+        164
+      ],
+      "lamp": [
+        916,
+        192,
+        72,
+        95
+      ]
+    },
+    "floors": [
+      [
+        1017,
+        669,
+        255
+      ],
+      [
+        1471,
+        616,
+        238
+      ],
+      [
+        1880,
+        677,
+        260
+      ]
+    ],
+    "slots": [
+      [
+        1017,
+        669,
+        255,
+        "waiting"
+      ],
+      [
+        1471,
+        616,
+        238,
+        "waiting"
+      ],
+      [
+        1880,
+        677,
+        260,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "chips": {
+      "room13": [
+        1097,
+        432
+      ],
+      "inn": [
+        190,
+        470
+      ]
+    },
+    "hooks": {
+      "bami": [
+        1255,
+        132
+      ]
+    },
+    "standing_height_reference": 100,
+    "standing_heights": {
+      "bami": 65
+    },
+    "critical": [
+      [
+        861,
+        401,
+        126,
+        88
+      ],
+      [
+        916,
+        192,
+        72,
+        95
+      ],
+      [
+        1236,
+        335,
+        125,
+        164
+      ],
+      [
+        530,
+        466,
+        200,
+        76
+      ]
+    ],
+    "positions": {
+      "bami": [
+        1760,
+        662,
+        250
+      ]
+    }
+  },
+  "room13": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.55 wide room13: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks.",
+    "state_files": {
+      "before": {
+        "morning": "assets/room13-pixel-wide-room13-before-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-room13-before-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-room13-before-evening.webp"
+      },
+      "after": {
+        "morning": "assets/room13-pixel-wide-room13-after-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-room13-after-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-room13-after-evening.webp"
+      }
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "bed": [
+        809,
+        337,
+        675,
+        180
+      ],
+      "window": [
+        272,
+        12,
+        293,
+        303
+      ],
+      "boxes": [
+        19,
+        563,
+        490,
+        157
+      ],
+      "under": [
+        842,
+        498,
+        438,
+        57
+      ],
+      "floor": [
+        863,
+        552,
+        215,
+        64
+      ],
+      "books": [
+        1700,
+        375,
+        35,
+        67
+      ],
+      "cup": [
+        321,
+        364,
+        80,
+        66
+      ],
+      "letters": [
+        174,
+        395,
+        124,
+        25
+      ],
+      "notebook": [
+        147,
+        426,
+        210,
+        40
+      ],
+      "coat": [
+        593,
+        351,
+        150,
+        255
+      ],
+      "sewing": [
+        1541,
+        419,
+        150,
+        126
+      ],
+      "socks": [
+        461,
+        285,
+        122,
+        105
+      ],
+      "bedside_books": [
+        883,
+        294,
+        86,
+        33
+      ],
+      "bread": [
+        401,
+        393,
+        95,
+        40
+      ]
+    },
+    "floors": [
+      [
+        924,
+        675,
+        230
+      ],
+      [
+        1806,
+        645,
+        225
+      ],
+      [
+        1990,
+        691,
+        240
+      ]
+    ],
+    "slots": [
+      [
+        924,
+        675,
+        230,
+        "waiting"
+      ],
+      [
+        1806,
+        645,
+        225,
+        "waiting"
+      ],
+      [
+        1990,
+        691,
+        240,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "evidence": {
+      "E03": {
+        "file": "assets/room13-pixel-wide-room13-before-afternoon.webp",
+        "rect": [
+          1260,
+          405,
+          85,
+          95
+        ]
+      },
+      "E07": {
+        "file": "assets/room13-pixel-wide-room13-after-afternoon.webp",
+        "rect": [
+          810,
+          525,
+          220,
+          95
+        ]
+      },
+      "E09": {
+        "file": "assets/room13-pixel-wide-room13-after-afternoon.webp",
+        "rect": [
+          935,
+          548,
+          80,
+          52
+        ]
+      }
+    },
+    "late_objects": {
+      "desk": [
+        0,
+        380,
+        640,
+        180
+      ],
+      "mother_note": [
+        160,
+        383,
+        152,
+        49
+      ]
+    },
+    "home_positions": {
+      "neutral": [
+        1420,
+        662,
+        185
+      ],
+      "action_1": [
+        1000,
+        470,
+        125
+      ],
+      "action_2": [
+        1300,
+        655,
+        185
+      ],
+      "inspect_floor": [
+        1180,
+        668,
+        138
+      ]
+    },
+    "critical": [
+      [
+        1700,
+        375,
+        35,
+        67
+      ],
+      [
+        863,
+        552,
+        215,
+        64
+      ],
+      [
+        842,
+        498,
+        438,
+        57
+      ],
+      [
+        1541,
+        419,
+        150,
+        126
+      ]
+    ]
+  },
+  "post": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning"
+    ],
+    "note": "0.18.55 wide post, morning only. Afternoon/evening art was withheld (3-12px drift): those periods keep the 1280 backdrop, rects and staging. Source art/wide-maps-20261015/source/post-morning.png 2160x728, explicit crop [0,0,2160,720] (no scaling). Six public-floor slots in front of the counter: the owner's five candidates plus [585,712,240] in place of [675,635,205], which hid the scarf on six-resident mornings.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-post-morning.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2160,
+        720
+      ]
+    },
+    "objects": {
+      "notice": [
+        1602,
+        252,
+        87,
+        116
+      ],
+      "parcels": [
+        1690,
+        328,
+        420,
+        166
+      ],
+      "cup": [
+        2031,
+        469,
+        123,
+        122
+      ],
+      "scarf": [
+        645,
+        396,
+        112,
+        203
+      ],
+      "twine": [
+        1135,
+        282,
+        310,
+        184
+      ]
+    },
+    "floors": [
+      [
+        90,
+        675,
+        220
+      ],
+      [
+        285,
+        635,
+        205
+      ],
+      [
+        480,
+        685,
+        230
+      ],
+      [
+        585,
+        712,
+        240
+      ],
+      [
+        870,
+        690,
+        230
+      ],
+      [
+        1060,
+        620,
+        205
+      ]
+    ],
+    "slots": [
+      [
+        90,
+        675,
+        220,
+        "waiting"
+      ],
+      [
+        285,
+        635,
+        205,
+        "waiting"
+      ],
+      [
+        480,
+        685,
+        230,
+        "waiting"
+      ],
+      [
+        585,
+        712,
+        240,
+        "waiting"
+      ],
+      [
+        870,
+        690,
+        230,
+        "waiting"
+      ],
+      [
+        1060,
+        620,
+        205,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 6,
+    "critical": [
+      [
+        645,
+        396,
+        112,
+        203
+      ],
+      [
+        1135,
+        282,
+        310,
+        184
+      ]
+    ]
   }
 }

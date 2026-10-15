@@ -33,6 +33,15 @@ DAYS = {
 EXTRA_FLAGS = {("inn", 2): '("bami_protected",)'}
 FLAGS = '("lodging","entry_corrected")'
 PERIOD_NAME = ("morning", "afternoon", "evening")
+# Scenes drawn per case state (hall, 13호): (state, day per period, setup, flags).
+# Episode flags skip the day-2/3 evening scenes that would hold the hub.
+QUIET = '("ep1_patrol_seen","ep1_eaves_seen")'
+STATES = {
+    "hall": [("before", {0: 3, 1: 3, 2: 3}, 'room13.update(case_state="pending",victim_state="alive")', QUIET),
+             ("after", {0: 6, 1: 6, 2: 6}, 'room13.update(case_state="occurred",victim_state="dead",daram_state="held")', QUIET)],
+    "room13": [("before", {0: 3, 1: 3, 2: 3}, 'room13.update(case_state="pending",victim_state="alive",daram_state="with_dad")', QUIET),
+               ("after", {0: 6, 1: 6, 2: 6}, 'room13.update(case_state="occurred",victim_state="dead",daram_state="held")', QUIET)],
+}
 
 
 def visible(rect, camera):
@@ -41,10 +50,10 @@ def visible(rect, camera):
     return min(x + w, camera + 1280) - max(x, camera) >= 30
 
 
-def goto(loc, day, period, camera):
-    flags = EXTRA_FLAGS.get((loc, period))
+def goto(loc, day, period, camera, setup=None, flags=None):
+    flags = flags or EXTRA_FLAGS.get((loc, period))
     call = f'    run Call("r13_qa_goto",{day},{period},"{loc}",{flags})' if flags else f'    run Call("r13_qa_goto",{day},{period},"{loc}")'
-    return [
+    return ([f"    $ {setup}"] if setup else []) + [
         f'    $ r13_world_cameras={{"{loc}":{camera}}}',
         call,
         '    click pos (640,600) until screen "r13_hub" timeout 40',
@@ -56,35 +65,41 @@ def location_case(loc):
     spec = LAYOUT[loc]
     periods = spec.get("periods", ["morning", "afternoon", "evening"])
     out = [f"testcase wide_{loc}:",
-           f"    # 0.18.53 wide map {loc}: hit map, screenshot and real clicks per period and camera.",
+           f"    # 0.18.55 wide map {loc}: hit map, screenshot and real clicks per state, period and camera.",
            "    pause 2.0", '    click "처음부터"', "    pause 3.0",
            f'    run Call("r13_qa_roam",dict(day=2,period=0,location="{loc}",life_poc=True,secret_route_unlocked=True),{FLAGS})',
            '    click pos (640,600) until screen "r13_hub" timeout 40', "    pause 0.6"]
-    for period in range(3):
-        day = DAYS[loc][period]
-        name = PERIOD_NAME[period]
-        if name not in periods:
-            # Old 1280 scene stays: one view, its own rects, no wide clicks.
-            out += goto(loc, day, period, 0)
-            out += [f'    $ r13_qa_hitmap("{loc}_p{period}_old")',
-                    f'    screenshot "{loc}_{name}_old.png"',
-                    f"    assert eval (r13_world_width()==1280)"]
-            continue
-        width = int(spec.get("width", 1280))
-        for camera in (0, (width - 1280) // 2, width - 1280):
-            out += goto(loc, day, period, camera)
-            out += [f'    $ r13_qa_hitmap("{loc}_p{period}_c{camera}")',
-                    f'    screenshot "{loc}_{name}_c{camera}.png"',
-                    f"    assert eval (r13_world_width()=={width} and r13_world_offset()=={camera})"]
-            for key, rect in spec["objects"].items():
-                if not visible(rect, camera):
-                    continue
-                out += goto(loc, day, period, camera)
-                out += [f'    $ r13_qa_hitmap("{loc}_p{period}_c{camera}_{key}_pre")',
-                        "    $ r13_qa_wide_reset_choice()",
-                        f'    click pos r13_qa_pick("{key}")',
-                        "    pause 0.8",
-                        f'    $ r13_qa_wide_log("{loc}_p{period}_c{camera}_{key}","{key}")']
+    objects = dict(spec["objects"], **spec.get("late_objects", {}))
+    for state, days, setup, flags in STATES.get(loc, [(None, DAYS.get(loc), None, None)]):
+        tag = loc + ("_" + state if state else "")
+        for period in range(3):
+            day = days[period]
+            name = PERIOD_NAME[period]
+            if name not in periods:
+                # Old 1280 scene stays: one view, its own rects, no wide clicks.
+                out += goto(loc, day, period, 0, setup, flags)
+                out += [f'    $ r13_qa_hitmap("{tag}_p{period}_old")',
+                        f'    screenshot "{tag}_{name}_old.png"',
+                        f"    assert eval (r13_world_width()==1280)"]
+                continue
+            width = int(spec.get("width", 1280))
+            for camera in (0, (width - 1280) // 2, width - 1280):
+                out += goto(loc, day, period, camera, setup, flags)
+                out += [f'    $ r13_qa_hitmap("{tag}_p{period}_c{camera}")',
+                        f'    screenshot "{tag}_{name}_c{camera}.png"',
+                        f"    assert eval (r13_world_width()=={width} and r13_world_offset()=={camera})"]
+                if state:
+                    out.append(f'    assert eval (r13_world_file("{loc}",r13_daylight()).endswith("-{state}-{name}.webp"))')
+                for key, rect in objects.items():
+                    if not visible(rect, camera):
+                        continue
+                    out += goto(loc, day, period, camera, setup, flags)
+                    out += [f'    $ r13_qa_hitmap("{tag}_p{period}_c{camera}_{key}_pre")',
+                            f'    if eval ("{key}" in R13_QA_PICK):',
+                            "        $ r13_qa_wide_reset_choice()",
+                            f'        click pos r13_qa_pick("{key}")',
+                            "        pause 0.8",
+                            f'        $ r13_qa_wide_log("{tag}_p{period}_c{camera}_{key}","{key}")']
     out.append("")
     return out
 
@@ -120,6 +135,22 @@ def saveload_case():
             '    assert eval (r13_world_width()==1280 and ROOM13["objects"]["dining"]["table"]["rect"]==[420,493,855,129])']
     out += goto("dining", 7, 1, 440)
     out += [f'    assert eval (r13_world_width()==2160 and ROOM13["objects"]["dining"]["table"]["rect"]=={table})']
+    # 13호/hall: the picture follows the case state, also across save/load.
+    bed = LAYOUT["room13"]["objects"]["bed"]
+    out += goto("room13", 3, 1, 440, 'room13.update(case_state="pending",victim_state="alive",daram_state="with_dad")', QUIET)
+    out += ['    $ r13_qa_wide_log("room13_before_save")',
+            '    assert eval (r13_world_file("room13","afternoon").endswith("room13-before-afternoon.webp"))',
+            '    $ renpy.save("qa-wide-room13","qa")', "    pause 0.5"]
+    out += goto("room13", 6, 1, 440, 'room13.update(case_state="occurred",victim_state="dead",daram_state="held")', QUIET)
+    out += ['    $ r13_qa_wide_log("room13_after")',
+            '    assert eval (r13_world_file("room13","afternoon").endswith("room13-after-afternoon.webp") and r13_world_file("hall","evening").endswith("hall-after-evening.webp"))',
+            '    screenshot "room13_after_afternoon.png"',
+            '    run Function(renpy.load,"qa-wide-room13")', "    pause 2.0",
+            '    $ r13_qa_wide_log("room13_after_load")',
+            f'    assert eval (room13["case_state"]=="pending" and r13_world_file("room13",r13_daylight()).endswith("room13-before-afternoon.webp") and ROOM13["objects"]["room13"]["bed"]["rect"]=={bed})',
+            '    screenshot "room13_before_after_load.png"',
+            # guestroom keeps the old picture and rects.
+            '    assert eval (ROOM13["objects"]["guestroom"]["bed"]["rect"]==[605,311,537,151] and "guestroom" not in R13_WORLD_LAYOUTS)']
     # The post (wide art held) stays the old scene in every period.
     out += goto("post", 3, 0, 0)
     out += ['    $ r13_qa_wide_log("post_morning_old")',
@@ -147,7 +178,7 @@ def capacity_case():
 def main():
     text = TESTS.read_text()
     block = [BEGIN]
-    for loc in ("kitchen", "dining", "passage", "inn"):
+    for loc in [l for l in ("kitchen", "dining", "passage", "post", "inn", "hall", "room13") if l in LAYOUT]:
         block += location_case(loc)
     block += saveload_case() + capacity_case() + [END]
     if BEGIN in text:

@@ -529,11 +529,14 @@ init 59 python:
         # the person is still reached by the face or the name tag.
         actors=r13_stage_people(entry)
         result=[]
-        for key,spec in ROOM13["objects"].get(store.room13["location"],{}).items():
-            if not r13_object_visible(spec):continue
+        visible=[(key,spec) for key,spec in ROOM13["objects"].get(store.room13["location"],{}).items() if r13_object_visible(spec)]
+        for index,(key,spec) in enumerate(visible):
             ox,oy,ow,oh=spec["rect"]
             covered=[a for a in actors if a["rect"][0]<ox+ow and ox<a["rect"][0]+a["rect"][2] and a["rect"][1]<oy+oh and oy<a["rect"][1]+a["rect"][3]]
-            if covered:result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[r13_actor_face(a) for a in actors])))
+            # 0.18.55: a large object raised above a resident must not cover a smaller
+            # object drawn after it (hall rail over the towels); keep their own holes too.
+            later=[tuple(other["rect"]) for _,other in visible[index+1:]]
+            if covered:result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[r13_actor_face(a) for a in actors]+later)))
         return result
 
     def r13_conversation_pose(person,pose="neutral"):
