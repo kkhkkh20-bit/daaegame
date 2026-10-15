@@ -1,0 +1,110 @@
+{
+  "status": "art_candidate_not_applied",
+  "source": "inn-morning.webp",
+  "source_size": [
+    2048,
+    768
+  ],
+  "output_size": [
+    2048,
+    768
+  ],
+  "runtime_display_size": [
+    1920,
+    720
+  ],
+  "files": [
+    {
+      "time": "morning",
+      "file": "inn-lobby-morning.png",
+      "width": 2048,
+      "height": 768,
+      "sha256": "3315b505f017894903f54029c01d1c846b680cfde7be04e37671668106852d50"
+    },
+    {
+      "time": "afternoon",
+      "file": "inn-lobby-afternoon.png",
+      "width": 2048,
+      "height": 768,
+      "sha256": "722e293647e8b18b2361050bbbc869b48d473ce9d247701e6bd274b7279281fc"
+    },
+    {
+      "time": "evening",
+      "file": "inn-lobby-evening.png",
+      "width": 2048,
+      "height": 768,
+      "sha256": "3fa5cbafa08693831fc0c18f567daed41cc3788c8b8616f59a13ef8765f4c64b"
+    }
+  ],
+  "coordinate_policy": "No intended coordinate relocation. Existing runtime hotspots remain baseline, must visually test overlays before deployment. Generated image edits are not pixel-exact.",
+  "scope": "Counter seam repair and time-of-day variants. This already-wide lobby was not extended to 2400.",
+  "old_hotspot_rects_display": {
+    "desk": [
+      1294,
+      334,
+      548,
+      343
+    ],
+    "door": [
+      980,
+      165,
+      131,
+      273
+    ],
+    "keys": [
+      1670,
+      136,
+      150,
+      170
+    ],
+    "register": [
+      1556,
+      355,
+      127,
+      46
+    ],
+    "knitting": [
+      1713,
+      353,
+      134,
+      82
+    ],
+    "coats": [
+      1158,
+      155,
+      121,
+      201
+    ],
+    "cups": [
+      1422,
+      101,
+      180,
+      63
+    ]
+  },
+  "old_occlusion_display": [
+    [
+      1294,
+      355
+    ],
+    [
+      1836,
+      420
+    ],
+    [
+      1836,
+      675
+    ],
+    [
+      1294,
+      499
+    ]
+  ],
+  "qa": {
+    "all_variants_visually_inspected": true,
+    "no_intended_removed_interactive_objects": true,
+    "full_staff_door_clearance": "Door and right frame visible at far-right boundary; little spare margin. Not a new door.",
+    "runtime_hotspot_test": false,
+    "runtime_character_occlusion_test": false
+  }
+}
