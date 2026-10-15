@@ -293,16 +293,13 @@ label r13_ev_c_offer:
             $ r13_flag("ev_c_refused")
             return None
         "받아들인다":
-            call r13_ev_c_locked(False)
-            return "day"
+            call r13_ev_c_door(False)
+            return _return
         "다람이에게 방을 맡기고 받아들인다" if room13.get("daram_state") in ("with_dad","rescued") and r13_has("lodging"):
             call r13_lines([("dad","아빠 창고 일하러 다녀올게. 누가 와도 문 열지 말고, 문 너머로 이름만 물어봐."),
                 ("daram","응. 내가 방 지킬게.")],"ev:c:daram_guard")
-            call r13_ev_c_locked(True)
-            return "day"
-        "쐐기를 챙겨 들고 받아들인다" if r13_has("own:wedge"):
-            call r13_ev_c_wedge
-            return None
+            call r13_ev_c_door(True)
+            return _return
         "서리 검사원에게 미리 말해 두고 받아들인다":
             call r13_ev_c_seori
             return None
@@ -314,12 +311,48 @@ label r13_ev_c_offer:
             return None
     return None
 
+# 0.18.15 (owner's knowledge-run plan, B-1): no ready-made "wedge" choice. The door can be
+# inspected and an owned item tried on it; the ledger is found only by searching the shelf.
+label r13_ev_c_door(room_safe):
+    call r13_scene("r13_store","백 부인 창고 앞 · 밤","night")
+    call r13_lines([(None,"창고 문은 반쯤 열려 있었다. 안쪽 선반 위에서 등잔 하나가 타고 있었다.")],"ev:c:door")
+    $ _c_wedged=False
+    $ _c_loop=True
+    while _c_loop:
+        menu:
+            "문을 살펴본다":
+                call r13_lines([(None,"빗장은 바깥쪽에 있다."),(None,"안쪽 문짝에는 손잡이가 없다.")],"ev:c:door:look")
+                $ r13_flag("observed:store_door")
+            "가진 물건을 문에 써 본다" if r13_wallet(room13)["items"] and not _c_wedged:
+                $ _c_item=renpy.display_menu([(R13_SHOP.get(i,{}).get("title",i),i) for i in r13_wallet(room13)["items"]]+[("그만둔다",None)])
+                if _c_item=="wedge":
+                    call r13_lines([(None,"문 아래에 나무 조각을 끼웠다.")],"ev:c:door:wedge")
+                    $ _c_wedged=True
+                elif _c_item:
+                    call r13_lines([(None,"문에 쓸 만한 물건이 아니다.")],"ev:c:door:nouse")
+            "안으로 들어간다":
+                $ _c_loop=False
+    if _c_wedged:
+        call r13_ev_c_wedge(room_safe)
+        return None
+    call r13_ev_c_locked(room_safe)
+    return "day"
+
 label r13_ev_c_locked(room_safe):
     call r13_scene("r13_store","백 부인 창고 · 밤","night")
     call r13_lines([(None,"창고 안은 생각보다 넓었다. 자루를 세는 사이 등 뒤에서 창고 문이 닫혔다."),
         (None,"밖에서 빗장이 걸리는 소리가 났다."),
-        ("dad","부인? 안에 사람이 있는데 문이 잠겼습니다!"),
-        (None,"대답은 없었다. 등잔 기름이 다 탈 때까지 문을 두드렸다. 밤은 길기만 했다.")],"ev:c:locked")
+        ("dad","부인? 안에 사람이 있는데 문이 잠겼습니다!")],"ev:c:locked")
+    $ _c_loop=True
+    while _c_loop:
+        menu:
+            "문을 밀어 본다":
+                call r13_lines([(None,"문은 조금 움직이지만 열리지 않는다. 바깥에서 무언가 걸려 있다.")],"ev:c:locked:push")
+            "안쪽 선반을 살핀다":
+                call r13_lines([(None,"등잔 불이 점점 작아졌다. 선반 위 종이 묶음의 글씨는 이 불빛으로는 읽히지 않는다.")],"ev:c:locked:dark")
+            "문을 두드리며 기다린다":
+                $ _c_loop=False
+    call r13_lines([(None,"대답은 없었다. 등잔 기름이 다 탈 때까지 문을 두드렸다. 밤은 길기만 했다.")],"ev:c:locked:night")
     $ r13_lock_overnight(room_safe)
     call r13_lines([("resident_mungchi","어, 벌써 아침이네요. 부인 말로는 문이 저절로 잠겼대요."),
         ("resident_madam","재고 세는 일을 다 못 끝냈으니 절반만 드릴게요. 일곱 냥.")],"ev:c:released")
@@ -331,17 +364,33 @@ label r13_ev_c_locked(room_safe):
             ("dad","(누군가 밤새 이 방을 뒤졌다. 그러려고 나를 창고에 가둔 것이다.)",{"thought":True})],"ev:c:room_searched")
     return
 
-label r13_ev_c_wedge:
+label r13_ev_c_wedge(room_safe=False):
     call r13_scene("r13_store","백 부인 창고 · 밤","night")
-    call r13_lines([(None,"창고에 들어서면서 문틈 아래에 나무 쐐기를 밀어 넣었다. 문이 닫히고 빗장이 걸렸다. 하지만 손가락 하나 들어갈 틈은 남았다."),
-        (None,"재고를 세던 손이 안쪽 선반에서 멈췄다. 배급표와 같은 날짜가 적힌 장부가 있었다. 빠져나간 곡식과 약초가 모두 이 창고로 들어와 있었다."),
-        ("dad","(이 장부를 보여 주기 싫었다면 왜 나를 불렀을까. 아니, 처음부터 나를 여기 묶어 둘 생각이었던 거다.)",{"thought":True}),
-        (None,"새벽이 오기 전에 문틈으로 빗장을 들어 올리고 나왔다. 백 부인은 열려 있는 문을 보고 말없이 열다섯 냥을 내밀었다.")],"ev:c:wedge")
+    call r13_lines([(None,"자루를 세는 사이 등 뒤에서 문이 닫히고, 밖에서 빗장이 걸렸다. 문 아래 나무 조각 때문에 문은 끝까지 닫히지 않았다. 손가락 하나 들어갈 틈이 남았다.")],"ev:c:wedge")
     $ r13_use_item("wedge")
-    $ r13_grant(["H1"],"백 부인 창고 안쪽 선반")
+    $ _c_loop=True
+    while _c_loop:
+        menu:
+            "자루를 센다":
+                call r13_lines([(None,"자루마다 배급소 도장이 찍혀 있다. 묶은 끈은 새것이다.")],"ev:c:wedge:sacks")
+            "안쪽 선반을 살핀다" if "H1" not in room13["evidence"]:
+                call r13_lines([(None,"선반 맨 아래, 곡식 자루 뒤에 장부 한 권이 끼워져 있었다."),
+                    (None,"날짜마다 곡식과 약초의 수가 적혀 있다. 배급이 모자랐다는 날과 같은 날짜들이다. 날짜 옆에는 뭉치의 서명이 있다.")],"ev:c:wedge:shelf")
+                $ r13_grant(["H1"],"백 부인 창고 안쪽 선반")
+            "문틈으로 빗장을 들어 올려 나간다":
+                $ _c_loop=False
+    call r13_lines([(None,"새벽이 오기 전에 문틈으로 빗장을 들어 올리고 나왔다. 백 부인은 열려 있는 문을 보고 말없이 열다섯 냥을 내밀었다.")],"ev:c:wedge:out")
     $ r13_cash(15,"백 부인 창고 정리")
     $ r13_edit(period=3,location="store")
     $ r13_flag("madam_suspicious")
+    if room_safe:
+        call r13_lines([(None,"13호로 돌아가 보니 다람이가 문 뒤에서 꾸벅꾸벅 졸고 있었다."),
+            ("daram","밤에 누가 왔었어. 뭉치 아저씨였어. 이름 물어보니까 그냥 돌아갔어.")],"ev:c:room_safe")
+    else:
+        $ r13_flag("room_searched")
+        if "E18" in room13["evidence"]:
+            $ r13_flag("warning_exposed")
+        call r13_lines([(None,"13호로 돌아가 보니 짐이 뒤집혀 있었다. 수첩 사이에 끼워 둔 종이들도 순서가 뒤섞여 있었다.")],"ev:c:room_searched:wedge")
     return
 
 label r13_ev_c_seori:

@@ -27,7 +27,7 @@ async def main():
    report['checks'].append('Day 3 store theft → alley chase → herbs to Musoe: mine map H5, recovery flag')
    await q.py('import renpy;s=renpy.store;s.r13_edit(period=2,location="inn");'+ENTER)
    await q.input(1220,50);await q.advance();await q.wait('choice');await q.shot('03-madam-offer')
-   await q.press('받아들인다');await q.advance();await q.wait('r13_hub');await q.shot('04-after-lock')
+   await q.press('받아들인다');await q.advance();await q.press('안으로 들어간다');await q.advance();await q.press('문을 두드리며 기다린다');await q.advance();await q.wait('r13_hub');await q.shot('04-after-lock')
    room=await q.room();assert (room['day'],room['period'])==(4,1) and 'room_searched' in room['flags'],room
    report['checks'].append('Day 3 evening job accepted → locked overnight: day 4 afternoon, room searched')
    report['status']='passed'

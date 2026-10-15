@@ -686,7 +686,18 @@ testcase town_c_locked:
     click pos (640,600) until screen "choice" timeout 40
     screenshot "tc1_offer.png"
     click "받아들인다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문을 살펴본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "안으로 들어간다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문을 밀어 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "안쪽 선반을 살핀다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문을 두드리며 기다린다"
     click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval (r13_has("observed:store_door") and "H1" not in room13["evidence"] and room13["day"]==4)
     screenshot "tc1_after.png"
     $ r13_qa_town_dump()
 
@@ -696,8 +707,20 @@ testcase town_c_wedge:
     pause 3.0
     run Call("r13_qa_roam",dict(day=3,period=2,location="inn",life_poc=True),("ev_b_done",),("wedge",))
     click pos (640,600) until screen "choice" timeout 40
-    click "쐐기를 챙겨 들고 받아들인다"
+    click "받아들인다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "가진 물건을 문에 써 본다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "나무 쐐기"
+    click pos (640,600) until screen "choice" timeout 40
+    click "안으로 들어간다"
+    click pos (640,600) until screen "choice" timeout 40
+    assert eval ("H1" not in room13["evidence"])
+    click "안쪽 선반을 살핀다"
+    click pos (640,600) until screen "choice" timeout 40
+    click "문틈으로 빗장을 들어 올려 나간다"
     click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval ("H1" in room13["evidence"] and r13_has("room_searched") and room13["day"]==3)
     $ r13_qa_town_dump()
 
 testcase town_c_mungchi:
@@ -1478,3 +1501,19 @@ testcase memory_grudge:
     run Call("r13_qa_grudge","yeoni")
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("yeoni_reconciled") and r13_cash_now()==2 and not [k for k,s in r13_topics("resident_yeoni") if k.startswith("grudge_")])
+
+testcase ledger_order:
+    # 0.18.15 B-2: showing the ledger to 백 부인 first lets her move the goods at the next time change.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="store",evidence=["H1"]),("ev_b_done","ev_c_done"))
+    pause 1.0
+    run Function(r13_qa_present,"resident_madam","H1")
+    assert eval ("오래된 장부" in r13_qa_last_present and not r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard"]))
+    run Function(r13_edit,period=1)
+    assert eval (r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard_moved"]) and not r13_object_visible(ROOM13["objects"]["store"]["sacks"]))
+    run Function(r13_qa_present,"resident_seori","H1")
+    assert eval ("H11" in room13["evidence"] and "H10" not in room13["evidence"] and "H1" in room13["evidence"] and not r13_has("madam_exposed"))
+    run Function(r13_qa_present,"resident_eunho","H1")
+    assert eval (r13_has("eunho_deal_offered") and "ledger_deal" in [k for k,s in r13_topics("resident_eunho")])
