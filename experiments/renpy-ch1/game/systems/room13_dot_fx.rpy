@@ -245,7 +245,9 @@ init 57 python:
 
     def r13_blink_art(person, emotion, file):
         spec = R13_DOT_FX.get("blink", {}).get("people", {}).get(person, {}).get(emotion)
-        if not spec:
+        # Eyelid pieces are cut from the original full-body picture (make_dot_fx.py).
+        # A redesigned picture (room13-redesign-*) has its eyes elsewhere: no blink.
+        if not spec or file != "assets/room13-fullbody-%s-%s.webp" % (person, emotion):
             return file
         return R13Blink(file, person, emotion, spec)
 

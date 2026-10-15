@@ -1,0 +1,815 @@
+{
+ "version": 1,
+ "date": "2026-10-15",
+ "basis": "Owner instruction 2026-10-15 (06:19 PT): apply FINAL_CANDIDATE_INDEX.json new_remodel_candidate 31 + preserve_previous 7 to the game for testing. nabi keeps the original already in the game (no entry). daram and dad are held (no entry). Rejected nabi/somi remodels are not used. IDs, names, ages, roles, species settings, story, evidence and branches are unchanged; names come from the current game data. Investigation poses (bori, nero, yeoni) are field living poses only, scaled by head size, never used in dialogue. Momo and Seol excluded (see 'excluded').",
+ "supersedes": "art/npc-redesign-20261015/redesign.json for the same NPC (that file stays as history)",
+ "scale_from_source": 0.5,
+ "alpha_visible": 32,
+ "margin": 4,
+ "designs": [
+  {
+   "design_id": "mom",
+   "npc": "mom",
+   "name_ko": "엄마",
+   "category": "new_remodel_candidate",
+   "index_status": "batch1_candidate_ready_not_approved",
+   "source": "source/dialogue/mom.png",
+   "sha256": "262c0c76f712e6243c7441469437df36d17f9335a0b538de3305f1ebcf2e019e",
+   "head": [
+    69,
+    60,
+    779,
+    402
+   ],
+   "avatar": [
+    76,
+    0,
+    763,
+    763
+   ]
+  },
+  {
+   "design_id": "buri-remodel-v2",
+   "npc": "buri",
+   "name_ko": "부리",
+   "category": "new_remodel_candidate",
+   "index_status": "batch2_right_tone_user_approved",
+   "source": "source/dialogue/buri.png",
+   "sha256": "ada9203a4cbe29b09d5dd083049d88b33a0488284fb326ab8d578acc6412447e",
+   "head": [
+    302,
+    44,
+    470,
+    366
+   ],
+   "avatar": [
+    306,
+    33,
+    460,
+    460
+   ]
+  },
+  {
+   "design_id": "granny",
+   "npc": "granny",
+   "name_ko": "할머니",
+   "category": "preserve_previous",
+   "index_status": "locked_per_parent",
+   "source": "source/dialogue/granny.png",
+   "sha256": "91a35c0e5ee83260fdf9fbfa98ca92ff0bc0333ec7ffe670a18cb25560c750d6",
+   "head": [
+    248,
+    13,
+    590,
+    468
+   ],
+   "avatar": [
+    253,
+    4,
+    578,
+    578
+   ]
+  },
+  {
+   "design_id": "seryeon",
+   "npc": "seryeon",
+   "name_ko": "세련",
+   "category": "new_remodel_candidate",
+   "index_status": "batch2_right_tone_user_approved",
+   "source": "source/dialogue/seryeon.png",
+   "sha256": "019d08e3f21c3e6a5cbdf0f66e85ffe9e0af6dfe0da281dfd5152ef9c34a9a3d",
+   "head": [
+    357,
+    71,
+    473,
+    387
+   ],
+   "avatar": [
+    361,
+    71,
+    463,
+    463
+   ]
+  },
+  {
+   "design_id": "doto-remodel-v2",
+   "npc": "doto",
+   "name_ko": "도토",
+   "category": "new_remodel_candidate",
+   "index_status": "batch2_right_tone_user_approved",
+   "source": "source/dialogue/doto.png",
+   "sha256": "0d2d06c4a779cb5c2156e29a47e73a57bcab60f2ccf3e2b6e60833b2d81e3728",
+   "head": [
+    255,
+    36,
+    541,
+    384
+   ],
+   "avatar": [
+    260,
+    1,
+    530,
+    530
+   ]
+  },
+  {
+   "design_id": "karo-remodel",
+   "npc": "karo",
+   "name_ko": "까로",
+   "category": "new_remodel_candidate",
+   "index_status": "batch3_candidate_ready_not_approved",
+   "source": "source/dialogue/karo.png",
+   "sha256": "414601f956fa9aa05ae4c12773dc18ea15f9e43ae6d400feed6e1499cdde3d1d",
+   "head": [
+    182,
+    18,
+    406,
+    403
+   ],
+   "avatar": [
+    186,
+    61,
+    397,
+    397
+   ]
+  },
+  {
+   "design_id": "neoul",
+   "npc": "neoul",
+   "name_ko": "너울",
+   "category": "new_remodel_candidate",
+   "index_status": "batch3_candidate_ready_not_approved",
+   "source": "source/dialogue/neoul.png",
+   "sha256": "ae265815a1ce8c01b2f81e2319555a39045793ca58902ce4e3686660f24c1ded",
+   "head": [
+    105,
+    64,
+    709,
+    409
+   ],
+   "avatar": [
+    112,
+    0,
+    694,
+    694
+   ]
+  },
+  {
+   "design_id": "guard-remodel-v2",
+   "npc": "guard",
+   "name_ko": "돌목",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/guard.png",
+   "sha256": "288c6a9e101c8eaafcccbc4e21b87ae700a4aee8ae03ad35c8daa03d9f52d0b3",
+   "head": [
+    238,
+    50,
+    483,
+    364
+   ],
+   "avatar": [
+    242,
+    31,
+    473,
+    473
+   ]
+  },
+  {
+   "design_id": "bami-remodel",
+   "npc": "bami",
+   "name_ko": "밤이",
+   "category": "new_remodel_candidate",
+   "index_status": "batch3_candidate_ready_not_approved",
+   "source": "source/dialogue/bami.png",
+   "sha256": "ba9bb9b297b6c2fd814a97de26798831b98eaf1ce2ed22a9c43fe8ee1bcd4e03",
+   "head": [
+    176,
+    24,
+    790,
+    532
+   ],
+   "avatar": [
+    183,
+    0,
+    774,
+    774
+   ]
+  },
+  {
+   "design_id": "tori",
+   "npc": "resident_tori",
+   "name_ko": "토리",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_tori.png",
+   "sha256": "2e4d585ddab3f36a128d1d67aa02bd2c22bc399acdb894992795ee6eaea86a67",
+   "head": [
+    274,
+    15,
+    536,
+    527
+   ],
+   "avatar": [
+    279,
+    68,
+    525,
+    525
+   ]
+  },
+  {
+   "design_id": "bori-workwear",
+   "npc": "resident_bori",
+   "name_ko": "보리",
+   "category": "preserve_previous",
+   "index_status": "preserve_latest_workwear",
+   "source": "source/dialogue/resident_bori.png",
+   "sha256": "7b62c44a37deef51bb574b79a83602d4ef4aab17ff758197033452105ac08bec",
+   "head": [
+    257,
+    112,
+    440,
+    323
+   ],
+   "avatar": [
+    261,
+    90,
+    431,
+    431
+   ],
+   "poses": {
+    "living_tie_firewood": {
+     "use": "investigation (field living pose; never dialogue)",
+     "source": "source/investigation/resident_bori.png",
+     "sha256": "4d8853fb7e5b5e71e9115f280549eb6bd19d4a1b4b21670a275d869109a8b648",
+     "head": [
+      327,
+      281,
+      480,
+      352
+     ],
+     "head_scale_vs_dialogue": 1.09,
+     "contact": "self-contained",
+     "action_ko": "보리는 장작 묶음의 끈을 한 번 더 당겼다.",
+     "scale_by_head": true
+    }
+   }
+  },
+  {
+   "design_id": "yeoni-natural-balance",
+   "npc": "resident_yeoni",
+   "name_ko": "여니",
+   "category": "preserve_previous",
+   "index_status": "locked_user_approved",
+   "source": "source/dialogue/resident_yeoni.png",
+   "sha256": "5eefd4998e3b0b86eccf72bf55d060605e90f1d4fff8be0b74b1901a7ccaee2d",
+   "head": [
+    372,
+    14,
+    383,
+    370
+   ],
+   "avatar": [
+    375,
+    48,
+    375,
+    375
+   ],
+   "poses": {
+    "living_sew_stool": {
+     "use": "investigation (field living pose; never dialogue)",
+     "source": "source/investigation/resident_yeoni.png",
+     "sha256": "0dba15d4bd069e81c2d98ab95d8c09537d03215f05cdfcc3fd739de1a8097379",
+     "head": [
+      425,
+      37,
+      406,
+      392
+     ],
+     "head_scale_vs_dialogue": 1.06,
+     "contact": "self-contained",
+     "action_ko": "여니는 벌어진 소매를 접어 바늘을 꽂았다.",
+     "scale_by_head": true
+    }
+   }
+  },
+  {
+   "design_id": "kongi",
+   "npc": "resident_kongi",
+   "name_ko": "콩이",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_kongi.png",
+   "sha256": "0f37df3fea68f7035901d9eb7a2227d03a482dca2a8d852d1c69a95d23ccffe6",
+   "head": [
+    222,
+    9,
+    673,
+    436
+   ],
+   "avatar": [
+    228,
+    0,
+    659,
+    659
+   ]
+  },
+  {
+   "design_id": "kkwak",
+   "npc": "resident_kkwak",
+   "name_ko": "꽥순",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_kkwak.png",
+   "sha256": "a487e58d15a0f9c03579369fb17e60139c5ed3f5ea4e7d48eb2d5194d2f20535",
+   "head": [
+    305,
+    44,
+    427,
+    366
+   ],
+   "avatar": [
+    309,
+    54,
+    418,
+    418
+   ]
+  },
+  {
+   "design_id": "librarian-remodel",
+   "npc": "resident_librarian",
+   "name_ko": "사서 선생님",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_librarian.png",
+   "sha256": "a524e4ad0a52eab657f3f8ed0606993859897c8668f5f5ce570f8668da8e7181",
+   "head": [
+    287,
+    26,
+    385,
+    372
+   ],
+   "avatar": [
+    290,
+    60,
+    377,
+    377
+   ]
+  },
+  {
+   "design_id": "owlgp-simple",
+   "npc": "resident_owlgp",
+   "name_ko": "부엉이 할아버지",
+   "category": "new_remodel_candidate",
+   "index_status": "simplified_candidate_ready_not_approved",
+   "source": "source/dialogue/resident_owlgp.png",
+   "sha256": "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941",
+   "head": [
+    316,
+    24,
+    462,
+    374
+   ],
+   "avatar": [
+    320,
+    22,
+    452,
+    452
+   ]
+  },
+  {
+   "design_id": "teacher-remodel-v3",
+   "npc": "resident_teacher",
+   "name_ko": "곰 선생님",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_teacher.png",
+   "sha256": "ab3c5bce672078b6d7161f91b0d6dbbdcc0d3244d68366478a089e5727bcb69d",
+   "head": [
+    271,
+    64,
+    462,
+    361
+   ],
+   "avatar": [
+    275,
+    54,
+    452,
+    452
+   ]
+  },
+  {
+   "design_id": "nero-workwear",
+   "npc": "resident_nero",
+   "name_ko": "네로",
+   "category": "preserve_previous",
+   "index_status": "preserve_latest_workwear",
+   "source": "source/dialogue/resident_nero.png",
+   "sha256": "6688f36eaf6b44335228f68e87662a017d264782c8e9372fc0a491d05a7ee222",
+   "head": [
+    327,
+    52,
+    416,
+    357
+   ],
+   "avatar": [
+    331,
+    62,
+    407,
+    407
+   ],
+   "poses": {
+    "living_fold_tag": {
+     "use": "investigation (field living pose; never dialogue)",
+     "source": "source/investigation/resident_nero.png",
+     "sha256": "8ecc1fe769a8090f3e937c7cb520697f15f20ba8fe10c3d8a817c2ed058b5c04",
+     "head": [
+      313,
+      24,
+      433,
+      371
+     ],
+     "head_scale_vs_dialogue": 1.04,
+     "contact": "self-contained",
+     "action_ko": "네로는 이름표의 젖은 쪽을 안으로 접었다.",
+     "scale_by_head": true
+    }
+   }
+  },
+  {
+   "design_id": "ppul-remodel",
+   "npc": "resident_ppul",
+   "name_ko": "뿔이 촌장",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_ppul.png",
+   "sha256": "1a1d03cb7733458a9cd4f6cfce5e118b641888f6c570580f8de1fb74201dd481",
+   "head": [
+    271,
+    36,
+    504,
+    397
+   ],
+   "avatar": [
+    276,
+    27,
+    493,
+    493
+   ]
+  },
+  {
+   "design_id": "tok-remodel",
+   "npc": "resident_tok",
+   "name_ko": "톡",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_tok.png",
+   "sha256": "fc8ec7111592d9325ad93256ce6e62322587e85d4ac3275f5606e1bd429f5be1",
+   "head": [
+    276,
+    25,
+    486,
+    371
+   ],
+   "avatar": [
+    280,
+    9,
+    476,
+    476
+   ]
+  },
+  {
+   "design_id": "sling",
+   "npc": "resident_sling",
+   "name_ko": "슬링",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_sling.png",
+   "sha256": "8b5f4c6cea7ec4efec4adb4c332084fb945a49273736cc66749b7d915f1f678f",
+   "head": [
+    352,
+    48,
+    438,
+    394
+   ],
+   "avatar": [
+    356,
+    69,
+    429,
+    429
+   ]
+  },
+  {
+   "design_id": "ttadak-remodel",
+   "npc": "resident_ttadak",
+   "name_ko": "따닥",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_ttadak.png",
+   "sha256": "45ca446d472cd73254495f34b6d6b3bc1e3d7931524e902e5560e2b2c60f3855",
+   "head": [
+    316,
+    12,
+    393,
+    378
+   ],
+   "avatar": [
+    319,
+    46,
+    385,
+    385
+   ]
+  },
+  {
+   "design_id": "piko-remodel",
+   "npc": "resident_piko",
+   "name_ko": "피코",
+   "category": "new_remodel_candidate",
+   "index_status": "iris_purple_restored_review_candidate",
+   "source": "source/dialogue/resident_piko.png",
+   "sha256": "f03a5b10f3b29a5057e4da0cd80f691a1265d77b537a8086a62511e191c33ec8",
+   "head": [
+    443,
+    36,
+    280,
+    397
+   ],
+   "avatar": [
+    388,
+    79,
+    389,
+    389
+   ]
+  },
+  {
+   "design_id": "mungchi-remodel-v1",
+   "npc": "resident_mungchi",
+   "name_ko": "뭉치",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_mungchi.png",
+   "sha256": "51d90ee0eb6bbc894f6cb2d2cbca5e736a029d0e9dba93f45fa4d1edff0b9801",
+   "head": [
+    265,
+    30,
+    491,
+    371
+   ],
+   "avatar": [
+    269,
+    12,
+    481,
+    481
+   ],
+   "face_review_note": "Expression changed from startled/asymmetric eyes and open mouth to frontal large eyes and smile; identity retained but expression not exact."
+  },
+  {
+   "design_id": "madam-remodel-v1",
+   "npc": "resident_madam",
+   "name_ko": "백 부인",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_madam.png",
+   "sha256": "aa9d298a328feff1645c82accbfe39c22521d88d70e276951496f2bb39d460f9",
+   "head": [
+    293,
+    32,
+    411,
+    371
+   ],
+   "avatar": [
+    297,
+    53,
+    402,
+    402
+   ],
+   "face_review_note": "Sideward gaze changed to half-lidded frontal look; review appeal."
+  },
+  {
+   "design_id": "siluk",
+   "npc": "resident_siluk",
+   "name_ko": "실룩",
+   "category": "new_remodel_candidate",
+   "index_status": "batch1_candidate_ready_not_approved",
+   "source": "source/dialogue/resident_siluk.png",
+   "sha256": "f15451c8b9927bff87dfe402d8d6f62d722293a78165b770981688127476dd38",
+   "head": [
+    356,
+    20,
+    438,
+    373
+   ],
+   "avatar": [
+    360,
+    29,
+    429,
+    429
+   ]
+  },
+  {
+   "design_id": "musoe",
+   "npc": "resident_musoe",
+   "name_ko": "무쇠 할아버지",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_musoe.png",
+   "sha256": "5da337e02da6330f1089f7e890d576d32e3e2e26b30f9d2990c3668789ba357b",
+   "head": [
+    279,
+    54,
+    488,
+    382
+   ],
+   "avatar": [
+    283,
+    44,
+    478,
+    478
+   ]
+  },
+  {
+   "design_id": "somi_strap_dialogue_pixel_v2",
+   "npc": "resident_somi",
+   "name_ko": "솜이",
+   "category": "preserve_previous",
+   "index_status": "locked_previous_face_new_batch8_rejected",
+   "source": "source/dialogue/resident_somi.png",
+   "sha256": "99547119bc230a04e6d7a33d7e3c5cfe30e8fdf7095f9912094a5e13fa4e2330",
+   "head": [
+    240,
+    105,
+    553,
+    376
+   ],
+   "avatar": [
+    245,
+    60,
+    541,
+    541
+   ]
+  },
+  {
+   "design_id": "seori",
+   "npc": "resident_seori",
+   "name_ko": "서리 검사원",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_seori.png",
+   "sha256": "965a25dc2a3311b75be26abf396efbab5d5d6b39cfc20ae844fe2918a07b05a8",
+   "head": [
+    286,
+    10,
+    473,
+    409
+   ],
+   "avatar": [
+    290,
+    23,
+    463,
+    463
+   ]
+  },
+  {
+   "design_id": "ubak",
+   "npc": "resident_ubak",
+   "name_ko": "우박",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_ubak.png",
+   "sha256": "0fa9d5c8d11f40d20af59b8bf25a0070b04e220d875b2e80854f3e164953604e",
+   "head": [
+    225,
+    59,
+    547,
+    391
+   ],
+   "avatar": [
+    230,
+    25,
+    536,
+    536
+   ]
+  },
+  {
+   "design_id": "nubi-bangs-compact",
+   "npc": "resident_nubi",
+   "name_ko": "누비 아주머니",
+   "category": "preserve_previous",
+   "index_status": "locked_user_approved",
+   "source": "source/dialogue/resident_nubi.png",
+   "sha256": "3f67150c0220b253bd51d46505682922da9849228cc7350a60b878ec984d0bdc",
+   "head": [
+    273,
+    75,
+    488,
+    378
+   ],
+   "avatar": [
+    277,
+    62,
+    478,
+    478
+   ]
+  },
+  {
+   "design_id": "eunho-remodel-v1",
+   "npc": "resident_eunho",
+   "name_ko": "은호 사장",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_eunho.png",
+   "sha256": "c45daf7bce661175a30ecb6feb4de2f338ee47582d2ff339d7601de8849d2ff1",
+   "head": [
+    340,
+    13,
+    446,
+    373
+   ],
+   "avatar": [
+    344,
+    18,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "guseul-remodel-v1",
+   "npc": "resident_guseul",
+   "name_ko": "구슬",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_guseul.png",
+   "sha256": "ed23c07b3b7ccc025e54de5dc178c4150cd57a7340a4966234fc533527b823a1",
+   "head": [
+    298,
+    96,
+    472,
+    376
+   ],
+   "avatar": [
+    302,
+    90,
+    462,
+    462
+   ],
+   "face_review_note": "Priority face review: relative eye height/size asymmetry increased; mild 3/4 change may contribute. Not an approved final design."
+  },
+  {
+   "design_id": "badook-remodel",
+   "npc": "resident_badook",
+   "name_ko": "바둑이",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_badook.png",
+   "sha256": "2927741abeb1955727ff59f12e2ffffe5cd4a0be7edd0842df3ba07028be3db4",
+   "head": [
+    264,
+    121,
+    516,
+    360
+   ],
+   "avatar": [
+    269,
+    84,
+    505,
+    505
+   ],
+   "face_review_note": "Muzzle rotated farther to side and mouth reduced; review source contrast."
+  },
+  {
+   "design_id": "lamplighter-remodel",
+   "npc": "resident_lamplighter",
+   "name_ko": "초롱",
+   "category": "new_remodel_candidate",
+   "index_status": "generated_review_candidate_not_applied",
+   "source": "source/dialogue/resident_lamplighter.png",
+   "sha256": "4e0a413f4af841d0706e513e48bc31c056b6e6fd77f7c59b5e4a40101fb22bd2",
+   "head": [
+    228,
+    220,
+    587,
+    433
+   ],
+   "avatar": [
+    233,
+    192,
+    575,
+    575
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "npc": "resident_momo",
+   "sha256": "768f95084245d1c4bbe1e5311a95e508be940ccc21430cfc59a23c0f4df3a8e0",
+   "source": "source/dialogue/resident_momo.png",
+   "reason": "Owner 2026-10-15 06:33 PT: momo remodel (v5) is being revised to a more animal face; excluded from this application and deploy. The game keeps the current momo (art/npc-redesign-20261015/redesign.json, candidate_goat_shrine)."
+  },
+  {
+   "npc": "resident_seol",
+   "sha256": "c23b84af981dd93a59fe64c9ebe40ad39ffb3038961e6b2ae0e52baa8c5e1804",
+   "source": "source/dialogue/resident_seol.png",
+   "reason": "Owner 2026-10-15 06:47 PT: seol remodel (white owl) proportions do not fit the game; being redrawn to at most 4 heads tall. Excluded from this application and deploy; the game keeps the current seol (art/npc-redesign-20261015/redesign.json, five_town_owl_white_v2)."
+  }
+ ]
+}

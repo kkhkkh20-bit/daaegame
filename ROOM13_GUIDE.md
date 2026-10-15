@@ -141,6 +141,19 @@ python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_sav
 ### 메인 타이틀 연출 (0.18.41)
 - 첫 등장 로고·메뉴 페이드인(게임을 켠 뒤 한 번, 0.18.46 동화 같은 느낌으로), 도트 눈, 불빛 일렁임. 코드는 `systems/room13_title_fx.rpy`, 연결은 `main_menu`의 세 줄.
 
+### 캐릭터 그림 교체 (0.18.27, 0.18.50)
+- 그림만 바꾼다. ID·이름·나이·역할·대사·증거·일정은 그대로 둔다.
+- 등록부: `art/npc-redesign-20261015/redesign.json`(첫 8명, 기록용)과 `art/character-remodel-20261015/remodel.json`(0.18.50)
+  - 같은 인물은 뒤 등록부를 쓴다.
+  - `excluded`에 적힌 인물은 지금 게임 그림을 그대로 둔다(0.18.50 모모).
+- 적용: `python3 dev/apply_npc_redesign.py`. 다시 돌려도 결과가 같다. `--check`는 확인만 한다. `--revert`는 원래 항목으로 되돌린다.
+  - 바꾸기 전 항목은 `art/npc-redesign-20261015/original-entries.json`에 있다.
+  - 원래 그림 파일은 지우지 않는다. 웹판은 필요할 때만 받는다.
+- 바꾼 뒤 할 일: `python3 dev/fullbody_centre.py`, `dev/check.sh`, 화면 테스트 `redesign_dialogue`·`remodel_places`
+- 새 그림은 표정이 하나라 6표정이 모두 같은 그림이다. 예전 디자인의 앉기·생활 동작은 쓰지 않는다. 그 포즈를 부르면 서 있는 그림이 나온다(`r13_acting_spec`).
+- 조사(현장) 포즈는 `poses`로 등록한다. `scale_by_head`라서 서 있는 키가 아니라 머리 크기에 맞춰 그린다. 대화 그림으로는 쓰지 않는다.
+- 눈 깜빡임 조각은 원래 전신 그림에서 잘라 만든 것이라, 새 그림에는 얹지 않는다(`r13_blink_art`).
+
 ### 선택지 문구 (0.18.4)
 - 인물과 대화하는 선택지는 아빠가 할 말로 쓴다(“…”). 판단을 대신하는 말(협박한다, 달랜다, 편을 든다)은 쓰지 않는다. 확정된 돈·시간만 짧게 붙인다(12냥, · 늦은 저녁까지).
 - `menu` 선택지는 무엇을 할지만 24자 이하로 쓴다. 자세한 말은 고른 뒤 대사로 넣는다. `dev/test_choice_length.py`가 검사한다.

@@ -2235,8 +2235,8 @@ testcase redesign_dialogue:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_fullbody",("normal","large","topic"),list(R13_QA_REDESIGNED),["neutral","surprise"])
-    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    run Call("r13_qa_fullbody",("normal","large","topic"),list(R13_QA_REDESIGNED),["neutral"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 900
     pause 1.0
 
 testcase day1_note_spot:
@@ -2541,3 +2541,539 @@ testcase memo_from_desk:
     screenshot "memo_card_over_desk.png"
     pause 2.6
     screenshot "desk_without_memo.png"
+
+testcase remodel_places:
+    # 0.18.50: every place, three times of day, both camera ends (panoramas).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="gate",life_poc=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    $ r13_qa_camera("gate","left")
+    run Call("r13_qa_goto",2,0,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d2p0_left")
+    screenshot "gate_d2p0_left.png"
+    $ r13_qa_camera("gate","right")
+    run Call("r13_qa_goto",2,0,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d2p0_right")
+    screenshot "gate_d2p0_right.png"
+    $ r13_qa_camera("square","left")
+    run Call("r13_qa_goto",2,0,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d2p0_left")
+    screenshot "square_d2p0_left.png"
+    $ r13_qa_camera("square","right")
+    run Call("r13_qa_goto",2,0,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d2p0_right")
+    screenshot "square_d2p0_right.png"
+    $ r13_qa_camera("inn","left")
+    run Call("r13_qa_goto",2,0,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d2p0_left")
+    screenshot "inn_d2p0_left.png"
+    $ r13_qa_camera("inn","right")
+    run Call("r13_qa_goto",2,0,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d2p0_right")
+    screenshot "inn_d2p0_right.png"
+    $ r13_qa_camera("dining","left")
+    run Call("r13_qa_goto",2,0,"dining")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("dining_d2p0_left")
+    screenshot "dining_d2p0_left.png"
+    $ r13_qa_camera("kitchen","left")
+    run Call("r13_qa_goto",2,0,"kitchen")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("kitchen_d2p0_left")
+    screenshot "kitchen_d2p0_left.png"
+    $ r13_qa_camera("hall","left")
+    run Call("r13_qa_goto",2,0,"hall")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("hall_d2p0_left")
+    screenshot "hall_d2p0_left.png"
+    $ r13_qa_camera("post","left")
+    run Call("r13_qa_goto",2,0,"post")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("post_d2p0_left")
+    screenshot "post_d2p0_left.png"
+    $ r13_qa_camera("workshop","left")
+    run Call("r13_qa_goto",2,0,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d2p0_left")
+    screenshot "workshop_d2p0_left.png"
+    $ r13_qa_camera("workshop","right")
+    run Call("r13_qa_goto",2,0,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d2p0_right")
+    screenshot "workshop_d2p0_right.png"
+    $ r13_qa_camera("clinic","left")
+    run Call("r13_qa_goto",2,0,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d2p0_left")
+    screenshot "clinic_d2p0_left.png"
+    $ r13_qa_camera("clinic","right")
+    run Call("r13_qa_goto",2,0,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d2p0_right")
+    screenshot "clinic_d2p0_right.png"
+    $ r13_qa_camera("school","left")
+    run Call("r13_qa_goto",2,0,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d2p0_left")
+    screenshot "school_d2p0_left.png"
+    $ r13_qa_camera("school","right")
+    run Call("r13_qa_goto",2,0,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d2p0_right")
+    screenshot "school_d2p0_right.png"
+    $ r13_qa_camera("store","left")
+    run Call("r13_qa_goto",2,0,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d2p0_left")
+    screenshot "store_d2p0_left.png"
+    $ r13_qa_camera("store","right")
+    run Call("r13_qa_goto",2,0,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d2p0_right")
+    screenshot "store_d2p0_right.png"
+    $ r13_qa_camera("greenhouse","left")
+    run Call("r13_qa_goto",2,0,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d2p0_left")
+    screenshot "greenhouse_d2p0_left.png"
+    $ r13_qa_camera("greenhouse","right")
+    run Call("r13_qa_goto",2,0,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d2p0_right")
+    screenshot "greenhouse_d2p0_right.png"
+    $ r13_qa_camera("facility","left")
+    run Call("r13_qa_goto",2,0,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d2p0_left")
+    screenshot "facility_d2p0_left.png"
+    $ r13_qa_camera("facility","right")
+    run Call("r13_qa_goto",2,0,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d2p0_right")
+    screenshot "facility_d2p0_right.png"
+    $ r13_qa_camera("gate","left")
+    run Call("r13_qa_goto",2,1,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d2p1_left")
+    screenshot "gate_d2p1_left.png"
+    $ r13_qa_camera("gate","right")
+    run Call("r13_qa_goto",2,1,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d2p1_right")
+    screenshot "gate_d2p1_right.png"
+    $ r13_qa_camera("square","left")
+    run Call("r13_qa_goto",2,1,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d2p1_left")
+    screenshot "square_d2p1_left.png"
+    $ r13_qa_camera("square","right")
+    run Call("r13_qa_goto",2,1,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d2p1_right")
+    screenshot "square_d2p1_right.png"
+    $ r13_qa_camera("inn","left")
+    run Call("r13_qa_goto",2,1,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d2p1_left")
+    screenshot "inn_d2p1_left.png"
+    $ r13_qa_camera("inn","right")
+    run Call("r13_qa_goto",2,1,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d2p1_right")
+    screenshot "inn_d2p1_right.png"
+    $ r13_qa_camera("dining","left")
+    run Call("r13_qa_goto",2,1,"dining")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("dining_d2p1_left")
+    screenshot "dining_d2p1_left.png"
+    $ r13_qa_camera("kitchen","left")
+    run Call("r13_qa_goto",2,1,"kitchen")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("kitchen_d2p1_left")
+    screenshot "kitchen_d2p1_left.png"
+    $ r13_qa_camera("hall","left")
+    run Call("r13_qa_goto",2,1,"hall")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("hall_d2p1_left")
+    screenshot "hall_d2p1_left.png"
+    $ r13_qa_camera("post","left")
+    run Call("r13_qa_goto",2,1,"post")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("post_d2p1_left")
+    screenshot "post_d2p1_left.png"
+    $ r13_qa_camera("workshop","left")
+    run Call("r13_qa_goto",2,1,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d2p1_left")
+    screenshot "workshop_d2p1_left.png"
+    $ r13_qa_camera("workshop","right")
+    run Call("r13_qa_goto",2,1,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d2p1_right")
+    screenshot "workshop_d2p1_right.png"
+    $ r13_qa_camera("clinic","left")
+    run Call("r13_qa_goto",2,1,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d2p1_left")
+    screenshot "clinic_d2p1_left.png"
+    $ r13_qa_camera("clinic","right")
+    run Call("r13_qa_goto",2,1,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d2p1_right")
+    screenshot "clinic_d2p1_right.png"
+    $ r13_qa_camera("school","left")
+    run Call("r13_qa_goto",2,1,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d2p1_left")
+    screenshot "school_d2p1_left.png"
+    $ r13_qa_camera("school","right")
+    run Call("r13_qa_goto",2,1,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d2p1_right")
+    screenshot "school_d2p1_right.png"
+    $ r13_qa_camera("store","left")
+    run Call("r13_qa_goto",2,1,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d2p1_left")
+    screenshot "store_d2p1_left.png"
+    $ r13_qa_camera("store","right")
+    run Call("r13_qa_goto",2,1,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d2p1_right")
+    screenshot "store_d2p1_right.png"
+    $ r13_qa_camera("greenhouse","left")
+    run Call("r13_qa_goto",2,1,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d2p1_left")
+    screenshot "greenhouse_d2p1_left.png"
+    $ r13_qa_camera("greenhouse","right")
+    run Call("r13_qa_goto",2,1,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d2p1_right")
+    screenshot "greenhouse_d2p1_right.png"
+    $ r13_qa_camera("facility","left")
+    run Call("r13_qa_goto",2,1,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d2p1_left")
+    screenshot "facility_d2p1_left.png"
+    $ r13_qa_camera("facility","right")
+    run Call("r13_qa_goto",2,1,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d2p1_right")
+    screenshot "facility_d2p1_right.png"
+    $ r13_qa_camera("gate","left")
+    run Call("r13_qa_goto",2,2,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d2p2_left")
+    screenshot "gate_d2p2_left.png"
+    $ r13_qa_camera("gate","right")
+    run Call("r13_qa_goto",2,2,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d2p2_right")
+    screenshot "gate_d2p2_right.png"
+    $ r13_qa_camera("square","left")
+    run Call("r13_qa_goto",2,2,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d2p2_left")
+    screenshot "square_d2p2_left.png"
+    $ r13_qa_camera("square","right")
+    run Call("r13_qa_goto",2,2,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d2p2_right")
+    screenshot "square_d2p2_right.png"
+    $ r13_qa_camera("inn","left")
+    run Call("r13_qa_goto",2,2,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d2p2_left")
+    screenshot "inn_d2p2_left.png"
+    $ r13_qa_camera("inn","right")
+    run Call("r13_qa_goto",2,2,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d2p2_right")
+    screenshot "inn_d2p2_right.png"
+    $ r13_qa_camera("dining","left")
+    run Call("r13_qa_goto",2,2,"dining")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("dining_d2p2_left")
+    screenshot "dining_d2p2_left.png"
+    $ r13_qa_camera("kitchen","left")
+    run Call("r13_qa_goto",2,2,"kitchen")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("kitchen_d2p2_left")
+    screenshot "kitchen_d2p2_left.png"
+    $ r13_qa_camera("hall","left")
+    run Call("r13_qa_goto",2,2,"hall")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("hall_d2p2_left")
+    screenshot "hall_d2p2_left.png"
+    $ r13_qa_camera("post","left")
+    run Call("r13_qa_goto",2,2,"post")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("post_d2p2_left")
+    screenshot "post_d2p2_left.png"
+    $ r13_qa_camera("workshop","left")
+    run Call("r13_qa_goto",2,2,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d2p2_left")
+    screenshot "workshop_d2p2_left.png"
+    $ r13_qa_camera("workshop","right")
+    run Call("r13_qa_goto",2,2,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d2p2_right")
+    screenshot "workshop_d2p2_right.png"
+    $ r13_qa_camera("clinic","left")
+    run Call("r13_qa_goto",2,2,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d2p2_left")
+    screenshot "clinic_d2p2_left.png"
+    $ r13_qa_camera("clinic","right")
+    run Call("r13_qa_goto",2,2,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d2p2_right")
+    screenshot "clinic_d2p2_right.png"
+    $ r13_qa_camera("school","left")
+    run Call("r13_qa_goto",2,2,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d2p2_left")
+    screenshot "school_d2p2_left.png"
+    $ r13_qa_camera("school","right")
+    run Call("r13_qa_goto",2,2,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d2p2_right")
+    screenshot "school_d2p2_right.png"
+    $ r13_qa_camera("store","left")
+    run Call("r13_qa_goto",2,2,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d2p2_left")
+    screenshot "store_d2p2_left.png"
+    $ r13_qa_camera("store","right")
+    run Call("r13_qa_goto",2,2,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d2p2_right")
+    screenshot "store_d2p2_right.png"
+    $ r13_qa_camera("greenhouse","left")
+    run Call("r13_qa_goto",2,2,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d2p2_left")
+    screenshot "greenhouse_d2p2_left.png"
+    $ r13_qa_camera("greenhouse","right")
+    run Call("r13_qa_goto",2,2,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d2p2_right")
+    screenshot "greenhouse_d2p2_right.png"
+    $ r13_qa_camera("facility","left")
+    run Call("r13_qa_goto",2,2,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d2p2_left")
+    screenshot "facility_d2p2_left.png"
+    $ r13_qa_camera("facility","right")
+    run Call("r13_qa_goto",2,2,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d2p2_right")
+    screenshot "facility_d2p2_right.png"
+    $ r13_qa_camera("gate","left")
+    run Call("r13_qa_goto",5,1,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d5p1_left")
+    screenshot "gate_d5p1_left.png"
+    $ r13_qa_camera("gate","right")
+    run Call("r13_qa_goto",5,1,"gate")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("gate_d5p1_right")
+    screenshot "gate_d5p1_right.png"
+    $ r13_qa_camera("square","left")
+    run Call("r13_qa_goto",5,1,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d5p1_left")
+    screenshot "square_d5p1_left.png"
+    $ r13_qa_camera("square","right")
+    run Call("r13_qa_goto",5,1,"square")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("square_d5p1_right")
+    screenshot "square_d5p1_right.png"
+    $ r13_qa_camera("inn","left")
+    run Call("r13_qa_goto",5,1,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d5p1_left")
+    screenshot "inn_d5p1_left.png"
+    $ r13_qa_camera("inn","right")
+    run Call("r13_qa_goto",5,1,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("inn_d5p1_right")
+    screenshot "inn_d5p1_right.png"
+    $ r13_qa_camera("dining","left")
+    run Call("r13_qa_goto",5,1,"dining")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("dining_d5p1_left")
+    screenshot "dining_d5p1_left.png"
+    $ r13_qa_camera("kitchen","left")
+    run Call("r13_qa_goto",5,1,"kitchen")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("kitchen_d5p1_left")
+    screenshot "kitchen_d5p1_left.png"
+    $ r13_qa_camera("hall","left")
+    run Call("r13_qa_goto",5,1,"hall")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("hall_d5p1_left")
+    screenshot "hall_d5p1_left.png"
+    $ r13_qa_camera("post","left")
+    run Call("r13_qa_goto",5,1,"post")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("post_d5p1_left")
+    screenshot "post_d5p1_left.png"
+    $ r13_qa_camera("workshop","left")
+    run Call("r13_qa_goto",5,1,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d5p1_left")
+    screenshot "workshop_d5p1_left.png"
+    $ r13_qa_camera("workshop","right")
+    run Call("r13_qa_goto",5,1,"workshop")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("workshop_d5p1_right")
+    screenshot "workshop_d5p1_right.png"
+    $ r13_qa_camera("clinic","left")
+    run Call("r13_qa_goto",5,1,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d5p1_left")
+    screenshot "clinic_d5p1_left.png"
+    $ r13_qa_camera("clinic","right")
+    run Call("r13_qa_goto",5,1,"clinic")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("clinic_d5p1_right")
+    screenshot "clinic_d5p1_right.png"
+    $ r13_qa_camera("school","left")
+    run Call("r13_qa_goto",5,1,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d5p1_left")
+    screenshot "school_d5p1_left.png"
+    $ r13_qa_camera("school","right")
+    run Call("r13_qa_goto",5,1,"school")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("school_d5p1_right")
+    screenshot "school_d5p1_right.png"
+    $ r13_qa_camera("store","left")
+    run Call("r13_qa_goto",5,1,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d5p1_left")
+    screenshot "store_d5p1_left.png"
+    $ r13_qa_camera("store","right")
+    run Call("r13_qa_goto",5,1,"store")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("store_d5p1_right")
+    screenshot "store_d5p1_right.png"
+    $ r13_qa_camera("greenhouse","left")
+    run Call("r13_qa_goto",5,1,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d5p1_left")
+    screenshot "greenhouse_d5p1_left.png"
+    $ r13_qa_camera("greenhouse","right")
+    run Call("r13_qa_goto",5,1,"greenhouse")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("greenhouse_d5p1_right")
+    screenshot "greenhouse_d5p1_right.png"
+    $ r13_qa_camera("facility","left")
+    run Call("r13_qa_goto",5,1,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d5p1_left")
+    screenshot "facility_d5p1_left.png"
+    $ r13_qa_camera("facility","right")
+    run Call("r13_qa_goto",5,1,"facility")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_qa_place_record("facility_d5p1_right")
+    screenshot "facility_d5p1_right.png"

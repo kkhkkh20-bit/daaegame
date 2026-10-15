@@ -436,7 +436,8 @@ label r13_qa_type_lines:
 # 2026-10-15 NPC redesigns (dev/apply_npc_redesign.py): find a real slot where
 # each redesigned NPC is scheduled, stand there and record the staging.
 init 999 python:
-    R13_QA_REDESIGNED = ("resident_yeoni","resident_momo","resident_librarian","resident_nubi","resident_seol","resident_siluk","resident_nero","resident_bori")
+    # Every NPC with a redesigned picture (dev/apply_npc_redesign.py), read from the data.
+    R13_QA_REDESIGNED = tuple(sorted(p for p,e in R13_FULLBODY["people"].items() if e.get("redesign")))
     def r13_qa_redesign_slot(person):
         saved=winter_copy.deepcopy(store.room13)
         try:
@@ -616,3 +617,23 @@ label r13_qa_topic_review:
 label r13_qa_inspect_desk:
     call r13_inspect_desk
     jump r13_roam
+
+# 0.18.50 remodel: every place at morning/afternoon/evening, both ends of a panorama.
+# Records each staged actor (pose, size, head height on screen) for size checks.
+init 999 python:
+    R13_QA_PLACES = ("gate","square","inn","dining","kitchen","hall","post","workshop","clinic","school","store","greenhouse","facility")
+    def r13_qa_place_record(tag):
+        import os, json as qa_json
+        path=renpy.config.basedir+"/qa_result.txt"
+        log=qa_json.loads(open(path).read()) if os.path.exists(path) and open(path).read().startswith("{") else {}
+        rows=[]
+        for a in r13_stage_people(False):
+            spec=r13_acting_spec(a["person"],a["pose"]) or {}
+            head=spec.get("head")
+            scale=float(a["width"])/spec["crop"][2] if spec.get("crop") else 0
+            rows.append(dict(person=a["person"],pose=a["pose"],x=a["x"],y=a["y"],w=a["width"],h=a["height"],
+                head=int(head[3]*scale) if head else None,redesign=bool(spec.get("redesign")),by_head=bool(spec.get("scale_by_head"))))
+        log[tag]=dict(location=store.room13["location"],day=store.room13["day"],period=store.room13["period"],camera=r13_world_offset(),actors=rows)
+        open(path,"w").write(qa_json.dumps(log,ensure_ascii=False))
+    def r13_qa_camera(location,side):
+        store.r13_world_cameras={location:(0 if side=="left" else 9999)}

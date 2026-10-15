@@ -43,7 +43,11 @@ init 59 python:
     def r13_acting_spec(person,pose):
         poses=R13_ACTING.get(person,{})
         key=pose[10:] if pose.startswith("interview_") else pose
-        return poses.get(key) or (poses.get("neutral") if key in ("world","inn_activity","activity") else None)
+        spec=poses.get(key) or (poses.get("neutral") if key in ("world","inn_activity","activity") else None)
+        # Redesigned NPCs (dev/apply_npc_redesign.py) have no picture for the old
+        # design's poses (layout overrides, scene tables): they stand instead.
+        if spec is None and poses.get("neutral",{}).get("redesign"):spec=poses["neutral"]
+        return spec
 
     def r13_actor_geometry(person,pose):
         spec=r13_acting_spec(person,pose)
@@ -289,9 +293,12 @@ init 59 python:
         # Per-location perspective is independent of dialogue framing. Preserve
         # the established relative standing heights and the authored pose's
         # head/body ratio, instead of stretching a crouch to standing height.
-        if not layout.get("standing_height_reference"):
+        # A redesign's investigation pose (crouching, seated on its own stool)
+        # keeps the standing head size everywhere, not the standing height.
+        by_head=(r13_acting_spec(person,pose) or {}).get("scale_by_head")
+        if not layout.get("standing_height_reference") and not by_head:
             return height
-        reference=layout["standing_height_reference"]
+        reference=layout.get("standing_height_reference") or 1
         stature=layout.get("standing_heights",{}).get(person,reference)/float(reference)
         pw,ph=r13_actor_geometry(person,pose)
         nw,nh=r13_actor_geometry(person,"neutral")
