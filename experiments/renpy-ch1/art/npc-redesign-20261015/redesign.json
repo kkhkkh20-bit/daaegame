@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-10-15",
-  "basis": "Owner instruction 2026-10-15: apply exactly these four designs to existing NPCs. IDs, names, story relations, dialogue, clues, evidence, unlocks, schedules and time costs are unchanged; only the art changes. Species for librarian and nubi chosen by the owner (AskUserQuestion, 2026-10-15). Second batch (owner, 2026-10-15 14:32 KST): white owl -> resident_seol (drawn as a woman, owner confirmed), hyena -> resident_siluk and tiger -> resident_nero (owner chose the swap), bear -> resident_bori. The brown owl is NOT applied: resident_owlgp waits for an elderly version.",
+  "basis": "Owner instruction 2026-10-15: apply exactly these four designs to existing NPCs. IDs, names, story relations, dialogue, clues, evidence, unlocks, schedules and time costs are unchanged; only the art changes. Species for librarian and nubi chosen by the owner (AskUserQuestion, 2026-10-15). Second batch (owner, 2026-10-15 14:32 KST): white owl -> resident_seol (drawn as a woman, owner confirmed), hyena -> resident_siluk and tiger -> resident_nero (owner chose the swap), bear -> resident_bori. The brown owl is NOT applied: resident_owlgp waits for an elderly version. Third batch (owner, 2026-10-15 07:39 PDT): only two elders are replaced: resident_owlgp <- owl-simple/owlgp-simple.png (the elderly owl the first batch waited for) and granny <- elders-reference-redesign-v2/granny.png. Every other resident keeps the original game art and body proportions; the proportion-rollout40 files and the 35-character branch are not used.",
   "scale_from_source": 0.5,
   "alpha_visible": 32,
   "margin": 4,
@@ -180,6 +180,50 @@
         40,
         360,
         360
+      ]
+    },
+    {
+      "design_id": "owlgp_simple_elder",
+      "npc": "resident_owlgp",
+      "name_ko": "부엉이 할아버지",
+      "source": "source/owlgp-simple.png",
+      "sha256": "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941",
+      "species_before": "owl",
+      "species_after": "owl",
+      "reason": "Owner choice (final-31 table, owl-simple): same species, an elderly owl with cane and scarf.",
+      "head": [
+        320,
+        24,
+        460,
+        470
+      ],
+      "avatar": [
+        300,
+        24,
+        480,
+        480
+      ]
+    },
+    {
+      "design_id": "granny_elders_reference_v2",
+      "npc": "granny",
+      "name_ko": "할머니",
+      "source": "source/granny-elders-reference-v2.png",
+      "sha256": "91a35c0e5ee83260fdf9fbfa98ca92ff0bc0333ec7ffe670a18cb25560c750d6",
+      "species_before": "rabbit",
+      "species_after": "rabbit",
+      "reason": "Owner choice (elders-reference-redesign-v2/granny.png, preserved supplement): same species, the inn's rabbit grandmother with apron.",
+      "head": [
+        300,
+        13,
+        530,
+        420
+      ],
+      "avatar": [
+        360,
+        13,
+        470,
+        470
       ]
     }
   ]

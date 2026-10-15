@@ -8242,3 +8242,43 @@ testcase motion_audit:
     pause 3.0
     run Call("r13_qa_audit")
     click pos (1276,300) until eval r13_qa_audit_done timeout 180
+
+testcase elders_redesign:
+    # 0.18.56 (owner): only 부엉이 할아버지 and 할머니 get the new designs. Dialogue full body,
+    # investigation scenes where they really are, and their question lists.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody",("normal","large","topic"),["granny","resident_owlgp"],["neutral","surprise"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    pause 1.0
+    $ r13_world_cameras={"inn":640}
+    run Call("r13_qa_roam",dict(day=3,period=1,location="inn",life_poc=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("elders_inn_p1_c640")
+    screenshot "elders_inn_afternoon_c640.png"
+    $ r13_world_cameras={"inn":0}
+    run Call("r13_qa_goto",3,1,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("elders_inn_p1_c0")
+    screenshot "elders_inn_afternoon_c0.png"
+    $ r13_world_cameras={"dining":0}
+    run Call("r13_qa_goto",7,2,"dining")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("elders_dining_p2")
+    screenshot "elders_dining_evening.png"
+    $ r13_qa_person="resident_owlgp"
+    run Jump("r13_qa_talk_menu")
+    pause 1.5
+    screenshot "elders_owl_topics.png"
+    run Call("r13_qa_goto",3,0,"inn")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("elders_inn_p0")
+    $ r13_qa_person="granny"
+    run Jump("r13_qa_talk_menu")
+    pause 1.5
+    screenshot "elders_granny_topics.png"

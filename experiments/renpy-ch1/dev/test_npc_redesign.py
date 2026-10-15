@@ -35,11 +35,18 @@ def files(entry):
 class NpcRedesign(unittest.TestCase):
     def test_one_design_per_existing_npc(self):
         npcs = [d["npc"] for d in REG["designs"]]
+        # 0.18.56 (owner, 07:39 PDT): only the two elders join the first eight; nobody else.
         self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian", "resident_nubi",
-                                               "resident_seol", "resident_siluk", "resident_nero", "resident_bori"}))
+                                               "resident_seol", "resident_siluk", "resident_nero", "resident_bori",
+                                               "resident_owlgp", "granny"}))
         self.assertEqual(len({d["sha256"] for d in REG["designs"]}), len(npcs))  # no picture used twice
-        # The brown owl waits for an elderly version: 부엉이 할아버지 keeps his art.
-        self.assertNotIn("redesign", json.dumps(CAST["resident_owlgp"]))
+        sources = {d["npc"]: d["sha256"] for d in REG["designs"]}
+        self.assertEqual(sources["resident_owlgp"], "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941")
+        self.assertEqual(sources["granny"], "91a35c0e5ee83260fdf9fbfa98ca92ff0bc0333ec7ffe670a18cb25560c750d6")
+        # Everyone else keeps the original game art.
+        for npc, states in CAST.items():
+            if npc not in sources:
+                self.assertNotIn("redesign", json.dumps(states), npc)
         for d in REG["designs"]:
             src = (ART / d["source"]).read_bytes()
             self.assertEqual(hashlib.sha256(src).hexdigest(), d["sha256"], d["source"])
