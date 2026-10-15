@@ -3,7 +3,7 @@
 Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. 아래 표는 그 순서대로이며, 마지막 줄이 게임이 실제로 부르는 바깥 층이다.
 각 층은 바로 위 층을 `captured_as` 이름으로 붙잡아 부른다. 새 기능을 넣을 때 이 순서를 확인하고, 같은 우선순위에 층을 추가하지 않는다.
 
-## `r13_topics` (11층)
+## `r13_topics` (12층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -15,11 +15,12 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 94 | `systems/room13_shop.rpy:50` | _r13_firstday_topics |
 | 7 | 95 | `systems/room13_first_day_flow.rpy:101` | _r13_items_topics |
 | 8 | 96 | `systems/room13_items.rpy:112` | _r13_intro_topics |
-| 9 | 97 | `systems/room13_intro_clues.rpy:111` | _r13_poc_topics |
+| 9 | 97 | `systems/room13_intro_clues.rpy:112` | _r13_poc_topics |
 | 10 | 100 | `systems/room13_poc_route.rpy:60` | _r13_daram_home_topics |
-| 11 | 101 | `systems/room13_daram_home.rpy:95` |  |
+| 11 | 101 | `systems/room13_daram_home.rpy:95` | _r13_pf_topics |
+| 12 | 113 | `systems/room13_present_flow.rpy:38` |  |
 
-## `r13_present` (10층)
+## `r13_present` (11층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -31,8 +32,9 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 96 | `systems/room13_work_clues.rpy:25` | _r13_intro_present |
 | 7 | 97 | `systems/room13_intro_clues.rpy:48` | _r13_poc_present |
 | 8 | 100 | `systems/room13_poc_route.rpy:66` | _r13_daram_home_present |
-| 9 | 101 | `systems/room13_daram_home.rpy:142` | _r13_sound_present |
-| 10 | 150 | `systems/room13_sound.rpy:161` |  |
+| 9 | 101 | `systems/room13_daram_home.rpy:142` | _r13_pf_present |
+| 10 | 113 | `systems/room13_present_flow.rpy:43` | _r13_sound_present |
+| 11 | 150 | `systems/room13_sound.rpy:161` |  |
 
 ## `r13_conversation_topic_lines` (6층)
 
@@ -82,7 +84,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 76 | `room13_first_mystery.rpy:26` | _r13_firstday_notes |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:37` | _r13_intro_notes |
-| 3 | 97 | `systems/room13_intro_clues.rpy:118` | _r13_learning_mystery_notes |
+| 3 | 97 | `systems/room13_intro_clues.rpy:119` | _r13_learning_mystery_notes |
 | 4 | 98 | `systems/room13_learning.rpy:121` | _r13_poc_notes |
 | 5 | 100 | `systems/room13_poc_route.rpy:138` |  |
 
@@ -260,5 +262,12 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 56 | `room13_week2_rules.rpy:175` | _r13_w1c_action_done |
-| 2 | 110 | `systems/room13_week1_cases.rpy:57` |  |
+| 2 | 110 | `systems/room13_week1_cases.rpy:50` |  |
+
+## `r13_w2_present` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 56 | `room13_week2_rules.rpy:192` | _r13_pf_w2_present |
+| 2 | 113 | `systems/room13_present_flow.rpy:69` |  |
 

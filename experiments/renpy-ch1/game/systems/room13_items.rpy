@@ -17,13 +17,13 @@ init 96 python:
 
     # New records: story notes, not claim evidence.
     ROOM13["evidence"]["M02"]=dict(id="M02",name="엄마의 두 번째 쪽지",kind="물증",
-        establishes="엄마는 이 마을의 불이 장작이 아니라 사람에게서 온다는 것을 알아채고, 다람이에게 들키지 않게 남겼다.",
+        establishes="13호실 침대 밑 판자 아래에서 찾은 엄마의 글. ‘이 마을의 불은 장작으로 타지 않아. 사람이 타. 아빠가 오면 이 종이를 보여 줘. 그리고 할머니께는 보여 주지 마.’라고 적혀 있다.",
         does_not_establish="엄마가 지금 어디 있는지는 알려 주지 않는다.",scenes=[],current_run_only=True,retained_on_show=True)
     ROOM13["evidence"]["R01"]=dict(id="R01",name="광장 돌에 긁힌 이름들",kind="기록",
         establishes="겨울마다 누군가의 이름이 돌에 새겨졌다가 긁혀 지워졌다. 가장 최근의 이름은 아직 덜 지워졌다.",
         does_not_establish="그 사람들이 어떻게 되었는지는 적혀 있지 않다.",scenes=[],current_run_only=True,retained_on_show=True)
     ROOM13["evidence"]["R02"]=dict(id="R02",name="주방 뒤로 이어진 그을음",kind="관찰기록",
-        establishes="주방 뒷문 아래 그을음 자국이 벽을 따라 여관 2층 쪽으로 이어진다. 누군가 등을 들고 자주 드나들었다.",
+        establishes="주방 뒷문 아래 그을음 자국이 벽을 따라 여관 2층 쪽으로 이어진다. 그을음은 여러 겹 겹쳐 있다.",
         does_not_establish="누가, 언제 지나갔는지는 알 수 없다.",scenes=[],current_run_only=True,retained_on_show=True)
 
     def _r13_item_act(place,title,lines,need,give=(),flags=(),day=(2,13),consume=None,cost=1,not_flags=()):

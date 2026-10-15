@@ -38,7 +38,7 @@ init 94 python:
         rows=_r13_firstday_notes()
         if store.room13.get("life_poc") and store.room13.get("case_state")=="pending":
             if r13_has("M01"):
-                rows[0]=dict(title="등불을 돌보는 사람은 엄마를 알고 있을까?",fact="엄마는 메모에 등불을 돌보는 사람에게 소식을 물어보라고 적었다.",question="누구를 말하며, 언제 엄마를 만났을까?",hint="할머니나 식당에서 등불을 돌보는 사람이 누구인지 물어보자.",keys=["M01"])
+                rows[0]=dict(title="등불을 돌보는 사람은 엄마를 알고 있을까?",fact="엄마는 메모에 등불을 돌보는 사람에게 소식을 물어보라고 적었다.",question="누구를 말하며, 언제 엄마를 만났을까?",hint="이 마을에 오래 산 사람이라면 누구를 말하는지 알 것이다. 메모를 읽은 사람은 아직 아빠와 다람이뿐이다.",keys=["M01"])
         return rows
 
     _r13_life_present=r13_present
@@ -79,9 +79,9 @@ label r13_life_first_night:
     if r13_has("mother_expected_family"):
         call r13_lines([("daram","메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지."),("dad","응. 엄마도 우리가 올 걸 알고 있었어. 그런데 기다리던 방에는 없네.")],"life:night1:comparison")
     if r13_has("mother_lamplighter_lead"):
-        call r13_lines([("daram","내일 초롱 아저씨한테 메모를 보여 주자."),("dad","그래. 엄마를 마지막으로 언제 만났는지 물어보자.")],"life:night1:known_lead")
+        call r13_lines([("daram","초롱 아저씨는 엄마를 기억할까?"),("dad","엄마를 마지막으로 언제 봤는지가 궁금하구나. 그런데 이름만 대면 알아볼까?")],"life:night1:known_lead")
     else:
-        call r13_lines([("daram","등불 돌보는 분이 누구인지 할머니는 알겠지?"),("dad","내일 할머니께 메모를 보여 드리고 물어보자.")],"life:night1:unknown_lead")
+        call r13_lines([("daram","등불 돌보는 분이 누구인지는 아직 모르지?"),("dad","응. 이 마을 사람이라면 누구 말인지 알 텐데.")],"life:night1:unknown_lead")
     call r13_lines([("dad","까로 아저씨한테 마차 일도 물어보고. 오늘은 여기서 쉬자."),("daram","응. 엄마 소식 찾으면 나한테도 꼭 말해 줘.")],"life:night1:rest")
     $ r13_flag("night1_seen")
     return

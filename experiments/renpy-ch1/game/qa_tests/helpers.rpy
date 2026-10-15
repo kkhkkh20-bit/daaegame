@@ -248,3 +248,13 @@ label r13_qa_linebreak:
         (None,"팔의 상처만으로는 목숨을 앗아 간 머리 상처를 설명할 수 없습니다. 떨어져 나간 촛대 윗부분이 다시 쓰였습니다. 그 사이 아이가 어디 있었는지, 누가 다른 길로 드나들었는지 함께 봐야 합니다.")],"qa:linebreak")
     $ open(renpy.config.basedir+"/qa_result.txt","w").write("linebreak done")
     return
+
+init 999 python:
+    def r13_goal_is_question():
+        # Field guidance in the first days names an open question, never "show X to Y".
+        g=r13_intro_goal()
+        return g.rstrip().endswith("?") or "?" in g
+
+    r13_qa_last_present=""
+    def r13_qa_present(person,key):
+        store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))

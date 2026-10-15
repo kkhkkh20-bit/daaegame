@@ -18,7 +18,7 @@ init 96 python:
     def r13_compare_result(selected):
         owned=set((store.room13 or {}).get("evidence",[]))
         if set(selected)=={"M01","J01"} and len(selected)==2 and set(selected)<=owned:
-            return "(메모의 ‘등불을 돌보는 분’은 초롱인 것 같다. 아내가 머물 때 여관에도 왔다고 한다. 메모를 직접 보여 주고 확인해 보자.)"
+            return "(메모의 ‘등불을 돌보는 분’은 초롱인 것 같다. 아내가 머물 때 여관에도 왔다고 한다. 하지만 초롱이 아내와 무슨 이야기를 했는지는 아직 모른다.)"
         return _r13_work_compare(selected)
 
     _r13_work_present=r13_present

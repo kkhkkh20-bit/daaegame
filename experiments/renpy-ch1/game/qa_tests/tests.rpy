@@ -1440,3 +1440,25 @@ testcase linebreak_pages:
     click pos (1150,90)
     pause 1.5
     screenshot "lb_page2.png"
+
+testcase present_portrait:
+    # 0.18.13: the portrait is a record shown from the notebook; a name-only question stays vague.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ep1_patrol_seen","ev_a_done"),(),12)
+    click pos (1150,90) until screen "choice" timeout 40
+    click "엄마 초상을 그려 달라고 한다 (5냥)"
+    pause 1.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("P01" in room13["evidence"] and not [k for k,s in r13_topics("resident_sling")+r13_topics("resident_lamplighter") if k.startswith("portrait_")])
+    assert eval ("ask_mom:sling" in [k for k,s in r13_topics("resident_sling")])
+    run Function(r13_qa_present,"resident_sling","P01")
+    assert eval ("초롱 아저씨" in r13_qa_last_present and "J08" in room13["evidence"] and "ask_mom:sling" not in [k for k,s in r13_topics("resident_sling")])
+    run Function(r13_qa_present,"resident_lamplighter","P01")
+    assert eval ("확인할 필요" in r13_qa_last_present and "J07" in room13["evidence"] and r13_has("portrait_lamp_seen"))
+    assert eval (r13_goal_is_question())
+    # Reply sent on day 8 afternoon: normally day 9 afternoon (abs 33); with the face known, day 9 morning (abs 32).
+    run Function(r13_edit,day=8,period=1)
+    run Function(r13_w2_action_done,"w2_reply")
+    assert eval (room13["reply_due"]==32)

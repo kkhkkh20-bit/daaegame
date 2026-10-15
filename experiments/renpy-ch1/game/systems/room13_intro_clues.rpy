@@ -39,9 +39,9 @@ init 97 python:
                 r13_flag("mother_expected_family")
                 return "(할머니가 보낸 편지를 받고 우리는 이 마을에 왔다. 엄마의 메모도 다람이와 내가 도착할 것을 전제로 쓰여 있다. 엄마도 우리가 올 것을 알고 있었던 것 같다. 그런데 왜 기다리던 방에는 없을까?)"
             if set(selected)=={"M01","J02"}:
-                return "(메모는 등불을 돌보는 사람에게 물어보라고 했다. 초롱은 아내를 만났고 가족을 기다린다는 말을 들었다. 마지막으로 본 방향은 우체국 쪽이지만, 실제로 들렀는지는 그곳에서 확인해야 한다.)"
+                return "(메모는 등불을 돌보는 사람에게 물어보라고 했다. 초롱은 아내를 만났고 가족을 기다린다는 말을 들었다. 마지막으로 본 방향은 우체국 쪽이지만, 정말 우체국 안에 들어갔을까?)"
             if set(selected)=={"J02","J03"}:
-                return "(초롱이 본 방향과 세련이 확인한 방문이 이어진다. 아내는 우체국에 들러 반송품을 물었다. 그 뒤 어디로 갔는지는 둘 다 보지 못했다. 이 구간 다음의 목격자를 찾아야 한다.)"
+                return "(초롱이 본 방향과 세련이 확인한 방문이 이어진다. 아내는 우체국에 들러 반송품을 물었다. 그 뒤 어디로 갔는지는 둘 다 보지 못했다. 우체국을 나온 엄마를 본 사람이 있을까?)"
         return _r13_intro_compare(selected)
 
     _r13_intro_present=r13_present
@@ -75,13 +75,13 @@ init 97 python:
     def r13_intro_direction_lines():
         s=store.room13
         if r13_has("J03"):
-            return [("daram","엄마가 우체국에 간 건 맞는데, 그 뒤에 어디로 갔는지는 아직 모르는 거네."),("dad","응. 그다음에 누굴 만났는지 수소문해 보자. 마을 일을 도우면서 물어볼 수도 있겠어.")]
+            return [("daram","엄마가 우체국에 간 건 맞는데, 그 뒤에 어디로 갔는지는 아직 모르는 거네."),("dad","응. 엄마가 여기 머무는 동안 날마다 마주친 사람이 있었을 거야.")]
         if r13_has("J02"):
-            return [("daram","초롱 아저씨가 엄마를 우체국 쪽에서 봤다고 했지?"),("dad","응. 엄마가 실제로 우체국에 들렀는지 물어보자.")]
+            return [("daram","초롱 아저씨는 엄마가 우체국 쪽으로 가는 것만 봤대. 정말 안에 들어갔을까?"),("dad","창구에서는 아무한테나 손님 이야기를 해 주지 않겠지.")]
         if r13_has("mother_lamplighter_lead"):
-            return [("daram","초롱 아저씨한테 메모 보여 주자. 엄마랑 이야기했는지 궁금해."),("dad","그래. 지금 어디에 계신지도 물어보자.")]
+            return [("daram","등불 돌보는 분이 초롱 아저씨래. 그 아저씨도 엄마를 알까?"),("dad","엄마 이름만 대면 모를 수도 있어. 엄마가 우리한테 뭐라고 남겼는지 다시 떠올려 보자.")]
         if r13_has("M01"):
-            return [("daram","등불 돌보는 분이 누군지 할머니는 알겠지? 엄마 메모를 보여 드려 봐."),("dad","응. 메모를 가져가서 할머니께 여쭤보자.")]
+            return [("daram","엄마 메모에 나온 ‘등불을 돌보는 분’은 누구일까?"),("dad","이 마을 사람들은 알겠지. 그런데 누구한테 물어볼까?")]
         if not r13_has("E03"):
             return [("daram","이불 안쪽 바느질이 엄마 것하고 닮았어. 책상에도 접힌 종이가 있어."),("dad","이불 바느질이랑 접힌 종이, 둘 다 직접 살펴보자.")]
         return [("daram","책상 위의 접힌 종이도 읽어 보자. 엄마가 남긴 걸지도 몰라.")]
@@ -94,18 +94,19 @@ init 97 python:
     def r13_intro_goal():
         s=store.room13
         if s["day"]==1:
-            if not r13_has("entry_corrected"):return "예약 원본과 초소 이름 목록을 다람이와 살펴보자"
+            if not r13_has("entry_corrected"):return "둘이 예약했는데, 왜 이름이 하나만 적혔을까?"
             if not r13_has("lodging"):
-                return "할머니에게 엄마 소식을 물어보자" if s["location"]=="inn" else "광장 안쪽 여관에서 엄마 소식을 물어보자"
+                return "편지를 보낸 여관 할머니는 엄마 소식을 알고 있을까?"
             if not r13_has("M01") or not r13_has("E03"):
-                return "책상의 메모와 이불을 살펴보자" if s["location"]=="room13" else "엄마가 머물던 13호실을 살펴보자"
-            if not r13_has("mother_lamplighter_lead"):return "메모를 할머니에게 보여주고 등불지기를 물어보자"
-            return "13호실에서 다람이와 기록을 살펴보고 쉬자"
-        if not r13_has("livelihood_open"):return "입구의 까로에게 돌아갈 마차를 물어보자"
-        if r13_has("J03"):return "마을 일을 도우며 엄마를 만난 사람을 더 찾아보자"
-        if r13_has("J02"):return "우체국에서 엄마가 들렀는지 확인해 보자"
-        if r13_has("mother_lamplighter_lead"):return "초롱에게 엄마의 메모를 보여주고 물어보자"
-        return "메모를 할머니에게 보여주고 등불지기를 물어보자"
+                return "엄마가 머물던 13호실에는 무엇이 남아 있을까?"
+            if not r13_has("mother_lamplighter_lead"):return "메모에 적힌 ‘등불을 돌보는 분’은 누구일까?"
+            if r13_has("mother_expected_family"):return "엄마는 우리가 올 걸 알고 있었다. 그런데 왜 기다리지 않았을까?"
+            return "엄마는 왜 13호실을 비우고 돌아오지 않았을까?"
+        if not r13_has("livelihood_open"):return "까로 아저씨의 마차는 언제 고쳐질까?"
+        if r13_has("J03"):return "우체국을 나온 엄마는 누구를 만났을까?"
+        if r13_has("J02"):return "엄마는 정말 우체국 안에 들어갔을까?"
+        if r13_has("mother_lamplighter_lead"):return "초롱은 엄마를 알아볼까? 마지막으로 언제 봤을까?"
+        return "메모에 적힌 ‘등불을 돌보는 분’은 누구일까?"
 
     _r13_intro_topics=r13_topics
     def r13_topics(person):
@@ -119,11 +120,11 @@ init 97 python:
         rows=_r13_intro_notes()
         if not store.room13.get("life_poc") or store.room13.get("case_state")!="pending":return rows
         if r13_has("J03"):
-            rows[0]=dict(title="우체국 다음에는 누구를 만났을까?",fact="엄마가 우체국에 들러 반송품을 물었다는 사실을 확인했다. 그 뒤의 행선지는 아직 모른다.",question="엄마가 여관에 돌아오거나 다른 사람을 만난 흔적이 있을까?",hint="두 목격담을 기록에서 비교하고, 마을 일을 도우며 엄마를 만난 사람을 더 찾아보자.",keys=["J02","J03"])
+            rows[0]=dict(title="우체국 다음에는 누구를 만났을까?",fact="엄마가 우체국에 들러 반송품을 물었다는 사실을 확인했다. 그 뒤의 행선지는 아직 모른다.",question="엄마가 여관에 돌아오거나 다른 사람을 만난 흔적이 있을까?",hint="엄마가 날마다 마주쳤을 사람은 누구일까? 여관에서 함께 지낸 사람이나 마을 일을 하는 사람을 떠올려 보자.",keys=["J02","J03"])
         elif r13_has("J02"):
-            rows[0]=dict(title="엄마가 우체국에 들렀을까?",fact="초롱은 엄마와 대화했고, 우체국 쪽으로 걸어가는 것을 봤다고 했다.",question="우체국 안에 들른 기록도 있을까?",hint="우체국에서 초롱의 목격담을 제시하고, 가족에게 남긴 자료로 확인해 보자.",keys=["M01","J02"])
+            rows[0]=dict(title="엄마가 우체국에 들렀을까?",fact="초롱은 엄마와 대화했고, 우체국 쪽으로 걸어가는 것을 봤다고 했다.",question="우체국 안에 들른 기록도 있을까?",hint="창구는 손님 이야기를 아무에게나 해 주지 않는다. 가족이라는 것을 무엇으로 보여 줄 수 있을까?",keys=["M01","J02"])
         elif r13_has("mother_lamplighter_lead"):
-            rows[0]=dict(title="초롱은 엄마를 언제 만났을까?",fact="메모를 보여 주자 등불을 돌보는 사람은 초롱이라고 알려 주었다.",question="엄마를 만났으며, 마지막으로 어디에서 봤을까?",hint="초롱에게 엄마의 메모를 보여 주고 물어보자. 오전에는 수리점, 오후에는 광장, 저녁에는 입구에서 등불을 돌본다.",keys=["M01"])
+            rows[0]=dict(title="초롱은 엄마를 언제 만났을까?",fact="메모를 보여 주자 등불을 돌보는 사람은 초롱이라고 알려 주었다.",question="엄마를 만났으며, 마지막으로 어디에서 봤을까?",hint="이름만으로는 엄마를 알아보지 못할 수 있다. 초롱은 오전에는 수리점, 오후에는 광장, 저녁에는 입구에서 등불을 돌본다.",keys=["M01"])
         return rows
 
 screen r13_entry_daram_topics():

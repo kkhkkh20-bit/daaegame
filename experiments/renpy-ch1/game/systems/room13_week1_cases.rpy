@@ -1,6 +1,6 @@
 # 1주차 새 사건 3개 (docs/EVENT_CATALOG.md G·L·I·S·T, 0.18.11)
 #   ① 엄마의 흔적 — G 피코의 초상(2~3일 낮 광장) + L 슬링의 편지(2~4일 낮 우체국).
-#        엄마 초상을 보여 주면 2주차 답장이 이틀 빨라진다. 편지를 엿보게 두면 경고가 새고(2주차 추적),
+#        엄마 초상은 기록으로 직접 보여 준다. 초롱이 얼굴을 확인하면 2주차 답장이 다음 날 첫 시간에 온다. 편지를 엿보게 두면 경고가 새고(2주차 추적),
 #        가짜 편지를 흘리면 4일 저녁 할머니가 여관을 비운다 → 그날 사건이 일어나지 않는다.
 #   ② 벽 속의 길 — I 따닥의 증축(2~4일 오후 여관) + S 뭉치의 현장 물건(5~6일 복도).
 #        따닥의 증축 기록(H7)은 재판 C1에서 직접 열어 본 통로(E05) 대신 쓸 수 있다. 따닥이 증언에 동의해야 한다.
@@ -35,14 +35,7 @@ init 110 python:
         ("resident_ppul","돈 받고 말하는 증인을 데려온 쪽의 판결을 내가 집행할 수는 없소. 아이는 풀어 주겠소. 그 이상은 안 되오."),
         ("dad","(돈으로 산 쉬운 길이 가장 비쌌다.)",{"thought":True})]
 
-    ROOM13["topics"].update({
-        "portrait_sling":_ep_topic("resident_sling","엄마 초상을 보여 준다",(2,7),need=["mom_portrait"],not_flags=["portrait_known"],flags=["portrait_known"],lines=[
-            ("resident_sling","……그림 속 이분이 밤마다 편지를 부치러 오셨어요. 받는 사람 칸은 늘 비워 두고요."),
-            ("resident_sling","부인이 부친 편지는 초롱 아저씨가 받아 갔어요. 저는 그것밖에 몰라요.")]),
-        "portrait_lamplighter":_ep_topic("resident_lamplighter","엄마 초상을 보여 준다",(2,7),need=["mom_portrait"],not_flags=["portrait_lamp_seen"],flags=["portrait_lamp_seen","lamplighter_trust"],lines=[
-            ("resident_lamplighter","……초상화를 잘 그렸네요. 이 얼굴이면 제가 아는 분이 맞아요."),
-            ("resident_lamplighter","지금 부인이 어디 계신지는 저도 몰라요. 그래도 답장이 오면 이 그림 덕에 바로 알아볼 수 있겠어요.")]),
-    })
+    # The portrait is shown from the notebook (systems/room13_present_flow.rpy, 0.18.13).
     R13_W2E_NOTES.extend([
         ("fake_letter_planted","가짜 편지 한 장이 할머니를 그날 밤 여관 밖으로 내보냈다."),
         ("family_items_lost","13호에 두고 온 우리 짐 일부는 끝내 돌아오지 않았다."),
@@ -56,9 +49,10 @@ init 110 python:
     _r13_w1c_action_done=r13_w2_action_done
     def r13_w2_action_done(key,started_at=None):
         _r13_w1c_action_done(key,started_at)
-        # The lamplighter knows Mom's face from the portrait: the reply comes two days sooner.
-        if key=="w2_reply" and (r13_has("portrait_known") or r13_has("portrait_lamp_seen")) and store.room13.get("reply_due") is not None:
-            n=winter_copy.deepcopy(store.room13);n["reply_due"]=max(r13_abs_time()+1,n["reply_due"]-2);store.room13=n
+        # 초롱 knows Mom's face from the portrait, so nobody has to be found again:
+        # the reply is still "the next day", but ready at that day's first period (4 units = 1 day).
+        if key=="w2_reply" and r13_has("portrait_lamp_seen") and store.room13.get("reply_due") is not None:
+            n=winter_copy.deepcopy(store.room13);n["reply_due"]=max(r13_abs_time()+1,(n["reply_due"]//4)*4);store.room13=n
 
 label r13_w1c_events:
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
@@ -110,6 +104,7 @@ label r13_w1c_portrait:
                     (None,"피코는 가짜 초상을 뒤집어 놓았다. 그리고 새 판자에 그림을 그렸다. 저녁이 되기 전에 엄마 얼굴이 완성됐다."),
                     ("resident_piko","이건 진짜 초상이에요. 진짜 사람을 그린 건 오랜만이네요.")],"w1c:portrait:mom")
                 $ r13_flag("mom_portrait","piko_ally")
+                $ r13_grant(["P01"],"피코에게 맡겨 그린 엄마 초상")
             "구운 밤을 건네 준다" if r13_has("own:snack"):
                 $ r13_use_item("snack")
                 call r13_lines([("resident_piko","……오늘 저녁은 이걸로 버틸게요. 그러니 가짜 그림은 안 팔아요.")],"w1c:portrait:snack")
