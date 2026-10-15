@@ -2334,19 +2334,18 @@ testcase opening_cut:
     $ r13_opening_force = False
 
 testcase title_fx:
-    # 0.18.41 title: first-launch logo drop, menu fade, dot snow and lamp flicker.
-    pause 0.15
+    # 0.18.45 title: first-launch logo and menu fade in, dot snow and lamp flicker.
+    pause 0.3
     screenshot "t0.png"
-    pause 0.25
+    pause 0.7
     screenshot "t1.png"
-    pause 0.6
+    pause 0.8
     screenshot "t2.png"
-    pause 1.5
+    pause 0.9
     screenshot "t3.png"
-    pause 0.5
+    pause 0.8
     screenshot "t4.png"
     assert eval (R13_TITLE_STATE["intro_done"])
-
 
 testcase motion_reel:
     # 0.18.43 review reel: record the screen while this runs (not in the default set).
