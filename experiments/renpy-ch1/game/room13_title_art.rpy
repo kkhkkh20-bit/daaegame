@@ -31,7 +31,7 @@ init 60 python:
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
             out=renpy.Render(w,h);c=out.canvas()
-            out.blit(renpy.render(R13StonePanel(focused=self.focused,alpha="ff"),w,h,st,at),(0,0))
+            out.blit(renpy.render(R13InkPanel(focused=self.focused,alpha="ff"),w,h,st,at),(0,0))
             if self.focused:
                 c.polygon('#e5ddbf',[(20,h//2),(26,h//2-6),(32,h//2),(26,h//2+6)])
             return out
@@ -50,7 +50,7 @@ init 81:
         hover_background R13TitleLink(True)
         selected_background R13TitleLink(True)
         selected_hover_background R13TitleLink(True)
-        insensitive_background R13StonePanel(disabled=True,alpha="ff")
+        insensitive_background R13InkPanel(disabled=True,alpha="ff")
         padding (22,7)
     style r13_title_button_text is r13_button_text:
         font r13_ui_font()

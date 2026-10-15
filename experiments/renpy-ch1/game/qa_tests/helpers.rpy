@@ -517,7 +517,7 @@ init 999 python:
             renpy.screenshot(os.path.join(out,"blink_%s_open.png"%emotion));shots.append("open")
             report["blink"][emotion]=dict(spec=bool(spec),shots=shots)
             renpy.hide("r13_visitor")
-        # 0.18.32: Daram's body reacts when her expression changes (neutral -> each emotion).
+        # 0.18.33: Daram's body reacts when her expression changes (neutral -> each emotion).
         report["react"]={}
         for emotion in ("surprise","joy","angry","anxious","flustered"):
             r13_speaker("daram","neutral","neutral")

@@ -8,7 +8,7 @@ init 79 python:
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(42,int(height))
             r=renpy.Render(w,h)
-            r.blit(renpy.render(R13StonePanel(focused=self.hover),w,h,st,at),(0,0))
+            r.blit(renpy.render(R13InkPanel(focused=self.hover),w,h,st,at),(0,0))
             c=r.canvas()
             c.rect("#626b60" if self.hover else "#2b3230",(10,10,44,h-20))
             if self.number is not None:

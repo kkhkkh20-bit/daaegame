@@ -153,8 +153,8 @@ screen r13_map(initial_region=None):
                 for key,point in r13_map_nodes(region):
                     button:
                         xsize 830 ysize 136 padding (24,18)
-                        background R13StonePanel(focused=(key==selected))
-                        hover_background R13StonePanel(focused=True)
+                        background R13InkPanel(focused=(key==selected))
+                        hover_background R13InkPanel(focused=True)
                         action SetScreenVariable("selected",key) sensitive ready
                         vbox:
                             spacing 12
@@ -171,8 +171,8 @@ screen r13_map(initial_region=None):
             button:
                 area (30+px-82,150+py-30,164,64)
                 padding (6,4)
-                background R13StonePanel(focused=(key==selected))
-                hover_background R13StonePanel(focused=True)
+                background R13InkPanel(focused=(key==selected))
+                hover_background R13InkPanel(focused=True)
                 action SetScreenVariable("selected",key) sensitive ready
                 vbox:
                     xalign .5 yalign .5 spacing 3
@@ -181,7 +181,7 @@ screen r13_map(initial_region=None):
                         text "● 현재 위치" size 17 color "#f3ca73" xalign .5
     if selected is not None:
         frame:
-            area (916,150,334,490) padding (22,18) background R13StonePanel()
+            area (916,150,334,490) padding (22,18) background R13InkPanel()
             fixed:
                 xsize 290 ysize 454
                 text R13_PLACES[selected][0] ypos 0 size 27 color "#f6ddb0" xsize 286

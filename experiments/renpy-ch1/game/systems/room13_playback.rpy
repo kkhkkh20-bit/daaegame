@@ -38,7 +38,7 @@ screen r13_backlog():
 
 screen r13_playback_footer():
     $ footer_width=r13_footer_width(3)
-    add R13StonePanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
+    add R13InkPanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
     frame:
         area (1280-footer_width,664,footer_width,56) padding (8,0) background None
         hbox:
