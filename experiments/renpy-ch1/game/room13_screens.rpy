@@ -46,7 +46,7 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        # Question screens: the large "돌아가기" button returns; only the tools
+        # Question screens: "돌아가기" sits at the bottom left (0.18.42); only the tools
         # used while choosing a question stay here.
         $ footer_width=r13_footer_width(2 if present_action is not None else 1)
         add R13InkPanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
@@ -231,7 +231,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         # 0.18.39 (owner): the list sits where the dialogue window is. Its bottom is the window's
         # bottom edge (632) and it grows upward, so the face stays visible and choices and lines
         # are read at the same height.
-        $ list_bottom=560 if return_action is not None else 632
+        $ list_bottom=632
         # One line per question (owner, 0.18.39): text height plus a small margin, not two lines.
         $ row_h=(58 if persistent.room13_large_text else 48)
         # Measured (0.18.41), so a caption that wraps to two lines still fits without scrolling.
@@ -268,10 +268,12 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 key ("K_%d"%(index+1)) action action
                 key ("K_KP%d"%(index+1)) action action
         if return_action is not None:
+            # 0.18.42 (owner): not centred under the list, where it read as another choice.
+            # Bottom-left corner, on the same row as the tools at the bottom right.
             textbutton "돌아가기":
-                xpos list_left+list_width//2 xanchor .5 ypos 572 xsize 220 ysize 60
-                padding (18,12) background R13InkPanel() hover_background R13InkPanel(focused=True)
-                text_size r13_read_size(23,28) text_color "#fff4df" text_xalign .5
+                xpos 0 ypos 676 xsize 150 ysize 44
+                padding (12,6) background R13InkPanel() hover_background R13InkPanel(focused=True)
+                text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
                 action return_action sensitive ready
     else:
         add Solid("#00000048")
@@ -334,9 +336,9 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 key ("K_KP%d"%(index+1)) action action
         if return_action is not None:
             textbutton "돌아가기":
-                xpos list_left+compact_width//2 xanchor .5 ypos 544 xsize 150 ysize 44
+                xpos 0 ypos 676 xsize 150 ysize 44
                 padding (12,6) background R13InkPanel() hover_background R13InkPanel(focused=True)
-                text_size r13_read_size(20,25) text_color "#fff4df" text_xalign .5
+                text_size r13_read_size(20,24) text_color "#fff4df" text_xalign .5
                 action return_action sensitive ready
 
 screen r13_entry_topics():
