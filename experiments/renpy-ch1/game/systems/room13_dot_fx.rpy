@@ -113,6 +113,8 @@ init 57 python:
 
     def r13_dot_fx_wanted(location, period):
         fx = R13_DOT_FX
+        if "%s:%s" % (location, period) in fx.get("lights", {}):
+            return True
         if location == "inn" and period in fx.get("inn_fire", {}).get("periods", {}):
             return True
         if period in fx.get("lamp_glow", {}).get(location, {}).get("periods", []):
@@ -150,22 +152,13 @@ init 57 python:
         if location == "inn" and period in fire.get("periods", {}):
             item = fire["periods"][period]
             layers.append(R13FxSheet(item["sheet"], fire["rect"], fire["frames"], fire["fps"], size))
-            glow = fx.get("inn_glow", {})
-            if period in glow.get("periods", []):
-                layers.append(R13FxPulse(glow["file"], item["light"], fire["fps"], glow["alpha"], size))
-        lamp = fx.get("lamp_glow", {}).get(location)
-        if lamp and period in lamp.get("periods", []):
-            # 두세 번에 한 번 짧게 흔들리는 가로등(1.0=평소).
-            levels = [1, 1, 1, 1, 1, 1, .55, 1, .8, 1, 1, 1, 1, 1, 1, 1, 1, 1, .6, 1, 1, 1, 1, 1]
-            layers.append(R13FxPulse(lamp["file"], levels, 1 / .12, lamp["alpha"], size))
+        # 0.18.53: 빛과 그림자가 함께 숨쉬는 조명 장치(이전의 빛 판 깜빡임을 대신한다).
+        rig = r13_light_rig("%s:%s" % (location, period), size)
+        if rig:
+            layers.append(rig)
         smoke = fx.get("smoke", {})
         if location in smoke.get("sources", {}) and period in smoke.get("periods", []):
             layers.append(R13FxSmoke(smoke, smoke["sources"][location], size))
-        lamp = fx.get("lamps", {}).get(location)
-        if lamp and period in lamp.get("periods", []):
-            # 실내 등불: 느리게 일렁이다 가끔 한 번 깜빡(1.0=평소).
-            levels = R13_LAMP_LEVELS
-            layers.append(R13FxPulse(lamp["file"], levels, 1 / .14, lamp["alpha"], size))
         window = fx.get("inn_window", {})
         if location == "inn" and period in window.get("periods", []):
             wx, wy, ww, wh = window["rect"]
@@ -587,9 +580,9 @@ init 57 python:
         if cached is not None:
             return cached
         layers = []
-        if spec.get("lamp"):
-            levels = R13_LAMP_LEVELS
-            layers.append(R13FxPulse(spec["lamp"], levels, 1 / .14, spec["alpha"], size))
+        rig = r13_light_rig("cine:" + key, size)
+        if rig:
+            layers.append(rig)
         if spec.get("snow"):
             snow = dict(R13_DOT_FX.get("snow", {}))
             # 832x466 그림 기준: 눈 수와 속도를 화면 비율만큼 줄인다.
@@ -696,3 +689,84 @@ transform r13_body_thinking(lead=0.0):
     ease .3 xoffset 12 yoffset 4 yzoom 0.9918
     pause .9
     ease .4 xoffset 0 yoffset 0 yzoom 1
+
+# ---------------------------------------------------------------- 0.18.53 빛과 그림자
+# 불빛이 흔들리면 방 전체의 명암이 같이 숨쉰다(소유자: "횃불이 있으면 그림자 부분도 일렁여야").
+#  - 빛마다 따로, 매 프레임 부드럽게 흔들린다(불꽃은 빠르고 크게, 등불은 느리고 작게, 촛불은 그 사이).
+#  - 가장 센 빛이 약해지면 빛에서 먼 곳이 짙어져 빛 웅덩이가 줄어들고, 세지면 넓어진다.
+#  - 벽난로 앞 바닥 그림자는 불꽃이 커질 때 짙어지며 불 반대쪽으로 아주 조금 늘어난다.
+# 판은 dev/make_dot_fx.py의 light_rigs()가 만든다(room13-dot-fx.json "lights").
+init 57 python:
+    R13_LIGHT_KINDS = {
+        # (기본 밝기, 흔들림 폭, 빠르기)
+        "fire": (.78, .30, 5.5),
+        "candle": (.84, .20, 3.6),
+        "lamp": (.93, .09, 1.1),
+    }
+
+    def r13_noise_table(seed, n=64):
+        state = seed * 7919 + 13
+        vals = []
+        for _ in range(n):
+            state = (state * 16807) % 2147483647
+            vals.append(state / 2147483647.0)
+        return vals
+
+    def r13_smooth_noise(table, t):
+        n = len(table)
+        i = int(t) % n
+        f = t - int(t)
+        f = f * f * (3 - 2 * f)
+        return table[i] * (1 - f) + table[(i + 1) % n] * f
+
+    class R13FxLightRig(R13FxClock):
+        def __init__(self, spec, size, **kwargs):
+            super(R13FxLightRig, self).__init__(size, **kwargs)
+            self.spec = spec
+            self.lights = []
+            for i, g in enumerate(spec["glows"]):
+                base, amp, rate = R13_LIGHT_KINDS.get(g["kind"], R13_LIGHT_KINDS["lamp"])
+                self.lights.append(dict(g, base=base, amp=amp, rate=rate,
+                    n1=r13_noise_table(i * 3 + 1), n2=r13_noise_table(i * 3 + 2), phase=i * 1.37))
+            self.lead = spec.get("lead", 0)
+            self.shade = renpy.displayable(spec["shade"])
+            self.sway = spec.get("sway")
+
+        def visit(self):
+            out = [self.shade] + [renpy.displayable(l["file"]) for l in self.lights]
+            if self.sway:
+                out.append(renpy.displayable(self.sway["file"]))
+            return out
+
+        def level(self, l, st):
+            v = (.6 * r13_smooth_noise(l["n1"], st * l["rate"] + l["phase"])
+                 + .25 * r13_smooth_noise(l["n2"], st * l["rate"] * 2.3)
+                 + .15 * (.5 + .5 * r13_fx_math.sin(st * .9 + l["phase"])))
+            # 여러 잡음을 더하면 가운데로 몰리므로 폭을 다시 넓힌다.
+            v = min(1.0, max(0.0, (v - .5) * 2.0 + .5))
+            # 0~1로 정규화한 세기(1=가장 밝음)와 실제 밝기
+            return v, l["base"] + l["amp"] * (v - .5) * 2
+
+        def draw(self, out, st):
+            w, h = self.size
+            lead_v = .5
+            for i, l in enumerate(self.lights):
+                v, _ = self.level(l, st)
+                if i == self.lead:
+                    lead_v = v
+                a = .30 * l["strength"] * (.25 + .75 * v)
+                g = renpy.render(Transform(l["file"], alpha=a, blend="add"), w, h, st, 0)
+                out.blit(g, tuple(l["pos"]))
+            # 빛 웅덩이: 가장 센 빛이 약할수록 먼 곳이 짙어진다.
+            sa = self.spec["shade_alpha"] * (.15 + .85 * (1 - lead_v))
+            out.blit(renpy.render(Transform(self.shade, alpha=sa), w, h, st, 0), (0, 0))
+            if self.sway:
+                cx, cy = self.sway["center"]
+                z = 1.0 + .008 * (lead_v - .5) * 2
+                r = renpy.render(Transform(self.sway["file"], zoom=z, alpha=self.sway["alpha"] * (.25 + .75 * lead_v)), w, h, st, 0)
+                out.subpixel_blit(r, (cx * (1 - z), cy * (1 - z)))
+            return 1.0 / 20.0
+
+    def r13_light_rig(key, size):
+        spec = R13_DOT_FX.get("lights", {}).get(key)
+        return R13FxLightRig(spec, size) if spec else None

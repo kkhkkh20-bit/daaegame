@@ -2620,3 +2620,11 @@ testcase offer_on_person:
     click pos (1150,90) until screen "choice" timeout 40
     assert eval (r13_has("ev_l_done"))
     $ r13_qa_crowd_dump()
+
+testcase motion_audit:
+    # Screen-recorded motion audit (not in the default set).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_audit")
+    click pos (1276,300) until eval r13_qa_audit_done timeout 180
