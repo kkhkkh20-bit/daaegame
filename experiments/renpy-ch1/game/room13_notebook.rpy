@@ -21,7 +21,7 @@ init 68 python:
         raw=(getattr(persistent,"room13_knowledge",[]) or []) if archive and not present else ((store.room13 or {}).get("evidence",[]))
         entries=list(dict.fromkeys(key for key in raw if key in ROOM13["evidence"] and r13_record_category(key)==category))
         if order=="recent":entries.reverse()
-        if favorite_only and not archive:entries=[key for key in entries if r13_record_favorite(key)]
+        # The legacy favorite_only argument is ignored so old saved filters cannot hide records.
         return entries
     def r13_record_page_size():return 8 if getattr(persistent,"room13_large_text",False) else R13_RECORD_PAGE_SIZE
     def r13_record_pages(entries):return max(1,(len(entries)+r13_record_page_size()-1)//r13_record_page_size())
@@ -44,11 +44,10 @@ init 68 python:
         return [k for k in keys if k in entries]+[k for k in entries if k not in keys]
     def r13_present_selection(entries,detail,page):
         return detail if detail in entries[r13_record_page(entries,page)*r13_record_page_size():][:r13_record_page_size()] else None
-    def r13_record_favorite(key):return key in (store.room13 or {}).get("record_ui",{}).get("favorites",[])
     def r13_record_unread(key):
         return key in (store.room13 or {}).get("evidence",[]) and key not in (store.room13 or {}).get("record_ui",{}).get("seen",[])
     def r13_record_update_ui(field,key,add):
-        if field not in ("favorites","seen") or key not in (store.room13 or {}).get("evidence",[]):return False
+        if field!="seen" or key not in (store.room13 or {}).get("evidence",[]):return False
         ui_state=winter_copy.deepcopy(store.room13.get("record_ui",{}))
         values=list(ui_state.get(field,[]))
         if add and key not in values:values.append(key)
@@ -64,8 +63,9 @@ init 68 python:
         r13_record_update_ui("seen",key,True)
         renpy.restart_interaction()
     def r13_record_toggle_favorite(key):
-        r13_record_update_ui("favorites",key,not r13_record_favorite(key))
-        renpy.restart_interaction()
+        # Retired UI action name retained for already-saved screen actions.
+        pass
+
     R13_RECORD_ICON_SHEET=json.load(renpy.file("assets/room13-evidence-icons.json")) if renpy.loadable("assets/room13-evidence-icons.json") else {}
     def r13_record_icon(key):
         # Testimony portraits come only from authored evidence_sources.
@@ -163,16 +163,12 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
         textbutton "달력" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="calendar" action (Function(r13_record_select,owner,"tab","calendar") if not isinstance(owner,str) else Show("r13_calendar"))
         textbutton "아이템" style "r13_paper_tab_button" xsize 176 ysize 40 text_size 18 selected current=="items" action (Function(r13_record_select,owner,"tab","items") if not isinstance(owner,str) else Show("r13_item_bag"))
 
-screen r13_record_filters(owner,order,favorite_only,archive=False):
+screen r13_record_filters(owner,order,archive=False):
     hbox:
         xpos 280 ypos 76 spacing 10
         textbutton ("최근 획득순" if order=="recent" else "발견 순서"):
             style "r13_compact_button" xsize 246 ysize 42 text_size 19
             action [Function(r13_record_select,owner,"order","acquired" if order=="recent" else "recent"),Function(r13_record_select,owner,"page",0)]
-        textbutton ("관심 자료만 · 켜짐" if favorite_only else "관심 자료만"):
-            style "r13_compact_button" xsize 246 ysize 42 text_size 19
-            selected favorite_only sensitive not archive
-            action [Function(r13_record_select,owner,"favorite_only",not favorite_only),Function(r13_record_select,owner,"page",0)]
 
 screen r13_material_grid(entries,detail,page,owner,archive=False):
     $ actual_page=r13_record_page(entries,page)
@@ -192,7 +188,7 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
                 vbox:
                     xalign .5 yalign .5 spacing 6
                     add Transform(r13_record_icon(key),xysize=(60,60),fit="contain",nearest=True) xalign .5
-                    text (("★ " if not archive and r13_record_favorite(key) else "● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,ROOM13["evidence"][key]["name"][:8])):
+                    text (("● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,ROOM13["evidence"][key]["name"][:8])):
                         size r13_read_size(16,21) color "#493b30" xsize cell-20 text_align .5
     hbox:
         xpos 302 ypos 596 spacing 12
@@ -211,7 +207,7 @@ screen r13_material_detail(detail,archive=False):
         add Transform(r13_record_icon(detail),xysize=(132,128),fit="contain",nearest=True) xpos 954 ypos 78
         text ev["name"] xpos 842 ypos 218 xsize 362 text_align .5 size r13_read_size(23,28) color "#6c512a"
         viewport:
-            area (844,266,358,226) mousewheel True draggable True scrollbars "vertical"
+            area (844,266,358,274) mousewheel True draggable True scrollbars "vertical"
             vbox:
                 spacing 12
                 text ev["establishes"] size r13_read_size(21,26) color "#493b30" xsize 332
@@ -220,9 +216,6 @@ screen r13_material_detail(detail,archive=False):
                     text r13_learning_record_status(detail) size 17 color "#555943" xsize 332
                 if not archive and detail in room13.get("records",{}):
                     text ("얻은 곳: "+room13["records"][detail]["source"]) size 17 color "#625738" xsize 332
-        if not archive:
-            textbutton ("★ 관심 해제" if r13_record_favorite(detail) else "☆ 관심 표시"):
-                style "r13_paper_tab_button" xpos 884 ypos 510 xsize 272 ysize 40 text_size 19 action Function(r13_record_toggle_favorite,detail)
     else:
         text "자료를 선택하세요." xpos 846 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
@@ -259,7 +252,6 @@ screen r13_records(initial_tab="evidence",note_focus=None,close_action=None,targ
     default page=0
     default archive=False
     default order="recent"
-    default favorite_only=False
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab in ("evidence","testimony"):
@@ -267,9 +259,9 @@ screen r13_records(initial_tab="evidence",note_focus=None,close_action=None,targ
             textbutton ("이번 여정" if not archive else "지난 플레이"):
                 style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
                 action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-        $ entries=r13_record_entries(tab,archive,order=order,favorite_only=favorite_only)
+        $ entries=r13_record_entries(tab,archive,order=order)
         $ selected_record=r13_record_selected(entries,detail,page)
-        use r13_record_filters(_scope,order,favorite_only,archive)
+        use r13_record_filters(_scope,order,archive)
         use r13_material_grid(entries,selected_record,page,_scope,archive)
         use r13_material_detail(selected_record,archive)
     elif tab=="people":

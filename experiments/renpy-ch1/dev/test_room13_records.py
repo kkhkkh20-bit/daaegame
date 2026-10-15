@@ -16,6 +16,8 @@ assert config.history_length==250 and len(config.history_callbacks)==1
 s.room13={'evidence':['E01','E06','E06','unknown','E10'],'encounters':[],'read_topics':[],'resident_knowledge':{}}
 persistent.room13_knowledge=['E01','E02','E12']
 assert env['r13_record_entries']('testimony')==['E06','E10']
+# A saved favorite-only filter must not hide records after the feature is removed.
+assert env['r13_record_entries']('testimony',favorite_only=True)==['E06','E10']
 assert env['r13_record_entries']('evidence')==['E01']
 assert env['r13_record_entries']('testimony',True)==['E12']
 assert env['r13_record_entries']('testimony',True,True)==['E06','E10']
