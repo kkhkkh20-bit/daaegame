@@ -66,6 +66,17 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 101 | `systems/room13_daram_home.rpy:103` | _r13_mem_topic_lines |
 | 7 | 114 | `systems/room13_memory.rpy:74` |  |
 
+## `r13_first_mystery_notes` (6층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 76 | `room13_first_mystery.rpy:26` | _r13_firstday_notes |
+| 2 | 94 | `systems/room13_first_day_flow.rpy:37` | _r13_intro_notes |
+| 3 | 97 | `systems/room13_intro_clues.rpy:119` | _r13_learning_mystery_notes |
+| 4 | 98 | `systems/room13_learning.rpy:116` | _r13_poc_notes |
+| 5 | 100 | `systems/room13_poc_route.rpy:138` | _r13_tn_notes |
+| 6 | 121 | `systems/room13_trial_notes.rpy:38` |  |
+
 ## `r13_compare_result` (5층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -85,16 +96,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 3 | 94 | `systems/room13_shop.rpy:61` | _r13_items_finish_topic |
 | 4 | 96 | `systems/room13_items.rpy:123` | _r13_daram_home_finish |
 | 5 | 101 | `systems/room13_daram_home.rpy:114` |  |
-
-## `r13_first_mystery_notes` (5층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 76 | `room13_first_mystery.rpy:26` | _r13_firstday_notes |
-| 2 | 94 | `systems/room13_first_day_flow.rpy:37` | _r13_intro_notes |
-| 3 | 97 | `systems/room13_intro_clues.rpy:119` | _r13_learning_mystery_notes |
-| 4 | 98 | `systems/room13_learning.rpy:116` | _r13_poc_notes |
-| 5 | 100 | `systems/room13_poc_route.rpy:138` |  |
 
 ## `r13_where` (5층)
 

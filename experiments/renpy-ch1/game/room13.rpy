@@ -641,6 +641,7 @@ label r13_verdict:
     else:
         $ r13_edit(daram_state="held",trial_result="detained")
         call r13_lines([("resident_seori","뒤집힌 부분은 기록에 남겼습니다. 하지만 오늘 모은 자료만으로는 아이를 풀어 달라는 요청이 받아들여지지 않았습니다."),("resident_ppul","추가 확인은 아이를 보호시설로 옮겨서 하겠습니다."),("dad","확인하지 못한 일까지 아이 죄로 못 박지 마십시오."),("daram","아빠는 같이 못 와?"),("neoul","오늘은 여기까지입니다."),("dad","다시 올게. 다른 데로 옮겨지면 꼭 말 남겨 줘."),("daram","아빠도. 아빠가 못 오면…… 누가 대신 오는지 말해 줘.")],"verdict:held")
+    $ r13_record_trial_notes()
     $ r13_edit(trial_ended=True,period=3)
     jump r13_week2_opening
 
@@ -655,6 +656,7 @@ label r13_prevention_hearing:
                 call r13_lines([("resident_owlgp","초소 원본을 여기서 직접 대조해 봅시다. 아이를 떼어 놓고 볼 일이 아니오."),(None,"초소 담당자를 불러 원본을 확인했다. 그동안 우리 부녀는 떨어지지 않고 함께 기다렸다.")],"prevention:independent_check")
         "사람들 앞에서 원본을 대조하자고 한다":
             call r13_lines([("resident_owlgp","그날 아이는 나와 같이 있었소. 원본과 그걸 확인한 사람을 함께 부르시오."),("resident_seori","사람들 앞에서 원본을 대조하기 전까지 가족을 떼어 놓지 마십시오.")],"prevention:witness")
+    $ r13_record_trial_notes(prevention=True)
     $ r13_edit(trial_result="prevention_hearing",trial_ended=True,daram_state="with_dad",period=3)
     jump r13_week2_opening
 

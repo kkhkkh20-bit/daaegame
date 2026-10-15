@@ -1617,3 +1617,14 @@ testcase inn_change:
     click "까로와 되돌아온 짐을 확인하러 간다"
     click pos (640,600) until screen "r13_hub" timeout 60
     assert eval (room13["case_state"]=="prevented" and room13["victim_state"]=="protected" and "H13" in room13["evidence"] and "E34" in room13["evidence"] and r13_has("plan_noticed"))
+
+testcase trial_notes:
+    # 0.18.19: three lines per claim after the trial; no record names.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",case_state="occurred",propositions=["C1","C2"]),())
+    pause 1.0
+    run Function(r13_record_trial_notes)
+    assert eval (len(room13["trial_notes"])==4 and room13["trial_notes"][2]["result"]=="할머니의 이동에 관한 주장은 남았다." and not any(k in n["fact"]+n["question"]+n["result"] for n in room13["trial_notes"] for k in ROOM13["evidence"]))
+    assert eval (any(n.get("result")=="잠긴 방에 아이만 있었다는 주장은 무너졌다." for n in r13_first_mystery_notes()))
