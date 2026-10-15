@@ -736,3 +736,53 @@ init 999 python:
         R13_QA_WIDE_LOG.append(dict(tag="capacity",kind="capacity",rows=len(rows),over_groups=groups,over_count=len(over),peak=peak))
         r13_qa_wide_write()
         return not over
+
+init 999 python:
+    def r13_qa_note(text):
+        import os
+        out=os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa");os.makedirs(out,exist_ok=True)
+        with open(os.path.join(out,"notes.txt"),"a") as f:f.write(text+"\n")
+
+    def r13_qa_crowd_dump():
+        # 0.18.53: who stands where, per day and time slot, with the present flag state.
+        import os,json
+        saved=winter_copy.deepcopy(store.room13);rows=[]
+        for day in range(1,15):
+            for period in range(3):
+                for loc in sorted(R13_PLACES):
+                    n=winter_copy.deepcopy(saved);n.update(day=day,period=period,location=loc);store.room13=n
+                    try:people=list(r13_people())
+                    except Exception as e:people=["ERR:"+str(e)]
+                    rows.append(dict(day=day,period=period,location=loc,people=people))
+        store.room13=saved
+        out=os.environ.get("ROOM13_QA_OUT","/tmp/room13-qa");os.makedirs(out,exist_ok=True)
+        json.dump(rows,open(os.path.join(out,"crowd.json"),"w"),ensure_ascii=False,indent=0)
+
+# Motion audit reel (screen-recorded for review; not in the default set).
+default r13_qa_audit_done = False
+label r13_qa_audit:
+    call r13_qa_setup(5,["E01"])
+    $ place="여관 접수대"
+    $ preferences.text_cps=0
+    hide screen r13_hud
+    python:
+        for location,period in (("inn","evening"),("inn","afternoon"),("square","evening"),("workshop","evening"),("clinic","evening"),("store","evening"),("school","evening")):
+            renpy.scene()
+            renpy.show("r13_qa_fx_bg",what=r13_world_background(location,period))
+            renpy.with_statement(r13_bleed(.8))
+            renpy.pause(3.2,hard=True)
+        for key in ("E3","proof"):
+            renpy.scene();renpy.show("r13_qa_fx_bg",what=r13_cinematic_art(key));renpy.with_statement(r13_bleed(.6))
+            renpy.pause(2.6,hard=True)
+        renpy.scene();renpy.show("r13_qa_fx_bg",what=r13_world_background("inn","evening"))
+        for legacy,pose in (("neutral","neutral"),("expressive","surprise"),("neutral","neutral"),("distressed","angry")):
+            r13_speaker("daram",legacy,pose)
+            renpy.say(R13_CHARS.get("daram"),"움직임 점검 문장입니다.",interact=False)
+            renpy.pause(1.8,hard=True)
+        renpy.hide("r13_visitor");store.r13_motion_person=None
+        renpy.show_screen("r13_evidence_found",keys=["E01"],conversation=False)
+        renpy.pause(2.6,hard=True)
+        r13_fx_cue("present")
+        renpy.pause(1.4,hard=True)
+        store.r13_qa_audit_done=True
+    return

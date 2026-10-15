@@ -21,6 +21,65 @@ init 124 python:
         "r13_ev_b_store":("창고 앞에서 백 부인이 누군가를 몰아세우고 있다",[],""),
     }
 
+    # 0.18.53 (owner): press the person doing it, not a text marker. label: (person, event pose).
+    # The event pose is used only once its art exists; until then the closest existing pose.
+    R13_OFFER_ACTORS={
+        "r13_w1c_portrait":("resident_piko",None),
+        "r13_w1c_letters":("resident_sling",("event_steam","thinking")),
+        "r13_w1c_extension":("resident_ttadak",None),
+        "r13_w1c_seal":("resident_mungchi",None),
+        "r13_w1c_testimony":("resident_siluk",None),
+        "r13_b3_pages":("resident_librarian",None),
+        "r13_w2e_tools":("buri",None),
+        "r13_ep4_accused":("resident_tok",None),
+        "r13_ev_b_store":("resident_madam",None),
+    }
+
+    def r13_offer_for_person(person):
+        for key,text in r13_offers_here():
+            if R13_OFFER_ACTORS.get(key,(None,))[0]==person:return key
+        return None
+
+    def r13_offer_staged(key,actors):
+        person=R13_OFFER_ACTORS.get(key,(None,))[0]
+        return bool(person) and any(a["person"]==person for a in actors)
+
+    def r13_person_action(person,entry=False):
+        key=None if entry else r13_offer_for_person(person)
+        return Return(("offer",key)) if key else Return(("person",person))
+
+    def r13_offer_pose(person,poses):
+        for pose in poses:
+            if r13_acting_spec(person,pose):return pose
+        return None
+
+    _r13_offer_stage=r13_stage_people
+    def r13_stage_people(entry=False):
+        actors=_r13_offer_stage(entry)
+        if entry or not store.room13:return actors
+        result=[]
+        for actor in actors:
+            key=r13_offer_for_person(actor["person"])
+            poses=R13_OFFER_ACTORS.get(key,(None,None))[1] if key else None
+            pose=r13_offer_pose(actor["person"],poses) if poses else None
+            if not pose or pose==actor["pose"]:result.append(actor);continue
+            # Keep the same feet and stature; only the activity changes.
+            old=r13_acting_spec(actor["person"],actor["pose"]) or {};new=r13_acting_spec(actor["person"],pose)
+            ow,oh=r13_actor_geometry(actor["person"],actor["pose"]);nw,nh=r13_actor_geometry(actor["person"],pose)
+            scale=float(actor["height"])/oh
+            of=old.get("foot",[ow/2.0,oh]);nf=new.get("foot",[nw/2.0,nh])
+            fx=actor["x"]+of[0]*scale;fy=actor["y"]+of[1]*scale
+            x=int(fx-nf[0]*scale);y=int(fy-nf[1]*scale);w=int(nw*scale);h=int(nh*scale)
+            changed=dict(actor);changed.update(pose=pose,x=x,y=y,width=w,height=h,rect=[max(0,x),max(0,y),w,h],depth=y+h,contact=new.get("contact","standing"))
+            result.append(changed)
+        return sorted(result,key=lambda a:a["depth"])
+
+    _r13_offer_edge_label=r13_world_edge_label
+    def r13_world_edge_label(people):
+        # Someone off to the side has an event going on: mark the edge tag too.
+        label=_r13_offer_edge_label(people)
+        return ("! "+label) if any(r13_offer_for_person(p) for p in people) else label
+
     def r13_offer(label):
         s=store.room13
         offers=dict(s.get("offers",{}))
@@ -63,7 +122,9 @@ label r13_take_offer(label):
     return _return
 
 screen r13_event_offers(ready=False):
-    $ offers=r13_offers_here()
+    # Offers whose person stands here are pressed on that person (see r13_world_contents).
+    $ staged=r13_stage_people()
+    $ offers=[(k,t) for k,t in r13_offers_here() if not r13_offer_staged(k,staged)]
     if offers:
         vbox:
             xpos 24 ypos 236 spacing 8

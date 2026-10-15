@@ -152,6 +152,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 90 | `room13_route_knowledge.rpy:28` | _r13_firstday_places |
 | 3 | 94 | `systems/room13_first_day_flow.rpy:19` |  |
 
+## `r13_stage_people` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:303` | _r13_daram_home_stage |
+| 2 | 101 | `systems/room13_daram_home.rpy:30` | _r13_offer_stage |
+| 3 | 124 | `systems/room13_event_offers.rpy:57` |  |
+
 ## `r13_bed_available` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -278,13 +286,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 91 | `systems/room13_livelihood_model.rpy:30` | _r13_b3_shop_price |
 | 2 | 107 | `systems/room13_bundle3.rpy:50` |  |
 
-## `r13_stage_people` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:303` | _r13_daram_home_stage |
-| 2 | 101 | `systems/room13_daram_home.rpy:30` |  |
-
 ## `r13_visible_people` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -305,4 +306,11 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 56 | `room13_week2_rules.rpy:192` | _r13_pf_w2_present |
 | 2 | 113 | `systems/room13_present_flow.rpy:69` |  |
+
+## `r13_world_edge_label` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 58 | `room13_world_camera.rpy:71` | _r13_offer_edge_label |
+| 2 | 124 | `systems/room13_event_offers.rpy:78` |  |
 

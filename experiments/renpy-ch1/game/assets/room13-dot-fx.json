@@ -343,6 +343,596 @@
   "card_glow": "assets/room13-fx-card-glow.webp",
   "vignette": "assets/room13-fx-edge-vignette.webp"
  },
+ "lights": {
+  "inn:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-inn-evening.webp",
+   "shade_alpha": 0.42,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-inn-evening-0.webp",
+     "pos": [
+      -670,
+      -455
+     ],
+     "strength": 1.0,
+     "kind": "fire"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-1.webp",
+     "pos": [
+      73,
+      12
+     ],
+     "strength": 0.55,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-2.webp",
+     "pos": [
+      171,
+      -43
+     ],
+     "strength": 0.5,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-3.webp",
+     "pos": [
+      1168,
+      -56
+     ],
+     "strength": 0.5,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-4.webp",
+     "pos": [
+      1301,
+      49
+     ],
+     "strength": 0.55,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-5.webp",
+     "pos": [
+      46,
+      -26
+     ],
+     "strength": 0.45,
+     "kind": "candle"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-6.webp",
+     "pos": [
+      80,
+      -2
+     ],
+     "strength": 0.45,
+     "kind": "candle"
+    }
+   ],
+   "lead": 0,
+   "sway": {
+    "file": "assets/room13-fx-sway-inn-evening.webp",
+    "center": [
+     150,
+     365
+    ],
+    "alpha": 0.7
+   }
+  },
+  "inn:morning": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-inn-morning.webp",
+   "shade_alpha": 0.12,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-inn-morning-0.webp",
+     "pos": [
+      -470,
+      -255
+     ],
+     "strength": 0.8,
+     "kind": "fire"
+    }
+   ],
+   "lead": 0,
+   "sway": {
+    "file": "assets/room13-fx-sway-inn-morning.webp",
+    "center": [
+     150,
+     365
+    ],
+    "alpha": 0.4
+   }
+  },
+  "inn:afternoon": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-inn-afternoon.webp",
+   "shade_alpha": 0.12,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-inn-afternoon-0.webp",
+     "pos": [
+      -470,
+      -255
+     ],
+     "strength": 0.8,
+     "kind": "fire"
+    }
+   ],
+   "lead": 0,
+   "sway": {
+    "file": "assets/room13-fx-sway-inn-afternoon.webp",
+    "center": [
+     150,
+     365
+    ],
+    "alpha": 0.4
+   }
+  },
+  "school:evening": {
+   "size": [
+    1983,
+    793
+   ],
+   "shade": "assets/room13-fx-shade-school-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-school-evening-0.webp",
+     "pos": [
+      1121,
+      -243
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "workshop:evening": {
+   "size": [
+    1983,
+    793
+   ],
+   "shade": "assets/room13-fx-shade-workshop-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-workshop-evening-0.webp",
+     "pos": [
+      -129,
+      -237
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-workshop-evening-1.webp",
+     "pos": [
+      848,
+      -106
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "clinic:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-clinic-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-clinic-evening-0.webp",
+     "pos": [
+      607,
+      -23
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "store:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-store-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-store-evening-0.webp",
+     "pos": [
+      522,
+      -410
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "greenhouse:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-greenhouse-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-greenhouse-evening-0.webp",
+     "pos": [
+      142,
+      -63
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "facility:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-facility-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-facility-evening-0.webp",
+     "pos": [
+      322,
+      -186
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "square:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-square-evening.webp",
+   "shade_alpha": 0.08,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-square-evening-0.webp",
+     "pos": [
+      917,
+      142
+     ],
+     "strength": 0.6,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:return": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-return.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-return-0.webp",
+     "pos": [
+      -52,
+      -82
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:rescue": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-rescue.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-rescue-0.webp",
+     "pos": [
+      306,
+      -52
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:reunion": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-reunion.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-reunion-0.webp",
+     "pos": [
+      624,
+      18
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:mountain": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-mountain.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-mountain-0.webp",
+     "pos": [
+      628,
+      82
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E0": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-e0.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e0-0.webp",
+     "pos": [
+      580,
+      0
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E2": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-e2.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e2-0.webp",
+     "pos": [
+      444,
+      62
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E3": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-e3.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e3-0.webp",
+     "pos": [
+      54,
+      110
+     ],
+     "strength": 0.8,
+     "kind": "candle"
+    },
+    {
+     "file": "assets/room13-fx-glow-cine-e3-1.webp",
+     "pos": [
+      216,
+      184
+     ],
+     "strength": 0.8,
+     "kind": "candle"
+    },
+    {
+     "file": "assets/room13-fx-glow-cine-e3-2.webp",
+     "pos": [
+      532,
+      -78
+     ],
+     "strength": 0.8,
+     "kind": "candle"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E4": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-e4.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e4-0.webp",
+     "pos": [
+      172,
+      174
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E5": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-e5.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e5-0.webp",
+     "pos": [
+      642,
+      158
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-cine-e5-1.webp",
+     "pos": [
+      330,
+      -68
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:proof": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-proof.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-proof-0.webp",
+     "pos": [
+      -178,
+      -138
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "title": {
+   "size": [
+    1280,
+    720
+   ],
+   "shade": "assets/room13-fx-shade-title.webp",
+   "shade_alpha": 0.1,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-title-0.webp",
+     "pos": [
+      306,
+      260
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-1.webp",
+     "pos": [
+      290,
+      494
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-2.webp",
+     "pos": [
+      880,
+      337
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-3.webp",
+     "pos": [
+      1075,
+      321
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-4.webp",
+     "pos": [
+      945,
+      61
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-5.webp",
+     "pos": [
+      924,
+      304
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-6.webp",
+     "pos": [
+      617,
+      203
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  }
+ },
  "title": {
   "glow": "assets/room13-fx-title-glow.webp",
   "alpha": [
