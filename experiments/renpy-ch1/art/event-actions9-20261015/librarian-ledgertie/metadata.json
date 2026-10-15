@@ -1,0 +1,85 @@
+{
+  "asset_id": "resident_librarian",
+  "pose_key_proposed": "event_ledgertie",
+  "file": "room13-pixel-acting-resident_librarian-ledgertie-v2.png",
+  "previous_version": "room13-pixel-acting-resident_librarian-ledgertie.png",
+  "status": "generated_and_visually_checked_not_integrated",
+  "generation_mode": "built-in image_gen identity-preserve plus one coarse-pixel style correction",
+  "canvas_px": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "nearest": true,
+  "facing": "left-down",
+  "subject": "Current mature snow-leopard librarian kneels while tying tan cord around three closed ledgers; gaze down to work.",
+  "source_request": {
+    "path": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md",
+    "section": "2. 같은 방식이 필요한 다른 사건",
+    "exact_text": "사서 선생님이 우체국 구석에서 옛 장부를 묶고 있다",
+    "requested_pose": "장부 더미를 끈으로 묶는 포즈"
+  },
+  "references": [
+    "/workspace/shared/character-catalog40/runtime-assets/resident_librarian.webp",
+    "/workspace/shared/character-catalog40/runtime-actions/room13-redesign-resident_librarian.webp"
+  ],
+  "style_reference": "/workspace/shared/character-catalog40/new-actions/buri-toolbox/buri-toolbox.png",
+  "scene_gates_supplied_by_parent": {
+    "location": "post",
+    "day_min": 4,
+    "day_max": 6,
+    "period_max": 1,
+    "know_stone_history": false
+  },
+  "visible_bbox_alpha_gt32_xyxy": [
+    214,
+    162,
+    1208,
+    1161
+  ],
+  "suggested_runtime_crop_xywh": [
+    194,
+    142,
+    1034,
+    1038
+  ],
+  "estimated_anchors_full_canvas_px": {
+    "foot_center": [
+      826,
+      1103
+    ],
+    "head_center": [
+      560,
+      366
+    ],
+    "cord_knot": [
+      439,
+      896
+    ],
+    "ledger_base": [
+      435,
+      1159
+    ]
+  },
+  "anchor_notes": "All anchors visual estimates, not runtime-tested. Kneeling lower-body ground contact approximately y1103; foreground ledgers extend lower to y1159. Preserve relative ledger/character placement.",
+  "qa": {
+    "white_background": "qa-v2-white.png",
+    "gray_background": "qa-v2-gray.png",
+    "checks_passed": [
+      "Current snow-leopard identity and costume retained.",
+      "Exact requested action, not reading a wet book.",
+      "Coarse square steps throughout eyes, pupils, eyelids, mouth and outer contour.",
+      "Mature head-to-body ratio and established kneeling pose retained.",
+      "Full tail, ears, hands, ledger stack and visible boot in canvas.",
+      "No labels, writing, backdrop, table, second person or other new props.",
+      "White and gray compositing inspected."
+    ],
+    "caveats": [
+      "One boot is naturally hidden by the kneeling pose and dress; not image clipping.",
+      "Generated low-alpha residue preserved as generated; apparent silhouette alpha>32 leaves at least 38px bottom margin.",
+      "A few light/shadow pixel colors remain slightly variable; not a mathematically uniform palette/grid.",
+      "No in-game scale or runtime integration tested."
+    ]
+  },
+  "integration_note": "Optional story-scene enhancement, not a missing required runtime key. No game edits or upload performed."
+}

@@ -8131,6 +8131,1092 @@ testcase wide_room13:
         pause 0.8
         $ r13_qa_wide_log("room13_after_p2_c880_bedside_books","bedside_books")
 
+testcase wide_river:
+    # 0.18.59 wide map river: hit map, screenshot and real clicks per state, period and camera.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="river",life_poc=True,secret_route_unlocked=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c0")
+    screenshot "river_morning_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c0_river_reeds_pre")
+    if eval ("river_reeds" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_reeds")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c0_river_reeds","river_reeds")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c0_river_rocks_pre")
+    if eval ("river_rocks" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_rocks")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c0_river_rocks","river_rocks")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c0_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c0_river_water","river_water")
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c440")
+    screenshot "river_morning_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c440_river_ice_pre")
+    if eval ("river_ice" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_ice")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c440_river_ice","river_ice")
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c440_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c440_river_water","river_water")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c880")
+    screenshot "river_morning_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c880_river_ice_pre")
+    if eval ("river_ice" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_ice")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c880_river_ice","river_ice")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c880_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c880_river_water","river_water")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p0_c880_river_cliffs_pre")
+    if eval ("river_cliffs" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_cliffs")
+        pause 0.8
+        $ r13_qa_wide_log("river_p0_c880_river_cliffs","river_cliffs")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c0")
+    screenshot "river_afternoon_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c0_river_reeds_pre")
+    if eval ("river_reeds" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_reeds")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c0_river_reeds","river_reeds")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c0_river_rocks_pre")
+    if eval ("river_rocks" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_rocks")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c0_river_rocks","river_rocks")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c0_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c0_river_water","river_water")
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c440")
+    screenshot "river_afternoon_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c440_river_ice_pre")
+    if eval ("river_ice" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_ice")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c440_river_ice","river_ice")
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c440_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c440_river_water","river_water")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c880")
+    screenshot "river_afternoon_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c880_river_ice_pre")
+    if eval ("river_ice" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_ice")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c880_river_ice","river_ice")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c880_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c880_river_water","river_water")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",3,1,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p1_c880_river_cliffs_pre")
+    if eval ("river_cliffs" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_cliffs")
+        pause 0.8
+        $ r13_qa_wide_log("river_p1_c880_river_cliffs","river_cliffs")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c0")
+    screenshot "river_evening_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c0_river_reeds_pre")
+    if eval ("river_reeds" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_reeds")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c0_river_reeds","river_reeds")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c0_river_rocks_pre")
+    if eval ("river_rocks" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_rocks")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c0_river_rocks","river_rocks")
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c0_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c0_river_water","river_water")
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c440")
+    screenshot "river_evening_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c440_river_ice_pre")
+    if eval ("river_ice" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_ice")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c440_river_ice","river_ice")
+    $ r13_world_cameras={"river":440}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c440_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c440_river_water","river_water")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c880")
+    screenshot "river_evening_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c880_river_ice_pre")
+    if eval ("river_ice" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_ice")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c880_river_ice","river_ice")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c880_river_water_pre")
+    if eval ("river_water" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_water")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c880_river_water","river_water")
+    $ r13_world_cameras={"river":880}
+    run Call("r13_qa_goto",7,2,"river")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("river_p2_c880_river_cliffs_pre")
+    if eval ("river_cliffs" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("river_cliffs")
+        pause 0.8
+        $ r13_qa_wide_log("river_p2_c880_river_cliffs","river_cliffs")
+
+testcase wide_forest:
+    # 0.18.59 wide map forest: hit map, screenshot and real clicks per state, period and camera.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="forest",life_poc=True,secret_route_unlocked=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c0")
+    screenshot "forest_morning_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c0_forest_roots_pre")
+    if eval ("forest_roots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_roots")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c0_forest_roots","forest_roots")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c0_forest_trunk_pre")
+    if eval ("forest_trunk" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_trunk")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c0_forest_trunk","forest_trunk")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c0_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c0_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c440")
+    screenshot "forest_morning_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c440_forest_roots_pre")
+    if eval ("forest_roots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_roots")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c440_forest_roots","forest_roots")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c440_forest_trunk_pre")
+    if eval ("forest_trunk" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_trunk")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c440_forest_trunk","forest_trunk")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c440_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c440_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c440_forest_branches_pre")
+    if eval ("forest_branches" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_branches")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c440_forest_branches","forest_branches")
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c880")
+    screenshot "forest_morning_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c880_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c880_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",3,0,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p0_c880_forest_branches_pre")
+    if eval ("forest_branches" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_branches")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p0_c880_forest_branches","forest_branches")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c0")
+    screenshot "forest_afternoon_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c0_forest_roots_pre")
+    if eval ("forest_roots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_roots")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c0_forest_roots","forest_roots")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c0_forest_trunk_pre")
+    if eval ("forest_trunk" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_trunk")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c0_forest_trunk","forest_trunk")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c0_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c0_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c440")
+    screenshot "forest_afternoon_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c440_forest_roots_pre")
+    if eval ("forest_roots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_roots")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c440_forest_roots","forest_roots")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c440_forest_trunk_pre")
+    if eval ("forest_trunk" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_trunk")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c440_forest_trunk","forest_trunk")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c440_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c440_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c440_forest_branches_pre")
+    if eval ("forest_branches" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_branches")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c440_forest_branches","forest_branches")
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c880")
+    screenshot "forest_afternoon_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c880_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c880_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p1_c880_forest_branches_pre")
+    if eval ("forest_branches" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_branches")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p1_c880_forest_branches","forest_branches")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c0")
+    screenshot "forest_evening_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c0_forest_roots_pre")
+    if eval ("forest_roots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_roots")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c0_forest_roots","forest_roots")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c0_forest_trunk_pre")
+    if eval ("forest_trunk" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_trunk")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c0_forest_trunk","forest_trunk")
+    $ r13_world_cameras={"forest":0}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c0_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c0_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c440")
+    screenshot "forest_evening_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c440_forest_roots_pre")
+    if eval ("forest_roots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_roots")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c440_forest_roots","forest_roots")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c440_forest_trunk_pre")
+    if eval ("forest_trunk" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_trunk")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c440_forest_trunk","forest_trunk")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c440_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c440_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":440}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c440_forest_branches_pre")
+    if eval ("forest_branches" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_branches")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c440_forest_branches","forest_branches")
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c880")
+    screenshot "forest_evening_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c880_forest_rock_pre")
+    if eval ("forest_rock" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_rock")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c880_forest_rock","forest_rock")
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",7,2,"forest")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("forest_p2_c880_forest_branches_pre")
+    if eval ("forest_branches" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("forest_branches")
+        pause 0.8
+        $ r13_qa_wide_log("forest_p2_c880_forest_branches","forest_branches")
+
+testcase wide_market:
+    # 0.18.59 wide map market: hit map, screenshot and real clicks per state, period and camera.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="market",life_poc=True,secret_route_unlocked=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c0")
+    screenshot "market_morning_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c0_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c0_market_produce","market_produce")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c0_market_oven_pre")
+    if eval ("market_oven" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_oven")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c0_market_oven","market_oven")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c0_market_firewood_pre")
+    if eval ("market_firewood" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_firewood")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c0_market_firewood","market_firewood")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c0_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c0_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c440")
+    screenshot "market_morning_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c440_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c440_market_produce","market_produce")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c440_market_oven_pre")
+    if eval ("market_oven" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_oven")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c440_market_oven","market_oven")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c440_market_firewood_pre")
+    if eval ("market_firewood" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_firewood")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c440_market_firewood","market_firewood")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c440_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c440_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c880")
+    screenshot "market_morning_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c880_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c880_market_produce","market_produce")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c880_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c880_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c880_market_cloth_pre")
+    if eval ("market_cloth" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cloth")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c880_market_cloth","market_cloth")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,0,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p0_c880_market_pots_pre")
+    if eval ("market_pots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_pots")
+        pause 0.8
+        $ r13_qa_wide_log("market_p0_c880_market_pots","market_pots")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c0")
+    screenshot "market_afternoon_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c0_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c0_market_produce","market_produce")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c0_market_oven_pre")
+    if eval ("market_oven" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_oven")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c0_market_oven","market_oven")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c0_market_firewood_pre")
+    if eval ("market_firewood" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_firewood")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c0_market_firewood","market_firewood")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c0_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c0_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c440")
+    screenshot "market_afternoon_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c440_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c440_market_produce","market_produce")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c440_market_oven_pre")
+    if eval ("market_oven" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_oven")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c440_market_oven","market_oven")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c440_market_firewood_pre")
+    if eval ("market_firewood" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_firewood")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c440_market_firewood","market_firewood")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c440_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c440_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c880")
+    screenshot "market_afternoon_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c880_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c880_market_produce","market_produce")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c880_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c880_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c880_market_cloth_pre")
+    if eval ("market_cloth" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cloth")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c880_market_cloth","market_cloth")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p1_c880_market_pots_pre")
+    if eval ("market_pots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_pots")
+        pause 0.8
+        $ r13_qa_wide_log("market_p1_c880_market_pots","market_pots")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c0")
+    screenshot "market_evening_c0.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==0)
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c0_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c0_market_produce","market_produce")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c0_market_oven_pre")
+    if eval ("market_oven" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_oven")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c0_market_oven","market_oven")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c0_market_firewood_pre")
+    if eval ("market_firewood" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_firewood")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c0_market_firewood","market_firewood")
+    $ r13_world_cameras={"market":0}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c0_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c0_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c440")
+    screenshot "market_evening_c440.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==440)
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c440_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c440_market_produce","market_produce")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c440_market_oven_pre")
+    if eval ("market_oven" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_oven")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c440_market_oven","market_oven")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c440_market_firewood_pre")
+    if eval ("market_firewood" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_firewood")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c440_market_firewood","market_firewood")
+    $ r13_world_cameras={"market":440}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c440_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c440_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c880")
+    screenshot "market_evening_c880.png"
+    assert eval (r13_world_width()==2160 and r13_world_offset()==880)
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c880_market_produce_pre")
+    if eval ("market_produce" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_produce")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c880_market_produce","market_produce")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c880_market_cheese_pre")
+    if eval ("market_cheese" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cheese")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c880_market_cheese","market_cheese")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c880_market_cloth_pre")
+    if eval ("market_cloth" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_cloth")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c880_market_cloth","market_cloth")
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_hitmap("market_p2_c880_market_pots_pre")
+    if eval ("market_pots" in R13_QA_PICK):
+        $ r13_qa_wide_reset_choice()
+        click pos r13_qa_pick("market_pots")
+        pause 0.8
+        $ r13_qa_wide_log("market_p2_c880_market_pots","market_pots")
+
 testcase wide_saveload:
     # 0.18.59: each period's picture and rects survive save/load and period changes;
     # post keeps the old scene outside the morning.
@@ -8472,3 +9558,193 @@ testcase dialogue_expand:
     click pos (640,600) until eval ("13호실】" in str(getattr(store,"r13_packet",("",""))[1])) timeout 30
     pause 1.5
     screenshot "granny_gold_word.png"
+
+testcase map_actions:
+    # 0.18.63 (owner): event, life and map actions in the investigation scenes where the script puts them.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ r13_world_cameras={"post":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True),("+w1c","ev_g_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_post_sling")
+    screenshot "ma_post_sling.png"
+    assert eval (any(a["person"]=="resident_sling" and a["pose"]=="event_steam" for a in r13_stage_people()))
+    $ r13_world_cameras={"post":0}
+    run Call("r13_qa_roam",dict(day=4,period=0,location="post",life_poc=True),("+w1c","ev_l_done","ev_g_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_post_momo_librarian")
+    screenshot "ma_post_momo_librarian.png"
+    assert eval (any(a["person"]=="resident_momo" and a["pose"]=="living_lampnumber" for a in r13_stage_people()))
+    $ r13_world_cameras={"inn":640}
+    run Call("r13_qa_roam",dict(day=3,period=1,location="inn",life_poc=True),("+w1c","ev_l_done","ev_g_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_inn_afternoon")
+    screenshot "ma_inn_afternoon.png"
+    assert eval ({(a["person"],a["pose"]) for a in r13_stage_people()}>={("granny","living_keyledger"),("resident_ttadak","living_doorframe")} and len(r13_world_props())==1)
+    $ r13_world_cameras={"inn":320}
+    run Call("r13_qa_roam",dict(day=3,period=1,location="inn",life_poc=True),("+w1c","ev_l_done","ev_g_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_inn_afternoon_c320")
+    screenshot "ma_inn_afternoon_c320.png"
+    $ r13_world_cameras={"square":640}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ev_l_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_square_morning")
+    screenshot "ma_square_morning.png"
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ev_l_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_square_morning_c0")
+    screenshot "ma_square_morning_c0.png"
+    $ r13_world_cameras={"square":640}
+    run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_square_seol")
+    screenshot "ma_square_seol.png"
+    $ r13_world_cameras={"gate":0}
+    run Call("r13_qa_roam",dict(day=6,period=0,location="gate",case_state="occurred",victim_state="dead",daram_state="held",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_s_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_gate_karo")
+    screenshot "ma_gate_karo.png"
+    $ r13_world_cameras={"hall":440}
+    run Call("r13_qa_roam",dict(day=5,period=1,location="hall",case_state="occurred",victim_state="dead",daram_state="held",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_hall_mungchi")
+    screenshot "ma_hall_mungchi.png"
+    run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True,life_poc=True),("+w1c","w2e_p_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("ma_workshop_buri")
+    screenshot "ma_workshop_buri.png"
+
+testcase new_places:
+    # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
+    # map, one picture per period, nobody scheduled there yet.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval (all(k in r13_places() and k in R13_MAP_NODES["village"] and k in dict(r13_map_nodes("village")) for k in R13_NEW_PLACES))
+    python:
+        # Testcase python is not the store: set store.room13 explicitly.
+        _np_saved=winter_copy.deepcopy(store.room13)
+        store._np_people=[]
+        for _d in range(1,15):
+            for _p in range(4):
+                for _l in R13_NEW_PLACES:
+                    _n=winter_copy.deepcopy(_np_saved);_n.update(day=_d,period=_p,location=_l);store.room13=_n
+                    store._np_people+=[(_d,_p,_l,x) for x in r13_people()]
+        _n=winter_copy.deepcopy(_np_saved);_n["flags"]=[f for f in _n["flags"] if f!="lodging"];store.room13=_n
+        store._np_before=[k for k in R13_NEW_PLACES if k in r13_places()]
+        store.room13=_np_saved
+        r13_qa_note("new places people: %r / before lodging: %r"%(store._np_people,store._np_before))
+    assert eval (_np_people==[] and _np_before==[] and room13["location"]=="square")
+    click "지도 · 이동"
+    pause 1.5
+    screenshot "np_map.png"
+    click "큰 강"
+    pause 0.5
+    screenshot "np_map_river.png"
+    click "이곳으로 이동"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval (room13["location"]=="river" and r13_world_width()==2160 and r13_world_file("river",r13_daylight()).endswith("river-morning.webp"))
+    $ r13_qa_wide_log("np_river_arrive")
+    screenshot "np_river_arrive.png"
+    click "지도 · 이동"
+    pause 1.5
+    click "깊은 숲"
+    pause 0.5
+    click "이곳으로 이동"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval (room13["location"]=="forest" and r13_world_file("forest",r13_daylight()).endswith("forest-morning.webp"))
+    screenshot "np_forest_arrive.png"
+    click "지도 · 이동"
+    pause 1.5
+    click "장터"
+    pause 0.5
+    click "이곳으로 이동"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval (room13["location"]=="market" and r13_world_file("market",r13_daylight()).endswith("market-morning.webp"))
+    screenshot "np_market_arrive.png"
+    # Period changes switch the picture in place (no single picture for every period).
+    run Call("r13_qa_goto",3,1,"market")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval (r13_daylight()=="afternoon" and r13_world_file("market","afternoon").endswith("market-afternoon.webp"))
+    run Call("r13_qa_goto",7,2,"market")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval (r13_daylight()=="evening" and r13_world_file("market","evening").endswith("market-evening.webp"))
+    assert eval (len({R13_WORLD_LAYOUTS[l]["files"][d] for l in R13_NEW_PLACES for d in ("morning","afternoon","evening")})==9)
+    $ renpy.save("qa-newplaces","qa")
+    run Call("r13_qa_goto",3,0,"river")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    run Function(renpy.load,"qa-newplaces")
+    pause 2.0
+    assert eval (room13["location"]=="market" and r13_daylight()=="evening" and r13_world_width()==2160)
+    screenshot "np_market_after_load.png"
+
+testcase drawer_puzzle_art:
+    # 0.18.63: ART_REQUEST_01822 drawer pictures, reached by real clicks through the puzzle.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="room13",life_poc=True,evidence=["M01","E03"]),("lodging",))
+    pause 2.0
+    run Call("r13_inspect_desk")
+    pause 1.0
+    click pos (362,377)
+    pause 0.5
+    click pos (535,355)
+    pause 0.5
+    click pos (567,477)
+    pause 0.5
+    assert eval (sorted(r13_inspection_state()["inventory"])==["paper","pencil","ruler"])
+    click pos (962,368)
+    pause 1.0
+    screenshot "dp_0_closed.png"
+    assert eval (r13_drawer_layers()==[])
+    click "얇은 종이"
+    click pos (587,460)
+    pause 0.8
+    assert eval (r13_inspection_state()["paper_placed"] and r13_drawer_layers()==["paper"])
+    screenshot "dp_1_paper.png"
+    click "짧은 연필"
+    click pos (587,460)
+    pause 0.8
+    assert eval (r13_inspection_state()["rubbing"] and r13_drawer_layers()==["rubbing"])
+    screenshot "dp_2_rubbing.png"
+    click "납작한 자"
+    click pos (963,528)
+    pause 0.8
+    assert eval (r13_inspection_state()["groove_held"] and r13_drawer_layers()==["held","rubbing"])
+    screenshot "dp_3_held.png"
+    click pos (958,300)
+    pause 0.8
+    assert eval (r13_inspection_state()["compartment_open"] and r13_drawer_layers()==["open","rubbing"])
+    screenshot "dp_4_open.png"
+    click pos (926,340)
+    pause 0.8
+    assert eval ("magnifier" in r13_inspection_state()["inventory"])
+    screenshot "dp_5_magnifier_taken.png"
+    click "책상으로"
+    pause 0.5
+    click pos (962,368)
+    pause 0.8
+    assert eval (r13_drawer_layers()==["open","rubbing"])

@@ -1,0 +1,131 @@
+{
+  "character_id": "resident_sling",
+  "display_name_ko": "슬링",
+  "action_key_proposed": "event_steam",
+  "status": "Generated asset only; not imported, integrated, or runtime validated.",
+  "file": "sling-event-steam.png",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "format": "PNG",
+  "mode": "RGBA",
+  "sources": {
+    "neutral_dialogue": "/workspace/shared/character-catalog40/runtime-assets/resident_sling.webp",
+    "acting_atlas": "/workspace/shared/character-catalog40/runtime-actions/room13-pixel-acting-resident_sling.webp",
+    "art_request": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md",
+    "source_audit": "/workspace/shared/current-cast-audit/current40-facts.json"
+  },
+  "generation": {
+    "mode": "built-in image_gen edit",
+    "original_generation": "/workspace/scratch/6fde33eec4d5/generated_images/exec-2fe70f06-baf7-4aab-83ad-fd4c591be498.png",
+    "selected_generation": "/workspace/scratch/6fde33eec4d5/generated_images/exec-f1e72f04-919c-46ea-89d4-18f0c58e9035.png",
+    "raster_postprocessing": "None. Selected image copied byte-for-byte. White and gray PNGs are QA composites only."
+  },
+  "visual_spec": {
+    "facing": "left three-quarter",
+    "gaze": "sideward, away from viewer",
+    "pose": "standing with slight forward lean, both paws holding one blank envelope, loosened envelope flap downward, ears back",
+    "props_present": [
+      "blank envelope",
+      "worn mailbag behind body"
+    ],
+    "props_excluded": [
+      "kettle",
+      "steam",
+      "stove",
+      "door",
+      "table"
+    ],
+    "costume": "Current dark-teal postal cap and coat, gold accents, white collar, red tie, ochre trousers, brown shoes and mailbag",
+    "style": "Coarse visible pixel clusters in body and face; slight storybook roundness; modest detail"
+  },
+  "anchors_estimated_image_pixels": {
+    "hands": [
+      342,
+      748
+    ],
+    "left_paw_contact": [
+      231,
+      748
+    ],
+    "right_paw_contact": [
+      434,
+      744
+    ],
+    "envelope_lower_open_edge": [
+      321,
+      786
+    ],
+    "feet_center": [
+      539,
+      1294
+    ],
+    "foot_left": [
+      395,
+      1282
+    ],
+    "foot_right": [
+      716,
+      1299
+    ],
+    "head": [
+      449,
+      414
+    ],
+    "basis": "Visual estimates in native PNG pixels, top-left origin, not runtime coordinates. Recheck actual stove position, scaling and map occlusion before import."
+  },
+  "alpha_qa": {
+    "extrema": [
+      0,
+      254
+    ],
+    "nonzero_bbox": [
+      33,
+      64,
+      949,
+      1510
+    ],
+    "threshold_bboxes": {
+      "1": [
+        33,
+        64,
+        949,
+        1510
+      ],
+      "8": [
+        141,
+        231,
+        946,
+        1307
+      ],
+      "32": [
+        141,
+        232,
+        946,
+        1307
+      ],
+      "128": [
+        142,
+        233,
+        946,
+        1306
+      ],
+      "240": [
+        143,
+        233,
+        945,
+        1306
+      ]
+    },
+    "fully_transparent_pixels": 1072255,
+    "fully_opaque_pixels": 0,
+    "note": "Generated PNG alpha is preserved without cleanup. Very low-alpha residual pixels may extend beyond visible silhouette; white and gray composites checked."
+  },
+  "sha256": "6fd813940c5709b6ce2f55fdcd56d5926316d5c804d8767a2a650f5df662ff3a",
+  "qa_files": [
+    "sling-event-steam-qa-white.png",
+    "sling-event-steam-qa-gray.png"
+  ],
+  "integration_notes": "Kettle and steam must remain separate scene layers. No game files or Claude files changed. ART_REQUEST_01853 legacy map feet suggestion (560,560) is not a validated runtime anchor."
+}

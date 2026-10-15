@@ -1,0 +1,11 @@
+Generation method: built-in image_gen style-only edit, one correction pass. Prior version preserved; new original alpha PNG preserved byte-for-byte.
+
+Use case: style-transfer with strict identity and pose preservation.
+Input image 1: EDIT TARGET, approved elderly rabbit granny holding a brass room key and an open small ledger.
+Input image 2: PIXEL-CLUSTER STYLE REFERENCE ONLY, owl character. Do NOT copy owl anatomy, clothing, pose, colors, chair or props.
+
+Make exactly one style-only correction to image 1: redraw her existing lines, colors and shading as MUCH COARSER LARGE-CLUSTER PIXEL ART, matching image 2's coarse square-pixel language. Treat her design as if it was natively drawn on a roughly 100-by-150-pixel character grid and then enlarged with hard nearest-neighbor blocks. This applies to EVERY feature, especially pupils, eye whites, eyelashes, eyelids, orange eyeglass rims, pink nose, mouth, hands, ledger pages, key, and apron flowers. Build eyes and mouth from a few large square clusters; no smooth arcs, no fine brushwork, no vector edges, no blended gradients, no soft AA. Use a limited palette of discrete flat shade steps. All diagonal edges must have visibly chunky rectilinear stairsteps. Do not simply add a pixelated outline around a smooth illustration.
+
+STRICT INVARIANTS: preserve exact recognizable pretty MATURE rabbit face and facial proportions, elderly half-lidded downward gaze, long drooping ears, white tuft/eyebrows, orange oval glasses, warm beige fur. Preserve the whole current action and silhouette: tall standing three-quarter body, open ledger cradled in left-side hand, single brass key in right-side raised hand, looking down at work. No new head tilt or pose. Preserve exact full leg/skirt length and natural head-to-body ratio, not bigheaded or chibi. Preserve burgundy cardigan/toggles/bow/orange brooch, cream collar and floral apron, long mauve skirt, gray socks and brown boots. Do not shorten or redesign any feature.
+
+Same full-body framing with generous transparent margins above tuft, below both feet and beside ears. Character, ledger and key only. GENUINE TRANSPARENT ALPHA background, no counter, room, shadow, halo, text or decoration. The final must read as attractive coarse hand-made pixel game art, not a polished smooth illustration.

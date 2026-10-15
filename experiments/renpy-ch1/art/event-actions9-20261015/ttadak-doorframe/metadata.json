@@ -1,0 +1,94 @@
+{
+  "asset_id": "resident_ttadak",
+  "pose_key": "living_doorframe",
+  "file": "room13-pixel-acting-ttadak-doorframe.png",
+  "status": "generated_and_visually_checked_not_integrated",
+  "generation_mode": "built-in image_gen identity-preserve edit",
+  "canvas_px": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "nearest": true,
+  "facing": "right-profile",
+  "subject": "Existing adult red-crested bird carpenter, olive shirt, mustard work vest, brown trousers, belt tools; left hand braces invisible separate doorframe, right hand raises hammer.",
+  "source_request": {
+    "path": "/workspace/shared/current-cast-audit/requests/ART_REQUEST_01822.md",
+    "section": "2. 여관 접수대: 토리와 따닥",
+    "exact_text": "따닥이 옆으로 서서 왼손으로 문틀에 판자를 대고, 오른손으로 망치를 드는 포즈. 판자는 그리지 않는다(배경 레이어로 따로 받는다). 발 위치를 바닥선에 맞춘다.",
+    "target_visible_height_px": 440,
+    "related_layer": "room13-pixel-inn-doorframe-repair.png",
+    "related_layer_separate": true
+  },
+  "references": [
+    "/workspace/shared/character-catalog40/runtime-assets/resident_ttadak.webp",
+    "/workspace/shared/character-catalog40/runtime-actions/room13-pixel-acting-ttadak.webp"
+  ],
+  "visible_bbox_alpha_gt32_xyxy": [
+    24,
+    139,
+    1009,
+    1476
+  ],
+  "suggested_runtime_crop_xywh": [
+    16,
+    128,
+    1000,
+    1360
+  ],
+  "estimated_anchors_full_canvas_px": {
+    "foot_center": [
+      532,
+      1460
+    ],
+    "left_foot_ground": [
+      279,
+      1470
+    ],
+    "right_foot_ground": [
+      818,
+      1455
+    ],
+    "left_palm_contact": [
+      996,
+      803
+    ],
+    "left_palm_contact_vertical_span_y": [
+      740,
+      923
+    ],
+    "right_hammer_grip": [
+      782,
+      682
+    ],
+    "hammer_head_center": [
+      872,
+      560
+    ],
+    "gaze_work_target": [
+      990,
+      760
+    ]
+  },
+  "anchor_notes": "All contact/foot anchors are visual estimates, not runtime-tested. Doorframe is intentionally absent from the character sprite. Align separate plank's left contact edge to x≈996, then adjust in the expanded map. Suggested crop contains the full visible tail, feet, crest and hand. Full source PNG is unmodified image_gen output; no post-generation image editing or code integration.",
+  "suggested_target_visible_height_scale": 0.32909498878085264,
+  "qa": {
+    "white_background": "qa-white.jpg",
+    "gray_background": "qa-gray.jpg",
+    "checks_passed": [
+      "Single character and handheld hammer only",
+      "No attached plank or wall/background",
+      "Maintains actual existing species, face and costume",
+      "Not looking at viewer",
+      "Full crest, tail, feet, hammer and open hand visible",
+      "Coarse pixel shapes including eye and beak",
+      "Alpha transparency inspected on white and gray"
+    ],
+    "caveats": [
+      "Generated canvas is larger than requested in-game 440px; scale with nearest neighbor at integration.",
+      "15px minimum transparent side padding at visible-alpha threshold; no visible clipping.",
+      "Pixel-grid look is strongly coarse, but generated blocks are not mathematically guaranteed uniform.",
+      "Alpha edge/low-alpha pixels remain as generated; visually clean on white/gray, do not substitute black-background tool preview for actual alpha."
+    ]
+  }
+}

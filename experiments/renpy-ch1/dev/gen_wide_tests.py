@@ -29,6 +29,10 @@ DAYS = {
     "post": {0: 3, 1: 3, 2: 7},
     # 0.18.59 inn lobby repair art (layout unchanged); evening with Bami protected = 7 people.
     "inn": {0: 3, 1: 3, 2: 7},
+    # 0.18.63 new places (no residents scheduled yet): one picture per period.
+    "river": {0: 3, 1: 3, 2: 7},
+    "forest": {0: 3, 1: 3, 2: 7},
+    "market": {0: 3, 1: 3, 2: 7},
 }
 EXTRA_FLAGS = {("inn", 2): '("bami_protected",)'}
 FLAGS = '("lodging","entry_corrected")'
@@ -181,7 +185,7 @@ def capacity_case():
 def main():
     text = TESTS.read_text()
     block = [BEGIN]
-    for loc in [l for l in ("kitchen", "dining", "passage", "post", "inn", "hall", "room13") if l in LAYOUT]:
+    for loc in [l for l in ("kitchen", "dining", "passage", "post", "inn", "hall", "room13", "river", "forest", "market") if l in LAYOUT]:
         block += location_case(loc)
     block += saveload_case() + capacity_case() + [END]
     if BEGIN in text:

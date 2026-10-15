@@ -23,14 +23,15 @@ init 124 python:
 
     # 0.18.53 (owner): press the person doing it, not a text marker. label: (person, event pose).
     # The event pose is used only once its art exists; until then the closest existing pose.
+    # 0.18.63: event art delivered 2026-10-15 (art/event-actions9-20261015, dev/apply_map_actions.py).
     R13_OFFER_ACTORS={
-        "r13_w1c_portrait":("resident_piko",None),
+        "r13_w1c_portrait":("resident_piko",("event_paintwipe","living_paint")),
         "r13_w1c_letters":("resident_sling",("event_steam","thinking")),
-        "r13_w1c_extension":("resident_ttadak",None),
-        "r13_w1c_seal":("resident_mungchi",None),
-        "r13_w1c_testimony":("resident_siluk",None),
-        "r13_b3_pages":("resident_librarian",None),
-        "r13_w2e_tools":("buri",None),
+        "r13_w1c_extension":("resident_ttadak",("living_doorframe",)),
+        "r13_w1c_seal":("resident_mungchi",("event_handrub",)),
+        "r13_w1c_testimony":("resident_siluk",("event_whisper",)),
+        "r13_b3_pages":("resident_librarian",("event_ledgertie",)),
+        "r13_w2e_tools":("buri",("event_toolbox",)),
         "r13_ep4_accused":("resident_tok",None),
         "r13_ev_b_store":("resident_madam",None),
     }
@@ -69,8 +70,21 @@ init 124 python:
             scale=float(actor["height"])/oh
             of=old.get("foot",[ow/2.0,oh]);nf=new.get("foot",[nw/2.0,nh])
             fx=actor["x"]+of[0]*scale;fy=actor["y"]+of[1]*scale
+            # 0.18.63: the event art can be drawn at another pixel size and in other
+            # proportions; its height follows the same standing height (shape ratio).
+            probe={"standing_height_reference":1000}
+            shape_old=r13_world_display_height(actor["person"],actor["pose"],1000.0,probe)
+            shape_new=r13_world_display_height(actor["person"],pose,1000.0,probe)
+            scale=float(actor["height"])*shape_new/max(1.0,shape_old)/nh
+            # A place may name where the event happens (e.g. Buri leaves the workbench for the
+            # toolbox on the floor): feet go there; the event pose stands free of furniture masks.
+            spot=(r13_layout(store.room13["location"]) or {}).get("offer_spots",{}).get(key)
+            if spot:
+                fx,fy=spot
+                line=r13_perspective_line(store.room13["location"])
+                if line:scale=(line[0]*fy+line[1])*shape_new/1000.0/nh
             x=int(fx-nf[0]*scale);y=int(fy-nf[1]*scale);w=int(nw*scale);h=int(nh*scale)
-            changed=dict(actor);changed.update(pose=pose,x=x,y=y,width=w,height=h,rect=[max(0,x),max(0,y),w,h],depth=y+h,contact=new.get("contact","standing"))
+            changed=dict(actor);changed.update(pose=pose,x=x,y=y,width=w,height=h,rect=[max(0,x),max(0,y),w,h],depth=y+h,contact=new.get("contact","standing"),occlusion=[] if spot else actor.get("occlusion",[]))
             result.append(changed)
         return sorted(result,key=lambda a:a["depth"])
 

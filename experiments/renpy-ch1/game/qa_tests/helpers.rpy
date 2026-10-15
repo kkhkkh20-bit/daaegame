@@ -696,7 +696,7 @@ init 999 python:
         r13_qa_wide_write()
     def r13_qa_pick(key):
         return R13_QA_PICK.get(key,(640,40))
-    def r13_qa_wide_capacity(locations=("post","kitchen","dining","passage","inn","hall","room13")):
+    def r13_qa_wide_capacity(locations=("post","kitchen","dining","passage","inn","hall","room13","river","forest","market")):
         """Residents at each wide location for every day/period and the states that
         move people (case, victim, granny, shelter, protection, detention)."""
         import itertools

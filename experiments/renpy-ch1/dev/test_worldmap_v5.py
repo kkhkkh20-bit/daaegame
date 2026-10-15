@@ -45,8 +45,10 @@ class WorldmapV5(unittest.TestCase):
         ns = namespace()
         dest = {k for k, v in DATA["layers"].items() if v["node"]}
         self.assertEqual(dest, set(ns["R13_MAP_NODES"]["village"]))
-        self.assertEqual(len(dest), 8)
-        self.assertEqual(len(DATA["layers"]), 22)
+        # 0.18.63: the eight places plus 큰 강 / 깊은 숲 / 장터 (owner 2026-10-15).
+        self.assertEqual(len(dest), 11)
+        self.assertEqual(len(DATA["layers"]), 25)
+        self.assertTrue({"river", "forest", "market"} <= dest)
         # Shrine, old quarry and scenery houses are drawn but are not places.
         for scenery in ("shrine", "quarry_home", "quarry_shed"):
             self.assertIsNone(DATA["layers"][scenery]["node"])
