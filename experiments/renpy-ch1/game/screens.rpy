@@ -702,10 +702,12 @@ screen notify(message):
     style_prefix ("r13" if room13_mode else "")
     zorder 100
     if room13_mode:
+        # One notice spot (0.18.33): top right under the date plate, like the new-record card.
+        # The top-left corner holds the place tag; the top centre holds titles and the work button.
         frame:
-            xpos 24 ypos 24 xmaximum 760 padding (18,12)
+            xanchor 1.0 xpos 1256 ypos 92 xmaximum 424 padding (18,12)
             background R13ActionPanel()
-            text message size 21 color "#fff2d9" xmaximum 716
+            text message size 21 color "#fff2d9" xmaximum 388
     else:
         frame:
             xalign 0.5 ypos 98
