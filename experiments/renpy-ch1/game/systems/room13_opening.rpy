@@ -1,8 +1,9 @@
-# 오프닝 컷씬 (0.18.39, 0.18.41 다시 디자인). 새 게임에서 마차 대화 앞에 한 번 나온다(약 17초).
+# 오프닝 컷씬 (0.18.39, 0.18.41 다시 디자인, 0.18.47 그림책 톤으로 정리: 튀는 동작·반짝임·검은 띠·핀 대신
+# 천천히 스며드는 등장, 크림색 점선, 그림책 테두리). 새 게임에서 마차 대화 앞에 한 번 나온다(약 17초).
 #
 #   1) 편지: 어둠 속에 초대 편지가 툭 떨어져 반짝이고, 아빠의 독백 두 줄
-#   2) 지도: 위아래 검은 띠가 들어오고, 마을 지도를 위에서 아래로 내려다보며 마을 밖에서 입구까지
-#      도트 점선이 이어진 뒤 '마을 입구' 핀이 꽂힌다
+#   2) 지도: 그림책 테두리 속에서 마을 지도를 내려다보며 마을 밖에서 입구까지 점선이 이어지고
+#      '마을 입구' 이름이 스며든다
 #   3) 제목: 마을 입구 오후 풍경을 옆으로 훑고, 제목 로고
 #   4) 빈 마차 안(아빠 시점): 덜컹거림, 창밖으로 눈이 스쳐 지나감, 띠가 걷히며 기존 마차 대화의 "덜컹."으로 이어짐
 #
@@ -94,9 +95,10 @@ init 58 python:
             moving = bool(persistent.room13_motion)
             shown = len(self.dots) if not moving else int(len(self.dots) * min(1.0, max(0.0, (st - self.t0) / self.dur)))
             canvas = out.canvas() if shown else None
-            for x, y in self.dots[:shown]:
-                canvas.rect((34, 22, 14, 230), (x - 4, y - 4, 12, 12))
-                canvas.rect((255, 214, 96, 255), (x, y, 4, 4))
+            # 0.18.47: 연필로 그은 듯한 크림색 점선(테두리 없음).
+            for i, (x, y) in enumerate(self.dots[:shown]):
+                if i % 2 == 0:
+                    canvas.rect((250, 236, 205, 235), (x, y, 8, 4))
             if moving and shown < len(self.dots):
                 renpy.redraw(self, .03)
             return out
@@ -178,6 +180,20 @@ transform r13_op_letter_drop:
 transform r13_op_letter_still:
     alpha 1.0 yoffset 0
 
+# 0.18.47: 편지는 위에서 천천히 내려앉으며 나타난다(튀지 않는다).
+transform r13_op_letter_float:
+    subpixel True
+    alpha 0.0 yoffset -18
+    pause .2
+    ease 1.4 alpha 1.0 yoffset 0
+
+# t초 뒤 dur초 동안 은은하게 나타나며 살짝 떠오른다(최대 투명도 a).
+transform r13_op_soft_in(t=0.0, dur=1.0, a=1.0):
+    subpixel True
+    alpha 0.0 yoffset 6
+    pause t
+    ease dur alpha a yoffset 0
+
 transform r13_op_delay(t=1.0):
     alpha 0.0
     pause t
@@ -243,39 +259,36 @@ screen r13_opening_cut():
     showif shot == 0:
         fixed at r13_op_fade(.6, .45):
             add r13_opening_snow()
+            # 0.18.47 그림책 톤: 편지가 따뜻한 빛 속에서 천천히 내려앉고, 글은 한 줄씩 스며든다.
+            add R13_STORYBOOK.get("card_glow", Null()) xalign .5 ypos 82 at r13_op_soft_in(.2, 1.6, .5)
+            add r13_opening_letter() xalign .5 ypos 150 at (r13_op_letter_float if moving else r13_op_letter_still)
             text ROOM13["evidence"]["E01"]["name"]:
-                font r13_ui_font() size 20 color "#c9a560" xalign .5 ypos 112 at r13_op_delay(.9)
-            add r13_opening_letter() xalign .5 ypos 150 at (r13_op_letter_drop if moving else r13_op_letter_still)
-            add Transform(r13_evidence_sparkle(.75), zoom=2.0, nearest=True) xpos 512 ypos 134
+                font r13_ui_font() size 20 color "#c9a560" xalign .5 ypos 112 at r13_op_soft_in(1.0, 1.0)
             vbox:
                 xalign .5 ypos 430 spacing 20
                 text R13_OPENING_LINES[0]:
-                    font r13_ui_font() size 30 color "#e9e2d0" xalign .5 slow_cps 14
-                if line2:
-                    text R13_OPENING_LINES[1]:
-                        font r13_ui_font() size 30 color "#e9e2d0" xalign .5 slow_cps 14
-                else:
-                    null height 36
+                    font r13_ui_font() size 30 color "#e9e2d0" xalign .5 at r13_op_soft_in(.9, 1.2)
+                text R13_OPENING_LINES[1]:
+                    font r13_ui_font() size 30 color "#e9e2d0" xalign .5 at r13_op_soft_in(2.1, 1.2)
     showif shot == 1:
         fixed at r13_op_fade(.6, .5):
             fixed at (r13_op_map_tilt if moving else r13_op_map_still):
                 xysize (1672, 941)
                 add r13_opening_map()
-                add R13FxRoute(R13_OPENING_ROUTE, 1.2, 2.0, (1672, 941))
-                add Transform(R13FxPin(), zoom=2.0, nearest=True) xpos (R13_OPENING_ROUTE[-1][0]-24) ypos (R13_OPENING_ROUTE[-1][1]-72) at r13_op_pin(3.3 if moving else 0.0)
+                add R13FxRoute(R13_OPENING_ROUTE, 1.0, 2.4, (1672, 941))
                 frame:
-                    xpos (R13_OPENING_ROUTE[-1][0]+30) ypos (R13_OPENING_ROUTE[-1][1]-66)
-                    padding (12,6) background Solid("#152e30e8")
-                    at r13_op_delay(3.5 if moving else 0.0)
+                    xpos (R13_OPENING_ROUTE[-1][0]-60) ypos (R13_OPENING_ROUTE[-1][1]-70)
+                    padding (14,6) background R13InkPanel()
+                    at r13_op_soft_in(3.3 if moving else 0.0, .9)
                     text R13_MAP_LABELS["gate"] font r13_ui_font() size 26 color "#fff3d5"
             add r13_opening_snow()
     showif shot == 2:
         fixed at r13_op_fade(.6, .6):
             add r13_opening_gate() at (r13_op_pan if moving else r13_op_pan_still)
             add r13_opening_snow()
-            # 로고 뒤 어둠: 16px 줄마다 옅어지는 계단식 그림자(도트 느낌, 경계선 없음).
-            for i in range(16):
-                add Solid("#05070b%02x" % int(200*(1.0-i/16.0))) ypos (i*16) ysize 16
+            # 로고 뒤 어둠: 위에서부터 부드럽게 옅어진다.
+            for i in range(64):
+                add Solid("#140e0a%02x" % int(190*(1.0-i/64.0)**1.4)) ypos (i*4) ysize 4
             add Transform("assets/room13-title-logo.webp", size=(400,160), nearest=True) xalign .5 ypos 64 at r13_op_logo
             text "눈에 갇힌 마을":
                 font r13_ui_font() size 24 color "#f4ead2" xalign .5 ypos 226 at r13_op_sub
@@ -285,13 +298,11 @@ screen r13_opening_cut():
             fixed at (r13_op_rattle if moving else r13_op_still):
                 add r13_opening_carriage()
                 add r13_opening_window_snow()
-    # 영화처럼 위아래 검은 띠(지도·제목 컷). 마차 컷에서 걷히며 대화로 이어진다.
+    # 그림책 장면 테두리(지도·제목 컷): 가장자리가 따뜻한 어둠으로 스며든다. 마차 컷에서 걷힌다.
     showif shot in (1, 2):
-        add Solid("#05070b") xsize 1280 ysize 60 at r13_op_bar_top
-        add Solid("#05070b") xsize 1280 ysize 60 at r13_op_bar_bottom
+        add R13_STORYBOOK.get("frame", Null()) at r13_op_fade(.9, .8)
 
     if shot == 0:
-        timer 1.9 action SetScreenVariable("line2", True)
         timer R13_OPENING_SHOTS[0] action SetScreenVariable("shot", 1)
     elif shot == 1:
         timer R13_OPENING_SHOTS[1] action SetScreenVariable("shot", 2)

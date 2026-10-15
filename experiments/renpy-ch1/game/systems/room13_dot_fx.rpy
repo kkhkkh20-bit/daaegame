@@ -348,19 +348,14 @@ init 57 python:
             return out
 
     def r13_fx_cue(kind):
-        """소리와 같은 순간에 부르는 화면 연출. 연출만 하고 상태는 바꾸지 않는다."""
+        """소리와 같은 순간에 부르는 화면 연출. 0.18.47: 집중선·흔들림 대신 가장자리가 따뜻하게 어두워졌다 걷힌다."""
         if not r13_fx_active():
             return
         if kind in ("present", "break"):
-            renpy.show_screen("r13_fx_impact")
-            renpy.show_layer_at([r13_fx_shake], layer="master")
+            renpy.show_screen("r13_fx_vignette")
 
     def r13_evidence_hop(trans, st, at):
-        # r13_evidence_reveal이 자리 잡은 뒤(.18초) 4px 한 번 튀어오른다.
-        t = st - .18
-        if r13_fx_active() and 0 <= t < .08:
-            trans.yoffset = -4
-            return .08 - t + .001
+        # 0.18.47: 튀어오름 없음(저장된 화면 호환용으로 이름만 남김).
         trans.yoffset = 0
         return None
 
@@ -385,14 +380,14 @@ init 57 python:
 
     # 날·시간대가 바뀐 뒤 처음 들어서는 장면: 4x4 디더로 번진다.
     def r13_scene_transition():
+        # 0.18.47 그림책 톤: 종이에 번지듯 바뀐다. 날·시간대가 바뀌면 천천히(1초), 장소 이동은 0.5초.
         state = store.room13 or {}
         clock = (state.get("day"), state.get("period"))
         last = store.r13_fx_scene_clock
         store.r13_fx_scene_clock = clock
-        spec = R13_DOT_FX.get("dither")
-        if spec and last is not None and last != clock and clock[0] is not None and r13_fx_active():
-            return ImageDissolve(spec["file"], float(spec["time"]), ramplen=4)
-        return Dissolve(.25)
+        if last is not None and last != clock and clock[0] is not None:
+            return r13_bleed(1.0)
+        return r13_bleed(.5)
 
 default r13_fx_scene_clock = None
 
