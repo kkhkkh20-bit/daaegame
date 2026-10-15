@@ -30,6 +30,15 @@ for cid,spec in D.items():
     assert sorted(kinds)==['correct','over','weak']
     for k in ('correct','over','weak'):assert spec['conclusion'][k]
 checks.append('8 claims, statements, conclusions and evidence ids are consistent')
+# 0.18.41 counters: three options, one correct, a reply for each wrong one; gated counters name a real claim.
+counters=[(cid,st['id'],st['counter']) for cid,spec in D.items() for st in spec['statements'] if st.get('counter')]
+assert len(counters)>=2
+for cid,sid,c in counters:
+    kinds=sorted(k for k,t in c['options'])
+    assert kinds==['correct','over','weak'] and c['correct'] and c['lines'] and c['prompt'],(cid,sid)
+    assert set(c['wrong'])=={'over','weak'},(cid,sid)
+    assert c.get('need_prop') in (None,)+tuple(D),(cid,sid)
+checks.append('counters: options, replies and gates are consistent')
 
 # Every accepted item was already part of that claim's original support evidence (obtainability kept),
 # except E37 which is the direct operation record of the same passage as E05.
@@ -99,6 +108,13 @@ assert '아이 혼자' in rows[0][1] and '한 번 휘둘렸을 뿐' in rows[0][1
 store.room13.update(evidence=['E07']);store.room13['debate']={}
 assert not env['r13_debate_engageable']('C2')   # nothing breakable: skipped as before
 checks.append('partial rebuttal: engageable with some evidence, stuck when nothing breakable is left')
+# The passage counter in C2 only exists once C1 is proven.
+store.room13.update(propositions=[])
+assert env['r13_debate_counter']('C2','s3') is None and env['r13_debate_counter']('C4','s1') is not None
+store.room13.update(propositions=['C1'])
+assert env['r13_debate_counter']('C2','s3') is not None
+store.room13.update(propositions=[])
+checks.append('C2 passage counter appears only after C1')
 # Giving up closes the claim for this session only.
 store.room13['finale_started']=False
 env['r13_debate_close']('C3','gave_up')

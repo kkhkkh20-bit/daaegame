@@ -187,8 +187,11 @@ screen choice(items):
     if room13_mode:
         on "show" action Function(r13_choice_layout,choice_actor,choice_pose,True)
         on "hide" action Function(r13_choice_layout,choice_actor,choice_pose,False)
-        $ choice_entries=[(item.caption,item.action,False) for item in items]
-        use r13_question_list(choice_actor,choice_pose,"선택",choice_entries,choice_ready,actor_x=272,list_left=(500 if choice_actor else 190),list_width=(744 if choice_actor else 940),animate=False)
+        # A menu caption (no action) is the question being asked: shown as a heading, never as
+        # a numbered choice (0.18.41).
+        $ choice_entries=[(item.caption,item.action,False) for item in items if item.action is not None]
+        $ choice_caption=" ".join(item.caption for item in items if item.action is None)
+        use r13_question_list(choice_actor,choice_pose,"선택",choice_entries,choice_ready,caption=choice_caption,actor_x=272,list_left=(500 if choice_actor else 190),list_width=(744 if choice_actor else 940),animate=False)
         use r13_toolbar(mode="line",ready=choice_ready)
 
     else:

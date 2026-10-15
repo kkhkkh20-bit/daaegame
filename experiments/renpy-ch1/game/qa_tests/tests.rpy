@@ -208,6 +208,10 @@ testcase trial_full:
     pause 0.8
     click "QA E09"
     pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "주방에서 레버를 올려야"
+    pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     click "결론을 말한다"
@@ -260,6 +264,10 @@ testcase trial_full:
     click "자료로 반박"
     pause 0.8
     click "QA E15"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "핀을 여민 곳은 식당"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -332,6 +340,10 @@ testcase trial_gate_unenforced:
     pause 0.8
     click "QA E09"
     pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "주방에서 레버를 올려야"
+    pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     click "결론을 말한다"
@@ -384,6 +396,10 @@ testcase trial_gate_unenforced:
     click "자료로 반박"
     pause 0.8
     click "QA E15"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "핀을 여민 곳은 식당"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -456,6 +472,10 @@ testcase trial_gate_no_witness:
     click "자료로 반박"
     pause 0.8
     click "QA E09"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "주방에서 레버를 올려야"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -1347,6 +1367,10 @@ testcase trial_fake_testimony:
     pause 0.8
     click "QA E09"
     pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "주방에서 레버를 올려야"
+    pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     click "결론을 말한다"
@@ -1399,6 +1423,10 @@ testcase trial_fake_testimony:
     click "자료로 반박"
     pause 0.8
     click "QA E15"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "핀을 여민 곳은 식당"
     pause 0.6
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
@@ -2332,6 +2360,104 @@ testcase opening_cut:
     screenshot "op_6_after.png"
     assert eval (place == "마차 안" and persistent.room13_opening_cut_seen)
     $ r13_opening_force = False
+
+testcase trial_counter:
+    # 0.18.41: after C1 proves the passage, the chief turns it on Daram. A wrong answer keeps
+    # the statement standing (no other penalty); presenting again and answering right breaks it.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_trial",('E01', 'E05', 'E06', 'E07', 'E09', 'E35'),())
+    pause 1.0
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "아이뿐이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "되묻기"
+    pause 0.5
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E05"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "결론을 말한다"
+    pause 1.0
+    click "다른 길이 있으니"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "죽음의 원인이라는 주장"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    click "다시 휘두를 사람이"
+    pause 0.6
+    click "자료로 반박"
+    pause 0.8
+    click "QA E09"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    screenshot "counter_menu.png"
+    click "겁이 많아서"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    assert eval (not r13_debate_is_broken("C2","s3"))
+    click "자료로 반박"
+    pause 0.8
+    click "QA E09"
+    pause 0.6
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "주방에서 레버를 올려야"
+    pause 0.6
+    click pos (640,600) until screen "r13_debate_board" timeout 40
+    pause 0.6
+    assert eval (r13_debate_is_broken("C2","s3"))
+    $ r13_qa_dump()
+
+testcase crossed_accounts:
+    # 0.18.41: Kongi's word changes Nabi's answer; Seol's word opens a question for the lamplighter.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn"),())
+    pause 1.0
+    assert eval ("cross:nabi_door" in [k for k,t in r13_topics("nabi")] and "cross:nabi_light" not in [k for k,t in r13_topics("nabi")])
+    $ r13_finish_topic("smalltalk:kongi_basket")
+    assert eval ("cross:nabi_light" in [k for k,t in r13_topics("nabi")] and "cross:nabi_door" not in [k for k,t in r13_topics("nabi")])
+    assert eval ("cross:lamp_dawn" not in [k for k,t in r13_topics("resident_lamplighter")])
+    $ r13_finish_topic("smalltalk:seol_rope")
+    assert eval ("cross:lamp_dawn" in [k for k,t in r13_topics("resident_lamplighter")])
+    $ r13_finish_topic("smalltalk:tori_stitches")
+    assert eval ("cross:tok_pin_job" in [k for k,t in r13_topics("resident_tok")])
+
+testcase granny_later_keeps_topic:
+    # 0.18.41: "다음에 하겠습니다" leaves the topic open; the same talk can still give H16.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",case_state="pending"),("know_granny_reads",))
+    pause 1.0
+    run Jump("r13_qa_granny_ask")
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "다음에 하겠습니다"
+    pause 0.6
+    click pos (640,600) until eval ("granny_letter_ask" in [k for k,t in r13_topics("granny")]) timeout 40
+    assert eval (not r13_has("granny_dumb_done") and "H16" not in room13["evidence"])
+    run Jump("r13_qa_granny_ask")
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    click "아직 기다리고 있습니다"
+    click pos (640,600) until eval ("H16" in room13["evidence"]) timeout 40
+    assert eval (r13_has("granny_dumb_done"))
 
 testcase title_fx:
     # 0.18.45 title: first-launch logo and menu fade in, dot snow and lamp flicker.

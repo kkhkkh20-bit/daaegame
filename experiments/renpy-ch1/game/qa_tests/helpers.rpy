@@ -581,6 +581,10 @@ label r13_qa_dot_fx:
     return
 
 
+label r13_qa_granny_ask:
+    call r13_granny_letter_ask
+    jump r13_roam
+
 
 # 0.18.43: a short reel of Daram's 1:1 reactions for review (screen recording; not in the default set).
 default r13_qa_reel_done = False

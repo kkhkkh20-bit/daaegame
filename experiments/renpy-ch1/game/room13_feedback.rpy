@@ -38,24 +38,23 @@ screen r13_click_glint(point):
     add R13ClickGlint() xpos point[0] ypos point[1] xanchor .5 yanchor .5 at r13_click_pulse
     timer .65 action Hide("r13_click_glint")
 
-# 0.18.33 (owner): the card used to sit at the left, over the person being spoken to and the
-# question list. It now sits at the top right, under the date plate, in every context, and is
-# near-square: the record's icon on top, its name below (the longest name wraps to 3 lines).
-define R13_EVIDENCE_CARD_SIZE = 236
+# 0.18.33 (owner): the card sits at the top right, under the date plate, in every context.
+# 0.18.41 (owner): tight around the icon; the name wraps under it and the card grows to fit.
+define R13_EVIDENCE_CARD_SIZE = 172
 define R13_EVIDENCE_CARD_POS = (1256-R13_EVIDENCE_CARD_SIZE, 92)
-define R13_EVIDENCE_ICON_SIZE = 112
+define R13_EVIDENCE_ICON_SIZE = 96
 
 screen r13_evidence_card(key,caption,conversation=False):
     style_prefix "r13"
     frame:
-        xpos R13_EVIDENCE_CARD_POS[0] ypos R13_EVIDENCE_CARD_POS[1] xsize R13_EVIDENCE_CARD_SIZE ysize R13_EVIDENCE_CARD_SIZE padding R13_UI_PADDING["compact"]
+        xpos R13_EVIDENCE_CARD_POS[0] ypos R13_EVIDENCE_CARD_POS[1] xsize R13_EVIDENCE_CARD_SIZE padding (8,8)
         background R13ActionPanel()
         at r13_evidence_reveal
         vbox:
-            xfill True spacing 4
+            xfill True spacing 2
             add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
-            text caption size 17 color "#ebcd8a" xalign .5
-            text ROOM13["evidence"][key]["name"] size 18 color "#fff4df" xalign .5 text_align .5 xmaximum (R13_EVIDENCE_CARD_SIZE-24)
+            text caption size 15 color "#ebcd8a" xalign .5
+            text ROOM13["evidence"][key]["name"] size 16 color "#fff4df" xalign .5 text_align .5 xmaximum (R13_EVIDENCE_CARD_SIZE-16)
 
 screen r13_evidence_found(keys,conversation=False):
     zorder 85

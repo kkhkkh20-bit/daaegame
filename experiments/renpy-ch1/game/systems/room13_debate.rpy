@@ -72,6 +72,19 @@ init 98 python:
                     hint="촛대가 부러진 뒤 다람이는 침대 밑에 숨어 있었다. 통로 쪽에서 다가온 발자국도 있었다.",
                     broken=[("dad","촛대가 갈라진 직후 아이는 침대 밑으로 숨었고, 구하러 들어갈 때까지 나오지 않았습니다. 그사이 통로 쪽에서 다가온 발자국이 남아 있습니다."),
                         ("buri","……그럼 할아버지를 친 사람이 따로 있다는 거예요?",{"expression":"surprise"})],
+                    # 0.18.41 (owner review): the passage Dad proved in C1 comes back at him.
+                    counter=dict(need_prop="C1",
+                        lines=[("resident_ppul","잠깐만요. 아까 13호에 다른 길이 있다고 하셨지요."),
+                            ("resident_ppul","그럼 그 통로로 아이가 직접 나갔다가 들어왔을 수도 있잖습니까?",{"expression":"angry"})],
+                        prompt="통로가 있다는 내 말이 다람이에게 돌아왔다. 어떻게 답할까?",
+                        options=[("correct","그 통로는 주방에서 레버를 올려야 열린다. 방 안의 아이 혼자서는 열 수 없다."),
+                            ("over","그 통로를 쓴 사람은 할머니뿐이다."),
+                            ("weak","아이는 겁이 많아서 그런 길로 못 간다.")],
+                        correct=[("dad","책장 뒤 문은 주방에서 레버를 올려야 열립니다. 아까 이 자리에서 확인한 대로입니다."),
+                            ("dad","방 안에 갇힌 아이 혼자서는 열 수 없습니다. 그 문이 열렸다면, 그때 주방에 누군가 있었다는 뜻입니다."),
+                            ("resident_ppul","……주방에 누군가요.",{"expression":"flustered"})],
+                        wrong=dict(over=("resident_seori","그 길을 누가 썼는지는 아직 아무도 밝히지 못했습니다. 지금 물은 건 아이가 그 길을 쓸 수 있었느냐입니다."),
+                            weak=("resident_ppul","겁 많은 아이가 촛대는 휘둘렀다면서요?",{"expression":"angry"}))),
                     broken_by={
                         "E10":[("dad","밤이가 본 것입니다. 촛대가 바닥에서 갈라진 직후 아이는 침대 밑으로 숨었고, 구하러 들어갈 때까지 나오지 않았습니다."),
                             ("buri","……그럼 침대 밑에 있던 애가 어떻게 할아버지를 다시 쳐요?",{"expression":"surprise"})],
@@ -141,6 +154,20 @@ init 98 python:
                     accept=["E15"],
                     soft={"E13":("resident_seori","그날 새 핀으로 바꿨다는 건 알겠습니다. 그 핀이 언제까지 할머니 옷에 달려 있었는지가 궁금합니다.")},
                     hint="첫 비명 직후, 나비가 그 핀을 할머니 목도리에 직접 여며 주었다.",
+                    # 0.18.41: Nabi's testimony is turned on Nabi.
+                    counter=dict(
+                        lines=[("granny","그래요. 첫 비명 뒤에도 핀이 내 목도리에 있었다 쳐요."),
+                            ("granny","그럼 그 핀을 마지막으로 만진 건 나비네요. 나비가 떨어뜨렸을 수도 있잖아요?",{"expression":"angry"}),
+                            ("nabi","네……?",{"expression":"surprise"})],
+                        prompt="나비의 증언이 나비에게 돌아왔다. 어떻게 답할까?",
+                        options=[("correct","나비가 핀을 여민 곳은 식당이다. 그 뒤 핀은 할머니 목도리에 달린 채 식당을 나갔다."),
+                            ("over","나비는 할머니가 시켜서 말을 바꾸고 있다."),
+                            ("weak","그런 핀은 흔하니 누구 것인지 모른다.")],
+                        correct=[("dad","나비가 핀을 여며 드린 건 첫 비명 때, 식당에서였습니다."),
+                            ("dad","그 뒤 공구를 가지러 식당을 나간 건 할머니입니다. 핀도 목도리에 달린 채 함께 나갔습니다."),
+                            ("granny","……….",{"expression":"anxious"})],
+                        wrong=dict(over=("resident_seori","나비가 거짓말을 한다는 근거는 없습니다. 근거 없이 증인을 몰아세우지 마십시오."),
+                            weak=("granny","방금 그 핀은 마을에 하나뿐이라고 하셨잖아요. 말을 바꾸시네요.",{"expression":"angry"}))),
                     broken=[("nabi","첫 비명 바로 뒤에 제가 할머니 핀을 여며 드렸어요. 그때는 핀이 목도리에 달려 있었어요."),
                         ("granny","……그래서 어쨌다는 거예요?",{"expression":"angry"})],
                     wrong=("granny","그 자료가, 핀이 오후에 떨어진 게 아니라는 증거예요?")),
@@ -501,6 +528,18 @@ init 98 python:
     def r13_debate_markup(text):
         return text.replace("【","{color=#c4562f}").replace("】","{/color}")
 
+    def r13_debate_counter(claim,sid):
+        """A counter the opponent builds from what Dad just proved (0.18.41), or None."""
+        c=r13_debate_statement(claim,sid).get("counter")
+        if not c:return None
+        if c.get("need_prop") and c["need_prop"] not in (store.room13 or {}).get("propositions",[]):return None
+        return c
+
+    def r13_debate_counter_options(claim,sid):
+        opts=list(r13_debate_statement(claim,sid)["counter"]["options"])
+        shift=(sum(ord(ch) for ch in claim+sid)+1)%len(opts)
+        return opts[shift:]+opts[:shift]
+
     def r13_debate_conclusion_options(claim):
         opts=list(R13_DEBATE[claim]["conclusion"]["options"])
         # 매번 같은 자리에 정답이 오지 않게, 주장마다 고정된 순서로 섞는다.
@@ -550,6 +589,12 @@ label r13_debate_loop:
             show screen r13_material_corner(r13_item)
             call r13_lines(r13_debate_rows,"debate:"+r13_debate_result+":"+r13_claim+":"+r13_debate_action[1]+":"+r13_item)
             hide screen r13_material_corner
+            if r13_debate_result=="break" and r13_debate_counter(r13_claim,r13_debate_action[1]):
+                # The rebuttal stands only once Dad answers the counter it provoked.
+                call r13_debate_answer_counter(r13_claim,r13_debate_action[1])
+                if not _return:
+                    $ r13_debate_result="countered"
+                    $ r13_debate_miss(r13_claim)
             if r13_debate_result=="break":
                 $ r13_debate_mark("broken",r13_claim,r13_debate_action[1])
                 $ r13_submit(r13_claim,r13_item)
@@ -583,6 +628,17 @@ label r13_debate_unanswerable(claim):
         (None,"아무도 그 말을 막지 못했다.")],"debate:unanswerable:"+claim)
     $ r13_debate_close(claim,"no_evidence")
     return
+
+label r13_debate_answer_counter(claim,sid):
+    $ r13_debate_c=r13_debate_counter(claim,sid)
+    call r13_lines(r13_debate_c["lines"],"debate:counter:"+claim+":"+sid)
+    $ r13_debate_pick=renpy.display_menu([(r13_debate_c["prompt"],None)]+[(text,kind) for kind,text in r13_debate_counter_options(claim,sid)])
+    if r13_debate_pick=="correct":
+        call r13_lines(r13_debate_c["correct"],"debate:counter_ok:"+claim+":"+sid)
+        return True
+    call r13_lines([r13_debate_c["wrong"][r13_debate_pick],
+        ("dad","(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)",{"thought":True})],"debate:counter_wrong:"+claim+":"+sid+":"+r13_debate_pick)
+    return False
 
 label r13_debate_conclude(claim):
     $ r13_debate_spec=R13_DEBATE[claim]["conclusion"]
