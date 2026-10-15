@@ -61,6 +61,7 @@ init 118 python:
 # ---- arrival scenes (called from r13_w1c_events) ----
 label r13_owl_events:
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
+    call r13_reinspect_events
     if _d==2 and _p==1 and _loc=="hall" and room13["victim_state"]!="dead" and not r13_has("ev_owl_threshold_done"):
         call r13_owl_threshold
     if _d==3 and _p==2 and _loc=="dining" and room13["case_state"]=="pending" and not r13_has("ev_owl_omen_done"):

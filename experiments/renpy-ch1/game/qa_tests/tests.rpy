@@ -1628,3 +1628,18 @@ testcase trial_notes:
     run Function(r13_record_trial_notes)
     assert eval (len(room13["trial_notes"])==4 and room13["trial_notes"][2]["result"]=="할머니의 이동에 관한 주장은 남았다." and not any(k in n["fact"]+n["question"]+n["result"] for n in room13["trial_notes"] for k in ROOM13["evidence"]))
     assert eval (any(n.get("result")=="잠긴 방에 아이만 있었다는 주장은 무너졌다." for n in r13_first_mystery_notes()))
+
+testcase reinspect_and_credit:
+    # 0.18.19: candlestick parts from the first run; 은호's hidden ledger is credit, not the murder.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="clinic",case_state="occurred",victim_state="dead",daram_state="held",evidence=["E07"],read_topics=["tok_repair"]),())
+    pause 1.0
+    assert eval ("seal_look" in [k for k,s in r13_topics("resident_seori")])
+    run Function(r13_flag,"saw_eunho_hide")
+    run Function(r13_finish_topic,"eunho_hidden_ledger")
+    assert eval ("J16" in room13["evidence"] and "13호 사건" in ROOM13["evidence"]["J16"]["does_not_establish"])
+    run Function(r13_edit,day=9)
+    run Function(r13_flag,"eunho_refuses")
+    assert eval ("w2_eunho_credit" in [k for k,s in r13_topics("resident_eunho")])
