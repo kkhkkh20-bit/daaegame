@@ -508,7 +508,7 @@ init 999 python:
             shots=[]
             if spec:
                 probe=R13Blink(spec["half"],"daram",emotion,spec)
-                start=1.6+probe.gap(0)
+                start=0.7+probe.gap(0)
                 renpy.pause(start+0.09,hard=True)       # 감은 눈(반쯤 50ms 뒤 90ms)
                 renpy.screenshot(os.path.join(out,"blink_%s_closed.png"%emotion));shots.append("closed")
                 renpy.pause(0.6,hard=True)
@@ -519,11 +519,12 @@ init 999 python:
             renpy.hide("r13_visitor")
         # 0.18.33: Daram's body reacts when her expression changes (neutral -> each emotion).
         report["react"]={}
-        for emotion in ("surprise","joy","angry","anxious","flustered"):
+        store.place="여관 접수대"
+        for emotion in ("surprise","joy","angry","anxious","flustered","thinking"):
             r13_speaker("daram","neutral","neutral")
             renpy.say(R13_CHARS.get("daram"),"반응 확인 문장입니다.",interact=False)
             renpy.pause(0.5,hard=True)
-            r13_speaker("daram",R13_FULLBODY_TO_LEGACY[emotion],emotion)
+            r13_speaker("daram",R13_FULLBODY_TO_LEGACY.get(emotion,"thinking"),emotion)
             renpy.say(R13_CHARS.get("daram"),"반응 확인 문장입니다.",interact=False)
             shots=[]
             last=0.0
@@ -565,7 +566,7 @@ init 999 python:
                 renpy.say(R13_CHARS.get(person),"반응 확인 문장입니다.",interact=False)
                 spec=R13_DOT_FX["blink"]["people"][person]["neutral"]
                 probe=R13Blink(spec["half"],person,"neutral",spec)
-                renpy.pause(1.6+probe.gap(0)+0.09,hard=True)
+                renpy.pause(0.7+probe.gap(0)+0.09,hard=True)
                 renpy.screenshot(os.path.join(out,"blink2_%s_closed.png"%person))
             report["react_more"][person]=bool(spec)
             renpy.hide("r13_visitor")

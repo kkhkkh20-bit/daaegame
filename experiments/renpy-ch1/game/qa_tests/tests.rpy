@@ -2340,22 +2340,24 @@ testcase karo_center:
     $ persistent.room13_large_text=False
 
 testcase opening_cut:
-    # 0.18.39 opening cutscene: runs on a new game outside tests; forced here.
+    # 0.18.41 opening cutscene (letter, map route, title, carriage): runs on a new game outside tests; forced here.
     pause 2.0
     $ r13_opening_force = True
     click "처음부터"
-    pause 1.2
-    screenshot "op_0_text.png"
-    pause 2.0
-    screenshot "op_1_text2.png"
+    pause 1.0
+    screenshot "op_0_letter.png"
     pause 2.6
-    screenshot "op_2_gate.png"
+    screenshot "op_1_lines.png"
+    pause 2.2
+    screenshot "op_2_route.png"
     pause 2.6
-    screenshot "op_3_title.png"
-    pause 3.2
-    screenshot "op_4_carriage.png"
+    screenshot "op_3_pin.png"
     pause 3.0
-    screenshot "op_5_after.png"
+    screenshot "op_4_title.png"
+    pause 3.4
+    screenshot "op_5_carriage.png"
+    pause 3.0
+    screenshot "op_6_after.png"
     assert eval (place == "마차 안" and persistent.room13_opening_cut_seen)
     $ r13_opening_force = False
 
@@ -2456,3 +2458,17 @@ testcase granny_later_keeps_topic:
     click "아직 기다리고 있습니다"
     click pos (640,600) until eval ("H16" in room13["evidence"]) timeout 40
     assert eval (r13_has("granny_dumb_done"))
+
+testcase title_fx:
+    # 0.18.41 title: first-launch logo drop, menu fade, dot snow and lamp flicker.
+    pause 0.15
+    screenshot "t0.png"
+    pause 0.25
+    screenshot "t1.png"
+    pause 0.6
+    screenshot "t2.png"
+    pause 1.5
+    screenshot "t3.png"
+    pause 0.5
+    screenshot "t4.png"
+    assert eval (R13_TITLE_STATE["intro_done"])
