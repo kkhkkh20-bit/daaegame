@@ -34,7 +34,7 @@ init 120 python:
 
     ROOM13["activities"]["use_wedge_books"]=_r13_item_act("room13","나무 쐐기를 책장 아래 판 틈에 끼운다",[
         (None,"책장 아래 판과 바닥 사이에 나무 쐐기를 밀어 넣었다. 판이 안쪽으로 밀리지 않게 단단히 박혔다.")],
-        ["own:wedge","passage_known"],flags=["passage_wedged"],day=(2,4),consume="wedge",not_flags=["passage_wedged"])
+        ["own:wedge","passage_known"],flags=["passage_wedged"],day=(2,4),consume="wedge",cost=0,not_flags=["passage_wedged"])
     ROOM13["activities"]["use_wedge_books"]["case"]="pending"
     R13_CONTEXT_ACTIVITIES[("room13","books")]=tuple(R13_CONTEXT_ACTIVITIES.get(("room13","books"),()))+("use_wedge_books",)
 

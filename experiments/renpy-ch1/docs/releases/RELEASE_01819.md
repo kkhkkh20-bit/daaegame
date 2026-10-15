@@ -54,3 +54,13 @@
 - 단위 테스트, Ren'Py lint 통과.
 - 새 화면 테스트: trial_notes, reinspect_and_credit, use_knowledge, event_offer.
 - 전체 회귀(표준 묶음 60개), 웹 빌드, 브라우저 QA(qa_town_events, qa_carriage, qa_sound, qa_navigation, qa_save_slots)를 0.18.15~0.18.19 묶음 전체에 대해 다시 돌렸다. 결과는 이 문서 아래에 덧붙인다.
+
+### 검증 결과 (0.18.15~0.18.19 통합)
+- 전체 회귀: 표준 묶음 57개 통과.
+  - 처음엔 evening_board가 실패했다. 0.18.18의 "쐐기를 책장 판에 끼운다"가 시간 비용 1로 등록돼, 시간은 일·잠으로만 흐른다는 규칙에 어긋났다. 비용을 0으로 고친 뒤 통과.
+- 브라우저 QA
+  - qa_carriage, qa_sound, qa_town_events 통과.
+  - qa_navigation, qa_save_slots는 통과(화면 확인 대기).
+  - qa_town_events는 사건 표시를 눌러 들어가도록, 바뀐 선택지 문구(“등 안의 돌 조각은 뭡니까?”)에 맞춰 고쳤다.
+- 사건 표시 화면(수리점)을 눈으로 확인했다. 목표줄 아래에 겹치지 않게 놓인다.
+- 실제 플레이로 재미·난이도를 확인한 것은 아니다.
