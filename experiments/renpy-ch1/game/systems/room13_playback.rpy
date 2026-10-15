@@ -37,7 +37,8 @@ screen r13_backlog():
     key "K_h" action Hide("r13_backlog")
 
 screen r13_playback_footer(show_record=False,ready=True):
-    $ footer_width=(448 if show_record else r13_footer_width(3))
+    $ footer_width=(560 if show_record else r13_footer_width(4))
+    $ skip_ready=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     add R13InkPanel(alpha="d4") xpos (1280-footer_width) ypos 676 xsize footer_width ysize 44
     frame:
         area (1280-footer_width,664,footer_width,56) padding (0 if show_record else 8,0) background None
@@ -45,6 +46,7 @@ screen r13_playback_footer(show_record=False,ready=True):
             spacing 8
             use r13_antique_button("백로그","backlog",Show("r13_backlog"),enabled=ready,compact=True)
             use r13_antique_button(("자동 ●" if _preferences.afm_enable else "자동"),"auto",Preference("auto-forward","toggle"),enabled=ready,compact=True,chosen=_preferences.afm_enable)
+            use r13_antique_button("건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready,compact=True)
             if show_record:
                 use r13_antique_button("더보기","settings",Show("r13_more_tools"),enabled=ready,compact=True)
             else:

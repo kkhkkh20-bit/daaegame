@@ -25,6 +25,9 @@ init 70 python:
         preferences.set_mute("sfx", False)
         preferences.text_cps = config.default_text_cps
         preferences.afm_time = 15
+        # 0.18.46: reset also turns auto-forward off, so lines do not advance on their own after
+        # the menu closes.
+        preferences.afm_enable = False
         persistent.room13_text_small = False
         persistent.room13_large_text = bool(renpy.variant("small"))
         persistent.room13_large_text_auto = True

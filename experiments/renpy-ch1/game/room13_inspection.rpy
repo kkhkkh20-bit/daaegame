@@ -133,9 +133,17 @@ init 66 python:
         # Development fallback only; asset contract and release tests require icons.
         return Text(R13_INSPECTION_ITEMS[key][0],size=20,color="#fff2cf",text_align=.5)
 
+    def r13_memo_taken():
+        """13호 desk after Mom's memo is picked up (0.18.48): the envelope is gone from the desk."""
+        s=store.room13 or {}
+        return bool(s.get("life_poc")) and s.get("location")=="room13" and r13_has("M01")
+
     def r13_inspection_art(view):
         spec=R13_INSPECTION_LAYOUT[view]
-        layers=[(0,0),Transform(spec["file"],xysize=(1280,720),nearest=True) if renpy.loadable(spec["file"]) else Solid("#59402b",xsize=1280,ysize=720)]
+        art=spec["file"]
+        if view=="desk" and r13_memo_taken() and renpy.loadable("assets/room13-pixel-inspect-desk-nomemo.webp"):
+            art="assets/room13-pixel-inspect-desk-nomemo.webp"  # dev/make_desk_without_memo.py
+        layers=[(0,0),Transform(art,xysize=(1280,720),nearest=True) if renpy.loadable(art) else Solid("#59402b",xsize=1280,ysize=720)]
         state=r13_inspection_state()
         if view=="desk":
             for key in ("pencil","paper","ruler"):
@@ -260,7 +268,7 @@ screen r13_desk_inspection():
     default message=("우리 여행 필기함이다. 서랍 속 작은 도구칸이 잠겨 있다." if not r13_inspection_state()["compartment_open"] else "우리 여행 필기함이다. 돋보기를 고르고 물건을 누르면 크게 볼 수 있다.")
     add r13_inspection_art(view)
     for target,rect in R13_INSPECTION_LAYOUT[view]["targets"].items():
-        if not (view=="desk" and target in ("pencil","paper","ruler") and target in r13_inspection_state()["taken"]):
+        if not (view=="desk" and target in ("pencil","paper","ruler") and target in r13_inspection_state()["taken"]) and not (view=="desk" and target=="letters" and r13_memo_taken()):
             button:
                 area tuple(rect) padding (0,0) background None hover_background R13HoverCorners()
                 action (Return("mother_note") if view=="desk" and target=="letters" and room13.get("life_poc") and room13["location"]=="room13" else Function(r13_inspection_click,view,target,selected))

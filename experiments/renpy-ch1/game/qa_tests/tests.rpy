@@ -1081,14 +1081,19 @@ testcase skip_modes:
     pause until screen "say" timeout 30
     pause 1.0
     screenshot "skip_footer.png"
-    click "숨기기"
+    # 0.18.42 moved hide/fast into 더보기; 0.18.46 put 건너뛰기 (skip this conversation) on the bar.
+    click "더보기"
+    pause 0.5
+    click "대화창 숨기기"
     pause 0.5
     assert eval (_windows_hidden)
     screenshot "hidden.png"
     click pos (640,300)
     pause 0.5
     assert eval (not _windows_hidden)
-    click "빠르게"
+    click "더보기"
+    pause 0.5
+    click "모든 대사 빠르게"
     pause until screen "choice" timeout 20
     pause 1.0
     screenshot "choice_context.png"
@@ -2480,3 +2485,59 @@ testcase motion_reel:
     pause 3.0
     run Call("r13_qa_reel")
     click pos (1276,300) until eval r13_qa_reel_done timeout 120
+
+testcase topic_record:
+    # 0.18.46: the first reading is kept verbatim; a review opens short and can expand to it.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="gate"),())
+    pause 1.0
+    $ r13_qa_rows=[("dad","당시 질문"),("karo","당시 대답 하나입니다."),("karo","당시 대답 둘, 조금 더 깁니다.")]
+    $ r13_topic_shown=r13_qa_rows
+    run Function(r13_finish_topic,"karo_road")
+    assert eval (r13_topic_record("karo_road")==[["dad","당시 질문",False],["karo","당시 대답 하나입니다.",False],["karo","당시 대답 둘, 조금 더 깁니다.",False]])
+    run Function(r13_edit,daram_state="held")
+    assert eval ([t for w,t in r13_topic_key_lines("karo_road")]==["당시 대답 하나입니다.","당시 대답 둘, 조금 더 깁니다."])
+    assert eval (r13_topic_when("karo_road")=="2일째 오전")
+    run Jump("r13_qa_topic_review")
+    click pos (640,600) until screen "choice" timeout 40
+    pause 0.6
+    screenshot "record_menu.png"
+    click "그만 본다"
+    pause 0.5
+
+testcase conversation_skip:
+    # 0.18.46: 건너뛰기 ends the current conversation; what follows it still runs.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    run Jump("r13_entry_karo_menu")
+    pause 1.5
+    click "함께 왔다고"
+    pause 1.5
+    screenshot "skip_bar.png"
+    click "건너뛰기"
+    pause 1.5
+    assert screen "r13_entry_karo_topics"
+
+testcase memo_from_desk:
+    # 0.18.48: reading Mom's memo from the desk close-up shows its card over the close-up, and the
+    # envelope is gone from the desk afterwards.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,evidence=["E03"]),("lodging","entry_corrected"))
+    pause 1.0
+    run Jump("r13_qa_inspect_desk")
+    pause 1.0
+    assert eval (not r13_memo_taken())
+    click pos (450,170)
+    click pos (640,600) until screen "r13_desk_inspection" timeout 40
+    pause 0.4
+    assert eval ("M01" in room13["evidence"] and r13_memo_taken() and renpy.get_screen("r13_evidence_found") is not None)
+    screenshot "memo_card_over_desk.png"
+    pause 2.6
+    screenshot "desk_without_memo.png"

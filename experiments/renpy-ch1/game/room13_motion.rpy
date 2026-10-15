@@ -1,5 +1,5 @@
-# Small performance. Field residents breathe (0.18.37, owner); their clickable
-# silhouette stays at rest. Dialogue close-ups stay still apart from reactions.
+# Small performance. Field residents stand still (0.18.46, owner: the 0.18.37 breathing bob is
+# removed). Dialogue close-ups stay still apart from reactions.
 default persistent.room13_motion = True
 default r13_motion_person = None
 image r13_visitor = Null()
@@ -205,10 +205,10 @@ init 58 python:
             renpy.redraw(self,max(.005,.125-(clock-frame)))
             return result
 
-    # 0.18.37 (owner): field residents breathe. The feet/seat/hand rows below the
-    # contact line never move (r13_idle_geometry), so furniture contact holds.
-    # Hit masks pass still=True: picking uses the resting silhouette (max 2px off).
-    R13_FIELD_IDLE = True
+    # 0.18.37 added a breathing bob for field residents; 0.18.46 (owner) turns it off: on the
+    # investigation screen every resident stands still. R13AuthoredIdle is kept for old saves
+    # that still hold one, and the switch below can bring it back.
+    R13_FIELD_IDLE = False
 
     def r13_idle_art(art,person,pose,spec,width,height,contact=None,speaking=False,still=False):
         # Dialogue/topic portraits explicitly pass dialogue_bust even between lines.

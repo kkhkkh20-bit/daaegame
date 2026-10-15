@@ -638,9 +638,39 @@ init python:
         try:
             if getattr(store,"room13_mode",False) and getattr(store,"room13",None):
                 d["r13_where"]=r13_clock()+" · "+R13_PLACES[store.room13["location"]][0]
+                # 0.18.46: which point of the story, and the last line shown, so a slot can be
+                # told apart from the one saved just before a choice.
+                d["r13_stage"]=r13_save_stage()
+                d["r13_last"]=r13_save_last_line()
         except Exception:
             pass
     config.save_json_callbacks.append(r13_save_json)
+
+    def r13_save_stage():
+        s=store.room13 or {}
+        if s.get("ending"):return "결말"
+        if s.get("finale_started"):return "14일째 제단"
+        goal=r13_campaign_goal() if s.get("day",1)>=2 else None
+        return goal or ("재판 뒤" if s.get("trial_ended") else "")
+
+    def r13_save_last_line(limit=34):
+        for entry in reversed(getattr(store,"_history_list",[]) or []):
+            what=getattr(entry,"what",None)
+            if what:
+                text=renpy.filter_text_tags(what,allow=[]).replace("\n"," ")
+                who=getattr(entry,"who",None)
+                text=(who+": "+text) if who else text
+                return text if len(text)<=limit else text[:limit-1]+"…"
+        return ""
+
+    def r13_slot_info(slot,key):
+        return (renpy.slot_json(slot) or {}).get(key,"")
+
+    def r13_load_confirm(slot):
+        """Same path for every slot, autosave included: a running game asks before losing progress."""
+        load=r13_load_action(slot)
+        if main_menu or r13_save_status(renpy.slot_json(slot))!="compatible":return load
+        return Confirm("저장하지 않은 진행은 사라진다. 불러올까?",load)
 
     def r13_slot_where(slot):
         json=renpy.slot_json(slot)
@@ -653,9 +683,7 @@ init python:
             return Confirm("이 칸에는 이미 저장이 있다. 덮어쓸까?",save) if renpy.can_load(slot) else save
         # Compatibility review (r13_load_action) decides how a save opens;
         # in a running game a compatible load also asks before losing progress.
-        load=r13_load_action(slot)
-        if main_menu or r13_save_status(renpy.slot_json(slot))!="compatible":return load
-        return Confirm("저장하지 않은 진행은 사라진다. 불러올까?",load)
+        return r13_load_confirm(slot)
 
 screen file_slots(title,saving):
     modal True
@@ -675,7 +703,7 @@ screen file_slots(title,saving):
                         selected page==p text_size 21 padding (14,6)
                 if not saving:
                     textbutton "최근 자동저장":
-                        action r13_load_action("auto-1")
+                        action r13_load_confirm("auto-1")
                         sensitive FileLoadable(1,page="auto")
                         text_size 21
             grid 2 3:
@@ -689,15 +717,19 @@ screen file_slots(title,saving):
                         hbox:
                             spacing 14
                             add FileScreenshot(i+1,page=str(page)) xsize 192 ysize 108 yalign .5
+                            # 0.18.46: read the story point first (day, time, place), then where in
+                            # the story and the last line; slot number and real time come last.
                             vbox:
-                                spacing 4 yalign .5
-                                text ("%d쪽 %d번"%(page,i+1)) size 20 color ("#765426" if room13_mode or main_menu else "#ffdc91")
+                                spacing 3 yalign .5
                                 if renpy.can_load(slot):
-                                    text r13_slot_where(slot) size 19 xsize 320
-                                    text r13_save_caption(renpy.slot_json(slot)) size 15 color "#7d8c90" xsize 320
-                                    text FileTime(i+1,format="%Y-%m-%d %H:%M",page=str(page)) size 15 color "#7d8c90"
+                                    text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_read_size(21,25) color ("#765426" if room13_mode or main_menu else "#ffdc91") xsize 320
+                                    if r13_slot_info(slot,"r13_stage"):
+                                        text r13_slot_info(slot,"r13_stage") size r13_read_size(17,21) xsize 320
+                                    if r13_slot_info(slot,"r13_last"):
+                                        text ("“"+r13_slot_info(slot,"r13_last")+"”") size r13_read_size(16,20) color "#5d6a66" xsize 320
+                                    text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_read_size(14,17) color "#7d8c90" xsize 320
                                 else:
-                                    text "비어 있음" size 20
+                                    text ("%d쪽 %d번 · 비어 있음"%(page,i+1)) size r13_read_size(20,24)
             hbox:
                 spacing 18
                 textbutton "돌아가기" action Return()
