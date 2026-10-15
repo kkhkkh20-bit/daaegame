@@ -2029,3 +2029,49 @@ testcase gm_scale:
     click "본 것을 적는다"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice is True)
+
+testcase gm_floor:
+    # 0.18.22 visual gimmicks 02: hand → knife lifts the board (no M02) → unfolding reads M02.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="room13",life_poc=True),("lodging","entry_corrected"),("knife",))
+    pause 1.0
+    run Jump("r13_qa_gm_floor")
+    pause 1.0
+    click pos (640,420)
+    click "부리의 작업칼"
+    click pos (640,420)
+    pause 1.0
+    assert eval (r13_gm_state("floor").get("stage")=="open" and "M02" not in room13["evidence"])
+    screenshot "gm_floor_open.png"
+    click pos (646,432)
+    pause 1.0
+    screenshot "gm_floor_note.png"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)
+
+testcase gm_stone:
+    # 0.18.22 visual gimmicks 02: paper on the stone, rub three rows (drag or sweep), then read.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="square",life_poc=True),("lodging","entry_corrected"),("rubbing",))
+    pause 1.0
+    run Jump("r13_qa_gm_stone")
+    pause 1.0
+    click "탁본 종이와 숯"
+    click pos (640,330)
+    pause 1.0
+    assert eval (r13_gm_state("stone").get("paper") and not r13_rub_enough())
+    click "한 줄 문지르기"
+    pause .5
+    click "한 줄 문지르기"
+    pause 1.0
+    screenshot "gm_stone_half.png"
+    click "한 줄 문지르기"
+    pause 1.0
+    assert eval (r13_rub_enough())
+    click "드러난 자국을 살펴본다"
+    click pos (640,600) until screen "r13_hub" timeout 40
+    assert eval (r13_qa_dv_choice is True)

@@ -400,3 +400,9 @@ label r13_qa_gm_lamp:
 
 label r13_qa_gm_scale:
     call r13_qa_gm("r13_gm_scale")
+
+label r13_qa_gm_floor:
+    call r13_qa_gm("r13_gm_floor")
+
+label r13_qa_gm_stone:
+    call r13_qa_gm("r13_gm_stone")

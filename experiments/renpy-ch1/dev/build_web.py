@@ -36,6 +36,8 @@ EXCLUDE = ("cache/*", "saves/*", "qa_tests/*", "*.rpyc", "*.rpymc", "*.bak",
 REMOTE_MUSIC = "assets/*.mp3"
 # Legacy campaign art (archived chapters): only fetched when those open.
 REMOTE_IMAGE = "assets/*.png"
+# Click-to-open close-up backgrounds (0.18.22): fetched when a close-up first opens.
+REMOTE_CLOSEUP = ("assets/room13-pixel-life-*.webp", "assets/r13-gimmick-*.webp")
 # Small UI icons that must never show a placeholder.
 ICONS = {"evidence.png", "save.png", "menu.png", "back.png", "present.png", "investigate.png",
          "record.png", "move.png", "talk.png", "press.png", "sound-on.png", "sound-off.png",
@@ -221,7 +223,7 @@ def main():
             continue
         if fnmatch.fnmatch(rel, REMOTE_MUSIC) and rel != menu_music:
             remote.append(rel); remote_lines += [rel, "music -"]
-        elif fnmatch.fnmatch(rel, REMOTE_IMAGE) and path.name not in ICONS:
+        elif (fnmatch.fnmatch(rel, REMOTE_IMAGE) and path.name not in ICONS) or any(fnmatch.fnmatch(rel, p) for p in REMOTE_CLOSEUP):
             data = path.read_bytes()
             (w, h), thumb = placeholder(data)
             ph = stage / "_placeholders" / rel

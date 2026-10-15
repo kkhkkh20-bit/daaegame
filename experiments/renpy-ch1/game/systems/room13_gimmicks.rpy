@@ -180,3 +180,121 @@ label r13_gm_scale:
         else:
             $ _msg="빈 접시다."
     return False
+
+# ---- package 02 (0.18.22): under the bed (use_knife_under) and the square stone (use_rubbing_stone) ----
+#   floor: hand on the board shows the loose end → knife lifts it (no evidence) → unfolding the
+#          note is the step that reads M02. The knife is not used up.
+#   stone: the rubbing paper goes on the scraped face → rub by dragging (or one row per button)
+#          → once marks span three rows, Dad can read them (R01). The paper is used up only then,
+#          by the existing activity rule. The pale marks are abstract, not a script to decipher.
+init 128 python:
+    R13_LIFE_SCENES.update({
+        "floor_closed":_r13_gm_scene("13호 · 침대 밑","assets/r13-gimmick-floor-closed.webp",dict(board=([0.29,0.45,0.43,0.29],"들뜬 판자"))),
+        "floor_open":_r13_gm_scene("13호 · 침대 밑","assets/r13-gimmick-floor-open.webp",dict(note=([0.44,0.53,0.13,0.14],"접힌 종이"),board=([0.29,0.45,0.15,0.29],"들어 올린 판자"))),
+        "floor_note":_r13_gm_scene("13호 · 접힌 종이","assets/r13-gimmick-note-open.webp",{}),
+        "stone_base":_r13_gm_scene("광장 · 돌 표면","assets/r13-gimmick-stone-base.webp",dict(face=([0.3,0.18,0.4,0.56],"긁힌 돌 표면"))),
+        "stone_paper":_r13_gm_scene("광장 · 돌 표면","assets/r13-gimmick-stone-paper.webp",{}),
+    })
+    for _k in ("use_knife_under","use_rubbing_stone"):
+        ROOM13["activities"][_k]["special"]=True
+    R13_GIMMICK_LABELS.update({"use_knife_under":"r13_gm_floor","use_rubbing_stone":"r13_gm_stone"})
+    R13_RUB_AREA=r13_life_rect([0.3,0.18,0.4,0.56]);R13_RUB_COLS=6;R13_RUB_ROWS=4
+
+    def r13_rub_cell_rect(cell):
+        x,y,w,h=R13_RUB_AREA;c,r=cell;cw=w//R13_RUB_COLS;rh=h//R13_RUB_ROWS
+        return (x+c*cw,y+r*rh,cw if c<R13_RUB_COLS-1 else w-c*cw,rh if r<R13_RUB_ROWS-1 else h-r*rh)
+
+    def r13_rub_cells():
+        return [tuple(c) for c in r13_gm_state("stone").get("cells",[])]
+
+    def r13_rub_add(cells):
+        known=r13_rub_cells();new=[c for c in cells if c not in known]
+        if new:r13_gm_save("stone",cells=[list(c) for c in known+new])
+        return bool(new)
+
+    def r13_rub_enough():
+        cells=r13_rub_cells()
+        return len(cells)>=10 and len({r for c,r in cells})>=3
+
+    def r13_rub_layer():
+        full=Transform("assets/r13-gimmick-stone-rubbed.webp",xysize=(1280,720),nearest=True)
+        layers=[]
+        for cell in r13_rub_cells():
+            x,y,w,h=r13_rub_cell_rect(cell)
+            layers+=[(x,y),Transform(full,crop=(x,y,w,h))]
+        return Composite((1280,720),*layers) if layers else Null(1280,720)
+
+    class R13RubPad(renpy.Displayable):
+        """Drag over the paper: every grid cell the pointer crosses while pressed gets rubbed."""
+        def __init__(self,**kwargs):
+            super(R13RubPad,self).__init__(**kwargs);self.down=False
+        def cell_at(self,x,y):
+            ax,ay,aw,ah=R13_RUB_AREA
+            if not (ax<=x<ax+aw and ay<=y<ay+ah):return None
+            return (min(R13_RUB_COLS-1,int((x-ax)*R13_RUB_COLS/aw)),min(R13_RUB_ROWS-1,int((y-ay)*R13_RUB_ROWS/ah)))
+        def event(self,ev,x,y,st):
+            import pygame_sdl2 as pygame
+            if ev.type==pygame.MOUSEBUTTONDOWN and ev.button==1 and self.cell_at(x,y):self.down=True
+            elif ev.type==pygame.MOUSEBUTTONUP:self.down=False
+            if self.down and ev.type in (pygame.MOUSEBUTTONDOWN,pygame.MOUSEMOTION):
+                cell=self.cell_at(x,y)
+                if cell and r13_rub_add([cell]):renpy.restart_interaction()
+        def render(self,width,height,st,at):
+            return renpy.Render(1280,720)
+
+label r13_gm_floor:
+    $ _st=r13_gm_state("floor")
+    $ _msg="침대 밑을 들여다보았다. 판자 하나가 다른 판자보다 조금 들떠 있다."
+    while True:
+        $ _stage=_st.get("stage","closed")
+        call screen r13_life_closeup("floor_"+_stage,tools=(("knife",) if _stage=="closed" and r13_has("own:knife") else ()),actions=[("back","돌아간다")],message=_msg)
+        if _return[0]=="action":
+            return False
+        $ _t=_return[-1];_tool=_return[1] if _return[0]=="use" else None
+        if _stage=="closed" and _tool=="knife":
+            $ r13_gm_save("floor",stage="open");_st=r13_gm_state("floor")
+            $ _msg="칼끝을 틈에 밀어 넣자 판자가 쉽게 들렸다. 아래에 접힌 종이가 있다."
+        elif _stage=="closed":
+            $ _msg="판자 한쪽 끝이 들떠 있다. 손톱이 겨우 들어갈 만한 틈이 있다. 손으로는 들리지 않는다."
+        elif _t=="note":
+            $ r13_gm_save("floor",stage="note");_st=r13_gm_state("floor")
+            $ _lines=list(ROOM13["activities"]["use_knife_under"]["lines"][1:])
+            if r13_home_with_daram():
+                $ _lines.insert(1,("daram","이 도토리, 엄마가 그려 주던 거야."))
+            # The unfolded note stays behind the dialogue while it is read.
+            $ renpy.show("r13_gm_note",what=Transform("assets/r13-gimmick-note-open.webp",xysize=(1280,720),nearest=True))
+            call r13_lines(_lines,"activity:use_knife_under:read")
+            $ renpy.hide("r13_gm_note")
+            return True
+        else:
+            $ _msg="들어 올린 판자다. 아래 공간은 손바닥만 하다."
+    return False
+
+label r13_gm_stone:
+    $ _st=r13_gm_state("stone")
+    $ _msg="광장 돌 표면은 매끈해 보인다. 가까이 보면 날카로운 것으로 긁은 홈이 여러 줄 지나간다."
+    while True:
+        $ _paper=_st.get("paper",False)
+        if _paper:
+            call screen r13_life_closeup("stone_paper",actions=[("sweep","한 줄 문지르기")]+([("read","드러난 자국을 살펴본다")] if r13_rub_enough() else [])+[("back","돌아간다")],
+                message=_msg,overlay=Fixed(r13_rub_layer(),R13RubPad(),xysize=(1280,720)))
+        else:
+            call screen r13_life_closeup("stone_base",tools=(("rubbing",) if r13_has("own:rubbing") else ()),actions=[("back","돌아간다")],message=_msg)
+        if _return[0]=="action":
+            if _return[1]=="sweep":
+                $ _row=min([r for r in range(R13_RUB_ROWS) if len([c for c in r13_rub_cells() if c[1]==r])<R13_RUB_COLS] or [0])
+                $ r13_rub_add([(c,_row) for c in range(R13_RUB_COLS)])
+                $ _msg="숯을 눕혀 한 줄을 넓게 문질렀다."
+            elif _return[1]=="read":
+                call r13_lines(ROOM13["activities"]["use_rubbing_stone"]["lines"][1:],"activity:use_rubbing_stone:read")
+                return True
+            else:
+                return False
+        elif _paper:
+            $ _msg="종이 위를 숯으로 문지르자 긁힌 자리만 하얗게 남는다." if not r13_rub_enough() else "세 줄 넘게 흔적이 드러났다. 이제 살펴볼 수 있다."
+        elif _return[0]=="use" and _return[1]=="rubbing":
+            $ r13_gm_save("stone",paper=True);_st=r13_gm_state("stone")
+            $ _msg="탁본 종이를 돌 표면에 대고 모서리를 눌러 붙였다. 숯을 든 채 종이 위를 끌면 문질러진다."
+        else:
+            $ _msg="긁힌 홈이 가로로 여러 줄 있다. 손끝으로는 모양을 알아보기 어렵다."
+    return False
