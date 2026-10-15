@@ -134,21 +134,21 @@ screen say(who,what):
             key "K_h" action Show("r13_backlog")
         window:
             id "window"
-            xpos (176 if room13_mode else 40)
+            xpos (240 if room13_mode else 40)
             ypos (420 if room13_mode and persistent.room13_large_text else 508 if room13_mode else 551)
-            xsize (928 if room13_mode else 1200)
+            xsize (800 if room13_mode else 1200)
             ysize (212 if room13_mode and persistent.room13_large_text else 124 if room13_mode else 169)
             background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,16)
             if room13_mode:
-                r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 884 font r13_ui_font() color r13_say_color()
+                r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 756 font r13_ui_font() color r13_say_color()
             else:
                 text what id "what" xsize 1120 font "assets/Galmuri11.ttf" color "#fff5df"
         if who:
             frame:
-                xpos 190 ypos (398 if room13_mode and persistent.room13_large_text else 486 if room13_mode else 522)
+                xpos 254 ypos (398 if room13_mode and persistent.room13_large_text else 486 if room13_mode else 522)
                 padding (14,5) background R13StonePanel(alpha="ff")
                 text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
-        text "▸" xpos 1066 ypos 600 size 24 color "#d9d4ab"
+        text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab"
         if room13_mode:
             timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
             if place != "마차 안" and not r13_cg_active:
