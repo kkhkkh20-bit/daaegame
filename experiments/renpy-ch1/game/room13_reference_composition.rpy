@@ -14,4 +14,3 @@ init 100 python:
                 c.circle('#e8c27d',(20,17),7)
                 c.rect('#899d91',(7,25,27,7))
             return r
-

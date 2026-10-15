@@ -2076,6 +2076,67 @@ testcase gm_stone:
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice is True)
 
+testcase redesign_world:
+    # 2026-10-15: four NPC redesigns stand in their real scheduled places.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(zip(("day","period","location"),r13_qa_redesign_slot("resident_yeoni")),life_poc=True),("lodging","entry_corrected"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_yeoni")
+    screenshot "redesign_world_yeoni.png"
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_momo"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_momo")
+    screenshot "redesign_world_momo.png"
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_librarian"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_librarian")
+    screenshot "redesign_world_librarian.png"
+    # The inn panorama is wider than the screen; look at its left end.
+    $ r13_world_cameras={"inn":0}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_nubi"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_nubi")
+    screenshot "redesign_world_nubi.png"
+    $ r13_world_cameras={}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_seol"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_seol")
+    screenshot "redesign_world_seol.png"
+    # 실룩 stands at the right end of the gate panorama (clamped to the edge).
+    $ r13_world_cameras={"gate":9999}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_siluk"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_siluk")
+    screenshot "redesign_world_siluk.png"
+    $ r13_world_cameras={}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_nero"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_nero")
+    screenshot "redesign_world_nero.png"
+    $ r13_world_cameras={}
+    run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_bori"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_qa_redesign_record("resident_bori")
+    screenshot "redesign_world_bori.png"
+
+testcase redesign_dialogue:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody",("normal","large","topic"),list(R13_QA_REDESIGNED),["neutral","surprise"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    pause 1.0
+
 testcase day1_note_spot:
     # 0.18.22 (owner): on day 1 the folded paper on the desk is pressed directly; then sleep opens.
     pause 2.0

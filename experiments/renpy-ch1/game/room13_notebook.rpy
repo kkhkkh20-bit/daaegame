@@ -168,14 +168,14 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
     for index in range(page_size):
         $ key=visible[index] if index<len(visible) else None
         button:
-            area (290+(index%columns)*cell,146+(index//columns)*126,cell-5,120)
+            area (290+(index%columns)*cell,146+(index//columns)*140,cell-5,136)
             padding (6,6) background R13PaperPanel(key is not None and detail==key)
             action (Function(r13_record_select,owner,"detail",key,not archive) if key else NullAction())
             sensitive key is not None
             if key:
                 vbox:
                     xalign .5 yalign .5 spacing 6
-                    add Transform(r13_record_icon(key),xysize=(66,66),fit="contain",nearest=True) xalign .5
+                    add Transform(r13_record_icon(key),xysize=(60,60),fit="contain",nearest=True) xalign .5
                     text (("★ " if not archive and r13_record_favorite(key) else "● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,ROOM13["evidence"][key]["name"][:8])):
                         size r13_read_size(16,21) color "#39432c" xsize cell-20 text_align .5
     hbox:
