@@ -103,6 +103,48 @@ init 63 python:
             result.append(dict(text=text, x=int(label["x"]*sx), y=int(label["y"]*sy), size=size, target=target, state=state, key=key))
         return result
 
+    def r13_inn_guide_rooms():
+        """Room areas on the guide (screen coords) with the same state as their label (0.18.22)."""
+        sx = R13_INN_GUIDE_SIZE[0]/float(R13_INN_GUIDE["width"])
+        sy = R13_INN_GUIDE_SIZE[1]/float(R13_INN_GUIDE["height"])
+        rooms = R13_INN_GUIDE.get("rooms", {})
+        result = []
+        for item in r13_inn_guide_labels():
+            rect = rooms.get(item["key"])
+            if not rect:
+                continue
+            x, y, w, h = rect
+            result.append(dict(item, rect=(int(x*sx), int(y*sy), int(w*sx), int(h*sy))))
+        return result
+
+    class R13GuideRoomMark(renpy.Displayable):
+        """Room overlay on the guide: hover glow for a destination, outline for 'here', shade for locked."""
+        def __init__(self, w, h, state, hover=False, **kwargs):
+            super(R13GuideRoomMark, self).__init__(**kwargs)
+            self.w, self.h, self.state, self.hover = int(w), int(h), state, hover
+        def render(self, width, height, st, at):
+            w, h = self.w, self.h
+            r = renpy.Render(w, h); c = r.canvas()
+            if self.state == "locked":
+                c.rect("#3a2c2266", (0, 0, w, h))
+                for x in range(-h, w, 14):
+                    c.line("#3a2c2240", (x, 0), (x+h, h), 2)
+                return r
+            if self.state == "here":
+                c.rect("#c2502e", (0, 0, w, h), 4)
+                return r
+            if self.hover:
+                c.rect("#ffe2904d", (0, 0, w, h))
+                c.rect("#e0902e", (0, 0, w, h), 5)
+            else:
+                # Idle destinations show a thin dashed edge so they read as places to press.
+                c.rect("#ffd27a2e", (0, 0, w, h))
+                for x in range(0, w, 20):
+                    c.rect("#b8641e", (x, 0, 11, 4)); c.rect("#b8641e", (x, h-4, 11, 4))
+                for y in range(0, h, 20):
+                    c.rect("#b8641e", (0, y, 4, 11)); c.rect("#b8641e", (w-4, y, 4, 11))
+            return r
+
     def r13_inn_guide_close():
         renpy.hide_screen("r13_inn_guide")
         try:
@@ -144,8 +186,24 @@ screen r13_inn_guide():
     add Solid("#0b1418d8")
     $ gx, gy = (1280-R13_INN_GUIDE_SIZE[0])//2, 34
     add Transform(R13_INN_GUIDE["base"], size=R13_INN_GUIDE_SIZE) xpos gx ypos gy
+    # The rooms themselves are the buttons (0.18.22, owner: text labels did not read as places).
+    for room in r13_inn_guide_rooms():
+        $ rx, ry, rw, rh = room["rect"]
+        if room["target"]:
+            button:
+                id ("r13_inn_guide_room_"+room["key"])
+                area (gx+rx, gy+ry, rw, rh) padding (0, 0)
+                background R13GuideRoomMark(rw, rh, "link") hover_background R13GuideRoomMark(rw, rh, "link", True)
+                action [Hide("r13_inn_guide"), Return(("travel", room["target"]))]
+                tooltip (room["text"]+"(으)로 이동") alt (room["text"]+" · 이동")
+        else:
+            add R13GuideRoomMark(rw, rh, room["state"]) xpos (gx+rx) ypos (gy+ry)
+            if room["state"]=="here":
+                frame:
+                    xpos (gx+rx+8) ypos (gy+ry+8) padding (8, 3) background Solid("#c2502e")
+                    text "현재 위치" size 16 color "#fff4e0"
     for item in r13_inn_guide_labels():
-        if item["target"]:
+        if item["target"] and item["key"] not in R13_INN_GUIDE.get("rooms", {}):
             textbutton item["text"]:
                 id ("r13_inn_guide_"+item["key"])
                 xpos (gx+item["x"]) ypos (gy+item["y"]) xanchor .5 yanchor .5
@@ -158,9 +216,10 @@ screen r13_inn_guide():
             frame:
                 xpos (gx+item["x"]) ypos (gy+item["y"]) xanchor .5 yanchor .5
                 padding (8, 2)
-                background (Solid("#2c221bd0") if item["state"]=="here" else None)
+                background (Solid("#2c221bd0") if item["state"]=="here" else Solid("#f3e6c8b0") if item["state"]=="link" else None)
                 text item["text"] size item["size"] color ("#f6e8cc" if item["state"]=="here" else "#7d6a55" if item["state"]=="locked" else "#4a2f1c")
-    text "보조 안내도 · 이동 조건은 장면의 이동 버튼과 같습니다":
+    $ guide_hint=GetTooltip()
+    text (guide_hint or "가고 싶은 방을 누르세요 · 이동 조건은 장면의 이동 버튼과 같습니다"):
         xalign .5 ypos 712 yanchor 1.0 size 19 color "#e6dcc6"
     textbutton "닫기":
         id "r13_inn_guide_close"

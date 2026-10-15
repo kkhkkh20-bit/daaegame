@@ -118,11 +118,22 @@
 - **웹 로딩.** 확대 조사 배경 19장은 처음 열 때 받는다(`REMOTE_CLOSEUP`). 첫 로딩은 약 89MB로, 이번 그림 추가 전과 같다.
 - **검사 범위.** 드래그 문지르기는 자동 테스트로 확인하지 못했다. 버튼으로 문지르는 경로만 테스트했다.
 
+## 10. 여관 안내도
+
+- 이제 글씨 라벨이 아니라 방 자체를 눌러 이동한다. 대상은 임시 객실, 복도, 13호실, 식당, 주방, 로비, 입구다. 방 영역은 `room13-inn-guide.json`의 `rooms`에 있다.
+- 지금 갈 수 있는 방
+  - 평소에는 옅은 색과 주황 점선 테두리로 보인다.
+  - 마우스를 올리면 진한 테두리로 강조된다.
+  - 아래 안내문이 "○○(으)로 이동"으로 바뀐다.
+- 현재 방에는 빨간 테두리와 '현재 위치' 표시가 붙는다.
+- 잠긴 방은 어두운 빗금으로 덮인다.
+- 이동 조건은 바꾸지 않았다. 장면의 이동 버튼(`r13_local_connections`)과 같다.
+
 ## 검사
 
 - `dev/check.sh`: 단위 테스트와 lint 통과.
 - Ren'Py 화면 테스트: 아래 "회귀 결과"에 적는다.
-  - 새로 넣은 테스트: gate_documents, bed_hint_day1, goal_fold, drawer_visual, inn_workers, life_door, life_meal, gm_package, gm_lamp, gm_scale, gm_floor, gm_stone.
+  - 새로 넣은 테스트: gate_documents, bed_hint_day1, goal_fold, drawer_visual, inn_workers, life_door, life_meal, gm_package, gm_lamp, gm_scale, gm_floor, gm_stone. 바뀐 화면으로 다시 돌린 테스트: inn_v4_travel, inn_v4_guestroom.
   - 바뀐 화면에 맞춘 테스트: delivery_cord.
 - 개별 브라우저 검사와 14일 전체 플레이는 소유자 지시에 따라 이번에 반복하지 않았다.
 - 재미는 검증하지 않았다.

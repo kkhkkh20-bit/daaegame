@@ -82,5 +82,50 @@
  ],
  "base": "assets/room13-inn-guide-v4.webp",
  "source": "inn-guide-v4-integration.zip (inn-guide-v4-base.png + guide-labels.json), applied 2026-10-15 at the owner's final instruction",
- "note": "Supplementary wayfinding drawing, not a floor plan. Labels are runtime UI text; guestroom only once it exists in the game, room13 lock from r13_places(), no secret passage."
+ "note": "Supplementary wayfinding drawing, not a floor plan. Labels are runtime UI text; guestroom only once it exists in the game, room13 lock from r13_places(), no secret passage.",
+ "rooms": {
+  "guestroom": [
+   527,
+   47,
+   326,
+   193
+  ],
+  "hall": [
+   227,
+   220,
+   907,
+   147
+  ],
+  "room13": [
+   1147,
+   120,
+   273,
+   247
+  ],
+  "dining": [
+   233,
+   460,
+   513,
+   200
+  ],
+  "kitchen": [
+   773,
+   460,
+   580,
+   200
+  ],
+  "inn": [
+   233,
+   687,
+   1120,
+   207
+  ],
+  "entrance": [
+   673,
+   893,
+   160,
+   60
+  ]
+ },
+ "rooms_note": "Room areas in guide-image pixels (0.18.22): the room itself is the click target, labels stay as text."
 }
