@@ -43,6 +43,12 @@ label r13_lines(entries,identity):
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
         if r13_thought_active:
             $ r13_expression,r13_directed_pose="thinking","thinking"
+        # 0.18.56 (owner): someone who "comes over" in the opening narration is on screen
+        # from that line, not only from their first spoken line.
+        if r13_packet[0] in (None,"dad") and "r13_visitor" not in renpy.get_showing_tags():
+            $ r13_lead=next((p[0] for p in entries[r13_index:] if p[0] not in (None,"dad") and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)
+            if r13_lead:
+                $ r13_speaker(r13_lead,"neutral")
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
         if r13_packet[0] not in (None,"dad") and not r13_thought_active:
             $ r13_last_partner=r13_packet[0]
@@ -54,7 +60,7 @@ label r13_lines(entries,identity):
         $ r13_pages=r13_dialogue_pages(r13_packet[1])
         $ r13_page_i=0
         while r13_page_i<len(r13_pages) and not r13_conv_skip:
-            $ R13_CHARS.get(r13_packet[0],source_thought)(r13_pages[r13_page_i])
+            $ R13_CHARS.get(r13_packet[0],source_thought)(r13_line_markup(r13_pages[r13_page_i]))
             $ r13_page_i+=1
         if not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
             $ r13_remember_line(r13_read_id)

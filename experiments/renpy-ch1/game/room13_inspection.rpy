@@ -246,7 +246,8 @@ init 66 python:
     # retain later draw order, and the portable kit is never placed at a crime scene.
     for _r13_desk_place in ("room13","guestroom"):
         _r13_existing=ROOM13["objects"].get(_r13_desk_place,{})
-        _r13_desk_spec=dict(rect=[0,350,430,170],text="우리 여행 필기함을 펼칠 책상이다.",
+        # 0.18.56 (owner): the desk target is its front edge, below the cup, bread, notebook and papers.
+        _r13_desk_spec=dict(rect=[0,448,430,72],text="우리 여행 필기함을 펼칠 책상이다.",
             need=["lodging"],give=[],flags=[],live_family_desk=True)
         ROOM13["objects"][_r13_desk_place]=dict([("desk",_r13_desk_spec)]+[(k,v) for k,v in _r13_existing.items() if k!="desk"])
     _r13_before_inspection_visible=r13_object_visible

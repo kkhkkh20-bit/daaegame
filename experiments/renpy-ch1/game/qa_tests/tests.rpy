@@ -1484,7 +1484,7 @@ testcase trial_c1_h7:
     pause 1.0
     click "아이만 들어갔다"
     pause 0.6
-    click pos (640,600) until screen "choice" timeout 40
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
     assert eval ("C1" in room13["propositions"])
 
 testcase w1c_mother_line:
@@ -2628,3 +2628,108 @@ testcase motion_audit:
     pause 3.0
     run Call("r13_qa_audit")
     click pos (1276,300) until eval r13_qa_audit_done timeout 180
+
+testcase karo_night1:
+    # 0.18.56 (owner): Karo missing at the gate on the first night.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=2,location="gate",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "gate_night1.png"
+    python:
+        r13_qa_note("night1 gate people: %r"%([(a["person"],a["pose"],a["x"],a["y"],a["width"],a["height"]) for a in r13_stage_people()],))
+        r13_qa_note("night1 where karo: %r people %r"%(r13_where("karo"),r13_people()))
+
+testcase karo_comes_day2:
+    # 0.18.56: on day 2 Karo comes to find Dad wherever he is.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="room13",daram_state="with_dad",life_poc=True),("+w1c","entry_corrected","lodging","night1_seen"),(),12)
+    pause 1.5
+    $ room13["flags"]=[f for f in room13["flags"] if f!="livelihood_open"]
+    click "복도로"
+    pause 2.5
+    screenshot "karo_comes_1.png"
+    click pos (640,600)
+    pause 1.5
+    screenshot "karo_comes_2.png"
+    click pos (640,600)
+    pause 1.5
+    screenshot "karo_comes_3.png"
+
+testcase overlap_dump:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    pause 1.0
+    $ r13_qa_overlap_dump()
+
+testcase hitbox_views:
+    # 0.18.56: inspection targets vs people, with the admin hitbox overlay on.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    pause 1.0
+    $ persistent.room13_admin=True
+    $ r13_admin_hitboxes=True
+    $ r13_world_cameras={"inn":640}
+    $ renpy.restart_interaction()
+    pause 1.5
+    screenshot "inn_hitbox.png"
+    $ persistent.room13_admin=False
+    $ r13_admin_hitboxes=False
+
+testcase hitbox_post:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=1,location="post",life_poc=True),("entry_corrected","lodging"))
+    pause 1.5
+    screenshot "post_p1.png"
+    python:
+        r13_qa_note("post p1: %r"%([(a["person"],a["pose"],a["contact"],a["x"],a["y"]) for a in r13_stage_people()],))
+
+testcase hitbox_room13:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",daram_state="with_dad",life_poc=True),("entry_corrected","lodging"))
+    pause 1.0
+    $ persistent.room13_admin=True
+    $ r13_admin_hitboxes=True
+    $ renpy.restart_interaction()
+    pause 1.5
+    screenshot "room13_hitbox.png"
+    $ persistent.room13_admin=False
+    $ r13_admin_hitboxes=False
+
+testcase job_in_person:
+    # 0.18.56 (owner): no work board at the top; Nabi gives the kitchen work in the dining room.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True),("entry_corrected","lodging","life_meal_served"))
+    pause 1.0
+    screenshot "dining_no_board.png"
+    run Call("r13_qa_talk","nabi")
+    click pos (1150,90) until "식사 준비" timeout 30
+    screenshot "nabi_job_topic.png"
+    click "식사 준비"
+    click pos (1150,90) until screen "r13_confirm" timeout 30
+    click "시작하기"
+    click pos (1150,90) until screen "choice" timeout 40
+    click "맡은 일만 마친다"
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval (room13["period"]==1 and any(j["key"]=="kitchen" for j in r13_wallet(room13)["jobs"]))
+
+testcase depth_dump:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    pause 1.0
+    $ r13_qa_depth_dump()

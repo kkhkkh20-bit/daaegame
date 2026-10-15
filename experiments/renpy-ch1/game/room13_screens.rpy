@@ -134,9 +134,11 @@ screen r13_hub(entry=False):
             action Return(("menu","evening")) sensitive ready
             tooltip "오늘 저녁에만 할 수 있는 일"
     if not entry and r13_has("livelihood_open"):
-        textbutton ("일거리 · 상점  %d냥"%r13_wallet(room13)["cash"]):
-            style "r13_action_button" area (448,30,270,56) text_size 21
-            action Return(("livelihood",None)) sensitive ready
+        # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
+        # gives it, goods are bought from the seller in person; only the purse is shown.
+        frame:
+            xpos 24 ypos 74 padding (12,6) background R13InkPanel(alpha="b8")
+            text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#fff2cf"
     if not entry:
         use r13_event_offers(ready)
     use r13_admin_key()

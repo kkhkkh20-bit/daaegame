@@ -296,7 +296,8 @@ init 55 python:
         # keep her on screen.
         carriage=store.place=="마차 안"
         kept="daram" if carriage else store.r13_motion_person
-        if (who=="dad" or carriage) and who!=kept and store.r13_camera=="stage" and store.r13_motion_person==kept and kept not in (None,"dad") and "r13_visitor" in renpy.get_showing_tags():
+        # 0.18.56 (owner): narration between a visitor's lines keeps them on screen too.
+        if (who in ("dad",None) or carriage) and who!=kept and store.r13_camera=="stage" and store.r13_motion_person==kept and kept not in (None,"dad") and "r13_visitor" in renpy.get_showing_tags():
             return
         store.r13_current_pose=r13_conversation_pose(who,pose or store.dialogue_expression)
         visible=who in CAST and who!="dad" and (not carriage or who=="daram") and store.r13_camera=="stage"
