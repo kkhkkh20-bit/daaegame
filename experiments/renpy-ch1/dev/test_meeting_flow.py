@@ -203,13 +203,15 @@ class MeetingFlow(unittest.TestCase):
    self.assertEqual(resolve(),'E4');self.store.room13['flags']=saved
   self.store.room13['propositions'].remove('F2');self.assertEqual(resolve(),'E3')
   self.store.room13['daram_state']='lost';self.assertEqual(resolve(),'E1')
- def test_true_ending_requires_safe_original_witness_and_independent_observations(self):
+ def test_true_ending_requires_every_episode_solved(self):
+  # 0.18.83 (owner): the true ending is the run that finished every episode perfectly.
   self.load_ending_functions();resolve=self.env['r13_resolve_ending']
-  self.store.room13.update(daram_state='rescued',propositions=['F1','F2','F3','F4','C4'],flags=['shelter_ready','supplies_ready','operators_ready','patient_transport','mother_original_safe','witness_protected'],observations=self.actual_observations())
+  episode=['lt_solved','kd_solved','wf_solved','ws_kids_alive','cart_stopped']
+  self.store.room13.update(daram_state='rescued',propositions=['F1','F2','F3','F4','C4'],flags=['shelter_ready','supplies_ready','operators_ready','patient_transport']+episode)
   self.assertEqual(resolve(),'E6')
-  for flag in ('mother_original_safe','witness_protected'):
+  for flag in episode:
    self.store.room13['flags'].remove(flag);self.assertEqual(resolve(),'E5');self.store.room13['flags'].append(flag)
-  self.store.room13['observations']['second']['load']='day_low';self.assertEqual(resolve(),'E5')
+  self.store.room13['propositions'].remove('C4');self.assertEqual(resolve(),'E5')
  def test_camera_moves_only_for_a_new_real_speaker(self):
   env=self.env;clock=[10.0]
   env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,loadable=lambda path:False,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:clock[0])),is_skipping=lambda:False))

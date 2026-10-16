@@ -241,10 +241,12 @@ init 56 python:
 
     def r13_true_ending_ready():
         s=store.room13
-        return ("F4" in s["propositions"] and r13_has("mother_original_safe")
-            and (r13_has("bami_protected") or r13_has("witness_protected"))
-            and r13_debate_observations_ready()
-            and ("C4" in s["propositions"] or r13_has("premeditation_prevented_proven")))
+        # 0.18.83 (소유자): 진 엔딩은 모든 에피소드를 완벽하게 끝낸 판. 에피소드 ①~⑥의 해결 깃발과
+        # 제단의 F4, 13호 사건의 진범 입증(C4)이 모두 있어야 한다.
+        return ("F4" in s["propositions"]
+            and ("C4" in s["propositions"] or r13_has("premeditation_prevented_proven"))
+            and r13_has("lt_solved") and r13_has("kd_solved") and r13_has("wf_solved")
+            and r13_has("ws_kids_alive") and r13_has("cart_stopped"))
 
     def r13_resolve_ending():
         s=store.room13

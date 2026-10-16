@@ -170,6 +170,8 @@ label r13_town_events:
     call r13_nt_events
     # 에피소드 ⑤ 긴 밤과 겨울 수프 (systems/room13_ep5_soup.rpy), 11~12일.
     call r13_ws_events
+    # 에피소드 ⑥ 끌려가는 수레 (systems/room13_ep6_cart.rpy), 13일.
+    call r13_cv_events
     # 에피소드 ② 다람 탐정단 (systems/room13_ep2_kids.rpy). 5일은 다람의 하루로 통째로 지나간다.
     call r13_ep2_events
     if _return=="day":

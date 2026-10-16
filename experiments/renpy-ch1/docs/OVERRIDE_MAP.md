@@ -239,7 +239,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 56 | `room13_week2_rules.rpy:268` | _r13_w2e_notes |
+| 1 | 56 | `room13_week2_rules.rpy:270` | _r13_w2e_notes |
 | 2 | 109 | `systems/room13_week2_events.rpy:42` |  |
 
 ## `r13_evidence_acquired` (2층)

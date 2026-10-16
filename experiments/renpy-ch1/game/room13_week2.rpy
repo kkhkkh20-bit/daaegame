@@ -46,15 +46,9 @@ label r13_week2_events:
         if room13["daram_state"]=="held":
             call r13_lines([("neoul","아이 이름도 따로 옮길 사람 명단에 올라 있습니다. 명령이 바뀌기 전에 확인할 일이 있으면 지금 하십시오.")],"week2:day11_child")
         $ r13_event("day11_warning")
-    if room13["day"]>=13 and "day13_warning" not in room13["events"]:
-        call r13_scene("winter_square","광장 · 끌고 가는 수레","night")
-        call r13_lines([(None,"담요만 실어야 할 수레에 결박 끈이 함께 올라갔다. 저녁 작업을 마친 사람들이 광장 북쪽의 산길 입구에 모였다."),("neoul","내일 동이 트면 환자들을 산 위 제단으로 옮긴답니다. 장치에 이어 붙이기 전에, 멈출 이유와 함께할 사람을 마련해야 합니다.")],"week2:day13_warning:mountain")
-        if room13["daram_state"] in ("with_dad","rescued"):
-            if room13["case_state"]=="prevented":
-                call r13_lines([("daram","저 아저씨한테 물 가져다줘도 돼? 급하게 주면 쏟으니까, 천천히 줄게."),("dad","그래. 먼저 같이 물어보자.")],"week2:daram_prevented")
-            else:
-                call r13_lines([("daram","내가 물 가져다줘도 돼? 이번엔 안 잡아당길게."),("dad","그래. 먼저 같이 물어보자."),(None,"다람이는 컵을 내려놓고, 상대가 고개를 끄덕일 때까지 가만히 기다렸다.")],"week2:daram_recovery")
-        $ r13_event("day13_warning")
+    # 0.18.83: 13일의 수레는 에피소드 ⑥(systems/room13_ep6_cart.rpy)이 맡는다. 예전 경고 장면 대신 그 아침 장면을 부른다.
+    if room13["day"]>=13 and not r13_has("cv_morning"):
+        call r13_cv_morning
     return
 
 label r13_special_activity(key):
@@ -180,6 +174,8 @@ label r13_finale:
             jump r13_ending
     else:
         call r13_lines([("daram","저 아저씨도 이름 있어. 아까 나랑 이야기했어."),("mom","알아. 그래서 엄마가 멈추러 온 거야.")],"finale:child_with_family")
+    # 제단 앞: 그림책, 손자국, 할머니의 고백, 촌장과 작은 손자국 (systems/room13_ep6_cart.rpy).
+    call r13_cv_altar
     call r13_cinematic("mountain")
 label r13_final_hub:
     window hide

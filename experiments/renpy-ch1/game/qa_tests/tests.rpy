@@ -11088,3 +11088,55 @@ testcase ep5_perfect:
     assert eval (r13_has("ws_perfect") and r13_has("ws_kids_alive") and not r13_has("dodam_dead"))
 
 
+
+testcase ep6_cart:
+    # 에피소드 ⑥: 바둑이를 증인으로 세우고(돌목과 함께), 종을 울리고, 광장 회의 Q6로 수레를 멈춘다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=13,period=1,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E01","K02"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning"))
+    click pos (640,600) until screen "choice" timeout 60
+    click "명령서와 초대 편지를 나란히 보여 준다"
+    click pos (640,600) until eval (r13_has("cv_badook_safe") and not renpy.get_screen("say")) timeout 60
+    run Call("r13_qa_roam",dict(day=13,period=2,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E01","K02","V05","V06","Y05","Y14"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning","cv_hall","cv_badook_witness","cv_badook_safe","evening_brief:13"))
+    click pos (640,600) until screen "choice" timeout 60
+    click "설이에게 네 겨울의 수레 이야기를 한다"
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 120
+    pause 0.6
+    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y05"
+    click pos (640,600) until eval (r13_debate_is_broken("Q6","s1") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y14"
+    click pos (640,600) until eval (r13_debate_is_broken("Q6","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA V06"
+    click pos (640,600) until eval (r13_debate_is_broken("Q6","s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 1.2
+    click "결론을 말한다"
+    pause 1.0
+    click "보호소는 없다. 수레는 제단으로 간다. 명령서는 할머니가 썼다"
+    click pos (640,600) until "회의를 계속한다" timeout 60
+    click "회의를 계속한다"
+    click pos (640,600) until "수레를 멈춘다" timeout 60
+    click "수레를 멈춘다"
+    click pos (640,600) until eval (r13_has("cv_done")) timeout 90
+    assert eval (r13_has("cart_stopped") and r13_has("cv_bell") and r13_has("patient_transport") and not r13_has("badook_dead") and not r13_has("cart_left"))
+
+testcase ep6_altar:
+    # 제단 앞: 그림책, 다람이 작은 손자국에 손을 얹는다(손 아래의 온기), 할머니의 고백, 촌장과 달래.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=13,period=3,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",granny_state="trusted",evidence=["E01","Y05","Y14","V06"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning","cv_night","cv_done","cart_stopped","ws_tosil_kept","ws_kids_alive"))
+    run Call("r13_qa_event","r13_finale")
+    click pos (640,600) until screen "r13_crisis" timeout 180
+    assert eval (r13_has("cv_altar") and "V08" in room13["evidence"] and r13_has("dallae_named") and r13_has("shelter_ready") and r13_has("operators_ready") and r13_has("patient_transport"))
+    screenshot "ep6_altar_hub.png"
