@@ -156,6 +156,60 @@ class MeetingFlow(unittest.TestCase):
   self.assertIsNone(self.store.r13_meeting_pending_resume);self.assertFalse(self.store.r13_meeting_interrupting)
   self.assertIn('r13_book',calls)
   self.env['r13_meeting_resume_after_load']();self.assertEqual(self.store.r13_index,2)
+ def actual_observations(self):
+  return dict(first=dict(time=30,load='day_low',operator='buri',recorder='resident_seori'),second=dict(time=32,load='evening_high',operator='buri',recorder='resident_seori'))
+ def test_final_energy_claim_needs_evening_reproduction_not_first_test_alone(self):
+  for sid in ('s2','s3'):self.env['r13_debate_mark']('broken','F2',sid)
+  self.assertFalse(self.env['r13_debate_ready']('F2'))
+  judge=self.env['r13_debate_judge']
+  self.assertEqual(judge('F2','s4','E24')[0],'soft')
+  self.store.room13['observations']=self.actual_observations()
+  self.assertEqual(judge('F2','s4','E24')[0],'break')
+  self.assertEqual(judge('F2','s4','E23')[0],'soft')
+  self.env['r13_debate_mark']('broken','F2','s4')
+  self.assertTrue(self.env['r13_debate_ready']('F2'))
+ def test_malformed_or_same_load_observations_do_not_pass_or_crash(self):
+  ready=self.env['r13_debate_observations_ready']
+  for obs in (None,{},dict(first=None,second=[]),dict(first={'time':1},second={'time':2})):
+   self.store.room13['observations']=obs;self.assertFalse(ready())
+  for field,value in (('time',30),('load','day_low'),('operator','mom'),('recorder',None)):
+   obs=self.actual_observations();obs['second'][field]=value;self.store.room13['observations']=obs;self.assertFalse(ready())
+ def test_shelter_and_supplies_papers_need_real_preparations(self):
+  for sid,key,flag in [('s1','E25','shelter_ready'),('s2','E26','supplies_ready')]:
+   st=self.env['r13_debate_statement']('F3',sid)
+   self.store.room13['evidence']=['E25','E26']
+   self.assertEqual(self.env['r13_debate_judge']('F3',sid,key)[0],'soft')
+   self.assertFalse(self.env['r13_debate_answerable']('F3',st))
+   self.env['r13_debate_mark']('broken','F3',sid)
+   self.assertFalse(self.env['r13_debate_is_broken']('F3',sid))
+   self.store.room13['flags'].append(flag)
+   self.assertEqual(self.env['r13_debate_judge']('F3',sid,key)[0],'soft') # already resolved, now genuinely ready
+   self.assertTrue(self.env['r13_debate_is_broken']('F3',sid))
+ def test_meeting_record_does_not_prove_a_warning_was_sent(self):
+  self.assertEqual(self.env['r13_debate_judge']('F4','s1','E17')[0],'soft')
+  self.assertEqual(self.env['r13_debate_judge']('F4','s1','E18')[0],'break')
+ def load_ending_functions(self):
+  import ast
+  src=(ROOT/'game/room13_week2_rules.rpy').read_text().split('init 56 python:\n',1)[1].split('\nlabel ',1)[0]
+  tree=ast.parse(textwrap.dedent(src));names={'r13_survival_ready','r13_true_ending_ready','r13_resolve_ending'}
+  tree.body=[node for node in tree.body if isinstance(node,ast.FunctionDef) and node.name in names]
+  exec(compile(tree,'actual-ending-functions','exec'),self.env)
+ def test_final_endings_need_proof_and_actual_preparation_not_votes(self):
+  self.load_ending_functions();resolve=self.env['r13_resolve_ending']
+  self.store.room13.update(daram_state='with_dad',propositions=['F1','F2','F3'],flags=['shelter_ready','supplies_ready','operators_ready','patient_transport'])
+  self.assertEqual(resolve(),'E5')
+  for flag in list(self.store.room13['flags']):
+   saved=list(self.store.room13['flags']);self.store.room13['flags'].remove(flag)
+   self.assertEqual(resolve(),'E4');self.store.room13['flags']=saved
+  self.store.room13['propositions'].remove('F2');self.assertEqual(resolve(),'E3')
+  self.store.room13['daram_state']='lost';self.assertEqual(resolve(),'E1')
+ def test_true_ending_requires_safe_original_witness_and_independent_observations(self):
+  self.load_ending_functions();resolve=self.env['r13_resolve_ending']
+  self.store.room13.update(daram_state='rescued',propositions=['F1','F2','F3','F4','C4'],flags=['shelter_ready','supplies_ready','operators_ready','patient_transport','mother_original_safe','witness_protected'],observations=self.actual_observations())
+  self.assertEqual(resolve(),'E6')
+  for flag in ('mother_original_safe','witness_protected'):
+   self.store.room13['flags'].remove(flag);self.assertEqual(resolve(),'E5');self.store.room13['flags'].append(flag)
+  self.store.room13['observations']['second']['load']='day_low';self.assertEqual(resolve(),'E5')
  def test_camera_moves_only_for_a_new_real_speaker(self):
   env=self.env;clock=[10.0]
   env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,loadable=lambda path:False,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:clock[0])),is_skipping=lambda:False))

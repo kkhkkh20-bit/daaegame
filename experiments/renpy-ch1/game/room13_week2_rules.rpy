@@ -241,11 +241,9 @@ init 56 python:
 
     def r13_true_ending_ready():
         s=store.room13
-        first=s.get("observations",{}).get("first",{})
-        second=s.get("observations",{}).get("second",{})
         return ("F4" in s["propositions"] and r13_has("mother_original_safe")
             and (r13_has("bami_protected") or r13_has("witness_protected"))
-            and bool(first and second and first["time"]<second["time"] and first["load"]!=second["load"])
+            and r13_debate_observations_ready()
             and ("C4" in s["propositions"] or r13_has("premeditation_prevented_proven")))
 
     def r13_resolve_ending():
