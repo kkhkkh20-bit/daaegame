@@ -59,15 +59,16 @@ class NpcRedesign(unittest.TestCase):
             npc, new = d["npc"], "assets/room13-redesign-%s.webp" % d["npc"]
             # 0.18.63: map-action poses drawn for the new design (dev/apply_map_actions.py) are
             # their own files; everything else uses the redesign picture.
-            acting = {k: v for k, v in ACTING[npc].items() if not v.get("map_action")}
+            # 0.18.89: episode pose pictures (dev/apply_ep_art.py) are their own files too.
+            acting = {k: v for k, v in ACTING[npc].items() if not v.get("map_action") and v.get("art") != "ep-art-20261016"}
             for data in (CAST, acting, PORTRAITS):
                 self.assertEqual(files(data[npc] if data is not acting else acting), {new}, npc)
-            self.assertEqual(files(FULLBODY[npc]), {new}, npc)
+            self.assertEqual(files({k: v for k, v in FULLBODY[npc].items() if k != "poses"}), {new}, npc)
             # Old seated / living poses would show the old body: removed.
             self.assertEqual(set(acting), {"neutral", "thinking", "distressed", "expressive",
                                            "avatar_neutral", "avatar_thinking", "avatar_distressed", "avatar_expressive"})
             for key, spec in ACTING[npc].items():
-                if spec.get("map_action"):
+                if spec.get("map_action") and spec.get("art") != "ep-art-20261016":
                     self.assertTrue(spec["file"].startswith("assets/room13-action-%s-" % npc), (npc, key))
 
     def test_geometry_fits_the_image_and_feet_touch_the_bottom(self):

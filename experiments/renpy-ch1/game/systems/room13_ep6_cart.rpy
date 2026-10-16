@@ -23,7 +23,7 @@ init 157 python:
         ROOM13["evidence"][_key]=dict(id=_key,name=_name,kind="기록",establishes=_est,does_not_establish=_not or "이것만으로 다른 사실까지 정할 수는 없다.",scenes=[],current_run_only=True,retained_on_show=True)
     R13_RECORD_SHORT.update(V00="결박 끈",V01="수레 명단",V02="편도 쪽지",V03="은호의 다른 장부",V04="백 부인의 비축품",V05="실룩의 말",V06="명령서",V07="할머니의 말",V08="손 아래의 온기")
     R13_NAMES["npc_pandol"]="판돌 영감"
-    R13_CHARS["npc_pandol"]=Character("판돌 영감")
+    R13_CHARS["npc_pandol"]=Character("판돌 영감",cb_who_id="npc_pandol")
 
     def r13_cv_daram():
         return (store.room13 or {}).get("daram_state") in ("with_dad","rescued")
@@ -127,7 +127,7 @@ label r13_cv_morning:
         [(None,"맨 끝. 엄마의 이름. 말썽.")]+
         ([("daram","엄마 이름이다. 엄마도 가? 엄마 안 아프잖아.")] if r13_cv_daram() else [])+
         [("dad","(이건 아픈 사람 명단이 아니다. 마을이 치우고 싶은 사람 명단이다.)",{"thought":True}),
-        (None,"게시판 앞에 판돌 영감이 지팡이를 짚고 서 있었다. 자기 이름을 손가락으로 몇 번이고 짚었다."),
+        (None,"게시판 앞에 판돌 영감이 지팡이를 짚고 서 있었다. 자기 이름을 손가락으로 몇 번이고 짚었다.",{"show":"npc_pandol","pose":"point_name"}),
         ("npc_pandol","이게…… 나요? 판돌. 판돌이 나 맞지요?"),
         ("npc_pandol","보호소엔 불이 잘 든다더구먼. 거기 가면 우리 할멈도 있으려나. ……모과. 작년 겨울에 먼저 갔소.")],"cv:morning")
     $ r13_grant(["V00","V01"],"13일 아침 광장의 수레와 게시판")
@@ -172,7 +172,7 @@ label r13_cv_store:
 
 label r13_cv_stable:
     $ r13_flag("cv_stable")
-    call r13_scene("winter","마구간","quiet")
+    call r13_scene("ep_stable","마구간","quiet")
     if r13_has("siluk_handed"):
         call r13_lines([(None,"실룩은 마구간 기둥에 묶여 있었다. 수레가 떠날 때 같이 실린다."),
             ("resident_siluk","빚 대신 일꾼이랬는데, 일꾼은 보호소에 안 가지 않소?"),
@@ -196,7 +196,7 @@ label r13_cv_stable:
 
 label r13_cv_hall:
     $ r13_flag("cv_hall")
-    call r13_scene("winter_square","회관 앞","quiet")
+    call r13_scene("ep_hall_front","회관 앞","quiet")
     call r13_lines([("resident_badook","너울 반장님이 수레 호송을 저더러 맡으라고 하셨습니다. 이게 명령서고요."),
         ("resident_badook","그런데 손님, 이상합니다. 보호소 가는 길에 결박 끈이 왜 필요합니까."),
         (None,"명령서. '보호소 이송을 명함.' 아래에 촌장의 뿔 도장. 'ㄹ'의 꼬리가 둥글게 한 바퀴 말려 있다."),
@@ -220,7 +220,7 @@ label r13_cv_hall:
 
 label r13_cv_tea:
     $ r13_flag("cv_tea")
-    call r13_scene("council","13일 저녁 · 여관 식당","quiet")
+    call r13_scene("ep_hall_cell" if room13.get("granny_state")=="detained" else "council","13일 저녁 · 회관 아래 방" if room13.get("granny_state")=="detained" else "13일 저녁 · 여관 식당","quiet")
     call r13_lines(([(None,"회관 아래 방. 창살 너머로 할머니가 찻주전자를 들었다.")] if room13.get("granny_state")=="detained" else [(None,"여관 식당. 할머니가 찻잔 둘에 차를 따랐다. 손이 하나도 떨리지 않았다.")])+
         [("granny","앉아요. 식기 전에 마셔요. 오늘 밤은 길 테니까."),
         ("dad","명령서를 쓰셨죠."),
@@ -252,14 +252,14 @@ label r13_cv_night:
     call r13_scene("winter_square","13일 밤 · 광장, 수레 앞","night")
     call r13_lines([(None,"횃불이 다섯. 수레 짐칸에 굴돌 할아버지, 모모 관장, 판돌 영감이 앉아 있었다. 손목에 고리가 채워져 있었다.")]+
         ([(None,"짐칸 끝에 실룩. 고개를 숙이고 있었다.")] if r13_has("siluk_handed") else [])+
-        ([(None,"사자 선생님이 출석부를 품에 안고 앉아 있었다.")] if r13_has("teacher_on_cart") else [])+
+        ([(None,"사자 선생님이 출석부를 품에 안고 앉아 있었다.",{"show":"resident_teacher","pose":"collapse_attendance"})] if r13_has("teacher_on_cart") else [])+
         [("resident_guldol","보호소에도 돌이 있으려나. 손이 심심해서."),
         ("neoul","출발하오."),
-        (None,"수레 앞에, 바둑이가 서 있었다."),
-        ("resident_badook","못 갑니다. 명령서를 봤습니다. 이 수레는 보호소에 안 갑니다.")],"cv:night:open")
+        (None,"수레 앞에, 바둑이가 서 있었다.",{"show":"resident_badook","pose":"block_cart"}),
+        ("resident_badook","못 갑니다. 명령서를 봤습니다. 이 수레는 보호소에 안 갑니다.",{"pose":"block_cart"})],"cv:night:open")
     if r13_has("cv_bell"):
-        call r13_lines([(None,"쿵."),(None,"마을에서 처음 듣는 소리였다. 낮고 길게, 눈 덮인 지붕들 위로 퍼져 나갔다."),
-            (None,"창문이 하나둘 열렸다. 사람들이 숄을 걸치고 광장으로 나왔다.")]+([("daram","……종이 울렸어. 아빠, 종이 울렸어.")] if r13_cv_daram() else []),"cv:night:bell")
+        call r13_lines([(None,"쿵.",{"cut":"bell"}),(None,"마을에서 처음 듣는 소리였다. 낮고 길게, 눈 덮인 지붕들 위로 퍼져 나갔다."),
+            (None,"창문이 하나둘 열렸다. 사람들이 숄을 걸치고 광장으로 나왔다.",{"cut":None})]+([("daram","……종이 울렸어. 아빠, 종이 울렸어.")] if r13_cv_daram() else []),"cv:night:bell")
     if r13_has("cv_badook_safe"):
         call r13_lines([("resident_badook","명령서를 들고 있습니다. 이 명령서는 촌장님 글씨가 아닙니다. 회의를 엽시다."),
             ("guard","이 친구를 밀려면 나도 밀어야 할 거요."),
@@ -289,8 +289,8 @@ label r13_cv_night:
         call r13_lines([("resident_ppul","말은 다 들었소. 수레는 떠나오."),(None,"새벽, 수레가 산길로 올라갔다.")],"cv:night:fail")
         call r13_cv_cart_left
     $ r13_cv_preparations()
-    call r13_lines([(None,"(그림책) 그 사람들은 다시 돌아오지 않았어요.")]+
-        ([(None,"(그림책) 이번엔 마을 사람들이 피리를 꺾었어요.")] if r13_has("cart_stopped") else [(None,"(그림책) 한 아이만 늦게 걸어서, 문이 닫히기 전에 돌아왔어요.")] if r13_has("cv_family_only") else [])+
+    call r13_lines([(None,"(그림책) 그 사람들은 다시 돌아오지 않았어요.",{"book":"U06-opening"})]+
+        ([(None,"(그림책) 이번엔 마을 사람들이 피리를 꺾었어요.",{"book":"U06-ending"})] if r13_has("cart_stopped") else [(None,"(그림책) 한 아이만 늦게 걸어서, 문이 닫히기 전에 돌아왔어요.")] if r13_has("cv_family_only") else [])+
         ([("daram","……엄마. 피리 부는 아저씨는 누가 불라고 해서 분 거야?")] if r13_cv_daram() else []),"cv:night:book")
     $ r13_flag("cv_done")
     return
@@ -345,9 +345,9 @@ label r13_cv_altar:
         $ r13_flag("cv_night","cv_skipped")
         call r13_cv_cart_left
     $ r13_cv_preparations()
-    call r13_lines([(None,"(그림책) 마을 한가운데 금으로 덮인 왕자 동상이 서 있었어요."),
+    call r13_lines([(None,"(그림책) 마을 한가운데 금으로 덮인 왕자 동상이 서 있었어요.",{"book":"U07-opening"}),
         (None,"(그림책) 다 내주고 잿빛이 된 왕자 발밑에서, 제비는 잠들었어요.")]+
-        ([("resident_tosil","……이거. 할머니가 맨날 읽어 주던 거야. 너 줄라고 가져왔어."),
+        ([("resident_tosil","……이거. 할머니가 맨날 읽어 주던 거야. 너 줄라고 가져왔어.",{"pose":"hold_storybook"}),
           ("daram","제비 왜 남쪽에 안 갔어? 추운데."),
           ("resident_tosil","……왕자가 혼자 있을까 봐.")] if r13_cv_daram() else []),"cv:altar:book")
     if r13_has("cart_left"):
@@ -356,16 +356,16 @@ label r13_cv_altar:
             ([("daram","……할아버지 손이 심심하댔잖아.")] if r13_cv_daram() else []),"cv:altar:cart")
     call r13_lines([(None,"돌 표면을 보았다. 손자국이었다. 위에서 아래까지, 겹겹이. 어른 손. 굽은 노인 손. 그리고 아주 작은 손.")]+
         ([("daram","이거 내 손이랑 똑같아."),
-          (None,"다람이 작은 자국 위에 손을 얹었다. 손바닥 아래에서 돌이 아주 조금 따뜻해졌다."),
+          (None,"다람이 작은 자국 위에 손을 얹었다. 손바닥 아래에서 돌이 아주 조금 따뜻해졌다.",{"cut":"U23-small-handprint"}),
           ("daram","어? 따뜻해졌어. 내 손 있는 데만."),
-          (None,"다람이 손을 뗐다. 손바닥이 조금 차가웠다. 그뿐이었다."),
+          (None,"다람이 손을 뗐다. 손바닥이 조금 차가웠다. 그뿐이었다.",{"cut":None}),
           ("daram","차가워. 근데 괜찮아.")] if r13_cv_daram() else [])+
         [("mom","……사람 온기였어. 돌을 데우는 건."),
         ("mom","옛날 사람들은 여기 와서 손을 얹었던 거야. 다 같이. 데워지면 손을 떼고 내려갔어."),
-        ("mom","그래서 손자국이 이렇게 많은 거야. 죽은 사람 손이 아니라, 왔다가 내려간 사람들 손이야.")],"cv:altar:hands")
+        ("mom","그래서 손자국이 이렇게 많은 거야. 죽은 사람 손이 아니라, 왔다가 내려간 사람들 손이야.",{"book":"U07-ending"})],"cv:altar:hands")
     $ r13_grant(["V08"],"제단의 작은 손자국 위에서 직접 본 것")
     if r13_has("cv_granny_tomorrow") or room13.get("granny_state")!="detained":
-        call r13_lines([(None,"할머니가 돌에 손을 얹었다. 금방 뗐다. 데인 것처럼."),
+        call r13_lines([(None,"할머니가 돌에 손을 얹었다. 금방 뗐다. 데인 것처럼.",{"show":"granny","pose":"withdraw_hand"}),
             ("granny","손을 얹고…… 내려가면 됐다고요?"),
             ("granny","내 딸, 보미도 이름을 잊기 시작했어요. 처음엔 장 보러 가는 길을. 다음엔 토실이 이름을요."),
             ("granny","내가 여기로 데려왔어요. 이 손으로. 그 애 목도리를 여며 주고."),
@@ -376,7 +376,7 @@ label r13_cv_altar:
             ([("daram","토실아. 같이 찾자. 탐정단이잖아.")] if r13_has("ws_tosil_kept") and r13_cv_daram() else []),"cv:altar:granny")
     call r13_lines([(None,"촌장이 지팡이를 내려놓았다. 돌 아래쪽, 손가락을 쫙 벌린 작은 손자국 앞에 무릎을 꿇었다."),
         ("resident_ppul","그 애는 손을 대면 꼭 손가락을 쫙 벌렸소. 이렇게."),
-        ("resident_ppul","손을 얹고 내려왔으면 됐다니. 나는 그 애를 두고 내려왔소.")]+
+        ("resident_ppul","손을 얹고 내려왔으면 됐다니. 나는 그 애를 두고 내려왔소.",{"pose":"kneel_stone"})]+
         ([("daram","할아버지, 손녀 이름 뭐야? 아까 안 알려 줬잖아."),
           ("resident_ppul","……달래. 달래였소."),
           ("daram","그럼 내려가서 판에 적자. 여기 두고 가면 또 아무도 몰라.")] if r13_cv_daram() and r13_has("cart_stopped") else []),"cv:altar:ppul")

@@ -18,7 +18,7 @@ init 58 python:
     # Checked once: renpy.loadable per call is slow on the web build, and
     # prediction asks for close-ups many times per interaction.
     R13_FULLBODY_FILES = {image["file"] for entry in R13_FULLBODY.get("people",{}).values()
-        for image in entry["images"].values() if renpy.loadable(image["file"])}
+        for image in list(entry["images"].values())+list(entry.get("poses",{}).values()) if renpy.loadable(image["file"])}
     R13_FULLBODY_NEW = ("joy","flustered","angry","anxious","surprise")
     # Existing engine keys -> full-body expression. "thinking" has no full-body
     # image and stays neutral; authored per-line choices override this.
@@ -51,6 +51,11 @@ init 58 python:
         if not R13_FULLBODY_DIALOGUE:return None
         entry=R13_FULLBODY.get("people",{}).get(person)
         if not entry:return None
+        # 0.18.89: an authored pose picture (door_peek, kneel_stone...) has its own file and
+        # crop; the scale stays the character's (r13_fullbody_scale uses the entry's figure).
+        posed=entry.get("poses",{}).get(r13_fullbody_key(pose))
+        if posed and posed["file"] in R13_FULLBODY_FILES:
+            return dict(file=posed["file"],crop=posed["crop"],figure=posed["figure"],emotion=r13_fullbody_key(pose),fit=posed.get("fit",1.0))
         emotion=r13_fullbody_emotion(pose)
         image=entry["images"].get(emotion) or entry["images"].get("neutral")
         if not image or image["file"] not in R13_FULLBODY_FILES:return None
@@ -77,7 +82,7 @@ init 58 python:
         if result is None:
             # Eye blink pieces (room13_dot_fx.rpy) sit on the uncropped picture.
             art=Crop(tuple(spec["crop"]),r13_blink_art(person,spec["emotion"],spec["file"]))
-            scale=r13_fullbody_scale(person,height)
+            scale=r13_fullbody_scale(person,height)*spec.get("fit",1.0)
             width=spec["crop"][2]*scale;native_height=spec["crop"][3]*scale
             result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)
             result=r13_idle_art(result,person,pose,None,int(round(width)),int(round(native_height)),contact="dialogue_bust",speaking=speaking)
@@ -92,12 +97,12 @@ init 58 python:
         (dev/fullbody_centre.py). Same value in dialogue and on the question screen."""
         spec=r13_fullbody_spec(person,pose)
         if not spec:return 640
-        return int(round(640-R13_FULLBODY_CENTRE.get(person,0)*r13_fullbody_scale(person,height)))
+        return int(round(640-R13_FULLBODY_CENTRE.get(person,0)*r13_fullbody_scale(person,height)*spec.get("fit",1.0)))
 
     def r13_fullbody_close_y(person,height,top,pose):
         spec=r13_fullbody_spec(person,pose)
         if not spec:return None
-        scale=r13_fullbody_scale(person,height)
+        scale=r13_fullbody_scale(person,height)*spec.get("fit",1.0)
         above=spec["figure"][1]-spec["crop"][1]
         return int(top+R13_FULLBODY_TOP_PAD*height/840.0-above*scale)
 

@@ -11197,3 +11197,366 @@ testcase meeting_lap_hint:
     screenshot "lap_hint.png"
     click "발언 고르기" until screen "r13_debate_board" timeout 30
     $ open("qa_result.txt","w").write("lap hint shown after one loop; 발언 고르기 opens the board")
+
+testcase ep_art_tour:
+    # 0.18.89: characters/poses, episode backgrounds, picture books, cuts, scene overlays.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_ep_art")
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c01_kkomi_door.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c02_kkomi_proud.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c03_kkomi_smile.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c04_bang_cling.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c05_bang_cry.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c06_kkam.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c07_mong_smile.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c08_nubi1_skirt.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c09_nubi2.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c10_dodam_ladle.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c11_saemi_bowl.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c12_saemi_cry.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c13_teacher_write.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c14_teacher_wipe.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c15_teacher_neutral.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c16_teacher_collapse.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c17_siluk2.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c18_siluk1.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c19_pandol_point.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c20_pandol_cry.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c21_chorong_lantern.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c22_tosil_book.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c23_tosil.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c24_neoul.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c25_badook_block.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c26_mom_fragments.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c27_granny_withdraw.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "c28_ppul_kneel.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_roof_evening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_roof_night.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_somi_home.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_woodshed_intact.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_woodshed_fire.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_woodshed_ruin.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_hideout.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_laundry.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_belltower_night.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_eaves.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_hall_front.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_holding_morning.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_holding_night.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_stable.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_hall_cell.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "b_ep_square_spring.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U01-opening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U01-ending.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U02-opening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U02-ending.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U03-opening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U03-ending.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U04-opening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U04-ending.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U05-opening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U05-ending-prince.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U05-ending-open-window.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U06-opening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U06-ending.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U07-opening.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "u_U07-ending.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "x_U22-mother-portrait-crayon-nose.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "x_U23-small-handprint.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "x_bell.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o38_o42_shelter_list.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o39_pots.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o40_spilled.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o41_blankets.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o43_cabinet.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o44_hideout.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o45_ancient.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o46_o47_o48_altar.png"
+    click pos (1150,90)
+    pause 0.3
+    pause until screen "say" timeout 30
+    pause 0.8
+    screenshot "o49_o50_cart.png"
+    click pos (1150,90)
+    pause 0.3
+    $ open("qa_result.txt","w").write("ep art tour: 71 screens")

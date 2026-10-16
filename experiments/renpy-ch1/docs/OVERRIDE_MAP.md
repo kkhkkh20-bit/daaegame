@@ -186,6 +186,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 94 | `systems/room13_first_day_flow.rpy:4` | _r13_fresh_new |
 | 3 | 105 | `systems/room13_no_carryover.rpy:6` |  |
 
+## `r13_background` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 57 | `room13_life.rpy:86` | _r13_ep_art_background |
+| 2 | 160 | `systems/room13_ep_art.rpy:44` |  |
+
 ## `r13_bed_available` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -374,6 +381,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 56 | `room13_week2_rules.rpy:192` | _r13_pf_w2_present |
 | 2 | 113 | `systems/room13_present_flow.rpy:69` |  |
+
+## `r13_world_background` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 58 | `room13_world_camera.rpy:49` | _r13_ep_art_world_background |
+| 2 | 160 | `systems/room13_ep_art.rpy:82` |  |
 
 ## `r13_world_edge_label` (2층)
 

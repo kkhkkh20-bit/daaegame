@@ -28,13 +28,13 @@ init 154 python:
     R13_RECORD_SHORT.update(F01="너울의 약속",F02="꽉 찬 등유 통",F03="나비의 등잔",F04="보리의 손바닥",F05="뚜껑 닫힌 등잔",F06="까만 문틀",F07="문 앞 기름 냄새",
         F08="살아남은 아이의 말",F09="반쯤 빈 등유 통",F10="누비의 손등",F11="누비 아이의 말",F12="누비의 말",F13="출석부 한 장",F14="선생님의 말")
 
-    # 학교 선생님은 이야기에서 사자다(소유자 2026-10-16). 그림은 아직 곰(그림 요청서 D06).
+    # 학교 선생님은 사자다(소유자 2026-10-16). 사자 그림은 0.18.89(dev/apply_ep_art.py).
     R13_NAMES["resident_teacher"]="사자 선생님"
     R13_CHARS["resident_teacher"]=Character("사자 선생님",cb_who_id="resident_teacher")
-    # 그림이 아직 없는 아이들: 이름만 나온다.
+    # 아이들(0.18.89부터 그림이 있다: cast.json, dev/apply_ep_art.py).
     for _k,_n in (("kid_kkomi","꼬미"),("kid_kkam","깜이"),("kid_mong","몽이"),("kid_bang","방울"),("kid_nubi1","누비의 큰아이"),("kid_nubi2","누비의 둘째")):
         R13_NAMES[_k]=_n
-        R13_CHARS[_k]=Character(_n)
+        R13_CHARS[_k]=Character(_n,cb_who_id=_k)
 
     def r13_wf_topic(npc,title,day,need=(),not_flags=(),flags=(),give=(),lines=()):
         return dict(npc=npc,title=title,day=list(day),need=list(need),not_flags=list(not_flags),flags=list(flags),give=list(give),lines=list(lines))
@@ -178,7 +178,7 @@ label r13_wf_events:
 
 label r13_wf_laundry:
     $ r13_flag("wf_laundry_tried")
-    call r13_scene("kitchen","여관 뒤 빨래터","quiet")
+    call r13_scene("ep_laundry","여관 뒤 빨래터","quiet")
     call r13_lines([(None,"여관 뒤 빨래터. 큰 솥 밑에서 등유 불이 약하게 탔다. 솥 옆에 기름통 하나. 뚜껑까지 꽉 차 있었다."),
         (None,"등유: 등잔과 빨래 솥에 쓰는 기름. 냄새가 독하다."),
         (None,"누비 아주머니가 등에 아기를 업은 채 젖은 이불을 짜고 있었다. 손이 빨갛게 터 있었다."),
@@ -209,14 +209,14 @@ label r13_wf_laundry:
 
 label r13_wf_hideout:
     $ r13_flag("wf_hideout_today")
-    call r13_scene("r13_school","학교 뒤 · 장작 창고","calm")
+    call r13_scene("ep_hideout","학교 뒤 · 장작 창고","calm")
     if not r13_has("wf_kkomi_met"):
         call r13_lines([(None,"학교 뒷마당 끝, 지붕이 내려앉은 장작 창고. 문틈으로 아이 목소리가 새어 나왔다."),
-            ("kid_kkomi","누구야! ……나비 누나 그릇이네. 누나 심부름이야?"),
+            ("kid_kkomi","누구야! ……나비 누나 그릇이네. 누나 심부름이야?",{"pose":"door_peek"}),
             ("daram","나 다람이야. 탐정이야."),
             ("kid_kkomi","탐정? 나는 꼬미. 여기 대장."),
             (None,"안은 생각보다 아늑했다. 장작을 쌓아 벽을 만들고, 그 안쪽에 담요 넷이 깔려 있었다. 구석에 나비의 등잔."),
-            ("kid_kkomi","여긴 비밀 아지트야. 【여긴 우리만 아는 데야.】 어른들은 몰라."),
+            ("kid_kkomi","여긴 비밀 아지트야. 【여긴 우리만 아는 데야.】 어른들은 몰라.",{"pose":"hideout_proud"}),
             ("kid_kkomi","아, 곰 아저씨는 알아. 밤마다 장작 몇 개씩 몰래 가져가. 우리도 못 본 척해 줘. 아저씨도 우리 못 본 척해 주니까."),
             ("daram","이거 줄게. 도토리. 내 탐정 표시야."),
             ("kid_kkomi","우리 탐정단 같은 거네. 아지트 대장 표시."),
@@ -231,7 +231,7 @@ label r13_wf_hideout:
             call r13_lines([("dad","학교 선생님이 너희 이름을 적었어. 오늘 밤부터 너희 자리가 있대."),
                 ("kid_kkomi","(종이를 받아 든다) ……이거 내 이름이야? 꼬, 미."),
                 ("kid_kkomi","나 내 이름 이렇게 생긴 거 처음 봐."),
-                ("kid_bang","대장, 내 것도 있어? 어디?"),
+                ("kid_bang","대장, 내 것도 있어? 어디?",{"pose":"cling_leg"}),
                 ("kid_kkomi","(한참 종이를 보다가) ……딱 오늘만이야. 등잔이랑 담요 챙겨. 대장이 맨 뒤에 간다.")],"wf:hideout:saved")
             $ r13_flag("wf_kkomi_saved","kids_school")
         "너울의 말을 전한다" if r13_has("F01"):
@@ -246,7 +246,7 @@ label r13_wf_hideout:
 label r13_wf_fire:
     # ②의 5일 밤 뒤에 이어진다(systems/room13_ep2_kids.rpy).
     $ r13_flag("wf_fire")
-    call r13_scene("r13_school","5일 밤 · 학교 뒤 장작 창고","night")
+    call r13_scene("ep_woodshed_fire","5일 밤 · 학교 뒤 장작 창고","night")
     if r13_has("wf_kkomi_saved") or r13_has("kids_school"):
         call r13_lines([(None,"창고 문 쪽이 통째로 타고 있었다."),
             (None,"뒤쪽에서 판자 부서지는 소리. 커다란 곰이 맨손으로 불붙은 판자를 뜯어내고 있었다. 보리다."),
@@ -260,7 +260,7 @@ label r13_wf_fire:
         ("resident_bori","나와! 이쪽으로! 기어서 나와!"),
         (None,"보리가 아이 하나, 또 하나, 또 하나를 끌어냈다. 아이들은 기침을 하며 눈밭에 굴렀다."),
         ("resident_bori","몇이야! 몇 명이야, 여기!"),
-        ("kid_kkam","넷…… 꼬미가 아직……! 꼬미가 우리 깨우고, 대장은 맨 나중에 나온다고……"),
+        ("kid_kkam","넷…… 꼬미가 아직……! 꼬미가 우리 깨우고, 대장은 맨 나중에 나온다고……",{"expression":"anxious"}),
         ("resident_bori","하나가 안 나왔어! 하나가!"),
         (None,"보리가 다시 불 속으로 손을 뻗었다. 그때 지붕이 내려앉았다."),
         (None,"……"),
@@ -273,7 +273,7 @@ label r13_wf_morning:
     $ r13_flag("wf_morning")
     if not r13_has("wf_fire"):
         return
-    call r13_scene("r13_school","6일 아침 · 장작 창고 터","quiet")
+    call r13_scene("ep_woodshed_ruin","6일 아침 · 장작 창고 터","quiet")
     if r13_has("kkomi_dead"):
         call r13_lines([(None,"창고는 검은 기둥 몇 개만 남았다. 눈이 녹아 시커먼 물이 고였다."),
             (None,"다람이 담요 넷이 깔려 있던 자리 앞에 쪼그려 앉았다. 재 사이에서 작고 둥근 것을 집어 들었다."),
@@ -329,7 +329,7 @@ label r13_wf_nabi_blame:
 
 label r13_wf_ruins:
     $ r13_flag("wf_ruins")
-    call r13_scene("r13_school","6일 · 장작 창고 터","search")
+    call r13_scene("ep_woodshed_ruin","6일 · 장작 창고 터","search")
     call r13_lines([(None,"타고 남은 창고 터. 어디부터 볼까.")],"wf:ruins")
     $ _wf_left=["inside","door","snow"]
     while _wf_left:
@@ -366,14 +366,14 @@ label r13_wf_ruins:
             ("resident_teacher","이 애들 이름을 부르는 건 이제 나밖에 없어요. 깜이, 몽이, 방울."),
             ("kid_kkam","……곰 아저씨가 우리 살렸어. 문 쪽이 먼저 빨갰어. 문으로 못 나가서, 아저씨가 뒤에 벽을 부쉈어."),
             ("kid_mong","꼬미가 우리 다 깨웠어. 대장은 맨 나중에 나온다고 했어."),
-            ("kid_bang","곰 아저씨 손 다 데었어. 아저씨 잡혀갔어?")],"wf:school:kids")
+            ("kid_bang","곰 아저씨 손 다 데었어. 아저씨 잡혀갔어?",{"expression":"anxious"})],"wf:school:kids")
         $ r13_grant(["F08"],"학교에서 살아남은 아이들에게 들은 말")
     $ r13_tick()
     return
 
 label r13_wf_nubi:
     $ r13_flag("wf_nubi_seen")
-    call r13_scene("kitchen","여관 뒤 빨래터","quiet")
+    call r13_scene("ep_laundry","여관 뒤 빨래터","quiet")
     call r13_lines([(None,"솥 밑 불은 꺼져 있었다. 누비 아주머니가 손을 젖은 천으로 감은 채 빨래를 개고 있었다. 등에는 막내, 옆에는 아이 둘."),
         ("resident_nubi","손님…… 오늘은 빨래 못 받아요. 손을 좀 다쳐서요.")],"wf:nubi")
     $ _wf_left=["can","hand","kid"]
@@ -423,7 +423,7 @@ label r13_wf_choice:
                         (None,"나비는 품삯을 잃고 주방 열쇠를 빼앗겼다.")],"wf:choice:nabi:lost")
                     $ r13_flag("wf_nabi_lost")
         "빨래터의 누비에게 간다":
-            call r13_scene("kitchen","7일 아침 · 여관 뒤 빨래터","quiet")
+            call r13_scene("ep_laundry","7일 아침 · 여관 뒤 빨래터","quiet")
             if sum(1 for k in ("F09","F10","F11") if r13_has(k))>=2:
                 call r13_lines([("dad","창고 문 앞에 등유가 부어져 있었습니다. 이 통이 반이나 줄었고요."),
                     ("resident_nubi","(오래 말이 없다) ……불만 내려고 했어요."),
@@ -494,7 +494,7 @@ label r13_wf_decision:
     return
 
 label r13_wf_aftermath:
-    call r13_scene("r13_school","7일 오후 · 아지트 터","quiet")
+    call r13_scene("ep_woodshed_ruin","7일 오후 · 아지트 터","quiet")
     if r13_has("kkomi_dead"):
         call r13_lines([(None,"타고 남은 창고 터. 다람이 장갑 낀 손으로 언 땅을 팠다. 잘 안 파졌다.")]+
             ([(None,"보리가 붕대 감은 손으로 옆에서 같이 팠다.")] if r13_has("wf_bori_freed") else [])+
@@ -513,8 +513,8 @@ label r13_wf_aftermath:
             ("kid_kkam","아저씨네 애도 있어?"),
             ("resident_bori","있어. 대피소에 맡겨 놨어. 열이 나서. 낫으면 같이 살자.")],"wf:after:bori")
         $ r13_flag("bori_adopts")
-    call r13_lines([(None,"(그림책) 그레텔이 마녀를 힘껏 밀었고,"),
-        (None,"(그림책) 마녀도 집에 배고픈 아이가 셋 있었어요.")]+
+    call r13_lines([(None,"(그림책) 그레텔이 마녀를 힘껏 밀었고,",{"book":"U03-opening"}),
+        (None,"(그림책) 마녀도 집에 배고픈 아이가 셋 있었어요.",{"book":"U03-ending"})]+
         ([(None,"(그림책) 그날 밤 화덕은 비어 있었어요.")] if not r13_has("kkomi_dead") else [])+
         [("daram","……아빠. 그럼 그레텔이 나쁜 거야? 마녀가 나쁜 거야?"),
         ("daram","마녀네 애들은 이제 누가 밥 줘?")]+

@@ -30,7 +30,7 @@ init 156 python:
         Y09="이름표 꾸러미",Y10="대피 명단",Y11="아이 그릇만",Y12="약장의 빈 자리",Y13="새미의 말",Y14="밝아진 등")
     for _k,_n in (("kid_dodam","도담"),("kid_saemi","새미")):
         R13_NAMES[_k]=_n
-        R13_CHARS[_k]=Character(_n)
+        R13_CHARS[_k]=Character(_n,cb_who_id=_k)
 
     # 숲 뿌리 밑: 기존 은신처 장면 뒤에 초록 유리 조각을 더한다.
     ROOM13["objects"]["forest"]["forest_roots"]["call_label"]="r13_ws_roots"
@@ -310,7 +310,7 @@ label r13_ws_lab:
         ("dad","(보호소에 간 사람은 죽은 사람 칸에 있다. 아직 떠나지도 않은 사람까지.)",{"thought":True}),
         ("resident_guldol","(벽의 글자를 손가락으로 짚으며) \"돌은…… 하나가 아니었다. 나눠서…… 데웠다.\""),
         ("mom","조각이 하나씩 식으니까, 마을은 남은 큰 돌 하나만 붙잡았어요. 그리고 그 돌에…… 사람을 바쳤어요."),
-        ("mom","이 조각 셋을 한데 모아 볼게. 잘 봐."),
+        ("mom","이 조각 셋을 한데 모아 볼게. 잘 봐.",{"pose":"show_fragments"}),
         (None,"처음엔 미지근했다. 숨 몇 번 사이에, 초록빛이 짙어졌다."),
         ("mom","따로 두면 식어. 모으면 서로 데워. 사람을 바치지 않아도 돼."),
         ("resident_guldol","밤새 지켜봅시다. 정말 안 식는지."),
@@ -326,7 +326,7 @@ label r13_ws_lab:
 label r13_ws_teacher_talk:
     $ r13_flag("ws_teacher_talked")
     call r13_scene("r13_school","학교 교실 · 이름을 세는 선생님","quiet")
-    call r13_lines([("resident_teacher","깜이, 몽이, 방울, 도담, 새미."+(" 꼬미." if r13_has("wf_kkomi_alive") else "")+" 하나도 안 틀렸지요."),
+    call r13_lines([("resident_teacher","깜이, 몽이, 방울, 도담, 새미."+(" 꼬미." if r13_has("wf_kkomi_alive") else "")+" 하나도 안 틀렸지요.",{"pose":"write_attendance"}),
         ("resident_teacher","오늘 저녁은 수프를 끓이려고요. 아이들이 좋아하는 노래도 부르고. 따뜻하게."),
         ("resident_teacher","(아이들을 보며, 아주 작게) ……이제 아무도 추운 데로 안 보낼 겁니다. 제가 약속했어요.")],"ws:teacher:count")
     if r13_has("mom_reunited") and r13_has("Y06"):
@@ -368,9 +368,9 @@ label r13_ws_soup:
         call r13_ws_after
         return
     call r13_lines([(None,"하얀 그릇에 수프가 담겼다. 선생님 앞에는 빨간 그릇 하나. 선생님은 큰 냄비에서 떴다."),
-        ("kid_dodam","선생님, 오늘 수프 진짜 맛있다."),
+        ("kid_dodam","선생님, 오늘 수프 진짜 맛있다.",{"pose":"lick_ladle"}),
         ("kid_saemi","……"),
-        (None,"새미가 반만 먹고 그릇을 무릎에 감췄다."),
+        (None,"새미가 반만 먹고 그릇을 무릎에 감췄다.",{"show":"kid_saemi","pose":"hide_bowl"}),
         (None,"아이들이 하나둘 하품을 했다. 선생님이 한 명씩 안아 담요에 눕혔다. 이마를 쓸어 주며, 이름을 불렀다."),
         ("resident_teacher","깜이. 몽이. 방울. 도담. ……잘 자요."),
         (None,"밤이 깊었다. 대피소는 조용했다. 너무 조용했다."),
@@ -385,7 +385,7 @@ label r13_ws_soup:
             (None,"제일 작은 도담만, 끝내 눈을 뜨지 않았다.")],"ws:soup:revive")
         $ r13_flag("dodam_dead","ws_some_alive")
     else:
-        call r13_lines([("kid_saemi","일어나. 일어나, 도담아. 불 켜졌어. 따뜻해졌어."),
+        call r13_lines([("kid_saemi","일어나. 일어나, 도담아. 불 켜졌어. 따뜻해졌어.",{"expression":"anxious"}),
             ("kid_saemi","……안 일어나."),
             (None,"담요 여럿. 숟가락이 가지런히 놓여 있었다. 아이들은 웃는 얼굴로 자고 있었다.")]+
             ([("daram","아빠, 얘들 왜 안 일어나? ……그림책처럼 자는 거야? 왕자 오면 일어나?")] if r13_ws_daram() else []),"ws:soup:all")
@@ -437,7 +437,7 @@ label r13_ws_after:
         call r13_lines([(None,"다람이 판자 하나를 엄마 앞에 내밀었다. 엄마 얼굴. 코만 크레용으로 삐뚤빼뚤."),
             ("daram","그림쟁이 아저씨가 그린 거야. 코는 내가 그렸어. 약속했거든."),
             ("mom","……코를, 찡그렸네."),
-            (None,"엄마가 판자를 끌어안고 울었다. 웃으면서. 코를 찡그리며.")],"ws:after:portrait")
+            (None,"엄마가 판자를 끌어안고 울었다. 웃으면서. 코를 찡그리며.",{"cut":"U22-mother-portrait-crayon-nose"})],"ws:after:portrait")
     if r13_has("ws_some_alive") or (r13_has("bori_adopts") and not r13_has("soup_kids_dead")):
         call r13_lines([(None,"보리가 대피소 구석에 앉아 있었다. 무릎에 깜이, 양옆에 몽이와 방울이 잠들어 있었다."),
             ("resident_bori","내 애 하나 잃고…… 셋 얻었다."),
@@ -450,9 +450,9 @@ label r13_ws_after:
         ("kid_saemi","(노래) 다 같이 먹으면 따뜻해……"),
         (None,"노래가 거기서 멈췄다. 한참 뒤에, 아주 작게."),
         ("kid_saemi","(노래) ……내일도 같이 먹자."),
-        (None,"(그림책) 공주는 물레 바늘에 찔려 깊은 잠에 빠졌어요."),
+        (None,"(그림책) 공주는 물레 바늘에 찔려 깊은 잠에 빠졌어요.",{"book":"U05-opening"}),
         (None,"(그림책) 성 안의 사람들도 모두 함께 잠들었어요.")]+
-        ([(None,"(그림책) 왕자가 오기 전에, 누군가 성의 창문을 열었어요.")] if r13_has("ws_kids_alive") else [(None,"(그림책) 왕자는 몇 시간 늦게 왔어요.")])+
+        ([(None,"(그림책) 왕자가 오기 전에, 누군가 성의 창문을 열었어요.",{"book":"U05-ending-open-window"})] if r13_has("ws_kids_alive") else [(None,"(그림책) 왕자는 몇 시간 늦게 왔어요.",{"book":"U05-ending-prince"})])+
         ([("daram","……아빠. 왕자가 늦게 오면, 공주는 안 일어나?"),("daram","그럼 다음엔 우리가 먼저 가자. 왕자보다 먼저.")] if r13_ws_daram() else []),"ws:after:night")
     $ r13_flag("ws_done")
     return

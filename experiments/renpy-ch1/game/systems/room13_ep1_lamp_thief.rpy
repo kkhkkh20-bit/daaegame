@@ -416,7 +416,7 @@ label r13_ep1_siluk:
     $ r13_flag("lt_siluk_seen")
     call r13_lines([(None,"짐꾼 실룩이 짐을 묶고 있었다. 갈색 노끈, 한쪽 끝이 뜯겨 있었다."),
         ("resident_siluk","……무슨 일이오. 바쁘오."),
-        (None,"실룩의 아이 둘이 따끈한 빵을 나눠 먹고 있었다. \"아빠가 빵 사 왔어요! 진짜 빵이에요!\"")],"ep1:siluk")
+        (None,"실룩의 아이 둘이 따끈한 빵을 나눠 먹고 있었다. \"아빠가 빵 사 왔어요! 진짜 빵이에요!\"",{"show":"kid_siluk2","expression":"joy"})],"ep1:siluk")
     $ _e1_loop=True
     while _e1_loop:
         $ _e1_loop=False
@@ -434,7 +434,7 @@ label r13_ep1_siluk:
             $ r13_grant(["L07"],"실룩의 짐 끈")
             $ _e1_loop=True
         elif _e1_pick=="kid":
-            call r13_lines([(None,"실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"")],"ep1:siluk:kid")
+            call r13_lines([(None,"실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",{"show":"kid_siluk1"})],"ep1:siluk:kid")
             $ r13_grant(["L08"],"실룩 아이의 말")
             $ _e1_loop=True
         elif _e1_pick=="debt":
@@ -473,7 +473,7 @@ label r13_ep1_decision:
         $ _e1_menu.append(("“실룩의 빚은 훔친 조각 값으로 없던 걸로 하시죠.”","debt"))
     $ _e1_pick=renpy.display_menu(_e1_menu)
     if _e1_pick in ("hand","both"):
-        call r13_lines([(None,"너울이 실룩의 팔을 잡아끌었다. 실룩의 아이들이 따라가려다 넘어졌다."),
+        call r13_lines([(None,"너울이 실룩의 팔을 잡아끌었다. 실룩의 아이들이 따라가려다 넘어졌다.",{"show":"kid_siluk2","expression":"anxious"}),
             ("resident_siluk","애들은…… 애들은 건드리지 마시오!")],"ep1:decision:hand")
         $ r13_flag("siluk_handed")
     if _e1_pick in ("store","both"):
@@ -496,12 +496,12 @@ label r13_ep1_aftermath:
         call r13_lines([("resident_ubak","조각 탓이 아니에요. 【돌이 식고 있어요】.")],"ep1:after:ubak")
     call r13_lines([("dad","(실룩이 훔친 건 조각이지만, 피코를 쓰러뜨린 건 이 겨울이다.)",{"thought":True})],"ep1:after:thought")
     if r13_has("piko_dead"):
-        call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다."),
-            (None,"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」"),
+        call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
+            (None,"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
             ("daram","……아빠. 이 책, 이제 안 읽을래.")],"ep1:after:book")
     else:
-        call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다."),
-            (None,"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」"),
+        call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
+            (None,"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」",{"book":"U01-ending"}),
             ("daram","아빠, 이번엔 끝이 바뀌었어.")],"ep1:after:book_saved")
     return
 

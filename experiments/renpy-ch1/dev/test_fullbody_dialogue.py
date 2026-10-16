@@ -34,9 +34,18 @@ def load_module():
 class FullbodyData(unittest.TestCase):
     def test_every_dialogue_character_has_six_expressions_on_disk(self):
         self.assertEqual(set(DATA["people"]), set(PORTRAITS))
-        self.assertEqual(len(DATA["people"]), 43)
+        # 43 original characters + 13 from the 2026-10-16 episode art (dev/apply_ep_art.py).
+        self.assertEqual(len(DATA["people"]), 56)
         for person, entry in DATA["people"].items():
             self.assertEqual(tuple(entry["images"]), EMOTIONS, person)
+            for pose, image in entry.get("poses", {}).items():
+                path = GAME / image["file"]
+                self.assertTrue(path.exists(), path)
+                with Image.open(path) as im:
+                    self.assertEqual(list(im.size), image["size"], path)
+                x, y, w, h = image["crop"]
+                self.assertLessEqual(x + w, image["size"][0], (person, pose))
+                self.assertLessEqual(y + h, image["size"][1], (person, pose))
             for emotion, image in entry["images"].items():
                 path = GAME / image["file"]
                 self.assertTrue(path.exists(), path)
@@ -77,6 +86,16 @@ class FullbodyData(unittest.TestCase):
 class FullbodySelection(unittest.TestCase):
     def setUp(self):
         self.env = load_module()
+
+    def test_authored_pose_picture_is_used_with_the_character_scale(self):
+        # 0.18.89 (dev/apply_ep_art.py): a pose with its own picture wins over the emotion.
+        spec = self.env["r13_fullbody_spec"]
+        posed = spec("kid_kkomi", "door_peek")
+        self.assertEqual(posed["file"], DATA["people"]["kid_kkomi"]["poses"]["door_peek"]["file"])
+        self.assertEqual(posed["crop"], DATA["people"]["kid_kkomi"]["poses"]["door_peek"]["crop"])
+        self.assertEqual(spec("kid_kkomi", "joy")["file"], DATA["people"]["kid_kkomi"]["images"]["joy"]["file"])
+        self.assertEqual(spec("granny", "withdraw_hand")["emotion"], "withdraw_hand")
+        self.assertEqual(spec("granny", "neutral")["file"], DATA["people"]["granny"]["images"]["neutral"]["file"])
 
     def test_legacy_keys_map_to_fullbody_images(self):
         emotion = self.env["r13_fullbody_emotion"]

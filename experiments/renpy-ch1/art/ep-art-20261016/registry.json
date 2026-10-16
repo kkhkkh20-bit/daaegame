@@ -1,0 +1,621 @@
+{
+ "version": 1,
+ "date": "2026-10-16",
+ "basis": "Owner request 2026-10-16: apply review-originals 01-31 (passed items) and revision cc75d0f; nubi1 hold_skirt keeps the earlier picture (revision failed); U22 crayon nose = nose pixels only; overlays = object regions only; O46 ropes held (noose-like loops), cart kept. U22 blank-nose is preserved in originals but not shipped: no scene shows the mother holding the board before Daram drew the nose.",
+ "characters": {
+  "kid_kkomi": {
+   "name_ko": "꼬미",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_kkomi-neutral",
+    "joy": "fullbody-kid_kkomi-smile",
+    "anxious": "fullbody-kid_kkomi-cry"
+   },
+   "poses": {
+    "door_peek": "fullbody-kid_kkomi-door_peek",
+    "hideout_proud": "fullbody-kid_kkomi-hideout_proud"
+   },
+   "face": "face-kid_kkomi-neutral"
+  },
+  "kid_kkam": {
+   "name_ko": "깜이",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_kkam-neutral",
+    "joy": "fullbody-kid_kkam-smile",
+    "anxious": "fullbody-kid_kkam-cry"
+   },
+   "poses": {},
+   "face": "face-kid_kkam-neutral"
+  },
+  "kid_mong": {
+   "name_ko": "몽이",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_mong-neutral",
+    "joy": "fullbody-kid_mong-smile",
+    "anxious": "fullbody-kid_mong-cry"
+   },
+   "poses": {},
+   "face": "face-kid_mong-neutral"
+  },
+  "kid_bang": {
+   "name_ko": "방울",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_bang-neutral",
+    "joy": "fullbody-kid_bang-smile",
+    "anxious": "fullbody-kid_bang-cry"
+   },
+   "poses": {
+    "cling_leg": "fullbody-kid_bang-cling_leg"
+   },
+   "face": "face-kid_bang-neutral"
+  },
+  "kid_nubi1": {
+   "name_ko": "누비의 큰아이",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_nubi1-neutral",
+    "joy": "fullbody-kid_nubi1-smile",
+    "anxious": "fullbody-kid_nubi1-cry"
+   },
+   "poses": {
+    "hold_skirt": "fullbody-kid_nubi1-hold_skirt"
+   },
+   "face": "face-kid_nubi1-neutral"
+  },
+  "kid_nubi2": {
+   "name_ko": "누비의 둘째",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_nubi2-neutral",
+    "joy": "fullbody-kid_nubi2-smile",
+    "anxious": "fullbody-kid_nubi2-cry"
+   },
+   "poses": {}
+  },
+  "kid_siluk1": {
+   "name_ko": "실룩의 큰아이",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_siluk1-neutral",
+    "joy": "fullbody-kid_siluk1-smile",
+    "anxious": "fullbody-kid_siluk1-cry"
+   },
+   "poses": {},
+   "face": "face-kid_siluk1-neutral"
+  },
+  "kid_siluk2": {
+   "name_ko": "실룩의 작은아이",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_siluk2-neutral",
+    "joy": "fullbody-kid_siluk2-smile",
+    "anxious": "fullbody-kid_siluk2-cry"
+   },
+   "poses": {},
+   "face": "face-kid_siluk2-neutral"
+  },
+  "kid_saemi": {
+   "name_ko": "새미",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_saemi-neutral",
+    "joy": "fullbody-kid_saemi-smile",
+    "anxious": "fullbody-kid_saemi-cry"
+   },
+   "poses": {
+    "hide_bowl": "fullbody-kid_saemi-hide_bowl"
+   },
+   "face": "face-kid_saemi-neutral"
+  },
+  "kid_dodam": {
+   "name_ko": "도담",
+   "mode": "new",
+   "head_ratio": 0.42,
+   "emotions": {
+    "neutral": "fullbody-kid_dodam-neutral",
+    "joy": "fullbody-kid_dodam-smile",
+    "anxious": "fullbody-kid_dodam-cry"
+   },
+   "poses": {
+    "lick_ladle": "fullbody-kid_dodam-lick_ladle"
+   },
+   "face": "face-kid_dodam-neutral"
+  },
+  "npc_pandol": {
+   "name_ko": "판돌 영감",
+   "mode": "new",
+   "head_ratio": 0.28,
+   "emotions": {
+    "neutral": "fullbody-npc_pandol-neutral",
+    "joy": "fullbody-npc_pandol-smile",
+    "anxious": "fullbody-npc_pandol-cry"
+   },
+   "poses": {
+    "point_name": "fullbody-npc_pandol-point_name"
+   }
+  },
+  "chorong_mother": {
+   "name_ko": "초롱 어머니",
+   "mode": "new",
+   "head_ratio": 0.28,
+   "emotions": {
+    "neutral": "fullbody-chorong_mother-neutral",
+    "anxious": "fullbody-chorong_mother-sad"
+   },
+   "poses": {
+    "offer_lantern": "fullbody-chorong_mother-offer_lantern"
+   }
+  },
+  "resident_tosil": {
+   "name_ko": "토실",
+   "mode": "new",
+   "head_ratio": 0.36,
+   "emotions": {
+    "neutral": "fullbody-resident_tosil-neutral"
+   },
+   "poses": {
+    "hold_storybook": "fullbody-resident_tosil-hold_storybook"
+   }
+  },
+  "resident_teacher": {
+   "name_ko": "사자 선생님",
+   "mode": "replace",
+   "head_ratio": 0.3,
+   "emotions": {
+    "neutral": "fullbody-resident_teacher-neutral"
+   },
+   "poses": {
+    "wipe_board": "fullbody-resident_teacher-wipe_board",
+    "write_attendance": "fullbody-resident_teacher-write_attendance",
+    "collapse_attendance": "fullbody-resident_teacher-collapse_attendance"
+   }
+  },
+  "neoul": {
+   "name_ko": "너울",
+   "mode": "replace",
+   "head_ratio": 0.28,
+   "emotions": {
+    "neutral": "fullbody-neoul-neutral"
+   },
+   "poses": {}
+  },
+  "granny": {
+   "name_ko": "",
+   "mode": "poses",
+   "head_ratio": 0.3,
+   "emotions": {
+    "neutral": "fullbody-granny-withdraw_hand"
+   },
+   "poses": {
+    "withdraw_hand": "fullbody-granny-withdraw_hand"
+   }
+  },
+  "mom": {
+   "name_ko": "",
+   "mode": "poses",
+   "head_ratio": 0.3,
+   "emotions": {
+    "neutral": "fullbody-mom-show_fragments"
+   },
+   "poses": {
+    "show_fragments": "fullbody-mom-show_fragments"
+   }
+  },
+  "resident_badook": {
+   "name_ko": "",
+   "mode": "poses",
+   "head_ratio": 0.3,
+   "emotions": {
+    "neutral": "fullbody-resident_badook-block_cart"
+   },
+   "poses": {
+    "block_cart": "fullbody-resident_badook-block_cart"
+   }
+  },
+  "resident_ppul": {
+   "name_ko": "",
+   "mode": "poses",
+   "head_ratio": 0.3,
+   "emotions": {
+    "neutral": "fullbody-resident_ppul-kneel_stone"
+   },
+   "poses": {
+    "kneel_stone": "fullbody-resident_ppul-kneel_stone"
+   }
+  }
+ },
+ "icons": [
+  "F02",
+  "F03",
+  "F04",
+  "F05",
+  "F06",
+  "F07",
+  "F09",
+  "F10",
+  "F13",
+  "K04",
+  "K05",
+  "K08",
+  "L01",
+  "L02",
+  "L03",
+  "L04",
+  "L07",
+  "L09",
+  "L10",
+  "L12",
+  "L13",
+  "L14",
+  "N01",
+  "N05",
+  "N06",
+  "N07",
+  "N08",
+  "V00",
+  "V01",
+  "V02",
+  "V03",
+  "V04",
+  "V06",
+  "V08",
+  "Y02",
+  "Y03",
+  "Y05",
+  "Y06",
+  "Y07",
+  "Y08",
+  "Y09",
+  "Y10",
+  "Y11",
+  "Y12",
+  "Y14"
+ ],
+ "pictures": {
+  "room13-pixel-panorama-belltower-night.webp": {
+   "source": "pixel-panorama-belltower-night",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-eaves-afternoon.webp": {
+   "source": "pixel-panorama-eaves-afternoon",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-hall-front-afternoon.webp": {
+   "source": "pixel-panorama-hall-front-afternoon",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-holding-morning.webp": {
+   "source": "pixel-panorama-holding-morning",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-holding-night.webp": {
+   "source": "pixel-panorama-holding-night",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-laundry-afternoon.webp": {
+   "source": "pixel-panorama-laundry-afternoon",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-laundry-evening.webp": {
+   "source": "pixel-panorama-laundry-evening",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-roof-evening.webp": {
+   "source": "pixel-panorama-roof-evening",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-roof-night.webp": {
+   "source": "pixel-panorama-roof-night",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-square-spring.webp": {
+   "source": "pixel-panorama-square-spring",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-woodshed-fire.webp": {
+   "source": "pixel-panorama-woodshed-fire",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-woodshed-intact.webp": {
+   "source": "pixel-panorama-woodshed-intact",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-panorama-woodshed-ruin.webp": {
+   "source": "pixel-panorama-woodshed-ruin",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-pixel-wide-hall-cell-evening.webp": {
+   "source": "pixel-wide-hall-cell-evening",
+   "size": [
+    2172,
+    724
+   ],
+   "pad": true
+  },
+  "room13-pixel-wide-hideout-afternoon.webp": {
+   "source": "pixel-wide-hideout-afternoon",
+   "size": [
+    2172,
+    724
+   ],
+   "pad": true
+  },
+  "room13-pixel-wide-somi-home-afternoon.webp": {
+   "source": "pixel-wide-somi-home-afternoon",
+   "size": [
+    2172,
+    724
+   ],
+   "pad": true
+  },
+  "room13-pixel-wide-stable-afternoon.webp": {
+   "source": "pixel-wide-stable-afternoon",
+   "size": [
+    2172,
+    724
+   ],
+   "pad": true
+  },
+  "room13-ep-U00-open-book.webp": {
+   "source": "ep-U00-open-book",
+   "size": [
+    1280,
+    720
+   ]
+  },
+  "room13-ep-U01-opening.webp": {
+   "source": "ep-U01-opening",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U01-ending.webp": {
+   "source": "ep-U01-ending",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U02-opening.webp": {
+   "source": "ep-U02-opening",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U02-ending.webp": {
+   "source": "ep-U02-ending",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U03-opening.webp": {
+   "source": "ep-U03-opening",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U03-ending.webp": {
+   "source": "ep-U03-ending",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U04-opening.webp": {
+   "source": "ep-U04-opening",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U04-ending.webp": {
+   "source": "ep-U04-ending",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U05-opening.webp": {
+   "source": "ep-U05-opening",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U05-ending-prince.webp": {
+   "source": "ep-U05-ending-prince",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U05-ending-open-window.webp": {
+   "source": "ep-U05-ending-open-window",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U06-opening.webp": {
+   "source": "ep-U06-opening",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U06-ending.webp": {
+   "source": "ep-U06-ending",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U07-opening.webp": {
+   "source": "ep-U07-opening",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U07-ending.webp": {
+   "source": "ep-U07-ending",
+   "size": [
+    900,
+    600
+   ]
+  },
+  "room13-ep-U21-bell-01.webp": {
+   "source": "ep-U21-bell-01",
+   "size": [
+    256,
+    384
+   ]
+  },
+  "room13-ep-U21-bell-02.webp": {
+   "source": "ep-U21-bell-02",
+   "size": [
+    256,
+    384
+   ]
+  },
+  "room13-ep-U21-bell-03.webp": {
+   "source": "ep-U21-bell-03",
+   "size": [
+    256,
+    384
+   ]
+  },
+  "room13-ep-U21-soundwaves.webp": {
+   "source": "ep-U21-soundwaves-v3",
+   "size": [
+    2048,
+    768
+   ]
+  },
+  "room13-ep-U22-mother-portrait-crayon-nose.webp": {
+   "source": "ep-U22-mother-portrait-crayon-nose",
+   "size": [
+    1280,
+    720
+   ]
+  },
+  "room13-ep-U23-small-handprint.webp": {
+   "source": "ep-U23-small-handprint",
+   "size": [
+    1280,
+    720
+   ]
+  },
+  "room13-ep-O38-shelter-full.webp": {
+   "source": "ep-O38-shelter-full"
+  },
+  "room13-ep-O39-two-pots.webp": {
+   "source": "ep-O39-two-pots"
+  },
+  "room13-ep-O40-spilled.webp": {
+   "source": "ep-O40-spilled"
+  },
+  "room13-ep-O41-four-blankets.webp": {
+   "source": "ep-O41-four-blankets"
+  },
+  "room13-ep-O42-evac-list.webp": {
+   "source": "ep-O42-evac-list"
+  },
+  "room13-ep-O43-cabinet-gap.webp": {
+   "source": "ep-O43-cabinet-gap"
+  },
+  "room13-ep-O44-hideout-empty.webp": {
+   "source": "ep-O44-hideout-empty"
+  },
+  "room13-ep-O45-ancient-shelf.webp": {
+   "source": "ep-O45-ancient-shelf"
+  },
+  "room13-ep-O46-mountain-ropes.webp": {
+   "source": "ep-O46-mountain-ropes"
+  },
+  "room13-ep-O47-handprints.webp": {
+   "source": "ep-O47-handprints"
+  },
+  "room13-ep-O48-chisel.webp": {
+   "source": "ep-O48-chisel"
+  },
+  "room13-ep-O49-cart.webp": {
+   "source": "ep-O49-cart"
+  },
+  "room13-ep-O50-cart-list.webp": {
+   "source": "ep-O50-cart-list"
+  }
+ },
+ "pose_fit": {
+  "mom": {
+   "show_fragments": 0.62
+  },
+  "kid_saemi": {
+   "hide_bowl": 0.6
+  },
+  "resident_tosil": {
+   "hold_storybook": 0.62
+  },
+  "chorong_mother": {
+   "offer_lantern": 0.72
+  },
+  "kid_nubi1": {
+   "hold_skirt": 0.78
+  }
+ }
+}

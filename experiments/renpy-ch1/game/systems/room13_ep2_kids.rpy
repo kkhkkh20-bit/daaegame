@@ -129,7 +129,7 @@ label r13_ep2_bite:
     if room13["location"] in ("room13","guestroom"):
         call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"night")
         call r13_lines([("daram","아빠, 오늘은 내가 읽어 줄게."),
-            (None,"(그림책) 남매는 숲에 들어가며 빵 부스러기를 떨어뜨렸어요."),
+            (None,"(그림책) 남매는 숲에 들어가며 빵 부스러기를 떨어뜨렸어요.",{"book":"U02-opening"}),
             (None,"(그림책) 그런데 새들이 부스러기를 다 먹어 버렸어요."),
             (None,"(그림책) 남매는 별을 보고 길을 찾아 집에 돌아갔어요."),
             ("daram","나는 길 안 잃어버려. 아빠가 있으니까.")],"ep2:book")
@@ -234,7 +234,7 @@ label r13_ep2_at_gate:
 
 label r13_ep2_at_eaves:
     $ r13_edit(location="inn")
-    call r13_scene("r13_market","여관 처마 밑 · 밤이","quiet")
+    call r13_scene("ep_eaves","여관 처마 밑 · 밤이","quiet")
     if r13_has("own:blanket"):
         $ r13_use_item("blanket")
         call r13_lines([(None,"처마 밑에 아빠가 사 둔 담요를 놓자, 낡은 망토가 먼저 고개를 내밀었다."),
@@ -281,7 +281,7 @@ label r13_ep2_at_lowroad:
 
 label r13_ep2_at_roof:
     $ r13_edit(location="inn")
-    call r13_scene("village_overview","여관 지붕 위","search")
+    call r13_scene("ep_roof_evening","여관 지붕 위","search")
     call r13_lines([("resident_somi","(머뭇거리다) ……지붕에서 보면 잘 보여."),
         (None,"솜이를 따라 여관 지붕에 올랐다. 마을이 한눈에 보였다.")]+
         ([("bami","저기. 입구에서부터 발자국.")] if r13_has("bami_club") else [(None,"입구 쪽 눈밭에 무언가 길게 이어져 있었다.")])+
@@ -294,7 +294,7 @@ label r13_ep2_at_roof:
 
 label r13_ep2_at_somi_home:
     $ r13_edit(location="square")
-    call r13_scene("guestroom","솜이네 집","quiet")
+    call r13_scene("ep_somi_home","솜이네 집","quiet")
     call r13_lines([(None,"솜이네 집은 따뜻하지 않았다. 창가에 무쇠 할아버지가 앉아 있었다. 손바닥에 잉크로 무언가가 빽빽이 적혀 있었다. 솜이. 솜이. 솜이."),
         ("resident_musoe","어이구, 꼬마 손님들이구나."),
         ("resident_musoe","(나와 솜이를 번갈아 보며) 너희, 우리 손녀랑 닮았구나."),
@@ -387,7 +387,7 @@ label r13_ep2_night:
         ("daram","근데 아빠…… 탐정은 왜 이렇게 슬퍼?"),
         (None,"아빠가 대답 대신 나를 안았다.")],"ep2:night")
     if r13_has("kd_somi_warned"):
-        call r13_scene("village_overview","지붕 위 · 두 불빛","night")
+        call r13_scene("ep_roof_night","지붕 위 · 두 불빛","night")
         call r13_lines([(None,"잠이 오지 않아 지붕으로 올라갔다. 솜이가 먼저 와 있었다."),
             ("resident_somi","할아버지가…… 집에 없어."),
             (None,"멀리 강 쪽에 작은 등불 하나가 흔들렸다. 그리고 반대쪽, 학교 뒤에서 붉은 빛이 피어올랐다.")]+
@@ -418,9 +418,9 @@ label r13_ep2_book_after:
         call r13_lines([(None,"아침, 강가에 신발 한 켤레와 '솜이'가 빽빽한 종이만 남아 있었다는 말이 돌았다."),
             ("daram","……아빠. 솜이가 오늘 탐정단 안 온대.")],"ep2:after:shoes")
     elif r13_has("kd_farewell_seen"):
-        call r13_lines([(None,"(그림책) 남매는 숲에 들어가며 빵 부스러기를 떨어뜨렸어요."),
+        call r13_lines([(None,"(그림책) 남매는 숲에 들어가며 빵 부스러기를 떨어뜨렸어요.",{"book":"U02-opening"}),
             (None,"(그림책) 그런데 새들이 부스러기를 다 먹어 버렸어요."),
-            (None,"(그림책) 할아버지는 길을 잊지 않으려고, 강으로 갔어요."),
+            (None,"(그림책) 할아버지는 길을 잊지 않으려고, 강으로 갔어요.",{"book":"U02-ending"}),
             ("daram","……아빠. 나 손바닥에 솜이 이름 있어. 안 지울 거야.")],"ep2:after:book")
     if r13_has("kd_named"):
         call r13_lines([("daram","솜이가 나랑 말 안 해. ……그래도 내 말이 틀린 건 아니잖아."),

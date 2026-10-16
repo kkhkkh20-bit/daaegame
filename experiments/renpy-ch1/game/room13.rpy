@@ -49,6 +49,12 @@ label r13_lines(entries,identity):
             $ r13_lead=next((p[0] for p in entries[r13_index:] if p[0] not in (None,r13_viewpoint()) and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)
             if r13_lead:
                 $ r13_speaker(r13_lead,"neutral")
+        # 0.18.89: a narration line can bring someone on screen who has no line of their
+        # own (e.g. {"show":"chorong_mother","pose":"offer_lantern"}); narration keeps them.
+        if r13_packet[0] is None and len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("show") in CAST:
+            $ r13_speaker(r13_packet[2]["show"],r13_packet[2].get("expression","neutral"),r13_packet[2].get("pose") or r13_packet[2].get("expression","neutral"))
+        # 0.18.89: picture book / scene cut for this line (systems/room13_ep_art.rpy).
+        $ r13_ep_line_art(r13_packet)
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
         if r13_packet[0] not in (None,r13_viewpoint()) and not r13_thought_active:
             $ r13_last_partner=r13_packet[0]
@@ -68,6 +74,7 @@ label r13_lines(entries,identity):
             $ r13_meeting_mark_heard(identity,r13_index)
         $ r13_index+=1
     hide r13_visitor
+    $ r13_ep_line_art_clear()
     $ dialogue_speaker=None
     $ r13_thought_active=False
     $ r13_conv_skip=False

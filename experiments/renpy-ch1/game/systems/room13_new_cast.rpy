@@ -56,6 +56,8 @@ init 56 python:
     for _r13_nc_id,_r13_nc in R13_NEW_CAST.items():
         _r13_nc=dict(_r13_nc,runtime_id=_r13_nc_id)
         ROOM13["residents"][_r13_nc_id]=_r13_nc
+        # 0.18.89: a resident with real art in cast.json (dev/apply_ep_art.py) keeps it.
+        if _r13_nc_id in CAST:continue
         _r13_src,_r13_hue=R13_NEW_CAST_STAND_IN[_r13_nc_id]
         CAST[_r13_nc_id]=dict((st,dict(spec)) for st,spec in CAST[_r13_src].items())
         for _r13_st,_r13_spec in CAST[_r13_nc_id].items():

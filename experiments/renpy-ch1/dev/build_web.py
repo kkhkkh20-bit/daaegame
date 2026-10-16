@@ -47,11 +47,14 @@ REMOTE_LATER = ("assets/room13-pixel-cinematic-*.webp", "assets/room13-pixel-alt
 # Art replaced by an NPC redesign (dev/apply_npc_redesign.py): kept so old saves
 # that still hold the old picture can draw it, but never part of the first load.
 REDESIGN_BACKUP = ROOT / "art/npc-redesign-20261015/original-entries.json"
+# 0.18.89: the episode art (dev/apply_ep_art.py) replaced the teacher and Neoul the same way.
+REDESIGN_BACKUPS = (REDESIGN_BACKUP, ROOT / "art/ep-art-20261016/original-entries.json")
 
 
 def superseded_art():
     """Files only the backed-up original entries used (empty if no redesign)."""
-    if not REDESIGN_BACKUP.exists():
+    backups = [p for p in REDESIGN_BACKUPS if p.exists()]
+    if not backups:
         return set()
     files = set()
 
@@ -62,7 +65,8 @@ def superseded_art():
         elif isinstance(x, list):
             for v in x:
                 walk(v)
-    walk(json.loads(REDESIGN_BACKUP.read_text(encoding="utf-8")))
+    for backup in backups:
+        walk(json.loads(backup.read_text(encoding="utf-8")))
     live = "".join(p.read_text(encoding="utf-8") for p in (ROOT / "game/assets").glob("*.json")
                    if p.name not in ("provenance.json", "room13-pixel-coverage.json"))
     live += "".join(p.read_text(encoding="utf-8") for p in (ROOT / "game").rglob("*.rpy"))

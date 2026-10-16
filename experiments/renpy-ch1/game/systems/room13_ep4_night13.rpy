@@ -113,14 +113,14 @@ label r13_nt_dawn8:
     call r13_scene("council","8일 새벽 · 여관 식당","quiet")
     call r13_lines([(None,"다람이 끌려간 뒤 잠들지 못했다. 새벽, 식당에 불이 하나 켜져 있었다."),
         (None,"할머니가 난로 앞에 앉아 토실에게 그림책을 읽어 주고 있었다. 다람의 그림책이었다."),
-        (None,"(그림책) 빨간 모자는 숲을 지나 할머니 집에 갔어요."),
+        (None,"(그림책) 빨간 모자는 숲을 지나 할머니 집에 갔어요.",{"book":"U04-opening"}),
         (None,"(그림책) \"할머니, 귀가 왜 그렇게 커요?\" \"우리 아가 말을 더 잘 들으려고 그렇단다.\""),
         (None,"(그림책) 사냥꾼이 와서 늑대를 잡았어요."),
         ("resident_tosil","할머니는 늑대 아니지?"),
         ("granny","그럼. 할머니는 할머니지. 자, 이제 자렴."),
         ("granny","아이 아버지, 못 주무셨구나. 다람이 책이란다. 그 애한테 넣어 주려고 꺼내 왔지. 혼자 있으면 무섭잖니."),
         ("dad","(고마운 사람이다. 이 마을에서 우리 편은 이 사람뿐인지도 모른다.)",{"thought":True})],"nt:dawn8:book")
-    call r13_scene("winter_square","보호실 앞","quiet")
+    call r13_scene("ep_holding_morning","보호실 앞","quiet")
     call r13_lines([("dad","아이 얼굴만 보겠습니다. 한 번만."),
         ("neoul","회의 전까지는 안 되오. 규칙이오."),
         ("dad","아이는 일곱 살입니다."),
@@ -167,7 +167,7 @@ label r13_nt_chorong_signal:
 
 label r13_nt_overhear:
     $ r13_flag("nt_overheard")
-    call r13_scene("winter_square","회관 뒤 · 장작더미 그늘","quiet")
+    call r13_scene("ep_hall_front","회관 뒤 · 장작더미 그늘","quiet")
     call r13_lines([("neoul","등불지기가 오늘 밤 품고 다니는 편지가 있소. 할머니께서 꼭 가져오라 하셨소."),
         ("neoul","종탑 길에서 기다리시오. 소리 내지 말고. 다치게 하지는 마시오. 편지만이오."),
         (None,"순찰대원 하나가 물었다. \"안 주면요?\""),
@@ -238,7 +238,7 @@ label r13_nt_ttadak_signal:
 label r13_nt_night8:
     $ r13_flag("nt_night8")
     if r13_has("kids_club"):
-        call r13_scene("village_overview","8일 밤 · 지붕 위","night")
+        call r13_scene("ep_roof_night","8일 밤 · 지붕 위","night")
         call r13_lines([(None,"밤, 지붕 위. 솜이가 앞장서고, 콩이와 토실이 뒤따랐다."),
             ("resident_somi","보호실 창은 높아서 어른 팔은 안 닿아. 우리 팔은 닿아."),
             ("resident_kongi","구운 밤 세 개. 공짜야. 이번만."),
@@ -254,7 +254,7 @@ label r13_nt_night8:
             $ r13_grant(["E06"],"아이들이 보호실 창으로 받아 온 다람의 쪽지")
     else:
         call r13_lines([(None,"보호실 창은 밤새 어두웠다. 창 아래 눈밭에 오래 서 있었다. 안에서는 아무 소리도 나지 않았다.")],"nt:night8:nonote")
-    call r13_scene("winter_square","8일 밤 · 종탑 아래","night")
+    call r13_scene("ep_belltower_night","8일 밤 · 종탑 아래","night")
     if r13_has("nt_chorong_safe"):
         call r13_lines([(None,"종탑 길 모퉁이. 그림자 둘이 서 있다가, 바둑이의 등불을 보고 멈췄다."),
             ("resident_badook","순찰대 바둑이예요. 이 시간에 여기서 뭐 하세요? ……얼굴 좀 보여 주실래요?"),
@@ -362,8 +362,8 @@ label r13_nt_after_trial:
     if r13_has("nt_lit_lamps"):
         call r13_scene("winter_square","광장 · 초롱의 등","quiet")
         call r13_lines([(None,"광장 이름 판에 새 이름이 새겨져 있었다. 초롱."+(" 따닥." if r13_has("ttadak_dead") else "")),
-            (None,"판 앞에 등이 하나 놓여 있었다. 그 곁에 늙은 토끼 한 분이 서 있었다. 초롱을 닮은 귀였다."),
-            (None,"초롱의 어머니가 말했다. \"그저께 밤에 그 애 대신 켜 주셨다지요. 동쪽 등 셋. 우리 집 창에서 보였어요. 그 애가 돌아온 줄 알았어요.\""),
+            (None,"판 앞에 등이 하나 놓여 있었다. 그 곁에 늙은 토끼 한 분이 서 있었다. 초롱을 닮은 귀였다.",{"show":"chorong_mother","expression":"anxious"}),
+            (None,"초롱의 어머니가 말했다. \"그저께 밤에 그 애 대신 켜 주셨다지요. 동쪽 등 셋. 우리 집 창에서 보였어요. 그 애가 돌아온 줄 알았어요.\"",{"show":"chorong_mother","pose":"offer_lantern"}),
             (None,"\"그 애가 늘 말했어요. 남의 소식을 전하는 건 그 사람 하루를 지켜 주는 일이라고.\""),
             ("daram","……따뜻해."),
             ("daram","할머니. 초롱 아저씨가 우리 엄마 편지 지켜 줬어. 끝까지.")],"nt:after:lamp")
@@ -374,7 +374,7 @@ label r13_nt_after_trial:
             (None,"다람이 등을 하나 켰다.")]+([("daram","오늘은 안 읽어도 돼?")] if not r13_has("ttadak_dead") else []),"nt:after:lamp_alive")
     if room13.get("daram_state")=="with_dad":
         call r13_lines([("daram","아빠, 이거 내가 읽어 줄게. 보호실에서 백 번 읽었어."),
-            (None,"(그림책) 빨간 모자는 숲을 지나 할머니 집에 갔어요."),
-            (None,"(그림책) \"할머니, 손이 왜 그렇게 커요?\" \"우리 아가를 꼭 안아 주려고 그렇단다.\""),
+            (None,"(그림책) 빨간 모자는 숲을 지나 할머니 집에 갔어요.",{"book":"U04-opening"}),
+            (None,"(그림책) \"할머니, 손이 왜 그렇게 커요?\" \"우리 아가를 꼭 안아 주려고 그렇단다.\"",{"book":"U04-ending"}),
             ("daram","……아빠. 할머니 손은 커?")],"nt:after:book")
     return

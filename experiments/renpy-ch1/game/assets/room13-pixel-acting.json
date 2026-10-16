@@ -796,6 +796,31 @@
       "map_action": true,
       "stature_ratio": 1.0,
       "source_sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280"
+    },
+    "withdraw_hand": {
+      "file": "assets/room13-fullbody-granny-pose-withdraw_hand.webp",
+      "crop": [
+        83,
+        0,
+        346,
+        750
+      ],
+      "nearest": true,
+      "foot": [
+        202,
+        746
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        36,
+        4,
+        295,
+        222
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     }
   },
   "mom": {
@@ -1010,6 +1035,31 @@
         212
       ],
       "nearest": true
+    },
+    "show_fragments": {
+      "file": "assets/room13-fullbody-mom-pose-show_fragments.webp",
+      "crop": [
+        9,
+        2,
+        493,
+        752
+      ],
+      "nearest": true,
+      "foot": [
+        285,
+        748
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        12,
+        4,
+        407,
+        223
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     }
   },
   "guard": {
@@ -2487,204 +2537,140 @@
   },
   "neoul": {
     "neutral": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
+      "file": "assets/room13-epart-neoul-neutral.webp",
       "crop": [
-        99,
         15,
-        417,
-        477
+        8,
+        494,
+        745
       ],
       "nearest": true,
-      "facing": "left",
-      "contact": "standing",
       "foot": [
-        208,
-        476
+        291,
+        741
       ],
+      "facing": "front",
+      "contact": "standing",
       "head": [
-        0,
-        0,
-        254,
-        205
-      ]
+        75,
+        4,
+        331,
+        206
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     },
     "thinking": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
+      "file": "assets/room13-epart-neoul-neutral.webp",
       "crop": [
-        579,
-        26,
-        414,
-        465
+        15,
+        8,
+        494,
+        745
       ],
       "nearest": true,
+      "foot": [
+        291,
+        741
+      ],
       "facing": "front",
       "contact": "standing",
-      "foot": [
-        207,
-        464
-      ],
       "head": [
-        51,
-        0,
-        291,
-        210
-      ]
+        75,
+        4,
+        331,
+        206
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     },
     "distressed": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
+      "file": "assets/room13-epart-neoul-neutral.webp",
       "crop": [
-        1108,
-        9,
-        394,
-        482
+        15,
+        8,
+        494,
+        745
       ],
       "nearest": true,
+      "foot": [
+        291,
+        741
+      ],
       "facing": "front",
       "contact": "standing",
-      "foot": [
-        197,
-        481
-      ],
       "head": [
-        37,
-        0,
-        267,
+        75,
+        4,
+        331,
         206
-      ]
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     },
     "expressive": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
+      "file": "assets/room13-epart-neoul-neutral.webp",
       "crop": [
         15,
-        517,
-        570,
-        468
+        8,
+        494,
+        745
       ],
       "nearest": true,
-      "facing": "left",
-      "contact": "standing",
       "foot": [
-        285,
-        467
-      ],
-      "head": [
-        149,
-        0,
-        255,
-        217
-      ]
-    },
-    "action_1": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
-      "crop": [
-        625,
-        515,
-        402,
-        470
-      ],
-      "nearest": true,
-      "facing": "rear",
-      "contact": "held_notebook",
-      "foot": [
-        201,
-        469
-      ],
-      "head": [
-        67,
-        0,
-        230,
-        197
-      ],
-      "hand": [
-        274,
-        194
-      ]
-    },
-    "action_2": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
-      "crop": [
-        1048,
-        546,
-        474,
-        453
-      ],
-      "nearest": true,
-      "facing": "left",
-      "contact": "portable_stool",
-      "foot": [
-        237,
-        452
-      ],
-      "head": [
-        22,
-        0,
-        258,
-        209
-      ],
-      "seat": [
-        283,
-        299
-      ]
-    },
-    "avatar_neutral": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
-      "crop": [
-        99,
-        15,
-        254,
-        205
-      ],
-      "nearest": true
-    },
-    "avatar_thinking": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
-      "crop": [
-        630,
-        26,
         291,
-        210
+        741
       ],
-      "nearest": true
-    },
-    "avatar_distressed": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
-      "crop": [
-        1145,
-        9,
-        267,
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        75,
+        4,
+        331,
         206
       ],
-      "nearest": true
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-epart-neoul-neutral.webp",
+      "crop": [
+        82,
+        0,
+        347,
+        347
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-epart-neoul-neutral.webp",
+      "crop": [
+        82,
+        0,
+        347,
+        347
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-epart-neoul-neutral.webp",
+      "crop": [
+        82,
+        0,
+        347,
+        347
+      ]
     },
     "avatar_expressive": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
+      "file": "assets/room13-epart-neoul-neutral.webp",
       "crop": [
-        164,
-        517,
-        255,
-        217
-      ],
-      "nearest": true
-    },
-    "avatar_action_1": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
-      "crop": [
-        692,
-        515,
-        230,
-        197
-      ],
-      "nearest": true
-    },
-    "avatar_action_2": {
-      "file": "assets/room13-pixel-acting-neoul.webp",
-      "crop": [
-        1070,
-        546,
-        258,
-        209
-      ],
-      "nearest": true
+        82,
+        0,
+        347,
+        347
+      ]
     }
   },
   "bami": {
@@ -4674,179 +4660,215 @@
   },
   "resident_teacher": {
     "neutral": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
       "crop": [
-        103,
-        3,
-        312,
-        503
+        11,
+        0,
+        491,
+        768
       ],
       "nearest": true,
       "foot": [
-        156,
-        499
+        289,
+        764
       ],
-      "facing": "right",
+      "facing": "front",
       "contact": "standing",
       "head": [
-        13,
+        54,
         0,
-        268,
-        216
+        363,
+        229
       ],
       "reviewed": true,
-      "posture": "standing"
-    },
-    "avatar_neutral": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
-      "crop": [
-        116,
-        3,
-        268,
-        216
-      ],
-      "nearest": true,
-      "reviewed": true
+      "posture": "standing",
+      "art": "ep-art-20261016"
     },
     "thinking": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
       "crop": [
-        625,
-        6,
-        316,
-        500
+        11,
+        0,
+        491,
+        768
       ],
       "nearest": true,
       "foot": [
-        158,
-        496
+        289,
+        764
       ],
-      "facing": "right",
+      "facing": "front",
       "contact": "standing",
       "head": [
-        1,
+        54,
         0,
-        315,
-        215
+        363,
+        229
       ],
       "reviewed": true,
-      "posture": "standing"
-    },
-    "avatar_thinking": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
-      "crop": [
-        626,
-        6,
-        315,
-        215
-      ],
-      "nearest": true,
-      "reviewed": true
+      "posture": "standing",
+      "art": "ep-art-20261016"
     },
     "distressed": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
       "crop": [
-        1069,
-        42,
-        455,
-        466
+        11,
+        0,
+        491,
+        768
       ],
       "nearest": true,
       "foot": [
-        227,
-        462
+        289,
+        764
       ],
-      "facing": "right",
+      "facing": "front",
       "contact": "standing",
       "head": [
-        1,
+        54,
         0,
-        454,
-        242
+        363,
+        229
       ],
       "reviewed": true,
-      "posture": "standing"
-    },
-    "avatar_distressed": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
-      "crop": [
-        1070,
-        42,
-        454,
-        242
-      ],
-      "nearest": true,
-      "reviewed": true
+      "posture": "standing",
+      "art": "ep-art-20261016"
     },
     "expressive": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
       "crop": [
-        67,
-        516,
-        453,
-        474
+        11,
+        0,
+        491,
+        768
       ],
       "nearest": true,
       "foot": [
-        226,
-        470
+        289,
+        764
       ],
-      "facing": "right",
+      "facing": "front",
       "contact": "standing",
       "head": [
-        1,
+        54,
         0,
-        452,
-        237
+        363,
+        229
       ],
       "reviewed": true,
-      "posture": "standing"
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
+      "crop": [
+        57,
+        0,
+        379,
+        379
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
+      "crop": [
+        57,
+        0,
+        379,
+        379
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
+      "crop": [
+        57,
+        0,
+        379,
+        379
+      ]
     },
     "avatar_expressive": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
+      "file": "assets/room13-epart-resident_teacher-neutral.webp",
       "crop": [
-        68,
-        516,
-        452,
-        237
-      ],
-      "nearest": true,
-      "reviewed": true
+        57,
+        0,
+        379,
+        379
+      ]
     },
-    "activity": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
+    "wipe_board": {
+      "file": "assets/room13-fullbody-resident_teacher-pose-wipe_board.webp",
       "crop": [
-        568,
-        538,
-        451,
-        440
+        13,
+        0,
+        499,
+        762
       ],
       "nearest": true,
       "foot": [
-        225,
-        436
+        284,
+        758
       ],
-      "facing": "right",
+      "facing": "front",
       "contact": "standing",
       "head": [
-        29,
+        59,
         0,
-        411,
-        264
+        440,
+        227
       ],
       "reviewed": true,
-      "posture": "crouching"
+      "posture": "standing",
+      "art": "ep-art-20261016"
     },
-    "avatar_activity": {
-      "file": "assets/room13-pixel-acting-resident_teacher.webp",
+    "write_attendance": {
+      "file": "assets/room13-fullbody-resident_teacher-pose-write_attendance.webp",
       "crop": [
-        597,
-        538,
-        411,
-        264
+        18,
+        0,
+        475,
+        768
       ],
       "nearest": true,
-      "reviewed": true
+      "foot": [
+        278,
+        764
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        66,
+        0,
+        351,
+        229
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "collapse_attendance": {
+      "file": "assets/room13-fullbody-resident_teacher-pose-collapse_attendance.webp",
+      "crop": [
+        3,
+        58,
+        509,
+        669
+      ],
+      "nearest": true,
+      "foot": [
+        203,
+        665
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        95,
+        4,
+        381,
+        198
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     }
   },
   "resident_nero": {
@@ -5350,6 +5372,31 @@
       ],
       "nearest": true,
       "reviewed": true
+    },
+    "kneel_stone": {
+      "file": "assets/room13-fullbody-resident_ppul-pose-kneel_stone.webp",
+      "crop": [
+        18,
+        24,
+        483,
+        713
+      ],
+      "nearest": true,
+      "foot": [
+        248,
+        709
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        146,
+        4,
+        319,
+        211
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     }
   },
   "resident_tok": {
@@ -7582,6 +7629,31 @@
         211
       ],
       "facing": "right-profile"
+    },
+    "block_cart": {
+      "file": "assets/room13-fullbody-resident_badook-pose-block_cart.webp",
+      "crop": [
+        0,
+        45,
+        512,
+        671
+      ],
+      "nearest": true,
+      "foot": [
+        286,
+        667
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        17,
+        4,
+        473,
+        198
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     }
   },
   "resident_lamplighter": {
@@ -7701,6 +7773,2025 @@
         256
       ],
       "facing": "right-profile"
+    }
+  },
+  "kid_kkomi": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+      "crop": [
+        58,
+        32,
+        394,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        229,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        5,
+        385,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+      "crop": [
+        58,
+        32,
+        394,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        229,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        5,
+        385,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+      "crop": [
+        58,
+        32,
+        394,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        229,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        5,
+        385,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_kkomi-neutral.webp",
+      "crop": [
+        58,
+        32,
+        394,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        229,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        5,
+        385,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_kkomi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_kkomi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_kkomi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_kkomi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "door_peek": {
+      "file": "assets/room13-fullbody-kid_kkomi-pose-door_peek.webp",
+      "crop": [
+        48,
+        1,
+        444,
+        756
+      ],
+      "nearest": true,
+      "foot": [
+        249,
+        752
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        396,
+        314
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "hideout_proud": {
+      "file": "assets/room13-fullbody-kid_kkomi-pose-hideout_proud.webp",
+      "crop": [
+        9,
+        27,
+        499,
+        719
+      ],
+      "nearest": true,
+      "foot": [
+        279,
+        715
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        12,
+        4,
+        482,
+        298
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    }
+  },
+  "kid_kkam": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+      "crop": [
+        68,
+        47,
+        379,
+        709
+      ],
+      "nearest": true,
+      "foot": [
+        214,
+        705
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        56,
+        5,
+        318,
+        294
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+      "crop": [
+        68,
+        47,
+        379,
+        709
+      ],
+      "nearest": true,
+      "foot": [
+        214,
+        705
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        56,
+        5,
+        318,
+        294
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+      "crop": [
+        68,
+        47,
+        379,
+        709
+      ],
+      "nearest": true,
+      "foot": [
+        214,
+        705
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        56,
+        5,
+        318,
+        294
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_kkam-neutral.webp",
+      "crop": [
+        68,
+        47,
+        379,
+        709
+      ],
+      "nearest": true,
+      "foot": [
+        214,
+        705
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        56,
+        5,
+        318,
+        294
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_kkam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_kkam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_kkam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_kkam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    }
+  },
+  "kid_mong": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+      "crop": [
+        22,
+        7,
+        438,
+        757
+      ],
+      "nearest": true,
+      "foot": [
+        273,
+        753
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        407,
+        314
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+      "crop": [
+        22,
+        7,
+        438,
+        757
+      ],
+      "nearest": true,
+      "foot": [
+        273,
+        753
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        407,
+        314
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+      "crop": [
+        22,
+        7,
+        438,
+        757
+      ],
+      "nearest": true,
+      "foot": [
+        273,
+        753
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        407,
+        314
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_mong-neutral.webp",
+      "crop": [
+        22,
+        7,
+        438,
+        757
+      ],
+      "nearest": true,
+      "foot": [
+        273,
+        753
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        407,
+        314
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_mong.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_mong.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_mong.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_mong.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    }
+  },
+  "kid_bang": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+      "crop": [
+        52,
+        23,
+        420,
+        734
+      ],
+      "nearest": true,
+      "foot": [
+        237,
+        730
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        37,
+        9,
+        351,
+        302
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+      "crop": [
+        52,
+        23,
+        420,
+        734
+      ],
+      "nearest": true,
+      "foot": [
+        237,
+        730
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        37,
+        9,
+        351,
+        302
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+      "crop": [
+        52,
+        23,
+        420,
+        734
+      ],
+      "nearest": true,
+      "foot": [
+        237,
+        730
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        37,
+        9,
+        351,
+        302
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_bang-neutral.webp",
+      "crop": [
+        52,
+        23,
+        420,
+        734
+      ],
+      "nearest": true,
+      "foot": [
+        237,
+        730
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        37,
+        9,
+        351,
+        302
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_bang.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_bang.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_bang.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_bang.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "cling_leg": {
+      "file": "assets/room13-fullbody-kid_bang-pose-cling_leg.webp",
+      "crop": [
+        64,
+        10,
+        404,
+        755
+      ],
+      "nearest": true,
+      "foot": [
+        271,
+        751
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        6,
+        4,
+        394,
+        313
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    }
+  },
+  "kid_nubi1": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+      "crop": [
+        62,
+        4,
+        394,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        209,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        386,
+        315
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+      "crop": [
+        62,
+        4,
+        394,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        209,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        386,
+        315
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+      "crop": [
+        62,
+        4,
+        394,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        209,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        386,
+        315
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_nubi1-neutral.webp",
+      "crop": [
+        62,
+        4,
+        394,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        209,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        386,
+        315
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_nubi1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_nubi1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_nubi1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_nubi1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "hold_skirt": {
+      "file": "assets/room13-fullbody-kid_nubi1-pose-hold_skirt.webp",
+      "crop": [
+        38,
+        0,
+        474,
+        763
+      ],
+      "nearest": true,
+      "foot": [
+        229,
+        759
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        0,
+        470,
+        318
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    }
+  },
+  "kid_nubi2": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        33,
+        27,
+        447,
+        726
+      ],
+      "nearest": true,
+      "foot": [
+        242,
+        722
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        4,
+        438,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        33,
+        27,
+        447,
+        726
+      ],
+      "nearest": true,
+      "foot": [
+        242,
+        722
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        4,
+        438,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        33,
+        27,
+        447,
+        726
+      ],
+      "nearest": true,
+      "foot": [
+        242,
+        722
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        4,
+        438,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        33,
+        27,
+        447,
+        726
+      ],
+      "nearest": true,
+      "foot": [
+        242,
+        722
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        5,
+        4,
+        438,
+        301
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        30,
+        0,
+        454,
+        454
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        30,
+        0,
+        454,
+        454
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        30,
+        0,
+        454,
+        454
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-fullbody-kid_nubi2-neutral.webp",
+      "crop": [
+        30,
+        0,
+        454,
+        454
+      ]
+    }
+  },
+  "kid_siluk1": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+      "crop": [
+        55,
+        30,
+        399,
+        721
+      ],
+      "nearest": true,
+      "foot": [
+        241,
+        717
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        62,
+        19,
+        309,
+        293
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+      "crop": [
+        55,
+        30,
+        399,
+        721
+      ],
+      "nearest": true,
+      "foot": [
+        241,
+        717
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        62,
+        19,
+        309,
+        293
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+      "crop": [
+        55,
+        30,
+        399,
+        721
+      ],
+      "nearest": true,
+      "foot": [
+        241,
+        717
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        62,
+        19,
+        309,
+        293
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_siluk1-neutral.webp",
+      "crop": [
+        55,
+        30,
+        399,
+        721
+      ],
+      "nearest": true,
+      "foot": [
+        241,
+        717
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        62,
+        19,
+        309,
+        293
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_siluk1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_siluk1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_siluk1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_siluk1.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    }
+  },
+  "kid_siluk2": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+      "crop": [
+        44,
+        25,
+        409,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        235,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        94,
+        29,
+        305,
+        291
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+      "crop": [
+        44,
+        25,
+        409,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        235,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        94,
+        29,
+        305,
+        291
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+      "crop": [
+        44,
+        25,
+        409,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        235,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        94,
+        29,
+        305,
+        291
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_siluk2-neutral.webp",
+      "crop": [
+        44,
+        25,
+        409,
+        727
+      ],
+      "nearest": true,
+      "foot": [
+        235,
+        723
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        94,
+        29,
+        305,
+        291
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_siluk2.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_siluk2.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_siluk2.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_siluk2.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    }
+  },
+  "kid_saemi": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+      "crop": [
+        30,
+        49,
+        441,
+        701
+      ],
+      "nearest": true,
+      "foot": [
+        288,
+        697
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        117,
+        5,
+        305,
+        290
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+      "crop": [
+        30,
+        49,
+        441,
+        701
+      ],
+      "nearest": true,
+      "foot": [
+        288,
+        697
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        117,
+        5,
+        305,
+        290
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+      "crop": [
+        30,
+        49,
+        441,
+        701
+      ],
+      "nearest": true,
+      "foot": [
+        288,
+        697
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        117,
+        5,
+        305,
+        290
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_saemi-neutral.webp",
+      "crop": [
+        30,
+        49,
+        441,
+        701
+      ],
+      "nearest": true,
+      "foot": [
+        288,
+        697
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        117,
+        5,
+        305,
+        290
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_saemi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_saemi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_saemi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_saemi.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "hide_bowl": {
+      "file": "assets/room13-fullbody-kid_saemi-pose-hide_bowl.webp",
+      "crop": [
+        3,
+        65,
+        491,
+        662
+      ],
+      "nearest": true,
+      "foot": [
+        284,
+        658
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        153,
+        4,
+        334,
+        274
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    }
+  },
+  "kid_dodam": {
+    "neutral": {
+      "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+      "crop": [
+        93,
+        55,
+        368,
+        679
+      ],
+      "nearest": true,
+      "foot": [
+        187,
+        675
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        24,
+        40,
+        305,
+        266
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+      "crop": [
+        93,
+        55,
+        368,
+        679
+      ],
+      "nearest": true,
+      "foot": [
+        187,
+        675
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        24,
+        40,
+        305,
+        266
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+      "crop": [
+        93,
+        55,
+        368,
+        679
+      ],
+      "nearest": true,
+      "foot": [
+        187,
+        675
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        24,
+        40,
+        305,
+        266
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-kid_dodam-neutral.webp",
+      "crop": [
+        93,
+        55,
+        368,
+        679
+      ],
+      "nearest": true,
+      "foot": [
+        187,
+        675
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        24,
+        40,
+        305,
+        266
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-face-kid_dodam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-face-kid_dodam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-face-kid_dodam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-face-kid_dodam.webp",
+      "crop": [
+        0,
+        0,
+        384,
+        384
+      ]
+    },
+    "lick_ladle": {
+      "file": "assets/room13-fullbody-kid_dodam-pose-lick_ladle.webp",
+      "crop": [
+        56,
+        18,
+        426,
+        733
+      ],
+      "nearest": true,
+      "foot": [
+        213,
+        729
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        4,
+        4,
+        418,
+        304
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    }
+  },
+  "npc_pandol": {
+    "neutral": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        7,
+        6,
+        502,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        258,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        85,
+        5,
+        321,
+        210
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        7,
+        6,
+        502,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        258,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        85,
+        5,
+        321,
+        210
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        7,
+        6,
+        502,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        258,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        85,
+        5,
+        321,
+        210
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        7,
+        6,
+        502,
+        760
+      ],
+      "nearest": true,
+      "foot": [
+        258,
+        756
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        85,
+        5,
+        321,
+        210
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        84,
+        0,
+        337,
+        337
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        84,
+        0,
+        337,
+        337
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        84,
+        0,
+        337,
+        337
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-fullbody-npc_pandol-neutral.webp",
+      "crop": [
+        84,
+        0,
+        337,
+        337
+      ]
+    },
+    "point_name": {
+      "file": "assets/room13-fullbody-npc_pandol-pose-point_name.webp",
+      "crop": [
+        7,
+        7,
+        504,
+        752
+      ],
+      "nearest": true,
+      "foot": [
+        282,
+        748
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        73,
+        4,
+        423,
+        208
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    }
+  },
+  "chorong_mother": {
+    "neutral": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        91,
+        14,
+        349,
+        748
+      ],
+      "nearest": true,
+      "foot": [
+        180,
+        744
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        42,
+        5,
+        276,
+        206
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        91,
+        14,
+        349,
+        748
+      ],
+      "nearest": true,
+      "foot": [
+        180,
+        744
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        42,
+        5,
+        276,
+        206
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        91,
+        14,
+        349,
+        748
+      ],
+      "nearest": true,
+      "foot": [
+        180,
+        744
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        42,
+        5,
+        276,
+        206
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        91,
+        14,
+        349,
+        748
+      ],
+      "nearest": true,
+      "foot": [
+        180,
+        744
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        42,
+        5,
+        276,
+        206
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        125,
+        0,
+        292,
+        292
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        125,
+        0,
+        292,
+        292
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        125,
+        0,
+        292,
+        292
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-fullbody-chorong_mother-neutral.webp",
+      "crop": [
+        125,
+        0,
+        292,
+        292
+      ]
+    },
+    "offer_lantern": {
+      "file": "assets/room13-fullbody-chorong_mother-pose-offer_lantern.webp",
+      "crop": [
+        88,
+        12,
+        349,
+        746
+      ],
+      "nearest": true,
+      "foot": [
+        186,
+        742
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        30,
+        4,
+        285,
+        206
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    }
+  },
+  "resident_tosil": {
+    "neutral": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        72,
+        0,
+        378,
+        766
+      ],
+      "nearest": true,
+      "foot": [
+        189,
+        762
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        22,
+        1,
+        352,
+        273
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "thinking": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        72,
+        0,
+        378,
+        766
+      ],
+      "nearest": true,
+      "foot": [
+        189,
+        762
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        22,
+        1,
+        352,
+        273
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "distressed": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        72,
+        0,
+        378,
+        766
+      ],
+      "nearest": true,
+      "foot": [
+        189,
+        762
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        22,
+        1,
+        352,
+        273
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "expressive": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        72,
+        0,
+        378,
+        766
+      ],
+      "nearest": true,
+      "foot": [
+        189,
+        762
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        22,
+        1,
+        352,
+        273
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
+    },
+    "avatar_neutral": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        86,
+        0,
+        368,
+        368
+      ]
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        86,
+        0,
+        368,
+        368
+      ]
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        86,
+        0,
+        368,
+        368
+      ]
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "crop": [
+        86,
+        0,
+        368,
+        368
+      ]
+    },
+    "hold_storybook": {
+      "file": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp",
+      "crop": [
+        89,
+        0,
+        359,
+        762
+      ],
+      "nearest": true,
+      "foot": [
+        175,
+        758
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        8,
+        3,
+        347,
+        271
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     }
   }
 }
