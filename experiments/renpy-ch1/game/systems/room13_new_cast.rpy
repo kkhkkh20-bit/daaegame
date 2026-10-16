@@ -1,4 +1,4 @@
-# New residents (owner 0.18.76): "추가 캐릭터들과 시나리오를 많이 만들어야 해. 추가 캐릭터 넣을 것이거든."
+# New residents (owner 0.18.77): "추가 캐릭터들과 시나리오를 많이 만들어야 해. 추가 캐릭터 넣을 것이거든."
 # Owner decisions (2026-10-16): all eight; dialogue and scenarios first, art later; the footsteps that
 # followed mom to her forest hideout were 토실, granny's granddaughter, sent on an errand she did not
 # understand. Plan: docs/NEW_CHARACTERS_PLAN_0171.md. Art request: docs/ART_REQUEST_NEW_CAST_8.md.

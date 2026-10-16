@@ -9688,7 +9688,7 @@ testcase daram_mood:
     screenshot "daram_miss_mom.png"
 
 testcase new_cast:
-    # 0.18.76: new residents appear with stand-in art; 토실 friend (N1) and the week-2 errand (N5).
+    # 0.18.77: new residents appear with stand-in art; 토실 friend (N1) and the week-2 errand (N5).
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -9702,7 +9702,7 @@ testcase new_cast:
     screenshot "tosil_friend.png"
 
 testcase new_cast_errand:
-    # 0.18.76: 토실's second errand in week 2 (N5); the scene itself, without the week-1 catch-ups.
+    # 0.18.77: 토실's second errand in week 2 (N5); the scene itself, without the week-1 catch-ups.
     pause 2.0
     click "처음부터"
     pause 3.0

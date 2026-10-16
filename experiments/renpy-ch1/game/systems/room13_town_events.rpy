@@ -160,7 +160,7 @@ label r13_town_events:
     call r13_town_events2
     if _return=="day":
         return "day"
-    # 0.18.76: new residents' events (systems/room13_new_cast.rpy).
+    # 0.18.77: new residents' events (systems/room13_new_cast.rpy).
     call r13_new_cast_events
     if room13["day"]==3 and room13["period"] in (1,2) and not r13_has("ev_b_done"):
         if room13["location"]=="workshop" and room13["period"]==1 and r13_has("somi_route_seen"):
