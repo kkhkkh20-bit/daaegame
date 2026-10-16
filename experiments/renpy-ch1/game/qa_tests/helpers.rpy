@@ -185,11 +185,19 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     $ room13.update(state)
     # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed;
     # the week-1 cases G·L·I·S·T (systems/room13_week1_cases.rpy) unless "+w1c" is passed.
-    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+([] if "+offers" in flags else ["qa_auto_offer"])+[f for f in flags if f not in ("+brief","+w1c","+offers")]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])+([] if "+w1c" in flags else ["ev_g_done","ev_l_done","ev_i_done","ev_s_done","ev_t_done","ev_owl_threshold_done","ev_owl_omen_done"])))
+    # 0.18.83: episodes ①~⑥ (systems/room13_ep*_*.rpy) start their own scenes on fixed days. Tests written for
+    # the older events see those scenes as already played unless "+ep" is passed (the episode tests pass it).
+    $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+([] if "+offers" in flags else ["qa_auto_offer"])+[f for f in flags if f not in ("+brief","+w1c","+offers","+ep")]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])+([] if "+w1c" in flags else ["ev_g_done","ev_l_done","ev_i_done","ev_s_done","ev_t_done","ev_owl_threshold_done","ev_owl_omen_done"])+([] if "+ep" in flags else R13_QA_EPISODES_SEEN)))
     $ room13["livelihood"]=dict(cash=cash,debt=0,items=list(items))
     jump r13_roam
 
 init 999 python:
+    R13_QA_EPISODES_SEEN=["ep4_seen","piko_seen","lt_dawn","lt_done","lt_lib_dawn","lt_funeral","lt_siluk_seen","lt_store_seen",
+        "kd_bite","kd_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done",
+        "wf_laundry_tried","wf_hideout_today","wf_morning","wf_nabi_blame","wf_ruins","wf_nubi_seen","wf_choice_done",
+        "nt_dawn8","nt_chorong_signal","nt_overheard","nt_ttadak_signal","nt_night8","nt_dawn9","nt_after",
+        "ws_lowroad","ws_long_night","ws_lab","ws_teacher_talked","ws_soup","ws_tosil_met",
+        "cv_morning","cv_market","cv_store","cv_stable","cv_hall","cv_tea","cv_night","cv_altar"]
     def r13_qa_town_dump():
         import json
         s=store.room13;w=r13_wallet(s)

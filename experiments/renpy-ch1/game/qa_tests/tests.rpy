@@ -1573,10 +1573,10 @@ testcase present_portrait:
     run Function(r13_qa_present,"resident_lamplighter","P01")
     assert eval ("확인할 필요" in r13_qa_last_present and "J07" in room13["evidence"] and r13_has("portrait_lamp_seen"))
     assert eval (r13_goal_is_question())
-    # Reply sent on day 8 afternoon: normally day 9 afternoon (abs 33); with the face known, day 9 morning (abs 32).
+    # Reply sent on day 11 afternoon (abs 41): normally day 12 afternoon (abs 45); with the face known, day 12 morning (abs 44).
     run Function(r13_edit,day=11,period=1)
     run Function(r13_w2_action_done,"w2_reply")
-    assert eval (room13["reply_due"]==32)
+    assert eval (room13["reply_due"]==44)
 
 testcase memory_grudge:
     # 0.18.14: a harmed resident stays cold despite good rumors; repair is tied to the incident.
@@ -10782,7 +10782,7 @@ testcase ep1_meeting:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
     pause 1.0
     assert eval (r13_debate_session("Q1")=="ep1" and r13_debate_engageable("Q1"))
     run Call("r13_qa_event","r13_ep1_meeting")
@@ -10834,7 +10834,7 @@ testcase ep2_kids:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=0,location="room13",life_poc=True),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","kd_bite","ep1_patrol_seen","ep1_eaves_seen","ep1_done"),("snack",))
+    run Call("r13_qa_roam",dict(day=5,period=0,location="room13",life_poc=True),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","kd_bite","ep1_patrol_seen","ep1_eaves_seen","ep1_done"),("snack",))
     click pos (640,600) until "장터 — 콩이가 소문을 판다" timeout 60
     assert eval (room13.get("pov")=="daram" and r13_has("kids_club"))
     screenshot "ep2_menu.png"
@@ -10904,7 +10904,7 @@ testcase ep3_save:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=1,location="kitchen",life_poc=True),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","kd_bite"))
+    run Call("r13_qa_roam",dict(day=4,period=1,location="kitchen",life_poc=True),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","kd_bite"))
     click pos (640,600) until "빨래 줄 뒤에 선다" timeout 60
     click "빨래 줄 뒤에 선다"
     click pos (640,600) until eval (r13_has("F01") and room13["period"]==2 and not renpy.get_screen("say")) timeout 60
@@ -10914,7 +10914,7 @@ testcase ep3_save:
     run Function(r13_present,"resident_teacher","F01")
     pause 0.5
     assert eval (r13_has("wf_teacher_moved") and "F13" in room13["evidence"])
-    run Call("r13_qa_roam",dict(day=4,period=2,location="school",life_poc=True,evidence=["F01","F02","F13"]),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","wf_overheard","wf_kids_known","kd_bite"))
+    run Call("r13_qa_roam",dict(day=4,period=2,location="school",life_poc=True,evidence=["F01","F02","F13"]),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","wf_overheard","wf_kids_known","kd_bite"))
     click pos (640,600) until "출석부를 보여 준다" timeout 60
     screenshot "ep3_hideout.png"
     click "출석부를 보여 준다"
@@ -10928,7 +10928,7 @@ testcase ep3_meeting:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=7,period=1,location="school",life_poc=True,evidence=["F01","F04","F05","F06","F09","F11"]),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","kd_done","wf_fire","kkomi_dead","wf_morning","wf_overheard","wf_nabi_defended","wf_bori_trusted","elder_appointment"))
+    run Call("r13_qa_roam",dict(day=7,period=1,location="school",life_poc=True,evidence=["F01","F04","F05","F06","F09","F11"]),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","kd_done","wf_fire","kkomi_dead","wf_morning","wf_overheard","wf_nabi_defended","wf_bori_trusted","elder_appointment"))
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
     click "발언 고르기" until screen "r13_debate_board" timeout 30
@@ -10976,11 +10976,11 @@ testcase ep4_saves:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=8,period=1,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held",evidence=["N01","E05"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_chorong_signal","badook_doubt","kd_solved","tok_cleared","fair_hearing","ev_e_done","ev_u_done","ev_o_done","ep3_bell_seen","ev_s_done","ev_t_done"))
+    run Call("r13_qa_roam",dict(day=8,period=1,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held",evidence=["N01","E05"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_chorong_signal","badook_doubt","kd_solved","tok_cleared","fair_hearing","ev_e_done","ev_u_done","ev_o_done","ep3_bell_seen","ev_s_done","ev_t_done"))
     click pos (640,600) until "너울의 말을 전한다" timeout 60
     click "너울의 말을 전한다"
     click pos (640,600) until eval (r13_has("nt_chorong_safe") and room13["period"]==2 and not renpy.get_screen("say")) timeout 60
-    run Call("r13_qa_roam",dict(day=8,period=1,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held",evidence=["N01","N02","E05"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_chorong_signal","nt_overheard","nt_chorong_safe","badook_doubt","kd_solved","tok_cleared","fair_hearing","ev_e_done","ev_u_done","ev_o_done","ep3_bell_seen","ev_s_done","ev_t_done"))
+    run Call("r13_qa_roam",dict(day=8,period=1,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held",evidence=["N01","N02","E05"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_chorong_signal","nt_overheard","nt_chorong_safe","badook_doubt","kd_solved","tok_cleared","fair_hearing","ev_e_done","ev_u_done","ev_o_done","ep3_bell_seen","ev_s_done","ev_t_done"))
     click pos (640,600) until "수첩과 레버 이야기를 한다" timeout 60
     click "수첩과 레버 이야기를 한다"
     click pos (640,600) until eval (r13_has("nt_ttadak_safe") and not renpy.get_screen("say")) timeout 60
@@ -10996,7 +10996,7 @@ testcase ep4_after_trial:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=10,period=0,location="dining",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",granny_state="detained",trial_result="culprit_proven",evidence=["N01","N03","N07","N05"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_night8","nt_dawn9","ttadak_dead","chorong_dead","nt_lit_lamps","nt_buri_together"))
+    run Call("r13_qa_roam",dict(day=10,period=0,location="dining",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",granny_state="detained",trial_result="culprit_proven",evidence=["N01","N03","N07","N05"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_night8","nt_dawn9","ttadak_dead","chorong_dead","nt_lit_lamps","nt_buri_together"))
     run Call("r13_qa_event","r13_nt_after_trial")
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
@@ -11025,14 +11025,14 @@ testcase ep5_reunion_lab:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=11,period=2,location="greenhouse",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,evidence=["Y03"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared"))
+    run Call("r13_qa_roam",dict(day=11,period=2,location="greenhouse",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,evidence=["Y03"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared"))
     click pos (640,600) until screen "choice" timeout 60
     pause 0.5
     screenshot "ep5_tosil_menu.png"
     click "“우리랑 같이 가자.”"
     click pos (640,600) until eval (r13_has("mom_reunited") and not renpy.get_screen("say")) timeout 90
     assert eval (room13["mom_state"]=="reunited" and r13_has("ws_tosil_kept") and "Y04" in room13["evidence"])
-    run Call("r13_qa_roam",dict(day=12,period=0,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["Y03","E30"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","tok_cleared"))
+    run Call("r13_qa_roam",dict(day=12,period=0,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["Y03","E30"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","tok_cleared"))
     click pos (640,600) until eval (r13_has("ws_lab") and "Y06" in room13["evidence"] and not renpy.get_screen("say")) timeout 90
     assert eval ("Y05" in room13["evidence"] and "Y07" in room13["evidence"] and r13_has("ancient_found"))
 
@@ -11041,7 +11041,7 @@ testcase ep5_soup_meeting:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E30","Y06","Y07"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_cabinet_locked","evening_brief:12"))
+    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E30","Y06","Y07"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_cabinet_locked","evening_brief:12"))
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 120
     pause 0.6
     click "발언 고르기" until screen "r13_debate_board" timeout 30
@@ -11083,7 +11083,7 @@ testcase ep5_perfect:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited"),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_teacher_persuaded","ws_cabinet_locked","evening_brief:12"))
+    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited"),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_teacher_persuaded","ws_cabinet_locked","evening_brief:12"))
     click pos (640,600) until eval (r13_has("ws_done")) timeout 120
     assert eval (r13_has("ws_perfect") and r13_has("ws_kids_alive") and not r13_has("dodam_dead"))
 
@@ -11094,11 +11094,11 @@ testcase ep6_cart:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=13,period=1,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E01","K02"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning"))
+    run Call("r13_qa_roam",dict(day=13,period=1,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E01","K02"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning"))
     click pos (640,600) until screen "choice" timeout 60
     click "명령서와 초대 편지를 나란히 보여 준다"
     click pos (640,600) until eval (r13_has("cv_badook_safe") and not renpy.get_screen("say")) timeout 60
-    run Call("r13_qa_roam",dict(day=13,period=2,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E01","K02","V05","V06","Y05","Y14"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning","cv_hall","cv_badook_witness","cv_badook_safe","evening_brief:13"))
+    run Call("r13_qa_roam",dict(day=13,period=2,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E01","K02","V05","V06","Y05","Y14"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning","cv_hall","cv_badook_witness","cv_badook_safe","evening_brief:13"))
     click pos (640,600) until screen "choice" timeout 60
     click "설이에게 네 겨울의 수레 이야기를 한다"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 120
@@ -11135,7 +11135,7 @@ testcase ep6_altar:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=13,period=3,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",granny_state="trusted",evidence=["E01","Y05","Y14","V06"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning","cv_night","cv_done","cart_stopped","ws_tosil_kept","ws_kids_alive"))
+    run Call("r13_qa_roam",dict(day=13,period=3,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",granny_state="trusted",evidence=["E01","Y05","Y14","V06"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning","cv_night","cv_done","cart_stopped","ws_tosil_kept","ws_kids_alive"))
     run Call("r13_qa_event","r13_finale")
     click pos (640,600) until screen "r13_crisis" timeout 180
     assert eval (r13_has("cv_altar") and "V08" in room13["evidence"] and r13_has("dallae_named") and r13_has("shelter_ready") and r13_has("operators_ready") and r13_has("patient_transport"))

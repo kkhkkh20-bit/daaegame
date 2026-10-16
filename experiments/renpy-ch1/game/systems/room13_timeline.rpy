@@ -13,7 +13,8 @@ init -200 python:
     R13_WEEKDAY_SHIFT=4
     # 예전 날짜 → 새 날짜 (구간 끝, 정확한 날). 둘째 주 7일은 4일로 줄어든다.
     R13_TL_MAP={1:1,2:2,3:3,4:7,5:8,6:9,7:10,8:11,9:11,10:12,11:12,12:13,13:13,14:14}
-    R13_TL_NATIVE_PREFIXES=("ep1:","ep2:","ep3:","ep4:","ep5:","ep6:","night:ep","altar:")
+    # alibi: 알리바이 질문(systems/room13_alibi.rpy)은 처음부터 R13_CASE_DAY로 날짜를 적는다.
+    R13_TL_NATIVE_PREFIXES=("ep1:","ep2:","ep3:","ep4:","ep5:","ep6:","night:ep","altar:","alibi:")
 
     def r13_tl(day):
         """예전 날짜 하나를 새 날짜로."""
