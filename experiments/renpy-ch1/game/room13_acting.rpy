@@ -429,7 +429,7 @@ init 59 python:
                 if layout:mask=zone_spec.get("occlusion",layout.get("occlusion",[]) if zone=="counter" else [])
                 return dict(pose=cp,spec=cs,x=xx,y=yy,width=ww,height=hh,occlusion=mask,contact=cs.get("contact","standing"),slot=tuple(slot))
             def face_box(c):
-                cs=c.get("spec") or r13_acting_spec(c["person"],c["pose"]) or {}
+                cs=c.get("spec") or r13_acting_spec(c.get("person",person),c["pose"]) or {}
                 cw,ch=r13_actor_geometry(person if "person" not in c else c["person"],c["pose"])
                 head=cs.get("head",[cw*.25,0,cw*.5,ch*.35])
                 sc=float(c["height"])/ch

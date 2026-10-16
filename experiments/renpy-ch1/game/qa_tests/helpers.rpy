@@ -206,6 +206,16 @@ label r13_qa_talk(person):
     call r13_talk
     jump r13_roam
 
+# 0.18.76: run one event label directly from the field and come back through r13_roam.
+label r13_qa_event(name):
+    call expression name
+    jump r13_roam
+
+# 0.18.76: step into a pending event offer from the field and come back through r13_roam.
+label r13_qa_offer(key):
+    call r13_take_offer(key)
+    jump r13_roam
+
 # 0.18.75: press an inspection spot from the field and come back through r13_roam.
 label r13_qa_object(key):
     call r13_object(key)

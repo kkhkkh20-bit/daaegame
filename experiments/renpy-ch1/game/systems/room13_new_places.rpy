@@ -127,11 +127,10 @@ init 130 python:
             ("dad","저는 무엇을 하면 됩니까?"),("resident_badook","길을 표시한 【천】만 따라오세요. 숲 안쪽은 길이 없어요.")])
     R13_JOB_ASK_LINES=dict(
         fishing=[("dad","강을 건너 마을 밖으로 나갈 수 있습니까?"),("resident_kkwak","겨울엔 안 돼요. 얼음이 얇아서 마차는 못 건너요."),
-            ("dad","걸어서는요?"),("resident_kkwak","해 질 녘엔 걸어서도 위험해요. 그래서 다들 【고개 마차】만 기다리죠."),
-            ("resident_kkwak","아, 며칠 전 새벽엔 낯선 아주머니가 여기서 물을 길어 갔어요. 【숲】 쪽으로 가던데요.")],
+            ("dad","걸어서는요?"),("resident_kkwak","해 질 녘엔 걸어서도 위험해요. 그래서 다들 【고개 마차】만 기다리죠.")],
         hunting=[("dad","숲을 지나 마을 밖으로 나가는 길은 없습니까?"),("resident_badook","숲 끝은 【절벽】이에요. 길은 없어요."),
             ("dad","그럼 순찰은 무엇을 지키는 겁니까?"),("resident_badook","길 잃은 사람이요. 밤에 숲에 들어간 사람은 저희가 찾아 데려와요."),
-            ("resident_badook","그러고 보니 며칠 전 밤엔 【큰 전나무 뿌리】 쪽에서 등불이 하나 깜빡였어요. 가 보니 아무도 없었지만요.")])
+            ("resident_badook","요즘은 숲 안쪽 길 표식 천이 자꾸 없어져요. 누가 떼 가는지 몰라도, 길 잃기 딱 좋죠.")])
     for _r13_job_key in ("fishing","hunting"):
         _r13_job=R13_JOBS[_r13_job_key]
         ROOM13["topics"]["job:"+_r13_job_key]=dict(npc=_r13_job["npc"],

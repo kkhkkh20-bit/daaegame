@@ -9687,6 +9687,36 @@ testcase daram_mood:
     pause 1.0
     screenshot "daram_miss_mom.png"
 
+testcase new_cast:
+    # 0.18.76: new residents appear with stand-in art; 토실 friend (N1) and the week-2 errand (N5).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="market",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging","+offers"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval ("resident_tosil" in r13_people() and all(p in R13_NAMES for p in R13_NEW_CAST))
+    screenshot "new_cast_market.png"
+    run Call("r13_qa_offer","r13_nc_tosil_friend")
+    click pos (640,600) until eval (r13_has("tosil_friend")) timeout 60
+    screenshot "tosil_friend.png"
+
+testcase new_cast_errand:
+    # 0.18.76: 토실's second errand in week 2 (N5); the scene itself, without the week-1 catch-ups.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=9,period=2,location="inn",life_poc=True,week2_started=True,case_state="prevented",granny_state="trusted",daram_state="with_dad"),("entry_corrected","lodging","tosil_errand_done","ev_b_done","ep1_done","bami_safe"))
+    pause 1.0
+    run Call("r13_qa_event","r13_nc_tosil_errand")
+    click pos (640,600) until screen "choice" timeout 60
+    click "몰래 따라가 본다"
+    click pos (640,600) until eval ("지금도 아내를" in str(getattr(store,"r13_packet",("",""))[1])) timeout 60
+    pause 1.0
+    screenshot "tosil_errand.png"
+    click pos (640,600) until eval (r13_has("tosil_errand_seen")) timeout 60
+    assert eval ("tosil:forest" in [k for k,_ in r13_topics("resident_tosil")])
+
 testcase map_actions:
     # 0.18.63 (owner): event, life and map actions in the investigation scenes where the script puts them.
     pause 2.0
