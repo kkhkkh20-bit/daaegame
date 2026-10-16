@@ -3,7 +3,8 @@
 # layer only places them. Dialogue art, story, schedules, events and unlocks are unchanged.
 #
 # World layout keys (game/assets/room13-world-layout.json), all in world pixels:
-#   slot_actions   {person: pose}         a person standing in a "waiting" slot shows this activity
+#   slot_actions   {person: pose}         a person standing in a slot shows this activity
+#   old_scene_slot_actions {person: pose} the same for periods drawn with the old 1280 scene
 #   pose_positions {"person:pose": [x,y]} feet of a pinned person for that pose
 #   seats          {"person:pose": [x,y,standing_height]}  seat point on drawn furniture; the
 #                  figure is the standing height there times the pose's stature_ratio
@@ -38,7 +39,13 @@ init 125 python:
         actors=_r13_ma_stage(entry)
         s=store.room13 or {}
         layout=r13_layout(s.get("location")) if s.get("location") else {}
-        if not layout or not actors:return actors
+        if not actors:return actors
+        if not layout:
+            # 0.18.67: periods without the wide picture keep the old 1280 scene; its own
+            # "old_scene_slot_actions" swap poses in place (feet, size and counter mask kept).
+            old=R13_WORLD_LAYOUTS.get(s.get("location"),{}).get("old_scene_slot_actions",{})
+            if not old:return actors
+            layout={"slot_actions":old}
         slot_actions=layout.get("slot_actions",{});spots=layout.get("pose_positions",{});seats=layout.get("seats",{})
         if not (slot_actions or spots or seats):return actors
         result=[]

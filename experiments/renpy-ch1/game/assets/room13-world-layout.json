@@ -871,6 +871,12 @@
         566,
         244
       ]
+    },
+    "pose_positions": {
+      "resident_piko:event_paintwipe": [
+        1700,
+        668
+      ]
     }
   },
   "gate": {
@@ -2670,7 +2676,11 @@
       -47.8
     ],
     "slot_actions": {
-      "resident_momo": "living_lampnumber"
+      "resident_momo": "living_lampnumber",
+      "resident_librarian": "living_bookpaper"
+    },
+    "old_scene_slot_actions": {
+      "resident_librarian": "living_bookpaper"
     }
   },
   "river": {

@@ -110,10 +110,10 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:317` | _r13_daram_home_stage |
+| 1 | 59 | `room13_acting.rpy:319` | _r13_daram_home_stage |
 | 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
 | 3 | 124 | `systems/room13_event_offers.rpy:58` | _r13_ma_stage |
-| 4 | 125 | `systems/room13_map_actions.rpy:37` | _r13_perspective_stage |
+| 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
 | 5 | 126 | `systems/room13_perspective.rpy:32` |  |
 
 ## `r13_where` (5층)
@@ -305,7 +305,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:285` | _r13_entry_visible_people |
+| 1 | 59 | `room13_acting.rpy:287` | _r13_entry_visible_people |
 | 2 | 62 | `room13_entry_window.rpy:10` |  |
 
 ## `r13_w2_action_done` (2층)

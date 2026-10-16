@@ -36,6 +36,9 @@ SCENES = [
     ("post-momo-lamp", "post", 4, 0, "pending", 440),
     ("square-yeoni-seol-owl", "square", 3, 0, "pending", 320),
     ("gate-karo-axle", "gate", 6, 0, "occurred", 0),
+    # 0.18.67: 사서 선생님 living_bookpaper (wide morning, old 1280 afternoon behind the counter).
+    ("post-librarian-morning", "post", 2, 0, "pending", 0),
+    ("post-librarian-afternoon-old", "post", 3, 1, "pending", 0),
 ]
 
 PICK = r'''

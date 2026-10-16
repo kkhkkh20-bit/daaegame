@@ -246,6 +246,8 @@ init 59 python:
         "resident_yeoni":("square",),
         "resident_seol":("square",),
         "resident_momo":("post",),
+        # 0.18.67: 사서 선생님 standing book-paper action (owner 17:31), post only.
+        "resident_librarian":("post",),
         "resident_owlgp":("square",),
         "granny":("inn",),
     }
