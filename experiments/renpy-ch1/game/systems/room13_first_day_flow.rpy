@@ -72,6 +72,8 @@ label r13_first_day_arrival:
 
 label r13_first_day_checkin:
     call r13_lines([("dad","아내 편지를 받고 왔습니다. 13호실에 묵고 있다고 하던데요."),("granny","부인이요? 며칠째 안 보여요. 방에 두고 간 물건은 그대로인데."),("daram","……엄마 여기 없어요?",{"expression":"anxious"}),(None,"다람이가 내 소매를 꼭 쥐었다. 마차에서 내내 들고 있던 과자 봉지가 구겨졌다."),("dad","편지에는 여기서 기다린다고 했습니다."),("granny","가족을 부른다는 말은 저도 들었어요. 그런데 며칠 전에 나가서는 돌아오지 않았어요."),("daram","엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요."),("granny","13호실이에요. 오늘 식사와 방값은 받지 않을게요. 내일부터 두 분 숙식은 하루 열 냥이고요."),("dad","우선 13호실부터 살펴보겠습니다.")],"life:arrival:inn")
+    # 0.18.70 (owner): 다람이's disappointment that mom is not here (systems/room13_daram_mood.rpy).
+    call r13_daram_arrival_miss
     $ r13_flag("lodging")
     $ r13_note_encounter("granny")
     return

@@ -9669,6 +9669,23 @@ testcase market_crowd:
     assert eval ("resident_badook" in r13_people())
     screenshot "forest_week2.png"
 
+testcase daram_mood:
+    # 0.18.70 (owner): 다람이's face follows her words; she misses mom at night and on arrival.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    assert eval (r13_daram_mood("엄마는 어디 있어?")=="anxious" and r13_daram_mood("털모자다! 이제 귀 안 시려.")=="joy" and r13_daram_mood("이제 하나도 안 아파.") is None and r13_daram_mood("아빠……!")=="anxious")
+    assert eval (r13_line_performance("qa:mood",0,("daram","엄마는 어디 있어?"))[1]=="anxious" and r13_line_performance("qa:mood",0,("daram","엄마는 어디 있어?",{"expression":"joy"}))[1]=="joy")
+    run Call("r13_qa_roam",dict(day=2,period=2,location="room13",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("night:miss_mom" in [k for k,_ in r13_topics("daram")])
+    run Call("r13_qa_talk","daram")
+    click pos (1150,90) until "엄마 이야기를" timeout 30
+    click "엄마 이야기를"
+    click pos (640,600) until eval ("과자 반" in str(getattr(store,"r13_packet",("",""))[1])) timeout 40
+    pause 1.0
+    screenshot "daram_miss_mom.png"
+
 testcase map_actions:
     # 0.18.63 (owner): event, life and map actions in the investigation scenes where the script puts them.
     pause 2.0
