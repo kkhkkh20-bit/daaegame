@@ -158,11 +158,7 @@ init 145 python:
     _r13_nc_topic("kalbaram:edge","resident_kalbaram","숲 끝에는 무엇이 있습니까?",[
         ("dad","숲 끝에는 무엇이 있습니까?"),("resident_kalbaram","절벽. 그리고 그 아래 옛 길."),
         ("dad","순찰대는 숲 끝엔 길이 없다고 하던데요."),("resident_kalbaram","겨울엔 그 말이 맞소. 눈사태가 길을 덮으니까. 봄이 돼야 다시 드러나지. 가지 마시오.")])
-    _r13_nc_topic("kalbaram:child","resident_kalbaram","숲에서 아이를 본 적이 있습니까?",[
-        ("dad","밤에 숲에서 아이를 본 적이 있습니까?"),
-        ("resident_kalbaram","한 번. 고개 마차가 들어온 날 밤이었소. 흰 토끼 아이가 보온병을 안고 큰 나무 밑에서 울고 있었지. 여관까지 데려다줬소."),
-        ("dad","왜 아무에게도 말하지 않으셨습니까?"),("resident_kalbaram","묻는 사람이 없었으니까."),
-        ("dad","(숲에서 아이를 데려온 건 이 사람이었다. 수상해 보였던 건 말이 없어서였을 뿐이다.)",{"thought":True})],need=["mom_hideout_found"],flags=["kalbaram_trusted"])
+    # 칼바람's account of the first night is his alibi answer (systems/room13_alibi.rpy).
 
     # ---- mom, after reunion: who the footsteps were ----
     _r13_nc_topic("tosil:mom","mom","숲까지 따라온 발소리의 주인",[

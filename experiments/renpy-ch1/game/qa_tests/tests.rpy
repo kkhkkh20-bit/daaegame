@@ -9744,6 +9744,31 @@ testcase schedule_dump:
         store.room13=_sd_saved
         open(os.path.join(renpy.config.basedir,"qa_schedule.json"),"w").write(json.dumps(_sd_out,ensure_ascii=False))
 
+testcase alibi_cross:
+    # 0.18.79: alibi questions and a cross-check (granny "내내 식당" vs 현이), the story pins, the notebook row.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=2,location="dining",life_poc=True,case_state="occurred"),("entry_corrected","lodging"))
+    pause 1.0
+    python:
+        _ab_s=winter_copy.deepcopy(store.room13)
+        _n=winter_copy.deepcopy(_ab_s);_n.update(day=4,period=2);store.room13=_n
+        store._ab_pins=(r13_where("resident_eunho"),r13_where("resident_owlgp"),r13_where("resident_tosil"))
+        _n=winter_copy.deepcopy(_ab_s);_n.update(day=1,period=2);store.room13=_n
+        store._ab_pins1=r13_where("resident_tosil")
+        store.room13=_ab_s
+    assert eval (_ab_pins==("store","hall","inn") and _ab_pins1=="forest")
+    assert eval ("alibi:case:granny" in [k for k,_ in r13_topics("granny")])
+    run Call("r13_qa_topic_label","alibi:case:granny")
+    click pos (640,600) until eval (r13_has("alibi:case:granny")) timeout 40
+    run Call("r13_qa_topic_label","alibi:case:resident_hyeoni")
+    click pos (640,600) until eval ("국만 뜨고" in str(getattr(store,"r13_packet",("",""))[1])) timeout 40
+    pause 1.0
+    screenshot "alibi_cross.png"
+    click pos (640,600) until eval (r13_has("alibi_x_dining")) timeout 40
+    assert eval (any("누가 어디 있었나" in n["title"] for n in r13_first_mystery_notes()))
+
 testcase map_actions:
     # 0.18.63 (owner): event, life and map actions in the investigation scenes where the script puts them.
     pause 2.0
@@ -9835,7 +9860,7 @@ testcase new_places:
         store._np_before=[k for k in R13_NEW_PLACES if k in r13_places()]
         store.room13=_np_saved
         r13_qa_note("new places people: %r / before lodging: %r"%(store._np_people,store._np_before))
-    assert eval (_np_people and all(any(r[1]==l and (d in (r[3] or R13_NEW_PLACE_DAYS)) for r in R13_NEW_PLACE_ROUTINES.get(x,())) for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
+    assert eval (_np_people and all(x in r13_new_place_people(l) for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
     click "지도 · 이동"
     pause 1.5
     screenshot "np_map.png"

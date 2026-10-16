@@ -206,6 +206,12 @@ label r13_qa_talk(person):
     call r13_talk
     jump r13_roam
 
+# 0.18.79: ask one topic through its topic label (alibi questions) and come back through r13_roam.
+label r13_qa_topic_label(key):
+    $ r13_topic=key
+    call expression R13_TOPIC_LABELS[key]
+    jump r13_roam
+
 # 0.18.77: run one event label directly from the field and come back through r13_roam.
 label r13_qa_event(name):
     call expression name

@@ -97,8 +97,9 @@ init 130 python:
         return None
 
     def r13_new_place_people(location):
-        """Residents whose routine can bring them to this new place."""
-        return [x for x,rs in R13_NEW_PLACE_ROUTINES.items() if any(r[1]==location for r in rs)]
+        """Residents whose week can bring them to this new place (job weeks, systems/room13_cast_bible.rpy)."""
+        weeks=getattr(store,"R13_WEEKLY_ROUTINES",{})
+        return [x for x,w in weeks.items() if any(location in day for day in w)]
 
     _r13_new_places_resident_where=r13_resident_where
     def r13_resident_where(person):
