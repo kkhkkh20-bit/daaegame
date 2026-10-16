@@ -940,7 +940,7 @@ testcase ep2_nabi:
     click "아이들 끼니를 다른 데서 구하자고 한다"
     pause 1.0
     click pos (1150,90) until screen "choice" timeout 40
-    click "학교 곰 선생님에게 부탁해 보자고 한다"
+    click "학교 사자 선생님에게 부탁하자고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_topics" timeout 40
     click "돌아가기"
@@ -1207,7 +1207,7 @@ testcase b3_pages:
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval (r13_has("pages_sold") and not r13_has("know_stone_history"))
-    run Call("r13_qa_goto",5,0,"post")
+    run Call("r13_qa_goto",8,0,"post")
     pause 1.0
     run Call("r13_qa_talk","resident_librarian")
     click pos (1150,90) until "베껴 둔 돌 기록을 보여 달라고 한다" timeout 30
@@ -1492,7 +1492,7 @@ testcase w1c_mother_line:
     click pos (1150,90) until screen "r13_hub" timeout 40
     # 에피소드 ①: 초상을 맡기면 약속만 남고, 초상은 다음 날 받는다.
     assert eval (r13_has("lt_piko_promise") and r13_has("fake_letter_planted") and "H9" in room13["evidence"])
-    run Call("r13_qa_goto",4,2,"hall",("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    run Call("r13_qa_goto",7,2,"hall",("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "w1c_night.png"
     click "할머니를 따라간다"
@@ -1510,17 +1510,17 @@ testcase w1c_wall_and_seal:
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval ("H7" in room13["evidence"] and r13_has("ttadak_witness"))
-    run Call("r13_qa_goto",5,0,"hall",("case_occurred_marker",))
+    run Call("r13_qa_goto",8,0,"hall",("case_occurred_marker",))
     pause 1.0
     $ r13_edit(case_state="occurred",daram_state="held")
-    run Call("r13_qa_goto",5,0,"hall")
+    run Call("r13_qa_goto",8,0,"hall")
     click pos (1150,90) until screen "choice" timeout 40
     click "몰래 뒤를 밟는다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval ("W9" in room13["evidence"] and "H8" in room13["evidence"] and r13_has("family_items_lost"))
     $ r13_cash(20,"qa")
-    run Call("r13_qa_goto",6,0,"gate")
+    run Call("r13_qa_goto",9,0,"gate")
     click pos (1150,90) until screen "choice" timeout 40
     click "열 냥에 산다"
     pause 1.0
