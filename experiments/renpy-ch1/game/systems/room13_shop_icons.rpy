@@ -244,6 +244,9 @@ init 79 python:
             super(R13PixelIcon,self).__init__(**kwargs)
             self.key=key;self.cell=cell
         def render(self,width,height,st,at):
+            art=r13_material_art("bag:"+self.key)
+            if art is not None:
+                return renpy.render(Transform(art,xysize=(16*self.cell,16*self.cell),fit="contain",nearest=True),width,height,st,at)
             rows=R13_ITEM_ICONS.get(self.key) or []
             c=self.cell;r=renpy.Render(16*c,16*c);canvas=r.canvas()
             for y,row in enumerate(rows):

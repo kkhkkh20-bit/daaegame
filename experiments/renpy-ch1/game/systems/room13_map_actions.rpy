@@ -3,7 +3,7 @@
 # layer only places them. Dialogue art, story, schedules, events and unlocks are unchanged.
 #
 # World layout keys (game/assets/room13-world-layout.json), all in world pixels:
-#   slot_actions   {person: pose}         a person standing in a slot shows this activity
+#   slot_actions   {person: pose | {daylight: pose}}  a person shown idle (neutral) shows this activity
 #   old_scene_slot_actions {person: pose} the same for periods drawn with the old 1280 scene
 #   pose_positions {"person:pose": [x,y]} feet of a pinned person for that pose
 #   seats          {"person:pose": [x,y,standing_height]}  seat point on drawn furniture; the
@@ -52,7 +52,11 @@ init 125 python:
         for actor in actors:
             person=actor["person"]
             want=slot_actions.get(person)
-            if (want and actor.get("slot") and actor["pose"]!=want and r13_acting_spec(person,want)
+            # 0.18.79: a value may differ by daylight ({"morning":…, "evening":…}); pinned people
+            # (no slot) can be listed too. Only the forced idle pose is replaced, so authored
+            # poses (chairs, counters with their own art) stay as they are.
+            if hasattr(want,"get"):want=want.get(r13_daylight())  # store dict is RevertableDict
+            if (want and actor["pose"]=="neutral" and r13_acting_spec(person,want)
                     and not (not entry and r13_offer_for_person(person))):
                 fx,fy=r13_ma_feet(actor)
                 height=actor["height"]*r13_ma_shape(person,want)/max(.01,r13_ma_shape(person,actor["pose"]))

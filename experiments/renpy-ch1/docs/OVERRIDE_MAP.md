@@ -24,7 +24,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 15 | 130 | `systems/room13_new_places.rpy:167` | _r13_direct_work_topics |
 | 16 | 133 | `systems/room13_direct_work.rpy:14` | _r13_alibi_topics |
 | 17 | 147 | `systems/room13_alibi.rpy:139` | _r13_catalog_topics |
-| 18 | 148 | `systems/room13_materials.rpy:56` |  |
+| 18 | 148 | `systems/room13_materials.rpy:58` |  |
 
 ## `r13_present` (16층)
 
@@ -52,7 +52,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 57 | `room13_life.rpy:188` | _r13_before_inspection_visible |
-| 2 | 66 | `room13_inspection.rpy:288` | r13_before_gate_bundle_visible |
+| 2 | 66 | `room13_inspection.rpy:290` | r13_before_gate_bundle_visible |
 | 3 | 67 | `room13_gate_inspection.rpy:65` | _r13_route_object_visible |
 | 4 | 90 | `room13_route_knowledge.rpy:22` | _r13_firstday_visible |
 | 5 | 94 | `systems/room13_first_day_flow.rpy:15` | _r13_items_visible |
@@ -123,7 +123,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:319` | _r13_daram_home_stage |
+| 1 | 59 | `room13_acting.rpy:324` | _r13_daram_home_stage |
 | 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
 | 3 | 124 | `systems/room13_event_offers.rpy:58` | _r13_ma_stage |
 | 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
@@ -289,7 +289,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 61 | `room13_interaction.rpy:84` | _r13_before_inspection_name |
-| 2 | 66 | `room13_inspection.rpy:292` |  |
+| 2 | 66 | `room13_inspection.rpy:294` |  |
 
 ## `r13_record_entries` (2층)
 
@@ -323,7 +323,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:287` | _r13_entry_visible_people |
+| 1 | 59 | `room13_acting.rpy:292` | _r13_entry_visible_people |
 | 2 | 62 | `room13_entry_window.rpy:10` |  |
 
 ## `r13_w2_action_done` (2층)

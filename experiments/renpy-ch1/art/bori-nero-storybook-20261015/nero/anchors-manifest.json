@@ -1,0 +1,58 @@
+{
+  "character_id": "resident_nero",
+  "asset": "nero-fold-tag-storybook.png",
+  "action": "fold_luggage_name_tag",
+  "status": "new_user_requested_storybook_revision_not_runtime_applied",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "format": "RGBA PNG",
+  "source_choice": "Selected green-coat candidate; brown-vest correction superseded by latest user instruction.",
+  "bbox_alpha_gt0": [
+    0,
+    54,
+    1006,
+    1518
+  ],
+  "bbox_alpha_gt8": [
+    31,
+    83,
+    999,
+    1488
+  ],
+  "anchor_estimates_px": {
+    "feet_center": [
+      550,
+      1484
+    ],
+    "left_foot_contact": [
+      350,
+      1484
+    ],
+    "right_foot_contact": [
+      722,
+      1471
+    ],
+    "head_box": [
+      349,
+      83,
+      770,
+      439
+    ],
+    "folded_tag_center": [
+      708,
+      651
+    ],
+    "hand_action_box": [
+      455,
+      608,
+      846,
+      793
+    ]
+  },
+  "anchor_note": "Visual estimates, verify against real scene. Do not derive scale from alpha>0 bbox due to low-alpha fringe. No floor prop; backpack hangs from hand.",
+  "transparency_note": "Native generated alpha preserved unchanged; alpha extrema 0..254. Very low alpha fringe expands bbox to x0; no code matte edit performed. Bottom margin18px inclusive fringe,48px visible silhouette.",
+  "display_notes": "Preserve natural stature, do not stretch or shrink legs independently. Tag needs readability QA at 230px display height. Dialogue costume should match chosen new design through Claude, not brown original.",
+  "sha256": "374b61510beea01270b81bb3103089dbc76d93a20502e755a2c8d16f164493f8"
+}

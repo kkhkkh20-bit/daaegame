@@ -46,6 +46,8 @@ init 148 python:
         return "가지고 있는 물건"
 
     def r13_catalog_object_icon(key):
+        art=r13_material_art(key)
+        if art is not None:return art
         kind,item=r13_catalog_object(key)
         return r13_inspection_icon(item,96,96) if kind=="tool" else R13PixelIcon(item,6)
 
