@@ -10573,7 +10573,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["dining"]["old_scene_slot_actions"]=_rl_keep[1]
 
 testcase bori_nero_actions:
-    # 0.18.73 (owner 19:16): 보리 firewood / 네로 name tag in the scenes the schedule puts them in;
+    # 0.18.74 (owner 19:16): 보리 firewood / 네로 name tag in the scenes the schedule puts them in;
     # the school back row keeps 보리's idle pose. Head drawn as large as in the idle pose (보리 crouch
     # at 0.69 of the standing height, 네로 standing at full height). 0.18.68 sends 네로 to the river
     # on the 'lower road' slots, so his gate scene is week 2's morning (the river is not one of
@@ -10671,7 +10671,7 @@ testcase bori_nero_actions:
     assert eval (any(a["person"]=="resident_bori" and a["pose"]=="neutral" for a in r13_stage_people()))
 
 testcase screen_choice_guard:
-    # 0.18.73 (owner 19:23, injected - not a natural start): a hub/entry screen that ends with no
+    # 0.18.74 (owner 19:23, injected - not a natural start): a hub/entry screen that ends with no
     # (kind, value) pair shows the same screen again; no record, time, flag or story step. The
     # normal pair contract still works (guard questions open from the same hub). Three bad
     # results in a row raise instead of looping. (A screen action returning None never ends an

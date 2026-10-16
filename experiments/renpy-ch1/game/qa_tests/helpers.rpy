@@ -861,7 +861,7 @@ init 999 python:
         store.room13=saved
         return found
 
-# 0.18.73 screen_choice_guard: ends the current interaction with an arbitrary value, as if the
+# 0.18.74 screen_choice_guard: ends the current interaction with an arbitrary value, as if the
 # shown screen had returned it (a test `run` action's return value is otherwise discarded).
 screen r13_qa_inject_return(value):
     zorder 999

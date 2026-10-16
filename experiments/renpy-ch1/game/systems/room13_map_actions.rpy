@@ -52,7 +52,7 @@ init 125 python:
         for actor in actors:
             person=actor["person"]
             want=slot_actions.get(person)
-            # 0.18.73: a value may differ by daylight ({"morning":…, "evening":…}); pinned people
+            # 0.18.74: a value may differ by daylight ({"morning":…, "evening":…}); pinned people
             # (no slot) can be listed too. Only the forced idle pose is replaced, so authored
             # poses (chairs, counters with their own art) stay as they are.
             if hasattr(want,"get"):want=want.get(r13_daylight())  # store dict is RevertableDict

@@ -111,7 +111,7 @@ label r13_entry:
     window hide
     call screen r13_hub(entry=True)
     $ r13_choice=_return
-    # 0.18.73: a hub result is always a (kind, value) pair. Anything else is not a choice:
+    # 0.18.74: a hub result is always a (kind, value) pair. Anything else is not a choice:
     # show the same screen again (no time, record or story step), and stop with an error after
     # repeated bad results instead of looping (systems/room13_boot_guard.rpy).
     if not r13_screen_choice_ok(r13_choice,"r13_hub:entry"):
