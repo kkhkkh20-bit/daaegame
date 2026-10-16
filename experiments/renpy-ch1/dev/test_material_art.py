@@ -34,7 +34,7 @@ class MaterialArt(unittest.TestCase):
   env=dict(R13_MATERIAL_ART=icons,Crop=lambda rect,file:(rect,file),Transform=lambda art,**options:(art,options))
   src=(ROOT/'game/systems/room13_material_art.rpy').read_text().split('    def r13_material_art',1)[1]
   exec(textwrap.dedent('    def r13_material_art'+src),env)
-  for key,spec in icons.items():self.assertEqual(env['r13_material_art'](key),((tuple(spec['crop']),spec['file']),dict(xysize=(64,64),fit='contain',nearest=True)))
+  for key,spec in icons.items():self.assertEqual(env['r13_material_art'](key),((tuple(spec['crop']),spec['file']),dict(xysize=(48,48),fit='contain',nearest=True)))
   self.assertIsNone(env['r13_material_art']('unknown:new-future-item'))
   self.assertEqual(icons,before)
 if __name__=='__main__':unittest.main()
