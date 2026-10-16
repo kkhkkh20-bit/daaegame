@@ -248,7 +248,7 @@ init 59 python:
         "resident_momo":("post",),
         # 0.18.67: 사서 선생님 standing book-paper action (owner 17:31), post only.
         "resident_librarian":("post",),
-        # 0.18.78 (owner 19:16): storybook revisions chosen for these two, investigation scenes only.
+        # 0.18.79 (owner 19:16): storybook revisions chosen for these two, investigation scenes only.
         # 보리 ties firewood where the floor shows him (the school back row keeps the idle pose);
         # 네로 folds the luggage tag at the gate and the store.
         "resident_bori":("gate","store","square","workshop"),

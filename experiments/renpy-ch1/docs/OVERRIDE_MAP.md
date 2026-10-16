@@ -168,6 +168,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 94 | `systems/room13_first_day_flow.rpy:4` | _r13_fresh_new |
 | 3 | 105 | `systems/room13_no_carryover.rpy:6` |  |
 
+## `r13_activity_text` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 57 | `room13_life.rpy:174` | _r13_reason_activity |
+| 2 | 146 | `systems/room13_place_reasons.rpy:127` |  |
+
 ## `r13_bed_available` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
