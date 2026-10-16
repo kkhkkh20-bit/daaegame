@@ -1,0 +1,133 @@
+{
+  "status": "generated_candidates_not_runtime_tested",
+  "source": "ART_REQUEST_01822.md section1, main667f172",
+  "generation": "built-in image_gen; no code raster edits; preview uses Pillow only",
+  "coordinate_system": [
+    1280,
+    720
+  ],
+  "background_source_size": [
+    1672,
+    941
+  ],
+  "assets": [
+    {
+      "name": "room13-pixel-inspect-rubbing-paper.png",
+      "size": [
+        1787,
+        880
+      ],
+      "mode": "RGBA",
+      "alpha_bbox": [
+        0,
+        0,
+        1786,
+        880
+      ],
+      "sha256": "d20cb9a22c810fe236fdd04c6bcaf61ed1c80893a45026d64947cf3088872e6d"
+    },
+    {
+      "name": "room13-pixel-inspect-rubbing-done.png",
+      "size": [
+        1786,
+        880
+      ],
+      "mode": "RGBA",
+      "alpha_bbox": [
+        0,
+        20,
+        1762,
+        864
+      ],
+      "sha256": "2c6eb895c9af45bbe4dd50d2199b4a80023584a91bcd537b4137562b02ecc5b8"
+    },
+    {
+      "name": "room13-pixel-inspect-drawer-held.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_bbox": [
+        186,
+        69,
+        1152,
+        1196
+      ],
+      "sha256": "b73fcbb7c07aa822a91e196d9b89724b2f0e1cdcb03d81b9511efe3e2a683174"
+    },
+    {
+      "name": "room13-pixel-inspect-drawer-open.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_bbox": null,
+      "sha256": "ef8e33323e7a473f248aaa16c1604892c0c153bb40650dff23c6508609ed09c2"
+    }
+  ],
+  "placement": {
+    "rubbing-paper": {
+      "canvas_render_size": [
+        305,
+        150
+      ],
+      "top_left": [
+        435,
+        385
+      ],
+      "resampling": "nearest",
+      "note": "Transparent canvas margin exists. Same whole-canvas transform for both paper states; do not auto-crop individually."
+    },
+    "rubbing-done": {
+      "canvas_render_size": [
+        305,
+        150
+      ],
+      "top_left": [
+        435,
+        385
+      ],
+      "note": "Source1px narrower than paper; render to same target305x150. Paper silhouette has slight generated drift, not pixel-identical."
+    },
+    "drawer-held": {
+      "canvas_render_size": [
+        120,
+        120
+      ],
+      "source_contact_point_estimate": [
+        365,
+        955
+      ],
+      "target_contact_point": [
+        963,
+        528
+      ],
+      "canvas_top_left_estimate": [
+        928.1,
+        436.6
+      ],
+      "note": "Place bottom-left ruler tip on notch. Confirm visually; not center-align canvas at notch."
+    },
+    "drawer-open": {
+      "canvas_render_size": [
+        1280,
+        720
+      ],
+      "top_left": [
+        0,
+        0
+      ],
+      "note": "Full image1672x941 matches source. Right lid retracted into right wall; empty tool compartment. Existing magnifying-glass item must be separate."
+    }
+  },
+  "qa": [
+    "3 overlay files have real alpha; open background is opaque RGB PNG.",
+    "Overlay alpha includes sparse low-alpha fringe pixels; not destructively cleaned by code.",
+    "Graphite rubbing intentionally uneven per request; inspect at target size rather than full resolution.",
+    "Opened background changes right compartment; generated edit may have slight incidental pixel drift elsewhere.",
+    "No letters/numerals/UI/hands/NPC/magnifying glass added.",
+    "No game repository files changed. Runtime hitbox alignment remains to verify."
+  ]
+}

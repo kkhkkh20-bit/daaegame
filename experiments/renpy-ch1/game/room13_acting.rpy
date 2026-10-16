@@ -242,6 +242,12 @@ init 59 python:
         "resident_mungchi":("store","school","clinic"),
         "resident_ubak":("clinic","workshop"),
         "resident_badook":("gate","square"),
+        # 0.18.63 map actions: each drawn activity only where the script puts it.
+        "resident_yeoni":("square",),
+        "resident_seol":("square",),
+        "resident_momo":("post",),
+        "resident_owlgp":("square",),
+        "granny":("inn",),
     }
 
     def r13_living_pose(person,location,period):
@@ -256,7 +262,8 @@ init 59 python:
             ("guard","gate"):"action_1",
             ("buri","workshop"):"action_2" if period==2 else "action_1",
             ("seryeon","post"):"chair_read" if period==1 else "action_1",
-            ("karo","gate"):"action_2" if period==2 else "action_1",
+            # 0.18.63: by day Karo wraps the cracked axle (room13-content activity); evening tea stays.
+            ("karo","gate"):"action_2" if period==2 else ("living_axlewrap" if "living_axlewrap" in poses else "action_1"),
             ("doto","square"):"world_bulletin_back",
             ("doto","hall"):"action_2" if period==2 else "action_1",
             ("mom","greenhouse"):"action_2" if period==2 else "action_1",
@@ -289,6 +296,12 @@ init 59 python:
         # Per-location perspective is independent of dialogue framing. Preserve
         # the established relative standing heights and the authored pose's
         # head/body ratio, instead of stretching a crouch to standing height.
+        # 0.18.63: map-action art (dev/apply_map_actions.py) is drawn in its own proportions.
+        # Its height is a share of the person's standing height (stature_ratio), never the
+        # standing height itself for a seated or kneeling pose, and never taken from the head.
+        ratio=(r13_acting_spec(person,pose) or {}).get("stature_ratio")
+        if ratio is not None and not layout.get("standing_height_reference"):
+            return height*ratio
         if not layout.get("standing_height_reference"):
             return height
         reference=layout["standing_height_reference"]
@@ -298,6 +311,7 @@ init 59 python:
         head=r13_acting_head(person,pose)
         neutral_head=r13_acting_head(person,"neutral")
         pose_ratio=(ph/float(head[3]))/(nh/float(neutral_head[3])) if head and neutral_head else ph/float(nh)
+        if ratio is not None:pose_ratio=ratio
         return height*stature*pose_ratio
 
     def r13_stage_people(entry=False):

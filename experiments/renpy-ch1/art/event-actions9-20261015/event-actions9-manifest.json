@@ -1,0 +1,264 @@
+{
+  "source_commit": "1f92e72faa7f7441a04264862013d8e9366c793a",
+  "source_game_version": "0.18.55",
+  "status": "review_candidates_not_runtime_applied",
+  "counts": {
+    "character_png": 7,
+    "required_character": 2,
+    "optional_event_enhancement": 5,
+    "required_prop_png": 2,
+    "total_png": 9
+  },
+  "notes": [
+    "Five optional event keys are proposals, not existing runtime keys.",
+    "Source-pixel anchor estimates require scene calibration; no claim of exact runtime placement.",
+    "Original generated PNG bytes retained. Extremely faint alpha residues may remain. Steam transparency is intentional.",
+    "Contact-sheet panels fit images for identification only; they do not prescribe relative character heights.",
+    "Character and prop are separate files for Sling and Ttadak. Existing backgrounds remain untouched."
+  ],
+  "items": [
+    {
+      "canonical_id": "resident_sling",
+      "name": "슬링",
+      "action": "봉투 증기쐬기",
+      "file": "sling-event-steam/sling-event-steam.png",
+      "category": "required_character",
+      "pose_key": "event_steam",
+      "key_status": "documented_request",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "visible_bbox_alpha_gt8": [
+        141,
+        231,
+        946,
+        1307
+      ],
+      "sha256": "6fd813940c5709b6ce2f55fdcd56d5926316d5c804d8767a2a650f5df662ff3a",
+      "bytes": 1239193,
+      "metadata_file": "sling-event-steam/metadata.json"
+    },
+    {
+      "canonical_id": "resident_ttadak",
+      "name": "따닥",
+      "action": "문틀 작업",
+      "file": "ttadak-doorframe/room13-pixel-acting-ttadak-doorframe.png",
+      "category": "required_character",
+      "pose_key": "living_doorframe",
+      "key_status": "documented_request",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "visible_bbox_alpha_gt8": [
+        24,
+        139,
+        1009,
+        1477
+      ],
+      "sha256": "a7733a0ec825c2e0cbf3224d24585c050f1859450b0197935792e09541ca9797",
+      "bytes": 1271588,
+      "metadata_file": "ttadak-doorframe/metadata.json"
+    },
+    {
+      "canonical_id": "buri",
+      "name": "부리",
+      "action": "공구함 손 얹기",
+      "file": "buri-toolbox/buri-toolbox.png",
+      "category": "optional_event_enhancement",
+      "pose_key": "event_toolbox",
+      "key_status": "proposed",
+      "size": [
+        1324,
+        1188
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha_gt8": [
+        180,
+        42,
+        1147,
+        1140
+      ],
+      "sha256": "0076f7c26c1f25ce492ddb9d293bae4ce0544dee8577b50aaae687aa6989ee8e",
+      "bytes": 846419,
+      "metadata_file": "buri-toolbox/metadata.json"
+    },
+    {
+      "canonical_id": "resident_piko",
+      "name": "피코",
+      "action": "판자 물감 닦기",
+      "file": "piko-paintwipe/piko-paintwipe.png",
+      "category": "optional_event_enhancement",
+      "pose_key": "event_paintwipe",
+      "key_status": "proposed",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "visible_bbox_alpha_gt8": [
+        12,
+        219,
+        1015,
+        1354
+      ],
+      "sha256": "a8ea1c27ee073f0948bd537dd9f2b3801588c58ade70eefdb989b8a0c7e3ef3a",
+      "bytes": 1287681,
+      "metadata_file": "piko-paintwipe/metadata.json"
+    },
+    {
+      "canonical_id": "resident_mungchi",
+      "name": "뭉치",
+      "action": "문 쪽을 보며 손 비비기",
+      "file": "mungchi-handrub/mungchi-handrub.png",
+      "category": "optional_event_enhancement",
+      "pose_key": "event_handrub",
+      "key_status": "proposed",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "visible_bbox_alpha_gt8": [
+        168,
+        12,
+        907,
+        1518
+      ],
+      "sha256": "209683e4100a7b1d38a5cf8f905a8c4de8fe8cd5dbb69d23322a5c80a13ae853",
+      "bytes": 1282585,
+      "metadata_file": "mungchi-handrub/metadata.json"
+    },
+    {
+      "canonical_id": "resident_librarian",
+      "name": "사서",
+      "action": "장부더미 끈 묶기",
+      "file": "librarian-ledgertie/room13-pixel-acting-resident_librarian-ledgertie-v2.png",
+      "category": "optional_event_enhancement",
+      "pose_key": "event_ledgertie",
+      "key_status": "proposed",
+      "size": [
+        1312,
+        1199
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha_gt8": [
+        214,
+        162,
+        1209,
+        1161
+      ],
+      "sha256": "b4791721f24dee570d4e35496f3817a784e5989d3dedef6cb8133dd6cb3c4c02",
+      "bytes": 786858,
+      "metadata_file": "librarian-ledgertie/metadata.json"
+    },
+    {
+      "canonical_id": "resident_siluk",
+      "name": "실룩",
+      "action": "입 가리고 귓속말",
+      "file": "siluk-whisper/room13-pixel-acting-resident_siluk-whisper-v2.png",
+      "category": "optional_event_enhancement",
+      "pose_key": "event_whisper",
+      "key_status": "proposed",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "visible_bbox_alpha_gt8": [
+        108,
+        82,
+        943,
+        1498
+      ],
+      "sha256": "ccc9f92782b5ad7a7bf9b76e4f3fd79e12e8cd0151224a3617e622b6e2033a91",
+      "bytes": 1228817,
+      "metadata_file": "siluk-whisper/metadata.json"
+    },
+    {
+      "canonical_id": "prop_kettle",
+      "name": "소품",
+      "action": "주전자와 증기",
+      "file": "props/room13-pixel-post-stove-kettle.png",
+      "category": "required_prop",
+      "pose_key": null,
+      "key_status": "not_applicable",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "visible_bbox_alpha_gt8": [
+        286,
+        144,
+        1059,
+        1166
+      ],
+      "sha256": "3182326d18505d950152e6fa01fb383e50103c7f5bda671214656c2057f0992c",
+      "bytes": 455270,
+      "metadata_file": "props/room13-pixel-post-stove-kettle-metadata.json"
+    },
+    {
+      "canonical_id": "prop_doorframe",
+      "name": "소품",
+      "action": "수리 판자·못상자·대팻밥",
+      "file": "props/room13-pixel-inn-doorframe-repair.png",
+      "category": "required_prop",
+      "pose_key": null,
+      "key_status": "not_applicable",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "visible_bbox_alpha_gt8": [
+        319,
+        175,
+        696,
+        1463
+      ],
+      "sha256": "7450ef5311c1d4ff4fa8de20d91b806320b601f41e85b0e88779467315fb6a08",
+      "bytes": 872469,
+      "metadata_file": "props/room13-pixel-inn-doorframe-repair-metadata.json"
+    }
+  ]
+}

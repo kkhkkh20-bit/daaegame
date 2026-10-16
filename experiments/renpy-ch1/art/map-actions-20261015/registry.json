@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "scale_from_source": 0.5,
+  "alpha_visible": 32,
+  "margin": 4,
+  "basis": "Owner 15:34 PDT: wire the event/life/map actions into investigation scenes only (dialogue art unchanged). Head boxes follow the existing neutral convention (top of hat/crest/ears to the chin line); estimated by eye on the source PNG and checked in the running game. The action art is drawn in its own (taller, storybook) proportions, so its size is not taken from the head: stature_ratio is the share of the person's standing height at that depth (standing 1.0, leaning ~0.95, kneeling ~0.7, seated ~0.75, crouching ~0.6).",
+  "poses": [
+    {
+      "person": "resident_sling",
+      "pose": "event_steam",
+      "source": "../event-actions9-20261015/sling-event-steam/sling-event-steam.png",
+      "sha256": "6fd813940c5709b6ce2f55fdcd56d5926316d5c804d8767a2a650f5df662ff3a",
+      "contact": "standing",
+      "head": [
+        165,
+        235,
+        330,
+        325
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "사건 r13_w1c_letters: 봉투를 김에 쐬기 (01853 §1)",
+      "stature_ratio": 0.95
+    },
+    {
+      "person": "resident_ttadak",
+      "pose": "living_doorframe",
+      "source": "../event-actions9-20261015/ttadak-doorframe/room13-pixel-acting-ttadak-doorframe.png",
+      "sha256": "a7733a0ec825c2e0cbf3224d24585c050f1859450b0197935792e09541ca9797",
+      "contact": "standing",
+      "head": [
+        340,
+        135,
+        400,
+        335
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "여관 문틀 판자 작업 (01822 §2), 사건 r13_w1c_extension 포함",
+      "stature_ratio": 1.0
+    },
+    {
+      "person": "buri",
+      "pose": "event_toolbox",
+      "source": "../event-actions9-20261015/buri-toolbox/buri-toolbox.png",
+      "sha256": "0076f7c26c1f25ce492ddb9d293bae4ce0544dee8577b50aaae687aa6989ee8e",
+      "contact": "standing",
+      "head": [
+        330,
+        45,
+        660,
+        290
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "사건 r13_w2e_tools: 할아버지 공구함 (01853 §2)",
+      "stature_ratio": 1.0
+    },
+    {
+      "person": "resident_piko",
+      "pose": "event_paintwipe",
+      "source": "../event-actions9-20261015/piko-paintwipe/piko-paintwipe.png",
+      "sha256": "a8ea1c27ee073f0948bd537dd9f2b3801588c58ade70eefdb989b8a0c7e3ef3a",
+      "contact": "crouching",
+      "head": [
+        560,
+        205,
+        300,
+        355
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "사건 r13_w1c_portrait: 판자 물감 닦기 (01853 §2)",
+      "stature_ratio": 0.62
+    },
+    {
+      "person": "resident_mungchi",
+      "pose": "event_handrub",
+      "source": "../event-actions9-20261015/mungchi-handrub/mungchi-handrub.png",
+      "sha256": "209683e4100a7b1d38a5cf8f905a8c4de8fe8cd5dbb69d23322a5c80a13ae853",
+      "contact": "standing",
+      "head": [
+        175,
+        10,
+        470,
+        385
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "사건 r13_w1c_seal: 13호 문 앞 손 비비기 (01853 §2)",
+      "stature_ratio": 1.0
+    },
+    {
+      "person": "resident_librarian",
+      "pose": "event_ledgertie",
+      "source": "../event-actions9-20261015/librarian-ledgertie/room13-pixel-acting-resident_librarian-ledgertie-v2.png",
+      "sha256": "b4791721f24dee570d4e35496f3817a784e5989d3dedef6cb8133dd6cb3c4c02",
+      "contact": "kneeling",
+      "head": [
+        260,
+        165,
+        420,
+        305
+      ],
+      "foot": [
+        826,
+        1103
+      ],
+      "seat": null,
+      "why": "사건 r13_b3_pages: 옛 장부 묶기 (01853 §2)",
+      "stature_ratio": 0.7
+    },
+    {
+      "person": "resident_siluk",
+      "pose": "event_whisper",
+      "source": "../event-actions9-20261015/siluk-whisper/room13-pixel-acting-resident_siluk-whisper-v2.png",
+      "sha256": "ccc9f92782b5ad7a7bf9b76e4f3fd79e12e8cd0151224a3617e622b6e2033a91",
+      "contact": "standing",
+      "head": [
+        520,
+        85,
+        440,
+        315
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "사건 r13_w1c_testimony: 귓속말 (01853 §2)",
+      "stature_ratio": 0.97
+    },
+    {
+      "person": "granny",
+      "pose": "living_keyledger",
+      "source": "../priority3-actions-20261015/granny/granny-key-ledger-v3.png",
+      "sha256": "4aab5040bc774feac8db7b459176e21bdd411ff4f42de862cf34304332006280",
+      "contact": "standing",
+      "head": [
+        237,
+        41,
+        529,
+        463
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "여관: 접수대 열쇠와 장부 맞추기 (content activity)",
+      "stature_ratio": 1.0
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "living_notebook",
+      "source": "../priority3-actions-20261015/owlgp/owlgp-notebook-binding-v2.png",
+      "sha256": "d5c35cdbe005836f14caf450e5e72ccf5200e7ff6dca2cf99e7a98bb7dde7dc8",
+      "contact": "portable_stool",
+      "head": [
+        310,
+        20,
+        590,
+        561
+      ],
+      "foot": null,
+      "seat": [
+        485,
+        1098
+      ],
+      "why": "수첩 제본 묶기, 의자 포함 (content activity)",
+      "stature_ratio": 0.78
+    },
+    {
+      "person": "karo",
+      "pose": "living_axlewrap",
+      "source": "../priority3-actions-20261015/karo/karo-axlewrap-v2.png",
+      "sha256": "4de994f5c66c053293de74f13e6713859ac823cd26f1330d49054bb034062d08",
+      "contact": "kneeling",
+      "head": [
+        300,
+        130,
+        560,
+        300
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "입구: 마차 축 감기 (content activity)",
+      "stature_ratio": 0.72
+    },
+    {
+      "person": "resident_yeoni",
+      "pose": "living_mend",
+      "source": "../map-action-storybook3-20261015/yeoni/yeoni.png",
+      "sha256": "a28df012c9ec0770130a15099e90bd097dfe4011456a20eff0c020a25a740282",
+      "contact": "bench_sit",
+      "head": [
+        330,
+        11,
+        380,
+        280
+      ],
+      "foot": null,
+      "seat": [
+        480,
+        1050
+      ],
+      "why": "광장 기존 벤치에서 소매 수선 (map_action)",
+      "stature_ratio": 0.74
+    },
+    {
+      "person": "resident_seol",
+      "pose": "living_bellrope",
+      "source": "../map-action-storybook3-20261015/seol/seol.png",
+      "sha256": "3d8419c6875d085e71303bb7b8f65d850d6c79883778f7fd88b08de58b412821",
+      "contact": "standing",
+      "head": [
+        270,
+        12,
+        410,
+        300
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "광장: 종끈 정리 (map_action)",
+      "stature_ratio": 1.0
+    },
+    {
+      "person": "resident_momo",
+      "pose": "living_lampnumber",
+      "source": "../map-action-storybook3-20261015/momo/momo-v2.png",
+      "sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b",
+      "contact": "standing",
+      "head": [
+        300,
+        11,
+        420,
+        300
+      ],
+      "foot": null,
+      "seat": null,
+      "why": "우체국: 등잔 바닥 번호 확인 (map_action)",
+      "stature_ratio": 1.0
+    }
+  ]
+}

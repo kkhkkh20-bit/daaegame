@@ -1,28 +1,22 @@
 # New places (owner, 0.18.61): "광장 외에 4개 더 … 사냥 낚시 … 시장도 좋아", "일거리 조사 다 넣지 뭐",
 # "거대 문명 맵도 생겼는데 어떻게 보여줄지, 할머니 비밀장소 대사와 다 만들어 줘".
-# Art: art/new-maps-v3-20261015 (river, forest, market, ancient stone works), one picture each.
-#   - 장터 (market), 강가 (river), 숲속 (forest): village places from day 2 (after lodging). Each has
-#     investigation spots; the river and the forest each give a day's work; goods are bought at
-#     the market stall (the old 은호 topic moves here).
+# Art: art/new-maps-v3-20261015. The places 장터·강가·숲속 are game/room13_new_places.rpy (0.18.63);
+#   here the river and the forest each give a day's work and goods are bought at the market's
+#   cheese and meat stall (the old 은호 topic moves there).
 #   - 돌을 만들던 옛 시설 (ancient): granny's secret place under the inn, reached in week 2 through a
 #     cracked wall in the 13호 back passage. Seeing it and hearing granny/mom there is story colour
 #     and motive; it grants no record and opens no proof, so trials and endings are unchanged.
 # Residents whose week had no place to go ("아랫길", spare home hours, the post visits) now spend
 # some of it here, which thins the post office crowd.
 init 130 python:
-    R13_PLACES.update(
-        market=("장터","wide_market"),
-        river=("강가","wide_river"),
-        forest=("숲속 사냥터","wide_forest"),
-        ancient=("돌을 만들던 옛 시설","wide_ancient"),
-    )
-    R13_MAP_LABELS.update(market="장터",river="강가",forest="숲속",ancient="옛 시설")
-    R13_NEW_VILLAGE_PLACES=("market","river","forest")
+    # 장터·강가·숲속 themselves (places, art, inspection spots) come from game/room13_new_places.rpy
+    # (0.18.63). This file adds what happens there, and the old works under the inn.
+    R13_PLACES.update(ancient=("돌을 만들던 옛 시설","wide_ancient"))
+    R13_MAP_LABELS.update(ancient="옛 시설")
 
     _r13_new_places=r13_places
     def r13_places():
         result=list(_r13_new_places())
-        if r13_has("lodging"):result += [p for p in R13_NEW_VILLAGE_PLACES if p not in result]
         if r13_ancient_open() and "ancient" not in result:result.append("ancient")
         return result
 
@@ -33,46 +27,24 @@ init 130 python:
     R13_LOCAL_CONNECTIONS["ancient"]=(("passage","계단 위로"),)
     R13_LOCAL_CONNECTIONS["passage"]=tuple(R13_LOCAL_CONNECTIONS.get("passage",()))+(("ancient","돌계단 아래로"),)
 
-    # ---- investigation spots (world coordinates of the 2160-wide pictures) ----
+    # The cheese and meat stall also sells the village goods (the old 은호 shop topic).
+    ROOM13["objects"]["market"]["market_cheese"]["call_label"]="r13_market_stall"
+
+    # ---- inspection spots in the old works (world coordinates of the 2160-wide picture) ----
     def _r13_spot(rect,text,**kw):
-        spec=dict(rect=list(rect),text=text,need=["lodging"],give=[],flags=[]);spec.update(kw);return spec
-    ROOM13["objects"]["market"]=dict(
-        mk_stall=_r13_spot((1213,318,338,180),"말린 고기와 치즈를 늘어놓은 노점이다. 마을 사람들이 쓰는 물건도 이 노점에서 판다.",call_label="r13_market_stall"),
-        mk_oven=_r13_spot((428,318,120,130),"화덕 옆 판에 빵이 식어 간다. 빵 위에 집마다 다른 무늬를 찍어 두었다."),
-        mk_vegetables=_r13_spot((597,378,288,120),"채소 상자마다 값을 새긴 나무판이 꽂혀 있다. 어디서 기른 채소인지는 적혀 있지 않다."),
-        mk_cloth=_r13_spot((1720,408,248,90),"두꺼운 옷감이 색깔별로 접혀 있다. 담요로 쓸 만큼 두툼하다."),
-        mk_jars=_r13_spot((2009,378,151,140),"항아리 입구를 천으로 단단히 묶었다. 안에 든 것은 열어 봐야 알 수 있다."),
-        mk_firewood=_r13_spot((328,477,100,120),"장작이 높이 쌓여 있다. 추위가 길어지면 이 더미부터 줄어들 것이다."),
-    )
-    ROOM13["objects"]["river"]=dict(
-        rv_ice_edge=_r13_spot((1432,626,728,94),"물가의 얼음은 가장자리부터 얇아진다. 밟으면 갈라지는 소리가 날 것 같다."),
-        rv_ice_slabs=_r13_spot((80,388,398,90),"깨진 얼음판이 물가에 밀려와 쌓였다. 누군가 얼음 구멍을 뚫은 자리일 수 있다."),
-        rv_rocks=_r13_spot((398,527,437,110),"강가 바위는 눈이 녹아 미끄럽다. 그물을 말린 자국처럼 젖은 줄무늬가 남아 있다."),
-        rv_reeds=_r13_spot((0,338,160,200),"마른 풀이 눈 위로 삐죽 나와 있다. 바람이 강 쪽에서 분다."),
-        rv_cliffs=_r13_spot((1711,149,449,120),"건너편은 깎아지른 절벽이다. 저쪽으로 건너가는 다리는 보이지 않는다."),
-        rv_water=_r13_spot((895,298,696,220),"강 한가운데는 얼지 않고 흐른다. 마차가 건널 수 있는 길은 아니다."),
-    )
-    ROOM13["objects"]["forest"]=dict(
-        fr_roots=_r13_spot((0,400,620,200),"굵은 뿌리가 눈 위로 엉켜 있다. 발을 잘못 디디면 넘어지기 쉽다."),
-        fr_bush=_r13_spot((835,278,160,120),"눈 덮인 덤불 아래로 작은 짐승이 드나든 구멍이 보인다."),
-        fr_deep=_r13_spot((1114,80,200,320),"숲 안쪽은 낮에도 어둡다. 길을 표시한 천이 없으면 돌아 나오기 어렵겠다."),
-        fr_branch=_r13_spot((1671,457,318,140),"눈 무게에 꺾인 가지가 쓰러져 있다. 땔감으로 쓰기엔 아직 젖어 있다."),
-    )
+        spec=dict(rect=list(rect),text=text,need=[],give=[],flags=[]);spec.update(kw);return spec
     ROOM13["objects"]["ancient"]=dict(
-        an_press=_r13_spot((180,230,340,270),"거대한 누르개 아래 각진 돌이 놓여 있다. 돌 표면의 홈무늬가 광장의 돌과 같다. 누르개에는 먼지가 두껍게 쌓였다.",need=[]),
-        an_tube=_r13_spot((955,119,120,358),"유리관 속에 돌 조각이 떠 있다. 빛이 아주 천천히 밝아졌다가 어두워진다. 무엇이 빛을 채우는지는 보이지 않는다.",need=[]),
-        an_small_tube=_r13_spot((1094,278,80,200),"작은 유리관은 반쯤 비어 있다. 바닥에 가라앉은 돌 조각에는 빛이 거의 없다.",need=[]),
-        an_drip=_r13_spot((1730,40,239,298),"천장 장치에서 초록빛 물방울이 하나씩 떨어진다. 떨어지는 간격이 일정하지 않다.",need=[]),
-        an_channel=_r13_spot((119,547,677,70),"바닥 도랑을 따라 희미한 빛이 흐른다. 빛은 계단 쪽, 마을이 있는 위쪽으로 흘러간다.",need=[]),
-        an_corridor=_r13_spot((1472,318,120,200),"복도가 어둠 속으로 길게 이어진다. 등불 없이 더 들어가는 건 위험하다.",need=[]),
+        an_press=_r13_spot((180,230,340,270),"거대한 누르개 아래 각진 돌이 놓여 있다. 돌 표면의 홈무늬가 광장의 돌과 같다. 누르개에는 먼지가 두껍게 쌓였다."),
+        an_tube=_r13_spot((955,119,120,358),"유리관 속에 돌 조각이 떠 있다. 빛이 아주 천천히 밝아졌다가 어두워진다. 무엇이 빛을 채우는지는 보이지 않는다."),
+        an_small_tube=_r13_spot((1094,278,80,200),"작은 유리관은 반쯤 비어 있다. 바닥에 가라앉은 돌 조각에는 빛이 거의 없다."),
+        an_drip=_r13_spot((1730,40,239,298),"천장 장치에서 초록빛 물방울이 하나씩 떨어진다. 떨어지는 간격이 일정하지 않다."),
+        an_channel=_r13_spot((119,547,677,70),"바닥 도랑을 따라 희미한 빛이 흐른다. 빛은 계단 쪽, 마을이 있는 위쪽으로 흘러간다."),
+        an_corridor=_r13_spot((1472,318,120,200),"복도가 어둠 속으로 길게 이어진다. 등불 없이 더 들어가는 건 위험하다."),
     )
     # The way down: a cracked wall in the back passage, noticed only in week 2.
     ROOM13["objects"].setdefault("passage",{})["crack"]=dict(rect=[1870,239,140,160],
         text="회벽이 갈라진 틈으로 따뜻한 바람이 새어 나온다.",need=["week2_started"],give=[],flags=[],call_label="r13_ancient_crack")
-    R13_OBJECT_NAMES.update(mk_stall="노점",mk_oven="화덕과 빵",mk_vegetables="채소 상자",mk_cloth="옷감 더미",mk_jars="항아리",
-        mk_firewood="장작 더미",rv_ice_edge="얼음 가장자리",rv_ice_slabs="물가의 얼음판",rv_rocks="강가 바위",rv_reeds="마른 풀",
-        rv_cliffs="건너편 절벽",rv_water="흐르는 강물",fr_roots="얽힌 뿌리",fr_bush="눈 덮인 덤불",fr_deep="숲 안쪽",fr_branch="쓰러진 가지",
-        an_press="누르개 아래의 돌",an_tube="빛나는 유리관",an_small_tube="작은 유리관",an_drip="빛이 떨어지는 장치",an_channel="바닥의 빛 도랑",
+    R13_OBJECT_NAMES.update(an_press="누르개 아래의 돌",an_tube="빛나는 유리관",an_small_tube="작은 유리관",an_drip="빛이 떨어지는 장치",an_channel="바닥의 빛 도랑",
         an_corridor="멀리 이어진 복도",crack="갈라진 회벽")
 
     _r13_new_places_visible=r13_object_visible

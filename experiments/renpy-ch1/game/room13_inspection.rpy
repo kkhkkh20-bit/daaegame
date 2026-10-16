@@ -152,24 +152,58 @@ init 66 python:
                     layers.extend([(x,y),r13_inspection_icon(key,w,h)])
         else:
             bg=layers[1]
+            # 0.18.63: drawn state art (ART_REQUEST_01822 section 1, dev/import_drawer_puzzle.py).
+            # The code-drawn layers below stay only as a fallback when a file is missing.
             if state["compartment_open"]:
-                # The panel slides right under the frame: a dark cavity, a strip of the real panel art.
                 x,y,w,h=spec["targets"]["compartment"]
                 strip=int(w*.22)
-                layers.extend([(x,y),R13DrawerCavity(w-strip,h),
-                    (x+w-strip,y),Transform(bg,crop=(x,y,strip,h))])
+                opened=r13_drawer_state_art("open")
+                if opened:
+                    # Panel pushed into the right wall: the open-drawer picture replaces the closed one.
+                    layers[1]=opened[1]
+                else:
+                    layers.extend([(x,y),R13DrawerCavity(w-strip,h),
+                        (x+w-strip,y),Transform(bg,crop=(x,y,strip,h))])
                 if "magnifier" not in state["taken"]:
+                    # The existing magnifier icon, a separate layer over the empty compartment.
                     layers.extend([(x+18,y+int(h*.28)),r13_inspection_icon("magnifier",w-strip-36,int(h*.42))])
             elif state.get("groove_held"):
                 # The ruler's tip sits in the notch; the panel edge glows where it should be pushed.
                 x,y,w,h=spec["targets"]["compartment"]
                 gx,gy,gw,gh=spec["targets"]["divider"]
-                layers.extend([(x,y),R13HoverCorners(w,h,"#ffe08acc",6),
-                    (gx+gw//2-40,gy-58),r13_inspection_icon("ruler",80,80)])
+                layers.extend([(x,y),R13HoverCorners(w,h,"#ffe08acc",6)])
+                held=r13_drawer_state_art("held")
+                layers.extend(list(held) if held else [(gx+gw//2-40,gy-58),r13_inspection_icon("ruler",80,80)])
             if state["paper_placed"]:
-                x,y,w,h=spec["targets"]["tag"]
-                layers.extend([(x+10,y+8),R13RubbingSheet(w-20,h-16,state["rubbing"])])
+                # Blank and rubbed paper share one canvas and one rect: the paper never jumps.
+                sheet=r13_drawer_state_art("rubbing" if state["rubbing"] else "paper")
+                if sheet:
+                    layers.extend(list(sheet))
+                else:
+                    x,y,w,h=spec["targets"]["tag"]
+                    layers.extend([(x+10,y+8),R13RubbingSheet(w-20,h-16,state["rubbing"])])
         return Composite((1280,720),*layers)
+
+    def r13_drawer_state_art(key):
+        """((x,y), displayable) for a drawn drawer state, or None when the file is missing.
+        Rects are in the 1280x720 canvas; the ruler's fractional top-left rounds to a pixel."""
+        spec=R13_INSPECTION_LAYOUT.get("drawer_states",{}).get(key)
+        if not spec or not renpy.loadable(spec["file"]):return None
+        x,y,w,h=spec["rect"]
+        # Overlays are stored at 2x display size: smooth 2:1 reduction (nearest would drop pixels).
+        art=Transform(spec["file"],xysize=(int(w),int(h)),nearest=(key=="open"))
+        return (int(round(x)),int(round(y))),art
+
+    def r13_drawer_layers(state=None):
+        """QA: which drawn drawer states the drawer view uses for a puzzle state."""
+        state=state or r13_inspection_state()
+        out=[]
+        if state["compartment_open"] and r13_drawer_state_art("open"):out.append("open")
+        elif state.get("groove_held") and r13_drawer_state_art("held"):out.append("held")
+        if state["paper_placed"]:
+            key="rubbing" if state["rubbing"] else "paper"
+            if r13_drawer_state_art(key):out.append(key)
+        return out
 
     class R13RubbingSheet(renpy.Displayable):
         """Thin paper over the tag. Rubbed: graphite hatch with the pressed picture left pale —

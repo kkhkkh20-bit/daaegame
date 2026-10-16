@@ -1,0 +1,11 @@
+{
+ "build_archive_sha256": "20466a703aeec380135690436afa8ef951322fd5524ee2e1f783cafb5e86759c",
+ "browser": {
+  "qa_wide_maps": "passed",
+  "qa_new_places": "passed",
+  "qa_drawer_puzzle": "passed",
+  "qa_carriage": "passed",
+  "qa_worldmap/qa_navigation/qa_save_slots": "fail at their menu-button fixture (r13_options_gear / 옵션) on this build and on the public 0.18.62 build alike; not caused by 0.18.63"
+ },
+ "renpy": "standard regression set + new_places, wide_river/forest/market, wide_capacity, override_chain, map_actions, drawer_puzzle_art, wide_inn/post/saveload/hall: all passed (offer_on_person updated to the new sling pose and re-run)"
+}

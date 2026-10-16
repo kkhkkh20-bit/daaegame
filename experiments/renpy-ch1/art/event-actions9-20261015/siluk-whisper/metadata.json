@@ -1,0 +1,96 @@
+{
+  "asset_id": "resident_siluk",
+  "pose_key_proposed": "event_whisper",
+  "file": "room13-pixel-acting-resident_siluk-whisper-v2.png",
+  "previous_version": "room13-pixel-acting-resident_siluk-whisper-v1.png",
+  "status": "generated_and_visually_checked_not_integrated",
+  "generation_mode": "built-in image_gen identity-preserve plus one coarse-pixel style correction",
+  "canvas_px": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "nearest": true,
+  "facing": "right",
+  "subject": "Current mature hyena Siluk leans toward offscreen right listener, one cupped paw beside mouth; one amber eye, nose and whispering mouth visible.",
+  "source_request": {
+    "path": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md",
+    "section": "2. 같은 방식이 필요한 다른 사건",
+    "exact_text": "실룩이 사람들 사이를 오가며 귓속말을 한다",
+    "requested_pose": "몸을 숙이고 손으로 입을 가린 귓속말 포즈"
+  },
+  "references": [
+    "/workspace/shared/character-catalog40/runtime-assets/resident_siluk.webp",
+    "/workspace/shared/character-catalog40/runtime-actions/room13-redesign-resident_siluk.webp"
+  ],
+  "style_reference": "/workspace/shared/character-catalog40/new-actions/buri-toolbox/buri-toolbox.png",
+  "scene_gates_supplied_by_parent": {
+    "locations": [
+      "gate",
+      "store"
+    ],
+    "day": 6,
+    "period_max": 1,
+    "case_occurred": true
+  },
+  "visible_bbox_alpha_gt32_xyxy": [
+    108,
+    83,
+    943,
+    1498
+  ],
+  "suggested_runtime_crop_xywh": [
+    88,
+    63,
+    875,
+    1455
+  ],
+  "estimated_anchors_full_canvas_px": {
+    "foot_center": [
+      557,
+      1491
+    ],
+    "left_foot_ground": [
+      344,
+      1496
+    ],
+    "right_foot_ground": [
+      700,
+      1487
+    ],
+    "head_center": [
+      700,
+      263
+    ],
+    "whisper_hand_center": [
+      886,
+      425
+    ],
+    "mouth_center": [
+      785,
+      404
+    ]
+  },
+  "anchor_notes": "All anchors visual estimates, not runtime-tested. Offscreen listener is implied at screen right. No second character drawn.",
+  "qa": {
+    "white_background": "qa-v2-white.png",
+    "gray_background": "qa-v2-gray.png",
+    "checks_passed": [
+      "Current hyena identity and dark teal jacket, mustard sweater, patched trousers, belt, boots retained.",
+      "Whisper gesture is cupped at mouth, not a flat front-facing palm; face not hidden.",
+      "Eyes gaze toward offscreen right partner, never viewer.",
+      "Coarse square steps in eye, mouth, ear, mane, clothing and silhouette.",
+      "Entire tail, boots, ears and raised hand inside image.",
+      "No text, speech bubbles, backdrop, floor, second person or other props.",
+      "White and gray composites inspected: no visible background glow."
+    ],
+    "caveats": [
+      "Generated alpha maximum is 254, not 255; preserve original alpha as instructed.",
+      "Faint alpha<=8 residual pixels remain around silhouette, but no visible halo on white/gray QA.",
+      "Visible minimum bottom margin is 38px at alpha>32.",
+      "Generated pixel clusters not mathematically guaranteed uniform grid.",
+      "No in-game scale or runtime integration tested."
+    ]
+  },
+  "integration_note": "Optional story-scene enhancement, not a missing required runtime key. No game edits or upload performed."
+}

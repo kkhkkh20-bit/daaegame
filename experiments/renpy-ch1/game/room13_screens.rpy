@@ -175,6 +175,9 @@ screen r13_world_contents(entry=False,ready=False):
             background None hover_background None insensitive_background None padding (0,0)
             action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
             tooltip r13_object_name(key)
+    # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
+    for prop,px,py in r13_world_props(entry):
+        add prop xpos px ypos py
     use r13_resident_stage(entry,ready)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():

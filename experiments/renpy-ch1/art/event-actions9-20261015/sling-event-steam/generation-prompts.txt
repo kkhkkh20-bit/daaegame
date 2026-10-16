@@ -1,0 +1,21 @@
+Built-in image_gen identity-preserving edit. Selected final image copied without raster modifications.
+
+FIRST PASS
+Use case: identity-preserve.
+Asset type: ONE full-body transparent pixel-art game character sprite, resident_sling, action event_steam.
+Input image 1: neutral current identity reference. Input image 2: current five-pose acting atlas; use it for the map character identity, native proportions and costume. Make ONE sprite, not an atlas and not multiple poses.
+Primary request: change this same orange fox postal worker into a furtive envelope-steaming work action. He stands in SIDE/THREE-QUARTER view facing LEFT and leans very slightly forward. Both paws reach ahead at lower-chest level and hold opposite ends of ONE small BLANK cream envelope. The envelope is horizontal, its mouth/open flap edge points DOWN, ready to be held over steam supplied later by the game. Hands must clearly contact the envelope. His ears are swept back, and his eyes glance SIDEWAYS toward the unseen doorway, NOT out at the viewer. Expression wary and busy, not a smile to camera. His brown mailbag is still on its shoulder strap but swung behind his body, not hanging in front.
+Preserve exactly: same recognizable fox species, orange fur and cream muzzle/tail tip, dark teal postal cap with yellow badge and band, dark teal coat with gold buttons, white collar, dark red tie, ochre trousers, brown shoes, brown mailbag and strap. Match the EXISTING cute compact storybook proportions of the acting atlas, gently rounded torso and cheeks only. Do not remodel into a long torso, long adult human limbs, huge head or tiny stunted legs. Full body, complete ears/tail/both shoes, generous clear transparent margin on all sides and at least 30 px below shoes.
+Style: visibly COARSE PIXEL ART of modest detail. Large deliberate square pixel clusters throughout, INCLUDING face, eyes, nose, mouth and paw interiors. Simple 2-3-tone shading per material, clean stepped dark outlines, no vector-like smooth lines, no subpixel curves, no tiny fur texture or glossy rendered detail. Closest match to existing atlas but slightly simplified and rounder in a cohesive way.
+Scene/backdrop: genuinely transparent alpha background, no room, no floor or cast shadow.
+Constraints: Character plus his blank envelope and worn mailbag ONLY. NO kettle, NO steam, NO stove, NO table, NO door, NO other character, NO speech bubble, NO letters/numbers/symbols on envelope, NO UI, NO watermark. Kettle and steam are separate runtime layers and must not be drawn in this asset.
+
+FINAL CORRECTION PASS
+Edit the supplied single fox postal-worker sprite, preserving its exact character identity, outfit/colors, body proportions, pixel-art face, slight forward lean, hand placement, bag behind back, sideways wary gaze, shoes and tail. This is the FINAL transparent event_steam game sprite.
+
+Only refine these three action/composition details:
+1. The ONE BLANK cream envelope is now held tilted in a SHALLOW HORIZONTAL PLANE like a small tray over an invisible heat source below. Both paws hold opposite ends. Its open mouth edge and slightly loosened triangular flap hang toward the FLOOR, facing DOWN, clearly accessible to steam from below. No readable text, no stamp, no symbols. Do NOT add kettle or steam.
+2. Both fox ears angle backwards, rather than one upright. Eyes keep their quick sideways glance away from the player.
+3. Place the full character a little smaller within the canvas, with at least 80 pixels genuinely clear transparent padding around EVERY extremity including tail, paws, shoes and ears. No cropped body parts.
+
+Render clean modest COARSE PIXEL clusters consistently inside face, eyes, nose and mouth as well as outer contours; simple stepped outlines and minimal flat shading, no tiny noise. Preserve his native compact storybook proportions, no large-head/short-leg caricature. Keep the sprite centered with complete feet. TRUE transparent alpha background everywhere outside the silhouette, no colored haze, no shadow, no glow, no floor. Character with his envelope and worn bag ONLY; no other props, no extra people, no text, no numbers, no UI.

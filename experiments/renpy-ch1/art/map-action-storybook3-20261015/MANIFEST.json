@@ -1,0 +1,139 @@
+{
+  "status": "review_not_applied",
+  "rows": [
+    {
+      "id": "yeoni",
+      "path": "/workspace/shared/main-character-actions/map-action-storybook3/yeoni/yeoni.png",
+      "use": "map_action_only",
+      "coordinate_space": "source_image_pixels",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_bbox_gt8": [
+        19,
+        10,
+        1014,
+        1505
+      ],
+      "head_estimate": [
+        395,
+        265,
+        380,
+        255
+      ],
+      "foot_estimate": [
+        775,
+        1497
+      ],
+      "seat_estimate": [
+        480,
+        1050
+      ],
+      "anchors_status": "visual_estimate_not_runtime_verified",
+      "outside_alpha_gt8": 0,
+      "dialogue_unchanged": true,
+      "placement": {
+        "scene": "village_plaza",
+        "screenshot_size": [
+          1391,
+          607
+        ],
+        "seat_screen_estimate": [
+          480,
+          441
+        ],
+        "foot_screen_estimate": [
+          530,
+          535
+        ],
+        "display_height_proposal": 250,
+        "constraint": "seat anchor first, feet simultaneously on snow; no baked chair"
+      }
+    },
+    {
+      "id": "seol",
+      "path": "/workspace/shared/main-character-actions/map-action-storybook3/seol/seol.png",
+      "use": "map_action_only",
+      "coordinate_space": "source_image_pixels",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_bbox_gt8": [
+        129,
+        12,
+        959,
+        1529
+      ],
+      "head_estimate": [
+        270,
+        120,
+        410,
+        290
+      ],
+      "foot_estimate": [
+        555,
+        1510
+      ],
+      "seat_estimate": null,
+      "anchors_status": "visual_estimate_not_runtime_verified",
+      "outside_alpha_gt8": 0,
+      "dialogue_unchanged": true,
+      "placement": {
+        "scene": "village_plaza",
+        "screenshot_size": [
+          1391,
+          607
+        ],
+        "foot_screen_estimate": [
+          1315,
+          592
+        ],
+        "display_height_proposal": 275,
+        "constraint": "same perspective plane as existing right-side owl; no blanket equal height"
+      }
+    },
+    {
+      "id": "momo",
+      "path": "/workspace/shared/main-character-actions/map-action-storybook3/momo/momo-v2.png",
+      "use": "map_action_only",
+      "coordinate_space": "source_image_pixels",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "alpha_bbox_gt8": [
+        193,
+        10,
+        885,
+        1524
+      ],
+      "head_estimate": [
+        340,
+        120,
+        330,
+        270
+      ],
+      "foot_estimate": [
+        550,
+        1510
+      ],
+      "seat_estimate": null,
+      "anchors_status": "visual_estimate_not_runtime_verified",
+      "outside_alpha_gt8": 0,
+      "dialogue_unchanged": true,
+      "placement": {
+        "scene": "post",
+        "display_height_proposal": null,
+        "constraint": "post background actual anchor unavailable in current screenshot; needs actual scene matching, do not put Momo in plaza just for comparison"
+      }
+    }
+  ],
+  "limitations": [
+    "Momo lamp underside orientation remains partly viewer-facing; no number content baked in.",
+    "Whole-body soft/plump change is modest; no strict headcount claim.",
+    "Generated placement image is reference only; background pixels may differ, never use as production replacement.",
+    "Native images retain large raster canvas; shown scene height should be controlled by anchor alignment, not entirecanvasfit."
+  ]
+}

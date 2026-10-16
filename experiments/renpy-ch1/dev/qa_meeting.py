@@ -51,7 +51,7 @@ async def main():
     await native_jump(q,'r13_final_hub');await q.wait('r13_crisis')
     title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F1"]["assertion"]');await q.press(title);await until('r13_debate_board');await q.press('되묻기');await q.wait('say');await shot('14-stone-altar-focused')
     assert await q.py('import renpy;s=renpy.store;t=type("CameraProbe",(),{})();s.r13_meeting_pan_tick(t,0,0);result=t.xoffset==0')
-    print('PASS enlarged interview, mobile, altar and pan settles at centre',flush=True);return
+    print('PASS interview framing, mobile, altar and pan settles at centre',flush=True);return
    await until('r13_meeting_agenda');await shot('02-roundtable-agenda')
    await q.press('정문이 잠겼으니');await until('r13_debate_board');await shot('03-roundtable-statements')
    if os.environ.get('ROOM13_MEETING_SMOKE'):

@@ -1,0 +1,167 @@
+{
+  "file": "room13-pixel-inn-doorframe-repair.png",
+  "kind": "inn_doorframe_repair",
+  "source_request": "/workspace/shared/current-cast-audit/requests/ART_REQUEST_01822.md",
+  "source_section": "2. 여관 접수대: 토리와 따닥",
+  "related_character": "../ttadak-doorframe/room13-pixel-acting-ttadak-doorframe.png",
+  "generation_source": "/workspace/scratch/6fde33eec4d5/generated_images/exec-51c82577-9084-4ec5-aa4e-ccac6f5f712c.png",
+  "content": [
+    "One tall narrow warm ochre repair plank",
+    "Two seated nails and one partly driven nail",
+    "Small slate nail box",
+    "Three sparse curled wood shavings"
+  ],
+  "excluded": [
+    "character",
+    "hand",
+    "hammer",
+    "door",
+    "doorframe",
+    "wall",
+    "floor",
+    "background",
+    "text",
+    "UI"
+  ],
+  "legacy_request_region": {
+    "canvas": [
+      1920,
+      720
+    ],
+    "bounds_xyxy": [
+      1100,
+      150,
+      1220,
+      470
+    ],
+    "meaning": "Approximate right-jamb repair area in inn panorama; placement region, not required PNG dimensions."
+  },
+  "source_pixel_anchors_estimated": {
+    "plank_left_contact_edge_x": 528,
+    "plank_left_contact_edge_span_y": [
+      185,
+      1350
+    ],
+    "plank_top": [
+      595,
+      184
+    ],
+    "plank_foot": [
+      598,
+      1400
+    ],
+    "partly_driven_nail_strike": [
+      516,
+      683
+    ],
+    "nail_box_ground": [
+      423,
+      1424
+    ],
+    "shavings_lowest": [
+      589,
+      1461
+    ],
+    "suggested_left_palm_contact": [
+      528,
+      595
+    ]
+  },
+  "related_character_source_anchors": {
+    "left_palm_contact": [
+      996,
+      803
+    ],
+    "left_palm_contact_span_y": [
+      740,
+      923
+    ],
+    "hammer_head_center": [
+      872,
+      560
+    ],
+    "foot_center": [
+      532,
+      1460
+    ],
+    "character_canvas": [
+      1024,
+      1536
+    ]
+  },
+  "alignment_guidance": "Overlay the new plank on the actual right door jamb, with the box and shavings at its foot. The Ttadak sprite approaches from the left; align his open left palm to the clean left plank edge. The partly driven nail is a strike target, not a required exact static hammer-head overlap because the hammer is raised. Estimate contact after separate character and prop scaling. The suggested palm point is an initial visual estimate based on the requested 320px scene region and 440px character height; it is not a certified runtime anchor.",
+  "suggested_runtime_crop_xywh": [
+    304,
+    160,
+    408,
+    1320
+  ],
+  "status": "generated_and_QA_checked_not_integrated",
+  "generation_mode": "built-in image_gen, one new generation per prop",
+  "canvas_px": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "sha256": "7450ef5311c1d4ff4fa8de20d91b806320b601f41e85b0e88779467315fb6a08",
+  "alpha_QA": {
+    "extrema": [
+      0,
+      254
+    ],
+    "threshold_bboxes_xyxy": {
+      "0": [
+        0,
+        115,
+        970,
+        1496
+      ],
+      "8": [
+        319,
+        175,
+        696,
+        1463
+      ],
+      "32": [
+        320,
+        176,
+        696,
+        1463
+      ],
+      "128": [
+        320,
+        176,
+        696,
+        1463
+      ],
+      "240": [
+        321,
+        176,
+        695,
+        1462
+      ]
+    },
+    "zero_alpha_pixels": 1357094,
+    "partial_alpha_pixels": 215770,
+    "opaque_pixels": 0
+  },
+  "QA_files": [
+    "room13-pixel-inn-doorframe-repair-qa-white.jpg",
+    "room13-pixel-inn-doorframe-repair-qa-gray.jpg"
+  ],
+  "QA_result": "Full visible contents inspected on white and gray; no characters, text or baked scene. Original alpha preserved without thresholding, flood fill, recoloring, crop, resize or cleanup. QA composites are separate inspection files, not game assets.",
+  "caveats": [
+    "Source canvases are larger than scene placement regions. Use crop plus nearest-neighbor scale at integration; the PNG itself is not a full-map-sized positional overlay.",
+    "Very low-alpha residual pixels extend outside visible silhouettes. Preserved exactly as generated; no code cleanup performed.",
+    "Pixel-art appearance is coarse and low-detail, but a mathematically uniform source pixel grid is not guaranteed.",
+    "Anchors are visual source-pixel estimates, not runtime-certified. Current expanded maps may differ from the legacy source request.",
+    "No code, game files, runtime manifests, or Claude files changed."
+  ],
+  "request_classification": {
+    "priority": "required_requested_layer",
+    "source_basis": "ART_REQUEST_01822 section 2 requested layer, not marked optional",
+    "delivery_type": "independent_transparent_map_prop_layer",
+    "separate_from_character": true,
+    "optional": false
+  }
+}

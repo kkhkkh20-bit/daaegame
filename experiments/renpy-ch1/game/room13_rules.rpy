@@ -211,6 +211,8 @@ init 55 python:
     def r13_places():
         result=["gate","square","post","inn","workshop"]
         if r13_has("lodging"):result += ["dining","kitchen","hall","room13","clinic","school","store"]
+        # 0.18.63: river / forest / market open with the other village places (room13_new_places.rpy).
+        if r13_has("lodging"):result += ["river","forest","market"]
         if r13_has("lodging") and (r13_has("family_room_unusable") or store.room13["case_state"]=="occurred"):result.append("guestroom")
         if store.room13.get("passage_open"):result.append("passage")
         if store.room13["day"]>=8:

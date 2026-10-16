@@ -120,9 +120,9 @@
         250
       ],
       "resident_ttadak": [
-        1150,
+        1043,
         472,
-        205
+        196
       ]
     },
     "work": {},
@@ -199,8 +199,23 @@
     ],
     "poses": {
       "resident_tori": "activity",
-      "resident_ttadak": "living_repair"
-    }
+      "resident_ttadak": "living_doorframe"
+    },
+    "props": [
+      {
+        "file": "assets/room13-prop-inn-doorframe-repair.webp",
+        "rect": [
+          994,
+          126,
+          226,
+          340
+        ],
+        "when": {
+          "person": "resident_ttadak"
+        },
+        "note": "0.18.63 (01822 §2): plank on the door's right post, nail box and shavings at its foot; shown only while 따닥 is in the lobby. His left palm meets the plank's left edge (x 1110)."
+      }
+    ]
   },
   "school": {
     "revision": 2,
@@ -665,7 +680,13 @@
         793
       ]
     },
-    "reviewed": true
+    "reviewed": true,
+    "offer_spots": {
+      "r13_w2e_tools": [
+        300,
+        660
+      ]
+    }
   },
   "square": {
     "revision": 3,
@@ -843,7 +864,14 @@
     "pinned": [
       "doto",
       "resident_tori"
-    ]
+    ],
+    "seats": {
+      "resident_yeoni:living_mend": [
+        1765,
+        566,
+        244
+      ]
+    }
   },
   "gate": {
     "revision": 1,
@@ -1066,6 +1094,12 @@
     },
     "poses": {
       "daram": "neutral"
+    },
+    "pose_positions": {
+      "karo:living_axlewrap": [
+        560,
+        615
+      ]
     }
   },
   "clinic": {
@@ -2634,112 +2668,18 @@
     "perspective": [
       0.402,
       -47.8
-    ]
-  },
-  "market": {
-    "width": 2160,
-    "initial_x": 440,
-    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). The picture is lit with lanterns; one picture for all periods.",
-    "files": {
-      "morning": "assets/room13-pixel-wide-market-day.webp",
-      "afternoon": "assets/room13-pixel-wide-market-day.webp",
-      "evening": "assets/room13-pixel-wide-market-day.webp"
-    },
-    "crops": {
-      "morning": [
-        0,
-        0,
-        2172,
-        724
-      ],
-      "afternoon": [
-        0,
-        0,
-        2172,
-        724
-      ],
-      "evening": [
-        0,
-        0,
-        2172,
-        724
-      ]
-    },
-    "floors": [
-      [
-        760,
-        700,
-        250
-      ],
-      [
-        1000,
-        690,
-        246
-      ],
-      [
-        1200,
-        655,
-        230
-      ],
-      [
-        1640,
-        680,
-        240
-      ],
-      [
-        1900,
-        700,
-        250
-      ]
     ],
-    "slots": [
-      [
-        760,
-        700,
-        250,
-        "waiting"
-      ],
-      [
-        1000,
-        690,
-        246,
-        "waiting"
-      ],
-      [
-        1200,
-        655,
-        230,
-        "waiting"
-      ],
-      [
-        1640,
-        680,
-        240,
-        "waiting"
-      ],
-      [
-        1900,
-        700,
-        250,
-        "waiting"
-      ]
-    ],
-    "occlusion": [],
-    "ignore_legacy_positions": true,
-    "capacity": 5,
-    "standing_height_reference": 100,
-    "perspective": [
-      0.45,
-      -60
-    ]
+    "slot_actions": {
+      "resident_momo": "living_lampnumber"
+    }
   },
   "river": {
     "width": 2160,
-    "initial_x": 200,
-    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). Evening is a darkened copy of the day picture (dev note, no evening art yet). People stand on the near bank, never on the water.",
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Big river, narrow snow bank: floor spots only on the bank (lower left), never on the water. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015) ; river afternoon 2171 wide normalized to 2172 by repeating the last column.",
     "files": {
-      "morning": "assets/room13-pixel-wide-river-day.webp",
-      "afternoon": "assets/room13-pixel-wide-river-day.webp",
+      "morning": "assets/room13-pixel-wide-river-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-river-afternoon.webp",
       "evening": "assets/room13-pixel-wide-river-evening.webp"
     },
     "crops": {
@@ -2762,70 +2702,90 @@
         724
       ]
     },
-    "floors": [
-      [
+    "objects": {
+      "river_reeds": [
+        10,
+        410,
+        160,
+        250
+      ],
+      "river_rocks": [
+        162,
+        529,
+        195,
+        80
+      ],
+      "river_ice": [
+        1437,
+        632,
+        330,
+        70
+      ],
+      "river_water": [
+        700,
         300,
         700,
-        260
+        200
+      ],
+      "river_cliffs": [
+        1717,
+        151,
+        227,
+        119
+      ]
+    },
+    "floors": [
+      [
+        260,
+        705,
+        250
       ],
       [
-        620,
-        708,
-        265
-      ],
-      [
-        930,
-        702,
-        262
-      ],
-      [
-        1240,
+        520,
         712,
-        267
+        255
+      ],
+      [
+        640,
+        710,
+        256
       ]
     ],
     "slots": [
       [
-        300,
-        700,
         260,
-        "waiting"
+        705,
+        250,
+        "floor"
       ],
       [
-        620,
-        708,
-        265,
-        "waiting"
-      ],
-      [
-        930,
-        702,
-        262,
-        "waiting"
-      ],
-      [
-        1240,
+        520,
         712,
-        267,
-        "waiting"
+        255,
+        "floor"
+      ],
+      [
+        640,
+        710,
+        256,
+        "floor"
       ]
     ],
     "occlusion": [],
     "ignore_legacy_positions": true,
-    "capacity": 4,
-    "standing_height_reference": 100,
+    "capacity": 3,
     "perspective": [
-      0.6,
-      -160
+      0.808,
+      -319.0
     ]
   },
   "forest": {
     "width": 2160,
     "initial_x": 440,
-    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). Evening is a darkened copy of the day picture.",
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Pathless forest: floor spots on open snow in front of the roots and logs. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015).",
     "files": {
-      "morning": "assets/room13-pixel-wide-forest-day.webp",
-      "afternoon": "assets/room13-pixel-wide-forest-day.webp",
+      "morning": "assets/room13-pixel-wide-forest-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-forest-afternoon.webp",
       "evening": "assets/room13-pixel-wide-forest-evening.webp"
     },
     "crops": {
@@ -2848,61 +2808,198 @@
         724
       ]
     },
+    "objects": {
+      "forest_roots": [
+        108,
+        454,
+        650,
+        194
+      ],
+      "forest_trunk": [
+        194,
+        0,
+        281,
+        454
+      ],
+      "forest_rock": [
+        1134,
+        605,
+        140,
+        65
+      ],
+      "forest_branches": [
+        1274,
+        0,
+        346,
+        324
+      ]
+    },
     "floors": [
       [
-        820,
-        692,
-        256
+        1000,
+        700,
+        250
       ],
       [
-        1100,
-        702,
-        261
+        1450,
+        706,
+        255
       ],
       [
-        1400,
-        686,
-        253
-      ],
-      [
-        1760,
-        702,
-        261
+        1900,
+        712,
+        258
       ]
     ],
     "slots": [
       [
-        820,
-        692,
-        256,
-        "waiting"
+        1000,
+        700,
+        250,
+        "floor"
       ],
       [
-        1100,
-        702,
-        261,
-        "waiting"
+        1450,
+        706,
+        255,
+        "floor"
       ],
       [
-        1400,
-        686,
-        253,
-        "waiting"
+        1900,
+        712,
+        258,
+        "floor"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "perspective": [
+      0.667,
+      -216.3
+    ]
+  },
+  "market": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Market street: floor spots on the cobbles in front of the stalls. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015).",
+    "files": {
+      "morning": "assets/room13-pixel-wide-market-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-market-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-market-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "market_produce": [
+        594,
+        389,
+        335,
+        86
+      ],
+      "market_oven": [
+        432,
+        324,
+        108,
+        108
+      ],
+      "market_firewood": [
+        335,
+        443,
+        173,
+        151
+      ],
+      "market_cheese": [
+        1210,
+        346,
+        356,
+        162
+      ],
+      "market_cloth": [
+        1728,
+        400,
+        216,
+        108
+      ],
+      "market_pots": [
+        2030,
+        367,
+        119,
+        140
+      ]
+    },
+    "floors": [
+      [
+        900,
+        640,
+        225
       ],
       [
-        1760,
-        702,
-        261,
-        "waiting"
+        1150,
+        605,
+        205
+      ],
+      [
+        1420,
+        655,
+        230
+      ],
+      [
+        1650,
+        700,
+        250
+      ]
+    ],
+    "slots": [
+      [
+        900,
+        640,
+        225,
+        "floor"
+      ],
+      [
+        1150,
+        605,
+        205,
+        "floor"
+      ],
+      [
+        1420,
+        655,
+        230,
+        "floor"
+      ],
+      [
+        1650,
+        700,
+        250,
+        "floor"
       ]
     ],
     "occlusion": [],
     "ignore_legacy_positions": true,
     "capacity": 4,
-    "standing_height_reference": 100,
     "perspective": [
-      0.5,
-      -90
+      0.468,
+      -76.5
     ]
   },
   "ancient": {

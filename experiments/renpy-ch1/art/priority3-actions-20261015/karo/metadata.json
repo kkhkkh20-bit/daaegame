@@ -1,0 +1,62 @@
+{
+  "canonical_id": "karo",
+  "file": "karo-axlewrap-v2.png",
+  "pose_key_proposal": "living_axlewrap",
+  "design_source": "current runtime-assets/karo.webp original proportions retained",
+  "action": "Crouching, wrapping cloth around external carriage axle; axle/wheel excluded",
+  "crop_source_xyxy": [
+    9,
+    130,
+    1018,
+    1441
+  ],
+  "coordinate_space": "pixels relative to alpha>8 crop origin",
+  "source_canvas": [
+    1024,
+    1536
+  ],
+  "crop_origin_source_xy": [
+    9,
+    130
+  ],
+  "head_estimated": [
+    216,
+    180,
+    410,
+    300
+  ],
+  "foot_estimated": [
+    775,
+    1290
+  ],
+  "hand_estimated": [
+    126,
+    726
+  ],
+  "seat_estimated": null,
+  "world_placement_candidate": {
+    "map": "gate",
+    "canvas": [
+      1920,
+      720
+    ],
+    "foot": [
+      575,
+      612
+    ],
+    "display_height": 185,
+    "near_existing_wheel": [
+      461,
+      528
+    ]
+  },
+  "conditions": "day1-14 morning/afternoon; evening box/tea action retained",
+  "caveat": "All anchors approximate visual estimates. Cloth loop must overlap actual axle in runtime; no final placement verified.",
+  "alpha_range": [
+    0,
+    254
+  ],
+  "qa": "White/gray alpha composites clean. Direct RGB preview can show invisible color outside silhouette; alpha at tested halo pixels is zero. Left cloth margin about10px; no visible clipping.",
+  "sha256": "4de994f5c66c053293de74f13e6713859ac823cd26f1330d49054bb034062d08",
+  "generation": "imagegen edit only; generated PNG unchanged; v1 excluded due left cloth clipping"
+}

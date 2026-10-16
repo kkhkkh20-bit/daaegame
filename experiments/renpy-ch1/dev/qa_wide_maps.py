@@ -1,4 +1,4 @@
-# Browser check (0.18.59/0.18.60): the wide maps and the two elders in the real web build.
+# Browser check (0.18.59/0.18.60, 0.18.63 new places and actions): the wide maps in the real web build.
 # For each scene: the right picture (state x daylight) is shown at the right width, every
 # visible object is pressed at a point Ren'Py's own focus lookup gives to that object,
 # and the click really selects it. Screenshots go to $ROOM13_QA_OUT/wide-maps.
@@ -23,6 +23,19 @@ SCENES = [
     ("hall-after-afternoon", "hall", 6, 1, "occurred", 440),
     ("room13-before-morning", "room13", 3, 0, "pending", 440),
     ("room13-after-afternoon", "room13", 6, 1, "occurred", 440),
+    # 0.18.63: new places, one picture per period; investigation actions on the existing maps.
+    ("river-morning", "river", 3, 0, "pending", 0),
+    ("river-afternoon", "river", 3, 1, "pending", 880),
+    ("river-evening", "river", 7, 2, "pending", 440),
+    ("forest-morning", "forest", 3, 0, "pending", 440),
+    ("forest-afternoon", "forest", 3, 1, "pending", 0),
+    ("forest-evening", "forest", 7, 2, "pending", 880),
+    ("market-morning", "market", 3, 0, "pending", 0),
+    ("market-afternoon", "market", 3, 1, "pending", 880),
+    ("market-evening", "market", 7, 2, "pending", 440),
+    ("post-momo-lamp", "post", 4, 0, "pending", 440),
+    ("square-yeoni-seol-owl", "square", 3, 0, "pending", 320),
+    ("gate-karo-axle", "gate", 6, 0, "occurred", 0),
 ]
 
 PICK = r'''

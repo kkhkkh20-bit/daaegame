@@ -1,0 +1,57 @@
+{
+  "asset": "mungchi-handrub.png",
+  "character": "resident_mungchi",
+  "status": "optional_scene_enhancement_candidate",
+  "generation_mode": "built-in image_gen identity-preserving edit",
+  "runtime_integrated": false,
+  "sources": [
+    "/workspace/shared/character-catalog40/runtime-assets/resident_mungchi.webp",
+    "/workspace/shared/character-catalog40/runtime-actions/room13-pixel-acting-mungchi.webp"
+  ],
+  "request_source": "/workspace/shared/current-cast-audit/source/docs/ART_REQUEST_01853.md lines 37-47",
+  "request": "Stand with both hands rubbing together, glance sideways at an offcanvas sealed door. Preserve current panda identity, age impression and outfit. Innocent everyday fully clothed pose. Slightly rounder balanced storybook proportions, low-detail pixel rendering including face. No boxes, door, text, numbers, scene background or invented evidence.",
+  "suggested_event": {
+    "location": "hall",
+    "days": [
+      5,
+      6
+    ],
+    "condition": "case occurred"
+  },
+  "canvas": {
+    "width": 1024,
+    "height": 1536,
+    "format": "PNG",
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 254,
+    "alpha_gt16_bbox_exclusive": [
+      168,
+      12,
+      907,
+      1518
+    ]
+  },
+  "estimated_anchors": {
+    "ground_contact_px": [
+      582,
+      1507
+    ],
+    "normalized_full_canvas": [
+      0.5684,
+      0.9811
+    ],
+    "hand_contact_px": [
+      465,
+      662
+    ],
+    "glance_direction": "screen right, toward offcanvas door",
+    "caveat": "Visual estimates only; verify game placement at target scale. Hands are in a static rubbing/contact pose, not an animation."
+  },
+  "qa": {
+    "white_composite": "qa-white.jpg",
+    "gray_composite": "qa-gray.jpg",
+    "visual_checks": "Correct panda species, beret, navy coat, burgundy waistcoat, cream collar and legs, amber brooch, dark breeches and buckle shoes. Both hands in rubbing/contact position, eyes look screen-right. Entire silhouette present. Transparency verified; generated alpha retained unmodified. No background is baked into the visible white composite."
+  },
+  "generated_original": "/workspace/scratch/6fde33eec4d5/generated_images/exec-6635af69-b1ee-45e4-a1a9-342e6bc79a9e.png"
+}
