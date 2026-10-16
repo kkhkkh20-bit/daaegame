@@ -21,7 +21,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 12 | 113 | `systems/room13_present_flow.rpy:38` | _r13_night_topics |
 | 13 | 117 | `systems/room13_night_talk.rpy:33` | _r13_uk_topics |
 | 14 | 123 | `systems/room13_use_knowledge.rpy:53` | _r13_new_places_topics |
-| 15 | 130 | `systems/room13_new_places.rpy:122` | _r13_direct_work_topics |
+| 15 | 130 | `systems/room13_new_places.rpy:163` | _r13_direct_work_topics |
 | 16 | 133 | `systems/room13_direct_work.rpy:14` | _r13_catalog_topics |
 | 17 | 148 | `systems/room13_materials.rpy:56` |  |
 
@@ -93,7 +93,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 94 | `systems/room13_first_day_flow.rpy:46` | _r13_intro_notes |
 | 3 | 97 | `systems/room13_intro_clues.rpy:119` | _r13_learning_mystery_notes |
 | 4 | 98 | `systems/room13_learning.rpy:116` | _r13_poc_notes |
-| 5 | 100 | `systems/room13_poc_route.rpy:138` | _r13_tn_notes |
+| 5 | 100 | `systems/room13_poc_route.rpy:140` | _r13_tn_notes |
 | 6 | 121 | `systems/room13_trial_notes.rpy:48` |  |
 
 ## `r13_finish_topic` (5층)
@@ -131,7 +131,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 97 | `systems/room13_intro_clues.rpy:94` | _r13_poc_intro_goal |
-| 2 | 100 | `systems/room13_poc_route.rpy:124` | _r13_daram_room_intro_goal |
+| 2 | 100 | `systems/room13_poc_route.rpy:126` | _r13_daram_room_intro_goal |
 | 3 | 101 | `systems/room13_daram_home.rpy:128` | _r13_note_spot_goal |
 | 4 | 129 | `systems/room13_mother_note_spot.rpy:21` |  |
 
@@ -187,7 +187,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:503` | _r13_poc_campaign_goal |
-| 2 | 100 | `systems/room13_poc_route.rpy:126` |  |
+| 2 | 100 | `systems/room13_poc_route.rpy:128` |  |
 
 ## `r13_click_feedback` (2층)
 
@@ -236,7 +236,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_learning.rpy:78` | _r13_poc_job_context |
-| 2 | 100 | `systems/room13_poc_route.rpy:129` |  |
+| 2 | 100 | `systems/room13_poc_route.rpy:131` |  |
 
 ## `r13_life_apply_purchase` (2층)
 
@@ -285,7 +285,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 57 | `room13_life.rpy:164` | _r13_new_places_resident_where |
-| 2 | 130 | `systems/room13_new_places.rpy:79` |  |
+| 2 | 130 | `systems/room13_new_places.rpy:100` |  |
 
 ## `r13_secret_route_available` (2층)
 

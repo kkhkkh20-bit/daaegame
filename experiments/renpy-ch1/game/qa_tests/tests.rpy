@@ -9634,6 +9634,41 @@ testcase ancient_granny:
     screenshot "ancient_field.png"
     assert eval (room13["location"]=="ancient" and r13_has("ancient_found") and r13_has("ancient_granny_met") and "ancient" in r13_places())
 
+testcase mom_hideout:
+    # 0.18.69 (owner): mom's first hiding place under the forest roots; 2주 차 엄마 대화.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="forest",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    run Call("r13_qa_object","forest_roots")
+    click pos (640,600) until eval ("따라오는 발소리" in str(getattr(store,"r13_packet",("",""))[1])) timeout 60
+    pause 1.0
+    screenshot "mom_hideout.png"
+    click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval (r13_has("mom_hideout_found"))
+
+testcase market_crowd:
+    # 0.18.69 (owner): traders gather at the market; week 2 jobs at the river and forest.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=6,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    screenshot "market_crowd_morning.png"
+    python:
+        r13_qa_note("market day6 morning: %r"%([(a["person"],a["x"],a["y"],a["height"]) for a in r13_stage_people()],))
+    assert eval (len(r13_people())>=5)
+    run Call("r13_qa_roam",dict(day=10,period=1,location="river",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
+    pause 1.0
+    assert eval ("resident_kkwak" in r13_people())
+    run Call("r13_qa_roam",dict(day=10,period=1,location="forest",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
+    pause 1.0
+    assert eval ("resident_badook" in r13_people())
+    screenshot "forest_week2.png"
+
 testcase map_actions:
     # 0.18.63 (owner): event, life and map actions in the investigation scenes where the script puts them.
     pause 2.0
@@ -9704,7 +9739,7 @@ testcase map_actions:
 
 testcase new_places:
     # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
-    # map, one picture per period. 0.18.68: only residents with a new-place routine come, days 2-7.
+    # map, one picture per period. 0.18.68: only residents with a new-place routine come (0.18.69: days 2-7 and 9-14).
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -9725,7 +9760,7 @@ testcase new_places:
         store._np_before=[k for k in R13_NEW_PLACES if k in r13_places()]
         store.room13=_np_saved
         r13_qa_note("new places people: %r / before lodging: %r"%(store._np_people,store._np_before))
-    assert eval (_np_people and all(x in R13_NEW_PLACE_ROUTINES and R13_NEW_PLACE_ROUTINES[x][1]==l and 2<=d<8 for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
+    assert eval (_np_people and all(any(r[1]==l and (d in (r[3] or R13_NEW_PLACE_DAYS)) for r in R13_NEW_PLACE_ROUTINES.get(x,())) for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
     click "지도 · 이동"
     pause 1.5
     screenshot "np_map.png"

@@ -106,10 +106,12 @@ init 100 python:
         s=store.room13 or {}
         if not r13_poc_active():return None
         has=lambda k:k in s.get("flags",[]) or k in s.get("evidence",[])
-        if has("poc:granny_explained"):return "할머니는 엄마 말을 받아 적었을 뿐이라고 했다. 그럼 엄마는 무엇을 경고한 걸까?"
+        # 0.18.69 (design review #1): before any testimony points at granny the question stays
+        # open; it names her only after J06 (she says she wrote it), H9, H16 or the rope night.
+        if has("poc:granny_explained"):return "할머니는 엄마 말을 받아 적었을 뿐이라고 했다. 엄마는 ‘쓴 적 없다’고 했는데, 할머니는 왜 우리를 여관에 두려 할까?"
         if has("poc:letter_conflict"):
-            if has("warning_exposed"):return "엄마가 부탁하지 않았다면, 할머니는 왜 우리를 불렀을까?"
-            return "엄마가 부탁하지 않았다면, 할머니는 왜 우리를 불렀을까?"
+            if any(has(k) for k in ("H9","H16","know_granny_reads","granny_lure_seen")):return "엄마가 부탁하지 않았다면, 할머니는 왜 우리를 불렀을까?"
+            return "엄마가 쓰지 않았다면, 누가 어떤 사정으로 이 편지를 보냈을까?"
         if has("E18"):return "‘오라는 편지를 쓴 적 없어’ — 그럼 우리가 받은 편지는?"
         if has("warning_location"):return "초롱이 말한 점검함에는 무엇이 들어 있을까?"
         if has("J04") or has("J05"):return "엄마가 초롱에게 맡긴 봉투에는 무엇이 적혀 있을까?"
