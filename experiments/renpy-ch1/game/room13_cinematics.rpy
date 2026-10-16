@@ -53,6 +53,15 @@ label r13_cinematic(key, leave=False):
     $ renpy.music.stop(channel="typing")
     window hide
     hide r13_visitor
+    if key in R13_ENDING_STORIES:
+        call r13_ending_story(key)
+        if key not in persistent.room13_cinematics_seen:
+            $ persistent.room13_cinematics_seen=persistent.room13_cinematics_seen+[key]
+        if leave:
+            scene expression r13_ending_story_art(key,3)
+            $ r13_scene_key=None
+        $ r13_cg_active=leave
+        return
     if key not in persistent.room13_cinematics_seen:
         $ renpy.config.skipping = None
         call screen r13_cinematic_view(key)

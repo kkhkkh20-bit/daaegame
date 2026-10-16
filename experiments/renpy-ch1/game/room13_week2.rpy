@@ -311,7 +311,7 @@ label r13_ending:
         call r13_lines([(None,"불이 돌아오자 사람들이 안도의 숨을 내쉬었다. 그 뒤편에서 누군가 한 사람 몫의 그릇을 치웠다."),("resident_eunho","오늘은 따뜻하겠네요."),(None,"며칠 뒤 힘을 재는 바늘이 다시 흔들렸다. 이번에 장치에 이어 붙인 사람의 이름은 돌아오지 않았다.")],"ending:E3")
     elif r13_ending_id=="E4":
         call r13_scene("r13_school","학교 대피소","quiet")
-        call r13_lines([("nabi","이쪽 방은 닫아야 해요. 다들 한 곳으로 모여요."),("buri","고칠 수 있는 건 내일 다시 볼게요."),("mom","이름부터 적어요. 누구를 어디로 옮겼는지 남겨야 해요."),(None,"억지로 힘을 뽑아내는 일은 멈췄다. 하지만 진실을 밝힌 만큼 잠자리와 밥까지 마련하지는 못했다.")],"ending:E4")
+        call r13_lines([("nabi","이쪽 방은 닫아야 해요. 다들 한 곳으로 모여요."),("buri","고칠 수 있는 건 내일 다시 볼게요."),("mom","이름부터 적어요. 누구를 어디로 옮겼는지 남겨야 해요."),(None,"억지로 힘을 뽑아내는 일은 멈췄다. 그래도 모두가 안전하게 지낼 조건을 끝내 갖추지는 못했다.")],"ending:E4")
         if not r13_has("supplies_ready"):
             call r13_lines([(None,"가장 먼저 식량이 모자랐다. 창고에서 실제로 꺼내 오지 못한 곡물은 수첩에만 적혀 있었다. 그 곡물로는 아무의 배도 채우지 못했다.")],"ending:E4:no_food")
         if not r13_has("patient_transport"):
@@ -335,7 +335,11 @@ label r13_ending:
     window hide
     call r13_cinematic(r13_ending_id, leave=True)
     $ renpy.force_autosave()
-    call screen r13_ending_screen(r13_ending_id)
-    if _return=="restart":
-        $ renpy.full_restart(label="room13_start")
-    return
+    while True:
+        call screen r13_ending_screen(r13_ending_id)
+        if _return=="replay":
+            call r13_cinematic(r13_ending_id,leave=True)
+        elif _return=="restart":
+            $ renpy.full_restart(label="room13_start")
+        else:
+            return
