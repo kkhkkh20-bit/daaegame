@@ -9704,7 +9704,7 @@ testcase map_actions:
 
 testcase new_places:
     # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
-    # map, one picture per period, nobody scheduled there yet.
+    # map, one picture per period. 0.18.65: only residents with a new-place routine come, days 2-7.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -9725,7 +9725,7 @@ testcase new_places:
         store._np_before=[k for k in R13_NEW_PLACES if k in r13_places()]
         store.room13=_np_saved
         r13_qa_note("new places people: %r / before lodging: %r"%(store._np_people,store._np_before))
-    assert eval (_np_people==[] and _np_before==[] and room13["location"]=="square")
+    assert eval (_np_people and all(x in R13_NEW_PLACE_ROUTINES and R13_NEW_PLACE_ROUTINES[x][1]==l and 2<=d<8 for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
     click "지도 · 이동"
     pause 1.5
     screenshot "np_map.png"
