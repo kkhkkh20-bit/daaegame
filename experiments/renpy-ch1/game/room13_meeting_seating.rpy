@@ -62,8 +62,9 @@ init 99 python:
             store.r13_meeting_pan_started=now if enabled else now-1
             store.r13_meeting_pan_painted_revision=revision
         elapsed=now-getattr(store,"r13_meeting_pan_started",0.0)
-        moving=enabled and getattr(store,"r13_meeting_previous_focus",None) is not None and 0<=elapsed<.32
-        u=min(1.0,max(0.0,elapsed/.32));ease=u*u*(3-2*u)
+        duration=.18 if getattr(store,"r13_meeting_live_lap",0)>0 else .32
+        moving=enabled and getattr(store,"r13_meeting_previous_focus",None) is not None and 0<=elapsed<duration
+        u=min(1.0,max(0.0,elapsed/duration));ease=u*u*(3-2*u)
         distance=getattr(store,"r13_meeting_pan_direction",1)*1200
         trans.xoffset=int(-distance*ease if outgoing else distance*(1-ease)) if moving else 0
         trans.alpha=(1.0 if moving else 0.0) if outgoing else 1.0
@@ -222,6 +223,22 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
             action Return(("conclude",)) sensitive ready and r13_debate_ready(claim)
     else:
         if live_controls:
+            $ live_ids=r13_meeting_live_ids(claim,r13_meeting_live_sid)
+            $ visible_ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
+            frame:
+                area (942,18,314,64) padding (12,8) background R13PaperFrame()
+                text ("발언 %d / %d · %s"%(visible_ids.index(r13_meeting_live_sid)+1,len(visible_ids),"새 발언" if r13_debate_statement(claim,r13_meeting_live_sid).get("hidden") and not r13_meeting_heard(claim,r13_meeting_live_sid) else "반복 듣기" if r13_meeting_live_lap else "토론 중")) align (.5,.5) size r13_read_size(20,23) color "#493b30"
+            hbox:
+                xpos 736 ypos 646 spacing 12
+                textbutton "‹":
+                    style "r13_action_button" xsize 72 ysize 64 text_size 32 alt "이전 발언"
+                    action Function(r13_meeting_request_live_action,"previous") sensitive ready and len(live_ids)>1
+                textbutton "›":
+                    style "r13_action_button" xsize 72 ysize 64 text_size 32 alt "다음 발언"
+                    action Function(r13_meeting_request_live_action,"next") sensitive ready and len(live_ids)>1
+            if ready and len(live_ids)>1:
+                key "K_LEFT" action Function(r13_meeting_request_live_action,"previous")
+                key "K_RIGHT" action Function(r13_meeting_request_live_action,"next")
             textbutton "발언 고르기":
                 style "r13_action_button" xpos 496 ypos 646 xsize 224 ysize 64 text_size 23
                 action Function(r13_meeting_request_live_action,"review") sensitive ready

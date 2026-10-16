@@ -73,6 +73,7 @@ screen r13_more_tools():
     zorder 105
     $ line_active=renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     $ meeting_line=line_active and r13_meeting_active
+    $ live_listening=meeting_line and r13_meeting_live_active and not r13_meeting_interrupting
     # 0.18.56: 생활 장부 (money ledger, shared work) moved here from the removed top board.
     $ ledger_ok=(not line_active) and bool(room13) and r13_has("livelihood_open") and renpy.get_screen("r13_hub") is not None
     frame:
@@ -84,17 +85,17 @@ screen r13_more_tools():
                     style "r13_action_button" xsize 300 ysize 48 text_size 20
                     selected _preferences.afm_enable
                     action [Hide("r13_more_tools"),Preference("auto-forward","toggle")]
-                textbutton "건너뛰기":
+                textbutton ("토론 멈추기" if live_listening else "건너뛰기"):
                     style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    action [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)]
+                    action ([Hide("r13_more_tools"),Function(r13_meeting_request_live_action,"review")] if live_listening else [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)])
             if line_active:
                 textbutton "읽은 대사 넘기기":
                     style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    selected r13_fast_read sensitive line_active
+                    selected r13_fast_read sensitive line_active and not live_listening
                     action [Hide("r13_more_tools"),Function(r13_toggle_read_skip)]
                 textbutton "모든 대사 빠르게":
                     style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    selected r13_fast_all sensitive line_active
+                    selected r13_fast_all sensitive line_active and not live_listening
                     action [Hide("r13_more_tools"),Function(r13_toggle_fast_all)]
                 textbutton "대화창 숨기기":
                     style "r13_action_button" xsize 300 ysize 48 text_size 20 sensitive line_active
