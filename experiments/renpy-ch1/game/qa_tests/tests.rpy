@@ -9717,6 +9717,33 @@ testcase new_cast_errand:
     click pos (640,600) until eval (r13_has("tosil_errand_seen")) timeout 60
     assert eval ("tosil:forest" in [k for k,_ in r13_topics("resident_tosil")])
 
+testcase schedule_dump:
+    # 0.18.77: every person's real 14-day whereabouts as the game computes them (r13_where), for the
+    # schedule table (docs/SCHEDULE_14D.md). Main path: case occurs on day 4, granny not detained.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    python:
+        import json,os
+        _sd_saved=winter_copy.deepcopy(store.room13)
+        _sd_people=sorted(set(R13_GREETING)|{"mom","granny","nabi","doto","bami","buri","karo","neoul","seryeon","guard"})
+        _sd_out={"names":{p:R13_NAMES.get(p,p) for p in _sd_people},"rows":{}}
+        for _p in _sd_people:
+            _sd_out["rows"][_p]=[]
+        for _d in range(1,15):
+            for _q in range(3):
+                _n=winter_copy.deepcopy(_sd_saved)
+                _n.update(day=_d,period=_q,case_state="occurred" if _d>=5 else "pending",week2_started=_d>=8,granny_state="trusted",victim_state="alive" if _d<5 else "dead")
+                store.room13=_n
+                for _p in _sd_people:
+                    try:_w=r13_where(_p)
+                    except Exception as _e:_w="ERR"
+                    _sd_out["rows"][_p].append(_w)
+        store.room13=_sd_saved
+        open(os.path.join(renpy.config.basedir,"qa_schedule.json"),"w").write(json.dumps(_sd_out,ensure_ascii=False))
+
 testcase map_actions:
     # 0.18.63 (owner): event, life and map actions in the investigation scenes where the script puts them.
     pause 2.0
