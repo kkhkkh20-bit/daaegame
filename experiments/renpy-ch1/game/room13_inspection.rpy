@@ -127,6 +127,8 @@ init 66 python:
         renpy.restart_interaction()
 
     def r13_inspection_icon(key,width=96,height=76):
+        art=r13_material_art("tool:"+key)
+        if art is not None:return Transform(art,xysize=(width,height),fit="contain",nearest=True)
         spec=R13_INSPECTION_LAYOUT.get("icons",{}).get(key)
         if spec and renpy.loadable(spec["file"]):
             return Transform(Transform(spec["file"],crop=tuple(spec["crop"])),xysize=(width,height),fit="contain",nearest=True)

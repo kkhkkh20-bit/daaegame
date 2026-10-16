@@ -72,6 +72,8 @@ init 68 python:
         # Testimony portraits come only from authored evidence_sources.
         who=ROOM13["evidence_sources"].get(key) if r13_record_category(key)=="testimony" else None
         if who:return r13_art(who,"avatar_neutral")
+        art=r13_material_art(key)
+        if art is not None:return art
         if key in R13_RECORD_ICON_SHEET:
             spec=R13_RECORD_ICON_SHEET[key]
             return Crop(tuple(spec["crop"]),spec["file"])
