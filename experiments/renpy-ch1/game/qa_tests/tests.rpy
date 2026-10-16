@@ -11019,3 +11019,72 @@ testcase ep4_after_trial:
     click "회의를 계속한다"
     click pos (640,600) until eval (r13_has("chorong_lamp")) timeout 120
     assert eval (r13_has("nt_ttadak_proven") and r13_has("owl_hat"))
+
+testcase ep5_reunion_lab:
+    # 에피소드 ⑤: 초록 유리 조각으로 폐온실에서 엄마와 재회하고, 12일 아침 옛 시설에서 조각을 모은다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=11,period=2,location="greenhouse",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,evidence=["Y03"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared"))
+    click pos (640,600) until screen "choice" timeout 60
+    pause 0.5
+    screenshot "ep5_tosil_menu.png"
+    click "“우리랑 같이 가자.”"
+    click pos (640,600) until eval (r13_has("mom_reunited") and not renpy.get_screen("say")) timeout 90
+    assert eval (room13["mom_state"]=="reunited" and r13_has("ws_tosil_kept") and "Y04" in room13["evidence"])
+    run Call("r13_qa_roam",dict(day=12,period=0,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["Y03","E30"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","tok_cleared"))
+    click pos (640,600) until eval (r13_has("ws_lab") and "Y06" in room13["evidence"] and not renpy.get_screen("say")) timeout 90
+    assert eval ("Y05" in room13["evidence"] and "Y07" in room13["evidence"] and r13_has("ancient_found"))
+
+testcase ep5_soup_meeting:
+    # 에피소드 ⑤: 설득하지 못한 수프의 밤. 엄마가 셋을 깨우고 도담을 잃는다. 회의 Q5, 수레의 진실, 선생님을 막는다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E30","Y06","Y07"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_cabinet_locked","evening_brief:12"))
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 120
+    pause 0.6
+    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y11"
+    click pos (640,600) until eval (r13_debate_is_broken("Q5","s1") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y12"
+    click pos (640,600) until eval (r13_debate_is_broken("Q5","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y13"
+    click pos (640,600) until eval (r13_debate_is_broken("Q5","s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y14"
+    click pos (640,600) until eval (r13_debate_is_broken("Q5","s4") and renpy.get_screen("r13_debate_board")) timeout 90
+    pause 1.2
+    click "결론을 말한다"
+    pause 1.0
+    click "약을 넣은 건 선생님이다. 아이들이 얼거나 수레에 실려 갈 거라 믿었다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
+    click pos (640,600) until "수레의 진실을 밝힌다" timeout 60
+    click "수레의 진실을 밝힌다"
+    click pos (640,600) until "냄비를 쳐낸다" timeout 60
+    click "냄비를 쳐낸다"
+    click pos (640,600) until eval (r13_has("ws_done")) timeout 120
+    assert eval (r13_has("teacher_alive") and r13_has("dodam_dead") and r13_has("ws_some_alive") and r13_has("ws_cart_truth"))
+
+testcase ep5_perfect:
+    # 에피소드 ⑤ 완벽한 길: 선생님을 설득했고 서리가 약장을 잠갔다. 아무도 잠들지 않는다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited"),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_teacher_persuaded","ws_cabinet_locked","evening_brief:12"))
+    click pos (640,600) until eval (r13_has("ws_done")) timeout 120
+    assert eval (r13_has("ws_perfect") and r13_has("ws_kids_alive") and not r13_has("dodam_dead"))
+
+

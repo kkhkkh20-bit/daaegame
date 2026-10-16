@@ -29,7 +29,7 @@ label r13_week2_day:
     jump r13_roam
 
 label r13_week2_events:
-    if room13.get("reply_due") is not None and r13_abs_time()>=room13["reply_due"] and not r13_has("E19"):
+    if room13.get("reply_due") is not None and r13_abs_time()>=room13["reply_due"] and not r13_has("E19") and not r13_has("chorong_dead") and not r13_has("mom_reunited"):
         call r13_scene("winter_square","광장 · 등 밑의 답장","search")
         call r13_lines([("resident_lamplighter","답이 왔습니다. 예전 은신처 말고 지금 보내는 신호를 확인하라는군요."),(None,"「폐온실 아래 등 표식을 봐 줘. 주소를 다른 사람에게 말하지 마. 뒤따르는 사람이 있으면 들어오지 말고.」")],"week2:reply")
         $ r13_grant(["E19"],"초롱이 직접 가져온 현재 답장")

@@ -52,7 +52,7 @@ init 60 python:
     def r13_map_discovered(key):
         # Do not expose secret names through stale/legacy current-location saves.
         if key=="passage":return bool(store.room13.get("passage_open") and r13_secret_route_available())
-        if key=="greenhouse":return bool(store.room13["day"]>=R13_WEEK2_DAY and r13_has("E19"))
+        if key=="greenhouse":return bool(store.room13["day"]>=R13_WEEK2_DAY and (r13_has("E19") or r13_has("Y03")))
         if key=="altar":return bool(store.room13.get("finale_started"))
         return True
 
