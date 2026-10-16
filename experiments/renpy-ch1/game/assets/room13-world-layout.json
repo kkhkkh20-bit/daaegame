@@ -3040,5 +3040,80 @@
       0.468,
       -76.5
     ]
+  },
+  "ancient": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). Underground: one picture for all periods.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-ancient-day.webp",
+      "afternoon": "assets/room13-pixel-wide-ancient-day.webp",
+      "evening": "assets/room13-pixel-wide-ancient-day.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "floors": [
+      [
+        760,
+        702,
+        256
+      ],
+      [
+        1060,
+        690,
+        250
+      ],
+      [
+        1360,
+        698,
+        254
+      ]
+    ],
+    "slots": [
+      [
+        760,
+        702,
+        256,
+        "waiting"
+      ],
+      [
+        1060,
+        690,
+        250,
+        "waiting"
+      ],
+      [
+        1360,
+        698,
+        254,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "standing_height_reference": 100,
+    "perspective": [
+      0.55,
+      -130
+    ]
   }
 }

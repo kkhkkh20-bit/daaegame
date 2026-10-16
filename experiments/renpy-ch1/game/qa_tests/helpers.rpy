@@ -89,7 +89,7 @@ label r13_qa_shop:
     $ r13_prepare_history()
     $ r13_scene_key=None
     $ r13_upgrade()
-    $ room13.update(location="store",day=5,period=0,life_poc=True,case_state="occurred")
+    $ room13.update(location="market",day=5,period=0,life_poc=True,case_state="occurred")
     $ room13["flags"]=list(set(room13["flags"])|{"lodging","entry_corrected","livelihood_open"})
     $ room13["livelihood"]=dict(cash=40,debt=0)
     call r13_scene(R13_PLACES["store"][1],R13_PLACES["store"][0],"calm")
@@ -844,3 +844,19 @@ init 999 python:
         layout=getattr(store,"R13_WORLD_LAYOUTS",{}).get(loc,{})
         probe=r13_world_display_height(a["person"],a["pose"],1000.0,dict(layout,standing_height_reference=layout.get("standing_height_reference",1000)))
         return a["height"]*1000.0/probe if probe else a["height"]
+
+init 999 python:
+    def r13_qa_find_slot(person,place):
+        # First week-1 day/period when person stands at place (new places, 0.18.61).
+        saved=winter_copy.deepcopy(store.room13)
+        found=None
+        for day in range(2,8):
+            for period in (0,1):
+                n=winter_copy.deepcopy(saved);n.update(day=day,period=period,life_poc=True)
+                n["flags"]=list(set(n["flags"])|{"lodging","entry_corrected","livelihood_open"})
+                store.room13=n
+                if r13_where(person)==place:
+                    found=dict(day=day,period=period,location=place,life_poc=True);break
+            if found:break
+        store.room13=saved
+        return found
