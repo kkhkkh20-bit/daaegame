@@ -66,7 +66,7 @@ async def main():
                         await q.input(810, 610)
                     await asyncio.sleep(.3)
                 await q.wait('r13_hub'); await asyncio.sleep(1.0)
-                info = await q.py('import renpy;s=renpy.store;result=dict(loc=s.room13["location"],file=s.r13_world_file(s.room13["location"],s.r13_daylight()),width=s.r13_world_width(),people=s.r13_people(),allowed=[x for x,r in s.R13_NEW_PLACE_ROUTINES.items() if r[1]==s.room13["location"]])')
+                info = await q.py('import renpy;s=renpy.store;result=dict(loc=s.room13["location"],file=s.r13_world_file(s.room13["location"],s.r13_daylight()),width=s.r13_world_width(),people=s.r13_people(),allowed=s.r13_new_place_people(s.room13["location"]))')
                 await q.shot('arrive-' + key)
                 assert info['loc'] == key and info['width'] == 2160 and info['file'].endswith('%s-morning.webp' % key) and all(x in info['allowed'] for x in info['people']), info
                 report['travel'][key] = info

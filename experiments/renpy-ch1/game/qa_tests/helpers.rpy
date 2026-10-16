@@ -206,6 +206,21 @@ label r13_qa_talk(person):
     call r13_talk
     jump r13_roam
 
+# 0.18.77: run one event label directly from the field and come back through r13_roam.
+label r13_qa_event(name):
+    call expression name
+    jump r13_roam
+
+# 0.18.77: step into a pending event offer from the field and come back through r13_roam.
+label r13_qa_offer(key):
+    call r13_take_offer(key)
+    jump r13_roam
+
+# 0.18.75: press an inspection spot from the field and come back through r13_roam.
+label r13_qa_object(key):
+    call r13_object(key)
+    jump r13_roam
+
 # Move within the same run (keeps state) and arrive through r13_roam.
 label r13_qa_goto(day,period,location,flags=()):
     $ r13_edit(day=day,period=period,location=location)
@@ -861,7 +876,7 @@ init 999 python:
         store.room13=saved
         return found
 
-# 0.18.75 screen_choice_guard: ends the current interaction with an arbitrary value, as if the
+# 0.18.78 screen_choice_guard: ends the current interaction with an arbitrary value, as if the
 # shown screen had returned it (a test `run` action's return value is otherwise discarded).
 screen r13_qa_inject_return(value):
     zorder 999

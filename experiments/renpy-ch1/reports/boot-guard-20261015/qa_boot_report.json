@@ -1,5 +1,396 @@
 {
  "url": "http://localhost:8765/preview/room13-dev/",
+ "book_buttons": [
+  "자료",
+  "● 옮겨 쓴 목록",
+  "● 초대 편지",
+  "그만두기"
+ ],
+ "shelf_click": [
+  1121.5,
+  432
+ ],
+ "menu_screens": [
+  "r13_hub"
+ ],
+ "menu_buttons": [
+  "진행 저장",
+  "진행 불러오기",
+  "설정",
+  "메인화면",
+  "닫기"
+ ],
+ "after_slot_buttons": [
+  "1쪽",
+  "2쪽",
+  "3쪽",
+  "1일째 · 월요일 · 오후 · 눈에 막힌 입구 “아빠:",
+  "1쪽 2번 · 비어 있음",
+  "1쪽 3번 · 비어 있음",
+  "1쪽 4번 · 비어 있음",
+  "1쪽 5번 · 비어 있음",
+  "1쪽 6번 · 비어 있음",
+  "돌아가기"
+ ],
+ "wait_accept_clock": [
+  1,
+  1,
+  1
+ ],
+ "desktop": {
+  "status": "passed",
+  "steps": [
+   {
+    "name": "title",
+    "screens": [
+     "main_menu"
+    ],
+    "room": null
+   },
+   {
+    "name": "gate-hub",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [],
+     "evidence": [
+      "E01"
+     ]
+    }
+   },
+   {
+    "name": "entry-topics",
+    "screens": [
+     "r13_entry_topics"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [],
+     "evidence": [
+      "E01"
+     ]
+    }
+   },
+   {
+    "name": "entry-back",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [],
+     "evidence": [
+      "E01"
+     ]
+    }
+   },
+   {
+    "name": "explain-answered",
+    "screens": [
+     "r13_entry_topics"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain"
+     ],
+     "evidence": [
+      "E01",
+      "G3"
+     ]
+    }
+   },
+   {
+    "name": "wait-confirm",
+    "screens": [
+     "r13_confirm"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain"
+     ],
+     "evidence": [
+      "E01",
+      "G3"
+     ]
+    }
+   },
+   {
+    "name": "wait-cancelled",
+    "screens": [
+     "r13_entry_topics"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain"
+     ],
+     "evidence": [
+      "E01",
+      "G3"
+     ]
+    }
+   },
+   {
+    "name": "book-open",
+    "screens": [
+     "r13_book"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain"
+     ],
+     "evidence": [
+      "E01",
+      "G3"
+     ]
+    }
+   },
+   {
+    "name": "book-cancelled",
+    "screens": [
+     "r13_entry_topics"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain"
+     ],
+     "evidence": [
+      "E01",
+      "G3"
+     ]
+    }
+   },
+   {
+    "name": "wrong-record",
+    "screens": [
+     "r13_entry_topics"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain"
+     ],
+     "evidence": [
+      "E01",
+      "G3"
+     ]
+    }
+   },
+   {
+    "name": "documents",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain",
+      "observed:gate:gate_documents",
+      "observed:gate:booth"
+     ],
+     "evidence": [
+      "E01",
+      "G3",
+      "G1"
+     ]
+    }
+   },
+   {
+    "name": "save-screen",
+    "screens": [
+     "save"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain",
+      "observed:gate:gate_documents",
+      "observed:gate:booth"
+     ],
+     "evidence": [
+      "E01",
+      "G3",
+      "G1"
+     ]
+    }
+   },
+   {
+    "name": "saved",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain",
+      "observed:gate:gate_documents",
+      "observed:gate:booth"
+     ],
+     "evidence": [
+      "E01",
+      "G3",
+      "G1"
+     ]
+    }
+   },
+   {
+    "name": "right-record-done",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain",
+      "observed:gate:gate_documents",
+      "observed:gate:booth",
+      "entry_corrected"
+     ],
+     "evidence": [
+      "E01",
+      "G3",
+      "G1",
+      "E02"
+     ]
+    }
+   },
+   {
+    "name": "title-after-reload",
+    "screens": [
+     "main_menu"
+    ],
+    "room": null
+   },
+   {
+    "name": "loaded",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain",
+      "observed:gate:gate_documents",
+      "observed:gate:booth"
+     ],
+     "evidence": [
+      "E01",
+      "G3",
+      "G1"
+     ]
+    }
+   },
+   {
+    "name": "wait-accepted",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [
+      "question_read:entry:explain",
+      "observed:gate:gate_documents",
+      "observed:gate:booth",
+      "question_read:entry:wait",
+      "entry_corrected"
+     ],
+     "evidence": [
+      "E01",
+      "G3",
+      "G1",
+      "E02"
+     ]
+    }
+   }
+  ],
+  "console_lines": 24,
+  "errors": []
+ },
+ "mobile": {
+  "status": "passed",
+  "steps": [
+   {
+    "name": "title",
+    "screens": [
+     "main_menu"
+    ],
+    "room": null
+   },
+   {
+    "name": "gate-hub",
+    "screens": [
+     "r13_hub"
+    ],
+    "room": {
+     "day": 1,
+     "period": 1,
+     "location": "gate",
+     "flags": [],
+     "evidence": [
+      "E01"
+     ]
+    }
+   }
+  ],
+  "console_lines": 16,
+  "errors": []
+ },
+ "oldsave": {
+  "old_version": "0.18.68",
+  "new_version": "0.18.78",
+  "diff": [
+   "world_art_revisions"
+  ],
+  "art_revision_updated": [
+   "dining",
+   "hall",
+   "inn",
+   "market",
+   "post",
+   "school",
+   "workshop"
+  ],
+  "same_state": true,
+  "continued": true,
+  "status": "passed",
+  "errors": []
+ },
  "nogl": {
   "status": "passed",
   "console_after_75s": 34,
@@ -7,9 +398,9 @@
   "syncfs_warnings": 9,
   "story_lines_in_log": 0,
   "guard": {
-   "version": "0.18.69",
+   "version": "0.18.78",
    "first": "Could not set video mode.",
-   "at": "2026-10-16T03:01:14.189Z",
+   "at": "2026-10-16T06:25:26.116Z",
    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
    "webgl2": false,
    "contextLost": false

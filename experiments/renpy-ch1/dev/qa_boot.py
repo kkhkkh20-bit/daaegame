@@ -1,4 +1,4 @@
-# Natural start check (0.18.75): the published page opened WITHOUT a query in a fresh browser
+# Natural start check (0.18.78): the published page opened WITHOUT a query in a fresh browser
 # profile, real mouse input only for play (the probe only reads state). Title -> 처음부터 ->
 # opening -> gate hub; the gate questions with back, the evidence book with cancel, a wrong
 # and the right record, the wait confirm with cancel and accept; save, reload the page and
@@ -245,7 +245,7 @@ async def old_save(p, report, old_dir):
             await q.press('예')
         await q.wait('r13_hub')
         loaded = (await q.state())['room']
-        # world_art_revisions is refreshed on load when a place's layout changed (0.18.75 changed
+        # world_art_revisions is refreshed on load when a place's layout changed (0.18.78 changed
         # the slot actions of six places); it only re-centres check marks. Everything else stays.
         res['diff'] = sorted(k for k in set(saved) | set(loaded) if saved.get(k) != loaded.get(k))
         res['art_revision_updated'] = sorted(k for k, v in loaded.get('world_art_revisions', {}).items() if saved.get('world_art_revisions', {}).get(k) != v)

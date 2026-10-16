@@ -159,7 +159,7 @@ init 55 python:
 
     def r13_topics(person):
         return [(k,t) for k,t in ROOM13["topics"].items() if t["npc"]==person and r13_available(t)
-            and (store.room13["daram_state"] in ("with_dad","rescued") or not any(who=="daram" for who,line in t["lines"]))
+            and (store.room13["daram_state"] in ("with_dad","rescued") or not any(line[0]=="daram" for line in t["lines"]))
             and not (person=="buri" and r13_has("buri_refused") and k=="buri_records")]
 
     def r13_actions():

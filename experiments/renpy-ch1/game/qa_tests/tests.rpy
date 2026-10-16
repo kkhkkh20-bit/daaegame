@@ -102,9 +102,10 @@ testcase trial_partial:
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     assert eval (not r13_debate_is_broken("C2","s2"))
-    click "발언 기록"
-    pause 0.4
-    click "다시 휘두를 사람이"
+    # 0.18.69 meeting UI: statements are stepped with the arrows (the log panel scrolls).
+    keysym "K_RIGHT"
+    pause 0.6
+    assert eval (renpy.get_screen("r13_debate_board").scope["selected"]=="s3")
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -9634,6 +9635,88 @@ testcase ancient_granny:
     screenshot "ancient_field.png"
     assert eval (room13["location"]=="ancient" and r13_has("ancient_found") and r13_has("ancient_granny_met") and "ancient" in r13_places())
 
+testcase mom_hideout:
+    # 0.18.75 (owner): mom's first hiding place under the forest roots; 2주 차 엄마 대화.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="forest",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    run Call("r13_qa_object","forest_roots")
+    click pos (640,600) until eval ("따라오는 발소리" in str(getattr(store,"r13_packet",("",""))[1])) timeout 60
+    pause 1.0
+    screenshot "mom_hideout.png"
+    click pos (640,600) until screen "r13_hub" timeout 60
+    assert eval (r13_has("mom_hideout_found"))
+
+testcase market_crowd:
+    # 0.18.75 (owner): traders gather at the market; week 2 jobs at the river and forest.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=6,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    screenshot "market_crowd_morning.png"
+    python:
+        r13_qa_note("market day6 morning: %r"%([(a["person"],a["x"],a["y"],a["height"]) for a in r13_stage_people()],))
+    assert eval (len(r13_people())>=5)
+    run Call("r13_qa_roam",dict(day=10,period=1,location="river",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
+    pause 1.0
+    assert eval ("resident_kkwak" in r13_people())
+    run Call("r13_qa_roam",dict(day=10,period=1,location="forest",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
+    pause 1.0
+    assert eval ("resident_badook" in r13_people())
+    screenshot "forest_week2.png"
+
+testcase daram_mood:
+    # 0.18.75 (owner): 다람이's face follows her words; she misses mom at night and on arrival.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    assert eval (r13_daram_mood("엄마는 어디 있어?")=="anxious" and r13_daram_mood("털모자다! 이제 귀 안 시려.")=="joy" and r13_daram_mood("이제 하나도 안 아파.") is None and r13_daram_mood("아빠……!")=="anxious")
+    assert eval (r13_line_performance("qa:mood",0,("daram","엄마는 어디 있어?"))[1]=="anxious" and r13_line_performance("qa:mood",0,("daram","엄마는 어디 있어?",{"expression":"joy"}))[1]=="joy")
+    run Call("r13_qa_roam",dict(day=2,period=2,location="room13",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    assert eval ("night:miss_mom" in [k for k,_ in r13_topics("daram")])
+    run Call("r13_qa_talk","daram")
+    click pos (1150,90) until "엄마 이야기를" timeout 30
+    click "엄마 이야기를"
+    click pos (640,600) until eval ("과자 반" in str(getattr(store,"r13_packet",("",""))[1])) timeout 40
+    pause 1.0
+    screenshot "daram_miss_mom.png"
+
+testcase new_cast:
+    # 0.18.77: new residents appear with stand-in art; 토실 friend (N1) and the week-2 errand (N5).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=1,location="market",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging","+offers"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval ("resident_tosil" in r13_people() and all(p in R13_NAMES for p in R13_NEW_CAST))
+    screenshot "new_cast_market.png"
+    run Call("r13_qa_offer","r13_nc_tosil_friend")
+    click pos (640,600) until eval (r13_has("tosil_friend")) timeout 60
+    screenshot "tosil_friend.png"
+
+testcase new_cast_errand:
+    # 0.18.77: 토실's second errand in week 2 (N5); the scene itself, without the week-1 catch-ups.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=9,period=2,location="inn",life_poc=True,week2_started=True,case_state="prevented",granny_state="trusted",daram_state="with_dad"),("entry_corrected","lodging","tosil_errand_done","ev_b_done","ep1_done","bami_safe"))
+    pause 1.0
+    run Call("r13_qa_event","r13_nc_tosil_errand")
+    click pos (640,600) until screen "choice" timeout 60
+    click "몰래 따라가 본다"
+    click pos (640,600) until eval ("지금도 아내를" in str(getattr(store,"r13_packet",("",""))[1])) timeout 60
+    pause 1.0
+    screenshot "tosil_errand.png"
+    click pos (640,600) until eval (r13_has("tosil_errand_seen")) timeout 60
+    assert eval ("tosil:forest" in [k for k,_ in r13_topics("resident_tosil")])
+
 testcase map_actions:
     # 0.18.63 (owner): event, life and map actions in the investigation scenes where the script puts them.
     pause 2.0
@@ -9704,7 +9787,7 @@ testcase map_actions:
 
 testcase new_places:
     # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
-    # map, one picture per period. 0.18.68: only residents with a new-place routine come, days 2-7.
+    # map, one picture per period. 0.18.68: only residents with a new-place routine come (0.18.75: days 2-7 and 9-14).
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -9725,7 +9808,7 @@ testcase new_places:
         store._np_before=[k for k in R13_NEW_PLACES if k in r13_places()]
         store.room13=_np_saved
         r13_qa_note("new places people: %r / before lodging: %r"%(store._np_people,store._np_before))
-    assert eval (_np_people and all(x in R13_NEW_PLACE_ROUTINES and R13_NEW_PLACE_ROUTINES[x][1]==l and 2<=d<8 for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
+    assert eval (_np_people and all(any(r[1]==l and (d in (r[3] or R13_NEW_PLACE_DAYS)) for r in R13_NEW_PLACE_ROUTINES.get(x,())) for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
     click "지도 · 이동"
     pause 1.5
     screenshot "np_map.png"
@@ -10573,7 +10656,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["dining"]["old_scene_slot_actions"]=_rl_keep[1]
 
 testcase bori_nero_actions:
-    # 0.18.75 (owner 19:16): 보리 firewood / 네로 name tag in the scenes the schedule puts them in;
+    # 0.18.78 (owner 19:16): 보리 firewood / 네로 name tag in the scenes the schedule puts them in;
     # the school back row keeps 보리's idle pose. Head drawn as large as in the idle pose (보리 crouch
     # at 0.69 of the standing height, 네로 standing at full height). 0.18.68 sends 네로 to the river
     # on the 'lower road' slots, so his gate scene is week 2's morning (the river is not one of
@@ -10671,7 +10754,7 @@ testcase bori_nero_actions:
     assert eval (any(a["person"]=="resident_bori" and a["pose"]=="neutral" for a in r13_stage_people()))
 
 testcase screen_choice_guard:
-    # 0.18.75 (owner 19:23, injected - not a natural start): a hub/entry screen that ends with no
+    # 0.18.78 (owner 19:23, injected - not a natural start): a hub/entry screen that ends with no
     # (kind, value) pair shows the same screen again; no record, time, flag or story step. The
     # normal pair contract still works (guard questions open from the same hub). Three bad
     # results in a row raise instead of looping. (A screen action returning None never ends an

@@ -1,4 +1,4 @@
-# Boot and screen-result safety (0.18.75, owner-approved 2026-10-15 19:23 PDT).
+# Boot and screen-result safety (0.18.78, owner-approved 2026-10-15 19:23 PDT).
 #
 # Reproduced cause of the reported boot loop: when the browser cannot give Ren'Py a WebGL
 # renderer, Ren'Py raises "Could not set video mode." at the first interaction and leaves

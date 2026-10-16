@@ -248,7 +248,7 @@ init 59 python:
         "resident_momo":("post",),
         # 0.18.67: 사서 선생님 standing book-paper action (owner 17:31), post only.
         "resident_librarian":("post",),
-        # 0.18.75 (owner 19:16): storybook revisions chosen for these two, investigation scenes only.
+        # 0.18.78 (owner 19:16): storybook revisions chosen for these two, investigation scenes only.
         # 보리 ties firewood where the floor shows him (the school back row keeps the idle pose);
         # 네로 folds the luggage tag at the gate and the store.
         "resident_bori":("gate","store","square","workshop"),
@@ -434,7 +434,7 @@ init 59 python:
                 if layout:mask=zone_spec.get("occlusion",layout.get("occlusion",[]) if zone=="counter" else [])
                 return dict(pose=cp,spec=cs,x=xx,y=yy,width=ww,height=hh,occlusion=mask,contact=cs.get("contact","standing"),slot=tuple(slot))
             def face_box(c):
-                cs=c.get("spec") or r13_acting_spec(c["person"],c["pose"]) or {}
+                cs=c.get("spec") or r13_acting_spec(c.get("person",person),c["pose"]) or {}
                 cw,ch=r13_actor_geometry(person if "person" not in c else c["person"],c["pose"])
                 head=cs.get("head",[cw*.25,0,cw*.5,ch*.35])
                 sc=float(c["height"])/ch
