@@ -256,6 +256,11 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
             textbutton "발언 고르기":
                 style "r13_action_button" xpos 496 ypos 646 xsize 224 ysize 64 text_size 23
                 action Function(r13_meeting_request_live_action,"review") sensitive ready
+            # 0.18.88: after a full lap, say what to do next (players kept clicking through the loop).
+            if r13_meeting_live_lap>=1:
+                frame:
+                    area (160,440,960,44) padding (14,7) background R13PaperPanel()
+                    text "이상한 말엔 「보여주기」, 하나씩 따지려면 「발언 고르기」" size r13_read_size(20,23) color "#493b30" xalign .5
         textbutton "백로그":
             style "r13_action_button" xpos 952 ypos 646 xsize 120 ysize 64 text_size 21 action Show("r13_backlog")
         textbutton "더보기":

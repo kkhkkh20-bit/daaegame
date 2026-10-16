@@ -11181,3 +11181,19 @@ testcase ep6_altar:
     click pos (640,600) until screen "r13_crisis" timeout 180
     assert eval (r13_has("cv_altar") and "V08" in room13["evidence"] and r13_has("dallae_named") and r13_has("shelter_ready") and r13_has("operators_ready") and r13_has("patient_transport"))
     screenshot "ep6_altar_hub.png"
+
+testcase meeting_lap_hint:
+    # 0.18.88: after the live round loops once, a one-line hint names 「보여주기」 and 「발언 고르기」.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("+ep","entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
+    pause 1.0
+    run Call("r13_qa_event","r13_ep1_meeting")
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
+    assert eval (r13_meeting_live_lap==0)
+    click pos (640,600) until eval (r13_meeting_live_lap>=1) timeout 90
+    pause 1.0
+    screenshot "lap_hint.png"
+    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    $ open("qa_result.txt","w").write("lap hint shown after one loop; 발언 고르기 opens the board")
