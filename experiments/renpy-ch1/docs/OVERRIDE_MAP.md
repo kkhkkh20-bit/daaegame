@@ -3,6 +3,30 @@
 Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. 아래 표는 그 순서대로이며, 마지막 줄이 게임이 실제로 부르는 바깥 층이다.
 각 층은 바로 위 층을 `captured_as` 이름으로 붙잡아 부른다. 새 기능을 넣을 때 이 순서를 확인하고, 같은 우선순위에 층을 추가하지 않는다.
 
+## `r13_present` (19층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:371` | r13_discovery_base_present |
+| 2 | 61 | `room13_discovery.rpy:38` | r13_tool_base_present |
+| 3 | 73 | `room13_tool_discovery.rpy:81` | _r13_mystery_present |
+| 4 | 76 | `room13_first_mystery.rpy:98` | _r13_life_present |
+| 5 | 94 | `systems/room13_first_day_flow.rpy:54` | _r13_work_present |
+| 6 | 96 | `systems/room13_work_clues.rpy:25` | _r13_intro_present |
+| 7 | 97 | `systems/room13_intro_clues.rpy:48` | _r13_poc_present |
+| 8 | 100 | `systems/room13_poc_route.rpy:66` | _r13_daram_home_present |
+| 9 | 101 | `systems/room13_daram_home.rpy:148` | _r13_pf_present |
+| 10 | 113 | `systems/room13_present_flow.rpy:43` | _r13_mem_present |
+| 11 | 114 | `systems/room13_memory.rpy:85` | _r13_ledger_present |
+| 12 | 115 | `systems/room13_ledger.rpy:38` | _r13_tm_present |
+| 13 | 116 | `systems/room13_testimony.rpy:48` | _r13_ob_present |
+| 14 | 118 | `systems/room13_owl_buri.rpy:41` | _r13_uk_present |
+| 15 | 123 | `systems/room13_use_knowledge.rpy:58` | _r13_sound_present |
+| 16 | 150 | `systems/room13_sound.rpy:161` | _r13_e1_present |
+| 17 | 152 | `systems/room13_ep1_lamp_thief.rpy:63` | _r13_wf_present |
+| 18 | 154 | `systems/room13_ep3_woodfire.rpy:53` | _r13_nt_present |
+| 19 | 155 | `systems/room13_ep4_night13.rpy:42` |  |
+
 ## `r13_topics` (19층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -26,29 +50,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 17 | 147 | `systems/room13_alibi.rpy:139` | _r13_catalog_topics |
 | 18 | 148 | `systems/room13_materials.rpy:58` | _r13_e1_topics |
 | 19 | 152 | `systems/room13_ep1_lamp_thief.rpy:54` |  |
-
-## `r13_present` (18층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:371` | r13_discovery_base_present |
-| 2 | 61 | `room13_discovery.rpy:38` | r13_tool_base_present |
-| 3 | 73 | `room13_tool_discovery.rpy:81` | _r13_mystery_present |
-| 4 | 76 | `room13_first_mystery.rpy:98` | _r13_life_present |
-| 5 | 94 | `systems/room13_first_day_flow.rpy:54` | _r13_work_present |
-| 6 | 96 | `systems/room13_work_clues.rpy:25` | _r13_intro_present |
-| 7 | 97 | `systems/room13_intro_clues.rpy:48` | _r13_poc_present |
-| 8 | 100 | `systems/room13_poc_route.rpy:66` | _r13_daram_home_present |
-| 9 | 101 | `systems/room13_daram_home.rpy:148` | _r13_pf_present |
-| 10 | 113 | `systems/room13_present_flow.rpy:43` | _r13_mem_present |
-| 11 | 114 | `systems/room13_memory.rpy:85` | _r13_ledger_present |
-| 12 | 115 | `systems/room13_ledger.rpy:38` | _r13_tm_present |
-| 13 | 116 | `systems/room13_testimony.rpy:48` | _r13_ob_present |
-| 14 | 118 | `systems/room13_owl_buri.rpy:41` | _r13_uk_present |
-| 15 | 123 | `systems/room13_use_knowledge.rpy:58` | _r13_sound_present |
-| 16 | 150 | `systems/room13_sound.rpy:161` | _r13_e1_present |
-| 17 | 152 | `systems/room13_ep1_lamp_thief.rpy:63` | _r13_wf_present |
-| 18 | 154 | `systems/room13_ep3_woodfire.rpy:53` |  |
 
 ## `r13_object_visible` (10층)
 
@@ -78,6 +79,19 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 114 | `systems/room13_memory.rpy:74` | _r13_expand_topic_lines |
 | 8 | 140 | `systems/room13_dialogue_expand.rpy:19` |  |
 
+## `r13_where` (8층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:223` | _r13_before_gate_where |
+| 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
+| 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
+| 4 | 93 | `systems/room13_livelihood_flow.rpy:107` | _r13_episode_where |
+| 5 | 103 | `systems/room13_episodes.rpy:55` | _r13_alibi_where |
+| 6 | 147 | `systems/room13_alibi.rpy:30` | _r13_kd_where |
+| 7 | 153 | `systems/room13_ep2_kids.rpy:82` | _r13_nt_where |
+| 8 | 155 | `systems/room13_ep4_night13.rpy:32` |  |
+
 ## `r13_first_mystery_notes` (7층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -89,18 +103,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 5 | 100 | `systems/room13_poc_route.rpy:140` | _r13_tn_notes |
 | 6 | 121 | `systems/room13_trial_notes.rpy:48` | _r13_alibi_notes |
 | 7 | 147 | `systems/room13_alibi.rpy:157` |  |
-
-## `r13_where` (7층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:223` | _r13_before_gate_where |
-| 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
-| 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
-| 4 | 93 | `systems/room13_livelihood_flow.rpy:107` | _r13_episode_where |
-| 5 | 103 | `systems/room13_episodes.rpy:55` | _r13_alibi_where |
-| 6 | 147 | `systems/room13_alibi.rpy:30` | _r13_kd_where |
-| 7 | 153 | `systems/room13_ep2_kids.rpy:82` |  |
 
 ## `r13_compare_result` (6층)
 

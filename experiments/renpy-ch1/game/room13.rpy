@@ -261,8 +261,8 @@ label r13_roam:
     $ r13_upgrade()
     if room13.get("revision_restart_required"):
         jump r13_revision_resume
-    if R13_CASE_DAY+1<=room13["day"]<R13_WEEK2_DAY and room13["case_state"]=="occurred":
-        call r13_mother_intervention
+    # 0.18.83: 사건 다음 날 엄마가 진료소에 나타나던 장면(r13_mother_intervention)은 부르지 않는다.
+    #   새 이야기에서 엄마는 11일 새벽에 처음 다시 만난다(에피소드 ⑤). 그사이 소식은 초롱의 편지로 온다(④).
     if room13["day"]>=R13_WEEK2_DAY:
         call r13_week2_events
     # Evening missions (systems/room13_evening.rpy): once per evening, pick where to go.
@@ -700,6 +700,8 @@ label r13_verdict:
         $ r13_edit(daram_state="held",trial_result="detained")
         call r13_lines([("resident_seori","뒤집힌 부분은 기록에 남겼습니다. 하지만 오늘 모은 자료만으로는 아이를 풀어 달라는 요청이 받아들여지지 않았습니다."),("resident_ppul","추가 확인은 아이를 보호시설로 옮겨서 하겠습니다."),("dad","확인하지 못한 일까지 아이 죄로 못 박지 마십시오."),("daram","아빠는 같이 못 와?"),("neoul","오늘은 여기까지입니다."),("dad","다시 올게. 다른 데로 옮겨지면 꼭 말 남겨 줘."),("daram","아빠도. 아빠가 못 오면…… 누가 대신 오는지 말해 줘.")],"verdict:held")
     $ r13_record_trial_notes()
+    # 재판 뒤: 따닥의 일, 부리의 모자, 초롱의 등 (systems/room13_ep4_night13.rpy).
+    call r13_nt_after_trial
     $ r13_edit(trial_ended=True,period=3)
     jump r13_week2_opening
 

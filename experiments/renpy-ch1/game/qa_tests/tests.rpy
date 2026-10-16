@@ -10970,3 +10970,52 @@ testcase ep3_meeting:
     assert eval (r13_has("wf_perfect") and r13_has("nubi_kids_with_nabi") and r13_has("wf_bori_freed") and not r13_has("bori_taken"))
 
 
+
+testcase ep4_saves:
+    # 에피소드 ④: 너울의 말로 초롱을, 수첩과 레버로 따닥을 살린다(바둑이·톡의 도움).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=8,period=1,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held",evidence=["N01","E05"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_chorong_signal","badook_doubt","kd_solved","tok_cleared","fair_hearing","ev_e_done","ev_u_done","ev_o_done","ep3_bell_seen","ev_s_done","ev_t_done"))
+    click pos (640,600) until "너울의 말을 전한다" timeout 60
+    click "너울의 말을 전한다"
+    click pos (640,600) until eval (r13_has("nt_chorong_safe") and room13["period"]==2 and not renpy.get_screen("say")) timeout 60
+    run Call("r13_qa_roam",dict(day=8,period=1,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held",evidence=["N01","N02","E05"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_chorong_signal","nt_overheard","nt_chorong_safe","badook_doubt","kd_solved","tok_cleared","fair_hearing","ev_e_done","ev_u_done","ev_o_done","ep3_bell_seen","ev_s_done","ev_t_done"))
+    click pos (640,600) until "수첩과 레버 이야기를 한다" timeout 60
+    click "수첩과 레버 이야기를 한다"
+    click pos (640,600) until eval (r13_has("nt_ttadak_safe") and not renpy.get_screen("say")) timeout 60
+    run Function(r13_edit,period=2)
+    run Call("r13_qa_event","r13_nt_night8")
+    click pos (640,600) until eval (r13_has("nt_night8") and "N06" in room13["evidence"] and not renpy.get_screen("say")) timeout 90
+    run Call("r13_qa_event","r13_nt_dawn9")
+    click pos (640,600) until eval (r13_has("nt_dawn9") and "N07" in room13["evidence"] and not renpy.get_screen("say")) timeout 90
+    assert eval (not r13_has("chorong_dead") and not r13_has("ttadak_dead"))
+
+testcase ep4_after_trial:
+    # 에피소드 ④: 할머니가 입증된 뒤 따닥의 죽음을 회의 Q4로 따지고, 부리의 모자와 초롱의 등까지.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=10,period=0,location="dining",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",granny_state="detained",trial_result="culprit_proven",evidence=["N01","N03","N07","N05"]),("entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_night8","nt_dawn9","ttadak_dead","chorong_dead","nt_lit_lamps","nt_buri_together"))
+    run Call("r13_qa_event","r13_nt_after_trial")
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
+    pause 0.6
+    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA N07"
+    click pos (640,600) until eval (r13_debate_is_broken("Q4","s1") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA N03"
+    click pos (640,600) until eval (r13_debate_is_broken("Q4","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 1.2
+    click "결론을 말한다"
+    pause 1.0
+    click "안에 따닥이 있는 걸 아는 사람이 닫았다. 그건 할머니다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
+    click pos (640,600) until eval (r13_has("chorong_lamp")) timeout 120
+    assert eval (r13_has("nt_ttadak_proven") and r13_has("owl_hat"))
