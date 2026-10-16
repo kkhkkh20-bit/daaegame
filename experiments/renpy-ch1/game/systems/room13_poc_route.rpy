@@ -106,7 +106,7 @@ init 100 python:
         s=store.room13 or {}
         if not r13_poc_active():return None
         has=lambda k:k in s.get("flags",[]) or k in s.get("evidence",[])
-        # 0.18.71 (design review #1): before any testimony points at granny the question stays
+        # 0.18.73 (design review #1): before any testimony points at granny the question stays
         # open; it names her only after J06 (she says she wrote it), H9, H16 or the rope night.
         if has("poc:granny_explained"):return "할머니는 엄마 말을 받아 적었을 뿐이라고 했다. 엄마는 ‘쓴 적 없다’고 했는데, 할머니는 왜 우리를 여관에 두려 할까?"
         if has("poc:letter_conflict"):

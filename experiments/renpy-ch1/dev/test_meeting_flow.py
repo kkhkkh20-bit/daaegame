@@ -62,7 +62,49 @@ class MeetingFlow(unittest.TestCase):
   self.assertEqual(self.store.room13,before)
   self.assertFalse(self.env['r13_has']('operators_ready'))
   self.env['r13_debate_mark']('pressed','C1','s1')
-  self.assertEqual(self.env['r13_meeting_live_ids']('C1','s2'),['s2'])
+  self.assertEqual(self.env['r13_meeting_live_ids']('C1','s2'),['s2','s1'])
+ def test_loop_wraps_both_directions_without_revealing_or_proving(self):
+  before=copy.deepcopy(self.store.room13)
+  self.assertEqual(self.env['r13_meeting_live_next']('C2','s3'),'s1')
+  self.assertEqual(self.env['r13_meeting_live_next']('C2','s1',-1),'s3')
+  self.assertEqual(self.env['r13_meeting_live_ids']('C2','s2'),['s2','s3','s1'])
+  self.assertEqual(self.env['r13_meeting_live_next']('C1','s1'),'s1')
+  self.assertEqual(self.store.room13,before)
+  self.env['r13_debate_mark']('broken','C2','s2')
+  self.assertEqual(self.env['r13_meeting_live_next']('C2','s1'),'s3')
+  self.assertEqual(self.env['r13_meeting_live_next']('C2','s3',-1),'s1')
+ def test_heard_is_read_status_and_never_proof_or_question_completion(self):
+  self.env['r13_meeting_mark_heard']('debate:press:C2:s1',0)
+  self.env['r13_meeting_mark_heard']('meeting:live:C2:s1',1)
+  self.assertFalse(self.env['r13_meeting_heard']('C2','s1'))
+  self.env['r13_meeting_mark_heard']('meeting:live:C2:s1',0)
+  self.env['r13_meeting_mark_heard']('meeting:live:C2:s1',0)
+  self.assertEqual(self.store.room13['meeting_heard'],['C2:s1'])
+  self.assertFalse(self.env['r13_debate_is_pressed']('C2','s1'))
+  self.assertFalse(self.env['r13_debate_is_broken']('C2','s1'))
+  self.assertEqual(self.store.room13['propositions'],[])
+ def test_listening_does_not_highlight_the_authored_answer(self):
+  text=self.env['r13_meeting_live_rows']('C2','s2')[0][1]
+  self.assertNotIn('{color=',text)
+  self.assertNotIn('【',text)
+ def test_seek_interrupts_only_live_context_and_has_no_case_effect(self):
+  ended=[];self.env['renpy']=types.SimpleNamespace(end_interaction=lambda value:ended.append(value))
+  self.store.r13_meeting_live_active=True;self.store.r13_meeting_claim='C2';self.store.r13_meeting_live_sid='s1'
+  before=copy.deepcopy(self.store.room13)
+  self.env['r13_meeting_request_live_action']('previous')
+  self.assertEqual(self.store.r13_meeting_live_command,('seek','s3'))
+  self.assertEqual(ended,[True]);self.assertEqual(self.store.room13,before)
+  self.store.r13_meeting_interrupting=True
+  self.env['r13_meeting_request_live_action']('next')
+  self.assertEqual(self.store.r13_meeting_live_command,('seek','s3'))
+ def test_fast_skip_cannot_spin_a_cyclic_transcript_without_input(self):
+  self.env['renpy']=types.SimpleNamespace(config=types.SimpleNamespace(skipping='slow'))
+  self.store.r13_fast_all=True;self.store.r13_fast_read=True
+  self.env['r13_meeting_prepare_live_line']('ordinary:dialogue')
+  self.assertTrue(self.store.r13_fast_all)
+  self.env['r13_meeting_prepare_live_line']('meeting:live:C2:s1')
+  self.assertFalse(self.store.r13_fast_all);self.assertFalse(self.store.r13_fast_read)
+  self.assertIsNone(self.env['renpy'].config.skipping)
  def test_live_press_stops_only_its_own_readonly_round(self):
   ended=[];self.env['renpy']=types.SimpleNamespace(end_interaction=lambda value:ended.append(value))
   self.store.r13_meeting_active=True;self.store.r13_meeting_live_active=True
@@ -132,12 +174,24 @@ class MeetingFlow(unittest.TestCase):
   tick(old,0,0,outgoing=True)
   self.assertEqual(abs(incoming-old.xoffset),1200)
   clock[0]+=.4;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
+  self.store.r13_meeting_live_lap=1;f('C1','nabi');tick(trans,0,0)
+  clock[0]+=.2;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
   f('C1','buri');env['persistent'].room13_motion=False;tick(trans,0,0);self.assertEqual(trans.xoffset,0)
   tick(old,0,0,outgoing=True);self.assertEqual(old.alpha,0.0)
   people=[p for p,stance in env['r13_meeting_cast']('C1','trial')]
   self.assertNotIn('dad',people)
   for i,person in enumerate(people):
    self.assertEqual(env['r13_meeting_neighbors']('C1',person),(people[i-1],people[(i+1)%len(people)]))
+  env['Transform']=lambda path,**kw:path
+  self.assertEqual(env['r13_meeting_plate']('final',True),'assets/room13-pixel-meeting-altar-standing072.webp')
+  self.assertEqual(env['r13_meeting_plate']('final',False),'assets/room13-pixel-meeting-altar-standing072.webp')
+  self.assertEqual(env['r13_meeting_edge'](640,'final'),432)
+  self.assertEqual(env['r13_meeting_edge'](0,'final'),500)
+  env['CAST']['resident_bori']={'neutral':{'crop':[0,0,500,600]}}
+  width,height,top=env['r13_meeting_standing_slot']('resident_bori',8,432)
+  self.assertLess(width,1160/8)
+  self.assertAlmostEqual(width/height,500/600,places=2)
+  self.assertLess(top,432);self.assertGreater(top+height,432)
   next_statement=env['r13_meeting_next_statement']
   self.assertEqual(next_statement('C1','s1',step=-1),'s1')
   env['r13_debate_mark']('pressed','C1','s1')

@@ -52,6 +52,7 @@ label r13_lines(entries,identity):
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
         if r13_packet[0] not in (None,"dad") and not r13_thought_active:
             $ r13_last_partner=r13_packet[0]
+        $ r13_meeting_prepare_live_line(identity)
         $ r13_read_id=r13_before_line(identity,r13_index,r13_packet[1])
         # Isolate this line from the previous loop increment when record UI
         # changes are retained by an immediate save during the say interaction.
@@ -64,6 +65,7 @@ label r13_lines(entries,identity):
             $ r13_page_i+=1
         if not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
             $ r13_remember_line(r13_read_id)
+            $ r13_meeting_mark_heard(identity,r13_index)
         $ r13_index+=1
     hide r13_visitor
     $ dialogue_speaker=None

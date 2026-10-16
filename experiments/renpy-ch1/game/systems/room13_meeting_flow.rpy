@@ -4,6 +4,7 @@ default r13_meeting_live_active = False
 default r13_meeting_live_sid = None
 default r13_meeting_live_command = None
 default r13_meeting_resume_listening = False
+default r13_meeting_live_lap = 0
 
 init 100 python:
     # Brief public responses add rhythm without revealing gated witness facts,
@@ -21,11 +22,40 @@ init 100 python:
 
     def r13_meeting_live_ids(claim,start):
         ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st) and not r13_debate_is_broken(claim,st["id"])]
-        return ids[ids.index(start):] if start in ids else ids
+        return ids[ids.index(start):]+ids[:ids.index(start)] if start in ids else ids
+
+    def r13_meeting_live_next(claim,sid,step=1):
+        visible=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
+        if not visible:return None
+        start=visible.index(sid) if sid in visible else -1
+        for offset in range(1,len(visible)+1):
+            candidate=visible[(start+step*offset)%len(visible)]
+            if not r13_debate_is_broken(claim,candidate):return candidate
+        return None
+
+    def r13_meeting_statement_text(claim,sid):
+        # The player locates the contradiction; authored brackets are not a hint.
+        return r13_debate_statement(claim,sid)["text"].replace("【","").replace("】","")
+
+    def r13_meeting_heard(claim,sid):
+        return claim+":"+sid in (store.room13 or {}).get("meeting_heard",[])
+
+    def r13_meeting_prepare_live_line(identity):
+        if not identity.startswith("meeting:live:"):return
+        # A cyclic transcript must always leave an interaction to interrupt.
+        store.r13_fast_all=False;store.r13_fast_read=False
+        renpy.config.skipping=None
+
+    def r13_meeting_mark_heard(identity,index):
+        if not identity.startswith("meeting:live:") or index!=0:return
+        key=identity[len("meeting:live:"):]
+        heard=list((store.room13 or {}).get("meeting_heard",[]))
+        if key not in heard:
+            heard.append(key);r13_edit(meeting_heard=heard)
 
     def r13_meeting_live_rows(claim,sid):
         st=r13_debate_statement(claim,sid)
-        rows=[(st["who"],r13_debate_markup(st["text"]))]
+        rows=[(st["who"],r13_meeting_statement_text(claim,sid))]
         reply=R13_MEETING_REJOINDERS.get(claim,{}).get(sid)
         if reply:rows.append(reply)
         return rows
@@ -42,7 +72,13 @@ init 100 python:
     def r13_meeting_request_live_action(kind):
         if not getattr(store,"r13_meeting_live_active",False) or getattr(store,"r13_meeting_interrupting",False):return
         if kind=="press" and not r13_meeting_can_live_press():return
-        store.r13_meeting_live_command=(kind,r13_meeting_live_target()) if kind=="press" else ("review",)
+        if kind in ("previous","next"):
+            target=r13_meeting_live_next(store.r13_meeting_claim,store.r13_meeting_live_sid,-1 if kind=="previous" else 1)
+            if not target:return
+            store.r13_meeting_live_command=("seek",target)
+        elif kind=="press":store.r13_meeting_live_command=(kind,r13_meeting_live_target())
+        elif kind=="review":store.r13_meeting_live_command=("review",)
+        else:return
         renpy.end_interaction(True)
 
     R13_MEETING_ISSUES={
@@ -80,7 +116,7 @@ init 100 python:
             lines.append((who,text))
         return lines
 
-    R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command")
+    R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap")
 
     def r13_meeting_resume_after_load():
         # Ren'Py saves the outer interaction while a nested UI context is open.
@@ -143,18 +179,30 @@ init 100 python:
 label r13_meeting_live_round(claim):
     $ r13_meeting_live_active=True
     $ r13_meeting_live_command=None
-    $ r13_meeting_round_ids=r13_meeting_live_ids(claim,r13_debate_selected)
-    $ r13_meeting_round_i=0
-    while r13_meeting_round_i<len(r13_meeting_round_ids) and not r13_meeting_live_command:
-        $ r13_meeting_live_sid=r13_meeting_round_ids[r13_meeting_round_i]
-        if not r13_debate_is_broken(claim,r13_meeting_live_sid):
+    $ r13_meeting_live_lap=0
+    while not r13_meeting_live_command and not r13_debate_ready(claim):
+        # Recompute after questions reveal statements or a live rebuttal resolves one.
+        $ r13_meeting_round_ids=r13_meeting_live_ids(claim,r13_debate_selected)
+        if not r13_meeting_round_ids:
+            $ r13_meeting_live_command=("review",)
+        else:
+            $ r13_meeting_live_sid=r13_meeting_round_ids[0]
             $ r13_debate_selected=r13_meeting_live_sid
             call r13_lines(r13_meeting_live_rows(claim,r13_meeting_live_sid),"meeting:live:"+claim+":"+r13_meeting_live_sid)
-        $ r13_meeting_round_i+=1
+            if r13_meeting_live_command and r13_meeting_live_command[0]=="seek":
+                $ r13_debate_selected=r13_meeting_live_command[1]
+                $ r13_meeting_live_command=None
+            elif not r13_meeting_live_command:
+                $ r13_meeting_round_next=r13_meeting_live_next(claim,r13_meeting_live_sid)
+                if r13_meeting_round_next:
+                    if r13_debate_statements(claim).index(r13_debate_statement(claim,r13_meeting_round_next))<=r13_debate_statements(claim).index(r13_debate_statement(claim,r13_meeting_live_sid)):
+                        $ r13_meeting_live_lap+=1
+                    $ r13_debate_selected=r13_meeting_round_next
     $ r13_meeting_round_result=r13_meeting_live_command or ("review",)
     $ r13_meeting_live_active=False
     $ r13_meeting_live_sid=None
     $ r13_meeting_live_command=None
+    $ r13_meeting_live_lap=0
     return r13_meeting_round_result
 
 label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_result=None,presentation_rows=None,was_interrupting=False):
