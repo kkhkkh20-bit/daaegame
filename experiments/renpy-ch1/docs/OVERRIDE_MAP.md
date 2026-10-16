@@ -13,7 +13,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 92 | `systems/room13_livelihood_flow.rpy:35` | _r13_life_snack_topics |
 | 5 | 93 | `systems/room13_livelihood_flow.rpy:114` | _r13_shop_topics |
 | 6 | 94 | `systems/room13_shop.rpy:50` | _r13_firstday_topics |
-| 7 | 95 | `systems/room13_first_day_flow.rpy:110` | _r13_items_topics |
+| 7 | 95 | `systems/room13_first_day_flow.rpy:112` | _r13_items_topics |
 | 8 | 96 | `systems/room13_items.rpy:112` | _r13_intro_topics |
 | 9 | 97 | `systems/room13_intro_clues.rpy:112` | _r13_poc_topics |
 | 10 | 100 | `systems/room13_poc_route.rpy:60` | _r13_daram_home_topics |
@@ -21,7 +21,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 12 | 113 | `systems/room13_present_flow.rpy:38` | _r13_night_topics |
 | 13 | 117 | `systems/room13_night_talk.rpy:33` | _r13_uk_topics |
 | 14 | 123 | `systems/room13_use_knowledge.rpy:53` | _r13_new_places_topics |
-| 15 | 130 | `systems/room13_new_places.rpy:122` | _r13_direct_work_topics |
+| 15 | 130 | `systems/room13_new_places.rpy:167` | _r13_direct_work_topics |
 | 16 | 133 | `systems/room13_direct_work.rpy:14` | _r13_catalog_topics |
 | 17 | 148 | `systems/room13_materials.rpy:56` |  |
 
@@ -68,7 +68,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 75 | `room13_dialogue_openings_20261013.rpy:238` | _r13_mystery_topic_lines |
 | 2 | 76 | `room13_first_mystery.rpy:84` | r13_tool_base_topic_lines |
 | 3 | 77 | `room13_tool_discovery.rpy:183` | _r13_firstday_topic_lines |
-| 4 | 95 | `systems/room13_first_day_flow.rpy:101` | _r13_intro_topic_lines |
+| 4 | 95 | `systems/room13_first_day_flow.rpy:103` | _r13_intro_topic_lines |
 | 5 | 97 | `systems/room13_intro_clues.rpy:90` | _r13_daram_home_topic_lines |
 | 6 | 101 | `systems/room13_daram_home.rpy:109` | _r13_mem_topic_lines |
 | 7 | 114 | `systems/room13_memory.rpy:74` | _r13_expand_topic_lines |
@@ -93,7 +93,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 94 | `systems/room13_first_day_flow.rpy:46` | _r13_intro_notes |
 | 3 | 97 | `systems/room13_intro_clues.rpy:119` | _r13_learning_mystery_notes |
 | 4 | 98 | `systems/room13_learning.rpy:116` | _r13_poc_notes |
-| 5 | 100 | `systems/room13_poc_route.rpy:138` | _r13_tn_notes |
+| 5 | 100 | `systems/room13_poc_route.rpy:140` | _r13_tn_notes |
 | 6 | 121 | `systems/room13_trial_notes.rpy:48` |  |
 
 ## `r13_finish_topic` (5층)
@@ -131,7 +131,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 97 | `systems/room13_intro_clues.rpy:94` | _r13_poc_intro_goal |
-| 2 | 100 | `systems/room13_poc_route.rpy:124` | _r13_daram_room_intro_goal |
+| 2 | 100 | `systems/room13_poc_route.rpy:126` | _r13_daram_room_intro_goal |
 | 3 | 101 | `systems/room13_daram_home.rpy:128` | _r13_note_spot_goal |
 | 4 | 129 | `systems/room13_mother_note_spot.rpy:21` |  |
 
@@ -187,7 +187,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:530` | _r13_poc_campaign_goal |
-| 2 | 100 | `systems/room13_poc_route.rpy:126` |  |
+| 2 | 100 | `systems/room13_poc_route.rpy:128` |  |
 
 ## `r13_click_feedback` (2층)
 
@@ -236,7 +236,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 98 | `systems/room13_learning.rpy:78` | _r13_poc_job_context |
-| 2 | 100 | `systems/room13_poc_route.rpy:129` |  |
+| 2 | 100 | `systems/room13_poc_route.rpy:131` |  |
 
 ## `r13_life_apply_purchase` (2층)
 
@@ -251,6 +251,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 126 | `systems/room13_life_closeups.rpy:23` | _r13_gm_tool_name |
 | 2 | 127 | `systems/room13_gimmicks.rpy:45` |  |
+
+## `r13_line_performance` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:86` | _r13_mood_line_performance |
+| 2 | 141 | `systems/room13_daram_mood.rpy:28` |  |
 
 ## `r13_local_connections` (2층)
 
@@ -285,7 +292,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 57 | `room13_life.rpy:164` | _r13_new_places_resident_where |
-| 2 | 130 | `systems/room13_new_places.rpy:79` |  |
+| 2 | 130 | `systems/room13_new_places.rpy:104` |  |
 
 ## `r13_secret_route_available` (2층)
 

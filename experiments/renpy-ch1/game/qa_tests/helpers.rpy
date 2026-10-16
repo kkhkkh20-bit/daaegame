@@ -206,6 +206,11 @@ label r13_qa_talk(person):
     call r13_talk
     jump r13_roam
 
+# 0.18.75: press an inspection spot from the field and come back through r13_roam.
+label r13_qa_object(key):
+    call r13_object(key)
+    jump r13_roam
+
 # Move within the same run (keeps state) and arrive through r13_roam.
 label r13_qa_goto(day,period,location,flags=()):
     $ r13_edit(day=day,period=period,location=location)

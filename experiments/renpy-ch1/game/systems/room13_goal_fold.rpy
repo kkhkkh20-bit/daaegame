@@ -1,6 +1,8 @@
 # Player-opened field thoughts; question discoveries never open the panel.
 default r13_goal_open=False
 default r13_thoughts_seen = ()
+# 0.18.75 (design review #5): a changed thought is shown once for a few seconds, not only as a dot.
+default r13_thought_toasted = ()
 
 init 60 python:
     class R13FoldArrow(renpy.Displayable):
@@ -28,6 +30,11 @@ screen r13_goal_fold(goal,ready=False):
             use r13_antique_button("생각","dialogue",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",tuple(sorted(set(r13_thoughts_seen)|set(signature))))],enabled=ready,compact=True,width=112,chosen=r13_goal_open)
             if any(item not in r13_thoughts_seen for item in signature):
                 add Solid("#d7ad61") xpos 94 ypos 17 xsize 6 ysize 6
+        if ready and not r13_goal_open and thought not in r13_thoughts_seen and thought not in r13_thought_toasted:
+            timer 4.5 action SetVariable("r13_thought_toasted",tuple(r13_thought_toasted)+(thought,))
+            frame:
+                xpos 1160 xanchor 1.0 ypos 654 yanchor 1.0 xmaximum 620 padding (18,10) background R13PaperFrame()
+                text ("새 생각 · "+thought) size r13_read_size(19,22) color "#496579"
         if r13_goal_open:
             button:
                 area (0,0,1280,650) background None
