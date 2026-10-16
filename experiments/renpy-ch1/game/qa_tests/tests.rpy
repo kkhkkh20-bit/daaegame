@@ -10669,3 +10669,51 @@ testcase bori_nero_actions:
     $ r13_qa_hitmap("bn_school_d9p0_c0")
     screenshot "bn_school_d9p0_c0.png"
     assert eval (any(a["person"]=="resident_bori" and a["pose"]=="neutral" for a in r13_stage_people()))
+
+testcase screen_choice_guard:
+    # 0.18.69 (owner 19:23, injected - not a natural start): a hub/entry screen that ends with no
+    # (kind, value) pair shows the same screen again; no record, time, flag or story step. The
+    # normal pair contract still works (guard questions open from the same hub). Three bad
+    # results in a row raise instead of looping. (A screen action returning None never ends an
+    # interaction, so the bad results injected here are False and a bare string, through a
+    # QA-only timer screen.) The renderer-missing halt is checked in the
+    # browser (dev/qa_boot.py, WebGL off), not here.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ import copy as r13_qa_copy
+    $ r13_qa_before=r13_qa_copy.deepcopy(dict(room13))
+    $ R13_BOOT_GUARD["bad_choice"]=0
+    run Show("r13_qa_inject_return",value=False)
+    pause 1.0
+    assert screen "r13_hub"
+    assert eval (dict(room13)==r13_qa_before and R13_BOOT_GUARD["bad_choice"]==1 and "r13_hub:entry" in R13_BOOT_GUARD["bad_seen"])
+    run Show("r13_qa_inject_return",value="entry")
+    pause 1.0
+    assert screen "r13_hub"
+    assert eval (dict(room13)==r13_qa_before and R13_BOOT_GUARD["bad_choice"]==2)
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause 1.5
+    click pos (640,600) until screen "r13_entry_topics" timeout 20
+    assert eval (R13_BOOT_GUARD["bad_choice"]==0)
+    run Show("r13_qa_inject_return",value=False)
+    pause 1.0
+    assert screen "r13_entry_topics"
+    assert eval (room13["day"]==1 and room13["period"]==r13_qa_before["period"] and room13["evidence"]==r13_qa_before["evidence"] and "entry_corrected" not in room13["flags"])
+    screenshot "guard_topics_after_bad_result.png"
+    run Show("r13_qa_inject_return",value=("entry","back"))
+    pause 1.0
+    assert screen "r13_hub"
+    $ r13_qa_raised=[]
+    python:
+        R13_BOOT_GUARD["bad_choice"]=0
+        for _i in range(3):
+            try:
+                r13_screen_choice_ok(None,"qa")
+            except Exception as _e:
+                r13_qa_raised.append(str(_e))
+        r13_qa_ok=(len(r13_qa_raised)==1 and "three times" in r13_qa_raised[0] and r13_screen_choice_ok(("entry","back"),"qa") and R13_BOOT_GUARD["failures"]==0)
+        open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(raised=r13_qa_raised,ok=r13_qa_ok,seen=R13_BOOT_GUARD["bad_seen"])))
+    assert eval r13_qa_ok

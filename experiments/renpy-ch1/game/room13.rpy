@@ -109,6 +109,11 @@ label r13_entry:
     window hide
     call screen r13_hub(entry=True)
     $ r13_choice=_return
+    # 0.18.69: a hub result is always a (kind, value) pair. Anything else is not a choice:
+    # show the same screen again (no time, record or story step), and stop with an error after
+    # repeated bad results instead of looping (systems/room13_boot_guard.rpy).
+    if not r13_screen_choice_ok(r13_choice,"r13_hub:entry"):
+        jump r13_entry
     if r13_choice[0]=="person":
         if r13_choice[1]=="guard":
             jump r13_entry_guard_menu
@@ -126,6 +131,8 @@ label r13_entry_guard_menu:
     $ dialogue_speaker=None
     call screen r13_entry_topics
     $ r13_choice=_return
+    if not r13_screen_choice_ok(r13_choice,"r13_entry_topics"):
+        jump r13_entry_guard_menu
     if r13_choice != ("entry","back"):
         $ r13_speaker("guard","neutral")
 label r13_entry_dispatch:
@@ -274,6 +281,8 @@ label r13_field:
     hide r13_visitor
     call screen r13_hub
     $ r13_choice=_return
+    if not r13_screen_choice_ok(r13_choice,"r13_hub"):
+        jump r13_field
     if r13_choice[0]=="livelihood":
         call r13_livelihood
         jump r13_roam
