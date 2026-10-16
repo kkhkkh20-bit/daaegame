@@ -46,7 +46,7 @@ async def main():
    await native_jump(q,'r13_trial');await q.wait('say');await shot('01-opening-focused')
    if os.environ.get('ROOM13_MEETING_OPINIONS_ONLY'):
     await q.py('import renpy;s=renpy.store;s.r13_meeting_active=True;s.r13_meeting_intro=False;s.r13_claim="C1";s.r13_meeting_claim="C1";s.r13_debate_selected="s2";s.r13_meeting_begin_opinions("C1");s.r13_edit(propositions=["C1"]);s.r13_debate_mark("pressed","C1","s1");s.r13_debate_mark("broken","C1","s2");result=True')
-    await native_jump(q,'r13_debate_loop');await until('r13_debate_board');await q.press('결론을 말한다');await until('choice')
+    await native_jump(q,'r13_debate_loop');await until('r13_debate_board');await shot('19-completed-controls');await q.press('결론을 말한다');await until('choice')
     correct=await q.py('import renpy;result=next(text for kind,text in renpy.store.R13_DEBATE["C1"]["conclusion"]["options"] if kind=="correct")')
     await q.press(correct);await until(say='동의하지 않아요');await shot('17-changed-resident-reaction')
     assert await q.py('import renpy;s=renpy.store;result=s.r13_read_id.startswith("meeting:opinions:C1") and s.dialogue_speaker in [row["person"] for row in s.r13_meeting_vote["changed"]]')
