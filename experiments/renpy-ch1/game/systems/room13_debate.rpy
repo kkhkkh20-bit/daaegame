@@ -8,6 +8,7 @@
 #  남은 발언 때문에 결론은 못 낸다. '여기까지 정리한다'로 닫으면 partial로 남는다.
 # 결과는 기존 r13_prove/propositions로만 남기므로 판결·엔딩 규칙은 그대로다.
 init 98 python:
+    from collections.abc import Mapping as R13DebateMapping
     R13_DEBATE={
         "C1":dict(title="잠긴 방에는 아이만 있었다",
             chair="resident_seori",
@@ -249,19 +250,25 @@ init 98 python:
                             ("resident_ppul","잠깐이라도 오르면 그만큼은 버티는 거잖소!",{"expression":"angry"})]},
                     wrong=("resident_ppul","그 자료가 다음엔 희생이 통하지 않는다는 증거입니까?")),
                 dict(id="s3",who="resident_ppul",text="사람을 바치는 것 말고는 【다른 방법이 없습니다】.",
-                    accept=["E23","E24"],
+                    accept=["E23"],
                     soft={"E30":("resident_seori","옛 글을 읽어 낸 건 알겠습니다. 그 방법을 실제로 해 본 기록이 있습니까?")},
                     hint="남은 힘을 한곳으로 옮겨 본 기록이 두 번 있다.",
                     broken=[("mom","여러 돌에 남은 힘을 한곳으로 모았어요. 작은 집에서 한 번, 저녁에 더 큰 곳에서 한 번 해 봤고요."),
                         ("resident_seori","새로 채우는 방법은 아니지만, 사람을 잇지 않고도 버틸 방법은 있습니다.")],
                     broken_by={
                         "E23":[("mom","여러 돌에 남은 힘을 한 돌로 옮겨 봤어요. 내준 돌은 줄고 받은 돌은 고르게 빛났어요. 힘을 조금 쓸 때 한 번 본 거지만, 사람을 잇지 않고 옮길 수는 있었어요."),
-                            ("resident_seori","새로 채우는 방법은 아니군요. 그래도 사람을 잇지 않는 길이 하나는 있습니다.")],
-                        "E24":[("mom","힘을 많이 쓰는 저녁에 다시 재 봤어요. 남은 힘을 모으면 얼마나 버티는지, 얼마나 새어 나가는지까지 적었어요."),
-                            ("resident_seori","새로 채우는 방법은 아니지만, 사람을 잇지 않고도 버틸 방법은 있습니다.")]},
+                            ("resident_seori","새로 채우는 방법은 아니군요. 그래도 사람을 잇지 않는 길이 하나는 있습니다.")]},
                     wrong=("resident_ppul","그 자료가 희생 말고 다른 방법이 있다는 증거입니까?")),
+                dict(id="s4",who="resident_ppul",text="작은 곳에서 한 번 본 것뿐이잖소. 【저녁에도 버틸지는 확인하지 못했습니다】.",
+                    accept=["E24"],require_observations=True,
+                    press=[("dad","낮에 해 본 것만으로는 부족하다는 말씀이군요."),("resident_seori","맞습니다. 힘을 더 많이 쓰는 저녁에 얼마나 버텼는지도 확인해야 합니다.")],
+                    blocked=[("resident_seori","낮과 저녁에 직접 확인한 두 기록을 함께 대조해야 합니다. 기록지만으로 실험을 대신할 수는 없습니다.")],
+                    soft={"E23":("resident_seori","이건 힘을 적게 쓸 때의 첫 관찰입니다. 지금 따지는 건 저녁의 부하입니다.")},
+                    hint="힘을 많이 쓰는 저녁에 실제로 다시 지켜본 기록이 필요하다.",
+                    broken=[("mom","저녁에 남은 힘을 다시 재고 옮겼어요. 힘을 더 많이 쓸 때 버틴 시간과 새어 나간 양도 적었습니다."),("resident_seori","낮과 저녁에 따로 확인했군요. 공급할 곳을 줄여야 하고, 새 힘이 생긴 건 아니라는 한계도 그대로 남습니다.")],
+                    wrong=("resident_ppul","그 자료에 저녁에도 해 봤다는 내용이 있습니까?")),
             ],
-            conclusion=dict(prompt="두 번 지켜본 결과로 무엇을 말할까?",
+            conclusion=dict(prompt="추출 기록과 낮·저녁의 관찰을 이으면?",
                 options=[
                     ("correct","반짝 효과는 짧고, 모으면 버틴다"),
                     ("over","힘을 모으면 장치를 영원히 채운다"),
@@ -278,12 +285,14 @@ init 98 python:
             chair="resident_seori",
             statements=[
                 dict(id="s1",who="resident_ppul",text="불을 끄면 오늘 밤 【잘 곳이 없습니다】.",
-                    accept=["E25"],
+                    accept=["E25"],required_flags=["shelter_ready"],
+                    blocked=[("resident_seori","학교를 대피소로 실제 넘겨받았는지 확인되지 않았습니다. 기록이 있다는 것과 지금 쓸 수 있다는 건 다릅니다.")],
                     hint="학교를 대피소로 쓰기로 넘겨받았다.",
                     broken=[("dad","대피소로 쓸 학교를 넘겨받았습니다. 몇 명이 들어갈 수 있는지도 적어 뒀습니다.")],
                     wrong=("resident_ppul","그게 오늘 밤 사람들이 잘 곳입니까?")),
                 dict(id="s2",who="nabi",text="방만 있으면 뭐해요. 【먹을 것과 장작】은요?",
-                    accept=["E26"],
+                    accept=["E26"],required_flags=["supplies_ready"],
+                    blocked=[("nabi","장작과 곡식을 실제로 학교에 옮겨 둔 게 아니면, 오늘 밤 쓸 수 있다고 할 수는 없어요.")],
                     hint="학교로 옮긴 장작과 곡식의 양을 적어 두었다.",
                     broken=[("nabi","……학교로 옮긴 양이 이만큼이면 오늘 밤은 버틸 수 있어요.")],
                     wrong=("nabi","없는 걸 있다고 할 수는 없잖아요.")),
@@ -310,14 +319,14 @@ init 98 python:
         "F4":dict(title="그 가족이 마을의 질서를 깨뜨렸다",
             chair="resident_seori",
             statements=[
-                dict(id="s1",who="granny",text="나는 그 사람들한테 【아내를 찾게 해 줬어요】.",
-                    accept=["E18","E17"],
-                    soft={"E01":("granny","그래요, 그 편지는 내가 부쳤어요. 그게 어때서요?",{"expression":"angry"})},
-                    hint="아내는 첫 주에 이미 초롱에게 경고를 맡겼다. 할머니에게서 떠난 뒤였다.",
-                    broken=[("dad","아내는 첫 주에 이미 초롱에게 경고를 맡겼습니다. ‘오라는 편지를 쓴 적 없다, 여관에는 말하지 말라’고요. 그 경고가 저희 손에 늦게 닿았을 뿐입니다. 당신에게서 떠난 뒤의 일이었습니다."),
+                dict(id="s1",who="granny",text="아내분은 【가족에게 연락하려 하지도 않았어요】. 내가 찾게 해 준 거예요.",
+                    accept=["E18"],
+                    soft={"E17":("resident_seori","어르신이 아내분을 만난 건 확인됩니다. 하지만 가족에게 언제 경고했는지까지 이 기록으로 알 수는 없습니다."),"E01":("granny","그래요, 그 편지는 내가 부쳤어요. 그게 어때서요?",{"expression":"angry"})},
+                    hint="아내는 첫 주에 이미 가족에게 경고를 보냈다. 이미 도망친 뒤였다.",
+                    broken=[("dad","아내는 첫 주에 이미 저희에게 오지 말라고 경고했습니다. 그 경고가 전해지지 않았을 뿐입니다. 당신에게서 도망친 뒤의 일이었습니다."),
                         ("mom","여관으로 돌아갈 수는 없었어요. 그동안 가족에게 돌아갈 방법을 찾고 있었거든요.")],
                     broken_by={
-                        "E18":[("dad","늦게 전해진 봉투입니다. 아내는 첫 주에 이미 ‘오라는 편지를 쓴 적 없다’고 경고를 남겼습니다. 누가 나서서 아내를 찾아 주기 전부터, 아내는 스스로 저희에게 연락하고 있었습니다."),
+                        "E18":[("dad","전해지지 못한 봉투입니다. 아내는 첫 주에 이미 저희에게 오지 말라고 경고했습니다. 누가 나서서 아내를 찾아 주기 전부터, 아내는 스스로 저희에게 연락하고 있었습니다."),
                             ("mom","여관으로 돌아갈 수는 없었어요. 그동안 가족에게 돌아갈 방법을 찾고 있었거든요.")],
                         "E17":[("dad","부엉이 어르신이 베껴 둔 기록입니다. 어르신은 아내를 만났고, 사라진 사람들을 따로 조사하고 있었습니다. 아내를 찾게 해 준 건 할머니가 아닙니다."),
                             ("mom","그분이 제 이야기를 들어 주셨어요. 여관으로는 돌아갈 수 없었고요.")]},
@@ -375,9 +384,24 @@ init 98 python:
     def r13_debate_skipped(claim,st):
         return bool(st.get("skip_if")) and st["skip_if"] in (store.room13 or {}).get("propositions",[])
 
+    def r13_debate_observations_ready():
+        obs=(store.room13 or {}).get("observations",{})
+        if not isinstance(obs,R13DebateMapping):return False
+        first=obs.get("first",{});second=obs.get("second",{})
+        if not isinstance(first,R13DebateMapping) or not isinstance(second,R13DebateMapping):return False
+        a=first.get("time");b=second.get("time")
+        return (isinstance(a,(int,float)) and isinstance(b,(int,float)) and a<b
+            and first.get("load")=="day_low" and second.get("load")=="evening_high"
+            and all(row.get("operator")=="buri" and row.get("recorder")=="resident_seori" for row in (first,second)))
+
+    def r13_debate_context_ready(st):
+        return (all(r13_has(flag) for flag in st.get("required_flags",[]))
+            and (not st.get("require_observations") or r13_debate_observations_ready()))
+
     def r13_debate_is_broken(claim,sid):
         st=r13_debate_statement(claim,sid)
         if r13_debate_skipped(claim,st):return True
+        if not r13_debate_context_ready(st):return False
         if st.get("ready_flags") and all(r13_has(f) for f in st["ready_flags"]) and sid in r13_debate_state()["pressed"].get(claim,[]):
             return True
         return sid in r13_debate_state()["broken"].get(claim,[])
@@ -416,6 +440,8 @@ init 98 python:
             # Witness gates (systems/room13_episodes.rpy) carry their own refusal lines.
             lines=st.get("consent_lines",{}).get(key)
             return "soft",list(lines) if lines else [(R13_DEBATE[claim]["chair"],"본 사람이 이름을 밝히지 않은 기록만으로는 확인이 어렵습니다. 다른 물건이 필요합니다.")]
+        if key in st.get("accept",[]) and not r13_debate_context_ready(st):
+            return "soft",list(st["blocked"])
         if key in st.get("accept",[]):
             # broken_by: a different rebuttal when another record breaks the same statement.
             return "break",list(st.get("broken_by",{}).get(key,st.get("broken",[])))
@@ -441,6 +467,7 @@ init 98 python:
         """Could the player break this statement with what they actually hold?"""
         if r13_debate_is_broken(claim,st["id"]) or st.get("truth"):return True
         if st.get("ready_flags"):return all(r13_has(f) for f in st["ready_flags"])
+        if not r13_debate_context_ready(st):return False
         consent=st.get("need_consent",{})
         return any(key in store.room13.get("evidence",[]) and (key not in consent or r13_has(consent[key])) for key in st.get("accept",[]))
 
@@ -626,7 +653,8 @@ label r13_debate_dispatch:
             call r13_lines(r13_debate_st.get("press_missing",[(r13_debate_st["who"],"그래서, 있습니까?")]),"debate:press_missing:"+r13_claim+":"+r13_debate_st["id"])
         else:
             call r13_lines(r13_debate_st.get("press",[(r13_debate_st["who"],"말한 그대로입니다."),("dad","(저 말을 반박할 자료가 있는지 다시 살펴보자.)",{"thought":True})]),"debate:press:"+r13_claim+":"+r13_debate_st["id"])
-        $ r13_debate_mark("pressed",r13_claim,r13_debate_st["id"])
+        if not r13_debate_st.get("ready_flags") or all(r13_has(f) for f in r13_debate_st["ready_flags"]):
+            $ r13_debate_mark("pressed",r13_claim,r13_debate_st["id"])
         if r13_debate_st.get("ready_flags") and r13_debate_is_broken(r13_claim,r13_debate_st["id"]):
             python:
                 observation=r13_debate_st["press"][0][1]
@@ -688,6 +716,8 @@ label r13_debate_answer_counter(claim,sid):
     return False
 
 label r13_debate_conclude(claim):
+    if not r13_debate_ready(claim):
+        return False
     $ r13_debate_spec=R13_DEBATE[claim]["conclusion"]
     $ r13_debate_menu=[(text,kind) for kind,text in r13_debate_conclusion_options(claim)]
     $ r13_debate_pick=renpy.display_menu([(r13_debate_spec["prompt"],None)]+r13_debate_menu)

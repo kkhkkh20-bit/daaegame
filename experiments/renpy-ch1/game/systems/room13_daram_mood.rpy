@@ -1,4 +1,4 @@
-# 다람이's face follows what she says (owner 0.18.73): "다람의 태도도 확실히 어리니까 엄마를 못 만나는
+# 다람이's face follows what she says (owner 0.18.74): "다람의 태도도 확실히 어리니까 엄마를 못 만나는
 # 실망감과 이런 것들을 대사에 잘 넣고 표정에도 넣어야 할 것 같아. 지금 다람에 대한 표정들이 대사와 함께
 # 적용이 잘 안 되어 있는 것 같아."
 #   Of about 300 다람이 lines only ~50 had a face chosen (inline or room13-fullbody-line-emotions.json);

@@ -58,7 +58,7 @@ init 130 python:
     # person: [(weekly slots it replaces, new place, periods, days)]. Days default to both weeks
     # except the arrival day and day 8 (2-7, 9-14). A slot moves only when nothing pinned the person
     # elsewhere (a shelter, a clinic, a week-2 post); events placed by r13_where stay authoritative.
-    # 0.18.73 (owner): "장사하는 사람들 이제 시장에 많이 넣어 주자. 시장은 사람 많아도 되니."
+    # 0.18.74 (owner): "장사하는 사람들 이제 시장에 많이 넣어 주자. 시장은 사람 많아도 되니."
     #   The market (morning and afternoon; closed in the evening) gathers the traders.
     #   꽥순 fishes and 바둑이 checks traps every afternoon, so their work exists in week 2 too.
     R13_NEW_PLACE_DAYS=tuple(range(2,8))+tuple(range(9,15))
@@ -139,7 +139,7 @@ init 130 python:
             day=[2,14],need=["livelihood_open"],give=[],flags=[],lines=[])
         R13_TOPIC_LABELS["job:"+_r13_job_key]="r13_job_from_talk"
 
-    # ---- mom's first hiding place (owner 0.18.73: "엄마가 숨는 공간도 마련해 줘야 해") ----
+    # ---- mom's first hiding place (owner 0.18.74: "엄마가 숨는 공간도 마련해 줘야 해") ----
     # Week 1 had only the words "예전 은신처" (room13_week2.rpy, E19). It is the hollow under the
     # tangled roots in the forest: she watched the inn road from there, left when she heard someone
     # follow her, and moved to the greenhouse basement. Finding it is colour and motive only: a flag,
