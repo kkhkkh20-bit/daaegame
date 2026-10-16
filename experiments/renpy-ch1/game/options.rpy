@@ -1,7 +1,8 @@
-define config.name = "다람탐정 · 눈에 갇힌 마을"
-define config.version = "0.18.79"
+define config.name = "다람탐정 · 눈에 갇힌 마을 (rev13 시험)"
+define config.version = "0.18.79-rev13test"
 # Literal early definition selects the persistent web save mount.
-define config.save_directory = "daaegame-renpy-village-ch1-06"
+# TEST ONLY: the rev13 test preview keeps its own saves (never the public game's).
+define config.save_directory = "daaegame-renpy-village-ch1-06-rev13test"
 
 default inventory = []
 default inspected = []
@@ -69,7 +70,7 @@ init python:
     config.exit_transition = Dissolve(0.12)
     config.after_load_transition = Fade(0.12,0.12,0.2)
     build.name = "daram_renpy_small_ch1"
-    build.version = "0.18.79"
+    build.version = "0.18.79-rev13test"
     build.classify("game/assets/room13-painted-*.png", None)
     build.classify("game/assets/room13-painted-layouts.json", None)
     build.classify("game/assets/*.txt", "all")

@@ -1,0 +1,364 @@
+{
+ "note": "TEST ONLY: board revision13 new designs, no gameId/schedule/story.",
+ "designs": [
+  {
+   "name_ko": "온유 (가칭) · 황금빛 개",
+   "design_id": "golden_dog-base",
+   "file": "assets/room13-rev13-gallery-golden_dog-base.webp",
+   "crop": [
+    14,
+    23,
+    490,
+    731
+   ],
+   "foot": [
+    293,
+    727
+   ],
+   "head": [
+    146,
+    0,
+    205,
+    140
+   ],
+   "source_sha256": "a47a23fc8e301bdf30657f084b50c81ac0fdc5f05282546dc861eaf0254821ee"
+  },
+  {
+   "name_ko": "자갈 (가칭) · 도마뱀",
+   "design_id": "lizard-base",
+   "file": "assets/room13-rev13-gallery-lizard-base.webp",
+   "crop": [
+    88,
+    4,
+    424,
+    764
+   ],
+   "foot": [
+    173,
+    762
+   ],
+   "head": [
+    72,
+    16,
+    200,
+    150
+   ],
+   "source_sha256": "cce9b90204ebe38b7e114a50806fc074532f99438a1514ad8d4bb0eb8e1496d7"
+  },
+  {
+   "name_ko": "달래 (가칭) · 흰 오리",
+   "design_id": "white_duck-base",
+   "file": "assets/room13-rev13-gallery-white_duck-base.webp",
+   "crop": [
+    66,
+    0,
+    384,
+    765
+   ],
+   "foot": [
+    209,
+    761
+   ],
+   "head": [
+    114,
+    70,
+    160,
+    135
+   ],
+   "source_sha256": "820fa1790a15e205746f41a78998a94ceba46809b57eab3bc7614a9983cb2568"
+  }
+ ],
+ "applied": [
+  {
+   "npc": "buri",
+   "mode": "incoming",
+   "design_id": "brown_owl-dry_amusement",
+   "name_ko": "부리",
+   "kept_poses": [],
+   "dropped_poses": [
+    "action_1",
+    "action_2",
+    "event_toolbox"
+   ]
+  },
+  {
+   "npc": "doto",
+   "mode": "incoming",
+   "design_id": "child_deer-base",
+   "name_ko": "도토",
+   "kept_poses": [],
+   "dropped_poses": [
+    "action_1",
+    "action_2",
+    "world_bulletin_back"
+   ]
+  },
+  {
+   "npc": "karo",
+   "mode": "incoming",
+   "design_id": "white_eagle-roguish_chuckle",
+   "name_ko": "까로",
+   "kept_poses": [],
+   "dropped_poses": [
+    "action_1",
+    "action_2",
+    "living_axlewrap"
+   ]
+  },
+  {
+   "npc": "resident_tori",
+   "mode": "incoming",
+   "design_id": "white_hare-originalized-pixel-v2",
+   "name_ko": "토리",
+   "kept_poses": [],
+   "dropped_poses": [
+    "activity",
+    "world_bench_left"
+   ]
+  },
+  {
+   "npc": "resident_bori",
+   "mode": "incoming",
+   "design_id": "moose-base",
+   "name_ko": "보리",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_firewood"
+   ]
+  },
+  {
+   "npc": "resident_kongi",
+   "mode": "selected",
+   "design_id": "remodel-resident_kongi",
+   "name_ko": "콩이",
+   "kept_poses": [],
+   "dropped_poses": [
+    "activity"
+   ]
+  },
+  {
+   "npc": "resident_kkwak",
+   "mode": "incoming",
+   "design_id": "pink_bird-base",
+   "name_ko": "꽥순",
+   "kept_poses": [],
+   "dropped_poses": [
+    "activity"
+   ]
+  },
+  {
+   "npc": "resident_librarian",
+   "mode": "selected",
+   "design_id": "librarian-face-base-v1",
+   "name_ko": "사서 선생님",
+   "kept_poses": [
+    "event_ledgertie",
+    "living_bookpaper"
+   ],
+   "dropped_poses": []
+  },
+  {
+   "npc": "resident_teacher",
+   "mode": "selected",
+   "design_id": "remodel-resident_teacher",
+   "name_ko": "곰 선생님",
+   "kept_poses": [],
+   "dropped_poses": [
+    "activity"
+   ]
+  },
+  {
+   "npc": "resident_nero",
+   "mode": "incoming",
+   "design_id": "white_wolf-base",
+   "name_ko": "네로",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_foldtag"
+   ]
+  },
+  {
+   "npc": "resident_ppul",
+   "mode": "selected",
+   "design_id": "remodel-resident_ppul",
+   "name_ko": "뿔이 촌장",
+   "kept_poses": [],
+   "dropped_poses": [
+    "activity"
+   ]
+  },
+  {
+   "npc": "resident_tok",
+   "mode": "selected",
+   "design_id": "remodel-resident_tok",
+   "name_ko": "톡",
+   "kept_poses": [],
+   "dropped_poses": [
+    "activity"
+   ]
+  },
+  {
+   "npc": "resident_sling",
+   "mode": "selected",
+   "design_id": "remodel-resident_sling",
+   "name_ko": "슬링",
+   "kept_poses": [
+    "event_steam"
+   ],
+   "dropped_poses": [
+    "activity"
+   ]
+  },
+  {
+   "npc": "resident_momo",
+   "mode": "selected",
+   "design_id": "shrine_goat-base",
+   "name_ko": "모모 관장",
+   "kept_poses": [
+    "living_lampnumber"
+   ],
+   "dropped_poses": []
+  },
+  {
+   "npc": "resident_ttadak",
+   "mode": "selected",
+   "design_id": "remodel-resident_ttadak",
+   "name_ko": "따닥",
+   "kept_poses": [
+    "living_doorframe"
+   ],
+   "dropped_poses": [
+    "living_repair"
+   ]
+  },
+  {
+   "npc": "resident_piko",
+   "mode": "incoming",
+   "design_id": "copper_dog-originalized-pixel-v2",
+   "name_ko": "피코",
+   "kept_poses": [],
+   "dropped_poses": [
+    "event_paintwipe",
+    "living_paint"
+   ]
+  },
+  {
+   "npc": "resident_mungchi",
+   "mode": "selected",
+   "design_id": "remodel-resident_mungchi",
+   "name_ko": "뭉치",
+   "kept_poses": [
+    "event_handrub"
+   ],
+   "dropped_poses": [
+    "living_carry"
+   ]
+  },
+  {
+   "npc": "resident_madam",
+   "mode": "incoming",
+   "design_id": "spotted_dog-originalized-pixel-v2",
+   "name_ko": "백 부인",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_inspect"
+   ]
+  },
+  {
+   "npc": "resident_siluk",
+   "mode": "selected",
+   "design_id": "hyena-base",
+   "name_ko": "실룩",
+   "kept_poses": [
+    "event_whisper"
+   ],
+   "dropped_poses": []
+  },
+  {
+   "npc": "resident_musoe",
+   "mode": "selected",
+   "design_id": "remodel-resident_musoe",
+   "name_ko": "무쇠 할아버지",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_foldmap"
+   ]
+  },
+  {
+   "npc": "resident_seori",
+   "mode": "selected",
+   "design_id": "remodel-resident_seori",
+   "name_ko": "서리 검사원",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_notes"
+   ]
+  },
+  {
+   "npc": "resident_ubak",
+   "mode": "selected",
+   "design_id": "remodel-resident_ubak",
+   "name_ko": "우박",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_measure"
+   ]
+  },
+  {
+   "npc": "resident_nubi",
+   "mode": "incoming",
+   "design_id": "curly-base",
+   "name_ko": "누비 아주머니",
+   "kept_poses": [],
+   "dropped_poses": []
+  },
+  {
+   "npc": "resident_eunho",
+   "mode": "selected",
+   "design_id": "remodel-resident_eunho",
+   "name_ko": "은호 사장",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_prices"
+   ]
+  },
+  {
+   "npc": "resident_guseul",
+   "mode": "incoming",
+   "design_id": "long_ears-base",
+   "name_ko": "구슬",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_stamp"
+   ]
+  },
+  {
+   "npc": "resident_badook",
+   "mode": "selected",
+   "design_id": "remodel-resident_badook",
+   "name_ko": "바둑이",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_bootlace"
+   ]
+  },
+  {
+   "npc": "resident_lamplighter",
+   "mode": "selected",
+   "design_id": "remodel-resident_lamplighter",
+   "name_ko": "초롱",
+   "kept_poses": [],
+   "dropped_poses": [
+    "living_inspectlamp"
+   ]
+  }
+ ],
+ "unchanged": [
+  {
+   "npc": "resident_seol",
+   "mode": "life_action_only",
+   "design_id": "seoli-face-bellrope-v1",
+   "name_ko": "설이"
+  }
+ ]
+}

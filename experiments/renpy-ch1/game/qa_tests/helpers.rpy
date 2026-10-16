@@ -881,3 +881,9 @@ init 999 python:
 screen r13_qa_inject_return(value):
     zorder 999
     timer 0.05 action [Hide("r13_qa_inject_return"), Return(value)]
+
+# TEST BRANCH (rev13 appearance test): one dialogue line by a person, then back to the field
+# (a label called from the hub must not return into it: the hub expects a (kind, value) pair).
+label r13_qa_rev13_say(person):
+    call r13_lines([(person,"(rev13 외형 확인용 대사입니다.)")],"qa:rev13:"+person)
+    jump r13_field

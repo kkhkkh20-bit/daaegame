@@ -1,0 +1,713 @@
+{
+ "version": 1,
+ "revision": 13,
+ "observedAt": "2026-10-16T04:19:23Z",
+ "basis": "Owner 2026-10-15 21:21/21:27 PDT: test-apply the board revision13 selection on a separate test branch and preview. Not a main or public-game replacement. IDs, names, roles, events, schedules and dialogue stay. incoming mappings (11) drop the old-species poses (they stand in the new design); selected remodels (16) keep their existing activity/life poses of the same design line; 설이 bellrope-v1 is a life action and is not forced as the dialogue default (no change); the 3 new designs appear only in the test gallery.",
+ "scale_from_source": 0.5,
+ "alpha_visible": 32,
+ "margin": 4,
+ "head_note": "head/avatar boxes in source pixels, estimated by eye on a 50px grid (crown to chin, ears/antlers/crest excluded)",
+ "designs": [
+  {
+   "design_id": "brown_owl-dry_amusement",
+   "npc": "buri",
+   "name_ko": "부리",
+   "source": "source/buri__brown_owl-dry_amusement.png",
+   "sha256": "0aa0d06421de175b2d1da3cce8127d8509b65b0193f9ceb006e49346d729ec08",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-brown_owl",
+   "pose_kind": "표정 대화 전신",
+   "apply": "incoming",
+   "head": [
+    360,
+    30,
+    350,
+    310
+   ],
+   "avatar": [
+    316,
+    0,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "child_deer-base",
+   "npc": "doto",
+   "name_ko": "도토",
+   "source": "source/doto__child_deer-base.png",
+   "sha256": "ca1b8e787aecebb0a29e0339ecba6220231eeab8562a9ddcd33db7866e6cc07d",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-child_deer",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    400,
+    170,
+    330,
+    370
+   ],
+   "avatar": [
+    334,
+    153,
+    462,
+    462
+   ]
+  },
+  {
+   "design_id": "white_eagle-roguish_chuckle",
+   "npc": "karo",
+   "name_ko": "까로",
+   "source": "source/karo__white_eagle-roguish_chuckle.png",
+   "sha256": "bdbfd21a268d44efe4e0980842d48fc3737bf896310960c07e699db712f4ea6f",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-white_eagle",
+   "pose_kind": "표정 대화 전신",
+   "apply": "incoming",
+   "head": [
+    330,
+    35,
+    350,
+    315
+   ],
+   "avatar": [
+    286,
+    0,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "white_hare-originalized-pixel-v2",
+   "npc": "resident_tori",
+   "name_ko": "토리",
+   "source": "source/resident_tori__white_hare-originalized-pixel-v2.png",
+   "sha256": "6de70df3c5b0c4166f9296b3078e1edc4b1bc22ae702fd033f1670bb6a3d5891",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-white_hare",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    385,
+    175,
+    250,
+    255
+   ],
+   "avatar": [
+    351,
+    163,
+    318,
+    318
+   ]
+  },
+  {
+   "design_id": "moose-base",
+   "npc": "resident_bori",
+   "name_ko": "보리",
+   "source": "source/resident_bori__moose-base.png",
+   "sha256": "2506300868f7d5845416803d65c9c0e3e895e30e50d7c94f2d915f69ca3024dc",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-moose",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    380,
+    160,
+    370,
+    260
+   ],
+   "avatar": [
+    334,
+    79,
+    462,
+    462
+   ]
+  },
+  {
+   "design_id": "remodel-resident_kongi",
+   "npc": "resident_kongi",
+   "name_ko": "콩이",
+   "source": "source/resident_kongi__remodel-resident_kongi.png",
+   "sha256": "0f37df3fea68f7035901d9eb7a2227d03a482dca2a8d852d1c69a95d23ccffe6",
+   "board_decision": "selected",
+   "source_card": "resident_kongi",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    380,
+    40,
+    400,
+    430
+   ],
+   "avatar": [
+    311,
+    20,
+    537,
+    537
+   ]
+  },
+  {
+   "design_id": "pink_bird-base",
+   "npc": "resident_kkwak",
+   "name_ko": "꽥순",
+   "source": "source/resident_kkwak__pink_bird-base.png",
+   "sha256": "59d67f2c126b2a674dfe6380922e9119e1ed6c153f7171a074df575e16642dfd",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-pink_bird",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    355,
+    120,
+    350,
+    350
+   ],
+   "avatar": [
+    311,
+    104,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "librarian-face-base-v1",
+   "npc": "resident_librarian",
+   "name_ko": "사서 선생님",
+   "source": "source/resident_librarian__librarian-face-base-v1.png",
+   "sha256": "2f8f06a40bd37c0f1db1c63da472e8237ce2698e9ba250da1ca7ac7c6cded9e1",
+   "board_decision": "selected",
+   "source_card": "resident_librarian",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    330,
+    60,
+    350,
+    300
+   ],
+   "avatar": [
+    286,
+    15,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "remodel-resident_teacher",
+   "npc": "resident_teacher",
+   "name_ko": "곰 선생님",
+   "source": "source/resident_teacher__remodel-resident_teacher.png",
+   "sha256": "ab3c5bce672078b6d7161f91b0d6dbbdcc0d3244d68366478a089e5727bcb69d",
+   "board_decision": "selected",
+   "source_card": "resident_teacher",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    280,
+    80,
+    440,
+    320
+   ],
+   "avatar": [
+    225,
+    0,
+    550,
+    550
+   ]
+  },
+  {
+   "design_id": "white_wolf-base",
+   "npc": "resident_nero",
+   "name_ko": "네로",
+   "source": "source/resident_nero__white_wolf-base.png",
+   "sha256": "117b803b2f1b8b939045c077aa8965b479540bf68ef4c3e9f476d2481707c6f9",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-white_wolf",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    330,
+    60,
+    370,
+    290
+   ],
+   "avatar": [
+    284,
+    0,
+    462,
+    462
+   ]
+  },
+  {
+   "design_id": "seoli-face-bellrope-v1",
+   "npc": "resident_seol",
+   "name_ko": "설이",
+   "source": "source/resident_seol__seoli-face-bellrope-v1.png",
+   "sha256": "c5ad3f80725f44b7fe429f6234e5b0c97eed63d440065d03d4d3ad67ef1f9108",
+   "board_decision": "selected",
+   "source_card": "resident_seol",
+   "pose_kind": "생활 동작",
+   "apply": "life_action_only"
+  },
+  {
+   "design_id": "remodel-resident_ppul",
+   "npc": "resident_ppul",
+   "name_ko": "뿔이 촌장",
+   "source": "source/resident_ppul__remodel-resident_ppul.png",
+   "sha256": "1a1d03cb7733458a9cd4f6cfce5e118b641888f6c570580f8de1fb74201dd481",
+   "board_decision": "selected",
+   "source_card": "resident_ppul",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    340,
+    70,
+    350,
+    320
+   ],
+   "avatar": [
+    296,
+    37,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "remodel-resident_tok",
+   "npc": "resident_tok",
+   "name_ko": "톡",
+   "source": "source/resident_tok__remodel-resident_tok.png",
+   "sha256": "fc8ec7111592d9325ad93256ce6e62322587e85d4ac3275f5606e1bd429f5be1",
+   "board_decision": "selected",
+   "source_card": "resident_tok",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    270,
+    40,
+    450,
+    360
+   ],
+   "avatar": [
+    214,
+    0,
+    562,
+    562
+   ]
+  },
+  {
+   "design_id": "remodel-resident_sling",
+   "npc": "resident_sling",
+   "name_ko": "슬링",
+   "source": "source/resident_sling__remodel-resident_sling.png",
+   "sha256": "8b5f4c6cea7ec4efec4adb4c332084fb945a49273736cc66749b7d915f1f678f",
+   "board_decision": "selected",
+   "source_card": "resident_sling",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    340,
+    60,
+    390,
+    340
+   ],
+   "avatar": [
+    291,
+    13,
+    487,
+    487
+   ]
+  },
+  {
+   "design_id": "shrine_goat-base",
+   "npc": "resident_momo",
+   "name_ko": "모모 관장",
+   "source": "source/resident_momo__shrine_goat-base.png",
+   "sha256": "427e23f345b532485665837bc6fc6254c91f97f48b5e42607072333aa611262c",
+   "board_decision": "selected",
+   "source_card": "resident_momo",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    320,
+    90,
+    340,
+    290
+   ],
+   "avatar": [
+    277,
+    45,
+    425,
+    425
+   ]
+  },
+  {
+   "design_id": "remodel-resident_ttadak",
+   "npc": "resident_ttadak",
+   "name_ko": "따닥",
+   "source": "source/resident_ttadak__remodel-resident_ttadak.png",
+   "sha256": "45ca446d472cd73254495f34b6d6b3bc1e3d7931524e902e5560e2b2c60f3855",
+   "board_decision": "selected",
+   "source_card": "resident_ttadak",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    330,
+    110,
+    350,
+    290
+   ],
+   "avatar": [
+    286,
+    59,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "copper_dog-originalized-pixel-v2",
+   "npc": "resident_piko",
+   "name_ko": "피코",
+   "source": "source/resident_piko__copper_dog-originalized-pixel-v2.png",
+   "sha256": "7a329a83b9f3e886e6e9af367ff37b550e94793a6a86fe1855adc3e089421238",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-copper_dog",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    380,
+    70,
+    280,
+    260
+   ],
+   "avatar": [
+    345,
+    45,
+    350,
+    350
+   ]
+  },
+  {
+   "design_id": "remodel-resident_mungchi",
+   "npc": "resident_mungchi",
+   "name_ko": "뭉치",
+   "source": "source/resident_mungchi__remodel-resident_mungchi.png",
+   "sha256": "51d90ee0eb6bbc894f6cb2d2cbca5e736a029d0e9dba93f45fa4d1edff0b9801",
+   "board_decision": "selected",
+   "source_card": "resident_mungchi",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    280,
+    40,
+    450,
+    370
+   ],
+   "avatar": [
+    224,
+    0,
+    562,
+    562
+   ]
+  },
+  {
+   "design_id": "spotted_dog-originalized-pixel-v2",
+   "npc": "resident_madam",
+   "name_ko": "백 부인",
+   "source": "source/resident_madam__spotted_dog-originalized-pixel-v2.png",
+   "sha256": "0333ef428b956c719b763a419071144a83fdad0ebb73695bf20f12ea18a7c327",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-spotted_dog",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    290,
+    30,
+    360,
+    310
+   ],
+   "avatar": [
+    245,
+    0,
+    450,
+    450
+   ]
+  },
+  {
+   "design_id": "hyena-base",
+   "npc": "resident_siluk",
+   "name_ko": "실룩",
+   "source": "source/resident_siluk__hyena-base.png",
+   "sha256": "0d9e8df531a7fae686766e9343bb47c24b9858ce806fb349ae1822c108cd3499",
+   "board_decision": "selected",
+   "source_card": "resident_siluk",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    390,
+    70,
+    320,
+    280
+   ],
+   "avatar": [
+    350,
+    32,
+    400,
+    400
+   ]
+  },
+  {
+   "design_id": "remodel-resident_musoe",
+   "npc": "resident_musoe",
+   "name_ko": "무쇠 할아버지",
+   "source": "source/resident_musoe__remodel-resident_musoe.png",
+   "sha256": "5da337e02da6330f1089f7e890d576d32e3e2e26b30f9d2990c3668789ba357b",
+   "board_decision": "selected",
+   "source_card": "resident_musoe",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    270,
+    80,
+    470,
+    320
+   ],
+   "avatar": [
+    211,
+    0,
+    587,
+    587
+   ]
+  },
+  {
+   "design_id": "remodel-resident_seori",
+   "npc": "resident_seori",
+   "name_ko": "서리 검사원",
+   "source": "source/resident_seori__remodel-resident_seori.png",
+   "sha256": "965a25dc2a3311b75be26abf396efbab5d5d6b39cfc20ae844fe2918a07b05a8",
+   "board_decision": "selected",
+   "source_card": "resident_seori",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    330,
+    90,
+    350,
+    290
+   ],
+   "avatar": [
+    286,
+    39,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "remodel-resident_ubak",
+   "npc": "resident_ubak",
+   "name_ko": "우박",
+   "source": "source/resident_ubak__remodel-resident_ubak.png",
+   "sha256": "0fa9d5c8d11f40d20af59b8bf25a0070b04e220d875b2e80854f3e164953604e",
+   "board_decision": "selected",
+   "source_card": "resident_ubak",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    265,
+    100,
+    460,
+    360
+   ],
+   "avatar": [
+    207,
+    21,
+    575,
+    575
+   ]
+  },
+  {
+   "design_id": "curly-base",
+   "npc": "resident_nubi",
+   "name_ko": "누비 아주머니",
+   "source": "source/resident_nubi__curly-base.png",
+   "sha256": "4378fc5b57e816aa88d100acee3fb76be572cafeed4ef079c1fecf0b74b8b8df",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-curly",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    310,
+    40,
+    350,
+    290
+   ],
+   "avatar": [
+    266,
+    0,
+    437,
+    437
+   ]
+  },
+  {
+   "design_id": "remodel-resident_eunho",
+   "npc": "resident_eunho",
+   "name_ko": "은호 사장",
+   "source": "source/resident_eunho__remodel-resident_eunho.png",
+   "sha256": "c45daf7bce661175a30ecb6feb4de2f338ee47582d2ff339d7601de8849d2ff1",
+   "board_decision": "selected",
+   "source_card": "resident_eunho",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    330,
+    110,
+    390,
+    370
+   ],
+   "avatar": [
+    281,
+    81,
+    487,
+    487
+   ]
+  },
+  {
+   "design_id": "long_ears-base",
+   "npc": "resident_guseul",
+   "name_ko": "구슬",
+   "source": "source/resident_guseul__long_ears-base.png",
+   "sha256": "a6837535a9f4e67d3db8c94cdb0e680dfa1b3b09965d3ae8706d9e85c3209918",
+   "board_decision": "incoming_mapping",
+   "source_card": "ref-long_ears",
+   "pose_kind": "기본 전신 후보",
+   "apply": "incoming",
+   "head": [
+    410,
+    290,
+    270,
+    240
+   ],
+   "avatar": [
+    376,
+    260,
+    337,
+    337
+   ]
+  },
+  {
+   "design_id": "remodel-resident_badook",
+   "npc": "resident_badook",
+   "name_ko": "바둑이",
+   "source": "source/resident_badook__remodel-resident_badook.png",
+   "sha256": "2927741abeb1955727ff59f12e2ffffe5cd4a0be7edd0842df3ba07028be3db4",
+   "board_decision": "selected",
+   "source_card": "resident_badook",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    280,
+    130,
+    470,
+    390
+   ],
+   "avatar": [
+    221,
+    62,
+    587,
+    587
+   ]
+  },
+  {
+   "design_id": "remodel-resident_lamplighter",
+   "npc": "resident_lamplighter",
+   "name_ko": "초롱",
+   "source": "source/resident_lamplighter__remodel-resident_lamplighter.png",
+   "sha256": "4e0a413f4af841d0706e513e48bc31c056b6e6fd77f7c59b5e4a40101fb22bd2",
+   "board_decision": "selected",
+   "source_card": "resident_lamplighter",
+   "pose_kind": "기본 전신 후보",
+   "apply": "selected",
+   "head": [
+    370,
+    220,
+    300,
+    300
+   ],
+   "avatar": [
+    332,
+    206,
+    375,
+    375
+   ]
+  },
+  {
+   "design_id": "golden_dog-base",
+   "npc": null,
+   "name_ko": "온유 (가칭) · 황금빛 개",
+   "source": "source/ref-golden_dog__golden_dog-base.png",
+   "sha256": "a47a23fc8e301bdf30657f084b50c81ac0fdc5f05282546dc861eaf0254821ee",
+   "board_decision": "new_confirmed",
+   "source_card": "ref-golden_dog",
+   "pose_kind": "기본 전신 후보",
+   "apply": "gallery_only",
+   "head": [
+    320,
+    40,
+    410,
+    280
+   ],
+   "avatar": [
+    269,
+    0,
+    512,
+    512
+   ]
+  },
+  {
+   "design_id": "lizard-base",
+   "npc": null,
+   "name_ko": "자갈 (가칭) · 도마뱀",
+   "source": "source/ref-lizard__lizard-base.png",
+   "sha256": "cce9b90204ebe38b7e114a50806fc074532f99438a1514ad8d4bb0eb8e1496d7",
+   "board_decision": "new_confirmed",
+   "source_card": "ref-lizard",
+   "pose_kind": "기본 전신 후보",
+   "apply": "gallery_only",
+   "head": [
+    320,
+    40,
+    400,
+    300
+   ],
+   "avatar": [
+    270,
+    0,
+    500,
+    500
+   ]
+  },
+  {
+   "design_id": "white_duck-base",
+   "npc": null,
+   "name_ko": "달래 (가칭) · 흰 오리",
+   "source": "source/ref-white_duck__white_duck-base.png",
+   "sha256": "820fa1790a15e205746f41a78998a94ceba46809b57eab3bc7614a9983cb2568",
+   "board_decision": "new_confirmed",
+   "source_card": "ref-white_duck",
+   "pose_kind": "기본 전신 후보",
+   "apply": "gallery_only",
+   "head": [
+    360,
+    140,
+    320,
+    270
+   ],
+   "avatar": [
+    320,
+    96,
+    400,
+    400
+   ]
+  }
+ ]
+}

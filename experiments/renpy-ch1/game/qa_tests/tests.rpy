@@ -10827,3 +10827,428 @@ testcase screen_choice_guard:
         r13_qa_ok=(len(r13_qa_raised)==1 and "three times" in r13_qa_raised[0] and r13_screen_choice_ok(("entry","back"),"qa") and R13_BOOT_GUARD["failures"]==0)
         open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(raised=r13_qa_raised,ok=r13_qa_ok,seen=R13_BOOT_GUARD["bad_seen"])))
     assert eval r13_qa_ok
+
+testcase rev13_scenes:
+    # TEST BRANCH ONLY (rev13 appearance test): each changed person in a scene the schedule puts
+    # them in (picked from staging_dump), hit map + screenshot, then one dialogue line with the
+    # full-body dialogue art. Gallery pages at the end. Screenshots: tests/screenshots.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_roam",dict(day=1,period=2,location="workshop",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_goto",1,2,"workshop")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_buri_d1p2_workshop")
+    screenshot "r13_buri_d1p2_workshop.png"
+    run Call("r13_qa_rev13_say","buri")
+    pause 1.2
+    screenshot "r13_buri_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"hall":368}
+    run Call("r13_qa_roam",dict(day=5,period=0,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"hall":368}
+    run Call("r13_qa_goto",5,0,"hall")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_doto_d5p0_hall")
+    screenshot "r13_doto_d5p0_hall.png"
+    run Call("r13_qa_rev13_say","doto")
+    pause 1.2
+    screenshot "r13_doto_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"gate":0}
+    run Call("r13_qa_roam",dict(day=2,period=1,location="gate",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"gate":0}
+    run Call("r13_qa_goto",2,1,"gate")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_karo_d2p1_gate")
+    screenshot "r13_karo_d2p1_gate.png"
+    run Call("r13_qa_rev13_say","karo")
+    pause 1.2
+    screenshot "r13_karo_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"forest":350}
+    run Call("r13_qa_roam",dict(day=3,period=1,location="forest",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"forest":350}
+    run Call("r13_qa_goto",3,1,"forest")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_badook_d3p1_forest")
+    screenshot "r13_resident_badook_d3p1_forest.png"
+    run Call("r13_qa_rev13_say","resident_badook")
+    pause 1.2
+    screenshot "r13_resident_badook_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"school":0}
+    run Call("r13_qa_roam",dict(day=6,period=1,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"school":0}
+    run Call("r13_qa_goto",6,1,"school")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_bori_d6p1_school")
+    screenshot "r13_resident_bori_d6p1_school.png"
+    run Call("r13_qa_rev13_say","resident_bori")
+    pause 1.2
+    screenshot "r13_resident_bori_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"market":237}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="market",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"market":237}
+    run Call("r13_qa_goto",2,0,"market")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_eunho_d2p0_market")
+    screenshot "r13_resident_eunho_d2p0_market.png"
+    run Call("r13_qa_rev13_say","resident_eunho")
+    pause 1.2
+    screenshot "r13_resident_eunho_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"store":640}
+    run Call("r13_qa_roam",dict(day=3,period=0,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"store":640}
+    run Call("r13_qa_goto",3,0,"store")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_guseul_d3p0_store")
+    screenshot "r13_resident_guseul_d3p0_store.png"
+    run Call("r13_qa_rev13_say","resident_guseul")
+    pause 1.2
+    screenshot "r13_resident_guseul_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_roam",dict(day=4,period=1,location="river",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",4,1,"river")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_kkwak_d4p1_river")
+    screenshot "r13_resident_kkwak_d4p1_river.png"
+    run Call("r13_qa_rev13_say","resident_kkwak")
+    pause 1.2
+    screenshot "r13_resident_kkwak_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"store":475}
+    run Call("r13_qa_roam",dict(day=1,period=0,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"store":475}
+    run Call("r13_qa_goto",1,0,"store")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_kongi_d1p0_store")
+    screenshot "r13_resident_kongi_d1p0_store.png"
+    run Call("r13_qa_rev13_say","resident_kongi")
+    pause 1.2
+    screenshot "r13_resident_kongi_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_roam",dict(day=10,period=0,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_goto",10,0,"square")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_lamplighter_d10p0_square")
+    screenshot "r13_resident_lamplighter_d10p0_square.png"
+    run Call("r13_qa_rev13_say","resident_lamplighter")
+    pause 1.2
+    screenshot "r13_resident_lamplighter_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"post":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"post":0}
+    run Call("r13_qa_goto",2,0,"post")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_librarian_d2p0_post")
+    screenshot "r13_resident_librarian_d2p0_post.png"
+    run Call("r13_qa_rev13_say","resident_librarian")
+    pause 1.2
+    screenshot "r13_resident_librarian_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"market":780}
+    run Call("r13_qa_roam",dict(day=9,period=0,location="market",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"market":780}
+    run Call("r13_qa_goto",9,0,"market")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_madam_d9p0_market")
+    screenshot "r13_resident_madam_d9p0_market.png"
+    run Call("r13_qa_rev13_say","resident_madam")
+    pause 1.2
+    screenshot "r13_resident_madam_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"post":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"post":0}
+    run Call("r13_qa_goto",2,0,"post")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_momo_d2p0_post")
+    screenshot "r13_resident_momo_d2p0_post.png"
+    run Call("r13_qa_rev13_say","resident_momo")
+    pause 1.2
+    screenshot "r13_resident_momo_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"market":501}
+    run Call("r13_qa_roam",dict(day=9,period=0,location="market",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"market":501}
+    run Call("r13_qa_goto",9,0,"market")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_mungchi_d9p0_market")
+    screenshot "r13_resident_mungchi_d9p0_market.png"
+    run Call("r13_qa_rev13_say","resident_mungchi")
+    pause 1.2
+    screenshot "r13_resident_mungchi_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"workshop":520}
+    run Call("r13_qa_roam",dict(day=14,period=0,location="workshop",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"workshop":520}
+    run Call("r13_qa_goto",14,0,"workshop")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_musoe_d14p0_workshop")
+    screenshot "r13_resident_musoe_d14p0_workshop.png"
+    run Call("r13_qa_rev13_say","resident_musoe")
+    pause 1.2
+    screenshot "r13_resident_musoe_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_roam",dict(day=7,period=0,location="river",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",7,0,"river")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_nero_d7p0_river")
+    screenshot "r13_resident_nero_d7p0_river.png"
+    run Call("r13_qa_rev13_say","resident_nero")
+    pause 1.2
+    screenshot "r13_resident_nero_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"store":466}
+    run Call("r13_qa_roam",dict(day=1,period=2,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"store":466}
+    run Call("r13_qa_goto",1,2,"store")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_nubi_d1p2_store")
+    screenshot "r13_resident_nubi_d1p2_store.png"
+    run Call("r13_qa_rev13_say","resident_nubi")
+    pause 1.2
+    screenshot "r13_resident_nubi_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_roam",dict(day=1,period=1,location="square",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_goto",1,1,"square")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_piko_d1p1_square")
+    screenshot "r13_resident_piko_d1p1_square.png"
+    run Call("r13_qa_rev13_say","resident_piko")
+    pause 1.2
+    screenshot "r13_resident_piko_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_roam",dict(day=7,period=0,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_goto",7,0,"square")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_ppul_d7p0_square")
+    screenshot "r13_resident_ppul_d7p0_square.png"
+    run Call("r13_qa_rev13_say","resident_ppul")
+    pause 1.2
+    screenshot "r13_resident_ppul_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"clinic":640}
+    run Call("r13_qa_roam",dict(day=1,period=0,location="clinic",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"clinic":640}
+    run Call("r13_qa_goto",1,0,"clinic")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_seori_d1p0_clinic")
+    screenshot "r13_resident_seori_d1p0_clinic.png"
+    run Call("r13_qa_rev13_say","resident_seori")
+    pause 1.2
+    screenshot "r13_resident_seori_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"forest":356}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="forest",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"forest":356}
+    run Call("r13_qa_goto",2,0,"forest")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_siluk_d2p0_forest")
+    screenshot "r13_resident_siluk_d2p0_forest.png"
+    run Call("r13_qa_rev13_say","resident_siluk")
+    pause 1.2
+    screenshot "r13_resident_siluk_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_roam",dict(day=11,period=1,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"square":0}
+    run Call("r13_qa_goto",11,1,"square")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_sling_d11p1_square")
+    screenshot "r13_resident_sling_d11p1_square.png"
+    run Call("r13_qa_rev13_say","resident_sling")
+    pause 1.2
+    screenshot "r13_resident_sling_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"school":119}
+    run Call("r13_qa_roam",dict(day=1,period=0,location="school",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"school":119}
+    run Call("r13_qa_goto",1,0,"school")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_teacher_d1p0_school")
+    screenshot "r13_resident_teacher_d1p0_school.png"
+    run Call("r13_qa_rev13_say","resident_teacher")
+    pause 1.2
+    screenshot "r13_resident_teacher_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_roam",dict(day=2,period=1,location="workshop",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_goto",2,1,"workshop")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_tok_d2p1_workshop")
+    screenshot "r13_resident_tok_d2p1_workshop.png"
+    run Call("r13_qa_rev13_say","resident_tok")
+    pause 1.2
+    screenshot "r13_resident_tok_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"square":57}
+    run Call("r13_qa_roam",dict(day=5,period=0,location="square",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"square":57}
+    run Call("r13_qa_goto",5,0,"square")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_tori_d5p0_square")
+    screenshot "r13_resident_tori_d5p0_square.png"
+    run Call("r13_qa_rev13_say","resident_tori")
+    pause 1.2
+    screenshot "r13_resident_tori_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"inn":400}
+    run Call("r13_qa_roam",dict(day=5,period=1,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"inn":400}
+    run Call("r13_qa_goto",5,1,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_ttadak_d5p1_inn")
+    screenshot "r13_resident_ttadak_d5p1_inn.png"
+    run Call("r13_qa_rev13_say","resident_ttadak")
+    pause 1.2
+    screenshot "r13_resident_ttadak_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ r13_world_cameras={"clinic":0}
+    run Call("r13_qa_roam",dict(day=2,period=1,location="clinic",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"clinic":0}
+    run Call("r13_qa_goto",2,1,"clinic")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.2
+    $ r13_qa_hitmap("r13_resident_ubak_d2p1_clinic")
+    screenshot "r13_resident_ubak_d2p1_clinic.png"
+    run Call("r13_qa_rev13_say","resident_ubak")
+    pause 1.2
+    screenshot "r13_resident_ubak_say.png"
+    click pos (810,640) until screen "r13_hub" timeout 20
+    pause 0.5
+    $ renpy.show_screen("r13_rev13_gallery")
+    pause 1.0
+    screenshot "r13_gallery_p1.png"
+    click "다음"
+    pause 0.8
+    screenshot "r13_gallery_p2.png"
+    click "다음"
+    pause 0.8
+    screenshot "r13_gallery_p3.png"
+    click "다음"
+    pause 0.8
+    screenshot "r13_gallery_p4.png"

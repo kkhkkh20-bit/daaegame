@@ -88,7 +88,12 @@ screen main_menu():
         text_font r13_ui_font() text_size 17 text_color "#ddd0b6" text_hover_color "#fff0ce"
         action Show("r13_music_credits")
     text r13_title_save_line(title_continue) xalign .5 ypos 620 font r13_ui_font() size 16 color "#e1dfcb"
-    text config.version xpos 1192 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
+    text config.version xpos 1100 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
+    # TEST ONLY (rev13 appearance test preview): review gallery, systems/room13_rev13_test.rpy.
+    textbutton "rev13 외형 검수":
+        xpos 24 ypos 660 padding (10, 5) background Solid("#30261fd0")
+        text_font r13_ui_font() text_size 17 text_color "#ffdc91" text_hover_color "#fff0ce"
+        action Show("r13_rev13_gallery")
 
 # Top of the two-line dialogue window (bottom edge 632): 23px text + padding, or 29px large text.
 define R13_SAY_TOP_NORMAL = 532

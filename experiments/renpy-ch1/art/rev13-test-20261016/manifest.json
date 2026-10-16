@@ -1,0 +1,724 @@
+{
+  "revision": 13,
+  "observedAt": "2026-10-16T04:19:23Z",
+  "scope": "선택된 디자인 테스트 적용과 대본·로직 적합성 검토. 프로덕션 main 전면 교체 승인 아님.",
+  "counts": {
+    "existing": 40,
+    "changed": 28,
+    "incomingMappings": 11,
+    "newConfirmed": 3
+  },
+  "existing": [
+    {
+      "gameId": "daram",
+      "name": "다람",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "dad",
+      "name": "아빠",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "mom",
+      "name": "엄마",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "buri",
+      "name": "부리",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-brown_owl",
+      "versionId": "brown_owl-dry_amusement",
+      "asset": "assets/buri__brown_owl-dry_amusement.png",
+      "sha256": "0aa0d06421de175b2d1da3cce8127d8509b65b0193f9ceb006e49346d729ec08",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "표정 대화 전신",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "granny",
+      "name": "할머니",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "seryeon",
+      "name": "세련",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "nabi",
+      "name": "나비",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "doto",
+      "name": "도토",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-child_deer",
+      "versionId": "child_deer-base",
+      "asset": "assets/doto__child_deer-base.png",
+      "sha256": "ca1b8e787aecebb0a29e0339ecba6220231eeab8562a9ddcd33db7866e6cc07d",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "karo",
+      "name": "까로",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-white_eagle",
+      "versionId": "white_eagle-roguish_chuckle",
+      "asset": "assets/karo__white_eagle-roguish_chuckle.png",
+      "sha256": "bdbfd21a268d44efe4e0980842d48fc3737bf896310960c07e699db712f4ea6f",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "표정 대화 전신",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "neoul",
+      "name": "너울",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "guard",
+      "name": "돌목",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "bami",
+      "name": "밤이",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "resident_tori",
+      "name": "토리",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-white_hare",
+      "versionId": "white_hare-originalized-pixel-v2",
+      "asset": "assets/resident_tori__white_hare-originalized-pixel-v2.png",
+      "sha256": "6de70df3c5b0c4166f9296b3078e1edc4b1bc22ae702fd033f1670bb6a3d5891",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_bori",
+      "name": "보리",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-moose",
+      "versionId": "moose-base",
+      "asset": "assets/resident_bori__moose-base.png",
+      "sha256": "2506300868f7d5845416803d65c9c0e3e895e30e50d7c94f2d915f69ca3024dc",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_yeoni",
+      "name": "여니",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "resident_kongi",
+      "name": "콩이",
+      "decision": "selected",
+      "sourceCardId": "resident_kongi",
+      "versionId": "remodel-resident_kongi",
+      "asset": "assets/resident_kongi__remodel-resident_kongi.png",
+      "sha256": "0f37df3fea68f7035901d9eb7a2227d03a482dca2a8d852d1c69a95d23ccffe6",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_kkwak",
+      "name": "꽥순",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-pink_bird",
+      "versionId": "pink_bird-base",
+      "asset": "assets/resident_kkwak__pink_bird-base.png",
+      "sha256": "59d67f2c126b2a674dfe6380922e9119e1ed6c153f7171a074df575e16642dfd",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_librarian",
+      "name": "사서 선생님",
+      "decision": "selected",
+      "sourceCardId": "resident_librarian",
+      "versionId": "librarian-face-base-v1",
+      "asset": "assets/resident_librarian__librarian-face-base-v1.png",
+      "sha256": "2f8f06a40bd37c0f1db1c63da472e8237ce2698e9ba250da1ca7ac7c6cded9e1",
+      "sourceSize": [
+        1038,
+        1515
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_owlgp",
+      "name": "부엉이 할아버지",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "resident_teacher",
+      "name": "곰 선생님",
+      "decision": "selected",
+      "sourceCardId": "resident_teacher",
+      "versionId": "remodel-resident_teacher",
+      "asset": "assets/resident_teacher__remodel-resident_teacher.png",
+      "sha256": "ab3c5bce672078b6d7161f91b0d6dbbdcc0d3244d68366478a089e5727bcb69d",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_nero",
+      "name": "네로",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-white_wolf",
+      "versionId": "white_wolf-base",
+      "asset": "assets/resident_nero__white_wolf-base.png",
+      "sha256": "117b803b2f1b8b939045c077aa8965b479540bf68ef4c3e9f476d2481707c6f9",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_seol",
+      "name": "설이",
+      "decision": "selected",
+      "sourceCardId": "resident_seol",
+      "versionId": "seoli-face-bellrope-v1",
+      "asset": "assets/resident_seol__seoli-face-bellrope-v1.png",
+      "sha256": "c5ad3f80725f44b7fe429f6234e5b0c97eed63d440065d03d4d3ad67ef1f9108",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "생활 동작",
+      "reviewRequired": [
+        "생활 이미지이므로 대화 기본으로 강제하지 말 것. 조사 동작과 대화 기본 용도 충돌 검토.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_ppul",
+      "name": "뿔이 촌장",
+      "decision": "selected",
+      "sourceCardId": "resident_ppul",
+      "versionId": "remodel-resident_ppul",
+      "asset": "assets/resident_ppul__remodel-resident_ppul.png",
+      "sha256": "1a1d03cb7733458a9cd4f6cfce5e118b641888f6c570580f8de1fb74201dd481",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_tok",
+      "name": "톡",
+      "decision": "selected",
+      "sourceCardId": "resident_tok",
+      "versionId": "remodel-resident_tok",
+      "asset": "assets/resident_tok__remodel-resident_tok.png",
+      "sha256": "fc8ec7111592d9325ad93256ce6e62322587e85d4ac3275f5606e1bd429f5be1",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_sling",
+      "name": "슬링",
+      "decision": "selected",
+      "sourceCardId": "resident_sling",
+      "versionId": "remodel-resident_sling",
+      "asset": "assets/resident_sling__remodel-resident_sling.png",
+      "sha256": "8b5f4c6cea7ec4efec4adb4c332084fb945a49273736cc66749b7d915f1f678f",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_momo",
+      "name": "모모 관장",
+      "decision": "selected",
+      "sourceCardId": "resident_momo",
+      "versionId": "shrine_goat-base",
+      "asset": "assets/resident_momo__shrine_goat-base.png",
+      "sha256": "427e23f345b532485665837bc6fc6254c91f97f48b5e42607072333aa611262c",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_ttadak",
+      "name": "따닥",
+      "decision": "selected",
+      "sourceCardId": "resident_ttadak",
+      "versionId": "remodel-resident_ttadak",
+      "asset": "assets/resident_ttadak__remodel-resident_ttadak.png",
+      "sha256": "45ca446d472cd73254495f34b6d6b3bc1e3d7931524e902e5560e2b2c60f3855",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_piko",
+      "name": "피코",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-copper_dog",
+      "versionId": "copper_dog-originalized-pixel-v2",
+      "asset": "assets/resident_piko__copper_dog-originalized-pixel-v2.png",
+      "sha256": "7a329a83b9f3e886e6e9af367ff37b550e94793a6a86fe1855adc3e089421238",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_mungchi",
+      "name": "뭉치",
+      "decision": "selected",
+      "sourceCardId": "resident_mungchi",
+      "versionId": "remodel-resident_mungchi",
+      "asset": "assets/resident_mungchi__remodel-resident_mungchi.png",
+      "sha256": "51d90ee0eb6bbc894f6cb2d2cbca5e736a029d0e9dba93f45fa4d1edff0b9801",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_madam",
+      "name": "백 부인",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-spotted_dog",
+      "versionId": "spotted_dog-originalized-pixel-v2",
+      "asset": "assets/resident_madam__spotted_dog-originalized-pixel-v2.png",
+      "sha256": "0333ef428b956c719b763a419071144a83fdad0ebb73695bf20f12ea18a7c327",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_siluk",
+      "name": "실룩",
+      "decision": "selected",
+      "sourceCardId": "resident_siluk",
+      "versionId": "hyena-base",
+      "asset": "assets/resident_siluk__hyena-base.png",
+      "sha256": "0d9e8df531a7fae686766e9343bb47c24b9858ce806fb349ae1822c108cd3499",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_musoe",
+      "name": "무쇠 할아버지",
+      "decision": "selected",
+      "sourceCardId": "resident_musoe",
+      "versionId": "remodel-resident_musoe",
+      "asset": "assets/resident_musoe__remodel-resident_musoe.png",
+      "sha256": "5da337e02da6330f1089f7e890d576d32e3e2e26b30f9d2990c3668789ba357b",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_somi",
+      "name": "솜이",
+      "decision": "keep_current_runtime",
+      "asset": null,
+      "poseKind": "retain_existing",
+      "note": "선택 없음. 실제 최신 게임 원본과 기존 동작을 유지하며 스냅샷으로 되돌리지 않음."
+    },
+    {
+      "gameId": "resident_seori",
+      "name": "서리 검사원",
+      "decision": "selected",
+      "sourceCardId": "resident_seori",
+      "versionId": "remodel-resident_seori",
+      "asset": "assets/resident_seori__remodel-resident_seori.png",
+      "sha256": "965a25dc2a3311b75be26abf396efbab5d5d6b39cfc20ae844fe2918a07b05a8",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_ubak",
+      "name": "우박",
+      "decision": "selected",
+      "sourceCardId": "resident_ubak",
+      "versionId": "remodel-resident_ubak",
+      "asset": "assets/resident_ubak__remodel-resident_ubak.png",
+      "sha256": "0fa9d5c8d11f40d20af59b8bf25a0070b04e220d875b2e80854f3e164953604e",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_nubi",
+      "name": "누비 아주머니",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-curly",
+      "versionId": "curly-base",
+      "asset": "assets/resident_nubi__curly-base.png",
+      "sha256": "4378fc5b57e816aa88d100acee3fb76be572cafeed4ef079c1fecf0b74b8b8df",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_eunho",
+      "name": "은호 사장",
+      "decision": "selected",
+      "sourceCardId": "resident_eunho",
+      "versionId": "remodel-resident_eunho",
+      "asset": "assets/resident_eunho__remodel-resident_eunho.png",
+      "sha256": "c45daf7bce661175a30ecb6feb4de2f338ee47582d2ff339d7601de8849d2ff1",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_guseul",
+      "name": "구슬",
+      "decision": "incoming_mapping",
+      "sourceCardId": "ref-long_ears",
+      "versionId": "long_ears-base",
+      "asset": "assets/resident_guseul__long_ears-base.png",
+      "sha256": "a6837535a9f4e67d3db8c94cdb0e680dfa1b3b09965d3ae8706d9e85c3209918",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "종·연령·복장 변경이 대본 속 묘사와 충돌하는지 확인. 원래 gameId와 사건 로직은 유지.",
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_badook",
+      "name": "바둑이",
+      "decision": "selected",
+      "sourceCardId": "resident_badook",
+      "versionId": "remodel-resident_badook",
+      "asset": "assets/resident_badook__remodel-resident_badook.png",
+      "sha256": "2927741abeb1955727ff59f12e2ffffe5cd4a0be7edd0842df3ba07028be3db4",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    },
+    {
+      "gameId": "resident_lamplighter",
+      "name": "초롱",
+      "decision": "selected",
+      "sourceCardId": "resident_lamplighter",
+      "versionId": "remodel-resident_lamplighter",
+      "asset": "assets/resident_lamplighter__remodel-resident_lamplighter.png",
+      "sha256": "4e0a413f4af841d0706e513e48bc31c056b6e6fd77f7c59b5e4a40101fb22bd2",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "sourceMode": "RGBA",
+      "boardPixelsVerified": true,
+      "poseKind": "기본 전신 후보",
+      "reviewRequired": [
+        "선택은 이 기본 1장만. 옛 표정·생활 에셋과 디자인 일관성 점검, 미선택 포즈 자동 교체 금지."
+      ]
+    }
+  ],
+  "newConfirmed": [
+    {
+      "candidateId": "ref-golden_dog",
+      "name": "온유 (가칭) · 황금빛 개",
+      "gameId": null,
+      "versionId": "golden_dog-base",
+      "asset": "assets/ref-golden_dog__golden_dog-base.png",
+      "sha256": "a47a23fc8e301bdf30657f084b50c81ac0fdc5f05282546dc861eaf0254821ee",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "poseKind": "기본 전신 후보",
+      "boardPixelsVerified": true,
+      "reviewRequired": [
+        "신규 디자인 확정. 실제 gameId·등장 위치·일정·역할을 Claude가 제안/검토할 것. 핵심 사건 변경이나 신규 필수 증거 추가로 확대하지 않음."
+      ]
+    },
+    {
+      "candidateId": "ref-lizard",
+      "name": "자갈 (가칭) · 도마뱀",
+      "gameId": null,
+      "versionId": "lizard-base",
+      "asset": "assets/ref-lizard__lizard-base.png",
+      "sha256": "cce9b90204ebe38b7e114a50806fc074532f99438a1514ad8d4bb0eb8e1496d7",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "poseKind": "기본 전신 후보",
+      "boardPixelsVerified": true,
+      "reviewRequired": [
+        "신규 디자인 확정. 실제 gameId·등장 위치·일정·역할을 Claude가 제안/검토할 것. 핵심 사건 변경이나 신규 필수 증거 추가로 확대하지 않음."
+      ]
+    },
+    {
+      "candidateId": "ref-white_duck",
+      "name": "달래 (가칭) · 흰 오리",
+      "gameId": null,
+      "versionId": "white_duck-base",
+      "asset": "assets/ref-white_duck__white_duck-base.png",
+      "sha256": "820fa1790a15e205746f41a78998a94ceba46809b57eab3bc7614a9983cb2568",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "poseKind": "기본 전신 후보",
+      "boardPixelsVerified": true,
+      "reviewRequired": [
+        "신규 디자인 확정. 실제 gameId·등장 위치·일정·역할을 Claude가 제안/검토할 것. 핵심 사건 변경이나 신규 필수 증거 추가로 확대하지 않음."
+      ]
+    }
+  ],
+  "hiddenCardIds": [
+    "ref-charcoal_wolf",
+    "ref-deer_left",
+    "ref-pale_teen",
+    "ref-silver_feline"
+  ],
+  "hiddenMeaning": "보드 숨김은 기존 게임 캐릭터 삭제 승인이 아님.",
+  "excluded": "ref-formal_deer",
+  "rules": [
+    "incoming mapping은 해당 gameId 자체 selected보다 우선",
+    "previousNewConfirmation은 새 주민 추가 승인 아님",
+    "선택 없는 기존 캐릭터는 현재 실제 게임 파일 유지",
+    "미선택 큰눈 8종과 미선택 리모델·표정은 포함하지 않음",
+    "과거 31종 일괄 적용 금지 중 이번 정확한 selected만 예외",
+    "원본은 바이트 그대로 포함, 크롭·배경 제거·캔버스 변형 없음",
+    "검토용 테스트 브랜치에서 스토리/포즈 충돌 검토 후 결과 보고"
+  ],
+  "errors": []
+}

@@ -19,6 +19,11 @@ ACTING = json.loads((GAME / "assets/room13-pixel-acting.json").read_text(encodin
 PORTRAITS = json.loads((GAME / "assets/room13-portraits.json").read_text(encoding="utf-8"))
 FULLBODY = json.loads((GAME / "assets/room13-fullbody-dialogue.json").read_text(encoding="utf-8"))["people"]
 CONTENT = json.loads((GAME / "room13-content.json").read_text(encoding="utf-8"))
+# TEST BRANCH (rev13 appearance test): people re-applied by dev/apply_rev13_test.py are checked by
+# dev/test_rev13_test.py instead; this file keeps checking the remaining 2026-10-15 redesigns.
+_REV13 = ROOT / "art/rev13-test-20261016/rev13.json"
+REV13_APPLIED = {d["npc"] for d in json.loads(_REV13.read_text(encoding="utf-8"))["designs"]
+                 if d["apply"] in ("incoming", "selected")} if _REV13.exists() else set()
 
 
 def files(entry):
@@ -45,9 +50,9 @@ class NpcRedesign(unittest.TestCase):
         self.assertEqual(sources["granny"], "91a35c0e5ee83260fdf9fbfa98ca92ff0bc0333ec7ffe670a18cb25560c750d6")
         # Everyone else keeps the original game art.
         for npc, states in CAST.items():
-            if npc not in sources:
+            if npc not in sources and npc not in REV13_APPLIED:
                 self.assertNotIn("redesign", json.dumps(states), npc)
-        for d in REG["designs"]:
+        for d in [x for x in REG["designs"] if x["npc"] not in REV13_APPLIED]:
             src = (ART / d["source"]).read_bytes()
             self.assertEqual(hashlib.sha256(src).hexdigest(), d["sha256"], d["source"])
             # ID and name stay the story's own
@@ -55,7 +60,7 @@ class NpcRedesign(unittest.TestCase):
             self.assertEqual(FULLBODY[d["npc"]]["name_ko"], d["name_ko"])
 
     def test_every_art_entry_uses_the_new_file(self):
-        for d in REG["designs"]:
+        for d in [x for x in REG["designs"] if x["npc"] not in REV13_APPLIED]:
             npc, new = d["npc"], "assets/room13-redesign-%s.webp" % d["npc"]
             # 0.18.63: map-action poses drawn for the new design (dev/apply_map_actions.py) are
             # their own files; everything else uses the redesign picture.
@@ -71,7 +76,7 @@ class NpcRedesign(unittest.TestCase):
                     self.assertTrue(spec["file"].startswith("assets/room13-action-%s-" % npc), (npc, key))
 
     def test_geometry_fits_the_image_and_feet_touch_the_bottom(self):
-        for d in REG["designs"]:
+        for d in [x for x in REG["designs"] if x["npc"] not in REV13_APPLIED]:
             npc = d["npc"]
             spec = ACTING[npc]["neutral"]
             with Image.open(GAME / spec["file"]) as im:
@@ -93,7 +98,7 @@ class NpcRedesign(unittest.TestCase):
             self.assertTrue(ax + aw <= w and ay + ah <= h, npc)
 
     def test_originals_are_backed_up_and_kept_on_disk(self):
-        for d in REG["designs"]:
+        for d in [x for x in REG["designs"] if x["npc"] not in REV13_APPLIED]:
             saved = BACKUP["npcs"][d["npc"]]
             self.assertEqual(set(saved), {"cast", "acting", "portraits", "fullbody"})
             self.assertFalse(any("redesign" in json.dumps(v) for v in saved.values()))
