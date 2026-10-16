@@ -3,7 +3,7 @@
 Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. 아래 표는 그 순서대로이며, 마지막 줄이 게임이 실제로 부르는 바깥 층이다.
 각 층은 바로 위 층을 `captured_as` 이름으로 붙잡아 부른다. 새 기능을 넣을 때 이 순서를 확인하고, 같은 우선순위에 층을 추가하지 않는다.
 
-## `r13_topics` (18층)
+## `r13_topics` (19층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -24,9 +24,10 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 15 | 130 | `systems/room13_new_places.rpy:167` | _r13_direct_work_topics |
 | 16 | 133 | `systems/room13_direct_work.rpy:14` | _r13_alibi_topics |
 | 17 | 147 | `systems/room13_alibi.rpy:139` | _r13_catalog_topics |
-| 18 | 148 | `systems/room13_materials.rpy:58` |  |
+| 18 | 148 | `systems/room13_materials.rpy:58` | _r13_e1_topics |
+| 19 | 152 | `systems/room13_ep1_lamp_thief.rpy:54` |  |
 
-## `r13_present` (16층)
+## `r13_present` (17층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -45,7 +46,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 13 | 116 | `systems/room13_testimony.rpy:48` | _r13_ob_present |
 | 14 | 118 | `systems/room13_owl_buri.rpy:41` | _r13_uk_present |
 | 15 | 123 | `systems/room13_use_knowledge.rpy:58` | _r13_sound_present |
-| 16 | 150 | `systems/room13_sound.rpy:161` |  |
+| 16 | 150 | `systems/room13_sound.rpy:161` | _r13_e1_present |
+| 17 | 152 | `systems/room13_ep1_lamp_thief.rpy:63` |  |
 
 ## `r13_object_visible` (10층)
 
@@ -214,6 +216,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 98 | `systems/room13_debate.rpy:431` | _r13_sound_debate_judge |
 | 2 | 150 | `systems/room13_sound.rpy:168` |  |
 
+## `r13_debate_seats` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 98 | `systems/room13_debate.rpy:550` | _r13_e1_seats |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:160` |  |
+
+## `r13_debate_session` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 98 | `systems/room13_debate.rpy:363` | _r13_e1_session |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:154` |  |
+
 ## `r13_ending_notes` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -276,6 +292,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 60 | `room13_navigation.rpy:33` | _r13_firstday_connections |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:25` |  |
+
+## `r13_meeting_cast` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 99 | `room13_meeting_seating.rpy:24` | _r13_e1_cast |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:177` |  |
+
+## `r13_meeting_plate` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 99 | `room13_meeting_seating.rpy:111` | _r13_e1_plate |
+| 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:171` |  |
 
 ## `r13_next_day` (2층)
 

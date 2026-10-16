@@ -209,7 +209,7 @@ screen r13_meeting_chrome(claim):
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
         vbox:
             spacing 2
-            text ("식당 회의 · 7일째" if session=="trial" else "제단 앞 회의 · 14일째") size r13_read_size(15,17) color "#795d40"
+            text r13_meeting_header(session) size r13_read_size(15,17) color "#795d40"
             text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"
 
 screen r13_meeting_tools(claim,sid=None,board=False,ready=True):

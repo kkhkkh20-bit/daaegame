@@ -86,7 +86,8 @@ label r13_w1c_portrait:
     $ r13_flag("ev_g_done")
     call r13_ev_here("calm")
     call r13_lines([(None,"광장 구석에서 피코가 낡은 판자에 물감을 문지르고 있었다. 그림 속 사람은 백 년 전 옷을 입고 있었다."),
-        ("resident_piko","……‘옛 마을 초상’이에요. 모모 관장님이 이런 걸 사 줘요. 오늘 못 팔면 저녁을 굶어야 해요.")],"w1c:portrait:open")
+        ("resident_piko","……‘옛 마을 초상’이에요. 모모 관장님이 이런 걸 사 줘요."),
+        ("resident_piko","오늘 못 팔면 방값이 없어요. 그럼 또 등 밑이죠, 뭐.")],"w1c:portrait:open")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False
@@ -98,14 +99,15 @@ label r13_w1c_portrait:
                 $ r13_flag("piko_hostile")
             "모른 척한다":
                 pass
-            "엄마 초상을 그려 달라고 한다 (5냥)" if r13_cash_now()>=5 and not r13_has("mom_portrait"):
+            "엄마 초상을 그려 달라고 한다 (5냥)" if r13_cash_now()>=5 and not r13_has("mom_portrait") and not r13_has("lt_piko_promise"):
                 $ r13_cash(-5,"피코에게 맡긴 엄마 초상")
                 call r13_lines([("dad","제 아내입니다. 눈매는 이렇고, 왼쪽 눈썹에 작은 흉터가 있어요."),
                     ("daram","엄마는 웃을 때 코를 찡그려!"),
-                    (None,"피코는 가짜 초상을 뒤집어 놓았다. 그리고 새 판자에 그림을 그렸다. 저녁이 되기 전에 엄마 얼굴이 완성됐다."),
-                    ("resident_piko","이건 진짜 초상이에요. 진짜 사람을 그린 건 오랜만이네요.")],"w1c:portrait:mom")
-                $ r13_flag("mom_portrait","piko_ally")
-                $ r13_grant(["P01"],"피코에게 맡겨 그린 엄마 초상")
+                    ("daram","이렇게! 그것도 그려 줘야 돼. 약속!"),
+                    (None,"다람이 새끼손가락을 내밀었다. 피코가 물감 묻은 손가락을 걸었다."),
+                    ("resident_piko","약속. 진짜 사람을 그리는 건 오랜만이네요. 내일 아침까지 그려 둘게요.")],"w1c:portrait:mom")
+                # 에피소드 ①: 초상은 다음 날 아침에 받는다(피코가 살면 완성본, 죽으면 코 없는 초상).
+                $ r13_flag("lt_piko_promise","piko_ally")
             "구운 밤을 건네 준다" if r13_has("own:snack"):
                 $ r13_use_item("snack")
                 call r13_lines([("resident_piko","……오늘 저녁은 이걸로 버틸게요. 그러니 가짜 그림은 안 팔아요.")],"w1c:portrait:snack")

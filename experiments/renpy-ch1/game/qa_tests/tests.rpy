@@ -1019,40 +1019,7 @@ testcase ep3_stone:
     click pos (1150,90) until screen "r13_topics" timeout 40
     $ r13_qa_town_dump()
 
-testcase ep4_tok:
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done"))
-    click pos (1150,90) until screen "choice" timeout 40
-    screenshot "e4_accused.png"
-    click "광장 등을 직접 살펴본다"
-    pause 1.0
-    click pos (1150,90) until screen "choice" timeout 40
-    click "증거도 없이 가둘 겁니까"
-    pause 1.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    run Call("r13_qa_talk","resident_ubak")
-    click pos (1150,90) until "광장 등 뚜껑의 나사 자국을 묻는다" timeout 30
-    click "광장 등 뚜껑의 나사 자국을 묻는다"
-    pause 1.0
-    click pos (1150,90) until screen "choice" timeout 40
-    click "서리 검사원에게 가서 함께 해명하게 한다"
-    pause 1.0
-    click pos (1150,90) until screen "r13_topics" timeout 40
-    click "돌아가기"
-    pause 1.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    $ r13_edit(day=4)
-    run Call("r13_qa_talk","resident_tok")
-    click pos (1150,90) until "재판에서 핀 이야기를 직접 해 달라고 한다" timeout 30
-    click "재판에서 핀 이야기를 직접 해 달라고 한다"
-    pause 1.0
-    click pos (1150,90) until screen "r13_topics" timeout 40
-    $ r13_qa_town_dump()
-
-# ---- Town events bundle 2 (systems/room13_town_events2.rpy) ----
-
+# (retired 0.18.81) ep4_tok: 옛 사건 4 톡의 공방은 에피소드 ① 등 도둑으로 대신했다(testcase ep1_meeting).
 testcase town_a_extort:
     pause 2.0
     click "처음부터"
@@ -1559,7 +1526,8 @@ testcase w1c_mother_line:
     click "할머니께 쪽지 하나만"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
-    assert eval (r13_has("mom_portrait") and r13_has("fake_letter_planted") and "H9" in room13["evidence"])
+    # 에피소드 ①: 초상을 맡기면 약속만 남고, 초상은 다음 날 받는다.
+    assert eval (r13_has("lt_piko_promise") and r13_has("fake_letter_planted") and "H9" in room13["evidence"])
     run Call("r13_qa_goto",4,2,"hall",("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "w1c_night.png"
@@ -1631,6 +1599,9 @@ testcase present_portrait:
     click "엄마 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
+    # 에피소드 ①: 초상은 다음 날 아침에 받는다. 여기서는 받았다고 치고 이어 간다.
+    assert eval (r13_has("lt_piko_promise") and "P01" not in room13["evidence"])
+    run Function(r13_grant,["P01"],"QA")
     assert eval ("P01" in room13["evidence"] and not [k for k,s in r13_topics("resident_sling")+r13_topics("resident_lamplighter") if k.startswith("portrait_")])
     assert eval ("ask_mom:sling" in [k for k,s in r13_topics("resident_sling")])
     run Function(r13_qa_present,"resident_sling","P01")
@@ -2608,18 +2579,7 @@ testcase memo_from_desk:
     pause 2.6
     screenshot "desk_without_memo.png"
 
-testcase tok_lamp_late:
-    # 0.18.50: after any first choice at Tok's accusation, the lamp can still be checked on the square,
-    # which opens Ubak's confession (and so Tok's release and testimony).
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="square"),("ep4_seen","ep4_open","entry_corrected","lodging"))
-    pause 1.0
-    assert eval ("ep4_lamp_look" in [k for k,a in r13_actions()])
-    run Function(r13_finish_action,"ep4_lamp_look")
-    assert eval (r13_has("clue_lamp_marks") and "ubak_lamp" in [k for k,t in r13_topics("resident_ubak")] or r13_has("clue_lamp_marks") and r13_where("resident_ubak") is None)
-
+# (retired 0.18.81) tok_lamp_late: 옛 사건 4 톡의 공방은 에피소드 ① 등 도둑으로 대신했다(testcase ep1_meeting).
 testcase admin_pin:
     # 0.18.50: settings → 관리자 도구 → PIN 4861 turns the tool on; a wrong PIN does not.
     pause 2.0
@@ -10852,3 +10812,55 @@ testcase screen_choice_guard:
         r13_qa_ok=(len(r13_qa_raised)==1 and "three times" in r13_qa_raised[0] and r13_screen_choice_ok(("entry","back"),"qa") and R13_BOOT_GUARD["failures"]==0)
         open(renpy.config.basedir+"/qa_result.txt","w").write(repr(dict(raised=r13_qa_raised,ok=r13_qa_ok,seen=R13_BOOT_GUARD["bad_seen"])))
     assert eval r13_qa_ok
+
+testcase ep1_meeting:
+    # 에피소드 ① 등 도둑: 광장 회의 Q1을 증거 다섯 개로 깨고, 빚을 지우는 결정까지.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L04","L06","L09","L10","L07","L08"]),("entry_corrected","lodging","ep4_seen","lt_dawn","piko_dead","lt_open","lt_lib_dawn","siluk_debt_known","ep1_patrol_seen","ep1_eaves_seen","ep1_done"))
+    pause 1.0
+    assert eval (r13_debate_session("Q1")=="ep1" and r13_debate_engageable("Q1"))
+    run Call("r13_qa_event","r13_ep1_meeting")
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
+    pause 0.6
+    screenshot "ep1_live.png"
+    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA L04"
+    click pos (640,600) until eval (r13_debate_is_broken("Q1","s1") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA L06"
+    click pos (640,600) until eval (r13_debate_is_broken("Q1","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA L09"
+    click pos (640,600) until eval (r13_debate_is_broken("Q1","s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA L10"
+    click pos (640,600) until eval (r13_debate_is_broken("Q1","s4") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA L07"
+    click pos (640,600) until eval (r13_debate_is_broken("Q1","s5") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    pause 0.6
+    screenshot "ep1_ready.png"
+    click "결론을 말한다"
+    pause 1.0
+    click "온도를 잰 건 우박, 조각을 훔친 건 실룩, 그 조각을 산 건 백 부인이다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
+    click pos (640,600) until "없던 걸로 하시죠" timeout 60
+    click "“실룩의 빚은 훔친 조각 값으로 없던 걸로 하시죠.”"
+    click pos (640,600) until eval (r13_has("siluk_debt_cleared") and r13_has("tok_cleared")) timeout 60
+    pause 0.5
+    screenshot "ep1_done.png"
