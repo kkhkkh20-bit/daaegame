@@ -26,7 +26,9 @@ class MaterialArt(unittest.TestCase):
     alpha=im.crop((x,y,x+w,y+h)).getchannel('A')
     self.assertEqual(alpha.getextrema(),(0,255),key)
     coverage=sum(alpha.histogram()[1:])/(w*h)
-    self.assertGreater(coverage,.025,key);self.assertLess(coverage,.9,key)
+    self.assertGreater(coverage,.025,key);self.assertLess(coverage,.995,key)
+    for point in ((0,0),(w-1,0),(0,h-1),(w-1,h-1)):
+     self.assertLess(alpha.getpixel(point),128,(key,point))
  def test_art_lookup_is_read_only_and_unknown_keys_keep_fallback(self):
   icons=self.data['icons'];before=copy.deepcopy(icons)
   env=dict(R13_MATERIAL_ART=icons,Crop=lambda rect,file:(rect,file),Transform=lambda art,**options:(art,options))
