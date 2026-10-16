@@ -9704,7 +9704,7 @@ testcase map_actions:
 
 testcase new_places:
     # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
-    # map, one picture per period. 0.18.65: only residents with a new-place routine come, days 2-7.
+    # map, one picture per period. 0.18.67: only residents with a new-place routine come, days 2-7.
     pause 2.0
     click "처음부터"
     pause 3.0
