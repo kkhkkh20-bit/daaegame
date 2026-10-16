@@ -100,6 +100,18 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
             at r13_meeting_pan(r13_meeting_shot_revision,r13_meeting_pan_direction)
         add r13_meeting_plate(session,close)
         if close:
+            $ left,right=r13_meeting_neighbors(claim,focus)
+            for neighbor,is_left in ((left,True),(right,False)):
+                $ side_spec=r13_fullbody_spec(neighbor,"neutral")
+                $ side_art=r13_fullbody_close_art(neighbor,"neutral",760)
+                if side_art is not None:
+                    $ side_width=int(round(side_spec["crop"][2]*r13_fullbody_scale(neighbor,760)))
+                    $ side_x=-side_width//3 if is_left else 1280-side_width*2//3
+                    add side_art xpos side_x ypos r13_fullbody_close_y(neighbor,760,130,"neutral")
+                else:
+                    $ side_crop=CAST[neighbor]["neutral"]["crop"]
+                    $ side_width=int(760.0*side_crop[2]/side_crop[3])
+                    add Transform(r13_meeting_actor(neighbor,focus,640),ysize=760,fit="contain",nearest=True) xpos (-side_width//3 if is_left else 1280-side_width*2//3) ypos 142
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=getattr(store,"dialogue_expression","neutral")
             $ portrait=r13_fullbody_close_art(focus,pose,840)
