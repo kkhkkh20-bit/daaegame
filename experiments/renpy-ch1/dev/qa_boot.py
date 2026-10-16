@@ -1,4 +1,4 @@
-# Natural start check (0.18.69): the published page opened WITHOUT a query in a fresh browser
+# Natural start check (0.18.73): the published page opened WITHOUT a query in a fresh browser
 # profile, real mouse input only for play (the probe only reads state). Title -> 처음부터 ->
 # opening -> gate hub; the gate questions with back, the evidence book with cancel, a wrong
 # and the right record, the wait confirm with cancel and accept; save, reload the page and
@@ -238,19 +238,19 @@ async def old_save(p, report, old_dir):
         await q.wait('main_menu')
         res['new_version'] = await q.py('import renpy;result=renpy.config.version')
         await q.press('불러오기'); await q.wait('load')
-        await q.shot('oldsave-0.18.69-load-screen')
+        await q.shot('oldsave-new-load-screen')
         await q.press('1쪽 1번')
         st = await q.state()
         if 'confirm' in st['screens']:
             await q.press('예')
         await q.wait('r13_hub')
         loaded = (await q.state())['room']
-        # world_art_revisions is refreshed on load when a place's layout changed (0.18.69 changed
+        # world_art_revisions is refreshed on load when a place's layout changed (0.18.73 changed
         # the slot actions of six places); it only re-centres check marks. Everything else stays.
         res['diff'] = sorted(k for k in set(saved) | set(loaded) if saved.get(k) != loaded.get(k))
         res['art_revision_updated'] = sorted(k for k, v in loaded.get('world_art_revisions', {}).items() if saved.get('world_art_revisions', {}).get(k) != v)
         res['same_state'] = res['diff'] in ([], ['world_art_revisions'])
-        await q.shot('oldsave-0.18.69-loaded')
+        await q.shot('oldsave-new-loaded')
         # Play on: the right record settles the entry.
         pos = await q.py("import renpy;s=renpy.store;x,y,w,h=s.ROOM13['objects']['gate']['gate_documents']['rect'];o=s.r13_world_offset();result=[x+w/2-o,y+h/2]")
         await q.input(*pos); await q.advance(); await q.wait('r13_hub')
