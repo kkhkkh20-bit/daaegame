@@ -69,7 +69,7 @@ label r13_case_noticed:
     if room13["kitchen_switch"]:
         call r13_lines([(None,"아래층으로 내려가며 주방 찬장 아래 덮개를 보았다. 올려 두었던 레버가 내려가 있었다.")],"case:noticed:lever")
         $ r13_grant(["H13"],"사건 뒤 주방 찬장 아래")
-    call r13_lines([(None,"그날 13호에서는 아무도 죽지 않았다. 그렇다고 누군가의 범행을 막았다는 증거를 얻은 것은 아니었다.")],"case:noticed:result")
+    call r13_lines([(None,"그날 13호에서는 아무도 죽지 않았다. 그렇다고 누군가 하려던 일을 막았다는 증거를 얻은 것은 아니었다.")],"case:noticed:result")
     $ r13_edit(case_state="prevented",victim_state="protected",daram_state="with_dad",kitchen_switch=False,passage_open=False,period=3,location="inn")
     $ r13_flag("victim_protected","plan_noticed")
     $ r13_grant(["E17"],"살아 있는 어르신이 간직해 온 베낀 기록")

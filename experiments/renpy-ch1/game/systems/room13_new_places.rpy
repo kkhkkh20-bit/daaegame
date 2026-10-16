@@ -225,7 +225,7 @@ label r13_ancient_first_visit:
         call r13_ancient_granny
     else:
         call r13_lines([("dad","(할머니는 지금 붙잡혀 있다. 이곳을 지키던 사람이 자리를 비운 셈이다.)",{"thought":True}),
-            ("dad","(보이는 것만 적어 두자. 이것만으로는 아무것도 입증되지 않는다.)",{"thought":True})],"ancient:first:alone")
+            ("dad","(보이는 것만 적어 두자. 이것만으로는 아무것도 밝혀지지 않는다.)",{"thought":True})],"ancient:first:alone")
     return
 
 label r13_ancient_granny:
@@ -250,7 +250,7 @@ label r13_ancient_granny:
         ("dad","(같이 지키자고 했을 뿐이라면, 아내는 왜 여관을 나와 숨어야 했을까. 할머니 말과 아내가 한 일이 맞지 않는다.)",{"thought":True}),
         ("dad","책상에 남은 아내의 메모는 왜 그대로 두셨습니까? 할머니도 그 방에 드나드셨을 텐데요."),
         ("granny","초롱에게 가라는 메모였죠. 그냥 뒀어요. 당신들이 그 사람한테 가는 길을 찾아 줄 테니까."),
-        ("dad","(메모를 남겨 둔 것도 아내를 찾으려는 미끼였다. 하지만 지금 들은 말만으로는 아무것도 입증되지 않는다.)",{"thought":True}),
+        ("dad","(메모를 남겨 둔 것도 아내를 찾으려는 미끼였다. 하지만 지금 들은 말만으로는 아무것도 밝혀지지 않는다.)",{"thought":True}),
         ("granny","이곳 이야기는 마을에 하지 마세요. 사람들이 겁을 먹으면, 그다음은 아무도 책임 못 져요."),
         (None,"할머니는 등불을 들고 계단 쪽으로 사라졌다. 초록빛만 남은 방이 다시 조용해졌다.")],"ancient:granny")
     if r13_ancient_daram:

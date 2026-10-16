@@ -3,7 +3,7 @@ label r13_revision_resume:
     $ renpy.config.skipping=None
     window show
     $ dialogue_speaker=None
-    source_thought "이 저장은 사건의 내용이 다른 이전 초안에서 만들어졌습니다. 이미 본 범행과 모은 증거를 새 사건의 사실로 바꾸어 이어갈 수는 없습니다. 기존 저장 파일은 그대로 남습니다."
+    source_thought "이 저장은 사건의 내용이 다른 이전 초안에서 만들어졌습니다. 이미 본 사건과 모은 증거를 새 사건의 사실로 바꾸어 이어갈 수는 없습니다. 기존 저장 파일은 그대로 남습니다."
     menu:
         "개정된 사건을 1일차부터 시작한다":
             $ renpy.full_restart(label="room13_start")
