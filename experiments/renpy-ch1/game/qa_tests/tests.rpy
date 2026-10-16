@@ -17,17 +17,17 @@ testcase trial_missing:
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "m_board.png"
     click "결론을 말한다"
@@ -51,19 +51,19 @@ testcase trial_giveup:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E01"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E01"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "g_board.png"
     click "회의 중단"
@@ -87,19 +87,19 @@ testcase trial_partial:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E07"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     assert eval (not r13_debate_is_broken("C2","s2"))
     # 0.18.69 meeting UI: statements are stepped with the arrows (the log panel scrolls).
@@ -111,7 +111,7 @@ testcase trial_partial:
     pause 0.8
     click "QA E09"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     assert eval (r13_debate_stuck("C2") and r13_debate_progress("C2")==(2,3))
     screenshot "p_stuck.png"
@@ -135,25 +135,25 @@ testcase trial_win:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E09"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "w_ready.png"
     click "결론을 말한다"
@@ -177,17 +177,17 @@ testcase trial_full:
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -199,19 +199,19 @@ testcase trial_full:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -221,7 +221,7 @@ testcase trial_full:
     pause 0.6
     click "주방 레버로만"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -229,7 +229,7 @@ testcase trial_full:
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
     click "결론을 말한다"
@@ -242,7 +242,7 @@ testcase trial_full:
     pause 0.6
     click "그때 식당에 있었다는 말"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     run Return(("select","s2"))
     pause 0.6
@@ -250,13 +250,13 @@ testcase trial_full:
     pause 0.8
     click "QA E12"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -268,13 +268,13 @@ testcase trial_full:
     pause 0.6
     click "도우러 들어갔을 뿐이라는 변명"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E13"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -284,19 +284,19 @@ testcase trial_full:
     pause 0.6
     click "식당을 나설 때도"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E36"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -319,17 +319,17 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -341,19 +341,19 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -363,7 +363,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "주방 레버로만"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -371,7 +371,7 @@ testcase trial_gate_unenforced:
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
     click "결론을 말한다"
@@ -384,7 +384,7 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "그때 식당에 있었다는 말"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     run Return(("select","s2"))
     pause 0.6
@@ -392,13 +392,13 @@ testcase trial_gate_unenforced:
     pause 0.8
     click "QA E12"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -410,13 +410,13 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "도우러 들어갔을 뿐이라는 변명"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E13"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -426,19 +426,19 @@ testcase trial_gate_unenforced:
     pause 0.6
     click "식당을 나설 때도"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E36"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -462,17 +462,17 @@ testcase trial_gate_no_witness:
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -484,19 +484,19 @@ testcase trial_gate_no_witness:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -506,7 +506,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click "주방 레버로만"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -514,7 +514,7 @@ testcase trial_gate_no_witness:
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
     click "결론을 말한다"
@@ -529,7 +529,7 @@ testcase trial_gate_no_witness:
     pause 0.6
     click "식당에 있었다는 말"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "발언 기록"
     pause 0.4
@@ -539,7 +539,7 @@ testcase trial_gate_no_witness:
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     assert eval (r13_debate_stuck("C3"))
     click "회의 중단"
@@ -556,25 +556,33 @@ testcase finale_win:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_finale",('E16', 'E18', 'E20', 'E21', 'E23', 'E25', 'E26', 'E31'),('operators_ready', 'patient_transport', 'shelter_ready', 'supplies_ready'))
+    run Call("r13_qa_finale",('E16', 'E18', 'E20', 'E21', 'E23', 'E24', 'E25', 'E26', 'E31'),('operators_ready', 'patient_transport', 'shelter_ready', 'supplies_ready'))
     pause 1.0
+    # 0.18.73: F2 s4 needs the day and evening observations that 부리 ran and 서리 recorded.
+    $ room13["observations"]=dict(first=dict(time=30,load="day_low",operator="buri",recorder="resident_seori"),second=dict(time=32,load="evening_high",operator="buri",recorder="resident_seori"))
     click pos (640,600) until screen "r13_crisis" timeout 60
     pause 0.6
     click "누구도 돌아오지 못함"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E20")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E20"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E31")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E31"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -586,23 +594,41 @@ testcase finale_win:
     pause 0.6
     click "돌릴 방법이 없다"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E23")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E23"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick()
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E21")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E21"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
+    pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E24")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
+    click "보여주기"
+    pause 0.8
+    click "QA E24"
+    pause 0.6
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -614,23 +640,32 @@ testcase finale_win:
     pause 0.6
     click "오늘 밤 희생 없이"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E25")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E25"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E26")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E26"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick()
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "fi_f3_ready.png"
     click "결론을 말한다"
@@ -643,19 +678,25 @@ testcase finale_win:
     pause 0.6
     click "질서를 깨뜨려"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E18")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E18"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
+    $ store.r13_qa_target=r13_qa_board_pick("E16")
+    keysym "K_RIGHT" until eval (r13_qa_board() and renpy.get_screen("r13_debate_board").scope["selected"]==r13_qa_target) timeout 20
+    pause 0.5
     click "보여주기"
     pause 0.8
     click "QA E16"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -789,7 +830,7 @@ testcase town_b_ambush_musoe:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=3,period=1,location="workshop",life_poc=True),("somi_route_seen","ep4_seen","ep1_done"))
+    run Call("r13_qa_roam",dict(day=3,period=1,location="workshop",life_poc=True),("somi_route_seen","ep4_seen","ep1_done","lt_open"))
     click pos (640,600) until screen "choice" timeout 40
     click "골목 입구에서 기다린다"
     click pos (640,600) until screen "choice" timeout 40
@@ -1304,17 +1345,17 @@ testcase trial_fake_testimony:
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -1326,19 +1367,19 @@ testcase trial_fake_testimony:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E06"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -1348,7 +1389,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click "주방 레버로만"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -1356,7 +1397,7 @@ testcase trial_fake_testimony:
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     screenshot "f_after_wrong.png"
     click "결론을 말한다"
@@ -1369,7 +1410,7 @@ testcase trial_fake_testimony:
     pause 0.6
     click "그때 식당에 있었다는 말"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     run Return(("select","s2"))
     pause 0.6
@@ -1377,13 +1418,13 @@ testcase trial_fake_testimony:
     pause 0.8
     click "QA E12"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -1395,13 +1436,13 @@ testcase trial_fake_testimony:
     pause 0.6
     click "도우러 들어갔을 뿐이라는 변명"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E13"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -1411,19 +1452,19 @@ testcase trial_fake_testimony:
     pause 0.6
     click "식당을 나설 때도"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E35"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E36"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -1448,17 +1489,17 @@ testcase trial_c1_h7:
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA H7"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -2171,49 +2212,49 @@ testcase redesign_world:
     click "처음부터"
     pause 3.0
     run Call("r13_qa_roam",dict(zip(("day","period","location"),r13_qa_redesign_slot("resident_yeoni")),life_poc=True),("lodging","entry_corrected"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_yeoni")
     screenshot "redesign_world_yeoni.png"
     run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_momo"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_momo")
     screenshot "redesign_world_momo.png"
     run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_librarian"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_librarian")
     screenshot "redesign_world_librarian.png"
     # The inn panorama is wider than the screen; look at its left end.
     $ r13_world_cameras={"inn":0}
     run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_nubi"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_nubi")
     screenshot "redesign_world_nubi.png"
     $ r13_world_cameras={}
     run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_seol"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_seol")
     screenshot "redesign_world_seol.png"
     # 실룩 stands at the right end of the gate panorama (clamped to the edge).
     $ r13_world_cameras={"gate":9999}
     run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_siluk"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_siluk")
     screenshot "redesign_world_siluk.png"
     $ r13_world_cameras={}
     run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_nero"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_nero")
     screenshot "redesign_world_nero.png"
     $ r13_world_cameras={}
     run Call("r13_qa_goto",*r13_qa_redesign_slot("resident_bori"))
-    click pos (640,600) until screen "r13_hub" timeout 40
+    click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_qa_redesign_record("resident_bori")
     screenshot "redesign_world_bori.png"
@@ -2370,17 +2411,17 @@ testcase trial_counter:
     pause 0.6
     click "아이뿐이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "되묻기"
     pause 0.5
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
     click "QA E05"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "결론을 말한다"
     pause 1.0
@@ -2392,7 +2433,7 @@ testcase trial_counter:
     pause 0.6
     click "죽음의 원인이라는 주장"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     click "발언 기록"
     pause 0.4
@@ -2407,7 +2448,7 @@ testcase trial_counter:
     screenshot "counter_menu.png"
     click "겁 많은 아이는"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     assert eval (not r13_debate_is_broken("C2","s3"))
     click "보여주기"
@@ -2418,7 +2459,7 @@ testcase trial_counter:
     pause 0.6
     click "주방 레버로만"
     pause 0.6
-    click pos (640,600) until screen "r13_debate_board" timeout 40
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
     pause 0.6
     assert eval (r13_debate_is_broken("C2","s3"))
     $ r13_qa_dump()
@@ -9500,7 +9541,8 @@ testcase new_places_tour:
     $ r13_qa_crowd_dump()
     run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
     pause 1.0
-    click pos (640,600) until "지도 · 이동" timeout 30
+    # The market crowd stands at the screen centre; advance on the date panel instead.
+    click pos (1150,90) until "지도 · 이동" timeout 30
     click "지도 · 이동"
     pause 1.5
     screenshot "place_map.png"
@@ -9780,7 +9822,9 @@ testcase new_places:
         store._np_before=[k for k in R13_NEW_PLACES if k in r13_places()]
         store.room13=_np_saved
         r13_qa_note("new places people: %r / before lodging: %r"%(store._np_people,store._np_before))
-    assert eval (_np_people and all(x in r13_new_place_people(l) for d,p,l,x in _np_people) and _np_before==[] and room13["location"]=="square")
+    # 0.18.65~66: forest residents and the market crowd come by their own schedules, not only by
+    # R13_WEEKLY_ROUTINES, so check that every new place gets people and none open before lodging.
+    assert eval (_np_people and all(any(L==l for d,p,L,x in _np_people) for l in R13_NEW_PLACES) and _np_before==[] and room13["location"]=="square")
     click "지도 · 이동"
     pause 1.5
     screenshot "np_map.png"
@@ -9816,7 +9860,8 @@ testcase new_places:
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     assert eval (r13_daylight()=="afternoon" and r13_world_file("market","afternoon").endswith("market-afternoon.webp"))
-    run Call("r13_qa_goto",7,2,"market")
+    # 0.18.87: day 7 is the case day now; check an ordinary evening instead.
+    run Call("r13_qa_goto",6,2,"market")
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     assert eval (r13_daylight()=="evening" and r13_world_file("market","evening").endswith("market-evening.webp"))

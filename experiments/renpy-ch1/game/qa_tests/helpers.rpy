@@ -197,7 +197,27 @@ init 999 python:
         "wf_laundry_tried","wf_hideout_today","wf_morning","wf_nabi_blame","wf_ruins","wf_nubi_seen","wf_choice_done",
         "nt_dawn8","nt_chorong_signal","nt_overheard","nt_ttadak_signal","nt_night8","nt_dawn9","nt_after",
         "ws_lowroad","ws_long_night","ws_lab","ws_teacher_talked","ws_soup","ws_tosil_met",
-        "cv_morning","cv_market","cv_store","cv_stable","cv_hall","cv_tea","cv_night","cv_altar"]
+        "cv_morning","cv_market","cv_store","cv_stable","cv_hall","cv_tea","cv_night","cv_altar",
+        # 0.18.72 new-cast scenes at the river, forest and market (systems/room13_new_cast.rpy).
+        "mulgyeol_helped","solbang_helped","outside_news_bought"]
+    def r13_qa_board():
+        # 0.18.70 meeting flow: statements loop live; the board opens via 발언 고르기 (review).
+        # Old trial tests waited for the board to appear by clicking, so ask for review here.
+        if renpy.get_screen("r13_debate_board"):return True
+        if getattr(store,"r13_meeting_live_active",False) and not getattr(store,"r13_meeting_interrupting",False):
+            store.r13_meeting_live_command=("review",)
+        return False
+    def r13_qa_board_pick(key=None):
+        # The board now opens on the statement the live round stopped at. Return the statement that
+        # takes `key` (or, with no key, the one whose 되묻기 reveals a hidden statement); tests feed it
+        # to the board's own ("select",sid) return.
+        scr=renpy.get_screen("r13_debate_board")
+        claim=scr.scope["claim"]
+        for st in r13_debate_statements(claim):
+            if not r13_debate_visible(claim,st) or r13_debate_is_broken(claim,st["id"]):continue
+            hidden_next=st.get("reveals") and not r13_debate_visible(claim,r13_debate_statement(claim,st["reveals"]))
+            if (key and key in st.get("accept",[])) or (not key and hidden_next):return st["id"]
+        return scr.scope["selected"]
     def r13_qa_town_dump():
         import json
         s=store.room13;w=r13_wallet(s)
