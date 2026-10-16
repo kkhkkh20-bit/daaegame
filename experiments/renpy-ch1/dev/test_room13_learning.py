@@ -1,4 +1,5 @@
 """Protect no-spoiler/read-only boundaries and displayed time/settlement truth."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import copy
 import textwrap
 import types
@@ -70,7 +71,7 @@ class LearningTest(unittest.TestCase):
         self.assertIn('여정이 끝날',f(0,ending=True))
 
     def test_sleep_preview_handles_event_night_and_old_no_economy_save(self):
-        s=self.store.room13;s.update(day=4,case_state='pending')
+        s=self.store.room13;s.update(day=7,case_state='pending')
         text=self.ns['r13_learning_sleep_text']();self.assertIn('저녁을',text);self.assertNotIn('다음 날',text)
         s.update(day=2,case_state='occurred',life_poc=False)
         text=self.ns['r13_learning_sleep_text']();self.assertNotIn('숙식',text);self.assertIn('남은 낮',text)

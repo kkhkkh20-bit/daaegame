@@ -1,3 +1,4 @@
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import copy,json,textwrap,types,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -15,9 +16,9 @@ class HomeTest(unittest.TestCase):
   for changes in ({'daram_state':'held'},{'daram_state':'with_dad','location':'square'},{'location':'room13','flags':[]}):
    self.state.update(changes);self.assertEqual(self.keys(),set())
  def test_reunion_not_unlocked_by_day_or_first_week_intervention(self):
-  self.state.update(day=5,mom_state='intervened',evidence=['E19']);self.assertNotIn('home:daram:reunion',self.keys());self.state.update(day=10,mom_state='hidden');self.assertNotIn('home:daram:reunion',self.keys());self.state['mom_state']='reunited';self.assertIn('home:daram:reunion',self.keys())
+  self.state.update(day=5,mom_state='intervened',evidence=['E19']);self.assertNotIn('home:daram:reunion',self.keys());self.state.update(day=12,mom_state='hidden');self.assertNotIn('home:daram:reunion',self.keys());self.state['mom_state']='reunited';self.assertIn('home:daram:reunion',self.keys())
  def test_case_verdict_and_crisis_are_separate(self):
-  self.state.update(case_state='occurred');self.assertIn('home:daram:case',self.keys());self.assertNotIn('home:daram:verdict',self.keys());self.state.update(trial_ended=True,day=8,week2_started=True);self.assertTrue({'home:daram:verdict','home:daram:cold'}<=self.keys())
+  self.state.update(case_state='occurred');self.assertIn('home:daram:case',self.keys());self.assertNotIn('home:daram:verdict',self.keys());self.state.update(trial_ended=True,day=11,week2_started=True);self.assertTrue({'home:daram:verdict','home:daram:cold'}<=self.keys())
  def test_read_mark_refreshes_and_survives_json_save(self):
   self.ns['r13_finish_topic']('home:daram:rest');self.assertTrue(self.ns['r13_daram_home_seen']('home:daram:rest'));self.ns['store'].room13=json.loads(json.dumps(self.ns['store'].room13));self.assertTrue(self.ns['r13_daram_home_seen']('home:daram:rest'));self.ns['store'].room13['evidence'].append('M01');self.assertFalse(self.ns['r13_daram_home_seen']('home:daram:rest'))
  def test_lines_and_queries_do_not_grant_time_money_or_evidence(self):
@@ -46,7 +47,7 @@ class HomeTest(unittest.TestCase):
   self.ns['_r13_daram_home_compare']=original
   result=self.ns['r13_compare_result'](['E01','E18']);self.assertIn('poc:letter_conflict',self.state['flags']);self.assertNotIn('보여',result);self.assertNotIn('물어보',result)
  def test_mother_discussion_changes_after_actual_reunion(self):
-  self.state.update(day=10,mom_state='reunited',evidence=['M01']);text=' '.join(line for who,line in self.ns['r13_conversation_topic_lines']('home:daram:mother'));self.assertIn('이제 엄마 얼굴을 봤으니까',text);self.assertNotIn('엄마만 없는',text)
+  self.state.update(day=12,mom_state='reunited',evidence=['M01']);text=' '.join(line for who,line in self.ns['r13_conversation_topic_lines']('home:daram:mother'));self.assertIn('이제 엄마 얼굴을 봤으니까',text);self.assertNotIn('엄마만 없는',text)
  def test_present_keeps_original_side_effects_and_authored_tool_reply(self):
   self.state['evidence']=['E01','E18','E03']
   calls=[]

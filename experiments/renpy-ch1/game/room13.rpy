@@ -38,19 +38,19 @@ label r13_lines(entries,identity):
     $ r13_index=0
     $ r13_conv_skip=False
     while r13_index<len(entries) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
-        $ r13_packet=entries[r13_index]
+        $ r13_packet=r13_pov_packet(entries[r13_index])
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
         if r13_thought_active:
             $ r13_expression,r13_directed_pose="thinking","thinking"
         # 0.18.56 (owner): someone who "comes over" in the opening narration is on screen
         # from that line, not only from their first spoken line.
-        if r13_packet[0] in (None,"dad") and "r13_visitor" not in renpy.get_showing_tags():
-            $ r13_lead=next((p[0] for p in entries[r13_index:] if p[0] not in (None,"dad") and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)
+        if r13_packet[0] in (None,r13_viewpoint()) and "r13_visitor" not in renpy.get_showing_tags():
+            $ r13_lead=next((p[0] for p in entries[r13_index:] if p[0] not in (None,r13_viewpoint()) and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)
             if r13_lead:
                 $ r13_speaker(r13_lead,"neutral")
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
-        if r13_packet[0] not in (None,"dad") and not r13_thought_active:
+        if r13_packet[0] not in (None,r13_viewpoint()) and not r13_thought_active:
             $ r13_last_partner=r13_packet[0]
         $ r13_meeting_prepare_live_line(identity)
         $ r13_read_id=r13_before_line(identity,r13_index,r13_packet[1])
@@ -243,17 +243,17 @@ label r13_carriage:
     return
 
 label r13_day:
-    if room13["day"]==4 and not r13_has("elder_appointment"):
+    if room13["day"]==R13_CASE_DAY and not r13_has("elder_appointment"):
         call r13_scene("hall","여관 계단","calm")
         call r13_lines([("resident_owlgp","저녁에 댁이 묵는 방으로 들르겠소. 부인에게 맡아 둔 물건을 돌려드려야지."),("dad","제 아내에 관한 물건입니까?"),("resident_owlgp","보관해 달라고 맡긴 기록이오. 부인이 지금 어디 있는지는 나도 모르오."),("granny","되돌아온 짐을 찾으러 마을 입구에 나가신다면서요. 그동안 내가 아이랑 같이 있어 줄게요."),("daram","할아버지 물건은 받아만 둘게. 아빠 돌아오면 같이 열어 보자."),("dad","가능하면 할아버지가 오시기 전에 돌아오겠습니다."),("resident_owlgp","물건만 먼저 전해 두리다. 자세한 이야기는 다 같이 모여서 합시다.")],"day4:appointment:v3")
         $ r13_flag("elder_appointment")
-    if room13["day"]==5 and room13["case_state"]=="occurred" and not r13_has("trial_notice"):
+    if room13["day"]==R13_CASE_DAY+1 and room13["case_state"]=="occurred" and not r13_has("trial_notice"):
         call r13_scene("front","여관 접수대","quiet")
         call r13_lines([("neoul","일요일에 주민들을 모아 놓고 이번 사건을 다룰 겁니다. 아이는 그때까지 초소 보호실에 격리해 둡니다."),("dad","범인인지 밝혀지지도 않았는데 아이를 가두기부터 합니까?"),("neoul","사건 현장에 단둘이 있던 아이를 그냥 데려가시면 마을 사람들이 가만있지 않습니다. 면회하러 오시는 건 막지 않겠습니다."),(None,"인원수를 바로잡은 출입 기록 원본은 돌려받았다. 하지만 두 사람이 함께 들어왔다는 증명과, 지금 아이가 받는 살인 혐의는 별개의 문제였다.")],"day5:notice")
         $ r13_flag("trial_notice")
-    if room13["day"]==7:
+    if room13["day"]==R13_TRIAL_DAY:
         jump r13_trial
-    if room13["day"]>=8:
+    if room13["day"]>=R13_WEEK2_DAY:
         jump r13_week2_day
     jump r13_roam
 
@@ -261,9 +261,9 @@ label r13_roam:
     $ r13_upgrade()
     if room13.get("revision_restart_required"):
         jump r13_revision_resume
-    if 5<=room13["day"]<8 and room13["case_state"]=="occurred":
+    if R13_CASE_DAY+1<=room13["day"]<R13_WEEK2_DAY and room13["case_state"]=="occurred":
         call r13_mother_intervention
-    if room13["day"]>=8:
+    if room13["day"]>=R13_WEEK2_DAY:
         call r13_week2_events
     # Evening missions (systems/room13_evening.rpy): once per evening, pick where to go.
     call r13_evening_auto
@@ -274,7 +274,7 @@ label r13_roam:
     call r13_town_events
     if _return=="day":
         jump r13_day
-    if room13["day"]==4 and room13["period"]>=2 and room13["case_state"]=="pending":
+    if room13["day"]==R13_CASE_DAY and room13["period"]>=2 and room13["case_state"]=="pending":
         jump r13_case_choice
     $ place=R13_PLACES[room13["location"]][0]
     call r13_scene(R13_PLACES[room13["location"]][1],place,"night" if room13["period"]>=2 else "search" if room13["case_state"]=="occurred" else "calm")

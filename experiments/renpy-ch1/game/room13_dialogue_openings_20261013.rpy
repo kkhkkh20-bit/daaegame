@@ -83,7 +83,7 @@ init 75 python:
 
     def r13_calendar_phase():
         s = store.room13
-        if s["day"] >= 11:
+        if s["day"] >= r13_tl(11):
             return "crisis"
         if s.get("trial_ended") or s.get("trial_result", "pending") != "pending":
             return "after_trial"
@@ -107,7 +107,7 @@ init 75 python:
         if person == "buri" and s["case_state"] == "prevented" and phase == "after_trial":
             spec.update(action="부리는 할아버지의 공구와 자기 부품을 따로 놓았다.", reply="할아버지 건 직접 말씀 듣고 옮길 거예요. 살아 계신데 제가 다 정해 버리면 또 혼나니까요.")
         ready = R13_OPENING_SCENES["calendar_ready"].get(person)
-        if store.room13["day"] >= 8 and ready and r13_has(ready[0]):
+        if store.room13["day"] >= R13_WEEK2_DAY and ready and r13_has(ready[0]):
             spec.update(action=ready[1], reply=ready[2])
             if day in daily:
                 spec["reply"] += " " + daily[day]

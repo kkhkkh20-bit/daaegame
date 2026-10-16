@@ -51,17 +51,17 @@ init 130 python:
     def r13_object_visible(spec):
         if spec is ROOM13["objects"].get("passage",{}).get("crack"):
             s=store.room13 or {}
-            return bool(s.get("week2_started")) and s.get("day",1)>=8 and not r13_has("ancient_found")
+            return bool(s.get("week2_started")) and s.get("day",1)>=R13_WEEK2_DAY and not r13_has("ancient_found")
         return _r13_new_places_visible(spec)
 
     # ---- residents: who spends spare hours at the new places ----
     # person: [(weekly slots it replaces, new place, periods, days)]. Days default to both weeks
-    # except the arrival day and day 8 (2-7, 9-14). A slot moves only when nothing pinned the person
+    # except the arrival day and the first week-2 day (2-10, 12-14). A slot moves only when nothing pinned the person
     # elsewhere (a shelter, a clinic, a week-2 post); events placed by r13_where stay authoritative.
     # 0.18.75 (owner): "장사하는 사람들 이제 시장에 많이 넣어 주자. 시장은 사람 많아도 되니."
     #   The market (morning and afternoon; closed in the evening) gathers the traders.
     #   꽥순 fishes and 바둑이 checks traps every afternoon, so their work exists in week 2 too.
-    R13_NEW_PLACE_DAYS=tuple(range(2,8))+tuple(range(9,15))
+    R13_NEW_PLACE_DAYS=tuple(range(2,R13_WEEK2_DAY))+tuple(range(R13_WEEK2_DAY+1,15))
     R13_NEW_PLACE_ROUTINES={
         "resident_kkwak":[(("lowroad",),"river",(1,),None)],
         "resident_nero":[(("lowroad",),"river",(0,),None)],

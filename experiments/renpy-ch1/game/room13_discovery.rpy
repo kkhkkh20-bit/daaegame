@@ -37,7 +37,7 @@ init 61 python:
 
     def r13_present(person, key, identity=False):
         owned = key in store.room13["evidence"]
-        early = store.room13["day"] <= 7
+        early = store.room13["day"] <= R13_TRIAL_DAY
         disclosure = key + (":named" if identity else ":anonymous")
         repeated = disclosure in store.room13.get("resident_knowledge", {}).get(person, [])
         response = r13_discovery_base_present(person, key, identity)

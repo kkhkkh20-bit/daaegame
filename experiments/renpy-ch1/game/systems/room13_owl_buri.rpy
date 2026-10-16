@@ -150,7 +150,7 @@ init 119 python:
             ("dad","오늘 부리 아저씨를 만났어."),
             ("daram","부리 아저씨는 아직 나랑 말하기 싫은가 봐."),
             ("dad","……아저씨한테도 시간이 필요할 거야.")]),
-        ("night:helping","오늘 같이 한 일을 이야기한다",lambda:store.room13.get("day",1)>=8 and any(r13_has(f) for f in ("w2_bell_rung","share_patients","share_children","share_lottery")),[
+        ("night:helping","오늘 같이 한 일을 이야기한다",lambda:store.room13.get("day",1)>=R13_WEEK2_DAY and any(r13_has(f) for f in ("w2_bell_rung","share_patients","share_children","share_lottery")),[
             ("dad","오늘 짐 나르는 거 같이 해 줘서 고마워."),
             ("daram","오늘은 내가 도와준 거지?"),
             ("dad","응. 네가 도와줬어.")]),

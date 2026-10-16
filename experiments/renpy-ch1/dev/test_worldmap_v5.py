@@ -3,6 +3,7 @@
 Actual mouse/keyboard input and travel are checked in the browser by
 dev/qa_worldmap.py and in Ren'Py by dev/run_renpy_tests.sh worldmap_travel.
 """
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import ast, copy, hashlib, json, textwrap, types, unittest
 from pathlib import Path
 

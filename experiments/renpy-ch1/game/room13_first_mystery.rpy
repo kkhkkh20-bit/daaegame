@@ -99,7 +99,7 @@ init 76 python:
         owns=key in store.room13.get("evidence",[])
         old_flags=set(store.room13.get("flags",[]))
         response=_r13_mystery_present(person,key,identity)
-        if not owns or store.room13.get("day",1)>4:return response
+        if not owns or store.room13.get("day",1)>R13_CASE_DAY:return response
         if person=="buri" and key=="E04" and bool({"first_plan_read","first_plan_compared"}&old_flags):
             if "plan_reviewed_with_buri" in old_flags:return [("buri","도면에 표시해 둔 두 끝을 보세요. 한쪽 걸쇠를 풀어도 반대쪽 문은 직접 밀어야 열려요.")]
             r13_flag("plan_reviewed_with_buri")

@@ -164,6 +164,10 @@ label r13_town_events:
     call r13_new_cast_events
     # 에피소드 ① 등 도둑 (systems/room13_ep1_lamp_thief.rpy).
     call r13_ep1_events
+    # 에피소드 ② 다람 탐정단 (systems/room13_ep2_kids.rpy). 5일은 다람의 하루로 통째로 지나간다.
+    call r13_ep2_events
+    if _return=="day":
+        return "day"
     if room13["day"]==3 and room13["period"] in (1,2) and not r13_has("ev_b_done"):
         if room13["location"]=="workshop" and room13["period"]==1 and r13_has("somi_route_seen"):
             call r13_ev_b_ambush

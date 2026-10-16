@@ -48,7 +48,7 @@ init 97 python:
     def r13_present(person,key,identity=False):
         s=store.room13
         if s.get("life_poc") and key in s.get("evidence",[]) and s.get("case_state")=="pending":
-            if key=="M01" and person=="resident_lamplighter" and 2<=s["day"]<=4:
+            if key=="M01" and person=="resident_lamplighter" and 2<=s["day"]<=R13_CASE_DAY:
                 if s["day"]>=3:
                     # The existing day-three envelope route must still unlock (days 3–4, 0.18.50).
                     _r13_intro_present(person,key,identity)

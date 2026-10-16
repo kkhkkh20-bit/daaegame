@@ -43,16 +43,16 @@ init 109 python:
         return _r13_w2e_notes()+[text for key,text in R13_W2E_NOTES if r13_has(key)]
 
 label r13_w2e_events:
-    if room13["day"]<8 or not room13.get("week2_started"):
+    if room13["day"]<R13_WEEK2_DAY or not room13.get("week2_started"):
         return None
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
-    if 9<=_d<=11 and _p<=2 and _loc=="square" and not r13_has("w2e_k_done"):
+    if r13_tl(9)<=_d<=r13_tl(11) and _p<=2 and _loc=="square" and not r13_has("w2e_k_done"):
         $ r13_offer("r13_w2e_bell")
-    if 9<=_d<=12 and _p<=1 and _loc=="workshop" and not r13_has("w2e_p_done"):
+    if r13_tl(9)<=_d<=r13_tl(12) and _p<=1 and _loc=="workshop" and not r13_has("w2e_p_done"):
         $ r13_offer("r13_w2e_numbers")
-    elif 9<=_d<=12 and _p<=1 and _loc=="workshop" and not r13_has("w2e_w_done"):
+    elif r13_tl(9)<=_d<=r13_tl(12) and _p<=1 and _loc=="workshop" and not r13_has("w2e_w_done"):
         $ r13_offer("r13_w2e_tools")
-    if 10<=_d<=12 and _loc=="store" and not r13_has("w2e_v_done") and (r13_has("supplies_ready") or r13_has("supply_terms")):
+    if r13_tl(10)<=_d<=r13_tl(12) and _loc=="store" and not r13_has("w2e_v_done") and (r13_has("supplies_ready") or r13_has("supply_terms")):
         call r13_w2e_share
     return None
 

@@ -1,4 +1,5 @@
 """Protect acquisition/presentation boundaries and prevent legacy-route unlocks."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import copy,textwrap,types,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]

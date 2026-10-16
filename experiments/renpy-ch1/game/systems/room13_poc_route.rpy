@@ -3,7 +3,7 @@
 init 100 python:
     def r13_poc_active(state=None):
         s=(store.room13 or {}) if state is None else state
-        return bool(s.get("life_poc") and 2<=s.get("day",1)<=4 and s.get("case_state")=="pending")
+        return bool(s.get("life_poc") and 2<=s.get("day",1)<=R13_CASE_DAY and s.get("case_state")=="pending")
 
     def r13_poc_worked(key,state=None):
         s=(store.room13 or {}) if state is None else state

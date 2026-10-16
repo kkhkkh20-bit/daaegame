@@ -12,7 +12,7 @@ init 147 python:
     # (day, period): {person: place}
     R13_STORY_PINS={
         (1,2):{"resident_tosil":"forest","resident_kalbaram":"forest"},
-        (4,2):{"resident_owlgp":"hall","resident_eunho":"store","resident_guseul":"store",
+        (R13_CASE_DAY,2):{"resident_owlgp":"hall","resident_eunho":"store","resident_guseul":"store",
             "resident_madam":"store","resident_ubak":"clinic","resident_tosil":"inn"},
     }
     R13_STORY_PIN_REASONS={
@@ -43,7 +43,7 @@ init 147 python:
     # moment: (title, first day it can be asked, need flags)
     R13_ALIBI_MOMENTS={
         "night1":("첫날 밤",2,[]),
-        "case":("13호 사건이 난 저녁",5,[]),
+        "case":("13호 사건이 난 저녁",R13_CASE_DAY+1,[]),
     }
     # (moment, person): dict(claim=lines, truth=(flag, lines) shown instead once the flag is set)
     R13_ALIBI={

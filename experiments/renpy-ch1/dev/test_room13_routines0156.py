@@ -1,4 +1,5 @@
 """Host state matrix: optional routines move; story locations and emergency routes do not."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import ast,copy,json,textwrap
 from pathlib import Path
 from qa_room13_rules import load_rules,ROOT
@@ -17,8 +18,8 @@ for day in range(1,15):
     if original[p]!=actual[p]:
      assert p in optional,(p,day,period,original[p],actual[p]);changed.append((p,day,period,original[p],actual[p]))
     if actual[p]:visible.add(p)
-   if day>=8:assert actual['resident_piko']=='clinic'
-   if day>=11 and 'shelter_ready'in flags:
+   if day>=11:assert actual['resident_piko']=='clinic'
+   if day>=12 and 'shelter_ready'in flags:
     for p in ('resident_tori','resident_yeoni','resident_kongi','resident_somi','resident_musoe'):assert actual[p]=='school'
    if victim=='dead':assert actual['resident_owlgp']is None
    if granny=='detained':assert actual['granny']is None

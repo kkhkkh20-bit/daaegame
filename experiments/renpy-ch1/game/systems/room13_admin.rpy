@@ -27,9 +27,9 @@ init 131 python:
         ("1일 · 13호 도착 직후",dict(day=1,period=1,location="room13"),["entry_corrected","lodging"],[]),
         ("2일 아침 · 여관",dict(day=2,period=0,location="inn"),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
         ("3일 아침 · 광장",dict(day=3,period=0,location="square"),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
-        ("4일 저녁 · 사건 전",dict(day=4,period=2,location="inn"),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
-        ("5일 아침 · 사건 뒤",dict(day=5,period=0,location="inn",case_state="occurred",victim_state="dead",daram_state="held"),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
-        ("8일 아침 · 둘째 주",dict(day=8,period=0,location="inn",case_state="occurred",trial_ended=True,week2_started=True),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
+        ("%d일 저녁 · 사건 전"%R13_CASE_DAY,dict(day=R13_CASE_DAY,period=2,location="inn"),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
+        ("%d일 아침 · 사건 뒤"%(R13_CASE_DAY+1),dict(day=R13_CASE_DAY+1,period=0,location="inn",case_state="occurred",victim_state="dead",daram_state="held"),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
+        ("%d일 아침 · 둘째 주"%R13_WEEK2_DAY,dict(day=R13_WEEK2_DAY,period=0,location="inn",case_state="occurred",trial_ended=True,week2_started=True),["entry_corrected","lodging","livelihood_open"],["E01","E02","M01","E03"]),
     ]
 
     def r13_admin_apply(state=None,flags=(),evidence=(),fresh=False):

@@ -24,7 +24,7 @@ init 99 python:
     def r13_meeting_cast(claim,session,speaker=None):
         seats=list(r13_debate_seats(session));present={who for who,stance in seats}
         for who in (["granny","resident_seori"] if session=="trial" else ["mom"])+[st["who"] for st in r13_debate_statements(claim)]+[R13_DEBATE[claim]["chair"]]:
-            if who in CAST and who!="dad" and who not in present:
+            if who in CAST and who!=((getattr(store,"room13",None) or {}).get("pov") or "dad") and who not in present:
                 seats.append((who,None));present.add(who)
         return seats
 
@@ -39,7 +39,7 @@ init 99 python:
         return people[index-1],people[(index+1)%len(people)]
 
     def r13_meeting_focus_change(claim,who):
-        if who not in CAST or who=="dad" or who==getattr(store,"r13_meeting_focus",None):return
+        if who not in CAST or who==((getattr(store,"room13",None) or {}).get("pov") or "dad") or who==getattr(store,"r13_meeting_focus",None):return
         people=[p for p,stance in r13_meeting_cast(claim,r13_debate_session(claim))]
         old=getattr(store,"r13_meeting_focus",None)
         if who not in people:return

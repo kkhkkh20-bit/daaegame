@@ -47,7 +47,7 @@ init 108 python:
         return names
 
 label r13_carryover_events:
-    if room13["day"]<8 or not room13.get("week2_started") or r13_has("w1_links_done"):
+    if room13["day"]<R13_WEEK2_DAY or not room13.get("week2_started") or r13_has("w1_links_done"):
         return None
     $ r13_flag("w1_links_done")
     $ _carry=[]

@@ -124,7 +124,7 @@ init 55 python:
         return ("오전","오후","저녁","늦은 저녁")[store.room13["period"]]
 
     def r13_clock():
-        return "%d일째 · %s요일 · %s"%(store.room13["day"],("월","화","수","목","금","토","일")[(store.room13["day"]-1)%7],r13_period())
+        return "%d일째 · %s요일 · %s"%(store.room13["day"],r13_weekday(store.room13["day"]),r13_period())
 
     def r13_time_target():
         return ("오후까지","저녁까지","늦은 저녁까지","내일")[store.room13["period"]]
@@ -149,7 +149,7 @@ init 55 python:
 
     def r13_available(spec):
         s=store.room13
-        if not spec.get("day",[1,7])[0]<=s["day"]<=spec.get("day",[1,7])[1]:return False
+        if not spec.get("day",[1,R13_TRIAL_DAY])[0]<=s["day"]<=spec.get("day",[1,R13_TRIAL_DAY])[1]:return False
         if spec.get("case") and spec["case"]!=s["case_state"]:return False
         if spec.get("period") and s["period"] not in spec["period"]:return False
         if any(r13_has(k) for k in spec.get("not_flags",[])):return False
@@ -215,14 +215,14 @@ init 55 python:
         if r13_has("lodging"):result += ["river","forest","market"]
         if r13_has("lodging") and (r13_has("family_room_unusable") or store.room13["case_state"]=="occurred"):result.append("guestroom")
         if store.room13.get("passage_open"):result.append("passage")
-        if store.room13["day"]>=8:
+        if store.room13["day"]>=R13_WEEK2_DAY:
             result += ["facility"]
             if r13_has("E19"):result.append("greenhouse")
         return result
 
     def r13_where(person):
         s=store.room13; p=min(s["period"],2)
-        if s["day"]>=8:return r13_w2_where(person)
+        if s["day"]>=R13_WEEK2_DAY:return r13_w2_where(person)
         if person=="resident_owlgp":
             if s["victim_state"]=="dead":return None
             return ("square","inn","dining")[p]
@@ -233,7 +233,7 @@ init 55 python:
         if person=="seryeon":return "post" if s["day"]>=2 and p<2 else None
         if person=="resident_tok":return "workshop" if p<2 else "dining"
         if person=="resident_lamplighter":return ("workshop","square","gate")[p]
-        if person=="doto":return "hall" if s["day"]>=5 else "square"
+        if person=="doto":return "hall" if s["day"]>=R13_CASE_DAY+1 else "square"
         if person=="bami":
             if s["case_state"]!="occurred":return None
             return "inn" if r13_has("bami_protected") else "hall" if p>0 else None
@@ -288,7 +288,12 @@ init 55 python:
         if detail is not None:return detail
         return "assets/record.png" if ROOM13["evidence"][key]["kind"] in ("기록","관찰기록") else "assets/evidence.png"
 
+    def r13_viewpoint():
+        """Who the player is: Dad, or Daram during episode ② (systems/room13_ep2_kids.rpy)."""
+        return (getattr(store,"room13",None) or {}).get("pov") or "dad"
+
     def r13_speaker(who,expression="neutral",pose=None):
+        vp=(getattr(store,"room13",None) or {}).get("pov") or "dad"
         if getattr(store,"r13_meeting_active",False):
             # Keep all participants in place; the say screen owns the bubble.
             r13_meeting_focus_change(store.r13_meeting_claim,who)
@@ -306,10 +311,10 @@ init 55 python:
         carriage=store.place=="마차 안"
         kept="daram" if carriage else store.r13_motion_person
         # 0.18.56 (owner): narration between a visitor's lines keeps them on screen too.
-        if (who in ("dad",None) or carriage) and who!=kept and store.r13_camera=="stage" and store.r13_motion_person==kept and kept not in (None,"dad") and "r13_visitor" in renpy.get_showing_tags():
+        if (who in (vp,None) or carriage) and who!=kept and store.r13_camera=="stage" and store.r13_motion_person==kept and kept not in (None,vp) and "r13_visitor" in renpy.get_showing_tags():
             return
         store.r13_current_pose=r13_conversation_pose(who,pose or store.dialogue_expression)
-        visible=who in CAST and who!="dad" and (not carriage or who=="daram") and store.r13_camera=="stage"
+        visible=who in CAST and who!=vp and (not carriage or who=="daram") and store.r13_camera=="stage"
         if visible:
             arriving=store.r13_motion_person!=who or "r13_visitor" not in renpy.get_showing_tags()
             actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) or store.r13_current_pose in R13_FULLBODY_NEW else "interview_"+store.dialogue_expression
@@ -379,7 +384,7 @@ init 55 python:
             n["records"].get(key,{}).get("revision",0)==0 and legacy_disclosure in known)
         if not repeated:known.append(disclosure)
         store.room13=n
-        if store.room13["day"]>=8 or person not in R13_CORE_PEOPLE:
+        if store.room13["day"]>=R13_WEEK2_DAY or person not in R13_CORE_PEOPLE:
             response=r13_w2_present(person,key,repeated)
             if response is not None:return response
         if person=="granny" and key in ("E05","E09","E10","E13","E14","E35","E36"):

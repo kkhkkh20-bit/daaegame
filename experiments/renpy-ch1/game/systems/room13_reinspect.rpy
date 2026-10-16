@@ -29,7 +29,7 @@ init 122 python:
     R13_TOPIC_LABELS["seal_look"]="r13_seal_look"
 
 label r13_reinspect_events:
-    if room13["day"] in (5,6) and room13["period"]<=1 and room13["case_state"]=="occurred" and r13_where("resident_eunho")==room13["location"] and not r13_has("saw_eunho_hide"):
+    if room13["day"] in (r13_tl(5),r13_tl(6)) and room13["period"]<=1 and room13["case_state"]=="occurred" and r13_where("resident_eunho")==room13["location"] and not r13_has("saw_eunho_hide"):
         call r13_ev_here("calm")
         # 0.18.75: 은호 spends his mornings at the market stall now; the line follows the place.
         $ _eh_where={"market":"노점 판자 위","store":"창고 계산대 위"}.get(room13["location"],"탁자 위")

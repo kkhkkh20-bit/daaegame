@@ -87,7 +87,7 @@ init 73 python:
         if person=="daram" and key=="E03" and "seam" in notes and "tool:seam" in read and store.room13.get("daram_state") in ("with_dad","rescued"):
             return [("daram","돋보기로 같이 봤던 거네. 내가 엄마 생각났다고 한 것도 적었어?"),
                 ("dad","응. 네가 한 말 그대로 적었어.")]
-        if person=="buri" and key=="E04" and "plans" in notes and "tool:plans" in read and store.room13["day"]<=7:
+        if person=="buri" and key=="E04" and "plans" in notes and "tool:plans" in read and store.room13["day"]<=R13_TRIAL_DAY:
             return [("buri","돋보기로 봤던 선도 표시했군요. 외벽과 비교한 길이는 여기 적혀 있고요."),
                 ("dad","네. 옛 선과 덧그린 선을 섞지 않고 따로 적었습니다.")]
         return response

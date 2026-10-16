@@ -220,15 +220,15 @@ label r13_hyeoni_song:
 label r13_new_cast_events:
     $ _nc_d,_nc_p,_nc_loc=room13["day"],min(room13["period"],2),room13["location"]
     # Event plan: docs/EVENT_DESIGN_NEW_CAST.md (N1-N5).
-    if (2<=_nc_d<=4 or 9<=_nc_d<=12) and _nc_p==1 and _nc_loc=="market" and not r13_has("tosil_friend") and room13.get("daram_state") in ("with_dad","rescued"):
+    if (2<=_nc_d<=R13_CASE_DAY or r13_tl(9)<=_nc_d<=r13_tl(12)) and _nc_p==1 and _nc_loc=="market" and not r13_has("tosil_friend") and room13.get("daram_state") in ("with_dad","rescued"):
         $ r13_offer("r13_nc_tosil_friend")
-    if 9<=_nc_d<=11 and _nc_p==2 and _nc_loc=="inn" and not r13_has("tosil_errand_done") and room13.get("granny_state")!="detained" and not r13_has("mom_reunited"):
+    if r13_tl(9)<=_nc_d<=r13_tl(11) and _nc_p==2 and _nc_loc=="inn" and not r13_has("tosil_errand_done") and room13.get("granny_state")!="detained" and not r13_has("mom_reunited"):
         call r13_nc_tosil_errand
-    if 2<=_nc_d<=7 and _nc_p==0 and _nc_loc=="river" and not r13_has("mulgyeol_helped") and not r13_has("mulgyeol_fell"):
+    if 2<=_nc_d<=R13_TRIAL_DAY and _nc_p==0 and _nc_loc=="river" and not r13_has("mulgyeol_helped") and not r13_has("mulgyeol_fell"):
         $ r13_offer("r13_nc_mulgyeol_ice")
     if _nc_d in (4,6) and _nc_p==0 and _nc_loc=="forest" and not r13_has("solbang_helped"):
         $ r13_offer("r13_nc_solbang_herbs")
-    if _nc_d in (3,9,11) and _nc_p==0 and _nc_loc=="market" and not r13_has("outside_news_bought"):
+    if _nc_d in (3,r13_tl(9),r13_tl(11)+1) and _nc_p==0 and _nc_loc=="market" and not r13_has("outside_news_bought"):
         $ r13_offer("r13_nc_dalgeurak_news")
     return
 

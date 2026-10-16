@@ -52,7 +52,7 @@ init 60 python:
     def r13_map_discovered(key):
         # Do not expose secret names through stale/legacy current-location saves.
         if key=="passage":return bool(store.room13.get("passage_open") and r13_secret_route_available())
-        if key=="greenhouse":return bool(store.room13["day"]>=8 and r13_has("E19"))
+        if key=="greenhouse":return bool(store.room13["day"]>=R13_WEEK2_DAY and r13_has("E19"))
         if key=="altar":return bool(store.room13.get("finale_started"))
         return True
 
@@ -128,7 +128,7 @@ screen r13_map(initial_region=None):
     default map_hover=None
     default ready=False
     # Revalidate restored selection before labels, previews or travel controls render.
-    $ region = "village" if region=="mountain" and room13["day"]<8 else region
+    $ region = "village" if region=="mountain" and room13["day"]<R13_WEEK2_DAY else region
     $ selected = r13_map_selection(region,selected)
     key "game_menu" action Return(False)
     timer .25 action SetScreenVariable("ready",True)

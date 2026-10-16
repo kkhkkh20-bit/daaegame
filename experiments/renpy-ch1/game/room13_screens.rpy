@@ -470,8 +470,8 @@ screen r13_calendar_content():
     default week=min(1,(room13["day"]-1)//7)
     text "달력" xpos 284 ypos 72 size 26 color "#765426"
     text ("%d주째"%(week+1)) xpos 1070 ypos 76 size 22 color "#796044"
-    for i,dayname in enumerate(("월","화","수","목","금","토","일")):
-        text dayname xpos 302+i*128 ypos 128 size 22 color "#493b30"
+    for i in range(7):
+        text r13_weekday(week*7+1+i) xpos 302+i*128 ypos 128 size 22 color "#493b30"
     for day in range(week*7+1,week*7+8):
         frame:
             area (284+((day-1)%7)*128,170,120,128)

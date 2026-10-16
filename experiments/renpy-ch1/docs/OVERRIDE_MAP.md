@@ -31,7 +31,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:366` | r13_discovery_base_present |
+| 1 | 55 | `room13_rules.rpy:371` | r13_discovery_base_present |
 | 2 | 61 | `room13_discovery.rpy:38` | r13_tool_base_present |
 | 3 | 73 | `room13_tool_discovery.rpy:81` | _r13_mystery_present |
 | 4 | 76 | `room13_first_mystery.rpy:98` | _r13_life_present |
@@ -89,6 +89,18 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 121 | `systems/room13_trial_notes.rpy:48` | _r13_alibi_notes |
 | 7 | 147 | `systems/room13_alibi.rpy:157` |  |
 
+## `r13_where` (7층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:223` | _r13_before_gate_where |
+| 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
+| 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
+| 4 | 93 | `systems/room13_livelihood_flow.rpy:107` | _r13_episode_where |
+| 5 | 103 | `systems/room13_episodes.rpy:55` | _r13_alibi_where |
+| 6 | 147 | `systems/room13_alibi.rpy:30` | _r13_kd_where |
+| 7 | 153 | `systems/room13_ep2_kids.rpy:82` |  |
+
 ## `r13_compare_result` (6층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -99,17 +111,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 100 | `systems/room13_poc_route.rpy:90` | _r13_daram_home_compare |
 | 5 | 101 | `systems/room13_daram_home.rpy:137` | _r13_tm_compare |
 | 6 | 116 | `systems/room13_testimony.rpy:42` |  |
-
-## `r13_where` (6층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:223` | _r13_before_gate_where |
-| 2 | 67 | `room13_gate_continuity.rpy:9` | _r13_home_where |
-| 3 | 79 | `room13_home.rpy:10` | _r13_life_where |
-| 4 | 93 | `systems/room13_livelihood_flow.rpy:107` | _r13_episode_where |
-| 5 | 103 | `systems/room13_episodes.rpy:55` | _r13_alibi_where |
-| 6 | 147 | `systems/room13_alibi.rpy:30` |  |
 
 ## `r13_finish_topic` (5층)
 

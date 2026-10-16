@@ -89,7 +89,7 @@ label r13_qa_shop:
     $ r13_prepare_history()
     $ r13_scene_key=None
     $ r13_upgrade()
-    $ room13.update(location="market",day=5,period=0,life_poc=True,case_state="occurred")
+    $ room13.update(location="market",day=8,period=0,life_poc=True,case_state="occurred")
     $ room13["flags"]=list(set(room13["flags"])|{"lodging","entry_corrected","livelihood_open"})
     $ room13["livelihood"]=dict(cash=40,debt=0)
     call r13_scene(R13_PLACES["store"][1],R13_PLACES["store"][0],"calm")
@@ -102,7 +102,7 @@ init 999 python:
     def r13_qa_items_chain():
         import json
         st=store.room13;log={}
-        st.update(day=5,period=0,case_state="occurred",location="workshop",life_poc=True,secret_route_unlocked=False)
+        st.update(day=8,period=0,case_state="occurred",location="workshop",life_poc=True,secret_route_unlocked=False)
         st["flags"]=list(set(st["flags"])|{"lodging","entry_corrected","livelihood_open","life:buri_honest","lamplighter_trust"})
         st["livelihood"]=dict(cash=30,debt=0)
         log["buri_topics"]=[k for k,s in r13_topics("buri")]

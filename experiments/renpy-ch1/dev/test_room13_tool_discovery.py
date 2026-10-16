@@ -1,4 +1,5 @@
 """Optional-tool loop: no evidence/time bypass, real ownership and repeat/save safety."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import ast,copy,json,textwrap,types
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
@@ -59,7 +60,7 @@ assert base_calls[-1]==('buri','E04',False) and store.room13==snapshot
 store.room13['evidence']=['E04'];assert env['r13_present']('buri','E04')==[('baseline','original response')]
 store.room13['read_topics']=['tool:plans'];before=len(base_calls);reply=env['r13_present']('buri','E04');assert len(base_calls)==before+1 and reply!=[('baseline','original response')]
 assert env['r13_present']('granny','E04')==[('baseline','original response')]
-store.room13['day']=8;assert env['r13_present']('buri','E04')==[('baseline','original response')]
+store.room13['day']=11;assert env['r13_present']('buri','E04')==[('baseline','original response')]
 checks.append('Presentation retains original pipeline and requires owned record plus completed optional question')
 store.room13=state;store.room13,_=transition(store.room13,'bed');assert 'tool:seam'in dict(env['r13_topics']('daram'))
 store.room13['daram_state']='held';assert 'tool:seam'not in dict(env['r13_topics']('daram'))

@@ -66,17 +66,17 @@ label r13_w1c_events:
         call r13_lines([("dad","(일을 하면 하루가 다 간다. 일을 쉬는 시간에는 마을을 돌아볼 수 있다.)",{"thought":True})],"w1c:karo:time")
     if 2<=_d<=3 and _p<=1 and _loc=="square" and not r13_has("ev_g_done"):
         $ r13_offer("r13_w1c_portrait")
-    if 2<=_d<=4 and _p<=1 and _loc=="post" and not r13_has("ev_l_done"):
+    if 2<=_d<=R13_CASE_DAY and _p<=1 and _loc=="post" and not r13_has("ev_l_done"):
         $ r13_offer("r13_w1c_letters")
-    if 2<=_d<=4 and _p==1 and _loc=="inn" and not r13_has("ev_i_done"):
+    if 2<=_d<=R13_CASE_DAY and _p==1 and _loc=="inn" and not r13_has("ev_i_done"):
         $ r13_offer("r13_w1c_extension")
-    if _d==4 and _p>=2 and room13["case_state"]=="pending" and r13_has("fake_letter_planted") and not r13_has("fake_letter_night") and not r13_has("granny_knows_found_out"):
+    if _d==R13_CASE_DAY and _p>=2 and room13["case_state"]=="pending" and r13_has("fake_letter_planted") and not r13_has("fake_letter_night") and not r13_has("granny_knows_found_out"):
         call r13_w1c_fake_night
-    if 5<=_d<=6 and _loc=="hall" and room13["case_state"]=="occurred" and not r13_has("ev_s_done"):
+    if r13_tl(5)<=_d<=r13_tl(6) and _loc=="hall" and room13["case_state"]=="occurred" and not r13_has("ev_s_done"):
         $ r13_offer("r13_w1c_seal")
-    if _d==6 and _p<=1 and _loc in ("gate","store") and room13["case_state"]=="occurred" and not r13_has("ev_t_done"):
+    if _d==r13_tl(6) and _p<=1 and _loc in ("gate","store") and room13["case_state"]=="occurred" and not r13_has("ev_t_done"):
         $ r13_offer("r13_w1c_testimony")
-    if _d>=8 and r13_has("letters_safe") and r13_has("pursuit_active") and not r13_has("pursuit_managed"):
+    if _d>=R13_WEEK2_DAY and r13_has("letters_safe") and r13_has("pursuit_active") and not r13_has("pursuit_managed"):
         call r13_lines([("resident_sling","부인 편지는 제가 할머니 몰래 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.")],"w1c:letters:safe")
         $ r13_flag("pursuit_managed")
     return None

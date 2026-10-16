@@ -3,7 +3,7 @@ label r13_week2_opening:
     $ r13_upgrade()
     if room13["week2_started"]:
         jump r13_week2_day
-    $ r13_edit(day=8,period=0,location="inn",week2_started=True)
+    $ r13_edit(day=R13_WEEK2_DAY,period=0,location="inn",week2_started=True)
     show screen r13_hud
     call r13_scene("front","월요일 아침 · 꺼져 가는 난방","night")
     if room13["granny_state"]=="detained":
@@ -40,7 +40,7 @@ label r13_week2_events:
     if r13_has("convoy_changed") and "convoy_changed_notice" not in room13["events"]:
         call r13_lines([("neoul","사람을 끌고 가는 경비 조가 바뀌었습니다. 전에 보신 순번과 다를 겁니다."),(None,"갖고 있던 기록은 그대로 남아 있다. 하지만 지금 내려진 명령은 다시 확인해야 한다.")],"week2:convoy_changed")
         $ r13_event("convoy_changed_notice")
-    if room13["day"]>=11 and "day11_warning" not in room13["events"]:
+    if room13["day"]>=r13_tl(11) and "day11_warning" not in room13["events"]:
         call r13_scene("winter_square","광장 · 꺼진 집들","night")
         call r13_lines([("resident_ppul","불이 들어오지 않는 집은 학교로 모이십시오. 보호시설 환자들은 별도로 옮깁니다."),("resident_bori","왜 보호시설에 계신 분들은 학교로 안 와요?"),("resident_ppul","함께 있으면 서로 다칠 수 있으니까요."),(None,"옮길 사람 명단에 붉은 줄이 그어졌다. 치료하러 옮긴다기에는 준비해 둔 장비가 맞지 않았다.")],"week2:day11_warning")
         if room13["daram_state"]=="held":

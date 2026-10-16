@@ -100,7 +100,7 @@ init 152 python:
     R13_EP_MEETING_HEADER={"ep1":"광장 회의 · 4일째"}
     def r13_meeting_header(session):
         if session in R13_EP_MEETING_HEADER:return R13_EP_MEETING_HEADER[session]
-        return "식당 회의 · 7일째" if session=="trial" else "제단 앞 회의 · 14일째"
+        return "식당 회의 · %d일째"%R13_TRIAL_DAY if session=="trial" else "제단 앞 회의 · 14일째"
     R13_DEBATE["Q1"]=dict(title="3번 등을 열어 피코를 얼어 죽게 한 사람",session="ep1",chair="neoul",
         statements=[
             dict(id="s1",who="neoul",text="3번 등을 연 건 【톡】이오. 등 여는 사람은 톡뿐이니까.",
@@ -178,7 +178,7 @@ init 152 python:
         if session in R13_EP_MEETING_PLACE:
             seats=list(r13_debate_seats(session));present={who for who,stance in seats}
             for who in [st["who"] for st in r13_debate_statements(claim)]+[R13_DEBATE[claim]["chair"]]:
-                if who in CAST and who!="dad" and who not in present:
+                if who in CAST and who!=r13_viewpoint() and who not in present:
                     seats.append((who,None));present.add(who)
             return seats
         return _r13_e1_cast(claim,session,speaker)

@@ -535,9 +535,9 @@ init 98 python:
         if not s.get("trial_ended"):
             if s.get("case_state")=="occurred":
                 have,need=r13_debate_evidence_ready("C2")
-                return "식당 회의까지 %d일 · 촛대 논점에 쓸 자료 %d/%d"%(max(0,7-day),have,need)
+                return "식당 회의까지 %d일 · 촛대 논점에 쓸 자료 %d/%d"%(max(0,R13_TRIAL_DAY-day),have,need)
             if s.get("case_state")=="prevented":
-                return "7일째 청문까지 %d일 · 함께 들어온 기록을 지키자"%max(0,7-day)
+                return "%d일째 청문까지 %d일 · 함께 들어온 기록을 지키자"%(R13_TRIAL_DAY,max(0,R13_TRIAL_DAY-day))
             notes=r13_first_mystery_notes()
             return ("의문 · "+notes[-1]["question"]) if notes else None
         ready=sum(1 for name,ok in r13_crisis_preparations() if ok)
@@ -739,7 +739,7 @@ screen r13_meeting_agenda(claims):
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
         vbox:
-            text "식당 회의 · 7일째" size 17 color "#795d40"
+            text "식당 회의 · %d일째"%R13_TRIAL_DAY size 17 color "#795d40"
             text "어느 주장을 다룰까?" size r13_read_size(23,27) color "#493b30"
     $ captions={"C1":"정문이 잠겼으니 아이뿐이라는 주장","C2":"다람이의 방어가 죽음의 원인이라는 주장","C3":"할머니는 그때 식당에 있었다는 말","C4":"할머니가 도우러 들어갔을 뿐이라는 변명"}
     frame:

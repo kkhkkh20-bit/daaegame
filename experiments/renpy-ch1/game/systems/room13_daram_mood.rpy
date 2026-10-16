@@ -38,7 +38,7 @@ init 141 python:
     # 다람이 misses mom: two night talks in 13호 while the family has not met her yet.
     # She brings it up herself; Dad only answers. Nothing is recorded.
     R13_DARAM_MISS_TALKS=[
-        ("night:miss_mom","다람이가 엄마 이야기를 꺼낸다",lambda:not r13_has("mom_reunited") and store.room13["day"]<=7,[
+        ("night:miss_mom","다람이가 엄마 이야기를 꺼낸다",lambda:not r13_has("mom_reunited") and store.room13["day"]<=R13_TRIAL_DAY,[
             (None,"다람이가 이불 끝을 코까지 끌어 올렸다."),
             ("daram","아빠. 이불에서 엄마 냄새 나.",{"expression":"anxious"}),
             ("dad","그래? 엄마가 이 이불을 덮고 잤나 보다."),

@@ -1,4 +1,5 @@
 """Real init helpers: choices, save-local effects, legacy and late-case preservation."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import ast,copy,json,textwrap,types
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
@@ -43,7 +44,7 @@ assert len(e['r13_present']('granny','E37'))==1
 assert '세탁물' in str(e['r13_conversation_topic_lines']('mystery:door'))
 assert '복도 쪽 문밖에 없어요' not in str(e['r13_conversation_topic_lines']('mystery:door'))
 assert '인정했다' in str(e['r13_first_mystery_notes']())
-store.room13['day']=5;before=copy.deepcopy(store.room13);assert e['r13_present']('granny','E37')==[('base','preserved')] and before==store.room13
+store.room13['day']=8;before=copy.deepcopy(store.room13);assert e['r13_present']('granny','E37')==[('base','preserved')] and before==store.room13
 assert len(calls)==5
 # Old completed map saves retain their evidence and never pay again; no new required keys.
 store.room13=copy.deepcopy(state);store.room13.update(done=['map'],evidence=['E04']);before=copy.deepcopy(store.room13);e['r13_finish_action']('map');assert before==store.room13

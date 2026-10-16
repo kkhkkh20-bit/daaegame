@@ -1,4 +1,5 @@
 """Archive isolation and simultaneous known appointments from real runtime helpers."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import copy, runpy
 from pathlib import Path
 n=runpy.run_path(str(Path(__file__).with_name('test_room13_review0155.py')))
@@ -12,9 +13,9 @@ before=copy.deepcopy(s.room13)
 e['r13_record_select']('r13_records','detail','E01',False)
 assert s.room13==before and calls
 assert len(e['r13_calendar_promises']())==2
-s.room13['day']=5
-assert len(e['r13_calendar_promises']())==1 and '7일째' in e['r13_calendar_promises']()[0]
 s.room13['day']=8
+assert len(e['r13_calendar_promises']())==1 and '10일째' in e['r13_calendar_promises']()[0]
+s.room13['day']=11
 assert e['r13_calendar_promises']()==[]
 s.room13.update(day=13,events=['day13_warning'])
 assert '14일째' in e['r13_calendar_promises']()[0]

@@ -164,9 +164,9 @@ init 57 python:
     def r13_resident_where(person):
         if person not in R13_RESIDENTS:return None
         s=store.room13
-        if person=="resident_piko" and s["day"]>=8:return "clinic"
-        if person=="resident_badook" and s["day"]>=8 and r13_has("patient_transport"):return "school"
-        if s["day"]>=11 and r13_has("shelter_ready") and person in ("resident_tori","resident_yeoni","resident_kongi","resident_somi","resident_musoe"):
+        if person=="resident_piko" and s["day"]>=R13_WEEK2_DAY:return "clinic"
+        if person=="resident_badook" and s["day"]>=R13_WEEK2_DAY and r13_has("patient_transport"):return "school"
+        if s["day"]>=r13_tl(11) and r13_has("shelter_ready") and person in ("resident_tori","resident_yeoni","resident_kongi","resident_somi","resident_musoe"):
             return "school"
         where=R13_WEEKLY_ROUTINES.get(person,R13_RESIDENTS[person]["weekly_locations"])[(s["day"]-1)%7][min(s["period"],2)]
         return {"home":None,"library":"post","lowroad":"gate","tower":"square"}.get(where,where)

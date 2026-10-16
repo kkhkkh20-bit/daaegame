@@ -43,7 +43,7 @@ init 106 python:
 
     def r13_evening_open():
         s=store.room13
-        return bool(s) and s.get("period")==2 and s.get("day") in (2,3,5,6)
+        return bool(s) and s.get("period")==2 and s.get("day") in (2,3,r13_tl(5),r13_tl(6))
 
     def r13_evening_missions():
         if not r13_evening_open():return []
@@ -79,9 +79,9 @@ label r13_evening_events:
         call r13_ev_lamp_round
     elif _d==3 and _loc=="square" and r13_has("ev_lamp_day:2") and not r13_has("ev_lamp_again"):
         call r13_ev_lamp_again
-    if _d in (5,6) and _loc=="gate" and room13.get("daram_state")=="held" and not r13_has("ev_visit:%d"%_d) and not r13_has("visit_banned"):
+    if _d in (r13_tl(5),r13_tl(6)) and _loc=="gate" and room13.get("daram_state")=="held" and not r13_has("ev_visit:%d"%_d) and not r13_has("visit_banned"):
         call r13_ev_night_visit
-    if _d==6 and _loc=="dining" and not r13_has("ev_eve_done"):
+    if _d==R13_TRIAL_DAY-1 and _loc=="dining" and not r13_has("ev_eve_done"):
         call r13_ev_eve_trial
     return None
 
@@ -187,7 +187,7 @@ label r13_ev_night_visit:
                     ("dad","응. 아빠 도토리가 찾으러 갔거든."),
                     (None,"다람이는 이야기가 끝날 때까지 창살을 잡고 있다가 잠들었다.")],"ev:visit:story")
                 $ r13_flag("daram_story")
-            "내일 재판이 어떻게 되는지 알려 준다" if room13["day"]==6:
+            "내일 재판이 어떻게 되는지 알려 준다" if room13["day"]==R13_TRIAL_DAY-1:
                 call r13_lines([("dad","내일 마을 사람들 앞에서 그날 밤 일을 하나씩 다시 짚어 볼 거야. 넌 네가 본 것만 말하면 돼."),
                     ("daram","모르는 건 어떻게 해?"),
                     ("dad","모른다고 하면 돼. 그게 제일 정직한 거야.")],"ev:visit:trial")

@@ -69,11 +69,11 @@ label r13_b3_events:
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
     if _loc in ("square","inn","dining"):
         call r13_b3_whispers
-    if _d in (5,6) and _p<=1 and _loc=="square" and room13["case_state"]=="occurred" and not r13_has("ev_e_done"):
+    if _d in (r13_tl(5),r13_tl(6)) and _p<=1 and _loc=="square" and room13["case_state"]=="occurred" and not r13_has("ev_e_done"):
         $ r13_offer("r13_b3_ration")
-    if 4<=_d<=6 and _p<=1 and _loc=="post" and not r13_has("ev_u_done") and not r13_has("know_stone_history"):
+    if 4<=_d<=r13_tl(6) and _p<=1 and _loc=="post" and not r13_has("ev_u_done") and not r13_has("know_stone_history"):
         $ r13_offer("r13_b3_pages")
-    if _d in (5,6) and _p==2 and _loc=="school" and not r13_has("ev_o_done") and not r13_has("bori_cleared") and not r13_has("bori_ally"):
+    if _d in (r13_tl(5),r13_tl(6)) and _p==2 and _loc=="school" and not r13_has("ev_o_done") and not r13_has("bori_cleared") and not r13_has("bori_ally"):
         call r13_b3_firewood
     return None
 

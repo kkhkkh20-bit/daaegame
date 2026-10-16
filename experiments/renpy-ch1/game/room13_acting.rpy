@@ -260,7 +260,7 @@ init 59 python:
     def r13_living_pose(person,location,period):
         poses=R13_ACTING.get(person,{})
         if person in R13_LIVING_ALLOWED and location not in R13_LIVING_ALLOWED[person]:
-            return "distressed" if store.room13["day"]>=8 and person=="resident_piko" else "neutral"
+            return "distressed" if store.room13["day"]>=R13_WEEK2_DAY and person=="resident_piko" else "neutral"
         # Main acting sheets explicitly contain action_1/action_2. These
         # choices follow the activity actually drawn in each reviewed cell.
         desired={

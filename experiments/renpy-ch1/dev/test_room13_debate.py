@@ -1,4 +1,5 @@
 """Public-meeting engine: data integrity, judging, missing-evidence skip, give-up closing, proofs only via r13_prove."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import copy,json,textwrap,types
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
@@ -172,11 +173,11 @@ checks.append('selection skips true statements after a break')
 # Goal line: meeting countdown and evidence readiness for the candlestick point.
 env['r13_first_mystery_notes']=lambda:[dict(question='누가 마지막으로 만났을까?')]
 env['r13_crisis_preparations']=lambda:[('a',True),('b',False),('c',True),('d',False)]
-store.room13.update(day=5,finale_started=False,trial_ended=False,case_state='occurred',evidence=['E06','E07'],flags=[],propositions=[])
+store.room13.update(day=8,finale_started=False,trial_ended=False,case_state='occurred',evidence=['E06','E07'],flags=[],propositions=[])
 store.room13['debate']={}
 assert env['r13_debate_evidence_ready']('C2')==(1,3)
 assert env['r13_campaign_goal']()=='식당 회의까지 2일 · 촛대 논점에 쓸 자료 1/3'
 store.room13.update(case_state='pending',day=3);assert env['r13_campaign_goal']()=='의문 · 누가 마지막으로 만났을까?'
-store.room13.update(trial_ended=True,day=9);assert env['r13_campaign_goal']()=='제단까지 5일 · 함께 버틸 준비 2/4'
+store.room13.update(trial_ended=True,day=12);assert env['r13_campaign_goal']()=='제단까지 2일 · 함께 버틸 준비 2/4'
 checks.append('goal line shows meeting countdown and evidence/preparation readiness')
 print(json.dumps({'passed':True,'checks':checks},ensure_ascii=False,indent=2))

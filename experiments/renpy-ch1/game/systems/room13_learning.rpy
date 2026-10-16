@@ -60,7 +60,7 @@ init 98 python:
         s=store.room13 or {}
         # On day four sleep can enter the existing evening event; do not promise
         # that confirmation will skip directly to tomorrow.
-        event_night=s.get("day")==4 and s.get("case_state")=="pending"
+        event_night=s.get("day")==R13_CASE_DAY and s.get("case_state")=="pending"
         if event_night:return "오늘 찾은 것은 기록에 남아 있다. 오늘 조사를 마치고 저녁을 맞을까요?"
         text="오늘 찾은 것은 기록에 남아 있다. 잠들면 다음 날 아침이 됩니다."
         if s.get("life_poc") or "livelihood_open" in s.get("flags",[]):

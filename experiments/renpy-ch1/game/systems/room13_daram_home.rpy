@@ -59,8 +59,8 @@ init 101 python:
         if key=="home:daram:letters":return {"E01","E18"}<=evidence
         if key=="home:daram:case":return s.get("case_state")=="occurred"
         if key=="home:daram:verdict":return s.get("trial_result") in ("acquitted","convicted","cleared") or s.get("trial_ended",False)
-        if key=="home:daram:cold":return s.get("day",1)>=8 and s.get("week2_started",False)
-        if key=="home:daram:reunion":return s.get("day",1)>=8 and s.get("mom_state")=="reunited"
+        if key=="home:daram:cold":return s.get("day",1)>=R13_WEEK2_DAY and s.get("week2_started",False)
+        if key=="home:daram:reunion":return s.get("day",1)>=R13_WEEK2_DAY and s.get("mom_state")=="reunited"
         return False
 
     def r13_daram_home_context(state=None):
@@ -79,7 +79,7 @@ init 101 python:
                 [("dad","침대 밑에 뭐 있어?"),("daram","연필이 침대 밑으로 굴러갔나 해서 봤어. 아까까지 여기 있었는데."),("dad","연필이 짐 사이에 끼었을 수도 있어."),("daram","내가 찾아볼게. 대신 엄마 물건은 안 건드릴게.")],
             ][period]
         if key=="home:daram:mother":
-            if s.get("day",1)>=8 and s.get("mom_state")=="reunited":return [("dad","처음 왔을 때랑 이 방이 좀 다르게 보이니?"),("daram","처음엔 엄마 물건만 있어서 이상했어. 이제 엄마 얼굴을 봤으니까 조금 달라."),("dad","엄마가 쓰던 물건은 아직 그대로네."),("daram","응. 내가 그린 이 그림은 나중에 엄마한테 보여 줄 거야.")]
+            if s.get("day",1)>=R13_WEEK2_DAY and s.get("mom_state")=="reunited":return [("dad","처음 왔을 때랑 이 방이 좀 다르게 보이니?"),("daram","처음엔 엄마 물건만 있어서 이상했어. 이제 엄마 얼굴을 봤으니까 조금 달라."),("dad","엄마가 쓰던 물건은 아직 그대로네."),("daram","응. 내가 그린 이 그림은 나중에 엄마한테 보여 줄 거야.")]
             lines=[("dad","엄마가 쓰던 방을 보니 어때?"),("daram","물건은 다 있는데 엄마만 없는 게 이상해.")]
             if has("M01"):lines += [("daram","엄마 메모에는 내 이름도 있잖아. 엄마가 우리 생각하면서 썼겠지?"),("dad","응. 다만 그 메모를 언제 쓴 건지는 아직 모르지만.")]
             elif has("E03"):lines += [("daram","이불 매듭이 엄마가 묶어 준 매듭이랑 닮았어."),("dad","매듭이 닮았다는 거랑 정말 엄마가 묶었다는 건 달라. 따로 적어 두자.")]

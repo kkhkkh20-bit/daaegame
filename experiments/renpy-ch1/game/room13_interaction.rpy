@@ -268,7 +268,7 @@ label r13_sleep_in_room:
         return None
     call screen r13_confirm(r13_learning_sleep_text(),"자기","아직 할 일이 있다")
     if _return:
-        if room13["day"]==4 and room13["case_state"]=="pending":
+        if room13["day"]==R13_CASE_DAY and room13["case_state"]=="pending":
             $ r13_edit(period=2)
             return "case"
         if room13["day"]==1 and not r13_has("night1_seen"):

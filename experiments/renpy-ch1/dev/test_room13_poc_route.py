@@ -1,4 +1,5 @@
 """Owned evidence, observed work, free pickup and first-three-day economy boundaries."""
+import r13_timeline_env  # noqa: F401  날짜표 상수 (game/systems/room13_timeline.rpy)
 import copy,json,textwrap,types,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -36,7 +37,7 @@ class PocRouteTest(unittest.TestCase):
   self.assertNotIn('poc:granny_letter',[k for k,t in self.ns['r13_topics']('granny')]);self.ns['r13_present']('granny','E18');self.assertIn('warning_exposed',s['flags']);self.assertIn('poc:granny_letter',[k for k,t in self.ns['r13_topics']('granny')]);self.assertNotIn('J06',s['evidence'])
  def test_old_saves_and_post_case_keep_original_routes(self):
   s=self.store.room13;s.update(evidence=['M01','E01','E18'],livelihood={'jobs':[{'key':'kitchen'}]},flags=['poc:note_shown:nabi'])
-  for changes in ({'life_poc':False},{'life_poc':True,'case_state':'occurred'},{'case_state':'pending','day':5}):
+  for changes in ({'life_poc':False},{'life_poc':True,'case_state':'occurred'},{'case_state':'pending','day':8}):
    s.update(changes);self.assertNotIn('poc:nabi_packet',[k for k,t in self.ns['r13_topics']('nabi')]);self.assertEqual(self.ns['r13_compare_result'](['E01','E18']),'base comparison')
  def test_free_envelope_is_still_acquired_once_with_actual_finish_rule(self):
   self.assertEqual(self.data['activities']['warning']['cost'],0)

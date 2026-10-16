@@ -87,12 +87,12 @@ init 68 python:
         day=state.get("day",1)
         flags=state.get("flags",[])
         promises=[]
-        if day<=4 and "elder_appointment" in flags:
-            promises.append("4일째 · 목요일 저녁 — 어르신과 만나기로 했다.")
-        if day<=7 and "trial_notice" in flags:
-            promises.append("7일째 · 일요일 — 다람이의 사건을 주민 앞에서 다룬다.")
+        if day<=R13_CASE_DAY and "elder_appointment" in flags:
+            promises.append("%d일째 · %s요일 저녁 — 어르신과 만나기로 했다."%(R13_CASE_DAY,r13_weekday(R13_CASE_DAY)))
+        if day<=R13_TRIAL_DAY and "trial_notice" in flags:
+            promises.append("%d일째 · %s요일 — 다람이의 사건을 주민 앞에서 다룬다."%(R13_TRIAL_DAY,r13_weekday(R13_TRIAL_DAY)))
         if day==13 and "day13_warning" in state.get("events",[]):
-            promises.append("14일째 · 일요일 동틀 무렵 — 제단으로 끌고 간다는 말을 전해 받았다.")
+            promises.append("14일째 · "+r13_weekday(14)+"요일 동틀 무렵 — 제단으로 끌고 간다는 말을 전해 받았다.")
         return promises
 
     def r13_met_people():

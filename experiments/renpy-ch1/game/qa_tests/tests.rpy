@@ -869,7 +869,7 @@ testcase town_n_yeoni:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=1,location="square",life_poc=True),("ev_b_done","ev_c_done","room_searched"),(),5)
+    run Call("r13_qa_roam",dict(day=7,period=1,location="square",life_poc=True),("ev_b_done","ev_c_done","room_searched"),(),5)
     click pos (640,600) until screen "r13_hub" timeout 40
     run Call("r13_qa_talk","resident_yeoni")
     click pos (1150,90) until "교환대의 낯익은 물건을 묻는다" timeout 30
@@ -920,45 +920,9 @@ testcase town_m_kongi:
 
 # ---- Episodes (systems/room13_episodes.rpy) ----
 
-testcase ep1_bami_safe:
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=2,location="inn",life_poc=True))
-    click pos (1150,90) until screen "choice" timeout 40
-    click "검사가 무엇인지 묻는다"
-    pause 1.0
-    click pos (1150,90) until screen "choice" timeout 40
-    click "못 봤다고 한다"
-    pause 1.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    run Call("r13_qa_goto",3,1,"hall")
-    click pos (1150,90) until screen "choice" timeout 40
-    screenshot "e1_eaves.png"
-    click "바둑이에게 처마 순찰을 빼 달라고 한다"
-    pause 1.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    run Call("r13_qa_goto",4,0,"inn")
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    $ r13_qa_town_dump()
+# (retired 0.18.83) ep1_bami_safe: 옛 큰 사건 1 처마 밑의 밤이는 에피소드 ② 다람 탐정단으로 대신했다(testcase ep2_kids).
 
-testcase ep1_bami_taken:
-    pause 2.0
-    click "처음부터"
-    pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=2,location="inn",life_poc=True))
-    click pos (1150,90) until screen "choice" timeout 40
-    click "못 봤다고 한다"
-    pause 1.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    run Call("r13_qa_goto",3,1,"hall")
-    click pos (1150,90) until screen "choice" timeout 40
-    click "지금은 할 수 있는 게 없다고 말한다"
-    pause 1.0
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    run Call("r13_qa_goto",4,0,"inn")
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    $ r13_qa_town_dump()
+# (retired 0.18.83) ep1_bami_taken: 옛 큰 사건 1 처마 밑의 밤이는 에피소드 ② 다람 탐정단으로 대신했다(testcase ep2_kids).
 
 testcase ep2_nabi:
     pause 2.0
@@ -990,7 +954,7 @@ testcase ep2_nabi:
     click "돌아가기"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
-    $ r13_edit(day=4,period=0,location="dining")
+    $ r13_edit(day=7,period=0,location="dining")
     run Call("r13_qa_talk","nabi")
     click pos (1150,90) until "이제 본 대로 말해 줄 수 있는지 묻는다" timeout 30
     click "이제 본 대로 말해 줄 수 있는지 묻는다"
@@ -1002,13 +966,13 @@ testcase ep3_stone:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=2,location="square",life_poc=True,case_state="occurred"),("know_stone_history","ep1_done","ev_b_done","ev_c_done"))
+    run Call("r13_qa_roam",dict(day=8,period=2,location="square",life_poc=True,case_state="occurred"),("know_stone_history","ep1_done","ev_b_done","ev_c_done"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "e3_bell.png"
     click "우박에게 지금 돌의 출력을 재 보라고 한다"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
-    $ r13_edit(day=6,period=1,location="post")
+    $ r13_edit(day=9,period=1,location="post")
     run Call("r13_qa_talk","resident_ppul")
     click pos (1150,90) until "재판을 증거대로 열어 달라고 요구한다" timeout 30
     click "재판을 증거대로 열어 달라고 요구한다"
@@ -1067,7 +1031,7 @@ testcase medkit_musoe:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done","ep4_seen","tok_cleared"),("medkit",))
+    run Call("r13_qa_roam",dict(day=7,period=0,location="workshop",life_poc=True),("ep1_done","ev_b_done","ep4_seen","tok_cleared"),("medkit",))
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_talk","resident_musoe")
     click pos (1150,90) until "도시제 약상자를 건넨다" timeout 30
@@ -1146,7 +1110,7 @@ testcase evening_visit:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=2,location="gate",life_poc=True,case_state="occurred",daram_state="held"),("badook_ally","ep1_done","ev_b_done","ev_c_done","ep3_bell_seen"),("snack",))
+    run Call("r13_qa_roam",dict(day=8,period=2,location="gate",life_poc=True,case_state="occurred",daram_state="held"),("badook_ally","ep1_done","ev_b_done","ev_c_done","ep3_bell_seen"),("snack",))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "ev_visit.png"
     click "담요를 넣어 달라고 부탁한다"
@@ -1162,7 +1126,7 @@ testcase evening_eve:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=6,period=2,location="dining",life_poc=True,case_state="occurred",daram_state="held"),("witness:nabi","tok_detained","ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ep4_seen"))
+    run Call("r13_qa_roam",dict(day=9,period=2,location="dining",life_poc=True,case_state="occurred",daram_state="held"),("witness:nabi","tok_detained","ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ep4_seen"))
     click pos (1150,90) until screen "choice" timeout 40
     click "나비 옆에 앉는다"
     pause 1.0
@@ -1181,7 +1145,7 @@ testcase b3_ration_chain:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=0,location="square",life_poc=True,case_state="occurred",daram_state="held"),("scale_rigged","know_ration_scale","ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    run Call("r13_qa_roam",dict(day=8,period=0,location="square",life_poc=True,case_state="occurred",daram_state="held"),("scale_rigged","know_ration_scale","ep1_done","ev_b_done","ev_c_done","ep4_seen"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "b3_ration.png"
     click "도토에게 배급 장부를 보자고 한다"
@@ -1220,7 +1184,7 @@ testcase b3_firewood:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=2,location="school",life_poc=True,case_state="occurred",daram_state="held"),("ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ev_visit:5","ev_e_done"))
+    run Call("r13_qa_roam",dict(day=8,period=2,location="school",life_poc=True,case_state="occurred",daram_state="held"),("ep1_done","ev_b_done","ev_c_done","ep3_bell_seen","ev_visit:5","ev_e_done"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "b3_wood.png"
     click "왜 장작을 가져가는지 묻는다"
@@ -1236,7 +1200,7 @@ testcase b3_pages:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="post",life_poc=True),("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
+    run Call("r13_qa_roam",dict(day=7,period=0,location="post",life_poc=True),("ep1_done","ev_b_done","ev_c_done","ep4_seen"))
     click pos (1150,90) until screen "choice" timeout 40
     screenshot "b3_pages.png"
     click "장부를 베낄 시간을 달라고 한다"
@@ -1257,7 +1221,7 @@ testcase carry_good:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("bori_cleared","scale_public","kids_fed","tok_cleared","musoe_recovering","know_stone_failing"))
+    run Call("r13_qa_roam",dict(day=11,period=0,location="inn",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("bori_cleared","scale_public","kids_fed","tok_cleared","musoe_recovering","know_stone_failing"))
     click pos (1150,90) until screen "r13_hub" timeout 60
     assert eval (all(r13_has(f) for f in ("transport_terms","supply_terms","shelter_agreed","operators_terms","clinic_observation","w1_links_done")) and not r13_has("measurement_plan"))
     $ r13_qa_town_dump()
@@ -1266,7 +1230,7 @@ testcase carry_refuse:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("bori_punished","eunho_blackmailed","rumor:briber","rumor:strongarm","badook_ally"),(),30)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="inn",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("bori_punished","eunho_blackmailed","rumor:briber","rumor:strongarm","badook_ally"),(),30)
     click pos (1150,90) until screen "r13_hub" timeout 60
     assert eval (r13_has("bori_refuses") and r13_has("eunho_refuses") and r13_has("teacher_doubts"))
     $ r13_edit(location="gate")
@@ -1285,7 +1249,7 @@ testcase w2e_bell:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=9,period=0,location="square",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","village_alerted"))
+    run Call("r13_qa_roam",dict(day=11,period=0,location="square",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","village_alerted"))
     click pos (1150,90) until screen "choice" timeout 60
     screenshot "w2e_bell.png"
     click "설이에게 종을 치라고 한다"
@@ -1297,7 +1261,7 @@ testcase w2e_numbers:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True,evidence=["W4"]),("w1_links_done",))
+    run Call("r13_qa_roam",dict(day=11,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True,evidence=["W4"]),("w1_links_done",))
     click pos (1150,90) until screen "choice" timeout 60
     click "가짜 숫자에 동의한다"
     pause 1.0
@@ -1315,7 +1279,7 @@ testcase w2e_tools:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","w2e_p_done"))
+    run Call("r13_qa_roam",dict(day=11,period=0,location="workshop",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","w2e_p_done"))
     click pos (1150,90) until screen "choice" timeout 60
     click "제가 결정할 일은"
     pause 1.0
@@ -1326,7 +1290,7 @@ testcase w2e_share:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=10,period=0,location="store",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","supplies_ready","kids_fed"))
+    run Call("r13_qa_roam",dict(day=12,period=0,location="store",life_poc=True,case_state="occurred",week2_started=True,trial_ended=True),("w1_links_done","supplies_ready","kids_fed"))
     click pos (1150,90) until screen "choice" timeout 60
     screenshot "w2e_share.png"
     click "남은 몫을 경매에 붙인다"
@@ -1610,7 +1574,7 @@ testcase present_portrait:
     assert eval ("확인할 필요" in r13_qa_last_present and "J07" in room13["evidence"] and r13_has("portrait_lamp_seen"))
     assert eval (r13_goal_is_question())
     # Reply sent on day 8 afternoon: normally day 9 afternoon (abs 33); with the face known, day 9 morning (abs 32).
-    run Function(r13_edit,day=8,period=1)
+    run Function(r13_edit,day=11,period=1)
     run Function(r13_w2_action_done,"w2_reply")
     assert eval (room13["reply_due"]==32)
 
@@ -1619,7 +1583,7 @@ testcase memory_grudge:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=0,location="room13"),("yeoni_hostile","rumor:fair","heard:rumor:fair"),(),5)
+    run Call("r13_qa_roam",dict(day=8,period=0,location="room13"),("yeoni_hostile","rumor:fair","heard:rumor:fair"),(),5)
     pause 1.0
     assert eval ("grudge_cold:yeoni" in [k for k,s in r13_topics("resident_yeoni")] and "grudge_fix:yeoni" in [k for k,s in r13_topics("resident_yeoni")])
     assert eval (r13_conversation_topic_lines("grudge_cold:yeoni")[0][1].startswith("광장에서 좋은 말이 돈다는 건 알아요. 그래도"))
@@ -1635,7 +1599,7 @@ testcase ledger_order:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="store",evidence=["H1"]),("ev_b_done","ev_c_done"))
+    run Call("r13_qa_roam",dict(day=7,period=0,location="store",evidence=["H1"]),("ev_b_done","ev_c_done"))
     pause 1.0
     run Function(r13_qa_present,"resident_madam","H1")
     assert eval ("지난 장부" in r13_qa_last_present and not r13_madam_moved() and r13_object_visible(ROOM13["objects"]["store"]["hoard"]))
@@ -1658,7 +1622,7 @@ testcase testimony_scope:
     assert eval ("J11" in room13["evidence"] and "rumor_mom:karo" in [k for k,s in r13_topics("karo")])
     run Function(r13_finish_topic,"rumor_mom:karo")
     assert eval ("J13" in room13["evidence"] and "엄마는 보지 못했다" in ROOM13["evidence"]["J13"]["establishes"])
-    run Function(r13_edit,day=5,case_state="occurred",victim_state="dead",evidence=["E11","E05"])
+    run Function(r13_edit,day=8,case_state="occurred",victim_state="dead",evidence=["E11","E05"])
     run Function(r13_finish_topic,"nabi_alibi")
     assert eval ("J09" in room13["evidence"] and "E15" in room13["evidence"] and "nabi_gap" not in [k for k,s in r13_topics("nabi")])
     run Function(r13_qa_present,"nabi","E11")
@@ -1699,7 +1663,7 @@ testcase night_talk:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=2,location="room13"),("store_locked_night",))
+    run Call("r13_qa_roam",dict(day=7,period=2,location="room13"),("store_locked_night",))
     pause 1.0
     assert eval (r13_home_with_daram() and "night:locked" in [k for k,s in r13_topics("daram")] and "night:ledger_madam" not in [k for k,s in r13_topics("daram")])
     run Function(r13_town_set,madam_alerted_at=0)
@@ -1719,7 +1683,7 @@ testcase owl_and_buri:
     assert eval (r13_has("owl_threshold_respected"))
     run Function(r13_edit,day=3)
     assert eval ("owl_old_case" in [k for k,s in r13_topics("resident_owlgp")])
-    run Function(r13_edit,day=6,case_state="occurred",victim_state="dead",evidence=["E35","H1"])
+    run Function(r13_edit,day=9,case_state="occurred",victim_state="dead",evidence=["E35","H1"])
     assert eval ("buri_assert" in [k for k,s in r13_topics("buri")])
     run Function(r13_qa_present,"buri","E35")
     assert eval (r13_has("buri_revised") and "아직 무슨 말을" in r13_qa_last_present and "buri_assert" not in [k for k,s in r13_topics("buri")])
@@ -1739,7 +1703,7 @@ testcase inn_change:
     run Function(r13_flag,"observed:kitchen:rear")
     run Function(r13_edit,case_state="occurred")
     assert eval (r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after_known"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear"]) and not r13_object_visible(ROOM13["objects"]["kitchen"]["rear_after"]))
-    run Function(r13_edit,case_state="pending",day=4,period=2,location="hall")
+    run Function(r13_edit,case_state="pending",day=7,period=2,location="hall")
     run Call("r13_case_choice")
     click pos (640,600) until screen "choice" timeout 40
     click "까로와 되돌아온 짐을 확인하러 간다"
@@ -1751,7 +1715,7 @@ testcase trial_notes:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",case_state="occurred",propositions=["C1","C2"]),())
+    run Call("r13_qa_roam",dict(day=11,period=0,location="inn",case_state="occurred",propositions=["C1","C2"]),())
     pause 1.0
     run Function(r13_record_trial_notes)
     assert eval (len(room13["trial_notes"])==4 and room13["trial_notes"][2]["result"]=="할머니의 이동에 관한 주장은 남았다." and not any(k in n["fact"]+n["question"]+n["result"] for n in room13["trial_notes"] for k in ROOM13["evidence"]))
@@ -1762,13 +1726,13 @@ testcase reinspect_and_credit:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=0,location="clinic",case_state="occurred",victim_state="dead",daram_state="held",evidence=["E07"],read_topics=["tok_repair"]),())
+    run Call("r13_qa_roam",dict(day=8,period=0,location="clinic",case_state="occurred",victim_state="dead",daram_state="held",evidence=["E07"],read_topics=["tok_repair"]),())
     pause 1.0
     assert eval ("seal_look" in [k for k,s in r13_topics("resident_seori")])
     run Function(r13_flag,"saw_eunho_hide")
     run Function(r13_finish_topic,"eunho_hidden_ledger")
     assert eval ("J16" in room13["evidence"] and "13호 사건" in ROOM13["evidence"]["J16"]["does_not_establish"])
-    run Function(r13_edit,day=9)
+    run Function(r13_edit,day=11)
     run Function(r13_flag,"eunho_refuses")
     assert eval ("w2_eunho_credit" in [k for k,s in r13_topics("resident_eunho")])
 
@@ -1788,7 +1752,7 @@ testcase use_knowledge:
     assert eval (r13_has("warning_sealed_held") and "warning" not in [k for k,a in r13_actions()])
     run Function(r13_finish_topic,"warning_open_with")
     assert eval ("E18" in room13["evidence"] and "J18" in room13["evidence"])
-    run Function(r13_edit,day=5,case_state="occurred")
+    run Function(r13_edit,day=8,case_state="occurred")
     run Function(r13_finish_topic,"doto_view_claim")
     run Function(r13_finish_topic,"doto_view_test")
     assert eval ("J17" in room13["evidence"])
@@ -2099,7 +2063,7 @@ testcase gm_package:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=0,location="store",life_poc=True),("lodging","entry_corrected"),("knife",))
+    run Call("r13_qa_roam",dict(day=8,period=0,location="store",life_poc=True),("lodging","entry_corrected"),("knife",))
     pause 1.0
     run Jump("r13_qa_gm_package")
     pause 1.0
@@ -2322,7 +2286,7 @@ testcase compare_j09:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=0,location="inn",life_poc=True,case_state="occurred",evidence=["J09","E12"]),("lodging","entry_corrected"))
+    run Call("r13_qa_roam",dict(day=8,period=0,location="inn",life_poc=True,case_state="occurred",evidence=["J09","E12"]),("lodging","entry_corrected"))
     pause 1.0
     assert eval ("좁혔다" in r13_compare_result(("J09","E12")))
 
@@ -9580,7 +9544,7 @@ testcase ancient_granny:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=9,period=1,location="passage",life_poc=True,passage_open=True,week2_started=True,case_state="occurred",granny_state="trusted",daram_state="with_dad"),("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=11,period=1,location="passage",life_poc=True,passage_open=True,week2_started=True,case_state="occurred",granny_state="trusted",daram_state="with_dad"),("entry_corrected","lodging"))
     pause 1.5
     screenshot "passage_crack.png"
     assert eval (r13_object_visible(ROOM13["objects"]["passage"]["crack"]))
@@ -9600,7 +9564,7 @@ testcase mom_hideout:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=4,period=0,location="forest",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=7,period=0,location="forest",life_poc=True,daram_state="with_dad"),("entry_corrected","lodging"))
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.5
     run Call("r13_qa_object","forest_roots")
@@ -9615,17 +9579,17 @@ testcase market_crowd:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=6,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=9,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.5
     screenshot "market_crowd_morning.png"
     python:
         r13_qa_note("market day6 morning: %r"%([(a["person"],a["x"],a["y"],a["height"]) for a in r13_stage_people()],))
     assert eval (len(r13_people())>=5)
-    run Call("r13_qa_roam",dict(day=10,period=1,location="river",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=12,period=1,location="river",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
     pause 1.0
     assert eval ("resident_kkwak" in r13_people())
-    run Call("r13_qa_roam",dict(day=10,period=1,location="forest",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=12,period=1,location="forest",life_poc=True,week2_started=True,case_state="occurred"),("entry_corrected","lodging"))
     pause 1.0
     assert eval ("resident_badook" in r13_people())
     screenshot "forest_week2.png"
@@ -9666,7 +9630,7 @@ testcase new_cast_errand:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=9,period=2,location="inn",life_poc=True,week2_started=True,case_state="prevented",granny_state="trusted",daram_state="with_dad"),("entry_corrected","lodging","tosil_errand_done","ev_b_done","ep1_done","bami_safe"))
+    run Call("r13_qa_roam",dict(day=11,period=2,location="inn",life_poc=True,week2_started=True,case_state="prevented",granny_state="trusted",daram_state="with_dad"),("entry_corrected","lodging","tosil_errand_done","ev_b_done","ep1_done","bami_safe"))
     pause 1.0
     run Call("r13_qa_event","r13_nc_tosil_errand")
     click pos (640,600) until screen "choice" timeout 60
@@ -9709,11 +9673,11 @@ testcase alibi_cross:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=5,period=2,location="dining",life_poc=True,case_state="occurred"),("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=8,period=2,location="dining",life_poc=True,case_state="occurred"),("entry_corrected","lodging"))
     pause 1.0
     python:
         _ab_s=winter_copy.deepcopy(store.room13)
-        _n=winter_copy.deepcopy(_ab_s);_n.update(day=4,period=2);store.room13=_n
+        _n=winter_copy.deepcopy(_ab_s);_n.update(day=7,period=2);store.room13=_n
         store._ab_pins=(r13_where("resident_eunho"),r13_where("resident_owlgp"),r13_where("resident_tosil"))
         _n=winter_copy.deepcopy(_ab_s);_n.update(day=1,period=2);store.room13=_n
         store._ab_pins1=r13_where("resident_tosil")
@@ -9742,7 +9706,7 @@ testcase map_actions:
     screenshot "ma_post_sling.png"
     assert eval (any(a["person"]=="resident_sling" and a["pose"]=="event_steam" for a in r13_stage_people()))
     $ r13_world_cameras={"post":0}
-    run Call("r13_qa_roam",dict(day=4,period=0,location="post",life_poc=True),("+w1c","ev_l_done","ev_g_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=7,period=0,location="post",life_poc=True),("+w1c","ev_l_done","ev_g_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_qa_hitmap("ma_post_momo_librarian")
@@ -9780,18 +9744,18 @@ testcase map_actions:
     $ r13_qa_hitmap("ma_square_seol")
     screenshot "ma_square_seol.png"
     $ r13_world_cameras={"gate":0}
-    run Call("r13_qa_roam",dict(day=6,period=0,location="gate",case_state="occurred",victim_state="dead",daram_state="held",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_s_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=9,period=0,location="gate",case_state="occurred",victim_state="dead",daram_state="held",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_s_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_qa_hitmap("ma_gate_karo")
     screenshot "ma_gate_karo.png"
     $ r13_world_cameras={"hall":440}
-    run Call("r13_qa_roam",dict(day=5,period=1,location="hall",case_state="occurred",victim_state="dead",daram_state="held",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=8,period=1,location="hall",case_state="occurred",victim_state="dead",daram_state="held",life_poc=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_qa_hitmap("ma_hall_mungchi")
     screenshot "ma_hall_mungchi.png"
-    run Call("r13_qa_roam",dict(day=9,period=0,location="workshop",case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True,life_poc=True),("+w1c","w2e_p_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="workshop",case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True,life_poc=True),("+w1c","w2e_p_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_qa_hitmap("ma_workshop_buri")
@@ -9925,7 +9889,7 @@ testcase momo_scale_probe:
     click "처음부터"
     pause 3.0
     $ r13_world_cameras={"post":440}
-    run Call("r13_qa_roam",dict(day=4,period=0,location="post",life_poc=True),("+w1c","ev_g_done","ev_i_done","ev_l_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=7,period=0,location="post",life_poc=True),("+w1c","ev_g_done","ev_i_done","ev_l_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_qa_hitmap("momo_action_d4")
@@ -10064,7 +10028,7 @@ testcase art_request_captures:
     $ r13_qa_hitmap("ar_post_d3p0_c0")
     screenshot "ar_post_d3p0_c0.png"
     $ r13_world_cameras={"hall":880}
-    run Call("r13_qa_roam",dict(day=6,period=0,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=9,period=0,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"hall":880}
@@ -10114,7 +10078,7 @@ testcase art_request_captures:
     $ r13_qa_hitmap("ar_square_d1p2_c0")
     screenshot "ar_square_d1p2_c0.png"
     $ r13_world_cameras={"school":0}
-    run Call("r13_qa_roam",dict(day=9,period=0,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"school":0}
@@ -10124,7 +10088,7 @@ testcase art_request_captures:
     $ r13_qa_hitmap("ar_school_d9p0_c0")
     screenshot "ar_school_d9p0_c0.png"
     $ r13_world_cameras={"facility":640}
-    run Call("r13_qa_roam",dict(day=9,period=0,location="facility",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="facility",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"facility":640}
@@ -10140,7 +10104,7 @@ testcase siluk_wheel_capture:
     click "처음부터"
     pause 3.0
     $ r13_world_cameras={"gate":0}
-    run Call("r13_qa_roam",dict(day=9,period=0,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"gate":0}
@@ -10186,7 +10150,7 @@ testcase librarian_bookpaper:
     $ r13_qa_note("LIB d2p0 action %r neutral %r"%(_lib,_lib_n))
     assert eval (len(_lib)==1 and _lib[0][0]=="living_bookpaper" and _lib_n[0][0]=="neutral" and abs(_lib[0][1]-_lib_n[0][1])<=2 and abs(_lib[0][2]-_lib_n[0][2])<=2 and _lib[0][3]==_lib_n[0][3])
     $ r13_world_cameras={"post":0}
-    run Call("r13_qa_roam",dict(day=8,period=0,location="post",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="post",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"post":0}
@@ -10254,7 +10218,7 @@ testcase siluk_late_capture:
     click "처음부터"
     pause 3.0
     $ r13_world_cameras={"gate":640}
-    run Call("r13_qa_roam",dict(day=12,period=0,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=13,period=0,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"gate":640}
@@ -10264,7 +10228,7 @@ testcase siluk_late_capture:
     $ r13_qa_hitmap("sl_gate_d12p0")
     screenshot "sl_gate_d12p0.png"
     $ r13_world_cameras={"store":320}
-    run Call("r13_qa_roam",dict(day=12,period=1,location="store",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=13,period=1,location="store",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"store":320}
@@ -10274,7 +10238,7 @@ testcase siluk_late_capture:
     $ r13_qa_hitmap("sl_store_d12p1")
     screenshot "sl_store_d12p1.png"
     $ r13_world_cameras={"store":640}
-    run Call("r13_qa_roam",dict(day=11,period=1,location="store",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=12,period=1,location="store",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
     $ r13_world_cameras={"store":640}
@@ -10492,7 +10456,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["inn"]["slot_actions"]=_rl_keep[0]
     $ R13_WORLD_LAYOUTS["inn"]["old_scene_slot_actions"]=_rl_keep[1]
     $ r13_world_cameras={"hall":880}
-    run Call("r13_qa_roam",dict(day=6,period=0,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=9,period=0,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"hall":880}
@@ -10505,7 +10469,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["hall"]["slot_actions"]={}
     $ R13_WORLD_LAYOUTS["hall"]["old_scene_slot_actions"]={}
     $ r13_world_cameras={"hall":880}
-    run Call("r13_qa_roam",dict(day=6,period=0,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=9,period=0,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"hall":880}
@@ -10517,7 +10481,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["hall"]["slot_actions"]=_rl_keep[0]
     $ R13_WORLD_LAYOUTS["hall"]["old_scene_slot_actions"]=_rl_keep[1]
     $ r13_world_cameras={"hall":880}
-    run Call("r13_qa_roam",dict(day=6,period=2,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=9,period=2,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"hall":880}
@@ -10530,7 +10494,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["hall"]["slot_actions"]={}
     $ R13_WORLD_LAYOUTS["hall"]["old_scene_slot_actions"]={}
     $ r13_world_cameras={"hall":880}
-    run Call("r13_qa_roam",dict(day=6,period=2,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=9,period=2,location="hall",life_poc=True,case_state="occurred",victim_state="dead",daram_state="held"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"hall":880}
@@ -10542,7 +10506,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["hall"]["slot_actions"]=_rl_keep[0]
     $ R13_WORLD_LAYOUTS["hall"]["old_scene_slot_actions"]=_rl_keep[1]
     $ r13_world_cameras={"school":0}
-    run Call("r13_qa_roam",dict(day=9,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"school":0}
@@ -10555,7 +10519,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["school"]["slot_actions"]={}
     $ R13_WORLD_LAYOUTS["school"]["old_scene_slot_actions"]={}
     $ r13_world_cameras={"school":0}
-    run Call("r13_qa_roam",dict(day=9,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"school":0}
@@ -10567,7 +10531,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["school"]["slot_actions"]=_rl_keep[0]
     $ R13_WORLD_LAYOUTS["school"]["old_scene_slot_actions"]=_rl_keep[1]
     $ r13_world_cameras={"school":520}
-    run Call("r13_qa_roam",dict(day=9,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"school":520}
@@ -10580,7 +10544,7 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["school"]["slot_actions"]={}
     $ R13_WORLD_LAYOUTS["school"]["old_scene_slot_actions"]={}
     $ r13_world_cameras={"school":520}
-    run Call("r13_qa_roam",dict(day=9,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"school":520}
@@ -10677,7 +10641,7 @@ testcase bori_nero_actions:
     click "처음부터"
     pause 3.0
     $ r13_world_cameras={"gate":640}
-    run Call("r13_qa_roam",dict(day=8,period=0,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"gate":640}
@@ -10688,7 +10652,7 @@ testcase bori_nero_actions:
     screenshot "bn_gate_d8p0_c640.png"
     assert eval (any(a["person"]=="resident_nero" and a["pose"]=="living_foldtag" for a in r13_stage_people()))
     $ r13_world_cameras={"gate":640}
-    run Call("r13_qa_roam",dict(day=9,period=2,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=2,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"gate":640}
@@ -10721,7 +10685,7 @@ testcase bori_nero_actions:
     screenshot "bn_store_d2p1_c640.png"
     assert eval (any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()))
     $ r13_world_cameras={"store":640}
-    run Call("r13_qa_roam",dict(day=9,period=1,location="store",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=1,location="store",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"store":640}
@@ -10754,7 +10718,7 @@ testcase bori_nero_actions:
     screenshot "bn_workshop_d3p1_c520.png"
     assert eval (any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()))
     $ r13_world_cameras={"school":0}
-    run Call("r13_qa_roam",dict(day=9,period=0,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=11,period=0,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"school":0}
@@ -10864,3 +10828,73 @@ testcase ep1_meeting:
     click pos (640,600) until eval (r13_has("siluk_debt_cleared") and r13_has("tok_cleared")) timeout 60
     pause 0.5
     screenshot "ep1_done.png"
+
+testcase ep2_kids:
+    # 에피소드 ② 다람 탐정단: 5일을 다람으로 돌고(구운 밤 지름길), 광장 회의 Q2, 감싸기, 강가의 작별.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=5,period=0,location="room13",life_poc=True),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","kd_bite","ep1_patrol_seen","ep1_eaves_seen","ep1_done"),("snack",))
+    click pos (640,600) until "장터 — 콩이가 소문을 판다" timeout 60
+    assert eval (room13.get("pov")=="daram" and r13_has("kids_club"))
+    screenshot "ep2_menu.png"
+    click "장터 — 콩이가 소문을 판다"
+    click pos (640,600) until "구운 밤을 나눠 준다" timeout 40
+    click "구운 밤을 나눠 준다"
+    click pos (640,600) until "입구 — 물린 돌목 아저씨" timeout 40
+    assert eval (r13_has("K01") and r13_kd_steps()==5)
+    click "입구 — 물린 돌목 아저씨"
+    click pos (640,600) until "토실이와 같이 간다" timeout 40
+    click "토실이와 같이 간다"
+    click pos (640,600) until "처마 밑 — 밤이가 숨어 있다" timeout 40
+    click "처마 밑 — 밤이가 숨어 있다"
+    click pos (640,600) until "도토리를 내민다" timeout 40
+    click "도토리를 내민다"
+    click pos (640,600) until "지붕 위 — 마을이 한눈에 보인다" timeout 40
+    click "지붕 위 — 마을이 한눈에 보인다"
+    click pos (640,600) until "솜이네 집 — 발자국이 이어진 곳" timeout 40
+    click "솜이네 집 — 발자국이 이어진 곳"
+    click pos (640,600) until "광장으로 간다 (회의를 기다린다)" timeout 60
+    assert eval (all(r13_has(k) for k in ("K02","K03","K04","K05","K06","K07")) and r13_kd_steps()==1)
+    screenshot "ep2_home.png"
+    click "광장으로 간다 (회의를 기다린다)"
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
+    pause 0.6
+    screenshot "ep2_live.png"
+    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA K01"
+    click pos (640,600) until eval (r13_debate_is_broken("Q2","s1") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA K02"
+    click pos (640,600) until eval (r13_debate_is_broken("Q2","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA K03"
+    click pos (640,600) until eval (r13_debate_is_broken("Q2","s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA K04"
+    click pos (640,600) until eval (r13_debate_is_broken("Q2","s4") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 1.2
+    screenshot "ep2_ready.png"
+    click "결론을 말한다"
+    pause 1.0
+    click "밤이는 처마 위에 있었고, 문 사람은 어른이다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
+    click pos (640,600) until "“누군지는 몰라. 근데 밤이는 아니야.”" timeout 60
+    click "“누군지는 몰라. 근데 밤이는 아니야.”"
+    click pos (640,600) until "강 이야기를 솜이에게 전한다" timeout 60
+    click "강 이야기를 솜이에게 전한다"
+    click pos (640,600) until eval (room13["day"]==6 and r13_has("kd_done") and not renpy.get_screen("say")) timeout 120
+    assert eval (r13_has("bami_safe") and r13_has("kd_covered"))
+    assert eval (room13.get("pov") is None and not r13_has("bami_taken"))
+    assert eval (r13_has("kd_farewell_seen"))
+    screenshot "ep2_after.png"

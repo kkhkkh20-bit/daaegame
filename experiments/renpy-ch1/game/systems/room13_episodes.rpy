@@ -111,18 +111,13 @@ init 103 python:
 
 label r13_episode_events:
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
-    # 1 밤이
-    if _d==2 and _p==2 and _loc in ("inn","dining","hall") and not r13_has("ep1_patrol_seen"):
-        call r13_ep1_patrol
-    if _d==3 and _loc in ("hall","room13") and not r13_has("ep1_eaves_seen") and not r13_has("bami_taken"):
-        call r13_ep1_eaves
-    if _d>=4 and not r13_has("ep1_done"):
-        call r13_ep1_morning
+    # 1 밤이 — 0.18.83부터 에피소드 ② 다람 탐정단(systems/room13_ep2_kids.rpy)이 대신한다.
+    #   r13_ep1_patrol / r13_ep1_eaves / r13_ep1_morning 장면은 남겨 두되 부르지 않는다.
     # 2 나비
     if _d in (2,3) and _p==2 and _loc=="kitchen" and not r13_has("ep2_seen"):
         call r13_ep2_kitchen
     # 3 돌
-    if _d in (5,6) and _p==2 and _loc=="square" and not r13_has("ep3_bell_seen"):
+    if _d in (r13_tl(5),r13_tl(6)) and _p==2 and _loc=="square" and not r13_has("ep3_bell_seen"):
         $ r13_offer("r13_ep3_bell")
     # 4 톡
     if _d==3 and _p<=1 and _loc=="workshop" and not r13_has("ep4_seen"):
