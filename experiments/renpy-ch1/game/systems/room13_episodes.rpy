@@ -111,7 +111,7 @@ init 103 python:
 
 label r13_episode_events:
     $ _d,_p,_loc=room13["day"],room13["period"],room13["location"]
-    # 1 밤이 — 0.18.83부터 에피소드 ② 다람 탐정단(systems/room13_ep2_kids.rpy)이 대신한다.
+    # 1 밤이 — 0.18.87부터 에피소드 ② 다람 탐정단(systems/room13_ep2_kids.rpy)이 대신한다.
     #   r13_ep1_patrol / r13_ep1_eaves / r13_ep1_morning 장면은 남겨 두되 부르지 않는다.
     # 2 나비
     if _d in (2,3) and _p==2 and _loc=="kitchen" and not r13_has("ep2_seen"):

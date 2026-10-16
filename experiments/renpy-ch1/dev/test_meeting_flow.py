@@ -204,7 +204,7 @@ class MeetingFlow(unittest.TestCase):
   self.store.room13['propositions'].remove('F2');self.assertEqual(resolve(),'E3')
   self.store.room13['daram_state']='lost';self.assertEqual(resolve(),'E1')
  def test_true_ending_requires_every_episode_solved(self):
-  # 0.18.83 (owner): the true ending is the run that finished every episode perfectly.
+  # 0.18.87 (owner): the true ending is the run that finished every episode perfectly.
   self.load_ending_functions();resolve=self.env['r13_resolve_ending']
   episode=['lt_solved','kd_solved','wf_solved','ws_kids_alive','cart_stopped']
   self.store.room13.update(daram_state='rescued',propositions=['F1','F2','F3','F4','C4'],flags=['shelter_ready','supplies_ready','operators_ready','patient_transport']+episode)

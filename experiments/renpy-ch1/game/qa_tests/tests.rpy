@@ -920,9 +920,9 @@ testcase town_m_kongi:
 
 # ---- Episodes (systems/room13_episodes.rpy) ----
 
-# (retired 0.18.83) ep1_bami_safe: 옛 큰 사건 1 처마 밑의 밤이는 에피소드 ② 다람 탐정단으로 대신했다(testcase ep2_kids).
+# (retired 0.18.87) ep1_bami_safe: 옛 큰 사건 1 처마 밑의 밤이는 에피소드 ② 다람 탐정단으로 대신했다(testcase ep2_kids).
 
-# (retired 0.18.83) ep1_bami_taken: 옛 큰 사건 1 처마 밑의 밤이는 에피소드 ② 다람 탐정단으로 대신했다(testcase ep2_kids).
+# (retired 0.18.87) ep1_bami_taken: 옛 큰 사건 1 처마 밑의 밤이는 에피소드 ② 다람 탐정단으로 대신했다(testcase ep2_kids).
 
 testcase ep2_nabi:
     pause 2.0
@@ -1072,7 +1072,7 @@ testcase skip_modes:
     pause 1.0
     screenshot "choice_context.png"
     assert eval (not r13_fast_all and not r13_fast_read)
-    # 0.18.86: 3일 아침 수리점 장면은 에피소드 ①의 누명 장면(선택지 3개)이다.
+    # 0.18.87: 3일 아침 수리점 장면은 에피소드 ①의 누명 장면(선택지 3개)이다.
     keysym "K_1"
     pause 1.0
     assert eval ("lt_open" in room13["flags"] and "tok_hostile" not in room13["flags"])

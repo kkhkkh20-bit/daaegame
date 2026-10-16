@@ -61,34 +61,35 @@ screen main_menu():
     $ title_continue = r13_continue_slot()
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
-    add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=True)
-    # Dot snow and lamp flicker; first-launch logo drop (systems/room13_title_fx.rpy, 0.18.41).
+    add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=False)
     add r13_title_fx()
-    add Transform("assets/room13-title-logo.webp",size=(440,178),nearest=True) xalign .5 ypos 132 at r13_title_logo_in
-    vbox:
-        xalign .5 ypos 348 spacing 8
+    add r13_title_menu_shade()
+    hbox:
+        xpos 62 ypos 592 spacing 5
         at r13_title_menu_in
-        if title_continue is not None:
-            textbutton "이어하기":
-                style "r13_title_button" selected title_focus=="continue"
-                sensitive title_continue is not None default_focus title_continue is not None
-                hovered SetScreenVariable("title_focus","continue")
-                action (r13_load_action(title_continue) if title_continue else NullAction())
+        textbutton "이어하기":
+            style "r13_title_button" selected title_focus=="continue"
+            sensitive title_continue is not None
+            default_focus title_continue is not None hovered SetScreenVariable("title_focus","continue")
+            action (r13_load_action(title_continue) if title_continue is not None else NullAction())
+        add Solid("#b6bbcb70",xsize=1,ysize=39) yalign .35
         textbutton "처음부터":
             style "r13_title_button" selected title_focus=="new"
             default_focus title_continue is None hovered SetScreenVariable("title_focus","new") action Start()
+        add Solid("#b6bbcb70",xsize=1,ysize=39) yalign .35
         textbutton "불러오기":
-            style "r13_title_button" selected title_focus=="load" sensitive title_has_save
+            style "r13_title_button" selected title_focus=="load"
+            sensitive title_has_save
             hovered SetScreenVariable("title_focus","load") action ShowMenu("load")
+        add Solid("#b6bbcb70",xsize=1,ysize=39) yalign .35
         textbutton "설정":
             style "r13_title_button" selected title_focus=="settings"
             hovered SetScreenVariable("title_focus","settings") action ShowMenu("pause_menu")
     textbutton "음악 출처":
-        xalign .5 ypos 642 padding (10,5) background None
-        text_font r13_ui_font() text_size 17 text_color "#ddd0b6" text_hover_color "#fff0ce"
+        xpos 28 ypos 680 padding (8,5) background None
+        text_font "assets/Room13TitleSerif.otf" text_size 14 text_color "#c5c6d2" text_hover_color "#fff0ce"
         action Show("r13_music_credits")
-    text r13_title_save_line(title_continue) xalign .5 ypos 620 font r13_ui_font() size 16 color "#e1dfcb"
-    text config.version xpos 1192 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
+    text config.version xpos 1172 ypos 674 font r13_ui_font() size 13 color "#b2b8b8"
 
 # Top of the two-line dialogue window (bottom edge 632): 23px text + padding, or 29px large text.
 define R13_SAY_TOP_NORMAL = 532

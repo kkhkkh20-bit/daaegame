@@ -1,21 +1,14 @@
-:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.328125)}
-html,body{background:#07141b}
-#presplash{object-fit:contain;filter:none;image-rendering:pixelated}
-#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.183333);font-family:Galmuri,monospace;color:#fff4df;text-shadow:none}
-#loading-brand .chapter{color:#ced9d4;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);margin:0 0 14px}
-#loading-brand h1{font-family:Galmuri,monospace;color:#fff4df;font-size:clamp(34px,calc(var(--title-w)*.06875),88px);line-height:1.15;margin:0 0 26px;font-weight:400}
-#loading-brand .subtitle{font-size:clamp(12px,calc(var(--title-w)*.0171875),22px);margin:0;color:#fff4df}
-#loading-brand .loading-hint{margin-top:38px;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#ebcd8a}
-#statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.11);width:calc(var(--title-w)*.34);max-width:440px;min-width:0;padding:12px 0;background:transparent;border:0;border-radius:0}
-#statusTextDiv{max-height:12vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#ced9d4}
-#statusProgress{accent-color:#ebcd8a;height:5px;border:0}
-#ContextMenu a{background:#132b30;border-color:#6b6751;color:#eee8dc}
+:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.05)}
+html,body{background:#101b37}
+#presplash{object-fit:contain;filter:none;image-rendering:auto}
+#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.82);font-family:Galmuri,monospace;color:#edf0ff;text-shadow:0 1px 4px #101b37}
+#loading-brand .title-accessible{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#loading-brand .loading-hint{margin:0;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#edf0ff}
+#statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.07);width:calc(var(--title-w)*.43);max-width:550px;min-width:0;padding:8px 0;background:transparent;border:0;border-radius:0}
+#statusTextDiv{max-height:10vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#d5d8ea}
+#statusProgress{accent-color:#b3b5ff;height:4px;border:0}
+#ContextMenu a{background:#182442;border-color:#777b9b;color:#eee8dc}
 /* The web utility menu must not intercept the in-game settings gear on phones. */
 #ContextContainer{pointer-events:none;right:3px;top:3px}
 #ContextButton{pointer-events:auto;display:block;width:16px;height:16px;padding:0;font-size:13px;line-height:16px}
 #ContextMenu,#ContextMenu a,#ContextMenu input{pointer-events:auto}
-
-#loading-brand h1{margin:0;line-height:0}
-#loading-brand h1 img{display:block;width:calc(var(--title-w)*.34375);height:auto;image-rendering:pixelated}
-
-#loading-brand .loading-hint{text-align:center}

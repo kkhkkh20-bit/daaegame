@@ -185,7 +185,7 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     $ room13.update(state)
     # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed;
     # the week-1 cases G·L·I·S·T (systems/room13_week1_cases.rpy) unless "+w1c" is passed.
-    # 0.18.83: episodes ①~⑥ (systems/room13_ep*_*.rpy) start their own scenes on fixed days. Tests written for
+    # 0.18.87: episodes ①~⑥ (systems/room13_ep*_*.rpy) start their own scenes on fixed days. Tests written for
     # the older events see those scenes as already played unless "+ep" is passed (the episode tests pass it).
     $ room13["flags"]=list(dict.fromkeys(room13["flags"]+["lodging","entry_corrected","livelihood_open"]+([] if "+offers" in flags else ["qa_auto_offer"])+[f for f in flags if f not in ("+brief","+w1c","+offers","+ep")]+([] if "+brief" in flags else ["evening_brief:%d"%d for d in range(1,14)])+([] if "+w1c" in flags else ["ev_g_done","ev_l_done","ev_i_done","ev_s_done","ev_t_done","ev_owl_threshold_done","ev_owl_omen_done"])+([] if "+ep" in flags else R13_QA_EPISODES_SEEN)))
     $ room13["livelihood"]=dict(cash=cash,debt=0,items=list(items))
