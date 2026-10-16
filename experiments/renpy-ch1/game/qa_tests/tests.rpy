@@ -102,9 +102,10 @@ testcase trial_partial:
     click pos (640,600) until screen "r13_debate_board" timeout 40
     pause 0.6
     assert eval (not r13_debate_is_broken("C2","s2"))
-    click "발언 기록"
-    pause 0.4
-    click "다시 휘두를 사람이"
+    # 0.18.69 meeting UI: statements are stepped with the arrows (the log panel scrolls).
+    keysym "K_RIGHT"
+    pause 0.6
+    assert eval (renpy.get_screen("r13_debate_board").scope["selected"]=="s3")
     pause 0.6
     click "보여주기"
     pause 0.8

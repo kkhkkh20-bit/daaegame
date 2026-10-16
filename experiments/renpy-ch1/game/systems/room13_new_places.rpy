@@ -96,6 +96,10 @@ init 130 python:
             if raw in slots and period in periods and s["day"] in (days or R13_NEW_PLACE_DAYS):return place
         return None
 
+    def r13_new_place_people(location):
+        """Residents whose routine can bring them to this new place."""
+        return [x for x,rs in R13_NEW_PLACE_ROUTINES.items() if any(r[1]==location for r in rs)]
+
     _r13_new_places_resident_where=r13_resident_where
     def r13_resident_where(person):
         where=_r13_new_places_resident_where(person)
