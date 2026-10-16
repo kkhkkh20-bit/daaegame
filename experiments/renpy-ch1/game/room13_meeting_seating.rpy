@@ -58,20 +58,32 @@ init 99 python:
         flip=(cx<640 and spec.get("facing")=="left") or (cx>640 and spec.get("facing")=="right")
         return Transform(art,xzoom=-1) if flip else art
 
+    def r13_meeting_neighbor_art(who,is_left):
+        # Side seats face into the circle rather than towards the viewer.
+        spec=CAST[who]["neutral"]
+        facing=spec.get("facing","")
+        art=Crop(tuple(spec["crop"]),spec["file"])
+        flip=(is_left and facing.startswith("left")) or (not is_left and facing.startswith("right"))
+        return Transform(art,xzoom=-1) if flip else art
+
     def r13_meeting_next_statement(claim,current,person=None):
         ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st) and (person is None or st["who"]==person)]
         return ids[(ids.index(current)+1)%len(ids)] if current in ids else ids[0] if ids else current
 
     def r13_meeting_plate(session,close=False):
-        path="assets/room13-pixel-meeting-interview063.webp" if close and session=="trial" else "assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar")
+        path="assets/room13-pixel-meeting-interview066.webp" if close and session=="trial" else "assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar")
         plate=Transform(path,xysize=(1280,720),nearest=True)
+        if close and session=="trial":return plate
         return Crop((160,0,1280,720),Transform(plate,zoom=1.25,nearest=True)) if close else plate
 
     class R13MeetingForeground(renpy.Displayable):
         def __init__(self,session,close=False,**kwargs):super(R13MeetingForeground,self).__init__(**kwargs);self.session=session;self.close=close
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720);c=out.canvas()
-            edge=[(x,int(r13_meeting_edge((x+160)/1.25,self.session)*1.25) if self.close else r13_meeting_edge(x,self.session)) for x in range(0,1281,32)]
+            if self.close and self.session=="trial":
+                edge=[(x,int(396+98*((x-640)/640.0)**2)) for x in range(0,1281,32)]
+            else:
+                edge=[(x,int(r13_meeting_edge((x+160)/1.25,self.session)*1.25) if self.close else r13_meeting_edge(x,self.session)) for x in range(0,1281,32)]
             c.polygon("#ffffff",edge+[(1280,720),(0,720)])
             return out
 
@@ -100,6 +112,14 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
             at r13_meeting_pan(r13_meeting_shot_revision,r13_meeting_pan_direction)
         add r13_meeting_plate(session,close)
         if close:
+            $ left,right=r13_meeting_neighbors(claim,focus)
+            for neighbor,is_left in ((left,True),(right,False)):
+                $ side_crop=CAST[neighbor]["neutral"]["crop"]
+                $ side_scale=min(660.0/side_crop[3],440.0/side_crop[2])
+                $ side_width=int(round(side_crop[2]*side_scale))
+                $ side_height=int(round(side_crop[3]*side_scale))
+                $ side_x=-side_width//3 if is_left else 1280-side_width*2//3
+                add Transform(r13_meeting_neighbor_art(neighbor,is_left),xysize=(side_width,side_height),nearest=True) xpos side_x ypos 164
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=getattr(store,"dialogue_expression","neutral")
             $ portrait=r13_fullbody_close_art(focus,pose,840)
