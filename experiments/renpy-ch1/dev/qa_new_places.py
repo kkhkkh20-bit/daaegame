@@ -1,6 +1,6 @@
 # Browser check (0.18.63): 큰 강 / 깊은 숲 / 장터 in the real web build. Real clicks on the
 # village map (polygon point and name label), travel, the picture for each period, and
-# the places stay closed before lodging. Screenshots: $ROOM13_QA_OUT/new-places.
+# the places stay closed before lodging. 0.18.65: only residents with a new-place routine stand there. Screenshots: $ROOM13_QA_OUT/new-places.
 import asyncio, json, os
 from pathlib import Path
 from playwright.async_api import async_playwright
@@ -66,11 +66,11 @@ async def main():
                         await q.input(810, 610)
                     await asyncio.sleep(.3)
                 await q.wait('r13_hub'); await asyncio.sleep(1.0)
-                info = await q.py('import renpy;s=renpy.store;result=dict(loc=s.room13["location"],file=s.r13_world_file(s.room13["location"],s.r13_daylight()),width=s.r13_world_width(),people=s.r13_people())')
+                info = await q.py('import renpy;s=renpy.store;result=dict(loc=s.room13["location"],file=s.r13_world_file(s.room13["location"],s.r13_daylight()),width=s.r13_world_width(),people=s.r13_people(),allowed=[x for x,r in s.R13_NEW_PLACE_ROUTINES.items() if r[1]==s.room13["location"]])')
                 await q.shot('arrive-' + key)
-                assert info['loc'] == key and info['width'] == 2160 and info['file'].endswith('%s-morning.webp' % key) and info['people'] == [], info
+                assert info['loc'] == key and info['width'] == 2160 and info['file'].endswith('%s-morning.webp' % key) and all(x in info['allowed'] for x in info['people']), info
                 report['travel'][key] = info
-            report['checks'].append('map polygon point and name label select each new place; travel arrives at the 2160 morning picture, nobody there')
+            report['checks'].append('map polygon point and name label select each new place; travel arrives at the 2160 morning picture, only residents routed there (0.18.65)')
             for period, name in ((1, 'afternoon'), (2, 'evening')):
                 for key in ('river', 'forest', 'market'):
                     await jump(3 if period < 2 else 7, period, key, QUIET)

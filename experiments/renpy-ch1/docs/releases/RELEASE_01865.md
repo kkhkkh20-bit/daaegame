@@ -62,6 +62,6 @@
   - `job_fishing`
   - `market_stall_shop`
   - `ancient_granny`: 통로 회벽 → 옛 시설 → 할머니 대화 → 장소 등록
-  - 전체 화면 회귀 97개 통과.
-- 브라우저(웹 빌드): `dev/qa_offer_person.py`, `dev/qa_town_events.py`.
+- 화면 시험: 전체 100개 통과(0.18.63의 `new_places`는 주민이 새 장소에 오도록 기대값을 바꿈).
+- 브라우저(웹 빌드): `dev/qa_offer_person.py`, `dev/qa_town_events.py`, `dev/qa_new_places.py` 통과(마지막은 주민 기대값을 같은 식으로 바꿈).
 - 재미는 검증하지 않았다.
