@@ -61,12 +61,18 @@ screen main_menu():
     $ title_continue = r13_continue_slot()
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
-    add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=True)
-    # Dot snow and lamp flicker; first-launch logo drop (systems/room13_title_fx.rpy, 0.18.41).
+    add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=True,matrixcolor=SaturationMatrix(.72)*TintMatrix("#c0c7df")*BrightnessMatrix(-.06))
+    # The winter plate and its existing light/snow motion stay behind the cover UI.
     add r13_title_fx()
-    add Transform("assets/room13-title-logo.webp",size=(440,178),nearest=True) xalign .5 ypos 132 at r13_title_logo_in
+    add R13TitleVeil()
+    fixed:
+        xpos 110 ypos 128 xysize (460,206)
+        at r13_title_logo_in
+        text "겨울의 미스터리 동화" xpos 6 ypos 0 font r13_ui_font() size 18 color "#c5ad83"
+        add Transform("assets/room13-title-logo.webp",xysize=(450,138),fit="contain",nearest=True) ypos 38
+        text "눈은 모든 발자국을 덮는다." xpos 6 ypos 184 font r13_ui_font() size 19 color "#dbd0b9"
     vbox:
-        xalign .5 ypos 348 spacing 8
+        xpos 116 ypos 370 spacing 10
         at r13_title_menu_in
         if title_continue is not None:
             textbutton "이어하기":
@@ -84,11 +90,11 @@ screen main_menu():
             style "r13_title_button" selected title_focus=="settings"
             hovered SetScreenVariable("title_focus","settings") action ShowMenu("pause_menu")
     textbutton "음악 출처":
-        xalign .5 ypos 642 padding (10,5) background None
+        xpos 108 ypos 650 padding (8,5) background None
         text_font r13_ui_font() text_size 17 text_color "#ddd0b6" text_hover_color "#fff0ce"
         action Show("r13_music_credits")
-    text r13_title_save_line(title_continue) xalign .5 ypos 620 font r13_ui_font() size 16 color "#e1dfcb"
-    text config.version xpos 1192 ypos 666 font r13_ui_font() size 14 color "#c2c9b5"
+    text r13_title_save_line(title_continue) xpos 116 ypos 622 font r13_ui_font() size 16 color "#b7aa93"
+    text config.version xpos 1172 ypos 654 font r13_ui_font() size 14 color "#c2b49b"
 
 # Top of the two-line dialogue window (bottom edge 632): 23px text + padding, or 29px large text.
 define R13_SAY_TOP_NORMAL = 532
