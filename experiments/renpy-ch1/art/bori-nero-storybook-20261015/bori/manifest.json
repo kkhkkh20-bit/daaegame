@@ -1,0 +1,62 @@
+{
+  "character_id": "resident_bori",
+  "action": "crouching_tie_firewood",
+  "file": "bori-firewood-plump-v2.png",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "mode": "RGBA",
+  "sha256": "43ef3da191948ec5382f1ef2c84c3c09172ba9ff7b5c6d2ba2c8d862b86b0eb2",
+  "alpha_bbox_all": [
+    31,
+    97,
+    1013,
+    1536
+  ],
+  "alpha_bbox_128": [
+    38,
+    260,
+    1007,
+    1420
+  ],
+  "generated_by": "built-in image_gen",
+  "source_candidate": "/workspace/shared/main-character-actions/investigation-workwear-proof3/bori-firewood.png",
+  "status": "art ready for integration, not yet applied",
+  "changes": [
+    "Moderately fuller cheeks, torso and paws; softened small eyes and short muzzle",
+    "Preserved patched blue jacket, trousers and boots",
+    "Preserved downward gaze, crouch, hand-rope-firewood interaction"
+  ],
+  "constraints": [
+    "Do not apply full-cast remodel.",
+    "Do not stretch crouched figure to standing height.",
+    "School back-row behind desk: preserve original standing pose unless separately reviewed.",
+    "Use ART_REQUEST_01867_LIFE_ACTIONS.md scene conditions and perspective placement, not arbitrary global replacement."
+  ],
+  "qa": [
+    "No cropped opaque character or wood. Actual visible bounds use alpha >=128.",
+    "Tiny alpha 1/255 residue may reach bottom edge; RGB aura is invisible when composited normally. Alpha preserved without pixel edits.",
+    "Hands and rope coherent. Pixel eye/nose/mouth visible.",
+    "Wood lies slightly forward/lower than rear boot in perspective; verify floor contact in runtime scene."
+  ],
+  "anchors_estimated_px": {
+    "front_boot_contact": [
+      270,
+      1367
+    ],
+    "wood_front_contact": [
+      705,
+      1410
+    ],
+    "left_hand_rope": [
+      609,
+      1030
+    ],
+    "right_hand_rope": [
+      847,
+      1036
+    ]
+  },
+  "runtime_verified": false
+}
