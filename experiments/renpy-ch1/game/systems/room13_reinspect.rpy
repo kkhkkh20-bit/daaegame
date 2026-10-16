@@ -31,7 +31,7 @@ init 122 python:
 label r13_reinspect_events:
     if room13["day"] in (5,6) and room13["period"]<=1 and room13["case_state"]=="occurred" and r13_where("resident_eunho")==room13["location"] and not r13_has("saw_eunho_hide"):
         call r13_ev_here("calm")
-        # 0.18.74: 은호 spends his mornings at the market stall now; the line follows the place.
+        # 0.18.75: 은호 spends his mornings at the market stall now; the line follows the place.
         $ _eh_where={"market":"노점 판자 위","store":"창고 계산대 위"}.get(room13["location"],"탁자 위")
         call r13_lines([(None,"은호가 나를 보자 %s의 장부를 급히 덮었다. 그리고 그 위에 자루 하나를 올려놓았다."%_eh_where)],"eunho:hide")
         $ r13_flag("saw_eunho_hide")

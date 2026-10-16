@@ -100,26 +100,29 @@ screen r13_ending_screen(key):
     zorder 70
     default ready=False
     timer .5 action SetScreenVariable("ready",True)
-    add Solid("#172a2aa6")
+    add Solid("#111b2266")
+    text "이번 여정의 끝" xpos 76 ypos 84 size 23 color "#dfbd7e"
+    text R13_ENDINGS[key]["title"] xpos 72 ypos 126 xsize 568 size r13_read_size(47,51) color "#fff0d0" outlines [(2,"#1d262b",0,1)]
+    text r13_ending_story_frame(key,3)["caption"] xpos 76 ypos 218 xsize 540 size r13_read_size(24,28) color "#fff0d0" line_spacing 7 outlines [(1,"#1d262b",0,1)]
+    textbutton "후일담 다시 보기":
+        style "r13_action_button" area (76,584,340,62) text_size 24 action Return("replay") sensitive ready
     frame:
-        area (60,55,1160,610) padding (32,28) background R13PaperPanel()
+        area (680,54,548,612) padding (26,24) background R13PaperFrame()
         vbox:
-            spacing 18
-            text "이번 여정의 끝" size 23 color "#717367"
-            text R13_ENDINGS[key]["title"] size 44 color "#765426"
+            spacing 12
+            text "남은 기록" size 28 color "#765426"
             viewport:
-                xsize 1080 ysize 240 draggable True mousewheel True scrollbars "vertical"
+                xsize 496 ysize 230 draggable True mousewheel True scrollbars "vertical" vscrollbar_unscrollable "hide"
                 vbox:
                     spacing 12
                     for line in r13_ending_notes():
-                        text line size 24 xsize 1040
-                    text ("기억할 일 · "+R13_ENDINGS[key]["knowledge"]) size 24 xsize 1040 color "#496450"
-            text "새 여정은 첫날부터 다시 시작한다. 증거, 기록, 관계, 돈, 물건은 모두 처음부터다. 남는 것은 이번에 알게 된 것을 기억하는 당신뿐이다." size 22 xsize 1060
+                        text line size r13_read_size(22,26) xsize 464 color "#493b30"
+            text "새 여정은 첫날부터 시작해요. 이번 기록과 물건은 이어지지 않아요." size 20 xsize 490 color "#795d40"
+            textbutton "새 여정 시작" style "r13_action_button" xsize 490 ysize 54 text_size 24 action Return("restart") sensitive ready
             hbox:
-                spacing 24
-                textbutton "새 여정 시작" action Return("restart") sensitive ready text_size 25
-                textbutton "저장 불러오기" action ShowMenu("load") sensitive ready text_size 25
-                textbutton "제목으로" action MainMenu(confirm=False) sensitive ready text_size 25
+                spacing 12
+                textbutton "진행 불러오기" style "r13_action_button" xsize 239 ysize 52 text_size 22 action ShowMenu("load") sensitive ready
+                textbutton "메인화면으로" style "r13_action_button" xsize 239 ysize 52 text_size 22 action Confirm("메인화면으로 돌아가시겠습니까?",MainMenu(confirm=False)) sensitive ready
 
 screen r13_nearby():
     style_prefix "r13"
