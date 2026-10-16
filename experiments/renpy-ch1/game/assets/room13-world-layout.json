@@ -215,7 +215,14 @@
         },
         "note": "0.18.63 (01822 §2): plank on the door's right post, nail box and shavings at its foot; shown only while 따닥 is in the lobby. His left palm meets the plank's left edge (x 1110)."
       }
-    ]
+    ],
+    "slot_actions": {
+      "resident_eunho": "living_prices",
+      "resident_guseul": "living_stamp",
+      "resident_madam": "living_inspect",
+      "resident_ubak": "living_measure",
+      "resident_owlgp": "living_notebook"
+    }
   },
   "school": {
     "revision": 2,
@@ -472,7 +479,10 @@
         793
       ]
     },
-    "reviewed": true
+    "reviewed": true,
+    "slot_actions": {
+      "resident_seori": "living_notes"
+    }
   },
   "workshop": {
     "revision": 2,
@@ -686,6 +696,9 @@
         300,
         660
       ]
+    },
+    "slot_actions": {
+      "resident_ubak": "living_measure"
     }
   },
   "square": {
@@ -1991,7 +2004,10 @@
     "perspective": [
       0.115,
       183.8
-    ]
+    ],
+    "slot_actions": {
+      "resident_owlgp": "living_notebook"
+    }
   },
   "passage": {
     "width": 2160,
@@ -2274,7 +2290,14 @@
     "perspective": [
       0.346,
       24.6
-    ]
+    ],
+    "slot_actions": {
+      "doto": {
+        "morning": "action_1",
+        "afternoon": "action_1",
+        "evening": "action_2"
+      }
+    }
   },
   "room13": {
     "width": 2160,
@@ -2677,10 +2700,16 @@
     ],
     "slot_actions": {
       "resident_momo": "living_lampnumber",
-      "resident_librarian": "living_bookpaper"
+      "resident_librarian": "living_bookpaper",
+      "resident_sling": "activity",
+      "resident_ppul": "activity",
+      "resident_eunho": "living_prices",
+      "seryeon": "action_1"
     },
     "old_scene_slot_actions": {
-      "resident_librarian": "living_bookpaper"
+      "resident_librarian": "living_bookpaper",
+      "resident_momo": "living_lampnumber",
+      "resident_guseul": "living_stamp"
     }
   },
   "river": {
