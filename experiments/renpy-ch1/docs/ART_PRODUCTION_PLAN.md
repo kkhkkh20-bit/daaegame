@@ -38,7 +38,7 @@
 | CH01 | 꼬미 | 생쥐 | 전신 3표정(보통·웃음·울음) + 얼굴 192 + 자세 2(문틈으로 얼굴 내밀기, 팔 벌려 아지트 자랑) | `room13-fullbody-kid_kkomi-<pose>.png` |
 | CH02 | 깜이 | 검은 새끼 고양이 | 전신 3표정 + 얼굴 192 | `room13-fullbody-kid_kkam-<pose>.png` |
 | CH03 | 몽이 | 아기 고슴도치 | 전신 3표정 + 얼굴 192 | `room13-fullbody-kid_mong-<pose>.png` |
-| CH04 | 방울 | 아기 참새 | 전신 3표정 + 얼굴 192 + 자세 1(누구 다리에 매달리기) | `room13-fullbody-kid_bang-<pose>.png` |
+| CH04 | 방울 | 아기 참새(다른 아이들처럼 두 발로 서고 옷 입은 동물 아이. 진짜 새 모양 아님) | 전신 3표정 + 얼굴 192 + 자세 1(누구 다리에 매달리기) | `room13-fullbody-kid_bang-<pose>.png` |
 | CH07 | 누비의 큰아이 | 아기 검은 양 | 전신 3표정 + 얼굴 192 + 자세 1(엄마 치마 잡기) | `room13-fullbody-kid_nubi1-<pose>.png` |
 | CH08 | 누비의 둘째 | 더 작은 아기 검은 양 | 전신 3표정 | `room13-fullbody-kid_nubi2-<pose>.png` |
 | CH13 | 초롱의 어머니 | 늙은 토끼 | 전신 2표정 + 자세 1(등을 두 손으로 내밀기) | `room13-fullbody-chorong_mother-<pose>.png` |
