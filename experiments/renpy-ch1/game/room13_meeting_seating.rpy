@@ -8,8 +8,14 @@ default r13_meeting_shot_revision = 0
 default r13_meeting_pan_direction = 1
 default r13_meeting_pan_started = 0.0
 default r13_meeting_interrupting = False
+default r13_meeting_replaying = False
+default r13_meeting_opinion_baseline = {}
+default r13_meeting_findings = {}
+default r13_meeting_feedback = None
 
 init 99 python:
+    import json as r13_meeting_json
+    R13_MEETING_SEATED=r13_meeting_json.load(renpy.file("assets/room13-meeting-seated.json")) if renpy.loadable("assets/room13-meeting-seated.json") else {}
     def r13_meeting_cast(claim,session,speaker=None):
         seats=list(r13_debate_seats(session));present={who for who,stance in seats}
         for who in (["granny","resident_seori"] if session=="trial" else ["mom"])+[st["who"] for st in r13_debate_statements(claim)]+[R13_DEBATE[claim]["chair"]]:
@@ -51,24 +57,29 @@ init 99 python:
         x=int(60+(index+.5)*1160/max(1,count))
         return x,r13_meeting_edge(x,session)
 
-    def r13_meeting_actor(who,focus,cx):
+    def r13_meeting_actor(who,focus,cx,seated=False):
+        if seated and who in R13_MEETING_SEATED:
+            spec=R13_MEETING_SEATED[who]
+            art=Crop(tuple(spec["crop"]),spec["file"])
+            return Transform(art,xzoom=-1) if cx>640 else art
         pose=getattr(store,"dialogue_expression","neutral") if who==focus and getattr(store,"r13_meeting_active",False) else "neutral"
         spec=CAST[who].get(pose) or CAST[who]["neutral"]
         art=Crop(tuple(spec["crop"]),spec["file"])
         flip=(cx<640 and spec.get("facing")=="left") or (cx>640 and spec.get("facing")=="right")
         return Transform(art,xzoom=-1) if flip else art
 
-    def r13_meeting_neighbor_art(who,is_left):
+    def r13_meeting_neighbor_art(who,is_left,seated=False):
         # Side seats face into the circle rather than towards the viewer.
-        spec=CAST[who]["neutral"]
+        spec=R13_MEETING_SEATED.get(who) if seated else None
+        spec=spec or CAST[who]["neutral"]
         facing=spec.get("facing","")
         art=Crop(tuple(spec["crop"]),spec["file"])
         flip=(is_left and facing.startswith("left")) or (not is_left and facing.startswith("right"))
         return Transform(art,xzoom=-1) if flip else art
 
-    def r13_meeting_next_statement(claim,current,person=None):
+    def r13_meeting_next_statement(claim,current,person=None,step=1):
         ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st) and (person is None or st["who"]==person)]
-        return ids[(ids.index(current)+1)%len(ids)] if current in ids else ids[0] if ids else current
+        return ids[(ids.index(current)+step)%len(ids)] if current in ids else ids[0] if ids else current
 
     def r13_meeting_plate(session,close=False):
         path="assets/room13-pixel-meeting-interview066.webp" if close and session=="trial" else "assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar")
@@ -114,14 +125,15 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
         if close:
             $ left,right=r13_meeting_neighbors(claim,focus)
             for neighbor,is_left in ((left,True),(right,False)):
-                $ side_crop=CAST[neighbor]["neutral"]["crop"]
-                $ side_scale=min(660.0/side_crop[3],440.0/side_crop[2])
+                $ sitting=session=="trial" and neighbor in R13_MEETING_SEATED
+                $ side_crop=(R13_MEETING_SEATED[neighbor] if sitting else CAST[neighbor]["neutral"])["crop"]
+                $ side_scale=min((950.0 if sitting else 660.0)/side_crop[3],(520.0 if sitting else 440.0)/side_crop[2])
                 $ side_width=int(round(side_crop[2]*side_scale))
                 $ side_height=int(round(side_crop[3]*side_scale))
                 $ side_x=-side_width//3 if is_left else 1280-side_width*2//3
-                add Transform(r13_meeting_neighbor_art(neighbor,is_left),xysize=(side_width,side_height),nearest=True) xpos side_x ypos 164
+                add r13_pixel_scale(r13_meeting_neighbor_art(neighbor,is_left,sitting),side_width,side_height,R13_CLOSE_PIXEL_GRID) xpos side_x ypos (142 if sitting else 164)
             # Reuse front-facing interview expressions and their stable torso centre.
-            $ pose=getattr(store,"dialogue_expression","neutral")
+            $ pose=getattr(store,"dialogue_expression","neutral") if getattr(store,"dialogue_speaker",None)==focus else "neutral"
             $ portrait=r13_fullbody_close_art(focus,pose,840)
             if portrait is not None:
                 add portrait xcenter r13_close_x(focus,pose,840) ypos r13_fullbody_close_y(focus,840,96,pose)
@@ -132,7 +144,7 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
                 $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
                 $ height=230 if session=="trial" else 246
                 $ top=edge+(95 if session=="trial" else 24)-height
-                add Transform(r13_meeting_actor(who,focus,cx),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
+                add Transform(r13_meeting_actor(who,focus,cx,seated=session=="trial"),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
                 $ own=[st for st in r13_debate_statements(claim) if st["who"]==who and r13_debate_visible(claim,st)]
                 button:
                     area (cx-56,top-28,112,84) padding (0,0) background None hover_background None
@@ -157,7 +169,34 @@ screen r13_meeting_chrome(claim):
         vbox:
             spacing 2
             text ("식당 회의 · 7일째" if session=="trial" else "제단 앞 회의 · 14일째") size r13_read_size(15,17) color "#795d40"
-            text ("참석자들의 이야기" if r13_meeting_intro else R13_DEBATE[claim]["title"]) size r13_read_size(21,25) color "#493b30"
+            text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"
+
+screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
+    $ completed=bool(sid and r13_debate_is_broken(claim,sid))
+    hbox:
+        xpos 80 ypos 646 spacing 12
+        textbutton ("다시 듣기" if completed else "되묻기"):
+            style "r13_action_button" xsize 188 ysize 64 text_size 24
+            action Return(("listen" if completed else "press",sid)) sensitive ready and board
+        textbutton "보여주기":
+            style "r13_action_button" xsize 188 ysize 64 text_size 24
+            action (Return(("present",sid)) if board else Function(renpy.call_in_new_context,"r13_meeting_interrupt",claim,r13_meeting_live_target()))
+            sensitive ready and not completed and (board or r13_meeting_can_interrupt())
+    if board:
+        text ("결론을 말할 수 있다" if r13_debate_ready(claim) else "아직 살펴볼 말이 있다") xpos 496 ypos 668 size r13_read_size(19,22) color "#f1dfba" outlines [(1,"#30251e",0,0)]
+        textbutton "결론을 말한다":
+            style "r13_action_button" xpos 952 ypos 646 xsize 248 ysize 64 text_size 24
+            action Return(("conclude",)) sensitive ready and r13_debate_ready(claim)
+    else:
+        textbutton "백로그":
+            style "r13_action_button" xpos 952 ypos 646 xsize 120 ysize 64 text_size 21 action Show("r13_backlog")
+        textbutton "더보기":
+            style "r13_action_button" xpos 1080 ypos 646 xsize 120 ysize 64 text_size 21 action Show("r13_more_tools")
+
+screen r13_meeting_rebuttal_hold(claim):
+    zorder 35
+    use r13_meeting_stage(claim,r13_meeting_focus_person(claim),True)
+    use r13_meeting_chrome(claim)
 
 screen r13_meeting_choices(items,ready):
     use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)

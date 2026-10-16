@@ -9635,7 +9635,7 @@ testcase ancient_granny:
     assert eval (room13["location"]=="ancient" and r13_has("ancient_found") and r13_has("ancient_granny_met") and "ancient" in r13_places())
 
 testcase mom_hideout:
-    # 0.18.69 (owner): mom's first hiding place under the forest roots; 2주 차 엄마 대화.
+    # 0.18.70 (owner): mom's first hiding place under the forest roots; 2주 차 엄마 대화.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -9650,7 +9650,7 @@ testcase mom_hideout:
     assert eval (r13_has("mom_hideout_found"))
 
 testcase market_crowd:
-    # 0.18.69 (owner): traders gather at the market; week 2 jobs at the river and forest.
+    # 0.18.70 (owner): traders gather at the market; week 2 jobs at the river and forest.
     pause 2.0
     click "처음부터"
     pause 3.0
@@ -9739,7 +9739,7 @@ testcase map_actions:
 
 testcase new_places:
     # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
-    # map, one picture per period. 0.18.68: only residents with a new-place routine come (0.18.69: days 2-7 and 9-14).
+    # map, one picture per period. 0.18.68: only residents with a new-place routine come (0.18.70: days 2-7 and 9-14).
     pause 2.0
     click "처음부터"
     pause 3.0

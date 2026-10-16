@@ -11,7 +11,10 @@ init 58 python:
             def box(col,x,y,w,h):c.rect(col,(int(x*z),int(y*z),max(1,int(w*z)),max(1,int(h*z))))
             def line(col,a,b,n=1):c.line(col,(int(a[0]*z),int(a[1]*z)),(int(b[0]*z),int(b[1]*z)),max(1,int(n*z)))
             k=self.kind
-            if k=='investigate':
+            if k=='check':
+                box(ink,2,2,28,28);box(shade,4,4,24,24);box(paper,5,5,22,22)
+                line('#657451',(8,16),(14,22),3);line('#657451',(14,22),(25,9),3)
+            elif k=='investigate':
                 poly(ink,[(18,16),(29,26),(25,30),(15,19)])
                 poly(leather,[(19,19),(27,26),(25,28),(18,21)])
                 ring=[(8,2),(17,2),(23,8),(23,16),(17,22),(8,22),(2,16),(2,8)]
