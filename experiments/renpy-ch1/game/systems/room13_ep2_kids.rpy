@@ -182,6 +182,8 @@ label r13_ep2_day:
     $ r13_edit(period=2)
     call r13_ep2_meeting
     call r13_ep2_night
+    # 같은 밤, 학교 뒤 장작 창고에 불(에피소드 ③, systems/room13_ep3_woodfire.rpy).
+    call r13_wf_fire
     # 아빠의 하루 품삯.
     $ r13_cash(12,"하루 품삯 (다람이 탐정단을 하던 날)")
     $ r13_flag("kd_done")

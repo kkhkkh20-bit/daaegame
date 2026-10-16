@@ -290,8 +290,8 @@ label r13_ep2_food:
             call r13_lines([("resident_musoe","굴 안에 말린 콩 자루가 있소. 솜이 몫만 남기고 가져가시오."),
                 ("resident_musoe","내가 진 빚을 갚는 셈이오. 아이들 배곯는 건 나도 못 보오.")],"ep2:food:mine")
             $ r13_flag("kids_fed","kids_mine")
-        "학교 곰 선생님에게 부탁해 보자고 한다" if r13_has("kids_known"):
-            call r13_lines([("nabi","곰 선생님이요? ……선생님은 좋은 분인데, 촌장님 눈치를 봐요."),
+        "학교 사자 선생님에게 부탁하자고 한다" if r13_has("kids_known"):
+            call r13_lines([("nabi","사자 선생님이요? ……선생님은 좋은 분인데, 촌장님 눈치를 봐요."),
                 ("dad","학교에 직접 가서 말해 볼게.")],"ep2:food:teacher")
             $ r13_flag("try_teacher")
         "다람이 몫을 나누자고 한다":

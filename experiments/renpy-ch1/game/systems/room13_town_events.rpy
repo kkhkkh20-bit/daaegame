@@ -164,6 +164,8 @@ label r13_town_events:
     call r13_new_cast_events
     # 에피소드 ① 등 도둑 (systems/room13_ep1_lamp_thief.rpy).
     call r13_ep1_events
+    # 에피소드 ③ 장작 창고의 불 (systems/room13_ep3_woodfire.rpy). ②보다 먼저: 4일 저녁 제안이 물림 사건 전에 뜬다.
+    call r13_wf_events
     # 에피소드 ② 다람 탐정단 (systems/room13_ep2_kids.rpy). 5일은 다람의 하루로 통째로 지나간다.
     call r13_ep2_events
     if _return=="day":

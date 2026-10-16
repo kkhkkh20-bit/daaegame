@@ -10898,3 +10898,75 @@ testcase ep2_kids:
     assert eval (room13.get("pov") is None and not r13_has("bami_taken"))
     assert eval (r13_has("kd_farewell_seen"))
     screenshot "ep2_after.png"
+
+testcase ep3_save:
+    # 에피소드 ③: 4일 오후 빨래터에서 너울의 약속을 엿듣고, 출석부로 꼬미를 학교로 옮긴다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=1,location="kitchen",life_poc=True),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","kd_bite"))
+    click pos (640,600) until "빨래 줄 뒤에 선다" timeout 60
+    click "빨래 줄 뒤에 선다"
+    click pos (640,600) until eval (r13_has("F01") and room13["period"]==2 and not renpy.get_screen("say")) timeout 60
+    pause 1.0
+    assert eval (r13_has("F02") and r13_has("wf_overheard"))
+    # 기록 지급은 반응 대사 뒤로 미뤄진다(systems/room13_grant_timing.rpy). 여기서는 대사와 깃발만 본다.
+    run Function(r13_present,"resident_teacher","F01")
+    pause 0.5
+    assert eval (r13_has("wf_teacher_moved") and "F13" in room13["evidence"])
+    run Call("r13_qa_roam",dict(day=4,period=2,location="school",life_poc=True,evidence=["F01","F02","F13"]),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","wf_overheard","wf_kids_known","kd_bite"))
+    click pos (640,600) until "출석부를 보여 준다" timeout 60
+    screenshot "ep3_hideout.png"
+    click "출석부를 보여 준다"
+    click pos (640,600) until eval (r13_has("wf_kkomi_saved") and not renpy.get_screen("say")) timeout 60
+    run Call("r13_qa_event","r13_wf_fire")
+    click pos (640,600) until eval (r13_has("wf_kkomi_alive")) timeout 60
+    assert eval (not r13_has("kkomi_dead"))
+
+testcase ep3_meeting:
+    # 에피소드 ③: 7일 학교 회의 Q3를 증거 다섯 개로 깨고, 완벽한 길의 결정까지.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=7,period=1,location="school",life_poc=True,evidence=["F01","F04","F05","F06","F09","F11"]),("entry_corrected","lodging","ep4_seen","lt_dawn","lt_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","kd_done","wf_fire","kkomi_dead","wf_morning","wf_overheard","wf_nabi_defended","wf_bori_trusted","elder_appointment"))
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
+    pause 0.6
+    click "발언 고르기" until screen "r13_debate_board" timeout 30
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA F04"
+    click pos (640,600) until eval (r13_debate_is_broken("Q3","s1") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA F05"
+    click pos (640,600) until eval (r13_debate_is_broken("Q3","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA F06"
+    click pos (640,600) until eval (r13_debate_is_broken("Q3","s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA F09"
+    click pos (640,600) until eval (r13_debate_is_broken("Q3","s4") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA F11"
+    click pos (640,600) until eval (r13_debate_is_broken("Q3","s5") and renpy.get_screen("r13_debate_board")) timeout 90
+    pause 1.2
+    screenshot "ep3_ready.png"
+    click "결론을 말한다"
+    pause 1.0
+    click "누비가 문 앞에 등유를 부었다. 쫓아내려던 불이 바람에 번졌다"
+    click pos (640,600) until "회의를 계속한다" timeout 40
+    click "회의를 계속한다"
+    click pos (640,600) until "“약속은 여기서 끝냅니다.”" timeout 60
+    click "“약속은 여기서 끝냅니다.”"
+    click pos (640,600) until eval (r13_has("acorn_buried")) timeout 90
+    assert eval (r13_has("wf_perfect") and r13_has("nubi_kids_with_nabi") and r13_has("wf_bori_freed") and not r13_has("bori_taken"))
+
+

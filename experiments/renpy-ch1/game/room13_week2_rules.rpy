@@ -12,7 +12,7 @@ init 56 python:
         "facility":("북쪽 보호시설 접견실","r13_facility"),
         "altar":("북쪽 산길 · 숲속 제단","r13_altar"),
     })
-    R13_NAMES.update(mom="엄마",resident_teacher="곰 선생님",resident_eunho="은호 사장",
+    R13_NAMES.update(mom="엄마",resident_teacher="사자 선생님",resident_eunho="은호 사장",
         resident_bori="보리",resident_nubi="누비 아주머니")
     R13_CHARS.update({k:Character(v,cb_who_id=k if k in CAST else None) for k,v in R13_NAMES.items()})
     R13_GREETING.update({

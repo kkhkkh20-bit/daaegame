@@ -178,7 +178,7 @@ label r13_b3_firewood:
                 $ r13_flag("bori_reason")
                 $ r13_grant(["W8"],"학교 장작더미 옆에서 들은 보리의 사정")
                 $ _ep_loop=True
-            "곰 선생님을 부른다":
+            "사자 선생님을 부른다":
                 call r13_lines([("resident_teacher","보리야……. 대피소 장작은 아이들 몫이야. 알잖니."),
                     ("resident_bori","알아요. 그래서 딱 한 짐만 가져가려고 했던 거예요."),
                     (None,"보리는 장작을 내려놓았다. 그러고는 뒤도 돌아보지 않고 가 버렸다.")],"b3:wood:teacher")

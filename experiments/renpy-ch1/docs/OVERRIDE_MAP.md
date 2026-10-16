@@ -27,7 +27,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 18 | 148 | `systems/room13_materials.rpy:58` | _r13_e1_topics |
 | 19 | 152 | `systems/room13_ep1_lamp_thief.rpy:54` |  |
 
-## `r13_present` (17층)
+## `r13_present` (18층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -47,7 +47,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 14 | 118 | `systems/room13_owl_buri.rpy:41` | _r13_uk_present |
 | 15 | 123 | `systems/room13_use_knowledge.rpy:58` | _r13_sound_present |
 | 16 | 150 | `systems/room13_sound.rpy:161` | _r13_e1_present |
-| 17 | 152 | `systems/room13_ep1_lamp_thief.rpy:63` |  |
+| 17 | 152 | `systems/room13_ep1_lamp_thief.rpy:63` | _r13_wf_present |
+| 18 | 154 | `systems/room13_ep3_woodfire.rpy:53` |  |
 
 ## `r13_object_visible` (10층)
 
