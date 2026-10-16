@@ -10575,21 +10575,23 @@ testcase reuse_life_captures:
 testcase bori_nero_actions:
     # 0.18.69 (owner 19:16): 보리 firewood / 네로 name tag in the scenes the schedule puts them in;
     # the school back row keeps 보리's idle pose. Head drawn as large as in the idle pose (보리 crouch
-    # at 0.69 of the standing height, 네로 standing at full height).
+    # at 0.69 of the standing height, 네로 standing at full height). 0.18.68 sends 네로 to the river
+    # on the 'lower road' slots, so his gate scene is week 2's morning (the river is not one of
+    # his allowed places and keeps the idle pose).
     pause 2.0
     click "처음부터"
     pause 3.0
     $ r13_world_cameras={"gate":640}
-    run Call("r13_qa_roam",dict(day=2,period=0,location="gate",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
+    run Call("r13_qa_roam",dict(day=8,period=0,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.0
     $ r13_world_cameras={"gate":640}
-    run Call("r13_qa_goto",2,0,"gate")
+    run Call("r13_qa_goto",8,0,"gate")
     click pos (1150,90) until screen "r13_hub" timeout 40
     pause 1.2
-    $ r13_qa_hitmap("bn_gate_d2p0_c640")
-    screenshot "bn_gate_d2p0_c640.png"
-    assert eval (any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()) and any(a["person"]=="resident_nero" and a["pose"]=="living_foldtag" for a in r13_stage_people()))
+    $ r13_qa_hitmap("bn_gate_d8p0_c640")
+    screenshot "bn_gate_d8p0_c640.png"
+    assert eval (any(a["person"]=="resident_nero" and a["pose"]=="living_foldtag" for a in r13_stage_people()))
     $ r13_world_cameras={"gate":640}
     run Call("r13_qa_roam",dict(day=9,period=2,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
