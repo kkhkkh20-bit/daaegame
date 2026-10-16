@@ -1072,17 +1072,13 @@ testcase skip_modes:
     pause 1.0
     screenshot "choice_context.png"
     assert eval (not r13_fast_all and not r13_fast_read)
-    keysym "K_4"
+    # 0.18.86: 3일 아침 수리점 장면은 에피소드 ①의 누명 장면(선택지 3개)이다.
+    keysym "K_1"
     pause 1.0
-    click "건너뛰기"
-    pause 0.5
-    click pos (1150,90) until screen "choice" timeout 40
-    assert eval (not r13_fast_read)
-    assert eval ("W5" in room13["evidence"])
-    click "증거도 없이 가둘 겁니까"
-    pause 1.0
+    assert eval ("lt_open" in room13["flags"] and "tok_hostile" not in room13["flags"])
     click pos (1150,90) until screen "r13_hub" timeout 40
-    $ open("qa_result.txt","w").write("skip to choice, number key 4 picked sliver question")
+    assert eval (not r13_fast_read)
+    $ open("qa_result.txt","w").write("skip to choice, number key 1 picked the defend line")
 
 
 testcase evening_board:
