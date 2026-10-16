@@ -206,7 +206,7 @@ label r13_qa_talk(person):
     call r13_talk
     jump r13_roam
 
-# 0.18.70: press an inspection spot from the field and come back through r13_roam.
+# 0.18.71: press an inspection spot from the field and come back through r13_roam.
 label r13_qa_object(key):
     call r13_object(key)
     jump r13_roam

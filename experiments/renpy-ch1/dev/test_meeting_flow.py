@@ -54,6 +54,33 @@ class MeetingFlow(unittest.TestCase):
   self.store.r13_meeting_active=True;self.store.r13_packet=('seryeon','주장')
   self.store.r13_meeting_replaying=True
   self.assertFalse(self.env['r13_meeting_can_interrupt']())
+ def test_live_round_cannot_reveal_hidden_claims_or_prepare_people(self):
+  before=copy.deepcopy(self.store.room13)
+  self.assertEqual(self.env['r13_meeting_live_ids']('C1','s1'),['s1'])
+  rows=self.env['r13_meeting_live_rows']('F3','s3')
+  self.assertEqual(rows[0][0],'resident_ppul')
+  self.assertEqual(self.store.room13,before)
+  self.assertFalse(self.env['r13_has']('operators_ready'))
+  self.env['r13_debate_mark']('pressed','C1','s1')
+  self.assertEqual(self.env['r13_meeting_live_ids']('C1','s2'),['s2'])
+ def test_live_press_stops_only_its_own_readonly_round(self):
+  ended=[];self.env['renpy']=types.SimpleNamespace(end_interaction=lambda value:ended.append(value))
+  self.store.r13_meeting_active=True;self.store.r13_meeting_live_active=True
+  self.store.r13_meeting_claim='C1';self.store.r13_debate_selected='s1';self.store.r13_meeting_live_sid='s1'
+  self.store.r13_packet=('seryeon','주장')
+  before=copy.deepcopy(self.store.room13)
+  self.env['r13_meeting_request_live_action']('press')
+  self.assertEqual(self.store.r13_meeting_live_command,('press','s1'))
+  self.assertEqual(ended,[True]);self.assertEqual(self.store.room13,before)
+  self.assertTrue(self.env['r13_meeting_live_should_stop']('meeting:live:C1:s1'))
+  self.assertFalse(self.env['r13_meeting_live_should_stop']('debate:press:C1:s1'))
+  self.store.r13_packet=('resident_seori','공개 의견')
+  self.assertFalse(self.env['r13_meeting_can_live_press']())
+ def test_live_material_stays_bound_to_spoken_claim_after_rebuttal(self):
+  self.store.r13_meeting_claim='C2';self.store.r13_debate_selected='s2'
+  self.store.r13_meeting_live_active=True;self.store.r13_meeting_live_sid='s1'
+  self.store.r13_packet=('resident_ppul','현재 말')
+  self.assertEqual(self.env['r13_meeting_live_target'](),'s1')
  def test_finding_is_not_visible_before_actual_rebuttal(self):
   self.store.r13_meeting_findings={'C1:s2':'주방에서 통로를 열었다.'}
   self.assertIsNone(self.env['r13_meeting_finding']('C1','s2'))
@@ -99,9 +126,14 @@ class MeetingFlow(unittest.TestCase):
   self.assertEqual(self.store.r13_meeting_pan_started,10.0)
   f('C1','resident_ppul');self.assertEqual(self.store.r13_meeting_shot_revision,first+1)
   trans=types.SimpleNamespace(xoffset=0);tick=env['r13_meeting_pan_tick']
-  self.assertIsNotNone(tick(trans,0,0));self.assertNotEqual(trans.xoffset,0)
-  clock[0]+=.3;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
+  clock[0]+=.6  # Asset preparation before first paint must not consume the sweep.
+  self.assertIsNotNone(tick(trans,0,0));self.assertEqual(abs(trans.xoffset),1200)
+  incoming=trans.xoffset;old=types.SimpleNamespace(xoffset=0)
+  tick(old,0,0,outgoing=True)
+  self.assertEqual(abs(incoming-old.xoffset),1200)
+  clock[0]+=.4;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
   f('C1','buri');env['persistent'].room13_motion=False;tick(trans,0,0);self.assertEqual(trans.xoffset,0)
+  tick(old,0,0,outgoing=True);self.assertEqual(old.alpha,0.0)
   people=[p for p,stance in env['r13_meeting_cast']('C1','trial')]
   self.assertNotIn('dad',people)
   for i,person in enumerate(people):

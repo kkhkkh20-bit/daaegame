@@ -1,7 +1,7 @@
 # Player-opened field thoughts; question discoveries never open the panel.
 default r13_goal_open=False
 default r13_thoughts_seen = ()
-# 0.18.70 (design review #5): a changed thought is shown once for a few seconds, not only as a dot.
+# 0.18.71 (design review #5): a changed thought is shown once for a few seconds, not only as a dot.
 default r13_thought_toasted = ()
 
 init 60 python:

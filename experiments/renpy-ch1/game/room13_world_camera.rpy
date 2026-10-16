@@ -166,7 +166,7 @@ screen r13_world_camera_controls(adjustment):
             style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 18
             action Function(r13_pan_camera,adjustment,-1)
     elif adjustment.value>4:
-        # 0.18.70 (design review 2026-10-16, #4): a wide place with nobody off to the side
+        # 0.18.71 (design review 2026-10-16, #4): a wide place with nobody off to the side
         # still shows that there is more to see; a plain arrow, no name.
         textbutton "‹":
             style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22
@@ -186,5 +186,5 @@ screen r13_world_camera_controls(adjustment):
             xalign .5 ypos 640 padding (16,8) background "#000000aa"
             text "화면을 좌우로 끌면 옆을 둘러볼 수 있다" size r13_read_size(18,22) color "#f3e6c8"
 
-# 0.18.70: the one-time "drag to look around" line on the first wide place.
+# 0.18.71: the one-time "drag to look around" line on the first wide place.
 default persistent.r13_pan_hint_seen = False

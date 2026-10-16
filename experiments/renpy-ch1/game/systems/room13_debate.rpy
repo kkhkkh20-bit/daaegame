@@ -577,6 +577,9 @@ label r13_debate_session_run(claim):
         return False
     $ r13_meeting_begin_opinions(claim)
     $ r13_debate_selected=r13_debate_next_target(claim,r13_debate_statements(claim)[0]["id"])
+    $ r13_meeting_resume_listening=False
+    $ r13_debate_action=("round",r13_debate_selected)
+    jump r13_debate_dispatch
 label r13_debate_loop:
     $ r13_meeting_claim=r13_claim
     $ r13_meeting_active=True
@@ -587,6 +590,12 @@ label r13_debate_loop:
     $ r13_meeting_claim=r13_claim
     $ r13_meeting_active=True
     $ r13_debate_action=_return
+label r13_debate_dispatch:
+    if r13_debate_action[0]=="round":
+        call r13_meeting_live_round(r13_claim)
+        $ r13_debate_action=_return
+        $ r13_meeting_resume_listening=r13_debate_action[0]=="press"
+        jump r13_debate_dispatch
     if r13_debate_action[0]=="select":
         $ r13_meeting_feedback=None
         $ r13_debate_selected=r13_debate_action[1]
@@ -611,6 +620,7 @@ label r13_debate_loop:
         $ r13_meeting_replaying=False
     elif r13_debate_action[0]=="press":
         $ r13_meeting_feedback=None
+        show screen r13_meeting_cut_in("잠깐만요.")
         $ r13_debate_st=r13_debate_statement(r13_claim,r13_debate_action[1])
         if r13_debate_st.get("ready_flags") and not all(r13_has(f) for f in r13_debate_st["ready_flags"]):
             call r13_lines(r13_debate_st.get("press_missing",[(r13_debate_st["who"],"그래서, 있습니까?")]),"debate:press_missing:"+r13_claim+":"+r13_debate_st["id"])
@@ -650,6 +660,11 @@ label r13_debate_loop:
             $ r13_prove(r13_claim)
             call r13_meeting_public_vote(r13_claim,r13_debate_pick)
             return True
+    if r13_meeting_resume_listening and not r13_debate_ready(r13_claim):
+        $ r13_meeting_resume_listening=False
+        $ r13_debate_action=("round",r13_debate_selected)
+        jump r13_debate_dispatch
+    $ r13_meeting_resume_listening=False
     jump r13_debate_loop
 
 label r13_debate_unanswerable(claim):
