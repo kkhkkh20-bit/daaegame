@@ -4,7 +4,7 @@ import re,shutil,json
 ROOT=Path(__file__).resolve().parents[1]
 def update_title_loader(release,game):
  release=Path(release);game=Path(game)
- art=game/'assets/room13-title-fairytale084.webp'
+ art=game/'assets/room13-title-winter020.webp'
  if not art.exists():return
  shutil.copy2(art,release/'loading-scene.webp')
  shutil.copy2(game/'assets/room13-title-logo.webp',release/'loading-logo.webp')

@@ -61,7 +61,7 @@ screen main_menu():
     $ title_continue = r13_continue_slot()
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
-    add Transform("assets/room13-title-fairytale084.webp",size=(1280,720),nearest=True)
+    add Transform("assets/room13-title-winter020.webp",size=(1280,720),nearest=True)
     add r13_title_fx()
     fixed:
         xpos 784 ypos 112 xysize (450,226)
