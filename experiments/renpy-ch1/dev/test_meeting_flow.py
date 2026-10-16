@@ -182,6 +182,16 @@ class MeetingFlow(unittest.TestCase):
   self.assertNotIn('dad',people)
   for i,person in enumerate(people):
    self.assertEqual(env['r13_meeting_neighbors']('C1',person),(people[i-1],people[(i+1)%len(people)]))
+  env['Transform']=lambda path,**kw:path
+  self.assertEqual(env['r13_meeting_plate']('final',True),'assets/room13-pixel-meeting-altar-standing072.webp')
+  self.assertEqual(env['r13_meeting_plate']('final',False),'assets/room13-pixel-meeting-altar-standing072.webp')
+  self.assertEqual(env['r13_meeting_edge'](640,'final'),432)
+  self.assertEqual(env['r13_meeting_edge'](0,'final'),500)
+  env['CAST']['resident_bori']={'neutral':{'crop':[0,0,500,600]}}
+  width,height,top=env['r13_meeting_standing_slot']('resident_bori',8,432)
+  self.assertLess(width,1160/8)
+  self.assertAlmostEqual(width/height,500/600,places=2)
+  self.assertLess(top,432);self.assertGreater(top+height,432)
   next_statement=env['r13_meeting_next_statement']
   self.assertEqual(next_statement('C1','s1',step=-1),'s1')
   env['r13_debate_mark']('pressed','C1','s1')

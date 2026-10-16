@@ -17,7 +17,7 @@ async def main():
  async with async_playwright() as p:
   browser=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader'])
   recording_started=time.monotonic()
-  video_options={'record_video_dir':str(OUT/'video'),'record_video_size':{'width':1280,'height':720}} if os.environ.get('ROOM13_MEETING_RHYTHM') else {}
+  video_options={'record_video_dir':str(OUT/'video'),'record_video_size':{'width':1280,'height':720}} if os.environ.get('ROOM13_MEETING_RHYTHM') or os.environ.get('ROOM13_MEETING_ALTAR') else {}
   page=await browser.new_page(viewport={'width':1280,'height':720},**video_options);q=UIQA(page,OUT)
   async def shot(name):
    await asyncio.sleep(.35)  # Let the speaker pan settle before comparing framing.
@@ -52,6 +52,33 @@ async def main():
    await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=7,period=2,location="dining",case_state="occurred",victim_state="dead",evidence=list(s.ROOM13["evidence"]),propositions=[]);s.r13_flag("entry_corrected","lodging");s.r13_upgrade();result=True')
    await native_jump(q,'r13_trial');await q.wait('say');await shot('01-opening-focused')
+   if os.environ.get('ROOM13_MEETING_ALTAR'):
+    await q.py('import renpy;s=renpy.store;s.r13_edit(day=14,period=2,location="altar",finale_started=True,mom_state="reunited",daram_state="with_dad");s.r13_meeting_active=False;s.r13_meeting_intro=False;result=True')
+    await native_jump(q,'r13_final_hub');await q.wait('r13_crisis')
+    title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F1"]["assertion"]');await q.press(title)
+    await until(say='가족도 못 알아봅니다');await shot('40-standing-speaker')
+    assert await q.py('import renpy;s=renpy.store;result=s.r13_meeting_live_active and s.r13_meeting_claim=="F1" and s.r13_meeting_edge(640,"final")==432 and s.r13_meeting_edge(0,"final")==500 and "dad" not in dict(s.r13_meeting_cast("F1",s.r13_debate_session("F1")))')
+    clip={'start':time.monotonic()-recording_started}
+    await q.input(800,610);await q.wait('say');await shot('41-standing-peer')
+    assert await q.py('import renpy;result=renpy.store.dialogue_speaker=="nabi"')
+    await q.input(800,610);await q.wait('say');await shot('42-standing-next-statement')
+    assert await q.py('import renpy;result=renpy.store.r13_meeting_live_sid=="s2"')
+    clip['end']=time.monotonic()-recording_started
+    await page.set_viewport_size({'width':844,'height':390});await shot('43-standing-mobile')
+    await q.press('보여주기');await q.wait('r13_book');await q.press('그만두기');await q.wait('say')
+    assert await q.py('import renpy;result=renpy.store.r13_meeting_live_sid=="s2"')
+    await page.set_viewport_size({'width':1280,'height':720});await q.press('발언 고르기');await until('r13_debate_board')
+    await select_statement('s1');await q.press('보여주기');await select_record('E20');await until('r13_debate_board')
+    await select_statement('s2');await q.press('보여주기');await select_record('E31');await until('r13_debate_board')
+    assert await q.py('import renpy;result=renpy.store.r13_debate_ready("F1")')
+    await shot('44-standing-proven')
+    await q.press('결론을 말한다');await until('choice')
+    correct=await q.py('import renpy;result=next(text for kind,text in renpy.store.R13_DEBATE["F1"]["conclusion"]["options"] if kind=="correct")')
+    await q.press(correct);await until('r13_meeting_ballot');await shot('45-standing-whole-council')
+    assert await q.py('import renpy;s=renpy.store;result="F1" in s.room13["propositions"] and not s.r13_has("operators_ready") and not s.r13_has("patient_transport")')
+    (OUT/'clip.json').write_text(json.dumps(clip,indent=2))
+    (OUT/'result.json').write_text(json.dumps({'passed':True,'checks':['actual day14 altar standing stone slab','standing centre and two standing neighbors','same horizontal speaker camera','waist-high stone foreground rim at 432/500','no dad sprite','mobile presentation cancel retains utterance','actual F1 evidence and conclusion','whole council and public opinions around stone','preparation gates unchanged']},ensure_ascii=False,indent=2))
+    print('PASS standing altar, speaker movement, mobile, actual proof and whole council',flush=True);return
    if os.environ.get('ROOM13_MEETING_LOOP'):
     async def live_at(sid):
      for _ in range(50):
@@ -151,7 +178,7 @@ async def main():
    if os.environ.get('ROOM13_MEETING_FRAME_ONLY'):
     assert await q.py('import renpy;s=renpy.store;t=type("CameraProbe",(),{})();s.r13_meeting_pan_tick(t,0,0);result=t.xoffset==0')
     await page.set_viewport_size({'width':844,'height':390});await shot('07-mobile-interview');await page.set_viewport_size({'width':1280,'height':720})
-    await q.py('import renpy;s=renpy.store;s.r13_edit(day=14,period=2,location="altar",finale_started=True,mom_state="reunited",daram_state="with_dad");s.r13_meeting_active=False;result=True')
+    await q.py('import renpy;s=renpy.store;s.r13_edit(day=14,period=2,location="altar",finale_started=True,mom_state="reunited",daram_state="with_dad");s.r13_meeting_active=False;s.r13_meeting_intro=False;result=True')
     await native_jump(q,'r13_final_hub');await q.wait('r13_crisis')
     title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F1"]["assertion"]');await q.press(title);await until('r13_debate_board');await q.press('되묻기');await q.wait('say');await shot('14-stone-altar-focused')
     assert await q.py('import renpy;s=renpy.store;t=type("CameraProbe",(),{})();s.r13_meeting_pan_tick(t,0,0);result=t.xoffset==0')
@@ -206,7 +233,7 @@ async def main():
    await q.press('보여주기');await select_record('E09');await until('choice');await q.press('통로는 주방 레버로만 열린다');await until('r13_debate_board');assert await q.py('import renpy;result=renpy.store.r13_debate_is_broken("C2","s3")')
    await q.press('회의 중단');await q.wait('r13_confirm');await q.press('더 찾아본다');await until('r13_debate_board');assert await q.py('import renpy;result=not renpy.store.r13_debate_closed("C2")')
    # Explicit finale fixture: preserve canonical preparations; test only the relevant interaction.
-   await q.py('import renpy;s=renpy.store;s.r13_edit(day=14,period=2,location="altar",finale_started=True,mom_state="reunited",daram_state="with_dad");s.r13_meeting_active=False;result=True')
+   await q.py('import renpy;s=renpy.store;s.r13_edit(day=14,period=2,location="altar",finale_started=True,mom_state="reunited",daram_state="with_dad");s.r13_meeting_active=False;s.r13_meeting_intro=False;result=True')
    await native_jump(q,'r13_final_hub');await q.wait('r13_crisis');await shot('12-stone-altar-agenda')
    title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F1"]["assertion"]');await q.press(title);await until('r13_debate_board');await shot('13-stone-altar-statements');await q.press('되묻기');await q.wait('say');await shot('14-stone-altar-focused')
    await until('r13_debate_board')

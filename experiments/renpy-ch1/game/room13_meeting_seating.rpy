@@ -20,6 +20,7 @@ init 99 python:
     import json as r13_meeting_json
     import functools as r13_meeting_functools
     R13_MEETING_SEATED=r13_meeting_json.load(renpy.file("assets/room13-meeting-seated.json")) if renpy.loadable("assets/room13-meeting-seated.json") else {}
+    R13_MEETING_STANDING_FACING={"resident_bori":"right"}
     def r13_meeting_cast(claim,session,speaker=None):
         seats=list(r13_debate_seats(session));present={who for who,stance in seats}
         for who in (["granny","resident_seori"] if session=="trial" else ["mom"])+[st["who"] for st in r13_debate_statements(claim)]+[R13_DEBATE[claim]["chair"]]:
@@ -71,7 +72,7 @@ init 99 python:
         return .016 if moving else None
 
     def r13_meeting_edge(x,session):
-        return int((396 if session=="trial" else 474)+(88 if session=="trial" else 110)*((x-640)/640.0)**2)
+        return int((396 if session=="trial" else 432)+(88 if session=="trial" else 68)*((x-640)/640.0)**2)
 
     def r13_meeting_seat_position(index,count,session="trial"):
         x=int(60+(index+.5)*1160/max(1,count))
@@ -92,7 +93,7 @@ init 99 python:
         # Side seats face into the circle rather than towards the viewer.
         spec=R13_MEETING_SEATED.get(who) if seated else None
         spec=spec or CAST[who]["neutral"]
-        facing=spec.get("facing","")
+        facing=spec.get("facing","") if seated else R13_MEETING_STANDING_FACING.get(who,spec.get("facing",""))
         art=Crop(tuple(spec["crop"]),spec["file"])
         flip=(is_left and facing.startswith("left")) or (not is_left and facing.startswith("right"))
         return Transform(art,xzoom=-1) if flip else art
@@ -101,8 +102,15 @@ init 99 python:
         ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st) and (person is None or st["who"]==person)]
         return ids[(ids.index(current)+step)%len(ids)] if current in ids else ids[0] if ids else current
 
+    def r13_meeting_standing_slot(who,count,edge):
+        crop=CAST[who]["neutral"]["crop"]
+        width=min(int(crop[2]*306.0/crop[3]),int(1160.0/max(1,count)*.90))
+        height=int(round(width*crop[3]/float(crop[2])))
+        return width,height,int(edge-height*.60)
+
     def r13_meeting_plate(session,close=False):
-        path="assets/room13-pixel-meeting-interview066.webp" if close and session=="trial" else "assets/room13-pixel-meeting-%s056.webp"%("room" if session=="trial" else "altar")
+        if session!="trial":return Transform("assets/room13-pixel-meeting-altar-standing072.webp",xysize=(1280,720),nearest=True)
+        path="assets/room13-pixel-meeting-interview066.webp" if close else "assets/room13-pixel-meeting-room056.webp"
         plate=Transform(path,xysize=(1280,720),nearest=True)
         if close and session=="trial":return plate
         return Crop((160,0,1280,720),Transform(plate,zoom=1.25,nearest=True)) if close else plate
@@ -111,7 +119,9 @@ init 99 python:
         def __init__(self,session,close=False,**kwargs):super(R13MeetingForeground,self).__init__(**kwargs);self.session=session;self.close=close
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720);c=out.canvas()
-            if self.close and self.session=="trial":
+            if self.session!="trial":
+                edge=[(x,r13_meeting_edge(x,self.session)) for x in range(0,1281,16)]
+            elif self.close:
                 edge=[(x,int(396+98*((x-640)/640.0)**2)) for x in range(0,1281,32)]
             else:
                 edge=[(x,int(r13_meeting_edge((x+160)/1.25,self.session)*1.25) if self.close else r13_meeting_edge(x,self.session)) for x in range(0,1281,32)]
@@ -169,9 +179,13 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
         else:
             for index,(who,stance) in enumerate(seats):
                 $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
-                $ height=230 if session=="trial" else 246
-                $ top=edge+(95 if session=="trial" else 24)-height
-                add Transform(r13_meeting_actor(who,focus,cx,seated=session=="trial"),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
+                if session=="trial":
+                    $ height=230
+                    $ top=edge+95-height
+                    add Transform(r13_meeting_actor(who,focus,cx,seated=True),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
+                else:
+                    $ stand_width,height,top=r13_meeting_standing_slot(who,len(seats),edge)
+                    add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top
                 $ own=[st for st in r13_debate_statements(claim) if st["who"]==who and r13_debate_visible(claim,st)]
                 button:
                     area (cx-56,top-28,112,84) padding (0,0) background None hover_background None
