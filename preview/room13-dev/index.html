@@ -198,15 +198,15 @@
     @media(orientation:portrait){#portrait-note{display:block;position:fixed;bottom:15px;left:5%;width:90%;box-sizing:border-box;padding:12px;text-align:center;color:#f3e7ce;background:#30261fe8;border:1px solid #806446;border-radius:8px;font-size:14px;pointer-events:none;z-index:90}}
     </style>
 
-<style id="r13-title-loader">:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.0859375)}
+<style id="r13-title-loader">:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.6125)}
 html,body{background:#07141b}
-#presplash{object-fit:contain;filter:brightness(.76) saturate(.72);image-rendering:pixelated}
-#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.2305556);font-family:Galmuri,monospace;color:#fff4df;text-shadow:none}
+#presplash{object-fit:contain;filter:none;image-rendering:pixelated}
+#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.218);font-family:Galmuri,monospace;color:#fff4df;text-shadow:none}
 #loading-brand .chapter{color:#ced9d4;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);margin:0 0 14px}
 #loading-brand h1{font-family:Galmuri,monospace;color:#fff4df;font-size:clamp(34px,calc(var(--title-w)*.06875),88px);line-height:1.15;margin:0 0 26px;font-weight:400}
 #loading-brand .subtitle{font-size:clamp(12px,calc(var(--title-w)*.0171875),22px);margin:0;color:#fff4df}
 #loading-brand .loading-hint{margin-top:38px;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#ebcd8a}
-#statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.11);width:calc(var(--title-w)*.34);max-width:440px;min-width:0;padding:12px 0;background:transparent;border:0;border-radius:0}
+#statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.11);width:calc(var(--title-w)*.3515625);max-width:450px;min-width:0;padding:12px 0;background:transparent;border:0;border-radius:0}
 #statusTextDiv{max-height:12vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#ced9d4}
 #statusProgress{accent-color:#ebcd8a;height:5px;border:0}
 #ContextMenu a{background:#132b30;border-color:#6b6751;color:#eee8dc}
@@ -218,10 +218,7 @@ html,body{background:#07141b}
 #loading-brand h1{margin:0;line-height:0}
 #loading-brand h1 img{display:block;width:calc(var(--title-w)*.3515625);height:auto;image-rendering:pixelated}
 
-#loading-brand .loading-hint{text-align:left;padding-left:calc(var(--title-w)*.0046875);color:#dbd0b9}
-
-/* The cover shadow belongs to the loading brand, so it leaves with it. */
-#loading-brand::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(9,12,23,.78),rgba(9,12,23,.35) 38%,transparent 72%)}
+#loading-brand .loading-hint{text-align:center;color:#e6dbc4}
 </style>
 </head>
 
@@ -271,7 +268,7 @@ html,body{background:#07141b}
           }
       }
   </script>
-  <script src="renpy-pre.js?v=1f7b98f2d5da"></script>
+  <script src="renpy-pre.js?v=2843bd695f19"></script>
   <script async type="text/javascript" src="renpy.js"></script>
 <script>
     const brand=document.getElementById('loading-brand');

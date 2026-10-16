@@ -8,15 +8,14 @@ init 61 python:
     R13_TITLE_STATE = {"intro_done": False}
 
     def r13_title_fx():
-        spec = R13_DOT_FX.get("title", {})
         layers = []
         rig = r13_light_rig("title", (1280, 720))
         if rig:
             layers.append(rig)
         snow = dict(R13_DOT_FX.get("snow", {}))
         if snow:
-            snow["layers"] = [{"count": 70, "size": 4, "vy": [18, 28], "sway": 8},
-                              {"count": 12, "size": 8, "vy": [38, 52], "sway": 12}]
+            snow["layers"] = [{"count": 24, "size": 4, "vy": [8, 14], "sway": 6},
+                              {"count": 4, "size": 8, "vy": [18, 24], "sway": 8}]
             layers.append(R13FxSnow(snow, (1280, 720), seed=33))
         return Fixed(*layers, xysize=(1280, 720))
 

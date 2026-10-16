@@ -472,8 +472,8 @@ def carriage_window_mask():
 
 # ------------------------------------------------------------------ 0.18.41 메인 타이틀
 # 타이틀 그림(1280x720 화면 기준)의 등불·창. 검수한 자리만.
-TITLE_LIGHTS = [(418, 372, 70), (418, 622, 80), (992, 449, 70), (1187, 433, 70),
-                (1089, 205, 90), (1100, 480, 110), (697, 283, 50)]
+TITLE_LIGHTS = [(453, 324, 25), (589, 317, 25), (493, 225, 14),
+                (516, 373, 24), (735, 373, 24), (505, 305, 18), (655, 320, 16)]
 
 
 def title_glow():
@@ -625,7 +625,7 @@ def light_rigs():
             kind = "candle" if key == "E3" else "lamp"
             rigs["cine:" + key] = light_rig("cine-" + key.lower(), None, [(x, y, r * 1.8, .8, kind) for x, y, r in lamps],
                                             .26, size=(w, h))
-    rigs["title"] = light_rig("title", None, [(x, y, r * 1.6, .7, "lamp") for x, y, r in TITLE_LIGHTS], .10, size=(1280, 720))
+    rigs["title"] = light_rig("title", None, [(x, y, r * 1.6, .7, "lamp") for x, y, r in TITLE_LIGHTS], .04, size=(1280, 720))
     return rigs
 
 
@@ -686,5 +686,21 @@ def main():
     print("wrote", META_FILE, "blink:", {k: sorted(v) for k, v in blink.items()})
 
 
+def title_only():
+    """Refresh only the title lamps after replacing the title key art."""
+    with open(META_FILE, encoding="utf-8") as f:
+        meta = json.load(f)
+    meta["lights"]["title"] = light_rig("title", None,
+        [(x, y, r * 1.6, .7, "lamp") for x, y, r in TITLE_LIGHTS], .04, size=(1280, 720))
+    meta["title"] = {"glow": title_glow(), "alpha": [0.10, 0.30]}
+    with open(META_FILE, "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=1)
+    print("updated title lamps", META_FILE)
+
+
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--title-only", action="store_true")
+    args = parser.parse_args()
+    title_only() if args.title_only else main()

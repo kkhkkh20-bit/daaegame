@@ -289,7 +289,7 @@ screen r13_opening_cut():
             # 로고 뒤 어둠: 위에서부터 부드럽게 옅어진다.
             for i in range(64):
                 add Solid("#140e0a%02x" % int(190*(1.0-i/64.0)**1.4)) ypos (i*4) ysize 4
-            add Transform("assets/room13-title-logo.webp", size=(400,160), nearest=True) xalign .5 ypos 64 at r13_op_logo
+            add Transform("assets/room13-title-logo.webp", xysize=(400,160), fit="contain", nearest=True) xalign .5 ypos 64 at r13_op_logo
             text "눈에 갇힌 마을":
                 font r13_ui_font() size 24 color "#f4ead2" xalign .5 ypos 226 at r13_op_sub
                 outlines [(2, "#1a1410", 0, 0)]
