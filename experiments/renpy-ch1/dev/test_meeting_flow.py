@@ -67,7 +67,7 @@ class MeetingFlow(unittest.TestCase):
   self.env['r13_meeting_resume_after_load']();self.assertEqual(self.store.r13_index,2)
  def test_camera_moves_only_for_a_new_real_speaker(self):
   env=self.env;clock=[10.0]
-  env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,get_game_runtime=lambda:clock[0],is_skipping=lambda:False))
+  env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:clock[0])),is_skipping=lambda:False))
   src=(ROOT/'game/room13_meeting_seating.rpy').read_text().split('init 99 python:\n',1)[1].split('\ntransform ',1)[0]
   exec(textwrap.dedent(src),env)
   self.store.r13_meeting_shot_revision=0
