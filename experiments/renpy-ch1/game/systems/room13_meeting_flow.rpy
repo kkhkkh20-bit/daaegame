@@ -2,6 +2,41 @@
 default r13_meeting_pending_resume = None
 
 init 100 python:
+    R13_MEETING_ISSUES={
+        "C1":"13호에 들어가는 길은 하나뿐이었나?",
+        "C2":"다람이가 휘두른 촛대가 사망 원인인가?",
+        "C3":"첫 비명 뒤에도 할머니는 식당에 있었나?",
+        "C4":"할머니는 도우러 들어갔을 뿐인가?",
+        "F1":"환자들은 정말 돌아올 수 없는가?",
+        "F2":"사람을 희생하는 것 말고 방법은 없나?",
+        "F3":"희생 없이 오늘 밤을 버틸 수 있나?",
+        "F4":"가족을 떼어 놓으려 한 이유는 무엇인가?",
+    }
+
+    def r13_meeting_begin_opinions(claim):
+        baseline=dict(getattr(store,"r13_meeting_opinion_baseline",{}))
+        if claim not in baseline:
+            baseline[claim]=dict(r13_debate_seats(r13_debate_session(claim)))
+            store.r13_meeting_opinion_baseline=baseline
+
+    def r13_meeting_finding(claim,sid):
+        # Show only the exact observation already submitted for this statement.
+        # No hand-authored summary may turn an account into a stronger claim.
+        if not r13_debate_is_broken(claim,sid):return None
+        return getattr(store,"r13_meeting_findings",{}).get(claim+":"+sid)
+
+    def r13_meeting_reaction_lines(vote):
+        session=vote["session"]
+        lines=[]
+        for change in vote.get("changed",[]):
+            who=change["person"];stance=change["to"]
+            if session=="trial":
+                text=("아직 그 아이를 의심하고 있어요.","그 아이가 그랬다고 단정할 수는 없겠어요.","이제는 그 아이가 그랬다는 말에 동의하지 않아요.")[stance]
+            else:
+                text=("아직은 희생을 이어 가야 한다고 생각해요.","희생을 계속하는 게 맞는지 다시 생각해 봐야겠어요.","더는 사람을 희생하는 데 동의하지 않아요.")[stance]
+            lines.append((who,text))
+        return lines
+
     R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started")
 
     def r13_meeting_resume_after_load():
@@ -34,7 +69,7 @@ init 100 python:
 
     def r13_meeting_can_interrupt():
         packet=getattr(store,"r13_packet",None)
-        return bool(getattr(store,"r13_meeting_active",False) and not getattr(store,"r13_meeting_interrupting",False)
+        return bool(getattr(store,"r13_meeting_active",False) and not getattr(store,"r13_meeting_interrupting",False) and not getattr(store,"r13_meeting_replaying",False)
             and not getattr(store,"r13_meeting_intro",False) and packet and packet[0] not in (None,"dad") and r13_meeting_live_target())
 
     def r13_meeting_vote_snapshot(claim,choice):
@@ -43,7 +78,10 @@ init 100 python:
         for who,stance in r13_debate_seats(session):
             grounds=[cid for cid,spec in R13_DEBATE.items() if cid.startswith("C" if session=="trial" else "F") and who in spec.get("sway",[]) and (cid in store.room13.get("propositions",[]) or r13_debate_progress(cid)[0])]
             rows.append(dict(person=who,stance=stance,grounds=grounds))
-        return dict(session=session,claim=claim,choice=choice,voters=rows,
+        previous=store.room13.get("meeting_votes",{}).get(claim)
+        baseline=({row["person"]:row["stance"] for row in previous["voters"]} if previous else getattr(store,"r13_meeting_opinion_baseline",{}).get(claim,{}))
+        changed=[dict(person=row["person"],before=baseline[row["person"]],to=row["stance"]) for row in rows if row["person"] in baseline and baseline[row["person"]]!=row["stance"]]
+        return dict(session=session,claim=claim,choice=choice,voters=rows,changed=changed,
             tally=[sum(row["stance"]==i for row in rows) for i in range(3)],
             propositions=list(store.room13.get("propositions",[])))
 
@@ -79,7 +117,17 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
                     if source.get("reveals")==sid:r13_debate_mark("pressed",claim,source["id"])
         $ r13_debate_mark("broken",claim,sid)
         $ r13_submit(claim,key)
+        python:
+            observation=next((row[1] for row in presentation_rows if row[0] is not None),None)
+            if observation:
+                findings=dict(r13_meeting_findings);findings[claim+":"+sid]=observation
+                r13_meeting_findings=findings
+                r13_meeting_feedback=dict(claim=claim,sid=sid,text=observation)
         $ r13_debate_selected=r13_debate_next_target(claim,sid)
+        if persistent.room13_motion and not renpy.is_skipping():
+            show screen r13_meeting_rebuttal_hold(claim)
+            pause .22
+            hide screen r13_meeting_rebuttal_hold
     elif presentation_result=="wrong":
         $ r13_debate_miss(claim)
     $ r13_meeting_interrupting=was_interrupting
@@ -100,6 +148,9 @@ label r13_meeting_interrupt(claim,sid,resume=None):
 
 label r13_meeting_public_vote(claim,choice):
     $ r13_meeting_vote=r13_meeting_record_vote(claim,choice)
+    $ r13_meeting_opinion_lines=r13_meeting_reaction_lines(r13_meeting_vote)
+    if r13_meeting_opinion_lines:
+        call r13_lines(r13_meeting_opinion_lines,"meeting:opinions:"+claim+":"+choice)
     call screen r13_meeting_ballot(claim,r13_meeting_vote)
     return
 

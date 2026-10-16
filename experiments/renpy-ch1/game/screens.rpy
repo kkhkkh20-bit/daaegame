@@ -109,11 +109,7 @@ screen say(who,what):
             text who id "who" xpos 104 ypos 510 size r13_read_size(18,22) color "#795d40"
         text "▸" xpos 1160 ypos 600 size 24 color "#795d40"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
-        if r13_meeting_can_interrupt():
-            textbutton "보여주기":
-                style "r13_action_button" xpos 988 ypos 420 xsize 212 ysize 64 text_size 22
-                action Function(renpy.call_in_new_context,"r13_meeting_interrupt",r13_meeting_claim,r13_meeting_live_target())
-        use r13_playback_footer()
+        use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())
         key "K_h" action Show("r13_backlog")
     elif not room13_mode:
         if room13_mode:

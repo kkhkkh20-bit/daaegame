@@ -72,12 +72,21 @@ screen r13_more_tools():
     modal True
     zorder 105
     $ line_active=renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
+    $ meeting_line=line_active and r13_meeting_active
     # 0.18.56: 생활 장부 (money ledger, shared work) moved here from the removed top board.
     $ ledger_ok=(not line_active) and bool(room13) and r13_has("livelihood_open") and renpy.get_screen("r13_hub") is not None
     frame:
-        area (932,204 if line_active else (312 if ledger_ok else 366),324,456 if line_active else (348 if ledger_ok else 294)) padding (12,12) background R13InkPanel()
+        area (932,100 if meeting_line else (204 if line_active else (312 if ledger_ok else 366)),324,568 if meeting_line else (456 if line_active else (348 if ledger_ok else 294))) padding (12,12) background R13InkPanel()
         vbox:
             spacing 6
+            if meeting_line:
+                textbutton "자동":
+                    style "r13_action_button" xsize 300 ysize 48 text_size 20
+                    selected _preferences.afm_enable
+                    action [Hide("r13_more_tools"),Preference("auto-forward","toggle")]
+                textbutton "건너뛰기":
+                    style "r13_action_button" xsize 300 ysize 48 text_size 20
+                    action [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)]
             if line_active:
                 textbutton "읽은 대사 넘기기":
                     style "r13_action_button" xsize 300 ysize 48 text_size 20

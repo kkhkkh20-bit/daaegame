@@ -3,7 +3,7 @@ import asyncio,json,os
 from pathlib import Path
 from playwright.async_api import async_playwright
 import webqa
-webqa.FLOW_PROBE=webqa.FLOW_PROBE.replace('names=[',"names=['r13_meeting_agenda','r13_debate_board','r13_meeting_ballot',")
+webqa.FLOW_PROBE=webqa.FLOW_PROBE.replace('names=[',"names=['r13_more_tools','r13_meeting_agenda','r13_debate_board','r13_meeting_ballot',")
 from webqa import UIQA
 OUT=Path(os.environ.get('ROOM13_QA_OUT','/tmp/room13-qa/meeting'));OUT.mkdir(parents=True,exist_ok=True)
 URL=os.environ.get('ROOM13_URL','http://127.0.0.1:8773/preview/room13-dev/')
@@ -44,6 +44,14 @@ async def main():
    await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=7,period=2,location="dining",case_state="occurred",victim_state="dead",evidence=list(s.ROOM13["evidence"]),propositions=[]);s.r13_flag("entry_corrected","lodging");s.r13_upgrade();result=True')
    await native_jump(q,'r13_trial');await q.wait('say');await shot('01-opening-focused')
+   if os.environ.get('ROOM13_MEETING_OPINIONS_ONLY'):
+    await q.py('import renpy;s=renpy.store;s.r13_meeting_active=True;s.r13_meeting_intro=False;s.r13_claim="C1";s.r13_meeting_claim="C1";s.r13_debate_selected="s2";s.r13_meeting_begin_opinions("C1");s.r13_edit(propositions=["C1"]);s.r13_debate_mark("pressed","C1","s1");s.r13_debate_mark("broken","C1","s2");result=True')
+    await native_jump(q,'r13_debate_loop');await until('r13_debate_board');await q.press('결론을 말한다');await until('choice')
+    correct=await q.py('import renpy;result=next(text for kind,text in renpy.store.R13_DEBATE["C1"]["conclusion"]["options"] if kind=="correct")')
+    await q.press(correct);await until(say='동의하지 않아요');await shot('17-changed-resident-reaction')
+    assert await q.py('import renpy;s=renpy.store;result=s.r13_read_id.startswith("meeting:opinions:C1") and s.dialogue_speaker in [row["person"] for row in s.r13_meeting_vote["changed"]]')
+    await until('r13_meeting_ballot');await shot('18-opinions-after-reactions')
+    print('PASS changed residents speak before public opinion tally',flush=True);return
    if os.environ.get('ROOM13_MEETING_FRAME_ONLY'):
     assert await q.py('import renpy;s=renpy.store;t=type("CameraProbe",(),{})();s.r13_meeting_pan_tick(t,0,0);result=t.xoffset==0')
     await page.set_viewport_size({'width':844,'height':390});await shot('07-mobile-interview');await page.set_viewport_size({'width':1280,'height':720})
@@ -58,7 +66,11 @@ async def main():
     await q.py('import renpy;s=renpy.store;s.r13_edit(day=14,period=2,location="altar",finale_started=True,mom_state="reunited",daram_state="with_dad",evidence=[]);s.r13_meeting_active=False;result=True')
     await native_jump(q,'r13_final_hub');await q.wait('r13_crisis');await shot('15-blocked-claim-reasons')
     print('PASS final build opening, roundtable, blocked-claim reasons',flush=True);return
+   board_present=next(b['rect'] for b in (await q.state())['buttons'] if b['text'].strip()=='보여주기')
    await q.press('되묻기');await q.wait('say');await shot('04-focused-speaker-neighbors')
+   line_present=next(b['rect'] for b in (await q.state())['buttons'] if b['text'].strip()=='보여주기')
+   assert board_present==line_present,(board_present,line_present)
+   await q.press('더보기');await q.wait('r13_more_tools');await q.press('닫기')
    # Canceling live presentation must retain the outer dialogue cursor and all proof state.
    before=await q.py('import renpy;s=renpy.store;result={"proofs":list(s.room13["propositions"]),"debate":s.r13_debate_state(),"id":s.r13_read_id,"index":s.r13_index,"page":s.r13_page_i,"focus":s.r13_meeting_focus}')
    before_say=(await q.state())['say']
@@ -74,6 +86,12 @@ async def main():
    await until(say='복도 쪽 문이죠');assert await q.py('import renpy;result=renpy.store.r13_meeting_live_target()=="s2"')
    await q.press('보여주기');await select_record('E05');await q.wait('say');await shot('05-live-evidence-and-speaker');await until('r13_debate_board')
    assert await q.py('import renpy;s=renpy.store;result=s.r13_debate_is_broken("C1","s2") and s.r13_debate_is_pressed("C1","s1") and not s.r13_meeting_interrupting')
+   replay_before=await q.py('import renpy;s=renpy.store;result={k:s.room13.get(k) for k in ("debate","propositions","flags","evidence")}')
+   await q.press('다시 듣기');await q.wait('say');await shot('16-replay-completed');await until('r13_debate_board')
+   replay_after=await q.py('import renpy;s=renpy.store;result={k:s.room13.get(k) for k in ("debate","propositions","flags","evidence")}')
+   assert replay_before==replay_after
+   await q.press('‹');assert await q.py('import renpy;result=renpy.store.r13_debate_selected=="s1"')
+   await q.press('›');assert await q.py('import renpy;result=renpy.store.r13_debate_selected=="s2"')
    if os.environ.get('ROOM13_MEETING_RESUME_ONLY'):
     print('PASS exact live cancel, nested save/load, live proof and outer dialogue resumption',flush=True);return
    await q.press('발언 기록');await shot('06-statement-history');await q.press('닫기')
@@ -87,7 +105,7 @@ async def main():
    await q.press(correct);await until('r13_meeting_ballot');await shot('10-public-ballot')
    assert await q.py('import renpy;s=renpy.store;result="C1" in s.room13["propositions"] and s.room13["meeting_votes"]["C1"]["choice"]=="correct" and s.room13["meeting_votes"]["C1"]["tally"]==s.r13_debate_tally("trial")')
    await q.press('회의를 계속한다');await until('r13_meeting_agenda');assert await q.py('import renpy;result=not renpy.store.r13_meeting_active')
-   await q.press('다람이의 방어가');await until('r13_debate_board');await q.press('다음 발언');await q.press('다음 발언');await q.press('보여주기');await select_record('E09');await until('choice');await shot('11-opponent-counter-choice')
+   await q.press('다람이의 방어가');await until('r13_debate_board');await q.press('›');await q.press('›');await q.press('보여주기');await select_record('E09');await until('choice');await shot('11-opponent-counter-choice')
    await q.press('그 통로는 할머니만 썼다');await until('r13_debate_board');assert await q.py('import renpy;result=not renpy.store.r13_debate_is_broken("C2","s3")')
    await q.press('보여주기');await select_record('E09');await until('choice');await q.press('통로는 주방 레버로만 열린다');await until('r13_debate_board');assert await q.py('import renpy;result=renpy.store.r13_debate_is_broken("C2","s3")')
    await q.press('회의 중단');await q.wait('r13_confirm');await q.press('더 찾아본다');await until('r13_debate_board');assert await q.py('import renpy;result=not renpy.store.r13_debate_closed("C2")')
@@ -97,9 +115,9 @@ async def main():
    title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F1"]["assertion"]');await q.press(title);await until('r13_debate_board');await shot('13-stone-altar-statements');await q.press('되묻기');await q.wait('say');await shot('14-stone-altar-focused')
    await until('r13_debate_board')
    await q.py('import renpy;renpy.store.r13_meeting_active=False;result=True');await native_jump(q,'r13_final_hub');await q.wait('r13_crisis')
-   title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F3"]["assertion"]');await q.press(title);await until('r13_debate_board');await q.press('다음 발언');await q.press('다음 발언');await q.press('보여주기');await select_record('E21');await until('r13_debate_board')
+   title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F3"]["assertion"]');await q.press(title);await until('r13_debate_board');await q.press('›');await q.press('›');await q.press('보여주기');await select_record('E21');await until('r13_debate_board')
    assert await q.py('import renpy;s=renpy.store;result=not s.r13_debate_is_broken("F3","s3") and not s.r13_has("operators_ready") and not s.r13_has("patient_transport")')
-   (OUT/'result.json').write_text(json.dumps({'passed':True,'checks':['actual day7 opening and roundtable','live cancel preserves proof and dialogue','live hidden claim rebuttal resumes outer dialogue','record history','mobile and large text','wrong conclusion no proof','correct conclusion and public opinions','wrong and correct counter','leave cancellation','actual day14 stone altar','no item bypass for actual preparations']},ensure_ascii=False,indent=2))
+   (OUT/'result.json').write_text(json.dumps({'passed':True,'checks':['actual day7 opening and roundtable','live cancel preserves proof and dialogue','live hidden claim rebuttal resumes outer dialogue','completed replay preserves proof and hidden gates','previous/next statements','fixed presentation-button position','record history','mobile and large text','wrong conclusion no proof','correct conclusion and public opinions','wrong and correct counter','leave cancellation','actual day14 stone altar','no item bypass for actual preparations']},ensure_ascii=False,indent=2))
    print('PASS live meeting, camera, counter, ballots, stone altar, mobile',flush=True)
   except Exception as e:
    print('FAIL',repr(e),flush=True);await page.screenshot(path=str(OUT/'stop.png'));raise

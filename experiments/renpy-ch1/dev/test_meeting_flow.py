@@ -37,6 +37,28 @@ class MeetingFlow(unittest.TestCase):
   self.assertEqual(len(self.store.room13['meeting_votes']),1)
   voters=self.store.room13['meeting_votes']['C1']['voters']
   self.assertEqual(len({v['person'] for v in voters}),len(voters))
+ def test_opinion_changes_compare_with_claim_entry_then_last_public_result(self):
+  self.env['r13_meeting_begin_opinions']('C1')
+  self.env['r13_debate_mark']('broken','C1','s2')
+  self.store.room13['propositions']=['C1']
+  vote=self.env['r13_meeting_record_vote']('C1','correct')
+  self.assertEqual({row['person'] for row in vote['changed']},{'resident_tori','doto'})
+  self.assertTrue(all(row['before']==0 and row['to']==2 for row in vote['changed']))
+  before=copy.deepcopy(self.store.room13)
+  lines=self.env['r13_meeting_reaction_lines'](vote)
+  self.assertEqual({row[0] for row in lines},{'resident_tori','doto'})
+  self.assertEqual(self.store.room13,before)
+  self.assertEqual(self.env['r13_meeting_record_vote']('C1','correct')['changed'],[])
+ def test_replay_cannot_interrupt_or_change_evidence(self):
+  self.store.r13_meeting_claim='C1';self.store.r13_debate_selected='s1'
+  self.store.r13_meeting_active=True;self.store.r13_packet=('seryeon','주장')
+  self.store.r13_meeting_replaying=True
+  self.assertFalse(self.env['r13_meeting_can_interrupt']())
+ def test_finding_is_not_visible_before_actual_rebuttal(self):
+  self.store.r13_meeting_findings={'C1:s2':'주방에서 통로를 열었다.'}
+  self.assertIsNone(self.env['r13_meeting_finding']('C1','s2'))
+  self.env['r13_debate_mark']('broken','C1','s2')
+  self.assertEqual(self.env['r13_meeting_finding']('C1','s2'),'주방에서 통로를 열었다.')
  def test_live_reveal_uses_exact_authored_line(self):
   self.store.r13_meeting_claim='C1';self.store.r13_debate_selected='s1'
   self.store.r13_packet=self.env['R13_DEBATE']['C1']['statements'][0]['press'][-1]
@@ -67,7 +89,7 @@ class MeetingFlow(unittest.TestCase):
   self.env['r13_meeting_resume_after_load']();self.assertEqual(self.store.r13_index,2)
  def test_camera_moves_only_for_a_new_real_speaker(self):
   env=self.env;clock=[10.0]
-  env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:clock[0])),is_skipping=lambda:False))
+  env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,loadable=lambda path:False,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:clock[0])),is_skipping=lambda:False))
   src=(ROOT/'game/room13_meeting_seating.rpy').read_text().split('init 99 python:\n',1)[1].split('\ntransform ',1)[0]
   exec(textwrap.dedent(src),env)
   self.store.r13_meeting_shot_revision=0
@@ -84,4 +106,9 @@ class MeetingFlow(unittest.TestCase):
   self.assertNotIn('dad',people)
   for i,person in enumerate(people):
    self.assertEqual(env['r13_meeting_neighbors']('C1',person),(people[i-1],people[(i+1)%len(people)]))
+  next_statement=env['r13_meeting_next_statement']
+  self.assertEqual(next_statement('C1','s1',step=-1),'s1')
+  env['r13_debate_mark']('pressed','C1','s1')
+  self.assertEqual(next_statement('C1','s1',step=-1),'s2')
+  self.assertEqual(next_statement('C1','s2'),'s1')
 if __name__=='__main__':unittest.main()
