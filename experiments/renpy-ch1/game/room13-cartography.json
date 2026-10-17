@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "size": [
     1672,
     941
@@ -7,8 +7,8 @@
   "regions": {
     "village": {
       "art": "assets/room13-map-village.webp",
-      "sha256": "f904438842b326611d717e9473e5d6e53ae711770cbd04ea10f9c558e2c332e7",
-      "source_sha256": "05c35d4b6e57910f6984ad9bf918a645515b0a640036b7ff752b4ec1eb4b61af",
+      "sha256": "903f503f3ae7f4c8ef7897c17abae311231367123cc8f5f13db31fd985429761",
+      "source_sha256": "26d7ea888d55a65d168855bac2b8fc49506bb1a6d2a5e037b3ea94c269eefb52",
       "nodes": {
         "inn": {
           "polygon": [
@@ -50,14 +50,20 @@
             549
           ],
           "label_point": [
-            393,
-            662
+            372,
+            656
           ],
           "bounds": [
             86,
             436,
             394,
             233
+          ],
+          "label_bounds": [
+            335,
+            634,
+            74,
+            45
           ]
         },
         "clinic": {
@@ -96,14 +102,20 @@
             355
           ],
           "label_point": [
-            593,
-            458
+            596,
+            440
           ],
           "bounds": [
             447,
             269,
             281,
             163
+          ],
+          "label_bounds": [
+            548,
+            420,
+            96,
+            40
           ]
         },
         "school": {
@@ -142,14 +154,20 @@
             135
           ],
           "label_point": [
-            819,
-            234
+            812,
+            223
           ],
           "bounds": [
             619,
             59,
             314,
             152
+          ],
+          "label_bounds": [
+            778,
+            204,
+            69,
+            39
           ]
         },
         "post": {
@@ -188,14 +206,20 @@
             630
           ],
           "label_point": [
-            991,
-            705
+            981,
+            685
           ],
           "bounds": [
             835,
             554,
             211,
             141
+          ],
+          "label_bounds": [
+            930,
+            664,
+            103,
+            42
           ]
         },
         "workshop": {
@@ -238,14 +262,20 @@
             506
           ],
           "label_point": [
-            1153,
-            603
+            1157,
+            575
           ],
           "bounds": [
             953,
             404,
             308,
             173
+          ],
+          "label_bounds": [
+            1104,
+            552,
+            107,
+            46
           ]
         },
         "store": {
@@ -284,14 +314,20 @@
             522
           ],
           "label_point": [
-            1454,
-            631
+            1449,
+            604
           ],
           "bounds": [
             1320,
             441,
             275,
             163
+          ],
+          "label_bounds": [
+            1374,
+            582,
+            150,
+            45
           ]
         },
         "market": {
@@ -338,14 +374,20 @@
             345
           ],
           "label_point": [
-            1023,
-            436
+            917,
+            378
           ],
           "bounds": [
             786,
             269,
             352,
             143
+          ],
+          "label_bounds": [
+            882,
+            358,
+            70,
+            40
           ]
         },
         "square": {
@@ -385,13 +427,19 @@
           ],
           "label_point": [
             824,
-            538
+            516
           ],
           "bounds": [
             749,
             388,
             152,
             124
+          ],
+          "label_bounds": [
+            788,
+            495,
+            72,
+            43
           ]
         },
         "gate": {
@@ -442,14 +490,20 @@
             764
           ],
           "label_point": [
-            625,
-            764
+            629,
+            774
           ],
           "bounds": [
             593,
             668,
             367,
             162
+          ],
+          "label_bounds": [
+            559,
+            751,
+            140,
+            46
           ]
         },
         "river": {
@@ -492,14 +546,20 @@
             786
           ],
           "label_point": [
-            1487,
-            764
+            1551,
+            806
           ],
           "bounds": [
             1217,
             673,
             443,
             179
+          ],
+          "label_bounds": [
+            1507,
+            782,
+            88,
+            48
           ]
         },
         "forest": {
@@ -538,25 +598,29 @@
             199
           ],
           "label_point": [
-            512,
-            215
+            507,
+            191
           ],
           "bounds": [
             372,
             129,
             205,
             141
+          ],
+          "label_bounds": [
+            455,
+            170,
+            104,
+            43
           ]
         }
       },
-      "style": "aged-parchment-ink",
-      "crop": [
-        60,
-        20,
-        1612,
-        894
-      ],
-      "source_art": "design/maps/20261017/village-ink-source.webp"
+      "style": "handlettered-parchment-ink",
+      "source_art": "design/maps/20261017/village-ink-lettered.webp",
+      "offset": [
+        16,
+        -24
+      ]
     },
     "mountain": {
       "art": "assets/room13-map-mountain.webp",

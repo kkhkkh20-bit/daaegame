@@ -12,9 +12,7 @@
       "sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb",
       "preserved_approved_actions": [],
       "pending_revised_actions": [
-        "wipe_board",
-        "write_attendance",
-        "collapse_attendance"
+        "wipe_board"
       ]
     },
     "resident_tosil": {
@@ -53,39 +51,10 @@
   },
   "pending_expressions": {
     "doto": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
-    ],
-    "neoul": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
-    ],
-    "resident_bori": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
+      "flustered"
     ],
     "resident_guseul": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
-    ],
-    "resident_kkwak": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
+      "flustered"
     ],
     "resident_librarian": [
       "joy",
@@ -95,11 +64,7 @@
       "surprise"
     ],
     "resident_madam": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
+      "flustered"
     ],
     "resident_momo": [
       "joy",
@@ -109,13 +74,6 @@
       "surprise"
     ],
     "resident_mungchi": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
-    ],
-    "resident_nubi": [
       "joy",
       "flustered",
       "angry",
@@ -144,11 +102,7 @@
       "surprise"
     ],
     "resident_teacher": [
-      "joy",
-      "flustered",
-      "angry",
-      "anxious",
-      "surprise"
+      "joy"
     ],
     "resident_yeoni": [
       "joy",
@@ -218,31 +172,28 @@
     {
       "place": "inn",
       "field": "slot_actions",
-      "person": "resident_guseul",
-      "requested": "living_stamp"
-    },
-    {
-      "place": "inn",
-      "field": "slot_actions",
       "person": "resident_madam",
       "requested": "living_inspect"
-    },
-    {
-      "place": "hall",
-      "field": "slot_actions",
-      "person": "doto",
-      "requested": {
-        "morning": "action_1",
-        "afternoon": "action_1",
-        "evening": "action_2"
-      }
     },
     {
       "place": "post",
       "field": "old_scene_slot_actions",
       "person": "resident_guseul",
-      "requested": "living_stamp"
+      "requested": "living_stamp",
+      "reason": "Source ready; crowded old-scene render obscures face and stamp. Hold this location until staging is corrected; inn connection passed."
     }
   ],
-  "guard_pending": "Five non-neutral dialogue expressions and authored investigation actions still need the approved mouth correction; retained, not marked complete."
+  "guard_pending": "Five dialogue expressions connected and locally rendered; nine old investigation actions still await mouth correction.",
+  "completed_expression_batches": {
+    "resident_kkwak": "art/incoming/kkwak-expressions-20261017/connection-report.json",
+    "doto": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "guard": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "neoul": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "resident_bori": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "resident_guseul": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "resident_lamplighter": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "resident_madam": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "resident_nubi": "art/incoming/reviewed-batches-20261017/connection-report.json",
+    "resident_teacher": "art/incoming/reviewed-batches-20261017/connection-report.json"
+  }
 }

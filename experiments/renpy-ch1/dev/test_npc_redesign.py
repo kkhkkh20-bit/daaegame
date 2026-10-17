@@ -71,7 +71,9 @@ class NpcRedesign(unittest.TestCase):
             for data in (CAST, acting, PORTRAITS):
                 self.assertEqual(files(data[npc] if data is not acting else acting), {new}, npc)
             if not FULLBODY[npc].get("acting_package"):   # 0.18.92: dialogue from the expression package
-                self.assertEqual(files({k: v for k, v in FULLBODY[npc].items() if k != "poses"}), {new}, npc)
+                current={k:v for k,v in FULLBODY[npc].items() if k not in ("poses","images")}
+                current["images"]={k:v for k,v in FULLBODY[npc]["images"].items() if not v.get("review_batch")}
+                self.assertEqual(files(current), {new}, npc)
             # Old seated / living poses would show the old body: removed.
             self.assertEqual(set(acting), {"neutral", "thinking", "distressed", "expressive",
                                            "avatar_neutral", "avatar_thinking", "avatar_distressed", "avatar_expressive"})

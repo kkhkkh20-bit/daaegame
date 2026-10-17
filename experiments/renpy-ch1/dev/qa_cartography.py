@@ -31,11 +31,14 @@ async def main():
     x,y=await q.py('import renpy;result=renpy.store.r13_cart_label_point('+repr(key)+')')
     await q.input(x,y);assert (await scope())==['village',key];assert await q.room()==before
    x,y=await point('village','inn');await q.input(x,y)
-   checks.append('All 11 visible game-font name labels select their own destination without travel')
+   checks.append('All 11 handwritten name targets select their own destination without travel')
    await q.shot('01-village');checks.append('All 11 building/terrain polygons select exact place without state/time changes')
    # Empty corner of the inn rectangle must not steal a neighbouring click.
    x,y=await point('village','post');await q.input(x,y);await q.input(47,240);assert (await scope())[1]=='post'
-   x,y=await point('village','inn');await page.mouse.move(x,y);await asyncio.sleep(.4);await q.shot('02-village-hover')
+   x,y=await q.py('import renpy;result=renpy.store.r13_cart_label_point("school")');await page.mouse.move(x,y);await asyncio.sleep(.4)
+   assert (await scope())[1]=='post'
+   assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_map").scope["map_hover"]')=='school'
+   await q.shot('02-village-hover');checks.append('Hovering a handwritten name changes only focus, retaining selected destination')
    await q.press('여관 안');assert (await scope())[0]=='inn';await q.shot('03-inn-text')
    assert not await q.py('import renpy;result=any(k in dict(renpy.store.r13_map_nodes("inn")) for k in ("passage","ancient","guestroom"))')
    await q.press('숲·산길');await q.shot('04-mountain-hidden');assert not await q.py('import renpy;result=renpy.store.r13_cart_cover_visible("altar") or renpy.store.r13_cart_cover_visible("greenhouse")')
