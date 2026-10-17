@@ -60,8 +60,8 @@ init 147 python:
             ("dad","토실아, 첫날 밤에도 숲에 갔었니?"),
             ("resident_tosil","……네. 할머니가 부인한테 차 갖다 드리라고 해서요. 거짓말해서 죄송해요.")])),
         ("night1","resident_kalbaram"):dict(claim=[
-            ("dad","고개 마차가 들어온 날 밤, 어디 계셨습니까?"),
-            ("resident_kalbaram","숲 끝 덫을 보고 내려왔소."),
+            ("dad","요즘 숲에서 별다른 일은 없었습니까?"),
+            ("resident_kalbaram","고개 마차가 들어온 날 밤 말이오? 숲 끝 덫을 보고 내려오는 길이었소."),
             ("resident_kalbaram","큰 전나무 밑에서 흰 토끼 아이가 보온병을 안고 울고 있었지. 여관까지 데려다줬소."),
             ("dad","왜 아무에게도 말하지 않으셨습니까?"),("resident_kalbaram","묻는 사람이 없었으니까.")]),
         ("night1","resident_hyeoni"):dict(claim=[
@@ -191,6 +191,8 @@ label r13_alibi_topic:
         return
     call r13_lines(r13_alibi_lines(_ab_key),"alibi:"+_ab_key[6:]+(":truth" if R13_ALIBI[tuple(_ab_key.split(":",2)[1:])].get("truth") and r13_has(R13_ALIBI[tuple(_ab_key.split(":",2)[1:])]["truth"][0]) else ""))
     $ r13_flag(_ab_key)
+    # 0.19.17 (owner: "읽어도 점이 안 없어짐"): mark it read like any other question (strike-through, no dot).
+    $ r13_finish_topic(_ab_key)
     $ _ab_new=r13_alibi_new_crosses()
     while _ab_new:
         $ _ab_cross=_ab_new.pop(0)

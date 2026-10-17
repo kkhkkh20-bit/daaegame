@@ -222,6 +222,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 166 | `systems/room13_relations.rpy:20` | _r13_shelf_flag |
 | 3 | 170 | `systems/room13_shelf.rpy:28` |  |
 
+## `r13_line_performance` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:93` | _r13_mood_line_performance |
+| 2 | 141 | `systems/room13_daram_mood.rpy:28` | _r13_lf_performance |
+| 3 | 192 | `systems/room13_line_faces.rpy:33` |  |
+
 ## `r13_new` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -272,6 +280,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 75 | `room13_dialogue_openings_20261013.rpy:169` | _r13_review_opening |
 | 2 | 173 | `systems/room13_review_knowledge.rpy:139` |  |
 
+## `r13_daram_home_activity` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 101 | `systems/room13_daram_home.rpy:16` | _r13_home_first_activity |
+| 2 | 187 | `systems/room13_daram_home_first.rpy:14` |  |
+
+## `r13_daram_home_allowed` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 101 | `systems/room13_daram_home.rpy:52` | _r13_home_first_allowed |
+| 2 | 187 | `systems/room13_daram_home_first.rpy:21` |  |
+
 ## `r13_debate_judge` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -299,6 +321,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:190` |  |
+
+## `r13_fullbody_close_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 58 | `room13_fullbody_dialogue.rpy:118` | _r13_lf_close |
+| 2 | 192 | `systems/room13_line_faces.rpy:66` |  |
 
 ## `r13_grant` (2층)
 
@@ -348,13 +377,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 126 | `systems/room13_life_closeups.rpy:23` | _r13_gm_tool_name |
 | 2 | 127 | `systems/room13_gimmicks.rpy:45` |  |
-
-## `r13_line_performance` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:93` | _r13_mood_line_performance |
-| 2 | 141 | `systems/room13_daram_mood.rpy:28` |  |
 
 ## `r13_local_connections` (2층)
 

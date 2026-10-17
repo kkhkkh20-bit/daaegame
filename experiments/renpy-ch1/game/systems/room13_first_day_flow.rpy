@@ -97,7 +97,7 @@ label r13_life_first_night:
         if r13_has("letter_no_acorn"):
             call r13_lines([("daram","근데 편지에는 도토리가 없었어. 엄마는 나한테 쓸 때 꼭 그리는데."),("dad","응. 아빠도 그게 마음에 걸려. 그 편지는 정말 엄마가 쓴 걸까?")],"life:night1:no_acorn")
     if r13_mother_knowledge()["promised"]:
-        call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 맡고 있대."),("dad","응. 3일에 다시 만나기로 했어. 엄마가 어떤 글을 남겼을까?")],"life:night1:promised")
+        call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 맡고 있대."),("dad","응. 일요일 오전에 수리점에서 다시 만나기로 했어. 엄마가 어떤 글을 남겼을까?")],"life:night1:promised")
     elif r13_mother_knowledge()["recognized"]:
         call r13_lines([("daram","초롱 아저씨가 엄마를 알아봤지."),("dad","응. 엄마와 언제 어디서 만났는지도 더 들어 보고 싶어.")],"life:night1:recognized")
     elif r13_mother_knowledge()["named"]:

@@ -23,10 +23,10 @@ init 189 python:
     R13_REACTIONS[("daram","E03")]=[(None,[("daram","엄마 바느질이야! 엄마는 실 끝을 꼭 두 번 감거든."),("daram","엄마가 여기 있었던 거야. ……언제였을까?")])]
     R13_REACTIONS[("daram","E06")]=[(None,[("daram","그날 내가 아빠한테 말한 거잖아. 나는 팔만 쳤어. 머리는 안 쳤어. 정말이야.")])]
     R13_REACTIONS[("daram","M01")]=[
-        ({"thread":"mom","min":5},[("daram","엄마 말대로 초롱 언니가 봉투를 갖고 있었어. 엄마는 다 준비해 두고 숨은 걸까?")]),
-        ({"thread":"mom","min":2},[("daram","초롱 언니가 등불 돌보는 사람이었지. 엄마는 언니한테 뭘 맡겼을까?")]),
+        ({"thread":"mom","min":5},[("daram","엄마 말대로 초롱 아저씨가 봉투를 갖고 있었어. 엄마는 다 준비해 두고 숨은 걸까?")]),
+        ({"thread":"mom","min":2},[("daram","초롱 아저씨가 등불 돌보는 사람이었지. 엄마는 아저씨한테 뭘 맡겼을까?")]),
         (None,[("daram","엄마 글씨다! 등불 돌보는 사람한테 물어보래."),("daram","아빠, 등불 돌보는 사람이 누굴까?")])]
-    R13_REACTIONS[("daram","L13")]=[(None,[("daram","이 눈썹 흉! 엄마야."),("daram","피코 아저씨는 엄마를 어디서 본 걸까?")])]
+    R13_REACTIONS[("daram","L13")]=[(None,[("daram","이 눈썹 흉! 엄마야."),("daram","피코 언니는 엄마를 어디서 본 걸까?")])]
     R13_REACTIONS[("daram","N05")]=[(None,[("daram","내 이름이야……. ‘엄마 여기 있’……. 그다음엔 뭐라고 썼을까?"),("daram","아빠, 엄마는 살아 있는 거지?")])]
     R13_REACTIONS[("daram","V08")]=[(None,[("daram","내가 손을 대니까 따뜻해졌어. 아무도 안 아팠는데."),("daram","그럼 왜 사람들이 그렇게 해야 한다고 했을까?")])]
     R13_REACTIONS[("dad","E02")]=[(None,[("dad","아빠랑 네가 같이 들어왔다는 기록이야. 이게 있으면 네가 혼자 몰래 들어왔다는 말은 못 해.")])]
@@ -154,3 +154,17 @@ init 189 python:
             ("resident_bori","애 열이 사흘째예요. ……이 약을 정말 우리 애한테 주시는 거예요?"),
             (None,"보리는 약상자를 끌어안고 한참 동안 말이 없었다."),
             ("resident_bori","장작 일로 학교에 진 빚도 다 갚을게요. 이 은혜는 안 잊어요.")])]
+
+    # 첫날 밤 알리바이(소유자: "왜 첫날밤을 뜬금없이 물어보지? 토실이를 본 적도 없음").
+    #   첫날 밤에 무슨 일이 있었는지 알게 된 뒤에만 묻는다: 칼바람이 숲에서 토실을 데려온 이야기, 또는 토실의 심부름을 본 뒤.
+    #   칼바람에게는 "어디 계셨습니까"가 아니라 숲 이야기를 묻는다. 토실 이름이 나오는 질문은 토실을 만난 뒤에만.
+    _fx_night_known={"any":[{"has":["alibi:night1:resident_kalbaram"]},{"has":["tosil_errand_seen"]}]}
+    _fx_met_tosil=lambda s:"resident_tosil" in r13_met_people()
+    if "alibi:night1:resident_kalbaram" in ROOM13["topics"]:
+        ROOM13["topics"]["alibi:night1:resident_kalbaram"].update(title="요즘 숲에서 별일은 없었습니까?",timeless=True)
+    for _fx_key,_fx_steps in (("alibi:night1:granny",{"all":[_fx_night_known,_fx_met_tosil]}),
+            ("alibi:night1:resident_tosil",{"all":[_fx_night_known,_fx_met_tosil]}),
+            ("alibi:night1:resident_hyeoni",_fx_night_known)):
+        if _fx_key in ROOM13["topics"]:
+            ROOM13["topics"][_fx_key].pop("timeless",None)
+            ROOM13["topics"][_fx_key].update(steps=_fx_steps,title="토실이가 숲에 간 밤, 어디 계셨습니까?" if _fx_key!="alibi:night1:resident_tosil" else "숲에 간 그 밤에 뭐 했니?")

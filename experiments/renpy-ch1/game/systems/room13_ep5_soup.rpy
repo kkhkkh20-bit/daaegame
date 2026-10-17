@@ -448,7 +448,7 @@ label r13_ws_meeting:
 label r13_ws_after:
     if r13_has("portrait_finished_by_daram") and r13_has("mom_reunited") and r13_ws_daram():
         call r13_lines([(None,"다람이 판자 하나를 엄마 앞에 내밀었다. 엄마 얼굴. 코만 크레용으로 삐뚤빼뚤."),
-            ("daram","그림쟁이 아저씨가 그린 거야. 코는 내가 그렸어. 약속했거든."),
+            ("daram","그림쟁이 언니가 그린 거야. 코는 내가 그렸어. 약속했거든."),
             ("mom","……코를, 찡그렸네."),
             (None,"엄마가 판자를 끌어안고 울었다. 웃으면서. 코를 찡그리며.",{"cut":"U22-mother-portrait-crayon-nose"})],"ws:after:portrait")
     # 0.19.10: "내 애 하나 잃고"는 도담이 죽은 판(ws_some_alive)에서만. 도담이 산 판에서 아이 셋을 맡았으면 다른 말.

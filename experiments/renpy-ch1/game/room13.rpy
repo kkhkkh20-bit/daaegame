@@ -113,7 +113,7 @@ label room13_start:
     $ r13_note_encounter("guard")
     $ r13_note_encounter("daram")
     call r13_lines([('karo', '도착했어요. 발판이 얼어서 미끄러우니 조심해서 내려요.'), ('daram', '까로 아저씨, 이 가방도 같이 내려 주세요.'), (None, '까로가 가방을 내려놓고 마차 바퀴 밑을 살폈다. 나는 다람이의 손을 잡고 조심스럽게 발판에서 내렸다.'), ('dad', '무슨 문제라도 있습니까?'), ('karo', '바퀴 축에 금이 갔네요. 짐부터 내리고 살펴봐야겠습니다.'), ('dad', '혹시 도와드릴까요?'), ('karo', '먼저 방문 등록부터 하고 오세요. 짐은 제가 보고 있을게요. 저쪽 경비 초소에서 확인을 받으시면 됩니다.')],"entry:karo:arrival")
-    call r13_lines([('guard', '안녕하십니까. 어떤 일로 오셨습니까?'), ('dad', '아내를 만나러 왔습니다. 아내가 이 마을 여관에서 편지를 보냈거든요. 방문 신청도 미리 해 두었습니다.'), (None, '나는 편지와 방문 신청서를 건넸다. 경비원이 초소의 방문자 명단을 펼쳤다.'), ('guard', '다돌 님 맞으십니까?'), ('dad', '네. 그리고 이 아이는 제 딸입니다.'), ('daram', '제 이름은 다람이예요.'), ('guard', '잠시만 기다려 주십시오. 제가 가진 명단에는 다돌 님 한 분만 적혀 있습니다.'), ('dad', '아이와 함께 두 명으로 신청했는데요.'), (None, '경비원이 내가 낸 신청서와 초소 명단을 나란히 놓고 비교했다.'), ('guard', '제가 받은 명단에는 한 분만 적혀 있습니다. 처음 신청할 때 내신 원본 서류를 확인해 봐야겠습니다.'), ('dad', '확인하는 동안 어디서 기다리면 됩니까?'), ('guard', '확인이 끝날 때까지 두 분 모두 대기소 앞에서 기다려 주십시오.'), ('daram', '아빠, 확인하는 거 오래 걸려?'), ('dad', '여쭤볼게. 확인하는 데 얼마나 걸립니까?'), ('guard', '담당자는 저녁에나 돌아옵니다. 그때까지 기다리시면 제가 대조해 드리겠습니다.'), ('dad', '그 전에 먼저 확인할 방법은 없습니까?'), ('guard', '저기 선반에 예약 서류 원본이 있습니다. 직접 찾아보시겠습니까?'), ('dad', '알겠습니다. 다람아, 아빠랑 여기서 같이 찾아보자.')],"entry:arrival")
+    call r13_lines([('guard', '안녕하십니까. 어떤 일로 오셨습니까?'), ('dad', '아내를 만나러 왔습니다. 아내가 이 마을 여관에서 편지를 보냈거든요. 방문 신청도 미리 해 두었습니다.'), (None, '나는 편지와 방문 신청서를 건넸다. 경비원이 초소의 방문자 명단을 펼쳤다.'), ('guard', '다돌 님 맞으십니까?'), ('dad', '네. 그리고 이 아이는 제 딸입니다.'), ('daram', '제 이름은 다람이예요.'), ('guard', '잠시만 기다려 주십시오. 제가 가진 명단에는 다돌 님 한 분만 적혀 있습니다.'), ('dad', '아이와 함께 두 명으로 신청했는데요.'), (None, '경비원이 내가 낸 신청서와 초소 명단을 나란히 놓고 비교했다.'), ('guard', '제가 받은 명단에는 한 분만 적혀 있습니다. 처음 신청할 때 내신 원본 서류를 확인해 봐야겠습니다.'), ('dad', '확인하는 동안 어디서 기다리면 됩니까?'), ('guard', '확인이 끝날 때까지 두 분 모두 대기소 앞에서 기다려 주십시오.'), ('daram', '아빠, 확인하는 거 오래 걸려?'), ('dad', '여쭤볼게. 확인하는 데 얼마나 걸립니까?'), ('guard', '원본 서류는 서류 담당자만 꺼내게 되어 있습니다. 담당자는 저녁에나 돌아오고요.'), ('dad', '그럼 저녁까지 아이와 이 눈밭에서 기다려야 합니까?'), ('guard', '신청하신 분이 자기 서류를 직접 찾아 보여 주시는 건 됩니다. 저기 선반에 도착 날짜별로 꽂혀 있습니다.'), ('guard', '원본에 두 분으로 적혀 있으면, 그걸 저에게 보여 주십시오. 그 자리에서 고쳐 드리겠습니다.'), ('dad', '알겠습니다. 다람아, 아빠랑 저 선반에서 우리 서류를 찾아보자.'), ('dad', '(선반에서 우리 예약 서류를 찾아 돌목에게 보여 주면 된다.)', {'thought': True})],"entry:arrival")
 label r13_entry:
     hide r13_visitor
     $ dialogue_speaker=None
@@ -176,14 +176,17 @@ label r13_entry_dispatch:
         elif r13_item:
             call r13_lines([("guard","여관에서 부친 편지구려. 다만 이 편지만 보고 출입 명단을 고칠 수는 없습니다. 예약 원본을 확인해야 합니다.")],"entry:letter")
         hide screen r13_material_corner
+    elif r13_choice[1]=="where":
+        call r13_lines([("guard","선반에서 오늘 날짜, 금요일 묶음을 보십시오. 손님 서류는 까로 씨가 아까 넘겨준 것이라 맨 앞에 있을 겁니다."),("guard","찾으시면 ‘보여주기’로 저에게 내밀어 주십시오.")],"entry:where")
+        $ r13_flag("question_read:entry:where")
     elif r13_choice[1]=="wait":
-        call screen r13_confirm("대기소 앞에서 원본 담당자가 돌아오기를 기다린다.")
+        call screen r13_confirm("서류 찾기를 그만두고, 저녁에 담당자가 돌아올 때까지 대기소 앞에서 기다린다.")
         if _return:
             $ r13_flag("question_read:entry:wait")
             call r13_scene("winter","눈에 막힌 입구","calm")
             call r13_lines([("guard","원본에는 두 분으로 되어 있는데 제가 한 분으로 잘못 옮겨 적었습니다. 명단을 고쳤으니 함께 들어가십시오."),("daram","아빠, 추워서 손이 잘 안 펴져."),("dad","오래 기다리게 했네. 손 이리 줘. 같이 들어가자.")],"entry:wait")
             jump r13_entry_done
-    if r13_choice[0]=="entry" and r13_choice[1] in ("explain","argue","wait"):
+    if r13_choice[0]=="entry" and r13_choice[1] in ("explain","argue","wait","where"):
         jump r13_entry_guard_menu
     jump r13_entry
 
@@ -416,6 +419,8 @@ label r13_talk:
     call r13_notice_before_talk(r13_target) from r13_notice_before_talk_return
     if not _return:
         return
+    if r13_target=="daram" and r13_daram_home_first_due():
+        call r13_daram_home_first
     $ r13_first_encounter = r13_target not in r13_met_people()
     $ r13_note_encounter(r13_target)
     $ r13_encounter_key=r13_calendar_key(r13_target)

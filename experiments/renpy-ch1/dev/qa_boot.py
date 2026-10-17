@@ -19,7 +19,8 @@ ONLY = os.environ.get('QA_BOOT_ONLY', '')
 
 
 Q_EXPLAIN = '신청과 이름 목록이 다른 이유를 묻는다'
-Q_WAIT = '원본과 다시 맞춰 달라고 한다'
+Q_WAIT = '못 찾겠다. 저녁까지 담당자를 기다린다'
+Q_WHERE = '원본 서류는 어디서 찾으면 됩니까?'  # 0.19.17: wait appears only after this question
 
 
 def same_clock(a, b):
@@ -51,6 +52,7 @@ async def desktop_flow(q, pg, step, report):
     await step('explain-answered')
     # Wait: the confirm opens; cancelling leaves time and flags alone.
     await guard_topics(q)
+    await q.press(Q_WHERE); await q.advance(); await guard_topics(q)
     before = (await q.state())['room']
     await q.press(Q_WAIT); await q.wait('r13_confirm')
     await step('wait-confirm')

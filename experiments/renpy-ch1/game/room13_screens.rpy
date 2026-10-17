@@ -379,7 +379,9 @@ screen r13_entry_topics():
     zorder 30
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
-    $ questions=[("신청한 것과 이름 목록이 다른 이유가 뭡니까?",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본과 다시 맞춰 봐 주시겠습니까?",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
+    # 0.19.17 (owner): the wait-for-the-clerk choice no longer sits next to the first question, where a player
+    #   who missed "find the original and show it" pressed it by default. It comes only after asking where to look.
+    $ questions=[("신청한 것과 이름 목록이 다른 이유가 뭡니까?",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본 서류는 어디서 찾으면 됩니까?",Return(("entry","where")),r13_has("question_read:entry:where"))]+([("못 찾겠다. 저녁까지 담당자를 기다린다",Return(("entry","wait")),r13_has("question_read:entry:wait"))] if r13_has("question_read:entry:where") else [])
     use r13_question_list("guard","interview_neutral","돌목에게 묻기",questions,ready,return_action=Return(("entry","back")))
     use r13_toolbar(investigate_action=Return(("entry","back")),present_action=Return(("entry","argue")),person="guard",mode="talk",ready=ready)
 

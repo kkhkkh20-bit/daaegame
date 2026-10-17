@@ -18,8 +18,8 @@ init 158 python:
             ("resident_ttadak","여관 일은 일당이 두 배라 거절 못 해요. 판자 값은 어떻게든 벌어야죠."),
             ("resident_ttadak","저는 판자를 늘 반 치씩 길게 잘라요. 모자라는 것보다 남는 게 낫거든요."),
             ("dad","(남는 판자는 결국 남의 천막으로 간다.)",{"thought":True})]),
-        "ep6:st_momo_glasses":r13_st_topic("resident_momo","늘 안경을 품에 넣고 다니시네요",(2,12),flags=["st_momo_glasses"],lines=[
-            ("resident_momo","제 안경이 아니에요. 첫 겨울에 보호소로 간 동생 거예요."),
+        "ep6:st_momo_glasses":r13_st_topic("resident_momo","그 초록 숄을 늘 여미고 계시네요",(2,12),flags=["st_momo_glasses"],lines=[
+            ("resident_momo","제 숄이 아니에요. 첫 겨울에 보호소로 간 동생 거예요."),
             ("resident_momo","옛 마을 물건이라면 뭐든 산다고들 흉보죠. 사람은 가도 물건은 남으니까, 그거라도 붙잡아 두는 거예요."),
             ("resident_momo","언젠가 누가 ‘이건 누구 것이었소’ 하고 물어봐 주면 좋겠어요. 그럼 그 이름을 한 번 더 말할 수 있으니까요.")]),
         # ---- 구한 뒤 찾아가면 ----

@@ -229,6 +229,12 @@ init 999 python:
             evidence=[e for e in s["evidence"] if e[0] in "HW"],town=s.get("town",{}))
         open(renpy.config.basedir+"/qa_result.txt","w").write(json.dumps(out,ensure_ascii=False))
 
+label r13_qa_talk_fresh(person):
+    # 0.19.17: like a real click on a person not met yet (the approach choice comes first).
+    $ r13_target=person
+    call r13_talk
+    jump r13_roam
+
 label r13_qa_talk(person):
     # Already met: skip the first-approach choice.
     $ r13_note_encounter(person)

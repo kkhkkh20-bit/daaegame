@@ -404,7 +404,7 @@ init 184 python:
     # 모모 관장 (resident_momo)
     # =================================================================
     _g3_set("ep6:st_momo_glasses",timeless=True,
-        again=[(None,[("resident_momo","동생 안경은 오늘도 여기 있어요. 물어봐 주셔서 고마워요.")])])
+        again=[(None,[("resident_momo","동생 숄은 오늘도 여기 있어요. 물어봐 주셔서 고마워요.")])])
 
     _g3_set("life:resident_momo:work",
         again=[(None,[("resident_momo","쓰는 법을 잊으면 다 장식이 돼요. 그래도 버리지는 않아요.")])])
@@ -521,7 +521,7 @@ init 184 python:
         ("resident_momo","저는 아직 동생 이름도 기억하는데요. 누가 이 칸을 채웠는지는 저도 몰라요.")])])
     _g3_react("resident_momo","W9",[
         ({"has":["ep6:st_momo_glasses"]},[("resident_momo","흉보는 말 그대로 적으셨네요. 네, 옛 마을 물건이면 사요."),
-            ("resident_momo","어디에 쓰느냐고 물으시면, 아무 데도 안 써요. 동생 안경처럼 남겨 두는 거예요.")]),
+            ("resident_momo","어디에 쓰느냐고 물으시면, 아무 데도 안 써요. 동생 숄처럼 남겨 두는 거예요.")]),
         (None,[("resident_momo","흉보는 말 그대로 적으셨네요. 네, 옛 마을 물건이면 사요."),
             ("resident_momo","어디에 쓰느냐고 물으시면…… 아무 데도 안 써요. 남겨 두는 거예요. 이유까지 다 말씀드릴 생각은 없어요.")]),
     ])

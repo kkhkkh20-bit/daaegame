@@ -378,7 +378,7 @@ label r13_ev_c_locked(room_safe):
         ("resident_madam","재고 세는 일을 다 못 끝냈으니 절반만 드릴게요. 일곱 냥.")],"ev:c:released")
     if room_safe:
         call r13_lines([(None,"13호로 돌아가 보니 다람이가 문 뒤에서 꾸벅꾸벅 졸고 있었다."),
-            ("daram","밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 아저씨 같았어.")],"ev:c:room_safe")
+            ("daram","밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 오빠 같았어.")],"ev:c:room_safe")
     else:
         call r13_lines([(None,"13호로 돌아가 보니 짐이 뒤집혀 있었다. 수첩 사이에 끼워 둔 종이들도 순서가 뒤섞여 있었다."),
             ("dad","(누군가 밤새 이 방을 뒤졌다. 그러려고 나를 창고에 가둔 것이다.)",{"thought":True})],"ev:c:room_searched")
@@ -405,7 +405,7 @@ label r13_ev_c_wedge(room_safe=False):
     $ r13_flag("madam_suspicious")
     if room_safe:
         call r13_lines([(None,"13호로 돌아가 보니 다람이가 문 뒤에서 꾸벅꾸벅 졸고 있었다."),
-            ("daram","밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 아저씨 같았어.")],"ev:c:room_safe")
+            ("daram","밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 오빠 같았어.")],"ev:c:room_safe")
     else:
         $ r13_flag("room_searched")
         if "E18" in room13["evidence"]:

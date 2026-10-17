@@ -147,8 +147,8 @@ init 119 python:
             ("daram","할아버지는 내가 물어보면 다 대답해 줬어."),
             ("dad","그래. 꼼꼼한 분 같더라.")]),
         ("night:buri","부리를 만난 이야기를 한다",lambda:store.room13.get("case_state")=="occurred" and store.room13.get("trial_ended") and store.room13.get("daram_state") in ("with_dad","rescued") and (r13_has("buri_revised") or r13_has("buri_heard_assert")),[
-            ("dad","오늘 부리 아저씨를 만났어."),
-            ("daram","부리 아저씨는 아직 나랑 말하기 싫은가 봐."),
+            ("dad","오늘 부리 오빠를 만났어."),
+            ("daram","부리 오빠는 아직 나랑 말하기 싫은가 봐."),
             ("dad","……아저씨한테도 시간이 필요할 거야.")]),
         ("night:helping","오늘 같이 한 일을 이야기한다",lambda:store.room13.get("day",1)>=R13_WEEK2_DAY and any(r13_has(f) for f in ("w2_bell_rung","share_patients","share_children","share_lottery")),[
             ("dad","오늘 짐 나르는 거 같이 해 줘서 고마워."),

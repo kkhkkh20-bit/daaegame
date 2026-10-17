@@ -38,8 +38,15 @@ init 173 python:
             if key=="M01":r13_flag("mother_recognized","intro:memo_shown")
             if s.get("day",1)<3:
                 when="모레" if s.get("day",1)==1 else "내일"
-                return [(person,"부인이 가족에게 남긴 봉투를 맡아 두었어요. "+when+" 찾아둘 테니 다시 와 주시겠어요?"),
-                    ("dad","3일에 다시 뵙겠습니다.")]
+                # 0.19.17 (owner): not straight to "부인이…": a beat of recognising, then the promise, then when to come back.
+                opener={"M01":[(None,"초롱이 메모를 받아 들고 한참 들여다보았다."),(person,"……아, 이거군요. 이 글씨, 알아요.")],
+                    "J04":[(person,"……나비가 그걸 봤군요."),(person,"네. 그날 부인이 제게 무언가 건네신 건 맞아요.")],
+                    "J05":[(person,"……까로 씨가 점검함을 봤군요."),(person,"네. 거기 넣은 건 제 물건이 아니에요.")]}[key]
+                return opener+[(person,"맞습니다. 부인이 가족분께 전해 달라고 봉투 하나를 저에게 맡기셨어요."),
+                    (person,"점검함 깊숙이 넣어 둬서 지금 바로 꺼내 드릴 수는 없어요. "+when+" 찾아서 전해 드릴게요."),
+                    # 0.19.17 (owner): residents name the weekday and the place, not "3일째".
+                    (person,r13_weekday(3)+"요일 오전에 수리점으로 저를 찾아와 주시겠어요? 아침마다 거기서 등 부품을 손보거든요."),
+                    ("dad",r13_weekday(3)+"요일 오전, 수리점으로 꼭 찾아가겠습니다.")]
             r13_flag("topic:lamplighter_warning")
             if before["received"]:
                 return [(person,"전에 드린 편지가 부인이 가족에게 남긴 글이에요. 지금 어디 계신지는 저도 몰라요.")]
@@ -107,7 +114,7 @@ init 173 python:
                 ("dad","응. 가져온 편지와 엄마가 맡긴 글을 나란히 놓고 확인해 보자.")]
         if k["promised"]:
             return [("daram","초롱 아저씨가 엄마 봉투를 맡고 있댔지?"),
-                ("dad","응. 3일에 확인하기로 했어. 엄마가 어떤 글을 남겼을까?" if k["pending"] else "응. 등 밑 점검함에 두었다고 했어. 어떤 글을 남겼을까?")]
+                ("dad","응. 일요일 오전에 수리점에서 받기로 했어. 엄마가 어떤 글을 남겼을까?" if k["pending"] else "응. 등 밑 점검함에 두었다고 했어. 어떤 글을 남겼을까?")]
         if k["post"] or k["post_checked"]:return _r13_review_direction()
         if r13_has("J04"):
             return [("daram","나비 언니가 엄마가 초롱 아저씨에게 봉투를 건네는 걸 봤대."),("dad","그 봉투는 누구에게 남긴 글일까?")]

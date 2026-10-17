@@ -11,7 +11,7 @@ testcase review_knowledge01916:
     click pos (640,600) until eval (renpy.get_screen("say") and "초롱 아저씨가 엄마 봉투를 맡고 있대" in renpy.get_screen("say").scope.get("what","")) timeout 40
     pause 0.5
     screenshot "review_night_promise.png"
-    click pos (640,600) until eval (renpy.get_screen("say") and "3일에 다시 만나기로 했어" in renpy.get_screen("say").scope.get("what","")) timeout 20
+    click pos (640,600) until eval (renpy.get_screen("say") and "일요일 오전에 수리점에서 다시 만나기로 했어" in renpy.get_screen("say").scope.get("what","")) timeout 20
     pause 0.5
     screenshot "review_night_date.png"
     assert eval (r13_mother_knowledge()["pending"] and "E18" not in room13["evidence"])

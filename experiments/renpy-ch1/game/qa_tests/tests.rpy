@@ -12230,7 +12230,7 @@ testcase owner_fixes_0192:
     screenshot "relations_day1.png"
     run Hide("r13_records")
     pause 0.5
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("entry_corrected","lodging","+ep"))
+    run Call("r13_qa_roam",dict(day=2,period=1,location="square",life_poc=True),("entry_corrected","lodging","+ep"))
     pause until eval ("piko_seen" in room13["flags"]) timeout 30
     pause 0.8
     assert eval (r13_scene_bg=="winter_square")
@@ -12481,3 +12481,32 @@ testcase thread_audit_dump:
     $ room13["case_state"]="occurred"
     $ r13_qa_thread_audit_dump()
     $ r13_qa_note("thread audit dumped")
+
+testcase sling_offer_approach:
+    # 0.19.17 (owner): pressing 슬링 with "!" at first meeting: the approach choice must lead to her questions
+    #   with the ! row, not drop out of the conversation and lose the event.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True),("+w1c","+offers","ev_g_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval ("r13_w1c_letters" in room13["offers"] and "resident_sling" not in r13_met_people())
+    $ r13_qa_note("before: day %d period %d offers %r"%(room13["day"],room13["period"],list(room13["offers"])))
+    python:
+        _sl=[a for a in r13_stage_people() if a["person"]=="resident_sling"][0]
+        r13_qa_note("sling rect %r"%(_sl["rect"],))
+    run Call("r13_qa_talk_fresh","resident_sling")
+    pause 1.5
+    click pos (1150,90) until screen "r13_resident_approach" timeout 40
+    screenshot "sling_approach.png"
+    click "우편 일로 여쭙고 싶은 게 있습니다."
+    pause 1.0
+    click pos (1150,90) until screen "r13_topics" timeout 40
+    $ r13_qa_note("after: day %d period %d offers %r screens %r"%(room13["day"],room13["period"],list(room13.get("offers",{})),[s for s in ("r13_topics","r13_hub") if renpy.get_screen(s)]))
+    screenshot "sling_topics.png"
+    assert eval ("r13_w1c_letters" in room13["offers"])
+    click "김에 쐬는 봉투를 묻는다"
+    click pos (1150,90) until screen "choice" timeout 40
+    assert eval (r13_has("ev_l_done") or "r13_w1c_letters" not in room13.get("offers",{}))
+    screenshot "sling_event.png"

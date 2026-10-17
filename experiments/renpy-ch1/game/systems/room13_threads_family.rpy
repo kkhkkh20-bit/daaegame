@@ -293,8 +293,8 @@ init 182 python:
         recap="다람이는 도와준 사람이 우리를 기억하고 있었다고 했다")
     _g1_topic("night:owl",recap="다람이는 장갑을 찾아 준 할아버지가 물어보면 다 대답해 줬다고 했다")
     _g1_topic("night:buri",
-        variants=[(None,[("dad","부리 아저씨를 만났어."),
-            ("daram","부리 아저씨는 아직 나랑 말하기 싫은가 봐."),
+        variants=[(None,[("dad","부리 오빠를 만났어."),
+            ("daram","부리 오빠는 아직 나랑 말하기 싫은가 봐."),
             ("dad","……아저씨한테도 시간이 필요할 거야.")])],
         recap="다람이는 부리가 아직 자기와 말하기 싫은 것 같다고 했다")
     _g1_topic("night:helping",
