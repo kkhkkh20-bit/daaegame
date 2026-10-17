@@ -220,7 +220,7 @@ label r13_ancient_first_visit:
             ("daram","응. 그런데 여기, 이상하게 따뜻해.")],"ancient:first:daram")
     call r13_lines([("dad","(유리관 속 돌에 광장의 【돌】과 같은 홈무늬가 있다. 마을을 데우는 돌이 여기서 만들어졌던 걸까.)",{"thought":True}),
         (None,"바닥 먼지 위로 발자국 한 줄이 나 있었다. 작고 끝이 둥근 신발 자국. 여관 접수대 앞에서 날마다 보던 신발이다."),
-        ("dad","(【할머니】가 이곳을 드나든다.)",{"thought":True})],"ancient:first:footprints")
+        ("dad","(날마다 보던 그 신발이다. 【할머니】가 이곳을 드나드는 걸까?)",{"thought":True})],"ancient:first:footprints")
     if room13.get("granny_state")!="detained" and not room13.get("finale_started"):
         call r13_ancient_granny
     else:

@@ -186,7 +186,7 @@ label r13_ev_night_visit:
                     $ r13_flag("daram_warm","badook_ally")
                 else:
                     call r13_lines([("neoul","보호실은 여관이 아니오."),
-                        ("dad","(바둑이였다면 달랐을까. 경비도 사람마다 다르다.)",{"thought":True})],"ev:visit:blanket_no")
+                        ("dad","(다른 경비였다면 달랐을까. 경비도 사람마다 다르다.)",{"thought":True})],"ev:visit:blanket_no")
             "창살 너머로 이야기를 해 준다":
                 call r13_lines([("dad","옛날에 도토리 하나가 겨울 숲에서 길을 잃었는데……"),
                     ("daram","……그 도토리, 결국 집에 가?"),
