@@ -1,0 +1,121 @@
+{
+  "file": "resident_madam-four-expressions-reviewed.zip",
+  "bytes": 4301748,
+  "sha256": "2a5471432fb305aa865bd6d662957759c4edf8151399565ceda1e284275a24b5",
+  "status": "reviewed_candidate_pending_game_alignment_not_game_applied",
+  "embedded_manifest": {
+    "character": "resident_madam",
+    "name_ko": "백 부인",
+    "tool": "built-in image_gen",
+    "original": {
+      "file": "approved-original.webp",
+      "sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+      "bytes": 561632,
+      "width": 933,
+      "height": 1524,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "transparent_pixel_fraction": 0.5231,
+      "visible_bounds_alpha_gt_128": [
+        145,
+        2,
+        879,
+        1510
+      ]
+    },
+    "source_repo": "kkhkkh20-bit/daaegame",
+    "requested_source_ref": "6fa7807",
+    "source_path": "experiments/renpy-ch1/art/canonical48-rev45/originals/resident_madam.webp",
+    "source_verification": "Local canonical original SHA256 matches canonical48.csv approved spotted_dog row and board backup; direct GitHub binary read failed UTF-8 decode, so requested commit binary was not independently downloaded.",
+    "prompts_file": "prompts.json",
+    "revision_prompts_file": "revision-prompts.json",
+    "finals": {
+      "joy": {
+        "file": "resident_madam-joy.png",
+        "sha256": "164e790d56b536ee476a9c43c13c413aefd14148237ebb6c1d6f15c66831e106",
+        "bytes": 1012483,
+        "width": 981,
+        "height": 1603,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_pixel_fraction": 0.5297,
+        "visible_bounds_alpha_gt_128": [
+          144,
+          17,
+          932,
+          1584
+        ]
+      },
+      "angry": {
+        "file": "resident_madam-angry.png",
+        "sha256": "f707db318000d279339ebd98d7b09a9a932e196321a0b2d3879e3b082f177958",
+        "bytes": 1058304,
+        "width": 981,
+        "height": 1603,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_pixel_fraction": 0.4963,
+        "visible_bounds_alpha_gt_128": [
+          125,
+          13,
+          951,
+          1587
+        ]
+      },
+      "anxious": {
+        "file": "resident_madam-anxious-v3.png",
+        "sha256": "b5081afe8b44d6a495f6ed48551b8abec926f0bf52ba27a13f98f7b458458b86",
+        "bytes": 1009856,
+        "width": 981,
+        "height": 1603,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_pixel_fraction": 0.5403,
+        "visible_bounds_alpha_gt_128": [
+          172,
+          13,
+          941,
+          1586
+        ]
+      },
+      "surprise": {
+        "file": "resident_madam-surprise.png",
+        "sha256": "3d78d4bc0e78b1becba11db9d8de8a3cd1355174f616bd00f16c20cdfd931c59",
+        "bytes": 1083571,
+        "width": 981,
+        "height": 1603,
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_pixel_fraction": 0.4962,
+        "visible_bounds_alpha_gt_128": [
+          113,
+          20,
+          940,
+          1575
+        ]
+      }
+    },
+    "excluded": [
+      "resident_madam-anxious.png",
+      "resident_madam-anxious-v2.png"
+    ],
+    "qa": "QA.md",
+    "comparison": "comparison.html",
+    "game_modified": false
+  }
+}
