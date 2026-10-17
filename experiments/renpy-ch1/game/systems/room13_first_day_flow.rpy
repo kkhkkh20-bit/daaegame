@@ -54,7 +54,12 @@ init 94 python:
     def r13_present(person,key,identity=False):
         if key=="M01" and r13_has("M01"):
             if person in ("granny","nabi"):
+                # 0.19.17: Dad may already have met 초롱 on another route; do not plan what is done.
+                known=r13_mother_knowledge() if "r13_mother_knowledge" in globals() else {}
                 r13_flag("mother_lamplighter_lead")
+                if known.get("recognized") or known.get("promised"):
+                    return [("dad","아내 메모에 적힌 ‘등불을 돌보는 분’ 말입니다. 초롱 씨가 맞습니까?"),(person,"네, 마을 등불은 초롱이 돌봐요. 벌써 만나 보셨나 봐요."),
+                        ("dad","네. 아내를 알아보더군요." if known.get("recognized") else "네. 아내가 맡긴 것이 있다고 하더군요.")]
                 return [("dad","여기 적힌 ‘등불을 돌보는 분’이 누구입니까?"),(person,"초롱을 말하는 것 같네요. 마을 등불을 돌보는 분이에요."),("dad","등불을 돌보는 분께 아내를 만났는지 직접 물어보겠습니다.")]
             if person=="resident_lamplighter":
                 if store.room13["day"]<3:
@@ -89,6 +94,8 @@ label r13_life_first_night:
     call r13_lines([("daram","엄마가 여기 있었던 건 맞지? 이불도 엄마가 꿰맨 것 같아."),("dad","응. 메모도 남겨 뒀고. 그런데 엄마가 지금 어디 있는지는 더 알아봐야겠어.")],"life:night1:plan:v2")
     if r13_has("mother_expected_family"):
         call r13_lines([("daram","메모에 아빠랑 내가 도착하면 이 방으로 오라고 했지."),("dad","응. 엄마도 우리가 올 걸 알고 있었어. 그런데 기다리던 방에는 없네.")],"life:night1:comparison")
+        if r13_has("letter_no_acorn"):
+            call r13_lines([("daram","근데 편지에는 도토리가 없었어. 엄마는 나한테 쓸 때 꼭 그리는데."),("dad","응. 아빠도 그게 마음에 걸려. 그 편지는 정말 엄마가 쓴 걸까?")],"life:night1:no_acorn")
     if r13_mother_knowledge()["promised"]:
         call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 맡고 있대."),("dad","응. 3일에 다시 만나기로 했어. 엄마가 어떤 글을 남겼을까?")],"life:night1:promised")
     elif r13_mother_knowledge()["recognized"]:
@@ -97,7 +104,11 @@ label r13_life_first_night:
         call r13_lines([("daram","메모에 적힌 분은 초롱 아저씨지?"),("dad","응. 그분도 엄마를 기억할까?")],"life:night1:known_lead")
     else:
         call r13_lines([("daram","등불 돌보는 분이 누구인지는 아직 모르지?"),("dad","응. 이 마을 사람이라면 누구 말인지 알 텐데.")],"life:night1:unknown_lead")
-    call r13_lines([("daram","엄마는 왜 우리를 부르고 없어진 거야?"),("dad","엄마는 이 방에 우리에게 남긴 메모를 두었어. 무엇을 보고, 누구를 만났는지 하나씩 알아보자."),("daram","엄마 소식 찾으면 나한테도 꼭 말해 줘."),("dad","응. 같이 찾자.")],"life:night1:rest")
+    # 0.19.17 결심 (HANDOFF 3절 3번의 공통 결심, 정해지지 않은 숫자 종이는 뺐다). 돈·숙박 이야기는 하지 않는다.
+    call r13_lines([("daram","엄마는 왜 우리를 부르고 없어진 거야?"),("dad","엄마는 아무 말 없이 사라지는 사람이 아니야. 그러니까 무슨 까닭이 있을 거야."),
+        ("dad","엄마가 여기서 누구를 만나고 무엇을 했는지 하나씩 들어 보면, 엄마가 간 길이 보일 거야."),
+        ("daram","그럼 이 마을 사람들 얘기를 다 들어 보자. 엄마를 본 사람도 있을 거야."),
+        ("daram","엄마 소식 찾으면 나한테도 꼭 말해 줘."),("dad","응. 같이 찾자.")],"life:night1:rest")
     $ r13_flag("night1_seen")
     return
 

@@ -37,8 +37,13 @@ init 97 python:
         if store.room13.get("life_poc") and len(selected)==2 and set(selected)<=owned:
             if set(selected)=={"E01","M01"}:
                 r13_flag("mother_expected_family","letter_no_acorn")
+                if "E18" in owned:
+                    # 0.19.17: after Mom's own letter is read, the open question is no longer "did she write it?".
+                    return "(메모에는 도토리가 있고, 편지에는 없다. 엄마가 맡긴 글에는 오라는 편지를 쓴 적 없다고 적혀 있었다. 그럼 엄마 이름으로 온 편지는 누구 손에서 나왔을까?)"
                 return "(메모에는 다람이 이름 옆에 도토리가 있다. 엄마는 다람이에게 쓸 때 늘 도토리를 그린다. 그런데 편지에는 다람이 이름이 나오는데도 도토리가 없다. 글씨도 메모보다 반듯하다. 이 편지는 정말 엄마가 쓴 걸까?)"
             if set(selected)=={"M01","J02"}:
+                if "J03" in owned:
+                    return "(메모가 가리킨 초롱은 엄마를 만났고, 엄마는 그 길로 우체국에 들렀다. 우체국을 나온 뒤에는 어디로 갔을까?)"
                 return "(메모는 등불을 돌보는 사람에게 물어보라고 했다. 초롱은 아내를 만났고 가족이 올지도 모른다는 말을 들었다. 마지막으로 본 방향은 우체국 쪽이지만, 정말 우체국 안에 들어갔을까?)"
             if set(selected)=={"J02","J03"}:
                 return "(초롱이 본 방향과 세련이 확인한 방문이 이어진다. 아내는 우체국에 들러 반송품을 물었다. 그 뒤 어디로 갔는지는 둘 다 보지 못했다. 우체국을 나온 엄마를 본 사람이 있을까?)"
@@ -56,11 +61,24 @@ init 97 python:
                 return [("dad","아내가 이 메모에 등불을 돌보는 분께 물어보라고 적었습니다."),
                     (person,"도토리 그림 이야기를 하던 분이군요. 여관 앞에서 만났어요. 무엇이 궁금하십니까?")]
             if key=="M01" and person=="daram":
-                return [("daram","엄마가 나한테 쓰는 도토리 표시야. 아빠랑 내가 올 것도 적어 놨네."),
-                    ("dad","엄마 편지와 같이 읽어 보자. 엄마가 누구에게 소식을 맡겼는지도 알아봐야겠어.")]
+                known=r13_mother_knowledge() if "r13_mother_knowledge" in globals() else {}
+                if known.get("promised"):
+                    after=("dad","응. 엄마가 초롱 씨에게 맡긴 봉투에는 무엇이 적혀 있을까?")
+                elif known.get("recognized"):
+                    after=("dad","응. 초롱 씨가 엄마를 알아봤지. 엄마가 초롱 씨에게 무엇을 남겼을까?")
+                elif known.get("named") or "mother_lamplighter_lead" in s.get("flags",[]):
+                    after=("dad","응. 메모에 적힌 분은 초롱 씨래. 그분도 엄마를 기억할까?")
+                else:
+                    after=("dad","엄마 편지와 같이 읽어 보자. 엄마가 누구에게 소식을 맡겼는지도 알아봐야겠어.")
+                return [("daram","엄마가 나한테 쓰는 도토리 표시야. 아빠랑 내가 올 것도 적어 놨네."),after]
             if key=="E01" and person=="granny":
-                return [(person,"부인이 가족을 부르고 싶다고 해서 제가 대신 부쳐 드렸어요."),
-                    ("dad","13호실에 남긴 것을 살펴보고 다시 여쭤보겠습니다.")]
+                if "E18" in s.get("evidence",[]):
+                    after=("dad","(엄마는 오라는 편지를 쓴 적 없다고 했다. 할머니는 대신 부쳤다고 한다. 누구 말이 맞을까?)",{"thought":True})
+                elif "M01" in s.get("evidence",[]):
+                    after=("dad","그렇군요. 아내가 방에 남긴 메모와 함께 다시 읽어 보겠습니다.")
+                else:
+                    after=("dad","13호실에 남긴 것을 살펴보고 다시 여쭤보겠습니다.")
+                return [(person,"부인이 가족을 부르고 싶다고 해서 제가 대신 부쳐 드렸어요."),after]
             if key=="J02" and person=="seryeon":
                 return [("dad","아내가 우체국 쪽으로 갔다고 초롱에게 들었습니다. 여기 들렀습니까?"),
                     (person,"그분의 우편을 확인하려면 가족이라는 자료부터 보여 주세요. 다른 분이 보셨다는 말만으로는 내드릴 수 없어요."),

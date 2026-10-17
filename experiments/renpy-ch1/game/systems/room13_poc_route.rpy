@@ -76,7 +76,10 @@ init 100 python:
                 r13_flag("mother_lamplighter_lead")
                 original=[("dad","아내가 남긴 메모입니다. 등불을 돌보는 분에게 소식을 물어보라고 적혀 있네요."),(person,"초롱 씨를 말하는군요. 맡겨 둔 소식을 찾으시는 거라면, 제가 본 것도 말씀드릴 수 있어요.")]
             if r13_poc_helped(person):
-                return original+[(person,"도와주셔서 고마워요. 말씀하신 때에 제가 본 것도 생각났어요. 무엇이 궁금한지 물어봐 주세요.")]
+                # 0.19.17: the kitchen/delivery jobs are gone (0.18.91); nobody thanks Dad for help he never gave.
+                if person=="nabi":
+                    return original+[(person,"부인이 여관에 계실 때 제가 본 게 있어요. 무엇이 궁금한지 물어봐 주세요.")]
+                return original
             return original+[(person,"식사 준비를 같이 하고 나면, 그분이 오셨을 때 제가 본 것도 차분히 말씀드릴게요." if person=="nabi" else "배달을 마치고 짐표를 정리할 때, 초롱 씨가 소식을 맡아 두는 곳도 말씀드릴게요.")]
         if key in ("J04","J05") and person=="resident_lamplighter":
             _r13_poc_present(person,key,identity)
@@ -95,10 +98,14 @@ init 100 python:
             pair=set(selected)
             if pair=={"E01","E18"}:
                 r13_flag("poc:letter_conflict")
+                if "poc:granny_explained" in s.get("flags",[]):
+                    return "(엄마는 ‘오라는 편지를 쓴 적 없어’라고 썼다. 할머니는 엄마 말을 받아 적어 부쳤을 뿐이라고 했다. 두 말은 함께 맞을 수 있을까? 엄마는 왜 여관에 행선지를 말하지 말라고 했을까?)"
                 return "(우리는 엄마 이름으로 온 편지를 받고 왔다. 그런데 엄마는 ‘오라는 편지를 쓴 적 없어’라고 썼다. 우리가 받은 편지는 누가 썼을까? 그리고 엄마는 왜 여관을 피하라고 했을까? 엄마가 여관을 피하라고 한 글을, 여관 사람에게 보여 줘도 될까?)"
             if pair=={"M01","J04"}:
                 return "(엄마의 메모는 초롱에게 물어보라고 했다. 나비는 엄마가 그에게 봉투를 건네는 것을 봤다. 봉투 안의 글은 나비도 모른다.)"
             if pair=={"M01","J05"}:
+                if "E18" in owned:
+                    return "(메모는 초롱에게 물어보라고 했고, 까로는 초롱의 보관함을 봤다. 엄마가 맡긴 글은 이미 읽었다. 함 속의 봉투가 그 글이었을까?)"
                 return "(메모는 초롱에게 물어보라고 했고, 까로는 그의 보관함을 안다. 함에 있는 봉투가 엄마 것이라는 뜻까지 확인되지는 않았다. 남의 보관함을 허락 없이 열어도 될까?)"
             if pair=={"M01","E18"}:
                 return "(엄마는 우리가 올 경우를 위한 메모를 남겼고, 다른 글에서는 여관에 행선지를 말하지 말라고 경고했다. 가족을 버렸다고 단정할 수는 없다. 초롱을 통해 소식을 확인하라는 부탁은 두 글에 이어진다.)"
@@ -162,7 +169,13 @@ label r13_poc_night_review:
     elif r13_has("E18"):
         call r13_lines([("daram","엄마 글에는 오라는 편지를 쓴 적 없다고 적혀 있어."),("dad","그럼 엄마 이름으로 온 초대 편지는 누가, 왜 쓴 걸까?")],"poc:night:uncompared")
     elif r13_mother_knowledge()["promised"]:
-        call r13_lines(r13_intro_direction_lines(),"poc:night:promise")
+        # 0.19.17: say where the promise stands tonight (before the day / on the day / told where it is).
+        if r13_has("warning_location") or "lamplighter_warning" in room13.get("read_topics",[]):
+            call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 어디에 뒀는지 알려 줬지?"),("dad","응. 아직 꺼내 읽지는 못했어. 엄마가 어떤 글을 남겼을까?")],"poc:night:promise_told")
+        elif room13["day"]>=r13_mother_knowledge()["due"]:
+            call r13_lines([("daram","오늘이 초롱 아저씨가 봉투 찾아 준다던 날이었지?"),("dad","응. 오늘은 받지 못했어. 내일 초롱 씨를 다시 찾아가 보자.")],"poc:night:promise_due")
+        else:
+            call r13_lines([("daram","초롱 아저씨가 엄마 봉투를 맡고 있댔지?"),("dad","응. 내일 찾아 두겠다고 했어. 엄마가 어떤 글을 남겼을까?")],"poc:night:promise")
     elif r13_has("J04") or r13_has("J05"):
         call r13_lines([("daram","어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라."),("dad","응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.")],"poc:night:packet")
     elif r13_has("J02") and not r13_has("J03"):
