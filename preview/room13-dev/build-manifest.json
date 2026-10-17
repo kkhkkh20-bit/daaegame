@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 16907130,
-  "archive_sha256": "38f2dd130becf10299ae925a0a5d800697c4cf776d5580a6005c5370a576abb0",
+  "archive_bytes": 17458645,
+  "archive_sha256": "81d9a85f610c4c0b380ac5ea3400f1f26064f680524abfd824a412cece565b3d",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 16907130,
-    "sha256": "38f2dd130becf10299ae925a0a5d800697c4cf776d5580a6005c5370a576abb0"
+    "bytes": 17458645,
+    "sha256": "81d9a85f610c4c0b380ac5ea3400f1f26064f680524abfd824a412cece565b3d"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 88131,
-   "sha256": "bd40ff1ee028befc268119a7b1346123f4797625415510fd56073e249d6fa36f"
+   "bytes": 89485,
+   "sha256": "d46033f355811bcbd13766a15aedca0b6dfeecb4487de193f2fb08b28c40886e"
   },
   "game.part01": {
-   "bytes": 16907130,
-   "sha256": "38f2dd130becf10299ae925a0a5d800697c4cf776d5580a6005c5370a576abb0"
+   "bytes": 17458645,
+   "sha256": "81d9a85f610c4c0b380ac5ea3400f1f26064f680524abfd824a412cece565b3d"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -564,9 +564,17 @@
    "bytes": 1495938,
    "sha256": "699dcf0db494b1ae507f249de65008a1537b214766ea450152f43e7431d4773b"
   },
+  "game/assets/room13-action-buri-action_1.webp": {
+   "bytes": 153496,
+   "sha256": "3e24727a8389511f90138a355f09a30057451d4672112647f1a457690432d457"
+  },
+  "game/assets/room13-action-buri-action_2.webp": {
+   "bytes": 184074,
+   "sha256": "0059775a0b83e812c69f47494e3c63369a4cf08eb409eef0e2255e677709e1bb"
+  },
   "game/assets/room13-action-buri-event_toolbox.webp": {
-   "bytes": 67224,
-   "sha256": "30c384f25fc9d777f325a5e3bbcef5552fabe657b1fe806ad3b0aec530c984b2"
+   "bytes": 184914,
+   "sha256": "7db5aba71c5fa49cc7483820ad80dd37c069413f5c69584e409cc1fc9d78550c"
   },
   "game/assets/room13-action-granny-living_keyledger.webp": {
    "bytes": 69748,
@@ -607,6 +615,10 @@
   "game/assets/room13-action-resident_seol-living_bellrope.webp": {
    "bytes": 84148,
    "sha256": "8c662bfdb0c342e1033c54b7e852f5e82409d1d09ad79aac222f839321657f5b"
+  },
+  "game/assets/room13-action-resident_tosil-living_thermos.webp": {
+   "bytes": 143456,
+   "sha256": "88a5e16882304f0ad06ba4b61af841c49bd38c68f2ee6a1872cf3b1cd597726a"
   },
   "game/assets/room13-action-resident_ttadak-living_doorframe.webp": {
    "bytes": 65974,
@@ -2920,6 +2932,30 @@
    "bytes": 72094,
    "sha256": "a1f6054d272c14d38622dfcb0ca5ed755670ec00cd0d3d45f2abff936585a6df"
   },
+  "game/assets/room13-role-resident_dalgeurak.webp": {
+   "bytes": 84936,
+   "sha256": "b845f8bb1973ac0a110a86dcac648a0a92a97045aa984c503efd7a5939a75e9b"
+  },
+  "game/assets/room13-role-resident_hyeoni.webp": {
+   "bytes": 82416,
+   "sha256": "67ef5349048dfaf96d98749fcf17f1c76f86c949d7a9753e02530fe8bae1aa6a"
+  },
+  "game/assets/room13-role-resident_kalbaram.webp": {
+   "bytes": 80268,
+   "sha256": "d49453b5b600a64c34371411acf35b75aea0b43388e2fc84969b266e5df5a417"
+  },
+  "game/assets/room13-role-resident_madam.webp": {
+   "bytes": 72836,
+   "sha256": "95034571e81a268d13bc6cb82c083205a6d8b9bfbd2e056bbf4951d542b56881"
+  },
+  "game/assets/room13-role-resident_mulgyeol.webp": {
+   "bytes": 69200,
+   "sha256": "81ce223b96128b6bca09ef04261c1b0c7bc91d781cfaf382753c72a6bd57bd3c"
+  },
+  "game/assets/room13-role-resident_piko.webp": {
+   "bytes": 70578,
+   "sha256": "5187d9febd9974c08048ecb0a0f5dbe5c6d567a46532109362ea5ffaa465cf82"
+  },
   "game/assets/room13-title-logo.webp": {
    "bytes": 664492,
    "sha256": "38d3400703d63b202e9ae4c77dd5e16f3d12f3bbe2a01e279d23b30f6b9e0f52"
@@ -3182,7 +3218,7 @@
   },
   "index.html": {
    "bytes": 9504,
-   "sha256": "d8debde039062a1a6fb8cf304b0b8704d49c02a5c22800892dc0e23651aa909d"
+   "sha256": "b6d1547d4644074d8129dc9229342cb58e5899ff09ef07e39a14a008e70d8908"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -3217,5 +3253,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 362177103
+ "total_bytes": 363788922
 }
