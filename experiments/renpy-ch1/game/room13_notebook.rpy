@@ -224,7 +224,7 @@ screen r13_reference_record_shell(title):
 screen r13_reference_record_categories(owner,current,present=False,archive=False):
     vbox:
         xpos 66 ypos 128 spacing 10
-        # 0.19.1 빼기 정리: 탭 6 → 4. 인물은 「사람」(관계도)에, 달력은 「메모」 안으로 합쳤다.
+        # 0.19.2 빼기 정리: 탭 6 → 4. 인물은 「사람」(관계도)에, 달력은 「메모」 안으로 합쳤다.
         for key,title,icon in (("all","자료","record"),("relations","사람","people"),("dialogue","대화","dialogue"),("notes","메모","investigate")):
             if not present or key=="all":
                 button:
@@ -244,7 +244,7 @@ screen r13_record_filters(owner,order,archive=False):
             style "r13_compact_button" xsize 246 ysize 42 text_size 19
             action [Function(r13_record_select,owner,"order","acquired" if order=="recent" else "recent"),Function(r13_record_select,owner,"page",0)]
 
-# 0.19.1 빼기 정리: 거름은 한 줄(전체 · 증언 · 전달 가능 · 안 읽음 · 지난 사건).
+# 0.19.2 빼기 정리: 거름은 한 줄(전체 · 증언 · 전달 가능 · 안 읽음 · 지난 사건).
 screen r13_material_filters(owner,current,allow_transfer=True,unread=0,shelf=None,shelf_count=0):
     $ big=persistent.room13_large_text
     hbox:
@@ -324,7 +324,7 @@ screen r13_material_detail(detail,archive=False,view_context=("records",),owner=
         else:
             text "자료를 선택하세요." xpos 846 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
-# 0.19.1: 「인물」 탭을 「사람」(관계도)에 합치며, 인물 기록은 관계도 오른쪽 상세 아래에 붙는다.
+# 0.19.2: 「인물」 탭을 「사람」(관계도)에 합치며, 인물 기록은 관계도 오른쪽 상세 아래에 붙는다.
 screen r13_person_brief(person):
     vbox:
         spacing 8

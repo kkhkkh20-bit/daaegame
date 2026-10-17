@@ -476,7 +476,7 @@ screen r13_book(target=None,present=False,hearing=False):
     $ entries=r13_present_entries(entries,target) if present else entries
     $ material_filter="all" if (hearing or archive) and material_filter=="transfer" else material_filter
     $ entries=r13_material_subset(entries,material_filter)
-    # 0.19.1: 보여줄 때는 단추 없이, 지금 상대(발언자)와 이어진 자료를 앞에 놓는다.
+    # 0.19.2: 보여줄 때는 단추 없이, 지금 상대(발언자)와 이어진 자료를 앞에 놓는다.
     if chip_person:
         $ entries=r13_record_related_first(entries,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)

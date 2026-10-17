@@ -74,7 +74,7 @@ screen r13_playback_footer(show_record=False,ready=True):
                 use r13_strip_button("설정","settings",ShowMenu("pause_menu"),enabled=ready,last=True)
 
 screen r13_more_tools():
-    # 0.19.1 빼기 정리 (소유자 승인 시안): 9개 → 저장·불러오기 / 다시 시작할 아침 / 설정 / 메인화면.
+    # 0.19.2 빼기 정리 (소유자 승인 시안): 9개 → 저장·불러오기 / 다시 시작할 아침 / 설정 / 메인화면.
     # 대사 중에만 「빠르게」(읽은 것만·전부)와 「대화창 숨기기」. 생활 장부는 일거리와 함께 없앴다. 바깥을 누르면 닫힌다.
     modal True
     zorder 105

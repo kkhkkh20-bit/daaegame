@@ -1,0 +1,3175 @@
+{
+  "inn": {
+    "revision": 3,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 640,
+    "files": {
+      "morning": "assets/room13-pixel-panorama-inn-morning.webp",
+      "afternoon": "assets/room13-pixel-panorama-inn-afternoon.webp",
+      "evening": "assets/room13-pixel-panorama-inn-evening.webp"
+    },
+    "objects": {
+      "desk": [
+        1600,
+        440,
+        240,
+        230
+      ],
+      "door": [
+        980,
+        165,
+        131,
+        273
+      ],
+      "keys": [
+        1670,
+        136,
+        150,
+        170
+      ],
+      "register": [
+        1556,
+        355,
+        127,
+        46
+      ],
+      "knitting": [
+        1713,
+        353,
+        134,
+        82
+      ],
+      "coats": [
+        1158,
+        155,
+        121,
+        201
+      ],
+      "cups": [
+        1422,
+        101,
+        180,
+        63
+      ]
+    },
+    "floors": [
+      [
+        890,
+        620,
+        238
+      ],
+      [
+        1080,
+        540,
+        216
+      ],
+      [
+        1260,
+        610,
+        245
+      ]
+    ],
+    "slots": [
+      [
+        90,
+        680,
+        260,
+        "waiting"
+      ],
+      [
+        485,
+        706,
+        265,
+        "waiting"
+      ],
+      [
+        890,
+        620,
+        238,
+        "waiting"
+      ],
+      [
+        1080,
+        540,
+        216,
+        "waiting"
+      ],
+      [
+        1260,
+        610,
+        245,
+        "waiting"
+      ],
+      [
+        1090,
+        700,
+        270,
+        "waiting"
+      ]
+    ],
+    "positions": {
+      "granny": [
+        1420,
+        624,
+        280
+      ],
+      "resident_tori": [
+        820,
+        690,
+        250
+      ],
+      "resident_ttadak": [
+        1043,
+        472,
+        196
+      ]
+    },
+    "work": {},
+    "hooks": {
+      "bami": [
+        1130,
+        55
+      ]
+    },
+    "zones": {
+      "waiting": {
+        "pose": "neutral",
+        "occlusion": []
+      }
+    },
+    "occlusion": [
+      [
+        1294,
+        355
+      ],
+      [
+        1836,
+        420
+      ],
+      [
+        1836,
+        675
+      ],
+      [
+        1294,
+        499
+      ]
+    ],
+    "critical": [
+      [
+        1556,
+        355,
+        127,
+        46
+      ],
+      [
+        1670,
+        136,
+        150,
+        170
+      ]
+    ],
+    "notes": "Coordinates visually read from native 2048x768, uniformly displayed at 1920x720; Physical staging reviewed in actual RenPy source-injected left/right fixtures; production viewport interaction QA remains. Revision3: grandmother wipes the OUTER counter face from public floor, full body without counter occlusion. 0.18.60: the redesigned grandmother has no counter-wiping pose (she stands); she keeps the owner's 0.18.59 spot [1420,624] on the public floor, clear of the ledger (register).",
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2048,
+        768
+      ],
+      "afternoon": [
+        0,
+        0,
+        2048,
+        768
+      ],
+      "evening": [
+        0,
+        0,
+        2048,
+        768
+      ]
+    },
+    "reviewed": true,
+    "pinned": [
+      "granny",
+      "resident_tori",
+      "resident_ttadak"
+    ],
+    "poses": {
+      "resident_tori": "activity",
+      "resident_ttadak": "living_doorframe"
+    },
+    "props": [
+      {
+        "file": "assets/room13-prop-inn-doorframe-repair.webp",
+        "rect": [
+          994,
+          126,
+          226,
+          340
+        ],
+        "when": {
+          "person": "resident_ttadak"
+        },
+        "note": "0.18.63 (01822 §2): plank on the door's right post, nail box and shavings at its foot; shown only while 따닥 is in the lobby. His left palm meets the plank's left edge (x 1110)."
+      }
+    ],
+    "slot_actions": {
+      "resident_eunho": "living_prices",
+      "resident_guseul": "living_stamp",
+      "resident_madam": "living_inspect",
+      "resident_ubak": "living_measure",
+      "resident_owlgp": "living_notebook",
+      "resident_tosil": "living_thermos"
+    }
+  },
+  "school": {
+    "revision": 2,
+    "width": 1800,
+    "height": 720,
+    "initial_x": 0,
+    "files": {
+      "afternoon": "assets/room13-pixel-panorama-school-afternoon.webp",
+      "morning": "assets/room13-pixel-panorama-school-morning.webp",
+      "evening": "assets/room13-pixel-panorama-school-evening.webp"
+    },
+    "objects": {
+      "desks": [
+        32,
+        386,
+        702,
+        181
+      ],
+      "stove": [
+        865,
+        399,
+        158,
+        182
+      ],
+      "blankets": [
+        0,
+        482,
+        260,
+        127
+      ],
+      "lessons": [
+        235,
+        419,
+        123,
+        28
+      ],
+      "firewood": [
+        965,
+        470,
+        80,
+        94
+      ]
+    },
+    "floors": [
+      [
+        750,
+        612,
+        262
+      ],
+      [
+        1240,
+        620,
+        252
+      ],
+      [
+        1625,
+        676,
+        264
+      ]
+    ],
+    "slots": [
+      [
+        120,
+        525,
+        235,
+        "class_back"
+      ],
+      [
+        309,
+        535,
+        240,
+        "class_back"
+      ],
+      [
+        510,
+        540,
+        240,
+        "class_back"
+      ],
+      [
+        120,
+        695,
+        260,
+        "waiting"
+      ],
+      [
+        397,
+        684,
+        263,
+        "waiting"
+      ],
+      [
+        615,
+        697,
+        272,
+        "waiting"
+      ],
+      [
+        776,
+        600,
+        250,
+        "waiting"
+      ],
+      [
+        1150,
+        520,
+        208,
+        "cloak_back"
+      ],
+      [
+        1365,
+        510,
+        205,
+        "cloak_back"
+      ],
+      [
+        1740,
+        585,
+        233,
+        "waiting"
+      ],
+      [
+        1110,
+        691,
+        258,
+        "waiting"
+      ],
+      [
+        1370,
+        690,
+        269,
+        "waiting"
+      ],
+      [
+        1660,
+        688,
+        277,
+        "waiting"
+      ]
+    ],
+    "positions": {
+      "resident_teacher": [
+        760,
+        610,
+        266
+      ]
+    },
+    "pinned": [
+      "resident_teacher"
+    ],
+    "poses": {
+      "resident_teacher": "activity"
+    },
+    "work": {},
+    "zones": {
+      "class_back": {
+        "pose": "neutral",
+        "occlusion": [
+          [
+            0,
+            405
+          ],
+          [
+            189,
+            424
+          ],
+          [
+            217,
+            411
+          ],
+          [
+            404,
+            439
+          ],
+          [
+            456,
+            417
+          ],
+          [
+            585,
+            420
+          ],
+          [
+            726,
+            435
+          ],
+          [
+            726,
+            566
+          ],
+          [
+            263,
+            621
+          ],
+          [
+            0,
+            621
+          ]
+        ]
+      },
+      "waiting": {
+        "pose": "neutral",
+        "occlusion": []
+      },
+      "cloak_back": {
+        "pose": "neutral",
+        "occlusion": [
+          [
+            1212,
+            436
+          ],
+          [
+            1327,
+            436
+          ],
+          [
+            1327,
+            542
+          ],
+          [
+            1212,
+            542
+          ]
+        ]
+      }
+    },
+    "occlusion": [],
+    "critical": [
+      [
+        235,
+        419,
+        123,
+        28
+      ]
+    ],
+    "notes": "Native1983x793 uniformly mapped to1800x720; twelve-person layout reviewed in actual RenPy source-injected left/right fixtures.",
+    "crops": {
+      "afternoon": [
+        0,
+        0,
+        1983,
+        793
+      ],
+      "morning": [
+        0,
+        0,
+        1983,
+        793
+      ],
+      "evening": [
+        0,
+        0,
+        1983,
+        793
+      ]
+    },
+    "reviewed": true,
+    "slot_actions": {
+      "resident_seori": "living_notes"
+    }
+  },
+  "workshop": {
+    "revision": 2,
+    "width": 1800,
+    "height": 720,
+    "initial_x": 0,
+    "files": {
+      "afternoon": "assets/room13-pixel-panorama-workshop-afternoon.webp",
+      "morning": "assets/room13-pixel-panorama-workshop-morning.webp",
+      "evening": "assets/room13-pixel-panorama-workshop-evening.webp"
+    },
+    "objects": {
+      "plans": [
+        696,
+        113,
+        219,
+        203
+      ],
+      "wood": [
+        0,
+        381,
+        173,
+        170
+      ],
+      "axle": [
+        528,
+        360,
+        350,
+        93
+      ],
+      "bolts": [
+        470,
+        438,
+        145,
+        54
+      ],
+      "rag": [
+        789,
+        471,
+        150,
+        117
+      ],
+      "wheel": [
+        835,
+        245,
+        226,
+        241
+      ],
+      "tools": [
+        0,
+        56,
+        237,
+        281
+      ]
+    },
+    "floors": [
+      [
+        1120,
+        705,
+        275
+      ],
+      [
+        1400,
+        585,
+        230
+      ],
+      [
+        1700,
+        705,
+        280
+      ]
+    ],
+    "slots": [
+      [
+        90,
+        660,
+        270,
+        "floor"
+      ],
+      [
+        270,
+        548,
+        226,
+        "doorfloor"
+      ],
+      [
+        1200,
+        570,
+        220,
+        "floor"
+      ],
+      [
+        1425,
+        580,
+        230,
+        "floor"
+      ],
+      [
+        1120,
+        705,
+        275,
+        "floor"
+      ],
+      [
+        1370,
+        710,
+        280,
+        "floor"
+      ],
+      [
+        1700,
+        705,
+        280,
+        "floor"
+      ],
+      [
+        1750,
+        584,
+        229,
+        "floor"
+      ]
+    ],
+    "positions": {
+      "buri": [
+        130,
+        650,
+        250
+      ]
+    },
+    "work": {
+      "buri": [
+        620,
+        421,
+        208
+      ]
+    },
+    "zones": {
+      "doorfloor": {
+        "pose": "neutral",
+        "occlusion": []
+      }
+    },
+    "occlusion": [
+      [
+        331,
+        460
+      ],
+      [
+        470,
+        439
+      ],
+      [
+        683,
+        441
+      ],
+      [
+        1060,
+        483
+      ],
+      [
+        1060,
+        624
+      ],
+      [
+        890,
+        678
+      ],
+      [
+        350,
+        604
+      ]
+    ],
+    "critical": [
+      [
+        470,
+        438,
+        145,
+        54
+      ],
+      [
+        696,
+        113,
+        219,
+        203
+      ]
+    ],
+    "notes": "Native1983x793 uniformly mapped to1800x720; guest activities use open floor of added parts bay rather than behind main workbench.",
+    "crops": {
+      "afternoon": [
+        0,
+        0,
+        1983,
+        793
+      ],
+      "morning": [
+        0,
+        0,
+        1983,
+        793
+      ],
+      "evening": [
+        0,
+        0,
+        1983,
+        793
+      ]
+    },
+    "reviewed": true,
+    "offer_spots": {
+      "r13_w2e_tools": [
+        300,
+        660
+      ]
+    },
+    "slot_actions": {
+      "resident_ubak": "living_measure"
+    }
+  },
+  "square": {
+    "revision": 3,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "files": {
+      "morning": "assets/room13-pixel-panorama-square-morning.webp",
+      "afternoon": "assets/room13-pixel-panorama-square-afternoon.webp",
+      "evening": "assets/room13-pixel-panorama-square-evening.webp"
+    },
+    "objects": {
+      "stone": [
+        598,
+        269,
+        170,
+        236
+      ],
+      "offerings": [
+        861,
+        475,
+        121,
+        52
+      ],
+      "lamp": [
+        904,
+        270,
+        187,
+        201
+      ],
+      "stall": [
+        0,
+        278,
+        298,
+        174
+      ],
+      "cart": [
+        326,
+        420,
+        282,
+        144
+      ],
+      "wood": [
+        0,
+        457,
+        147,
+        147
+      ]
+    },
+    "floors": [
+      [
+        700,
+        580,
+        225
+      ],
+      [
+        1220,
+        650,
+        250
+      ],
+      [
+        1660,
+        680,
+        260
+      ]
+    ],
+    "slots": [
+      [
+        245,
+        676,
+        255,
+        "floor"
+      ],
+      [
+        475,
+        617,
+        234,
+        "floor"
+      ],
+      [
+        710,
+        580,
+        220,
+        "floor"
+      ],
+      [
+        950,
+        691,
+        265,
+        "floor"
+      ],
+      [
+        1220,
+        667,
+        252,
+        "floor"
+      ],
+      [
+        1470,
+        640,
+        243,
+        "floor"
+      ],
+      [
+        1700,
+        707,
+        269,
+        "floor"
+      ],
+      [
+        1510,
+        714,
+        275,
+        "floor"
+      ],
+      [
+        710,
+        706,
+        270,
+        "floor"
+      ]
+    ],
+    "positions": {
+      "doto": [
+        905,
+        620,
+        245
+      ]
+    },
+    "work": {},
+    "zones": {},
+    "occlusion": [],
+    "critical": [
+      [
+        598,
+        269,
+        170,
+        236
+      ],
+      [
+        861,
+        475,
+        121,
+        52
+      ],
+      [
+        904,
+        270,
+        187,
+        201
+      ]
+    ],
+    "notes": "Native2048x768 uniformly rendered at1920x720. Outdoor residents occupy snow paths, not steps or stacked crates. Revision3: Doto faces the bulletin board; Tori uses the existing far-right bench with an authored seat contact.",
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2048,
+        768
+      ],
+      "afternoon": [
+        0,
+        0,
+        2048,
+        768
+      ],
+      "evening": [
+        0,
+        0,
+        2048,
+        768
+      ]
+    },
+    "reviewed": true,
+    "pinned": [
+      "doto",
+      "resident_tori"
+    ],
+    "seats": {
+      "resident_yeoni:living_mend": [
+        1765,
+        566,
+        244
+      ]
+    },
+    "pose_positions": {
+      "resident_piko:event_paintwipe": [
+        1700,
+        668
+      ]
+    }
+  },
+  "gate": {
+    "revision": 1,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "files": {
+      "morning": "assets/room13-pixel-ready-gate0173-morning.webp",
+      "afternoon": "assets/room13-pixel-ready-gate0173-afternoon.webp",
+      "evening": "assets/room13-pixel-ready-gate0173-evening.webp"
+    },
+    "objects": {
+      "booth": [
+        1420,
+        398,
+        110,
+        52
+      ],
+      "ledger": [
+        1380,
+        440,
+        126,
+        30
+      ],
+      "rules": [
+        666,
+        313,
+        75,
+        114
+      ],
+      "road": [
+        216,
+        469,
+        413,
+        127
+      ],
+      "bundles": [
+        370,
+        396,
+        178,
+        75
+      ],
+      "shovel": [
+        760,
+        414,
+        82,
+        177
+      ],
+      "crates": [
+        1288,
+        534,
+        206,
+        100
+      ],
+      "woodpile": [
+        1560,
+        437,
+        125,
+        111
+      ]
+    },
+    "documents": [
+      1341,
+      383,
+      201,
+      98
+    ],
+    "documents_crop": [
+      1320,
+      369,
+      240,
+      128
+    ],
+    "floors": [
+      [
+        600,
+        620,
+        240
+      ],
+      [
+        1050,
+        610,
+        230
+      ],
+      [
+        1250,
+        650,
+        250
+      ]
+    ],
+    "positions": {
+      "karo": [
+        640,
+        655,
+        230
+      ],
+      "guard": [
+        1270,
+        602,
+        255
+      ],
+      "neoul": [
+        1070,
+        610,
+        260
+      ],
+      "daram": [
+        880,
+        668,
+        205
+      ]
+    },
+    "slots": [
+      [
+        920,
+        620,
+        230,
+        "floor"
+      ],
+      [
+        1110,
+        651,
+        245,
+        "floor"
+      ],
+      [
+        780,
+        652,
+        230,
+        "floor"
+      ],
+      [
+        1780,
+        635,
+        230,
+        "floor"
+      ],
+      [
+        1030,
+        570,
+        200,
+        "floor"
+      ],
+      [
+        1250,
+        690,
+        245,
+        "floor"
+      ],
+      [
+        390,
+        690,
+        240,
+        "floor"
+      ],
+      [
+        720,
+        700,
+        230,
+        "floor"
+      ]
+    ],
+    "critical": [
+      [
+        1341,
+        383,
+        201,
+        98
+      ],
+      [
+        666,
+        313,
+        75,
+        114
+      ],
+      [
+        760,
+        414,
+        82,
+        177
+      ],
+      [
+        370,
+        396,
+        178,
+        75
+      ],
+      [
+        216,
+        469,
+        413,
+        127
+      ],
+      [
+        1288,
+        534,
+        206,
+        100
+      ],
+      [
+        1560,
+        437,
+        125,
+        111
+      ]
+    ],
+    "pinned": [
+      "karo",
+      "guard",
+      "daram"
+    ],
+    "provenance": {
+      "source_commit": "ac8760b38a5d75f2a0ef26f914e7ecb4faf7503f",
+      "source_size": [
+        2048,
+        768
+      ],
+      "scale": "uniform 15/16; no stretch",
+      "review": "Each rectangle measured against the selected panorama, not multiplied from old hitboxes"
+    },
+    "poses": {
+      "daram": "neutral"
+    },
+    "pose_positions": {
+      "karo:living_axlewrap": [
+        560,
+        615
+      ]
+    }
+  },
+  "clinic": {
+    "revision": 1,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "ignore_legacy_positions": true,
+    "objects": {
+      "notes": [
+        625,
+        463,
+        316,
+        79
+      ],
+      "bed": [
+        1012,
+        322,
+        431,
+        221
+      ],
+      "basin": [
+        598,
+        344,
+        142,
+        60
+      ],
+      "bottles": [
+        322,
+        85,
+        179,
+        302
+      ],
+      "curtain": [
+        1112,
+        78,
+        124,
+        296
+      ]
+    },
+    "floors": [
+      [
+        1350,
+        647,
+        262
+      ],
+      [
+        1716,
+        652,
+        244
+      ],
+      [
+        1088,
+        689,
+        234
+      ]
+    ],
+    "slots": [
+      [
+        1359,
+        647,
+        262,
+        "floor"
+      ],
+      [
+        1697,
+        652,
+        244,
+        "floor"
+      ],
+      [
+        1125,
+        684,
+        239,
+        "floor"
+      ],
+      [
+        272,
+        656,
+        244,
+        "floor"
+      ],
+      [
+        1538,
+        689,
+        253,
+        "floor"
+      ]
+    ],
+    "positions": {
+      "resident_seori": [
+        1369,
+        647,
+        267
+      ]
+    },
+    "critical": [
+      [
+        625,
+        463,
+        316,
+        79
+      ],
+      [
+        598,
+        344,
+        142,
+        60
+      ],
+      [
+        1012,
+        322,
+        431,
+        221
+      ]
+    ],
+    "files": {
+      "morning": "assets/room13-pixel-ready-clinic0177-morning.webp",
+      "afternoon": "assets/room13-pixel-ready-clinic0177-afternoon.webp",
+      "evening": "assets/room13-pixel-ready-clinic0177-evening.webp"
+    },
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+  },
+  "store": {
+    "revision": 3,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "ignore_legacy_positions": true,
+    "objects": {
+      "ledger": [
+        422,
+        422,
+        338,
+        94
+      ],
+      "sacks": [
+        1359,
+        225,
+        281,
+        291
+      ],
+      "scale": [
+        444,
+        293,
+        243,
+        139
+      ],
+      "burlap": [
+        822,
+        330,
+        163,
+        62
+      ]
+    },
+    "floors": [
+      [
+        1106,
+        652,
+        328
+      ],
+      [
+        1341,
+        689,
+        354
+      ],
+      [
+        216,
+        666,
+        338
+      ]
+    ],
+    "slots": [
+      [
+        1116,
+        647,
+        324,
+        "floor"
+      ],
+      [
+        1350,
+        689,
+        354,
+        "floor"
+      ],
+      [
+        216,
+        666,
+        338,
+        "floor"
+      ],
+      [
+        1725,
+        684,
+        351,
+        "floor"
+      ],
+      [
+        975,
+        544,
+        250,
+        "floor"
+      ],
+      [
+        984,
+        703,
+        364,
+        "floor"
+      ],
+      [
+        1519,
+        699,
+        362,
+        "floor"
+      ],
+      [
+        609,
+        708,
+        368,
+        "floor"
+      ],
+      [
+        881,
+        708,
+        368,
+        "floor"
+      ]
+    ],
+    "positions": {
+      "resident_eunho": [
+        1116,
+        647,
+        324
+      ]
+    },
+    "critical": [
+      [
+        422,
+        422,
+        338,
+        94
+      ],
+      [
+        1359,
+        225,
+        281,
+        291
+      ],
+      [
+        444,
+        293,
+        243,
+        139
+      ],
+      [
+        822,
+        330,
+        163,
+        62
+      ]
+    ],
+    "files": {
+      "morning": "assets/room13-pixel-ready-store0177-morning.webp",
+      "afternoon": "assets/room13-pixel-ready-store0177-afternoon.webp",
+      "evening": "assets/room13-pixel-ready-store0177-evening.webp"
+    },
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
+    "standing_height_reference": 271,
+    "standing_heights": {
+      "resident_mungchi": 245,
+      "resident_madam": 271,
+      "resident_eunho": 269,
+      "resident_siluk": 260
+    }
+  },
+  "greenhouse": {
+    "revision": 1,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "ignore_legacy_positions": true,
+    "objects": {
+      "cloth": [
+        1322,
+        370,
+        139,
+        98
+      ],
+      "signal": [
+        442,
+        198,
+        86,
+        116
+      ],
+      "pots": [
+        1121,
+        208,
+        342,
+        193
+      ],
+      "tools": [
+        303,
+        194,
+        133,
+        119
+      ],
+      "watercan": [
+        1399,
+        483,
+        112,
+        122
+      ]
+    },
+    "floors": [
+      [
+        1641,
+        661,
+        262
+      ],
+      [
+        323,
+        656,
+        239
+      ],
+      [
+        1359,
+        698,
+        253
+      ]
+    ],
+    "slots": [
+      [
+        1650,
+        661,
+        262,
+        "floor"
+      ],
+      [
+        328,
+        656,
+        239,
+        "floor"
+      ],
+      [
+        1369,
+        696,
+        253,
+        "floor"
+      ],
+      [
+        131,
+        647,
+        230,
+        "floor"
+      ],
+      [
+        1828,
+        689,
+        216,
+        "floor"
+      ]
+    ],
+    "positions": {
+      "mom": [
+        1650,
+        661,
+        262
+      ]
+    },
+    "critical": [
+      [
+        1322,
+        370,
+        139,
+        98
+      ],
+      [
+        442,
+        198,
+        86,
+        116
+      ],
+      [
+        1121,
+        208,
+        342,
+        193
+      ]
+    ],
+    "files": {
+      "morning": "assets/room13-pixel-ready-greenhouse0177-morning.webp",
+      "afternoon": "assets/room13-pixel-ready-greenhouse0177-afternoon.webp",
+      "evening": "assets/room13-pixel-ready-greenhouse0177-evening.webp"
+    },
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+  },
+  "facility": {
+    "revision": 1,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "ignore_legacy_positions": true,
+    "objects": {
+      "notice": [
+        1357,
+        112,
+        122,
+        219
+      ],
+      "sidegate": [
+        434,
+        116,
+        216,
+        406
+      ],
+      "blankets": [
+        0,
+        412,
+        293,
+        208
+      ],
+      "mug": [
+        963,
+        377,
+        59,
+        34
+      ]
+    },
+    "floors": [
+      [
+        656,
+        666,
+        258
+      ],
+      [
+        1716,
+        666,
+        258
+      ],
+      [
+        919,
+        703,
+        258
+      ]
+    ],
+    "slots": [
+      [
+        638,
+        668,
+        258,
+        "floor"
+      ],
+      [
+        1697,
+        666,
+        253,
+        "floor"
+      ],
+      [
+        1003,
+        701,
+        258,
+        "floor"
+      ],
+      [
+        394,
+        680,
+        244,
+        "floor"
+      ],
+      [
+        1434,
+        698,
+        244,
+        "floor"
+      ]
+    ],
+    "positions": {
+      "neoul": [
+        638,
+        668,
+        258
+      ]
+    },
+    "critical": [
+      [
+        1357,
+        112,
+        122,
+        219
+      ],
+      [
+        434,
+        116,
+        216,
+        406
+      ],
+      [
+        0,
+        412,
+        293,
+        208
+      ],
+      [
+        963,
+        377,
+        59,
+        34
+      ]
+    ],
+    "files": {
+      "morning": "assets/room13-pixel-ready-facility0177-morning.webp",
+      "afternoon": "assets/room13-pixel-ready-facility0177-afternoon.webp",
+      "evening": "assets/room13-pixel-ready-facility0177-evening.webp"
+    },
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+  },
+  "altar": {
+    "revision": 1,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "ignore_legacy_positions": true,
+    "objects": {
+      "valve": [
+        1110,
+        274,
+        133,
+        112
+      ],
+      "offerings": [
+        1134,
+        495,
+        293,
+        170
+      ],
+      "ledger": [
+        514,
+        277,
+        66,
+        27
+      ],
+      "supplies": [
+        392,
+        253,
+        125,
+        138
+      ],
+      "village_view": [
+        1434,
+        347,
+        254,
+        155
+      ],
+      "approach": [
+        322,
+        414,
+        395,
+        112
+      ]
+    },
+    "floors": [
+      [
+        788,
+        617,
+        248
+      ],
+      [
+        1050,
+        653,
+        262
+      ],
+      [
+        534,
+        661,
+        258
+      ]
+    ],
+    "slots": [
+      [
+        806,
+        628,
+        248,
+        "floor"
+      ],
+      [
+        1069,
+        666,
+        253,
+        "floor"
+      ],
+      [
+        534,
+        661,
+        253,
+        "floor"
+      ],
+      [
+        338,
+        553,
+        211,
+        "floor"
+      ],
+      [
+        947,
+        483,
+        192,
+        "floor"
+      ],
+      [
+        1247,
+        694,
+        253,
+        "floor"
+      ]
+    ],
+    "positions": {},
+    "critical": [
+      [
+        1110,
+        274,
+        133,
+        112
+      ],
+      [
+        514,
+        277,
+        66,
+        27
+      ],
+      [
+        1134,
+        495,
+        293,
+        170
+      ]
+    ],
+    "files": {
+      "morning": "assets/room13-pixel-ready-altar0177-morning.webp",
+      "afternoon": "assets/room13-pixel-ready-altar0177-afternoon.webp",
+      "evening": "assets/room13-pixel-ready-altar0177-evening.webp"
+    },
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+  },
+  "kitchen": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "note": "0.18.59 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-kitchen-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-kitchen-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-kitchen-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "shelf": [
+        743,
+        363,
+        68,
+        36
+      ],
+      "stove": [
+        1589,
+        179,
+        495,
+        427
+      ],
+      "rear": [
+        204,
+        61,
+        300,
+        559
+      ],
+      "vegetables": [
+        780,
+        463,
+        446,
+        142
+      ],
+      "flour": [
+        1290,
+        429,
+        153,
+        146
+      ],
+      "dishes": [
+        656,
+        132,
+        234,
+        134
+      ],
+      "herbs": [
+        929,
+        0,
+        225,
+        188
+      ],
+      "ladles": [
+        1044,
+        183,
+        150,
+        160
+      ]
+    },
+    "floors": [
+      [
+        176,
+        684,
+        255
+      ],
+      [
+        475,
+        672,
+        250
+      ]
+    ],
+    "slots": [
+      [
+        176,
+        684,
+        255,
+        "waiting"
+      ],
+      [
+        475,
+        672,
+        250,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 2,
+    "perspective": [
+      0.417,
+      -30.0
+    ]
+  },
+  "dining": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "note": "0.18.59 wide map, all three daylight periods. Evening holds up to three residents (nabi, owl grandfather, Tok; days 1-7 while he is alive): a third floor spot [135,690,265] in front of the log pile was added in this release (the art gave two) and checked with hit maps; the investigation objects stay clickable. Uniform 2172x724 -> 2160x720.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-dining-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-dining-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-dining-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "table": [
+        946,
+        480,
+        1190,
+        130
+      ],
+      "mittens": [
+        1517,
+        0,
+        103,
+        186
+      ],
+      "blankets": [
+        731,
+        437,
+        156,
+        247
+      ],
+      "breadboard": [
+        1303,
+        483,
+        290,
+        98
+      ],
+      "pot": [
+        1215,
+        410,
+        200,
+        124
+      ]
+    },
+    "floors": [
+      [
+        325,
+        655,
+        260
+      ],
+      [
+        540,
+        680,
+        260
+      ],
+      [
+        135,
+        690,
+        265
+      ]
+    ],
+    "slots": [
+      [
+        325,
+        655,
+        260,
+        "waiting"
+      ],
+      [
+        540,
+        680,
+        260,
+        "waiting"
+      ],
+      [
+        135,
+        690,
+        265,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 2,
+    "critical": [
+      [
+        731,
+        437,
+        156,
+        247
+      ],
+      [
+        1517,
+        0,
+        103,
+        186
+      ]
+    ],
+    "perspective": [
+      0.115,
+      183.8
+    ],
+    "slot_actions": {
+      "resident_owlgp": "living_notebook"
+    }
+  },
+  "passage": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning",
+      "afternoon",
+      "evening"
+    ],
+    "note": "0.18.59 wide map, all three daylight periods. Source art/wide-maps-20261015 (morning; afternoon/evening are lighting edits, 0-1px edge drift, one rect set). Uniform 2172x724 -> 2160x720. passage evening was 2171 wide: normalized to 2172 by repeating the last column (art/wide-maps-20261015/normalized).",
+    "files": {
+      "morning": "assets/room13-pixel-wide-passage-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-passage-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-passage-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "steps": [
+        696,
+        279,
+        410,
+        265
+      ],
+      "handle": [
+        1534,
+        135,
+        217,
+        247
+      ],
+      "linen": [
+        0,
+        0,
+        360,
+        360
+      ],
+      "mop": [
+        356,
+        149,
+        198,
+        530
+      ],
+      "baskets": [
+        0,
+        409,
+        396,
+        310
+      ]
+    },
+    "floors": [
+      [
+        703,
+        672,
+        240
+      ],
+      [
+        1248,
+        660,
+        230
+      ],
+      [
+        1802,
+        687,
+        245
+      ]
+    ],
+    "slots": [
+      [
+        703,
+        672,
+        240,
+        "waiting"
+      ],
+      [
+        1248,
+        660,
+        230,
+        "waiting"
+      ],
+      [
+        1802,
+        687,
+        245,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "perspective": [
+      0.546,
+      -129.4
+    ]
+  },
+  "hall": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.59 wide hall: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks.",
+    "state_files": {
+      "before": {
+        "morning": "assets/room13-pixel-wide-hall-before-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-hall-before-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-hall-before-evening.webp"
+      },
+      "after": {
+        "morning": "assets/room13-pixel-wide-hall-after-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-hall-after-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-hall-after-evening.webp"
+      }
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "rail": [
+        0,
+        215,
+        860,
+        473
+      ],
+      "door": [
+        975,
+        180,
+        245,
+        290
+      ],
+      "towels": [
+        530,
+        466,
+        200,
+        76
+      ],
+      "boots": [
+        861,
+        401,
+        126,
+        88
+      ],
+      "bucket": [
+        1236,
+        335,
+        125,
+        164
+      ],
+      "lamp": [
+        916,
+        192,
+        72,
+        95
+      ]
+    },
+    "floors": [
+      [
+        1017,
+        669,
+        255
+      ],
+      [
+        1471,
+        616,
+        238
+      ],
+      [
+        1880,
+        677,
+        260
+      ]
+    ],
+    "slots": [
+      [
+        1017,
+        669,
+        255,
+        "waiting"
+      ],
+      [
+        1471,
+        616,
+        238,
+        "waiting"
+      ],
+      [
+        1880,
+        677,
+        260,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "chips": {
+      "room13": [
+        1097,
+        432
+      ],
+      "inn": [
+        190,
+        470
+      ]
+    },
+    "hooks": {
+      "bami": [
+        1255,
+        132
+      ]
+    },
+    "standing_height_reference": 100,
+    "standing_heights": {
+      "bami": 65
+    },
+    "critical": [
+      [
+        861,
+        401,
+        126,
+        88
+      ],
+      [
+        916,
+        192,
+        72,
+        95
+      ],
+      [
+        1236,
+        335,
+        125,
+        164
+      ],
+      [
+        530,
+        466,
+        200,
+        76
+      ]
+    ],
+    "positions": {
+      "bami": [
+        1760,
+        662,
+        250
+      ]
+    },
+    "perspective": [
+      0.346,
+      24.6
+    ],
+    "slot_actions": {
+      "doto": {
+        "morning": "action_1",
+        "afternoon": "action_1",
+        "evening": "action_2"
+      }
+    }
+  },
+  "room13": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.59 wide room13: before/after the case x three daylights (art/hall-room13-20261015, uniform 2172x724 -> 2160x720). The picture follows case_state first (r13_world_state), exactly as the old hall/room backgrounds. Rects and floor slots are the art worker's visual candidates, checked in this release with hit maps and clicks. Desk target is the table's front edge below the cup, bread, notebook and papers (owner rule 0.18.57); Daram reads sitting on top of the blanket.",
+    "state_files": {
+      "before": {
+        "morning": "assets/room13-pixel-wide-room13-before-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-room13-before-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-room13-before-evening.webp"
+      },
+      "after": {
+        "morning": "assets/room13-pixel-wide-room13-after-morning.webp",
+        "afternoon": "assets/room13-pixel-wide-room13-after-afternoon.webp",
+        "evening": "assets/room13-pixel-wide-room13-after-evening.webp"
+      }
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "bed": [
+        809,
+        337,
+        675,
+        180
+      ],
+      "window": [
+        272,
+        12,
+        293,
+        303
+      ],
+      "boxes": [
+        19,
+        563,
+        490,
+        157
+      ],
+      "under": [
+        842,
+        498,
+        438,
+        57
+      ],
+      "floor": [
+        863,
+        552,
+        215,
+        64
+      ],
+      "books": [
+        1700,
+        375,
+        35,
+        67
+      ],
+      "cup": [
+        321,
+        364,
+        80,
+        66
+      ],
+      "letters": [
+        174,
+        395,
+        124,
+        25
+      ],
+      "notebook": [
+        147,
+        426,
+        210,
+        40
+      ],
+      "coat": [
+        593,
+        351,
+        150,
+        255
+      ],
+      "sewing": [
+        1541,
+        419,
+        150,
+        126
+      ],
+      "socks": [
+        461,
+        285,
+        122,
+        105
+      ],
+      "bedside_books": [
+        883,
+        294,
+        86,
+        33
+      ],
+      "bread": [
+        401,
+        393,
+        95,
+        40
+      ]
+    },
+    "floors": [
+      [
+        924,
+        675,
+        230
+      ],
+      [
+        1806,
+        645,
+        225
+      ],
+      [
+        1990,
+        691,
+        240
+      ]
+    ],
+    "slots": [
+      [
+        924,
+        675,
+        230,
+        "waiting"
+      ],
+      [
+        1806,
+        645,
+        225,
+        "waiting"
+      ],
+      [
+        1990,
+        691,
+        240,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "evidence": {
+      "E03": {
+        "file": "assets/room13-pixel-wide-room13-before-afternoon.webp",
+        "rect": [
+          1260,
+          405,
+          85,
+          95
+        ]
+      },
+      "E07": {
+        "file": "assets/room13-pixel-wide-room13-after-afternoon.webp",
+        "rect": [
+          810,
+          525,
+          220,
+          95
+        ]
+      },
+      "E09": {
+        "file": "assets/room13-pixel-wide-room13-after-afternoon.webp",
+        "rect": [
+          935,
+          548,
+          80,
+          52
+        ]
+      }
+    },
+    "late_objects": {
+      "desk": [
+        0,
+        468,
+        620,
+        47
+      ],
+      "mother_note": [
+        160,
+        383,
+        152,
+        49
+      ]
+    },
+    "home_positions": {
+      "neutral": [
+        1420,
+        662,
+        185
+      ],
+      "action_1": [
+        1010,
+        445,
+        125
+      ],
+      "action_2": [
+        1300,
+        655,
+        185
+      ],
+      "inspect_floor": [
+        1180,
+        668,
+        138
+      ]
+    },
+    "critical": [
+      [
+        1700,
+        375,
+        35,
+        67
+      ],
+      [
+        863,
+        552,
+        215,
+        64
+      ],
+      [
+        842,
+        498,
+        438,
+        57
+      ],
+      [
+        1541,
+        419,
+        150,
+        126
+      ]
+    ],
+    "perspective": [
+      0.306,
+      26.8
+    ]
+  },
+  "post": {
+    "width": 2160,
+    "initial_x": 440,
+    "periods": [
+      "morning"
+    ],
+    "note": "0.18.59 wide post, morning only. Afternoon/evening art was withheld (3-12px drift): those periods keep the 1280 backdrop, rects and staging. Source art/wide-maps-20261015/source/post-morning.png 2160x728, explicit crop [0,0,2160,720] (no scaling). Six public-floor slots in front of the counter: the owner's five candidates plus [585,712,240] in place of [675,635,205], which hid the scarf on six-resident mornings.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-post-morning.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2160,
+        720
+      ]
+    },
+    "objects": {
+      "notice": [
+        1602,
+        252,
+        87,
+        116
+      ],
+      "parcels": [
+        1690,
+        328,
+        420,
+        166
+      ],
+      "cup": [
+        2031,
+        469,
+        123,
+        122
+      ],
+      "scarf": [
+        645,
+        396,
+        112,
+        203
+      ],
+      "twine": [
+        1135,
+        282,
+        310,
+        184
+      ]
+    },
+    "floors": [
+      [
+        90,
+        675,
+        220
+      ],
+      [
+        285,
+        635,
+        205
+      ],
+      [
+        480,
+        685,
+        230
+      ],
+      [
+        585,
+        712,
+        240
+      ],
+      [
+        870,
+        690,
+        230
+      ],
+      [
+        1060,
+        620,
+        205
+      ]
+    ],
+    "slots": [
+      [
+        90,
+        675,
+        220,
+        "waiting"
+      ],
+      [
+        285,
+        635,
+        205,
+        "waiting"
+      ],
+      [
+        480,
+        685,
+        230,
+        "waiting"
+      ],
+      [
+        585,
+        712,
+        240,
+        "waiting"
+      ],
+      [
+        870,
+        690,
+        230,
+        "waiting"
+      ],
+      [
+        1060,
+        620,
+        205,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 6,
+    "critical": [
+      [
+        645,
+        396,
+        112,
+        203
+      ],
+      [
+        1135,
+        282,
+        310,
+        184
+      ]
+    ],
+    "perspective": [
+      0.402,
+      -47.8
+    ],
+    "slot_actions": {
+      "resident_momo": "living_lampnumber",
+      "resident_librarian": "living_bookpaper",
+      "resident_sling": "activity",
+      "resident_ppul": "activity",
+      "resident_eunho": "living_prices",
+      "seryeon": "action_1"
+    },
+    "old_scene_slot_actions": {
+      "resident_librarian": "living_bookpaper",
+      "resident_momo": "living_lampnumber",
+      "resident_guseul": "living_stamp"
+    }
+  },
+  "river": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Big river, narrow snow bank: floor spots only on the bank (lower left), never on the water. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015) ; river afternoon 2171 wide normalized to 2172 by repeating the last column.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-river-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-river-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-river-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "river_reeds": [
+        10,
+        410,
+        160,
+        250
+      ],
+      "river_rocks": [
+        162,
+        529,
+        195,
+        80
+      ],
+      "river_ice": [
+        1437,
+        632,
+        330,
+        70
+      ],
+      "river_water": [
+        700,
+        300,
+        700,
+        200
+      ],
+      "river_cliffs": [
+        1717,
+        151,
+        227,
+        119
+      ]
+    },
+    "floors": [
+      [
+        260,
+        705,
+        250
+      ],
+      [
+        520,
+        712,
+        255
+      ],
+      [
+        640,
+        710,
+        256
+      ]
+    ],
+    "slots": [
+      [
+        260,
+        705,
+        250,
+        "floor"
+      ],
+      [
+        520,
+        712,
+        255,
+        "floor"
+      ],
+      [
+        640,
+        710,
+        256,
+        "floor"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "perspective": [
+      0.808,
+      -319.0
+    ]
+  },
+  "forest": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Pathless forest: floor spots on open snow in front of the roots and logs. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015).",
+    "files": {
+      "morning": "assets/room13-pixel-wide-forest-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-forest-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-forest-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "forest_roots": [
+        108,
+        454,
+        650,
+        194
+      ],
+      "forest_trunk": [
+        194,
+        0,
+        281,
+        454
+      ],
+      "forest_rock": [
+        1134,
+        605,
+        140,
+        65
+      ],
+      "forest_branches": [
+        1274,
+        0,
+        346,
+        324
+      ]
+    },
+    "floors": [
+      [
+        1000,
+        700,
+        250
+      ],
+      [
+        1450,
+        706,
+        255
+      ],
+      [
+        1900,
+        712,
+        258
+      ]
+    ],
+    "slots": [
+      [
+        1000,
+        700,
+        250,
+        "floor"
+      ],
+      [
+        1450,
+        706,
+        255,
+        "floor"
+      ],
+      [
+        1900,
+        712,
+        258,
+        "floor"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "perspective": [
+      0.667,
+      -216.3
+    ]
+  },
+  "market": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.63 new place (docs/ART_REQUEST_01854_PLACES.md, approved v3 3:1 art). Market street: floor spots on the cobbles in front of the stalls. No residents are scheduled here yet (owner to choose the moved time slots). Morning = approved v3; afternoon/evening = lighting edits (art/new-maps-time9-20261015).",
+    "files": {
+      "morning": "assets/room13-pixel-wide-market-morning.webp",
+      "afternoon": "assets/room13-pixel-wide-market-afternoon.webp",
+      "evening": "assets/room13-pixel-wide-market-evening.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "objects": {
+      "market_produce": [
+        594,
+        389,
+        335,
+        86
+      ],
+      "market_oven": [
+        432,
+        324,
+        108,
+        108
+      ],
+      "market_firewood": [
+        335,
+        443,
+        173,
+        151
+      ],
+      "market_cheese": [
+        1210,
+        346,
+        356,
+        162
+      ],
+      "market_cloth": [
+        1728,
+        400,
+        216,
+        108
+      ],
+      "market_pots": [
+        2030,
+        367,
+        119,
+        140
+      ]
+    },
+    "floors": [
+      [
+        900,
+        640,
+        225
+      ],
+      [
+        1150,
+        605,
+        205
+      ],
+      [
+        1420,
+        655,
+        230
+      ],
+      [
+        1650,
+        700,
+        250
+      ],
+      [
+        760,
+        705,
+        253
+      ],
+      [
+        1040,
+        700,
+        251
+      ],
+      [
+        1640,
+        690,
+        246
+      ],
+      [
+        1990,
+        705,
+        253
+      ],
+      [
+        480,
+        690,
+        246
+      ]
+    ],
+    "slots": [
+      [
+        900,
+        640,
+        225,
+        "floor"
+      ],
+      [
+        1150,
+        605,
+        205,
+        "floor"
+      ],
+      [
+        1420,
+        655,
+        230,
+        "floor"
+      ],
+      [
+        1650,
+        700,
+        250,
+        "floor"
+      ],
+      [
+        760,
+        705,
+        253,
+        "floor"
+      ],
+      [
+        1040,
+        700,
+        251,
+        "floor"
+      ],
+      [
+        1640,
+        690,
+        246,
+        "floor"
+      ],
+      [
+        1990,
+        705,
+        253,
+        "floor"
+      ],
+      [
+        480,
+        690,
+        246,
+        "floor"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 4,
+    "perspective": [
+      0.468,
+      -76.5
+    ]
+  },
+  "ancient": {
+    "width": 2160,
+    "initial_x": 440,
+    "note": "0.18.61 (owner: new places). Source art/new-maps-v3-20261015 (one 2172x724 picture, uniform -> 2160x720). Underground: one picture for all periods.",
+    "files": {
+      "morning": "assets/room13-pixel-wide-ancient-day.webp",
+      "afternoon": "assets/room13-pixel-wide-ancient-day.webp",
+      "evening": "assets/room13-pixel-wide-ancient-day.webp"
+    },
+    "crops": {
+      "morning": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "afternoon": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "evening": [
+        0,
+        0,
+        2172,
+        724
+      ]
+    },
+    "floors": [
+      [
+        760,
+        702,
+        256
+      ],
+      [
+        1060,
+        690,
+        250
+      ],
+      [
+        1360,
+        698,
+        254
+      ]
+    ],
+    "slots": [
+      [
+        760,
+        702,
+        256,
+        "waiting"
+      ],
+      [
+        1060,
+        690,
+        250,
+        "waiting"
+      ],
+      [
+        1360,
+        698,
+        254,
+        "waiting"
+      ]
+    ],
+    "occlusion": [],
+    "ignore_legacy_positions": true,
+    "capacity": 3,
+    "standing_height_reference": 100,
+    "perspective": [
+      0.55,
+      -130
+    ]
+  }
+}

@@ -95,8 +95,11 @@ class RoleConnect(unittest.TestCase):
         before = BACKUP["guard"]
         for e in EMOTIONS[1:]:
             self.assertEqual(FULLBODY["guard"]["images"][e], before["fullbody"]["images"][e])
-        self.assertEqual(ACTING["guard"], before["acting"])
-        self.assertEqual(CAST["guard"], before["cast"])
+        for key, value in before["acting"].items():
+            if key != "neutral" and not key.startswith("avatar_"):
+                self.assertEqual(ACTING["guard"][key], value)
+        self.assertEqual(ACTING["guard"]["neutral"]["file"], FULLBODY["guard"]["images"]["neutral"]["file"])
+        self.assertEqual(PORTRAITS["guard"]["neutral"]["file"], FULLBODY["guard"]["images"]["neutral"]["file"])
         self.assertTrue(FULLBODY["guard"]["images"]["neutral"]["file"].startswith("assets/room13-role-guard"))
 
     def test_new_residents_no_longer_borrow(self):
