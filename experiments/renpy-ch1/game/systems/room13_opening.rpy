@@ -107,7 +107,7 @@ init 58 python:
         return Transform(r13_record_icon("E01"), size=(224, 224), fit="contain", nearest=True)
 
     def r13_opening_map():
-        return "assets/room13-worldmap-v5.webp"
+        return "assets/room13-map-village.webp"
 
     def r13_opening_bump():
         if not renpy.is_skipping():

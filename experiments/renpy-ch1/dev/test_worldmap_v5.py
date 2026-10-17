@@ -12,7 +12,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "game"
 DESIGN = ROOT.parents[1] / "design/maps/20261014"
-DATA = json.loads((GAME / "room13-worldmap-v5.json").read_text(encoding="utf-8"))
+DATA = json.loads((GAME / "room13-cartography.json").read_text(encoding="utf-8"))
 SCALE = 860 / 1672
 
 
@@ -42,46 +42,46 @@ def namespace():
 
 
 class WorldmapV5(unittest.TestCase):
-    def test_destinations_are_the_existing_eight_village_places(self):
-        ns = namespace()
-        dest = {k for k, v in DATA["layers"].items() if v["node"]}
-        self.assertEqual(dest, set(ns["R13_MAP_NODES"]["village"]))
-        # 0.18.63: the eight places plus 큰 강 / 깊은 숲 / 장터 (owner 2026-10-15).
-        self.assertEqual(len(dest), 11)
-        self.assertEqual(len(DATA["layers"]), 25)
-        self.assertTrue({"river", "forest", "market"} <= dest)
-        # Shrine, old quarry and scenery houses are drawn but are not places.
-        for scenery in ("shrine", "quarry_home", "quarry_shed"):
-            self.assertIsNone(DATA["layers"][scenery]["node"])
+    def test_existing_destinations_only(self):
+        ns=namespace()
+        self.assertEqual(set(DATA['regions']['village']['nodes']),set(ns['R13_MAP_NODES']['village']))
+        self.assertEqual(set(DATA['regions']['mountain']['nodes']),{'forest','facility','greenhouse','altar'})
 
-    def test_original_art_and_web_copy(self):
-        source = DESIGN / "worldmap-winter-shrine-old-quarry-v5.png"
-        self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(), DATA["sha256"])
-        with Image.open(GAME / "assets/room13-worldmap-v5.webp") as im:
-            self.assertEqual(list(im.size), list(DATA["size"]))
-        for key, spec in DATA["layers"].items():
-            if spec["node"]:
-                x, y, w, h = spec["bounds"]
-                for suffix in ("", "-outline"):
-                    with Image.open(GAME / ("assets/room13-worldmap-v5-%s%s.webp" % (key, suffix))) as im:
-                        self.assertEqual(im.size, (w, h), key)
-            else:
-                self.assertFalse((GAME / ("assets/room13-worldmap-v5-%s.webp" % key)).exists(), key)
-            self.assertGreater(len(spec["polygon"]), 4)
-            self.assertTrue(all(0 <= x < 1672 and 0 <= y < 941 for x, y in spec["polygon"]))
+    def test_assets_and_mask_targets(self):
+        from PIL import ImageDraw,ImageChops
+        for region,spec in DATA['regions'].items():
+            art=GAME/spec['art']
+            self.assertEqual(hashlib.sha256(art.read_bytes()).hexdigest(),spec['sha256'])
+            with Image.open(art) as im:self.assertEqual(im.size,tuple(DATA['size']))
+            masks={}
+            for key,node in spec['nodes'].items():
+                x,y,w,h=node['bounds']
+                mask=Image.new('L',tuple(DATA['size']))
+                ImageDraw.Draw(mask).polygon([tuple(p) for p in node['polygon']],fill=255)
+                masks[key]=mask
+                for suffix in ('','-outline'):
+                    with Image.open(GAME/('assets/room13-map-%s-%s%s.webp'%(region,key,suffix))) as im:
+                        self.assertEqual(im.size,(w,h));self.assertIn('A',im.getbands())
+                px,py=node['point']
+                self.assertEqual(mask.getpixel((px,py)),255,key)
+                # Both floating bars must leave the actual click point uncovered.
+                self.assertTrue(100<9+py*1248/1672<614,key)
+            for i,(key,mask) in enumerate(masks.items()):
+                for other,other_mask in list(masks.items())[i+1:]:
+                    self.assertIsNone(ImageChops.multiply(mask,other_mask).getbbox(),(region,key,other))
+            for key,node in spec['nodes'].items():
+                for other,mask in masks.items():
+                    if key!=other:self.assertEqual(mask.getpixel(tuple(node['point'])),0,(key,other))
 
-    def test_labels_inside_map_and_not_overlapping(self):
-        boxes = []
-        for key, spec in DATA["layers"].items():
-            if not spec["node"]:
-                continue
-            x, y = spec["label"]
-            x, y = round(x * SCALE), round(y * SCALE)
-            boxes.append((key, x - 57, y - 18, x + 57, y + 18))
-        for i, (k, a, b, c, d) in enumerate(boxes):
-            self.assertTrue(0 <= a < c <= 860 and 0 <= b < d <= 484, k)
-            for j, e, f, g, h in boxes[i + 1:]:
-                self.assertTrue(c <= e or g <= a or d <= f or h <= b, (k, j))
+    def test_secrets_have_separate_discovery_layers(self):
+        self.assertEqual(set(DATA['reveals']),{'greenhouse','altar'})
+        for key,spec in DATA['reveals'].items():
+            with Image.open(GAME/spec['art']) as im:
+                self.assertEqual(im.size,tuple(spec['bounds'][2:]));self.assertIn('A',im.getbands())
+        source=(GAME/'room13_worldmap_v5.rpy').read_text()
+        self.assertIn('if r13_cart_cover_visible(secret):',source)
+        self.assertNotIn('v5_label_',source)
+        self.assertIn('action SetScreenVariable("selected",key)',source)
 
     def test_eligibility_and_hidden_places(self):
         ns = namespace()

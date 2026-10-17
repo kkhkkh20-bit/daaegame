@@ -9812,7 +9812,7 @@ testcase new_places:
     click "지도 · 이동"
     pause 1.5
     screenshot "np_map.png"
-    click "큰 강"
+    click pos (942,592)
     pause 0.5
     screenshot "np_map_river.png"
     click "이곳으로 이동"
@@ -9823,7 +9823,7 @@ testcase new_places:
     screenshot "np_river_arrive.png"
     click "지도 · 이동"
     pause 1.5
-    click "깊은 숲"
+    click pos (150,137)
     pause 0.5
     click "이곳으로 이동"
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -9832,7 +9832,9 @@ testcase new_places:
     screenshot "np_forest_arrive.png"
     click "지도 · 이동"
     pause 1.5
-    click "장터"
+    click "마을"
+    pause .5
+    click pos (674,281)
     pause 0.5
     click "이곳으로 이동"
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -12151,3 +12153,29 @@ testcase owner_fixes_0192:
     click pos (640,560) until screen "r13_hub" timeout 40
     pause 0.5
     $ r13_qa_note("owner fixes 0.19.2 ok")
+
+testcase cartography:
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    click "지도 · 이동" until screen "r13_map" timeout 30
+    click "마을"
+    pause 1.0
+    screenshot "map_village.png"
+    click pos (270,371)
+    pause 0.4
+    assert eval (renpy.get_screen("r13_map").scope["selected"]=="inn" and room13["location"]=="inn")
+    click "여관 안"
+    pause 0.5
+    screenshot "map_inn_text.png"
+    assert eval ("passage" not in dict(r13_map_nodes("inn")) and "ancient" not in dict(r13_map_nodes("inn")))
+    click "숲·산길"
+    pause 0.7
+    screenshot "map_mountain_hidden.png"
+    assert eval (not r13_cart_cover_visible("altar") and not r13_cart_cover_visible("greenhouse"))
+    keysym "K_ESCAPE"
+    pause 0.6
+    assert screen "r13_hub"
+    $ r13_qa_note("cartography: village/inn/forest browse; selection no travel; secret art gated")

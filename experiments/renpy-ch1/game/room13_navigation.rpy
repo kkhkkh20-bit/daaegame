@@ -2,7 +2,7 @@ default persistent.room13_map_list = False
 
 # Spatial navigation: selecting a pin never travels or spends time.
 init 60 python:
-    R13_MAP_REGIONS = (("village", "마을"), ("inn", "여관 안"), ("mountain", "북쪽 산길"))
+    R13_MAP_REGIONS = (("village", "마을"), ("inn", "여관 안"), ("mountain", "숲·산길"))
     R13_MAP_NODES = {
         "village": {"gate":(132,354), "square":(336,250), "inn":(715,299),
             "post":(466,172), "workshop":(585,425), "clinic":(407,370),
@@ -11,7 +11,7 @@ init 60 python:
             "river":(267, 375), "forest":(82, 406), "market":(561, 319)},
         "inn": {"inn":(435,420), "dining":(434,307), "kitchen":(170,307),
             "hall":(340,120), "room13":(685,120), "passage":(685,40), "guestroom":(245,65), "ancient":(685,0)},
-        "mountain": {"facility":(110,135), "greenhouse":(382,108), "altar":(644,100)},
+        "mountain": {"forest":(180,300), "facility":(110,135), "greenhouse":(382,108), "altar":(644,100)},
     }
     R13_MAP_LABELS = {"gate":"마을 입구", "square":"광장", "inn":"여관 접수대",
         "post":"우체국", "workshop":"수리점", "clinic":"진료실", "school":"학교",
@@ -41,7 +41,7 @@ init 60 python:
 
     def r13_map_region(location):
         if location in R13_INN_LOCATIONS:return "inn"
-        if location in ("facility","greenhouse","altar"):return "mountain"
+        if location in ("forest","facility","greenhouse","altar"):return "mountain"
         return "village"
 
     def r13_map_nodes(region):
@@ -75,167 +75,90 @@ init 60 python:
             return "마을 › 북쪽 산길 › "+title
         return "마을 › "+title
 
-    class R13VillageMap(renpy.Displayable):
-        def __init__(self,region,**kwargs):
-            super(R13VillageMap,self).__init__(**kwargs)
-            self.region=region
-        def render(self,width,height,st,at):
-            rv=renpy.Render(860,490); c=rv.canvas()
-            c.rect("#c6d5ce",(0,0,860,490))
-            if self.region=="inn":
-                c.rect("#d9d3bb",(30,22,800,450))
-                c.rect("#786b53",(58,25,744,179),5)
-                c.rect("#b9ad91",(83,98,637,45))
-                for x in (98,205,440,545):
-                    c.rect("#d3c6a3",(x,33,82,61));c.rect("#8c8063",(x,33,82,61),3)
-                c.rect("#e6d6ae",(614,71,163,109));c.rect("#7b6849",(614,71,163,109),4)
-                c.rect("#786b53",(58,242,744,217),5)
-                c.line("#786b53",(288,245),(288,400),4)
-                c.line("#786b53",(59,380),(800,380),4)
-                for y in range(179,263,12):c.line("#877a5f",(331,y),(379,y),4)
-            else:
-                # Purposefully schematic pixel geometry; no ambiguous card grid.
-                for x,y in ((20,25),(70,63),(760,50),(807,114),(30,420),(782,427),(58,145),(804,270)):
-                    c.rect("#526e61",(x+9,y+24,8,21));c.polygon("#6a8976",((x,y+29),(x+13,y),(x+26,y+29)))
-                    c.polygon("#edf0dc",((x+5,y+13),(x+13,y),(x+21,y+13)))
-                if self.region=="village":
-                    paths=[((430,455),(430,285)),((430,285),(430,85)),((430,200),(195,170)),
-                        ((430,220),(677,180)),((430,350),(133,329)),((430,395),(702,404)),((677,180),(688,62))]
-                    c.polygon("#8faea9",((755,0),(784,0),(604,490),(568,490)))
-                else:
-                    paths=[((80,460),(267,304)),((267,304),(415,202)),((415,202),(567,72)),((415,202),(635,377))]
-                    for x,y in ((190,35),(310,12),(690,24)):
-                        c.polygon("#99b0a7",((x-90,y+130),(x,y),(x+108,y+130)))
-                        c.polygon("#f1efda",((x-29,y+44),(x,y),(x+35,y+44)))
-                for a,b in paths:
-                    c.line("#b9b197",a,b,27);c.line("#eae4c9",a,b,19)
-                for key,(x,y) in r13_map_nodes(self.region):
-                    if key=="square":
-                        c.rect("#91a09a",(x-43,y-33,86,60),4)
-                        c.rect("#63776d",(x-9,y-25,18,29))
-                    else:
-                        c.rect("#87978b",(x-38,y-28,76,49))
-                        c.rect("#e5d9b6",(x-32,y-27,64,41))
-                        c.polygon("#81615d",((x-43,y-27),(x,y-51),(x+43,y-27)))
-                        c.rect("#65584b",(x-6,y-5,12,19))
-                        c.rect("#d4aa58",(x-23,y-14,10,10))
-            return rv
-
-screen r13_map(initial_region=None):
+screen r13_map(initial_region=None, local_guide=False):
     style_prefix "r13"
     modal True
     zorder 45
     default region=initial_region or r13_map_region(room13["location"])
-    default selected=r13_map_selection(initial_region or r13_map_region(room13["location"]),"square" if initial_region=="village" and room13["location"] in R13_INN_LOCATIONS else room13["location"])
+    default selected=r13_map_selection(initial_region or r13_map_region(room13["location"]),room13["location"])
     default map_hover=None
     default ready=False
-    # Revalidate restored selection before labels, previews or travel controls render.
-    $ region = "village" if region=="mountain" and room13["day"]<R13_WEEK2_DAY else region
+    $ region = region if region in R13_MAP_NODES else "village"
     $ selected = r13_map_selection(region,selected)
-    key "game_menu" action Return(False)
+    $ close_action = Function(r13_inn_guide_close) if local_guide else Return(False)
+    key "game_menu" action close_action
     timer .15 action SetScreenVariable("ready",True)
-    add r13_background(R13_PLACES[room13["location"]][1])
-    add Solid("#211b1899")
-    add R13TravelSheet(spine=False) xpos 12 ypos 8 xsize 1256 ysize 704
-    text ("여관 안내도" if region=="inn" else "북쪽 산길" if region=="mountain" else "마을 지도") xpos 30 ypos 22 size 32 color "#493b30"
-    text ("현재 위치 · "+r13_location_path()) xpos 280 ypos 30 size 23 color "#765426"
-    # 0.18.50 (owner): no 마을/여관 안 tabs; the map opens on the area you are in. Only once the
-    # northern path is open does a 마을/북쪽 산길 switch appear.
-    hbox:
-        xpos 30 ypos 78 spacing 12
-        for key,title in R13_MAP_REGIONS:
-            if key!="inn" and r13_map_nodes("mountain"):
-                textbutton title:
-                    style "r13_action_button" xsize 190 ysize 58 text_size 23
-                    action [SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected))] selected region==key
-                    sensitive ready
-    if region=="village":
-        use r13_worldmap_v5(selected,ready,map_hover)
-    elif region=="inn":
+    add Solid("#10202a")
+    if region in ("village","mountain"):
+        use r13_cartography(region,selected,ready,map_hover)
+    else:
+        add r13_background(R13_PLACES[room13["location"]][1])
+        add Solid("#132127bb")
+        add R13TravelSheet(spine=False) xpos 16 ypos 9 xysize (1248,702)
         $ known=set(key for key,point in r13_map_nodes("inn"))
         $ floors=[("1층",("inn","dining","kitchen")),("2층",("hall","room13","guestroom")),("안쪽",("passage",)),("지하",("ancient",))]
         if room13["location"]=="ancient":
             $ floors=floors[-1:]+floors[:-1]
         viewport:
-            area (30,150,860,490) mousewheel True draggable True scrollbars "vertical"
+            id "map_inn_list"
+            area (50,120,718,472) mousewheel True draggable True scrollbars "vertical"
             vbox:
-                spacing 20
+                spacing 14
                 for floor,keys in floors:
                     if any(key in known for key in keys):
-                        vbox:
-                            spacing 10
-                            text floor size 24 color "#765426"
-                            hbox:
-                                spacing 16
-                                for key in keys:
-                                    if key in known:
-                                        button:
-                                            xsize 264 ysize 144 padding (16,14)
-                                            background R13PaperFrame()
-                                            hover_background R13InkPanel(focused=True)
-                                            selected_background R13InkPanel(focused=True)
-                                            selected key==selected
-                                            action r13_map_pick(key,selected) sensitive ready
-                                            vbox:
-                                                spacing 12
-                                                hbox:
-                                                    spacing 10
-                                                    if r13_meeting_map_venue(key):
-                                                        add R13AntiqueIcon("meeting_"+r13_meeting_map_venue(key)[1],size=28) yalign .5
-                                                    text R13_MAP_LABELS[key] size 26 color ("#fff0cb" if key==selected else "#493b30") hover_color "#fff0cb"
-                                                text ("● 현재 위치" if key==room13["location"] else "선택됨" if key==selected else "장소 살펴보기") size 20 color ("#edc878" if key==selected else "#796044") hover_color "#edc878"
-    else:
-        add Transform("assets/room13-pixel-navigation-village.webp",size=(860,490),nearest=True) xpos 30 ypos 150
-        for key,(px,py) in r13_map_nodes(region):
-            button:
-                area (30+px-82,150+py-30,164,64)
-                padding (6,4)
-                background R13InkPanel(focused=(key==selected))
-                hover_background R13InkPanel(focused=True)
-                action r13_map_pick(key,selected) sensitive ready
+                        text floor size 21 color "#826748"
+                        for key in keys:
+                            if key in known:
+                                button:
+                                    id ("map_room_"+key)
+                                    xsize 682 ysize 58 padding (18,8)
+                                    background (R13PaperPanel(focused=True) if key==selected else Solid("#bca17318"))
+                                    hover_background R13PaperPanel(focused=True)
+                                    action SetScreenVariable("selected",key) sensitive ready
+                                    fixed:
+                                        text R13_MAP_LABELS[key] size 25 color "#493b30" yalign .5
+                                        text ("현재 위치" if key==room13["location"] else "선택됨" if key==selected else "›") size 20 color "#82603a" xalign 1.0 yalign .5
+        if selected:
+            frame:
+                area (810,134,402,420) padding (22,20) background R13PaperFrame()
                 vbox:
-                    xalign .5 yalign .5 spacing 3
-                    hbox:
-                        spacing 7 xalign .5
-                        if r13_meeting_map_venue(key):
-                            add R13AntiqueIcon("meeting_"+r13_meeting_map_venue(key)[1],size=24) yalign .5
-                        text R13_MAP_LABELS[key] size 22 color "#fff0cb" yalign .5
-                    if key==room13["location"]:
-                        text "● 현재 위치" size 17 color "#f3ca73" xalign .5
-    if selected is not None:
-        frame:
-            area (916,150,334,428) padding (22,18) background R13PaperFrame()
-            fixed:
-                xsize 290 ysize 392
-                text R13_PLACES[selected][0] ypos 0 size 27 color "#765426" xsize 286
-                add Transform(r13_background(R13_PLACES[selected][1]),size=(286,161),nearest=True) ypos 56
-                $ meeting_venue=r13_meeting_map_venue(selected)
-                if meeting_venue:
-                    hbox:
-                        ypos 234 spacing 10
-                        add R13AntiqueIcon("meeting_"+meeting_venue[1],size=30) yalign .5
-                        vbox:
-                            spacing 5
-                            text meeting_venue[2] size 19 color "#654b30" xsize 246
-                            if r13_meeting_map_pending(selected):
-                                text "지금 모임이 있습니다" size 17 color "#874a3b"
-                if selected==room13["location"]:
-                    text "● 현재 위치" ypos 290 size 24 color "#89532e"
-                elif selected in r13_places():
-                    textbutton "이곳으로 이동":
-                        style "r13_action_button" ypos 332 xsize 286 ysize 56 text_size 25
-                        action Return(selected) sensitive ready
-                else:
-                    text "지금은 이동할 수 없습니다." ypos 290 size 22 color "#796044" xsize 286
+                    spacing 20
+                    text R13_MAP_LABELS[selected] size 28 color "#493b30"
+                    add Transform(r13_background(R13_PLACES[selected][1]),size=(358,202),nearest=True)
+                    text ("● 현재 위치" if selected==room13["location"] else "아래 이동 버튼으로 확정합니다.") size 20 color "#765b3e" xsize 358
+    # A small corner caption leaves the greenhouse roof and altar fully visible.
+    if region=="inn":
+        add R13PaperFrame() xpos 24 ypos 20 xysize (1232,76)
+        text "여관 안내" xpos 46 ypos 29 size 29 color "#493b30"
+        text ("현재 · "+r13_location_path()) xpos 260 ypos 39 size 19 color "#765b3e" xsize 950
     else:
-        text "아직 확인한 장소가 없습니다." xpos 932 ypos 180 size 22 color "#65503b"
+        add R13PaperFrame() xpos 24 ypos 20 xysize (250,76)
+        text ("숲·산길" if region=="mountain" else "마을 지도") xpos 46 ypos 29 size 29 color "#493b30"
+        text ("현재 · "+(R13_MAP_LABELS.get(room13["location"],"마을") if r13_map_discovered(room13["location"]) else "마을")) xpos 46 ypos 65 size 17 color "#765b3e" xsize 206
+    add R13PaperFrame() xpos 24 ypos 614 xysize (1232,86)
+    if selected:
+        text R13_MAP_LABELS[selected] xpos 48 ypos 627 size 27 color "#493b30"
+        $ meeting_venue=r13_meeting_map_venue(selected)
+        text (("● 현재 위치" if selected==room13["location"] else "선택됨")+(" · "+meeting_venue[2] if meeting_venue else " · 이동 버튼으로 확정")+(" · 모임 중" if meeting_venue and r13_meeting_map_pending(selected) else "")) xpos 48 ypos 663 size 17 color "#82603a" xsize 334
+        $ can_travel=selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
+        textbutton "이곳으로 이동":
+            id "map_confirm_travel"
+            style "r13_action_button" xpos 786 ypos 629 xsize 202 ysize 56 text_size 23
+            action ([Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected)) sensitive (ready and can_travel)
+    else:
+        text "아직 확인한 장소가 없습니다." xpos 48 ypos 642 size 22 color "#765b3e"
+    if not local_guide:
+        hbox:
+            xpos 390 ypos 632 spacing 8
+            for key,title in R13_MAP_REGIONS:
+                if r13_map_nodes(key):
+                    textbutton title:
+                        style "r13_action_button" xsize 116 ysize 52 padding (8,8) text_size 19
+                        background R13PaperPanel(focused=(region==key)) hover_background R13PaperPanel(focused=True)
+                        text_color "#654b30" text_hover_color "#493b30"
+                        action [SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected)),SetScreenVariable("map_hover",None)]
+                        selected region==key sensitive ready
     textbutton "현장으로 돌아가기":
-        action Return(False) style "r13_action_button" xpos 950 ypos 650 xsize 300 ysize 60 text_size 24
-    hbox:
-        xpos 32 ypos 660 spacing 20
-        for kind,title in (("round","원탁"),("field","야외 현장"),("room","실내 입석"),("stone","제단 돌판")):
-            if any(r13_meeting_map_venue(k) and r13_meeting_map_venue(k)[1]==kind for k,p in r13_map_nodes(region)):
-                hbox:
-                    spacing 6
-                    add R13AntiqueIcon("meeting_"+kind,size=24) yalign .5
-                    text title id ("meeting_map_legend_"+kind) size 18 color "#654b30" yalign .5
+        id "map_close"
+        style "r13_action_button" xpos 1002 ypos 629 xsize 232 ysize 56 text_size 21
+        action close_action
