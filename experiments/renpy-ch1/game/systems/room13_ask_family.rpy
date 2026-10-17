@@ -13,13 +13,13 @@ init 193 python:
 
     def _g1a_add_steps(key,new):
         t=ROOM13["topics"].get(key)
-        if not t:return
+        if t is None:return
         old=t.get("steps")
         t["steps"]={"all":[old,new]} if old else new
 
     def _g1a_retitle(key,title):
         t=ROOM13["topics"].get(key)
-        if not t:return
+        if t is None:return
         old=t.get("title")
         t["title"]=title
         if old in R13_QUESTION_SUMMARIES and title not in R13_QUESTION_SUMMARIES:
