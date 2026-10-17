@@ -1,0 +1,393 @@
+[
+  {
+    "request_id": "CL-1",
+    "character_id": "resident_piko",
+    "action": "clinic_bededge_blanket",
+    "posture": "seated_bededge",
+    "contact": "background_bed",
+    "stature_ratio": 0.8,
+    "file": "assets/room13-action-resident_piko-clinic_bededge_blanket.png",
+    "sha256": "6070b407f29748be55d9c4ccff92ba27df242c2b0a8b24d461d1a4847424c4f5",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 1449720,
+    "usage": "map_investigation",
+    "facing": "right_3quarter",
+    "source_crop_xywh": [
+      44,
+      12,
+      965,
+      1468
+    ],
+    "head_bbox_px": [
+      273,
+      13,
+      500,
+      389
+    ],
+    "head_bbox_normalized": [
+      0.266602,
+      0.008464,
+      0.488281,
+      0.253255
+    ],
+    "contacts_px": {
+      "head_center": [
+        570,
+        221
+      ],
+      "foot_left": [
+        691,
+        1462
+      ],
+      "foot_right": [
+        936,
+        1455
+      ],
+      "foot": [
+        813,
+        1462
+      ],
+      "buttock": [
+        477,
+        931
+      ],
+      "seat": [
+        477,
+        931
+      ],
+      "hand_left": [
+        510,
+        528
+      ],
+      "hand_right": [
+        718,
+        600
+      ],
+      "blanket_left_grip": [
+        482,
+        476
+      ],
+      "blanket_right_grip": [
+        696,
+        560
+      ]
+    },
+    "contacts_normalized": {
+      "head_center": [
+        0.556641,
+        0.14388
+      ],
+      "foot_left": [
+        0.674805,
+        0.951823
+      ],
+      "foot_right": [
+        0.914062,
+        0.947266
+      ],
+      "foot": [
+        0.793945,
+        0.951823
+      ],
+      "buttock": [
+        0.46582,
+        0.60612
+      ],
+      "seat": [
+        0.46582,
+        0.60612
+      ],
+      "hand_left": [
+        0.498047,
+        0.34375
+      ],
+      "hand_right": [
+        0.701172,
+        0.390625
+      ],
+      "blanket_left_grip": [
+        0.470703,
+        0.309896
+      ],
+      "blanket_right_grip": [
+        0.679688,
+        0.364583
+      ]
+    },
+    "regions_px": {
+      "blanket_bbox": [
+        175,
+        310,
+        779,
+        647
+      ],
+      "hand_left_bbox": [
+        454,
+        447,
+        118,
+        155
+      ],
+      "hand_right_bbox": [
+        673,
+        536,
+        90,
+        135
+      ]
+    }
+  },
+  {
+    "request_id": "RI-1",
+    "character_id": "resident_kkwak",
+    "action": "river_bucket_fishing",
+    "posture": "seated_bucket",
+    "contact": "bucket_ground",
+    "stature_ratio": 0.78,
+    "file": "assets/room13-action-resident_kkwak-river_bucket_fishing.png",
+    "sha256": "48c5e1d5be63ccad4d746d99e462e1011d447f3851ebfa2d0266866180235bdd",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 1518630,
+    "usage": "map_investigation",
+    "facing": "right_3quarter",
+    "source_crop_xywh": [
+      24,
+      44,
+      954,
+      1462
+    ],
+    "head_bbox_px": [
+      177,
+      44,
+      544,
+      505
+    ],
+    "head_bbox_normalized": [
+      0.172852,
+      0.028646,
+      0.53125,
+      0.328776
+    ],
+    "contacts_px": {
+      "head_center": [
+        513,
+        368
+      ],
+      "foot_left": [
+        535,
+        1498
+      ],
+      "foot_right": [
+        763,
+        1497
+      ],
+      "foot": [
+        649,
+        1498
+      ],
+      "buttock": [
+        375,
+        1128
+      ],
+      "seat": [
+        375,
+        1128
+      ],
+      "bucket_bottom": [
+        342,
+        1465
+      ],
+      "hand_rod_left": [
+        638,
+        848
+      ],
+      "hand_rod_right": [
+        744,
+        833
+      ],
+      "rod_tip": [
+        963,
+        695
+      ],
+      "line_bottom": [
+        962,
+        1490
+      ]
+    },
+    "contacts_normalized": {
+      "head_center": [
+        0.500977,
+        0.239583
+      ],
+      "foot_left": [
+        0.522461,
+        0.97526
+      ],
+      "foot_right": [
+        0.745117,
+        0.974609
+      ],
+      "foot": [
+        0.633789,
+        0.97526
+      ],
+      "buttock": [
+        0.366211,
+        0.734375
+      ],
+      "seat": [
+        0.366211,
+        0.734375
+      ],
+      "bucket_bottom": [
+        0.333984,
+        0.953776
+      ],
+      "hand_rod_left": [
+        0.623047,
+        0.552083
+      ],
+      "hand_rod_right": [
+        0.726562,
+        0.542318
+      ],
+      "rod_tip": [
+        0.94043,
+        0.452474
+      ],
+      "line_bottom": [
+        0.939453,
+        0.970052
+      ]
+    },
+    "regions_px": {
+      "bucket_bbox": [
+        230,
+        1106,
+        226,
+        365
+      ],
+      "rod_bbox": [
+        628,
+        683,
+        348,
+        206
+      ]
+    }
+  },
+  {
+    "request_id": "RI-2",
+    "character_id": "resident_mulgyeol",
+    "action": "river_standing_pole",
+    "posture": "standing",
+    "contact": "pole_ground",
+    "stature_ratio": 1.0,
+    "file": "assets/room13-action-resident_mulgyeol-river_standing_pole.png",
+    "sha256": "54fea88c5c31d6ee97ddfc24544241b6e426a0a0fb3b3ed87cb5caaea1980eba",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 1341243,
+    "usage": "map_investigation",
+    "facing": "right_3quarter",
+    "source_crop_xywh": [
+      36,
+      5,
+      824,
+      1520
+    ],
+    "head_bbox_px": [
+      321,
+      108,
+      371,
+      302
+    ],
+    "head_bbox_normalized": [
+      0.313477,
+      0.070312,
+      0.362305,
+      0.196615
+    ],
+    "contacts_px": {
+      "head_center": [
+        511,
+        266
+      ],
+      "foot_left": [
+        362,
+        1510
+      ],
+      "foot_right": [
+        662,
+        1497
+      ],
+      "foot": [
+        512,
+        1510
+      ],
+      "hand_pole_upper": [
+        745,
+        548
+      ],
+      "hand_pole_lower": [
+        741,
+        761
+      ],
+      "pole_top": [
+        717,
+        14
+      ],
+      "pole_bottom": [
+        798,
+        1505
+      ]
+    },
+    "contacts_normalized": {
+      "head_center": [
+        0.499023,
+        0.173177
+      ],
+      "foot_left": [
+        0.353516,
+        0.983073
+      ],
+      "foot_right": [
+        0.646484,
+        0.974609
+      ],
+      "foot": [
+        0.5,
+        0.983073
+      ],
+      "hand_pole_upper": [
+        0.727539,
+        0.356771
+      ],
+      "hand_pole_lower": [
+        0.723633,
+        0.495443
+      ],
+      "pole_top": [
+        0.700195,
+        0.009115
+      ],
+      "pole_bottom": [
+        0.779297,
+        0.979818
+      ]
+    },
+    "regions_px": {
+      "pole_bbox": [
+        694,
+        6,
+        131,
+        1505
+      ]
+    }
+  }
+]
