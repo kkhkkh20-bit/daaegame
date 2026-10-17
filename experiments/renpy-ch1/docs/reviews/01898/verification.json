@@ -1,0 +1,62 @@
+{
+  "version": "0.18.98",
+  "baseline": "1454562",
+  "map_art_replaced": false,
+  "checks": {
+    "unit_and_lint": "passed: dev/check.sh",
+    "native": "== relations_tab Status: PASSED Time: 14.909 s"
+  },
+  "map_and_relations": {
+    "passed": true,
+    "checks": [
+      "known relations only; unopened facts stay hidden",
+      "real graph and relationship-card navigation",
+      "focused graph and real horizontal character-index drag; overview switch",
+      "status filter retains fixed places",
+      "relationship selection/filter restored after close",
+      "relationship UI leaves story state unchanged",
+      "all 26 slotted people render; large text and reduced motion mobile",
+      "half-proof shows only already presented item",
+      "four suspects and cancel all inside the screen",
+      "actual point menu cancel leaves proof/story unchanged",
+      "four distinct venue styles in actual meeting renderer; Q6 at night",
+      "real map selection changes no clock or travel; current offers only; compact map pin touch targets do not overlap",
+      "matching map/meeting icons including altar on mobile"
+    ]
+  },
+  "materials": {
+    "passed": true,
+    "checks": [
+      "owned evidence only in type filters",
+      "explicit known source opens relationship",
+      "relationship opens owned testimony and its correct page",
+      "relationship selection retained across tab return",
+      "filter and selected material restored after close",
+      "mobile touch and large text",
+      "transfer lens uses actual eligibility; no second inventory",
+      "unknown source not revealed; source lookup leaves story state unchanged",
+      "underground belongs to inn; discovered only; current floor visible on mobile",
+      "hearing filters keep owned evidence only and hide transfer lens"
+    ]
+  },
+  "reading_position": {
+    "passed": true,
+    "record": "K09",
+    "scroll": {
+      "value": 32.2,
+      "range": 160
+    },
+    "checks": [
+      "real wheel scroll restored after record switch and close/reopen",
+      "separate offsets per material",
+      "record tab/selection/page restored",
+      "no evidence clock or story state changed by UI",
+      "three authored interiors before/after render",
+      "reduced motion keeps static contrast"
+    ]
+  },
+  "package": {
+    "archive_bytes": 16857506,
+    "archive_sha256": "21328b96c539684f14a666a11a81f7cb5e73a37b832ef828f930362b81c7d435"
+  }
+}
