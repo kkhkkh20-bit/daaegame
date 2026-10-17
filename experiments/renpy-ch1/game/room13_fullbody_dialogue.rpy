@@ -35,7 +35,10 @@ init 58 python:
     R13_FULLBODY_TOP_PAD = 12
     # Per-character adjustments found in the in-game check (figure multiplier):
     # tall ears/hair push these faces down to the large-text dialogue panel.
-    R13_FULLBODY_TUNING = {"bami":.88,"doto":.92}
+    R13_FULLBODY_TUNING = {"bami":.88,"doto":.92,
+        # 0.19.2 (owner: "다람이만 너무 확대"): a child, drawn smaller than the adults. Without this the
+        # whole-pixel rounding pushed her figure to 951px against Karo's 841px.
+        "daram":.85}
 
     def r13_fullbody_key(pose):
         key=pose or "neutral"

@@ -48,7 +48,7 @@ label r13_lines(entries,identity):
             $ r13_expression,r13_directed_pose="thinking","thinking"
         # 0.18.56 (owner): someone who "comes over" in the opening narration is on screen
         # from that line, not only from their first spoken line.
-        if r13_packet[0] in (None,r13_viewpoint()) and "r13_visitor" not in renpy.get_showing_tags():
+        if r13_packet[0] in (None,r13_viewpoint()) and "r13_visitor" not in renpy.get_showing_tags() and not (len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("no_lead")):
             $ r13_lead=next((p[0] for p in entries[r13_index:] if p[0] not in (None,r13_viewpoint()) and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)
             if r13_lead:
                 $ r13_speaker(r13_lead,"neutral")
@@ -104,8 +104,7 @@ label room13_start:
     hide screen r13_book
     hide screen r13_calendar
     show screen r13_hud
-    # Opening cutscene before the carriage talk (systems/room13_opening.rpy).
-    call r13_opening_cut
+    # 0.19.2 (owner): the opening cutscene before the carriage talk is no longer played.
     call r13_carriage
     $ r13_grant(["E01"],"여행 중 가지고 온 편지")
     $ r13_edit(period=1)
@@ -247,7 +246,7 @@ label r13_entry_done:
 label r13_carriage:
     $ r13_carriage_skip = False
     call r13_scene("winter_carriage","마차 안","travel")
-    call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘자, 맞은편 의자 등받이 뒤에서 무언가 불쑥 솟아올랐다.'), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', 'joy'), ('dad', '깜짝이야. 언제부터 마차 안에 숨어 있었어?'), ('daram', '아빠가 편지 읽기 시작할 때부터! 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY)
+    call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘었다. 편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.', {'no_lead': True}), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', {'expression': 'joy', 'sfx': 'comic'}), ('dad', '깜짝이야. 언제 거기 들어가 있었어?'), ('daram', '아빠가 편지 읽을 때! 의자 뒤로 살금살금 갔는데, 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY)
     $ persistent.room13_opening_seen=True
     $ r13_carriage_skip = False
     return

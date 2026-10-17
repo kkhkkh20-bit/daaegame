@@ -236,6 +236,7 @@ label r13_ep1_events:
     return
 
 label r13_ep1_glimpse:
+    call r13_here_scene
     $ r13_flag("piko_seen")
     call r13_lines([(None,"광장 둘레에 등이 다섯 개 서 있었다. 등 하나 밑에서 누군가 판자에 그림을 그리고 있었다."),
         ("resident_piko","여기가 마을에서 제일 따뜻해요. 등 안에 따뜻한 돌 조각이 들어 있거든요. 밤새 손을 데워 줘요."),
@@ -417,6 +418,7 @@ label r13_ep1_library_dawn:
     return
 
 label r13_ep1_siluk:
+    call r13_here_scene
     $ r13_flag("lt_siluk_seen")
     call r13_lines([(None,"짐꾼 실룩이 짐을 묶고 있었다. 갈색 노끈, 한쪽 끝이 뜯겨 있었다."),
         ("resident_siluk","……무슨 일이오. 바쁘오."),
@@ -448,6 +450,7 @@ label r13_ep1_siluk:
     return
 
 label r13_ep1_store:
+    call r13_here_scene
     $ r13_flag("lt_store_seen")
     call r13_lines([(None,"창고 안쪽 상자에서 초록빛이 새어 나왔다. 손을 대니 사람 손처럼 따뜻했다. 등 조각들이다."),
         ("resident_madam","사고판 것뿐이에요. 요즘 온기가 얼마나 귀한지 아세요?"),

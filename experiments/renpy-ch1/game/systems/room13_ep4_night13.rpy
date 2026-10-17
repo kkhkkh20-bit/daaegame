@@ -157,6 +157,7 @@ label r13_nt_dawn8:
     return
 
 label r13_nt_chorong_signal:
+    call r13_here_scene
     $ r13_flag("nt_chorong_signal")
     if r13_has("chorong_dead"):
         return

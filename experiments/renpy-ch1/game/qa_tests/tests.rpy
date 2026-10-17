@@ -12104,3 +12104,50 @@ testcase pixel_unify_preview:
     $ r13_qa_fb_tag="nowx15_"
     run Call("r13_qa_fullbody",("normal",),["daram","resident_tok","resident_nero"],["neutral"])
     click pos (1276,300) until eval r13_qa_fb_done timeout 300
+
+testcase carriage_pop:
+    # 0.19.2 (owner): no opening cutscene; Daram springs up on her own "왁!" line (with a sound),
+    # not during the narration before it; at the gate she is drawn smaller than Karo.
+    pause 2.0
+    click "처음부터"
+    pause until screen "say" timeout 30
+    pause 0.8
+    assert eval (place=="마차 안" and "r13_visitor" not in renpy.get_showing_tags())
+    screenshot "carriage_line1.png"
+    click pos (640,560)
+    pause 0.5
+    assert eval ("r13_visitor" not in renpy.get_showing_tags())
+    click pos (640,560)
+    pause 0.5
+    assert eval ("r13_visitor" in renpy.get_showing_tags() and "comic" in source_effect_log)
+    screenshot "carriage_wak.png"
+    click pos (640,560) until eval (place!="마차 안") timeout 60
+    pause until screen "say" timeout 20
+    pause 0.8
+    screenshot "gate_daram_or_karo.png"
+    assert eval (r13_fullbody_scale("daram",840)*R13_FULLBODY["people"]["daram"]["figure"][3] < r13_fullbody_scale("karo",840)*R13_FULLBODY["people"]["karo"]["figure"][3])
+    $ r13_qa_note("carriage pop ok")
+
+testcase owner_fixes_0192:
+    # 0.19.2 owner notes: Mom has no face on the chart before the reunion; every met resident
+    # (Karo, the gate guard …) is on the chart; Piko's square scene plays over the square, not the gate;
+    # the 보여주기 button on question screens is large and clear of the question list.
+    pause 2.0
+    click "처음부터"
+    pause until screen "say" timeout 30
+    click pos (640,560) until screen "r13_hub" timeout 90
+    pause 1.0
+    assert eval ("karo" in r13_rel_people() and "guard" in r13_rel_people() and r13_rel_status("mom")[0]=="missing")
+    run Show("r13_records",initial_tab="relations")
+    pause 1.0
+    screenshot "relations_day1.png"
+    run Hide("r13_records")
+    pause 0.5
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("entry_corrected","lodging","+ep"))
+    pause until eval ("piko_seen" in room13["flags"]) timeout 30
+    pause 0.8
+    assert eval (r13_scene_bg=="winter_square")
+    screenshot "piko_square.png"
+    click pos (640,560) until screen "r13_hub" timeout 40
+    pause 0.5
+    $ r13_qa_note("owner fixes 0.19.2 ok")

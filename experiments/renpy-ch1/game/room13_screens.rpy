@@ -52,9 +52,11 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
             area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
             use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
         if present_action is not None:
+            # 0.19.2 (owner: "보여주기가 핵심인데 버튼이 더 커야"): 172×64 → 260×84, 글씨 28.
             fixed:
-                xpos (R13_EVIDENCE_CARD_CENTER[0]-86) ypos R13_EVIDENCE_CARD_CENTER[1] xsize 172 ysize 64
-                use r13_antique_button("보여주기","present",present_action,enabled=ready,width=172)
+                # Right of the question list (it ends at x≈995), below the date panel.
+                xpos 1008 ypos R13_EVIDENCE_CARD_CENTER[1] xsize 260 ysize 84
+                use r13_antique_button("보여주기","present",present_action,enabled=ready,width=260,height=84,label_size=r13_read_size(28,31),icon_size=38)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:

@@ -239,6 +239,7 @@ label r13_ep1_morning:
 # =========================================================
 
 label r13_ep2_kitchen:
+    call r13_here_scene
     $ r13_flag("ep2_seen")
     call r13_ev_here("night")
     call r13_lines([(None,"주방 뒷문이 반쯤 열려 있었다. 나비가 남은 빵과 식은 수프를 천에 싸서 문밖으로 내밀고 있었다."),

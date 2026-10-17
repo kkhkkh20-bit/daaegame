@@ -46,3 +46,12 @@ init 165 python:
         if title and bg and loc in R13_PLACES and R13_PLACES[loc][1]!=bg:
             return title
         return r13_location_path().replace("마을 › ","",1)
+
+# 0.19.2 (owner: "광장에 도착하기도 전에 피코가 대사를 친다"): a scene that fires on arrival plays
+# before the hub draws the new place, so the last scene's picture (e.g. the gate) was still up.
+# Arrival-triggered scenes call this first to stand in the place they belong to.
+label r13_here_scene:
+    $ _r13_here=R13_PLACES.get(room13["location"])
+    if _r13_here and r13_scene_bg!=_r13_here[1]:
+        call r13_scene(_r13_here[1],_r13_here[0],"calm")
+    return
