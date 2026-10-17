@@ -65,7 +65,7 @@ screen main_menu():
     add r13_title_fx()
     add r13_title_menu_shade()
     hbox:
-        xpos 62 ypos 592 spacing 5
+        xpos 62 ypos 584 spacing 5
         at r13_title_menu_in
         textbutton "이어하기":
             style "r13_title_button" selected title_focus=="continue"

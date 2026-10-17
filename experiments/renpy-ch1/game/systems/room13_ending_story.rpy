@@ -57,10 +57,7 @@ screen r13_ending_story_view(key,index):
     else:
         add r13_ending_story_art(key,index)
     add Solid("#111b2240") ysize 52
-    add Solid("#111b2220") ypos 482 ysize 20
-    add Solid("#111b2240") ypos 502 ysize 20
-    add Solid("#111b2270") ypos 522 ysize 20
-    add Solid("#111b22d9") ypos 542 ysize 178
+    add R13PaperFrame() xpos 36 ypos 516 xsize 1208 ysize 204
     text R13_ENDINGS[key]["title"] xpos 48 ypos 16 size 21 color "#f1dfb8"
     button:
         area (0,52,1280,450) background None
@@ -69,14 +66,14 @@ screen r13_ending_story_view(key,index):
     fixed:
         if persistent.room13_motion:
             at r13_ending_caption_reveal
-        text frame["heading"] xpos 76 ypos 548 size r13_read_size(21,24) color "#dfbd7e"
-        text frame["caption"] xpos 76 ypos 581 xsize 1128 size r13_read_size(25,29) color "#fff0d0" line_spacing 4
+        text frame["heading"] xpos 76 ypos 534 size r13_read_size(21,24) color "#765426"
+        text frame["caption"] xpos 76 ypos 568 xsize 1128 size r13_read_size(25,29) color "#493b30" line_spacing 4
     textbutton "‹ 이전":
-        style "r13_action_button" area (76,654,144,52) text_size 21
+        style "r13_paper_tab_button" area (76,630,144,82) text_size 21 text_yalign .5
         action Return("previous") sensitive ready and index>0
-    text ("%02d / 04"%(index+1)) xcenter 640 ypos 670 size 18 color "#d4cbb7"
+    text ("%02d / 04"%(index+1)) xcenter 640 ypos 670 size 18 color "#65503b"
     textbutton ("여정의 기록 ›" if index==3 else "다음 장면 ›"):
-        style "r13_action_button" area (984,654,220,52) text_size 22
+        style "r13_paper_tab_button" area (984,630,220,82) text_size 22 text_yalign .5
         action Return("next") sensitive ready
     if ready:
         key "K_RETURN" action Return("next")

@@ -63,7 +63,7 @@ init 99 python:
             store.r13_meeting_pan_started=now if enabled else now-1
             store.r13_meeting_pan_painted_revision=revision
         elapsed=now-getattr(store,"r13_meeting_pan_started",0.0)
-        duration=.18 if getattr(store,"r13_meeting_live_lap",0)>0 else .32
+        duration=.12 if getattr(store,"r13_meeting_interrupting",False) else .22
         moving=enabled and getattr(store,"r13_meeting_previous_focus",None) is not None and 0<=elapsed<duration
         u=min(1.0,max(0.0,elapsed/duration));ease=u*u*(3-2*u)
         distance=getattr(store,"r13_meeting_pan_direction",1)*1200

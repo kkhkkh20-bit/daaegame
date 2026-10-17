@@ -429,12 +429,15 @@ screen r13_book(target=None,present=False,hearing=False):
     modal True
     zorder 50
     on "show" action Function(source_fx,"note_open")
-    default detail=None
+    $ view_context=r13_book_context(target,hearing)
+    $ remembered=r13_book_views.get(view_context,{})
+    default detail=remembered.get("detail")
     default ready=False
     default archive=False
     default category="all"
     $ category="all"
-    default page=0
+    default page=remembered.get("page",0)
+    on "hide" action Function(r13_book_remember,view_context,detail,page)
     default order="recent"
     timer .35 action SetScreenVariable("ready",True)
     use r13_reference_record_shell("보여주기" if present else "자료 기록")
@@ -443,6 +446,15 @@ screen r13_book(target=None,present=False,hearing=False):
         textbutton ("이번 여정" if not archive else "지난 플레이"):
             style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
             action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
+    if present:
+        $ statement=r13_book_statement() if hearing else None
+        text (statement[0]+"의 발언" if statement else R13_NAMES.get(target,"상대")+"에게") xpos 66 ypos 214 xsize 176 size 19 color "#6c512a"
+        if statement:
+            viewport:
+                area (66,252,176,298) mousewheel True draggable True scrollbars "vertical"
+                text statement[1] xsize 156 size r13_read_size(17,21) color "#493b30"
+        else:
+            text "먼저 보여주고, 건넬지는 대화 후 결정합니다." xpos 66 ypos 252 xsize 176 size 17 color "#625738"
     $ entries=r13_catalog_entries(archive and not present,hearing)
     $ entries=r13_present_entries(entries,target) if present else entries
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
@@ -453,11 +465,11 @@ screen r13_book(target=None,present=False,hearing=False):
         text "보여줄 자료를 직접 고르세요." xpos 842 ypos 320 xsize 362 text_align .5 size 18 color "#796044"
     if present:
         textbutton ("이 주장에 근거로 낸다" if hearing else R13_NAMES.get(target,"상대")+"에게 보여주기"):
-            style "r13_compact_button" xpos 824 ypos 592 xsize 398 ysize 48 text_size r13_read_size(20,24)
+            style "r13_compact_button" xpos 824 ypos 584 xsize 398 ysize 82 text_size r13_read_size(20,24)
             action Return(selected_record)
             sensitive ready and detail==selected_record and r13_catalog_can_present(selected_record,hearing) and not archive
     textbutton ("그만두기" if present else "닫기"):
-        style "r13_compact_button" xpos 66 ypos 594 xsize 176 ysize 44 text_size 20
+        style "r13_compact_button" xpos 66 ypos 584 xsize 176 ysize 82 text_size 20
         action (Return(False) if present else Hide("r13_book")) sensitive ready
     key "game_menu" action (Return(False) if present else Hide("r13_book"))
 

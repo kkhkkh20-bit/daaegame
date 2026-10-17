@@ -24,6 +24,19 @@ class Materials(unittest.TestCase):
         exec(textwrap.dedent(shop),env)
         source=(ROOT/'game/systems/room13_materials.rpy').read_text().split('init 148 python:\n')[1].split('\nlabel r13_show_catalog_object')[0]
         exec(textwrap.dedent(source),env);self.e=env
+    def test_transfer_badge_is_owned_actionable_and_read_only(self):
+        self.e['R13_NAMES']={'resident_seori':'서리','buri':'부리'}
+        before=copy.deepcopy(self.store.room13)
+        badge=self.e['r13_catalog_transferable']
+        self.assertTrue(badge('bag:herbs'))
+        self.assertFalse(badge('E01'))
+        self.assertFalse(badge('tool:pencil'))
+        self.assertFalse(badge('bag:knife'))
+        self.assertFalse(badge(None))
+        self.assertEqual(before,self.store.room13)
+        self.store.room13['evidence'].append('E20')
+        self.assertFalse(badge('bag:herbs'))
+
     def test_all_material_kinds_share_one_read_only_collection(self):
         before=copy.deepcopy(self.store.room13)
         self.assertEqual(set(self.e['r13_catalog_entries']()),{'E01','E06','tool:pencil','bag:herbs','bag:lamp_oil'})
