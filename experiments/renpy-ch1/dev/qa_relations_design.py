@@ -31,7 +31,7 @@ async def main():
    assert (await q.state())['room']==original
    await q.py('import renpy;renpy.store.persistent.room13_large_text=True;renpy.store.persistent.room13_motion=False;renpy.exports.restart_interaction();result=True')
    await page.set_viewport_size({'width':844,'height':390});q.touch=True;await q.press('인물 중심');await q.press('전체');await q.input(490,530);await q.shot('03-relations-mobile-large')
-   await q.press('닫기');await page.set_viewport_size({'width':1280,'height':720})
+   await q.press('닫기');await asyncio.sleep(1);assert not await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records") is not None');await page.set_viewport_size({'width':1280,'height':720})
    # Explicit half-proof fixture: expose only the item already presented.
    await q.py('import renpy;s=renpy.store;s.persistent.room13_large_text=False;s.r13_meeting_active=True;s.r13_meeting_claim="Q4";s.r13_meeting_intro=False;s.r13_meeting_live_active=False;s.r13_edit(evidence=["N09","N07"],debate={});s.r13_debate_half("Q4","s3","N09");renpy.exports.show_screen("r13_debate_board",claim="Q4",selected="s3");renpy.exports.restart_interaction();result=True')
    await q.wait('r13_debate_board');await q.shot('04-meeting-linked-proof')
@@ -57,19 +57,21 @@ async def main():
     await q.py('import renpy;renpy.exports.hide_screen("r13_debate_board");renpy.exports.restart_interaction();result=True')
    await q.py('import renpy;s=renpy.store;s.r13_meeting_active=False;s.r13_flag("lodging","entry_corrected");s.r13_edit(day=4,period=0,location="square",offers={"r13_ep1_meeting":dict(day=4,period=0,location="square")});renpy.exports.show_screen("r13_map",initial_region="village");renpy.exports.restart_interaction();result=True')
    await q.wait('r13_map');before=(await q.state())['room'];assert await q.py('import renpy;result=renpy.exports.get_widget("r13_map","meeting_map_legend_stone") is None');await q.shot('map-field-gathering')
-   labels=await q.py('import renpy;s=renpy.store;result=[s.R13_MAP_LABELS[k] for k,p in s.r13_map_nodes("village")]')
-   buttons=(await q.state())['buttons'];label_rects=[]
-   for label in labels:
-    row=next(v for v in buttons if v['rect'][0]<900 and 150<=v['rect'][1]<634 and ' '.join(v['text'].split()).removeprefix('● ')==label)
-    label_rects.append((label,row['rect']))
-   for i,(a,(ax,ay,aw,ah)) in enumerate(label_rects):
-    for name,(bx,by,bw,bh) in label_rects[i+1:]:
-     assert min(ax+aw,bx+bw)<=max(ax,bx) or min(ay+ah,by+bh)<=max(ay,by),(a,name,'overlapping map labels')
-   await q.press('학교');await q.shot('map-school-room');assert (await q.state())['room']==before
+   pins=await q.py('import renpy;s=renpy.store;result=[(k,s.r13_v5_label(k)) for k,p in s.r13_map_nodes("village")]')
+   for i,(key,(ax,ay)) in enumerate(pins):
+    for other,(bx,by) in pins[i+1:]:
+     assert abs(ax-bx)>=64 or abs(ay-by)>=64,(key,other,'overlapping map pins')
+   x,y=dict(pins)['school'];await q.input(30+x,150+y);await q.shot('map-school-room');assert (await q.state())['room']==before
    assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_map").scope["selected"]=="school"')
+   await page.set_viewport_size({'width':844,'height':390});q.touch=True
+   for key,(x,y) in pins:
+    await q.input(30+x,150+y)
+    assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_map").scope["selected"]')==key
+    assert (await q.state())['room']==before
+   await q.shot('map-village-mobile');await q.press('현장으로 돌아가기')
    await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("r13_map");s.r13_edit(day=14,period=2,location="altar",finale_started=True);renpy.exports.show_screen("r13_map",initial_region="mountain");renpy.exports.restart_interaction();result=True')
    await q.wait('r13_map');await page.set_viewport_size({'width':844,'height':390});await q.shot('map-altar-mobile')
-   result=dict(passed=True,checks=['known relations only; unopened facts stay hidden','real graph and relationship-card navigation','focused graph and real horizontal character-index drag; overview switch','status filter retains fixed places','relationship selection/filter restored after close','relationship UI leaves story state unchanged','all 26 slotted people render; large text and reduced motion mobile','half-proof shows only already presented item','four suspects and cancel all inside the screen','actual point menu cancel leaves proof/story unchanged','four distinct venue styles in actual meeting renderer; Q6 at night','real map selection changes no clock or travel; current offers only; map label touch targets do not overlap','matching map/meeting icons including altar on mobile'])
+   result=dict(passed=True,checks=['known relations only; unopened facts stay hidden','real graph and relationship-card navigation','focused graph and real horizontal character-index drag; overview switch','status filter retains fixed places','relationship selection/filter restored after close','relationship UI leaves story state unchanged','all 26 slotted people render; large text and reduced motion mobile','half-proof shows only already presented item','four suspects and cancel all inside the screen','actual point menu cancel leaves proof/story unchanged','four distinct venue styles in actual meeting renderer; Q6 at night','real map selection changes no clock or travel; current offers only; compact map pin touch targets do not overlap','matching map/meeting icons including altar on mobile'])
    (OUT/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));print('PASS',result,flush=True)
   except Exception as e:
    print('FAIL',repr(e),flush=True);await page.screenshot(path=str(OUT/'stop.png'));raise

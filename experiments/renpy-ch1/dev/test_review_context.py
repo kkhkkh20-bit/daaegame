@@ -11,8 +11,9 @@ class ReviewContext(unittest.TestCase):
   before=copy.deepcopy(self.store.room13)
   context=self.env['r13_book_context'];remember=self.env['r13_book_remember']
   remember(context('buri',False),'E01',2)
-  remember(context('granny',False),'E06',0)
-  self.assertEqual(self.store.r13_book_views[context('buri',False)],dict(detail='E01',page=2))
+  remember(context('granny',False),'E06',0,'testimony')
+  self.assertEqual(self.store.r13_book_views[context('granny',False)]['material_filter'],'testimony')
+  self.assertEqual(self.store.r13_book_views[context('buri',False)],dict(detail='E01',page=2,material_filter='all'))
   self.assertEqual(self.store.room13,before)
  def test_hearing_memory_is_per_claim_and_statement_not_fake_target(self):
   context=self.env['r13_book_context'];a=context('resident_seori',True)

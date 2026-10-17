@@ -21,6 +21,14 @@ class LocalNavigation(unittest.TestCase):
             self.assertEqual(self.ns["r13_map_region"](location), "inn")
         self.assertEqual(self.ns["r13_map_region"]("square"), "village")
 
+    def test_underground_map_requires_actual_discovery_even_in_stale_save(self):
+        self.ns['r13_ancient_open']=lambda:False
+        self.store.room13['location']='ancient'
+        self.assertEqual(self.ns['r13_map_region']('ancient'),'inn')
+        self.assertNotIn('ancient',dict(self.ns['r13_map_nodes']('inn')))
+        self.ns['r13_ancient_open']=lambda:True
+        self.assertIn('ancient',dict(self.ns['r13_map_nodes']('inn')))
+
     def test_before_checkin_only_exit_is_available(self):
         self.assertEqual(self.ns["r13_local_connections"](), [("outside", "여관 밖으로")])
         self.assertIsNone(self.ns["r13_local_destination"]("hall"))

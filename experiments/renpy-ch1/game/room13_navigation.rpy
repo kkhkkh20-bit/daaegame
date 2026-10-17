@@ -10,7 +10,7 @@ init 60 python:
             # 0.18.63 new places; init 61 replaces these with the v5 map points.
             "river":(267, 375), "forest":(82, 406), "market":(561, 319)},
         "inn": {"inn":(435,420), "dining":(434,307), "kitchen":(170,307),
-            "hall":(340,120), "room13":(685,120), "passage":(685,40), "guestroom":(245,65)},
+            "hall":(340,120), "room13":(685,120), "passage":(685,40), "guestroom":(245,65), "ancient":(685,0)},
         "mountain": {"facility":(110,135), "greenhouse":(382,108), "altar":(644,100)},
     }
     R13_MAP_LABELS = {"gate":"마을 입구", "square":"광장", "inn":"여관 접수대",
@@ -19,7 +19,7 @@ init 60 python:
         "room13":"13호실", "guestroom":"임시 객실", "passage":"숨은 통로", "facility":"보호시설",
         "greenhouse":"폐온실", "altar":"산속 제단"}
 
-    R13_INN_LOCATIONS=("inn","dining","kitchen","hall","room13","passage","guestroom")
+    R13_INN_LOCATIONS=("inn","dining","kitchen","hall","room13","passage","guestroom","ancient")
     R13_LOCAL_CONNECTIONS={
         "inn":(("dining","식당"),("kitchen","주방"),("hall","2층 복도"),("outside","여관 밖으로")),
         "dining":(("inn","접수대"),("kitchen","주방")),
@@ -51,6 +51,7 @@ init 60 python:
 
     def r13_map_discovered(key):
         # Do not expose secret names through stale/legacy current-location saves.
+        if key=="ancient":return r13_ancient_open()
         if key=="passage":return bool(store.room13.get("passage_open") and r13_secret_route_available())
         if key=="greenhouse":return bool(store.room13["day"]>=R13_WEEK2_DAY and (r13_has("E19") or r13_has("Y03")))
         if key=="altar":return bool(store.room13.get("finale_started"))
@@ -67,6 +68,7 @@ init 60 python:
         location=location or store.room13["location"]
         if not r13_map_discovered(location):return "마을"
         title=R13_MAP_LABELS.get(location,R13_PLACES[location][0])
+        if location=="ancient":return "마을 › 여관 › 지하 › "+title
         if location in R13_INN_LOCATIONS:
             return "마을 › 여관 › "+("접수대" if location=="inn" else title)
         if location in ("facility","greenhouse","altar"):
@@ -151,7 +153,9 @@ screen r13_map(initial_region=None):
         use r13_worldmap_v5(selected,ready,map_hover)
     elif region=="inn":
         $ known=set(key for key,point in r13_map_nodes("inn"))
-        $ floors=[("1층",("inn","dining","kitchen")),("2층",("hall","room13","guestroom")),("안쪽",("passage",))]
+        $ floors=[("1층",("inn","dining","kitchen")),("2층",("hall","room13","guestroom")),("안쪽",("passage",)),("지하",("ancient",))]
+        if room13["location"]=="ancient":
+            $ floors=floors[-1:]+floors[:-1]
         viewport:
             area (30,150,860,490) mousewheel True draggable True scrollbars "vertical"
             vbox:

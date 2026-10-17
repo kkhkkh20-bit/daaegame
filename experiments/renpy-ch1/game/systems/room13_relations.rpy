@@ -328,6 +328,13 @@ screen r13_relation_detail(owner,person):
                                 text lab size r13_read_size(17,20) color "#766149" xsize 264
                 else:
                     text "아직 알게 된 관계가 없다." size r13_read_size(18,21) color "#7d6a52" xsize 286
+                $ materials=r13_person_materials(person)
+                if materials:
+                    text "남긴 증언" size r13_read_size(19,22) color "#765426"
+                    for record in materials:
+                        textbutton (R13_RECORD_SHORT.get(record,r13_catalog_title(record))+"  ›"):
+                            style "r13_paper_tab_button" xsize 286 ysize 58 text_size r13_read_size(18,20)
+                            action Function(r13_open_person_material,owner,record)
                 $ first=next((m for m in room13.get("encounters",[]) if isinstance(m,dict) and m.get("person")==person),None)
                 if first:
                     null height 4
