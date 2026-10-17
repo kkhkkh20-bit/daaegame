@@ -75,7 +75,7 @@ init 166 python:
         "resident_musoe":(4,4),"resident_somi":(5,4),
         "resident_teacher":(0,3),"resident_bori":(1,3),"kid_kkomi":(0,4),"kid_dodam":(1,4),
     }
-    R13_REL_COLS, R13_REL_ROWS, R13_REL_CELL = 6, 5, (88, 88)
+    R13_REL_COLS, R13_REL_ROWS, R13_REL_CELL = 6, 5, (96, 82)
     R13_REL_KIND = {"family":("#b2862e",5,False),"work":("#4e6f8f",3,False),"suspect":("#a2401f",3,True)}
 
     def r13_rel_edges():
@@ -128,9 +128,11 @@ init 166 python:
             for a,b,kind,label in self.edges:
                 if a not in self.layout or b not in self.layout:continue
                 color,width_,dashed=R13_REL_KIND[kind]
-                if self.selected and self.selected not in (a,b):color=color+"66"
-                x1,y1=self.layout[a][0]+44,self.layout[a][1]+28
-                x2,y2=self.layout[b][0]+44,self.layout[b][1]+28
+                active=self.selected in (a,b)
+                if self.selected and not active:color=color+"44"
+                width_=width_+1 if active else max(2,width_-1)
+                x1,y1=self.layout[a][0]+48,self.layout[a][1]+28
+                x2,y2=self.layout[b][0]+48,self.layout[b][1]+28
                 if not dashed:
                     canvas.line(color,(x1,y1),(x2,y2),width_)
                     continue
@@ -141,104 +143,132 @@ init 166 python:
                     i+=step
             return rv
 
+    class R13RelKey(renpy.Displayable):
+        def __init__(self,kind,**kwargs):
+            super(R13RelKey,self).__init__(**kwargs)
+            self.kind=kind
+        def render(self,width,height,st,at):
+            rv=renpy.Render(28,12);c=rv.canvas()
+            color,weight,dashed=R13_REL_KIND[self.kind]
+            if dashed:
+                for x in (0,11,22):c.line(color,(x,6),(min(27,x+6),6),3)
+            else:c.line(color,(0,6),(27,6),3 if self.kind=="family" else 2)
+            return rv
+
 transform r13_rel_gray:
     matrixcolor SaturationMatrix(0.0)*BrightnessMatrix(-0.12)
 
 transform r13_rel_faded:
     alpha .45
 
+# Presentation only: knowledge gates, status rules and fixed seats remain above.
 screen r13_relations_content(owner,selected,filt):
     $ layout=r13_rel_layout()
     $ edges=r13_rel_edges()
     $ people=r13_rel_people()
     $ selected=selected if selected in people else next((p for p in people if r13_rel_status(p)[0]=="dead"),"daram")
+    $ linked={other for other,k,lab in r13_rel_lines_of(selected)}
     $ counts=r13_rel_counts()
+    text "알게 된 관계" xpos 282 ypos 66 size r13_read_size(23,26) color "#654b30"
     hbox:
-        xpos 280 ypos 84 spacing 8
+        xpos 280 ypos 104 spacing 8
         for key,title in (("all","전체 %d"%counts["all"]),("alive","살아 있음 %d"%counts["alive"]),("dead","숨짐 %d"%counts["dead"]),("saved","구함 %d"%counts["saved"])):
-            textbutton title style "r13_paper_tab_button" xsize 124 ysize 38 text_size 16 selected filt==key action Function(r13_record_select,owner,"rel_filter",key)
-    add R13PaperFrame() xpos 278 ypos 128 xsize 536 ysize 452
+            textbutton title style "r13_paper_tab_button" xsize 140 ysize 40 padding (4,0) text_size r13_read_size(17,19) text_align .5 text_yalign .5 selected filt==key action Function(r13_record_select,owner,"rel_filter",key)
+    add R13PaperFrame() xpos 278 ypos 150 xsize 588 ysize 428
     fixed:
-        xpos 286 ypos 138 xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
+        xpos 284 ypos 158 xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
         add R13RelLines(edges,layout,selected)
         for who in people:
             $ x,y=layout[who]
             $ kind,label=r13_rel_status(who)
+            $ faded=not r13_rel_match(who,filt)
+            $ name=R13_NAMES.get(who,who)
+            $ two_lines=" " in name and len(name)>5
+            $ face=44 if two_lines else 50
             button:
                 xpos x ypos y xysize R13_REL_CELL padding (0,0) background None
                 action Function(r13_record_select,owner,"rel_sel",who)
-                at (r13_rel_faded if not r13_rel_match(who,filt) else None)
+                alt (R13_NAMES.get(who,who)+( " · "+label if label else ""))
+                at (r13_rel_faded if faded else None)
                 fixed:
                     xysize R13_REL_CELL
+                    # A small paper mount keeps names legible over passing lines.
+                    add R13PaperPanel(who==selected) xpos 10 ypos 0 xysize (76,78)
                     if who==selected:
-                        add Solid("#e2a93b") xpos 13 ypos -3 xysize (62,62)
-                    add Solid({"dead":"#8b8b8b","saved":"#3f7a4a","with":"#b2862e"}.get(kind,"#6b5137")) xpos 16 ypos 0 xysize (56,56)
-                    add Solid("#e9dbb9") xpos 18 ypos 2 xysize (52,52)
+                        add Solid("#ad843f") xpos 10 ypos 0 xysize (3,78)
+                    if who in linked:
+                        $ link_kind=next(k for other,k,lab in r13_rel_lines_of(selected) if other==who)
+                        add Solid(R13_REL_KIND[link_kind][0]) xpos 10 ypos 0 xysize (76,3)
+                    add Solid({"dead":"#94887b","saved":"#4d765c","with":"#ad843f"}.get(kind,"#b69b75")) xpos (46-face//2) ypos 3 xysize (face+4,face+2)
+                    add Solid("#ead7b3") xpos (48-face//2) ypos 5 xysize (face,face-2)
                     if kind=="dead":
-                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True) at r13_rel_gray xpos 18 ypos 2
-                        add Transform(Solid("#a2401f"),xysize=(64,6),rotate=45) xpos 14 ypos 0
-                        add Transform(Solid("#a2401f"),xysize=(64,6),rotate=-45) xpos 14 ypos 0
-                    elif kind in ("gone","missing"):
-                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True,alpha=.6) xpos 18 ypos 2
+                        add Transform(r13_art(who,"avatar_neutral"),xysize=(face,face-2),fit="contain",nearest=True) at r13_rel_gray xpos (48-face//2) ypos 5
                     else:
-                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True) xpos 18 ypos 2
-                    text (("{s}"+R13_NAMES.get(who,who)+"{/s}") if kind=="dead" else R13_NAMES.get(who,who)) xpos 44 xanchor .5 ypos 57 size 15 color ("#8a8178" if kind in ("dead","gone") else "#493b30") outlines [(2,"#f4ead2",0,0)]
-                    if label:
-                        text label xpos 44 xanchor .5 ypos 73 size 12 color {"dead":"#7a2e22","saved":"#3f7a4a","with":"#8a6420"}.get(kind,"#5d6a8a") outlines [(2,"#f4ead2",0,0)]
-        for a,b,kind,lab in edges:
-            # Neighbouring faces leave no room for a label; the detail list names every line.
-            if selected in (a,b) and a in layout and b in layout and abs(layout[a][0]-layout[b][0])+abs(layout[a][1]-layout[b][1])>R13_REL_CELL[0]*1.5:
-                $ mx=(layout[a][0]+layout[b][0])//2+44
-                $ my=(layout[a][1]+layout[b][1])//2+28
-                frame:
-                    xpos mx ypos my xanchor .5 yanchor .5 padding (4,1) background Solid("#f4ead2e6")
-                    text lab size 13 color R13_REL_KIND[kind][0]
-    use r13_relation_detail(selected)
+                        add Transform(r13_art(who,"avatar_neutral"),xysize=(face,face-2),fit="contain",nearest=True,alpha=.55 if kind in ("gone","missing") else 1.0) xpos (48-face//2) ypos 5
+                    if kind in ("dead","saved","gone","missing"):
+                        frame:
+                            xpos 62 ypos 36 xysize (22,22) padding (0,0)
+                            background Solid({"dead":"#874a3b","saved":"#4d765c"}.get(kind,"#726f78"))
+                            if kind=="saved":
+                                add R13AntiqueIcon("check",size=18) align (.5,.5)
+                            else:
+                                text ("×" if kind=="dead" else "?") size 20 color "#fff0d2" align (.5,.5)
+                    $ node_name=name.replace(" ","\n",1) if two_lines else name
+                    text (("{s}"+node_name+"{/s}") if kind=="dead" else node_name) xpos 48 xanchor .5 ypos (48 if two_lines else 57) xsize 94 text_align .5 size 16 line_spacing -2 color ("#817366" if kind in ("dead","gone") else "#493b30")
+    use r13_relation_detail(owner,selected)
     hbox:
-        xpos 282 ypos 590 spacing 14
+        xpos 284 ypos 599 spacing 22
         for kind,title in (("family","가족"),("work","함께 일함·도움"),("suspect","의심·갈등")):
             hbox:
-                spacing 5
-                add Solid(R13_REL_KIND[kind][0]) xysize (22,4 if kind!="family" else 6) yalign .5
-                text title size 14 color "#65503b"
-        text "{color=#7a2e22}✕ 숨짐{/color}  {color=#3f7a4a}초록 · 구함{/color}  {color=#5d6a8a}흐림 · 행방 모름{/color}" size 14
+                spacing 7
+                add R13RelKey(kind) yalign .5
+                text title size r13_read_size(16,18) color "#65503b"
+    text "인물을 선택하면 연결된 관계가 선명해집니다." xpos 284 ypos 630 size r13_read_size(16,18) color "#79654e"
 
-screen r13_relation_detail(person):
-    add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
+screen r13_relation_detail(owner,person):
+    add R13PaperFrame() xpos 878 ypos 58 xsize 348 ysize 520
     if person:
         $ kind,label=r13_rel_status(person)
         fixed:
-            xpos 842 ypos 78 xysize (110,110)
-            add Solid({"dead":"#8b8b8b","saved":"#3f7a4a","with":"#b2862e"}.get(kind,"#6b5137")) xysize (110,110)
-            add Solid("#e9dbb9") xpos 3 ypos 3 xysize (104,104)
+            xpos 900 ypos 80 xysize (84,84)
+            add R13PaperPanel() xysize (84,84)
             if kind=="dead":
-                add Transform(r13_art(person,"avatar_neutral"),xysize=(104,104),fit="contain",nearest=True) at r13_rel_gray xpos 3 ypos 3
+                add Transform(r13_art(person,"avatar_neutral"),xysize=(76,76),fit="contain",nearest=True) at r13_rel_gray xpos 4 ypos 4
             else:
-                add Transform(r13_art(person,"avatar_neutral"),xysize=(104,104),fit="contain",nearest=True) xpos 3 ypos 3
-        text (("{s}"+R13_NAMES.get(person,person)+"{/s}") if kind=="dead" else R13_NAMES.get(person,person)) xpos 966 ypos 92 size r13_read_size(24,28) color ("#8a8178" if kind in ("dead","gone") else "#6c512a")
-        text (R13_PUBLIC_ROLES.get(person) or "") xpos 966 ypos 132 size 16 color "#7d6a52" xsize 240
+                add Transform(r13_art(person,"avatar_neutral"),xysize=(76,76),fit="contain",nearest=True,alpha=.6 if kind in ("gone","missing") else 1.0) xpos 4 ypos 4
+        text R13_NAMES.get(person,person) xpos 998 ypos 85 xsize 206 size r13_read_size(24,27) color "#654b30"
+        text (R13_PUBLIC_ROLES.get(person) or "") xpos 998 ypos 123 size r13_read_size(16,18) color "#7d6a52" xsize 206
+        add Solid("#c8ac7f") xpos 900 ypos 179 xysize (302,1)
         if label:
             frame:
-                xpos 842 ypos 200 xsize 362 padding (10,6)
-                background Solid({"dead":"#7a2e22","saved":"#3f7a4a","with":"#8a6420"}.get(kind,"#5d6a8a"))
-                text label size 17 color "#fff6ea"
+                xpos 900 ypos 192 xsize 302 padding (10,7)
+                background Solid({"dead":"#874a3b","saved":"#4d765c","with":"#8a6c3d"}.get(kind,"#696a77"))
+                text label size r13_read_size(18,20) color "#fff3dc"
         viewport:
-            area (844,248,358,300) mousewheel True draggable True scrollbars "vertical"
+            area (900,246,306,308) mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
             vbox:
-                spacing 8
-                text "관계" size 17 color "#765426"
+                spacing 12
                 $ rows=r13_rel_lines_of(person)
+                text ("이어진 관계 · %d"%len(rows)) size r13_read_size(19,22) color "#765426"
                 if rows:
                     for other,k,lab in rows:
-                        hbox:
-                            spacing 6
-                            add Solid(R13_REL_KIND[k][0]) xysize (12,4) yalign .5
-                            text (R13_NAMES.get(other,other)+" · "+lab) size 16 color "#493b30" xsize 320
+                        button:
+                            xsize 286 padding (10,9) background R13PaperPanel() hover_background R13PaperPanel(True)
+                            action Function(r13_record_select,owner,"rel_sel",other)
+                            alt (R13_NAMES.get(other,other)+" · "+lab)
+                            vbox:
+                                spacing 5
+                                hbox:
+                                    spacing 9
+                                    add R13RelKey(k) yalign .5
+                                    text (R13_NAMES.get(other,other)+"  ›") size r13_read_size(19,22) color "#493b30"
+                                text lab size r13_read_size(17,20) color "#766149" xsize 264
                 else:
-                    text "아직 알게 된 관계가 없다." size 16 color "#7d6a52"
+                    text "아직 알게 된 관계가 없다." size r13_read_size(18,21) color "#7d6a52" xsize 286
                 $ first=next((m for m in room13.get("encounters",[]) if isinstance(m,dict) and m.get("person")==person),None)
                 if first:
-                    text "처음 만남" size 17 color "#765426"
-                    text ("%d일 · %s · %s"%(first["day"],("오전","오후","저녁","늦은 저녁")[first["period"]],R13_PLACES.get(first["place"],(first["place"],))[0])) size 16 color "#493b30"
+                    null height 4
+                    text "처음 만남" size r13_read_size(19,22) color "#765426"
+                    text ("%d일 · %s\n%s"%(first["day"],("오전","오후","저녁","늦은 저녁")[first["period"]],R13_PLACES.get(first["place"],(first["place"],))[0])) size r13_read_size(18,21) color "#493b30" xsize 286
     else:
-        text "만난 사람이 생기면 관계도가 채워집니다." xpos 846 ypos 278 xsize 354 text_align .5 size 20 color "#625738"
+        text "만난 사람이 생기면 관계도가 채워집니다." xpos 900 ypos 278 xsize 302 text_align .5 size 20 color "#625738"
