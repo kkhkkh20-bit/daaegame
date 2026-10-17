@@ -69,7 +69,7 @@ class EpisodeAftermath(unittest.TestCase):
    if 'file' in f:
     with Image.open(ROOT/'game'/f['file']) as im:
      if 'rect' in f:
-      x,y,w,h=f['rect'];self.assertGreater(w,0);self.assertGreater(h,0);self.assertGreaterEqual(x,0);self.assertGreaterEqual(y,0);self.assertLessEqual(x+w,im.width);self.assertLessEqual(y+h,im.height)
+      x,y,w,h=f['rect'];self.assertGreater(w,0);self.assertGreater(h,0);self.assertAlmostEqual(w/h,16/9,delta=.025);self.assertGreaterEqual(x,0);self.assertGreaterEqual(y,0);self.assertLessEqual(x+w,im.width);self.assertLessEqual(y+h,im.height)
  def test_all_authored_exit_paths_are_hooked(self):
   targets={'room13_ep1_lamp_thief.rpy':2,'room13_ep2_kids.rpy':2,'room13_ep3_woodfire.rpy':2,'room13_ep4_night13.rpy':1,'room13_ep5_soup.rpy':1,'room13_ep6_cart.rpy':2}
   for file,count in targets.items():self.assertEqual((ROOT/'game/systems'/file).read_text().count('call r13_episode_aftermath('),count,file)

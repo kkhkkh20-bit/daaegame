@@ -140,7 +140,7 @@
         "resident_musoe",
         "resident_somi"
       ],
-      "source": "ep2:night:farewell",
+      "source": "ep2:river:farewell",
       "rect": [
         3,
         3,
@@ -433,7 +433,7 @@
           "emotion": "neutral"
         }
       ],
-      "source": "nt:ttadak:save"
+      "source": "nt:dawn9:safe"
     },
     "owl_hat": {
       "episode": "ep4",
@@ -577,29 +577,9 @@
         "kid_mong",
         "kid_bang"
       ],
-      "actors": [
-        {
-          "person": "resident_bori",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_dodam",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_kkam",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_mong",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_bang",
-          "emotion": "neutral"
-        }
-      ],
-      "source": "ws:after:bori_home"
+      "actors": [],
+      "source": "ws:after:bori_home",
+      "cut": "bori_adopts_four_alive"
     },
     "mom_portrait": {
       "episode": "ep5",
@@ -640,9 +620,9 @@
       "source": "cv:night:fail",
       "road_only": true,
       "rect": [
-        839,
+        1038,
         3,
-        830,
+        506,
         283
       ]
     },
@@ -718,10 +698,10 @@
       "source": "cv:night:badook_dead",
       "detail_only": true,
       "rect": [
-        872,
-        281,
-        456,
-        162
+        922,
+        211,
+        431,
+        241
       ]
     },
     "cart_skipped": {
@@ -771,13 +751,9 @@
       "subjects": [
         "resident_lamplighter"
       ],
-      "actors": [
-        {
-          "person": "resident_lamplighter",
-          "emotion": "anxious"
-        }
-      ],
-      "source": "nt:night8:half"
+      "actors": [],
+      "source": "nt:night8:half",
+      "cut": "chorong_injured_alive"
     }
   }
 }

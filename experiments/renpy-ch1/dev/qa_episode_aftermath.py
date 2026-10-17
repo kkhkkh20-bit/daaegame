@@ -15,15 +15,21 @@ async def action(q,expr):
  code='\n'.join(['import renpy','def _qa_af_action(**kwargs):',' import renpy',' s=renpy.store',' renpy.ui.textbutton("검토 계속",clicked='+expr+',xpos=500,ypos=300,xsize=280,ysize=80)',"renpy.exports.define_screen('qa_af_action',_qa_af_action,modal='True',zorder='200')","renpy.exports.show_screen('qa_af_action')","renpy.exports.restart_interaction()","result=True"])
  await q.py(code);await q.press('검토 계속')
  await q.py('import renpy;renpy.exports.hide_screen("qa_af_action");renpy.exports.restart_interaction();result=True')
+class AftermathQA(UIQA):
+ async def py(self,code):return await asyncio.wait_for(self.p.evaluate('code=>renpy_exec(code)','exec('+ascii(code)+')'),90)
+
 async def main():
  async with async_playwright() as p:
   browser=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader'])
-  page=await browser.new_page(viewport={'width':1280,'height':720});q=UIQA(page,OUT);results=[];seen=set()
+  page=await browser.new_page(viewport={'width':1280,'height':720});q=AftermathQA(page,OUT);results=[];seen=set()
+  page.on("console",lambda msg: print("WEB",msg.type,msg.text[:500],flush=True) if msg.type=="error" else None)
+  page.on("pageerror",lambda exc:print("PAGEERROR",str(exc),flush=True))
   try:
-   await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await q.wait('main_menu')
-   await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
+   await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await page.wait_for_function("!document.getElementById('presplash')",timeout=240000);await q.wait('main_menu')
+   await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');print('BOOT ready',flush=True)
    for n,fixture in enumerate(FIXTURES):
     ep,flags=fixture[:2];child=fixture[2] if len(fixture)>2 else 'with_dad'
+    print('FIXTURE',n,ep,flush=True)
     await q.py('import renpy;s=renpy.store;s.r13_edit(flags='+repr(flags)+',daram_state='+repr(child)+');s.persistent.room13_motion='+repr(n%2==0)+';s.persistent.room13_large_text='+repr(n==17)+';result=True')
     expected=await q.py('import renpy;s=renpy.store;result=[f["id"] for f in s.r13_episode_aftermath_frames('+repr(ep)+')]')
     before=(await q.state())['room'];await action(q,'s.Call("r13_episode_aftermath",'+repr(ep)+')');await q.wait('r13_episode_aftermath_view')

@@ -27,6 +27,12 @@ class SpecialScenes(unittest.TestCase):
   baselines=json.loads((ROOT/'docs/reviews/special-scenes/preservation.json').read_text())['source_hashes_before_metadata']
   for name,sha in baselines.items():
    text=(ROOT/name).read_text();text=re.sub(r',\{"cut":"(?:'+ '|'.join(MAP.values()) +r')","no_lead":True\}', '',text)
+   # Episode aftermath adds one read-only presentation call after the authored lines.
+   # Keep the original dialogue/condition hashes strict everywhere else.
+   episode="ep4" if name.endswith("night13.rpy") else "ep5"
+   hook='    call r13_episode_aftermath("'+episode+'")\n'
+   self.assertEqual(text.count(hook),1)
+   text=text.replace(hook,"")
    self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),sha)
  def test_asset_paths_and_attendance(self):
   d=json.loads((ROOT/'game/assets/room13-special-scenes.json').read_text());self.assertEqual(set(d['scenes']),set(MAP.values()))

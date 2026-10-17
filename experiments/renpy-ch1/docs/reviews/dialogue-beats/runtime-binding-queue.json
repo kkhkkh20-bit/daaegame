@@ -2602,12 +2602,12 @@
   },
   {
     "source": "game/systems/room13_ep1_lamp_thief.rpy",
-    "line": 517,
+    "line": 518,
     "identity": "ep1:deadline",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"광장에 판자가 덧대진 기둥이 섰다. 톡이 그 앞에 묶여 있었다. 회의는 열리지 않았다.\"),\n        (\"dad\",\"(진짜 범인은 아직 마을 어딘가에 있다.)\",{\"thought\":True})],\"ep1:deadline\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 518
+    "end_line": 519
   },
   {
     "source": "game/systems/room13_ep2_kids.rpy",
@@ -2929,12 +2929,12 @@
   },
   {
     "source": "game/systems/room13_ep2_kids.rpy",
-    "line": 455,
+    "line": 456,
     "identity": "ep2:clinic_note",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"진료소에서 이틀을 보낸 무쇠 할아버지가 새벽에 강으로 걸어갔다는 말이 돌았다.\"),\n        (None,\"빈 침상 위에 삐뚤한 글씨로 '고마웠소'라고 적힌 종이가 놓여 있었다.\")],\"ep2:clinic_note\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 456
+    "end_line": 457
   },
   {
     "source": "game/systems/room13_ep3_woodfire.rpy",
@@ -3373,12 +3373,12 @@
   },
   {
     "source": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 532,
+    "line": 533,
     "identity": "wf:missed",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"학교 회의는 끝났다고 했다. 보리가 장작 도둑이자 불을 낸 사람으로 끌려갔다.\"),\n        (\"dad\",\"(그 회의에 갔어야 했다.)\",{\"thought\":True})],\"wf:missed\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 533
+    "end_line": 534
   },
   {
     "source": "game/systems/room13_ep4_night13.rpy",
@@ -4414,25 +4414,25 @@
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 309,
+    "line": 310,
     "identity": "cv:decision:stop",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(None,\"촌장이 지팡이로 수레 바퀴를 두드렸다.\"),(\"resident_ppul\",\"……내리시오.\"),\n            (None,\"고리가 하나씩 풀렸다. 굴돌 할아버지가 끌을 주머니에 넣었다. 판돌 영감이 손목을 문질렀다.\")],\"cv:decision:stop\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 310
+    "end_line": 311
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 313,
+    "line": 314,
     "identity": "cv:decision:granny",
     "binding_status": "static_exact_binding_available",
     "call_expression": "[(\"resident_ppul\",\"……그건 내일, 산에서 하시오. 할멈도 올라갈 거요.\")],\"cv:decision:granny\"",
     "content_review_status": "static_inventory_reviewed",
-    "end_line": 313
+    "end_line": 314
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 316,
+    "line": 317,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(\"mom\",\"……모과. 판돌의 아내. 보낸 사람, 너울.\"),\n            (None,\"엄마는 읽기를 멈추지 않았다. 이름이 하나씩 불릴 때마다 사람들이 한 걸음씩 다가왔다.\"),\n            (\"resident_bori\",\"너울. 네가 실었구나. 다 네가.\"),\n            (\"neoul\",\"나는 명령서대로 했소! 명령서대로!\"),\n            (None,\"누가 먼저 손을 뻗었는지는 아무도 몰랐다. 너울이 사람들 사이로 끌려 들어갔다. 횃불이 흔들렸다.\"),\n            (\"mom\",\"그만해요! 그만…….\")]+([(\"daram\",\"아빠, 우리가 이긴 거야?\"),(\"dad\",\"…….\")] if r13_cv_daram() else []),\"cv:decision:publish\"",
@@ -4440,11 +4440,11 @@
     "binding_route": "dynamic:466",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 321
+    "end_line": 322
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 324,
+    "line": 325,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"빨래 수레 덮개 아래로 엄마가 몸을 숨겼다.\")]+\n            ([(None,\"여니가 판돌 영감의 손을 끌었다. \\\"한 사람 말고, 이분도요. 제 단골이에요.\\\"\")] if r13_has(\"ws_cart_truth\") else [])+\n            [(None,\"새벽, 수레가 산길로 올라갔다.\")]+([(\"daram\",\"아빠, 할아버지들은?\"),(\"dad\",\"…….\")] if r13_cv_daram() else []),\"cv:decision:family\"",
@@ -4452,11 +4452,11 @@
     "binding_route": "dynamic:467",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 326
+    "end_line": 327
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 351,
+    "line": 353,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"(그림책) 마을 한가운데 금으로 덮인 왕자 동상이 서 있었어요.\",{\"book\":\"U07-opening\"}),\n        (None,\"(그림책) 다 내주고 잿빛이 된 왕자 발밑에서, 제비는 잠들었어요.\")]+\n        ([(\"resident_tosil\",\"……이거. 할머니가 맨날 읽어 주던 거야. 너 줄라고 가져왔어.\",{\"pose\":\"hold_storybook\"}),\n          (\"daram\",\"제비 왜 남쪽에 안 갔어? 추운데.\"),\n          (\"resident_tosil\",\"……왕자가 혼자 있을까 봐.\")] if r13_cv_daram() else []),\"cv:altar:book\"",
@@ -4464,11 +4464,11 @@
     "binding_route": "dynamic:468",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 355
+    "end_line": 357
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 357,
+    "line": 359,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"돌 앞에 사람들이 앉아 있었다. 손목 끈은 풀리지 않은 채였다. 모두 돌 쪽을 보고 있었다.\"),\n            (None,\"굴돌 할아버지의 끌이 눈 위에 떨어져 있었다. 돌에 새 손자국 하나가 아주 얕게 파여 있었다.\")]+\n            ([(\"daram\",\"……할아버지 손이 심심하댔잖아.\")] if r13_cv_daram() else []),\"cv:altar:cart\"",
@@ -4476,11 +4476,11 @@
     "binding_route": "dynamic:469",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 359
+    "end_line": 361
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 360,
+    "line": 362,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"돌 표면을 보았다. 손자국이었다. 위에서 아래까지, 겹겹이. 어른 손. 굽은 노인 손. 그리고 아주 작은 손.\")]+\n        ([(\"daram\",\"이거 내 손이랑 똑같아.\"),\n          (None,\"다람이 작은 자국 위에 손을 얹었다. 손바닥 아래에서 돌이 아주 조금 따뜻해졌다.\",{\"cut\":\"U23-small-handprint\"}),\n          (\"daram\",\"어? 따뜻해졌어. 내 손 있는 데만.\"),\n          (None,\"다람이 손을 뗐다. 손바닥이 조금 차가웠다. 그뿐이었다.\",{\"cut\":None}),\n          (\"daram\",\"차가워. 근데 괜찮아.\")] if r13_cv_daram() else [])+\n        [(\"mom\",\"……사람 온기였어. 돌을 데우는 건.\"),\n        (\"mom\",\"옛날 사람들은 여기 와서 손을 얹었던 거야. 다 같이. 데워지면 손을 떼고 내려갔어.\"),\n        (\"mom\",\"그래서 손자국이 이렇게 많은 거야. 죽은 사람 손이 아니라, 왔다가 내려간 사람들 손이야.\",{\"book\":\"U07-ending\"})],\"cv:altar:hands\"",
@@ -4488,11 +4488,11 @@
     "binding_route": "dynamic:470",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 368
+    "end_line": 370
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 371,
+    "line": 373,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"할머니가 돌에 손을 얹었다. 금방 뗐다. 데인 것처럼.\",{\"show\":\"granny\",\"pose\":\"withdraw_hand\"}),\n            (\"granny\",\"손을 얹고…… 내려가면 됐다고요?\"),\n            (\"granny\",\"내 딸, 보미도 이름을 잊기 시작했어요. 처음엔 장 보러 가는 길을. 다음엔 토실이 이름을요.\"),\n            (\"granny\",\"내가 여기로 데려왔어요. 이 손으로. 그 애 목도리를 여며 주고.\"),\n            (\"granny\",\"그게 마을을 살린다고 믿어야 살 수 있었어요. 그래서 아가를 붙잡으려 했어요. 편지도 내가 썼어요.\"),\n            (\"granny\",\"아가 방법이 맞다면, 내 딸은 죽지 않아도 됐다는 거예요.\"),\n            (None,\"……\"),\n            (\"resident_tosil\",\"……할머니. 여기가 산 너머야?\")]+\n            ([(\"daram\",\"토실아. 엄마 손자국, 같이 찾자. 탐정단이잖아.\")] if r13_has(\"ws_tosil_kept\") and r13_cv_daram() else []),\"cv:altar:granny\"",
@@ -4500,11 +4500,11 @@
     "binding_route": "dynamic:471",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 379
+    "end_line": 381
   },
   {
     "source": "game/systems/room13_ep6_cart.rpy",
-    "line": 380,
+    "line": 382,
     "identity": null,
     "binding_status": "dynamic_snapshot_binding_available",
     "call_expression": "[(None,\"촌장이 지팡이를 내려놓았다. 돌 아래쪽, 손가락을 쫙 벌린 작은 손자국 앞에 무릎을 꿇었다.\"),\n        (\"resident_ppul\",\"그 애는 손을 대면 꼭 손가락을 쫙 벌렸소. 이렇게.\"),\n        (\"resident_ppul\",\"손을 얹고 내려왔으면 됐다니. 나는 그 애를 두고 내려왔소.\",{\"pose\":\"kneel_stone\"})]+\n        ([(\"daram\",\"할아버지, 손녀 이름 뭐야? 어젯밤엔 안 알려 줬잖아.\"),\n          (\"resident_ppul\",\"……달래. 달래였소.\"),\n          (\"daram\",\"그럼 내려가서 판에 적자. 여기 두고 가면 또 아무도 몰라.\")] if r13_cv_daram() and r13_has(\"cart_stopped\") else []),\"cv:altar:ppul\"",
@@ -4512,7 +4512,7 @@
     "binding_route": "dynamic:472",
     "validation": "covered_by_bounded_state_or_final_init_provider_probe",
     "assets": "HOLD",
-    "end_line": 385
+    "end_line": 387
   },
   {
     "source": "game/systems/room13_ep_story.rpy",

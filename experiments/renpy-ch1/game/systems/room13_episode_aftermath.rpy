@@ -96,10 +96,18 @@ init 175 python:
         else:
             picture=r13_background(frame["background"])
             actors=frame.get("actors",[])
+            if "cut" in frame:
+                spec=R13_SPECIAL_SCENES["scenes"][frame["cut"]]
+                left,top,right,bottom=spec["visible_bounds"]
+                width,height=right-left,bottom-top
+                scale=min(900.0/width,400.0/height)
+                if frame["background"]=="r13_school":
+                    picture=Transform(Crop((900,270,800,450),_r13_ep_art_world_background("school")),xysize=(1280,720),nearest=False)
+                picture=Fixed(picture,Transform(Crop((left,top,width,height),spec["file"]),xysize=(int(width*scale),int(height*scale)),xcenter=640,ypos=500-int(height*scale),nearest=False),xysize=(1280,720))
             layers=[picture,Solid("#101e2b22")]
             # Cast layers use approved source profiles, never regenerated faces.
             for i,actor in enumerate(actors):
-                h=430 if actor["person"].startswith("kid_") else 530
+                h=340 if actor["person"].startswith("kid_") or actor["person"] in ("daram","bami","resident_tosil") else 450
                 x=640+(i-(len(actors)-1)/2.0)*min(260,900.0/max(1,len(actors)))
                 layers.append(Transform(r13_aftermath_actor(actor,h),xcenter=int(x),ypos=510-h))
             picture=Fixed(*layers,xysize=(1280,720))
