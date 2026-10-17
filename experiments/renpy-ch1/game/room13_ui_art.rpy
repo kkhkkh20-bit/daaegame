@@ -205,8 +205,3 @@ init 58 python:
                 c.rect("#b58c48",(6,h-7,max(1,w-12),2))
                 c.rect("#e6bd69",(6,h-5,max(1,w-12),2))
             return r
-
-# Local design preview: disabled in ordinary gameplay until reviewed.
-default r13_ui_preview = False
-
-default r13_ui_roomy_choices = True
