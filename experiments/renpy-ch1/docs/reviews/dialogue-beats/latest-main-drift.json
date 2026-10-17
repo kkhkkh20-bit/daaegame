@@ -1,7 +1,7 @@
 {
   "base_commit": "a60d263f64eefe89caec59ae9e75de657e3db1c6",
   "latest_main": "30d7327fda9be17f1aa5ea17a49f18422cf89628",
-  "latest_main_integrated": false,
+  "latest_main_integrated": true,
   "changed_files": 68,
   "overlapping_tracked_edits": [
     "experiments/renpy-ch1/game/room13.rpy",
@@ -105,5 +105,7 @@
     }
   ],
   "limitations": "Read-only textual drift scan; unchanged text can still have changed context. Not a merge or validation of latest main.",
-  "approval": "New 20-person source-only package, main merge and existing public deployment authorized; await exact upload commit; prior six-person intermediate prohibited"
+  "approval": "New 20-person source-only package, main merge and existing public deployment authorized; await exact upload commit; prior six-person intermediate prohibited",
+  "integration_commit": "ef136de",
+  "resolution": "main-context-reconciliation.json; 10 changed texts reviewed, 1 escaped-quote false positive"
 }

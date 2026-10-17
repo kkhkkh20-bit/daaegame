@@ -46,10 +46,10 @@ class DialogueBeats(unittest.TestCase):
   cues=json.loads((ROOT/'game/assets/room13-dialogue-beats.json').read_text())['lines']
   for entries in cues.values():
    for cue in entries.values():
-    self.assertEqual(cue['application_status'],'awaiting_approved_runtime_assets')
+    self.assertIn(cue['application_status'],('approved_source_master','awaiting_approved_runtime_assets'))
     if cue['reaction']:self.assertEqual(cue['emotion'],'surprise')
  def test_registry_contains_no_held_art(self):
-  data=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text());self.assertEqual(data['people'],{})
+  data=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text());self.assertEqual(len(data['people']),20)
 class ContextReviewEvidence(unittest.TestCase):
  def test_dynamic_source_provenance_is_exact(self):
   from audit_dynamic_dialogue import provenance_errors

@@ -1,4 +1,4 @@
-import hashlib,json,tempfile,unittest
+import hashlib,json,tempfile,unittest,subprocess
 from pathlib import Path
 from PIL import Image
 from check_dialogue_bindings import ROOT,OUT,binder
@@ -12,11 +12,11 @@ class ActorIntent(unittest.TestCase):
   dynamic=binder()([('resident_teacher',cue['text'])],'debate:conclusion_wrong:Q5A:weak','dynamic:223')
   self.assertEqual(dynamic['rows']['0']['emotion'],'neutral')
   for scene,index in [('ws:soup:spilled','3'),('ws:soup:tragedy','5')]:self.assertEqual(static[scene][index]['emotion'],'neutral')
- def test_story_source_unchanged_by_semantic_revision(self):
+ def test_historical_semantic_revision_preserved_story_source(self):
   audit=json.loads((OUT/'actor-intent-audit.json').read_text())
   for name,digest in audit['source_rpy_sha256'].items():
    if name=='game/systems/room13_dialogue_beats.rpy':continue # authorized renderer/style gate update only
-   self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+   self.assertEqual(hashlib.sha256(subprocess.check_output(['git','show','2ea4d41:experiments/renpy-ch1/'+name],cwd=ROOT)).hexdigest(),digest,name)
  def test_resource_requests_preserve_text_and_separate_body_from_affect(self):
   data=json.loads((OUT/'performance-resource-requests.json').read_text());static=json.loads((ROOT/'game/assets/room13-dialogue-beats.json').read_text())['lines']
   for request in data['requests']:
@@ -56,7 +56,23 @@ class SourceMasterArt(unittest.TestCase):
   self.assertIsNone(fixture.plan())
   fixture.people['guard']['art_style']='storybook_source';fixture.people['guard']['source_kind']='final_pixel'
   self.assertIsNone(fixture.plan())
- def test_intermediate_registry_stays_empty_and_renderer_is_smooth(self):
-  data=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text());self.assertEqual(data['people'],{})
+ def test_new_delivery_has_all_frames_and_valid_runtime_identities(self):
+  data=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())
+  cast=json.loads((ROOT/'game/assets/room13-fullbody-dialogue.json').read_text())['people']
+  self.assertEqual(data['source_commit'],'8c80550dda6ecf7af335827bba7e4fa6f4052ddf')
+  self.assertFalse(set(data['people'])-set(cast))
+  for person,entry in data['people'].items():
+   self.assertEqual(entry['status'],'approved_runtime')
+   self.assertEqual(set(entry['profiles']),{'560','760','840'})
+   for profile in entry['profiles'].values():
+    self.assertEqual(set(profile['frames']),{'neutral','joy','angry','anxious','surprise_talk','surprise_react'})
+    hashes=set()
+    for frame in profile['frames'].values():
+     path=ROOT/'game'/frame['file'];self.assertTrue(path.is_file())
+     self.assertEqual(path.suffix,'.webp') # Keep frequently used portraits out of progressive PNG unloading.
+     hashes.add(hashlib.sha256(path.read_bytes()).hexdigest())
+    self.assertEqual(len(hashes),6,person)
+ def test_approved_twenty_source_registry_and_smooth_renderer(self):
+  data=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text());self.assertEqual(len(data['people']),20)
   source=(ROOT/'game/systems/room13_dialogue_beats.rpy').read_text()
   self.assertIn('nearest=False,subpixel=True',source);self.assertNotIn('nearest=True',source)

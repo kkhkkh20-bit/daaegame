@@ -51,6 +51,9 @@ def compile_registry():
  for n,r in enumerate(read('composed-context-review')['rows']):
   for who,text in itertools.product(variants(ast.parse(r['who_expression'],mode='eval').body),variants(ast.parse(r['text_expression'],mode='eval').body)):
    reviews.append(dict(r,person=who,text=text,review_ref='composed:'+str(n)))
+ # Reviewed 0.19.16 appointment variants: the provider's explicit day choice.
+ for day in ('내일','모레'):
+  reviews.append(dict(source='game/systems/room13_review_knowledge.rpy',line=36,person='resident_lamplighter',text='부인이 가족에게 남긴 봉투를 맡아 두었어요. '+day+' 찾아둘 테니 다시 와 주시겠어요?',emotion='neutral',reaction=False,reviewed=True,review_ref='main-01916:appointment'))
  # Four reviewed components make one complete postal reply, never four cues.
  base='그분이 남긴 글씨군요. 맡아 둔 것을 찾아볼게요. '
  for day in ('내일','모레'):
@@ -58,7 +61,7 @@ def compile_registry():
  routes={}
  for i,call in enumerate(q):
   if call['binding_status']=='static_exact_binding_available':continue
-  group=PROVIDERS.get(i,'inline'); start=call['line'];end=start+call['call_expression'].count('\n')
+  group=PROVIDERS.get(i,'inline'); start=call['line'];end=call.get('end_line',start+call['call_expression'].count('\n'))
   def allowed(r):
    source=r['source'];line=r.get('line',-1)
    if source==call['source'] and start<=line<=end:return True
@@ -69,7 +72,7 @@ def compile_registry():
      first_label=next((j for j,l in enumerate((ROOT/source).read_text().splitlines(),1) if l.startswith('label ')),100000)
      if line>=first_label:return False
     return True
-   if group in ('opening','notice'):return source in ('game/room13-dialogue-openings.json','game/room13_dialogue_openings_20261013.rpy')
+   if group in ('opening','notice'):return source in ('game/room13-dialogue-openings.json','game/room13_dialogue_openings_20261013.rpy','game/systems/room13_review_knowledge.rpy')
    if group=='greeting':return 'GREETING' in r.get('lookup','') or (source in ('game/room13_life.rpy','game/room13_home.rpy','game/room13_gate_continuity.rpy'))
    if group=='present':
     if source.endswith(('room13_items.rpy','room13_new_cast.rpy')):return True

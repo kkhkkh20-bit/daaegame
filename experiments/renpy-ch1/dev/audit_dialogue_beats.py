@@ -25,14 +25,14 @@ def inventory():
  for identity,packets in scenes.items():
   for i,p in enumerate(packets):
    cue=cues.get(identity,{}).get(str(i));matched=bool(cue and (cue['person'],cue['text'])==tuple(p[:2]))
-   rows.append(dict(identity=identity,index=i,person=p[0],text=p[1],packet=list(p),reviewed=matched,category=classify(identity,i,p,people,direction),review_alias=identity.startswith('topic:review:'),pov_sensitive=p[0] in ('dad','daram'),application_status='awaiting_approved_runtime_assets' if matched else 'context_review_pending',context_before=[list(x) for x in packets[max(0,i-2):i]],context_after=[list(x) for x in packets[i+1:i+3]]))
+   rows.append(dict(identity=identity,index=i,person=p[0],text=p[1],packet=list(p),reviewed=matched,category=classify(identity,i,p,people,direction),review_alias=identity.startswith('topic:review:'),pov_sensitive=p[0] in ('dad','daram'),application_status=cue.get('application_status','reviewed') if matched else 'context_review_pending',context_before=[list(x) for x in packets[max(0,i-2):i]],context_after=[list(x) for x in packets[i+1:i+3]]))
  calls=[]
  for f in (ROOT/'game').rglob('*.rpy'):
   if 'qa_tests' in f.parts:continue
   for n,line in enumerate(f.read_text().splitlines(),1):
    if re.search(r'\b(?:call\s+)?r13_lines\(',line):calls.append({'file':str(f.relative_to(ROOT)),'line':n,'call':line.strip()})
  counts=collections.Counter(r['person'] for r in rows if r['person'])
- summary=dict(static_scenes=len(scenes),static_rows=len(rows),unique_speaker_text_pairs=len({(r['person'],r['text']) for r in rows}),registered_art_people=len(people),static_speakers=len(counts),per_person=dict(counts),registered_people_without_static_lines=sorted(set(people)-set(counts)),reviewed_rows=sum(r['reviewed'] for r in rows),runtime_art_ready=0,scope_limit='Static scene_rows excludes dynamically constructed lines and init-added topics; callsite list is a separate review queue. topic:review duplicates topic content.',callsites=len(calls))
+ summary=dict(static_scenes=len(scenes),static_rows=len(rows),unique_speaker_text_pairs=len({(r['person'],r['text']) for r in rows}),registered_art_people=len(people),static_speakers=len(counts),per_person=dict(counts),registered_people_without_static_lines=sorted(set(people)-set(counts)),reviewed_rows=sum(r['reviewed'] for r in rows),runtime_art_ready=len(json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']),scope_limit='Static scene_rows excludes dynamically constructed lines and init-added topics; callsite list is a separate review queue. topic:review duplicates topic content.',callsites=len(calls))
  summary['categories_occurrences']=dict(collections.Counter(r['category'] for r in rows))
  summary['categories_excluding_review_aliases']=dict(collections.Counter(r['category'] for r in rows if not r['review_alias']))
  candidates=[r for r in rows if r['category']=='dialogue_expression_candidate']

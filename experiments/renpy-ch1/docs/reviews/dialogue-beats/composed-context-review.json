@@ -59,7 +59,7 @@
     },
     {
       "source": "game/systems/room13_ep3_woodfire.rpy",
-      "line": 296,
+      "line": 299,
       "expression": "(\"resident_ppul\",\"도둑이 불까지 냈구려.\"+(\" 표 없는 애 하나가 죽었다지.\" if r13_has(\"kkomi_dead\") else \"\"))",
       "who_expression": "'resident_ppul'",
       "text_expression": "'도둑이 불까지 냈구려.' + (' 표 없는 애 하나가 죽었다지.' if r13_has('kkomi_dead') else '')",
@@ -87,7 +87,7 @@
     },
     {
       "source": "game/systems/room13_week1_cases.rpy",
-      "line": 241,
+      "line": 242,
       "expression": "(\"daram\" if room13.get(\"daram_state\") in (\"with_dad\",\"rescued\") else \"dad\",(\"엄마 털실이다…….\" if room13.get(\"daram_state\") in (\"with_dad\",\"rescued\") else \"(다람이에게 돌려줄 것들이다.)\"))",
       "who_expression": "'daram' if room13.get('daram_state') in ('with_dad', 'rescued') else 'dad'",
       "text_expression": "'엄마 털실이다…….' if room13.get('daram_state') in ('with_dad', 'rescued') else '(다람이에게 돌려줄 것들이다.)'",

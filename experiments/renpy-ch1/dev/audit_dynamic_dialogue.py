@@ -109,7 +109,7 @@ def audit():
                    literal_context_reviewed=len(review['rows']), explicit_exclusions=len(review['excluded_rows']),
                    literal_context_pending=len(pending), provenance_errors=errors,
                    review_record_counts={name: len(review_rows(name)) for name in FILES},
-                   runtime_assets_active=0, dynamic_runtime_binding='118_local_callsite_snapshots_assets_held',
+                   runtime_assets_active=len(json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']), dynamic_runtime_binding='119_callsite_snapshots_20_approved_people',
                    count_note='Counts are source occurrences/components, not unique or reachable runtime lines. Files overlap intentionally; expression fragments are not standalone dialogue.',
                    scope='Room13 r13_lines: static scenes, init-added literal topics, calendar JSON, activities, variable speaker responses, meeting statements/opinions, greetings, presentations and silence. Other winter_* campaigns are outside this renderer.')
     (OUT / 'dynamic-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')

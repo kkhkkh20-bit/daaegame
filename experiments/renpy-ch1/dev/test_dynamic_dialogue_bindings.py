@@ -7,7 +7,7 @@ class DynamicBindings(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   cls.bind=staticmethod(binder());cls.registry=json.loads((ROOT/'game/assets/room13-dialogue-bindings.json').read_text())
- def test_all_118_calls_have_exact_route_and_original_arguments(self):
+ def test_all_119_calls_have_exact_route_and_original_arguments(self):
   import line_cues
   queue=json.loads((OUT/'runtime-binding-queue.json').read_text())
   for i,row in enumerate(queue):
@@ -15,7 +15,7 @@ class DynamicBindings(unittest.TestCase):
    source=(ROOT/row['source']).read_text();offset=sum(len(s) for s in source.splitlines(True)[:row['line']-1]);start=source.index('call r13_lines(',offset)+len('call r13_lines');end=line_cues._match_bracket(source,start)
    actual=ast.parse('f'+source[start:end+1],mode='eval').body;original=ast.parse('f('+row['call_expression']+')',mode='eval').body
    self.assertEqual([ast.dump(a) for a in actual.args],[ast.dump(a) for a in original.args]);self.assertEqual(actual.keywords[-1].value.value,'dynamic:%03d'%i)
-  self.assertEqual(len(self.registry['routes']),118)
+  self.assertEqual(len(self.registry['routes']),119)
  def test_same_text_in_different_scene_has_different_decision(self):
   packet=('daram','아빠!');b=self.bind([packet],'ev:visit:open','dynamic:544')
   self.assertEqual(b['rows']['0']['emotion'],'joy')
@@ -69,5 +69,5 @@ class DynamicBindings(unittest.TestCase):
  def test_generated_state_evidence_and_hold(self):
   for name in ['binding-state-results.json','provider-state-results.json']:
    result=json.loads((OUT/name).read_text());self.assertEqual(result['unresolved'],[])
-  self.assertEqual(json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people'],{})
+  self.assertEqual(len(json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']),20)
 if __name__=='__main__':unittest.main()

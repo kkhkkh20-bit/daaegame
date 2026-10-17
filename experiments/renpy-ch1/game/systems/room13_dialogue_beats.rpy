@@ -61,6 +61,7 @@ init 170 python:
             super(R13DialogueBeat,self).__init__(**kwargs)
             self.plan=plan
             self.finished=False
+            self.started_st=None
             self.frames={}
             for key in (plan["talk"],plan["react"]):
                 if key and key not in self.frames:
@@ -69,14 +70,35 @@ init 170 python:
         def visit(self):
             return list(self.frames.values())
         def render(self,width,height,st,at):
+            if self.started_st is None:self.started_st=st
+            elapsed=max(0.0,st-self.started_st)
             active=store.r13_dialogue_beat
             # An old retained portrait always resolves to its calm talk frame.
             plan=self.plan if active is self.plan else dict(self.plan,settled=True)
-            key=plan["talk"] if self.finished else r13_dialogue_phase(plan,st,renpy.is_skipping() or renpy.in_rollback(),persistent.room13_motion)
-            if key==plan["talk"]:self.finished=True
+            key=plan["talk"] if self.finished else r13_dialogue_phase(plan,elapsed,renpy.is_skipping() or renpy.in_rollback(),persistent.room13_motion)
+            if key==plan["talk"]:
+                self.finished=True
+                # Persist completion across screen reconstruction (settings, resize).
+                if active is self.plan and not active["settled"]:r13_dialogue_beat_settle()
             if key!=plan["talk"]:
-                renpy.redraw(self,min(.05,max(.001,plan["duration"]-st)))
+                renpy.redraw(self,min(.05,max(.001,plan["duration"]-elapsed)))
             return renpy.render(self.frames[key],width,height,st,at)
+
+    def r13_dialogue_source_profile(person,pose,height):
+        # An unreviewed line uses the approved neutral, never an older design.
+        # Meetings and authored actions retain their explicitly separate artwork.
+        if getattr(store,"r13_meeting_active",False) or getattr(store,"r13_thought_active",False):return None
+        if r13_fullbody_key(pose) not in R13_FULLBODY_PLAIN:return None
+        entry=R13_DIALOGUE_TALK_ART["people"].get(person,{})
+        if entry.get("status")!="approved_runtime":return None
+        return entry.get("profiles",{}).get(str(int(height)))
+
+    def r13_dialogue_source_neutral(person,pose,height):
+        profile=r13_dialogue_source_profile(person,pose,height)
+        if not profile:return None
+        frame=profile["frames"]["neutral"]
+        if not renpy.loadable(frame["file"]):return None
+        return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
 
     def r13_dialogue_beat_art(person,height):
         if not r13_dialogue_beat_ready(person):return None

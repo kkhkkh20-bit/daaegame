@@ -32,12 +32,12 @@
   {
     "file": "game/room13_week2.rpy",
     "line": 18,
-    "call": "call r13_lines([(\"resident_ubak\" if r13_has(\"chorong_dead\") else \"resident_lamplighter\",\"등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요.\"),(None,\"재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.\")],\"week2:crisis\")"
+    "call": "call r13_lines([(\"resident_ubak\" if r13_has(\"chorong_dead\") else \"resident_lamplighter\",\"등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요.\"),(None,\"재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.\")],\"week2:crisis\", binding_route=\"dynamic:102\")"
   },
   {
     "file": "game/room13_week2.rpy",
     "line": 21,
-    "call": "call r13_lines([(None,\"여관에서 편지 이야기가 새어 나갔다. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있다고 했다.\")] if r13_has(\"chorong_dead\") else [(\"resident_lamplighter\",\"여관에서 편지 이야기가 새어 나갔어요. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있어요.\")],\"week2:prior_disclosure\")"
+    "call": "call r13_lines([(None,\"여관에서 편지 이야기가 새어 나갔다. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있다고 했다.\")] if r13_has(\"chorong_dead\") else [(\"resident_lamplighter\",\"여관에서 편지 이야기가 새어 나갔어요. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있어요.\")],\"week2:prior_disclosure\", binding_route=\"dynamic:103\")"
   },
   {
     "file": "game/room13_week2.rpy",
@@ -47,7 +47,7 @@
   {
     "file": "game/room13_week2.rpy",
     "line": 39,
-    "call": "call r13_lines([(None,\"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」\"),(\"dad\",\"(아내 글씨다. 살아 있다.)\",{\"thought\":True})] if r13_has(\"chorong_dead\") else [(\"resident_lamplighter\",\"약속 장소에 경비가 먼저 와 있었어요. 그래서 부인께서 자리를 바꾸셨어요. 새 표식을 확인해야 해요.\"),(\"dad\",\"아내가 살아 있다는 거죠?\"),(\"resident_lamplighter\",\"제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.\")],\"week2:relocated\")"
+    "call": "call r13_lines([(None,\"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」\"),(\"dad\",\"(아내 글씨다. 살아 있다.)\",{\"thought\":True})] if r13_has(\"chorong_dead\") else [(\"resident_lamplighter\",\"약속 장소에 경비가 먼저 와 있었어요. 그래서 부인께서 자리를 바꾸셨어요. 새 표식을 확인해야 해요.\"),(\"dad\",\"아내가 살아 있다는 거죠?\"),(\"resident_lamplighter\",\"제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.\")],\"week2:relocated\", binding_route=\"dynamic:105\")"
   },
   {
     "file": "game/room13_week2.rpy",
@@ -67,7 +67,7 @@
   {
     "file": "game/room13_week2.rpy",
     "line": 69,
-    "call": "call r13_lines(ROOM13[\"activities\"][key][\"lines\"],\"activity:\"+key)"
+    "call": "call r13_lines(ROOM13[\"activities\"][key][\"lines\"],\"activity:\"+key, binding_route=\"dynamic:109\")"
   },
   {
     "file": "game/room13_week2.rpy",
@@ -362,12 +362,12 @@
   {
     "file": "game/room13_week2.rpy",
     "line": 328,
-    "call": "call r13_lines(([(\"mom\",\"초롱 씨가 남긴 짐에 이 도면이 있었어. 마을 밖으로 보낸 적이 있대. 원본은 여기 남겼고.\")] if r13_has(\"chorong_dead\") else [(\"resident_lamplighter\",\"이 도면은 마을 밖으로 보낸 적이 있습니다. 원본은 여기 남겼고요.\")])+[(\"mom\",\"이 부분이 달라. 고대 장치에 있던 선이 아니야.\"),(\"dad\",\"그 선은 나중에 덧붙였다는 거야?\"),(\"mom\",\"누군가 같은 방법으로 다른 곳도 바꿨을 수 있어.\"),(None,\"자료를 여러 부 복사해 나눠 보관했다. 이 마을에서 벌어진 일의 책임은 지워지지 않았다.\"),(\"daram\",\"이제 천 걷어도 돼?\"),(\"mom\",\"응.\"),(None,\"다람이가 창에 친 두꺼운 천을 걷었다. 이번에는 누군가를 숨기려는 게 아니었다.\")],\"ending:E6\")"
+    "call": "call r13_lines(([(\"mom\",\"초롱 씨가 남긴 짐에 이 도면이 있었어. 마을 밖으로 보낸 적이 있대. 원본은 여기 남겼고.\")] if r13_has(\"chorong_dead\") else [(\"resident_lamplighter\",\"이 도면은 마을 밖으로 보낸 적이 있습니다. 원본은 여기 남겼고요.\")])+[(\"mom\",\"이 부분이 달라. 고대 장치에 있던 선이 아니야.\"),(\"dad\",\"그 선은 나중에 덧붙였다는 거야?\"),(\"mom\",\"누군가 같은 방법으로 다른 곳도 바꿨을 수 있어.\"),(None,\"자료를 여러 부 복사해 나눠 보관했다. 이 마을에서 벌어진 일의 책임은 지워지지 않았다.\"),(\"daram\",\"이제 천 걷어도 돼?\"),(\"mom\",\"응.\"),(None,\"다람이가 창에 친 두꺼운 천을 걷었다. 이번에는 누군가를 숨기려는 게 아니었다.\")],\"ending:E6\", binding_route=\"dynamic:168\")"
   },
   {
     "file": "game/room13.rpy",
     "line": 40,
-    "call": "label r13_lines(entries,identity):"
+    "call": "label r13_lines(entries,identity,binding_route=None):"
   },
   {
     "file": "game/room13.rpy",
@@ -437,7 +437,7 @@
   {
     "file": "game/room13.rpy",
     "line": 228,
-    "call": "call r13_lines(r13_reaction,\"entry:karo:present:\"+r13_item)"
+    "call": "call r13_lines(r13_reaction,\"entry:karo:present:\"+r13_item, binding_route=\"dynamic:013\")"
   },
   {
     "file": "game/room13.rpy",
@@ -452,7 +452,7 @@
   {
     "file": "game/room13.rpy",
     "line": 252,
-    "call": "call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘었다. 편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.', {'no_lead': True}), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', {'expression': 'joy', 'sfx': 'surprise'}), ('dad', '깜짝이야. 언제 거기 들어가 있었어?'), ('daram', '아빠가 편지 읽을 때! 의자 뒤로 살금살금 갔는데, 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY)"
+    "call": "call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘었다. 편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.', {'no_lead': True}), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', {'expression': 'joy', 'sfx': 'surprise'}), ('dad', '깜짝이야. 언제 거기 들어가 있었어?'), ('daram', '아빠가 편지 읽을 때! 의자 뒤로 살금살금 갔는데, 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY, binding_route=\"dynamic:016\")"
   },
   {
     "file": "game/room13.rpy",
@@ -467,7 +467,7 @@
   {
     "file": "game/room13.rpy",
     "line": 325,
-    "call": "call r13_lines([(None,\"발밑과 벽면을 꼼꼼히 살폈다. 이 자리에는 특별히 눈에 띄는 흔적이 없다.\")],\"field:empty:\"+room13[\"location\"])"
+    "call": "call r13_lines([(None,\"발밑과 벽면을 꼼꼼히 살폈다. 이 자리에는 특별히 눈에 띄는 흔적이 없다.\")],\"field:empty:\"+room13[\"location\"], binding_route=\"dynamic:019\")"
   },
   {
     "file": "game/room13.rpy",
@@ -482,17 +482,17 @@
   {
     "file": "game/room13.rpy",
     "line": 427,
-    "call": "call r13_lines(r13_opening_lines,\"greeting:opening:\"+r13_encounter_key+(\":first\" if r13_first_encounter else \":return\")) from r13_dialogue_opening_return"
+    "call": "call r13_lines(r13_opening_lines,\"greeting:opening:\"+r13_encounter_key+(\":first\" if r13_first_encounter else \":return\"), binding_route=\"dynamic:022\") from r13_dialogue_opening_return"
   },
   {
     "file": "game/room13.rpy",
     "line": 429,
-    "call": "call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target)"
+    "call": "call r13_lines([(None,r13_activity_text(r13_target))],\"greeting:activity:\"+r13_target, binding_route=\"dynamic:023\")"
   },
   {
     "file": "game/room13.rpy",
     "line": 431,
-    "call": "call r13_lines([(r13_target,R13_GREETING[r13_target])],\"greeting:\"+r13_target)"
+    "call": "call r13_lines([(r13_target,R13_GREETING[r13_target])],\"greeting:\"+r13_target, binding_route=\"dynamic:024\")"
   },
   {
     "file": "game/room13.rpy",
@@ -512,22 +512,22 @@
   {
     "file": "game/room13.rpy",
     "line": 484,
-    "call": "call r13_lines([(None,ROOM13[\"sensitive\"][r13_item])],\"sensitive:\"+r13_item)"
+    "call": "call r13_lines([(None,ROOM13[\"sensitive\"][r13_item])],\"sensitive:\"+r13_item, binding_route=\"dynamic:028\")"
   },
   {
     "file": "game/room13.rpy",
     "line": 489,
-    "call": "call r13_lines(r13_reaction,\"present:\"+r13_target+\":\"+r13_item+\":\"+str(r13_disclose_name))"
+    "call": "call r13_lines(r13_reaction,\"present:\"+r13_target+\":\"+r13_item+\":\"+str(r13_disclose_name), binding_route=\"dynamic:029\")"
   },
   {
     "file": "game/room13.rpy",
     "line": 494,
-    "call": "call r13_lines([(None, '부리는 손에 든 공구를 내려놓았지만 내 쪽을 쳐다보지는 않았다.'), ('buri', '밖에서는 다들 할아버지가 아이를 잡아먹으려 했다고 수군거려요.'), ('dad', '저는 그렇게 말한 적이 없습니다.'), ('buri', '누군가는 그렇게 말했어요. 다람이를 살인 혐의에서 구하려고요.'), (None, '내가 딸아이 이야기를 꺼내려 하자 부리가 먼저 고개를 들어 나를 보았다.'), ('dad', '저도 제 아이가 그 방에서 왜 다쳤는지 진실을 알아야 합니다.'), ('buri', '그럼 저한테 직접 물어보세요. 할아버지가 어떤 사람이었는지 미리 정해 놓고 묻지는 마시고요.')],\"buri:consent:opening\")"
+    "call": "call r13_lines([(None, '부리는 손에 든 공구를 내려놓았지만 내 쪽을 쳐다보지는 않았다.'), ('buri', '밖에서는 다들 할아버지가 아이를 잡아먹으려 했다고 수군거려요.'), ('dad', '나는 그렇게 말한 적이 없어.'), ('buri', '누군가는 그렇게 말했어요. 다람이를 살인 혐의에서 구하려고요.'), (None, '내가 딸아이 이야기를 꺼내려 하자 부리가 먼저 고개를 들어 나를 보았다.'), ('dad', '나도 우리 아이가 그 방에서 왜 다쳤는지 진실을 알아야 해.'), ('buri', '그럼 저한테 직접 물어보세요. 할아버지가 어떤 사람이었는지 미리 정해 놓고 묻지는 마시고요.')],\"buri:consent:opening\")"
   },
   {
     "file": "game/room13.rpy",
     "line": 500,
-    "call": "call r13_lines([(\"dad\",\"제가 한 말도 바로잡겠습니다. 기록에는 팔을 잡은 흔적과 머리 부상이 따로 적혀 있습니다. 그러니 어르신이 무엇을 하려 했는지는 아직 모릅니다.\"),(\"buri\",\"그렇게 바로잡은 내용도 기록에 꼭 남겨 주세요. 여기서 저한테만 말로 하시는 거라면 아무 소용 없어요.\")],\"buri:consent:repair\")"
+    "call": "call r13_lines([(\"dad\",\"내가 한 말도 바로잡을게. 기록에는 팔을 잡은 흔적과 머리 부상이 따로 적혀 있어. 그러니 할아버지가 무엇을 하려 했는지는 아직 몰라.\"),(\"buri\",\"그렇게 바로잡은 내용도 기록에 꼭 남겨 주세요. 여기서 저한테만 말로 하시는 거라면 아무 소용 없어요.\")],\"buri:consent:repair\")"
   },
   {
     "file": "game/room13.rpy",
@@ -537,17 +537,17 @@
   {
     "file": "game/room13.rpy",
     "line": 505,
-    "call": "call r13_lines([('dad', '직접 확인하지 않은 추측은 기록에 적지 않겠습니다.'), ('buri', '지금 제 앞에서만요? 나중에 다른 마을 사람들 앞에서는요?'), ('dad', '사람들 앞에서도 마찬가지입니다. 그때 다르게 말하면 바로잡겠습니다.'), (None, '부리는 대답하지 않았다. 나는 그 침묵을 허락의 뜻으로 착각할 뻔했다.'), ('buri', '그 말, 사람들 앞에서도 꼭 지키세요.'), (None, '부리가 작업대 한쪽의 공구들을 치워 자리를 비웠다. 사람 한 명이 걸터앉을 만한 공간이었다.'), ('buri', '기록은 그 자리에 앉아서 같이 봐요.')],\"buri:consent:accepted\")"
+    "call": "call r13_lines([('dad', '직접 확인하지 않은 추측은 기록에 적지 않을게.'), ('buri', '지금 제 앞에서만요? 나중에 다른 마을 사람들 앞에서는요?'), ('dad', '사람들 앞에서도 마찬가지야. 그때 다르게 말하면 바로잡을게.'), (None, '부리는 대답하지 않았다. 나는 그 침묵을 허락의 뜻으로 착각할 뻔했다.'), ('buri', '그 말, 사람들 앞에서도 꼭 지키세요.'), (None, '부리가 작업대 한쪽의 공구들을 치워 자리를 비웠다. 사람 한 명이 걸터앉을 만한 공간이었다.'), ('buri', '기록은 그 자리에 앉아서 같이 봐요.')],\"buri:consent:accepted\")"
   },
   {
     "file": "game/room13.rpy",
     "line": 508,
-    "call": "call r13_lines([('buri', '우리 할아버지를 괴물로 만들면 탐정님 아이가 무사히 돌아오나요?'), ('dad', '저는 어떻게든 제 아이를 구해야 합니다.'), ('buri', '그 마음은 저도 알아요. 제가 그걸 모르는 사람인 것처럼 말씀하지 마세요.'), (None, '부리가 다시 공구를 집어 들었다. 작업대 한쪽에 빈자리가 있었지만, 내게 앉으라고 내어 주지는 않았다.'), ('buri', '지금은 그만 나가 주세요.')],\"buri:consent:refused\")"
+    "call": "call r13_lines([('buri', '우리 할아버지를 괴물로 만들면 탐정님 아이가 무사히 돌아오나요?'), ('dad', '나는 어떻게든 우리 아이를 구해야 해.'), ('buri', '그 마음은 저도 알아요. 제가 그걸 모르는 사람인 것처럼 말씀하지 마세요.'), (None, '부리가 다시 공구를 집어 들었다. 작업대 한쪽에 빈자리가 있었지만, 내게 앉으라고 내어 주지는 않았다.'), ('buri', '지금은 그만 나가 주세요.')],\"buri:consent:refused\")"
   },
   {
     "file": "game/room13.rpy",
     "line": 528,
-    "call": "call r13_lines(r13_topic_rows,\"topic:\"+r13_topic)"
+    "call": "call r13_lines(r13_topic_rows,\"topic:\"+r13_topic, binding_route=\"dynamic:035\")"
   },
   {
     "file": "game/room13.rpy",
@@ -587,7 +587,7 @@
   {
     "file": "game/room13.rpy",
     "line": 575,
-    "call": "call r13_lines([(None,\"그때 계단 위에서 나무를 두드리는 소리가 들렸다. 우리 방 문틈 아래로 연기가 새어 나왔다.\"),(\"nabi\",\"다람아, 그 안에 가만히 있어. 문에서 떨어져!\"),(\"dad\",\"무슨 일이에요? 왜 문을 못 열어요?\"),(\"doto\",\"방 안쪽 빗장이 안 풀립니다. 비명을 듣고 바로 달려왔는데요.\"),(\"dad\",\"다람아!\"),(\"daram\",\"아빠…… 나 여기 있어.\"),(\"granny\",\"다들 비켜요. 공구 가져왔어요.\"),(None,\"도토가 할머니에게서 지렛대를 받아 문틀 틈에 밀어 넣었다. 너울과 함께 문을 받쳤다.\")],\"case:father:return:v3\")"
+    "call": "call r13_lines([(None,\"그때 계단 위에서 나무를 두드리는 소리가 들렸다. 우리 방 문틈 아래로 연기가 새어 나왔다.\"),(\"nabi\",\"다람아, 그 안에 가만히 있어. 문에서 떨어져!\"),(\"dad\",\"무슨 일이니? 왜 문을 못 여는 거니?\"),(\"doto\",\"방 안쪽 빗장이 안 풀립니다. 비명을 듣고 바로 달려왔는데요.\"),(\"dad\",\"다람아!\"),(\"daram\",\"아빠…… 나 여기 있어.\"),(\"granny\",\"다들 비켜요. 공구 가져왔어요.\"),(None,\"도토가 할머니에게서 지렛대를 받아 문틀 틈에 밀어 넣었다. 너울과 함께 문을 받쳤다.\")],\"case:father:return:v3\")"
   },
   {
     "file": "game/room13.rpy",
@@ -757,12 +757,12 @@
   {
     "file": "game/room13_dialogue_openings_20261013.rpy",
     "line": 60,
-    "call": "call r13_lines(r13_notice_rows, \"notice:resident:\" + person) from r13_notice_lines_return"
+    "call": "call r13_lines(r13_notice_rows, \"notice:resident:\" + person, binding_route=\"dynamic:077\") from r13_notice_lines_return"
   },
   {
     "file": "game/room13_interaction.rpy",
     "line": 255,
-    "call": "call r13_lines(ROOM13[\"activities\"][r13_action][\"lines\"],\"activity:\"+r13_action)"
+    "call": "call r13_lines(ROOM13[\"activities\"][r13_action][\"lines\"],\"activity:\"+r13_action, binding_route=\"dynamic:081\")"
   },
   {
     "file": "game/room13_first_mystery.rpy",
@@ -802,12 +802,12 @@
   {
     "file": "game/room13_tool_discovery.rpy",
     "line": 142,
-    "call": "call r13_lines(r13_conversation_topic_lines(\"tool:seam\"),\"topic:tool:seam\") from r13_tool_seam_question_return"
+    "call": "call r13_lines(r13_conversation_topic_lines(\"tool:seam\"),\"topic:tool:seam\", binding_route=\"dynamic:097\") from r13_tool_seam_question_return"
   },
   {
     "file": "game/room13_thoughts.rpy",
     "line": 83,
-    "call": "call r13_lines(r13_observed_lines,observed_identity+\":dad-thought-v1\")"
+    "call": "call r13_lines(r13_observed_lines,observed_identity+\":dad-thought-v1\", binding_route=\"dynamic:096\")"
   },
   {
     "file": "game/room13_life.rpy",
@@ -832,7 +832,7 @@
   {
     "file": "game/room13_life.rpy",
     "line": 213,
-    "call": "call r13_lines(ROOM13[\"topics\"][key][\"lines\"],\"negotiation:supplies:opening\")"
+    "call": "call r13_lines(ROOM13[\"topics\"][key][\"lines\"],\"negotiation:supplies:opening\", binding_route=\"dynamic:086\")"
   },
   {
     "file": "game/room13_life.rpy",
@@ -892,7 +892,7 @@
   {
     "file": "game/systems/room13_week2_events.rpy",
     "line": 90,
-    "call": "call r13_lines([(\"resident_bori\" if \"transport_terms\" in _gain else \"buri\",\"종소리 듣고 왔어요. 비어 있는 일 있으면 말해요. 수레든 교대든.\")],\"w2e:bell:volunteers\")"
+    "call": "call r13_lines([(\"resident_bori\" if \"transport_terms\" in _gain else \"buri\",\"종소리 듣고 왔어요. 비어 있는 일 있으면 말해요. 수레든 교대든.\")],\"w2e:bell:volunteers\", binding_route=\"dynamic:781\")"
   },
   {
     "file": "game/systems/room13_week2_events.rpy",
@@ -937,12 +937,12 @@
   {
     "file": "game/systems/room13_week2_events.rpy",
     "line": 144,
-    "call": "call r13_lines([(\"dad\",\"공구 값은 제가 내겠습니다.\"),"
+    "call": "call r13_lines([(\"dad\",\"공구 값은 내가 낼게.\"),"
   },
   {
     "file": "game/systems/room13_week2_events.rpy",
     "line": 149,
-    "call": "call r13_lines([(\"dad\",\"가족이 받을 몫을 장부에 넣겠습니다. 공구는 남겨 둡시다.\"),"
+    "call": "call r13_lines([(\"dad\",\"가족이 받을 몫을 장부에 넣을게. 공구는 남겨 두자.\"),"
   },
   {
     "file": "game/systems/room13_week2_events.rpy",
@@ -1047,7 +1047,7 @@
   {
     "file": "game/systems/room13_town_events.rpy",
     "line": 256,
-    "call": "call r13_lines([(\"dad\",\"창고 지붕으로 어떻게 들어갔는지 알려 주면 오늘 일은 못 본 걸로 하마.\"),"
+    "call": "call r13_lines([(\"dad\",\"창고 지붕으로 어떻게 들어갔는지 알려 주면 오늘 일은 못 본 걸로 할게.\"),"
   },
   {
     "file": "game/systems/room13_town_events.rpy",
@@ -1262,277 +1262,282 @@
   {
     "file": "game/systems/room13_town_events.rpy",
     "line": 506,
-    "call": "call r13_lines(r13_kongi_lines,\"ev:m:report:\"+r13_kongi_watch.get(\"place\",\"kitchen\"))"
+    "call": "call r13_lines(r13_kongi_lines,\"ev:m:report:\"+r13_kongi_watch.get(\"place\",\"kitchen\"), binding_route=\"dynamic:718\")"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 136,
+    "line": 140,
     "call": "call r13_lines([(None,\"여관 문이 열리고 찬바람과 함께 경비 두 사람이 들어왔다. 너울과 바둑이였다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 144,
+    "line": 148,
     "call": "call r13_lines([(\"neoul\",\"협조 고맙소. 그 아이는 곧 데려가겠소.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 148,
+    "line": 152,
     "call": "call r13_lines([(\"neoul\",\"그렇소? 내일 밤에 다시 돌겠소. 그 아이를 숨겨 주는 사람도 같이 검사를 받소.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 152,
+    "line": 156,
     "call": "call r13_lines([(\"neoul\",\"말이 거칠어지거나, 가족을 못 알아보거나, 밤에 이상하게 돌아다니면 야생화 초기 증상이오.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 162,
+    "line": 166,
     "call": "call r13_lines([(\"neoul\",\"외지 사람 보증은 소용없소. 검사원 확인서라도 가져오면 모를까.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 166,
+    "line": 170,
     "call": "call r13_lines([(\"resident_badook\",\"……이러지 마세요. 돈은 안 받아요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 175,
+    "line": 179,
     "call": "call r13_lines([(None,\"창틀에 작은 그림자가 거꾸로 매달려 있었다. 밤이였다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 180,
+    "line": 184,
     "call": "call r13_lines([(None,\"네로는 아무것도 묻지 않고 헛간 문을 열었다. 안에는 이름표 없는 사람들이 담요를 나눠 덮고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 186,
+    "line": 190,
     "call": "call r13_lines([(\"resident_piko\",\"등록증? ……그림은 그림이죠. 도장 모양까지 그려 드릴게요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 193,
+    "line": 197,
     "call": "call r13_lines([(\"resident_seori\",\"박쥐가 밤에 깨어 있는 게 증상이라고요? 그럼 마을 박쥐는 다 증상이겠군요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 198,
+    "line": 202,
     "call": "call r13_lines([(\"resident_badook\",\"……저도 돌아온 사람을 못 봤다고 말씀드렸죠.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 202,
+    "line": 206,
     "call": "call r13_lines([(\"bami\",\"방 안은 싫어요. 방에 들어가면 도망칠 데가 없잖아요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 206,
+    "line": 210,
     "call": "call r13_lines([(\"bami\",\"……그렇겠죠. 외지 분이시니까.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 213,
+    "line": 217,
     "call": "call r13_lines([(None,\"네로는 아무것도 묻지 않고 헛간 문을 열었다. 안에는 이름표 없는 사람들이 담요를 나눠 덮고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 217,
+    "line": 221,
     "call": "call r13_lines([(\"resident_seori\",\"‘야생화 증상 없음.’ 너울이 이 확인서를 무시하면, 그 일은 제가 기록합니다.\")],\"ep1:seori\")"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 227,
+    "line": 231,
     "call": "call r13_lines([(None,\"새벽에 처마 쪽에서 너울의 목소리가 들렸다. 잠시 뒤, 발소리는 처마를 그냥 지나갔다.\")],\"ep1:morning:passed\")"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 231,
+    "line": 235,
     "call": "call r13_lines([(None,\"새벽, 처마 쪽에서 날개 퍼덕이는 소리와 경비의 고함이 들렸다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 245,
+    "line": 249,
     "call": "call r13_lines([(None,\"주방 뒷문이 반쯤 열려 있었다. 나비가 남은 빵과 식은 수프를 천에 싸서 문밖으로 내밀고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 250,
+    "line": 254,
     "call": "call r13_lines([(\"nabi\",\"고마워요. 이건 아무것도 아니에요. 진짜로요.\")],\"ep2:ignore\")"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 252,
+    "line": 256,
     "call": "call r13_lines([(\"granny\",\"나비야. 여관 밥이 네 것이니?\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 258,
+    "line": 262,
     "call": "call r13_lines([(None,\"아이들은 학교 뒤 장작 창고에서 지내고 있었다. 그곳에 아이가 넷 있었다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 264,
+    "line": 268,
     "call": "call r13_lines([(\"nabi\",\"할머니가 길에서 저를 거둬 주셨어요. 그 빚은 평생 가도 못 갚아요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 269,
+    "line": 273,
     "call": "call r13_lines([(None,\"아이들은 구운 밤을 받아 들고 나비 뒤로 숨었다. 한 아이가 작게 고맙다고 했다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 277,
-    "call": "call r13_lines([(\"dad\",\"그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까요.\"),"
+    "line": 281,
+    "call": "call r13_lines([(\"dad\",\"그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까?\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 281,
+    "line": 285,
     "call": "call r13_lines([(\"resident_eunho\",\"일주일 치 말이오? 값은 정해진 대로 받습니다. 누가 먹을 건지는 묻지 않겠습니다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 286,
+    "line": 290,
     "call": "call r13_lines([(\"resident_ppul\",\"……백 부인 창고에 이 물건이 다 있었단 말이오?\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 291,
+    "line": 295,
     "call": "call r13_lines([(\"resident_musoe\",\"굴 안에 말린 콩 자루가 있소. 솜이 몫만 남기고 가져가시오.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 295,
+    "line": 299,
     "call": "call r13_lines([(\"nabi\",\"사자 선생님이요? ……선생님은 좋은 분인데, 촌장님 눈치를 봐요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 299,
+    "line": 303,
     "call": "call r13_lines([(\"nabi\",\"그건 안 돼요. 다람이도 제 몫은 먹어야죠.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 313,
+    "line": 317,
     "call": "call r13_lines([(None,\"광장의 등이 한꺼번에 깜빡였다. 돌 표면을 타고 흐르던 빛이 숨을 고르듯 가늘어졌다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 320,
+    "line": 324,
     "call": "call r13_lines([(None,\"종소리가 마을을 갈랐다. 사람들이 문을 열고 나왔다. 그리고 아이들을 학교 쪽으로 데려갔다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 325,
+    "line": 329,
     "call": "call r13_lines([(None,\"종은 울리지 않았다. 몇 집의 창이 어두워졌다. 그 창들은 밤새 어두운 그대로였다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 329,
+    "line": 333,
     "call": "call r13_lines([(\"resident_ubak\",\"재 볼게요. ……가을에 쟀을 때보다 눈금이 한참 아래예요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 335,
+    "line": 339,
     "call": "call r13_lines([(\"resident_lamplighter\",\"등을 끄면 돌이 덜 지쳐요. 등은 돌에서 불을 받거든요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 341,
+    "line": 346,
+    "call": "call r13_lines([(\"resident_ubak\",\"초롱 씨가 하던 일이에요. 등을 끄면 돌이 덜 지친다고 했어요. 등은 돌에서 불을 받거든요.\"),"
+  },
+  {
+    "file": "game/systems/room13_episodes.rpy",
+    "line": 352,
     "call": "call r13_lines([(None,\"줄을 당기자 묵직한 종소리가 울렸다. 너울이 내 팔을 붙잡았다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 349,
+    "line": 360,
     "call": "call r13_lines([(\"dad\",\"재판은 증거로만 판단하고, 판결은 그대로 집행해 주십시오. 그 약속을 받고 싶습니다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 353,
+    "line": 364,
     "call": "call r13_lines([(\"resident_ppul\",\"……그건 내 손녀 이름이오. 네 해 전, 첫 번째 겨울이었소.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 359,
+    "line": 370,
     "call": "call r13_lines([(\"dad\",\"삼백 년 동안 기록에 이름은 없었습니다. 이름이 생긴 건 네 해 전부터고, 돌은 지금도 식고 있습니다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 365,
+    "line": 376,
     "call": "call r13_lines([(\"dad\",\"그날 밤 아이들이 학교로 피한 건 촌장님이 종을 허락하셨기 때문이라고 말하겠습니다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 370,
+    "line": 381,
     "call": "call r13_lines([(\"dad\",\"배급에서 빠진 물자가 백 부인 창고에 있습니다. 이 장부를 광장에 붙이면 촌장님 배급표도 같이 흔들립니다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 375,
+    "line": 386,
     "call": "call r13_lines([(\"resident_ppul\",\"부탁으로 법을 바꾸진 않소. 재판은 마을 방식대로 하오.\")],\"ep3:hearing:plead\")"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 388,
+    "line": 399,
     "call": "call r13_lines([(None,\"수리점 앞에 사람들이 모여 있었다. 너울이 톡의 작업대를 손바닥으로 내리쳤다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 397,
+    "line": 408,
     "call": "call r13_lines([(\"dad\",\"증거도 없이 사람을 가두겠다는 겁니까?\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 401,
+    "line": 412,
     "call": "call r13_lines([(\"neoul\",\"보시오, 외지 사람도 내 말이 맞을 수 있다잖소.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 406,
+    "line": 417,
     "call": "call r13_lines([(None,\"광장 등 뚜껑 나사에 가느다란 줄 자국이 나 있었다. 공구가 아니라 계측기 집게가 물었던 자국이었다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 412,
+    "line": 423,
     "call": "call r13_lines([(\"resident_tok\",\"등은 돌에서 떼어 낸 조각으로 빛나요. 손톱만 한 조각인데, 꺼내 들면 사람 손처럼 따뜻해요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 421,
-    "call": "call r13_lines([(\"dad\",\"광장 등 나사에 계측기 집게 자국이 있었어요. 종이 눈금도 끼어 있었고요.\"),"
+    "line": 432,
+    "call": "call r13_lines([(\"dad\",\"광장 등 나사에 계측기 집게 자국이 있었어. 종이 눈금도 끼어 있었고.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 426,
+    "line": 437,
     "call": "call r13_lines([(\"neoul\",\"검사원 조수가? ……됐소. 톡은 풀어 주겠소. 조수는 내가 데려가오.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 431,
+    "line": 442,
     "call": "call r13_lines([(\"resident_seori\",\"제가 시켰습니다. 촌장의 출력 보고가 측정값과 맞지 않아서요.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 438,
+    "line": 449,
     "call": "call r13_lines([(None,\"진료실 상자에서 조각을 꺼냈다. 그리고 밤사이 광장 등에 다시 끼웠다. 등이 천천히 데워졌다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 442,
+    "line": 453,
     "call": "call r13_lines([(\"dad\",\"등 나사의 자국은 공구가 아니라 계측기 집게입니다. 톡의 작업 자국과 다릅니다. 조각은 측정이 끝나면 돌아올 겁니다.\"),"
   },
   {
     "file": "game/systems/room13_episodes.rpy",
-    "line": 450,
+    "line": 461,
     "call": "call r13_lines([(None,\"수리점 문에 판자가 덧대져 있었다. 결국 조각을 찾지 못한 채 기한이 지났다.\"),"
   },
   {
     "file": "game/systems/room13_materials.rpy",
     "line": 110,
-    "call": "call r13_lines([(person,\"아빠 물건이네. 더 아는 건 없어.\" if person==\"daram\" else \"제게 보여 주셔도 따로 아는 이야기는 없어요.\")],\"material:show:\"+person+\":\"+key)"
+    "call": "call r13_lines([(person,\"아빠 물건이네. 더 아는 건 없어.\" if person==\"daram\" else \"제게 보여 주셔도 따로 아는 이야기는 없어요.\")],\"material:show:\"+person+\":\"+key, binding_route=\"dynamic:600\")"
   },
   {
     "file": "game/systems/room13_materials.rpy",
     "line": 114,
-    "call": "call r13_lines([(person,\"빌려 드린 물건, 이제 돌려주시려고요?\")],\"material:return_offer:\"+key)"
+    "call": "call r13_lines([(person,\"빌려 드린 물건, 이제 돌려주시려고요?\")],\"material:return_offer:\"+key, binding_route=\"dynamic:601\")"
   },
   {
     "file": "game/systems/room13_materials.rpy",
@@ -1547,12 +1552,12 @@
   {
     "file": "game/systems/room13_materials.rpy",
     "line": 123,
-    "call": "call r13_lines([(person,\"나 주려고 가져온 거야?\" if person==\"daram\" else \"이 물건을 제게 주시려는 건가요?\")],\"material:gift_offer:\"+person+\":\"+key)"
+    "call": "call r13_lines([(person,\"나 주려고 가져온 거야?\" if person==\"daram\" else \"이 물건을 제게 주시려는 건가요?\")],\"material:gift_offer:\"+person+\":\"+key, binding_route=\"dynamic:604\")"
   },
   {
     "file": "game/systems/room13_materials.rpy",
     "line": 129,
-    "call": "call r13_lines(r13_offer_rows,\"material:accepted:\"+r13_offer_topic)"
+    "call": "call r13_lines(r13_offer_rows,\"material:accepted:\"+r13_offer_topic, binding_route=\"dynamic:605\")"
   },
   {
     "file": "game/systems/room13_ep6_cart.rpy",
@@ -1567,7 +1572,7 @@
   {
     "file": "game/systems/room13_ep6_cart.rpy",
     "line": 147,
-    "call": "call r13_lines([(\"dad\",\"이 명단 맨 끝이 제 아내입니다. 이 수레가 정말 보호소로 가는지 알아야 합니다.\"),"
+    "call": "call r13_lines([(\"dad\",\"이 명단 맨 끝이 내 아내야. 이 수레가 정말 보호소로 가는지 알아야 해.\"),"
   },
   {
     "file": "game/systems/room13_ep6_cart.rpy",
@@ -1582,7 +1587,7 @@
   {
     "file": "game/systems/room13_ep6_cart.rpy",
     "line": 163,
-    "call": "call r13_lines([(\"dad\",\"저 수레엔 담요가 한 장도 없습니다. 끈만 있어요.\"),"
+    "call": "call r13_lines([(\"dad\",\"저 수레엔 담요가 한 장도 없어. 끈만 있지.\"),"
   },
   {
     "file": "game/systems/room13_ep6_cart.rpy",
@@ -1791,8 +1796,8 @@
   },
   {
     "file": "game/systems/room13_event_offers.rpy",
-    "line": 128,
-    "call": "call r13_lines([(None,n) for n in _news],\"offer:news:%d:%d\"%(room13[\"day\"],room13[\"period\"]))"
+    "line": 130,
+    "call": "call r13_lines([(None,n) for n in _news],\"offer:news:%d:%d\"%(room13[\"day\"],room13[\"period\"]), binding_route=\"dynamic:565\")"
   },
   {
     "file": "game/systems/room13_first_day_flow.rpy",
@@ -1807,7 +1812,7 @@
   {
     "file": "game/systems/room13_first_day_flow.rpy",
     "line": 74,
-    "call": "call r13_lines([(\"dad\",\"아내 편지를 받고 왔습니다. 13호실에 묵고 있다고 하던데요.\"),(\"granny\",\"부인이요? 며칠째 안 보여요. 방에 두고 간 물건은 그대로인데.\"),(\"daram\",\"……엄마 여기 없어요?\",{\"expression\":\"anxious\"}),(None,\"다람이가 내 소매를 꼭 쥐었다. 마차에서 내내 들고 있던 과자 봉지가 구겨졌다.\"),(\"dad\",\"편지에는 여기서 기다린다고 했습니다.\"),(\"granny\",\"가족을 부른다는 말은 저도 들었어요. 그런데 며칠 전에 나가서는 돌아오지 않았어요.\"),(\"daram\",\"엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요.\"),(\"granny\",\"13호실이에요. 오늘 식사와 방값은 받지 않을게요. 내일부터 두 분 숙식은 하루 열 냥이고요.\"),(\"dad\",\"우선 13호실부터 살펴보겠습니다.\")],\"life:arrival:inn\")"
+    "call": "call r13_lines([(\"dad\",\"아내 편지를 받고 왔습니다. 13호실에 묵고 있다고 하던데요.\"),(\"granny\",\"부인이요? 며칠째 안 보여요. 방에 두고 간 물건은 그대로인데.\"),(\"daram\",\"……엄마 여기 없어요?\",{\"expression\":\"anxious\"}),(None,\"다람이가 내 소매를 꼭 쥐었다. 마차에서 내내 들고 있던 과자 봉지가 구겨졌다.\"),(\"dad\",\"편지에는 여기서 기다린다고 했습니다.\"),(\"granny\",\"가족을 부른다는 말은 저도 들었어요. 그런데 며칠 전에 나가서는 돌아오지 않았어요.\"),(\"daram\",\"엄마가 있던 방을 봐도 돼요? 엄마 물건이라도 보고 싶어요.\"),(\"granny\",\"13호실이에요. 부인이 잡아 둔 그대로예요. 짐은 거기 두세요.\"),(\"dad\",\"우선 13호실부터 살펴보겠습니다.\")],\"life:arrival:inn\")"
   },
   {
     "file": "game/systems/room13_first_day_flow.rpy",
@@ -1827,37 +1832,47 @@
   {
     "file": "game/systems/room13_first_day_flow.rpy",
     "line": 93,
-    "call": "call r13_lines([(\"daram\",\"초롱 아저씨는 엄마를 기억할까?\"),(\"dad\",\"엄마를 마지막으로 언제 봤는지가 궁금하구나. 그런데 이름만 대면 알아볼까?\")],\"life:night1:known_lead\")"
+    "call": "call r13_lines([(\"daram\",\"초롱 아저씨가 엄마 봉투를 맡고 있대.\"),(\"dad\",\"응. 3일에 다시 만나기로 했어. 엄마가 어떤 글을 남겼을까?\")],\"life:night1:promised\")"
   },
   {
     "file": "game/systems/room13_first_day_flow.rpy",
     "line": 95,
+    "call": "call r13_lines([(\"daram\",\"초롱 아저씨가 엄마를 알아봤지.\"),(\"dad\",\"응. 엄마와 언제 어디서 만났는지도 더 들어 보고 싶어.\")],\"life:night1:recognized\")"
+  },
+  {
+    "file": "game/systems/room13_first_day_flow.rpy",
+    "line": 97,
+    "call": "call r13_lines([(\"daram\",\"메모에 적힌 분은 초롱 아저씨지?\"),(\"dad\",\"응. 그분도 엄마를 기억할까?\")],\"life:night1:known_lead\")"
+  },
+  {
+    "file": "game/systems/room13_first_day_flow.rpy",
+    "line": 99,
     "call": "call r13_lines([(\"daram\",\"등불 돌보는 분이 누구인지는 아직 모르지?\"),(\"dad\",\"응. 이 마을 사람이라면 누구 말인지 알 텐데.\")],\"life:night1:unknown_lead\")"
   },
   {
     "file": "game/systems/room13_first_day_flow.rpy",
-    "line": 96,
-    "call": "call r13_lines([(\"dad\",\"까로 아저씨한테 마차 일도 물어보고. 오늘은 여기서 쉬자.\"),(\"daram\",\"응. 엄마 소식 찾으면 나한테도 꼭 말해 줘.\")],\"life:night1:rest\")"
+    "line": 100,
+    "call": "call r13_lines([(\"daram\",\"엄마는 왜 우리를 부르고 없어진 거야?\"),(\"dad\",\"엄마는 이 방에 우리에게 남긴 메모를 두었어. 무엇을 보고, 누구를 만났는지 하나씩 알아보자.\"),(\"daram\",\"엄마 소식 찾으면 나한테도 꼭 말해 줘.\"),(\"dad\",\"응. 같이 찾자.\")],\"life:night1:rest\")"
   },
   {
     "file": "game/systems/room13_meeting_flow.rpy",
     "line": 191,
-    "call": "call r13_lines(r13_meeting_live_rows(claim,r13_meeting_live_sid),\"meeting:live:\"+claim+\":\"+r13_meeting_live_sid)"
+    "call": "call r13_lines(r13_meeting_live_rows(claim,r13_meeting_live_sid),\"meeting:live:\"+claim+\":\"+r13_meeting_live_sid, binding_route=\"dynamic:606\")"
   },
   {
     "file": "game/systems/room13_meeting_flow.rpy",
     "line": 223,
-    "call": "call r13_lines(presentation_rows,\"debate:\"+presentation_result+\":\"+claim+\":\"+sid+\":\"+key)"
+    "call": "call r13_lines(presentation_rows,\"debate:\"+presentation_result+\":\"+claim+\":\"+sid+\":\"+key, binding_route=\"dynamic:607\")"
   },
   {
     "file": "game/systems/room13_meeting_flow.rpy",
     "line": 255,
-    "call": "call r13_lines([(\"dad\",presentation_rows,{\"thought\":True})],\"debate:hint:\"+claim+\":\"+sid)"
+    "call": "call r13_lines([(\"dad\",presentation_rows,{\"thought\":True})],\"debate:hint:\"+claim+\":\"+sid, binding_route=\"dynamic:608\")"
   },
   {
     "file": "game/systems/room13_meeting_flow.rpy",
     "line": 276,
-    "call": "call r13_lines(r13_meeting_opinion_lines,\"meeting:opinions:\"+claim+\":\"+choice)"
+    "call": "call r13_lines(r13_meeting_opinion_lines,\"meeting:opinions:\"+claim+\":\"+choice, binding_route=\"dynamic:609\")"
   },
   {
     "file": "game/systems/room13_carryover.rpy",
@@ -1867,12 +1882,12 @@
   {
     "file": "game/systems/room13_carryover.rpy",
     "line": 71,
-    "call": "call r13_lines(_lines,\"carry:good:\"+_flags[0])"
+    "call": "call r13_lines(_lines,\"carry:good:\"+_flags[0], binding_route=\"dynamic:202\")"
   },
   {
     "file": "game/systems/room13_carryover.rpy",
     "line": 75,
-    "call": "call r13_lines(_lines+[(\"dad\",\"(지난주에 내가 한 일 때문에 이 길은 막혔다. 다른 길을 찾아야 한다.)\",{\"thought\":True})],\"carry:refuse:\"+_flag)"
+    "call": "call r13_lines(_lines+[(\"dad\",\"(지난주에 내가 한 일 때문에 이 길은 막혔다. 다른 길을 찾아야 한다.)\",{\"thought\":True})],\"carry:refuse:\"+_flag, binding_route=\"dynamic:203\")"
   },
   {
     "file": "game/systems/room13_carryover.rpy",
@@ -2106,47 +2121,52 @@
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 389,
+    "line": 390,
+    "call": "call r13_lines([(None,\"사람들이 흩어졌다. 솜이는 어디에도 없었다.\"),"
+  },
+  {
+    "file": "game/systems/room13_ep2_kids.rpy",
+    "line": 394,
     "call": "call r13_lines([(None,\"사람들이 흩어졌다. 솜이가 광장 끝에 혼자 서 있었다.\")],\"ep2:after:somi\")"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 392,
+    "line": 397,
     "call": "call r13_lines([(\"daram\",\"솜이야. 할아버지가 아까 그랬어. 강물 소리가 좋다고. 할머니가 거기서 기다린대.\"),"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 403,
+    "line": 408,
     "call": "call r13_lines([(\"daram\",\"아빠, 나 오늘 탐정이었어.\"),"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 409,
+    "line": 414,
     "call": "call r13_lines([(None,\"잠이 오지 않아 지붕으로 올라갔다. 솜이가 먼저 와 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 415,
+    "line": 420,
     "call": "call r13_lines([(None,\"얼음 위에 할아버지가 서 있었다. 맨발이었다.\"),"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 436,
+    "line": 441,
     "call": "call r13_lines([(None,\"아침, 강가에 신발 한 켤레와 '솜이'가 빽빽한 종이만 남아 있었다는 말이 돌았다.\"),"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 439,
+    "line": 444,
     "call": "call r13_lines([(None,\"(그림책) 남매는 숲에 들어가며 빵 부스러기를 떨어뜨렸어요.\",{\"book\":\"U02-opening\"}),"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 444,
+    "line": 449,
     "call": "call r13_lines([(\"daram\",\"솜이가 나랑 말 안 해. ……그래도 내 말이 틀린 건 아니잖아.\"),"
   },
   {
     "file": "game/systems/room13_ep2_kids.rpy",
-    "line": 450,
+    "line": 455,
     "call": "call r13_lines([(None,\"진료소에서 이틀을 보낸 무쇠 할아버지가 새벽에 강으로 걸어갔다는 말이 돌았다.\"),"
   },
   {
@@ -2162,12 +2182,12 @@
   {
     "file": "game/systems/room13_gimmicks.rpy",
     "line": 103,
-    "call": "call r13_lines(ROOM13[\"activities\"][\"use_knife_burlap\"][\"lines\"][1:],\"activity:use_knife_burlap:read\")"
+    "call": "call r13_lines(ROOM13[\"activities\"][\"use_knife_burlap\"][\"lines\"][1:],\"activity:use_knife_burlap:read\", binding_route=\"dynamic:575\")"
   },
   {
     "file": "game/systems/room13_gimmicks.rpy",
     "line": 120,
-    "call": "call r13_lines(ROOM13[\"activities\"][\"use_lantern_rear\"][\"lines\"],\"activity:use_lantern_rear\")"
+    "call": "call r13_lines(ROOM13[\"activities\"][\"use_lantern_rear\"][\"lines\"],\"activity:use_lantern_rear\", binding_route=\"dynamic:576\")"
   },
   {
     "file": "game/systems/room13_gimmicks.rpy",
@@ -2177,12 +2197,12 @@
   {
     "file": "game/systems/room13_gimmicks.rpy",
     "line": 266,
-    "call": "call r13_lines(_lines,\"activity:use_knife_under:read\")"
+    "call": "call r13_lines(_lines,\"activity:use_knife_under:read\", binding_route=\"dynamic:578\")"
   },
   {
     "file": "game/systems/room13_gimmicks.rpy",
     "line": 289,
-    "call": "call r13_lines(ROOM13[\"activities\"][\"use_rubbing_stone\"][\"lines\"][1:],\"activity:use_rubbing_stone:read\")"
+    "call": "call r13_lines(ROOM13[\"activities\"][\"use_rubbing_stone\"][\"lines\"][1:],\"activity:use_rubbing_stone:read\", binding_route=\"dynamic:579\")"
   },
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
@@ -2192,17 +2212,17 @@
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
     "line": 63,
-    "call": "call r13_lines(R13_JOB_START_LINES[r13_job_key],\"life:\"+r13_job_key+\":start\")"
+    "call": "call r13_lines(R13_JOB_START_LINES[r13_job_key],\"life:\"+r13_job_key+\":start\", binding_route=\"dynamic:592\")"
   },
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
     "line": 65,
-    "call": "call r13_lines([(\"nabi\",\"닦은 그릇은 여기에 두고요. 이 한 벌은 따로 놓아 줘요.\"),(\"dad\",\"네. 나머지 그릇은 식당으로 내가면 되나요?\")],\"life:kitchen:start\")"
+    "call": "call r13_lines([(\"nabi\",\"닦은 그릇은 여기에 두고요. 이 한 벌은 따로 놓아 줘요.\"),(\"dad\",\"응. 나머지 그릇은 식당으로 내가면 되니?\")],\"life:kitchen:start\")"
   },
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
     "line": 67,
-    "call": "call r13_lines([(\"buri\",\"부품은 같은 크기끼리 나눠 주세요. 다 세고 나면 장부에 표시하고요.\"),(\"dad\",\"세어 보니 장부에 적힌 것보다 한 개 적군요.\")],\"life:repair:start\")"
+    "call": "call r13_lines([(\"buri\",\"부품은 같은 크기끼리 나눠 주세요. 다 세고 나면 장부에 표시하고요.\"),(\"dad\",\"세어 보니 장부에 적힌 것보다 한 개 적구나.\")],\"life:repair:start\")"
   },
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
@@ -2212,17 +2232,17 @@
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
     "line": 89,
-    "call": "call r13_lines(R13_JOB_ASK_LINES[r13_job_key],\"life:\"+r13_job_key+\":ask\")"
+    "call": "call r13_lines(R13_JOB_ASK_LINES[r13_job_key],\"life:\"+r13_job_key+\":ask\", binding_route=\"dynamic:596\")"
   },
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
     "line": 91,
-    "call": "call r13_lines([(\"dad\",\"따로 놓은 이 그릇은 누구 몫인가요?\"),(\"nabi\",\"초롱 몫이요. 돌아오면 드려야 해요. 다른 이야기는 손님 식사를 내간 다음에 해요.\")],\"life:kitchen:notice\")"
+    "call": "call r13_lines([(\"dad\",\"따로 놓은 이 그릇은 누구 몫이니?\"),(\"nabi\",\"초롱 몫이요. 돌아오면 드려야 해요. 다른 이야기는 손님 식사를 내간 다음에 해요.\")],\"life:kitchen:notice\")"
   },
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
     "line": 93,
-    "call": "call r13_lines([(\"dad\",\"부품 하나가 모자랍니다. 그래서 장부에는 아직 표시하지 않았어요.\"),(\"buri\",\"잘했어요. 장부에 적힌 수에 억지로 맞추지 마세요. 모자란 하나는 제가 어디 썼는지 찾아볼게요.\")],\"life:repair:honest\")"
+    "call": "call r13_lines([(\"dad\",\"부품 하나가 모자라. 그래서 장부에는 아직 표시하지 않았어.\"),(\"buri\",\"잘했어요. 장부에 적힌 수에 억지로 맞추지 마세요. 모자란 하나는 제가 어디 썼는지 찾아볼게요.\")],\"life:repair:honest\")"
   },
   {
     "file": "game/systems/room13_livelihood_flow.rpy",
@@ -2231,197 +2251,197 @@
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 125,
+    "line": 128,
     "call": "call r13_lines([(None,\"다람이 끌려간 뒤 잠들지 못했다. 새벽, 식당에 불이 하나 켜져 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 135,
+    "line": 138,
     "call": "call r13_lines([(\"dad\",\"아이 얼굴만 보겠습니다. 한 번만.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 152,
+    "line": 155,
     "call": "call r13_lines([(\"buri\",\"……네.\")],\"nt:dawn8:together\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 155,
+    "line": 158,
     "call": "call r13_lines([(\"buri\",\"그건 아저씨가 아빠니까 하는 말이잖아요.\")],\"nt:dawn8:defend\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 164,
+    "line": 167,
     "call": "call r13_lines([(None,\"초롱이 등 기름을 채우고 있었다. 나를 보더니 주위를 살피고 다가왔다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 172,
+    "line": 175,
     "call": "call r13_lines([(None,\"광장 이름 판. 어제 새로 새긴 부엉이 할아버지의 이름.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 183,
+    "line": 186,
     "call": "call r13_lines([(\"neoul\",\"등불지기가 오늘 밤 품고 다니는 편지가 있소. 할머니께서 꼭 가져오라 하셨소.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 190,
+    "line": 193,
     "call": "call r13_lines([(None,\"해 질 녘, 초롱이 회관 앞 등을 켜러 왔다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 195,
+    "line": 198,
     "call": "call r13_lines([(\"dad\",\"방금 너울이 순찰대원들한테 말하는 걸 들었습니다. 오늘 밤 종탑 길에서 초롱 씨를 기다린답니다. 할머니 부탁으로, 그 편지를 가져가려고요.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 199,
+    "line": 202,
     "call": "call r13_lines([(\"resident_badook\",\"무슨 일이에요? ……너울 씨가 그랬어요?\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 203,
+    "line": 206,
     "call": "call r13_lines([(\"resident_lamplighter\",\"……알았어요. 먼 길로 갈게요.\")],\"nt:chorong:far\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 206,
+    "line": 209,
     "call": "call r13_lines([(\"resident_lamplighter\",\"아버님도 참. 저 이 일 십 년 했어요.\")],\"nt:chorong:no\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 208,
+    "line": 211,
     "call": "call r13_lines([(None,\"회관 안. 촌장이 모레 회의에 쓸 의자를 세고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 213,
-    "call": "call r13_lines(r13_present(\"resident_ppul\",\"N08\"),\"nt:ppul:board\")"
-  },
-  {
-    "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 215,
-    "call": "call r13_lines([(\"resident_ppul\",\"……숫자는 거짓말을 안 하오. 좋소. 이번엔 말이 아니라 증거로 하겠소.\")],\"nt:ppul:stone\")"
+    "line": 216,
+    "call": "call r13_lines(r13_present(\"resident_ppul\",\"N08\"),\"nt:ppul:board\", binding_route=\"dynamic:369\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
     "line": 218,
+    "call": "call r13_lines([(\"resident_ppul\",\"……숫자는 거짓말을 안 하오. 좋소. 이번엔 말이 아니라 증거로 하겠소.\")],\"nt:ppul:stone\")"
+  },
+  {
+    "file": "game/systems/room13_ep4_night13.rpy",
+    "line": 221,
     "call": "call r13_lines([(\"resident_ppul\",\"회의는 회의대로 하오. 집행은 마을이 정하오.\")],\"nt:ppul:no\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 225,
+    "line": 228,
     "call": "call r13_lines([(None,\"여관 뒤에서 망치 소리가 났다. 따닥이 처마 밑 판자에 못을 박고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 233,
+    "line": 236,
     "call": "call r13_lines([(\"dad\",\"부엉이 할아버지가 마지막에 적은 겁니다. \\\"13호 책장 뒤 — 바람.\\\" 할아버지는 그 통로를 알고 나서 죽었습니다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 238,
+    "line": 241,
     "call": "call r13_lines([(\"resident_tok\",\"손잡이요? 쐐기 하나면 돼요. 쇠 쐐기를 손잡이 밑에 박으면, 누가 당겨도 안 내려가요.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 242,
+    "line": 245,
     "call": "call r13_lines([(\"resident_ttadak\",\"그럼 망치로 문을 괴어 둘게요.\")],\"nt:ttadak:hammer\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 245,
+    "line": 248,
     "call": "call r13_lines([(\"resident_ttadak\",\"바람 부는 거야 저도 알아요.\")],\"nt:ttadak:weak\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 247,
+    "line": 250,
     "call": "call r13_lines([(\"resident_ttadak\",\"위험하긴요. 돌 통로예요. 무너질 데도 없어요.\")],\"nt:ttadak:no\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 254,
+    "line": 257,
     "call": "call r13_lines([(None,\"밤, 지붕 위. 솜이가 앞장서고, 콩이와 토실이 뒤따랐다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 268,
+    "line": 271,
     "call": "call r13_lines([(None,\"보호실 창은 밤새 어두웠다. 창 아래 눈밭에 오래 서 있었다. 안에서는 아무 소리도 나지 않았다.\")],\"nt:night8:nonote\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 271,
+    "line": 274,
     "call": "call r13_lines([(None,\"종탑 길 모퉁이. 그림자 둘이 서 있다가, 바둑이의 등불을 보고 멈췄다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 279,
+    "line": 282,
     "call": "call r13_lines([(None,\"강가 쪽 먼 길에서 초롱이 쓰러져 있었다. 이마가 찢기고, 등잔은 깨졌다. 숨은 붙어 있다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 283,
+    "line": 286,
     "call": "call r13_lines([(None,\"등이 다 켜질 시간이 지났다. 광장 동쪽 등 셋이 아직 어두웠다. 초롱은 오지 않았다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 296,
+    "line": 299,
     "call": "call r13_lines([(None,\"초롱의 허리춤에서 점검함 열쇠를 꺼냈다. 등 켜는 법은 몰랐다. 초롱이 하던 걸 떠올리며 하나씩 했다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 301,
+    "line": 304,
     "call": "call r13_lines([(\"neoul\",\"등불지기가 미끄러졌다고 하오. 계단이 얼었소.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 308,
+    "line": 311,
     "call": "call r13_lines([(None,\"문 두드리는 소리. 할머니가 김이 나는 찻잔을 들고 서 있었다.\")]+"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 315,
+    "line": 318,
     "call": "call r13_lines([(None,\"주방. 쇠 손잡이가 반쯤 내려오다 톡의 쐐기에 걸려 멈춰 있었다. 쐐기 위에 새로 긁힌 쇳가루.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 320,
+    "line": 323,
     "call": "call r13_lines([(None,\"판자 문이 망치 위에서 한 뼘 덜 닫혀 있었다. 따닥은 그 틈에 두 손을 넣은 채 웅크려 있었다. 숨은 있다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 326,
+    "line": 329,
     "call": "call r13_lines([(None,\"아침, 여관 뒷벽의 망치 소리가 들리지 않았다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 353,
-    "call": "call r13_lines([(\"resident_seori\",\"하나 더 있습니다. 9일 새벽, 통로 안에서 목수 따닥 씨가 얼었습니다.\")],\"nt:q4:open\")"
+    "line": 356,
+    "call": "call r13_lines([(\"resident_seori\",\"하나 더 있습니다. 9일 새벽, 통로 안에서 목수 따닥 씨가 얼었습니다.\" if r13_has(\"ttadak_dead\") else \"하나 더 있습니다. 9일 새벽, 목수 따닥 씨가 통로 안에 갇혔습니다. 손이 얼어 지금 진료소에 있습니다.\")],\"nt:q4:open\", binding_route=\"dynamic:389\")"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 357,
+    "line": 360,
     "call": "call r13_lines([(None,\"할머니가 천천히 일어섰다. 아무도 할머니를 붙잡지 않았다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 368,
+    "line": 371,
     "call": "call r13_lines([(None,\"부리가 낡은 탐정 모자를 들고 다람 앞에 섰다. 모자 끝이 해져 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 380,
+    "line": 383,
     "call": "call r13_lines([(None,\"광장 이름 판에 새 이름이 새겨져 있었다. 초롱.\"+(\" 따닥.\" if r13_has(\"ttadak_dead\") else \"\")),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 389,
+    "line": 392,
     "call": "call r13_lines([(\"resident_lamplighter\",\"오늘은 다람이가 켜 볼래?\"),"
   },
   {
     "file": "game/systems/room13_ep4_night13.rpy",
-    "line": 392,
+    "line": 395,
     "call": "call r13_lines([(\"daram\",\"아빠, 이거 내가 읽어 줄게. 보호실에서 백 번 읽었어.\"),"
   },
   {
@@ -2561,203 +2581,203 @@
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 357,
+    "line": 359,
     "call": "call r13_lines([(None,\"교실 난로 위에 냄비 둘. 큰 냄비는 어른들 몫, 작은 냄비는 아이들 몫.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 363,
+    "line": 365,
     "call": "call r13_lines([(None,\"선생님이 병을 냄비 위로 기울였다. 그때 창밖이 환해졌다. 광장 등이 하나, 둘, 셋.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 370,
+    "line": 373,
     "call": "call r13_lines([(None,\"하얀 그릇에 수프가 담겼다. 선생님 앞에는 빨간 그릇 하나. 선생님은 큰 냄비에서 떴다.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 381,
+    "line": 384,
     "call": "call r13_lines([(\"mom\",\"(빈 그릇 냄새를 맡고) 이건…… 잠드는 약이야. 옛 기록에 있던 거야.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 388,
+    "line": 391,
     "call": "call r13_lines([(\"kid_saemi\",\"일어나. 일어나, 도담아. 불 켜졌어. 따뜻해졌어.\",{\"expression\":\"anxious\"}),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 402,
+    "line": 406,
     "call": "call r13_lines([(None,\"담요 덮인 자리 앞. 보리가 무릎을 꿇고 도담의 작은 손을 쥐고 있었다. 화상 자국이 있는 손으로.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 407,
+    "line": 411,
     "call": "call r13_lines([(\"neoul\",\"감자 탓이든 약 탓이든, 선생은 내가 데려가오.\"),(None,\"사자 선생님은 아무 말도 하지 않았다.\")],\"ws:meeting:fail\")"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 412,
+    "line": 416,
     "call": "call r13_lines([(None,\"너울이 선생님의 팔을 잡았다. 사람들은 수레를 벌로만 알았다.\")],\"ws:decision:hand\")"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 415,
+    "line": 419,
     "call": "call r13_lines([(\"dad\",\"보호소는 없습니다. 수레는 산속 제단으로 갑니다.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 422,
+    "line": 426,
     "call": "call r13_lines([(None,\"냄비를 쳐냈다. 수프가 눈처럼 바닥에 번졌다.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 430,
+    "line": 434,
     "call": "call r13_lines([(None,\"선생님이 냄비를 비웠다. 도담 옆에 눕고, 담요를 끌어 덮었다.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 435,
+    "line": 439,
     "call": "call r13_lines([(None,\"선생님이 냄비를 비웠다. 아이들 옆에 눕고, 담요를 끌어 덮었다.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 444,
+    "line": 448,
     "call": "call r13_lines([(None,\"다람이 판자 하나를 엄마 앞에 내밀었다. 엄마 얼굴. 코만 크레용으로 삐뚤빼뚤.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 450,
+    "line": 454,
     "call": "call r13_lines([(None,\"보리가 대피소 구석에 앉아 있었다. 무릎에 깜이, 양옆에 몽이와 방울이 잠들어 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 454,
+    "line": 458,
     "call": "call r13_lines([(None,\"보리가 대피소 구석에 앉아 있었다. 무릎에 도담이 잠들어 있었고, 맡은 아이 셋이 그 옆에 붙어 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 458,
+    "line": 462,
     "call": "call r13_lines([(None,\"보리는 아무 말도 하지 않았다. 도담의 작은 신발 한 짝을 손에 쥐고, 밤새 난로 옆에 앉아 있었다.\")],\"ws:after:bori_silent\")"
   },
   {
     "file": "game/systems/room13_ep5_soup.rpy",
-    "line": 460,
+    "line": 464,
     "call": "call r13_lines([(None,\"모두 잠든 밤. 교실 구석에서 작은 목소리.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 100,
+    "line": 97,
     "call": "call r13_lines([(None,\"광장 우물가에서 짐꾼 실룩이 먼저 다가왔다. 잠을 못 잤는지 눈 밑이 거뭇했다.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 109,
+    "line": 106,
     "call": "call r13_lines([(\"resident_siluk\",\"해 지기 전에 짐 가지고 올게요. 걱정 마세요.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 115,
+    "line": 112,
     "call": "call r13_lines([(\"resident_siluk\",\"……이것뿐이에요? 뭐, 일단 받죠.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 119,
+    "line": 116,
     "call": "call r13_lines([(\"resident_siluk\",\"후회하실 텐데요. 되돌아온 짐은 오래 두면 젖어요.\")],\"ev:a:refuse\")"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 121,
+    "line": 118,
     "call": "call r13_lines([(\"resident_siluk\",\"짐 받아 온 다음에 주신다고요? 저도 돈이 급하다고요!\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 126,
+    "line": 123,
     "call": "call r13_lines([(\"resident_badook\",\"실룩, 또 그 지름길 얘기야? 지난주에도 누가 너한테 선금을 떼였다던데.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 132,
+    "line": 129,
     "call": "call r13_lines([(None,\"실룩은 초소 쪽이 아니라 백 부인 집 뒷골목으로 갔다. 뭉치가 문을 열고 나와 동전을 받아 갔다.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 137,
+    "line": 134,
     "call": "call r13_lines([(\"resident_siluk\",\"……제 빚 얘기를 어떻게 알았어요?\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 142,
+    "line": 139,
     "call": "call r13_lines([(\"resident_siluk\",\"진짜요? ……그럼 이제 제 마차는 탐정님 거예요. 부르시면 언제든 갈게요.\")],\"ev:a:pay_debt\")"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 145,
+    "line": 142,
     "call": "call r13_lines([(\"dad\",\"백 부인이 배급 물자를 쌓아 둔 기록이 장부에 남아 있습니다. 그 사람은 빚을 받을 처지가 못 됩니다.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 150,
+    "line": 147,
     "call": "call r13_lines([(\"resident_siluk\",\"……그럼 이건 우리끼리만 아는 일로 해요.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 154,
+    "line": 151,
     "call": "call r13_lines([(\"resident_siluk\",\"……고마워요. 다음부터는 정직하게 일할게요.\")],\"ev:a:let_go\")"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 162,
+    "line": 159,
     "call": "call r13_lines([(None,\"누비 아주머니가 빨래 바구니를 내려놓고 내 소매를 잡았다.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 172,
+    "line": 169,
     "call": "call r13_lines([(None,\"별채는 따뜻했다. 문이 밖에서 잠기기 전까지는.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 183,
+    "line": 180,
     "call": "call r13_lines([(\"resident_nubi\",\"……그래요. 아무래도 여관이 편하시겠죠.\")],\"ev:q:refuse\")"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 185,
-    "call": "call r13_lines([(\"resident_nubi\",\"값을 싸게 해야 사람이 오죠.\"),"
+    "line": 182,
+    "call": "call r13_lines([(\"resident_nubi\",\"빈방을 놀리느니 사람이 있는 게 좋죠.\"),"
+  },
+  {
+    "file": "game/systems/room13_town_events2.rpy",
+    "line": 189,
+    "call": "call r13_lines([(\"resident_nubi\",\"……고마워요. 별채는 그냥 쓰셔도 돼요. 이번엔 문도 잠그지 않을게요.\")],\"ev:q:keep_secret\")"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
     "line": 192,
-    "call": "call r13_lines([(\"resident_nubi\",\"……고마워요. 별채는 그냥 여섯 냥에 쓰셔도 돼요. 이번엔 진짜로요.\")],\"ev:q:keep_secret\")"
-  },
-  {
-    "file": "game/systems/room13_town_events2.rpy",
-    "line": 195,
     "call": "call r13_lines([(\"resident_seori\",\"검사권도 없는 경비가 주민을 시켜 사람을 가둔다고요? 기록하겠습니다.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 199,
+    "line": 196,
     "call": "call r13_lines([(\"neoul\",\"격리는 마을을 위한 거요. 누비가 무슨 말을 했든 간에.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 203,
+    "line": 200,
     "call": "call r13_lines([(\"resident_seori\",\"열 없음, 기침 없음. 외지 사람이라는 건 병이 아닙니다.\"),"
   },
   {
     "file": "game/systems/room13_town_events2.rpy",
-    "line": 211,
-    "call": "call r13_lines(ROOM13[\"topics\"][r13_topic][\"lines\"],\"medkit:\"+r13_topic)"
+    "line": 208,
+    "call": "call r13_lines(ROOM13[\"topics\"][r13_topic][\"lines\"],\"medkit:\"+r13_topic, binding_route=\"dynamic:739\")"
   },
   {
     "file": "game/systems/room13_alibi.rpy",
     "line": 172,
-    "call": "call r13_lines(r13_alibi_lines(_ab_key),\"alibi:\"+_ab_key[6:]+(\":truth\" if R13_ALIBI[tuple(_ab_key.split(\":\",2)[1:])].get(\"truth\") and r13_has(R13_ALIBI[tuple(_ab_key.split(\":\",2)[1:])][\"truth\"][0]) else \"\"))"
+    "call": "call r13_lines(r13_alibi_lines(_ab_key),\"alibi:\"+_ab_key[6:]+(\":truth\" if R13_ALIBI[tuple(_ab_key.split(\":\",2)[1:])].get(\"truth\") and r13_has(R13_ALIBI[tuple(_ab_key.split(\":\",2)[1:])][\"truth\"][0]) else \"\"), binding_route=\"dynamic:169\")"
   },
   {
     "file": "game/systems/room13_alibi.rpy",
     "line": 177,
-    "call": "call r13_lines(_ab_cross[1],\"alibi:cross:\"+_ab_cross[2])"
+    "call": "call r13_lines(_ab_cross[1],\"alibi:cross:\"+_ab_cross[2], binding_route=\"dynamic:170\")"
   },
   {
     "file": "game/systems/room13_poc_route.rpy",
@@ -2772,16 +2792,21 @@
   {
     "file": "game/systems/room13_poc_route.rpy",
     "line": 165,
-    "call": "call r13_lines([(\"daram\",\"어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라.\"),(\"dad\",\"응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.\")],\"poc:night:packet\")"
+    "call": "call r13_lines(r13_intro_direction_lines(),\"poc:night:promise\")"
   },
   {
     "file": "game/systems/room13_poc_route.rpy",
     "line": 167,
-    "call": "call r13_lines([(\"daram\",\"우체국에도 엄마가 갔었는지 아직 못 물어봤지?\"),(\"dad\",\"응. 우체국 창구는 오전에 열어. 그런데 손님 이야기를 우리한테 해 줄까?\")],\"poc:night:post\")"
+    "call": "call r13_lines([(\"daram\",\"어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라.\"),(\"dad\",\"응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.\")],\"poc:night:packet\")"
   },
   {
     "file": "game/systems/room13_poc_route.rpy",
     "line": 169,
+    "call": "call r13_lines([(\"daram\",\"우체국에도 엄마가 갔었는지 아직 못 물어봤지?\"),(\"dad\",\"응. 우체국 창구는 오전에 열어. 그런데 손님 이야기를 우리한테 해 줄까?\")],\"poc:night:post\")"
+  },
+  {
+    "file": "game/systems/room13_poc_route.rpy",
+    "line": 171,
     "call": "call r13_lines([(\"daram\",\"오늘 물어본 건 수첩에 다 적어 뒀지?\"),(\"dad\",\"응. 엄마는 우리가 올 걸 알았는데 왜 기다리지 않았을까. 그게 계속 마음에 걸려.\")],\"poc:night:search\")"
   },
   {
@@ -2806,387 +2831,392 @@
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 185,
+    "line": 188,
     "call": "call r13_lines([(None,\"여관 뒤 빨래터. 큰 솥 밑에서 등유 불이 약하게 탔다. 솥 옆에 기름통 하나. 뚜껑까지 꽉 차 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 193,
+    "line": 196,
     "call": "call r13_lines([(\"neoul\",\"이번 주 배급이 또 줄었소. 알고 있소?\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 206,
+    "line": 209,
     "call": "call r13_lines([(\"neoul\",\"아, 여관 손님이오. 빨래 얘기나 하고 있었소.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 217,
+    "line": 220,
     "call": "call r13_lines([(None,\"학교 뒷마당 끝, 지붕이 내려앉은 장작 창고. 문틈으로 아이 목소리가 새어 나왔다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 230,
+    "line": 233,
     "call": "call r13_lines([(\"kid_kkomi\",\"학교? 싫어. 여긴 우리만 아는 데라니까.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 234,
+    "line": 237,
     "call": "call r13_lines([(\"dad\",\"학교 선생님이 너희 이름을 적었어. 오늘 밤부터 너희 자리가 있대.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 241,
+    "line": 244,
     "call": "call r13_lines([(\"kid_kkomi\",\"어른이 우리 없애려 한다고? 그럼 더 꼭꼭 숨어야지.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 254,
+    "line": 257,
     "call": "call r13_lines([(None,\"창고 문 쪽이 통째로 타고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 261,
+    "line": 264,
     "call": "call r13_lines([(None,\"창고 문 쪽이 통째로 타고 있었다. 문으로는 아무도 나올 수 없었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 281,
+    "line": 284,
     "call": "call r13_lines([(None,\"창고는 검은 기둥 몇 개만 남았다. 눈이 녹아 시커먼 물이 고였다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 289,
+    "line": 292,
     "call": "call r13_lines([(None,\"창고는 검은 기둥 몇 개만 남았다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 294,
+    "line": 297,
     "call": "call r13_lines([(None,\"보리가 손이 묶인 채 광장 돌 앞에 앉아 있었다. 등에는 아직 장작 지게. 손에는 아무렇게나 감은 천.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 302,
+    "line": 305,
     "call": "call r13_lines([(None,\"천을 걷어 보니 두 손바닥이 벌겋게 데어 있었다. 손등은 멀쩡했다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 307,
+    "line": 310,
     "call": "call r13_lines([(\"neoul\",\"그럼 내일까지 증거를 가져오시오.\")],\"wf:morning:demand\")"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 310,
+    "line": 313,
     "call": "call r13_lines([(\"resident_bori\",\"……당신도 똑같구먼.\"),(None,\"보리가 고개를 돌렸다.\")],\"wf:morning:doubt\")"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 317,
+    "line": 320,
     "call": "call r13_lines([(None,\"주방은 불이 꺼져 있었다. 나비가 빈 그릇 넷 앞에 주저앉아 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 325,
+    "line": 328,
     "call": "call r13_lines([(\"nabi\",\"……네. 꼬미는 꼭 닫았어요. 맨날요. 근데 어젯밤엔 모르잖아요.\")],\"wf:nabi:lid\")"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 329,
+    "line": 332,
     "call": "call r13_lines([(\"granny\",\"그럼 증거를 가져오세요. 내일 아침까지요.\")],\"wf:nabi:defend\")"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 336,
+    "line": 339,
     "call": "call r13_lines([(None,\"타고 남은 창고 터. 어디부터 볼까.\")],\"wf:ruins\")"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 346,
+    "line": 349,
     "call": "call r13_lines([(None,\"담요 자리보다 더 안쪽, 쓰러진 장작 밑에서 작은 등잔이 나왔다. 그을렸지만 깨지지 않았다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 351,
+    "line": 354,
     "call": "call r13_lines([(None,\"문틀이 숯처럼 새까맸다. 그런데 안쪽 장작더미는 겉만 그을렸다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 355,
+    "line": 358,
     "call": "call r13_lines([(None,\"문 앞 눈이 녹아 웅덩이가 져 있었다. 물 위에 무지개 같은 기름막. 코를 대자 독한 냄새가 났다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 359,
+    "line": 362,
     "call": "call r13_lines([(\"dad\",\"(불은 등잔에서 나지 않았다. 누가 문 앞에 등유를 붓고 불을 붙였다. 마을에서 등유를 통째로 쓰는 곳은…… 빨래터다.)\",{\"thought\":True})],\"wf:ruins:sum\")"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 362,
+    "line": 365,
     "call": "call r13_lines([(\"kid_kkomi\",\"우린 학교 돌창고에 있었어. 선생님이 우리 이름 불렀어. 넷 다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 366,
+    "line": 369,
     "call": "call r13_lines([(None,\"교실 난로 옆. 살아남은 아이 셋이 선생님 외투 하나를 같이 덮고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 380,
+    "line": 383,
     "call": "call r13_lines([(None,\"솥 밑 불은 꺼져 있었다. 누비 아주머니가 손을 젖은 천으로 감은 채 빨래를 개고 있었다. 등에는 막내, 옆에는 아이 둘.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 391,
+    "line": 394,
     "call": "call r13_lines([(None,\"솥 옆 기름통. 반쯤 비어 있었다.\")]+"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 396,
+    "line": 399,
     "call": "call r13_lines([(None,\"천 밑으로 손등이 보였다. 새로 덴 자리가 물집이 잡혀 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 401,
+    "line": 404,
     "call": "call r13_lines([(\"kid_nubi1\",\"엄마가 어젯밤에 늦게 왔어. 우리 다 잘 때.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 411,
+    "line": 414,
     "call": "call r13_lines([(\"dad\",\"(시간이 한 칸뿐이다. 나비를 감쌀지, 누비의 말을 들을지.)\",{\"thought\":True})],\"wf:choice\")"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 415,
+    "line": 418,
     "call": "call r13_lines([(None,\"나비가 작은 보따리를 싸고 있었다. 할머니가 팔짱을 끼고 서 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 419,
+    "line": 422,
     "call": "call r13_lines([(\"dad\",\"창고 안쪽 구석에서 나왔습니다. 뚜껑이 닫혀 있고, 기름도 그대로입니다. 불은 이 등잔에서 나지 않았습니다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 425,
+    "line": 428,
     "call": "call r13_lines([(\"granny\",\"증거도 없이 우리 집 일에 끼지 마세요.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 431,
+    "line": 434,
     "call": "call r13_lines([(\"dad\",\"창고 문 앞에 등유가 부어져 있었습니다. 이 통이 반이나 줄었고요.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 439,
+    "line": 442,
     "call": "call r13_lines([(\"resident_nubi\",\"……무슨 말씀이신지 모르겠어요. 빨래 일이 바빠서요.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 446,
+    "line": 449,
     "call": "call r13_lines([(None,\"교실 책상을 벽으로 밀어 두었다. 보리는 손이 묶인 채 앞에 서 있었다. 살아남은 아이들이 사자 선생님 뒤에 숨어 있었다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 454,
+    "line": 457,
     "call": "call r13_lines([(\"neoul\",\"증거가 모자라오. 보리는 내보내겠소.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 471,
+    "line": 474,
     "call": "call r13_lines([(None,\"너울이 누비의 팔을 잡았다. 누비의 큰아이가 업힌 막내를 받아 안았다. 아이 셋이 빈 빨래터 쪽으로 걸어갔다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 476,
+    "line": 479,
     "call": "call r13_lines([(\"dad\",\"누비 씨를 민 건 '그 애들이 줄면 몫을 주겠다'는 말입니다. 빨래터에서 제가 직접 들었습니다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 481,
+    "line": 484,
     "call": "call r13_lines([(\"dad\",\"누비 씨는 너울 님의 약속 때문이라고 했습니다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 487,
+    "line": 490,
     "call": "call r13_lines([(\"dad\",\"누비네 아이도, 창고 아이들도 학교에서 겨울을 나게 해 주십시오.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 492,
+    "line": 495,
     "call": "call r13_lines([(\"dad\",\"약속은 여기서 끝냅니다. 누비 씨는 창고를 다시 짓는 일로 갚고, 그 집 아이 셋은 나비가 부엌에서 맡습니다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 502,
+    "line": 505,
     "call": "call r13_lines([(None,\"타고 남은 창고 터. 다람이 장갑 낀 손으로 언 땅을 팠다. 잘 안 파졌다.\")]+"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 511,
+    "line": 514,
     "call": "call r13_lines([(\"kid_kkomi\",\"대장 표시는 탐정단 단장이 갖고 있어. 아지트 새로 지으면 돌려줘.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 514,
+    "line": 517,
     "call": "call r13_lines([(None,\"살아남은 아이 셋이 보리 다리에 붙어 있었다. 보리는 데인 손을 어디 둘지 몰라 했다.\"),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 519,
+    "line": 522,
     "call": "call r13_lines([(None,\"(그림책) 그레텔이 마녀를 힘껏 밀었고,\",{\"book\":\"U03-opening\"}),"
   },
   {
     "file": "game/systems/room13_ep3_woodfire.rpy",
-    "line": 529,
+    "line": 532,
     "call": "call r13_lines([(None,\"학교 회의는 끝났다고 했다. 보리가 장작 도둑이자 불을 낸 사람으로 끌려갔다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 88,
+    "line": 93,
     "call": "call r13_lines([(None,\"지나가는 사람들이 낮게 수군댔다. ‘\"+R13_RUMOR_WHISPERS[_r]+\"’\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 95,
-    "call": "call r13_lines(_scale_lines[:1]+[(\"resident_eunho\",\"……그래서, 저한테 무엇을 원하십니까?\")],\"b3:scale:open\")"
+    "line": 100,
+    "call": "call r13_lines(_scale_lines[:1]+[(\"resident_eunho\",\"……그래서, 저한테 무엇을 원하십니까?\")],\"b3:scale:open\", binding_route=\"dynamic:172\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 101,
-    "call": "call r13_lines(_scale_lines[1:],\"b3:scale:quiet\")"
-  },
-  {
-    "file": "game/systems/room13_bundle3.rpy",
-    "line": 104,
-    "call": "call r13_lines([(\"resident_eunho\",\"광장에 알리면 이 마을에서 제 장사는 끝납니다. 그래도 하시겠습니까?\"),"
+    "line": 106,
+    "call": "call r13_lines(_scale_lines[1:],\"b3:scale:quiet\", binding_route=\"dynamic:173\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
     "line": 109,
+    "call": "call r13_lines([(\"resident_eunho\",\"광장에 알리면 이 마을에서 제 장사는 끝납니다. 그래도 하시겠습니까?\"),"
+  },
+  {
+    "file": "game/systems/room13_bundle3.rpy",
+    "line": 114,
     "call": "call r13_lines([(\"resident_eunho\",\"……당신 물건만 반값입니다. 대신 저울 일은 다른 사람한테 한 마디도 하지 않는 겁니다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 113,
+    "line": 118,
     "call": "call r13_lines([(\"resident_eunho\",\"……배급소 저울 일은 구슬이 말했구려.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 126,
+    "line": 131,
     "call": "call r13_lines([(None,\"광장 배급대 앞에서 줄이 멈춰 있었다. 너울이 보리의 수레 손잡이를 꽉 붙잡고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 135,
+    "line": 140,
     "call": "call r13_lines([(\"doto\",\"장부에는 배급소 저울로 잰 무게만 적어요. 그러니까 저울이 맞으면 장부도 맞는 거고요.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 140,
+    "line": 145,
     "call": "call r13_lines([(\"dad\",\"표준 추로 배급소 저울이 맞는지 다시 대조해 봅시다. 가게 저울은 이미 눈금이 한 칸 더 나가 있었습니다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 146,
+    "line": 151,
     "call": "call r13_lines([(\"dad\",\"배급이 모자랐던 날마다 백 부인 창고에는 같은 물건이 그만큼 늘었습니다. 이 장부에 다 적혀 있습니다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 152,
+    "line": 157,
     "call": "call r13_lines([(\"neoul\",\"외지 사람이 왜 남의 집 몫을 대신 내오? ……뭐, 돈은 받겠소. 보리는 가도 좋소.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 156,
+    "line": 161,
     "call": "call r13_lines([(\"dad\",\"보리가 모자란 몫을 가져갔다는 증거는 없지 않습니까.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 161,
+    "line": 166,
     "call": "call r13_lines([(None,\"보리는 빈 수레를 끌고 줄 끝으로 물러났다. 아무도 보리 쪽을 쳐다보지 않았다.\")],\"b3:ration:watch\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 169,
+    "line": 174,
     "call": "call r13_lines([(None,\"학교 뒤 대피소 장작더미 옆에서 누군가 장작을 끈으로 묶고 있었다. 보리였다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 176,
+    "line": 181,
     "call": "call r13_lines([(\"resident_bori\",\"우리 집 배급이 끊겼어요. 엄마는 밤새 기침하고요. 장작은 매일 제가 나르는데, 정작 우리 집 난로는 꺼져 있어요.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 182,
+    "line": 187,
     "call": "call r13_lines([(\"resident_teacher\",\"보리야……. 대피소 장작은 아이들 몫이야. 알잖니.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 187,
+    "line": 192,
     "call": "call r13_lines([(\"dad\",\"내일 대피소 장작은 제가 대신 날라 두겠습니다. 그러니 이 한 짐은 보리네 집으로 보내 주세요.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 193,
+    "line": 198,
     "call": "call r13_lines([(\"resident_bori\",\"……이 돈이면 사흘은 집을 데울 수 있어요. 이 돈은 꼭 갚을게요.\")],\"b3:wood:pay\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 196,
+    "line": 201,
     "call": "call r13_lines([(None,\"등 뒤로 장작 묶는 소리가 계속 들렸다. 다음 날 아침, 대피소 장작은 한 짐이 모자랐다.\")],\"b3:wood:ignore\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 204,
+    "line": 209,
     "call": "call r13_lines([(None,\"사서 선생님이 우체국 구석 책상에서 낡은 장부를 뜯고 있었다. 뜯은 장은 끈으로 묶었다. 맞은편에 은호 사장이 감자 자루를 내려놓았다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 209,
+    "line": 214,
     "call": "call r13_lines([(\"resident_librarian\",\"보시려면 지금 보세요. 오후면 이 장부는 도시로 가는 짐에 실려요.\")],\"b3:pages:read\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 210,
-    "call": "call r13_lines(ROOM13[\"topics\"][\"librarian_stone\"][\"lines\"],\"b3:pages:stone\")"
+    "line": 215,
+    "call": "call r13_lines(ROOM13[\"topics\"][\"librarian_stone\"][\"lines\"],\"b3:pages:stone\", binding_route=\"dynamic:192\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 215,
+    "line": 220,
     "call": "call r13_lines([(\"resident_eunho\",\"돈을 받았으니 장사는 장사요. 감자는 그대로 두고 가겠습니다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 217,
-    "call": "call r13_lines(ROOM13[\"topics\"][\"librarian_stone\"][\"lines\"],\"b3:pages:stone\")"
+    "line": 222,
+    "call": "call r13_lines(ROOM13[\"topics\"][\"librarian_stone\"][\"lines\"],\"b3:pages:stone\", binding_route=\"dynamic:194\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 221,
+    "line": 226,
     "call": "call r13_lines([(\"resident_eunho\",\"베끼는 건 마음대로 하십시오. 저는 원본만 넘겨받으면 됩니다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 225,
+    "line": 230,
     "call": "call r13_lines([(None,\"끈으로 묶인 장부는 결국 은호의 자루 위에 얹혔다.\")],\"b3:pages:ignore\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 230,
-    "call": "call r13_lines([(\"dad\",\"사서 선생님한테 받은 장부 묶음, 아직 가지고 계십니까?\"),"
+    "line": 238,
+    "call": "call r13_lines([(None,\"우체국 안쪽 기록실 문이 열려 있었다. 은호 사장이 장부 묶음을 끈으로 묶어 자루에 담고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 235,
+    "line": 244,
+    "call": "call r13_lines([(\"dad\",\"사서 선생님 기록실에서 나온 장부 묶음, 아직 가지고 계십니까?\"),"
+  },
+  {
+    "file": "game/systems/room13_bundle3.rpy",
+    "line": 249,
     "call": "call r13_lines([(\"resident_eunho\",\"서로 좋은 거래였습니다.\"),"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 237,
-    "call": "call r13_lines(ROOM13[\"topics\"][\"librarian_stone\"][\"lines\"],\"b3:buy:stone\")"
+    "line": 251,
+    "call": "call r13_lines(ROOM13[\"topics\"][\"librarian_stone\"][\"lines\"],\"b3:buy:stone\", binding_route=\"dynamic:199\")"
   },
   {
     "file": "game/systems/room13_bundle3.rpy",
-    "line": 241,
+    "line": 255,
     "call": "call r13_lines([(\"resident_eunho\",\"베낀 사본은 사서 선생님한테 있을 거요. 나한테는 원본만 있습니다.\")],\"b3:buy:copy\")"
   },
   {
@@ -3207,17 +3237,17 @@
   {
     "file": "game/systems/room13_memory.rpy",
     "line": 97,
-    "call": "call r13_lines([(\"dad\",\"(지금 가진 돈으로는 모자라다. %d냥이 있어야 한다.)\"%_gcost,{\"thought\":True})],\"grudge:short:\"+_gk)"
+    "call": "call r13_lines([(\"dad\",\"(지금 가진 돈으로는 모자라다. %d냥이 있어야 한다.)\"%_gcost,{\"thought\":True})],\"grudge:short:\"+_gk, binding_route=\"dynamic:610\")"
   },
   {
     "file": "game/systems/room13_memory.rpy",
     "line": 101,
-    "call": "call r13_lines(_glines,\"grudge:fix:\"+_gk)"
+    "call": "call r13_lines(_glines,\"grudge:fix:\"+_gk, binding_route=\"dynamic:611\")"
   },
   {
     "file": "game/systems/room13_reinspect.rpy",
     "line": 36,
-    "call": "call r13_lines([(None,\"은호가 나를 보자 %s의 장부를 급히 덮었다. 그리고 그 위에 자루 하나를 올려놓았다.\"%_eh_where)],\"eunho:hide\")"
+    "call": "call r13_lines([(None,\"은호가 나를 보자 %s의 장부를 급히 덮었다. 그리고 그 위에 자루 하나를 올려놓았다.\"%_eh_where)],\"eunho:hide\", binding_route=\"dynamic:658\")"
   },
   {
     "file": "game/systems/room13_reinspect.rpy",
@@ -3332,7 +3362,7 @@
   {
     "file": "game/systems/room13_evening.rpy",
     "line": 69,
-    "call": "call r13_lines([(None,\"  \".join(\"· \"+hint for key,place,title,hint in r13_evening_missions()))],\"evening:hints:%d\"%room13[\"day\"])"
+    "call": "call r13_lines([(None,\"  \".join(\"· \"+hint for key,place,title,hint in r13_evening_missions()))],\"evening:hints:%d\"%room13[\"day\"], binding_route=\"dynamic:530\")"
   },
   {
     "file": "game/systems/room13_evening.rpy",
@@ -3437,7 +3467,7 @@
   {
     "file": "game/systems/room13_evening.rpy",
     "line": 202,
-    "call": "call r13_lines([(\"resident_badook\" if r13_has(\"badook_ally\") else \"neoul\",\"시간 됐소.\")],\"ev:visit:end\")"
+    "call": "call r13_lines([(\"resident_badook\" if r13_has(\"badook_ally\") else \"neoul\",\"시간 됐소.\")],\"ev:visit:end\", binding_route=\"dynamic:551\")"
   },
   {
     "file": "game/systems/room13_evening.rpy",
@@ -3592,12 +3622,12 @@
   {
     "file": "game/systems/room13_ep1_lamp_thief.rpy",
     "line": 345,
-    "call": "call r13_lines([(\"dad\",\"(정리하면, 이 등을 연 사람은 두 명이다. 온도를 잰 사람, 그리고 노끈을 남긴 사람.)\",{\"thought\":True})],\"ep1:lamp:summary\")"
+    "call": "call r13_lines([(\"dad\",\"(온도를 잰 사람과 노끈의 주인. 같은 사람인지, 언제 등을 열었는지 확인할 수 있을까?)\",{\"thought\":True})],\"ep1:lamp:summary\")"
   },
   {
     "file": "game/systems/room13_ep1_lamp_thief.rpy",
     "line": 350,
-    "call": "call r13_lines([(\"dad\",\"꺼진 3번 등 안에 온도를 적은 쪽지가 있었습니다.\"),"
+    "call": "call r13_lines([(\"dad\",\"꺼진 3번 등 안에 온도를 적은 쪽지가 있었어.\"),"
   },
   {
     "file": "game/systems/room13_ep1_lamp_thief.rpy",
@@ -3737,37 +3767,37 @@
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 663,
-    "call": "call r13_lines(r13_debate_partial_lines(r13_claim),\"debate:partial:\"+r13_claim)"
+    "call": "call r13_lines(r13_debate_partial_lines(r13_claim),\"debate:partial:\"+r13_claim, binding_route=\"dynamic:211\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 666,
-    "call": "call r13_lines([(\"dad\",\"(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)\",{\"thought\":True})],\"debate:gave_up:\"+r13_claim)"
+    "call": "call r13_lines([(\"dad\",\"(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)\",{\"thought\":True})],\"debate:gave_up:\"+r13_claim, binding_route=\"dynamic:212\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 672,
-    "call": "call r13_lines([(r13_debate_st[\"who\"],r13_debate_st[\"text\"].replace(\"【\",\"\").replace(\"】\",\"\"))]+r13_debate_st.get(\"press\",[]),\"meeting:replay:\"+r13_claim+\":\"+r13_debate_st[\"id\"])"
+    "call": "call r13_lines([(r13_debate_st[\"who\"],r13_debate_st[\"text\"].replace(\"【\",\"\").replace(\"】\",\"\"))]+r13_debate_st.get(\"press\",[]),\"meeting:replay:\"+r13_claim+\":\"+r13_debate_st[\"id\"], binding_route=\"dynamic:213\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 679,
-    "call": "call r13_lines(r13_debate_st.get(\"press_missing\",[(r13_debate_st[\"who\"],\"그래서, 있습니까?\")]),\"debate:press_missing:\"+r13_claim+\":\"+r13_debate_st[\"id\"])"
+    "call": "call r13_lines(r13_debate_st.get(\"press_missing\",[(r13_debate_st[\"who\"],\"그래서, 있습니까?\")]),\"debate:press_missing:\"+r13_claim+\":\"+r13_debate_st[\"id\"], binding_route=\"dynamic:214\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 681,
-    "call": "call r13_lines(r13_debate_st.get(\"press\",[(r13_debate_st[\"who\"],\"말한 그대로입니다.\"),(\"dad\",\"(저 말을 반박할 자료가 있는지 다시 살펴보자.)\",{\"thought\":True})]),\"debate:press:\"+r13_claim+\":\"+r13_debate_st[\"id\"])"
+    "call": "call r13_lines(r13_debate_st.get(\"press\",[(r13_debate_st[\"who\"],\"말한 그대로입니다.\"),(\"dad\",\"(저 말을 반박할 자료가 있는지 다시 살펴보자.)\",{\"thought\":True})]),\"debate:press:\"+r13_claim+\":\"+r13_debate_st[\"id\"], binding_route=\"dynamic:215\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 703,
-    "call": "call r13_lines(R13_FAKE_TESTIMONY_LINES,\"debate:c4:fake_testimony\")"
+    "call": "call r13_lines(R13_FAKE_TESTIMONY_LINES,\"debate:c4:fake_testimony\", binding_route=\"dynamic:216\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 709,
-    "call": "call r13_lines(R13_C4_UNENFORCED,\"debate:c4:unenforced\")"
+    "call": "call r13_lines(R13_C4_UNENFORCED,\"debate:c4:unenforced\", binding_route=\"dynamic:217\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
@@ -3777,12 +3807,12 @@
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 735,
-    "call": "call r13_lines(r13_debate_c[\"lines\"],\"debate:counter:\"+claim+\":\"+sid)"
+    "call": "call r13_lines(r13_debate_c[\"lines\"],\"debate:counter:\"+claim+\":\"+sid, binding_route=\"dynamic:219\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 738,
-    "call": "call r13_lines(r13_debate_c[\"correct\"],\"debate:counter_ok:\"+claim+\":\"+sid)"
+    "call": "call r13_lines(r13_debate_c[\"correct\"],\"debate:counter_ok:\"+claim+\":\"+sid, binding_route=\"dynamic:220\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
@@ -3792,207 +3822,207 @@
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 754,
-    "call": "call r13_lines(r13_debate_spec[\"correct\"],\"debate:conclusion:\"+claim)"
+    "call": "call r13_lines(r13_debate_spec[\"correct\"],\"debate:conclusion:\"+claim, binding_route=\"dynamic:222\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 756,
-    "call": "call r13_lines([r13_debate_spec[r13_debate_pick]],\"debate:conclusion_wrong:\"+claim+\":\"+r13_debate_pick)"
+    "call": "call r13_lines([r13_debate_spec[r13_debate_pick]],\"debate:conclusion_wrong:\"+claim+\":\"+r13_debate_pick, binding_route=\"dynamic:223\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 768,
-    "call": "call r13_lines([r13_point.get(\"wrong_who\",{}).get(r13_debate_pick,r13_debate_spec[\"over\"])],\"debate:point_wrong:\"+claim+\":\"+r13_debate_pick)"
+    "call": "call r13_lines([r13_point.get(\"wrong_who\",{}).get(r13_debate_pick,r13_debate_spec[\"over\"])],\"debate:point_wrong:\"+claim+\":\"+r13_debate_pick, binding_route=\"dynamic:224\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 773,
-    "call": "call r13_lines([(\"dad\",r13_point[\"ask\"])],\"debate:point:\"+claim)"
+    "call": "call r13_lines([(\"dad\",r13_point[\"ask\"])],\"debate:point:\"+claim, binding_route=\"dynamic:225\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 781,
-    "call": "call r13_lines(list(r13_point[\"decisive\"].get(r13_point_key,[]))+list(r13_debate_spec[\"correct\"]),\"debate:conclusion:\"+claim)"
+    "call": "call r13_lines(list(r13_point[\"decisive\"].get(r13_point_key,[]))+list(r13_debate_spec[\"correct\"]),\"debate:conclusion:\"+claim, binding_route=\"dynamic:226\")"
   },
   {
     "file": "game/systems/room13_debate.rpy",
     "line": 783,
-    "call": "call r13_lines([r13_point[\"wrong_key\"]],\"debate:point_key_wrong:\"+claim+\":\"+r13_point_key)"
+    "call": "call r13_lines([r13_point[\"wrong_key\"]],\"debate:point_key_wrong:\"+claim+\":\"+r13_point_key, binding_route=\"dynamic:227\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
     "line": 64,
-    "call": "call r13_lines([(None,\"까로가 눈을 털며 다가왔다. 마차 이야기를 하러 온 얼굴이었다.\")]+list(ROOM13[\"topics\"][\"life:karo\"][\"lines\"]),\"w1c:karo:work\")"
+    "call": "call r13_lines([(None,\"까로가 눈을 털며 다가왔다. 마차 이야기를 하러 온 얼굴이었다.\")]+list(ROOM13[\"topics\"][\"life:karo\"][\"lines\"]),\"w1c:karo:work\", binding_route=\"dynamic:743\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 79,
+    "line": 80,
     "call": "call r13_lines([(\"resident_sling\",\"부인 편지는 제가 할머니 몰래 다른 길로 돌렸어요. 그래서 뒤쫓는 사람은 엉뚱한 편지만 들고 갔어요.\")],\"w1c:letters:safe\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 87,
+    "line": 88,
     "call": "call r13_lines([(None,\"광장 구석에서 피코가 낡은 판자에 물감을 문지르고 있었다. 그림 속 사람은 백 년 전 옷을 입고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 95,
+    "line": 96,
     "call": "call r13_lines([(\"resident_momo\",\"……옛 그림이라더니 물감이 아직 마르지도 않았군요. 알려 주셔서 고마워요. 사례예요.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 103,
+    "line": 104,
     "call": "call r13_lines([(\"dad\",\"제 아내입니다. 눈매는 이렇고, 왼쪽 눈썹에 작은 흉터가 있어요.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 112,
+    "line": 113,
     "call": "call r13_lines([(\"resident_piko\",\"……오늘 저녁은 이걸로 버틸게요. 그러니 가짜 그림은 안 팔아요.\")],\"w1c:portrait:snack\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 123,
+    "line": 124,
     "call": "call r13_lines([(None,\"우체국 안쪽 화덕 위에서 주전자가 김을 뿜고 있었다. 슬링이 그 김에 봉투 하나를 쐬고 있었다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 128,
+    "line": 129,
     "call": "call r13_lines([(None,\"슬링은 김으로 연 봉투에서 편지 한 줄을 베꼈다. 받는 사람 칸에 여관 이름이 보였다.\")],\"w1c:letters:ignore\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 131,
+    "line": 132,
     "call": "call r13_lines([(\"dad\",\"지금 남의 편지를 몰래 여는 겁니까?\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 135,
+    "line": 136,
     "call": "call r13_lines([(\"dad\",\"누가 부탁한 일입니까?\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 139,
+    "line": 140,
     "call": "call r13_lines([(\"neoul\",\"우체국 일은 우체국 일이오. 슬링은 오늘부터 나오지 마시오.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 144,
+    "line": 145,
     "call": "call r13_lines([(\"dad\",\"일자리 때문이라면 오늘 품삯은 제가 내겠습니다. 편지는 뜯지 말고 그대로 보내 주세요.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 150,
+    "line": 151,
     "call": "call r13_lines([(\"dad\",\"이 초상, 전에 보여 드렸지요. 이분은 제 아내입니다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 164,
+    "line": 165,
     "call": "call r13_lines([(\"resident_sling\",\"……네. 대신 할머니한테는 아무 편지도 없었다고 할게요.\")],\"w1c:letters:stop\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 173,
+    "line": 174,
     "call": "call r13_lines([(\"resident_sling\",\"할머니가 요즘은 제가 가져가는 편지를 잘 안 믿으세요. 누가 알아챘다고 하시면서요.\")],\"w1c:letters:fake:fail\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 175,
+    "line": 176,
     "call": "call r13_lines([(\"dad\",\"할머니께 이 쪽지를 베껴 드리세요. ‘목요일 밤, 북쪽 초소에서 기다린다.’ 서명은 비워 두고요.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 184,
+    "line": 185,
     "call": "call r13_lines([(None,\"해가 지자 할머니가 등잔을 들고 계단을 내려갔다. 손에는 담요와 굵은 끈이 들려 있었다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 189,
+    "line": 190,
     "call": "call r13_lines([(None,\"할머니는 북쪽 초소 처마 밑에서 등잔을 낮췄다. 끈을 담요 밑에 감추고, 길 쪽만 보았다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 195,
+    "line": 196,
     "call": "call r13_lines([(None,\"할머니가 나간 뒤 여관은 조용했다. 다람이는 내 무릎을 베고 잠들었다.\")],\"w1c:night:stay\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 197,
+    "line": 198,
     "call": "call r13_lines([(\"resident_owlgp\",\"할머니가 초소 쪽으로 가는 걸 봤소. 오늘 밤은 여기 오지 않겠구려.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 209,
+    "line": 210,
     "call": "call r13_lines([(None,\"여관 뒷벽에서 따닥이 판자를 덧대고 있었다. 새 판자 틈으로 오래된 벽돌과 좁은 빈 공간이 보였다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 214,
+    "line": 215,
     "call": "call r13_lines([(\"resident_ttadak\",\"……고마워요. 대신 필요하면 제가 본 걸 말해 드릴게요. 사람들 앞에서도요.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 220,
+    "line": 221,
     "call": "call r13_lines([(\"resident_ttadak\",\"도면은 파는 거예요. 하지만 제 입은 안 팔아요. 사람들 앞에선 모른다고 할 거예요.\")],\"w1c:ext:buy\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 223,
+    "line": 224,
     "call": "call r13_lines([(\"neoul\",\"허가 없는 증축이라. 신고 사례는 다섯 냥이오. 벽은 내일 봉하겠소.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 235,
+    "line": 236,
     "call": "call r13_lines([(None,\"봉해 둔 13호 문 앞에 뜯긴 봉인 종이가 떨어져 있었다. 곧 방 안에서 뭉치가 자루를 들고 나왔다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 240,
+    "line": 241,
     "call": "call r13_lines([(None,\"자루 안에는 다람이의 그림책과 아내가 쓰던 털실 바구니가 있었다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 244,
+    "line": 245,
     "call": "call r13_lines([(None,\"뭉치는 박물관 뒷문에서 모모 관장에게 자루를 넘겼다. 모모는 값을 묻지도 않고 동전을 셌다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 249,
+    "line": 250,
     "call": "call r13_lines([(\"neoul\",\"사건 현장 봉인을 뜯었소? 뭉치, 따라오시오. 13호 봉인은 내가 다시 하겠소.\")],\"w1c:seal:neoul\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 259,
+    "line": 260,
     "call": "call r13_lines([(None,\"실룩이 내 옆으로 바짝 붙어 목소리를 낮췄다.\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 265,
+    "line": 266,
     "call": "call r13_lines([(\"resident_siluk\",\"거래 끝. 내일 재판에서 제가 알아서 나설게요.\")],\"w1c:t:buy\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 268,
+    "line": 269,
     "call": "call r13_lines([(\"resident_siluk\",\"손해 보시는 거예요. 이 증언을 다른 사람한테 팔아도 전 몰라요.\")],\"w1c:t:refuse\")"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 270,
+    "line": 271,
     "call": "call r13_lines([(\"dad\",\"그날 밤 그 시각, 실룩 씨는 어디 있었습니까?\"),"
   },
   {
     "file": "game/systems/room13_week1_cases.rpy",
-    "line": 276,
+    "line": 277,
     "call": "call r13_lines([(\"neoul\",\"돈 받고 증언을 팔았소? 재판 끝날 때까지 마구간에서 나오지 마시오.\")],\"w1c:t:neoul\")"
   },
   {
     "file": "game/systems/room13_topic_record.rpy",
     "line": 28,
-    "call": "call r13_lines(r13_topic_full_record(key),\"topic:record_full:\"+key)"
+    "call": "call r13_lines(r13_topic_full_record(key),\"topic:record_full:\"+key, binding_route=\"dynamic:664\")"
   },
   {
     "file": "game/systems/room13_topic_record.rpy",
     "line": 31,
-    "call": "call r13_lines(r13_conversation_topic_lines(key),\"topic:review:\"+key)"
+    "call": "call r13_lines(r13_conversation_topic_lines(key),\"topic:review:\"+key, binding_route=\"dynamic:665\")"
   },
   {
     "file": "game/systems/room13_inn_change.rpy",
