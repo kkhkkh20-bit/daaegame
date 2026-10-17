@@ -248,7 +248,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 56 | `room13_week2_rules.rpy:270` | _r13_w2e_notes |
+| 1 | 56 | `room13_week2_rules.rpy:272` | _r13_w2e_notes |
 | 2 | 109 | `systems/room13_week2_events.rpy:42` |  |
 
 ## `r13_evidence_acquired` (2층)
@@ -381,14 +381,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 56 | `room13_week2_rules.rpy:175` | _r13_w1c_action_done |
+| 1 | 56 | `room13_week2_rules.rpy:177` | _r13_w1c_action_done |
 | 2 | 110 | `systems/room13_week1_cases.rpy:50` |  |
 
 ## `r13_w2_present` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 56 | `room13_week2_rules.rpy:192` | _r13_pf_w2_present |
+| 1 | 56 | `room13_week2_rules.rpy:194` | _r13_pf_w2_present |
 | 2 | 113 | `systems/room13_present_flow.rpy:69` |  |
 
 ## `r13_world_background` (2층)

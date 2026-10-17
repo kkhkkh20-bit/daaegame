@@ -63,6 +63,8 @@ init 56 python:
         carriage_art=getattr(store,"R13_CARRIAGE_IMAGE",None)
         if carriage_art:n["carriage_art_file"]=carriage_art
         n["interaction_revision"]=2
+        # 0.18.91: 0.18.89 added 13 portraits (56); "==43" sent every new game to the old revision and
+        # the save menu then refused those saves. The front set is in place whenever all 43 are.
         target_visual_revision="pixel-b-front-v3" if len(getattr(store,"R13_PORTRAITS",{}))>=43 else "pixel-b-acting-v2"
         if previous_visual_revision!=target_visual_revision or previous_interaction_revision!=2:
             # Keep discoveries; move their visible checkmarks with the redrawn props.

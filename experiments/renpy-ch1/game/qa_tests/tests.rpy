@@ -11595,3 +11595,38 @@ testcase story_scenes:
         store.room13["flags"]=list(store.room13["flags"])+["ttadak_dead","ttadak_witness"]
     assert eval (r13_debate_judge("C1",[st["id"] for st in r13_debate_statements("C1") if "H7" in st.get("accept",[])][0],"H7")[1][0][0]=="resident_tok")
     $ open("qa_result.txt","w").write("story scenes + continuity ok")
+
+testcase expression_acting:
+    # 0.18.92 (owner 17:05): the expression package in the real dialogue layout, normal and large
+    # text and the topic list, for every connected character and expression (bami thinking too).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody",("normal","large","topic"),["bami","dad","daram","granny","karo","mom","nabi","neoul","resident_lamplighter","resident_owlgp","resident_ppul","resident_seori","resident_teacher","resident_tok","seryeon"],["neutral","joy","flustered","angry","anxious","surprise","thinking"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 1500
+    pause 1.0
+    assert eval r13_qa_fb_done
+
+testcase o46_ropes:
+    # 0.18.92: the redrawn short ropes (manual extraction) on the altar overlay with the empty cart,
+    # morning and evening, camera at the left (pine branches).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ r13_world_cameras={"altar":0}
+    run Call("r13_qa_roam",dict(day=12,period=0,location="altar",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","lodging","entry_corrected","cart_left"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"altar":0}
+    run Call("r13_qa_goto",12,0,"altar")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"altar":0}
+    $ renpy.restart_interaction()
+    pause 1.0
+    screenshot "o46_altar_morning.png"
+    assert eval ("assets/room13-ep-O46-mountain-ropes.webp" in r13_ep_overlays("altar"))
+    $ room13["period"]=2
+    $ r13_world_cameras={"altar":0}
+    $ renpy.restart_interaction()
+    pause 1.2
+    screenshot "o46_altar_evening.png"

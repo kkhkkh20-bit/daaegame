@@ -1,0 +1,64 @@
+{
+  "archive_sha256": "0a47a6a34528f5bca1410cdbd3a44ade0ab13fe9069d487505c393ca6eada60e",
+  "checks": [
+    "Carriage: Daram is drawn from the full-body set",
+    "Save during a Karo line, advance, load: same full-body file and identical portrait bounds",
+    "Large text and 844x390 touch viewport screenshots recorded for visual review"
+  ],
+  "carriage": {
+    "who": "daram",
+    "pose": "neutral",
+    "file": "assets/room13-fullbody-daram-neutral-acting.webp",
+    "bounds": [
+      347,
+      116,
+      638,
+      962
+    ],
+    "large": false
+  },
+  "topic_screens": [
+    "r13_entry_karo_topics"
+  ],
+  "topic_screen": [
+    "r13_entry_karo_topics"
+  ],
+  "karo_line": {
+    "who": "karo",
+    "pose": "neutral",
+    "file": "assets/room13-fullbody-karo-neutral-acting.webp",
+    "bounds": [
+      458.5,
+      117,
+      511,
+      850
+    ],
+    "large": false
+  },
+  "large": {
+    "who": "karo",
+    "pose": "neutral",
+    "file": "assets/room13-fullbody-karo-neutral-acting.webp",
+    "bounds": [
+      458.5,
+      117,
+      511,
+      850
+    ],
+    "large": true
+  },
+  "mobile": {
+    "who": "karo",
+    "pose": "neutral",
+    "file": "assets/room13-fullbody-karo-neutral-acting.webp",
+    "bounds": [
+      458.5,
+      117,
+      511,
+      850
+    ],
+    "large": true
+  },
+  "status": "passed-pending-visual-review",
+  "errors": []
+}

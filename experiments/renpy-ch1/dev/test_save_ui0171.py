@@ -24,6 +24,11 @@ class SaveUITests(unittest.TestCase):
   self.assertEqual(self.env['r13_save_status']({'_version':'0.17.0-dev'}),'unknown')
   m=self.metadata();m['r13_story']='previous';self.assertEqual(self.env['r13_save_status'](m),'incompatible')
   self.files={'1-1':m};self.assertIsNone(self.env['r13_continue_slot']())
+ def test_saves_from_portrait_count_bug_stay_usable(self):
+  m=self.metadata();m['r13_visual']='pixel-b-acting-v2';self.assertEqual(self.env['r13_save_status'](m),'compatible')
+  m['r13_visual']='pixel-a';self.assertEqual(self.env['r13_save_status'](m),'incompatible')
+  rules=(Path(__file__).resolve().parents[1]/'game/room13_week2_rules.rpy').read_text()
+  self.assertIn('len(getattr(store,"R13_PORTRAITS",{}))>=43',rules)
  def test_no_saves_is_safe(self):self.assertIsNone(self.env['r13_continue_slot']())
  def test_cleanup_excludes_persistent_and_internal_slots(self):
   self.files={'1-1':self.metadata(),'auto-1':{'_version':'0.15'},'quick-1':{'_version':'0.16'},'_reload-1':{'_version':'0.14'},'persistent':{}}

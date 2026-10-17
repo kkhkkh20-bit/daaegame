@@ -57,9 +57,12 @@ init 58 python:
         if posed and posed["file"] in R13_FULLBODY_FILES:
             return dict(file=posed["file"],crop=posed["crop"],figure=posed["figure"],emotion=r13_fullbody_key(pose),fit=posed.get("fit",1.0))
         emotion=r13_fullbody_emotion(pose)
+        # 0.18.92: an expression the package drew beyond the six (bami "thinking") is used by name.
+        key=r13_fullbody_key(pose)
+        if key not in R13_FULLBODY_EMOTIONS and key in entry["images"]:emotion=key
         image=entry["images"].get(emotion) or entry["images"].get("neutral")
         if not image or image["file"] not in R13_FULLBODY_FILES:return None
-        return dict(file=image["file"],crop=entry["crop"],figure=entry["figure"],emotion=emotion)
+        return dict(file=image["file"],crop=entry["crop"],figure=entry["figure"],emotion=emotion,image=image)
 
     def r13_fullbody_scale(person,height):
         entry=R13_FULLBODY["people"][person]
@@ -67,7 +70,35 @@ init 58 python:
         scale=height*R13_FULLBODY_FIGURE*R13_FULLBODY_TUNING.get(person,1.0)/figure_height
         # Topic lists start 200px right of the portrait centre.
         max_width=880.0 if height>=800 else 400.0
-        return min(scale,max_width/max(1,entry["crop"][2]))
+        cap=max_width/max(1,entry["crop"][2])
+        # 0.18.92 (owner): pixel-art expressions (2x2 px cells) are drawn at a whole number of
+        # screen pixels per art cell, the nearest to the usual size (never smoothed or stretched).
+        pixel=entry.get("pixel")
+        if pixel:
+            unit=float(pixel["u"])*pixel["cell"]
+            k=max(1,int(round(scale*unit)))
+            while k>1 and k/unit>cap:k-=1
+            return k/unit
+        return min(scale,cap)
+
+    def r13_fullbody_mapped_art(person,emotion,image,crop,scale,width,height):
+        """0.18.92: a picture stored in its own pixels with a map [u, ox, oy] to the character's
+        reference canvas (dev/apply_expression_acting.py). Drawn into a box of the reference crop's
+        size, so position and size code is the same as for every other close-up. Pixel art
+        ("cell": 2) is scaled by a whole number of screen pixels per cell and never resampled
+        through the 3px grid; other pictures use the usual grid."""
+        u,ox,oy=image["map"]
+        fx,fy,fw,fh=image["crop"]
+        s=scale*u
+        w,h=max(1,int(round(fw*s))),max(1,int(round(fh*s)))
+        # Eye blink pieces (room13_dot_fx.rpy) sit on the uncropped picture, in its own pixels.
+        piece=Crop((fx,fy,fw,fh),r13_blink_art(person,emotion,image["file"]))
+        if image.get("cell"):
+            piece=Transform(piece,size=(w,h),nearest=True,subpixel=False)
+        else:
+            piece=r13_pixel_scale(piece,w,h,R13_CLOSE_PIXEL_GRID)
+        dx=int(round((ox+u*fx-crop[0])*scale));dy=int(round((oy+u*fy-crop[1])*scale))
+        return Fixed(Transform(piece,xpos=dx,ypos=dy),xysize=(max(1,int(round(width))),max(1,int(round(height)))))
 
     # One displayable per character/expression/size: screens and statement
     # prediction re-evaluate r13_close_art often, and a fresh Flatten each
@@ -80,11 +111,15 @@ init 58 python:
         key=(person,spec["emotion"],int(height))
         result=R13_FULLBODY_ART_CACHE.get(key)
         if result is None:
-            # Eye blink pieces (room13_dot_fx.rpy) sit on the uncropped picture.
-            art=Crop(tuple(spec["crop"]),r13_blink_art(person,spec["emotion"],spec["file"]))
             scale=r13_fullbody_scale(person,height)*spec.get("fit",1.0)
             width=spec["crop"][2]*scale;native_height=spec["crop"][3]*scale
-            result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)
+            image=spec.get("image") or {}
+            if image.get("map"):
+                result=r13_fullbody_mapped_art(person,spec["emotion"],image,spec["crop"],scale,width,native_height)
+            else:
+                # Eye blink pieces (room13_dot_fx.rpy) sit on the uncropped picture.
+                art=Crop(tuple(spec["crop"]),r13_blink_art(person,spec["emotion"],spec["file"]))
+                result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)
             result=r13_idle_art(result,person,pose,None,int(round(width)),int(round(native_height)),contact="dialogue_bust",speaking=speaking)
             if len(R13_FULLBODY_ART_CACHE)>=24:R13_FULLBODY_ART_CACHE.clear()
             R13_FULLBODY_ART_CACHE[key]=result

@@ -25,5 +25,7 @@ init 163 python:
     def r13_sound_scene_music(bg,title,mood):
         # Preserve authored music/ambience selection, silence and movement sounds.
         path=_r13_contrast_scene_music(bg,title,mood)
-        renpy.music.set_volume(r13_scene_ambience_gain(bg,mood),delay=.6,channel="ambience")
+        _bgm,ambience=r13_sound_choice(bg,title,mood)
+        gain=1.0 if ambience=="heartbeat" else r13_scene_ambience_gain(bg,mood)
+        renpy.music.set_volume(gain,delay=.6,channel="ambience")
         return path

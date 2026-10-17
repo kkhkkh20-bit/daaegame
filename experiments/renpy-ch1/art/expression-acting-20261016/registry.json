@@ -1,0 +1,74 @@
+{
+ "version": 1,
+ "date": "2026-10-16",
+ "basis": "Owner 2026-10-16 17:05 PDT: apply the latest selection (current-expression-review-68png.zip + current-selection-map.csv; it supersedes the earlier 59-image bundle) to the dialogue close-ups of main 0.18.89; the second art-fix delivery's 10 lion/Neoul PNG are the same bytes (not applied twice); keep 2x2 pixel cells and whole-number scaling, align canvases/feet per character, keep each character's size, do not stretch crouched poses; keep designs, outfits, story and casting.",
+ "package": {
+  "zip_sha256": "1120ddb035d4fd91c8951ec91f67b75daf6ad3b14183f7c95e7c00c5da515f4b",
+  "png": 68,
+  "map": "pack68/current-selection-map.csv"
+ },
+ "second_fixes": {
+  "zip_sha256": "96ce9428cad77a51446f227e0f1c0e96b926e6a777b0e5d34e2e7480441642eb",
+  "characters": "10 PNG = pack68 neoul/resident_teacher (same SHA-256)",
+  "o46": "manual rope extraction, dev/extract_o46_ropes.py",
+  "kid_nubi1_hold_skirt": "not delivered (blocked); the existing picture stays, marked incomplete"
+ },
+ "apply": {
+  "bami": {
+   "kind": "pixel"
+  },
+  "dad": {
+   "kind": "pixel"
+  },
+  "daram": {
+   "kind": "pixel"
+  },
+  "granny": {
+   "kind": "pixel"
+  },
+  "karo": {
+   "kind": "pixel"
+  },
+  "mom": {
+   "kind": "pixel"
+  },
+  "nabi": {
+   "kind": "pixel"
+  },
+  "resident_lamplighter": {
+   "kind": "pixel",
+   "package_only": true,
+   "note": "the package redraws his outfit (bigger lop ears, bright red scarf); the current joy/angry/surprise pictures show the older outfit, so the package neutral stands in for them"
+  },
+  "resident_owlgp": {
+   "kind": "pixel"
+  },
+  "resident_ppul": {
+   "kind": "pixel"
+  },
+  "resident_seori": {
+   "kind": "pixel"
+  },
+  "resident_tok": {
+   "kind": "pixel"
+  },
+  "seryeon": {
+   "kind": "pixel"
+  },
+  "neoul": {
+   "kind": "hires",
+   "note": "same canvas and scale as the neutral (overlay fit within +/-3%: pose, not scale)"
+  },
+  "resident_teacher": {
+   "kind": "hires",
+   "scale": 1.095,
+   "register_with": "angry",
+   "note": "the five new expressions are drawn ~9.5% smaller than the neutral (lower-body overlay fit 1.08-1.10 on four of five); they are shown 1.095x so the body keeps one size"
+  }
+ },
+ "held": {
+  "buri": "The package draws 부리 as the slim brown owl (glasses, red vest, wing-arms). Main 0.18.89 still shows the round owl with bow tie and pocket watch in the field, profile, meeting seat and every pose. Applying only the dialogue would give one character two designs; changing the field art is a design decision, not an expression connection.",
+  "resident_nero": "The package draws 네로 as a white wolf (neutral + angry only). Main 0.18.89 shows the tiger redesign everywhere else, including the name-tag life action. Applying only the dialogue would change his species between the field and the conversation."
+ },
+ "blink_note": "Blink pieces of the old faces are removed for replaced pictures (다람이 5, 바미 5, 나비 5, 엄마 neutral/anxious). New half/shut eye pieces for the package faces are an art request; an automatic attempt on the 2x2-cell faces left white and dark residue and was not shipped."
+}

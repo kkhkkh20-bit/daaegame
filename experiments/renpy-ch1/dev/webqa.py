@@ -297,7 +297,7 @@ class GateQA(FlowQA):
 class ReviewQA(GateQA):
  async def room(self):return (await self.state())['room']
  async def save(self,slot):
-  await self.press('옵션');await self.wait('pause_menu');await self.press('저장');await self.wait('save');await self.press('1쪽 '+str(slot)+'번');await self.press('돌아가기')
+  await self.open_file_menu('save');await self.press('1쪽 '+str(slot)+'번');await self.press('돌아가기')
   if 'pause_menu'in(await self.state())['screens']:await self.press('돌아가기')
   await self.wait('r13_hub')
  async def load(self,slot):
@@ -312,11 +312,19 @@ class ReviewQA(GateQA):
 class SayQA(ReviewQA):
  async def line(self):return await self.py("import renpy;s=renpy.store;result={'packet':s.r13_packet,'read_id':s.r13_read_id,'index':s.r13_index,'speaker':s.r13_packet[0],'portrait_speaker':s.dialogue_speaker,'entries':s.entries,'identity':s.identity,'room':s.room13}")
  async def say_save(self,slot):
-  await self.press('옵션');await self.wait('pause_menu');await self.press('저장');await self.wait('save');await self.press('1쪽 '+str(slot)+'번');await self.press('돌아가기')
+  await self.open_file_menu('save');await self.press('1쪽 '+str(slot)+'번');await self.press('돌아가기')
   if 'pause_menu'in(await self.state())['screens']:await self.press('돌아가기')
   await self.wait('say')
  async def say_load(self,slot):
-  await self.press('옵션');await self.wait('pause_menu');await self.press('불러오기');await self.wait('load');await self.press('1쪽 '+str(slot)+'번');await self.press('예');await self.wait('say')
+  await self.open_file_menu('load');await self.press('1쪽 '+str(slot)+'번');await self.press('예');await self.wait('say')
+ async def open_file_menu(self,kind):
+  # 0.18.69 replaced the line-time '옵션' button with '더보기' (진행 저장 / 진행 불러오기).
+  labels=[b['text'] for b in (await self.state())['buttons']]
+  if any('옵션' in t for t in labels):
+   await self.press('옵션');await self.wait('pause_menu');await self.press('저장' if kind=='save' else '불러오기')
+  else:
+   await self.press('더보기');await asyncio.sleep(.8);await self.press('진행 저장' if kind=='save' else '진행 불러오기')
+  await self.wait(kind)
  async def favorite_during_line(self,key,slot,advance=True):
   initial=await self.line();await self.press('기록');await self.wait('r13_records');label=await self.py('import renpy;result=renpy.store.R13_RECORD_SHORT['+repr(key)+']');await self.press(label);await self.press('관심 표시');await self.press('닫기');await self.wait('say');saved=await self.line();assert {k:v for k,v in initial.items()if k!='room'}=={k:v for k,v in saved.items()if k!='room'};assert {k:v for k,v in initial['room'].items()if k!='record_ui'}=={k:v for k,v in saved['room'].items()if k!='record_ui'}
   await self.say_save(slot);after_save=await self.line();(self.out/('trace-'+str(slot)+'-after-save.json')).write_text(json.dumps(after_save,ensure_ascii=False,indent=2));assert saved==after_save,('changed while closing save UI',saved,after_save);await self.press('기록');await self.wait('r13_records');await self.press(label);await self.press('관심 해제');await self.press('닫기');await self.wait('say');assert key not in(await self.room())['record_ui']['favorites'];before_load=await self.line();(self.out/('trace-'+str(slot)+'-before-load.json')).write_text(json.dumps(before_load,ensure_ascii=False,indent=2));await self.say_load(slot);loaded=await self.line();(self.out/('trace-'+str(slot)+'-after-load.json')).write_text(json.dumps(loaded,ensure_ascii=False,indent=2));assert saved==loaded,(saved,loaded);await self.shot('say-'+initial['speaker']+'-'+str(slot)+'-restored');following=None
