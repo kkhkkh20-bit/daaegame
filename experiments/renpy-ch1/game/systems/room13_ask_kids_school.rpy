@@ -128,7 +128,12 @@ init 197 python:
     _AK5_NUBI_FAMILY={"any":[{"has":["nubi_hostile"]},{"has":["nubi_ally"]},{"has":["grudge_cold:nubi"]},{"has":["nubi_after"]},
         {"has":["wf_fire"]},{"has":["wf_solved"]},{"has":["F12"]},{"has":["life:resident_nubi:after"]},
         {"has":["life:resident_nubi:crisis"]},{"has":["w2_nubi"]}]}
+    def _ak5_nubi_family_unknown(s):
+        return not r13_cond(_AK5_NUBI_FAMILY,s)
     if "item:firewood" in ROOM13["topics"]:
         _ak5_fw=ROOM13["topics"]["item:firewood"]
-        _ak5_fw["variants"]=list(_ak5_fw.get("variants") or [])+[({"not":[]} if False else {"all":[{"any":[_AK5_NUBI_FAMILY]},{"not":["__never__"]}],"__ak5_neg":True},[])][:0]+[
-            (lambda_free_cond,[]) for lambda_free_cond in []]
+        _ak5_fw["variants"]=list(_ak5_fw.get("variants") or [])+[(_ak5_nubi_family_unknown,[
+            ("dad","장작 묶음입니다. 빨래 말릴 불이라도 피우세요."),
+            ("resident_nubi","세상에, 이 귀한 걸……. 고마워요. 빨래 말릴 불도 없던 참이었어요."),
+            ("resident_nubi","집에 애들이 있어요. 애들 방부터 데울게요."),
+            ("resident_nubi","도움이 필요하면 말해요. 빨랫감 들고 여기저기 드나드는 길은 내가 훤히 알아요.")])]
