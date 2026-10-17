@@ -1,0 +1,215 @@
+{
+  "label": "clinic-12-0-False-550",
+  "actors": [
+    {
+      "person": "resident_piko",
+      "pose": "map27_cl_1",
+      "x": 1075,
+      "y": 263,
+      "width": 160,
+      "height": 240,
+      "rect": [
+        1075,
+        263,
+        160,
+        240
+      ],
+      "depth": 503,
+      "occlusion": [],
+      "contact": "background_bed",
+      "slot": null,
+      "activity": "침대 가장자리에 앉아 담요를 여민다.",
+      "map27_occlusion": [],
+      "map27_keepouts": []
+    },
+    {
+      "person": "resident_seori",
+      "pose": "inspect_paper_threequarter_front",
+      "x": 1571,
+      "y": 355,
+      "width": 207,
+      "height": 303,
+      "rect": [
+        1571,
+        355,
+        207,
+        303
+      ],
+      "depth": 654,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": null,
+      "activity": "환자 쪽으로 서서 확인할 서류를 살펴본다."
+    }
+  ],
+  "offset": 550,
+  "hits": [
+    {
+      "person": "resident_piko",
+      "point": [
+        606,
+        295
+      ],
+      "actions": [
+        "('person', 'resident_piko')"
+      ]
+    },
+    {
+      "person": "resident_seori",
+      "point": [
+        1130,
+        409
+      ],
+      "actions": [
+        "('person', 'resident_seori')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_piko": {
+      "file": "assets/map-action27/CL-1--resident_piko.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        136.5,
+        6.5,
+        250,
+        194.5
+      ],
+      "foot": [
+        406.5,
+        731
+      ],
+      "anchors": {
+        "head_center": [
+          285,
+          110.5
+        ],
+        "foot_left": [
+          345.5,
+          731
+        ],
+        "foot_right": [
+          468,
+          727.5
+        ],
+        "foot": [
+          406.5,
+          731
+        ],
+        "buttock": [
+          238.5,
+          465.5
+        ],
+        "seat": [
+          238.5,
+          465.5
+        ],
+        "hand_left": [
+          255,
+          264
+        ],
+        "hand_right": [
+          359,
+          300
+        ],
+        "blanket_left_grip": [
+          241,
+          238
+        ],
+        "blanket_right_grip": [
+          348,
+          280
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "background_bed",
+      "stature_ratio": 0.8,
+      "source_sha256": "6070b407f29748be55d9c4ccff92ba27df242c2b0a8b24d461d1a4847424c4f5",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_seori": {
+      "file": "assets/map-action27/seori-threequarter-review.webp",
+      "crop": [
+        0,
+        0,
+        526,
+        768
+      ],
+      "foot": [
+        319.45515911282547,
+        754.3218997361478
+      ],
+      "anchors": {
+        "eyes_left": [
+          215.16393442622953,
+          170.72295514511876
+        ],
+        "eyes_right": [
+          265.79074252651884,
+          170.72295514511876
+        ],
+        "gaze_target": [
+          170.61234329797495,
+          312.5699208443272
+        ],
+        "hand_paper_side": [
+          143.27386692381873,
+          335.87335092348286
+        ],
+        "hand_paper_bottom": [
+          239.4648023143684,
+          347.5250659630607
+        ],
+        "paper_top": [
+          160.48698167791707,
+          275.08179419525067
+        ],
+        "paper_bottom": [
+          188.3317261330762,
+          355.12401055408975
+        ],
+        "foot_left": [
+          228.83317261330762,
+          735.5778364116095
+        ],
+        "foot_right": [
+          410.0771456123433,
+          754.3218997361478
+        ],
+        "foot": [
+          319.45515911282547,
+          754.3218997361478
+        ]
+      },
+      "head": [
+        141.24879459980716,
+        12.158311345646439,
+        272.87849566055934,
+        253.80474934036943
+      ],
+      "contact": "self-contained",
+      "facing": "front-left-threequarter",
+      "nearest": true,
+      "source_sha256": "761b7930193aecdce0ab86fb8788ebf6e900171d229678b7d5fee8d1fcc11155",
+      "source_commit": "12479638c1964c20325192a4514254329c9bd4fb"
+    }
+  },
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "clinic"
+  },
+  "clicked": "resident_piko",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+  "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+  "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+  "review_status": "actual geometry and visible face hit targets reviewed"
+}

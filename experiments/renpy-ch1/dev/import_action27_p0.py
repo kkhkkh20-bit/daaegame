@@ -22,7 +22,7 @@ PLACEMENTS={
  'MK-4':('foot',[1772,497],160,'market','cloth'),
  'MK-5':('foot',[1915,497],160,'market','cloth'),
  'MK-6':('foot_baseline',[2050,503],160,'market','pots'),
- 'PO-1':('parcel_bottom',[1450,548],190,'post','counter'),
+ 'PO-1':('parcel_bottom',[1450,548],280,'post','counter'),
  'SQ-2':('foot',[1020,585],220,'square','bench'),
  'WS-1':('work_support',[1585,383],196,'workshop','rbench'),
 }
@@ -52,6 +52,9 @@ def main():
     contacts=json.loads((ROOT/'docs/reviews/action27-preparation/contacts.json').read_text())['placements']
     for c in contacts:
      if c['request']=='PO-1':variants[c['daylight']]=dict(world_width=c['world_width'],render_height=c['standing_height_reference'],anchor='parcel_bottom',target=c['target'],occlusion=c['occlusion'])
+   if key=='PO-1':
+    variants['morning']['render_height']=280
+    for period in ('afternoon','evening'):variants[period].update(render_height=290,target=[800,540])
    replace=['neutral','activity','inn_activity','world']
    if key=='MK-6':replace+=['map9_pots_display']
    if key=='MK-3':replace+=['living_stamp']

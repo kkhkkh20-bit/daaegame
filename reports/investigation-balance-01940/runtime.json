@@ -1,0 +1,7477 @@
+{
+  "cases": [
+    {
+      "label": "post-2-0-False-880",
+      "actors": [
+        {
+          "person": "resident_jongjong",
+          "pose": "map27_po_3",
+          "x": 977,
+          "y": 484,
+          "width": 106,
+          "height": 159,
+          "rect": [
+            977,
+            484,
+            106,
+            159
+          ],
+          "depth": 643,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "편지를 안고 나갈 채비를 한다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_sling",
+          "pose": "map27_po_1",
+          "x": 1298,
+          "y": 383,
+          "width": 187,
+          "height": 280,
+          "rect": [
+            1298,
+            383,
+            187,
+            280
+          ],
+          "depth": 663,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "소포를 창구에 내려놓는다.",
+          "map27_occlusion": [
+            [
+              [
+                1100,
+                560
+              ],
+              [
+                1135,
+                515
+              ],
+              [
+                1500,
+                500
+              ],
+              [
+                1600,
+                492
+              ],
+              [
+                1700,
+                480
+              ],
+              [
+                2160,
+                470
+              ],
+              [
+                2160,
+                720
+              ],
+              [
+                1100,
+                720
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1405.5520833333333,
+                510.60416666666663
+              ],
+              [
+                1482.1145833333333,
+                510.60416666666663
+              ],
+              [
+                1482.1145833333333,
+                553.4427083333333
+              ],
+              [
+                1405.5520833333333,
+                553.4427083333333
+              ]
+            ],
+            [
+              [
+                1371.828125,
+                481.4375
+              ],
+              [
+                1385.5,
+                481.4375
+              ],
+              [
+                1398.2604166666667,
+                501.4895833333333
+              ],
+              [
+                1405.5520833333333,
+                514.25
+              ],
+              [
+                1412.84375,
+                523.3645833333333
+              ],
+              [
+                1436.5416666666667,
+                528.8333333333333
+              ],
+              [
+                1436.5416666666667,
+                552.53125
+              ],
+              [
+                1407.375,
+                556.1770833333333
+              ],
+              [
+                1389.1458333333333,
+                541.59375
+              ],
+              [
+                1378.2083333333333,
+                525.1875
+              ]
+            ],
+            [
+              [
+                1440.1875,
+                486.90625
+              ],
+              [
+                1452.9479166666667,
+                486.90625
+              ],
+              [
+                1460.2395833333333,
+                503.3125
+              ],
+              [
+                1471.1770833333333,
+                511.515625
+              ],
+              [
+                1476.6458333333333,
+                525.1875
+              ],
+              [
+                1462.0625,
+                527.921875
+              ],
+              [
+                1443.8333333333333,
+                516.0729166666666
+              ]
+            ]
+          ]
+        }
+      ],
+      "offset": 880,
+      "hits": [
+        {
+          "person": "resident_jongjong",
+          "point": [
+            151,
+            510
+          ],
+          "actions": [
+            "('person', 'resident_jongjong')"
+          ]
+        },
+        {
+          "person": "resident_sling",
+          "point": [
+            522,
+            428
+          ],
+          "actions": [
+            "('person', 'resident_sling')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_librarian": {
+          "file": "assets/map-action27/PO-2--resident_librarian.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            134.656,
+            27.647999999999996,
+            173.05599999999998,
+            158.976
+          ],
+          "foot": [
+            296.96,
+            748.8
+          ],
+          "anchors": {
+            "foot": [
+              296.96,
+              748.8
+            ],
+            "foot_left": [
+              222.72,
+              748.8
+            ],
+            "foot_right": [
+              363.52,
+              744.96
+            ],
+            "hand_left": [
+              320,
+              268.79999999999995
+            ],
+            "hand_right": [
+              455.68,
+              188.16
+            ],
+            "prop_support": [
+              410.624,
+              280.32
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_jongjong": {
+          "file": "assets/map-action27/PO-3--resident_jongjong.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            133.632,
+            6.144,
+            254.464,
+            248.06400000000002
+          ],
+          "foot": [
+            302.592,
+            754.1759999999999
+          ],
+          "anchors": {
+            "foot": [
+              302.592,
+              754.1759999999999
+            ],
+            "foot_left": [
+              225.28,
+              755.712
+            ],
+            "foot_right": [
+              376.32,
+              743.424
+            ],
+            "hand_left": [
+              309.248,
+              376.32
+            ],
+            "hand_right": [
+              360.448,
+              393.216
+            ],
+            "prop_support": [
+              328.704,
+              343.296
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "2b61174bc3c5960d17ba86b1a70c7816269f3e0a014ae144659fd7e350502687",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_sling": {
+          "file": "assets/map-action27/PO-1--resident_sling.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            164,
+            13.5,
+            246.5,
+            225
+          ],
+          "foot": [
+            308.5,
+            754.5
+          ],
+          "anchors": {
+            "foot_left": [
+              191.5,
+              754.5
+            ],
+            "foot_right": [
+              425,
+              749
+            ],
+            "foot": [
+              308.5,
+              754.5
+            ],
+            "hand_parcel_left": [
+              349,
+              429.5
+            ],
+            "hand_parcel_right": [
+              481.5,
+              420
+            ],
+            "parcel_bottom_left": [
+              358,
+              455.5
+            ],
+            "parcel_bottom_right": [
+              476.5,
+              449
+            ],
+            "parcel_bottom": [
+              417,
+              452.5
+            ],
+            "work": [
+              417,
+              452.5
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                295,
+                350
+              ],
+              [
+                505,
+                350
+              ],
+              [
+                505,
+                467.5
+              ],
+              [
+                295,
+                467.5
+              ]
+            ],
+            [
+              [
+                202.5,
+                270
+              ],
+              [
+                240,
+                270
+              ],
+              [
+                275,
+                325
+              ],
+              [
+                295,
+                360
+              ],
+              [
+                315,
+                385
+              ],
+              [
+                380,
+                400
+              ],
+              [
+                380,
+                465
+              ],
+              [
+                300,
+                475
+              ],
+              [
+                250,
+                435
+              ],
+              [
+                220,
+                390
+              ]
+            ],
+            [
+              [
+                390,
+                285
+              ],
+              [
+                425,
+                285
+              ],
+              [
+                445,
+                330
+              ],
+              [
+                475,
+                352.5
+              ],
+              [
+                490,
+                390
+              ],
+              [
+                450,
+                397.5
+              ],
+              [
+                400,
+                365
+              ]
+            ]
+          ],
+          "contact": "behind_counter",
+          "stature_ratio": 1,
+          "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+          "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+        },
+        "seryeon": {
+          "file": "assets/room13-pixel-acting-seryeon.webp",
+          "crop": [
+            596,
+            514,
+            385,
+            461
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "clipboard",
+          "foot": [
+            192,
+            460
+          ],
+          "head": [
+            179,
+            0,
+            182,
+            201
+          ],
+          "hand": [
+            321,
+            181
+          ]
+        },
+        "resident_momo": {
+          "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+          "crop": [
+            93,
+            1,
+            354,
+            765
+          ],
+          "nearest": true,
+          "foot": [
+            192,
+            761
+          ],
+          "head": [
+            57,
+            5,
+            210,
+            150
+          ],
+          "contact": "standing",
+          "reviewed": true,
+          "map_action": true,
+          "stature_ratio": 1,
+          "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b"
+        }
+      },
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "post"
+      },
+      "clicked": "resident_sling",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "post-12-1-False-0",
+      "actors": [
+        {
+          "person": "resident_ppul",
+          "pose": "neutral",
+          "x": 886,
+          "y": 344,
+          "width": 169,
+          "height": 248,
+          "rect": [
+            886,
+            344,
+            169,
+            248
+          ],
+          "depth": 592,
+          "occlusion": [
+            [
+              366,
+              552
+            ],
+            [
+              1030,
+              466
+            ],
+            [
+              1030,
+              392
+            ],
+            [
+              1279,
+              392
+            ],
+            [
+              1279,
+              720
+            ],
+            [
+              366,
+              720
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            757,
+            632,
+            332,
+            "counter"
+          ],
+          "activity": "촌장은 남은 몫을 세다가 손을 멈췄다."
+        },
+        {
+          "person": "resident_momo",
+          "pose": "living_lampnumber",
+          "x": 540,
+          "y": 368,
+          "width": 110,
+          "height": 238,
+          "rect": [
+            540,
+            368,
+            110,
+            238
+          ],
+          "depth": 606,
+          "occlusion": [
+            [
+              366,
+              552
+            ],
+            [
+              1030,
+              466
+            ],
+            [
+              1030,
+              392
+            ],
+            [
+              1279,
+              392
+            ],
+            [
+              1279,
+              720
+            ],
+            [
+              366,
+              720
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            580,
+            646,
+            318,
+            "counter"
+          ],
+          "activity": "모모는 전시품을 바닥에서 올리고 자리를 비웠다."
+        },
+        {
+          "person": "resident_librarian",
+          "pose": "map27_po_2",
+          "x": 319,
+          "y": 358,
+          "width": 200,
+          "height": 300,
+          "rect": [
+            319,
+            358,
+            200,
+            300
+          ],
+          "depth": 658,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "종이를 펼쳐 말린다.",
+          "map27_occlusion": [
+            [
+              [
+                366,
+                552
+              ],
+              [
+                1030,
+                466
+              ],
+              [
+                1030,
+                392
+              ],
+              [
+                1279,
+                392
+              ],
+              [
+                1279,
+                720
+              ],
+              [
+                366,
+                720
+              ]
+            ]
+          ],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_sling",
+          "pose": "map27_po_1",
+          "x": 643,
+          "y": 369,
+          "width": 193,
+          "height": 290,
+          "rect": [
+            643,
+            369,
+            193,
+            290
+          ],
+          "depth": 659,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "소포를 창구에 내려놓는다.",
+          "map27_occlusion": [
+            [
+              [
+                365,
+                552
+              ],
+              [
+                620,
+                520
+              ],
+              [
+                840,
+                493
+              ],
+              [
+                1030,
+                460
+              ],
+              [
+                1280,
+                455
+              ],
+              [
+                1280,
+                720
+              ],
+              [
+                365,
+                720
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                754.3932291666666,
+                501.16145833333337
+              ],
+              [
+                833.6901041666667,
+                501.16145833333337
+              ],
+              [
+                833.6901041666667,
+                545.5299479166667
+              ],
+              [
+                754.3932291666666,
+                545.5299479166667
+              ]
+            ],
+            [
+              [
+                719.46484375,
+                470.953125
+              ],
+              [
+                733.625,
+                470.953125
+              ],
+              [
+                746.8411458333334,
+                491.7213541666667
+              ],
+              [
+                754.3932291666666,
+                504.9375
+              ],
+              [
+                761.9453125,
+                514.3776041666667
+              ],
+              [
+                786.4895833333334,
+                520.0416666666667
+              ],
+              [
+                786.4895833333334,
+                544.5859375
+              ],
+              [
+                756.28125,
+                548.3619791666667
+              ],
+              [
+                737.4010416666666,
+                533.2578125
+              ],
+              [
+                726.0729166666666,
+                516.265625
+              ]
+            ],
+            [
+              [
+                790.265625,
+                476.6171875
+              ],
+              [
+                803.4817708333334,
+                476.6171875
+              ],
+              [
+                811.0338541666667,
+                493.609375
+              ],
+              [
+                822.3619791666667,
+                502.10546875
+              ],
+              [
+                828.0260416666667,
+                516.265625
+              ],
+              [
+                812.921875,
+                519.09765625
+              ],
+              [
+                794.0416666666667,
+                506.82552083333337
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "seryeon",
+          "pose": "chair_read",
+          "x": 10,
+          "y": 310,
+          "width": 310,
+          "height": 364,
+          "rect": [
+            10,
+            310,
+            310,
+            364
+          ],
+          "depth": 674,
+          "occlusion": [
+            [
+              188,
+              408
+            ],
+            [
+              317,
+              416
+            ],
+            [
+              324,
+              583
+            ],
+            [
+              184,
+              577
+            ]
+          ],
+          "contact": "background_chair",
+          "slot": null,
+          "activity": "우편 담당자는 묶음을 작은 것부터 모았다."
+        }
+      ],
+      "offset": 0,
+      "hits": [
+        {
+          "person": "resident_ppul",
+          "point": [
+            981,
+            397
+          ],
+          "actions": [
+            "('person', 'resident_ppul')"
+          ]
+        },
+        {
+          "person": "resident_momo",
+          "point": [
+            590,
+            392
+          ],
+          "actions": [
+            "('person', 'resident_momo')"
+          ]
+        },
+        {
+          "person": "resident_librarian",
+          "point": [
+            405,
+            399
+          ],
+          "actions": [
+            "('person', 'resident_librarian')"
+          ]
+        },
+        {
+          "person": "resident_sling",
+          "point": [
+            751,
+            416
+          ],
+          "actions": [
+            "('person', 'resident_sling')"
+          ]
+        },
+        {
+          "person": "seryeon",
+          "point": [
+            163,
+            373
+          ],
+          "actions": [
+            "('person', 'seryeon')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_ppul": {
+          "file": "assets/room13-pixel-acting-resident_ppul.webp",
+          "crop": [
+            89,
+            10,
+            333,
+            489
+          ],
+          "nearest": true,
+          "foot": [
+            166,
+            485
+          ],
+          "facing": "right",
+          "contact": "standing",
+          "head": [
+            52,
+            0,
+            273,
+            210
+          ],
+          "reviewed": true,
+          "posture": "standing"
+        },
+        "resident_momo": {
+          "file": "assets/room13-action-resident_momo-living_lampnumber.webp",
+          "crop": [
+            93,
+            1,
+            354,
+            765
+          ],
+          "nearest": true,
+          "foot": [
+            192,
+            761
+          ],
+          "head": [
+            57,
+            5,
+            210,
+            150
+          ],
+          "contact": "standing",
+          "reviewed": true,
+          "map_action": true,
+          "stature_ratio": 1,
+          "source_sha256": "5319857cfa25aee94795afd3027f4dadbb3796623c0a47360b3d545b4c94d61b"
+        },
+        "resident_librarian": {
+          "file": "assets/map-action27/PO-2--resident_librarian.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            134.656,
+            27.647999999999996,
+            173.05599999999998,
+            158.976
+          ],
+          "foot": [
+            296.96,
+            748.8
+          ],
+          "anchors": {
+            "foot": [
+              296.96,
+              748.8
+            ],
+            "foot_left": [
+              222.72,
+              748.8
+            ],
+            "foot_right": [
+              363.52,
+              744.96
+            ],
+            "hand_left": [
+              320,
+              268.79999999999995
+            ],
+            "hand_right": [
+              455.68,
+              188.16
+            ],
+            "prop_support": [
+              410.624,
+              280.32
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "5fdf72dbf96f1dedff609e7a293f961e72245896dd0890013dd3956859752c94",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_sling": {
+          "file": "assets/map-action27/PO-1--resident_sling.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            164,
+            13.5,
+            246.5,
+            225
+          ],
+          "foot": [
+            308.5,
+            754.5
+          ],
+          "anchors": {
+            "foot_left": [
+              191.5,
+              754.5
+            ],
+            "foot_right": [
+              425,
+              749
+            ],
+            "foot": [
+              308.5,
+              754.5
+            ],
+            "hand_parcel_left": [
+              349,
+              429.5
+            ],
+            "hand_parcel_right": [
+              481.5,
+              420
+            ],
+            "parcel_bottom_left": [
+              358,
+              455.5
+            ],
+            "parcel_bottom_right": [
+              476.5,
+              449
+            ],
+            "parcel_bottom": [
+              417,
+              452.5
+            ],
+            "work": [
+              417,
+              452.5
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                295,
+                350
+              ],
+              [
+                505,
+                350
+              ],
+              [
+                505,
+                467.5
+              ],
+              [
+                295,
+                467.5
+              ]
+            ],
+            [
+              [
+                202.5,
+                270
+              ],
+              [
+                240,
+                270
+              ],
+              [
+                275,
+                325
+              ],
+              [
+                295,
+                360
+              ],
+              [
+                315,
+                385
+              ],
+              [
+                380,
+                400
+              ],
+              [
+                380,
+                465
+              ],
+              [
+                300,
+                475
+              ],
+              [
+                250,
+                435
+              ],
+              [
+                220,
+                390
+              ]
+            ],
+            [
+              [
+                390,
+                285
+              ],
+              [
+                425,
+                285
+              ],
+              [
+                445,
+                330
+              ],
+              [
+                475,
+                352.5
+              ],
+              [
+                490,
+                390
+              ],
+              [
+                450,
+                397.5
+              ],
+              [
+                400,
+                365
+              ]
+            ]
+          ],
+          "contact": "behind_counter",
+          "stature_ratio": 1,
+          "source_sha256": "ddd164dae71ffde0a52e21342c2af26d90b0c2df36cf2a9355da90bcc78310a2",
+          "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+        },
+        "seryeon": {
+          "file": "assets/room13-pixel-acting-seryeon-chair.webp",
+          "crop": [
+            210,
+            20,
+            716,
+            840
+          ],
+          "nearest": true,
+          "foot": [
+            187,
+            830
+          ],
+          "seat": [
+            380,
+            581
+          ],
+          "hand": [
+            216,
+            354
+          ],
+          "head": [
+            170,
+            0,
+            370,
+            292
+          ],
+          "facing": "rear_left",
+          "contact": "background_chair",
+          "action_ko": "창가 의자에 앉아 편지를 읽는다."
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 1,
+        "location": "post"
+      },
+      "clicked": "resident_sling",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "clinic-12-0-False-550",
+      "actors": [
+        {
+          "person": "resident_piko",
+          "pose": "map27_cl_1",
+          "x": 1075,
+          "y": 263,
+          "width": 160,
+          "height": 240,
+          "rect": [
+            1075,
+            263,
+            160,
+            240
+          ],
+          "depth": 503,
+          "occlusion": [],
+          "contact": "background_bed",
+          "slot": null,
+          "activity": "침대 가장자리에 앉아 담요를 여민다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_seori",
+          "pose": "inspect_paper_threequarter_front",
+          "x": 1571,
+          "y": 355,
+          "width": 207,
+          "height": 303,
+          "rect": [
+            1571,
+            355,
+            207,
+            303
+          ],
+          "depth": 654,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": null,
+          "activity": "환자 쪽으로 서서 확인할 서류를 살펴본다."
+        }
+      ],
+      "offset": 550,
+      "hits": [
+        {
+          "person": "resident_piko",
+          "point": [
+            606,
+            295
+          ],
+          "actions": [
+            "('person', 'resident_piko')"
+          ]
+        },
+        {
+          "person": "resident_seori",
+          "point": [
+            1130,
+            409
+          ],
+          "actions": [
+            "('person', 'resident_seori')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_piko": {
+          "file": "assets/map-action27/CL-1--resident_piko.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            136.5,
+            6.5,
+            250,
+            194.5
+          ],
+          "foot": [
+            406.5,
+            731
+          ],
+          "anchors": {
+            "head_center": [
+              285,
+              110.5
+            ],
+            "foot_left": [
+              345.5,
+              731
+            ],
+            "foot_right": [
+              468,
+              727.5
+            ],
+            "foot": [
+              406.5,
+              731
+            ],
+            "buttock": [
+              238.5,
+              465.5
+            ],
+            "seat": [
+              238.5,
+              465.5
+            ],
+            "hand_left": [
+              255,
+              264
+            ],
+            "hand_right": [
+              359,
+              300
+            ],
+            "blanket_left_grip": [
+              241,
+              238
+            ],
+            "blanket_right_grip": [
+              348,
+              280
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "background_bed",
+          "stature_ratio": 0.8,
+          "source_sha256": "6070b407f29748be55d9c4ccff92ba27df242c2b0a8b24d461d1a4847424c4f5",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_seori": {
+          "file": "assets/map-action27/seori-threequarter-review.webp",
+          "crop": [
+            0,
+            0,
+            526,
+            768
+          ],
+          "foot": [
+            319.45515911282547,
+            754.3218997361478
+          ],
+          "anchors": {
+            "eyes_left": [
+              215.16393442622953,
+              170.72295514511876
+            ],
+            "eyes_right": [
+              265.79074252651884,
+              170.72295514511876
+            ],
+            "gaze_target": [
+              170.61234329797495,
+              312.5699208443272
+            ],
+            "hand_paper_side": [
+              143.27386692381873,
+              335.87335092348286
+            ],
+            "hand_paper_bottom": [
+              239.4648023143684,
+              347.5250659630607
+            ],
+            "paper_top": [
+              160.48698167791707,
+              275.08179419525067
+            ],
+            "paper_bottom": [
+              188.3317261330762,
+              355.12401055408975
+            ],
+            "foot_left": [
+              228.83317261330762,
+              735.5778364116095
+            ],
+            "foot_right": [
+              410.0771456123433,
+              754.3218997361478
+            ],
+            "foot": [
+              319.45515911282547,
+              754.3218997361478
+            ]
+          },
+          "head": [
+            141.24879459980716,
+            12.158311345646439,
+            272.87849566055934,
+            253.80474934036943
+          ],
+          "contact": "self-contained",
+          "facing": "front-left-threequarter",
+          "nearest": true,
+          "source_sha256": "761b7930193aecdce0ab86fb8788ebf6e900171d229678b7d5fee8d1fcc11155",
+          "source_commit": "12479638c1964c20325192a4514254329c9bd4fb"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 0,
+        "location": "clinic"
+      },
+      "clicked": "resident_piko",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "clinic-12-1-False-550",
+      "actors": [
+        {
+          "person": "resident_piko",
+          "pose": "map27_cl_1",
+          "x": 1075,
+          "y": 263,
+          "width": 160,
+          "height": 240,
+          "rect": [
+            1075,
+            263,
+            160,
+            240
+          ],
+          "depth": 503,
+          "occlusion": [],
+          "contact": "background_bed",
+          "slot": null,
+          "activity": "침대 가장자리에 앉아 담요를 여민다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_solbang",
+          "pose": "neutral",
+          "x": 1453,
+          "y": 437,
+          "width": 168,
+          "height": 253,
+          "rect": [
+            1453,
+            437,
+            168,
+            253
+          ],
+          "depth": 690,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1538,
+            689,
+            253,
+            "floor"
+          ],
+          "activity": "진료소 선반에 약초 다발을 채운다."
+        }
+      ],
+      "offset": 550,
+      "hits": [
+        {
+          "person": "resident_piko",
+          "point": [
+            606,
+            295
+          ],
+          "actions": [
+            "('person', 'resident_piko')"
+          ]
+        },
+        {
+          "person": "resident_solbang",
+          "point": [
+            979,
+            481
+          ],
+          "actions": [
+            "('person', 'resident_solbang')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_piko": {
+          "file": "assets/map-action27/CL-1--resident_piko.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            136.5,
+            6.5,
+            250,
+            194.5
+          ],
+          "foot": [
+            406.5,
+            731
+          ],
+          "anchors": {
+            "head_center": [
+              285,
+              110.5
+            ],
+            "foot_left": [
+              345.5,
+              731
+            ],
+            "foot_right": [
+              468,
+              727.5
+            ],
+            "foot": [
+              406.5,
+              731
+            ],
+            "buttock": [
+              238.5,
+              465.5
+            ],
+            "seat": [
+              238.5,
+              465.5
+            ],
+            "hand_left": [
+              255,
+              264
+            ],
+            "hand_right": [
+              359,
+              300
+            ],
+            "blanket_left_grip": [
+              241,
+              238
+            ],
+            "blanket_right_grip": [
+              348,
+              280
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "background_bed",
+          "stature_ratio": 0.8,
+          "source_sha256": "6070b407f29748be55d9c4ccff92ba27df242c2b0a8b24d461d1a4847424c4f5",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_ubak": {
+          "file": "assets/room13-pixel-acting-ubak.webp",
+          "crop": [
+            539,
+            558,
+            441,
+            416
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              220,
+              412
+            ]
+          },
+          "action_ko": "계측기 바늘과 종이 눈금을 맞춘다.",
+          "contact": "self-contained",
+          "head": [
+            40,
+            0,
+            401,
+            216
+          ],
+          "facing": "right-profile"
+        },
+        "resident_solbang": {
+          "file": "assets/solbang-chinchilla-map/neutral.webp",
+          "crop": [
+            0,
+            0,
+            280,
+            420
+          ],
+          "foot": [
+            140,
+            418
+          ],
+          "head": [
+            47,
+            0,
+            161,
+            148
+          ],
+          "nearest": true,
+          "contact": "standing",
+          "reviewed": true,
+          "source_sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd",
+          "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 1,
+        "location": "clinic"
+      },
+      "clicked": "resident_piko",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "room13-2-0-False-520",
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "action_1",
+          "x": 1000,
+          "y": 226,
+          "width": 189,
+          "height": 175,
+          "rect": [
+            1000,
+            226,
+            189,
+            175
+          ],
+          "depth": 510,
+          "occlusion": [],
+          "contact": "floor_sit",
+          "slot": null,
+          "activity": "침대에서 책 읽는 중"
+        }
+      ],
+      "offset": 520,
+      "hits": [
+        {
+          "person": "daram",
+          "point": [
+            591,
+            278
+          ],
+          "actions": [
+            "('person', 'daram')"
+          ]
+        }
+      ],
+      "specs": {
+        "daram": {
+          "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+          "crop": [
+            608,
+            557,
+            461,
+            426
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "floor_sit",
+          "foot": [
+            230,
+            425
+          ],
+          "head": [
+            141,
+            0,
+            261,
+            254
+          ],
+          "seat": [
+            291,
+            380
+          ],
+          "reviewed": true,
+          "source_kind": "world_family_palette_teeth_revision"
+        }
+      },
+      "room": {
+        "day": 2,
+        "period": 0,
+        "location": "room13"
+      },
+      "clicked": "daram",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "guestroom-12-0-False-0",
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "action_1",
+          "x": 754,
+          "y": 206,
+          "width": 199,
+          "height": 184,
+          "rect": [
+            754,
+            206,
+            199,
+            184
+          ],
+          "depth": 500,
+          "occlusion": [],
+          "contact": "floor_sit",
+          "slot": null,
+          "activity": "침대에서 책 읽는 중"
+        }
+      ],
+      "offset": 0,
+      "hits": [
+        {
+          "person": "daram",
+          "point": [
+            871,
+            260
+          ],
+          "actions": [
+            "('person', 'daram')"
+          ]
+        }
+      ],
+      "specs": {
+        "daram": {
+          "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+          "crop": [
+            608,
+            557,
+            461,
+            426
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "floor_sit",
+          "foot": [
+            230,
+            425
+          ],
+          "head": [
+            141,
+            0,
+            261,
+            254
+          ],
+          "seat": [
+            291,
+            380
+          ],
+          "reviewed": true,
+          "source_kind": "world_family_palette_teeth_revision"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 0,
+        "location": "guestroom"
+      },
+      "clicked": "daram",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "square-2-1-False-640",
+      "actors": [
+        {
+          "person": "resident_sling",
+          "pose": "activity",
+          "x": 1281,
+          "y": 294,
+          "width": 178,
+          "height": 142,
+          "rect": [
+            1281,
+            294,
+            178,
+            142
+          ],
+          "depth": 520,
+          "occlusion": [],
+          "contact": "crouching",
+          "slot": null,
+          "activity": "슬링은 배달할 봉투와 돌아온 봉투를 나눴다.",
+          "ground_depth": 520,
+          "elevation": 86
+        },
+        {
+          "person": "resident_guldol",
+          "pose": "neutral",
+          "x": 644,
+          "y": 362,
+          "width": 123,
+          "height": 219,
+          "rect": [
+            644,
+            362,
+            123,
+            219
+          ],
+          "depth": 581,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            710,
+            580,
+            220,
+            "floor"
+          ],
+          "activity": "광장의 돌 앞에 서서 오래 귀를 댄다."
+        },
+        {
+          "person": "resident_piko",
+          "pose": "map27_sq_2",
+          "x": 947,
+          "y": 369,
+          "width": 147,
+          "height": 220,
+          "rect": [
+            947,
+            369,
+            147,
+            220
+          ],
+          "depth": 589,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "액자 그림을 들어 보인다.",
+          "map27_occlusion": [
+            [
+              [
+                870,
+                545
+              ],
+              [
+                900,
+                520
+              ],
+              [
+                1000,
+                515
+              ],
+              [
+                1060,
+                540
+              ],
+              [
+                1065,
+                605
+              ],
+              [
+                870,
+                605
+              ]
+            ]
+          ],
+          "map27_keepouts": []
+        },
+        {
+          "person": "doto",
+          "pose": "action_1",
+          "x": 851,
+          "y": 375,
+          "width": 106,
+          "height": 245,
+          "rect": [
+            851,
+            375,
+            106,
+            245
+          ],
+          "depth": 620,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+        },
+        {
+          "person": "resident_somi",
+          "pose": "living_bootice",
+          "x": 1569,
+          "y": 478,
+          "width": 260,
+          "height": 229,
+          "rect": [
+            1569,
+            478,
+            260,
+            229
+          ],
+          "depth": 707,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            1700,
+            707,
+            269,
+            "floor"
+          ],
+          "activity": "솜이는 구두 밑창을 문지르고 반대쪽 발을 들었다."
+        }
+      ],
+      "offset": 640,
+      "hits": [
+        {
+          "person": "resident_sling",
+          "point": [
+            726,
+            336
+          ],
+          "actions": [
+            "('person', 'resident_sling')"
+          ]
+        },
+        {
+          "person": "resident_guldol",
+          "point": [
+            61,
+            394
+          ],
+          "actions": [
+            "('person', 'resident_guldol')"
+          ]
+        },
+        {
+          "person": "resident_piko",
+          "point": [
+            368,
+            401
+          ],
+          "actions": [
+            "('person', 'resident_piko')"
+          ]
+        },
+        {
+          "person": "doto",
+          "point": [
+            256,
+            411
+          ],
+          "actions": [
+            "('person', 'doto')"
+          ]
+        },
+        {
+          "person": "resident_somi",
+          "point": [
+            1085,
+            541
+          ],
+          "actions": [
+            "('person', 'resident_somi')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_seol": {
+          "file": "assets/room13-action-resident_seol-living_bellrope.webp",
+          "crop": [
+            61,
+            2,
+            423,
+            766
+          ],
+          "nearest": true,
+          "foot": [
+            211,
+            762
+          ],
+          "head": [
+            74,
+            4,
+            205,
+            150
+          ],
+          "contact": "standing",
+          "reviewed": true,
+          "map_action": true,
+          "stature_ratio": 1,
+          "source_sha256": "3d8419c6875d085e71303bb7b8f65d850d6c79883778f7fd88b08de58b412821"
+        },
+        "resident_sling": {
+          "file": "assets/room13-pixel-acting-resident_sling.webp",
+          "crop": [
+            540,
+            581,
+            497,
+            396
+          ],
+          "nearest": true,
+          "foot": [
+            248,
+            392
+          ],
+          "facing": "right",
+          "contact": "crouching",
+          "head": [
+            11,
+            0,
+            456,
+            238
+          ],
+          "reviewed": true,
+          "posture": "crouching"
+        },
+        "resident_dalgeurak": {
+          "file": "assets/map-action27/SQ-1--resident_dalgeurak.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            175.616,
+            2.3040000000000003,
+            186.36799999999997,
+            211.96800000000002
+          ],
+          "foot": [
+            299.52,
+            752.64
+          ],
+          "anchors": {
+            "foot": [
+              299.52,
+              752.64
+            ],
+            "foot_left": [
+              176.128,
+              754.944
+            ],
+            "foot_right": [
+              411.136,
+              742.656
+            ],
+            "hand_left": [
+              215.04,
+              254.20800000000003
+            ],
+            "hand_right": [
+              459.264,
+              273.408
+            ],
+            "prop_support": [
+              374.784,
+              380.15999999999997
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                100,
+                205
+              ],
+              [
+                502.5,
+                205
+              ],
+              [
+                502.5,
+                415
+              ],
+              [
+                100,
+                415
+              ]
+            ]
+          ],
+          "contact": "behind_counter",
+          "stature_ratio": 0.96,
+          "source_sha256": "1308dc8f845854d04ed7fb0728f4352f3eac6e90cc57b222493c862e6c4a66fd",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_guldol": {
+          "file": "assets/room13-role-resident_guldol-neutral.webp",
+          "crop": [
+            38,
+            8,
+            226,
+            402
+          ],
+          "nearest": true,
+          "foot": [
+            120,
+            398
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            34,
+            4,
+            144,
+            110
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "role_connect": "guldol-distinct-v1-approved"
+        },
+        "resident_piko": {
+          "file": "assets/map-action27/SQ-2--resident_piko.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            140,
+            45,
+            150,
+            135
+          ],
+          "foot": [
+            253.44,
+            752.64
+          ],
+          "anchors": {
+            "foot_left": [
+              186.88,
+              752.64
+            ],
+            "foot_right": [
+              320,
+              751.872
+            ],
+            "hand_frame_left": [
+              248.832,
+              274.176
+            ],
+            "hand_frame_right": [
+              372.224,
+              268.79999999999995
+            ],
+            "frame_center": [
+              305.152,
+              241.92000000000002
+            ],
+            "foot": [
+              253.44,
+              752.64
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "behind_counter",
+          "stature_ratio": 1,
+          "source_sha256": "7208a0b54f8bd07e3a4bfc0a41e19d15dcb256e627eae71f30cd8553d240f5f5",
+          "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+        },
+        "doto": {
+          "file": "assets/room13-role-doto-batch-action_1-v1.webp",
+          "crop": [
+            198,
+            10,
+            659,
+            1518
+          ],
+          "foot": [
+            329.5,
+            1518
+          ],
+          "head": [
+            98,
+            0,
+            362,
+            455
+          ],
+          "nearest": true,
+          "native_detail": true,
+          "contact": "standing",
+          "stature_ratio": 1,
+          "posture": "standing",
+          "source_sha256": "15436edeb1f6bad390fd7300fa58460a7a4c81aec234bc96fac88c8c2c50aec1",
+          "map_action": true,
+          "reviewed": true
+        },
+        "resident_lamplighter": {
+          "file": "assets/room13-pixel-acting-lamplighter.webp",
+          "crop": [
+            653,
+            514,
+            317,
+            483
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              158,
+              479
+            ]
+          },
+          "action_ko": "등의 점검함을 닫고 걸쇠를 확인한다.",
+          "contact": "self-contained",
+          "head": [
+            22,
+            0,
+            295,
+            256
+          ],
+          "facing": "right-profile"
+        },
+        "resident_somi": {
+          "file": "assets/room13-pixel-acting-somi.webp",
+          "crop": [
+            560,
+            564,
+            428,
+            378
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              214,
+              374
+            ]
+          },
+          "action_ko": "구두 밑창에 낀 얼음을 긁는다.",
+          "contact": "self-contained",
+          "head": [
+            90,
+            0,
+            338,
+            208
+          ],
+          "facing": "right-profile"
+        }
+      },
+      "room": {
+        "day": 2,
+        "period": 1,
+        "location": "square"
+      },
+      "clicked": "resident_sling",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "room13-2-1-False-520",
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "action_2",
+          "x": 1069,
+          "y": 368,
+          "width": 242,
+          "height": 253,
+          "rect": [
+            1069,
+            368,
+            242,
+            253
+          ],
+          "depth": 620,
+          "occlusion": [],
+          "contact": "kneeling",
+          "slot": null,
+          "activity": "깔개에 앉아 그림 그리는 중"
+        }
+      ],
+      "offset": 520,
+      "hits": [
+        {
+          "person": "daram",
+          "point": [
+            700,
+            425
+          ],
+          "actions": [
+            "('person', 'daram')"
+          ]
+        }
+      ],
+      "specs": {
+        "daram": {
+          "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+          "crop": [
+            1076,
+            528,
+            442,
+            462
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "kneeling",
+          "foot": [
+            221,
+            461
+          ],
+          "head": [
+            146,
+            0,
+            263,
+            210
+          ],
+          "hand": [
+            358,
+            239
+          ],
+          "reviewed": true,
+          "source_kind": "world_family_palette_teeth_revision"
+        }
+      },
+      "room": {
+        "day": 2,
+        "period": 1,
+        "location": "room13"
+      },
+      "clicked": "daram",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "room13-2-2-False-520",
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "inspect_floor",
+          "x": 1021,
+          "y": 433,
+          "width": 237,
+          "height": 189,
+          "rect": [
+            1021,
+            433,
+            237,
+            189
+          ],
+          "depth": 622,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "침대 곁을 둘러보는 중"
+        }
+      ],
+      "offset": 520,
+      "hits": [
+        {
+          "person": "daram",
+          "point": [
+            672,
+            502
+          ],
+          "actions": [
+            "('person', 'daram')"
+          ]
+        }
+      ],
+      "specs": {
+        "daram": {
+          "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+          "crop": [
+            547,
+            137,
+            478,
+            381
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "standing",
+          "foot": [
+            239,
+            380
+          ],
+          "head": [
+            213,
+            24,
+            265,
+            232
+          ],
+          "reviewed": true,
+          "source_kind": "world_family_palette_teeth_revision"
+        }
+      },
+      "room": {
+        "day": 2,
+        "period": 2,
+        "location": "room13"
+      },
+      "clicked": "daram",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "guestroom-12-1-False-0",
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "action_2",
+          "x": 754,
+          "y": 357,
+          "width": 253,
+          "height": 264,
+          "rect": [
+            754,
+            357,
+            253,
+            264
+          ],
+          "depth": 620,
+          "occlusion": [],
+          "contact": "kneeling",
+          "slot": null,
+          "activity": "깔개에 앉아 그림 그리는 중"
+        }
+      ],
+      "offset": 0,
+      "hits": [
+        {
+          "person": "daram",
+          "point": [
+            912,
+            417
+          ],
+          "actions": [
+            "('person', 'daram')"
+          ]
+        }
+      ],
+      "specs": {
+        "daram": {
+          "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+          "crop": [
+            1076,
+            528,
+            442,
+            462
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "kneeling",
+          "foot": [
+            221,
+            461
+          ],
+          "head": [
+            146,
+            0,
+            263,
+            210
+          ],
+          "hand": [
+            358,
+            239
+          ],
+          "reviewed": true,
+          "source_kind": "world_family_palette_teeth_revision"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 1,
+        "location": "guestroom"
+      },
+      "clicked": "daram",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "guestroom-12-2-False-0",
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "inspect_floor",
+          "x": 741,
+          "y": 426,
+          "width": 247,
+          "height": 197,
+          "rect": [
+            741,
+            426,
+            247,
+            197
+          ],
+          "depth": 622,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "침대 곁을 둘러보는 중"
+        }
+      ],
+      "offset": 0,
+      "hits": [
+        {
+          "person": "daram",
+          "point": [
+            919,
+            498
+          ],
+          "actions": [
+            "('person', 'daram')"
+          ]
+        }
+      ],
+      "specs": {
+        "daram": {
+          "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+          "crop": [
+            547,
+            137,
+            478,
+            381
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "standing",
+          "foot": [
+            239,
+            380
+          ],
+          "head": [
+            213,
+            24,
+            265,
+            232
+          ],
+          "reviewed": true,
+          "source_kind": "world_family_palette_teeth_revision"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 2,
+        "location": "guestroom"
+      },
+      "clicked": "daram",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "room13-12-0-False-520",
+      "actors": [
+        {
+          "person": "daram",
+          "pose": "action_1",
+          "x": 1136,
+          "y": 427,
+          "width": 209,
+          "height": 193,
+          "rect": [
+            1136,
+            427,
+            209,
+            193
+          ],
+          "depth": 620,
+          "occlusion": [],
+          "contact": "floor_sit",
+          "slot": null,
+          "activity": "깔개에 앉아 쉬는 중"
+        }
+      ],
+      "offset": 520,
+      "hits": [
+        {
+          "person": "daram",
+          "point": [
+            739,
+            484
+          ],
+          "actions": [
+            "('person', 'daram')"
+          ]
+        }
+      ],
+      "specs": {
+        "daram": {
+          "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+          "crop": [
+            608,
+            557,
+            461,
+            426
+          ],
+          "nearest": true,
+          "facing": "right",
+          "contact": "floor_sit",
+          "foot": [
+            230,
+            425
+          ],
+          "head": [
+            141,
+            0,
+            261,
+            254
+          ],
+          "seat": [
+            291,
+            380
+          ],
+          "reviewed": true,
+          "source_kind": "world_family_palette_teeth_revision"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 0,
+        "location": "room13"
+      },
+      "clicked": "daram",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "school-12-0-False-0",
+      "actors": [
+        {
+          "person": "resident_teacher",
+          "pose": "map27_sc_1",
+          "x": 252,
+          "y": 244,
+          "width": 132,
+          "height": 210,
+          "rect": [
+            252,
+            244,
+            132,
+            210
+          ],
+          "depth": 454,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "책을 들고 칠판을 가리킨다.",
+          "map27_occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                339.41739048338366,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                356.68939393939394
+              ],
+              [
+                339.41739048338366,
+                356.68939393939394
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "neutral",
+          "x": 52,
+          "y": 291,
+          "width": 111,
+          "height": 235,
+          "rect": [
+            52,
+            291,
+            111,
+            235
+          ],
+          "depth": 526,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            120,
+            525,
+            235,
+            "class_back"
+          ],
+          "activity": "부엉이 할아버지는 수첩을 가까이 들었다."
+        },
+        {
+          "person": "resident_bori",
+          "pose": "neutral",
+          "x": 353,
+          "y": 296,
+          "width": 216,
+          "height": 240,
+          "rect": [
+            353,
+            296,
+            216,
+            240
+          ],
+          "depth": 536,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            309,
+            535,
+            240,
+            "class_back"
+          ],
+          "activity": "보리는 장작을 나눠 놓고 빈자리를 한참 봤다."
+        }
+      ],
+      "offset": 0,
+      "hits": [
+        {
+          "person": "resident_teacher",
+          "point": [
+            332,
+            278
+          ],
+          "actions": [
+            "('person', 'resident_teacher')"
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "point": [
+            113,
+            328
+          ],
+          "actions": [
+            "('person', 'resident_owlgp')"
+          ]
+        },
+        {
+          "person": "resident_bori",
+          "point": [
+            456,
+            330
+          ],
+          "actions": [
+            "('person', 'resident_bori')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_teacher": {
+          "file": "assets/map-action27/SC-1--resident_teacher.webp",
+          "crop": [
+            0,
+            0,
+            482,
+            768
+          ],
+          "head": [
+            144.29999999999998,
+            15.36,
+            298.21999999999997,
+            222.72
+          ],
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "anchors": {
+            "foot": [
+              283.79,
+              760.32
+            ],
+            "hand_left": [
+              365.56000000000006,
+              314.88
+            ],
+            "hand_right": [
+              57.72,
+              199.68
+            ],
+            "book_grip": [
+              379.99,
+              314.88
+            ],
+            "point_tip": [
+              19.24,
+              161.28
+            ],
+            "cane_ground": [
+              452.14,
+              752.64
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                319.6978851963746,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                412.1212121212121
+              ],
+              [
+                319.6978851963746,
+                412.1212121212121
+              ]
+            ]
+          ],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_owlgp": {
+          "file": "assets/room13-redesign-resident_owlgp.webp",
+          "crop": [
+            76,
+            8,
+            360,
+            758
+          ],
+          "nearest": true,
+          "foot": [
+            219,
+            754
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            84,
+            4,
+            230,
+            235
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "redesign": "owlgp_simple_elder"
+        },
+        "resident_bori": {
+          "file": "assets/room13-canonical-default-resident_bori.webp",
+          "crop": [
+            44,
+            39,
+            544,
+            602
+          ],
+          "nearest": true,
+          "foot": [
+            304,
+            598
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            96,
+            4,
+            329,
+            166
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "role_connect": "canonical48-rev47-aligned"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 0,
+        "location": "school"
+      },
+      "clicked": "resident_teacher",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "994d77601d62622c6b20f0375fca005e1ebc8bf928eef8db17de5c36fe0fe427",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "school-12-2-False-0",
+      "actors": [
+        {
+          "person": "resident_teacher",
+          "pose": "map27_sc_1",
+          "x": 252,
+          "y": 244,
+          "width": 132,
+          "height": 210,
+          "rect": [
+            252,
+            244,
+            132,
+            210
+          ],
+          "depth": 454,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "책을 들고 칠판을 가리킨다.",
+          "map27_occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                339.41739048338366,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                356.68939393939394
+              ],
+              [
+                339.41739048338366,
+                356.68939393939394
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "neutral",
+          "x": 52,
+          "y": 291,
+          "width": 111,
+          "height": 235,
+          "rect": [
+            52,
+            291,
+            111,
+            235
+          ],
+          "depth": 526,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            120,
+            525,
+            235,
+            "class_back"
+          ],
+          "activity": "부엉이 할아버지는 수첩을 가까이 들었다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+        },
+        {
+          "person": "resident_tok",
+          "pose": "neutral",
+          "x": 387,
+          "y": 297,
+          "width": 174,
+          "height": 240,
+          "rect": [
+            387,
+            297,
+            174,
+            240
+          ],
+          "depth": 537,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            309,
+            535,
+            240,
+            "class_back"
+          ],
+          "activity": "톡은 작은 부품의 끝을 집게로 바로잡았다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+        },
+        {
+          "person": "resident_seori",
+          "pose": "living_notes",
+          "x": 550,
+          "y": 313,
+          "width": 156,
+          "height": 227,
+          "rect": [
+            550,
+            313,
+            156,
+            227
+          ],
+          "depth": 540,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "self-contained",
+          "slot": [
+            510,
+            540,
+            240,
+            "class_back"
+          ],
+          "activity": "서리는 종이의 숫자보다 조건을 먼저 읽었다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+        },
+        {
+          "person": "resident_nubi",
+          "pose": "map27_in_1",
+          "x": 299,
+          "y": 431,
+          "width": 177,
+          "height": 266,
+          "rect": [
+            299,
+            431,
+            177,
+            266
+          ],
+          "depth": 697,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "빨래를 접어 바구니에 담는다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "offset": 0,
+      "hits": [
+        {
+          "person": "resident_teacher",
+          "point": [
+            332,
+            278
+          ],
+          "actions": [
+            "('person', 'resident_teacher')"
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "point": [
+            113,
+            328
+          ],
+          "actions": [
+            "('person', 'resident_owlgp')"
+          ]
+        },
+        {
+          "person": "resident_tok",
+          "point": [
+            474,
+            348
+          ],
+          "actions": [
+            "('person', 'resident_tok')"
+          ]
+        },
+        {
+          "person": "resident_seori",
+          "point": [
+            627,
+            359
+          ],
+          "actions": [
+            "('person', 'resident_seori')"
+          ]
+        },
+        {
+          "person": "resident_nubi",
+          "point": [
+            385,
+            464
+          ],
+          "actions": [
+            "('person', 'resident_nubi')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_teacher": {
+          "file": "assets/map-action27/SC-1--resident_teacher.webp",
+          "crop": [
+            0,
+            0,
+            482,
+            768
+          ],
+          "head": [
+            144.29999999999998,
+            15.36,
+            298.21999999999997,
+            222.72
+          ],
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "anchors": {
+            "foot": [
+              283.79,
+              760.32
+            ],
+            "hand_left": [
+              365.56000000000006,
+              314.88
+            ],
+            "hand_right": [
+              57.72,
+              199.68
+            ],
+            "book_grip": [
+              379.99,
+              314.88
+            ],
+            "point_tip": [
+              19.24,
+              161.28
+            ],
+            "cane_ground": [
+              452.14,
+              752.64
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                319.6978851963746,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                412.1212121212121
+              ],
+              [
+                319.6978851963746,
+                412.1212121212121
+              ]
+            ]
+          ],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_owlgp": {
+          "file": "assets/room13-redesign-resident_owlgp.webp",
+          "crop": [
+            76,
+            8,
+            360,
+            758
+          ],
+          "nearest": true,
+          "foot": [
+            219,
+            754
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            84,
+            4,
+            230,
+            235
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "redesign": "owlgp_simple_elder"
+        },
+        "resident_tok": {
+          "file": "assets/room13-pixel-acting-resident_tok.webp",
+          "crop": [
+            105,
+            21,
+            344,
+            474
+          ],
+          "nearest": true,
+          "foot": [
+            172,
+            470
+          ],
+          "facing": "left",
+          "contact": "standing",
+          "head": [
+            1,
+            0,
+            343,
+            204
+          ],
+          "reviewed": true,
+          "posture": "standing"
+        },
+        "resident_seori": {
+          "file": "assets/room13-pixel-acting-seori.webp",
+          "crop": [
+            637,
+            523,
+            328,
+            478
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              164,
+              474
+            ]
+          },
+          "action_ko": "메모 옆에 확인한 사람 이름을 적는다.",
+          "contact": "self-contained",
+          "head": [
+            0,
+            0,
+            328,
+            196
+          ],
+          "facing": "right-profile"
+        },
+        "resident_nubi": {
+          "file": "assets/map-action27/IN-1--resident_nubi.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            128,
+            9.984,
+            243.712,
+            172.79999999999998
+          ],
+          "foot": [
+            290.304,
+            747.264
+          ],
+          "anchors": {
+            "foot": [
+              290.304,
+              747.264
+            ],
+            "foot_left": [
+              205.824,
+              747.264
+            ],
+            "foot_right": [
+              364.032,
+              746.496
+            ],
+            "hand_left": [
+              207.36,
+              357.12
+            ],
+            "hand_right": [
+              375.296,
+              246.52800000000002
+            ],
+            "prop_support": [
+              271.872,
+              371.712
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "a5e7537d7f1bfc9afcebf4f85e3817056d2e8093f0988e12eeb46cb74500f444",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 2,
+        "location": "school"
+      },
+      "clicked": "resident_teacher",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "994d77601d62622c6b20f0375fca005e1ebc8bf928eef8db17de5c36fe0fe427",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "school-12-0-True-0",
+      "actors": [
+        {
+          "person": "resident_teacher",
+          "pose": "map27_sc_1",
+          "x": 252,
+          "y": 244,
+          "width": 132,
+          "height": 210,
+          "rect": [
+            252,
+            244,
+            132,
+            210
+          ],
+          "depth": 454,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "책을 들고 칠판을 가리킨다.",
+          "map27_occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                339.41739048338366,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                307.6363636363636
+              ],
+              [
+                369.88102656092644,
+                356.68939393939394
+              ],
+              [
+                339.41739048338366,
+                356.68939393939394
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "nabi",
+          "pose": "neutral",
+          "x": 41,
+          "y": 290,
+          "width": 157,
+          "height": 235,
+          "rect": [
+            41,
+            290,
+            157,
+            235
+          ],
+          "depth": 525,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            120,
+            525,
+            235,
+            "class_back"
+          ],
+          "activity": "나비는 빈 그릇의 바닥까지 닦았다."
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "neutral",
+          "x": 405,
+          "y": 296,
+          "width": 113,
+          "height": 240,
+          "rect": [
+            405,
+            296,
+            113,
+            240
+          ],
+          "depth": 536,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            309,
+            535,
+            240,
+            "class_back"
+          ],
+          "activity": "부엉이 할아버지는 수첩을 가까이 들었다."
+        },
+        {
+          "person": "resident_bori",
+          "pose": "neutral",
+          "x": 508,
+          "y": 301,
+          "width": 216,
+          "height": 240,
+          "rect": [
+            508,
+            301,
+            216,
+            240
+          ],
+          "depth": 541,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            510,
+            540,
+            240,
+            "class_back"
+          ],
+          "activity": "보리는 장작을 나눠 놓고 빈자리를 한참 봤다."
+        },
+        {
+          "person": "resident_musoe",
+          "pose": "neutral",
+          "x": 1019,
+          "y": 435,
+          "width": 181,
+          "height": 258,
+          "rect": [
+            1019,
+            435,
+            181,
+            258
+          ],
+          "depth": 693,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1110,
+            691,
+            258,
+            "waiting"
+          ],
+          "activity": "무쇠 할아버지는 지도보다 사람들 발을 먼저 봤다."
+        },
+        {
+          "person": "resident_nubi",
+          "pose": "map27_in_1",
+          "x": 299,
+          "y": 431,
+          "width": 177,
+          "height": 266,
+          "rect": [
+            299,
+            431,
+            177,
+            266
+          ],
+          "depth": 697,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "빨래를 접어 바구니에 담는다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_somi",
+          "pose": "neutral",
+          "x": 23,
+          "y": 437,
+          "width": 193,
+          "height": 260,
+          "rect": [
+            23,
+            437,
+            193,
+            260
+          ],
+          "depth": 697,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            120,
+            695,
+            260,
+            "waiting"
+          ],
+          "activity": "솜이는 길보다 신발을 먼저 내려다봤다."
+        }
+      ],
+      "offset": 0,
+      "hits": [
+        {
+          "person": "resident_teacher",
+          "point": [
+            332,
+            278
+          ],
+          "actions": [
+            "('person', 'resident_teacher')"
+          ]
+        },
+        {
+          "person": "resident_tori",
+          "point": [
+            1256,
+            330
+          ],
+          "actions": [
+            "('person', 'resident_tori')"
+          ]
+        },
+        {
+          "person": "nabi",
+          "point": [
+            85,
+            336
+          ],
+          "actions": [
+            "('person', 'nabi')"
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "point": [
+            468,
+            334
+          ],
+          "actions": [
+            "('person', 'resident_owlgp')"
+          ]
+        },
+        {
+          "person": "resident_bori",
+          "point": [
+            611,
+            335
+          ],
+          "actions": [
+            "('person', 'resident_bori')"
+          ]
+        },
+        {
+          "person": "resident_musoe",
+          "point": [
+            1113,
+            491
+          ],
+          "actions": [
+            "('person', 'resident_musoe')"
+          ]
+        },
+        {
+          "person": "resident_nubi",
+          "point": [
+            385,
+            464
+          ],
+          "actions": [
+            "('person', 'resident_nubi')"
+          ]
+        },
+        {
+          "person": "resident_somi",
+          "point": [
+            134,
+            498
+          ],
+          "actions": [
+            "('person', 'resident_somi')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_teacher": {
+          "file": "assets/map-action27/SC-1--resident_teacher.webp",
+          "crop": [
+            0,
+            0,
+            482,
+            768
+          ],
+          "head": [
+            144.29999999999998,
+            15.36,
+            298.21999999999997,
+            222.72
+          ],
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "anchors": {
+            "foot": [
+              283.79,
+              760.32
+            ],
+            "hand_left": [
+              365.56000000000006,
+              314.88
+            ],
+            "hand_right": [
+              57.72,
+              199.68
+            ],
+            "book_grip": [
+              379.99,
+              314.88
+            ],
+            "point_tip": [
+              19.24,
+              161.28
+            ],
+            "cane_ground": [
+              452.14,
+              752.64
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                319.6978851963746,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                412.1212121212121
+              ],
+              [
+                319.6978851963746,
+                412.1212121212121
+              ]
+            ]
+          ],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_tori": {
+          "file": "assets/room13-pixel-acting-resident_tori.webp",
+          "crop": [
+            182,
+            38,
+            215,
+            443
+          ],
+          "nearest": true,
+          "foot": [
+            107,
+            439
+          ],
+          "facing": "right",
+          "contact": "standing",
+          "head": [
+            46,
+            0,
+            169,
+            190
+          ],
+          "reviewed": true,
+          "posture": "standing"
+        },
+        "nabi": {
+          "file": "assets/room13-pixel-acting-nabi.webp",
+          "crop": [
+            137,
+            14,
+            339,
+            505
+          ],
+          "nearest": true,
+          "facing": "left",
+          "contact": "standing",
+          "foot": [
+            169,
+            504
+          ],
+          "head": [
+            0,
+            0,
+            190,
+            201
+          ]
+        },
+        "resident_owlgp": {
+          "file": "assets/room13-redesign-resident_owlgp.webp",
+          "crop": [
+            76,
+            8,
+            360,
+            758
+          ],
+          "nearest": true,
+          "foot": [
+            219,
+            754
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            84,
+            4,
+            230,
+            235
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "redesign": "owlgp_simple_elder"
+        },
+        "resident_bori": {
+          "file": "assets/room13-canonical-default-resident_bori.webp",
+          "crop": [
+            44,
+            39,
+            544,
+            602
+          ],
+          "nearest": true,
+          "foot": [
+            304,
+            598
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            96,
+            4,
+            329,
+            166
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "role_connect": "canonical48-rev47-aligned"
+        },
+        "resident_yeoni": {
+          "file": "assets/room13-redesign-resident_yeoni.webp",
+          "crop": [
+            18,
+            1,
+            449,
+            756
+          ],
+          "nearest": true,
+          "foot": [
+            259,
+            752
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            217,
+            5,
+            220,
+            175
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "redesign": "candidate_fox_town"
+        },
+        "resident_badook": {
+          "file": "assets/room13-pixel-acting-badook.webp",
+          "crop": [
+            50,
+            12,
+            390,
+            499
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              195,
+              495
+            ]
+          },
+          "head": [
+            66,
+            0,
+            324,
+            230
+          ],
+          "facing": "right-threequarter"
+        },
+        "resident_kongi": {
+          "file": "assets/room13-pixel-acting-resident_kongi.webp",
+          "crop": [
+            84,
+            38,
+            327,
+            475
+          ],
+          "nearest": true,
+          "foot": [
+            163,
+            471
+          ],
+          "facing": "left",
+          "contact": "standing",
+          "head": [
+            57,
+            0,
+            261,
+            204
+          ],
+          "reviewed": true,
+          "posture": "standing"
+        },
+        "resident_musoe": {
+          "file": "assets/room13-pixel-acting-musoe.webp",
+          "crop": [
+            63,
+            10,
+            351,
+            500
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              176,
+              496
+            ]
+          },
+          "head": [
+            14,
+            0,
+            337,
+            220
+          ],
+          "facing": "right-threequarter"
+        },
+        "resident_nubi": {
+          "file": "assets/map-action27/IN-1--resident_nubi.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            128,
+            9.984,
+            243.712,
+            172.79999999999998
+          ],
+          "foot": [
+            290.304,
+            747.264
+          ],
+          "anchors": {
+            "foot": [
+              290.304,
+              747.264
+            ],
+            "foot_left": [
+              205.824,
+              747.264
+            ],
+            "foot_right": [
+              364.032,
+              746.496
+            ],
+            "hand_left": [
+              207.36,
+              357.12
+            ],
+            "hand_right": [
+              375.296,
+              246.52800000000002
+            ],
+            "prop_support": [
+              271.872,
+              371.712
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "a5e7537d7f1bfc9afcebf4f85e3817056d2e8093f0988e12eeb46cb74500f444",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_somi": {
+          "file": "assets/room13-pixel-acting-somi.webp",
+          "crop": [
+            47,
+            24,
+            359,
+            483
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              180,
+              479
+            ]
+          },
+          "head": [
+            57,
+            0,
+            302,
+            227
+          ],
+          "facing": "right-threequarter"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 0,
+        "location": "school"
+      },
+      "clicked": "resident_teacher",
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "994d77601d62622c6b20f0375fca005e1ebc8bf928eef8db17de5c36fe0fe427",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    },
+    {
+      "label": "school-12-0-True-520",
+      "actors": [
+        {
+          "person": "resident_tori",
+          "pose": "neutral",
+          "x": 1189,
+          "y": 282,
+          "width": 110,
+          "height": 228,
+          "rect": [
+            1189,
+            282,
+            110,
+            228
+          ],
+          "depth": 510,
+          "occlusion": [
+            [
+              1212,
+              436
+            ],
+            [
+              1327,
+              436
+            ],
+            [
+              1327,
+              542
+            ],
+            [
+              1212,
+              542
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            1365,
+            510,
+            205,
+            "cloak_back"
+          ],
+          "activity": "토리는 자리를 비운 쪽에서 천을 다시 접었다."
+        },
+        {
+          "person": "resident_yeoni",
+          "pose": "neutral",
+          "x": 1442,
+          "y": 341,
+          "width": 145,
+          "height": 244,
+          "rect": [
+            1442,
+            341,
+            145,
+            244
+          ],
+          "depth": 585,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1740,
+            585,
+            233,
+            "waiting"
+          ],
+          "activity": "여니는 접어 둔 천의 안쪽을 만졌다."
+        },
+        {
+          "person": "resident_badook",
+          "pose": "neutral",
+          "x": 1551,
+          "y": 413,
+          "width": 216,
+          "height": 277,
+          "rect": [
+            1551,
+            413,
+            216,
+            277
+          ],
+          "depth": 690,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1660,
+            688,
+            277,
+            "waiting"
+          ],
+          "activity": "바둑이는 옮길 사람과 도착할 쪽을 번갈아 확인했다."
+        },
+        {
+          "person": "resident_kongi",
+          "pose": "neutral",
+          "x": 1307,
+          "y": 423,
+          "width": 185,
+          "height": 269,
+          "rect": [
+            1307,
+            423,
+            185,
+            269
+          ],
+          "depth": 692,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1370,
+            690,
+            269,
+            "waiting"
+          ],
+          "activity": "콩이는 빵 꾸러미를 작은 것부터 모았다."
+        },
+        {
+          "person": "resident_musoe",
+          "pose": "neutral",
+          "x": 1019,
+          "y": 435,
+          "width": 181,
+          "height": 258,
+          "rect": [
+            1019,
+            435,
+            181,
+            258
+          ],
+          "depth": 693,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1110,
+            691,
+            258,
+            "waiting"
+          ],
+          "activity": "무쇠 할아버지는 지도보다 사람들 발을 먼저 봤다."
+        }
+      ],
+      "offset": 520,
+      "hits": [
+        {
+          "person": "resident_tori",
+          "point": [
+            736,
+            330
+          ],
+          "actions": [
+            "('person', 'resident_tori')"
+          ]
+        },
+        {
+          "person": "resident_bori",
+          "point": [
+            91,
+            335
+          ],
+          "actions": [
+            "('person', 'resident_bori')"
+          ]
+        },
+        {
+          "person": "resident_yeoni",
+          "point": [
+            1027,
+            370
+          ],
+          "actions": [
+            "('person', 'resident_yeoni')"
+          ]
+        },
+        {
+          "person": "resident_badook",
+          "point": [
+            1157,
+            476
+          ],
+          "actions": [
+            "('person', 'resident_badook')"
+          ]
+        },
+        {
+          "person": "resident_kongi",
+          "point": [
+            893,
+            480
+          ],
+          "actions": [
+            "('person', 'resident_kongi')"
+          ]
+        },
+        {
+          "person": "resident_musoe",
+          "point": [
+            593,
+            491
+          ],
+          "actions": [
+            "('person', 'resident_musoe')"
+          ]
+        }
+      ],
+      "specs": {
+        "resident_teacher": {
+          "file": "assets/map-action27/SC-1--resident_teacher.webp",
+          "crop": [
+            0,
+            0,
+            482,
+            768
+          ],
+          "head": [
+            144.29999999999998,
+            15.36,
+            298.21999999999997,
+            222.72
+          ],
+          "foot": [
+            283.79,
+            760.32
+          ],
+          "anchors": {
+            "foot": [
+              283.79,
+              760.32
+            ],
+            "hand_left": [
+              365.56000000000006,
+              314.88
+            ],
+            "hand_right": [
+              57.72,
+              199.68
+            ],
+            "book_grip": [
+              379.99,
+              314.88
+            ],
+            "point_tip": [
+              19.24,
+              161.28
+            ],
+            "cane_ground": [
+              452.14,
+              752.64
+            ]
+          },
+          "foreground_parts": [
+            [
+              [
+                319.6978851963746,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                232.72727272727275
+              ],
+              [
+                431.1077542799597,
+                412.1212121212121
+              ],
+              [
+                319.6978851963746,
+                412.1212121212121
+              ]
+            ]
+          ],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_tori": {
+          "file": "assets/room13-pixel-acting-resident_tori.webp",
+          "crop": [
+            182,
+            38,
+            215,
+            443
+          ],
+          "nearest": true,
+          "foot": [
+            107,
+            439
+          ],
+          "facing": "right",
+          "contact": "standing",
+          "head": [
+            46,
+            0,
+            169,
+            190
+          ],
+          "reviewed": true,
+          "posture": "standing"
+        },
+        "nabi": {
+          "file": "assets/room13-pixel-acting-nabi.webp",
+          "crop": [
+            137,
+            14,
+            339,
+            505
+          ],
+          "nearest": true,
+          "facing": "left",
+          "contact": "standing",
+          "foot": [
+            169,
+            504
+          ],
+          "head": [
+            0,
+            0,
+            190,
+            201
+          ]
+        },
+        "resident_owlgp": {
+          "file": "assets/room13-redesign-resident_owlgp.webp",
+          "crop": [
+            76,
+            8,
+            360,
+            758
+          ],
+          "nearest": true,
+          "foot": [
+            219,
+            754
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            84,
+            4,
+            230,
+            235
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "redesign": "owlgp_simple_elder"
+        },
+        "resident_bori": {
+          "file": "assets/room13-canonical-default-resident_bori.webp",
+          "crop": [
+            44,
+            39,
+            544,
+            602
+          ],
+          "nearest": true,
+          "foot": [
+            304,
+            598
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            96,
+            4,
+            329,
+            166
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "role_connect": "canonical48-rev47-aligned"
+        },
+        "resident_yeoni": {
+          "file": "assets/room13-redesign-resident_yeoni.webp",
+          "crop": [
+            18,
+            1,
+            449,
+            756
+          ],
+          "nearest": true,
+          "foot": [
+            259,
+            752
+          ],
+          "facing": "front",
+          "contact": "standing",
+          "head": [
+            217,
+            5,
+            220,
+            175
+          ],
+          "reviewed": true,
+          "posture": "standing",
+          "redesign": "candidate_fox_town"
+        },
+        "resident_badook": {
+          "file": "assets/room13-pixel-acting-badook.webp",
+          "crop": [
+            50,
+            12,
+            390,
+            499
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              195,
+              495
+            ]
+          },
+          "head": [
+            66,
+            0,
+            324,
+            230
+          ],
+          "facing": "right-threequarter"
+        },
+        "resident_kongi": {
+          "file": "assets/room13-pixel-acting-resident_kongi.webp",
+          "crop": [
+            84,
+            38,
+            327,
+            475
+          ],
+          "nearest": true,
+          "foot": [
+            163,
+            471
+          ],
+          "facing": "left",
+          "contact": "standing",
+          "head": [
+            57,
+            0,
+            261,
+            204
+          ],
+          "reviewed": true,
+          "posture": "standing"
+        },
+        "resident_musoe": {
+          "file": "assets/room13-pixel-acting-musoe.webp",
+          "crop": [
+            63,
+            10,
+            351,
+            500
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              176,
+              496
+            ]
+          },
+          "head": [
+            14,
+            0,
+            337,
+            220
+          ],
+          "facing": "right-threequarter"
+        },
+        "resident_nubi": {
+          "file": "assets/map-action27/IN-1--resident_nubi.webp",
+          "crop": [
+            0,
+            0,
+            512,
+            768
+          ],
+          "head": [
+            128,
+            9.984,
+            243.712,
+            172.79999999999998
+          ],
+          "foot": [
+            290.304,
+            747.264
+          ],
+          "anchors": {
+            "foot": [
+              290.304,
+              747.264
+            ],
+            "foot_left": [
+              205.824,
+              747.264
+            ],
+            "foot_right": [
+              364.032,
+              746.496
+            ],
+            "hand_left": [
+              207.36,
+              357.12
+            ],
+            "hand_right": [
+              375.296,
+              246.52800000000002
+            ],
+            "prop_support": [
+              271.872,
+              371.712
+            ]
+          },
+          "foreground_parts": [],
+          "contact": "standing",
+          "stature_ratio": 1,
+          "source_sha256": "a5e7537d7f1bfc9afcebf4f85e3817056d2e8093f0988e12eeb46cb74500f444",
+          "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+        },
+        "resident_somi": {
+          "file": "assets/room13-pixel-acting-somi.webp",
+          "crop": [
+            47,
+            24,
+            359,
+            483
+          ],
+          "nearest": true,
+          "anchor": {
+            "foot": [
+              180,
+              479
+            ]
+          },
+          "head": [
+            57,
+            0,
+            302,
+            227
+          ],
+          "facing": "right-threequarter"
+        }
+      },
+      "room": {
+        "day": 12,
+        "period": 0,
+        "location": "school"
+      },
+      "screens": [
+        "r13_hub"
+      ],
+      "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+      "archive_sha256": "994d77601d62622c6b20f0375fca005e1ebc8bf928eef8db17de5c36fe0fe427",
+      "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+      "review_status": "actual geometry and visible face hit targets reviewed"
+    }
+  ],
+  "matrix": {
+    "rows": [
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_hyeoni",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_yeoni",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_hyeoni",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_yeoni",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_hyeoni",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_yeoni",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": true
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_guldol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_somi",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": true
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_guldol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_somi",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_somi",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_badook",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_badook",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 2,
+        "period": 2,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_yeoni",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_ppul",
+        "changed": true
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": true
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_bori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_tori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_somi",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_yeoni",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_ppul",
+        "changed": true
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": true
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_bori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_tori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_somi",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_yeoni",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_bori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_tori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_somi",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_badook",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_badook",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 7,
+        "period": 2,
+        "scenario": "absent",
+        "location": "square",
+        "person": "doto",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_bori",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_tori",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_bori",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_tori",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_bori",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_seori",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_tori",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 0,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_ppul",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_ppul",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_momo",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_librarian",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "seryeon",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_ppul",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_ubak",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "clinic",
+        "person": "resident_solbang",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_seol",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_dalgeurak",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 1,
+        "scenario": "absent",
+        "location": "square",
+        "person": "resident_jongjong",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_tok",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_seori",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "school",
+        "person": "resident_nubi",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "clinic",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "routine",
+        "location": "square",
+        "person": "resident_badook",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_teacher",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_tok",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_seori",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "school",
+        "person": "resident_nubi",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "clinic",
+        "person": "resident_piko",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "offers",
+        "location": "square",
+        "person": "resident_badook",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_owlgp",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_tok",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_seori",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "school",
+        "person": "resident_nubi",
+        "changed": true
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "post",
+        "person": "resident_sling",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "room13",
+        "person": "daram",
+        "changed": false
+      },
+      {
+        "day": 12,
+        "period": 2,
+        "scenario": "absent",
+        "location": "guestroom",
+        "person": "daram",
+        "changed": false
+      }
+    ],
+    "errors": []
+  },
+  "status": "passed",
+  "clicked": 15
+}

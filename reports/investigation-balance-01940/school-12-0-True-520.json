@@ -1,0 +1,552 @@
+{
+  "label": "school-12-0-True-520",
+  "actors": [
+    {
+      "person": "resident_tori",
+      "pose": "neutral",
+      "x": 1189,
+      "y": 282,
+      "width": 110,
+      "height": 228,
+      "rect": [
+        1189,
+        282,
+        110,
+        228
+      ],
+      "depth": 510,
+      "occlusion": [
+        [
+          1212,
+          436
+        ],
+        [
+          1327,
+          436
+        ],
+        [
+          1327,
+          542
+        ],
+        [
+          1212,
+          542
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        1365,
+        510,
+        205,
+        "cloak_back"
+      ],
+      "activity": "토리는 자리를 비운 쪽에서 천을 다시 접었다."
+    },
+    {
+      "person": "resident_yeoni",
+      "pose": "neutral",
+      "x": 1442,
+      "y": 341,
+      "width": 145,
+      "height": 244,
+      "rect": [
+        1442,
+        341,
+        145,
+        244
+      ],
+      "depth": 585,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1740,
+        585,
+        233,
+        "waiting"
+      ],
+      "activity": "여니는 접어 둔 천의 안쪽을 만졌다."
+    },
+    {
+      "person": "resident_badook",
+      "pose": "neutral",
+      "x": 1551,
+      "y": 413,
+      "width": 216,
+      "height": 277,
+      "rect": [
+        1551,
+        413,
+        216,
+        277
+      ],
+      "depth": 690,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1660,
+        688,
+        277,
+        "waiting"
+      ],
+      "activity": "바둑이는 옮길 사람과 도착할 쪽을 번갈아 확인했다."
+    },
+    {
+      "person": "resident_kongi",
+      "pose": "neutral",
+      "x": 1307,
+      "y": 423,
+      "width": 185,
+      "height": 269,
+      "rect": [
+        1307,
+        423,
+        185,
+        269
+      ],
+      "depth": 692,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1370,
+        690,
+        269,
+        "waiting"
+      ],
+      "activity": "콩이는 빵 꾸러미를 작은 것부터 모았다."
+    },
+    {
+      "person": "resident_musoe",
+      "pose": "neutral",
+      "x": 1019,
+      "y": 435,
+      "width": 181,
+      "height": 258,
+      "rect": [
+        1019,
+        435,
+        181,
+        258
+      ],
+      "depth": 693,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        1110,
+        691,
+        258,
+        "waiting"
+      ],
+      "activity": "무쇠 할아버지는 지도보다 사람들 발을 먼저 봤다."
+    }
+  ],
+  "offset": 520,
+  "hits": [
+    {
+      "person": "resident_tori",
+      "point": [
+        736,
+        330
+      ],
+      "actions": [
+        "('person', 'resident_tori')"
+      ]
+    },
+    {
+      "person": "resident_bori",
+      "point": [
+        91,
+        335
+      ],
+      "actions": [
+        "('person', 'resident_bori')"
+      ]
+    },
+    {
+      "person": "resident_yeoni",
+      "point": [
+        1027,
+        370
+      ],
+      "actions": [
+        "('person', 'resident_yeoni')"
+      ]
+    },
+    {
+      "person": "resident_badook",
+      "point": [
+        1157,
+        476
+      ],
+      "actions": [
+        "('person', 'resident_badook')"
+      ]
+    },
+    {
+      "person": "resident_kongi",
+      "point": [
+        893,
+        480
+      ],
+      "actions": [
+        "('person', 'resident_kongi')"
+      ]
+    },
+    {
+      "person": "resident_musoe",
+      "point": [
+        593,
+        491
+      ],
+      "actions": [
+        "('person', 'resident_musoe')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_teacher": {
+      "file": "assets/map-action27/SC-1--resident_teacher.webp",
+      "crop": [
+        0,
+        0,
+        482,
+        768
+      ],
+      "head": [
+        144.29999999999998,
+        15.36,
+        298.21999999999997,
+        222.72
+      ],
+      "foot": [
+        283.79,
+        760.32
+      ],
+      "anchors": {
+        "foot": [
+          283.79,
+          760.32
+        ],
+        "hand_left": [
+          365.56000000000006,
+          314.88
+        ],
+        "hand_right": [
+          57.72,
+          199.68
+        ],
+        "book_grip": [
+          379.99,
+          314.88
+        ],
+        "point_tip": [
+          19.24,
+          161.28
+        ],
+        "cane_ground": [
+          452.14,
+          752.64
+        ]
+      },
+      "foreground_parts": [
+        [
+          [
+            319.6978851963746,
+            232.72727272727275
+          ],
+          [
+            431.1077542799597,
+            232.72727272727275
+          ],
+          [
+            431.1077542799597,
+            412.1212121212121
+          ],
+          [
+            319.6978851963746,
+            412.1212121212121
+          ]
+        ]
+      ],
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_tori": {
+      "file": "assets/room13-pixel-acting-resident_tori.webp",
+      "crop": [
+        182,
+        38,
+        215,
+        443
+      ],
+      "nearest": true,
+      "foot": [
+        107,
+        439
+      ],
+      "facing": "right",
+      "contact": "standing",
+      "head": [
+        46,
+        0,
+        169,
+        190
+      ],
+      "reviewed": true,
+      "posture": "standing"
+    },
+    "nabi": {
+      "file": "assets/room13-pixel-acting-nabi.webp",
+      "crop": [
+        137,
+        14,
+        339,
+        505
+      ],
+      "nearest": true,
+      "facing": "left",
+      "contact": "standing",
+      "foot": [
+        169,
+        504
+      ],
+      "head": [
+        0,
+        0,
+        190,
+        201
+      ]
+    },
+    "resident_owlgp": {
+      "file": "assets/room13-redesign-resident_owlgp.webp",
+      "crop": [
+        76,
+        8,
+        360,
+        758
+      ],
+      "nearest": true,
+      "foot": [
+        219,
+        754
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        84,
+        4,
+        230,
+        235
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "redesign": "owlgp_simple_elder"
+    },
+    "resident_bori": {
+      "file": "assets/room13-canonical-default-resident_bori.webp",
+      "crop": [
+        44,
+        39,
+        544,
+        602
+      ],
+      "nearest": true,
+      "foot": [
+        304,
+        598
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        96,
+        4,
+        329,
+        166
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
+    },
+    "resident_yeoni": {
+      "file": "assets/room13-redesign-resident_yeoni.webp",
+      "crop": [
+        18,
+        1,
+        449,
+        756
+      ],
+      "nearest": true,
+      "foot": [
+        259,
+        752
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        217,
+        5,
+        220,
+        175
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "redesign": "candidate_fox_town"
+    },
+    "resident_badook": {
+      "file": "assets/room13-pixel-acting-badook.webp",
+      "crop": [
+        50,
+        12,
+        390,
+        499
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          195,
+          495
+        ]
+      },
+      "head": [
+        66,
+        0,
+        324,
+        230
+      ],
+      "facing": "right-threequarter"
+    },
+    "resident_kongi": {
+      "file": "assets/room13-pixel-acting-resident_kongi.webp",
+      "crop": [
+        84,
+        38,
+        327,
+        475
+      ],
+      "nearest": true,
+      "foot": [
+        163,
+        471
+      ],
+      "facing": "left",
+      "contact": "standing",
+      "head": [
+        57,
+        0,
+        261,
+        204
+      ],
+      "reviewed": true,
+      "posture": "standing"
+    },
+    "resident_musoe": {
+      "file": "assets/room13-pixel-acting-musoe.webp",
+      "crop": [
+        63,
+        10,
+        351,
+        500
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          176,
+          496
+        ]
+      },
+      "head": [
+        14,
+        0,
+        337,
+        220
+      ],
+      "facing": "right-threequarter"
+    },
+    "resident_nubi": {
+      "file": "assets/map-action27/IN-1--resident_nubi.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        128,
+        9.984,
+        243.712,
+        172.79999999999998
+      ],
+      "foot": [
+        290.304,
+        747.264
+      ],
+      "anchors": {
+        "foot": [
+          290.304,
+          747.264
+        ],
+        "foot_left": [
+          205.824,
+          747.264
+        ],
+        "foot_right": [
+          364.032,
+          746.496
+        ],
+        "hand_left": [
+          207.36,
+          357.12
+        ],
+        "hand_right": [
+          375.296,
+          246.52800000000002
+        ],
+        "prop_support": [
+          271.872,
+          371.712
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "a5e7537d7f1bfc9afcebf4f85e3817056d2e8093f0988e12eeb46cb74500f444",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_somi": {
+      "file": "assets/room13-pixel-acting-somi.webp",
+      "crop": [
+        47,
+        24,
+        359,
+        483
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          180,
+          479
+        ]
+      },
+      "head": [
+        57,
+        0,
+        302,
+        227
+      ],
+      "facing": "right-threequarter"
+    }
+  },
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "school"
+  },
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+  "archive_sha256": "994d77601d62622c6b20f0375fca005e1ebc8bf928eef8db17de5c36fe0fe427",
+  "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+  "review_status": "actual geometry and visible face hit targets reviewed"
+}

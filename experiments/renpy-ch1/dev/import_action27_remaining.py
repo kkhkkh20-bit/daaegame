@@ -21,8 +21,8 @@ PLACEMENTS={
  'ST-2':('store','foot',[1470,640],319,None),
  'SQ-1':('square','foot',[560,540],200,'cart'),
  'GA-1':('gate','foot',[810,620],211,None),
- 'CL-1':('clinic','seat',[1150,410],160,None),
- 'SC-1':('school','foot',[330,452],165,'desks'),
+ 'CL-1':('clinic','seat',[1150,408],240,None),
+ 'SC-1':('school','foot',[330,452],210,'desks'),
  'FA-1':('facility','work',[1250,411],193,'desk'),
  'DI-1a':('dining','seat',[660,415],212,'back1'),
  'DI-1b':('dining','seat',[1965,415],236,'back3'),
@@ -76,7 +76,7 @@ def main():
    if key=='DI-1b':v['secondary_targets']={'bowl_bottom':[1934,356]}
    variants={p:copy.deepcopy(v) for p in ['morning','afternoon','evening']}
    if loc=='post':
-    for period in ['afternoon','evening']:variants[period].update(world_width=1280,target=[560,650] if key=='PO-2' else [300,700],render_height=300 if key=='PO-2' else 185,occlusion=[[[366,552],[1030,466],[1030,392],[1279,392],[1279,720],[366,720]]] if key=='PO-2' else [])
+    for period in ['afternoon','evening']:variants[period].update(world_width=1280,target=[435,650] if key=='PO-2' else [300,700],render_height=300 if key=='PO-2' else 185,occlusion=[[[366,552],[1030,466],[1030,392],[1279,392],[1279,720],[366,720]]] if key=='PO-2' else [])
    row=dict(request_id=key,status='approved',person=who,pose='map27_'+key.lower().replace('-','_'),location=loc,periods=[] if key=='KI-1' else [0,1,2],replace_poses=['neutral','activity','inn_activity','world']+REPLACE.get(key,[]),variants=variants,spec=spec,activity=ACTIVITY[key])
    if key=='KI-1':
     row['activation']='preview_only_no_existing_kitchen_schedule'
