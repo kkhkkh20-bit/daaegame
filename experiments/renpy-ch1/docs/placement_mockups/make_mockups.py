@@ -20,7 +20,7 @@ LAYOUT = json.load(open(os.path.join(GAME, "assets/room13-world-layout.json")))
 ACT = json.load(open(os.path.join(GAME, "assets/room13-pixel-acting.json")))
 SCHED = json.load(open(os.path.join(ROOT, "qa_schedule.json")))
 NAMES = dict(SCHED["names"]); NAMES.update(dad="아빠", mom="엄마", daram="다람")
-FONT = os.path.join(GAME, "assets/Room13Sans.ttf")
+FONT = os.path.join(GAME, "assets/Galmuri11.ttf")  # 한글 픽셀 글꼴
 
 AGE = {  # docs/CAST_BIBLE.md 나이
     "child": ["daram", "bami", "resident_kongi", "resident_somi", "resident_tosil", "resident_jongjong"],
@@ -109,10 +109,10 @@ PLACE = {
         P("resident_tori", 1675, 600, "activity", "work"),
         P("resident_kongi", 870, 640, "activity", "work"),
         P("resident_mulgyeol", 660, 660, "neutral", "guest"),
-        P("resident_ppul", 1120, 605, "activity", "guest"),
-        P("resident_madam", 1330, 625, "neutral", "guest"),
-        P("resident_mungchi", 1455, 655, "neutral", "guest", None, "MK-7"),
-        P("resident_hyeoni", 1010, 695, "neutral", "work", None, "MK-8"),
+        P("resident_ppul", 1000, 600, "activity", "guest"),
+        P("resident_madam", 1395, 625, "neutral", "guest"),
+        P("resident_mungchi", 1570, 668, "neutral", "guest", None, "MK-7"),
+        P("resident_hyeoni", 1190, 700, "neutral", "work", None, "MK-8"),
         P("resident_tosil", 470, 690, "living_thermos", "guest"),
         P("resident_jongjong", 1890, 690, "neutral", "guest"),
     ],
@@ -338,7 +338,7 @@ def render(place):
         bb = im.getbbox() or (0, 0, im.width, im.height)
         boxes.append((p, x + bb[0], y + bb[1], x + bb[2], y + bb[3], target))
     dr = ImageDraw.Draw(canvas)
-    font = ImageFont.truetype(FONT, 17); sfont = ImageFont.truetype(FONT, 14); big = ImageFont.truetype(FONT, 22)
+    font = ImageFont.truetype(FONT, 16); sfont = ImageFont.truetype(FONT, 12); big = ImageFont.truetype(FONT, 20)
     # occluder outlines (thin) so the cut line can be reviewed
     for name, poly in occ.items():
         dr.line(poly + [poly[0]], fill=(255, 210, 60, 255), width=1)
