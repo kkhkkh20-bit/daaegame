@@ -5,7 +5,7 @@ screen r13_crisis():
     zorder 35
     default ready=False
     default preparations_open=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     use r13_meeting_stage("F1")
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
@@ -49,7 +49,7 @@ screen r13_crisis_proof(claim):
     style_prefix "r13"
     modal True
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     frame:
         area (50,160,1180,450) padding (28,25) background R13PaperPanel()
         vbox:
@@ -77,7 +77,7 @@ screen r13_rescue_notes():
     modal True
     zorder 60
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#172a2aa6")
     frame:
         area (165,145,950,475) padding (30,26)
@@ -129,7 +129,7 @@ screen r13_nearby():
     modal True
     zorder 45
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#172a2aa6")
     frame:
         area (220,150,840,515) padding (24,20)

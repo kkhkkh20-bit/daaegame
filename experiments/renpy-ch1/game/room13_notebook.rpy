@@ -318,7 +318,7 @@ screen r13_resident_notes():
     zorder 60
     default selected=None
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#eee7d6")
     text "다람이의 수첩 · 만난 사람들" xpos 55 ypos 35 size 32 color "#765426"
     viewport:

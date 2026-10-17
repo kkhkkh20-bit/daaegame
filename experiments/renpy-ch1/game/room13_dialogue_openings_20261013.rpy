@@ -71,7 +71,7 @@ screen r13_resident_approach(approach,person=None):
     zorder 40
     style_prefix "r13"
     default ready=False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ target=person or r13_target
     $ choices=[((R13_APPROACH_SPEECH.get(target,approach) if r13_calendar_phase()=="arrival" else r13_late_approach_speech(target)),Return(True),False),("지금은 말을 걸지 않는다",Return(False),False)]
     use r13_question_list(target,r13_conversation_pose(target),R13_NAMES[target]+"에게 말 걸기",choices,ready,return_action=Return(False))

@@ -466,6 +466,14 @@ init 98 python:
     def r13_debate_miss(claim):
         d=r13_debate_state();d["misses"][claim]=d["misses"].get(claim,0)+1;r13_debate_save(d)
 
+    def r13_debate_hint_due(claim,sid):
+        """0.18.91: after the second wrong record on one statement, its hint once (as a thought)."""
+        hint=r13_debate_statement(claim,sid).get("hint")
+        if not hint:return None
+        d=r13_debate_state();key=claim+":"+sid;seen=d.setdefault("hint_misses",{})
+        seen[key]=seen.get(key,0)+1;r13_debate_save(d)
+        return "("+hint+")" if seen[key]==2 else None
+
     def r13_debate_answerable(claim,st):
         """Could the player break this statement with what they actually hold?"""
         if r13_debate_is_broken(claim,st["id"]) or st.get("truth"):return True
@@ -594,6 +602,8 @@ init 98 python:
         return opts[shift:]+opts[:shift]
 
 label r13_debate_run(claim):
+    # 0.18.91: 회의 직전 자동저장. 회의에서 그만둔 반론은 그 회의 안에서 되돌릴 수 없다.
+    $ r13_autosave_now()
     $ r13_meeting_claim=claim
     $ r13_meeting_active=True
     $ r13_meeting_focus_change(claim,r13_debate_statements(claim)[0]["who"])
@@ -740,7 +750,7 @@ screen r13_meeting_agenda(claims):
     modal True
     zorder 35
     default ready=False
-    timer .3 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     use r13_meeting_stage(claims[0] if claims else "C1")
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
@@ -765,7 +775,7 @@ screen r13_debate_board(claim,selected):
     zorder 35
     default ready=False
     default statements_open=False
-    timer .3 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ sel=r13_debate_statement(claim,selected)
     $ done,total=r13_debate_progress(claim)
     $ visible=[st for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]

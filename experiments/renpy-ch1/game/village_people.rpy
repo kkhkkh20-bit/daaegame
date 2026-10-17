@@ -145,7 +145,7 @@ label village_contact(person):
 screen village_contact_questions(person):
     modal True
     default ready = False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add person+" interview_neutral" at portrait_question id "topic_actor"
     vbox:
         xpos 360 ypos 116 spacing 5
@@ -159,7 +159,7 @@ screen village_contact_questions(person):
 screen village_nearby_residents(location):
     modal True
     default ready=False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#101b1be8")
     frame:
         xpos 140 ypos 110 xsize 1000 ysize 550 padding (24,20)

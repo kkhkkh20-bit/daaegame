@@ -243,6 +243,9 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
             hide screen r13_meeting_rebuttal_hold
     elif presentation_result=="wrong":
         $ r13_debate_miss(claim)
+        $ presentation_rows=r13_debate_hint_due(claim,sid)
+        if presentation_rows:
+            call r13_lines([("dad",presentation_rows,{"thought":True})],"debate:hint:"+claim+":"+sid)
     $ r13_meeting_interrupting=was_interrupting
     return presentation_result=="break"
 
@@ -272,7 +275,7 @@ screen r13_meeting_ballot(claim,vote):
     modal True
     zorder 40
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     use r13_meeting_stage(claim,ballot=True)
     use r13_meeting_chrome(claim)
     frame:

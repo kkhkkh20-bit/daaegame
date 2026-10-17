@@ -40,7 +40,7 @@ screen r13_worldmap_v5(selected, ready, map_hover):
             hover_background r13_v5_layer(key, True)
             insensitive_background None
             focus_mask r13_v5_layer(key)
-            action SetScreenVariable("selected",key)
+            action r13_map_pick(key,selected)
             hovered SetScreenVariable("map_hover",key)
             unhovered SetScreenVariable("map_hover",None)
             sensitive ready
@@ -59,7 +59,7 @@ screen r13_worldmap_v5(selected, ready, map_hover):
             text_color "#fff3d5" text_hover_color "#ffffff"
             background R13InkPanel(focused=(key==selected))
             hover_background R13InkPanel(focused=True)
-            action SetScreenVariable("selected",key)
+            action r13_map_pick(key,selected)
             hovered SetScreenVariable("map_hover",key)
             unhovered SetScreenVariable("map_hover",None)
             sensitive ready

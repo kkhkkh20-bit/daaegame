@@ -281,7 +281,7 @@ screen winter_disclosure_review(target,selected,named):
     modal True
     zorder 70
     default ready=False
-    timer .4 action SetScreenVariable("ready",True)
+    timer .2 action SetScreenVariable("ready",True)
     key "K_ESCAPE" action Return(False)
     add Solid("#0b191af8")
     add Transform(target+" avatar_neutral" if target in CAST else "assets/notebook.png",size=(100,110),fit="contain") xpos 90 ypos 35

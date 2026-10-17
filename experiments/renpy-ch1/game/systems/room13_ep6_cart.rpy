@@ -258,7 +258,7 @@ label r13_cv_night:
         (None,"수레 앞에, 바둑이가 서 있었다.",{"show":"resident_badook","pose":"block_cart"}),
         ("resident_badook","못 갑니다. 명령서를 봤습니다. 이 수레는 보호소에 안 갑니다.",{"pose":"block_cart"})],"cv:night:open")
     if r13_has("cv_bell"):
-        call r13_lines([(None,"쿵.",{"cut":"bell"}),(None,"마을에서 처음 듣는 소리였다. 낮고 길게, 눈 덮인 지붕들 위로 퍼져 나갔다."),
+        call r13_lines([(None,"쿵.",{"cut":"bell","music":None,"sfx":"bell10"}),(None,"마을에서 처음 듣는 소리였다. 낮고 길게, 눈 덮인 지붕들 위로 퍼져 나갔다."),
             (None,"창문이 하나둘 열렸다. 사람들이 숄을 걸치고 광장으로 나왔다.",{"cut":None})]+([("daram","……종이 울렸어. 아빠, 종이 울렸어.")] if r13_cv_daram() else []),"cv:night:bell")
     if r13_has("cv_badook_safe"):
         call r13_lines([("resident_badook","명령서를 들고 있습니다. 이 명령서는 촌장님 글씨가 아닙니다. 회의를 엽시다."),

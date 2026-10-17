@@ -26,7 +26,7 @@ screen winter_hud():
 screen winter_hub():
     modal True
     default ready=False
-    timer .4 action SetScreenVariable("ready",True)
+    timer .2 action SetScreenVariable("ready",True)
     button:
         xpos 0 ypos 105 xsize 1280 ysize 495 padding (0,0)
         background None hover_background None insensitive_background None
@@ -83,7 +83,7 @@ screen winter_topics(kind,target):
     modal True
     default ready=False
     default question_page=0
-    timer .4 action SetScreenVariable("ready",True)
+    timer .2 action SetScreenVariable("ready",True)
     $ rows=winter_topic_entries(winter,kind,target,winter_topic_tab)
     $ current_page=min(question_page,max(0,(len(rows)-1)//4))
     frame:
@@ -144,7 +144,7 @@ screen winter_confirm(message):
     modal True
     zorder 60
     default ready=False
-    timer .3 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#081718cb")
     frame:
         xpos 200 ypos 240 xsize 880 background Solid("#203638")
@@ -165,7 +165,7 @@ screen winter_evidence(present=False,target=None):
     default named=True
     default questions=False
     default ready=False
-    timer .4 action SetScreenVariable("ready",True)
+    timer .2 action SetScreenVariable("ready",True)
     key "K_ESCAPE" action (Return(False) if present else Hide("winter_evidence"))
     add Solid("#0b191af8")
     text ("보여 줄 자료를 고른다" if target else ("두 단서를 함께 보여 준다" if present else "다람의 증거 수첩")) xpos 54 ypos 35 size 35 color "#edcf94"
@@ -241,7 +241,7 @@ screen winter_evidence(present=False,target=None):
 screen winter_board(claim):
     modal True
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     frame:
         xpos 35 ypos 395 xsize 1210 ysize 176 background Solid("#172c2dee")
         vbox:

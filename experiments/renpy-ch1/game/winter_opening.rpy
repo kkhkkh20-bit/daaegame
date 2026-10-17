@@ -126,7 +126,7 @@ label winter_entry_reason:
 screen winter_entry_hub():
     modal True
     default ready=False
-    timer .4 action SetScreenVariable("ready",True)
+    timer .2 action SetScreenVariable("ready",True)
     button:
         xpos 0 ypos 140 xsize 1280 ysize 450 padding (0,0) background None
         action Function(winter_entry_empty_result) sensitive ready

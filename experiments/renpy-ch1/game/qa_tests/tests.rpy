@@ -9541,9 +9541,9 @@ testcase new_places_tour:
     $ r13_qa_crowd_dump()
     run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
     pause 1.0
-    # The market crowd stands at the screen centre; advance on the date panel instead.
-    click pos (1150,90) until "지도 · 이동" timeout 30
-    click "지도 · 이동"
+    # The market crowd stands at the screen centre; open the map from the toolbar
+    # (0.18.91: screens accept input after .15s, so a date-panel click no longer falls through).
+    click "지도 · 이동" until screen "r13_map" timeout 30
     pause 1.5
     screenshot "place_map.png"
 

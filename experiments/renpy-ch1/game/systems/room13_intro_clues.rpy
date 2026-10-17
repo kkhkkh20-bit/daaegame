@@ -131,7 +131,7 @@ screen r13_entry_daram_topics():
     style_prefix "r13"
     modal True
     default ready=False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ questions=[("우리 이름이 적힌 종이를 같이 볼까?",Return("look"),r13_has("question_read:entry:daram:look")),("아빠랑 같이 들어가고 싶은 거지?",Return("together"),r13_has("question_read:entry:daram:together"))]
     use r13_question_list("daram","neutral","다람이와 이야기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),person="daram",mode="talk",ready=ready)

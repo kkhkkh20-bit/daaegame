@@ -131,7 +131,7 @@ screen r13_map(initial_region=None):
     $ region = "village" if region=="mountain" and room13["day"]<R13_WEEK2_DAY else region
     $ selected = r13_map_selection(region,selected)
     key "game_menu" action Return(False)
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add r13_background(R13_PLACES[room13["location"]][1])
     add Solid("#211b1899")
     add R13TravelSheet(spine=False) xpos 12 ypos 8 xsize 1256 ysize 704
@@ -171,7 +171,7 @@ screen r13_map(initial_region=None):
                                             hover_background R13InkPanel(focused=True)
                                             selected_background R13InkPanel(focused=True)
                                             selected key==selected
-                                            action SetScreenVariable("selected",key) sensitive ready
+                                            action r13_map_pick(key,selected) sensitive ready
                                             vbox:
                                                 spacing 12
                                                 text R13_MAP_LABELS[key] size 26 color ("#fff0cb" if key==selected else "#493b30") hover_color "#fff0cb"
@@ -184,7 +184,7 @@ screen r13_map(initial_region=None):
                 padding (6,4)
                 background R13InkPanel(focused=(key==selected))
                 hover_background R13InkPanel(focused=True)
-                action SetScreenVariable("selected",key) sensitive ready
+                action r13_map_pick(key,selected) sensitive ready
                 vbox:
                     xalign .5 yalign .5 spacing 3
                     text R13_MAP_LABELS[key] size 22 color "#fff0cb" xalign .5
