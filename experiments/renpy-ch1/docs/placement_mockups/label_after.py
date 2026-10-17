@@ -1,4 +1,4 @@
-"""Label the in-game placement renders for docs/placement_mockups/after/<place>.png.
+"""Label the in-game placement renders for docs/placement_mockups/after/<place>.jpg (half size above 2200px, JPEG 85: the PNGs were 21MB).
 
 1) xvfb-run -a -s "-screen 0 2560x1440x24" $RENPY_SDK/renpy.sh . test placement_after
    (a screen larger than 1280x720 so the window is 1:1; output in $ROOM13_QA_OUT/placement)
@@ -33,5 +33,7 @@ for fn in sorted(os.listdir(SRC)):
     dr.rectangle([0, 0, tw, 52], fill=(20, 18, 24))
     dr.text((12, 4), head, font=big, fill=(255, 236, 190))
     dr.text((12, 32), sub, font=small, fill=(220, 220, 230))
-    im.save(os.path.join(OUT, place + ".png"), optimize=True)
+    if im.width > 2200:
+        im = im.resize((im.width // 2, im.height // 2), Image.LANCZOS)
+    im.save(os.path.join(OUT, place + ".jpg"), quality=85)
     print(place, meta["day"], meta["period"], [a["name"] for a in meta["actors"]])

@@ -789,7 +789,8 @@ init 999 python:
                         people=r13_people()
                         # Pinned people (authored positions, ceiling hooks) do not take a slot;
                         # in the dining room everyone stands on the floor list directly.
-                        if location=="dining":need=len(people);cap=len(layout.get("floors",[]))
+                        # 2026-10-17: diners with their own spot (layout positions) do not need a floor.
+                        if location=="dining":need=len([p for p in people if p not in layout.get("positions",{})]);cap=len(layout.get("floors",[]))
                         else:
                             need=len([p for p in people if p not in layout.get("pinned",[]) and p not in layout.get("hooks",{})])
                             cap=len(layout.get("slots",[]))
