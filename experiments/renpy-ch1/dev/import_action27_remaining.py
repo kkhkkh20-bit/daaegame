@@ -26,7 +26,7 @@ PLACEMENTS={
  'FA-1':('facility','work',[1250,411],193,'desk'),
  'DI-1a':('dining','seat',[660,415],212,'back1'),
  'DI-1b':('dining','seat',[1965,415],236,'back3'),
- 'KI-1':('kitchen','board_bottom',[700,515],244,'table'),
+ 'KI-1':('kitchen','board_bottom',[700,542],244,'table'),
  'RI-1':('river','foot',[260,705],176,None),
  'RI-2':('river','foot',[520,712],274,None),
  'FO-1':('forest','inspect_ground',[1250,706],180,None),
@@ -47,6 +47,7 @@ def main():
  src=__import__('subprocess').check_output(['git','show','3ff28cc:experiments/renpy-ch1/docs/placement_mockups/make_mockups.py'],text=True)
  occ=next(ast.literal_eval(n.value) for n in ast.parse(src).body if isinstance(n,ast.Assign) and isinstance(n.targets[0],ast.Name) and n.targets[0].id=='OCC')
  occ['facility']['desk']=[[720,411],[1450,411],[1462,445],[1462,625],[720,625]]
+ occ['kitchen']['table']=[[600,530],[790,555],[1100,595],[1620,565],[1620,720],[600,720]]
  occ['school']['desks']=[[155,363],[500,363],[500,465],[155,465]]
  approved=ROOT/'art/approved-action27-remaining';(approved/'originals').mkdir(parents=True,exist_ok=True);(approved/'manifests').mkdir(exist_ok=True)
  regpath=ROOT/'game/assets/room13-map-action27.json';reg=json.loads(regpath.read_text());rows=[r for r in reg['rows'] if r['request_id'] not in PLACEMENTS];receipts=[]
@@ -75,7 +76,7 @@ def main():
    if key=='DI-1b':v['secondary_targets']={'bowl_bottom':[1934,356]}
    variants={p:copy.deepcopy(v) for p in ['morning','afternoon','evening']}
    if loc=='post':
-    for period in ['afternoon','evening']:variants[period].update(world_width=1280,target=[560,650] if key=='PO-2' else [300,700],render_height=230 if key=='PO-2' else 185,occlusion=[[[366,552],[1030,466],[1030,392],[1279,392],[1279,720],[366,720]]] if key=='PO-2' else [])
+    for period in ['afternoon','evening']:variants[period].update(world_width=1280,target=[560,650] if key=='PO-2' else [300,700],render_height=300 if key=='PO-2' else 185,occlusion=[[[366,552],[1030,466],[1030,392],[1279,392],[1279,720],[366,720]]] if key=='PO-2' else [])
    row=dict(request_id=key,status='approved',person=who,pose='map27_'+key.lower().replace('-','_'),location=loc,periods=[] if key=='KI-1' else [0,1,2],replace_poses=['neutral','activity','inn_activity','world']+REPLACE.get(key,[]),variants=variants,spec=spec,activity=ACTIVITY[key])
    if key=='KI-1':row['activation']='preview_only_no_existing_kitchen_schedule'
    if key=='CL-1':row['min_day']=11

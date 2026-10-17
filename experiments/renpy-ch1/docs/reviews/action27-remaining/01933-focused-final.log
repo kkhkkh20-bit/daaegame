@@ -1,0 +1,31 @@
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:26: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels=list(im.crop((250,140,370,300)).getdata());greens=[p for p in pixels if p[3]>128 and p[1]>p[0]*1.15 and p[1]>p[2]*1.15]
+./workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-2--resident_eunho.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-3--resident_guseul.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/WS-1--resident_tok.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-4--resident_nubi.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-5--resident_yeoni.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/PO-1--resident_sling.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/SQ-2--resident_piko.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/daaegame-reactions/experiments/renpy-ch1/dev/test_action27_p0.py:10: ResourceWarning: unclosed file <_io.BufferedReader name='/workspace/daaegame-reactions/experiments/renpy-ch1/art/approved-action27-p0/originals/MK-6--resident_dalgeurak.png'>
+  src=ROOT/r['source'];self.assertEqual(hashlib.sha256(src.read_bytes()).hexdigest(),r['source_sha256']);self.assertEqual(src.stat().st_size,r['source_bytes']);self.assertEqual(Image.open(src).size,(1024,1536))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+............
+----------------------------------------------------------------------
+Ran 13 tests in 0.235s
+
+OK

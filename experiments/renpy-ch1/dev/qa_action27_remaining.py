@@ -24,11 +24,21 @@ async def main():
     await q.py('import renpy;s=renpy.store;s.r13_world_cameras=s.dict(s.r13_world_cameras,**{'+repr(loc)+':'+str(offset)+'});renpy.exports.scene();renpy.exports.show("qa_field",what=s.r13_background(s.R13_PLACES['+repr(loc)+'][1]));result=True');await native_jump(q,'r13_field');await q.wait('r13_hub');await asyncio.sleep(.2)
     name=key+'-'+loc+'-'+str(period);await page.screenshot(path=str(OUT/(name+'.png')))
     hit=await q.py('import renpy;s=renpy.store;a=next(x for x in s.r13_stage_people() if x["person"]=='+repr(who)+');x,y,w,h=s.r13_actor_face(a,0);f=renpy.display.render.focus_at_point(int(x+w/2-s.r13_world_offset()),int(y+h/2));acts=getattr(getattr(f,"widget",None),"action",[]);acts=acts if isinstance(acts,(list,tuple)) else [acts];result=dict(face=[x,y,w,h],actions=[str(getattr(z,"value",None)) for z in acts])')
-    item=dict(key=key,person=who,day=day,period=period,location=loc,actor=a,hit=hit);report['cases'].append(item)
+    item=dict(key=key,person=who,day=day,period=period,location=loc,actor=a,hit=hit,all_actors=await q.py('import renpy;result=renpy.store.r13_stage_people()'));report['cases'].append(item)
     if not any(who in x for x in hit['actions']):report['issues'].append(dict(key=key,location=loc,period=period,hit=hit))
     if key in ['CL-1','FA-1','DI-1a'] and period==({'CL-1':1,'FA-1':0,'DI-1a':2}[key]):
      await save_load(q,{'CL-1':1,'FA-1':2,'DI-1a':3}[key]);restored=await actor(q,who);assert restored==a,(a,restored);report['save_restore'].append(dict(key=key,actor=restored))
    report['nabi']=await q.py('import renpy;s=renpy.store;r=next(r for r in s.R13_MAP_ACTION27["rows"] if r["request_id"]=="KI-1");result=dict(registered=r["pose"] in s.R13_ACTING["nabi"],periods=r["periods"],file=r["spec"]["file"])');assert report['nabi']['registered'] and report['nabi']['periods']==[]
+   if os.environ.get('ROOM13_CHECK_PREVIEW'):
+    await setup(q,2,'kitchen',flags=['ev_g_done']);await native_jump(q,'r13_field');await q.wait('r13_hub')
+    report['nabi']['scheduled_in_kitchen']=await q.py('import renpy;result=any(a["person"]=="nabi" for a in renpy.store.r13_stage_people())');assert not report['nabi']['scheduled_in_kitchen']
+    preview_code='\n'.join(['import renpy','def _qa_map27_preview(**kwargs):',' import renpy',' s=renpy.store',' r=next(r for r in s.R13_MAP_ACTION27["rows"] if r["request_id"]=="KI-1")',' a=s.r13_map27_geometry(dict(person="nabi",pose=r["pose"],occlusion=[]),r["spec"],r["variants"]["morning"],2160)',' renpy.ui.add(s.Transform(s.r13_staged_visible_art(a,True),xpos=a["x"]-s.r13_world_offset(),ypos=a["y"]))',' renpy.ui.text("KI-1 PREVIEW ONLY - no kitchen schedule",size=25,color="#fff",outlines=[(2,"#000",0,0)],xpos=40,ypos=80)',"renpy.exports.define_screen('qa_map27_preview',_qa_map27_preview,zorder='300')","renpy.exports.show_screen('qa_map27_preview')","renpy.exports.restart_interaction()","result=True"])
+    await q.py(preview_code);await asyncio.sleep(.3);await page.screenshot(path=str(OUT/'KI-1-preview-only.png'))
+    report['nabi']['preview_screen_visible']=await q.py('import renpy;result=bool(renpy.display.screen.get_screen("qa_map27_preview"))');assert report['nabi']['preview_screen_visible']
+    await q.py('import renpy;renpy.exports.hide_screen("qa_map27_preview");renpy.exports.restart_interaction();result=True')
+    report['absence_guards']=[]
+    for who,loc,day,period,flag in [('resident_piko','clinic',12,0,'piko_dead'),('resident_teacher','school',2,0,'teacher_dead'),('resident_librarian','post',2,0,'librarian_dead'),('resident_siluk','store',2,1,'siluk_dead'),('resident_tok','dining',2,2,'tok_detained')]:
+     await setup(q,day,loc,flags=['ev_g_done',flag],period=period);absent=await q.py('import renpy;result=all(a["person"]!='+repr(who)+' for a in renpy.store.r13_stage_people())');assert absent,(who,flag);report['absence_guards'].append(dict(person=who,flag=flag,absent=absent))
    report['status']='passed' if not report['issues'] else 'needs_review'
   except Exception as e:report['error']=repr(e);await page.screenshot(path=str(OUT/'failure.png'));raise
   finally:(OUT/'runtime.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');await browser.close()
