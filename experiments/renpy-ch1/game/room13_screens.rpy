@@ -46,17 +46,34 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        # Question screens: "돌아가기" sits at the bottom left (0.18.42); only the tools
-        # used while choosing a question stay here.
-        frame:
-            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
-            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
-        if present_action is not None:
-            # 0.19.2 (owner: "보여주기가 핵심인데 버튼이 더 커야"): 172×64 → 260×84, 글씨 28.
-            fixed:
-                # Right of the question list (it ends at x≈995), below the date panel.
-                xpos 1008 ypos R13_EVIDENCE_CARD_CENTER[1] xsize 260 ysize 84
-                use r13_antique_button("보여주기","present",present_action,enabled=ready,width=260,height=84,label_size=r13_read_size(28,31),icon_size=38)
+        if r13_present_design=="dock":
+            frame:
+                area ((24,612,1232,92) if persistent.room13_large_text else (24,632,1232,76)) padding (16,6) background R13InkPanel(alpha="d9",slim=True)
+                fixed:
+                    textbutton "돌아가기":
+                        area (0,0,156,80 if persistent.room13_large_text else 64) style "r13_action_button"
+                        background None hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
+                        text_size r13_read_size(22,26) action investigate_action sensitive ready
+                    if present_action is not None:
+                        use r13_present_design_button(present_action,ready,696,0,332,80 if persistent.room13_large_text else 64)
+                    textbutton "기록":
+                        area (1052,0,148,80 if persistent.room13_large_text else 64) style "r13_action_button"
+                        background None hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
+                        text_size r13_read_size(22,26) action Show("r13_records",target=person,present_action=present_action) sensitive ready
+        else:
+            frame:
+                area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
+                use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
+            if present_action is not None:
+                if r13_present_design=="attached":
+                    $ entries=[(r13_calendar_topic_title(key,spec),Return(key),False) for key,spec in r13_topics_in_order(person)]
+                    $ _,list_bottom=r13_question_bounds(entries,760)
+                    $ list_bottom=min(list_bottom,484 if persistent.room13_large_text else 500)
+                    use r13_present_design_button(present_action,ready,665,min(532 if persistent.room13_large_text else 542,list_bottom+16),332,80 if persistent.room13_large_text else 72)
+                else:
+                    fixed:
+                        xpos 1008 ypos R13_EVIDENCE_CARD_CENTER[1] xsize 260 ysize 84
+                        use r13_antique_button("보여주기","present",present_action,enabled=ready,width=260,height=84,label_size=r13_read_size(28,31),icon_size=38)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
@@ -240,6 +257,8 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         # Questions sit around the centre, clear of dialogue advancement and bottom tools.
         $ row_h=(80 if persistent.room13_large_text else 72)
         $ list_top,list_bottom=r13_question_bounds(entries,list_width)
+        if r13_present_design=="attached" and return_action is not None:
+            $ list_bottom=min(list_bottom,484 if persistent.room13_large_text else 500)
         if caption:
             text caption:
                 xpos list_left ypos list_top-44 xsize list_width text_align .5
@@ -274,7 +293,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
             for index,(title,action,was_read) in enumerate(entries[:9]):
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
                 key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
-        if return_action is not None:
+        if return_action is not None and r13_present_design!="dock":
             # 0.18.42 (owner): not centred under the list, where it read as another choice.
             # Bottom-left corner, on the same row as the tools at the bottom right.
             textbutton "돌아가기":
@@ -341,7 +360,7 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
             for index,(title,action,was_read) in enumerate(entries[:9]):
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
                 key ("K_KP%d"%(index+1)) action r13_safe_question_action(action)
-        if return_action is not None:
+        if return_action is not None and r13_present_design!="dock":
             textbutton "돌아가기":
                 xpos 0 ypos 676 xsize 150 ysize 44
                 padding (12,6) background R13InkPanel(alpha="e6",slim=True) hover_background R13InkPanel(focused=True,alpha="f5",slim=True)
@@ -573,3 +592,18 @@ screen r13_handoff():
                 textbutton "저장하기" action ShowMenu("save")
                 textbutton "이어서 진행" action [Hide("r13_handoff"),Jump("r13_week2_opening")]
                 textbutton "제목으로" action MainMenu(confirm=False)
+
+# Review-only placement variants. The public layout stays unchanged until approved.
+default r13_present_design = "current"
+
+screen r13_present_design_button(command,ready,x,y,w=332,h=72):
+    button:
+        id "present_design_button"
+        area (x,y,w,h) padding (20,10)
+        background R13InkPanel(focused=True,alpha="ef",slim=True)
+        hover_background R13InkPanel(focused=True,alpha="ff",slim=True)
+        action command sensitive ready alt "자료 보여주기"
+        hbox:
+            align (.5,.5) spacing 12
+            add R13AntiqueIcon("present",size=32) yalign .5
+            text "자료 보여주기" size r13_read_size(24,28) color "#f6dfac" font r13_ui_font() yalign .5
