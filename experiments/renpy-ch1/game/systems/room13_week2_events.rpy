@@ -104,7 +104,7 @@ label r13_w2e_numbers:
                 ("resident_ppul","……이번 숫자를 고치면 지난주 기록까지 고쳐야겠구려."),
                 ("resident_ppul","됐소. 숫자는 그대로 두시오. 대신 사람들 앞에선 나와 같이 설명하시오.")],"w2e:numbers:records")
             $ r13_flag("forgery_exposed","ppul_ally")
-        "진짜 숫자를 서리에게 맡기게 한다":
+        "진짜 숫자를 서리 검사원에게 맡기게 한다":
             call r13_lines([("resident_ubak","원본 숫자는 서리 검사원님한테 맡길게요. 고친 숫자는 촌장님 장부에만 적고요."),
                 ("resident_ppul","……장부를 두 개 만들겠다는 거요? 마음대로 하시오.")],"w2e:numbers:seori")
             $ r13_flag("true_numbers_kept")
@@ -139,7 +139,7 @@ label r13_w2e_tools:
         ("buri","맞아요. 그런데 집에 먹을 게 없어요.")],"w2e:tools:open:v2")
     # 0.18.17: choices are what Dad says; the reaction carries the meaning.
     menu:
-        "“제가 값을 내겠습니다.” 12냥" if r13_cash_now()>=12:
+        "“공구 값은 내가 낼게.” 12냥" if r13_cash_now()>=12:
             $ r13_cash(-12,"부리의 공구함")
             call r13_lines([("dad","공구 값은 내가 낼게."),
                 ("buri","빌린 걸로 적어 주세요. 그냥 받은 걸로는 못 하겠어요."),

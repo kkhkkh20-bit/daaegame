@@ -23,7 +23,7 @@ async def main():
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=3,period=1,location="store",life_poc=True);s.r13_flag("entry_corrected","lodging","livelihood_open",*["evening_brief:%d"%d for d in range(1,14)]);s.r13_upgrade();'+ENTER)
    await asyncio.sleep(1);await q.advance();await q.wait('r13_hub');await q.press('백 부인');await q.advance();await q.wait('choice');await q.shot('01-store-theft')
    await q.press('수리점 쪽 골목으로 돌아가 앞질러 간다');await q.advance();await q.wait('choice');await q.shot('02-caught')
-   await q.press('무쇠 할아버지에게 직접 가져다준다');await q.advance();await q.wait('r13_hub')
+   await q.press('아이 할아버지에게 직접 가져다준다');await q.advance();await q.wait('r13_hub')
    room=await q.room();assert 'H5' in room['evidence'] and 'musoe_recovering' in room['flags'],room
    report['checks'].append('Day 3 store theft → alley chase → herbs to Musoe: mine map H5, recovery flag')
    await q.py('import renpy;s=renpy.store;s.r13_edit(period=2,location="inn");'+ENTER)

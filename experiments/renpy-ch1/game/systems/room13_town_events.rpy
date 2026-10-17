@@ -230,7 +230,7 @@ label r13_ev_b_store:
 label r13_ev_b_ambush:
     call r13_ev_here("search")
     call r13_lines([(None,"수리점 뒤 골목은 좁고 조용했다. 골목 끝 집 문틈으로 마른기침 소리가 새어 나왔다."),
-        ("dad","(솜이는 할아버지가 있는 이 골목으로 돌아올 것이다.)",{"thought":True})],"ev:b:ambush:arrive")
+        ("dad","(솜이가 할아버지가 있는 이 골목으로 돌아올까?)",{"thought":True})],"ev:b:ambush:arrive")
     menu:
         "골목 입구에서 기다린다":
             call r13_lines([(None,"해가 기울 무렵, 지붕에서 작은 몸이 툭 떨어졌다. 솜이가 꾸러미를 품에 안고 골목으로 뛰어들었다.")],"ev:b:ambush:wait")
@@ -264,7 +264,7 @@ label r13_ev_b_caught:
                 ("dad","(이제 이 사람이 장물을 판 내 약점 하나를 쥐었다.)",{"thought":True})],"ev:b:sell_eunho")
             $ r13_cash(18,"은호에게 약초를 넘김")
             $ r13_flag("ev_b_done","eunho_holds_secret","musoe_worse","somi_hostile","rumor:sold_stolen")
-        "무쇠 할아버지에게 직접 가져다준다":
+        "아이 할아버지에게 직접 가져다준다":
             call r13_lines([(None,"골목 끝 집은 차가웠다. 무쇠 할아버지는 이불을 둘둘 감고도 떨고 있었다."),
                 ("resident_musoe","……이거, 남의 창고 물건이오?"),
                 ("dad","약이 없다던 창고에서 나온 겁니다. 지금은 약부터 드시는 게 먼저입니다."),
@@ -381,7 +381,7 @@ label r13_ev_c_locked(room_safe):
             ("daram","밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 오빠 같았어.")],"ev:c:room_safe")
     else:
         call r13_lines([(None,"13호로 돌아가 보니 짐이 뒤집혀 있었다. 수첩 사이에 끼워 둔 종이들도 순서가 뒤섞여 있었다."),
-            ("dad","(누군가 밤새 이 방을 뒤졌다. 그러려고 나를 창고에 가둔 것이다.)",{"thought":True})],"ev:c:room_searched")
+            ("dad","(누군가 밤새 이 방을 뒤졌다. 나를 창고에 가둔 것도 그 때문이었을까?)",{"thought":True})],"ev:c:room_searched")
     return
 
 label r13_ev_c_wedge(room_safe=False):

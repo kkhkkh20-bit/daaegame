@@ -847,7 +847,7 @@ testcase town_b_ambush_musoe:
     click "골목 입구에서 기다린다"
     click pos (640,600) until screen "choice" timeout 40
     screenshot "tb2_caught.png"
-    click "무쇠 할아버지에게 직접 가져다준다"
+    click "아이 할아버지에게 직접 가져다준다"
     click pos (640,600) until screen "r13_hub" timeout 40
     $ r13_qa_town_dump()
 

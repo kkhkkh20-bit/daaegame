@@ -128,7 +128,7 @@ label r13_ev_a_siluk:
                 $ r13_cash(-5,"실룩에게 선금")
                 call r13_lines([(None,"실룩은 초소 쪽이 아니라 백 부인 집 뒷골목으로 갔다. 뭉치가 문을 열고 나와 동전을 받아 갔다."),
                     ("resident_mungchi","이번 주 이자는 받았어요. 부인이 다음 주엔 원금도 받겠대요."),
-                    ("dad","(내가 준 돈은 결국 백 부인 금고로 갔다. 실룩은 심부름꾼일 뿐이다.)",{"thought":True})],"ev:a:follow")
+                    ("dad","(내가 준 돈은 이자로 백 부인 집에 들어갔다. 실룩도 빚에 쫓겨 이러는 걸까?)",{"thought":True})],"ev:a:follow")
                 $ r13_flag("siluk_scammed","know_siluk_debt","know_madam_hoard")
             "“백 부인 빚 때문입니까?”" if r13_has("know_siluk_debt") or r13_has("know_madam_hoard"):
                 call r13_lines([("resident_siluk","……제 빚 얘기를 어떻게 알았어요?"),

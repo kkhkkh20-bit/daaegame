@@ -291,7 +291,7 @@ label r13_ep2_food:
                 ("resident_ppul","표 없는 아이들 몫으로 내놓으라 하겠소. 이 장부는 내가 맡아 두겠소."),
                 ("nabi","촌장님이 직접 나서신다고요?")],"ep2:food:hoard")
             $ r13_flag("kids_fed","kids_registered","madam_hostile")
-        "무쇠 할아버지에게 폐광 식량을 청한다" if r13_has("musoe_ally"):
+        "무쇠 할아버지에게 도움을 청한다" if r13_has("musoe_ally"):
             call r13_lines([("resident_musoe","굴 안에 말린 콩 자루가 있소. 솜이 몫만 남기고 가져가시오."),
                 ("resident_musoe","내가 진 빚을 갚는 셈이오. 아이들 배곯는 건 나도 못 보오.")],"ep2:food:mine")
             $ r13_flag("kids_fed","kids_mine")

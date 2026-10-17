@@ -121,7 +121,7 @@ label r13_ledger_madam_approach:
                     $ r13_flag("madam_deal")
                 "“그 조건은 받을 수 없습니다.”":
                     call r13_lines([("resident_madam","그럼 할 말 없네요.")],"ledger:madam:nodeal")
-        "“서리에게도 확인받겠습니다.”":
+        "“서리 검사원에게도 확인받겠습니다.”":
             call r13_lines([("resident_madam","이름이 적힌 사람들까지 모두 부를 생각인가요?")],"ledger:madam:seori")
             $ r13_flag("madam_told_seori")
     $ r13_finish_topic("ledger_madam:approach")
@@ -149,7 +149,7 @@ init 119 python:
         ("night:buri","부리를 만난 이야기를 한다",lambda:store.room13.get("case_state")=="occurred" and store.room13.get("trial_ended") and store.room13.get("daram_state") in ("with_dad","rescued") and (r13_has("buri_revised") or r13_has("buri_heard_assert")),[
             ("dad","오늘 부리 오빠를 만났어."),
             ("daram","부리 오빠는 아직 나랑 말하기 싫은가 봐."),
-            ("dad","……아저씨한테도 시간이 필요할 거야.")]),
+            ("dad","……부리 오빠한테도 시간이 필요할 거야.")]),
         ("night:helping","오늘 같이 한 일을 이야기한다",lambda:store.room13.get("day",1)>=R13_WEEK2_DAY and any(r13_has(f) for f in ("w2_bell_rung","share_patients","share_children","share_lottery")),[
             ("dad","오늘 짐 나르는 거 같이 해 줘서 고마워."),
             ("daram","오늘은 내가 도와준 거지?"),

@@ -274,17 +274,17 @@ label r13_mom_hideout:
         return
     if r13_has("mom_hideout_found"):
         call r13_lines([(None,"뿌리 밑 구멍은 그대로다. 접힌 담요 위에 눈이 조금 더 쌓였다."),
-            ("dad","(아내는 여기서 여관 굴뚝을 보고 있었다.)",{"thought":True})],"forest:hideout:again")
+            ("dad","(아내는 여기서 여관 굴뚝을 보고 있었을까.)",{"thought":True})],"forest:hideout:again")
         return
     $ r13_hideout_daram=room13.get("daram_state") in ("with_dad","rescued")
     call r13_lines([(None,"엉킨 뿌리 사이의 눈이 유난히 단단하게 다져져 있다. 누가 여러 번 드나든 자국이다."),
         (None,"몸을 숙이자 뿌리 밑으로 어른 하나가 웅크려 들어갈 만한 구멍이 보였다."),
         (None,"안쪽에는 마른 솔잎이 깔려 있고, 접은 담요와 다 타 버린 초 토막, 이 빠진 찻잔이 놓여 있었다."),
         ("dad","(뿌리 안쪽 껍질에 【도토리】가 새겨져 있다. 우리 가족만 쓰는 표식이다.)",{"thought":True}),
-        ("dad","(아내가 여기 숨어 있었다. 초는 꺼진 지 며칠은 됐다.)",{"thought":True}),
+        ("dad","(아내가 여기 숨어 있었던 걸까? 초는 꺼진 지 며칠은 됐다.)",{"thought":True}),
         (None,"담요 아래에서 접힌 종이 한 장이 나왔다. 앞면에는 룬을 옮겨 적다 만 연습이 빽빽했다."),
         (None,"뒷면에는 서둘러 쓴 한 줄이 있었다. 「따라오는 발소리. 여기는 들켰다. 옮긴다.」"),
-        ("dad","(구멍 입구에서 나무 사이로 여관 굴뚝이 보인다. 아내는 여기서 여관 쪽을 지켜보고 있었다.)",{"thought":True})],"forest:hideout:find")
+        ("dad","(구멍 입구에서 나무 사이로 여관 굴뚝이 보인다. 아내는 여기서 여관 쪽을 지켜보고 있었을까?)",{"thought":True})],"forest:hideout:find")
     if r13_hideout_daram:
         call r13_lines([("daram","이 담요, 엄마 거야. 끝에 내가 꿰맨 실이 있어.",{"expression":"anxious"}),
             ("dad","그래. 엄마는 여기서 우리를 기다렸던 것 같아."),

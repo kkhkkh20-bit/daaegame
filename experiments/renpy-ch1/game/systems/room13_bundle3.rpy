@@ -131,14 +131,15 @@ label r13_b3_ration:
     call r13_lines([(None,"광장 배급대 앞에서 줄이 멈춰 있었다. 너울이 보리의 수레 손잡이를 꽉 붙잡고 있었다."),
         ("neoul","배급 장부에 적힌 것보다 감자 한 자루, 장작 세 짐이 모자라오. 이번 주 배급 운반은 보리가 했소."),
         ("resident_bori","전 장부에 적힌 대로 실었어요! 배급소 저울에 단 그대로요."),
-        ("neoul","그럼 저울이 거짓말이라도 한다는 거요? 다음 배급 때까지 보리네 몫은 없소.")],"b3:ration:open")
+        ("neoul","그럼 저울이 거짓말이라도 한다는 거요? 다음 배급 때까지 보리네 몫은 없소."),
+        (None,"배급대 뒤에서 도토가 배급 장부를 끌어안고 서 있었다.")],"b3:ration:open")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False
         menu:
             "도토에게 배급 장부를 보자고 한다" if not r13_has("ration_ledger_seen"):
                 call r13_lines([("doto","장부에는 배급소 저울로 잰 무게만 적어요. 그러니까 저울이 맞으면 장부도 맞는 거고요."),
-                    ("dad","(문제는 장부가 아니다. 저울을 봐야 한다.)",{"thought":True})],"b3:ration:ledger")
+                    ("dad","(장부는 저울에 단 무게를 옮겨 적을 뿐이다. 그럼 그 저울은 맞을까?)",{"thought":True})],"b3:ration:ledger")
                 $ r13_flag("ration_ledger_seen")
                 $ _ep_loop=True
             "배급소 저울을 다시 재자고 한다" if r13_has("know_ration_scale") or "H6" in room13["evidence"]:
@@ -184,7 +185,7 @@ label r13_b3_firewood:
                 $ r13_grant(["W8"],"학교 장작더미 옆에서 들은 보리의 사정")
                 $ _ep_loop=True
             "사자 선생님을 부른다":
-                call r13_lines([("resident_teacher","보리야……. 대피소 장작은 아이들 몫이야. 알잖니."),
+                call r13_lines([("resident_teacher","보리 씨……. 대피소 장작은 아이들 몫이에요. 아시잖아요."),
                     ("resident_bori","알아요. 그래서 딱 한 짐만 가져가려고 했던 거예요."),
                     (None,"보리는 장작을 내려놓았다. 그러고는 뒤도 돌아보지 않고 가 버렸다.")],"b3:wood:teacher")
                 $ r13_flag("teacher_trust","bori_hostile")
