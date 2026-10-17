@@ -72,7 +72,7 @@ async def main():
   finally:
    (OUT/'runtime.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
    with (OUT/'schedule.csv').open('w',newline='') as f:
-    w=csv.writer(f);w.writerow(['scenario','day','period','person','scheduled','actual_location','pose','world_width','rect','offer'])
+    w=csv.writer(f,lineterminator="\n");w.writerow(['scenario','day','period','person','scheduled','actual_location','pose','world_width','rect','offer'])
     for r in report['matrix']:
      a=r['appearances'][0] if r['appearances'] else {};w.writerow([r['scenario'],r['day'],r['period'],r['person'],r['scheduled'],a.get('location'),a.get('pose'),a.get('world_width'),a.get('rect'),a.get('offer')])
    await b.close()

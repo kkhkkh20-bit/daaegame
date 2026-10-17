@@ -23,10 +23,11 @@ async def main():
   b=await p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--enable-unsafe-swiftshader']);page=await b.new_page(viewport={'width':1280,'height':720});q=ReviewQA(page,OUT)
   try:
    await page.goto(os.environ.get('ROOM13_URL','http://127.0.0.1:8765/preview/room13-dev/'));await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await q.wait('main_menu')
+   report['release_build']=bool(os.environ.get('ROOM13_RELEASE_QA'))
    report['base_version']=await q.py('import renpy;result=renpy.store.config.version')
    await q.py(SETUP)
-   for phase in ('before','after'):
-    if phase=='after':
+   for phase in (('after',) if os.environ.get('ROOM13_RELEASE_QA') else ('before','after')):
+    if phase=='after' and not os.environ.get('ROOM13_RELEASE_QA'):
      src=(ROOT/'game/room13_speaker_display.rpy').read_text()
      await q.py('import renpy\nexec('+repr(textwrap.dedent(src.split('init 150 python:\n')[1]))+',renpy.store.__dict__)\nresult=True')
      report['parsed_sources']={}
@@ -91,10 +92,15 @@ result=s.r13_rel_people()
 ''')
    report['shown_people']=await q.py('import renpy;result=renpy.store.r13_rel_people()')
    assert 'resident_teacher' not in report['shown_people']
-   for who in ('resident_nubi','resident_momo','buri'):
-    await q.py('import renpy;s=renpy.store;s.r13_records_view=s.dict(rel_sel=%r,rel_focus=True);renpy.exports.hide_screen("r13_records");renpy.exports.show_screen("r13_records",initial_tab="relations");renpy.exports.set_screen_variable("rel_sel",s.r13_records_view["rel_sel"],screen="r13_records");renpy.exports.restart_interaction();result=True'%who)
+   await q.py('import renpy;s=renpy.store;s.r13_records_view=s.dict(rel_sel="resident_nubi",rel_focus=True);renpy.exports.show_screen("r13_records",initial_tab="relations");renpy.exports.restart_interaction();result=True')
+   report['detail_switches']=[]
+   for who in ('resident_momo','buri','resident_nubi'):
     await q.press(await q.py('import renpy;result=renpy.store.r13_display_name(%r)'%who))
-    await asyncio.sleep(.5);await page.screenshot(path=str(OUT/('after-record-'+who+'.png')))
+    await asyncio.sleep(.5)
+    selected=await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_records");result=dict(selected=sc.scope.get("rel_sel"),name=renpy.store.r13_display_name(sc.scope.get("rel_sel")),role=renpy.store.r13_display_role(sc.scope.get("rel_sel")))')
+    assert selected['selected']==who,selected
+    report['detail_switches'].append(selected)
+    await page.screenshot(path=str(OUT/('after-record-'+who+'.png')))
    await q.py('import renpy;renpy.exports.hide_screen("r13_records");renpy.exports.show_screen("main_menu");renpy.exports.restart_interaction();result=True')
    await q.press('처음부터');await asyncio.sleep(1)
    for _ in range(45):
