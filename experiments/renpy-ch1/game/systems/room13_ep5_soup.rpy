@@ -181,17 +181,17 @@ label r13_ws_greenhouse:
         call r13_lines([(None,"폐온실로 가는 숲길. 눈 밟는 소리가 하나 더 있었다. 멈추면 그것도 멈췄다."),
             ("dad","거기 누구야. 나와."),
             (None,"나무 뒤에서 작은 아이가 나왔다. 털모자를 눈썹까지 눌러쓴 토실이었다."),
-            ("resident_tosil","……미안해. 할머니가…… 아저씨 따라가 보라고 했어. 어디 가는지만 보고 오라고."),
-            ("resident_tosil","할머니가 무서워. 할머니 눈이 요즘 이상해."),
-            ("resident_tosil","……근데, 그거 알아? 할머니가 우리 엄마도 보호소에 보냈어. 나 문 뒤에서 들었어."),
-            ("resident_tosil","우리 엄마는 안 돌아왔어.")],"ws:tosil")
+            ("resident_tosil","……미안해요. 할머니가…… 아저씨 따라가 보라고 했어요. 어디 가는지만 보고 오라고요."),
+            ("resident_tosil","할머니가 무서워요. 할머니 눈이 요즘 이상해요."),
+            ("resident_tosil","……근데, 그거 알아요? 할머니가 우리 엄마도 보호소에 보냈어요. 나 문 뒤에서 들었어요."),
+            ("resident_tosil","우리 엄마는 안 돌아왔어요.")],"ws:tosil")
         $ r13_grant(["Y04"],"폐온실 길에서 토실에게 들은 말")
         menu:
             "“우리랑 같이 가자.”":
                 call r13_lines([(None,"토실이 내 소매를 잡았다.")],"ws:tosil:keep")
                 $ r13_flag("ws_tosil_kept")
             "여관으로 돌려보낸다":
-                call r13_lines([("resident_tosil","……응.")],"ws:tosil:send")
+                call r13_lines([("resident_tosil","……네.")],"ws:tosil:send")
                 $ r13_flag("ws_tosil_sent","granny_knows_greenhouse")
     call r13_scene("r13_greenhouse","폐온실","quiet")
     call r13_lines([(None,"유리 지붕이 반쯤 내려앉은 온실. 마른 덩굴 사이로 빛이 초록색으로 새었다."),

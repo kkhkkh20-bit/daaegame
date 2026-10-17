@@ -189,13 +189,13 @@ label r13_cv_stable:
     call r13_scene("ep_stable","마구간","quiet")
     if r13_has("siluk_handed"):
         call r13_lines([(None,"실룩은 마구간 기둥에 묶여 있었다. 수레가 떠날 때 같이 실린다."),
-            ("resident_siluk","빚 대신 일꾼이랬는데, 일꾼은 보호소에 안 가지 않소?"),
-            ("resident_siluk","작년에도 그 수레를 봤소. 내려올 땐 늘 빈 수레였소.")],"cv:stable:tied")
+            ("resident_siluk","빚 대신 일꾼이랬는데, 일꾼은 보호소에 안 가잖아요?"),
+            ("resident_siluk","작년에도 그 수레를 봤어요. 내려올 땐 늘 빈 수레였어요.")],"cv:stable:tied")
     else:
         call r13_lines([("resident_siluk","나더러 몰라고 했소. 안 몰면 애들 배급표를 뺀다고 너울이 그러더이다."),
-            ("resident_siluk","작년에도 몰았소. 산길 끝까지 올라가서, 사람을 내려놓고, 끈만 다시 감아서 내려왔소."),
-            ("resident_siluk","내려올 땐 늘 빈 수레였소. 보호소라는데, 거기 지붕 하나 못 봤소."),
-            ("resident_siluk","나는 끄는 사람이오. 끄는 사람은 뒤를 안 보오.")],"cv:stable:driver")
+            ("resident_siluk","작년에도 몰았어요. 산길 끝까지 올라가서, 사람을 내려놓고, 끈만 다시 감아서 내려왔어요."),
+            ("resident_siluk","내려올 땐 늘 빈 수레였어요. 보호소라는데, 거기 지붕 하나 못 봤어요."),
+            ("resident_siluk","나는 끄는 사람이에요. 끄는 사람은 뒤를 안 봐요.")],"cv:stable:driver")
     $ r13_grant(["V05"],"마구간에서 실룩에게 들은 말")
     if r13_has("siluk_debt_cleared"):
         menu:

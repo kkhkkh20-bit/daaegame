@@ -138,3 +138,19 @@ init 189 python:
             _fx_was=ROOM13["topics"][_fx_key]["title"]
             ROOM13["topics"][_fx_key]["title"]=_fx_title
             if _fx_was in R13_QUESTION_SUMMARIES:R13_QUESTION_SUMMARIES[_fx_title]=R13_QUESTION_SUMMARIES[_fx_was]
+
+    # 너울이 데려간 사람(① 실룩, ③ 보리·누비)은 다람이와 같은 보호실에 갇혀 있다가 재판 날 아침에 풀려난다.
+    #   갇힌 동안에는 마을 어디에도 나오지 않는다. 실룩은 풀려난 뒤 ⑥ 수레 명단에 '말썽'으로 오른다(room13_ep6_cart.rpy).
+    R13_FX_HELD={"resident_siluk":"siluk_handed","resident_bori":"bori_taken","resident_nubi":"nubi_taken"}
+    _r13_fx_where=r13_where
+    def r13_where(person):
+        flag=R13_FX_HELD.get(person)
+        if flag and store.room13 and r13_has(flag) and store.room13.get("day",1)<R13_TRIAL_DAY:return None
+        return _r13_fx_where(person)
+
+    # ③ 회의가 끝난 뒤(장작 일이 이미 밝혀진 뒤) 약상자를 건네면, 보리는 장작을 "말하겠다"고 하지 않는다.
+    if "medkit_bori" in ROOM13["topics"]:
+        ROOM13["topics"]["medkit_bori"]["variants"]=[({"has":["wf_done"]},[
+            ("resident_bori","애 열이 사흘째예요. ……이 약을 정말 우리 애한테 주시는 거예요?"),
+            (None,"보리는 약상자를 끌어안고 한참 동안 말이 없었다."),
+            ("resident_bori","장작 일로 학교에 진 빚도 다 갚을게요. 이 은혜는 안 잊어요.")])]

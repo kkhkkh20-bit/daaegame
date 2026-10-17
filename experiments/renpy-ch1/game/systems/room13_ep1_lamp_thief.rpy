@@ -140,16 +140,16 @@ init 152 python:
                 hint="같은 손이 또 조각을 가져간 곳이 있다.",
                 wrong=("neoul","그래서 무엇이 아직 안 끝났다는 거요?")),
             dict(id="s5",who="resident_siluk",text="그 노끈…… 【누구나 쓰는 끈】이오.",
-                accept=["L07"],soft={"L08":("resident_siluk","애 말을 믿으라는 거요? 끈을 대 보시오.")},
+                accept=["L07"],soft={"L08":("resident_siluk","애 말을 믿으라는 거예요? 끈을 대 보세요.")},
                 broken_by={"L07":[("dad","끝이 뜯긴 자리가 똑같습니다. 그리고 어젯밤 늦게, 손이 꽁꽁 언 채 들어오셨다고요. 따님이."),
                     (None,"실룩이 무릎을 꿇었다."),
-                    ("resident_siluk","……빚이 열두 냥이었소. 못 갚으면 애들을 일꾼으로 보내야 했소."),
+                    ("resident_siluk","……빚이 열두 냥이었어요. 못 갚으면 애들을 일꾼으로 보내야 했어요."),
                     ("resident_siluk","등 하나 식는다고 사람이 쓰러질 줄은 몰랐소. 그림쟁이가 거기서 자는 줄은……."),
                     (None,"실룩의 아이가 빵 봉지를 떨어뜨렸다. 빵이 눈 위로 굴렀다."),
                     ("resident_madam","빚은 빚이에요. 저는 아무도 죽이지 않았어요."),
                     ("daram","(작게) ……아빠.")]},
                 hint="뜯긴 노끈의 짝.",
-                wrong=("resident_siluk","그게 내 끈이라는 증거요?")),
+                wrong=("resident_siluk","그게 내 끈이라는 증거예요?")),
         ],
         conclusion=dict(prompt="이 일을 어떻게 정리할까?",
             options=[("correct","온도를 잰 건 우박, 조각을 훔친 건 실룩, 그 조각을 산 건 백 부인이다"),
@@ -440,7 +440,7 @@ label r13_ep1_siluk:
     call r13_here_scene
     $ r13_flag("lt_siluk_seen")
     call r13_lines([(None,"짐꾼 실룩이 짐을 묶고 있었다. 갈색 노끈, 한쪽 끝이 뜯겨 있었다."),
-        ("resident_siluk","……무슨 일이오. 바쁘오."),
+        ("resident_siluk","……무슨 일이에요. 바빠요."),
         (None,"실룩의 아이 둘이 따끈한 빵을 나눠 먹고 있었다. \"아빠가 빵 사 왔어요! 진짜 빵이에요!\"",{"show":"kid_siluk2","expression":"joy"})],"ep1:siluk")
     $ _e1_loop=True
     while _e1_loop:
@@ -463,7 +463,7 @@ label r13_ep1_siluk:
             $ r13_grant(["L08"],"실룩 아이의 말")
             $ _e1_loop=True
         elif _e1_pick=="debt":
-            call r13_lines([("resident_siluk","……백 부인한테 진 빚, 다음 달까지 못 갚으면 애들을 그 집 일꾼으로 보내야 하오.")],"ep1:siluk:debt")
+            call r13_lines([("resident_siluk","……백 부인한테 진 빚, 다음 달까지 못 갚으면 애들을 그 집 일꾼으로 보내야 해요.")],"ep1:siluk:debt")
             $ r13_flag("siluk_debt_known")
             $ _e1_loop=True
     return
@@ -500,7 +500,7 @@ label r13_ep1_decision:
     $ _e1_pick=renpy.display_menu(_e1_menu)
     if _e1_pick in ("hand","both"):
         call r13_lines([(None,"너울이 실룩의 팔을 잡아끌었다. 실룩의 아이들이 따라가려다 넘어졌다.",{"show":"kid_siluk2","expression":"anxious"}),
-            ("resident_siluk","애들은…… 애들은 건드리지 마시오!")],"ep1:decision:hand")
+            ("resident_siluk","애들은…… 애들은 건드리지 마세요!")],"ep1:decision:hand")
         $ r13_flag("siluk_handed")
     if _e1_pick in ("store","both"):
         call r13_lines([("resident_madam","내 돈으로 산 거예요!"),(None,"사람들이 창고 쪽으로 움직였다."),

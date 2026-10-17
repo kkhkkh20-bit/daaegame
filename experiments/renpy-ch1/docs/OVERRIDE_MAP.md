@@ -86,7 +86,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 9 | 129 | `systems/room13_mother_note_spot.rpy:11` | _r13_new_places_visible |
 | 10 | 130 | `systems/room13_new_places.rpy:51` |  |
 
-## `r13_where` (9층)
+## `r13_where` (10층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -98,7 +98,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 147 | `systems/room13_alibi.rpy:30` | _r13_kd_where |
 | 7 | 153 | `systems/room13_ep2_kids.rpy:92` | _r13_nt_where |
 | 8 | 155 | `systems/room13_ep4_night13.rpy:66` | _r13_continuity_where |
-| 9 | 162 | `systems/room13_story_continuity.rpy:19` |  |
+| 9 | 162 | `systems/room13_story_continuity.rpy:19` | _r13_fx_where |
+| 10 | 189 | `systems/room13_threads_fixes.rpy:146` |  |
 
 ## `r13_first_mystery_notes` (8층)
 
