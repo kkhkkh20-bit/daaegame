@@ -48,6 +48,7 @@ label r13_lines(entries,identity,binding_route=None):
         $ r13_expression,r13_directed_pose=r13_meeting_direct_line(identity,r13_index,r13_packet,r13_expression,r13_directed_pose)
         if r13_thought_active:
             $ r13_expression,r13_directed_pose="thinking","thinking"
+        $ r13_dialogue_beat_begin(identity,r13_index,r13_packet,r13_directed_pose)
         # 0.18.56 (owner): someone who "comes over" in the opening narration is on screen
         # from that line, not only from their first spoken line.
         if r13_packet[0] in (None,r13_viewpoint()) and "r13_visitor" not in renpy.get_showing_tags() and not (len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("no_lead")):
@@ -60,7 +61,6 @@ label r13_lines(entries,identity,binding_route=None):
             $ r13_speaker(r13_packet[2]["show"],r13_packet[2].get("expression","neutral"),r13_packet[2].get("pose") or r13_packet[2].get("expression","neutral"))
         # 0.18.89: picture book / scene cut for this line (systems/room13_ep_art.rpy).
         $ r13_ep_line_art(r13_packet)
-        $ r13_dialogue_beat_begin(identity,r13_index,r13_packet,r13_directed_pose)
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
         if r13_packet[0] not in (None,r13_viewpoint()) and not r13_thought_active:
             $ r13_last_partner=r13_packet[0]
