@@ -143,7 +143,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 59 | `room13_acting.rpy:334` | _r13_daram_home_stage |
 | 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
-| 3 | 124 | `systems/room13_event_offers.rpy:58` | _r13_ma_stage |
+| 3 | 124 | `systems/room13_event_offers.rpy:60` | _r13_ma_stage |
 | 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
 | 5 | 126 | `systems/room13_perspective.rpy:32` |  |
 
@@ -195,7 +195,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 98 | `systems/room13_debate.rpy:571` | _r13_e1_seats |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:164` | _r13_continuity_seats |
-| 3 | 162 | `systems/room13_story_continuity.rpy:38` |  |
+| 3 | 162 | `systems/room13_story_continuity.rpy:59` |  |
 
 ## `r13_finish_action` (3층)
 
@@ -210,7 +210,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
-| 2 | 166 | `systems/room13_relations.rpy:18` | _r13_shelf_flag |
+| 2 | 166 | `systems/room13_relations.rpy:20` | _r13_shelf_flag |
 | 3 | 170 | `systems/room13_shelf.rpy:28` |  |
 
 ## `r13_new` (3층)
@@ -429,5 +429,5 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 58 | `room13_world_camera.rpy:96` | _r13_offer_edge_label |
-| 2 | 124 | `systems/room13_event_offers.rpy:92` |  |
+| 2 | 124 | `systems/room13_event_offers.rpy:94` |  |
 

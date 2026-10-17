@@ -12344,3 +12344,12 @@ testcase continuity_0195:
         _n["flags"]=list(_n["flags"])+["wf_kkomi_saved","wf_kkomi_alive","soup_kids_dead","kkomi_dead_soup","kkomi_dead","dodam_dead"]
         store.room13=_n
     assert eval (r13_rel_status("kid_kkomi")[0]=="dead" and r13_board_status("Q3","kid_kkomi")=="saved" and r13_board_status("Q5","kid_kkomi")=="dead" and r13_rel_status("kid_kkam")[0]=="dead" and r13_board_status("Q3","kid_kkam") is None)
+    # 따닥이 살아 진료소에 있는 판의 Q4 N07 반박은 보지 못한 연필 글씨 대신 따닥의 말을 든다. 꼬미를 구한 판의 Q3 F04 반박은 "꺼내 줬다"를 말하지 않는다.
+    python:
+        _n=winter_copy.deepcopy(store.room13)
+        _n["flags"]=list(_n["flags"])+["nt_ttadak_half"]
+        store.room13=_n
+        store._c_q4=r13_debate_judge("Q4","s1","N07")
+        store._c_q3=r13_debate_judge("Q3","s1","F04")
+    assert eval (_c_q4[0]=="break" and "직접 말했습니다" in _c_q4[1][1][1] and "썼습니다" not in str(_c_q4[1]))
+    assert eval (_c_q3[0]=="break" and "꺼냈어" not in str(_c_q3[1]) and "학교에 있었어요" in str(_c_q3[1]))
