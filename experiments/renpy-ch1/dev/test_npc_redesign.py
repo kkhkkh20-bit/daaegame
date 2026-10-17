@@ -37,7 +37,7 @@ class NpcRedesign(unittest.TestCase):
         npcs = [d["npc"] for d in REG["designs"]]
         # 0.18.60 (owner, 07:39 PDT): only the two elders join the first eight; nobody else.
         # 0.18.93 (owner 2026-10-16 19:16): 네로 is the grey lynx-type original again (restored_originals).
-        # 0.18.99 (owner 20:26): 누비 is the confirmed 48-role design (dev/apply_role_connect.py); the sheep
+        # 0.19.0 (owner 20:26): 누비 is the confirmed 48-role design (dev/apply_role_connect.py); the sheep
         # redesign moved to "withdrawn".
         self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian",
                                                "resident_seol", "resident_siluk", "resident_bori",

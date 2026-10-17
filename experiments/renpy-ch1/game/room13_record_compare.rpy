@@ -50,7 +50,7 @@ screen r13_compare_content(target=None,present_action=None):
                         text ROOM13["evidence"][key]["name"] size r13_read_size(21,25) color "#765426" xsize 382
                     viewport:
                         xsize 414 ysize 130 mousewheel True draggable True scrollbars "vertical"
-                        text ROOM13["evidence"][key]["establishes"] xsize 388 size r13_read_size(20,24) color "#493b30" line_spacing 5
+                        text r13_catalog_observed(key)["establishes"] xsize 388 size r13_read_size(20,24) color "#493b30" line_spacing 5
                 else:
                     text "기록 선택" size 23 color "#796044"
     viewport:

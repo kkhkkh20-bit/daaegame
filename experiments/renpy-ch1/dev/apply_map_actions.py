@@ -42,7 +42,7 @@ def build(entry, reg):
         raise SystemExit("hash mismatch: %s" % src)
     s = reg["scale_from_source"]
     if entry.get("downsample") == "cell2":
-        # 0.18.99: a source drawn in exact 2x2 cells is halved by taking one sample per cell
+        # 0.19.0: a source drawn in exact 2x2 cells is halved by taking one sample per cell
         # (lossless for that art; the LANCZOS path would blur the cell edges).
         if s != 0.5:
             raise SystemExit("cell2 downsample needs scale_from_source 0.5")
@@ -71,7 +71,7 @@ def build(entry, reg):
     if entry.get("seat"):
         spec["seat"] = [round(entry["seat"][0] * s) - x0, round(entry["seat"][1] * s) - y0]
     if entry.get("hand"):
-        # 0.18.99: furniture work contact (layout "work" puts this point on the bench).
+        # 0.19.0: furniture work contact (layout "work" puts this point on the bench).
         spec["hand"] = [round(entry["hand"][0] * s) - x0, round(entry["hand"][1] * s) - y0]
     return img, spec
 

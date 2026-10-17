@@ -35,7 +35,7 @@ class FullbodyData(unittest.TestCase):
     def test_every_dialogue_character_has_six_expressions_on_disk(self):
         self.assertEqual(set(DATA["people"]), set(PORTRAITS))
         # 43 original characters + 13 from the 2026-10-16 episode art (dev/apply_ep_art.py)
-        # + 7 new residents connected to their confirmed pictures in 0.18.99 (dev/apply_role_connect.py).
+        # + 7 new residents connected to their confirmed pictures in 0.19.0 (dev/apply_role_connect.py).
         self.assertEqual(len(DATA["people"]), 63)
         for person, entry in DATA["people"].items():
             # 0.18.92: the expression package can add a named extra (bami "thinking").

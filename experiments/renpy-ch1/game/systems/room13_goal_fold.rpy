@@ -26,8 +26,8 @@ screen r13_goal_fold(goal,ready=False):
     $ signature=tuple([thought]+[n["title"] for n in notes])
     if not renpy.get_screen("r13_evidence_found"):
         fixed:
-            xpos 1048 ypos 664 xsize 112 ysize 56
-            use r13_antique_button("생각","dialogue",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",tuple(sorted(set(r13_thoughts_seen)|set(signature))))],enabled=ready,compact=True,width=112,chosen=r13_goal_open)
+            xpos (1008 if persistent.room13_large_text else 1048) ypos (650 if persistent.room13_large_text else 664) xsize (132 if persistent.room13_large_text else 112) ysize (70 if persistent.room13_large_text else 56)
+            use r13_antique_button("생각","dialogue",[ToggleVariable("r13_goal_open"),SetVariable("r13_thoughts_seen",tuple(sorted(set(r13_thoughts_seen)|set(signature))))],enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112),chosen=r13_goal_open)
             if any(item not in r13_thoughts_seen for item in signature):
                 add Solid("#d7ad61") xpos 94 ypos 17 xsize 6 ysize 6
         if ready and not r13_goal_open and thought not in r13_thoughts_seen and thought not in r13_thought_toasted:

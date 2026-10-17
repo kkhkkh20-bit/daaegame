@@ -1693,7 +1693,8 @@ testcase delivery_cord:
     click "짐을 나르러 간다"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice=="combine" and "same_lane" in r13_wallet(room13)["relations"])
-    assert eval (r13_complete_job(room13,"delivery","combine")[1]["pay"]==14)
+    # 0.18.96: jobs no longer pay (owner removed jobs and lodging); the cord scene itself stays.
+    assert eval (r13_complete_job(room13,"delivery","combine")[1] is None)
 
 testcase night_talk:
     # 0.18.16 E: 다람이 reacts only to what happened; the topic opens with Dad's telling.
@@ -11688,6 +11689,108 @@ testcase o46_ropes:
     pause 1.2
     screenshot "o46_altar_evening.png"
 
+testcase shortcuts:
+    # 0.18.95 PC 단축키: M 지도, R 기록, 확인창 Enter/Esc, 메뉴의 단축키 안내.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    keysym "K_m"
+    pause 1.0
+    assert screen "r13_map"
+    keysym "K_ESCAPE"
+    pause 1.0
+    keysym "K_r"
+    pause 1.0
+    assert screen "r13_records"
+    run Hide("r13_records")
+    pause 0.6
+    run Show("r13_more_tools")
+    pause 0.8
+    screenshot "menu_with_shortcuts.png"
+    click "단축키"
+    pause 0.8
+    assert screen "r13_shortcut_help"
+    screenshot "shortcut_help.png"
+    $ r13_qa_note("shortcuts ok")
+
+testcase meeting_pairs:
+    # 0.18.95 두 자료 엮기 판정: 하나는 반쯤(half), 나머지 하나로 깨진다(break). ④·⑤·⑤A.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=12,period=0,location="school",life_poc=True,evidence=["N07","N09","Y07","Y08","Y11","Y13"]),("entry_corrected","lodging"))
+    pause 1.0
+    assert eval (r13_debate_judge("Q5A","s2","Y07")[0]=="half" and r13_debate_judge("Q4","s3","N09")[0]=="half")
+    $ r13_debate_half("Q5A","s2","Y07")
+    $ r13_debate_half("Q4","s3","N09")
+    assert eval (r13_debate_judge("Q5A","s2","Y08")[0]=="break" and r13_debate_judge("Q4","s3","N07")[0]=="break")
+    assert eval (r13_debate_judge("Q5","s3","Y13")[0]=="half")
+    $ r13_qa_note("meeting pairs ok")
+
+testcase polish3:
+    # 0.18.97 3번 시안: 반박 컷인, 기록 거름, 큰 단추, 다시 시작할 아침, 이름 판.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="inn",life_poc=True,evidence=["L01","L02","L03"]),("entry_corrected","lodging","lt_open"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 1.5
+    assert eval (3 in r13_morning_days())
+    $ r13_grant(["K02"],"QA 오늘 얻은 자료")
+    assert eval (r13_record_filter(["K02","L01"],"today")==["K02"] and sorted(r13_record_filter(["L01","K02"],"related","resident_nabi"))==["K02","L01"])
+    $ r13_flag("qa_after_morning")
+    run Show("r13_records")
+    pause 1.0
+    screenshot "records_chips.png"
+    click "안 읽음"
+    pause 0.6
+    screenshot "records_unread.png"
+    run Hide("r13_records")
+    pause 0.5
+    run Show("r13_book",target="resident_nabi",present=True)
+    pause 1.0
+    screenshot "book_related.png"
+    run Hide("r13_book")
+    pause 0.5
+    run Show("r13_rebuttal_cutin",struck="3번 등을 연 건 톡이오.")
+    pause 0.5
+    screenshot "rebuttal_cutin.png"
+    run Hide("r13_rebuttal_cutin")
+    pause 0.3
+    run Show("r13_winter_board",key="E5")
+    pause 1.0
+    screenshot "winter_board.png"
+    click "다시 시작할 아침"
+    pause 0.8
+    assert screen "r13_morning_pick"
+    screenshot "morning_pick.png"
+    run Hide("r13_morning_pick")
+    run Hide("r13_winter_board")
+    pause 0.5
+    $ persistent.room13_large_text=True
+    run Function(renpy.restart_interaction)
+    pause 0.8
+    screenshot "big_buttons.png"
+    run Call("r13_lines",[("dad","큰 글씨에서는 아래 단추도 커진다.")],"qa:big")
+    pause 1.0
+    screenshot "big_footer.png"
+    click pos (640,560) until screen "r13_hub" timeout 20
+    $ persistent.room13_large_text=False
+    run Function(renpy.restart_interaction)
+    pause 0.5
+    run Show("r13_morning_pick")
+    pause 0.8
+    click "3일 아침부터"
+    pause 0.6
+    screenshot "morning_confirm.png"
+    click "돌아간다"
+    pause 3.0
+    assert eval (not r13_has("qa_after_morning") and room13["day"]==3)
+    $ r13_qa_note("polish3 ok")
+
 testcase readability_pixels:
     # 0.18.93 (owner 19:24): large-text dialogue and the question screen stay readable (no line past
     # the frame, no bare text on a face); run at a 1280x720 window (XVFB 1920x1080) so the
@@ -11767,7 +11870,7 @@ testcase art_p0_captures:
 
 
 testcase role_connect_tour:
-    # 0.18.99 (owner 20:24/20:26): every connected role in its real scene, 1280x720 window;
+    # 0.19.0 (owner 20:24/20:26): every connected role in its real scene, 1280x720 window;
     # 부리 v7 workshop day/evening and the toolbox event; dialogue faces for all 16 roles.
     $ renpy.set_physical_size((1280,720))
     pause 2.0
@@ -11949,7 +12052,7 @@ testcase role_connect_tour:
 
 
 testcase pixel_unify_preview:
-    # 0.18.99 proposal preview (docs/PIXEL_UNIFY_PROPOSAL_20261016.md): the same lines drawn now and
+    # 0.19.0 proposal preview (docs/PIXEL_UNIFY_PROPOSAL_20261016.md): the same lines drawn now and
     # with one fixed 4 screen px per 2x2 art cell (+ 4px grid for pictures without cells).
     # QA-only switches; the game itself is unchanged. Window 1280x720 and 1920x1080 (x1.5).
     $ renpy.set_physical_size((1280,720))

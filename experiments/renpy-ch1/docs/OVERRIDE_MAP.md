@@ -24,9 +24,9 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 15 | 130 | `systems/room13_new_places.rpy:167` | _r13_direct_work_topics |
 | 16 | 133 | `systems/room13_direct_work.rpy:14` | _r13_alibi_topics |
 | 17 | 147 | `systems/room13_alibi.rpy:139` | _r13_catalog_topics |
-| 18 | 148 | `systems/room13_materials.rpy:58` | _r13_e1_topics |
+| 18 | 148 | `systems/room13_materials.rpy:72` | _r13_e1_topics |
 | 19 | 152 | `systems/room13_ep1_lamp_thief.rpy:55` | _r13_nolive_topics |
-| 20 | 168 | `systems/room13_no_livelihood.rpy:11` |  |
+| 20 | 168 | `systems/room13_no_livelihood.rpy:10` |  |
 
 ## `r13_present` (19층)
 
@@ -163,7 +163,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 55 | `room13_rules.rpy:144` | _r13_life_next_day |
 | 2 | 92 | `systems/room13_livelihood_flow.rpy:11` | _r13_conv_next_day |
 | 3 | 165 | `systems/room13_convenience.rpy:12` | _r13_nolive_next_day |
-| 4 | 168 | `systems/room13_no_livelihood.rpy:28` |  |
+| 4 | 168 | `systems/room13_no_livelihood.rpy:27` |  |
 
 ## `r13_activity_text` (3층)
 
@@ -204,6 +204,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 55 | `room13_rules.rpy:189` | _r13_mystery_finish_action |
 | 2 | 76 | `room13_first_mystery.rpy:92` | _r13_items_finish_action |
 | 3 | 96 | `systems/room13_items.rpy:140` |  |
+
+## `r13_flag` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
+| 2 | 166 | `systems/room13_relations.rpy:18` | _r13_shelf_flag |
+| 3 | 170 | `systems/room13_shelf.rpy:28` |  |
 
 ## `r13_new` (3층)
 
@@ -268,13 +276,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:190` |  |
-
-## `r13_flag` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
-| 2 | 166 | `systems/room13_relations.rpy:18` |  |
 
 ## `r13_grant` (2층)
 
@@ -358,7 +359,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:448` | _r13_nolive_prove |
-| 2 | 168 | `systems/room13_no_livelihood.rpy:36` |  |
+| 2 | 168 | `systems/room13_no_livelihood.rpy:49` |  |
 
 ## `r13_record_entries` (2층)
 

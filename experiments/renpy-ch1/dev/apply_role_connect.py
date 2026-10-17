@@ -1,4 +1,4 @@
-"""Connect approved / canonical designs to their roles in every art channel (0.18.99).
+"""Connect approved / canonical designs to their roles in every art channel (0.19.0).
 
     python3 dev/apply_role_connect.py            # apply (idempotent)
     python3 dev/apply_role_connect.py --check    # report what would change

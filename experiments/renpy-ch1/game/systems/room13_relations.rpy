@@ -64,6 +64,15 @@ init 166 python:
         ("granny","neoul","suspect","편지를 가져오라 부탁",_r13_rel_any("N02")),
         ("granny","resident_ttadak","suspect","새벽 통로를 미리 들음",_r13_rel_any("N03")),
         ("resident_ppul","granny","suspect","명령서를 감쌈",_r13_rel_any("V06")),
+        # 0.18.99 더한 관계 (모두 이미 있는 자료·장면에서 알게 되는 것)
+        ("granny","mom","suspect","엄마 이름으로 편지를 씀",_r13_rel_any("J06","N06")),
+        ("mom","resident_guldol","work","밤새 돌을 함께 지켜봄",_r13_rel_any("Y07")),
+        ("resident_nubi","kid_nubi1","family","엄마와 큰아이",_r13_rel_any("F11")),
+        ("resident_nubi","neoul","suspect","아이들 몫을 주겠다는 약속",_r13_rel_any("F12","F01")),
+        ("resident_teacher","kid_saemi","work","담임",_r13_rel_any("Y13")),
+        ("resident_seori","resident_teacher","suspect","약장 출입 명단",_r13_rel_any("Y12")),
+        ("resident_eunho","resident_guseul","work","다른 장부를 꺼내 옴",_r13_rel_any("V03")),
+        ("resident_badook","guard","work","같은 순찰",lambda:True),
     ]
 
     # 자리표 (열, 줄): 여관 왼쪽 · 가족과 질서 가운데 · 등불·광장·아랫길 오른쪽 · 학교 왼쪽 아래.

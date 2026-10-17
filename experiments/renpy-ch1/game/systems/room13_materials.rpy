@@ -15,17 +15,31 @@ init 148 python:
             return item in (r13_wallet(store.room13)["items"] if kind=="bag" else r13_inspection_state()["inventory"])
         return bool(key and key in ROOM13["evidence"] and key in (store.room13 or {}).get("evidence",[]))
 
-    def r13_catalog_entries(archive=False,hearing=False):
+    def r13_catalog_entries(archive=False,hearing=False,shelf=False):
         raw=list((getattr(persistent,"room13_knowledge",[]) or []) if archive else (store.room13 or {}).get("evidence",[]))
         keys=list(dict.fromkeys(k for k in raw if k in ROOM13["evidence"]))
+        # 0.18.99: records of a finished episode move to the 지난 사건 shelf (systems/room13_shelf.rpy).
+        if not archive:
+            shelved=getattr(store,"r13_shelved_keys",lambda:set())()
+            if shelf:return list(reversed([k for k in keys if k in shelved]))
+            keys=[k for k in keys if k not in shelved]
         if not archive and not hearing:
             keys += ["tool:"+k for k in r13_inspection_state()["inventory"] if k in R13_INSPECTION_ITEMS]
             keys += ["bag:"+k for k in r13_wallet(store.room13)["items"] if k in set(R13_SHOP)|set(R13_BORROW)]
         return list(reversed(list(dict.fromkeys(keys))))
 
+    def r13_catalog_observed(key):
+        """0.18.99: while a case is open a record shows only what was observed; the meaning
+        ("그래서 무슨 뜻? …") is for the meeting to reveal. Shelved (finished) records show it again."""
+        ev=ROOM13["evidence"].get(key)
+        if not ev or "그래서 무슨 뜻?" not in ev.get("establishes",""):return ev
+        if key in getattr(store,"r13_shelved_keys",lambda:set())():return ev
+        ev=dict(ev);ev["establishes"]=ev["establishes"].split("그래서 무슨 뜻?")[0].strip()
+        return ev
+
     def r13_catalog_record(key):
         obj=r13_catalog_object(key)
-        if not obj:return ROOM13["evidence"].get(key)
+        if not obj:return r13_catalog_observed(key)
         kind,item=obj
         if kind=="tool":name,detail=R13_INSPECTION_ITEMS[item]
         else:

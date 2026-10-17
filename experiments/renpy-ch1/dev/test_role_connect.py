@@ -1,4 +1,4 @@
-"""0.18.99 role connection (dev/apply_role_connect.py): approved / confirmed designs in every art
+"""0.19.0 role connection (dev/apply_role_connect.py): approved / confirmed designs in every art
 channel, no picture of the old design left, rollback data present."""
 import csv, hashlib, json, unittest
 from pathlib import Path

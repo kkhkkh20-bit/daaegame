@@ -49,8 +49,8 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
         # Question screens: "돌아가기" sits at the bottom left (0.18.42); only the tools
         # used while choosing a question stay here.
         frame:
-            area (1168,664,112,56) padding (0,0) background None
-            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=112)
+            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
+            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
         if present_action is not None:
             fixed:
                 xpos (R13_EVIDENCE_CARD_CENTER[0]-86) ypos R13_EVIDENCE_CARD_CENTER[1] xsize 172 ysize 64
@@ -66,8 +66,8 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
                 add R13AntiqueIcon("investigate",size=24) yalign .5
                 text "조사 중" size 20 color "#efe2c2" outlines [(1,"#302b25",0,0)] font r13_ui_font() yalign .5
         frame:
-            area (1168,664,112,56) padding (0,0) background None
-            use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=112)
+            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
+            use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
         use r13_options_control(ready)
 
 screen r13_options_control(ready=True):
@@ -410,6 +410,11 @@ screen r13_confirm(message,yes="진행한다",no="돌아간다"):
                 spacing 25
                 textbutton yes action Return(True) sensitive ready text_size 25
                 textbutton no action Return(False) sensitive ready text_size 25
+    # 0.18.99 PC: Enter = yes, Esc = no.
+    if ready:
+        key "K_RETURN" action Return(True)
+        key "K_KP_ENTER" action Return(True)
+        key "game_menu" action Return(False)
 
 screen r13_activities():
     style_prefix "r13"
@@ -450,6 +455,8 @@ screen r13_book(target=None,present=False,hearing=False):
     default material_filter=remembered.get("material_filter","all")
     on "hide" action Function(r13_book_remember,view_context,detail,page,material_filter)
     default order="recent"
+    default rfilter=("related" if present and r13_book_person(target,hearing) else "all")
+    $ chip_person=r13_book_person(target,hearing) if present else None
     timer .15 action SetScreenVariable("ready",True)
     use r13_reference_record_shell("보여주기" if present else "자료 기록")
     use r13_reference_record_categories("r13_book",category,True,archive and not present)
@@ -470,6 +477,10 @@ screen r13_book(target=None,present=False,hearing=False):
     $ entries=r13_present_entries(entries,target) if present else entries
     $ material_filter="all" if (hearing or archive) and material_filter=="transfer" else material_filter
     $ entries=r13_material_subset(entries,material_filter)
+    # 0.18.99: 둘째 줄 거름 단추. 보여줄 때는 「이 사람 관련」이 먼저 골라져 있다.
+    if not (archive and not present):
+        use r13_record_filter_chips(entries,rfilter,"r13_book",chip_person)
+        $ entries=r13_record_filter(entries,rfilter,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
     text ("자료 %d개"%len(entries)) xpos 284 ypos 86 size 20 color "#65503b"
     use r13_material_filters("r13_book",material_filter,not hearing and not archive)

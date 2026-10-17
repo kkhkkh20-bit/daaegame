@@ -142,7 +142,7 @@ init 58 python:
 screen r13_antique_button(caption,icon,command,enabled=True,compact=False,chosen=False,width=None):
     button:
         xsize (width or (104 if compact else 144 if persistent.room13_large_text else 136))
-        ysize (56 if compact else 64)
+        ysize ((70 if persistent.room13_large_text else 56) if compact else 64)
         padding (5,0)
         background R13TouchSurface(focused=chosen)
         hover_background R13TouchSurface(focused=True)
