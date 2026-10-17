@@ -1,0 +1,164 @@
+{
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 2,
+    "location": "post",
+    "fixture_flags": [
+      "entry_corrected",
+      "lodging",
+      "ev_g_done"
+    ]
+  },
+  "person": "resident_sling",
+  "actor": {
+    "person": "resident_sling",
+    "pose": "map27_po_1",
+    "x": 570,
+    "y": 407,
+    "width": 160,
+    "height": 240,
+    "rect": [
+      570,
+      407,
+      160,
+      240
+    ],
+    "depth": 647,
+    "occlusion": [],
+    "contact": "behind_counter",
+    "slot": null,
+    "activity": "소포를 창구에 내려놓는다.",
+    "map27_occlusion": [
+      [
+        [
+          365,
+          550
+        ],
+        [
+          620,
+          518
+        ],
+        [
+          840,
+          491
+        ],
+        [
+          1030,
+          458
+        ],
+        [
+          1280,
+          453
+        ],
+        [
+          1280,
+          720
+        ],
+        [
+          365,
+          720
+        ]
+      ]
+    ],
+    "map27_keepouts": [
+      [
+        [
+          662.1875,
+          516.375
+        ],
+        [
+          727.8125,
+          516.375
+        ],
+        [
+          727.8125,
+          553.09375
+        ],
+        [
+          662.1875,
+          553.09375
+        ]
+      ],
+      [
+        [
+          633.28125,
+          491.375
+        ],
+        [
+          645,
+          491.375
+        ],
+        [
+          655.9375,
+          508.5625
+        ],
+        [
+          662.1875,
+          519.5
+        ],
+        [
+          668.4375,
+          527.3125
+        ],
+        [
+          688.75,
+          532
+        ],
+        [
+          688.75,
+          552.3125
+        ],
+        [
+          663.75,
+          555.4375
+        ],
+        [
+          648.125,
+          542.9375
+        ],
+        [
+          638.75,
+          528.875
+        ]
+      ],
+      [
+        [
+          691.875,
+          496.0625
+        ],
+        [
+          702.8125,
+          496.0625
+        ],
+        [
+          709.0625,
+          510.125
+        ],
+        [
+          718.4375,
+          517.15625
+        ],
+        [
+          723.125,
+          528.875
+        ],
+        [
+          710.625,
+          531.21875
+        ],
+        [
+          695,
+          521.0625
+        ]
+      ]
+    ]
+  },
+  "game_version": "0.19.35",
+  "game_commit": "unknown (existing web build; source checkout is separately recorded)",
+  "source_checkout": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35",
+  "archive_sha256": "75eefe921c0534997c26e9e6f3530beb009df5c3c298164ab2ba711ed2aa2c1b",
+  "capture_kind": "real RenPy renderer, explicit state fixture; not a natural campaign playthrough"
+}

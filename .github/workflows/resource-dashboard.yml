@@ -1,0 +1,30 @@
+name: Resource dashboard (build and verify only)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['experiments/renpy-ch1/game/**', 'tools/resource-dashboard/**', '.github/workflows/resource-dashboard.yml']
+  pull_request:
+    paths: ['experiments/renpy-ch1/game/**', 'tools/resource-dashboard/**', '.github/workflows/resource-dashboard.yml']
+permissions:
+  contents: read
+jobs:
+  resource-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0
+      - name: Extract saved game connections
+        run: python3 tools/resource-dashboard/build.py
+      - name: Verify extractor and real data
+        run: python3 -m unittest discover -s tools/resource-dashboard -p 'test_*.py' -v
+      - run: node --check tools/resource-dashboard/web/app.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: resource-dashboard
+          path: preview/resource-dashboard/
+# Deliberately no deploy or branch-writing permissions.
+# The single integration owner regenerates this directory before the existing Pages publish.

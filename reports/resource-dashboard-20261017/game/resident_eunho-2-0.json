@@ -1,0 +1,120 @@
+{
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "market",
+    "fixture_flags": [
+      "entry_corrected",
+      "lodging",
+      "ev_g_done"
+    ]
+  },
+  "person": "resident_eunho",
+  "actor": {
+    "person": "resident_eunho",
+    "pose": "map27_mk_2",
+    "x": 1194,
+    "y": 347,
+    "width": 107,
+    "height": 160,
+    "rect": [
+      1194,
+      347,
+      107,
+      160
+    ],
+    "depth": 507,
+    "occlusion": [],
+    "contact": "behind_counter",
+    "slot": null,
+    "activity": "장부에 값을 적는다.",
+    "map27_occlusion": [
+      [
+        [
+          1225,
+          448
+        ],
+        [
+          1265,
+          430
+        ],
+        [
+          1270,
+          415
+        ],
+        [
+          1345,
+          415
+        ],
+        [
+          1352,
+          438
+        ],
+        [
+          1360,
+          423
+        ],
+        [
+          1435,
+          420
+        ],
+        [
+          1440,
+          440
+        ],
+        [
+          1490,
+          440
+        ],
+        [
+          1500,
+          420
+        ],
+        [
+          1550,
+          423
+        ],
+        [
+          1565,
+          448
+        ],
+        [
+          1565,
+          525
+        ],
+        [
+          1225,
+          525
+        ]
+      ]
+    ],
+    "map27_keepouts": [
+      [
+        [
+          1240.875,
+          414.70833333333337
+        ],
+        [
+          1298.1666666666667,
+          414.70833333333337
+        ],
+        [
+          1298.1666666666667,
+          435.5416666666667
+        ],
+        [
+          1240.875,
+          435.5416666666667
+        ]
+      ]
+    ]
+  },
+  "game_version": "0.19.35",
+  "game_commit": "unknown (existing web build; source checkout is separately recorded)",
+  "source_checkout": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35",
+  "archive_sha256": "75eefe921c0534997c26e9e6f3530beb009df5c3c298164ab2ba711ed2aa2c1b",
+  "capture_kind": "real RenPy renderer, explicit state fixture; not a natural campaign playthrough"
+}
