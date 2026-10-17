@@ -168,7 +168,10 @@ label r13_wf_events:
         $ r13_offer("r13_wf_ruins")
     if _wfd==6 and _wfp>=1 and _wfloc=="kitchen" and not r13_has("wf_nubi_seen"):
         $ r13_offer("r13_wf_nubi")
-    if _wfd==7 and _wfp==0 and _wfloc=="kitchen" and not r13_has("wf_choice_done"):
+    # 0.18.91 조기 소집: 6일 저녁, 반박할 자료가 다 모였으면 학교에서 회의를 미리 연다. 7일이 빈다.
+    if _wfd==6 and _wfp>=2 and _wfloc=="school" and r13_has("wf_fire") and not r13_has("wf_done") and r13_debate_arguable("Q3"):
+        $ r13_offer("r13_wf_meeting")
+    if _wfd==7 and _wfp==0 and _wfloc=="kitchen" and not r13_has("wf_choice_done") and not r13_has("wf_done"):
         $ r13_offer("r13_wf_choice")
     if _wfd==7 and _wfp<=1 and _wfloc=="school" and r13_has("wf_fire") and not r13_has("wf_done"):
         $ r13_offer("r13_wf_meeting")
@@ -494,7 +497,7 @@ label r13_wf_decision:
     return
 
 label r13_wf_aftermath:
-    call r13_scene("ep_woodshed_ruin","7일 오후 · 아지트 터","quiet")
+    call r13_scene("ep_woodshed_ruin","%d일 %s · 아지트 터"%(room13["day"],("아침","오후","저녁","밤")[min(3,room13["period"])]),"quiet")
     if r13_has("kkomi_dead"):
         call r13_lines([(None,"타고 남은 창고 터. 다람이 장갑 낀 손으로 언 땅을 팠다. 잘 안 파졌다.")]+
             ([(None,"보리가 붕대 감은 손으로 옆에서 같이 팠다.")] if r13_has("wf_bori_freed") else [])+

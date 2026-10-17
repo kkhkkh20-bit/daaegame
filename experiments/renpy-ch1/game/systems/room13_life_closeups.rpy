@@ -38,7 +38,7 @@ screen r13_life_closeup(scene,after=False,tools=(),actions=(),message="",overlay
     style_prefix "r13"
     default selected=None
     default ready=False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ spec=R13_LIFE_SCENES[scene]
     add Transform(spec["after"] if after else spec["before"],xysize=(1280,720),nearest=True)
     if overlay:

@@ -39,7 +39,7 @@ screen arrival_map():
     modal True
     default ready=False
     default hover_place=None
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Transform("assets/village-overview.png",size=(1280,720))
     frame:
         xpos 24 ypos 22 xsize 420 padding (20,15) background Solid("#172225ee")

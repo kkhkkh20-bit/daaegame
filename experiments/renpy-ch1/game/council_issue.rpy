@@ -91,7 +91,7 @@ init 26 python:
 screen council_issue():
     modal True
     default ready = False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#100c09b8")
     frame:
         xpos 80 ypos 100 xsize 1120 ysize 510 padding (28,22)

@@ -14,6 +14,7 @@ label r13_scene(bg,title,mood="calm"):
     $ dialogue_speaker=None
     $ dialogue_expression="neutral"
     $ place=title
+    $ r13_scene_bg=bg
     $ r13_camera="stage"
     $ source_pulse(False)
     $ renpy.music.stop(channel="typing")
@@ -28,6 +29,8 @@ label r13_scene(bg,title,mood="calm"):
             $ renpy.music.play(r13_music,fadeout=.2,fadein=.2)
     else:
         stop music fadeout .2
+    # 0.18.91: a quiet scene keeps its place music low instead of silence.
+    $ renpy.music.set_volume(.5 if mood=="quiet" else 1.0,delay=.6,channel="music")
     $ renpy.pause(.25)
     # A new day or time slot fades in through a 4x4 dither (systems/room13_dot_fx.rpy).
     scene expression r13_background(bg) with r13_scene_transition()

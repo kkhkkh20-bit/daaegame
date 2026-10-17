@@ -25,7 +25,7 @@ screen r13_hud():
                 add R13TimeDial() yalign .5
         frame:
             xpos 24 ypos 20 padding (14,8) background R13PaperFrame()
-            text (r13_location_path().replace("마을 › ","",1) if place != "마차 안" else place) size r13_read_size(18,22) color "#493b30"
+            text r13_hud_place() size r13_read_size(18,22) color "#493b30"
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -88,7 +88,7 @@ screen r13_hub(entry=False):
     style_prefix "r13"
     modal True
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     default world_adjustment=r13_world_adjustment(room13["location"])
 
     if r13_world_width()>1280:
@@ -357,7 +357,7 @@ screen r13_entry_topics():
     modal True
     zorder 30
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ questions=[("신청한 것과 이름 목록이 다른 이유가 뭡니까?",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본과 다시 맞춰 봐 주시겠습니까?",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
     use r13_question_list("guard","interview_neutral","돌목에게 묻기",questions,ready,return_action=Return(("entry","back")))
     use r13_toolbar(investigate_action=Return(("entry","back")),present_action=Return(("entry","argue")),person="guard",mode="talk",ready=ready)
@@ -367,7 +367,7 @@ screen r13_entry_karo_topics():
     modal True
     zorder 30
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ questions=[("마차는 괜찮습니까?",Return("road"),r13_has("question_read:entry:karo:road")),("함께 왔다고 말해 주시겠어요?",Return("witness"),r13_has("question_read:entry:karo:witness")),("짐을 잠시 맡아 주시겠습니까?",Return("bags"),r13_has("question_read:entry:karo:bags"))]
     use r13_question_list("karo","interview_neutral","까로에게 묻기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person="karo",mode="talk",ready=ready)
@@ -388,7 +388,7 @@ screen r13_topics(person):
     modal True
     zorder 30
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ actor_pose=r13_conversation_pose(person)
     $ questions=[(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics_in_order(person)]
     use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready,return_action=Return("back"))
@@ -399,7 +399,7 @@ screen r13_confirm(message,yes="진행한다",no="돌아간다"):
     modal True
     zorder 65
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#172a2aa6")
     frame:
         xpos 165 ypos 210 xsize 950 padding (32,28)
@@ -416,7 +416,7 @@ screen r13_activities():
     modal True
     zorder 45
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#172a2aa6")
     frame:
         area (180,160,920,495) padding (26,25)
@@ -449,7 +449,7 @@ screen r13_book(target=None,present=False,hearing=False):
     default page=remembered.get("page",0)
     on "hide" action Function(r13_book_remember,view_context,detail,page)
     default order="recent"
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     use r13_reference_record_shell("보여주기" if present else "자료 기록")
     use r13_reference_record_categories("r13_book",category,True,archive and not present)
     if not present and r13_learning_archive_keys():
@@ -470,7 +470,7 @@ screen r13_book(target=None,present=False,hearing=False):
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
     text ("보여줄 자료 %d개"%len(entries) if present else "모은 자료 %d개"%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
-    use r13_material_detail(selected_record,archive and not present)
+    use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
     if present and not selected_record:
         text "보여줄 자료를 직접 고르세요." xpos 842 ypos 320 xsize 362 text_align .5 size 18 color "#796044"
     if present:
@@ -523,7 +523,7 @@ screen r13_debate(claim):
     style_prefix "r13"
     modal True
     default ready=False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     frame:
         area (50,155,1180,425) padding (26,22) background R13PaperPanel()
         vbox:

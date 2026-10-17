@@ -54,6 +54,7 @@ init 58 python:
         path=r13_world_file(location,period)
         crop=spec.get("crops",{}).get(period)
         source=Crop(tuple(crop),path) if crop else path
+        source=r13_scene_treatment(location,period,source)
         # Dot effects (room13_dot_fx.rpy) sit in the picture's own pixels, before scaling.
         source=r13_dot_fx_scene(location,period,source,path,crop)
         return Transform(source,size=(int(spec["width"]),720),nearest=True,subpixel=False)

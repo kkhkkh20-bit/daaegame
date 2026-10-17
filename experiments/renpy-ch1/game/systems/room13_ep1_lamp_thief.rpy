@@ -3,6 +3,7 @@
 #   3번 등 밑에서 피코가, 기록실 난로 앞에서 사서 선생님이 얼어 죽는다(제시로 살릴 수 있다).
 #   4일 아침 광장 회의(Q1)로 결판. 옛 사건 4 「톡의 공방」은 이 에피소드로 대신한다.
 init 152 python:
+    import re
     # ---- 단서 (모두 쉬운 물건, 설명은 '그래서 무슨 뜻'으로) ----
     for _key,_name,_kind,_est in (
         ("L00","등 밑의 피코","기록","3일 새벽, 광장 3번 등이 식고 그 밑에서 자던 그림쟁이 피코가 얼어 쓰러졌다."),
@@ -99,7 +100,10 @@ init 152 python:
     R13_EP_MEETING_PLACE={"ep1":"winter_square"}
     R13_EP_MEETING_HEADER={"ep1":"광장 회의 · 4일째"}
     def r13_meeting_header(session):
-        if session in R13_EP_MEETING_HEADER:return R13_EP_MEETING_HEADER[session]
+        if session in R13_EP_MEETING_HEADER:
+            # 0.18.91: a meeting convened early shows the day it actually happens.
+            head=R13_EP_MEETING_HEADER[session]
+            return re.sub(r"\d+일째","%d일째"%store.room13["day"],head) if store.room13 else head
         return "식당 회의 · %d일째"%R13_TRIAL_DAY if session=="trial" else "제단 앞 회의 · 14일째"
     R13_DEBATE["Q1"]=dict(title="3번 등을 열어 피코를 얼어 쓰러지게 한 사람",session="ep1",chair="neoul",
         statements=[

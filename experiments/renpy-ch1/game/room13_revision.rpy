@@ -95,7 +95,7 @@ screen r13_lever_actions(raised):
     modal True
     zorder 70
     default ready=False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ lever_options=[("레버를 내린다" if raised else "레버를 올려 걸림턱에 건다",Return("lower" if raised else "raise"),False),("그대로 둔다",Return("leave"),False)]
     use r13_question_list(None,"neutral","올라간 레버가 걸림턱에 고정돼 있다." if raised else "선반 아래 레버는 내려가 있다.",lever_options,ready,list_left=280,list_width=720,animate=False)
     key "game_menu" action Return("leave")

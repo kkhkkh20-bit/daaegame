@@ -13,7 +13,7 @@ screen source_world():
 
 screen source_explore():
     default ready = False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     # Background reaction lies below every evidence and resident hit target.
     button:
         xpos 0 ypos 95 xsize 1280 ysize 505
@@ -93,7 +93,7 @@ screen source_map():
 screen source_questions(person):
     modal True
     default ready = False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#0b172733")
     add source_actor+" interview_neutral" at portrait_question id "topic_actor"
     vbox:
@@ -202,7 +202,7 @@ screen source_choice(title,options):
 
 screen source_debate(round):
     default ready = False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ claim = round["stms"][source_statement]
     $ actor = SOURCE_ALIAS.get(claim["w"],claim["w"])
     add Transform(actor+" interview_neutral",size=(325,400),fit="contain") xpos 825 ypos 130 id "debate_actor"

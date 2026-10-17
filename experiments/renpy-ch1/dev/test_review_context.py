@@ -6,7 +6,7 @@ class ReviewContext(unittest.TestCase):
  def setUp(self):
   self.store=types.SimpleNamespace(room13={'evidence':['E01'],'day':4},r13_book_views={},r13_meeting_claim='C2',r13_debate_selected='s2')
   source=(ROOT/'game/room13_notebook.rpy').read_text().split('    def r13_book_context',1)[1].split('    def r13_record_category',1)[0]
-  self.env=dict(store=self.store);exec(textwrap.dedent('    def r13_book_context'+source),self.env)
+  self.env=dict(store=self.store,persistent=types.SimpleNamespace(room13_large_text=False),renpy=types.SimpleNamespace(retain_after_load=lambda:None));exec(textwrap.dedent('    def r13_book_context'+source),self.env)
  def test_reopen_retains_selection_without_touching_case_or_other_person(self):
   before=copy.deepcopy(self.store.room13)
   context=self.env['r13_book_context'];remember=self.env['r13_book_remember']
@@ -19,3 +19,16 @@ class ReviewContext(unittest.TestCase):
   self.assertEqual(a,context('granny',True))
   self.store.r13_debate_selected='s3';self.assertNotEqual(a,context('resident_seori',True))
   self.store.r13_debate_selected='s2';self.store.r13_meeting_claim='F1';self.assertNotEqual(a,context('resident_seori',True))
+
+ def test_scroll_offsets_are_isolated_by_record_target_archive_and_text_size(self):
+  before=copy.deepcopy(self.store.room13)
+  key=self.env['r13_record_scroll_key']
+  a=key(('person','buri'),'E01')
+  self.env['R13RecordScrollChanged'](a)(135.5)
+  self.assertEqual(self.store.r13_record_scrolls[a],135)
+  self.assertNotEqual(a,key(('person','granny'),'E01'))
+  self.assertNotEqual(a,key(('person','buri'),'E02'))
+  self.assertNotEqual(a,key(('person','buri'),'E01',True))
+  self.env['persistent'].room13_large_text=True
+  self.assertNotEqual(a,key(('person','buri'),'E01'))
+  self.assertEqual(self.store.room13,before)

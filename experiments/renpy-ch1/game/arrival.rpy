@@ -253,7 +253,7 @@ screen arrival_cold_shade():
 screen arrival_questions():
     modal True
     default ready = False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#0b172733")
     add arrival_actor+" interview_neutral" at portrait_question id "topic_actor"
     vbox:
@@ -265,7 +265,7 @@ screen arrival_questions():
 screen arrival_interior():
     modal True
     default ready = False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     if arrival_inn_room == "reception":
         imagebutton:
             id "inn_host_activity"
@@ -323,7 +323,7 @@ screen arrival_snow():
 screen arrival_place():
     modal True
     default ready = False
-    timer .35 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     for local in village_outdoor_people(arrival_location):
         imagebutton:
             xpos local["x"] ypos local["y"]

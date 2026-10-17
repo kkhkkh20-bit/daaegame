@@ -9445,23 +9445,15 @@ testcase hitbox_room13:
     $ r13_admin_hitboxes=False
 
 testcase job_in_person:
-    # 0.18.56 (owner): no work board at the top; Nabi gives the kitchen work in the dining room.
+    # 0.18.91 (owner): jobs were removed. Nabi in the dining room no longer offers kitchen work.
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True),("entry_corrected","lodging","life_meal_served"))
+    run Call("r13_qa_roam",dict(day=2,period=0,location="dining",life_poc=True),("entry_corrected","lodging","life_meal_served","livelihood_open"))
     pause 1.0
-    screenshot "dining_no_board.png"
-    run Call("r13_qa_talk","nabi")
-    click pos (1150,90) until "식사 준비" timeout 30
-    screenshot "nabi_job_topic.png"
-    click "식사 준비"
-    click pos (1150,90) until screen "r13_confirm" timeout 30
-    click "시작하기"
-    click pos (1150,90) until screen "choice" timeout 40
-    click "맡은 일만 마친다"
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    assert eval (room13["period"]==1 and any(j["key"]=="kitchen" for j in r13_wallet(room13)["jobs"]))
+    assert eval (not any(k.startswith("job:") for p in ("nabi","karo","buri","resident_kkwak","resident_badook") for k,_ in r13_topics(p)))
+    assert eval (not any(r13_job_allowed(room13,k) for k in R13_JOBS))
+    screenshot "dining_no_job.png"
 
 testcase depth_dump:
     pause 2.0
@@ -9541,30 +9533,21 @@ testcase new_places_tour:
     $ r13_qa_crowd_dump()
     run Call("r13_qa_roam",dict(day=3,period=0,location="market",life_poc=True),("entry_corrected","lodging"))
     pause 1.0
-    # The market crowd stands at the screen centre; advance on the date panel instead.
-    click pos (1150,90) until "지도 · 이동" timeout 30
-    click "지도 · 이동"
+    # The market crowd stands at the screen centre; open the map from the toolbar
+    # (0.18.91: screens accept input after .15s, so a date-panel click no longer falls through).
+    click "지도 · 이동" until screen "r13_map" timeout 30
     pause 1.5
     screenshot "place_map.png"
 
 testcase job_fishing:
-    # 0.18.61: 꽥순 gives the ice-fishing work at the river.
+    # 0.18.91 (owner): jobs were removed; no lodging fee is charged overnight either.
     pause 2.0
     click "처음부터"
     pause 3.0
-    $ r13_qa_found=r13_qa_find_slot("resident_kkwak","river")
-    assert eval (r13_qa_found is not None)
-    run Call("r13_qa_roam",r13_qa_found,("entry_corrected","lodging"))
+    run Call("r13_qa_roam",dict(day=3,period=0,location="river",life_poc=True),("entry_corrected","lodging","livelihood_open"),cash=4)
     pause 1.0
-    run Call("r13_qa_talk","resident_kkwak")
-    click pos (1150,90) until "얼음낚시" timeout 30
-    click "얼음낚시"
-    click pos (1150,90) until screen "r13_confirm" timeout 30
-    click "시작하기"
-    click pos (1150,90) until screen "choice" timeout 40
-    click "강 건너 길에 관해 묻는다"
-    click pos (1150,90) until screen "r13_hub" timeout 40
-    assert eval ("kkwak_ice" in r13_wallet(room13)["relations"] and any(j["key"]=="fishing" for j in r13_wallet(room13)["jobs"]))
+    assert eval (r13_settle_lodging(room13) is room13 and r13_cash_now()==4)
+    screenshot "river_no_job.png"
 
 testcase market_stall_shop:
     # 0.18.61: goods are bought at the market stall.
@@ -10867,7 +10850,10 @@ testcase ep1_meeting:
     screenshot "ep1_ready.png"
     click "결론을 말한다"
     pause 1.0
-    click "온도를 잰 건 우박, 조각을 훔친 건 실룩, 그 조각을 산 건 백 부인이다"
+    click "실룩"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA L07"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until "없던 걸로 하시죠" timeout 60
@@ -11013,7 +10999,10 @@ testcase ep3_meeting:
     screenshot "ep3_ready.png"
     click "결론을 말한다"
     pause 1.0
-    click "누비가 문 앞에 등유를 부었다. 쫓아내려던 불이 바람에 번졌다"
+    click "누비"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA F11"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until "“약속은 여기서 끝냅니다.”" timeout 60
@@ -11067,11 +11056,19 @@ testcase ep4_after_trial:
     click "보여주기"
     pause 0.8
     click "QA N09"
+    click pos (640,600) until eval (r13_debate_state().get("half",{}).get("Q4:s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA N07"
     click pos (640,600) until eval (r13_debate_is_broken("Q4","s3") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 1.2
     click "결론을 말한다"
     pause 1.0
-    click "안에 따닥이 있는 걸 아는 사람이 닫았다. 그건 할머니다"
+    click "할머니"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA N03"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until eval (r13_has("chorong_lamp")) timeout 120
@@ -11116,6 +11113,11 @@ testcase ep5_soup_meeting:
     click "보여주기"
     pause 0.8
     click "QA Y13"
+    click pos (640,600) until eval (r13_debate_state().get("half",{}).get("Q5:s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y11"
     click pos (640,600) until eval (r13_debate_is_broken("Q5","s3") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 0.6
     click "보여주기"
@@ -11125,7 +11127,10 @@ testcase ep5_soup_meeting:
     pause 1.2
     click "결론을 말한다"
     pause 1.0
-    click "약을 넣은 건 선생님이다. 아이들이 얼거나 수레에 실려 갈 거라 믿었다"
+    click "사자 선생님"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA Y13"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until "수레의 진실을 밝힌다" timeout 60
@@ -11179,7 +11184,10 @@ testcase ep6_cart:
     pause 1.2
     click "결론을 말한다"
     pause 1.0
-    click "보호소는 없다. 수레는 제단으로 간다. 명령서는 할머니가 썼다"
+    click "할머니"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA V06"
     click pos (640,600) until "회의를 계속한다" timeout 60
     click "회의를 계속한다"
     click pos (640,600) until "수레를 멈춘다" timeout 60
@@ -11601,6 +11609,49 @@ testcase story_scenes:
         store.room13["flags"]=list(store.room13["flags"])+["ttadak_dead","ttadak_witness"]
     assert eval (r13_debate_judge("C1",[st["id"] for st in r13_debate_statements("C1") if "H7" in st.get("accept",[])][0],"H7")[1][0][0]=="resident_tok")
     $ open("qa_result.txt","w").write("story scenes + continuity ok")
+
+testcase relations_tab:
+    # 0.18.91 수첩 관계도: 숨진 사람(회색·X), 구한 사람(초록), 아직 못 만난 엄마, 알게 된 관계만 선.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=10,period=0,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",evidence=["N02","N03","N05","L00","W2"]),("lodging","entry_corrected","st_ttadak_boards"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    python:
+        r13_edit(encounters=[dict(person=p,day=2,period=0,place="square") for p in ("granny","nabi","resident_tosil","resident_lamplighter","resident_tok","resident_ttadak","resident_piko","resident_nero","neoul","resident_teacher","resident_bori")])
+        r13_edit(day=3);r13_flag("piko_survived")
+        r13_edit(day=8,period=3);r13_flag("chorong_dead")
+        r13_edit(day=9,period=0);r13_flag("ttadak_dead")
+        r13_edit(day=10)
+    run Show("r13_records",initial_tab="relations")
+    pause 1.5
+    screenshot "relations.png"
+    assert eval (r13_rel_status("resident_lamplighter")==("dead","8일 밤 숨짐") and r13_rel_status("resident_piko")[0]=="saved" and r13_rel_status("mom")[0]=="missing")
+    assert eval (("granny","neoul","suspect","편지를 가져오라 부탁") in r13_rel_edges() and not any(e[3]=="할아버지와 손녀" for e in r13_rel_edges()))
+    click pos (870,330)
+    pause 1.0
+    screenshot "relations_pick.png"
+    $ r13_qa_note("relations ok")
+
+testcase time_flow:
+    # 0.18.91 사건 중심 시간: 목표 줄의 회의 카운트다운, ③은 자료가 다 모이면 6일 저녁 학교에서 미리 연다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L06"]),("entry_corrected","lodging","livelihood_open","lt_dawn"))
+    pause 1.0
+    # The QA seed marks finished episodes (R13_QA_EPISODES_SEEN); reopen ①.
+    $ r13_edit(flags=[f for f in room13["flags"] if f!="lt_done"])
+    assert eval ((r13_meeting_countdown() or "").startswith("광장 회의까지 "))
+    screenshot "countdown_ep1.png"
+    run Call("r13_qa_roam",dict(day=6,period=2,location="school",life_poc=True,evidence=["F04","F05","F06","F09","F11"]),("entry_corrected","lodging","livelihood_open","lt_done","wf_fire","wf_morning","wf_ruins","+offers"))
+    pause 1.0
+    $ r13_edit(flags=[f for f in room13["flags"] if f!="wf_done"])
+    assert eval ("미리 열 수 있다" in (r13_meeting_countdown() or ""))
+    run Call("r13_qa_event","r13_wf_events")
+    pause 1.0
+    assert eval (r13_debate_arguable("Q3") and "r13_wf_meeting" in room13.get("offers",{}))
+    $ r13_qa_note("time flow ok")
 
 testcase expression_acting:
     # 0.18.92 (owner 17:05): the expression package in the real dialogue layout, normal and large

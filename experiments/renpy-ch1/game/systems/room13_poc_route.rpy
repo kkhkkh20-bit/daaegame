@@ -10,6 +10,8 @@ init 100 python:
         return any(job.get("key")==key for job in r13_wallet(s)["jobs"])
 
     def r13_poc_helped(person,state=None):
+        # 0.18.91: 일거리를 없앴으니, 엄마 메모를 보여 주면 나비·까로가 본 것을 바로 말해 준다.
+        return True
         s=(store.room13 or {}) if state is None else state
         if any(R13_JOBS.get(job.get("key"),{}).get("npc")==person for job in r13_wallet(s)["jobs"]):return True
         # Shop integration writes only accepted, completed help, not purchases.

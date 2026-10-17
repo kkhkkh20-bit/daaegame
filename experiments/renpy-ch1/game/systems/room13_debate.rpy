@@ -442,6 +442,12 @@ init 98 python:
             return "soft",list(lines) if lines else [(R13_DEBATE[claim]["chair"],"본 사람이 이름을 밝히지 않은 기록만으로는 확인이 어렵습니다. 다른 물건이 필요합니다.")]
         if key in st.get("accept",[]) and not r13_debate_context_ready(st):
             return "soft",list(st["blocked"])
+        # 0.18.91 두 자료 엮기: 하나만 내밀면 반쯤 무너지고 상대가 되받는다. 나머지 하나로 끝난다.
+        pair=st.get("pair")
+        if pair and key in pair["keys"]:
+            first=r13_debate_state().get("half",{}).get(claim+":"+sid)
+            if first and first!=key:return "break",list(pair["broken"])
+            return "half",list(pair["half"][key])
         if key in st.get("accept",[]):
             # broken_if: a different rebuttal when a condition holds (e.g. the witness died, 0.18.90).
             alt=st.get("broken_if",{}).get(key)
@@ -466,11 +472,23 @@ init 98 python:
     def r13_debate_miss(claim):
         d=r13_debate_state();d["misses"][claim]=d["misses"].get(claim,0)+1;r13_debate_save(d)
 
+    def r13_debate_half(claim,sid,key):
+        d=r13_debate_state();half=dict(d.get("half",{}));half[claim+":"+sid]=key;d["half"]=half;r13_debate_save(d)
+
+    def r13_debate_hint_due(claim,sid):
+        """0.18.91: after the second wrong record on one statement, its hint once (as a thought)."""
+        hint=r13_debate_statement(claim,sid).get("hint")
+        if not hint:return None
+        d=r13_debate_state();key=claim+":"+sid;seen=d.setdefault("hint_misses",{})
+        seen[key]=seen.get(key,0)+1;r13_debate_save(d)
+        return "("+hint+")" if seen[key]==2 else None
+
     def r13_debate_answerable(claim,st):
         """Could the player break this statement with what they actually hold?"""
         if r13_debate_is_broken(claim,st["id"]) or st.get("truth"):return True
         if st.get("ready_flags"):return all(r13_has(f) for f in st["ready_flags"])
         if not r13_debate_context_ready(st):return False
+        if st.get("pair"):return all(k in store.room13.get("evidence",[]) for k in st["pair"]["keys"])
         consent=st.get("need_consent",{})
         return any(key in store.room13.get("evidence",[]) and (key not in consent or r13_has(consent[key])) for key in st.get("accept",[]))
 
@@ -594,6 +612,8 @@ init 98 python:
         return opts[shift:]+opts[:shift]
 
 label r13_debate_run(claim):
+    # 0.18.91: 회의 직전 자동저장. 회의에서 그만둔 반론은 그 회의 안에서 되돌릴 수 없다.
+    $ r13_autosave_now()
     $ r13_meeting_claim=claim
     $ r13_meeting_active=True
     $ r13_meeting_focus_change(claim,r13_debate_statements(claim)[0]["who"])
@@ -725,6 +745,9 @@ label r13_debate_conclude(claim):
     if not r13_debate_ready(claim):
         return False
     $ r13_debate_spec=R13_DEBATE[claim]["conclusion"]
+    if r13_debate_spec.get("point"):
+        call r13_debate_point(claim)
+        return _return
     $ r13_debate_menu=[(text,kind) for kind,text in r13_debate_conclusion_options(claim)]
     $ r13_debate_pick=renpy.display_menu([(r13_debate_spec["prompt"],None)]+r13_debate_menu)
     if r13_debate_pick=="correct":
@@ -735,12 +758,40 @@ label r13_debate_conclude(claim):
     call r13_meeting_public_vote(claim,r13_debate_pick)
     return False
 
+# 0.18.91 결론 = 지목 + 결정적 증거 (문장 고르기 대신). 틀린 사람이나 틀린 증거는 예전 over/weak와 같은 결과.
+label r13_debate_point(claim):
+    $ r13_point=r13_debate_spec["point"]
+    $ r13_debate_pick=renpy.display_menu([(r13_point["prompt"],None)]+[(R13_NAMES.get(w,w),w) for w in r13_point["candidates"]]+[("아직 말하지 않는다","back")])
+    if r13_debate_pick=="back":
+        return False
+    if r13_debate_pick!=r13_point["who"]:
+        call r13_lines([r13_point.get("wrong_who",{}).get(r13_debate_pick,r13_debate_spec["over"])],"debate:point_wrong:"+claim+":"+r13_debate_pick)
+        $ r13_debate_pick="over"
+        $ r13_debate_miss(claim)
+        call r13_meeting_public_vote(claim,r13_debate_pick)
+        return False
+    call r13_lines([("dad",r13_point["ask"])],"debate:point:"+claim)
+    show screen r13_meeting_cut_in("이 기록을 봐 주세요.")
+    call screen r13_book("resident_seori",present=True,hearing=True)
+    $ r13_point_key=_return
+    if not r13_point_key:
+        return False
+    if r13_point_key in r13_point["keys"]:
+        $ r13_debate_pick="correct"
+        call r13_lines(list(r13_point["decisive"].get(r13_point_key,[]))+list(r13_debate_spec["correct"]),"debate:conclusion:"+claim)
+        return True
+    call r13_lines([r13_point["wrong_key"]],"debate:point_key_wrong:"+claim+":"+r13_point_key)
+    $ r13_debate_pick="weak"
+    $ r13_debate_miss(claim)
+    call r13_meeting_public_vote(claim,r13_debate_pick)
+    return False
+
 screen r13_meeting_agenda(claims):
     style_prefix "r13"
     modal True
     zorder 35
     default ready=False
-    timer .3 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     use r13_meeting_stage(claims[0] if claims else "C1")
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
@@ -765,7 +816,7 @@ screen r13_debate_board(claim,selected):
     zorder 35
     default ready=False
     default statements_open=False
-    timer .3 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     $ sel=r13_debate_statement(claim,selected)
     $ done,total=r13_debate_progress(claim)
     $ visible=[st for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
@@ -777,7 +828,21 @@ screen r13_debate_board(claim,selected):
     textbutton "회의 중단":
         style "r13_action_button" xpos 1096 ypos 18 xsize 160 ysize 64 text_size 20
         action Return(("leave",)) sensitive ready
-    if r13_meeting_feedback and r13_meeting_feedback.get("claim")==claim:
+    $ half_key=r13_debate_state().get("half",{}).get(claim+":"+selected)
+    if half_key and sel.get("pair") and not r13_debate_is_broken(claim,selected):
+        # Show only the material actually presented. The missing answer stays hidden.
+        frame:
+            area (80,416,1120,72) padding (16,10) background R13PaperFrame()
+            hbox:
+                spacing 18 yalign .5
+                add R13AntiqueIcon("present",size=32) yalign .5
+                vbox:
+                    spacing 4
+                    text "제시한 근거 · 1 / 2" size r13_read_size(17,20) color "#795d40"
+                    text r13_catalog_title(half_key) size r13_read_size(20,24) color "#493b30" xsize 570
+                text "+" size 28 color "#a88043" yalign .5
+                text "다른 자료로 이어 보기" size r13_read_size(20,23) color "#795d40" yalign .5
+    elif r13_meeting_feedback and r13_meeting_feedback.get("claim")==claim:
         frame:
             area (80,420,1120,68) padding (14,8) background R13PaperPanel()
             vbox:

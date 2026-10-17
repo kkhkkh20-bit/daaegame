@@ -55,9 +55,11 @@ init 150 python:
         ("r13_facility", "아무도 없는 만남의 방"): ("dark", "clock"),
         ("r13_clinic", "금요일 · 진료실 앞"): ("village2", "clock"),
         ("r13_altar", "북쪽 산길 끝 · 숲속 제단"): ("altar", "wind"),
-        ("r13_altar", "산 아래 다시 켜진 마을"): ("ending", None),
+        # 0.18.91: 엔딩 곡은 가족이 함께 남는 좋은 결말(E5/E6)에. E3(누군가 장치에 이어 붙여진 결말)은 제단 곡.
+        ("r13_altar", "산 아래 다시 켜진 마을"): ("altar", "wind"),
         ("front", "여관 접수대"): ("inn", "fire"),
-        ("front", "여관 접수대 · 그 뒤"): ("search", None),
+        ("front", "여관 접수대 · 그 뒤"): ("family", "fire"),
+        ("room", "열세 번째 창"): ("ending", None),
         ("front", "월요일 아침 · 꺼져 가는 난방"): ("night", None),
         ("hall", "여관 2층 · 연기가 새는 문"): (None, "heartbeat"),
         ("room", "여관 2층 · 13호 구조 직후"): (None, "heartbeat"),
@@ -72,8 +74,13 @@ init 150 python:
             return "travel", amb
         if mood == "hearing":
             return "council", None
-        if mood == "quiet":
+        if mood == "silent":
             return None, amb
+        if mood == "quiet":
+            # 0.18.91: 조용한 장면도 무음 대신 그 장소의 생각 곡을 작게 깐다(음량은 r13_scene).
+            if tracks and tracks[0] in ("dark", "altar", "travel"):
+                return tracks[0], amb
+            return ("think" if bg in R13_INDOOR else "snow"), amb
         if tracks is None:
             return {"calm": "village", "search": "search", "night": "night"}.get(mood), amb
         return tracks[R13_MOOD_SLOT.get(mood, 0)], amb

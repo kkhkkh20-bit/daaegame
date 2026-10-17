@@ -120,7 +120,7 @@ screen winter_found(key):
     modal True
     zorder 72
     default ready=False
-    timer .3 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#07171bbc")
     frame:
         xpos 210 ypos 140 xsize 860 ysize 440 padding (24,24) background Solid("#233b3ef8")

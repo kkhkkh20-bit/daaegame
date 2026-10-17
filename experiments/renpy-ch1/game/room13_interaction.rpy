@@ -183,7 +183,7 @@ screen r13_object_context(key):
     zorder 35
     style_prefix "r13"
     default ready=False
-    timer .25 action SetScreenVariable("ready",True)
+    timer .15 action SetScreenVariable("ready",True)
     add Solid("#0c202780")
     # The panel is as tall as its choices (0.18.22, owner: no empty box under one button).
     $ option_count=int(bool(r13_tool_available(key)))+len(r13_object_actions(key))+int(bool(r13_context_wait(key) and room13["period"]<3))+int(bool(r13_bed_available(key) or r13_bed_blocked_reason(key)))

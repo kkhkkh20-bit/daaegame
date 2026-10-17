@@ -137,7 +137,7 @@ init 57 python:
         """r13_world_background가 부른다. 효과가 없으면 원본을 그대로 돌려준다."""
         if not R13_DOT_FX or not r13_dot_fx_wanted(location, period):
             return source
-        key = (location, period, path, tuple(crop) if crop else None)
+        key = (location, period, path, tuple(crop) if crop else None,r13_scene_contrast_key(location,period))
         cached = R13_DOT_FX_SCENES.get(key)
         if cached is None:
             size = tuple(int(v) for v in crop[2:]) if crop else renpy.image_size(path)

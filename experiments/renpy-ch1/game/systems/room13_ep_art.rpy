@@ -110,10 +110,19 @@ init 160 python:
         if "cut" in options:
             if options["cut"]:renpy.show("r13_ep_cut",what=At(r13_ep_cut_art(options["cut"]),r13_ep_art_fade),zorder=5)
             else:renpy.hide("r13_ep_cut")
+        # 0.18.91 연출: 줄마다 음악 끄기/바꾸기, 효과음, 화면 어둡게(그 대화가 끝날 때까지).
+        if "music" in options:
+            if options["music"]:renpy.music.play(R13_BGM[options["music"]],fadeout=1.0,fadein=1.0)
+            else:renpy.music.stop(fadeout=1.5)
+        if options.get("sfx"):source_fx(options["sfx"])
+        if "dim" in options:
+            if options["dim"]:renpy.show("r13_ep_dim",what=At(Solid("#05080cb0"),r13_ep_art_fade),zorder=4)
+            else:renpy.hide("r13_ep_dim")
 
     def r13_ep_line_art_clear():
         renpy.hide("r13_ep_book")
         renpy.hide("r13_ep_cut")
+        renpy.hide("r13_ep_dim")
 
 transform r13_ep_art_fade:
     alpha 0.0

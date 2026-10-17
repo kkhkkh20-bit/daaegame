@@ -51,15 +51,13 @@ class LearningTest(unittest.TestCase):
         self.assertEqual(s,before)
 
     def test_preview_matches_real_lodging_settlement_without_writes(self):
-        for day,cash,debt,settled in ((1,0,0,[]),(2,4,3,[]),(2,10,0,[]),(2,12,2,[]),(2,7,0,[2])):
+        # 0.18.91: no lodging fee; the preview and the real (no-op) settlement agree.
+        for day,cash,debt,settled in ((1,0,0,[]),(2,4,3,[]),(2,10,0,[]),(2,7,0,[2])):
             s=dict(day=day,period=0,livelihood=dict(cash=cash,debt=debt,settled=settled))
             original=copy.deepcopy(s);p=self.ns['r13_learning_lodging_preview'](s)
             actual=self.ns['r13_wallet'](self.ns['r13_settle_lodging'](s))
-            self.assertEqual((p['left'],p['debt']),(actual['cash'],actual['debt']))
+            self.assertEqual((p['fee'],p['left'],p['debt']),(0,actual['cash'],actual['debt']))
             self.assertEqual(s,original)
-        s=dict(day=2,period=0,livelihood=dict(cash=1,debt=2,settled=[]))
-        p=self.ns['r13_learning_lodging_preview'](s,6)
-        self.assertEqual((p['paid'],p['added_debt'],p['left']),(7,3,0))
 
     def test_action_time_never_promises_automatic_next_day(self):
         f=self.ns['r13_learning_time_text']
@@ -76,7 +74,7 @@ class LearningTest(unittest.TestCase):
         s.update(day=2,case_state='occurred',life_poc=False)
         text=self.ns['r13_learning_sleep_text']();self.assertNotIn('숙식',text);self.assertIn('남은 낮',text)
         s.update(life_poc=True,period=2)
-        text=self.ns['r13_learning_sleep_text']();self.assertIn('외상',text);self.assertNotIn('남은 낮',text)
+        text=self.ns['r13_learning_sleep_text']();self.assertNotIn('외상',text);self.assertNotIn('숙식',text);self.assertNotIn('남은 낮',text)
 
     def test_witness_permission_uses_consent_not_merely_protection(self):
         s=self.store.room13;s['flags']=['bami_protected']

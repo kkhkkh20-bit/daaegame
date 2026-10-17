@@ -43,7 +43,7 @@ init 98 python:
     def r13_learning_lodging_preview(state=None,additional=0):
         s=(store.room13 or {}) if state is None else state
         wallet=r13_wallet(s)
-        fee=0 if s.get("day",1)==1 or s.get("day",1) in wallet["settled"] else 10
+        fee=0  # 0.18.91: 숙박비는 없앴다(systems/room13_no_livelihood.rpy).
         cash=wallet["cash"]+additional
         paid=min(cash,fee)
         return dict(fee=fee,paid=paid,left=cash-paid,added_debt=fee-paid,debt=wallet["debt"]+fee-paid)
@@ -63,8 +63,7 @@ init 98 python:
         event_night=s.get("day")==R13_CASE_DAY and s.get("case_state")=="pending"
         if event_night:return "오늘 찾은 것은 기록에 남아 있다. 오늘 조사를 마치고 저녁을 맞을까요?"
         text="오늘 찾은 것은 기록에 남아 있다. 잠들면 다음 날 아침이 됩니다."
-        if s.get("life_poc") or "livelihood_open" in s.get("flags",[]):
-            text+="\n"+r13_learning_settlement_text(s)
+        # 0.18.91: 숙박비가 없어져 밤 정산 줄은 넣지 않는다.
         if s.get("period",0)<2:
             text+="\n아직 남은 낮 시간은 쓰지 않고 하루를 마칩니다."
         return text
