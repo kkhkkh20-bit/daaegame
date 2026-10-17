@@ -1,4 +1,5 @@
 default r13_present_priority = None
+default r13_book_views = {}
 
 # Record categories are explicit: a testimony is not inferred from its title.
 init 68 python:
@@ -15,6 +16,23 @@ init 68 python:
         "E36":"전날 진료요청","E37":"잠금 작동기록","G1":"예약 원본","G2":"아이 보호 규칙","G3":"옮겨 쓴 목록",
     }
     R13_RECORD_PAGE_SIZE=12
+    def r13_book_context(target,hearing):
+        if hearing:
+            return ("meeting",getattr(store,"r13_meeting_claim",None),getattr(store,"r13_debate_selected",None))
+        return ("person",target)
+
+    def r13_book_remember(context,detail,page):
+        views=dict(getattr(store,"r13_book_views",{}))
+        views[context]=dict(detail=detail,page=page)
+        store.r13_book_views=views
+
+    def r13_book_statement():
+        claim=getattr(store,"r13_meeting_claim",None)
+        sid=getattr(store,"r13_debate_selected",None)
+        if not claim or not sid:return None
+        st=r13_debate_statement(claim,sid)
+        return (R13_NAMES.get(st["who"],"발언자"),r13_meeting_statement_text(claim,sid))
+
     def r13_record_category(key):
         return R13_RECORD_CATEGORIES[ROOM13["evidence"][key]["kind"]]
     def r13_record_entries(category="evidence",archive=False,present=False,order="acquired",favorite_only=False):
@@ -183,20 +201,22 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
         $ key=visible[index] if index<len(visible) else None
         button:
             area (290+(index%columns)*cell,146+(index//columns)*140,cell-5,136)
-            padding (6,6) background R13PaperPanel(key is not None and detail==key)
+            padding (6,6) background R13PaperPanel(key is not None and detail==key,transferable=bool(key and not archive and r13_catalog_transferable(key)))
             action (Function(r13_record_select,owner,"detail",key,not archive) if key else NullAction())
             sensitive key is not None
             if key:
                 vbox:
                     xalign .5 yalign .5 spacing 6
-                    add Transform(r13_record_icon(key),xysize=(60,60),fit="contain",nearest=True) xalign .5
+                    add Transform(r13_record_icon(key),xysize=(52,52),fit="contain",nearest=True) xalign .5
                     text (("● " if not archive and r13_record_unread(key) else "")+R13_RECORD_SHORT.get(key,r13_catalog_title(key)[:8])):
                         size r13_read_size(16,21) color "#493b30" xsize cell-20 text_align .5
+                    if not archive and r13_catalog_transferable(key):
+                        text "전달 가능" size 14 color "#795714" xalign .5
     hbox:
-        xpos 302 ypos 596 spacing 12
-        textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page>0 action Function(r13_record_select,owner,"page",actual_page-1)
+        xpos 302 ypos 584 spacing 12
+        textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page>0 action Function(r13_record_select,owner,"page",actual_page-1)
         text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
-        textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(entries) action Function(r13_record_select,owner,"page",actual_page+1)
+        textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page+1<r13_record_pages(entries) action Function(r13_record_select,owner,"page",actual_page+1)
     if not entries:
         text "아직 모은 자료가 없습니다." xpos 300 ypos 540 size 18 color "#625738" xsize 470 text_align .5
 
@@ -212,6 +232,8 @@ screen r13_material_detail(detail,archive=False):
             area (844,266,358,274) mousewheel True draggable True scrollbars "vertical"
             vbox:
                 spacing 12
+                if not archive and r13_catalog_transferable(detail):
+                    text "전달 가능 · 보여준 뒤 결정" size 17 color "#795714" xsize 332
                 text ev["establishes"] size r13_read_size(21,26) color "#493b30" xsize 332
                 text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_catalog_origin(detail)) size 17 color "#625738" xsize 332
                 if not archive and detail in ROOM13["evidence"]:
@@ -287,9 +309,9 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         use r13_person_record_detail(selected_person)
         hbox:
             xpos 302 ypos 596 spacing 12
-            textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page>0 action SetScreenVariable("page",actual_page-1)
+            textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page>0 action SetScreenVariable("page",actual_page-1)
             text ("%d / %d"%(actual_page+1,r13_record_pages(people))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
-            textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
+            textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
     elif tab=="relations":
         use r13_relations_content(_scope,rel_sel,rel_filter)
     elif tab=="notes":

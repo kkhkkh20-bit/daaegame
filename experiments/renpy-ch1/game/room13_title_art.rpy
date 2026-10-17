@@ -21,7 +21,7 @@ init 60 python:
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
             out=renpy.Render(w,h);c=out.canvas()
-            y=h-12;mid=w//2
+            y=h-20;mid=w//2
             if self.focused and not self.disabled:
                 for spread,alpha in ((5,12),(3,22),(1,40)):
                     c.rect((255,196,109,alpha),(23,y-spread,w-46,2*spread+2))
@@ -37,13 +37,13 @@ init 60 python:
 
 init 81:
     style r13_title_button is r13_button:
-        xsize 146 ysize 66
+        xsize 146 ysize 82
         background R13TitleLink()
         hover_background R13TitleLink(True)
         selected_background R13TitleLink(True)
         selected_hover_background R13TitleLink(True)
         insensitive_background R13TitleLink(disabled=True)
-        padding (8,8,8,20)
+        padding (8,16,8,28)
     style r13_title_button_text is r13_button_text:
         font "assets/Room13TitleSerif.otf"
         size 23

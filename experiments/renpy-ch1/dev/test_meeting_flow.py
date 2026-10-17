@@ -230,8 +230,9 @@ class MeetingFlow(unittest.TestCase):
   tick(old,0,0,outgoing=True)
   self.assertEqual(abs(incoming-old.xoffset),1200)
   clock[0]+=.4;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
+  # 0.18.91 meeting rhythm: every speaker change takes .22s (.12s when interrupting), laps included.
   self.store.r13_meeting_live_lap=1;f('C1','nabi');tick(trans,0,0)
-  clock[0]+=.2;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
+  clock[0]+=.25;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
   f('C1','buri');env['persistent'].room13_motion=False;tick(trans,0,0);self.assertEqual(trans.xoffset,0)
   tick(old,0,0,outgoing=True);self.assertEqual(old.alpha,0.0)
   people=[p for p,stance in env['r13_meeting_cast']('C1','trial')]

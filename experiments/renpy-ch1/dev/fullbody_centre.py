@@ -14,8 +14,18 @@ people = json.loads((GAME / "assets/room13-fullbody-dialogue.json").read_text(en
 out = {}
 for person, entry in sorted(people.items()):
     x, y, w, h = entry["crop"]
-    alpha = np.array(Image.open(GAME / entry["images"]["neutral"]["file"]).convert("RGBA").crop((x, y, x + w, y + h)))[:, :, 3]
-    xs = np.nonzero(alpha[:int(h * .45)] > 0)[1]
+    image = entry["images"]["neutral"]
+    if image.get("map"):
+        # 0.18.92: picture in its own pixels with a map to the reference canvas
+        # (dev/apply_expression_acting.py): measure in file pixels, convert to reference.
+        u, ox, oy = image["map"]
+        alpha = np.array(Image.open(GAME / image["file"]).convert("RGBA"))[:, :, 3]
+        ys, xs = np.nonzero(alpha > 0)
+        keep = (oy + u * ys) < y + h * .45
+        xs = ox + u * xs[keep] - x
+    else:
+        alpha = np.array(Image.open(GAME / image["file"]).convert("RGBA").crop((x, y, x + w, y + h)))[:, :, 3]
+        xs = np.nonzero(alpha[:int(h * .45)] > 0)[1]
     out[person] = int(round(xs.mean() - w / 2)) if len(xs) else 0
 (GAME / "assets/room13-fullbody-centre.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 print(len(out), "figures")

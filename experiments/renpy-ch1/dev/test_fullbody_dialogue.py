@@ -37,7 +37,8 @@ class FullbodyData(unittest.TestCase):
         # 43 original characters + 13 from the 2026-10-16 episode art (dev/apply_ep_art.py).
         self.assertEqual(len(DATA["people"]), 56)
         for person, entry in DATA["people"].items():
-            self.assertEqual(tuple(entry["images"]), EMOTIONS, person)
+            # 0.18.92: the expression package can add a named extra (bami "thinking").
+            self.assertEqual(set(entry["images"]) - {"thinking"}, set(EMOTIONS), person)
             for pose, image in entry.get("poses", {}).items():
                 path = GAME / image["file"]
                 self.assertTrue(path.exists(), path)
@@ -57,10 +58,19 @@ class FullbodyData(unittest.TestCase):
         for person, entry in DATA["people"].items():
             x, y, w, h = entry["crop"]
             fx, fy, fw, fh = entry["figure"]
-            self.assertTrue(x <= fx and y <= fy and fx + fw <= x + w and fy + fh <= y + h, person)
+            mapped = any("map" in image for image in entry["images"].values())
+            if not mapped:
+                self.assertTrue(x <= fx and y <= fy and fx + fw <= x + w and fy + fh <= y + h, person)
             for image in entry["images"].values():
-                self.assertLessEqual(x + w, image["size"][0], person)
-                self.assertLessEqual(y + h, image["size"][1], person)
+                if "map" in image:
+                    # 0.18.92: own pixels + map to the reference canvas (dev/apply_expression_acting.py)
+                    ix, iy, iw, ih = image["crop"]
+                    self.assertTrue(0 <= ix and 0 <= iy and ix + iw <= image["size"][0] and iy + ih <= image["size"][1], person)
+                    if image.get("cell"):
+                        self.assertTrue(ix % 2 == 0 and iy % 2 == 0 and iw % 2 == 0 and ih % 2 == 0, person)
+                else:
+                    self.assertLessEqual(x + w, image["size"][0], person)
+                    self.assertLessEqual(y + h, image["size"][1], person)
 
     def test_old_busts_and_sprites_are_kept(self):
         for spec in (s for poses in PORTRAITS.values() for s in poses.values()):

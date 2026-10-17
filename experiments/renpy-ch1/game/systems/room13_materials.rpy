@@ -69,6 +69,17 @@ init 148 python:
             if topic and topic in allowed:return topic
         return None
 
+    def r13_catalog_transferable(key):
+        obj=r13_catalog_object(key)
+        if not obj or obj[0]!="bag" or not r13_catalog_owned(key):return False
+        item=obj[1]
+        # Only authored recipients can accept this object. Avoid checking all
+        # residents on every card redraw; retain current day/quest eligibility.
+        # The offer flow revalidates again before consumption.
+        topics=("return:"+item,"item:"+item,"life:snack" if item=="snack" else "")
+        people={ROOM13["topics"][topic]["npc"] for topic in topics if topic in ROOM13["topics"]}
+        return any(r13_catalog_offer(person,key) for person in people)
+
     def r13_complete_catalog_offer(person,key,topic):
         # Revalidate at commit. A decline, wrong recipient or repeated callback cannot
         # consume an item, refund a deposit, grant evidence, or record resident help.

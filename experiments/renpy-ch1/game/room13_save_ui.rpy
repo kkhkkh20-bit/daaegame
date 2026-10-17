@@ -2,6 +2,9 @@
 # to decide whether the title's Continue button should open it.
 init 100 python:
     R13_SAVE_CONTRACT=1
+    # 0.18.92: saves written by 0.18.89-0.18.90 carry "pixel-b-acting-v2" (portrait-count bug); the
+    # load path already moves that revision to the front set, so those saves stay usable.
+    R13_SAVE_VISUALS=("pixel-b-front-v3","pixel-b-acting-v2")
     R13_SAVE_SLOTS=r"^(?:[0-9]+|auto|quick)-[0-9]+$"
 
     def r13_save_metadata(data):
@@ -18,7 +21,7 @@ init 100 python:
         if not data:return "empty"
         if data.get("r13_contract") is None:return "unknown"
         if (data.get("r13_contract")!=R13_SAVE_CONTRACT or data.get("r13_campaign")!="room13_v1"
-            or data.get("r13_story")!=ROOM13["story_revision"] or data.get("r13_visual")!="pixel-b-front-v3"):
+            or data.get("r13_story")!=ROOM13["story_revision"] or data.get("r13_visual") not in R13_SAVE_VISUALS):
             return "incompatible"
         return "compatible"
 

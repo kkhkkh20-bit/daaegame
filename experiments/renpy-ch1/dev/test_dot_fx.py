@@ -41,15 +41,24 @@ class DotFxTest(unittest.TestCase):
         self.assertEqual(size(snow["big"]), (8, 8))
 
     def test_blink_pieces_sit_inside_the_fullbody_picture(self):
-        daram = META["blink"]["people"]["daram"]
-        # joy is drawn with closed eyes; it never blinks.
-        self.assertEqual(set(daram), {"neutral", "flustered", "angry", "anxious", "surprise"})
-        for emotion, spec in daram.items():
-            fw, fh = size("assets/room13-fullbody-daram-%s.webp" % emotion)
-            x, y, w, h = spec["rect"]
-            self.assertTrue(0 <= x and 0 <= y and x + w <= fw and y + h <= fh, emotion)
-            self.assertEqual(size(spec["half"]), (w, h))
-            self.assertEqual(size(spec["closed"]), (w, h))
+        fullbody = json.loads((GAME / "assets/room13-fullbody-dialogue.json").read_text(encoding="utf-8"))["people"]
+        daram = META["blink"]["people"].get("daram", {})
+        if fullbody["daram"].get("acting_package"):
+            # 0.18.92: the old blink pieces belonged to the old faces; the package faces wait for
+            # hand-drawn eye pieces (art/expression-acting-20261016/registry.json, blink_note).
+            self.assertEqual(daram, {})
+        else:
+            # joy is drawn with closed eyes; it never blinks.
+            self.assertEqual(set(daram), {"neutral", "flustered", "angry", "anxious", "surprise"})
+        for person, emotions in META["blink"]["people"].items():
+            for emotion, spec in emotions.items():
+                image = fullbody[person]["images"][emotion]
+                self.assertNotIn("map", image, (person, emotion))   # pieces only on the pictures they were cut from
+                fw, fh = size(image["file"])
+                x, y, w, h = spec["rect"]
+                self.assertTrue(0 <= x and 0 <= y and x + w <= fw and y + h <= fh, (person, emotion))
+                self.assertEqual(size(spec["half"]), (w, h))
+                self.assertEqual(size(spec["closed"]), (w, h))
 
     def test_smoke_sparkle_and_dither(self):
         smoke = META["smoke"]
