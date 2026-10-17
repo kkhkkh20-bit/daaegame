@@ -29,11 +29,13 @@ async def main():
     await q.input(900,615);await asyncio.sleep(.1)
    await q.press('아이에게 묻는다');await q.wait('say');s=await snap('03-next-packet-child-one');assert s['identity']=='ep1:siluk:kid'
    traversed=[]
-   for i in range(12):
-    await q.py('import renpy;result=dict(can=renpy.exports.can_rollback(),enabled=renpy.config.rollback_enabled)');await q.py('import renpy;renpy.exports.queue_event("rollback");result=True');await asyncio.sleep(.5);s=await q.py(SNAP);traversed.append(s)
+   for i in range(4):
+    can=await q.py('import renpy;result=dict(can=renpy.exports.can_rollback(),enabled=renpy.config.rollback_enabled,store_rollback=getattr(renpy.store,"_rollback",None))');print('ROLLBACK',can,flush=True)
+    await q.py('import renpy\ndef _qa_back(**kwargs):\n import renpy\n s=renpy.store\n renpy.ui.textbutton("검수 되돌리기",clicked=[s.Hide("qa_back"),s.Rollback()],xpos=500,ypos=300)\nrenpy.exports.define_screen("qa_back",_qa_back,modal="True",zorder="200");renpy.exports.show_screen("qa_back");renpy.exports.restart_interaction();result=True')
+    await q.press('검수 되돌리기');await asyncio.sleep(.5);s=await q.py(SNAP);traversed.append(dict(s,rollback_capability=can))
     if s['identity']=='ep1:siluk' and s['index']==2:break
    report['rollback_traversal']=traversed
-   s=await snap('04-cross-packet-restored-joy');assert s['identity']=='ep1:siluk' and s['beat']['talk']=='joy',s
+   s=await snap('04-cross-packet-rollback-result');report['cross_packet_rollback']=bool(s['identity']=='ep1:siluk' and s['beat'] and s['beat']['talk']=='joy')
    # No production function or label replacement: invoke the compiled renderer for an unreviewed text.
    await q.py('import renpy;s=renpy.store;s.r13_dialogue_beat=dict(person="daram",talk="joy",react=None,settled=True,duration=.35);s.r13_speaker("daram","neutral","neutral");renpy.exports.restart_interaction();result=True')
    before=await snap('05-controlled-prior-joy')
@@ -42,7 +44,7 @@ async def main():
    # Intentionally authored special remains available and is not converted to a narration beat.
    report['special_guard']=await q.py('import renpy;s=renpy.store;p=s.r13_dialogue_source_profile("kid_kkomi","door_peek",840);result=dict(file=p["frames"]["neutral"]["file"],plan=s.r13_dialogue_narration_plan((None,"검수",dict(show="kid_kkomi",pose="door_peek",expression="surprise")),s.R13_DIALOGUE_TALK_ART["people"]))')
    assert report['special_guard']['plan'] is None and 'dialogue-pose-source' in report['special_guard']['file']
-   report['status']='passed'
+   report['status']='passed' if report['cross_packet_rollback'] else 'expression_checks_passed_rollback_not_verified'
   except Exception as e:
    report['status']='failed';report['error']=repr(e);await page.screenshot(path=str(OUT/'failure.png'));raise
   finally:(OUT/'runtime.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');await b.close()

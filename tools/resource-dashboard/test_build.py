@@ -14,6 +14,15 @@ class Extractor(unittest.TestCase):
     def test_sparse_day_allowlist_and_bounds(self):
         self.assertEqual(b.declared_days({'min_day':2,'days':[3,8,13]}),[3,8,13])
         self.assertEqual(b.declared_days({'min_day':4,'max_day':10,'days':[3,8,13]}),[8])
+    def test_visible_actor_capture_links_and_approved_seori(self):
+        folder=b.REPO/'preview/resource-dashboard/characters'
+        seori=json.loads((folder/'resident_seori.json').read_text())
+        self.assertTrue(any(p['pose']=='inspect_paper_threequarter_front' for p in seori['placements']))
+        captures=[c for c in seori['captures'] if 'place-balance-01936' in c['evidence']]
+        self.assertTrue(captures)
+        for c in captures:
+            self.assertEqual(c['actor']['person'],'resident_seori')
+            self.assertEqual(c['pose'],c['actor']['pose'])
     def test_real_generated_contract(self):
         path=b.REPO/'preview/resource-dashboard/data.json'
         if not path.exists():self.skipTest('run build.py first')
