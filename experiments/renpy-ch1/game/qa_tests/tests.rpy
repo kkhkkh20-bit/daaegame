@@ -12179,3 +12179,26 @@ testcase cartography:
     pause 0.6
     assert screen "r13_hub"
     $ r13_qa_note("cartography: village/inn/forest browse; selection no travel; secret art gated")
+
+label r13_qa_lost_return:
+    call r13_qa_lost_return_inner
+    "unreachable"
+    return
+
+label r13_qa_lost_return_inner:
+    # 0.19.7: what an old save looks like after a release renamed the call's return site.
+    $ renpy.game.context().return_stack[-1]=("game/room13.rpy",980342182,975)
+    $ renpy.game.context().call_location_stack[-1]=("game/room13.rpy",980342182,974)
+    return
+
+testcase lost_return:
+    # 0.19.7 owner report: "Could not find return label" when loading a save from an earlier release.
+    pause 2.0
+    click "처음부터"
+    pause until screen "say" timeout 30
+    click pos (640,560) until screen "r13_hub" timeout 90
+    pause 1.0
+    run Jump("r13_qa_lost_return")
+    pause until screen "r13_hub" timeout 30
+    assert eval (len(renpy.game.context().return_stack)<=1)
+    $ r13_qa_note("recovered to hub")

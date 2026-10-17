@@ -437,6 +437,7 @@ screen r13_activities():
 
 screen r13_book(target=None,present=False,hearing=False):
     style_prefix "r13"
+    on "show" action Function(r13_unread_hold.clear)
     modal True
     zorder 50
     on "show" action Function(source_fx,"note_open")

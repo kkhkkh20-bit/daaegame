@@ -204,6 +204,25 @@ def install_loader(path):
     path.write_text(s[:a] + LOADER + s[b:])
 
 
+def seed_previous_rpyc(release, game):
+    parts = sorted(release.glob("game.part[0-9][0-9]"))
+    if not parts:
+        return 0
+    data = b"".join(p.read_bytes() for p in parts)
+    try:
+        z = zipfile.ZipFile(io.BytesIO(data))
+    except zipfile.BadZipFile:
+        return 0
+    n = 0
+    for name in z.namelist():
+        if not (name.startswith("game/") and name.endswith(".rpyc")):
+            continue
+        source = game / (name[len("game/"):-1])
+        if source.exists():  # orphan .rpyc would load a removed script
+            (game / name[len("game/"):]).write_bytes(z.read(name)); n += 1
+    return n
+
+
 def placeholder(data):
     from PIL import Image
     im = Image.open(io.BytesIO(data)); im.load()
@@ -237,6 +256,12 @@ def main():
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(path, dest)
     game = stage / "game"
+
+    # 1b. 0.19.7: seed the previous release's .rpyc so Ren'Py keeps the generated return-site names of
+    # unchanged call statements. A fresh compile renamed every one, and saves made inside a call failed
+    # to load after each release ("Could not find return label").
+    seeded = seed_previous_rpyc(release, game)
+    print("seeded %d .rpyc from the previous release" % seeded)
 
     # 2. every referenced pixel asset exists
     texts = [p for p in game.rglob("*") if p.suffix in (".rpy", ".json")]

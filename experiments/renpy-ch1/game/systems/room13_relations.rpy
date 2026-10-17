@@ -114,7 +114,10 @@ init 166 python:
         for p in people:
             if p in R13_REL_SLOTS:
                 used[p]=R13_REL_SLOTS[p];free.remove(R13_REL_SLOTS[p])
-        for p in people:
+        # 0.19.7: more people than cells raised KeyError on the full chart. People with a known relation
+        # get the free cells first; the rest stay in the face row under the chart.
+        linked={x for a,b,k,l in r13_rel_edges() for x in (a,b)}
+        for p in sorted(people,key=lambda p:p not in linked):
             if p not in used and free:used[p]=free.pop(0)
         return {p:(c*R13_REL_CELL[0],r*R13_REL_CELL[1]) for p,(c,r) in used.items()}
 
@@ -201,7 +204,7 @@ screen r13_relations_content(owner,selected,filt,focused=True):
       fixed:
         xpos 284 ypos 158 xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
         add R13RelLines(edges,layout,selected)
-        for who in people:
+        for who in [p for p in people if p in layout]:
             $ x,y=layout[who]
             $ kind,label=r13_rel_status(who)
             $ faded=not r13_rel_match(who,filt)

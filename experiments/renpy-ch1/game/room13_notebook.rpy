@@ -73,7 +73,9 @@ init 68 python:
         if kind=="testimony":
             return [key for key in entries if key in ROOM13["evidence"] and ROOM13["evidence"][key]["kind"]=="증언"]
         if kind=="transfer":return [key for key in entries if r13_catalog_transferable(key)]
-        if kind=="unread":return [key for key in entries if r13_record_unread(key)]
+        # 0.19.7: a record read while this filter is on stays listed until the filter changes; dropping it
+        # at once auto-selected the next one and marked the whole list read, or disabled presenting.
+        if kind=="unread":return [key for key in entries if r13_record_unread(key) or key in r13_unread_hold]
         return entries
 
     def r13_material_source_person(key):
@@ -104,7 +106,9 @@ init 68 python:
     def r13_record_selected(entries,detail,page):
         visible=entries[r13_record_page(entries,page)*r13_record_page_size():][:r13_record_page_size()]
         return detail if detail in visible else (visible[0] if visible else None)
+    r13_unread_hold=set()
     def r13_record_select(owner,variable,value,mark_seen=True):
+        if variable=="material_filter":r13_unread_hold.clear()
         if not isinstance(owner,str):owner[variable]=value
         else:renpy.set_screen_variable(variable,value,screen=owner)
         if mark_seen and variable=="detail" and value in (store.room13 or {}).get("evidence",[]):
@@ -125,6 +129,7 @@ init 68 python:
         if field!="seen" or key not in (store.room13 or {}).get("evidence",[]):return False
         ui_state=winter_copy.deepcopy(store.room13.get("record_ui",{}))
         values=list(ui_state.get(field,[]))
+        if add:r13_unread_hold.add(key)
         if add and key not in values:values.append(key)
         elif not add and key in values:values.remove(key)
         else:return False
@@ -341,6 +346,7 @@ screen r13_person_brief(person):
 
 screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=None,present_action=None):
     style_prefix "r13"
+    on "show" action Function(r13_unread_hold.clear)
     modal True
     zorder 50
     on "show" action Function(source_fx,"note_open")
