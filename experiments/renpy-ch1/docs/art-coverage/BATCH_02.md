@@ -1,6 +1,15 @@
 # 두 번째 제작 묶음 — 4인 18장
 
-**제작 요청서이며 생성·적용 완료가 아니다.** 기존 후보는 중복 생성하지 않는다. 원본 수신 차단은 유지하며 정상 첨부 전달을 기다린다. 기준 main `ad722b1`. 경로는 `experiments/renpy-ch1/` 기준. 기계용 상세는 [batch-02.json](batch-02.json).
+**18장 후보 생성 완료 보고를 받았다. 개별 승인·게임 적용 완료가 아니다.** 기존 후보는 중복 생성하지 않는다. 원본 수신 차단은 유지하며 정상 첨부 전달을 기다린다. 기준 main `ad722b1`. 경로는 `experiments/renpy-ch1/` 기준. 기계용 상세는 [batch-02.json](batch-02.json).
+
+## 후보 제작·전달 현황 — 2026-10-17
+
+부모가 사용자에게 비교표와 ZIP을 전달했다. 아래는 **부모 제작 보고 기반**이며 코드 환경에는 원본이 미수신이다. 모든 후보는 개별 승인 대기, 로컬 해시 미검증, 게임 미연결, 실제 장면 미검수, 미배포다. 기존 승인 원본의 SHA 값은 후보 출력의 검증값이 아니다.
+
+|후보|전달 자료|제작 보고 및 추가 검토|
+|---|---|---|
+|너울5·누비5|[ZIP](https://chatgpt.com/api/library/files/libfile_ae6fd6d61e748191aeec2d88724b2d9d/download) · [비교](https://chatgpt.com/api/library/files/libfile_5db263c315088191b4ff23886d55a4ed/download) · [manifest](https://chatgpt.com/api/library/files/libfile_7deb7d140c0c81918042d3cac23e2e82/download)|제작자가 원본 SHA 2종 일치·시각 확인 보고. 출력 너울1036×1518, 누비996×1578. 일부 낮은 alpha 경계·좁은 여백, 너울 감정 부호, 누비 angry/anxious 몸짓 유사 추가 검토.|
+|보리5·초롱3|[ZIP](https://chatgpt.com/api/library/files/libfile_43fb62b3e5d08191945a2c30cf66beaa/download) · [비교](https://chatgpt.com/api/library/files/libfile_1da3928ea65c8191abbc6e825cbc7f3d/download)|제작자가 원본 SHA 일치·시각 확인 보고. 보리 장작·초롱 등불 유지. 출력 캔버스·발점 차이, 일부 저alpha 경계, 놀람 감정 부호 검토. 실제 장면 미검수.|
 
 ## 승인된 제작 방향
 
@@ -89,15 +98,17 @@
 |angry|의지를 단호하게 전하는 눈썹과 입. 한 손을 몸 가까이 쥐되 위협적인 무기나 새 도구는 넣지 않는다.|
 |surprise|종탑 길 경고에 눈을 크게 뜨고 한 손을 가슴 가까이 든다. 기존 anxious/flustered와 실루엣을 구별한다.|
 
-## 접점 미확정 — 제작 수에서 제외
+## 보관함 읽기 검토 — 기획 결정 필요
 
-백 부인 `living_inspect` 요청은 유지한다. 현재 여관 layout의 object 목록에는 desk/door/keys/register/knitting/coats/cups가 있으나 봉인 보관함의 명시적 손끝 anchor는 없다. desk나 waiting slot 좌표로 대신 확정하지 않는다.
+보관함 자체는 이야기 속에 존재한다. `game/systems/room13_town_events.rpy:202`의 `r13_ev_b_store`는 공동 창고 앞을 호출하며 205행에 **창고 문 옆 보관함의 뜯긴 봉인**을 명시한다. `room13_alibi.rpy:24`도 백 부인이 자기 창고에서 보관함을 세는 상황이다. `room13-content.json:9077`과 `room13-dialogue-openings.json:5773`에는 봉인 자리를 만지는 활동·도입 문장이 있지만 여관의 특정 보관함으로 확정하는 근거는 아니다.
 
-확인할 최신 배경: `game/assets/room13-pixel-panorama-inn-{morning,afternoon,evening}.webp`; 배치: `game/assets/room13-world-layout.json`의 `inn`. 실제 카메라·crop을 적용한 화면에서 봉인 면을 먼저 확인하고 손끝 world/screen 좌표, 캐릭터 발·손 기준점, 가림 관계를 기록한 뒤 제작한다. 이번에는 배경의 시각 검수와 접점 확정을 수행하지 않았으며 **미생성 보류**다.
+현재 여관·창고 layout에는 봉인 보관함의 명명된 object/손끝 anchor가 없다. 오후 원본 배경 `room13-pixel-panorama-inn-afternoon.webp`와 `room13-pixel-ready-store0177-afternoon.webp`를 직접 읽었다. 여관의 여행 가방 및 창고의 여러 상자는 보이지만 어느 물체가 해당 봉인 보관함인지는 특정할 수 없다. 창고 배경은 내부이며 사건 서술은 문 옆 외부다. 이 확인은 실제 게임 화면 검수가 아니다.
+
+**백 부인 living_inspect는 요청 유지·미생성 보류·기획 결정 필요.** 이야기/배경 담당이 사용할 장소와 기존 물체를 지정하거나, 동작 변경 또는 별도 소품 제작 여부를 결정해야 한다. 여관에 새 보관함을 발명하거나 기존 상자에 임의로 봉인/손끝 좌표를 붙이지 않는다. 결정 이후 카메라·crop·가림과 손/발 접점을 확인한다.
 
 ## 납품·검수 및 중복 방지
 
-- `art/incoming/art-coverage-batch-02/<character>/dialogue-<key>.png`에 원본 그대로 납품. 현재 파일이 있다는 뜻이 아니다.
+- `art/incoming/art-coverage-batch-02/<character>/dialogue-<key>.png`에 원본 그대로 납품. 현재 코드 환경에 파일이 있다는 뜻이 아니다.
 - 꽥순5·사자 선생님7·돌목5·도토2·구슬1 후보는 재생성 제외. 꽥순 승인 neutral 수신 블록도 계속 유지한다.
 - 수신 뒤 SHA/alpha/경계 여유/원본 개성/몸짓 구별/기준점 확인 → 개별 후보 검토 → 승인 채널만 연결 → 최종 표시 크기의 실제 게임 화면 검수.
 - 원본을 굵은 2×2로 강제 재축소하거나 전역 렌더러를 변경하는 요청이 아니다. 인물별 실제 표시 품질을 보고 처리한다.

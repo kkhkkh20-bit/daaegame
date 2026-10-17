@@ -54,8 +54,8 @@
         "inventory_dialogue_usage_rows": 19,
         "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
       },
-      "production_status": "not_started",
-      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "production_status": "candidate_generated_reported",
+      "approval_status": "individual_candidates_pending",
       "connection_status": "not_linked",
       "screen_review_status": "not_run",
       "outputs": [
@@ -94,6 +94,20 @@
           "suggested_file": "art/incoming/art-coverage-batch-02/neoul/dialogue-surprise.png",
           "current_connection_status": "neutral_fallback"
         }
+      ],
+      "receipt_status": "not_received",
+      "hash_verification": "not_performed_locally",
+      "report_source": "parent production report, 2026-10-17",
+      "library_artifacts": {
+        "zip": "libfile_ae6fd6d61e748191aeec2d88724b2d9d",
+        "comparison": "libfile_5db263c315088191b4ff23886d55a4ed",
+        "manifest": "libfile_7deb7d140c0c81918042d3cac23e2e82"
+      },
+      "reported_notes": [
+        "Producer reports approved original SHA match and visual inspection; no local verification.",
+        "Neoul output 1036×1518; Nubi output 996×1578.",
+        "Some low-alpha edges and narrow margins.",
+        "Review Neoul emotion symbols and similarity of Nubi angry/anxious body gestures."
       ]
     },
     {
@@ -136,8 +150,8 @@
         "inventory_dialogue_usage_rows": 14,
         "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
       },
-      "production_status": "not_started",
-      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "production_status": "candidate_generated_reported",
+      "approval_status": "individual_candidates_pending",
       "connection_status": "not_linked",
       "screen_review_status": "not_run",
       "outputs": [
@@ -176,6 +190,20 @@
           "suggested_file": "art/incoming/art-coverage-batch-02/resident_nubi/dialogue-surprise.png",
           "current_connection_status": "neutral_fallback"
         }
+      ],
+      "receipt_status": "not_received",
+      "hash_verification": "not_performed_locally",
+      "report_source": "parent production report, 2026-10-17",
+      "library_artifacts": {
+        "zip": "libfile_ae6fd6d61e748191aeec2d88724b2d9d",
+        "comparison": "libfile_5db263c315088191b4ff23886d55a4ed",
+        "manifest": "libfile_7deb7d140c0c81918042d3cac23e2e82"
+      },
+      "reported_notes": [
+        "Producer reports approved original SHA match and visual inspection; no local verification.",
+        "Neoul output 1036×1518; Nubi output 996×1578.",
+        "Some low-alpha edges and narrow margins.",
+        "Review Neoul emotion symbols and similarity of Nubi angry/anxious body gestures."
       ]
     },
     {
@@ -219,8 +247,8 @@
         "inventory_dialogue_usage_rows": 13,
         "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
       },
-      "production_status": "not_started",
-      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "production_status": "candidate_generated_reported",
+      "approval_status": "individual_candidates_pending",
       "connection_status": "not_linked",
       "screen_review_status": "not_run",
       "outputs": [
@@ -259,6 +287,19 @@
           "suggested_file": "art/incoming/art-coverage-batch-02/resident_bori/dialogue-surprise.png",
           "current_connection_status": "neutral_fallback"
         }
+      ],
+      "receipt_status": "not_received",
+      "hash_verification": "not_performed_locally",
+      "report_source": "parent production report, 2026-10-17",
+      "library_artifacts": {
+        "zip": "libfile_43fb62b3e5d08191945a2c30cf66beaa",
+        "comparison": "libfile_1da3928ea65c8191abbc6e825cbc7f3d"
+      },
+      "reported_notes": [
+        "Producer reports approved original SHA match and visual inspection; no local verification.",
+        "Bori firewood and Lamplighter lantern retained.",
+        "Output canvas/foot anchors differ; some low-alpha edges.",
+        "Review surprise emotion symbols; actual scenes not reviewed."
       ]
     },
     {
@@ -303,8 +344,8 @@
         "inventory_dialogue_usage_rows": 31,
         "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
       },
-      "production_status": "not_started",
-      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "production_status": "candidate_generated_reported",
+      "approval_status": "individual_candidates_pending",
       "connection_status": "not_linked",
       "screen_review_status": "not_run",
       "outputs": [
@@ -329,6 +370,19 @@
           "suggested_file": "art/incoming/art-coverage-batch-02/resident_lamplighter/dialogue-surprise.png",
           "current_connection_status": "neutral_fallback"
         }
+      ],
+      "receipt_status": "not_received",
+      "hash_verification": "not_performed_locally",
+      "report_source": "parent production report, 2026-10-17",
+      "library_artifacts": {
+        "zip": "libfile_43fb62b3e5d08191945a2c30cf66beaa",
+        "comparison": "libfile_1da3928ea65c8191abbc6e825cbc7f3d"
+      },
+      "reported_notes": [
+        "Producer reports approved original SHA match and visual inspection; no local verification.",
+        "Bori firewood and Lamplighter lantern retained.",
+        "Output canvas/foot anchors differ; some low-alpha edges.",
+        "Review surprise emotion symbols; actual scenes not reviewed."
       ]
     }
   ],
@@ -352,10 +406,28 @@
         "game/assets/room13-pixel-panorama-inn-evening.webp"
       ],
       "layout": "game/assets/room13-world-layout.json: inn",
-      "finding": "Inn objects list has desk/door/keys/register/knitting/coats/cups but no explicit sealed-storage contact anchor. Do not infer fingertip from desk/slot coordinates.",
-      "next_action": "Inspect latest background at actual camera/crop and identify sealed-storage surface, then record fingertip world/screen coordinates, character foot/hand points and occlusion before generation.",
-      "background_visual_review": "not_run",
-      "anchor_status": "unconfirmed"
+      "finding": "Story explicitly places sealed storage beside the communal warehouse door; generic Madam activity/openings mention it without confirming inn location. Neither inn nor store layout has a named sealed-storage anchor. Inn luggage and store crates cannot be identified as this object from art alone.",
+      "next_action": "Story/background owner must identify the existing object and intended location, or decide whether to change the action or commission a prop. Retain request; do not invent a box or contact point.",
+      "background_visual_review": "afternoon source images inspected; no game screen review",
+      "anchor_status": "planning_decision_required",
+      "source_evidence": [
+        "game/systems/room13_town_events.rpy:202",
+        "game/systems/room13_alibi.rpy:24",
+        "game/room13-content.json:9077",
+        "game/room13-dialogue-openings.json:5773",
+        "game/assets/room13-world-layout.json"
+      ]
     }
-  ]
+  ],
+  "status_report": {
+    "date": "2026-10-17",
+    "source": "parent production report; files not received locally",
+    "candidates_reported": 18,
+    "user_delivery": "comparison and ZIP delivered by parent",
+    "individual_approval": "pending",
+    "receipt_status": "blocked_awaiting_supported_attachment",
+    "local_hash_verification": "not_performed",
+    "connection_status": "not_linked",
+    "deployment_status": "not_deployed"
+  }
 }

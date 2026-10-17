@@ -19,7 +19,7 @@
 |---|---|---|---|
 |사자 선생님 5표정+2동작|후보 7장, 승인 대기|붉은 갈기·도포 기준 유지 보고. 생성 1004~1005×1566, 기준 985×1536과 다르며 임의 축소하지 않음. alpha·경계 여유·기준점 검토 및 실제 게임 검수 필요|[ZIP](https://chatgpt.com/api/library/files/libfile_622f1ccfe06481919f3cbd764f45de66/download) · [HTML](https://chatgpt.com/api/library/files/libfile_482b3922b8748191bb43f971f0d3b635/download)|
 |돌목 5표정·도토 2동작·구슬 1동작|후보 8장, 승인 대기|제작자가 승인 원본 SHA 일치 확인 후 생성했다고 보고. 로컬 미검증. 기준 캔버스·발점 차이, 엄격 2×2 격자 미인증, 도토 쓰기 시선 추가 검토. 게임·보드 미연결|[ZIP](https://chatgpt.com/api/library/files/libfile_949c77d7c52881918204bb53456b56e6/download) · [HTML](https://chatgpt.com/api/library/files/libfile_2f2c2b7e907081918a3edfca85af97ab/download)|
-|백 부인 living_inspect|1장 미생성 보류, 요청 유지|최신 여관 봉인 보관함 접점을 확인하고 손끝 anchor를 확정한 뒤 제작|아직 없음|
+|백 부인 living_inspect|1장 미생성 보류, 요청 유지|창고 이야기에는 존재하나 여관의 대상 물체는 미확정. [읽기 검토](BATCH_02.md#보관함-읽기-검토--기획-결정-필요)에 따라 장소·물체 기획 결정 후 접점 확인|아직 없음|
 
 ### 꽥순 — 원래 16장과 별도
 
