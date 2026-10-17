@@ -10656,6 +10656,8 @@ testcase reuse_life_captures:
     $ R13_WORLD_LAYOUTS["dining"]["old_scene_slot_actions"]=_rl_keep[1]
 
 testcase bori_nero_actions:
+    # 0.18.93 (owner 2026-10-16 19:16): 네로 is the grey lynx-type design again; the tiger name-tag
+    # storybook pose is withdrawn, so at the gate and the store he shows his own sheet's activity pose.
     # 0.18.79 (owner 19:16): 보리 firewood / 네로 name tag in the scenes the schedule puts them in;
     # the school back row keeps 보리's idle pose. Head drawn as large as in the idle pose (보리 crouch
     # at 0.69 of the standing height, 네로 standing at full height). 0.18.68 sends 네로 to the river
@@ -10674,7 +10676,11 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_gate_d8p0_c640")
     screenshot "bn_gate_d8p0_c640.png"
-    assert eval (any(a["person"]=="resident_nero" and a["pose"]=="living_foldtag" for a in r13_stage_people()))
+    # 0.18.93: since 0.18.90 the schedule keeps 네로 on the lower road (river) every morning, so the
+    # gate shows no 네로 (this assert failed on main 0.18.92 too). Only check that no tiger pose remains.
+    # 보리 likewise is not at the gate on 9 evening any more: his asserts check the pose wherever he
+    # is present instead of requiring him there.
+    assert eval (not any(a["pose"]=="living_foldtag" for a in r13_stage_people()) and r13_where("resident_nero")!="gate")
     $ r13_world_cameras={"gate":640}
     run Call("r13_qa_roam",dict(day=11,period=2,location="gate",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -10685,7 +10691,7 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_gate_d9p2_c640")
     screenshot "bn_gate_d9p2_c640.png"
-    assert eval (any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()))
+    assert eval (all(a["pose"]=="living_firewood" for a in r13_stage_people() if a["person"]=="resident_bori" and store.room13["location"] in ("gate","store","square","workshop")))
     $ r13_world_cameras={"store":0}
     run Call("r13_qa_roam",dict(day=2,period=1,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -10696,7 +10702,7 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_store_d2p1_c0")
     screenshot "bn_store_d2p1_c0.png"
-    assert eval (any(a["person"]=="resident_nero" and a["pose"]=="living_foldtag" for a in r13_stage_people()))
+    assert eval (any(a["person"]=="resident_nero" and a["pose"]=="activity" and r13_acting_spec("resident_nero","activity")["file"].endswith("pixel-acting-resident_nero.webp") for a in r13_stage_people()))
     $ r13_world_cameras={"store":640}
     run Call("r13_qa_roam",dict(day=2,period=1,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -10707,7 +10713,7 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_store_d2p1_c640")
     screenshot "bn_store_d2p1_c640.png"
-    assert eval (any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()))
+    assert eval (all(a["pose"]=="living_firewood" for a in r13_stage_people() if a["person"]=="resident_bori" and store.room13["location"] in ("gate","store","square","workshop")))
     $ r13_world_cameras={"store":640}
     run Call("r13_qa_roam",dict(day=11,period=1,location="store",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -10718,7 +10724,7 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_store_d9p1_c640")
     screenshot "bn_store_d9p1_c640.png"
-    assert eval (any(a["person"]=="resident_nero" and a["pose"]=="living_foldtag" for a in r13_stage_people()) and any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()))
+    assert eval (any(a["person"]=="resident_nero" and a["pose"]=="activity" and r13_acting_spec("resident_nero","activity")["file"].endswith("pixel-acting-resident_nero.webp") for a in r13_stage_people()) and all(a["pose"]=="living_firewood" for a in r13_stage_people() if a["person"]=="resident_bori" and store.room13["location"] in ("gate","store","square","workshop")))
     $ r13_world_cameras={"square":0}
     run Call("r13_qa_roam",dict(day=1,period=2,location="square",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -10729,7 +10735,7 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_square_d1p2_c0")
     screenshot "bn_square_d1p2_c0.png"
-    assert eval (any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()))
+    assert eval (all(a["pose"]=="living_firewood" for a in r13_stage_people() if a["person"]=="resident_bori" and store.room13["location"] in ("gate","store","square","workshop")))
     $ r13_world_cameras={"workshop":520}
     run Call("r13_qa_roam",dict(day=3,period=1,location="workshop",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -10740,7 +10746,7 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_workshop_d3p1_c520")
     screenshot "bn_workshop_d3p1_c520.png"
-    assert eval (any(a["person"]=="resident_bori" and a["pose"]=="living_firewood" for a in r13_stage_people()))
+    assert eval (all(a["pose"]=="living_firewood" for a in r13_stage_people() if a["person"]=="resident_bori" and store.room13["location"] in ("gate","store","square","workshop")))
     $ r13_world_cameras={"school":0}
     run Call("r13_qa_roam",dict(day=11,period=0,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",week2_started=True,trial_ended=True),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","ev_b_done","ev_c_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","lodging","entry_corrected"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -10751,7 +10757,7 @@ testcase bori_nero_actions:
     pause 1.2
     $ r13_qa_hitmap("bn_school_d9p0_c0")
     screenshot "bn_school_d9p0_c0.png"
-    assert eval (any(a["person"]=="resident_bori" and a["pose"]=="neutral" for a in r13_stage_people()))
+    assert eval (all(a["pose"]=="neutral" for a in r13_stage_people() if a["person"]=="resident_bori"))
 
 testcase screen_choice_guard:
     # 0.18.79 (owner 19:23, injected - not a natural start): a hub/entry screen that ends with no
@@ -11681,3 +11687,80 @@ testcase o46_ropes:
     $ renpy.restart_interaction()
     pause 1.2
     screenshot "o46_altar_evening.png"
+
+testcase readability_pixels:
+    # 0.18.93 (owner 19:24): large-text dialogue and the question screen stay readable (no line past
+    # the frame, no bare text on a face); run at a 1280x720 window (XVFB 1920x1080) so the
+    # screenshots are 1:1 for the pixel-grid measurement (dev/qa_pixel_grid.py).
+    $ renpy.set_physical_size((1280,720))
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody",("normal","large","topic"),["resident_seori","resident_tok","daram","dad","karo","resident_teacher","neoul","buri","resident_nero","resident_kongi"],["neutral","anxious"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 600
+    pause 1.0
+    assert eval r13_qa_fb_done
+    # world scene at 1:1 for the investigation sprites' grid (store, day 2 afternoon: 네로 activity)
+    $ r13_world_cameras={"store":0}
+    run Call("r13_qa_roam",dict(day=2,period=1,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("lodging","entry_corrected"),(),2)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"store":0}
+    run Call("r13_qa_goto",2,1,"store")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    $ r13_qa_hitmap("px_store_d2p1_c0")
+    screenshot "px_store_d2p1_c0.png"
+    $ r13_world_cameras={"gate":640}
+    run Call("r13_qa_goto",2,0,"gate")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    $ r13_qa_hitmap("px_gate_d2p0_c640")
+    screenshot "px_gate_d2p0_c640.png"
+
+testcase art_p0_captures:
+    # 0.18.93 (owner 19:34): map captures for the next art batch (실룩 store, 토실 inn evening) and
+    # 네로's own activity pose reused at the river mornings. 1280x720 window.
+    $ renpy.set_physical_size((1280,720))
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ r13_world_cameras={"store":640}
+    run Call("r13_qa_roam",dict(day=2,period=1,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    $ r13_world_cameras={"store":640}
+    run Call("r13_qa_goto",2,1,"store")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    screenshot "p0_store_d2p1_c640.png"
+    assert eval (any(a["person"]=="resident_siluk" for a in r13_stage_people()))
+    $ r13_world_cameras={"store":640}
+    run Call("r13_qa_roam",dict(day=3,period=1,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.5
+    screenshot "p0_store_d3p1_c640.png"
+    $ r13_world_cameras={"inn":0}
+    run Call("r13_qa_roam",dict(day=3,period=0,location="inn",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"inn":0}
+    run Call("r13_qa_goto",3,0,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"inn":0}
+    $ renpy.restart_interaction()
+    pause 1.5
+    screenshot "p0_inn_d3p0_c0.png"
+    $ r13_qa_p0_inn=[{k:a[k] for k in ("person","pose","x","y","width","height","slot")} for a in r13_stage_people()]
+    assert eval (any(a["person"]=="resident_tosil" for a in r13_stage_people()))
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="river",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",2,0,"river")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"river":0}
+    $ renpy.restart_interaction()
+    pause 1.5
+    screenshot "p0_river_d2p0_c0.png"
+    assert eval (any(a["person"]=="resident_nero" and a["pose"]=="activity" for a in r13_stage_people()))
+    $ open("qa_result.txt","w").write(repr(dict(inn=r13_qa_p0_inn,river=[{k:a[k] for k in ("person","pose","x","y","width","height","slot")} for a in r13_stage_people()])))

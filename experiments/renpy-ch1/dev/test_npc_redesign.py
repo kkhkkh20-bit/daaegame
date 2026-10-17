@@ -36,8 +36,9 @@ class NpcRedesign(unittest.TestCase):
     def test_one_design_per_existing_npc(self):
         npcs = [d["npc"] for d in REG["designs"]]
         # 0.18.60 (owner, 07:39 PDT): only the two elders join the first eight; nobody else.
+        # 0.18.93 (owner 2026-10-16 19:16): 네로 is the grey lynx-type original again (restored_originals).
         self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian", "resident_nubi",
-                                               "resident_seol", "resident_siluk", "resident_nero", "resident_bori",
+                                               "resident_seol", "resident_siluk", "resident_bori",
                                                "resident_owlgp", "granny"}))
         self.assertEqual(len({d["sha256"] for d in REG["designs"]}), len(npcs))  # no picture used twice
         sources = {d["npc"]: d["sha256"] for d in REG["designs"]}
@@ -93,6 +94,22 @@ class NpcRedesign(unittest.TestCase):
             self.assertTrue(hx + hw <= cw and hy + hh <= ch and hh > 0, npc)
             ax, ay, aw, ah = ACTING[npc]["avatar_neutral"]["crop"]
             self.assertTrue(ax + aw <= w and ay + ah <= h, npc)
+
+    def test_restored_originals_use_the_saved_entries(self):
+        # 네로: grey lynx-type design (navy cloak, gold clasp). No tiger, no silver wolf anywhere.
+        self.assertEqual(set(REG["restored_originals"]), {"resident_nero"})
+        saved = BACKUP["npcs"]["resident_nero"]
+        self.assertEqual(CAST["resident_nero"], saved["cast"])
+        self.assertEqual(PORTRAITS["resident_nero"], saved["portraits"])
+        self.assertEqual(FULLBODY["resident_nero"], saved["fullbody"])
+        self.assertEqual({k: v for k, v in ACTING["resident_nero"].items() if not v.get("map_action")}, saved["acting"])
+        used = files([CAST["resident_nero"], ACTING["resident_nero"], PORTRAITS["resident_nero"], FULLBODY["resident_nero"]])
+        self.assertFalse(any("redesign" in f or "living_foldtag" in f or "acting.webp" in f for f in used), used)
+        self.assertIn("assets/room13-fullbody-resident_nero-neutral.webp", used)
+        self.assertIn("assets/room13-pixel-acting-resident_nero.webp", used)
+        # the 1024 originals of the six dialogue expressions are kept for the art board
+        for e in ("neutral", "joy", "flustered", "angry", "anxious", "surprise"):
+            self.assertTrue((ROOT / "art/nero-grey-lynx-originals/fullbody" / (e + ".png")).exists(), e)
 
     def test_originals_are_backed_up_and_kept_on_disk(self):
         for d in REG["designs"]:

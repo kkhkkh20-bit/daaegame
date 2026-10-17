@@ -139,28 +139,6 @@
       ]
     },
     {
-      "design_id": "five_town_tiger_worker",
-      "npc": "resident_nero",
-      "name_ko": "네로",
-      "source": "source/tiger-worker.png",
-      "sha256": "94e6964539f8166760aa39bc5fcf4b1cc671056041012c697fe1b8cbca753482",
-      "species_before": "lynx",
-      "species_after": "tiger",
-      "reason": "Owner's choice (swap). Feline to feline; outskirts labourer; cap, vest and work gloves fit the work.",
-      "head": [
-        370,
-        60,
-        360,
-        345
-      ],
-      "avatar": [
-        380,
-        60,
-        340,
-        340
-      ]
-    },
-    {
       "design_id": "five_town_bear",
       "npc": "resident_bori",
       "name_ko": "보리",
@@ -225,6 +203,33 @@
         470,
         470
       ]
+    }
+  ],
+  "restored_originals": {
+    "resident_nero": "2026-10-16 19:16 PDT owner: 네로 is the grey lynx-type design (navy cloak, round gold clasp, golden eyes) — the original game art kept in original-entries.json (fullbody six expressions, acting sheet, avatars, bust). Restored with dev/apply_npc_redesign.py --only resident_nero. Not the tiger, not the silver wolf."
+  },
+  "withdrawn": [
+    {
+      "design_id": "five_town_tiger_worker",
+      "source": "source/tiger-worker.png",
+      "sha256": "94e6964539f8166760aa39bc5fcf4b1cc671056041012c697fe1b8cbca753482",
+      "species_after": "tiger",
+      "reason": "Owner's choice (swap). Feline to feline; outskirts labourer; cap, vest and work gloves fit the work.",
+      "npc": "resident_nero",
+      "name_ko": "네로",
+      "head": [
+        370,
+        60,
+        360,
+        345
+      ],
+      "avatar": [
+        380,
+        60,
+        340,
+        340
+      ],
+      "withdrawn": "2026-10-16 owner: 네로 is the grey lynx again; the tiger worker is not used (file kept on disk for old saves)"
     }
   ]
 }

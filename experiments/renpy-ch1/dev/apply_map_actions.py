@@ -77,6 +77,17 @@ def main():
         person, pose = entry["person"], entry["pose"]
         if person not in acting:
             raise SystemExit("unknown person " + person)
+        if entry.get("withdrawn"):
+            # 0.18.93: the drawing no longer matches the person's confirmed design (e.g. the tiger
+            # name-tag pose after 네로 became the silver wolf). The pose is taken out of the game so the
+            # person stands in the current design; the file stays on disk for old saves.
+            if a.check:
+                if pose in acting[person]:
+                    bad.append(person + ":" + pose + " (withdrawn, still present)")
+                continue
+            if acting[person].pop(pose, None) is not None:
+                print(person, pose, "withdrawn:", entry["withdrawn"])
+            continue
         img, spec = build(entry, reg)
         if a.check:
             if acting[person].get(pose) != spec:

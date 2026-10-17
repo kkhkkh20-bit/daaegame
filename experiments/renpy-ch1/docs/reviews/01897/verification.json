@@ -24,8 +24,11 @@
     "ep6_cart",
     "ep6_altar"
   ],
-  "checks_passed": [
+  "after_main_01896_merge": [
     "dev/check.sh unit tests and lint",
-    "four new venue regression tests"
-  ]
+    "ep4_after_trial",
+    "ep6_altar",
+    "full qa_relations_design.py browser fixtures"
+  ],
+  "new_unit_tests": 4
 }

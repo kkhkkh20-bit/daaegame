@@ -243,6 +243,19 @@ def character(cid, spec, rows, old, check, report):
     return entry
 
 
+def redesign_reference(cid):
+    import apply_npc_redesign as rd
+    registry = rd.load(rd.REGISTRY)
+    design = next(d for d in registry["designs"] if d["npc"] == cid)
+    img, geo = rd.geometry(design, registry)
+    geo["size"] = img.size
+    entry = rd.entries(cid, design, geo, "assets/room13-redesign-%s.webp" % cid)["fullbody"]
+    on_disk = Image.open(GAME / entry["images"]["neutral"]["file"]).size
+    if tuple(on_disk) != tuple(img.size):
+        raise SystemExit("run dev/apply_npc_redesign.py --only %s first" % cid)
+    return entry
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -264,16 +277,30 @@ def main():
         originals.mkdir()
         for kind, path in FILES.items():
             (originals / path.name).write_bytes(path.read_bytes())
-    # Always start from the files as they were before the first apply (idempotent).
+    # The registry's characters always start from their entries as they were before the first
+    # apply (idempotent). 0.18.93: everyone else keeps the current file's entries, so later changes
+    # by other scripts are not undone.
     src = {k: (originals / p.name if originals.exists() else p) for k, p in FILES.items()}
-    data = {k: load(src[k]) for k in FILES}
+    orig = {k: load(src[k]) for k in FILES}
+    data = {k: load(p) for k, p in FILES.items()}
     indents = {k: indent_of(p) for k, p in FILES.items()}
     people = data["fullbody"]["people"]
+    orig_blink = orig["dotfx"].get("blink", {}).get("people", {})
     backup = {"note": "fullbody entries before dev/apply_expression_acting.py", "people": {}}
     out = {"applied": {}, "held": reg["held"]}
     for cid, spec in reg["apply"].items():
-        old = people[cid]
+        old = orig["fullbody"]["people"][cid]
         backup["people"][cid] = old
+        if spec.get("reference") == "npc_redesign":
+            # 0.18.93: the design itself changed (네로 tiger -> silver wolf). The reference canvas is
+            # the current redesign picture of the same design (dev/apply_npc_redesign.py), not the
+            # superseded one, so registration overlays like with like.
+            old = redesign_reference(cid)
+        blink = data["dotfx"].setdefault("blink", {}).setdefault("people", {})
+        if cid in orig_blink:
+            blink[cid] = json.loads(json.dumps(orig_blink[cid]))
+        else:
+            blink.pop(cid, None)
         report = {}
         entry = character(cid, spec, rows, old, a.check, report)
         for key in ("name_ko", "redesign", "art"):
@@ -283,7 +310,6 @@ def main():
             entry["poses"] = old["poses"]   # same reference canvas: poses keep their size
         entry["acting_package"] = "expression-acting-20261016"
         people[cid] = entry
-        blink = data["dotfx"].get("blink", {}).get("people", {})
         if cid in blink:
             for e in list(blink[cid]):
                 if entry["images"].get(e, {}).get("file") != old["images"].get(e, {}).get("file"):

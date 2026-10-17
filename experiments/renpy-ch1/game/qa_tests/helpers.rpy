@@ -377,7 +377,9 @@ init 999 python:
                         renpy.pause(0.35,hard=True)
                     else:
                         r13_speaker(person,R13_FULLBODY_TO_LEGACY.get(emotion,emotion),emotion)
-                        renpy.say(R13_CHARS.get(person),"표정 확인 %s — 대사창과 얼굴이 겹치는지 보는 두 줄짜리 시험 문장입니다. 끝까지 읽히는지도 확인합니다."%emotion,interact=False)
+                        # 0.18.93: the first page exactly as r13_lines shows it (two lines per click).
+                        line=r13_dialogue_pages("표정 확인 %s — 대사창과 얼굴이 겹치는지 보는 두 줄짜리 시험 문장입니다. 끝까지 읽히는지도 확인합니다."%emotion)[0]
+                        renpy.say(R13_CHARS.get(person),line,interact=False)
                         renpy.pause(0.45,hard=True)
                     name="%s_%s_%s.png"%(mode,person,emotion)
                     renpy.screenshot(os.path.join(out,name))
@@ -387,6 +389,21 @@ init 999 python:
                         scale=r13_fullbody_scale(person,760 if mode=="topic" else 840),
                         spec=(r13_fullbody_spec(person,emotion) or {}).get("file")))
                     if mode=="topic":renpy.hide_screen("r13_question_list")
+        # 0.18.93: a line said outside r13_lines (no paging) in large text: the window grows upward.
+        if "large" in modes:
+            persistent.room13_large_text=True
+            who=people[0]
+            r13_speaker(who,"neutral","neutral")
+            renpy.say(R13_CHARS.get(who),"세 줄 이상 시험 — 이 문장은 대화 흐름을 거치지 않고 바로 표시되는 긴 안내문입니다. 큰 글씨에서도 마지막 줄이 대사창 안에 들어와야 합니다.",interact=False)
+            renpy.pause(0.45,hard=True)
+            renpy.screenshot(os.path.join(out,"large_unpaged_%s.png"%who))
+            # topic screen with real rows (the empty screen is captured above)
+            persistent.room13_large_text=False
+            renpy.hide("r13_visitor")
+            renpy.show_screen("r13_question_list",who,"neutral","%s에게 묻기"%R13_NAMES.get(who,who),[("마차가 괜찮은지 묻는다",NullAction(),False),("함께 왔다고 말해 달라고 한다",NullAction(),False),("짐을 잠시 맡아 달라고 한다",NullAction(),True)],False,animate=False)
+            renpy.pause(0.35,hard=True)
+            renpy.screenshot(os.path.join(out,"topic_rows_%s.png"%who))
+            renpy.hide_screen("r13_question_list")
         persistent.room13_large_text=False
         open(os.path.join(out,"report.json"),"w").write(qa_json.dumps(report,ensure_ascii=False,indent=0))
         store.r13_qa_fb_done=True

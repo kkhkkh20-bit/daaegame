@@ -36,8 +36,15 @@ init 59 python:
         if grid>1:
             # Flatten creates an actual low-resolution render texture. Merely
             # composing two scales can otherwise preserve the full-res source.
-            low=Transform(art,size=(max(1,width//grid),max(1,height//grid)),nearest=True,subpixel=False)
+            # 0.18.93 (2x2 pixel check): the low texture is drawn back at exactly grid x its size.
+            # width//grid scaled up to width made e.g. 133 cells fill 400 px, so every ~130th
+            # column/row became grid+1 px wide; the box now ends on a whole cell (at most
+            # grid-1 px narrower/shorter, top-left unchanged).
+            lw,lh=max(1,width//grid),max(1,height//grid)
+            low=Transform(art,size=(lw,lh),nearest=True,subpixel=False)
             art=Flatten(low)
+            # Keep the bottom edge (feet) where it was: the trimmed rows come off the top.
+            return Transform(art,size=(lw*grid,lh*grid),yoffset=height-lh*grid,nearest=True,subpixel=False,rotate_pad=False)
         return Transform(art,size=(width,height),nearest=True,subpixel=False,rotate_pad=False)
 
     def r13_acting_spec(person,pose):
@@ -251,8 +258,11 @@ init 59 python:
         # 0.18.79 (owner 19:16): storybook revisions chosen for these two, investigation scenes only.
         # 보리 ties firewood where the floor shows him (the school back row keeps the idle pose);
         # 네로 folds the luggage tag at the gate and the store.
+        # 0.18.93 (owner 19:16/19:34): 네로 is the grey cloaked design again; his own sheet's activity
+        # pose (kneeling at a bundle, taking old name tags off luggage) is reused on the lower-road
+        # mornings at the river too, instead of drawing a new one.
         "resident_bori":("gate","store","square","workshop"),
-        "resident_nero":("gate","store"),
+        "resident_nero":("gate","store","river"),
         "resident_owlgp":("square",),
         "granny":("inn",),
     }

@@ -95,8 +95,27 @@ screen main_menu():
 define R13_SAY_TOP_NORMAL = 532
 define R13_SAY_TOP_LARGE = 516
 init python:
-    def _r13_say_top():
-        return R13_SAY_TOP_LARGE if persistent.room13_large_text else R13_SAY_TOP_NORMAL
+    def _r13_say_top(what=None):
+        # 0.18.93: conversations show two lines per click (systems/room13_linebreak.rpy), but a line
+        # spoken outside r13_lines (an old-save notice, a QA line) can wrap to three or more; the
+        # window then grows upward by whole lines so the last line never runs past the frame.
+        large=bool(persistent.room13_large_text)
+        top=R13_SAY_TOP_LARGE if large else R13_SAY_TOP_NORMAL
+        lines=_r13_say_lines(what,29 if large else 23) if isinstance(what,str) else 1
+        if lines>2:
+            top-=(lines-2)*(34 if large else 28)
+        return max(300,top)
+
+    import re as _r13_say_re
+    def _r13_say_lines(what,size,width=756):
+        """Rendered lines of a dialogue text: each written line wraps at the window width (Hangul
+        and other wide glyphs count one em, Latin, digits and spaces half)."""
+        per=width/float(size)
+        total=0
+        for line in _r13_say_re.sub(r"\{[^{}]*\}","",what).split("\n"):
+            em=sum(1.0 if ord(ch)>0x2e7f else 0.55 for ch in line)
+            total+=max(1,int(-(-em//per)))
+        return total
 
 screen say(who,what):
     if room13_mode and r13_meeting_active and r13_meeting_claim in R13_DEBATE:
@@ -161,9 +180,9 @@ screen say(who,what):
             id "window"
             # 0.18.39 (owner): two lines tall in both text sizes; the bottom edge stays at 632.
             xpos (240 if room13_mode else 40)
-            ypos (_r13_say_top() if room13_mode else 551)
+            ypos (_r13_say_top(what) if room13_mode else 551)
             xsize (800 if room13_mode else 1200)
-            ysize (632-_r13_say_top() if room13_mode else 169)
+            ysize (632-_r13_say_top(what) if room13_mode else 169)
             background (r13_dialogue_frame() if room13_mode else Solid("#211a16f2")) padding (22,16)
             if room13_mode:
                 r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 756 font r13_ui_font() color r13_say_color()
@@ -172,7 +191,7 @@ screen say(who,what):
         if who:
             $ r13_name_track(who)
             frame:
-                xpos 254 ypos (_r13_say_top()-22 if room13_mode else 522)
+                xpos 254 ypos (_r13_say_top(what)-22 if room13_mode else 522)
                 padding (14,5) background R13InkPanel(alpha="ff")
                 at r13_name_fade
                 text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
