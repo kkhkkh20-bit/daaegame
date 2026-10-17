@@ -7,8 +7,8 @@
   "regions": {
     "village": {
       "art": "assets/room13-map-village.webp",
-      "sha256": "4589d6219b78caec02778f9a24d7e89ff11950443067c2191e060075a5aa2acf",
-      "source_sha256": "c3f5c4164cde71e6ad02251cc49980b6e23af6c63e8fcf3b1ad18b3dd520ef87",
+      "sha256": "8d39190917a640361f1a00c65b4d38ef0ba3abbdeb930f671c3bec91180f42e4",
+      "source_sha256": "cdcb0787a0909e56d78e189a0bbb76f13bb7b5fa70d1752ba7fa60bcbcd1bbec",
       "nodes": {
         "inn": {
           "polygon": [
@@ -536,8 +536,8 @@
     },
     "mountain": {
       "art": "assets/room13-map-mountain.webp",
-      "sha256": "a96dfefb97010a27cda68eeba411753b23776b8de259ef748c674cfd080911e4",
-      "source_sha256": "1c84cc6d184c5f5ff856ea35e76c4b0019d2dcc818c49793f4e4776d3d88d8be",
+      "sha256": "dace2334b6986bd5c5209e24563fbc0d061d933bf3e489f8b60c12fce9427e75",
+      "source_sha256": "dec00b7abcba328bb5872fb6a14fd12eb06502a71f76159e9f95333e1dc6c73b",
       "nodes": {
         "forest": {
           "polygon": [
@@ -749,16 +749,17 @@
         }
       },
       "mask_source": "design/maps/20261017/mountain-discovered.webp",
-      "mask_sha256": "715e9f5ff858ff36d39cc0c2fe4a510be7e2eea919c0be4cb7510ea65305e730"
+      "mask_sha256": "2d684b5e439079e428912a90a21f8588c33006291f61a646fb81636e0965be4d",
+      "hidden_source_sha256": "de6d1d8253e8842749aebbdc0a40d17b247448c6c83004c717b286c61fbf7f14"
     }
   },
   "reveals": {
     "greenhouse": {
       "bounds": [
-        320,
-        40,
-        410,
-        235
+        300,
+        0,
+        440,
+        330
       ],
       "art": "assets/room13-map-reveal-greenhouse.webp"
     },
@@ -767,7 +768,7 @@
         1240,
         0,
         425,
-        255
+        300
       ],
       "art": "assets/room13-map-reveal-altar.webp"
     }
