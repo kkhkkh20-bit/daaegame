@@ -75,7 +75,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 57 | `room13_life.rpy:188` | _r13_before_inspection_visible |
+| 1 | 57 | `room13_life.rpy:189` | _r13_before_inspection_visible |
 | 2 | 66 | `room13_inspection.rpy:290` | r13_before_gate_bundle_visible |
 | 3 | 67 | `room13_gate_inspection.rpy:65` | _r13_route_object_visible |
 | 4 | 90 | `room13_route_knowledge.rpy:22` | _r13_firstday_visible |
@@ -178,7 +178,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 57 | `room13_life.rpy:174` | _r13_reason_activity |
+| 1 | 57 | `room13_life.rpy:175` | _r13_reason_activity |
 | 2 | 146 | `systems/room13_place_reasons.rpy:127` | _r13_alibi_activity |
 | 3 | 147 | `systems/room13_alibi.rpy:37` |  |
 
@@ -438,7 +438,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 57 | `room13_life.rpy:164` | _r13_new_places_resident_where |
+| 1 | 57 | `room13_life.rpy:165` | _r13_new_places_resident_where |
 | 2 | 130 | `systems/room13_new_places.rpy:105` |  |
 
 ## `r13_secret_route_available` (2층)

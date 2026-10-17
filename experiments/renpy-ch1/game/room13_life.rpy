@@ -153,9 +153,10 @@ init 57 python:
         "resident_sling": [
             ("post","post","post"),("post","square","post"),("post","post","post"),
             ("post","square","post"),("post","post","post"),("post","square","post"),("post","post","post")],
+        # 0.19.17: 피코는 광장 3번 등 밑에서 자고 그 자리에서 그린다. 아침에도 광장에 있다(피코 장면·초상 사건이 아침에 열린다).
         "resident_piko": [
-            ("home","square","home"),("home","square","home"),("home","square","home"),
-            ("home","square","home"),("home","square","home"),("square","square","home"),("home","square","home")],
+            ("square","square","home"),("square","square","home"),("square","square","home"),
+            ("square","square","home"),("square","square","home"),("square","square","home"),("square","square","home")],
         "resident_somi": [
             ("home","home","home"),("home","square","home"),("home","home","home"),
             ("home","square","home"),("home","home","home"),("home","square","home"),("home","square","home")],

@@ -1528,7 +1528,7 @@ testcase w1c_mother_line:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done"),(),12)
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done","ev_q_done"),(),12)
     click pos (1150,90) until screen "choice" timeout 40
     click "아내 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
@@ -1610,7 +1610,7 @@ testcase present_portrait:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done"),(),12)
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done","ev_q_done"),(),12)
     click pos (1150,90) until screen "choice" timeout 40
     click "아내 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
@@ -12230,7 +12230,7 @@ testcase owner_fixes_0192:
     screenshot "relations_day1.png"
     run Hide("r13_records")
     pause 0.5
-    run Call("r13_qa_roam",dict(day=2,period=1,location="square",life_poc=True),("entry_corrected","lodging","+ep"))
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("entry_corrected","lodging","+ep"))
     pause until eval ("piko_seen" in room13["flags"]) timeout 30
     pause 0.8
     assert eval (r13_scene_bg=="winter_square")

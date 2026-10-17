@@ -155,26 +155,28 @@ transform r13_tf_card_fade:
 screen r13_tf_time_card(card):
     zorder 70
     timer 3.3 action Hide("r13_tf_time_card")
-    frame at r13_tf_card_fade:
-        xalign .5 ypos 190 xsize 500 padding (36,24,36,26) background R13PaperFrame()
-        vbox:
-            spacing 10
-            hbox:
-                spacing 14
-                text ("%02d"%card["day"]) size 64 color "#6c512a" font r13_ui_font() yalign 1.0
-                text ("일째 · %s요일"%card["weekday"]) size r13_read_size(24,28) color "#493b30" font r13_ui_font() yalign .8
-            hbox:
-                spacing 22
-                text card["before"] size r13_read_size(30,34) color "#a88a5a" font r13_ui_font()
-                text "→" size r13_read_size(30,34) color "#a88a5a" font r13_ui_font()
-                text card["after"] size r13_read_size(30,34) color "#b36b25" font r13_ui_font()
-            if card["place"]:
-                text card["place"] size r13_read_size(22,26) color "#493b30" font r13_ui_font()
-            add Solid("#b8a27a") xsize 428 ysize 2
-            if card["story"]:
-                text card["story"] size r13_read_size(19,23) color "#4f4236" font r13_ui_font() xsize 428
-            if card["urgent"]:
-                text card["urgent"] size r13_read_size(18,22) color "#a8452e" font r13_ui_font() xsize 428
+    # 0.19.17 (owner screenshot): never over a line or a choice; the card is for the place screen only.
+    if not (renpy.get_screen("choice") or renpy.get_screen("say")):
+      frame at r13_tf_card_fade:
+          xalign .5 ypos 190 xsize 500 padding (36,24,36,26) background R13PaperFrame()
+          vbox:
+              spacing 10
+              hbox:
+                  spacing 14
+                  text ("%02d"%card["day"]) size 64 color "#6c512a" font r13_ui_font() yalign 1.0
+                  text ("일째 · %s요일"%card["weekday"]) size r13_read_size(24,28) color "#493b30" font r13_ui_font() yalign .8
+              hbox:
+                  spacing 22
+                  text card["before"] size r13_read_size(30,34) color "#a88a5a" font r13_ui_font()
+                  text "→" size r13_read_size(30,34) color "#a88a5a" font r13_ui_font()
+                  text card["after"] size r13_read_size(30,34) color "#b36b25" font r13_ui_font()
+              if card["place"]:
+                  text card["place"] size r13_read_size(22,26) color "#493b30" font r13_ui_font()
+              add Solid("#b8a27a") xsize 428 ysize 2
+              if card["story"]:
+                  text card["story"] size r13_read_size(19,23) color "#4f4236" font r13_ui_font() xsize 428
+              if card["urgent"]:
+                  text card["urgent"] size r13_read_size(18,22) color "#a8452e" font r13_ui_font() xsize 428
 
 # "오후까지/저녁까지 기다린다"(시안 1 C): 기록 단추 왼쪽, 오전·오후에만.
 screen r13_tf_wait_button(ready=False):
