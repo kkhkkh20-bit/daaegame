@@ -1,6 +1,6 @@
 # 에피소드 ② 「다람 탐정단 — 처마 밑의 이빨 자국」 (4일 밤 ~ 6일 아침). 대본: docs/EPISODE2_SCRIPT.md
 #   4일 밤: 입구에서 경비 돌목이 어둠 속에서 물린다. 너울은 처마 밑의 밤이를 지목한다(아빠 시점).
-#   5일: 아빠는 하루 종일 일하러 가고, 플레이어는 다람이 된다(room13["pov"]="daram").
+#   5일: 아빠는 하루 종일 엄마 소식을 알아보러 나가고, 플레이어는 다람이 된다(room13["pov"]="daram").
 #        다람의 얼굴은 화면에 나오지 않고, 아빠의 얼굴이 보이며, 생각 표시는 다람의 생각이다.
 #        해 지기 전까지 걸음 다섯 번. 어디를 먼저 갈지, 무엇을 보여 줄지가 단서를 정한다.
 #   5일 저녁: 광장 회의(의장 바둑이). 다람이 직접 말한다. 회의 Q2.
@@ -134,17 +134,18 @@ label r13_ep2_events:
         call r13_ep2_clinic_note
     return None
 
-label r13_ep2_bite:
+label r13_ep2_bite(late=False):
+    # late: 4일 밤 장면을 지나쳐 5일이 되었을 때. 다람이 하루 앞에서 지난밤 일로 보여 준다.
     $ r13_flag("kd_bite")
-    if room13["location"] in ("room13","guestroom"):
+    if not late and room13["location"] in ("room13","guestroom"):
         call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"night")
         call r13_lines([("daram","아빠, 오늘은 내가 읽어 줄게."),
             (None,"(그림책) 남매는 숲에 들어가며 빵 부스러기를 떨어뜨렸어요.",{"book":"U02-opening"}),
             (None,"(그림책) 그런데 새들이 부스러기를 다 먹어 버렸어요."),
             (None,"(그림책) 남매는 별을 보고 길을 찾아 집에 돌아갔어요."),
             ("daram","나는 길 안 잃어버려. 아빠가 있으니까.")],"ep2:book")
-    call r13_scene("winter","입구 · 어둠 속의 비명","night")
-    call r13_lines([(None,"입구 쪽에서 비명이 들렸다. 경비 돌목이 어깨를 감싸 쥐고 눈밭에 주저앉아 있었다."),
+    call r13_scene("winter","입구 · 지난밤의 비명" if late else "입구 · 어둠 속의 비명","night")
+    call r13_lines([(None,("지난밤, " if late else "")+"입구 쪽에서 비명이 들렸다. 경비 돌목이 어깨를 감싸 쥐고 눈밭에 주저앉아 있었다."),
         ("guard","뭔가가…… 어둠 속에서 물었소!"),
         ("neoul","처마 밑의 그 들짐승 아이 짓이오. 날이 밝으면 찾아서 보호소로 보내겠소."),
         ("dad","보호소에서 돌아온 사람은 있습니까?"),
@@ -157,6 +158,9 @@ label r13_ep2_bite:
     return
 
 label r13_ep2_day:
+    # 0.19.10: 5일 아침 대사는 지난밤 물림 사건을 전제로 한다. 그 장면을 보지 못했으면 먼저 보여 준다.
+    if not r13_has("kd_bite"):
+        call r13_ep2_bite(late=True)
     $ r13_flag("kd_started")
     $ r13_edit(period=0,kd_steps=5)
     call r13_scene(R13_PLACES["room13"][1],"5일 아침 · 13호","calm")
@@ -194,8 +198,6 @@ label r13_ep2_day:
     call r13_ep2_night
     # 같은 밤, 학교 뒤 장작 창고에 불(에피소드 ③, systems/room13_ep3_woodfire.rpy).
     call r13_wf_fire
-    # 아빠의 하루 품삯.
-    $ r13_cash(12,"하루 품삯 (다람이 탐정단을 하던 날)")
     $ r13_flag("kd_done")
     $ r13_next_day()
     call r13_ep2_book_after

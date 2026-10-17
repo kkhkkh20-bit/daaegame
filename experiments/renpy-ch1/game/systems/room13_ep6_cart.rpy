@@ -63,7 +63,7 @@ init 157 python:
                 ("resident_ppul","……네 해 전, 첫 겨울이었소. 돌이 처음으로 식었소."),
                 ("resident_ppul","내 손녀가 이름을 잊기 시작했소. 내 이름부터. 그다음 제 이름."),
                 ("resident_ppul","할멈이 말했소. 돌에 사람을 주면 돌이 버틴다고. 그래서 보냈소. 내 손으로 수레에 태웠소."),
-                ("resident_ppul","이제 와서 그게 아니었다고 하면, 나는 그 애를 무엇 때문에 보낸 거요.")]+[("daram","(작게) ……할아버지 손녀 이름 뭐야?"),(None,"촌장은 대답하지 않았다.")],
+                ("resident_ppul","이제 와서 그게 아니었다고 하면, 나는 그 애를 무엇 때문에 보낸 거요.")],
             over=("resident_badook","글씨가 다릅니다. 촌장님이 감싸는 사람이 따로 있습니다."),
             weak=("mom","어쩔 수 있어요. 어젯밤에 했잖아요.")),
         sway=["resident_badook","resident_bori","resident_seol"])
@@ -284,6 +284,9 @@ label r13_cv_night:
         ("resident_ppul","말할 게 있으면 지금 하시오. 여기, 다 보는 앞에서.")],"cv:night:ppul")
     call r13_debate_run("Q6")
     if _return:
+        # 0.19.10: 다람이 곁에 있을 때만(보호실에 있으면 광장에서 말할 수 없다). 결론 데이터는 고정 목록이라 여기서 붙인다.
+        if r13_cv_daram():
+            call r13_lines([("daram","(작게) ……할아버지 손녀 이름 뭐야?"),(None,"촌장은 대답하지 않았다.")],"cv:night:ppul_name")
         call r13_cv_decision
     else:
         call r13_lines([("resident_ppul","말은 다 들었소. 수레는 떠나오."),(None,"새벽, 수레가 산길로 올라갔다.")],"cv:night:fail")

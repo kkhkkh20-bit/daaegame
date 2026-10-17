@@ -123,7 +123,7 @@ label r13_rescue(route, at_altar=False):
     if room13["daram_state"]!="held":
         return False
     if route not in r13_rescue_routes():
-        call r13_lines([("dad","전에 확인한 교대 순서와 지금 경비들 움직임이 다르다. 그러니 지금 기록을 다시 확인해야 한다.")],"rescue:stale")
+        call r13_lines([("dad","(전에 확인한 교대 순서와 지금 경비들 움직임이 다르다. 그러니 지금 기록을 다시 확인해야 한다.)",{"thought":True})],"rescue:stale")
         return False
     if at_altar:
         if route=="order":

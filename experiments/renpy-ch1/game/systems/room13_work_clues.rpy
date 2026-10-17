@@ -26,9 +26,11 @@ init 96 python:
         if key=="J01" and r13_has("J01"):
             if person=="resident_lamplighter":
                 return [("dad","나비에게 들었습니다. 아내가 머물 때도 여관에 오셨다고요."),
-                    (person,"식사를 받으러 갔었죠. 혹시 그분이 가족에게 남긴 글이나 물건을 가지고 계십니까?")]
+                    (person,"식사를 받으러 갔었죠."),
+                    ("dad","혹시 그분이 가족에게 남긴 글이나 물건을 가지고 계십니까?"),
+                    (person,"……그건 여기서 말씀드리기 어려워요.")]
             if person=="nabi":
-                return [(person,"초롱에게 직접 물어봐요. 내가 들은 것보다 더 알고 있을 수도 있죠.")]
+                return [(person,"초롱에게 직접 물어봐요. 제가 들은 것보다 더 알고 있을 수도 있죠.")]
         return _r13_work_present(person,key,identity)
 
     def r13_work_available(key):

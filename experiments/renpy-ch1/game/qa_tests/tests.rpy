@@ -813,6 +813,18 @@ testcase override_chain:
     pause 1.0
     $ r13_qa_override_chains(R13_QA_CHAIN_NAMES)
 
+# 0.19.10: JSON topics/activities (plain dict/list) get the new timeline windows too (systems/room13_timeline.rpy).
+testcase timeline_remap:
+    pause 1.0
+    assert eval (tuple(ROOM13["topics"]["w2_doctor"]["day"])==(R13_WEEK2_DAY,13))
+    assert eval (tuple(ROOM13["topics"]["life:karo:crisis"]["day"])==(R13_WEEK2_DAY,13))
+    assert eval (tuple(ROOM13["activities"]["w2_route"]["day"])==(R13_WEEK2_DAY,13))
+    assert eval (tuple(ROOM13["activities"]["w2_escape"]["day"])==(R13_WEEK2_DAY,13))
+    assert eval (ROOM13["topics"]["life:karo:after"]["day"][0]>=8 and ROOM13["topics"]["life:neoul:after"]["day"][0]>=8)
+    assert eval (tuple(ROOM13["topics"]["register"]["day"])==(1,R13_TRIAL_DAY))
+    assert eval (tuple(ROOM13["topics"]["tok_repair"]["day"])==(R13_CASE_DAY,R13_CASE_DAY))
+    assert eval (ROOM13["topics"]["w2_doctor"].get("_tl") and ROOM13["activities"]["w2_route"].get("_tl"))
+
 # ---- Town events bundle 1 (systems/room13_town_events.rpy) ----
 
 testcase town_b_first_run:

@@ -15,6 +15,8 @@ init -200 python:
     R13_TL_MAP={1:1,2:2,3:3,4:7,5:8,6:9,7:10,8:11,9:11,10:12,11:12,12:13,13:13,14:14}
     # alibi: 알리바이 질문(systems/room13_alibi.rpy)은 처음부터 R13_CASE_DAY로 날짜를 적는다.
     R13_TL_NATIVE_PREFIXES=("ep1:","ep2:","ep3:","ep4:","ep5:","ep6:","night:ep","altar:","alibi:")
+    # 정확히 그날에만 있는 일(구간을 넓히지 않는다). tok_repair: 톡이 "오늘" 새 핀을 달았다 = 사건 당일.
+    R13_TL_EXACT_KEYS=("tok_repair",)
 
     def r13_tl(day):
         """예전 날짜 하나를 새 날짜로."""
@@ -42,7 +44,7 @@ init 990 python:
             if not isinstance(spec,_r13_abc.Mapping) or _r13_tl_native(key) or spec.get("_tl"):continue
             day=spec.get("day")
             if isinstance(day,_r13_abc.Sequence) and not isinstance(day,str) and len(day)==2:
-                a,b=r13_tl_window(*day)
+                a,b=(r13_tl(day[0]),r13_tl(day[1])) if key in R13_TL_EXACT_KEYS else r13_tl_window(*day)
                 spec["day"]=(a,b) if isinstance(day,tuple) else [a,b]
             spec["_tl"]=True
 

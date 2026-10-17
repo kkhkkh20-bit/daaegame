@@ -31,11 +31,11 @@ init 158 python:
         "ep1:st_lib_after":r13_st_topic("resident_librarian","기록실은 이제 따뜻해요?",(4,14),need=["lt_lib_saved"],flags=["st_lib_after"],lines=[
             ("resident_librarian","기록을 세 벌로 베끼고 있어요. 한 벌은 학교에, 한 벌은 진료소에 둘 거예요."),
             ("resident_librarian","혼자 지키다 혼자 얼어 죽을 뻔했잖아요. 기록은 나눠 들어야 오래 남는다는 걸 그날 배웠어요.")]),
-        "ep4:st_chorong_after":r13_st_topic("resident_lamplighter","요즘 밤길은 괜찮아요?",(9,14),need=["nt_chorong_safe"],flags=["st_chorong_after"],lines=[
+        "ep4:st_chorong_after":r13_st_topic("resident_lamplighter","요즘 밤길은 괜찮아요?",(9,14),need=["nt_chorong_safe"],not_flags=["badook_dead"],flags=["st_chorong_after"],lines=[
             ("resident_lamplighter","요즘 밤 순회는 바둑이 씨랑 같이 돌아요."),
             ("resident_lamplighter","편지는 여전히 제가 직접 전해요. 그건 안 바꿔요. 다만 이제 혼자 가지는 않아요."),
             ("resident_lamplighter","그날 밤 누가 기다리고 있었다는 걸 알고 나니까 지름길이 다 무서워졌어요. 그래도 등은 켜야죠.")]),
-        "ep4:st_ttadak_after":r13_st_topic("resident_ttadak","통로 문은 어떻게 했어요?",(11,14),need=["nt_ttadak_safe"],flags=["st_ttadak_after"],lines=[
+        "ep4:st_ttadak_after":r13_st_topic("resident_ttadak","판자 문은 어떻게 했어요?",(11,14),need=["nt_ttadak_safe"],flags=["st_ttadak_after"],lines=[
             ("resident_ttadak","판자 문 안쪽에 손잡이를 달았어요. 안에서도 열리게요."),
             ("resident_ttadak","누가 또 들어갔다가 갇히면 안 되잖아요. 판자는 반 치 길게 잘랐어요. 늘 그랬듯이."),
             ("resident_ttadak","네로 아저씨네 천막에도 판자를 다 댔어요. 그날 일당 받은 걸로요.")]),

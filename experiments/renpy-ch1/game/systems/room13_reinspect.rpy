@@ -1,6 +1,6 @@
 # Re-inspection and suspicion vs. crime (owner, 0.18.19).
 #   Candlestick: every part can be looked at from the first run. If Dad watched 톡 fit the new pin
-#     on day 4 (tok_repair), looking at the ornament ring now carries that comparison. Nothing is
+#     on the case day (tok_repair), looking at the ornament ring now carries that comparison. Nothing is
 #     unlocked by an earlier run.
 #   은호: he hides a ledger when Dad comes in. It is illegal credit with interest, not the murder.
 #     The fact stays useful for supplies (week 2), not for the trial.
