@@ -149,7 +149,7 @@ init 173 python:
             if s.get("day",1)>=3:
                 r13_flag("topic:lamplighter_warning")
                 return [(person,"다시 오셨군요. 말씀드린 봉투를 찾아뒀어요. 어디에 두었는지 알려드릴게요.")]
-            return [(person,"봉투는 3일에 찾아둘게요. 다른 궁금한 일이 있으세요?")]
+            return [(person,"봉투는 "+r13_weekday(3)+"요일 오전까지 찾아둘게요. 수리점으로 오세요. 다른 궁금한 일이 있으세요?")]
         return _r13_review_opening(person,first)
 
     _r13_review_topic_lines=r13_conversation_topic_lines

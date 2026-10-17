@@ -529,7 +529,7 @@ label r13_ep1_aftermath:
             ("dad","(톡이 정말 조각을 가져갔을까? 쪽지와 노끈의 주인을 끝내 밝히지 못했다.)",{"thought":True})],"ep1:after:fail")
     if r13_has("piko_dead") and r13_has("lt_piko_promise"):
         call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
-            (None,"「아침이 되자, 아저씨는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
+            (None,"「아침이 되자, 그림쟁이 언니는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",{"book":"U01-ending"}),
             ("daram","……아빠. 이 책, 이제 안 읽을래.")],"ep1:after:book")
     elif r13_has("piko_dead"):
         call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),

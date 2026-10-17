@@ -295,7 +295,7 @@ init 182 python:
     _g1_topic("night:buri",
         variants=[(None,[("dad","부리 오빠를 만났어."),
             ("daram","부리 오빠는 아직 나랑 말하기 싫은가 봐."),
-            ("dad","……아저씨한테도 시간이 필요할 거야.")])],
+            ("dad","……부리 오빠한테도 시간이 필요할 거야.")])],
         recap="다람이는 부리가 아직 자기와 말하기 싫은 것 같다고 했다")
     _g1_topic("night:helping",
         variants=[(None,[("dad","짐 나르는 거 같이 해 줘서 고마워."),
