@@ -296,6 +296,7 @@ label r13_cv_night:
         ([(None,"(그림책) 이번엔 마을 사람들이 피리를 꺾었어요.",{"book":"U06-ending"})] if r13_has("cart_stopped") else [(None,"(그림책) 한 아이만 늦게 걸어서, 문이 닫히기 전에 돌아왔어요.")] if r13_has("cv_family_only") else [])+
         ([("daram","……아빠. 피리 부는 아저씨는 누가 불라고 해서 분 거야?")] if r13_cv_daram() else []),"cv:night:book", binding_route="dynamic:463")
     $ r13_flag("cv_done")
+    call r13_episode_aftermath("ep6")
     return
 
 label r13_cv_decision:
@@ -347,6 +348,7 @@ label r13_cv_altar:
     if not r13_has("cv_night"):
         $ r13_flag("cv_night","cv_skipped")
         call r13_cv_cart_left
+        call r13_episode_aftermath("ep6")
     $ r13_cv_preparations()
     call r13_lines([(None,"(그림책) 마을 한가운데 금으로 덮인 왕자 동상이 서 있었어요.",{"book":"U07-opening"}),
         (None,"(그림책) 다 내주고 잿빛이 된 왕자 발밑에서, 제비는 잠들었어요.")]+

@@ -396,4 +396,5 @@ label r13_nt_after_trial:
             (None,"(그림책) 빨간 모자는 숲을 지나 할머니 집에 갔어요.",{"book":"U04-opening"}),
             (None,"(그림책) \"할머니, 손이 왜 그렇게 커요?\" \"우리 아가를 꼭 안아 주려고 그렇단다.\"",{"book":"U04-ending"}),
             ("daram","……아빠. 할머니 손은 커?")],"nt:after:book")
+    call r13_episode_aftermath("ep4")
     return
