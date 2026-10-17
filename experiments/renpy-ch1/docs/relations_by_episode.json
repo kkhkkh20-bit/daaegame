@@ -1,0 +1,2076 @@
+{
+ "source": "docs/EPISODE1~6 대본, EPISODE_TABLE, STORY_EPISODES_FULL, CAST_BIBLE, HANDOFF_20261017, game/systems (2026-10-17)",
+ "kinds": {
+  "family": "가족",
+  "work": "함께 일함",
+  "help": "도움·부탁",
+  "suspect": "의심·지목",
+  "conflict": "갈등·해침",
+  "secret": "숨긴 거래·비밀",
+  "hide": "감쌈·숨겨 줌"
+ },
+ "truth_rule": "truth=false는 그 의심·주장이 사실과 다르다는 뜻. spoiler=true는 범인·진실이 드러나는 관계(이때 truth 생략, 내용은 사실).",
+ "common": [
+  {
+   "a": "dad",
+   "b": "daram",
+   "kind": "family",
+   "label": "아빠와 딸",
+   "reveal": "처음부터",
+   "truth": true
+  },
+  {
+   "a": "dad",
+   "b": "mom",
+   "kind": "family",
+   "label": "부부",
+   "reveal": "처음부터(초대 편지 E01)",
+   "truth": true
+  },
+  {
+   "a": "mom",
+   "b": "daram",
+   "kind": "family",
+   "label": "엄마와 딸",
+   "reveal": "처음부터",
+   "truth": true
+  },
+  {
+   "a": "granny",
+   "b": "resident_tosil",
+   "kind": "family",
+   "label": "할머니와 손녀",
+   "reveal": "처음부터",
+   "truth": true
+  },
+  {
+   "a": "granny",
+   "b": "nabi",
+   "kind": "family",
+   "label": "거둬 키운 아이",
+   "reveal": "③ 5일 주방 나비의 말(W2)",
+   "truth": true
+  },
+  {
+   "a": "resident_owlgp",
+   "b": "buri",
+   "kind": "family",
+   "label": "할아버지와 손자",
+   "reveal": "처음부터(부리 대화)",
+   "truth": true
+  },
+  {
+   "a": "resident_musoe",
+   "b": "resident_somi",
+   "kind": "family",
+   "label": "할아버지와 손녀",
+   "reveal": "② K05",
+   "truth": true
+  },
+  {
+   "a": "resident_bori",
+   "b": "kid_dodam",
+   "kind": "family",
+   "label": "아빠와 아이",
+   "reveal": "③ 6일 보리의 말 / st_dodam_seen",
+   "truth": true
+  },
+  {
+   "a": "resident_lamplighter",
+   "b": "chorong_mother",
+   "kind": "family",
+   "label": "아들과 어머니",
+   "reveal": "④ 10일 광장(초롱의 어머니)",
+   "truth": true
+  },
+  {
+   "a": "resident_nubi",
+   "b": "kid_nubi1",
+   "kind": "family",
+   "label": "엄마와 큰아이",
+   "reveal": "③ F11",
+   "truth": true
+  },
+  {
+   "a": "resident_nubi",
+   "b": "kid_nubi2",
+   "kind": "family",
+   "label": "엄마와 둘째",
+   "reveal": "③ 6일 저녁 빨래터",
+   "truth": true
+  },
+  {
+   "a": "resident_siluk",
+   "b": "kid_siluk1",
+   "kind": "family",
+   "label": "아빠와 큰아이",
+   "reveal": "① 4일 아랫길",
+   "truth": true
+  },
+  {
+   "a": "resident_siluk",
+   "b": "kid_siluk2",
+   "kind": "family",
+   "label": "아빠와 작은아이",
+   "reveal": "① 4일 아랫길",
+   "truth": true
+  },
+  {
+   "a": "resident_seori",
+   "b": "resident_ubak",
+   "kind": "work",
+   "label": "스승과 제자",
+   "reveal": "① L05",
+   "truth": true
+  },
+  {
+   "a": "resident_tok",
+   "b": "buri",
+   "kind": "work",
+   "label": "수리점 주인과 견습",
+   "reveal": "① 2일 수리점",
+   "truth": true
+  },
+  {
+   "a": "resident_tok",
+   "b": "resident_ttadak",
+   "kind": "work",
+   "label": "판자 버릇을 아는 동료",
+   "reveal": "④ nt_ttadak_safe / ttadak_dead",
+   "truth": true
+  },
+  {
+   "a": "resident_tok",
+   "b": "resident_guldol",
+   "kind": "work",
+   "label": "수리점 동료",
+   "reveal": "CAST_BIBLE 일터",
+   "truth": true
+  },
+  {
+   "a": "resident_eunho",
+   "b": "resident_guseul",
+   "kind": "work",
+   "label": "주인과 견습",
+   "reveal": "⑥ 13일 장터",
+   "truth": true
+  },
+  {
+   "a": "resident_madam",
+   "b": "resident_mungchi",
+   "kind": "work",
+   "label": "주인과 하인",
+   "reveal": "⑥ 13일 창고 뒷길",
+   "truth": true
+  },
+  {
+   "a": "resident_sling",
+   "b": "resident_jongjong",
+   "kind": "work",
+   "label": "우체국 조수",
+   "reveal": "④ 9일 우체국",
+   "truth": true
+  },
+  {
+   "a": "resident_sling",
+   "b": "seryeon",
+   "kind": "work",
+   "label": "우체국 동료",
+   "reveal": "④ 9일 우체국",
+   "truth": true
+  },
+  {
+   "a": "resident_yeoni",
+   "b": "resident_tori",
+   "kind": "work",
+   "label": "수선집 스승과 제자",
+   "reveal": "⑥ 13일 수선집",
+   "truth": true
+  },
+  {
+   "a": "resident_librarian",
+   "b": "resident_momo",
+   "kind": "work",
+   "label": "우체국 구석 동료",
+   "reveal": "CAST_BIBLE 일터",
+   "truth": true
+  },
+  {
+   "a": "neoul",
+   "b": "resident_ppul",
+   "kind": "work",
+   "label": "촌장 밑 집행",
+   "reveal": "① 3일 고발 / ③ 6일 광장",
+   "truth": true
+  },
+  {
+   "a": "neoul",
+   "b": "resident_badook",
+   "kind": "work",
+   "label": "같은 순찰대",
+   "reveal": "② 5일 회의",
+   "truth": true
+  },
+  {
+   "a": "resident_badook",
+   "b": "guard",
+   "kind": "work",
+   "label": "같은 순찰",
+   "reveal": "처음부터",
+   "truth": true
+  },
+  {
+   "a": "resident_ppul",
+   "b": "doto",
+   "kind": "work",
+   "label": "배급 장부 보조",
+   "reveal": "CAST_BIBLE 일터",
+   "truth": true
+  },
+  {
+   "a": "resident_ppul",
+   "b": "resident_seol",
+   "kind": "work",
+   "label": "종탑을 맡김",
+   "reveal": "⑥ 13일 종탑",
+   "truth": true
+  },
+  {
+   "a": "karo",
+   "b": "resident_siluk",
+   "kind": "work",
+   "label": "입구 마구간",
+   "reveal": "CAST_BIBLE 일터",
+   "truth": true
+  },
+  {
+   "a": "resident_nubi",
+   "b": "resident_kkwak",
+   "kind": "work",
+   "label": "집주인과 세입자",
+   "reveal": "CAST_BIBLE(추가 설정)",
+   "truth": true
+  }
+ ],
+ "episodes": [
+  {
+   "id": "ep1",
+   "mark": "①",
+   "title": "등 도둑",
+   "days": "1~4일",
+   "summary": "광장 3번 등과 기록실 난로의 조각을 실룩이 훔쳐 백 부인에게 팔고, 피코와 사서가 얼어 죽는다.",
+   "people": [
+    {
+     "id": "dad",
+     "role": "조사자",
+     "note": "톡의 누명을 벗기고 회의에서 말함"
+    },
+    {
+     "id": "daram",
+     "role": "관련자",
+     "note": "피코와 엄마 초상 약속"
+    },
+    {
+     "id": "mom",
+     "role": "관련자",
+     "note": "피코가 그린 얼굴·대출 카드의 이름"
+    },
+    {
+     "id": "resident_piko",
+     "role": "희생자",
+     "note": "3번 등 밑에서 얼어 죽음(살릴 수 있음)"
+    },
+    {
+     "id": "resident_librarian",
+     "role": "희생자",
+     "note": "기록실 난로 앞에서 숨짐(살릴 수 있음)"
+    },
+    {
+     "id": "resident_tok",
+     "role": "용의자",
+     "note": "등 여는 사람이라 묶임"
+    },
+    {
+     "id": "resident_siluk",
+     "role": "범인",
+     "note": "빚 때문에 등 조각을 훔쳐 팖"
+    },
+    {
+     "id": "resident_madam",
+     "role": "관련자",
+     "note": "훔친 조각을 사들임"
+    },
+    {
+     "id": "resident_ubak",
+     "role": "용의자",
+     "note": "몰래 온도만 재고 조각을 돌려놓음"
+    },
+    {
+     "id": "resident_seori",
+     "role": "증인",
+     "note": "우박에게 측정을 시킨 검사원"
+    },
+    {
+     "id": "buri",
+     "role": "증인",
+     "note": "온도계 빈자리를 알려 줌"
+    },
+    {
+     "id": "resident_lamplighter",
+     "role": "증인",
+     "note": "새벽 순회 때 등이 미지근했다"
+    },
+    {
+     "id": "neoul",
+     "role": "관련자",
+     "note": "톡을 고발하고 실룩을 데려감"
+    },
+    {
+     "id": "nabi",
+     "role": "조력자",
+     "note": "피코를 하룻밤 재워 줌(조건)"
+    },
+    {
+     "id": "resident_momo",
+     "role": "관련자",
+     "note": "피코의 그림값을 깎음"
+    },
+    {
+     "id": "kid_siluk1",
+     "role": "증인",
+     "note": "아빠가 손이 언 채 왔다"
+    },
+    {
+     "id": "kid_siluk2",
+     "role": "관련자",
+     "note": "아빠가 사 온 빵을 떨어뜨림"
+    },
+    {
+     "id": "granny",
+     "role": "관련자",
+     "note": "등 조각을 구해 오는 사람"
+    }
+   ],
+   "relations": [
+    {
+     "a": "neoul",
+     "b": "resident_tok",
+     "kind": "suspect",
+     "label": "등 도둑으로 지목",
+     "reveal": "3일 아침 수리점 고발 / Q1 1번",
+     "truth": false
+    },
+    {
+     "a": "neoul",
+     "b": "resident_ubak",
+     "kind": "suspect",
+     "label": "조각 뺀 조수로 지목",
+     "reveal": "Q1 2번",
+     "truth": false
+    },
+    {
+     "a": "resident_madam",
+     "b": "resident_siluk",
+     "kind": "conflict",
+     "label": "열두 냥 빚을 놓음",
+     "reveal": "4일 아랫길 실룩의 말",
+     "truth": true
+    },
+    {
+     "a": "resident_siluk",
+     "b": "resident_piko",
+     "kind": "secret",
+     "label": "3번 등 조각을 훔침",
+     "reveal": "L04 + L07 + L08 / Q1 5번",
+     "spoiler": true
+    },
+    {
+     "a": "resident_siluk",
+     "b": "resident_librarian",
+     "kind": "secret",
+     "label": "기록실 난로 조각 훔침",
+     "reveal": "L10 / L11",
+     "spoiler": true
+    },
+    {
+     "a": "resident_siluk",
+     "b": "resident_madam",
+     "kind": "secret",
+     "label": "훔친 조각을 팔고 삼",
+     "reveal": "L09",
+     "spoiler": true
+    },
+    {
+     "a": "kid_siluk1",
+     "b": "resident_siluk",
+     "kind": "family",
+     "label": "언 손으로 온 아빠",
+     "reveal": "L08",
+     "truth": true
+    },
+    {
+     "a": "resident_tok",
+     "b": "resident_piko",
+     "kind": "work",
+     "label": "고친 등 밑에서 잠",
+     "reveal": "L00 / L01",
+     "truth": true
+    },
+    {
+     "a": "resident_seori",
+     "b": "resident_ubak",
+     "kind": "work",
+     "label": "몰래 온도 재기 심부름",
+     "reveal": "L05",
+     "truth": true
+    },
+    {
+     "a": "resident_seori",
+     "b": "buri",
+     "kind": "work",
+     "label": "온도계를 빌려 감",
+     "reveal": "L02",
+     "truth": true
+    },
+    {
+     "a": "resident_lamplighter",
+     "b": "resident_ubak",
+     "kind": "help",
+     "label": "새벽엔 미지근 증언",
+     "reveal": "L06 / Q1 2번",
+     "truth": true
+    },
+    {
+     "a": "nabi",
+     "b": "resident_piko",
+     "kind": "help",
+     "label": "하룻밤 재워 줌",
+     "reveal": "2일 저녁 나비 설득(조건)",
+     "truth": true
+    },
+    {
+     "a": "daram",
+     "b": "resident_piko",
+     "kind": "help",
+     "label": "엄마 초상 손가락 약속",
+     "reveal": "2일 오후 광장 / L12",
+     "truth": true
+    },
+    {
+     "a": "resident_piko",
+     "b": "mom",
+     "kind": "secret",
+     "label": "엄마를 본 적 있음",
+     "reveal": "L13",
+     "truth": true
+    },
+    {
+     "a": "resident_librarian",
+     "b": "mom",
+     "kind": "work",
+     "label": "엄마 기록·대출 카드",
+     "reveal": "3일 기록실 / 4일 새벽 대출 카드",
+     "truth": true
+    },
+    {
+     "a": "resident_momo",
+     "b": "resident_piko",
+     "kind": "conflict",
+     "label": "그림값을 깎아 삼",
+     "reveal": "2일 오후 광장",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_tok",
+     "kind": "work",
+     "label": "등 조각을 구해 옴",
+     "reveal": "2일 수리점 톡의 말",
+     "truth": true
+    },
+    {
+     "a": "neoul",
+     "b": "resident_siluk",
+     "kind": "conflict",
+     "label": "실룩을 끌고 감",
+     "reveal": "Q1 결정",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "ep2",
+   "mark": "②",
+   "title": "다람 탐정단",
+   "days": "4~5일",
+   "summary": "돌목을 문 건 이름을 잊어 가는 무쇠 할아버지였고 솜이가 숨겼다. 다람이 밤이를 구하고, 할아버지는 얼음 강으로 간다.",
+   "people": [
+    {
+     "id": "daram",
+     "role": "조사자",
+     "note": "탐정단 단장, 회의에서 직접 말함"
+    },
+    {
+     "id": "dad",
+     "role": "관련자",
+     "note": "일하러 나가 마을을 맡김"
+    },
+    {
+     "id": "resident_tosil",
+     "role": "조력자",
+     "note": "할머니 약을 들고 돌목에게"
+    },
+    {
+     "id": "resident_kongi",
+     "role": "증인",
+     "note": "들은 소문을 판 소식통"
+    },
+    {
+     "id": "resident_somi",
+     "role": "관련자",
+     "note": "할아버지를 숨긴 탐정단원"
+    },
+    {
+     "id": "bami",
+     "role": "용의자",
+     "note": "처마 위에서 별을 봤다"
+    },
+    {
+     "id": "resident_musoe",
+     "role": "희생자",
+     "note": "돌목을 물고 얼음 강으로 감"
+    },
+    {
+     "id": "guard",
+     "role": "피해자",
+     "note": "어둠 속에서 물린 경비"
+    },
+    {
+     "id": "neoul",
+     "role": "관련자",
+     "note": "밤이를 보호소로 보내려 함"
+    },
+    {
+     "id": "resident_badook",
+     "role": "조력자",
+     "note": "아이 말도 들어 보자고 함"
+    },
+    {
+     "id": "resident_nero",
+     "role": "조력자",
+     "note": "할아버지를 천막에 숨김"
+    },
+    {
+     "id": "resident_seori",
+     "role": "조력자",
+     "note": "진료소로 돌봄(조건)"
+    },
+    {
+     "id": "granny",
+     "role": "관련자",
+     "note": "토실 편에 어깨 약을 보냄"
+    }
+   ],
+   "relations": [
+    {
+     "a": "neoul",
+     "b": "bami",
+     "kind": "suspect",
+     "label": "문 아이로 지목",
+     "reveal": "4일 밤 입구 / Q2",
+     "truth": false
+    },
+    {
+     "a": "resident_kongi",
+     "b": "bami",
+     "kind": "suspect",
+     "label": "'밤이가 물었대' 소문",
+     "reveal": "K01",
+     "truth": false
+    },
+    {
+     "a": "resident_musoe",
+     "b": "guard",
+     "kind": "conflict",
+     "label": "겁나서 돌목을 묾",
+     "reveal": "K02 + K04 / Q2 결정",
+     "spoiler": true
+    },
+    {
+     "a": "resident_somi",
+     "b": "resident_musoe",
+     "kind": "hide",
+     "label": "할아버지를 숨김",
+     "reveal": "5일 오후 솜이네 집 솜이 고백",
+     "spoiler": true
+    },
+    {
+     "a": "resident_somi",
+     "b": "resident_nero",
+     "kind": "help",
+     "label": "천막에 숨겨 달라 부탁",
+     "reveal": "솜이 고백(somi_secret)",
+     "spoiler": true
+    },
+    {
+     "a": "resident_nero",
+     "b": "resident_musoe",
+     "kind": "hide",
+     "label": "밤마다 천막에 숨겨 줌",
+     "reveal": "somi_secret",
+     "spoiler": true
+    },
+    {
+     "a": "resident_musoe",
+     "b": "resident_somi",
+     "kind": "family",
+     "label": "손바닥의 솜이 이름",
+     "reveal": "K05 / K06",
+     "truth": true
+    },
+    {
+     "a": "daram",
+     "b": "bami",
+     "kind": "help",
+     "label": "도토리 주고 친구 됨",
+     "reveal": "K03",
+     "truth": true
+    },
+    {
+     "a": "daram",
+     "b": "resident_tosil",
+     "kind": "help",
+     "label": "탐정단 결성",
+     "reveal": "5일 오전 광장",
+     "truth": true
+    },
+    {
+     "a": "daram",
+     "b": "resident_kongi",
+     "kind": "help",
+     "label": "본 것만 말하기 규칙",
+     "reveal": "K01",
+     "truth": true
+    },
+    {
+     "a": "daram",
+     "b": "resident_somi",
+     "kind": "help",
+     "label": "손바닥에 이름 받음",
+     "reveal": "5일 밤 강가 작별(조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_tosil",
+     "b": "guard",
+     "kind": "help",
+     "label": "할머니 심부름 약",
+     "reveal": "K02",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "guard",
+     "kind": "help",
+     "label": "어깨 약을 보냄",
+     "reveal": "K02(토실의 말)",
+     "truth": true
+    },
+    {
+     "a": "resident_badook",
+     "b": "bami",
+     "kind": "help",
+     "label": "아이 말을 들어 줌",
+     "reveal": "Q2 시작",
+     "truth": true
+    },
+    {
+     "a": "resident_badook",
+     "b": "neoul",
+     "kind": "conflict",
+     "label": "밤이 일로 의견 갈림",
+     "reveal": "Q2 2번",
+     "truth": true
+    },
+    {
+     "a": "resident_seori",
+     "b": "resident_musoe",
+     "kind": "help",
+     "label": "진료소에서 돌봄",
+     "reveal": "Q2 결정(서리를 믿은 경로)",
+     "truth": true
+    },
+    {
+     "a": "resident_nero",
+     "b": "daram",
+     "kind": "help",
+     "label": "이름표를 쥐여 줌",
+     "reveal": "K08",
+     "truth": true
+    },
+    {
+     "a": "dad",
+     "b": "daram",
+     "kind": "family",
+     "label": "하루 마을을 맡김",
+     "reveal": "5일 아침 13호",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "ep3",
+   "mark": "③",
+   "title": "장작 창고의 불",
+   "days": "5~7일",
+   "summary": "너울의 약속에 밀린 누비가 창고 문 앞에 등유를 부어 불을 내고 꼬미가 죽는다. 보리와 나비가 의심받는다.",
+   "people": [
+    {
+     "id": "dad",
+     "role": "조사자",
+     "note": "창고 터를 살피고 회의에서 말함"
+    },
+    {
+     "id": "daram",
+     "role": "관련자",
+     "note": "꼬미에게 도토리를 줌"
+    },
+    {
+     "id": "kid_kkomi",
+     "role": "희생자",
+     "note": "아지트 대장, 맨 나중에 남음"
+    },
+    {
+     "id": "kid_kkam",
+     "role": "증인",
+     "note": "곰 아저씨가 구했다고 말함"
+    },
+    {
+     "id": "kid_mong",
+     "role": "증인",
+     "note": "꼬미가 다 깨웠다고 말함"
+    },
+    {
+     "id": "kid_bang",
+     "role": "관련자",
+     "note": "살아남은 표 없는 아이"
+    },
+    {
+     "id": "resident_nubi",
+     "role": "범인",
+     "note": "등유를 붓고 불을 냄"
+    },
+    {
+     "id": "resident_bori",
+     "role": "용의자",
+     "note": "장작 도둑, 아이 셋을 꺼냄"
+    },
+    {
+     "id": "nabi",
+     "role": "용의자",
+     "note": "제 등잔 탓이라 믿음"
+    },
+    {
+     "id": "neoul",
+     "role": "관련자",
+     "note": "아이들 몫을 누비에게 약속"
+    },
+    {
+     "id": "resident_teacher",
+     "role": "조력자",
+     "note": "출석부에 이름을 적음(조건)"
+    },
+    {
+     "id": "granny",
+     "role": "관련자",
+     "note": "나비 품삯을 깎고 쫓으려 함"
+    },
+    {
+     "id": "resident_ppul",
+     "role": "관련자",
+     "note": "회의 날을 정하고 보리를 묶음"
+    },
+    {
+     "id": "kid_nubi1",
+     "role": "증인",
+     "note": "엄마한테 기름 냄새 났다"
+    },
+    {
+     "id": "kid_nubi2",
+     "role": "증인",
+     "note": "너울 아저씨가 밥 준댔다"
+    },
+    {
+     "id": "kid_dodam",
+     "role": "관련자",
+     "note": "대피소에서 열이 나는 보리의 아이"
+    }
+   ],
+   "relations": [
+    {
+     "a": "neoul",
+     "b": "resident_nubi",
+     "kind": "secret",
+     "label": "아이들 몫을 준다는 약속",
+     "reveal": "F01 / F12",
+     "truth": true
+    },
+    {
+     "a": "resident_nubi",
+     "b": "kid_kkomi",
+     "kind": "conflict",
+     "label": "창고 문에 불을 냄",
+     "reveal": "F06 + F07 + F09 + F10 + F11 / F12",
+     "spoiler": true
+    },
+    {
+     "a": "neoul",
+     "b": "resident_bori",
+     "kind": "suspect",
+     "label": "장작 도둑이 불냈다 지목",
+     "reveal": "6일 아침 광장 / Q3 1번",
+     "truth": false
+    },
+    {
+     "a": "resident_ppul",
+     "b": "resident_bori",
+     "kind": "suspect",
+     "label": "회의 전 보리를 묶어 둠",
+     "reveal": "6일 아침 광장",
+     "truth": false
+    },
+    {
+     "a": "neoul",
+     "b": "nabi",
+     "kind": "suspect",
+     "label": "등잔에서 불났다 주장",
+     "reveal": "Q3 2번",
+     "truth": false
+    },
+    {
+     "a": "resident_bori",
+     "b": "kid_kkam",
+     "kind": "help",
+     "label": "뒷벽 뜯어 구해 냄",
+     "reveal": "F04 / F08",
+     "truth": true
+    },
+    {
+     "a": "resident_bori",
+     "b": "kid_kkomi",
+     "kind": "secret",
+     "label": "서로 못 본 척해 줌",
+     "reveal": "5일 오후 아지트 꼬미의 말",
+     "truth": true
+    },
+    {
+     "a": "resident_bori",
+     "b": "kid_bang",
+     "kind": "help",
+     "label": "아이 셋을 집에 거둠",
+     "reveal": "7일 아지트 터(조건)",
+     "truth": true
+    },
+    {
+     "a": "nabi",
+     "b": "kid_kkomi",
+     "kind": "help",
+     "label": "밥과 등잔을 몰래 줌",
+     "reveal": "F03",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "nabi",
+     "kind": "conflict",
+     "label": "품삯·쫓아냄 위협",
+     "reveal": "6일 오전 주방",
+     "truth": true
+    },
+    {
+     "a": "resident_teacher",
+     "b": "kid_kkomi",
+     "kind": "help",
+     "label": "출석부에 이름 적음",
+     "reveal": "F13 / F14(조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_teacher",
+     "b": "kid_kkam",
+     "kind": "help",
+     "label": "살아남은 아이들 이름 부름",
+     "reveal": "6일 오후 학교",
+     "truth": true
+    },
+    {
+     "a": "kid_kkomi",
+     "b": "kid_mong",
+     "kind": "help",
+     "label": "대장이 다 깨우고 남음",
+     "reveal": "F08",
+     "truth": true
+    },
+    {
+     "a": "kid_nubi1",
+     "b": "resident_nubi",
+     "kind": "family",
+     "label": "기름 냄새 난 엄마",
+     "reveal": "F11",
+     "truth": true
+    },
+    {
+     "a": "kid_nubi2",
+     "b": "neoul",
+     "kind": "secret",
+     "label": "'밥 많이 준다' 들음",
+     "reveal": "6일 저녁 빨래터 누비 아이의 말",
+     "truth": true
+    },
+    {
+     "a": "resident_bori",
+     "b": "kid_dodam",
+     "kind": "family",
+     "label": "열 나는 아이 땔감",
+     "reveal": "6일 아침 보리의 말",
+     "truth": true
+    },
+    {
+     "a": "daram",
+     "b": "kid_kkomi",
+     "kind": "help",
+     "label": "도토리 대장 표시",
+     "reveal": "5일 오후 아지트 / 6일 그을린 도토리",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "case13",
+   "mark": "13호",
+   "title": "13호 사건과 재판",
+   "days": "7~10일",
+   "summary": "13호에서 부엉이 할아버지가 죽고 촛대를 든 다람이 잡힌다. 재판(C1~C4)에서 통로와 핀으로 할머니가 드러난다.",
+   "people": [
+    {
+     "id": "dad",
+     "role": "조사자",
+     "note": "재판에서 말하는 사람"
+    },
+    {
+     "id": "daram",
+     "role": "용의자",
+     "note": "붙잡힌 손을 치고 침대 밑에 숨음"
+    },
+    {
+     "id": "resident_owlgp",
+     "role": "희생자",
+     "note": "13호에서 머리를 맞고 숨짐"
+    },
+    {
+     "id": "granny",
+     "role": "범인",
+     "note": "통로로 들어와 촛대로 침"
+    },
+    {
+     "id": "nabi",
+     "role": "증인",
+     "note": "첫 비명 때 핀을 여며 줌"
+    },
+    {
+     "id": "doto",
+     "role": "증인",
+     "note": "복도 문만 지켜봄"
+    },
+    {
+     "id": "bami",
+     "role": "증인",
+     "note": "처마에서 침대 밑을 봄"
+    },
+    {
+     "id": "resident_tok",
+     "role": "증인",
+     "note": "할머니 핀을 고쳐 줌"
+    },
+    {
+     "id": "buri",
+     "role": "증인",
+     "note": "할아버지 기록을 건넴"
+    },
+    {
+     "id": "resident_seori",
+     "role": "증인",
+     "note": "상처 기록·촛대를 맡은 판정자"
+    },
+    {
+     "id": "resident_ppul",
+     "role": "관련자",
+     "note": "'아이가 쳤다'고 맞섬(C2)"
+    },
+    {
+     "id": "seryeon",
+     "role": "관련자",
+     "note": "'복도 문뿐'이라 맞섬(C1)"
+    },
+    {
+     "id": "neoul",
+     "role": "관련자",
+     "note": "다람을 보호실에 가둠"
+    },
+    {
+     "id": "karo",
+     "role": "증인",
+     "note": "그 저녁 아빠와 초소에 있음"
+    },
+    {
+     "id": "resident_tosil",
+     "role": "증인",
+     "note": "벽 안의 발소리를 들음"
+    },
+    {
+     "id": "resident_dalgeurak",
+     "role": "증인",
+     "note": "할머니가 주방 뒷문으로 감"
+    },
+    {
+     "id": "resident_hyeoni",
+     "role": "증인",
+     "note": "비명 뒤 할머니가 안 돌아옴"
+    },
+    {
+     "id": "resident_ttadak",
+     "role": "증인",
+     "note": "증축 때 통로를 봄(H7)"
+    },
+    {
+     "id": "resident_siluk",
+     "role": "관련자",
+     "note": "돈 받고 거짓 증언(조건)"
+    },
+    {
+     "id": "mom",
+     "role": "관련자",
+     "note": "할아버지가 지킨 기록의 주인"
+    }
+   ],
+   "relations": [
+    {
+     "a": "neoul",
+     "b": "daram",
+     "kind": "suspect",
+     "label": "촛대 든 아이를 잡아감",
+     "reveal": "7일 저녁 체포",
+     "truth": true
+    },
+    {
+     "a": "seryeon",
+     "b": "daram",
+     "kind": "suspect",
+     "label": "'아이만 들어갔다'",
+     "reveal": "C1",
+     "truth": false
+    },
+    {
+     "a": "resident_ppul",
+     "b": "daram",
+     "kind": "suspect",
+     "label": "촛대로 머리 쳤다 주장",
+     "reveal": "C2",
+     "truth": false
+    },
+    {
+     "a": "resident_owlgp",
+     "b": "daram",
+     "kind": "conflict",
+     "label": "발작 중 팔을 붙잡음",
+     "reveal": "E06 / E08",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_owlgp",
+     "kind": "conflict",
+     "label": "부러진 촛대로 내리침",
+     "reveal": "E35 + E14 + E13 + E15 / C4",
+     "spoiler": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_owlgp",
+     "kind": "secret",
+     "label": "발작 알고 둘만 남김",
+     "reveal": "E36 / C4 3번",
+     "spoiler": true
+    },
+    {
+     "a": "granny",
+     "b": "daram",
+     "kind": "secret",
+     "label": "아이를 떼어 놓자 요청",
+     "reveal": "E16(F4)",
+     "spoiler": true
+    },
+    {
+     "a": "resident_owlgp",
+     "b": "mom",
+     "kind": "secret",
+     "label": "엄마 기록 사본을 지킴",
+     "reveal": "E17",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "mom",
+     "kind": "secret",
+     "label": "엄마 기록을 노림",
+     "reveal": "EPISODE4 정답 2 / ⑥ 제단 고백",
+     "spoiler": true
+    },
+    {
+     "a": "resident_tok",
+     "b": "granny",
+     "kind": "work",
+     "label": "목도리 핀을 고쳐 줌",
+     "reveal": "E13 / tok_repair",
+     "truth": true
+    },
+    {
+     "a": "nabi",
+     "b": "granny",
+     "kind": "work",
+     "label": "첫 비명 때 핀을 여밈",
+     "reveal": "E15 / E12 / C3",
+     "truth": true
+    },
+    {
+     "a": "doto",
+     "b": "nabi",
+     "kind": "work",
+     "label": "13호 문을 함께 두드림",
+     "reveal": "E11",
+     "truth": true
+    },
+    {
+     "a": "bami",
+     "b": "daram",
+     "kind": "help",
+     "label": "침대 밑에 숨는 걸 봄",
+     "reveal": "E10 / C2 3번",
+     "truth": true
+    },
+    {
+     "a": "buri",
+     "b": "dad",
+     "kind": "help",
+     "label": "할아버지 기록을 건넴",
+     "reveal": "E17(buri_records)",
+     "truth": true
+    },
+    {
+     "a": "resident_seori",
+     "b": "granny",
+     "kind": "conflict",
+     "label": "'혼자 두지 마십시오'",
+     "reveal": "E36",
+     "truth": true
+    },
+    {
+     "a": "karo",
+     "b": "dad",
+     "kind": "help",
+     "label": "사건 때 함께 초소",
+     "reveal": "E34",
+     "truth": true
+    },
+    {
+     "a": "resident_tosil",
+     "b": "granny",
+     "kind": "secret",
+     "label": "벽 안 발소리를 들음",
+     "reveal": "alibi:case:resident_tosil / alibi_x_wall",
+     "truth": true
+    },
+    {
+     "a": "resident_dalgeurak",
+     "b": "granny",
+     "kind": "suspect",
+     "label": "주방 뒷문으로 나감 목격",
+     "reveal": "alibi:case:resident_dalgeurak / 달그락의 말",
+     "truth": true
+    },
+    {
+     "a": "resident_hyeoni",
+     "b": "granny",
+     "kind": "suspect",
+     "label": "비명 뒤 안 돌아옴",
+     "reveal": "alibi:case:resident_hyeoni / alibi_x_dining",
+     "truth": true
+    },
+    {
+     "a": "resident_ttadak",
+     "b": "dad",
+     "kind": "help",
+     "label": "증축 때 본 통로 증언",
+     "reveal": "H7(따닥 동의 조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_siluk",
+     "b": "granny",
+     "kind": "suspect",
+     "label": "2층 갔다 거짓 증언",
+     "reveal": "6일 거짓 증언 팔기(조건)",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "ep4",
+   "mark": "④",
+   "title": "13호의 밤",
+   "days": "8~10일",
+   "summary": "할머니 부탁으로 너울의 사람들이 초롱의 엄마 편지를 노리고, 통로를 잰 따닥은 내려진 레버에 갇혀 언다. 초대 편지도 할머니가 썼다.",
+   "people": [
+    {
+     "id": "dad",
+     "role": "조사자",
+     "note": "초롱·따닥을 살리려 뛰어다님"
+    },
+    {
+     "id": "daram",
+     "role": "관련자",
+     "note": "보호실에서 쪽지를 보냄"
+    },
+    {
+     "id": "granny",
+     "role": "범인",
+     "note": "편지를 노리고 레버를 내림"
+    },
+    {
+     "id": "resident_lamplighter",
+     "role": "희생자",
+     "note": "엄마 편지를 품고 종탑 아래서 숨짐"
+    },
+    {
+     "id": "resident_ttadak",
+     "role": "희생자",
+     "note": "통로 안에 갇혀 얼어 죽음"
+    },
+    {
+     "id": "neoul",
+     "role": "관련자",
+     "note": "순찰대원에게 편지 빼앗기 지시"
+    },
+    {
+     "id": "resident_badook",
+     "role": "조력자",
+     "note": "종탑 길 곁을 지킴(조건)"
+    },
+    {
+     "id": "resident_tok",
+     "role": "조력자",
+     "note": "레버에 쐐기를 박음(조건)"
+    },
+    {
+     "id": "buri",
+     "role": "조력자",
+     "note": "할아버지 탐정 수첩을 건넴"
+    },
+    {
+     "id": "resident_ppul",
+     "role": "관련자",
+     "note": "약속하고 따닥 사고를 주장"
+    },
+    {
+     "id": "resident_seol",
+     "role": "증인",
+     "note": "종탑 아래 비명을 들음"
+    },
+    {
+     "id": "chorong_mother",
+     "role": "관련자",
+     "note": "아들의 등을 건넴"
+    },
+    {
+     "id": "resident_sling",
+     "role": "증인",
+     "note": "엄마 글씨를 따라 씀"
+    },
+    {
+     "id": "resident_jongjong",
+     "role": "증인",
+     "note": "도토리 없는 봉투를 부침"
+    },
+    {
+     "id": "seryeon",
+     "role": "증인",
+     "note": "반송 소포를 기억함"
+    },
+    {
+     "id": "mom",
+     "role": "관련자",
+     "note": "오지 말라던 편지의 주인"
+    },
+    {
+     "id": "resident_somi",
+     "role": "조력자",
+     "note": "보호실 창에 쪽지를 넣음"
+    },
+    {
+     "id": "resident_kongi",
+     "role": "조력자",
+     "note": "구운 밤을 넣어 줌"
+    },
+    {
+     "id": "resident_tosil",
+     "role": "증인",
+     "note": "'나 아니야' 새벽 주방"
+    },
+    {
+     "id": "nabi",
+     "role": "증인",
+     "note": "새벽 빨래터로 보내짐"
+    },
+    {
+     "id": "resident_seori",
+     "role": "관련자",
+     "note": "Q4 판정"
+    }
+   ],
+   "relations": [
+    {
+     "a": "granny",
+     "b": "neoul",
+     "kind": "secret",
+     "label": "편지를 가져오라 부탁",
+     "reveal": "N02",
+     "spoiler": true
+    },
+    {
+     "a": "neoul",
+     "b": "resident_lamplighter",
+     "kind": "conflict",
+     "label": "편지 노린 습격 지시",
+     "reveal": "N02 + N05(8일 밤 종탑)",
+     "spoiler": true
+    },
+    {
+     "a": "resident_lamplighter",
+     "b": "mom",
+     "kind": "work",
+     "label": "엄마의 편지를 전함",
+     "reveal": "N05 / N06 / E19",
+     "truth": true
+    },
+    {
+     "a": "resident_badook",
+     "b": "resident_lamplighter",
+     "kind": "help",
+     "label": "종탑 길 곁을 지킴",
+     "reveal": "8일 오후 너울의 말 제시(조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_seol",
+     "b": "resident_lamplighter",
+     "kind": "help",
+     "label": "비명 듣고 뛰어 내려옴",
+     "reveal": "8일 밤 종탑 아래",
+     "truth": true
+    },
+    {
+     "a": "chorong_mother",
+     "b": "dad",
+     "kind": "help",
+     "label": "아들의 등을 건넴",
+     "reveal": "10일 오전 광장(등을 켰을 때)",
+     "truth": true
+    },
+    {
+     "a": "resident_ttadak",
+     "b": "granny",
+     "kind": "secret",
+     "label": "새벽 통로 일정을 말함",
+     "reveal": "N03",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_ttadak",
+     "kind": "conflict",
+     "label": "주방 레버를 내림",
+     "reveal": "N07 + N09 + N03 / Q4",
+     "spoiler": true
+    },
+    {
+     "a": "resident_ttadak",
+     "b": "resident_ppul",
+     "kind": "work",
+     "label": "여관 뒷벽 도면 의뢰",
+     "reveal": "8일 오후 따닥의 말",
+     "truth": true
+    },
+    {
+     "a": "resident_tok",
+     "b": "resident_ttadak",
+     "kind": "help",
+     "label": "레버에 쐐기를 박음",
+     "reveal": "8일 저녁(조건, 톡이 풀려났을 때)",
+     "truth": true
+    },
+    {
+     "a": "buri",
+     "b": "dad",
+     "kind": "help",
+     "label": "할아버지 수첩을 건넴",
+     "reveal": "N01",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "mom",
+     "kind": "secret",
+     "label": "엄마 이름으로 편지 씀",
+     "reveal": "N06 / 도토리 없는 봉투 / 따라 쓴 종이",
+     "spoiler": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_sling",
+     "kind": "secret",
+     "label": "엄마 글씨 본을 뜨게 함",
+     "reveal": "9일 오후 우체국 슬링(따라 쓴 종이)",
+     "spoiler": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_jongjong",
+     "kind": "secret",
+     "label": "가짜 편지를 부치게 함",
+     "reveal": "9일 오후 우체국 종종이(도토리 없는 봉투)",
+     "spoiler": true
+    },
+    {
+     "a": "seryeon",
+     "b": "mom",
+     "kind": "help",
+     "label": "'오지 마' 반송 소포",
+     "reveal": "9일 오후 우체국(반송 소포)",
+     "truth": true
+    },
+    {
+     "a": "resident_somi",
+     "b": "daram",
+     "kind": "help",
+     "label": "보호실 창에 쪽지 나름",
+     "reveal": "8일 밤 다람의 쪽지(탐정단 조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_tosil",
+     "b": "daram",
+     "kind": "help",
+     "label": "할머니 걱정 쪽지",
+     "reveal": "8일 밤 보호실 창",
+     "truth": true
+    },
+    {
+     "a": "resident_ppul",
+     "b": "dad",
+     "kind": "help",
+     "label": "증거대로 집행 약속",
+     "reveal": "N08 / 촌장의 약속(조건)",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_tosil",
+     "kind": "conflict",
+     "label": "새벽 주방 탓을 돌림",
+     "reveal": "Q4 2번",
+     "spoiler": true
+    },
+    {
+     "a": "granny",
+     "b": "nabi",
+     "kind": "secret",
+     "label": "새벽 빨래터로 보냄",
+     "reveal": "9일 아침 주방 나비의 말",
+     "spoiler": true
+    }
+   ]
+  },
+  {
+   "id": "ep5",
+   "mark": "⑤",
+   "title": "긴 밤과 겨울 수프",
+   "days": "10~12일",
+   "summary": "엄마와 다시 만나 돌을 데울 방법을 찾지만, 긴 밤에 천막 사람들이 얼고 사자 선생님이 아이 수프에 잠드는 약을 넣는다.",
+   "people": [
+    {
+     "id": "dad",
+     "role": "조사자",
+     "note": "엄마를 찾고 대피소 회의에서 말함"
+    },
+    {
+     "id": "mom",
+     "role": "조력자",
+     "note": "폐온실에서 재회, 조각을 모음"
+    },
+    {
+     "id": "daram",
+     "role": "관련자",
+     "note": "엄마를 다시 만남"
+    },
+    {
+     "id": "resident_tosil",
+     "role": "관련자",
+     "note": "할머니 시켜 뒤를 밟음"
+    },
+    {
+     "id": "granny",
+     "role": "관련자",
+     "note": "토실을 보내고 명단을 씀"
+    },
+    {
+     "id": "resident_guldol",
+     "role": "조력자",
+     "note": "옛 글자를 읽고 실험을 기록"
+    },
+    {
+     "id": "resident_nero",
+     "role": "희생자",
+     "note": "긴 밤 천막에서 얼음(살릴 수 있음)"
+    },
+    {
+     "id": "resident_teacher",
+     "role": "범인",
+     "note": "아이 냄비에 잠드는 약"
+    },
+    {
+     "id": "kid_kkam",
+     "role": "희생자",
+     "note": "수프 먹고 잠듦(살릴 수 있음)"
+    },
+    {
+     "id": "kid_mong",
+     "role": "희생자",
+     "note": "수프 먹고 잠듦(살릴 수 있음)"
+    },
+    {
+     "id": "kid_bang",
+     "role": "희생자",
+     "note": "수프 먹고 잠듦(살릴 수 있음)"
+    },
+    {
+     "id": "kid_dodam",
+     "role": "희생자",
+     "note": "제일 작은 보리의 아이"
+    },
+    {
+     "id": "kid_saemi",
+     "role": "증인",
+     "note": "쓴맛에 남겨 살아남음"
+    },
+    {
+     "id": "resident_bori",
+     "role": "관련자",
+     "note": "아이를 잃고 감자 탓을 함"
+    },
+    {
+     "id": "resident_madam",
+     "role": "용의자",
+     "note": "수프 감자를 댐"
+    },
+    {
+     "id": "resident_seori",
+     "role": "용의자",
+     "note": "약장을 다루는 검사원"
+    },
+    {
+     "id": "neoul",
+     "role": "관련자",
+     "note": "대피 명단에 '수레'를 씀"
+    },
+    {
+     "id": "resident_somi",
+     "role": "관련자",
+     "note": "유리관 곁 할아버지 목소리"
+    },
+    {
+     "id": "resident_lamplighter",
+     "role": "관련자",
+     "note": "유품 편지의 뿌리 그림"
+    },
+    {
+     "id": "resident_librarian",
+     "role": "관련자",
+     "note": "엄마 이름의 대출 카드"
+    },
+    {
+     "id": "npc_pandol",
+     "role": "관련자",
+     "note": "죽은 사람 명단에 '이송'"
+    },
+    {
+     "id": "kid_kkomi",
+     "role": "관련자",
+     "note": "살았다면 대피소의 다섯째"
+    }
+   ],
+   "relations": [
+    {
+     "a": "granny",
+     "b": "resident_tosil",
+     "kind": "secret",
+     "label": "아빠 뒤를 밟게 함",
+     "reveal": "Y04",
+     "truth": true
+    },
+    {
+     "a": "resident_tosil",
+     "b": "granny",
+     "kind": "secret",
+     "label": "엄마를 보호소에 보냄",
+     "reveal": "Y04(토실이 문 뒤에서 들음)",
+     "spoiler": true
+    },
+    {
+     "a": "mom",
+     "b": "daram",
+     "kind": "family",
+     "label": "폐온실에서 재회",
+     "reveal": "11일 새벽 폐온실",
+     "truth": true
+    },
+    {
+     "a": "mom",
+     "b": "resident_guldol",
+     "kind": "work",
+     "label": "옛 시설 실험을 함께",
+     "reveal": "Y07 / Y08",
+     "truth": true
+    },
+    {
+     "a": "mom",
+     "b": "resident_tosil",
+     "kind": "help",
+     "label": "엄마 이름 찾아 주겠다",
+     "reveal": "11일 새벽 재회(토실 동행 조건)",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "mom",
+     "kind": "work",
+     "label": "옛 시설을 알려 준 사이",
+     "reveal": "11일 오전 엄마의 말",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "npc_pandol",
+     "kind": "secret",
+     "label": "산 사람 옆에 '이송'",
+     "reveal": "Y05",
+     "spoiler": true
+    },
+    {
+     "a": "resident_teacher",
+     "b": "kid_dodam",
+     "kind": "conflict",
+     "label": "아이 수프에 잠드는 약",
+     "reveal": "Y11 + Y12 + Y13 / Q5",
+     "spoiler": true
+    },
+    {
+     "a": "kid_saemi",
+     "b": "resident_teacher",
+     "kind": "secret",
+     "label": "선생님은 젓기만 함",
+     "reveal": "Y13",
+     "spoiler": true
+    },
+    {
+     "a": "resident_teacher",
+     "b": "kid_kkam",
+     "kind": "help",
+     "label": "이름 하나 안 틀리고 부름",
+     "reveal": "11일 밤 대피소 / 12일 낮 출석부",
+     "truth": true
+    },
+    {
+     "a": "resident_teacher",
+     "b": "kid_saemi",
+     "kind": "work",
+     "label": "새미도 우리 반",
+     "reveal": "11일 밤 대피소 / Y13",
+     "truth": true
+    },
+    {
+     "a": "neoul",
+     "b": "kid_kkam",
+     "kind": "conflict",
+     "label": "대피 명단에 '수레'",
+     "reveal": "Y10",
+     "truth": true
+    },
+    {
+     "a": "resident_seori",
+     "b": "resident_teacher",
+     "kind": "suspect",
+     "label": "약장 출입 명단",
+     "reveal": "Y12",
+     "truth": true
+    },
+    {
+     "a": "resident_bori",
+     "b": "resident_madam",
+     "kind": "suspect",
+     "label": "감자가 상했다 탓함",
+     "reveal": "Q5 1번",
+     "truth": false
+    },
+    {
+     "a": "resident_madam",
+     "b": "resident_seori",
+     "kind": "suspect",
+     "label": "약 다루는 서리 탓",
+     "reveal": "Q5 2번",
+     "truth": false
+    },
+    {
+     "a": "resident_bori",
+     "b": "kid_dodam",
+     "kind": "family",
+     "label": "도담의 손을 쥠",
+     "reveal": "12일 밤 대피소",
+     "truth": true
+    },
+    {
+     "a": "resident_nero",
+     "b": "resident_teacher",
+     "kind": "help",
+     "label": "이름표로 뒷문을 엶",
+     "reveal": "11일 오후 네로의 이름표 제시(조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_nero",
+     "b": "daram",
+     "kind": "help",
+     "label": "이름표 꾸러미",
+     "reveal": "Y09",
+     "truth": true
+    },
+    {
+     "a": "resident_somi",
+     "b": "resident_musoe",
+     "kind": "family",
+     "label": "유리관 곁 할아버지 목소리",
+     "reveal": "11일 오전 옛 시설(조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_lamplighter",
+     "b": "mom",
+     "kind": "work",
+     "label": "유품 편지의 뿌리 그림",
+     "reveal": "10일 오전 젖은 편지 조각(N05)",
+     "truth": true
+    },
+    {
+     "a": "resident_librarian",
+     "b": "mom",
+     "kind": "work",
+     "label": "대출 카드 '숲 뿌리 밑'",
+     "reveal": "10일 오전 엄마 이름의 대출 카드",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "ep6",
+   "mark": "⑥",
+   "title": "끌려가는 수레·제단",
+   "days": "13~14일",
+   "summary": "'보호소' 수레는 제단으로 간다. 명령서는 할머니가 썼고 촌장이 감쌌다. 제단에서 사람 온기로 돌이 데워진다는 게 밝혀진다.",
+   "people": [
+    {
+     "id": "dad",
+     "role": "조사자",
+     "note": "명령서의 손을 밝힘"
+    },
+    {
+     "id": "mom",
+     "role": "조력자",
+     "note": "수레 명단에 이름, 제단에서 방법 제시"
+    },
+    {
+     "id": "daram",
+     "role": "관련자",
+     "note": "제단 손자국에 손을 얹음"
+    },
+    {
+     "id": "resident_ppul",
+     "role": "용의자",
+     "note": "명령을 내렸다며 할머니를 감쌈"
+    },
+    {
+     "id": "granny",
+     "role": "범인",
+     "note": "명령서를 쓰고 수레 값을 냄"
+    },
+    {
+     "id": "neoul",
+     "role": "관련자",
+     "note": "수레를 지휘함"
+    },
+    {
+     "id": "resident_badook",
+     "role": "조력자",
+     "note": "명령을 거부하고 수레 앞에 섬"
+    },
+    {
+     "id": "guard",
+     "role": "조력자",
+     "note": "바둑이와 함께 섬(조건)"
+    },
+    {
+     "id": "resident_siluk",
+     "role": "관련자",
+     "note": "수레를 끄는 사람(또는 실림)"
+    },
+    {
+     "id": "resident_eunho",
+     "role": "증인",
+     "note": "편도 수레를 빌려줌"
+    },
+    {
+     "id": "resident_guseul",
+     "role": "증인",
+     "note": "진짜 장부를 꺼냄"
+    },
+    {
+     "id": "resident_madam",
+     "role": "관련자",
+     "note": "담요·곡식을 쌓아 둠"
+    },
+    {
+     "id": "resident_mungchi",
+     "role": "증인",
+     "note": "창고 뒷길을 보여 줌"
+    },
+    {
+     "id": "resident_seol",
+     "role": "조력자",
+     "note": "종을 단 한 번 침(조건)"
+    },
+    {
+     "id": "resident_yeoni",
+     "role": "조력자",
+     "note": "빨래 수레로 빼냄(조건)"
+    },
+    {
+     "id": "resident_tori",
+     "role": "조력자",
+     "note": "빨래 수레 길을 앎"
+    },
+    {
+     "id": "npc_pandol",
+     "role": "희생자",
+     "note": "수레에 실린 잊어 가는 노인(조건)"
+    },
+    {
+     "id": "resident_guldol",
+     "role": "희생자",
+     "note": "수레에 실림(조건)"
+    },
+    {
+     "id": "resident_momo",
+     "role": "희생자",
+     "note": "수레에 실림(조건)"
+    },
+    {
+     "id": "resident_tosil",
+     "role": "관련자",
+     "note": "제단에서 엄마 이야기를 들음"
+    },
+    {
+     "id": "resident_bori",
+     "role": "조력자",
+     "note": "수레 바퀴를 붙잡음(조건)"
+    },
+    {
+     "id": "resident_teacher",
+     "role": "관련자",
+     "note": "넘겼다면 수레 명단에"
+    },
+    {
+     "id": "resident_seori",
+     "role": "증인",
+     "note": "지운 회복 기록(F1)"
+    },
+    {
+     "id": "nabi",
+     "role": "조력자",
+     "note": "학교로 솥을 옮김(F3)"
+    }
+   ],
+   "relations": [
+    {
+     "a": "granny",
+     "b": "resident_ppul",
+     "kind": "secret",
+     "label": "명령서를 대신 씀",
+     "reveal": "V06 + E01 / Q6 3번",
+     "spoiler": true
+    },
+    {
+     "a": "resident_ppul",
+     "b": "granny",
+     "kind": "hide",
+     "label": "명령서를 감쌈",
+     "reveal": "V06 / Q6 3번",
+     "spoiler": true
+    },
+    {
+     "a": "granny",
+     "b": "resident_eunho",
+     "kind": "secret",
+     "label": "편도 수레 값을 냄",
+     "reveal": "V03",
+     "spoiler": true
+    },
+    {
+     "a": "resident_guseul",
+     "b": "resident_eunho",
+     "kind": "secret",
+     "label": "침대 밑 진짜 장부",
+     "reveal": "V03",
+     "truth": true
+    },
+    {
+     "a": "resident_mungchi",
+     "b": "resident_madam",
+     "kind": "secret",
+     "label": "몰래 비축품을 보여 줌",
+     "reveal": "V04",
+     "truth": true
+    },
+    {
+     "a": "neoul",
+     "b": "resident_badook",
+     "kind": "conflict",
+     "label": "호송 명령을 거부함",
+     "reveal": "13일 오후 회관 / 13일 밤 수레 앞",
+     "truth": true
+    },
+    {
+     "a": "resident_badook",
+     "b": "guard",
+     "kind": "help",
+     "label": "수레 앞에 함께 섬",
+     "reveal": "13일 밤(돌목 조건)",
+     "truth": true
+    },
+    {
+     "a": "neoul",
+     "b": "resident_siluk",
+     "kind": "conflict",
+     "label": "배급표로 수레 몰게 함",
+     "reveal": "V05(빚을 없앴을 때)",
+     "truth": true
+    },
+    {
+     "a": "granny",
+     "b": "mom",
+     "kind": "secret",
+     "label": "엄마 이름을 명단에",
+     "reveal": "V01 / F4",
+     "spoiler": true
+    },
+    {
+     "a": "neoul",
+     "b": "resident_guldol",
+     "kind": "conflict",
+     "label": "'잊음'으로 명단에 올림",
+     "reveal": "V01",
+     "truth": true
+    },
+    {
+     "a": "resident_seol",
+     "b": "resident_ppul",
+     "kind": "conflict",
+     "label": "종을 못 치게 함",
+     "reveal": "13일 저녁 종탑 설이의 말",
+     "truth": true
+    },
+    {
+     "a": "resident_yeoni",
+     "b": "mom",
+     "kind": "help",
+     "label": "빨래 수레로 빼냄",
+     "reveal": "13일 저녁 수선집(가족만 뺀다)",
+     "truth": true
+    },
+    {
+     "a": "resident_yeoni",
+     "b": "npc_pandol",
+     "kind": "help",
+     "label": "단골 영감도 태움",
+     "reveal": "13일 저녁(⑤ 진실 공개 조건)",
+     "truth": true
+    },
+    {
+     "a": "resident_seori",
+     "b": "granny",
+     "kind": "secret",
+     "label": "시켜서 회복 기록 지움",
+     "reveal": "E31 / w2_erased / F1",
+     "spoiler": true
+    },
+    {
+     "a": "resident_tosil",
+     "b": "granny",
+     "kind": "family",
+     "label": "엄마 보미 이야기를 들음",
+     "reveal": "14일 제단 할머니의 고백",
+     "spoiler": true
+    },
+    {
+     "a": "resident_bori",
+     "b": "resident_guldol",
+     "kind": "help",
+     "label": "손목 끈을 풂",
+     "reveal": "F1(조건)",
+     "truth": true
+    },
+    {
+     "a": "nabi",
+     "b": "granny",
+     "kind": "work",
+     "label": "여관 장부를 넘겨받음",
+     "reveal": "E4~E6 결말",
+     "truth": true
+    },
+    {
+     "a": "resident_mungchi",
+     "b": "nabi",
+     "kind": "help",
+     "label": "담요 마흔 장을 나름",
+     "reveal": "F3",
+     "truth": true
+    },
+    {
+     "a": "resident_siluk",
+     "b": "npc_pandol",
+     "kind": "work",
+     "label": "산길 끝까지 실어 나름",
+     "reveal": "V05 / 14일 산길",
+     "spoiler": true
+    }
+   ]
+  }
+ ]
+}
