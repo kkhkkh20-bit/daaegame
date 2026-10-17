@@ -14,7 +14,7 @@ def main(search):
  wanted={r['source_sha256'] for r in specs};sources={}
  for folder in search:
   for file in Path(folder).rglob('*.png'):
-   if file.name not in ('neutral.png','source.png'):continue
+   if file.name not in ('neutral.png','source.png') and not file.name.endswith('--neutral.png'):continue
    sha=hashlib.sha256(file.read_bytes()).hexdigest()
    if sha in wanted:sources.setdefault(sha,file)
  missing=wanted-set(sources)
@@ -35,8 +35,8 @@ def main(search):
   icon.save(path,format='WEBP',lossless=True,method=4)
   entries[who]=dict(file=str(path.relative_to(ROOT/'game')),size=[SIZE,SIZE],padding=PAD,source_sha256=r['source_sha256'],source_commit=frame.get('source_commit',people[who]['source_commit']),source_master=frame['source_master'],source_size=r['source_size'],crop=[x,y,cw,ch],sha256=hashlib.sha256(path.read_bytes()).hexdigest())
   receipt.append(dict(character_id=who,verified_original=str(source),**entries[who]))
- assert set(entries)==set(people)-{'resident_solbang'}
- (ROOT/'game/assets/room13-profile-source-art.json').write_text(json.dumps(dict(people=entries,excluded=['resident_solbang','dad','elder','bodum','workshop']),ensure_ascii=False,indent=2)+'\n')
+ assert set(entries)==set(people)
+ (ROOT/'game/assets/room13-profile-source-art.json').write_text(json.dumps(dict(people=entries,excluded=['dad','elder','bodum','workshop']),ensure_ascii=False,indent=2)+'\n')
  (ROOT/'docs/reviews/profile-icons/receipt.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n')
  print('Verified and imported',len(entries),'approved original crops')
 if __name__=='__main__':

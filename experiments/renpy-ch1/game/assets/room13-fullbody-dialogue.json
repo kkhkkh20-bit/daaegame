@@ -5588,154 +5588,81 @@
   "resident_solbang": {
    "name_ko": "솔방울",
    "crop": [
-    52,
     0,
-    186,
-    420
+    0,
+    1024,
+    1536
    ],
    "figure": [
-    56,
-    2,
-    178,
-    414
+    64,
+    103,
+    940,
+    1406
    ],
    "images": {
     "neutral": {
-     "file": "assets/room13-role-resident_solbang-neutral.webp",
+     "file": "assets/solbang-chinchilla-source/neutral.webp",
      "size": [
-      288,
-      420
+      1024,
+      1536
      ],
-     "crop": [
-      54,
-      0,
-      182,
-      418
-     ],
-     "map": [
-      1.0,
-      0.0,
-      0.0
-     ],
-     "cell": 2,
-     "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945"
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd"
     },
     "joy": {
-     "file": "assets/room13-role-resident_solbang-neutral.webp",
+     "file": "assets/solbang-chinchilla-source/joy.webp",
      "size": [
-      288,
-      420
+      1024,
+      1536
      ],
-     "crop": [
-      54,
-      0,
-      182,
-      418
-     ],
-     "map": [
-      1.0,
-      0.0,
-      0.0
-     ],
-     "cell": 2,
-     "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral",
-     "production_status": "pending"
-    },
-    "flustered": {
-     "file": "assets/room13-role-resident_solbang-neutral.webp",
-     "size": [
-      288,
-      420
-     ],
-     "crop": [
-      54,
-      0,
-      182,
-      418
-     ],
-     "map": [
-      1.0,
-      0.0,
-      0.0
-     ],
-     "cell": 2,
-     "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral",
-     "production_status": "pending"
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "7357c859255ee249d1be16edad0245724758eef9d0a2cbfca09ac24d6fc6b0ee"
     },
     "angry": {
-     "file": "assets/room13-role-resident_solbang-neutral.webp",
+     "file": "assets/solbang-chinchilla-source/angry.webp",
      "size": [
-      288,
-      420
+      1024,
+      1536
      ],
-     "crop": [
-      54,
-      0,
-      182,
-      418
-     ],
-     "map": [
-      1.0,
-      0.0,
-      0.0
-     ],
-     "cell": 2,
-     "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral",
-     "production_status": "pending"
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "4af5bd2e03e37aa1dcad47ade95972d56898fe8efb42205eb0d3c7edc130a07b"
     },
     "anxious": {
-     "file": "assets/room13-role-resident_solbang-neutral.webp",
+     "file": "assets/solbang-chinchilla-source/anxious.webp",
      "size": [
-      288,
-      420
+      1024,
+      1536
      ],
-     "crop": [
-      54,
-      0,
-      182,
-      418
-     ],
-     "map": [
-      1.0,
-      0.0,
-      0.0
-     ],
-     "cell": 2,
-     "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral",
-     "production_status": "pending"
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "65784a00b256cea1a15c6f29ba68f43380bca9669f1f99b3e79fc390af61c87c"
     },
     "surprise": {
-     "file": "assets/room13-role-resident_solbang-neutral.webp",
+     "file": "assets/solbang-chinchilla-source/surprise_talk.webp",
      "size": [
-      288,
-      420
+      1024,
+      1536
      ],
-     "crop": [
-      54,
-      0,
-      182,
-      418
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "db4c0e95d4bf88974cea81dcb1626556cc4600b1437c4746abbfab17bc2edd46"
+    },
+    "flustered": {
+     "file": "assets/solbang-chinchilla-source/anxious.webp",
+     "size": [
+      1024,
+      1536
      ],
-     "map": [
-      1.0,
-      0.0,
-      0.0
-     ],
-     "cell": 2,
-     "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral",
-     "production_status": "pending"
+     "native_detail": true,
+     "smooth_source": true,
+     "source_sha256": "65784a00b256cea1a15c6f29ba68f43380bca9669f1f99b3e79fc390af61c87c"
     }
    },
-   "pixel": {
-    "u": 1.0,
-    "cell": 2
-   },
-   "role_connect": "solbang-distinct-v1-approved"
+   "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a",
+   "role_connect": "approved-chinchilla-20261017"
   },
   "resident_guldol": {
    "name_ko": "굴돌 할아버지",

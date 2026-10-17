@@ -41,6 +41,9 @@ class CanonicalChannels(unittest.TestCase):
             walk(load(A / name))
         fb = load(A / "room13-fullbody-dialogue.json")["people"]
         for rid, missing in REPORT["pending_expressions"].items():
+            if rid=="resident_solbang":
+                self.assertEqual(fb[rid]["role_connect"],"approved-chinchilla-20261017")
+                continue # Six approved chinchilla sources supersede this historical pending list.
             for emotion in missing:
                 image = fb[rid]["images"][emotion]
                 self.assertEqual(image["fallback"], "neutral")

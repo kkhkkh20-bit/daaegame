@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class ProfileIcons(unittest.TestCase):
  def test_exact_scope_provenance_and_uniform_padding(self):
   data=json.loads((ROOT/'game/assets/room13-profile-source-art.json').read_text())['people'];base=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people'];specs={r['character_id']:r for r in json.loads((ROOT/'docs/reviews/profile-icons/approved-crops.json').read_text())}
-  self.assertEqual(set(data),set(base)-{'resident_solbang'});self.assertEqual(len(data),58)
+  self.assertEqual(set(data),set(base));self.assertEqual(len(data),59)
   for who,e in data.items():
    self.assertEqual(e['source_sha256'],specs[who]['source_sha256']);self.assertEqual(e['source_size'],specs[who]['source_size'])
    path=ROOT/'game'/e['file'];self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),e['sha256'])

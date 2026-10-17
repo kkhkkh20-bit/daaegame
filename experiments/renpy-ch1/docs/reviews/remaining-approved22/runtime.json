@@ -1,0 +1,447 @@
+{
+  "routes": [
+    {
+      "label": "r13_wf_hideout",
+      "seen": [
+        "kid_bang:cling_leg",
+        "kid_kkomi:door_peek",
+        "kid_kkomi:hideout_proud"
+      ]
+    },
+    {
+      "label": "r13_ws_teacher_talk",
+      "seen": [
+        "resident_teacher:write_attendance"
+      ]
+    },
+    {
+      "label": "r13_ws_lab",
+      "seen": [
+        "mom:show_fragments"
+      ]
+    },
+    {
+      "label": "r13_ws_soup",
+      "seen": [
+        "kid_dodam:lick_ladle",
+        "kid_saemi:hide_bowl"
+      ]
+    },
+    {
+      "label": "r13_cv_morning",
+      "seen": [
+        "npc_pandol:point_name"
+      ]
+    },
+    {
+      "label": "r13_cv_night",
+      "seen": [
+        "resident_badook:block_cart",
+        "resident_teacher:collapse_attendance"
+      ]
+    },
+    {
+      "label": "r13_cv_altar",
+      "seen": [
+        "granny:withdraw_hand",
+        "resident_tosil:hold_storybook"
+      ]
+    },
+    {
+      "label": "r13_nt_after_trial",
+      "seen": [
+        "chorong_mother:offer_lantern"
+      ]
+    }
+  ],
+  "poses": {
+    "kid_kkomi:door_peek": {
+      "person": "kid_kkomi",
+      "pose": "door_peek",
+      "identity": "wf:hideout",
+      "packet": [
+        "kid_kkomi",
+        "누구야! ……나비 누나 그릇이네. 누나 심부름이야?",
+        {
+          "pose": "door_peek"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/kid_kkomi/door_peek/840.webp",
+      "canvas": [
+        394,
+        594
+      ],
+      "visible": true
+    },
+    "kid_kkomi:hideout_proud": {
+      "person": "kid_kkomi",
+      "pose": "hideout_proud",
+      "identity": "wf:hideout",
+      "packet": [
+        "kid_kkomi",
+        "여긴 비밀 아지트야. 【여긴 우리만 아는 데야.】 어른들은 몰라.",
+        {
+          "pose": "hideout_proud"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/kid_kkomi/hideout_proud/840.webp",
+      "canvas": [
+        397,
+        594
+      ],
+      "visible": true
+    },
+    "kid_bang:cling_leg": {
+      "person": "kid_bang",
+      "pose": "cling_leg",
+      "identity": "wf:hideout:saved",
+      "packet": [
+        "kid_bang",
+        "대장, 내 것도 있어? 어디?",
+        {
+          "pose": "cling_leg"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/kid_bang/cling_leg/840.webp",
+      "canvas": [
+        390,
+        594
+      ],
+      "visible": true
+    },
+    "resident_teacher:write_attendance": {
+      "person": "resident_teacher",
+      "pose": "write_attendance",
+      "identity": "ws:teacher:count",
+      "packet": [
+        "resident_teacher",
+        "깜이, 몽이, 방울, 도담, 새미. 하나도 안 틀렸지요.",
+        {
+          "pose": "write_attendance"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/resident_teacher/write_attendance/840.webp",
+      "canvas": [
+        495,
+        684
+      ],
+      "visible": true
+    },
+    "mom:show_fragments": {
+      "person": "mom",
+      "pose": "show_fragments",
+      "identity": "ws:lab",
+      "packet": [
+        "mom",
+        "이 조각 셋을 한데 모아 볼게. 잘 봐.",
+        {
+          "pose": "show_fragments"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/mom/show_fragments/840.webp",
+      "canvas": [
+        443,
+        674
+      ],
+      "visible": true
+    },
+    "kid_dodam:lick_ladle": {
+      "person": "kid_dodam",
+      "pose": "lick_ladle",
+      "identity": "ws:soup:tragedy",
+      "packet": [
+        "kid_dodam",
+        "선생님, 오늘 수프 진짜 맛있다.",
+        {
+          "pose": "lick_ladle"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/kid_dodam/lick_ladle/840.webp",
+      "canvas": [
+        306,
+        594
+      ],
+      "visible": true
+    },
+    "kid_saemi:hide_bowl": {
+      "person": "kid_saemi",
+      "pose": "hide_bowl",
+      "identity": "ws:soup:tragedy",
+      "packet": [
+        null,
+        "새미가 반만 먹고 그릇을 무릎에 감췄다.",
+        {
+          "show": "kid_saemi",
+          "pose": "hide_bowl"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/kid_saemi/hide_bowl/840.webp",
+      "canvas": [
+        323,
+        434
+      ],
+      "visible": true
+    },
+    "npc_pandol:point_name": {
+      "person": "npc_pandol",
+      "pose": "point_name",
+      "identity": "cv:morning",
+      "packet": [
+        null,
+        "게시판 앞에 판돌 영감이 지팡이를 짚고 서 있었다. 자기 이름을 손가락으로 몇 번이고 짚었다.",
+        {
+          "show": "npc_pandol",
+          "pose": "point_name"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/npc_pandol/point_name/840.webp",
+      "canvas": [
+        450,
+        684
+      ],
+      "visible": true
+    },
+    "resident_teacher:collapse_attendance": {
+      "person": "resident_teacher",
+      "pose": "collapse_attendance",
+      "identity": "cv:night:open",
+      "packet": [
+        null,
+        "사자 선생님이 출석부를 품에 안고 앉아 있었다.",
+        {
+          "show": "resident_teacher",
+          "pose": "collapse_attendance"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/resident_teacher/collapse_attendance/840.webp",
+      "canvas": [
+        411,
+        504
+      ],
+      "visible": true
+    },
+    "resident_badook:block_cart": {
+      "person": "resident_badook",
+      "pose": "block_cart",
+      "identity": "cv:night:open",
+      "packet": [
+        null,
+        "수레 앞에, 바둑이가 서 있었다.",
+        {
+          "show": "resident_badook",
+          "pose": "block_cart"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/resident_badook/block_cart/840.webp",
+      "canvas": [
+        481,
+        684
+      ],
+      "visible": true
+    },
+    "resident_tosil:hold_storybook": {
+      "person": "resident_tosil",
+      "pose": "hold_storybook",
+      "identity": "cv:altar:book",
+      "packet": [
+        "resident_tosil",
+        "……이거. 할머니가 맨날 읽어 주던 거야. 너 줄라고 가져왔어.",
+        {
+          "pose": "hold_storybook"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/resident_tosil/hold_storybook/840.webp",
+      "canvas": [
+        328,
+        634
+      ],
+      "visible": true
+    },
+    "granny:withdraw_hand": {
+      "person": "granny",
+      "pose": "withdraw_hand",
+      "identity": "cv:altar:granny",
+      "packet": [
+        null,
+        "할머니가 돌에 손을 얹었다. 금방 뗐다. 데인 것처럼.",
+        {
+          "show": "granny",
+          "pose": "withdraw_hand"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/granny/withdraw_hand/840.webp",
+      "canvas": [
+        377,
+        684
+      ],
+      "visible": true
+    },
+    "chorong_mother:offer_lantern": {
+      "person": "chorong_mother",
+      "pose": "offer_lantern",
+      "identity": "nt:after:lamp",
+      "packet": [
+        null,
+        "초롱의 어머니가 말했다. \"그저께 밤에 그 애 대신 켜 주셨다지요. 동쪽 등 셋. 우리 집 창에서 보였어요. 그 애가 돌아온 줄 알았어요.\"",
+        {
+          "show": "chorong_mother",
+          "pose": "offer_lantern"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/chorong_mother/offer_lantern/840.webp",
+      "canvas": [
+        314,
+        644
+      ],
+      "visible": true
+    },
+    "seryeon:chair_listen": {
+      "person": "seryeon",
+      "pose": "chair_listen",
+      "identity": "topic:seryeon_mail",
+      "packet": [
+        "seryeon",
+        "편지는 받는 분이 직접 오셔야 내드릴 수 있습니다."
+      ],
+      "file": "assets/dialogue-pose-source/seryeon/chair_listen/840.webp",
+      "canvas": [
+        393,
+        644
+      ],
+      "visible": true
+    },
+    "seryeon:chair_read": {
+      "person": "seryeon",
+      "pose": "chair_read",
+      "identity": "topic:seryeon_mail",
+      "packet": [
+        "seryeon",
+        "편지는 받는 분이 직접 오셔야 내드릴 수 있습니다."
+      ],
+      "file": "assets/dialogue-pose-source/seryeon/chair_read/840.webp",
+      "canvas": [
+        392,
+        644
+      ],
+      "visible": true
+    }
+  },
+  "save_restore": [
+    {
+      "person": "mom",
+      "pose": "show_fragments",
+      "identity": "ws:lab",
+      "packet": [
+        "mom",
+        "이 조각 셋을 한데 모아 볼게. 잘 봐.",
+        {
+          "pose": "show_fragments"
+        }
+      ],
+      "file": "assets/dialogue-pose-source/mom/show_fragments/840.webp",
+      "canvas": [
+        443,
+        674
+      ],
+      "visible": true
+    },
+    {
+      "person": "seryeon",
+      "pose": "chair_listen",
+      "identity": "topic:seryeon_mail",
+      "packet": [
+        "seryeon",
+        "편지는 받는 분이 직접 오셔야 내드릴 수 있습니다."
+      ],
+      "file": "assets/dialogue-pose-source/seryeon/chair_listen/840.webp",
+      "canvas": [
+        393,
+        644
+      ],
+      "visible": true
+    },
+    {
+      "person": "resident_solbang",
+      "pose": "neutral",
+      "identity": "topic:solbang:herbs",
+      "packet": [
+        "resident_solbang",
+        "대부분요. 눈 밑에 숨은 걸 찾아야 해서 손이 많이 가요."
+      ],
+      "file": "assets/dialogue-source-master/resident_solbang/840/neutral.webp",
+      "canvas": [
+        604,
+        906
+      ],
+      "visible": true
+    }
+  ],
+  "version": "0.19.28",
+  "chair_menu": {
+    "pose": "chair_listen",
+    "file": "assets/dialogue-pose-source/seryeon/chair_listen/840.webp"
+  },
+  "solbang_field": {
+    "person": "resident_solbang",
+    "pose": "work_herb_bundle",
+    "x": 1369,
+    "y": 472,
+    "width": 157,
+    "height": 233,
+    "rect": [
+      1369,
+      472,
+      157,
+      233
+    ],
+    "depth": 705,
+    "occlusion": [],
+    "contact": "standing",
+    "slot": [
+      1450,
+      706,
+      255,
+      "floor"
+    ],
+    "activity": "바구니 속 마른 약초를 다발로 묶는다."
+  },
+  "solbang_field_hit": [
+    "('person', 'resident_solbang')"
+  ],
+  "solbang_frames": [
+    "neutral",
+    "joy",
+    "angry",
+    "anxious",
+    "surprise_react",
+    "surprise_talk"
+  ],
+  "surprise_skip": [
+    "surprise_react",
+    "surprise_talk",
+    "surprise_talk"
+  ],
+  "after_skip": {
+    "person": "resident_solbang",
+    "pose": "neutral",
+    "identity": "topic:seryeon_mail",
+    "packet": [
+      "resident_solbang",
+      "요즘은 아픈 사람이 늘어서 숲 안쪽까지 들어가야 해요."
+    ],
+    "file": "assets/dialogue-source-master/resident_solbang/840/neutral.webp",
+    "canvas": [
+      604,
+      906
+    ],
+    "visible": false
+  },
+  "status": "passed",
+  "harness_notes": [
+    "Initial harness stopped after 13 event poses at Seryeon menu selector; corrected selector and six-slot save UI index, then targeted run passed.",
+    "Final altar rerun explicitly draws caller background; updated screenshots confirm Tosil book overlay fix.",
+    "Seryeon chair_read and six Solbang expressions use native speaker/beat fixtures; other 13 poses use event labels.",
+    "After all-skip, dialogue closes; approved source remains selected but portrait is no longer visible.",
+    "Profile record screenshot shows Solbang in the relationship graph, not a verified focused-detail selection."
+  ]
+}

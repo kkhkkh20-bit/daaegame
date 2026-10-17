@@ -104,6 +104,10 @@ init 160 python:
 
     def r13_ep_line_art(packet):
         options=packet[2] if len(packet)>2 and isinstance(packet[2],dict) else {}
+        # The illustrated opening ends when Tosil speaks holding the physical book.
+        # A later explicit book cue still opens its own illustration normally.
+        if packet[0]=="resident_tosil" and options.get("pose")=="hold_storybook" and "book" not in options:
+            renpy.hide("r13_ep_book")
         if "book" in options:
             if options["book"]:renpy.show("r13_ep_book",what=At(r13_ep_book_art(options["book"]),r13_ep_art_fade),zorder=0)
             else:renpy.hide("r13_ep_book")
