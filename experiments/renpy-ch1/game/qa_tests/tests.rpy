@@ -1693,7 +1693,8 @@ testcase delivery_cord:
     click "짐을 나르러 간다"
     click pos (640,600) until screen "r13_hub" timeout 40
     assert eval (r13_qa_dv_choice=="combine" and "same_lane" in r13_wallet(room13)["relations"])
-    assert eval (r13_complete_job(room13,"delivery","combine")[1]["pay"]==14)
+    # 0.18.96: jobs no longer pay (owner removed jobs and lodging); the cord scene itself stays.
+    assert eval (r13_complete_job(room13,"delivery","combine")[1] is None)
 
 testcase night_talk:
     # 0.18.16 E: 다람이 reacts only to what happened; the topic opens with Dad's telling.
