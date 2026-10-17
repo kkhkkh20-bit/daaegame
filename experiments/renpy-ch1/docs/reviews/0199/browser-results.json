@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "All 11 visible game-font name labels select their own destination without travel",
+    "All 11 building/terrain polygons select exact place without state/time changes",
+    "Inn text list excludes unknown rooms; no floor plan; unknown greenhouse and altar images absent",
+    "844x390 real touch: all 11 targets, repeated tap never travels, cancel preserves full state",
+    "Legacy inn guide opens shared gated text list and Escape dismisses it",
+    "Existing gates reveal greenhouse/altar artwork and targets; ancient remains under inn",
+    "Explicit footer confirmation dispatches actual travel to post office"
+  ],
+  "archive_sha256": "0523fc71d8d17f60bf07bc8dfefc15bded0c31428c246f85a9689f3ded2e7461",
+  "transport_parts": 3
+}
