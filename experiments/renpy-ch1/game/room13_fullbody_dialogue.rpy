@@ -58,7 +58,7 @@ init 58 python:
         # crop; the scale stays the character's (r13_fullbody_scale uses the entry's figure).
         posed=entry.get("poses",{}).get(r13_fullbody_key(pose))
         if posed and posed["file"] in R13_FULLBODY_FILES:
-            return dict(file=posed["file"],crop=posed["crop"],figure=posed["figure"],emotion=r13_fullbody_key(pose),fit=posed.get("fit",1.0))
+            return dict(file=posed["file"],crop=posed["crop"],figure=posed["figure"],emotion=r13_fullbody_key(pose),fit=posed.get("fit",1.0),image=posed.get("mapped_image",{}))
         emotion=r13_fullbody_emotion(pose)
         # 0.18.92: an expression the package drew beyond the six (bami "thinking") is used by name.
         key=r13_fullbody_key(pose)

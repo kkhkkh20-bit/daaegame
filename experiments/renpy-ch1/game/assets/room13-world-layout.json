@@ -220,7 +220,8 @@
       "resident_eunho": "living_prices",
       "resident_ubak": "living_measure",
       "resident_owlgp": "living_notebook",
-      "resident_tosil": "living_thermos"
+      "resident_tosil": "living_thermos",
+      "resident_guseul": "living_stamp"
     }
   },
   "school": {
@@ -2290,7 +2291,13 @@
       0.346,
       24.6
     ],
-    "slot_actions": {}
+    "slot_actions": {
+      "doto": {
+        "morning": "action_1",
+        "afternoon": "action_1",
+        "evening": "action_2"
+      }
+    }
   },
   "room13": {
     "width": 2160,

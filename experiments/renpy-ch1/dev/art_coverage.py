@@ -112,7 +112,7 @@ def build():
             file = image.get('file') or neutral.get('file')
             same = emotion != 'neutral' and file and file_hash(file) == file_hash(neutral.get('file', ''))
             pending = same or image.get('fallback') or not image
-            correction = person == 'guard' and emotion != 'neutral'
+            correction = person == 'guard' and emotion != 'neutral' and not image.get('review_batch')
             add(f'character/{person}/dialogue/{emotion}', 'dialogue_expression', person, requirement=emotion,
                 files=[file], production='needs_correction' if correction else ('not_produced' if pending else 'available_unreviewed'),
                 connection='neutral_fallback' if pending else 'linked', priority='P0' if person in ('guard','resident_teacher','neoul') and (correction or pending) else ('P1' if pending else 'P2'),

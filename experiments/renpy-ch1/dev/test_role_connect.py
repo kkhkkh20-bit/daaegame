@@ -97,7 +97,9 @@ class RoleConnect(unittest.TestCase):
     def test_guard_keeps_its_other_faces_and_poses(self):
         before = BACKUP["guard"]
         for e in EMOTIONS[1:]:
-            self.assertEqual(FULLBODY["guard"]["images"][e], before["fullbody"]["images"][e])
+            image=FULLBODY["guard"]["images"][e]
+            self.assertEqual(image["review_batch"], "reviewed-batches-20261017")
+            self.assertTrue(image["native_detail"])
         for key, value in before["acting"].items():
             if key != "neutral" and not key.startswith("avatar_"):
                 self.assertEqual(ACTING["guard"][key], value)

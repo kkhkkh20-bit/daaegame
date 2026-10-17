@@ -24,4 +24,4 @@ class KkwakRefined(unittest.TestCase):
    self.assertEqual(src.shape,dst.shape)
    self.assertTrue(np.array_equal(src,dst))
    self.assertEqual(v['map'][0],1.0)
-  self.assertEqual([p for p,v in people.items() if any(i.get('native_detail') for i in v['images'].values())],['resident_kkwak'])
+  self.assertTrue(all(i.get('native_detail') for i in images.values()))

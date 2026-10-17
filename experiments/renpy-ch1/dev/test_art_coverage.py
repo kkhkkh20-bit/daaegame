@@ -23,10 +23,10 @@ class ArtCoverage(unittest.TestCase):
             self.assertIn(f'character/{person}/dialogue/neutral',self.rows)
 
     def test_fallback_is_not_finished_expression(self):
-        doto=self.rows['character/doto/dialogue/angry']
+        doto=self.rows['character/resident_teacher/dialogue/joy']
         self.assertEqual(doto['production_status'],'not_produced')
         self.assertEqual(doto['connection_status'],'neutral_fallback')
-        self.assertEqual(self.rows['character/guard/dialogue/angry']['production_status'],'needs_correction')
+        self.assertEqual(self.rows['character/guard/dialogue/angry']['production_status'],'available_unreviewed')
         self.assertEqual(self.rows['character/dad/dialogue/neutral']['production_status'],'not_required_viewpoint')
 
     def test_links_and_review_evidence(self):
