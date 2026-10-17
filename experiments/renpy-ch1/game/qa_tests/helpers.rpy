@@ -381,7 +381,7 @@ init 999 python:
                         line=r13_dialogue_pages("표정 확인 %s — 대사창과 얼굴이 겹치는지 보는 두 줄짜리 시험 문장입니다. 끝까지 읽히는지도 확인합니다."%emotion)[0]
                         renpy.say(R13_CHARS.get(person),line,interact=False)
                         renpy.pause(0.45,hard=True)
-                    name="%s_%s_%s.png"%(mode,person,emotion)
+                    name="%s%s_%s_%s.png"%(getattr(store,"r13_qa_fb_tag",""),mode,person,emotion)
                     renpy.screenshot(os.path.join(out,name))
                     bounds=renpy.get_image_bounds("r13_visitor") if mode!="topic" else None
                     report.append(dict(mode=mode,person=person,emotion=emotion,file=name,bounds=bounds,
@@ -405,7 +405,7 @@ init 999 python:
             renpy.screenshot(os.path.join(out,"topic_rows_%s.png"%who))
             renpy.hide_screen("r13_question_list")
         persistent.room13_large_text=False
-        open(os.path.join(out,"report.json"),"w").write(qa_json.dumps(report,ensure_ascii=False,indent=0))
+        open(os.path.join(out,getattr(store,"r13_qa_fb_tag","")+"report.json"),"w").write(qa_json.dumps(report,ensure_ascii=False,indent=0))
         store.r13_qa_fb_done=True
 
 label r13_qa_fullbody(modes=("normal","large","topic"),people=None,emotions=None):

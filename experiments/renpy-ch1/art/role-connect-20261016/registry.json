@@ -1,0 +1,164 @@
+{
+ "version": 1,
+ "date": "2026-10-16",
+ "tool": "dev/apply_role_connect.py",
+ "basis": "소유자 승인: 부리 v7, 솔방울·굴돌·돌목 승인본(20:24), 정본 불일치 배역 정정(20:26). 너울·사자 선생님 옷은 결정 대기라 포함하지 않음. 네로는 회색 망토 유지(대상 아님).",
+ "scale_from_source": 0.5,
+ "alpha_visible": 32,
+ "margin": 4,
+ "roles": {
+  "buri": {
+   "mode": "pixel_set",
+   "name_ko": "부리",
+   "version": "buri-v7-boy-approved",
+   "dialogue": {
+    "neutral": {
+     "source": "sources/buri-v7/buri_neutral.png",
+     "sha256": "058f6cd02eb3bcfa575d189b38107db8ab366c6223debdd0e6b7b4f542814fb6"
+    },
+    "joy": {
+     "source": "sources/buri-v7/buri_joy.png",
+     "sha256": "cc3f664a9215f70894fc3e25e88b88bcf32712cb770de210e6524f0c2159d14d"
+    },
+    "flustered": {
+     "source": "sources/buri-v7/buri_flustered.png",
+     "sha256": "0b681cb94bcc04519498168bf484db9e2cd46bab95629a9dd184d5e1ef37ad08"
+    },
+    "angry": {
+     "source": "sources/buri-v7/buri_angry.png",
+     "sha256": "dc80cdb077b41a06050d1f90f221caa0bd6960b88b178661457bc64c6c2e328c"
+    },
+    "anxious": {
+     "source": "sources/buri-v7/buri_anxious.png",
+     "sha256": "701d27e4ec03d2261754a0c4c34f0aaaff28ed4c0da0f29bfb0df02e1394389c"
+    },
+    "surprise": {
+     "source": "sources/buri-v7/buri_surprised.png",
+     "sha256": "3b797428889397cf1a6e488c26bdff22ee8096f5e2c817589f1aad8be0ae6042"
+    }
+   },
+   "world": "neutral",
+   "decision": "소유자 승인 2026-10-16 20:24 PDT (보드 rev46): 소년 견습 부엉이 v7, 안경 없음. 이전 6표정(둥근 부엉이·통합68 갈색 부엉이)은 쓰지 않음."
+  },
+  "resident_solbang": {
+   "mode": "pixel_single",
+   "name_ko": "솔방울",
+   "version": "solbang-distinct-v1-approved",
+   "source": "sources/approved/review-solbang-distinct-v1.png",
+   "sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
+   "decision": "소유자 승인 2026-10-16 20:24 PDT (보드 rev47). 임시 색변형(다른 주민 그림)을 대신함."
+  },
+  "resident_guldol": {
+   "mode": "pixel_single",
+   "name_ko": "굴돌 할아버지",
+   "version": "guldol-distinct-v1-approved",
+   "source": "sources/approved/review-guldol-distinct-v1.png",
+   "sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
+   "decision": "소유자 승인 2026-10-16 20:24 PDT (보드 rev47). 임시 색변형(다른 주민 그림)을 대신함."
+  },
+  "guard": {
+   "mode": "dialogue_neutral",
+   "name_ko": "돌목",
+   "version": "dolmok-mouth-v1-approved",
+   "source": "sources/approved/review-dolmok-mouth-v1.png",
+   "sha256": "7833f3c360292f55acdc42ef5f413c460eec191fb48780e741845045c5a179b7",
+   "decision": "소유자 승인 2026-10-16 20:24 PDT (보드 rev47). 같은 디자인의 입 수정본: 대화 보통 표정만 바꾸고 나머지 5표정·마을 동작 6종은 유지."
+  },
+  "doto": {
+   "mode": "canon",
+   "name_ko": "도토",
+   "version": "child_deer-base",
+   "source": "../canonical48-rev45/originals/doto.webp",
+   "sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_kkwak": {
+   "mode": "canon",
+   "name_ko": "꽥순",
+   "version": "pink_bird-base",
+   "source": "../canonical48-rev45/originals/resident_kkwak.webp",
+   "sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_piko": {
+   "mode": "canon",
+   "name_ko": "피코",
+   "version": "copper_dog-originalized-pixel-v2",
+   "source": "../canonical48-rev45/originals/resident_piko.webp",
+   "sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_mungchi": {
+   "mode": "canon",
+   "name_ko": "뭉치",
+   "version": "moose-base",
+   "source": "../canonical48-rev45/originals/resident_mungchi.webp",
+   "sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_madam": {
+   "mode": "canon",
+   "name_ko": "백 부인",
+   "version": "spotted_dog-originalized-pixel-v2",
+   "source": "../canonical48-rev45/originals/resident_madam.webp",
+   "sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_nubi": {
+   "mode": "canon",
+   "name_ko": "누비 아주머니",
+   "version": "curly-base",
+   "source": "../canonical48-rev45/originals/resident_nubi.webp",
+   "sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_guseul": {
+   "mode": "canon",
+   "name_ko": "구슬",
+   "version": "long_ears-base",
+   "source": "../canonical48-rev45/originals/resident_guseul.webp",
+   "sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_mulgyeol": {
+   "mode": "canon",
+   "name_ko": "물결",
+   "version": "lizard-base",
+   "source": "../canonical48-rev45/originals/resident_mulgyeol.webp",
+   "sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_dalgeurak": {
+   "mode": "canon",
+   "name_ko": "달그락",
+   "version": "white_eagle-roguish_chuckle",
+   "source": "../canonical48-rev45/originals/resident_dalgeurak.webp",
+   "sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_jongjong": {
+   "mode": "canon",
+   "name_ko": "종종이",
+   "version": "white_duck-base",
+   "source": "../canonical48-rev45/originals/resident_jongjong.webp",
+   "sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_hyeoni": {
+   "mode": "canon",
+   "name_ko": "현이",
+   "version": "fennec-large-eyes-v3",
+   "source": "../canonical48-rev45/originals/resident_hyeoni.webp",
+   "sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  },
+  "resident_kalbaram": {
+   "mode": "canon",
+   "name_ko": "칼바람",
+   "version": "kalbaram-shortmuzzle-pixel-v2",
+   "source": "../canonical48-rev45/originals/resident_kalbaram.webp",
+   "sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+   "decision": "소유자 승인 2026-10-16 20:26 PDT: 확정 48명 정본(rev45/rev47) 배역 연결로 정정. 원본 재생성 없음."
+  }
+ }
+}

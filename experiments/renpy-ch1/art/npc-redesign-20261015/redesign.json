@@ -73,28 +73,6 @@
       ]
     },
     {
-      "design_id": "candidate_sheep_linen",
-      "npc": "resident_nubi",
-      "name_ko": "누비 아주머니",
-      "source": "source/sheep_helper_calm_standing_pixel_v2.png",
-      "sha256": "cc52d33c36d70a1fa6364cf429990713c7a1851e037db706806503acd6a8e58f",
-      "species_before": "duck",
-      "species_after": "sheep",
-      "reason": "Owner's choice. Work 세탁 협업과 임시 숙박 연결 is the closest to the linen role; the apron fits. Her duties are not changed.",
-      "head": [
-        310,
-        146,
-        370,
-        265
-      ],
-      "avatar": [
-        320,
-        140,
-        340,
-        340
-      ]
-    },
-    {
       "design_id": "five_town_owl_white_v2",
       "npc": "resident_seol",
       "name_ko": "설이",
@@ -230,6 +208,29 @@
         340
       ],
       "withdrawn": "2026-10-16 owner: 네로 is the grey lynx again; the tiger worker is not used (file kept on disk for old saves)"
+    },
+    {
+      "design_id": "candidate_sheep_linen",
+      "npc": "resident_nubi",
+      "name_ko": "누비 아주머니",
+      "source": "source/sheep_helper_calm_standing_pixel_v2.png",
+      "sha256": "cc52d33c36d70a1fa6364cf429990713c7a1851e037db706806503acd6a8e58f",
+      "species_before": "duck",
+      "species_after": "sheep",
+      "reason": "Owner's choice. Work 세탁 협업과 임시 숙박 연결 is the closest to the linen role; the apron fits. Her duties are not changed.",
+      "head": [
+        310,
+        146,
+        370,
+        265
+      ],
+      "avatar": [
+        320,
+        140,
+        340,
+        340
+      ],
+      "withdrawn": "2026-10-16 20:26 PDT owner: 누비 is the confirmed 48-role design (curly-base, yellow cardigan), connected by dev/apply_role_connect.py; this sheep redesign is not used"
     }
   ]
 }

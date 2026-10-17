@@ -1,0 +1,64 @@
+{
+  "character": "buri",
+  "base": "approved-v7",
+  "files": {
+    "workshop_day": {
+      "file": "buri-v7-workshop_day.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "rgba_2x2_verified": true,
+      "bbox": [
+        226,
+        126,
+        848,
+        1460
+      ]
+    },
+    "workshop_evening": {
+      "file": "buri-v7-workshop_evening.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "rgba_2x2_verified": true,
+      "bbox": [
+        56,
+        144,
+        968,
+        1408
+      ]
+    },
+    "event_toolbox": {
+      "file": "buri-v7-event_toolbox.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "rgba_2x2_verified": true,
+      "bbox": [
+        78,
+        154,
+        958,
+        1418
+      ]
+    }
+  },
+  "background_source": "latest main experiments/renpy-ch1/game/assets/room13-pixel-panorama-workshop-{morning,evening}.webp, fetched 2026-10-17",
+  "background_native_size": [
+    1983,
+    793
+  ],
+  "mockup_coordinate_space": [
+    1800,
+    720
+  ],
+  "status": "검수 후보, 게임 미적용",
+  "limitations": [
+    "낮: 발 y451/키260와 손 y450 접점은 동시 충족 불가. 요청 좌표 및 접점 조정 제안 목업을 별도 제공. 발 (597,560) 제안은 Claude 검수 필요.",
+    "저녁: 요청 발/키 유지. 손 중심은 지정 (215,505)와 차이 있어 접점 및 클릭영역 검수 필요.",
+    "공구함: 지정 좌표 없음. 사건 캐릭터 참고 시안만 제공, 배치 목업 미제작. 공구함에 한쪽 발이 가려짐.",
+    "1024×1536 PNG 자체는 2×2 동일 블록. 게임에서 임의 축소하면 최종 화면 픽셀 단위가 달라지므로 표시 크기에서 재샘플링/정수배율 정책 검수 필요."
+  ]
+}

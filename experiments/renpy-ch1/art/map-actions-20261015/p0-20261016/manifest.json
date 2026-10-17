@@ -1,0 +1,78 @@
+{
+  "source_commit": "1454562e00f6c48745ce62f241c36b6ac8b8c07b",
+  "items": [
+    {
+      "id": "resident_siluk",
+      "action_key": "living_wheelsnow",
+      "file": "sprites/resident_siluk-living_wheelsnow.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bbox": [
+        64,
+        336,
+        960,
+        1198
+      ],
+      "anchor_px": [
+        512,
+        1198
+      ],
+      "anchor_kind": "bottom center of opaque subject; confirm per-boot ground contact in engine",
+      "strict_RGBA_2x2": true,
+      "sha256": "64f9c2639dcd774ffae19db48a86df8d6c7d11e928d5c00391fd66fbf7b80bcc",
+      "screen_candidates": [
+        {
+          "height": 174,
+          "width": 180,
+          "path": "screen-grid2/resident_siluk-living_wheelsnow-h174.png"
+        },
+        {
+          "height": 248,
+          "width": 258,
+          "path": "screen-grid2/resident_siluk-living_wheelsnow-h248.png"
+        }
+      ],
+      "status": "candidate, not game applied",
+      "known_caveat": "Torso turns toward right-hand wheel rather than requested left. Character/canvas height includes cart. Needs developer review."
+    },
+    {
+      "id": "resident_tosil",
+      "action_key": "living_thermos",
+      "file": "sprites/resident_tosil-living_thermos.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "alpha_bbox": [
+        164,
+        64,
+        860,
+        1472
+      ],
+      "anchor_px": [
+        512,
+        1472
+      ],
+      "anchor_kind": "bottom center of opaque subject; confirm per-boot ground contact in engine",
+      "strict_RGBA_2x2": true,
+      "sha256": "fd640b921511e1ced791a644d34ba579ef045d7d3a17860e601bf31dc3be2262",
+      "screen_candidates": [
+        {
+          "height": 244,
+          "width": 120,
+          "path": "screen-grid2/resident_tosil-living_thermos-h244.png"
+        },
+        {
+          "height": 264,
+          "width": 130,
+          "path": "screen-grid2/resident_tosil-living_thermos-h264.png"
+        }
+      ],
+      "status": "candidate, not game applied",
+      "known_caveat": "Thermos partly occluded by paws intentionally; review small-scale readability."
+    }
+  ],
+  "important": "1024x1536 source 2x2 does NOT guarantee screen 2x2 after arbitrary engine resizing. Optional screen candidates use even heights 174/248 and244/264, vs requested approximate175/248 and245/265. Use pixel aligned positions and integer nearest scaling. Mockups are not actual engine tests; foreground NPC occlusion untested. Game, board, repository and original files unchanged."
+}

@@ -11764,3 +11764,219 @@ testcase art_p0_captures:
     screenshot "p0_river_d2p0_c0.png"
     assert eval (any(a["person"]=="resident_nero" and a["pose"]=="activity" for a in r13_stage_people()))
     $ open("qa_result.txt","w").write(repr(dict(inn=r13_qa_p0_inn,river=[{k:a[k] for k in ("person","pose","x","y","width","height","slot")} for a in r13_stage_people()])))
+
+
+testcase role_connect_tour:
+    # 0.18.99 (owner 20:24/20:26): every connected role in its real scene, 1280x720 window;
+    # 부리 v7 workshop day/evening and the toolbox event; dialogue faces for all 16 roles.
+    $ renpy.set_physical_size((1280,720))
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_fullbody",("normal","topic"),["buri","guard","resident_solbang","resident_guldol","doto","resident_kkwak","resident_piko","resident_mungchi","resident_madam","resident_nubi","resident_guseul","resident_mulgyeol","resident_dalgeurak","resident_jongjong","resident_hyeoni","resident_kalbaram"],["neutral","joy","flustered","angry","anxious","surprise"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 900
+    pause 1.0
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="workshop",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_goto",2,0,"workshop")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"workshop":0}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_workshop_d2p0_c0")
+    screenshot "rc_workshop_d2p0_c0.png"
+    $ r13_world_cameras={"workshop":520}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="workshop",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"workshop":520}
+    run Call("r13_qa_goto",2,0,"workshop")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"workshop":520}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_workshop_d2p0_c520")
+    screenshot "rc_workshop_d2p0_c520.png"
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_roam",dict(day=2,period=2,location="workshop",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_goto",2,2,"workshop")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"workshop":0}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_workshop_d2p2_c0")
+    screenshot "rc_workshop_d2p2_c0.png"
+    $ r13_world_cameras={"gate":538}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="gate",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"gate":538}
+    run Call("r13_qa_goto",2,0,"gate")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"gate":538}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_gate_d2p0")
+    screenshot "rc_gate_d2p0.png"
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="forest",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"forest":880}
+    run Call("r13_qa_goto",2,0,"forest")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"forest":880}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_forest_d2p0")
+    screenshot "rc_forest_d2p0.png"
+    $ r13_world_cameras={"square":200}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"square":200}
+    run Call("r13_qa_goto",2,0,"square")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"square":200}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_square_d2p0")
+    screenshot "rc_square_d2p0.png"
+    $ r13_world_cameras={"square":640}
+    run Call("r13_qa_roam",dict(day=2,period=1,location="square",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"square":640}
+    run Call("r13_qa_goto",2,1,"square")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"square":640}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_square_d2p1")
+    screenshot "rc_square_d2p1.png"
+    $ r13_world_cameras={"store":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"store":0}
+    run Call("r13_qa_goto",2,0,"store")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"store":0}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_store_d2p0_c0")
+    screenshot "rc_store_d2p0_c0.png"
+    $ r13_world_cameras={"store":640}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="store",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"store":640}
+    run Call("r13_qa_goto",2,0,"store")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"store":640}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_store_d2p0_c640")
+    screenshot "rc_store_d2p0_c640.png"
+    $ r13_world_cameras={"market":400}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="market",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"market":400}
+    run Call("r13_qa_goto",2,0,"market")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"market":400}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_market_d2p0_c400")
+    screenshot "rc_market_d2p0_c400.png"
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="market",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"market":880}
+    run Call("r13_qa_goto",2,0,"market")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"market":880}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_market_d2p0_c880")
+    screenshot "rc_market_d2p0_c880.png"
+    $ r13_world_cameras={"inn":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"inn":0}
+    run Call("r13_qa_goto",2,0,"inn")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"inn":0}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_inn_d2p0")
+    screenshot "rc_inn_d2p0.png"
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="river",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"river":0}
+    run Call("r13_qa_goto",2,0,"river")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"river":0}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_river_d2p0")
+    screenshot "rc_river_d2p0.png"
+    $ r13_world_cameras={"post":400}
+    run Call("r13_qa_roam",dict(day=2,period=0,location="post",life_poc=True,case_state="pending",victim_state="alive",daram_state="with_dad"),("+w1c","ev_g_done","ev_l_done","ev_i_done","ev_q_done","ev_s_done","ev_t_done","+offers","ep1_patrol_seen","ep1_eaves_seen","ev_a_done","ev_b_done","st_dodam_seen","st_pandol_seen","lodging","entry_corrected"),(),12)
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"post":400}
+    run Call("r13_qa_goto",2,0,"post")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_world_cameras={"post":400}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_post_d2p0")
+    screenshot "rc_post_d2p0.png"
+    # The toolbox event (systems/room13_event_offers.rpy r13_w2e_tools) staged where the game puts it
+    # (workshop offer spot, feet (300,660)); the offer list is stubbed so only the picture is checked.
+    $ r13_world_cameras={"workshop":0}
+    run Call("r13_qa_goto",2,0,"workshop")
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    $ r13_qa_offers_saved=r13_offers_here
+    $ store.r13_offers_here=lambda: [("r13_w2e_tools","부리가 할아버지 공구함 앞에 서 있다")]
+    $ R13_STAGE_CACHE.clear()
+    $ r13_world_cameras={"workshop":0}
+    $ renpy.restart_interaction()
+    pause 1.2
+    $ r13_qa_wide_log("rc_toolbox_spot")
+    screenshot "rc_toolbox_spot.png"
+    assert eval (any(a["person"]=="buri" and a["pose"]=="event_toolbox" for a in r13_stage_people()))
+    $ store.r13_offers_here=r13_qa_offers_saved
+    $ r13_qa_wide_write()
+
+
+testcase pixel_unify_preview:
+    # 0.18.99 proposal preview (docs/PIXEL_UNIFY_PROPOSAL_20261016.md): the same lines drawn now and
+    # with one fixed 4 screen px per 2x2 art cell (+ 4px grid for pictures without cells).
+    # QA-only switches; the game itself is unchanged. Window 1280x720 and 1920x1080 (x1.5).
+    $ renpy.set_physical_size((1280,720))
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    $ r13_qa_fb_tag="now_"
+    run Call("r13_qa_fullbody",("normal",),["daram","dad","bami","resident_tok","buri","resident_teacher","resident_nero","resident_kongi"],["neutral"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    $ r13_qa_fb_done=False
+    $ r13_qa_fb_tag="k4_"
+    $ r13_pixel_k_preview=4
+    $ R13_CLOSE_PIXEL_GRID=4
+    $ R13_FULLBODY_ART_CACHE.clear()
+    run Call("r13_qa_fullbody",("normal",),["daram","dad","bami","resident_tok","buri","resident_teacher","resident_nero","resident_kongi"],["neutral"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    $ r13_qa_fb_done=False
+    $ renpy.set_physical_size((1920,1080))
+    pause 1.5
+    $ r13_qa_fb_tag="k4x15_"
+    $ R13_FULLBODY_ART_CACHE.clear()
+    run Call("r13_qa_fullbody",("normal",),["daram","resident_tok","resident_nero"],["neutral"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300
+    $ r13_qa_fb_done=False
+    $ r13_pixel_k_preview=None
+    $ R13_CLOSE_PIXEL_GRID=3
+    $ R13_FULLBODY_ART_CACHE.clear()
+    $ r13_qa_fb_tag="nowx15_"
+    run Call("r13_qa_fullbody",("normal",),["daram","resident_tok","resident_nero"],["neutral"])
+    click pos (1276,300) until eval r13_qa_fb_done timeout 300

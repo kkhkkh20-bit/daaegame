@@ -37,9 +37,12 @@ class NpcRedesign(unittest.TestCase):
         npcs = [d["npc"] for d in REG["designs"]]
         # 0.18.60 (owner, 07:39 PDT): only the two elders join the first eight; nobody else.
         # 0.18.93 (owner 2026-10-16 19:16): 네로 is the grey lynx-type original again (restored_originals).
-        self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian", "resident_nubi",
+        # 0.18.99 (owner 20:26): 누비 is the confirmed 48-role design (dev/apply_role_connect.py); the sheep
+        # redesign moved to "withdrawn".
+        self.assertEqual(sorted(npcs), sorted({"resident_yeoni", "resident_momo", "resident_librarian",
                                                "resident_seol", "resident_siluk", "resident_bori",
                                                "resident_owlgp", "granny"}))
+        self.assertIn("resident_nubi", [d["npc"] for d in REG["withdrawn"]])
         self.assertEqual(len({d["sha256"] for d in REG["designs"]}), len(npcs))  # no picture used twice
         sources = {d["npc"]: d["sha256"] for d in REG["designs"]}
         self.assertEqual(sources["resident_owlgp"], "8ad9353427e3b32e74b886436d4fe8cde897a88e925a2f16c82370d9d2b56941")
@@ -47,7 +50,7 @@ class NpcRedesign(unittest.TestCase):
         # Everyone else keeps the original game art.
         for npc, states in CAST.items():
             if npc not in sources:
-                self.assertNotIn("redesign", json.dumps(states), npc)
+                self.assertNotIn('"redesign"', json.dumps(states), npc)
         for d in REG["designs"]:
             src = (ART / d["source"]).read_bytes()
             self.assertEqual(hashlib.sha256(src).hexdigest(), d["sha256"], d["source"])

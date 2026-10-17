@@ -41,7 +41,15 @@ def build(entry, reg):
     if hashlib.sha256(data).hexdigest() != entry["sha256"]:
         raise SystemExit("hash mismatch: %s" % src)
     s = reg["scale_from_source"]
-    img = resample(Image.open(io.BytesIO(data)).convert("RGBA"), s)
+    if entry.get("downsample") == "cell2":
+        # 0.18.99: a source drawn in exact 2x2 cells is halved by taking one sample per cell
+        # (lossless for that art; the LANCZOS path would blur the cell edges).
+        if s != 0.5:
+            raise SystemExit("cell2 downsample needs scale_from_source 0.5")
+        a = np.asarray(Image.open(io.BytesIO(data)).convert("RGBA"))
+        img = Image.fromarray(np.ascontiguousarray(a[0::2, 0::2]), "RGBA")
+    else:
+        img = resample(Image.open(io.BytesIO(data)).convert("RGBA"), s)
     alpha = np.asarray(img)[..., 3] >= reg["alpha_visible"]
     ys, xs = np.where(alpha.any(1))[0], np.where(alpha.any(0))[0]
     m = reg["margin"]
@@ -62,6 +70,9 @@ def build(entry, reg):
             "map_action": True, "stature_ratio": entry["stature_ratio"], "source_sha256": entry["sha256"]}
     if entry.get("seat"):
         spec["seat"] = [round(entry["seat"][0] * s) - x0, round(entry["seat"][1] * s) - y0]
+    if entry.get("hand"):
+        # 0.18.99: furniture work contact (layout "work" puts this point on the bench).
+        spec["hand"] = [round(entry["hand"][0] * s) - x0, round(entry["hand"][1] * s) - y0]
     return img, spec
 
 
@@ -77,16 +88,21 @@ def main():
         person, pose = entry["person"], entry["pose"]
         if person not in acting:
             raise SystemExit("unknown person " + person)
-        if entry.get("withdrawn"):
+        if entry.get("withdrawn") or entry.get("hold"):
             # 0.18.93: the drawing no longer matches the person's confirmed design (e.g. the tiger
             # name-tag pose after 네로 became the silver wolf). The pose is taken out of the game so the
             # person stands in the current design; the file stays on disk for old saves.
             if a.check:
-                if pose in acting[person]:
+                here = acting[person].get(pose)
+                if here is not None and here.get("source_sha256") == entry["sha256"]:
                     bad.append(person + ":" + pose + " (withdrawn, still present)")
                 continue
-            if acting[person].pop(pose, None) is not None:
-                print(person, pose, "withdrawn:", entry["withdrawn"])
+            # Only the withdrawn drawing itself is taken out; a newer drawing under the same
+            # pose key (another registry entry) stays.
+            here = acting[person].get(pose)
+            if here is not None and here.get("source_sha256") in (None, entry["sha256"]) and here.get("map_action"):
+                acting[person].pop(pose)
+                print(person, pose, "withdrawn:", entry.get("withdrawn") or entry.get("hold"))
             continue
         img, spec = build(entry, reg)
         if a.check:
@@ -95,7 +111,7 @@ def main():
             continue
         from import_art import encode
         buf = io.BytesIO(); img.save(buf, "PNG")
-        (GAME / spec["file"]).write_bytes(encode(io.BytesIO(buf.getvalue())))
+        (GAME / spec["file"]).write_bytes(encode(io.BytesIO(buf.getvalue()), lossless=entry.get("downsample") == "cell2"))
         acting[person][pose] = spec
         print(person, pose, "crop", spec["crop"], "foot", spec["foot"], "head", spec["head"], "seat", spec.get("seat"))
     if a.check:

@@ -55,7 +55,8 @@
       "foot": null,
       "seat": null,
       "why": "사건 r13_w2e_tools: 할아버지 공구함 (01853 §2)",
-      "stature_ratio": 1.0
+      "stature_ratio": 1.0,
+      "withdrawn": "2026-10-16 owner: the role's approved design changed (dev/apply_role_connect.py); this drawing shows the old design and stays out of the game."
     },
     {
       "person": "resident_piko",
@@ -72,7 +73,8 @@
       "foot": null,
       "seat": null,
       "why": "사건 r13_w1c_portrait: 판자 물감 닦기 (01853 §2)",
-      "stature_ratio": 0.62
+      "stature_ratio": 0.62,
+      "withdrawn": "2026-10-16 owner: the role's approved design changed (dev/apply_role_connect.py); this drawing shows the old design and stays out of the game."
     },
     {
       "person": "resident_mungchi",
@@ -89,7 +91,8 @@
       "foot": null,
       "seat": null,
       "why": "사건 r13_w1c_seal: 13호 문 앞 손 비비기 (01853 §2)",
-      "stature_ratio": 1.0
+      "stature_ratio": 1.0,
+      "withdrawn": "2026-10-16 owner: the role's approved design changed (dev/apply_role_connect.py); this drawing shows the old design and stays out of the game."
     },
     {
       "person": "resident_librarian",
@@ -293,6 +296,107 @@
       "why": "이름표의 젖은 쪽을 안으로 접었다 (사용자 확정 수정본 19:16). 선 자세: 선 키 그대로",
       "stature_ratio": 1.0,
       "withdrawn": "2026-10-16 owner: 네로 is the grey lynx-type design; this storybook name-tag pose draws the tiger and stays out of the game. The grey design's own acting sheet keeps its activity pose (gate, store). A grey name-tag version is a production request (docs/ART_REQUEST_P0P1_20261016.md)."
+    },
+    {
+      "person": "resident_tosil",
+      "pose": "living_thermos",
+      "source": "p0-20261016/resident_tosil-living_thermos.png",
+      "sha256": "fd640b921511e1ced791a644d34ba579ef045d7d3a17860e601bf31dc3be2262",
+      "contact": "standing",
+      "head": [
+        220,
+        64,
+        640,
+        620
+      ],
+      "foot": null,
+      "seat": null,
+      "downsample": "cell2",
+      "why": "보온병을 두 손으로 꼭 안고 있다 (systems/room13_new_cast.rpy:12). 2026-10-16 20:30 PDT 제작본, 요청 조건 충족(소유자). 선 자세: 선 키 그대로",
+      "stature_ratio": 1.0
+    },
+    {
+      "person": "resident_siluk",
+      "pose": "living_wheelsnow",
+      "source": "p0-20261016/resident_siluk-living_wheelsnow.png",
+      "sha256": "64f9c2639dcd774ffae19db48a86df8d6c7d11e928d5c00391fd66fbf7b80bcc",
+      "contact": "crouching",
+      "head": [
+        400,
+        335,
+        320,
+        310
+      ],
+      "foot": [
+        420,
+        1196
+      ],
+      "seat": null,
+      "downsample": "cell2",
+      "why": "짐수레 바퀴의 끼인 눈을 털어 낸다 (room13-content.json:9123). 쪼그림: 선 키의 0.7",
+      "stature_ratio": 0.7,
+      "hold": "2026-10-16 20:30 소유자: 검토 후보. 몸이 오른쪽(바퀴 쪽)을 향함 — 요청(몸 왼쪽)과 다름. 개발자 실제 맵 검수 판단 뒤 결정"
+    },
+    {
+      "person": "buri",
+      "pose": "action_1",
+      "source": "buri-v7-20261016/buri-v7-workshop_day.png",
+      "sha256": "ec64de6dfcb7d17933538f56ff97adb3190bcb7089e7f3fd3720ab4885cc323f",
+      "contact": "tool",
+      "head": [
+        330,
+        126,
+        470,
+        400
+      ],
+      "foot": null,
+      "seat": null,
+      "hand": [
+        540,
+        880
+      ],
+      "downsample": "cell2",
+      "stature_ratio": 0.83,
+      "why": "수리점 낮: 작은 부품을 천 위에 순서대로 놓는다(room13-content residents.buri). 손·천 접점이 작업대 위(layout workshop.work.buri). 머리 크기를 v7 선 그림과 맞춤(0.83)"
+    },
+    {
+      "person": "buri",
+      "pose": "action_2",
+      "source": "buri-v7-20261016/buri-v7-workshop_evening.png",
+      "sha256": "0d0e16023cba7bfb8a59b533cf4413e1dc5c93d1fbcb8120754cb5abe4c1957d",
+      "contact": "kneeling",
+      "head": [
+        380,
+        144,
+        470,
+        420
+      ],
+      "foot": null,
+      "seat": null,
+      "downsample": "cell2",
+      "stature_ratio": 0.81,
+      "why": "수리점 저녁: 무릎 꿇고 회중시계를 돋보기로 본다. 머리 크기 기준 0.81"
+    },
+    {
+      "person": "buri",
+      "pose": "event_toolbox",
+      "source": "buri-v7-20261016/buri-v7-event_toolbox.png",
+      "sha256": "c88dd5cc421a42974ba2e9e65750c5930c484bb114cf13018c251344574315ac",
+      "contact": "standing",
+      "head": [
+        380,
+        154,
+        440,
+        400
+      ],
+      "foot": [
+        420,
+        1416
+      ],
+      "seat": null,
+      "downsample": "cell2",
+      "stature_ratio": 0.77,
+      "why": "2주 차 사건: 부리가 할아버지 공구함 앞에 서 있다(systems/room13_event_offers.rpy:18). 공구함 포함, 머리 크기 기준 0.77"
     }
   ]
 }
