@@ -16,6 +16,7 @@ init 178 python:
         if actor["person"]!=row.get("person") or state.get("location")!=row.get("location"):return None
         if min(state.get("period",0),2) not in row.get("periods",[]):return None
         if not row.get("min_day",1)<=state.get("day",1)<=row.get("max_day",14):return None
+        if "days" in row and state.get("day",1) not in row["days"]:return None
         flags=set(state.get("flags",[]))
         if not set(row.get("need_flags",[]))<=flags or flags.intersection(row.get("not_flags",[])):return None
         # Explicit allowlist: authored events and prior map9 actions are not generic idle.

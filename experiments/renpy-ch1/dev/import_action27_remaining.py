@@ -50,7 +50,7 @@ def main():
  occ['kitchen']['table']=[[600,530],[790,555],[1100,595],[1620,565],[1620,720],[600,720]]
  occ['school']['desks']=[[155,363],[500,363],[500,465],[155,465]]
  approved=ROOT/'art/approved-action27-remaining';(approved/'originals').mkdir(parents=True,exist_ok=True);(approved/'manifests').mkdir(exist_ok=True)
- regpath=ROOT/'game/assets/room13-map-action27.json';reg=json.loads(regpath.read_text());rows=[r for r in reg['rows'] if r['request_id'] not in PLACEMENTS];receipts=[]
+ regpath=ROOT/'game/assets/room13-map-action27.json';reg=json.loads(regpath.read_text());prior_ki=next((r for r in reg['rows'] if r['request_id']=='KI-1'),{});rows=[r for r in reg['rows'] if r['request_id'] not in PLACEMENTS];receipts=[]
  for folder in sorted(SOURCE.iterdir()):
   if not folder.is_dir():continue
   manifest=json.loads((folder/'manifest.json').read_text());assert manifest==json.loads((folder/'external-manifest.json').read_text());shutil.copy(folder/'manifest.json',approved/'manifests'/(folder.name+'.json'))
@@ -78,7 +78,11 @@ def main():
    if loc=='post':
     for period in ['afternoon','evening']:variants[period].update(world_width=1280,target=[560,650] if key=='PO-2' else [300,700],render_height=300 if key=='PO-2' else 185,occlusion=[[[366,552],[1030,466],[1030,392],[1279,392],[1279,720],[366,720]]] if key=='PO-2' else [])
    row=dict(request_id=key,status='approved',person=who,pose='map27_'+key.lower().replace('-','_'),location=loc,periods=[] if key=='KI-1' else [0,1,2],replace_poses=['neutral','activity','inn_activity','world']+REPLACE.get(key,[]),variants=variants,spec=spec,activity=ACTIVITY[key])
-   if key=='KI-1':row['activation']='preview_only_no_existing_kitchen_schedule'
+   if key=='KI-1':
+    row['activation']='preview_only_no_existing_kitchen_schedule'
+    if prior_ki.get('activation')=='daily_kitchen':
+     for field in ['activation','periods','days','min_day']:row[field]=prior_ki[field]
+     row['variants']['morning']=copy.deepcopy(prior_ki['variants']['morning'])
    if key=='CL-1':row['min_day']=11
    if key=='FO-1':row['min_day']=2
    if key in ['GA-1','FA-1']:row['costume_id']=r['costume_id'];row['usage']='map_only'
@@ -88,7 +92,7 @@ def main():
     for variant in reused['variants'].values():variant.update(world_width=1800 if loc2=='school' else 2160 if loc2=='dining' else 1920,target=target2,render_height=height2)
     rows.append(reused)
    receipts.append(dict(request_id=key,person=who,source=str(original.relative_to(ROOT)),source_sha256=r['sha256'],source_bytes=len(b),source_size=[W,H],export=file,export_sha256=hashlib.sha256(dest.read_bytes()).hexdigest(),transform=t))
- assert len(receipts)==19 and len({r['request_id'] for r in rows})==27
- reg.update(status='approved_27_sources_26_scheduled_one_preview',remaining_source_commit=COMMIT,rows=rows);regpath.write_text(json.dumps(reg,ensure_ascii=False,indent=2)+'\n')
+ assert len(receipts)==19 and set(PLACEMENTS)<={r['request_id'] for r in rows}
+ reg.update(status='approved_31_sources_31_scheduled' if len({r['request_id'] for r in rows})==31 else 'approved_27_sources_26_scheduled_one_preview',remaining_source_commit=COMMIT,rows=rows);regpath.write_text(json.dumps(reg,ensure_ascii=False,indent=2)+'\n')
  (approved/'receipt.json').write_text(json.dumps(dict(source_commit=COMMIT,rows=receipts),indent=2)+'\n');shutil.copy(SOURCE/'archives.json',approved/'source-archives.json')
 if __name__=='__main__':main()

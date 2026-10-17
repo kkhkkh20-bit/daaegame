@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "approved_27_sources_26_scheduled_one_preview",
+  "status": "approved_31_sources_31_scheduled",
   "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376",
   "rows": [
     {
@@ -5098,7 +5098,9 @@
       "person": "nabi",
       "pose": "map27_ki_1",
       "location": "kitchen",
-      "periods": [],
+      "periods": [
+        0
+      ],
       "replace_poses": [
         "neutral",
         "activity",
@@ -5284,8 +5286,547 @@
         "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
       },
       "activity": "도마 위의 당근을 썬다.",
-      "activation": "preview_only_no_existing_kitchen_schedule"
+      "activation": "daily_kitchen",
+      "days": [
+        2,
+        7,
+        12
+      ],
+      "min_day": 2
+    },
+    {
+      "request_id": "KI-2",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_stir_pot",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        3,
+        8,
+        13
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 210,
+          "anchor": "prop_support",
+          "target": [
+            1835,
+            354
+          ],
+          "occlusion": [
+            [
+              [
+                1590,
+                355
+              ],
+              [
+                2080,
+                355
+              ],
+              [
+                2080,
+                625
+              ],
+              [
+                1590,
+                625
+              ]
+            ],
+            [
+              [
+                1660,
+                300
+              ],
+              [
+                1775,
+                300
+              ],
+              [
+                1775,
+                355
+              ],
+              [
+                1660,
+                355
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-2--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          168.96,
+          7.68,
+          250.88,
+          238.07999999999998
+        ],
+        "foot": [
+          286.72,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            286.72,
+            756.48
+          ],
+          "hand_left": [
+            435.2,
+            245.76
+          ],
+          "hand_right": [
+            302.08,
+            368.64
+          ],
+          "spoon_pot": [
+            414.72,
+            349.44
+          ],
+          "prop_support": [
+            409.6,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              280.0,
+              220.0
+            ],
+            [
+              512.0,
+              220.0
+            ],
+            [
+              512.0,
+              442.5
+            ],
+            [
+              280.0,
+              442.5
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "06b7b1b986348332611e0c58a05efce4d376daeb747ab7bccb67ce333c959845"
+      },
+      "activity": "냄비의 수프를 천천히 젓는다."
+    },
+    {
+      "request_id": "KI-3",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_ladle_soup",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        4,
+        9,
+        14
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 244,
+          "anchor": "prop_support",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-3--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          82.56,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          211.55999999999997,
+          756.48
+        ],
+        "anchors": {
+          "foot": [
+            211.55999999999997,
+            756.48
+          ],
+          "hand_right": [
+            46.44,
+            230.4
+          ],
+          "hand_left": [
+            185.76,
+            391.68
+          ],
+          "ladle_tip": [
+            129.0,
+            314.88
+          ],
+          "soup_bowl": [
+            144.48000000000002,
+            360.9599999999999
+          ],
+          "prop_support": [
+            144.48000000000002,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              20.07782101167315,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              200.7843137254902
+            ],
+            [
+              250.9727626459144,
+              419.1372549019608
+            ],
+            [
+              20.07782101167315,
+              419.1372549019608
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "1bb0a4636b5f9198551264534b4848a8fc742b90d3e88c9dd264aea9819db4ef"
+      },
+      "activity": "그릇에 수프를 담는다."
+    },
+    {
+      "request_id": "KI-4",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_wash_dishes",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        5,
+        10
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 244,
+          "anchor": "prop_support",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-4--nabi.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          67.08,
+          0.0,
+          268.32,
+          253.44
+        ],
+        "foot": [
+          237.35999999999999,
+          752.6399999999999
+        ],
+        "anchors": {
+          "foot": [
+            237.35999999999999,
+            752.6399999999999
+          ],
+          "hand_right": [
+            92.88,
+            360.9599999999999
+          ],
+          "hand_left": [
+            72.24000000000001,
+            422.40000000000003
+          ],
+          "sponge_plate": [
+            77.39999999999999,
+            360.9599999999999
+          ],
+          "prop_support": [
+            67.08000000000001,
+            430.08000000000004
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              0.0,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              271.05882352941177
+            ],
+            [
+              210.8171206225681,
+              451.7647058823529
+            ],
+            [
+              0.0,
+              451.7647058823529
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "e4b7e99bc04f3a0d7d2c55d25396ffc4e71ab2617aa21a8eb468888cd3ec393d"
+      },
+      "activity": "조리대 곁에서 접시를 닦는다."
+    },
+    {
+      "request_id": "KI-5",
+      "status": "approved",
+      "person": "nabi",
+      "pose": "map31_nabi_arrange_tray",
+      "location": "kitchen",
+      "periods": [
+        0
+      ],
+      "days": [
+        6,
+        11
+      ],
+      "min_day": 2,
+      "activation": "daily_kitchen",
+      "replace_poses": [
+        "neutral",
+        "activity",
+        "inn_activity",
+        "world",
+        "action_1",
+        "action_2"
+      ],
+      "variants": {
+        "morning": {
+          "world_width": 2160,
+          "render_height": 244,
+          "anchor": "prop_support",
+          "target": [
+            700,
+            542
+          ],
+          "occlusion": [
+            [
+              [
+                600,
+                530
+              ],
+              [
+                790,
+                555
+              ],
+              [
+                1100,
+                595
+              ],
+              [
+                1620,
+                565
+              ],
+              [
+                1620,
+                720
+              ],
+              [
+                600,
+                720
+              ]
+            ]
+          ]
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/KI-5--nabi.webp",
+        "crop": [
+          0,
+          0,
+          512,
+          768
+        ],
+        "head": [
+          81.92,
+          7.68,
+          245.76,
+          230.39999999999998
+        ],
+        "foot": [
+          209.92,
+          760.3199999999999
+        ],
+        "anchors": {
+          "foot": [
+            209.92,
+            760.3199999999999
+          ],
+          "hand_right": [
+            81.92,
+            314.88
+          ],
+          "hand_left": [
+            220.16,
+            407.04
+          ],
+          "bread_contact": [
+            102.4,
+            337.92
+          ],
+          "prop_support": [
+            153.6,
+            407.04
+          ]
+        },
+        "foreground_parts": [
+          [
+            [
+              25.0,
+              275.0
+            ],
+            [
+              310.0,
+              275.0
+            ],
+            [
+              310.0,
+              425.0
+            ],
+            [
+              25.0,
+              425.0
+            ]
+          ]
+        ],
+        "contact": "behind_counter",
+        "stature_ratio": 1,
+        "source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a",
+        "source_sha256": "0a9366c80dce51c74e23bf14ef21142de6f1ecbf77d7e4a9eccbef92f943d6d9"
+      },
+      "activity": "쟁반에 빵과 수프를 올린다."
     }
   ],
-  "remaining_source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+  "remaining_source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",
+  "nabi_extra4_source_commit": "64264145c81635843cfde00fdf987dd4c6283f5a"
 }
