@@ -41,6 +41,10 @@ class SpecialScenes(unittest.TestCase):
   env=dict(json=json,renpy=types.SimpleNamespace(file=lambda p:open(ROOT/'game'/p)),store=types.SimpleNamespace(r13_scene_bg='original-scene'),r13_ep_cut_art=lambda name:('original-cut',name),r13_background=lambda key:('background',key),_r13_ep_art_world_background=lambda key:('background',key),Crop=lambda *a:('crop',a),Fixed=lambda *a,**k:(a,k),Transform=lambda *a,**k:(a,k))
   exec(textwrap.dedent(block),env)
   self.assertEqual(env['r13_ep_cut_art']('bell'),('original-cut','bell'))
+  env['store'].r13_scene_bg='r13_river'
+  river=env['r13_ep_cut_art']('nero_weakened_alive')[0][0]
+  self.assertEqual(river[0][0],('crop',((0,270,800,450),('background','river'))))
+  env['store'].r13_scene_bg='original-scene'
   for name,spec in data['scenes'].items():
    args,kw=env['r13_ep_cut_art'](name);self.assertEqual(args[0][0][0],('crop',((240,270,800,450),('background','original-scene'))));w,h=args[1][1]['size'];self.assertLessEqual(w,900);self.assertLessEqual(h,spec['cut_max_height']);self.assertEqual(args[1][1]['ypos']+h,490);left,top,right,bottom=spec['visible_bounds'];self.assertAlmostEqual(w/h,(right-left)/(bottom-top),delta=.006)
 if __name__=='__main__':unittest.main()

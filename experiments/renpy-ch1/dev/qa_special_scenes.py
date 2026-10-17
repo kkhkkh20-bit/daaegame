@@ -23,8 +23,10 @@ async def main():
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await q.wait('main_menu')
    report['version']=await q.py('import renpy;result=renpy.store.config.version');await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await asyncio.sleep(2)
    for identity,rows in scene_calls().items():
-    key=MAP[identity];bg='ep_belltower_night' if key.startswith('chorong') else 'r13_river' if key.startswith('nero') else 'r13_school'
-    await q.py('import renpy\ns=renpy.store\ns.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=12,period=2,location="school")\ns.room13_mode=True;s.r13_meeting_active=False;s.r13_cg_active=False;s.r13_camera="stage";s.r13_scene_bg='+repr(bg)+';s.place="특수 장면 검토"\nrenpy.exports.hide("r13_visitor");result=True')
+    key=MAP[identity]
+    if os.environ.get('ROOM13_QA_SCENES') and key not in os.environ['ROOM13_QA_SCENES'].split(','):continue
+    bg='ep_belltower_night' if key.startswith('chorong') else 'r13_river' if key.startswith('nero') else 'r13_school'
+    await q.py('import renpy\ns=renpy.store\ns.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day='+str(8 if key.startswith('chorong') else 12)+',period='+str(0 if key.startswith('nero') else 2)+',location='+repr('river' if key.startswith('nero') else 'square' if key.startswith('chorong') else 'school')+')\ns.room13_mode=True;s.r13_meeting_active=False;s.r13_cg_active=False;s.r13_camera="stage";s.r13_scene_bg='+repr(bg)+';s.place="특수 장면 검토"\nrenpy.exports.hide("r13_visitor");result=True')
     await q.py('import renpy;renpy.store.persistent.room13_large_text='+repr(key=='teacher_blanket_dodam_only')+';result=True')
     await invoke(q,rows,identity);await asyncio.sleep(.5)
     state=await q.py('import renpy;s=renpy.store;result=dict(packet=s.r13_packet,identity=s.r13_read_id,tags=sorted(renpy.exports.get_showing_tags()),background=s.r13_scene_bg)')

@@ -19,6 +19,9 @@ init 162 python:
             # The plain background deliberately excludes shelter crowd overlays.
             background = _r13_ep_art_world_background("school")
             camera_x = 650 if name == "bori_silent_single_shoe" else 900
+        elif store.r13_scene_bg == "r13_river":
+            background = _r13_ep_art_world_background("river")
+            camera_x = 0  # Snowy left bank; the middle of the panorama is water.
         else:
             camera_x = 240
         background = Transform(Crop((camera_x,270,800,450),background),
