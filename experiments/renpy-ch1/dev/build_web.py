@@ -90,8 +90,8 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
         return url;
     }
 
-    async function r13Fetch(url, tick) {
-        const response = await fetch(url);
+    async function r13FetchOnce(url, tick, expectedBytes, retry) {
+        const response = await fetch(url, retry ? { cache: "reload" } : {});
         if (!response.ok) throw new Error(url + ": HTTP " + response.status);
         const reader = response.body.getReader();
         const chunks = [];
@@ -106,7 +106,21 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
         const out = new Uint8Array(size);
         let at = 0;
         for (const chunk of chunks) { out.set(chunk, at); at += chunk.length; }
+        if (expectedBytes != null && size !== expectedBytes) throw new Error(url + ": incomplete download " + size + "/" + expectedBytes);
         return out;
+    }
+
+    async function r13Fetch(url, tick, expectedBytes) {
+        for (let attempt = 0; attempt < 3; attempt++) {
+            let received = 0;
+            try {
+                return await r13FetchOnce(url, n => { received += n; tick(n); }, expectedBytes, attempt > 0);
+            } catch (error) {
+                tick(-received);
+                if (attempt === 2) throw error;
+                await new Promise(resolve => setTimeout(resolve, 300 * (attempt + 1)));
+            }
+        }
     }
 
     function r13MakeDirs(path) {
@@ -128,7 +142,7 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
 
             const core = (async () => {
                 const parts = [];
-                for (const part of transport.parts) parts.push(await r13Fetch(r13Url(part.file, part.sha256), tick));
+                for (const part of transport.parts) parts.push(await r13Fetch(r13Url(part.file, part.sha256), tick, part.bytes));
                 const f = FS.open("/game.zip", "w");
                 for (const data of parts) FS.write(f, data, 0, data.length);
                 FS.close(f);
@@ -138,7 +152,7 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
             async function worker() {
                 while (next < preload.length) {
                     const item = preload[next++];
-                    const data = await r13Fetch(r13Url(item.file, item.sha256), tick);
+                    const data = await r13Fetch(r13Url(item.file, item.sha256), tick, item.bytes);
                     const path = "/" + item.file;
                     r13MakeDirs(path);
                     FS.writeFile(path, data, { canOwn: true });
@@ -149,7 +163,8 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
             await Promise.all([core].concat(workers));
             r13Prefetch = transport.prefetch || [];
         } catch (e) {
-            reportError("Could not download game.zip", e);
+            reportError("게임 파일을 내려받지 못했습니다. 연결을 확인하고 다시 시도해 주세요.", e);
+            throw e;
         }
     }
 
@@ -167,6 +182,13 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
         loadGameZip().then(() => {
             Module.removeRunDependency('loadGameZip');
             setTimeout(r13PrefetchLater, 8000);
+        }).catch(() => {
+            // Do not start a partially populated filesystem and silently show legacy art.
+            const retry = document.createElement("button");
+            retry.textContent = "게임 다시 불러오기 (저장 기록은 유지됩니다)";
+            retry.style.cssText = "position:fixed;z-index:2147483647;left:15%;right:15%;bottom:20%;padding:18px;font-size:20px;background:#fff4df;color:#172a2a";
+            retry.onclick = () => location.reload();
+            document.body.appendChild(retry);
         });
 
     }

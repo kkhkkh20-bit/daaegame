@@ -281,6 +281,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 98 | `systems/room13_debate.rpy:363` | _r13_e1_session |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:158` |  |
 
+## `r13_dialogue_beat_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 170 | `systems/room13_dialogue_beats.rpy:115` | _r13_context_beat_art |
+| 2 | 172 | `systems/room13_dialogue_context_art.rpy:28` |  |
+
+## `r13_dialogue_beat_begin` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 170 | `systems/room13_dialogue_beats.rpy:31` | _r13_context_beat_begin |
+| 2 | 172 | `systems/room13_dialogue_context_art.rpy:14` |  |
+
 ## `r13_ending_notes` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |

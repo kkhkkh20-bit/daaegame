@@ -1,37 +1,42 @@
 {
  "multipart": true,
- "archive_bytes": 50300287,
- "archive_sha256": "517e6aed2c678c7b618b5b083883fb392260bad24629115f0ab05f46e822f2ba",
+ "archive_bytes": 50653110,
+ "archive_sha256": "677860cfe7e92d551762e0d206bd06c767e0c57248aa704904182695debad066",
  "parts": [
   {
    "file": "game.part01",
    "bytes": 8388608,
-   "sha256": "9b1b5090b5bbbc79368e4a2bf85709579c24ae584a3b7dbdc8ea25b6a2c0833f"
+   "sha256": "a5505b391446d861791870c620f35220cf84b50769d29cec5a28ebf99cfc279d"
   },
   {
    "file": "game.part02",
    "bytes": 8388608,
-   "sha256": "6f3b7677d08df718e746c34bebb6234fc614b3855a603ab0644d25ea76139b4a"
+   "sha256": "bbc0ade30a8b5bf19a091c12137cbaa62c7e7da52e157889a5c9c1275e8732bb"
   },
   {
    "file": "game.part03",
    "bytes": 8388608,
-   "sha256": "497a669125a4aa1ea5f29c624372847ea6386a32a5c5ac95e220bc245c3804f9"
+   "sha256": "f209f3de132cd7ac4764c9992257f060e6d3d2d7930f003ff7100f29d847b395"
   },
   {
    "file": "game.part04",
    "bytes": 8388608,
-   "sha256": "11623b95d303b65cff91846d3ad7473dde3a7f7e22c703e183d3b314209f77cb"
+   "sha256": "6fd9b791b63419197afadc15d560f42beba2228c8c3d7b49d36ffaf746850c03"
   },
   {
    "file": "game.part05",
    "bytes": 8388608,
-   "sha256": "7c81cc5ba776bd466ed945aa7ce50ea33bce60ef62227f5558800a1ad07ddb20"
+   "sha256": "925423bfe50981fa5927ea18c2c346136741d826694deeabe64eb101537f09e7"
   },
   {
    "file": "game.part06",
-   "bytes": 8357247,
-   "sha256": "f1d5b0a05b4e27d7e35482ff6b6a531e117c1324b521d2df6fbf5f932774515b"
+   "bytes": 8388608,
+   "sha256": "ad550bdabbca17950145f98ac163ebbdb63ad5925cdd8a3e27124e928fba31d2"
+  },
+  {
+   "file": "game.part07",
+   "bytes": 321462,
+   "sha256": "17a23fea6c542c09436e24148ac0c738dcb86c1e40a3bbd09e639b7a52c3c988"
   }
  ],
  "preload": [
@@ -49,6 +54,31 @@
    "file": "game/assets/bgm-title.mp3",
    "bytes": 2887261,
    "sha256": "1f0e9975bd24f91ee0549038822d9c94a1b4c8521849a253266beefa1cf444ef"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/bami/840/small_relief.webp",
+   "bytes": 82674,
+   "sha256": "0994c7305bc9f7ca42c185568ef85142988a3122bf5b6fc5b2d600ef109f67e2"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/kid_kkomi/760/resilient_pride.webp",
+   "bytes": 67278,
+   "sha256": "e9850290b6d63d086dc839f7403aa0a226be4211272211421f9f6f1dba34e9f2"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/kid_kkomi/840/resilient_pride.webp",
+   "bytes": 93470,
+   "sha256": "7dad1969616b3e6a9531ae9a74e79159bd008cef416298900368f9dd1af468d7"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/resident_lamplighter/840/guarded_relief.webp",
+   "bytes": 98208,
+   "sha256": "dddd50c46aa3cd394c845152282c1a22d5ed5760d049706a81bb5ebb4ca1b597"
+  },
+  {
+   "file": "game/assets/dialogue-context-master/resident_tosil/840/empathetic_confusion.webp",
+   "bytes": 96042,
+   "sha256": "41e3d953b008b1e2e2147740fb61bf884c2b69749d4119b50052dd4dc557da48"
   },
   {
    "file": "game/assets/dialogue-source-master/bami/840/angry.webp",
@@ -5474,12 +5504,6 @@
   "game/assets/source-travel-strings-v3.mp3",
   "game/assets/town-bright.mp3",
   "game/assets/travel.mp3",
-  "game/assets/room13-aftermath-ep1.webp",
-  "game/assets/room13-aftermath-ep2.webp",
-  "game/assets/room13-aftermath-ep3.webp",
-  "game/assets/room13-aftermath-ep4.webp",
-  "game/assets/room13-aftermath-ep5.webp",
-  "game/assets/room13-aftermath-ep6.webp",
   "game/assets/room13-pixel-altar-afternoon.webp",
   "game/assets/room13-pixel-altar-evening.webp",
   "game/assets/room13-pixel-altar-morning.webp",
