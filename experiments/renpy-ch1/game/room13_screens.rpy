@@ -3,9 +3,9 @@ screen r13_hud():
     zorder 20
     if place == "마차 안":
         # The opening carriage can always be skipped straight to the village gate.
-        textbutton "건너뛰기 ›":
+        textbutton "씬 건너뛰기":
             style "r13_action_button"
-            xpos 988 ypos 24 xsize 184 ysize 54
+            xpos 948 ypos 24 xsize 224 ysize 54
             text_size r13_read_size(20,24)
             action [SetVariable("r13_carriage_skip", True), Function(renpy.end_interaction, True)]
             tooltip "마차 이야기를 건너뛰고 마을 입구에 도착합니다"

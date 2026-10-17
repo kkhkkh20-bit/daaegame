@@ -1,4 +1,4 @@
-# 0.19.7: a save made inside a call keeps the call's generated return-site name. When a release renamed
+# 0.19.8: a save made inside a call keeps the call's generated return-site name. When a release renamed
 # it, loading the save stopped with "Could not find return label". Ren'Py now drops the stale call stack
 # and comes here. A save whose rollback log has no statement left at all (load_failed) comes here too.
 # The scene in progress is lost; the run itself (day, records, flags) is kept and resumes at the next

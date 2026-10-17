@@ -1,4 +1,4 @@
-# 0.19.7 (owner: 다람이 놀래키는 소리를 밝고 튀게). Usage: python3 dev/make_sfx_surprise.py game/assets/sfx-surprise.wav
+# 0.19.8 (owner: 다람이 놀래키는 소리를 밝고 튀게). Usage: python3 dev/make_sfx_surprise.py game/assets/sfx-surprise.wav
 # Bright, bouncy "surprise!" cue: a springy boing that leaps up, then a quick sparkle arpeggio.
 import numpy as np, wave, sys
 sr=44100

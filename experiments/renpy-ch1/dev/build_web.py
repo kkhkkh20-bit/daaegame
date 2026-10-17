@@ -257,7 +257,7 @@ def main():
             shutil.copy2(path, dest)
     game = stage / "game"
 
-    # 1b. 0.19.7: seed the previous release's .rpyc so Ren'Py keeps the generated return-site names of
+    # 1b. 0.19.8: seed the previous release's .rpyc so Ren'Py keeps the generated return-site names of
     # unchanged call statements. A fresh compile renamed every one, and saves made inside a call failed
     # to load after each release ("Could not find return label").
     seeded = seed_previous_rpyc(release, game)

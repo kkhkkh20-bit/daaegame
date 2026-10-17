@@ -21,7 +21,7 @@ init 169 python:
             ready=sum(1 for st in sts if not st.get("truth") and r13_debate_answerable(claim,st))
             need=sum(1 for st in sts if not st.get("truth"))
             text="%s까지 %d칸 · 반박할 수 있는 말 %d/%d"%(name,left,ready,need)
-            if early and ready==need and now<early[0]*4+4:  # 0.19.7: not after that evening has passed
+            if early and ready==need and now<early[0]*4+4:  # 0.19.8: not after that evening has passed
                 text+=" · %d일 저녁 %s에서 미리 열 수 있다"%(early[0],early[2])
             rows.append((left,text))
         return min(rows)[1] if rows else None

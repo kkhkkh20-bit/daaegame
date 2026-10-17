@@ -114,7 +114,7 @@ init 166 python:
         for p in people:
             if p in R13_REL_SLOTS:
                 used[p]=R13_REL_SLOTS[p];free.remove(R13_REL_SLOTS[p])
-        # 0.19.7: more people than cells raised KeyError on the full chart. People with a known relation
+        # 0.19.8: more people than cells raised KeyError on the full chart. People with a known relation
         # get the free cells first; the rest stay in the face row under the chart.
         linked={x for a,b,k,l in r13_rel_edges() for x in (a,b)}
         for p in sorted(people,key=lambda p:p not in linked):

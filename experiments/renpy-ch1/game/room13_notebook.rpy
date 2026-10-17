@@ -73,7 +73,7 @@ init 68 python:
         if kind=="testimony":
             return [key for key in entries if key in ROOM13["evidence"] and ROOM13["evidence"][key]["kind"]=="증언"]
         if kind=="transfer":return [key for key in entries if r13_catalog_transferable(key)]
-        # 0.19.7: a record read while this filter is on stays listed until the filter changes; dropping it
+        # 0.19.8: a record read while this filter is on stays listed until the filter changes; dropping it
         # at once auto-selected the next one and marked the whole list read, or disabled presenting.
         if kind=="unread":return [key for key in entries if r13_record_unread(key) or key in r13_unread_hold]
         return entries

@@ -785,7 +785,7 @@ testcase carriage_skip:
     click "처음부터"
     pause 3.0
     screenshot "c0_carriage.png"
-    click "건너뛰기"
+    click "씬 건너뛰기"
     pause 1.0
     click pos (640,600) until screen "r13_hub" timeout 40
     pause 1.0
@@ -2556,7 +2556,7 @@ testcase conversation_skip:
     click "함께 왔다고"
     pause 1.5
     screenshot "skip_bar.png"
-    click "건너뛰기"
+    click "대사 건너뛰기"
     pause 1.5
     assert screen "r13_entry_karo_topics"
 
@@ -12110,7 +12110,7 @@ testcase pixel_unify_preview:
 testcase carriage_pop:
     # 0.19.2 (owner): no opening cutscene; Daram springs up on her own "왁!" line (with a sound),
     # not during the narration before it; at the gate she is drawn smaller than Karo.
-    # 0.19.7: the sound is the brighter "surprise" cue (owner).
+    # 0.19.8: the sound is the brighter "surprise" cue (owner).
     pause 2.0
     click "처음부터"
     pause until screen "say" timeout 30
@@ -12185,13 +12185,13 @@ label r13_qa_lost_return:
     return
 
 label r13_qa_lost_return_inner:
-    # 0.19.7: what an old save looks like after a release renamed the call's return site.
+    # 0.19.8: what an old save looks like after a release renamed the call's return site.
     $ renpy.game.context().return_stack[-1]=("game/room13.rpy",980342182,975)
     $ renpy.game.context().call_location_stack[-1]=("game/room13.rpy",980342182,974)
     return
 
 testcase lost_return:
-    # 0.19.7 owner report: "Could not find return label" when loading a save from an earlier release.
+    # 0.19.8 owner report: "Could not find return label" when loading a save from an earlier release.
     pause 2.0
     click "처음부터"
     pause until screen "say" timeout 30
@@ -12203,7 +12203,7 @@ testcase lost_return:
     $ r13_qa_note("recovered to hub")
 
 testcase relgrid_overflow:
-    # 0.19.7: more met people than chart cells opened 「전체 관계도」 with KeyError.
+    # 0.19.8: more met people than chart cells opened 「전체 관계도」 with KeyError.
     pause 2.0
     click "처음부터"
     pause until screen "say" timeout 30
@@ -12224,7 +12224,7 @@ testcase relgrid_overflow:
     $ r13_qa_note("grid people=%d placed=%d"%(len(r13_rel_people()),len(r13_rel_layout())))
 
 testcase unread_filter_keeps:
-    # 0.19.7: the 「안 읽음」 filter marked its own list read one by one.
+    # 0.19.8: the 「안 읽음」 filter marked its own list read one by one.
     pause 2.0
     click "처음부터"
     pause until screen "say" timeout 30
@@ -12249,7 +12249,7 @@ init 999 python:
             ctx.call_location_stack[i]=("game/stale.rpy",1,2000+i)
 
 testcase stale_meeting:
-    # 0.19.7: a trial save from an older release must not come back to roaming with the meeting layout
+    # 0.19.8: a trial save from an older release must not come back to roaming with the meeting layout
     # still on (no HUD, meeting say/choice screens).
     pause 2.0
     click "처음부터"

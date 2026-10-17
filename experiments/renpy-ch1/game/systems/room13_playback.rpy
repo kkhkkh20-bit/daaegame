@@ -37,9 +37,10 @@ screen r13_backlog():
     key "K_h" action Hide("r13_backlog")
 
 # 0.18.99: 큰 글씨(휴대폰 기본값)에서는 칸 112×56 → 132×70, 글씨 20 → 24.
-screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False):
+screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False,cell_width=None):
     $ big=persistent.room13_large_text
     $ cw,ch=(132,70) if big else (112,56)
+    $ cw=cell_width or cw
     button:
         xsize cw ysize ch padding (2,0)
         background (R13StripCell(True) if chosen else None)
@@ -56,7 +57,8 @@ screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=Fals
 
 screen r13_playback_footer(show_record=False,ready=True):
     $ big=persistent.room13_large_text
-    $ footer_width=(5 if show_record else 4)*(132 if big else 112)
+    $ skip_width=234 if big else 196
+    $ footer_width=(4 if show_record else 3)*(132 if big else 112)+skip_width
     $ footer_height=70 if big else 56
     $ skip_ready=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     fixed:
@@ -66,7 +68,7 @@ screen r13_playback_footer(show_record=False,ready=True):
             spacing 0
             use r13_strip_button("백로그","backlog",Show("r13_backlog"),enabled=ready)
             use r13_strip_button("자동","auto",Preference("auto-forward","toggle"),enabled=ready,chosen=_preferences.afm_enable)
-            use r13_strip_button("건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready)
+            use r13_strip_button("대사 건너뛰기","skip",[SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],enabled=skip_ready,cell_width=skip_width)
             if show_record:
                 use r13_strip_button("더보기","settings",Show("r13_more_tools"),enabled=ready)
                 use r13_strip_button("기록","record",Show("r13_records"),enabled=ready,last=True)
