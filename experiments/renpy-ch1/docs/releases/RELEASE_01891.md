@@ -79,6 +79,19 @@
 - 보이는 조건은 수레와 같다(`cart_left`). 제단 왼쪽 소나무 가지에 보인다. 저녁에는 수레처럼 같은 그림에 저녁 색이 덮인다.
 - 다른 배경은 바꾸지 않았다.
 
+## 저장 호환 오류 수정 (0.18.89부터)
+
+- 증상: 게임 안에서 저장한 슬롯을 불러오면 "현재 버전과 호환되지 않음"이 떠서 이어 할 수 없었다. 브라우저 검사(`qa_fullbody.py`)에서 발견했다.
+- 원인
+  - 새 게임의 화면 판(`visual_revision`)은 얼굴 그림이 정확히 43장일 때만 `pixel-b-front-v3`가 됐다.
+  - 0.18.89에서 얼굴 그림이 56장이 되면서 모든 새 게임이 `pixel-b-acting-v2`로 기록됐다.
+  - 저장 화면은 `pixel-b-front-v3`만 받는다.
+- 고침
+  - 조건을 "43장 이상"으로 바꿨다(`room13_week2_rules.rpy`).
+  - 0.18.89~0.18.90에서 만든 저장(`pixel-b-acting-v2`, 같은 이야기 판)도 받는다. 불러올 때 기존 이전 경로가 화면 판을 옮긴다(`room13_save_ui.rpy`).
+  - 단위 테스트를 추가했다.
+- 브라우저 검사 도구(`dev/webqa.py`)의 저장·불러오기는 0.18.69에 바뀐 '더보기' 메뉴를 따르도록 고쳤다.
+
 ## 검사
 
 - `dev/check.sh`: 단위 테스트(새 `test_expression_acting.py` 포함)와 lint 통과.
@@ -88,5 +101,6 @@
     - 머리 위 여백이 116픽셀 이상이라 귀가 잘리지 않는다.
     - 표정 사이에 테두리 변화가 없다.
   - `o46_ropes`: 제단 아침과 저녁.
-  - 그 밖의 대화 전신 화면 테스트와 기존 회귀 테스트.
+  - 통과: `fullbody_dialogue`, `fullbody_tuned`, `fullbody_line_emotions`, `redesign_dialogue`, `redesign_world`, `ep_art_tour`, `newgame`, `carriage_skip`, `gate_documents`, `screen_choice_guard`, `story_scenes`, `new_places`.
+  - `wide_saveload`는 7일째 저녁 식당으로 옮기는 단계에서 시간 초과로 실패한다. 0.18.90 main 원본에서도 같은 자리에서 실패한다(이번 변경과 무관).
 - 캡처 모음: `reports/expression-acting-20261016/`
