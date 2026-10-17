@@ -149,7 +149,7 @@ screen r13_reference_record_shell(title):
 screen r13_reference_record_categories(owner,current,present=False,archive=False):
     vbox:
         xpos 66 ypos 128 spacing 10
-        for key,title in (("all","자료"),("people","인물"),("dialogue","대화")):
+        for key,title in (("all","자료"),("people","인물"),("relations","관계도"),("dialogue","대화")):
             if not present or key=="all":
                 button:
                     style "r13_paper_tab_button" xsize 176 ysize 56
@@ -157,7 +157,7 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
                     action [Function(r13_record_select,owner,"category" if owner=="r13_book" else "tab",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
                     hbox:
                         xalign .5 yalign .5 spacing 10
-                        add R13AntiqueIcon("record" if key=="all" else key,size=24) yalign .5
+                        add R13AntiqueIcon("record" if key=="all" else ("people" if key=="relations" else key),size=24) yalign .5
                         text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
     if not present:
         vbox:
@@ -255,6 +255,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default page=0
     default archive=False
     default order="recent"
+    default rel_sel=None
+    default rel_filter="all"
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab=="all":
@@ -288,6 +290,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
             textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page>0 action SetScreenVariable("page",actual_page-1)
             text ("%d / %d"%(actual_page+1,r13_record_pages(people))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
             textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 42 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
+    elif tab=="relations":
+        use r13_relations_content(_scope,rel_sel,rel_filter)
     elif tab=="notes":
         use r13_learning_notes_content(note_focus)
     elif tab=="calendar":

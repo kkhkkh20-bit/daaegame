@@ -11595,3 +11595,26 @@ testcase story_scenes:
         store.room13["flags"]=list(store.room13["flags"])+["ttadak_dead","ttadak_witness"]
     assert eval (r13_debate_judge("C1",[st["id"] for st in r13_debate_statements("C1") if "H7" in st.get("accept",[])][0],"H7")[1][0][0]=="resident_tok")
     $ open("qa_result.txt","w").write("story scenes + continuity ok")
+
+testcase relations_tab:
+    # 0.18.91 수첩 관계도: 숨진 사람(회색·X), 구한 사람(초록), 아직 못 만난 엄마, 알게 된 관계만 선.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=10,period=0,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",evidence=["N02","N03","N05","L00","W2"]),("lodging","entry_corrected","st_ttadak_boards"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    python:
+        r13_edit(encounters=[dict(person=p,day=2,period=0,place="square") for p in ("granny","nabi","resident_tosil","resident_lamplighter","resident_tok","resident_ttadak","resident_piko","resident_nero","neoul","resident_teacher","resident_bori")])
+        r13_edit(day=3);r13_flag("piko_survived")
+        r13_edit(day=8,period=3);r13_flag("chorong_dead")
+        r13_edit(day=9,period=0);r13_flag("ttadak_dead")
+        r13_edit(day=10)
+    run Show("r13_records",initial_tab="relations")
+    pause 1.5
+    screenshot "relations.png"
+    assert eval (r13_rel_status("resident_lamplighter")==("dead","8일 밤 숨짐") and r13_rel_status("resident_piko")[0]=="saved" and r13_rel_status("mom")[0]=="missing")
+    assert eval (("granny","neoul","suspect","편지를 가져오라 부탁") in r13_rel_edges() and not any(e[3]=="할아버지와 손녀" for e in r13_rel_edges()))
+    click pos (870,330)
+    pause 1.0
+    screenshot "relations_pick.png"
+    $ r13_qa_note("relations ok")

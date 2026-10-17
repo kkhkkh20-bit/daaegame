@@ -266,6 +266,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:190` |  |
 
+## `r13_flag` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
+| 2 | 166 | `systems/room13_relations.rpy:18` |  |
+
 ## `r13_grant` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
