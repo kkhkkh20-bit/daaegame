@@ -57,72 +57,77 @@
       [
         890,
         620,
-        238
+        235
       ],
       [
         1080,
         540,
-        216
+        204
       ],
       [
         1260,
         610,
-        245
+        231
       ]
     ],
     "slots": [
       [
         90,
         680,
-        260,
+        257,
         "waiting"
       ],
       [
         485,
         706,
-        265,
+        267,
         "waiting"
       ],
       [
         890,
         620,
-        238,
+        235,
         "waiting"
       ],
       [
         1080,
         540,
-        216,
+        204,
         "waiting"
       ],
       [
         1260,
         610,
-        245,
+        231,
         "waiting"
       ],
       [
         1090,
         700,
-        270,
+        265,
         "waiting"
       ]
     ],
     "positions": {
       "granny": [
-        1420,
-        624,
-        280
+        1610,
+        492,
+        186
       ],
       "resident_tori": [
         820,
         690,
-        250
+        261
       ],
       "resident_ttadak": [
         1043,
         472,
         196
+      ],
+      "resident_nubi": [
+        420,
+        655,
+        248
       ]
     },
     "work": {},
@@ -195,7 +200,8 @@
     "pinned": [
       "granny",
       "resident_tori",
-      "resident_ttadak"
+      "resident_ttadak",
+      "resident_nubi"
     ],
     "poses": {
       "resident_tori": "activity",
@@ -222,7 +228,50 @@
       "resident_owlgp": "living_notebook",
       "resident_tosil": "living_thermos",
       "resident_guseul": "living_stamp"
-    }
+    },
+    "perspective": [
+      0.3786,
+      0.0
+    ],
+    "staff_occlusion": {
+      "granny": [
+        [
+          1395,
+          402
+        ],
+        [
+          1440,
+          392
+        ],
+        [
+          1560,
+          395
+        ],
+        [
+          1700,
+          400
+        ],
+        [
+          1840,
+          410
+        ],
+        [
+          1862,
+          420
+        ],
+        [
+          1862,
+          700
+        ],
+        [
+          1395,
+          545
+        ]
+      ]
+    },
+    "perspective_skip": [
+      "resident_ttadak"
+    ]
   },
   "school": {
     "revision": 2,
@@ -270,111 +319,117 @@
       [
         750,
         612,
-        262
+        231
       ],
       [
         1240,
         620,
-        252
+        235
       ],
       [
         1625,
         676,
-        264
+        260
       ]
     ],
     "slots": [
       [
         120,
         525,
-        235,
+        192,
         "class_back"
       ],
       [
         309,
         535,
-        240,
+        196,
         "class_back"
       ],
       [
         510,
         540,
-        240,
+        199,
         "class_back"
       ],
       [
         120,
         695,
-        260,
+        269,
         "waiting"
       ],
       [
         397,
         684,
-        263,
+        264,
         "waiting"
       ],
       [
         615,
         697,
-        272,
+        270,
         "waiting"
       ],
       [
         776,
         600,
-        250,
+        226,
         "waiting"
       ],
       [
         1150,
         520,
-        208,
+        190,
         "cloak_back"
       ],
       [
         1365,
         510,
-        205,
+        185,
         "cloak_back"
       ],
       [
         1740,
         585,
-        233,
+        219,
         "waiting"
       ],
       [
         1110,
         691,
-        258,
+        267,
         "waiting"
       ],
       [
         1370,
         690,
-        269,
+        266,
         "waiting"
       ],
       [
         1660,
         688,
-        277,
+        266,
         "waiting"
       ]
     ],
     "positions": {
       "resident_teacher": [
-        760,
-        610,
+        330,
+        452,
+        159
+      ],
+      "resident_nubi": [
+        180,
+        690,
         266
       ]
     },
     "pinned": [
-      "resident_teacher"
+      "resident_teacher",
+      "resident_nubi"
     ],
     "poses": {
-      "resident_teacher": "activity"
+      "resident_teacher": "neutral"
     },
     "work": {},
     "zones": {
@@ -482,6 +537,34 @@
     "reviewed": true,
     "slot_actions": {
       "resident_seori": "living_notes"
+    },
+    "perspective": [
+      0.4517,
+      -45.2
+    ],
+    "staff_occlusion": {
+      "resident_teacher": [
+        [
+          185,
+          412
+        ],
+        [
+          450,
+          408
+        ],
+        [
+          470,
+          440
+        ],
+        [
+          470,
+          570
+        ],
+        [
+          185,
+          570
+        ]
+      ]
     }
   },
   "workshop": {
@@ -542,36 +625,36 @@
       [
         1120,
         705,
-        275
+        279
       ],
       [
         1400,
         585,
-        230
+        231
       ],
       [
         1700,
         705,
-        280
+        279
       ]
     ],
     "slots": [
       [
         90,
         660,
-        270,
+        261,
         "floor"
       ],
       [
         270,
         548,
-        226,
+        217,
         "doorfloor"
       ],
       [
         1200,
         570,
-        220,
+        226,
         "floor"
       ],
       [
@@ -583,25 +666,25 @@
       [
         1120,
         705,
-        275,
+        279,
         "floor"
       ],
       [
         1370,
         710,
-        280,
+        281,
         "floor"
       ],
       [
         1700,
         705,
-        280,
+        279,
         "floor"
       ],
       [
         1750,
         584,
-        229,
+        231,
         "floor"
       ]
     ],
@@ -609,7 +692,12 @@
       "buri": [
         130,
         650,
-        250
+        257
+      ],
+      "resident_tok": [
+        1380,
+        470,
+        186
       ]
     },
     "work": {
@@ -699,6 +787,33 @@
     },
     "slot_actions": {
       "resident_ubak": "living_measure"
+    },
+    "perspective": [
+      0.3957,
+      0.0
+    ],
+    "pinned": [
+      "resident_tok"
+    ],
+    "staff_occlusion": {
+      "resident_tok": [
+        [
+          1250,
+          426
+        ],
+        [
+          1505,
+          426
+        ],
+        [
+          1505,
+          570
+        ],
+        [
+          1250,
+          570
+        ]
+      ]
     }
   },
   "square": {
@@ -753,66 +868,66 @@
       [
         700,
         580,
-        225
+        217
       ],
       [
         1220,
         650,
-        250
+        246
       ],
       [
         1660,
         680,
-        260
+        259
       ]
     ],
     "slots": [
       [
         245,
         676,
-        255,
+        257,
         "floor"
       ],
       [
         475,
         617,
-        234,
+        232,
         "floor"
       ],
       [
         710,
         580,
-        220,
+        217,
         "floor"
       ],
       [
         950,
         691,
-        265,
+        263,
         "floor"
       ],
       [
         1220,
         667,
-        252,
+        253,
         "floor"
       ],
       [
         1470,
         640,
-        243,
+        242,
         "floor"
       ],
       [
         1700,
         707,
-        269,
+        270,
         "floor"
       ],
       [
         1510,
         714,
-        275,
+        273,
         "floor"
       ],
       [
@@ -824,9 +939,24 @@
     ],
     "positions": {
       "doto": [
-        905,
-        620,
-        245
+        150,
+        525,
+        194
+      ],
+      "resident_dalgeurak": [
+        470,
+        540,
+        200
+      ],
+      "resident_piko": [
+        965,
+        585,
+        219
+      ],
+      "resident_hyeoni": [
+        1310,
+        615,
+        232
       ]
     },
     "work": {},
@@ -876,13 +1006,16 @@
     "reviewed": true,
     "pinned": [
       "doto",
-      "resident_tori"
+      "resident_tori",
+      "resident_dalgeurak",
+      "resident_piko",
+      "resident_hyeoni"
     ],
     "seats": {
       "resident_yeoni:living_mend": [
         1765,
         566,
-        244
+        211
       ]
     },
     "pose_positions": {
@@ -890,6 +1023,97 @@
         1700,
         668
       ]
+    },
+    "perspective": [
+      0.4172,
+      -25.0
+    ],
+    "staff_occlusion": {
+      "doto": [
+        [
+          0,
+          468
+        ],
+        [
+          90,
+          462
+        ],
+        [
+          280,
+          460
+        ],
+        [
+          290,
+          480
+        ],
+        [
+          345,
+          520
+        ],
+        [
+          345,
+          600
+        ],
+        [
+          0,
+          600
+        ]
+      ],
+      "resident_dalgeurak": [
+        [
+          330,
+          472
+        ],
+        [
+          420,
+          465
+        ],
+        [
+          560,
+          480
+        ],
+        [
+          600,
+          505
+        ],
+        [
+          600,
+          565
+        ],
+        [
+          330,
+          565
+        ]
+      ],
+      "resident_piko": [
+        [
+          870,
+          545
+        ],
+        [
+          900,
+          520
+        ],
+        [
+          1000,
+          515
+        ],
+        [
+          1060,
+          540
+        ],
+        [
+          1065,
+          605
+        ],
+        [
+          870,
+          605
+        ]
+      ]
+    },
+    "poses": {
+      "doto": "action_1"
     }
   },
   "gate": {
@@ -968,34 +1192,34 @@
       [
         600,
         620,
-        240
+        211
       ],
       [
         1050,
         610,
-        230
+        207
       ],
       [
         1250,
         650,
-        250
+        224
       ]
     ],
     "positions": {
       "karo": [
         640,
         655,
-        230
+        227
       ],
       "guard": [
         1270,
         602,
-        255
+        204
       ],
       "neoul": [
         1070,
-        610,
-        260
+        620,
+        211
       ],
       "daram": [
         760,
@@ -1007,49 +1231,49 @@
       [
         920,
         620,
-        230,
+        211,
         "floor"
       ],
       [
         1110,
         651,
-        245,
+        225,
         "floor"
       ],
       [
         780,
         652,
-        230,
+        225,
         "floor"
       ],
       [
         1780,
         635,
-        230,
+        218,
         "floor"
       ],
       [
         1030,
         570,
-        200,
+        190,
         "floor"
       ],
       [
         1250,
         690,
-        245,
+        242,
         "floor"
       ],
       [
         390,
         690,
-        240,
+        242,
         "floor"
       ],
       [
         720,
         700,
-        230,
+        246,
         "floor"
       ]
     ],
@@ -1100,7 +1324,8 @@
     "pinned": [
       "karo",
       "guard",
-      "daram"
+      "daram",
+      "neoul"
     ],
     "provenance": {
       "source_commit": "ac8760b38a5d75f2a0ef26f914e7ecb4faf7503f",
@@ -1119,7 +1344,11 @@
         560,
         615
       ]
-    }
+    },
+    "perspective": [
+      0.4316,
+      -56.1
+    ]
   },
   "clinic": {
     "revision": 1,
@@ -1163,56 +1392,61 @@
       [
         1350,
         647,
-        262
+        227
       ],
       [
         1716,
         652,
-        244
+        229
       ],
       [
         1088,
         689,
-        234
+        245
       ]
     ],
     "slots": [
       [
         1359,
         647,
-        262,
+        227,
         "floor"
       ],
       [
         1697,
         652,
-        244,
+        229,
         "floor"
       ],
       [
         1125,
         684,
-        239,
+        243,
         "floor"
       ],
       [
         272,
         656,
-        244,
+        231,
         "floor"
       ],
       [
         1538,
         689,
-        253,
+        245,
         "floor"
       ]
     ],
     "positions": {
       "resident_seori": [
-        1369,
-        647,
-        267
+        960,
+        545,
+        182
+      ],
+      "resident_piko": [
+        1190,
+        560,
+        189
       ]
     },
     "critical": [
@@ -1240,7 +1474,47 @@
       "afternoon": "assets/room13-pixel-ready-clinic0177-afternoon.webp",
       "evening": "assets/room13-pixel-ready-clinic0177-evening.webp"
     },
-    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
+    "perspective": [
+      0.4386,
+      -57.0
+    ],
+    "pinned": [
+      "resident_seori",
+      "resident_piko"
+    ],
+    "staff_occlusion": {
+      "resident_seori": [
+        [
+          420,
+          500
+        ],
+        [
+          500,
+          482
+        ],
+        [
+          700,
+          474
+        ],
+        [
+          1090,
+          478
+        ],
+        [
+          1100,
+          520
+        ],
+        [
+          1100,
+          720
+        ],
+        [
+          420,
+          720
+        ]
+      ]
+    }
   },
   "store": {
     "revision": 3,
@@ -1331,7 +1605,7 @@
       [
         1519,
         699,
-        362,
+        361,
         "floor"
       ],
       [
@@ -1349,9 +1623,24 @@
     ],
     "positions": {
       "resident_eunho": [
-        1116,
-        647,
-        324
+        365,
+        585,
+        279
+      ],
+      "resident_guseul": [
+        795,
+        568,
+        267
+      ],
+      "resident_mungchi": [
+        1190,
+        530,
+        240
+      ],
+      "resident_siluk": [
+        1470,
+        640,
+        319
       ]
     },
     "critical": [
@@ -1386,12 +1675,85 @@
       "evening": "assets/room13-pixel-ready-store0177-evening.webp"
     },
     "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
-    "standing_height_reference": 271,
-    "standing_heights": {
-      "resident_mungchi": 245,
-      "resident_madam": 271,
-      "resident_eunho": 269,
-      "resident_siluk": 260
+    "perspective": [
+      0.7183,
+      -140.8
+    ],
+    "pinned": [
+      "resident_eunho",
+      "resident_guseul",
+      "resident_mungchi",
+      "resident_siluk"
+    ],
+    "staff_occlusion": {
+      "resident_eunho": [
+        [
+          275,
+          505
+        ],
+        [
+          420,
+          490
+        ],
+        [
+          560,
+          472
+        ],
+        [
+          700,
+          455
+        ],
+        [
+          880,
+          440
+        ],
+        [
+          890,
+          620
+        ],
+        [
+          880,
+          720
+        ],
+        [
+          275,
+          720
+        ]
+      ],
+      "resident_guseul": [
+        [
+          275,
+          505
+        ],
+        [
+          420,
+          490
+        ],
+        [
+          560,
+          472
+        ],
+        [
+          700,
+          455
+        ],
+        [
+          880,
+          440
+        ],
+        [
+          890,
+          620
+        ],
+        [
+          880,
+          720
+        ],
+        [
+          275,
+          720
+        ]
+      ]
     }
   },
   "greenhouse": {
@@ -1436,48 +1798,48 @@
       [
         1641,
         661,
-        262
+        233
       ],
       [
         323,
         656,
-        239
+        231
       ],
       [
         1359,
         698,
-        253
+        249
       ]
     ],
     "slots": [
       [
         1650,
         661,
-        262,
+        233,
         "floor"
       ],
       [
         328,
         656,
-        239,
+        231,
         "floor"
       ],
       [
         1369,
         696,
-        253,
+        248,
         "floor"
       ],
       [
         131,
         647,
-        230,
+        227,
         "floor"
       ],
       [
         1828,
         689,
-        216,
+        245,
         "floor"
       ]
     ],
@@ -1485,7 +1847,7 @@
       "mom": [
         1650,
         661,
-        262
+        233
       ]
     },
     "critical": [
@@ -1513,7 +1875,11 @@
       "afternoon": "assets/room13-pixel-ready-greenhouse0177-afternoon.webp",
       "evening": "assets/room13-pixel-ready-greenhouse0177-evening.webp"
     },
-    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
+    "perspective": [
+      0.4386,
+      -57.0
+    ]
   },
   "facility": {
     "revision": 1,
@@ -1551,17 +1917,17 @@
       [
         656,
         666,
-        258
+        257
       ],
       [
         1716,
         666,
-        258
+        257
       ],
       [
         919,
         703,
-        258
+        271
       ]
     ],
     "slots": [
@@ -1574,33 +1940,38 @@
       [
         1697,
         666,
-        253,
+        257,
         "floor"
       ],
       [
         1003,
         701,
-        258,
+        270,
         "floor"
       ],
       [
         394,
         680,
-        244,
+        262,
         "floor"
       ],
       [
         1434,
         698,
-        244,
+        269,
         "floor"
       ]
     ],
     "positions": {
       "neoul": [
-        638,
-        668,
-        258
+        1250,
+        500,
+        193
+      ],
+      "resident_nubi": [
+        400,
+        680,
+        262
       ]
     },
     "critical": [
@@ -1634,7 +2005,43 @@
       "afternoon": "assets/room13-pixel-ready-facility0177-afternoon.webp",
       "evening": "assets/room13-pixel-ready-facility0177-evening.webp"
     },
-    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
+    "perspective": [
+      0.3857,
+      0.0
+    ],
+    "pinned": [
+      "neoul",
+      "resident_nubi"
+    ],
+    "staff_occlusion": {
+      "neoul": [
+        [
+          720,
+          432
+        ],
+        [
+          800,
+          425
+        ],
+        [
+          1450,
+          430
+        ],
+        [
+          1462,
+          445
+        ],
+        [
+          1462,
+          612
+        ],
+        [
+          720,
+          612
+        ]
+      ]
+    }
   },
   "altar": {
     "revision": 1,
@@ -1684,30 +2091,30 @@
       [
         788,
         617,
-        248
+        236
       ],
       [
         1050,
         653,
-        262
+        250
       ],
       [
         534,
         661,
-        258
+        253
       ]
     ],
     "slots": [
       [
         806,
         628,
-        248,
+        240,
         "floor"
       ],
       [
         1069,
         666,
-        253,
+        255,
         "floor"
       ],
       [
@@ -1719,19 +2126,19 @@
       [
         338,
         553,
-        211,
+        212,
         "floor"
       ],
       [
         947,
         483,
-        192,
+        185,
         "floor"
       ],
       [
         1247,
         694,
-        253,
+        266,
         "floor"
       ]
     ],
@@ -1761,7 +2168,11 @@
       "afternoon": "assets/room13-pixel-ready-altar0177-afternoon.webp",
       "evening": "assets/room13-pixel-ready-altar0177-evening.webp"
     },
-    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3"
+    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
+    "perspective": [
+      0.3829,
+      0.0
+    ]
   },
   "kitchen": {
     "width": 2160,
@@ -1851,25 +2262,25 @@
       [
         176,
         684,
-        255
+        283
       ],
       [
         475,
         672,
-        250
+        278
       ]
     ],
     "slots": [
       [
         176,
         684,
-        255,
+        283,
         "waiting"
       ],
       [
         475,
         672,
-        250,
+        278,
         "waiting"
       ]
     ],
@@ -1877,9 +2288,91 @@
     "ignore_legacy_positions": true,
     "capacity": 2,
     "perspective": [
-      0.417,
-      -30.0
-    ]
+      0.4143,
+      0.0
+    ],
+    "positions": {
+      "nabi": [
+        700,
+        655,
+        271
+      ]
+    },
+    "pinned": [
+      "nabi"
+    ],
+    "staff_occlusion": {
+      "nabi": [
+        [
+          600,
+          522
+        ],
+        [
+          700,
+          515
+        ],
+        [
+          760,
+          500
+        ],
+        [
+          820,
+          482
+        ],
+        [
+          860,
+          458
+        ],
+        [
+          905,
+          447
+        ],
+        [
+          1000,
+          462
+        ],
+        [
+          1025,
+          470
+        ],
+        [
+          1180,
+          470
+        ],
+        [
+          1200,
+          452
+        ],
+        [
+          1295,
+          460
+        ],
+        [
+          1300,
+          472
+        ],
+        [
+          1500,
+          482
+        ],
+        [
+          1550,
+          520
+        ],
+        [
+          1600,
+          600
+        ],
+        [
+          1600,
+          720
+        ],
+        [
+          600,
+          720
+        ]
+      ]
+    }
   },
   "dining": {
     "width": 2160,
@@ -1951,36 +2444,36 @@
       [
         325,
         655,
-        260
+        244
       ],
       [
         540,
         680,
-        260
+        256
       ],
       [
         135,
         690,
-        265
+        260
       ]
     ],
     "slots": [
       [
         325,
         655,
-        260,
+        244,
         "waiting"
       ],
       [
         540,
         680,
-        260,
+        256,
         "waiting"
       ],
       [
         135,
         690,
-        265,
+        260,
         "waiting"
       ]
     ],
@@ -2002,11 +2495,99 @@
       ]
     ],
     "perspective": [
-      0.115,
-      183.8
+      0.4649,
+      -60.4
     ],
     "slot_actions": {
       "resident_owlgp": "living_notebook"
+    },
+    "positions": {
+      "nabi": [
+        1080,
+        520,
+        181
+      ],
+      "resident_tok": [
+        990,
+        452,
+        150
+      ],
+      "resident_dalgeurak": [
+        1965,
+        440,
+        144
+      ],
+      "resident_hyeoni": [
+        540,
+        682,
+        257
+      ],
+      "resident_owlgp": [
+        230,
+        662,
+        247
+      ],
+      "resident_mulgyeol": [
+        360,
+        640,
+        237
+      ]
+    },
+    "pinned": [
+      "nabi",
+      "resident_tok",
+      "resident_dalgeurak",
+      "resident_hyeoni"
+    ],
+    "staff_occlusion": {
+      "nabi": [
+        [
+          950,
+          500
+        ],
+        [
+          1100,
+          488
+        ],
+        [
+          1400,
+          470
+        ],
+        [
+          1700,
+          468
+        ],
+        [
+          2160,
+          480
+        ],
+        [
+          2160,
+          720
+        ],
+        [
+          950,
+          720
+        ]
+      ],
+      "resident_dalgeurak": [
+        [
+          1855,
+          356
+        ],
+        [
+          2085,
+          356
+        ],
+        [
+          2085,
+          445
+        ],
+        [
+          1855,
+          445
+        ]
+      ]
     }
   },
   "passage": {
@@ -2706,7 +3287,6 @@
     "slot_actions": {
       "resident_momo": "living_lampnumber",
       "resident_librarian": "living_bookpaper",
-      "resident_sling": "activity",
       "resident_ppul": "activity",
       "resident_eunho": "living_prices",
       "seryeon": "action_1"
@@ -2714,6 +3294,107 @@
     "old_scene_slot_actions": {
       "resident_librarian": "living_bookpaper",
       "resident_momo": "living_lampnumber"
+    },
+    "positions": {
+      "seryeon": [
+        1270,
+        503,
+        154
+      ],
+      "resident_sling": [
+        1460,
+        499,
+        153
+      ],
+      "resident_librarian": [
+        560,
+        600,
+        193
+      ],
+      "resident_jongjong": [
+        1040,
+        640,
+        209
+      ]
+    },
+    "pinned": [
+      "seryeon",
+      "resident_sling",
+      "resident_librarian",
+      "resident_jongjong"
+    ],
+    "staff_occlusion": {
+      "seryeon": [
+        [
+          1100,
+          560
+        ],
+        [
+          1135,
+          515
+        ],
+        [
+          1500,
+          500
+        ],
+        [
+          1600,
+          492
+        ],
+        [
+          1700,
+          480
+        ],
+        [
+          2160,
+          470
+        ],
+        [
+          2160,
+          720
+        ],
+        [
+          1100,
+          720
+        ]
+      ],
+      "resident_sling": [
+        [
+          1100,
+          560
+        ],
+        [
+          1135,
+          515
+        ],
+        [
+          1500,
+          500
+        ],
+        [
+          1600,
+          492
+        ],
+        [
+          1700,
+          480
+        ],
+        [
+          2160,
+          470
+        ],
+        [
+          2160,
+          720
+        ],
+        [
+          1100,
+          720
+        ]
+      ]
+    },
+    "poses": {
+      "resident_sling": "neutral"
     }
   },
   "river": {
@@ -2820,6 +3501,22 @@
     "perspective": [
       0.808,
       -319.0
+    ],
+    "positions": {
+      "resident_kkwak": [
+        260,
+        705,
+        251
+      ],
+      "resident_mulgyeol": [
+        520,
+        712,
+        256
+      ]
+    },
+    "pinned": [
+      "resident_kkwak",
+      "resident_mulgyeol"
     ]
   },
   "forest": {
@@ -2920,6 +3617,16 @@
     "perspective": [
       0.667,
       -216.3
+    ],
+    "positions": {
+      "resident_kalbaram": [
+        1450,
+        706,
+        255
+      ]
+    },
+    "pinned": [
+      "resident_kalbaram"
     ]
   },
   "market": {
@@ -3094,11 +3801,357 @@
     ],
     "occlusion": [],
     "ignore_legacy_positions": true,
-    "capacity": 4,
+    "capacity": 8,
     "perspective": [
       0.468,
       -76.5
-    ]
+    ],
+    "positions": {
+      "resident_solbang": [
+        705,
+        505,
+        160
+      ],
+      "resident_eunho": [
+        1262,
+        500,
+        158
+      ],
+      "resident_guseul": [
+        1525,
+        500,
+        158
+      ],
+      "resident_nubi": [
+        1772,
+        497,
+        156
+      ],
+      "resident_yeoni": [
+        1915,
+        497,
+        156
+      ],
+      "resident_dalgeurak": [
+        2040,
+        500,
+        158
+      ],
+      "resident_mungchi": [
+        1570,
+        668,
+        236
+      ],
+      "resident_hyeoni": [
+        1190,
+        700,
+        251
+      ]
+    },
+    "pinned": [
+      "resident_solbang",
+      "resident_eunho",
+      "resident_guseul",
+      "resident_nubi",
+      "resident_yeoni",
+      "resident_dalgeurak",
+      "resident_mungchi",
+      "resident_hyeoni"
+    ],
+    "staff_occlusion": {
+      "resident_solbang": [
+        [
+          560,
+          452
+        ],
+        [
+          600,
+          440
+        ],
+        [
+          650,
+          432
+        ],
+        [
+          700,
+          437
+        ],
+        [
+          755,
+          445
+        ],
+        [
+          765,
+          425
+        ],
+        [
+          800,
+          410
+        ],
+        [
+          840,
+          412
+        ],
+        [
+          860,
+          422
+        ],
+        [
+          880,
+          413
+        ],
+        [
+          930,
+          418
+        ],
+        [
+          950,
+          470
+        ],
+        [
+          950,
+          610
+        ],
+        [
+          560,
+          610
+        ]
+      ],
+      "resident_eunho": [
+        [
+          1225,
+          448
+        ],
+        [
+          1265,
+          430
+        ],
+        [
+          1270,
+          415
+        ],
+        [
+          1345,
+          415
+        ],
+        [
+          1352,
+          438
+        ],
+        [
+          1360,
+          423
+        ],
+        [
+          1435,
+          420
+        ],
+        [
+          1440,
+          440
+        ],
+        [
+          1490,
+          440
+        ],
+        [
+          1500,
+          420
+        ],
+        [
+          1550,
+          423
+        ],
+        [
+          1565,
+          448
+        ],
+        [
+          1565,
+          525
+        ],
+        [
+          1225,
+          525
+        ]
+      ],
+      "resident_guseul": [
+        [
+          1225,
+          448
+        ],
+        [
+          1265,
+          430
+        ],
+        [
+          1270,
+          415
+        ],
+        [
+          1345,
+          415
+        ],
+        [
+          1352,
+          438
+        ],
+        [
+          1360,
+          423
+        ],
+        [
+          1435,
+          420
+        ],
+        [
+          1440,
+          440
+        ],
+        [
+          1490,
+          440
+        ],
+        [
+          1500,
+          420
+        ],
+        [
+          1550,
+          423
+        ],
+        [
+          1565,
+          448
+        ],
+        [
+          1565,
+          525
+        ],
+        [
+          1225,
+          525
+        ]
+      ],
+      "resident_nubi": [
+        [
+          1715,
+          455
+        ],
+        [
+          1735,
+          425
+        ],
+        [
+          1830,
+          418
+        ],
+        [
+          1890,
+          425
+        ],
+        [
+          1940,
+          420
+        ],
+        [
+          1960,
+          440
+        ],
+        [
+          1958,
+          480
+        ],
+        [
+          2012,
+          485
+        ],
+        [
+          2015,
+          560
+        ],
+        [
+          1715,
+          560
+        ]
+      ],
+      "resident_yeoni": [
+        [
+          1715,
+          455
+        ],
+        [
+          1735,
+          425
+        ],
+        [
+          1830,
+          418
+        ],
+        [
+          1890,
+          425
+        ],
+        [
+          1940,
+          420
+        ],
+        [
+          1960,
+          440
+        ],
+        [
+          1958,
+          480
+        ],
+        [
+          2012,
+          485
+        ],
+        [
+          2015,
+          560
+        ],
+        [
+          1715,
+          560
+        ]
+      ],
+      "resident_dalgeurak": [
+        [
+          2010,
+          505
+        ],
+        [
+          2035,
+          452
+        ],
+        [
+          2075,
+          432
+        ],
+        [
+          2120,
+          440
+        ],
+        [
+          2160,
+          440
+        ],
+        [
+          2160,
+          600
+        ],
+        [
+          2010,
+          600
+        ]
+      ]
+    },
+    "poses": {
+      "resident_eunho": "living_prices",
+      "resident_guseul": "living_stamp"
+    }
   },
   "ancient": {
     "width": 2160,

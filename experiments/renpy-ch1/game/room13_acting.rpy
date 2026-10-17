@@ -340,6 +340,11 @@ init 59 python:
         # Permission changes the available conversation, not who is standing
         # at this place at the same time. Entry uses the ordinary schedule too.
         people=r13_visible_people()
+        # 2026-10-17: people with a fixed spot (counters, stalls) are placed first, so the free
+        # floor slots chosen afterwards keep their faces clear.
+        if layout.get("pinned"):
+            fixed=layout["pinned"]
+            people=[p for p in people if p in fixed]+[p for p in people if p not in fixed]
         state=store.room13
         cache_key=(entry,state["day"],period,location,world_width,layout.get("revision",0),tuple(people),
             tuple(sorted(state.get("flags",[]))),state.get("case_state"),
@@ -352,7 +357,9 @@ init 59 python:
             # The post has no free floor beyond its reserved chair. Visitors
             # listen standing behind the counter; their floor activities are
             # shown at other scheduled locations, never on this tabletop.
-            if location=="post" and person!="seryeon":pose="neutral"
+            # 2026-10-17: on the wide post picture 슬링 works behind the counter like 세련
+            # ("staff_occlusion"); the layout names the pose drawn there.
+            if location=="post" and person!="seryeon" and person not in layout.get("staff_occlusion",{}):pose="neutral"
             # This narrow aisle has no room for the portable stools authored
             # into the visitors' activity sheets. Use their standing poses;
             # Nabi carries her own tray without snapping it to painted mugs.
@@ -402,6 +409,10 @@ init 59 python:
                 elif location in R13_STAGE_COUNTERS:occlusion=R13_STAGE_COUNTERS[location]
                 elif location=="gate":occlusion=[(949,451),(1230,451),(1230,720),(949,720)]
             if not layout and location=="post" and person!="seryeon":occlusion=R13_STAGE_COUNTERS["post"]
+            # 2026-10-17 (docs/ACTION_REQUEST_20261017.md §4): a person serving behind a counter,
+            # stall or desk at their fixed spot has their own furniture outline over the legs.
+            if layout and not work and person in layout.get("staff_occlusion",{}) and person in layout.get("positions",{}):
+                occlusion=[tuple(point) for point in layout["staff_occlusion"][person]]
             if not layout and location=="dining":occlusion=R13_STAGE_COUNTERS["dining"]
             if person=="resident_tori" and location=="square" and contact=="background_bench":
                 seat=spec["seat"]

@@ -163,7 +163,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
 | 3 | 124 | `systems/room13_event_offers.rpy:60` | _r13_ma_stage |
 | 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
-| 5 | 126 | `systems/room13_perspective.rpy:32` |  |
+| 5 | 126 | `systems/room13_perspective.rpy:58` |  |
 
 ## `r13_next_day` (4층)
 
