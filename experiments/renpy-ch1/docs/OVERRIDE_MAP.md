@@ -339,7 +339,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 68 | `room13_notebook.rpy:38` | _r13_learning_record_entries |
+| 1 | 68 | `room13_notebook.rpy:65` | _r13_learning_record_entries |
 | 2 | 98 | `systems/room13_learning.rpy:108` |  |
 
 ## `r13_resident_where` (2층)
@@ -362,6 +362,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 91 | `systems/room13_livelihood_model.rpy:32` | _r13_b3_shop_price |
 | 2 | 107 | `systems/room13_bundle3.rpy:50` |  |
+
+## `r13_sound_scene_music` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 150 | `systems/room13_sound.rpy:116` | _r13_contrast_scene_music |
+| 2 | 163 | `systems/room13_scene_contrast.rpy:25` |  |
 
 ## `r13_visible_people` (2층)
 
@@ -395,6 +402,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:95` | _r13_offer_edge_label |
+| 1 | 58 | `room13_world_camera.rpy:96` | _r13_offer_edge_label |
 | 2 | 124 | `systems/room13_event_offers.rpy:92` |  |
 

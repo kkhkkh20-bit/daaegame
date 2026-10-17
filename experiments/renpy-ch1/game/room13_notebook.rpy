@@ -1,5 +1,7 @@
 default r13_present_priority = None
 default r13_book_views = {}
+default r13_record_scrolls = {}
+default r13_records_view = {}
 
 # Record categories are explicit: a testimony is not inferred from its title.
 init 68 python:
@@ -25,6 +27,31 @@ init 68 python:
         views=dict(getattr(store,"r13_book_views",{}))
         views[context]=dict(detail=detail,page=page)
         store.r13_book_views=views
+
+    def r13_records_remember(tab,detail,person,page,archive):
+        store.r13_records_view=dict(tab=tab,detail=detail,person=person,page=page,archive=archive)
+
+    class R13RecordScrollChanged:
+        def __init__(self,key):
+            self.key=key
+        def __call__(self,value):
+            # Store numbers only, never viewports or adjustments in a save.
+            value=max(0,int(value))
+            offsets=dict(getattr(store,"r13_record_scrolls",{}))
+            if offsets.get(self.key,0)!=value:
+                offsets[self.key]=value
+                store.r13_record_scrolls=offsets
+                renpy.retain_after_load()
+
+    def r13_record_scroll_key(context,detail,archive=False):
+        return (context,detail,bool(archive),bool(getattr(persistent,"room13_large_text",False)))
+
+    def r13_record_scroll_adjustment(context,detail,archive=False):
+        key=r13_record_scroll_key(context,detail,archive)
+        # The viewport replaces this provisional range with measured text height.
+        # A range of 1 would clamp the saved offset before first layout.
+        return ui.adjustment(range=100000,value=getattr(store,"r13_record_scrolls",{}).get(key,0),
+            changed=R13RecordScrollChanged(key))
 
     def r13_book_statement():
         claim=getattr(store,"r13_meeting_claim",None)
@@ -220,28 +247,32 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
     if not entries:
         text "아직 모은 자료가 없습니다." xpos 300 ypos 540 size 18 color "#625738" xsize 470 text_align .5
 
-screen r13_material_detail(detail,archive=False):
-    add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
-    if detail:
-        if not archive and r13_record_unread(detail):
-            timer .7 action Function(r13_record_mark_seen,detail)
-        $ ev=r13_catalog_record(detail)
-        add Transform(r13_record_icon(detail),xysize=(132,128),fit="contain",nearest=True) xpos 954 ypos 78
-        text ev["name"] xpos 842 ypos 218 xsize 362 text_align .5 size r13_read_size(23,28) color "#6c512a"
-        viewport:
-            area (844,266,358,274) mousewheel True draggable True scrollbars "vertical"
-            vbox:
-                spacing 12
-                if not archive and r13_catalog_transferable(detail):
-                    text "전달 가능 · 보여준 뒤 결정" size 17 color "#795714" xsize 332
-                text ev["establishes"] size r13_read_size(21,26) color "#493b30" xsize 332
-                text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_catalog_origin(detail)) size 17 color "#625738" xsize 332
-                if not archive and detail in ROOM13["evidence"]:
-                    text r13_learning_record_status(detail) size 17 color "#555943" xsize 332
-                if not archive and detail in room13.get("records",{}):
-                    text ("얻은 곳: "+room13["records"][detail]["source"]) size 17 color "#625738" xsize 332
-    else:
-        text "자료를 선택하세요." xpos 846 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
+screen r13_material_detail(detail,archive=False,view_context=("records",)):
+    for scroll_key index scroll_key in [r13_record_scroll_key(view_context,detail,archive)]:
+        $ detail_scroll=r13_record_scroll_adjustment(view_context,detail,archive)
+        add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
+        if detail:
+            if not archive and r13_record_unread(detail):
+                timer .7 action Function(r13_record_mark_seen,detail)
+            $ ev=r13_catalog_record(detail)
+            add Transform(r13_record_icon(detail),xysize=(132,128),fit="contain",nearest=True) xpos 954 ypos 78
+            text ev["name"] xpos 842 ypos 218 xsize 362 text_align .5 size r13_read_size(23,28) color "#6c512a"
+            viewport:
+                id "r13_material_scroll"
+                yadjustment detail_scroll
+                area (844,266,358,274) mousewheel True draggable True scrollbars "vertical"
+                vbox:
+                    spacing 12
+                    if not archive and r13_catalog_transferable(detail):
+                        text "전달 가능 · 보여준 뒤 결정" size 17 color "#795714" xsize 332
+                    text ev["establishes"] size r13_read_size(21,26) color "#493b30" xsize 332
+                    text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_catalog_origin(detail)) size 17 color "#625738" xsize 332
+                    if not archive and detail in ROOM13["evidence"]:
+                        text r13_learning_record_status(detail) size 17 color "#555943" xsize 332
+                    if not archive and detail in room13.get("records",{}):
+                        text ("얻은 곳: "+room13["records"][detail]["source"]) size 17 color "#625738" xsize 332
+        else:
+            text "자료를 선택하세요." xpos 846 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
 screen r13_person_record_detail(person):
     add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
@@ -269,14 +300,14 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     modal True
     zorder 50
     on "show" action Function(source_fx,"note_open")
-    on "hide" action Function(source_fx,"note_close")
-    default tab=initial_tab
+    default tab=(initial_tab if initial_tab!="all" else r13_records_view.get("tab","all"))
     $ tab="all" if tab in ("evidence","testimony","items","compare") else tab
-    default detail=None
-    default person=None
-    default page=0
-    default archive=False
+    default detail=r13_records_view.get("detail")
+    default person=r13_records_view.get("person")
+    default page=r13_records_view.get("page",0)
+    default archive=r13_records_view.get("archive",False)
     default order="recent"
+    on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive)]
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab=="all":
@@ -288,7 +319,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         $ selected_record=r13_record_selected(entries,detail,page)
         text ("모은 자료 %d개"%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
         use r13_material_grid(entries,selected_record,page,_scope,archive)
-        use r13_material_detail(selected_record,archive)
+        use r13_material_detail(selected_record,archive) id ("records",selected_record,archive,persistent.room13_large_text)
     elif tab=="people":
         $ people=r13_met_people()
         $ selected_person=r13_record_selected(people,person,page)

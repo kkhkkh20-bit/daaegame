@@ -460,7 +460,7 @@ screen r13_book(target=None,present=False,hearing=False):
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
     text ("보여줄 자료 %d개"%len(entries) if present else "모은 자료 %d개"%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
-    use r13_material_detail(selected_record,archive and not present)
+    use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
     if present and not selected_record:
         text "보여줄 자료를 직접 고르세요." xpos 842 ypos 320 xsize 362 text_align .5 size 18 color "#796044"
     if present:
