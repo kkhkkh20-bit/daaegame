@@ -32,7 +32,7 @@ init 115 python:
 
     ROOM13["topics"]["ledger_deal"]=dict(npc="resident_eunho",title="장부 이야기를 덮어 두기로 한다",day=[3,14],need=["eunho_deal_offered"],not_flags=["eunho_blackmailed","eunho_reconciled"],give=[],flags=["shop_half","eunho_blackmailed"],lines=[
         ("dad","장부 이야기는 당분간 꺼내지 않겠습니다."),
-        ("resident_eunho","좋습니다. 그동안 제 가게 물건은 반값에 드리지요. 대신 이 거래는 우리 둘만 아는 걸로 합시다.")])
+        ("resident_eunho","좋습니다. 그동안 제 가게 물건은 반값에 드리겠소. 대신 이 거래는 우리 둘만 아는 걸로 합시다.")])
 
     _r13_ledger_present=r13_present
     def r13_present(person,key,identity=False):
@@ -60,6 +60,6 @@ init 115 python:
         if person=="resident_eunho" and not r13_has("eunho_deal_offered") and not (r13_has("eunho_hostile") and not r13_has("eunho_reconciled")):
             _r13_ledger_present(person,key,identity)
             r13_flag("eunho_deal_offered")
-            return [("resident_eunho","……부인 창고 장부군요. 저는 부인 창고에서 넘어온 물건을 받아 팔았을 뿐입니다."),
+            return [("resident_eunho","……부인 창고 장부구려. 저는 부인 창고에서 넘어온 물건을 받아 팔았을 뿐입니다."),
                 ("resident_eunho","그 이야기를 덮어 두신다면, 제 가게 물건은 반값에 드릴 수 있습니다.")]
         return _r13_ledger_present(person,key,identity)

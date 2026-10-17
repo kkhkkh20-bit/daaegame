@@ -52,7 +52,7 @@ label r13_case_noticed:
         ("doto","안쪽 빗장이 안 풀립니다."),
         ("dad","다람아!"),
         ("daram","아빠…… 나 여기 있어."),
-        ("granny","다들 비켜요. 공구 가져왔어."),
+        ("granny","다들 비켜요. 공구 가져왔어요."),
         (None,"도토가 지렛대를 문틀 틈에 밀어 넣었다.")],"case:noticed:door")
     $ source_fx("impact")
     call r13_scene("room","여관 2층 · 13호","quiet")
@@ -62,7 +62,7 @@ label r13_case_noticed:
         ("daram","내가 할아버지를 때렸어. 할아버지가 안 놔줘서……"),
         ("dad","다친 데는 없어?"),
         (None,"한참 뒤 어르신이 눈을 떴다."),
-        ("resident_owlgp","……아이 손목을 내가 잡았소. 잠깐 정신이 흐려졌었지. 아이 잘못이 아니오.")],"case:noticed:room")
+        ("resident_owlgp","……아이 손목을 내가 잡았소. 잠깐 정신이 흐려졌었소. 아이 잘못이 아니오.")],"case:noticed:room")
     if _was_wedged:
         call r13_lines([(None,"책장 아래에 끼워 둔 쐐기가 방 쪽으로 조금 밀려 나와 있었다. 판은 닫힌 채였다.")],"case:noticed:wedge")
         $ r13_grant(["H12"],"사건 뒤 13호 책장 아래")

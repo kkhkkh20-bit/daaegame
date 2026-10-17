@@ -49,8 +49,8 @@ init 116 python:
         if person=="doto" and key in ("E05","E37","E04") and r13_has(key) and not r13_has("J10"):
             _r13_tm_present(person,key,identity)
             r13_grant(["J10"],"도토에게 통로 기록을 보여 줌")
-            return [("dad","그날 어느 출입구를 지켰습니까?"),
+            return [("dad","그날 어느 출입구를 지켰니?"),
                 ("doto","복도 쪽 문입니다."),
-                ("dad","방 안의 다른 출입구도 보였습니까?"),
+                ("dad","방 안의 다른 출입구도 보였니?"),
                 ("doto","그건…… 문밖에서는 볼 수 없었습니다. 제가 지킨 문으로는 아무도 들어가지 못했어요. 그 말은 맞습니다.")]
         return _r13_tm_present(person,key,identity)

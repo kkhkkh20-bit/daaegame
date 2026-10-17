@@ -117,19 +117,19 @@ init 102 python:
         ("resident_somi","수리점 뒤 골목 끝 집이요. 오시지 마세요. 할아버지가 남 신세 지는 거 싫어해요.")])
     ROOM13["topics"]["somi_after_trust"]=dict(npc="resident_somi",title="할아버지 상태를 묻는다",day=[4,14],need=["somi_trust"],give=[],flags=[],lines=[
         ("resident_somi","할아버지가 오늘은 일어나 앉아서 수프를 드셨어요."),
-        ("resident_somi","아저씨가 백 부인한테 안 가져간 거, 할아버지한테 말했어요. 빚진 거니까 꼭 갚으래요.")])
+        ("resident_somi","아저씨가 약초를 백 부인한테 안 가져간 거, 할아버지한테 말했어요. 빚진 거니까 꼭 갚으래요.")])
     ROOM13["topics"]["somi_after_roof"]=dict(npc="resident_somi",title="지붕 길 이야기를 한다",day=[4,14],need=["roof_path"],give=[],flags=[],lines=[
         ("resident_somi","백 부인 창고는 굴뚝 옆 판자가 헐거워요. 밤엔 지붕이 미끄러우니까 발은 처마 쪽에 디디세요."),
         ("resident_somi","저 놔준 거, 고마워서 하는 말은 아니에요. 그냥 그렇게 하기로 한 거래였잖아요.")])
     ROOM13["topics"]["somi_after_hostile"]=dict(npc="resident_somi",title="말을 걸어 본다",day=[4,14],need=["somi_hostile"],give=[],flags=[],lines=[
         (None,"솜이는 내 얼굴을 보자마자 휙 지붕 쪽으로 돌아섰다."),
-        ("resident_somi","할아버지 약 판 돈으로 밥은 맛있게 드셨어요?")])
+        ("resident_somi","할아버지 약 넘기고 받은 돈으로 밥은 맛있게 드셨어요?")])
     ROOM13["topics"]["musoe_after_good"]=dict(npc="resident_musoe",title="몸은 좀 어떤지 묻는다",day=[4,14],need=["musoe_recovering"],give=[],flags=[],lines=[
         ("resident_musoe","덕분에 열은 내렸소. 솜이 녀석이 다 말해 줬소."),
         ("resident_musoe","그 폐광 지도는 갖고 있으시오. 눈이 크게 오면, 그 폐광 굴 말고는 숨을 데가 없소.")])
     ROOM13["topics"]["musoe_after_bad"]=dict(npc="resident_musoe",title="몸은 좀 어떤지 묻는다",day=[4,14],need=["musoe_worse"],give=[],flags=[],lines=[
         (None,"무쇠 할아버지는 기침을 참느라 말을 몇 번 끊었다."),
-        ("resident_musoe","솜이를 광장에 도둑으로 세웠다지. 고작 약 몇 줌 때문에."),
+        ("resident_musoe","솜이가 구해 온 약은 결국 남의 손에 넘어갔다 들었소. 고작 약 몇 줌인데."),
         ("resident_musoe","당신 같은 외지 사람한테 기대를 건 내가 늙은 거요.")])
     ROOM13["topics"]["madam_after_trust"]=dict(npc="resident_madam",title="창고 일을 묻는다",day=[4,14],need=["madam_trust"],give=[],flags=[],lines=[
         ("resident_madam","도둑을 잡아 준 건 고마워요. 요즘 같은 때엔 믿을 손이 귀하죠."),
@@ -214,12 +214,12 @@ label r13_ev_b_store:
     menu:
         "지붕을 따라 쫓아간다":
             call r13_lines([(None,"처마를 따라 몇 집을 지나자 발자국이 눈 덮인 굴뚝 사이에서 끊겼다."),
-                ("dad","(지붕 위에서는 저 아이가 나보다 훨씬 빠르다.)",{"thought":True})],"ev:b:roof_lost")
+                ("dad","(지붕 위에서는 저 작은 그림자가 나보다 훨씬 빠르다.)",{"thought":True})],"ev:b:roof_lost")
             $ r13_flag("ev_b_done","ev_b_lost","musoe_herbs")
         "수리점 쪽 골목으로 돌아가 앞질러 간다":
             call r13_ev_b_caught
         "너울에게 알린다":
-            call r13_lines([("neoul","도둑이요? 바로 경비들을 풀겠습니다. 이런 때일수록 본보기가 있어야지요."),
+            call r13_lines([("neoul","도둑이오? 바로 경비들을 풀겠습니다. 이런 때일수록 본보기가 있어야 합니다."),
                 (None,"다음 날 아침, 솜이가 광장 기둥 옆에 세워져 있었다는 이야기를 들었다. 약초는 백 부인에게 돌아갔다.")],"ev:b:guard")
             $ r13_flag("ev_b_done","somi_punished","musoe_worse","guard_caught_somi")
         "모른 척한다":
@@ -260,7 +260,7 @@ label r13_ev_b_caught:
         "꾸러미를 빼앗아 은호 사장에게 판다":
             call r13_lines([("resident_somi","그 약초는 우리 할아버지 거라니까요!"),
                 (None,"은호 사장은 꾸러미 끈에 찍힌 도장을 보고 입꼬리를 올렸다."),
-                ("resident_eunho","백 부인 창고 물건이네요. 값은 쳐 드리죠. 열여덟 냥. 대신 이 일은 우리 둘만 아는 걸로 해요."),
+                ("resident_eunho","백 부인 창고 물건이구려. 값은 쳐 드리리다. 열여덟 냥. 대신 이 일은 우리 둘만 아는 걸로 합시다."),
                 ("dad","(이제 이 사람이 장물을 판 내 약점 하나를 쥐었다.)",{"thought":True})],"ev:b:sell_eunho")
             $ r13_cash(18,"은호에게 약초를 넘김")
             $ r13_flag("ev_b_done","eunho_holds_secret","musoe_worse","somi_hostile","rumor:sold_stolen")
@@ -378,7 +378,7 @@ label r13_ev_c_locked(room_safe):
         ("resident_madam","재고 세는 일을 다 못 끝냈으니 절반만 드릴게요. 일곱 냥.")],"ev:c:released")
     if room_safe:
         call r13_lines([(None,"13호로 돌아가 보니 다람이가 문 뒤에서 꾸벅꾸벅 졸고 있었다."),
-            ("daram","밤에 누가 왔었어. 뭉치 아저씨였어. 이름 물어보니까 그냥 돌아갔어.")],"ev:c:room_safe")
+            ("daram","밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 아저씨 같았어.")],"ev:c:room_safe")
     else:
         call r13_lines([(None,"13호로 돌아가 보니 짐이 뒤집혀 있었다. 수첩 사이에 끼워 둔 종이들도 순서가 뒤섞여 있었다."),
             ("dad","(누군가 밤새 이 방을 뒤졌다. 그러려고 나를 창고에 가둔 것이다.)",{"thought":True})],"ev:c:room_searched")
@@ -405,7 +405,7 @@ label r13_ev_c_wedge(room_safe=False):
     $ r13_flag("madam_suspicious")
     if room_safe:
         call r13_lines([(None,"13호로 돌아가 보니 다람이가 문 뒤에서 꾸벅꾸벅 졸고 있었다."),
-            ("daram","밤에 누가 왔었어. 뭉치 아저씨였어. 이름 물어보니까 그냥 돌아갔어.")],"ev:c:room_safe")
+            ("daram","밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 아저씨 같았어.")],"ev:c:room_safe")
     else:
         $ r13_flag("room_searched")
         if "E18" in room13["evidence"]:
@@ -463,10 +463,10 @@ label r13_ev_yeoni_goods:
             call r13_lines([("resident_yeoni","고마워요. ……뭉치 걔, 부인한테 매일 혼나요. 그러니 너무 미워하진 마세요.")],"ev:n:buy")
             $ r13_flag("ev_n_done","goods_recovered","know_mungchi_thief")
         "누가 팔았는지만 확인하고 따지지 않는다":
-            call r13_lines([("resident_yeoni","뭉치예요. 백 부인 집 심부름하는 애요. 저한테 들었다고는 하지 마세요.")],"ev:n:who")
+            call r13_lines([("resident_yeoni","말씀드린 대로 뭉치예요. 백 부인 집 심부름하는 애요. 저한테 들었다고는 하지 마세요.")],"ev:n:who")
             $ r13_flag("ev_n_done","know_mungchi_thief")
         "너울에게 장물이라고 알린다":
-            call r13_lines([("neoul","훔친 물건이요? 그럼 교환대는 오늘로 닫습니다."),
+            call r13_lines([("neoul","훔친 물건이오? 그럼 교환대는 오늘로 닫습니다."),
                 ("resident_yeoni","……외지 분은 겨울이 끝나면 가잖아요. 저는 여기서 이걸로 먹고살아요."),
                 (None,"목도리와 장갑은 돌아왔다. 하지만 여니는 그 뒤로 내 쪽을 쳐다보지 않았다.")],"ev:n:report")
             $ r13_flag("ev_n_done","goods_recovered","yeoni_hostile","know_mungchi_thief")

@@ -73,7 +73,7 @@ label r13_inspect_gate_documents(start_key=None):
         call r13_lines([("dad","(선반의 예약 서류 묶음. 우리 예약 원본은 이미 확인했다.)",{"thought":True})],"gate:shelf:again")
         return
     call r13_lines([(None,"초소 선반에 예약 서류 묶음이 날짜별로 꽂혀 있었다."),
-        (None,"월요일 묶음을 넘기자 낯익은 글씨가 나왔다. 신청할 때 내가 쓴 예약 서류다."),
+        (None,"금요일 묶음을 넘기자 낯익은 글씨가 나왔다. 신청할 때 내가 쓴 예약 서류다."),
         ("dad","(예약한 사람 다돌 외 한 명. 모두 2명.)",{"thought":True}),
         ("daram","아빠, 거기 ‘외 한 명’이 나야?"),
         ("dad","응. 여기엔 분명히 두 사람으로 적혀 있어.")],"gate:shelf:find")

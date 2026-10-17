@@ -68,7 +68,7 @@ init 103 python:
         # 2 나비
         "nabi_rear":_ep_topic("nabi","주방 뒷문의 등불 이야기를 꺼낸다",(3,6),need=["know_kitchen_rear"],not_flags=["nabi_secret"],
             flags=["nabi_secret","know_nabi_debt"],give=["W2"],lines=[
-            ("dad","밤마다 주방 뒷문 쪽에서 등불이 오간다고 들었어."),
+            ("dad","밤마다 주방 뒷문 쪽에서 등불이 오간다고 들었어요."),
             ("nabi","……누가 봤대요? 콩이가 말했죠."),
             ("nabi","남은 밥이에요. 표 없는 아이들한테 가는 거요. 할머니는 모르는 척하시고, 대신 제 품삯에서 빼요."),
             ("nabi","할머니가 거둬 주신 빚이 있으니까 아무 말도 못 해요. 그 애들만 아니면요.")]),
@@ -91,8 +91,8 @@ init 103 python:
         # 4 톡
         "ubak_lamp":_ep_topic("resident_ubak","광장 등 뚜껑의 나사 자국을 묻는다",(3,6),need=["clue_lamp_marks"],not_flags=["tok_cleared"]),
         "tok_testify":_ep_topic("resident_tok","재판에서 핀 이야기를 직접 해 달라고 한다",(4,7),need=["tok_cleared"],flags=["witness:tok"],lines=[
-            ("resident_tok","내 누명 벗겨 준 사람 부탁인데 빠지면 안 되지."),
-            ("resident_tok","내가 만든 이음은 내가 알아요. 재판에서도 똑같이 말할게요. 누가 그걸로 뭘 했는지는 모른다는 것까지요.")]),
+            ("resident_tok","제 누명 벗겨 준 분 부탁인데 빠지면 안 되죠."),
+            ("resident_tok","제가 만든 이음은 제가 알아요. 재판에서도 똑같이 말할게요. 누가 그걸로 뭘 했는지는 모른다는 것까지요.")]),
     })
     R13_TOPIC_LABELS.update({"nabi_food":"r13_ep2_food","ppul_hearing":"r13_ep3_hearing","ubak_lamp":"r13_ep4_ubak"})
     # 0.18.50: the lamp clue was only a choice inside Tok's accusation scene; any other first choice
@@ -178,7 +178,7 @@ label r13_ep1_eaves:
     menu:
         "네로에게 부탁해 헛간에 숨긴다":
             call r13_lines([(None,"네로는 아무것도 묻지 않고 헛간 문을 열었다. 안에는 이름표 없는 사람들이 담요를 나눠 덮고 있었다."),
-                ("resident_nero","여기 있는 사람들은 다 표가 없어요. 검사도 안 받고요. 대신 밖에 나가면 안 돼요."),
+                ("resident_nero","여기 있는 사람들은 다 표가 없다. 검사도 안 받지. 대신 밖에 나가면 안 된다."),
                 ("bami","……그럼 이제 처마엔 못 가요?"),
                 ("dad","며칠만 참자.")],"ep1:nero")
             $ r13_flag("bami_hidden_away","bami_safe","know_unregistered")
@@ -192,7 +192,7 @@ label r13_ep1_eaves:
         "서리 검사원에게 관찰 확인서를 받는다":
             call r13_lines([("resident_seori","박쥐가 밤에 깨어 있는 게 증상이라고요? 그럼 마을 박쥐는 다 증상이겠군요."),
                 (None,"서리 검사원은 밤이의 눈을 살피고 몇 가지를 물어본 뒤 확인서에 서명했다."),
-                ("resident_seori","‘야생화 증상 없음.’ 너울이 이 확인서를 무시하면, 그 일은 내가 기록합니다.")],"ep1:seori")
+                ("resident_seori","‘야생화 증상 없음.’ 너울이 이 확인서를 무시하면, 그 일은 제가 기록합니다.")],"ep1:seori")
             $ r13_flag("bami_certified","bami_safe","bami_at_eaves","seori_met_bami")
         "바둑이에게 처마 순찰을 빼 달라고 한다" if r13_has("badook_doubt"):
             call r13_lines([("resident_badook","……저도 돌아온 사람을 못 봤다고 말씀드렸죠."),
@@ -211,10 +211,10 @@ label r13_ep1_eaves_retry:
     menu:
         "네로에게 부탁해 헛간에 숨긴다":
             call r13_lines([(None,"네로는 아무것도 묻지 않고 헛간 문을 열었다. 안에는 이름표 없는 사람들이 담요를 나눠 덮고 있었다."),
-                ("resident_nero","여기 있는 사람들은 다 표가 없어요. 검사도 안 받고요. 대신 밖에 나가면 안 돼요.")],"ep1:nero")
+                ("resident_nero","여기 있는 사람들은 다 표가 없다. 검사도 안 받지. 대신 밖에 나가면 안 된다.")],"ep1:nero")
             $ r13_flag("bami_hidden_away","bami_safe","know_unregistered")
         "서리 검사원에게 관찰 확인서를 받는다":
-            call r13_lines([("resident_seori","‘야생화 증상 없음.’ 너울이 이 확인서를 무시하면, 그 일은 내가 기록합니다.")],"ep1:seori")
+            call r13_lines([("resident_seori","‘야생화 증상 없음.’ 너울이 이 확인서를 무시하면, 그 일은 제가 기록합니다.")],"ep1:seori")
             $ r13_flag("bami_certified","bami_safe","bami_at_eaves","seori_met_bami")
         "그냥 처마에 있게 둔다":
             pass
@@ -274,17 +274,17 @@ label r13_ep2_kitchen:
     return
 
 label r13_ep2_food:
-    call r13_lines([("dad","그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까."),
+    call r13_lines([("dad","그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까요."),
         ("nabi","어디서요? 이 마을에 남는 밥은 없어요. 다들 자기 먹을 것도 없다고 해요.")],"ep2:food:open")
     menu:
         "은호 사장에게 일주일 치를 산다 (12냥)" if r13_cash_now()>=12:
-            call r13_lines([("resident_eunho","일주일 치요? 값은 정해진 대로 받습니다. 누가 먹을 건지는 묻지 않겠습니다."),
-                ("nabi","……열두 냥이면 탐정님 사흘 품삯이잖아요.")],"ep2:food:buy")
+            call r13_lines([("resident_eunho","일주일 치 말이오? 값은 정해진 대로 받습니다. 누가 먹을 건지는 묻지 않겠습니다."),
+                ("nabi","……열두 냥이면 큰돈이잖아요.")],"ep2:food:buy")
             $ r13_cash(-12,"아이들 일주일 치 식량")
             $ r13_flag("kids_fed","kids_bought")
         "창고 장부로 촌장에게 배급을 요구한다" if "H1" in room13["evidence"]:
-            call r13_lines([("resident_ppul","……백 부인 창고에 이 물건이 다 있었다고?"),
-                ("resident_ppul","표 없는 아이들 몫으로 내놓으라 하겠소. 이 장부는 내가 맡아 두지."),
+            call r13_lines([("resident_ppul","……백 부인 창고에 이 물건이 다 있었단 말이오?"),
+                ("resident_ppul","표 없는 아이들 몫으로 내놓으라 하겠소. 이 장부는 내가 맡아 두겠소."),
                 ("nabi","촌장님이 직접 나서신다고요?")],"ep2:food:hoard")
             $ r13_flag("kids_fed","kids_registered","madam_hostile")
         "무쇠 할아버지에게 폐광 식량을 청한다" if r13_has("musoe_ally"):
@@ -293,7 +293,7 @@ label r13_ep2_food:
             $ r13_flag("kids_fed","kids_mine")
         "학교 사자 선생님에게 부탁하자고 한다" if r13_has("kids_known"):
             call r13_lines([("nabi","사자 선생님이요? ……선생님은 좋은 분인데, 촌장님 눈치를 봐요."),
-                ("dad","학교에 직접 가서 말해 볼게.")],"ep2:food:teacher")
+                ("dad","학교에 직접 가서 말해 볼게요.")],"ep2:food:teacher")
             $ r13_flag("try_teacher")
         "다람이 몫을 나누자고 한다":
             call r13_lines([("nabi","그건 안 돼요. 다람이도 제 몫은 먹어야죠."),
@@ -358,12 +358,12 @@ label r13_ep3_hearing:
         "돌의 옛 기록과 지금 출력을 보여 준다" if r13_has("know_stone_history") and r13_has("know_stone_failing"):
             call r13_lines([("dad","삼백 년 동안 기록에 이름은 없었습니다. 이름이 생긴 건 네 해 전부터고, 돌은 지금도 식고 있습니다."),
                 ("dad","희생이 오래된 법이라는 말은 기록과 맞지 않습니다."),
-                ("resident_ppul","……사서 선생이 그 오래된 장부를 꺼냈소? 출력 숫자는 우박이 줬고?"),
+                ("resident_ppul","……사서 선생이 그 오래된 장부를 꺼냈소? 출력 숫자는 우박이 준 거요?"),
                 ("resident_ppul","좋소. 이번 재판은 말이 아니라 기록으로 하겠소. 판결대로 집행하겠소.")],"ep3:hearing:records")
             $ r13_flag("fair_hearing")
         "“아이들을 구한 건 촌장님 덕입니다.”" if r13_has("village_alerted"):
-            call r13_lines([("dad","어젯밤 아이들이 학교로 피한 건 촌장님이 종을 허락하셨기 때문이라고 말하겠습니다."),
-                ("resident_ppul","……사람들이 그렇게 믿는다면 나쁠 건 없지."),
+            call r13_lines([("dad","그날 밤 아이들이 학교로 피한 건 촌장님이 종을 허락하셨기 때문이라고 말하겠습니다."),
+                ("resident_ppul","……사람들이 그렇게 믿는다면 나쁠 건 없소."),
                 ("resident_ppul","좋소. 재판은 증거대로 하겠소. 대신 당신도 내 체면을 지켜 주시오.")],"ep3:hearing:credit")
             $ r13_flag("fair_hearing","ppul_ally")
         "“이 장부를 광장에 붙일 수도 있습니다.”" if "H1" in room13["evidence"]:
@@ -387,7 +387,7 @@ label r13_ep4_accused:
     call r13_ev_here("search")
     call r13_lines([(None,"수리점 앞에 사람들이 모여 있었다. 너울이 톡의 작업대를 손바닥으로 내리쳤다."),
         ("neoul","광장 등의 돌 조각이 없어졌소. 그 등을 열고 만지는 사람은 이 마을에 당신뿐이오."),
-        ("resident_tok","나는 안 가져갔어요! 그 조각이 없으면 등이 식는다는 걸 누구보다 잘 아는 사람이 나라고요."),
+        ("resident_tok","저는 안 가져갔어요! 그 조각이 없으면 등이 식는다는 걸 누구보다 잘 아는 사람이 저라고요."),
         ("neoul","모레까지 돌 조각이 안 나오면 당신을 가두겠소.")],"ep4:accused")
     $ _ep_loop=True
     while _ep_loop:
@@ -400,7 +400,7 @@ label r13_ep4_accused:
             "“너울 씨 말이 맞을 수도 있겠군요.”":
                 call r13_lines([("neoul","보시오, 외지 사람도 내 말이 맞을 수 있다잖소."),
                     (None,"너울이 톡의 손목을 묶었다. 수리점 문에 판자가 덧대졌다."),
-                    ("resident_tok","……당신도 저 사람들이랑 똑같군요.")],"ep4:side_neoul")
+                    ("resident_tok","……손님도 저 사람들이랑 똑같군요.")],"ep4:side_neoul")
                 $ r13_flag("tok_detained","tok_hostile")
             "광장 등을 직접 살펴본다" if not r13_has("clue_lamp_marks"):
                 call r13_lines([(None,"광장 등 뚜껑 나사에 가느다란 줄 자국이 나 있었다. 공구가 아니라 계측기 집게가 물었던 자국이었다."),
@@ -410,7 +410,7 @@ label r13_ep4_accused:
                 $ _ep_loop=True
             "“등 안의 돌 조각은 뭡니까?”" if "W5" not in room13["evidence"]:
                 call r13_lines([("resident_tok","등은 돌에서 떼어 낸 조각으로 빛나요. 손톱만 한 조각인데, 꺼내 들면 사람 손처럼 따뜻해요."),
-                    ("resident_tok","조각이 왜 따뜻한지는 나도 몰라요. 요즘은 조각이 예전보다 빨리 식어요. 그게 무서워요.")],"ep4:sliver")
+                    ("resident_tok","조각이 왜 따뜻한지는 저도 몰라요. 요즘은 조각이 예전보다 빨리 식어요. 그게 무서워요.")],"ep4:sliver")
                 $ r13_grant(["W5"],"톡에게 들은 등의 돌 조각")
                 $ _ep_loop=True
             "끼어들지 않는다":
@@ -418,7 +418,7 @@ label r13_ep4_accused:
     return
 
 label r13_ep4_ubak:
-    call r13_lines([("dad","광장 등 나사에 계측기 집게 자국이 있었다. 종이 눈금도 끼어 있었고."),
+    call r13_lines([("dad","광장 등 나사에 계측기 집게 자국이 있었어요. 종이 눈금도 끼어 있었고요."),
         ("resident_ubak","……제가 했어요. 스승님이 돌 조각 하나를 몰래 재 오라고 하셨어요. 촌장님이 낸 숫자가 이상하다고요."),
         ("resident_ubak","톡 아저씨가 잡혀갈 줄은 몰랐어요. 조각은 지금 진료실 상자에 있어요.")],"ep4:ubak:confess")
     menu:
@@ -436,11 +436,11 @@ label r13_ep4_ubak:
             $ r13_flag("tok_cleared","seori_trust","ubak_ally","know_stone_failing","examination_agreed")
         "조각만 몰래 제자리에 돌려놓는다":
             call r13_lines([(None,"진료실 상자에서 조각을 꺼냈다. 그리고 밤사이 광장 등에 다시 끼웠다. 등이 천천히 데워졌다."),
-                ("neoul","……조각이 돌아왔다고? 누가 장난을 쳤군. 톡은 증거가 없으니 풀어 주겠소.")],"ep4:ubak:return")
+                ("neoul","……조각이 돌아왔단 말이오? 누가 장난을 친 모양이오. 톡은 증거가 없으니 풀어 주겠소.")],"ep4:ubak:return")
             $ r13_flag("tok_cleared","ubak_owes")
         "우박의 이름은 빼고 사실만 너울에게 알린다":
             call r13_lines([("dad","등 나사의 자국은 공구가 아니라 계측기 집게입니다. 톡의 작업 자국과 다릅니다. 조각은 측정이 끝나면 돌아올 겁니다."),
-                ("neoul","누가 쟀다는 거요? ……이름을 안 대겠다고? 좋소, 조각만 돌아오면 톡은 풀어 주겠소.")],"ep4:ubak:anon")
+                ("neoul","누가 쟀다는 거요? ……이름을 안 대겠다는 거요? 좋소, 조각만 돌아오면 톡은 풀어 주겠소.")],"ep4:ubak:anon")
             $ r13_flag("tok_cleared","ubak_ally")
         "아직은 모른 척한다":
             pass

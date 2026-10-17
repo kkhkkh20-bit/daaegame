@@ -70,7 +70,7 @@ init 152 python:
                 r13_flag("lt_piko_convinced")
                 return [("dad","수리공 톡 씨 장부입니다. 이 3번 등이 요즘 밤마다 깜빡인답니다. 오늘 밤 꺼질지도 몰라요."),
                     ("resident_piko","……3번이면 내가 자는 등인데."),
-                    ("resident_piko","그러고 보니 어젯밤 새벽에 손이 시렸어요. 알았어요. 근데 갈 데가 없어요. 방값이 없으니까.")]
+                    ("resident_piko","그러고 보니 오늘 새벽에 손이 시렸어요. 알았어요. 근데 갈 데가 없어요. 방값이 없으니까.")]
         if person=="resident_librarian" and d==3 and r13_has("lt_lib_met") and not r13_has("lt_lib_safe"):
             if key=="L04" and r13_has("L04") and not r13_has("lt_lib_warned"):
                 _r13_e1_present(person,key,identity)
@@ -111,7 +111,7 @@ init 152 python:
                 accept=["L03","L04","L14"],
                 broken_by={
                     "L03":[("dad","등 안에 온도를 적은 쪽지가 있었습니다. 온도계는 지난주부터 진료소에 있었습니다. 톡 씨 손에는 그 도구가 없었어요."),("neoul","……그럼 온도를 잰 자를 데려오시오.")],
-                    "L04":[("dad","뚜껑 틈에 짐 묶는 노끈이 걸려 있었습니다. 톡 씨는 노끈을 쓰지 않습니다. 이 등을 연 사람은 두 명입니다."),("neoul","……두 명이라고?")],
+                    "L04":[("dad","뚜껑 틈에 짐 묶는 노끈이 걸려 있었습니다. 톡 씨는 노끈을 쓰지 않습니다. 이 등을 연 사람은 두 명입니다."),("neoul","……두 명이오?")],
                     "L14":[("dad","등을 닦기 전에 나사 둘레를 떠 둔 종이입니다. 톡 씨 공구 자국은 없습니다."),("neoul","……종이 한 장으로 사람을 바꾸라는 거요?")]},
                 hint="3번 등에서 찾은 쪽지나 노끈. 톡 씨 물건이 아니다.",
                 wrong=("neoul","그게 등을 연 사람과 무슨 상관이오?")),
@@ -151,7 +151,7 @@ init 152 python:
             correct=[("neoul","……좋소. 톡은 풀어 주겠소."),
                 ("resident_tok","내가 고친 등 밑에서 잤어요. 내 탓이 아니라고 해도…… 편하진 않네요.")],
             over=("neoul","죽이려던 건 아니라지 않소. 그 말은 증거가 더 있어야 하오."),
-            weak=("resident_seori","제가 연 등은 새벽에 따뜻했습니다.")),
+            weak=("resident_seori","제 심부름으로 연 등은 새벽에도 따뜻했습니다.")),
         sway=["resident_tok","buri","resident_lamplighter"])
 
     _r13_e1_session=r13_debate_session
@@ -306,7 +306,7 @@ label r13_ep1_accused:
         "“증거도 없이 사람을 세울 겁니까?”":
             call r13_lines([("neoul","그럼 내일 아침까지 증거를 가져오시오.")],"ep1:accused:defend")
         "“톡 씨 말고 누가 열겠습니까.”":
-            call r13_lines([(None,"너울이 톡의 손목을 묶었다."),("resident_tok","……당신도 똑같군요.")],"ep1:accused:side")
+            call r13_lines([(None,"너울이 톡의 손목을 묶었다."),("resident_tok","……손님도 똑같군요.")],"ep1:accused:side")
             $ r13_flag("tok_hostile")
         "끼어들지 않는다":
             pass
@@ -354,12 +354,12 @@ label r13_ep1_ubak:
         ("resident_seori","제 심부름이었습니다. 그리고 이 아이가 돌려놨다면, 새벽엔 조각이 등 안에 있었어야 합니다.")],"ep1:ubak")
     $ r13_grant(["L05"],"우박의 말")
     menu:
-        "“재 본 숫자는 어땠지?”":
+        "“재 본 숫자는 어땠습니까?”":
             call r13_lines([("resident_ubak","가을보다 훨씬 낮아요. 밤마다 더 떨어져요."),
                 ("resident_seori","마을의 돌 자체가 식고 있습니다.")],"ep1:ubak:numbers")
             $ r13_grant(["W4"],"우박이 잰 돌의 온도")
             $ r13_flag("know_stone_failing")
-        "“울지 마. 같이 밝히자.”":
+        "“울지 마세요. 같이 밝힙시다.”":
             call r13_lines([("resident_ubak","……네."),("resident_seori","고맙습니다. 저도 도울 일이 있으면 말씀하십시오.")],"ep1:ubak:trust")
             $ r13_flag("seori_trust","ubak_ally")
         "“우박이를 너울에게 데려가겠습니다.”":
@@ -380,7 +380,7 @@ label r13_ep1_funeral:
     call r13_scene("winter_square","광장 · 피코의 장례","night")
     call r13_lines([(None,"톡이 꺼진 등 옆에 피코의 판자 그림들을 하나씩 세웠다. 부리가 등잔을 들었다."),
         ("resident_tok","내가 고친 등 밑에서 잤어요. 내 탓이 아니라고 해도…… 편하진 않네요."),
-        ("resident_momo","……세 냥이면 하룻밤 방값은 됐을 거요."),
+        ("resident_momo","……세 냥이면 하룻밤 방값은 됐을 거예요."),
         (None,"아무도 대답하지 않았다.")],"ep1:funeral")
     if r13_has("L12"):
         call r13_lines([(None,"다람이 크레용을 꺼내 엄마 초상 앞에 쪼그려 앉았다."),

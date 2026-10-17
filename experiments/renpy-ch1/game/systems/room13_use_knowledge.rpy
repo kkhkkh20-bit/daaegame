@@ -21,7 +21,7 @@ init 123 python:
     ROOM13["activities"]["warning"]["not_flags"]=list(ROOM13["activities"]["warning"].get("not_flags",[]))+["warning_sealed_held"]
     ROOM13["activities"]["warning_keep"]=dict(place="square",title="점검함의 봉투를 봉한 채 챙긴다",day=[3,13],need=["warning_location"],
         not_flags=["warning_sealed_held","E18"],flags=["warning_sealed_held"],give=[],cost=0,lines=[
-        (None,"봉투 겉에는 우리 가족 이름이 엄마 글씨로 적혀 있었다. 봉인은 온전했다. 뜯지 않고 품에 넣었다.")])
+        (None,"봉투 겉에는 우리 가족 이름이 아내 글씨로 적혀 있었다. 봉인은 온전했다. 뜯지 않고 품에 넣었다.")])
     R13_CONTEXT_ACTIVITIES[("square","lamp")]=tuple(R13_CONTEXT_ACTIVITIES.get(("square","lamp"),()))+("warning_keep",)
 
     ROOM13["topics"].update({
@@ -72,7 +72,7 @@ label r13_granny_letter_ask:
         "“편지 이야기는 다음에 하겠습니다.”":
             # 0.18.41 (owner): postponing is not giving up. Nothing is marked done, so the topic
             # stays open and the same conversation can be had later (H16 is not lost).
-            call r13_lines([("granny","그래요. 바쁘시겠지.")],"granny:dumb:later")
+            call r13_lines([("granny","그래요. 바쁘시겠지요.")],"granny:dumb:later")
             return
     $ r13_flag("granny_dumb_done")
     $ r13_finish_topic("granny_letter_ask")

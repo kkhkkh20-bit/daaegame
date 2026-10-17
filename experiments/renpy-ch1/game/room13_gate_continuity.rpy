@@ -16,7 +16,7 @@ init 67 python:
     ROOM13["topics"].setdefault("gate_guard_duty", dict(
         npc="guard", title="아직 초소를 지키고 있습니까?", day=[1,14],
         need=["entry_corrected"], give=[], flags=[],
-        lines=[("guard", "등록이 끝났어도 저는 초소를 비울 수 없습니다. 드나드는 사람을 확인해야 하니까요.")]))
+        lines=[("guard", "등록이 끝났어도 저는 초소를 비울 수 없습니다. 드나드는 사람을 확인해야 합니다.")]))
     ROOM13["topics"].setdefault("gate_guard_record", dict(
         npc="guard", title="바로잡은 입장 기록을 다시 확인한다", day=[1,14],
         need=["entry_corrected"], give=[], flags=[],

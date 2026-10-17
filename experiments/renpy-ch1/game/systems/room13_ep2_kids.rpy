@@ -44,13 +44,13 @@ init 153 python:
                 broken_by={"K01":[("daram","콩이야, 너 그거 봤어? 탐정단 규칙. 본 것만 말하기."),
                     ("resident_kongi","……저, 본 거 아니에요. 들은 거예요."),(None,"사람들이 웅성거렸다.")]},
                 hint="그 말을 처음 한 사람은 직접 봤을까?",
-                wrong=("neoul","그게 소문과 무슨 상관이냐?")),
+                wrong=("neoul","그게 소문과 무슨 상관이오?")),
             dict(id="s2",who="neoul",text="이빨 자국을 보면 【아이 짓】이오.",
                 accept=["K02"],
                 broken_by={"K02":[("daram","돌목 아저씨가 그랬어. 키가 자기 어깨쯤이었대."),
-                    ("resident_badook","어깨 높이면 밤이 키로는 안 닿습니다."),("neoul","……그럼 날아와서 물었겠지. 박쥐니까.")]},
+                    ("resident_badook","어깨 높이면 밤이 키로는 안 닿습니다."),("neoul","……그럼 날아와서 물었을 거요. 박쥐니까.")]},
                 hint="물린 사람이 기억하는 키.",
-                wrong=("neoul","그게 아이가 아니라는 증거냐?")),
+                wrong=("neoul","그게 아이가 아니라는 증거요?")),
             dict(id="s2f",who="neoul",text="박쥐는 【날 수 있소】. 처마에서 입구까지는 한 번 날면 그만이오.",
                 accept=["K09"],
                 broken_by={"K09":[("daram","밤이가 날아오르면 날개 밑의 눈이 부채꼴로 쓸려. 근데 그날 밤 밤이 자리는 하나도 안 쓸렸어."),
@@ -58,30 +58,30 @@ init 153 python:
                     ("resident_badook","그날 밤 뒤로 눈은 오지 않았습니다. 날았다면 자국이 남았을 겁니다."),
                     ("neoul","……")]},
                 hint="날아오르면 눈에 무엇이 남을까?",
-                wrong=("neoul","그런다고 날 수 있다는 게 없어지느냐?")),
+                wrong=("neoul","그런다고 날 수 있다는 게 없어지오?")),
             dict(id="s3",who="neoul",text="밤이는 밤마다 【입구를 돌아다닌다】.",
                 accept=["K03"],
                 broken_by={"K03":[("daram","그날 밤 밤이는 처마 위에 있었어. 별 보고 있었대."),
                     (None,"사람들 틈에서 솜이가 떨리는 목소리로 말했다."),
                     ("resident_somi","……나도 봤어. 밤이 그날 처마 위에 있었어.")]},
                 hint="그날 밤 밤이가 있던 곳.",
-                wrong=("neoul","그날 밤 그 아이가 어디 있었는지 말해 봐라.")),
+                wrong=("neoul","그날 밤 그 아이가 어디 있었는지 말해 보시오.")),
             dict(id="s4",who="neoul",text="맨발 자국은 신발 없는 【들짐승 아이】 것이오.",
                 accept=["K04"],
                 broken_by={"K04":[("daram","이건 어른 발이야. 밤이 발은 이만해."),
                     (None,"다람이 두 손으로 작은 발 모양을 만들어 보였다."),
-                    ("neoul","……그럼 누구란 말이냐.")]},
+                    ("neoul","……그럼 누구란 말이오.")]},
                 hint="눈밭 발자국의 크기.",
-                wrong=("neoul","발자국은 발자국이다.")),
+                wrong=("neoul","발자국은 발자국이오.")),
         ],
         conclusion=dict(prompt="그럼 밤이는?",
             options=[("correct","밤이는 처마 위에 있었고, 문 사람은 어른이다"),
                 ("over","콩이가 밤이에게 누명을 씌웠다"),
                 ("weak","밤이가 아닐 수도 있다")],
             correct=[("resident_badook","……밤이는 아닙니다. 의장으로서 그렇게 적겠습니다."),
-                ("neoul","그럼 누구란 말이냐?")],
+                ("neoul","그럼 누구란 말이오?")],
             over=("resident_kongi","나 아니야! 나는 들은 걸 판 것뿐이야!"),
-            weak=("neoul","‘아닐 수도’로는 못 풀어 준다.")),
+            weak=("neoul","‘아닐 수도’로는 못 풀어 주오.")),
         sway=["resident_badook","guard","resident_kongi"])
 
     # 무쇠 할아버지는 5일 밤 강으로 간다(진료소에 맡기면 7일 새벽). 그 뒤로는 마을에 없다.
@@ -145,12 +145,12 @@ label r13_ep2_bite:
             ("daram","나는 길 안 잃어버려. 아빠가 있으니까.")],"ep2:book")
     call r13_scene("winter","입구 · 어둠 속의 비명","night")
     call r13_lines([(None,"입구 쪽에서 비명이 들렸다. 경비 돌목이 어깨를 감싸 쥐고 눈밭에 주저앉아 있었다."),
-        ("guard","뭔가가…… 어둠 속에서 물었어!"),
+        ("guard","뭔가가…… 어둠 속에서 물었소!"),
         ("neoul","처마 밑의 그 들짐승 아이 짓이오. 날이 밝으면 찾아서 보호소로 보내겠소."),
         ("dad","보호소에서 돌아온 사람은 있습니까?"),
         ("neoul","……그건 보호소에서 알아서 할 일이오."),
         (None,"너울이 돌아서자 바둑이가 낮게 말했다."),
-        ("resident_badook","저는 돌아온 사람을 본 적이 없어요. 아직 한 번도요.")],"ep2:bite")
+        ("resident_badook","저는 돌아온 사람을 본 적이 없습니다. 아직 한 번도요.")],"ep2:bite")
     if not r13_has("W1"):
         $ r13_grant(["W1"],"입구에서 너울·바둑이와 나눈 말")
     $ r13_flag("badook_doubt")
@@ -160,7 +160,7 @@ label r13_ep2_day:
     $ r13_flag("kd_started")
     $ r13_edit(period=0,kd_steps=5)
     call r13_scene(R13_PLACES["room13"][1],"5일 아침 · 13호","calm")
-    call r13_lines([("dad","오늘은 하루 종일 일하러 가야 해. 나비 언니 말 잘 듣고."),
+    call r13_lines([("dad","오늘은 하루 종일 엄마 소식을 알아보러 다녀야 해. 나비 언니 말 잘 듣고."),
         ("daram","아빠. 밤이 잡혀가?"),
         ("dad","……모르겠다."),
         (None,"아빠가 내 탐정 모자를 고쳐 씌워 주었다."),
@@ -227,16 +227,16 @@ label r13_ep2_at_market:
 label r13_ep2_at_gate:
     $ r13_edit(location="gate")
     call r13_scene("winter","입구 · 돌목 아저씨","calm")
-    call r13_lines([("guard","애들은 저리 가.")],"ep2:dolmok")
+    call r13_lines([("guard","애들은 저리 가시오.")],"ep2:dolmok")
     menu:
         "토실이와 같이 간다":
             call r13_lines([(None,"토실이가 할머니 심부름으로 받아 온 약병을 두 손으로 내밀었다."),
                 ("resident_tosil","할머니가…… 아저씨 어깨에 바르래요."),
-                ("guard","……고맙다."),
-                ("guard","어두워서 얼굴은 못 봤어. 키가…… 내 어깨쯤이었나. 손이 아주 차가웠고.")],"ep2:dolmok:tosil")
+                ("guard","……고맙소."),
+                ("guard","어두워서 얼굴은 못 봤소. 키가…… 내 어깨쯤이었나. 손이 아주 차가웠소.")],"ep2:dolmok:tosil")
             $ r13_grant(["K02"],"입구에서 돌목 아저씨에게 들은 말")
         "혼자 간다":
-            call r13_lines([("guard","애들 놀이할 데가 아니다."),
+            call r13_lines([("guard","애들 놀이할 데가 아니오."),
                 ("daram","(혼자 오면 안 되는 거였어.)",{"thought":True})],"ep2:dolmok:alone")
             $ r13_flag("kd_dolmok_failed")
     call r13_ep2_step
@@ -337,13 +337,13 @@ label r13_ep2_meeting:
     call r13_lines([(None,"광장에 사람들이 모였다. 너울이 밤이의 팔을 붙들고 있었다. 바둑이가 그 옆에 서 있었다."),
         ("neoul","들짐승 아이가 경비를 물었소. 오늘 밤 보호소로 보내겠소."),
         ("daram","잠깐! 그거 이상해!"),
-        ("neoul","……애들 놀이에 끼어들지 마라."),
+        ("neoul","……애들 놀이에 끼어들지 마시오."),
         ("resident_badook","들어나 보죠. 아이 말이라도.")],"ep2:meeting:open")
     call r13_debate_run("Q2")
     if _return:
         call r13_ep2_decision
     else:
-        call r13_lines([("neoul","놀이는 끝났다."),
+        call r13_lines([("neoul","놀이는 끝났소."),
             (None,"너울이 밤이를 끌고 갔다. 밤이가 한 번 돌아보았다. 도토리를 쥔 손이 보였다."),
             ("daram","(내가 모자랐어. 밤이는 아무것도 안 했는데.)",{"thought":True})],"ep2:meeting:fail")
         $ r13_flag("bami_taken","kd_failed")

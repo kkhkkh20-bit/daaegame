@@ -64,7 +64,7 @@ init 94 python:
         return _r13_life_present(person,key,identity)
 
 label r13_first_day_arrival:
-    call r13_lines([("guard","신청서를 확인했습니다. 다돌 님과 다람이, 두 분이군요. 여관은 광장 안쪽에 있습니다."),("karo","짐은 제가 옮겨 드릴게요. 바퀴 축은 손을 봐야 하니 내일 다시 말씀드리죠.")],"life:arrival:entry")
+    call r13_lines([("guard","신청서를 확인했습니다. 다돌 님과 다람이, 두 분이구려. 여관은 광장 안쪽에 있습니다."),("karo","짐은 제가 옮겨 드릴게요. 바퀴 축은 손을 봐야 하니 내일 다시 말씀드리죠.")],"life:arrival:entry")
     $ r13_flag("entry_corrected")
     $ r13_grant(["E02"],"입구에서 확인받은, 함께 들어왔다는 기록")
     call r13_lines([("daram","아빠, 빨리 여관 가자. 엄마가 기다릴 거야."),("dad","그래. 13호실이라고 했지.")],"life:arrival:direction")
@@ -79,7 +79,7 @@ label r13_first_day_checkin:
     return
 
 label r13_mother_note:
-    call r13_lines([("dad","(책상에 접힌 종이가 있다. 다람이 이름 옆에 작은 도토리가 그려져 있다.)",{"thought":True}),("daram","이 그림은 엄마가 나한테 쓰는 표시야."),(None,"‘다람아, 아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐. 방에 남긴 건 그대로 두고.’"),("daram","아빠랑 나한테 쓴 메모네. 엄마가 언제 적어 놓은 걸까?"),("dad","글씨 모양도 적어 두자. 아까 받은 편지하고 같이 다시 읽어 봐야겠어.")],"life:mother:note:v2")
+    call r13_lines([("dad","(책상에 접힌 종이가 있다. 다람이 이름 옆에 작은 도토리가 그려져 있다.)",{"thought":True}),("daram","이 그림은 엄마가 나한테 쓰는 표시야."),(None,"‘다람아, 아빠랑 도착하면 이 방에 짐을 놓아. 내가 없으면 등불을 돌보는 분에게 내 소식을 물어봐. 방에 남긴 건 그대로 두고.’"),("daram","아빠랑 나한테 쓴 메모네. 엄마가 언제 적어 놓은 걸까?"),("dad","글씨 모양도 적어 두자. 가져온 편지하고 같이 다시 읽어 봐야겠어.")],"life:mother:note:v2")
     $ r13_grant(["M01"],"13호실 책상 위의 메모를 읽음")
     return
 

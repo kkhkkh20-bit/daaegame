@@ -20,11 +20,11 @@ init 122 python:
             ("dad","방금 덮은 장부는 뭡니까?"),
             ("resident_eunho","……가게 장부요."),
             ("dad","제가 들어오자마자 덮으셨습니다."),
-            ("resident_eunho","외상 장부예요. 배급표 없는 집에 이자를 붙여 물건을 내줬습니다. 촌장님 허가는 없었고요."),
-            ("resident_eunho","그날 밤 여관 일이랑은 상관없어요. 제가 장부를 숨긴 건 이 외상 때문이었습니다.")]),
+            ("resident_eunho","외상 장부요. 배급표 없는 집에 이자를 붙여 물건을 내줬습니다. 촌장님 허가는 없었소."),
+            ("resident_eunho","그날 밤 여관 일이랑은 상관없소. 제가 장부를 숨긴 건 이 외상 때문이었습니다.")]),
         "w2_eunho_credit":dict(npc="resident_eunho",title="외상 장부 이야기를 꺼낸다",day=[8,13],need=["eunho_credit_known","eunho_refuses"],not_flags=["supply_terms"],give=[],flags=["supply_terms"],lines=[
             ("dad","배급표 없는 집에 붙인 이자, 서리 검사원이 알면 어떻게 될까요."),
-            ("resident_eunho","……그 장부를 넘기지 않는다면, 대피소 몫은 내놓겠소. 이자도 지우지요.")]),
+            ("resident_eunho","……그 장부를 넘기지 않는다면, 대피소 몫은 내놓겠소. 이자도 지우겠소.")]),
     })
     R13_TOPIC_LABELS["seal_look"]="r13_seal_look"
 

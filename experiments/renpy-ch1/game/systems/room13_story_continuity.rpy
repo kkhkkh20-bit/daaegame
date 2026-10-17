@@ -47,6 +47,6 @@ init 162 python:
     for _st in R13_DEBATE["C1"]["statements"]:
         if "H7" in _st.get("accept",[]):
             _st.setdefault("broken_if",{})["H7"]=("ttadak_dead",[
-                ("resident_tok","따닥이 남긴 증축 기록이오. 벽 안에 옛 통로가 그려져 있고, 13호 책장 뒤로 이어진다고 그 녀석 글씨로 적혀 있소."),
-                ("resident_tok","그 녀석은 자기가 본 걸 늘 적어 뒀소. 남는 게 모자라는 것보다 낫다고."),
+                ("resident_tok","따닥이 남긴 증축 기록이에요. 벽 안에 옛 통로가 그려져 있고, 13호 책장 뒤로 이어진다고 그 녀석 글씨로 적혀 있어요."),
+                ("resident_tok","그 녀석은 자기가 본 걸 늘 적어 뒀어요. 남는 게 모자라는 것보다 낫다고요."),
                 ("seryeon","……13호에 문 말고 다른 길이 있었다고요?")])

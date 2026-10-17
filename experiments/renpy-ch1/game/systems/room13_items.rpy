@@ -35,7 +35,7 @@ init 96 python:
             (None,"침대 밑 판자 하나가 다른 판자보다 조금 들떠 있었다. 칼끝을 틈에 밀어 넣자 판자가 쉽게 들렸다."),
             (None,"판자 아래에 접힌 종이가 있었다. 다람이 이름 옆에 작은 도토리가 그려져 있었다. 아내가 쓰던 표시였다."),
             (None,"‘다람아, 이 마을의 불은 장작으로 타지 않아. 사람이 타. 아빠가 오면 이 종이를 보여 줘. 그리고 할머니께는 보여 주지 마.’"),
-            ("dad","(아내는 불의 비밀을 알고 있었다. 그리고 그 사실을 이 방 주인에게도 숨겼다.)",{"thought":True})],
+            ("dad","(아내는 불의 비밀을 알고 있었다. 그리고 그 사실을 여관 주인에게도 숨겼다.)",{"thought":True})],
             ["own:knife","lodging"],give=["M02"],not_flags=["M02"])),
         "use_knife_burlap": ("store","burlap",_r13_item_act("store","작업칼로 포장천 자루 바닥을 갈라 본다",[
             (None,"포장천 자루는 위쪽만 헐렁했다. 아래쪽은 이상하게 단단했다. 칼로 바닥 실밥을 끊자 숨겨진 이중 바닥이 드러났다."),
@@ -77,19 +77,19 @@ init 96 python:
             (_b["npc"],"멀쩡하네요. 보증금 여기 있어요.")])
     ROOM13["topics"]["eunho_hidden"]=dict(npc="resident_eunho",title="자루 밑에 숨긴 식량을 묻는다",day=[5,14],need=["hidden_stock"],give=[],flags=["supply_terms","eunho_exposed"],lines=[
         ("dad","포장천 자루 바닥에 식량이 따로 숨겨져 있더군요. 장부에는 바닥났다고 적혀 있던데요."),
-        ("resident_eunho","……겨울은 길어요. 겨울 끝에 가서 아무도 가진 게 없으면, 그때는 누가 나눠 줍니까."),
+        ("resident_eunho","……겨울은 길단 말이오. 겨울 끝에 가서 아무도 가진 게 없으면, 그때는 누가 나눠 줍니까."),
         ("dad","겨울 끝이 오기 전에 굶은 사람들이 먼저 쓰러집니다."),
-        ("resident_eunho","알겠습니다. 대피소가 정해지면 숨겨 둔 몫을 내놓지요. 대신 가져가는 사람은 이름을 적는다는 조건으로요.")])
+        ("resident_eunho","알겠습니다. 대피소가 정해지면 숨겨 둔 몫을 내놓겠소. 대신 가져가는 사람은 이름을 적는다는 조건이오.")])
     ROOM13["topics"]["eunho_scale"]=dict(npc="resident_eunho",title="저울이 기울어 있다고 말한다",day=[2,14],need=["scale_rigged"],give=[],flags=["shop_discount"],lines=[
         ("dad","가게 저울에 같은 모양의 표준 추를 올려 보니 접시가 기울더군요. 조정 나사 둘레도 새로 긁혀 있었습니다."),
-        ("resident_eunho","……다른 가게도 다들 그렇게 하는 줄 알았어요. 저울 바늘은 오늘 바로잡지요."),
+        ("resident_eunho","……다른 가게도 다들 그렇게 하는 줄 알았소. 저울 바늘은 오늘 바로잡겠소."),
         ("resident_eunho","그동안 물건을 덜 드린 만큼, 앞으로는 한 냥씩 깎아 드리겠습니다.")])
     ROOM13["topics"]["ppul_names"]=dict(npc="resident_ppul",title="돌에 긁힌 이름들을 보여 준다",day=[2,14],need=["R01"],give=[],flags=["ppul_names_seen"],lines=[
         ("dad","광장 돌에 종이를 대고 숯으로 떠 온 겁니다. 긁어 지운 자국 아래에 이름들이 남아 있었어요."),
         ("resident_ppul","……대체 어디서 그걸 떠 왔소."),
         ("resident_ppul","이름을 지우라고 한 건 나요. 이름이 남아 있으면 가족들이 매일 그 돌 앞에서 울었으니까."),
         ("dad","이름을 지운다고 그 사람들이 없던 사람이 되지는 않습니다."),
-        ("resident_ppul","알아요. 그래서 맨 아래 이름만은…… 차마 다 못 지웠소.")])
+        ("resident_ppul","알고 있소. 그래서 맨 아래 이름만은…… 차마 다 못 지웠소.")])
 
     _r13_items_has=r13_has
     def r13_has(key):

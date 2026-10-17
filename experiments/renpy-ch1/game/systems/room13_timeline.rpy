@@ -34,12 +34,16 @@ init 990 python:
     def _r13_tl_native(key):
         return any(str(key).startswith(p) for p in R13_TL_NATIVE_PREFIXES)
 
+    import collections.abc as _r13_abc
     def _r13_tl_remap_specs(table):
+        # 0.19.10: JSON data loads as plain dict/list, which the store's dict/list (Revertable types) do not
+        # match, so 170 topics and activities kept their old days. Test against the abstract types.
         for key,spec in list(table.items()):
-            if not isinstance(spec,dict) or _r13_tl_native(key) or spec.get("_tl"):continue
-            if "day" in spec and isinstance(spec["day"],(list,tuple)) and len(spec["day"])==2:
-                a,b=r13_tl_window(*spec["day"])
-                spec["day"]=[a,b] if isinstance(spec["day"],list) else (a,b)
+            if not isinstance(spec,_r13_abc.Mapping) or _r13_tl_native(key) or spec.get("_tl"):continue
+            day=spec.get("day")
+            if isinstance(day,_r13_abc.Sequence) and not isinstance(day,str) and len(day)==2:
+                a,b=r13_tl_window(*day)
+                spec["day"]=(a,b) if isinstance(day,tuple) else [a,b]
             spec["_tl"]=True
 
     _r13_tl_remap_specs(ROOM13["topics"])

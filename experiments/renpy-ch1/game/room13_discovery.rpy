@@ -24,11 +24,11 @@ init 61 python:
             return [(None, "「" + names + "」는 이미 수첩에 적혀 있다. 수첩에서 다시 읽거나 상대에게 보여 줄 수 있다.")]
         if location == "workshop" and key == "plans":
             if r13_has("E04"):
-                return [(None, "도면을 비교한 기록은 수첩에 적혀 있다. 부리에게 보여 주고 확인받을 수 있다.")]
+                return [(None, "도면을 비교한 기록은 수첩에 적혀 있다. 부리의 도면에 덧그린 선이 지금도 쓰이는지는 아직 모른다.")]
             if any(action == "map" for action, unused in r13_actions()):
-                return [(None, "도면을 보는 것만으로는 비교 기록이 남지 않는다. 도면의 조사 메뉴에서 외벽과 비교할 수 있다.")]
+                return [(None, "도면을 보는 것만으로는 비교 기록이 남지 않는다. 외벽 길이와는 아직 대 보지 않았다.")]
         if location == "inn" and key == "register" and r13_has("lodging"):
-            return [(None, "장부의 내용은 주인에게 확인해야 한다. 아내의 초대 편지는 수첩에 남아 있다.")]
+            return [(None, "장부에 적힌 내용이 무슨 뜻인지는 아직 모른다. 아내의 초대 편지는 수첩에 남아 있다.")]
         return []
 
     # Keep the original disclosure bookkeeping, caution flags and later-week

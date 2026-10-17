@@ -1516,7 +1516,7 @@ testcase w1c_mother_line:
     pause 3.0
     run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ep1_patrol_seen","ev_a_done"),(),12)
     click pos (1150,90) until screen "choice" timeout 40
-    click "엄마 초상을 그려 달라고 한다 (5냥)"
+    click "아내 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     run Call("r13_qa_goto",2,0,"post")
@@ -1597,7 +1597,7 @@ testcase present_portrait:
     pause 3.0
     run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ep1_patrol_seen","ev_a_done"),(),12)
     click pos (1150,90) until screen "choice" timeout 40
-    click "엄마 초상을 그려 달라고 한다 (5냥)"
+    click "아내 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
     click pos (1150,90) until screen "r13_hub" timeout 40
     # 에피소드 ①: 초상은 다음 날 아침에 받는다. 여기서는 받았다고 치고 이어 간다.

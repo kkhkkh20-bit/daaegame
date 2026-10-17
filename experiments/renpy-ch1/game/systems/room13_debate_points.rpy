@@ -11,10 +11,10 @@ init 167 python:
     _st=_r13_dp_statement("Q4","s3")
     _st["accept"]=["N09","N07"]
     _st["pair"]=dict(keys=["N09","N07"],
-        half={"N09":[("dad","따닥 씨는 문 옆 벽을 부리로 오래 쪼았습니다. 그 벽 너머가 주방입니다."),
-                ("granny","두드렸다 해도, 그 소리를 누가 들었다는 거니? 주방엔 아무도 없었단다.")],
+        half={"N09":[("dad","따닥 씨는 판자 문 옆 벽을 부리로 오래 쪼았습니다. 그 벽 너머가 주방입니다."),
+                ("granny","두드렸다 해도, 그 소리를 누가 들었다는 거예요? 주방엔 아무도 없었어요.")],
               "N07":[("dad","9일 아침, 주방 레버가 내려져 있었습니다."),
-                ("granny","레버야 누가 지나가다 건드렸겠지. 안에서 두드렸으면 누구라도 열어 줬을 거란다.")]},
+                ("granny","레버야 누가 지나가다 건드렸겠지요. 안에서 두드렸으면 누구라도 열어 줬을 거예요.")]},
         broken=[("dad","레버는 주방에서만 내립니다. 그리고 그 레버 바로 옆 벽을, 따닥 씨는 날개도 못 편 채 부리로 오래 두드렸습니다.")]+list(_st["broken_by"]["N09"]))
 
     # ⑤ 선생님 "아이들과 같은 냄비에서 먹었다" ← 아이 그릇만(Y11) + 새미의 말(Y13): 대피소에서 함께 얻는다.
@@ -45,7 +45,7 @@ init 167 python:
         keys=["L07","L08"],ask="그 사람이 등을 열었다는 증거는—.",
         decisive={"L07":[("dad","뚜껑에 남은 노끈과 실룩 씨 짐 끈은 끝이 뜯긴 자리가 똑같습니다.")],
                   "L08":[("dad","그날 밤 늦게, 손이 꽁꽁 언 채 들어왔다고 실룩 씨 아이가 말했습니다.")]},
-        wrong_who={"resident_tok":("resident_tok","내가 연 등이면 조각을 왜 남의 창고에 팔겠소."),
+        wrong_who={"resident_tok":("resident_tok","내가 연 등이면 조각을 왜 남의 창고에 팔겠어요."),
                    "resident_seori":R13_DEBATE["Q1"]["conclusion"]["weak"],
                    "resident_madam":("resident_madam","저는 산 것뿐이에요. 등을 연 손은 제 손이 아니에요.")},
         wrong_key=("resident_siluk","그게 내가 등을 열었다는 증거요?"))
@@ -66,7 +66,7 @@ init 167 python:
         wrong_who={"resident_tosil":R13_DEBATE["Q4"]["conclusion"]["over"],
                    "nabi":("nabi","저는 새벽에 빨래터로 먼저 보내졌어요. 할머니가 보내셨어요."),
                    "resident_ppul":("resident_ppul","나는 그 새벽 회관에 있었소.")},
-        wrong_key=("granny","그게 할머니가 문을 닫았다는 뜻이니?"))
+        wrong_key=("granny","그게 내가 문을 닫았다는 뜻이에요?"))
     R13_DEBATE["Q5"]["conclusion"]["point"]=dict(prompt="아이 냄비에 약을 넣은 사람은?",
         candidates=["resident_bori","resident_seori","resident_madam","resident_teacher"],who="resident_teacher",
         keys=["Y13","Y12"],ask="그 사람이 약을 넣었다는 증거는—.",
@@ -92,7 +92,7 @@ init 167 python:
             ("dad","(허리에 노끈. 그 노끈이 등 뚜껑의 노끈과 같은지 보면 된다.)",{"thought":True})]),
         ("Q3","s2",[("nabi","제 등잔은 뚜껑을 덮으면 꺼져요. 꼬미한테 꼭 덮으라고 했어요……. 꼬미가 안 덮었으면 제 탓이에요."),
             ("dad","(그 등잔이 어떤 모습으로 나왔는지부터 보자.)",{"thought":True})]),
-        ("Q4","s2",[("granny","새벽 주방엔 늘 토실이가 불을 넣는단다. 그 어린 손이 레버에 닿았을지도 모르지."),
+        ("Q4","s2",[("granny","새벽 주방엔 늘 토실이가 불을 넣어요. 그 어린 손이 레버에 닿았을지도 모르지요."),
             ("resident_tosil","(작게) ……나, 그날은……"),
             ("granny","토실아, 어른들 얘기란다."),
             ("dad","(토실이가 무언가 말하려다 멈췄다. 할머니는 그날 토실이가 주방에 왔는지 묻지 않았다. 이미 알고 있는 것처럼.)",{"thought":True})]),

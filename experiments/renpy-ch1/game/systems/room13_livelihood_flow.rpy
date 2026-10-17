@@ -22,9 +22,9 @@ init 92 python:
         ("dad","일도 좋지만, 아내 소식도 계속 알아봐야 합니다."),
         ("karo","그럼 배달을 다니면서 마을 사람들을 만나 보세요. 대신 누구네 짐인지는 꼭 짐표와 같이 확인하고요.")])
     ROOM13["topics"]["life:nabi"]=dict(npc="nabi",title="초롱 씨 그릇은 늘 따로 챙기니?",day=[2,14],need=["life:nabi_helped"],give=[],flags=[],lines=[
-        ("dad","아까 따로 둔 그릇 말이야, 초롱 씨 몫이라고 했지?"),
+        ("dad","아까 따로 둔 그릇 말인데요, 초롱 씨 몫이라고 했지요?"),
         ("nabi","네. 밖에서 등불을 돌보느라 끼니때를 자주 놓치거든요."),
-        ("dad","아내가 여기 머물 때도 등불 돌보는 분이 왔었니?"),
+        ("dad","아내가 여기 머물 때도 등불 돌보는 분이 왔었나요?"),
         ("nabi","네, 오긴 했죠. 부인이랑 무슨 얘기를 했는지는 초롱한테 직접 물어봐요.")])
     ROOM13["topics"]["life:buri"]=dict(npc="buri",title="장부의 숫자는 언제 옮겨 적습니까?",day=[2,14],need=["life:buri_honest"],give=[],flags=[],lines=[
         ("buri","아까 모자란 부품 알려 줘서 고마워요. 다시 세어 본 수를 장부에 적어 뒀어요."),
@@ -62,7 +62,7 @@ label r13_livelihood_start:
     elif r13_job_key in R13_JOB_START_LINES:
         call r13_lines(R13_JOB_START_LINES[r13_job_key],"life:"+r13_job_key+":start")
     elif r13_job_key=="kitchen":
-        call r13_lines([("nabi","닦은 그릇은 여기에 두고요. 이 한 벌은 따로 놓아 줘요."),("dad","응. 나머지 그릇은 식당으로 내가면 되니?")],"life:kitchen:start")
+        call r13_lines([("nabi","닦은 그릇은 여기에 두고요. 이 한 벌은 따로 놓아 줘요."),("dad","네. 나머지 그릇은 식당으로 내가면 되나요?")],"life:kitchen:start")
     else:
         call r13_lines([("buri","부품은 같은 크기끼리 나눠 주세요. 다 세고 나면 장부에 표시하고요."),("dad","세어 보니 장부에 적힌 것보다 한 개 적군요.")],"life:repair:start")
     $ r13_job_question=r13_job_spec["choice"]
@@ -88,7 +88,7 @@ label r13_livelihood_start:
         elif r13_job_key in R13_JOB_ASK_LINES:
             call r13_lines(R13_JOB_ASK_LINES[r13_job_key],"life:"+r13_job_key+":ask")
         elif r13_job_key=="kitchen":
-            call r13_lines([("dad","따로 놓은 이 그릇은 누구 몫이니?"),("nabi","초롱 몫이요. 돌아오면 드려야 해요. 다른 이야기는 손님 식사를 내간 다음에 해요.")],"life:kitchen:notice")
+            call r13_lines([("dad","따로 놓은 이 그릇은 누구 몫인가요?"),("nabi","초롱 몫이요. 돌아오면 드려야 해요. 다른 이야기는 손님 식사를 내간 다음에 해요.")],"life:kitchen:notice")
         else:
             call r13_lines([("dad","부품 하나가 모자랍니다. 그래서 장부에는 아직 표시하지 않았어요."),("buri","잘했어요. 장부에 적힌 수에 억지로 맞추지 마세요. 모자란 하나는 제가 어디 썼는지 찾아볼게요.")],"life:repair:honest")
         $ r13_flag(*["life:"+mark for mark in r13_wallet(room13)["relations"]])

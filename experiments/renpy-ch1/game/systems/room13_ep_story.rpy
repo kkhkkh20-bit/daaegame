@@ -16,12 +16,12 @@ init 158 python:
         "ep4:st_ttadak_boards":r13_st_topic("resident_ttadak","판자를 많이 사 두셨네요",(2,8),not_flags=["ttadak_dead"],flags=["st_ttadak_boards"],lines=[
             ("resident_ttadak","아랫길 네로 아저씨네 천막에 댈 거예요. 바람이 숭숭 들어와서 애들이 밤새 기침해요."),
             ("resident_ttadak","여관 일은 일당이 두 배라 거절 못 해요. 판자 값은 어떻게든 벌어야죠."),
-            ("resident_ttadak","나는 판자를 늘 반 치씩 길게 잘라요. 모자라는 것보다 남는 게 낫거든요."),
+            ("resident_ttadak","저는 판자를 늘 반 치씩 길게 잘라요. 모자라는 것보다 남는 게 낫거든요."),
             ("dad","(남는 판자는 결국 남의 천막으로 간다.)",{"thought":True})]),
         "ep6:st_momo_glasses":r13_st_topic("resident_momo","늘 안경을 품에 넣고 다니시네요",(2,12),flags=["st_momo_glasses"],lines=[
-            ("resident_momo","내 안경이 아니오. 첫 겨울에 보호소로 간 동생 것이오."),
-            ("resident_momo","옛 마을 물건이라면 뭐든 산다고들 흉보지. 사람은 가도 물건은 남으니까, 그거라도 붙잡아 두는 거요."),
-            ("resident_momo","언젠가 누가 '이건 누구 것이었소' 하고 물어봐 주면 좋겠소. 그럼 그 이름을 한 번 더 말할 수 있으니까.")]),
+            ("resident_momo","제 안경이 아니에요. 첫 겨울에 보호소로 간 동생 거예요."),
+            ("resident_momo","옛 마을 물건이라면 뭐든 산다고들 흉보죠. 사람은 가도 물건은 남으니까, 그거라도 붙잡아 두는 거예요."),
+            ("resident_momo","언젠가 누가 ‘이건 누구 것이었소’ 하고 물어봐 주면 좋겠어요. 그럼 그 이름을 한 번 더 말할 수 있으니까요.")]),
         # ---- 구한 뒤 찾아가면 ----
         "ep1:st_piko_after":r13_st_topic("resident_piko","몸은 좀 괜찮아요?",(4,14),need=["piko_survived"],flags=["st_piko_after"],lines=[
             ("resident_piko","손가락이 아직 좀 굳었어요. 그래도 붓은 쥐어져요."),
@@ -36,7 +36,7 @@ init 158 python:
             ("resident_lamplighter","편지는 여전히 제가 직접 전해요. 그건 안 바꿔요. 다만 이제 혼자 가지는 않아요."),
             ("resident_lamplighter","그날 밤 누가 기다리고 있었다는 걸 알고 나니까 지름길이 다 무서워졌어요. 그래도 등은 켜야죠.")]),
         "ep4:st_ttadak_after":r13_st_topic("resident_ttadak","통로 문은 어떻게 했어요?",(11,14),need=["nt_ttadak_safe"],flags=["st_ttadak_after"],lines=[
-            ("resident_ttadak","통로 문 안쪽에 손잡이를 달았어요. 안에서도 열리게요."),
+            ("resident_ttadak","판자 문 안쪽에 손잡이를 달았어요. 안에서도 열리게요."),
             ("resident_ttadak","누가 또 들어갔다가 갇히면 안 되잖아요. 판자는 반 치 길게 잘랐어요. 늘 그랬듯이."),
             ("resident_ttadak","네로 아저씨네 천막에도 판자를 다 댔어요. 그날 일당 받은 걸로요.")]),
         "ep5:st_nero_after":r13_st_topic("resident_nero","무엇을 그렇게 꿰매고 있어요?",(12,14),need=["nero_alive"],flags=["st_nero_after"],lines=[

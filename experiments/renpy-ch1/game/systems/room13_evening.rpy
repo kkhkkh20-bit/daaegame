@@ -91,7 +91,7 @@ label r13_ev_lamp_round:
     call r13_ev_here("night")
     call r13_lines([(None,"광장 가장자리에서 초롱이 긴 장대로 등 뚜껑을 하나씩 열고 있었다."),
         ("resident_lamplighter","저녁 순회예요. 따라오셔도 돼요. 대신 등 바로 아래에는 서지 마세요."),
-        ("daram","아빠, 등마다 이름표가 붙어 있어!")],"ev:lamp:open")
+        ("daram","아빠, 등에 이름표가 붙어 있어!")],"ev:lamp:open")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False
@@ -175,7 +175,7 @@ label r13_ev_night_visit:
             "담요를 넣어 달라고 부탁한다" if not r13_has("visit_blanket_asked"):
                 $ r13_flag("visit_blanket_asked")
                 if r13_has("badook_doubt") or r13_has("badook_ally"):
-                    call r13_lines([("resident_badook","……규칙에 없다고 다 금지된 건 아니지. 내 담요요. 아침에는 돌려받겠소."),
+                    call r13_lines([("resident_badook","……규칙에 없다고 다 금지된 건 아닙니다. 제 담요예요. 아침에는 돌려받겠습니다."),
                         ("daram","담요에서 바둑이 아저씨 냄새 나.")],"ev:visit:blanket")
                     $ r13_flag("daram_warm","badook_ally")
                 else:
@@ -225,12 +225,12 @@ label r13_ev_eve_trial:
             "톡을 찾는다" if not r13_has("eve:tok"):
                 $ r13_flag("eve:tok")
                 if r13_has("witness:tok"):
-                    call r13_lines([("resident_tok","핀은 내가 고친 거요. 그 핀이 누구 것인지도 재판에서 내가 말하겠소.")],"ev:eve:tok:yes")
+                    call r13_lines([("resident_tok","핀은 제가 고친 거예요. 그 핀이 누구 것인지도 재판에서 제가 말할게요.")],"ev:eve:tok:yes")
                 elif r13_has("tok_detained") and not r13_has("tok_cleared"):
                     call r13_lines([(None,"톡의 자리는 비어 있었다. 아직 수리점 문에 판자가 덧대져 있다고 했다."),
                         ("dad","(톡이 갇혀 있으면 재판에서 핀 이야기를 해 줄 사람이 없다.)",{"thought":True})],"ev:eve:tok:held")
                 else:
-                    call r13_lines([("resident_tok","재판? 나는 일만 하오. 내 일이 아니면 끼지 않소."),
+                    call r13_lines([("resident_tok","재판요? 저는 일만 해요. 제 일이 아니면 안 껴요."),
                         ("dad","(톡에게 이 재판은 아직 남의 일이다.)",{"thought":True})],"ev:eve:tok:no")
             "밤이를 찾는다" if not r13_has("eve:bami"):
                 $ r13_flag("eve:bami")
@@ -238,9 +238,9 @@ label r13_ev_eve_trial:
                     call r13_lines([(None,"처마 밑은 비어 있었다. 검사를 받으러 끌려간 뒤로 밤이를 본 사람은 없었다."),
                         ("dad","(밤이가 그날 본 것은 이제 아무도 말해 줄 수 없다.)",{"thought":True})],"ev:eve:bami:gone")
                 elif r13_has("bami_consent"):
-                    call r13_lines([("bami","내가 그날 본 거, 내일 재판에서 말할게. 대신 아저씨가 옆에 있어 줘.")],"ev:eve:bami:yes")
+                    call r13_lines([("bami","제가 그날 본 거, 내일 재판에서 말할게요. 대신 아저씨가 옆에 있어 주세요.")],"ev:eve:bami:yes")
                 else:
-                    call r13_lines([("bami","……사람 많은 데는 싫어. 내가 나서서 말하면 경비들이 나도 데려갈 거잖아."),
+                    call r13_lines([("bami","……사람 많은 데는 싫어요. 제가 나서서 말하면 경비들이 저도 데려갈 거잖아요."),
                         ("dad","(밤이는 말하기 싫은 게 아니다. 끌려갈까 봐 무서운 것이다.)",{"thought":True})],"ev:eve:bami:no")
             "뿔이 촌장과 마주 앉는다" if not r13_has("eve:ppul"):
                 $ r13_flag("eve:ppul")

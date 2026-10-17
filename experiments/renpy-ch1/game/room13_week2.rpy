@@ -18,7 +18,7 @@ label r13_week2_opening:
     call r13_lines([("resident_ubak" if r13_has("chorong_dead") else "resident_lamplighter","등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요."),(None,"재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.")],"week2:crisis")
     if r13_has("warning_exposed"):
         $ r13_flag("pursuit_active")
-        call r13_lines([(None,"여관에서 편지 이야기가 새어 나갔다. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있다고 했다.")] if r13_has("chorong_dead") else [("resident_lamplighter","여관에서 편지 이야기가 나왔습니다. 그래서 다음 편지를 누가 가져오는지 확인하러 다니는 중이에요.")],"week2:prior_disclosure")
+        call r13_lines([(None,"여관에서 편지 이야기가 새어 나갔다. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있다고 했다.")] if r13_has("chorong_dead") else [("resident_lamplighter","여관에서 편지 이야기가 새어 나갔어요. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있어요.")],"week2:prior_disclosure")
     jump r13_roam
 
 label r13_week2_day:
@@ -36,14 +36,14 @@ label r13_week2_events:
         $ r13_grant(["E19"],"초롱이 직접 가져온 현재 답장")
         $ r13_edit(mom_state="contacted")
     if r13_has("contact_compromised") and "contact_relocated" not in room13["events"]:
-        call r13_lines([(None,"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」"),("dad","(아내 글씨다. 살아 있다.)",{"thought":True})] if r13_has("chorong_dead") else [("resident_lamplighter","약속 장소에 경비가 먼저 와 있었어요. 그래서 어머니는 자리를 바꿨습니다. 새 표식을 확인해야 해요."),("dad","아내가 살아 있다는 거죠?"),("resident_lamplighter","제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.")],"week2:relocated")
+        call r13_lines([(None,"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」"),("dad","(아내 글씨다. 살아 있다.)",{"thought":True})] if r13_has("chorong_dead") else [("resident_lamplighter","약속 장소에 경비가 먼저 와 있었어요. 그래서 부인께서 자리를 바꾸셨어요. 새 표식을 확인해야 해요."),("dad","아내가 살아 있다는 거죠?"),("resident_lamplighter","제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.")],"week2:relocated")
         $ r13_event("contact_relocated")
     if r13_has("convoy_changed") and "convoy_changed_notice" not in room13["events"]:
         call r13_lines([("neoul","사람을 끌고 가는 경비 조가 바뀌었습니다. 전에 보신 순번과 다를 겁니다."),(None,"갖고 있던 기록은 그대로 남아 있다. 하지만 지금 내려진 명령은 다시 확인해야 한다.")],"week2:convoy_changed")
         $ r13_event("convoy_changed_notice")
     if room13["day"]>=r13_tl(11) and "day11_warning" not in room13["events"]:
         call r13_scene("winter_square","광장 · 꺼진 집들","night")
-        call r13_lines([("resident_ppul","불이 들어오지 않는 집은 학교로 모이십시오. 보호시설 환자들은 별도로 옮깁니다."),("resident_bori","왜 보호시설에 계신 분들은 학교로 안 와요?"),("resident_ppul","함께 있으면 서로 다칠 수 있으니까요."),(None,"옮길 사람 명단에 붉은 줄이 그어졌다. 치료하러 옮긴다기에는 준비해 둔 장비가 맞지 않았다.")],"week2:day11_warning")
+        call r13_lines([("resident_ppul","불이 들어오지 않는 집은 학교로 모이십시오. 보호시설 환자들은 별도로 옮깁니다."),("resident_bori","왜 보호시설에 계신 분들은 학교로 안 와요?"),("resident_ppul","함께 있으면 서로 다칠 수 있기 때문이오."),(None,"옮길 사람 명단에 붉은 줄이 그어졌다. 치료하러 옮긴다기에는 준비해 둔 장비가 맞지 않았다.")],"week2:day11_warning")
         if room13["daram_state"]=="held":
             call r13_lines([("neoul","아이 이름도 따로 옮길 사람 명단에 올라 있습니다. 명령이 바뀌기 전에 확인할 일이 있으면 지금 하십시오.")],"week2:day11_child")
         $ r13_event("day11_warning")
@@ -123,7 +123,7 @@ label r13_rescue(route, at_altar=False):
     if room13["daram_state"]!="held":
         return False
     if route not in r13_rescue_routes():
-        call r13_lines([("dad","전에 확인한 교대 순서와 지금 경비들 움직임이 다르다. 그러니 지금 기록을 다시 확인해야겠어.")],"rescue:stale")
+        call r13_lines([("dad","전에 확인한 교대 순서와 지금 경비들 움직임이 다르다. 그러니 지금 기록을 다시 확인해야 한다.")],"rescue:stale")
         return False
     if at_altar:
         if route=="order":
@@ -157,11 +157,11 @@ label r13_finale:
     show screen r13_hud
     call r13_scene("r13_altar","북쪽 산길 끝 · 숲속 제단","hearing")
     call r13_lines([(None,"광장의 불빛이 발아래로 멀어졌다. 산길은 수레가 다닐 만큼 넓게 다져져 있었다. 그 끝, 소나무 사이로 연결 장치가 드러났다. 산 아래로 내려가는 관을 따라 사람들이 모여 있었다.")],"finale:mountain_approach")
-    call r13_lines([(None,"솟은 돌 주변에서 묶인 환자들과 담요를 든 가족들이 뒤섞였다. 쓰러진 난간을 일으켜 세울 사람도 없었다."),("resident_ppul","지금 연결해야 합니다. 이러다 대피소 쪽도 버티지 못해요!"),("resident_bori","우리 식구가 아직 저 안에 있어요! 먼저 나오게 해 주세요!")],"finale:arrival")
+    call r13_lines([(None,"솟은 돌 주변에서 묶인 환자들과 담요를 든 가족들이 뒤섞였다. 쓰러진 난간을 일으켜 세울 사람도 없었다."),("resident_ppul","지금 연결해야 합니다. 이러다 대피소 쪽도 버티지 못하오!"),("resident_bori","우리 식구가 아직 저 안에 있어요! 먼저 나오게 해 주세요!")],"finale:arrival")
     if room13["granny_state"]=="detained":
         call r13_lines([(None,"할머니는 너울에게 감시받고 있었다. 장치에 손이 닿을 거리는 아니었다."),("resident_ppul","할머니는 장치 다루는 법을 들으려고 데려온 겁니다. 결정은 내가 합니다."),("dad","그 결정의 책임도 직접 지십시오.")],"finale:granny_detained")
     else:
-        call r13_lines([("granny","다들 가까이 오지 마요. 지금 끈을 풀면 또 다칠 수 있어."),(None,"어제 밥그릇을 건네던 때와 똑같은 말투였다. 할머니는 결박 끈의 매듭을 다시 확인했다.")],"finale:granny_free")
+        call r13_lines([("granny","다들 가까이 오지 마요. 지금 끈을 풀면 또 다칠 수 있어요."),(None,"어제 밥그릇을 건네던 때와 똑같은 말투였다. 할머니는 결박 끈의 매듭을 다시 확인했다.")],"finale:granny_free")
     if not r13_has("mom_reunited"):
         call r13_lines([(None,"장치 뒤에서 누군가 연결 손잡이를 붙들었다."),("mom","사람 쪽을 먼저 연결하지 마세요!"),("dad","……너, 여기 있었어?"),("mom","끌려가는 사람들을 따라왔어. 지금은 이 손잡이부터 잡아 줘."),(None,"엄마는 스스로 여기까지 왔다. 하지만 연구 원본이나 주민의 동의까지 손에 쥐여 주지는 못했다.")],"finale:mother_arrives")
         $ r13_flag("mom_reunited","mother_late_arrival")
@@ -242,15 +242,15 @@ label r13_crisis_argument(claim):
     $ r13_meeting_focus_change(claim,r13_debate_statements(claim)[0]["who"])
     $ r13_claim=claim
     if claim=="F1":
-        call r13_lines([("resident_ppul","저분들은 가족도 알아보지 못합니다. 회복할 수 없는 분들로 판단됐어요."),("dad","그 판단부터 다시 확인해야 합니다.")],"final:F1:start")
+        call r13_lines([("resident_ppul","저분들은 가족도 알아보지 못합니다. 회복할 수 없는 분들로 판단됐소."),("dad","그 판단부터 다시 확인해야 합니다.")],"final:F1:start")
     elif claim=="F2":
-        call r13_lines([("resident_ppul","지난번에는 불이 돌아왔습니다. 그건 다들 직접 봤잖아요."),("mom","힘이 올라간 건 사실이에요. 그다음에 더 떨어진 것도 보세요.")],"final:F2:start")
+        call r13_lines([("resident_ppul","지난번에는 불이 돌아왔습니다. 그건 다들 직접 봤잖소."),("mom","힘이 올라간 건 사실이에요. 그다음에 더 떨어진 것도 보세요.")],"final:F2:start")
         if r13_has("research_disclosed"):
-            call r13_lines([("resident_ppul","이미 보여 주신 연구죠. 본인이 맞다고 쓴 기록 말고 다른 사람이 확인한 것도 있습니까?")],"final:F2:prepared")
+            call r13_lines([("resident_ppul","이미 보여 주신 연구 아니오. 본인이 맞다고 쓴 기록 말고 다른 사람이 확인한 것도 있습니까?")],"final:F2:prepared")
     elif claim=="F3":
         call r13_lines([("resident_ppul","그럼 오늘 밤은 어디서 잡니까? 불 끄고 서로 껴안으면 삽니까?"),("nabi","먹을 것도 같이 답해야 해요. 없는 걸 있다고 할 수는 없잖아요.")],"final:F3:start")
     else:
-        call r13_lines([("dad","우리를 부른 편지부터 확인하겠습니다."),("granny","내가 아내를 찾게 해 줬잖아요."),("dad","아내는 이미 당신에게서 도망친 뒤였습니다.")],"final:F4:start")
+        call r13_lines([("dad","우리를 부른 편지부터 확인하겠습니다."),("granny","내가 부인을 찾게 해 줬잖아요."),("dad","아내는 이미 할머니에게서 도망친 뒤였습니다.")],"final:F4:start")
 label r13_crisis_argument_menu:
     call r13_debate_run(r13_claim) from r13_crisis_debate_return
     $ r13_meeting_active=False
@@ -270,7 +270,7 @@ label r13_final_reason(claim):
         menu:
             "옛 기록과 두 번 지켜본 결과를 어떻게 이을까?"
             "희생 효과는 점점 짧았다. 힘을 모아 지킨다":
-                call r13_lines([("buri","힘을 뽑아낼수록 버틴 기간이 줄었어요. 어르신이 남긴 장치 일지에도 그렇게 적혀 있어요."),("resident_seori","힘을 다르게 쓸 때도 남은 힘이 옮겨 가는 걸 확인했습니다. 새로 힘을 채우는 건 아니지만, 사람을 잇지 않고 버틸 방법은 있습니다."),("resident_ppul","그것도 결국 다 쓰면 끝이잖소!"),("mom","맞아요. 그러니까 필요한 곳에 모여서, 그동안 장작과 식량을 마련해야 해요. 다음에 바칠 사람을 정할 날을 기다리는 대신에요."),(None,"작업자가 손을 멈췄다. 환자 쪽 관이 내려왔다. 대피소를 맡은 사람들이 실제로 얼마나 버틸 수 있을지 따져 보기 시작했다.")],"final:F2:proved:v3")
+                call r13_lines([("buri","힘을 뽑아낼수록 버틴 기간이 줄었어요. 할아버지가 남긴 운전 기록에도 그렇게 적혀 있어요."),("resident_seori","힘을 다르게 쓸 때도 남은 힘이 옮겨 가는 걸 확인했습니다. 새로 힘을 채우는 건 아니지만, 사람을 잇지 않고 버틸 방법은 있습니다."),("resident_ppul","그것도 결국 다 쓰면 끝이잖소!"),("mom","맞아요. 그러니까 필요한 곳에 모여서, 그동안 장작과 식량을 마련해야 해요. 다음에 바칠 사람을 정할 날을 기다리는 대신에요."),(None,"작업자가 손을 멈췄다. 환자 쪽 관이 내려왔다. 대피소를 맡은 사람들이 실제로 얼마나 버틸 수 있을지 따져 보기 시작했다.")],"final:F2:proved:v3")
                 return True
             "희생 직후 힘이 올랐으니 성공한 방법이다":
                 call r13_lines([("mom","그 뒤에 힘이 떨어진 걸 별개의 사고로 떼어 보려면 근거가 있어야 해. 옛 기록도 같은 순서잖아."),("resident_seori","한 번 올랐다는 것과 계속 버틸 수 있다는 주장은 다릅니다. 다음 관측까지 함께 보겠습니다.")],"final:F2:wrong")
@@ -286,7 +286,7 @@ label r13_final_reason(claim):
         menu:
             "편지와 경고, 분리 지시를 연결하면?"
             "가족을 불러 아이를 떼어 통제하려 했다":
-                call r13_lines([("dad","아내가 돌아오기를 거절한 뒤에, 아내 이름으로 이 편지를 써서 보내셨습니다. 가족을 떼어 놓을 지시도 미리 준비해 두셨고요."),("granny","그 여자가 돌아왔으면 아이는 다치지 않아도 됐어."),("mom","당신을 만나러 돌아갈 수는 없었어요. 가족에게 돌아갈 방법을 찾고 있었으니까요."),("dad","대답하지 않으셔도 기록은 남습니다."),("neoul","이제부터 그 지시는 따르지 않겠습니다. 자료부터 챙기죠.")],"final:F4:proved")
+                call r13_lines([("dad","아내가 돌아오기를 거절한 뒤에, 아내 이름으로 이 편지를 써서 보내셨습니다. 가족을 떼어 놓을 지시도 미리 준비해 두셨고요."),("granny","그 여자가 돌아왔으면 아이는 다치지 않아도 됐어요."),("mom","할머니를 만나러 돌아갈 수는 없었어요. 가족에게 돌아갈 방법을 찾고 있었으니까요."),("dad","대답하지 않으셔도 기록은 남습니다."),("neoul","이제부터 그 지시는 따르지 않겠습니다. 자료부터 챙깁시다.")],"final:F4:proved")
                 return True
             "분리 지시는 아이를 지키려던 것이었다":
                 call r13_lines([("resident_seori","보낸 원본의 날짜는 사건 이전입니다. 지키려 했다는 설명은 그 지시를 내린 시점과 함께 대조해 봐야 합니다.")],"final:F4:wrong")
@@ -305,7 +305,7 @@ label r13_ending:
         call r13_lines([("dad","어디로 옮겼습니까?"),("guard","여기 남은 기록은 거기까지입니다."),(None,"돌려받은 장갑은 한 짝뿐이었다. 수첩에는 마지막으로 확인한, 끌고 간 시각과 바뀐 경비 순서가 남아 있었다.")],"ending:E1")
     elif r13_ending_id=="E3":
         call r13_scene("r13_altar","산 아래 다시 켜진 마을","quiet")
-        call r13_lines([(None,"불이 돌아오자 사람들이 안도의 숨을 내쉬었다. 그 뒤편에서 누군가 한 사람 몫의 그릇을 치웠다."),("resident_eunho","오늘은 따뜻하겠네요."),(None,"며칠 뒤 힘을 재는 바늘이 다시 흔들렸다. 이번에 장치에 이어 붙인 사람의 이름은 돌아오지 않았다.")],"ending:E3")
+        call r13_lines([(None,"불이 돌아오자 사람들이 안도의 숨을 내쉬었다. 그 뒤편에서 누군가 한 사람 몫의 그릇을 치웠다."),("resident_eunho","오늘은 따뜻하겠구려."),(None,"며칠 뒤 힘을 재는 바늘이 다시 흔들렸다. 이번에 장치에 이어 붙인 사람의 이름은 돌아오지 않았다.")],"ending:E3")
     elif r13_ending_id=="E4":
         call r13_scene("r13_school","학교 대피소","quiet")
         call r13_lines([("nabi","이쪽 방은 닫아야 해요. 다들 한 곳으로 모여요."),("buri","고칠 수 있는 건 내일 다시 볼게요."),("mom","이름부터 적어요. 누구를 어디로 옮겼는지 남겨야 해요."),(None,"억지로 힘을 뽑아내는 일은 멈췄다. 그래도 모두가 안전하게 지낼 조건을 끝내 갖추지는 못했다.")],"ending:E4")
@@ -321,11 +321,11 @@ label r13_ending:
         if room13["victim_state"]=="dead":
             call r13_lines([(None,"부리는 어르신의 수첩을 덮었다. 아무도 그 빈 의자를 다른 사람의 자리라고 하지 않았다."),("buri","그날 기록은 돌려받을게요. 함께 보관할 사본은 남겨 두고요.")],"ending:elder_dead")
         else:
-            call r13_lines([("resident_owlgp","옛 조사에서 내가 놓친 것도 적겠소. 살아 있다고 해서 잘못까지 없어지는 건 아니니까.")],"ending:elder_survived")
+            call r13_lines([("resident_owlgp","옛 조사에서 내가 놓친 것도 적겠소. 살아 있다고 해서 잘못까지 없어지는 건 아니오.")],"ending:elder_survived")
         call r13_lines([("dad","길이 열리면 집으로 돌아가자."),("daram","길 열리기 전에는?"),("mom","아직 할 일이 조금 남았어."),("daram","조금이면 나도 같이 해도 되지?")],"ending:family")
         if r13_ending_id=="E6":
             call r13_scene("room","열세 번째 창","travel")
-            call r13_lines(([("mom","초롱 씨가 남긴 짐에 이 도면이 있었어요. 마을 밖으로 보낸 적이 있대요. 원본은 여기 남겼고요.")] if r13_has("chorong_dead") else [("resident_lamplighter","이 도면은 마을 밖으로 보낸 적이 있습니다. 원본은 여기 남겼고요.")])+[("mom","이 부분이 달라요. 고대 장치에 있던 선이 아니에요."),("dad","그 선은 나중에 덧붙였다는 거야?"),("mom","누군가 같은 방법으로 다른 곳도 바꿨을 수 있어요."),(None,"자료를 여러 부 복사해 나눠 보관했다. 이 마을에서 벌어진 일의 책임은 지워지지 않았다."),("daram","이제 천 걷어도 돼?"),("mom","응."),(None,"다람이가 창에 친 두꺼운 천을 걷었다. 이번에는 누군가를 숨기려는 게 아니었다.")],"ending:E6")
+            call r13_lines(([("mom","초롱 씨가 남긴 짐에 이 도면이 있었어. 마을 밖으로 보낸 적이 있대. 원본은 여기 남겼고.")] if r13_has("chorong_dead") else [("resident_lamplighter","이 도면은 마을 밖으로 보낸 적이 있습니다. 원본은 여기 남겼고요.")])+[("mom","이 부분이 달라. 고대 장치에 있던 선이 아니야."),("dad","그 선은 나중에 덧붙였다는 거야?"),("mom","누군가 같은 방법으로 다른 곳도 바꿨을 수 있어."),(None,"자료를 여러 부 복사해 나눠 보관했다. 이 마을에서 벌어진 일의 책임은 지워지지 않았다."),("daram","이제 천 걷어도 돼?"),("mom","응."),(None,"다람이가 창에 친 두꺼운 천을 걷었다. 이번에는 누군가를 숨기려는 게 아니었다.")],"ending:E6")
             $ r13_grant(["E32"],"초롱이 간직한, 마을 밖으로 간 장치 도면")
     hide screen r13_hud
     hide r13_visitor

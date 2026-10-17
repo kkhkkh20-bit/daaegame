@@ -131,7 +131,7 @@ init 154 python:
             options=[("correct","누비가 문 앞에 등유를 부었다. 쫓아내려던 불이 바람에 번졌다"),
                 ("over","누비가 아이들을 죽이려 했다"),
                 ("weak","보리가 장작을 훔쳐서 생긴 일이다")],
-            correct=[("resident_ppul","……불은 등잔도 보리도 아니군."),("neoul","보리는 풀어 주겠소. 장작 값은 따로 받겠소. 누비는 내가 데려가오.")],
+            correct=[("resident_ppul","……불은 등잔도 보리도 아니구려."),("neoul","보리는 풀어 주겠소. 장작 값은 따로 받겠소. 누비는 내가 데려가오.")],
             over=("resident_teacher","죽이려 했다면 뒷벽에도 부었겠지요. 그 애들은 뒷벽으로 살아 나왔어요."),
             weak=("kid_kkam","곰 아저씨가 우리 살렸다니까!")),
         sway=["resident_teacher","resident_badook","nabi"])
@@ -190,7 +190,7 @@ label r13_wf_laundry:
     $ r13_grant(["F02"],"빨래 솥 옆 기름통을 직접 봄")
     menu:
         "빨래 줄 뒤에 선다":
-            call r13_lines([("neoul","이번 주 배급이 또 줄었소. 알고 있지요?"),
+            call r13_lines([("neoul","이번 주 배급이 또 줄었소. 알고 있소?"),
                 ("resident_nubi","……애들이 셋이에요. 막내는 사흘째 물만 먹었어요."),
                 ("neoul","학교 뒤 장작 창고에 표 없는 애들이 산다는 건 아시오?"),
                 ("neoul","그 애들이 먹는 밥, 그 애들이 때는 장작. 다 누구 몫이겠소."),
@@ -293,8 +293,8 @@ label r13_wf_morning:
     call r13_scene("winter_square","6일 아침 · 광장","search")
     call r13_lines([(None,"보리가 손이 묶인 채 광장 돌 앞에 앉아 있었다. 등에는 아직 장작 지게. 손에는 아무렇게나 감은 천."),
         ("neoul","이 자가 밤마다 학교 장작 창고에서 장작을 훔쳤소. 어젯밤에도 거기 있었소."),
-        ("resident_ppul","도둑이 불까지 냈구먼."+(" 표 없는 애 하나가 죽었다지." if r13_has("kkomi_dead") else "")),
-        ("resident_ppul","회의는 내일, 학교에서 하지. 그때까지 범인이 바뀌지 않으면 보리를 내보내겠네."),
+        ("resident_ppul","도둑이 불까지 냈구려."+(" 표 없는 애 하나가 죽었다지." if r13_has("kkomi_dead") else "")),
+        ("resident_ppul","회의는 내일 학교에서 하겠소. 그때까지 범인이 바뀌지 않으면 보리를 내보내겠소."),
         ("resident_bori","장작 훔친 건 맞다! 대피소 우리 애가 열이 나서, 몇 개씩…… 그래도 불은 내가 안 냈어!")]+
         ([("resident_bori","애 셋 꺼낸 게 나라고! 하나는…… 하나는 못 꺼냈어.")] if r13_has("kkomi_dead") else []),"wf:morning:square")
     menu:
@@ -421,7 +421,7 @@ label r13_wf_choice:
                         (None,"나비가 등잔을 두 손으로 감싸 쥐고 울었다. 처음으로 소리를 내서."),
                         ("granny","……등잔은 돌아왔으니 됐어요. 이번만은 넘어가지요. 품삯도 그대로 주고.")],"wf:choice:nabi:saved")
                     $ r13_flag("wf_nabi_defended","witness:nabi")
-                "말로 감싼다":
+                "“그 아이 잘못이 아닙니다.”":
                     call r13_lines([("granny","증거도 없이 우리 집 일에 끼지 마세요."),
                         (None,"나비는 품삯을 잃고 주방 열쇠를 빼앗겼다.")],"wf:choice:nabi:lost")
                     $ r13_flag("wf_nabi_lost")
@@ -475,7 +475,7 @@ label r13_wf_decision:
         if r13_has("F01"):
             call r13_lines([("dad","누비 씨를 민 건 '그 애들이 줄면 몫을 주겠다'는 말입니다. 빨래터에서 제가 직접 들었습니다."),
                 (None,"사람들이 너울을 보았다. 너울의 얼굴이 굳었다."),
-                ("neoul","……외지 사람이 오래 머물 생각이 없나 보군.")],"wf:decision:expose")
+                ("neoul","……외지 사람이 오래 머물 생각이 없나 보오.")],"wf:decision:expose")
             $ r13_flag("neoul_exposed","neoul_enemy")
         else:
             call r13_lines([("dad","누비 씨는 너울 님의 약속 때문이라고 했습니다."),
@@ -489,7 +489,7 @@ label r13_wf_decision:
             (None,"누비는 집으로 돌아갔다. 너울은 아무 말도 하지 않았다.")],"wf:decision:shelter")
         $ r13_flag("wf_kids_school","kids_school","wf_second_fire")
     else:
-        call r13_lines([("dad","약속은 여기서 끝냅니다. 누비 씨는 창고를 다시 짓는 일로 갚고, 아이 셋은 나비가 부엌에서 맡습니다."),
+        call r13_lines([("dad","약속은 여기서 끝냅니다. 누비 씨는 창고를 다시 짓는 일로 갚고, 그 집 아이 셋은 나비가 부엌에서 맡습니다."),
             (None,"사람들의 눈이 너울에게 쏠렸다. 너울이 한 걸음 물러섰다."),
             ("nabi","제가 할게요. 할머니한텐 제가 말해요."),
             (None,"누비가 막내를 끌어안고 고개를 숙였다.")],"wf:decision:perfect")

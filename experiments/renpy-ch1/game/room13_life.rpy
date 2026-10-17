@@ -192,7 +192,7 @@ init 57 python:
 
 label r13_topic_choice(key):
     if key=="w2_erased":
-        call r13_lines([("resident_seori","회복 기록의 그 줄은 제가 지웠습니다. 환자가 다시 나빠졌으니 회복이라고 쓰면 안 된다고 했죠."),("dad","잠깐이라도 나아진 사실까지 없어진 건 아니잖습니까."),("resident_seori","압니다. 하지만 원본을 내놓으면 사람들이 제가 한 검사도 전부 다시 따지려 들 겁니다.")],"negotiation:erased:start")
+        call r13_lines([("resident_seori","회복 기록의 그 줄은 제가 지웠습니다. 환자가 다시 나빠졌으니 회복이라고 쓰면 안 된다고 할머니가 그러셨죠."),("dad","잠깐이라도 나아진 사실까지 없어진 건 아니잖습니까."),("resident_seori","압니다. 하지만 원본을 내놓으면 사람들이 제가 한 검사도 전부 다시 따지려 들 겁니다.")],"negotiation:erased:start")
         $ r13_speaker("resident_seori","neutral")
         menu:
             "기록을 고치는 일에 어디까지 책임을 지겠습니까?"
@@ -215,13 +215,13 @@ label r13_topic_choice(key):
         menu:
             "창고를 열 조건을 어떻게 정할까?"
             "모두 같은 기준으로 수량과 받는 집을 적는다":
-                call r13_lines([("resident_eunho","저희 창고 물건을 다른 집보다 더 빼놓으라는 뜻은 아니군요."),("dad","적어도 당신 집만 굶기자는 약속은 아닙니다. 갚을 몫도 공동 기록에 남기겠습니다."),("resident_eunho","서리가 창고 수량을 확인하면 물건을 내놓겠습니다. 빈 자루도 함께 세어야 해요.")],"negotiation:supplies:agreement")
+                call r13_lines([("resident_eunho","우리 창고 물건을 다른 집보다 더 빼놓으라는 뜻은 아니구려."),("dad","적어도 사장님 댁만 굶기자는 약속은 아닙니다. 갚을 몫도 공동 기록에 남기겠습니다."),("resident_eunho","서리가 창고 수량을 확인하면 물건을 내놓겠습니다. 빈 자루도 함께 세어야 합니다.")],"negotiation:supplies:agreement")
                 return True
             "위기 뒤 매입가로 전부 갚겠다고 약속한다":
-                call r13_lines([("resident_eunho","어느 돈으로요? 봄이 오면 이 마을을 떠나실 분이잖아요."),("dad","갚을 몫은 기록으로 남기겠습니다."),("resident_eunho","빚진 사람 이름만 적힌 종이는 이미 많습니다. 오늘 누구 몫이 남는지부터 따져 봅시다.")],"negotiation:supplies:unfunded")
+                call r13_lines([("resident_eunho","어느 돈으로 말입니까? 봄이 오면 이 마을을 떠나실 분 아닙니까."),("dad","갚을 몫은 기록으로 남기겠습니다."),("resident_eunho","빚진 사람 이름만 적힌 종이는 이미 많습니다. 오늘 누구 몫이 남는지부터 따져 봅시다.")],"negotiation:supplies:unfunded")
                 return False
-            "먼저 내놓으면 주민이 편이 된다고 설득한다":
-                call r13_lines([("resident_eunho","오늘은 제 편을 들어도, 내일 물건이 떨어지면 또 제 집 문을 두드리겠죠. 저한테 필요한 건 박수가 아니라 어디까지 약속하느냐입니다.")],"negotiation:supplies:popularity")
+            "먼저 내놓으면 주민들이 편이 될 겁니다":
+                call r13_lines([("resident_eunho","오늘은 내 편을 들어도, 내일 물건이 떨어지면 또 내 집 문을 두드릴 거요. 나한테 필요한 건 박수가 아니라 어디까지 약속하느냐입니다.")],"negotiation:supplies:popularity")
                 return False
             "창고의 실제 수량부터 살펴보고 다시 온다":
                 return False

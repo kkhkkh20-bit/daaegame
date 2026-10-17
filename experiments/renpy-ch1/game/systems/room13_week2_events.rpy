@@ -66,17 +66,17 @@ label r13_w2e_bell:
         ("neoul","종을 마음대로 치면 초소에서 경위를 설명해야 하오.")],"w2e:bell:open:v2")
     menu:
         "설이에게 종을 치라고 한다" if r13_has("village_alerted") or r13_has("lamplighter_trust"):
-            call r13_lines([("resident_seol","지난번에도 아저씨가 그러라고 했죠. 그럼 칠게요."),
+            call r13_lines([("resident_seol","아저씨도 치라고 하면, 칠게요."),
                 (None,"종소리가 불 꺼진 지붕들 위로 퍼졌다. 문이 하나씩 열렸다."),
                 ("neoul","……사람들 줄은 내가 세우겠소. 밀지 마시오!")],"w2e:bell:ring")
             $ r13_flag("w2_bell_rung","villagers_gathered")
         "촌장에게 종을 맡겨 달라고 한다" if r13_has("fair_hearing") or r13_has("ppul_ally"):
-            call r13_lines([("resident_ppul","내가 치겠소. 촌장이 친 종이면 다툼은 덜 나겠지."),
+            call r13_lines([("resident_ppul","내가 치겠소. 촌장이 친 종이면 다툼은 덜 날 거요."),
                 (None,"촌장이 친 종소리에 사람들이 줄을 맞춰 학교 쪽으로 걸었다.")],"w2e:bell:ppul")
             $ r13_flag("w2_bell_rung","villagers_gathered","ppul_ally")
         "내가 직접 종을 친다 · 늦은 저녁까지":
             call r13_lines([(None,"종 줄을 당기자 무거운 종소리가 울렸다. 곧바로 너울이 내 팔을 붙잡았다."),
-                ("neoul","또 당신이오? 소란을 피운 값으로 오늘은 초소에서 지내시오."),
+                ("neoul","당신이오? 소란을 피운 값으로 오늘은 초소에서 지내시오."),
                 (None,"초소 창 너머로 사람들이 학교로 걸어가는 게 보였다. 나는 날이 저물 때까지 초소에서 나가지 못했다.")],"w2e:bell:self")
             $ r13_flag("w2_bell_rung","villagers_gathered","rumor:troublemaker")
             $ r13_edit(period=3,location="gate")
@@ -96,12 +96,12 @@ label r13_w2e_numbers:
     $ r13_flag("w2e_p_done")
     call r13_ev_here("search")
     call r13_lines([(None,"수리점 작업대 위에 우박의 계측 장부가 펼쳐져 있었다. 촌장이 손가락으로 장부의 한 줄을 눌렀다."),
-        ("resident_ppul","이 숫자를 고치거라. 돌은 아직 괜찮다. 사람들이 겁먹으면 겨울을 못 넘긴다."),
+        ("resident_ppul","이 숫자를 고치시오. 돌은 아직 괜찮소. 사람들이 겁먹으면 겨울을 못 넘기오."),
         ("resident_ubak","……지금 숫자를 고치면 다음에 잴 때도 고친 숫자에 맞춰 적어야 해요.")],"w2e:numbers:open")
     menu:
         "지난주 기록을 촌장에게 보여 준다" if "W4" in room13["evidence"] or "W6" in room13["evidence"]:
             call r13_lines([("dad","지난주에도 돌은 식고 있었습니다. 우박의 숫자와 초롱이 센 등이 같은 말을 합니다."),
-                ("resident_ppul","……이번 숫자를 고치면 지난주 기록까지 고쳐야겠군."),
+                ("resident_ppul","……이번 숫자를 고치면 지난주 기록까지 고쳐야겠구려."),
                 ("resident_ppul","됐소. 숫자는 그대로 두시오. 대신 사람들 앞에선 나와 같이 설명하시오.")],"w2e:numbers:records")
             $ r13_flag("forgery_exposed","ppul_ally")
         "진짜 숫자를 서리에게 맡기게 한다":
@@ -133,7 +133,7 @@ label r13_w2e_tools:
     $ r13_flag("w2e_w_done")
     call r13_ev_here("calm")
     call r13_lines([(None,"부리가 할아버지 공구함을 작업대에 올려놓았다. 그리고 한참 내려다보았다. 은호 사장은 자루를 들고 기다렸다."),
-        ("resident_eunho","도시 수집가들이 옛 공구를 좋아합니다. 이 함이면 식구들이 열흘은 먹지요."),
+        ("resident_eunho","도시 수집가들이 옛 공구를 좋아합니다. 이 함이면 식구들이 열흘은 먹소."),
         ("buri","은호 사장이 이걸 사겠대요."),
         ("dad","수리할 때 쓰던 공구 아니었습니까?"),
         ("buri","맞아요. 그런데 집에 먹을 게 없어요.")],"w2e:tools:open:v2")
@@ -158,7 +158,7 @@ label r13_w2e_tools:
             $ r13_flag("tools_sold")
     if r13_has("tools_sold"):
         if r13_has("tok_cleared"):
-            call r13_lines([("resident_tok","공구함 없이 장치 교대를 어떻게 하오. 내 공구를 쓰시오. 누명 벗겨 준 값이오.")],"w2e:tools:tok")
+            call r13_lines([("resident_tok","공구함 없이 장치 교대를 어떻게 해요. 제 공구를 쓰세요. 누명 벗겨 주신 값이에요.")],"w2e:tools:tok")
         else:
             $ r13_flag("tools_missing")
             call r13_lines([("dad","(장치를 밤새 붙잡고 있을 공구가 사라졌다. 이래서는 교대를 짤 수 없다.)",{"thought":True})],"w2e:tools:missing")
@@ -193,8 +193,8 @@ label r13_w2e_share:
         "제비를 뽑는다":
             call r13_lines([(None,"사람들이 하나씩 제비 쪽지를 뽑았다. 불평은 있었지만 다툼은 없었다.")],"w2e:share:lottery")
             $ r13_flag("share_lottery","rumor:fair")
-        "우리 편을 든 집부터":
-            call r13_lines([("resident_ppul","……그것도 방법이지. 다음엔 다들 당신 편을 들겠군.")],"w2e:share:supporters")
+        "우리를 도운 집부터":
+            call r13_lines([("resident_ppul","……그것도 방법이오. 다음엔 다들 당신 편을 들겠구려.")],"w2e:share:supporters")
             $ r13_flag("share_supporters","ppul_ally","rumor:favoritism")
         "남은 몫을 경매에 붙인다":
             $ r13_cash(10,"대피소 몫 경매")

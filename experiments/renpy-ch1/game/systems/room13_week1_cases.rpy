@@ -22,7 +22,7 @@ init 110 python:
             _st.setdefault("need_consent",{})["H7"]="ttadak_witness"
             _st.setdefault("consent_lines",{})["H7"]=[("resident_seori","따닥 씨는 오늘 나오지 않았습니다. 기록만으로는 여관 뒤 벽 안을 누가 직접 봤는지 확인할 수 없어요."),
                 ("dad","(그러려면 따닥이 직접 나서서 말해 줘야 했다.)",{"thought":True})]
-            _st.setdefault("broken_by",{})["H7"]=[("resident_ttadak","여관 뒤 벽은 내가 덧지었소. 벽 안에 옛 통로가 있었고, 13호 책장 뒤로 이어지오. 내 눈으로 봤소."),
+            _st.setdefault("broken_by",{})["H7"]=[("resident_ttadak","여관 뒤 벽은 제가 덧지었어요. 벽 안에 옛 통로가 있었고, 13호 책장 뒤로 이어져요. 제 눈으로 봤어요."),
                 ("seryeon","……13호에 문 말고 다른 길이 있었다고요?")]
     for _c in ROOM13["claims"]:
         if _c["id"]=="C1":
@@ -32,7 +32,7 @@ init 110 python:
         ("resident_siluk","제가 봤어요! 그날 밤 할머니가 2층으로 올라가는 걸!"),
         ("resident_seori","그 시각에 실룩 씨는 마구간 장부에 이름을 적었습니다. 여기 본인 글씨가 있어요."),
         ("resident_siluk","……그, 그건."),
-        ("resident_ppul","돈 받고 말하는 증인을 데려온 쪽의 판결을 내가 집행할 수는 없소. 아이는 풀어 주겠소. 그 이상은 안 되오."),
+        ("resident_ppul","돈 받고 말하는 증인이 나온 이상, 할머니에 대한 주장은 받아들일 수 없소. 아이는 풀어 주겠소. 그 이상은 안 되오."),
         ("dad","(돈으로 산 쉬운 길이 가장 비쌌다.)",{"thought":True})]
 
     # The portrait is shown from the notebook (systems/room13_present_flow.rpy, 0.18.13).
@@ -93,13 +93,13 @@ label r13_w1c_portrait:
         $ _ep_loop=False
         menu:
             "가짜라고 모모 관장에게 알린다":
-                call r13_lines([("resident_momo","……옛 그림이라더니 물감이 아직 마르지도 않았군요. 알려 줘서 고맙소. 사례요."),
+                call r13_lines([("resident_momo","……옛 그림이라더니 물감이 아직 마르지도 않았군요. 알려 주셔서 고마워요. 사례예요."),
                     ("resident_piko","……")],"w1c:portrait:expose")
                 $ r13_cash(6,"모모 관장의 사례")
                 $ r13_flag("piko_hostile")
             "모른 척한다":
                 pass
-            "엄마 초상을 그려 달라고 한다 (5냥)" if r13_cash_now()>=5 and not r13_has("mom_portrait") and not r13_has("lt_piko_promise"):
+            "아내 초상을 그려 달라고 한다 (5냥)" if r13_cash_now()>=5 and not r13_has("mom_portrait") and not r13_has("lt_piko_promise"):
                 $ r13_cash(-5,"피코에게 맡긴 엄마 초상")
                 call r13_lines([("dad","제 아내입니다. 눈매는 이렇고, 왼쪽 눈썹에 작은 흉터가 있어요."),
                     ("daram","엄마는 웃을 때 코를 찡그려!"),
@@ -137,7 +137,7 @@ label r13_w1c_letters:
                 ("resident_sling","……여관 할머니요. 손님 편지 중에 ‘부인’이 보낸 게 있으면 베껴 오래요. 안 하면 일자리가 없대요.")],"w1c:letters:who")
             call r13_w1c_letters_after
         "너울에게 알린다":
-            call r13_lines([("neoul","우체국 일은 우체국 일이오. 슬링, 너는 오늘부터 나오지 마라."),
+            call r13_lines([("neoul","우체국 일은 우체국 일이오. 슬링은 오늘부터 나오지 마시오."),
                 ("resident_sling","……")],"w1c:letters:neoul")
             $ r13_flag("sling_hostile")
         "“오늘 품삯은 제가 내겠습니다.” 3냥" if r13_cash_now()>=3:
@@ -195,7 +195,7 @@ label r13_w1c_fake_night:
         "다람이와 방에 남는다":
             call r13_lines([(None,"할머니가 나간 뒤 여관은 조용했다. 다람이는 내 무릎을 베고 잠들었다.")],"w1c:night:stay")
     call r13_scene("room","13호실","night")
-    call r13_lines([("resident_owlgp","할머니가 초소 쪽으로 가는 걸 봤소. 오늘 밤은 여기 오지 않겠군."),
+    call r13_lines([("resident_owlgp","할머니가 초소 쪽으로 가는 걸 봤소. 오늘 밤은 여기 오지 않겠구려."),
         ("resident_owlgp","부인에게서 맡아 둔 물건을 돌려드리겠소. 베껴 둔 기록이오."),
         (None,"그날 밤 13호에서는 아무도 다치지 않았다.")],"w1c:night:safe")
     $ r13_edit(case_state="prevented",victim_state="protected",daram_state="with_dad",period=3,location="inn")
@@ -208,21 +208,21 @@ label r13_w1c_extension:
     $ r13_flag("ev_i_done")
     call r13_ev_here("calm")
     call r13_lines([(None,"여관 뒷벽에서 따닥이 판자를 덧대고 있었다. 새 판자 틈으로 오래된 벽돌과 좁은 빈 공간이 보였다."),
-        ("resident_ttadak","보지 마시오. 허가 없이 덧지은 거요. 너울이 알면 다 뜯기고 벌금이오."),
-        ("resident_ttadak","……저 안쪽 빈 공간 말이오? 옛날 하인들이 다니던 통로요. 13호 책장 뒤까지 이어지오.")],"w1c:ext:open")
+        ("resident_ttadak","보지 마세요. 허가 없이 덧지은 거예요. 너울이 알면 다 뜯기고 벌금이에요."),
+        ("resident_ttadak","……저 안쪽 빈 공간 말이에요? 옛날 하인들이 다니던 통로예요. 13호 책장 뒤까지 이어져요.")],"w1c:ext:open")
     menu:
         "비밀을 지켜 주겠다고 한다":
-            call r13_lines([("resident_ttadak","……고맙소. 대신 필요하면 내가 본 걸 말해 주리다. 사람들 앞에서도 말이오."),
+            call r13_lines([("resident_ttadak","……고마워요. 대신 필요하면 제가 본 걸 말해 드릴게요. 사람들 앞에서도요."),
                 (None,"따닥이 증축 공사 때 그린 벽 안쪽 도면을 건넸다.")],"w1c:ext:keep")
             $ r13_grant(["H7"],"따닥이 건넨 증축 도면")
             $ r13_flag("ttadak_witness","ttadak_ally")
         "증축 기록을 산다 (5냥)" if r13_cash_now()>=5:
             $ r13_cash(-5,"따닥의 증축 도면")
-            call r13_lines([("resident_ttadak","도면은 파는 거요. 하지만 내 입은 안 팔고. 사람들 앞에선 모른다 하겠소.")],"w1c:ext:buy")
+            call r13_lines([("resident_ttadak","도면은 파는 거예요. 하지만 제 입은 안 팔아요. 사람들 앞에선 모른다고 할 거예요.")],"w1c:ext:buy")
             $ r13_grant(["H7"],"따닥에게서 산 증축 도면")
         "너울에게 신고한다":
             call r13_lines([("neoul","허가 없는 증축이라. 신고 사례는 다섯 냥이오. 벽은 내일 봉하겠소."),
-                ("resident_ttadak","……두고 보시오.")],"w1c:ext:report")
+                ("resident_ttadak","……두고 보세요.")],"w1c:ext:report")
             $ r13_cash(5,"증축 신고 사례")
             $ r13_flag("ttadak_hostile","extension_sealed")
         "모른 척 지나간다":
@@ -247,7 +247,7 @@ label r13_w1c_seal:
             $ r13_grant(["W9"],"박물관 뒷문에서 본 모모의 거래")
             $ r13_flag("family_items_lost")
         "너울에게 알린다":
-            call r13_lines([("neoul","사건 현장 봉인을 뜯어? 뭉치, 따라오너라. 13호 봉인은 내가 다시 하겠소.")],"w1c:seal:neoul")
+            call r13_lines([("neoul","사건 현장 봉인을 뜯었소? 뭉치, 따라오시오. 13호 봉인은 내가 다시 하겠소.")],"w1c:seal:neoul")
             $ r13_flag("scene_resealed","family_items_back","mungchi_detained")
         "모른 척한다":
             $ r13_flag("family_items_lost")
@@ -274,6 +274,6 @@ label r13_w1c_testimony:
                 ("resident_siluk","……알았어요. 대신 뭐든 하나 도와드릴게요. 썰매든 짐이든.")],"w1c:t:leverage")
             $ r13_flag("siluk_owes")
         "너울에게 알린다":
-            call r13_lines([("neoul","돈 받고 증언을 판다? 재판 끝날 때까지 마구간에서 나오지 마라.")],"w1c:t:neoul")
+            call r13_lines([("neoul","돈 받고 증언을 팔았소? 재판 끝날 때까지 마구간에서 나오지 마시오.")],"w1c:t:neoul")
             $ r13_flag("siluk_detained")
     return

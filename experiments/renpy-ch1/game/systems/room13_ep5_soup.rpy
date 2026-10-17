@@ -64,7 +64,7 @@ init 156 python:
                 wrong=("resident_teacher","다 알고 있어요. 그래서 그러는 거예요.")),
             dict(id="s2",who="resident_teacher",text="한 번 따뜻해졌다가 【다시 식겠지요】. 그런 방법이 있었다면 왜 지금까지 아무도 몰랐습니까.",
                 accept=["Y07","Y08"],
-                broken_by={"Y07":[("dad","밤새 지켜봤습니다. 한밤에도, 새벽에도 식지 않았어요."),("resident_teacher","…….")],
+                broken_by={"Y07":[("dad","조각을 모아 둔 뒤로 지금까지 지켜봤습니다. 한 번도 식지 않았어요."),("resident_teacher","…….")],
                     "Y08":[("dad","옛 시설 벽에 이렇게 적혀 있었습니다. '나눠서 데웠다.' 옛날엔 사람을 바치지 않았답니다."),("resident_teacher","…….")]},
                 hint="밤새 지켜본 것, 또는 옛사람들이 남긴 말.",
                 wrong=("resident_teacher","다 알고 있어요. 그래서 그러는 거예요.")),
@@ -118,7 +118,7 @@ init 156 python:
                     ("resident_teacher","……하나도, 안 틀렸는데."),
                     ("resident_bori","몇 시간이야. 몇 시간만 기다렸으면.")]},
                 hint="창밖.",
-                wrong=("resident_teacher","어차피, 다 죽었을 거요.")),
+                wrong=("resident_teacher","어차피, 다 죽었을 거예요.")),
         ],
         conclusion=dict(prompt="이 일을 어떻게 정리할까?",
             options=[("correct","약을 넣은 건 선생님이다. 아이들이 얼거나 수레에 실려 갈 거라 믿었다"),
@@ -222,16 +222,16 @@ label r13_ws_lowroad:
     $ r13_flag("ws_lowroad")
     call r13_scene("r13_river","아랫길 · 천막들","quiet")
     call r13_lines([(None,"아랫길. 마을 장부에 이름이 없는 사람들의 천막 여섯 채. 천막 사이에 작은 불 하나."),
-        ("resident_nero","오늘 밤이 춥다고? 매일 춥다. 우리는 늘 여기서 버텼다."),
+        ("resident_nero","오늘 밤이 춥다는 말 하러 왔나? 매일 춥다. 우리는 늘 여기서 버텼다."),
         ("resident_nero","학교는 표 있는 사람 데다. 우리 같은 건 문 앞에서 돌려보낸다.")]+
         ([("resident_nero","……탐정단 꼬마구나. 이름표는 아직 있냐."),("daram","응. 안 잃어버렸어.")] if r13_has("K08") and r13_ws_daram() else []),"ws:nero")
     menu:
         "식어 가는 돌을 보여 준다" if r13_has("W4"):
-            call r13_lines([("dad","진료소에서 잰 숫자입니다. 돌이 밤마다 더 식고 있어요. 오늘 밤이 제일 낮습니다."),
-                ("resident_nero","…… 어젯밤에 영감 하나가 손가락을 못 폈다. 그게 그거였군."),
+            call r13_lines([("dad","진료소에서 잰 숫자입니다. 돌이 밤마다 더 식고 있어요. 오늘 밤이 더 낮을 겁니다."),
+                ("resident_nero","……어젯밤에 영감 하나가 손가락을 못 폈다. 그게 그거였군."),
                 ("resident_nero","알았다. 근데 걷지 못하는 사람도 있다. 그리고 문이 안 열리면 끝이다.")],"ws:nero:moved")
             $ r13_flag("ws_nero_moved")
-        "말로 설득한다":
+        "“오늘 밤은 학교로 가셔야 합니다.”":
             call r13_lines([("resident_nero","말은 공짜다.")],"ws:nero:no")
     if r13_has("ws_nero_moved"):
         call r13_scene("r13_school","학교 교실","quiet")
@@ -306,15 +306,15 @@ label r13_ws_lab:
         ([("daram","……사람 손 같아. 엄마 손 같아.")] if r13_ws_daram() else [])+
         [(None,"유리관 줄 끝 돌 선반에 두꺼운 장부. 할머니 글씨로 겉장에 '보호소'. 안은 죽은 사람 칸이었다."),
         (None,"지난겨울 칸에 '모과'. 세 해 전 칸에 '보미 — 여관'. 올겨울 칸은 벌써 차 있었다. '판돌 — 이송'."),
-        ("mom","'이송'은 다른 곳으로 옮겨 보낸다는 말이에요. 보호소로 보낸다는 뜻으로 써 왔죠."),
+        ("mom","‘이송’은 다른 곳으로 옮겨 보낸다는 말이야. 보호소로 보낸다는 뜻으로 써 왔지."),
         ("dad","(보호소에 간 사람은 죽은 사람 칸에 있다. 아직 떠나지도 않은 사람까지.)",{"thought":True}),
         ("resident_guldol","(벽의 글자를 손가락으로 짚으며) \"돌은…… 하나가 아니었다. 나눠서…… 데웠다.\""),
-        ("mom","조각이 하나씩 식으니까, 마을은 남은 큰 돌 하나만 붙잡았어요. 그리고 그 돌에…… 사람을 바쳤어요."),
+        ("mom","조각이 하나씩 식으니까, 마을은 남은 큰 돌 하나만 붙잡았어. 그리고 그 돌에…… 사람을 바쳤어."),
         ("mom","이 조각 셋을 한데 모아 볼게. 잘 봐.",{"pose":"show_fragments"}),
         (None,"처음엔 미지근했다. 숨 몇 번 사이에, 초록빛이 짙어졌다."),
         ("mom","따로 두면 식어. 모으면 서로 데워. 사람을 바치지 않아도 돼."),
         ("resident_guldol","밤새 지켜봅시다. 정말 안 식는지."),
-        ("mom","다만 시간이 걸려. 꼬박 하루. 오늘 밤, 저녁 먹을 무렵이면.")],"ws:lab")
+        ("mom","다만 시간이 걸려. 오늘 밤 안에는 데워질 거야.")],"ws:lab")
     $ r13_grant(["Y05","Y06","Y07","Y08"],"옛 시설에서 엄마·굴돌 할아버지와 본 것")
     if r13_has("kd_farewell_seen"):
         call r13_lines([(None,"솜이가 유리관 앞에 쪼그려 앉아 있었다."),
@@ -376,7 +376,7 @@ label r13_ws_soup:
         (None,"밤이 깊었다. 대피소는 조용했다. 너무 조용했다."),
         (None,"창밖에서 빛이 일었다. 광장의 등이 하나, 둘, 셋, 차례로 밝아졌다."),
         (None,"땡그랑. 숟가락이 바닥에 떨어졌다."),
-        ("resident_teacher","…… 몇 시간만.")],"ws:soup:tragedy")
+        ("resident_teacher","……몇 시간만.")],"ws:soup:tragedy")
     if r13_has("mom_reunited"):
         call r13_lines([("mom","(빈 그릇 냄새를 맡고) 이건…… 잠드는 약이야. 옛 기록에 있던 거야."),
             ("mom","아직 숨이 있어. 조각 가져와! 아이들 가슴에 올려!"),
@@ -420,7 +420,7 @@ label r13_ws_meeting:
     menu:
         "냄비를 쳐낸다":
             call r13_lines([(None,"냄비를 쳐냈다. 수프가 눈처럼 바닥에 번졌다."),
-                ("dad","아직 이름을 불러 줄 아이가 하나 남았습니다."),
+                ("dad","아직 이름을 불러 줄 아이가 남았습니다."),
                 ("kid_saemi","선생님. 나 아직 글자 다 못 배웠어요."),
                 ("resident_teacher","(무너지듯 울며) ……그래요. 그래요, 새미야.")],"ws:decision:saved")
             $ r13_flag("teacher_alive")
@@ -453,6 +453,6 @@ label r13_ws_after:
         (None,"(그림책) 공주는 물레 바늘에 찔려 깊은 잠에 빠졌어요.",{"book":"U05-opening"}),
         (None,"(그림책) 성 안의 사람들도 모두 함께 잠들었어요.")]+
         ([(None,"(그림책) 왕자가 오기 전에, 누군가 성의 창문을 열었어요.",{"book":"U05-ending-open-window"})] if r13_has("ws_kids_alive") else [(None,"(그림책) 왕자는 몇 시간 늦게 왔어요.",{"book":"U05-ending-prince"})])+
-        ([("daram","……아빠. 왕자가 늦게 오면, 공주는 안 일어나?"),("daram","그럼 다음엔 우리가 먼저 가자. 왕자보다 먼저.")] if r13_ws_daram() else []),"ws:after:night")
+        ([("daram","……아빠. 왕자가 늦게 오면, 공주는 어떻게 돼?"),("daram","그럼 다음엔 우리가 먼저 가자. 왕자보다 먼저.")] if r13_ws_daram() else []),"ws:after:night")
     $ r13_flag("ws_done")
     return

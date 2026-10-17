@@ -47,8 +47,8 @@ init 104 python:
         "medkit_musoe":_ev2_topic("resident_musoe","도시제 약상자를 건넨다",(2,13),need=["own:medkit"],not_flags=["musoe_recovering"],
             lines=[
             ("resident_musoe","……도시에서 온 약이오? 이 비싼 값을 내가 어떻게 갚소."),
-            ("dad","대신 솜이가 남의 창고 지붕을 타지 않게만 해 주십시오."),
-            ("resident_musoe","허, 그것까지 알고 왔구려. 이건 폐광 지도요. 빚은 이걸로 먼저 갚겠소.")]),
+            ("dad","대신 솜이가 위험한 데 다니지 않게만 살펴 주십시오."),
+            ("resident_musoe","……그 애 일은 내가 알아서 하오. 이건 폐광 지도요. 빚은 이걸로 먼저 갚겠소.")]),
         "medkit_bori":_ev2_topic("resident_bori","아픈 아이에게 약상자를 쓰자고 한다",(4,13),need=["own:medkit","bori_child_sick"],not_flags=["bori_child_cured"],
             lines=[
             ("resident_bori","애 열이 사흘째예요. ……이 약을 정말 우리 애한테 주시는 거예요?"),
@@ -183,7 +183,7 @@ label r13_ev_q_nubi:
                 call r13_lines([("resident_nubi","……그래요. 아무래도 여관이 편하시겠죠.")],"ev:q:refuse")
             "별채가 왜 그렇게 싼지 묻는다":
                 call r13_lines([("resident_nubi","값을 싸게 해야 사람이 오죠."),
-                    ("dad","여관비 절반 값에 밥까지 준다고요?"),
+                    ("dad","여관비보다 네 냥이나 싼데 밥까지 준다고요?"),
                     ("resident_nubi","……너울이 외지 사람을 데려오면 장작을 줘요. 열병 검사한다고 하루 가둬 두는 것뿐이에요."),
                     ("resident_nubi","우리 집 난로가 꺼지면 애들이 이 겨울을 못 버텨요. 미안해요.")],"ev:q:ask")
                 $ r13_flag("know_neoul_quarantine")
@@ -202,7 +202,7 @@ label r13_ev_q_nubi:
             "건강 확인서를 받아 두고 옮긴다":
                 call r13_lines([("resident_seori","열 없음, 기침 없음. 외지 사람이라는 건 병이 아닙니다."),
                     (None,"그날 밤 별채 문 앞에서 너울이 확인서를 읽고 혀를 찼다."),
-                    ("neoul","……검사원 도장이 찍혔군. 그럼 됐소."),
+                    ("neoul","……검사원 도장이 찍혀 있구려. 그럼 됐소."),
                     ("resident_nubi","그 신고, 너울이 시킨 거였어요. 미안해요. 방은 여섯 냥 그대로 쓰세요.")],"ev:q:certificate")
                 $ r13_flag("lodging_cheap","nubi_ally","know_neoul_quarantine","seori_met")
     return None

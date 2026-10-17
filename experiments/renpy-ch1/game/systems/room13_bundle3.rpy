@@ -92,7 +92,7 @@ label r13_b3_whispers:
 # ---- D. 은호의 저울 ----
 label r13_b3_scale:
     $ _scale_lines=ROOM13["topics"]["eunho_scale"]["lines"]
-    call r13_lines(_scale_lines[:1]+[("resident_eunho","……그래서요. 저한테 무엇을 원하십니까?")],"b3:scale:open")
+    call r13_lines(_scale_lines[:1]+[("resident_eunho","……그래서, 저한테 무엇을 원하십니까?")],"b3:scale:open")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False
@@ -110,9 +110,9 @@ label r13_b3_scale:
                     ("dad","(이러면 나만 값을 덜 내고, 다른 사람들은 계속 물건을 덜 받는다.)",{"thought":True})],"b3:scale:half")
                 $ r13_flag("shop_half","scale_settled","eunho_blackmailed")
             "“배급소 저울도 조이셨습니까?”" if r13_has("know_ration_scale") and "H6" not in room13["evidence"]:
-                call r13_lines([("resident_eunho","……배급소 저울 일은 구슬이 말했군요."),
-                    ("resident_eunho","백 부인의 부탁이었습니다. 배급이 가벼우면 부인 창고 물건이 팔리고, 그 물건을 나르는 일은 내가 맡거든요."),
-                    ("resident_eunho","하지만 배급소 저울은 이제 내가 손댈 수 없습니다. 저울 열쇠를 너울이 갖고 있으니까요.")],"b3:scale:ration")
+                call r13_lines([("resident_eunho","……배급소 저울 일은 구슬이 말했구려."),
+                    ("resident_eunho","백 부인의 부탁이었습니다. 배급이 가벼우면 부인 창고 물건이 팔리고, 그 물건을 나르는 일은 내가 맡소."),
+                    ("resident_eunho","하지만 배급소 저울은 이제 내가 손댈 수 없습니다. 저울 열쇠를 너울이 갖고 있기 때문이오.")],"b3:scale:ration")
                 $ r13_grant(["H6"],"은호가 털어놓은 배급소 저울")
                 $ _ep_loop=True
             "다음에 다시 이야기한다":
@@ -124,7 +124,7 @@ label r13_b3_ration:
     $ r13_flag("ev_e_done")
     call r13_ev_here("search")
     call r13_lines([(None,"광장 배급대 앞에서 줄이 멈춰 있었다. 너울이 보리의 수레 손잡이를 꽉 붙잡고 있었다."),
-        ("neoul","배급 장부에 적힌 것보다 감자 한 자루, 장작 세 짐이 모자라오. 이번 주 배급 운반은 보리 네가 했지."),
+        ("neoul","배급 장부에 적힌 것보다 감자 한 자루, 장작 세 짐이 모자라오. 이번 주 배급 운반은 보리가 했소."),
         ("resident_bori","전 장부에 적힌 대로 실었어요! 배급소 저울에 단 그대로요."),
         ("neoul","그럼 저울이 거짓말이라도 한다는 거요? 다음 배급 때까지 보리네 몫은 없소.")],"b3:ration:open")
     $ _ep_loop=True
@@ -145,7 +145,7 @@ label r13_b3_ration:
             "백 부인 비축 장부를 보여 준다" if "H1" in room13["evidence"]:
                 call r13_lines([("dad","배급이 모자랐던 날마다 백 부인 창고에는 같은 물건이 그만큼 늘었습니다. 이 장부에 다 적혀 있습니다."),
                     ("resident_ppul","……이 장부는 대체 누가 쓴 거요?"),
-                    ("neoul","백 부인 글씨군. 보리는 가시오. 장부 일은 내가 부인에게 따로 묻겠소.")],"b3:ration:h1")
+                    ("neoul","백 부인 글씨구려. 보리는 가시오. 장부 일은 내가 부인에게 따로 묻겠소.")],"b3:ration:h1")
                 $ r13_flag("bori_cleared","madam_exposed","madam_hostile","rumor:fair")
             "모자란 몫을 대신 낸다 (6냥)" if r13_cash_now()>=6:
                 $ r13_cash(-6,"보리네 배급 몫")
@@ -186,7 +186,7 @@ label r13_b3_firewood:
             "대피소 장작을 대신 나르겠다고 한다":
                 call r13_lines([("dad","내일 대피소 장작은 제가 대신 날라 두겠습니다. 그러니 이 한 짐은 보리네 집으로 보내 주세요."),
                     ("resident_teacher","……그렇게 해 주신다면요. 아이들 몫이 줄지만 않으면 돼요."),
-                    ("resident_bori","당신이 왜 그렇게까지 해요? ……고마워요.")],"b3:wood:labor")
+                    ("resident_bori","손님이 왜 그렇게까지 해요? ……고마워요.")],"b3:wood:labor")
                 $ r13_flag("bori_ally","teacher_trust","shelter_wood_promise")
             "장작값을 대신 낸다 (6냥)" if r13_cash_now()>=6:
                 $ r13_cash(-6,"보리네 장작값")
@@ -212,7 +212,7 @@ label r13_b3_pages:
             $ r13_flag("know_stone_history","pages_sold")
         "감자 값을 대신 내고 장부를 지킨다 (6냥)" if r13_cash_now()>=6:
             $ r13_cash(-6,"사서 선생님의 끼니")
-            call r13_lines([("resident_eunho","돈을 받았으니 장사는 장사지요. 감자는 그대로 두고 가겠습니다."),
+            call r13_lines([("resident_eunho","돈을 받았으니 장사는 장사요. 감자는 그대로 두고 가겠습니다."),
                 ("resident_librarian","……이 장부, 아무도 안 읽는다고 했지만 실은 제가 매일 읽어요. 보여 드릴게요.")],"b3:pages:save")
             call r13_lines(ROOM13["topics"]["librarian_stone"]["lines"],"b3:pages:stone")
             $ r13_grant(["W3"],"사서 선생님이 지킨 돌의 옛 기록")
@@ -238,7 +238,7 @@ label r13_b3_buy_pages:
             $ r13_grant(["W3"],"은호에게서 되산 돌의 옛 기록")
             $ r13_flag("know_stone_history")
         "사서 선생님이 베낀 사본을 묻는다" if r13_has("pages_copy_promised"):
-            call r13_lines([("resident_eunho","베낀 사본은 사서 선생님한테 있겠지요. 나한테는 원본만 있습니다.")],"b3:buy:copy")
+            call r13_lines([("resident_eunho","베낀 사본은 사서 선생님한테 있을 거요. 나한테는 원본만 있습니다.")],"b3:buy:copy")
             $ r13_flag("librarian_copy_ready")
         "다음에 산다":
             pass

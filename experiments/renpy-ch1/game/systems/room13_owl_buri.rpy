@@ -21,9 +21,9 @@ init 118 python:
         "owl_old_case":_r13_ob_topic("resident_owlgp","예전 조사 이야기를 들을 수 있겠습니까?",(3,4),need=["owl_threshold_respected"],flags=["owl_old_case_heard"],
             state={"victim_state":["alive","protected"]},lines=[
             ("dad","예전에 기록하시던 조사 이야기를 들을 수 있겠습니까?"),
-            ("resident_owlgp","그때는 나도 충분히 확인했다고 생각했지."),
+            ("resident_owlgp","그때는 나도 충분히 확인했다고 생각했소."),
             ("dad","지금은 다르게 생각하십니까?"),
-            ("resident_owlgp","확인한 것과 믿은 것을…… 같은 칸에 적어 놓았더군.")]),
+            ("resident_owlgp","확인한 것과 믿은 것을…… 같은 칸에 적어 놓았더구려.")]),
         # 부리 after the case: Dad's word without a record.
         "buri_assert":_r13_ob_topic("buri","“다람이가 그랬을 리 없습니다.”",(5,7),not_flags=["buri_revised"],flags=["buri_heard_assert"],
             state={"case_state":["occurred"],"victim_state":["dead"]},lines=[
@@ -129,10 +129,10 @@ label r13_ledger_madam_approach:
 
 # ---- 톡: Dad's own earlier words ----
 label r13_tok_after_doubt:
-    call r13_lines([("resident_tok","그날 너울 말이 맞을 수도 있다고 하셨지요. 이제는 어떻게 생각하시오?")],"tok:doubt:open")
+    call r13_lines([("resident_tok","그날 너울 말이 맞을 수도 있다고 하셨지요. 이제는 어떻게 생각하세요?")],"tok:doubt:open")
     menu:
         "“그 의심은 거두겠습니다.”":
-            call r13_lines([("resident_tok","……알겠소. 그 말은 기억해 두지요.")],"tok:doubt:withdraw")
+            call r13_lines([("resident_tok","……알겠어요. 그 말은 기억해 둘게요.")],"tok:doubt:withdraw")
             $ r13_flag("tok_doubt_withdrawn")
         "“확인된 것만 기록하겠습니다.”":
             call r13_lines([("resident_tok","기록은 기록이지요. 나도 그 정도는 압니다.")],"tok:doubt:record")

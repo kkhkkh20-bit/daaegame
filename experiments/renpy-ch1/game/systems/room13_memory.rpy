@@ -8,7 +8,7 @@ init 114 python:
     R13_GRUDGES={
         "piko":dict(person="resident_piko",flag="piko_hostile",
             cold=[("resident_piko","모모 관장님께 일러 주신 분이죠. 그 바람에 그날 저녁은 굶었어요.")],
-            fix=("받은 사례금을 나눠 준다",3,[("dad","그 사례금은 내가 혼자 가질 돈이 아니었다. 밥값으로 받아 줘."),
+            fix=("받은 사례금을 나눠 준다",3,[("dad","그 사례금은 제가 혼자 가질 돈이 아니었습니다. 밥값으로 받아 주세요."),
                 ("resident_piko","……가짜를 그린 건 제 잘못이에요. 그래도 밥값은 받을게요. 이걸로 끝내요.")])),
         "sling":dict(person="resident_sling",flag="sling_hostile",
             cold=[("resident_sling","덕분에 우체국에는 못 나가요. 할머니도 더는 일을 안 주시고요.")],
@@ -16,16 +16,16 @@ init 114 python:
                 ("neoul","……시킨 사람이 따로 있다면 이야기가 다르오. 내일부터 다시 나오라 하시오."),
                 ("resident_sling","고마워요. 그래도 그날 너울 앞에 저를 세운 건 안 잊을 거예요.")]),extra=("neoul_annoyed",)),
         "ttadak":dict(person="resident_ttadak",flag="ttadak_hostile",
-            cold=[("resident_ttadak","내 벽을 판 사례금은 잘 쓰셨소?")],
+            cold=[("resident_ttadak","제 벽 일을 신고하고 받은 사례금은 잘 쓰셨어요?")],
             fix=("신고 사례금을 돌려준다",5,[("dad","그 사례금을 받을 일이 아니었습니다. 돌려드리겠습니다."),
-                ("resident_ttadak","……돈으로 봉한 벽이 다시 열리지는 않소. 그래도 당신이 그 돈을 쥐고 있지 않다는 건 알겠소.")])),
+                ("resident_ttadak","……돈으로 봉한 벽이 다시 열리지는 않아요. 그래도 손님이 그 돈을 쥐고 있지 않다는 건 알겠어요.")])),
         "yeoni":dict(person="resident_yeoni",flag="yeoni_hostile",
             cold=[("resident_yeoni","교환대 물건 가져가신 분이죠. 그 바람에 저는 그날 하루 장사를 공쳤어요.")],
-            fix=("목도리와 장갑 값을 치른다",3,[("dad","물건은 우리 것이었지만, 당신이 값을 치르고 받아 온 건 맞습니다. 그 값은 내겠습니다."),
+            fix=("목도리와 장갑 값을 치른다",3,[("dad","물건은 우리 것이었지만, 값을 치르고 받아 오신 건 맞습니다. 그 값은 내겠습니다."),
                 ("resident_yeoni","……이제 셈은 끝났네요. 다음엔 먼저 물어봐 주세요.")])),
         "nabi":dict(person="nabi",flag="nabi_hostile",
             cold=[("nabi","뒷문 일, 할머니한테 말씀하셨잖아요. 그 바람에 그 주 아이들은 밥을 못 먹었어요.")],
-            fix=("빠진 품삯만큼 아이들 밥값을 낸다",4,[("dad","그때 아이들이 못 먹은 만큼은 내가 내겠다."),
+            fix=("빠진 품삯만큼 아이들 밥값을 낸다",4,[("dad","그때 아이들이 못 먹은 만큼은 제가 내겠습니다."),
                 ("nabi","……돈으로 될 일이 아니었어요. 그래도 이번 주 아이들은 먹겠네요.")])),
         "ppul":dict(person="resident_ppul",flag="ppul_hostile",
             cold=[("resident_ppul","재판은 증거대로 하겠다고 했소. 그 이상은 기대하지 마시오.")],
@@ -44,7 +44,7 @@ init 114 python:
             fix=("할아버지 약값을 보탠다",5,[("dad","할아버지 약값에 보태렴. 그날 일을 없던 걸로 해 달라는 건 아니다."),
                 ("resident_somi","……약은 이걸로 사 볼게요. 그날 일은 그래도 못 잊어요.")])),
         "eunho":dict(person="resident_eunho",flag="eunho_hostile",
-            cold=[("resident_eunho","광장에 쪽지가 붙은 뒤로 손님들이 저울만 쳐다봐요. 값은 정해진 대로 받겠습니다. 깎아 드릴 이유는 없지요.")],
+            cold=[("resident_eunho","광장에 쪽지가 붙은 뒤로 손님들이 저울만 쳐다보오. 값은 정해진 대로 받겠습니다. 깎아 드릴 이유는 없소.")],
             fix=None),
     }
     # How a fair-rumor listener phrases holding judgment, by grudge.
@@ -86,8 +86,8 @@ init 114 python:
         if person=="resident_eunho" and key=="H1" and r13_has("H1") and r13_grudge_open("eunho"):
             _r13_mem_present(person,key,identity)
             r13_flag("eunho_reconciled")
-            return [("resident_eunho","……백 부인 글씨군요. 저 혼자 꾸민 일이 아니라는 건 알고 계셨군요."),
-                ("resident_eunho","그렇다고 제가 한 일이 없어지진 않지요. 그래도 이제부터 당신한테는 남들과 같은 값만 받겠습니다.")]
+            return [("resident_eunho","……백 부인 글씨구려. 저 혼자 꾸민 일이 아니라는 건 알고 계셨구려."),
+                ("resident_eunho","그렇다고 제가 한 일이 없어지진 않소. 그래도 이제부터 당신한테는 남들과 같은 값만 받겠습니다.")]
         return _r13_mem_present(person,key,identity)
 
 label r13_grudge_fix:

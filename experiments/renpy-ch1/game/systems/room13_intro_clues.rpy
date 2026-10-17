@@ -152,6 +152,6 @@ label r13_entry_daram_menu:
         call r13_lines([("daram","아빠 이름은 예약 종이랑 명단에 다 있는데, 내 이름도 둘 다 있을까?"),("dad","예약 종이와 명단을 나란히 놓고 대조해 보자.")],"entry:daram:compare")
         call screen r13_records(close_action=Return())
     elif r13_entry_daram_choice=="together":
-        call r13_lines([("daram","엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼."),("dad","걱정 마. 같이 들어갈 거야. 우리 둘이 함께 예약했다는 기록을 보여 드리자.")],"entry:daram:together")
+        call r13_lines([("daram","엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼."),("dad","걱정 마. 같이 들어갈 거야. 우리 둘이 함께 예약했다는 기록이 어디 있을까?")],"entry:daram:together")
     $ r13_flag("question_read:entry:daram:"+r13_entry_daram_choice)
     jump r13_entry_daram_menu

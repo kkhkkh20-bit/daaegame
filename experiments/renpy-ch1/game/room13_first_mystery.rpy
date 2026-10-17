@@ -108,7 +108,7 @@ init 76 python:
                 ("dad","두 층 사이에 금속 줄이 왜 필요합니까?"),
                 ("buri","멀리 있는 걸쇠를 당길 때 쓰죠. 실제 장치가 아직 남아 있는지는 직접 봐야 해요.")]
         if person=="granny" and key=="E04" and "inn_front_door_claim" in old_flags:
-            return [("granny","어머, 옛 도면까지 구해 오셨네.",{"expression":"thinking"}),
+            return [("granny","어머, 옛 도면까지 구해 오셨네요.",{"expression":"thinking"}),
                 ("dad","도면을 보면 책장 뒤에 공간이 있습니다. 그런데 문은 하나뿐이라고 하셨지요?"),
                 ("granny","낡은 집은 손본 데가 많아요. 종이에 그린 거랑 지금 집이 같겠어요?",{"expression":"neutral"})]
         if person=="granny" and key in ("E37","E05") and "inn_front_door_claim" in old_flags:
