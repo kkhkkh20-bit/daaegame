@@ -69,5 +69,5 @@ class DynamicBindings(unittest.TestCase):
  def test_generated_state_evidence_and_hold(self):
   for name in ['binding-state-results.json','provider-state-results.json']:
    result=json.loads((OUT/name).read_text());self.assertEqual(result['unresolved'],[])
-  self.assertEqual(len(json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']),20)
+  self.assertEqual(len(json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']),40)
 if __name__=='__main__':unittest.main()

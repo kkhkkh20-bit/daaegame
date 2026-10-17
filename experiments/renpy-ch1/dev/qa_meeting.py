@@ -56,6 +56,12 @@ async def main():
   try:
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await asyncio.sleep(.7)
    await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
+   if os.environ.get('ROOM13_MEETING_F3_ONLY'):
+    await q.py('import renpy;s=renpy.store;s.r13_edit(day=14,period=2,location="altar",finale_started=True,mom_state="reunited",daram_state="with_dad",evidence=list(s.ROOM13["evidence"]),flags=["shelter_ready"]);s.r13_meeting_active=False;result=True')
+    await native_jump(q,'r13_final_hub');await q.wait('r13_crisis')
+    title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F3"]["assertion"]');await q.press(title);await until('r13_debate_board');await select_statement('s3');await q.press('보여주기');await select_record('E21');await until('r13_debate_board')
+    assert await q.py('import renpy;s=renpy.store;result=not s.r13_debate_is_broken("F3","s3") and not s.r13_has("operators_ready") and not s.r13_has("patient_transport")')
+    await shot('17-no-item-bypass');(OUT/'f3-result.json').write_text(json.dumps({'passed':True,'fixture':'shelter_ready opens s1; E21 cannot replace missing s3 staff/transport'}));print('PASS final F3 no item bypass',flush=True);return
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=7,period=2,location="dining",case_state="occurred",victim_state="dead",evidence=list(s.ROOM13["evidence"]),propositions=[]);s.r13_flag("entry_corrected","lodging");s.r13_upgrade();result=True')
    await native_jump(q,'r13_trial');await q.wait('say');await shot('01-opening-focused')
    if os.environ.get('ROOM13_MEETING_LOGIC'):
@@ -252,7 +258,7 @@ async def main():
    await q.press('되묻기');await q.wait('say');await shot('04-focused-speaker-neighbors')
    line_present=next(b['rect'] for b in (await q.state())['buttons'] if b['text'].strip()=='보여주기')
    assert board_present==line_present,(board_present,line_present)
-   await q.press('더보기');await q.wait('r13_more_tools');await q.press('닫기')
+   await q.press('더보기');await q.wait('r13_more_tools');await q.input(100,100) # Dismiss the current popover by its outside-click area.
    # Canceling live presentation must retain the outer dialogue cursor and all proof state.
    before=await q.py('import renpy;s=renpy.store;result={"proofs":list(s.room13["propositions"]),"debate":s.r13_debate_state(),"id":s.r13_read_id,"index":s.r13_index,"page":s.r13_page_i,"focus":s.r13_meeting_focus}')
    before_say=(await q.state())['say']
@@ -297,6 +303,7 @@ async def main():
    title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F1"]["assertion"]');await q.press(title);await until('r13_debate_board');await shot('13-stone-altar-statements');await q.press('되묻기');await q.wait('say');await shot('14-stone-altar-focused')
    await until('r13_debate_board')
    await q.py('import renpy;renpy.store.r13_meeting_active=False;result=True');await native_jump(q,'r13_final_hub');await q.wait('r13_crisis')
+   await q.py('import renpy;renpy.store.r13_flag("shelter_ready");renpy.exports.restart_interaction();result=True') # Open s1 legitimately; s3 still has no operators/transport.
    title=await q.py('import renpy;result=renpy.store.R13_CLAIMS["F3"]["assertion"]');await q.press(title);await until('r13_debate_board');await select_statement('s3');await q.press('보여주기');await select_record('E21');await until('r13_debate_board')
    assert await q.py('import renpy;s=renpy.store;result=not s.r13_debate_is_broken("F3","s3") and not s.r13_has("operators_ready") and not s.r13_has("patient_transport")')
    (OUT/'result.json').write_text(json.dumps({'passed':True,'checks':['actual day7 opening and roundtable','live cancel preserves proof and dialogue','live hidden claim rebuttal resumes outer dialogue','completed replay preserves proof and hidden gates','previous/next statements','fixed presentation-button position','record history','mobile and large text','wrong conclusion no proof','correct conclusion and public opinions','wrong and correct counter','leave cancellation','actual day14 stone altar','no item bypass for actual preparations']},ensure_ascii=False,indent=2))

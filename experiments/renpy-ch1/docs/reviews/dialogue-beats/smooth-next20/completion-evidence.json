@@ -1,0 +1,60 @@
+{
+  "version": "0.19.19",
+  "base_main": "10630d2a",
+  "source_commit": "f25caf86ded3a8d874c938e353d14c268b23b8e2",
+  "new_people": 20,
+  "total_people": 40,
+  "new_masters": 120,
+  "total_masters": 240,
+  "new_display_frames": 360,
+  "total_display_frames": 720,
+  "unit_tests": 293,
+  "lint": "passed",
+  "provider_cases": 63973,
+  "provider_unresolved": 0,
+  "renderer_captures": 160,
+  "upgrade_save_load": "0.19.18 -> 0.19.19 passed; actual Karo line restored",
+  "authored_pose_and_background_changes": [],
+  "public_origin": "Not retried as instructed; prior proxy 403 unresolved",
+  "native_screen_regression": "Not run: xvfb-run missing; actual Chromium fixtures used",
+  "build": {
+    "core_zip_bytes": 40867644,
+    "archive_sha256": "a4239cc41a74ca11ab931f401806504845dd772db954ca183dc8add683186f39",
+    "parts": 5,
+    "preload_files": 896,
+    "first_load_bytes": 215097425,
+    "remote_files": 274,
+    "removed_from_release": []
+  },
+  "gallery_scope": "160 actual renderer captures; source images unchanged between the gallery build and final build; final build additionally refreshes 7 exact meeting cue bindings",
+  "new_display_upscales": 0,
+  "max_alpha_baseline_delta_px": 0.895,
+  "meeting_regression": {
+    "passed": true,
+    "scope": "targeted actual Chromium meeting fixtures, not full game",
+    "checks": [
+      "roundtable and focused speaker",
+      "live evidence cancel preserves proof and dialogue",
+      "nested picker save/load restores original line",
+      "live rebuttal resumes outer dialogue",
+      "completed replay preserves proof state",
+      "previous/next statements",
+      "record history",
+      "mobile and large text",
+      "wrong and correct conclusions",
+      "wrong and correct counter",
+      "leave cancellation",
+      "day14 altar framing",
+      "F3 E21 cannot replace missing operators and transport"
+    ],
+    "execution": "Earlier checks completed in main run; final F3 check rerun alone after correcting test prerequisite.",
+    "test_harness_repairs": [
+      "more-tools popover closes by outside click, not a visible close label",
+      "F3 fixture needs shelter_ready to legitimately open s1; s3 staffing stays missing"
+    ],
+    "logs": [
+      "/tmp/next20-meeting.log",
+      "/tmp/next20-meeting-f3.log"
+    ]
+  }
+}

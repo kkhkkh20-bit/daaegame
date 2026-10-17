@@ -1,0 +1,1999 @@
+{
+  "base_main": "10630d2a",
+  "preserved_previous_people": [
+    "daram",
+    "resident_bori",
+    "bami",
+    "neoul",
+    "resident_teacher",
+    "resident_nubi",
+    "resident_somi",
+    "resident_kkwak",
+    "resident_guseul",
+    "nabi",
+    "karo",
+    "buri",
+    "granny",
+    "resident_momo",
+    "resident_musoe",
+    "resident_lamplighter",
+    "resident_madam",
+    "guard",
+    "resident_mungchi",
+    "doto"
+  ],
+  "new_people": [
+    "mom",
+    "resident_badook",
+    "resident_dalgeurak",
+    "resident_eunho",
+    "resident_kalbaram",
+    "resident_kongi",
+    "resident_librarian",
+    "resident_nero",
+    "resident_owlgp",
+    "resident_piko",
+    "resident_ppul",
+    "resident_seol",
+    "resident_seori",
+    "resident_siluk",
+    "resident_sling",
+    "resident_tok",
+    "resident_tori",
+    "resident_tosil",
+    "resident_ttadak",
+    "seryeon"
+  ],
+  "reviewed_static_emotions": {
+    "resident_seori": {
+      "neutral": 63,
+      "anxious": 17,
+      "angry": 7
+    },
+    "resident_owlgp": {
+      "neutral": 38,
+      "angry": 3,
+      "joy": 4,
+      "anxious": 5
+    },
+    "resident_tok": {
+      "neutral": 29,
+      "angry": 4,
+      "anxious": 7,
+      "joy": 1
+    },
+    "seryeon": {
+      "neutral": 12
+    },
+    "resident_eunho": {
+      "anxious": 9,
+      "angry": 11,
+      "neutral": 32,
+      "joy": 2
+    },
+    "mom": {
+      "anxious": 22,
+      "angry": 8,
+      "neutral": 34,
+      "joy": 4,
+      "surprise": 1
+    },
+    "resident_tori": {
+      "neutral": 8,
+      "anxious": 12
+    },
+    "resident_kongi": {
+      "neutral": 8,
+      "joy": 5,
+      "anxious": 11
+    },
+    "resident_librarian": {
+      "neutral": 16,
+      "anxious": 9
+    },
+    "resident_nero": {
+      "neutral": 11,
+      "angry": 5,
+      "anxious": 7
+    },
+    "resident_seol": {
+      "neutral": 12,
+      "anxious": 4,
+      "angry": 2,
+      "joy": 1
+    },
+    "resident_ppul": {
+      "neutral": 36,
+      "angry": 9,
+      "anxious": 8,
+      "surprise": 1,
+      "joy": 2
+    },
+    "resident_sling": {
+      "neutral": 9,
+      "anxious": 14,
+      "surprise": 1
+    },
+    "resident_ttadak": {
+      "neutral": 15,
+      "anxious": 7,
+      "angry": 5,
+      "joy": 2,
+      "surprise": 1
+    },
+    "resident_piko": {
+      "neutral": 9,
+      "angry": 2,
+      "anxious": 8,
+      "joy": 1
+    },
+    "resident_siluk": {
+      "neutral": 16,
+      "anxious": 19,
+      "angry": 3,
+      "surprise": 2,
+      "joy": 2
+    },
+    "resident_badook": {
+      "neutral": 23,
+      "surprise": 1,
+      "anxious": 5
+    },
+    "resident_tosil": {
+      "anxious": 12,
+      "joy": 2,
+      "neutral": 1,
+      "surprise": 1
+    },
+    "resident_dalgeurak": {
+      "joy": 2,
+      "neutral": 1,
+      "anxious": 1
+    }
+  },
+  "policy": "existing exact scene/person/text reviews; unreviewed ordinary speech uses new neutral; meetings/authored poses remain separate",
+  "runtime_code_changed": false,
+  "main_reconciliation": {
+    "base_main": "10630d2a",
+    "semantic_route_differences": {
+      "dynamic:035": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:086": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:097": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:192": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:194": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:199": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:211": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:213": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:214": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:215": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:218": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:219": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:220": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:221": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:222": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:223": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:224": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:226": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:227": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:605": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:606": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:607": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:609": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:664": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:665": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:739": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      },
+      "dynamic:743": {
+        "removed": [],
+        "added": [
+          {
+            "context_identity": "meeting:live:Q1:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_tok",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q3:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_ppul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_madam",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q6:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "neoul",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q4:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_seori",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q5A:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "mom",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          },
+          {
+            "context_identity": "meeting:live:Q2:s1",
+            "emotion": "neutral",
+            "path": null,
+            "person": "resident_badook",
+            "reaction": false,
+            "source": "game/systems/room13_meeting_flow.rpy",
+            "text": "잠깐, 한 사람씩 이야기해요."
+          }
+        ]
+      }
+    },
+    "removed_existing_cues": 0,
+    "note": "Other generated cue hashes changed only because source line provenance was refreshed after main council edits."
+  }
+}
