@@ -125,6 +125,17 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 5 | 101 | `systems/room13_daram_home.rpy:139` | _r13_tm_compare |
 | 6 | 116 | `systems/room13_testimony.rpy:42` |  |
 
+## `r13_stage_people` (6층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:334` | _r13_daram_home_stage |
+| 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
+| 3 | 124 | `systems/room13_event_offers.rpy:60` | _r13_ma_stage |
+| 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
+| 5 | 126 | `systems/room13_perspective.rpy:58` | _r13_facing_stage |
+| 6 | 127 | `systems/room13_facing.rpy:13` |  |
+
 ## `r13_finish_topic` (5층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -154,16 +165,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 3 | 94 | `systems/room13_first_day_flow.rpy:19` | _r13_new_places |
 | 4 | 130 | `systems/room13_new_places.rpy:18` | _r13_ws_places |
 | 5 | 156 | `systems/room13_ep5_soup.rpy:39` |  |
-
-## `r13_stage_people` (5층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:334` | _r13_daram_home_stage |
-| 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
-| 3 | 124 | `systems/room13_event_offers.rpy:60` | _r13_ma_stage |
-| 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
-| 5 | 126 | `systems/room13_perspective.rpy:58` |  |
 
 ## `r13_next_day` (4층)
 
@@ -237,6 +238,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 55 | `room13_rules.rpy:69` | _r13_life_new |
 | 2 | 94 | `systems/room13_first_day_flow.rpy:4` | _r13_fresh_new |
 | 3 | 105 | `systems/room13_no_carryover.rpy:6` |  |
+
+## `r13_actor_face` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:551` | _r13_facing_face |
+| 2 | 127 | `systems/room13_facing.rpy:47` |  |
 
 ## `r13_alibi_lines` (2층)
 
@@ -461,6 +469,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 150 | `systems/room13_sound.rpy:123` | _r13_contrast_scene_music |
 | 2 | 163 | `systems/room13_scene_contrast.rpy:25` |  |
+
+## `r13_staged_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:529` | _r13_facing_art |
+| 2 | 127 | `systems/room13_facing.rpy:42` |  |
 
 ## `r13_visible_people` (2층)
 
