@@ -251,6 +251,7 @@ screen r13_morning_pick():
     $ days=r13_morning_days()
     $ today=(room13 or {}).get("day",1)
     default pick=None
+    default asking=False
     $ chosen=pick if pick in days else (max(days) if days else None)
     add Solid("#0b151bb0")
     frame:
@@ -266,21 +267,32 @@ screen r13_morning_pick():
                     button:
                         xsize 120 ysize 112 padding (6,8)
                         background R13PaperPanel(chosen==day)
-                        action (SetScreenVariable("pick",day) if ok else NullAction()) sensitive ok
+                        action ([SetScreenVariable("pick",day),SetScreenVariable("asking",False)] if ok else NullAction()) sensitive ok
                         vbox:
                             xalign .5 yalign .5 spacing 6
                             text ("%d일"%day) size r13_read_size(28,32) color ("#493b30" if ok else "#a99a83") xalign .5
                             text (R13_DAY_TAGS.get(day,"") if ok else ("아직" if day>today else "기록 없음")) size r13_read_size(15,18) color ("#65503b" if ok else "#a99a83") xalign .5
+            # The confirmation lives inside this panel: Ren'Py's confirm screen would sit under it.
+            if asking and chosen:
+                text ("%d일 아침으로 돌아갈까요? 지금 진행은 저장하지 않으면 사라집니다."%chosen) size r13_read_size(19,22) color "#8a2f1f" xalign .5
             hbox:
                 xalign .5 spacing 16
-                textbutton (("%d일 아침부터"%chosen) if chosen else "돌아갈 아침이 없다"):
-                    style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
-                    sensitive chosen is not None
-                    action Confirm("%d일 아침으로 돌아갈까요?\n지금 진행은 저장하지 않으면 사라집니다."%(chosen or 0),Function(r13_morning_restore,chosen))
-                textbutton "돌아가기":
-                    style "r13_action_button" xsize 200 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
-                    action Hide("r13_morning_pick")
-    key "game_menu" action Hide("r13_morning_pick")
+                if asking and chosen:
+                    textbutton "돌아간다":
+                        style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        action Function(r13_morning_restore,chosen)
+                    textbutton "그만두기":
+                        style "r13_action_button" xsize 200 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        action SetScreenVariable("asking",False)
+                else:
+                    textbutton (("%d일 아침부터"%chosen) if chosen else "돌아갈 아침이 없다"):
+                        style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        sensitive chosen is not None
+                        action SetScreenVariable("asking",True)
+                    textbutton "돌아가기":
+                        style "r13_action_button" xsize 200 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        action Hide("r13_morning_pick")
+    key "game_menu" action (SetScreenVariable("asking",False) if asking else Hide("r13_morning_pick"))
 
 # ⑤ ---------------------------------------------------------------
 screen r13_board_face(who,kind):

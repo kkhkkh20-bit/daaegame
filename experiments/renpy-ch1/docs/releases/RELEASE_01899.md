@@ -92,7 +92,7 @@
 
 ### 다시 시작할 아침
 - 하루를 처음 자유롭게 움직이는 때, 그날 아침을 숨은 저장으로 남긴다. 저장 목록에는 보이지 않는다.
-- 「더보기 → 다시 시작할 아침」과 이름 판에서 지나온 아침을 골라 돌아간다. 확인창을 한 번 거친다.
+- 「더보기 → 다시 시작할 아침」과 이름 판에서 지나온 아침을 골라 돌아간다. 판 안에서 "돌아간다 / 그만두기"로 한 번 더 묻는다(Ren'Py 기본 확인창은 이 판 아래에 깔려 보이지 않아서 판 안으로 옮겼다. 브라우저 검사에서 발견).
 - 그 뒤에 얻은 기록과 결과는 사라지고, 그날 아침의 수첩으로 다시 시작한다.
 - 시안 문구 "알고 있는 것만 가지고 간다"는 실제 동작(그날 아침 상태로 복원)과 달라 고쳤다.
 - 이 판본 전에 지나간 날은 "기록 없음"으로 보인다.
@@ -113,4 +113,10 @@
 ## 검증 (합친 상태)
 - 병합 전(0.18.96+0.18.97 판) 전체 화면 회귀: 표준 123개 중 122개 통과.
   - 실패 1개 `delivery_cord`는 일거리 보수(14냥)를 기대하던 옛 검사였다. 일거리 제거에 맞춰 "보수 없음"으로 고친 뒤 통과했다.
-- main(0.18.98) 병합 뒤 검사 결과는 커밋 기록에 적는다.
+- main(0.18.98) 병합 뒤
+  - `dev/check.sh`(단위 218개 + lint) 통과.
+  - 겹치는 화면 검사 26개 통과: polish3, relations_tab, shortcuts, meeting_pairs, ep1·ep3 회의, ep4_after_trial, ep5_soup_meeting, ep6_cart, ep6_altar, trial_win, finale_win, present_portrait, testimony_scope, compare_j09, topic_record, goal_fold, delivery_cord, time_flow, story_scenes, readability_pixels, map_actions, new_places_tour, redesign_dialogue, typography_roles, meeting_lap_hint.
+  - 실제 브라우저(빌드한 웹판)
+    - `qa_title.py` 통과: 제목, 새 게임에서 마을 입구까지, 저장, 이어하기, 844×390 터치.
+    - 아침 저장 → 판 안 확인 → 복원 확인(복원 뒤 그 뒤에 세운 표식이 사라짐).
+  - 병합 뒤 표준 123개 전체 회귀는 다시 돌리지 않았다.

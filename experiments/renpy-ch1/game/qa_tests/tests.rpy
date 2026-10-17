@@ -11781,7 +11781,12 @@ testcase polish3:
     $ persistent.room13_large_text=False
     run Function(renpy.restart_interaction)
     pause 0.5
-    run Function(r13_morning_restore,3)
+    run Show("r13_morning_pick")
+    pause 0.8
+    click "3일 아침부터"
+    pause 0.6
+    screenshot "morning_confirm.png"
+    click "돌아간다"
     pause 3.0
     assert eval (not r13_has("qa_after_morning") and room13["day"]==3)
     $ r13_qa_note("polish3 ok")
