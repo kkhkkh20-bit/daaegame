@@ -9,7 +9,9 @@ screen r13_crisis():
     use r13_meeting_stage("F1")
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
+        add R13AntiqueIcon("meeting_stone",size=30) xpos 0 ypos 8
         vbox:
+            xpos 42
             text "제단 앞 회의 · 14일째" size 17 color "#795d40"
             text "연결을 멈춰야 한다" size r13_read_size(23,27) color "#493b30"
     $ preparations=r13_crisis_preparations()

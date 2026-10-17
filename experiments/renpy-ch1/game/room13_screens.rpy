@@ -232,9 +232,15 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if title=="선택":
             $ context=r13_choice_context()
             if context:
-                text context[1]:
-                    xpos list_left ypos 66 xsize list_width text_align .5
-                    size r13_read_size(20,24) color "#e5ece6" line_spacing 3
+                # 0.18.93 (owner review of the question screen): the line just spoken sits on an ink
+                # panel above the head, never as bare white text over the face or a bright background.
+                frame:
+                    xpos list_left ypos 18 xsize list_width padding (18,8,18,10)
+                    background R13InkPanel()
+                    text context[1]:
+                        xsize list_width-36 text_align .5
+                        size r13_read_size(20,24) color "#fff4df" line_spacing 3 font r13_ui_font()
+                        outlines [(1,"#101515",0,0)]
         # Questions sit around the centre, clear of dialogue advancement and bottom tools.
         $ row_h=(64 if persistent.room13_large_text else 56)
         $ list_top,list_bottom=r13_question_bounds(entries,list_width)
@@ -262,8 +268,12 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                             color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
                             outlines [(1,"#101515",0,0)]
                 if not entries:
-                    text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
-                        xsize list_width-40 text_align .5 size r13_read_size(24,30) color "#eee5d5"
+                    # 0.18.93: on a panel like the question rows (bare text sat on the person's face).
+                    frame:
+                        xsize list_width-23 padding (16,10) background R13InkPanel()
+                        text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
+                            xsize list_width-55 text_align .5 xalign .5 size r13_read_size(24,30) color "#eee5d5"
+                            outlines [(1,"#101515",0,0)]
         if ready:
             for index,(title,action,was_read) in enumerate(entries[:9]):
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
@@ -400,7 +410,7 @@ screen r13_confirm(message,yes="진행한다",no="돌아간다"):
                 spacing 25
                 textbutton yes action Return(True) sensitive ready text_size 25
                 textbutton no action Return(False) sensitive ready text_size 25
-    # 0.18.95 PC: Enter = yes, Esc = no.
+    # 0.18.99 PC: Enter = yes, Esc = no.
     if ready:
         key "K_RETURN" action Return(True)
         key "K_KP_ENTER" action Return(True)
@@ -442,7 +452,8 @@ screen r13_book(target=None,present=False,hearing=False):
     default category="all"
     $ category="all"
     default page=remembered.get("page",0)
-    on "hide" action Function(r13_book_remember,view_context,detail,page)
+    default material_filter=remembered.get("material_filter","all")
+    on "hide" action Function(r13_book_remember,view_context,detail,page,material_filter)
     default order="recent"
     default rfilter=("related" if present and r13_book_person(target,hearing) else "all")
     $ chip_person=r13_book_person(target,hearing) if present else None
@@ -464,12 +475,15 @@ screen r13_book(target=None,present=False,hearing=False):
             text "먼저 보여주고, 건넬지는 대화 후 결정합니다." xpos 66 ypos 252 xsize 176 size 17 color "#625738"
     $ entries=r13_catalog_entries(archive and not present,hearing)
     $ entries=r13_present_entries(entries,target) if present else entries
-    # 0.18.97: 거름 단추. 보여줄 때는 「이 사람 관련」이 먼저 골라져 있다.
+    $ material_filter="all" if (hearing or archive) and material_filter=="transfer" else material_filter
+    $ entries=r13_material_subset(entries,material_filter)
+    # 0.18.99: 둘째 줄 거름 단추. 보여줄 때는 「이 사람 관련」이 먼저 골라져 있다.
     if not (archive and not present):
         use r13_record_filter_chips(entries,rfilter,"r13_book",chip_person)
         $ entries=r13_record_filter(entries,rfilter,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
-    text ("보여줄 자료 %d개"%len(entries) if present else "모은 자료 %d개"%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
+    text ("자료 %d개"%len(entries)) xpos 284 ypos 86 size 20 color "#65503b"
+    use r13_material_filters("r13_book",material_filter,not hearing and not archive)
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
     if present and not selected_record:

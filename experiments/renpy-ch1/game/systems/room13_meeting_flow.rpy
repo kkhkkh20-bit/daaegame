@@ -214,7 +214,7 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
     $ r13_meeting_interrupting=True
     $ r13_meeting_focus_change(claim,r13_debate_statement(claim,sid)["who"])
     $ presentation_result,presentation_rows=r13_debate_judge(claim,sid,key)
-    # 0.18.97: a statement that falls gets the "그 말, 맞지 않습니다!" cut-in (systems/room13_polish3.rpy).
+    # 0.18.99: a statement that falls gets the "그 말, 맞지 않습니다!" cut-in (systems/room13_polish3.rpy).
     if presentation_result=="break":
         call r13_rebuttal_cutin_play(claim,sid)
     else:

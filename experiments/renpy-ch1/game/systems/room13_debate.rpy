@@ -795,7 +795,9 @@ screen r13_meeting_agenda(claims):
     use r13_meeting_stage(claims[0] if claims else "C1")
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
+        add R13AntiqueIcon("meeting_round",size=30) xpos 0 ypos 8
         vbox:
+            xpos 42
             text "식당 회의 · %d일째"%R13_TRIAL_DAY size 17 color "#795d40"
             text "어느 주장을 다룰까?" size r13_read_size(23,27) color "#493b30"
     $ captions={"C1":"정문이 잠겼으니 아이뿐이라는 주장","C2":"다람이의 방어가 죽음의 원인이라는 주장","C3":"할머니는 그때 식당에 있었다는 말","C4":"할머니가 도우러 들어갔을 뿐이라는 변명"}
@@ -856,8 +858,9 @@ screen r13_debate_board(claim,selected):
         textbutton "‹":
             style "r13_compact_button" area (20,6,52,44) text_size 32 alt "이전 발언"
             action Return(("select",r13_meeting_next_statement(claim,selected,step=-1))) sensitive ready and len(visible)>1
-        text (R13_NAMES[sel["who"]]+(" · 들음" if r13_meeting_heard(claim,selected) else "")+(" · 새 발언" if sel.get("hidden") and not r13_meeting_heard(claim,selected) else "")) xpos 88 ypos 12 size r13_read_size(18,22) color "#795d40"
+        text R13_NAMES[sel["who"]] xpos 88 ypos 12 size r13_read_size(20,23) color "#654b30"
         text ("발언 %d / %d"%(visible.index(sel)+1,len(visible))) xcenter 560 ypos 12 size r13_read_size(18,22) color "#795d40"
+        text ("반박함" if r13_debate_is_broken(claim,selected) else "근거 1 / 2" if half_key and sel.get("pair") else "다시 확인" if r13_meeting_heard(claim,selected) else "새로 확인") xpos 818 ypos 12 xsize 210 text_align 1.0 size r13_read_size(18,22) color ("#4d765c" if r13_debate_is_broken(claim,selected) else "#795d40")
         textbutton "›":
             style "r13_compact_button" area (1048,6,52,44) text_size 32 alt "다음 발언"
             action Return(("select",r13_meeting_next_statement(claim,selected))) sensitive ready and len(visible)>1

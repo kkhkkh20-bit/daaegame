@@ -10,7 +10,7 @@ init 60 python:
             # 0.18.63 new places; init 61 replaces these with the v5 map points.
             "river":(267, 375), "forest":(82, 406), "market":(561, 319)},
         "inn": {"inn":(435,420), "dining":(434,307), "kitchen":(170,307),
-            "hall":(340,120), "room13":(685,120), "passage":(685,40), "guestroom":(245,65)},
+            "hall":(340,120), "room13":(685,120), "passage":(685,40), "guestroom":(245,65), "ancient":(685,0)},
         "mountain": {"facility":(110,135), "greenhouse":(382,108), "altar":(644,100)},
     }
     R13_MAP_LABELS = {"gate":"마을 입구", "square":"광장", "inn":"여관 접수대",
@@ -19,7 +19,7 @@ init 60 python:
         "room13":"13호실", "guestroom":"임시 객실", "passage":"숨은 통로", "facility":"보호시설",
         "greenhouse":"폐온실", "altar":"산속 제단"}
 
-    R13_INN_LOCATIONS=("inn","dining","kitchen","hall","room13","passage","guestroom")
+    R13_INN_LOCATIONS=("inn","dining","kitchen","hall","room13","passage","guestroom","ancient")
     R13_LOCAL_CONNECTIONS={
         "inn":(("dining","식당"),("kitchen","주방"),("hall","2층 복도"),("outside","여관 밖으로")),
         "dining":(("inn","접수대"),("kitchen","주방")),
@@ -51,6 +51,7 @@ init 60 python:
 
     def r13_map_discovered(key):
         # Do not expose secret names through stale/legacy current-location saves.
+        if key=="ancient":return r13_ancient_open()
         if key=="passage":return bool(store.room13.get("passage_open") and r13_secret_route_available())
         if key=="greenhouse":return bool(store.room13["day"]>=R13_WEEK2_DAY and (r13_has("E19") or r13_has("Y03")))
         if key=="altar":return bool(store.room13.get("finale_started"))
@@ -67,6 +68,7 @@ init 60 python:
         location=location or store.room13["location"]
         if not r13_map_discovered(location):return "마을"
         title=R13_MAP_LABELS.get(location,R13_PLACES[location][0])
+        if location=="ancient":return "마을 › 여관 › 지하 › "+title
         if location in R13_INN_LOCATIONS:
             return "마을 › 여관 › "+("접수대" if location=="inn" else title)
         if location in ("facility","greenhouse","altar"):
@@ -151,7 +153,9 @@ screen r13_map(initial_region=None):
         use r13_worldmap_v5(selected,ready,map_hover)
     elif region=="inn":
         $ known=set(key for key,point in r13_map_nodes("inn"))
-        $ floors=[("1층",("inn","dining","kitchen")),("2층",("hall","room13","guestroom")),("안쪽",("passage",))]
+        $ floors=[("1층",("inn","dining","kitchen")),("2층",("hall","room13","guestroom")),("안쪽",("passage",)),("지하",("ancient",))]
+        if room13["location"]=="ancient":
+            $ floors=floors[-1:]+floors[:-1]
         viewport:
             area (30,150,860,490) mousewheel True draggable True scrollbars "vertical"
             vbox:
@@ -174,7 +178,11 @@ screen r13_map(initial_region=None):
                                             action r13_map_pick(key,selected) sensitive ready
                                             vbox:
                                                 spacing 12
-                                                text R13_MAP_LABELS[key] size 26 color ("#fff0cb" if key==selected else "#493b30") hover_color "#fff0cb"
+                                                hbox:
+                                                    spacing 10
+                                                    if r13_meeting_map_venue(key):
+                                                        add R13AntiqueIcon("meeting_"+r13_meeting_map_venue(key)[1],size=28) yalign .5
+                                                    text R13_MAP_LABELS[key] size 26 color ("#fff0cb" if key==selected else "#493b30") hover_color "#fff0cb"
                                                 text ("● 현재 위치" if key==room13["location"] else "선택됨" if key==selected else "장소 살펴보기") size 20 color ("#edc878" if key==selected else "#796044") hover_color "#edc878"
     else:
         add Transform("assets/room13-pixel-navigation-village.webp",size=(860,490),nearest=True) xpos 30 ypos 150
@@ -187,7 +195,11 @@ screen r13_map(initial_region=None):
                 action r13_map_pick(key,selected) sensitive ready
                 vbox:
                     xalign .5 yalign .5 spacing 3
-                    text R13_MAP_LABELS[key] size 22 color "#fff0cb" xalign .5
+                    hbox:
+                        spacing 7 xalign .5
+                        if r13_meeting_map_venue(key):
+                            add R13AntiqueIcon("meeting_"+r13_meeting_map_venue(key)[1],size=24) yalign .5
+                        text R13_MAP_LABELS[key] size 22 color "#fff0cb" yalign .5
                     if key==room13["location"]:
                         text "● 현재 위치" size 17 color "#f3ca73" xalign .5
     if selected is not None:
@@ -197,6 +209,16 @@ screen r13_map(initial_region=None):
                 xsize 290 ysize 392
                 text R13_PLACES[selected][0] ypos 0 size 27 color "#765426" xsize 286
                 add Transform(r13_background(R13_PLACES[selected][1]),size=(286,161),nearest=True) ypos 56
+                $ meeting_venue=r13_meeting_map_venue(selected)
+                if meeting_venue:
+                    hbox:
+                        ypos 234 spacing 10
+                        add R13AntiqueIcon("meeting_"+meeting_venue[1],size=30) yalign .5
+                        vbox:
+                            spacing 5
+                            text meeting_venue[2] size 19 color "#654b30" xsize 246
+                            if r13_meeting_map_pending(selected):
+                                text "지금 모임이 있습니다" size 17 color "#874a3b"
                 if selected==room13["location"]:
                     text "● 현재 위치" ypos 290 size 24 color "#89532e"
                 elif selected in r13_places():
@@ -209,3 +231,11 @@ screen r13_map(initial_region=None):
         text "아직 확인한 장소가 없습니다." xpos 932 ypos 180 size 22 color "#65503b"
     textbutton "현장으로 돌아가기":
         action Return(False) style "r13_action_button" xpos 950 ypos 650 xsize 300 ysize 60 text_size 24
+    hbox:
+        xpos 32 ypos 660 spacing 20
+        for kind,title in (("round","원탁"),("field","야외 현장"),("room","실내 입석"),("stone","제단 돌판")):
+            if any(r13_meeting_map_venue(k) and r13_meeting_map_venue(k)[1]==kind for k,p in r13_map_nodes(region)):
+                hbox:
+                    spacing 6
+                    add R13AntiqueIcon("meeting_"+kind,size=24) yalign .5
+                    text title id ("meeting_map_legend_"+kind) size 18 color "#654b30" yalign .5

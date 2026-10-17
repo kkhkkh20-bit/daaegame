@@ -36,7 +36,7 @@ screen r13_backlog():
     key "game_menu" action Hide("r13_backlog")
     key "K_h" action Hide("r13_backlog")
 
-# 0.18.97: 큰 글씨(휴대폰 기본값)에서는 칸 112×56 → 132×70, 글씨 20 → 24.
+# 0.18.99: 큰 글씨(휴대폰 기본값)에서는 칸 112×56 → 132×70, 글씨 20 → 24.
 screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False):
     $ big=persistent.room13_large_text
     $ cw,ch=(132,70) if big else (112,56)

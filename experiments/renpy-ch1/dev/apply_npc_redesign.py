@@ -3,6 +3,15 @@
     python3 dev/apply_npc_redesign.py            # apply (idempotent)
     python3 dev/apply_npc_redesign.py --revert   # restore the original entries
     python3 dev/apply_npc_redesign.py --check    # verify, change nothing
+    python3 dev/apply_npc_redesign.py --only resident_nero   # one NPC (0.18.93)
+
+Registry "restored_originals" (0.18.93): NPCs whose original game art the owner chose again; their
+saved entries from original-entries.json are written back (네로, grey lynx-type design).
+
+0.18.93: a full run rewrites every NPC's entries and would drop the map-action / episode poses
+and the dialogue expression package added later by other scripts. Use --only for a design change;
+--only keeps those later entries (map_action / ep-art poses in the acting table, and a dialogue
+entry that dev/apply_expression_acting.py owns).
 
 Registry: art/npc-redesign-20261015/redesign.json (design -> existing NPC id,
 source PNG + SHA-256, head and avatar boxes in source pixels).
@@ -142,6 +151,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--revert", action="store_true")
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--only")
     args = ap.parse_args()
     registry = load(REGISTRY)
     data = {k: load(p) for k, p in FILES.items()}
@@ -160,6 +170,8 @@ def main():
     report = []
     for design in registry["designs"]:
         npc = design["npc"]
+        if args.only and npc != args.only:
+            continue
         for kind in FILES:
             if npc not in section(data[kind], kind):
                 raise SystemExit("unknown NPC %s in %s" % (npc, kind))
@@ -181,9 +193,30 @@ def main():
         buf = io.BytesIO()
         img.save(buf, "PNG")
         (GAME / "assets" / name).write_bytes(encode(io.BytesIO(buf.getvalue())))
+        if args.only:
+            later = {k: v for k, v in section(data["acting"], "acting")[npc].items()
+                     if v.get("map_action") or v.get("art") == "ep-art-20261016"}
+            new["acting"].update(later)
+            if section(data["fullbody"], "fullbody")[npc].get("acting_package"):
+                new["fullbody"] = section(data["fullbody"], "fullbody")[npc]
         for kind in FILES:
             section(data[kind], kind)[npc] = new[kind]
         report.append((npc, "applied", geo))
+
+    # 0.18.93: NPCs whose original game art is chosen again (registry "restored_originals").
+    for npc, why in registry.get("restored_originals", {}).items():
+        if args.only and npc != args.only:
+            continue
+        saved = backup["npcs"][npc]
+        restored = {k: json.loads(json.dumps(saved[k])) for k in FILES}
+        later = {k: v for k, v in section(data["acting"], "acting")[npc].items()
+                 if (v.get("map_action") or v.get("art") == "ep-art-20261016") and k not in restored["acting"]}
+        restored["acting"].update(later)
+        already = all(section(data[k], k)[npc] == restored[k] for k in FILES)
+        if not args.check:
+            for kind in FILES:
+                section(data[kind], kind)[npc] = restored[kind]
+        print(npc, "original restored" if not args.check else ("restored" if already else "NOT restored"))
 
     if not args.check:
         dump(BACKUP, backup, 1)

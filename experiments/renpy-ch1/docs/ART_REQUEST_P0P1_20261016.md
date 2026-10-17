@@ -1,0 +1,94 @@
+# 그림 제작 요청 P0/P1 (2026-10-16, 0.18.93 기준)
+
+- 표 전체(CSV, 행마다 참조·좌표·근거): `docs/ART_REQUEST_P0P1_20261016.csv` (62행)
+- 대상은 확정 48명 정본(`art/canonical48-rev45/`)과 게임 그림이 **같은 디자인인 인물만**이다. 대조 결과: `docs/CANON48_CHECK_20261016.md`
+- 디자인이 다른 10명과 임시 색변형 7명은 제작 대상에서 뺐다. 결정이나 정본 연결이 먼저다(맨 아래).
+- 경로는 저장소 루트 기준이다(`experiments/renpy-ch1/...`).
+- 좌표는 오늘 빌드에서 실제 배치를 뽑아 확인한 월드 좌표다. 맵 폭 1920, 화면 높이 720, 바닥 기준은 발.
+- 공통 규칙
+  - 확정 디자인과 옷을 유지한다. 1024×1536 투명 PNG, 2×2 셀, 한 장에 한 자세.
+  - 대사창 위에 보이는 상체(손·팔·어깨·몸통)와 동물 몸짓(귀·꼬리·날개)을 살린다.
+  - 웅크린 자세는 선 키로 늘이지 않는다.
+
+## P0 — 다음 배치
+
+### 조사 생활 동작 (새로 제작 2건)
+
+| ID | 동작 키 / 출력 | 맵·자리 | 근거 | 자세 |
+|---|---|---|---|---|
+| 실룩 `resident_siluk` | `living_wheelsnow` / `resident_siluk-living_wheelsnow.png` | 창고 오후. A 발 (975,544) 선 키 250 → 쪼그림 약 175px. 백 부인이 앞에서 하체 왼쪽을 가릴 수 있음. B 발 (1350,689) 선 키 354 → 약 248px | `game/room13-content.json:9123`, `game/room13-dialogue-openings.json:5799`, `game/systems/room13_place_reasons.rpy:93`, 허용 장소 `game/room13_acting.rpy:246` | 한쪽 무릎을 굽혀 작은 손수레 바퀴(그림에 포함)의 눈을 털어 냄. 다른 손은 손잡이, 시선은 바퀴, 몸은 왼쪽. 꼬리는 내림 |
+| 토실 `resident_tosil` | `living_thermos` / `resident_tosil-living_thermos.png` | 여관. 아침 발 (485,706) 높이 265. 저녁 발 (1260,610) 높이 245 | `game/systems/room13_new_cast.rpy:12` "보온병을 두 손으로 꼭 안고 있다." | 선 채로 보온병을 가슴께에서 두 팔로 꼭 안음. 귀 한쪽이 접히고 어깨를 움츠림 |
+
+- 디자인 참조
+  - 실룩
+    - 정본 `art/canonical48-rev45/originals/resident_siluk.webp`
+    - 원본 `art/npc-redesign-20261015/source/hyena_town_v2.png`
+  - 토실
+    - 정본 `.../resident_tosil.webp`
+    - 원본 `art/ep-art-20261016/originals/fullbody-resident_tosil-neutral.webp`
+- 배경
+  - `game/assets/room13-pixel-ready-store0177-afternoon.webp`
+  - `room13-pixel-panorama-inn-morning.webp`, `-evening.webp`
+- 실제 맵 캡처: `reports/art-p0-20261016/`
+  - `p0_store_d2p1_c0.png`, `p0_store_d2p1_c640.png`, `p0_store_d3p1_c640.png`, `p0_inn_d3p0_c0.png`
+  - 여관 저녁은 사건 선택지가 떠서 캡처하지 못했다. 좌표는 배치 덤프 값이다.
+
+### 네로 — 제작 없음 (재사용)
+
+- 회색 망토 네로의 기존 5자세 시트(`game/assets/room13-pixel-acting-resident_nero.webp`)를 그대로 쓴다.
+- 그중 '활동' 자세(짐 꾸러미 앞 무릎 꿇기)가 대본 "짐에 붙은 낡은 이름표를 떼어 주머니에 넣는다"에 맞는다.
+- 0.18.93에서 매일 아침 강가 자리에도 이 자세를 허용했다(`game/room13_acting.rpy:264`). 확인 캡처: `reports/art-p0-20261016/p0_river_d2p0_c0.png`
+- 호랑이 이름표 접기(`living_foldtag`)는 게임에서 뺐다. 파일은 옛 저장을 위해 남겨 두었다.
+- 은색 늑대는 네로가 아니다.
+
+### 새 얼굴 눈 깜빡임 17상태
+
+| 순서 | 인물 | 표정 | 베이스 (같은 캔버스) |
+|---|---|---|---|
+| 1 | 다람 | 보통·당황·화남·불안·놀람 (5) | `game/assets/room13-fullbody-daram-<표정>-acting.webp` (보통·불안 254×384, 나머지 288×416) |
+| 2 | 나비 | 5 | `room13-fullbody-nabi-<표정>-acting.webp` (264×384) |
+| 3 | 밤이 | 5 | `room13-fullbody-bami-<표정>-acting.webp` (226×340) |
+| 4 | 엄마 | 보통·불안 (2) | `room13-fullbody-mom-<표정>-acting.webp` (312×454) |
+
+- 베이스 파일은 `art/expression-acting-20261016/pack68/<id>/<표정>.png`과 픽셀이 같다.
+- 웃음 표정은 눈을 감고 있어서 깜빡임이 필요 없다.
+- 출력은 표정마다 두 장이다: `<id>-<표정>-blink-half.png`(반쯤 감은 눈), `<id>-<표정>-blink-closed.png`(감은 눈).
+  - 베이스와 **같은 캔버스 크기**의 투명 PNG에 눈과 눈꺼풀 픽셀만 그린다.
+  - 셀 격자는 베이스와 같게 짝수 좌표에 맞춘다.
+  - 레이어는 베이스 바로 위다. 좌표(rect)는 받은 뒤 알파 범위로 자동 계산한다.
+- 순서는 화면에 나오는 빈도 순이다. 다람은 주인공이라 가장 많이 나온다.
+
+## P1 — 대화 표정 (상체 연기)
+
+| 인물 | 필요한 표정 | 베이스 | 이유 |
+|---|---|---|---|
+| 초롱 | 화남·웃음·놀람 | `art/expression-acting-20261016/pack68/resident_lamplighter/neutral.png` | 83줄. 지금은 새 보통 표정이 대신함 |
+| 보리 | 5 | `game/assets/room13-redesign-resident_bori.webp` | 63줄, 6표정이 한 장 |
+| 실룩 | 5 | `room13-redesign-resident_siluk.webp` | 49줄 |
+| 토실 | 5 | `room13-fullbody-resident_tosil-neutral.webp` | 36줄 |
+| 부엉이 할아버지 | 웃음·당황·화남·놀람 | `pack68/resident_owlgp/neutral.png` | 보통·불안만 묶음 그림이고, 나머지 4개는 옛 고해상도 그림이라 표정이 바뀔 때 그림체가 바뀜 |
+| 사서 선생님 | 5 | `room13-redesign-resident_librarian.webp` | 27줄 |
+| 여니 | 5 | `room13-redesign-resident_yeoni.webp` | 16줄 |
+| 설이 | 5 | `room13-redesign-resident_seol.webp` | 11줄 |
+| 모모 관장 | 5 | `room13-redesign-resident_momo.webp` | 8줄 |
+
+- 대사 수는 실행 데이터에서 그 인물이 화자로 나오는 줄 수다.
+- 까로·엄마·톡·세련·할머니는 빠진 표정을 예전 그림으로 채우고 있다. 디자인은 같고 그림체만 다르므로 P2로 둔다.
+
+### 기존 그림 재사용 후보 (코드만, 제작 없음)
+
+- 아래 인물은 이미 그린 동작을 허용 장소만 넓히면 서 있는 시간이 줄어든다. 자리와 가림을 확인한 뒤 연결한다.
+  - 부엉이 할아버지 `living_notebook`: 여관, 우체국
+  - 은호 `living_prices`: 우체국
+  - 우박 `living_measure`: 여관
+
+## 보류 / 결정 필요 (제작하지 않음)
+
+- **부리**
+  - 기존 6장은 보류를 유지한다. 새 청소년 시안은 아직 승인 전이다.
+  - 정본은 갈색 부엉이(`brown_owl-eyes-v2`)이고 게임은 둥근 부엉이다.
+  - 바꿀 때 걸리는 곳은 `docs/CANON48_CHECK_20261016.md`의 '부리 슬롯'에 적었다.
+- **디자인이 다른 8명**: 도토, 꽥순, 피코, 뭉치, 백 부인, 누비, 구슬, 부리. 어느 디자인을 쓸지 정해지기 전에는 표정과 동작을 만들지 않는다.
+- **옷이 다른 2명**: 너울(집행관 외투 ↔ 흰 코트), 사자 선생님(조끼 ↔ 녹색 도포).
+- **임시 색변형 7명**: 물결, 솔방울, 달그락, 종종이, 굴돌, 현이, 칼바람. 새 디자인 요청은 하지 않는다. 정본 그림을 먼저 연결하고, 그 뒤 표정과 동작을 요청한다.
+- **누비 큰아이 치마 잡기**: 미완료(2차 재요청서).

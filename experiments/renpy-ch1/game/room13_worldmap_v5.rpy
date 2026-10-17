@@ -27,7 +27,10 @@ init 61 python:
         return Transform("assets/room13-worldmap-v5-%s-outline.webp" % key, size=r13_v5_rect(key)[2:], nearest=True)
 
     def r13_v5_label(key):
-        return tuple(int(round(p * R13_WORLD_V5_SCALE)) for p in R13_WORLD_V5["layers"][key]["label"])
+        x,y=tuple(int(round(p * R13_WORLD_V5_SCALE)) for p in R13_WORLD_V5["layers"][key]["label"])
+        # Leave separate touch targets for the tight school/clinic/workshop cluster.
+        dx,dy={"school":(0,-20),"workshop":(-42,0),"market":(10,0),"post":(0,5)}.get(key,(0,0))
+        return x+dx,y+dy
 
 screen r13_worldmap_v5(selected, ready, map_hover):
     add Transform(R13_WORLD_V5_ART, size=(860,484), nearest=True) xpos 30 ypos 150
@@ -47,20 +50,29 @@ screen r13_worldmap_v5(selected, ready, map_hover):
             alt R13_MAP_LABELS[key]
         if key==selected or key==map_hover:
             add r13_v5_outline(key) xpos (30+lx) ypos (150+ly)
-    # 0.18.47 (owner): no bobbing pin; the label's ● marks the current place.
-    # Text remains UI text; no painted-in names and no labels for locked nodes.
+    # Compact pictograms leave the geography visible. Names appear on focus,
+    # including touch selection; polygon hit areas remain available underneath.
     for key, point in r13_map_nodes("village"):
         $ tx, ty = r13_v5_label(key)
-        textbutton (("● " if key==room13["location"] else "") + R13_MAP_LABELS[key]):
+        button:
             id ("v5_label_"+key)
-            area (30+max(0,min(712,tx-74)),150+ty-20,148,40)
-            padding (3,3)
-            text_size 20 text_xalign .5 text_yalign .5
-            text_color "#fff3d5" text_hover_color "#ffffff"
-            background R13InkPanel(focused=(key==selected))
-            hover_background R13InkPanel(focused=True)
+            area (30+tx-32,150+ty-32,64,64)
+            padding (0,0)
+            background None
             action r13_map_pick(key,selected)
             hovered SetScreenVariable("map_hover",key)
             unhovered SetScreenVariable("map_hover",None)
             sensitive ready
             alt R13_MAP_LABELS[key]
+            add R13PaperPanel(key==selected or key==map_hover) xysize (44,44) align (.5,.5)
+            add R13AntiqueIcon("place_"+key,size=30) align (.5,.5)
+        if key==room13["location"]:
+            add Solid("#a15435") xpos (30+tx-5) ypos (150+ty+17) xysize (10,5)
+    $ active=map_hover or selected
+    if active in dict(r13_map_nodes("village")):
+        $ tx,ty=r13_v5_label(active)
+        $ name_width=max(96,min(200,28+len(R13_MAP_LABELS[active])*22))
+        frame:
+            xpos (30+max(0,min(860-name_width,tx-name_width//2))) ypos (150+max(0,ty-61))
+            xysize (name_width,34) padding (6,2) background R13InkPanel(focused=True)
+            text R13_MAP_LABELS[active] size 20 color "#fff3d5" align (.5,.5)

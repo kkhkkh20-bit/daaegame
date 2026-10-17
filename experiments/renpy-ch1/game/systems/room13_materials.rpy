@@ -18,7 +18,7 @@ init 148 python:
     def r13_catalog_entries(archive=False,hearing=False,shelf=False):
         raw=list((getattr(persistent,"room13_knowledge",[]) or []) if archive else (store.room13 or {}).get("evidence",[]))
         keys=list(dict.fromkeys(k for k in raw if k in ROOM13["evidence"]))
-        # 0.18.95: records of a finished episode move to the 지난 사건 shelf (systems/room13_shelf.rpy).
+        # 0.18.99: records of a finished episode move to the 지난 사건 shelf (systems/room13_shelf.rpy).
         if not archive:
             shelved=getattr(store,"r13_shelved_keys",lambda:set())()
             if shelf:return list(reversed([k for k in keys if k in shelved]))
@@ -29,7 +29,7 @@ init 148 python:
         return list(reversed(list(dict.fromkeys(keys))))
 
     def r13_catalog_observed(key):
-        """0.18.95: while a case is open a record shows only what was observed; the meaning
+        """0.18.99: while a case is open a record shows only what was observed; the meaning
         ("그래서 무슨 뜻? …") is for the meeting to reveal. Shelved (finished) records show it again."""
         ev=ROOM13["evidence"].get(key)
         if not ev or "그래서 무슨 뜻?" not in ev.get("establishes",""):return ev

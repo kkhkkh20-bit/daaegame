@@ -1,6 +1,6 @@
-# 0.18.97 3번 시안 적용 (소유자 2026-10-17 "3번 시안 다 좋아 적용해줘")
+# 0.18.99 3번 시안 적용 (소유자 2026-10-17 "3번 시안 다 좋아 적용해줘")
 #  ① 반박 컷인 "그 말, 맞지 않습니다!"   (회의에서 발언 하나를 무너뜨린 순간)
-#  ② 기록 거름 단추: 전체 / 안 읽음 / 오늘 얻음 / 이 사람 관련
+#  ② 기록 거름 단추(둘째 줄): 안 읽음 / 오늘 얻음 / 이 사람 관련 / 지난 사건 — 다시 누르면 해제
 #  ③ 큰 글씨(휴대폰 기본값)에서 아래 단추·기록 단추를 크게
 #  ④ 다시 시작할 아침: 하루를 처음 자유롭게 움직이는 때 숨은 저장을 남기고, 그 아침으로 돌아간다
 #  ⑤ 이번 겨울의 이름 판: 결말 뒤 구한 사람·잃은 사람·에피소드별 결과
@@ -219,17 +219,25 @@ label r13_rebuttal_cutin_play(claim,sid):
     return
 
 # ② ---------------------------------------------------------------
-screen r13_record_filter_chips(entries,rfilter,owner,person=None):
+screen r13_record_filter_chips(entries,rfilter,owner,person=None,shelf=False,shelf_count=0):
+    # Second row under the design chat's 전체/증언/전달 가능 row (0.18.98).
     $ big=r13_big_ui()
     hbox:
         xpos 284 ypos (106 if big else 110) spacing 4
         for mode,label in R13_RECORD_FILTERS:
-            if mode!="related" or person:
+            if mode=="all":
+                pass
+            elif mode!="related" or person:
                 $ count=r13_record_filter_count(entries,mode,person)
                 textbutton ((label+" %d"%count) if mode!="related" else label):
                     style "r13_paper_tab_button" ysize (44 if big else 38) xpadding 10 text_size r13_read_size(16,19)
                     selected rfilter==mode
-                    action [Function(r13_record_select,owner,"rfilter",mode),Function(r13_record_select,owner,"page",0)]
+                    action [Function(r13_record_select,owner,"rfilter","all" if rfilter==mode else mode),Function(r13_record_select,owner,"page",0)]
+        if shelf_count:
+            textbutton (("지난 사건 %d"%shelf_count) if not shelf else "지금 쓰는 자료"):
+                style "r13_paper_tab_button" ysize (44 if big else 38) xpadding 10 text_size r13_read_size(16,19)
+                selected shelf
+                action [Function(r13_record_select,owner,"shelf",not shelf),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
 
 # ④ ---------------------------------------------------------------
 screen r13_morning_watch():

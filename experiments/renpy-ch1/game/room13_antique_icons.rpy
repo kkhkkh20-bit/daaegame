@@ -77,6 +77,57 @@ init 58 python:
                 poly('#dec18a',[(12,8),(20,8),(24,12),(24,20),(20,24),(12,24),(8,20),(8,12)])
                 poly(ink,[(13,10),(19,10),(22,13),(22,19),(19,22),(13,22),(10,19),(10,13)])
                 poly('#65665d',[(14,13),(18,13),(20,15),(20,18),(18,20),(14,20),(12,18),(12,15)])
+            elif k in ('meeting_round','meeting_stone'):
+                poly(ink,[(2,12),(8,7),(24,7),(30,12),(30,23),(24,28),(8,28),(2,23)])
+                poly('#b5aea0' if k=='meeting_stone' else leather,[(4,12),(9,9),(23,9),(28,12),(28,21),(23,25),(9,25),(4,21)])
+                line(light,(9,11),(23,11),2)
+                for x in (7,15,23):box(gold,x,1,4,4)
+                if k=='meeting_stone':line(ink,(17,12),(14,17),1);line(ink,(14,17),(20,21),1)
+            elif k in ('meeting_field','meeting_room'):
+                if k=='meeting_room':
+                    line(leather,(1,10),(16,1),2);line(leather,(16,1),(31,10),2)
+                    line(leather,(3,10),(3,30),2);line(leather,(29,10),(29,30),2)
+                for x,y in ((6,13),(14,9),(22,13)):
+                    box(ink,x-2,y-2,7,7);box(paper,x-1,y-1,5,5)
+                    box(gold,x-3,y+6,9,9)
+                line(shade,(4,29),(29,29),2)
+            elif k.startswith('place_'):
+                place=k[6:]
+                if place=='forest':
+                    for x,y in ((7,2),(19,6)):
+                        box(leather,x+4,y+17,4,10)
+                        poly('#42614f',[(x-2,y+20),(x+6,y),(x+14,y+20)])
+                        poly(paper,[(x+2,y+7),(x+6,y),(x+10,y+7)])
+                elif place=='river':
+                    for y in (8,17,26):
+                        for x in (2,14):
+                            line('#496d77',(x,y),(x+6,y-3),2);line('#496d77',(x+6,y-3),(x+12,y),2)
+                elif place=='post':
+                    box(ink,2,7,28,20);box(paper,4,9,24,16)
+                    line(leather,(4,10),(16,19),2);line(leather,(16,19),(28,10),2)
+                elif place=='clinic':
+                    box('#835344',12,3,8,26);box('#835344',3,12,26,8)
+                elif place=='workshop':
+                    line(ink,(6,26),(23,9),6);line(gold,(6,26),(23,9),3)
+                    poly(leather,[(16,3),(22,7),(28,2),(30,8),(24,15),(17,14),(13,9)])
+                elif place=='square':
+                    box(ink,5,15,22,13);box(shade,7,17,18,9)
+                    line(leather,(8,16),(8,8),2);line(leather,(24,16),(24,8),2)
+                    poly(leather,[(3,9),(16,2),(29,9)]);box(gold,14,11,4,8)
+                else:
+                    box(ink,5,12,22,17);box(paper,7,14,18,13)
+                    poly(leather,[(2,13),(16,2),(30,13)])
+                    if place=='school':
+                        box(gold,13,17,6,5);line(ink,(16,5),(16,1),2)
+                    elif place=='inn':
+                        box(leather,10,18,12,3);box(leather,10,17,2,8);box(leather,20,20,2,5)
+                    elif place=='market':
+                        for x in (6,14,22):box(gold,x,11,4,6)
+                        box(leather,8,23,16,3)
+                    elif place=='gate':
+                        box(leather,12,16,8,13)
+                    else:
+                        box(shade,11,17,10,10);line(leather,(11,17),(21,27),2);line(leather,(21,17),(11,27),2)
             elif k=='relations':
                 line(gold,(8,8),(24,8),2);line(gold,(8,8),(16,25),2);line(gold,(24,8),(16,25),2)
                 for x,y in ((3,3),(19,3),(11,20)):
