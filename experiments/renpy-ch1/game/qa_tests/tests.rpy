@@ -12359,3 +12359,43 @@ testcase continuity_0195:
         store._c_q3=r13_debate_judge("Q3","s1","F04")
     assert eval (_c_q4[0]=="break" and "직접 말했습니다" in _c_q4[1][1][1] and "썼습니다" not in str(_c_q4[1]))
     assert eval (_c_q3[0]=="break" and "꺼냈어" not in str(_c_q3[1]) and "학교에 있었어요" in str(_c_q3[1]))
+
+init 1001 python:
+    def r13_qa_thread_audit_dump():
+        """0.19.17: one engine run, no clicks. Writes what dev/thread_audit.py checks."""
+        import json as _j,os as _o
+        out={"topics":{},"threads":{},"reactions":[],"present":{}}
+        for k,t in ROOM13["topics"].items():
+            out["topics"][k]=dict(npc=t.get("npc"),title=t.get("title"),special=bool(t.get("special")),day=t.get("day"),
+                steps=t.get("steps") is not None,timeless=bool(t.get("timeless")),variants=len(t.get("variants") or []),
+                again=len(t.get("again") or []),recap=bool(t.get("recap")),lines=len(t.get("lines") or []))
+        out["threads"]={n:[s[0] for s in st] for n,st in R13_THREADS.items()}
+        out["reactions"]=["%s|%s"%k for k in R13_REACTIONS]
+        # Every resident × every record they are tied to: does presenting it give only a generic answer?
+        backup=winter_copy.deepcopy(store.room13)
+        people=[p for p in R13_NAMES if p in CAST]
+        for key,ev in ROOM13["evidence"].items():
+            text=_j.dumps(ev,ensure_ascii=False)
+            src=ROOM13["evidence_sources"].get(key)
+            for p in people:
+                if p!=src and R13_NAMES[p] not in text:continue
+                store.room13=winter_copy.deepcopy(backup)
+                n=store.room13;n["evidence"]=list(dict.fromkeys(n["evidence"]+[key]))
+                try:res=r13_present(p,key,False)
+                except Exception as e:res=[("error",repr(e))]
+                generic=len(res)==1 and res[0][0]==p and res[0][1] in r13_generic_present_texts(p)
+                out["present"]["%s|%s"%(p,key)]=dict(generic=generic,first=res[0][1] if res else "")
+        store.room13=backup
+        path=_o.path.join(_o.environ.get("ROOM13_QA_OUT","/tmp/room13-qa"),"thread_audit.json")
+        _o.makedirs(_o.path.dirname(path),exist_ok=True)
+        open(path,"w").write(_j.dumps(out,ensure_ascii=False,indent=1))
+
+testcase thread_audit_dump:
+    pause 2.0
+    click "처음부터"
+    pause until screen "say" timeout 30
+    click pos (640,560) until screen "r13_hub" timeout 90
+    $ room13["day"]=8
+    $ room13["case_state"]="occurred"
+    $ r13_qa_thread_audit_dump()
+    $ r13_qa_note("thread audit dumped")

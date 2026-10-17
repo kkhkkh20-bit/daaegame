@@ -24,8 +24,13 @@ init 130 python:
         return [(who,text,{"thought":True}) if thought else (who,text) for who,text,thought in r13_topic_record(key)]
 
 label r13_topic_review(key):
-    if r13_topic_record(key):
-        call r13_lines(r13_topic_full_record(key),"topic:record_full:"+key)
+    # 0.19.17 (owner): asking again answers from today's point in the story (systems/room13_threads.rpy).
+    #   Without such lines, the kept record is shown as a dated past record, never as a fresh conversation.
+    $ r13_again_rows=r13_topic_again_lines(key)
+    if r13_again_rows:
+        call r13_lines(r13_again_rows,"topic:again:"+key)
+    elif r13_topic_record(key):
+        call r13_lines([(None,"(%s %s에게 들은 말)"%(r13_topic_when(key),R13_NAMES.get(ROOM13["topics"][key]["npc"],"")))]+r13_topic_key_lines(key,2),"topic:record_past:"+key)
     else:
         # Legacy saves keep the existing fallback when no verbatim transcript exists.
         call r13_lines(r13_conversation_topic_lines(key),"topic:review:"+key)
