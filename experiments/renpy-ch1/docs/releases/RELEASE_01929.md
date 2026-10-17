@@ -6,3 +6,5 @@
 
 그림 원본과 제작 근거: `design/maps/20261017/mountain-parchment/`.
 검증 결과: `docs/reviews/mountain-parchment-20261017/`.
+
+검증: 최신 main(0.19.28)을 병합한 원본에서 `dev/check.sh` 통과(단위 검사·Ren'Py lint). 웹 빌드의 PC 마우스와 844×390 터치로 발견 전후 표시, 네 목적지 선택, 선택 중 전체 게임 상태 불변을 확인했다. 실제 이야기 전체를 다시 완주한 검사는 아니다.

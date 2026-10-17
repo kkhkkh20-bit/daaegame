@@ -62,6 +62,8 @@ class RoleConnect(unittest.TestCase):
                 if v.get("map_action"):
                     self.assertIn((rid, v["source_sha256"]), live, (rid, k))
                     allowed.add(v["file"])
+            if rid=="resident_solbang":
+                allowed={f for f in new if f.startswith(("assets/solbang-chinchilla-","assets/profile-source-master/resident_solbang"))}
             self.assertEqual(new, allowed, rid)
             self.assertNotIn(rid, MEETING)                       # old seated picture gone
             self.assertNotIn(rid, DOTFX["blink"]["people"])      # old eye pieces gone
@@ -72,6 +74,9 @@ class RoleConnect(unittest.TestCase):
         for rid, spec in REG["roles"].items():
             if spec["mode"] not in ("pixel_set", "pixel_single", "dialogue_neutral"):
                 continue
+            if rid=="resident_solbang":
+                self.assertEqual(FULLBODY[rid]["role_connect"],"approved-chinchilla-20261017")
+                continue # New PNG identities and derivatives are verified in test_remaining_approved22.
             sources = spec["dialogue"] if spec["mode"] == "pixel_set" else {"neutral": spec}
             for e, s in sources.items():
                 img = FULLBODY[rid]["images"][e]

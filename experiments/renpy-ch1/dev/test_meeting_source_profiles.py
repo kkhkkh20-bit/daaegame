@@ -15,9 +15,9 @@ class MeetingSources(unittest.TestCase):
  def test_chair_keys_have_letter_bust_without_changing_field_pose(self):
   get=self.env['r13_dialogue_source_profile'];self.env['store'].r13_meeting_active=False
   for pose in ('chair_listen','chair_read'):
-   self.assertIn('seryeon-letter-bust',get('seryeon',pose,840)['frames']['neutral']['file'])
-  self.assertIsNone(get('kid_kkomi','door_peek',840))
-  self.assertIsNone(get('resident_teacher','write_attendance',840))
+   self.assertIn('/seryeon/'+pose+'/',get('seryeon',pose,840)['frames']['neutral']['file'])
+  self.assertIn('/kid_kkomi/door_peek/',get('kid_kkomi','door_peek',840)['frames']['neutral']['file'])
+  self.assertIn('/resident_teacher/write_attendance/',get('resident_teacher','write_attendance',840)['frames']['neutral']['file'])
  def test_scale_preserves_aspect_and_frame_offsets(self):
   fit=self.env['r13_dialogue_fit_profile'];p={'840':dict(canvas=[500,900],frames={'neutral':dict(file='x',offset=[20,30])})}
   result=fit(p,876);ratio=876/840

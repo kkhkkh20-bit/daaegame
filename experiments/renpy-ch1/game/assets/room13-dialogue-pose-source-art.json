@@ -1,69 +1,1057 @@
 {
   "people": {
-    "seryeon": {
-      "poses": [
-        "chair_listen",
-        "chair_read"
-      ],
-      "kind": "approved_letter_bust_closeup",
-      "source_sha256": "d26bfae3b00e4dbf1a64731a560369e9ffba94d514f59459216da3ec91f50832",
-      "source_crop": [
-        180,
-        0,
-        660,
-        820
-      ],
-      "profiles": {
-        "560": {
-          "canvas": [
-            402,
-            612
-          ],
-          "frames": {
-            "neutral": {
-              "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp",
-              "scale": 0.3799212598425197,
-              "offset": [
-                76,
-                28
-              ]
+    "npc_pandol": {
+      "pose_profiles": {
+        "point_name": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                308,
+                464
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/npc_pandol/point_name/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/npc_pandol--point_name.png",
+                  "source_sha256": "be0c443e5428b8e9bc4ae3b5799d6134b62796ed9da824cb7e9bacf411ef770e",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                409,
+                621
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/npc_pandol/point_name/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/npc_pandol--point_name.png",
+                  "source_sha256": "be0c443e5428b8e9bc4ae3b5799d6134b62796ed9da824cb7e9bacf411ef770e",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                450,
+                684
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/npc_pandol/point_name/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/npc_pandol--point_name.png",
+                  "source_sha256": "be0c443e5428b8e9bc4ae3b5799d6134b62796ed9da824cb7e9bacf411ef770e",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
             }
-          }
-        },
-        "760": {
-          "canvas": [
-            416,
-            633
+          },
+          "source_crop_xywh": [
+            37,
+            15,
+            974,
+            1510
           ],
-          "frames": {
-            "neutral": {
-              "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp",
-              "scale": 0.3937007874015748,
-              "offset": [
-                78,
-                29
-              ]
-            }
-          }
-        },
-        "840": {
-          "canvas": [
-            595,
-            906
-          ],
-          "frames": {
-            "neutral": {
-              "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp",
-              "scale": 0.5698818897637795,
-              "offset": [
-                109,
-                34
-              ]
-            }
-          }
+          "source_sha256": "be0c443e5428b8e9bc4ae3b5799d6134b62796ed9da824cb7e9bacf411ef770e",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 660
         }
-      },
-      "note": "Preserve chair pose keys and field chair art. Close-up shows approved face and held letters, without claiming a new seated/read animation."
+      }
+    },
+    "resident_badook": {
+      "pose_profiles": {
+        "block_cart": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                329,
+                464
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_badook/block_cart/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_badook--block_cart.png",
+                  "source_sha256": "da1bae96906894fd76457fa5b4b0d6190b08a7c621f21e9053cf90b3b718180d",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                414,
+                587
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_badook/block_cart/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_badook--block_cart.png",
+                  "source_sha256": "da1bae96906894fd76457fa5b4b0d6190b08a7c621f21e9053cf90b3b718180d",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                481,
+                684
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_badook/block_cart/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_badook--block_cart.png",
+                  "source_sha256": "da1bae96906894fd76457fa5b4b0d6190b08a7c621f21e9053cf90b3b718180d",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            46,
+            90,
+            931,
+            1345
+          ],
+          "source_sha256": "da1bae96906894fd76457fa5b4b0d6190b08a7c621f21e9053cf90b3b718180d",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 660
+        }
+      }
+    },
+    "resident_tosil": {
+      "pose_profiles": {
+        "hold_storybook": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                227,
+                431
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_tosil/hold_storybook/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_tosil--hold_storybook.png",
+                  "source_sha256": "3dda99c6a48af451fa6ce495d90d4364f14d008ff3273a18a41a4f5816399903",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                299,
+                576
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_tosil/hold_storybook/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_tosil--hold_storybook.png",
+                  "source_sha256": "3dda99c6a48af451fa6ce495d90d4364f14d008ff3273a18a41a4f5816399903",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                328,
+                634
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_tosil/hold_storybook/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_tosil--hold_storybook.png",
+                  "source_sha256": "3dda99c6a48af451fa6ce495d90d4364f14d008ff3273a18a41a4f5816399903",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            173,
+            14,
+            775,
+            1553
+          ],
+          "source_sha256": "3dda99c6a48af451fa6ce495d90d4364f14d008ff3273a18a41a4f5816399903",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 610
+        }
+      }
+    },
+    "granny": {
+      "pose_profiles": {
+        "withdraw_hand": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                259,
+                464
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/granny/withdraw_hand/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/granny--withdraw_hand.png",
+                  "source_sha256": "d5a09331e463d8c08f3390092f134d17a066656c84c743732e483586f27282e4",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                343,
+                621
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/granny/withdraw_hand/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/granny--withdraw_hand.png",
+                  "source_sha256": "d5a09331e463d8c08f3390092f134d17a066656c84c743732e483586f27282e4",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                377,
+                684
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/granny/withdraw_hand/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/granny--withdraw_hand.png",
+                  "source_sha256": "d5a09331e463d8c08f3390092f134d17a066656c84c743732e483586f27282e4",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            90,
+            9,
+            827,
+            1548
+          ],
+          "source_sha256": "d5a09331e463d8c08f3390092f134d17a066656c84c743732e483586f27282e4",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 660
+        }
+      }
+    },
+    "chorong_mother": {
+      "pose_profiles": {
+        "offer_lantern": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                218,
+                437
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/chorong_mother/offer_lantern/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/chorong_mother--offer_lantern.png",
+                  "source_sha256": "4273043073bc7f5064602cf48ac4c11926ec934f0f1f3c5fb94e4a334696007e",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                287,
+                585
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/chorong_mother/offer_lantern/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/chorong_mother--offer_lantern.png",
+                  "source_sha256": "4273043073bc7f5064602cf48ac4c11926ec934f0f1f3c5fb94e4a334696007e",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                314,
+                644
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/chorong_mother/offer_lantern/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/chorong_mother--offer_lantern.png",
+                  "source_sha256": "4273043073bc7f5064602cf48ac4c11926ec934f0f1f3c5fb94e4a334696007e",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            171,
+            13,
+            699,
+            1493
+          ],
+          "source_sha256": "4273043073bc7f5064602cf48ac4c11926ec934f0f1f3c5fb94e4a334696007e",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 620
+        }
+      }
+    },
+    "kid_kkomi": {
+      "pose_profiles": {
+        "door_peek": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                271,
+                404
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_kkomi/door_peek/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_kkomi--door_peek.png",
+                  "source_sha256": "647dcfbb268895cb69d430a89bba84746ad7099f6ba1dd439ace71a4219eea0b",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                359,
+                540
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_kkomi/door_peek/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_kkomi--door_peek.png",
+                  "source_sha256": "647dcfbb268895cb69d430a89bba84746ad7099f6ba1dd439ace71a4219eea0b",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                394,
+                594
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_kkomi/door_peek/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_kkomi--door_peek.png",
+                  "source_sha256": "647dcfbb268895cb69d430a89bba84746ad7099f6ba1dd439ace71a4219eea0b",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            63,
+            43,
+            946,
+            1456
+          ],
+          "source_sha256": "647dcfbb268895cb69d430a89bba84746ad7099f6ba1dd439ace71a4219eea0b",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 570
+        },
+        "hideout_proud": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                273,
+                404
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_kkomi/hideout_proud/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_kkomi--hideout_proud.png",
+                  "source_sha256": "e1c47076ec533396c84263899b7b356251bf70e32cc8ab79b9e2497e75ed2bd7",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                361,
+                540
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_kkomi/hideout_proud/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_kkomi--hideout_proud.png",
+                  "source_sha256": "e1c47076ec533396c84263899b7b356251bf70e32cc8ab79b9e2497e75ed2bd7",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                397,
+                594
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_kkomi/hideout_proud/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_kkomi--hideout_proud.png",
+                  "source_sha256": "e1c47076ec533396c84263899b7b356251bf70e32cc8ab79b9e2497e75ed2bd7",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            36,
+            8,
+            984,
+            1504
+          ],
+          "source_sha256": "e1c47076ec533396c84263899b7b356251bf70e32cc8ab79b9e2497e75ed2bd7",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 570
+        }
+      }
+    },
+    "kid_bang": {
+      "pose_profiles": {
+        "cling_leg": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                268,
+                404
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_bang/cling_leg/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_bang--cling_leg.png",
+                  "source_sha256": "e3eeed2c031e7d37f3269d4851f4f7cf25c1535f2bbfb4d446b5ffcde069e756",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                356,
+                540
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_bang/cling_leg/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_bang--cling_leg.png",
+                  "source_sha256": "e3eeed2c031e7d37f3269d4851f4f7cf25c1535f2bbfb4d446b5ffcde069e756",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                390,
+                594
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_bang/cling_leg/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_bang--cling_leg.png",
+                  "source_sha256": "e3eeed2c031e7d37f3269d4851f4f7cf25c1535f2bbfb4d446b5ffcde069e756",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            53,
+            11,
+            954,
+            1484
+          ],
+          "source_sha256": "e3eeed2c031e7d37f3269d4851f4f7cf25c1535f2bbfb4d446b5ffcde069e756",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 570
+        }
+      }
+    },
+    "kid_dodam": {
+      "pose_profiles": {
+        "lick_ladle": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                212,
+                404
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_dodam/lick_ladle/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_dodam--lick_ladle.png",
+                  "source_sha256": "9fbf1963360fdd99066be76682745f2c90f3c07d6e37ff65b0ff058e4e0298fc",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                279,
+                540
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_dodam/lick_ladle/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_dodam--lick_ladle.png",
+                  "source_sha256": "9fbf1963360fdd99066be76682745f2c90f3c07d6e37ff65b0ff058e4e0298fc",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                306,
+                594
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_dodam/lick_ladle/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_dodam--lick_ladle.png",
+                  "source_sha256": "9fbf1963360fdd99066be76682745f2c90f3c07d6e37ff65b0ff058e4e0298fc",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            160,
+            25,
+            715,
+            1447
+          ],
+          "source_sha256": "9fbf1963360fdd99066be76682745f2c90f3c07d6e37ff65b0ff058e4e0298fc",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 570
+        }
+      }
+    },
+    "kid_saemi": {
+      "pose_profiles": {
+        "hide_bowl": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                224,
+                297
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_saemi/hide_bowl/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_saemi--hide_bowl.png",
+                  "source_sha256": "0cbf9567a0911c7ed533d659685c101313e2a4ff2b935ddb3e69126f3ec7d992",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                295,
+                395
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_saemi/hide_bowl/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_saemi--hide_bowl.png",
+                  "source_sha256": "0cbf9567a0911c7ed533d659685c101313e2a4ff2b935ddb3e69126f3ec7d992",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                323,
+                434
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/kid_saemi/hide_bowl/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/kid_saemi--hide_bowl.png",
+                  "source_sha256": "0cbf9567a0911c7ed533d659685c101313e2a4ff2b935ddb3e69126f3ec7d992",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            12,
+            71,
+            1000,
+            1370
+          ],
+          "source_sha256": "0cbf9567a0911c7ed533d659685c101313e2a4ff2b935ddb3e69126f3ec7d992",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 410
+        }
+      }
+    },
+    "resident_teacher": {
+      "pose_profiles": {
+        "write_attendance": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                338,
+                464
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_teacher/write_attendance/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_teacher--write_attendance.png",
+                  "source_sha256": "88a01fa6bc6bef98dc735c5bec877cdf1cd738a3d17b6cc9932f4e7254eea8cf",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                414,
+                570
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_teacher/write_attendance/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_teacher--write_attendance.png",
+                  "source_sha256": "88a01fa6bc6bef98dc735c5bec877cdf1cd738a3d17b6cc9932f4e7254eea8cf",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                495,
+                684
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_teacher/write_attendance/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_teacher--write_attendance.png",
+                  "source_sha256": "88a01fa6bc6bef98dc735c5bec877cdf1cd738a3d17b6cc9932f4e7254eea8cf",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            43,
+            2,
+            994,
+            1392
+          ],
+          "source_sha256": "88a01fa6bc6bef98dc735c5bec877cdf1cd738a3d17b6cc9932f4e7254eea8cf",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 660
+        },
+        "collapse_attendance": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                282,
+                344
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_teacher/collapse_attendance/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_teacher--collapse_attendance.png",
+                  "source_sha256": "8f0caa2a9d921172fa78a98f48a988ad4eb57b7f27e4ea41d67535b904bbadd8",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                374,
+                458
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_teacher/collapse_attendance/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_teacher--collapse_attendance.png",
+                  "source_sha256": "8f0caa2a9d921172fa78a98f48a988ad4eb57b7f27e4ea41d67535b904bbadd8",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                411,
+                504
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/resident_teacher/collapse_attendance/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/resident_teacher--collapse_attendance.png",
+                  "source_sha256": "8f0caa2a9d921172fa78a98f48a988ad4eb57b7f27e4ea41d67535b904bbadd8",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            27,
+            78,
+            1051,
+            1303
+          ],
+          "source_sha256": "8f0caa2a9d921172fa78a98f48a988ad4eb57b7f27e4ea41d67535b904bbadd8",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 480
+        }
+      }
+    },
+    "mom": {
+      "pose_profiles": {
+        "show_fragments": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                303,
+                457
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/mom/show_fragments/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/mom--show_fragments.png",
+                  "source_sha256": "d70fdf9a62f828897c45393ad398a135f6cfd2b5336128d104cafc4d92a80f72",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                403,
+                612
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/mom/show_fragments/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/mom--show_fragments.png",
+                  "source_sha256": "d70fdf9a62f828897c45393ad398a135f6cfd2b5336128d104cafc4d92a80f72",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                443,
+                674
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/mom/show_fragments/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/mom--show_fragments.png",
+                  "source_sha256": "d70fdf9a62f828897c45393ad398a135f6cfd2b5336128d104cafc4d92a80f72",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            29,
+            5,
+            977,
+            1516
+          ],
+          "source_sha256": "d70fdf9a62f828897c45393ad398a135f6cfd2b5336128d104cafc4d92a80f72",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 650
+        }
+      }
+    },
+    "seryeon": {
+      "pose_profiles": {
+        "chair_read": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                269,
+                437
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/seryeon/chair_read/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/seryeon--chair_read.png",
+                  "source_sha256": "067a34c0ebaadb8549ff51c2699cc1eb6e3fd439cd944441839157c25eb93b53",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                357,
+                585
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/seryeon/chair_read/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/seryeon--chair_read.png",
+                  "source_sha256": "067a34c0ebaadb8549ff51c2699cc1eb6e3fd439cd944441839157c25eb93b53",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                392,
+                644
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/seryeon/chair_read/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/seryeon--chair_read.png",
+                  "source_sha256": "067a34c0ebaadb8549ff51c2699cc1eb6e3fd439cd944441839157c25eb93b53",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            111,
+            9,
+            892,
+            1502
+          ],
+          "source_sha256": "067a34c0ebaadb8549ff51c2699cc1eb6e3fd439cd944441839157c25eb93b53",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 620
+        },
+        "chair_listen": {
+          "profiles": {
+            "560": {
+              "canvas": [
+                270,
+                437
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/seryeon/chair_listen/560.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/seryeon--chair_listen.png",
+                  "source_sha256": "1c29a50a8c65c4fc20418c07cda08a7f07ac7770df523e24d157e08f0c315e2c",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "760": {
+              "canvas": [
+                358,
+                585
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/seryeon/chair_listen/760.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/seryeon--chair_listen.png",
+                  "source_sha256": "1c29a50a8c65c4fc20418c07cda08a7f07ac7770df523e24d157e08f0c315e2c",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            },
+            "840": {
+              "canvas": [
+                393,
+                644
+              ],
+              "frames": {
+                "neutral": {
+                  "file": "assets/dialogue-pose-source/seryeon/chair_listen/840.webp",
+                  "offset": [
+                    12,
+                    12
+                  ],
+                  "source_master": "art/approved-remaining22/originals/seryeon--chair_listen.png",
+                  "source_sha256": "1c29a50a8c65c4fc20418c07cda08a7f07ac7770df523e24d157e08f0c315e2c",
+                  "source_commit": "1687deb04d44746fa5ca819db72fc03ce3623b8a"
+                }
+              }
+            }
+          },
+          "source_crop_xywh": [
+            112,
+            5,
+            895,
+            1505
+          ],
+          "source_sha256": "1c29a50a8c65c4fc20418c07cda08a7f07ac7770df523e24d157e08f0c315e2c",
+          "kind": "approved_authored_smooth_pose",
+          "visible_height_at_840": 620
+        }
+      }
     }
   }
 }

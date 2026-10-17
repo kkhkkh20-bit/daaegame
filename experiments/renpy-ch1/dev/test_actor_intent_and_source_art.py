@@ -70,7 +70,7 @@ class SourceMasterArt(unittest.TestCase):
  def test_new_delivery_has_all_frames_and_valid_runtime_identities(self):
   data=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())
   cast=json.loads((ROOT/'game/assets/room13-fullbody-dialogue.json').read_text())['people']
-  self.assertEqual(set(data['source_commits']),{'8c80550dda6ecf7af335827bba7e4fa6f4052ddf','f25caf86ded3a8d874c938e353d14c268b23b8e2','438e81fe8d9d5d9a1b9773b6ee9323cbb9f47c35','e523ad0995efa9012780438785e8bb0f1555c628','a59c4fed98b707febd7d9572f4d0bd555f2f194b'})
+  self.assertEqual(set(data['source_commits']),{'8c80550dda6ecf7af335827bba7e4fa6f4052ddf','f25caf86ded3a8d874c938e353d14c268b23b8e2','438e81fe8d9d5d9a1b9773b6ee9323cbb9f47c35','e523ad0995efa9012780438785e8bb0f1555c628','a59c4fed98b707febd7d9572f4d0bd555f2f194b','1687deb04d44746fa5ca819db72fc03ce3623b8a'})
   self.assertFalse(set(data['people'])-set(cast))
   for person,entry in data['people'].items():
    self.assertEqual(entry['status'],'approved_runtime')

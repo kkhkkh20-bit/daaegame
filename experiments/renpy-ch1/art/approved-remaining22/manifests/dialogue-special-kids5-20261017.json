@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "coordinate_system": {
+    "unit": "source_pixel",
+    "origin": "top_left",
+    "bbox_xyxy": "right_and_bottom_exclusive",
+    "crop": "alpha12_bounds_plus_12px_padding"
+  },
+  "assets": [
+    {
+      "character_id": "kid_kkomi",
+      "slot": "door_peek",
+      "file": "assets/kid_kkomi--door_peek.png",
+      "sha256": "647dcfbb268895cb69d430a89bba84746ad7099f6ba1dd439ace71a4219eea0b",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1691295,
+      "usage": "dialogue_special",
+      "posture": "leaning_standing",
+      "crop_xywh": [
+        51,
+        31,
+        970,
+        1480
+      ],
+      "content_bbox_alpha128_xyxy": [
+        63,
+        44,
+        1008,
+        1498
+      ],
+      "anchors_px": {
+        "feet_left_px": [
+          181,
+          1480
+        ],
+        "feet_right_px": [
+          529,
+          1488
+        ],
+        "ground_y_px": 1490,
+        "hand_left_px": [
+          511,
+          779
+        ],
+        "hand_right_px": [
+          672,
+          772
+        ]
+      }
+    },
+    {
+      "character_id": "kid_kkomi",
+      "slot": "hideout_proud",
+      "file": "assets/kid_kkomi--hideout_proud.png",
+      "sha256": "e1c47076ec533396c84263899b7b356251bf70e32cc8ab79b9e2497e75ed2bd7",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1822871,
+      "usage": "dialogue_special",
+      "posture": "standing",
+      "crop_xywh": [
+        24,
+        0,
+        1000,
+        1524
+      ],
+      "content_bbox_alpha128_xyxy": [
+        37,
+        9,
+        1019,
+        1511
+      ],
+      "anchors_px": {
+        "feet_left_px": [
+          412,
+          1496
+        ],
+        "feet_right_px": [
+          733,
+          1498
+        ],
+        "ground_y_px": 1500,
+        "hand_left_px": [
+          125,
+          642
+        ],
+        "hand_right_px": [
+          949,
+          628
+        ]
+      }
+    },
+    {
+      "character_id": "kid_bang",
+      "slot": "cling_leg",
+      "file": "assets/kid_bang--cling_leg.png",
+      "sha256": "e3eeed2c031e7d37f3269d4851f4f7cf25c1535f2bbfb4d446b5ffcde069e756",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1802936,
+      "usage": "dialogue_special",
+      "posture": "standing",
+      "crop_xywh": [
+        41,
+        0,
+        978,
+        1507
+      ],
+      "content_bbox_alpha128_xyxy": [
+        54,
+        12,
+        1007,
+        1494
+      ],
+      "anchors_px": {
+        "feet_left_px": [
+          368,
+          1474
+        ],
+        "feet_right_px": [
+          713,
+          1470
+        ],
+        "ground_y_px": 1480,
+        "hand_left_px": [
+          441,
+          624
+        ],
+        "hand_right_px": [
+          908,
+          447
+        ],
+        "reach_left_px": [
+          452,
+          511
+        ],
+        "reach_right_px": [
+          911,
+          298
+        ]
+      }
+    },
+    {
+      "character_id": "kid_dodam",
+      "slot": "lick_ladle",
+      "file": "assets/kid_dodam--lick_ladle.png",
+      "sha256": "9fbf1963360fdd99066be76682745f2c90f3c07d6e37ff65b0ff058e4e0298fc",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1789444,
+      "usage": "dialogue_special",
+      "posture": "standing",
+      "crop_xywh": [
+        148,
+        13,
+        739,
+        1471
+      ],
+      "content_bbox_alpha128_xyxy": [
+        161,
+        26,
+        874,
+        1472
+      ],
+      "anchors_px": {
+        "feet_left_px": [
+          422,
+          1454
+        ],
+        "feet_right_px": [
+          680,
+          1452
+        ],
+        "ground_y_px": 1466,
+        "hand_ladle_left_px": [
+          614,
+          731
+        ],
+        "hand_ladle_right_px": [
+          684,
+          798
+        ],
+        "ladle_bowl_px": [
+          708,
+          546
+        ],
+        "tongue_ladle_px": [
+          635,
+          538
+        ]
+      }
+    },
+    {
+      "character_id": "kid_saemi",
+      "slot": "hide_bowl",
+      "file": "assets/kid_saemi--hide_bowl.png",
+      "sha256": "0cbf9567a0911c7ed533d659685c101313e2a4ff2b935ddb3e69126f3ec7d992",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1917949,
+      "usage": "dialogue_special",
+      "posture": "crouched",
+      "crop_xywh": [
+        0,
+        59,
+        1024,
+        1394
+      ],
+      "content_bbox_alpha128_xyxy": [
+        13,
+        72,
+        1011,
+        1441
+      ],
+      "anchors_px": {
+        "feet_left_px": [
+          548,
+          1424
+        ],
+        "feet_right_px": [
+          787,
+          1420
+        ],
+        "ground_y_px": 1436,
+        "pelvis_px": [
+          653,
+          1228
+        ],
+        "hand_bowl_left_px": [
+          619,
+          808
+        ],
+        "hand_bowl_right_px": [
+          733,
+          808
+        ],
+        "bowl_center_px": [
+          675,
+          801
+        ],
+        "bowl_knees_px": [
+          677,
+          863
+        ],
+        "knee_left_px": [
+          607,
+          889
+        ],
+        "knee_right_px": [
+          759,
+          888
+        ]
+      }
+    }
+  ]
+}

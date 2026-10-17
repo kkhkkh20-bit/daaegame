@@ -95,14 +95,18 @@ init 170 python:
         frames={key:dict(frame,offset=[int(round(v*ratio)) for v in frame["offset"]],scale=frame.get("scale",1.0)*ratio) for key,frame in profile["frames"].items()}
         return dict(canvas=[max(1,int(round(v*ratio))) for v in profile["canvas"]],frames=frames)
 
-    def r13_dialogue_source_profile(person,pose,height):
-        # An unreviewed line uses the approved neutral, never an older design.
-        # Meeting close-ups use approved sources; distant seated ensembles remain separate.
-        if getattr(store,"r13_thought_active",False):return None
+    def r13_dialogue_pose_source(person,pose):
+        entry=R13_DIALOGUE_POSE_SOURCE["people"].get(person,{})
         key=r13_fullbody_key(pose)
-        posed=R13_DIALOGUE_POSE_SOURCE["people"].get(person,{})
-        if key in posed.get("poses",[]):return r13_dialogue_fit_profile(posed["profiles"],height)
-        if key not in R13_FULLBODY_PLAIN:return None
+        if key in entry.get("pose_profiles",{}):return entry["pose_profiles"][key]
+        return entry if key in entry.get("poses",[]) else {}
+
+    def r13_dialogue_source_profile(person,pose,height):
+        # Authored poses retain their own smooth source, even during narration/thought.
+        posed=r13_dialogue_pose_source(person,pose)
+        if posed:return r13_dialogue_fit_profile(posed["profiles"],height)
+        if getattr(store,"r13_thought_active",False) and person!="resident_solbang":return None
+        if r13_fullbody_key(pose) not in R13_FULLBODY_PLAIN:return None
         entry=R13_DIALOGUE_TALK_ART["people"].get(person,{})
         if entry.get("status")!="approved_runtime":return None
         return r13_dialogue_fit_profile(entry.get("profiles",{}),height)
@@ -117,8 +121,8 @@ init 170 python:
             return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
         # An approved character must never silently revert to the old pixel design.
         # A second shipped size is the same approved neutral, with its whole canvas scaled.
-        posed=R13_DIALOGUE_POSE_SOURCE["people"].get(person,{})
-        entry=posed if r13_fullbody_key(pose) in posed.get("poses",[]) else R13_DIALOGUE_TALK_ART["people"][person]
+        posed=r13_dialogue_pose_source(person,pose)
+        entry=posed or R13_DIALOGUE_TALK_ART["people"][person]
         for alternate in sorted(entry["profiles"],key=lambda h:abs(int(h)-int(height))):
             other=entry["profiles"][alternate]
             fallback=other["frames"]["neutral"]

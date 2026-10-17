@@ -34,20 +34,21 @@ async def main():
    for i in range(4):
     await q.py('import renpy;renpy.store.qa_profile_page='+str(i)+';renpy.exports.restart_interaction();result=True');await asyncio.sleep(.15);await page.screenshot(path=str(OUT/('all-profiles-'+str(i)+'.png')))
    report['files']=await q.py('import renpy\ns=renpy.store\nresult={}\nfor who,entry in s.R13_PROFILE_SOURCE_ART["people"].items():\n result[who]=dict(file=entry["file"],loadable=s.renpy.loadable(entry["file"]),nearest=s.r13_profile_nearest(who))')
-   assert len(report['files'])==58 and all(e['loadable'] and not e['nearest'] for e in report['files'].values())
+   assert len(report['files'])==59 and all(e['loadable'] and not e['nearest'] for e in report['files'].values())
    await q.py('''import renpy
 s=renpy.store
 renpy.exports.hide_screen("qa_profile_gallery")
 s.room13=s.r13_new();s.r13_upgrade();s.r13_edit(day=2,period=0,location="square")
 s.room13_mode=True
-for who in ("daram","bami","resident_hyeoni","resident_jongjong","resident_lamplighter","resident_musoe","resident_nero"):
+for who in ("daram","bami","resident_hyeoni","resident_jongjong","resident_lamplighter","resident_musoe","resident_nero","resident_solbang"):
  s.r13_note_encounter(who)
 s.r13_flag("chorong_dead","musoe_gone","nero_alive")
 s.r13_records_view=s.dict(rel_sel="mom",rel_focus=False)
 renpy.exports.show_screen("r13_records",initial_tab="relations");renpy.exports.restart_interaction();result=True''')
    await q.wait('r13_records');await page.screenshot(path=str(OUT/'records-missing-mother.png'))
    report['gates_before']=await q.py('import renpy;s=renpy.store;result=dict(met=s.r13_met_people(),shown=s.r13_rel_people(),mom=s.r13_rel_status("mom"),dead=s.r13_rel_status("resident_lamplighter"),gone=s.r13_rel_status("resident_musoe"),saved=s.r13_rel_status("resident_nero"),held_nearest=s.r13_profile_nearest("resident_solbang"))')
-   assert report['gates_before']['mom'][0]=='missing' and 'resident_teacher' not in report['gates_before']['shown'];assert report['gates_before']['dead'][0]=='dead';assert report['gates_before']['gone'][0]=='gone';assert report['gates_before']['saved'][0]=='saved';assert report['gates_before']['held_nearest']
+   assert report['gates_before']['mom'][0]=='missing' and 'resident_teacher' not in report['gates_before']['shown'];assert report['gates_before']['dead'][0]=='dead';assert report['gates_before']['gone'][0]=='gone';assert report['gates_before']['saved'][0]=='saved';assert not report['gates_before']['held_nearest']
+   await q.py('import renpy;s=renpy.store;s.r13_records_view=s.dict(rel_sel="resident_solbang",rel_focus=True);renpy.exports.restart_interaction();result=True');await page.screenshot(path=str(OUT/'solbang-record.png'))
    await q.press('인물 중심');await page.screenshot(path=str(OUT/'relations-focus.png'))
    await q.py('import renpy;s=renpy.store;renpy.exports.hide_screen("r13_records");s.r13_edit(mom_state="reunited");s.r13_note_encounter("mom");s.r13_records_view=s.dict(rel_sel="mom",rel_focus=True);renpy.exports.show_screen("r13_records",initial_tab="relations");renpy.exports.restart_interaction();result=True');await q.wait('r13_records');await page.screenshot(path=str(OUT/'mother-reunited.png'))
    assert (await q.py('import renpy;result=renpy.store.r13_rel_status("mom")'))[0] is None
