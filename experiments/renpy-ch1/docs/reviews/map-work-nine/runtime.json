@@ -1,0 +1,589 @@
+{
+  "cases": [
+    {
+      "person": "resident_teacher",
+      "day": 2,
+      "period": 0,
+      "location": "school",
+      "actor": {
+        "person": "resident_teacher",
+        "pose": "map9_school_spread_wet_coat",
+        "x": 691,
+        "y": 371,
+        "width": 159,
+        "height": 240,
+        "rect": [
+          691,
+          371,
+          159,
+          240
+        ],
+        "depth": 611,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "선생님은 아이들 외투 끝을 펴 놓았다."
+      },
+      "all": [
+        [
+          "resident_teacher",
+          "map9_school_spread_wet_coat"
+        ]
+      ],
+      "hit": {
+        "face": [
+          714.7881873727088,
+          371,
+          103.62525458248473,
+          71.85336048879837
+        ],
+        "offset": 130,
+        "actions": [
+          "('person', 'resident_teacher')"
+        ]
+      }
+    },
+    {
+      "person": "resident_kkwak",
+      "day": 2,
+      "period": 1,
+      "location": "river",
+      "actor": {
+        "person": "resident_kkwak",
+        "pose": "map9_river_haul_net",
+        "x": 172,
+        "y": 478,
+        "width": 286,
+        "height": 240,
+        "rect": [
+          172,
+          478,
+          286,
+          240
+        ],
+        "depth": 718,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": [
+          260,
+          705,
+          250,
+          "floor"
+        ],
+        "activity": "꽥순은 물통 손잡이의 천을 갈아 감았다."
+      },
+      "all": [
+        [
+          "resident_mulgyeol",
+          "map9_rope_coiling"
+        ],
+        [
+          "resident_kkwak",
+          "map9_river_haul_net"
+        ]
+      ],
+      "hit": {
+        "face": [
+          238.19946091644204,
+          514.0107816711591,
+          53.90835579514825,
+          40.97035040431267
+        ],
+        "offset": 0,
+        "actions": [
+          "('person', 'resident_kkwak')"
+        ]
+      }
+    },
+    {
+      "person": "resident_nubi",
+      "day": 2,
+      "period": 0,
+      "location": "inn",
+      "actor": {
+        "person": "resident_nubi",
+        "pose": "map9_inn_sort_tie_laundry",
+        "x": 29,
+        "y": 436,
+        "width": 155,
+        "height": 247,
+        "rect": [
+          29,
+          436,
+          155,
+          247
+        ],
+        "depth": 683,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": [
+          90,
+          680,
+          260,
+          "waiting"
+        ],
+        "activity": "누비는 마른 빨랫감을 집별로 묶었다."
+      },
+      "all": [
+        [
+          "granny",
+          "living_keyledger"
+        ],
+        [
+          "resident_nubi",
+          "map9_inn_sort_tie_laundry"
+        ],
+        [
+          "resident_tosil",
+          "living_thermos"
+        ]
+      ],
+      "hit": {
+        "face": [
+          52.1213686249193,
+          436,
+          100.77727566171724,
+          73.98837959974178
+        ],
+        "offset": 0,
+        "actions": [
+          "('person', 'resident_nubi')"
+        ]
+      }
+    },
+    {
+      "person": "resident_mungchi",
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "actor": {
+        "person": "resident_mungchi",
+        "pose": "map9_store_sort_boxes",
+        "x": 1655,
+        "y": 382,
+        "width": 206,
+        "height": 304,
+        "rect": [
+          1655,
+          382,
+          206,
+          304
+        ],
+        "depth": 686,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": [
+          1725,
+          684,
+          351,
+          "floor"
+        ],
+        "activity": "뭉치는 돌려놓을 상자를 다른 쪽에 쌓았다."
+      },
+      "all": [
+        [
+          "resident_madam",
+          "neutral"
+        ],
+        [
+          "resident_eunho",
+          "living_prices"
+        ],
+        [
+          "resident_nero",
+          "activity"
+        ],
+        [
+          "resident_mungchi",
+          "map9_store_sort_boxes"
+        ],
+        [
+          "resident_bori",
+          "living_firewood"
+        ],
+        [
+          "resident_siluk",
+          "neutral"
+        ]
+      ],
+      "hit": {
+        "face": [
+          1685.8108108108108,
+          382,
+          133.92432432432435,
+          91.2
+        ],
+        "offset": 640,
+        "actions": [
+          "('person', 'resident_mungchi')"
+        ]
+      }
+    },
+    {
+      "person": "resident_mulgyeol",
+      "day": 2,
+      "period": 0,
+      "location": "river",
+      "actor": {
+        "person": "resident_mulgyeol",
+        "pose": "map9_rope_coiling",
+        "x": 445,
+        "y": 458,
+        "width": 158,
+        "height": 255,
+        "rect": [
+          445,
+          458,
+          158,
+          255
+        ],
+        "depth": 713,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": [
+          520,
+          712,
+          255,
+          "floor"
+        ],
+        "activity": "굵은 밧줄을 어깨에 감아 정리한다."
+      },
+      "all": [
+        [
+          "resident_nero",
+          "activity"
+        ],
+        [
+          "resident_mulgyeol",
+          "map9_rope_coiling"
+        ]
+      ],
+      "hit": {
+        "face": [
+          468.78414390406397,
+          458,
+          103.12125249833444,
+          76.44903397734844
+        ],
+        "offset": 0,
+        "actions": [
+          "('person', 'resident_mulgyeol')"
+        ]
+      }
+    },
+    {
+      "person": "resident_dalgeurak",
+      "day": 2,
+      "period": 0,
+      "location": "market",
+      "actor": {
+        "person": "resident_dalgeurak",
+        "pose": "map9_pots_display",
+        "x": 701,
+        "y": 480,
+        "width": 163,
+        "height": 227,
+        "rect": [
+          701,
+          480,
+          163,
+          227
+        ],
+        "depth": 707,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": [
+          760,
+          705,
+          253,
+          "floor"
+        ],
+        "activity": "보따리를 펼쳐 냄비와 방울을 늘어놓는다."
+      },
+      "all": [
+        [
+          "resident_tori",
+          "activity"
+        ],
+        [
+          "resident_eunho",
+          "neutral"
+        ],
+        [
+          "resident_mungchi",
+          "neutral"
+        ],
+        [
+          "resident_madam",
+          "neutral"
+        ],
+        [
+          "resident_dalgeurak",
+          "map9_pots_display"
+        ]
+      ],
+      "hit": {
+        "face": [
+          725.2683636363637,
+          480,
+          105.65818181818182,
+          68.01745454545454
+        ],
+        "offset": 142,
+        "actions": [
+          "('person', 'resident_dalgeurak')"
+        ]
+      }
+    },
+    {
+      "person": "resident_jongjong",
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "actor": {
+        "person": "resident_jongjong",
+        "pose": "map9_letters_waiting",
+        "x": 1006,
+        "y": 416,
+        "width": 100,
+        "height": 204,
+        "rect": [
+          1006,
+          416,
+          100,
+          204
+        ],
+        "depth": 620,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": [
+          1060,
+          620,
+          205,
+          "waiting"
+        ],
+        "activity": "편지 묶음을 안고 발을 동동 구른다."
+      },
+      "all": [
+        [
+          "resident_jongjong",
+          "map9_letters_waiting"
+        ],
+        [
+          "resident_librarian",
+          "living_bookpaper"
+        ],
+        [
+          "seryeon",
+          "action_1"
+        ],
+        [
+          "resident_sling",
+          "activity"
+        ],
+        [
+          "resident_momo",
+          "living_lampnumber"
+        ]
+      ],
+      "hit": {
+        "face": [
+          1020.8363636363637,
+          416,
+          64.77662337662338,
+          61.199999999999996
+        ],
+        "offset": 416,
+        "actions": [
+          "('person', 'resident_jongjong')"
+        ]
+      }
+    },
+    {
+      "person": "resident_guldol",
+      "day": 2,
+      "period": 0,
+      "location": "workshop",
+      "actor": {
+        "person": "resident_guldol",
+        "pose": "map9_stone_tapping",
+        "x": 723,
+        "y": 328,
+        "width": 114,
+        "height": 219,
+        "rect": [
+          723,
+          328,
+          114,
+          219
+        ],
+        "depth": 547,
+        "occlusion": [
+          [
+            331,
+            460
+          ],
+          [
+            470,
+            439
+          ],
+          [
+            683,
+            441
+          ],
+          [
+            1060,
+            483
+          ],
+          [
+            1060,
+            624
+          ],
+          [
+            890,
+            678
+          ],
+          [
+            350,
+            604
+          ]
+        ],
+        "contact": "standing",
+        "slot": null,
+        "activity": "작은 돌을 망치로 톡톡 두드리며 귀를 기울인다."
+      },
+      "all": [
+        [
+          "buri",
+          "action_1"
+        ],
+        [
+          "resident_ubak",
+          "living_measure"
+        ],
+        [
+          "resident_guldol",
+          "map9_stone_tapping"
+        ],
+        [
+          "resident_lamplighter",
+          "living_inspectlamp"
+        ],
+        [
+          "resident_ttadak",
+          "living_repair"
+        ],
+        [
+          "resident_tok",
+          "activity"
+        ],
+        [
+          "resident_musoe",
+          "living_foldmap"
+        ]
+      ],
+      "hit": {
+        "face": [
+          740.082,
+          328,
+          74.314,
+          65.7
+        ],
+        "offset": 140,
+        "actions": [
+          "('person', 'resident_guldol')"
+        ]
+      }
+    },
+    {
+      "person": "resident_piko",
+      "day": 11,
+      "period": 0,
+      "location": "clinic",
+      "actor": {
+        "person": "resident_piko",
+        "pose": "map9_clinic_rest_alive_v2",
+        "x": 1026,
+        "y": 299,
+        "width": 358,
+        "height": 130,
+        "rect": [
+          1026,
+          299,
+          358,
+          130
+        ],
+        "depth": 429,
+        "occlusion": [
+          [
+            1140,
+            396.5625
+          ],
+          [
+            1173.75,
+            381.5625
+          ],
+          [
+            1234.6875,
+            373.125
+          ],
+          [
+            1340.625,
+            379.6875
+          ],
+          [
+            1430.625,
+            398.4375
+          ],
+          [
+            1433.4375,
+            470.625
+          ],
+          [
+            1317.1875,
+            541.875
+          ],
+          [
+            1126.875,
+            518.4375
+          ],
+          [
+            1128.75,
+            421.875
+          ]
+        ],
+        "contact": "lying",
+        "slot": null,
+        "activity": "피코는 그림 위의 천 끝을 폈다."
+      },
+      "all": [
+        [
+          "resident_piko",
+          "map9_clinic_rest_alive_v2"
+        ],
+        [
+          "resident_seori",
+          "living_notes"
+        ]
+      ],
+      "hit": {
+        "face": [
+          1026,
+          314.42721518987344,
+          106.96202531645571,
+          77.95886075949367
+        ],
+        "offset": 564,
+        "actions": [
+          "('person', 'resident_piko')"
+        ]
+      }
+    }
+  ],
+  "version": "0.19.27",
+  "blanket_hit": [
+    "None",
+    "('object', 'bed')"
+  ],
+  "status": "passed"
+}

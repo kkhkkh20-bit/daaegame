@@ -1,0 +1,892 @@
+{
+  "source_commit": "fc2a0e7cc84e0cfbce49064e44a46b6bc3e2a2fa",
+  "people": [
+    {
+      "person": "resident_piko",
+      "pose": "map9_clinic_rest_alive_v2",
+      "source_pose": "clinic_rest_alive_v2",
+      "location": "clinic",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_piko--clinic_rest_alive_v2.webp",
+        "crop": [
+          21,
+          131,
+          1736,
+          632
+        ],
+        "foot": [
+          866.0,
+          756
+        ],
+        "contact": "lying",
+        "stature_ratio": 0.55,
+        "source_sha256": "3746067e2c1da178a647191e6466ca65a2701a165bc08ffd38a12a46cde2fabd",
+        "head": [
+          0,
+          75,
+          520,
+          379
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_piko",
+        "pose": "clinic_rest_alive_v2",
+        "contacts_normalized_full_canvas": {
+          "head_pillow": [
+            0.16,
+            0.49
+          ],
+          "shoulder_mattress": [
+            0.265,
+            0.69
+          ],
+          "torso_mattress": [
+            0.36,
+            0.76
+          ],
+          "pelvis_mattress": [
+            0.53,
+            0.79
+          ],
+          "heel_left": [
+            0.9,
+            0.82
+          ],
+          "heel_right": [
+            0.94,
+            0.78
+          ],
+          "hand_abdomen": [
+            0.43,
+            0.56
+          ],
+          "seat": null,
+          "foot_floor": null
+        },
+        "crop_bbox_alpha128": [
+          21,
+          131,
+          1757,
+          763
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.011837655016910935,
+          0.14768883878241262,
+          0.9904171364148816,
+          0.8602029312288614
+        ],
+        "stature_ratio": 0.55,
+        "recommended_visible_size_px": [
+          358,
+          130
+        ],
+        "background_repo_relative_path": "experiments/renpy-ch1/game/assets/room13-pixel-ready-clinic0177-morning.webp",
+        "background_original_size_px": [
+          2048,
+          768
+        ],
+        "background_world_size_px": [
+          1920,
+          720
+        ],
+        "background_original_to_world_uniform_scale": 0.9375,
+        "source_to_background_uniform_scale": 0.22,
+        "source_to_world_uniform_scale": 0.20625,
+        "source_top_left_background_px": [
+          1090,
+          290
+        ],
+        "source_top_left_world_px": [
+          1021.875,
+          271.875
+        ],
+        "foreground_polygon_background_px": [
+          [
+            1216,
+            423
+          ],
+          [
+            1252,
+            407
+          ],
+          [
+            1317,
+            398
+          ],
+          [
+            1430,
+            405
+          ],
+          [
+            1526,
+            425
+          ],
+          [
+            1529,
+            502
+          ],
+          [
+            1405,
+            578
+          ],
+          [
+            1202,
+            553
+          ],
+          [
+            1204,
+            450
+          ]
+        ],
+        "foreground_polygon_world_px": [
+          [
+            1140.0,
+            396.5625
+          ],
+          [
+            1173.75,
+            381.5625
+          ],
+          [
+            1234.6875,
+            373.125
+          ],
+          [
+            1340.625,
+            379.6875
+          ],
+          [
+            1430.625,
+            398.4375
+          ],
+          [
+            1433.4375,
+            470.625
+          ],
+          [
+            1317.1875,
+            541.875
+          ],
+          [
+            1126.875,
+            518.4375
+          ],
+          [
+            1128.75,
+            421.875
+          ]
+        ],
+        "foreground_polygon_apply_to_image": 1,
+        "foreground_polygon_subtract_from_hit_mask": 1,
+        "render_layer_order": [
+          0,
+          1,
+          2
+        ],
+        "runtime_logical_size_px": [
+          1280,
+          720
+        ],
+        "runtime_grid_px": [
+          2,
+          2
+        ]
+      },
+      "source_size": [
+        1774,
+        887
+      ]
+    },
+    {
+      "person": "resident_teacher",
+      "pose": "map9_school_spread_wet_coat",
+      "source_pose": "school_spread_wet_coat",
+      "location": "school",
+      "periods": [
+        0,
+        1
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_teacher--school_spread_wet_coat.webp",
+        "crop": [
+          14,
+          41,
+          979,
+          1473
+        ],
+        "foot": [
+          407.68,
+          1455.485
+        ],
+        "contact": "standing",
+        "stature_ratio": 0.96,
+        "source_sha256": "a65a8d3841e718213b948f1c09aac1d0e8654f3ed00b6e5874a810bb754a1278",
+        "head": [
+          146,
+          0,
+          636,
+          441
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_teacher",
+        "pose": "school_spread_wet_coat",
+        "contacts_normalized_full_canvas": {
+          "foot_left": [
+            0.29,
+            0.955
+          ],
+          "foot_right": [
+            0.55,
+            0.9
+          ],
+          "hand_left_coat_hem": [
+            0.591,
+            0.477
+          ],
+          "hand_right_coat_hem": [
+            0.916,
+            0.447
+          ],
+          "coat_hem_midpoint": [
+            0.752,
+            0.491
+          ],
+          "cane_floor_left": [
+            0.075,
+            0.78
+          ],
+          "cane_floor_right": [
+            0.818,
+            0.892
+          ],
+          "seat": null
+        },
+        "crop_bbox_alpha128": [
+          14,
+          41,
+          993,
+          1514
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.013944,
+          0.026165,
+          0.989044,
+          0.966177
+        ],
+        "stature_ratio": 0.96,
+        "recommended_visible_size_px": [
+          160,
+          240
+        ]
+      },
+      "source_size": [
+        1004,
+        1567
+      ]
+    },
+    {
+      "person": "resident_kkwak",
+      "pose": "map9_river_haul_net",
+      "source_pose": "river_haul_net",
+      "location": "river",
+      "periods": [
+        1
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_kkwak--river_haul_net.webp",
+        "crop": [
+          23,
+          13,
+          1330,
+          1113
+        ],
+        "foot": [
+          406.062,
+          1049.56
+        ],
+        "contact": "standing",
+        "stature_ratio": 0.96,
+        "source_sha256": "a331d96a215e0a018c3316c0c51b3e62139b3eba94371f5c79e5ef1ffd4f07e9",
+        "head": [
+          307,
+          167,
+          250,
+          190
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_kkwak",
+        "pose": "river_haul_net",
+        "contacts_normalized_full_canvas": {
+          "foot_left": [
+            0.132,
+            0.928
+          ],
+          "foot_right": [
+            0.493,
+            0.917
+          ],
+          "hand_left_rope": [
+            0.368,
+            0.498
+          ],
+          "hand_right_rope": [
+            0.518,
+            0.52
+          ],
+          "net_low_contact": [
+            0.739,
+            0.968
+          ],
+          "seat": null
+        },
+        "crop_bbox_alpha128": [
+          23,
+          13,
+          1353,
+          1126
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.016752,
+          0.011354,
+          0.985433,
+          0.983406
+        ],
+        "stature_ratio": 0.96,
+        "recommended_visible_size_px": [
+          287,
+          240
+        ]
+      },
+      "source_size": [
+        1373,
+        1145
+      ]
+    },
+    {
+      "person": "resident_nubi",
+      "pose": "map9_inn_sort_tie_laundry",
+      "source_pose": "inn_sort_tie_laundry",
+      "location": "inn",
+      "periods": [
+        0
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_nubi--inn_sort_tie_laundry.webp",
+        "crop": [
+          14,
+          13,
+          973,
+          1549
+        ],
+        "foot": [
+          380.416,
+          1523.972
+        ],
+        "contact": "standing",
+        "stature_ratio": 0.95,
+        "source_sha256": "3d45ecb2579ad0d1cc8a4e9cfdc23b59ed4fd5c7b5309414640252c2d09dcb4d",
+        "head": [
+          145,
+          0,
+          632,
+          464
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_nubi",
+        "pose": "inn_sort_tie_laundry",
+        "contacts_normalized_full_canvas": {
+          "foot_left": [
+            0.277,
+            0.974
+          ],
+          "foot_right": [
+            0.515,
+            0.925
+          ],
+          "hand_left_tie": [
+            0.514,
+            0.408
+          ],
+          "hand_right_tie": [
+            0.581,
+            0.394
+          ],
+          "bundle_body_support": [
+            0.485,
+            0.507
+          ],
+          "basket_base": [
+            0.785,
+            0.953
+          ],
+          "seat": null
+        },
+        "crop_bbox_alpha128": [
+          14,
+          13,
+          987,
+          1562
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.014056,
+          0.008238,
+          0.990964,
+          0.989861
+        ],
+        "stature_ratio": 0.95,
+        "recommended_visible_size_px": [
+          155,
+          247
+        ]
+      },
+      "source_size": [
+        996,
+        1578
+      ]
+    },
+    {
+      "person": "resident_mungchi",
+      "pose": "map9_store_sort_boxes",
+      "source_pose": "store_sort_boxes",
+      "location": "store",
+      "periods": [
+        1
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_mungchi--store_sort_boxes.webp",
+        "crop": [
+          27,
+          2,
+          1004,
+          1480
+        ],
+        "foot": [
+          337.506,
+          1461.905
+        ],
+        "contact": "standing",
+        "stature_ratio": 0.96,
+        "source_sha256": "446f39e60c416ba0e636ac88ef51b94d9f47f7e8757bff2cdf3b98af68207089",
+        "head": [
+          150,
+          0,
+          652,
+          444
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_mungchi",
+        "pose": "store_sort_boxes",
+        "contacts_normalized_full_canvas": {
+          "foot_left": [
+            0.173,
+            0.965
+          ],
+          "foot_right": [
+            0.53,
+            0.925
+          ],
+          "hand_left_box": [
+            0.459,
+            0.58
+          ],
+          "hand_right_box": [
+            0.704,
+            0.58
+          ],
+          "held_box_base": [
+            0.578,
+            0.606
+          ],
+          "floor_box_base": [
+            0.799,
+            0.928
+          ],
+          "seat": null
+        },
+        "crop_bbox_alpha128": [
+          27,
+          2,
+          1031,
+          1482
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.026037,
+          0.001318,
+          0.994214,
+          0.976928
+        ],
+        "stature_ratio": 0.96,
+        "recommended_visible_size_px": [
+          206,
+          304
+        ]
+      },
+      "source_size": [
+        1037,
+        1517
+      ]
+    },
+    {
+      "person": "resident_mulgyeol",
+      "pose": "map9_rope_coiling",
+      "source_pose": "rope_coiling",
+      "location": "river",
+      "periods": [
+        0,
+        1
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_mulgyeol--rope_coiling.webp",
+        "crop": [
+          89,
+          9,
+          934,
+          1501
+        ],
+        "foot": [
+          438.501,
+          1491.007
+        ],
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "a8f6152bc2f837f08c5fdd15d695a94c463771acb5ea2712fdb3a1eda17eaeee",
+        "head": [
+          140,
+          0,
+          607,
+          450
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_mulgyeol",
+        "pose": "rope_coiling",
+        "contacts_normalized_full_canvas": {
+          "foot_viewer_left": [
+            0.34791,
+            0.95419
+          ],
+          "foot_viewer_right": [
+            0.67736,
+            0.98168
+          ],
+          "seat": null,
+          "hand_upper_rope": [
+            0.3139,
+            0.28796
+          ],
+          "hand_lower_rope": [
+            0.3965,
+            0.45157
+          ],
+          "shoulder_rope": [
+            0.25364,
+            0.23168
+          ],
+          "prop_rope_free_end": [
+            0.29543,
+            0.64071
+          ]
+        },
+        "crop_bbox_alpha128": [
+          89,
+          9,
+          1023,
+          1510
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.086492,
+          0.00589,
+          0.994169,
+          0.98822
+        ],
+        "stature_ratio": 1,
+        "recommended_visible_size_px": [
+          156,
+          250
+        ]
+      },
+      "source_size": [
+        1029,
+        1528
+      ]
+    },
+    {
+      "person": "resident_dalgeurak",
+      "pose": "map9_pots_display",
+      "source_pose": "pots_display",
+      "location": "market",
+      "periods": [
+        0,
+        1
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_dalgeurak--pots_display.webp",
+        "crop": [
+          26,
+          45,
+          986,
+          1375
+        ],
+        "foot": [
+          354.0,
+          1349.0
+        ],
+        "contact": "standing",
+        "stature_ratio": 0.9,
+        "source_sha256": "77dcb5ce7d243bd4a303c4c592b8b5bc14702ded1fc6b782dd2d9c76d3b3f64d",
+        "head": [
+          147,
+          0,
+          640,
+          412
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_dalgeurak",
+        "pose": "pots_display",
+        "contacts_normalized_full_canvas": {
+          "foot_left": [
+            0.220372,
+            0.913636
+          ],
+          "foot_right": [
+            0.523996,
+            0.896104
+          ],
+          "foot": [
+            0.372184,
+            0.905195
+          ],
+          "hand_saucepan": [
+            0.636631,
+            0.630519
+          ],
+          "hand_bell": [
+            0.873653,
+            0.668831
+          ],
+          "saucepan_bundle": [
+            0.733595,
+            0.737662
+          ],
+          "bell_bundle": [
+            0.864838,
+            0.740909
+          ],
+          "bundle_floor": [
+            0.779628,
+            0.883117
+          ],
+          "seat": null
+        },
+        "crop_bbox_alpha128": [
+          26,
+          45,
+          1012,
+          1420
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.025465,
+          0.029221,
+          0.991185,
+          0.922078
+        ],
+        "stature_ratio": 0.9,
+        "recommended_visible_size_px": [
+          145,
+          202
+        ]
+      },
+      "source_size": [
+        1021,
+        1540
+      ]
+    },
+    {
+      "person": "resident_jongjong",
+      "pose": "map9_letters_waiting",
+      "source_pose": "letters_waiting",
+      "location": "post",
+      "periods": [
+        0,
+        1,
+        2
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_jongjong--letters_waiting.webp",
+        "crop": [
+          135,
+          12,
+          753,
+          1540
+        ],
+        "foot": [
+          401.0,
+          1524.999
+        ],
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "65c980454419297f98b988d4cadd5a42727095aa6067f3ceb9397f99a3e0e385",
+        "head": [
+          112,
+          0,
+          489,
+          462
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_jongjong",
+        "pose": "letters_waiting",
+        "contacts_normalized_full_canvas": {
+          "foot_left": [
+            0.39204,
+            0.985313
+          ],
+          "foot_right": [
+            0.673632,
+            0.97765
+          ],
+          "foot": [
+            0.533333,
+            0.981481
+          ],
+          "hand_left_letters": [
+            0.606965,
+            0.446999
+          ],
+          "hand_right_letters": [
+            0.693532,
+            0.478927
+          ],
+          "prop_letters_chest_contact": [
+            0.60199,
+            0.405492
+          ],
+          "prop_letters_bottom": [
+            0.652736,
+            0.478927
+          ],
+          "seat": null
+        },
+        "crop_bbox_alpha128": [
+          135,
+          12,
+          888,
+          1552
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.134328,
+          0.007663,
+          0.883582,
+          0.99106
+        ],
+        "stature_ratio": 1,
+        "recommended_visible_size_px": [
+          117,
+          240
+        ]
+      },
+      "source_size": [
+        1005,
+        1566
+      ]
+    },
+    {
+      "person": "resident_guldol",
+      "pose": "map9_stone_tapping",
+      "source_pose": "stone_tapping",
+      "location": "workshop",
+      "periods": [
+        0,
+        1
+      ],
+      "spec": {
+        "file": "assets/map-work-nine/resident_guldol--stone_tapping.webp",
+        "crop": [
+          133,
+          12,
+          784,
+          1500
+        ],
+        "foot": [
+          360.0,
+          1471.0
+        ],
+        "contact": "standing",
+        "stature_ratio": 0.96,
+        "source_sha256": "41be827ff0fbcdba5aeedfd3dc8aa81543ab1efe594d83171c83f2dd36d62a1b",
+        "head": [
+          117,
+          0,
+          509,
+          450
+        ]
+      },
+      "contacts": {
+        "character_id": "resident_guldol",
+        "pose": "stone_tapping",
+        "contacts_normalized_full_canvas": {
+          "foot_left": [
+            0.244141,
+            0.976562
+          ],
+          "foot_right": [
+            0.719727,
+            0.954427
+          ],
+          "foot": [
+            0.481445,
+            0.965495
+          ],
+          "hand_hammer": [
+            0.503906,
+            0.50651
+          ],
+          "hand_stone": [
+            0.710938,
+            0.533854
+          ],
+          "hammer_stone": [
+            0.658203,
+            0.51237
+          ],
+          "stone_external_workbench": [
+            0.643555,
+            0.567708
+          ],
+          "seat": null
+        },
+        "crop_bbox_alpha128": [
+          133,
+          12,
+          917,
+          1512
+        ],
+        "crop_bbox_normalized_full_canvas": [
+          0.129883,
+          0.007812,
+          0.895508,
+          0.984375
+        ],
+        "stature_ratio": 0.96,
+        "recommended_visible_size_px": [
+          115,
+          220
+        ]
+      },
+      "source_size": [
+        1024,
+        1536
+      ]
+    }
+  ]
+}
