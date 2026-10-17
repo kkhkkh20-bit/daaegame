@@ -1,13 +1,23 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 17845263,
-  "archive_sha256": "5493edff56f805328153f186c1e13ee74105cec42e2c78406d2d212e13d557dc",
+  "archive_bytes": 17897598,
+  "archive_sha256": "0523fc71d8d17f60bf07bc8dfefc15bded0c31428c246f85a9689f3ded2e7461",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 17845263,
-    "sha256": "5493edff56f805328153f186c1e13ee74105cec42e2c78406d2d212e13d557dc"
+    "bytes": 8388608,
+    "sha256": "e8bda265a73201851deba1e12b5ebab9407777774037599bc6df74b3da90ae8f"
+   },
+   {
+    "file": "game.part02",
+    "bytes": 8388608,
+    "sha256": "35778d5203e338bd4697e588ce5ffe6a0961ef9954b973f3ce59e836977214cb"
+   },
+   {
+    "file": "game.part03",
+    "bytes": 1120382,
+    "sha256": "53629f13d26fbfcc21c5d744e58a206ca7bf1e1d31e584ea02182335b7adf324"
    }
   ]
  },
@@ -29,12 +39,20 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 90558,
-   "sha256": "5975fd462e7749fa43585f4e57afdb6e1c397c61a6a20c9dec3324e71ba376c1"
+   "bytes": 90830,
+   "sha256": "08171ae25155efc2e3eea440deefc731fb3aad42ad015b31db7003d3edc64afe"
   },
   "game.part01": {
-   "bytes": 17845263,
-   "sha256": "5493edff56f805328153f186c1e13ee74105cec42e2c78406d2d212e13d557dc"
+   "bytes": 8388608,
+   "sha256": "e8bda265a73201851deba1e12b5ebab9407777774037599bc6df74b3da90ae8f"
+  },
+  "game.part02": {
+   "bytes": 8388608,
+   "sha256": "35778d5203e338bd4697e588ce5ffe6a0961ef9954b973f3ce59e836977214cb"
+  },
+  "game.part03": {
+   "bytes": 1120382,
+   "sha256": "53629f13d26fbfcc21c5d744e58a206ca7bf1e1d31e584ea02182335b7adf324"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -1905,12 +1923,12 @@
    "sha256": "11fe1de67bf7240718a86e4d858721e9e886e24df0f5ed414e95dc7e430faf22"
   },
   "game/assets/room13-map-village-inn.webp": {
-   "bytes": 128322,
-   "sha256": "08d168b76d97305a3aa0f7e4f391d7346d53d808fb160d8d4b169bc20a27a9f2"
+   "bytes": 103594,
+   "sha256": "64e3833bf9e556a7850efdb0bd7b0a6d71feb2dd999539677b946e5b071c6b5c"
   },
   "game/assets/room13-map-village.webp": {
-   "bytes": 531666,
-   "sha256": "8d39190917a640361f1a00c65b4d38ef0ba3abbdeb930f671c3bec91180f42e4"
+   "bytes": 1870212,
+   "sha256": "f904438842b326611d717e9473e5d6e53ae711770cbd04ea10f9c558e2c332e7"
   },
   "game/assets/room13-meeting-seated-buri068.webp": {
    "bytes": 140256,
@@ -3242,7 +3260,7 @@
   },
   "index.html": {
    "bytes": 9504,
-   "sha256": "2c426397c1927872d506c1b5f356087b578ace1e5f447453372b114de7d2183a"
+   "sha256": "bcbc9c5366ca666e825de74239da7b22080698c4ea3faa60ab1e853ef2b00433"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -3277,5 +3295,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 365508071
+ "total_bytes": 366874496
 }

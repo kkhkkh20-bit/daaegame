@@ -21,12 +21,17 @@ async def main():
    assert not await q.py('import renpy;result=renpy.display.screen.get_screen("r13_map") is not None')
   try:
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu')
-   await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance();await q.wait('r13_hub')
+   await q.press('처음부터');await q.press('씬 건너뛰기');await q.wait('say');await q.press('대사 건너뛰기');await q.advance();await q.wait('r13_hub')
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=3,period=0,location="square",flags=["entry_corrected","lodging"]);s.r13_upgrade()\ndef f(**kw):renpy.ui.timer(.2,action=[renpy.store.Hide("qa_jump"),renpy.store.Jump("r13_field")])\nrenpy.display.screen.define_screen("qa_jump",f,zorder="200")\nrenpy.exports.show_screen("qa_jump");renpy.exports.restart_interaction();result=True')
    await asyncio.sleep(2);await q.wait('r13_hub');await q.press('지도 · 이동');await q.wait('r13_map');before=await q.room()
    keys=await q.py('import renpy;result=[k for k,p in renpy.store.r13_map_nodes("village")]');assert len(keys)==11,keys
    for key in keys:
     x,y=await point('village',key);await q.input(x,y);assert (await scope())==['village',key],(key,await scope());assert await q.room()==before
+   for key in keys:
+    x,y=await q.py('import renpy;result=renpy.store.r13_cart_label_point('+repr(key)+')')
+    await q.input(x,y);assert (await scope())==['village',key];assert await q.room()==before
+   x,y=await point('village','inn');await q.input(x,y)
+   checks.append('All 11 visible game-font name labels select their own destination without travel')
    await q.shot('01-village');checks.append('All 11 building/terrain polygons select exact place without state/time changes')
    # Empty corner of the inn rectangle must not steal a neighbouring click.
    x,y=await point('village','post');await q.input(x,y);await q.input(47,240);assert (await scope())[1]=='post'
@@ -39,6 +44,7 @@ async def main():
    await page.set_viewport_size({'width':844,'height':390});q.touch=True;await opened('village');before=await q.room()
    for key in keys:
     x,y=await point('village',key);await q.input(x,y);await q.input(x,y);assert (await scope())[1]==key;assert await q.room()==before
+   x,y=await point('village','inn');await q.input(x,y)
    await q.shot('05-village-mobile');await q.press('여관 안');await q.shot('06-inn-mobile');await close();checks.append('844x390 real touch: all 11 targets, repeated tap never travels, cancel preserves full state')
    await page.set_viewport_size({'width':1280,'height':720});q.touch=False
    await q.py('import renpy;s=renpy.store;s.r13_edit(day=2,period=0,location="inn");renpy.exports.show_screen("r13_inn_guide");renpy.exports.restart_interaction();result=True')

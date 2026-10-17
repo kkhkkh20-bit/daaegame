@@ -83,6 +83,23 @@ class WorldmapV5(unittest.TestCase):
         self.assertNotIn('v5_label_',source)
         self.assertIn('action SetScreenVariable("selected",key)',source)
 
+    def test_village_name_targets_fit_without_overlap(self):
+        # The art's text is not baked in: labels are real UI targets, and must
+        # remain separated and accessible above the fixed navigation footer.
+        titles={'inn':'여관','gate':'마을 입구','square':'광장','store':'공동 창고',
+            'post':'우체국','market':'장터','forest':'숲길','river':'강가',
+            'school':'학교','workshop':'수리점','clinic':'진료실'}
+        boxes=[]
+        for key,node in DATA['regions']['village']['nodes'].items():
+            x,y=node['label_point'];x=16+round(x*1248/1672);y=9+round(y*1248/1672)
+            width=max(100,24+len(titles[key])*21)
+            box=(x-width//2,y-21,x+width//2,y+21)
+            self.assertTrue(24<=box[0]<box[2]<=1256,key)
+            self.assertTrue(100<box[1]<box[3]<614,key)
+            for other,b in boxes:
+                self.assertFalse(box[0]<b[2] and b[0]<box[2] and box[1]<b[3] and b[1]<box[3],(key,other))
+            boxes.append((key,box))
+
     def test_eligibility_and_hidden_places(self):
         ns = namespace()
         count = 0
