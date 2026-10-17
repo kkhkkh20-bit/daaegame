@@ -232,9 +232,15 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         if title=="선택":
             $ context=r13_choice_context()
             if context:
-                text context[1]:
-                    xpos list_left ypos 66 xsize list_width text_align .5
-                    size r13_read_size(20,24) color "#e5ece6" line_spacing 3
+                # 0.18.93 (owner review of the question screen): the line just spoken sits on an ink
+                # panel above the head, never as bare white text over the face or a bright background.
+                frame:
+                    xpos list_left ypos 18 xsize list_width padding (18,8,18,10)
+                    background R13InkPanel()
+                    text context[1]:
+                        xsize list_width-36 text_align .5
+                        size r13_read_size(20,24) color "#fff4df" line_spacing 3 font r13_ui_font()
+                        outlines [(1,"#101515",0,0)]
         # Questions sit around the centre, clear of dialogue advancement and bottom tools.
         $ row_h=(64 if persistent.room13_large_text else 56)
         $ list_top,list_bottom=r13_question_bounds(entries,list_width)
@@ -262,8 +268,12 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                             color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
                             outlines [(1,"#101515",0,0)]
                 if not entries:
-                    text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
-                        xsize list_width-40 text_align .5 size r13_read_size(24,30) color "#eee5d5"
+                    # 0.18.93: on a panel like the question rows (bare text sat on the person's face).
+                    frame:
+                        xsize list_width-23 padding (16,10) background R13InkPanel()
+                        text "지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.":
+                            xsize list_width-55 text_align .5 xalign .5 size r13_read_size(24,30) color "#eee5d5"
+                            outlines [(1,"#101515",0,0)]
         if ready:
             for index,(title,action,was_read) in enumerate(entries[:9]):
                 key ("K_%d"%(index+1)) action r13_safe_question_action(action)
