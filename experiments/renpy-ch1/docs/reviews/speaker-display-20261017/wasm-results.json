@@ -1,0 +1,238 @@
+{
+  "kind": "Actual WASM base + parsed working-tree screen overlay; not a release build or full playthrough",
+  "captures": [
+    {
+      "name": "before-nubi-snow",
+      "text": [
+        "누비 아주머니"
+      ],
+      "size": 18,
+      "exception": false
+    },
+    {
+      "name": "before-momo-dark",
+      "text": [
+        "모모 관장"
+      ],
+      "size": 18,
+      "exception": false
+    },
+    {
+      "name": "before-long-name",
+      "text": [
+        "부엉이 할아버지"
+      ],
+      "size": 18,
+      "exception": false
+    },
+    {
+      "name": "before-anonymous",
+      "text": [
+        "???"
+      ],
+      "size": 18,
+      "exception": false
+    },
+    {
+      "name": "before-two-speakers",
+      "text": [
+        "누비 · 모모"
+      ],
+      "size": 18,
+      "exception": false
+    },
+    {
+      "name": "before-mobile-snow",
+      "text": [
+        "누비 아주머니"
+      ],
+      "size": 18,
+      "exception": false
+    },
+    {
+      "name": "before-mobile-dark-large",
+      "text": [
+        "부엉이 할아버지"
+      ],
+      "size": 18,
+      "exception": false
+    },
+    {
+      "name": "after-nubi-snow",
+      "text": [
+        "누비"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-momo-dark",
+      "text": [
+        "모모"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-long-name",
+      "text": [
+        "부엉이 할아버지"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-anonymous",
+      "text": [
+        "???"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-two-speakers",
+      "text": [
+        "누비 · 모모"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-mobile-snow",
+      "text": [
+        "누비"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-mobile-dark-large",
+      "text": [
+        "부엉이 할아버지"
+      ],
+      "size": 28,
+      "exception": false
+    }
+  ],
+  "base_version": "0.19.32",
+  "parsed_sources": {
+    "room13_speaker_display.rpy": {
+      "sha256": "148a823dbce46e32723b29befcec7cc589ed9d6f30a9eb3fd9c9f54300bba009",
+      "errors": [],
+      "screens": []
+    },
+    "screens.rpy": {
+      "sha256": "334698d395451cd6acfe2c42a6fa4eb5778d8dce22767faa1ab59882dfe279c0",
+      "errors": [],
+      "screens": [
+        "topic_banner",
+        "main_menu",
+        "say",
+        "choice",
+        "hud",
+        "explore",
+        "village_map",
+        "chest_lock",
+        "evidence_book",
+        "round_table",
+        "council",
+        "clock_compare",
+        "duel",
+        "r13_opt_row",
+        "pause_menu",
+        "save",
+        "load",
+        "file_slots",
+        "trial_complete",
+        "notify",
+        "confirm"
+      ]
+    },
+    "room13_screens.rpy": {
+      "sha256": "a3301ad0900d987a14ec7ad0cb5343a3983c7d72ee6369c1af7fd485868ccedb",
+      "errors": [],
+      "screens": [
+        "r13_hud",
+        "r13_toolbar",
+        "r13_options_control",
+        "r13_hub",
+        "r13_world_contents",
+        "r13_resident_stage",
+        "r13_question_list",
+        "r13_entry_topics",
+        "r13_entry_karo_topics",
+        "r13_interaction",
+        "r13_material_corner",
+        "r13_topics",
+        "r13_confirm",
+        "r13_activities",
+        "r13_book",
+        "r13_calendar",
+        "r13_calendar_content",
+        "r13_debate",
+        "r13_handoff"
+      ]
+    },
+    "room13_notebook.rpy": {
+      "sha256": "fe32eb4ea626dd9a4600fb91ca794c56823745eb42f224d04d7dd3943e6bf840",
+      "errors": [],
+      "screens": [
+        "r13_reference_record_shell",
+        "r13_reference_record_categories",
+        "r13_record_filters",
+        "r13_material_filters",
+        "r13_material_grid",
+        "r13_material_detail",
+        "r13_person_brief",
+        "r13_records",
+        "r13_resident_notes"
+      ]
+    },
+    "systems/room13_relations.rpy": {
+      "sha256": "3835eccc530608b2b641b2c8654d4ad5a7b9382edc9160771c78b32166f59b03",
+      "errors": [],
+      "screens": [
+        "r13_relations_content",
+        "r13_relation_focus",
+        "r13_relation_focus_card",
+        "r13_relation_detail"
+      ]
+    }
+  },
+  "meeting_label": {
+    "text": [
+      "할머니"
+    ],
+    "size": 24,
+    "exception": false
+  },
+  "shown_people": [
+    "buri",
+    "daram",
+    "mom",
+    "resident_nubi",
+    "resident_momo"
+  ],
+  "save_toolbar_fixture": "Opening line with normal line toolbar exposed; script/packet unchanged",
+  "before_save": [
+    "karo",
+    "도착했어요. 발판이 얼어서 미끄러우니 조심해서 내려요."
+  ],
+  "after_load": [
+    "karo",
+    "도착했어요. 발판이 얼어서 미끄러우니 조심해서 내려요."
+  ],
+  "status": "passed_with_handoff_limitations",
+  "handoff_limitations": [
+    "Final anonymous heading role guard added after captured source overlay",
+    "Momo/Buri detail captures retained Nubi selection; excluded from archive; QA now uses actual buttons, not rerun",
+    "Native SDK lint and release rebuild blocked by HTTP 403"
+  ],
+  "after_repeated_clicks_summary": {
+    "count": 8,
+    "screens": [
+      "say"
+    ],
+    "exception": false
+  }
+}

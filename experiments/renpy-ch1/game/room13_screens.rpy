@@ -245,9 +245,13 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                 xpos list_left ypos list_top-44 xsize list_width text_align .5
                 size r13_read_size(22,27) color "#f6d18a" outlines [(1,"#101515",0,0)]
         if title!="선택":
-            text title:
-                xpos list_left ypos max(60,list_top-50) xsize list_width text_align .5
-                size r13_read_size(27,32) color "#f6d18a"
+            text title.replace(R13_NAMES.get(person, ""), r13_display_name(person)):
+                xpos list_left ypos max(34,list_top-78) xsize list_width text_align .5
+                size r13_read_size(27,32) color "#fff0cc" outlines [(1,"#101515",0,0)]
+            if R13_NAMES.get(person) and R13_NAMES[person] in title:
+                text r13_display_role(person):
+                    xpos list_left ypos max(76,list_top-38) xsize list_width text_align .5
+                    size r13_read_size(18,20) color "#f3e7ce" outlines [(1,"#101515",0,0)]
         viewport:
             area (list_left,list_top,list_width,list_bottom-list_top)
             mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"

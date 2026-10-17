@@ -428,11 +428,12 @@ screen r13_resident_notes():
                     hbox:
                         spacing 16
                         add Transform(r13_art(person,"avatar_neutral"),size=(60,62),fit="contain",nearest=r13_profile_nearest(person))
-                        text R13_NAMES[person] size 23 yalign .5
+                        text r13_display_name(person) size 23 yalign .5
             if not r13_met_people():
                 text "직접 이야기한 사람부터 기록한다." size 23 xsize 410
     if selected:
-        text r13_person_caption(selected) xpos 565 ypos 120 size 32 color "#765426"
+        text r13_display_name(selected) xpos 565 ypos 112 size 32 color "#765426"
+        text r13_display_role(selected) xpos 565 ypos 156 size 20 color "#625738"
         viewport:
             area (565,185,650,420) mousewheel True draggable True scrollbars "vertical"
             vbox:
