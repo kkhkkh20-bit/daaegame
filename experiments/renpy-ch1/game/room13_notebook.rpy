@@ -28,8 +28,8 @@ init 68 python:
         views[context]=dict(detail=detail,page=page)
         store.r13_book_views=views
 
-    def r13_records_remember(tab,detail,person,page,archive,rel_sel=None,rel_filter="all"):
-        store.r13_records_view=dict(tab=tab,detail=detail,person=person,page=page,archive=archive,rel_sel=rel_sel,rel_filter=rel_filter)
+    def r13_records_remember(tab,detail,person,page,archive,rel_sel=None,rel_filter="all",rel_focus=True):
+        store.r13_records_view=dict(tab=tab,detail=detail,person=person,page=page,archive=archive,rel_sel=rel_sel,rel_filter=rel_filter,rel_focus=rel_focus)
 
     class R13RecordScrollChanged:
         def __init__(self,key):
@@ -309,7 +309,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default order="recent"
     default rel_sel=r13_records_view.get("rel_sel")
     default rel_filter=r13_records_view.get("rel_filter","all")
-    on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter)]
+    default rel_focus=r13_records_view.get("rel_focus",True)
+    on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter,rel_focus)]
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab=="all":
@@ -344,7 +345,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
             text ("%d / %d"%(actual_page+1,r13_record_pages(people))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
             textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
     elif tab=="relations":
-        use r13_relations_content(_scope,rel_sel,rel_filter)
+        use r13_relations_content(_scope,rel_sel,rel_filter,rel_focus)
     elif tab=="notes":
         use r13_learning_notes_content(note_focus)
     elif tab=="calendar":

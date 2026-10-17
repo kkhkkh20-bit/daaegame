@@ -77,6 +77,20 @@ init 58 python:
                 poly('#dec18a',[(12,8),(20,8),(24,12),(24,20),(20,24),(12,24),(8,20),(8,12)])
                 poly(ink,[(13,10),(19,10),(22,13),(22,19),(19,22),(13,22),(10,19),(10,13)])
                 poly('#65665d',[(14,13),(18,13),(20,15),(20,18),(18,20),(14,20),(12,18),(12,15)])
+            elif k in ('meeting_round','meeting_stone'):
+                poly(ink,[(2,12),(8,7),(24,7),(30,12),(30,23),(24,28),(8,28),(2,23)])
+                poly('#b5aea0' if k=='meeting_stone' else leather,[(4,12),(9,9),(23,9),(28,12),(28,21),(23,25),(9,25),(4,21)])
+                line(light,(9,11),(23,11),2)
+                for x in (7,15,23):box(gold,x,1,4,4)
+                if k=='meeting_stone':line(ink,(17,12),(14,17),1);line(ink,(14,17),(20,21),1)
+            elif k in ('meeting_field','meeting_room'):
+                if k=='meeting_room':
+                    line(leather,(1,10),(16,1),2);line(leather,(16,1),(31,10),2)
+                    line(leather,(3,10),(3,30),2);line(leather,(29,10),(29,30),2)
+                for x,y in ((6,13),(14,9),(22,13)):
+                    box(ink,x-2,y-2,7,7);box(paper,x-1,y-1,5,5)
+                    box(gold,x-3,y+6,9,9)
+                line(shade,(4,29),(29,29),2)
             elif k=='relations':
                 line(gold,(8,8),(24,8),2);line(gold,(8,8),(16,25),2);line(gold,(24,8),(16,25),2)
                 for x,y in ((3,3),(19,3),(11,20)):

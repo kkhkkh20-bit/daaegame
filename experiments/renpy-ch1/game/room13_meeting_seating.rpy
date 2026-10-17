@@ -21,6 +21,32 @@ init 99 python:
     import functools as r13_meeting_functools
     R13_MEETING_SEATED=r13_meeting_json.load(renpy.file("assets/room13-meeting-seated.json")) if renpy.loadable("assets/room13-meeting-seated.json") else {}
     R13_MEETING_STANDING_FACING={"resident_bori":"right"}
+    # Presentation metadata; never supplies a meeting's date, availability or proof.
+    R13_MEETING_VENUES={
+        "trial":("dining","round","식당 · 원탁 회의"),
+        "ep4":("dining","round","식당 · 원탁 회의"),
+        "ep1":("square","field","광장 · 현장 회의"),
+        "ep2":("square","field","광장 · 현장 회의"),
+        "ep6":("square","field","광장 · 현장 회의"),
+        "ep3":("school","room","학교 · 실내 입석"),
+        "ep5a":("school","room","학교 · 실내 입석"),
+        "ep5":("school","room","학교 · 실내 입석"),
+        "finale":("altar","stone","제단 · 돌판 회의"),
+        "final":("altar","stone","제단 · 돌판 회의"),
+    }
+    def r13_meeting_kind(session):
+        return R13_MEETING_VENUES.get(session,(None,"field",None))[1]
+
+    def r13_meeting_map_venue(place):
+        place="dining" if place=="inn" else place
+        return next((v for v in R13_MEETING_VENUES.values() if v[0]==place),None)
+
+    def r13_meeting_map_pending(place):
+        s=store.room13 or {}
+        # Only an offer that is already on screen may mark an active gathering.
+        return any(k in ("r13_ep1_meeting","r13_wf_meeting") and
+            o.get("location")==place and o.get("day")==s.get("day") and o.get("period")==s.get("period")
+            for k,o in s.get("offers",{}).items())
     def r13_meeting_cast(claim,session,speaker=None):
         seats=list(r13_debate_seats(session));present={who for who,stance in seats}
         for who in (["granny","resident_seori"] if session=="trial" else ["mom"])+[st["who"] for st in r13_debate_statements(claim)]+[R13_DEBATE[claim]["chair"]]:
@@ -72,7 +98,9 @@ init 99 python:
         return .016 if moving else None
 
     def r13_meeting_edge(x,session):
-        return int((396 if session=="trial" else 432)+(88 if session=="trial" else 68)*((x-640)/640.0)**2)
+        kind=r13_meeting_kind(session)
+        if kind in ("field","room"):return 520
+        return int((396 if kind=="round" else 432)+(88 if kind=="round" else 68)*((x-640)/640.0)**2)
 
     def r13_meeting_seat_position(index,count,session="trial"):
         x=int(60+(index+.5)*1160/max(1,count))
@@ -102,24 +130,27 @@ init 99 python:
         ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st) and (person is None or st["who"]==person)]
         return ids[(ids.index(current)+step)%len(ids)] if current in ids else ids[0] if ids else current
 
-    def r13_meeting_standing_slot(who,count,edge):
+    def r13_meeting_standing_slot(who,count,edge,session="finale"):
         crop=CAST[who]["neutral"]["crop"]
         width=min(int(crop[2]*306.0/crop[3]),int(1160.0/max(1,count)*.90))
         height=int(round(width*crop[3]/float(crop[2])))
-        return width,height,int(edge-height*.60)
+        return width,height,int(edge-height*(1.0 if r13_meeting_kind(session) in ("field","room") else .60))
 
     def r13_meeting_plate(session,close=False):
-        if session!="trial":return Transform("assets/room13-pixel-meeting-altar-standing072.webp",xysize=(1280,720),nearest=True)
+        if r13_meeting_kind(session) in ("field","room"):
+            place=R13_EP_MEETING_PLACE.get(session,"winter_square")
+            return Transform(r13_background(place),xysize=(1280,720),nearest=True)
+        if r13_meeting_kind(session)=="stone":return Transform("assets/room13-pixel-meeting-altar-standing072.webp",xysize=(1280,720),nearest=True)
         path="assets/room13-pixel-meeting-interview066.webp" if close else "assets/room13-pixel-meeting-room056.webp"
         plate=Transform(path,xysize=(1280,720),nearest=True)
-        if close and session=="trial":return plate
+        if close:return plate
         return Crop((160,0,1280,720),Transform(plate,zoom=1.25,nearest=True)) if close else plate
 
     class R13MeetingForeground(renpy.Displayable):
         def __init__(self,session,close=False,**kwargs):super(R13MeetingForeground,self).__init__(**kwargs);self.session=session;self.close=close
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720);c=out.canvas()
-            if self.session!="trial":
+            if r13_meeting_kind(self.session)=="stone":
                 edge=[(x,r13_meeting_edge(x,self.session)) for x in range(0,1281,16)]
             elif self.close:
                 edge=[(x,int(396+98*((x-640)/640.0)**2)) for x in range(0,1281,32)]
@@ -152,6 +183,8 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
 
 screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selected=None,ballot=False,outgoing=False):
     $ session=r13_debate_session(claim)
+    $ venue_kind=r13_meeting_kind(session)
+    $ seated=venue_kind=="round"
     $ seats=r13_meeting_cast(claim,session)
     fixed:
         id "meeting_camera"
@@ -162,7 +195,7 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
         if close:
             $ left,right=r13_meeting_neighbors(claim,focus)
             for neighbor,is_left in ((left,True),(right,False)):
-                $ sitting=session=="trial" and neighbor in R13_MEETING_SEATED
+                $ sitting=seated and neighbor in R13_MEETING_SEATED
                 $ side_crop=(R13_MEETING_SEATED[neighbor] if sitting else CAST[neighbor]["neutral"])["crop"]
                 $ side_scale=min((950.0 if sitting else 660.0)/side_crop[3],(520.0 if sitting else 440.0)/side_crop[2])
                 $ side_width=int(round(side_crop[2]*side_scale))
@@ -171,20 +204,21 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                 add r13_pixel_scale(r13_meeting_neighbor_art(neighbor,is_left,sitting),side_width,side_height,R13_CLOSE_PIXEL_GRID) xpos side_x ypos (142 if sitting else 164)
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=r13_meeting_previous_expression if outgoing else (getattr(store,"dialogue_expression","neutral") if getattr(store,"dialogue_speaker",None)==focus else "neutral")
-            $ portrait=r13_fullbody_close_art(focus,pose,840)
+            $ close_height=840 if venue_kind in ("round","stone") else 740
+            $ portrait=r13_fullbody_close_art(focus,pose,close_height)
             if portrait is not None:
-                add portrait xcenter r13_close_x(focus,pose,840) ypos r13_fullbody_close_y(focus,840,96,pose)
+                add portrait xcenter r13_close_x(focus,pose,close_height) ypos r13_fullbody_close_y(focus,close_height,96,pose)
             else:
                 add Transform(r13_meeting_actor(focus,focus,640),ysize=840,fit="contain",nearest=True) xcenter 640 ypos 108
         else:
             for index,(who,stance) in enumerate(seats):
                 $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
-                if session=="trial":
+                if seated:
                     $ height=230
                     $ top=edge+95-height
                     add Transform(r13_meeting_actor(who,focus,cx,seated=True),ysize=height,fit="contain",nearest=True) xcenter cx ypos top
                 else:
-                    $ stand_width,height,top=r13_meeting_standing_slot(who,len(seats),edge)
+                    $ stand_width,height,top=r13_meeting_standing_slot(who,len(seats),edge,session)
                     add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top
                 $ own=[st for st in r13_debate_statements(claim) if st["who"]==who and r13_debate_visible(claim,st)]
                 button:
@@ -194,7 +228,10 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                     frame:
                         xsize 112 ysize 24 padding (3,2) background R13InkPanel(focused=who==focus)
                         text R13_NAMES[who] size r13_read_size(14,16) color ("#efd191" if who==focus else "#efe0c3") xalign .5 yalign .5
-        add AlphaMask(r13_meeting_plate(session,close),R13MeetingForeground(session,close))
+        # Outdoor/classroom plates contain no table. Masking them hides legs
+        # behind an invisible tabletop and paints background over the cast.
+        if venue_kind in ("round","stone"):
+            add AlphaMask(r13_meeting_plate(session,close),R13MeetingForeground(session,close))
         if ballot:
             for index,(who,stance) in enumerate(seats):
                 if stance is not None:
@@ -208,7 +245,9 @@ screen r13_meeting_chrome(claim):
     $ proved,proof_total=r13_debate_progress(claim)
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
+        add R13AntiqueIcon("meeting_"+r13_meeting_kind(session),size=30) xpos 0 ypos 8
         vbox:
+            xpos 42
             spacing 2
             text (r13_meeting_header(session)+("" if r13_meeting_intro else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(15,17) color "#795d40"
             text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"

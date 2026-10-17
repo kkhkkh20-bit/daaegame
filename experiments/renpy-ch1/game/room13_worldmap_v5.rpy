@@ -27,7 +27,10 @@ init 61 python:
         return Transform("assets/room13-worldmap-v5-%s-outline.webp" % key, size=r13_v5_rect(key)[2:], nearest=True)
 
     def r13_v5_label(key):
-        return tuple(int(round(p * R13_WORLD_V5_SCALE)) for p in R13_WORLD_V5["layers"][key]["label"])
+        x,y=tuple(int(round(p * R13_WORLD_V5_SCALE)) for p in R13_WORLD_V5["layers"][key]["label"])
+        # Leave separate touch targets for the tight school/clinic/workshop cluster.
+        dx,dy={"school":(0,-20),"workshop":(-42,0),"market":(10,0),"post":(0,5)}.get(key,(0,0))
+        return x+dx,y+dy
 
 screen r13_worldmap_v5(selected, ready, map_hover):
     add Transform(R13_WORLD_V5_ART, size=(860,484), nearest=True) xpos 30 ypos 150
@@ -51,12 +54,12 @@ screen r13_worldmap_v5(selected, ready, map_hover):
     # Text remains UI text; no painted-in names and no labels for locked nodes.
     for key, point in r13_map_nodes("village"):
         $ tx, ty = r13_v5_label(key)
-        textbutton (("● " if key==room13["location"] else "") + R13_MAP_LABELS[key]):
+        $ venue=r13_meeting_map_venue(key)
+        $ label_width=172 if venue else 148
+        button:
             id ("v5_label_"+key)
-            area (30+max(0,min(712,tx-74)),150+ty-20,148,40)
+            area (30+max(0,min(860-label_width,tx-label_width//2)),150+ty-20,label_width,40)
             padding (3,3)
-            text_size 20 text_xalign .5 text_yalign .5
-            text_color "#fff3d5" text_hover_color "#ffffff"
             background R13InkPanel(focused=(key==selected))
             hover_background R13InkPanel(focused=True)
             action r13_map_pick(key,selected)
@@ -64,3 +67,8 @@ screen r13_worldmap_v5(selected, ready, map_hover):
             unhovered SetScreenVariable("map_hover",None)
             sensitive ready
             alt R13_MAP_LABELS[key]
+            hbox:
+                align (.5,.5) spacing 6
+                if venue:
+                    add R13AntiqueIcon("meeting_"+venue[1],size=22) yalign .5
+                text (("● " if key==room13["location"] else "")+R13_MAP_LABELS[key]) size (18 if venue else 20) color "#fff3d5" yalign .5

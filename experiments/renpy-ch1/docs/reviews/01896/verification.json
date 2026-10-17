@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "checks": [
+    "known relations only; unopened facts stay hidden",
+    "real graph and relationship-card navigation",
+    "focused graph and real horizontal character-index drag; overview switch",
+    "status filter retains fixed places",
+    "relationship selection/filter restored after close",
+    "relationship UI leaves story state unchanged",
+    "all 26 slotted people render; large text and reduced motion mobile",
+    "half-proof shows only already presented item",
+    "four suspects and cancel all inside the screen",
+    "actual point menu cancel leaves proof/story unchanged",
+    "four distinct venue styles in actual meeting renderer; Q6 at night",
+    "real map selection changes no clock or travel; current offers only; map label touch targets do not overlap",
+    "matching map/meeting icons including altar on mobile"
+  ],
+  "native_passed": [
+    "relations_tab",
+    "ep1_meeting",
+    "ep3_meeting",
+    "ep4_after_trial",
+    "ep5_soup_meeting",
+    "ep6_cart",
+    "ep6_altar"
+  ],
+  "checks_passed": [
+    "dev/check.sh unit tests and lint",
+    "four new venue regression tests"
+  ]
+}

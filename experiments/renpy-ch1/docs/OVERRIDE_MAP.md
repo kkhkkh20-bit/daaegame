@@ -336,14 +336,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 99 | `room13_meeting_seating.rpy:24` | _r13_e1_cast |
+| 1 | 99 | `room13_meeting_seating.rpy:50` | _r13_e1_cast |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:181` |  |
 
 ## `r13_meeting_plate` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 99 | `room13_meeting_seating.rpy:111` | _r13_e1_plate |
+| 1 | 99 | `room13_meeting_seating.rpy:139` | _r13_e1_plate |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:175` |  |
 
 ## `r13_object_name` (2층)

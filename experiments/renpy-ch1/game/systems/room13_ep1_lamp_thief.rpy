@@ -173,7 +173,7 @@ init 152 python:
 
     _r13_e1_plate=r13_meeting_plate
     def r13_meeting_plate(session,close=False):
-        if session in R13_EP_MEETING_PLACE:
+        if session in R13_EP_MEETING_PLACE and r13_meeting_kind(session)!="round":
             return Transform(r13_background(R13_EP_MEETING_PLACE[session]),xysize=(1280,720))
         return _r13_e1_plate(session,close)
 

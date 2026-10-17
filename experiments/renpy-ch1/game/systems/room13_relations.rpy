@@ -119,9 +119,9 @@ init 166 python:
 
     class R13RelLines(renpy.Displayable):
         """Relation lines between face centres; dashed for suspicion. The selected person's lines are bold."""
-        def __init__(self,edges,layout,selected=None,**kwargs):
+        def __init__(self,edges,layout,selected=None,centres=None,**kwargs):
             super(R13RelLines,self).__init__(**kwargs)
-            self.edges=edges;self.layout=layout;self.selected=selected
+            self.edges=edges;self.layout=layout;self.selected=selected;self.centres=centres or {}
         def render(self,width,height,st,at):
             w=R13_REL_COLS*R13_REL_CELL[0];h=R13_REL_ROWS*R13_REL_CELL[1]
             rv=renpy.Render(w,h);canvas=rv.canvas()
@@ -131,8 +131,9 @@ init 166 python:
                 active=self.selected in (a,b)
                 if self.selected and not active:color=color+"44"
                 width_=width_+1 if active else max(2,width_-1)
-                x1,y1=self.layout[a][0]+48,self.layout[a][1]+28
-                x2,y2=self.layout[b][0]+48,self.layout[b][1]+28
+                ax,ay=self.centres.get(a,(48,28));bx,by=self.centres.get(b,(48,28))
+                x1,y1=self.layout[a][0]+ax,self.layout[a][1]+ay
+                x2,y2=self.layout[b][0]+bx,self.layout[b][1]+by
                 if not dashed:
                     canvas.line(color,(x1,y1),(x2,y2),width_)
                     continue
@@ -162,20 +163,26 @@ transform r13_rel_faded:
     alpha .45
 
 # Presentation only: knowledge gates, status rules and fixed seats remain above.
-screen r13_relations_content(owner,selected,filt):
+screen r13_relations_content(owner,selected,filt,focused=True):
     $ layout=r13_rel_layout()
     $ edges=r13_rel_edges()
     $ people=r13_rel_people()
-    $ selected=selected if selected in people else next((p for p in people if r13_rel_status(p)[0]=="dead"),"daram")
+    $ selected=selected if selected in people else "daram"
     $ linked={other for other,k,lab in r13_rel_lines_of(selected)}
     $ counts=r13_rel_counts()
     text "알게 된 관계" xpos 282 ypos 66 size r13_read_size(23,26) color "#654b30"
+    textbutton ("전체 관계도" if focused else "인물 중심"):
+        style "r13_paper_tab_button" xpos 704 ypos 62 xsize 160 ysize 40 padding (4,0) text_size 19 text_yalign .5
+        action Function(r13_record_select,owner,"rel_focus",not focused)
     hbox:
         xpos 280 ypos 104 spacing 8
         for key,title in (("all","전체 %d"%counts["all"]),("alive","살아 있음 %d"%counts["alive"]),("dead","숨짐 %d"%counts["dead"]),("saved","구함 %d"%counts["saved"])):
             textbutton title style "r13_paper_tab_button" xsize 140 ysize 40 padding (4,0) text_size r13_read_size(17,19) text_align .5 text_yalign .5 selected filt==key action Function(r13_record_select,owner,"rel_filter",key)
     add R13PaperFrame() xpos 278 ypos 150 xsize 588 ysize 428
-    fixed:
+    if focused:
+        use r13_relation_focus(owner,selected,filt)
+    else:
+      fixed:
         xpos 284 ypos 158 xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
         add R13RelLines(edges,layout,selected)
         for who in people:
@@ -223,7 +230,63 @@ screen r13_relations_content(owner,selected,filt):
                 spacing 7
                 add R13RelKey(kind) yalign .5
                 text title size r13_read_size(16,18) color "#65503b"
-    text "인물을 선택하면 연결된 관계가 선명해집니다." xpos 284 ypos 630 size r13_read_size(16,18) color "#79654e"
+    text ("아래 얼굴을 누르면 그 인물의 관계를 봅니다." if focused else "인물을 고른 뒤 「인물 중심」으로 크게 봅니다.") xpos 284 ypos 630 size r13_read_size(16,18) color "#79654e"
+
+screen r13_relation_focus(owner,person,filt):
+    $ rows=r13_rel_lines_of(person)
+    $ positions=([(20,112)] if len(rows)==1 else [(20,112),(440,112)] if len(rows)==2 else [(20,12),(20,178),(440,92)] if len(rows)==3 else [(20,12),(440,12),(20,178),(440,178)])
+    $ layout={person:(222,92)}
+    $ layout.update({other:positions[i] for i,(other,k,lab) in enumerate(rows[:4])})
+    fixed:
+        xpos 284 ypos 158 xysize (576,326)
+        add R13RelLines([(person,other,k,lab) for other,k,lab in rows[:4]],layout,person,{p:((66,56) if p==person else (56,40)) for p in layout})
+        use r13_relation_focus_card(owner,person,222,92,True)
+        for i,(other,k,lab) in enumerate(rows[:4]):
+            $ nx,ny=positions[i]
+            use r13_relation_focus_card(owner,other,nx,ny)
+            frame:
+                xpos (0 if nx<200 else 382) ypos (ny+108) xsize 194 padding (6,4) background Solid("#f0dfbd")
+                text lab size r13_read_size(17,19) text_align .5 xalign .5 color R13_REL_KIND[k][0] xsize 180
+        if not rows:
+            text "아직 알게 된 관계가 없습니다." xpos 110 ypos 245 xsize 356 text_align .5 size r13_read_size(20,23) color "#79654e"
+    # A stable index keeps unrelated residents reachable without tiny graph text.
+    viewport:
+        id "r13_relation_index"
+        area (288,488,572,88) mousewheel "horizontal" draggable True scrollbars "horizontal" scrollbar_ysize 6 scrollbar_thumb Solid("#a89571") scrollbar_base_bar Solid("#d6bd96")
+        hbox:
+            spacing 6
+            for who in r13_rel_people():
+                $ status=r13_rel_status(who)[0]
+                button:
+                    xysize (76,80) padding (4,4)
+                    background R13PaperPanel(who==person) hover_background R13PaperPanel(True)
+                    action Function(r13_record_select,owner,"rel_sel",who)
+                    alt R13_NAMES.get(who,who)
+                    at (r13_rel_faded if not r13_rel_match(who,filt) else None)
+                    vbox:
+                        spacing 4 xalign .5
+                        if status=="dead":
+                            add Transform(r13_art(who,"avatar_neutral"),xysize=(44,44),fit="contain",nearest=True) at r13_rel_gray xalign .5
+                        else:
+                            add Transform(r13_art(who,"avatar_neutral"),xysize=(44,44),fit="contain",nearest=True,alpha=.55 if status in ("gone","missing") else 1.0) xalign .5
+                        text (("{s}"+R13_NAMES.get(who,who).split(" ")[0]+"{/s}") if status=="dead" else R13_NAMES.get(who,who).split(" ")[0]) size 16 color "#493b30" xalign .5
+
+screen r13_relation_focus_card(owner,person,x,y,primary=False):
+    $ kind,label=r13_rel_status(person)
+    $ compact=" " in R13_NAMES.get(person,person) and len(R13_NAMES.get(person,person))>5
+    $ face=(64 if compact else 80) if primary else (50 if compact else 60)
+    button:
+        xpos x ypos y xysize ((132,132) if primary else (112,106)) padding (5,5)
+        background R13PaperPanel(primary) hover_background R13PaperPanel(True)
+        action Function(r13_record_select,owner,"rel_sel",person)
+        alt (R13_NAMES.get(person,person)+(" · "+label if label else ""))
+        vbox:
+            xalign .5 spacing 5
+            if kind=="dead":
+                add Transform(r13_art(person,"avatar_neutral"),xysize=(face,face),fit="contain",nearest=True) at r13_rel_gray xalign .5
+            else:
+                add Transform(r13_art(person,"avatar_neutral"),xysize=(face,face),fit="contain",nearest=True,alpha=.55 if kind in ("gone","missing") else 1.0) xalign .5
+            text (("{s}"+R13_NAMES.get(person,person)+"{/s}") if kind=="dead" else R13_NAMES.get(person,person)) size (r13_read_size(20,22) if primary else r13_read_size(18,20)) xsize (122 if primary else 102) text_align .5 color "#493b30"
 
 screen r13_relation_detail(owner,person):
     add R13PaperFrame() xpos 878 ypos 58 xsize 348 ysize 520
