@@ -1,5 +1,5 @@
 {
-  "kind": "local design preview using production screens and authored dialogue; injected visual fixtures, not a story walkthrough",
+  "kind": "release verification using production defaults and authored dialogue; injected visual fixtures, not a story walkthrough",
   "shots": [
     "snow-dialogue-preview",
     "snow-choices-preview",
@@ -306,7 +306,22 @@
   "default_material": {
     "alpha": "d9",
     "slim": true,
-    "version": "0.19.31"
+    "version": "0.19.32"
   },
+  "window_settings": {
+    "99": {
+      "alpha": "c9",
+      "dark": false
+    },
+    "d4": {
+      "alpha": "d9",
+      "dark": false
+    },
+    "f0": {
+      "alpha": "ff",
+      "dark": true
+    }
+  },
+  "archive_sha256": "4c7009c398f014582a1dae1294766928fe57c93047f1270c47bcc7f8a0aef3fb",
   "passed": true
 }
