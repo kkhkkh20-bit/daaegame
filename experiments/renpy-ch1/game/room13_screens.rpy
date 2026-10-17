@@ -46,17 +46,11 @@ init 80:
 screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode="line",ready=True):
     style_prefix "r13"
     if mode=="talk":
-        # Question screens: "돌아가기" sits at the bottom left (0.18.42); only the tools
-        # used while choosing a question stay here.
-        frame:
-            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
+        fixed:
+            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56))
             use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
         if present_action is not None:
-            # 0.19.2 (owner: "보여주기가 핵심인데 버튼이 더 커야"): 172×64 → 260×84, 글씨 28.
-            fixed:
-                # Right of the question list (it ends at x≈995), below the date panel.
-                xpos 1008 ypos R13_EVIDENCE_CARD_CENTER[1] xsize 260 ysize 84
-                use r13_antique_button("보여주기","present",present_action,enabled=ready,width=260,height=84,label_size=r13_read_size(28,31),icon_size=38)
+            use r13_present_button(present_action,ready,640,572,592,72)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
@@ -214,7 +208,9 @@ screen r13_resident_stage(entry=False,ready=False):
 
 screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=420,list_width=760,animate=True,return_action=None,caption=""):
     style_prefix "r13"
-    if person:
+    if person and title!="선택":
+        use r13_side_question_list(person,pose,entries,ready,return_action,caption)
+    elif person:
         $ list_width=min(900,max(760,list_width))
         $ list_left=(1280-list_width)//2
         # Face to face: retain the existing actor, centred behind the choices.
@@ -577,3 +573,16 @@ screen r13_handoff():
                 textbutton "저장하기" action ShowMenu("save")
                 textbutton "이어서 진행" action [Hide("r13_handoff"),Jump("r13_week2_opening")]
                 textbutton "제목으로" action MainMenu(confirm=False)
+
+# Approved fixed evidence action, shared by conversation toolbars.
+screen r13_present_button(command,ready,x,y,w=332,h=72):
+    button:
+        id "r13_present_button"
+        area (x,y,w,h) padding (20,10)
+        background R13InkPanel(focused=True,alpha="ef",slim=True)
+        hover_background R13InkPanel(focused=True,alpha="ff",slim=True)
+        action command sensitive ready alt "자료 보여주기"
+        hbox:
+            align (.5,.5) spacing 12
+            add R13AntiqueIcon("present",size=32) yalign .5
+            text "자료 보여주기" size r13_read_size(24,28) color "#f6dfac" font r13_ui_font() yalign .5
