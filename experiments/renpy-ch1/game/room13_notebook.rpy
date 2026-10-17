@@ -307,19 +307,26 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default page=r13_records_view.get("page",0)
     default archive=r13_records_view.get("archive",False)
     default order="recent"
+    default shelf=False
     default rel_sel=None
     default rel_filter="all"
     on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive)]
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab=="all":
+        # 0.18.95: the run toggle sat on top of the 대화 tab; both toggles now live in the top bar.
         if r13_learning_archive_keys():
             textbutton ("이번 여정" if not archive else "지난 플레이"):
-                style "r13_paper_tab_button" xpos 66 ypos 326 xsize 176 ysize 40 text_size 18
-                action [SetScreenVariable("archive",not archive),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
-        $ entries=r13_catalog_entries(archive)
+                style "r13_paper_tab_button" xpos 672 ypos 72 xsize 128 ysize 42 text_size 17
+                action [SetScreenVariable("archive",not archive),SetScreenVariable("shelf",False),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
+        if not archive and r13_catalog_entries(shelf=True):
+            textbutton (("지난 사건 %d"%len(r13_catalog_entries(shelf=True))) if not shelf else "지금 쓰는 자료"):
+                style "r13_paper_tab_button" xpos 520 ypos 72 xsize 144 ysize 42 text_size 17
+                selected shelf
+                action [SetScreenVariable("shelf",not shelf),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
+        $ entries=r13_catalog_entries(archive,shelf=shelf and not archive)
         $ selected_record=r13_record_selected(entries,detail,page)
-        text ("모은 자료 %d개"%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
+        text (("지난 사건 기록 %d개" if shelf and not archive else "모은 자료 %d개")%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
         use r13_material_grid(entries,selected_record,page,_scope,archive)
         use r13_material_detail(selected_record,archive) id ("records",selected_record,archive,persistent.room13_large_text)
     elif tab=="people":

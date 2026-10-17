@@ -24,7 +24,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 15 | 130 | `systems/room13_new_places.rpy:167` | _r13_direct_work_topics |
 | 16 | 133 | `systems/room13_direct_work.rpy:14` | _r13_alibi_topics |
 | 17 | 147 | `systems/room13_alibi.rpy:139` | _r13_catalog_topics |
-| 18 | 148 | `systems/room13_materials.rpy:58` | _r13_e1_topics |
+| 18 | 148 | `systems/room13_materials.rpy:63` | _r13_e1_topics |
 | 19 | 152 | `systems/room13_ep1_lamp_thief.rpy:55` | _r13_nolive_topics |
 | 20 | 168 | `systems/room13_no_livelihood.rpy:10` |  |
 
@@ -205,6 +205,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 76 | `room13_first_mystery.rpy:92` | _r13_items_finish_action |
 | 3 | 96 | `systems/room13_items.rpy:140` |  |
 
+## `r13_flag` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
+| 2 | 166 | `systems/room13_relations.rpy:18` | _r13_shelf_flag |
+| 3 | 170 | `systems/room13_shelf.rpy:28` |  |
+
 ## `r13_new` (3층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -268,13 +276,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:190` |  |
-
-## `r13_flag` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 55 | `room13_rules.rpy:94` | _r13_rel_flag |
-| 2 | 166 | `systems/room13_relations.rpy:18` |  |
 
 ## `r13_grant` (2층)
 

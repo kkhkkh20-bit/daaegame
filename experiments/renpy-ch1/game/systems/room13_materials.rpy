@@ -15,9 +15,14 @@ init 148 python:
             return item in (r13_wallet(store.room13)["items"] if kind=="bag" else r13_inspection_state()["inventory"])
         return bool(key and key in ROOM13["evidence"] and key in (store.room13 or {}).get("evidence",[]))
 
-    def r13_catalog_entries(archive=False,hearing=False):
+    def r13_catalog_entries(archive=False,hearing=False,shelf=False):
         raw=list((getattr(persistent,"room13_knowledge",[]) or []) if archive else (store.room13 or {}).get("evidence",[]))
         keys=list(dict.fromkeys(k for k in raw if k in ROOM13["evidence"]))
+        # 0.18.95: records of a finished episode move to the 지난 사건 shelf (systems/room13_shelf.rpy).
+        if not archive:
+            shelved=getattr(store,"r13_shelved_keys",lambda:set())()
+            if shelf:return list(reversed([k for k in keys if k in shelved]))
+            keys=[k for k in keys if k not in shelved]
         if not archive and not hearing:
             keys += ["tool:"+k for k in r13_inspection_state()["inventory"] if k in R13_INSPECTION_ITEMS]
             keys += ["bag:"+k for k in r13_wallet(store.room13)["items"] if k in set(R13_SHOP)|set(R13_BORROW)]
