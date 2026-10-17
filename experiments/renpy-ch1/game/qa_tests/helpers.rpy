@@ -199,7 +199,9 @@ init 999 python:
         "ws_lowroad","ws_long_night","ws_lab","ws_teacher_talked","ws_soup","ws_tosil_met",
         "cv_morning","cv_market","cv_store","cv_stable","cv_hall","cv_tea","cv_night","cv_altar",
         # 0.18.72 new-cast scenes at the river, forest and market (systems/room13_new_cast.rpy).
-        "mulgyeol_helped","solbang_helped","outside_news_bought"]
+        "mulgyeol_helped","solbang_helped","outside_news_bought",
+        # 0.18.90 story scenes (systems/room13_ep_story.rpy).
+        "st_dodam_seen","st_kkomi_class_seen","st_pandol_seen"]
     def r13_qa_board():
         # 0.18.70 meeting flow: statements loop live; the board opens via 발언 고르기 (review).
         # Old trial tests waited for the board to appear by clicking, so ask for review here.

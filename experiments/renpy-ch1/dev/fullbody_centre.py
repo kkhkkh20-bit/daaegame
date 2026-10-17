@@ -16,7 +16,7 @@ for person, entry in sorted(people.items()):
     x, y, w, h = entry["crop"]
     image = entry["images"]["neutral"]
     if image.get("map"):
-        # 0.18.90: picture in its own pixels with a map to the reference canvas
+        # 0.18.91: picture in its own pixels with a map to the reference canvas
         # (dev/apply_expression_acting.py): measure in file pixels, convert to reference.
         u, ox, oy = image["map"]
         alpha = np.array(Image.open(GAME / image["file"]).convert("RGBA"))[:, :, 3]

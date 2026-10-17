@@ -1,4 +1,4 @@
-"""0.18.90 dialogue expression package (dev/apply_expression_acting.py): one key = one picture,
+"""0.18.91 dialogue expression package (dev/apply_expression_acting.py): one key = one picture,
 pixels exact, maps consistent, held characters untouched, rollback data present."""
 import csv, hashlib, json, unittest
 from pathlib import Path

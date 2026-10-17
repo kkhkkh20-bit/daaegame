@@ -37,7 +37,7 @@ class EpArt(unittest.TestCase):
     def test_held_items_are_not_shipped(self):
         # The U22 blank-nose frame stays in art/ only.
         self.assertFalse((GAME / "assets/room13-ep-U22-mother-portrait-blank-nose.webp").exists())
-        # O46: the noose-like ropes were never shipped; 0.18.90 adds the redrawn short ropes
+        # O46: the noose-like ropes were never shipped; 0.18.91 adds the redrawn short ropes
         # (manual extraction, dev/extract_o46_ropes.py) only inside their hand-drawn region.
         with Image.open(GAME / "assets/room13-ep-O46-mountain-ropes.webp") as im:
             alpha = np.asarray(im.getchannel("A"))
