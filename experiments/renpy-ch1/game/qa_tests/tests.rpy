@@ -12202,3 +12202,41 @@ testcase lost_return:
     pause until screen "r13_hub" timeout 30
     assert eval (len(renpy.game.context().return_stack)<=1)
     $ r13_qa_note("recovered to hub")
+
+testcase relgrid_overflow:
+    # 0.19.7: more met people than chart cells opened 「전체 관계도」 with KeyError.
+    pause 2.0
+    click "처음부터"
+    pause until screen "say" timeout 30
+    click pos (640,560) until screen "r13_hub" timeout 90
+    pause 1.0
+    python:
+        _people=[p for p in R13_NAMES if p not in R13_REL_SLOTS and p in CAST][:30]
+        _enc=list(room13.get("encounters",[]))
+        for _p in _people:
+            _enc.append(dict(person=_p,day=1,period=1,place="inn"))
+        room13["encounters"]=_enc
+    assert eval (len(r13_rel_people())>len(r13_rel_layout()))
+    run Show("r13_records",initial_tab="relations")
+    pause 1.0
+    click "전체 관계도"
+    pause 1.0
+    screenshot "relgrid_overflow.png"
+    $ r13_qa_note("grid people=%d placed=%d"%(len(r13_rel_people()),len(r13_rel_layout())))
+
+testcase unread_filter_keeps:
+    # 0.19.7: the 「안 읽음」 filter marked its own list read one by one.
+    pause 2.0
+    click "처음부터"
+    pause until screen "say" timeout 30
+    click pos (640,560) until screen "r13_hub" timeout 90
+    pause 1.0
+    python:
+        room13["evidence"]=list(room13["evidence"])+[k for k in ("G1","G2","G3","W1","W2","W6","W7") if k in ROOM13["evidence"] and k not in room13["evidence"]]
+        _r13_qa_unread=len([k for k in room13["evidence"] if r13_record_unread(k)])
+    run Show("r13_records",initial_tab="all")
+    pause 1.0
+    click "● 안 읽음"
+    pause 6.0
+    assert eval (len([k for k in room13["evidence"] if r13_record_unread(k)])>=_r13_qa_unread-1)
+    $ r13_qa_note("unread before=%d after=%d"%(_r13_qa_unread,len([k for k in room13["evidence"] if r13_record_unread(k)])))
