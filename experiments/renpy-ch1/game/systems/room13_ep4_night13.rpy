@@ -279,7 +279,7 @@ label r13_nt_night8:
             ("resident_lamplighter","오늘 등은 같이 켜요. 저 혼자는 오늘 무서워서요.")],"nt:night8:safe")
         $ r13_grant(["N06"],"초롱이 직접 전한 엄마의 편지")
     elif r13_has("nt_chorong_half"):
-        call r13_lines([(None,"강가 쪽 먼 길에서 초롱이 쓰러져 있었다. 이마가 찢기고, 등잔은 깨졌다. 숨은 붙어 있다."),
+        call r13_lines([(None,"강가 쪽 먼 길에서 초롱이 쓰러져 있었다. 이마가 찢기고, 등잔은 깨졌다. 숨은 붙어 있다.",{"cut":"chorong_injured_alive","no_lead":True}),
             ("resident_lamplighter","미안해요……. 빼앗겼어요. 편지. 그분 글씨였는데…….")],"nt:night8:half")
         $ r13_flag("mom_letter_taken")
     else:
