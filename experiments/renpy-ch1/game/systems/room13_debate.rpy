@@ -834,12 +834,15 @@ screen r13_debate_board(claim,selected):
     $ visible=[st for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
     use r13_meeting_stage(claim,sel["who"],True,ready,selected)
     use r13_meeting_chrome(claim)
-    textbutton "발언 기록":
-        style "r13_action_button" xpos 942 ypos 18 xsize 144 ysize 64 text_size 20
+    frame:
+        area (942,18,314,66) padding (12,8) background R13PaperFrame()
+        vbox:
+            spacing 2
+            text "발언 검토" size 21 color "#493b30" font r13_ui_font()
+            text "자료와 대조" size 14 color "#795d40" font r13_ui_font()
+    textbutton "발언 목록":
+        style "r13_action_button" area (1100,28,144,44) padding (8,4) text_size 20
         action ToggleScreenVariable("statements_open") sensitive ready
-    textbutton "회의 중단":
-        style "r13_action_button" xpos 1096 ypos 18 xsize 160 ysize 64 text_size 20
-        action Return(("leave",)) sensitive ready
     $ half_key=r13_debate_state().get("half",{}).get(claim+":"+selected)
     if half_key and sel.get("pair") and not r13_debate_is_broken(claim,selected):
         # Show only the material actually presented. The missing answer stays hidden.
@@ -865,6 +868,7 @@ screen r13_debate_board(claim,selected):
                     text r13_meeting_feedback["text"] size r13_read_size(18,21) color "#493b30" xsize 1068
     frame:
         area (80,500,1120,132) padding (0,0) background R13PaperFrame()
+        add Solid("#b58b47") xysize (1120,4)
         textbutton "‹":
             style "r13_compact_button" area (20,6,52,44) text_size 32 alt "이전 발언"
             action Return(("select",r13_meeting_next_statement(claim,selected,step=-1))) sensitive ready and len(visible)>1

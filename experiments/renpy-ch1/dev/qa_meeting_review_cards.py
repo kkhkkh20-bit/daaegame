@@ -23,10 +23,10 @@ async def main():
    await native_jump(q,'r13_trial');await until('r13_meeting_agenda');await shot('01-whole-meeting-agenda')
    await q.press('다람이의 방어가');await until('say')
    for _ in range(30):
-    if any('발언 고르기' in b['text'] for b in (await q.state())['buttons']):break
+    if any('발언 선택' in b['text'] for b in (await q.state())['buttons']):break
     await q.input(810,640)
    await shot('02-focused-speaker')
-   await q.press('발언 고르기');await until('r13_debate_board');await shot('03-statement-selection')
+   await q.press('발언 선택');await until('r13_debate_board');await shot('03-statement-selection')
    await q.press('보여주기');await until('r13_book');await shot('04-evidence-presentation')
    report['status']='captured'
   finally:(OUT/'runtime.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');await b.close()

@@ -125,11 +125,11 @@ screen say(who,what):
         use r13_meeting_chrome(r13_meeting_claim)
         window:
             id "window"
-            area (80,500,1120,132) background R13PaperFrame() padding (22,36,22,14)
-            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color r13_say_color()
+            area (80,500,1120,132) background R13InkPanel(alpha="d9",slim=True) padding (22,36,22,14)
+            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color "#fff4df"
         if who:
-            text who id "who" xpos 104 ypos 504 size r13_read_size(24,26) color "#493421" font r13_ui_font() xmaximum 1076
-        text "▸" xpos 1160 ypos 600 size 24 color "#795d40"
+            text who id "who" xpos 104 ypos 504 size r13_read_size(24,26) color "#f6dfac" font r13_ui_font() xmaximum 1076
+        text "▸" xpos 1160 ypos 600 size 24 color "#e8d9b0"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())
         key "K_h" action Show("r13_backlog")

@@ -54,13 +54,7 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:
-        # The investigation badge is a state, not a dead action button.
-        frame:
-            xpos 24 ypos 676 xsize 156 ysize 40 padding (8,4) background None
-            hbox:
-                spacing 6
-                add R13AntiqueIcon("investigate",size=24) yalign .5
-                text "조사 중" size 20 color "#efe2c2" outlines [(1,"#302b25",0,0)] font r13_ui_font() yalign .5
+        use r13_field_view_controls(ready)
         frame:
             area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56)) padding (0,0) background None
             use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
@@ -116,7 +110,7 @@ screen r13_hub(entry=False):
             use r13_antique_button("지도 · 이동","map",Return(("menu","map")),enabled=ready,width=180)
     if not entry and r13_bed_available("bed"):
         textbutton "자기":
-            style "r13_action_button" area (1010,584,220,56)
+            style "r13_action_button" area (1010,500,220,56)
             action Return(("sleep","bed"))
     if not entry and r13_evening_missions():
         textbutton "저녁 할 일":
@@ -155,7 +149,7 @@ screen r13_world_contents(entry=False,ready=False):
             button:
                 area tuple(spec["rect"])
                 background None hover_background None insensitive_background None padding (0,0)
-                action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
+                action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
                 tooltip r13_object_name(key)
     # 0.18.50 (owner): where a person and an object overlap, the person is pressed. Objects drawn
     # in front of a resident stay pressable around the resident's silhouette.
@@ -163,35 +157,39 @@ screen r13_world_contents(entry=False,ready=False):
         button:
             area rect focus_mask mask
             background None hover_background None insensitive_background None padding (0,0)
-            action [Function(r13_click_feedback,key),Return(("object",key))] sensitive ready
+            action SetVariable("r13_field_pick",(room13["location"],key)) sensitive ready and r13_field_view=="scene"
             tooltip r13_object_name(key)
     # 0.18.63: separate prop layers (systems/room13_map_actions.rpy), behind the residents.
     for prop,px,py in r13_world_props(entry):
         add prop xpos px ypos py
-    use r13_resident_stage(entry,ready)
+    if r13_field_view=="people":
+        use r13_resident_stage(entry,ready)
     # Inspection ticks sit under the name tags, never on top of a name.
     for key,point in room13["checks"].items():
         $ point=r13_check_point(key,point)
-        if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and not r13_point_on_face(point,entry):
+        if key.startswith(room13["location"]+":") and r13_visible_check(key,point) and (r13_field_view=="scene" or not r13_point_on_face(point,entry)):
             add TopicTick() xpos point[0]-13 ypos point[1]-13
     $ bundle_point=r13_gate_bundle_check_point()
     if bundle_point:
         add TopicTick() xpos bundle_point[0]-13 ypos bundle_point[1]-13
+    if r13_field_view=="scene" and r13_field_spots:
+        use r13_field_spots_overlay(ready)
     use r13_admin_hitboxes()
-    for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
-        if nameplate["leader"]:
-            $ leader=R13NameLeader(nameplate["leader"])
-            add leader xpos leader.left ypos leader.top
-        textbutton R13_NAMES[nameplate["person"]]:
-            area nameplate["rect"]
-            padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
-            action r13_person_action(nameplate["person"],entry) sensitive ready
-        if not entry and r13_offer_for_person(nameplate["person"]):
-            # 0.18.53: something is happening with this person; press them to see it.
-            frame:
-                xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
-                background Solid("#d9a441")
-                text "!" size 28 color "#2a1d10" xalign .5 yalign .5
+    if r13_field_view=="people":
+        for nameplate in r13_actor_nameplates(r13_stage_people(entry)):
+            if nameplate["leader"]:
+                $ leader=R13NameLeader(nameplate["leader"])
+                add leader xpos leader.left ypos leader.top
+            textbutton R13_NAMES[nameplate["person"]]:
+                area nameplate["rect"]
+                padding (12,7) background R13ActionPanel() hover_background R13ActionPanel(True) text_size 20 text_color "#fff2cf" text_xalign .5 text_yalign .5
+                action r13_person_action(nameplate["person"],entry) sensitive ready
+            if not entry and r13_offer_for_person(nameplate["person"]):
+                # 0.18.53: something is happening with this person; press them to see it.
+                frame:
+                    xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
+                    background Solid("#d9a441")
+                    text "!" size 28 color "#2a1d10" xalign .5 yalign .5
 
 screen r13_resident_stage(entry=False,ready=False):
     for actor in r13_stage_people(entry):
@@ -454,6 +452,8 @@ screen r13_book(target=None,present=False,hearing=False):
     default order="recent"
     $ chip_person=r13_book_person(target,hearing) if present else None
     timer .15 action SetScreenVariable("ready",True)
+    if r13_meeting_active and r13_meeting_claim in R13_DEBATE:
+        use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
     use r13_reference_record_shell("보여주기" if present else "자료 기록")
     use r13_reference_record_categories("r13_book",category,True,archive and not present)
     if not present and r13_learning_archive_keys():

@@ -1,0 +1,26 @@
+{
+  "kind": "Scoped UI fixtures: gate investigation and day-10 C2 council, representative owned evidence; not a story playthrough",
+  "checks": [
+    "PC and touch: view/marker/target selection preserve exact game state; only explicit inspect runs the real G1 discovery",
+    "Actual meeting dispatcher: listening -> evidence -> cancel -> listening; review -> evidence/records -> cancel -> review, story state preserved (records may mark an item read)",
+    "844x390 large text: touch presentation and cancellation, review/listen mode transition pass"
+  ],
+  "captures": [
+    "01-pc-investigate",
+    "02-pc-hotspots",
+    "03-pc-selected-object",
+    "04-pc-people",
+    "05-mobile-investigate",
+    "05b-mobile-room-controls",
+    "06-pc-meeting-agenda",
+    "07-pc-listening",
+    "08-pc-live-evidence",
+    "09-pc-review-statement",
+    "10-pc-review-evidence",
+    "11-pc-meeting-records",
+    "12-mobile-review",
+    "13-mobile-evidence",
+    "14-mobile-listening"
+  ],
+  "passed": true
+}

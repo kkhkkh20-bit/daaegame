@@ -270,56 +270,54 @@ screen r13_meeting_chrome(claim):
 screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
     $ completed=bool(sid and r13_debate_is_broken(claim,sid))
     $ live_controls=r13_meeting_live_active and not r13_meeting_interrupting
-    hbox:
-        xpos 80 ypos 646 spacing 12
-        textbutton ("다시 듣기" if completed else "되묻기"):
-            style "r13_action_button" xsize 188 ysize 64 text_size 24
-            action (Return(("listen" if completed else "press",sid)) if board else Function(r13_meeting_request_live_action,"press"))
-            sensitive ready and (board or (live_controls and r13_meeting_can_live_press()))
-        textbutton "보여주기":
-            style "r13_action_button" xsize 188 ysize 64 text_size 24
-            action (Return(("present",sid)) if board else Function(renpy.call_in_new_context,"r13_meeting_interrupt",claim,r13_meeting_live_target()))
-            sensitive ready and not completed and (board or r13_meeting_can_interrupt())
-    if board:
-        if r13_debate_ready(claim):
-            text "결론을 말할 수 있다" xpos 496 ypos 668 size r13_read_size(19,22) color "#f1dfba" outlines [(1,"#30251e",0,0)]
-        else:
-            textbutton "토론 듣기":
-                style "r13_action_button" xpos 496 ypos 646 xsize 224 ysize 64 text_size 23
-                action Return(("round",sid)) sensitive ready
-        textbutton "결론을 말한다":
-            style "r13_action_button" xpos 952 ypos 646 xsize 248 ysize 64 text_size 24
-            action Return(("conclude",)) sensitive ready and r13_debate_ready(claim)
-    else:
-        if live_controls:
-            $ live_ids=r13_meeting_live_ids(claim,r13_meeting_live_sid)
-            $ visible_ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
+    $ can_conclude=board and r13_debate_ready(claim)
+    textbutton ("회의 중단" if board else "더보기"):
+        area (24,660,180,48) style "r13_action_button" padding (10,6) text_size 22
+        action (Return(("leave",)) if board else Show("r13_more_tools")) sensitive ready
+    fixed:
+        area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56))
+        use r13_antique_button("기록","record",Show("r13_records"),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
+    textbutton ("결론 정리" if can_conclude else "토론 다시 듣기" if board else "발언 선택"):
+        area (220,638 if persistent.room13_large_text else 646,240,80 if persistent.room13_large_text else 64) style "r13_action_button" padding (12,8) text_size r13_read_size(22,25)
+        action (Return(("conclude",)) if can_conclude else Return(("round",sid)) if board else Function(r13_meeting_request_live_action,"review"))
+        sensitive ready and (board or live_controls)
+    textbutton ("다시 듣기" if completed else "되묻기"):
+        area (476,638 if persistent.room13_large_text else 646,210,80 if persistent.room13_large_text else 64) style "r13_action_button" padding (12,8) text_size r13_read_size(22,25)
+        action (Return(("listen" if completed else "press",sid)) if board else Function(r13_meeting_request_live_action,"press"))
+        sensitive ready and (board or (live_controls and r13_meeting_can_live_press()))
+    button:
+        area (702,638 if persistent.room13_large_text else 646,430,80 if persistent.room13_large_text else 64) padding (18,8)
+        background R13InkPanel(focused=True,alpha="ef",slim=True) hover_background R13InkPanel(focused=True,alpha="ff",slim=True)
+        insensitive_background R13InkPanel(disabled=True,alpha="b8",slim=True)
+        action (Return(("present",sid)) if board else Function(renpy.call_in_new_context,"r13_meeting_interrupt",claim,r13_meeting_live_target()))
+        sensitive ready and not completed and (board or r13_meeting_can_interrupt())
+        hbox:
+            align (.5,.5) spacing 10
+            add R13AntiqueIcon("present",size=28) yalign .5
+            text ("반박한 발언" if completed else "이 발언에 자료 보여주기") size r13_read_size(22,25) color ("#9a9385" if completed else "#f6dfac") font r13_ui_font() yalign .5
+    if not board and live_controls:
+        $ live_ids=r13_meeting_live_ids(claim,r13_meeting_live_sid)
+        $ visible_ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
+        frame:
+            area (942,18,314,66) padding (54,6) background R13InkPanel(alpha="e6",slim=True)
+            vbox:
+                align (.5,.5) spacing 2
+                text "발언 듣는 중" size 20 color "#f6dfac" font r13_ui_font() xalign .5
+                text ("%d / %d"%(visible_ids.index(r13_meeting_live_sid)+1,len(visible_ids))) size 17 color "#fff4df" font r13_ui_font() xalign .5
+        textbutton "‹":
+            area (948,28,48,44) style "r13_action_button" padding (4,0) text_size 30 alt "이전 발언"
+            action Function(r13_meeting_request_live_action,"previous") sensitive ready and len(live_ids)>1
+        textbutton "›":
+            area (1202,28,48,44) style "r13_action_button" padding (4,0) text_size 30 alt "다음 발언"
+            action Function(r13_meeting_request_live_action,"next") sensitive ready and len(live_ids)>1
+        if ready and len(live_ids)>1:
+            key "K_LEFT" action Function(r13_meeting_request_live_action,"previous")
+            key "K_RIGHT" action Function(r13_meeting_request_live_action,"next")
+        if r13_meeting_live_lap>=1:
             frame:
-                area (942,18,314,64) padding (12,8) background R13PaperFrame()
-                text ("발언 %d / %d · %s"%(visible_ids.index(r13_meeting_live_sid)+1,len(visible_ids),"새 발언" if r13_debate_statement(claim,r13_meeting_live_sid).get("hidden") and not r13_meeting_heard(claim,r13_meeting_live_sid) else "반복 듣기" if r13_meeting_live_lap else "토론 중")) align (.5,.5) size r13_read_size(20,23) color "#493b30"
-            hbox:
-                xpos 736 ypos 646 spacing 12
-                textbutton "‹":
-                    style "r13_action_button" xsize 72 ysize 64 text_size 32 alt "이전 발언"
-                    action Function(r13_meeting_request_live_action,"previous") sensitive ready and len(live_ids)>1
-                textbutton "›":
-                    style "r13_action_button" xsize 72 ysize 64 text_size 32 alt "다음 발언"
-                    action Function(r13_meeting_request_live_action,"next") sensitive ready and len(live_ids)>1
-            if ready and len(live_ids)>1:
-                key "K_LEFT" action Function(r13_meeting_request_live_action,"previous")
-                key "K_RIGHT" action Function(r13_meeting_request_live_action,"next")
-            textbutton "발언 고르기":
-                style "r13_action_button" xpos 496 ypos 646 xsize 224 ysize 64 text_size 23
-                action Function(r13_meeting_request_live_action,"review") sensitive ready
-            # 0.18.88: after a full lap, say what to do next (players kept clicking through the loop).
-            if r13_meeting_live_lap>=1:
-                frame:
-                    area (160,440,960,44) padding (14,7) background R13PaperPanel()
-                    text "이상한 말엔 「보여주기」, 하나씩 따지려면 「발언 고르기」" size r13_read_size(20,23) color "#493b30" xalign .5
-        textbutton "백로그":
-            style "r13_action_button" xpos 952 ypos 646 xsize 120 ysize 64 text_size 21 action Show("r13_backlog")
-        textbutton "더보기":
-            style "r13_action_button" xpos 1080 ypos 646 xsize 120 ysize 64 text_size 21 action Show("r13_more_tools")
+                area (280,448,720,40) padding (12,6) background R13InkPanel(alpha="d9",slim=True)
+                text "다시 확인할 말은 ‘발언 선택’에서 고를 수 있어요" size r13_read_size(19,22) color "#fff4df" xalign .5 font r13_ui_font()
+
 
 screen r13_meeting_rebuttal_hold(claim):
     zorder 35
