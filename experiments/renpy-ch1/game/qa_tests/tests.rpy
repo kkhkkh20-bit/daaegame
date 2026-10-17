@@ -11626,3 +11626,23 @@ testcase relations_tab:
     pause 1.0
     screenshot "relations_pick.png"
     $ r13_qa_note("relations ok")
+
+testcase time_flow:
+    # 0.18.91 사건 중심 시간: 목표 줄의 회의 카운트다운, ③은 자료가 다 모이면 6일 저녁 학교에서 미리 연다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=4,period=0,location="square",life_poc=True,evidence=["L03","L06"]),("entry_corrected","lodging","livelihood_open","lt_dawn"))
+    pause 1.0
+    # The QA seed marks finished episodes (R13_QA_EPISODES_SEEN); reopen ①.
+    $ r13_edit(flags=[f for f in room13["flags"] if f!="lt_done"])
+    assert eval ((r13_meeting_countdown() or "").startswith("광장 회의까지 "))
+    screenshot "countdown_ep1.png"
+    run Call("r13_qa_roam",dict(day=6,period=2,location="school",life_poc=True,evidence=["F04","F05","F06","F09","F11"]),("entry_corrected","lodging","livelihood_open","lt_done","wf_fire","wf_morning","wf_ruins","+offers"))
+    pause 1.0
+    $ r13_edit(flags=[f for f in room13["flags"] if f!="wf_done"])
+    assert eval ("미리 열 수 있다" in (r13_meeting_countdown() or ""))
+    run Call("r13_qa_event","r13_wf_events")
+    pause 1.0
+    assert eval (r13_debate_arguable("Q3") and "r13_wf_meeting" in room13.get("offers",{}))
+    $ r13_qa_note("time flow ok")
