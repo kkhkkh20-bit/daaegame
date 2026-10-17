@@ -36,6 +36,9 @@ class ExpressionActing(unittest.TestCase):
             person, emotion = r["character"], r["expression"]
             if person in REG["held"]:
                 continue
+            if person in ("neoul", "resident_teacher"):
+                self.assertEqual(FULLBODY[person]["role_connect"], "canonical48-rev47-aligned")
+                continue
             image = FULLBODY[person]["images"][emotion]
             self.assertEqual(image.get("source_sha256"), r["sha256"], (person, emotion))
             shown = rgba(GAME / image["file"])
@@ -50,6 +53,9 @@ class ExpressionActing(unittest.TestCase):
     def test_missing_keys_and_maps(self):
         for person, spec in REG["apply"].items():
             entry = FULLBODY[person]
+            if person in ("neoul", "resident_teacher"):
+                self.assertEqual(entry["role_connect"], "canonical48-rev47-aligned")
+                continue
             keys = {r["expression"] for r in ROWS if r["character"] == person}
             self.assertEqual(entry["acting_package"], "expression-acting-20261016")
             for e in EMOTIONS:

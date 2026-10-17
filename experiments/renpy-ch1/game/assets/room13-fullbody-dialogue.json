@@ -737,7 +737,9 @@
       490,
       746
      ],
-     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888"
+     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-doto.webp",
@@ -745,7 +747,9 @@
       490,
       746
      ],
-     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888"
+     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-doto.webp",
@@ -753,7 +757,9 @@
       490,
       746
      ],
-     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888"
+     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-doto.webp",
@@ -761,7 +767,9 @@
       490,
       746
      ],
-     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888"
+     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-doto.webp",
@@ -769,7 +777,9 @@
       490,
       746
      ],
-     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888"
+     "source_sha256": "0dc0ed1c2ece1750777448f36f1f3d81585468d72da9cff757a70b668b637888",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "child_deer-base"
@@ -1439,77 +1449,80 @@
    "acting_package": "expression-acting-20261016"
   },
   "neoul": {
+   "name_ko": "너울",
    "crop": [
-    3,
-    7,
-    509,
-    757
+    14,
+    4,
+    490,
+    732
    ],
    "figure": [
-    7,
-    11,
-    501,
-    749
+    18,
+    8,
+    482,
+    724
    ],
    "images": {
-    "angry": {
-     "file": "assets/room13-fullbody-neoul-angry-acting.webp",
+    "neutral": {
+     "file": "assets/room13-canonical-default-neoul.webp",
      "size": [
       512,
-      768
+      750
      ],
-     "source_sha256": "d037fba8740bcb4213fce9754aef859aa4bc9dfaba1803fe9a89e82a11907f2c",
-     "stage": "second-art-fixes"
-    },
-    "anxious": {
-     "file": "assets/room13-fullbody-neoul-anxious-acting.webp",
-     "size": [
-      512,
-      768
-     ],
-     "source_sha256": "22f658c6eef9f0b68463cc13ed68c627dc4ed21a1727ea8e4eb2860aecd7132d",
-     "stage": "second-art-fixes"
-    },
-    "flustered": {
-     "file": "assets/room13-fullbody-neoul-flustered-acting.webp",
-     "size": [
-      512,
-      768
-     ],
-     "source_sha256": "ad613ac7ecb790bcb1a171ce93109555ca6922feba61f930a3f34ba481208e3f",
-     "stage": "second-art-fixes"
+     "source_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9"
     },
     "joy": {
-     "file": "assets/room13-fullbody-neoul-joy-acting.webp",
+     "file": "assets/room13-canonical-default-neoul.webp",
      "size": [
       512,
-      768
+      750
      ],
-     "source_sha256": "1850280a3c6ec4a2d8f1d87758fec40b5755c55f8e9e3927d6ecfadbb536a135",
-     "stage": "second-art-fixes"
+     "source_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-canonical-default-neoul.webp",
+     "size": [
+      512,
+      750
+     ],
+     "source_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-canonical-default-neoul.webp",
+     "size": [
+      512,
+      750
+     ],
+     "source_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-canonical-default-neoul.webp",
+     "size": [
+      512,
+      750
+     ],
+     "source_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
-     "file": "assets/room13-fullbody-neoul-surprise-acting.webp",
+     "file": "assets/room13-canonical-default-neoul.webp",
      "size": [
       512,
-      768
+      750
      ],
-     "source_sha256": "047bc35237f4156180dbcacbb30b7492c228eadd848ddfc87aa0c8475fb528a4",
-     "stage": "second-art-fixes"
-    },
-    "neutral": {
-     "file": "assets/room13-epart-neoul-neutral.webp",
-     "size": [
-      512,
-      768
-     ],
-     "art": "ep-art-20261016",
-     "kept": "current"
+     "source_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
-   "name_ko": "너울",
-   "art": "ep-art-20261016",
-   "acting_package": "expression-acting-20261016"
+   "role_connect": "canonical48-rev47-aligned"
   },
   "resident_badook": {
    "name_ko": "바둑이",
@@ -1600,68 +1613,78 @@
   "resident_bori": {
    "name_ko": "보리",
    "crop": [
-    81,
-    16,
-    374,
-    745
+    44,
+    39,
+    544,
+    602
    ],
    "figure": [
-    85,
-    20,
-    366,
-    737
+    48,
+    43,
+    536,
+    594
    ],
    "images": {
     "neutral": {
-     "file": "assets/room13-redesign-resident_bori.webp",
+     "file": "assets/room13-canonical-default-resident_bori.webp",
      "size": [
-      512,
-      768
+      605,
+      650
      ],
-     "source_sha256": "5fa75cdb24b92e0572b5b6ad0de583aed7995abff7e5c3322929d6d9958d8b84"
+     "source_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7"
     },
     "joy": {
-     "file": "assets/room13-redesign-resident_bori.webp",
+     "file": "assets/room13-canonical-default-resident_bori.webp",
      "size": [
-      512,
-      768
+      605,
+      650
      ],
-     "source_sha256": "5fa75cdb24b92e0572b5b6ad0de583aed7995abff7e5c3322929d6d9958d8b84"
+     "source_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
-     "file": "assets/room13-redesign-resident_bori.webp",
+     "file": "assets/room13-canonical-default-resident_bori.webp",
      "size": [
-      512,
-      768
+      605,
+      650
      ],
-     "source_sha256": "5fa75cdb24b92e0572b5b6ad0de583aed7995abff7e5c3322929d6d9958d8b84"
+     "source_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
-     "file": "assets/room13-redesign-resident_bori.webp",
+     "file": "assets/room13-canonical-default-resident_bori.webp",
      "size": [
-      512,
-      768
+      605,
+      650
      ],
-     "source_sha256": "5fa75cdb24b92e0572b5b6ad0de583aed7995abff7e5c3322929d6d9958d8b84"
+     "source_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
-     "file": "assets/room13-redesign-resident_bori.webp",
+     "file": "assets/room13-canonical-default-resident_bori.webp",
      "size": [
-      512,
-      768
+      605,
+      650
      ],
-     "source_sha256": "5fa75cdb24b92e0572b5b6ad0de583aed7995abff7e5c3322929d6d9958d8b84"
+     "source_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
-     "file": "assets/room13-redesign-resident_bori.webp",
+     "file": "assets/room13-canonical-default-resident_bori.webp",
      "size": [
-      512,
-      768
+      605,
+      650
      ],
-     "source_sha256": "5fa75cdb24b92e0572b5b6ad0de583aed7995abff7e5c3322929d6d9958d8b84"
+     "source_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
-   "redesign": "five_town_bear"
+   "role_connect": "canonical48-rev47-aligned"
   },
   "resident_eunho": {
    "name_ko": "은호 사장",
@@ -1757,7 +1780,9 @@
       490,
       764
      ],
-     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede"
+     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_guseul.webp",
@@ -1765,7 +1790,9 @@
       490,
       764
      ],
-     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede"
+     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_guseul.webp",
@@ -1773,7 +1800,9 @@
       490,
       764
      ],
-     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede"
+     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_guseul.webp",
@@ -1781,7 +1810,9 @@
       490,
       764
      ],
-     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede"
+     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_guseul.webp",
@@ -1789,7 +1820,9 @@
       490,
       764
      ],
-     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede"
+     "source_sha256": "4224792cef655759a92603bbe128a83978eb22548b3d1f52cbb424fccd9d5ede",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "long_ears-base"
@@ -1823,7 +1856,9 @@
       503,
       762
      ],
-     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da"
+     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_kkwak.webp",
@@ -1831,7 +1866,9 @@
       503,
       762
      ],
-     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da"
+     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_kkwak.webp",
@@ -1839,7 +1876,9 @@
       503,
       762
      ],
-     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da"
+     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_kkwak.webp",
@@ -1847,7 +1886,9 @@
       503,
       762
      ],
-     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da"
+     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_kkwak.webp",
@@ -1855,7 +1896,9 @@
       503,
       762
      ],
-     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da"
+     "source_sha256": "c34198e1cd4cd76d12dc5f5a18d68483cbf4696a00e826e3b0a8db3745bc55da",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "pink_bird-base"
@@ -2105,7 +2148,9 @@
       519,
       758
      ],
-     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e"
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-redesign-resident_librarian.webp",
@@ -2113,7 +2158,9 @@
       519,
       758
      ],
-     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e"
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-redesign-resident_librarian.webp",
@@ -2121,7 +2168,9 @@
       519,
       758
      ],
-     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e"
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-redesign-resident_librarian.webp",
@@ -2129,7 +2178,9 @@
       519,
       758
      ],
-     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e"
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-redesign-resident_librarian.webp",
@@ -2137,7 +2188,9 @@
       519,
       758
      ],
-     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e"
+     "source_sha256": "9fdf0f376a5afee085ae180dd35a44e831599540662581689a7a05465e07883e",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "redesign": "candidate_snow_tea"
@@ -2171,7 +2224,9 @@
       466,
       762
      ],
-     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b"
+     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_madam.webp",
@@ -2179,7 +2234,9 @@
       466,
       762
      ],
-     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b"
+     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_madam.webp",
@@ -2187,7 +2244,9 @@
       466,
       762
      ],
-     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b"
+     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_madam.webp",
@@ -2195,7 +2254,9 @@
       466,
       762
      ],
-     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b"
+     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_madam.webp",
@@ -2203,7 +2264,9 @@
       466,
       762
      ],
-     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b"
+     "source_sha256": "ac7e17c8515b80204e4f0d3697f3bfbb731b644482266fbe3125b25cde188a7b",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "spotted_dog-originalized-pixel-v2"
@@ -2211,68 +2274,78 @@
   "resident_momo": {
    "name_ko": "모모 관장",
    "crop": [
-    114,
-    10,
-    314,
-    749
+    85,
+    0,
+    378,
+    768
    ],
    "figure": [
-    118,
-    14,
-    306,
-    741
+    89,
+    1,
+    370,
+    765
    ],
    "images": {
     "neutral": {
-     "file": "assets/room13-redesign-resident_momo.webp",
+     "file": "assets/room13-canonical-default-resident_momo.webp",
      "size": [
-      512,
+      502,
       768
      ],
-     "source_sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747"
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82"
     },
     "joy": {
-     "file": "assets/room13-redesign-resident_momo.webp",
+     "file": "assets/room13-canonical-default-resident_momo.webp",
      "size": [
-      512,
+      502,
       768
      ],
-     "source_sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747"
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
-     "file": "assets/room13-redesign-resident_momo.webp",
+     "file": "assets/room13-canonical-default-resident_momo.webp",
      "size": [
-      512,
+      502,
       768
      ],
-     "source_sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747"
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
-     "file": "assets/room13-redesign-resident_momo.webp",
+     "file": "assets/room13-canonical-default-resident_momo.webp",
      "size": [
-      512,
+      502,
       768
      ],
-     "source_sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747"
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
-     "file": "assets/room13-redesign-resident_momo.webp",
+     "file": "assets/room13-canonical-default-resident_momo.webp",
      "size": [
-      512,
+      502,
       768
      ],
-     "source_sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747"
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
-     "file": "assets/room13-redesign-resident_momo.webp",
+     "file": "assets/room13-canonical-default-resident_momo.webp",
      "size": [
-      512,
+      502,
       768
      ],
-     "source_sha256": "859e82c32d8df427341de296c1e55b8456fb48c8de24f69c81ae329ee7db1747"
+     "source_sha256": "5c2dc1e4f84048c52e993f6f3a2b23afbb3c2fbde3f223f419f94b12bfae9b82",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
-   "redesign": "candidate_goat_shrine"
+   "role_connect": "canonical48-rev47-aligned"
   },
   "resident_mungchi": {
    "name_ko": "뭉치",
@@ -2303,7 +2376,9 @@
       512,
       749
      ],
-     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f"
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_mungchi.webp",
@@ -2311,7 +2386,9 @@
       512,
       749
      ],
-     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f"
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_mungchi.webp",
@@ -2319,7 +2396,9 @@
       512,
       749
      ],
-     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f"
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_mungchi.webp",
@@ -2327,7 +2406,9 @@
       512,
       749
      ],
-     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f"
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_mungchi.webp",
@@ -2335,7 +2416,9 @@
       512,
       749
      ],
-     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f"
+     "source_sha256": "265aeb5a56cf7d5dfa51178a360b01d0f91b2b3fc50988dcd19736ca908c376f",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "moose-base"
@@ -2499,7 +2582,9 @@
       478,
       758
      ],
-     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b"
+     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_nubi.webp",
@@ -2507,7 +2592,9 @@
       478,
       758
      ],
-     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b"
+     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_nubi.webp",
@@ -2515,7 +2602,9 @@
       478,
       758
      ],
-     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b"
+     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_nubi.webp",
@@ -2523,7 +2612,9 @@
       478,
       758
      ],
-     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b"
+     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_nubi.webp",
@@ -2531,7 +2622,9 @@
       478,
       758
      ],
-     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b"
+     "source_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "curly-base"
@@ -2666,7 +2759,9 @@
       497,
       768
      ],
-     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5"
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_piko.webp",
@@ -2674,7 +2769,9 @@
       497,
       768
      ],
-     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5"
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_piko.webp",
@@ -2682,7 +2779,9 @@
       497,
       768
      ],
-     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5"
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_piko.webp",
@@ -2690,7 +2789,9 @@
       497,
       768
      ],
-     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5"
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_piko.webp",
@@ -2698,7 +2799,9 @@
       497,
       768
      ],
-     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5"
+     "source_sha256": "39dc86f6cc937053c8badf9bd7a80f24727b6cc713b0e9d91848caa370d8ded5",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "copper_dog-originalized-pixel-v2"
@@ -2863,68 +2966,78 @@
   "resident_seol": {
    "name_ko": "설이",
    "crop": [
-    75,
-    8,
-    393,
-    757
+    40,
+    0,
+    423,
+    768
    ],
    "figure": [
-    79,
-    12,
-    385,
-    749
+    44,
+    4,
+    415,
+    760
    ],
    "images": {
     "neutral": {
-     "file": "assets/room13-redesign-resident_seol.webp",
+     "file": "assets/room13-canonical-default-resident_seol.webp",
      "size": [
-      512,
+      488,
       768
      ],
-     "source_sha256": "8f3504cd7b177551f606e9bfa48df49cd3b5a0453a6eb9682384dc4d72ff1dbb"
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0"
     },
     "joy": {
-     "file": "assets/room13-redesign-resident_seol.webp",
+     "file": "assets/room13-canonical-default-resident_seol.webp",
      "size": [
-      512,
+      488,
       768
      ],
-     "source_sha256": "8f3504cd7b177551f606e9bfa48df49cd3b5a0453a6eb9682384dc4d72ff1dbb"
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
-     "file": "assets/room13-redesign-resident_seol.webp",
+     "file": "assets/room13-canonical-default-resident_seol.webp",
      "size": [
-      512,
+      488,
       768
      ],
-     "source_sha256": "8f3504cd7b177551f606e9bfa48df49cd3b5a0453a6eb9682384dc4d72ff1dbb"
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
-     "file": "assets/room13-redesign-resident_seol.webp",
+     "file": "assets/room13-canonical-default-resident_seol.webp",
      "size": [
-      512,
+      488,
       768
      ],
-     "source_sha256": "8f3504cd7b177551f606e9bfa48df49cd3b5a0453a6eb9682384dc4d72ff1dbb"
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
-     "file": "assets/room13-redesign-resident_seol.webp",
+     "file": "assets/room13-canonical-default-resident_seol.webp",
      "size": [
-      512,
+      488,
       768
      ],
-     "source_sha256": "8f3504cd7b177551f606e9bfa48df49cd3b5a0453a6eb9682384dc4d72ff1dbb"
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
-     "file": "assets/room13-redesign-resident_seol.webp",
+     "file": "assets/room13-canonical-default-resident_seol.webp",
      "size": [
-      512,
+      488,
       768
      ],
-     "source_sha256": "8f3504cd7b177551f606e9bfa48df49cd3b5a0453a6eb9682384dc4d72ff1dbb"
+     "source_sha256": "c2f81e3add32b779f8fa6063aa55c1d31f6e566d9944967506c614c67e83efa0",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
-   "redesign": "five_town_owl_white_v2"
+   "role_connect": "canonical48-rev47-aligned"
   },
   "resident_seori": {
    "crop": [
@@ -3067,7 +3180,9 @@
       519,
       758
      ],
-     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3"
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-redesign-resident_siluk.webp",
@@ -3075,7 +3190,9 @@
       519,
       758
      ],
-     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3"
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-redesign-resident_siluk.webp",
@@ -3083,7 +3200,9 @@
       519,
       758
      ],
-     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3"
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-redesign-resident_siluk.webp",
@@ -3091,7 +3210,9 @@
       519,
       758
      ],
-     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3"
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-redesign-resident_siluk.webp",
@@ -3099,7 +3220,9 @@
       519,
       758
      ],
-     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3"
+     "source_sha256": "ba1215e02555a690f88d18641f29cf34d73ad3d257c00ef4d945f831abed13f3",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "redesign": "five_town_hyena_v2"
@@ -3235,191 +3358,80 @@
    }
   },
   "resident_teacher": {
+   "name_ko": "사자 선생님",
    "crop": [
     0,
     0,
-    512,
+    482,
     768
    ],
    "figure": [
     1,
-    -13,
-    515,
-    780
+    0,
+    477,
+    766
    ],
    "images": {
-    "angry": {
-     "file": "assets/room13-fullbody-resident_teacher-angry-acting.webp",
+    "neutral": {
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
      "size": [
-      512,
+      492,
       768
      ],
-     "source_sha256": "a6d4117a5b9cc517fd44988004fa6c246b8ec9a75997274f8c02d86b4a010053",
-     "stage": "second-art-fixes",
-     "crop": [
-      34,
-      46,
-      448,
-      696
-     ],
-     "map": [
-      1.095,
-      -24,
-      -44
-     ]
-    },
-    "anxious": {
-     "file": "assets/room13-fullbody-resident_teacher-anxious-acting.webp",
-     "size": [
-      512,
-      768
-     ],
-     "source_sha256": "7a1fbe409a9ffa6a61c423023eab239e24538128e763e95546cdfbc7d39babe2",
-     "stage": "second-art-fixes",
-     "crop": [
-      36,
-      26,
-      434,
-      716
-     ],
-     "map": [
-      1.095,
-      -24,
-      -44
-     ]
-    },
-    "flustered": {
-     "file": "assets/room13-fullbody-resident_teacher-flustered-acting.webp",
-     "size": [
-      512,
-      768
-     ],
-     "source_sha256": "753911252941d2c6ba1d96c38569c13e4abc66bc8959ed1c8036e7675e542b19",
-     "stage": "second-art-fixes",
-     "crop": [
-      34,
-      40,
-      442,
-      702
-     ],
-     "map": [
-      1.095,
-      -24,
-      -44
-     ]
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb"
     },
     "joy": {
-     "file": "assets/room13-fullbody-resident_teacher-joy-acting.webp",
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
      "size": [
-      512,
+      492,
       768
      ],
-     "source_sha256": "a81a2dd689d6b4256d6252875f490d3a7ec65d44c3ce34091e67b0ee6460b499",
-     "stage": "second-art-fixes",
-     "crop": [
-      20,
-      28,
-      476,
-      714
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "flustered": {
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
+     "size": [
+      492,
+      768
      ],
-     "map": [
-      1.095,
-      -24,
-      -44
-     ]
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "angry": {
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb",
+     "fallback": "neutral",
+     "production_status": "pending"
+    },
+    "anxious": {
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
+     "size": [
+      492,
+      768
+     ],
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
-     "file": "assets/room13-fullbody-resident_teacher-surprise-acting.webp",
+     "file": "assets/room13-canonical-default-resident_teacher.webp",
      "size": [
-      512,
+      492,
       768
      ],
-     "source_sha256": "42e536bd83461d42d6f239ac798d1efd5c2355fab5524d3167a7f5aaa8cad12a",
-     "stage": "second-art-fixes",
-     "crop": [
-      40,
-      30,
-      450,
-      712
-     ],
-     "map": [
-      1.095,
-      -24,
-      -44
-     ]
-    },
-    "neutral": {
-     "file": "assets/room13-epart-resident_teacher-neutral.webp",
-     "size": [
-      512,
-      768
-     ],
-     "art": "ep-art-20261016",
-     "kept": "current"
+     "source_sha256": "bdb8367f2d3f28192a3df548ddc992b0ee0c9ca2b9e84ea50c1f7917ee4338eb",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
-   "name_ko": "사자 선생님",
-   "art": "ep-art-20261016",
-   "poses": {
-    "wipe_board": {
-     "file": "assets/room13-fullbody-resident_teacher-pose-wipe_board.webp",
-     "size": [
-      512,
-      768
-     ],
-     "crop": [
-      13,
-      0,
-      499,
-      762
-     ],
-     "figure": [
-      17,
-      0,
-      495,
-      758
-     ]
-    },
-    "write_attendance": {
-     "file": "assets/room13-fullbody-resident_teacher-pose-write_attendance.webp",
-     "size": [
-      512,
-      768
-     ],
-     "crop": [
-      18,
-      0,
-      475,
-      768
-     ],
-     "figure": [
-      22,
-      0,
-      467,
-      764
-     ]
-    },
-    "collapse_attendance": {
-     "file": "assets/room13-fullbody-resident_teacher-pose-collapse_attendance.webp",
-     "size": [
-      512,
-      768
-     ],
-     "crop": [
-      3,
-      58,
-      509,
-      669
-     ],
-     "figure": [
-      7,
-      62,
-      501,
-      661
-     ]
-    }
-   },
-   "acting_package": "expression-acting-20261016"
+   "role_connect": "canonical48-rev47-aligned"
   },
   "resident_tok": {
    "crop": [
@@ -3745,7 +3757,9 @@
       519,
       758
      ],
-     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18"
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-redesign-resident_yeoni.webp",
@@ -3753,7 +3767,9 @@
       519,
       758
      ],
-     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18"
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-redesign-resident_yeoni.webp",
@@ -3761,7 +3777,9 @@
       519,
       758
      ],
-     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18"
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-redesign-resident_yeoni.webp",
@@ -3769,7 +3787,9 @@
       519,
       758
      ],
-     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18"
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-redesign-resident_yeoni.webp",
@@ -3777,7 +3797,9 @@
       519,
       758
      ],
-     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18"
+     "source_sha256": "ed05944875c37ad302ca9ed92e9a0930c2b240ae32628f0558e4d94d8a0cbb18",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "redesign": "candidate_fox_town"
@@ -4911,68 +4933,78 @@
   "resident_tosil": {
    "name_ko": "토실",
    "crop": [
-    72,
+    67,
     0,
-    378,
-    766
+    384,
+    755
    ],
    "figure": [
-    76,
+    71,
     1,
-    370,
-    761
+    376,
+    750
    ],
    "images": {
     "neutral": {
-     "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
      "size": [
-      512,
-      768
+      470,
+      756
      ],
-     "art": "ep-art-20261016"
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08"
     },
     "joy": {
-     "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
      "size": [
-      512,
-      768
+      470,
+      756
      ],
-     "art": "ep-art-20261016"
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
-     "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
      "size": [
-      512,
-      768
+      470,
+      756
      ],
-     "art": "ep-art-20261016"
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
-     "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
      "size": [
-      512,
-      768
+      470,
+      756
      ],
-     "art": "ep-art-20261016"
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
-     "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
      "size": [
-      512,
-      768
+      470,
+      756
      ],
-     "art": "ep-art-20261016"
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
-     "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+     "file": "assets/room13-canonical-default-resident_tosil.webp",
      "size": [
-      512,
-      768
+      470,
+      756
      ],
-     "art": "ep-art-20261016"
+     "source_sha256": "4b7ac82763f0458e9bd5f4522961b6df8f03b5d018e122cd147e10162739af08",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
-   "art": "ep-art-20261016",
+   "role_connect": "canonical48-rev47-aligned",
    "poses": {
     "hold_storybook": {
      "file": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp",
@@ -5050,7 +5082,8 @@
      ],
      "cell": 2,
      "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_solbang-neutral.webp",
@@ -5071,7 +5104,8 @@
      ],
      "cell": 2,
      "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_solbang-neutral.webp",
@@ -5092,7 +5126,8 @@
      ],
      "cell": 2,
      "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_solbang-neutral.webp",
@@ -5113,7 +5148,8 @@
      ],
      "cell": 2,
      "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_solbang-neutral.webp",
@@ -5134,7 +5170,8 @@
      ],
      "cell": 2,
      "source_sha256": "347263be35c3b195bafce7897fb2e2b36b46537b3268339a61f6c068437d8945",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "pixel": {
@@ -5197,7 +5234,8 @@
      ],
      "cell": 2,
      "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_guldol-neutral.webp",
@@ -5218,7 +5256,8 @@
      ],
      "cell": 2,
      "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_guldol-neutral.webp",
@@ -5239,7 +5278,8 @@
      ],
      "cell": 2,
      "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_guldol-neutral.webp",
@@ -5260,7 +5300,8 @@
      ],
      "cell": 2,
      "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_guldol-neutral.webp",
@@ -5281,7 +5322,8 @@
      ],
      "cell": 2,
      "source_sha256": "77ac4c31f3468d23fe717549f43b7f9a87c201b59124bd194f473a2e79c07411",
-     "fallback": "neutral"
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "pixel": {
@@ -5319,7 +5361,9 @@
       512,
       761
      ],
-     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a"
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_mulgyeol.webp",
@@ -5327,7 +5371,9 @@
       512,
       761
      ],
-     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a"
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_mulgyeol.webp",
@@ -5335,7 +5381,9 @@
       512,
       761
      ],
-     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a"
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_mulgyeol.webp",
@@ -5343,7 +5391,9 @@
       512,
       761
      ],
-     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a"
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_mulgyeol.webp",
@@ -5351,7 +5401,9 @@
       512,
       761
      ],
-     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a"
+     "source_sha256": "ef4a893cf7258d562eea073783affe6148fa629fe69027f426f62c8ac9f1208a",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "lizard-base"
@@ -5385,7 +5437,9 @@
       505,
       762
      ],
-     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a"
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_dalgeurak.webp",
@@ -5393,7 +5447,9 @@
       505,
       762
      ],
-     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a"
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_dalgeurak.webp",
@@ -5401,7 +5457,9 @@
       505,
       762
      ],
-     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a"
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_dalgeurak.webp",
@@ -5409,7 +5467,9 @@
       505,
       762
      ],
-     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a"
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_dalgeurak.webp",
@@ -5417,7 +5477,9 @@
       505,
       762
      ],
-     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a"
+     "source_sha256": "db1213be16a3f89e3998f73739e21cb25b1e6102fa691bfed161006e548dd75a",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "white_eagle-roguish_chuckle"
@@ -5451,7 +5513,9 @@
       492,
       768
      ],
-     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54"
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_jongjong.webp",
@@ -5459,7 +5523,9 @@
       492,
       768
      ],
-     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54"
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_jongjong.webp",
@@ -5467,7 +5533,9 @@
       492,
       768
      ],
-     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54"
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_jongjong.webp",
@@ -5475,7 +5543,9 @@
       492,
       768
      ],
-     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54"
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_jongjong.webp",
@@ -5483,7 +5553,9 @@
       492,
       768
      ],
-     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54"
+     "source_sha256": "d93f92663bcbc6c470031f30365f78101503a375ae717d83a97879a150ffbf54",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "white_duck-base"
@@ -5517,7 +5589,9 @@
       508,
       764
      ],
-     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2"
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_hyeoni.webp",
@@ -5525,7 +5599,9 @@
       508,
       764
      ],
-     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2"
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_hyeoni.webp",
@@ -5533,7 +5609,9 @@
       508,
       764
      ],
-     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2"
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_hyeoni.webp",
@@ -5541,7 +5619,9 @@
       508,
       764
      ],
-     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2"
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_hyeoni.webp",
@@ -5549,7 +5629,9 @@
       508,
       764
      ],
-     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2"
+     "source_sha256": "2460a246a4a111732d7ea8c2f41ee09eba69cc4d3545ed955d78e278dce00ee2",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "fennec-large-eyes-v3"
@@ -5583,7 +5665,9 @@
       490,
       718
      ],
-     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9"
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "flustered": {
      "file": "assets/room13-role-resident_kalbaram.webp",
@@ -5591,7 +5675,9 @@
       490,
       718
      ],
-     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9"
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "angry": {
      "file": "assets/room13-role-resident_kalbaram.webp",
@@ -5599,7 +5685,9 @@
       490,
       718
      ],
-     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9"
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "anxious": {
      "file": "assets/room13-role-resident_kalbaram.webp",
@@ -5607,7 +5695,9 @@
       490,
       718
      ],
-     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9"
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
     },
     "surprise": {
      "file": "assets/room13-role-resident_kalbaram.webp",
@@ -5615,7 +5705,9 @@
       490,
       718
      ],
-     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9"
+     "source_sha256": "a0380f9a39154f2d4e8c52bddc207c553dc42e0990d57bfa8d438772d85684d9",
+     "fallback": "neutral",
+     "production_status": "pending"
     }
    },
    "role_connect": "kalbaram-shortmuzzle-pixel-v2"

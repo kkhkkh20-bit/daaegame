@@ -61,6 +61,9 @@ init 58 python:
         key=r13_fullbody_key(pose)
         if key not in R13_FULLBODY_EMOTIONS and key in entry["images"]:emotion=key
         image=entry["images"].get(emotion) or entry["images"].get("neutral")
+        if not image or image["file"] not in R13_FULLBODY_FILES:
+            image=entry["images"].get("neutral")
+            emotion="neutral"
         if not image or image["file"] not in R13_FULLBODY_FILES:return None
         return dict(file=image["file"],crop=entry["crop"],figure=entry["figure"],emotion=emotion,image=image)
 
@@ -157,6 +160,7 @@ init 58 python:
         return None
 
     def r13_fullbody_refresh_after_load():
+        R13_FULLBODY_ART_CACHE.clear()
         # A save keeps the displayable it was drawn with (older saves: a bust).
         # Redraw only the current conversation partner with the same speaker,
         # expression and pose; the line, choice and scene stay as saved.

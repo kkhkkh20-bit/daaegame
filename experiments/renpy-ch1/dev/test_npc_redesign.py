@@ -61,6 +61,9 @@ class NpcRedesign(unittest.TestCase):
     def test_every_art_entry_uses_the_new_file(self):
         for d in REG["designs"]:
             npc, new = d["npc"], "assets/room13-redesign-%s.webp" % d["npc"]
+            if npc in ("resident_momo", "resident_bori", "resident_seol"):
+                new = "assets/room13-canonical-default-%s.webp" % npc
+                self.assertEqual(FULLBODY[npc]["role_connect"], "canonical48-rev47-aligned")
             # 0.18.63: map-action poses drawn for the new design (dev/apply_map_actions.py) are
             # their own files; everything else uses the redesign picture.
             # 0.18.89: episode pose pictures (dev/apply_ep_art.py) are their own files too.

@@ -1064,26 +1064,29 @@
   },
   "guard": {
     "neutral": {
-      "file": "assets/room13-pixel-acting-guard-extra.webp",
+      "file": "assets/room13-role-guard-neutral.webp",
       "crop": [
-        1074,
-        101,
-        454,
-        797
+        10,
+        0,
+        248,
+        444
       ],
       "nearest": true,
+      "foot": [
+        114,
+        440
+      ],
       "facing": "front",
       "contact": "standing",
-      "foot": [
-        227,
-        796
-      ],
       "head": [
-        94,
-        0,
-        279,
-        250
-      ]
+        28,
+        4,
+        150,
+        122
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "dolmok-mouth-v1-approved"
     },
     "thinking": {
       "file": "assets/room13-pixel-acting-guard-extra.webp",
@@ -1270,44 +1273,40 @@
       ]
     },
     "avatar_neutral": {
-      "file": "assets/room13-pixel-acting-guard-extra.webp",
+      "file": "assets/room13-role-guard-neutral.webp",
       "crop": [
-        1168,
-        101,
-        279,
-        250
-      ],
-      "nearest": true
+        35,
+        0,
+        157,
+        157
+      ]
     },
     "avatar_thinking": {
-      "file": "assets/room13-pixel-acting-guard-extra.webp",
+      "file": "assets/room13-role-guard-neutral.webp",
       "crop": [
-        104,
-        109,
-        286,
-        214
-      ],
-      "nearest": true
+        35,
+        0,
+        157,
+        157
+      ]
     },
     "avatar_distressed": {
-      "file": "assets/room13-pixel-acting-guard-extra.webp",
+      "file": "assets/room13-role-guard-neutral.webp",
       "crop": [
-        648,
-        130,
-        269,
-        246
-      ],
-      "nearest": true
+        35,
+        0,
+        157,
+        157
+      ]
     },
     "avatar_expressive": {
-      "file": "assets/room13-pixel-acting-guard.webp",
+      "file": "assets/room13-role-guard-neutral.webp",
       "crop": [
-        143,
-        518,
-        219,
-        211
-      ],
-      "nearest": true
+        35,
+        0,
+        157,
+        157
+      ]
     },
     "avatar_action_1": {
       "file": "assets/room13-pixel-acting-guard.webp",
@@ -2434,139 +2433,139 @@
   },
   "neoul": {
     "neutral": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
+      "file": "assets/room13-canonical-default-neoul.webp",
       "crop": [
-        15,
-        8,
-        494,
-        745
+        14,
+        4,
+        490,
+        732
       ],
       "nearest": true,
       "foot": [
-        291,
-        741
+        293,
+        728
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        75,
+        70,
         4,
-        331,
-        206
+        344,
+        202
       ],
       "reviewed": true,
       "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "thinking": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
-      "crop": [
-        15,
-        8,
-        494,
-        745
-      ],
-      "nearest": true,
-      "foot": [
-        291,
-        741
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        75,
-        4,
-        331,
-        206
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "distressed": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
-      "crop": [
-        15,
-        8,
-        494,
-        745
-      ],
-      "nearest": true,
-      "foot": [
-        291,
-        741
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        75,
-        4,
-        331,
-        206
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "expressive": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
-      "crop": [
-        15,
-        8,
-        494,
-        745
-      ],
-      "nearest": true,
-      "foot": [
-        291,
-        741
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        75,
-        4,
-        331,
-        206
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_neutral": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
+      "file": "assets/room13-canonical-default-neoul.webp",
       "crop": [
-        82,
+        76,
         0,
-        347,
-        347
+        361,
+        361
       ]
+    },
+    "thinking": {
+      "file": "assets/room13-canonical-default-neoul.webp",
+      "crop": [
+        14,
+        4,
+        490,
+        732
+      ],
+      "nearest": true,
+      "foot": [
+        293,
+        728
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        70,
+        4,
+        344,
+        202
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_thinking": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
+      "file": "assets/room13-canonical-default-neoul.webp",
       "crop": [
-        82,
+        76,
         0,
-        347,
-        347
+        361,
+        361
       ]
+    },
+    "distressed": {
+      "file": "assets/room13-canonical-default-neoul.webp",
+      "crop": [
+        14,
+        4,
+        490,
+        732
+      ],
+      "nearest": true,
+      "foot": [
+        293,
+        728
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        70,
+        4,
+        344,
+        202
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_distressed": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
+      "file": "assets/room13-canonical-default-neoul.webp",
       "crop": [
-        82,
+        76,
         0,
-        347,
-        347
+        361,
+        361
       ]
     },
-    "avatar_expressive": {
-      "file": "assets/room13-epart-neoul-neutral.webp",
+    "expressive": {
+      "file": "assets/room13-canonical-default-neoul.webp",
       "crop": [
-        82,
+        14,
+        4,
+        490,
+        732
+      ],
+      "nearest": true,
+      "foot": [
+        293,
+        728
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        70,
+        4,
+        344,
+        202
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-canonical-default-neoul.webp",
+      "crop": [
+        76,
         0,
-        347,
-        347
+        361,
+        361
       ]
     }
   },
@@ -3518,139 +3517,139 @@
   },
   "resident_bori": {
     "neutral": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        81,
-        16,
-        374,
-        745
+        44,
+        39,
+        544,
+        602
       ],
       "nearest": true,
       "foot": [
-        184,
-        741
+        304,
+        598
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        119,
+        96,
         4,
-        200,
-        150
+        329,
+        166
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_bear"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_neutral": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        210,
-        20,
-        180,
-        180
+        132,
+        33,
+        345,
+        345
       ]
     },
     "thinking": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        81,
-        16,
-        374,
-        745
+        44,
+        39,
+        544,
+        602
       ],
       "nearest": true,
       "foot": [
-        184,
-        741
+        304,
+        598
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        119,
+        96,
         4,
-        200,
-        150
+        329,
+        166
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_bear"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_thinking": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        210,
-        20,
-        180,
-        180
+        132,
+        33,
+        345,
+        345
       ]
     },
     "distressed": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        81,
-        16,
-        374,
-        745
+        44,
+        39,
+        544,
+        602
       ],
       "nearest": true,
       "foot": [
-        184,
-        741
+        304,
+        598
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        119,
+        96,
         4,
-        200,
-        150
+        329,
+        166
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_bear"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_distressed": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        210,
-        20,
-        180,
-        180
+        132,
+        33,
+        345,
+        345
       ]
     },
     "expressive": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        81,
-        16,
-        374,
-        745
+        44,
+        39,
+        544,
+        602
       ],
       "nearest": true,
       "foot": [
-        184,
-        741
+        304,
+        598
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        119,
+        96,
         4,
-        200,
-        150
+        329,
+        166
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_bear"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_expressive": {
-      "file": "assets/room13-redesign-resident_bori.webp",
+      "file": "assets/room13-canonical-default-resident_bori.webp",
       "crop": [
-        210,
-        20,
-        180,
-        180
+        132,
+        33,
+        345,
+        345
       ]
     },
     "living_firewood": {
@@ -4518,215 +4517,140 @@
   },
   "resident_teacher": {
     "neutral": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
       "crop": [
-        11,
         0,
-        491,
+        0,
+        482,
         768
       ],
       "nearest": true,
       "foot": [
-        289,
-        764
+        286,
+        766
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        54,
+        71,
         0,
-        363,
-        229
+        401,
+        214
       ],
       "reviewed": true,
       "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "thinking": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
-      "crop": [
-        11,
-        0,
-        491,
-        768
-      ],
-      "nearest": true,
-      "foot": [
-        289,
-        764
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        54,
-        0,
-        363,
-        229
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "distressed": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
-      "crop": [
-        11,
-        0,
-        491,
-        768
-      ],
-      "nearest": true,
-      "foot": [
-        289,
-        764
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        54,
-        0,
-        363,
-        229
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "expressive": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
-      "crop": [
-        11,
-        0,
-        491,
-        768
-      ],
-      "nearest": true,
-      "foot": [
-        289,
-        764
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        54,
-        0,
-        363,
-        229
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_neutral": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
       "crop": [
-        57,
+        61,
         0,
-        379,
-        379
+        421,
+        421
       ]
     },
-    "avatar_thinking": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
+    "thinking": {
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
       "crop": [
-        57,
         0,
-        379,
-        379
-      ]
-    },
-    "avatar_distressed": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
-      "crop": [
-        57,
         0,
-        379,
-        379
-      ]
-    },
-    "avatar_expressive": {
-      "file": "assets/room13-epart-resident_teacher-neutral.webp",
-      "crop": [
-        57,
-        0,
-        379,
-        379
-      ]
-    },
-    "wipe_board": {
-      "file": "assets/room13-fullbody-resident_teacher-pose-wipe_board.webp",
-      "crop": [
-        13,
-        0,
-        499,
-        762
-      ],
-      "nearest": true,
-      "foot": [
-        284,
-        758
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        59,
-        0,
-        440,
-        227
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "write_attendance": {
-      "file": "assets/room13-fullbody-resident_teacher-pose-write_attendance.webp",
-      "crop": [
-        18,
-        0,
-        475,
+        482,
         768
       ],
       "nearest": true,
       "foot": [
-        278,
-        764
+        286,
+        766
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        66,
+        71,
         0,
-        351,
-        229
+        401,
+        214
       ],
       "reviewed": true,
       "posture": "standing",
-      "art": "ep-art-20261016"
+      "role_connect": "canonical48-rev47-aligned"
     },
-    "collapse_attendance": {
-      "file": "assets/room13-fullbody-resident_teacher-pose-collapse_attendance.webp",
+    "avatar_thinking": {
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
       "crop": [
-        3,
-        58,
-        509,
-        669
+        61,
+        0,
+        421,
+        421
+      ]
+    },
+    "distressed": {
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
+      "crop": [
+        0,
+        0,
+        482,
+        768
       ],
       "nearest": true,
       "foot": [
-        203,
-        665
+        286,
+        766
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        95,
-        4,
-        381,
-        198
+        71,
+        0,
+        401,
+        214
       ],
       "reviewed": true,
       "posture": "standing",
-      "art": "ep-art-20261016"
+      "role_connect": "canonical48-rev47-aligned"
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
+      "crop": [
+        61,
+        0,
+        421,
+        421
+      ]
+    },
+    "expressive": {
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
+      "crop": [
+        0,
+        0,
+        482,
+        768
+      ],
+      "nearest": true,
+      "foot": [
+        286,
+        766
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        71,
+        0,
+        401,
+        214
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-canonical-default-resident_teacher.webp",
+      "crop": [
+        61,
+        0,
+        421,
+        421
+      ]
     }
   },
   "resident_nero": {
@@ -4908,139 +4832,139 @@
   },
   "resident_seol": {
     "neutral": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        75,
-        8,
-        393,
-        757
+        40,
+        0,
+        423,
+        768
       ],
       "nearest": true,
       "foot": [
-        192,
-        753
+        211,
+        764
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        90,
+        72,
         4,
-        175,
-        146
+        204,
+        212
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_owl_white_v2"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_neutral": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        165,
-        15,
-        170,
-        170
+        103,
+        0,
+        222,
+        222
       ]
     },
     "thinking": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        75,
-        8,
-        393,
-        757
+        40,
+        0,
+        423,
+        768
       ],
       "nearest": true,
       "foot": [
-        192,
-        753
+        211,
+        764
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        90,
+        72,
         4,
-        175,
-        146
+        204,
+        212
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_owl_white_v2"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_thinking": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        165,
-        15,
-        170,
-        170
+        103,
+        0,
+        222,
+        222
       ]
     },
     "distressed": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        75,
-        8,
-        393,
-        757
+        40,
+        0,
+        423,
+        768
       ],
       "nearest": true,
       "foot": [
-        192,
-        753
+        211,
+        764
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        90,
+        72,
         4,
-        175,
-        146
+        204,
+        212
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_owl_white_v2"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_distressed": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        165,
-        15,
-        170,
-        170
+        103,
+        0,
+        222,
+        222
       ]
     },
     "expressive": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        75,
-        8,
-        393,
-        757
+        40,
+        0,
+        423,
+        768
       ],
       "nearest": true,
       "foot": [
-        192,
-        753
+        211,
+        764
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        90,
+        72,
         4,
-        175,
-        146
+        204,
+        212
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "five_town_owl_white_v2"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_expressive": {
-      "file": "assets/room13-redesign-resident_seol.webp",
+      "file": "assets/room13-canonical-default-resident_seol.webp",
       "crop": [
-        165,
-        15,
-        170,
-        170
+        103,
+        0,
+        222,
+        222
       ]
     },
     "living_bellrope": {
@@ -5657,139 +5581,139 @@
   },
   "resident_momo": {
     "neutral": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        114,
-        10,
-        314,
-        749
+        85,
+        0,
+        378,
+        768
       ],
       "nearest": true,
       "foot": [
-        166,
-        745
+        184,
+        766
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        36,
-        4,
-        210,
-        206
+        18,
+        1,
+        356,
+        214
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "candidate_goat_shrine"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_neutral": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        165,
-        35,
-        190,
-        190
+        95,
+        0,
+        373,
+        373
       ]
     },
     "thinking": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        114,
-        10,
-        314,
-        749
+        85,
+        0,
+        378,
+        768
       ],
       "nearest": true,
       "foot": [
-        166,
-        745
+        184,
+        766
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        36,
-        4,
-        210,
-        206
+        18,
+        1,
+        356,
+        214
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "candidate_goat_shrine"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_thinking": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        165,
-        35,
-        190,
-        190
+        95,
+        0,
+        373,
+        373
       ]
     },
     "distressed": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        114,
-        10,
-        314,
-        749
+        85,
+        0,
+        378,
+        768
       ],
       "nearest": true,
       "foot": [
-        166,
-        745
+        184,
+        766
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        36,
-        4,
-        210,
-        206
+        18,
+        1,
+        356,
+        214
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "candidate_goat_shrine"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_distressed": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        165,
-        35,
-        190,
-        190
+        95,
+        0,
+        373,
+        373
       ]
     },
     "expressive": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        114,
-        10,
-        314,
-        749
+        85,
+        0,
+        378,
+        768
       ],
       "nearest": true,
       "foot": [
-        166,
-        745
+        184,
+        766
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        36,
-        4,
-        210,
-        206
+        18,
+        1,
+        356,
+        214
       ],
       "reviewed": true,
       "posture": "standing",
-      "redesign": "candidate_goat_shrine"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_expressive": {
-      "file": "assets/room13-redesign-resident_momo.webp",
+      "file": "assets/room13-canonical-default-resident_momo.webp",
       "crop": [
-        165,
-        35,
-        190,
-        190
+        95,
+        0,
+        373,
+        373
       ]
     },
     "living_lampnumber": {
@@ -9531,165 +9455,140 @@
   },
   "resident_tosil": {
     "neutral": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
       "crop": [
-        72,
+        67,
         0,
-        378,
-        766
+        384,
+        755
       ],
       "nearest": true,
       "foot": [
-        189,
-        762
+        191,
+        751
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        22,
+        43,
         1,
-        352,
-        273
+        337,
+        210
       ],
       "reviewed": true,
       "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "thinking": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
-      "crop": [
-        72,
-        0,
-        378,
-        766
-      ],
-      "nearest": true,
-      "foot": [
-        189,
-        762
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        22,
-        1,
-        352,
-        273
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "distressed": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
-      "crop": [
-        72,
-        0,
-        378,
-        766
-      ],
-      "nearest": true,
-      "foot": [
-        189,
-        762
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        22,
-        1,
-        352,
-        273
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
-    },
-    "expressive": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
-      "crop": [
-        72,
-        0,
-        378,
-        766
-      ],
-      "nearest": true,
-      "foot": [
-        189,
-        762
-      ],
-      "facing": "front",
-      "contact": "standing",
-      "head": [
-        22,
-        1,
-        352,
-        273
-      ],
-      "reviewed": true,
-      "posture": "standing",
-      "art": "ep-art-20261016"
+      "role_connect": "canonical48-rev47-aligned"
     },
     "avatar_neutral": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
       "crop": [
-        86,
+        102,
         0,
-        368,
-        368
+        353,
+        353
       ]
     },
-    "avatar_thinking": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
+    "thinking": {
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
       "crop": [
-        86,
+        67,
         0,
-        368,
-        368
-      ]
-    },
-    "avatar_distressed": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
-      "crop": [
-        86,
-        0,
-        368,
-        368
-      ]
-    },
-    "avatar_expressive": {
-      "file": "assets/room13-fullbody-resident_tosil-neutral.webp",
-      "crop": [
-        86,
-        0,
-        368,
-        368
-      ]
-    },
-    "hold_storybook": {
-      "file": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp",
-      "crop": [
-        89,
-        0,
-        359,
-        762
+        384,
+        755
       ],
       "nearest": true,
       "foot": [
-        175,
-        758
+        191,
+        751
       ],
       "facing": "front",
       "contact": "standing",
       "head": [
-        8,
-        3,
-        347,
-        271
+        43,
+        1,
+        337,
+        210
       ],
       "reviewed": true,
       "posture": "standing",
-      "art": "ep-art-20261016"
+      "role_connect": "canonical48-rev47-aligned"
+    },
+    "avatar_thinking": {
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
+      "crop": [
+        102,
+        0,
+        353,
+        353
+      ]
+    },
+    "distressed": {
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
+      "crop": [
+        67,
+        0,
+        384,
+        755
+      ],
+      "nearest": true,
+      "foot": [
+        191,
+        751
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        43,
+        1,
+        337,
+        210
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
+    },
+    "avatar_distressed": {
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
+      "crop": [
+        102,
+        0,
+        353,
+        353
+      ]
+    },
+    "expressive": {
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
+      "crop": [
+        67,
+        0,
+        384,
+        755
+      ],
+      "nearest": true,
+      "foot": [
+        191,
+        751
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        43,
+        1,
+        337,
+        210
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
+    },
+    "avatar_expressive": {
+      "file": "assets/room13-canonical-default-resident_tosil.webp",
+      "crop": [
+        102,
+        0,
+        353,
+        353
+      ]
     },
     "living_thermos": {
       "file": "assets/room13-action-resident_tosil-living_thermos.webp",
@@ -9715,6 +9614,31 @@
       "map_action": true,
       "stature_ratio": 1.0,
       "source_sha256": "fd640b921511e1ced791a644d34ba579ef045d7d3a17860e601bf31dc3be2262"
+    },
+    "hold_storybook": {
+      "file": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp",
+      "crop": [
+        89,
+        0,
+        359,
+        762
+      ],
+      "nearest": true,
+      "foot": [
+        175,
+        758
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        8,
+        3,
+        347,
+        271
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "art": "ep-art-20261016"
     }
   },
   "resident_solbang": {
