@@ -28,7 +28,7 @@ init 118 python:
         "buri_assert":_r13_ob_topic("buri","“다람이가 그랬을 리 없습니다.”",(5,7),not_flags=["buri_revised"],flags=["buri_heard_assert"],
             state={"case_state":["occurred"],"victim_state":["dead"]},lines=[
             ("buri","아이가 할아버지를 때렸다면서요."),
-            ("dad","다람이가 그랬을 리 없습니다."),
+            ("dad","다람이가 그랬을 리 없어."),
             ("buri","아버지니까 그렇게 말할 수 있겠죠.")]),
         # 백 부인: the approach after her first answer (systems/room13_ledger.rpy sets the flag).
         "ledger_madam:approach":_r13_ob_topic("resident_madam","장부 이야기를 이어 간다",(3,14),need=["madam_ledger_answered"]),
@@ -44,14 +44,14 @@ init 118 python:
             _r13_ob_present(person,key,identity)
             r13_flag("buri_revised")
             return [("buri","팔을 다친 것하고…… 머리를 다친 건 다른 때라는 거죠?"),
-                ("dad","확인된 건 여기까지입니다."),
+                ("dad","확인된 건 여기까지야."),
                 ("buri","수리한 흔적은 봐드릴게요."),
                 ("buri","다람이한테는…… 아직 무슨 말을 해야 할지 모르겠어요.")]
         if person=="buri" and key=="E17" and r13_has("E17") and s.get("victim_state")=="dead" and not r13_has("buri_hurt_past"):
             _r13_ob_present(person,key,identity)
             r13_flag("buri_hurt_past")
             return [("buri","누명을 풀려고 할아버지의 지난 일까지 전부 꺼내야 해요?"),
-                ("dad","……이 기록을 어디까지 쓸지는 아직 정하지 않았습니다.")]
+                ("dad","……이 기록을 어디까지 쓸지는 아직 정하지 않았어.")]
         if person=="resident_madam" and key=="H1" and r13_has("H1") and not r13_has("madam_ledger_answered") and not r13_has("ledger_counted"):
             result=_r13_ob_present(person,key,identity)
             r13_flag("madam_ledger_answered")

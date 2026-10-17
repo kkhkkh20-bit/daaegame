@@ -385,6 +385,11 @@ label r13_ep2_decision:
 
 label r13_ep2_tell_somi:
     # 강 이야기를 솜이에게 전해야 그 밤의 작별을 볼 수 있다.
+    # 0.19.15: 할아버지 이름을 말한 판(kd_named)에는 솜이가 화가 나서 뛰어갔다. 전할 사람이 없다.
+    if r13_has("K07") and r13_has("kd_named"):
+        call r13_lines([(None,"사람들이 흩어졌다. 솜이는 어디에도 없었다."),
+            ("daram","(솜이한테 할아버지 강 이야기를 해 줘야 하는데…….)",{"thought":True})],"ep2:after:somi_gone")
+        return
     if r13_has("K07") and not r13_has("kd_seori"):
         call r13_lines([(None,"사람들이 흩어졌다. 솜이가 광장 끝에 혼자 서 있었다.")],"ep2:after:somi")
         menu:

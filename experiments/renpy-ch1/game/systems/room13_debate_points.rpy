@@ -59,7 +59,7 @@ init 167 python:
                    "nabi":("nabi","제 등잔은 뚜껑이 닫힌 채 나왔어요."),
                    "neoul":("neoul","내가 불을 놓을 까닭이 어디 있소.")},
         wrong_key=("resident_nubi","……그게 제가 불을 냈다는 뜻이에요?"))
-    R13_DEBATE["Q4"]["conclusion"]["point"]=dict(prompt="안에 따닥이 있는 걸 알고 통로 문을 닫은 사람은?",
+    R13_DEBATE["Q4"]["conclusion"]["point"]=dict(prompt="안에 따닥이 있는 걸 알고 판자 문을 닫은 사람은?",
         candidates=["resident_tosil","nabi","resident_ppul","granny"],who="granny",
         keys=["N03"],ask="그 새벽 안에 사람이 있다는 걸 미리 안 사람은—.",
         decisive={"N03":[("dad","따닥 씨가 전날 말했습니다. '내일 새벽에 통로를 잰다. 할머니께도 말씀드렸다.'")]},

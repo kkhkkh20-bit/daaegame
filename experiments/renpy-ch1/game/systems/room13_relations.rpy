@@ -6,7 +6,9 @@
 init 166 python:
     R13_REL_DEAD = dict(R13_DEATH_FLAGS)
     R13_REL_DEAD.update({"resident_lamplighter":"chorong_dead","resident_ttadak":"ttadak_dead",
-        "kid_kkomi":"kkomi_dead","kid_dodam":"dodam_dead","npc_pandol":"pandol_dead"})
+        "kid_kkomi":"kkomi_dead","kid_dodam":"dodam_dead","npc_pandol":"pandol_dead",
+        # 0.19.15: ⑤ 수프에서 아무도 깨우지 못한 판(soup_kids_dead)에는 깜이·몽이·방울도 숨진다.
+        "kid_kkam":"soup_kids_dead","kid_mong":"soup_kids_dead","kid_bang":"soup_kids_dead"})
     R13_REL_GONE = {"resident_musoe":("musoe_gone","강으로 떠남")}
     R13_REL_SAVED = {"resident_piko":"piko_survived","resident_librarian":"lt_lib_saved",
         "resident_lamplighter":"nt_chorong_safe","resident_ttadak":"nt_ttadak_safe","resident_nero":"nero_alive",

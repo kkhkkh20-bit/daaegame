@@ -68,7 +68,7 @@ init 103 python:
         # 2 나비
         "nabi_rear":_ep_topic("nabi","주방 뒷문의 등불 이야기를 꺼낸다",(3,6),need=["know_kitchen_rear"],not_flags=["nabi_secret"],
             flags=["nabi_secret","know_nabi_debt"],give=["W2"],lines=[
-            ("dad","밤마다 주방 뒷문 쪽에서 등불이 오간다고 들었어요."),
+            ("dad","밤마다 주방 뒷문 쪽에서 등불이 오간다고 들었어."),
             ("nabi","……누가 봤대요? 콩이가 말했죠."),
             ("nabi","남은 밥이에요. 표 없는 아이들한테 가는 거요. 할머니는 모르는 척하시고, 대신 제 품삯에서 빼요."),
             ("nabi","할머니가 거둬 주신 빚이 있으니까 아무 말도 못 해요. 그 애들만 아니면요.")]),
@@ -77,9 +77,12 @@ init 103 python:
             ("nabi","이제 아이들 밥이 할머니 손에 안 달려 있으니까요."),
             ("nabi","재판에서 물으면 말할게요. 첫 비명 때까지만 같이 있었고, 그 뒤로는 못 봤다고요."),
             ("nabi","……할머니가 저를 거둔 건 맞아요. 그것도 같이 말할 거예요.")]),
-        "teacher_kids":_ep_topic("resident_teacher","표 없는 아이들을 학교 급식에 넣어 달라고 한다",(3,6),need=["nabi_secret","kids_known"],flags=["kids_fed","kids_school"],not_flags=["kids_fed"],lines=[
+        # 0.19.15: 명부에 이름을 올리는 것까지만. 아이들이 실제로 학교에 오는 것은 ③에서 꼬미가 출석부를 믿을 때다(kids_school).
+        "teacher_kids":_ep_topic("resident_teacher","표 없는 아이들을 학교 급식에 넣어 달라고 한다",(3,6),need=["nabi_secret","kids_known"],flags=["kids_fed","wf_kids_known"],give=["F13"],not_flags=["kids_fed"],lines=[
             ("resident_teacher","표가 없는 아이들이요? ……알고는 있었어요. 모른 척했을 뿐이지요."),
-            ("resident_teacher","대피소 솥에 물을 더 붓지요. 아이들 이름은 학생 명부에 올리겠어요. 그러면 촌장님도 함부로 못 뺍니다.")]),
+            ("resident_teacher","대피소 솥에 물을 더 붓지요. 아이들 이름은 학생 명부에 올리겠어요. 그러면 촌장님도 함부로 못 뺍니다."),
+            (None,"선생님이 출석부 맨 아래 빈 줄에 이름 넷을 적었다."),
+            ("dad","(이제 그 아이들이 이 종이를 믿어야 한다.)",{"thought":True})]),
         # 3 돌
         "librarian_stone":_ep_topic("resident_librarian","광장 돌의 옛 기록을 보여 달라고 한다",(2,13),flags=["know_stone_history"],give=["W3"],lines=[
             (None,"사서 선생님은 젖은 책 사이에서 가죽 장부 하나를 꺼냈다."),
@@ -122,7 +125,8 @@ label r13_episode_events:
     # 4 톡
     if _d==3 and _p<=1 and _loc=="workshop" and not r13_has("ep4_seen"):
         $ r13_offer("r13_ep4_accused")
-    if _d>=5 and r13_has("ep4_seen") and not r13_has("tok_cleared") and not r13_has("tok_detained"):
+    # 0.19.15: 톡의 기한은 ①(r13_ep1_deadline)이 맡는다. ①이 끝나기 전에 옛 기한 장면이 먼저 나오지 않게 한다.
+    if _d>=5 and r13_has("ep4_seen") and r13_has("lt_done") and not r13_has("tok_cleared") and not r13_has("tok_detained"):
         call r13_ep4_deadline
     return
 
@@ -274,7 +278,7 @@ label r13_ep2_kitchen:
     return
 
 label r13_ep2_food:
-    call r13_lines([("dad","그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까요."),
+    call r13_lines([("dad","그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까?"),
         ("nabi","어디서요? 이 마을에 남는 밥은 없어요. 다들 자기 먹을 것도 없다고 해요.")],"ep2:food:open")
     menu:
         "은호 사장에게 일주일 치를 산다 (12냥)" if r13_cash_now()>=12:
@@ -293,7 +297,7 @@ label r13_ep2_food:
             $ r13_flag("kids_fed","kids_mine")
         "학교 사자 선생님에게 부탁하자고 한다" if r13_has("kids_known"):
             call r13_lines([("nabi","사자 선생님이요? ……선생님은 좋은 분인데, 촌장님 눈치를 봐요."),
-                ("dad","학교에 직접 가서 말해 볼게요.")],"ep2:food:teacher")
+                ("dad","학교에 직접 가서 말해 볼게.")],"ep2:food:teacher")
             $ r13_flag("try_teacher")
         "다람이 몫을 나누자고 한다":
             call r13_lines([("nabi","그건 안 돼요. 다람이도 제 몫은 먹어야죠."),
@@ -331,12 +335,19 @@ label r13_ep3_bell:
                 ("neoul","그런 숫자는 함부로 공개하지 마시오.")],"ep3:measure")
             $ r13_grant(["W4"],"우박이 잰 돌의 출력")
             $ r13_flag("know_stone_failing","ubak_met")
-        "등불지기와 함께 광장 등을 몇 개 끈다":
+        "등불지기와 함께 광장 등을 몇 개 끈다" if not r13_has("chorong_dead"):
             call r13_lines([("resident_lamplighter","등을 끄면 돌이 덜 지쳐요. 등은 돌에서 불을 받거든요."),
                 (None,"광장 등이 절반쯤 꺼지자 돌의 빛이 조금 굵어졌다. 설이가 그제야 종 줄을 놓았다."),
                 ("neoul","……이번 한 번만이오.")],"ep3:lamps")
             $ r13_grant(["W5"],"등불지기와 끈 광장 등")
             $ r13_flag("lamps_saved","lamplighter_trust")
+        # 0.19.15: 초롱이 ④에서 죽은 판에는 우박이 등불지기 대신 등을 끈다.
+        "우박과 함께 광장 등을 몇 개 끈다" if r13_has("chorong_dead"):
+            call r13_lines([("resident_ubak","초롱 씨가 하던 일이에요. 등을 끄면 돌이 덜 지친다고 했어요. 등은 돌에서 불을 받거든요."),
+                (None,"우박이 등 뚜껑을 하나씩 열었다. 손이 서툴렀다. 광장 등이 절반쯤 꺼지자 돌의 빛이 조금 굵어졌다. 설이가 그제야 종 줄을 놓았다."),
+                ("neoul","……이번 한 번만이오.")],"ep3:lamps_ubak")
+            $ r13_grant(["W5"],"우박과 끈 광장 등")
+            $ r13_flag("lamps_saved")
         "내가 직접 종을 친다 · 늦은 저녁까지":
             call r13_lines([(None,"줄을 당기자 묵직한 종소리가 울렸다. 너울이 내 팔을 붙잡았다."),
                 ("neoul","외지 사람이 감히 마을 종을 치다니. 오늘 밤은 초소에서 보내시오."),
@@ -418,7 +429,7 @@ label r13_ep4_accused:
     return
 
 label r13_ep4_ubak:
-    call r13_lines([("dad","광장 등 나사에 계측기 집게 자국이 있었어요. 종이 눈금도 끼어 있었고요."),
+    call r13_lines([("dad","광장 등 나사에 계측기 집게 자국이 있었어. 종이 눈금도 끼어 있었고."),
         ("resident_ubak","……제가 했어요. 스승님이 돌 조각 하나를 몰래 재 오라고 하셨어요. 촌장님이 낸 숫자가 이상하다고요."),
         ("resident_ubak","톡 아저씨가 잡혀갈 줄은 몰랐어요. 조각은 지금 진료실 상자에 있어요.")],"ep4:ubak:confess")
     menu:

@@ -1,5 +1,5 @@
 # 마을 사건 묶음 2 (docs/EVENT_CATALOG.md): 실룩의 사기, 누비의 싼 방, 비싼 상품 둘.
-# 일당(6~8냥)에서 숙식(10냥)을 빼면 하루 2~4냥 적자다. 큰돈은 사건으로만 생긴다.
+# 0.19.16: 숙박비 폐지에 맞춰 누비의 유인을 난방과 식사로 바꾼다.
 init 104 python:
     R13_SHOP["medkit"]=dict(title="도시제 약상자",price=45,day=(2,13),detail="열병 환자 한 사람을 확실히 낫게 한다. 마을에 단 하나뿐이다.")
     R13_SHOP["lockpick"]=dict(title="도시 열쇠공 세트",price=35,day=(2,13),detail="잠긴 상자 하나쯤은 연다. 쓰는 걸 들키면 도둑이 된다.")
@@ -76,11 +76,8 @@ init 104 python:
     R13_CONTEXT_ACTIVITIES[_R13_SILUK_LOCKPICK]=tuple(R13_CONTEXT_ACTIVITIES.get(_R13_SILUK_LOCKPICK,()))+("use_lockpick_box",)
 
     def r13_cheap_room_refund():
-        """누비의 싼 방(6냥): 묵은 밤마다 숙식비 10냥 중 4냥을 돌려받는다."""
-        t=r13_town();paid=list(t.get("cheap_nights",[]));day=store.room13["day"]
-        if r13_has("lodging_cheap") and day>=3 and (day-1) not in paid:
-            paid.append(day-1);r13_town_set(cheap_nights=paid)
-            r13_cash(4,"누비의 싼 방 · 방값 차액")
+        """숙박비가 없으므로 방을 바꿔도 차액을 지급하지 않는다."""
+        return
 
 label r13_town_events2:
     $ r13_cheap_room_refund()
@@ -160,8 +157,8 @@ label r13_ev_q_nubi:
     $ r13_flag("ev_q_done")
     call r13_ev_here("calm")
     call r13_lines([(None,"누비 아주머니가 빨래 바구니를 내려놓고 내 소매를 잡았다."),
-        ("resident_nubi","여관비가 하루 열 냥이죠? 우리 집 별채는 하루 여섯 냥이에요. 따뜻하고, 밥도 줘요."),
-        ("dad","(사흘만 묵어도 열두 냥이 남는다. 솔깃하다.)",{"thought":True}),
+        ("resident_nubi","여관방 춥지 않으세요? 우리 집 별채는 불을 넉넉히 때요. 따뜻한 밥도 드리고요."),
+        ("dad","(다람이가 따뜻하게 잘 수 있다면…….)",{"thought":True}),
         ("resident_nubi","별채 열쇠는 제가 갖고 있을게요. 밤에 문단속은 제가 해 드려요."),
         (None,"누비 아주머니는 말하면서 자꾸 초소 쪽을 돌아보았다.")],"ev:q:offer:v2")
     $ _ep_loop=True
@@ -181,15 +178,15 @@ label r13_ev_q_nubi:
                 return "day"
             "거절한다":
                 call r13_lines([("resident_nubi","……그래요. 아무래도 여관이 편하시겠죠.")],"ev:q:refuse")
-            "별채가 왜 그렇게 싼지 묻는다":
-                call r13_lines([("resident_nubi","값을 싸게 해야 사람이 오죠."),
-                    ("dad","여관비보다 네 냥이나 싼데 밥까지 준다고요?"),
+            "낯선 사람에게 왜 방을 내주는지 묻는다":
+                call r13_lines([("resident_nubi","빈방을 놀리느니 사람이 있는 게 좋죠."),
+                    ("dad","방에 식사까지 내주시는데, 저희에게 바라는 건 없습니까?"),
                     ("resident_nubi","……너울이 외지 사람을 데려오면 장작을 줘요. 열병 검사한다고 하루 가둬 두는 것뿐이에요."),
                     ("resident_nubi","우리 집 난로가 꺼지면 애들이 이 겨울을 못 버텨요. 미안해요.")],"ev:q:ask")
                 $ r13_flag("know_neoul_quarantine")
                 menu:
                     "비밀로 해 주고, 다시는 하지 말라고 한다":
-                        call r13_lines([("resident_nubi","……고마워요. 별채는 그냥 여섯 냥에 쓰셔도 돼요. 이번엔 진짜로요.")],"ev:q:keep_secret")
+                        call r13_lines([("resident_nubi","……고마워요. 별채는 그냥 쓰셔도 돼요. 이번엔 문도 잠그지 않을게요.")],"ev:q:keep_secret")
                         $ r13_flag("nubi_ally","lodging_cheap")
                     "서리 검사원에게 알린다":
                         call r13_lines([("resident_seori","검사권도 없는 경비가 주민을 시켜 사람을 가둔다고요? 기록하겠습니다."),
@@ -203,7 +200,7 @@ label r13_ev_q_nubi:
                 call r13_lines([("resident_seori","열 없음, 기침 없음. 외지 사람이라는 건 병이 아닙니다."),
                     (None,"그날 밤 별채 문 앞에서 너울이 확인서를 읽고 혀를 찼다."),
                     ("neoul","……검사원 도장이 찍혀 있구려. 그럼 됐소."),
-                    ("resident_nubi","그 신고, 너울이 시킨 거였어요. 미안해요. 방은 여섯 냥 그대로 쓰세요.")],"ev:q:certificate")
+                    ("resident_nubi","그 신고, 너울이 시킨 거였어요. 미안해요. 방은 그냥 쓰세요. 문도 잠그지 않을게요.")],"ev:q:certificate")
                 $ r13_flag("lodging_cheap","nubi_ally","know_neoul_quarantine","seori_met")
     return None
 

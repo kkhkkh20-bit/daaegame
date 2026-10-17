@@ -135,21 +135,21 @@ label r13_w2e_tools:
     call r13_lines([(None,"부리가 할아버지 공구함을 작업대에 올려놓았다. 그리고 한참 내려다보았다. 은호 사장은 자루를 들고 기다렸다."),
         ("resident_eunho","도시 수집가들이 옛 공구를 좋아합니다. 이 함이면 식구들이 열흘은 먹소."),
         ("buri","은호 사장이 이걸 사겠대요."),
-        ("dad","수리할 때 쓰던 공구 아니었습니까?"),
+        ("dad","수리할 때 쓰던 공구 아니었니?"),
         ("buri","맞아요. 그런데 집에 먹을 게 없어요.")],"w2e:tools:open:v2")
     # 0.18.17: choices are what Dad says; the reaction carries the meaning.
     menu:
         "“제가 값을 내겠습니다.” 12냥" if r13_cash_now()>=12:
             $ r13_cash(-12,"부리의 공구함")
-            call r13_lines([("dad","공구 값은 제가 내겠습니다."),
+            call r13_lines([("dad","공구 값은 내가 낼게."),
                 ("buri","빌린 걸로 적어 주세요. 그냥 받은 걸로는 못 하겠어요."),
                 ("buri","장치 교대할 때 이 공구를 쓸게요.")],"w2e:tools:buy:v2")
             $ r13_flag("tools_kept","buri_tools_paid")
-        "“가족 몫을 공동 장부에 올리죠.”" if r13_has("supply_terms") or r13_has("supplies_ready"):
-            call r13_lines([("dad","가족이 받을 몫을 장부에 넣겠습니다. 공구는 남겨 둡시다."),
+        "“가족 몫을 공동 장부에 올리자.”" if r13_has("supply_terms") or r13_has("supplies_ready"):
+            call r13_lines([("dad","가족이 받을 몫을 장부에 넣을게. 공구는 남겨 두자."),
                 ("buri","가족 몫을 정말 받을 수 있으면, 공구를 팔 필요는 없어요.")],"w2e:tools:share:v2")
             $ r13_flag("tools_kept","buri_family_share")
-        "“할아버지가 쓰시던 물건이잖아요.”":
+        "“할아버지가 쓰시던 물건이잖아.”":
             call r13_lines([("buri","저도 알아요."),
                 ("buri","그래서 어제도 못 팔았어요. 오늘은 뭘 먹죠?"),
                 (None,"결국 공구함은 은호의 자루 옆에 놓였다.")],"w2e:tools:talk:v2")

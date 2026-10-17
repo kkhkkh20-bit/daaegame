@@ -23,7 +23,7 @@ init 147 python:
         (R13_CASE_DAY,2,"resident_guseul"):("은호 옆에서 재고 수를 받아 적는다.","그 시간 은호가 어디 있었는지 말해 줄 수 있는 견습."),
         (R13_CASE_DAY,2,"resident_madam"):("자기 창고에서 뭉치와 보관함을 센다.","저녁마다 여관에 오던 백 부인이 이날은 여관에 없다."),
         (R13_CASE_DAY,2,"resident_ubak"):("진료소에서 서리의 기록을 정리한다.","비명 소식에 서리만 먼저 뛰어간다."),
-        (R13_CASE_DAY,2,"resident_tosil"):("여관 뒷방 이불 속에 있다.","할머니가 일찍 자라고 했다. 빨래방 쪽 벽 안 발소리를 듣는다."),
+        (R13_CASE_DAY,2,"resident_tosil"):("여관 뒷방 이불 속에 있다.","할머니가 일찍 자라고 했다. 세탁실 쪽 벽 안 발소리를 듣는다."),
     }
 
     _r13_alibi_where=r13_where
@@ -57,7 +57,7 @@ init 147 python:
             ("resident_tosil","……자고 있었어요. 진짜예요."),
             ("dad","(대답이 너무 빠르다. 눈도 마주치지 않는다.)",{"thought":True})],
             truth=("tosil_errand_seen",[
-            ("dad","토실아, 첫날 밤에도 숲에 갔었지?"),
+            ("dad","토실아, 첫날 밤에도 숲에 갔었니?"),
             ("resident_tosil","……네. 할머니가 부인한테 차 갖다 드리라고 해서요. 거짓말해서 죄송해요.")])),
         ("night1","resident_kalbaram"):dict(claim=[
             ("dad","고개 마차가 들어온 날 밤, 어디 계셨습니까?"),
@@ -86,23 +86,23 @@ init 147 python:
         ("case","resident_tosil"):dict(claim=[
             ("dad","토실아, 사건 난 날 저녁엔 어디 있었니?"),
             ("resident_tosil","할머니가 일찍 자라고 해서 뒷방에 있었어요."),
-            ("resident_tosil","비명 소리 조금 뒤에요, 빨래방 쪽 벽 안에서 누가 걷는 소리가 났어요. 쥐인 줄 알았는데 발소리였어요.")]),
+            ("resident_tosil","비명 소리 조금 뒤에요, 세탁실 쪽 벽 안에서 누가 걷는 소리가 났어요. 쥐인 줄 알았는데 발소리였어요.")]),
         ("case","resident_eunho"):dict(claim=[
             ("dad","사건 날 저녁엔 어디 계셨습니까?"),
             ("resident_eunho","창고에서 구슬이랑 재고를 셌소. 그날이 납품 장부 마감이었으니까. 구슬한테 물어보시오.")]),
         ("case","resident_guseul"):dict(claim=[
-            ("dad","사건 날 저녁, 은호 사장과 함께 계셨습니까?"),
+            ("dad","사건 날 저녁, 은호 사장이랑 같이 있었니?"),
             ("resident_guseul","네, 창고에서 같이 재고를 셌어요."),
             ("resident_guseul","……사장님은 우리 장부 말고 다른 장부를 하나 따로 들고 계셨어요. 그건 저도 못 보게 하셨고요.")]),
         ("case","resident_ubak"):dict(claim=[
-            ("dad","사건 날 저녁엔 어디 계셨습니까?"),
+            ("dad","사건 날 저녁엔 어디 있었니?"),
             ("resident_ubak","진료소에서 스승님 기록을 정리했어요. 소식이 오자 스승님만 먼저 뛰어가셨고 저는 진료소를 지켰어요.")]),
         ("case","resident_madam"):dict(claim=[
             ("dad","사건 날 저녁에는 여관에 오지 않으셨다던데요."),
             ("resident_madam","내 창고에서 뭉치랑 보관함을 셌어요. 매일 가던 여관도 그날은 이상하게 가기 싫더라고요."),
             ("dad","(저녁마다 여관에 오던 사람이 하필 그날만 오지 않았다.)",{"thought":True})]),
     }
-    # Two statements that cannot both be true: (needed statements, Dad's thought, flag, notebook line)
+    # Statements that do not fit together, or leave a gap nobody saw (0.19.15): (needed statements, Dad's thought, flag, notebook line)
     R13_ALIBI_CROSS=[
         ([("night1","granny"),("night1","resident_kalbaram")],
             [("dad","(할머니는 토실이를 일찍 재웠다고 했다. 그런데 칼바람은 그날 밤 숲에서 우는 토실이를 여관까지 데려다줬다.)",{"thought":True}),
@@ -113,14 +113,14 @@ init 147 python:
             "alibi_x_thermos","할머니가 담아 간 보온병과, 숲에서 토실이 안고 있던 보온병."),
         ([("case","granny"),("case","resident_hyeoni")],
             [("dad","(할머니는 비명이 나고서야 부엌으로 갔다고 했다. 그 뒤 공구를 들고 13호 앞에 오기까지, 식당에서 할머니를 본 사람은 없다.)",{"thought":True})],
-            "alibi_x_dining","할머니는 저녁 내내 식당에 있었다고 했지만, 비명 뒤로 식당에서 할머니를 본 사람은 없다."),
+            "alibi_x_dining","할머니는 비명 뒤 부엌으로 갔다고만 했다. 공구를 들고 13호 앞에 오기까지 그 사이를 본 사람은 없다."),
         ([("case","granny"),("case","resident_tok")],
-            [("dad","(톡도 비명 뒤로는 식당에서 할머니를 못 봤다고 한다. ‘내내 같이 있었다’는 할머니 말과 맞지 않는다.)",{"thought":True})],
+            [("dad","(톡도 비명 뒤로는 할머니를 못 봤다고 한다. 부엌에 간 뒤의 일은 아무도 말하지 못한다.)",{"thought":True})],
             "alibi_x_dining2",""),
         ([("case","resident_dalgeurak"),("case","resident_tosil")],
             [("dad","(비명 뒤 할머니는 주방 뒷문으로 나갔다. 그 조금 뒤, 토실은 세탁실 쪽 벽 안에서 발소리를 들었다.)",{"thought":True}),
              ("dad","(주방과 세탁실 사이, 벽 안에 길이 있다면…….)",{"thought":True})],
-            "alibi_x_wall","비명 뒤 부엌 뒷문으로 나간 할머니, 그리고 빨래방 쪽 벽 안의 발소리."),
+            "alibi_x_wall","비명 뒤 주방 뒷문으로 나간 할머니, 그리고 세탁실 쪽 벽 안의 발소리."),
         ([("case","resident_eunho"),("case","resident_guseul")],
             [("dad","(은호와 구슬은 그 시간 서로 함께 있었다고 말해 줄 수 있다. 다만 은호는 그날도 따로 든 장부가 있었다.)",{"thought":True})],
             "alibi_x_store",""),

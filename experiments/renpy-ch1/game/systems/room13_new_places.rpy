@@ -123,12 +123,12 @@ init 130 python:
     R13_JOB_CONTEXT.update(fishing="꽥순과 얼음 구멍을 지키며 그물을 걷는다.",hunting="바둑이와 숲속 덫을 돌아본다.")
     R13_JOB_START_LINES=dict(
         fishing=[("resident_kkwak","얼음 구멍이 다시 얼지 않게 가장자리만 깨 주세요. 그물은 제가 걷을게요."),
-            ("dad","가장자리만 깨면 됩니까?"),("resident_kkwak","네. 너무 넓히면 발밑이 꺼져요.")],
+            ("dad","가장자리만 깨면 되니?"),("resident_kkwak","네. 너무 넓히면 발밑이 꺼져요.")],
         hunting=[("resident_badook","덫은 세 군데예요. 걸린 게 있으면 제가 거둘게요."),
             ("dad","저는 무엇을 하면 됩니까?"),("resident_badook","길을 표시한 【천】만 따라오세요. 숲 안쪽은 길이 없어요.")])
     R13_JOB_ASK_LINES=dict(
-        fishing=[("dad","강을 건너 마을 밖으로 나갈 수 있습니까?"),("resident_kkwak","겨울엔 안 돼요. 얼음이 얇아서 마차는 못 건너요."),
-            ("dad","걸어서는요?"),("resident_kkwak","걸어서도 위험해요. 그래서 다들 【고개 마차】만 기다리죠.")],
+        fishing=[("dad","강을 건너 마을 밖으로 나갈 수 있니?"),("resident_kkwak","겨울엔 안 돼요. 얼음이 얇아서 마차는 못 건너요."),
+            ("dad","걸어서는?"),("resident_kkwak","걸어서도 위험해요. 그래서 다들 【고개 마차】만 기다리죠.")],
         hunting=[("dad","숲을 지나 마을 밖으로 나가는 길은 없습니까?"),("resident_badook","숲 끝은 【절벽】이에요. 길은 없어요."),
             ("dad","그럼 순찰은 무엇을 지키는 겁니까?"),("resident_badook","길 잃은 사람이요. 밤에 숲에 들어간 사람은 저희가 찾아 데려와요."),
             ("resident_badook","요즘은 숲 안쪽 길 표식 천이 자꾸 없어져요. 누가 떼 가는지 몰라도, 길 잃기 딱 좋죠.")])

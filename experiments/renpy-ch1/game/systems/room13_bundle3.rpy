@@ -31,7 +31,7 @@ init 107 python:
     R13_TOPIC_LABELS.update({"eunho_scale":"r13_b3_scale"})
     # U: once the pages are sold, the librarian can no longer show them; 은호 sells them back.
     ROOM13["topics"]["librarian_stone"]["not_flags"]=list(ROOM13["topics"]["librarian_stone"].get("not_flags",[]))+["pages_sold"]
-    ROOM13["topics"]["eunho_pages"]=_ep_topic("resident_eunho","사서가 판 기록 장을 되산다",(4,13),need=["pages_sold"],not_flags=["know_stone_history"],lines=[])
+    ROOM13["topics"]["eunho_pages"]=_ep_topic("resident_eunho","기록실의 옛 장부를 되산다",(4,13),need=["pages_sold"],not_flags=["know_stone_history"],lines=[])
     R13_TOPIC_LABELS.update({"eunho_pages":"r13_b3_buy_pages"})
     ROOM13["topics"]["librarian_copy"]=_ep_topic("resident_librarian","베껴 둔 돌 기록을 보여 달라고 한다",(5,13),need=["pages_copy_promised"],flags=["know_stone_history"],give=["W3"],not_flags=["know_stone_history"],
         lines=[("resident_librarian","장부를 밤새 베꼈어요. 글씨는 원본만 못해도 숫자는 그대로 옮겼어요.")]+list(ROOM13["topics"]["librarian_stone"]["lines"]))
@@ -71,8 +71,13 @@ label r13_b3_events:
         call r13_b3_whispers
     if _d in (r13_tl(5),r13_tl(6)) and _p<=1 and _loc=="square" and room13["case_state"]=="occurred" and not r13_has("ev_e_done"):
         $ r13_offer("r13_b3_ration")
-    if 4<=_d<=r13_tl(6) and _p<=1 and _loc=="post" and not r13_has("ev_u_done") and not r13_has("know_stone_history"):
+    # 0.19.15: 사서가 죽었거나(librarian_dead) 진료소에 누웠으면(lt_lib_ill) 사서는 장부를 팔지 않는다.
+    #   대신 은호가 빈 기록실의 장부를 거둬 간다. 되사는 길(eunho_pages)은 그대로 남는다.
+    $ _b3_lib_gone=r13_has("librarian_dead") or r13_has("lt_lib_ill")
+    if 4<=_d<=r13_tl(6) and _p<=1 and _loc=="post" and not r13_has("ev_u_done") and not r13_has("know_stone_history") and not _b3_lib_gone:
         $ r13_offer("r13_b3_pages")
+    if 4<=_d<=r13_tl(6) and _p<=1 and _loc=="post" and not r13_has("ev_u_done") and not r13_has("know_stone_history") and _b3_lib_gone:
+        $ r13_offer("r13_b3_pages_eunho")
     if _d in (r13_tl(5),r13_tl(6)) and _p==2 and _loc=="school" and not r13_has("ev_o_done") and not r13_has("bori_cleared") and not r13_has("bori_ally"):
         call r13_b3_firewood
     return None
@@ -226,8 +231,17 @@ label r13_b3_pages:
             $ r13_flag("pages_sold")
     return
 
+# 사서가 없는 판: 은호가 빈 기록실의 장부를 거둬 간다(0.19.15).
+label r13_b3_pages_eunho:
+    $ r13_flag("ev_u_done","pages_sold")
+    call r13_ev_here("calm")
+    call r13_lines([(None,"우체국 안쪽 기록실 문이 열려 있었다. 은호 사장이 장부 묶음을 끈으로 묶어 자루에 담고 있었다."),
+        ("resident_eunho","지키는 사람 없는 기록이오. 도시 수집가들은 옛 마을 기록을 좋아합니다."),
+        ("dad","(사서 선생님이 지키던 기록이다. 도시로 가면 다시 못 본다.)",{"thought":True})],"b3:pages:eunho")
+    return
+
 label r13_b3_buy_pages:
-    call r13_lines([("dad","사서 선생님한테 받은 장부 묶음, 아직 가지고 계십니까?"),
+    call r13_lines([("dad","사서 선생님 기록실에서 나온 장부 묶음, 아직 가지고 계십니까?"),
         ("resident_eunho","도시로 가는 짐은 모레 떠납니다. 사시려면 열두 냥입니다. 제가 치른 감자 값에 운반비를 얹은 겁니다.")],"b3:buy:open")
     menu:
         "열두 냥에 산다" if r13_cash_now()>=12:

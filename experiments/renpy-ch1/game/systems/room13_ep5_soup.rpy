@@ -352,6 +352,8 @@ label r13_ws_soup:
             ("resident_teacher","……아."),
             ("resident_teacher","다 같이 먹어요. 내일도 같이 먹어요.")],"ws:soup:perfect")
         $ r13_flag("ws_kids_alive","ws_perfect")
+        # 0.19.15: 아이들이 산 판에도 등이 밝아지는 것을 직접 본다(⑥ Q6 s2의 근거).
+        $ r13_grant(["Y14"],"12일 밤 대피소 창으로 본 광장 등")
         call r13_ws_after
         return
     call r13_lines([(None,"교실 난로 위에 냄비 둘. 큰 냄비는 어른들 몫, 작은 냄비는 아이들 몫."),
@@ -365,6 +367,7 @@ label r13_ws_soup:
             (None,"선생님이 냄비를 엎었다. 수프가 바닥으로 쏟아졌다."),
             ("resident_teacher","미안해요. 선생님이 손이 미끄러졌어요. ……새로 끓일게요. 처음부터.")],"ws:soup:spilled")
         $ r13_flag("ws_kids_alive","dodam_sick")
+        $ r13_grant(["Y14"],"12일 밤 대피소 창으로 본 광장 등")
         call r13_ws_after
         return
     call r13_lines([(None,"하얀 그릇에 수프가 담겼다. 선생님 앞에는 빨간 그릇 하나. 선생님은 큰 냄비에서 떴다."),
@@ -391,7 +394,8 @@ label r13_ws_soup:
             ([("daram","아빠, 얘들 왜 안 일어나? ……그림책처럼 자는 거야? 왕자 오면 일어나?")] if r13_ws_daram() else []),"ws:soup:all", binding_route="dynamic:426")
         $ r13_flag("dodam_dead","soup_kids_dead")
         if r13_has("wf_kkomi_alive"):
-            $ r13_flag("kkomi_dead_soup")
+            # 0.19.15: 관계도·이름 판은 kkomi_dead를 본다. ③에서 구한 것은 kkomi_dead_soup로 구분한다.
+            $ r13_flag("kkomi_dead_soup","kkomi_dead")
     $ r13_grant(["Y11","Y12","Y13","Y14"],"대피소와 진료소에서 직접 확인한 것")
     call r13_ws_meeting
     call r13_ws_after

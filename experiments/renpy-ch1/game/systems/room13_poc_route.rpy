@@ -21,7 +21,7 @@ init 100 python:
     # Picking up an already located envelope is ordinary investigation, not a
     # half-day research activity. Reading still precedes the original E18 grant.
     ROOM13["activities"]["warning"]["cost"]=0
-    ROOM13["evidence"]["E18"]["establishes"]="첫 주에 가족에게 남긴 엄마의 글. ‘너희한테 오라는 편지를 쓴 적 없어. 여관에 내가 어디로 가는지 말하지 마. 등불을 고치는 사람을 통해 답해 줘. 혼자 누구를 만나러 가지 말고.’라고 적혀 있다."
+    ROOM13["evidence"]["E18"]["establishes"]="가족이 오기 전에 엄마가 초롱에게 맡겨 둔 글. ‘너희한테 오라는 편지를 쓴 적 없어. 여관에 내가 어디로 가는지 말하지 마. 등불을 고치는 사람을 통해 답해 줘. 혼자 누구를 만나러 가지 말고.’라고 적혀 있다."
     for key in ("intro:lamplighter_mother","intro:post_visit"):
         ROOM13["topics"][key]["day"]=[2,4]
     ROOM13["topics"]["intro:direction"]["day"]=[1,4]
@@ -161,6 +161,8 @@ label r13_poc_night_review:
         call r13_lines([("daram","엄마는 오라는 편지를 쓴 적 없대. 그럼 우리가 받은 건 누가 쓴 거야?"),("dad","응. 두 편지를 나란히 놓으니 말이 서로 달라."),("daram","엄마는 우리가 오는 게 싫었던 거야?",{"expression":"anxious"}),("dad","아니. 엄마 글에는 우리 걱정만 적혀 있었어. 누가 엄마 이름으로 우리를 불렀는지 알아내야 해.")],"poc:night:letters")
     elif r13_has("E18"):
         call r13_lines([("daram","엄마 글에는 오라는 편지를 쓴 적 없다고 적혀 있어."),("dad","그럼 엄마 이름으로 온 초대 편지는 누가, 왜 쓴 걸까?")],"poc:night:uncompared")
+    elif r13_mother_knowledge()["promised"]:
+        call r13_lines(r13_intro_direction_lines(),"poc:night:promise")
     elif r13_has("J04") or r13_has("J05"):
         call r13_lines([("daram","어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라."),("dad","응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.")],"poc:night:packet")
     elif r13_has("J02") and not r13_has("J03"):
