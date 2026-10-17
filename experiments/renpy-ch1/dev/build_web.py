@@ -262,6 +262,8 @@ def main():
     # to load after each release ("Could not find return label").
     seeded = seed_previous_rpyc(release, game)
     print("seeded %d .rpyc from the previous release" % seeded)
+    if not seeded and list(release.glob("game.part[0-9][0-9]")):
+        raise SystemExit("previous release parts exist but no .rpyc could be seeded; saves would break")
 
     # 2. every referenced pixel asset exists
     texts = [p for p in game.rglob("*") if p.suffix in (".rpy", ".json")]

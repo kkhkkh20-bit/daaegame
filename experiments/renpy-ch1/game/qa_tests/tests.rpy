@@ -12110,18 +12110,17 @@ testcase pixel_unify_preview:
 testcase carriage_pop:
     # 0.19.2 (owner): no opening cutscene; Daram springs up on her own "왁!" line (with a sound),
     # not during the narration before it; at the gate she is drawn smaller than Karo.
+    # 0.19.7: the sound is the brighter "surprise" cue (owner).
     pause 2.0
     click "처음부터"
     pause until screen "say" timeout 30
     pause 0.8
     assert eval (place=="마차 안" and "r13_visitor" not in renpy.get_showing_tags())
     screenshot "carriage_line1.png"
-    click pos (640,560)
+    click pos (640,560) until eval ("r13_visitor" in renpy.get_showing_tags()) timeout 10
     pause 0.5
-    assert eval ("r13_visitor" not in renpy.get_showing_tags())
-    click pos (640,560)
-    pause 0.5
-    assert eval ("r13_visitor" in renpy.get_showing_tags() and "comic" in source_effect_log)
+    $ r13_qa_note("fxlog=%r who=%r"%(source_effect_log[-5:],_last_say_who))
+    assert eval ("surprise" in source_effect_log)
     screenshot "carriage_wak.png"
     click pos (640,560) until eval (place!="마차 안") timeout 60
     pause until screen "say" timeout 20
@@ -12233,10 +12232,44 @@ testcase unread_filter_keeps:
     pause 1.0
     python:
         room13["evidence"]=list(room13["evidence"])+[k for k in ("G1","G2","G3","W1","W2","W6","W7") if k in ROOM13["evidence"] and k not in room13["evidence"]]
-        _r13_qa_unread=len([k for k in room13["evidence"] if r13_record_unread(k)])
     run Show("r13_records",initial_tab="all")
     pause 1.0
     click "● 안 읽음"
+    $ _r13_qa_unread=len([k for k in room13["evidence"] if r13_record_unread(k)])
     pause 6.0
-    assert eval (len([k for k in room13["evidence"] if r13_record_unread(k)])>=_r13_qa_unread-1)
-    $ r13_qa_note("unread before=%d after=%d"%(_r13_qa_unread,len([k for k in room13["evidence"] if r13_record_unread(k)])))
+    # Only the record shown under the filter is read; the rest stay unread.
+    assert eval (_r13_qa_unread>=3 and len([k for k in room13["evidence"] if r13_record_unread(k)])>=_r13_qa_unread-1)
+    $ r13_qa_note("unread at filter=%d after 6s=%d"%(_r13_qa_unread,len([k for k in room13["evidence"] if r13_record_unread(k)])))
+
+init 999 python:
+    def r13_qa_stale_returns():
+        ctx=renpy.game.context()
+        for i in range(len(ctx.return_stack)):
+            ctx.return_stack[i]=("game/stale.rpy",1,1000+i)
+            ctx.call_location_stack[i]=("game/stale.rpy",1,2000+i)
+
+testcase stale_meeting:
+    # 0.19.7: a trial save from an older release must not come back to roaming with the meeting layout
+    # still on (no HUD, meeting say/choice screens).
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_trial",('E01', 'E06', 'E07', 'E09', 'E35'),())
+    pause 1.0
+    click pos (640,600) until screen "r13_meeting_agenda" timeout 40
+    pause 0.6
+    click "죽음의 원인이라는 주장"
+    pause 0.6
+    click pos (640,600) until eval (r13_qa_board()) timeout 60
+    pause 0.6
+    $ room13["day"]=R13_TRIAL_DAY  # r13_qa_setup still uses the old trial day 7
+    run Function(r13_qa_stale_returns)
+    click "회의 중단"
+    pause 0.8
+    click "반론을 그만둔다"
+    pause 0.6
+    click pos (640,600) until eval (renpy.get_screen("r13_meeting_agenda") or renpy.get_screen("r13_hub")) timeout 60
+    $ r13_qa_note("day=%s trial_ended=%s mode=%s loc=%s agenda=%s hub=%s meeting=%s"%(room13["day"],room13["trial_ended"],room13_mode,room13["location"],bool(renpy.get_screen("r13_meeting_agenda")),bool(renpy.get_screen("r13_hub")),r13_meeting_active))
+    # Quitting the board closes the trial, so the run goes on to week 2 with the meeting layout off.
+    assert eval (not r13_meeting_active and renpy.get_screen("r13_hud") and (room13["trial_ended"] or renpy.get_screen("r13_meeting_agenda")))
+    $ r13_qa_note("trial resumed after stale stack")

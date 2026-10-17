@@ -145,7 +145,7 @@ init 150 python:
         "steps": "sfx-walk-wood", "steps_snow": "sfx-walk-snow", "bell10": "sfx-bell",
         "present": "sfx-present", "right": "sfx-right", "wrong": "sfx-wrong",
         "note_open": "sfx-note-open", "note_close": "sfx-note-close", "pencil": "sfx-pencil",
-        "save": "sfx-save", "error": "sfx-error", "mystery": "sfx-mystery", "comic": "sfx-comic",
+        "save": "sfx-save", "error": "sfx-error", "mystery": "sfx-mystery", "comic": "sfx-comic", "surprise": "sfx-surprise",
         "creak": "sfx-creak", "latch": "sfx-latch", "lock": "sfx-latch", "heartbeat": "sfx-heartbeat",
     }
 
