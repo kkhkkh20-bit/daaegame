@@ -28,12 +28,26 @@ init 170 python:
             react = None
         return dict(person=person, talk=talk, react=react, settled=not bool(react), duration=.35)
 
+    def r13_dialogue_narration_plan(packet, people):
+        """Use an explicit authored show/expression, never infer from narration text."""
+        if len(packet)<3 or packet[0] is not None or not isinstance(packet[2],dict):
+            return None
+        meta=packet[2]
+        if not meta.get("show") or "expression" not in meta:
+            return None
+        # Authored actions (offer_lantern, door_peek, etc.) keep their own art.
+        pose=meta.get("pose") or meta["expression"]
+        cue=dict(reviewed=True,person=meta["show"],text=packet[1],emotion=meta["expression"],reaction=False)
+        return r13_dialogue_plan("narration-show",0,(meta["show"],packet[1]),pose,{"narration-show":{"0":cue}},people)
+
     def r13_dialogue_beat_begin(identity, index, packet, pose):
         # New lines (including narration and POV replies) invalidate the old reaction.
         store.r13_dialogue_beat = None
         if getattr(store,"r13_meeting_active",False) or getattr(store,"r13_thought_active",False):
             return
         plan = r13_dialogue_plan(identity,index,packet,pose,R13_DIALOGUE_BEATS["lines"],R13_DIALOGUE_TALK_ART["people"],getattr(store,"r13_dialogue_binding",None))
+        if plan is None:
+            plan=r13_dialogue_narration_plan(packet,R13_DIALOGUE_TALK_ART["people"])
         if plan:
             entry=R13_DIALOGUE_TALK_ART["people"][plan["person"]]
             if not all(frame["file"].startswith("assets/dialogue-source-master/") and renpy.loadable(frame["file"]) for profile in entry["profiles"].values() for frame in profile["frames"].values()):
