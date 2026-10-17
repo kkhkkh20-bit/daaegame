@@ -339,7 +339,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 68 | `room13_notebook.rpy:20` | _r13_learning_record_entries |
+| 1 | 68 | `room13_notebook.rpy:38` | _r13_learning_record_entries |
 | 2 | 98 | `systems/room13_learning.rpy:108` |  |
 
 ## `r13_resident_where` (2층)

@@ -44,7 +44,7 @@ class DotFxTest(unittest.TestCase):
         fullbody = json.loads((GAME / "assets/room13-fullbody-dialogue.json").read_text(encoding="utf-8"))["people"]
         daram = META["blink"]["people"].get("daram", {})
         if fullbody["daram"].get("acting_package"):
-            # 0.18.91: the old blink pieces belonged to the old faces; the package faces wait for
+            # 0.18.92: the old blink pieces belonged to the old faces; the package faces wait for
             # hand-drawn eye pieces (art/expression-acting-20261016/registry.json, blink_note).
             self.assertEqual(daram, {})
         else:

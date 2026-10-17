@@ -11597,7 +11597,7 @@ testcase story_scenes:
     $ open("qa_result.txt","w").write("story scenes + continuity ok")
 
 testcase expression_acting:
-    # 0.18.91 (owner 17:05): the expression package in the real dialogue layout, normal and large
+    # 0.18.92 (owner 17:05): the expression package in the real dialogue layout, normal and large
     # text and the topic list, for every connected character and expression (bami thinking too).
     pause 2.0
     click "처음부터"
@@ -11608,7 +11608,7 @@ testcase expression_acting:
     assert eval r13_qa_fb_done
 
 testcase o46_ropes:
-    # 0.18.91: the redrawn short ropes (manual extraction) on the altar overlay with the empty cart,
+    # 0.18.92: the redrawn short ropes (manual extraction) on the altar overlay with the empty cart,
     # morning and evening, camera at the left (pine branches).
     pause 2.0
     click "처음부터"

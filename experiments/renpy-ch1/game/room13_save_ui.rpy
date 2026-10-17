@@ -2,7 +2,7 @@
 # to decide whether the title's Continue button should open it.
 init 100 python:
     R13_SAVE_CONTRACT=1
-    # 0.18.91: saves written by 0.18.89-0.18.90 carry "pixel-b-acting-v2" (portrait-count bug); the
+    # 0.18.92: saves written by 0.18.89-0.18.90 carry "pixel-b-acting-v2" (portrait-count bug); the
     # load path already moves that revision to the front set, so those saves stay usable.
     R13_SAVE_VISUALS=("pixel-b-front-v3","pixel-b-acting-v2")
     R13_SAVE_SLOTS=r"^(?:[0-9]+|auto|quick)-[0-9]+$"

@@ -37,7 +37,7 @@ class FullbodyData(unittest.TestCase):
         # 43 original characters + 13 from the 2026-10-16 episode art (dev/apply_ep_art.py).
         self.assertEqual(len(DATA["people"]), 56)
         for person, entry in DATA["people"].items():
-            # 0.18.91: the expression package can add a named extra (bami "thinking").
+            # 0.18.92: the expression package can add a named extra (bami "thinking").
             self.assertEqual(set(entry["images"]) - {"thinking"}, set(EMOTIONS), person)
             for pose, image in entry.get("poses", {}).items():
                 path = GAME / image["file"]
@@ -63,7 +63,7 @@ class FullbodyData(unittest.TestCase):
                 self.assertTrue(x <= fx and y <= fy and fx + fw <= x + w and fy + fh <= y + h, person)
             for image in entry["images"].values():
                 if "map" in image:
-                    # 0.18.91: own pixels + map to the reference canvas (dev/apply_expression_acting.py)
+                    # 0.18.92: own pixels + map to the reference canvas (dev/apply_expression_acting.py)
                     ix, iy, iw, ih = image["crop"]
                     self.assertTrue(0 <= ix and 0 <= iy and ix + iw <= image["size"][0] and iy + ih <= image["size"][1], person)
                     if image.get("cell"):

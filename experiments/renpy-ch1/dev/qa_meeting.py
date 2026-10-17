@@ -45,7 +45,10 @@ async def main():
    for i in range(20):
     st=await q.state()
     if any(title in b['text'] for b in st['buttons']):break
-    await q.press('다음')
+    # The book now restores its previous page. Navigate in either direction
+    # through real buttons rather than assuming each opening starts at zero.
+    direction=await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_book");s=renpy.store;entries=sc.scope["entries"];result="다음" if entries.index('+repr(key)+')//s.r13_record_page_size()>sc.scope["page"] else "이전"')
+    await q.press(direction)
    await q.press(title);await q.press('이 주장에 근거로 낸다')
   try:
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await asyncio.sleep(.7)

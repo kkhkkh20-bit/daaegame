@@ -57,7 +57,7 @@ init 58 python:
         if posed and posed["file"] in R13_FULLBODY_FILES:
             return dict(file=posed["file"],crop=posed["crop"],figure=posed["figure"],emotion=r13_fullbody_key(pose),fit=posed.get("fit",1.0))
         emotion=r13_fullbody_emotion(pose)
-        # 0.18.91: an expression the package drew beyond the six (bami "thinking") is used by name.
+        # 0.18.92: an expression the package drew beyond the six (bami "thinking") is used by name.
         key=r13_fullbody_key(pose)
         if key not in R13_FULLBODY_EMOTIONS and key in entry["images"]:emotion=key
         image=entry["images"].get(emotion) or entry["images"].get("neutral")
@@ -71,7 +71,7 @@ init 58 python:
         # Topic lists start 200px right of the portrait centre.
         max_width=880.0 if height>=800 else 400.0
         cap=max_width/max(1,entry["crop"][2])
-        # 0.18.91 (owner): pixel-art expressions (2x2 px cells) are drawn at a whole number of
+        # 0.18.92 (owner): pixel-art expressions (2x2 px cells) are drawn at a whole number of
         # screen pixels per art cell, the nearest to the usual size (never smoothed or stretched).
         pixel=entry.get("pixel")
         if pixel:
@@ -82,7 +82,7 @@ init 58 python:
         return min(scale,cap)
 
     def r13_fullbody_mapped_art(person,emotion,image,crop,scale,width,height):
-        """0.18.91: a picture stored in its own pixels with a map [u, ox, oy] to the character's
+        """0.18.92: a picture stored in its own pixels with a map [u, ox, oy] to the character's
         reference canvas (dev/apply_expression_acting.py). Drawn into a box of the reference crop's
         size, so position and size code is the same as for every other close-up. Pixel art
         ("cell": 2) is scaled by a whole number of screen pixels per cell and never resampled

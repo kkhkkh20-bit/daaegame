@@ -63,7 +63,7 @@ class NpcRedesign(unittest.TestCase):
             acting = {k: v for k, v in ACTING[npc].items() if not v.get("map_action") and v.get("art") != "ep-art-20261016"}
             for data in (CAST, acting, PORTRAITS):
                 self.assertEqual(files(data[npc] if data is not acting else acting), {new}, npc)
-            if not FULLBODY[npc].get("acting_package"):   # 0.18.91: dialogue from the expression package
+            if not FULLBODY[npc].get("acting_package"):   # 0.18.92: dialogue from the expression package
                 self.assertEqual(files({k: v for k, v in FULLBODY[npc].items() if k != "poses"}), {new}, npc)
             # Old seated / living poses would show the old body: removed.
             self.assertEqual(set(acting), {"neutral", "thinking", "distressed", "expressive",
