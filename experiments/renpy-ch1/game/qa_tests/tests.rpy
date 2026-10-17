@@ -9847,7 +9847,8 @@ testcase new_places:
     pause 1.5
     click "마을"
     pause .5
-    click pos (674,281)
+    # 0.19.12 map: the 장터 name plate (the stalls only take clicks on drawn pixels).
+    click pos (700,258)
     pause 0.5
     click "이곳으로 이동"
     click pos (1150,90) until screen "r13_hub" timeout 40
