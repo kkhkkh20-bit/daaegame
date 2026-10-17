@@ -164,7 +164,7 @@ label r13_ep1_patrol:
                 $ _ep_loop=True
             "박쥐 아이의 보증을 서겠다고 한다":
                 call r13_lines([("neoul","외지 사람 보증은 소용없소. 검사원 확인서라도 가져오면 모를까."),
-                    ("dad","(서리 검사원의 확인서. 그 확인서라면 너울도 무시하지 못한다.)",{"thought":True})],"ep1:patrol:vouch")
+                    ("dad","(검사원의 확인서라. 그거라면 너울도 무시하지 못할까?)",{"thought":True})],"ep1:patrol:vouch")
                 $ r13_flag("patrol_suspicious","need_certificate")
             "바둑이에게 슬쩍 두 냥을 쥐여 준다" if r13_cash_now()>=2:
                 call r13_lines([("resident_badook","……이러지 마세요. 돈은 안 받아요."),
@@ -234,7 +234,7 @@ label r13_ep1_morning:
     if r13_has("bami_reported") or r13_has("patrol_suspicious") or not r13_has("ep1_patrol_seen"):
         call r13_lines([(None,"새벽, 처마 쪽에서 날개 퍼덕이는 소리와 경비의 고함이 들렸다."),
             (None,"아침에 나가 보니 처마 밑은 비어 있었다. 바닥에 작은 발톱 자국만 남아 있었다."),
-            ("dad","(밤이가 검사를 받으러 북쪽 보호소로 끌려갔다.)",{"thought":True})],"ep1:morning:taken")
+            ("dad","(처마 밑의 그 아이는 어디로 갔을까? 너울이 말한 북쪽 보호소일까?)",{"thought":True})],"ep1:morning:taken")
         $ r13_flag("bami_taken")
     return
 

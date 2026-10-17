@@ -385,7 +385,7 @@ label r13_nt_after_trial:
     $ r13_flag("nt_after")
     if room13.get("trial_result")=="culprit_proven" and r13_has("N03") and r13_has("N07") and (r13_has("ttadak_dead") or r13_has("nt_ttadak_half")):
         call r13_scene("council","식당 · 따닥의 일","hearing")
-        call r13_lines([("resident_seori","하나 더 있습니다. 9일 새벽, 통로 안에서 목수 따닥 씨가 얼었습니다." if r13_has("ttadak_dead") else "하나 더 있습니다. 9일 새벽, 목수 따닥 씨가 통로 안에 갇혔습니다. 손이 얼어 지금 진료소에 있습니다.")],"nt:q4:open")
+        call r13_lines([("resident_seori","하나 더 있습니다. 토요일 새벽, 통로 안에서 목수 따닥 씨가 얼었습니다." if r13_has("ttadak_dead") else "하나 더 있습니다. 토요일 새벽, 목수 따닥 씨가 통로 안에 갇혔습니다. 손이 얼어 지금 진료소에 있습니다.")],"nt:q4:open")
         call r13_debate_run("Q4")
         if _return:
             $ r13_flag("nt_ttadak_proven")

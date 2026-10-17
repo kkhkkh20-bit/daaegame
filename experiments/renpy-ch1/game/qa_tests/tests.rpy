@@ -11191,7 +11191,7 @@ testcase ep6_cart:
     click pos (640,600) until eval (r13_has("cv_badook_safe") and not renpy.get_screen("say")) timeout 60
     run Call("r13_qa_roam",dict(day=13,period=2,location="inn",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["E01","K02","V05","V06","Y05","Y14"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","tok_cleared","mom_reunited","ws_done","ws_long_night","ws_lab","cv_morning","cv_hall","cv_badook_witness","cv_badook_safe","evening_brief:13"))
     click pos (640,600) until screen "choice" timeout 60
-    click "설이에게 네 겨울의 수레 이야기를 한다"
+    click "설이에게 빈 수레 이야기를 한다"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 120
     pause 0.6
     click "발언 고르기" until screen "r13_debate_board" timeout 30

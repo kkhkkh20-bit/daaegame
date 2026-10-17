@@ -523,7 +523,7 @@ label r13_ep1_aftermath:
             ("resident_tok","이 조각, 가을엔 밤새 따뜻했어요. 지금은…….")],"ep1:after:lamp")
         if r13_has("know_stone_failing"):
             call r13_lines([("resident_ubak","조각 탓이 아니에요. 【돌이 식고 있어요】.")],"ep1:after:ubak")
-        call r13_lines([("dad","(실룩이 훔친 건 조각이지만, 피코를 쓰러뜨린 건 이 겨울이다.)",{"thought":True})],"ep1:after:thought")
+        call r13_lines([("dad","(조각을 다시 넣어도 금방 식는다. 피코를 쓰러뜨린 건 조각이 빈 등뿐이었을까?)",{"thought":True})],"ep1:after:thought")
     else:
         call r13_lines([(None,"톡이 끌려간 뒤, 광장 3번 등은 조각 자리가 빈 채로 서 있었다."),
             ("dad","(톡이 정말 조각을 가져갔을까? 쪽지와 노끈의 주인을 끝내 밝히지 못했다.)",{"thought":True})],"ep1:after:fail")

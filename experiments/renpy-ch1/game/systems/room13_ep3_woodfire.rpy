@@ -396,7 +396,7 @@ label r13_wf_nubi:
             $ _wf_left.remove(_wf_pick)
             if _wf_pick=="can":
                 call r13_lines([(None,"솥 옆 기름통. 반쯤 비어 있었다.")]+
-                    ([("dad","(엿들을 때는 뚜껑까지 꽉 차 있었다. 솥 밑 불은 그 뒤로 거의 안 땠다.)",{"thought":True})] if r13_has("F02") else [])+
+                    ([("dad","(처음 왔을 때는 뚜껑까지 꽉 차 있었다. 기름을 아껴 쓴다던 솥에 며칠 새 이만큼을 썼을까?)",{"thought":True})] if r13_has("F02") else [])+
                     [("resident_nubi","요즘 솥을 많이 데워서요……")],"wf:nubi:can")
                 $ r13_grant(["F09"],"빨래터 기름통을 직접 봄")
             elif _wf_pick=="hand":
