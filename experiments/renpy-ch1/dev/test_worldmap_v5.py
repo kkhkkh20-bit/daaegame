@@ -80,7 +80,9 @@ class WorldmapV5(unittest.TestCase):
         self.assertEqual(set(DATA['reveals']),{'greenhouse','altar'})
         for key,spec in DATA['reveals'].items():
             with Image.open(GAME/spec['art']) as im:
-                self.assertEqual(im.size,tuple(spec['bounds'][2:]));self.assertIn('A',im.getbands())
+                self.assertEqual(im.size,tuple(spec['bounds'][2:]))
+                # Opaque ink patches prevent hidden tree lines bleeding through.
+                self.assertIn(im.mode,('RGB','RGBA'))
         source=(GAME/'room13_worldmap_v5.rpy').read_text()
         self.assertIn('if r13_cart_cover_visible(secret):',source)
         self.assertNotIn('v5_label_',source)

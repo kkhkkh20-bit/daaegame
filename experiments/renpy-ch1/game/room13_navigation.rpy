@@ -88,7 +88,7 @@ screen r13_map(initial_region=None, local_guide=False):
     $ close_action = Function(r13_inn_guide_close) if local_guide else Return(False)
     key "game_menu" action close_action
     timer .15 action SetScreenVariable("ready",True)
-    add Solid("#ead6b4" if region=="village" else "#10202a")
+    add Solid("#ead6b4" if region in ("village","mountain") else "#10202a")
     if region in ("village","mountain"):
         use r13_cartography(region,selected,ready,map_hover)
     else:
