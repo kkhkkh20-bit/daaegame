@@ -5835,6 +5835,77 @@
         "source_sha256": "0a9366c80dce51c74e23bf14ef21142de6f1ecbf77d7e4a9eccbef92f943d6d9"
       },
       "activity": "쟁반에 빵과 수프를 올린다."
+    },
+    {
+      "request_id": "VA-1",
+      "status": "approved",
+      "person": "resident_badook",
+      "pose": "map27_lantern_patrol",
+      "location": "square",
+      "periods": [
+        2
+      ],
+      "replace_poses": [
+        "living_bootlace"
+      ],
+      "variants": {
+        "evening": {
+          "world_width": 1920,
+          "render_height": 300,
+          "anchor": "foot",
+          "target": [
+            245,
+            676
+          ],
+          "occlusion": []
+        }
+      },
+      "spec": {
+        "file": "assets/map-action27/VA-1--resident_badook.webp",
+        "crop": [
+          0,
+          0,
+          516,
+          768
+        ],
+        "head": [
+          120.46692607003891,
+          10.03921568627451,
+          271.05058365758754,
+          210.8235294117647
+        ],
+        "foot": [
+          291.63035019455253,
+          744.9098039215686
+        ],
+        "anchors": {
+          "foot_left": [
+            201.28015564202335,
+            629.9607843137255
+          ],
+          "foot_right": [
+            381.9805447470817,
+            744.9098039215686
+          ],
+          "hand_left_image": [
+            170.15953307392996,
+            99.89019607843137
+          ],
+          "hand_right_image": [
+            423.1400778210117,
+            337.81960784313725
+          ],
+          "foot": [
+            291.63035019455253,
+            744.9098039215686
+          ]
+        },
+        "contact": "standing",
+        "stature_ratio": 1,
+        "source_sha256": "da6139101310671715ccabcf35aa8eb8ab5e80ea4aa3d6f304f0f17f3e472e3e",
+        "source_commit": "b9ba25ebc0d0ca2baf114f9fc39d3f5d6f9180c2"
+      },
+      "activity": "등불을 들고 광장을 순찰한다."
     }
   ],
   "remaining_source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af",

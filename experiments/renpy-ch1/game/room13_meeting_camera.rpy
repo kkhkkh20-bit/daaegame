@@ -65,8 +65,8 @@ init 175 python:
         ratio=float(height)/840
         # Same canvas and neutral head placement as the approved dialogue source.
         # No automatic mirroring: front-facing art remains front-facing.
-        return Fixed(Transform(spec["file"],xpos=spec["offset"][0]*ratio,
-            ypos=spec["offset"][1]*ratio,zoom=spec["scale"]*ratio,nearest=False,subpixel=True),
+        return Fixed(Transform(spec["file"],xpos=int(round(spec["offset"][0]*ratio)),
+            ypos=int(round(spec["offset"][1]*ratio)),zoom=spec["scale"]*ratio,nearest=False,subpixel=True),
             xysize=tuple(int(round(v*ratio)) for v in spec["canvas"]))
 
     def r13_meeting_reaction_phase(reaction,token,claimed,elapsed,disabled=False):

@@ -99,11 +99,11 @@ init 99 python:
 
     def r13_meeting_edge(x,session):
         kind=r13_meeting_kind(session)
-        if kind in ("field","room"):return 520
+        if kind in ("field","room"):return 640
         return int((396 if kind=="round" else 432)+(88 if kind=="round" else 68)*((x-640)/640.0)**2)
 
     def r13_meeting_seat_position(index,count,session="trial"):
-        x=int(60+(index+.5)*1160/max(1,count))
+        x=int(240+(index+.5)*980/max(1,count)) if r13_meeting_kind(session)=="room" else int(60+(index+.5)*1160/max(1,count))
         return x,r13_meeting_edge(x,session)
 
     def r13_meeting_actor(who,focus,cx,seated=False):
@@ -239,9 +239,10 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                     $ source_profile=r13_dialogue_source_profile(who,"neutral",840)
                     if source_profile:
                         $ source_width,source_height=source_profile["canvas"]
-                        $ stand_width=min(int(source_width*306.0/source_height),int(1160.0/max(1,len(seats))*.90))
+                        $ stand_width=min(int(source_width*306.0/source_height),int((980.0 if venue_kind=="room" else 1160.0)/max(1,len(seats))*.90))
                         $ height=int(round(stand_width*source_height/float(source_width)))
                         $ source_top=int(edge-height*(1.0 if venue_kind in ("field","room") else .60))
+                        $ top=source_top
                         add Transform(r13_fullbody_close_art(who,"neutral",840),xysize=(stand_width,height),nearest=False) xcenter cx ypos source_top
                     else:
                         add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top

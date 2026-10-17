@@ -194,7 +194,7 @@ init 174 python:
         if not explicit:pose=cue.get("pose",pose)
         # An authored pose always wins. A matching authored emotion may use a
         # reviewed variant of that same emotion (Nabi's anxious witness account).
-        use_slot=cue.get("slot") and not metadata.get("pose") and (not explicit or cue.get("expression")==expression)
+        use_slot=cue.get("slot") and not metadata.get("pose") and (not explicit or cue.get("expression")==metadata.get("expression",expression))
         store.r13_meeting_art_slots={person:cue["slot"]} if use_slot else {}
         poses={}
         listener=cue.get("listener")

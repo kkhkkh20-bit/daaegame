@@ -1,0 +1,127 @@
+{
+  "kind": "native calls to production evidence route with explicit state fixture",
+  "lines": [
+    {
+      "id": "debate:break:C3:s2:E12:0:980b06ef8a6f72",
+      "index": 0,
+      "packet": [
+        "nabi",
+        "할머니가 공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요.",
+        {
+          "expression": "anxious"
+        }
+      ],
+      "slots": {
+        "nabi": "witness_hesitate"
+      },
+      "poses": {
+        "granny": "neutral",
+        "nabi": "anxious"
+      },
+      "reaction": null,
+      "listener": "granny",
+      "proofs": []
+    },
+    {
+      "id": "debate:break:C3:s2:E12:1:a396f8eff7a45e",
+      "index": 1,
+      "packet": [
+        "granny",
+        "내가 잠깐 안 보였다는 게 전부잖아요.",
+        {
+          "expression": "flustered"
+        }
+      ],
+      "slots": {},
+      "poses": {
+        "granny": "flustered"
+      },
+      "reaction": {
+        "token": "debate:break:C3:s2:E12",
+        "person": "granny",
+        "phase": "playing",
+        "pose": "flustered"
+      },
+      "listener": null,
+      "proofs": []
+    },
+    {
+      "id": "meeting:gasp:C3:s2:0:a822976384c7aa",
+      "index": 0,
+      "packet": [
+        "resident_kongi",
+        "정말요?",
+        {
+          "pose": "surprise"
+        }
+      ],
+      "slots": {},
+      "poses": {
+        "resident_kongi": "neutral"
+      },
+      "reaction": null,
+      "listener": null,
+      "proofs": []
+    }
+  ],
+  "loaded": {
+    "id": "debate:break:C3:s2:E12:0:980b06ef8a6f72",
+    "index": 0,
+    "packet": [
+      "nabi",
+      "할머니가 공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요.",
+      {
+        "expression": "anxious"
+      }
+    ],
+    "slots": {
+      "nabi": "witness_hesitate"
+    },
+    "poses": {
+      "granny": "neutral",
+      "nabi": "anxious"
+    },
+    "reaction": null,
+    "listener": "granny",
+    "proofs": []
+  },
+  "before_rollback": {
+    "id": "meeting:gasp:C3:s2:0:a822976384c7aa",
+    "index": 0,
+    "packet": [
+      "resident_kongi",
+      "정말요?",
+      {
+        "pose": "surprise"
+      }
+    ],
+    "slots": {},
+    "poses": {
+      "resident_kongi": "neutral"
+    },
+    "reaction": null,
+    "listener": null,
+    "proofs": []
+  },
+  "after_rollback": {
+    "id": "meeting:gasp:C3:s2:0:a822976384c7aa",
+    "index": 0,
+    "packet": [
+      "resident_kongi",
+      "정말요?",
+      {
+        "pose": "surprise"
+      }
+    ],
+    "slots": {},
+    "poses": {
+      "resident_kongi": "neutral"
+    },
+    "reaction": null,
+    "listener": null,
+    "proofs": []
+  },
+  "rollback_changed": false,
+  "status": "passed_except_rollback_unverified",
+  "archive_sha256": "0372c07ef8a7dc5a00e3c6569d639014ec1288180febc488cb1939a52a91e9ec"
+}

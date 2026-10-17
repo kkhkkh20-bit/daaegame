@@ -20,6 +20,11 @@ class CouncilDirection(unittest.TestCase):
   src=(ROOT/'game/systems/room13_meeting_direction.rpy').read_text().split('init 174 python:\n',1)[1].split('\n# Brief impact',1)[0]
   exec(textwrap.dedent(src),self.e)
   self.s.r13_meeting_active=True;self.s.r13_meeting_claim='C2'
+ def test_authored_anxious_slot_survives_legacy_avatar_expression(self):
+  self.s.r13_meeting_active=True;self.s.r13_meeting_claim='C3'
+  text='할머니가 공구를 가지러 주방에 가신 뒤로는…… 저도 못 봤어요.'
+  self.e['r13_meeting_direct_line']('debate:break:C3:s2:E12',0,('nabi',text,{'expression':'anxious'}),'distressed','anxious')
+  self.assertEqual(self.s.r13_meeting_art_slots,{'nabi':'witness_hesitate'})
  def test_surprise_waits_for_witness_explanation_and_self_reply_finishes(self):
   self.s.r13_meeting_claim='C3'
   self.e['renpy'].display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:10.0))

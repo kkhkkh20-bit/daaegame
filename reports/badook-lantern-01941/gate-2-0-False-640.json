@@ -1,0 +1,239 @@
+{
+  "label": "gate-2-0-False-640",
+  "actors": [
+    {
+      "person": "guard",
+      "pose": "action_1",
+      "x": 1179,
+      "y": 410,
+      "width": 179,
+      "height": 190,
+      "rect": [
+        1179,
+        410,
+        179,
+        190
+      ],
+      "depth": 600,
+      "occlusion": [],
+      "contact": "held_ledger",
+      "slot": null,
+      "activity": "입구 장부에 드나든 사람을 적는다."
+    },
+    {
+      "person": "karo",
+      "pose": "living_axlewrap",
+      "x": 486,
+      "y": 450,
+      "width": 127,
+      "height": 165,
+      "rect": [
+        486,
+        450,
+        127,
+        165
+      ],
+      "depth": 615,
+      "occlusion": [],
+      "contact": "kneeling",
+      "slot": null,
+      "activity": "까로는 마차 축의 감긴 부분을 다시 살폈다."
+    },
+    {
+      "person": "resident_bori",
+      "pose": "living_firewood",
+      "x": 863,
+      "y": 469,
+      "width": 132,
+      "height": 158,
+      "rect": [
+        863,
+        469,
+        132,
+        158
+      ],
+      "depth": 627,
+      "occlusion": [],
+      "contact": "crouching",
+      "slot": [
+        920,
+        620,
+        230,
+        "floor"
+      ],
+      "activity": "보리는 장작 묶음의 끈을 한 번 더 당겼다."
+    },
+    {
+      "person": "resident_badook",
+      "pose": "living_bootlace",
+      "x": 986,
+      "y": 455,
+      "width": 245,
+      "height": 196,
+      "rect": [
+        986,
+        455,
+        245,
+        196
+      ],
+      "depth": 651,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1110,
+        651,
+        245,
+        "floor"
+      ],
+      "activity": "바둑이는 순찰화 끈을 조이고 길을 봤다."
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "guard",
+      "point": [
+        637,
+        450
+      ],
+      "actions": [
+        "('person', 'guard')"
+      ]
+    },
+    {
+      "person": "resident_bori",
+      "point": [
+        303,
+        493
+      ],
+      "actions": [
+        "('person', 'resident_bori')"
+      ]
+    },
+    {
+      "person": "resident_badook",
+      "point": [
+        496,
+        508
+      ],
+      "actions": [
+        "('person', 'resident_badook')"
+      ]
+    }
+  ],
+  "specs": {
+    "guard": {
+      "file": "assets/room13-pixel-acting-guard.webp",
+      "crop": [
+        614,
+        504,
+        451,
+        479
+      ],
+      "nearest": true,
+      "facing": "right",
+      "contact": "held_ledger",
+      "foot": [
+        225,
+        478
+      ],
+      "head": [
+        147,
+        0,
+        205,
+        204
+      ],
+      "hand": [
+        390,
+        202
+      ]
+    },
+    "karo": {
+      "file": "assets/room13-action-karo-living_axlewrap.webp",
+      "crop": [
+        0,
+        61,
+        512,
+        664
+      ],
+      "nearest": true,
+      "foot": [
+        294,
+        660
+      ],
+      "head": [
+        150,
+        4,
+        280,
+        150
+      ],
+      "contact": "kneeling",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 0.72,
+      "source_sha256": "4de994f5c66c053293de74f13e6713859ac823cd26f1330d49054bb034062d08"
+    },
+    "resident_bori": {
+      "file": "assets/room13-action-resident_bori-living_firewood.webp",
+      "crop": [
+        15,
+        125,
+        493,
+        589
+      ],
+      "nearest": true,
+      "foot": [
+        210,
+        560
+      ],
+      "head": [
+        205,
+        5,
+        190,
+        170
+      ],
+      "contact": "crouching",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 0.69,
+      "source_sha256": "43ef3da191948ec5382f1ef2c84c3c09172ba9ff7b5c6d2ba2c8d862b86b0eb2"
+    },
+    "resident_badook": {
+      "file": "assets/room13-pixel-acting-badook.webp",
+      "crop": [
+        568,
+        577,
+        477,
+        383
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          238,
+          379
+        ]
+      },
+      "action_ko": "순찰화의 끈을 조여 맨다.",
+      "contact": "self-contained",
+      "head": [
+        110,
+        0,
+        367,
+        211
+      ],
+      "facing": "right-profile"
+    }
+  },
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "gate"
+  },
+  "clicked": "resident_badook",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "08ff057f + 0.19.41 working tree",
+  "archive_sha256": "04a51d9003f811a10cb08b9c2d1941dc48011905e11ddcfe2033302b2787afc8",
+  "capture_kind": "Native official SDK build with explicit schedule fixture"
+}
