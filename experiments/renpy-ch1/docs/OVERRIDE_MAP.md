@@ -109,6 +109,18 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
 | 8 | 173 | `systems/room13_review_knowledge.rpy:94` |  |
 
+## `r13_stage_people` (7층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:334` | _r13_daram_home_stage |
+| 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
+| 3 | 124 | `systems/room13_event_offers.rpy:60` | _r13_ma_stage |
+| 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
+| 5 | 126 | `systems/room13_perspective.rpy:32` | _r13_map9_stage |
+| 6 | 176 | `systems/room13_map_work_nine.rpy:17` | _r13_map27_stage |
+| 7 | 178 | `systems/room13_map_action27.rpy:42` |  |
+
 ## `r13_compare_result` (6층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -119,17 +131,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 100 | `systems/room13_poc_route.rpy:92` | _r13_daram_home_compare |
 | 5 | 101 | `systems/room13_daram_home.rpy:137` | _r13_tm_compare |
 | 6 | 116 | `systems/room13_testimony.rpy:42` |  |
-
-## `r13_stage_people` (6층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:334` | _r13_daram_home_stage |
-| 2 | 101 | `systems/room13_daram_home.rpy:31` | _r13_offer_stage |
-| 3 | 124 | `systems/room13_event_offers.rpy:60` | _r13_ma_stage |
-| 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
-| 5 | 126 | `systems/room13_perspective.rpy:32` | _r13_map9_stage |
-| 6 | 176 | `systems/room13_map_work_nine.rpy:17` |  |
 
 ## `r13_finish_topic` (5층)
 
@@ -449,6 +450,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 150 | `systems/room13_sound.rpy:123` | _r13_contrast_scene_music |
 | 2 | 163 | `systems/room13_scene_contrast.rpy:25` |  |
+
+## `r13_staged_visible_art` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:527` | _r13_map27_visible |
+| 2 | 178 | `systems/room13_map_action27.rpy:61` |  |
 
 ## `r13_visible_people` (2층)
 

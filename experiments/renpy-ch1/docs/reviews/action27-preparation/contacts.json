@@ -1,0 +1,246 @@
+{
+  "status": "background_review_only_art_fit_pending",
+  "base_main": "334b8b52f5ac019a327a443bbae0db61f1c867f3",
+  "coordinate_space": "world pixels after source crop and scene resize; not viewport coordinates",
+  "placements": [
+    {
+      "request": "PO-1",
+      "location": "post",
+      "daylight": "morning",
+      "world_width": 2160,
+      "anchor": "parcel_bottom_center",
+      "target": [
+        1450,
+        548
+      ],
+      "standing_height_reference": 190,
+      "occlusion": [
+        [
+          [
+            1100,
+            560
+          ],
+          [
+            1135,
+            515
+          ],
+          [
+            1500,
+            500
+          ],
+          [
+            1600,
+            492
+          ],
+          [
+            1700,
+            480
+          ],
+          [
+            2160,
+            470
+          ],
+          [
+            2160,
+            720
+          ],
+          [
+            1100,
+            720
+          ]
+        ]
+      ],
+      "required_foreground_parts": [
+        "parcel",
+        "both hands"
+      ],
+      "note": "Clear counter surface left of existing papers; feet derived from approved parcel anchor, never fixed to y499."
+    },
+    {
+      "request": "PO-1",
+      "location": "post",
+      "daylight": "afternoon",
+      "world_width": 1280,
+      "anchor": "parcel_bottom_center",
+      "target": [
+        700,
+        550
+      ],
+      "standing_height_reference": 240,
+      "occlusion": [
+        [
+          [
+            365,
+            552
+          ],
+          [
+            620,
+            520
+          ],
+          [
+            840,
+            493
+          ],
+          [
+            1030,
+            460
+          ],
+          [
+            1280,
+            455
+          ],
+          [
+            1280,
+            720
+          ],
+          [
+            365,
+            720
+          ]
+        ]
+      ],
+      "required_foreground_parts": [
+        "parcel",
+        "both hands"
+      ],
+      "note": "Independent 1280 atlas scene; do not multiply morning coordinates by 1280/2160."
+    },
+    {
+      "request": "PO-1",
+      "location": "post",
+      "daylight": "evening",
+      "world_width": 1280,
+      "anchor": "parcel_bottom_center",
+      "target": [
+        700,
+        548
+      ],
+      "standing_height_reference": 240,
+      "occlusion": [
+        [
+          [
+            365,
+            550
+          ],
+          [
+            620,
+            518
+          ],
+          [
+            840,
+            491
+          ],
+          [
+            1030,
+            458
+          ],
+          [
+            1280,
+            453
+          ],
+          [
+            1280,
+            720
+          ],
+          [
+            365,
+            720
+          ]
+        ]
+      ],
+      "required_foreground_parts": [
+        "parcel",
+        "both hands"
+      ]
+    },
+    {
+      "request": "DI-1a",
+      "location": "dining",
+      "daylight": "evening",
+      "world_width": 2160,
+      "anchor": "seat",
+      "target": [
+        660,
+        415
+      ],
+      "secondary_targets": {
+        "bowl_bottom_center": [
+          720,
+          365
+        ]
+      },
+      "standing_height_reference": 156,
+      "occlusion": [
+        [
+          [
+            645,
+            356
+          ],
+          [
+            965,
+            356
+          ],
+          [
+            965,
+            445
+          ],
+          [
+            645,
+            445
+          ]
+        ]
+      ],
+      "required_foreground_parts": [
+        "bowl",
+        "spoon",
+        "hands"
+      ],
+      "note": "Left back table, facing right. Replace proposed x990 seat outside table. Chair must fit existing chair footprint; do not add a second chair beside it. Final scale requires supplied seated stature_ratio."
+    },
+    {
+      "request": "CL-1",
+      "location": "clinic",
+      "daylight": "morning",
+      "world_width": 1920,
+      "anchor": "seat",
+      "target": [
+        1150,
+        410
+      ],
+      "standing_height_reference": 189,
+      "occlusion": [],
+      "required_foreground_parts": [],
+      "note": "Near mattress edge at white/red bedding seam, legs hang in front of bedding. No bed/chair painted into source. Do not reuse lying-map9 blanket mask."
+    },
+    {
+      "request": "CL-1",
+      "location": "clinic",
+      "daylight": "afternoon",
+      "world_width": 1920,
+      "anchor": "seat",
+      "target": [
+        1150,
+        410
+      ],
+      "standing_height_reference": 189,
+      "occlusion": [],
+      "required_foreground_parts": [],
+      "note": "Near mattress edge at white/red bedding seam, legs hang in front of bedding. No bed/chair painted into source. Do not reuse lying-map9 blanket mask."
+    },
+    {
+      "request": "CL-1",
+      "location": "clinic",
+      "daylight": "evening",
+      "world_width": 1920,
+      "anchor": "seat",
+      "target": [
+        1150,
+        410
+      ],
+      "standing_height_reference": 189,
+      "occlusion": [],
+      "required_foreground_parts": [],
+      "note": "Near mattress edge at white/red bedding seam, legs hang in front of bedding. No bed/chair painted into source. Do not reuse lying-map9 blanket mask."
+    }
+  ]
+}
