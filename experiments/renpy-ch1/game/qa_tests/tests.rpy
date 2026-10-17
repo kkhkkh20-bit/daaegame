@@ -785,7 +785,7 @@ testcase carriage_skip:
     click "처음부터"
     pause 3.0
     screenshot "c0_carriage.png"
-    click "건너뛰기"
+    click "씬 건너뛰기"
     pause 1.0
     click pos (640,600) until screen "r13_hub" timeout 40
     pause 1.0
@@ -2556,7 +2556,7 @@ testcase conversation_skip:
     click "함께 왔다고"
     pause 1.5
     screenshot "skip_bar.png"
-    click "건너뛰기"
+    click "대사 건너뛰기"
     pause 1.5
     assert screen "r13_entry_karo_topics"
 

@@ -314,9 +314,9 @@ screen r13_opening_cut():
 
     # 클릭(또는 확인 키)은 다음 컷으로. 마지막 컷에서는 마차 대화로.
     key "dismiss" action (SetScreenVariable("shot", shot + 1) if shot < 3 else Return(True))
-    textbutton "건너뛰기 ›":
+    textbutton "씬 건너뛰기":
         style "r13_action_button"
-        xpos 988 ypos 24 xsize 184 ysize 54
+        xpos 948 ypos 24 xsize 224 ysize 54
         text_size r13_read_size(20,24)
         action Return(False)
         tooltip "오프닝 장면을 건너뛰고 마차 이야기로 갑니다"
