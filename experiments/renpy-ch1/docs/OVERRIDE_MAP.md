@@ -25,7 +25,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 16 | 150 | `systems/room13_sound.rpy:161` | _r13_e1_present |
 | 17 | 152 | `systems/room13_ep1_lamp_thief.rpy:63` | _r13_wf_present |
 | 18 | 154 | `systems/room13_ep3_woodfire.rpy:53` | _r13_nt_present |
-| 19 | 155 | `systems/room13_ep4_night13.rpy:42` |  |
+| 19 | 155 | `systems/room13_ep4_night13.rpy:44` |  |
 
 ## `r13_topics` (19층)
 
@@ -76,8 +76,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 93 | `systems/room13_livelihood_flow.rpy:107` | _r13_episode_where |
 | 5 | 103 | `systems/room13_episodes.rpy:55` | _r13_alibi_where |
 | 6 | 147 | `systems/room13_alibi.rpy:30` | _r13_kd_where |
-| 7 | 153 | `systems/room13_ep2_kids.rpy:82` | _r13_nt_where |
-| 8 | 155 | `systems/room13_ep4_night13.rpy:32` | _r13_continuity_where |
+| 7 | 153 | `systems/room13_ep2_kids.rpy:92` | _r13_nt_where |
+| 8 | 155 | `systems/room13_ep4_night13.rpy:34` | _r13_continuity_where |
 | 9 | 162 | `systems/room13_story_continuity.rpy:19` |  |
 
 ## `r13_conversation_topic_lines` (8층)
