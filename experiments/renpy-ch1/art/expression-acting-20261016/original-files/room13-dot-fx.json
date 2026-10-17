@@ -1,0 +1,1226 @@
+{
+ "version": 1,
+ "cell": 4,
+ "generator": "dev/make_dot_fx.py",
+ "inn_fire": {
+  "rect": [
+   72,
+   252,
+   128,
+   156
+  ],
+  "frames": 12,
+  "fps": 9,
+  "periods": {
+   "morning": {
+    "sheet": "assets/room13-fx-inn-fire-morning.webp",
+    "light": [
+     0.47,
+     0.36,
+     0.23,
+     0.0,
+     0.37,
+     0.55,
+     0.28,
+     0.3,
+     0.39,
+     0.92,
+     0.8,
+     1.0
+    ]
+   },
+   "afternoon": {
+    "sheet": "assets/room13-fx-inn-fire-afternoon.webp",
+    "light": [
+     0.46,
+     0.23,
+     0.0,
+     0.02,
+     0.29,
+     0.36,
+     0.35,
+     0.34,
+     0.53,
+     0.96,
+     0.78,
+     1.0
+    ]
+   },
+   "evening": {
+    "sheet": "assets/room13-fx-inn-fire-evening.webp",
+    "light": [
+     0.95,
+     0.6,
+     0.6,
+     0.19,
+     0.03,
+     0.17,
+     0.0,
+     0.0,
+     0.11,
+     0.58,
+     0.7,
+     1.0
+    ]
+   }
+  }
+ },
+ "inn_glow": {
+  "file": "assets/room13-fx-inn-glow.webp",
+  "periods": [
+   "evening"
+  ],
+  "alpha": [
+   0.0,
+   0.1
+  ]
+ },
+ "snow": {
+  "small": "assets/room13-fx-snow-small.webp",
+  "big": "assets/room13-fx-snow-big.webp",
+  "periods": [
+   "evening"
+  ],
+  "locations": [
+   "square",
+   "gate",
+   "altar"
+  ],
+  "layers": [
+   {
+    "count": 140,
+    "size": 4,
+    "vy": [
+     26,
+     40
+    ],
+    "sway": 10
+   },
+   {
+    "count": 28,
+    "size": 8,
+    "vy": [
+     56,
+     80
+    ],
+    "sway": 18
+   }
+  ]
+ },
+ "lamp_glow": {
+  "square": {
+   "file": "assets/room13-fx-square-lampglow.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.18,
+    0.42
+   ]
+  }
+ },
+ "smoke": {
+  "sources": {
+   "square": [
+    [
+     1475,
+     64
+    ],
+    [
+     696,
+     188
+    ],
+    [
+     1562,
+     99
+    ]
+   ]
+  },
+  "puffs": {
+   "4-0": "assets/room13-fx-smoke-4-0.webp",
+   "4-1": "assets/room13-fx-smoke-4-1.webp",
+   "4-2": "assets/room13-fx-smoke-4-2.webp",
+   "8-0": "assets/room13-fx-smoke-8-0.webp",
+   "8-1": "assets/room13-fx-smoke-8-1.webp",
+   "8-2": "assets/room13-fx-smoke-8-2.webp",
+   "12-0": "assets/room13-fx-smoke-12-0.webp",
+   "12-1": "assets/room13-fx-smoke-12-1.webp",
+   "12-2": "assets/room13-fx-smoke-12-2.webp"
+  },
+  "periods": [
+   "morning",
+   "afternoon",
+   "evening"
+  ],
+  "every": 0.9,
+  "life": 4.5,
+  "rise": 72,
+  "drift": 18
+ },
+ "evidence_sparkle": {
+  "sheet": "assets/room13-fx-evidence-sparkle.webp",
+  "frames": 6,
+  "fps": 12,
+  "size": [
+   128,
+   128
+  ]
+ },
+ "dither": {
+  "file": "assets/room13-fx-dither.png",
+  "time": 0.5
+ },
+ "lamps": {
+  "school": {
+   "file": "assets/room13-fx-lamp-school.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "workshop": {
+   "file": "assets/room13-fx-lamp-workshop.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "clinic": {
+   "file": "assets/room13-fx-lamp-clinic.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "store": {
+   "file": "assets/room13-fx-lamp-store.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "greenhouse": {
+   "file": "assets/room13-fx-lamp-greenhouse.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  },
+  "facility": {
+   "file": "assets/room13-fx-lamp-facility.webp",
+   "periods": [
+    "evening"
+   ],
+   "alpha": [
+    0.1,
+    0.28
+   ]
+  }
+ },
+ "inn_window": {
+  "rect": [
+   648,
+   156,
+   456,
+   212
+  ],
+  "mask": "assets/room13-fx-inn-window-mask.webp",
+  "periods": [
+   "evening"
+  ],
+  "layers": [
+   {
+    "count": 34,
+    "size": 4,
+    "vy": [
+     22,
+     34
+    ],
+    "sway": 6
+   }
+  ]
+ },
+ "cinematics": {
+  "return": {
+   "lamp": "assets/room13-fx-cine-return.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "rescue": {
+   "lamp": "assets/room13-fx-cine-rescue.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "reunion": {
+   "lamp": "assets/room13-fx-cine-reunion.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "mountain": {
+   "lamp": "assets/room13-fx-cine-mountain.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": true
+  },
+  "E0": {
+   "lamp": "assets/room13-fx-cine-e0.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": true
+  },
+  "E2": {
+   "lamp": "assets/room13-fx-cine-e2.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": true
+  },
+  "E3": {
+   "lamp": "assets/room13-fx-cine-e3.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "E4": {
+   "lamp": "assets/room13-fx-cine-e4.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "E5": {
+   "lamp": "assets/room13-fx-cine-e5.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  },
+  "proof": {
+   "lamp": "assets/room13-fx-cine-proof.webp",
+   "alpha": [
+    0.12,
+    0.32
+   ],
+   "snow": false
+  }
+ },
+ "storybook": {
+  "bleed": "assets/room13-fx-bleed.png",
+  "frame": "assets/room13-fx-storybook-frame.webp",
+  "card_glow": "assets/room13-fx-card-glow.webp",
+  "vignette": "assets/room13-fx-edge-vignette.webp"
+ },
+ "lights": {
+  "inn:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-inn-evening.webp",
+   "shade_alpha": 0.42,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-inn-evening-0.webp",
+     "pos": [
+      -670,
+      -455
+     ],
+     "strength": 1.0,
+     "kind": "fire"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-1.webp",
+     "pos": [
+      73,
+      12
+     ],
+     "strength": 0.55,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-2.webp",
+     "pos": [
+      171,
+      -43
+     ],
+     "strength": 0.5,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-3.webp",
+     "pos": [
+      1168,
+      -56
+     ],
+     "strength": 0.5,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-4.webp",
+     "pos": [
+      1301,
+      49
+     ],
+     "strength": 0.55,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-5.webp",
+     "pos": [
+      46,
+      -26
+     ],
+     "strength": 0.45,
+     "kind": "candle"
+    },
+    {
+     "file": "assets/room13-fx-glow-inn-evening-6.webp",
+     "pos": [
+      80,
+      -2
+     ],
+     "strength": 0.45,
+     "kind": "candle"
+    }
+   ],
+   "lead": 0,
+   "sway": {
+    "file": "assets/room13-fx-sway-inn-evening.webp",
+    "center": [
+     150,
+     365
+    ],
+    "alpha": 0.7
+   }
+  },
+  "inn:morning": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-inn-morning.webp",
+   "shade_alpha": 0.12,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-inn-morning-0.webp",
+     "pos": [
+      -470,
+      -255
+     ],
+     "strength": 0.8,
+     "kind": "fire"
+    }
+   ],
+   "lead": 0,
+   "sway": {
+    "file": "assets/room13-fx-sway-inn-morning.webp",
+    "center": [
+     150,
+     365
+    ],
+    "alpha": 0.4
+   }
+  },
+  "inn:afternoon": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-inn-afternoon.webp",
+   "shade_alpha": 0.12,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-inn-afternoon-0.webp",
+     "pos": [
+      -470,
+      -255
+     ],
+     "strength": 0.8,
+     "kind": "fire"
+    }
+   ],
+   "lead": 0,
+   "sway": {
+    "file": "assets/room13-fx-sway-inn-afternoon.webp",
+    "center": [
+     150,
+     365
+    ],
+    "alpha": 0.4
+   }
+  },
+  "school:evening": {
+   "size": [
+    1983,
+    793
+   ],
+   "shade": "assets/room13-fx-shade-school-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-school-evening-0.webp",
+     "pos": [
+      1121,
+      -243
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "workshop:evening": {
+   "size": [
+    1983,
+    793
+   ],
+   "shade": "assets/room13-fx-shade-workshop-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-workshop-evening-0.webp",
+     "pos": [
+      -129,
+      -237
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-workshop-evening-1.webp",
+     "pos": [
+      848,
+      -106
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "clinic:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-clinic-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-clinic-evening-0.webp",
+     "pos": [
+      607,
+      -23
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "store:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-store-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-store-evening-0.webp",
+     "pos": [
+      522,
+      -410
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "greenhouse:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-greenhouse-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-greenhouse-evening-0.webp",
+     "pos": [
+      142,
+      -63
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "facility:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-facility-evening.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-facility-evening-0.webp",
+     "pos": [
+      322,
+      -186
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "square:evening": {
+   "size": [
+    2048,
+    768
+   ],
+   "shade": "assets/room13-fx-shade-square-evening.webp",
+   "shade_alpha": 0.08,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-square-evening-0.webp",
+     "pos": [
+      917,
+      142
+     ],
+     "strength": 0.6,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:return": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-return.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-return-0.webp",
+     "pos": [
+      -52,
+      -82
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:rescue": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-rescue.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-rescue-0.webp",
+     "pos": [
+      306,
+      -52
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:reunion": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-reunion.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-reunion-0.webp",
+     "pos": [
+      624,
+      18
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:mountain": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-mountain.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-mountain-0.webp",
+     "pos": [
+      628,
+      82
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E0": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-e0.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e0-0.webp",
+     "pos": [
+      580,
+      0
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E2": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-e2.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e2-0.webp",
+     "pos": [
+      444,
+      62
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E3": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-e3.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e3-0.webp",
+     "pos": [
+      54,
+      110
+     ],
+     "strength": 0.8,
+     "kind": "candle"
+    },
+    {
+     "file": "assets/room13-fx-glow-cine-e3-1.webp",
+     "pos": [
+      216,
+      184
+     ],
+     "strength": 0.8,
+     "kind": "candle"
+    },
+    {
+     "file": "assets/room13-fx-glow-cine-e3-2.webp",
+     "pos": [
+      532,
+      -78
+     ],
+     "strength": 0.8,
+     "kind": "candle"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E4": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-e4.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e4-0.webp",
+     "pos": [
+      172,
+      174
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:E5": {
+   "size": [
+    832,
+    466
+   ],
+   "shade": "assets/room13-fx-shade-cine-e5.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-e5-0.webp",
+     "pos": [
+      642,
+      158
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-cine-e5-1.webp",
+     "pos": [
+      330,
+      -68
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "cine:proof": {
+   "size": [
+    832,
+    467
+   ],
+   "shade": "assets/room13-fx-shade-cine-proof.webp",
+   "shade_alpha": 0.26,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-cine-proof-0.webp",
+     "pos": [
+      -178,
+      -138
+     ],
+     "strength": 0.8,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  },
+  "title": {
+   "size": [
+    1280,
+    720
+   ],
+   "shade": "assets/room13-fx-shade-title.webp",
+   "shade_alpha": 0.1,
+   "glows": [
+    {
+     "file": "assets/room13-fx-glow-title-0.webp",
+     "pos": [
+      227,
+      210
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-1.webp",
+     "pos": [
+      889,
+      389
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-2.webp",
+     "pos": [
+      405,
+      194
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-3.webp",
+     "pos": [
+      509,
+      236
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-4.webp",
+     "pos": [
+      798,
+      103
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-5.webp",
+     "pos": [
+      1020,
+      192
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    },
+    {
+     "file": "assets/room13-fx-glow-title-6.webp",
+     "pos": [
+      1133,
+      222
+     ],
+     "strength": 0.7,
+     "kind": "lamp"
+    }
+   ],
+   "lead": 0
+  }
+ },
+ "title": {
+  "glow": "assets/room13-fx-title-glow.webp",
+  "alpha": [
+   0.1,
+   0.3
+  ]
+ },
+ "opening": {
+  "carriage_window": {
+   "mask": "assets/room13-fx-carriage-window-mask.webp",
+   "box": [
+    100,
+    0,
+    401,
+    486
+   ]
+  }
+ },
+ "blink": {
+  "timeline": [
+   [
+    "half",
+    0.05
+   ],
+   [
+    "closed",
+    0.09
+   ],
+   [
+    "half",
+    0.05
+   ]
+  ],
+  "interval": [
+   2.6,
+   5.2
+  ],
+  "people": {
+   "daram": {
+    "neutral": {
+     "rect": [
+      214,
+      149,
+      157,
+      78
+     ],
+     "half": "assets/room13-fx-blink-daram-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-daram-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      211,
+      156,
+      162,
+      70
+     ],
+     "half": "assets/room13-fx-blink-daram-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-daram-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      214,
+      154,
+      157,
+      73
+     ],
+     "half": "assets/room13-fx-blink-daram-angry-half.webp",
+     "closed": "assets/room13-fx-blink-daram-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      214,
+      157,
+      156,
+      71
+     ],
+     "half": "assets/room13-fx-blink-daram-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-daram-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      214,
+      147,
+      157,
+      81
+     ],
+     "half": "assets/room13-fx-blink-daram-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-daram-surprise-closed.webp"
+    }
+   },
+   "buri": {
+    "neutral": {
+     "rect": [
+      248,
+      119,
+      165,
+      66
+     ],
+     "half": "assets/room13-fx-blink-buri-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-buri-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      247,
+      123,
+      166,
+      61
+     ],
+     "half": "assets/room13-fx-blink-buri-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-buri-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      249,
+      119,
+      164,
+      65
+     ],
+     "half": "assets/room13-fx-blink-buri-angry-half.webp",
+     "closed": "assets/room13-fx-blink-buri-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      247,
+      123,
+      168,
+      64
+     ],
+     "half": "assets/room13-fx-blink-buri-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-buri-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      246,
+      113,
+      169,
+      77
+     ],
+     "half": "assets/room13-fx-blink-buri-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-buri-surprise-closed.webp"
+    }
+   },
+   "mom": {
+    "neutral": {
+     "rect": [
+      223,
+      120,
+      167,
+      66
+     ],
+     "half": "assets/room13-fx-blink-mom-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-mom-neutral-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      223,
+      123,
+      167,
+      65
+     ],
+     "half": "assets/room13-fx-blink-mom-angry-half.webp",
+     "closed": "assets/room13-fx-blink-mom-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      223,
+      121,
+      167,
+      66
+     ],
+     "half": "assets/room13-fx-blink-mom-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-mom-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      222,
+      110,
+      168,
+      77
+     ],
+     "half": "assets/room13-fx-blink-mom-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-mom-surprise-closed.webp"
+    }
+   },
+   "nabi": {
+    "neutral": {
+     "rect": [
+      149,
+      123,
+      172,
+      65
+     ],
+     "half": "assets/room13-fx-blink-nabi-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      148,
+      126,
+      172,
+      62
+     ],
+     "half": "assets/room13-fx-blink-nabi-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      148,
+      126,
+      174,
+      63
+     ],
+     "half": "assets/room13-fx-blink-nabi-angry-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      149,
+      123,
+      172,
+      65
+     ],
+     "half": "assets/room13-fx-blink-nabi-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      148,
+      113,
+      174,
+      75
+     ],
+     "half": "assets/room13-fx-blink-nabi-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-nabi-surprise-closed.webp"
+    }
+   },
+   "bami": {
+    "neutral": {
+     "rect": [
+      170,
+      186,
+      169,
+      77
+     ],
+     "half": "assets/room13-fx-blink-bami-neutral-half.webp",
+     "closed": "assets/room13-fx-blink-bami-neutral-closed.webp"
+    },
+    "flustered": {
+     "rect": [
+      171,
+      189,
+      165,
+      71
+     ],
+     "half": "assets/room13-fx-blink-bami-flustered-half.webp",
+     "closed": "assets/room13-fx-blink-bami-flustered-closed.webp"
+    },
+    "angry": {
+     "rect": [
+      170,
+      190,
+      168,
+      71
+     ],
+     "half": "assets/room13-fx-blink-bami-angry-half.webp",
+     "closed": "assets/room13-fx-blink-bami-angry-closed.webp"
+    },
+    "anxious": {
+     "rect": [
+      170,
+      187,
+      169,
+      76
+     ],
+     "half": "assets/room13-fx-blink-bami-anxious-half.webp",
+     "closed": "assets/room13-fx-blink-bami-anxious-closed.webp"
+    },
+    "surprise": {
+     "rect": [
+      170,
+      176,
+      168,
+      90
+     ],
+     "half": "assets/room13-fx-blink-bami-surprise-half.webp",
+     "closed": "assets/room13-fx-blink-bami-surprise-closed.webp"
+    }
+   }
+  }
+ }
+}

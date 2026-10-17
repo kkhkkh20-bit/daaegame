@@ -374,7 +374,7 @@ init 999 python:
                         renpy.show_screen("r13_question_list",person,"neutral","선택",[],False,animate=False)
                         renpy.pause(0.35,hard=True)
                     else:
-                        r13_speaker(person,R13_FULLBODY_TO_LEGACY[emotion],emotion)
+                        r13_speaker(person,R13_FULLBODY_TO_LEGACY.get(emotion,emotion),emotion)
                         renpy.say(R13_CHARS.get(person),"표정 확인 %s — 대사창과 얼굴이 겹치는지 보는 두 줄짜리 시험 문장입니다. 끝까지 읽히는지도 확인합니다."%emotion,interact=False)
                         renpy.pause(0.45,hard=True)
                     name="%s_%s_%s.png"%(mode,person,emotion)
