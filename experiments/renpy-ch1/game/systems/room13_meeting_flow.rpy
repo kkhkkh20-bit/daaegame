@@ -120,7 +120,7 @@ init 100 python:
             lines.append((who,text))
         return lines
 
-    R13_MEETING_RESUME_FIELDS=("r13_dialogue_binding","r13_dialogue_beat","r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap","r13_meeting_direction","r13_meeting_direction_poses","r13_meeting_direction_music","r13_meeting_shock_target","r13_meeting_shock_at")
+    R13_MEETING_RESUME_FIELDS=("r13_dialogue_binding","r13_dialogue_beat","r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap","r13_meeting_direction","r13_meeting_direction_poses","r13_meeting_direction_music","r13_meeting_shock_target","r13_meeting_shock_at","r13_meeting_proof_reveal")
 
     def r13_meeting_resume_after_load():
         # Ren'Py saves the outer interaction while a nested UI context is open.
@@ -223,13 +223,17 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
     # An accepted record earns an interruption, not a premature victory.
     # The opponent can recover in the canonical counter question below.
     if presentation_result=="break":
+        $ r13_meeting_prepare_proof(claim,sid,key,presentation_rows)
         call r13_meeting_direct_interrupt(claim,sid,key)
-        call r13_meeting_direct_gasp_lines(claim,sid)
     else:
         $ r13_meeting_direct_beat("half" if presentation_result=="half" else "reversal",claim,sid,key)
         $ source_fx("present" if presentation_result in ("half","soft") else "wrong")
     show screen r13_material_corner(key)
     call r13_lines(presentation_rows,"debate:"+presentation_result+":"+claim+":"+sid+":"+key, binding_route="dynamic:607")
+    if presentation_result=="break":
+        $ r13_meeting_direct_reveal(claim,sid)
+        call r13_meeting_direct_gasp_lines(claim,sid)
+        $ r13_meeting_proof_reveal=None
     hide screen r13_material_corner
     hide screen r13_meeting_evidence_hold
     if presentation_result=="break" and r13_debate_counter(claim,sid):

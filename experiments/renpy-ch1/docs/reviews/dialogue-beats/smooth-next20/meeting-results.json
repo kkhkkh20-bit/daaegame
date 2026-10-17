@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "targeted actual Chromium meeting fixtures, not full game",
+  "checks": [
+    "roundtable and focused speaker",
+    "live evidence cancel preserves proof and dialogue",
+    "nested picker save/load restores original line",
+    "live rebuttal resumes outer dialogue",
+    "completed replay preserves proof state",
+    "previous/next statements",
+    "record history",
+    "mobile and large text",
+    "wrong and correct conclusions",
+    "wrong and correct counter",
+    "leave cancellation",
+    "day14 altar framing",
+    "F3 E21 cannot replace missing operators and transport"
+  ],
+  "execution": "Earlier checks completed in main run; final F3 check rerun alone after correcting test prerequisite.",
+  "test_harness_repairs": [
+    "more-tools popover closes by outside click, not a visible close label",
+    "F3 fixture needs shelter_ready to legitimately open s1; s3 staffing stays missing"
+  ],
+  "logs": [
+    "/tmp/next20-meeting.log",
+    "/tmp/next20-meeting-f3.log"
+  ]
+}

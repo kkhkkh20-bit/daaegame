@@ -20,6 +20,19 @@ class CouncilDirection(unittest.TestCase):
   src=(ROOT/'game/systems/room13_meeting_direction.rpy').read_text().split('init 174 python:\n',1)[1].split('\n# Brief impact',1)[0]
   exec(textwrap.dedent(src),self.e)
   self.s.r13_meeting_active=True;self.s.r13_meeting_claim='C2'
+ def test_surprise_waits_for_witness_explanation_and_self_reply_finishes(self):
+  self.s.r13_meeting_claim='C3'
+  self.e['renpy'].display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:10.0))
+  prepare=self.e['r13_meeting_prepare_proof'];direct=self.e['r13_meeting_direct_line']
+  rows=[('nabi','공구를 가지러 간 뒤 보지 못했어요.'),('granny','그게 전부잖아요.')]
+  prepare('C3','s2','E12',rows)
+  direct('debate:break:C3:s2:E12',0,rows[0],'neutral','neutral')
+  self.assertEqual(self.s.r13_meeting_direction['beat'],'explain')
+  self.assertIsNone(self.s.r13_meeting_shock_target)
+  direct('debate:break:C3:s2:E12',1,rows[1],'neutral','neutral')
+  self.assertEqual(self.s.r13_meeting_shock_target,'granny')
+  self.assertTrue(self.s.r13_meeting_proof_reveal['revealed'])
+  self.assertEqual(self.e['r13_meeting_proof_boundary']('C3','s2',[rows[1]]),1)
  def test_every_hearing_identity_and_counter_result_get_distinct_beats(self):
   phase=self.e['r13_meeting_direct_phase']
   for c in ('C1','F4','Q1','Q2','Q3','Q4','Q5A','Q5','Q6'):

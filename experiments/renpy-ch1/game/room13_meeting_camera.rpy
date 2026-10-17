@@ -32,13 +32,13 @@ init 175 python:
         x=640+focal*r13_orbit_math.tan(angle)
         if x< -540 or x>1820:return None
         depth=max(.65,1.0-.18*(1-r13_orbit_math.cos(angle))/max(.01,1-r13_orbit_math.cos(step)))
-        return int(round(x)),depth,angle
+        return x,depth,angle
 
     def r13_meeting_world_tiles(out,normal,mirror,position,y=0):
         width=normal.get_size()[0]
-        start=-int(position%(2*width))
+        start=-(position%(2*width))
         for index in range(4):
-            out.blit(normal if index%2==0 else mirror,(start+index*width,y))
+            out.subpixel_blit(normal if index%2==0 else mirror,(start+index*width,y))
 
     class R13MeetingSurface(renpy.Displayable):
         def __init__(self,session,view,count,shade,**kwargs):
@@ -68,7 +68,18 @@ init 175 python:
             self.plate=Transform(r13_meeting_plate(self.session,True),
                 matrixcolor=TintMatrix(tint)*SaturationMatrix(.86)*BrightnessMatrix(-.035-self.shade))
             self.flip=Transform(self.plate,xzoom=-1)
-            self.art={}
+            self.art={};self.offsets={}
+            base=840 if self.kind in ("round","stone") else 740
+            # Build/predict each portrait once per shot, never inside the frame loop.
+            for person in self.people:
+                pose=self.poses.get(person,"neutral")
+                art=r13_fullbody_close_art(person,pose,base)
+                if art is None:art=Transform(r13_meeting_actor(person,self.focus,640),ysize=base,fit="contain",nearest=True)
+                gain=(.065 if self.beat in ("interrupt","explain","shaken","gasp","cornered") else .0) if person==self.focus else -.05-self.shade*.35
+                self.art[person]=Transform(art,nearest=True,subpixel=True,matrixcolor=BrightnessMatrix(gain))
+                self.offsets[person]=(r13_close_x(person,pose,base)-640,r13_fullbody_close_y(person,base,96,pose))
+            self.surface=R13MeetingSurface(self.session,0,len(self.people),self.shade) if self.kind in ("round","stone") else None
+            self.foreground=AlphaMask(self.surface,R13MeetingForeground(self.session,True)) if self.surface is not None else None
         def render(self,width,height,st,at):
             out=renpy.Render(1280,720)
             if renpy.predicting():view=float(self.people.index(self.focus)) if self.focus in self.people else 0.0;moving=False
@@ -81,30 +92,25 @@ init 175 python:
                 if slot is not None:slots.append((abs(slot[2]),person,slot))
             reacting=False
             for _distance,person,(cx,depth,angle) in sorted(slots,reverse=True):
-                pose=self.poses.get(person,"neutral")
-                base=840 if self.kind in ("round","stone") else 740
-                key=(person,pose)
-                if key not in self.art:
-                    art=r13_fullbody_close_art(person,pose,base)
-                    if art is None:art=Transform(r13_meeting_actor(person,self.focus,cx),ysize=base,fit="contain",nearest=True)
-                    self.art[key]=art
-                central=person==self.focus
-                gain=(.065 if self.beat in ("interrupt","explain","shaken","gasp","cornered") else .0) if central else -.05-self.shade*.35
-                art=Transform(self.art[key],zoom=depth,xzoom=r13_orbit_math.cos(angle*.35),nearest=True,
-                    matrixcolor=BrightnessMatrix(gain))
+                art=self.art[person]
+                scale=r13_orbit_math.cos(angle*.35)
+                if art.zoom!=depth or art.xzoom!=scale:
+                    art.zoom=depth;art.xzoom=scale;renpy.redraw(art,0)
                 rendered=renpy.render(art,1280,1000,st,at)
-                x=int(cx+(r13_close_x(person,pose,base)-640)*depth-rendered.get_size()[0]/2)
-                y=int(r13_fullbody_close_y(person,base,96,pose)*depth+(1-depth)*240)
+                dx,dy=self.offsets[person]
+                x=cx+dx*depth-rendered.get_size()[0]/2
+                y=dy*depth+(1-depth)*240
                 # A startled body recoils once in its own fixed seat; the camera stays still.
                 if person==getattr(store,"r13_meeting_shock_target",None) and persistent.room13_motion:
                     elapsed=renpy.display.core.get_time()-getattr(store,"r13_meeting_shock_at",0.0)
                     if 0<=elapsed<.36:
                         y-=int(34*r13_orbit_math.sin(r13_orbit_math.pi*elapsed/.36));reacting=True
-                out.blit(rendered,(x,y))
-            if self.kind in ("round","stone"):
-                surface=R13MeetingSurface(self.session,view,len(self.people),self.shade)
-                foreground=renpy.render(AlphaMask(surface,R13MeetingForeground(self.session,True)),1280,720,st,at)
+                out.subpixel_blit(rendered,(x,y))
+            if self.surface is not None:
+                if self.surface.view!=view:
+                    self.surface.view=view;renpy.redraw(self.surface,0)
+                foreground=renpy.render(self.foreground,1280,720,st,at)
                 out.blit(foreground,(0,0))
-            if moving or reacting:renpy.redraw(self,.016)
+            if moving or reacting:renpy.redraw(self,0)
             return out
-        def visit(self):return [self.plate,self.flip]+list(self.art.values())
+        def visit(self):return [self.plate,self.flip]+list(self.art.values())+([self.foreground] if self.foreground is not None else [])

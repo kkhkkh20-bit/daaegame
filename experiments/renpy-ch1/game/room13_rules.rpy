@@ -297,7 +297,9 @@ init 55 python:
         if getattr(store,"r13_meeting_active",False):
             # Keep all participants in place; the say screen owns the bubble.
             # Gasps are heard around the frozen subject, before the calm explanation.
-            if (getattr(store,"r13_meeting_direction",{}) or {}).get("beat")!="gasp":
+            beat=(getattr(store,"r13_meeting_direction",{}) or {}).get("beat")
+            holding_proof=beat=="explain" and getattr(store,"r13_meeting_proof_reveal",None)
+            if beat!="gasp" and not holding_proof:
                 r13_meeting_focus_change(store.r13_meeting_claim,who)
             store.dialogue_speaker=who if who in CAST else None
             store.dialogue_expression=expression if who in CAST and expression in CAST[who] else "neutral"

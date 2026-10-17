@@ -7,6 +7,7 @@ default r13_meeting_direction_music = None
 default r13_meeting_direction_return_audio = {}
 default r13_meeting_shock_target = None
 default r13_meeting_shock_at = 0.0
+default r13_meeting_proof_reveal = None
 
 init 174 python:
     R13_MEETING_BEATS = {
@@ -78,6 +79,7 @@ init 174 python:
         r13_sound_ambience("wind" if venue in ("stone","field") else "fire")
 
     def r13_meeting_direct_end():
+        store.r13_meeting_proof_reveal=None
         store.r13_meeting_direction={}
         store.r13_meeting_direction_poses={}
         store.r13_meeting_direction_music=None
@@ -95,6 +97,9 @@ init 174 python:
         renpy.hide_screen("r13_meeting_evidence_hold")
 
     def r13_meeting_direct_phase(identity,index,person):
+        proof=getattr(store,"r13_meeting_proof_reveal",None)
+        if proof and identity==proof["identity"] and index<proof["boundary"]:
+            return "explain"
         # Exact structural identities, never keywords in dialogue or hidden culprit data.
         if identity.startswith("meeting:live:"):return "listen" if index==0 else "reaction"
         if identity.startswith("meeting:replay:"):return "listen"
@@ -123,6 +128,9 @@ init 174 python:
         claim=getattr(store,"r13_meeting_claim",None)
         if claim not in R13_DEBATE:return expression,pose
         person=packet[0]
+        proof=getattr(store,"r13_meeting_proof_reveal",None)
+        if proof and identity==proof["identity"] and index==proof["boundary"] and not proof["revealed"]:
+            r13_meeting_direct_reveal(proof["claim"],proof["sid"])
         beat=r13_meeting_direct_phase(identity,index,person)
         r13_meeting_direct_beat(beat,claim)
         # Keep explicit writer/art direction. Neutral fallbacks can use the beat.
@@ -143,12 +151,32 @@ init 174 python:
                 elif beat=="recover":pose="neutral"
                 elif beat=="reversal":pose="angry"
                 elif beat=="loss":pose="neutral"
-            if beat=="shaken" and person==getattr(store,"r13_meeting_shock_target",None) and index<=1:
+            if beat=="shaken" and person==getattr(store,"r13_meeting_shock_target",None) and (index<=1 or (proof and index==proof["boundary"])):
                 pose="surprise"
             if pose=="surprise":pose=r13_meeting_startle_pose(person)
             poses=dict(getattr(store,"r13_meeting_direction_poses",{}) or {})
             poses[person]=pose;store.r13_meeting_direction_poses=poses
         return expression,pose
+
+    def r13_meeting_proof_boundary(claim,sid,rows):
+        # Witnesses may explain the observation before the challenged speaker replies.
+        # A self-contained reply with no preceding explanation reacts only at its end.
+        target=r13_debate_statement(claim,sid)["who"]
+        first=next((i for i,row in enumerate(rows) if row[0]==target),len(rows))
+        return first if first>0 else len(rows)
+
+    def r13_meeting_prepare_proof(claim,sid,key,rows):
+        store.r13_meeting_shock_target=None
+        store.r13_meeting_proof_reveal=dict(claim=claim,sid=sid,
+            identity="debate:break:"+claim+":"+sid+":"+key,
+            boundary=r13_meeting_proof_boundary(claim,sid,rows),revealed=False)
+
+    def r13_meeting_direct_reveal(claim,sid):
+        proof=getattr(store,"r13_meeting_proof_reveal",None)
+        if proof and proof["revealed"]:return
+        if proof:store.r13_meeting_proof_reveal=dict(proof,revealed=True)
+        r13_meeting_direct_beat("shaken",claim,sid)
+        r13_meeting_direct_shock(claim,sid)
 
     def r13_meeting_direct_shock(claim,sid):
         target=r13_debate_statement(claim,sid)["who"]
@@ -241,14 +269,12 @@ screen r13_meeting_evidence_hold(claim,sid,key):
 
 label r13_meeting_direct_interrupt(claim,sid,key):
     $ r13_meeting_direct_beat("interrupt",claim,sid,key)
-    $ r13_meeting_direct_shock(claim,sid)
     if not renpy.is_skipping() and not r13_fast_all:
         show screen r13_meeting_objection(claim,sid)
         $ renpy.music.set_pause(True,channel="music")
         $ source_fx("impact")
         $ renpy.pause(.68 if persistent.room13_motion else .42)
         hide screen r13_meeting_objection
-    $ r13_meeting_shock_at=renpy.display.core.get_time()
     $ r13_meeting_direct_beat("explain",claim,sid,key)
     show screen r13_meeting_evidence_hold(claim,sid,key)
     return
@@ -262,5 +288,6 @@ label r13_meeting_direct_reactions(claim,sid,result):
 label r13_meeting_direct_gasp_lines(claim,sid):
     $ r13_meeting_gasp_rows=r13_meeting_direct_gasps(claim,sid)
     if r13_meeting_gasp_rows:
+        $ r13_meeting_focus_change(claim,r13_debate_statement(claim,sid)["who"])
         call r13_lines(r13_meeting_gasp_rows,"meeting:gasp:"+claim+":"+sid)
     return

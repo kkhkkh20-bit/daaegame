@@ -94,7 +94,7 @@
     },
     "7": {
       "source": "game/room13_rules.rpy",
-      "line": 400,
+      "line": 402,
       "who_expr": "person",
       "text": "할아버지를 범인 취급하면서 부탁할 생각은 마요. 밖에 한 말부터 바로잡아요.",
       "expression": "'할아버지를 범인 취급하면서 부탁할 생각은 마요. 밖에 한 말부터 바로잡아요.'",
@@ -107,7 +107,7 @@
     },
     "8": {
       "source": "game/room13_rules.rpy",
-      "line": 402,
+      "line": 404,
       "who_expr": "person",
       "text": "할아버지 상태부터 따지러 왔어요? 밖에서 무슨 말을 하는지부터 듣고 와요.",
       "expression": "'할아버지 상태부터 따지러 왔어요? 밖에서 무슨 말을 하는지부터 듣고 와요.'",
@@ -120,7 +120,7 @@
     },
     "9": {
       "source": "game/room13_rules.rpy",
-      "line": 405,
+      "line": 407,
       "who_expr": "person",
       "text": "……이건 안 지우셨네요. 할아버지가 아이 팔 잡은 거요. 머리의 상처랑 같다고도 안 쓰셨고. 그럼 그분이 하려던 일도 들어 주세요. 듣기 좋은 쪽만 가져가지 마시고요.",
       "expression": "'……이건 안 지우셨네요. 할아버지가 아이 팔 잡은 거요. 머리의 상처랑 같다고도 안 쓰셨고. 그럼 그분이 하려던 일도 들어 주세요. 듣기 좋은 쪽만 가져가지 마시고요.'",
@@ -133,7 +133,7 @@
     },
     "10": {
       "source": "game/room13_rules.rpy",
-      "line": 406,
+      "line": 408,
       "who_expr": "person",
       "text": "아이 말과 실제 상처가 같은 이야기인지도 봐야죠. 한쪽만 듣고는 못 넘겨요.",
       "expression": "'아이 말과 실제 상처가 같은 이야기인지도 봐야죠. 한쪽만 듣고는 못 넘겨요.'",
@@ -146,7 +146,7 @@
     },
     "11": {
       "source": "game/room13_rules.rpy",
-      "line": 408,
+      "line": 410,
       "who_expr": "person",
       "text": "도토가 문을 부수던 때? 난 그 앞에 있었어. ……할머니도 그때까지 같이 봤냐고?",
       "expression": "'도토가 문을 부수던 때? 난 그 앞에 있었어. ……할머니도 그때까지 같이 봤냐고?'",
@@ -159,7 +159,7 @@
     },
     "12": {
       "source": "game/room13_rules.rpy",
-      "line": 410,
+      "line": 412,
       "who_expr": "person",
       "text": "이 이음은 알아요. 남아 있는 부품부터 맞춰 봅시다.",
       "expression": "'이 이음은 알아요. 남아 있는 부품부터 맞춰 봅시다.'",
@@ -172,7 +172,7 @@
     },
     "13": {
       "source": "game/room13_rules.rpy",
-      "line": 412,
+      "line": 414,
       "who_expr": "person",
       "text": "다람이도 그 아래에 있었다고 했어? 그러면 내가 본 거랑 같아.",
       "expression": "'다람이도 그 아래에 있었다고 했어? 그러면 내가 본 거랑 같아.'",
@@ -185,7 +185,7 @@
     },
     "14": {
       "source": "game/room13_rules.rpy",
-      "line": 414,
+      "line": 416,
       "who_expr": "person",
       "text": "그 매듭 안쪽까지 아는군요. 편지를 받을 분이 맞는지 확인하고 싶었어요.",
       "expression": "'그 매듭 안쪽까지 아는군요. 편지를 받을 분이 맞는지 확인하고 싶었어요.'",
@@ -198,7 +198,7 @@
     },
     "15": {
       "source": "game/room13_rules.rpy",
-      "line": 417,
+      "line": 419,
       "who_expr": "person",
       "text": "그분이 아직 연락을 하고 있었군요. 어디서 받았어요?",
       "expression": "'그분이 아직 연락을 하고 있었군요. 어디서 받았어요?'",
@@ -211,7 +211,7 @@
     },
     "16": {
       "source": "game/room13_rules.rpy",
-      "line": 427,
+      "line": 429,
       "who_expr": "person",
       "text": "전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.",
       "expression": "'전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.' if repeated else {'buri': '수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.', 'nabi': '봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?', 'bami': '그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.', 'seryeon': '내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.', 'karo': '후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.'}.get(person, '그 내용은 제가 확인해 드릴 수 없습니다.')",
@@ -221,11 +221,11 @@
       "reason": "변수 화자 응답·조건 분기·회의 발언을 해당 호출 문맥에서 검토했다. 증거 확인과 절차 안내는 차분하게 이어가며, 발언의 주장 자체를 사실로 승인하지 않는다. 조합식 문자열은 완성 문장과 분기 확인 후에만 바인딩한다.",
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
-      "end_line": 433
+      "end_line": 435
     },
     "17": {
       "source": "game/room13_rules.rpy",
-      "line": 433,
+      "line": 435,
       "who_expr": "person",
       "text": "그 내용은 제가 확인해 드릴 수 없습니다.",
       "expression": "'전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.' if repeated else {'buri': '수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.', 'nabi': '봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?', 'bami': '그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.', 'seryeon': '내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.', 'karo': '후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.'}.get(person, '그 내용은 제가 확인해 드릴 수 없습니다.')",
@@ -235,11 +235,11 @@
       "reason": "변수 화자 응답·조건 분기·회의 발언을 해당 호출 문맥에서 검토했다. 증거 확인과 절차 안내는 차분하게 이어가며, 발언의 주장 자체를 사실로 승인하지 않는다. 조합식 문자열은 완성 문장과 분기 확인 후에만 바인딩한다.",
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
-      "end_line": 439
+      "end_line": 441
     },
     "18": {
       "source": "game/room13_rules.rpy",
-      "line": 428,
+      "line": 430,
       "who_expr": "person",
       "text": "수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.",
       "expression": "'전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.' if repeated else {'buri': '수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.', 'nabi': '봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?', 'bami': '그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.', 'seryeon': '내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.', 'karo': '후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.'}.get(person, '그 내용은 제가 확인해 드릴 수 없습니다.')",
@@ -249,11 +249,11 @@
       "reason": "부리의 가족에 대한 선입견과 증언·동의를 강요하는 자료 제시에 대한 항의.",
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
-      "end_line": 434
+      "end_line": 436
     },
     "19": {
       "source": "game/room13_rules.rpy",
-      "line": 429,
+      "line": 431,
       "who_expr": "person",
       "text": "봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?",
       "expression": "'전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.' if repeated else {'buri': '수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.', 'nabi': '봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?', 'bami': '그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.', 'seryeon': '내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.', 'karo': '후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.'}.get(person, '그 내용은 제가 확인해 드릴 수 없습니다.')",
@@ -263,11 +263,11 @@
       "reason": "부리의 가족에 대한 선입견과 증언·동의를 강요하는 자료 제시에 대한 항의.",
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
-      "end_line": 435
+      "end_line": 437
     },
     "20": {
       "source": "game/room13_rules.rpy",
-      "line": 430,
+      "line": 432,
       "who_expr": "person",
       "text": "그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.",
       "expression": "'전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.' if repeated else {'buri': '수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.', 'nabi': '봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?', 'bami': '그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.', 'seryeon': '내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.', 'karo': '후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.'}.get(person, '그 내용은 제가 확인해 드릴 수 없습니다.')",
@@ -277,11 +277,11 @@
       "reason": "부리의 가족에 대한 선입견과 증언·동의를 강요하는 자료 제시에 대한 항의.",
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
-      "end_line": 436
+      "end_line": 438
     },
     "21": {
       "source": "game/room13_rules.rpy",
-      "line": 431,
+      "line": 433,
       "who_expr": "person",
       "text": "내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.",
       "expression": "'전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.' if repeated else {'buri': '수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.', 'nabi': '봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?', 'bami': '그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.', 'seryeon': '내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.', 'karo': '후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.'}.get(person, '그 내용은 제가 확인해 드릴 수 없습니다.')",
@@ -291,11 +291,11 @@
       "reason": "변수 화자 응답·조건 분기·회의 발언을 해당 호출 문맥에서 검토했다. 증거 확인과 절차 안내는 차분하게 이어가며, 발언의 주장 자체를 사실로 승인하지 않는다. 조합식 문자열은 완성 문장과 분기 확인 후에만 바인딩한다.",
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
-      "end_line": 437
+      "end_line": 439
     },
     "22": {
       "source": "game/room13_rules.rpy",
-      "line": 432,
+      "line": 434,
       "who_expr": "person",
       "text": "후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.",
       "expression": "'전에 보여 준 내용은 기억합니다. 다른 사실이 확인되면 다시 이야기하죠.' if repeated else {'buri': '수리 얘기도 아니고…… 저한테 왜 묻는 건데요? 이건 몰라요.', 'nabi': '봤어요. 봤다고 아는 건 아니에요. 제가 고개 끄덕일 때까지 들고 계실 거예요?', 'bami': '그건 못 봤어요. 어떤 대답을 바라시는지는 알겠는데, 저는 못 봤다니까요.', 'seryeon': '내용은 봤습니다. 기록을 고칠 수 있느냐고요? 지금은 안 됩니다. 봤다는 이유만으로 서명할 수는 없습니다.', 'karo': '후후, 손님. 제가 아는 일이면 좋겠는데, 이건 모르겠네요. 말만 번지르르하게 보태는 건 그만두지요.'}.get(person, '그 내용은 제가 확인해 드릴 수 없습니다.')",
@@ -305,11 +305,11 @@
       "reason": "모르는 일은 거절하되 까로의 친근한 말투, 도움에 대한 감사와 초상화 인식의 반가움.",
       "application_status": "awaiting_approved_runtime_assets",
       "runtime_binding": "local_callsite_snapshot_binding_assets_held",
-      "end_line": 438
+      "end_line": 440
     },
     "23": {
       "source": "game/room13_rules.rpy",
-      "line": 433,
+      "line": 435,
       "who_expr": "person",
       "text": "그 내용은 제가 확인해 드릴 수 없습니다.",
       "expression": "'그 내용은 제가 확인해 드릴 수 없습니다.'",
