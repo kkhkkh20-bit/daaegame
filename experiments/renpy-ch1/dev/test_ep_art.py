@@ -1,4 +1,5 @@
 """0.18.89 episode art (dev/apply_ep_art.py): icons, pictures and scene keys exist and fit."""
+import numpy as np
 import json, re, unittest
 from pathlib import Path
 
@@ -34,12 +35,18 @@ class EpArt(unittest.TestCase):
         self.assertTrue(used and used <= keys, used - keys)
 
     def test_held_items_are_not_shipped(self):
-        # O46 ropes (noose-like loops) and the U22 blank-nose frame stay in art/ only.
+        # The U22 blank-nose frame stays in art/ only.
         self.assertFalse((GAME / "assets/room13-ep-U22-mother-portrait-blank-nose.webp").exists())
+        # O46: the noose-like ropes were never shipped; 0.18.90 adds the redrawn short ropes
+        # (manual extraction, dev/extract_o46_ropes.py) only inside their hand-drawn region.
         with Image.open(GAME / "assets/room13-ep-O46-mountain-ropes.webp") as im:
-            alpha = im.getchannel("A")
-            # left-top tree area (the ropes) is fully transparent; only the cart remains
-            self.assertEqual(alpha.crop((0, 0, 400, 380)).getextrema()[1], 0)
+            alpha = np.asarray(im.getchannel("A"))
+        with Image.open(ROOT / "art/ep-art-20261016/derived/ep-O46-mountain-ropes-cart.webp") as im:
+            cart = np.asarray(im.getchannel("A"))
+        outside = np.ones_like(alpha, bool)
+        outside[70:240, 60:410] = False
+        self.assertTrue(((alpha > 0) == (cart > 0))[outside].all())        # cart and the rest unchanged
+        self.assertGreater(int((alpha[70:240, 60:410] > 0).sum()), 800)     # the four ropes are there
 
 
 if __name__ == "__main__":
