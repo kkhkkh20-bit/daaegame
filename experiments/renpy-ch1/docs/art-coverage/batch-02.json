@@ -1,0 +1,361 @@
+{
+  "id": "art-coverage-batch-02",
+  "basis": "ad722b1c63afa8c175fc5629c60e7dbf731c2512",
+  "scope": "dialogue full-body expression candidates only",
+  "output_count": 18,
+  "rules": [
+    "2026-10-17 사용자 승인: 꽥순·사자 선생님 비교 후 “좋다 이런느낌으로 쭉가자”. 선명도·입체감·다양한 상반신 연기를 다음 제작 방향으로 채택.",
+    "각 승인 원본의 얼굴·종·체형·복장·소품·색 개성 보존. 다른 인물의 그림체를 획일적으로 복제하지 않는다.",
+    "억지로 굵은 2×2 블록으로 재축소하지 않는다. 원본 상세를 유지하고 최종 게임 표시 품질로 판단한다. 엄격 2×2 격자 인증은 납품 필수조건에서 제외.",
+    "대화 전신 1장=1표정. 얼굴뿐 아니라 손·어깨·고개로 구별되는 연기. 상반신만 잘라 납품하지 않는다.",
+    "투명 배경, alpha 경계와 손/귀/소품 여유 보존. 원본 크기·crop·head/foot·손 기준점·파일 SHA 기록. 캔버스/발점 차이를 숨기기 위한 임의 축소 금지.",
+    "각 키의 연기는 제작 제안이다. 모든 인용 대사가 그 감정 키를 현재 호출한다는 뜻은 아니며 대사·분기·표정 연결은 이번 문서 작업에서 변경하지 않는다.",
+    "제작 방향 승인과 개별 후보 승인·수신·해시 검증·연결·실제 화면 검수·배포는 별개 상태다. Library 차단을 우회하지 않는다."
+  ],
+  "jobs": [
+    {
+      "character": "neoul",
+      "name": "너울",
+      "priority": "P0",
+      "channel": "dialogue",
+      "approved_reference": "art/canonical48-rev45/originals/neoul.webp",
+      "reference_sha256": "31172d4a4f9aec679442105059098fe8679f869df90ece81ca2a0cd3b34300f9",
+      "reference_size": [
+        1023,
+        1499
+      ],
+      "scene_requirement": "현장 보존·봉인·발밑 물건 경고, ep1 및 ep3 대결의 주장과 반박.",
+      "source_evidence": [
+        "game/room13_rules.rpy:295",
+        "game/systems/room13_ep1_lamp_thief.rpy:108",
+        "game/systems/room13_ep3_woodfire.rpy:79",
+        "game/systems/room13_ep3_woodfire.rpy:193"
+      ],
+      "frequency_evidence": {
+        "room13_text_tuple_mentions": 146,
+        "top_sources": [
+          [
+            "game/systems/room13_ep3_woodfire.rpy",
+            23
+          ],
+          [
+            "game/systems/room13_episodes.rpy",
+            23
+          ],
+          [
+            "game/systems/room13_ep1_lamp_thief.rpy",
+            19
+          ],
+          [
+            "game/systems/room13_ep2_kids.rpy",
+            18
+          ]
+        ],
+        "inventory_dialogue_usage_rows": 19,
+        "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
+      },
+      "production_status": "not_started",
+      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "connection_status": "not_linked",
+      "screen_review_status": "not_run",
+      "outputs": [
+        {
+          "id": "character/neoul/dialogue/joy",
+          "key": "joy",
+          "gesture_requirement": "입꼬리만 올린 절제된 만족. 어깨를 펴고 한 손을 가슴 가까이 편다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/neoul/dialogue-joy.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/neoul/dialogue/flustered",
+          "key": "flustered",
+          "gesture_requirement": "말이 막혀 시선을 옆으로 피하며 팔꿈치를 몸 쪽으로 당긴다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/neoul/dialogue-flustered.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/neoul/dialogue/angry",
+          "key": "angry",
+          "gesture_requirement": "몸을 약간 앞으로 기울이고 한 손바닥을 세워 제지한다. 검은 집행관 의상으로 바꾸지 않는다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/neoul/dialogue-angry.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/neoul/dialogue/anxious",
+          "key": "anxious",
+          "gesture_requirement": "미간을 모으고 손가락을 모아 몸 앞에 둔다. 어깨 긴장으로 우려를 드러낸다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/neoul/dialogue-anxious.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/neoul/dialogue/surprise",
+          "key": "surprise",
+          "gesture_requirement": "눈을 크게 뜨고 상체를 살짝 뒤로 뺀다. 손을 반쯤 들어 발밑 위험을 알린다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/neoul/dialogue-surprise.png",
+          "current_connection_status": "neutral_fallback"
+        }
+      ]
+    },
+    {
+      "character": "resident_nubi",
+      "name": "누비 아주머니",
+      "priority": "P0",
+      "channel": "dialogue",
+      "approved_reference": "art/canonical48-rev45/originals/resident_nubi.webp",
+      "reference_sha256": "af0df1c2e0f8af56132d027ce8a60eed7f2c4e4599d93d887c2d96740ddfd31b",
+      "reference_size": [
+        957,
+        1516
+      ],
+      "scene_requirement": "ep3 세탁터의 배급 대화, 다친 손에 대한 질문, 장작 창고 화재 추궁·자백.",
+      "source_evidence": [
+        "game/systems/room13_ep3_woodfire.rpy:188",
+        "game/systems/room13_ep3_woodfire.rpy:381",
+        "game/systems/room13_ep3_woodfire.rpy:432"
+      ],
+      "frequency_evidence": {
+        "room13_text_tuple_mentions": 47,
+        "top_sources": [
+          [
+            "game/systems/room13_ep3_woodfire.rpy",
+            20
+          ],
+          [
+            "game/systems/room13_town_events2.rpy",
+            12
+          ],
+          [
+            "game/systems/room13_shop.rpy",
+            3
+          ],
+          [
+            "game/systems/room13_testimony.rpy",
+            3
+          ]
+        ],
+        "inventory_dialogue_usage_rows": 14,
+        "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
+      },
+      "production_status": "not_started",
+      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "connection_status": "not_linked",
+      "screen_review_status": "not_run",
+      "outputs": [
+        {
+          "id": "character/resident_nubi/dialogue/joy",
+          "key": "joy",
+          "gesture_requirement": "생활 대화용 작은 미소. 어깨를 풀고 두 손을 느슨하게 겹친다. 사건 자백에 웃음을 강제하지 않는다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_nubi/dialogue-joy.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_nubi/dialogue/flustered",
+          "key": "flustered",
+          "gesture_requirement": "당황해 시선을 피하고 한 손으로 자기 소매를 잡는다. 다른 인물과 접촉하지 않는다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_nubi/dialogue-flustered.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_nubi/dialogue/angry",
+          "key": "angry",
+          "gesture_requirement": "턱을 조금 들고 팔을 몸 앞에 모아 방어적으로 항변한다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_nubi/dialogue-angry.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_nubi/dialogue/anxious",
+          "key": "anxious",
+          "gesture_requirement": "어깨를 움츠리고 손을 가슴 아래에 모은다. 아이들을 걱정하는 시선.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_nubi/dialogue-anxious.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_nubi/dialogue/surprise",
+          "key": "surprise",
+          "gesture_requirement": "눈과 입이 작게 벌어지고 한 손이 가슴으로 올라간다. 과장된 개그 표정은 피한다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_nubi/dialogue-surprise.png",
+          "current_connection_status": "neutral_fallback"
+        }
+      ]
+    },
+    {
+      "character": "resident_bori",
+      "name": "보리",
+      "priority": "P0",
+      "channel": "dialogue",
+      "approved_reference": "art/canonical48-rev45/originals/resident_bori.webp",
+      "reference_sha256": "1294543146bd66c747901d8b1cb83460650bb049384727254d0012789f17f2e7",
+      "reference_size": [
+        1210,
+        1300
+      ],
+      "scene_requirement": "ep3 아이 구출·방화 누명·아이를 맡는 후일담, ep5 아이에 대한 걱정과 회의.",
+      "source_evidence": [
+        "game/systems/room13_ep3_woodfire.rpy:256",
+        "game/systems/room13_ep3_woodfire.rpy:298",
+        "game/systems/room13_ep3_woodfire.rpy:515",
+        "game/systems/room13_ep5_soup.rpy:404"
+      ],
+      "frequency_evidence": {
+        "room13_text_tuple_mentions": 55,
+        "top_sources": [
+          [
+            "game/systems/room13_ep3_woodfire.rpy",
+            12
+          ],
+          [
+            "game/systems/room13_bundle3.rpy",
+            9
+          ],
+          [
+            "game/systems/room13_ep5_soup.rpy",
+            5
+          ],
+          [
+            "game/systems/room13_ep_story.rpy",
+            5
+          ]
+        ],
+        "inventory_dialogue_usage_rows": 13,
+        "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
+      },
+      "production_status": "not_started",
+      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "connection_status": "not_linked",
+      "screen_review_status": "not_run",
+      "outputs": [
+        {
+          "id": "character/resident_bori/dialogue/joy",
+          "key": "joy",
+          "gesture_requirement": "구출 이후/생활 대화에 쓸 수 있는 작은 안도. 고개를 조금 숙이고 손바닥을 편다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_bori/dialogue-joy.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_bori/dialogue/flustered",
+          "key": "flustered",
+          "gesture_requirement": "머쓱하게 시선을 내리고 한 손을 목 가까이에 둔다. 원본 둥근 얼굴 유지.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_bori/dialogue-flustered.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_bori/dialogue/angry",
+          "key": "angry",
+          "gesture_requirement": "상체를 앞으로 기울여 항변하고 팔을 약간 벌린다. 근육을 키우거나 얼굴을 각지게 만들지 않는다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_bori/dialogue-angry.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_bori/dialogue/anxious",
+          "key": "anxious",
+          "gesture_requirement": "미간을 모으고 손을 서로 감싸 쥔다. 아이의 안부를 걱정하는 긴장.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_bori/dialogue-anxious.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_bori/dialogue/surprise",
+          "key": "surprise",
+          "gesture_requirement": "눈을 크게 뜨고 한쪽 어깨와 손을 들어 뒤로 반응한다. 몸통 크기는 유지한다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_bori/dialogue-surprise.png",
+          "current_connection_status": "neutral_fallback"
+        }
+      ]
+    },
+    {
+      "character": "resident_lamplighter",
+      "name": "초롱",
+      "priority": "P0",
+      "channel": "dialogue",
+      "approved_reference": "art/canonical48-rev45/originals/resident_lamplighter.webp",
+      "reference_sha256": "067e60f202442c2ad56b87febafe612c1b72c1a819dc837f95bcbb477d542759",
+      "reference_size": [
+        993,
+        1519
+      ],
+      "scene_requirement": "ep4 편지 직접 전달 약속, 황혼의 종탑 길 경고, 밤의 귀환·후일담. 기존 neutral/anxious/flustered는 재제작 제외.",
+      "source_evidence": [
+        "game/systems/room13_ep4_night13.rpy:167",
+        "game/systems/room13_ep4_night13.rpy:190",
+        "game/systems/room13_ep4_night13.rpy:195",
+        "game/systems/room13_ep4_night13.rpy:273",
+        "game/systems/room13_ep4_night13.rpy:388"
+      ],
+      "frequency_evidence": {
+        "room13_text_tuple_mentions": 70,
+        "top_sources": [
+          [
+            "game/systems/room13_evening.rpy",
+            17
+          ],
+          [
+            "game/systems/room13_ep4_night13.rpy",
+            15
+          ],
+          [
+            "game/room13_week2.rpy",
+            5
+          ],
+          [
+            "game/systems/room13_present_flow.rpy",
+            5
+          ]
+        ],
+        "inventory_dialogue_usage_rows": 31,
+        "limitation": "Static text tuple occurrences and direction rows, not measured play frequency or unique scenes; branches may be unreachable and table tuples may include non-speech strings."
+      },
+      "production_status": "not_started",
+      "approval_status": "production_direction_approved_individual_candidates_pending",
+      "connection_status": "not_linked",
+      "screen_review_status": "not_run",
+      "outputs": [
+        {
+          "id": "character/resident_lamplighter/dialogue/joy",
+          "key": "joy",
+          "gesture_requirement": "편지를 전하거나 다람이에게 등 켜기를 권할 때의 따뜻한 미소. 손바닥을 열고 상체를 살짝 기울인다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_lamplighter/dialogue-joy.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_lamplighter/dialogue/angry",
+          "key": "angry",
+          "gesture_requirement": "의지를 단호하게 전하는 눈썹과 입. 한 손을 몸 가까이 쥐되 위협적인 무기나 새 도구는 넣지 않는다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_lamplighter/dialogue-angry.png",
+          "current_connection_status": "neutral_fallback"
+        },
+        {
+          "id": "character/resident_lamplighter/dialogue/surprise",
+          "key": "surprise",
+          "gesture_requirement": "종탑 길 경고에 눈을 크게 뜨고 한 손을 가슴 가까이 든다. 기존 anxious/flustered와 실루엣을 구별한다.",
+          "suggested_file": "art/incoming/art-coverage-batch-02/resident_lamplighter/dialogue-surprise.png",
+          "current_connection_status": "neutral_fallback"
+        }
+      ]
+    }
+  ],
+  "excluded_existing_candidates": [
+    "resident_kkwak:5 expressions",
+    "resident_teacher:5 expressions+write_attendance+collapse_attendance",
+    "guard:5 expressions",
+    "doto:action_1/action_2",
+    "resident_guseul:living_stamp"
+  ],
+  "blocked_receipt": "Approved Kkwak neutral and candidate files await supported attachment delivery; no image applied.",
+  "deferred_contacts": [
+    {
+      "character": "resident_madam",
+      "key": "living_inspect",
+      "included_in_count": false,
+      "production_status": "not_generated_held",
+      "backgrounds": [
+        "game/assets/room13-pixel-panorama-inn-morning.webp",
+        "game/assets/room13-pixel-panorama-inn-afternoon.webp",
+        "game/assets/room13-pixel-panorama-inn-evening.webp"
+      ],
+      "layout": "game/assets/room13-world-layout.json: inn",
+      "finding": "Inn objects list has desk/door/keys/register/knitting/coats/cups but no explicit sealed-storage contact anchor. Do not infer fingertip from desk/slot coordinates.",
+      "next_action": "Inspect latest background at actual camera/crop and identify sealed-storage surface, then record fingertip world/screen coordinates, character foot/hand points and occlusion before generation.",
+      "background_visual_review": "not_run",
+      "anchor_status": "unconfirmed"
+    }
+  ]
+}

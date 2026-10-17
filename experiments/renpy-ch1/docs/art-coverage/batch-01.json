@@ -3,7 +3,7 @@
   "basis": "main 1f4f888 / 0.19.4",
   "rules": [
     "새 디자인 선택 없음. 승인 원본의 얼굴·종·옷 유지.",
-    "2×2 원본 픽셀 셀, 투명 PNG. 리샘플·벡터 보정·자동 팔레트 변환 금지.",
+    "2026-10-17 방향 승인으로 기존 엄격 2×2 납품 요구 대체: 선명도·입체감·상반신 연기를 살리고 굵은 2×2 블록으로 강제 재축소하지 않음. 투명 배경·원본 개성 보존, 최종 표시 품질 검수.",
     "한 파일=한 표정/동작. 중립 복제 금지. 원본 캔버스와 기준점 유지.",
     "대화 전신과 현장 조사 동작을 별도 납품.",
     "마을 행동은 crop/head/foot, 필요하면 hand/seat/stature_ratio와 장면 배치 검수 필요.",
@@ -326,5 +326,11 @@
     "hash_verification": "not_performed_locally",
     "connection_status": "not_linked",
     "screen_review_status": "not_run"
+  },
+  "production_direction_update": {
+    "user_quote": "좋다 이런느낌으로 쭉가자",
+    "context": "꽥순 및 사자 선생님 비교 후",
+    "effect": "후속 제작 방향 승인; 수신/개별 검증/게임 연결/배포 완료를 의미하지 않음",
+    "details": "BATCH_02.md"
   }
 }
