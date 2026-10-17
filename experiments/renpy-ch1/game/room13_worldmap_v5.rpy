@@ -64,8 +64,8 @@ screen r13_cartography(region,selected,ready,map_hover):
         button:
             id ("map_building_"+key)
             area (ox+lx,oy+ly,lw,lh) padding (0,0)
-            background (r13_cart_layer(region,key,True) if region!="village" and key==selected else None)
-            hover_background (r13_cart_layer(region,key,True) if region!="village" else None)
+            background None
+            hover_background None
             insensitive_background None
             focus_mask r13_cart_layer(region,key)
             action SetScreenVariable("selected",key)
@@ -73,8 +73,6 @@ screen r13_cartography(region,selected,ready,map_hover):
             unhovered SetScreenVariable("map_hover",None)
             sensitive ready
             alt R13_MAP_LABELS[key]
-        if region!="village" and (key==selected or key==map_hover):
-            add r13_cart_layer(region,key,outline=True) xpos (16+lx) ypos (9+ly)
     # Village names are ink in the approved drawing, not separate button plates.
     # Only existing eligible places receive interactive targets and underlines.
     if region=="village":
