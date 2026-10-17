@@ -1,0 +1,23 @@
+Full Python suite
+Ran 381 tests in 40.876s
+
+OK
+
+Targeted meeting suite
+..............................................................
+----------------------------------------------------------------------
+Ran 62 tests in 0.693s
+
+OK
+
+check.sh SDK boundary
+}
+PASS: testimony requires conversation; owned-only comparison; presentation; no jobs
+PASS: all-skip crosses unread lines; ten choice/menu boundaries restore both original preferences; read-only mode and external stops restore the preference
+dev/check.sh: line 7: RENPY_SDK: set RENPY_SDK (dev/setup_sdk.sh)
+
+Official SDK setup: curl: (56) CONNECT tunnel failed, response 403
+Engine lint/screenshots/browser/real save-load-rollback: NOT RUN (SDK unavailable)
+Source archive and each PNG/WebP hash: verified against supplied manifest
+git diff --check: PASS
+Remote main before push: d681b9a9db9533191377b9c402dcc92c766d1abb

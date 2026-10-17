@@ -120,7 +120,7 @@ init 100 python:
             lines.append((who,text))
         return lines
 
-    R13_MEETING_RESUME_FIELDS=("r13_dialogue_binding","r13_dialogue_beat","r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap","r13_meeting_direction","r13_meeting_direction_poses","r13_meeting_direction_music","r13_meeting_shock_target","r13_meeting_shock_at","r13_meeting_proof_reveal")
+    R13_MEETING_RESUME_FIELDS=("r13_dialogue_binding","r13_dialogue_beat","r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap","r13_meeting_direction","r13_meeting_direction_poses","r13_meeting_direction_music","r13_meeting_shock_target","r13_meeting_shock_at","r13_meeting_proof_reveal","r13_meeting_line_token","r13_meeting_listener","r13_meeting_art_slots","r13_meeting_reaction")
 
     def r13_meeting_resume_after_load():
         # Ren'Py saves the outer interaction while a nested UI context is open.
@@ -129,6 +129,7 @@ init 100 python:
         if not isinstance(resume,dict):return
         for name in R13_MEETING_RESUME_FIELDS:
             if name in resume:setattr(store,name,resume[name])
+        r13_meeting_reaction_settle()
         store.r13_meeting_pending_resume=None
         store.r13_meeting_interrupting=False
         renpy.hide_screen("r13_book")
@@ -285,6 +286,7 @@ label r13_meeting_interrupt(claim,sid,resume=None):
     python:
         for name,value in resume.items():setattr(store,name,value)
         store.r13_meeting_interrupting=False
+        r13_meeting_reaction_settle()
         store.r13_meeting_pending_resume=None
         r13_meeting_direct_audio()
     return
