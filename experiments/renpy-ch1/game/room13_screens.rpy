@@ -47,10 +47,10 @@ screen r13_toolbar(investigate_action=None,present_action=None,person=None,mode=
     style_prefix "r13"
     if mode=="talk":
         fixed:
-            area (448,646,140,70)
-            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=140)
+            area ((1148,650,132,70) if persistent.room13_large_text else (1168,664,112,56))
+            use r13_antique_button("기록","record",Show("r13_records",target=person,present_action=present_action),enabled=ready,compact=True,width=(132 if persistent.room13_large_text else 112))
         if present_action is not None:
-            use r13_present_button(present_action,ready,640,636,592,72)
+            use r13_present_button(present_action,ready,640,572,592,72)
     elif mode!="field":
         use r13_playback_footer(show_record=True,ready=ready)
     else:

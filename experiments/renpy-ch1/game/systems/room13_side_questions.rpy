@@ -15,8 +15,8 @@ init 80 python:
                     pages.append(page);page=[];used=0
                 page.append((entry,height));used+=height+(8 if len(page)>1 else 0)
             return pages+([page] if page else []) or [[]]
-        pages=pack(496)
-        return pack(444) if len(pages)>1 else pages
+        pages=pack(444)
+        return pack(396) if len(pages)>1 else pages
 
 screen r13_side_question_list(person,pose,entries,ready,return_action=None,caption=""):
     default page=0
@@ -30,7 +30,7 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     text (caption or "묻고 싶은 이야기") xpos 640 ypos 76 xsize 360 size 26 color "#fff4df" font r13_ui_font()
     text ("질문 %d개 · 모두 표시"%len(entries) if len(pages)==1 else "질문 %d개 · %d / %d쪽"%(len(entries),page+1,len(pages))) xpos 1000 ypos 92 size 17 color "#d4c8b4" font r13_ui_font()
     vbox:
-        pos (640,120) spacing 8
+        pos (640,112) spacing 8
         for i,((label,command,read),height) in enumerate(visible):
             button:
                 id ("r13_side_topic_"+str(i+1))
@@ -49,11 +49,11 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     if len(pages)>1:
         textbutton "← 이전 질문":
             id "r13_topics_previous"
-            area (640,576,252,48) style "r13_action_button" text_size r13_read_size(22,26)
+            area (640,516,252,40) style "r13_action_button" text_size r13_read_size(22,26) padding (12,4) text_yalign .5
             action SetLocalVariable("page",page-1) sensitive ready and page>0
         textbutton "다음 질문 →":
             id "r13_topics_next"
-            area (980,576,252,48) style "r13_action_button" text_size r13_read_size(22,26)
+            area (980,516,252,40) style "r13_action_button" text_size r13_read_size(22,26) padding (12,4) text_yalign .5
             action SetLocalVariable("page",page+1) sensitive ready and page<len(pages)-1
     if ready:
         for i,((label,command,read),height) in enumerate(visible):
