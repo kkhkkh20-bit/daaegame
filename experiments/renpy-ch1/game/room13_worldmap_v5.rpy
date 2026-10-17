@@ -18,11 +18,32 @@ init 61 python:
 
     def r13_cart_point(region,key):
         x,y=R13_MAP_NODES[region][key]
-        return 16+x,9+y
+        ox,oy=R13_CARTOGRAPHY["regions"][region].get("offset",(16,9))
+        return ox+x,oy+y
 
     def r13_cart_label_point(key):
         x,y=R13_CARTOGRAPHY["regions"]["village"]["nodes"][key]["label_point"]
-        return 16+int(round(x*R13_MAP_SCALE)),9+int(round(y*R13_MAP_SCALE))
+        ox,oy=R13_CARTOGRAPHY["regions"]["village"].get("offset",(16,9))
+        return ox+int(round(x*R13_MAP_SCALE)),oy+int(round(y*R13_MAP_SCALE))
+
+    def r13_cart_name_rect(key):
+        x,y,w,h=R13_CARTOGRAPHY["regions"]["village"]["nodes"][key]["label_bounds"]
+        ox,oy=R13_CARTOGRAPHY["regions"]["village"].get("offset",(16,9))
+        width=max(90,int(round(w*R13_MAP_SCALE))+16)
+        height=max(42,int(round(h*R13_MAP_SCALE))+8)
+        hx,hy=r13_cart_label_point(key)
+        return hx-width//2,hy-height//2,width,height
+
+    class R13MapInkUnderline(renpy.Displayable):
+        def __init__(self,hovered=False,**kwargs):
+            super(R13MapInkUnderline,self).__init__(**kwargs)
+            self.hovered=hovered
+        def render(self,width,height,st,at):
+            w=max(1,int(width));r=renpy.Render(w,6);c=r.canvas()
+            ink="#4b2817" if self.hovered else "#75482b"
+            c.line(ink,(1,3),(w//2,2),3 if self.hovered else 2)
+            c.line(ink,(w//2,2),(w-2,3),3 if self.hovered else 2)
+            return r
 
     def r13_cart_cover_visible(key):
         # Image discovery uses the same authored knowledge gate as the names.
@@ -31,7 +52,8 @@ init 61 python:
 
 screen r13_cartography(region,selected,ready,map_hover):
     $ art=R13_CARTOGRAPHY["regions"][region]["art"]
-    add Transform(art,size=(1248,702),nearest=True) xpos 16 ypos 9
+    $ ox,oy=R13_CARTOGRAPHY["regions"][region].get("offset",(16,9))
+    add Transform(art,size=(1248,702),nearest=True) xpos ox ypos oy
     if region=="mountain":
         for secret in ("greenhouse","altar"):
             if r13_cart_cover_visible(secret):
@@ -41,7 +63,7 @@ screen r13_cartography(region,selected,ready,map_hover):
         $ lx,ly,lw,lh=r13_cart_rect(region,key)
         button:
             id ("map_building_"+key)
-            area (16+lx,9+ly,lw,lh) padding (0,0)
+            area (ox+lx,oy+ly,lw,lh) padding (0,0)
             background (r13_cart_layer(region,key,True) if region!="village" and key==selected else None)
             hover_background (r13_cart_layer(region,key,True) if region!="village" else None)
             insensitive_background None
@@ -53,25 +75,24 @@ screen r13_cartography(region,selected,ready,map_hover):
             alt R13_MAP_LABELS[key]
         if region!="village" and (key==selected or key==map_hover):
             add r13_cart_layer(region,key,outline=True) xpos (16+lx) ypos (9+ly)
-    # The drawing is the destination; real game-font labels share its selection.
-    # These use the same knowledge gates as the building masks, never future names.
+    # Village names are ink in the approved drawing, not separate button plates.
+    # Only existing eligible places receive interactive targets and underlines.
     if region=="village":
         for key,point in r13_map_nodes(region):
             $ hx,hy=r13_cart_label_point(key)
-            $ title="여관" if key=="inn" else R13_MAP_LABELS[key]
-            $ active=key==selected or key==map_hover
-            $ nw=max(100,24+len(title)*21)
+            $ nx,ny,nw,nh=r13_cart_name_rect(key)
             button:
                 id ("map_name_"+key)
-                xpos (hx-nw//2) ypos (hy-21) xysize (nw,42) padding (8,5)
-                background (R13InkPanel(focused=True) if active else Solid("#f0dfbd88"))
-                hover_background R13InkPanel(focused=True)
+                area (nx,ny,nw,nh) padding (0,0)
+                background None hover_background None insensitive_background None
                 action SetScreenVariable("selected",key)
                 hovered SetScreenVariable("map_hover",key)
                 unhovered SetScreenVariable("map_hover",None)
                 sensitive ready
                 alt R13_MAP_LABELS[key]
-                text title size 21 color ("#fff0d2" if active else "#493b30") align (.5,.5)
+            if key==selected or key==map_hover:
+                $ underline_width=max(36,int(round(R13_CARTOGRAPHY["regions"]["village"]["nodes"][key]["label_bounds"][2]*R13_MAP_SCALE)))
+                add R13MapInkUnderline(hovered=(key==map_hover)) xpos (hx-underline_width//2) ypos (hy+18) xysize (underline_width,6)
             if key==room13["location"]:
                 text "현재 위치" xpos hx ypos (hy+24 if hy<565 else hy-42) xanchor .5 size 14 color "#765b3e"
     elif map_hover in dict(r13_map_nodes(region)):

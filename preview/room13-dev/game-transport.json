@@ -1,12 +1,22 @@
 {
  "multipart": true,
- "archive_bytes": 17900417,
- "archive_sha256": "be40987e0b44f963968a3253212229b7b74e5600fd91a3165b47db50c5c9475e",
+ "archive_bytes": 17893755,
+ "archive_sha256": "b146c20625ccc1017d071a8a192c294967c520bdeb3e69778cbcac2b6fb090f9",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 17900417,
-   "sha256": "be40987e0b44f963968a3253212229b7b74e5600fd91a3165b47db50c5c9475e"
+   "bytes": 8388608,
+   "sha256": "4ac8c341e2f07b2f599e32cb20ba2fc82a4f2a0684c5dab01112ce2211b3eaea"
+  },
+  {
+   "file": "game.part02",
+   "bytes": 8388608,
+   "sha256": "163030f7a0a93243b6307768cc225c88a1dc2ebd099114a5ed708429a200c6c5"
+  },
+  {
+   "file": "game.part03",
+   "bytes": 1116539,
+   "sha256": "1009238fab7f876151ec269456ff743ecba7227fe0f47a1a69d0877f2b223c04"
   }
  ],
  "preload": [
@@ -1342,13 +1352,13 @@
   },
   {
    "file": "game/assets/room13-map-village-inn.webp",
-   "bytes": 103594,
-   "sha256": "64e3833bf9e556a7850efdb0bd7b0a6d71feb2dd999539677b946e5b071c6b5c"
+   "bytes": 101062,
+   "sha256": "1d41c8f1c778e023a0d10b544ca4232942e53566a098ef2387f36ad0f6ac6217"
   },
   {
    "file": "game/assets/room13-map-village.webp",
-   "bytes": 1870212,
-   "sha256": "f904438842b326611d717e9473e5d6e53ae711770cbd04ea10f9c558e2c332e7"
+   "bytes": 1817804,
+   "sha256": "903f503f3ae7f4c8ef7897c17abae311231367123cc8f5f13db31fd985429761"
   },
   {
    "file": "game/assets/room13-meeting-seated-buri068.webp",

@@ -65,7 +65,10 @@ class WorldmapV5(unittest.TestCase):
                 px,py=node['point']
                 self.assertEqual(mask.getpixel((px,py)),255,key)
                 # Both floating bars must leave the actual click point uncovered.
-                self.assertTrue(100<9+py*1248/1672<614,key)
+                ox,oy=spec.get('offset',(16,9))
+                sx,sy=ox+px*1248/1672,oy+py*1248/1672
+                self.assertTrue(9<sy<614,key)
+                self.assertFalse(24<=sx<=274 and 20<=sy<=96,key)
             for i,(key,mask) in enumerate(masks.items()):
                 for other,other_mask in list(masks.items())[i+1:]:
                     self.assertIsNone(ImageChops.multiply(mask,other_mask).getbbox(),(region,key,other))
@@ -84,18 +87,20 @@ class WorldmapV5(unittest.TestCase):
         self.assertIn('action SetScreenVariable("selected",key)',source)
 
     def test_village_name_targets_fit_without_overlap(self):
-        # The art's text is not baked in: labels are real UI targets, and must
-        # remain separated and accessible above the fixed navigation footer.
-        titles={'inn':'여관','gate':'마을 입구','square':'광장','store':'공동 창고',
-            'post':'우체국','market':'장터','forest':'숲길','river':'강가',
-            'school':'학교','workshop':'수리점','clinic':'진료실'}
+        # Hand-lettered names retain invisible, separated UI targets above the
+        # navigation footer. Geometry is measured on the approved illustration.
         boxes=[]
-        for key,node in DATA['regions']['village']['nodes'].items():
-            x,y=node['label_point'];x=16+round(x*1248/1672);y=9+round(y*1248/1672)
-            width=max(100,24+len(titles[key])*21)
-            box=(x-width//2,y-21,x+width//2,y+21)
+        spec=DATA['regions']['village'];ox,oy=spec.get('offset',(16,9))
+        for key,node in spec['nodes'].items():
+            x,y=node['label_point'];x=ox+round(x*1248/1672);y=oy+round(y*1248/1672)
+            bx,by,bw,bh=node['label_bounds']
+            self.assertTrue(bx<=node['label_point'][0]<=bx+bw,key)
+            self.assertTrue(by<=node['label_point'][1]<=by+bh,key)
+            width=max(90,round(bw*1248/1672)+16);height=max(42,round(bh*1248/1672)+8)
+            box=(x-width//2,y-height//2,x+width//2,y+height//2)
             self.assertTrue(24<=box[0]<box[2]<=1256,key)
-            self.assertTrue(100<box[1]<box[3]<614,key)
+            self.assertTrue(9<box[1]<box[3]<614,key)
+            self.assertFalse(box[0]<274 and box[1]<96,key)
             for other,b in boxes:
                 self.assertFalse(box[0]<b[2] and b[0]<box[2] and box[1]<b[3] and b[1]<box[3],(key,other))
             boxes.append((key,box))
