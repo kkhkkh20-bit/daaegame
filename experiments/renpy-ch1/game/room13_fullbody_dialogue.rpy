@@ -78,7 +78,7 @@ init 58 python:
             unit=float(pixel["u"])*pixel["cell"]
             # 0.18.99: proposal preview only (docs/PIXEL_UNIFY_PROPOSAL_20261016.md). Default None =
             # unchanged; a QA test may set one fixed number of screen pixels per art cell.
-            fixed=getattr(store,"r13_pixel_k_preview",None)
+            fixed=globals().get("r13_pixel_k_preview")
             if fixed:return float(fixed)/unit
             k=max(1,int(round(scale*unit)))
             while k>1 and k/unit>cap:k-=1
