@@ -5,6 +5,7 @@ default r13_conv_skip = False
 
 # Full campaign entry and first-week scenes; continuation is in room13_week2.rpy.
 label r13_scene(bg,title,mood="calm"):
+    $ r13_meeting_direct_end()
     $ r13_cg_active = False
     $ r13_last_partner = None
     window hide
@@ -44,6 +45,7 @@ label r13_lines(entries,identity):
         $ r13_packet=r13_dead_stand_in_packet(r13_pov_packet(entries[r13_index]),identity)
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
+        $ r13_expression,r13_directed_pose=r13_meeting_direct_line(identity,r13_index,r13_packet,r13_expression,r13_directed_pose)
         if r13_thought_active:
             $ r13_expression,r13_directed_pose="thinking","thinking"
         # 0.18.56 (owner): someone who "comes over" in the opening narration is on screen
@@ -84,6 +86,8 @@ label r13_lines(entries,identity):
     return
 
 label room13_start:
+    $ r13_meeting_direct_end()
+    $ r13_meeting_direction_seen=[]
     $ room13_mode=True
     $ winter_mode=True
     $ winter=winter_new()

@@ -616,10 +616,12 @@ label r13_debate_run(claim):
     $ r13_autosave_now()
     $ r13_meeting_claim=claim
     $ r13_meeting_active=True
+    $ r13_meeting_direct_beat("listen",claim)
     $ r13_meeting_focus_change(claim,r13_debate_statements(claim)[0]["who"])
     call r13_debate_session_run(claim)
     $ r13_meeting_result=_return
     $ r13_meeting_active=False
+    $ r13_meeting_direct_end()
     hide r13_visitor
     return r13_meeting_result
 
@@ -639,6 +641,7 @@ label r13_debate_loop:
     window hide
     hide r13_visitor
     $ r13_meeting_focus_change(r13_claim,r13_debate_statement(r13_claim,r13_debate_selected)["who"])
+    $ r13_meeting_direct_beat("listen",r13_claim)
     call screen r13_debate_board(r13_claim,r13_debate_selected)
     $ r13_meeting_claim=r13_claim
     $ r13_meeting_active=True
@@ -690,6 +693,7 @@ label r13_debate_dispatch:
         if r13_debate_st.get("reveals"):
             $ r13_debate_selected=r13_debate_st["reveals"]
     elif r13_debate_action[0]=="present":
+        $ r13_meeting_direct_beat("select",r13_claim,r13_debate_action[1])
         call screen r13_book("resident_seori",present=True,hearing=True)
         $ r13_item=_return
         if r13_item:
@@ -733,10 +737,13 @@ label r13_debate_unanswerable(claim):
 label r13_debate_answer_counter(claim,sid):
     $ r13_debate_c=r13_debate_counter(claim,sid)
     call r13_lines(r13_debate_c["lines"],"debate:counter:"+claim+":"+sid)
+    $ r13_meeting_direct_beat("recover",claim,sid)
     $ r13_debate_pick=renpy.display_menu([(r13_debate_c["prompt"],None)]+[(text,kind) for kind,text in r13_debate_counter_options(claim,sid)])
     if r13_debate_pick=="correct":
         call r13_lines(r13_debate_c["correct"],"debate:counter_ok:"+claim+":"+sid)
         return True
+    $ r13_meeting_direct_beat("reversal",claim,sid)
+    $ source_fx("wrong")
     call r13_lines([r13_debate_c["wrong"][r13_debate_pick],
         ("dad","(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)",{"thought":True})],"debate:counter_wrong:"+claim+":"+sid+":"+r13_debate_pick)
     return False
@@ -772,12 +779,15 @@ label r13_debate_point(claim):
         return False
     call r13_lines([("dad",r13_point["ask"])],"debate:point:"+claim)
     show screen r13_meeting_cut_in("이 기록을 봐 주세요.")
+    $ r13_meeting_direct_beat("select",claim)
     call screen r13_book("resident_seori",present=True,hearing=True)
     $ r13_point_key=_return
     if not r13_point_key:
         return False
     if r13_point_key in r13_point["keys"]:
         $ r13_debate_pick="correct"
+        $ r13_meeting_direct_beat("settle",claim)
+        $ source_fx("right")
         call r13_lines(list(r13_point["decisive"].get(r13_point_key,[]))+list(r13_debate_spec["correct"]),"debate:conclusion:"+claim)
         return True
     call r13_lines([r13_point["wrong_key"]],"debate:point_key_wrong:"+claim+":"+r13_point_key)

@@ -73,7 +73,7 @@ init 99 python:
         step=(b-a)%len(people)
         store.r13_meeting_pan_direction=1 if step<=len(people)/2 else -1
         store.r13_meeting_previous_focus=old if old in people else None
-        store.r13_meeting_previous_expression=getattr(store,"dialogue_expression","neutral")
+        store.r13_meeting_previous_expression=r13_meeting_direct_pose(old,getattr(store,"dialogue_expression","neutral"))
         store.r13_meeting_focus=who;store.r13_meeting_shot_revision+=1
         store.r13_meeting_pan_started=renpy.display.core.get_time()
 
@@ -82,19 +82,19 @@ init 99 python:
             trans.xoffset=0;trans.alpha=0.0 if outgoing else 1.0
             return None
         now=renpy.display.core.get_time();revision=getattr(store,"r13_meeting_shot_revision",0)
-        enabled=getattr(persistent,"room13_motion",True) and not renpy.is_skipping()
+        enabled=getattr(persistent,"room13_motion",True) and not renpy.is_skipping() and r13_meeting_direct_duration()>0
         if getattr(store,"r13_meeting_pan_painted_revision",-1)!=revision:
             # Start when the shot is painted, so image preparation cannot eat
             # the sweep before the first visible frame on slower devices.
             store.r13_meeting_pan_started=now if enabled else now-1
             store.r13_meeting_pan_painted_revision=revision
         elapsed=now-getattr(store,"r13_meeting_pan_started",0.0)
-        duration=.12 if getattr(store,"r13_meeting_interrupting",False) else .22
+        duration=max(.01,r13_meeting_direct_duration())
         moving=enabled and getattr(store,"r13_meeting_previous_focus",None) is not None and 0<=elapsed<duration
         u=min(1.0,max(0.0,elapsed/duration));ease=u*u*(3-2*u)
-        distance=getattr(store,"r13_meeting_pan_direction",1)*1200
+        distance=getattr(store,"r13_meeting_pan_direction",1)*280
         trans.xoffset=int(-distance*ease if outgoing else distance*(1-ease)) if moving else 0
-        trans.alpha=(1.0 if moving else 0.0) if outgoing else 1.0
+        trans.alpha=(1.0-ease if moving else 0.0) if outgoing else (ease if moving else 1.0)
         return .016 if moving else None
 
     def r13_meeting_edge(x,session):
@@ -169,6 +169,9 @@ init 99 python:
     def r13_meeting_adjustment(claim):
         return ui.adjustment(value=getattr(store,"r13_meeting_scrolls",{}).get(claim,0),changed=R13MeetingScrollChanged(claim))
 
+transform r13_meeting_background_light(shade=0.0,tint="#fff6e8"):
+    linear (.18 if persistent.room13_motion else 0) matrixcolor (TintMatrix(tint)*SaturationMatrix(.91)*BrightnessMatrix(-.04-shade))
+
 transform r13_meeting_pan(revision=0,direction=1,outgoing=False):
     subpixel False
     crop (0,0,1280,720)
@@ -191,7 +194,7 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
         xsize 1280 ysize 720
         if close:
             at r13_meeting_pan(r13_meeting_shot_revision,r13_meeting_pan_direction,outgoing)
-        add r13_meeting_plate(session,close)
+        add r13_meeting_plate(session,close) at r13_meeting_background_light(r13_meeting_direct_shade(),"#eef4ff" if venue_kind=="stone" else "#fff6e8" if seated else "#f3f6ff")
         if close:
             $ left,right=r13_meeting_neighbors(claim,focus)
             for neighbor,is_left in ((left,True),(right,False)):
@@ -201,10 +204,11 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                 $ side_width=int(round(side_crop[2]*side_scale))
                 $ side_height=int(round(side_crop[3]*side_scale))
                 $ side_x=-side_width//3 if is_left else 1280-side_width*2//3
-                add r13_pixel_scale(r13_meeting_neighbor_art(neighbor,is_left,sitting),side_width,side_height,R13_CLOSE_PIXEL_GRID) xpos side_x ypos (142 if sitting else 164)
+                add Transform(r13_pixel_scale(r13_meeting_neighbor_art(neighbor,is_left,sitting),side_width,side_height,R13_CLOSE_PIXEL_GRID),matrixcolor=BrightnessMatrix(-.08-r13_meeting_direct_shade()*.4)*SaturationMatrix(.90)) xpos side_x ypos (142 if sitting else 164)
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=r13_meeting_previous_expression if outgoing else (getattr(store,"dialogue_expression","neutral") if getattr(store,"dialogue_speaker",None)==focus else "neutral")
-            $ close_height=840 if venue_kind in ("round","stone") else 740
+            $ pose=r13_meeting_previous_expression if outgoing else r13_meeting_direct_pose(focus,pose)
+            $ close_height=r13_meeting_direct_close_height(venue_kind,outgoing)
             $ portrait=r13_fullbody_close_art(focus,pose,close_height)
             if portrait is not None:
                 add portrait xcenter r13_close_x(focus,pose,close_height) ypos r13_fullbody_close_y(focus,close_height,96,pose)
@@ -231,7 +235,7 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
         # Outdoor/classroom plates contain no table. Masking them hides legs
         # behind an invisible tabletop and paints background over the cast.
         if venue_kind in ("round","stone"):
-            add AlphaMask(r13_meeting_plate(session,close),R13MeetingForeground(session,close))
+            add Transform(AlphaMask(r13_meeting_plate(session,close),R13MeetingForeground(session,close)),matrixcolor=BrightnessMatrix(-.025-r13_meeting_direct_shade()*.4))
         if ballot:
             for index,(who,stance) in enumerate(seats):
                 if stance is not None:

@@ -174,7 +174,8 @@ init 150 python:
     _r13_sound_debate_judge = r13_debate_judge
     def r13_debate_judge(claim, sid, key):
         result = _r13_sound_debate_judge(claim, sid, key)
-        if not renpy.is_skipping():
+        # The council director owns impact/result timing, including counter failures.
+        if not renpy.is_skipping() and not getattr(store,"r13_meeting_active",False):
             follow = {"break": "right", "wrong": "wrong"}.get(result[0])
             queue = [r13_fx_path("present")] + ([r13_fx_path(follow)] if follow else [])
             store.source_effect_log.append("present:" + result[0])

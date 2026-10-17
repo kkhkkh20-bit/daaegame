@@ -217,6 +217,8 @@ class MeetingFlow(unittest.TestCase):
   env.update(CAST={p:{} for p in ['seryeon','resident_ppul','buri','nabi','resident_bori','resident_tori','doto','resident_kongi','granny','resident_seori','mom']},persistent=types.SimpleNamespace(room13_motion=True),renpy=types.SimpleNamespace(Displayable=object,loadable=lambda path:False,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:clock[0])),is_skipping=lambda:False))
   src=(ROOT/'game/room13_meeting_seating.rpy').read_text().split('init 99 python:\n',1)[1].split('\ntransform ',1)[0]
   exec(textwrap.dedent(src),env)
+  direct=(ROOT/'game/systems/room13_meeting_direction.rpy').read_text().split('init 174 python:\n',1)[1].split('\n# Brief impact',1)[0]
+  exec(textwrap.dedent(direct),env)
   self.store.r13_meeting_shot_revision=0
   f=env['r13_meeting_focus_change'];f('C1','seryeon');first=self.store.r13_meeting_shot_revision
   clock[0]+=1;f('C1','seryeon');f('C1','dad')
@@ -225,14 +227,15 @@ class MeetingFlow(unittest.TestCase):
   f('C1','resident_ppul');self.assertEqual(self.store.r13_meeting_shot_revision,first+1)
   trans=types.SimpleNamespace(xoffset=0);tick=env['r13_meeting_pan_tick']
   clock[0]+=.6  # Asset preparation before first paint must not consume the sweep.
-  self.assertIsNotNone(tick(trans,0,0));self.assertEqual(abs(trans.xoffset),1200)
+  self.assertIsNotNone(tick(trans,0,0));self.assertEqual(abs(trans.xoffset),280)
   incoming=trans.xoffset;old=types.SimpleNamespace(xoffset=0)
   tick(old,0,0,outgoing=True)
-  self.assertEqual(abs(incoming-old.xoffset),1200)
+  self.assertEqual(abs(incoming-old.xoffset),280)
   clock[0]+=.4;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
   self.store.r13_meeting_live_lap=1;f('C1','nabi');tick(trans,0,0)
   clock[0]+=.2;self.assertIsNotNone(tick(trans,0,0))
   clock[0]+=.04;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)
+  self.store.r13_meeting_direction={'beat':'reaction'}
   self.store.r13_meeting_interrupting=True;f('C1','resident_bori');tick(trans,0,0)
   clock[0]+=.10;self.assertIsNotNone(tick(trans,0,0))
   clock[0]+=.04;self.assertIsNone(tick(trans,0,0));self.assertEqual(trans.xoffset,0)

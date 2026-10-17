@@ -50,6 +50,9 @@ async def main():
     direction=await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_book");s=renpy.store;entries=sc.scope["entries"];result="다음" if entries.index('+repr(key)+')//s.r13_record_page_size()>sc.scope["page"] else "이전"')
     await q.press(direction)
    await q.press(title);await q.press('이 주장에 근거로 낸다')
+   if os.environ.get('ROOM13_MEETING_RHYTHM') and await q.py('import renpy;result=renpy.display.screen.get_screen("r13_meeting_objection") is not None'):
+    await page.screenshot(path=str(OUT/'23-interruption.png'))
+
   try:
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu');await asyncio.sleep(.7)
    await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance()
@@ -196,9 +199,12 @@ async def main():
     assert await q.py('import renpy;s=renpy.store;result=s.r13_meeting_live_active and s.r13_meeting_live_sid=="s1"')
     before_say=(await q.state())['say']
     before=await q.py('import renpy;s=renpy.store;result={"id":s.r13_read_id,"index":s.r13_index,"page":s.r13_page_i,"sid":s.r13_meeting_live_sid,"proofs":s.room13["propositions"],"evidence":s.room13["evidence"]}')
-    await q.press('보여주기');await q.wait('r13_book');await q.py('import renpy;renpy.exports.save("qa-meeting-rhythm");result=True')
+    await q.press('보여주기');await q.wait('r13_book')
+    assert await q.py('import renpy,renpy.audio.music as music;s=renpy.store;result=s.r13_meeting_direction["beat"]=="select" and abs(s.r13_meeting_channel_gain("music")-.5)<.02 and not music.get_pause(channel="music")')
+    await q.py('import renpy;renpy.exports.save("qa-meeting-rhythm");result=True')
     await native_load(q,'qa-meeting-rhythm');await q.wait('say');assert (await q.state())['say']==before_say
     await q.press('보여주기');await q.wait('r13_book');await q.press('그만두기');assert (await q.state())['say']==before_say
+    assert await q.py('import renpy,renpy.audio.music as music;s=renpy.store;result=s.r13_meeting_direction["beat"]=="listen" and not music.get_pause(channel="music")')
     after=await q.py('import renpy;s=renpy.store;result={"id":s.r13_read_id,"index":s.r13_index,"page":s.r13_page_i,"sid":s.r13_meeting_live_sid,"proofs":s.room13["propositions"],"evidence":s.room13["evidence"]}')
     assert before==after
     await q.press('되묻기');await until(say='말한 그대로입니다');assert await q.py('import renpy;result=renpy.store.r13_read_id.startswith("debate:press:C2:s1")')

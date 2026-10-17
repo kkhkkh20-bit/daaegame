@@ -57,6 +57,10 @@ init 100 python:
         st=r13_debate_statement(claim,sid)
         rows=[(st["who"],r13_meeting_statement_text(claim,sid))]
         reply=R13_MEETING_REJOINDERS.get(claim,{}).get(sid)
+        if not reply and claim.startswith("Q") and sid==r13_debate_statements(claim)[0]["id"]:
+            # Only an attendee; no random witness, new fact, or persuasion effect.
+            people=[p for p,_ in r13_meeting_cast(claim,r13_debate_session(claim)) if p not in (st["who"],r13_viewpoint())]
+            if people:reply=(people[0],"잠깐, 한 사람씩 이야기해요.")
         if reply:rows.append(reply)
         return rows
 
@@ -116,7 +120,7 @@ init 100 python:
             lines.append((who,text))
         return lines
 
-    R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap")
+    R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap","r13_meeting_direction","r13_meeting_direction_poses","r13_meeting_direction_music")
 
     def r13_meeting_resume_after_load():
         # Ren'Py saves the outer interaction while a nested UI context is open.
@@ -131,6 +135,8 @@ init 100 python:
         renpy.hide_screen("r13_material_corner")
         renpy.hide("r13_visitor")
         renpy.hide_screen("r13_meeting_cut_in")
+        renpy.hide_screen("r13_meeting_evidence_hold")
+        renpy.hide_screen("r13_meeting_objection")
 
     config.after_load_callbacks.append(r13_meeting_resume_after_load)
 
@@ -214,14 +220,17 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
     $ r13_meeting_interrupting=True
     $ r13_meeting_focus_change(claim,r13_debate_statement(claim,sid)["who"])
     $ presentation_result,presentation_rows=r13_debate_judge(claim,sid,key)
-    # 0.18.99: a statement that falls gets the "그 말, 맞지 않습니다!" cut-in (systems/room13_polish3.rpy).
+    # An accepted record earns an interruption, not a premature victory.
+    # The opponent can recover in the canonical counter question below.
     if presentation_result=="break":
-        call r13_rebuttal_cutin_play(claim,sid)
+        call r13_meeting_direct_interrupt(claim,sid,key)
     else:
-        show screen r13_meeting_cut_in("이 기록을 봐 주세요.")
+        $ r13_meeting_direct_beat("half" if presentation_result=="half" else "reversal",claim,sid,key)
+        $ source_fx("present" if presentation_result in ("half","soft") else "wrong")
     show screen r13_material_corner(key)
     call r13_lines(presentation_rows,"debate:"+presentation_result+":"+claim+":"+sid+":"+key)
     hide screen r13_material_corner
+    hide screen r13_meeting_evidence_hold
     if presentation_result=="break" and r13_debate_counter(claim,sid):
         call r13_debate_answer_counter(claim,sid)
         if not _return:
@@ -233,6 +242,8 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
                 for source in r13_debate_statements(claim):
                     if source.get("reveals")==sid:r13_debate_mark("pressed",claim,source["id"])
         $ r13_debate_mark("broken",claim,sid)
+        $ r13_meeting_direct_beat("resolve",claim,sid,key)
+        $ source_fx("right")
         $ r13_submit(claim,key)
         python:
             observation=next((row[1] for row in presentation_rows if row[0] is not None),None)
@@ -253,13 +264,16 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
         $ presentation_rows=r13_debate_hint_due(claim,sid)
         if presentation_rows:
             call r13_lines([("dad",presentation_rows,{"thought":True})],"debate:hint:"+claim+":"+sid)
+    call r13_meeting_direct_reactions(claim,sid,presentation_result)
     $ r13_meeting_interrupting=was_interrupting
+    $ r13_meeting_direct_beat("listen",claim)
     return presentation_result=="break"
 
 label r13_meeting_interrupt(claim,sid,resume=None):
     $ resume={name:getattr(store,name,None) for name in R13_MEETING_RESUME_FIELDS}
     $ r13_meeting_pending_resume=resume
     $ r13_meeting_interrupting=True
+    $ r13_meeting_direct_beat("select",claim,sid)
     call screen r13_book("resident_seori",present=True,hearing=True)
     if _return:
         call r13_debate_present_record(claim,sid,_return,allow_hidden=True)
@@ -267,6 +281,7 @@ label r13_meeting_interrupt(claim,sid,resume=None):
         for name,value in resume.items():setattr(store,name,value)
         store.r13_meeting_interrupting=False
         store.r13_meeting_pending_resume=None
+        r13_meeting_direct_audio()
     return
 
 label r13_meeting_public_vote(claim,choice):
