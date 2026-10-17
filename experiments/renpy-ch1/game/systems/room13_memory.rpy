@@ -94,11 +94,11 @@ label r13_grudge_fix:
     $ _gk=r13_topic.split(":",1)[1]
     $ _gt,_gcost,_glines=R13_GRUDGES[_gk]["fix"]
     if _gcost and r13_cash_now()<_gcost:
-        call r13_lines([("dad","(지금 가진 돈으로는 모자라다. %d냥이 있어야 한다.)"%_gcost,{"thought":True})],"grudge:short:"+_gk)
+        call r13_lines([("dad","(지금 가진 돈으로는 모자라다. %d냥이 있어야 한다.)"%_gcost,{"thought":True})],"grudge:short:"+_gk, binding_route="dynamic:610")
         return
     if _gcost:
         $ r13_cash(-_gcost,_gt)
-    call r13_lines(_glines,"grudge:fix:"+_gk)
+    call r13_lines(_glines,"grudge:fix:"+_gk, binding_route="dynamic:611")
     $ r13_flag(_gk+"_reconciled",*R13_GRUDGES[_gk].get("extra",()))
     $ r13_finish_topic(r13_topic)
     if _gk=="siluk":

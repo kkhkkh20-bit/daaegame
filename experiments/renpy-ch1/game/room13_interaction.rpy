@@ -252,7 +252,7 @@ label r13_object_options(key):
                 if _return:
                     $ r13_finish_action(r13_action)
             else:
-                call r13_lines(ROOM13["activities"][r13_action]["lines"],"activity:"+r13_action)
+                call r13_lines(ROOM13["activities"][r13_action]["lines"],"activity:"+r13_action, binding_route="dynamic:081")
                 $ r13_finish_action(r13_action)
     elif r13_context_choice[0]=="wait" and room13["period"]<3:
         call screen r13_confirm(r13_context_wait(key)+"\n"+r13_learning_time_text(1))

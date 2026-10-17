@@ -1,0 +1,28 @@
+{
+  "runtime_integration": "118_dynamic_calls_locally_bound",
+  "pending": [
+    {
+      "task": "context_specific_expression_and_event_art",
+      "status": "requested_not_produced_not_approved",
+      "manifest": "performance-resource-requests.json"
+    },
+    {
+      "task": "final_front_facing_dialogue_art_package",
+      "status": "waiting_for_parent_delivery",
+      "current_assets": "HOLD; not approved_runtime"
+    },
+    {
+      "task": "visual_acceptance_with_final_art",
+      "status": "after_final_package; current checks are code/data tests, not visual signoff"
+    },
+    {
+      "task": "resource_activation_merge_public_deployment",
+      "status": "on_hold_by_latest_parent_instruction"
+    }
+  ],
+  "limitations": [
+    "State matrices are bounded branch tests, not all reachable game histories or full UI playback.",
+    "AUTO uses the same say-completion settle path; load/rollback engine signals are exercised through controlled tests, not an end-to-end screen recording.",
+    "Meeting/investigation poses retain their separate renderers."
+  ]
+}

@@ -210,7 +210,7 @@ label r13_nt_overhear:
             ("resident_ppul","외지 사람이 지금 마을 법을 가르치려 하오?")],"nt:ppul")
         menu:
             "이름 판 맨 아래 이름을 보여 준다" if r13_has("N08"):
-                call r13_lines(r13_present("resident_ppul","N08"),"nt:ppul:board")
+                call r13_lines(r13_present("resident_ppul","N08"),"nt:ppul:board", binding_route="dynamic:369")
             "식어 가는 돌을 보여 준다" if r13_has("W4"):
                 call r13_lines([("resident_ppul","……숫자는 거짓말을 안 하오. 좋소. 이번엔 말이 아니라 증거로 하겠소.")],"nt:ppul:stone")
                 $ r13_flag("fair_hearing","nt_ppul_promise")
@@ -309,7 +309,7 @@ label r13_nt_dawn9:
         ([("granny","초롱이 일, 들었어요. 가엾어라. 계단이 얼어서 그랬다네요.")] if r13_has("chorong_dead") else [])+
         [("granny","이거 마시고 조금이라도 눈 붙이세요. 내일 아침이 회의잖아요. 아이 아버지가 쓰러지면 다람이는 누가 데려와요."),
         (None,"할머니가 돌아서며 목도리를 여몄다. 목도리에 핀이 없었다."),
-        ("dad","(……핀 자리에 실이 조금 풀려 있었다.)",{"thought":True})],"nt:dawn9:tea")
+        ("dad","(……핀 자리에 실이 조금 풀려 있었다.)",{"thought":True})],"nt:dawn9:tea", binding_route="dynamic:385")
     call r13_scene("kitchen","9일 아침 · 주방과 통로","quiet")
     if r13_has("nt_ttadak_safe"):
         call r13_lines([(None,"주방. 쇠 손잡이가 반쯤 내려오다 톡의 쐐기에 걸려 멈춰 있었다. 쐐기 위에 새로 긁힌 쇳가루."),
@@ -338,7 +338,7 @@ label r13_nt_dawn9:
             ("dad","(이 문은 저절로 닫히지 않는다. 누군가 주방에서 손잡이를 내렸다.)",{"thought":True}),
             ("dad","(따닥이 새벽에 여기 들어간다는 걸 미리 들은 사람은—.)",{"thought":True})]+
             ([("resident_tok","따닥……. 판자를 늘 반 치씩 길게 잘랐어요. 모자라는 것보다 남는 게 낫다고."),
-              ("resident_tok","도면은 다 못 그렸네. 내가 마저 그릴게.")] if r13_has("tok_cleared") else []),"nt:dawn9:dead")
+              ("resident_tok","도면은 다 못 그렸네. 내가 마저 그릴게.")] if r13_has("tok_cleared") else []),"nt:dawn9:dead", binding_route="dynamic:388")
         $ r13_flag("ttadak_dead")
         $ r13_grant(["N07","N09"],"내려진 레버와 통로 안에 남은 글씨·부리 자국")
     return
@@ -382,12 +382,12 @@ label r13_nt_after_trial:
             (None,"초롱의 어머니가 말했다. \"그저께 밤에 그 애 대신 켜 주셨다지요. 동쪽 등 셋. 우리 집 창에서 보였어요. 그 애가 돌아온 줄 알았어요.\"",{"show":"chorong_mother","pose":"offer_lantern"}),
             (None,"\"그 애가 늘 말했어요. 남의 소식을 전하는 건 그 사람 하루를 지켜 주는 일이라고.\""),
             ("daram","……따뜻해."),
-            ("daram","할머니. 초롱 아저씨가 우리 엄마 편지 지켜 줬어. 끝까지.")],"nt:after:lamp")
+            ("daram","할머니. 초롱 아저씨가 우리 엄마 편지 지켜 줬어. 끝까지.")],"nt:after:lamp", binding_route="dynamic:392")
         $ r13_flag("chorong_lamp")
     elif r13_has("nt_chorong_safe"):
         call r13_scene("winter_square","광장 · 초롱의 등","calm")
         call r13_lines([("resident_lamplighter","오늘은 다람이가 켜 볼래?"),
-            (None,"다람이 등을 하나 켰다.")]+([("daram","오늘은 이름 판에 새 이름 없지?")] if not r13_has("ttadak_dead") else []),"nt:after:lamp_alive")
+            (None,"다람이 등을 하나 켰다.")]+([("daram","오늘은 이름 판에 새 이름 없지?")] if not r13_has("ttadak_dead") else []),"nt:after:lamp_alive", binding_route="dynamic:393")
     if room13.get("daram_state")=="with_dad":
         call r13_lines([("daram","아빠, 이거 내가 읽어 줄게. 보호실에서 백 번 읽었어."),
             (None,"(그림책) 빨간 모자는 숲을 지나 할머니 집에 갔어요.",{"book":"U04-opening"}),

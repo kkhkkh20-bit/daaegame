@@ -151,7 +151,7 @@ label r13_ep2_bite(late=False):
         ("dad","보호소에서 돌아온 사람은 있습니까?"),
         ("neoul","……그건 보호소에서 알아서 할 일이오."),
         (None,"너울이 돌아서자 바둑이가 낮게 말했다."),
-        ("resident_badook","저는 돌아온 사람을 본 적이 없습니다. 아직 한 번도요.")],"ep2:bite")
+        ("resident_badook","저는 돌아온 사람을 본 적이 없습니다. 아직 한 번도요.")],"ep2:bite", binding_route="dynamic:275")
     if not r13_has("W1"):
         $ r13_grant(["W1"],"입구에서 너울·바둑이와 나눈 말")
     $ r13_flag("badook_doubt")
@@ -305,7 +305,7 @@ label r13_ep2_at_roof:
          [(None,"조금 떨어진 처마 끝에는 눈이 부채꼴로 쓸려 있었다. 아까 밤이가 날아간 자리다.")] if r13_has("kd_bami_fled") else
          [(None,"지붕 끝에서 참새들이 날아올랐다. 날개 밑의 눈이 부채꼴로 쓸려 나갔다.")])+
         [(None,"밤이가 앉았던 자리 둘레는 쓸리지 않았다. 그날 밤 뒤로 눈은 오지 않았다. 저 아래 발자국이 그대로 남은 것처럼."),
-        ("daram","(그날 밤 밤이는 여기서 날아오르지 않았어.)",{"thought":True})],"ep2:roof")
+        ("daram","(그날 밤 밤이는 여기서 날아오르지 않았어.)",{"thought":True})],"ep2:roof", binding_route="dynamic:290")
     $ r13_grant(["K04","K09"],"여관 지붕에서 내려다본 눈밭과 처마")
     call r13_ep2_step
     return
@@ -320,7 +320,7 @@ label r13_ep2_at_somi_home:
         ("resident_somi","……할아버지. 나야. 솜이야."),
         ("resident_musoe","솜이? (손바닥을 내려다본다) 솜이…… 그래, 솜이. 우리 솜이는 어디 갔지?"),
         (None,"솜이가 울음을 터뜨렸다.")]+
-        ([("resident_somi","열은 내렸어. 약도 먹었어. 근데 그 뒤로 자꾸…… 나를 몰라봐.")] if r13_has("musoe_recovering") or r13_has("musoe_herbs") else []),"ep2:home")
+        ([("resident_somi","열은 내렸어. 약도 먹었어. 근데 그 뒤로 자꾸…… 나를 몰라봐.")] if r13_has("musoe_recovering") or r13_has("musoe_herbs") else []),"ep2:home", binding_route="dynamic:291")
     $ r13_grant(["K05","K06"],"솜이네 집에서 본 것과 들은 말")
     call r13_lines([("resident_somi","말하지 마. 아무한테도. 할아버지 보호소 가면…… 보호소 간 사람은 아무도 안 돌아와."),
         ("resident_somi","그래서 네로 아저씨한테 부탁해서 밤에 천막에 숨겼어. 근데 할아버지가 자꾸 집에 오려고 해. 집을 찾다가…… 경비 아저씨가 붙잡으니까 무서워서……."),
@@ -410,7 +410,7 @@ label r13_ep2_night:
             ("resident_somi","할아버지가…… 집에 없어."),
             (None,"멀리 강 쪽에 작은 등불 하나가 흔들렸다. 그리고 반대쪽, 학교 뒤에서 붉은 빛이 피어올랐다.")]+
             ([("bami","(뒤에서) 저기, 불이야.")] if r13_has("bami_friend") else [])+
-            [("daram","……솜이야, 강으로 가자.")],"ep2:roof:lights")
+            [("daram","……솜이야, 강으로 가자.")],"ep2:roof:lights", binding_route="dynamic:303")
         call r13_scene("r13_river","강가 · 작별","night")
         call r13_lines([(None,"얼음 위에 할아버지가 서 있었다. 맨발이었다."),
             ("resident_somi","할아버지!"),

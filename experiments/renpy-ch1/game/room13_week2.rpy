@@ -15,10 +15,10 @@ label r13_week2_opening:
     else:
         call r13_lines([("daram","아빠. 저 사람, 어제도 저기서 배관 고쳤잖아."),(None,"배관을 고치던 주민이 자기 이름을 잊었다. 길 건너에서는 빈 식량 자루를 두고 언성이 높아졌다."),("dad","아빠랑 여기서 같이 지켜보자."),("daram","물 가져다줄까? 먼저 물어보고 줄게.")],"week2:family_route")
     # 0.18.90: 초롱이 죽은 판에서는 돌의 바늘을 보는 우박이 말한다.
-    call r13_lines([("resident_ubak" if r13_has("chorong_dead") else "resident_lamplighter","등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요."),(None,"재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.")],"week2:crisis")
+    call r13_lines([("resident_ubak" if r13_has("chorong_dead") else "resident_lamplighter","등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요."),(None,"재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.")],"week2:crisis", binding_route="dynamic:102")
     if r13_has("warning_exposed"):
         $ r13_flag("pursuit_active")
-        call r13_lines([(None,"여관에서 편지 이야기가 새어 나갔다. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있다고 했다.")] if r13_has("chorong_dead") else [("resident_lamplighter","여관에서 편지 이야기가 새어 나갔어요. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있어요.")],"week2:prior_disclosure")
+        call r13_lines([(None,"여관에서 편지 이야기가 새어 나갔다. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있다고 했다.")] if r13_has("chorong_dead") else [("resident_lamplighter","여관에서 편지 이야기가 새어 나갔어요. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있어요.")],"week2:prior_disclosure", binding_route="dynamic:103")
     jump r13_roam
 
 label r13_week2_day:
@@ -36,7 +36,7 @@ label r13_week2_events:
         $ r13_grant(["E19"],"초롱이 직접 가져온 현재 답장")
         $ r13_edit(mom_state="contacted")
     if r13_has("contact_compromised") and "contact_relocated" not in room13["events"]:
-        call r13_lines([(None,"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」"),("dad","(아내 글씨다. 살아 있다.)",{"thought":True})] if r13_has("chorong_dead") else [("resident_lamplighter","약속 장소에 경비가 먼저 와 있었어요. 그래서 부인께서 자리를 바꾸셨어요. 새 표식을 확인해야 해요."),("dad","아내가 살아 있다는 거죠?"),("resident_lamplighter","제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.")],"week2:relocated")
+        call r13_lines([(None,"광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」"),("dad","(아내 글씨다. 살아 있다.)",{"thought":True})] if r13_has("chorong_dead") else [("resident_lamplighter","약속 장소에 경비가 먼저 와 있었어요. 그래서 부인께서 자리를 바꾸셨어요. 새 표식을 확인해야 해요."),("dad","아내가 살아 있다는 거죠?"),("resident_lamplighter","제가 직접 받은 신호로는 그렇습니다. 다음 신호도 같이 확인해 봅시다.")],"week2:relocated", binding_route="dynamic:105")
         $ r13_event("contact_relocated")
     if r13_has("convoy_changed") and "convoy_changed_notice" not in room13["events"]:
         call r13_lines([("neoul","사람을 끌고 가는 경비 조가 바뀌었습니다. 전에 보신 순번과 다를 겁니다."),(None,"갖고 있던 기록은 그대로 남아 있다. 하지만 지금 내려진 명령은 다시 확인해야 한다.")],"week2:convoy_changed")
@@ -66,7 +66,7 @@ label r13_special_activity(key):
         call r13_reunion
         return True
     if key=="w2_measure2":
-        call r13_lines(ROOM13["activities"][key]["lines"],"activity:"+key)
+        call r13_lines(ROOM13["activities"][key]["lines"],"activity:"+key, binding_route="dynamic:109")
         menu:
             "어느 구간을 함께 남길까?"
             "남은 힘·쓰는 양·버티는 시간을 함께 적는다":
@@ -325,7 +325,7 @@ label r13_ending:
         call r13_lines([("dad","길이 열리면 집으로 돌아가자."),("daram","길 열리기 전에는?"),("mom","아직 할 일이 조금 남았어."),("daram","조금이면 나도 같이 해도 되지?")],"ending:family")
         if r13_ending_id=="E6":
             call r13_scene("room","열세 번째 창","travel")
-            call r13_lines(([("mom","초롱 씨가 남긴 짐에 이 도면이 있었어. 마을 밖으로 보낸 적이 있대. 원본은 여기 남겼고.")] if r13_has("chorong_dead") else [("resident_lamplighter","이 도면은 마을 밖으로 보낸 적이 있습니다. 원본은 여기 남겼고요.")])+[("mom","이 부분이 달라. 고대 장치에 있던 선이 아니야."),("dad","그 선은 나중에 덧붙였다는 거야?"),("mom","누군가 같은 방법으로 다른 곳도 바꿨을 수 있어."),(None,"자료를 여러 부 복사해 나눠 보관했다. 이 마을에서 벌어진 일의 책임은 지워지지 않았다."),("daram","이제 천 걷어도 돼?"),("mom","응."),(None,"다람이가 창에 친 두꺼운 천을 걷었다. 이번에는 누군가를 숨기려는 게 아니었다.")],"ending:E6")
+            call r13_lines(([("mom","초롱 씨가 남긴 짐에 이 도면이 있었어. 마을 밖으로 보낸 적이 있대. 원본은 여기 남겼고.")] if r13_has("chorong_dead") else [("resident_lamplighter","이 도면은 마을 밖으로 보낸 적이 있습니다. 원본은 여기 남겼고요.")])+[("mom","이 부분이 달라. 고대 장치에 있던 선이 아니야."),("dad","그 선은 나중에 덧붙였다는 거야?"),("mom","누군가 같은 방법으로 다른 곳도 바꿨을 수 있어."),(None,"자료를 여러 부 복사해 나눠 보관했다. 이 마을에서 벌어진 일의 책임은 지워지지 않았다."),("daram","이제 천 걷어도 돼?"),("mom","응."),(None,"다람이가 창에 친 두꺼운 천을 걷었다. 이번에는 누군가를 숨기려는 게 아니었다.")],"ending:E6", binding_route="dynamic:168")
             $ r13_grant(["E32"],"초롱이 간직한, 마을 밖으로 간 장치 도면")
     hide screen r13_hud
     hide r13_visitor

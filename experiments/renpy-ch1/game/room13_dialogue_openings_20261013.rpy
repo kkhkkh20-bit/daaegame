@@ -57,7 +57,7 @@ label r13_notice_before_talk(person):
         return True
     if not r13_has("noticed:" + r13_calendar_key(person)):
         $ r13_notice_rows = r13_resident_notice(person)
-        call r13_lines(r13_notice_rows, "notice:resident:" + person) from r13_notice_lines_return
+        call r13_lines(r13_notice_rows, "notice:resident:" + person, binding_route="dynamic:077") from r13_notice_lines_return
     $ r13_notice_approach = r13_calendar_approach(person)
     call screen r13_resident_approach(r13_notice_approach,person)
     if not _return:

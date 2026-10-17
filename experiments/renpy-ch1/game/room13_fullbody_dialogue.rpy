@@ -116,6 +116,8 @@ init 58 python:
     R13_FULLBODY_ART_CACHE={}
 
     def r13_fullbody_close_art(person,pose,height,speaking=False,entrance=False):
+        beat=r13_dialogue_beat_art(person,height)
+        if beat is not None:return beat
         spec=r13_fullbody_spec(person,pose)
         if not spec:return None
         key=(person,spec["emotion"],int(height))

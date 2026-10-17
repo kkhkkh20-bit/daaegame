@@ -97,5 +97,5 @@ label r13_st_pandol:
         ("npc_pandol","요즘 자꾸 잊어버려서. 아침에 뭘 먹었는지, 집에 가는 길이 어느 쪽인지."),
         ("npc_pandol","그래서 매일 와서 이름을 손가락으로 짚어 보오. 이것까지 잊으면, 할멈은 정말 없는 사람이 되니까.",{"pose":"point_name"}),
         ("npc_pandol","손목에 털실 감은 것도 할멈이 감아 준 거요. 풀리면 다시 감는 법은…… 그것도 가끔 잊소.")]+
-        ([("daram","할아버지, 내가 내일도 같이 짚어 줄게."),("npc_pandol","……허허. 그럼 둘이 짚으면 안 잊겠구먼.")] if room13.get("daram_state") in ("with_dad","rescued") else []),"st:pandol")
+        ([("daram","할아버지, 내가 내일도 같이 짚어 줄게."),("npc_pandol","……허허. 그럼 둘이 짚으면 안 잊겠구먼.")] if room13.get("daram_state") in ("with_dad","rescued") else []),"st:pandol", binding_route="dynamic:475")
     return

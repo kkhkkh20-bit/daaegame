@@ -60,7 +60,7 @@ label r13_livelihood_start:
     if r13_job_key=="delivery":
         call r13_lines([("karo","이 두 짐은 받는 사람 이름과 목적지부터 확인하고 옮깁시다.")],"life:delivery:start:v2")
     elif r13_job_key in R13_JOB_START_LINES:
-        call r13_lines(R13_JOB_START_LINES[r13_job_key],"life:"+r13_job_key+":start")
+        call r13_lines(R13_JOB_START_LINES[r13_job_key],"life:"+r13_job_key+":start", binding_route="dynamic:592")
     elif r13_job_key=="kitchen":
         call r13_lines([("nabi","닦은 그릇은 여기에 두고요. 이 한 벌은 따로 놓아 줘요."),("dad","네. 나머지 그릇은 식당으로 내가면 되나요?")],"life:kitchen:start")
     else:
@@ -86,7 +86,7 @@ label r13_livelihood_start:
         if r13_job_key=="delivery":
             call r13_lines([("dad","받는 집은 잘 아십니까?"),("karo","광장 뒤는 제가 매일 다니는 길이에요. 짐 끈은 수레에 걸어 뒀으니 필요하면 쓰세요.")],"life:delivery:route:v2")
         elif r13_job_key in R13_JOB_ASK_LINES:
-            call r13_lines(R13_JOB_ASK_LINES[r13_job_key],"life:"+r13_job_key+":ask")
+            call r13_lines(R13_JOB_ASK_LINES[r13_job_key],"life:"+r13_job_key+":ask", binding_route="dynamic:596")
         elif r13_job_key=="kitchen":
             call r13_lines([("dad","따로 놓은 이 그릇은 누구 몫인가요?"),("nabi","초롱 몫이요. 돌아오면 드려야 해요. 다른 이야기는 손님 식사를 내간 다음에 해요.")],"life:kitchen:notice")
         else:

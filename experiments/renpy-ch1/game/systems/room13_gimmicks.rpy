@@ -100,7 +100,7 @@ label r13_gm_package:
                 $ _msg="입구 쪽은 헐렁하다. 위에서 보면 평범한 곡식 자루다."
         else:
             # Reading what is inside is the step that finishes the activity (existing lines, flag).
-            call r13_lines(ROOM13["activities"]["use_knife_burlap"]["lines"][1:],"activity:use_knife_burlap:read")
+            call r13_lines(ROOM13["activities"]["use_knife_burlap"]["lines"][1:],"activity:use_knife_burlap:read", binding_route="dynamic:575")
             return True
     return False
 
@@ -117,7 +117,7 @@ label r13_gm_lamp:
             if _return[1]=="lower":
                 $ _lit=False;_msg="등불을 내렸다. 다시 어두워졌다."
             elif _return[1]=="note":
-                call r13_lines(ROOM13["activities"]["use_lantern_rear"]["lines"],"activity:use_lantern_rear")
+                call r13_lines(ROOM13["activities"]["use_lantern_rear"]["lines"],"activity:use_lantern_rear", binding_route="dynamic:576")
                 return True
             else:
                 return False
@@ -263,7 +263,7 @@ label r13_gm_floor:
                 $ _lines.insert(1,("daram","이 도토리, 엄마가 그려 주던 거야."))
             # The unfolded note stays behind the dialogue while it is read.
             $ renpy.show("r13_gm_note",what=Transform("assets/r13-gimmick-note-open.webp",xysize=(1280,720),nearest=True))
-            call r13_lines(_lines,"activity:use_knife_under:read")
+            call r13_lines(_lines,"activity:use_knife_under:read", binding_route="dynamic:578")
             $ renpy.hide("r13_gm_note")
             return True
         else:
@@ -286,7 +286,7 @@ label r13_gm_stone:
                 $ r13_rub_add([(c,_row) for c in range(R13_RUB_COLS)])
                 $ _msg="숯을 눕혀 한 줄을 넓게 문질렀다."
             elif _return[1]=="read":
-                call r13_lines(ROOM13["activities"]["use_rubbing_stone"]["lines"][1:],"activity:use_rubbing_stone:read")
+                call r13_lines(ROOM13["activities"]["use_rubbing_stone"]["lines"][1:],"activity:use_rubbing_stone:read", binding_route="dynamic:579")
                 return True
             else:
                 return False

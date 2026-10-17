@@ -503,7 +503,7 @@ label r13_ev_kongi_errand:
 label r13_ev_kongi_report:
     $ r13_kongi_watch=r13_town().get("kongi_watch") or {}
     $ r13_kongi_lines,r13_kongi_flags=r13_kongi_report(r13_kongi_watch.get("place","kitchen"),r13_kongi_watch.get("day",room13["day"]-1),room13["flags"])
-    call r13_lines(r13_kongi_lines,"ev:m:report:"+r13_kongi_watch.get("place","kitchen"))
+    call r13_lines(r13_kongi_lines,"ev:m:report:"+r13_kongi_watch.get("place","kitchen"), binding_route="dynamic:718")
     $ r13_flag(*r13_kongi_flags)
     python:
         _n=winter_copy.deepcopy(store.room13)

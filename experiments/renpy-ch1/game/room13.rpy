@@ -37,8 +37,8 @@ label r13_scene(bg,title,mood="calm"):
     $ r13_scene_key=r13_scene_identity(bg,title,mood)
     return
 
-label r13_lines(entries,identity):
-    $ r13_index=0
+label r13_lines(entries,identity,binding_route=None):
+    $ r13_index=0; r13_dialogue_binding=r13_bind_dialogue_rows(entries,identity,binding_route,R13_DIALOGUE_BINDINGS)
     $ r13_conv_skip=False
     while r13_index<len(entries) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
         $ r13_packet=r13_dead_stand_in_packet(r13_pov_packet(entries[r13_index]),identity)
@@ -58,6 +58,7 @@ label r13_lines(entries,identity):
             $ r13_speaker(r13_packet[2]["show"],r13_packet[2].get("expression","neutral"),r13_packet[2].get("pose") or r13_packet[2].get("expression","neutral"))
         # 0.18.89: picture book / scene cut for this line (systems/room13_ep_art.rpy).
         $ r13_ep_line_art(r13_packet)
+        $ r13_dialogue_beat_begin(identity,r13_index,r13_packet,r13_directed_pose)
         $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
         if r13_packet[0] not in (None,r13_viewpoint()) and not r13_thought_active:
             $ r13_last_partner=r13_packet[0]
@@ -71,11 +72,13 @@ label r13_lines(entries,identity):
         $ r13_page_i=0
         while r13_page_i<len(r13_pages) and not r13_conv_skip and not r13_meeting_live_should_stop(identity):
             $ R13_CHARS.get(r13_packet[0],source_thought)(r13_line_markup(r13_pages[r13_page_i]))
+            $ r13_dialogue_beat_settle()
             $ r13_page_i+=1
         if not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
             $ r13_remember_line(r13_read_id)
             $ r13_meeting_mark_heard(identity,r13_index)
         $ r13_index+=1
+    $ r13_dialogue_beat_settle()
     hide r13_visitor
     $ r13_ep_line_art_clear()
     $ dialogue_speaker=None
@@ -222,7 +225,7 @@ label r13_entry_karo_menu:
             $ r13_reaction=r13_present("karo",r13_item)
             $ r13_defer_grants=False
             show screen r13_material_corner(r13_item)
-            call r13_lines(r13_reaction,"entry:karo:present:"+r13_item)
+            call r13_lines(r13_reaction,"entry:karo:present:"+r13_item, binding_route="dynamic:013")
             hide screen r13_material_corner
             $ r13_flush_grants()
     elif r13_entry_karo_choice=="back":
@@ -246,7 +249,7 @@ label r13_entry_done:
 label r13_carriage:
     $ r13_carriage_skip = False
     call r13_scene("winter_carriage","마차 안","travel")
-    call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘었다. 편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.', {'no_lead': True}), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', {'expression': 'joy', 'sfx': 'surprise'}), ('dad', '깜짝이야. 언제 거기 들어가 있었어?'), ('daram', '아빠가 편지 읽을 때! 의자 뒤로 살금살금 갔는데, 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY)
+    call r13_lines([(None, '덜컹. 마차 바퀴가 돌부리를 넘었다. 편지에서 눈을 들자, 옆자리에 있던 다람이가 보이지 않았다.', {'no_lead': True}), ('daram', '왁! 놀랐지? 놀랐지, 아빠?', {'expression': 'joy', 'sfx': 'surprise'}), ('dad', '깜짝이야. 언제 거기 들어가 있었어?'), ('daram', '아빠가 편지 읽을 때! 의자 뒤로 살금살금 갔는데, 아빠는 하나도 몰랐지?', 'expressive'), ('dad', '전혀 몰랐어. 우리 다람이 숨기 대장이네.'), ('daram', '헤헤. 그리고 이거 봐. 과자 봉지에서 엄청 큰 과자가 나왔어!', 'joy'), (None, '다람이가 손바닥만 한 과자를 내 코앞에 자랑스럽게 내밀었다.'), ('dad', '그렇게 큰 과자가 봉지 안에 들어 있었어? 아껴 먹어야겠네.'), ('daram', '아니지! 이렇게 큰 건 첫입에 크게 베어 먹어야 돼!', 'expressive'), ('dad', '천천히 먹어. 아무도 안 뺏어 먹어.'), ('daram', '아빠가 쳐다보고 있잖아.'), ('dad', '들켰네.'), (None, '다람이가 웃으며 과자를 베어 물었다. 부스러기 몇 개가 내 무릎 위로 떨어졌다.'), ('daram', '엄마한테도 주고 싶다. 이렇게 큰 과자.', 'thinking'), ('dad', '그래. 오늘 저녁이면 엄마한테 직접 줄 수 있어.'), (None, '나는 무릎 위에 펼쳐 두었던 편지를 다시 읽었다. ‘13호실을 잡아 뒀어. 다람이랑 와서 같이 겨울을 나자.’ 끝에는 아내의 이름이 적혀 있었다. 편지를 접어 주머니에 넣었다.'), ('daram', '아빠, 엄마가 있는 마을은 커?'), ('dad', '아빠도 이 마을은 처음 가 봐. 그러니까 까로 아저씨한테 여쭤볼까?'), ('daram', '아저씨! 마을까지 아직 멀었어요?', 'expressive'), ('karo', '저 앞 모퉁이만 돌아가면 마을 지붕들이 보일 겁니다.'), (None, '다람이가 과자 봉지를 품에 안고 마차 창문 쪽으로 바짝 다가앉았다.'), ('daram', '엄마가 있는 여관도 여기서 보여요?'), ('karo', '여관은 마을 안쪽에 있어요. 도착하면 제가 안내해 드리죠.'), ('daram', '아빠, 도착하면 여관부터 가자.'), ('dad', '응. 엄마가 13호실에서 기다린다고 했어.'), ('daram', '내가 먼저 문 두드려도 돼?', 'thinking'), ('dad', '그럼. 엄마 깜짝 놀라겠다.')],R13_CARRIAGE_IDENTITY, binding_route="dynamic:016")
     $ persistent.room13_opening_seen=True
     $ r13_carriage_skip = False
     return
@@ -319,7 +322,7 @@ label r13_field:
         jump r13_roam
     if r13_choice[0]=="empty":
         $ r13_mark("empty:%d:%d"%(r13_choice[1][0]//70,r13_choice[1][1]//70),*r13_choice[1])
-        call r13_lines([(None,"발밑과 벽면을 꼼꼼히 살폈다. 이 자리에는 특별히 눈에 띄는 흔적이 없다.")],"field:empty:"+room13["location"])
+        call r13_lines([(None,"발밑과 벽면을 꼼꼼히 살폈다. 이 자리에는 특별히 눈에 띄는 흔적이 없다.")],"field:empty:"+room13["location"], binding_route="dynamic:019")
         jump r13_field
     if r13_choice[0]=="person":
         $ r13_target=r13_choice[1]
@@ -421,11 +424,11 @@ label r13_talk:
             call r13_lines([("buri","물건 수리하러 오신 거 아니죠. 돌아가신 할아버지 이야기를 꺼내실 거면 용건부터 먼저 말씀해 주세요.")],"greeting:buri:bereaved")
         elif r13_target in R13_OPENING_SCENES["first_meetings"]:
             $ r13_opening_lines = r13_conversation_opening(r13_target, r13_first_encounter)
-            call r13_lines(r13_opening_lines,"greeting:opening:"+r13_encounter_key+(":first" if r13_first_encounter else ":return")) from r13_dialogue_opening_return
+            call r13_lines(r13_opening_lines,"greeting:opening:"+r13_encounter_key+(":first" if r13_first_encounter else ":return"), binding_route="dynamic:022") from r13_dialogue_opening_return
         elif r13_target not in R13_CORE_PEOPLE:
-            call r13_lines([(None,r13_activity_text(r13_target))],"greeting:activity:"+r13_target)
+            call r13_lines([(None,r13_activity_text(r13_target))],"greeting:activity:"+r13_target, binding_route="dynamic:023")
         else:
-            call r13_lines([(r13_target,R13_GREETING[r13_target])],"greeting:"+r13_target)
+            call r13_lines([(r13_target,R13_GREETING[r13_target])],"greeting:"+r13_target, binding_route="dynamic:024")
         $ r13_flag(r13_encounter_key)
 label r13_person_actions:
     # Old saves can still resume this label; the extra command page is gone.
@@ -478,12 +481,12 @@ label r13_talk_dispatch:
                             jump r13_person_actions
                         jump r13_talk_menu
             if r13_item in ROOM13.get("sensitive",{}):
-                call r13_lines([(None,ROOM13["sensitive"][r13_item])],"sensitive:"+r13_item)
+                call r13_lines([(None,ROOM13["sensitive"][r13_item])],"sensitive:"+r13_item, binding_route="dynamic:028")
             $ r13_defer_grants=True
             $ r13_reaction=r13_present(r13_target,r13_item,r13_disclose_name)
             $ r13_defer_grants=False
             show screen r13_material_corner(r13_item)
-            call r13_lines(r13_reaction,"present:"+r13_target+":"+r13_item+":"+str(r13_disclose_name))
+            call r13_lines(r13_reaction,"present:"+r13_target+":"+r13_item+":"+str(r13_disclose_name), binding_route="dynamic:029")
             hide screen r13_material_corner
             $ r13_flush_grants()
         jump r13_talk_menu
@@ -522,7 +525,7 @@ label r13_talk_dispatch:
         $ r13_finish_topic(r13_topic)
         jump r13_talk_menu
     $ r13_topic_rows=r13_conversation_topic_lines(r13_topic)
-    call r13_lines(r13_topic_rows,"topic:"+r13_topic)
+    call r13_lines(r13_topic_rows,"topic:"+r13_topic, binding_route="dynamic:035")
     $ r13_topic_shown=r13_topic_rows
     $ r13_finish_topic(r13_topic)
     jump r13_talk_menu

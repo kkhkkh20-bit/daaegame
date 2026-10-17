@@ -32,6 +32,7 @@ class ViewpointSpeaker(unittest.TestCase):
             'r13_close_x':lambda *args,**kwargs:640,
             'r13_carriage_pop':'pop',
             # 0.18.33 expression reactions (systems/room13_dot_fx.rpy): none in this contract.
+            'r13_dialogue_beat_ready':lambda person:False,
             'r13_react_kind':lambda *args:None,
             'r13_react':lambda kind,who,pose,what,at_list:(what,at_list)}
         exec(CODE, env)

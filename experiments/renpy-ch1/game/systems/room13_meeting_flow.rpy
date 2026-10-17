@@ -116,7 +116,7 @@ init 100 python:
             lines.append((who,text))
         return lines
 
-    R13_MEETING_RESUME_FIELDS=("r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap")
+    R13_MEETING_RESUME_FIELDS=("r13_dialogue_binding","r13_dialogue_beat","r13_index","r13_packet","r13_expression","r13_directed_pose","r13_pages","r13_page_i","r13_read_id","r13_thought_active","r13_last_partner","dialogue_speaker","dialogue_expression","r13_conv_skip","r13_current_pose","r13_meeting_focus","r13_meeting_shot_revision","r13_meeting_pan_direction","r13_meeting_pan_started","r13_meeting_previous_focus","r13_meeting_previous_expression","r13_meeting_pan_painted_revision","r13_meeting_live_active","r13_meeting_live_sid","r13_meeting_live_command","r13_meeting_live_lap")
 
     def r13_meeting_resume_after_load():
         # Ren'Py saves the outer interaction while a nested UI context is open.
@@ -188,7 +188,7 @@ label r13_meeting_live_round(claim):
         else:
             $ r13_meeting_live_sid=r13_meeting_round_ids[0]
             $ r13_debate_selected=r13_meeting_live_sid
-            call r13_lines(r13_meeting_live_rows(claim,r13_meeting_live_sid),"meeting:live:"+claim+":"+r13_meeting_live_sid)
+            call r13_lines(r13_meeting_live_rows(claim,r13_meeting_live_sid),"meeting:live:"+claim+":"+r13_meeting_live_sid, binding_route="dynamic:606")
             if r13_meeting_live_command and r13_meeting_live_command[0]=="seek":
                 $ r13_debate_selected=r13_meeting_live_command[1]
                 $ r13_meeting_live_command=None
@@ -220,7 +220,7 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
     else:
         show screen r13_meeting_cut_in("이 기록을 봐 주세요.")
     show screen r13_material_corner(key)
-    call r13_lines(presentation_rows,"debate:"+presentation_result+":"+claim+":"+sid+":"+key)
+    call r13_lines(presentation_rows,"debate:"+presentation_result+":"+claim+":"+sid+":"+key, binding_route="dynamic:607")
     hide screen r13_material_corner
     if presentation_result=="break" and r13_debate_counter(claim,sid):
         call r13_debate_answer_counter(claim,sid)
@@ -252,7 +252,7 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
         $ r13_debate_miss(claim)
         $ presentation_rows=r13_debate_hint_due(claim,sid)
         if presentation_rows:
-            call r13_lines([("dad",presentation_rows,{"thought":True})],"debate:hint:"+claim+":"+sid)
+            call r13_lines([("dad",presentation_rows,{"thought":True})],"debate:hint:"+claim+":"+sid, binding_route="dynamic:608")
     $ r13_meeting_interrupting=was_interrupting
     return presentation_result=="break"
 
@@ -273,7 +273,7 @@ label r13_meeting_public_vote(claim,choice):
     $ r13_meeting_vote=r13_meeting_record_vote(claim,choice)
     $ r13_meeting_opinion_lines=r13_meeting_reaction_lines(r13_meeting_vote)
     if r13_meeting_opinion_lines:
-        call r13_lines(r13_meeting_opinion_lines,"meeting:opinions:"+claim+":"+choice)
+        call r13_lines(r13_meeting_opinion_lines,"meeting:opinions:"+claim+":"+choice, binding_route="dynamic:609")
     call screen r13_meeting_ballot(claim,r13_meeting_vote)
     return
 

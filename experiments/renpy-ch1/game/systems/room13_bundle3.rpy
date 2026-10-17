@@ -86,19 +86,19 @@ label r13_b3_whispers:
         $ _r=_rumors.pop(0)
         $ r13_flag("heard:"+_r)
         call r13_lines([(None,"지나가는 사람들이 낮게 수군댔다. ‘"+R13_RUMOR_WHISPERS[_r]+"’"),
-            ("dad",("(좋은 말도 빨리 돈다. 듣기만 한 사람은 판단을 미루겠지. 직접 겪은 사람 마음까지 바뀌지는 않는다.)" if _r=="rumor:fair" else "(소문이 붙었다. 은호 사장 같은 사람은 이런 말에 값을 올린다.)"),{"thought":True})],"b3:whisper:"+_r)
+            ("dad",("(좋은 말도 빨리 돈다. 듣기만 한 사람은 판단을 미루겠지. 직접 겪은 사람 마음까지 바뀌지는 않는다.)" if _r=="rumor:fair" else "(소문이 붙었다. 은호 사장 같은 사람은 이런 말에 값을 올린다.)"),{"thought":True})],"b3:whisper:"+_r, binding_route="dynamic:171")
     return
 
 # ---- D. 은호의 저울 ----
 label r13_b3_scale:
     $ _scale_lines=ROOM13["topics"]["eunho_scale"]["lines"]
-    call r13_lines(_scale_lines[:1]+[("resident_eunho","……그래서, 저한테 무엇을 원하십니까?")],"b3:scale:open")
+    call r13_lines(_scale_lines[:1]+[("resident_eunho","……그래서, 저한테 무엇을 원하십니까?")],"b3:scale:open", binding_route="dynamic:172")
     $ _ep_loop=True
     while _ep_loop:
         $ _ep_loop=False
         menu:
             "“조용히 저울만 바로잡으시죠.”":
-                call r13_lines(_scale_lines[1:],"b3:scale:quiet")
+                call r13_lines(_scale_lines[1:],"b3:scale:quiet", binding_route="dynamic:173")
                 $ r13_flag("shop_discount","scale_settled")
             "“사람들도 이 일은 알아야 합니다.”":
                 call r13_lines([("resident_eunho","광장에 알리면 이 마을에서 제 장사는 끝납니다. 그래도 하시겠습니까?"),
@@ -207,14 +207,14 @@ label r13_b3_pages:
     menu:
         "팔기 전에 장부를 보여 달라고 한다":
             call r13_lines([("resident_librarian","보시려면 지금 보세요. 오후면 이 장부는 도시로 가는 짐에 실려요.")],"b3:pages:read")
-            call r13_lines(ROOM13["topics"]["librarian_stone"]["lines"],"b3:pages:stone")
+            call r13_lines(ROOM13["topics"]["librarian_stone"]["lines"],"b3:pages:stone", binding_route="dynamic:192")
             $ r13_grant(["W3"],"팔려 가기 전에 본 돌의 옛 기록")
             $ r13_flag("know_stone_history","pages_sold")
         "감자 값을 대신 내고 장부를 지킨다 (6냥)" if r13_cash_now()>=6:
             $ r13_cash(-6,"사서 선생님의 끼니")
             call r13_lines([("resident_eunho","돈을 받았으니 장사는 장사요. 감자는 그대로 두고 가겠습니다."),
                 ("resident_librarian","……이 장부, 아무도 안 읽는다고 했지만 실은 제가 매일 읽어요. 보여 드릴게요.")],"b3:pages:save")
-            call r13_lines(ROOM13["topics"]["librarian_stone"]["lines"],"b3:pages:stone")
+            call r13_lines(ROOM13["topics"]["librarian_stone"]["lines"],"b3:pages:stone", binding_route="dynamic:194")
             $ r13_grant(["W3"],"사서 선생님이 지킨 돌의 옛 기록")
             $ r13_flag("know_stone_history","librarian_trust")
         "장부를 베낄 시간을 달라고 한다":
@@ -234,7 +234,7 @@ label r13_b3_buy_pages:
             $ r13_cash(-12,"돌의 옛 기록 장부")
             call r13_lines([("resident_eunho","서로 좋은 거래였습니다."),
                 (None,"장부 묶음을 풀자 돌에 관한 장이 나왔다.")],"b3:buy:paid")
-            call r13_lines(ROOM13["topics"]["librarian_stone"]["lines"],"b3:buy:stone")
+            call r13_lines(ROOM13["topics"]["librarian_stone"]["lines"],"b3:buy:stone", binding_route="dynamic:199")
             $ r13_grant(["W3"],"은호에게서 되산 돌의 옛 기록")
             $ r13_flag("know_stone_history")
         "사서 선생님이 베낀 사본을 묻는다" if r13_has("pages_copy_promised"):

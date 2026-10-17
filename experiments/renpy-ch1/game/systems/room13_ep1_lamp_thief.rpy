@@ -462,7 +462,7 @@ label r13_ep1_store:
 label r13_ep1_meeting:
     call r13_scene("winter_square","광장 · 등 도둑 회의","hearing")
     call r13_lines([(None,"톡이 묶인 채 돌 앞에 서 있었다. 사람들 틈에 실룩의 아이 둘이 빵 봉지를 쥐고 서 있었다. 백 부인은 맨 앞줄에 앉았다."),
-        ("neoul","그림쟁이가 쓰러졌소."+(" 기록실 선생도 죽었소." if r13_has("librarian_dead") else "")+" 오늘 끝냅시다.")],"ep1:meeting:open")
+        ("neoul","그림쟁이가 쓰러졌소."+(" 기록실 선생도 죽었소." if r13_has("librarian_dead") else "")+" 오늘 끝냅시다.")],"ep1:meeting:open", binding_route="dynamic:262")
     call r13_debate_run("Q1")
     if _return:
         call r13_ep1_decision

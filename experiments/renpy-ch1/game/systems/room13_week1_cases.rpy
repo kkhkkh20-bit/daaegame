@@ -61,7 +61,7 @@ label r13_w1c_events:
     # (일 안내 독백은 0.19.10에 뺐다).
     if _d>=2 and r13_has("lodging") and not r13_has("livelihood_open"):
         call r13_ev_here("calm")
-        call r13_lines([(None,"까로가 눈을 털며 다가왔다. 마차 이야기를 하러 온 얼굴이었다.")]+list(ROOM13["topics"]["life:karo"]["lines"]),"w1c:karo:work")
+        call r13_lines([(None,"까로가 눈을 털며 다가왔다. 마차 이야기를 하러 온 얼굴이었다.")]+list(ROOM13["topics"]["life:karo"]["lines"]),"w1c:karo:work", binding_route="dynamic:743")
         $ r13_finish_topic("life:karo")
     if 2<=_d<=3 and _p<=1 and _loc=="square" and not r13_has("ev_g_done"):
         $ r13_offer("r13_w1c_portrait")
@@ -238,7 +238,7 @@ label r13_w1c_seal:
     menu:
         "자루를 되찾는다":
             call r13_lines([(None,"자루 안에는 다람이의 그림책과 아내가 쓰던 털실 바구니가 있었다."),
-                ("daram" if room13.get("daram_state") in ("with_dad","rescued") else "dad",("엄마 털실이다……." if room13.get("daram_state") in ("with_dad","rescued") else "(다람이에게 돌려줄 것들이다.)"))],"w1c:seal:recover")
+                ("daram" if room13.get("daram_state") in ("with_dad","rescued") else "dad",("엄마 털실이다……." if room13.get("daram_state") in ("with_dad","rescued") else "(다람이에게 돌려줄 것들이다.)"))],"w1c:seal:recover", binding_route="dynamic:768")
             $ r13_flag("family_items_back","mungchi_caught")
         "몰래 뒤를 밟는다":
             call r13_lines([(None,"뭉치는 박물관 뒷문에서 모모 관장에게 자루를 넘겼다. 모모는 값을 묻지도 않고 동전을 셌다."),

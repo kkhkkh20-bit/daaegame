@@ -68,11 +68,11 @@ label r13_carryover_events:
     call r13_lines([(None,"월요일 아침이 되자, 지난주에 내가 한 일들의 결과가 먼저 나를 찾아왔다.")],"carry:open")
     while _carry:
         $ _flags,_lines=_carry.pop(0)
-        call r13_lines(_lines,"carry:good:"+_flags[0])
+        call r13_lines(_lines,"carry:good:"+_flags[0], binding_route="dynamic:202")
         $ r13_flag(*_flags)
     while _refuse:
         $ _flag,_lines=_refuse.pop(0)
-        call r13_lines(_lines+[("dad","(지난주에 내가 한 일 때문에 이 길은 막혔다. 다른 길을 찾아야 한다.)",{"thought":True})],"carry:refuse:"+_flag)
+        call r13_lines(_lines+[("dad","(지난주에 내가 한 일 때문에 이 길은 막혔다. 다른 길을 찾아야 한다.)",{"thought":True})],"carry:refuse:"+_flag, binding_route="dynamic:203")
         $ r13_flag(_flag)
     return None
 
@@ -106,6 +106,6 @@ label r13_carry_vouch:
         return
     $ _who=_v[0]
     call r13_lines([(_who,"이분은 제가 압니다. 소문이랑은 달라요. 지난주에 직접 봤어요."),
-        ("resident_teacher","……보증해 줄 분이 있다면요. 교실을 쓰세요. 다만 아이들 자리는 따로 남겨 두고요.")],"carry:vouch:yes")
+        ("resident_teacher","……보증해 줄 분이 있다면요. 교실을 쓰세요. 다만 아이들 자리는 따로 남겨 두고요.")],"carry:vouch:yes", binding_route="dynamic:209")
     $ r13_flag("shelter_agreed","vouched")
     return

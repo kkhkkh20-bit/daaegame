@@ -1,0 +1,109 @@
+{
+  "base_commit": "a60d263f64eefe89caec59ae9e75de657e3db1c6",
+  "latest_main": "30d7327fda9be17f1aa5ea17a49f18422cf89628",
+  "latest_main_integrated": false,
+  "changed_files": 68,
+  "overlapping_tracked_edits": [
+    "experiments/renpy-ch1/game/room13.rpy",
+    "experiments/renpy-ch1/game/room13_tool_discovery.rpy",
+    "experiments/renpy-ch1/game/systems/room13_alibi.rpy",
+    "experiments/renpy-ch1/game/systems/room13_bundle3.rpy",
+    "experiments/renpy-ch1/game/systems/room13_debate.rpy",
+    "experiments/renpy-ch1/game/systems/room13_ep1_lamp_thief.rpy",
+    "experiments/renpy-ch1/game/systems/room13_ep2_kids.rpy",
+    "experiments/renpy-ch1/game/systems/room13_ep3_woodfire.rpy",
+    "experiments/renpy-ch1/game/systems/room13_ep4_night13.rpy",
+    "experiments/renpy-ch1/game/systems/room13_ep5_soup.rpy",
+    "experiments/renpy-ch1/game/systems/room13_ep6_cart.rpy",
+    "experiments/renpy-ch1/game/systems/room13_episodes.rpy",
+    "experiments/renpy-ch1/game/systems/room13_event_offers.rpy",
+    "experiments/renpy-ch1/game/systems/room13_livelihood_flow.rpy",
+    "experiments/renpy-ch1/game/systems/room13_memory.rpy",
+    "experiments/renpy-ch1/game/systems/room13_new_cast.rpy",
+    "experiments/renpy-ch1/game/systems/room13_town_events.rpy",
+    "experiments/renpy-ch1/game/systems/room13_town_events2.rpy",
+    "experiments/renpy-ch1/game/systems/room13_week1_cases.rpy",
+    "experiments/renpy-ch1/game/systems/room13_week2_events.rpy"
+  ],
+  "changed_source_review_texts_not_found": [
+    {
+      "review": "dynamic-context-review.json",
+      "row": "246",
+      "source": "game/systems/room13_alibi.rpy",
+      "old_text": "비명 소리 조금 뒤에요, 빨래방 쪽 벽 안에서 누가 걷는 소리가 났어요. 쥐인 줄 알았는데 발소리였어요.",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "row": "591",
+      "source": "game/systems/room13_ep1_lamp_thief.rpy",
+      "old_text": "……두 명이오?",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "row": "743",
+      "source": "game/systems/room13_ep3_woodfire.rpy",
+      "old_text": "죽이려 했다면 뒷벽에도 부었겠지요. 그 애들은 뒷벽으로 살아 나왔어요.",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "row": "744",
+      "source": "game/systems/room13_ep3_woodfire.rpy",
+      "old_text": "곰 아저씨가 우리 살렸다니까!",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "row": "920",
+      "source": "game/systems/room13_ep5_soup.rpy",
+      "old_text": "(벽의 글자를 손가락으로 짚으며) \"돌은…… 하나가 아니었다. 나눠서…… 데웠다.\"",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "row": "969",
+      "source": "game/systems/room13_ep6_cart.rpy",
+      "old_text": "오늘 밤, 북쪽 보호소로 가는 수레요. 몸 약한 이들을 따뜻한 데로 모시는 거요.",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "row": "1126",
+      "source": "game/systems/room13_first_day_flow.rpy",
+      "old_text": "13호실 그대로 쓰세요. 숙식은 하루 열 냥이고, 모자라면 적어 둘게요.",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "row": "1132",
+      "source": "game/systems/room13_first_day_flow.rpy",
+      "old_text": "오늘 식사와 방값은 받지 않을게요. 내일부터 두 분 숙식은 하루 열 냥이에요. 모자란 것은 장부에 적고 나중에 주세요.",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "dynamic-expression-review.json",
+      "row": "78",
+      "source": "game/systems/room13_ep4_night13.rpy",
+      "old_text": "목수는 혼자 통로에 들어갔다가 【문이 저절로 닫혀】 얼었소. 딱한 사고요.",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "opening-context-review.json",
+      "row": "194",
+      "source": "game/room13-dialogue-openings.json",
+      "old_text": "아빠, 저기 처마 위에 애가 있어.",
+      "status": "requires_latest_main_context_review; substring check only"
+    },
+    {
+      "review": "opening-context-review.json",
+      "row": "195",
+      "source": "game/room13-dialogue-openings.json",
+      "old_text": "저기 처마 위는 안 추울까?",
+      "status": "requires_latest_main_context_review; substring check only"
+    }
+  ],
+  "limitations": "Read-only textual drift scan; unchanged text can still have changed context. Not a merge or validation of latest main.",
+  "approval": "New 20-person source-only package, main merge and existing public deployment authorized; await exact upload commit; prior six-person intermediate prohibited"
+}

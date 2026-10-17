@@ -296,7 +296,7 @@ label r13_wf_morning:
         ("resident_ppul","도둑이 불까지 냈구려."+(" 표 없는 애 하나가 죽었다지." if r13_has("kkomi_dead") else "")),
         ("resident_ppul","회의는 내일 학교에서 하겠소. 그때까지 범인이 바뀌지 않으면 보리를 내보내겠소."),
         ("resident_bori","장작 훔친 건 맞다! 대피소 우리 애가 열이 나서, 몇 개씩…… 그래도 불은 내가 안 냈어!")]+
-        ([("resident_bori","애 셋 꺼낸 게 나라고! 하나는…… 하나는 못 꺼냈어.")] if r13_has("kkomi_dead") else []),"wf:morning:square")
+        ([("resident_bori","애 셋 꺼낸 게 나라고! 하나는…… 하나는 못 꺼냈어.")] if r13_has("kkomi_dead") else []),"wf:morning:square", binding_route="dynamic:320")
     menu:
         "보리의 손을 본다":
             call r13_lines([(None,"천을 걷어 보니 두 손바닥이 벌겋게 데어 있었다. 손등은 멀쩡했다."),
@@ -319,7 +319,7 @@ label r13_wf_nabi_blame:
         ([("nabi","제가 꼬미를 죽였어요.")] if r13_has("kkomi_dead") else [])+
         [("granny","(들어오며) 여관 등잔을 표 없는 애들한테 갖다줬다고? 그 불이 그 등잔에서 났다면, 여관이 물어내야 할 거다."),
         ("granny","내일 아침까지 짐 싸거라. 아니면 이번 달 품삯은 없다."),
-        ("nabi","……네, 할머니.")],"wf:nabi")
+        ("nabi","……네, 할머니.")],"wf:nabi", binding_route="dynamic:324")
     menu:
         "“잘 때 뚜껑을 닫으라고 했지?”":
             call r13_lines([("nabi","……네. 꼬미는 꼭 닫았어요. 맨날요. 근데 어젯밤엔 모르잖아요.")],"wf:nabi:lid")
@@ -390,7 +390,7 @@ label r13_wf_nubi:
             if _wf_pick=="can":
                 call r13_lines([(None,"솥 옆 기름통. 반쯤 비어 있었다.")]+
                     ([("dad","(엿들을 때는 뚜껑까지 꽉 차 있었다. 솥 밑 불은 그 뒤로 거의 안 땠다.)",{"thought":True})] if r13_has("F02") else [])+
-                    [("resident_nubi","요즘 솥을 많이 데워서요……")],"wf:nubi:can")
+                    [("resident_nubi","요즘 솥을 많이 데워서요……")],"wf:nubi:can", binding_route="dynamic:335")
                 $ r13_grant(["F09"],"빨래터 기름통을 직접 봄")
             elif _wf_pick=="hand":
                 call r13_lines([(None,"천 밑으로 손등이 보였다. 새로 덴 자리가 물집이 잡혀 있었다."),
@@ -433,7 +433,7 @@ label r13_wf_choice:
                     ("resident_nubi","문 앞에 조금만. 애들이 놀라서 나가면, 창고가 비면, 그럼 그 애들이 다른 데로 가면…… 그 몫이 우리 애들한테 온다고 했어요."),
                     ("resident_nubi","너울 님이 그랬어요. 그 애들 몫을 우리 집에 준다고."),
                     ("resident_nubi","그런데 바람이 바뀌었어요. 문 쪽으로 확, 불이 안으로……")]+
-                    ([("resident_nubi","저는 도망쳤어요. 애가 안에 있다는 소리를 듣고도요.")] if r13_has("kkomi_dead") else []),"wf:choice:nubi")
+                    ([("resident_nubi","저는 도망쳤어요. 애가 안에 있다는 소리를 듣고도요.")] if r13_has("kkomi_dead") else []),"wf:choice:nubi", binding_route="dynamic:342")
                 $ r13_grant(["F12"],"빨래터에서 누비에게 직접 들은 말")
             else:
                 call r13_lines([("resident_nubi","……무슨 말씀이신지 모르겠어요. 빨래 일이 바빠서요."),
@@ -446,7 +446,7 @@ label r13_wf_meeting:
     call r13_lines([(None,"교실 책상을 벽으로 밀어 두었다. 보리는 손이 묶인 채 앞에 서 있었다. 살아남은 아이들이 사자 선생님 뒤에 숨어 있었다."),
         (None,"사람들 틈에 누비 아주머니. 막내를 업고, 두 아이 손을 잡고 있었다. 나비는 문가에 서 있었다.")]+
         ([("neoul","표 없는 아이 하나가 불에 타 죽었소. 오늘 끝냅시다."),("daram","(작게) 이름 있어. 꼬미야.")] if r13_has("kkomi_dead") else
-        [("neoul","장작 창고가 탔소. 오늘 끝냅시다.")]),"wf:meeting:open")
+        [("neoul","장작 창고가 탔소. 오늘 끝냅시다.")]),"wf:meeting:open", binding_route="dynamic:344")
     call r13_debate_run("Q3")
     if _return:
         call r13_wf_decision
@@ -505,7 +505,7 @@ label r13_wf_aftermath:
             ("daram","(그을린 도토리를 넣는다) 대장 표시는 아지트에 있어야 돼."),
             ("daram","꼬미야. 나 왔어. 다음엔 온다고 했잖아."),
             (None,"……")]+
-            ([("resident_bori","……봄 되면 싹 나겠다."),("daram","진짜?"),("resident_bori","몰라. 그냥 그랬으면 좋겠다고.")] if r13_has("wf_bori_freed") else []),"wf:after:bury")
+            ([("resident_bori","……봄 되면 싹 나겠다."),("daram","진짜?"),("resident_bori","몰라. 그냥 그랬으면 좋겠다고.")] if r13_has("wf_bori_freed") else []),"wf:after:bury", binding_route="dynamic:351")
         $ r13_flag("acorn_buried")
     else:
         call r13_lines([("kid_kkomi","대장 표시는 탐정단 단장이 갖고 있어. 아지트 새로 지으면 돌려줘."),
@@ -521,7 +521,7 @@ label r13_wf_aftermath:
         ([(None,"(그림책) 그날 밤 화덕은 비어 있었어요.")] if not r13_has("kkomi_dead") else [])+
         [("daram","……아빠. 그럼 그레텔이 나쁜 거야? 마녀가 나쁜 거야?"),
         ("daram","마녀네 애들은 이제 누가 밥 줘?")]+
-        ([("dad","나비 언니가."),("daram","……그럼 다행이다.")] if r13_has("nubi_kids_with_nabi") else [("dad","……")]),"wf:after:book")
+        ([("dad","나비 언니가."),("daram","……그럼 다행이다.")] if r13_has("nubi_kids_with_nabi") else [("dad","……")]),"wf:after:book", binding_route="dynamic:354")
     return
 
 label r13_wf_missed:
