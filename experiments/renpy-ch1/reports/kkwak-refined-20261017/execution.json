@@ -1,0 +1,143 @@
+{
+  "setup": {
+    "version": "0.19.6",
+    "new": {
+      "name_ko": "꽥순",
+      "crop": [
+        123,
+        13,
+        802,
+        1519
+      ],
+      "figure": [
+        127,
+        17,
+        794,
+        1511
+      ],
+      "images": {
+        "neutral": {
+          "file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+          "size": [
+            1019,
+            1544
+          ],
+          "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+          "native_detail": true
+        },
+        "joy": {
+          "file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+          "size": [
+            1019,
+            1544
+          ],
+          "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+          "native_detail": true,
+          "fallback": "neutral",
+          "production_status": "pending",
+          "candidate_approval": "pending"
+        },
+        "flustered": {
+          "file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+          "size": [
+            1019,
+            1544
+          ],
+          "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+          "native_detail": true,
+          "fallback": "neutral",
+          "production_status": "pending",
+          "candidate_approval": "pending"
+        },
+        "angry": {
+          "file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+          "size": [
+            1019,
+            1544
+          ],
+          "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+          "native_detail": true,
+          "fallback": "neutral",
+          "production_status": "pending",
+          "candidate_approval": "pending"
+        },
+        "anxious": {
+          "file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+          "size": [
+            1019,
+            1544
+          ],
+          "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+          "native_detail": true,
+          "fallback": "neutral",
+          "production_status": "pending",
+          "candidate_approval": "pending"
+        },
+        "surprise": {
+          "file": "assets/room13-role-resident_kkwak-refined-v1.webp",
+          "size": [
+            1019,
+            1544
+          ],
+          "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+          "native_detail": true,
+          "fallback": "neutral",
+          "production_status": "pending",
+          "candidate_approval": "pending"
+        }
+      },
+      "role_connect": "kkwak-refined-approved-v1"
+    }
+  },
+  "fixture": "actual RenPy renderer; controlled dialogue panel on gate afternoon; not a story playthrough",
+  "screens": [
+    {
+      "variant": "before",
+      "state": {
+        "scale": 1.1666666666666667,
+        "x": 652,
+        "y": 120
+      },
+      "probe": {
+        "screen": true,
+        "exception": false
+      }
+    },
+    {
+      "variant": "approved_with_grid",
+      "state": {
+        "scale": 0.5837193911317009,
+        "x": 652,
+        "y": 119
+      },
+      "probe": {
+        "screen": true,
+        "exception": false
+      }
+    },
+    {
+      "variant": "approved",
+      "state": {
+        "scale": 0.5837193911317009,
+        "x": 652,
+        "y": 119
+      },
+      "probe": {
+        "screen": true,
+        "exception": false
+      }
+    },
+    {
+      "variant": "field",
+      "state": {
+        "scale": 0.5837193911317009,
+        "x": 652,
+        "y": 119
+      },
+      "probe": {
+        "screen": true,
+        "exception": false
+      }
+    }
+  ]
+}

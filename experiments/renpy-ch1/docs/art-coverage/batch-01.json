@@ -308,10 +308,14 @@
     "neutral": {
       "library_file_id": "libfile_72a40de0b9f88191b32026bb52398807",
       "approval_status": "user_approved",
-      "receipt_status": "blocked_awaiting_supported_attachment",
-      "hash_verification": "not_performed_locally",
-      "connection_status": "not_linked",
-      "screen_review_status": "not_run"
+      "receipt_status": "received_from_github_verified",
+      "hash_verification": "sha256_verified",
+      "connection_status": "linked",
+      "screen_review_status": "local_renderer_fixture_passed",
+      "source_commit": "bc42450b5d3d3ed6191df2747abdb17e3c9de66e",
+      "source_sha256": "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9",
+      "deployment_status": "pending",
+      "receipt_note": "Library route remains blocked; authorized GitHub upload supplied exact approved bytes."
     },
     "expression_candidates": {
       "joy": "libfile_c798a0ddc7808191946453176bc65f95",

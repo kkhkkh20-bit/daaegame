@@ -129,7 +129,11 @@ init 58 python:
             else:
                 # Eye blink pieces (room13_dot_fx.rpy) sit on the uncropped picture.
                 art=Crop(tuple(spec["crop"]),r13_blink_art(person,spec["emotion"],spec["file"]))
-                result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)
+                if image.get("native_detail"):
+                    # Approved opt-in: preserve source detail without the intermediate 3px grid.
+                    result=Transform(art,size=(max(1,int(round(width))),max(1,int(round(native_height)))),nearest=True,subpixel=False)
+                else:
+                    result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)
             result=r13_idle_art(result,person,pose,None,int(round(width)),int(round(native_height)),contact="dialogue_bust",speaking=speaking)
             if len(R13_FULLBODY_ART_CACHE)>=24:R13_FULLBODY_ART_CACHE.clear()
             R13_FULLBODY_ART_CACHE[key]=result

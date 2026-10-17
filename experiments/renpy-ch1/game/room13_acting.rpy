@@ -516,7 +516,12 @@ init 59 python:
         return result
 
     def r13_staged_art(actor,still=False):
-        art=r13_pixel_scale(r13_art(actor["person"],actor["pose"]),actor["width"],actor["height"],R13_WORLD_PIXEL_GRID)
+        art=r13_art(actor["person"],actor["pose"])
+        spec=r13_acting_spec(actor["person"],actor["pose"]) or {}
+        if spec.get("native_detail"):
+            art=Transform(art,size=(max(1,int(round(actor["width"]))),max(1,int(round(actor["height"])))),nearest=True,subpixel=False)
+        else:
+            art=r13_pixel_scale(art,actor["width"],actor["height"],R13_WORLD_PIXEL_GRID)
         return r13_idle_art(art,actor["person"],actor["pose"],r13_acting_spec(actor["person"],actor["pose"]),actor["width"],actor["height"],contact=actor["contact"],still=still)
 
     def r13_staged_visible_art(actor,still=False):

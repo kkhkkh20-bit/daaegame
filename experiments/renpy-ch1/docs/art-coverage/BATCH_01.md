@@ -23,7 +23,7 @@
 
 ### 꽥순 — 원래 16장과 별도
 
-사용자가 확정한 것은 [새 neutral](https://chatgpt.com/api/library/files/libfile_72a40de0b9f88191b32026bb52398807/download)뿐이다. 수신은 **blocked / 정상 첨부 전달 대기**다. 새 destination·새 전송으로 재시도했으나 helper `download failed`, 다운로드 호스트 HTTPS 터널 `403 Forbidden`으로 실패했고 파일 미생성을 확인했다. 차단을 우회하지 않았다. 새 neutral 원본 해시 검증·게임 연결·새 그림의 실제 게임 검수·배포는 미완료다.
+사용자가 확정한 것은 [새 neutral](https://chatgpt.com/api/library/files/libfile_72a40de0b9f88191b32026bb52398807/download)뿐이다. 승인 neutral은 **공식 GitHub 업로드로 수신·SHA 검증 완료**했다. Library 경로의 차단은 그대로이며 해당 경로를 우회하지 않았다. 새 destination·새 전송으로 재시도했으나 helper `download failed`, 다운로드 호스트 HTTPS 터널 `403 Forbidden`으로 실패했고 파일 미생성을 확인했다. 차단을 우회하지 않았다. 이 실패 이후 공식 GitHub 업로드 `bc42450b`에서 승인 원본을 수신해 검증하고 연결했다. [통합·검수 상태](KKWAK_INTEGRATION.md)를 참조한다. 추가 5표정은 여전히 미승인·미수신이다.
 
 추가 5표정은 모두 **미승인 후보**이며 부모 제작 보고만 기록했다. 로컬 파일 미수신·해시 미검증·게임 미연결·실제 화면 미검수다.
 

@@ -39,6 +39,9 @@ class RoleConnect(unittest.TestCase):
         for rid, spec in REG["roles"].items():
             if spec["mode"] == "canon":
                 self.assertEqual(spec["sha256"], CANON[rid]["sha256"], rid)
+            elif spec["mode"] == "native_single":
+                self.assertEqual(rid, "resident_kkwak")
+                self.assertEqual(spec["sha256"], "dced0d974c10cc81fe0f72fdcbb884067ee54e3511e2cbf4f43d3f0b1674f2a9")
             elif spec["mode"] == "pixel_set":
                 self.assertEqual(spec["dialogue"]["neutral"]["sha256"], approved[rid])
             else:

@@ -14,6 +14,8 @@ taken out; the meeting then uses the standing picture), eye blink pieces (room13
 old faces' pieces are taken out).
 
 Modes
+  native_single   approved detailed neutral, imported losslessly at source resolution; opt-in
+      native_detail skips intermediate pixel-grid reduction for this role only.
   pixel_set / pixel_single  approved pictures drawn in exact 2x2 cells (부리 v7 six faces, 솔방울,
       굴돌). Stored with their own pixels (lossless WebP). The dialogue entry maps the file onto
       itself (map [1,0,0], cell 2) so the renderer draws whole screen pixels per cell. The world
@@ -178,6 +180,7 @@ def kept_map_actions(person, current):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--only", choices=tuple(load(REGISTRY)["roles"]), help="Apply one registered role without touching other entries")
     ap.add_argument("--revert", action="store_true")
     a = ap.parse_args()
     reg = load(REGISTRY)
@@ -209,6 +212,7 @@ def main():
 
     report = []
     for rid, spec in reg["roles"].items():
+        if a.only and rid != a.only:continue
         if rid not in backup["roles"]:
             backup["roles"][rid] = copy.deepcopy(current(rid))
         orig = backup["roles"][rid]
@@ -243,15 +247,22 @@ def main():
                 new["blink"] = {k: v for k, v in new["blink"].items() if k != "neutral"} or None
             report.append((rid, "dialogue neutral", "overlap %.3f u %.4f" % (iou, u)))
         else:
-            if spec["mode"] == "canon":
+            if spec["mode"] in ("canon", "native_single"):
                 src = ART / spec["source"]
                 if sha(src) != spec["sha256"]:
                     raise SystemExit("hash mismatch " + str(src))
                 from apply_npc_redesign import resample
-                img = resample(Image.open(src).convert("RGBA"), reg["scale_from_source"])
-                file = write_webp(img, "room13-role-%s.webp" % rid, False, a.check)
+                img = Image.open(src).convert("RGBA")
+                native = spec["mode"] == "native_single"
+                if not native:img = resample(img, reg["scale_from_source"])
+                suffix = "-refined-v1" if native else ""
+                file = write_webp(img, "room13-role-%s%s.webp" % (rid,suffix), native, a.check)
                 geo = geometry(img, reg["margin"], 1)
                 fb = canon_fullbody(spec["name_ko"], file, img, geo, spec["sha256"], version)
+                if native:
+                    for emotion, picture in fb["images"].items():
+                        picture["native_detail"] = True
+                        if emotion != "neutral":picture.update(fallback="neutral", production_status="pending", candidate_approval="pending")
             else:
                 faces = {}
                 sources = spec["dialogue"] if spec["mode"] == "pixel_set" else {"neutral": {"source": spec["source"], "sha256": spec["sha256"]}}
@@ -269,6 +280,12 @@ def main():
                 file, img, _ = faces["neutral"]
                 geo = geometry(img, 4, 2)
             cast, acting, portraits = world_entries(file, geo, version)
+            if spec["mode"] == "native_single":
+                for table in (cast, acting, portraits):
+                    for entry in table.values():
+                        entry["reviewed"] = False
+                        entry["native_detail"] = True
+                        entry["source_sha256"] = spec["sha256"]
             now = data["acting"].get(rid) or {}
             acting.update(kept_map_actions(rid, now))
             if orig["fullbody"] and orig["fullbody"].get("name_ko"):

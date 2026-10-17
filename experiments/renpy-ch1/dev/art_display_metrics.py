@@ -38,7 +38,7 @@ def build():
             u=image['map'][0] if mapped else 1.0
             iw,ih=image.get('crop',entry['crop'])[2:]
             width,height_native=(iw*scale*u,ih*scale*u) if mapped else (entry['crop'][2]*scale,entry['crop'][3]*scale)
-            pixel_path=mapped and image.get('cell')
+            pixel_path=(mapped and image.get('cell')) or image.get('native_detail')
             if pixel_path:
                 drawn=[max(1,int(round(width))),max(1,int(round(height_native)))];grid=None;sample=None
             else:
