@@ -1,0 +1,4657 @@
+{
+  "version": "0.19.33",
+  "status": "passed",
+  "cases": [
+    {
+      "key": "MK-1",
+      "person": "resident_solbang",
+      "day": 2,
+      "period": 1,
+      "location": "market",
+      "actor": {
+        "person": "resident_solbang",
+        "pose": "map27_mk_1",
+        "x": 648,
+        "y": 348,
+        "width": 107,
+        "height": 160,
+        "rect": [
+          648,
+          348,
+          107,
+          160
+        ],
+        "depth": 508,
+        "occlusion": [],
+        "contact": "behind_counter",
+        "slot": null,
+        "activity": "약초 묶음을 들어 보인다.",
+        "map27_occlusion": [
+          [
+            [
+              560,
+              452
+            ],
+            [
+              600,
+              440
+            ],
+            [
+              650,
+              432
+            ],
+            [
+              700,
+              437
+            ],
+            [
+              755,
+              445
+            ],
+            [
+              765,
+              425
+            ],
+            [
+              800,
+              410
+            ],
+            [
+              840,
+              412
+            ],
+            [
+              860,
+              422
+            ],
+            [
+              880,
+              413
+            ],
+            [
+              930,
+              418
+            ],
+            [
+              950,
+              470
+            ],
+            [
+              950,
+              610
+            ],
+            [
+              560,
+              610
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              692.7916666666666,
+              400.0833333333333
+            ],
+            [
+              731.3333333333334,
+              400.0833333333333
+            ],
+            [
+              731.3333333333334,
+              424.5625
+            ],
+            [
+              692.7916666666666,
+              424.5625
+            ]
+          ]
+        ]
+      },
+      "hit": {
+        "face": [
+          668.8,
+          350.56,
+          57.38666666666667,
+          40.64
+        ],
+        "actions": [
+          "('person', 'resident_solbang')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "MK-7",
+      "person": "resident_mungchi",
+      "day": 2,
+      "period": 0,
+      "location": "market",
+      "actor": {
+        "person": "resident_mungchi",
+        "pose": "map27_mk_7",
+        "x": 1376,
+        "y": 454,
+        "width": 145,
+        "height": 218,
+        "rect": [
+          1376,
+          454,
+          145,
+          218
+        ],
+        "depth": 672,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "바구니를 들고 장을 본다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1430.677125,
+          473.9083958333333,
+          51.09375,
+          48.255208333333336
+        ],
+        "actions": [
+          "('person', 'resident_mungchi')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_dalgeurak",
+          "pose": "map27_mk_6",
+          "x": 1991,
+          "y": 345,
+          "width": 107,
+          "height": 160,
+          "rect": [
+            1991,
+            345,
+            107,
+            160
+          ],
+          "depth": 505,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "항아리를 들어 보인다.",
+          "map27_occlusion": [
+            [
+              [
+                2010,
+                505
+              ],
+              [
+                2035,
+                452
+              ],
+              [
+                2075,
+                432
+              ],
+              [
+                2120,
+                440
+              ],
+              [
+                2160,
+                440
+              ],
+              [
+                2160,
+                600
+              ],
+              [
+                2010,
+                600
+              ]
+            ]
+          ],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_eunho",
+          "pose": "map27_mk_2",
+          "x": 1194,
+          "y": 347,
+          "width": 107,
+          "height": 160,
+          "rect": [
+            1194,
+            347,
+            107,
+            160
+          ],
+          "depth": 507,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "장부에 값을 적는다.",
+          "map27_occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1240.875,
+                414.70833333333337
+              ],
+              [
+                1298.1666666666667,
+                414.70833333333337
+              ],
+              [
+                1298.1666666666667,
+                435.5416666666667
+              ],
+              [
+                1240.875,
+                435.5416666666667
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_tori",
+          "pose": "activity",
+          "x": 1070,
+          "y": 402,
+          "width": 158,
+          "height": 205,
+          "rect": [
+            1070,
+            402,
+            158,
+            205
+          ],
+          "depth": 607,
+          "occlusion": [],
+          "contact": "seat",
+          "slot": [
+            1150,
+            605,
+            205,
+            "floor"
+          ],
+          "activity": "토리는 천 위의 바늘을 먼저 치우고 나를 봤다."
+        },
+        {
+          "person": "resident_mungchi",
+          "pose": "map27_mk_7",
+          "x": 1376,
+          "y": 454,
+          "width": 145,
+          "height": 218,
+          "rect": [
+            1376,
+            454,
+            145,
+            218
+          ],
+          "depth": 672,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "바구니를 들고 장을 본다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_madam",
+          "pose": "neutral",
+          "x": 1589,
+          "y": 451,
+          "width": 123,
+          "height": 250,
+          "rect": [
+            1589,
+            451,
+            123,
+            250
+          ],
+          "depth": 701,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1650,
+            700,
+            250,
+            "floor"
+          ],
+          "activity": "백 부인은 보관함에서 손을 떼고 나를 봤다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "MK-8",
+      "person": "resident_hyeoni",
+      "day": 2,
+      "period": 1,
+      "location": "market",
+      "actor": {
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "x": 1217,
+        "y": 452,
+        "width": 162,
+        "height": 251,
+        "rect": [
+          1217,
+          452,
+          162,
+          251
+        ],
+        "depth": 703,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "류트 줄을 튕긴다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1259.1470833333333,
+          452,
+          97.26249999999999,
+          70.28000000000002
+        ],
+        "actions": [
+          "('person', 'resident_hyeoni')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_nubi",
+          "pose": "map27_mk_4",
+          "x": 1719,
+          "y": 339,
+          "width": 107,
+          "height": 160,
+          "rect": [
+            1719,
+            339,
+            107,
+            160
+          ],
+          "depth": 499,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "줄무늬 천을 펼쳐 보인다.",
+          "map27_occlusion": [
+            [
+              [
+                1715,
+                455
+              ],
+              [
+                1735,
+                425
+              ],
+              [
+                1830,
+                418
+              ],
+              [
+                1890,
+                425
+              ],
+              [
+                1940,
+                420
+              ],
+              [
+                1960,
+                440
+              ],
+              [
+                1958,
+                480
+              ],
+              [
+                2012,
+                485
+              ],
+              [
+                2015,
+                560
+              ],
+              [
+                1715,
+                560
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1751.8125,
+                385.875
+              ],
+              [
+                1816.9166666666667,
+                385.875
+              ],
+              [
+                1816.9166666666667,
+                439
+              ],
+              [
+                1751.8125,
+                439
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_guseul",
+          "pose": "map27_mk_3",
+          "x": 1478,
+          "y": 358,
+          "width": 99,
+          "height": 148,
+          "rect": [
+            1478,
+            358,
+            99,
+            148
+          ],
+          "depth": 506,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "저울에 치즈를 올린다.",
+          "map27_occlusion": [
+            [
+              [
+                1225,
+                448
+              ],
+              [
+                1265,
+                430
+              ],
+              [
+                1270,
+                415
+              ],
+              [
+                1345,
+                415
+              ],
+              [
+                1352,
+                438
+              ],
+              [
+                1360,
+                423
+              ],
+              [
+                1435,
+                420
+              ],
+              [
+                1440,
+                440
+              ],
+              [
+                1490,
+                440
+              ],
+              [
+                1500,
+                420
+              ],
+              [
+                1550,
+                423
+              ],
+              [
+                1565,
+                448
+              ],
+              [
+                1565,
+                525
+              ],
+              [
+                1225,
+                525
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1500.1614583333333,
+                404.25
+              ],
+              [
+                1538.703125,
+                404.25
+              ],
+              [
+                1538.703125,
+                440.86458333333337
+              ],
+              [
+                1500.1614583333333,
+                440.86458333333337
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_solbang",
+          "pose": "map27_mk_1",
+          "x": 648,
+          "y": 348,
+          "width": 107,
+          "height": 160,
+          "rect": [
+            648,
+            348,
+            107,
+            160
+          ],
+          "depth": 508,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "약초 묶음을 들어 보인다.",
+          "map27_occlusion": [
+            [
+              [
+                560,
+                452
+              ],
+              [
+                600,
+                440
+              ],
+              [
+                650,
+                432
+              ],
+              [
+                700,
+                437
+              ],
+              [
+                755,
+                445
+              ],
+              [
+                765,
+                425
+              ],
+              [
+                800,
+                410
+              ],
+              [
+                840,
+                412
+              ],
+              [
+                860,
+                422
+              ],
+              [
+                880,
+                413
+              ],
+              [
+                930,
+                418
+              ],
+              [
+                950,
+                470
+              ],
+              [
+                950,
+                610
+              ],
+              [
+                560,
+                610
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                692.7916666666666,
+                400.0833333333333
+              ],
+              [
+                731.3333333333334,
+                400.0833333333333
+              ],
+              [
+                731.3333333333334,
+                424.5625
+              ],
+              [
+                692.7916666666666,
+                424.5625
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_kongi",
+          "pose": "activity",
+          "x": 1066,
+          "y": 452,
+          "width": 165,
+          "height": 153,
+          "rect": [
+            1066,
+            452,
+            165,
+            153
+          ],
+          "depth": 605,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1150,
+            605,
+            205,
+            "floor"
+          ],
+          "activity": "콩이는 바구니를 들고 출발하려다가 멈췄다."
+        },
+        {
+          "person": "resident_ppul",
+          "pose": "activity",
+          "x": 1322,
+          "y": 483,
+          "width": 194,
+          "height": 172,
+          "rect": [
+            1322,
+            483,
+            194,
+            172
+          ],
+          "depth": 655,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1420,
+            655,
+            230,
+            "floor"
+          ],
+          "activity": "촌장은 식량 나눔표를 접고 내 쪽을 봤다."
+        },
+        {
+          "person": "resident_hyeoni",
+          "pose": "map27_mk_8",
+          "x": 1217,
+          "y": 452,
+          "width": 162,
+          "height": 251,
+          "rect": [
+            1217,
+            452,
+            162,
+            251
+          ],
+          "depth": 703,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "류트 줄을 튕긴다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_tosil",
+          "pose": "living_thermos",
+          "x": 692,
+          "y": 453,
+          "width": 126,
+          "height": 253,
+          "rect": [
+            692,
+            453,
+            126,
+            253
+          ],
+          "depth": 706,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            760,
+            705,
+            253,
+            "floor"
+          ],
+          "activity": "장터 구석에서 과자 노점을 기웃거린다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "MK-8",
+      "person": "resident_hyeoni",
+      "day": 2,
+      "period": 0,
+      "location": "square",
+      "actor": {
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "x": 1234,
+        "y": 385,
+        "width": 150,
+        "height": 232,
+        "rect": [
+          1234,
+          385,
+          150,
+          232
+        ],
+        "depth": 617,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "류트 줄을 튕긴다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1272.9566666666667,
+          385,
+          89.89999999999998,
+          64.96000000000001
+        ],
+        "actions": [
+          "('person', 'resident_hyeoni')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_hyeoni",
+          "pose": "map27_mk_8",
+          "x": 1234,
+          "y": 385,
+          "width": 150,
+          "height": 232,
+          "rect": [
+            1234,
+            385,
+            150,
+            232
+          ],
+          "depth": 617,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "류트 줄을 튕긴다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_yeoni",
+          "pose": "living_mend",
+          "x": 1708,
+          "y": 440,
+          "width": 120,
+          "height": 180,
+          "rect": [
+            1708,
+            440,
+            120,
+            180
+          ],
+          "depth": 620,
+          "occlusion": [],
+          "contact": "bench_sit",
+          "slot": null,
+          "activity": "여니는 옷을 들고 있다가 내 손을 보고 내려놓았다."
+        },
+        {
+          "person": "doto",
+          "pose": "action_1",
+          "x": 851,
+          "y": 375,
+          "width": 106,
+          "height": 245,
+          "rect": [
+            851,
+            375,
+            106,
+            245
+          ],
+          "depth": 620,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "도토는 쓰던 줄을 끝내고 빈칸을 남겼다."
+        },
+        {
+          "person": "resident_ppul",
+          "pose": "activity",
+          "x": 1367,
+          "y": 459,
+          "width": 205,
+          "height": 182,
+          "rect": [
+            1367,
+            459,
+            205,
+            182
+          ],
+          "depth": 641,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1470,
+            640,
+            243,
+            "floor"
+          ],
+          "activity": "촌장은 식량 나눔표를 접고 내 쪽을 봤다."
+        },
+        {
+          "person": "resident_seol",
+          "pose": "living_bellrope",
+          "x": 1150,
+          "y": 416,
+          "width": 139,
+          "height": 251,
+          "rect": [
+            1150,
+            416,
+            139,
+            251
+          ],
+          "depth": 667,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1220,
+            667,
+            252,
+            "floor"
+          ],
+          "activity": "설이는 줄을 잡았다 놓았다."
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "living_notebook",
+          "x": 153,
+          "y": 478,
+          "width": 123,
+          "height": 198,
+          "rect": [
+            153,
+            478,
+            123,
+            198
+          ],
+          "depth": 676,
+          "occlusion": [],
+          "contact": "portable_stool",
+          "slot": [
+            245,
+            676,
+            255,
+            "floor"
+          ],
+          "activity": "부엉이 할아버지의 수첩이 덮여 있었다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "MK-8",
+      "person": "resident_hyeoni",
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "actor": {
+        "person": "resident_hyeoni",
+        "pose": "map27_mk_8",
+        "x": 34,
+        "y": 433,
+        "width": 168,
+        "height": 260,
+        "rect": [
+          34,
+          433,
+          168,
+          260
+        ],
+        "depth": 693,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "류트 줄을 튕긴다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          77.65833333333333,
+          433,
+          100.75,
+          72.80000000000003
+        ],
+        "actions": [
+          "('person', 'resident_hyeoni')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_tok",
+          "pose": "map27_di_1a",
+          "x": 584,
+          "y": 256,
+          "width": 205,
+          "height": 212,
+          "rect": [
+            584,
+            256,
+            205,
+            212
+          ],
+          "depth": 468,
+          "occlusion": [],
+          "contact": "seated",
+          "slot": null,
+          "activity": "수프를 떠먹는다.",
+          "map27_occlusion": [
+            [
+              [
+                645,
+                356
+              ],
+              [
+                965,
+                356
+              ],
+              [
+                965,
+                445
+              ],
+              [
+                645,
+                445
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                677.0258177885916,
+                325.7805642633229
+              ],
+              [
+                751.7787070829954,
+                325.7805642633229
+              ],
+              [
+                751.7787070829954,
+                368.9780564263323
+              ],
+              [
+                677.0258177885916,
+                368.9780564263323
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_dalgeurak",
+          "pose": "map27_di_1b",
+          "x": 1887,
+          "y": 257,
+          "width": 130,
+          "height": 236,
+          "rect": [
+            1887,
+            257,
+            130,
+            236
+          ],
+          "depth": 493,
+          "occlusion": [],
+          "contact": "seated",
+          "slot": null,
+          "activity": "수프를 떠먹는다.",
+          "map27_occlusion": [
+            [
+              [
+                1855,
+                356
+              ],
+              [
+                2085,
+                356
+              ],
+              [
+                2085,
+                445
+              ],
+              [
+                1855,
+                445
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1909.3051364942528,
+                312.72609208972847
+              ],
+              [
+                1958.0976225754312,
+                312.72609208972847
+              ],
+              [
+                1958.0976225754312,
+                364.9693034238489
+              ],
+              [
+                1909.3051364942528,
+                364.9693034238489
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_mulgyeol",
+          "pose": "neutral",
+          "x": 553,
+          "y": 345,
+          "width": 114,
+          "height": 205,
+          "rect": [
+            553,
+            345,
+            114,
+            205
+          ],
+          "depth": 550,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            600,
+            550,
+            205,
+            "floor"
+          ],
+          "activity": "식당 난로 앞에서 젖은 장갑을 말린다."
+        },
+        {
+          "person": "nabi",
+          "pose": "action_2",
+          "x": 220,
+          "y": 428,
+          "width": 207,
+          "height": 226,
+          "rect": [
+            220,
+            428,
+            207,
+            226
+          ],
+          "depth": 654,
+          "occlusion": [],
+          "contact": "carrying_tray",
+          "slot": [
+            325,
+            655,
+            260,
+            "floor"
+          ],
+          "activity": "나비는 그릇을 닦다가 손을 멈췄다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "living_notebook",
+          "x": 445,
+          "y": 477,
+          "width": 126,
+          "height": 202,
+          "rect": [
+            445,
+            477,
+            126,
+            202
+          ],
+          "depth": 679,
+          "occlusion": [],
+          "contact": "portable_stool",
+          "slot": [
+            540,
+            680,
+            260,
+            "floor"
+          ],
+          "activity": "부엉이 할아버지의 수첩이 덮여 있었다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+        },
+        {
+          "person": "resident_hyeoni",
+          "pose": "map27_mk_8",
+          "x": 34,
+          "y": 433,
+          "width": 168,
+          "height": 260,
+          "rect": [
+            34,
+            433,
+            168,
+            260
+          ],
+          "depth": 693,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "류트 줄을 튕긴다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "PO-3",
+      "person": "resident_jongjong",
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "actor": {
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "x": 977,
+        "y": 484,
+        "width": 106,
+        "height": 159,
+        "rect": [
+          977,
+          484,
+          106,
+          159
+        ],
+        "depth": 643,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "편지를 안고 나갈 채비를 한다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1004.666,
+          485.272,
+          52.682,
+          51.357000000000006
+        ],
+        "actions": [
+          "('person', 'resident_jongjong')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_librarian",
+          "pose": "map27_po_2",
+          "x": 485,
+          "y": 411,
+          "width": 129,
+          "height": 194,
+          "rect": [
+            485,
+            411,
+            129,
+            194
+          ],
+          "depth": 605,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "종이를 펼쳐 말린다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_sling",
+          "pose": "map27_po_1",
+          "x": 1347,
+          "y": 436,
+          "width": 127,
+          "height": 190,
+          "rect": [
+            1347,
+            436,
+            127,
+            190
+          ],
+          "depth": 626,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "소포를 창구에 내려놓는다.",
+          "map27_occlusion": [
+            [
+              [
+                1100,
+                560
+              ],
+              [
+                1135,
+                515
+              ],
+              [
+                1500,
+                500
+              ],
+              [
+                1600,
+                492
+              ],
+              [
+                1700,
+                480
+              ],
+              [
+                2160,
+                470
+              ],
+              [
+                2160,
+                720
+              ],
+              [
+                1100,
+                720
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1419.9817708333333,
+                522.5885416666666
+              ],
+              [
+                1471.9348958333333,
+                522.5885416666666
+              ],
+              [
+                1471.9348958333333,
+                551.6575520833334
+              ],
+              [
+                1419.9817708333333,
+                551.6575520833334
+              ]
+            ],
+            [
+              [
+                1397.09765625,
+                502.796875
+              ],
+              [
+                1406.375,
+                502.796875
+              ],
+              [
+                1415.0338541666667,
+                516.4036458333334
+              ],
+              [
+                1419.9817708333333,
+                525.0625
+              ],
+              [
+                1424.9296875,
+                531.2473958333334
+              ],
+              [
+                1441.0104166666667,
+                534.9583333333334
+              ],
+              [
+                1441.0104166666667,
+                551.0390625
+              ],
+              [
+                1421.21875,
+                553.5130208333334
+              ],
+              [
+                1408.8489583333333,
+                543.6171875
+              ],
+              [
+                1401.4270833333333,
+                532.484375
+              ]
+            ],
+            [
+              [
+                1443.484375,
+                506.5078125
+              ],
+              [
+                1452.1432291666667,
+                506.5078125
+              ],
+              [
+                1457.0911458333333,
+                517.640625
+              ],
+              [
+                1464.5130208333333,
+                523.20703125
+              ],
+              [
+                1468.2239583333333,
+                532.484375
+              ],
+              [
+                1458.328125,
+                534.33984375
+              ],
+              [
+                1445.9583333333333,
+                526.2994791666666
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_jongjong",
+          "pose": "map27_po_3",
+          "x": 977,
+          "y": 484,
+          "width": 106,
+          "height": 159,
+          "rect": [
+            977,
+            484,
+            106,
+            159
+          ],
+          "depth": 643,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "편지를 안고 나갈 채비를 한다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "seryeon",
+          "pose": "action_1",
+          "x": 4,
+          "y": 469,
+          "width": 171,
+          "height": 205,
+          "rect": [
+            4,
+            469,
+            171,
+            205
+          ],
+          "depth": 674,
+          "occlusion": [],
+          "contact": "clipboard",
+          "slot": [
+            90,
+            675,
+            220,
+            "waiting"
+          ],
+          "activity": "우편 담당자는 봉투를 내려놓고 내 말을 들었다."
+        },
+        {
+          "person": "resident_momo",
+          "pose": "living_lampnumber",
+          "x": 811,
+          "y": 460,
+          "width": 106,
+          "height": 230,
+          "rect": [
+            811,
+            460,
+            106,
+            230
+          ],
+          "depth": 690,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            870,
+            690,
+            230,
+            "waiting"
+          ],
+          "activity": "모모는 전시품에 손을 대지 않고 먼지만 닦았다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "PO-3",
+      "person": "resident_jongjong",
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "actor": {
+        "person": "resident_jongjong",
+        "pose": "map27_po_3",
+        "x": 227,
+        "y": 518,
+        "width": 123,
+        "height": 185,
+        "rect": [
+          227,
+          518,
+          123,
+          185
+        ],
+        "depth": 703,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "편지를 안고 나갈 채비를 한다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          259.19,
+          519.48,
+          61.29666666666667,
+          59.755
+        ],
+        "actions": [
+          "('person', 'resident_jongjong')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_momo",
+          "pose": "living_lampnumber",
+          "x": 693,
+          "y": 341,
+          "width": 115,
+          "height": 249,
+          "rect": [
+            693,
+            341,
+            115,
+            249
+          ],
+          "depth": 590,
+          "occlusion": [
+            [
+              366,
+              552
+            ],
+            [
+              1030,
+              466
+            ],
+            [
+              1030,
+              392
+            ],
+            [
+              1279,
+              392
+            ],
+            [
+              1279,
+              720
+            ],
+            [
+              366,
+              720
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            757,
+            632,
+            332,
+            "counter"
+          ],
+          "activity": "모모는 전시품에 손을 대지 않고 먼지만 닦았다."
+        },
+        {
+          "person": "resident_librarian",
+          "pose": "map27_po_2",
+          "x": 471,
+          "y": 426,
+          "width": 153,
+          "height": 230,
+          "rect": [
+            471,
+            426,
+            153,
+            230
+          ],
+          "depth": 656,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "종이를 펼쳐 말린다.",
+          "map27_occlusion": [
+            [
+              [
+                366,
+                552
+              ],
+              [
+                1030,
+                466
+              ],
+              [
+                1030,
+                392
+              ],
+              [
+                1279,
+                392
+              ],
+              [
+                1279,
+                720
+              ],
+              [
+                366,
+                720
+              ]
+            ]
+          ],
+          "map27_keepouts": []
+        },
+        {
+          "person": "seryeon",
+          "pose": "chair_read",
+          "x": 10,
+          "y": 310,
+          "width": 310,
+          "height": 364,
+          "rect": [
+            10,
+            310,
+            310,
+            364
+          ],
+          "depth": 674,
+          "occlusion": [
+            [
+              188,
+              408
+            ],
+            [
+              317,
+              416
+            ],
+            [
+              324,
+              583
+            ],
+            [
+              184,
+              577
+            ]
+          ],
+          "contact": "background_chair",
+          "slot": null,
+          "activity": "우편 담당자는 봉투를 내려놓고 내 말을 들었다."
+        },
+        {
+          "person": "resident_jongjong",
+          "pose": "map27_po_3",
+          "x": 227,
+          "y": 518,
+          "width": 123,
+          "height": 185,
+          "rect": [
+            227,
+            518,
+            123,
+            185
+          ],
+          "depth": 703,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "편지를 안고 나갈 채비를 한다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "IN-1",
+      "person": "resident_nubi",
+      "day": 2,
+      "period": 0,
+      "location": "inn",
+      "actor": {
+        "person": "resident_nubi",
+        "pose": "map27_in_1",
+        "x": 206,
+        "y": 414,
+        "width": 165,
+        "height": 248,
+        "rect": [
+          206,
+          414,
+          165,
+          248
+        ],
+        "depth": 662,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "빨래를 접어 바구니에 담는다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          247.33333333333334,
+          417.224,
+          78.69866666666667,
+          55.8
+        ],
+        "actions": [
+          "('person', 'resident_nubi')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "granny",
+          "pose": "living_keyledger",
+          "x": 1351,
+          "y": 382,
+          "width": 119,
+          "height": 242,
+          "rect": [
+            1351,
+            382,
+            119,
+            242
+          ],
+          "depth": 624,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "할머니는 장부의 모서리를 손끝으로 눌렀다."
+        },
+        {
+          "person": "resident_nubi",
+          "pose": "map27_in_1",
+          "x": 206,
+          "y": 414,
+          "width": 165,
+          "height": 248,
+          "rect": [
+            206,
+            414,
+            165,
+            248
+          ],
+          "depth": 662,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "빨래를 접어 바구니에 담는다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_tosil",
+          "pose": "living_thermos",
+          "x": 412,
+          "y": 442,
+          "width": 132,
+          "height": 265,
+          "rect": [
+            412,
+            442,
+            132,
+            265
+          ],
+          "depth": 707,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            485,
+            706,
+            265,
+            "waiting"
+          ],
+          "activity": "보온병을 두 손으로 꼭 안고 있다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "IN-1",
+      "person": "resident_nubi",
+      "day": 12,
+      "period": 0,
+      "location": "facility",
+      "actor": {
+        "person": "resident_nubi",
+        "pose": "map27_in_1",
+        "x": 301,
+        "y": 425,
+        "width": 175,
+        "height": 262,
+        "rect": [
+          301,
+          425,
+          175,
+          262
+        ],
+        "depth": 687,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "빨래를 접어 바구니에 담는다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          344.6666666666667,
+          428.406,
+          83.14133333333332,
+          58.94999999999999
+        ],
+        "actions": [
+          "('person', 'resident_nubi')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "neoul",
+          "pose": "map27_fa_1",
+          "x": 1164,
+          "y": 304,
+          "width": 129,
+          "height": 193,
+          "rect": [
+            1164,
+            304,
+            129,
+            193
+          ],
+          "depth": 497,
+          "occlusion": [],
+          "contact": "background_desk",
+          "slot": null,
+          "activity": "책상에 손을 짚고 이야기를 듣는다.",
+          "map27_occlusion": [
+            [
+              [
+                720,
+                411
+              ],
+              [
+                1450,
+                411
+              ],
+              [
+                1462,
+                445
+              ],
+              [
+                1462,
+                625
+              ],
+              [
+                720,
+                625
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1206.7213541666667,
+                399.49479166666663
+              ],
+              [
+                1234.3645833333333,
+                399.49479166666663
+              ],
+              [
+                1234.3645833333333,
+                412.68815104166663
+              ],
+              [
+                1206.7213541666667,
+                412.68815104166663
+              ]
+            ],
+            [
+              [
+                1264.5208333333333,
+                399.49479166666663
+              ],
+              [
+                1292.6666666666667,
+                399.49479166666663
+              ],
+              [
+                1292.6666666666667,
+                412.68815104166663
+              ],
+              [
+                1264.5208333333333,
+                412.68815104166663
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_nubi",
+          "pose": "map27_in_1",
+          "x": 301,
+          "y": 425,
+          "width": 175,
+          "height": 262,
+          "rect": [
+            301,
+            425,
+            175,
+            262
+          ],
+          "depth": 687,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "빨래를 접어 바구니에 담는다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "IN-1",
+      "person": "resident_nubi",
+      "day": 12,
+      "period": 2,
+      "location": "school",
+      "actor": {
+        "person": "resident_nubi",
+        "pose": "map27_in_1",
+        "x": 79,
+        "y": 431,
+        "width": 177,
+        "height": 266,
+        "rect": [
+          79,
+          431,
+          177,
+          266
+        ],
+        "depth": 697,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "빨래를 접어 바구니에 담는다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          123.33333333333334,
+          434.458,
+          84.41066666666667,
+          59.849999999999994
+        ],
+        "actions": [
+          "('person', 'resident_nubi')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_teacher",
+          "pose": "map27_sc_1",
+          "x": 269,
+          "y": 289,
+          "width": 104,
+          "height": 165,
+          "rect": [
+            269,
+            289,
+            104,
+            165
+          ],
+          "depth": 454,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "책을 들고 칠판을 가리킨다.",
+          "map27_occlusion": [
+            [
+              [
+                155,
+                363
+              ],
+              [
+                500,
+                363
+              ],
+              [
+                500,
+                465
+              ],
+              [
+                155,
+                465
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                337.6850925226586,
+                339
+              ],
+              [
+                361.6208065835851,
+                339
+              ],
+              [
+                361.6208065835851,
+                377.5416666666667
+              ],
+              [
+                337.6850925226586,
+                377.5416666666667
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "neutral",
+          "x": 52,
+          "y": 291,
+          "width": 111,
+          "height": 235,
+          "rect": [
+            52,
+            291,
+            111,
+            235
+          ],
+          "depth": 526,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            120,
+            525,
+            235,
+            "class_back"
+          ],
+          "activity": "부엉이 할아버지는 수첩을 가까이 들었다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+        },
+        {
+          "person": "resident_tok",
+          "pose": "neutral",
+          "x": 221,
+          "y": 297,
+          "width": 174,
+          "height": 240,
+          "rect": [
+            221,
+            297,
+            174,
+            240
+          ],
+          "depth": 537,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            309,
+            535,
+            240,
+            "class_back"
+          ],
+          "activity": "톡은 작은 부품의 끝을 집게로 바로잡았다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+        },
+        {
+          "person": "resident_seori",
+          "pose": "living_notes",
+          "x": 430,
+          "y": 313,
+          "width": 156,
+          "height": 227,
+          "rect": [
+            430,
+            313,
+            156,
+            227
+          ],
+          "depth": 540,
+          "occlusion": [
+            [
+              0,
+              405
+            ],
+            [
+              189,
+              424
+            ],
+            [
+              217,
+              411
+            ],
+            [
+              404,
+              439
+            ],
+            [
+              456,
+              417
+            ],
+            [
+              585,
+              420
+            ],
+            [
+              726,
+              435
+            ],
+            [
+              726,
+              566
+            ],
+            [
+              263,
+              621
+            ],
+            [
+              0,
+              621
+            ]
+          ],
+          "contact": "self-contained",
+          "slot": [
+            510,
+            540,
+            240,
+            "class_back"
+          ],
+          "activity": "서리는 종이의 숫자보다 조건을 먼저 읽었다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+        },
+        {
+          "person": "resident_nubi",
+          "pose": "map27_in_1",
+          "x": 79,
+          "y": 431,
+          "width": 177,
+          "height": 266,
+          "rect": [
+            79,
+            431,
+            177,
+            266
+          ],
+          "depth": 697,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "빨래를 접어 바구니에 담는다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "ST-1",
+      "person": "resident_mungchi",
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "actor": {
+        "person": "resident_mungchi",
+        "pose": "map27_st_1",
+        "x": 1040,
+        "y": 271,
+        "width": 108,
+        "height": 162,
+        "rect": [
+          1040,
+          271,
+          108,
+          162
+        ],
+        "depth": 433,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "자루를 어깨에 메고 옮긴다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1091.971625,
+          287.2523125,
+          37.96875,
+          35.859375
+        ],
+        "actions": [
+          "('person', 'resident_mungchi')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_mungchi",
+          "pose": "map27_st_1",
+          "x": 1040,
+          "y": 271,
+          "width": 108,
+          "height": 162,
+          "rect": [
+            1040,
+            271,
+            108,
+            162
+          ],
+          "depth": 433,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "자루를 어깨에 메고 옮긴다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_madam",
+          "pose": "neutral",
+          "x": 914,
+          "y": 295,
+          "width": 123,
+          "height": 250,
+          "rect": [
+            914,
+            295,
+            123,
+            250
+          ],
+          "depth": 545,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            975,
+            544,
+            250,
+            "floor"
+          ],
+          "activity": "백 부인은 보관함에서 손을 떼고 나를 봤다."
+        },
+        {
+          "person": "resident_siluk",
+          "pose": "map27_st_2",
+          "x": 1359,
+          "y": 325,
+          "width": 213,
+          "height": 319,
+          "rect": [
+            1359,
+            325,
+            213,
+            319
+          ],
+          "depth": 644,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "나무 상자를 나른다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_eunho",
+          "pose": "living_prices",
+          "x": 976,
+          "y": 348,
+          "width": 279,
+          "height": 301,
+          "rect": [
+            976,
+            348,
+            279,
+            301
+          ],
+          "depth": 649,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            1116,
+            647,
+            324,
+            "floor"
+          ],
+          "activity": "은호는 상품에서 손을 떼었다."
+        },
+        {
+          "person": "resident_nero",
+          "pose": "activity",
+          "x": 99,
+          "y": 426,
+          "width": 234,
+          "height": 241,
+          "rect": [
+            99,
+            426,
+            234,
+            241
+          ],
+          "depth": 667,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            216,
+            666,
+            338,
+            "floor"
+          ],
+          "activity": "네로는 내 뒤를 보고 나서 말을 들었다."
+        },
+        {
+          "person": "resident_bori",
+          "pose": "living_firewood",
+          "x": 1262,
+          "y": 456,
+          "width": 204,
+          "height": 244,
+          "rect": [
+            1262,
+            456,
+            204,
+            244
+          ],
+          "depth": 700,
+          "occlusion": [],
+          "contact": "crouching",
+          "slot": [
+            1350,
+            689,
+            354,
+            "floor"
+          ],
+          "activity": "보리는 내려놓은 장작을 다시 세었다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "ST-2",
+      "person": "resident_siluk",
+      "day": 2,
+      "period": 1,
+      "location": "store",
+      "actor": {
+        "person": "resident_siluk",
+        "pose": "map27_st_2",
+        "x": 1359,
+        "y": 325,
+        "width": 213,
+        "height": 319,
+        "rect": [
+          1359,
+          325,
+          213,
+          319
+        ],
+        "depth": 644,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "나무 상자를 나른다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1441.0344121666667,
+          337.87640841666666,
+          74.765625,
+          70.61197916666666
+        ],
+        "actions": [
+          "('person', 'resident_siluk')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "SQ-1",
+      "person": "resident_dalgeurak",
+      "day": 2,
+      "period": 1,
+      "location": "square",
+      "actor": {
+        "person": "resident_dalgeurak",
+        "pose": "map27_sq_1",
+        "x": 482,
+        "y": 344,
+        "width": 133,
+        "height": 200,
+        "rect": [
+          482,
+          344,
+          133,
+          200
+        ],
+        "depth": 544,
+        "occlusion": [],
+        "contact": "behind_counter",
+        "slot": null,
+        "activity": "수레 옆에서 보따리를 펼친다.",
+        "map27_occlusion": [
+          [
+            [
+              330,
+              472
+            ],
+            [
+              420,
+              465
+            ],
+            [
+              560,
+              480
+            ],
+            [
+              600,
+              505
+            ],
+            [
+              600,
+              565
+            ],
+            [
+              330,
+              565
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              508.0416666666667,
+              397.3854166666667
+            ],
+            [
+              612.859375,
+              397.3854166666667
+            ],
+            [
+              612.859375,
+              452.0729166666667
+            ],
+            [
+              508.0416666666667,
+              452.0729166666667
+            ]
+          ]
+        ]
+      },
+      "hit": {
+        "face": [
+          527.7333333333333,
+          344.6,
+          48.53333333333333,
+          55.20000000000001
+        ],
+        "actions": [
+          "('person', 'resident_dalgeurak')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_dalgeurak",
+          "pose": "map27_sq_1",
+          "x": 482,
+          "y": 344,
+          "width": 133,
+          "height": 200,
+          "rect": [
+            482,
+            344,
+            133,
+            200
+          ],
+          "depth": 544,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "수레 옆에서 보따리를 펼친다.",
+          "map27_occlusion": [
+            [
+              [
+                330,
+                472
+              ],
+              [
+                420,
+                465
+              ],
+              [
+                560,
+                480
+              ],
+              [
+                600,
+                505
+              ],
+              [
+                600,
+                565
+              ],
+              [
+                330,
+                565
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                508.0416666666667,
+                397.3854166666667
+              ],
+              [
+                612.859375,
+                397.3854166666667
+              ],
+              [
+                612.859375,
+                452.0729166666667
+              ],
+              [
+                508.0416666666667,
+                452.0729166666667
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_guldol",
+          "pose": "neutral",
+          "x": 644,
+          "y": 362,
+          "width": 123,
+          "height": 219,
+          "rect": [
+            644,
+            362,
+            123,
+            219
+          ],
+          "depth": 581,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            710,
+            580,
+            220,
+            "floor"
+          ],
+          "activity": "광장의 돌 앞에 서서 오래 귀를 댄다."
+        },
+        {
+          "person": "resident_piko",
+          "pose": "map27_sq_2",
+          "x": 947,
+          "y": 369,
+          "width": 147,
+          "height": 220,
+          "rect": [
+            947,
+            369,
+            147,
+            220
+          ],
+          "depth": 589,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "액자 그림을 들어 보인다.",
+          "map27_occlusion": [
+            [
+              [
+                870,
+                545
+              ],
+              [
+                900,
+                520
+              ],
+              [
+                1000,
+                515
+              ],
+              [
+                1060,
+                540
+              ],
+              [
+                1065,
+                605
+              ],
+              [
+                870,
+                605
+              ]
+            ]
+          ],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_seol",
+          "pose": "living_bellrope",
+          "x": 410,
+          "y": 384,
+          "width": 129,
+          "height": 234,
+          "rect": [
+            410,
+            384,
+            129,
+            234
+          ],
+          "depth": 618,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            475,
+            617,
+            234,
+            "floor"
+          ],
+          "activity": "설이는 줄을 잡았다 놓았다."
+        },
+        {
+          "person": "doto",
+          "pose": "action_1",
+          "x": 851,
+          "y": 375,
+          "width": 106,
+          "height": 245,
+          "rect": [
+            851,
+            375,
+            106,
+            245
+          ],
+          "depth": 620,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "도토는 쓰던 줄을 끝내고 빈칸을 남겼다."
+        },
+        {
+          "person": "resident_sling",
+          "pose": "activity",
+          "x": 1101,
+          "y": 479,
+          "width": 237,
+          "height": 189,
+          "rect": [
+            1101,
+            479,
+            237,
+            189
+          ],
+          "depth": 668,
+          "occlusion": [],
+          "contact": "crouching",
+          "slot": [
+            1220,
+            667,
+            252,
+            "floor"
+          ],
+          "activity": "슬링은 봉투의 받는 사람 칸을 다시 확인했다."
+        },
+        {
+          "person": "resident_lamplighter",
+          "pose": "living_inspectlamp",
+          "x": 161,
+          "y": 423,
+          "width": 167,
+          "height": 255,
+          "rect": [
+            161,
+            423,
+            167,
+            255
+          ],
+          "depth": 678,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            245,
+            676,
+            255,
+            "floor"
+          ],
+          "activity": "초롱은 점검함에서 손을 떼고 내 쪽을 봤다."
+        },
+        {
+          "person": "resident_somi",
+          "pose": "living_bootice",
+          "x": 1569,
+          "y": 478,
+          "width": 260,
+          "height": 229,
+          "rect": [
+            1569,
+            478,
+            260,
+            229
+          ],
+          "depth": 707,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            1700,
+            707,
+            269,
+            "floor"
+          ],
+          "activity": "솜이는 신발을 내려다보다가 내 얼굴을 봤다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "GA-1",
+      "person": "neoul",
+      "day": 2,
+      "period": 0,
+      "location": "gate",
+      "actor": {
+        "person": "neoul",
+        "pose": "map27_ga_1",
+        "x": 730,
+        "y": 413,
+        "width": 141,
+        "height": 211,
+        "rect": [
+          730,
+          413,
+          141,
+          211
+        ],
+        "depth": 624,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "명부를 들고 입구를 가리킨다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          776.15625,
+          414.3736979166667,
+          57.97005208333333,
+          43.68359375
+        ],
+        "actions": [
+          "('person', 'neoul')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_badook",
+          "pose": "living_bootlace",
+          "x": 916,
+          "y": 389,
+          "width": 226,
+          "height": 182,
+          "rect": [
+            916,
+            389,
+            226,
+            182
+          ],
+          "depth": 571,
+          "occlusion": [],
+          "contact": "self-contained",
+          "slot": [
+            1030,
+            570,
+            200,
+            "floor"
+          ],
+          "activity": "바둑이는 지나가는 사람을 확인한 뒤 내 말을 들었다."
+        },
+        {
+          "person": "guard",
+          "pose": "action_1",
+          "x": 1179,
+          "y": 410,
+          "width": 179,
+          "height": 190,
+          "rect": [
+            1179,
+            410,
+            179,
+            190
+          ],
+          "depth": 600,
+          "occlusion": [],
+          "contact": "held_ledger",
+          "slot": null,
+          "activity": "입구 장부에 드나든 사람을 적는다."
+        },
+        {
+          "person": "karo",
+          "pose": "living_axlewrap",
+          "x": 486,
+          "y": 450,
+          "width": 127,
+          "height": 165,
+          "rect": [
+            486,
+            450,
+            127,
+            165
+          ],
+          "depth": 615,
+          "occlusion": [],
+          "contact": "kneeling",
+          "slot": null,
+          "activity": "까로는 닦던 손을 천에 한 번 더 문질렀다."
+        },
+        {
+          "person": "neoul",
+          "pose": "map27_ga_1",
+          "x": 730,
+          "y": 413,
+          "width": 141,
+          "height": 211,
+          "rect": [
+            730,
+            413,
+            141,
+            211
+          ],
+          "depth": 624,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "명부를 들고 입구를 가리킨다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_bori",
+          "pose": "living_firewood",
+          "x": 1049,
+          "y": 490,
+          "width": 141,
+          "height": 169,
+          "rect": [
+            1049,
+            490,
+            141,
+            169
+          ],
+          "depth": 659,
+          "occlusion": [],
+          "contact": "crouching",
+          "slot": [
+            1110,
+            651,
+            245,
+            "floor"
+          ],
+          "activity": "보리는 내려놓은 장작을 다시 세었다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "CL-1",
+      "person": "resident_piko",
+      "day": 12,
+      "period": 0,
+      "location": "clinic",
+      "actor": {
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "x": 1100,
+        "y": 313,
+        "width": 107,
+        "height": 160,
+        "rect": [
+          1100,
+          313,
+          107,
+          160
+        ],
+        "depth": 473,
+        "occlusion": [],
+        "contact": "background_bed",
+        "slot": null,
+        "activity": "침대 가장자리에 앉아 담요를 여민다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1128.4375,
+          314.3541666666667,
+          52.083333333333336,
+          40.520833333333336
+        ],
+        "actions": [
+          "('person', 'resident_piko')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "CL-1",
+      "person": "resident_piko",
+      "day": 12,
+      "period": 1,
+      "location": "clinic",
+      "actor": {
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "x": 1100,
+        "y": 313,
+        "width": 107,
+        "height": 160,
+        "rect": [
+          1100,
+          313,
+          107,
+          160
+        ],
+        "depth": 473,
+        "occlusion": [],
+        "contact": "background_bed",
+        "slot": null,
+        "activity": "침대 가장자리에 앉아 담요를 여민다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1128.4375,
+          314.3541666666667,
+          52.083333333333336,
+          40.520833333333336
+        ],
+        "actions": [
+          "('person', 'resident_piko')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "CL-1",
+      "person": "resident_piko",
+      "day": 12,
+      "period": 2,
+      "location": "clinic",
+      "actor": {
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "x": 1100,
+        "y": 313,
+        "width": 107,
+        "height": 160,
+        "rect": [
+          1100,
+          313,
+          107,
+          160
+        ],
+        "depth": 473,
+        "occlusion": [],
+        "contact": "background_bed",
+        "slot": null,
+        "activity": "침대 가장자리에 앉아 담요를 여민다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1128.4375,
+          314.3541666666667,
+          52.083333333333336,
+          40.520833333333336
+        ],
+        "actions": [
+          "('person', 'resident_piko')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "SC-1",
+      "person": "resident_teacher",
+      "day": 2,
+      "period": 0,
+      "location": "school",
+      "actor": {
+        "person": "resident_teacher",
+        "pose": "map27_sc_1",
+        "x": 269,
+        "y": 289,
+        "width": 104,
+        "height": 165,
+        "rect": [
+          269,
+          289,
+          104,
+          165
+        ],
+        "depth": 454,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "책을 들고 칠판을 가리킨다.",
+        "map27_occlusion": [
+          [
+            [
+              155,
+              363
+            ],
+            [
+              500,
+              363
+            ],
+            [
+              500,
+              465
+            ],
+            [
+              155,
+              465
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              337.6850925226586,
+              339
+            ],
+            [
+              361.6208065835851,
+              339
+            ],
+            [
+              361.6208065835851,
+              377.5416666666667
+            ],
+            [
+              337.6850925226586,
+              377.5416666666667
+            ]
+          ]
+        ]
+      },
+      "hit": {
+        "face": [
+          300.001953125,
+          292.3,
+          64.070703125,
+          47.85
+        ],
+        "actions": [
+          "('person', 'resident_teacher')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "FA-1",
+      "person": "neoul",
+      "day": 12,
+      "period": 0,
+      "location": "facility",
+      "actor": {
+        "person": "neoul",
+        "pose": "map27_fa_1",
+        "x": 1164,
+        "y": 304,
+        "width": 129,
+        "height": 193,
+        "rect": [
+          1164,
+          304,
+          129,
+          193
+        ],
+        "depth": 497,
+        "occlusion": [],
+        "contact": "background_desk",
+        "slot": null,
+        "activity": "책상에 손을 짚고 이야기를 듣는다.",
+        "map27_occlusion": [
+          [
+            [
+              720,
+              411
+            ],
+            [
+              1450,
+              411
+            ],
+            [
+              1462,
+              445
+            ],
+            [
+              1462,
+              625
+            ],
+            [
+              720,
+              625
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              1206.7213541666667,
+              399.49479166666663
+            ],
+            [
+              1234.3645833333333,
+              399.49479166666663
+            ],
+            [
+              1234.3645833333333,
+              412.68815104166663
+            ],
+            [
+              1206.7213541666667,
+              412.68815104166663
+            ]
+          ],
+          [
+            [
+              1264.5208333333333,
+              399.49479166666663
+            ],
+            [
+              1292.6666666666667,
+              399.49479166666663
+            ],
+            [
+              1292.6666666666667,
+              412.68815104166663
+            ],
+            [
+              1264.5208333333333,
+              412.68815104166663
+            ]
+          ]
+        ]
+      },
+      "hit": {
+        "face": [
+          1208.103515625,
+          305.3821614583333,
+          55.41210937499999,
+          41.71614583333333
+        ],
+        "actions": [
+          "('person', 'neoul')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "neoul",
+          "pose": "map27_fa_1",
+          "x": 1164,
+          "y": 304,
+          "width": 129,
+          "height": 193,
+          "rect": [
+            1164,
+            304,
+            129,
+            193
+          ],
+          "depth": 497,
+          "occlusion": [],
+          "contact": "background_desk",
+          "slot": null,
+          "activity": "책상에 손을 짚고 이야기를 듣는다.",
+          "map27_occlusion": [
+            [
+              [
+                720,
+                411
+              ],
+              [
+                1450,
+                411
+              ],
+              [
+                1462,
+                445
+              ],
+              [
+                1462,
+                625
+              ],
+              [
+                720,
+                625
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1206.7213541666667,
+                399.49479166666663
+              ],
+              [
+                1234.3645833333333,
+                399.49479166666663
+              ],
+              [
+                1234.3645833333333,
+                412.68815104166663
+              ],
+              [
+                1206.7213541666667,
+                412.68815104166663
+              ]
+            ],
+            [
+              [
+                1264.5208333333333,
+                399.49479166666663
+              ],
+              [
+                1292.6666666666667,
+                399.49479166666663
+              ],
+              [
+                1292.6666666666667,
+                412.68815104166663
+              ],
+              [
+                1264.5208333333333,
+                412.68815104166663
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_nubi",
+          "pose": "map27_in_1",
+          "x": 301,
+          "y": 425,
+          "width": 175,
+          "height": 262,
+          "rect": [
+            301,
+            425,
+            175,
+            262
+          ],
+          "depth": 687,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "빨래를 접어 바구니에 담는다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "DI-1a",
+      "person": "resident_tok",
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "actor": {
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "x": 584,
+        "y": 256,
+        "width": 205,
+        "height": 212,
+        "rect": [
+          584,
+          256,
+          205,
+          212
+        ],
+        "depth": 468,
+        "occlusion": [],
+        "contact": "seated",
+        "slot": null,
+        "activity": "수프를 떠먹는다.",
+        "map27_occlusion": [
+          [
+            [
+              645,
+              356
+            ],
+            [
+              965,
+              356
+            ],
+            [
+              965,
+              445
+            ],
+            [
+              645,
+              445
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              677.0258177885916,
+              325.7805642633229
+            ],
+            [
+              751.7787070829954,
+              325.7805642633229
+            ],
+            [
+              751.7787070829954,
+              368.9780564263323
+            ],
+            [
+              677.0258177885916,
+              368.9780564263323
+            ]
+          ]
+        ]
+      },
+      "hit": {
+        "face": [
+          649.5433333333333,
+          258.12,
+          79.8809375,
+          69.96000000000001
+        ],
+        "actions": [
+          "('person', 'resident_tok')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "DI-1b",
+      "person": "resident_dalgeurak",
+      "day": 2,
+      "period": 2,
+      "location": "dining",
+      "actor": {
+        "person": "resident_dalgeurak",
+        "pose": "map27_di_1b",
+        "x": 1887,
+        "y": 257,
+        "width": 130,
+        "height": 236,
+        "rect": [
+          1887,
+          257,
+          130,
+          236
+        ],
+        "depth": 493,
+        "occlusion": [],
+        "contact": "seated",
+        "slot": null,
+        "activity": "수프를 떠먹는다.",
+        "map27_occlusion": [
+          [
+            [
+              1855,
+              356
+            ],
+            [
+              2085,
+              356
+            ],
+            [
+              2085,
+              445
+            ],
+            [
+              1855,
+              445
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              1909.3051364942528,
+              312.72609208972847
+            ],
+            [
+              1958.0976225754312,
+              312.72609208972847
+            ],
+            [
+              1958.0976225754312,
+              364.9693034238489
+            ],
+            [
+              1909.3051364942528,
+              364.9693034238489
+            ]
+          ]
+        ]
+      },
+      "hit": {
+        "face": [
+          1923.2235416666667,
+          257,
+          60.80380208333334,
+          66.08000000000001
+        ],
+        "actions": [
+          "('person', 'resident_dalgeurak')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_tok",
+          "pose": "map27_di_1a",
+          "x": 584,
+          "y": 256,
+          "width": 205,
+          "height": 212,
+          "rect": [
+            584,
+            256,
+            205,
+            212
+          ],
+          "depth": 468,
+          "occlusion": [],
+          "contact": "seated",
+          "slot": null,
+          "activity": "수프를 떠먹는다.",
+          "map27_occlusion": [
+            [
+              [
+                645,
+                356
+              ],
+              [
+                965,
+                356
+              ],
+              [
+                965,
+                445
+              ],
+              [
+                645,
+                445
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                677.0258177885916,
+                325.7805642633229
+              ],
+              [
+                751.7787070829954,
+                325.7805642633229
+              ],
+              [
+                751.7787070829954,
+                368.9780564263323
+              ],
+              [
+                677.0258177885916,
+                368.9780564263323
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_dalgeurak",
+          "pose": "map27_di_1b",
+          "x": 1887,
+          "y": 257,
+          "width": 130,
+          "height": 236,
+          "rect": [
+            1887,
+            257,
+            130,
+            236
+          ],
+          "depth": 493,
+          "occlusion": [],
+          "contact": "seated",
+          "slot": null,
+          "activity": "수프를 떠먹는다.",
+          "map27_occlusion": [
+            [
+              [
+                1855,
+                356
+              ],
+              [
+                2085,
+                356
+              ],
+              [
+                2085,
+                445
+              ],
+              [
+                1855,
+                445
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1909.3051364942528,
+                312.72609208972847
+              ],
+              [
+                1958.0976225754312,
+                312.72609208972847
+              ],
+              [
+                1958.0976225754312,
+                364.9693034238489
+              ],
+              [
+                1909.3051364942528,
+                364.9693034238489
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_mulgyeol",
+          "pose": "neutral",
+          "x": 553,
+          "y": 345,
+          "width": 114,
+          "height": 205,
+          "rect": [
+            553,
+            345,
+            114,
+            205
+          ],
+          "depth": 550,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            600,
+            550,
+            205,
+            "floor"
+          ],
+          "activity": "식당 난로 앞에서 젖은 장갑을 말린다."
+        },
+        {
+          "person": "nabi",
+          "pose": "action_2",
+          "x": 220,
+          "y": 428,
+          "width": 207,
+          "height": 226,
+          "rect": [
+            220,
+            428,
+            207,
+            226
+          ],
+          "depth": 654,
+          "occlusion": [],
+          "contact": "carrying_tray",
+          "slot": [
+            325,
+            655,
+            260,
+            "floor"
+          ],
+          "activity": "나비는 그릇을 닦다가 손을 멈췄다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+        },
+        {
+          "person": "resident_owlgp",
+          "pose": "living_notebook",
+          "x": 445,
+          "y": 477,
+          "width": 126,
+          "height": 202,
+          "rect": [
+            445,
+            477,
+            126,
+            202
+          ],
+          "depth": 679,
+          "occlusion": [],
+          "contact": "portable_stool",
+          "slot": [
+            540,
+            680,
+            260,
+            "floor"
+          ],
+          "activity": "부엉이 할아버지의 수첩이 덮여 있었다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+        },
+        {
+          "person": "resident_hyeoni",
+          "pose": "map27_mk_8",
+          "x": 34,
+          "y": 433,
+          "width": 168,
+          "height": 260,
+          "rect": [
+            34,
+            433,
+            168,
+            260
+          ],
+          "depth": 693,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "류트 줄을 튕긴다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "RI-1",
+      "person": "resident_kkwak",
+      "day": 2,
+      "period": 1,
+      "location": "river",
+      "actor": {
+        "person": "resident_kkwak",
+        "pose": "map27_ri_1",
+        "x": 186,
+        "y": 533,
+        "width": 117,
+        "height": 176,
+        "rect": [
+          186,
+          533,
+          117,
+          176
+        ],
+        "depth": 709,
+        "occlusion": [],
+        "contact": "bucket_ground",
+        "slot": null,
+        "activity": "물통에 앉아 낚싯줄을 드리운다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          206.28125,
+          538.0416666666666,
+          62.33333333333333,
+          57.86458333333333
+        ],
+        "actions": [
+          "('person', 'resident_kkwak')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "RI-2",
+      "person": "resident_mulgyeol",
+      "day": 2,
+      "period": 0,
+      "location": "river",
+      "actor": {
+        "person": "resident_mulgyeol",
+        "pose": "map27_ri_2",
+        "x": 429,
+        "y": 443,
+        "width": 183,
+        "height": 274,
+        "rect": [
+          429,
+          443,
+          183,
+          274
+        ],
+        "depth": 717,
+        "occlusion": [],
+        "contact": "pole_ground",
+        "slot": null,
+        "activity": "긴 장대를 땅에 짚는다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          486.26171875,
+          462.265625,
+          66.18098958333333,
+          53.87239583333333
+        ],
+        "actions": [
+          "('person', 'resident_mulgyeol')"
+        ]
+      },
+      "capture_build": "0.19.32"
+    },
+    {
+      "key": "FO-1",
+      "person": "resident_kalbaram",
+      "day": 2,
+      "period": 0,
+      "location": "forest",
+      "actor": {
+        "person": "resident_kalbaram",
+        "pose": "map27_fo_1",
+        "x": 1141,
+        "y": 540,
+        "width": 165,
+        "height": 180,
+        "rect": [
+          1141,
+          540,
+          165,
+          180
+        ],
+        "depth": 720,
+        "occlusion": [],
+        "contact": "kneeling",
+        "slot": null,
+        "activity": "무릎을 낮추고 발자국을 살핀다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          1229.846875,
+          550.8,
+          60.876562500000006,
+          62.999999999999986
+        ],
+        "actions": [
+          "('person', 'resident_kalbaram')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_siluk",
+          "pose": "neutral",
+          "x": 943,
+          "y": 451,
+          "width": 109,
+          "height": 250,
+          "rect": [
+            943,
+            451,
+            109,
+            250
+          ],
+          "depth": 701,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1000,
+            700,
+            250,
+            "floor"
+          ],
+          "activity": "실룩은 수레 손잡이를 잡고 잠깐 움직이지 않았다."
+        },
+        {
+          "person": "resident_solbang",
+          "pose": "work_herb_bundle",
+          "x": 1369,
+          "y": 472,
+          "width": 157,
+          "height": 233,
+          "rect": [
+            1369,
+            472,
+            157,
+            233
+          ],
+          "depth": 705,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            1450,
+            706,
+            255,
+            "floor"
+          ],
+          "activity": "바구니 속 마른 약초를 다발로 묶는다."
+        },
+        {
+          "person": "resident_kalbaram",
+          "pose": "map27_fo_1",
+          "x": 1141,
+          "y": 540,
+          "width": 165,
+          "height": 180,
+          "rect": [
+            1141,
+            540,
+            165,
+            180
+          ],
+          "depth": 720,
+          "occlusion": [],
+          "contact": "kneeling",
+          "slot": null,
+          "activity": "무릎을 낮추고 발자국을 살핀다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "PO-2",
+      "person": "resident_librarian",
+      "day": 2,
+      "period": 0,
+      "location": "post",
+      "actor": {
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "x": 485,
+        "y": 411,
+        "width": 129,
+        "height": 194,
+        "rect": [
+          485,
+          411,
+          129,
+          194
+        ],
+        "depth": 605,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "종이를 펼쳐 말린다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          519.0146666666667,
+          417.984,
+          43.714666666666666,
+          40.158
+        ],
+        "actions": [
+          "('person', 'resident_librarian')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_librarian",
+          "pose": "map27_po_2",
+          "x": 485,
+          "y": 411,
+          "width": 129,
+          "height": 194,
+          "rect": [
+            485,
+            411,
+            129,
+            194
+          ],
+          "depth": 605,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "종이를 펼쳐 말린다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "resident_sling",
+          "pose": "map27_po_1",
+          "x": 1347,
+          "y": 436,
+          "width": 127,
+          "height": 190,
+          "rect": [
+            1347,
+            436,
+            127,
+            190
+          ],
+          "depth": 626,
+          "occlusion": [],
+          "contact": "behind_counter",
+          "slot": null,
+          "activity": "소포를 창구에 내려놓는다.",
+          "map27_occlusion": [
+            [
+              [
+                1100,
+                560
+              ],
+              [
+                1135,
+                515
+              ],
+              [
+                1500,
+                500
+              ],
+              [
+                1600,
+                492
+              ],
+              [
+                1700,
+                480
+              ],
+              [
+                2160,
+                470
+              ],
+              [
+                2160,
+                720
+              ],
+              [
+                1100,
+                720
+              ]
+            ]
+          ],
+          "map27_keepouts": [
+            [
+              [
+                1419.9817708333333,
+                522.5885416666666
+              ],
+              [
+                1471.9348958333333,
+                522.5885416666666
+              ],
+              [
+                1471.9348958333333,
+                551.6575520833334
+              ],
+              [
+                1419.9817708333333,
+                551.6575520833334
+              ]
+            ],
+            [
+              [
+                1397.09765625,
+                502.796875
+              ],
+              [
+                1406.375,
+                502.796875
+              ],
+              [
+                1415.0338541666667,
+                516.4036458333334
+              ],
+              [
+                1419.9817708333333,
+                525.0625
+              ],
+              [
+                1424.9296875,
+                531.2473958333334
+              ],
+              [
+                1441.0104166666667,
+                534.9583333333334
+              ],
+              [
+                1441.0104166666667,
+                551.0390625
+              ],
+              [
+                1421.21875,
+                553.5130208333334
+              ],
+              [
+                1408.8489583333333,
+                543.6171875
+              ],
+              [
+                1401.4270833333333,
+                532.484375
+              ]
+            ],
+            [
+              [
+                1443.484375,
+                506.5078125
+              ],
+              [
+                1452.1432291666667,
+                506.5078125
+              ],
+              [
+                1457.0911458333333,
+                517.640625
+              ],
+              [
+                1464.5130208333333,
+                523.20703125
+              ],
+              [
+                1468.2239583333333,
+                532.484375
+              ],
+              [
+                1458.328125,
+                534.33984375
+              ],
+              [
+                1445.9583333333333,
+                526.2994791666666
+              ]
+            ]
+          ]
+        },
+        {
+          "person": "resident_jongjong",
+          "pose": "map27_po_3",
+          "x": 977,
+          "y": 484,
+          "width": 106,
+          "height": 159,
+          "rect": [
+            977,
+            484,
+            106,
+            159
+          ],
+          "depth": 643,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "편지를 안고 나갈 채비를 한다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        },
+        {
+          "person": "seryeon",
+          "pose": "action_1",
+          "x": 4,
+          "y": 469,
+          "width": 171,
+          "height": 205,
+          "rect": [
+            4,
+            469,
+            171,
+            205
+          ],
+          "depth": 674,
+          "occlusion": [],
+          "contact": "clipboard",
+          "slot": [
+            90,
+            675,
+            220,
+            "waiting"
+          ],
+          "activity": "우편 담당자는 봉투를 내려놓고 내 말을 들었다."
+        },
+        {
+          "person": "resident_momo",
+          "pose": "living_lampnumber",
+          "x": 811,
+          "y": 460,
+          "width": 106,
+          "height": 230,
+          "rect": [
+            811,
+            460,
+            106,
+            230
+          ],
+          "depth": 690,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": [
+            870,
+            690,
+            230,
+            "waiting"
+          ],
+          "activity": "모모는 전시품에 손을 대지 않고 먼지만 닦았다."
+        }
+      ],
+      "capture_build": "0.19.33"
+    },
+    {
+      "key": "PO-2",
+      "person": "resident_librarian",
+      "day": 2,
+      "period": 1,
+      "location": "post",
+      "actor": {
+        "person": "resident_librarian",
+        "pose": "map27_po_2",
+        "x": 444,
+        "y": 358,
+        "width": 200,
+        "height": 300,
+        "rect": [
+          444,
+          358,
+          200,
+          300
+        ],
+        "depth": 658,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "종이를 펼쳐 말린다.",
+        "map27_occlusion": [
+          [
+            [
+              366,
+              552
+            ],
+            [
+              1030,
+              466
+            ],
+            [
+              1030,
+              392
+            ],
+            [
+              1279,
+              392
+            ],
+            [
+              1279,
+              720
+            ],
+            [
+              366,
+              720
+            ]
+          ]
+        ],
+        "map27_keepouts": []
+      },
+      "hit": {
+        "face": [
+          496.6,
+          368.8,
+          67.6,
+          62.1
+        ],
+        "actions": [
+          "('person', 'resident_librarian')"
+        ]
+      },
+      "all_actors": [
+        {
+          "person": "resident_momo",
+          "pose": "living_lampnumber",
+          "x": 693,
+          "y": 341,
+          "width": 115,
+          "height": 249,
+          "rect": [
+            693,
+            341,
+            115,
+            249
+          ],
+          "depth": 590,
+          "occlusion": [
+            [
+              366,
+              552
+            ],
+            [
+              1030,
+              466
+            ],
+            [
+              1030,
+              392
+            ],
+            [
+              1279,
+              392
+            ],
+            [
+              1279,
+              720
+            ],
+            [
+              366,
+              720
+            ]
+          ],
+          "contact": "standing",
+          "slot": [
+            757,
+            632,
+            332,
+            "counter"
+          ],
+          "activity": "모모는 전시품에 손을 대지 않고 먼지만 닦았다."
+        },
+        {
+          "person": "resident_librarian",
+          "pose": "map27_po_2",
+          "x": 444,
+          "y": 358,
+          "width": 200,
+          "height": 300,
+          "rect": [
+            444,
+            358,
+            200,
+            300
+          ],
+          "depth": 658,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "종이를 펼쳐 말린다.",
+          "map27_occlusion": [
+            [
+              [
+                366,
+                552
+              ],
+              [
+                1030,
+                466
+              ],
+              [
+                1030,
+                392
+              ],
+              [
+                1279,
+                392
+              ],
+              [
+                1279,
+                720
+              ],
+              [
+                366,
+                720
+              ]
+            ]
+          ],
+          "map27_keepouts": []
+        },
+        {
+          "person": "seryeon",
+          "pose": "chair_read",
+          "x": 10,
+          "y": 310,
+          "width": 310,
+          "height": 364,
+          "rect": [
+            10,
+            310,
+            310,
+            364
+          ],
+          "depth": 674,
+          "occlusion": [
+            [
+              188,
+              408
+            ],
+            [
+              317,
+              416
+            ],
+            [
+              324,
+              583
+            ],
+            [
+              184,
+              577
+            ]
+          ],
+          "contact": "background_chair",
+          "slot": null,
+          "activity": "우편 담당자는 봉투를 내려놓고 내 말을 들었다."
+        },
+        {
+          "person": "resident_jongjong",
+          "pose": "map27_po_3",
+          "x": 227,
+          "y": 518,
+          "width": 123,
+          "height": 185,
+          "rect": [
+            227,
+            518,
+            123,
+            185
+          ],
+          "depth": 703,
+          "occlusion": [],
+          "contact": "standing",
+          "slot": null,
+          "activity": "편지를 안고 나갈 채비를 한다.",
+          "map27_occlusion": [],
+          "map27_keepouts": []
+        }
+      ],
+      "capture_build": "0.19.33"
+    }
+  ],
+  "final_registry_geometry": "all 26 native fixture geometries match final registry",
+  "save_restore": [
+    {
+      "key": "CL-1",
+      "actor": {
+        "person": "resident_piko",
+        "pose": "map27_cl_1",
+        "x": 1100,
+        "y": 313,
+        "width": 107,
+        "height": 160,
+        "rect": [
+          1100,
+          313,
+          107,
+          160
+        ],
+        "depth": 473,
+        "occlusion": [],
+        "contact": "background_bed",
+        "slot": null,
+        "activity": "침대 가장자리에 앉아 담요를 여민다.",
+        "map27_occlusion": [],
+        "map27_keepouts": []
+      }
+    },
+    {
+      "key": "FA-1",
+      "actor": {
+        "person": "neoul",
+        "pose": "map27_fa_1",
+        "x": 1164,
+        "y": 304,
+        "width": 129,
+        "height": 193,
+        "rect": [
+          1164,
+          304,
+          129,
+          193
+        ],
+        "depth": 497,
+        "occlusion": [],
+        "contact": "background_desk",
+        "slot": null,
+        "activity": "책상에 손을 짚고 이야기를 듣는다.",
+        "map27_occlusion": [
+          [
+            [
+              720,
+              411
+            ],
+            [
+              1450,
+              411
+            ],
+            [
+              1462,
+              445
+            ],
+            [
+              1462,
+              625
+            ],
+            [
+              720,
+              625
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              1206.7213541666667,
+              399.49479166666663
+            ],
+            [
+              1234.3645833333333,
+              399.49479166666663
+            ],
+            [
+              1234.3645833333333,
+              412.68815104166663
+            ],
+            [
+              1206.7213541666667,
+              412.68815104166663
+            ]
+          ],
+          [
+            [
+              1264.5208333333333,
+              399.49479166666663
+            ],
+            [
+              1292.6666666666667,
+              399.49479166666663
+            ],
+            [
+              1292.6666666666667,
+              412.68815104166663
+            ],
+            [
+              1264.5208333333333,
+              412.68815104166663
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "key": "DI-1a",
+      "actor": {
+        "person": "resident_tok",
+        "pose": "map27_di_1a",
+        "x": 584,
+        "y": 256,
+        "width": 205,
+        "height": 212,
+        "rect": [
+          584,
+          256,
+          205,
+          212
+        ],
+        "depth": 468,
+        "occlusion": [],
+        "contact": "seated",
+        "slot": null,
+        "activity": "수프를 떠먹는다.",
+        "map27_occlusion": [
+          [
+            [
+              645,
+              356
+            ],
+            [
+              965,
+              356
+            ],
+            [
+              965,
+              445
+            ],
+            [
+              645,
+              445
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              677.0258177885916,
+              325.7805642633229
+            ],
+            [
+              751.7787070829954,
+              325.7805642633229
+            ],
+            [
+              751.7787070829954,
+              368.9780564263323
+            ],
+            [
+              677.0258177885916,
+              368.9780564263323
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "absence_guards": [
+    {
+      "person": "resident_piko",
+      "flag": "piko_dead",
+      "absent": true
+    },
+    {
+      "person": "resident_teacher",
+      "flag": "teacher_dead",
+      "absent": true
+    },
+    {
+      "person": "resident_librarian",
+      "flag": "librarian_dead",
+      "absent": true
+    },
+    {
+      "person": "resident_siluk",
+      "flag": "siluk_dead",
+      "absent": true
+    },
+    {
+      "person": "resident_tok",
+      "flag": "tok_detained",
+      "absent": true
+    }
+  ],
+  "nabi": {
+    "registered": true,
+    "periods": [],
+    "file": "assets/map-action27/KI-1--nabi.webp",
+    "scheduled_in_kitchen": false,
+    "preview_screen_visible": true
+  },
+  "notes": [
+    "Initial local 0.19.32 fixtures preceded the independently published UI version. Unchanged scene geometry reused; changed cases recaptured on 0.19.33.",
+    "The initial librarian living_bookpaper allowlist mismatch was corrected and both periods passed.",
+    "Collision corrections were inspected in native screenshots and rerun."
+  ]
+}

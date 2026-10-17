@@ -119,7 +119,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 125 | `systems/room13_map_actions.rpy:38` | _r13_perspective_stage |
 | 5 | 126 | `systems/room13_perspective.rpy:32` | _r13_map9_stage |
 | 6 | 176 | `systems/room13_map_work_nine.rpy:17` | _r13_map27_stage |
-| 7 | 178 | `systems/room13_map_action27.rpy:50` |  |
+| 7 | 178 | `systems/room13_map_action27.rpy:51` |  |
 
 ## `r13_compare_result` (6층)
 
@@ -176,7 +176,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 57 | `room13_life.rpy:174` | _r13_reason_activity |
-| 2 | 146 | `systems/room13_place_reasons.rpy:127` | _r13_alibi_activity |
+| 2 | 146 | `systems/room13_place_reasons.rpy:128` | _r13_alibi_activity |
 | 3 | 147 | `systems/room13_alibi.rpy:37` |  |
 
 ## `r13_available` (3층)
@@ -456,7 +456,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 59 | `room13_acting.rpy:527` | _r13_map27_visible |
-| 2 | 178 | `systems/room13_map_action27.rpy:76` |  |
+| 2 | 178 | `systems/room13_map_action27.rpy:77` |  |
 
 ## `r13_visible_people` (2층)
 

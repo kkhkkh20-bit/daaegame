@@ -118,6 +118,8 @@ init python:
         return total
 
 screen say(who,what):
+    if room13_mode:
+        $ who = r13_speaker_label(who)
     if room13_mode and r13_meeting_active and r13_meeting_claim in R13_DEBATE:
         use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
         use r13_meeting_chrome(r13_meeting_claim)
@@ -126,7 +128,7 @@ screen say(who,what):
             area (80,500,1120,132) background R13PaperFrame() padding (22,36,22,14)
             r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color r13_say_color()
         if who:
-            text who id "who" xpos 104 ypos 510 size r13_read_size(18,22) color "#795d40"
+            text who id "who" xpos 104 ypos 504 size r13_read_size(24,26) color "#493421" font r13_ui_font() xmaximum 1076
         text "▸" xpos 1160 ypos 600 size 24 color "#795d40"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())
@@ -191,10 +193,10 @@ screen say(who,what):
         if who:
             $ r13_name_track(who)
             frame:
-                xpos 254 ypos (_r13_say_top(what)-22 if room13_mode else 522)
-                padding (14,5) background R13InkPanel(alpha="ef",slim=True)
+                xpos 254 ypos (_r13_say_top(what)-32 if room13_mode else 522)
+                padding (16,5) background R13InkPanel(alpha="ff",slim=True)
                 at r13_name_fade
-                text who id "who" color R13_SPEAKER_COLOR font r13_ui_font() size 18
+                text who id "who" color "#FFF0CC" font r13_ui_font() size r13_read_size(26,28) xmaximum 736
         # Next-line mark breathes slowly like a firefly (0.18.47 storybook tone).
         if r13_fx_active():
             text "▸" xpos 1002 ypos 600 size 24 color "#d9d4ab" at r13_next_glow

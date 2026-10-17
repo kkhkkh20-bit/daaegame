@@ -148,7 +148,7 @@ init 56 python:
         if person=="resident_owlgp":return "school" if s["victim_state"]!="dead" else None
         if person=="nabi":
             if s["granny_state"]=="detained" and p==0:return "inn"
-            return "school" if r13_has("shelter_ready") else "dining"
+            return "school" if r13_has("shelter_ready") else r13_nabi_daily_where(s)
         if person=="buri":return "workshop"
         if person=="resident_tok":return "workshop" if p<2 else "school"
         if person=="resident_seori":return ("clinic","store","school")[p]

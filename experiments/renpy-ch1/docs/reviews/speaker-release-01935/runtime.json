@@ -1,0 +1,104 @@
+{
+  "kind": "Native rebuilt 0.19.35 WASM in Chromium; no source overlay; focused fixtures, not a full playthrough",
+  "captures": [
+    {
+      "name": "after-nubi-snow",
+      "text": [
+        "누비"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-momo-dark",
+      "text": [
+        "모모"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-long-name",
+      "text": [
+        "부엉이 할아버지"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-anonymous",
+      "text": [
+        "???"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-two-speakers",
+      "text": [
+        "누비 · 모모"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-mobile-snow",
+      "text": [
+        "누비"
+      ],
+      "size": 26,
+      "exception": false
+    },
+    {
+      "name": "after-mobile-dark-large",
+      "text": [
+        "부엉이 할아버지"
+      ],
+      "size": 28,
+      "exception": false
+    }
+  ],
+  "release_build": true,
+  "base_version": "0.19.35",
+  "meeting_label": {
+    "text": [
+      "할머니"
+    ],
+    "size": 24,
+    "exception": false
+  },
+  "shown_people": [
+    "buri",
+    "daram",
+    "mom",
+    "resident_momo",
+    "resident_nubi"
+  ],
+  "detail_switches": [
+    {
+      "selected": "resident_momo",
+      "name": "모모",
+      "role": "박물관"
+    },
+    {
+      "selected": "buri",
+      "name": "부리",
+      "role": "수리점"
+    },
+    {
+      "selected": "resident_nubi",
+      "name": "누비",
+      "role": "세탁"
+    }
+  ],
+  "save_toolbar_fixture": "Opening line with normal line toolbar exposed; script/packet unchanged",
+  "before_save": [
+    "karo",
+    "도착했어요. 발판이 얼어서 미끄러우니 조심해서 내려요."
+  ],
+  "after_load": [
+    "karo",
+    "도착했어요. 발판이 얼어서 미끄러우니 조심해서 내려요."
+  ],
+  "status": "passed"
+}

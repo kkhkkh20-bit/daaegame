@@ -227,7 +227,7 @@ init 55 python:
             if s["victim_state"]=="dead":return None
             return ("square","inn","dining")[p]
         if person=="granny":return None if s["granny_state"]=="detained" else "inn"
-        if person=="nabi":return "dining"
+        if person=="nabi":return r13_nabi_daily_where(s)
         if person=="buri":return "workshop"
         if person=="karo":return "gate"
         if person=="seryeon":return "post" if s["day"]>=2 and p<2 else None
@@ -470,3 +470,8 @@ init 55 python:
             store.r13_fast_read=False
             store.r13_fast_all=False
     config.interact_callbacks.append(r13_stop_typing)
+
+    def r13_nabi_daily_where(state):
+        # Owner-approved kitchen prep after the arrival day. Story/evacuation
+        # wrappers remain above this base routine; afternoon/evening keep serving.
+        return "kitchen" if 2<=state.get("day",1)<=14 and state.get("period",0)==0 else "dining"

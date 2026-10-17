@@ -1,0 +1,158 @@
+{
+  "movement": [
+    {
+      "location": "dining",
+      "actor": null,
+      "day": 2,
+      "period": 0
+    },
+    {
+      "location": "kitchen",
+      "actor": {
+        "person": "nabi",
+        "pose": "map27_ki_1",
+        "x": 652,
+        "y": 405,
+        "width": 164,
+        "height": 244,
+        "rect": [
+          652,
+          405,
+          164,
+          244
+        ],
+        "depth": 649,
+        "occlusion": [],
+        "contact": "standing",
+        "slot": null,
+        "activity": "도마 위의 당근을 썬다.",
+        "map27_occlusion": [
+          [
+            [
+              600,
+              530
+            ],
+            [
+              790,
+              555
+            ],
+            [
+              1100,
+              595
+            ],
+            [
+              1620,
+              565
+            ],
+            [
+              1620,
+              720
+            ],
+            [
+              600,
+              720
+            ]
+          ]
+        ],
+        "map27_keepouts": [
+          [
+            [
+              659.9736138132296,
+              491.11764705882354
+            ],
+            [
+              752.4675340466925,
+              491.11764705882354
+            ],
+            [
+              752.4675340466925,
+              544.5424836601308
+            ],
+            [
+              659.9736138132296,
+              544.5424836601308
+            ]
+          ]
+        ]
+      },
+      "day": 2,
+      "period": 0
+    }
+  ],
+  "evening_dialogue": {
+    "person": "nabi",
+    "pose": "neutral",
+    "packet": [
+      null,
+      "주방 뒷문이 반쯤 열려 있었다. 나비가 남은 빵과 식은 수프를 천에 싸서 문밖으로 내밀고 있었다."
+    ],
+    "file": "assets/dialogue-source-master/nabi/840/neutral.webp"
+  },
+  "evening_result": {
+    "day": 2,
+    "period": 2,
+    "flags": [
+      "ep2_seen",
+      "kids_known",
+      "nabi_secret",
+      "know_nabi_debt"
+    ],
+    "evidence": [
+      "W2"
+    ]
+  },
+  "inspector": {
+    "person": "resident_seori",
+    "actor": {
+      "person": "resident_seori",
+      "pose": "living_notes",
+      "x": 1613,
+      "y": 410,
+      "width": 167,
+      "height": 244,
+      "rect": [
+        1613,
+        410,
+        167,
+        244
+      ],
+      "depth": 654,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1697,
+        652,
+        244,
+        "floor"
+      ],
+      "activity": "서리는 종이의 숫자보다 조건을 먼저 읽었다."
+    },
+    "spec": {
+      "file": "assets/room13-pixel-acting-seori.webp",
+      "crop": [
+        637,
+        523,
+        328,
+        478
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          164,
+          474
+        ]
+      },
+      "action_ko": "메모 옆에 확인한 사람 이름을 적는다.",
+      "contact": "self-contained",
+      "head": [
+        0,
+        0,
+        328,
+        196
+      ],
+      "facing": "right-profile"
+    },
+    "other_character": "resident_seol"
+  },
+  "status": "passed"
+}

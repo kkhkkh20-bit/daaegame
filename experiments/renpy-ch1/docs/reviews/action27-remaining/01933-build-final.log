@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/workspace/renpy-sdk/renpy-8.5.3-sdk/renpy/savetoken.py", line 358, in init
+    init_tokens()
+  File "/workspace/renpy-sdk/renpy-8.5.3-sdk/renpy/savetoken.py", line 313, in init_tokens
+    create_token(keys_fn)
+  File "/workspace/renpy-sdk/renpy-8.5.3-sdk/renpy/savetoken.py", line 217, in create_token
+    with open(filename, "a") as f:
+         ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/agent/.renpy/tokens/security_keys.txt'
+seeded 168 .rpyc from the previous release
+{
+  "core_zip_bytes": 53408806,
+  "archive_sha256": "860894b17db56e7f550c73088169de9bd41739ae3aa482ec346f2daf50c88215",
+  "parts": 7,
+  "preload_files": 1182,
+  "first_load_bytes": 271797673,
+  "remote_files": 281,
+  "removed_from_release": []
+}

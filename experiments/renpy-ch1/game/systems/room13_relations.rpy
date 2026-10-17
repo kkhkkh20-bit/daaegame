@@ -210,13 +210,13 @@ screen r13_relations_content(owner,selected,filt,focused=True):
             $ x,y=layout[who]
             $ kind,label=r13_rel_status(who)
             $ faded=not r13_rel_match(who,filt)
-            $ name=R13_NAMES.get(who,who)
+            $ name=r13_display_name(who)
             $ two_lines=" " in name and len(name)>5
             $ face=44 if two_lines else 50
             button:
                 xpos x ypos y xysize R13_REL_CELL padding (0,0) background None
                 action Function(r13_record_select,owner,"rel_sel",who)
-                alt (R13_NAMES.get(who,who)+( " · "+label if label else ""))
+                alt (r13_display_name(who)+( " · "+label if label else ""))
                 at (r13_rel_faded if faded else None)
                 fixed:
                     xysize R13_REL_CELL
@@ -282,7 +282,7 @@ screen r13_relation_focus(owner,person,filt):
                     xysize (76,80) padding (4,4)
                     background R13PaperPanel(who==person) hover_background R13PaperPanel(True)
                     action Function(r13_record_select,owner,"rel_sel",who)
-                    alt R13_NAMES.get(who,who)
+                    alt r13_display_name(who)
                     at (r13_rel_faded if not r13_rel_match(who,filt) else None)
                     vbox:
                         spacing 4 xalign .5
@@ -290,24 +290,24 @@ screen r13_relation_focus(owner,person,filt):
                             add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=r13_profile_nearest(who)) at r13_rel_gray xalign .5
                         else:
                             add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=r13_profile_nearest(who),alpha=.55 if status in ("gone","missing") else 1.0) xalign .5
-                        text (("{s}"+R13_NAMES.get(who,who).split(" ")[0]+"{/s}") if status=="dead" else R13_NAMES.get(who,who).split(" ")[0]) size 16 color "#493b30" xalign .5
+                        text (("{s}"+r13_display_name(who).split(" ")[0]+"{/s}") if status=="dead" else r13_display_name(who).split(" ")[0]) size 16 color "#493b30" xalign .5
 
 screen r13_relation_focus_card(owner,person,x,y,primary=False):
     $ kind,label=r13_rel_status(person)
-    $ compact=" " in R13_NAMES.get(person,person) and len(R13_NAMES.get(person,person))>5
+    $ compact=" " in r13_display_name(person) and len(r13_display_name(person))>5
     $ face=(64 if compact else 80) if primary else (50 if compact else 60)
     button:
         xpos x ypos y xysize ((132,132) if primary else (112,106)) padding (5,5)
         background R13PaperPanel(primary) hover_background R13PaperPanel(True)
         action Function(r13_record_select,owner,"rel_sel",person)
-        alt (R13_NAMES.get(person,person)+(" · "+label if label else ""))
+        alt (r13_display_name(person)+(" · "+label if label else ""))
         vbox:
             xalign .5 spacing 5
             if kind=="dead":
                 add Transform(r13_rel_face(person),xysize=(face,face),fit="contain",nearest=r13_profile_nearest(person)) at r13_rel_gray xalign .5
             else:
                 add Transform(r13_rel_face(person),xysize=(face,face),fit="contain",nearest=r13_profile_nearest(person),alpha=.55 if kind in ("gone","missing") else 1.0) xalign .5
-            text (("{s}"+R13_NAMES.get(person,person)+"{/s}") if kind=="dead" else R13_NAMES.get(person,person)) size (r13_read_size(20,22) if primary else r13_read_size(18,20)) xsize (122 if primary else 102) text_align .5 color "#493b30"
+            text (("{s}"+r13_display_name(person)+"{/s}") if kind=="dead" else r13_display_name(person)) size (r13_read_size(20,22) if primary else r13_read_size(18,20)) xsize (122 if primary else 102) text_align .5 color "#493b30"
 
 screen r13_relation_detail(owner,person):
     add R13PaperFrame() xpos 878 ypos 58 xsize 348 ysize 520
@@ -320,8 +320,8 @@ screen r13_relation_detail(owner,person):
                 add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=r13_profile_nearest(person)) at r13_rel_gray xpos 4 ypos 4
             else:
                 add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=r13_profile_nearest(person),alpha=.6 if kind in ("gone","missing") else 1.0) xpos 4 ypos 4
-        text R13_NAMES.get(person,person) xpos 998 ypos 85 xsize 206 size r13_read_size(24,27) color "#654b30"
-        text (R13_PUBLIC_ROLES.get(person) or "") xpos 998 ypos 123 size r13_read_size(16,18) color "#7d6a52" xsize 206
+        text r13_display_name(person) xpos 998 ypos 85 xsize 206 size r13_read_size(24,27) color "#654b30"
+        text r13_display_role(person) xpos 998 ypos 123 size r13_read_size(16,18) color "#7d6a52" xsize 206
         add Solid("#c8ac7f") xpos 900 ypos 179 xysize (302,1)
         if label:
             frame:
@@ -339,13 +339,13 @@ screen r13_relation_detail(owner,person):
                         button:
                             xsize 286 padding (10,9) background R13PaperPanel() hover_background R13PaperPanel(True)
                             action Function(r13_record_select,owner,"rel_sel",other)
-                            alt (R13_NAMES.get(other,other)+" · "+lab)
+                            alt (r13_display_name(other)+" · "+lab)
                             vbox:
                                 spacing 5
                                 hbox:
                                     spacing 9
                                     add R13RelKey(k) yalign .5
-                                    text (R13_NAMES.get(other,other)+"  ›") size r13_read_size(19,22) color "#493b30"
+                                    text (r13_display_name(other)+"  ›") size r13_read_size(19,22) color "#493b30"
                                 text lab size r13_read_size(17,20) color "#766149" xsize 264
                 else:
                     text "아직 알게 된 관계가 없다." size r13_read_size(18,21) color "#7d6a52" xsize 286

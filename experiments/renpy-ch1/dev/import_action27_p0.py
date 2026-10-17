@@ -61,6 +61,8 @@ def main():
    row['activity']={'MK-2':'장부에 값을 적는다.','MK-3':'저울에 치즈를 올린다.','MK-4':'줄무늬 천을 펼쳐 보인다.','MK-5':'장갑의 구멍을 꿰맨다.','MK-6':'항아리를 들어 보인다.','PO-1':'소포를 창구에 내려놓는다.','SQ-2':'액자 그림을 들어 보인다.','WS-1':'랜턴의 나사를 조인다.'}[key]
    rows.append(row);receipt.append(dict(request_id=key,person=who,source=str(original.relative_to(ROOT)),source_sha256=r['sha256'],source_bytes=len(b),source_size=list(im.size),export=file,export_sha256=hashlib.sha256(dest.read_bytes()).hexdigest(),transform=transform))
  assert len(rows)==8
- (ROOT/'game/assets/room13-map-action27.json').write_text(json.dumps(dict(schema=1,status='approved_p0_eight',source_commit=COMMIT,rows=rows),ensure_ascii=False,indent=2)+'\n')
+ regpath=ROOT/'game/assets/room13-map-action27.json';reg=json.loads(regpath.read_text()) if regpath.exists() else dict(schema=1,status='approved_p0_eight')
+ reg.update(source_commit=COMMIT,rows=rows+[r for r in reg.get('rows',[]) if r['request_id'] not in PLACEMENTS])
+ regpath.write_text(json.dumps(reg,ensure_ascii=False,indent=2)+'\n')
  (approved/'receipt.json').write_text(json.dumps(dict(source_commit=COMMIT,rows=receipt),indent=2)+'\n')
 if __name__=='__main__':main()
