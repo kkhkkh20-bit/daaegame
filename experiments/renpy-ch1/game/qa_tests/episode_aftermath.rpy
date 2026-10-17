@@ -249,5 +249,40 @@ testcase episode_aftermath_gallery:
     assert eval (r13_aftermath_index==45)
     screenshot "af_46_chorong_hurt.png"
     click pos (640,600)
+    pause until screen "r13_episode_aftermath_view" timeout 30
+    pause .8
+    assert eval (r13_aftermath_index==46)
+    screenshot "af_47_nubi_alone.png"
+    click pos (640,600)
+    pause until screen "r13_episode_aftermath_view" timeout 30
+    pause .8
+    assert eval (r13_aftermath_index==47)
+    screenshot "af_48_nubi_school.png"
+    click pos (640,600)
+    pause until screen "r13_episode_aftermath_view" timeout 30
+    pause .8
+    assert eval (r13_aftermath_index==48)
+    screenshot "af_49_teacher_saved.png"
+    click pos (640,600)
+    pause until screen "r13_episode_aftermath_view" timeout 30
+    pause .8
+    assert eval (r13_aftermath_index==49)
+    screenshot "af_50_teacher_cart.png"
+    click pos (640,600)
+    pause until screen "r13_episode_aftermath_view" timeout 30
+    pause .8
+    assert eval (r13_aftermath_index==50)
+    screenshot "af_51_teacher_dead_one.png"
+    click pos (640,600)
+    pause until screen "r13_episode_aftermath_view" timeout 30
+    pause .8
+    assert eval (r13_aftermath_index==51)
+    screenshot "af_52_teacher_dead_four.png"
+    click pos (640,600)
+    pause until screen "r13_episode_aftermath_view" timeout 30
+    pause .8
+    assert eval (r13_aftermath_index==52)
+    screenshot "af_53_kkomi_soup.png"
+    click pos (640,600)
     pause until eval (not r13_aftermath_active) timeout 30
     assert eval (qa_aftermath_readonly)

@@ -11,6 +11,7 @@ from webqa import UIQA
 OUT=Path(os.environ.get('ROOM13_QA_OUT','/tmp/room13-qa/episode-aftermath'));OUT.mkdir(parents=True,exist_ok=True)
 URL=os.environ.get('ROOM13_URL','http://127.0.0.1:8774/preview/room13-dev/')
 FIXTURES=[('ep1',[]),('ep1',['piko_dead','tok_detained','siluk_handed','madam_store_opened']),('ep1',['siluk_debt_cleared','madam_store_opened']),('ep2',['kd_shoes_only','bami_taken','kd_named']),('ep2',['kd_farewell_seen','musoe_gone','bami_safe']),('ep2',['kd_seori','bami_safe']),('ep2_clinic',['kd_clinic_note','musoe_gone']),('ep3',[]),('ep3',['kkomi_dead','bori_adopts','nubi_kids_with_nabi']),('ep3',['wf_missed','bori_taken']),('ep3',['kkomi_dead'],'held'),('ep4',['chorong_dead','ttadak_dead','nt_ttadak_proven','owl_hat','nt_lit_lamps']),('ep4',['nt_chorong_safe','nt_ttadak_half']),('ep4',['nt_ttadak_safe','nt_chorong_half']),('ep4',['chorong_dead','ttadak_dead','owl_hat'],'held'),('ep5',['soup_kids_dead']),('ep5',['ws_some_alive']),('ep5',['ws_kids_alive','bori_adopts','mom_reunited','portrait_finished_by_daram']),('ep5',['ws_kids_alive','dodam_sick']),('ep6',['cart_stopped','cv_badook_safe','cv_granny_tomorrow']),('ep6',['cart_left','badook_dead']),('ep6',['cart_stopped','badook_dead']),('ep6',['cart_stopped','badook_hurt']),('ep6',['cart_stopped','neoul_gone']),('ep6',['cv_family_only','cart_left','ws_cart_truth','guldol_dead','momo_dead']),('ep6',['cv_skipped','cart_left'])]
+FIXTURES += [('ep3',['kkomi_dead','wf_bori_freed','nubi_taken','neoul_exposed']),('ep3',['wf_bori_freed','wf_kids_school']),('ep5',['soup_kids_dead','teacher_dead','kkomi_dead_soup']),('ep5',['ws_some_alive','teacher_dead']),('ep5',['ws_some_alive','teacher_on_cart']),('ep5',['ws_some_alive','teacher_alive']),('ep2',['kd_shoes_only','bami_safe','bami_watched']),('ep3',['nubi_taken','neoul_half']),('ep3',[],'held')]
 async def action(q,expr):
  code='\n'.join(['import renpy','def _qa_af_action(**kwargs):',' import renpy',' s=renpy.store',' renpy.ui.textbutton("검토 계속",clicked='+expr+',xpos=500,ypos=300,xsize=280,ysize=80)',"renpy.exports.define_screen('qa_af_action',_qa_af_action,modal='True',zorder='200')","renpy.exports.show_screen('qa_af_action')","renpy.exports.restart_interaction()","result=True"])
  await q.py(code);await q.press('검토 계속')
@@ -27,7 +28,9 @@ async def main():
   try:
    await page.goto(URL);await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await page.wait_for_function("!document.getElementById('presplash')",timeout=240000);await q.wait('main_menu')
    await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True');await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');print('BOOT ready',flush=True)
+   selected={int(x) for x in os.environ.get("ROOM13_QA_FIXTURES","").split(",") if x}
    for n,fixture in enumerate(FIXTURES):
+    if selected and n not in selected:continue
     ep,flags=fixture[:2];child=fixture[2] if len(fixture)>2 else 'with_dad'
     print('FIXTURE',n,ep,flush=True)
     await q.py('import renpy;s=renpy.store;s.r13_edit(flags='+repr(flags)+',daram_state='+repr(child)+');s.persistent.room13_motion='+repr(n%2==0)+';s.persistent.room13_large_text='+repr(n==17)+';result=True')
@@ -53,9 +56,9 @@ async def main():
     assert await q.py('import renpy;result=not renpy.store.r13_aftermath_active')
     assert (await q.state())['room']==before,(n,'world changed')
     results.append(dict(episode=ep,flags=flags,child=child,frames=expected,read_only=True))
-   assert len(seen)==46,(len(seen),seen)
-   (OUT/'result.json').write_text(json.dumps(dict(passed=True,fixtures=results,unique_frames=len(seen),checks=['26 completed-outcome fixtures','46 artwork frames','mixed survival and loss','detained Daram absent','next/previous','mid-scene save/load','motion off','large-text mobile','world/evidence/time unchanged']),ensure_ascii=False,indent=2))
-   print('PASS 26 aftermath outcomes / 46 frames / navigation / save-load / mobile / read-only',flush=True)
+   if not selected:assert len(seen)==53,(len(seen),seen)
+   (OUT/'result.json').write_text(json.dumps(dict(passed=True,fixtures=results,unique_frames=len(seen),checks=[str(len(results))+' completed-outcome fixtures',str(len(seen))+' artwork frames','mixed survival and loss','detained Daram absent','next/previous','mid-scene save/load','motion off','large-text mobile','world/evidence/time unchanged']),ensure_ascii=False,indent=2))
+   print('PASS',len(results),'aftermath outcomes /',len(seen),'frames / navigation / save-load / mobile / read-only',flush=True)
   except Exception as exc:
    print('FAIL',repr(exc),flush=True);await page.screenshot(path=str(OUT/'stop.png'));raise
   finally:await browser.close()

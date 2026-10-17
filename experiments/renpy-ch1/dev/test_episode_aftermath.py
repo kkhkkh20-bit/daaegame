@@ -37,11 +37,21 @@ class EpisodeAftermath(unittest.TestCase):
  def test_soup_counts_and_portrait_presence(self):
   f=select('ep5','soup_kids_dead','ws_kids_alive','bori_adopts');self.assertEqual(ids(f),['soup_empty','bori_shoe']);self.assertFalse(any(p.startswith('kid_') for p in people(f)))
   f=select('ep5','ws_some_alive');self.assertEqual(len([p for p in people(f) if p.startswith('kid_')]),3);self.assertNotIn('kid_dodam',people(f))
-  self.assertEqual(ids(select('ep5','ws_kids_alive','dodam_sick')),['dodam_sick'])
+  self.assertEqual(ids(select('ep5','ws_kids_alive','dodam_sick')),['dodam_sick','teacher_saved'])
   self.assertIn('mom_portrait',ids(select('ep5','ws_kids_alive','mom_reunited','portrait_finished_by_daram')))
   for flag in ('mom_reunited','portrait_finished_by_daram'):
    self.assertNotIn('mom_portrait',ids(select('ep5',flag)))
   self.assertNotIn('mom_portrait',ids(select('ep5','mom_reunited','portrait_finished_by_daram',child='held')))
+ def test_teacher_and_nubi_choices_have_separate_consequences(self):
+  self.assertIn('nubi_alone',ids(select('ep3','nubi_taken')))
+  self.assertIn('nubi_school',ids(select('ep3','wf_kids_school')))
+  self.assertNotIn('resident_nubi',people(select('ep3','nubi_taken')))
+  self.assertIn('teacher_dead_one',ids(select('ep5','ws_some_alive','teacher_dead')))
+  self.assertIn('teacher_dead_four',ids(select('ep5','soup_kids_dead','teacher_dead','teacher_alive')))
+  self.assertNotIn('resident_teacher',people(select('ep5','soup_kids_dead','teacher_dead','teacher_alive')))
+  self.assertIn('teacher_cart',ids(select('ep5','teacher_on_cart')))
+  self.assertIn('kkomi_soup',ids(select('ep5','soup_kids_dead','kkomi_dead_soup')))
+  self.assertIn('순찰대',select('ep2','bami_safe','bami_watched')[0]['caption'])
  def test_cart_stopping_does_not_erase_badook_death(self):
   f=select('ep6','cart_stopped','badook_dead','cv_badook_safe');self.assertEqual(ids(f),['guldol_free','badook_dead']);self.assertNotIn('resident_badook',people(f))
   self.assertEqual(ids(select('ep6','cart_stopped','badook_hurt')),['guldol_free','badook_hurt'])
@@ -51,7 +61,7 @@ class EpisodeAftermath(unittest.TestCase):
   self.assertNotIn('pandol_family',ids(select('ep6','cv_family_only','ws_cart_truth','pandol_dead')))
   self.assertEqual(ids(select('ep6','cv_skipped','cart_left')),['cart_skipped'])
  def test_selection_is_read_only_and_all_frames_are_reachable(self):
-  fixtures=[('ep1',[]),('ep1',['piko_dead','tok_detained','siluk_handed','madam_store_opened']),('ep1',['siluk_debt_cleared']),('ep2',['kd_shoes_only','bami_taken','kd_named']),('ep2',['kd_farewell_seen','bami_safe']),('ep2',['kd_seori']),('ep2_clinic',[]),('ep3',[]),('ep3',['kkomi_dead','bori_adopts','nubi_kids_with_nabi']),('ep3',['wf_missed','bori_taken']),('ep4',['chorong_dead','ttadak_dead','nt_ttadak_proven','owl_hat']),('ep4',['nt_chorong_safe','nt_ttadak_half']),('ep4',['nt_ttadak_safe']),('ep4',['nt_chorong_half']),('ep5',['soup_kids_dead']),('ep5',['ws_some_alive']),('ep5',['ws_kids_alive','bori_adopts','mom_reunited','portrait_finished_by_daram']),('ep5',['ws_kids_alive','dodam_sick']),('ep6',['cart_stopped','cv_badook_safe','cv_granny_tomorrow']),('ep6',['cart_left','badook_dead']),('ep6',['cart_stopped','badook_hurt']),('ep6',['cart_stopped','neoul_gone']),('ep6',['cv_family_only','cart_left','ws_cart_truth']),('ep6',['cv_skipped','cart_left'])]
+  fixtures=[('ep1',[]),('ep1',['piko_dead','tok_detained','siluk_handed','madam_store_opened']),('ep1',['siluk_debt_cleared']),('ep2',['kd_shoes_only','bami_taken','kd_named']),('ep2',['kd_farewell_seen','bami_safe']),('ep2',['kd_seori']),('ep2_clinic',[]),('ep3',[]),('ep3',['kkomi_dead','bori_adopts','nubi_kids_with_nabi']),('ep3',['wf_missed','bori_taken']),('ep3',['nubi_taken']),('ep3',['wf_kids_school']),('ep4',['chorong_dead','ttadak_dead','nt_ttadak_proven','owl_hat']),('ep4',['nt_chorong_safe','nt_ttadak_half']),('ep4',['nt_ttadak_safe']),('ep4',['nt_chorong_half']),('ep5',['soup_kids_dead']),('ep5',['ws_some_alive']),('ep5',['soup_kids_dead','teacher_dead','kkomi_dead_soup']),('ep5',['ws_some_alive','teacher_dead']),('ep5',['ws_some_alive','teacher_on_cart']),('ep5',['ws_some_alive','teacher_alive']),('ep5',['ws_kids_alive','bori_adopts','mom_reunited','portrait_finished_by_daram']),('ep5',['ws_kids_alive','dodam_sick']),('ep6',['cart_stopped','cv_badook_safe','cv_granny_tomorrow']),('ep6',['cart_left','badook_dead']),('ep6',['cart_stopped','badook_hurt']),('ep6',['cart_stopped','neoul_gone']),('ep6',['cv_family_only','cart_left','ws_cart_truth']),('ep6',['cv_skipped','cart_left'])]
   seen=set();original=copy.deepcopy(DATA)
   for child in ('with_dad','held','rescued'):
    for ep,flags in fixtures:
@@ -63,6 +73,9 @@ class EpisodeAftermath(unittest.TestCase):
   approved=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']
   for key,f in DATA.items():
    self.assertLessEqual(len(f['caption']),98,key);self.assertNotIn('dad',f['subjects'])
+   self.assertFalse(set(f.get('deceased_subjects',[])) & set(f['subjects']),key)
+   if 'cut' in f:
+    cuts=json.loads((ROOT/'game/assets/room13-special-scenes.json').read_text())['scenes'];self.assertIn(f['cut'],cuts,key)
    for a in f.get('actors',[]):
     self.assertIn(a['person'],approved,key)
     p=approved[a['person']]['profiles']['760'];self.assertTrue((ROOT/'game'/p['frames']['neutral']['file']).exists())

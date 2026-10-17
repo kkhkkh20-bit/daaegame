@@ -40,7 +40,9 @@ init 175 python:
             else:keys.append("kkomi_saved" if child else "kkomi_alone")
             if has("bori_taken") and not has("wf_bori_freed"):keys.append("bori_taken")
             elif has("bori_adopts") and not has("soup_kids_dead"):keys.append("bori_adopts")
-            if has("nubi_kids_with_nabi"):keys.append("nabi_children")
+            if has("nubi_taken") or has("wf_nubi_kids_alone"):keys.append("nubi_alone")
+            elif has("nubi_kids_with_nabi"):keys.append("nabi_children")
+            elif has("wf_kids_school"):keys.append("nubi_school")
         elif episode=="ep4":
             if has("chorong_dead"):keys.append("chorong_dead")
             elif has("nt_chorong_half"):keys.append("chorong_hurt")
@@ -56,6 +58,12 @@ init 175 python:
             elif has("ws_kids_alive"):
                 keys.append("dodam_sick" if has("dodam_sick") else "soup_alive")
                 if has("bori_adopts"):keys.append("bori_four")
+            if has("kkomi_dead_soup"):keys.append("kkomi_soup")
+            if has("teacher_dead"):
+                if has("soup_kids_dead"):keys.append("teacher_dead_four")
+                elif has("ws_some_alive") or has("dodam_dead"):keys.append("teacher_dead_one")
+            elif has("teacher_on_cart"):keys.append("teacher_cart")
+            elif has("teacher_alive") or (has("ws_kids_alive") and not (has("soup_kids_dead") or has("dodam_dead"))):keys.append("teacher_saved")
             if has("portrait_finished_by_daram") and has("mom_reunited") and child:keys.append("mom_portrait")
         elif episode=="ep6":
             if has("neoul_gone"):keys.append("cart_unrest")
@@ -77,6 +85,14 @@ init 175 python:
                 frame["caption"]="무쇠 할아버지는 솜이의 이름을 손바닥에 적어 두었다. 강가의 작별 뒤에도 그 이름이 남았다."
             if key=="chorong_dead" and not has("nt_lit_lamps"):
                 frame["caption"]="초롱은 돌아오지 못했다. 그가 켜던 등과, 그를 기다리던 어머니가 남았다."
+            if key=="bami_safe" and has("bami_watched"):
+                frame["caption"]="밤이는 처마로 돌아왔다. 친구는 생겼지만, 순찰대는 앞으로도 눈여겨보겠다고 했다."
+            if key=="nubi_alone" and has("neoul_exposed"):
+                frame["caption"]="너울의 약속을 밝혔지만, 누비는 끌려갔다. 아이 셋은 엄마 없이 빨래터로 돌아갔다."
+            elif key=="nubi_alone" and has("neoul_half"):
+                frame["caption"]="누비의 말뿐이라는 반박이 남았다. 누비는 끌려갔고, 아이 셋은 엄마 없이 돌아갔다."
+            if key=="teacher_saved" and has("ws_kids_alive") and not (has("soup_kids_dead") or has("dodam_dead")):
+                frame["caption"]="선생님은 아이들과 교실에 남았다. 내일도 같이 먹자는 노래가 이어질 수 있었다."
             result.append(frame)
         return result
 

@@ -754,6 +754,123 @@
       "actors": [],
       "source": "nt:night8:half",
       "cut": "chorong_injured_alive"
+    },
+    "nubi_alone": {
+      "episode": "ep3",
+      "background": "ep_laundry",
+      "heading": "엄마 없는 빨래터",
+      "caption": "누비가 끌려갔다. 아이 셋은 엄마 없이 빈 빨래터로 돌아갔다.",
+      "subjects": [
+        "kid_nubi1",
+        "kid_nubi2"
+      ],
+      "actors": [
+        {
+          "person": "kid_nubi1",
+          "emotion": "neutral"
+        },
+        {
+          "person": "kid_nubi2",
+          "emotion": "neutral"
+        }
+      ],
+      "source": "wf:decision:hand"
+    },
+    "nubi_school": {
+      "episode": "ep3",
+      "background": "r13_school",
+      "heading": "학교에서 나는 겨울",
+      "caption": "누비는 집으로 돌아갔다. 그 집 아이들도 학교에서 겨울을 나게 되었다.",
+      "subjects": [
+        "resident_teacher",
+        "kid_nubi1",
+        "kid_nubi2"
+      ],
+      "actors": [
+        {
+          "person": "resident_teacher",
+          "emotion": "neutral"
+        },
+        {
+          "person": "kid_nubi1",
+          "emotion": "neutral"
+        },
+        {
+          "person": "kid_nubi2",
+          "emotion": "neutral"
+        }
+      ],
+      "source": "wf:decision:shelter"
+    },
+    "teacher_saved": {
+      "episode": "ep5",
+      "background": "r13_school",
+      "heading": "아직 배울 글자",
+      "caption": "새미에게는 아직 배울 글자가 남았다. 선생님도 교실에 남았다.",
+      "subjects": [
+        "resident_teacher",
+        "kid_saemi"
+      ],
+      "actors": [
+        {
+          "person": "resident_teacher",
+          "emotion": "anxious"
+        },
+        {
+          "person": "kid_saemi",
+          "emotion": "anxious"
+        }
+      ],
+      "source": "ws:decision:saved"
+    },
+    "teacher_cart": {
+      "episode": "ep5",
+      "background": "ep_holding_night",
+      "heading": "수레를 기다리는 선생님",
+      "caption": "선생님은 너울에게 넘겨졌다. 수레에 태워질 사람으로 남았다.",
+      "subjects": [],
+      "actors": [],
+      "source": "ws:decision:hand"
+    },
+    "teacher_dead_one": {
+      "episode": "ep5",
+      "background": "r13_school",
+      "cut": "teacher_blanket_dodam_only",
+      "actors": [],
+      "subjects": [],
+      "deceased_subjects": [
+        "resident_teacher",
+        "kid_dodam"
+      ],
+      "heading": "출석부의 동그라미",
+      "caption": "선생님은 도담 곁에서 돌아오지 않았다. 출석부에는 도담의 이름에만 동그라미가 있었다.",
+      "source": "ws:decision:gone_one"
+    },
+    "teacher_dead_four": {
+      "episode": "ep5",
+      "background": "r13_school",
+      "cut": "teacher_blanket_four_children",
+      "actors": [],
+      "subjects": [],
+      "deceased_subjects": [
+        "resident_teacher",
+        "kid_dodam",
+        "kid_kkam",
+        "kid_mong",
+        "kid_bang"
+      ],
+      "heading": "부르지 않은 이름",
+      "caption": "선생님은 아이들 곁에서 돌아오지 않았다. 출석부에는 새미의 이름에만 동그라미가 없었다.",
+      "source": "ws:decision:gone"
+    },
+    "kkomi_soup": {
+      "episode": "ep5",
+      "background": "ep_hideout",
+      "heading": "두 번째로 잃은 대장",
+      "caption": "불에서 구했던 꼬미도 대피소에서 돌아오지 못했다. 새 아지트의 약속이 남았다.",
+      "subjects": [],
+      "actors": [],
+      "source": "ws:soup:all"
     }
   }
 }
