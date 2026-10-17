@@ -281,7 +281,7 @@ init 59 python:
             ("seryeon","post"):"chair_read" if period==1 else "action_1",
             # 0.18.63: by day Karo wraps the cracked axle (room13-content activity); evening tea stays.
             ("karo","gate"):"action_2" if period==2 else ("living_axlewrap" if "living_axlewrap" in poses else "action_1"),
-            ("doto","square"):"world_bulletin_back",
+            ("doto","square"):"action_1",
             ("doto","hall"):"action_2" if period==2 else "action_1",
             ("mom","greenhouse"):"action_2" if period==2 else "action_1",
             ("nabi","dining"):"action_1" if period==0 else "action_2",
@@ -290,7 +290,7 @@ init 59 python:
             ("neoul","gate"):"action_1",
             ("neoul","facility"):"action_2" if period==2 else "action_1",
             ("bami","hall"):"action_2" if period==2 else "action_1",
-            ("bami","inn"):"action_2" if period==2 else "action_1",
+            ("bami","inn"):"action_2" if r13_has("bami_protected") or period==2 else "action_1",
         }.get((person,location))
         if desired in poses:return desired
         for key in ("living","activity"):
@@ -419,7 +419,7 @@ init 59 python:
             rect=[left,top,max(1,right-left),max(1,bottom-top)]
             # Reserve furniture users and hanging actors first. Everyone else
             # can move through depth slots instead of disappearing on overlap.
-            pinned=(person in layout.get("pinned",[]) or bool(work) or contact in ("hanging","background_bench","counter_front") or (person=="bami" and location!="inn") or person=="guard" or (person=="karo" and location=="gate") or location=="dining")
+            pinned=(person in layout.get("pinned",[]) or bool(work) or contact in ("hanging","background_bench","counter_front") or (person=="bami" and location!="inn") or person=="guard" or (person=="karo" and location=="gate"))
             original_pose=pose
             selected_slot=None
             def make_candidate(slot):

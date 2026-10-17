@@ -1883,13 +1883,13 @@
   },
   "dining": {
     "width": 2160,
-    "initial_x": 440,
+    "initial_x": 0,
     "periods": [
       "morning",
       "afternoon",
       "evening"
     ],
-    "note": "0.18.59 wide map, all three daylight periods. Evening holds up to three residents (nabi, owl grandfather, Tok; days 1-7 while he is alive): a third floor spot [135,690,265] in front of the log pile was added in this release (the art gave two) and checked with hit maps; the investigation objects stay clickable. Uniform 2172x724 -> 2160x720.",
+    "note": "0.19.23: six distinct floor positions in the fireplace aisle; front and back depth rows. Residents use the shared collision-aware slot allocator. Nabi keeps her carried-tray pose; no standing sprite is forced into a chair. Existing alpha/furniture hit masks remain authoritative.",
     "files": {
       "morning": "assets/room13-pixel-wide-dining-morning.webp",
       "afternoon": "assets/room13-pixel-wide-dining-afternoon.webp",
@@ -1962,6 +1962,21 @@
         135,
         690,
         265
+      ],
+      [
+        170,
+        535,
+        190
+      ],
+      [
+        385,
+        550,
+        205
+      ],
+      [
+        600,
+        550,
+        205
       ]
     ],
     "slots": [
@@ -1969,24 +1984,42 @@
         325,
         655,
         260,
-        "waiting"
+        "floor"
       ],
       [
         540,
         680,
         260,
-        "waiting"
+        "floor"
       ],
       [
         135,
         690,
         265,
-        "waiting"
+        "floor"
+      ],
+      [
+        170,
+        535,
+        190,
+        "floor"
+      ],
+      [
+        385,
+        550,
+        205,
+        "floor"
+      ],
+      [
+        600,
+        550,
+        205,
+        "floor"
       ]
     ],
     "occlusion": [],
     "ignore_legacy_positions": true,
-    "capacity": 2,
+    "capacity": 6,
     "critical": [
       [
         731,
@@ -2002,8 +2035,8 @@
       ]
     ],
     "perspective": [
-      0.115,
-      183.8
+      0.48,
+      -61.0
     ],
     "slot_actions": {
       "resident_owlgp": "living_notebook"

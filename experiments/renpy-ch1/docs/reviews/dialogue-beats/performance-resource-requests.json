@@ -169,13 +169,17 @@
       "experienced_affect": "온기에 잠시 안도",
       "visible_performance": "힘이 조금 풀리는 작은 표정",
       "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
-      "resource_brief": "joy는 현재 호환 분류일 뿐 활짝 웃는 기쁨으로 승인한 것이 아님. 다음 자기방어 anxious와 자연스럽게 이어지는 안도 표정 요청.",
+      "resource_brief": "Approved context-specific expression connected only to the listed exact spoken context; dialogue text unchanged.",
       "requested_resource_kinds": [
         "context_specific_expression"
       ],
-      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
-      "runtime_assets_active": false,
-      "dialogue_text_change": false
+      "status": "APPROVED_CONTEXT_ART",
+      "runtime_assets_active": true,
+      "dialogue_text_change": false,
+      "approved_context_art": [
+        "bami:small_relief"
+      ],
+      "source_commit": "d7a55faa91ca85b4a0665d204187ffdc76367daf"
     },
     {
       "id": "chorong-delivery-relief",
@@ -193,13 +197,17 @@
       "experienced_affect": "전달을 마친 안도와 긴장 잔존",
       "visible_performance": "작게 숨 돌림",
       "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
-      "resource_brief": "뒤에 혼자 무섭다고 말한다. 환호가 아닌 긴장 남은 안도 필요.",
+      "resource_brief": "Approved context-specific expression connected only to the listed exact spoken context; dialogue text unchanged.",
       "requested_resource_kinds": [
         "context_specific_expression"
       ],
-      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
-      "runtime_assets_active": false,
-      "dialogue_text_change": false
+      "status": "APPROVED_CONTEXT_ART",
+      "runtime_assets_active": true,
+      "dialogue_text_change": false,
+      "approved_context_art": [
+        "resident_lamplighter:guarded_relief"
+      ],
+      "source_commit": "d7a55faa91ca85b4a0665d204187ffdc76367daf"
     },
     {
       "id": "daram-grief",
@@ -259,13 +267,17 @@
       "experienced_affect": "집의 상실과 지킨 표시에 대한 자부심",
       "visible_performance": "울음을 참으며 버팀",
       "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
-      "resource_brief": "anxious에 합치지 말고 상실 속 버티는 표정 요청.",
+      "resource_brief": "Approved context-specific expression connected only to the listed exact spoken context; dialogue text unchanged.",
       "requested_resource_kinds": [
         "context_specific_expression"
       ],
-      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
-      "runtime_assets_active": false,
-      "dialogue_text_change": false
+      "status": "APPROVED_CONTEXT_ART",
+      "runtime_assets_active": true,
+      "dialogue_text_change": false,
+      "approved_context_art": [
+        "kid_kkomi:resilient_pride"
+      ],
+      "source_commit": "d7a55faa91ca85b4a0665d204187ffdc76367daf"
     },
     {
       "id": "nero-survivor-remorse",
@@ -649,7 +661,15 @@
       ],
       "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
       "runtime_assets_active": false,
-      "dialogue_text_change": false
+      "dialogue_text_change": false,
+      "partially_approved_context_art": [
+        "resident_tosil:empathetic_confusion"
+      ],
+      "approved_target_identity": "cv:altar:granny",
+      "remaining_targets": [
+        "cv:altar:book",
+        "cv:altar:cart"
+      ]
     }
   ],
   "art_style_contract": {

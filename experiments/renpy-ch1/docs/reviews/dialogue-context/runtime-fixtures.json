@@ -1,0 +1,183 @@
+{
+  "dining": [
+    {
+      "person": "resident_dalgeurak",
+      "pose": "neutral",
+      "x": 111,
+      "y": 345,
+      "width": 104,
+      "height": 190,
+      "rect": [
+        111,
+        345,
+        104,
+        190
+      ],
+      "depth": 535,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        170,
+        535,
+        190,
+        "floor"
+      ],
+      "activity": "식당 구석에서 장부에 오늘 판 것을 적는다."
+    },
+    {
+      "person": "resident_mulgyeol",
+      "pose": "neutral",
+      "x": 553,
+      "y": 345,
+      "width": 114,
+      "height": 205,
+      "rect": [
+        553,
+        345,
+        114,
+        205
+      ],
+      "depth": 550,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        600,
+        550,
+        205,
+        "floor"
+      ],
+      "activity": "식당 난로 앞에서 젖은 장갑을 말린다."
+    },
+    {
+      "person": "resident_hyeoni",
+      "pose": "neutral",
+      "x": 296,
+      "y": 345,
+      "width": 132,
+      "height": 205,
+      "rect": [
+        296,
+        345,
+        132,
+        205
+      ],
+      "depth": 550,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        385,
+        550,
+        205,
+        "floor"
+      ],
+      "activity": "현을 하나씩 튕기며 음을 맞춘다."
+    },
+    {
+      "person": "nabi",
+      "pose": "action_2",
+      "x": 220,
+      "y": 428,
+      "width": 207,
+      "height": 226,
+      "rect": [
+        220,
+        428,
+        207,
+        226
+      ],
+      "depth": 654,
+      "occlusion": [],
+      "contact": "carrying_tray",
+      "slot": [
+        325,
+        655,
+        260,
+        "floor"
+      ],
+      "activity": "나비는 그릇을 닦고 아직 안 쓴 것 옆에 놓았다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "living_notebook",
+      "x": 445,
+      "y": 477,
+      "width": 126,
+      "height": 202,
+      "rect": [
+        445,
+        477,
+        126,
+        202
+      ],
+      "depth": 679,
+      "occlusion": [],
+      "contact": "portable_stool",
+      "slot": [
+        540,
+        680,
+        260,
+        "floor"
+      ],
+      "activity": "부엉이 할아버지는 풀린 수첩을 다시 묶었다. 찬 바람에 손을 비비며 하던 일을 천천히 정리했다."
+    },
+    {
+      "person": "resident_tok",
+      "pose": "neutral",
+      "x": 38,
+      "y": 427,
+      "width": 192,
+      "height": 265,
+      "rect": [
+        38,
+        427,
+        192,
+        265
+      ],
+      "depth": 692,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        135,
+        690,
+        265,
+        "floor"
+      ],
+      "activity": "톡은 핀을 그릇에 놓고 집게 끝을 닦았다. 해가 진 뒤라 손놀림이 한층 느려졌다."
+    }
+  ],
+  "contexts": [
+    {
+      "person": "bami",
+      "talk": "small_relief",
+      "react": null,
+      "settled": true,
+      "duration": 0.35,
+      "context_key": "bami:small_relief"
+    },
+    {
+      "person": "resident_lamplighter",
+      "talk": "guarded_relief",
+      "react": null,
+      "settled": true,
+      "duration": 0.35,
+      "context_key": "resident_lamplighter:guarded_relief"
+    },
+    {
+      "person": "kid_kkomi",
+      "talk": "resilient_pride",
+      "react": null,
+      "settled": true,
+      "duration": 0.35,
+      "context_key": "kid_kkomi:resilient_pride"
+    },
+    {
+      "person": "resident_tosil",
+      "talk": "empathetic_confusion",
+      "react": null,
+      "settled": true,
+      "duration": 0.35,
+      "context_key": "resident_tosil:empathetic_confusion"
+    }
+  ],
+  "status": "passed"
+}

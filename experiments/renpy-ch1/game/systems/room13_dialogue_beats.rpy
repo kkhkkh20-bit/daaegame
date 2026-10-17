@@ -97,8 +97,20 @@ init 170 python:
         profile=r13_dialogue_source_profile(person,pose,height)
         if not profile:return None
         frame=profile["frames"]["neutral"]
-        if not renpy.loadable(frame["file"]):return None
-        return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+        if renpy.loadable(frame["file"]):
+            return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+        # An approved character must never silently revert to the old pixel design.
+        # A second shipped size is the same approved neutral, with its whole canvas scaled.
+        entry=R13_DIALOGUE_TALK_ART["people"][person]
+        for alternate in sorted(entry["profiles"],key=lambda h:abs(int(h)-int(height))):
+            other=entry["profiles"][alternate]
+            fallback=other["frames"]["neutral"]
+            if renpy.loadable(fallback["file"]):
+                art=Fixed(Transform(fallback["file"],xpos=fallback["offset"][0],ypos=fallback["offset"][1],nearest=False,subpixel=True),xysize=tuple(other["canvas"]))
+                renpy.log("Approved dialogue size fallback: %s %s -> %s" % (person,height,alternate))
+                return Transform(art,xysize=tuple(profile["canvas"]),nearest=False,subpixel=True)
+        renpy.log("Approved dialogue art unavailable: %s %s" % (person,frame["file"]))
+        return Fixed(Text("인물 그림을 불러오지 못했습니다.\n연결을 확인한 뒤 게임을 다시 열어 주세요.",size=22,color="#fff4df",xalign=.5,ypos=100),xysize=tuple(profile["canvas"]))
 
     def r13_dialogue_beat_art(person,height):
         if not r13_dialogue_beat_ready(person):return None

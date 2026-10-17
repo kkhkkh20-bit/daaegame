@@ -22,10 +22,16 @@ class ActorIntent(unittest.TestCase):
   for request in data['requests']:
    self.assertFalse(request['dialogue_text_change'])
    if request['runtime_assets_active']:
-    self.assertEqual(request['status'],'APPROVED_SCENE_CUT')
+    if request['status']=='APPROVED_CONTEXT_ART':
+     context=json.loads((ROOT/'game/assets/room13-dialogue-context-art.json').read_text())
+     self.assertTrue(set(request['approved_context_art'])<=set(context['entries']))
+     self.assertEqual(request['source_commit'],context['source_commit'])
+    else:
+     self.assertEqual(request['status'],'APPROVED_SCENE_CUT')
     scenes=json.loads((ROOT/'game/assets/room13-special-scenes.json').read_text())
-    self.assertTrue(set(request['approved_scene_cuts'])<=set(scenes['scenes']))
-    self.assertEqual(request['source_commit'],scenes['source_commit'])
+    if request['status']=='APPROVED_SCENE_CUT':
+     self.assertTrue(set(request['approved_scene_cuts'])<=set(scenes['scenes']))
+     self.assertEqual(request['source_commit'],scenes['source_commit'])
    else:self.assertEqual(request['status'],'REQUESTED_NOT_PRODUCED_NOT_APPROVED')
    for field in ('experienced_affect','visible_performance','physical_state'):self.assertTrue(request[field])
    for t in request['targets']:
