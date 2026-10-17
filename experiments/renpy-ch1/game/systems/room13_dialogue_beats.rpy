@@ -66,7 +66,7 @@ init 170 python:
             for key in (plan["talk"],plan["react"]):
                 if key and key not in self.frames:
                     frame=profile["frames"][key]
-                    self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+                    self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
         def visit(self):
             return list(self.frames.values())
         def render(self,width,height,st,at):
@@ -84,29 +84,46 @@ init 170 python:
                 renpy.redraw(self,min(.05,max(.001,plan["duration"]-elapsed)))
             return renpy.render(self.frames[key],width,height,st,at)
 
+    R13_DIALOGUE_POSE_SOURCE = json.load(renpy.file("assets/room13-dialogue-pose-source-art.json"))
+
+    def r13_dialogue_fit_profile(profiles,height):
+        exact=profiles.get(str(int(height)))
+        if exact:return exact
+        if not profiles:return None
+        base=min(profiles,key=lambda h:abs(int(h)-int(height)))
+        ratio=float(height)/int(base);profile=profiles[base]
+        frames={key:dict(frame,offset=[int(round(v*ratio)) for v in frame["offset"]],scale=frame.get("scale",1.0)*ratio) for key,frame in profile["frames"].items()}
+        return dict(canvas=[max(1,int(round(v*ratio))) for v in profile["canvas"]],frames=frames)
+
     def r13_dialogue_source_profile(person,pose,height):
         # An unreviewed line uses the approved neutral, never an older design.
-        # Meetings and authored actions retain their explicitly separate artwork.
-        if getattr(store,"r13_meeting_active",False) or getattr(store,"r13_thought_active",False):return None
-        if r13_fullbody_key(pose) not in R13_FULLBODY_PLAIN:return None
+        # Meeting close-ups use approved sources; distant seated ensembles remain separate.
+        if getattr(store,"r13_thought_active",False):return None
+        key=r13_fullbody_key(pose)
+        posed=R13_DIALOGUE_POSE_SOURCE["people"].get(person,{})
+        if key in posed.get("poses",[]):return r13_dialogue_fit_profile(posed["profiles"],height)
+        if key not in R13_FULLBODY_PLAIN:return None
         entry=R13_DIALOGUE_TALK_ART["people"].get(person,{})
         if entry.get("status")!="approved_runtime":return None
-        return entry.get("profiles",{}).get(str(int(height)))
+        return r13_dialogue_fit_profile(entry.get("profiles",{}),height)
 
     def r13_dialogue_source_neutral(person,pose,height):
         profile=r13_dialogue_source_profile(person,pose,height)
         if not profile:return None
-        frame=profile["frames"]["neutral"]
+        emotion=r13_fullbody_emotion(pose) if getattr(store,"r13_meeting_active",False) else "neutral"
+        emotion={"surprise":"surprise_talk","flustered":"anxious"}.get(emotion,emotion)
+        frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):
-            return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+            return Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
         # An approved character must never silently revert to the old pixel design.
         # A second shipped size is the same approved neutral, with its whole canvas scaled.
-        entry=R13_DIALOGUE_TALK_ART["people"][person]
+        posed=R13_DIALOGUE_POSE_SOURCE["people"].get(person,{})
+        entry=posed if r13_fullbody_key(pose) in posed.get("poses",[]) else R13_DIALOGUE_TALK_ART["people"][person]
         for alternate in sorted(entry["profiles"],key=lambda h:abs(int(h)-int(height))):
             other=entry["profiles"][alternate]
             fallback=other["frames"]["neutral"]
             if renpy.loadable(fallback["file"]):
-                art=Fixed(Transform(fallback["file"],xpos=fallback["offset"][0],ypos=fallback["offset"][1],nearest=False,subpixel=True),xysize=tuple(other["canvas"]))
+                art=Fixed(Transform(fallback["file"],xpos=fallback["offset"][0],ypos=fallback["offset"][1],zoom=fallback.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(other["canvas"]))
                 renpy.log("Approved dialogue size fallback: %s %s -> %s" % (person,height,alternate))
                 return Transform(art,xysize=tuple(profile["canvas"]),nearest=False,subpixel=True)
         renpy.log("Approved dialogue art unavailable: %s %s" % (person,frame["file"]))
@@ -114,7 +131,7 @@ init 170 python:
 
     def r13_dialogue_beat_art(person,height):
         if not r13_dialogue_beat_ready(person):return None
-        profile=R13_DIALOGUE_TALK_ART["people"][person]["profiles"].get(str(int(height)))
+        profile=r13_dialogue_fit_profile(R13_DIALOGUE_TALK_ART["people"][person]["profiles"],height)
         return R13DialogueBeat(store.r13_dialogue_beat,profile) if profile else None
 
     config.after_load_callbacks.append(r13_dialogue_beat_after_load)

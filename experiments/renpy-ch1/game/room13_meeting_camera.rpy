@@ -76,7 +76,7 @@ init 175 python:
                 art=r13_fullbody_close_art(person,pose,base)
                 if art is None:art=Transform(r13_meeting_actor(person,self.focus,640),ysize=base,fit="contain",nearest=True)
                 gain=(.065 if self.beat in ("interrupt","explain","shaken","gasp","cornered") else .0) if person==self.focus else -.05-self.shade*.35
-                self.art[person]=Transform(art,nearest=True,subpixel=True,matrixcolor=BrightnessMatrix(gain))
+                self.art[person]=Transform(art,nearest=not bool(r13_dialogue_source_profile(person,pose,base)),subpixel=True,matrixcolor=BrightnessMatrix(gain))
                 self.offsets[person]=(r13_close_x(person,pose,base)-640,r13_fullbody_close_y(person,base,96,pose))
             self.surface=R13MeetingSurface(self.session,0,len(self.people),self.shade) if self.kind in ("round","stone") else None
             self.foreground=AlphaMask(self.surface,R13MeetingForeground(self.session,True)) if self.surface is not None else None

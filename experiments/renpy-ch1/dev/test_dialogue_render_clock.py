@@ -21,9 +21,13 @@ class RenderClock(unittest.TestCase):
   from check_dialogue_bindings import load_functions
   env=load_functions(Path(__file__).resolve().parents[1]/'game/room13_fullbody_dialogue.rpy')
   def forbidden(*args):raise AssertionError('stale dialogue plan replaced separate authored art')
-  env.update(r13_dialogue_source_profile=lambda *args:None,r13_dialogue_beat_art=forbidden,r13_dialogue_source_neutral=lambda *args:None,r13_fullbody_spec=lambda *args:None)
+  env.update(R13_FULLBODY_PLAIN={"neutral","thinking"},store=SimpleNamespace(r13_meeting_active=False),r13_dialogue_source_profile=lambda *args:None,r13_dialogue_beat_art=forbidden,r13_dialogue_source_neutral=lambda *args:None,r13_fullbody_spec=lambda *args:None)
   self.assertIsNone(env['r13_fullbody_close_art']('guard','living_stamp',840))
   env['r13_dialogue_source_profile']=lambda *args: {'frames':{}}
   env['r13_dialogue_beat_art']=lambda *args:'approved dialogue'
   self.assertEqual(env['r13_fullbody_close_art']('guard','neutral',840),'approved dialogue')
+  env['store'].r13_meeting_active=True
+  env['r13_dialogue_beat_art']=forbidden
+  env['r13_dialogue_source_neutral']=lambda *args:'approved meeting'
+  self.assertEqual(env['r13_fullbody_close_art']('guard','neutral',840),'approved meeting')
 if __name__=='__main__':unittest.main()

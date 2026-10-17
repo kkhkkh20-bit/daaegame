@@ -321,7 +321,7 @@ init 55 python:
         visible=who in CAST and who!=vp and (not carriage or who=="daram") and store.r13_camera=="stage"
         if visible:
             arriving=store.r13_motion_person!=who or "r13_visitor" not in renpy.get_showing_tags()
-            actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) or store.r13_current_pose in R13_FULLBODY_NEW else "interview_"+store.dialogue_expression
+            actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) or r13_fullbody_authored_pose(who,store.r13_current_pose) or store.r13_current_pose in R13_FULLBODY_NEW else "interview_"+store.dialogue_expression
             # A new sentence from the same actor must not restart entrance.
             if arriving or previous_pose!=store.r13_current_pose or r13_dialogue_beat_ready(who):
                 pop=carriage and arriving

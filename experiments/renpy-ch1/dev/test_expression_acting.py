@@ -73,7 +73,11 @@ class ExpressionActing(unittest.TestCase):
                 self.assertEqual(entry["pixel"]["cell"], 2)
                 # one scale for every package picture of the character
                 self.assertEqual({m[0] for m in maps}, {entry["pixel"]["u"]}, person)
-            self.assertEqual(entry.get("poses"), BEFORE[person].get("poses"), person)
+            expected=json.loads(json.dumps(BEFORE[person].get("poses")))
+            if person=="resident_ppul":
+                # 0.19.25: same authored pixels/crop, no intermediate close-up grid.
+                expected["kneel_stone"]["mapped_image"]={"native_detail":True,"smooth_source":True}
+            self.assertEqual(entry.get("poses"), expected, person)
 
     def test_whole_screen_pixels_per_cell(self):
         # mirror of r13_fullbody_scale: k screen pixels per 2x2 cell, near the usual size

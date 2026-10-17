@@ -108,7 +108,7 @@ init 59 python:
         if len(packet)>3:pose=packet[3]
         # A missing authored pose is an explicit neutral fallback, never an
         # activity label attached to an unrelated standing sprite.
-        if person in R13_ACTING and pose not in R13_ACTING[person]:pose=expression if expression in R13_ACTING[person] else "neutral"
+        if person in R13_ACTING and pose not in R13_ACTING[person] and not r13_fullbody_authored_pose(person,pose):pose=expression if expression in R13_ACTING[person] else "neutral"
         # Full-body dialogue expression (room13_fullbody_dialogue.rpy): the
         # pose carries the new key; expression keeps an older key for avatars.
         emotion=r13_fullbody_line_emotion(identity,index,person,text,expression,pose)

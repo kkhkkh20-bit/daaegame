@@ -50,6 +50,11 @@ init 58 python:
         if key in R13_FULLBODY_EMOTIONS:return key
         return R13_FULLBODY_LEGACY.get(key,"neutral")
 
+    def r13_fullbody_authored_pose(person,pose):
+        entry=R13_FULLBODY.get("people",{}).get(person,{})
+        posed=entry.get("poses",{}).get(r13_fullbody_key(pose))
+        return bool(R13_FULLBODY_DIALOGUE and posed and posed.get("file") in R13_FULLBODY_FILES)
+
     def r13_fullbody_spec(person,pose="neutral"):
         if not R13_FULLBODY_DIALOGUE:return None
         entry=R13_FULLBODY.get("people",{}).get(person)
@@ -116,7 +121,7 @@ init 58 python:
     R13_FULLBODY_ART_CACHE={}
 
     def r13_fullbody_close_art(person,pose,height,speaking=False,entrance=False):
-        beat=r13_dialogue_beat_art(person,height) if r13_dialogue_source_profile(person,pose,height) else None
+        beat=r13_dialogue_beat_art(person,height) if not getattr(store,"r13_meeting_active",False) and r13_fullbody_key(pose) in R13_FULLBODY_PLAIN and r13_dialogue_source_profile(person,pose,height) else None
         if beat is not None:return beat
         source=r13_dialogue_source_neutral(person,pose,height)
         if source is not None:return source
@@ -135,7 +140,7 @@ init 58 python:
                 art=Crop(tuple(spec["crop"]),r13_blink_art(person,spec["emotion"],spec["file"]))
                 if image.get("native_detail"):
                     # Approved opt-in: preserve source detail without the intermediate 3px grid.
-                    result=Transform(art,size=(max(1,int(round(width))),max(1,int(round(native_height)))),nearest=True,subpixel=False)
+                    result=Transform(art,size=(max(1,int(round(width))),max(1,int(round(native_height)))),nearest=not image.get("smooth_source",False),subpixel=False)
                 else:
                     result=r13_pixel_scale(art,width,native_height,R13_CLOSE_PIXEL_GRID)
             result=r13_idle_art(result,person,pose,None,int(round(width)),int(round(native_height)),contact="dialogue_bust",speaking=speaking)

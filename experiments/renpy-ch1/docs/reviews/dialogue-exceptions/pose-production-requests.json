@@ -1,0 +1,484 @@
+[
+  {
+    "person": "granny",
+    "pose": "withdraw_hand",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-granny-pose-withdraw_hand.webp",
+    "current_sha256": "822c2d39290485a24cc14f7a5e4ac5990838424fd648d2359af9e32738e81453",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-granny-withdraw_hand.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep6_cart.rpy",
+        "line": 371,
+        "text": "call r13_lines([(None,\"할머니가 돌에 손을 얹었다. 금방 뗐다. 데인 것처럼.\",{\"show\":\"granny\",\"pose\":\"withdraw_hand\"}),"
+      }
+    ],
+    "requested_action": "살아 있는 할머니. 데인 것처럼 손을 당기고 손가락을 굽히며 움찔함은 비유. 실제 화상/피/돌 제외.",
+    "identity_reference": "assets/dialogue-source-master/granny/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "mom",
+    "pose": "show_fragments",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-mom-pose-show_fragments.webp",
+    "current_sha256": "7a8ea41dc2c61e2b1031ddae2aac4ab37bb4c6880087dfe314aff50540e8fc39",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-mom-show_fragments.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep5_soup.rpy",
+        "line": 313,
+        "text": "(\"mom\",\"이 조각 셋을 한데 모아 볼게. 잘 봐.\",{\"pose\":\"show_fragments\"}),"
+      }
+    ],
+    "requested_action": "살아 있는 엄마. 양손바닥에 초록 조각 정확히 세 개. 선반/관/굴돌 제외.",
+    "identity_reference": "assets/dialogue-source-master/mom/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "resident_badook",
+    "pose": "block_cart",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-resident_badook-pose-block_cart.webp",
+    "current_sha256": "7417dc69c7777b0a795b793ec9aa8865695375abb295a4eba19fe53a95a65fab",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-resident_badook-block_cart.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep6_cart.rpy",
+        "line": 258,
+        "text": "(None,\"수레 앞에, 바둑이가 서 있었다.\",{\"show\":\"resident_badook\",\"pose\":\"block_cart\"}),"
+      },
+      {
+        "file": "game/systems/room13_ep6_cart.rpy",
+        "line": 259,
+        "text": "(\"resident_badook\",\"못 갑니다. 명령서를 봤습니다. 이 수레는 보호소에 안 갑니다.\",{\"pose\":\"block_cart\"})],\"cv:night:open\", binding_route=\"dynamic:454\")"
+      }
+    ],
+    "requested_action": "살아 있고 다치지 않은 바둑. 발을 벌리고 양팔과 손바닥을 앞으로 펴 길을 막음. 수레 잡는 자세/수레/횃불/다른 인물 제외.",
+    "identity_reference": "assets/dialogue-source-master/resident_badook/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "resident_ppul",
+    "pose": "kneel_stone",
+    "status": "existing_source_no_grid_trial",
+    "current_file": "assets/room13-fullbody-resident_ppul-pose-kneel_stone.webp",
+    "current_sha256": "ef99f5a6dfbc44ba8d707830f5d1e355c2835199a658b4674b2ef212ef67ff04",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-resident_ppul-kneel_stone.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep6_cart.rpy",
+        "line": 382,
+        "text": "(\"resident_ppul\",\"손을 얹고 내려왔으면 됐다니. 나는 그 애를 두고 내려왔소.\",{\"pose\":\"kneel_stone\"})]+"
+      }
+    ],
+    "requested_action": "살아 있는 뿔. 무릎 꿇고 고개를 숙여 슬퍼함, 손은 무릎 앞. 돌/지팡이 없음. 기존 비교적 매끄러운 원본에서 추가 3px 격자 제거 우선; 신규 제작 보류.",
+    "identity_reference": "assets/dialogue-source-master/resident_ppul/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "existing_source_trial"
+  },
+  {
+    "person": "resident_teacher",
+    "pose": "write_attendance",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-role-resident_teacher-batch-write_attendance-v1.webp",
+    "current_sha256": "3d398997c95aa4ceee607c241b0c9ec8e488798be816c1196b14c00b7a513190",
+    "current_size": [
+      1005,
+      1566
+    ],
+    "source_candidates": [
+      "art/incoming/reviewed-batches-20261017/resident_teacher/dialogue_pose-write_attendance.png",
+      "art/ep-art-20261016/originals/fullbody-resident_teacher-write_attendance.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep_story.rpy",
+        "line": 46,
+        "text": "(\"resident_teacher\",\"출석을 이제 아이들이 서로 불러요. 제가 부르면…… 제가 세는 숫자가 되더라고요.\",{\"pose\":\"write_attendance\"}),"
+      },
+      {
+        "file": "game/systems/room13_ep5_soup.rpy",
+        "line": 329,
+        "text": "call r13_lines([(\"resident_teacher\",\"깜이, 몽이, 방울, 도담, 새미.\"+(\" 꼬미.\" if r13_has(\"wf_kkomi_alive\") else \"\")+\" 하나도 안 틀렸지요.\",{\"pose\":\"write_attendance\"}),"
+      }
+    ],
+    "requested_action": "살아 있는 선생님. 서서 열린 출석부와 펜을 들고 책/아이들을 봄. 기존 지팡이 포함, 책상 제외.",
+    "identity_reference": "assets/dialogue-source-master/resident_teacher/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": true,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "resident_teacher",
+    "pose": "collapse_attendance",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-role-resident_teacher-batch-collapse_attendance-v1.webp",
+    "current_sha256": "6d3e7a85e3151fb68310ce7ed46f7978105f27ed50b1f657545efe91780311a4",
+    "current_size": [
+      1004,
+      1566
+    ],
+    "source_candidates": [
+      "art/incoming/reviewed-batches-20261017/resident_teacher/dialogue_pose-collapse_attendance-v2.png",
+      "art/ep-art-20261016/originals/fullbody-resident_teacher-collapse_attendance.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep6_cart.rpy",
+        "line": 255,
+        "text": "([(None,\"사자 선생님이 출석부를 품에 안고 앉아 있었다.\",{\"show\":\"resident_teacher\",\"pose\":\"collapse_attendance\"})] if r13_has(\"teacher_on_cart\") else [])+"
+      }
+    ],
+    "requested_action": "살아 있는 선생님. 낮게 앉아 닫힌 출석부를 안고 고개와 어깨를 떨굼. 기존 지팡이 포함. 수레/의자/상처/피/죽음 표현 금지; 누운 시신 아님.",
+    "identity_reference": "assets/dialogue-source-master/resident_teacher/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": true,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "kid_kkomi",
+    "pose": "door_peek",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-kid_kkomi-pose-door_peek.webp",
+    "current_sha256": "ee29cf69d6db7987e060123d496eeab694423e113481088843c984e07787ec1d",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-kid_kkomi-door_peek.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep3_woodfire.rpy",
+        "line": 221,
+        "text": "(\"kid_kkomi\",\"누구야! ……나비 누나 그릇이네. 누나 심부름이야?\",{\"pose\":\"door_peek\"}),"
+      }
+    ],
+    "requested_action": "살아 있고 다치지 않은 꼬미. 몸과 머리를 옆으로 기울여 조심스럽게 누구야! 손은 가슴 가까이. 원본과 코드에 문틀이 없으므로 문/문틀 추가 금지.",
+    "identity_reference": "assets/dialogue-source-master/kid_kkomi/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "kid_kkomi",
+    "pose": "hideout_proud",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-kid_kkomi-pose-hideout_proud.webp",
+    "current_sha256": "4582febf874b29f98c8c6721f770bf26dc7f633aeb35991c72da3f218063f4f9",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-kid_kkomi-hideout_proud.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep3_woodfire.rpy",
+        "line": 225,
+        "text": "(\"kid_kkomi\",\"여긴 비밀 아지트야. 【여긴 우리만 아는 데야.】 어른들은 몰라.\",{\"pose\":\"hideout_proud\"}),"
+      }
+    ],
+    "requested_action": "팔을 벌려 자랑스럽게 아지트를 소개. 목재/담요/램프 등 배경 제외.",
+    "identity_reference": "assets/dialogue-source-master/kid_kkomi/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "kid_bang",
+    "pose": "cling_leg",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-kid_bang-pose-cling_leg.webp",
+    "current_sha256": "68e52cdef95c79712322bd955497b546460f52188e2da4d869c4b4cafba6ad64",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-kid_bang-cling_leg.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep3_woodfire.rpy",
+        "line": 240,
+        "text": "(\"kid_bang\",\"대장, 내 것도 있어? 어디?\",{\"pose\":\"cling_leg\"}),"
+      }
+    ],
+    "requested_action": "살아 있는 방이. 위를 보며 출석 종이를 향해 손을 뻗음. 원본/코드에 어른 다리가 없으므로 다리 추가 금지.",
+    "identity_reference": "assets/dialogue-source-master/kid_bang/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "kid_nubi1",
+    "pose": "hold_skirt",
+    "status": "latent_hold",
+    "current_file": "assets/room13-fullbody-kid_nubi1-pose-hold_skirt.webp",
+    "current_sha256": "3830b6aaeed9deb8ab8a96045bb27351923e21903dc48eb8b4e6dbe8ecda59b8",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-kid_nubi1-hold_skirt.webp"
+    ],
+    "calls": [],
+    "requested_action": "누비 큰아이가 치맛자락을 붙든다. 현재 명시적 호출이 없어 제작 보류.",
+    "identity_reference": "assets/dialogue-source-master/kid_nubi1/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "latent_not_requested"
+  },
+  {
+    "person": "kid_saemi",
+    "pose": "hide_bowl",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-kid_saemi-pose-hide_bowl.webp",
+    "current_sha256": "da93487402c44aed2fa3199becae6115a9040a3555685fb8646abffa66f1d2b5",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-kid_saemi-hide_bowl.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep5_soup.rpy",
+        "line": 376,
+        "text": "(None,\"새미가 반만 먹고 그릇을 무릎에 감췄다.\",{\"show\":\"kid_saemi\",\"pose\":\"hide_bowl\"}),"
+      }
+    ],
+    "requested_action": "살아 있고 의식 있는 새미. 무릎을 모아 웅크리고 흰 그릇을 무릎/몸 가까이 숨기며 옆을 경계함. 의자 제외.",
+    "identity_reference": "assets/dialogue-source-master/kid_saemi/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "kid_dodam",
+    "pose": "lick_ladle",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-kid_dodam-pose-lick_ladle.webp",
+    "current_sha256": "73860e60cec72d1fa664e1f2c1b5ca8ab12367f86815e1077e50efe38406fed9",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-kid_dodam-lick_ladle.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep5_soup.rpy",
+        "line": 374,
+        "text": "(\"kid_dodam\",\"선생님, 오늘 수프 진짜 맛있다.\",{\"pose\":\"lick_ladle\"}),"
+      }
+    ],
+    "requested_action": "살아 있고 쓰러지기 전인 도담. 양손으로 든 나무 국자를 즐겁게 핥음. 냄비/담요/상처 제외.",
+    "identity_reference": "assets/dialogue-source-master/kid_dodam/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "npc_pandol",
+    "pose": "point_name",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-npc_pandol-pose-point_name.webp",
+    "current_sha256": "4d97e06e23f2c7bcd2bb1b7363f027d2dc9542d04d90e481975c8e9fef61b80d",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-npc_pandol-point_name.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep_story.rpy",
+        "line": 98,
+        "text": "(\"npc_pandol\",\"그래서 매일 와서 이름을 손가락으로 짚어 보오. 이것까지 잊으면, 할멈은 정말 없는 사람이 되니까.\",{\"pose\":\"point_name\"}),"
+      },
+      {
+        "file": "game/systems/room13_ep6_cart.rpy",
+        "line": 130,
+        "text": "(None,\"게시판 앞에 판돌 영감이 지팡이를 짚고 서 있었다. 자기 이름을 손가락으로 몇 번이고 짚었다.\",{\"show\":\"npc_pandol\",\"pose\":\"point_name\"}),"
+      }
+    ],
+    "requested_action": "살아 있는 판돌. 한손 지팡이, 다른손 검지를 게시판 방향 위로 가리키며 그 방향을 봄. 게시판/이름 글자 제외.",
+    "identity_reference": "assets/dialogue-source-master/npc_pandol/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "chorong_mother",
+    "pose": "offer_lantern",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-chorong_mother-pose-offer_lantern.webp",
+    "current_sha256": "7415bdbc10a77970eaa0935dac8957f335da29db62cfa68248ddbb6a992ab74b",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-chorong_mother-offer_lantern.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/room13.rpy",
+        "line": 58,
+        "text": "# own (e.g. {\"show\":\"chorong_mother\",\"pose\":\"offer_lantern\"}); narration keeps them."
+      },
+      {
+        "file": "game/systems/room13_ep4_night13.rpy",
+        "line": 385,
+        "text": "(None,\"초롱의 어머니가 말했다. \\\"그저께 밤에 그 애 대신 켜 주셨다지요. 동쪽 등 셋. 우리 집 창에서 보였어요. 그 애가 돌아온 줄 알았어요.\\\"\",{\"show\":\"chorong_mother\",\"pose\":\"offer_lantern\"}),"
+      }
+    ],
+    "requested_action": "살아 있는 초롱 어머니가 죽은 아들을 애도. 켜진 등불을 양손으로 낮게 앞으로 내밀고 슬픈 시선. 추모패/다람/초롱 제외.",
+    "identity_reference": "assets/dialogue-source-master/chorong_mother/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "resident_tosil",
+    "pose": "hold_storybook",
+    "status": "needs_approved_smooth_pose",
+    "current_file": "assets/room13-fullbody-resident_tosil-pose-hold_storybook.webp",
+    "current_sha256": "4233e71f0f8527431a2155f09b15e5a7da7f0e41f5d08b3b0ee3840f2fe8d892",
+    "current_size": [
+      512,
+      768
+    ],
+    "source_candidates": [
+      "art/ep-art-20261016/originals/fullbody-resident_tosil-hold_storybook.webp"
+    ],
+    "calls": [
+      {
+        "file": "game/systems/room13_ep6_cart.rpy",
+        "line": 353,
+        "text": "([(\"resident_tosil\",\"……이거. 할머니가 맨날 읽어 주던 거야. 너 줄라고 가져왔어.\",{\"pose\":\"hold_storybook\"}),"
+      }
+    ],
+    "requested_action": "살아 있는 토실. 작은 닫힌 책을 양손으로 가슴에 안고 올려다봄. 건네는 자세 아님. 이야기책 삽화는 별도 레이어. 승인된 겨울 모자/목도리 용도 유지.",
+    "identity_reference": "assets/dialogue-source-master/resident_tosil/840/neutral.webp",
+    "preserve": [
+      "approved species, face and clothing",
+      "authored action, props and contact points",
+      "transparent background and existing scene conditions"
+    ],
+    "registration_gap": false,
+    "generation_scope": "parent_producing_approved_smooth_pose"
+  },
+  {
+    "person": "seryeon",
+    "pose": "chair_read",
+    "status": "parent_producing_approved_smooth_pose",
+    "requested_action": "우체국 오후. 몸은 뒤쪽 왼편을 향해 앉아 열린 편지를 들고 내려다봄. 원본에 의자가 없으므로 의자 추가 금지. 지도 배경 의자 접촉과 대화용 매끄러운 원본을 분리. 새 원본에 기존 crop 좌표를 재사용하지 않음.",
+    "current_dialogue_fallback": "approved_letter_bust_closeup",
+    "new_pose_complete": false
+  },
+  {
+    "person": "seryeon",
+    "pose": "chair_listen",
+    "status": "parent_producing_approved_smooth_pose",
+    "requested_action": "같은 앉은 몸 방향에서 고개를 플레이어 쪽으로 돌림. 편지를 낮추고 다른 손은 얼굴 가까이. 원본에 의자가 없으므로 의자 추가 금지. 지도 배경 의자 접촉과 대화용 매끄러운 원본을 분리. 새 원본에 기존 crop 좌표를 재사용하지 않음.",
+    "current_dialogue_fallback": "approved_letter_bust_closeup",
+    "new_pose_complete": false
+  }
+]

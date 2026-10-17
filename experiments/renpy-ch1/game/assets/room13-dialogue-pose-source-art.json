@@ -1,0 +1,69 @@
+{
+  "people": {
+    "seryeon": {
+      "poses": [
+        "chair_listen",
+        "chair_read"
+      ],
+      "kind": "approved_letter_bust_closeup",
+      "source_sha256": "d26bfae3b00e4dbf1a64731a560369e9ffba94d514f59459216da3ec91f50832",
+      "source_crop": [
+        180,
+        0,
+        660,
+        820
+      ],
+      "profiles": {
+        "560": {
+          "canvas": [
+            402,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp",
+              "scale": 0.3799212598425197,
+              "offset": [
+                76,
+                28
+              ]
+            }
+          }
+        },
+        "760": {
+          "canvas": [
+            416,
+            633
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp",
+              "scale": 0.3937007874015748,
+              "offset": [
+                78,
+                29
+              ]
+            }
+          }
+        },
+        "840": {
+          "canvas": [
+            595,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-pose-source/seryeon-letter-bust.webp",
+              "scale": 0.5698818897637795,
+              "offset": [
+                109,
+                34
+              ]
+            }
+          }
+        }
+      },
+      "note": "Preserve chair pose keys and field chair art. Close-up shows approved face and held letters, without claiming a new seated/read animation."
+    }
+  }
+}

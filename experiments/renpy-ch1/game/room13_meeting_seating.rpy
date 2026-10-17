@@ -204,8 +204,14 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                 $ side_scale=min((950.0 if sitting else 660.0)/side_crop[3],(520.0 if sitting else 440.0)/side_crop[2])
                 $ side_width=int(round(side_crop[2]*side_scale))
                 $ side_height=int(round(side_crop[3]*side_scale))
+                $ side_profile=r13_dialogue_source_profile(neighbor,"neutral",950 if sitting else 660)
+                if side_profile:
+                    $ side_art=r13_fullbody_close_art(neighbor,"neutral",950 if sitting else 660)
+                    $ side_width,side_height=side_profile["canvas"]
+                else:
+                    $ side_art=r13_pixel_scale(r13_meeting_neighbor_art(neighbor,is_left,sitting),side_width,side_height,R13_CLOSE_PIXEL_GRID)
                 $ side_x=-side_width//3 if is_left else 1280-side_width*2//3
-                add Transform(r13_pixel_scale(r13_meeting_neighbor_art(neighbor,is_left,sitting),side_width,side_height,R13_CLOSE_PIXEL_GRID),matrixcolor=BrightnessMatrix(-.08-r13_meeting_direct_shade()*.4)*SaturationMatrix(.90)) xpos side_x ypos (142 if sitting else 164)
+                add Transform(side_art,nearest=not bool(side_profile),matrixcolor=BrightnessMatrix(-.08-r13_meeting_direct_shade()*.4)*SaturationMatrix(.90)) xpos side_x ypos (142 if sitting else 164)
             # Reuse front-facing interview expressions and their stable torso centre.
             $ pose=r13_meeting_previous_expression if outgoing else (getattr(store,"dialogue_expression","neutral") if getattr(store,"dialogue_speaker",None)==focus else "neutral")
             $ pose=r13_meeting_previous_expression if outgoing else r13_meeting_direct_pose(focus,pose)
