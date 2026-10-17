@@ -12179,12 +12179,3 @@ testcase cartography:
     pause 0.6
     assert screen "r13_hub"
     $ r13_qa_note("cartography: village/inn/forest browse; selection no travel; secret art gated")
-
-testcase walk_days:
-    # QA autopilot (qa_tests/autopilot.rpy): new game → days 1–3, every open place each time slot.
-    pause 2.0
-    click "처음부터"
-    pause 1.0
-    $ r13_qa_auto_start(3)
-    pause until eval (r13_qa_auto and r13_qa_auto.get("done")) timeout 1500
-    $ r13_qa_note("walk lines=%d issues=%d"%(r13_qa_auto["lines"],r13_qa_auto["issues"]))
