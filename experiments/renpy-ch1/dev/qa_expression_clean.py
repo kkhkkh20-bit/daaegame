@@ -30,7 +30,7 @@ async def main():
    await q.press('아이에게 묻는다');await q.wait('say');s=await snap('03-next-packet-child-one');assert s['identity']=='ep1:siluk:kid'
    traversed=[]
    for i in range(12):
-    await page.keyboard.press('PageUp');await asyncio.sleep(.3);s=await q.py(SNAP);traversed.append(s)
+    await q.py('import renpy;result=dict(can=renpy.exports.can_rollback(),enabled=renpy.config.rollback_enabled)');await q.py('import renpy;renpy.exports.queue_event("rollback");result=True');await asyncio.sleep(.5);s=await q.py(SNAP);traversed.append(s)
     if s['identity']=='ep1:siluk' and s['index']==2:break
    report['rollback_traversal']=traversed
    s=await snap('04-cross-packet-restored-joy');assert s['identity']=='ep1:siluk' and s['beat']['talk']=='joy',s
