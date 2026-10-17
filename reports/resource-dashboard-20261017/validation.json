@@ -1,0 +1,49 @@
+{
+  "source_commit": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35",
+  "game_unit_tests": {
+    "count": 352,
+    "seconds": 35.009,
+    "result": "passed"
+  },
+  "sdk_lint": {
+    "result": "blocked",
+    "action": "RENPY_SDK_HOME=/tmp/daram-renpy-sdk bash dev/setup_sdk.sh",
+    "target": "https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2",
+    "error": "curl (56) CONNECT tunnel failed, response 403",
+    "outcome": "SDK not installed; lint not run",
+    "bypass_attempted": false
+  },
+  "deployment": "not performed; single integration owner only",
+  "extractor_tests": {
+    "count": 5,
+    "result": "passed"
+  },
+  "browser": {
+    "status": "passed",
+    "url": "http://127.0.0.1:8765/preview/resource-dashboard/",
+    "browser": "151.0.7922.173",
+    "checks": [
+      "real generated characters loaded",
+      "search, detail, Escape and focus restoration",
+      "repeated detail open and browser Back",
+      "place/day/period filter",
+      "390px mobile layout and popup overflow",
+      "place overview with stable pose IDs and sparse day conditions",
+      "user-click real WAV playback",
+      "exclusive playback, pause, volume and stop",
+      "real MP3 BGM playback",
+      "missing audio 404 error feedback",
+      "unsupported audio payload feedback",
+      "refresh version check",
+      "new deployed version detection and reload",
+      "missing image error feedback"
+    ],
+    "page_errors": []
+  },
+  "counts": {
+    "characters": 63,
+    "map_rules": 44,
+    "audio_connections": 50,
+    "extraction_errors": 0
+  }
+}

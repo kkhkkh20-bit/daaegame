@@ -1,0 +1,45 @@
+{
+  "screens": [
+    "r13_hub"
+  ],
+  "room": {
+    "day": 2,
+    "period": 0,
+    "location": "clinic",
+    "fixture_flags": [
+      "entry_corrected",
+      "lodging",
+      "ev_g_done"
+    ]
+  },
+  "person": "resident_seori",
+  "actor": {
+    "person": "resident_seori",
+    "pose": "living_notes",
+    "x": 1613,
+    "y": 410,
+    "width": 167,
+    "height": 244,
+    "rect": [
+      1613,
+      410,
+      167,
+      244
+    ],
+    "depth": 654,
+    "occlusion": [],
+    "contact": "self-contained",
+    "slot": [
+      1697,
+      652,
+      244,
+      "floor"
+    ],
+    "activity": "서리는 사람들이 한 말과 직접 확인한 기록을 따로 놓았다."
+  },
+  "game_version": "0.19.35",
+  "game_commit": "unknown (existing web build; source checkout is separately recorded)",
+  "source_checkout": "57472ad4fe4e3b83fae41a936a3b2eb9b073dc35",
+  "archive_sha256": "75eefe921c0534997c26e9e6f3530beb009df5c3c298164ab2ba711ed2aa2c1b",
+  "capture_kind": "real RenPy renderer, explicit state fixture; not a natural campaign playthrough"
+}
