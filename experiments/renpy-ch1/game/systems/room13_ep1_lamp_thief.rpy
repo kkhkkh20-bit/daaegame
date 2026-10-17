@@ -510,10 +510,12 @@ label r13_ep1_aftermath:
         call r13_lines([(None,"그날 밤, 다람이 그림책을 펼쳤다.",{"book":"U01-opening"}),
             (None,"「아침이 되자, 누군가 아저씨에게 담요를 덮어 주었어요.」",{"book":"U01-ending"}),
             ("daram","아빠, 이번엔 끝이 바뀌었어.")],"ep1:after:book_saved")
+    call r13_episode_aftermath("ep1")
     return
 
 label r13_ep1_deadline:
     $ r13_flag("lt_done","tok_detained")
     call r13_lines([(None,"광장에 판자가 덧대진 기둥이 섰다. 톡이 그 앞에 묶여 있었다. 회의는 열리지 않았다."),
         ("dad","(진짜 범인은 아직 마을 어딘가에 있다.)",{"thought":True})],"ep1:deadline")
+    call r13_episode_aftermath("ep1")
     return

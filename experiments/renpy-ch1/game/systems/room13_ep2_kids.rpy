@@ -448,10 +448,12 @@ label r13_ep2_book_after:
     if r13_has("kd_named"):
         call r13_lines([("daram","솜이가 나랑 말 안 해. ……그래도 내 말이 틀린 건 아니잖아."),
             ("dad","틀리지 않았어. 그래서 더 아픈 거야.")],"ep2:after:named")
+    call r13_episode_aftermath("ep2")
     return
 
 label r13_ep2_clinic_note:
     $ r13_flag("kd_clinic_note","musoe_gone")
     call r13_lines([(None,"진료소에서 이틀을 보낸 무쇠 할아버지가 새벽에 강으로 걸어갔다는 말이 돌았다."),
         (None,"빈 침상 위에 삐뚤한 글씨로 '고마웠소'라고 적힌 종이가 놓여 있었다.")],"ep2:clinic_note")
+    call r13_episode_aftermath("ep2_clinic")
     return

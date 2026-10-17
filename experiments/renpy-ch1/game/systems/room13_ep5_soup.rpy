@@ -471,4 +471,5 @@ label r13_ws_after:
         ([(None,"(그림책) 왕자가 오기 전에, 누군가 성의 창문을 열었어요.",{"book":"U05-ending-open-window"})] if r13_has("ws_kids_alive") else [(None,"(그림책) 왕자는 몇 시간 늦게 왔어요.",{"book":"U05-ending-prince"})])+
         ([("daram","……아빠. 왕자가 늦게 오면, 공주는 어떻게 돼?"),("daram","그럼 다음엔 우리가 먼저 가자. 왕자보다 먼저.")] if r13_ws_daram() else []),"ws:after:night", binding_route="dynamic:438")
     $ r13_flag("ws_done")
+    call r13_episode_aftermath("ep5")
     return

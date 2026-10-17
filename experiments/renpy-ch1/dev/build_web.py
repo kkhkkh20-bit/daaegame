@@ -42,7 +42,7 @@ REMOTE_CLOSEUP = ("assets/room13-pixel-life-*.webp", "assets/r13-gimmick-*.webp"
 # Fetched when first drawn and warmed in the background once the game runs (transport "prefetch").
 # Dialogue expressions stay in the first load: Ren'Py's web loader unlinks a downloaded remote
 # file after about a minute, so art drawn in every conversation would show its placeholder again.
-REMOTE_LATER = ("assets/room13-pixel-cinematic-*.webp", "assets/room13-pixel-altar-*.webp",
+REMOTE_LATER = ("assets/room13-aftermath-*.webp", "assets/room13-pixel-cinematic-*.webp", "assets/room13-pixel-altar-*.webp",
                 "assets/room13-pixel-ready-altar*.webp")
 # Art replaced by an NPC redesign (dev/apply_npc_redesign.py): kept so old saves
 # that still hold the old picture can draw it, but never part of the first load.

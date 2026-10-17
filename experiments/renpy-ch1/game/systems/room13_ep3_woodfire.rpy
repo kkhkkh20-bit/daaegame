@@ -525,10 +525,12 @@ label r13_wf_aftermath:
         [("daram","……아빠. 그럼 그레텔이 나쁜 거야? 마녀가 나쁜 거야?"),
         ("daram","마녀네 애들은 이제 누가 밥 줘?")]+
         ([("dad","나비 언니가."),("daram","……그럼 다행이다.")] if r13_has("nubi_kids_with_nabi") else [("dad","……")]),"wf:after:book", binding_route="dynamic:354")
+    call r13_episode_aftermath("ep3")
     return
 
 label r13_wf_missed:
     $ r13_flag("wf_done","bori_taken","wf_second_fire","wf_missed")
     call r13_lines([(None,"학교 회의는 끝났다고 했다. 보리가 장작 도둑이자 불을 낸 사람으로 끌려갔다."),
         ("dad","(그 회의에 갔어야 했다.)",{"thought":True})],"wf:missed")
+    call r13_episode_aftermath("ep3")
     return
