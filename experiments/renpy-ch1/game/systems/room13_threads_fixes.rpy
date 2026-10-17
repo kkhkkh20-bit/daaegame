@@ -108,3 +108,8 @@ init 189 python:
          ("resident_mulgyeol","만났어요? 잘됐네요!"),
          ("resident_mulgyeol","다음엔 셋이 같이 와요. 물고기 구워 줄게요.")],
         [(None,[("resident_mulgyeol","셋이 같이 오는 거, 잊지 마요!")])])
+
+    # 엄마를 만난 뒤에는 "엄마 보고 싶어" 밤 대화가 새로 나오지 않는다.
+    for _fx_key in ("night:miss_mom","night:miss_mom2"):
+        if _fx_key in ROOM13["topics"] and ROOM13["topics"][_fx_key].get("steps") is None:
+            ROOM13["topics"][_fx_key]["steps"]={"not":["mom_reunited"]}
