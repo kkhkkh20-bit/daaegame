@@ -28,8 +28,8 @@ init 68 python:
         views[context]=dict(detail=detail,page=page)
         store.r13_book_views=views
 
-    def r13_records_remember(tab,detail,person,page,archive):
-        store.r13_records_view=dict(tab=tab,detail=detail,person=person,page=page,archive=archive)
+    def r13_records_remember(tab,detail,person,page,archive,rel_sel=None,rel_filter="all"):
+        store.r13_records_view=dict(tab=tab,detail=detail,person=person,page=page,archive=archive,rel_sel=rel_sel,rel_filter=rel_filter)
 
     class R13RecordScrollChanged:
         def __init__(self,key):
@@ -202,7 +202,7 @@ screen r13_reference_record_categories(owner,current,present=False,archive=False
                     action [Function(r13_record_select,owner,"category" if owner=="r13_book" else "tab",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
                     hbox:
                         xalign .5 yalign .5 spacing 10
-                        add R13AntiqueIcon("record" if key=="all" else ("people" if key=="relations" else key),size=24) yalign .5
+                        add R13AntiqueIcon("record" if key=="all" else key,size=24) yalign .5
                         text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
     if not present:
         vbox:
@@ -308,9 +308,9 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default archive=r13_records_view.get("archive",False)
     default order="recent"
     default shelf=False
-    default rel_sel=None
-    default rel_filter="all"
-    on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive)]
+    default rel_sel=r13_records_view.get("rel_sel")
+    default rel_filter=r13_records_view.get("rel_filter","all")
+    on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter)]
     use r13_reference_record_shell("기록")
     use r13_reference_record_categories(_scope,tab,archive=archive)
     if tab=="all":

@@ -205,12 +205,17 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
 
 screen r13_meeting_chrome(claim):
     $ session=r13_debate_session(claim)
+    $ proved,proof_total=r13_debate_progress(claim)
     frame:
         area (24,18,900,66) padding (16,8) background R13PaperFrame()
         vbox:
             spacing 2
-            text r13_meeting_header(session) size r13_read_size(15,17) color "#795d40"
+            text (r13_meeting_header(session)+("" if r13_meeting_intro else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(15,17) color "#795d40"
             text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"
+        if not r13_meeting_intro:
+            add Solid("#d6bf98") xpos 0 ypos 51 xysize (868,3)
+            if proved:
+                add Solid("#a88043") xpos 0 ypos 51 xysize (int(868*proved/max(1,proof_total)),3)
 
 screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
     $ completed=bool(sid and r13_debate_is_broken(claim,sid))
@@ -294,11 +299,20 @@ screen r13_meeting_choices(items,ready):
         frame:
             area (160,402,960,42) padding (14,7) background R13PaperPanel()
             text caption size r13_read_size(20,24) color "#493b30"
-    vbox:
-        xpos 160 ypos 452 spacing 10
-        for index,item in enumerate([item for item in items if item.action is not None]):
-            textbutton (str(index+1)+"  "+item.caption):
-                style "r13_action_button" xsize 960 ysize 64 text_size r13_read_size(23,27)
-                action r13_safe_question_action(item.action) sensitive ready
-            if index<9 and ready:
-                key ("K_%d"%(index+1)) action r13_safe_question_action(item.action)
+    $ choices=[item for item in items if item.action is not None]
+    # Four suspects plus cancel must fit above the dialogue tools on mobile too.
+    for index,item in enumerate(choices):
+        $ columns=2 if len(choices)>3 else 1
+        $ who=next((p for p,name in R13_NAMES.items() if name==item.caption and p!="dad"),None)
+        button:
+            style "r13_action_button"
+            xpos 160+(index%columns)*486 ypos 452+(index//columns)*74
+            xsize (474 if columns==2 else 960) ysize 64
+            action r13_safe_question_action(item.action) sensitive ready
+            hbox:
+                align (.5,.5) spacing 14
+                if who and columns==2:
+                    add Transform(r13_art(who,"avatar_neutral"),xysize=(48,48),fit="contain",nearest=True) yalign .5
+                text (str(index+1)+"  "+item.caption) size r13_read_size(23,27) color "#fff0ce" yalign .5
+        if index<9 and ready:
+            key ("K_%d"%(index+1)) action r13_safe_question_action(item.action)

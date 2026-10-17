@@ -828,7 +828,21 @@ screen r13_debate_board(claim,selected):
     textbutton "회의 중단":
         style "r13_action_button" xpos 1096 ypos 18 xsize 160 ysize 64 text_size 20
         action Return(("leave",)) sensitive ready
-    if r13_meeting_feedback and r13_meeting_feedback.get("claim")==claim:
+    $ half_key=r13_debate_state().get("half",{}).get(claim+":"+selected)
+    if half_key and sel.get("pair") and not r13_debate_is_broken(claim,selected):
+        # Show only the material actually presented. The missing answer stays hidden.
+        frame:
+            area (80,416,1120,72) padding (16,10) background R13PaperFrame()
+            hbox:
+                spacing 18 yalign .5
+                add R13AntiqueIcon("present",size=32) yalign .5
+                vbox:
+                    spacing 4
+                    text "제시한 근거 · 1 / 2" size r13_read_size(17,20) color "#795d40"
+                    text r13_catalog_title(half_key) size r13_read_size(20,24) color "#493b30" xsize 570
+                text "+" size 28 color "#a88043" yalign .5
+                text "다른 자료로 이어 보기" size r13_read_size(20,23) color "#795d40" yalign .5
+    elif r13_meeting_feedback and r13_meeting_feedback.get("claim")==claim:
         frame:
             area (80,420,1120,68) padding (14,8) background R13PaperPanel()
             vbox:
