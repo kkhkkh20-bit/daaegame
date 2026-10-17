@@ -141,7 +141,7 @@ init 102 python:
     ROOM13["topics"]["mungchi_confront"]=dict(npc="resident_mungchi",title="13호에서 가져간 물건을 따진다",day=[4,8],need=["know_mungchi_thief"],give=["H3"],flags=["mungchi_confessed"],not_flags=["mungchi_confessed"],lines=[
         (None,"뭉치는 작은 상자와 큰 상자 사이에서 불안하게 눈을 굴렸다."),
         ("resident_mungchi","저, 저는 시키는 대로 한 거예요. 부인이 13호에 편지나 쪽지가 있으면 베껴 오라고……"),
-        ("dad","베낀 종이는 누구에게 줬지?"),
+        ("dad","베낀 종이는 누구에게 줬니?"),
         ("resident_mungchi","부인한테요. 부인은 여관 할머니가 값을 쳐 준다고 했어요. 그게 다예요. 물건은 그냥…… 손이 갔어요."),
         ("resident_mungchi","부인한테 말하지 마세요. 저 내쫓기면 갈 데 없어요.")])
 
@@ -253,7 +253,7 @@ label r13_ev_b_caught:
             $ r13_cash(10,"백 부인의 현상금")
             $ r13_flag("ev_b_done","madam_trust","somi_punished","musoe_worse","somi_hostile")
         "지붕 길을 알려 주면 놓아준다":
-            call r13_lines([("dad","창고 지붕으로 어떻게 들어갔는지 알려 주면 오늘 일은 못 본 걸로 하마."),
+            call r13_lines([("dad","창고 지붕으로 어떻게 들어갔는지 알려 주면 오늘 일은 못 본 걸로 할게."),
                 ("resident_somi","……창고 굴뚝 옆 판자가 헐거워요. 밤엔 지붕이 미끄럽고요. 이제 됐죠?"),
                 (None,"솜이는 꾸러미를 휙 낚아채 골목 끝 집으로 사라졌다.")],"ev:b:roof_deal")
             $ r13_flag("ev_b_done","roof_path","musoe_herbs","somi_owes")
@@ -432,7 +432,7 @@ label r13_ev_c_mungchi:
         (None,"창고로 가는 대신 13호로 돌아왔다. 등을 끄고 장롱 옆에 앉아 기다렸다.")],"ev:c:pretend")
     call r13_scene("room","여관 2층 · 13호실 · 밤","night")
     call r13_lines([(None,"자정이 지나자 13호 문고리가 천천히 돌았다. 작은 등불 하나가 들어오더니 곧장 수첩 쪽으로 갔다."),
-        ("dad","여기서 뭘 찾지, 뭉치?"),
+        ("dad","뭉치야, 여기서 뭘 찾고 있니?"),
         ("resident_mungchi","으악! 저, 저는……")],"ev:c:mungchi_caught")
     call r13_lines([("resident_mungchi","부인이 13호에 편지나 쪽지가 있으면 베껴 오라고 했어요. 여관 할머니가 값을 쳐 준다고요."),
         ("resident_mungchi","부인한테는 말하지 마세요. 저 내쫓기면 갈 데 없어요.")],"ev:c:mungchi_confess")

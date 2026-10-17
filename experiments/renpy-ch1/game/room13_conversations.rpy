@@ -113,11 +113,11 @@ init 70 python:
     R13_EARLY_CONVERSATIONS = [
         ("kkwak_ice","resident_kkwak","물통이 얼면 어떻게 비우십니까?",[
             ("resident_kkwak","얼음은 가장자리부터 조금씩 떼요. 통까지 깨뜨리면 물을 길어 와도 담을 데가 없잖아요."),
-            ("dad","급하다고 세게 두드려서 될 일은 아니군요."),
+            ("dad","급하다고 세게 두드려서 될 일은 아니구나."),
             ("resident_kkwak","그래서 통이 비어 있을 때부터 미리 살피는 거예요. 물이 가득 찬 다음에는 손대기 더 어렵고요.")],None),
         ("kkwak_tracks","resident_kkwak","발자국만 보고 따라가면 안 되겠군요.",[
             ("resident_kkwak","네. 아까도 말씀드렸지만, 발자국이 갔다가 돌아온 자국까지 봐야 해요."),
-            ("dad","아이에게도 남의 발자국을 무작정 따라가지 말라고 하겠습니다."),
+            ("dad","우리 아이한테도 남의 발자국을 무작정 따라가지 말라고 일러둘게."),
             ("resident_kkwak","길을 모르면 물어보세요. 아예 안 가는 게 나은 날도 있으니까요.")],"life:resident_kkwak:work"),
         ("bori_bundle","resident_bori","장작 묶음은 어떻게 나누십니까?",[
             ("resident_bori","길이가 비슷한 것끼리 묶어요. 긴 게 하나 삐져나오면 옆 사람 옷을 잡아당기거든요."),
@@ -141,7 +141,7 @@ init 70 python:
             ("resident_tori","목요일까지 핀을 고쳐 준다고 했다는데……. 톡 씨 가게엔 요즘 맞는 부품이 없다던데요.")],None),
         ("tori_count","resident_tori","받은 천의 수량도 적어 두신다고요?",[
             ("resident_tori","받은 것하고 돌려드린 것, 둘 다 세어 둬요. 나중에 모자란다고 하면 헷갈리니까."),
-            ("dad","제가 물건을 맡길 때도 같이 세겠습니다."),
+            ("dad","나도 물건을 맡길 때 같이 세어 볼게."),
             ("resident_tori","그럼 좋죠. 다 끝난 뒤에 기억을 더듬어 맞춰 보는 것보다 훨씬 쉬워요.")],"life:resident_tori:work"),
         ("yeoni_seam","resident_yeoni","수선을 맡기기 전에 준비할 것이 있습니까?",[
             ("resident_yeoni","옷은 말려서 가져오세요. 입을 때 어디가 불편한지도 알려 주시고요."),

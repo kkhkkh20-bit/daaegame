@@ -148,10 +148,10 @@ label r13_nt_dawn8:
     # 서리는 범행 도구를 다시 대조하기로 한다(예전엔 엄마가 나타난 장면에서 열렸다).
     $ r13_flag("examination_agreed")
     menu:
-        "“같이 찾아봅시다.”":
+        "“같이 찾아보자.”":
             call r13_lines([("buri","……네.")],"nt:dawn8:together")
             $ r13_flag("nt_buri_together")
-        "“다람이는 아닙니다.”":
+        "“다람이는 아니야.”":
             call r13_lines([("buri","그건 아저씨가 아빠니까 하는 말이잖아요.")],"nt:dawn8:defend")
     $ r13_edit(location="square")
     return

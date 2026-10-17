@@ -103,9 +103,9 @@ init 76 python:
         if person=="buri" and key=="E04" and bool({"first_plan_read","first_plan_compared"}&old_flags):
             if "plan_reviewed_with_buri" in old_flags:return [("buri","도면에 표시해 둔 두 끝을 보세요. 한쪽 걸쇠를 풀어도 반대쪽 문은 직접 밀어야 열려요.")]
             r13_flag("plan_reviewed_with_buri")
-            return [("dad","도면에 붉게 덧그린 선은 무엇입니까?"),
+            return [("dad","도면에 붉게 덧그린 선은 뭐니?"),
                 ("buri","회색 선은 배관이에요. 붉은 선은 금속 줄이고요.",{"expression":"neutral"}),
-                ("dad","두 층 사이에 금속 줄이 왜 필요합니까?"),
+                ("dad","두 층 사이에 금속 줄이 왜 필요하니?"),
                 ("buri","멀리 있는 걸쇠를 당길 때 쓰죠. 실제 장치가 아직 남아 있는지는 직접 봐야 해요.")]
         if person=="granny" and key=="E04" and "inn_front_door_claim" in old_flags:
             return [("granny","어머, 옛 도면까지 구해 오셨네요.",{"expression":"thinking"}),

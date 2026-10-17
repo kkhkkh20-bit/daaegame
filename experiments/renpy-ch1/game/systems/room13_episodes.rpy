@@ -68,7 +68,7 @@ init 103 python:
         # 2 나비
         "nabi_rear":_ep_topic("nabi","주방 뒷문의 등불 이야기를 꺼낸다",(3,6),need=["know_kitchen_rear"],not_flags=["nabi_secret"],
             flags=["nabi_secret","know_nabi_debt"],give=["W2"],lines=[
-            ("dad","밤마다 주방 뒷문 쪽에서 등불이 오간다고 들었어요."),
+            ("dad","밤마다 주방 뒷문 쪽에서 등불이 오간다고 들었어."),
             ("nabi","……누가 봤대요? 콩이가 말했죠."),
             ("nabi","남은 밥이에요. 표 없는 아이들한테 가는 거요. 할머니는 모르는 척하시고, 대신 제 품삯에서 빼요."),
             ("nabi","할머니가 거둬 주신 빚이 있으니까 아무 말도 못 해요. 그 애들만 아니면요.")]),
@@ -274,7 +274,7 @@ label r13_ep2_kitchen:
     return
 
 label r13_ep2_food:
-    call r13_lines([("dad","그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까요."),
+    call r13_lines([("dad","그 아이들 끼니를 할머니 밥 말고 다른 데서 구해 보면 어떨까?"),
         ("nabi","어디서요? 이 마을에 남는 밥은 없어요. 다들 자기 먹을 것도 없다고 해요.")],"ep2:food:open")
     menu:
         "은호 사장에게 일주일 치를 산다 (12냥)" if r13_cash_now()>=12:
@@ -293,7 +293,7 @@ label r13_ep2_food:
             $ r13_flag("kids_fed","kids_mine")
         "학교 사자 선생님에게 부탁하자고 한다" if r13_has("kids_known"):
             call r13_lines([("nabi","사자 선생님이요? ……선생님은 좋은 분인데, 촌장님 눈치를 봐요."),
-                ("dad","학교에 직접 가서 말해 볼게요.")],"ep2:food:teacher")
+                ("dad","학교에 직접 가서 말해 볼게.")],"ep2:food:teacher")
             $ r13_flag("try_teacher")
         "다람이 몫을 나누자고 한다":
             call r13_lines([("nabi","그건 안 돼요. 다람이도 제 몫은 먹어야죠."),
@@ -418,7 +418,7 @@ label r13_ep4_accused:
     return
 
 label r13_ep4_ubak:
-    call r13_lines([("dad","광장 등 나사에 계측기 집게 자국이 있었어요. 종이 눈금도 끼어 있었고요."),
+    call r13_lines([("dad","광장 등 나사에 계측기 집게 자국이 있었어. 종이 눈금도 끼어 있었고."),
         ("resident_ubak","……제가 했어요. 스승님이 돌 조각 하나를 몰래 재 오라고 하셨어요. 촌장님이 낸 숫자가 이상하다고요."),
         ("resident_ubak","톡 아저씨가 잡혀갈 줄은 몰랐어요. 조각은 지금 진료실 상자에 있어요.")],"ep4:ubak:confess")
     menu:

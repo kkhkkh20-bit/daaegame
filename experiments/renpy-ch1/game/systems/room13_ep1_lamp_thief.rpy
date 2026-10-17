@@ -252,7 +252,7 @@ label r13_ep1_nabi_shelter:
                 ("nabi","……손님은 제 일 도와주셨으니까요. 식당 의자라도 괜찮다면요. 불 꺼진 뒤에만, 새벽엔 꼭 나가야 해요.")],"ep1:shelter:helped")
         else:
             call r13_lines([("nabi","그림쟁이 아저씨를 여기서요? 할머니가 아시면 큰일 나요."),
-                ("dad","그 사람이 제 아내를 그려 주고 있습니다. 아내를 찾는 데 꼭 필요한 그림이에요."),
+                ("dad","그 사람이 내 아내를 그려 주고 있어. 아내를 찾는 데 꼭 필요한 그림이야."),
                 ("nabi","……손님 부인을요? 오늘 하루만이에요.")],"ep1:shelter:portrait")
         $ r13_flag("piko_sheltered")
         $ r13_tick()
@@ -347,19 +347,19 @@ label r13_ep1_lamp:
 
 label r13_ep1_ubak:
     $ r13_flag("lt_ubak_done")
-    call r13_lines([("dad","꺼진 3번 등 안에 온도를 적은 쪽지가 있었습니다."),
+    call r13_lines([("dad","꺼진 3번 등 안에 온도를 적은 쪽지가 있었어."),
         ("resident_ubak","……! 제가 했어요. 스승님이 돌이 얼마나 식었는지 몰래 재 오라고 해서요."),
         ("resident_ubak","근데 온도만 재고, 새벽 되기 전에 조각을 【제자리에 돌려놨어요】. 진짜예요."),
         ("resident_ubak","그 아저씨가…… 저 때문이에요?"),
         ("resident_seori","제 심부름이었습니다. 그리고 이 아이가 돌려놨다면, 새벽엔 조각이 등 안에 있었어야 합니다.")],"ep1:ubak")
     $ r13_grant(["L05"],"우박의 말")
     menu:
-        "“재 본 숫자는 어땠습니까?”":
+        "“재 본 숫자는 어땠니?”":
             call r13_lines([("resident_ubak","가을보다 훨씬 낮아요. 밤마다 더 떨어져요."),
                 ("resident_seori","마을의 돌 자체가 식고 있습니다.")],"ep1:ubak:numbers")
             $ r13_grant(["W4"],"우박이 잰 돌의 온도")
             $ r13_flag("know_stone_failing")
-        "“울지 마세요. 같이 밝힙시다.”":
+        "“울지 마. 같이 밝혀 보자.”":
             call r13_lines([("resident_ubak","……네."),("resident_seori","고맙습니다. 저도 도울 일이 있으면 말씀하십시오.")],"ep1:ubak:trust")
             $ r13_flag("seori_trust","ubak_ally")
         "“우박이를 너울에게 데려가겠습니다.”":

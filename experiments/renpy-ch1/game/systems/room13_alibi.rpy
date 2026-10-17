@@ -57,7 +57,7 @@ init 147 python:
             ("resident_tosil","……자고 있었어요. 진짜예요."),
             ("dad","(대답이 너무 빠르다. 눈도 마주치지 않는다.)",{"thought":True})],
             truth=("tosil_errand_seen",[
-            ("dad","토실아, 첫날 밤에도 숲에 갔었지?"),
+            ("dad","토실아, 첫날 밤에도 숲에 갔었니?"),
             ("resident_tosil","……네. 할머니가 부인한테 차 갖다 드리라고 해서요. 거짓말해서 죄송해요.")])),
         ("night1","resident_kalbaram"):dict(claim=[
             ("dad","고개 마차가 들어온 날 밤, 어디 계셨습니까?"),
@@ -91,11 +91,11 @@ init 147 python:
             ("dad","사건 날 저녁엔 어디 계셨습니까?"),
             ("resident_eunho","창고에서 구슬이랑 재고를 셌소. 그날이 납품 장부 마감이었으니까. 구슬한테 물어보시오.")]),
         ("case","resident_guseul"):dict(claim=[
-            ("dad","사건 날 저녁, 은호 사장과 함께 계셨습니까?"),
+            ("dad","사건 날 저녁, 은호 사장이랑 같이 있었니?"),
             ("resident_guseul","네, 창고에서 같이 재고를 셌어요."),
             ("resident_guseul","……사장님은 우리 장부 말고 다른 장부를 하나 따로 들고 계셨어요. 그건 저도 못 보게 하셨고요.")]),
         ("case","resident_ubak"):dict(claim=[
-            ("dad","사건 날 저녁엔 어디 계셨습니까?"),
+            ("dad","사건 날 저녁엔 어디 있었니?"),
             ("resident_ubak","진료소에서 스승님 기록을 정리했어요. 소식이 오자 스승님만 먼저 뛰어가셨고 저는 진료소를 지켰어요.")]),
         ("case","resident_madam"):dict(claim=[
             ("dad","사건 날 저녁에는 여관에 오지 않으셨다던데요."),
