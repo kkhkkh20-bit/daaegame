@@ -1,0 +1,233 @@
+{
+  "kind": "Clean final SDK build; production labels unchanged; fixture state only",
+  "shots": {
+    "01-authored-child-joy": {
+      "version": "0.19.39",
+      "identity": "ep1:siluk",
+      "read_id": "ep1:siluk:2:7a98a129b50b6a",
+      "index": 2,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이 둘이 따끈한 빵을 나눠 먹고 있었다. \"아빠가 빵 사 왔어요! 진짜 빵이에요!\"",
+        {
+          "show": "kid_siluk2",
+          "expression": "joy"
+        }
+      ],
+      "beat": {
+        "person": "kid_siluk2",
+        "talk": "joy",
+        "react": null,
+        "settled": true,
+        "duration": 0.35
+      },
+      "person": "kid_siluk2",
+      "pose": "joy",
+      "visible": true
+    },
+    "02-save-load-joy": {
+      "version": "0.19.39",
+      "identity": "ep1:siluk",
+      "read_id": "ep1:siluk:2:7a98a129b50b6a",
+      "index": 2,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이 둘이 따끈한 빵을 나눠 먹고 있었다. \"아빠가 빵 사 왔어요! 진짜 빵이에요!\"",
+        {
+          "show": "kid_siluk2",
+          "expression": "joy"
+        }
+      ],
+      "beat": {
+        "person": "kid_siluk2",
+        "talk": "joy",
+        "react": null,
+        "settled": true,
+        "duration": 0.35
+      },
+      "person": "kid_siluk2",
+      "pose": "joy",
+      "visible": true
+    },
+    "03-next-packet-child-one": {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": null,
+      "person": "kid_siluk1",
+      "pose": "neutral",
+      "visible": true
+    },
+    "04-cross-packet-rollback-result": {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": null,
+      "person": "kid_siluk1",
+      "pose": "neutral",
+      "visible": true
+    },
+    "05-controlled-prior-joy": {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": {
+        "person": "daram",
+        "talk": "joy",
+        "react": null,
+        "settled": true,
+        "duration": 0.35
+      },
+      "person": "daram",
+      "pose": "neutral",
+      "visible": true
+    },
+    "06-controlled-fallback-neutral": {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": null,
+      "person": "daram",
+      "pose": "neutral",
+      "visible": true
+    }
+  },
+  "rollback_traversal": [
+    {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": null,
+      "person": "kid_siluk1",
+      "pose": "neutral",
+      "visible": true,
+      "rollback_capability": {
+        "can": true,
+        "enabled": true,
+        "store_rollback": true
+      }
+    },
+    {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": null,
+      "person": "kid_siluk1",
+      "pose": "neutral",
+      "visible": true,
+      "rollback_capability": {
+        "can": true,
+        "enabled": true,
+        "store_rollback": true
+      }
+    },
+    {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": null,
+      "person": "kid_siluk1",
+      "pose": "neutral",
+      "visible": true,
+      "rollback_capability": {
+        "can": true,
+        "enabled": true,
+        "store_rollback": true
+      }
+    },
+    {
+      "version": "0.19.39",
+      "identity": "ep1:siluk:kid",
+      "read_id": "ep1:siluk:kid:0:f33910de8487ba",
+      "index": 0,
+      "page": 0,
+      "packet": [
+        null,
+        "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+        {
+          "show": "kid_siluk1"
+        }
+      ],
+      "beat": null,
+      "person": "kid_siluk1",
+      "pose": "neutral",
+      "visible": true,
+      "rollback_capability": {
+        "can": true,
+        "enabled": true,
+        "store_rollback": true
+      }
+    }
+  ],
+  "cross_packet_rollback": false,
+  "special_guard": {
+    "file": "assets/dialogue-pose-source/kid_kkomi/door_peek/840.webp",
+    "plan": null
+  },
+  "status": "expression_checks_passed_rollback_not_verified"
+}
