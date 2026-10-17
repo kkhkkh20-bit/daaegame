@@ -1523,10 +1523,11 @@ testcase trial_c1_h7:
     assert eval ("C1" in room13["propositions"])
 
 testcase w1c_mother_line:
+    # Keep the day-2 fixture alive: default episode suppression includes future lt_dawn.
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ep1_patrol_seen","ev_a_done"),(),12)
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done"),(),12)
     click pos (1150,90) until screen "choice" timeout 40
     click "아내 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
@@ -1603,11 +1604,12 @@ testcase linebreak_pages:
     screenshot "lb_page2.png"
 
 testcase present_portrait:
+    # Do not pre-set the day-3 death while testing the day-2 portrait offer.
     # 0.18.13: the portrait is a record shown from the notebook; a name-only question stays vague.
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","ep1_patrol_seen","ev_a_done"),(),12)
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","ep1_patrol_seen","ev_a_done"),(),12)
     click pos (1150,90) until screen "choice" timeout 40
     click "아내 초상을 그려 달라고 한다 (5냥)"
     pause 1.0
@@ -1812,7 +1814,7 @@ testcase event_offer:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+offers","ev_l_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
+    run Call("r13_qa_roam",dict(day=2,period=0,location="square",life_poc=True),("+w1c","+ep","+offers","ev_l_done","ev_i_done","ep1_patrol_seen","ev_a_done"),(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     assert eval ("r13_w1c_portrait" in room13["offers"] and not r13_has("ev_g_done"))
     # 0.18.53: the event is pressed on the person when they stand here.
@@ -9518,7 +9520,8 @@ testcase dialogue_expand:
             (_hit if r13_expand_norm(_rows)==r13_expand_norm(R13_DIALOGUE_EXPAND[_name]["new"]) else _miss).append(_name)
         r13_qa_note("expand hit %d: %r"%(len(_hit),_hit))
         r13_qa_note("expand not in this state %d: %r"%(len(_miss),_miss))
-    assert eval (len(r13_conversation_topic_lines("granny_letter"))>=10)
+    # Player review: preserve the actual clues and keyword emphasis without repeating ten lines.
+    assert eval (len(r13_conversation_topic_lines("granny_letter"))<=6 and "숙박 장부" in str(r13_conversation_topic_lines("granny_letter")) and "어디로 갔는지는 못 들었" in str(r13_conversation_topic_lines("granny_letter")))
     run Call("r13_qa_talk","granny")
     click pos (1150,90) until "가족을 불렀는지" timeout 30
     click "가족을 불렀는지"
@@ -9796,6 +9799,7 @@ testcase map_actions:
     screenshot "ma_workshop_buri.png"
 
 testcase new_places:
+    # 0.19.16: read the current map targets instead of obsolete hard-coded clicks.
     # 0.18.63: 큰 강 / 깊은 숲 / 장터 on the village map after lodging, travel through the
     # map, one picture per period. 0.18.68: only residents with a new-place routine come (0.18.75: days 2-7 and 9-14).
     pause 2.0
@@ -9824,7 +9828,7 @@ testcase new_places:
     click "지도 · 이동"
     pause 1.5
     screenshot "np_map.png"
-    click pos (942,592)
+    click pos r13_cart_label_point("river")
     pause 0.5
     screenshot "np_map_river.png"
     click "이곳으로 이동"
@@ -9836,7 +9840,7 @@ testcase new_places:
     click "지도 · 이동"
     pause 1.5
     # 0.19.12 map: 깊은 숲 is at the top left of the village sheet.
-    click pos (390,125)
+    click pos r13_cart_label_point("forest")
     pause 0.5
     click "이곳으로 이동"
     click pos (1150,90) until screen "r13_hub" timeout 40
@@ -9848,7 +9852,7 @@ testcase new_places:
     click "마을"
     pause .5
     # 0.19.12 map: the 장터 name plate (the stalls only take clicks on drawn pixels).
-    click pos (700,258)
+    click pos r13_cart_label_point("market")
     pause 0.5
     click "이곳으로 이동"
     click pos (1150,90) until screen "r13_hub" timeout 40
