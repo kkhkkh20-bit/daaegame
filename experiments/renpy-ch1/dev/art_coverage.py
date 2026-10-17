@@ -279,7 +279,7 @@ def main():
     else:
         path.write_text(rendered)
         stream=io.StringIO();fields=['id','kind','character','character_name','location','period','event_condition','requirement','current_assets','canonical_reference','production_status','connection_status','screen_review','priority','next_action','source_evidence']
-        writer=csv.DictWriter(stream,fieldnames=fields,extrasaction='ignore');writer.writeheader()
+        writer=csv.DictWriter(stream,fieldnames=fields,extrasaction='ignore',lineterminator='\n');writer.writeheader()
         for item in result['items']:
             writer.writerow({k:json.dumps(v,ensure_ascii=False) if isinstance(v,(dict,list)) else v for k,v in item.items() if k in fields})
         (OUT/'coverage.csv').write_text(stream.getvalue(),encoding='utf-8-sig')

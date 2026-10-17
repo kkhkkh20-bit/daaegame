@@ -59,7 +59,7 @@ def build():
 
 def main():
     rows=build();(OUT/'display-metrics.json').write_text(json.dumps({'basis':'game/room13_fullbody_dialogue.rpy + room13_acting.rpy; current code formula','rows':rows},ensure_ascii=False,indent=2)+'\n')
-    s=io.StringIO();w=csv.DictWriter(s,fieldnames=list(rows[0]));w.writeheader()
+    s=io.StringIO();w=csv.DictWriter(s,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader()
     for row in rows:w.writerow({k:json.dumps(v,ensure_ascii=False) if isinstance(v,(list,dict)) else v for k,v in row.items()})
     (OUT/'display-metrics.csv').write_text(s.getvalue(),encoding='utf-8-sig')
     print(json.dumps(next(r for r in rows if r['character']=='resident_teacher' and r['dialogue_height']==760),ensure_ascii=False,indent=2))
