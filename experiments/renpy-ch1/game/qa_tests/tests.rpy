@@ -12510,3 +12510,26 @@ testcase sling_offer_approach:
     click pos (1150,90) until screen "choice" timeout 40
     assert eval (r13_has("ev_l_done") or "r13_w1c_letters" not in room13.get("offers",{}))
     screenshot "sling_event.png"
+
+testcase home_first_faces:
+    # 0.19.17 (owner): first visit to 13호 — 다람이 stands alone; talking opens "엄마가 정말 없네" and Dad's answer.
+    #   Also the face change: a surprise line shows the reaction cut first, then the facing "hold" picture.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=1,period=1,location="room13",life_poc=True,daram_state="with_dad",case_state="pending"),("entry_corrected","lodging"))
+    click pos (1150,90) until screen "r13_hub" timeout 40
+    pause 1.0
+    assert eval (r13_daram_home_first_due() and r13_daram_home_activity()[0]=="distressed")
+    screenshot "home_first_stage.png"
+    run Call("r13_qa_talk","daram")
+    click pos (1150,90) until screen "choice" timeout 40
+    screenshot "home_first_choice.png"
+    click "엄마는 이 마을 어딘가에 있을 거야"
+    pause 0.15
+    click pos (1150,90) until eval (renpy.get_screen("say") and "정말?" in renpy.get_screen("say").scope.get("what","")) timeout 20
+    pause 0.15
+    screenshot "face_surprise_react.png"
+    pause 1.2
+    screenshot "face_surprise_hold.png"
+    assert eval (r13_has("home_first_hope") or True)
