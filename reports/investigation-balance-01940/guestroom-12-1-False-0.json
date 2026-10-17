@@ -1,0 +1,80 @@
+{
+  "label": "guestroom-12-1-False-0",
+  "actors": [
+    {
+      "person": "daram",
+      "pose": "action_2",
+      "x": 754,
+      "y": 357,
+      "width": 253,
+      "height": 264,
+      "rect": [
+        754,
+        357,
+        253,
+        264
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "kneeling",
+      "slot": null,
+      "activity": "깔개에 앉아 그림 그리는 중"
+    }
+  ],
+  "offset": 0,
+  "hits": [
+    {
+      "person": "daram",
+      "point": [
+        912,
+        417
+      ],
+      "actions": [
+        "('person', 'daram')"
+      ]
+    }
+  ],
+  "specs": {
+    "daram": {
+      "file": "assets/room13-pixel-world-daram-gray-gutter.webp",
+      "crop": [
+        1076,
+        528,
+        442,
+        462
+      ],
+      "nearest": true,
+      "facing": "right",
+      "contact": "kneeling",
+      "foot": [
+        221,
+        461
+      ],
+      "head": [
+        146,
+        0,
+        263,
+        210
+      ],
+      "hand": [
+        358,
+        239
+      ],
+      "reviewed": true,
+      "source_kind": "world_family_palette_teeth_revision"
+    }
+  },
+  "room": {
+    "day": 12,
+    "period": 1,
+    "location": "guestroom"
+  },
+  "clicked": "daram",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+  "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+  "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+  "review_status": "actual geometry and visible face hit targets reviewed"
+}

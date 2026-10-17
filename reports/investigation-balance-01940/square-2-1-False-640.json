@@ -1,0 +1,479 @@
+{
+  "label": "square-2-1-False-640",
+  "actors": [
+    {
+      "person": "resident_sling",
+      "pose": "activity",
+      "x": 1281,
+      "y": 294,
+      "width": 178,
+      "height": 142,
+      "rect": [
+        1281,
+        294,
+        178,
+        142
+      ],
+      "depth": 520,
+      "occlusion": [],
+      "contact": "crouching",
+      "slot": null,
+      "activity": "슬링은 배달할 봉투와 돌아온 봉투를 나눴다.",
+      "ground_depth": 520,
+      "elevation": 86
+    },
+    {
+      "person": "resident_guldol",
+      "pose": "neutral",
+      "x": 644,
+      "y": 362,
+      "width": 123,
+      "height": 219,
+      "rect": [
+        644,
+        362,
+        123,
+        219
+      ],
+      "depth": 581,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": [
+        710,
+        580,
+        220,
+        "floor"
+      ],
+      "activity": "광장의 돌 앞에 서서 오래 귀를 댄다."
+    },
+    {
+      "person": "resident_piko",
+      "pose": "map27_sq_2",
+      "x": 947,
+      "y": 369,
+      "width": 147,
+      "height": 220,
+      "rect": [
+        947,
+        369,
+        147,
+        220
+      ],
+      "depth": 589,
+      "occlusion": [],
+      "contact": "behind_counter",
+      "slot": null,
+      "activity": "액자 그림을 들어 보인다.",
+      "map27_occlusion": [
+        [
+          [
+            870,
+            545
+          ],
+          [
+            900,
+            520
+          ],
+          [
+            1000,
+            515
+          ],
+          [
+            1060,
+            540
+          ],
+          [
+            1065,
+            605
+          ],
+          [
+            870,
+            605
+          ]
+        ]
+      ],
+      "map27_keepouts": []
+    },
+    {
+      "person": "doto",
+      "pose": "action_1",
+      "x": 851,
+      "y": 375,
+      "width": 106,
+      "height": 245,
+      "rect": [
+        851,
+        375,
+        106,
+        245
+      ],
+      "depth": 620,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "도토는 어제 옮긴 줄과 오늘 옮길 줄 사이에 종이를 끼웠다."
+    },
+    {
+      "person": "resident_somi",
+      "pose": "living_bootice",
+      "x": 1569,
+      "y": 478,
+      "width": 260,
+      "height": 229,
+      "rect": [
+        1569,
+        478,
+        260,
+        229
+      ],
+      "depth": 707,
+      "occlusion": [],
+      "contact": "self-contained",
+      "slot": [
+        1700,
+        707,
+        269,
+        "floor"
+      ],
+      "activity": "솜이는 구두 밑창을 문지르고 반대쪽 발을 들었다."
+    }
+  ],
+  "offset": 640,
+  "hits": [
+    {
+      "person": "resident_sling",
+      "point": [
+        726,
+        336
+      ],
+      "actions": [
+        "('person', 'resident_sling')"
+      ]
+    },
+    {
+      "person": "resident_guldol",
+      "point": [
+        61,
+        394
+      ],
+      "actions": [
+        "('person', 'resident_guldol')"
+      ]
+    },
+    {
+      "person": "resident_piko",
+      "point": [
+        368,
+        401
+      ],
+      "actions": [
+        "('person', 'resident_piko')"
+      ]
+    },
+    {
+      "person": "doto",
+      "point": [
+        256,
+        411
+      ],
+      "actions": [
+        "('person', 'doto')"
+      ]
+    },
+    {
+      "person": "resident_somi",
+      "point": [
+        1085,
+        541
+      ],
+      "actions": [
+        "('person', 'resident_somi')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_seol": {
+      "file": "assets/room13-action-resident_seol-living_bellrope.webp",
+      "crop": [
+        61,
+        2,
+        423,
+        766
+      ],
+      "nearest": true,
+      "foot": [
+        211,
+        762
+      ],
+      "head": [
+        74,
+        4,
+        205,
+        150
+      ],
+      "contact": "standing",
+      "reviewed": true,
+      "map_action": true,
+      "stature_ratio": 1,
+      "source_sha256": "3d8419c6875d085e71303bb7b8f65d850d6c79883778f7fd88b08de58b412821"
+    },
+    "resident_sling": {
+      "file": "assets/room13-pixel-acting-resident_sling.webp",
+      "crop": [
+        540,
+        581,
+        497,
+        396
+      ],
+      "nearest": true,
+      "foot": [
+        248,
+        392
+      ],
+      "facing": "right",
+      "contact": "crouching",
+      "head": [
+        11,
+        0,
+        456,
+        238
+      ],
+      "reviewed": true,
+      "posture": "crouching"
+    },
+    "resident_dalgeurak": {
+      "file": "assets/map-action27/SQ-1--resident_dalgeurak.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        175.616,
+        2.3040000000000003,
+        186.36799999999997,
+        211.96800000000002
+      ],
+      "foot": [
+        299.52,
+        752.64
+      ],
+      "anchors": {
+        "foot": [
+          299.52,
+          752.64
+        ],
+        "foot_left": [
+          176.128,
+          754.944
+        ],
+        "foot_right": [
+          411.136,
+          742.656
+        ],
+        "hand_left": [
+          215.04,
+          254.20800000000003
+        ],
+        "hand_right": [
+          459.264,
+          273.408
+        ],
+        "prop_support": [
+          374.784,
+          380.15999999999997
+        ]
+      },
+      "foreground_parts": [
+        [
+          [
+            100,
+            205
+          ],
+          [
+            502.5,
+            205
+          ],
+          [
+            502.5,
+            415
+          ],
+          [
+            100,
+            415
+          ]
+        ]
+      ],
+      "contact": "behind_counter",
+      "stature_ratio": 0.96,
+      "source_sha256": "1308dc8f845854d04ed7fb0728f4352f3eac6e90cc57b222493c862e6c4a66fd",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_guldol": {
+      "file": "assets/room13-role-resident_guldol-neutral.webp",
+      "crop": [
+        38,
+        8,
+        226,
+        402
+      ],
+      "nearest": true,
+      "foot": [
+        120,
+        398
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        34,
+        4,
+        144,
+        110
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "guldol-distinct-v1-approved"
+    },
+    "resident_piko": {
+      "file": "assets/map-action27/SQ-2--resident_piko.webp",
+      "crop": [
+        0,
+        0,
+        512,
+        768
+      ],
+      "head": [
+        140,
+        45,
+        150,
+        135
+      ],
+      "foot": [
+        253.44,
+        752.64
+      ],
+      "anchors": {
+        "foot_left": [
+          186.88,
+          752.64
+        ],
+        "foot_right": [
+          320,
+          751.872
+        ],
+        "hand_frame_left": [
+          248.832,
+          274.176
+        ],
+        "hand_frame_right": [
+          372.224,
+          268.79999999999995
+        ],
+        "frame_center": [
+          305.152,
+          241.92000000000002
+        ],
+        "foot": [
+          253.44,
+          752.64
+        ]
+      },
+      "foreground_parts": [],
+      "contact": "behind_counter",
+      "stature_ratio": 1,
+      "source_sha256": "7208a0b54f8bd07e3a4bfc0a41e19d15dcb256e627eae71f30cd8553d240f5f5",
+      "source_commit": "9371f483d2c3e6026cfa3784c90507c91f8e6376"
+    },
+    "doto": {
+      "file": "assets/room13-role-doto-batch-action_1-v1.webp",
+      "crop": [
+        198,
+        10,
+        659,
+        1518
+      ],
+      "foot": [
+        329.5,
+        1518
+      ],
+      "head": [
+        98,
+        0,
+        362,
+        455
+      ],
+      "nearest": true,
+      "native_detail": true,
+      "contact": "standing",
+      "stature_ratio": 1,
+      "posture": "standing",
+      "source_sha256": "15436edeb1f6bad390fd7300fa58460a7a4c81aec234bc96fac88c8c2c50aec1",
+      "map_action": true,
+      "reviewed": true
+    },
+    "resident_lamplighter": {
+      "file": "assets/room13-pixel-acting-lamplighter.webp",
+      "crop": [
+        653,
+        514,
+        317,
+        483
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          158,
+          479
+        ]
+      },
+      "action_ko": "등의 점검함을 닫고 걸쇠를 확인한다.",
+      "contact": "self-contained",
+      "head": [
+        22,
+        0,
+        295,
+        256
+      ],
+      "facing": "right-profile"
+    },
+    "resident_somi": {
+      "file": "assets/room13-pixel-acting-somi.webp",
+      "crop": [
+        560,
+        564,
+        428,
+        378
+      ],
+      "nearest": true,
+      "anchor": {
+        "foot": [
+          214,
+          374
+        ]
+      },
+      "action_ko": "구두 밑창에 낀 얼음을 긁는다.",
+      "contact": "self-contained",
+      "head": [
+        90,
+        0,
+        338,
+        208
+      ],
+      "facing": "right-profile"
+    }
+  },
+  "room": {
+    "day": 2,
+    "period": 1,
+    "location": "square"
+  },
+  "clicked": "resident_sling",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+  "archive_sha256": "f15999c02e0245d075988942b8589dcf1d3651b220b7d8d628307b3caf2438e9",
+  "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+  "review_status": "actual geometry and visible face hit targets reviewed"
+}

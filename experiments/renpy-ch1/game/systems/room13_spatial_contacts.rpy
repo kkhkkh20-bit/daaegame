@@ -1,18 +1,20 @@
 # Furniture surfaces and elevated ground are separate coordinates. Existing residents only.
 # Final placement after approved map31; original art, schedules and event offers stay authoritative.
 init 179 python:
+    # Same-child head heights: bed 104/110px; nearer rug 115/120px.
+    # These are final pose heights, never multiplied by child/seat stature again.
     R13_HOME_CONTACTS = {
         "room13": {
-            "action_1": ("seat",1120,382,145,510),
-            "action_2": ("foot",1190,620,185,620),
-            "inspect_floor": ("foot",1140,622,138,622),
-            "rest": ("foot",1240,620,145,620),
+            "action_1": ("seat",1120,382,175,510),
+            "action_2": ("foot",1190,620,253,620),
+            "inspect_floor": ("foot",1140,622,189,622),
+            "rest": ("foot",1240,620,193,620),
         },
         "guestroom": {
-            "action_1": ("seat",880,370,160,500),
-            "action_2": ("foot",880,620,210,620),
-            "inspect_floor": ("foot",865,622,156,622),
-            "rest": ("foot",875,620,160,620),
+            "action_1": ("seat",880,370,184,500),
+            "action_2": ("foot",880,620,264,620),
+            "inspect_floor": ("foot",865,622,197,622),
+            "rest": ("foot",875,620,201,620),
         },
     }
     R13_SQUARE_LEVELS = {

@@ -1,0 +1,361 @@
+{
+  "label": "school-12-0-False-0",
+  "actors": [
+    {
+      "person": "resident_teacher",
+      "pose": "map27_sc_1",
+      "x": 252,
+      "y": 244,
+      "width": 132,
+      "height": 210,
+      "rect": [
+        252,
+        244,
+        132,
+        210
+      ],
+      "depth": 454,
+      "occlusion": [],
+      "contact": "standing",
+      "slot": null,
+      "activity": "책을 들고 칠판을 가리킨다.",
+      "map27_occlusion": [
+        [
+          [
+            155,
+            363
+          ],
+          [
+            500,
+            363
+          ],
+          [
+            500,
+            465
+          ],
+          [
+            155,
+            465
+          ]
+        ]
+      ],
+      "map27_keepouts": [
+        [
+          [
+            339.41739048338366,
+            307.6363636363636
+          ],
+          [
+            369.88102656092644,
+            307.6363636363636
+          ],
+          [
+            369.88102656092644,
+            356.68939393939394
+          ],
+          [
+            339.41739048338366,
+            356.68939393939394
+          ]
+        ]
+      ]
+    },
+    {
+      "person": "resident_owlgp",
+      "pose": "neutral",
+      "x": 52,
+      "y": 291,
+      "width": 111,
+      "height": 235,
+      "rect": [
+        52,
+        291,
+        111,
+        235
+      ],
+      "depth": 526,
+      "occlusion": [
+        [
+          0,
+          405
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          217,
+          411
+        ],
+        [
+          404,
+          439
+        ],
+        [
+          456,
+          417
+        ],
+        [
+          585,
+          420
+        ],
+        [
+          726,
+          435
+        ],
+        [
+          726,
+          566
+        ],
+        [
+          263,
+          621
+        ],
+        [
+          0,
+          621
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        120,
+        525,
+        235,
+        "class_back"
+      ],
+      "activity": "부엉이 할아버지는 수첩을 가까이 들었다."
+    },
+    {
+      "person": "resident_bori",
+      "pose": "neutral",
+      "x": 353,
+      "y": 296,
+      "width": 216,
+      "height": 240,
+      "rect": [
+        353,
+        296,
+        216,
+        240
+      ],
+      "depth": 536,
+      "occlusion": [
+        [
+          0,
+          405
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          217,
+          411
+        ],
+        [
+          404,
+          439
+        ],
+        [
+          456,
+          417
+        ],
+        [
+          585,
+          420
+        ],
+        [
+          726,
+          435
+        ],
+        [
+          726,
+          566
+        ],
+        [
+          263,
+          621
+        ],
+        [
+          0,
+          621
+        ]
+      ],
+      "contact": "standing",
+      "slot": [
+        309,
+        535,
+        240,
+        "class_back"
+      ],
+      "activity": "보리는 장작을 나눠 놓고 빈자리를 한참 봤다."
+    }
+  ],
+  "offset": 0,
+  "hits": [
+    {
+      "person": "resident_teacher",
+      "point": [
+        332,
+        278
+      ],
+      "actions": [
+        "('person', 'resident_teacher')"
+      ]
+    },
+    {
+      "person": "resident_owlgp",
+      "point": [
+        113,
+        328
+      ],
+      "actions": [
+        "('person', 'resident_owlgp')"
+      ]
+    },
+    {
+      "person": "resident_bori",
+      "point": [
+        456,
+        330
+      ],
+      "actions": [
+        "('person', 'resident_bori')"
+      ]
+    }
+  ],
+  "specs": {
+    "resident_teacher": {
+      "file": "assets/map-action27/SC-1--resident_teacher.webp",
+      "crop": [
+        0,
+        0,
+        482,
+        768
+      ],
+      "head": [
+        144.29999999999998,
+        15.36,
+        298.21999999999997,
+        222.72
+      ],
+      "foot": [
+        283.79,
+        760.32
+      ],
+      "anchors": {
+        "foot": [
+          283.79,
+          760.32
+        ],
+        "hand_left": [
+          365.56000000000006,
+          314.88
+        ],
+        "hand_right": [
+          57.72,
+          199.68
+        ],
+        "book_grip": [
+          379.99,
+          314.88
+        ],
+        "point_tip": [
+          19.24,
+          161.28
+        ],
+        "cane_ground": [
+          452.14,
+          752.64
+        ]
+      },
+      "foreground_parts": [
+        [
+          [
+            319.6978851963746,
+            232.72727272727275
+          ],
+          [
+            431.1077542799597,
+            232.72727272727275
+          ],
+          [
+            431.1077542799597,
+            412.1212121212121
+          ],
+          [
+            319.6978851963746,
+            412.1212121212121
+          ]
+        ]
+      ],
+      "contact": "standing",
+      "stature_ratio": 1,
+      "source_sha256": "952bd774cab26ac1b3717129856d8ad93a93d83de3db3e3449622c3dd928737d",
+      "source_commit": "14c7384afcfa0ee374ea5501adf1592b97a5f2af"
+    },
+    "resident_owlgp": {
+      "file": "assets/room13-redesign-resident_owlgp.webp",
+      "crop": [
+        76,
+        8,
+        360,
+        758
+      ],
+      "nearest": true,
+      "foot": [
+        219,
+        754
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        84,
+        4,
+        230,
+        235
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "redesign": "owlgp_simple_elder"
+    },
+    "resident_bori": {
+      "file": "assets/room13-canonical-default-resident_bori.webp",
+      "crop": [
+        44,
+        39,
+        544,
+        602
+      ],
+      "nearest": true,
+      "foot": [
+        304,
+        598
+      ],
+      "facing": "front",
+      "contact": "standing",
+      "head": [
+        96,
+        4,
+        329,
+        166
+      ],
+      "reviewed": true,
+      "posture": "standing",
+      "role_connect": "canonical48-rev47-aligned"
+    }
+  },
+  "room": {
+    "day": 12,
+    "period": 0,
+    "location": "school"
+  },
+  "clicked": "resident_teacher",
+  "screens": [
+    "r13_hub"
+  ],
+  "game_commit": "d681b9a9 + 0.19.40 geometry working tree",
+  "archive_sha256": "994d77601d62622c6b20f0375fca005e1ebc8bf928eef8db17de5c36fe0fe427",
+  "capture_kind": "Native SDK release fixture; per-capture archive recorded",
+  "review_status": "actual geometry and visible face hit targets reviewed"
+}
