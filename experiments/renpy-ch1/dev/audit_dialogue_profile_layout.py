@@ -11,7 +11,7 @@ SLOTS={'neutral','joy','angry','anxious','surprise_talk','surprise_react'}
 
 def audit(layout):
     result={'status':'MEASUREMENTS_ONLY_VISUAL_REVIEW_REQUIRED','errors':[], 'frames':[], 'warnings':[]}
-    if len(layout['people'])!=20:result['errors'].append('Expected the newly approved 20 people')
+    if len(layout['people'])!=layout.get('expected_people',20):result['errors'].append('Unexpected approved batch size')
     for person,entry in layout['people'].items():
         if set(entry['profiles'])!={'560','760','840'}:result['errors'].append([person,'Missing runtime profile'])
         for height,profile in entry['profiles'].items():

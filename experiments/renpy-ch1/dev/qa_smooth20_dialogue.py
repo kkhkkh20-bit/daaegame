@@ -33,7 +33,10 @@ async def main():
    report['version']=await q.py('import renpy;result=renpy.store.config.version');print('READY',report['version'],flush=True)
    await q.py(SETUP)
    people=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']
-   selected={k:v for k,v in people.items() if not os.environ.get('ROOM13_QA_SOURCE_COMMIT') or v['source_commit']==os.environ['ROOM13_QA_SOURCE_COMMIT']}
+   requested=set(filter(None,os.environ.get('ROOM13_QA_SOURCE_COMMIT','').split(',')))
+   selected={k:v for k,v in people.items() if not requested or requested.intersection((v['source_commit'],v.get('neutral_source_commit')))}
+   report['runtime_registry']=await q.py('import renpy;s=renpy.store;result=dict(people=len(s.R13_DIALOGUE_TALK_ART["people"]),sources=s.R13_DIALOGUE_TALK_ART.get("source_commits",[]))')
+   assert report['runtime_registry']['people']==len(people)
    report['selected_people']=list(selected)
    for who in ([] if os.environ.get("ROOM13_QA_QUICK") else selected):
     for h,slots in [(560,['neutral','joy','angry','anxious','surprise_react','surprise_talk']),(760,['neutral']),(840,['neutral'])]:
@@ -45,12 +48,13 @@ async def main():
       report['captures'].append(name)
     print('CAPTURED',who,flush=True)
    # Real timed Displayable: normal reaction duration, then calm talk frame.
-   await q.py('import renpy\ns=renpy.store\ns.qa_person="resident_nero";s.qa_height=560;s.qa_title="reaction -> talk 0.35 sec"\ns.r13_dialogue_beat=dict(person="resident_nero",talk="surprise_talk",react="surprise_react",settled=False,duration=.35)\nrenpy.exports.restart_interaction();result=True')
+   reaction_person=os.environ.get('ROOM13_QA_REACTION_PERSON','resident_nero')
+   await q.py('import renpy\ns=renpy.store\ns.qa_person="resident_nero";s.qa_height=560;s.qa_title="reaction -> talk 0.35 sec"\ns.r13_dialogue_beat=dict(person="resident_nero",talk="surprise_talk",react="surprise_react",settled=False,duration=.35)\nrenpy.exports.restart_interaction();result=True'.replace('"resident_nero"',json.dumps(reaction_person)))
    await page.screenshot(path=str(OUT/'reaction-start.png'));await asyncio.sleep(.5);await page.screenshot(path=str(OUT/'reaction-settled.png'))
    await asyncio.sleep(.4)
    report['reaction_completion']=await q.py('import renpy;result=renpy.store.r13_dialogue_beat')
    assert report['reaction_completion']['settled']
-   report['skip_rollback_motion']=await q.py('import renpy\ns=renpy.store\nplan=dict(person="resident_nero",talk="surprise_talk",react="surprise_react",settled=False,duration=.35)\nresult=dict(skip=s.r13_dialogue_phase(plan,0,True,True),motion_off=s.r13_dialogue_phase(plan,0,False,False),elapsed=s.r13_dialogue_phase(plan,.36,False,True))')
+   report['skip_rollback_motion']=await q.py('import renpy\ns=renpy.store\nplan=dict(person="resident_nero",talk="surprise_talk",react="surprise_react",settled=False,duration=.35)\nresult=dict(skip=s.r13_dialogue_phase(plan,0,True,True),motion_off=s.r13_dialogue_phase(plan,0,False,False),elapsed=s.r13_dialogue_phase(plan,.36,False,True))'.replace('"resident_nero"',json.dumps(reaction_person)))
    assert all(v=='surprise_talk' for v in report['skip_rollback_motion'].values())
    # New page starts cleanly and enters the natural game, without gallery fixtures.
    await page.reload();await page.wait_for_function("typeof renpy_exec==='function'",timeout=240000);await q.wait('main_menu')
