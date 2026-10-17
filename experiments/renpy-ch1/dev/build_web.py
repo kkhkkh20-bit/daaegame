@@ -220,6 +220,7 @@ def main():
     ap.add_argument("--release", type=Path, default=ROOT.parents[1] / "preview/room13-dev")
     ap.add_argument("--work", type=Path, default=Path("/tmp/room13-build"))
     ap.add_argument("--skip-lint", action="store_true")
+    ap.add_argument("--part-mb", type=int, choices=range(1,61), default=PART//(1024*1024), help="Core archive transport chunk size; archive bytes stay identical.")
     a = ap.parse_args()
     release, work = a.release.resolve(), a.work.resolve()
     stage = work / "stage"
@@ -252,6 +253,7 @@ def main():
         if any(re.search(r"\.rpy:\d+ ", l) for l in lint.stdout.splitlines() if "is not loadable" not in l):
             raise SystemExit("lint reported problems; see " + str(work / "lint.txt"))
     shutil.rmtree(game / "cache", ignore_errors=True)
+    shutil.rmtree(game / "saves", ignore_errors=True)  # compile may create persistent; never publish it
     for junk in ("log.txt", "errors.txt", "traceback.txt", "lint.txt"):
         (stage / junk).unlink(missing_ok=True)
 
@@ -297,8 +299,9 @@ def main():
     for stale in release.glob("game.part[0-9][0-9]"):
         stale.unlink()
     parts = []
-    for index, at in enumerate(range(0, size, PART), 1):
-        chunk = data[at:at + PART]; name = "game.part%02d" % index
+    part_size = a.part_mb*1024*1024
+    for index, at in enumerate(range(0, size, part_size), 1):
+        chunk = data[at:at + part_size]; name = "game.part%02d" % index
         (release / name).write_bytes(chunk)
         parts.append({"file": name, "bytes": len(chunk), "sha256": sha(chunk)})
     shipped = set()

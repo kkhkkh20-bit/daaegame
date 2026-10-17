@@ -39,15 +39,14 @@ class InnNavigationV4(unittest.TestCase):
                 x0, y0, x1, y1 = chip["bounds"]
                 self.assertTrue(0 <= x0 < x1 <= NAV[location]["source"][0] and 0 <= y0 < y1 <= NAV[location]["source"][1])
 
-    def test_guide_labels_are_known_places_only(self):
-        guide = json.loads((GAME / "assets/room13-inn-guide.json").read_text(encoding="utf-8"))
-        allowed = {"title", "floor", "reception", "entrance", "inn", "dining", "kitchen", "hall", "room13", "guestroom"}
-        self.assertEqual({l["locationId"] for l in guide["labels"]} - allowed, set())
-        self.assertNotIn("passage", json.dumps(guide["labels"]))
-        with Image.open(GAME / guide["base"]) as im:
-            self.assertEqual(im.size, (guide["width"], guide["height"]))
-        hub = (GAME / "room13_screens.rpy").read_text(encoding="utf-8")
-        self.assertIn('Show("r13_inn_guide")', hub[hub.index('textbutton "안내도":'):][:400])
+    def test_guide_uses_shared_gated_text_navigation(self):
+        source=(GAME/'room13_inn_navigation_v4.rpy').read_text()
+        self.assertIn('use r13_map(initial_region="inn",local_guide=True)',source)
+        self.assertIn('for key,point in r13_map_nodes("inn")',source)
+        hub=(GAME/'room13_screens.rpy').read_text()
+        self.assertNotIn('textbutton "안내도":',hub)
+        nav=(GAME/'room13_navigation.rpy').read_text()
+        self.assertIn('Return(("travel",selected))',nav)
+        self.assertIn('selected in dict(r13_local_connections()) if local_guide',nav)
 
-if __name__ == "__main__":
-    unittest.main()
+if __name__ == "__main__":unittest.main()

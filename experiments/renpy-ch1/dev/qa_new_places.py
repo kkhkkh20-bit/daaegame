@@ -9,7 +9,7 @@ from webqa import UIQA
 URL = os.environ.get('ROOM13_URL', 'http://localhost:8765/preview/room13-dev/')
 OUT = Path(os.environ.get('ROOM13_QA_OUT', '/tmp/room13-qa')) / 'new-places'
 OUT.mkdir(parents=True, exist_ok=True)
-DATA = json.loads((Path(__file__).resolve().parents[1] / 'game/room13-worldmap-v5.json').read_text())
+DATA = json.loads((Path(__file__).resolve().parents[1] / 'game/room13-cartography.json').read_text())
 QUIET = ["entry_corrected", "lodging", "livelihood_open", "ev_g_done", "ev_i_done", "ev_a_done", "ev_l_done",
          "ep1_patrol_seen", "ep1_eaves_seen"] + ["evening_brief:%d" % d for d in range(1, 14)]
 NAMES = {'river': '큰 강', 'forest': '깊은 숲', 'market': '장터'}
@@ -49,12 +49,12 @@ async def main():
             for key in ('river', 'forest', 'market'):
                 await q.press('지도 · 이동'); await q.wait('r13_map')
                 if (await scope())['region'] != 'village':
-                    await q.press('마을 보기')
+                    await q.press('마을')
                 # Click the polygon point on the map art first, then the name label.
-                x, y = DATA['layers'][key]['point']
-                await q.input(30 + round(x * 860 / 1672), 150 + round(y * 860 / 1672))
+                x, y = DATA['regions']['village']['nodes'][key]['point']
+                await q.input(16 + round(x * 1248 / 1672), 9 + round(y * 1248 / 1672))
                 assert (await scope())['selected'] == key, (key, await scope())
-                await q.press(NAMES[key])
+                await q.input(16 + round(x * 1248 / 1672), 9 + round(y * 1248 / 1672))
                 assert (await scope())['selected'] == key
                 await q.shot('map-' + key)
                 await q.press('이곳으로 이동')

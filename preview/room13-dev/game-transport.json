@@ -1,12 +1,22 @@
 {
  "multipart": true,
- "archive_bytes": 17530994,
- "archive_sha256": "114a1d46af2640c042165d54a224a25e04aa8be30167158c3f5a3d63b1167d1d",
+ "archive_bytes": 17697158,
+ "archive_sha256": "43ac3a14c480882dbad160d1f76ffb94ebe1c26594415c3ddf09acc189a8e2b5",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 17530994,
-   "sha256": "114a1d46af2640c042165d54a224a25e04aa8be30167158c3f5a3d63b1167d1d"
+   "bytes": 8388608,
+   "sha256": "2c65a01b736b2825ff3c7ba36d76323a24754b84473f0f62b6d21bf8c4a13ce8"
+  },
+  {
+   "file": "game.part02",
+   "bytes": 8388608,
+   "sha256": "31f1b5403e8a4d4516a9f8a986cba53b543f9abfd519a458d6e84434bfe660b1"
+  },
+  {
+   "file": "game.part03",
+   "bytes": 919942,
+   "sha256": "085d7460f095389ad51adac55feaf6ee3df2f1e0474947aa01db12fd79a6e9f5"
   }
  ],
  "preload": [
@@ -1321,9 +1331,44 @@
    "sha256": "5590e82e69e6cfc1da8900ba339ca6c3b2fea9eddfb4f1ed9b4e8409623f652d"
   },
   {
-   "file": "game/assets/room13-inn-guide-v4.webp",
-   "bytes": 523952,
-   "sha256": "ece22f7893b51b49b1e747b094934fa36f87b1f78119509e9747424a0cdd0123"
+   "file": "game/assets/room13-map-mountain-facility.webp",
+   "bytes": 125580,
+   "sha256": "93ecc59a5e1dc803719e0c6c709a548f52631a7f57ffa2b86ee5eb068bb9df4c"
+  },
+  {
+   "file": "game/assets/room13-map-mountain-greenhouse.webp",
+   "bytes": 66822,
+   "sha256": "5b429e08eb5eb70bd15c49f97960c83389965640d115111a938eb0f5093e842b"
+  },
+  {
+   "file": "game/assets/room13-map-mountain.webp",
+   "bytes": 642174,
+   "sha256": "a96dfefb97010a27cda68eeba411753b23776b8de259ef748c674cfd080911e4"
+  },
+  {
+   "file": "game/assets/room13-map-reveal-altar.webp",
+   "bytes": 144792,
+   "sha256": "83f9308c8fd936a19323e65e480cbf3214b80bc5edee807c34e5bec5d840eb44"
+  },
+  {
+   "file": "game/assets/room13-map-reveal-greenhouse.webp",
+   "bytes": 143330,
+   "sha256": "8203304fae1ac98bb730290d0b4e580020cd49bca704f9adfe3cac929b14a807"
+  },
+  {
+   "file": "game/assets/room13-map-village-clinic.webp",
+   "bytes": 67780,
+   "sha256": "dc86f4a9f402c2a1a0ac457a2e22ab487e914deb25a99ca352627fc974990dbb"
+  },
+  {
+   "file": "game/assets/room13-map-village-inn.webp",
+   "bytes": 140652,
+   "sha256": "54512d33196a3cb18969876ece98f00d2d7bc0172cfe1316a5577fef34d626aa"
+  },
+  {
+   "file": "game/assets/room13-map-village.webp",
+   "bytes": 621316,
+   "sha256": "4589d6219b78caec02778f9a24d7e89ff11950443067c2191e060075a5aa2acf"
   },
   {
    "file": "game/assets/room13-meeting-seated-buri068.webp",
@@ -2454,31 +2499,6 @@
    "file": "game/assets/room13-title-winter020.webp",
    "bytes": 390092,
    "sha256": "ec7b0a4ecfea53f3ceb12c606fe733061a0e31ff31aea2fcbf6ca0d9dc97c2d6"
-  },
-  {
-   "file": "game/assets/room13-worldmap-v5-forest.webp",
-   "bytes": 79150,
-   "sha256": "88fe86247de3d6f5dab86d1c7ee9c65194c3b79a4e019cf783f95de042a3469c"
-  },
-  {
-   "file": "game/assets/room13-worldmap-v5-gate.webp",
-   "bytes": 85602,
-   "sha256": "2012f9b141bd91dc6d1946c1fb22abf7d5ee76c6b71a68576353f962be864b02"
-  },
-  {
-   "file": "game/assets/room13-worldmap-v5-inn.webp",
-   "bytes": 105814,
-   "sha256": "6b536648aabed592094bf68db07ac10d31c799e785c0af96e2d1a6df3cebc910"
-  },
-  {
-   "file": "game/assets/room13-worldmap-v5-river.webp",
-   "bytes": 81240,
-   "sha256": "ea2831c4f9352defcceac261694cba362eb26b31018d7cfbc269c8034cce6a8e"
-  },
-  {
-   "file": "game/assets/room13-worldmap-v5.webp",
-   "bytes": 547682,
-   "sha256": "45ccfc15972a4503aaca8d0582ec8e23acf726590484e830d2c8e5a86a37063e"
   },
   {
    "file": "game/assets/sfx-bell.wav",

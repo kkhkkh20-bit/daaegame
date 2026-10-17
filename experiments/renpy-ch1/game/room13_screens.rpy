@@ -112,12 +112,6 @@ screen r13_hub(entry=False):
                     style "r13_action_button" padding (16,10) ysize 64
                     background R13PaperFrame() hover_background R13PaperPanel(focused=True) text_color "#65503b" text_hover_color "#493b30"
                     text_size 21 action Return(("travel",destination)) sensitive ready
-    if not entry and r13_inn_guide_available():
-        textbutton "안내도":
-            id "r13_inn_guide_button"
-            style "r13_action_button" xpos 1058 xanchor 1.0 ypos 102 xsize 112 ysize 54
-            text_size 22 action Show("r13_inn_guide") sensitive ready
-            alt "여관 안내도 열기"
     if entry:
         use r13_waiting_window(ready)
     else:
