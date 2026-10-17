@@ -400,6 +400,11 @@ screen r13_confirm(message,yes="진행한다",no="돌아간다"):
                 spacing 25
                 textbutton yes action Return(True) sensitive ready text_size 25
                 textbutton no action Return(False) sensitive ready text_size 25
+    # 0.18.95 PC: Enter = yes, Esc = no.
+    if ready:
+        key "K_RETURN" action Return(True)
+        key "K_KP_ENTER" action Return(True)
+        key "game_menu" action Return(False)
 
 screen r13_activities():
     style_prefix "r13"

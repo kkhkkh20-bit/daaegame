@@ -11681,3 +11681,30 @@ testcase o46_ropes:
     $ renpy.restart_interaction()
     pause 1.2
     screenshot "o46_altar_evening.png"
+
+testcase shortcuts:
+    # 0.18.95 PC 단축키: M 지도, R 기록, 확인창 Enter/Esc, 메뉴의 단축키 안내.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=2,period=0,location="inn",life_poc=True),("entry_corrected","lodging"))
+    click pos (640,600) until screen "r13_hub" timeout 40
+    pause 0.6
+    keysym "K_m"
+    pause 1.0
+    assert screen "r13_map"
+    keysym "K_ESCAPE"
+    pause 1.0
+    keysym "K_r"
+    pause 1.0
+    assert screen "r13_records"
+    run Hide("r13_records")
+    pause 0.6
+    run Show("r13_more_tools")
+    pause 0.8
+    screenshot "menu_with_shortcuts.png"
+    click "단축키"
+    pause 0.8
+    assert screen "r13_shortcut_help"
+    screenshot "shortcut_help.png"
+    $ r13_qa_note("shortcuts ok")

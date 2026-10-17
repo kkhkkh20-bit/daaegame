@@ -77,7 +77,7 @@ screen r13_more_tools():
     # 0.18.56: 생활 장부 (money ledger, shared work) moved here from the removed top board.
     $ ledger_ok=(not line_active) and bool(room13) and r13_has("livelihood_open") and renpy.get_screen("r13_hub") is not None
     frame:
-        area (932,100 if meeting_line else (204 if line_active else (312 if ledger_ok else 366)),324,568 if meeting_line else (456 if line_active else (348 if ledger_ok else 294))) padding (12,12) background R13InkPanel()
+        area (932,100 if meeting_line else (150 if line_active else (258 if ledger_ok else 312)),324,622 if meeting_line else (510 if line_active else (402 if ledger_ok else 348))) padding (12,12) background R13InkPanel()
         vbox:
             spacing 6
             if meeting_line:
@@ -113,6 +113,9 @@ screen r13_more_tools():
             textbutton "설정":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
                 action [Hide("r13_more_tools"),ShowMenu("pause_menu")]
+            textbutton "단축키":
+                style "r13_action_button" xsize 300 ysize 48 text_size 20
+                action [Hide("r13_more_tools"),Show("r13_shortcut_help")]
             textbutton "메인화면":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
                 action [Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))]
