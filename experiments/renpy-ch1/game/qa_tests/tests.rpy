@@ -9835,7 +9835,8 @@ testcase new_places:
     screenshot "np_river_arrive.png"
     click "지도 · 이동"
     pause 1.5
-    click pos (150,137)
+    # 0.19.12 map: 깊은 숲 is at the top left of the village sheet.
+    click pos (390,125)
     pause 0.5
     click "이곳으로 이동"
     click pos (1150,90) until screen "r13_hub" timeout 40
