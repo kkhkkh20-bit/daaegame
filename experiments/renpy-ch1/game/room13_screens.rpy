@@ -238,7 +238,8 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
                         size r13_read_size(20,24) color "#fff4df" line_spacing 3 font r13_ui_font()
                         outlines [(1,"#101515",0,0)]
         # Questions sit around the centre, clear of dialogue advancement and bottom tools.
-        $ row_h=(64 if persistent.room13_large_text else 56)
+        $ roomy=r13_ui_preview and r13_ui_roomy_choices
+        $ row_h=(80 if persistent.room13_large_text else 72) if roomy else (64 if persistent.room13_large_text else 56)
         $ list_top,list_bottom=r13_question_bounds(entries,list_width)
         if caption:
             text caption:
@@ -252,14 +253,14 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
             area (list_left,list_top,list_width,list_bottom-list_top)
             mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
             vbox:
-                spacing 12
+                spacing (16 if roomy else 12)
                 for index,(title,action,was_read) in enumerate(entries):
                     button:
-                        xsize list_width-23 yminimum row_h padding (18,9)
+                        xsize list_width-23 yminimum row_h padding (18,17 if roomy else 9)
                         background (R13InkPanel(alpha="e6",slim=True) if r13_ui_preview else R13InkPanel()) hover_background (R13InkPanel(focused=True,alpha="f5",slim=True) if r13_ui_preview else R13InkPanel(focused=True))
                         action r13_safe_question_action(action) sensitive ready
                         text (("%d  "%(index+1) if index<9 else "")+r13_question_caption(title,was_read,mark_unread=True)):
-                            xsize list_width-59 text_align .5 xalign .5
+                            xsize list_width-59 text_align .5 xalign .5 yalign .5
                             size r13_read_size(24,30) font r13_ui_font()
                             color (r13_role_color("subdued") if was_read else r13_role_color("speech"))
                             outlines [(1,"#101515",0,0)]
@@ -286,13 +287,14 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         add Solid("#00000020" if r13_ui_preview else "#00000048")
         $ compact_width=min(list_width,940)
         $ choice_size=r13_read_size(23,28)
+        $ roomy=r13_ui_preview and r13_ui_roomy_choices
         $ list_left=(1280-compact_width)//2
         # Choices (owner, 0.18.4): the line just spoken stays above the options,
         # each option carries a number (keys 1-9). Captions are kept short (about
         # 20 characters) so a 940px row holds them on one line.
         $ context=r13_choice_context() if title=="선택" else None
         $ list_floor=(190 if context else 100)
-        $ question_height=r13_reference_list_height(entries,compact_width,14,(470 if context else 430 if return_action is not None else 520),56,choice_size)
+        $ question_height=r13_reference_list_height(entries,compact_width,16 if roomy else 14,(470 if context else 430 if return_action is not None else 520),72 if roomy else 56,choice_size)
         $ question_top=max(list_floor,int((690-question_height+list_floor-100)//2) if return_action is None else min(int((680-question_height)//2),534-question_height))
         if context:
             frame:
@@ -321,11 +323,11 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
             area (list_left,question_top,compact_width,question_height)
             mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
             vbox:
-                spacing 14
+                spacing (16 if roomy else 14)
                 for index,(title,action,was_read) in enumerate(entries):
                     button:
                         # Left padding clears the gold number tab drawn by R13ReferenceChoice.
-                        xsize compact_width-23 yminimum 56 padding (72,8,20,8)
+                        xsize compact_width-23 yminimum (72 if roomy else 56) padding (72,16 if roomy else 8,20,16 if roomy else 8)
                         background R13ReferenceChoice(False,index+1 if index<9 else None) hover_background R13ReferenceChoice(True,index+1 if index<9 else None)
                         action r13_safe_question_action(action) sensitive ready
                         text r13_question_caption(title,was_read,False):

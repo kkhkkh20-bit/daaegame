@@ -208,3 +208,5 @@ init 58 python:
 
 # Local design preview: disabled in ordinary gameplay until reviewed.
 default r13_ui_preview = False
+
+default r13_ui_roomy_choices = True

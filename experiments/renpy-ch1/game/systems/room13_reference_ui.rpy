@@ -41,15 +41,16 @@ init 79 python:
             inner=width-99 if row<=42 else width-115
             text=Text(caption,size=size or (r13_read_size(22,28) if row<=42 else r13_read_size(23,28)),font=r13_ui_font(),xsize=inner)
             height=renpy.render(text,inner,720,0,0).get_size()[1]
-            total+=max(row,height+16)
+            total+=max(row,height+(34 if getattr(store,"r13_ui_preview",False) and getattr(store,"r13_ui_roomy_choices",False) else 16))
         # Render sizes can be floats; a float ypos would be read as a screen fraction.
         # Up to about seven one-line topics fit without a half-cut last row.
         return int(min(cap,total))
 
     def r13_question_bounds(entries,width=760):
-        row=64 if persistent.room13_large_text else 56
+        roomy=getattr(store,"r13_ui_preview",False) and getattr(store,"r13_ui_roomy_choices",False)
+        row=(80 if persistent.room13_large_text else 72) if roomy else (64 if persistent.room13_large_text else 56)
         # 0.18.50 (owner): a long list rises over the face rather than showing a scroll bar.
-        height=r13_reference_list_height(entries,width-23,12,500,row,r13_read_size(24,30))+4
+        height=r13_reference_list_height(entries,width-23,16 if roomy else 12,500,row,r13_read_size(24,30))+4
         top=max(96,350-height//2)
         return top,min(610,top+height)
 
