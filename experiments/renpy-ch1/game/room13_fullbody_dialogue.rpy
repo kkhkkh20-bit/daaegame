@@ -116,7 +116,7 @@ init 58 python:
     R13_FULLBODY_ART_CACHE={}
 
     def r13_fullbody_close_art(person,pose,height,speaking=False,entrance=False):
-        beat=r13_dialogue_beat_art(person,height)
+        beat=r13_dialogue_beat_art(person,height) if r13_dialogue_source_profile(person,pose,height) else None
         if beat is not None:return beat
         source=r13_dialogue_source_neutral(person,pose,height)
         if source is not None:return source

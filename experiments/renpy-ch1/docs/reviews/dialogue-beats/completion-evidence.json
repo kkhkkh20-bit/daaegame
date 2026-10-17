@@ -10,14 +10,14 @@
   "binding_cases": 80988,
   "provider_cases": 63973,
   "unresolved": [],
-  "unit_tests": 280,
+  "unit_tests": 281,
   "lint": "passed",
   "build": {
-    "core_zip_bytes": 30226138,
-    "archive_sha256": "cb8409e6b039e13914c92ff0e050cb4e4bd28927509c5258c2ca538d48277412",
+    "core_zip_bytes": 30226192,
+    "archive_sha256": "ea3b8e8bbd45f13e888aa8a2c7f93493cb6f8c4f36a9e9ab4f94da4bfe281f1d",
     "parts": 1,
     "preload_files": 715,
-    "first_load_bytes": 187082019,
+    "first_load_bytes": 187082073,
     "remote_files": 274,
     "removed_from_release": []
   },
@@ -35,5 +35,6 @@
     "Higher-resolution neutral masters remain desirable for Neoul/teacher, secondary Daram/Bami/Somi.",
     "19 expression/event-body production request groups remain unproduced and unapproved.",
     "No full-game QA claimed."
-  ]
+  ],
+  "additional_regression": "Stale dialogue plan cannot override meeting or authored action art: passed"
 }
