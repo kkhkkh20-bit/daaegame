@@ -356,7 +356,7 @@ screen r13_meeting_choices(items,ready):
             hbox:
                 align (.5,.5) spacing 14
                 if who and columns==2:
-                    add Transform(r13_art(who,"avatar_neutral"),xysize=(48,48),fit="contain",nearest=True) yalign .5
+                    add Transform(r13_art(who,"avatar_neutral"),xysize=(48,48),fit="contain",nearest=r13_profile_nearest(who)) yalign .5
                 text (str(index+1)+"  "+item.caption) size r13_read_size(23,27) color "#fff0ce" yalign .5
         if index<9 and ready:
             key ("K_%d"%(index+1)) action r13_safe_question_action(item.action)
