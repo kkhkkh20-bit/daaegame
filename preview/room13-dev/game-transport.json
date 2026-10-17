@@ -1,12 +1,22 @@
 {
  "multipart": true,
- "archive_bytes": 17923378,
- "archive_sha256": "0eb3d65f7dca270e7b0248e6231c370cb54c9ca2d645e3ce253cef0436231524",
+ "archive_bytes": 17930229,
+ "archive_sha256": "950e0cd3b419c39605010816e888848194d44df4b3e7b4ae608336671c7f33e7",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 17923378,
-   "sha256": "0eb3d65f7dca270e7b0248e6231c370cb54c9ca2d645e3ce253cef0436231524"
+   "bytes": 8388608,
+   "sha256": "d4206bbedf903e4400cf39d527a17b0267016b3ee863a0ab409aab7daa4b0def"
+  },
+  {
+   "file": "game.part02",
+   "bytes": 8388608,
+   "sha256": "7292bab212a10e5b6fb52cbc6e711041bed6b9748fb2ee89ae370ccd6f7c0b20"
+  },
+  {
+   "file": "game.part03",
+   "bytes": 1153013,
+   "sha256": "d4c950816958214b64298c7d8c04671d2df927795b3abf6a24db7977a2fc82cd"
   }
  ],
  "preload": [
@@ -2729,6 +2739,11 @@
    "file": "game/assets/room13-title-winter020.webp",
    "bytes": 390092,
    "sha256": "ec7b0a4ecfea53f3ceb12c606fe733061a0e31ff31aea2fcbf6ca0d9dc97c2d6"
+  },
+  {
+   "file": "game/assets/room13-ui-objection01917.webp",
+   "bytes": 580404,
+   "sha256": "7c1763c2c150737be212d8c10c586547c76fe18aab12472d11e2da14031ff8fc"
   },
   {
    "file": "game/assets/sfx-bell.wav",

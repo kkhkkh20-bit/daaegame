@@ -39,7 +39,8 @@ class CouncilDirection(unittest.TestCase):
   beat('listen','C2');beat('select');beat('explain');beat('shaken')
   self.assertEqual([c for c in self.calls if c[0]=='play'],[('play','council')])
   beat('recover');self.assertEqual(self.playing,'pressure')
-  beat('select');beat('explain');self.assertEqual(self.playing,'pressure')
+  beat('select');beat('explain');beat('listen');self.assertEqual(self.playing,'pressure')
+  beat('listen','C3');self.assertEqual(self.playing,'council')
   self.e['r13_meeting_direct_end']()
   self.assertIn(('volume',1.0),self.calls);self.assertIn(('pause',False),self.calls)
  def test_altar_keeps_its_track_and_wind(self):
@@ -82,3 +83,27 @@ class CouncilDirection(unittest.TestCase):
   self.assertIn(('pause',False),self.calls)
   self.assertIn(('volume',.58),self.calls)
   self.assertEqual(self.s.r13_meeting_direction['beat'],'explain')
+
+class WorldCamera(unittest.TestCase):
+ def setUp(self):
+  self.s=types.SimpleNamespace(r13_meeting_previous_focus='a',r13_meeting_shot_revision=1,r13_meeting_pan_painted_revision=-1,r13_meeting_pan_started=0.0)
+  self.clock=[10.0];self.motion=types.SimpleNamespace(room13_motion=True)
+  self.e=dict(store=self.s,persistent=self.motion,r13_debate_session=lambda c:'trial',
+   r13_meeting_cast=lambda c,s:[('a',0),('b',0),('c',0)],r13_meeting_direct_duration=lambda:.22,
+   renpy=types.SimpleNamespace(Displayable=object,is_skipping=lambda:False,display=types.SimpleNamespace(core=types.SimpleNamespace(get_time=lambda:self.clock[0]))))
+  src=(ROOT/'game/room13_meeting_camera.rpy').read_text().split('init 175 python:\n',1)[1]
+  exec(textwrap.dedent(src),self.e)
+ def test_camera_projects_fixed_seats_together_instead_of_replacing_speaker_cards(self):
+  slot=self.e['r13_meeting_world_slot']
+  self.assertEqual(slot(0,0,9)[:2],(640,1.0))
+  self.assertAlmostEqual(slot(1,0,9)[1],.82)
+  # Turning right sends both fixed people left; no independent entrance/exit motion.
+  self.assertLess(slot(0,.5,9)[0],slot(0,0,9)[0])
+  self.assertLess(slot(1,.5,9)[0],slot(1,0,9)[0])
+  self.assertEqual(slot(0,9,9),slot(0,0,9))
+ def test_camera_interpolates_one_view_and_reduced_motion_snaps_to_same_destination(self):
+  view=self.e['r13_meeting_world_view']
+  self.assertEqual(view('C2','b'),(0.0,True))
+  self.clock[0]+=.11;self.assertAlmostEqual(view('C2','b')[0],.5)
+  self.clock[0]+=.13;self.assertEqual(view('C2','b'),(1.0,False))
+  self.motion.room13_motion=False;self.assertEqual(view('C2','b'),(1.0,False))

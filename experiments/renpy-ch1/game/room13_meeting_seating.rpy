@@ -179,10 +179,11 @@ transform r13_meeting_pan(revision=0,direction=1,outgoing=False):
 
 screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,ballot=False):
     $ session=r13_debate_session(claim)
-    add r13_meeting_plate(session,close)
-    if close and r13_meeting_previous_focus and r13_meeting_previous_focus!=focus and persistent.room13_motion and not renpy.is_skipping():
-        use r13_meeting_camera_frame(claim,r13_meeting_previous_focus,True,False,selected,False,True)
-    use r13_meeting_camera_frame(claim,focus,close,ready,selected,ballot)
+    if close:
+        add R13MeetingOrbit(claim,focus,r13_meeting_shot_revision,(r13_meeting_direction or {}).get("beat","listen"),r13_meeting_direction_poses)
+    else:
+        add r13_meeting_plate(session,False)
+        use r13_meeting_camera_frame(claim,focus,False,ready,selected,ballot)
 
 screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selected=None,ballot=False,outgoing=False):
     $ session=r13_debate_session(claim)

@@ -296,7 +296,9 @@ init 55 python:
         vp=(getattr(store,"room13",None) or {}).get("pov") or "dad"
         if getattr(store,"r13_meeting_active",False):
             # Keep all participants in place; the say screen owns the bubble.
-            r13_meeting_focus_change(store.r13_meeting_claim,who)
+            # Gasps are heard around the frozen subject, before the calm explanation.
+            if (getattr(store,"r13_meeting_direction",{}) or {}).get("beat")!="gasp":
+                r13_meeting_focus_change(store.r13_meeting_claim,who)
             store.dialogue_speaker=who if who in CAST else None
             store.dialogue_expression=expression if who in CAST and expression in CAST[who] else "neutral"
             renpy.hide("r13_visitor")

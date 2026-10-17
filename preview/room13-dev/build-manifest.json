@@ -1,13 +1,23 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 17923378,
-  "archive_sha256": "0eb3d65f7dca270e7b0248e6231c370cb54c9ca2d645e3ce253cef0436231524",
+  "archive_bytes": 17930229,
+  "archive_sha256": "950e0cd3b419c39605010816e888848194d44df4b3e7b4ae608336671c7f33e7",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 17923378,
-    "sha256": "0eb3d65f7dca270e7b0248e6231c370cb54c9ca2d645e3ce253cef0436231524"
+    "bytes": 8388608,
+    "sha256": "d4206bbedf903e4400cf39d527a17b0267016b3ee863a0ab409aab7daa4b0def"
+   },
+   {
+    "file": "game.part02",
+    "bytes": 8388608,
+    "sha256": "7292bab212a10e5b6fb52cbc6e711041bed6b9748fb2ee89ae370ccd6f7c0b20"
+   },
+   {
+    "file": "game.part03",
+    "bytes": 1153013,
+    "sha256": "d4c950816958214b64298c7d8c04671d2df927795b3abf6a24db7977a2fc82cd"
    }
   ]
  },
@@ -29,12 +39,20 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 99474,
-   "sha256": "c683cdfd24944428c3a5f1a0eeab351fc05648ef33feb344e25eef6a0a4a9428"
+   "bytes": 99910,
+   "sha256": "f7be7213b6472cb3a9fb10c6f66cac94f1a17cc0faa5e9962a181f58c9282995"
   },
   "game.part01": {
-   "bytes": 17923378,
-   "sha256": "0eb3d65f7dca270e7b0248e6231c370cb54c9ca2d645e3ce253cef0436231524"
+   "bytes": 8388608,
+   "sha256": "d4206bbedf903e4400cf39d527a17b0267016b3ee863a0ab409aab7daa4b0def"
+  },
+  "game.part02": {
+   "bytes": 8388608,
+   "sha256": "7292bab212a10e5b6fb52cbc6e711041bed6b9748fb2ee89ae370ccd6f7c0b20"
+  },
+  "game.part03": {
+   "bytes": 1153013,
+   "sha256": "d4c950816958214b64298c7d8c04671d2df927795b3abf6a24db7977a2fc82cd"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -3204,6 +3222,10 @@
    "bytes": 390092,
    "sha256": "ec7b0a4ecfea53f3ceb12c606fe733061a0e31ff31aea2fcbf6ca0d9dc97c2d6"
   },
+  "game/assets/room13-ui-objection01917.webp": {
+   "bytes": 580404,
+   "sha256": "7c1763c2c150737be212d8c10c586547c76fe18aab12472d11e2da14031ff8fc"
+  },
   "game/assets/room13-village.png": {
    "bytes": 2232868,
    "sha256": "583841ac7018c664f6eca65014c808ec92086860cb54852728a77de319ea6a17"
@@ -3438,7 +3460,7 @@
   },
   "index.html": {
    "bytes": 9504,
-   "sha256": "780ec9f112848df27d18a380a2a7323eedeb1bf136ce4533a148a4b9904dd71d"
+   "sha256": "38dfaa01962de2bba6fd6dc812ec65209b57260b6c45657225e0b6913d49c65e"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -3473,5 +3495,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 403902198
+ "total_bytes": 404489889
 }

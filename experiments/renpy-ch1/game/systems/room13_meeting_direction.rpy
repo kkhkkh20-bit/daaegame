@@ -5,23 +5,26 @@ default r13_meeting_direction_seen = []
 default r13_meeting_direction_poses = {}
 default r13_meeting_direction_music = None
 default r13_meeting_direction_return_audio = {}
+default r13_meeting_shock_target = None
+default r13_meeting_shock_at = 0.0
 
 init 174 python:
     R13_MEETING_BEATS = {
         "listen": ("토론 중", 1.0, .22, .00),
-        "reaction": ("주민의 반응", .88, .12, .03),
-        "press": ("되묻기", .90, .12, .03),
-        "select": ("자료 확인", .50, .00, .07),
-        "interrupt": ("잠깐만요!", .20, .00, .12),
-        "explain": ("근거 제시", .58, .00, .08),
-        "shaken": ("상대의 답변", .64, .16, .09),
-        "recover": ("상대의 반문", 1.0, .12, .05),
-        "reversal": ("남은 반론", 1.0, .12, .07),
-        "half": ("남은 근거", .86, .18, .03),
-        "resolve": ("반박 성립", .88, .18, .04),
+        "gasp": ("주민의 놀람", .42, .00, .30),
+        "reaction": ("주민의 반응", .88, .12, .12),
+        "press": ("되묻기", .90, .12, .10),
+        "select": ("자료 확인", .50, .00, .22),
+        "interrupt": ("잠깐만요!", .20, .00, .38),
+        "explain": ("근거 제시", .58, .00, .28),
+        "shaken": ("상대의 답변", .64, .16, .32),
+        "recover": ("상대의 반문", 1.0, .12, .18),
+        "reversal": ("남은 반론", 1.0, .12, .22),
+        "half": ("남은 근거", .86, .18, .12),
+        "resolve": ("반박 성립", .88, .18, .18),
         "settle": ("의견 정리", .78, .26, .00),
-        "cornered": ("마지막 항변", .82, .16, .10),
-        "loss": ("남겨진 주장", .68, .26, .06),
+        "cornered": ("마지막 항변", .82, .16, .36),
+        "loss": ("남겨진 주장", .68, .26, .18),
     }
     # Performance styles, not guilt. A composed opponent can gather themselves
     # between statements; others retain pressure from already-proved contradictions.
@@ -34,6 +37,7 @@ init 174 python:
         if claim not in R13_DEBATE:return
         if old.get("claim")!=claim:
             store.r13_meeting_direction_poses={}
+            store.r13_meeting_direction_music=None
         store.r13_meeting_direction=dict(claim=claim,beat=beat,
             sid=sid if sid is not None else old.get("sid"),
             key=key if key is not None else old.get("key"))
@@ -55,9 +59,9 @@ init 174 python:
         if claim not in R13_DEBATE:return
         venue=r13_meeting_kind(r13_debate_session(claim))
         base="altar" if venue=="stone" else "council"
-        wanted="pressure" if beat in ("recover","reversal") else base
+        wanted="pressure" if beat in ("recover","reversal","cornered") else base
         # Quiet beats retain the current track/position; no restart per sentence.
-        if beat in ("select","interrupt","explain","shaken","half","resolve","reaction"):
+        if beat in ("listen","press","select","interrupt","explain","shaken","half","resolve","reaction","gasp"):
             wanted=getattr(store,"r13_meeting_direction_music",None) or base
         path=R13_BGM[wanted]
         renpy.music.set_pause(False,channel="music")
@@ -71,6 +75,7 @@ init 174 python:
         store.r13_meeting_direction={}
         store.r13_meeting_direction_poses={}
         store.r13_meeting_direction_music=None
+        store.r13_meeting_shock_target=None
         saved=getattr(store,"r13_meeting_direction_return_audio",{}) or {}
         for channel,state in saved.items():
             path=state.get("path")
@@ -89,6 +94,7 @@ init 174 python:
         if identity.startswith("meeting:replay:"):return "listen"
         if identity.startswith("meeting:opinions:"):return "settle"
         if identity.startswith("meeting:murmur:"):return "reaction"
+        if identity.startswith("meeting:gasp:"):return "gasp"
         if identity.startswith("debate:counter_wrong:"):return "reversal"
         if identity.startswith("debate:counter_ok:"):return "resolve"
         if identity.startswith("debate:counter:"):return "recover"
@@ -131,9 +137,31 @@ init 174 python:
                 elif beat=="recover":pose="neutral"
                 elif beat=="reversal":pose="angry"
                 elif beat=="loss":pose="neutral"
+            if beat=="shaken" and person==getattr(store,"r13_meeting_shock_target",None) and index<=1:
+                pose="surprise"
             poses=dict(getattr(store,"r13_meeting_direction_poses",{}) or {})
             poses[person]=pose;store.r13_meeting_direction_poses=poses
         return expression,pose
+
+    def r13_meeting_direct_shock(claim,sid):
+        target=r13_debate_statement(claim,sid)["who"]
+        store.r13_meeting_shock_target=target
+        poses=dict(getattr(store,"r13_meeting_direction_poses",{}) or {})
+        people=[p for p,_ in r13_meeting_cast(claim,r13_debate_session(claim))]
+        for who in people:
+            if who in CAST and who!=r13_viewpoint():poses[who]="surprise"
+        store.r13_meeting_direction_poses=poses
+        store.r13_meeting_shock_at=renpy.display.core.get_time()
+
+    def r13_meeting_direct_gasps(claim,sid):
+        token=claim+":"+sid+":gasp"
+        seen=list(getattr(store,"r13_meeting_direction_seen",[]) or [])
+        if token in seen:return []
+        seen.append(token);store.r13_meeting_direction_seen=seen
+        target=r13_debate_statement(claim,sid)["who"]
+        people=list(r13_meeting_neighbors(claim,target))
+        people=list(dict.fromkeys(p for p in people if p in CAST and p not in (target,r13_viewpoint())))
+        return [(who,text,{"pose":"surprise"}) for who,text in zip(people,("정말요?","그렇다고요?"))]
 
     def r13_meeting_direct_pose(person,fallback="neutral"):
         return (getattr(store,"r13_meeting_direction_poses",{}) or {}).get(person,fallback)
@@ -188,12 +216,10 @@ screen r13_meeting_objection(claim,sid):
     use r13_meeting_stage(claim,r13_meeting_focus_person(claim),True)
     use r13_meeting_chrome(claim)
     add Solid("#11182066")
+    # Owner-approved fixed typography image: no live text or button panel.
+    add Transform("assets/room13-ui-objection01917.webp",xysize=(1120,420),fit="contain",nearest=True) xpos 80 ypos 132
     frame:
-        area (300,238,680,106) padding (24,12) background R13InkPanel(focused=True)
-        at r13_meeting_objection_appear(persistent.room13_motion)
-        text "잠깐만요!" align (.5,.5) size 64 color "#fff0ca" font r13_ui_font()
-    frame:
-        area (160,366,960,96) padding (20,14) background R13PaperFrame()
+        area (160,548,960,96) padding (20,14) background R13PaperFrame()
         text r13_meeting_statement_text(claim,sid) size r13_read_size(23,26) color "#493b30" xmaximum 920
 
 screen r13_meeting_evidence_hold(claim,sid,key):
@@ -207,13 +233,15 @@ screen r13_meeting_evidence_hold(claim,sid,key):
             text r13_meeting_statement_text(claim,sid) size r13_read_size(19,22) color "#493b30" xmaximum 878
 
 label r13_meeting_direct_interrupt(claim,sid,key):
+    $ r13_meeting_direct_shock(claim,sid)
     $ r13_meeting_direct_beat("interrupt",claim,sid,key)
     if not renpy.is_skipping() and not r13_fast_all:
         show screen r13_meeting_objection(claim,sid)
         $ renpy.music.set_pause(True,channel="music")
         $ source_fx("impact")
-        $ renpy.pause(.42 if persistent.room13_motion else .18)
+        $ renpy.pause(.68 if persistent.room13_motion else .42)
         hide screen r13_meeting_objection
+    $ r13_meeting_shock_at=renpy.display.core.get_time()
     $ r13_meeting_direct_beat("explain",claim,sid,key)
     show screen r13_meeting_evidence_hold(claim,sid,key)
     return
@@ -222,4 +250,10 @@ label r13_meeting_direct_reactions(claim,sid,result):
     $ r13_meeting_murmurs=r13_meeting_direct_murmurs(claim,sid,result)
     if r13_meeting_murmurs:
         call r13_lines(r13_meeting_murmurs,"meeting:murmur:"+claim+":"+sid+":"+result)
+    return
+
+label r13_meeting_direct_gasp_lines(claim,sid):
+    $ r13_meeting_gasp_rows=r13_meeting_direct_gasps(claim,sid)
+    if r13_meeting_gasp_rows:
+        call r13_lines(r13_meeting_gasp_rows,"meeting:gasp:"+claim+":"+sid)
     return
