@@ -21,7 +21,7 @@ async def main():
    assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records").scope["rel_sel"]')=='nabi'
    await q.press('공구 운반공백');await q.shot('03-return-to-material')
    assert await q.py('import renpy;sc=renpy.display.screen.get_screen("r13_records");result=[sc.scope["tab"],sc.scope["selected_record"]]')==['all','E12']
-   await q.press('관계도');assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records").scope["rel_sel"]')=='nabi'
+   await q.press('사람');assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records").scope["rel_sel"]')=='nabi'
    await q.press('자료');await q.press('전체');assert set(await q.py('import renpy;result=renpy.display.screen.get_screen("r13_records").scope["entries"]'))=={'E01','E06','E10','E12'}
    await q.press('증언');await q.input(350,200);await q.press('닫기')
    await q.py('import renpy;renpy.exports.show_screen("r13_records");renpy.exports.restart_interaction();result=True');await q.wait('r13_records')

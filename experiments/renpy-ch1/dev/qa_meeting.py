@@ -150,7 +150,7 @@ async def main():
     assert await q.py('import renpy;s=renpy.store;result=s.r13_meeting_heard("C2","s1") and s.r13_meeting_heard("C2","s2") and s.r13_meeting_heard("C2","s3") and not s.r13_debate_ready("C2") and not s.r13_debate_is_pressed("C2","s1")')
     await shot('31-two-loops')
     await q.press('더보기');await q.wait('r13_more_tools')
-    assert not any(b['text'].strip() in ('읽은 대사 넘기기','모든 대사 빠르게') for b in (await q.state())['buttons'])
+    assert not any(b['text'].strip() in ('읽은 것만','전부') for b in (await q.state())['buttons'])
     await q.press('토론 멈추기');await until('r13_debate_board');await q.press('토론 듣기');await live_at('s1')
     await q.py('import renpy;renpy.store.r13_fast_all=True;result=True');await q.input(800,610)
     assert await q.py('import renpy;s=renpy.store;result=not s.r13_fast_all and not s.r13_fast_read and s.r13_meeting_live_active')

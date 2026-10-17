@@ -74,15 +74,17 @@ screen r13_playback_footer(show_record=False,ready=True):
                 use r13_strip_button("설정","settings",ShowMenu("pause_menu"),enabled=ready,last=True)
 
 screen r13_more_tools():
+    # 0.19.1 빼기 정리 (소유자 승인 시안): 9개 → 저장·불러오기 / 다시 시작할 아침 / 설정 / 메인화면.
+    # 대사 중에만 「빠르게」(읽은 것만·전부)와 「대화창 숨기기」. 생활 장부는 일거리와 함께 없앴다. 바깥을 누르면 닫힌다.
     modal True
     zorder 105
     $ line_active=renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     $ meeting_line=line_active and r13_meeting_active
     $ live_listening=meeting_line and r13_meeting_live_active and not r13_meeting_interrupting
-    # 0.18.56: 생활 장부 (money ledger, shared work) moved here from the removed top board.
-    $ ledger_ok=(not line_active) and bool(room13) and r13_has("livelihood_open") and renpy.get_screen("r13_hub") is not None
+    button:
+        area (0,0,1280,720) background None action Hide("r13_more_tools") alt "닫기"
     frame:
-        area (932,46 if meeting_line else (96 if line_active else (204 if ledger_ok else 258)),324,676 if meeting_line else (564 if line_active else (456 if ledger_ok else 402))) padding (12,12) background R13InkPanel()
+        xpos 932 yanchor 1.0 ypos (642 if persistent.room13_large_text else 656) xsize 324 padding (12,12) background R13InkPanel()
         vbox:
             spacing 6
             if meeting_line:
@@ -94,40 +96,33 @@ screen r13_more_tools():
                     style "r13_action_button" xsize 300 ysize 48 text_size 20
                     action ([Hide("r13_more_tools"),Function(r13_meeting_request_live_action,"review")] if live_listening else [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)])
             if line_active:
-                textbutton "읽은 대사 넘기기":
-                    style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    selected r13_fast_read sensitive line_active and not live_listening
-                    action [Hide("r13_more_tools"),Function(r13_toggle_read_skip)]
-                textbutton "모든 대사 빠르게":
-                    style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    selected r13_fast_all sensitive line_active and not live_listening
-                    action [Hide("r13_more_tools"),Function(r13_toggle_fast_all)]
+                frame:
+                    xsize 300 ysize 52 padding (10,6) background R13InkPanel(focused=True)
+                    hbox:
+                        spacing 6 yalign .5
+                        text "빠르게" size 18 color "#efe2c2" yalign .5 min_width 62
+                        textbutton "읽은 것만":
+                            style "r13_paper_tab_button" xsize 104 ysize 38 text_size 16
+                            selected r13_fast_read sensitive not live_listening
+                            action [Hide("r13_more_tools"),Function(r13_toggle_read_skip)]
+                        textbutton "전부":
+                            style "r13_paper_tab_button" xsize 104 ysize 38 text_size 16
+                            selected r13_fast_all sensitive not live_listening
+                            action [Hide("r13_more_tools"),Function(r13_toggle_fast_all)]
                 textbutton "대화창 숨기기":
-                    style "r13_action_button" xsize 300 ysize 48 text_size 20 sensitive line_active
-                    action [Hide("r13_more_tools"),HideInterface()]
-            if ledger_ok:
-                textbutton "생활 장부":
                     style "r13_action_button" xsize 300 ysize 48 text_size 20
-                    action [Hide("r13_more_tools"),Show("r13_work_board",start_tab="ledger",tabs=("ledger","relations"),close=Hide("r13_work_board"))]
-            textbutton "진행 저장":
+                    action [Hide("r13_more_tools"),HideInterface()]
+            textbutton "저장 · 불러오기":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
                 action [Hide("r13_more_tools"),ShowMenu("save")]
-            textbutton "진행 불러오기":
-                style "r13_action_button" xsize 300 ysize 48 text_size 20
-                action [Hide("r13_more_tools"),ShowMenu("load")]
-            textbutton "설정":
-                style "r13_action_button" xsize 300 ysize 48 text_size 20
-                action [Hide("r13_more_tools"),ShowMenu("pause_menu")]
             textbutton "다시 시작할 아침":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
                 sensitive bool(r13_morning_days())
                 action [Hide("r13_more_tools"),Show("r13_morning_pick")]
-            textbutton "단축키":
+            textbutton "설정":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
-                action [Hide("r13_more_tools"),Show("r13_shortcut_help")]
+                action [Hide("r13_more_tools"),ShowMenu("pause_menu")]
             textbutton "메인화면":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
                 action [Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))]
-            textbutton "닫기":
-                style "r13_action_button" xsize 300 ysize 48 text_size 20 action Hide("r13_more_tools")
     key "game_menu" action Hide("r13_more_tools")

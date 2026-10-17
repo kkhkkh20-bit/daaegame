@@ -455,7 +455,6 @@ screen r13_book(target=None,present=False,hearing=False):
     default material_filter=remembered.get("material_filter","all")
     on "hide" action Function(r13_book_remember,view_context,detail,page,material_filter)
     default order="recent"
-    default rfilter=("related" if present and r13_book_person(target,hearing) else "all")
     $ chip_person=r13_book_person(target,hearing) if present else None
     timer .15 action SetScreenVariable("ready",True)
     use r13_reference_record_shell("보여주기" if present else "자료 기록")
@@ -477,13 +476,12 @@ screen r13_book(target=None,present=False,hearing=False):
     $ entries=r13_present_entries(entries,target) if present else entries
     $ material_filter="all" if (hearing or archive) and material_filter=="transfer" else material_filter
     $ entries=r13_material_subset(entries,material_filter)
-    # 0.18.99: 둘째 줄 거름 단추. 보여줄 때는 「이 사람 관련」이 먼저 골라져 있다.
-    if not (archive and not present):
-        use r13_record_filter_chips(entries,rfilter,"r13_book",chip_person)
-        $ entries=r13_record_filter(entries,rfilter,chip_person)
+    # 0.19.1: 보여줄 때는 단추 없이, 지금 상대(발언자)와 이어진 자료를 앞에 놓는다.
+    if chip_person:
+        $ entries=r13_record_related_first(entries,chip_person)
     $ selected_record=r13_present_selection(entries,detail,page) if present else r13_record_selected(entries,detail,page)
     text ("자료 %d개"%len(entries)) xpos 284 ypos 86 size 20 color "#65503b"
-    use r13_material_filters("r13_book",material_filter,not hearing and not archive)
+    use r13_material_filters("r13_book",material_filter,not hearing and not archive,unread=len(r13_material_subset(r13_catalog_entries(archive and not present,hearing),"unread")))
     use r13_material_grid(entries,selected_record,page,"r13_book",archive and not present)
     use r13_material_detail(selected_record,archive and not present,view_context) id (view_context,selected_record,archive,persistent.room13_large_text)
     if present and not selected_record:

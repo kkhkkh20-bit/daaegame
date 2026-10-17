@@ -323,7 +323,9 @@ class SayQA(ReviewQA):
   if any('옵션' in t for t in labels):
    await self.press('옵션');await self.wait('pause_menu');await self.press('저장' if kind=='save' else '불러오기')
   else:
-   await self.press('더보기');await asyncio.sleep(.8);await self.press('진행 저장' if kind=='save' else '진행 불러오기')
+   # 0.19.1: one '저장 · 불러오기' entry; the save screen switches to load.
+   await self.press('더보기');await asyncio.sleep(.8);await self.press('저장 · 불러오기')
+   if kind=='load':await self.wait('save');await self.press('불러오기로')
   await self.wait(kind)
  async def favorite_during_line(self,key,slot,advance=True):
   initial=await self.line();await self.press('기록');await self.wait('r13_records');label=await self.py('import renpy;result=renpy.store.R13_RECORD_SHORT['+repr(key)+']');await self.press(label);await self.press('관심 표시');await self.press('닫기');await self.wait('say');saved=await self.line();assert {k:v for k,v in initial.items()if k!='room'}=={k:v for k,v in saved.items()if k!='room'};assert {k:v for k,v in initial['room'].items()if k!='record_ui'}=={k:v for k,v in saved['room'].items()if k!='record_ui'}

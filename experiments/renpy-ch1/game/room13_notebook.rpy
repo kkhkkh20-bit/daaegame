@@ -73,6 +73,7 @@ init 68 python:
         if kind=="testimony":
             return [key for key in entries if key in ROOM13["evidence"] and ROOM13["evidence"][key]["kind"]=="증언"]
         if kind=="transfer":return [key for key in entries if r13_catalog_transferable(key)]
+        if kind=="unread":return [key for key in entries if r13_record_unread(key)]
         return entries
 
     def r13_material_source_person(key):
@@ -223,21 +224,18 @@ screen r13_reference_record_shell(title):
 screen r13_reference_record_categories(owner,current,present=False,archive=False):
     vbox:
         xpos 66 ypos 128 spacing 10
-        for key,title in (("all","자료"),("people","인물"),("relations","관계도"),("dialogue","대화")):
+        # 0.19.1 빼기 정리: 탭 6 → 4. 인물은 「사람」(관계도)에, 달력은 「메모」 안으로 합쳤다.
+        for key,title,icon in (("all","자료","record"),("relations","사람","people"),("dialogue","대화","dialogue"),("notes","메모","investigate")):
             if not present or key=="all":
                 button:
                     style "r13_paper_tab_button" xsize 176 ysize 56
-                    selected current==key alt title
-                    action [Function(r13_record_select,owner,"category" if owner=="r13_book" else "tab",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
+                    selected (current==key or (key=="notes" and current=="calendar") or (key=="relations" and current=="people")) alt title
+                    action ((Show("r13_learning_notes") if key=="notes" and isinstance(owner,str) else
+                        [Function(r13_record_select,owner,"category" if owner=="r13_book" else "tab",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]))
                     hbox:
                         xalign .5 yalign .5 spacing 10
-                        add R13AntiqueIcon("record" if key=="all" else key,size=24) yalign .5
+                        add R13AntiqueIcon(icon,size=24) yalign .5
                         text title size r13_read_size(20,24) font r13_ui_font() color ("#fff0ce" if current==key else "#493b30") yalign .5
-    if not present:
-        vbox:
-            xpos 66 ypos 382 spacing 12
-            textbutton "조사 메모" style "r13_paper_tab_button" xsize 176 ysize 48 text_size 18 selected current=="notes" action (Function(r13_record_select,owner,"tab","notes") if not isinstance(owner,str) else Show("r13_learning_notes"))
-            textbutton "달력" style "r13_paper_tab_button" xsize 176 ysize 48 text_size 18 selected current=="calendar" action (Function(r13_record_select,owner,"tab","calendar") if not isinstance(owner,str) else Show("r13_calendar"))
 
 screen r13_record_filters(owner,order,archive=False):
     hbox:
@@ -246,15 +244,22 @@ screen r13_record_filters(owner,order,archive=False):
             style "r13_compact_button" xsize 246 ysize 42 text_size 19
             action [Function(r13_record_select,owner,"order","acquired" if order=="recent" else "recent"),Function(r13_record_select,owner,"page",0)]
 
-screen r13_material_filters(owner,current,allow_transfer=True):
+# 0.19.1 빼기 정리: 거름은 한 줄(전체 · 증언 · 전달 가능 · 안 읽음 · 지난 사건).
+screen r13_material_filters(owner,current,allow_transfer=True,unread=0,shelf=None,shelf_count=0):
+    $ big=persistent.room13_large_text
     hbox:
-        xpos 482 ypos 76 spacing 6
-        for key,title in (("all","전체"),("testimony","증언"),("transfer","전달 가능")):
+        xpos 284 ypos (106 if big else 110) spacing 5
+        for key,title in (("all","전체"),("testimony","증언"),("transfer","전달 가능"),("unread","● 안 읽음 %d"%unread)):
           if key!="transfer" or allow_transfer:
             textbutton title:
-                style "r13_paper_tab_button" xsize 98 ysize 42 padding (2,0) text_size 17 text_yalign .5
+                style "r13_paper_tab_button" ysize (44 if big else 38) xpadding 10 text_size r13_read_size(16,19) text_yalign .5
                 selected current==key
                 action [Function(r13_record_select,owner,"material_filter",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
+        if shelf is not None and (shelf_count or shelf):
+            textbutton (("지난 사건 %d"%shelf_count) if not shelf else "지금 쓰는 자료"):
+                style "r13_paper_tab_button" ysize (44 if big else 38) xpadding 10 text_size r13_read_size(16,19) text_yalign .5
+                selected shelf
+                action [Function(r13_record_select,owner,"shelf",not shelf),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]
 
 screen r13_material_grid(entries,detail,page,owner,archive=False):
     $ actual_page=r13_record_page(entries,page)
@@ -319,26 +324,20 @@ screen r13_material_detail(detail,archive=False,view_context=("records",),owner=
         else:
             text "자료를 선택하세요." xpos 846 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
 
-screen r13_person_record_detail(person):
-    add R13PaperFrame() xpos 820 ypos 58 xsize 406 ysize 512
-    if person:
-        add Transform(r13_art(person,"avatar_neutral"),xysize=(132,128),fit="contain",nearest=True) xpos 954 ypos 78
-        text r13_person_caption(person) xpos 840 ypos 218 xsize 366 text_align .5 size r13_read_size(23,28) color "#6c512a"
-        viewport:
-            area (844,266,358,278) mousewheel True draggable True scrollbars "vertical"
-            vbox:
-                spacing 12
-                for meeting in room13.get("encounters",[]):
-                    if isinstance(meeting,dict) and meeting.get("person")==person:
-                        text ("%d일 · %s · %s"%(meeting["day"],("오전","오후","저녁","늦은 저녁")[meeting["period"]],R13_PLACES.get(meeting["place"],(meeting["place"],))[0])) size 18 color "#493b30" xsize 332
-                for title in r13_note_topics(person):
-                    text ("들은 이야기 · "+title) size 18 color "#493b30" xsize 332
-                for entry in room13.get("resident_knowledge",{}).get(person,[]):
-                    $ record_id=entry.split(":")[0]
-                    if record_id in ROOM13["evidence"]:
-                        text ("보여 준 자료 · "+ROOM13["evidence"][record_id]["name"]+(" (이름 공개)" if entry.endswith(":named") else " (이름 숨김)" if record_id=="E10" else "")) size 18 color "#625738" xsize 332
-    else:
-        text "직접 만난 사람부터 기록합니다." xpos 844 ypos 278 xsize 354 text_align .5 size 21 color "#625738"
+# 0.19.1: 「인물」 탭을 「사람」(관계도)에 합치며, 인물 기록은 관계도 오른쪽 상세 아래에 붙는다.
+screen r13_person_brief(person):
+    vbox:
+        spacing 8
+        $ topics=r13_note_topics(person)
+        $ shown=[e.split(":")[0] for e in room13.get("resident_knowledge",{}).get(person,[]) if e.split(":")[0] in ROOM13["evidence"]]
+        if topics:
+            text ("들은 이야기 · %d"%len(topics)) size r13_read_size(17,20) color "#765426"
+            for title in topics:
+                text ("· "+title) size r13_read_size(16,19) color "#493b30" xsize 286
+        if shown:
+            text ("보여 준 자료 · %d"%len(shown)) size r13_read_size(17,20) color "#765426"
+            for record_id in shown:
+                text ("· "+ROOM13["evidence"][record_id]["name"]) size r13_read_size(16,19) color "#625738" xsize 286
 
 screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=None,present_action=None):
     style_prefix "r13"
@@ -347,13 +346,13 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     on "show" action Function(source_fx,"note_open")
     default tab=(initial_tab if initial_tab!="all" else r13_records_view.get("tab","all"))
     $ tab="all" if tab in ("evidence","testimony","items","compare") else tab
+    $ tab="relations" if tab=="people" else tab
     default detail=r13_records_view.get("detail")
     default person=r13_records_view.get("person")
     default page=r13_records_view.get("page",0)
     default archive=r13_records_view.get("archive",False)
     default order="recent"
     default shelf=False
-    default rfilter="all"
     default material_filter=r13_records_view.get("material_filter","all")
     default rel_sel=r13_records_view.get("rel_sel")
     default rel_filter=r13_records_view.get("rel_filter","all")
@@ -370,41 +369,18 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         $ material_filter="all" if archive and material_filter=="transfer" else material_filter
         $ entries=r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),material_filter)
         text (("지난 사건 %d개" if shelf and not archive else "자료 %d개")%len(entries)) xpos 284 ypos 86 size 20 color "#65503b"
-        use r13_material_filters(_scope,material_filter,not archive)
-        # 0.18.99: 둘째 줄 거름 단추와 「지난 사건」 (systems/room13_polish3.rpy)
-        if not archive:
-            use r13_record_filter_chips(entries,rfilter,_scope,shelf=shelf,shelf_count=len(r13_catalog_entries(shelf=True)))
-            $ entries=r13_record_filter(entries,rfilter)
+        use r13_material_filters(_scope,material_filter,not archive,unread=len(r13_material_subset(r13_catalog_entries(archive,shelf=shelf and not archive),"unread")),shelf=(None if archive else shelf),shelf_count=len(r13_catalog_entries(shelf=True)))
         $ selected_record=r13_record_selected(entries,detail,page)
         use r13_material_grid(entries,selected_record,page,_scope,archive)
         use r13_material_detail(selected_record,archive,owner=_scope) id ("records",selected_record,archive,persistent.room13_large_text)
-    elif tab=="people":
-        $ people=r13_met_people()
-        $ selected_person=r13_record_selected(people,person,page)
-        $ actual_page=r13_record_page(people,page)
-        $ visible=people[actual_page*r13_record_page_size():][:r13_record_page_size()]
-        text "직접 만난 사람들" xpos 292 ypos 88 size 23 color "#65503b"
-        add R13PaperFrame() xpos 278 ypos 132 xsize 520 ysize 440
-        for index,who in enumerate(visible):
-            button:
-                area (292+(index%3)*164,146+(index//3)*104,158,98) padding (6,5) background R13PaperPanel(selected_person==who)
-                action Function(r13_record_select,_scope,"person",who)
-                vbox:
-                    xalign .5 spacing 3
-                    add Transform(r13_art(who,"avatar_neutral"),xysize=(58,58),fit="contain",nearest=True) xalign .5
-                    text R13_NAMES[who] size 18 color "#493b30" xalign .5
-        use r13_person_record_detail(selected_person)
-        hbox:
-            xpos 302 ypos 596 spacing 12
-            textbutton "‹ 이전" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page>0 action SetScreenVariable("page",actual_page-1)
-            text ("%d / %d"%(actual_page+1,r13_record_pages(people))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
-            textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page+1<r13_record_pages(people) action SetScreenVariable("page",actual_page+1)
     elif tab=="relations":
         use r13_relations_content(_scope,rel_sel,rel_filter,rel_focus)
     elif tab=="notes":
         use r13_learning_notes_content(note_focus)
+        textbutton "달력 ›" style "r13_paper_tab_button" xpos 1090 ypos 70 xsize 120 ysize 40 text_size 18 action Function(r13_record_select,_scope,"tab","calendar")
     elif tab=="calendar":
         use r13_calendar_content()
+        textbutton "‹ 메모" style "r13_paper_tab_button" xpos 400 ypos 70 xsize 120 ysize 40 text_size 18 action Function(r13_record_select,_scope,"tab","notes")
     elif tab=="items":
         use r13_item_bag_content()
     elif tab=="compare":

@@ -349,5 +349,7 @@ screen r13_relation_detail(owner,person):
                     null height 4
                     text "처음 만남" size r13_read_size(19,22) color "#765426"
                     text ("%d일 · %s\n%s"%(first["day"],("오전","오후","저녁","늦은 저녁")[first["period"]],R13_PLACES.get(first["place"],(first["place"],))[0])) size r13_read_size(18,21) color "#493b30" xsize 286
+                null height 4
+                use r13_person_brief(person)
     else:
         text "만난 사람이 생기면 관계도가 채워집니다." xpos 900 ypos 278 xsize 302 text_align .5 size 20 color "#625738"

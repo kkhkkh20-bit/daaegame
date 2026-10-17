@@ -1108,7 +1108,7 @@ testcase skip_modes:
     assert eval (not _windows_hidden)
     click "더보기"
     pause 0.5
-    click "모든 대사 빠르게"
+    click "전부"
     pause until screen "choice" timeout 20
     pause 1.0
     screenshot "choice_context.png"
@@ -11710,7 +11710,9 @@ testcase shortcuts:
     run Show("r13_more_tools")
     pause 0.8
     screenshot "menu_with_shortcuts.png"
-    click "단축키"
+    click "설정"
+    pause 0.8
+    click "단축키 (PC)"
     pause 0.8
     assert screen "r13_shortcut_help"
     screenshot "shortcut_help.png"
@@ -11740,7 +11742,7 @@ testcase polish3:
     pause 1.5
     assert eval (3 in r13_morning_days())
     $ r13_grant(["K02"],"QA 오늘 얻은 자료")
-    assert eval (r13_record_filter(["K02","L01"],"today")==["K02"] and sorted(r13_record_filter(["L01","K02"],"related","resident_nabi"))==["K02","L01"])
+    assert eval (r13_material_subset(["K02"],"unread")==["K02"] and sorted(r13_record_related_first(["L01","K02"],"resident_nabi"))==["K02","L01"])
     $ r13_flag("qa_after_morning")
     run Show("r13_records")
     pause 1.0
@@ -11748,8 +11750,22 @@ testcase polish3:
     click "안 읽음"
     pause 0.6
     screenshot "records_unread.png"
+    click "메모"
+    pause 0.6
+    screenshot "records_notes.png"
+    click "달력 ›"
+    pause 0.6
+    assert eval (renpy.get_screen("r13_records").scope["tab"]=="calendar")
     run Hide("r13_records")
     pause 0.5
+    run ShowMenu("save")
+    pause 0.8
+    click "불러오기로"
+    pause 0.8
+    assert screen "load"
+    screenshot "load_switch.png"
+    run Return()
+    pause 0.8
     run Show("r13_book",target="resident_nabi",present=True)
     pause 1.0
     screenshot "book_related.png"
@@ -11777,6 +11793,11 @@ testcase polish3:
     run Call("r13_lines",[("dad","큰 글씨에서는 아래 단추도 커진다.")],"qa:big")
     pause 1.0
     screenshot "big_footer.png"
+    click "더보기"
+    pause 0.6
+    screenshot "more_in_line.png"
+    click pos (200,200)
+    pause 0.5
     click pos (640,560) until screen "r13_hub" timeout 20
     $ persistent.room13_large_text=False
     run Function(renpy.restart_interaction)

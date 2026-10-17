@@ -27,7 +27,7 @@ async def main():
    await page.set_viewport_size({'width':1280,'height':720});q.touch=False
    await q.py('import renpy;renpy.store.persistent.room13_motion=True;renpy.exports.restart_interaction();result=True')
    await q.press('처음부터');await q.press('건너뛰기');await q.wait('say');await q.press('건너뛰기');await q.advance();await q.wait('r13_hub');await q.shot('fresh-start')
-   await q.press('메뉴');await q.press('진행 저장');await q.wait('save');await q.press('1쪽 1번');await q.press('돌아가기');await q.wait('r13_hub')
+   await q.press('메뉴');await q.press('저장 · 불러오기');await q.wait('save');await q.press('1쪽 1번');await q.press('돌아가기');await q.wait('r13_hub')
    await q.press('메뉴');await q.press('메인화면');await q.wait('confirm');await q.press('예');await q.wait('main_menu');await q.shot('title-with-save')
    st=await q.state();assert any('이어하기' in v['text'] for v in st['buttons']),st
    menu=[v for v in st['buttons'] if v['text'].strip() in ('이어하기','처음부터','불러오기','설정')]

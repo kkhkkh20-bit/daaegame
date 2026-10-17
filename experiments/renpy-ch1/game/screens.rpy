@@ -655,6 +655,9 @@ screen pause_menu():
     textbutton "설정 초기화":
         xpos 44 ypos 630 xsize 184 ysize 56 text_size 21
         action Confirm("읽기·소리·화면 설정을 기본값으로 돌릴까요? 게임 진행과 저장은 유지됩니다.",Function(r13_reset_options))
+    # 0.19.1: 단축키 안내는 「더보기」에서 설정 안으로 옮겼다.
+    textbutton "단축키 (PC)":
+        xpos 532 ypos 630 xsize 200 ysize 56 text_size 21 action Show("r13_shortcut_help")
     if not main_menu:
         textbutton "메인화면":
             xpos 292 ypos 630 xsize 220 ysize 56 text_size 22
@@ -743,6 +746,10 @@ screen file_slots(title,saving):
                     textbutton ("%d쪽"%p):
                         action [SetLocalVariable("page",p),SetField(persistent,"r13_save_page",p)]
                         selected page==p text_size 21 padding (14,6)
+                # 0.19.1: 「더보기 → 저장 · 불러오기」 하나로 들어와 여기서 바꾼다.
+                if not main_menu:
+                    textbutton ("불러오기로 ›" if saving else "저장으로 ›"):
+                        action ShowMenu("load" if saving else "save") text_size 21
                 if not saving:
                     textbutton "최근 자동저장":
                         action r13_load_confirm("auto-1")
