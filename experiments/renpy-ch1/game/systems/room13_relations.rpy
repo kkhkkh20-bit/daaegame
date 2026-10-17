@@ -230,9 +230,9 @@ screen r13_relations_content(owner,selected,filt,focused=True):
                     add Solid({"dead":"#94887b","saved":"#4d765c","with":"#ad843f"}.get(kind,"#b69b75")) xpos (46-face//2) ypos 3 xysize (face+4,face+2)
                     add Solid("#ead7b3") xpos (48-face//2) ypos 5 xysize (face,face-2)
                     if kind=="dead":
-                        add Transform(r13_rel_face(who),xysize=(face,face-2),fit="contain",nearest=True) at r13_rel_gray xpos (48-face//2) ypos 5
+                        add Transform(r13_rel_face(who),xysize=(face,face-2),fit="contain",nearest=r13_profile_nearest(who)) at r13_rel_gray xpos (48-face//2) ypos 5
                     else:
-                        add Transform(r13_rel_face(who),xysize=(face,face-2),fit="contain",nearest=True,alpha=.55 if kind in ("gone","missing") else 1.0) xpos (48-face//2) ypos 5
+                        add Transform(r13_rel_face(who),xysize=(face,face-2),fit="contain",nearest=r13_profile_nearest(who),alpha=.55 if kind in ("gone","missing") else 1.0) xpos (48-face//2) ypos 5
                     if kind in ("dead","saved","gone","missing"):
                         frame:
                             xpos 62 ypos 36 xysize (22,22) padding (0,0)
@@ -287,9 +287,9 @@ screen r13_relation_focus(owner,person,filt):
                     vbox:
                         spacing 4 xalign .5
                         if status=="dead":
-                            add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=True) at r13_rel_gray xalign .5
+                            add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=r13_profile_nearest(who)) at r13_rel_gray xalign .5
                         else:
-                            add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=True,alpha=.55 if status in ("gone","missing") else 1.0) xalign .5
+                            add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=r13_profile_nearest(who),alpha=.55 if status in ("gone","missing") else 1.0) xalign .5
                         text (("{s}"+R13_NAMES.get(who,who).split(" ")[0]+"{/s}") if status=="dead" else R13_NAMES.get(who,who).split(" ")[0]) size 16 color "#493b30" xalign .5
 
 screen r13_relation_focus_card(owner,person,x,y,primary=False):
@@ -304,9 +304,9 @@ screen r13_relation_focus_card(owner,person,x,y,primary=False):
         vbox:
             xalign .5 spacing 5
             if kind=="dead":
-                add Transform(r13_rel_face(person),xysize=(face,face),fit="contain",nearest=True) at r13_rel_gray xalign .5
+                add Transform(r13_rel_face(person),xysize=(face,face),fit="contain",nearest=r13_profile_nearest(person)) at r13_rel_gray xalign .5
             else:
-                add Transform(r13_rel_face(person),xysize=(face,face),fit="contain",nearest=True,alpha=.55 if kind in ("gone","missing") else 1.0) xalign .5
+                add Transform(r13_rel_face(person),xysize=(face,face),fit="contain",nearest=r13_profile_nearest(person),alpha=.55 if kind in ("gone","missing") else 1.0) xalign .5
             text (("{s}"+R13_NAMES.get(person,person)+"{/s}") if kind=="dead" else R13_NAMES.get(person,person)) size (r13_read_size(20,22) if primary else r13_read_size(18,20)) xsize (122 if primary else 102) text_align .5 color "#493b30"
 
 screen r13_relation_detail(owner,person):
@@ -317,9 +317,9 @@ screen r13_relation_detail(owner,person):
             xpos 900 ypos 80 xysize (84,84)
             add R13PaperPanel() xysize (84,84)
             if kind=="dead":
-                add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=True) at r13_rel_gray xpos 4 ypos 4
+                add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=r13_profile_nearest(person)) at r13_rel_gray xpos 4 ypos 4
             else:
-                add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=True,alpha=.6 if kind in ("gone","missing") else 1.0) xpos 4 ypos 4
+                add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=r13_profile_nearest(person),alpha=.6 if kind in ("gone","missing") else 1.0) xpos 4 ypos 4
         text R13_NAMES.get(person,person) xpos 998 ypos 85 xsize 206 size r13_read_size(24,27) color "#654b30"
         text (R13_PUBLIC_ROLES.get(person) or "") xpos 998 ypos 123 size r13_read_size(16,18) color "#7d6a52" xsize 206
         add Solid("#c8ac7f") xpos 900 ypos 179 xysize (302,1)

@@ -427,7 +427,7 @@ screen r13_resident_notes():
                     action SetScreenVariable("selected",person) sensitive ready
                     hbox:
                         spacing 16
-                        add Transform(r13_art(person,"avatar_neutral"),size=(60,62),fit="contain")
+                        add Transform(r13_art(person,"avatar_neutral"),size=(60,62),fit="contain",nearest=r13_profile_nearest(person))
                         text R13_NAMES[person] size 23 yalign .5
             if not r13_met_people():
                 text "직접 이야기한 사람부터 기록한다." size 23 xsize 410
