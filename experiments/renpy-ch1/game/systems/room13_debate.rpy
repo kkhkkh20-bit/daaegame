@@ -663,25 +663,25 @@ label r13_debate_dispatch:
         if _return:
             if r13_debate_dad_broken(r13_claim):
                 $ r13_debate_close(r13_claim,"partial")
-                call r13_lines(r13_debate_partial_lines(r13_claim),"debate:partial:"+r13_claim)
+                call r13_lines(r13_debate_partial_lines(r13_claim),"debate:partial:"+r13_claim, binding_route="dynamic:211")
                 return False
             $ r13_debate_close(r13_claim,"gave_up")
-            call r13_lines([("dad","(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)",{"thought":True})],"debate:gave_up:"+r13_claim)
+            call r13_lines([("dad","(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)",{"thought":True})],"debate:gave_up:"+r13_claim, binding_route="dynamic:212")
             return False
     elif r13_debate_action[0]=="listen":
         $ r13_meeting_feedback=None
         $ r13_meeting_replaying=True
         $ r13_debate_st=r13_debate_statement(r13_claim,r13_debate_action[1])
-        call r13_lines([(r13_debate_st["who"],r13_debate_st["text"].replace("【","").replace("】",""))]+r13_debate_st.get("press",[]),"meeting:replay:"+r13_claim+":"+r13_debate_st["id"])
+        call r13_lines([(r13_debate_st["who"],r13_debate_st["text"].replace("【","").replace("】",""))]+r13_debate_st.get("press",[]),"meeting:replay:"+r13_claim+":"+r13_debate_st["id"], binding_route="dynamic:213")
         $ r13_meeting_replaying=False
     elif r13_debate_action[0]=="press":
         $ r13_meeting_feedback=None
         show screen r13_meeting_cut_in("잠깐만요.")
         $ r13_debate_st=r13_debate_statement(r13_claim,r13_debate_action[1])
         if r13_debate_st.get("ready_flags") and not all(r13_has(f) for f in r13_debate_st["ready_flags"]):
-            call r13_lines(r13_debate_st.get("press_missing",[(r13_debate_st["who"],"그래서, 있습니까?")]),"debate:press_missing:"+r13_claim+":"+r13_debate_st["id"])
+            call r13_lines(r13_debate_st.get("press_missing",[(r13_debate_st["who"],"그래서, 있습니까?")]),"debate:press_missing:"+r13_claim+":"+r13_debate_st["id"], binding_route="dynamic:214")
         else:
-            call r13_lines(r13_debate_st.get("press",[(r13_debate_st["who"],"말한 그대로입니다."),("dad","(저 말을 반박할 자료가 있는지 다시 살펴보자.)",{"thought":True})]),"debate:press:"+r13_claim+":"+r13_debate_st["id"])
+            call r13_lines(r13_debate_st.get("press",[(r13_debate_st["who"],"말한 그대로입니다."),("dad","(저 말을 반박할 자료가 있는지 다시 살펴보자.)",{"thought":True})]),"debate:press:"+r13_claim+":"+r13_debate_st["id"], binding_route="dynamic:215")
         if not r13_debate_st.get("ready_flags") or all(r13_has(f) for f in r13_debate_st["ready_flags"]):
             $ r13_debate_mark("pressed",r13_claim,r13_debate_st["id"])
         if r13_debate_st.get("ready_flags") and r13_debate_is_broken(r13_claim,r13_debate_st["id"]):
@@ -704,13 +704,13 @@ label r13_debate_dispatch:
             # Episode 3: without the chief's promise the culprit verdict is not enforced.
             # Week-1 case T: a bought false witness ruins the hearing even with the promise.
             if r13_claim=="C4" and r13_has("fake_testimony"):
-                call r13_lines(R13_FAKE_TESTIMONY_LINES,"debate:c4:fake_testimony")
+                call r13_lines(R13_FAKE_TESTIMONY_LINES,"debate:c4:fake_testimony", binding_route="dynamic:216")
                 $ r13_flag("c4_unenforced","fake_testimony_exposed")
                 $ r13_debate_close(r13_claim,"unenforced")
                 call r13_meeting_public_vote(r13_claim,r13_debate_pick)
                 return True
             if r13_claim=="C4" and not r13_has("fair_hearing"):
-                call r13_lines(R13_C4_UNENFORCED,"debate:c4:unenforced")
+                call r13_lines(R13_C4_UNENFORCED,"debate:c4:unenforced", binding_route="dynamic:217")
                 $ r13_flag("c4_unenforced")
                 $ r13_debate_close(r13_claim,"unenforced")
                 call r13_meeting_public_vote(r13_claim,r13_debate_pick)
@@ -730,22 +730,22 @@ label r13_debate_unanswerable(claim):
     $ r13_debate_gap=next(st for st in r13_debate_statements(claim) if not r13_debate_answerable(claim,st))
     call r13_lines([(r13_debate_gap["who"],r13_debate_gap["text"].replace("【","").replace("】","")),
         ("dad","(저 말을 뒤집을 자료가 지금 내게는 없다.)",{"thought":True})]+r13_debate_gap_lines(claim,r13_debate_gap)+[
-        (None,"아무도 그 말을 막지 못했다.")],"debate:unanswerable:"+claim)
+        (None,"아무도 그 말을 막지 못했다.")],"debate:unanswerable:"+claim, binding_route="dynamic:218")
     $ r13_debate_close(claim,"no_evidence")
     return
 
 label r13_debate_answer_counter(claim,sid):
     $ r13_debate_c=r13_debate_counter(claim,sid)
-    call r13_lines(r13_debate_c["lines"],"debate:counter:"+claim+":"+sid)
+    call r13_lines(r13_debate_c["lines"],"debate:counter:"+claim+":"+sid, binding_route="dynamic:219")
     $ r13_meeting_direct_beat("recover",claim,sid)
     $ r13_debate_pick=renpy.display_menu([(r13_debate_c["prompt"],None)]+[(text,kind) for kind,text in r13_debate_counter_options(claim,sid)])
     if r13_debate_pick=="correct":
-        call r13_lines(r13_debate_c["correct"],"debate:counter_ok:"+claim+":"+sid)
+        call r13_lines(r13_debate_c["correct"],"debate:counter_ok:"+claim+":"+sid, binding_route="dynamic:220")
         return True
     $ r13_meeting_direct_beat("reversal",claim,sid)
     $ source_fx("wrong")
     call r13_lines([r13_debate_c["wrong"][r13_debate_pick],
-        ("dad","(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)",{"thought":True})],"debate:counter_wrong:"+claim+":"+sid+":"+r13_debate_pick)
+        ("dad","(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)",{"thought":True})],"debate:counter_wrong:"+claim+":"+sid+":"+r13_debate_pick, binding_route="dynamic:221")
     return False
 
 label r13_debate_conclude(claim):
@@ -758,9 +758,9 @@ label r13_debate_conclude(claim):
     $ r13_debate_menu=[(text,kind) for kind,text in r13_debate_conclusion_options(claim)]
     $ r13_debate_pick=renpy.display_menu([(r13_debate_spec["prompt"],None)]+r13_debate_menu)
     if r13_debate_pick=="correct":
-        call r13_lines(r13_debate_spec["correct"],"debate:conclusion:"+claim)
+        call r13_lines(r13_debate_spec["correct"],"debate:conclusion:"+claim, binding_route="dynamic:222")
         return True
-    call r13_lines([r13_debate_spec[r13_debate_pick]],"debate:conclusion_wrong:"+claim+":"+r13_debate_pick)
+    call r13_lines([r13_debate_spec[r13_debate_pick]],"debate:conclusion_wrong:"+claim+":"+r13_debate_pick, binding_route="dynamic:223")
     $ r13_debate_miss(claim)
     call r13_meeting_public_vote(claim,r13_debate_pick)
     return False
@@ -772,12 +772,12 @@ label r13_debate_point(claim):
     if r13_debate_pick=="back":
         return False
     if r13_debate_pick!=r13_point["who"]:
-        call r13_lines([r13_point.get("wrong_who",{}).get(r13_debate_pick,r13_debate_spec["over"])],"debate:point_wrong:"+claim+":"+r13_debate_pick)
+        call r13_lines([r13_point.get("wrong_who",{}).get(r13_debate_pick,r13_debate_spec["over"])],"debate:point_wrong:"+claim+":"+r13_debate_pick, binding_route="dynamic:224")
         $ r13_debate_pick="over"
         $ r13_debate_miss(claim)
         call r13_meeting_public_vote(claim,r13_debate_pick)
         return False
-    call r13_lines([("dad",r13_point["ask"])],"debate:point:"+claim)
+    call r13_lines([("dad",r13_point["ask"])],"debate:point:"+claim, binding_route="dynamic:225")
     show screen r13_meeting_cut_in("이 기록을 봐 주세요.")
     $ r13_meeting_direct_beat("select",claim)
     call screen r13_book("resident_seori",present=True,hearing=True)
@@ -788,9 +788,9 @@ label r13_debate_point(claim):
         $ r13_debate_pick="correct"
         $ r13_meeting_direct_beat("settle",claim)
         $ source_fx("right")
-        call r13_lines(list(r13_point["decisive"].get(r13_point_key,[]))+list(r13_debate_spec["correct"]),"debate:conclusion:"+claim)
+        call r13_lines(list(r13_point["decisive"].get(r13_point_key,[]))+list(r13_debate_spec["correct"]),"debate:conclusion:"+claim, binding_route="dynamic:226")
         return True
-    call r13_lines([r13_point["wrong_key"]],"debate:point_key_wrong:"+claim+":"+r13_point_key)
+    call r13_lines([r13_point["wrong_key"]],"debate:point_key_wrong:"+claim+":"+r13_point_key, binding_route="dynamic:227")
     $ r13_debate_pick="weak"
     $ r13_debate_miss(claim)
     call r13_meeting_public_vote(claim,r13_debate_pick)

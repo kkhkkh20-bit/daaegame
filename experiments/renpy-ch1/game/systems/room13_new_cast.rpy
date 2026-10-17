@@ -216,7 +216,7 @@ init 145 python:
 label r13_hyeoni_song:
     $ _hy_verses=r13_hyeoni_verses()
     call r13_lines([("resident_hyeoni","그럼 오늘 소문으로 한 곡.")]+[("resident_hyeoni",v) for v in _hy_verses]+[
-        ("dad","(노래는 오늘 마을에 퍼진 말을 그대로 따라간다.)",{"thought":True})],"hyeoni:song:%d:%d"%(room13["day"],room13["period"]))
+        ("dad","(노래는 오늘 마을에 퍼진 말을 그대로 따라간다.)",{"thought":True})],"hyeoni:song:%d:%d"%(room13["day"],room13["period"]), binding_route="dynamic:612")
     return
 
 label r13_new_cast_events:

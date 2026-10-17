@@ -66,7 +66,7 @@ label r13_evening_board:
     if not _ev_items:
         call r13_lines([(None,"오늘 저녁에는 따로 남은 일이 없다. 사람들을 만나거나 13호에서 쉬자.")],"evening:none")
         return None
-    call r13_lines([(None,"  ".join("· "+hint for key,place,title,hint in r13_evening_missions()))],"evening:hints:%d"%room13["day"])
+    call r13_lines([(None,"  ".join("· "+hint for key,place,title,hint in r13_evening_missions()))],"evening:hints:%d"%room13["day"], binding_route="dynamic:530")
     $ _ev_pick=renpy.display_menu(_ev_items+[("혼자 마을을 둘러본다",None)])
     return _ev_pick
 
@@ -144,7 +144,7 @@ label r13_ev_lamp_again:
     if r13_has("daram_lamp_named"):
         call r13_lines([("resident_lamplighter","‘도토리’ 등은 오늘도 제일 밝아요. 다람이한테 전해 줘요."),
             ("daram","거봐, 내가 이름 잘 지었지!")] if room13.get("daram_state") in ("with_dad","rescued") else
-            [("resident_lamplighter","‘도토리’ 등은 오늘도 제일 밝아요. 다람이한테 전해 줘요.")],"ev:lamp2:named")
+            [("resident_lamplighter","‘도토리’ 등은 오늘도 제일 밝아요. 다람이한테 전해 줘요.")],"ev:lamp2:named", binding_route="dynamic:540")
     if r13_has("neoul_annoyed"):
         call r13_lines([("resident_lamplighter","어제 등을 끈 일로 오늘 아침에 너울 씨한테 불려 갔어요."),
             ("resident_lamplighter","괜찮아요. 그래도 오늘은 등 얘기만 해요.")],"ev:lamp2:scolded")
@@ -160,7 +160,7 @@ label r13_ev_night_visit:
     call r13_ev_here("night")
     call r13_lines([(None,"입구 옆 보호실 창에 작은 등 하나가 켜져 있었다. 창살 너머에서 다람이가 웅크리고 있었다. 담요도 없었다."),
         ("daram","아빠!"),
-        ("resident_badook" if r13_has("badook_doubt") or r13_has("badook_ally") else "neoul","면회는 잠깐이오. 물건은 내가 먼저 보오.")],"ev:visit:open")
+        ("resident_badook" if r13_has("badook_doubt") or r13_has("badook_ally") else "neoul","면회는 잠깐이오. 물건은 내가 먼저 보오.")],"ev:visit:open", binding_route="dynamic:544")
     if "W7" not in room13["evidence"]:
         $ r13_grant(["W7"],"보호실 앞에서 들은 밤 규칙")
     $ _visit_turns=2
@@ -199,7 +199,7 @@ label r13_ev_night_visit:
                 $ r13_flag("visit_banned","neoul_annoyed","rumor:troublemaker")
                 $ _visit_turns=0
     if not r13_has("visit_banned"):
-        call r13_lines([("resident_badook" if r13_has("badook_ally") else "neoul","시간 됐소.")],"ev:visit:end")
+        call r13_lines([("resident_badook" if r13_has("badook_ally") else "neoul","시간 됐소.")],"ev:visit:end", binding_route="dynamic:551")
     return
 
 # ---- 재판 전날 밤 식당 (6일 저녁) ----

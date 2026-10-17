@@ -80,7 +80,7 @@ init 63 python:
 label r13_observe(observed_entries,observed_identity):
     $ r13_observed_lines=r13_make_observation_lines(observed_entries,observed_identity)
     $ r13_observed_chat=any(len(p)>2 and isinstance(p[2],dict) and p[2].get("observation_chat") for p in r13_observed_lines)
-    call r13_lines(r13_observed_lines,observed_identity+":dad-thought-v1")
+    call r13_lines(r13_observed_lines,observed_identity+":dad-thought-v1", binding_route="dynamic:096")
     if r13_observed_chat:
         $ r13_remember_observation_chat(observed_identity)
     $ r13_thought_active=False

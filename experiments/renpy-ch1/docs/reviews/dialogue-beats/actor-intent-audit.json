@@ -1,0 +1,761 @@
+{
+  "basis": "Read teacher Q5A/Q5 and scenes before/after soup; Chorong encounter; cart/altar sequence; inspect outcome-worded rationales across all source review catalogs. No keyword-based emotion reassignment.",
+  "changes": [
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:teacher:alone",
+        "index": 0
+      },
+      "person": "resident_teacher",
+      "text": "고맙습니다. 걱정 마세요.",
+      "before_emotion": "neutral",
+      "after_emotion": "neutral",
+      "before_reason": "교사는 다정하게 안심시킨다. 아빠의 불길한 느낌을 곧바로 교사의 악의 표정으로 바꾸지 않는다.",
+      "after_reason": "아이들이 추위와 수레를 피할 수 없다고 믿으며 자신의 방식으로 보호하겠다는 결심을 유지한다. 상대에게는 안심시키는 다정하고 담담한 얼굴을 보인다. 아직 돌아올 온기나 이후 결과를 알지 못한다. 불안·악의·죄책감을 표정으로 먼저 누설하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:soup:song",
+        "index": 4
+      },
+      "person": "resident_teacher",
+      "text": "(작게) 아프지 않게. ……따뜻할 때.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "노래하는 아이들의 따뜻함과 약을 꺼낸 교사의 절망을 분리한다.",
+      "after_reason": "아이들이 고통을 느끼지 않게 하겠다는 자기 정당화를 낮게 되뇐다. 이후 피해를 아는 관객의 불안을 교사의 겉표정으로 옮기지 않는다. 지친 다정함·닫힌 결심은 별도 표정 요청이다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:soup:spilled",
+        "index": 3
+      },
+      "person": "resident_teacher",
+      "text": "미안해요. 선생님이 손이 미끄러졌어요. ……새로 끓일게요. 처음부터.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "불이 돌아온 순간 놀라 멈춘 교사의 충격과 수프를 다시 끓이겠다는 죄책감.",
+      "after_reason": "돌아온 빛을 보고 행동을 멈춘 뒤 손이 미끄러졌다는 설명으로 실제 이유를 감춘다. 아이들에게 보이는 겉표정은 수습하는 침착함이다. 내면의 충격·후회와 표면 설명을 분리한다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:soup:tragedy",
+        "index": 5
+      },
+      "person": "resident_teacher",
+      "text": "깜이. 몽이. 방울. 도담. ……잘 자요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "수프를 반기는 아이, 말없이 경계하는 새미, 아이들을 눕히는 교사의 절망, 늦게 돌아온 빛 앞 후회.",
+      "after_reason": "아이들을 안아 눕히고 이름을 부르며 안심시킨다. 본인의 방식으로 고통을 막는다는 믿음을 유지하는 시점이다. 나중의 후회를 이 대사에 앞당겨 붙이지 않는다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:decision:truth",
+        "index": 3
+      },
+      "person": "resident_teacher",
+      "text": "아이들만 보낼 수는 없지요. 선생이 같이 가야지요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "교사의 자기파괴적 절망. 아이들과 함께한다는 말을 즐거움으로 만들지 않는다.",
+      "after_reason": "남은 수프를 끌어당긴 뒤 아이들 곁으로 가겠다는 결심을 말한다. 발화의 표면은 지친 단정함이며, 자기파괴적 절망은 별도 의미·표정 축이다. anxious를 절망의 동의어로 쓰지 않는다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:decision:gone_one",
+        "index": 1
+      },
+      "person": "resident_teacher",
+      "text": "도담아. 선생님 왔어요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "도담 옆으로 가는 교사의 비극적 절망. 누운 행동은 대화 유지 자세로 재사용하지 않는다.",
+      "after_reason": "이미 도담 옆에 누워 담요를 덮은 상태에서 이름을 부른다. 표면은 힘 빠진 다정함이고 내면은 상실·체념이다. 비극적 분기라는 이유로 불안 표정을 지정하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:decision:gone",
+        "index": 1
+      },
+      "person": "resident_teacher",
+      "text": "깜이, 몽이, 방울, 도담. 선생님 왔어요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "여러 아이 곁으로 가는 교사의 비극적 절망. 단일 희생 분기와 원문을 구분한다.",
+      "after_reason": "이미 아이들 옆에 누워 담요를 덮은 상태에서 이름을 부른다. 표면은 힘 빠진 다정함이고 내면은 상실·체념이다. 단수 분기와 원문·호명 대상은 구분한다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ending:E1",
+        "index": 1
+      },
+      "person": "guard",
+      "text": "여기 남은 기록은 거기까지입니다.",
+      "before_emotion": "neutral",
+      "after_emotion": "neutral",
+      "before_reason": "돌목은 남은 기록의 한계만 답한다. 비극을 가벼운 표정으로 처리하지 않는다.",
+      "after_reason": "돌목은 자신이 확인할 수 있는 기록의 범위를 공식적으로 한정한다. 대사의 절제된 절차 설명을 기준으로 neutral을 유지한다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ep1:after:book_saved",
+        "index": 2
+      },
+      "person": "daram",
+      "text": "아빠, 이번엔 끝이 바뀌었어.",
+      "before_emotion": "joy",
+      "after_emotion": "joy",
+      "before_reason": "생존 분기에서 바뀐 결말을 반기는 아이. 사망 분기와 감정을 공유하지 않는다.",
+      "after_reason": "다람이 읽고 있는 그림책의 달라진 끝을 직접 알아보고 반긴다. 아직 모르는 게임 결과가 아니라 현재 읽은 문장에 대한 반응이다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "wf:morning:alive",
+        "index": 1
+      },
+      "person": "kid_kkomi",
+      "text": "우리 집 다 탔어. ……근데 대장은 표시 안 잃어버렸다.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "집을 잃었지만 표시를 지킨 꼬미의 복잡한 상실감. 생존을 가벼운 축하로 만들지 않는다.",
+      "after_reason": "꼬미는 자기 집이 탄 것을 알고 있으며 대장 표시를 지킨 사실에 매달린다. 상실감과 억지로 버티는 자부심이 함께 있어 전용 표정이 필요하다."
+    },
+    {
+      "ref": {
+        "file": "game/assets/room13-dialogue-beats.json",
+        "scene": "ws:after:bori_home",
+        "index": 1
+      },
+      "person": "resident_bori",
+      "text": "우리 집 좁다. ……그래도 넷이면 덜 춥겠지.",
+      "before_emotion": "joy",
+      "after_emotion": "joy",
+      "before_reason": "아이들이 모두 살아 곁에 있는 분기의 조용한 안도와 지키겠다는 결심.",
+      "after_reason": "보리는 지금 자기 무릎과 곁에서 자는 네 아이를 보며 좁은 집을 함께 쓰겠다고 말한다. 조용한 안도는 현재 눈앞의 아이들을 근거로 하며 승리 포즈를 뜻하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-duplicate-review.json",
+        "row": 5,
+        "identity": "debate:conclusion_wrong:Q5A:weak",
+        "route": "dynamic:223"
+      },
+      "person": "resident_teacher",
+      "text": "고맙습니다. 걱정 마세요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "아이들을 돌봐 달라는 약한 결론이 위험을 막지 못하는 분기. 선생님의 고마움은 안도·환호로 처리하지 않는다.",
+      "after_reason": "아이들이 추위와 수레를 피할 수 없다고 믿으며 자신의 방식으로 보호하겠다는 결심을 유지한다. 상대에게는 안심시키는 다정하고 담담한 얼굴을 보인다. 아직 돌아올 온기나 이후 결과를 알지 못한다. 불안·악의·죄책감을 표정으로 먼저 누설하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "839",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 64
+      },
+      "person": "resident_teacher",
+      "text": "다 알고 있어요. 그래서 그러는 거예요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "상대의 우려를 이미 안다고 막으며 자기 판단을 고수한다. 상대를 설득하려는 단정함이지 이후 사건의 불안한 예고 표정이 아니다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "842",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 70
+      },
+      "person": "resident_teacher",
+      "text": "다 알고 있어요. 그래서 그러는 거예요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "새 자료로도 자기 판단이 바뀌지 않았음을 단정한다. 839와 같은 발화 의도이며 결말을 근거로 불안을 부여하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "843",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 76
+      },
+      "person": "resident_teacher",
+      "text": "……오늘 밤, 정말로 데워집니까.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "새로운 온기의 증거를 접한 뒤 오늘 밤 지속될지 재확인한다. 지금 믿음을 바꾸기 어려운 망설임은 발화 자체에 근거한다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "845",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 77
+      },
+      "person": "resident_teacher",
+      "text": "약속…… 저도 아이들에게 약속을 했었는데.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "아이들에게 했던 약속을 떠올리며 새 약속을 믿어도 될지 망설인다. 죄책감·지친 회상은 별도 표현 요청이며 anxious만으로 완성하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "847",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 78
+      },
+      "person": "resident_teacher",
+      "text": "(눈을 감는다) ……하루만. 하루만 기다려 보지요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "눈을 감고 하루 기다리겠다고 제한적으로 수락한다. 겉으로 드러나는 것은 조심스러운 결심이며, 성공 경로에 들어갔다는 사실은 판단 근거가 아니다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "848",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 79
+      },
+      "person": "resident_teacher",
+      "text": "제가요? ……저는 이 아이들 이름을 틀린 적이 없어요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "아이를 해치려 한다는 직접 비난에 이름을 틀리지 않았다는 사실로 답을 돌린다. 불안 대신 방어적인 단정함으로 해석하며, 의도 노출 여부는 대본 범위 안에 둔다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "857",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 109
+      },
+      "person": "resident_teacher",
+      "text": "어젯밤 보셨잖아요. 아랫길 사람들이 서로 기대 앉은 채로 얼었어요.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "이미 직접 본 아랫길의 동사를 제시하며 자신의 판단을 방어한다. 앞으로의 결과를 아는 반응이 아니라 실제 기억의 고통이다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "858",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 110
+      },
+      "person": "resident_teacher",
+      "text": "대피 명단에서 이 아이들 이름에 줄이 그어졌어요. 옆에 '수레'라고. 보호소에 간 사람은 돌아오지 않아요.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "읽었던 명단의 줄과 보호소에서 돌아오지 못한 사람들을 근거로 설명한다. 현재 알고 있는 위험과 책임 압박을 드러낸다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "859",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 111
+      },
+      "person": "resident_teacher",
+      "text": "추운 수레에 묶여서, 무서워하면서 가게 할 수는 없었어요. 내 반 아이들을.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "반 아이들을 추운 수레에 보내지 못하겠다는 보호 집착을 고백한다. 이미 공개된 행위를 정당화하는 고통이며 이전 안심 대사와 다르다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "860",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 112
+      },
+      "person": "resident_teacher",
+      "text": "그래서 따뜻할 때. 배부를 때. 노래 부를 때. 아프지 않게.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "자기 행위를 따뜻함·배부름·무통의 말로 정당화한다. 불안보다 닫힌 확신과 지친 다정함을 표면으로 선택한다. 숨은 절망은 별도 명세다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "864",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 116
+      },
+      "person": "mom",
+      "text": "오늘 밤부터 데워져요. 아이들은…… 안 죽어도 됐어요.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "엄마는 지금 켜진 등과 온기를 확인한 뒤 아이들이 죽을 필요가 없었음을 말한다. 이미 알게 된 사실에 대한 비통함이며 슬픔 표현이 별도로 필요하다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "866",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 118
+      },
+      "person": "resident_teacher",
+      "text": "……하나도, 안 틀렸는데.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "선생님은 온기가 돌아온 것을 본 뒤 주저앉아 출석부를 안고 이름을 틀리지 않았다는 말만 반복한다. 죄책감·붕괴를 별도 표정/자세로 제작해야 한다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "868",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 121
+      },
+      "person": "resident_teacher",
+      "text": "어차피, 다 죽었을 거예요.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "추궁에도 피할 수 없었다는 자기 설명을 반복한다. 관객의 평가 대신 화자의 방어적 확신을 표면에 둔다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "870",
+        "source": "game/systems/room13_ep5_soup.rpy",
+        "line": 127
+      },
+      "person": "mom",
+      "text": "(아빠를 본다) ……여기 사람들이 수레가 어디로 가는지 알아야 해.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "선생님의 절망적 정당화와 약속의 실패, 몇 시간 차이로 아이들을 구하지 못한 엄마의 비통함.",
+      "after_reason": "엄마가 아빠를 보며 수레의 실제 행선지를 알려야 한다고 제안한다. 현재 알고 있는 사실을 공개하려는 단호함이며 결과가 비극적이라는 이유로 불안을 더하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1007",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 297
+      },
+      "person": "daram",
+      "text": "……아빠. 피리 부는 아저씨는 누가 불라고 해서 분 거야?",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "다람은 방금 읽은 피리 이야기에서 지시한 사람이 누구인지 묻는다. 인과를 따지는 질문이며 이송 결과를 아는 작가의 비통함을 대신 표현하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1014",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 321
+      },
+      "person": "daram",
+      "text": "아빠, 우리가 이긴 거야?",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "다람은 눈앞에서 너울이 군중에게 끌려가는 모습을 본 뒤 승리인지 되묻는다. 직접 본 폭력에 대한 혼란이다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1017",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 326
+      },
+      "person": "daram",
+      "text": "아빠, 할아버지들은?",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "가족은 숨었지만 할아버지들의 수레가 산길로 가는 것을 보고 행방을 묻는다. 확정된 사망을 아는 표정이 아니라 남겨진 사람에 대한 걱정이다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1020",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 353
+      },
+      "person": "resident_tosil",
+      "text": "……이거. 할머니가 맨날 읽어 주던 거야. 너 줄라고 가져왔어.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "토실은 할머니가 읽어 주던 책을 친구에게 건넨다. 명시된 hold_storybook 동작과 조심스러운 친밀함을 유지하고 제단 결말을 미리 드러내지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1021",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 354
+      },
+      "person": "daram",
+      "text": "제비 왜 남쪽에 안 갔어? 추운데.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "다람은 추운데 떠나지 않은 제비를 걱정한다. 책 속에서 이미 읽은 상황에 대한 공감이다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1022",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 355
+      },
+      "person": "resident_tosil",
+      "text": "……왕자가 혼자 있을까 봐.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "토실은 왕자를 혼자 두지 않으려 했다는 책 속 선택을 설명한다. 애틋함은 별도 표현 요청이며 공포로 표현하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1025",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 359
+      },
+      "person": "daram",
+      "text": "……할아버지 손이 심심하댔잖아.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "다람은 눈앞의 끌과 움직이지 않는 노인을 보고 예전에 들었던 말을 떠올린다. 이미 목격한 상실에 대한 애도로 별도 슬픔 표정이 필요하다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1027",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 361
+      },
+      "person": "daram",
+      "text": "이거 내 손이랑 똑같아.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "다람은 작은 손자국의 크기를 자기 손과 비교한다. 아직 온기 실험과 희생의 진실을 알기 전이므로 그 뒤의 충격을 앞당기지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1032",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 366
+      },
+      "person": "mom",
+      "text": "……사람 온기였어. 돌을 데우는 건.",
+      "before_emotion": "anxious",
+      "after_emotion": "surprise",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "엄마는 방금 손을 얹자 돌이 따뜻해진 관찰을 바탕으로 원리를 알아차린다. 유지형 깨달음으로 반응하며 순간 움찔은 추가하지 않는다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1037",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 373
+      },
+      "person": "granny",
+      "text": "내 딸, 보미도 이름을 잊기 시작했어요. 처음엔 장 보러 가는 길을. 다음엔 토실이 이름을요.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "할머니가 딸의 기억이 사라지던 일을 본인 경험으로 회상한다. 이 대사는 이미 자신이 아는 상실을 말하므로 애도 표현이 필요하다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1038",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 374
+      },
+      "person": "granny",
+      "text": "내가 여기로 데려왔어요. 이 손으로. 그 애 목도리를 여며 주고.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "딸의 목도리를 여미고 직접 데려온 자신의 행동을 인정한다. 알려지지 않은 미래가 아니라 과거 행동에 대한 죄책감이다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1039",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 375
+      },
+      "person": "granny",
+      "text": "그게 마을을 살린다고 믿어야 살 수 있었어요. 그래서 아가를 붙잡으려 했어요. 편지도 내가 썼어요.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "살기 위해 믿어야 했다고 스스로 합리화의 이유와 편지 작성 사실을 털어놓는다. 드러난 자기 인식의 고통을 표현한다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1040",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 376
+      },
+      "person": "granny",
+      "text": "아가 방법이 맞다면, 내 딸은 죽지 않아도 됐다는 거예요.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "새 방법을 직접 확인한 뒤 딸의 죽음이 불필요했을 수 있음을 받아들이지 못한다. 지금 깨달은 사실에 대한 슬픔·죄책감이다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1041",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 378
+      },
+      "person": "resident_tosil",
+      "text": "……할머니. 여기가 산 너머야?",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "토실은 할머니의 고백을 듣고 산 너머라는 말이 이곳을 뜻했는지 확인한다. 방금 들은 말에 대한 불안이며 다음 결말을 아는 반응이 아니다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1044",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 381
+      },
+      "person": "resident_ppul",
+      "text": "그 애는 손을 대면 꼭 손가락을 쫙 벌렸소. 이렇게.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "촌장은 눈앞의 작은 손자국을 보고 손녀의 손버릇을 회상한다. 무릎 꿇은 상태의 애도는 별도 자세·표정으로 요청한다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1045",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 382
+      },
+      "person": "resident_ppul",
+      "text": "손을 얹고 내려왔으면 됐다니. 나는 그 애를 두고 내려왔소.",
+      "before_emotion": "anxious",
+      "after_emotion": "anxious",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "촌장은 내려와도 되었던 일을 지금 이해하고 자신은 아이를 남겼다고 인정한다. 명시된 kneel_stone 동작과 후회·죄책감을 분리 명세한다."
+    },
+    {
+      "ref": {
+        "file": "docs/reviews/dialogue-beats/dynamic-context-review.json",
+        "row": "1047",
+        "source": "game/systems/room13_ep6_cart.rpy",
+        "line": 384
+      },
+      "person": "resident_ppul",
+      "text": "……달래. 달래였소.",
+      "before_emotion": "anxious",
+      "after_emotion": "neutral",
+      "before_reason": "이송 저지 뒤 군중 폭력·남겨진 노인·희생의 진실을 접하는 결말. 승리 환호로 처리하지 않는다.",
+      "after_reason": "촌장은 다람의 물음에 손녀 이름을 조용히 말한다. 이름을 말하는 절제된 표면과 애도는 구분하며 anxious를 애도의 기본값으로 쓰지 않는다."
+    }
+  ],
+  "limitations": "Focused semantic re-review of high-risk grouped defaults, not a claim that every earlier decision has received an independent new review.",
+  "source_rpy_sha256": {
+    "game/room13_gate_inspection.rpy": "61fbbd5fa184a2ce922a72758a2881f9875e70bbfa9954b39a541fb19cb431a5",
+    "game/room13_question_summaries.rpy": "9f775a4312185d08ca21bb9a883db10f8699d3a3f0a9e0612dee0475da8fcdfb",
+    "game/room13_week2_screens.rpy": "18b7a924ea0c08080d929e7243ad4883c2e84d5c1670c7688c24c4ee573a98c1",
+    "game/scene_runtime.rpy": "58b26a887020ca86ea34547ceea3b8923e0177c18ff2c09648de0d57c795aba6",
+    "game/room13_acting.rpy": "7e3334bd2d626bb061549de2807f6130019724fb0c08c58195d74ef0bb93a5a6",
+    "game/room13_save_ui.rpy": "c3142458170610a45741272ce0f6a52a8dbdc7ecef90dd06d535531044cccdd4",
+    "game/winter_investigation.rpy": "56352a2586979545687cb6c78e046f460667334990eefa87560a262f0d41df67",
+    "game/winter_resident_inference.rpy": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+    "game/village_interiors.rpy": "97f325abdc136e191a73367e2281a908fce66281d708e022b0479845759bd5f3",
+    "game/room13_week2.rpy": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+    "game/room13_dialogue_rhythm.rpy": "0ea22b4fa4a7885f5ead7c7a4187af6e0d67cb848e67623b50808c40f7a3a5fd",
+    "game/room13_reference_composition.rpy": "bdaa82c84083ff60ea109fe6c54df21b237f01cc150a7eaaa2eb73ab27652f01",
+    "game/room13_inn_navigation_v4.rpy": "8f436b465849a2d9354fdd006cfa16b1b374bc5abd5783d08cf0de63314aa4e3",
+    "game/village_people.rpy": "6d2d2b5aac51599f4976ab8fecc8af5d67c3ea52cae7c9844b27ac4d01ee16b3",
+    "game/winter_world.rpy": "ff8cbdb71b750feb8e520f298fe41851a94441ed8da76ec6008f6dc30ae61602",
+    "game/room13_screens.rpy": "cedd5717398541b72ee9c8f5ab927aff3945d5eaaa49a822106b3a4d2eebcbdd",
+    "game/screens.rpy": "90617512e739b68e8cfec4c6853ca82196f6a6af43aebf172dedb5b96026cd56",
+    "game/winter.rpy": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+    "game/room13_meeting_seating.rpy": "8da0a6e1dbea78567d146f3b2b819599dac21c3f393ccda92e960c5e398e2cc6",
+    "game/room13_cinematics.rpy": "19c7d77cc31b14edf786875cb1495d13aca51211bb102bde7325c5ea71768355",
+    "game/room13_route_knowledge.rpy": "b79ee119e71f0fb372690b6d9188d50298138e948fa0067687fd32c6467e21a5",
+    "game/source_screens.rpy": "ee5b6521c602f93d491191956a20f821f9e32977bd51ded84182e0b02bb7c8e3",
+    "game/room13_ui_art.rpy": "348d58509a649fb2d50fa89a0ffe94a2fd9c609ad9e32036c4287809da3ba61a",
+    "game/room13_fullbody_dialogue.rpy": "0e602ce828b968484ae9e96e1eee8534dbb0bba6473f1d48c6ab7fa2f0118465",
+    "game/winter_screens.rpy": "7e0a8f35c010f2d26a0ef2194d7d188d8e207225bc73d8f7de900cdd9df3c0eb",
+    "game/room13.rpy": "eaf53b4cc986ac08697ed3d910e198fb316921000eb647eacd5df0236cdd367c",
+    "game/room13_worldmap_v5.rpy": "ced60f40db12d94beb25e2997aeb7741ac29900d244cfeca99b0b6e86cafd217",
+    "game/room13_typography.rpy": "9a8564698c85beee76162a4d8542bff7b576cc3322a6e42f515fd48fbbee8a0e",
+    "game/options.rpy": "91ae2000578fe045c447ebff41caf81028198759004a48abacdfa7973a659ff2",
+    "game/winter_exploration.rpy": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+    "game/arrival.rpy": "af44ba03258afcb2df492fceb033025264d71a22371f03bafa6875a5012294f8",
+    "game/room13_record_compare.rpy": "ce80ac1f1cf1b03179a56e03bc9e96aafcc726b8b63ef8d940efde17254fcfdf",
+    "game/room13_title_art.rpy": "8902984a17677f925fcf3fd06ddcfd2fda6ed25d0a3c44c75ad1452b8e14e7c7",
+    "game/room13_arrival.rpy": "415d95fcb0ef06c6d6195262b0839bc72db1da64ff3b899db7206307e703a41e",
+    "game/story.rpy": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+    "game/room13_dialogue_openings_20261013.rpy": "9e88253884d6e3f356440650347c44a4c9409cbf0045686ef318ac3d010f5f95",
+    "game/room13_discovery.rpy": "b04bb79f1e07f6b478f111eb20f0b82b2d81c7883a777ef6adc88b36741a988d",
+    "game/room13_motion.rpy": "68ca22016fe9ca41d874cdb975f154f90633db74d6995acb0bf95c3899dd16ad",
+    "game/winter_events.rpy": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+    "game/room13_readability.rpy": "2a64f4f19c1ca1a6d41c298e482104eb816125bf534af75babb94801c83664e1",
+    "game/room13_interaction.rpy": "a5499b1d18091731fc5cbdc8d6d7b0dce0d469cbc992aad84dbbc87c85f40ff4",
+    "game/room13_home.rpy": "f53699a78e71d745040188f94e6f7adac81bada924cc42dad08e40bed5ee65a2",
+    "game/room13_first_mystery.rpy": "6945171702add8fe8eac08f1cd969020b98ab16fad41b8df57c106539ee1eaf4",
+    "game/room13_gate_continuity.rpy": "e18da6e902b48ea7974d1248dd252c209a994f4460ed09444c88389ae9cec360",
+    "game/room13_navigation.rpy": "441be0acf87e443e30b1db22c80dfce7e0a33c22bf44f361e9947f0818f7f2c8",
+    "game/room13_conversations.rpy": "72283eb7c4c50b669b93ba3efac6a56d8a94298351eb9f2cd731ccd834142728",
+    "game/room13_week2_rules.rpy": "6be06d28b68b33ea3d1ce2cabee67d393bc117631b2e08c5f99165f3dc1778c1",
+    "game/room13_revision.rpy": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+    "game/room13_antique_icons.rpy": "4e065aa924e513dab1ad5500f4c33b55df66ecc1362e517e0d571111a5bfabd7",
+    "game/village_map.rpy": "a880b21260d913f6dd8f791fff67172c3e099010ce6ffd21d6594d14f31e6ad4",
+    "game/room13_tool_discovery.rpy": "ff23794c3e51b96d63d00ab1b9bbab40cf3e4dc0c03f230c37311a0854f49903",
+    "game/source.rpy": "d4d2e3c04e11cbfcf3a3fba69ebf7aeaafb2b6df2127ae22719a63727bd63a37",
+    "game/room13_rules.rpy": "23fd3c35d79cd1ccff2d30aa9e03b4e252fed738981f8b70eacb17e44fa6e9bf",
+    "game/room13_new_places.rpy": "e2c895527330678de6d67a17899455605448ff59dd332319cfed27c7c04ae8dc",
+    "game/room13_thoughts.rpy": "09aecf3f2fb302c9e04877717c69c45ecca109dbdba6a4adf9b8931495394004",
+    "game/council_issue.rpy": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+    "game/room13_ui_flow.rpy": "89252ea1b56d6be560266b3007eab105b77d6bffb40251d6b0b920397fc7ed8e",
+    "game/room13_entry_window.rpy": "469f42c6283840c861c2490433b8a8bedb73c7d140f75bae3f36398bb6128775",
+    "game/room13_notebook.rpy": "deb5b2d5d92120aa670d6cfd9522d128f0207cc2a7c0ede39df31e0b049329f7",
+    "game/room13_options.rpy": "4f5d375568d901b08596d2c177c91461a1c2fea51db65c9ddf0e2c9b7c3658e0",
+    "game/winter_opening.rpy": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+    "game/timeline.rpy": "32f0da6319ec64b601cf1e99cd9913d1ccd06399bb88eeba9d96de973d38631d",
+    "game/room13_webp_alias.rpy": "d1273b49da8a523316f92f91f86e4ab6ff536f538b1f59335dec70827c7431bb",
+    "game/room13_world_camera.rpy": "63734b3ead4c05b5b7f4087f54459b5a616112f91a3ff7a2f97ed17840d56f74",
+    "game/winter_rules.rpy": "aea6fd397d8c27fd3c0083bda9b681e885c55bb895c6e672fcb7bd2b76bf7639",
+    "game/room13_feedback.rpy": "fee69b4c13580186704983ef19efc063359a9c99afbe33ec1631cc4ba7bbdbdf",
+    "game/room13_inspection.rpy": "87a613b71e54774767514c896f97bc79f78a03de76176994a0882a055af14497",
+    "game/room13_life.rpy": "746724b1554851b60129476b00222c716613677ea838e8037e93bdb2b9b63f5b",
+    "game/qa_tests/qa_ep_art.rpy": "0501a8bc6403d1aaed1548a3e904a07ab492e3fdeea90492aa6cd5636f764823",
+    "game/qa_tests/helpers.rpy": "de4baa48ee443fd270546d9963e3d5bcbc4cb6f62e042ad7ffea36a6a3e2a19f",
+    "game/qa_tests/chain_names.rpy": "a38330b86f73a8966c6ba14e2281c7568cf5b8a6d3c7ab2f25735306d0621048",
+    "game/qa_tests/tests.rpy": "c517abf43b62ad831da07113e5db8ebe80dda3a867c60b880ba509d536cdbcb8",
+    "game/systems/room13_testimony.rpy": "aa020e2bf713f818ada065c1c01b1666264757e5c4a25b6c4bf6e356cf6910ca",
+    "game/systems/room13_admin.rpy": "7fe988cd5392fe15fba1cad7cc575e3537e2d3fa1f72d75075916bf2e400411b",
+    "game/systems/room13_ep_story.rpy": "9aa757e39cf4aa2c5324b88d20cd3086dcb43d56dae3142be5af4746d7f8caed",
+    "game/systems/room13_storybook.rpy": "2ba2a5f8de212b73e581d77213e8c5fa0baef30bf9ce60969296f49e8e363a38",
+    "game/systems/room13_convenience.rpy": "c7ba5a191f8e7688583ccb5b12c420f4192a41b09ed221107a8dc655c0d5f497",
+    "game/systems/room13_perspective.rpy": "15046b5118ea7ab6e47f451c500cd293e9cc26d5748241bc0a571191641f1fe9",
+    "game/systems/room13_linebreak.rpy": "543cab433ed116c56828939838dd90a625bd75c8a36c05e73d47ca48aef10541",
+    "game/systems/room13_work_clues.rpy": "55a3724ae6be71fa3aa38bf4528c56910143ec062e60d206f3640cdcfd95174c",
+    "game/systems/room13_debate_points.rpy": "606400c2e6b47889336b1009ac0bc43968653b3aad0acd3391cb2ae4a0c43653",
+    "game/systems/room13_playback.rpy": "b434c5b03ddabc5bcd4f531a5fb8a6337e43836348fa52dce7f7d8068becebaa",
+    "game/systems/room13_livelihood_model.rpy": "9b85ce717e967d827f0fe3195dc798b4fe7dc67658d07958fe37f6a30176c6aa",
+    "game/systems/room13_trial_notes.rpy": "5c73a34f40196cad6def26c62dc29d66f687513ed622facfcc60e9a081d7a802",
+    "game/systems/room13_relations.rpy": "818bf9d1fb90199b1e09ee48d43338f51699df34b1a1b5ca078011a8fdbcf582",
+    "game/systems/room13_ep_art.rpy": "edc336745120c4bca61b5ebacddefa431ffeb2a63b80ce4538dc5a45d2d9f9fe",
+    "game/systems/room13_week2_events.rpy": "92526e1fa84db75cd4aea430b510a8739bd162124a534b2a386e0d4fd4d3e0b7",
+    "game/systems/room13_town_events.rpy": "bdd46f245aca385602ad8e86498575869a2e626f2e57415e3a9aeef7df419991",
+    "game/systems/room13_material_art.rpy": "e7d47035ee947f7134f4f4e198866b0aaf974073ce88ebe8dca0a32ee61307f0",
+    "game/systems/room13_title_fx.rpy": "a4c970e88f4e7b0418103fbe52b32a0565c5bb79b01c7bde37fe56ccc0dda033",
+    "game/systems/room13_episodes.rpy": "4db05f09d993ea48b2a0d55d6b6ad1a40debfdeff0611f1c186f6ed86281d1fd",
+    "game/systems/room13_web_memory.rpy": "3d2472bb45ff1207ec042385cedffcfb6f1f8c4ca009ba959772efbc18f224f5",
+    "game/systems/room13_materials.rpy": "53edbffc7f2ad2092975989e19ca7391ec8e025e3b90ecd5f486ecdfd21ec5c2",
+    "game/systems/room13_ep6_cart.rpy": "9992e5506661507428ddbc5fbc0320e04062e6407ae4b330fb07ff09f4481669",
+    "game/systems/room13_owl_buri.rpy": "15e22969eb7a9103e4877b8b5e73d94b87c9f3b34a0d1901a7b08ac182d1603c",
+    "game/systems/room13_event_offers.rpy": "e0804bbc7adc8b9619eb369add49cabf08c661a300cd70b3b3e4080de4673261",
+    "game/systems/room13_place_reasons.rpy": "29cef70ee2220b4b3ca2f79ee16614c1c421d6900ed91075d3583d17b235e68e",
+    "game/systems/room13_ui_refinements.rpy": "20e4463ab1409ec0c4582f1b169501c3b33fe47f09d996612e6b9b552069f27e",
+    "game/systems/room13_first_day_flow.rpy": "82569645ac1059abdeb3d9f6fc9c81bd51324c003bfedf408f6d8d3de89f191e",
+    "game/systems/room13_meeting_flow.rpy": "e8bfca9bed12912d4568c35cfd6c4f7c515f7d4283bf24f091af8c98d8a1fc8d",
+    "game/systems/room13_carryover.rpy": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+    "game/systems/room13_daram_mood.rpy": "3ab3b28846412526f7e2f0e968c879ca7d95b85438a40e46a92dd358a6b67c6a",
+    "game/systems/room13_topic_order.rpy": "51d7c6f36545a8032d5c585ae386977ff4447bf580558711296aa36d5fc8c05f",
+    "game/systems/room13_daram_home.rpy": "287bdaa6a53a1e1b95a5219050a080e72a9ce42760f97f1a39db47e7da8e8360",
+    "game/systems/room13_story_continuity.rpy": "f52a9e8c9d56f0d811c3cb43cb26b439874f2d9021468aeb49aa332bdabe6ba6",
+    "game/systems/room13_new_cast.rpy": "c29a21ee683f7effdfd56229a34e2ac6ba7633c37ec56499467c78602b6f1336",
+    "game/systems/room13_direct_work.rpy": "bab5921950c39b5caad4093e739dccdc95339f90870f70d1a4d9ebb37c9a2c16",
+    "game/systems/room13_learning.rpy": "1eaeb97d503d3fc33c023accef053277191127069a7cba059ff7bfee21f7859f",
+    "game/systems/room13_ep2_kids.rpy": "a080def77c920a9d18b4805e93417d2a326dc46584cda95b4629dc0917a577d2",
+    "game/systems/room13_life_closeups.rpy": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+    "game/systems/room13_dot_fx.rpy": "d28aeb97914d64f23e330ac239212fb01f06ddd536abde145d4577a1f3875369",
+    "game/systems/room13_map_actions.rpy": "a5bb75c341ff6929b1c570dcebef58a7e23c8511eb48f0dde2b4597cb55e95bb",
+    "game/systems/room13_input_guard.rpy": "c796c68c90976c1159dad239ea97e04fdd9468cd6c89c7bb539c718b2794daf9",
+    "game/systems/room13_gimmicks.rpy": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+    "game/systems/room13_livelihood_flow.rpy": "1dc81fb8c6d186200a61b4b460e8f28e1576d23fbda1313eaafeb330e25148de",
+    "game/systems/room13_ep4_night13.rpy": "75d7e2eacaa7406531c76d9929aafa5e2c80514d2c27780574b717e0928ca12f",
+    "game/systems/room13_items.rpy": "1df19af4c72d29716bdcda47318bccf84ff0e75689371b56a2734904b9453d03",
+    "game/systems/room13_shop.rpy": "9026f83b1b0d527344ec2decee37318e6e23fc4cce52fbc6daef5c1087b29517",
+    "game/systems/room13_ep5_soup.rpy": "44af68cd7847823f948865c06c128077dd6258e8ad03463901ecf1e7563368af",
+    "game/systems/room13_mother_note_spot.rpy": "e10cc26f2a58a22f0790cb85b6e71a2b36fa2ae9df82eb45444bdf28bdd86424",
+    "game/systems/room13_town_events2.rpy": "a2fc375fef655cc3ac97a4dc17f11ce5f8dca5ca5c218d3bb057735460f52f6c",
+    "game/systems/room13_shortcuts.rpy": "a35e485886d239832599b59b1b002ef4da0b08118a74abf0ce2848d27f43acc7",
+    "game/systems/room13_no_carryover.rpy": "ce8672d62785a7c2d1f900295bc787e7bfca43b5fccd57243a4979ff9841fc90",
+    "game/systems/room13_alibi.rpy": "7cf3b78ae79472a055faa37c32bbc4d279cf3a4a7206d7ba21757b7d288169ff",
+    "game/systems/room13_poc_route.rpy": "116055de8610da5326ab623799de610aaa98413d63361072d4fca4f9e1fbd077",
+    "game/systems/room13_timeline.rpy": "7bf93ae5fc4e62754c786d79049cb987b1b3558464bd59566c26eb76d1ad379a",
+    "game/systems/room13_intro_clues.rpy": "1923444bcd99bcd7c25f4d4547ec8e050c9dbe547602d632bad9e119f2b4bde6",
+    "game/systems/room13_ep3_woodfire.rpy": "7784c5c27fe16fb75803634f7291fafcc6a1a8408cf0238d4cebfd3aacf60246",
+    "game/systems/room13_bundle3.rpy": "b0b9fe20ba39fabc192a0a965639e2aa36e6410d7bc16cf1cf12fbe5c3da2bfe",
+    "game/systems/room13_no_livelihood.rpy": "45da086f3bf7a6de044d26c1e0b72381d0c646f18d2b4da185280e82dc2deb91",
+    "game/systems/room13_grant_timing.rpy": "31dbb6bf49892fed158105b063745e86df96140b34ad595b1247b14b1d6ca79f",
+    "game/systems/room13_boot_guard.rpy": "6851b856666cd4abc973606439cd077cf3379d3912a311c0be1dc308416a8501",
+    "game/systems/room13_use_knowledge.rpy": "26edb208edf4b2539fbfb143d87c86ef08d8fe90b926b8230457843052dae658",
+    "game/systems/room13_dialogue_beats.rpy": "8e165e169662504e3db06fe1ec712cc80ceb668d6e416b620c7caa8134e5762e",
+    "game/systems/room13_return_recovery.rpy": "2de6f0cea019c06a6ed1a496bb8c63f4bbb6a16453f86ff8cc75970f9a1913fe",
+    "game/systems/room13_sound.rpy": "b84d4dc8f206807c5a4bdbfc3f60136248c1206076820238a6badce4c1b7a8ad",
+    "game/systems/room13_dialogue_expand.rpy": "36c1f8485caa1c03f1489686bb072034251fc93c7157ad5e8b1729fc9bd86122",
+    "game/systems/room13_typography_roles.rpy": "ec06e76a82edd8b564b1503abbf33900cedd0a2a0bb698045088f81f146c443e",
+    "game/systems/room13_livelihood_ui.rpy": "c8ed7de3f752ec194fda3f8003f4061ef6543c6fff7f092f2842813d49427d58",
+    "game/systems/room13_memory.rpy": "7aa97128f9a4a6b83809ccaf01c4243419c9b04b4ed613b3857b77cdc8e7284d",
+    "game/systems/room13_reinspect.rpy": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+    "game/systems/room13_new_places.rpy": "6d649c0bad350413c083936ce8fa20dc9fed191d1241c878ff7103bcb2d07bd4",
+    "game/systems/room13_time_flow.rpy": "6ff2a6936b4ddf5b44e7fe59e864eeba0b1affa1c6ad6e0f6161392298dd3bb5",
+    "game/systems/room13_shelf.rpy": "df5837f153d61a979f125519811bb9c26c97be5d880d81551d11de87dbc5b05b",
+    "game/systems/room13_polish3.rpy": "683e68aacaecd62e794242f96c42d1b76d18a0a23dabc6148b77e6ba2c37c5b5",
+    "game/systems/room13_evening.rpy": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+    "game/systems/room13_goal_fold.rpy": "5071e6d1d56f10fb97be0d388287c1358dce07ff7de85e4f728a5846be8bdb20",
+    "game/systems/room13_key_words.rpy": "d928e1478cf66aeee9ef6a551f3f4b34c009c14ad965ebe6afb8573172bd9017",
+    "game/systems/room13_ep1_lamp_thief.rpy": "1c45e6c0a188ea66434795f39ffea4f0e944d4eee8944e4f4e5c2b7828af0afe",
+    "game/systems/room13_night_talk.rpy": "716052b70fddcf66391d172214e1c620ac961fff1427f6abed5374f6a2f1db4f",
+    "game/systems/room13_opening.rpy": "f18217822be55e00fbfa1611a6a8da9c162a49c3664e661cd593bbdcb8395aa9",
+    "game/systems/room13_dialogue_bindings.rpy": "a0af73ef6b962d5c95f9aefc776c725a8d1a92d75f8c3f546002dedd63f5a004",
+    "game/systems/room13_debate.rpy": "862d1b31f5139014942544eaf28ac46bc81565c0986e7f23fe065306a09e9e3c",
+    "game/systems/room13_shop_icons.rpy": "39dcafed481215a3536d91955f3fd0e19aa977396d24714b9bd71b412a679441",
+    "game/systems/room13_week1_cases.rpy": "8f1024a48d01026048cf486f140c99d750822b7ea3bf9cc7de9a7fd9c267f21c",
+    "game/systems/room13_reference_ui.rpy": "344200ec0dcc1184fa7c4c0b0ee43019c68fb977af93dd44e13f491aea5a56ce",
+    "game/systems/room13_ledger.rpy": "28e4fedd39b3f0c22ed832d5d5a99596b429c9caecdb2e876960b35b92858bc1",
+    "game/systems/room13_scene_contrast.rpy": "719326aee0ddc0e038558d9ed24323f683ac4faa7bb77fe5425234e1af07cbba",
+    "game/systems/room13_topic_record.rpy": "bd0fb80ca9c57f678b2cf238f0f1d72a4a6fa332c5a498546b0a030a623e662c",
+    "game/systems/room13_ending_story.rpy": "eca38eb8112024d9788123f378884d1696651c47930254fafe7d062f1067d032",
+    "game/systems/room13_inn_change.rpy": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+    "game/systems/room13_present_flow.rpy": "c60468d378c21f373d6716adf55b53ed43ec32ac6ac7aa815fd9a5a191aee15b"
+  }
+}

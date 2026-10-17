@@ -178,7 +178,7 @@ label r13_ep1_eaves:
     call r13_ev_here("quiet")
     call r13_lines([(None,"창틀에 작은 그림자가 거꾸로 매달려 있었다. 밤이였다."),
         ("bami","아까 경비가 왔었죠. 저를 데려간대요?"),
-        ("bami","저 아픈 거 아니에요. 밤에 깨어 있는 건 원래 그런 거예요. 박쥐니까요.")]+([("bami","……경비한테 제가 처마에 있다고 알려 주셨다면서요.")] if r13_has("bami_reported") else []),"ep1:eaves")
+        ("bami","저 아픈 거 아니에요. 밤에 깨어 있는 건 원래 그런 거예요. 박쥐니까요.")]+([("bami","……경비한테 제가 처마에 있다고 알려 주셨다면서요.")] if r13_has("bami_reported") else []),"ep1:eaves", binding_route="dynamic:482")
     menu:
         "네로에게 부탁해 헛간에 숨긴다":
             call r13_lines([(None,"네로는 아무것도 묻지 않고 헛간 문을 열었다. 안에는 이름표 없는 사람들이 담요를 나눠 덮고 있었다."),

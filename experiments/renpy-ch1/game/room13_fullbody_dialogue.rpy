@@ -116,6 +116,10 @@ init 58 python:
     R13_FULLBODY_ART_CACHE={}
 
     def r13_fullbody_close_art(person,pose,height,speaking=False,entrance=False):
+        beat=r13_dialogue_beat_art(person,height) if r13_dialogue_source_profile(person,pose,height) else None
+        if beat is not None:return beat
+        source=r13_dialogue_source_neutral(person,pose,height)
+        if source is not None:return source
         spec=r13_fullbody_spec(person,pose)
         if not spec:return None
         key=(person,spec["emotion"],int(height))
@@ -144,11 +148,13 @@ init 58 python:
     def r13_close_x(person,pose="interview_neutral",height=840):
         """Screen x for the close-up's centre: the head and torso, not the crop box, sit at 640
         (dev/fullbody_centre.py). Same value in dialogue and on the question screen."""
+        if r13_dialogue_source_profile(person,pose,height):return 640
         spec=r13_fullbody_spec(person,pose)
         if not spec:return 640
         return int(round(640-R13_FULLBODY_CENTRE.get(person,0)*r13_fullbody_scale(person,height)*spec.get("fit",1.0)))
 
     def r13_fullbody_close_y(person,height,top,pose):
+        if r13_dialogue_source_profile(person,pose,height):return int(top+12*height/840.0)
         spec=r13_fullbody_spec(person,pose)
         if not spec:return None
         scale=r13_fullbody_scale(person,height)*spec.get("fit",1.0)

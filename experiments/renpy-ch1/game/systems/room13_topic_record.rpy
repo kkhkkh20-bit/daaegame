@@ -25,8 +25,8 @@ init 130 python:
 
 label r13_topic_review(key):
     if r13_topic_record(key):
-        call r13_lines(r13_topic_full_record(key),"topic:record_full:"+key)
+        call r13_lines(r13_topic_full_record(key),"topic:record_full:"+key, binding_route="dynamic:664")
     else:
         # Legacy saves keep the existing fallback when no verbatim transcript exists.
-        call r13_lines(r13_conversation_topic_lines(key),"topic:review:"+key)
+        call r13_lines(r13_conversation_topic_lines(key),"topic:review:"+key, binding_route="dynamic:665")
     return

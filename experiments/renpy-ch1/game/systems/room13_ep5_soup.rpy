@@ -204,14 +204,14 @@ label r13_ws_greenhouse:
             ("mom","응. 미안해. 엄마가 미안해. 엄마가 오면 너희가 위험할까 봐……."),
             ("daram","그래도 왔어야지!"),
             ("mom","……응. 그래도 왔어야 했어.")]+
-            ([("daram","엄마, 나 탐정단 단장이야. 진짜야. 도토리도 나눠 줬어."),("mom","우리 다람이가?")] if r13_has("kids_club") else []),"ws:reunion:daram")
+            ([("daram","엄마, 나 탐정단 단장이야. 진짜야. 도토리도 나눠 줬어."),("mom","우리 다람이가?")] if r13_has("kids_club") else []),"ws:reunion:daram", binding_route="dynamic:402")
     else:
         call r13_lines([("mom","다람은?"),("dad","아직 보호실에. 내가 못 꺼냈어."),("mom","……그럼 오늘 밤 창문으로 가자. 얼굴만이라도.")],"ws:reunion:held")
     call r13_lines([(None,"……"),
         ("mom","당신도. 미안해. 그 편지, 내가 쓴 게 아니야."),
         ("dad","알아. 할머니였어.")]+
         ([("mom","네가 토실이구나. ……아줌마가 네 엄마 이름, 꼭 찾아 줄게.")] if r13_has("ws_tosil_kept") else [])+
-        [("mom","연구 원본은 여기 있어. 내일 옛 시설에 같이 가. 사람을 바치지 않아도 되는 길이 있어.")],"ws:reunion:close")
+        [("mom","연구 원본은 여기 있어. 내일 옛 시설에 같이 가. 사람을 바치지 않아도 되는 길이 있어.")],"ws:reunion:close", binding_route="dynamic:404")
     $ r13_flag("mom_reunited","ws_reunited")
     $ r13_edit(mom_state="reunited",reply_due=None)
     $ r13_grant(["E30"],"엄마가 보관한 연구 원본 직접 확인")
@@ -224,7 +224,7 @@ label r13_ws_lowroad:
     call r13_lines([(None,"아랫길. 마을 장부에 이름이 없는 사람들의 천막 여섯 채. 천막 사이에 작은 불 하나."),
         ("resident_nero","오늘 밤이 춥다는 말 하러 왔나? 매일 춥다. 우리는 늘 여기서 버텼다."),
         ("resident_nero","학교는 표 있는 사람 데다. 우리 같은 건 문 앞에서 돌려보낸다.")]+
-        ([("resident_nero","……탐정단 꼬마구나. 이름표는 아직 있냐."),("daram","응. 안 잃어버렸어.")] if r13_has("K08") and r13_ws_daram() else []),"ws:nero")
+        ([("resident_nero","……탐정단 꼬마구나. 이름표는 아직 있냐."),("daram","응. 안 잃어버렸어.")] if r13_has("K08") and r13_ws_daram() else []),"ws:nero", binding_route="dynamic:405")
     menu:
         "식어 가는 돌을 보여 준다" if r13_has("W4"):
             call r13_lines([("dad","진료소에서 잰 숫자입니다. 돌이 밤마다 더 식고 있어요. 오늘 밤이 더 낮을 겁니다."),
@@ -258,7 +258,7 @@ label r13_ws_long_night:
         ("resident_teacher","그럼 오늘부터 새미도 우리 반이에요."),
         (None,"복도 게시판에 너울의 대피 명단. 깜이, 몽이, 방울. 세 이름에 줄이 그어져 있다. 옆에 '수레'."),
         (None,"그 앞에 사자 선생님이 서 있었다. 손에 든 분필이 부러져 있었다."),
-        ("resident_teacher","……표가 없으면 이름도 없는 거라더군요. 보호소에 간 사람이 돌아오는 걸, 저는 한 번도 못 봤습니다.")],"ws:night")
+        ("resident_teacher","……표가 없으면 이름도 없는 거라더군요. 보호소에 간 사람이 돌아오는 걸, 저는 한 번도 못 봤습니다.")],"ws:night", binding_route="dynamic:411")
     $ r13_grant(["Y10"],"학교 복도 게시판의 대피 명단")
     # 아랫길에서 죽는 수(대본 「긴 밤 — 아랫길」 표).
     $ _ws_dead=6
@@ -273,7 +273,7 @@ label r13_ws_long_night:
     call r13_lines([(None,"눈이 그쳐 있었다. 아랫길은 소리가 없었다."),
         (None,"천막 안. 사람들이 서로 어깨를 기댄 채 앉아 있었다. 담요 하나를 셋이 나눠 덮고."),
         (None,"모두 같은 쪽을 보고 있었다. 천막 벽 너머, 광장의 돌이 있는 쪽."),
-        (None,"……")]+([("daram","……왜 다 저쪽 봐?"),("dad","…….")] if r13_ws_daram() else []),"ws:morning:tents")
+        (None,"……")]+([("daram","……왜 다 저쪽 봐?"),("dad","…….")] if r13_ws_daram() else []),"ws:morning:tents", binding_route="dynamic:412")
     if _ws_dead<=2:
         call r13_lines([(None,"노부부 둘이 서로 기댄 채였다. 그 곁에서 네로가 숨을 붙이고 있었다."),
             ("resident_nero","……내가 다 못 데려왔다. 이름이라도 데려가라.")],"ws:morning:nero_alive")
@@ -292,7 +292,7 @@ label r13_ws_long_night:
         ([(None,"판 맨 아래, 너울의 글씨로 '아랫길 사람들 (이름 모름)'."),
           ("daram","이거 틀렸어. 이름 있어."),
           (None,"다람이 크레용을 꺼냈다. 이름표를 하나씩 펴서, 판에 옮겨 적었다. 삐뚤빼뚤."),
-          ("daram","네로 아저씨가 잃어버리면 안 된다고 했어. 그러니까 내가 적어 둘 거야.")] if r13_ws_daram() else []),"ws:morning:board")
+          ("daram","네로 아저씨가 잃어버리면 안 된다고 했어. 그러니까 내가 적어 둘 거야.")] if r13_ws_daram() else []),"ws:morning:board", binding_route="dynamic:415")
     $ r13_flag("ws_names_written")
     return
 
@@ -314,7 +314,7 @@ label r13_ws_lab:
         (None,"처음엔 미지근했다. 숨 몇 번 사이에, 초록빛이 짙어졌다."),
         ("mom","따로 두면 식어. 모으면 서로 데워. 사람을 바치지 않아도 돼."),
         ("resident_guldol","밤새 지켜봅시다. 정말 안 식는지."),
-        ("mom","다만 시간이 걸려. 오늘 밤 안에는 데워질 거야.")],"ws:lab")
+        ("mom","다만 시간이 걸려. 오늘 밤 안에는 데워질 거야.")],"ws:lab", binding_route="dynamic:416")
     $ r13_grant(["Y05","Y06","Y07","Y08"],"옛 시설에서 엄마·굴돌 할아버지와 본 것")
     if r13_has("kd_farewell_seen"):
         call r13_lines([(None,"솜이가 유리관 앞에 쪼그려 앉아 있었다."),
@@ -328,7 +328,7 @@ label r13_ws_teacher_talk:
     call r13_scene("r13_school","학교 교실 · 이름을 세는 선생님","quiet")
     call r13_lines([("resident_teacher","깜이, 몽이, 방울, 도담, 새미."+(" 꼬미." if r13_has("wf_kkomi_alive") else "")+" 하나도 안 틀렸지요.",{"pose":"write_attendance"}),
         ("resident_teacher","오늘 저녁은 수프를 끓이려고요. 아이들이 좋아하는 노래도 부르고. 따뜻하게."),
-        ("resident_teacher","(아이들을 보며, 아주 작게) ……이제 아무도 추운 데로 안 보낼 겁니다. 제가 약속했어요.")],"ws:teacher:count")
+        ("resident_teacher","(아이들을 보며, 아주 작게) ……이제 아무도 추운 데로 안 보낼 겁니다. 제가 약속했어요.")],"ws:teacher:count", binding_route="dynamic:418")
     if r13_has("mom_reunited") and r13_has("Y06"):
         call r13_lines([("mom","선생님. 잠깐 이야기 좀 할 수 있을까요. 아이들 일이에요.")],"ws:teacher:mom")
         call r13_debate_run("Q5A")
@@ -391,7 +391,7 @@ label r13_ws_soup:
         call r13_lines([("kid_saemi","일어나. 일어나, 도담아. 불 켜졌어. 따뜻해졌어.",{"expression":"anxious"}),
             ("kid_saemi","……안 일어나."),
             (None,"담요 여럿. 숟가락이 가지런히 놓여 있었다. 아이들은 웃는 얼굴로 자고 있었다.")]+
-            ([("daram","아빠, 얘들 왜 안 일어나? ……그림책처럼 자는 거야? 왕자 오면 일어나?")] if r13_ws_daram() else []),"ws:soup:all")
+            ([("daram","아빠, 얘들 왜 안 일어나? ……그림책처럼 자는 거야? 왕자 오면 일어나?")] if r13_ws_daram() else []),"ws:soup:all", binding_route="dynamic:426")
         $ r13_flag("dodam_dead","soup_kids_dead")
         if r13_has("wf_kkomi_alive"):
             # 0.19.15: 관계도·이름 판은 kkomi_dead를 본다. ③에서 구한 것은 kkomi_dead_soup로 구분한다.
@@ -469,6 +469,6 @@ label r13_ws_after:
         (None,"(그림책) 공주는 물레 바늘에 찔려 깊은 잠에 빠졌어요.",{"book":"U05-opening"}),
         (None,"(그림책) 성 안의 사람들도 모두 함께 잠들었어요.")]+
         ([(None,"(그림책) 왕자가 오기 전에, 누군가 성의 창문을 열었어요.",{"book":"U05-ending-open-window"})] if r13_has("ws_kids_alive") else [(None,"(그림책) 왕자는 몇 시간 늦게 왔어요.",{"book":"U05-ending-prince"})])+
-        ([("daram","……아빠. 왕자가 늦게 오면, 공주는 어떻게 돼?"),("daram","그럼 다음엔 우리가 먼저 가자. 왕자보다 먼저.")] if r13_ws_daram() else []),"ws:after:night")
+        ([("daram","……아빠. 왕자가 늦게 오면, 공주는 어떻게 돼?"),("daram","그럼 다음엔 우리가 먼저 가자. 왕자보다 먼저.")] if r13_ws_daram() else []),"ws:after:night", binding_route="dynamic:438")
     $ r13_flag("ws_done")
     return

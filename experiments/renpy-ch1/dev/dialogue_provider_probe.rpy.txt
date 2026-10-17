@@ -1,0 +1,9 @@
+init 999 python:
+    def _run_dialogue_binding_probe():
+        import importlib.util as _probe_import
+        _probe_spec=_probe_import.spec_from_file_location("dialogue_provider_probe",config.basedir+"/dev/dialogue_provider_probe.py")
+        _probe_module=_probe_import.module_from_spec(_probe_spec)
+        _probe_spec.loader.exec_module(_probe_module)
+        with open(config.basedir+"/docs/reviews/dialogue-beats/provider-state-results.json","w") as _probe_output:
+            json.dump(_probe_module.probe(store),_probe_output,ensure_ascii=False,indent=2)
+    config.lint_hooks.append(_run_dialogue_binding_probe)

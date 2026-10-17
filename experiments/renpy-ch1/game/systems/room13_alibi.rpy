@@ -169,11 +169,11 @@ init 147 python:
 
 label r13_alibi_topic:
     $ _ab_key=r13_topic
-    call r13_lines(r13_alibi_lines(_ab_key),"alibi:"+_ab_key[6:]+(":truth" if R13_ALIBI[tuple(_ab_key.split(":",2)[1:])].get("truth") and r13_has(R13_ALIBI[tuple(_ab_key.split(":",2)[1:])]["truth"][0]) else ""))
+    call r13_lines(r13_alibi_lines(_ab_key),"alibi:"+_ab_key[6:]+(":truth" if R13_ALIBI[tuple(_ab_key.split(":",2)[1:])].get("truth") and r13_has(R13_ALIBI[tuple(_ab_key.split(":",2)[1:])]["truth"][0]) else ""), binding_route="dynamic:169")
     $ r13_flag(_ab_key)
     $ _ab_new=r13_alibi_new_crosses()
     while _ab_new:
         $ _ab_cross=_ab_new.pop(0)
-        call r13_lines(_ab_cross[1],"alibi:cross:"+_ab_cross[2])
+        call r13_lines(_ab_cross[1],"alibi:cross:"+_ab_cross[2], binding_route="dynamic:170")
         $ r13_flag(_ab_cross[2])
     return

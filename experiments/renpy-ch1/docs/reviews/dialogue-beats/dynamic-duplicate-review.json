@@ -1,0 +1,136 @@
+{
+  "status": "local_specification_only",
+  "rows": [
+    {
+      "source": "game/systems/room13_debate.rpy",
+      "line": 339,
+      "context": "R13_DEBATE={",
+      "person": "granny",
+      "text": "그 여자가 돌아왔으면 아이는 다치지 않아도 됐어요.",
+      "packet": [
+        "granny",
+        "그 여자가 돌아왔으면 아이는 다치지 않아도 됐어요.",
+        {
+          "expression": "angry"
+        }
+      ],
+      "already_static_text": true,
+      "emotion": "angry",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "엄마에게 아이 피해 책임을 돌리는 할머니의 공격.",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "application_status": "awaiting_approved_runtime_assets"
+    },
+    {
+      "source": "game/systems/room13_ep1_lamp_thief.rpy",
+      "line": 152,
+      "context": "def r13_meeting_header(session):",
+      "person": "resident_tok",
+      "text": "내가 고친 등 밑에서 잤어요. 내 탓이 아니라고 해도…… 편하진 않네요.",
+      "packet": [
+        "resident_tok",
+        "내가 고친 등 밑에서 잤어요. 내 탓이 아니라고 해도…… 편하진 않네요."
+      ],
+      "already_static_text": true,
+      "emotion": "anxious",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "피코가 자신이 고친 등 아래에서 쓰러진 데 대한 톡의 죄책감.",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "application_status": "awaiting_approved_runtime_assets"
+    },
+    {
+      "source": "game/systems/room13_ep2_kids.rpy",
+      "line": 152,
+      "context": "label r13_ep2_bite(late=False):",
+      "person": "neoul",
+      "text": "……그건 보호소에서 알아서 할 일이오.",
+      "packet": [
+        "neoul",
+        "……그건 보호소에서 알아서 할 일이오."
+      ],
+      "already_static_text": true,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "보호소의 일이라며 책임을 다른 곳으로 넘기는 너울의 냉정한 회피.",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "application_status": "awaiting_approved_runtime_assets"
+    },
+    {
+      "source": "game/systems/room13_ep4_night13.rpy",
+      "line": 47,
+      "context": "def r13_present(person,key,identity=False):",
+      "person": "resident_ppul",
+      "text": "……그건 내 손녀 이름이오. 네 해 전, 첫 번째 겨울이었소.",
+      "packet": [
+        "resident_ppul",
+        "……그건 내 손녀 이름이오. 네 해 전, 첫 번째 겨울이었소."
+      ],
+      "already_static_text": true,
+      "emotion": "anxious",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "촌장이 첫겨울에 보낸 손녀 이름을 인정하는 죄책감.",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "application_status": "awaiting_approved_runtime_assets"
+    },
+    {
+      "source": "game/systems/room13_ep4_night13.rpy",
+      "line": 50,
+      "context": "def r13_present(person,key,identity=False):",
+      "person": "resident_ppul",
+      "text": "……알겠소. 증거대로 하겠소. 판결도 내가 집행하겠소.",
+      "packet": [
+        "resident_ppul",
+        "……알겠소. 증거대로 하겠소. 판결도 내가 집행하겠소."
+      ],
+      "already_static_text": true,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "증거대로 판결하고 집행하겠다는 구체적인 약속.",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "application_status": "awaiting_approved_runtime_assets"
+    },
+    {
+      "source": "game/systems/room13_ep5_soup.rpy",
+      "line": 80,
+      "context": "def r13_ws_victims():",
+      "person": "resident_teacher",
+      "text": "고맙습니다. 걱정 마세요.",
+      "packet": [
+        "resident_teacher",
+        "고맙습니다. 걱정 마세요."
+      ],
+      "already_static_text": true,
+      "emotion": "neutral",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "아이들이 추위와 수레를 피할 수 없다고 믿으며 자신의 방식으로 보호하겠다는 결심을 유지한다. 상대에게는 안심시키는 다정하고 담담한 얼굴을 보인다. 아직 돌아올 온기나 이후 결과를 알지 못한다. 불안·악의·죄책감을 표정으로 먼저 누설하지 않는다.",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "application_status": "awaiting_approved_runtime_assets",
+      "method": "individual_actor_intent_recheck"
+    },
+    {
+      "source": "game/systems/room13_evening.rpy",
+      "line": 162,
+      "context": "label r13_ev_night_visit:",
+      "person": "daram",
+      "text": "아빠!",
+      "packet": [
+        "daram",
+        "아빠!"
+      ],
+      "already_static_text": true,
+      "emotion": "joy",
+      "reaction": false,
+      "reviewed": true,
+      "reason": "추운 보호실에서 밤 면회 온 아빠를 보고 반기는 첫마디. 전투 위험에서 부르는 같은 아빠와 구분한다.",
+      "runtime_binding": "local_callsite_snapshot_binding_assets_held",
+      "application_status": "awaiting_approved_runtime_assets"
+    }
+  ],
+  "runtime_binding": "local_callsite_snapshot_binding_assets_held"
+}

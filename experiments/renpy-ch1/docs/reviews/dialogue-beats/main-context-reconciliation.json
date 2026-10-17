@@ -1,0 +1,70 @@
+{
+  "main": "30d7327",
+  "reviewed_changes": [
+    {
+      "review": "dynamic-context-review.json",
+      "old": "비명 소리 조금 뒤에요, 빨래방 쪽 벽 안에서 누가 걷는 소리가 났어요. 쥐인 줄 알았는데 발소리였어요.",
+      "new": "비명 소리 조금 뒤에요, 세탁실 쪽 벽 안에서 누가 걷는 소리가 났어요. 쥐인 줄 알았는데 발소리였어요.",
+      "reason": "장소 명칭만 세탁실로 통일. 밤의 발소리를 털어놓는 불안 유지."
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "old": "……두 명이오?",
+      "new": "……끈의 주인도 확인해야 한다는 거요?",
+      "reason": "새 인물 수에 놀라는 말에서 노끈 주인 확인 절차를 되묻는 말로 바뀌었다. 차분한 의심으로 유지."
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "old": "죽이려 했다면 뒷벽에도 부었겠지요. 그 애들은 뒷벽으로 살아 나왔어요.",
+      "new": "죽이려 했다면 뒷벽에도 부었겠지요. 기름은 문 앞에만 있었어요.",
+      "reason": "구조 결과를 미리 단정하지 않고 현장의 기름 위치로 과도한 결론을 반박한다."
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "old": "곰 아저씨가 우리 살렸다니까!",
+      "new": "곰 아저씨 나쁜 사람 아니야!",
+      "reason": "구조 여부를 단정하지 않고 보리를 나쁜 사람으로 몰아가는 데 항의한다."
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "old": "오늘 밤, 북쪽 보호소로 가는 수레요. 몸 약한 이들을 따뜻한 데로 모시는 거요.",
+      "new": "오늘 밤 사람을 태워, 새벽에 북쪽 보호소로 떠나는 수레요. 몸 약한 이들을 따뜻한 데로 모시는 거요.",
+      "reason": "탑승과 출발 시간이 구분된 동일한 공적 명령이다. 숨긴 목적을 겉표정에 노출하지 않는다."
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "old": "13호실 그대로 쓰세요. 숙식은 하루 열 냥이고, 모자라면 적어 둘게요.",
+      "new": "13호실 그대로 쓰세요. 부인이 잡아 둔 방이에요.",
+      "reason": "요금 설명이 예약한 방 안내로 바뀌었다. 친절한 실무 안내 유지."
+    },
+    {
+      "review": "dynamic-context-review.json",
+      "old": "오늘 식사와 방값은 받지 않을게요. 내일부터 두 분 숙식은 하루 열 냥이에요. 모자란 것은 장부에 적고 나중에 주세요.",
+      "new": "방은 그대로 두었어요. 부인이 남긴 것부터 살펴보세요.",
+      "reason": "숙박료 대신 아내가 남긴 물건을 안내한다. 과장된 기쁨이나 죄책감을 드러내지 않는다."
+    },
+    {
+      "review": "dynamic-expression-review.json",
+      "old": "목수는 혼자 통로에 들어갔다가 【문이 저절로 닫혀】 얼었소. 딱한 사고요.",
+      "new": "목수는 혼자 통로에 들어갔다가 【문이 저절로 닫혀】 갇혔소. 딱한 사고요.",
+      "reason": "사망을 전제하지 않는 사고 주장으로 변경. 회의 발언의 표면상 침착함 유지."
+    },
+    {
+      "review": "opening-context-review.json",
+      "old": "아빠, 저기 처마 위에 애가 있어.",
+      "new": "아빠, 저기 처마 밑에 애가 있어.",
+      "reason": "아이 위치만 수정. 발견을 아빠에게 알리는 일상적인 관찰."
+    },
+    {
+      "review": "opening-context-review.json",
+      "old": "저기 처마 위는 안 추울까?",
+      "new": "저기 처마 밑은 안 추울까?",
+      "reason": "처마 밑에 웅크린 아이의 추위를 걱정하는 마음 유지."
+    }
+  ],
+  "escaped_quote_false_positive": "굴돌 ws:lab text is unchanged after Python string decoding",
+  "new_pending": 0,
+  "new_literal_rows_reviewed": 21,
+  "added_survival_callsite": "dynamic:389",
+  "static_review": "main-static-review.json"
+}

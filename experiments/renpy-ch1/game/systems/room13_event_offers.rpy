@@ -127,7 +127,7 @@ label r13_offer_news:
     if room13.get("offer_news"):
         $ _news=list(room13["offer_news"])
         $ r13_edit(offer_news=[])
-        call r13_lines([(None,n) for n in _news],"offer:news:%d:%d"%(room13["day"],room13["period"]))
+        call r13_lines([(None,n) for n in _news],"offer:news:%d:%d"%(room13["day"],room13["period"]), binding_route="dynamic:565")
     return
 
 label r13_take_offer(label):

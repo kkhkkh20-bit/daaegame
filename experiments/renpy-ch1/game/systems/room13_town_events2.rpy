@@ -205,7 +205,7 @@ label r13_ev_q_nubi:
     return None
 
 label r13_medkit_give:
-    call r13_lines(ROOM13["topics"][r13_topic]["lines"],"medkit:"+r13_topic)
+    call r13_lines(ROOM13["topics"][r13_topic]["lines"],"medkit:"+r13_topic, binding_route="dynamic:739")
     $ _mk_flags,_mk_give,_mk_source=R13_MEDKIT_RESULTS[r13_topic]
     $ r13_flag(*_mk_flags)
     if _mk_give:

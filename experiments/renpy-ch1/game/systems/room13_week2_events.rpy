@@ -87,7 +87,7 @@ label r13_w2e_bell:
     if r13_has("villagers_gathered"):
         $ _gain=[f for f in ("operators_terms","transport_terms") if not r13_has(f)]
         if _gain:
-            call r13_lines([("resident_bori" if "transport_terms" in _gain else "buri","종소리 듣고 왔어요. 비어 있는 일 있으면 말해요. 수레든 교대든.")],"w2e:bell:volunteers")
+            call r13_lines([("resident_bori" if "transport_terms" in _gain else "buri","종소리 듣고 왔어요. 비어 있는 일 있으면 말해요. 수레든 교대든.")],"w2e:bell:volunteers", binding_route="dynamic:781")
             $ r13_flag(*_gain)
     return
 

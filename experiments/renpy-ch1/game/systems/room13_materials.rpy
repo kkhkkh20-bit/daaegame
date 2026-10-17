@@ -107,11 +107,11 @@ label r13_show_catalog_object(person,key):
     show screen r13_material_corner(key)
     $ r13_offer_topic=r13_catalog_offer(person,key)
     if not r13_offer_topic:
-        call r13_lines([(person,"아빠 물건이네. 더 아는 건 없어." if person=="daram" else "제게 보여 주셔도 따로 아는 이야기는 없어요.")],"material:show:"+person+":"+key)
+        call r13_lines([(person,"아빠 물건이네. 더 아는 건 없어." if person=="daram" else "제게 보여 주셔도 따로 아는 이야기는 없어요.")],"material:show:"+person+":"+key, binding_route="dynamic:600")
     else:
         $ r13_offer_item_name=r13_catalog_title(key)
         if r13_offer_topic.startswith("return:"):
-            call r13_lines([(person,"빌려 드린 물건, 이제 돌려주시려고요?")],"material:return_offer:"+key)
+            call r13_lines([(person,"빌려 드린 물건, 이제 돌려주시려고요?")],"material:return_offer:"+key, binding_route="dynamic:601")
             $ r13_offer_yes="돌려준다 · "+r13_offer_item_name
         elif r13_offer_topic=="life:snack":
             call r13_lines([("daram","구운 밤이다! 아빠, 같이 먹어도 돼?")],"material:snack_offer")
@@ -120,13 +120,13 @@ label r13_show_catalog_object(person,key):
             call r13_lines([("daram","이 엽서에 엄마한테 보낼 그림 그려도 돼?")],"material:postcard_offer")
             $ r13_offer_yes="엽서를 함께 쓴다"
         else:
-            call r13_lines([(person,"나 주려고 가져온 거야?" if person=="daram" else "이 물건을 제게 주시려는 건가요?")],"material:gift_offer:"+person+":"+key)
+            call r13_lines([(person,"나 주려고 가져온 거야?" if person=="daram" else "이 물건을 제게 주시려는 건가요?")],"material:gift_offer:"+person+":"+key, binding_route="dynamic:604")
             $ r13_offer_yes="건넨다 · "+r13_offer_item_name+" 1개"
         menu:
             "[r13_offer_yes]":
                 if r13_catalog_offer(person,key)==r13_offer_topic:
                     $ r13_offer_rows=r13_conversation_topic_lines(r13_offer_topic)
-                    call r13_lines(r13_offer_rows,"material:accepted:"+r13_offer_topic)
+                    call r13_lines(r13_offer_rows,"material:accepted:"+r13_offer_topic, binding_route="dynamic:605")
                     $ r13_topic_shown=r13_offer_rows
                     $ r13_complete_catalog_offer(person,key,r13_offer_topic)
             "지금은 보여주기만 한다":

@@ -139,7 +139,7 @@ label r13_tool_inspect(key):
         call screen r13_tool_closeup(key)
         if _return=="ask_child" and r13_tool_can_ask_child(key) and "tool:seam" not in room13.get("read_topics",[]):
             $ r13_note_encounter("daram")
-            call r13_lines(r13_conversation_topic_lines("tool:seam"),"topic:tool:seam") from r13_tool_seam_question_return
+            call r13_lines(r13_conversation_topic_lines("tool:seam"),"topic:tool:seam", binding_route="dynamic:097") from r13_tool_seam_question_return
             $ r13_finish_topic("tool:seam")
         elif _return=="record":
             $ r13_tool_recorded=r13_tool_record(key)

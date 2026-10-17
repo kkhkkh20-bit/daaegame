@@ -210,7 +210,7 @@ label r13_topic_choice(key):
             "원본을 더 확인한 뒤 이야기하겠습니다":
                 return False
     if key=="w2_eunho":
-        call r13_lines(ROOM13["topics"][key]["lines"],"negotiation:supplies:opening")
+        call r13_lines(ROOM13["topics"][key]["lines"],"negotiation:supplies:opening", binding_route="dynamic:086")
         $ r13_speaker("resident_eunho","neutral")
         menu:
             "창고를 열 조건을 어떻게 정할까?"

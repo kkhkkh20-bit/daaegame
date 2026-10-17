@@ -1,0 +1,641 @@
+{
+  "status": "LOCAL_SPEC_ONLY_ALL_RESOURCES_HELD",
+  "rules": [
+    "No dialogue text changes to fit available art.",
+    "Emotion, outward intent, physical condition, action and scene props are independent.",
+    "Requested expression names are NOT runtime slots or approved resources.",
+    "Existing compatible emotion values do not constitute final artistic approval."
+  ],
+  "requests": [
+    {
+      "id": "teacher-reassuring-composure",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:teacher:alone",
+          "index": 0,
+          "person": "resident_teacher",
+          "text": "고맙습니다. 걱정 마세요.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 338
+        },
+        {
+          "kind": "dynamic",
+          "route": "dynamic:223",
+          "identity": "debate:conclusion_wrong:Q5A:weak",
+          "person": "resident_teacher",
+          "text": "고맙습니다. 걱정 마세요.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 80
+        }
+      ],
+      "experienced_affect": "보호 집착·닫힌 결심; 본인은 자신의 행동을 보호라고 믿음",
+      "visible_performance": "따뜻하지만 담담한 안심; 공포·범인 암시 미소 없음",
+      "physical_state": "대화 상태; 회의에서는 기존 회의 자세 유지",
+      "resource_brief": "현재 neutral은 의도적으로 선택한 표면 감정. 정면 대화형 안심 표정 세부안은 새 승인 전까지 제작 요청으로만 남긴다.",
+      "requested_resource_kinds": [
+        "reassuring_composure_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "chorong-injured-collapse",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "nt:night8:half",
+          "index": 1,
+          "person": "resident_lamplighter",
+          "text": "미안해요……. 빼앗겼어요. 편지. 그분 글씨였는데…….",
+          "source": "game/systems/room13_ep4_night13.rpy",
+          "line": 279
+        }
+      ],
+      "experienced_affect": "편지를 빼앗긴 미안함·죄책감 + 부상 통증",
+      "visible_performance": "힘 빠진 짧은 호흡과 사과; 커다란 불안 제스처 없음",
+      "physical_state": "강가 먼 길에 쓰러져 살아 있음; 이마가 찢어짐; 깨진 등잔은 주변 소품",
+      "resource_brief": "살아 있는 부상 초롱이 쓰러진 낮은 자세로 말하는 사건 그림. 정본 얼굴·털·의상 유지. 누운/쓰러진 신체 베이스와 통증·미안함 얼굴을 독립 조합. 서 있는 anxious 컷은 완성 대체품이 아니다. 사망 분기와 자산 공유 금지.",
+      "requested_resource_kinds": [
+        "injured_collapsed_event_body",
+        "pain_expression",
+        "remorse_expression",
+        "broken_lantern_scene_prop"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "teacher-exhausted-soothing",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:soup:song",
+          "index": 4,
+          "person": "resident_teacher",
+          "text": "(작게) 아프지 않게. ……따뜻할 때.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 357
+        },
+        {
+          "kind": "static",
+          "identity": "ws:soup:tragedy",
+          "index": 5,
+          "person": "resident_teacher",
+          "text": "깜이. 몽이. 방울. 도담. ……잘 자요.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 370
+        },
+        {
+          "kind": "static",
+          "identity": "ws:soup:spilled",
+          "index": 3,
+          "person": "resident_teacher",
+          "text": "미안해요. 선생님이 손이 미끄러졌어요. ……새로 끓일게요. 처음부터.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 363
+        }
+      ],
+      "experienced_affect": "닫힌 결심 또는 행동 중지 뒤 내면 충격; 말하는 시점별 구분",
+      "visible_performance": "작은 목소리의 다정함/수습하는 침착함; 아직 고백하지 않은 죄책감을 노출하지 않음",
+      "physical_state": "수프 조리·아이 눕히기·수프 다시 끓이기 문맥 각각 유지",
+      "resource_brief": "회화 표정과 조리/돌봄 동작은 별도 요청. 사고인 척하는 대사는 눈물·죄인 표정으로 연결하지 않는다.",
+      "requested_resource_kinds": [
+        "exhausted_soothing_expression",
+        "composed_reassurance_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "teacher-lying-farewell",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:decision:gone_one",
+          "index": 1,
+          "person": "resident_teacher",
+          "text": "도담아. 선생님 왔어요.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 430
+        },
+        {
+          "kind": "static",
+          "identity": "ws:decision:gone",
+          "index": 1,
+          "person": "resident_teacher",
+          "text": "깜이, 몽이, 방울, 도담. 선생님 왔어요.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 435
+        }
+      ],
+      "experienced_affect": "상실·체념",
+      "visible_performance": "힘 빠진 다정한 호명; 불안 몸짓 아님",
+      "physical_state": "아이 옆에 누워 담요를 덮은 상태",
+      "resource_brief": "단수/복수 호명은 대본 그대로. 누운 사건 그림과 체념 얼굴을 분리 제작하며 서 있는 대화형으로 대체하지 않는다.",
+      "requested_resource_kinds": [
+        "lying_under_blanket_event_body",
+        "exhausted_resignation_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "bami-quiet-relief",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ep2:bami:blanket",
+          "index": 1,
+          "person": "bami",
+          "text": "……이거 너네 아빠 거지? 따뜻하다.",
+          "source": "game/systems/room13_ep2_kids.rpy",
+          "line": 252
+        }
+      ],
+      "experienced_affect": "온기에 잠시 안도",
+      "visible_performance": "힘이 조금 풀리는 작은 표정",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "joy는 현재 호환 분류일 뿐 활짝 웃는 기쁨으로 승인한 것이 아님. 다음 자기방어 anxious와 자연스럽게 이어지는 안도 표정 요청.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "chorong-delivery-relief",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "nt:night8:safe",
+          "index": 3,
+          "person": "resident_lamplighter",
+          "text": "직접 전해 드린다고 했잖아요.",
+          "source": "game/systems/room13_ep4_night13.rpy",
+          "line": 271
+        }
+      ],
+      "experienced_affect": "전달을 마친 안도와 긴장 잔존",
+      "visible_performance": "작게 숨 돌림",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "뒤에 혼자 무섭다고 말한다. 환호가 아닌 긴장 남은 안도 필요.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "daram-grief",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "verdict:child",
+          "index": 0,
+          "person": "daram",
+          "text": "이제 할아버지는 다시 못 만나지.",
+          "source": "game/room13.rpy",
+          "line": 710
+        },
+        {
+          "kind": "static",
+          "identity": "verdict:child",
+          "index": 2,
+          "person": "daram",
+          "text": "나 할아버지 안 죽였다고 말하고 싶은데.",
+          "source": "game/room13.rpy",
+          "line": 710
+        },
+        {
+          "kind": "static",
+          "identity": "ws:after:portrait",
+          "index": 1,
+          "person": "daram",
+          "text": "그림쟁이 아저씨가 그린 거야. 코는 내가 그렸어. 약속했거든.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 444
+        }
+      ],
+      "experienced_affect": "죽음에 대한 슬픔·자기 행동의 죄책감 또는 지킨 약속의 애도",
+      "visible_performance": "조용히 말하는 슬픔",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "불안만으로 끝내지 않는 슬픔·눈물 고임/절제된 후회 표현 요청.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "kkomi-loss-and-pride",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "wf:morning:alive",
+          "index": 1,
+          "person": "kid_kkomi",
+          "text": "우리 집 다 탔어. ……근데 대장은 표시 안 잃어버렸다.",
+          "source": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 289
+        }
+      ],
+      "experienced_affect": "집의 상실과 지킨 표시에 대한 자부심",
+      "visible_performance": "울음을 참으며 버팀",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "anxious에 합치지 말고 상실 속 버티는 표정 요청.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "nero-survivor-remorse",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:morning:nero_alive",
+          "index": 1,
+          "person": "resident_nero",
+          "text": "……내가 다 못 데려왔다. 이름이라도 데려가라.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 278
+        }
+      ],
+      "experienced_affect": "데려오지 못한 이들에 대한 죄책감",
+      "visible_performance": "기진맥진한 부탁",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "숨이 붙어 있는 추위 피해자의 낮은 신체 상태도 별도 제작 검토. 일반 건장한 서기 금지.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "teacher-open-remorse",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:soup:tragedy",
+          "index": 9,
+          "person": "resident_teacher",
+          "text": "……몇 시간만.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 370
+        },
+        {
+          "kind": "static",
+          "identity": "ws:decision:saved",
+          "index": 3,
+          "person": "resident_teacher",
+          "text": "(무너지듯 울며) ……그래요. 그래요, 새미야.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 422
+        }
+      ],
+      "experienced_affect": "온기가 돌아온 뒤 깨달은 후회·무너짐",
+      "visible_performance": "충격 후 눈물/울음",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "앞의 안심 대사와 달리 지금은 깨달음/울음이 명시된다. 죄책감·오열 표정 별도 제작.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "mom-tearful-relief",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:after:portrait",
+          "index": 2,
+          "person": "mom",
+          "text": "……코를, 찡그렸네.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 444
+        }
+      ],
+      "experienced_affect": "그리움·애도와 되찾은 그림의 안도",
+      "visible_performance": "웃으면서 우는 복합 표정",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "단순 joy 미소로 최종 승인하지 않음. 판자를 끌어안는 기존 컷과 표정 연속성 확인.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "bori-grief-resolve",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:after:bori",
+          "index": 1,
+          "person": "resident_bori",
+          "text": "내 애 하나 잃고…… 셋 얻었다.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 450
+        },
+        {
+          "kind": "static",
+          "identity": "ws:after:bori",
+          "index": 2,
+          "person": "resident_bori",
+          "text": "이번엔 안 놓친다.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 450
+        }
+      ],
+      "experienced_affect": "자기 아이의 상실과 남은 아이를 돌볼 결심",
+      "visible_performance": "억눌린 슬픔 속 단호함",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "대피소에 앉아 아이들을 안은 상태와 표정을 독립 명세. anxious는 호환값이지 최종 표현 아님.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "bori-quiet-relief",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:after:bori_home",
+          "index": 1,
+          "person": "resident_bori",
+          "text": "우리 집 좁다. ……그래도 넷이면 덜 춥겠지.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 454
+        }
+      ],
+      "experienced_affect": "곁에 있는 아이들을 보며 안도",
+      "visible_performance": "피곤한 작은 웃음",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "앉아 잠든 아이들을 돌보는 상태. 활기찬 joy 서기와 구별.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "teacher-renewed-relief",
+      "targets": [
+        {
+          "kind": "static",
+          "identity": "ws:soup:perfect",
+          "index": 5,
+          "person": "resident_teacher",
+          "text": "다 같이 먹어요. 내일도 같이 먹어요.",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 348
+        }
+      ],
+      "experienced_affect": "실제로 켜진 불을 본 뒤 생긴 안도와 희망",
+      "visible_performance": "울컥하며 내일을 말함",
+      "physical_state": "대본의 서술·기존 동작 보존; 별도 확인 없는 서기 가정 금지",
+      "resource_brief": "미래 결과를 아는 표정이 아니라 이미 확인한 온기에 대한 안도. 일반 환호 대신 전용 표현 검토.",
+      "requested_resource_kinds": [
+        "context_specific_expression"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "teacher-public-remorse",
+      "targets": [
+        {
+          "kind": "dynamic",
+          "review_row": "845",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 77,
+          "person": "resident_teacher",
+          "text": "약속…… 저도 아이들에게 약속을 했었는데.",
+          "route": "dynamic:222",
+          "identity": "debate:conclusion:Q5A"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "866",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 118,
+          "person": "resident_teacher",
+          "text": "……하나도, 안 틀렸는데.",
+          "route": "dynamic:607",
+          "identity": "debate:break:Q5:s4:Y14"
+        }
+      ],
+      "experienced_affect": "약속을 회상하는 망설임 / 온기를 본 뒤의 죄책감과 붕괴는 시점별 다른 표정 필요",
+      "visible_performance": "슬픔·후회·공감의 강도를 발화별로 구분; anxious를 최종 대체 표현으로 승인하지 않음",
+      "physical_state": "845는 Q5A 결론 대화, 866은 Q5 반박 후 아이 머리맡에 주저앉아 출석부를 안음",
+      "resource_brief": "승인된 정체성과 현재 신체 자세를 보존한 문맥별 표정 필요. 제작·승인되지 않았음.",
+      "requested_resource_kinds": [
+        "context_specific_expression",
+        "pose_compatibility_review"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "mom-open-grief",
+      "targets": [
+        {
+          "kind": "dynamic",
+          "review_row": "864",
+          "source": "game/systems/room13_ep5_soup.rpy",
+          "line": 116,
+          "person": "mom",
+          "text": "오늘 밤부터 데워져요. 아이들은…… 안 죽어도 됐어요.",
+          "route": "dynamic:607",
+          "identity": "debate:break:Q5:s4:Y14"
+        }
+      ],
+      "experienced_affect": "이미 돌아온 온기를 확인한 뒤 아이들의 죽음을 마주한 비통함",
+      "visible_performance": "슬픔·후회·공감의 강도를 발화별로 구분; anxious를 최종 대체 표현으로 승인하지 않음",
+      "physical_state": "회의/사건 컷 전용 자세 유지",
+      "resource_brief": "승인된 정체성과 현재 신체 자세를 보존한 문맥별 표정 필요. 제작·승인되지 않았음.",
+      "requested_resource_kinds": [
+        "context_specific_expression",
+        "pose_compatibility_review"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "granny-grief-remorse",
+      "targets": [
+        {
+          "kind": "dynamic",
+          "review_row": "1037",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 373,
+          "person": "granny",
+          "text": "내 딸, 보미도 이름을 잊기 시작했어요. 처음엔 장 보러 가는 길을. 다음엔 토실이 이름을요.",
+          "route": "dynamic:471",
+          "identity": "cv:altar:granny"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "1038",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 374,
+          "person": "granny",
+          "text": "내가 여기로 데려왔어요. 이 손으로. 그 애 목도리를 여며 주고.",
+          "route": "dynamic:471",
+          "identity": "cv:altar:granny"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "1039",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 375,
+          "person": "granny",
+          "text": "그게 마을을 살린다고 믿어야 살 수 있었어요. 그래서 아가를 붙잡으려 했어요. 편지도 내가 썼어요.",
+          "route": "dynamic:471",
+          "identity": "cv:altar:granny"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "1040",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 376,
+          "person": "granny",
+          "text": "아가 방법이 맞다면, 내 딸은 죽지 않아도 됐다는 거예요.",
+          "route": "dynamic:471",
+          "identity": "cv:altar:granny"
+        }
+      ],
+      "experienced_affect": "딸의 상실 회상 → 자기 행동 인정 → 합리화 고백 → 불필요했던 죽음의 깨달음",
+      "visible_performance": "슬픔·후회·공감의 강도를 발화별로 구분; anxious를 최종 대체 표현으로 승인하지 않음",
+      "physical_state": "돌에서 손을 급히 뗀 withdraw_hand 선행 동작 유지; 각 대사를 그 자세로 고정하지 않음",
+      "resource_brief": "승인된 정체성과 현재 신체 자세를 보존한 문맥별 표정 필요. 제작·승인되지 않았음.",
+      "requested_resource_kinds": [
+        "context_specific_expression",
+        "pose_compatibility_review"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "ppul-grief-remorse",
+      "targets": [
+        {
+          "kind": "dynamic",
+          "review_row": "1044",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 381,
+          "person": "resident_ppul",
+          "text": "그 애는 손을 대면 꼭 손가락을 쫙 벌렸소. 이렇게.",
+          "route": "dynamic:472",
+          "identity": "cv:altar:ppul"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "1045",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 382,
+          "person": "resident_ppul",
+          "text": "손을 얹고 내려왔으면 됐다니. 나는 그 애를 두고 내려왔소.",
+          "route": "dynamic:472",
+          "identity": "cv:altar:ppul"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "1047",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 384,
+          "person": "resident_ppul",
+          "text": "……달래. 달래였소.",
+          "route": "dynamic:472",
+          "identity": "cv:altar:ppul"
+        }
+      ],
+      "experienced_affect": "손녀 회상·남겨 둔 후회·이름을 말하는 절제된 애도",
+      "visible_performance": "슬픔·후회·공감의 강도를 발화별로 구분; anxious를 최종 대체 표현으로 승인하지 않음",
+      "physical_state": "무릎 꿇음, kneel_stone 동작 유지; 서 있는 anxious 그림으로 대체하지 않음",
+      "resource_brief": "승인된 정체성과 현재 신체 자세를 보존한 문맥별 표정 필요. 제작·승인되지 않았음.",
+      "requested_resource_kinds": [
+        "context_specific_expression",
+        "pose_compatibility_review"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    },
+    {
+      "id": "children-altar-loss",
+      "targets": [
+        {
+          "kind": "dynamic",
+          "review_row": "1022",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 355,
+          "person": "resident_tosil",
+          "text": "……왕자가 혼자 있을까 봐.",
+          "route": "dynamic:468",
+          "identity": "cv:altar:book"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "1025",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 359,
+          "person": "daram",
+          "text": "……할아버지 손이 심심하댔잖아.",
+          "route": "dynamic:469",
+          "identity": "cv:altar:cart"
+        },
+        {
+          "kind": "dynamic",
+          "review_row": "1041",
+          "source": "game/systems/room13_ep6_cart.rpy",
+          "line": 378,
+          "person": "resident_tosil",
+          "text": "……할머니. 여기가 산 너머야?",
+          "route": "dynamic:471",
+          "identity": "cv:altar:granny"
+        }
+      ],
+      "experienced_affect": "책 속 외로움에 대한 공감 / 목격한 노인의 상실 / 할머니 고백 뒤의 불안은 별개",
+      "visible_performance": "슬픔·후회·공감의 강도를 발화별로 구분; anxious를 최종 대체 표현으로 승인하지 않음",
+      "physical_state": "책을 들거나 끌을 보는 장면별 행동 유지",
+      "resource_brief": "승인된 정체성과 현재 신체 자세를 보존한 문맥별 표정 필요. 제작·승인되지 않았음.",
+      "requested_resource_kinds": [
+        "context_specific_expression",
+        "pose_compatibility_review"
+      ],
+      "status": "REQUESTED_NOT_PRODUCED_NOT_APPROVED",
+      "runtime_assets_active": false,
+      "dialogue_text_change": false
+    }
+  ],
+  "art_style_contract": {
+    "dialogue": "clear storybook source master; no forced 2px grid",
+    "investigation": "retain existing pixel assets on separate paths",
+    "identity": "same face/outfit/colors/species",
+    "incoming_six_people": "HOLD; front-facing refinement pending"
+  },
+  "production_gate": "Requests requiring event body or context-specific expression are not considered complete by supplying a generic standing emotion. Review these blockers before activation."
+}
