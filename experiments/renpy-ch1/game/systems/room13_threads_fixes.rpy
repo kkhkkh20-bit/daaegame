@@ -113,3 +113,28 @@ init 189 python:
     for _fx_key in ("night:miss_mom","night:miss_mom2"):
         if _fx_key in ROOM13["topics"] and ROOM13["topics"][_fx_key].get("steps") is None:
             ROOM13["topics"][_fx_key]["steps"]={"not":["mom_reunited"]}
+
+    # 질문 제목도 아이·청소년에게는 부드러운 반말(대사 본문은 이미 반말).
+    for _fx_key,_fx_title in {
+        "buri_work":"우리가 타고 온 마차 좀 봐 줄 수 있니?",
+        "buri_consent":"할아버지 일로 어떤 말이 돌고 있니?",
+        "buri_records":"할아버지가 남긴 일을 들려줄래?",
+        "w2_maintenance":"바깥 점검문으로 들어갈 수 있니?",
+        "life:resident_tori:work":"내가 천을 잡아 줄까?",
+        "life:resident_tori:after":"납품할 때 어려운 일은 없니?",
+        "life:buri:work":"버릴 부품도 따로 모아 두니?",
+        "life:buri:after":"수리 일이 많이 밀렸니?",
+        "life:buri:crisis":"수리 말고도 맡을 일이 생겼니?",
+        "life:resident_kkwak:work":"강에서 물을 길어 왔니?",
+        "life:resident_kkwak:crisis":"물 나르는 일 말고도 부탁받니?",
+        "life:resident_ubak:after":"요즘 측정 결과는 어떠니?",
+        "life:resident_ubak:crisis":"다르게 나온 수치도 보여 줄래?",
+        "life:resident_tori:changed":"할머니께 돌려드릴 물건은 어떻게 했니?",
+        "life:resident_tori:repair":"그 부품을 누가 고쳤는지 아니?",
+        "smalltalk:kkwak_ice":"물통이 얼면 어떻게 비우니?",
+        "life:buri":"장부 숫자는 언제 옮겨 적니?",
+    }.items():
+        if _fx_key in ROOM13["topics"]:
+            _fx_was=ROOM13["topics"][_fx_key]["title"]
+            ROOM13["topics"][_fx_key]["title"]=_fx_title
+            if _fx_was in R13_QUESTION_SUMMARIES:R13_QUESTION_SUMMARIES[_fx_title]=R13_QUESTION_SUMMARIES[_fx_was]

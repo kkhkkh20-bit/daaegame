@@ -126,12 +126,15 @@ init 147 python:
             "alibi_x_store",""),
     ]
 
+    # 아빠는 아이·청소년(docs/CAST_BIBLE.md)에게 반말로 묻는다.
+    R13_ALIBI_YOUNG={"resident_tosil","resident_guseul","resident_ubak"}
+
     def r13_alibi_heard(moment,person):
         return r13_has("alibi:%s:%s"%(moment,person))
 
     for (_r13_m,_r13_p),_r13_spec in R13_ALIBI.items():
         _r13_title,_r13_from,_r13_need=R13_ALIBI_MOMENTS[_r13_m]
-        ROOM13["topics"]["alibi:%s:%s"%(_r13_m,_r13_p)]=dict(npc=_r13_p,title="%s, 어디 계셨습니까?"%_r13_title,
+        ROOM13["topics"]["alibi:%s:%s"%(_r13_m,_r13_p)]=dict(npc=_r13_p,title=("%s, 어디 있었니?" if _r13_p in R13_ALIBI_YOUNG else "%s, 어디 계셨습니까?")%_r13_title,
             day=[_r13_from,14],need=list(_r13_need),give=[],flags=[],lines=list(_r13_spec["claim"]))
         R13_TOPIC_LABELS["alibi:%s:%s"%(_r13_m,_r13_p)]="r13_alibi_topic"
 

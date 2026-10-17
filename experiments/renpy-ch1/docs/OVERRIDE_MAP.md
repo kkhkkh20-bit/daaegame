@@ -50,7 +50,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 14 | 123 | `systems/room13_use_knowledge.rpy:53` | _r13_new_places_topics |
 | 15 | 130 | `systems/room13_new_places.rpy:167` | _r13_direct_work_topics |
 | 16 | 133 | `systems/room13_direct_work.rpy:14` | _r13_alibi_topics |
-| 17 | 147 | `systems/room13_alibi.rpy:139` | _r13_catalog_topics |
+| 17 | 147 | `systems/room13_alibi.rpy:142` | _r13_catalog_topics |
 | 18 | 148 | `systems/room13_materials.rpy:72` | _r13_e1_topics |
 | 19 | 152 | `systems/room13_ep1_lamp_thief.rpy:62` | _r13_nolive_topics |
 | 20 | 168 | `systems/room13_no_livelihood.rpy:10` | _r13_thread_topics |
@@ -110,7 +110,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 4 | 98 | `systems/room13_learning.rpy:115` | _r13_poc_notes |
 | 5 | 100 | `systems/room13_poc_route.rpy:149` | _r13_tn_notes |
 | 6 | 121 | `systems/room13_trial_notes.rpy:48` | _r13_alibi_notes |
-| 7 | 147 | `systems/room13_alibi.rpy:170` | _r13_review_notes |
+| 7 | 147 | `systems/room13_alibi.rpy:173` | _r13_review_notes |
 | 8 | 173 | `systems/room13_review_knowledge.rpy:94` |  |
 
 ## `r13_compare_result` (6층)
