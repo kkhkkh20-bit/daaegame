@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "character_id": "resident_solbang",
+  "assets": [
+    {
+      "character_id": "resident_solbang",
+      "slot": "neutral",
+      "usage": "dialogue",
+      "file": "solbang/neutral.png",
+      "sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1753697,
+      "content_bbox_xyxy": [
+        64,
+        103,
+        1004,
+        1509
+      ]
+    },
+    {
+      "character_id": "resident_solbang",
+      "slot": "joy",
+      "usage": "dialogue",
+      "file": "solbang/joy.png",
+      "sha256": "7357c859255ee249d1be16edad0245724758eef9d0a2cbfca09ac24d6fc6b0ee",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1830223,
+      "content_bbox_xyxy": [
+        44,
+        37,
+        1005,
+        1489
+      ]
+    },
+    {
+      "character_id": "resident_solbang",
+      "slot": "angry",
+      "usage": "dialogue",
+      "file": "solbang/angry.png",
+      "sha256": "4af5bd2e03e37aa1dcad47ade95972d56898fe8efb42205eb0d3c7edc130a07b",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1812977,
+      "content_bbox_xyxy": [
+        35,
+        33,
+        1007,
+        1492
+      ]
+    },
+    {
+      "character_id": "resident_solbang",
+      "slot": "anxious",
+      "usage": "dialogue",
+      "file": "solbang/anxious.png",
+      "sha256": "65784a00b256cea1a15c6f29ba68f43380bca9669f1f99b3e79fc390af61c87c",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1752590,
+      "content_bbox_xyxy": [
+        64,
+        77,
+        946,
+        1480
+      ]
+    },
+    {
+      "character_id": "resident_solbang",
+      "slot": "surprise_react",
+      "usage": "dialogue",
+      "file": "solbang/surprise_react.png",
+      "sha256": "d8e5dd13f60e163cbd4a8883070456cb185a9dc40f8b2b15744ae7348f5ba85f",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1810350,
+      "content_bbox_xyxy": [
+        64,
+        58,
+        1000,
+        1478
+      ]
+    },
+    {
+      "character_id": "resident_solbang",
+      "slot": "surprise_talk",
+      "usage": "dialogue",
+      "file": "solbang/surprise_talk.png",
+      "sha256": "db4c0e95d4bf88974cea81dcb1626556cc4600b1437c4746abbfab17bc2edd46",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1778896,
+      "content_bbox_xyxy": [
+        62,
+        55,
+        1011,
+        1476
+      ]
+    },
+    {
+      "character_id": "resident_solbang",
+      "slot": "work_herb_bundle",
+      "usage": "field_activity",
+      "file": "solbang/work_herb_bundle.png",
+      "sha256": "af49950e13b86e9bd70c67bd325055f3aa6d6ee646b7b4a9b774d23ae06461eb",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 1880585,
+      "content_bbox_xyxy": [
+        34,
+        49,
+        1013,
+        1490
+      ]
+    }
+  ],
+  "profile": {
+    "source_file": "solbang/neutral.png",
+    "source_sha256": "5eaacbe578e3d52bd92485b9901a91d1572120672ad247caae92151835070bfd",
+    "crop_xywh": [
+      220,
+      60,
+      540,
+      540
+    ],
+    "coordinate_origin": "top_left",
+    "output_size": [
+      512,
+      512
+    ]
+  },
+  "dialogue_sequence": {
+    "surprise": [
+      "surprise_react",
+      "surprise_talk"
+    ]
+  },
+  "field_activity_slot": "work_herb_bundle"
+}
