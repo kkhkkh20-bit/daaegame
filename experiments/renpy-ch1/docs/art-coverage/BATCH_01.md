@@ -11,6 +11,32 @@
 |B2|구슬 resident_guseul|living_stamp, 1장|`art/canonical48-rev45/originals/resident_guseul.webp`|
 |B3|백 부인 resident_madam|living_inspect, 1장|`art/canonical48-rev45/originals/resident_madam.webp`|
 
+## 현재 제작·수신 현황 — 2026-10-17
+
+**원래 요청 16장 중 후보 15장 생성 보고, 백 부인 1장 미생성 보류. 배치 승인·게임 적용·배포 완료가 아니다.** 이 표와 `batch-01.json`은 부모 제작 보고를 기록한다. 이 실행 환경에서는 파일을 수신하지 못했으며 후보 원본 해시 검증과 실제 게임 검수는 수행하지 않았다. 기존 게임 연결은 유지한다.
+
+|대상|제작 보고|검토·후속 작업|전달 자료|
+|---|---|---|---|
+|사자 선생님 5표정+2동작|후보 7장, 승인 대기|붉은 갈기·도포 기준 유지 보고. 생성 1004~1005×1566, 기준 985×1536과 다르며 임의 축소하지 않음. alpha·경계 여유·기준점 검토 및 실제 게임 검수 필요|[ZIP](https://chatgpt.com/api/library/files/libfile_622f1ccfe06481919f3cbd764f45de66/download) · [HTML](https://chatgpt.com/api/library/files/libfile_482b3922b8748191bb43f971f0d3b635/download)|
+|돌목 5표정·도토 2동작·구슬 1동작|후보 8장, 승인 대기|제작자가 승인 원본 SHA 일치 확인 후 생성했다고 보고. 로컬 미검증. 기준 캔버스·발점 차이, 엄격 2×2 격자 미인증, 도토 쓰기 시선 추가 검토. 게임·보드 미연결|[ZIP](https://chatgpt.com/api/library/files/libfile_949c77d7c52881918204bb53456b56e6/download) · [HTML](https://chatgpt.com/api/library/files/libfile_2f2c2b7e907081918a3edfca85af97ab/download)|
+|백 부인 living_inspect|1장 미생성 보류, 요청 유지|최신 여관 봉인 보관함 접점을 확인하고 손끝 anchor를 확정한 뒤 제작|아직 없음|
+
+### 꽥순 — 원래 16장과 별도
+
+사용자가 확정한 것은 [새 neutral](https://chatgpt.com/api/library/files/libfile_72a40de0b9f88191b32026bb52398807/download)뿐이다. 수신은 **blocked / 정상 첨부 전달 대기**다. 새 destination·새 전송으로 재시도했으나 helper `download failed`, 다운로드 호스트 HTTPS 터널 `403 Forbidden`으로 실패했고 파일 미생성을 확인했다. 차단을 우회하지 않았다. 새 neutral 원본 해시 검증·게임 연결·새 그림의 실제 게임 검수·배포는 미완료다.
+
+추가 5표정은 모두 **미승인 후보**이며 부모 제작 보고만 기록했다. 로컬 파일 미수신·해시 미검증·게임 미연결·실제 화면 미검수다.
+
+|표정|후보|
+|---|---|
+|joy|[Library](https://chatgpt.com/api/library/files/libfile_c798a0ddc7808191946453176bc65f95/download)|
+|flustered|[Library](https://chatgpt.com/api/library/files/libfile_c069ec0ef4b88191a1c32bf45ffb93e3/download)|
+|angry|[Library](https://chatgpt.com/api/library/files/libfile_f26106eac7d08191a4f0349bde8008c3/download)|
+|anxious|[Library](https://chatgpt.com/api/library/files/libfile_aa51e37bc4188191a1f6100048c47a67/download)|
+|surprise|[Library](https://chatgpt.com/api/library/files/libfile_970e2d4218008191bc35dd8660d4bcd1/download)|
+
+[꽥순 후보 비교](https://chatgpt.com/api/library/files/libfile_f811c0fb7910819199a6a1c997f2e003/download). 기존 A/B/C 렌더 비교는 기존 그림의 표시 방식 실험이며 이 새 후보들의 실제 게임 검수 증거가 아니다.
+
 ## 장면 요구
 
 - 돌목: 입구 명부 확인 대화. 승인 중립의 수정된 입을 나머지 5표정에 일치시킨다. 기존 그림의 표정/자세 참고는 가능하나 예전 입으로 돌아가면 안 된다. 조사 동작 입 수정은 다음 묶음이다.
