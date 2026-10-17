@@ -27,6 +27,18 @@ init 167 python:
                 ("resident_teacher","아이 하나가 남겼다고, 제가 안 먹었다는 뜻은 아니지요.")]},
         broken=list(_st["broken_by"]["Y13"])+[("dad","아이 냄비만 아이들을 재웠습니다. 그 냄비에서 먹지 않은 어른은 선생님 한 분입니다.")])
 
+    # ⑤A 선생님 "다시 식겠지요. 왜 아무도 몰랐습니까" ← 실험 기록(Y07) + 벽의 옛 편지(Y08): 옛 시설에서 함께 얻는다.
+    # 앞 물음(다시 식는다)은 Y07이, 뒤 물음(왜 몰랐나)은 Y08이 답한다. 둘 다 있어야 선생님이 말을 잃는다.
+    _st=_r13_dp_statement("Q5A","s2")
+    _st["pair"]=dict(keys=["Y07","Y08"],
+        half={"Y07":[("dad","밤새 지켜봤습니다. 한밤에도, 새벽에도 식지 않았어요."),
+                ("resident_teacher","하룻밤이야 그럴 수 있지요. 그런 방법이 있었다면 왜 지금까지 아무도 몰랐습니까.")],
+              "Y08":[("dad","옛 시설 벽에 이렇게 적혀 있었습니다. '나눠서 데웠다.'"),
+                ("resident_teacher","옛날 얘기지요. 지금 그 돌이 밤새 버틴다는 걸 누가 봤습니까.")]},
+        broken=[("dad","밤새 지켜봤고, 식지 않았습니다. 옛사람들도 사람을 바치지 않고 나눠서 데웠습니다. 모르게 된 것뿐입니다."),
+            ("resident_teacher","…….")])
+    _st["hint"]="밤새 지켜본 것과, 옛사람들이 남긴 말."
+
     # ---- 결론: 지목 + 결정적 증거 ----
     R13_DEBATE["Q1"]["conclusion"]["point"]=dict(prompt="3번 등을 다시 열어 조각을 가져간 사람은?",
         candidates=["resident_tok","resident_seori","resident_madam","resident_siluk"],who="resident_siluk",

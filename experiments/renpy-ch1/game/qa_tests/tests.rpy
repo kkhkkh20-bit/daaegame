@@ -11708,3 +11708,17 @@ testcase shortcuts:
     assert screen "r13_shortcut_help"
     screenshot "shortcut_help.png"
     $ r13_qa_note("shortcuts ok")
+
+testcase meeting_pairs:
+    # 0.18.95 두 자료 엮기 판정: 하나는 반쯤(half), 나머지 하나로 깨진다(break). ④·⑤·⑤A.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=12,period=0,location="school",life_poc=True,evidence=["N07","N09","Y07","Y08","Y11","Y13"]),("entry_corrected","lodging"))
+    pause 1.0
+    assert eval (r13_debate_judge("Q5A","s2","Y07")[0]=="half" and r13_debate_judge("Q4","s3","N09")[0]=="half")
+    $ r13_debate_half("Q5A","s2","Y07")
+    $ r13_debate_half("Q4","s3","N09")
+    assert eval (r13_debate_judge("Q5A","s2","Y08")[0]=="break" and r13_debate_judge("Q4","s3","N07")[0]=="break")
+    assert eval (r13_debate_judge("Q5","s3","Y13")[0]=="half")
+    $ r13_qa_note("meeting pairs ok")

@@ -64,6 +64,15 @@ init 166 python:
         ("granny","neoul","suspect","편지를 가져오라 부탁",_r13_rel_any("N02")),
         ("granny","resident_ttadak","suspect","새벽 통로를 미리 들음",_r13_rel_any("N03")),
         ("resident_ppul","granny","suspect","명령서를 감쌈",_r13_rel_any("V06")),
+        # 0.18.95 더한 관계 (모두 이미 있는 자료·장면에서 알게 되는 것)
+        ("granny","mom","suspect","엄마 이름으로 편지를 씀",_r13_rel_any("J06","N06")),
+        ("mom","resident_guldol","work","밤새 돌을 함께 지켜봄",_r13_rel_any("Y07")),
+        ("resident_nubi","kid_nubi1","family","엄마와 큰아이",_r13_rel_any("F11")),
+        ("resident_nubi","neoul","suspect","아이들 몫을 주겠다는 약속",_r13_rel_any("F12","F01")),
+        ("resident_teacher","kid_saemi","work","담임",_r13_rel_any("Y13")),
+        ("resident_seori","resident_teacher","suspect","약장 출입 명단",_r13_rel_any("Y12")),
+        ("resident_eunho","resident_guseul","work","다른 장부를 꺼내 옴",_r13_rel_any("V03")),
+        ("resident_badook","guard","work","같은 순찰",lambda:True),
     ]
 
     # 자리표 (열, 줄): 여관 왼쪽 · 가족과 질서 가운데 · 등불·광장·아랫길 오른쪽 · 학교 왼쪽 아래.
@@ -75,7 +84,7 @@ init 166 python:
         "resident_musoe":(4,4),"resident_somi":(5,4),
         "resident_teacher":(0,3),"resident_bori":(1,3),"kid_kkomi":(0,4),"kid_dodam":(1,4),
     }
-    R13_REL_COLS, R13_REL_ROWS, R13_REL_CELL = 6, 5, (88, 88)
+    R13_REL_COLS, R13_REL_ROWS, R13_REL_CELL = 7, 5, (76, 88)
     R13_REL_KIND = {"family":("#b2862e",5,False),"work":("#4e6f8f",3,False),"suspect":("#a2401f",3,True)}
 
     def r13_rel_edges():
@@ -129,8 +138,9 @@ init 166 python:
                 if a not in self.layout or b not in self.layout:continue
                 color,width_,dashed=R13_REL_KIND[kind]
                 if self.selected and self.selected not in (a,b):color=color+"66"
-                x1,y1=self.layout[a][0]+44,self.layout[a][1]+28
-                x2,y2=self.layout[b][0]+44,self.layout[b][1]+28
+                cx=R13_REL_CELL[0]//2
+                x1,y1=self.layout[a][0]+cx,self.layout[a][1]+28
+                x2,y2=self.layout[b][0]+cx,self.layout[b][1]+28
                 if not dashed:
                     canvas.line(color,(x1,y1),(x2,y2),width_)
                     continue
@@ -171,24 +181,25 @@ screen r13_relations_content(owner,selected,filt):
                 fixed:
                     xysize R13_REL_CELL
                     if who==selected:
-                        add Solid("#e2a93b") xpos 13 ypos -3 xysize (62,62)
-                    add Solid({"dead":"#8b8b8b","saved":"#3f7a4a","with":"#b2862e"}.get(kind,"#6b5137")) xpos 16 ypos 0 xysize (56,56)
-                    add Solid("#e9dbb9") xpos 18 ypos 2 xysize (52,52)
+                        add Solid("#e2a93b") xpos 7 ypos -3 xysize (62,62)
+                    add Solid({"dead":"#8b8b8b","saved":"#3f7a4a","with":"#b2862e"}.get(kind,"#6b5137")) xpos 10 ypos 0 xysize (56,56)
+                    add Solid("#e9dbb9") xpos 12 ypos 2 xysize (52,52)
                     if kind=="dead":
-                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True) at r13_rel_gray xpos 18 ypos 2
-                        add Transform(Solid("#a2401f"),xysize=(64,6),rotate=45) xpos 14 ypos 0
-                        add Transform(Solid("#a2401f"),xysize=(64,6),rotate=-45) xpos 14 ypos 0
+                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True) at r13_rel_gray xpos 12 ypos 2
+                        add Transform(Solid("#a2401f"),xysize=(64,6),rotate=45) xpos 8 ypos 0
+                        add Transform(Solid("#a2401f"),xysize=(64,6),rotate=-45) xpos 8 ypos 0
                     elif kind in ("gone","missing"):
-                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True,alpha=.6) xpos 18 ypos 2
+                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True,alpha=.6) xpos 12 ypos 2
                     else:
-                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True) xpos 18 ypos 2
-                    text (("{s}"+R13_NAMES.get(who,who)+"{/s}") if kind=="dead" else R13_NAMES.get(who,who)) xpos 44 xanchor .5 ypos 57 size 15 color ("#8a8178" if kind in ("dead","gone") else "#493b30") outlines [(2,"#f4ead2",0,0)]
+                        add Transform(r13_art(who,"avatar_neutral"),xysize=(52,52),fit="contain",nearest=True) xpos 12 ypos 2
+                    text (("{s}"+R13_NAMES.get(who,who)+"{/s}") if kind=="dead" else R13_NAMES.get(who,who)) xpos 38 xanchor .5 ypos 57 size 15 color ("#8a8178" if kind in ("dead","gone") else "#493b30") outlines [(2,"#f4ead2",0,0)]
                     if label:
-                        text label xpos 44 xanchor .5 ypos 73 size 12 color {"dead":"#7a2e22","saved":"#3f7a4a","with":"#8a6420"}.get(kind,"#5d6a8a") outlines [(2,"#f4ead2",0,0)]
+                        # Narrow cells: "8일 밤 숨짐" → "8일 숨짐"; the detail panel keeps the full line.
+                        text (" ".join([label.split(" ")[0],label.split(" ")[-1]]) if len(label.split(" "))==3 else label) xpos 38 xanchor .5 ypos 73 size 12 color {"dead":"#7a2e22","saved":"#3f7a4a","with":"#8a6420"}.get(kind,"#5d6a8a") outlines [(2,"#f4ead2",0,0)]
         for a,b,kind,lab in edges:
             # Neighbouring faces leave no room for a label; the detail list names every line.
-            if selected in (a,b) and a in layout and b in layout and abs(layout[a][0]-layout[b][0])+abs(layout[a][1]-layout[b][1])>R13_REL_CELL[0]*1.5:
-                $ mx=(layout[a][0]+layout[b][0])//2+44
+            if selected in (a,b) and a in layout and b in layout and abs(layout[a][0]-layout[b][0])+abs(layout[a][1]-layout[b][1])>R13_REL_CELL[0]*1.6:
+                $ mx=(layout[a][0]+layout[b][0])//2+38
                 $ my=(layout[a][1]+layout[b][1])//2+28
                 frame:
                     xpos mx ypos my xanchor .5 yanchor .5 padding (4,1) background Solid("#f4ead2e6")
