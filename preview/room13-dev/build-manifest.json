@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 15542821,
-  "archive_sha256": "b25816adb832417d64c03cbdab0ace98b36c86ab776e9e39e15bfeeee89344dd",
+  "archive_bytes": 16787776,
+  "archive_sha256": "6c41b90551d7e0e48df6951b0f41acca938d20f5e9a70e337e992de0d0dbe127",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 15542821,
-    "sha256": "b25816adb832417d64c03cbdab0ace98b36c86ab776e9e39e15bfeeee89344dd"
+    "bytes": 16787776,
+    "sha256": "6c41b90551d7e0e48df6951b0f41acca938d20f5e9a70e337e992de0d0dbe127"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 84906,
-   "sha256": "7c0f3880de9f0af53c4d9698769f62049a57d848458d2a6fc96beb9db3c2f2e7"
+   "bytes": 86725,
+   "sha256": "bb9b99c26fa782c84d68034d8d6f523d38772174c97cc699947d826eed3d53ba"
   },
   "game.part01": {
-   "bytes": 15542821,
-   "sha256": "b25816adb832417d64c03cbdab0ace98b36c86ab776e9e39e15bfeeee89344dd"
+   "bytes": 16787776,
+   "sha256": "6c41b90551d7e0e48df6951b0f41acca938d20f5e9a70e337e992de0d0dbe127"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -1108,17 +1108,33 @@
    "bytes": 75794,
    "sha256": "37165d63bc102eeebef968ffa44d9becf8c8792809dcc1dd1d96a3dcf49dae5c"
   },
+  "game/assets/room13-fullbody-neoul-angry-acting.webp": {
+   "bytes": 217080,
+   "sha256": "592108155b76b7cdaa1f24523b10cd06b562de1b183db015beaf9cf7e5a23a90"
+  },
   "game/assets/room13-fullbody-neoul-angry.webp": {
    "bytes": 71334,
    "sha256": "2a35db5ce158e8f68566936bb49802055cfb307cd6d5e23359c7ea702db04c35"
+  },
+  "game/assets/room13-fullbody-neoul-anxious-acting.webp": {
+   "bytes": 175872,
+   "sha256": "27b7410013841e07c1ed474bead1c53020fdf2e3594eecc8119e824117f37b31"
   },
   "game/assets/room13-fullbody-neoul-anxious.webp": {
    "bytes": 74372,
    "sha256": "b665fc2073d532d751d012fbcdd90c4326002ff16cb8aa2eb6fdc9a05c6266b6"
   },
+  "game/assets/room13-fullbody-neoul-flustered-acting.webp": {
+   "bytes": 182496,
+   "sha256": "b83a01ea0a42ef167d1ef135ca4de720e28b9d3b9aca210ec4aa38b9677002a4"
+  },
   "game/assets/room13-fullbody-neoul-flustered.webp": {
    "bytes": 73806,
    "sha256": "2b0fd37dc70afc52bda6a56f8b8780e7dcf6786e37a6b69face4374fb0d99437"
+  },
+  "game/assets/room13-fullbody-neoul-joy-acting.webp": {
+   "bytes": 220970,
+   "sha256": "2767c2d8b81ad658537310b0e818e58afa2a98325d8ab56ec88bbbc632f370b4"
   },
   "game/assets/room13-fullbody-neoul-joy.webp": {
    "bytes": 73944,
@@ -1127,6 +1143,10 @@
   "game/assets/room13-fullbody-neoul-neutral.webp": {
    "bytes": 73172,
    "sha256": "5f541a9066a2d3e9ebd936c34bfc932baea70b9495cfc47f419256cc4d02c3c9"
+  },
+  "game/assets/room13-fullbody-neoul-surprise-acting.webp": {
+   "bytes": 217276,
+   "sha256": "2f23ac4e8e8185532c9a8737fe470418962f9407463ed43b0fc82568f3fbf875"
   },
   "game/assets/room13-fullbody-neoul-surprise.webp": {
    "bytes": 72896,
@@ -1568,17 +1588,33 @@
    "bytes": 76548,
    "sha256": "850e874c24589381261fee2cd8020723087e81441eb9bcd61e2004bf0ad483f9"
   },
+  "game/assets/room13-fullbody-resident_teacher-angry-acting.webp": {
+   "bytes": 208974,
+   "sha256": "6557ab4491c95d5935517ee468a7547e381d885cbb23b8419ec4657888d8404f"
+  },
   "game/assets/room13-fullbody-resident_teacher-angry.webp": {
    "bytes": 63906,
    "sha256": "14c8f03272f7582aa9da26497d05529f6435709cc0ce03faa2ebb2557b25e6ac"
+  },
+  "game/assets/room13-fullbody-resident_teacher-anxious-acting.webp": {
+   "bytes": 190940,
+   "sha256": "cbd3721cf39a1c7a1823f1328744fa4897163b70fef7b943b4d11a763b109954"
   },
   "game/assets/room13-fullbody-resident_teacher-anxious.webp": {
    "bytes": 62180,
    "sha256": "ae85042027c9edcdb58cc421828c0aa2cdefab8b8223044acc537aa6265784f3"
   },
+  "game/assets/room13-fullbody-resident_teacher-flustered-acting.webp": {
+   "bytes": 191478,
+   "sha256": "0a03a3c3b1cbd6fd2f434711091067ae8fc6e37cf956250c862c8ebfd4aedbd0"
+  },
   "game/assets/room13-fullbody-resident_teacher-flustered.webp": {
    "bytes": 65700,
    "sha256": "ac43a803f7327817ef7b2c4e9eb01e52338144073e881f71c04aeeae978c43cc"
+  },
+  "game/assets/room13-fullbody-resident_teacher-joy-acting.webp": {
+   "bytes": 211444,
+   "sha256": "2c6cd805646a31765b28e049c763e5b4bae4dde5935a4651ead05d9d98e8d11d"
   },
   "game/assets/room13-fullbody-resident_teacher-joy.webp": {
    "bytes": 64450,
@@ -1599,6 +1635,10 @@
   "game/assets/room13-fullbody-resident_teacher-pose-write_attendance.webp": {
    "bytes": 103734,
    "sha256": "96ff874ba6cef66e3587cdb793f5d933838ec7fb94149736cd2a00ba2bd613f6"
+  },
+  "game/assets/room13-fullbody-resident_teacher-surprise-acting.webp": {
+   "bytes": 201042,
+   "sha256": "5beb0b2e89c046bcfced3ceba81be80fb4e1e9c42e3e4712a59463ba6fab6205"
   },
   "game/assets/room13-fullbody-resident_teacher-surprise.webp": {
    "bytes": 63826,
@@ -3142,7 +3182,7 @@
   },
   "index.html": {
    "bytes": 9504,
-   "sha256": "d080a106c5f877acea6815ab326a7b8e925974d61010bf5e20c6fe2730c2409b"
+   "sha256": "7e34520163ca9a94444b129a81d80b46c68fb7d6148ac1d01283a438231ad600"
   },
   "loading-scene.png": {
    "bytes": 1946111,
@@ -3177,5 +3217,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 358791997
+ "total_bytes": 362056343
 }
