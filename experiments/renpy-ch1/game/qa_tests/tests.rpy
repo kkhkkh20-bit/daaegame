@@ -12370,6 +12370,20 @@ init 1001 python:
                 steps=t.get("steps") is not None,timeless=bool(t.get("timeless")),variants=len(t.get("variants") or []),
                 again=len(t.get("again") or []),recap=bool(t.get("recap")),lines=len(t.get("lines") or []))
         out["threads"]={n:[s[0] for s in st] for n,st in R13_THREADS.items()}
+        def _c(c):
+            if c is None:return None
+            if callable(c):return "(코드 조건)"
+            if isinstance(c,dict):return {k:([_c(x) for x in v] if k in ("all","any") else v) for k,v in c.items()}
+            return str(c)
+        def _l(lines):return [[str(x[0]),str(x[1])]+(["생각"] if len(x)>2 and isinstance(x[2],dict) and x[2].get("thought") else []) for x in (lines or []) if isinstance(x,(list,tuple)) and len(x)>=2]
+        out["script"]={}
+        for k,t in ROOM13["topics"].items():
+            out["script"][k]=dict(npc=t.get("npc"),title=t.get("title"),day=t.get("day"),need=t.get("need"),not_flags=t.get("not_flags"),case=t.get("case"),
+                state=t.get("state"),steps=_c(t.get("steps")),lines=_l(t.get("lines")),
+                variants=[[_c(c),_l(l)] for c,l in (t.get("variants") or [])],again=[[_c(c),_l(l)] for c,l in (t.get("again") or [])],recap=t.get("recap"))
+        out["reaction_script"]={"%s|%s"%k:[[_c(c),_l(l)] for c,l in v] for k,v in R13_REACTIONS.items()}
+        out["thread_steps"]={n:[[s_[0],s_[2],s_[3]] for s_ in st] for n,st in R13_THREADS.items()}
+        out["names"]=dict(R13_NAMES)
         out["reactions"]=["%s|%s"%k for k in R13_REACTIONS]
         # Every resident × every record they are tied to: does presenting it give only a generic answer?
         backup=winter_copy.deepcopy(store.room13)
