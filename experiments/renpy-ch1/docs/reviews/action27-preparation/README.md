@@ -1,4 +1,6 @@
-# 27 map actions: preparation only
+# 27 map actions: preparation snapshot
+
+This document describes preparatory commit fa1caeff. Runtime activation of the first eight actions is documented in ../../releases/RELEASE_01931.md; the zero-row statements below describe that earlier snapshot.
 
 Base: main `334b8b52f5ac019a327a443bbae0db61f1c867f3` (0.19.30).
 Branch: `prep/map-actions27-placement`. No new artwork, active image registration, main merge, web build or deployment.
@@ -39,7 +41,7 @@ Before activation: verify original receipt; derive map-only resource; review alp
 
 ## Deferred / preserved
 
-- GA-1/FA-1 Neoul: coat confirmation pending; no artwork/design change here.
+- GA-1/FA-1 Neoul: owner approved request/CAST_BIBLE executive coat on follow-up. Await two map-only source poses. No meeting-only costume condition found; do not change meeting art. This eight-image release contains no Neoul change.
 - KI-1 Nabi: no kitchen schedule; no schedule added. Future asset only, unless a separately chosen existing event needs it.
 - Keep map9 9 actions, Solbang herbs and all15 smooth dialogue cuts. Reuse/alternate decisions require explicit per-row replace_poses, not blanket neutralization.
 - Original story/event/death/custody conditions remain unchanged. No new event text or action label has been attached to neutral art.

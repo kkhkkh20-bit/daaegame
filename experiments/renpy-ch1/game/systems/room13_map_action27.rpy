@@ -1,7 +1,15 @@
-# Preparation only: empty registry until approved map art and contact review arrive.
+# Approved map-only actions; source receipts and contact review accompany each row.
 # Runs after perspective126, map9 176 and Solbang177; never creates residents.
 init 178 python:
     R13_MAP_ACTION27 = json.load(renpy.file("assets/room13-map-action27.json"))
+
+    for _m27 in R13_MAP_ACTION27["rows"]:
+        if _m27.get("status")!="approved":continue
+        _m27_spec=_m27["spec"]
+        if not renpy.loadable(_m27_spec["file"]):continue
+        R13_ACTING.setdefault(_m27["person"],{})[_m27["pose"]]=_m27_spec
+        CAST[_m27["person"]][_m27["pose"]]=_m27_spec
+        renpy.image(_m27["person"]+" "+_m27["pose"],Transform(Crop(tuple(_m27_spec["crop"]),_m27_spec["file"]),nearest=True))
 
     def r13_map27_variant(row,actor,state,daylight,width,has_offer):
         if row.get("status")!="approved" or has_offer:return None
@@ -43,7 +51,7 @@ init 178 python:
         actors=_r13_map27_stage(entry)
         if not R13_MAP_ACTION27["rows"]:return actors
         state=store.room13 or {};width=r13_world_width();daylight=r13_daylight()
-        result=[]
+        result=[];clearance=[]
         for actor in actors:
             for row in R13_MAP_ACTION27["rows"]:
                 # Entry screens also preserve pending events, not only ordinary investigation.
@@ -53,8 +61,15 @@ init 178 python:
                 if not spec or not renpy.loadable(spec["file"]):continue
                 actor=r13_map27_geometry(actor,spec,variant,width)
                 actor["pose"]=row["pose"]
+                actor["activity"]=row.get("activity",actor.get("activity",""))
+                clearance.extend(row.get("clearance",[]))
                 break
             result.append(actor)
+        # Reserve reviewed working space without changing presence, offers or pose/scale.
+        for move in clearance:
+            for index,actor in enumerate(result):
+                if actor["person"]==move["person"] and actor["pose"] in move["poses"] and not r13_offer_for_person(actor["person"]):
+                    result[index]=r13_ma_place(actor,actor["pose"],move["foot"][0],move["foot"][1],actor["height"])
         return sorted(result,key=lambda actor:actor["depth"])
 
     _r13_map27_visible=r13_staged_visible_art

@@ -15,6 +15,8 @@ def derive_map_image(original):
     canvas=Image.new('RGBA',(width,height))
     canvas.alpha_composite(source.resize((content_width,height),Image.Resampling.LANCZOS))
     image=canvas.resize((width//2,height//2),Image.Resampling.NEAREST).resize((width,height),Image.Resampling.NEAREST)
+    # WebP canonicalizes hidden RGB; remove only fully transparent colour noise.
+    image.putdata([(r,g,b,a) if a else (0,0,0,0) for r,g,b,a in image.getdata()])
     return image,dict(source_size=list(source.size),export_size=list(image.size),content_size=[content_width,height],grid=2,
         source_to_export=[content_width/source.width,height/source.height],padding_right=width-content_width)
 

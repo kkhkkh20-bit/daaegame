@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def environment(rows=None):
     actor=dict(person='resident_sling',pose='activity',x=5,y=6,width=30,height=40,rect=[5,6,30,40],depth=46,occlusion=[])
-    env=dict(json=json,renpy=types.SimpleNamespace(file=lambda p:io.StringIO((ROOT/'game'/p).read_text()),loadable=lambda p:True),
+    env=dict(json=json,renpy=types.SimpleNamespace(file=lambda p:io.StringIO('{"rows":[]}'),loadable=lambda p:True),
         r13_stage_people=lambda entry=False:[actor],r13_staged_visible_art=lambda a,still=False:('original',a['person'],still),
         store=types.SimpleNamespace(room13=dict(location='post',period=0,day=2,flags=['lodging'])),
         r13_world_width=lambda:2160,r13_daylight=lambda:'morning',r13_offer_for_person=lambda who:None,
@@ -61,8 +61,19 @@ class MapAction27(unittest.TestCase):
         src=(ROOT/'game/room13_acting.rpy').read_text();start=src.index('    def r13_actor_hit_mask(actor):');end=src.index('    def r13_actor_face',start)
         env['Crop']=lambda rect,art:(rect,art);exec(textwrap.dedent(src[start:end]),env)
         self.assertEqual(env['r13_actor_hit_mask'](actor)[1],visible)
+    def test_clearance_preserves_event_poses_and_existing_scale(self):
+        row=approved();row['clearance']=[dict(person='resident_ttadak',poses=['living_repair'],foot=[1540,640])]
+        env,actor=environment([row]);other=dict(actor,person='resident_ttadak',pose='event_door',height=260)
+        env['_r13_map27_stage']=lambda entry=False:[actor,other]
+        env['R13_ACTING']={'resident_sling':{'new_map_pose':dict(file='ready.webp',crop=[0,0,512,768],anchors={'parcel':[400,450]})}}
+        moves=[]
+        def place(a,pose,x,y,h):
+            moves.append((pose,x,y,h));return dict(a,x=x,y=y)
+        env['r13_ma_place']=place;env['r13_stage_people']();self.assertEqual(moves,[])
+        other['pose']='living_repair';env['r13_stage_people']();self.assertEqual(moves,[('living_repair',1540,640,260)])
+        moves.clear();env['r13_offer_for_person']=lambda who:who=='resident_ttadak';env['r13_stage_people']();self.assertEqual(moves,[])
     def test_runtime_has_no_schedule_or_dialogue_mutation(self):
         src=(ROOT/'game/systems/room13_map_action27.rpy').read_text()
-        for name in ['def r13_where','def r13_resident_where','def r13_speaker','renpy.image(']:self.assertNotIn(name,src)
+        for name in ['def r13_where','def r13_resident_where','def r13_speaker']:self.assertNotIn(name,src)
 
 if __name__=='__main__':unittest.main()
