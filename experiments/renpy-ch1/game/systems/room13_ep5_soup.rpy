@@ -275,7 +275,7 @@ label r13_ws_long_night:
         (None,"모두 같은 쪽을 보고 있었다. 천막 벽 너머, 광장의 돌이 있는 쪽."),
         (None,"……")]+([("daram","……왜 다 저쪽 봐?"),("dad","…….")] if r13_ws_daram() else []),"ws:morning:tents", binding_route="dynamic:412")
     if _ws_dead<=2:
-        call r13_lines([(None,"노부부 둘이 서로 기댄 채였다. 그 곁에서 네로가 숨을 붙이고 있었다."),
+        call r13_lines([(None,"노부부 둘이 서로 기댄 채였다. 그 곁에서 네로가 숨을 붙이고 있었다.",{"cut":"nero_weakened_alive","no_lead":True}),
             ("resident_nero","……내가 다 못 데려왔다. 이름이라도 데려가라.")],"ws:morning:nero_alive")
         $ r13_flag("nero_alive")
     else:
@@ -403,7 +403,7 @@ label r13_ws_soup:
 
 label r13_ws_meeting:
     call r13_scene("r13_school","학교 대피소 · 회의","hearing")
-    call r13_lines([(None,"담요 덮인 자리 앞. 보리가 무릎을 꿇고 도담의 작은 손을 쥐고 있었다. 화상 자국이 있는 손으로."),
+    call r13_lines([(None,"담요 덮인 자리 앞. 보리가 무릎을 꿇고 도담의 작은 손을 쥐고 있었다. 화상 자국이 있는 손으로.",{"cut":"bori_kneels_holding_dodam_hand","no_lead":True}),
         ("neoul","대피소에서 아이가 죽었소. 오늘 밤 안에 끝냅시다."),
         ("resident_bori","(고개를 들지 않고) 누구야. 누가 내 애한테.")],"ws:meeting:open")
     call r13_debate_run("Q5")
@@ -431,12 +431,12 @@ label r13_ws_meeting:
         "막지 않는다":
             # 깜이·몽이·방울이 살아난 판(ws_some_alive)에서는 도담만 부른다.
             if r13_has("ws_some_alive"):
-                call r13_lines([(None,"선생님이 냄비를 비웠다. 도담 옆에 눕고, 담요를 끌어 덮었다."),
+                call r13_lines([(None,"선생님이 냄비를 비웠다. 도담 옆에 눕고, 담요를 끌어 덮었다.",{"cut":"teacher_blanket_dodam_only","no_lead":True}),
                     ("resident_teacher","도담아. 선생님 왔어요."),
                     (None,"……"),
                     (None,"머리맡에 출석부가 남았다. 도담의 이름에만 동그라미가 있었다.")],"ws:decision:gone_one")
             else:
-                call r13_lines([(None,"선생님이 냄비를 비웠다. 아이들 옆에 눕고, 담요를 끌어 덮었다."),
+                call r13_lines([(None,"선생님이 냄비를 비웠다. 아이들 옆에 눕고, 담요를 끌어 덮었다.",{"cut":"teacher_blanket_four_children","no_lead":True}),
                     ("resident_teacher","깜이, 몽이, 방울, 도담. 선생님 왔어요."),
                     (None,"……"),
                     (None,"머리맡에 출석부가 남았다. 새미의 이름에만 동그라미가 없었다.")],"ws:decision:gone")
@@ -451,15 +451,15 @@ label r13_ws_after:
             (None,"엄마가 판자를 끌어안고 울었다. 웃으면서. 코를 찡그리며.",{"cut":"U22-mother-portrait-crayon-nose"})],"ws:after:portrait")
     # 0.19.10: "내 애 하나 잃고"는 도담이 죽은 판(ws_some_alive)에서만. 도담이 산 판에서 아이 셋을 맡았으면 다른 말.
     if r13_has("ws_some_alive"):
-        call r13_lines([(None,"보리가 대피소 구석에 앉아 있었다. 무릎에 깜이, 양옆에 몽이와 방울이 잠들어 있었다."),
+        call r13_lines([(None,"보리가 대피소 구석에 앉아 있었다. 무릎에 깜이, 양옆에 몽이와 방울이 잠들어 있었다.",{"cut":"bori_cares_three_after_dodam_loss","no_lead":True}),
             ("resident_bori","내 애 하나 잃고…… 셋 얻었다."),
             ("resident_bori","이번엔 안 놓친다.")],"ws:after:bori")
     elif r13_has("bori_adopts") and r13_has("ws_kids_alive"):
-        call r13_lines([(None,"보리가 대피소 구석에 앉아 있었다. 무릎에 도담이 잠들어 있었고, 맡은 아이 셋이 그 옆에 붙어 있었다."),
+        call r13_lines([(None,"보리가 대피소 구석에 앉아 있었다. 무릎에 도담이 잠들어 있었고, 맡은 아이 셋이 그 옆에 붙어 있었다.",{"cut":"bori_adopts_four_alive","no_lead":True}),
             ("resident_bori","우리 집 좁다. ……그래도 넷이면 덜 춥겠지."),
             ("resident_bori","이번엔 안 놓친다.")],"ws:after:bori_home")
     elif r13_has("soup_kids_dead"):
-        call r13_lines([(None,"보리는 아무 말도 하지 않았다. 도담의 작은 신발 한 짝을 손에 쥐고, 밤새 난로 옆에 앉아 있었다.")],"ws:after:bori_silent")
+        call r13_lines([(None,"보리는 아무 말도 하지 않았다. 도담의 작은 신발 한 짝을 손에 쥐고, 밤새 난로 옆에 앉아 있었다.",{"cut":"bori_silent_single_shoe","no_lead":True})],"ws:after:bori_silent")
         $ r13_flag("bori_mute")
     call r13_lines([(None,"모두 잠든 밤. 교실 구석에서 작은 목소리."),
         ("kid_saemi","(노래) 휘휘 저어라 겨울 수프, 감자 하나 당근 하나."),
