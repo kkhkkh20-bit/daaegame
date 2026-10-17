@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "fixtures": [
+    {
+      "episode": "ep5",
+      "flags": [
+        "ws_kids_alive",
+        "bori_adopts",
+        "mom_reunited",
+        "portrait_finished_by_daram"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "soup_alive",
+        "bori_four",
+        "teacher_saved",
+        "mom_portrait"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep6",
+      "flags": [
+        "cart_stopped",
+        "badook_dead"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "guldol_free",
+        "badook_dead"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep6",
+      "flags": [
+        "cv_family_only",
+        "cart_left",
+        "ws_cart_truth",
+        "guldol_dead",
+        "momo_dead"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "cart_family",
+        "pandol_family",
+        "cart_left"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep3",
+      "flags": [
+        "kkomi_dead",
+        "wf_bori_freed",
+        "nubi_taken",
+        "neoul_exposed"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "kkomi_dead",
+        "nubi_alone"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep3",
+      "flags": [
+        "wf_bori_freed",
+        "wf_kids_school"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "kkomi_saved",
+        "nubi_school"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep5",
+      "flags": [
+        "soup_kids_dead",
+        "teacher_dead",
+        "kkomi_dead_soup"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "soup_empty",
+        "bori_shoe",
+        "kkomi_soup",
+        "teacher_dead_four"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep5",
+      "flags": [
+        "ws_some_alive",
+        "teacher_dead"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "soup_three",
+        "teacher_dead_one"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep5",
+      "flags": [
+        "ws_some_alive",
+        "teacher_on_cart"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "soup_three",
+        "teacher_cart"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep5",
+      "flags": [
+        "ws_some_alive",
+        "teacher_alive"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "soup_three",
+        "teacher_saved"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep2",
+      "flags": [
+        "kd_shoes_only",
+        "bami_safe",
+        "bami_watched"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "musoe_shoes",
+        "bami_safe"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep3",
+      "flags": [
+        "nubi_taken",
+        "neoul_half"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "kkomi_saved",
+        "nubi_alone"
+      ],
+      "read_only": true
+    }
+  ],
+  "unique_frames": 22,
+  "checks": [
+    "11 completed-outcome fixtures",
+    "22 artwork frames",
+    "mixed survival and loss",
+    "detained Daram absent",
+    "next/previous",
+    "mid-scene save/load",
+    "motion off",
+    "large-text mobile",
+    "world/evidence/time unchanged"
+  ]
+}

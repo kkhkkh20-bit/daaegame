@@ -54,22 +54,22 @@
       "episode": "ep1",
       "file": "assets/room13-aftermath-ep1.webp",
       "panel": 3,
-      "heading": "회의가 없었던 자리",
-      "caption": "톡은 기둥 앞에 묶였다. 진짜 범인을 가릴 말은 광장에 닿지 못했다.",
+      "heading": "풀리지 않은 매듭",
+      "caption": "톡은 풀려나지 못했다. 진짜 범인을 밝히지 못한 채 광장에 남았다.",
       "subjects": [
         "resident_tok"
       ],
-      "source": "ep1:deadline",
+      "source": "ep1:meeting:fail",
       "rect": [
         838,
         473,
         829,
         464
-      ]
+      ],
+      "alternate_source": "ep1:deadline"
     },
     "siluk_debt": {
       "episode": "ep1",
-      "background": "ep_stable",
       "heading": "없어진 빚",
       "caption": "빚이 지워졌다. 실룩은 아이들을 끌어안았다.",
       "subjects": [
@@ -77,21 +77,16 @@
         "kid_siluk1",
         "kid_siluk2"
       ],
-      "actors": [
-        {
-          "person": "resident_siluk",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_siluk1",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_siluk2",
-          "emotion": "neutral"
-        }
-      ],
-      "source": "ep1:decision:debt"
+      "actors": [],
+      "source": "ep1:decision:debt",
+      "file": "assets/room13-aftermath-extra.webp",
+      "panel": 0,
+      "rect": [
+        3,
+        3,
+        830,
+        464
+      ]
     },
     "siluk_handed": {
       "episode": "ep1",
@@ -294,7 +289,7 @@
       "heading": "타고 남은 자리",
       "caption": "불이 지나간 창고 터에, 아이들이 모이던 자리만 남았다.",
       "subjects": [],
-      "source": "wf:aftermath",
+      "source": "r13_wf_aftermath",
       "rect": [
         839,
         473,
@@ -437,24 +432,22 @@
     },
     "owl_hat": {
       "episode": "ep4",
-      "background": "winter_square",
       "heading": "듣는 사람의 모자",
       "caption": "부리가 할아버지의 탐정 모자를 다람에게 건넸다. 다람은 엄마에게도 보여 주겠다고 했다.",
       "subjects": [
         "buri",
         "daram"
       ],
-      "actors": [
-        {
-          "person": "buri",
-          "emotion": "neutral"
-        },
-        {
-          "person": "daram",
-          "emotion": "neutral"
-        }
-      ],
-      "source": "nt:after:hat"
+      "actors": [],
+      "source": "nt:after:hat",
+      "file": "assets/room13-aftermath-extra.webp",
+      "panel": 3,
+      "rect": [
+        839,
+        473,
+        830,
+        464
+      ]
     },
     "granny_goodbye": {
       "episode": "ep4",
@@ -493,7 +486,7 @@
       "rect": [
         3,
         3,
-        830,
+        829,
         464
       ]
     },
@@ -511,9 +504,9 @@
       ],
       "source": "ws:after:bori",
       "rect": [
-        839,
+        838,
         3,
-        830,
+        829,
         464
       ]
     },
@@ -528,7 +521,7 @@
       "rect": [
         3,
         473,
-        830,
+        829,
         464
       ]
     },
@@ -543,9 +536,9 @@
       ],
       "source": "ws:after:bori_silent",
       "rect": [
-        839,
+        838,
         473,
-        830,
+        829,
         464
       ]
     },
@@ -631,7 +624,7 @@
       "file": "assets/room13-aftermath-ep6.webp",
       "panel": 2,
       "heading": "가족이 탄 다른 수레",
-      "caption": "가족은 빨래 수레에 숨어 빠져나왔다. 다른 이들을 태운 수레까지 멈추지는 못했다.",
+      "caption": "엄마는 빨래 수레에 몸을 숨겼다. 다른 이들을 태운 수레까지 멈추지는 못했다.",
       "subjects": [],
       "source": "cv:decision:family",
       "rect": [
@@ -757,50 +750,46 @@
     },
     "nubi_alone": {
       "episode": "ep3",
-      "background": "ep_laundry",
       "heading": "엄마 없는 빨래터",
       "caption": "누비가 끌려갔다. 아이 셋은 엄마 없이 빈 빨래터로 돌아갔다.",
       "subjects": [
         "kid_nubi1",
-        "kid_nubi2"
+        "kid_nubi2",
+        "nubi_baby"
       ],
-      "actors": [
-        {
-          "person": "kid_nubi1",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_nubi2",
-          "emotion": "neutral"
-        }
-      ],
-      "source": "wf:decision:hand"
+      "actors": [],
+      "source": "wf:decision:hand",
+      "file": "assets/room13-aftermath-extra.webp",
+      "panel": 1,
+      "unseen_face": "Swaddled unnamed youngest child from the existing dialogue; face hidden.",
+      "rect": [
+        839,
+        3,
+        830,
+        464
+      ]
     },
     "nubi_school": {
       "episode": "ep3",
-      "background": "r13_school",
       "heading": "학교에서 나는 겨울",
       "caption": "누비는 집으로 돌아갔다. 그 집 아이들도 학교에서 겨울을 나게 되었다.",
       "subjects": [
         "resident_teacher",
         "kid_nubi1",
-        "kid_nubi2"
+        "kid_nubi2",
+        "nubi_baby"
       ],
-      "actors": [
-        {
-          "person": "resident_teacher",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_nubi1",
-          "emotion": "neutral"
-        },
-        {
-          "person": "kid_nubi2",
-          "emotion": "neutral"
-        }
-      ],
-      "source": "wf:decision:shelter"
+      "actors": [],
+      "source": "wf:decision:shelter",
+      "file": "assets/room13-aftermath-extra.webp",
+      "panel": 2,
+      "unseen_face": "Swaddled unnamed youngest child from the existing dialogue; face hidden.",
+      "rect": [
+        3,
+        473,
+        830,
+        464
+      ]
     },
     "teacher_saved": {
       "episode": "ep5",

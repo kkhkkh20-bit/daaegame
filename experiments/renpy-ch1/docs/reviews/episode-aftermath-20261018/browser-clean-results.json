@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "fixtures": [
+    {
+      "episode": "ep1",
+      "flags": [],
+      "child": "with_dad",
+      "frames": [
+        "piko_saved",
+        "tok_free"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep1",
+      "flags": [
+        "siluk_debt_cleared",
+        "madam_store_opened"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "piko_saved",
+        "tok_free",
+        "siluk_debt"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep2",
+      "flags": [
+        "kd_farewell_seen",
+        "musoe_gone",
+        "bami_safe"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "musoe_farewell",
+        "bami_safe"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep3",
+      "flags": [
+        "kkomi_dead",
+        "bori_adopts",
+        "nubi_kids_with_nabi"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "kkomi_dead",
+        "bori_adopts",
+        "nabi_children"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep4",
+      "flags": [
+        "chorong_dead",
+        "ttadak_dead",
+        "nt_ttadak_proven",
+        "owl_hat",
+        "nt_lit_lamps"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "chorong_dead",
+        "ttadak_dead",
+        "granny_goodbye",
+        "owl_hat"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep5",
+      "flags": [
+        "ws_kids_alive",
+        "bori_adopts",
+        "mom_reunited",
+        "portrait_finished_by_daram"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "soup_alive",
+        "bori_four",
+        "teacher_saved",
+        "mom_portrait"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep6",
+      "flags": [
+        "cart_stopped",
+        "badook_dead"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "guldol_free",
+        "badook_dead"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep3",
+      "flags": [
+        "kkomi_dead",
+        "wf_bori_freed",
+        "nubi_taken",
+        "neoul_exposed"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "kkomi_dead",
+        "nubi_alone"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep3",
+      "flags": [
+        "wf_bori_freed",
+        "wf_kids_school"
+      ],
+      "child": "with_dad",
+      "frames": [
+        "kkomi_saved",
+        "nubi_school"
+      ],
+      "read_only": true
+    },
+    {
+      "episode": "ep3",
+      "flags": [],
+      "child": "held",
+      "frames": [
+        "kkomi_alone"
+      ],
+      "read_only": true
+    }
+  ],
+  "unique_frames": 22,
+  "checks": [
+    "10 completed-outcome fixtures",
+    "22 artwork frames",
+    "mixed survival and loss",
+    "detained Daram absent",
+    "next/previous",
+    "mid-scene save/load",
+    "motion off",
+    "large-text mobile",
+    "world/evidence/time unchanged"
+  ]
+}
