@@ -10896,7 +10896,7 @@ testcase ep2_kids:
     click pos (640,600) until "솜이네 집 — 발자국이 이어진 곳" timeout 40
     click "솜이네 집 — 발자국이 이어진 곳"
     click pos (640,600) until "광장으로 간다 (회의를 기다린다)" timeout 60
-    assert eval (all(r13_has(k) for k in ("K02","K03","K04","K05","K06","K07")) and r13_kd_steps()==1)
+    assert eval (all(r13_has(k) for k in ("K02","K03","K04","K05","K06","K07","K09")) and r13_kd_steps()==1)
     screenshot "ep2_home.png"
     click "광장으로 간다 (회의를 기다린다)"
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
@@ -10913,6 +10913,11 @@ testcase ep2_kids:
     pause 0.8
     click "QA K02"
     click pos (640,600) until eval (r13_debate_is_broken("Q2","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA K09"
+    click pos (640,600) until eval (r13_debate_is_broken("Q2","s2f") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 0.6
     click "보여주기"
     pause 0.8
@@ -11037,7 +11042,7 @@ testcase ep4_after_trial:
     pause 2.0
     click "처음부터"
     pause 3.0
-    run Call("r13_qa_roam",dict(day=10,period=0,location="dining",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",granny_state="detained",trial_result="culprit_proven",evidence=["N01","N03","N07","N05"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_night8","nt_dawn9","ttadak_dead","chorong_dead","nt_lit_lamps","nt_buri_together"))
+    run Call("r13_qa_roam",dict(day=10,period=0,location="dining",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",granny_state="detained",trial_result="culprit_proven",evidence=["N01","N03","N07","N09","N05"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_dawn8","nt_night8","nt_dawn9","ttadak_dead","chorong_dead","nt_lit_lamps","nt_buri_together"))
     run Call("r13_qa_event","r13_nt_after_trial")
     click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False)) timeout 60
     pause 0.6
@@ -11052,6 +11057,11 @@ testcase ep4_after_trial:
     pause 0.8
     click "QA N03"
     click pos (640,600) until eval (r13_debate_is_broken("Q4","s2") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA N09"
+    click pos (640,600) until eval (r13_debate_is_broken("Q4","s3") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 1.2
     click "결론을 말한다"
     pause 1.0
