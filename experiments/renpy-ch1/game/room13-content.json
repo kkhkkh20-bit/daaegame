@@ -108,7 +108,7 @@
       "id": "E09",
       "name": "구조 전후의 촛농과 발자국",
       "kind": "관찰기록",
-      "establishes": "촛대가 떨어진 뒤 통로 쪽에서 다가온 발자국과, 그 위로 번진 피",
+      "establishes": "벽장 쪽에서 들어온 자국과, 촛대가 떨어진 뒤 촛농을 밟고 벽장 쪽으로 돌아간 자국, 그 위로 번진 피",
       "does_not_establish": "발자국만으로는 누구인지 가려낼 수 없음",
       "scenes": [
         "S14",
@@ -220,7 +220,7 @@
       "id": "E18",
       "name": "전해지지 못한 경고 봉투",
       "kind": "물증",
-      "establishes": "엄마가 첫 주에도 가족에게 경고했다",
+      "establishes": "엄마가 가족이 오기 전에 초롱에게 경고를 맡겨 두었다",
       "does_not_establish": "왜 우리에게 전해지지 않았는지는 아직 모름",
       "scenes": [
         "S07",
@@ -700,7 +700,10 @@
       "flags": [
         "parcel_known"
       ],
-      "give": []
+      "give": [],
+      "not_flags": [
+        "E34"
+      ]
     },
     "owl_glove": {
       "npc": "resident_owlgp",
@@ -1339,7 +1342,6 @@
         "E13"
       ],
       "period": [
-        0,
         1
       ]
     },

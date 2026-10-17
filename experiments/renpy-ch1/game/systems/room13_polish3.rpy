@@ -98,7 +98,7 @@ init 172 python:
         ("②","다람 탐정단","Q2","K",("kd_started","kd_done"),()),
         ("③","장작 창고의 불","Q3","F",("wf_fire","wf_done"),("kid_kkomi",)),
         ("④","13호의 밤","Q4","N",("nt_night8","nt_dawn8","nt_after"),("resident_lamplighter","resident_ttadak")),
-        ("⑤","겨울 수프","Q5","Y",("ws_soup","ws_long_night","ws_done"),("resident_teacher","resident_nero","kid_dodam")),
+        ("⑤","겨울 수프","Q5","Y",("ws_soup","ws_long_night","ws_done"),("resident_teacher","resident_nero","kid_dodam","kid_kkam","kid_mong","kid_bang","kid_kkomi")),
         ("⑥","끌려가는 수레","Q6","V",("cv_morning","cart_stopped"),("resident_badook",)),
     )
 
@@ -111,6 +111,16 @@ init 172 python:
         d=r13_debate_state()
         return (claim in (store.room13 or {}).get("propositions",[]) or bool(d["broken"].get(claim))
             or bool(d["pressed"].get(claim)) or r13_debate_closed(claim))
+
+    def r13_board_status(claim,person):
+        """그 사건 칸에서의 결과. ③에서 구한 꼬미가 ⑤에서 숨지면 ③은 구함, ⑤는 잃음(0.19.15)."""
+        if person=="kid_kkomi" and claim=="Q5":
+            return "dead" if r13_has("kkomi_dead_soup") else None
+        if person=="kid_kkomi" and claim=="Q3" and r13_has("kkomi_dead_soup"):
+            return "saved"
+        if person in ("kid_kkam","kid_mong","kid_bang") and claim!="Q5":
+            return None
+        return r13_rel_status(person)[0]
 
     def r13_board_result(claim,people):
         s=store.room13 or {}
@@ -126,8 +136,8 @@ init 172 python:
         if claim=="Q6":
             if r13_has("cart_stopped"):parts.append("수레 멈춤")
             elif r13_has("cv_night"):parts.append("수레 떠남")
-        saved=[R13_NAMES.get(p,p) for p in people if r13_rel_status(p)[0]=="saved"]
-        lost=[R13_NAMES.get(p,p) for p in people if r13_rel_status(p)[0]=="dead"]
+        saved=[R13_NAMES.get(p,p) for p in people if r13_board_status(claim,p)=="saved"]
+        lost=[R13_NAMES.get(p,p) for p in people if r13_board_status(claim,p)=="dead"]
         if saved:parts.append("·".join(saved)+" 구함")
         if lost:parts.append("·".join(lost)+" 잃음")
         return " · ".join(parts) or "—"

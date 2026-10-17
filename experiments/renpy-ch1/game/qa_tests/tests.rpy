@@ -12285,3 +12285,62 @@ testcase stale_meeting:
     # Quitting the board closes the trial, so the run goes on to week 2 with the meeting layout off.
     assert eval (not r13_meeting_active and renpy.get_screen("r13_hud") and (room13["trial_ended"] or renpy.get_screen("r13_meeting_agenda")))
     $ r13_qa_note("trial resumed after stale stack")
+
+testcase ep5_kids_alive_q6:
+    # 0.19.15: ⑤에서 아이들이 산 두 판(완벽·냄비 엎음)도 12일 밤 등이 밝아지는 것을 직접 보고 Y14를 얻는다.
+    #   ⑥ Q6 s2("돌은 희생으로만 버티오")는 Y14만 받으므로, 이것이 없으면 진 엔딩(ws_kids_alive + cart_stopped)이 막힌다.
+    #   Y14는 넣지 않는다. 수프 장면이 주어야 한다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["Y05","Y06","Y07","Y08","V06","E30"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_teacher_persuaded","ws_cabinet_locked","evening_brief:12"))
+    click pos (640,600) until eval (r13_has("ws_done")) timeout 120
+    $ r13_qa_note("perfect: kids_alive=%s Y14=%s q6=%s"%(r13_has("ws_kids_alive"),"Y14" in room13["evidence"],[r13_debate_answerable("Q6",st) for st in R13_DEBATE["Q6"]["statements"]]))
+    assert eval (r13_has("ws_perfect") and r13_has("ws_kids_alive") and "Y14" in room13["evidence"] and r13_debate_arguable("Q6"))
+    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True,mom_state="reunited",evidence=["Y05","Y06","Y07","Y08","V06","E30"]),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","mom_reunited","ws_long_night","ws_lab","ws_teacher_talked","ws_teacher_persuaded","evening_brief:12"))
+    click pos (640,600) until eval (r13_has("ws_done")) timeout 120
+    $ r13_qa_note("spilled: kids_alive=%s Y14=%s q6=%s"%(r13_has("ws_kids_alive"),"Y14" in room13["evidence"],[r13_debate_answerable("Q6",st) for st in R13_DEBATE["Q6"]["statements"]]))
+    assert eval (r13_has("dodam_sick") and r13_has("ws_kids_alive") and "Y14" in room13["evidence"] and r13_debate_answerable("Q6",R13_DEBATE["Q6"]["statements"][1]))
+
+testcase ep5_mom_absent:
+    # 0.19.15: 엄마와 다시 만나지 못한 판에는 ⑤·⑥ 회의 자리에 엄마가 없고, 엄마의 말은 그 자리에 있던 사람이 한다.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=12,period=2,location="school",life_poc=True,case_state="occurred",victim_state="dead",daram_state="with_dad",trial_ended=True,week2_started=True),("+ep","entry_corrected","lodging","ep4_seen","lt_done","kd_done","wf_done","ep1_patrol_seen","ep1_eaves_seen","ep1_done","nt_after","day11_warning","w1_links_done","ws_long_night","ws_teacher_talked","evening_brief:12"))
+    click pos (640,600) until eval (getattr(store,"r13_meeting_live_active",False) or getattr(store,"r13_meeting_active",False)) timeout 120
+    $ r13_qa_note("seats5=%s cast5=%s seats6=%s"%(r13_debate_seats("ep5"),[w for w,s in r13_meeting_cast("Q5","ep5")],r13_debate_seats("ep6")))
+    assert eval (not r13_has("mom_reunited") and "mom" not in [w for w,s in r13_debate_seats("ep5")] and "mom" not in [w for w,s in r13_meeting_cast("Q5","ep5")] and "mom" not in [w for w,s in r13_debate_seats("ep6")])
+    assert eval (r13_dead_stand_in_packet(("mom","오늘 밤부터 데워져요. 아이들은…… 안 죽어도 됐어요."),"debate:break:Q5:s4:Y14")[0]=="resident_seori" and r13_dead_stand_in_packet(("mom","(아빠를 본다) ……여기 사람들이 수레가 어디로 가는지 알아야 해."),"debate:conclusion:Q5")[0]=="resident_bori" and r13_dead_stand_in_packet(("mom","어쩔 수 있어요. 어젯밤에 했잖아요."),"debate:weak:Q6")[0]=="resident_bori")
+    $ room13["flags"].append("mom_reunited")
+    assert eval ("mom" in [w for w,s in r13_debate_seats("ep5")] and r13_dead_stand_in_packet(("mom","오늘 밤부터 데워져요. 아이들은…… 안 죽어도 됐어요."),"debate:break:Q5:s4:Y14")[0]=="mom")
+
+testcase continuity_0195:
+    # 0.19.15: 죽었거나 진료소에 있는 주민이 장사·일을 하지 않는다. 수프로 숨진 꼬미는 관계도에서 숨짐.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    # 3일 새벽에 피코가 쓰러진 뒤에는 광장에서 그림을 팔지 않는다.
+    run Call("r13_qa_roam",dict(day=3,period=0,location="square"),("+w1c","+offers","piko_dead","piko_seen","lt_dawn"))
+    pause 2.0
+    assert eval ("r13_w1c_portrait" not in room13.get("offers",{}))
+    # 사서가 죽은 판: 사서 대신 은호가 기록실 장부를 거둬 간다.
+    run Call("r13_qa_roam",dict(day=4,period=0,location="post"),("+offers","librarian_dead","lt_lib_dawn"))
+    pause 2.0
+    assert eval ("r13_b3_pages" not in room13.get("offers",{}) and "r13_b3_pages_eunho" in room13.get("offers",{}))
+    run Call("r13_qa_offer","r13_b3_pages_eunho")
+    click pos (640,600) until eval (r13_has("pages_sold") and not renpy.get_screen("say")) timeout 40
+    # 초롱이 죽은 판의 종탑 장면: 등불지기 대신 우박과 등을 끈다.
+    run Call("r13_qa_roam",dict(day=9,period=2,location="square",case_state="occurred",victim_state="dead",daram_state="held"),("+offers","chorong_dead","nt_after"))
+    pause 2.0
+    run Call("r13_qa_offer","r13_ep3_bell")
+    click pos (640,600) until "우박과 함께 광장 등을 몇 개 끈다" timeout 40
+    click "우박과 함께 광장 등을 몇 개 끈다"
+    click pos (640,600) until eval (r13_has("lamps_saved") and not renpy.get_screen("say")) timeout 40
+    assert eval ("W5" in room13["evidence"] and not r13_has("lamplighter_trust"))
+    # ③에서 구한 꼬미가 ⑤ 수프로 숨지면: 관계도는 숨짐, ③ 칸은 구함, ⑤ 칸은 잃음.
+    python:
+        _n=winter_copy.deepcopy(store.room13)
+        _n["flags"]=list(_n["flags"])+["wf_kkomi_saved","wf_kkomi_alive","soup_kids_dead","kkomi_dead_soup","kkomi_dead","dodam_dead"]
+        store.room13=_n
+    assert eval (r13_rel_status("kid_kkomi")[0]=="dead" and r13_board_status("Q3","kid_kkomi")=="saved" and r13_board_status("Q5","kid_kkomi")=="dead" and r13_rel_status("kid_kkam")[0]=="dead" and r13_board_status("Q3","kid_kkam") is None)

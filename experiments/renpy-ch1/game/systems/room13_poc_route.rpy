@@ -21,7 +21,7 @@ init 100 python:
     # Picking up an already located envelope is ordinary investigation, not a
     # half-day research activity. Reading still precedes the original E18 grant.
     ROOM13["activities"]["warning"]["cost"]=0
-    ROOM13["evidence"]["E18"]["establishes"]="첫 주에 가족에게 남긴 엄마의 글. ‘너희한테 오라는 편지를 쓴 적 없어. 여관에 내가 어디로 가는지 말하지 마. 등불을 고치는 사람을 통해 답해 줘. 혼자 누구를 만나러 가지 말고.’라고 적혀 있다."
+    ROOM13["evidence"]["E18"]["establishes"]="가족이 오기 전에 엄마가 초롱에게 맡겨 둔 글. ‘너희한테 오라는 편지를 쓴 적 없어. 여관에 내가 어디로 가는지 말하지 마. 등불을 고치는 사람을 통해 답해 줘. 혼자 누구를 만나러 가지 말고.’라고 적혀 있다."
     for key in ("intro:lamplighter_mother","intro:post_visit"):
         ROOM13["topics"][key]["day"]=[2,4]
     ROOM13["topics"]["intro:direction"]["day"]=[1,4]

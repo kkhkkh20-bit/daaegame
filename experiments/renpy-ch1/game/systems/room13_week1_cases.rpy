@@ -63,7 +63,8 @@ label r13_w1c_events:
         call r13_ev_here("calm")
         call r13_lines([(None,"까로가 눈을 털며 다가왔다. 마차 이야기를 하러 온 얼굴이었다.")]+list(ROOM13["topics"]["life:karo"]["lines"]),"w1c:karo:work")
         $ r13_finish_topic("life:karo")
-    if 2<=_d<=3 and _p<=1 and _loc=="square" and not r13_has("ev_g_done"):
+    # 0.19.15: 3일 새벽(lt_dawn)에 피코가 죽었거나 진료소로 옮겨졌으면 광장에서 그림을 팔지 않는다.
+    if 2<=_d<=3 and _p<=1 and _loc=="square" and not r13_has("ev_g_done") and not r13_has("piko_dead") and not r13_has("lt_dawn"):
         $ r13_offer("r13_w1c_portrait")
     if 2<=_d<=R13_CASE_DAY and _p<=1 and _loc=="post" and not r13_has("ev_l_done"):
         $ r13_offer("r13_w1c_letters")
