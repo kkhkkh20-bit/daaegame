@@ -38,7 +38,7 @@ label r13_lines(entries,identity):
     $ r13_index=0
     $ r13_conv_skip=False
     while r13_index<len(entries) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not (identity==R13_CARRIAGE_IDENTITY and r13_carriage_skip):
-        $ r13_packet=r13_pov_packet(entries[r13_index])
+        $ r13_packet=r13_dead_stand_in_packet(r13_pov_packet(entries[r13_index]),identity)
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))
         $ r13_expression,r13_directed_pose=r13_line_performance(identity,r13_index,r13_packet)
         if r13_thought_active:

@@ -172,6 +172,8 @@ label r13_town_events:
     call r13_ws_events
     # 에피소드 ⑥ 끌려가는 수레 (systems/room13_ep6_cart.rpy), 13일.
     call r13_cv_events
+    # 0.18.90 서사 보강 (systems/room13_ep_story.rpy).
+    call r13_st_events
     # 에피소드 ② 다람 탐정단 (systems/room13_ep2_kids.rpy). 5일은 다람의 하루로 통째로 지나간다.
     call r13_ep2_events
     if _return=="day":

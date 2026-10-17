@@ -443,6 +443,9 @@ init 98 python:
         if key in st.get("accept",[]) and not r13_debate_context_ready(st):
             return "soft",list(st["blocked"])
         if key in st.get("accept",[]):
+            # broken_if: a different rebuttal when a condition holds (e.g. the witness died, 0.18.90).
+            alt=st.get("broken_if",{}).get(key)
+            if alt and r13_has(alt[0]):return "break",list(alt[1])
             # broken_by: a different rebuttal when another record breaks the same statement.
             return "break",list(st.get("broken_by",{}).get(key,st.get("broken",[])))
         if key in st.get("soft",{}):
@@ -559,7 +562,10 @@ init 98 python:
             for who in spec.get("sway",[]):
                 moved[who]=max(moved.get(who,0),step)
         fixed={"seryeon"} if session=="trial" else set()
-        return [(who,0 if who in fixed else min(2,moved.get(who,0))) for who in R13_DEBATE_SEATS[session]]
+        # 0.18.90: someone who died before this meeting is replaced by who carried on their duty.
+        seats=[getattr(store,"r13_dead_stand_in",lambda w:w)(who) for who in R13_DEBATE_SEATS[session]]
+        seats=[who for i,who in enumerate(seats) if who not in seats[:i]]
+        return [(who,0 if who in fixed else min(2,moved.get(who,0))) for who in seats]
 
     def r13_debate_tally(session):
         counts=[0,0,0]

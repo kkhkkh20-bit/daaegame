@@ -11560,3 +11560,28 @@ testcase ep_art_tour:
     click pos (1150,90)
     pause 0.3
     $ open("qa_result.txt","w").write("ep art tour: 71 screens")
+
+testcase story_scenes:
+    # 0.18.90: build-up scenes play; the dead leave the village and their meeting seat; Ttadak's record speaks for him.
+    pause 2.0
+    click "처음부터"
+    pause 3.0
+    run Call("r13_qa_roam",dict(day=3,period=0,location="school",life_poc=True),("+ep","entry_corrected","lodging","ep1_done","ep4_seen","lt_dawn","lt_open","lt_lib_dawn"))
+    pause 1.0
+    run Call("r13_qa_event","r13_st_dodam")
+    click pos (1150,90) until eval (r13_has("st_dodam_seen") and renpy.get_screen("r13_hub")) timeout 60
+    screenshot "st_after_dodam.png"
+    run Call("r13_qa_event","r13_st_pandol")
+    pause until screen "say" timeout 30
+    pause 0.6
+    screenshot "st_pandol.png"
+    click pos (1150,90) until eval (r13_has("st_pandol_seen") and renpy.get_screen("r13_hub")) timeout 60
+    python:
+        store.room13["flags"]=list(store.room13["flags"])+["badook_dead","teacher_dead"]
+    assert eval (r13_where("resident_badook") is None and r13_where("resident_teacher") is None)
+    assert eval ("guard" in [w for w,_ in r13_debate_seats("ep6")] and "resident_badook" not in [w for w,_ in r13_debate_seats("ep6")])
+    assert eval (r13_dead_stand_in_packet(("resident_badook","글씨가 다릅니다."),"debate:x")[0]=="guard" and r13_dead_stand_in_packet(("resident_badook","x"),"cv:night")[0]=="resident_badook")
+    python:
+        store.room13["flags"]=list(store.room13["flags"])+["ttadak_dead","ttadak_witness"]
+    assert eval (r13_debate_judge("C1",[st["id"] for st in r13_debate_statements("C1") if "H7" in st.get("accept",[])][0],"H7")[1][0][0]=="resident_tok")
+    $ open("qa_result.txt","w").write("story scenes + continuity ok")
