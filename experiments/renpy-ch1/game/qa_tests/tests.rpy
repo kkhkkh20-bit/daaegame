@@ -9721,7 +9721,7 @@ testcase alibi_cross:
     run Call("r13_qa_topic_label","alibi:case:granny")
     click pos (640,600) until eval (r13_has("alibi:case:granny")) timeout 40
     run Call("r13_qa_topic_label","alibi:case:resident_hyeoni")
-    click pos (640,600) until eval ("국만 뜨고" in str(getattr(store,"r13_packet",("",""))[1])) timeout 40
+    click pos (640,600) until eval ("식당에서 할머니를 본 사람은 없다" in str(getattr(store,"r13_packet",("",""))[1])) timeout 40
     pause 1.0
     screenshot "alibi_cross.png"
     click pos (640,600) until eval (r13_has("alibi_x_dining")) timeout 40
