@@ -442,6 +442,12 @@ init 98 python:
             return "soft",list(lines) if lines else [(R13_DEBATE[claim]["chair"],"본 사람이 이름을 밝히지 않은 기록만으로는 확인이 어렵습니다. 다른 물건이 필요합니다.")]
         if key in st.get("accept",[]) and not r13_debate_context_ready(st):
             return "soft",list(st["blocked"])
+        # 0.18.91 두 자료 엮기: 하나만 내밀면 반쯤 무너지고 상대가 되받는다. 나머지 하나로 끝난다.
+        pair=st.get("pair")
+        if pair and key in pair["keys"]:
+            first=r13_debate_state().get("half",{}).get(claim+":"+sid)
+            if first and first!=key:return "break",list(pair["broken"])
+            return "half",list(pair["half"][key])
         if key in st.get("accept",[]):
             # broken_if: a different rebuttal when a condition holds (e.g. the witness died, 0.18.90).
             alt=st.get("broken_if",{}).get(key)
@@ -466,6 +472,9 @@ init 98 python:
     def r13_debate_miss(claim):
         d=r13_debate_state();d["misses"][claim]=d["misses"].get(claim,0)+1;r13_debate_save(d)
 
+    def r13_debate_half(claim,sid,key):
+        d=r13_debate_state();half=dict(d.get("half",{}));half[claim+":"+sid]=key;d["half"]=half;r13_debate_save(d)
+
     def r13_debate_hint_due(claim,sid):
         """0.18.91: after the second wrong record on one statement, its hint once (as a thought)."""
         hint=r13_debate_statement(claim,sid).get("hint")
@@ -479,6 +488,7 @@ init 98 python:
         if r13_debate_is_broken(claim,st["id"]) or st.get("truth"):return True
         if st.get("ready_flags"):return all(r13_has(f) for f in st["ready_flags"])
         if not r13_debate_context_ready(st):return False
+        if st.get("pair"):return all(k in store.room13.get("evidence",[]) for k in st["pair"]["keys"])
         consent=st.get("need_consent",{})
         return any(key in store.room13.get("evidence",[]) and (key not in consent or r13_has(consent[key])) for key in st.get("accept",[]))
 
@@ -735,12 +745,43 @@ label r13_debate_conclude(claim):
     if not r13_debate_ready(claim):
         return False
     $ r13_debate_spec=R13_DEBATE[claim]["conclusion"]
+    if r13_debate_spec.get("point"):
+        call r13_debate_point(claim)
+        return _return
     $ r13_debate_menu=[(text,kind) for kind,text in r13_debate_conclusion_options(claim)]
     $ r13_debate_pick=renpy.display_menu([(r13_debate_spec["prompt"],None)]+r13_debate_menu)
     if r13_debate_pick=="correct":
         call r13_lines(r13_debate_spec["correct"],"debate:conclusion:"+claim)
         return True
     call r13_lines([r13_debate_spec[r13_debate_pick]],"debate:conclusion_wrong:"+claim+":"+r13_debate_pick)
+    $ r13_debate_miss(claim)
+    call r13_meeting_public_vote(claim,r13_debate_pick)
+    return False
+
+# 0.18.91 결론 = 지목 + 결정적 증거 (문장 고르기 대신). 틀린 사람이나 틀린 증거는 예전 over/weak와 같은 결과.
+label r13_debate_point(claim):
+    $ r13_point=r13_debate_spec["point"]
+    $ r13_debate_pick=renpy.display_menu([(r13_point["prompt"],None)]+[(R13_NAMES.get(w,w),w) for w in r13_point["candidates"]]+[("아직 말하지 않는다","back")])
+    if r13_debate_pick=="back":
+        return False
+    if r13_debate_pick!=r13_point["who"]:
+        call r13_lines([r13_point.get("wrong_who",{}).get(r13_debate_pick,r13_debate_spec["over"])],"debate:point_wrong:"+claim+":"+r13_debate_pick)
+        $ r13_debate_pick="over"
+        $ r13_debate_miss(claim)
+        call r13_meeting_public_vote(claim,r13_debate_pick)
+        return False
+    call r13_lines([("dad",r13_point["ask"])],"debate:point:"+claim)
+    show screen r13_meeting_cut_in("이 기록을 봐 주세요.")
+    call screen r13_book("resident_seori",present=True,hearing=True)
+    $ r13_point_key=_return
+    if not r13_point_key:
+        return False
+    if r13_point_key in r13_point["keys"]:
+        $ r13_debate_pick="correct"
+        call r13_lines(list(r13_point["decisive"].get(r13_point_key,[]))+list(r13_debate_spec["correct"]),"debate:conclusion:"+claim)
+        return True
+    call r13_lines([r13_point["wrong_key"]],"debate:point_key_wrong:"+claim+":"+r13_point_key)
+    $ r13_debate_pick="weak"
     $ r13_debate_miss(claim)
     call r13_meeting_public_vote(claim,r13_debate_pick)
     return False

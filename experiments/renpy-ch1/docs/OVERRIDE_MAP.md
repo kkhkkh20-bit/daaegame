@@ -175,7 +175,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:561` | _r13_e1_seats |
+| 1 | 98 | `systems/room13_debate.rpy:571` | _r13_e1_seats |
 | 2 | 152 | `systems/room13_ep1_lamp_thief.rpy:160` | _r13_continuity_seats |
 | 3 | 162 | `systems/room13_story_continuity.rpy:38` |  |
 
@@ -228,7 +228,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 98 | `systems/room13_debate.rpy:541` | _r13_poc_campaign_goal |
+| 1 | 98 | `systems/room13_debate.rpy:551` | _r13_poc_campaign_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:128` |  |
 
 ## `r13_click_feedback` (2층)

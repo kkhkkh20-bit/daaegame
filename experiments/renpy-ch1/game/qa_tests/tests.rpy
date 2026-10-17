@@ -10861,7 +10861,10 @@ testcase ep1_meeting:
     screenshot "ep1_ready.png"
     click "결론을 말한다"
     pause 1.0
-    click "온도를 잰 건 우박, 조각을 훔친 건 실룩, 그 조각을 산 건 백 부인이다"
+    click "실룩"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA L07"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until "없던 걸로 하시죠" timeout 60
@@ -11007,7 +11010,10 @@ testcase ep3_meeting:
     screenshot "ep3_ready.png"
     click "결론을 말한다"
     pause 1.0
-    click "누비가 문 앞에 등유를 부었다. 쫓아내려던 불이 바람에 번졌다"
+    click "누비"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA F11"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until "“약속은 여기서 끝냅니다.”" timeout 60
@@ -11061,11 +11067,19 @@ testcase ep4_after_trial:
     click "보여주기"
     pause 0.8
     click "QA N09"
+    click pos (640,600) until eval (r13_debate_state().get("half",{}).get("Q4:s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA N07"
     click pos (640,600) until eval (r13_debate_is_broken("Q4","s3") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 1.2
     click "결론을 말한다"
     pause 1.0
-    click "안에 따닥이 있는 걸 아는 사람이 닫았다. 그건 할머니다"
+    click "할머니"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA N03"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until eval (r13_has("chorong_lamp")) timeout 120
@@ -11110,6 +11124,11 @@ testcase ep5_soup_meeting:
     click "보여주기"
     pause 0.8
     click "QA Y13"
+    click pos (640,600) until eval (r13_debate_state().get("half",{}).get("Q5:s3") and renpy.get_screen("r13_debate_board")) timeout 60
+    pause 0.6
+    click "보여주기"
+    pause 0.8
+    click "QA Y11"
     click pos (640,600) until eval (r13_debate_is_broken("Q5","s3") and renpy.get_screen("r13_debate_board")) timeout 60
     pause 0.6
     click "보여주기"
@@ -11119,7 +11138,10 @@ testcase ep5_soup_meeting:
     pause 1.2
     click "결론을 말한다"
     pause 1.0
-    click "약을 넣은 건 선생님이다. 아이들이 얼거나 수레에 실려 갈 거라 믿었다"
+    click "사자 선생님"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA Y13"
     click pos (640,600) until "회의를 계속한다" timeout 40
     click "회의를 계속한다"
     click pos (640,600) until "수레의 진실을 밝힌다" timeout 60
@@ -11173,7 +11195,10 @@ testcase ep6_cart:
     pause 1.2
     click "결론을 말한다"
     pause 1.0
-    click "보호소는 없다. 수레는 제단으로 간다. 명령서는 할머니가 썼다"
+    click "할머니"
+    click pos (640,600) until screen "r13_book" timeout 40
+    pause 0.8
+    click "QA V06"
     click pos (640,600) until "회의를 계속한다" timeout 60
     click "회의를 계속한다"
     click pos (640,600) until "수레를 멈춘다" timeout 60

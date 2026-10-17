@@ -241,6 +241,9 @@ label r13_debate_present_record(claim,sid,key,allow_hidden=False,presentation_re
             show screen r13_meeting_rebuttal_hold(claim)
             pause .22
             hide screen r13_meeting_rebuttal_hold
+    elif presentation_result=="half":
+        $ r13_debate_half(claim,sid,key)
+        $ r13_meeting_feedback=dict(claim=claim,sid=sid,text="반쯤 무너졌다. 하나가 더 필요하다.")
     elif presentation_result=="wrong":
         $ r13_debate_miss(claim)
         $ presentation_rows=r13_debate_hint_due(claim,sid)
