@@ -332,11 +332,19 @@ label r13_ending:
     window hide
     call r13_cinematic(r13_ending_id, leave=True)
     $ renpy.force_autosave()
+    # 0.18.97: the winter's name board comes first (systems/room13_polish3.rpy).
+    call screen r13_winter_board(r13_ending_id)
+    if _return=="restart":
+        $ renpy.full_restart(label="room13_start")
     while True:
         call screen r13_ending_screen(r13_ending_id)
         if _return=="replay":
             call r13_cinematic(r13_ending_id,leave=True)
         elif _return=="restart":
             $ renpy.full_restart(label="room13_start")
+        elif _return=="board":
+            call screen r13_winter_board(r13_ending_id)
+            if _return=="restart":
+                $ renpy.full_restart(label="room13_start")
         else:
             return

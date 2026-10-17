@@ -223,11 +223,11 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
     $ columns=3 if persistent.room13_large_text else 4
     $ cell=166 if persistent.room13_large_text else 124
     $ visible=entries[actual_page*page_size:][:page_size]
-    add R13PaperFrame() xpos 278 ypos 132 xsize 520 ysize 440
+    add R13PaperFrame() xpos 278 ypos 152 xsize 520 ysize 420
     for index in range(page_size):
         $ key=visible[index] if index<len(visible) else None
         button:
-            area (290+(index%columns)*cell,146+(index//columns)*140,cell-5,136)
+            area (290+(index%columns)*cell,166+(index//columns)*134,cell-5,128)
             padding (6,6) background R13PaperPanel(key is not None and detail==key,transferable=bool(key and not archive and r13_catalog_transferable(key)))
             action (Function(r13_record_select,owner,"detail",key,not archive) if key else NullAction())
             sensitive key is not None
@@ -245,7 +245,7 @@ screen r13_material_grid(entries,detail,page,owner,archive=False):
         text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) size 19 color "#65503b" yalign .5 xsize 124 text_align .5
         textbutton "다음 ›" style "r13_compact_button" xsize 132 ysize 82 text_size 19 sensitive actual_page+1<r13_record_pages(entries) action Function(r13_record_select,owner,"page",actual_page+1)
     if not entries:
-        text "아직 모은 자료가 없습니다." xpos 300 ypos 540 size 18 color "#625738" xsize 470 text_align .5
+        text "해당하는 자료가 없습니다." xpos 300 ypos 540 size 18 color "#625738" xsize 470 text_align .5
 
 screen r13_material_detail(detail,archive=False,view_context=("records",)):
     for scroll_key index scroll_key in [r13_record_scroll_key(view_context,detail,archive)]:
@@ -308,6 +308,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
     default archive=r13_records_view.get("archive",False)
     default order="recent"
     default shelf=False
+    default rfilter="all"
     default rel_sel=r13_records_view.get("rel_sel")
     default rel_filter=r13_records_view.get("rel_filter","all")
     on "hide" action [Function(source_fx,"note_close"),Function(r13_records_remember,tab,detail,person,page,archive,rel_sel,rel_filter)]
@@ -325,8 +326,12 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
                 selected shelf
                 action [SetScreenVariable("shelf",not shelf),SetScreenVariable("detail",None),SetScreenVariable("page",0)]
         $ entries=r13_catalog_entries(archive,shelf=shelf and not archive)
-        $ selected_record=r13_record_selected(entries,detail,page)
         text (("지난 사건 기록 %d개" if shelf and not archive else "모은 자료 %d개")%len(entries)) xpos 284 ypos 78 size 22 color "#65503b"
+        # 0.18.97: 거름 단추 (systems/room13_polish3.rpy)
+        if not archive and not shelf:
+            use r13_record_filter_chips(entries,rfilter,_scope)
+            $ entries=r13_record_filter(entries,rfilter)
+        $ selected_record=r13_record_selected(entries,detail,page)
         use r13_material_grid(entries,selected_record,page,_scope,archive)
         use r13_material_detail(selected_record,archive) id ("records",selected_record,archive,persistent.room13_large_text)
     elif tab=="people":
@@ -373,7 +378,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
                             spacing 6
                             text (row["who"]+" · "+row["stamp"]) size 17 color "#625738" xsize 864
                             text row["what"] size r13_read_size(21,26) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize 864
-    textbutton "닫기" style "r13_compact_button" xpos 66 ypos 594 xsize 176 ysize 44 text_size 20 action (close_action or Hide("r13_records"))
+    textbutton "닫기" style "r13_compact_button" xpos 66 ypos (582 if persistent.room13_large_text else 594) xsize 176 ysize (58 if persistent.room13_large_text else 44) text_size r13_read_size(20,23) action (close_action or Hide("r13_records"))
     key "game_menu" action (close_action or Hide("r13_records"))
 
 screen r13_resident_notes():

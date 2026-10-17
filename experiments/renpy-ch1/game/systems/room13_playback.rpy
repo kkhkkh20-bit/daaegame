@@ -36,27 +36,32 @@ screen r13_backlog():
     key "game_menu" action Hide("r13_backlog")
     key "K_h" action Hide("r13_backlog")
 
+# 0.18.97: 큰 글씨(휴대폰 기본값)에서는 칸 112×56 → 132×70, 글씨 20 → 24.
 screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False):
+    $ big=persistent.room13_large_text
+    $ cw,ch=(132,70) if big else (112,56)
     button:
-        xsize 112 ysize 56 padding (2,0)
+        xsize cw ysize ch padding (2,0)
         background (R13StripCell(True) if chosen else None)
         hover_background R13StripCell(True)
         action command sensitive enabled alt caption
         fixed:
-            xsize 108 ysize 56
+            xsize (cw-4) ysize ch
             hbox:
                 xalign .5 yalign .5 spacing 4
                 add R13AntiqueIcon(icon,size=22) yalign .5 alpha (1.0 if enabled else .4)
-                text caption size 20 font r13_ui_font() color ("#efe2c2" if enabled else "#a59a86") yalign .5
+                text caption size (24 if big else 20) font r13_ui_font() color ("#efe2c2" if enabled else "#a59a86") yalign .5
             if not last:
-                add Solid("#756b5980") xpos 107 ypos 13 xsize 1 ysize 30
+                add Solid("#756b5980") xpos (cw-5) ypos 13 xsize 1 ysize (ch-26)
 
 screen r13_playback_footer(show_record=False,ready=True):
-    $ footer_width=560 if show_record else 448
+    $ big=persistent.room13_large_text
+    $ footer_width=(5 if show_record else 4)*(132 if big else 112)
+    $ footer_height=70 if big else 56
     $ skip_ready=ready and renpy.get_screen("say") is not None and renpy.get_screen("choice") is None
     fixed:
-        xpos (1280-footer_width) ypos 664 xsize footer_width ysize 56
-        add R13InkPanel() xsize footer_width ysize 56
+        xpos (1280-footer_width) ypos (720-footer_height) xsize footer_width ysize footer_height
+        add R13InkPanel() xsize footer_width ysize footer_height
         hbox:
             spacing 0
             use r13_strip_button("백로그","backlog",Show("r13_backlog"),enabled=ready)
@@ -77,7 +82,7 @@ screen r13_more_tools():
     # 0.18.56: 생활 장부 (money ledger, shared work) moved here from the removed top board.
     $ ledger_ok=(not line_active) and bool(room13) and r13_has("livelihood_open") and renpy.get_screen("r13_hub") is not None
     frame:
-        area (932,100 if meeting_line else (150 if line_active else (258 if ledger_ok else 312)),324,622 if meeting_line else (510 if line_active else (402 if ledger_ok else 348))) padding (12,12) background R13InkPanel()
+        area (932,46 if meeting_line else (96 if line_active else (204 if ledger_ok else 258)),324,676 if meeting_line else (564 if line_active else (456 if ledger_ok else 402))) padding (12,12) background R13InkPanel()
         vbox:
             spacing 6
             if meeting_line:
@@ -113,6 +118,10 @@ screen r13_more_tools():
             textbutton "설정":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
                 action [Hide("r13_more_tools"),ShowMenu("pause_menu")]
+            textbutton "다시 시작할 아침":
+                style "r13_action_button" xsize 300 ysize 48 text_size 20
+                sensitive bool(r13_morning_days())
+                action [Hide("r13_more_tools"),Show("r13_morning_pick")]
             textbutton "단축키":
                 style "r13_action_button" xsize 300 ysize 48 text_size 20
                 action [Hide("r13_more_tools"),Show("r13_shortcut_help")]

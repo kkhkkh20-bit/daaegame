@@ -106,6 +106,8 @@ screen r13_ending_screen(key):
     text r13_ending_story_frame(key,3)["caption"] xpos 76 ypos 218 xsize 540 size r13_read_size(24,28) color "#fff0d0" line_spacing 7 outlines [(1,"#1d262b",0,1)]
     textbutton "후일담 다시 보기":
         style "r13_action_button" area (76,584,340,62) text_size 24 action Return("replay") sensitive ready
+    textbutton "이름 판":
+        style "r13_action_button" area (430,584,200,62) text_size 24 action Return("board") sensitive ready
     frame:
         area (680,54,548,612) padding (26,24) background R13PaperFrame()
         vbox:
